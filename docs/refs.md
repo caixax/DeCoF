@@ -221,3 +221,18 @@ console, model loading), `ref/gl` (OpenGL renderer). Useful for the protocol,
 the client-side engine interfaces (cl_enginefunc_t, IEngineStudio, triangle
 API) and data formats. Its internals differ from Valve's; consultation only.
 cof-enhanced patches exactly this engine to run the retail CoF DLLs.
+
+## K. Linux Half-Life binaries (symbol source for hw.dll, GameUI.dll)
+
+Not a git repo. Downloaded 2026-10-11 with steamcmd from the user's own
+Half-Life license: app 70, branch `steam_legacy` (last pre-25th-anniversary
+build), platform linux, into `I:\Tools\_downloads\hl_linux_legacy` (outside
+the repo, never committed). Built with GCC 4.6.1, not stripped:
+`hw.so` 6,352 named functions, `valve/cl_dlls/gameui.so`, `hl_linux`.
+Imported in the Ghidra project under `/ref_linux`.
+
+Use: carry Valve's function and global names to the CoF 2013 Windows builds
+(`tools/match_versions.py hw linux 1.6a --data-propagation --src-image
+.../hw.so --dst-image versions/1.6a/hw.dll`). The Linux build is about six
+years newer (SDL2, no DirectDraw/DirectInput), so only functions that kept
+their strings, globals and call structure match. Names only; never code.

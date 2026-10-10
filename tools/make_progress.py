@@ -149,6 +149,52 @@ def change_summary(versions):
     return "; ".join(steps)
 
 
+# VC6-built Valve components: names come from the Linux build (ELF symbols)
+ENGINE_BINS = {"hw": "hw", "gameui": "gameui", "launcher": "launcher"}
+LIB_NAME = re.compile(r"^(_|__|@|operator|`|std::|type_info)|^(mem|str|wcs|mbs|sprintf|printf|fopen|fread|fwrite|fclose|malloc|free|realloc|calloc|atoi|atof|qsort|rand|srand|time|localtime)")
+
+
+def engine_rows(stats):
+    existing = {}
+    if os.path.exists(p("docs", "progress.csv")):
+        for r in csv.DictReader(open(p("docs", "progress.csv"))):
+            existing[(r["dll"], r["va"])] = r
+    out = []
+    for dll, tag in ENGINE_BINS.items():
+        path = p("build", "features", "%s_1.6a.jsonl" % tag)
+        if not os.path.exists(path):
+            continue
+        funcs = load_features(tag)
+        mpath = p("build", "match", "%s_linux_to_1.6a.csv" % tag)
+        names = {int(r["to_va"], 16): r for r in csv.DictReader(open(mpath))} if os.path.exists(mpath) else {}
+        for ea in sorted(funcs):
+            f = funcs[ea]
+            if f["thunk"] or f["name"].startswith(("Unwind@", "Catch@", "Catch_All@")):
+                stats[(dll, "skipped")] += 1
+                continue
+            n = names.get(ea)
+            if n:
+                dem, evidence = n["demangled"], "linux_symbols:%s:%s" % (n["method"], n["score"])
+            elif not f["name"].startswith("FUN_"):
+                dem, evidence = f["name"], "ghidra"
+            else:
+                dem, evidence = "", ""
+            if not dem:
+                cls = "UNKNOWN"
+            elif evidence == "ghidra" and (LIB_NAME.search(dem) or "vgui::" in dem):
+                cls = "LIB"
+            else:
+                cls = "ENGINE"
+            prev = existing.get((dll, "%08X" % ea), {})
+            out.append({"dll": dll, "va": "%08X" % ea, "size": f["size"], "name": "", "demangled": dem,
+                        "class": cls, "source_file": "", "first_version": "", "changed": "",
+                        "status": prev.get("status") or ("" if cls == "LIB" else "TODO"),
+                        "match_percent": prev.get("match_percent", ""), "evidence": evidence,
+                        "notes": prev.get("notes", "")})
+            stats[(dll, cls)] += 1
+    return out
+
+
 def main():
     index = json.load(open(p("build", "ref_index.json")))
     existing = {}
@@ -262,11 +308,13 @@ def main():
             stats[(dll, r["class"])] += 1
         rows += dll_rows
 
+    rows += engine_rows(stats)
+
     with open(p("docs", "progress.csv"), "w", newline="") as fh:
         w = csv.DictWriter(fh, fieldnames=FIELDS, lineterminator="\n")
         w.writeheader()
         w.writerows(rows)
-    for dll in DLLS:
+    for dll in list(DLLS) + list(ENGINE_BINS):
         print(dll, {k[1]: v for k, v in stats.items() if k[0] == dll})
 
 

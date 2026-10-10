@@ -31,6 +31,7 @@ import csv
 import json
 import os
 import re
+import struct
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -61,6 +62,7 @@ class Build(object):
             if ea in self.thunk:
                 continue
             cs = [self.canon(abs(c)) for c in f["callees"] if c > 0]
+            cs = [c for c in cs if c in self.funcs]
             self.callees[ea] = cs
             for c in set(cs):
                 self.callers[c].add(ea)
@@ -81,6 +83,72 @@ class Build(object):
     def csv(self, kind):
         path = os.path.join(self.calls_dir, "%s_%s_%s.csv" % (self.dll, self.tag, kind))
         return list(csv.DictReader(open(path))) if os.path.exists(path) else []
+
+
+class ImageReader(object):
+    """Read memory of a PE or ELF image by virtual address."""
+
+    def __init__(self, path, delta=0):
+        data = open(path, "rb").read()
+        self.segs = []
+        self.overlay = {}
+        self.delta = delta  # Ghidra address minus file address (ELF .so: 0x10000)
+        if data[:4] == b"ELF":
+            from elftools.elf.elffile import ELFFile
+            import io
+            elf = ELFFile(io.BytesIO(data))
+            for seg in elf.iter_segments():
+                if seg["p_type"] == "PT_LOAD":
+                    self.segs.append((seg["p_vaddr"], seg["p_filesz"], seg["p_offset"]))
+            # GOT slots and absolute pointers are filled by relocations at
+            # load time: apply R_386_GLOB_DAT / R_386_32 / R_386_JUMP_SLOT
+            from elftools.elf.relocation import RelocationSection
+            for sec in elf.iter_sections():
+                if not isinstance(sec, RelocationSection):
+                    continue
+                symtab = elf.get_section(sec["sh_link"]) if sec["sh_link"] else None
+                for rel in sec.iter_relocations():
+                    t = rel["r_info_type"]
+                    if t in (1, 6, 7) and symtab is not None and rel["r_info_sym"]:
+                        sym = symtab.get_symbol(rel["r_info_sym"])
+                        if sym["st_value"]:
+                            self.overlay[rel["r_offset"]] = sym["st_value"]
+        else:
+            import pefile
+            pe = pefile.PE(data=data, fast_load=True)
+            base = pe.OPTIONAL_HEADER.ImageBase
+            for sec in pe.sections:
+                self.segs.append((base + sec.VirtualAddress, sec.SizeOfRawData, sec.PointerToRawData))
+        self.data = data
+
+    def read(self, va, n):
+        for start, size, off in self.segs:
+            if start <= va < start + size:
+                o = off + (va - start)
+                return self.data[o:o + n]
+        return b""
+
+    def cstr(self, va):
+        b = self.read(va, 96)
+        s = b.split(b"\0")[0]
+        if len(s) < 3 or len(s) == 96 or any(c < 0x20 or c > 0x7E for c in s):
+            return None
+        return s.decode("latin-1")
+
+    def ptr_name(self, va, depth=2):
+        """Name string pointed to by the first dword at va (cvar_t, command
+        tables); one more indirection for GOT slots of PIC code."""
+        if va in self.overlay:
+            p = self.overlay[va]
+        else:
+            b = self.read(va, 4)
+            if len(b) < 4:
+                return None
+            p = struct.unpack("<I", b)[0]
+        n = self.cstr(p)
+        if n is None and depth > 1:
+            return self.ptr_name(p, depth - 1)
+        return n
 
 
 class Matcher(object):
@@ -179,6 +247,29 @@ class Matcher(object):
             if len(lst) == 1 or lst[0][0] >= 3 * lst[1][0]:
                 n += self.accept(x, lst[0][1], "vtable", 1.0)
         return n
+
+    def map_ptr_names(self, ia, ib):
+        """Map globals whose first dword points to the same unique name."""
+        def keys(bld, img):
+            dl = img.delta
+            # a reference may point at a field of the struct (cvar.value is
+            # at +12): step back over the first fields to find the name
+            k = collections.defaultdict(set)
+            for f in bld.funcs.values():
+                for d in f["data"]:
+                    for off in (0, 4, 8, 12, 16):
+                        n = img.ptr_name(d - dl - off)
+                        if n:
+                            k[(n, off)].add(d)
+                            break
+            return k
+        ka, kb = keys(self.a, ia), keys(self.b, ib)
+        n0 = len(self.datamap)
+        for name, xs in ka.items():
+            ys = kb.get(name)
+            if len(xs) == 1 and ys and len(ys) == 1:
+                self.datamap[next(iter(xs))] = next(iter(ys))
+        return len(self.datamap) - n0
 
     def map_data(self):
         # literals referenced as data are not in "data" (strings are separate);
@@ -290,6 +381,19 @@ class Matcher(object):
                             n += self.accept(u, v, "callseq", sc)
         return n
 
+    def propagate_data(self):
+        """Matched pairs with exactly one unmapped global each: map them."""
+        known_b = set(self.datamap.values())
+        n = 0
+        for x, y in list(self.ab.items()):
+            ua = [d for d in dict.fromkeys(self.a.funcs[x]["data"]) if d not in self.datamap]
+            ub = [d for d in dict.fromkeys(self.b.funcs[y]["data"]) if d not in known_b]
+            if len(ua) == 1 and len(ub) == 1:
+                self.datamap[ua[0]] = ub[0]
+                known_b.add(ub[0])
+                n += 1
+        return n
+
     def propagate(self, min_score):
         n = 0
         for x, y in list(self.ab.items()):
@@ -308,9 +412,16 @@ class Matcher(object):
         return n
 
 
-def load_names(tag):
+def load_names(tag, build=None):
     path = os.path.join(ROOT, "docs", "symbols_%s.csv" % tag)
     out = {}
+    if not os.path.exists(path) and build is not None:
+        # no PDB export: use the names Ghidra has for the source build
+        # (ELF symbol tables of the Linux reference binaries)
+        for ea, f in build.funcs.items():
+            if not f["name"].startswith(("FUN_", "thunk_FUN_")):
+                out[ea] = {"name": f["name"], "decorated": "", "object": "", "kind": "func"}
+        return out
     for r in csv.DictReader(open(path)):
         if r["kind"].startswith("func") or r["kind"] == "public_code":
             out[int(r["va"], 16)] = r
@@ -324,11 +435,15 @@ def main():
     ap.add_argument("dst")
     ap.add_argument("--out")
     ap.add_argument("--min-score", type=float, default=0.35)
+    ap.add_argument("--data-propagation", action="store_true",
+                    help="map globals through matched functions (cross-platform builds)")
+    ap.add_argument("--src-image", help="binary of the source build (PE or ELF), enables pointer-to-name data anchors")
+    ap.add_argument("--dst-image", help="binary of the target build")
     ap.add_argument("--seed", help="CSV (va,name) of names already known in the target build; "
                     "pairs with the source function of the same name are accepted first")
     args = ap.parse_args()
     a, b = Build(args.dll, args.src), Build(args.dll, args.dst)
-    names = load_names(args.src)
+    names = load_names(args.src, a)
     # the source build's static CRT is a different CRT version: never match it
     a.excluded = {ea for ea, r in names.items() if r["object"].lower().endswith(".lib")}
     m = Matcher(a, b)
@@ -352,6 +467,21 @@ def main():
     print("exports   +%d" % m.by_exports())
     print("vtables   +%d" % m.by_vtables())
     print("data map  +%d globals" % m.map_data())
+    if args.src_image and args.dst_image:
+        ia, ib = ImageReader(args.src_image), ImageReader(args.dst_image)
+        for img, bld in ((ia, a), (ib, b)):
+            if img.data[:4] == b"ELF":
+                # Ghidra rebases shared objects; derive the delta from a symbol
+                from elftools.elf.elffile import ELFFile
+                import io
+                elf = ELFFile(io.BytesIO(img.data))
+                syms = {x.name: x["st_value"] for x in elf.get_section_by_name(".symtab").iter_symbols()
+                        if x["st_info"]["type"] == "STT_FUNC" and x["st_value"]}
+                deltas = collections.Counter(ea - syms[f["name"]] for ea, f in bld.funcs.items()
+                                             if f["name"] in syms)
+                img.delta = deltas.most_common(1)[0][0] if deltas else 0
+                print("ELF base delta 0x%X" % img.delta)
+        print("ptr names +%d globals" % m.map_ptr_names(ia, ib))
     print("strings   +%d" % m.by_unique(m.key_strings, "string", 0.25))
     for rnd in range(12):
         n = m.by_unique(m.key_data, "data", args.min_score)
@@ -360,6 +490,8 @@ def main():
         n += m.by_unique(m.key_consts, "consts", 0.5)
         n += m.propagate(args.min_score)
         n += m.propagate_seq(args.min_score)
+        if args.data_propagation:
+            m.propagate_data()
         print("round %d   +%d (total %d)" % (rnd, n, len(m.ab)))
         if n == 0:
             break

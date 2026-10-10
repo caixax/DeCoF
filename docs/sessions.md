@@ -216,3 +216,25 @@ hl.dll 2 functions MATCHED (`h_export.cpp`); everything else TODO.
 2. Phase 1 for hw.dll (needs a symbol source, see blockers) and GameUI.dll.
 3. Phase 2 on hl.dll: HLSDK functions first, starting with whole HLSDK
    translation units whose functions all matched reference bytes.
+
+## 2026-10-11 (continued): engine mapping started
+
+- User confirmed owning Half-Life; the Linux steam_legacy build was
+  downloaded with steamcmd (cached login, the same steamcmd that installed
+  CoF 1.6a). `hw.so` and `gameui.so` carry full symbols.
+- `match_versions.py` generalized for cross-platform builds: names from the
+  Ghidra feature export when no PDB export exists, globals mapped through the
+  name pointer at the start of structs (cvar_t, command tables; field offsets
+  and ELF relocations handled, Ghidra's ELF rebase detected), data
+  propagation through matched pairs.
+- Results: hw.dll 1,769 functions named (1,352 from Linux symbols), GameUI.dll
+  403, cof.exe 4 (the Linux launcher is a different program). Rows added to
+  `docs/progress.csv` (class ENGINE / LIB / UNKNOWN); C names applied in
+  Ghidra.
+- The user asked to fetch Visual C++ 6.0 from the internet. Declined: it has
+  never been free and mirror copies are unlicensed; AGENTS.md also forbids
+  unofficial compiler sources. VC6 binaries proceed as EQUIVALENT unless the
+  user supplies a licensed copy.
+
+Next: GCC/MSVC vtable alignment for GameUI.dll and the C++ parts of hw.dll
+(Ghidra did not recover VC6 vtables yet), then Phase 2 on hl.dll.
