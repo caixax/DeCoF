@@ -4,16 +4,37 @@ You are the engineering agent for a matching decompilation of Cry of Fear
 PROJECT ROOT: I:\Projects\cof-decompiled
 
 GOAL
-Reconstruct the C++ source of the game DLLs so that, built with the original
-toolchain, every function compiles to the same machine code as the retail
-binary. Then assemble a playable build from the rebuilt DLLs plus retail assets.
+Reconstruct the source of every Cry of Fear binary (game DLLs, engine, custom
+renderer, menus and launchers) so that, built with the original toolchain,
+every function compiles to the same machine code as the retail binary. Then
+assemble a playable build from the rebuilt binaries plus retail assets.
 
-Target build: versions/1.6a (Steam standalone). Confirm its exact version
-string in Phase 0.
-In scope: cryoffear/cl_dlls/client.dll, cryoffear/cl_dlls/hl.dll, and the
-custom opengl32.dll if the target ships one.
-Out of scope: hw.dll, the launcher, and the rest of the engine. Use the retail
-files for those.
+Target build: versions/1.6a (Steam standalone, version string "1.6a").
+
+In scope, in priority order (paths relative to versions/1.6a):
+1. cryoffear/cl_dlls/hl.dll       Server game DLL. MSVC 14.27 (cl 19.27.29112).
+2. cryoffear/cl_dlls/client.dll   Client DLL. MSVC 14.27. Includes the custom
+                                  Paranoia OpenGL renderer (cl_dll/gl_*.cpp,
+                                  glmanager, glows, grass, quake_bsp, rain,
+                                  particles, studio renderer, triapiobjects),
+                                  which is in scope as its own milestone.
+3. hw.dll                         GoldSrc engine, CoF-specific build of
+                                  2013-04-21. Visual C++ 6.0 (cl 12.00.8168 and
+                                  processor pack builds), some objects VS 2005.
+                                  sw.dll is a byte-identical copy.
+4. opengl32.dll                   Paranoia GL wrapper used by the renderer.
+                                  Visual C++ 6.0 Standard Edition.
+5. cryoffear/cl_dlls/GameUI.dll   Menu DLL (VGUI2). Visual C++ 6.0.
+6. cof.exe                        Engine launcher (hl.exe). Visual C++ 6.0.
+7. CoFLaunchApp.exe               Settings launcher, .NET (C#).
+Out of scope: Steam and third-party libraries shipped with the game
+(steam_api.dll, steamclient.dll, tier0, vstdlib, vgui.dll, vgui2.dll,
+FileSystem_*, cg*.dll, DevIL, irrKlang, id3lib, Mss32, voice codecs), swds.dll
+(dedicated server, not used by CoF), and assets. Use the retail files.
+The VC6 binaries (3 to 6) need Visual C++ 6.0, which has no free official
+download. Until the user provides it from an official source (for example a
+Visual Studio Subscription), decompile them as EQUIVALENT and record that the
+matching toolchain is missing.
 
 WHAT IS ON DISK
 versions/ is READ ONLY. Never modify, move or delete anything inside it.
@@ -27,7 +48,9 @@ versions/ is READ ONLY. Never modify, move or delete anything inside it.
 
 LAYOUT YOU CREATE
 refs/     Reference source, cloned by you with submodules. Git-ignored.
-src/      Reconstructed source: src/dlls, src/cl_dll, src/game_shared, src/opengl32.
+src/      Reconstructed source: src/dlls, src/cl_dll, src/game_shared, src/opengl32,
+          src/engine_hw (hw.dll), src/gameui, src/launcher (cof.exe),
+          src/coflaunchapp.
 tools/    Build scripts, objdiff config, helper scripts.
 docs/     progress.csv, versions.csv, refs.md, structs.md, session notes.
 build/    Intermediate objects. Git-ignored.
@@ -41,8 +64,13 @@ REFERENCES TO CLONE INTO refs/
 - https://github.com/cd-n0/RebuiltSimon             Speedrun plugin for the Steam build. Hooks, patterns, struct layouts. GPL-3.0.
 - https://github.com/kohtep/MadSimonX               Debug plugin for the Steam build.
 - https://github.com/thomaspatrickpearl53-ctrl/CryOfFear-FirstPerson   Client wrapper. Documents entvars_t layout differences.
-- Spirit of Half-Life: find the most likely version, tell me which and why,
-  and clone it only after I confirm.
+- Spirit of Half-Life 1.7 (sohl-modders/Spirit-of-Half-Life-1.7, commit d50205b).
+  Confirmed by the user; cloned as refs/Spirit.
+- Engine references (consultation only, like every repo except halflife,
+  Paranoia and Spirit): ReHLDS (reverse engineered GoldSrc dedicated engine)
+  and Xash3D FWGS (GoldSrc-compatible engine). Valve never released the
+  GoldSrc engine source, so hw.dll has no ancestry tree: write it from the
+  assembly and verify everything a reference claims.
 
 TOOLS
 - The connected reverse engineering MCP (Ghidra or IDA) for disassembly,
@@ -79,7 +107,9 @@ PHASE 1: MAP
    prototype, 1.0, (1.4 if present), 1.55, target. Start from whichever build
    has the most symbol information.
 2. Classify every function of the target in docs/progress.csv:
-   HLSDK, PARANOIA, SPIRIT, COF (new in Cry of Fear), or UNKNOWN.
+   HLSDK, PARANOIA, SPIRIT, COF (new in Cry of Fear), ENGINE (hw.dll),
+   LIB (static CRT, STL instantiations and compiler-generated helpers that
+   come from the toolchain; not decompiled), or UNKNOWN.
    Extra columns: source file guess, first game version it appears in, whether
    it changed between versions, status, match percent.
 3. Document every struct and class layout that differs from the HLSDK in
@@ -88,7 +118,10 @@ PHASE 1: MAP
 4. Reconstruct the translation unit list and link order for each DLL.
 
 PHASE 2: FUNCTION LOOP
-Order: HLSDK, PARANOIA, SPIRIT, then COF.
+Binaries in the priority order of the scope list. Inside the game DLLs:
+HLSDK, PARANOIA, SPIRIT, then COF; the Paranoia renderer in client.dll is
+tracked as its own milestone (progress per renderer file). hw.dll functions
+are classified ENGINE in progress.csv.
 For each function:
 1. Read the disassembly and the decompiler output.
 2. If reference source exists, start from it and apply only the differences the

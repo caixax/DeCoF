@@ -33,7 +33,11 @@ TARGETS = [
     ("1.6a", "client", "versions/1.6a/cryoffear/cl_dlls/client.dll", "target"),
     ("1.6a", "server", "versions/1.6a/cryoffear/cl_dlls/hl.dll", "target"),
     ("1.6a", "opengl32", "versions/1.6a/opengl32.dll", "target"),
-    ("1.6a", "gameui", "versions/1.6a/cryoffear/cl_dlls/GameUI.dll", "out of scope, listed for reference"),
+    ("1.6a", "gameui", "versions/1.6a/cryoffear/cl_dlls/GameUI.dll", "target (scope item 5)"),
+    ("1.6a", "engine", "versions/1.6a/hw.dll", "target (scope item 3); sw.dll is identical"),
+    ("1.6a", "launcher", "versions/1.6a/cof.exe", "target (scope item 6)"),
+    ("1.6a", "launcher", "versions/1.6a/CoFLaunchApp.exe", "target (scope item 7), .NET"),
+    ("2010-prototype", "engine", "versions/2010-prototype/The build/hw.dll", "prototype engine"),
 ]
 
 # Rich header product ids that occur in VC6 to VS2012 era binaries.

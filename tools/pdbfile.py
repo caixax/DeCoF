@@ -118,6 +118,22 @@ class PDB(object):
                                        sym_stream, sym_size, c11, c13,
                                        c_sect, c_off, c_size))
             off = (p + 3) & ~3
+        # File info substream: source files (including headers) per module
+        fi_off = 64 + modi_size + sc_size + secmap_size
+        self.module_files = [[] for _ in self.modules]
+        if srcinfo_size >= 4:
+            fi = s[fi_off:fi_off + srcinfo_size]
+            nmod = struct.unpack_from("<H", fi, 0)[0]
+            counts = struct.unpack_from("<%dH" % nmod, fi, 4 + 2 * nmod)
+            total = sum(counts)
+            offs_at = 4 + 4 * nmod
+            offsets = struct.unpack_from("<%dI" % total, fi, offs_at)
+            names_at = offs_at + 4 * total
+            k = 0
+            for m in range(min(nmod, len(self.modules))):
+                for _ in range(counts[m]):
+                    self.module_files[m].append(_cstr(fi, names_at + offsets[k])[0])
+                    k += 1
         # Section contributions
         sc = s[end:end + sc_size]
         self.contribs = []

@@ -154,3 +154,65 @@ Percentages against the full function count come with Phase 1, when
 2. Phase 1 (after the user confirms): carry names from the 1.55 PDB build
    to 1.6a by function matching, fill `docs/progress.csv` for every 1.6a
    function, `tools/symbols/hl_1.6a.csv`, TU list and link order.
+
+## 2026-10-11: Phase 1 (map) and scope extension
+
+### Done
+
+- **Feature export** of every build from Ghidra (`ExportFeatures.java`).
+- **hl.dll 1.55 -> 1.6a matching** (`match_versions.py`): anchors from
+  exports, RTTI vtables (482 classes keep their 1.55 vtable length), unique
+  strings, named globals; call graph propagation. 4,241 1.6a functions carry
+  1.55 names. Checked against Ghidra's own RTTI names: 368 agree, the 6
+  differences are folded identical functions or CRT.
+- **Exact static CRT found**: the 1.6a DLLs link MSVC 14.27.29110 libcmt /
+  libvcruntime / libcpmt (internal build 28920) and SDK 10.0.19041 libucrt
+  (build 27412), byte for byte. Library code starts at 0x10121FE5 (hl.dll)
+  and 0x100B42A4 (client.dll); class LIB.
+- **Reference builds** of HLSDK c7240b9, Spirit 1.7 and Paranoia 1.2 with the
+  exact compiler (`refbuild.py`, about 590 objects) and reference-guided
+  naming (`refmatch.py`): byte matches checked on relocation targets, names
+  propagated through relocations, plus a similarity phase for functions CoF
+  modified. This is how client.dll got names (no PDB exists for any client).
+- **docs/progress.csv**: every 1.6a function, class, source file, first
+  version, change history across 1.0/1.4/1.55, evidence.
+  - hl.dll: 4,960 game functions, 85.3% named (88.1% of bytes). HLSDK 1,677,
+    SPIRIT 461, PARANOIA 96, COF 1,995, UNKNOWN 731; LIB 4,343.
+  - client.dll: 2,146 game functions, 39.4% named (40.9% of bytes). HLSDK
+    544, PARANOIA 261, SPIRIT 19, COF 21, UNKNOWN 1,301; LIB 4,992. The
+    Paranoia renderer files are 70% named by bytes.
+- **Translation units and link order** (`docs/units.md`, `units_*.csv`).
+  1.6a: game_shared, pm_shared, then dlls/ (or cl_dll/) alphabetically.
+- **Structs** (`docs/structs.md`): CBaseEntity 0xD8 -> 0xDC in 1.6a (new 4
+  bytes after `ammo_groza` at 0xC0), so every entity class is 4 bytes larger;
+  CBasePlayer +344 own bytes; 5 more classes with own new fields. Evidence in
+  `docs/class_sizes.csv` (allocation sizes) and the save tables.
+- All names applied in Ghidra (`ApplyNames.java`, demangled with signatures).
+- One-command pipeline: `tools/map_names.py`.
+- **Scope extended by the user**: hw.dll (engine), the Paranoia renderer as
+  its own milestone, opengl32.dll, GameUI.dll, cof.exe, CoFLaunchApp.exe.
+  AGENTS.md updated. hw.dll, GameUI.dll and cof.exe imported in Ghidra
+  (10,281 / 6,140 / 396 functions). ReHLDS and Xash3D FWGS cloned as engine
+  references.
+
+### Decompiled so far
+
+hl.dll 2 functions MATCHED (`h_export.cpp`); everything else TODO.
+
+### Blockers
+
+- Visual C++ 6.0 is required to match hw.dll, opengl32.dll, GameUI.dll and
+  cof.exe; there is no free official download. Without it those binaries can
+  only reach EQUIVALENT.
+- hw.dll has no symbols in any shipped file. Best symbol source: the Linux
+  build of the Half-Life engine (`hw.so`, not stripped) from the Half-Life
+  Steam depot, downloadable with steamcmd if the user owns Half-Life.
+
+### Next session starts here
+
+1. Start the MCP server (`tools\ghidra_mcp_server.bat --project
+   I:\Projects\cof-decompiled\re\CoF.gpr --program /1.6a/hl.dll`) and run
+   `mcp__ghidra__connect_instance` with project "CoF".
+2. Phase 1 for hw.dll (needs a symbol source, see blockers) and GameUI.dll.
+3. Phase 2 on hl.dll: HLSDK functions first, starting with whole HLSDK
+   translation units whose functions all matched reference bytes.

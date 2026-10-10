@@ -78,3 +78,27 @@ Confirmed so far by one fully matching unit (`hl/dlls/h_export`).
 | `tools/scan_calls.py` | engine table usage, messages, cvars, commands (`docs/calls/`) |
 | `tools/hdrstruct.py` | member lists of function tables from headers |
 | `tools/make_dist.py` | assemble `dist/` from retail 1.6a plus fully linked DLLs |
+
+## Phase 1 naming pipeline
+
+`python tools/map_names.py [--skip-features] [--skip-refbuild] [--apply]`
+runs everything below in order (about 2 minutes plus the reference builds).
+The MCP server must be running for the feature export and for `--apply`.
+
+| Step | Script | Output |
+|---|---|---|
+| Ghidra feature export (functions, callees, strings, data refs, constants, vtables) | `tools/ghidra_scripts/ExportFeatures.java` | `build/features/<dll>_<version>.jsonl` |
+| Interface scan | `tools/scan_calls.py` | `docs/calls/` |
+| Static CRT byte matching against the exact 1.6a libraries | `tools/objmatch.py` | `build/match/<dll>_1.6a_crt.csv` |
+| Reference builds of HLSDK (c7240b9), Spirit 1.7, Paranoia 1.2 with cl 19.27.29112 | `tools/refbuild.py` (+ `tools/refshim/refshim.h`) | `build/refobj/` |
+| Index of every function defined in the reference trees | `tools/ref_index.py` | `build/ref_index.json` |
+| 1.55 (PDB) to 1.6a name matching for hl.dll | `tools/match_versions.py` | `build/match/hl_1.55_to_1.6a.csv` |
+| Reference-guided naming (bytes + relocation targets + similarity) | `tools/refmatch.py` | `build/match/<dll>_1.6a_refnames.csv` |
+| Function list with class, source file, versions, status | `tools/make_progress.py` | `docs/progress.csv` |
+| Translation units and link order | `tools/make_units.py` | `docs/units_<dll>.csv` |
+| Entity class sizes 1.55 vs 1.6a | `tools/class_sizes.py` | `docs/class_sizes.csv` |
+| Symbol maps, applied in Ghidra with demangling | `tools/ghidra_scripts/ApplyNames.java` | `tools/symbols/<dll>_1.6a.csv` |
+
+Hand-curated names go in `tools/symbols/<dll>_manual.csv` (never
+overwritten by the pipeline). Evidence for every name is kept in the
+`evidence` column of `docs/progress.csv`.

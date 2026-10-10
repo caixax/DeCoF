@@ -12,6 +12,8 @@ Phase 0 (2026-10-10):
 | cd-n0/RebuiltSimon | fca8c87 | consultation only | GPL-3.0 |
 | kohtep/MadSimonX | b43724c | consultation only | BSD-2-Clause |
 | thomaspatrickpearl53-ctrl/CryOfFear-FirstPerson | d876897 | consultation only | MIT |
+| rehlds/ReHLDS | 550f2d6 | consultation only (engine) | MIT |
+| FWGS/xash3d-fwgs | 51353ff8 | consultation only (engine) | GPL-3.0-or-later (with some GPL-2.0 files) |
 | sohl-modders/Spirit-of-Half-Life-1.7 (`refs/Spirit`) | d50205b | ancestry (Spirit 1.7) | Valve SDK license (Valve files); Spirit code by Laurie Cheers, no separate license file |
 
 Rule from AGENTS.md: only `refs/halflife` and `refs/Paranoia` (and Spirit once
@@ -196,3 +198,26 @@ Layout: `SpiritSource/{cl_dll,dlls,common,engine,pm_shared,game_shared,dedicated
 |---|---|
 | hl.dll | `SpiritSource/dlls/*` (Spirit additions: `alias.cpp`, `locus.cpp`, `movewith.cpp`, `effects.cpp` env_* entities, `triggers.cpp` trigger_*/calc_*/motion_*, FMOD ambient code) |
 | client.dll | `SpiritSource/cl_dll/*` (particle system `aurora`, rain, Cg shader water, sky, `hud_spectator`) |
+
+## I. refs/ReHLDS (reverse engineered GoldSrc dedicated engine)
+
+Added 2026-10-11 when hw.dll entered the scope. A from-the-binary rewrite of
+Valve's dedicated server engine (swds.dll / engine_i486.so), MIT licensed,
+with Valve's function and structure names (taken from the symbols of the
+Linux engine). `rehlds/engine/` covers the server half of hw.dll: entity
+management, physics (`sv_phys`, `sv_move`), save/restore (`host_*`),
+networking (`net_*`, `sv_main`), console and cvars (`cmd`, `cvar`), model
+loading (`model.cpp`), `pr_cmds.cpp` (the enginefuncs_t implementation).
+No client side (rendering, sound, input, VGUI). Consultation only: names,
+struct layouts and logic are verified in hw.dll before use; no code is
+copied.
+
+## J. refs/xash3d-fwgs (GoldSrc-compatible engine)
+
+Added 2026-10-11. Independent clean-room GoldSrc engine (GPL), client and
+server: `engine/client` (rendering glue, sound, input, demo, cl_parse with the
+user-message protocol), `engine/server`, `engine/common` (filesystem,
+console, model loading), `ref/gl` (OpenGL renderer). Useful for the protocol,
+the client-side engine interfaces (cl_enginefunc_t, IEngineStudio, triangle
+API) and data formats. Its internals differ from Valve's; consultation only.
+cof-enhanced patches exactly this engine to run the retail CoF DLLs.

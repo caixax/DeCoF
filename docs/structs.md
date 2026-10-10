@@ -52,3 +52,62 @@ client.dll calls `gEngfuncs.pTriAPI` slots 18 and 19 (offsets 0x48 and
 them; the Steam-era HLSDK names them `Color4fRendermode` and `FogParams`.
 `src/common/triangleapi.h` needs both members appended once client code is
 reconstructed. Evidence: `docs/calls/client_1.6a_engfuncs.csv`.
+
+## CBaseEntity (hl.dll 1.6a): 4 bytes larger
+
+Confirmed 2026-10-10 (Phase 1). Evidence:
+
+1. **Allocation sizes** of all 468 entity classes present in both builds
+   (`docs/class_sizes.csv`, `tools/class_sizes.py`): 462 classes are exactly
+   4 bytes larger in 1.6a. The size is the constant passed to
+   `pfnPvAllocEntPrivateData` by `GetClassPtr<T>` (inlined in each
+   `LINK_ENTITY_TO_CLASS` export in 1.6a; pushed for
+   `CBaseEntity::operator new` in the 1.55 debug build).
+2. **Save tables**: every field of `CBaseEntity::m_SaveData` (offsets 0x08
+   to 0x88, from `b_Saving` to `m_bFadeOut`) has the same offset in both
+   builds, while every field of `CBaseDelay`, `CBaseAnimating`,
+   `CBaseToggle`, `CBaseMonster`, `CBasePlayerItem` and
+   `CBasePlayerWeapon` is shifted by +4 (`CBaseDelay::m_flDelay`
+   0xD8 -> 0xDC).
+3. `CBasePlayer::TabulateAmmo` (1.6a 0x100F5EB0) still writes `ammo_9mm`
+   ... `ammo_groza` at 0x8C ... 0xC0, the 1.55 offsets.
+
+So `sizeof(CBaseEntity)` is 0xD8 in 1.55 (PDB) and 0xDC in 1.6a, and the
+new 4 bytes lie between 0xC4 and the end of the class: before or among
+`m_flStartThrow` (0xC4), `m_flReleaseThrow` (0xC8), `m_chargeReady`
+(0xCC), `m_fInAttack` (0xD0), `m_fireState` (0xD4), or at the end. The
+exact position is open until a 1.6a function that touches those fields is
+decompiled. MadSimonX puts an `int __PADDINGD4` at the end (unverified).
+Placeholder name: `guess_cbaseentity_pad`.
+
+1.55 layout (PDB, Ghidra `get_struct_layout`): vtable 0x00, `pev` 0x04,
+`b_Saving` 0x08, `m_bFrozenByCamera` 0x09, `m_bIsBoss` 0x0A (CoF), Spirit
+MoveWith / Assist / think fields 0x0C-0x77, `m_pfnThink`..`m_pfnBlocked`
+0x78-0x87, `m_bFadeOut` 0x88 (CoF), `ammo_9mm`..`ammo_hornets`,
+`ammo_argrens` (HLSDK) and `ammo_aps`, `ammo_barret`, `ammo_ak`,
+`ammo_asval`, `ammo_rpk`, `ammo_groza` (Paranoia) 0x8C-0xC3, then the
+HLSDK weapon state fields 0xC4-0xD7.
+
+## Classes that grew more than CBaseEntity (1.55 -> 1.6a)
+
+| Class (classname) | 1.55 | 1.6a | Delta | Own new data |
+|---|---|---|---|---|
+| CBasePlayer (`player`) | 0x26C0 | 0x281C | +348 | 344 bytes |
+| CPhoneCall (`cof_phonecall`) | 0x1F8 | 0x204 | +12 | 8 bytes |
+| CAnimatedCameraModel (`camera_model`) | 0x3EC | 0x3F4 | +8 | 4 bytes |
+| CCoFMDLCutscene (`cof_mdlcutscene`) | 0x3EC | 0x3F4 | +8 | 4 bytes |
+| CCutsceneModel (`cutscene_model`) | 0x188 | 0x190 | +8 | 4 bytes |
+| CCoFLadderManager (`cof_ladder_manager`) | 0x1AC | 0x1B4 | +8 | 4 bytes |
+
+New classes in 1.6a: `CMp5` (`weapon_mp5`, 0x1FC), `CMP5Ammo` (`ammo_mp5`,
+0xE0), `CBowlingBall` (`bowling_ball`, 0x100), `CMP5ModeSaveRestoreMP5`
+(`cof_mp5modesaverestore`, 0xDC). MadSimonX documents three "1.6a" padding
+blocks in CBasePlayer totalling 316 bytes; to be checked against the 344
+measured here.
+
+## Source of class layouts for Phase 2
+
+- 1.55 PDB (Ghidra program `/1.55/hl.dll`): full layouts of every 2012
+  class, member names included. Apply the 1.6a deltas above on top.
+- 1.6a vtables (RTTI): 482 game classes keep the 1.55 vtable length, so no
+  virtual functions were added or removed in those classes.
