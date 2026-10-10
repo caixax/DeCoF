@@ -1,0 +1,5 @@
+va,name,kind
+100B4AA0,?GiveFnptrsToDll@@YGXPAUenginefuncs_s@@PAUglobalvars_t@@@Z,func
+100B4AD0,_DllMain@12,func
+10222F48,?g_engfuncs@@3Uenginefuncs_s@@A,data
+10223188,?gpGlobals@@3PAUglobalvars_t@@A,data

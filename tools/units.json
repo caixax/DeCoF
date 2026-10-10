@@ -1,0 +1,26 @@
+{
+  "_comment": "Translation units per DLL. Flags are the ones deduced from the 1.6a binaries (docs/toolchains.md). Target functions are listed by their MSVC decorated names, which tools/symbols/<dll>_1.6a.csv maps to retail addresses.",
+  "dlls": {
+    "hl": {
+      "ghidra_folder": "/1.6a",
+      "ghidra_program": "hl.dll",
+      "symbols": "tools/symbols/hl_1.6a.csv",
+      "cflags": ["/nologo", "/c", "/O2", "/Oy-", "/GS", "/GR", "/EHsc", "/MT",
+                 "/W3", "/Gd", "/fp:precise", "/Zc:wchar_t", "/Zc:forScope"],
+      "defines": ["WIN32", "NDEBUG", "_WINDOWS", "QUIVER", "VOXEL", "QUAKE2",
+                  "VALVE_DLL"],
+      "includes": ["src/dlls", "src/engine", "src/common", "src/pm_shared",
+                   "src/game_shared"],
+      "units": [
+        {
+          "name": "dlls/h_export",
+          "source": "src/dlls/h_export.cpp",
+          "functions": [
+            "?GiveFnptrsToDll@@YGXPAUenginefuncs_s@@PAUglobalvars_t@@@Z",
+            "_DllMain@12"
+          ]
+        }
+      ]
+    }
+  }
+}
