@@ -12,7 +12,7 @@ Phase 0 (2026-10-10):
 | cd-n0/RebuiltSimon | fca8c87 | consultation only | GPL-3.0 |
 | kohtep/MadSimonX | b43724c | consultation only | BSD-2-Clause |
 | thomaspatrickpearl53-ctrl/CryOfFear-FirstPerson | d876897 | consultation only | MIT |
-| Spirit of Half-Life | not cloned | ancestry, pending confirmation | see section H |
+| sohl-modders/Spirit-of-Half-Life-1.7 (`refs/Spirit`) | d50205b | ancestry (Spirit 1.7) | Valve SDK license (Valve files); Spirit code by Laurie Cheers, no separate license file |
 
 Rule from AGENTS.md: only `refs/halflife` and `refs/Paranoia` (and Spirit once
 confirmed) are ancestry that src/ may start from. Everything else is read for
@@ -175,8 +175,24 @@ evidence) and asserts `offsetof(edict_t, v) == 0x80`.
 
 File to DLL map: none (wrappers only).
 
-## H. Spirit of Half-Life (not cloned, awaiting confirmation)
+## H. refs/Spirit (Spirit of Half-Life 1.7, cloned 2026-10-10)
 
-See the Phase 0 report in `docs/sessions.md` for the evidence. Candidate:
-https://github.com/sohl-modders/Spirit-of-Half-Life-1.7 pinned to commit
-`d50205b1` ("Add SOHL 1.6"), the commit before a 2020 modification.
+Unofficial 2020 re-upload by sohl-modders, checked out at `d50205b`
+("Add SOHL 1.6"). The only later commit (`6f696bc`, 2020-07-07) adds
+`slTeleportToScript` to `CBaseMonster::m_scheduleList` in `defaultai.cpp`, a
+modern fix, so it is deliberately not checked out. In this mirror the 1.6
+and 1.7 source trees are byte-identical; 1.7 differs only in data files.
+
+Evidence for 1.7 (details in `docs/sessions.md`, 2026-10-10): the prototype
+devkit ships the Spirit 1.7 fgd unmodified, and the hl.dll entity classnames
+match Spirit 1.6/1.7 exactly (no 1.5-only items, no 1.8 or 1.9 additions).
+CoF has Spirit's FMOD entities (`ambient_fmodstream`, `trigger_mp3audio`)
+that Paranoia lacks, so Spirit code entered CoF directly, besides through
+Paranoia.
+
+Layout: `SpiritSource/{cl_dll,dlls,common,engine,pm_shared,game_shared,dedicated,network,utils}`.
+
+| DLL | Files |
+|---|---|
+| hl.dll | `SpiritSource/dlls/*` (Spirit additions: `alias.cpp`, `locus.cpp`, `movewith.cpp`, `effects.cpp` env_* entities, `triggers.cpp` trigger_*/calc_*/motion_*, FMOD ambient code) |
+| client.dll | `SpiritSource/cl_dll/*` (particle system `aurora`, rain, Cg shader water, sky, `hud_spectator`) |

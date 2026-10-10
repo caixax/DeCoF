@@ -14,6 +14,8 @@ import json
 import os
 import subprocess
 import sys
+import urllib.parse
+import urllib.request
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import msvc  # noqa: E402
@@ -59,38 +61,76 @@ def build_base(units):
     return ok
 
 
-def ghidra_label(name):
-    # ApplySymbols stores C names without their leading underscore.
-    return name[1:] if name.startswith("_") else name
+MCP_URL = "http://127.0.0.1:8089"
+
+
+def mcp_up():
+    try:
+        with urllib.request.urlopen(MCP_URL + "/check_connection", timeout=2) as r:
+            return r.status == 200
+    except Exception:
+        return False
+
+
+def mcp_call(path, body=None, query=None, timeout=120):
+    url = MCP_URL + path
+    if query:
+        url += "?" + urllib.parse.urlencode(query)
+    data = json.dumps(body).encode() if body is not None else None
+    req = urllib.request.Request(url, data=data, headers={"Content-Type": "application/json"})
+    with urllib.request.urlopen(req, timeout=timeout) as r:
+        return json.loads(r.read().decode())
+
+
+def write_job(d, items, job):
+    os.makedirs(os.path.dirname(job), exist_ok=True)
+    with open(job, "w") as f:
+        f.write("symbols %s\n" % os.path.join(ROOT, d["symbols"]))
+        for u, full in items:
+            f.write("unit %s\n" % obj_path("target", full))
+            for name in u["functions"] + u.get("data", []):
+                f.write("include %s\n" % name)
 
 
 def build_target(units):
+    """Delink retail units with tools/ghidra_scripts/DelinkUnits.java.
+
+    Uses the running GhidraMCP server when it is up (it holds the project
+    lock and needs GHIDRA_MCP_ALLOW_SCRIPTS=1), otherwise headless Ghidra.
+    """
     by_dll = {}
     for dll, d, u, full in units:
         by_dll.setdefault(dll, (d, []))[1].append((u, full))
+    script = os.path.join(ROOT, "tools", "ghidra_scripts", "DelinkUnits.java")
+    use_mcp = mcp_up()
     ok = True
     for dll, (d, items) in by_dll.items():
-        args = ["/exporter", "COFF relocatable object"]
+        job = os.path.join(ROOT, "build", "jobs", "delink_%s.txt" % dll)
+        write_job(d, items, job)
         for u, full in items:
-            out = obj_path("target", full)
-            os.makedirs(os.path.dirname(out), exist_ok=True)
-            for name in u["functions"] + u.get("data", []):
-                args += ["/include", ghidra_label(name)]
-            args += ["/export", out]
-        log = os.path.join(ROOT, "build", "ghidra_logs", "delink_%s.log" % dll)
-        os.makedirs(os.path.dirname(log), exist_ok=True)
-        cmd = [os.path.join(GHIDRA, "support", "analyzeHeadless.bat"),
-               os.path.join(ROOT, "re"), "CoF" + d["ghidra_folder"],
-               "-process", d["ghidra_program"], "-noanalysis",
-               "-scriptPath", os.path.join(ROOT, "tools", "ghidra_scripts"),
-               "-postScript", "ApplySymbols.java", os.path.join(ROOT, d["symbols"]),
-               "-postScript", "DelinkProgram.java"] + args + ["-log", log]
-        rc = subprocess.call(cmd, cwd=ROOT, stdout=subprocess.DEVNULL,
-                             stderr=subprocess.STDOUT)
+            if os.path.exists(obj_path("target", full)):
+                os.remove(obj_path("target", full))
+        program = d["ghidra_folder"] + "/" + d["ghidra_program"]
+        if use_mcp:
+            res = mcp_call("/run_ghidra_script", body={
+                "script_name": script, "args": job, "program": program,
+                "timeout_seconds": 1800}, timeout=1900)
+            mcp_call("/save_program", query={"program": program})
+            rc = 0 if res.get("success") or res.get("status") == "success" else 1
+            log = json.dumps(res)[:2000]
+        else:
+            log = os.path.join(ROOT, "build", "ghidra_logs", "delink_%s.log" % dll)
+            cmd = [os.path.join(GHIDRA, "support", "analyzeHeadless.bat"),
+                   os.path.join(ROOT, "re"), "CoF" + d["ghidra_folder"],
+                   "-process", d["ghidra_program"], "-noanalysis",
+                   "-scriptPath", os.path.dirname(script),
+                   "-postScript", "DelinkUnits.java", job, "-log", log]
+            rc = subprocess.call(cmd, cwd=ROOT, stdout=subprocess.DEVNULL,
+                                 stderr=subprocess.STDOUT)
         for u, full in items:
             exists = os.path.exists(obj_path("target", full))
             print("target %-30s %s" % (full, "ok" if rc == 0 and exists else
-                                       "FAILED (rc %d, see %s)" % (rc, log)))
+                                       "FAILED (%s)" % log))
             ok &= rc == 0 and exists
     return ok
 

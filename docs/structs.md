@@ -32,3 +32,23 @@ fieldOffset, fieldSize, flags).
 - Consequence: `edict_t` grows to at least 0x328 in 1.6a. cof-enhanced
   reports an edict stride of 0x32C, which would mean a second 4-byte change
   elsewhere in `edict_t`; not yet verified.
+
+## Engine interface tables (1.6a)
+
+Confirmed 2026-10-10 from the copy loops in the exported entry points
+(`rep movsd` counts) and the member lists of the headers in `src/`.
+
+| Table | Size in 1.6a | Members | Matches | Evidence |
+|---|---|---|---|---|
+| `enginefuncs_t` (hl.dll `g_engfuncs` 0x10222F48) | 0x240 | 144 | Paranoia / pre-Steam HLSDK; the Steam-era HLSDK has 159 | `GiveFnptrsToDll` copies 0x90 dwords |
+| `DLL_FUNCTIONS` (hl.dll `gFunctionTable` 0x102119F8) | 0xC8 | 50 | HLSDK, `INTERFACE_VERSION` 140 | `GetEntityAPI` copies 0x32 dwords |
+| `NEW_DLL_FUNCTIONS` | not exported | - | - | no `GetNewDLLFunctions` export |
+| `cl_enginefunc_t` (client.dll `gEngfuncs` 0x101B2608) | 0x194 | 101 | Paranoia, `CLDLL_INTERFACE_VERSION` 7 | `Initialize` copies 0x65 dwords |
+
+## triangleapi_t (client.dll 1.6a): two Steam-era members
+
+client.dll calls `gEngfuncs.pTriAPI` slots 18 and 19 (offsets 0x48 and
+0x4C). Paranoia's `common/triangleapi.h` (copied into `src/`) ends before
+them; the Steam-era HLSDK names them `Color4fRendermode` and `FogParams`.
+`src/common/triangleapi.h` needs both members appended once client code is
+reconstructed. Evidence: `docs/calls/client_1.6a_engfuncs.csv`.

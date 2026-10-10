@@ -30,6 +30,26 @@ through a table count as calls. Arguments are recovered only when they are
 pushed constants in the same basic block. Rows with `<reg>` are arguments the
 scanner could not resolve. Treat counts as lower bounds.
 
+## Changes from 1.55 (2012) to 1.6a (2020)
+
+Same scan run on the 1.55 DLLs (`docs/calls/*_1.55_*.csv`; the 1.55 hl.dll
+table address comes from its PDB, `g_engfuncs` at 0x10219428):
+
+| Interface | Added in 1.6a | Removed in 1.6a |
+|---|---|---|
+| Server user messages | `BigPrick`, `PlaySFX`, `SaveHack` | one message whose name is an offensive slur (see `hl_1.55_usermsgs.csv`) |
+| Client message hooks | `BigPrick`, `PlaySFX` | the same slur-named message, `AmmoInv` |
+| Message sizes | `Damage` 12 to 13 bytes | |
+| Server cvars | `cof_monsterhumanscale`, `cof_monsterhumanyawspeed`, `sv_coop_nosave` | |
+| Client cvars | `cl_fovmultiplier`, `cl_vignette`, `gl_blurstepsx`, `gl_blurstepsy`, `gl_opacity` | |
+| Client commands | `donatorcheck` | |
+| Server exports | `CBowlingBall::BowlingUse`, `CMp5::SuicideShot`, `ammo_mp5`, `bowling_ball`, `cof_mp5modesaverestore`, `weapon_mp5` | `CMultiManager::ManagerReport`, `trip_beam` (both `_DEBUG` only) |
+| Client imports | `steam_api.dll`: `SteamAPI_Init`, `SteamAPI_Shutdown`, `SteamFriends`, `SteamUser` | |
+| Server imports | `steam_api.dll`: `SteamAPI_Init`, `SteamFriends`, `SteamUserStats` | |
+
+The engine tables kept their size (144 and 101 members), so the 2020
+rebuild did not move to the Steam-era engine interface.
+
 ## Server (hl.dll)
 
 ### Entry points

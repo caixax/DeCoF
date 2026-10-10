@@ -100,8 +100,13 @@ MEM_REG_OFF = re.compile(r"dword ptr \[(e[a-z]{2})(?: \+ (0x[0-9a-f]+|\d+))?\]$"
 MOV_REG_ABS = re.compile(r"^(e[a-z]{2}), dword ptr \[0x([0-9a-f]+)\]$")
 
 
+TABLE_OVERRIDE = [None]
+
+
 def find_table(img, export, max_scan=0x40):
     """Find 'mov ecx,N ... mov edi,imm32 ... rep movsd' in the export."""
+    if TABLE_OVERRIDE[0]:
+        return TABLE_OVERRIDE[0]
     va = img.exports()[export]
     code = img.read(va, max_scan)
     md = capstone.Cs(capstone.CS_ARCH_X86, capstone.CS_MODE_32)
@@ -428,7 +433,11 @@ def main():
     ap.add_argument("dll")
     ap.add_argument("out")
     ap.add_argument("--tag", default="1.6a")
+    ap.add_argument("--table", help="engine table VA:size (hex), when the filling export has no rep movsd")
     args = ap.parse_args()
+    if args.table:
+        va, size = args.table.split(":")
+        TABLE_OVERRIDE[0] = (int(va, 16), int(size, 16))
     os.makedirs(args.out, exist_ok=True)
     img = Image(args.dll)
     insns = sweep(img)

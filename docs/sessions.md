@@ -90,3 +90,67 @@ Waiting for the user to:
    installer, or say how to proceed.
 3. Confirm the Spirit version before it is cloned.
 Then resume Phase 0 at step 6 (import into RE tool), then step 8.
+
+## 2026-10-10 (continued): Phase 0 completed
+
+The user authorized downloading and installing all tooling (official
+sources only) and asked for documentation of everything found, calls
+included.
+
+### Done
+
+- **Exact target toolchain.** cl 19.27.29112 / link 14.27.29112 extracted
+  from the official VS 2019 16.7.7 package (Microsoft CDN, SHA-256 checked
+  against the channel manifest) into `I:\Tools\msvc-14.27.29112`. Headers
+  and libraries from VS 2019 Build Tools (MSVC 14.27.29110 side by side,
+  installed through the official installer) and Windows SDK 10.0.19041.
+  The SxS toolset's own cl is 19.27.29120 and is not used.
+- **RE tool.** Ghidra 12.1.4, GhidraMCP 7.0.0-rc.2 (bethington/ghidra-mcp:
+  209 tools, headless server on a persistent project, Ghidra 12.1.4
+  support) and ghidra-delinker-extension 0.9.2. All 12 binaries imported
+  into `re/CoF.gpr` (`tools/ghidra_import.py`), PDBs applied to the 1.0,
+  1.4 and 1.55 hl.dll. `.mcp.json` registers the bridge; the server runs
+  with `tools\ghidra_mcp_server.bat`. See `docs/tooling.md`.
+- **Spirit 1.7** cloned to `refs/Spirit` at `d50205b`.
+- **Build and objdiff (Phase 0 step 8) proven.** `tools/build.py` compiles
+  units with the exact compiler; `DelinkUnits.java` delinks retail units
+  into COFF objects with relocations; objdiff-cli 3.8.2 reports
+  `hl/dlls/h_export` at 100% (GiveFnptrsToDll, DllMain). Committed as
+  `hl: h_export.cpp (MATCHED, 100)`.
+- **Flags deduced** for the 1.6a game DLLs: `/O2 /Oy- /GS /GR /EHsc /MT`,
+  SSE2, no `/GL` (`docs/toolchains.md`).
+- **Interface docs.** `tools/scan_calls.py` and `docs/interfaces.md`:
+  engine table usage, user messages, cvars, commands, client-server command
+  strings, imports and exports for 1.6a and 1.55, plus the 1.55 to 1.6a
+  diff. Raw data in `docs/calls/`.
+- **Struct facts** added to `docs/structs.md`: engine table sizes
+  (`enginefuncs_t` 144 members, pre-Steam; `cl_enginefunc_t` 101) and the
+  two Steam-era `triangleapi_t` members the 1.6a client calls.
+- `src/` seeded with the Paranoia 1.2 headers (unverified baseline) plus
+  `src/dlls/h_export.cpp`.
+
+### Not done
+
+- opengl32.dll needs VC6 Standard Edition (cl 12.00.8168). Microsoft never
+  offered it as a free download; only the Visual Studio Subscriptions
+  archive has it. Not downloaded from unofficial mirrors (AGENTS.md).
+
+### Status
+
+| DLL | Functions known | MATCHED | EQUIVALENT |
+|---|---|---|---|
+| hl.dll 1.6a | 2 mapped so far | 2 | 0 |
+| client.dll 1.6a | 0 | 0 | 0 |
+| opengl32.dll | 0 | 0 | 0 |
+
+Percentages against the full function count come with Phase 1, when
+`docs/progress.csv` lists every function.
+
+### Next session starts here
+
+1. Start the MCP server: `tools\ghidra_mcp_server.bat --project
+   I:\Projects\cof-decompiled\re\CoF.gpr --program /1.6a/hl.dll`, then
+   approve the `ghidra` MCP server in Claude Code.
+2. Phase 1 (after the user confirms): carry names from the 1.55 PDB build
+   to 1.6a by function matching, fill `docs/progress.csv` for every 1.6a
+   function, `tools/symbols/hl_1.6a.csv`, TU list and link order.

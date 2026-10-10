@@ -115,6 +115,6 @@ Debug build has no /RTC stack fill either (/ZI /Od without /RTC1).
 
 | Purpose | Toolchain | Status on this machine |
 |---|---|---|
-| 1.6a client.dll and hl.dll (the target) | MSVC v142 14.27, cl 19.27.29112 | not installed (only 14.44 from VS 2022 Build Tools) |
-| opengl32.dll | Visual C++ 6.0 RTM Standard Edition, cl 12.00.8168 | not installed |
-| Optional: solving functions in the 1.55 PDB build first | Visual C++ .NET 2003 RTM, cl 13.10.3077 | not installed |
+| 1.6a client.dll and hl.dll (the target) | cl 19.27.29112 / link 14.27.29112 | **installed** (`I:\Tools\msvc-14.27.29112`, see `docs/tooling.md`); proven by `hl/dlls/h_export` at 100% |
+| opengl32.dll | Visual C++ 6.0 RTM Standard Edition, cl 12.00.8168 | not installed. Microsoft never released VC6 for free download; the only official source is the Visual Studio Subscriptions archive (needs a subscription). Unofficial mirrors are excluded by the project rules. |
+| Optional: solving functions in the 1.55 PDB build first | Visual C++ .NET 2003 RTM, cl 13.10.3077 | not installed, same availability as VC6. Not needed for the target. |
