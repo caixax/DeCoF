@@ -1,0 +1,15 @@
+{
+  "$schema": "https://raw.githubusercontent.com/encounter/objdiff/main/config.schema.json",
+  "build_base": false,
+  "build_target": false,
+  "units": [
+    {
+      "name": "hl/dlls/h_export",
+      "target_path": "build/target/hl/dlls/h_export.obj",
+      "base_path": "build/base/hl/dlls/h_export.obj",
+      "metadata": {
+        "source_path": "src/dlls/h_export.cpp"
+      }
+    }
+  ]
+}
