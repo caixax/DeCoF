@@ -5,6 +5,9 @@
   python tools/build.py objdiff             write objdiff.json
   python tools/build.py report              objdiff report, per unit and function
   python tools/build.py all    [unit ...]   base + target + objdiff + report
+  python tools/build.py link   <dll>        link all units of a DLL into build/bin/<dll>
+                                            (only when the DLL has a "link" section and
+                                            every unit compiles), then compare with retail
 
 Units are named <dll>/<path>, for example hl/dlls/h_export. Config lives in
 tools/units.json. Outputs: build/base/<dll>/<path>.obj (ours) and
@@ -19,6 +22,7 @@ import urllib.request
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import msvc  # noqa: E402
+import msvc6  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 GHIDRA = r"I:\Tools\ghidra_12.1.4_PUBLIC"
@@ -45,17 +49,29 @@ def obj_path(kind, full):
     return os.path.join(ROOT, "build", kind, *full.split("/")) + ".obj"
 
 
+def toolchain(d):
+    """msvc1427 (default, the 1.6a game DLLs) or vc6 (engine, opengl32, GameUI)."""
+    return msvc6 if d.get("toolchain") == "vc6" else msvc
+
+
+def unit_functions(u):
+    if "functions_file" in u:
+        return [l.strip() for l in open(os.path.join(ROOT, u["functions_file"])) if l.strip()]
+    return u.get("functions", [])
+
+
 def build_base(units):
-    msvc.check()
     ok = True
     for dll, d, u, full in units:
+        tc = toolchain(d)
+        tc.check()
         out = obj_path("base", full)
         os.makedirs(os.path.dirname(out), exist_ok=True)
-        cmd = [msvc.cl_path()] + d["cflags"]
+        cmd = [tc.cl_path()] + d["cflags"]
         cmd += ["/D" + x for x in d["defines"]]
         cmd += ["/I" + os.path.join(ROOT, x) for x in d["includes"]]
         cmd += ["/Fo" + out, os.path.join(ROOT, u["source"])]
-        rc = subprocess.call(cmd, env=msvc.env(), cwd=ROOT)
+        rc = subprocess.call(cmd, env=tc.env(), cwd=ROOT, stdout=subprocess.DEVNULL)
         print("base   %-30s %s" % (full, "ok" if rc == 0 else "FAILED (%d)" % rc))
         ok &= rc == 0
     return ok
@@ -88,7 +104,7 @@ def write_job(d, items, job):
         f.write("symbols %s\n" % os.path.join(ROOT, d["symbols"]))
         for u, full in items:
             f.write("unit %s\n" % obj_path("target", full))
-            for name in u["functions"] + u.get("data", []):
+            for name in unit_functions(u) + u.get("data", []):
                 f.write("include %s\n" % name)
 
 
@@ -172,10 +188,42 @@ def report():
     return True
 
 
+def link(dll):
+    cfg = json.load(open(CONFIG))["dlls"][dll]
+    if "link" not in cfg:
+        sys.exit("%s has no link section in tools/units.json" % dll)
+    units = load_units([])
+    units = [x for x in units if x[0] == dll]
+    if not build_base(units):
+        sys.exit("not linking: some units do not compile")
+    tc = toolchain(cfg)
+    lk = cfg["link"]
+    tmp = os.path.join(ROOT, "build", "link", dll)
+    os.makedirs(tmp, exist_ok=True)
+    out = os.path.join(tmp, lk["out"])
+    cmd = [tc.link_path()] + lk["flags"] + ["/out:" + out, "/map:" + out + ".map"]
+    cmd += [obj_path("base", full) for _d, _c, _u, full in units] + lk["libs"]
+    rc = subprocess.call(cmd, env=tc.env(), cwd=ROOT, stdout=subprocess.DEVNULL)
+    if rc != 0:
+        sys.exit("link failed (%d)" % rc)
+    bindir = os.path.join(ROOT, "build", "bin")
+    os.makedirs(bindir, exist_ok=True)
+    import shutil
+    shutil.copyfile(out, os.path.join(bindir, lk["out"]))
+    print("linked build/bin/%s" % lk["out"])
+    if "retail" in lk:
+        subprocess.call([sys.executable, os.path.join(ROOT, "tools", "compare_pe.py"),
+                         os.path.join(bindir, lk["out"]), os.path.join(ROOT, lk["retail"])])
+    return True
+
+
 def main():
     if len(sys.argv) < 2:
         sys.exit(__doc__)
     cmd, sel = sys.argv[1], sys.argv[2:]
+    if cmd == "link":
+        link(sel[0])
+        return
     all_units = load_units([])
     units = load_units(sel) if sel else all_units
     if cmd == "base":

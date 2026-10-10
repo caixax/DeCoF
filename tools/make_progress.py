@@ -195,6 +195,45 @@ def engine_rows(stats):
     return out
 
 
+# binaries whose names come from a link map of our own matching rebuild
+SYMBOL_MAP_BINS = {"opengl32": ("PARANOIA", "src/opengl32/")}
+
+
+def symbol_map_rows(stats):
+    existing = {}
+    if os.path.exists(p("docs", "progress.csv")):
+        for r in csv.DictReader(open(p("docs", "progress.csv"))):
+            existing[(r["dll"], r["va"])] = r
+    cfg = json.load(open(p("tools", "units.json")))["dlls"]
+    out = []
+    for dll, (cls, src_dir) in SYMBOL_MAP_BINS.items():
+        fpath = p("build", "features", "%s_1.6a.jsonl" % dll)
+        if not os.path.exists(fpath):
+            continue
+        funcs = load_features(dll)
+        names = {int(r["va"], 16): r for r in csv.DictReader(open(p("tools", "symbols", "%s_1.6a.csv" % dll)))}
+        src_of = {}
+        for u in cfg.get(dll, {}).get("units", []):
+            for n in open(p(u["functions_file"])).read().split():
+                src_of[n] = u["source"]
+        for ea in sorted(funcs):
+            f = funcs[ea]
+            if f["thunk"]:
+                stats[(dll, "skipped")] += 1
+                continue
+            n = names.get(ea)
+            name = n["name"] if n else ""
+            prev = existing.get((dll, "%08X" % ea), {})
+            out.append({"dll": dll, "va": "%08X" % ea, "size": f["size"], "name": name,
+                        "demangled": short(name) if name else "", "class": cls if name else "UNKNOWN",
+                        "source_file": src_of.get(name, ""), "first_version": "2010-prototype",
+                        "changed": "same file in prototype, 1.0 and 1.6a",
+                        "status": prev.get("status") or "TODO", "match_percent": prev.get("match_percent", ""),
+                        "evidence": n["evidence"] if n else "", "notes": prev.get("notes", "")})
+            stats[(dll, cls if name else "UNKNOWN")] += 1
+    return out
+
+
 def main():
     index = json.load(open(p("build", "ref_index.json")))
     existing = {}
@@ -309,12 +348,13 @@ def main():
         rows += dll_rows
 
     rows += engine_rows(stats)
+    rows += symbol_map_rows(stats)
 
     with open(p("docs", "progress.csv"), "w", newline="") as fh:
         w = csv.DictWriter(fh, fieldnames=FIELDS, lineterminator="\n")
         w.writeheader()
         w.writerows(rows)
-    for dll in list(DLLS) + list(ENGINE_BINS):
+    for dll in list(DLLS) + list(ENGINE_BINS) + list(SYMBOL_MAP_BINS):
         print(dll, {k[1]: v for k, v in stats.items() if k[0] == dll})
 
 

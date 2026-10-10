@@ -5,12 +5,37 @@
       "ghidra_folder": "/1.6a",
       "ghidra_program": "hl.dll",
       "symbols": "tools/symbols/hl_1.6a.csv",
-      "cflags": ["/nologo", "/c", "/O2", "/Oy-", "/GS", "/GR", "/EHsc", "/MT",
-                 "/W3", "/Gd", "/fp:precise", "/Zc:wchar_t", "/Zc:forScope"],
-      "defines": ["WIN32", "NDEBUG", "_WINDOWS", "QUIVER", "VOXEL", "QUAKE2",
-                  "VALVE_DLL"],
-      "includes": ["src/dlls", "src/engine", "src/common", "src/pm_shared",
-                   "src/game_shared"],
+      "cflags": [
+        "/nologo",
+        "/c",
+        "/O2",
+        "/Oy-",
+        "/GS",
+        "/GR",
+        "/EHsc",
+        "/MT",
+        "/W3",
+        "/Gd",
+        "/fp:precise",
+        "/Zc:wchar_t",
+        "/Zc:forScope"
+      ],
+      "defines": [
+        "WIN32",
+        "NDEBUG",
+        "_WINDOWS",
+        "QUIVER",
+        "VOXEL",
+        "QUAKE2",
+        "VALVE_DLL"
+      ],
+      "includes": [
+        "src/dlls",
+        "src/engine",
+        "src/common",
+        "src/pm_shared",
+        "src/game_shared"
+      ],
       "units": [
         {
           "name": "dlls/h_export",
@@ -20,7 +45,62 @@
             "_DllMain@12"
           ]
         }
-      ]
+      ],
+      "toolchain": "msvc1427"
+    },
+    "opengl32": {
+      "toolchain": "vc6",
+      "ghidra_folder": "/1.6a",
+      "ghidra_program": "opengl32.dll",
+      "symbols": "tools/symbols/opengl32_1.6a.csv",
+      "cflags": [
+        "/nologo",
+        "/c",
+        "/G6",
+        "/Gz",
+        "/MD",
+        "/W4",
+        "/GX",
+        "/Od",
+        "/Op"
+      ],
+      "defines": [
+        "WIN32"
+      ],
+      "includes": [
+        "src/opengl32"
+      ],
+      "units": [
+        {
+          "name": "opengl32",
+          "source": "src/opengl32/opengl32.cpp",
+          "functions_file": "tools/units/opengl32_opengl32.txt"
+        },
+        {
+          "name": "OtherOGL",
+          "source": "src/opengl32/OtherOGL.cpp",
+          "functions_file": "tools/units/opengl32_OtherOGL.txt"
+        }
+      ],
+      "link": {
+        "out": "opengl32.dll",
+        "retail": "versions/1.6a/opengl32.dll",
+        "flags": [
+          "/nologo",
+          "/entry:DllMain",
+          "/dll",
+          "/pdb:none",
+          "/machine:I386",
+          "/def:src/opengl32/opengl32.def"
+        ],
+        "libs": [
+          "kernel32.lib",
+          "user32.lib",
+          "gdi32.lib",
+          "advapi32.lib",
+          "winmm.lib"
+        ]
+      }
     }
   }
 }

@@ -116,5 +116,5 @@ Debug build has no /RTC stack fill either (/ZI /Od without /RTC1).
 | Purpose | Toolchain | Status on this machine |
 |---|---|---|
 | 1.6a client.dll and hl.dll (the target) | cl 19.27.29112 / link 14.27.29112 | **installed** (`I:\Tools\msvc-14.27.29112`, see `docs/tooling.md`); proven by `hl/dlls/h_export` at 100% |
-| opengl32.dll | Visual C++ 6.0 RTM Standard Edition, cl 12.00.8168 | not installed. Microsoft never released VC6 for free download; the only official source is the Visual Studio Subscriptions archive (needs a subscription). Unofficial mirrors are excluded by the project rules. |
+| opengl32.dll, hw.dll, GameUI.dll, cof.exe | Visual C++ 6.0 RTM, cl 12.00.8168 / link 6.00.8168 | **installed** in `I:\Tools\vc6\VC98` from the user's licensed Visual C++ 6.0 Professional Edition (part X04-58170, disc image supplied by the user, MD5 checked); `tools/msvc6.py`. Proven by opengl32.dll: all 367 functions MATCHED, `.text` `.data` `.reloc` of the full link identical to retail. The retail opengl32.dll was compiled by the Standard Edition (no optimizer); Professional with `/Od` gives the same code, only the Rich header edition tag differs. |
 | Optional: solving functions in the 1.55 PDB build first | Visual C++ .NET 2003 RTM, cl 13.10.3077 | not installed, same availability as VC6. Not needed for the target. |

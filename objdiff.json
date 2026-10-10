@@ -10,6 +10,22 @@
       "metadata": {
         "source_path": "src/dlls/h_export.cpp"
       }
+    },
+    {
+      "name": "opengl32/opengl32",
+      "target_path": "build/target/opengl32/opengl32.obj",
+      "base_path": "build/base/opengl32/opengl32.obj",
+      "metadata": {
+        "source_path": "src/opengl32/opengl32.cpp"
+      }
+    },
+    {
+      "name": "opengl32/OtherOGL",
+      "target_path": "build/target/opengl32/OtherOGL.obj",
+      "base_path": "build/base/opengl32/OtherOGL.obj",
+      "metadata": {
+        "source_path": "src/opengl32/OtherOGL.cpp"
+      }
     }
   ]
 }

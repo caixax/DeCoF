@@ -238,3 +238,24 @@ hl.dll 2 functions MATCHED (`h_export.cpp`); everything else TODO.
 
 Next: GCC/MSVC vtable alignment for GameUI.dll and the C++ parts of hw.dll
 (Ghidra did not recover VC6 vtables yet), then Phase 2 on hl.dll.
+
+## 2026-10-11 (continued): VC6 installed, opengl32.dll fully matched
+
+- The user supplied a disc image of Visual C++ 6.0 Professional Edition
+  (part X04-58170) as the copy covered by their family's license. Converted
+  from the Alcohol 120% raw image (2448-byte sectors, Mode 1) to ISO, MD5
+  checked, `VC98` copied to `I:\Tools\vc6` without running the installer.
+  cl 12.00.8168 / link 6.00.8168, the exact builds in the retail Rich
+  headers. The image was moved out of the repo (`tools/_download/` is now
+  git-ignored).
+- **opengl32.dll is fully decompiled**: Paranoia's wrapper source
+  (`src/opengl32/`, two Russian comments translated) compiled with VC6 at
+  `/G6 /Gz /MD /GX /Od /Op` matches all 367 functions (objdiff 100%, 22,929
+  bytes). The full link (`python tools/build.py link opengl32`) is identical
+  to retail in every section; only the timestamps and the Rich header's
+  compiler-edition tag (Professional instead of Standard) differ.
+- New tools: `tools/msvc6.py`, `tools/compare_pe.py`, `tools/update_status.py`
+  (objdiff report to progress.csv), `build.py link <dll>`, per-DLL
+  `toolchain` and `functions_file` in `tools/units.json`.
+
+Status: opengl32.dll 367/367 MATCHED (100%); hl.dll 2 MATCHED; others TODO.
