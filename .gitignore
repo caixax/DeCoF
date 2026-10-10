@@ -1,0 +1,61 @@
+# Retail and reference material. Never committed.
+/versions/
+/versions.zip
+/refs/
+
+# Build output and assembled game
+/build/
+/dist/
+
+# Binaries and debug data
+*.dll
+*.exe
+*.pdb
+*.lib
+*.exp
+*.ilk
+*.obj
+*.o
+*.idb
+*.pch
+*.res
+*.map
+*.so
+*.dylib
+*.asi
+*.zip
+*.7z
+*.rar
+
+# Game assets (in case any are copied outside versions/ by mistake)
+*.wad
+*.bsp
+*.mdl
+*.spr
+*.wav
+*.mp3
+*.tga
+*.bmp
+
+# RE tool databases
+*.gpr
+*.rep/
+*.idb
+*.i64
+*.id0
+*.id1
+*.id2
+*.nam
+*.til
+
+# Editor and OS clutter
+*.ncb
+*.opt
+*.plg
+*.aps
+*.suo
+*.user
+.vs/
+Thumbs.db
+desktop.ini
+__pycache__/
