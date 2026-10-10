@@ -121,6 +121,60 @@ Retail facts it states (to be verified in Phase 1, see `docs/structs.md`):
 
 File to DLL map: none (no game code). Patches touch engine only.
 
+## E. refs/RebuiltSimon (speedrun plugin, C, CMake, MinHook)
+
+What it provides: hardcoded RVAs and byte signatures for the Steam build.
+`halflife_sdk/` is an xash3d-fwgs submodule (checked out). Plugin code in
+`RebuiltSimon/` (`Hooks/Client`, `Hooks/Server`, `SDK/`, `Features/`).
+Facts it states (to verify):
+
+- hl.dll: pmove pointer at RVA 0x220C50; NOCLIP to WALK reset in
+  `CBasePlayer::PostThink` at RVA 0xEB203; signatures for
+  `PM_PreventMegaBunnyJumping` (RVA 0x8E70) and `PM_UnDuck` (RVA 0x95B0,
+  aligned-stack prologue with /GS cookie); CBasePlayer offsets
+  0x2038, 0x21E8 (infinite stamina), 0x21F0 (stamina float).
+- hw.dll (out of scope): engine table addresses (`cl_enginefunc_t`,
+  `enginefuncs_t`, `DLL_FUNCTIONS`, `cldll_func_t`), `Host_ValidSave`
+  signature (used by BunnymodXT to detect the CoF Steam build).
+- client.dll: mouse accumulator at RVA 0x543580.
+
+File to DLL map: none (no game code).
+
+## F. refs/MadSimonX (debug plugin, C++, MSVC 2022)
+
+What it provides: RVAs for hl.dll helpers and hand-reconstructed class
+headers in `MadSimonX/vendor/hlsdk/` (Spirit `//LRC` fields, Paranoia fields,
+CoF fields, "1.6a" padding blocks). Facts it states (to verify):
+
+- hl.dll RVAs: `UTIL_FindEntityByString` 0x118480,
+  `CBasePlayer::GiveNamedItem` 0xE0A80 (two extra parameters vs HLSDK),
+  `UTIL_ScreenShake` 0x119DE0, `CBaseEntity::Create` 0x17950,
+  `UTIL_Remove` 0x119900, `CWorld::Precache` 0x120EB0, gpGlobals 0x223188.
+- CBaseEntity vtable starts with the Spirit virtuals (DesiredAction,
+  SetNextThink, AbsoluteNextThink, ThinkCorrection, CalcPosition,
+  CalcVelocity, CalcRatio, IsAlias) plus a Paranoia GasWarning before
+  Spawn. Derived class sizes: CBaseEntity 0xDC, CBaseDelay 0xEC,
+  CBaseAnimating 0x100, CBaseToggle 0x180, CBaseMonster 0x368,
+  CBasePlayerItem 0x16C.
+- entvars_t: `int __padding` after `light_level`; edict_t: trailing pad
+  (stride 0x32C).
+- Engine headers are pre-2013 Valve SDK (no `pfnFilteredClientCmd`).
+
+File to DLL map: none (no game code).
+
+## G. refs/CryOfFear-FirstPerson (client and server proxy wrappers, C++, Python tools)
+
+What it provides: the full 846-name hl.dll export list
+(`src/server/hl_exports.txt`, identical to retail), an entvars_t check
+script (`test/entvars_layout.py`, reads the save table, same method as
+`docs/structs.md`), user message names (Flashlight, FlashFlags, DualFlash,
+FlashBat), client commands (+attack3, +dodge, quicksel, weapontoggle), and
+SHA-256 pins of retail hw.dll, opengl32.dll and client.dll (all equal to
+1.6a). Names the extra entvars field `int cof_extra` (its own name, no
+evidence) and asserts `offsetof(edict_t, v) == 0x80`.
+
+File to DLL map: none (wrappers only).
+
 ## H. Spirit of Half-Life (not cloned, awaiting confirmation)
 
 See the Phase 0 report in `docs/sessions.md` for the evidence. Candidate:
