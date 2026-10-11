@@ -160,6 +160,7 @@ public:
 	static	void SpawnRandomGibs( entvars_t *pevVictim, int cGibs, int human );
 	static	void SpawnRandomGibs( entvars_t *pevVictim, int cGibs, int notfirst, const char *szGibModel ); //LRC
 	static  void SpawnStickyGibs( entvars_t *pevVictim, Vector vecOrigin, int cGibs );
+	static	void SpawnGib( entvars_t *pevVictim, const char *szGibModel, int body );	// CoF (1.55 PDB)
 
 	int		m_bloodColor;
 	int		m_cBloodDecals;

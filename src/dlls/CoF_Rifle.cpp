@@ -505,9 +505,9 @@ void CRifle::PrimaryAttack( void )
 	m_flNextKickReductionTime = gpGlobals->time + 1.8;
 
 	if ( !m_bRaised )
-		vecDir = m_pPlayer->FireBulletsPlayer( 1, vecSrc, vecAiming, m_AccuracyVector, 8192, 23, 2, gSkillData.DmgRifle, m_pPlayer->pev, m_pPlayer->random_seed );
+		vecDir = m_pPlayer->FireBulletsPlayer( 1, vecSrc, vecAiming, m_AccuracyVector, 8192, BULLET_PLAYER_RIFLE, 2, gSkillData.DmgRifle, m_pPlayer->pev, m_pPlayer->random_seed );
 	else
-		vecDir = m_pPlayer->FireBulletsPlayer( 1, vecSrc, vecAiming, VECTOR_CONE_1DEGREES, 8192, 23, 2, gSkillData.DmgRifle, m_pPlayer->pev, m_pPlayer->random_seed );
+		vecDir = m_pPlayer->FireBulletsPlayer( 1, vecSrc, vecAiming, VECTOR_CONE_1DEGREES, 8192, BULLET_PLAYER_RIFLE, 2, gSkillData.DmgRifle, m_pPlayer->pev, m_pPlayer->random_seed );
 
 	m_flTimeWeaponIdle = gpGlobals->time + 0.58;
 
