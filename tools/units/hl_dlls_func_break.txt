@@ -1,5 +1,5 @@
-_func_breakable
-_func_pushable
+??$GetClassPtr@VCBreakable@@@@YAPAVCBreakable@@PAV0@@Z
+??$GetClassPtr@VCPushable@@@@YAPAVCPushable@@PAV0@@Z
 ?BreakTouch@CBreakable@@QAEXPAVCBaseEntity@@@Z
 ?BreakUse@CBreakable@@QAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z
 ?DamageDecal@CBreakable@@UAEHH@Z
@@ -29,3 +29,5 @@ _func_pushable
 ?Touch@CPushable@@UAEXPAVCBaseEntity@@@Z
 ?TraceAttack@CBreakable@@UAEXPAUentvars_s@@MVVector@@PAUTraceResult@@H@Z
 ?Use@CPushable@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z
+_func_breakable
+_func_pushable

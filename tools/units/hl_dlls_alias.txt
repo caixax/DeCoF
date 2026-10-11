@@ -1,7 +1,7 @@
-_info_alias
-_info_group
-_multi_alias
-_trigger_changealias
+??$GetClassPtr@VCInfoAlias@@@@YAPAVCInfoAlias@@PAV0@@Z
+??$GetClassPtr@VCInfoGroup@@@@YAPAVCInfoGroup@@PAV0@@Z
+??$GetClassPtr@VCMultiAlias@@@@YAPAVCMultiAlias@@PAV0@@Z
+??$GetClassPtr@VCTriggerChangeAlias@@@@YAPAVCTriggerChangeAlias@@PAV0@@Z
 ?AbsoluteNextThink@CBaseEntity@@UAEXM@Z
 ?ChangeValue@CInfoAlias@@UAEXH@Z
 ?FlushChanges@CInfoAlias@@UAEXXZ
@@ -24,3 +24,7 @@ _trigger_changealias
 ?Use@CInfoAlias@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z
 ?Use@CInfoGroup@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z
 ?Use@CTriggerChangeAlias@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z
+_info_alias
+_info_group
+_multi_alias
+_trigger_changealias

@@ -1,6 +1,5 @@
-_scripted_sequence
-_monster_furniture
-_scripted_sentence
+??$GetClassPtr@VCFurniture@@@@YAPAVCFurniture@@PAV0@@Z
+??$GetClassPtr@VCScriptedSentence@@@@YAPAVCScriptedSentence@@PAV0@@Z
 ?AcceptableSpeaker@CScriptedSentence@@QAEHPAVCBaseMonster@@@Z
 ?Activate@CCineMonster@@UAEXXZ
 ?Blocked@CCineMonster@@UAEXPAVCBaseEntity@@@Z
@@ -36,3 +35,5 @@ _scripted_sentence
 ?Touch@CCineMonster@@UAEXPAVCBaseEntity@@@Z
 ?Use@CCineMonster@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z
 ?Use@CScriptedSentence@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z
+_monster_furniture
+_scripted_sentence

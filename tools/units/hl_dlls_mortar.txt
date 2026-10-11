@@ -1,5 +1,5 @@
-_func_mortar_field
-_monster_mortar
+??$GetClassPtr@VCFuncMortarField@@@@YAPAVCFuncMortarField@@PAV0@@Z
+??$GetClassPtr@VCMortar@@@@YAPAVCMortar@@PAV0@@Z
 ?FieldUse@CFuncMortarField@@QAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z
 ?KeyValue@CFuncMortarField@@UAEXPAUKeyValueData_s@@@Z
 ?MortarExplode@CMortar@@QAEXXZ
@@ -10,3 +10,5 @@ _monster_mortar
 ?Save@CFuncMortarField@@UAEHAAVCSave@@@Z
 ?Spawn@CFuncMortarField@@UAEXXZ
 ?Spawn@CMortar@@UAEXXZ
+_func_mortar_field
+_monster_mortar

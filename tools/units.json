@@ -40,10 +40,7 @@
         {
           "name": "dlls/h_export",
           "source": "src/dlls/h_export.cpp",
-          "functions": [
-            "?GiveFnptrsToDll@@YGXPAUenginefuncs_s@@PAUglobalvars_t@@@Z",
-            "_DllMain@12"
-          ]
+          "functions_file": "tools/units/hl_dlls_h_export.txt"
         },
         {
           "name": "pm_shared/pm_math",
@@ -319,6 +316,486 @@
           "name": "dlls/world",
           "source": "src/dlls/world.cpp",
           "functions_file": "tools/units/hl_dlls_world.txt"
+        },
+        {
+          "name": "dlls/cof_3dkeypad",
+          "source": "src/dlls/CoF_3DKeypad.cpp",
+          "functions_file": "tools/units/hl_dlls_cof_3dkeypad.txt"
+        },
+        {
+          "name": "dlls/cof_action",
+          "source": "src/dlls/CoF_Action.cpp",
+          "functions_file": "tools/units/hl_dlls_cof_action.txt"
+        },
+        {
+          "name": "dlls/cof_animatedcamera",
+          "source": "src/dlls/CoF_AnimatedCamera.cpp",
+          "functions_file": "tools/units/hl_dlls_cof_animatedcamera.txt"
+        },
+        {
+          "name": "dlls/cof_axe",
+          "source": "src/dlls/CoF_Axe.cpp",
+          "functions_file": "tools/units/hl_dlls_cof_axe.txt"
+        },
+        {
+          "name": "dlls/cof_barshoot",
+          "source": "src/dlls/CoF_BarShoot.cpp",
+          "functions_file": "tools/units/hl_dlls_cof_barshoot.txt"
+        },
+        {
+          "name": "dlls/cof_boat",
+          "source": "src/dlls/CoF_Boat.cpp",
+          "functions_file": "tools/units/hl_dlls_cof_boat.txt"
+        },
+        {
+          "name": "dlls/cof_booklaser",
+          "source": "src/dlls/CoF_BookLaser.cpp",
+          "functions_file": "tools/units/hl_dlls_cof_booklaser.txt"
+        },
+        {
+          "name": "dlls/cof_booksimonsledgehammer",
+          "source": "src/dlls/CoF_BookSimonSledgehammer.cpp",
+          "functions_file": "tools/units/hl_dlls_cof_booksimonsledgehammer.txt"
+        },
+        {
+          "name": "dlls/cof_branch",
+          "source": "src/dlls/CoF_Branch.cpp",
+          "functions_file": "tools/units/hl_dlls_cof_branch.txt"
+        },
+        {
+          "name": "dlls/cof_browning_wheelchair",
+          "source": "src/dlls/CoF_Browning_Wheelchair.cpp",
+          "functions_file": "tools/units/hl_dlls_cof_browning_wheelchair.txt"
+        },
+        {
+          "name": "dlls/cof_camera",
+          "source": "src/dlls/CoF_Camera.cpp",
+          "functions_file": "tools/units/hl_dlls_cof_camera.txt"
+        },
+        {
+          "name": "dlls/cof_chainsawboss",
+          "source": "src/dlls/CoF_ChainsawBoss.cpp",
+          "functions_file": "tools/units/hl_dlls_cof_chainsawboss.txt"
+        },
+        {
+          "name": "dlls/cof_checkbrush",
+          "source": "src/dlls/CoF_CheckBrush.cpp",
+          "functions_file": "tools/units/hl_dlls_cof_checkbrush.txt"
+        },
+        {
+          "name": "dlls/cof_coopbuttonpress",
+          "source": "src/dlls/CoF_CoopButtonPress.cpp",
+          "functions_file": "tools/units/hl_dlls_cof_coopbuttonpress.txt"
+        },
+        {
+          "name": "dlls/cof_cooplevelchangemanager",
+          "source": "src/dlls/CoF_CoopLevelChangeManager.cpp",
+          "functions_file": "tools/units/hl_dlls_cof_cooplevelchangemanager.txt"
+        },
+        {
+          "name": "dlls/cof_crab",
+          "source": "src/dlls/CoF_Crab.cpp",
+          "functions_file": "tools/units/hl_dlls_cof_crab.txt"
+        },
+        {
+          "name": "dlls/cof_cutscenemodel",
+          "source": "src/dlls/CoF_CutsceneModel.cpp",
+          "functions_file": "tools/units/hl_dlls_cof_cutscenemodel.txt"
+        },
+        {
+          "name": "dlls/cof_developercommentary",
+          "source": "src/dlls/CoF_DeveloperCommentary.cpp",
+          "functions_file": "tools/units/hl_dlls_cof_developercommentary.txt"
+        },
+        {
+          "name": "dlls/cof_doctorboss",
+          "source": "src/dlls/CoF_DoctorBoss.cpp",
+          "functions_file": "tools/units/hl_dlls_cof_doctorboss.txt"
+        },
+        {
+          "name": "dlls/cof_doctorbossshoot",
+          "source": "src/dlls/CoF_DoctorBossShoot.cpp",
+          "functions_file": "tools/units/hl_dlls_cof_doctorbossshoot.txt"
+        },
+        {
+          "name": "dlls/cof_door_prop_view",
+          "source": "src/dlls/CoF_Door_Prop_View.cpp",
+          "functions_file": "tools/units/hl_dlls_cof_door_prop_view.txt"
+        },
+        {
+          "name": "dlls/cof_dual_weapon",
+          "source": "src/dlls/CoF_Dual_Weapon.cpp",
+          "functions_file": "tools/units/hl_dlls_cof_dual_weapon.txt"
+        },
+        {
+          "name": "dlls/cof_dualpistol",
+          "source": "src/dlls/CoF_DualPistol.cpp",
+          "functions_file": "tools/units/hl_dlls_cof_dualpistol.txt"
+        },
+        {
+          "name": "dlls/cof_faceless",
+          "source": "src/dlls/CoF_Faceless.cpp",
+          "functions_file": "tools/units/hl_dlls_cof_faceless.txt"
+        },
+        {
+          "name": "dlls/cof_facelessvalve",
+          "source": "src/dlls/CoF_FacelessValve.cpp",
+          "functions_file": "tools/units/hl_dlls_cof_facelessvalve.txt"
+        },
+        {
+          "name": "dlls/cof_famas",
+          "source": "src/dlls/CoF_FAMAS.cpp",
+          "functions_file": "tools/units/hl_dlls_cof_famas.txt"
+        },
+        {
+          "name": "dlls/cof_faster",
+          "source": "src/dlls/CoF_Faster.cpp",
+          "functions_file": "tools/units/hl_dlls_cof_faster.txt"
+        },
+        {
+          "name": "dlls/cof_flare",
+          "source": "src/dlls/CoF_Flare.cpp",
+          "functions_file": "tools/units/hl_dlls_cof_flare.txt"
+        },
+        {
+          "name": "dlls/cof_flashlight",
+          "source": "src/dlls/CoF_Flashlight.cpp",
+          "functions_file": "tools/units/hl_dlls_cof_flashlight.txt"
+        },
+        {
+          "name": "dlls/cof_flygare",
+          "source": "src/dlls/CoF_Flygare.cpp",
+          "functions_file": "tools/units/hl_dlls_cof_flygare.txt"
+        },
+        {
+          "name": "dlls/cof_funcvalve",
+          "source": "src/dlls/CoF_FuncValve.cpp",
+          "functions_file": "tools/units/hl_dlls_cof_funcvalve.txt"
+        },
+        {
+          "name": "dlls/cof_g43",
+          "source": "src/dlls/CoF_G43.cpp",
+          "functions_file": "tools/units/hl_dlls_cof_g43.txt"
+        },
+        {
+          "name": "dlls/cof_glock",
+          "source": "src/dlls/CoF_Glock.cpp",
+          "functions_file": "tools/units/hl_dlls_cof_glock.txt"
+        },
+        {
+          "name": "dlls/cof_interdoor",
+          "source": "src/dlls/CoF_InterDoor.cpp",
+          "functions_file": "tools/units/hl_dlls_cof_interdoor.txt"
+        },
+        {
+          "name": "dlls/cof_interdoorcoop",
+          "source": "src/dlls/CoF_InterDoorCoop.cpp",
+          "functions_file": "tools/units/hl_dlls_cof_interdoorcoop.txt"
+        },
+        {
+          "name": "dlls/cof_keyitem",
+          "source": "src/dlls/CoF_KeyItem.cpp",
+          "functions_file": "tools/units/hl_dlls_cof_keyitem.txt"
+        },
+        {
+          "name": "dlls/cof_ladder",
+          "source": "src/dlls/CoF_Ladder.cpp",
+          "functions_file": "tools/units/hl_dlls_cof_ladder.txt"
+        },
+        {
+          "name": "dlls/cof_lantern",
+          "source": "src/dlls/CoF_Lantern.cpp",
+          "functions_file": "tools/units/hl_dlls_cof_lantern.txt"
+        },
+        {
+          "name": "dlls/cof_m16",
+          "source": "src/dlls/CoF_M16.cpp",
+          "functions_file": "tools/units/hl_dlls_cof_m16.txt"
+        },
+        {
+          "name": "dlls/cof_mobilephone",
+          "source": "src/dlls/CoF_MobilePhone.cpp",
+          "functions_file": "tools/units/hl_dlls_cof_mobilephone.txt"
+        },
+        {
+          "name": "dlls/cof_monsterbaby",
+          "source": "src/dlls/CoF_MonsterBaby.cpp",
+          "functions_file": "tools/units/hl_dlls_cof_monsterbaby.txt"
+        },
+        {
+          "name": "dlls/cof_monsterchild",
+          "source": "src/dlls/CoF_MonsterChild.cpp",
+          "functions_file": "tools/units/hl_dlls_cof_monsterchild.txt"
+        },
+        {
+          "name": "dlls/cof_monstercrazybitch",
+          "source": "src/dlls/CoF_MonsterCrazyBitch.cpp",
+          "functions_file": "tools/units/hl_dlls_cof_monstercrazybitch.txt"
+        },
+        {
+          "name": "dlls/cof_monstercustom",
+          "source": "src/dlls/CoF_MonsterCustom.cpp",
+          "functions_file": "tools/units/hl_dlls_cof_monstercustom.txt"
+        },
+        {
+          "name": "dlls/cof_monsterkrypande",
+          "source": "src/dlls/CoF_MonsterKrypande.cpp",
+          "functions_file": "tools/units/hl_dlls_cof_monsterkrypande.txt"
+        },
+        {
+          "name": "dlls/cof_monstersewmo",
+          "source": "src/dlls/CoF_MonsterSewmo.cpp",
+          "functions_file": "tools/units/hl_dlls_cof_monstersewmo.txt"
+        },
+        {
+          "name": "dlls/cof_monsterslower3",
+          "source": "src/dlls/CoF_MonsterSlower3.cpp",
+          "functions_file": "tools/units/hl_dlls_cof_monsterslower3.txt"
+        },
+        {
+          "name": "dlls/cof_nicecamera",
+          "source": "src/dlls/CoF_NiceCamera.cpp",
+          "functions_file": "tools/units/hl_dlls_cof_nicecamera.txt"
+        },
+        {
+          "name": "dlls/cof_nightstick",
+          "source": "src/dlls/CoF_NightStick.cpp",
+          "functions_file": "tools/units/hl_dlls_cof_nightstick.txt"
+        },
+        {
+          "name": "dlls/cof_numeralplate",
+          "source": "src/dlls/CoF_NumeralPlate.cpp",
+          "functions_file": "tools/units/hl_dlls_cof_numeralplate.txt"
+        },
+        {
+          "name": "dlls/cof_p345",
+          "source": "src/dlls/CoF_P345.cpp",
+          "functions_file": "tools/units/hl_dlls_cof_p345.txt"
+        },
+        {
+          "name": "dlls/cof_phonecall",
+          "source": "src/dlls/CoF_PhoneCall.cpp",
+          "functions_file": "tools/units/hl_dlls_cof_phonecall.txt"
+        },
+        {
+          "name": "dlls/cof_pushablevan",
+          "source": "src/dlls/CoF_PushableVan.cpp",
+          "functions_file": "tools/units/hl_dlls_cof_pushablevan.txt"
+        },
+        {
+          "name": "dlls/cof_puzzlebars",
+          "source": "src/dlls/CoF_PuzzleBars.cpp",
+          "functions_file": "tools/units/hl_dlls_cof_puzzlebars.txt"
+        },
+        {
+          "name": "dlls/cof_puzzlebarsbutton",
+          "source": "src/dlls/CoF_PuzzleBarsButton.cpp",
+          "functions_file": "tools/units/hl_dlls_cof_puzzlebarsbutton.txt"
+        },
+        {
+          "name": "dlls/cof_radio",
+          "source": "src/dlls/CoF_Radio.cpp",
+          "functions_file": "tools/units/hl_dlls_cof_radio.txt"
+        },
+        {
+          "name": "dlls/cof_revolver",
+          "source": "src/dlls/CoF_Revolver.cpp",
+          "functions_file": "tools/units/hl_dlls_cof_revolver.txt"
+        },
+        {
+          "name": "dlls/cof_rifle",
+          "source": "src/dlls/CoF_Rifle.cpp",
+          "functions_file": "tools/units/hl_dlls_cof_rifle.txt"
+        },
+        {
+          "name": "dlls/cof_roofboss",
+          "source": "src/dlls/CoF_RoofBoss.cpp",
+          "functions_file": "tools/units/hl_dlls_cof_roofboss.txt"
+        },
+        {
+          "name": "dlls/cof_runningcrazy",
+          "source": "src/dlls/CoF_RunningCrazy.cpp",
+          "functions_file": "tools/units/hl_dlls_cof_runningcrazy.txt"
+        },
+        {
+          "name": "dlls/cof_sawcrazy",
+          "source": "src/dlls/CoF_SawCrazy.cpp",
+          "functions_file": "tools/units/hl_dlls_cof_sawcrazy.txt"
+        },
+        {
+          "name": "dlls/cof_sawrunner",
+          "source": "src/dlls/CoF_SawRunner.cpp",
+          "functions_file": "tools/units/hl_dlls_cof_sawrunner.txt"
+        },
+        {
+          "name": "dlls/cof_sewerboss",
+          "source": "src/dlls/CoF_SewerBoss.cpp",
+          "functions_file": "tools/units/hl_dlls_cof_sewerboss.txt"
+        },
+        {
+          "name": "dlls/cof_shotgun",
+          "source": "src/dlls/CoF_Shotgun.cpp",
+          "functions_file": "tools/units/hl_dlls_cof_shotgun.txt"
+        },
+        {
+          "name": "dlls/cof_sicksimon",
+          "source": "src/dlls/CoF_SickSimon.cpp",
+          "functions_file": "tools/units/hl_dlls_cof_sicksimon.txt"
+        },
+        {
+          "name": "dlls/cof_sledgehammer",
+          "source": "src/dlls/CoF_Sledgehammer.cpp",
+          "functions_file": "tools/units/hl_dlls_cof_sledgehammer.txt"
+        },
+        {
+          "name": "dlls/cof_slower",
+          "source": "src/dlls/CoF_Slower.cpp",
+          "functions_file": "tools/units/hl_dlls_cof_slower.txt"
+        },
+        {
+          "name": "dlls/cof_slowertentacled",
+          "source": "src/dlls/CoF_SlowerTentacled.cpp",
+          "functions_file": "tools/units/hl_dlls_cof_slowertentacled.txt"
+        },
+        {
+          "name": "dlls/cof_spitter",
+          "source": "src/dlls/CoF_Spitter.cpp",
+          "functions_file": "tools/units/hl_dlls_cof_spitter.txt"
+        },
+        {
+          "name": "dlls/cof_statues",
+          "source": "src/dlls/CoF_Statues.cpp",
+          "functions_file": "tools/units/hl_dlls_cof_statues.txt"
+        },
+        {
+          "name": "dlls/cof_statueuse",
+          "source": "src/dlls/CoF_StatueUse.cpp",
+          "functions_file": "tools/units/hl_dlls_cof_statueuse.txt"
+        },
+        {
+          "name": "dlls/cof_stranger",
+          "source": "src/dlls/CoF_Stranger.cpp",
+          "functions_file": "tools/units/hl_dlls_cof_stranger.txt"
+        },
+        {
+          "name": "dlls/cof_strangle",
+          "source": "src/dlls/CoF_Strangle.cpp",
+          "functions_file": "tools/units/hl_dlls_cof_strangle.txt"
+        },
+        {
+          "name": "dlls/cof_subtitlechange",
+          "source": "src/dlls/CoF_SubtitleChange.cpp",
+          "functions_file": "tools/units/hl_dlls_cof_subtitlechange.txt"
+        },
+        {
+          "name": "dlls/cof_subtitlemain",
+          "source": "src/dlls/CoF_SubtitleMain.cpp",
+          "functions_file": "tools/units/hl_dlls_cof_subtitlemain.txt"
+        },
+        {
+          "name": "dlls/cof_subwaybrickwall",
+          "source": "src/dlls/CoF_SubwayBrickWall.cpp",
+          "functions_file": "tools/units/hl_dlls_cof_subwaybrickwall.txt"
+        },
+        {
+          "name": "dlls/cof_suicider",
+          "source": "src/dlls/CoF_Suicider.cpp",
+          "functions_file": "tools/units/hl_dlls_cof_suicider.txt"
+        },
+        {
+          "name": "dlls/cof_switchblade",
+          "source": "src/dlls/CoF_Switchblade.cpp",
+          "functions_file": "tools/units/hl_dlls_cof_switchblade.txt"
+        },
+        {
+          "name": "dlls/cof_syringe",
+          "source": "src/dlls/CoF_Syringe.cpp",
+          "functions_file": "tools/units/hl_dlls_cof_syringe.txt"
+        },
+        {
+          "name": "dlls/cof_taller",
+          "source": "src/dlls/CoF_Taller.cpp",
+          "functions_file": "tools/units/hl_dlls_cof_taller.txt"
+        },
+        {
+          "name": "dlls/cof_taperecorder",
+          "source": "src/dlls/CoF_TapeRecorder.cpp",
+          "functions_file": "tools/units/hl_dlls_cof_taperecorder.txt"
+        },
+        {
+          "name": "dlls/cof_telephone",
+          "source": "src/dlls/CoF_Telephone.cpp",
+          "functions_file": "tools/units/hl_dlls_cof_telephone.txt"
+        },
+        {
+          "name": "dlls/cof_telescope",
+          "source": "src/dlls/CoF_Telescope.cpp",
+          "functions_file": "tools/units/hl_dlls_cof_telescope.txt"
+        },
+        {
+          "name": "dlls/cof_thirdpersoninteraction",
+          "source": "src/dlls/CoF_ThirdPersonInteraction.cpp",
+          "functions_file": "tools/units/hl_dlls_cof_thirdpersoninteraction.txt"
+        },
+        {
+          "name": "dlls/cof_tmp",
+          "source": "src/dlls/CoF_TMP.cpp",
+          "functions_file": "tools/units/hl_dlls_cof_tmp.txt"
+        },
+        {
+          "name": "dlls/cof_twitcher",
+          "source": "src/dlls/CoF_Twitcher.cpp",
+          "functions_file": "tools/units/hl_dlls_cof_twitcher.txt"
+        },
+        {
+          "name": "dlls/cof_twitcher2",
+          "source": "src/dlls/CoF_Twitcher2.cpp",
+          "functions_file": "tools/units/hl_dlls_cof_twitcher2.txt"
+        },
+        {
+          "name": "dlls/cof_twitcher3",
+          "source": "src/dlls/CoF_Twitcher3.cpp",
+          "functions_file": "tools/units/hl_dlls_cof_twitcher3.txt"
+        },
+        {
+          "name": "dlls/cof_twitcher4",
+          "source": "src/dlls/CoF_Twitcher4.cpp",
+          "functions_file": "tools/units/hl_dlls_cof_twitcher4.txt"
+        },
+        {
+          "name": "dlls/cof_userpasswordnote",
+          "source": "src/dlls/CoF_UserPasswordNote.cpp",
+          "functions_file": "tools/units/hl_dlls_cof_userpasswordnote.txt"
+        },
+        {
+          "name": "dlls/cof_vp70",
+          "source": "src/dlls/CoF_VP70.cpp",
+          "functions_file": "tools/units/hl_dlls_cof_vp70.txt"
+        },
+        {
+          "name": "dlls/cof_watro",
+          "source": "src/dlls/CoF_Watro.cpp",
+          "functions_file": "tools/units/hl_dlls_cof_watro.txt"
+        },
+        {
+          "name": "dlls/cof_wheelchairplayer",
+          "source": "src/dlls/CoF_WheelchairPlayer.cpp",
+          "functions_file": "tools/units/hl_dlls_cof_wheelchairplayer.txt"
+        },
+        {
+          "name": "dlls/item_padlock",
+          "source": "src/dlls/item_padlock.cpp",
+          "functions_file": "tools/units/hl_dlls_item_padlock.txt"
+        },
+        {
+          "name": "dlls/monster_ruben",
+          "source": "src/dlls/monster_ruben.cpp",
+          "functions_file": "tools/units/hl_dlls_monster_ruben.txt"
+        },
+        {
+          "name": "dlls/subtitle_multiple",
+          "source": "src/dlls/Subtitle_Multiple.cpp",
+          "functions_file": "tools/units/hl_dlls_subtitle_multiple.txt"
         }
       ],
       "toolchain": "msvc1427"

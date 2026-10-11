@@ -1,5 +1,5 @@
-_monster_generic_dead
-_monster_generic
+??$GetClassPtr@VCDeadGenericMonster@@@@YAPAVCDeadGenericMonster@@PAV0@@Z
+??$GetClassPtr@VCGenericMonster@@@@YAPAVCGenericMonster@@PAV0@@Z
 ?Classify@CDeadGenericMonster@@UAEHXZ
 ?Classify@CGenericMonster@@UAEHXZ
 ?HandleAnimEvent@CGenericMonster@@UAEXPAUMonsterEvent_t@@@Z
@@ -18,3 +18,5 @@ _monster_generic
 ?Spawn@CDeadGenericMonster@@UAEXXZ
 ?Spawn@CGenericMonster@@UAEXXZ
 ?Use@CGenericMonster@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z
+_monster_generic
+_monster_generic_dead

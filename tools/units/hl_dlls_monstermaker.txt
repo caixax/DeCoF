@@ -1,4 +1,4 @@
-_monstermaker
+??$GetClassPtr@VCMonsterMaker@@@@YAPAVCMonsterMaker@@PAV0@@Z
 ?CallTryMakeMonster@CMonsterMaker@@QAEXXZ
 ?CyclicUse@CMonsterMaker@@QAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z
 ?DeathNotice@CMonsterMaker@@UAEXPAUentvars_s@@@Z
@@ -10,3 +10,4 @@ _monstermaker
 ?Save@CMonsterMaker@@UAEHAAVCSave@@@Z
 ?Spawn@CMonsterMaker@@UAEXXZ
 ?ToggleUse@CMonsterMaker@@QAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z
+_monstermaker

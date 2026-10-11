@@ -1,4 +1,4 @@
-_soundent
+??$GetClassPtr@VCSoundEnt@@@@YAPAVCSoundEnt@@PAV0@@Z
 ?Clear@CSound@@QAEXXZ
 ?ClientSoundIndex@CSoundEnt@@SAHPAUedict_s@@@Z
 ?IAllocSound@CSoundEnt@@QAEHXZ
@@ -10,3 +10,4 @@ _soundent
 ?SoundPointerForIndex@CSoundEnt@@SAPAVCSound@@H@Z
 ?Spawn@CSoundEnt@@UAEXXZ
 ?Think@CSoundEnt@@UAEXXZ
+_soundent

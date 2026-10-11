@@ -1,5 +1,5 @@
-_path_corner
-_path_track
+??$GetClassPtr@VCPathCorner@@@@YAPAVCPathCorner@@PAV0@@Z
+??$GetClassPtr@VCPathTrack@@@@YAPAVCPathTrack@@PAV0@@Z
 ?Activate@CPathTrack@@UAEXXZ
 ?GetDelay@CPathCorner@@UAEMXZ
 ?Instance@CPathTrack@@SAPAV1@PAUedict_s@@@Z
@@ -16,3 +16,5 @@ _path_track
 ?Spawn@CPathCorner@@UAEXXZ
 ?Spawn@CPathTrack@@UAEXXZ
 ?Use@CPathTrack@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z
+_path_corner
+_path_track

@@ -1,6 +1,6 @@
-_bodyque
-_infodecal
-_worldspawn
+??$GetClassPtr@VCCorpse@@@@YAPAVCCorpse@@PAV0@@Z
+??$GetClassPtr@VCDecal@@@@YAPAVCDecal@@PAV0@@Z
+??$GetClassPtr@VCWorld@@@@YAPAVCWorld@@PAV0@@Z
 ?CopyToBodyQue@@YAXPAUentvars_s@@@Z
 ?DumpGlobals@CGlobalState@@QAEXXZ
 ?EntityAdd@CGlobalState@@QAEXHHW4GLOBALESTATE@@@Z
@@ -23,3 +23,6 @@ _worldspawn
 ?SpecialMapPrecache@@YAX_N@Z
 ?StaticDecal@CDecal@@QAEXXZ
 ?TriggerDecal@CDecal@@QAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z
+_bodyque
+_infodecal
+_worldspawn

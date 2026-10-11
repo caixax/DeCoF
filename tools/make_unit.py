@@ -40,6 +40,8 @@ def main():
     unit = {"name": stem, "source": args.src or "src/" + args.source_file, "functions_file": listfile}
     for i, u in enumerate(units):
         if u["name"] == stem:
+            if not args.src:
+                unit["source"] = u["source"]  # keep an existing path (original file name case)
             units[i] = unit
             break
     else:

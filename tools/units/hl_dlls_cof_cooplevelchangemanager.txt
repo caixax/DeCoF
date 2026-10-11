@@ -1,0 +1,3 @@
+?GivePlayerVariables@CCoopLevelChangeManager@@QAE_NPAVCBasePlayer@@@Z
+?GiveWeaponFromInventory@CCoopLevelChangeManager@@QAEXPADHHPAVCBasePlayer@@@Z
+?SetPlayerVariables@CCoopLevelChangeManager@@QAEXPAVCBasePlayer@@@Z

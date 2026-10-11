@@ -1,5 +1,5 @@
 ?VecToYaw@CBaseMonster@@QAEMVVector@@@Z
-_monster_target
+??$GetClassPtr@VCMonsterTarget@@@@YAPAVCMonsterTarget@@PAV0@@Z
 ?AdvanceRoute@CBaseMonster@@QAEXM@Z
 ?BarnacleVictimBitten@CBaseMonster@@UAEXPAUentvars_s@@@Z
 ?BarnacleVictimReleased@CBaseMonster@@UAEXXZ
@@ -73,3 +73,4 @@ _monster_target
 ?StartPatrol@CBaseMonster@@QAEXPAVCBaseEntity@@@Z
 ?Use@CMonsterTarget@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z
 ?VecToYaw@CBaseMonster@@QAEMVVector@@@Z
+_monster_target

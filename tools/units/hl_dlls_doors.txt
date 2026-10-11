@@ -1,6 +1,6 @@
-_func_door
-_momentary_door
-_func_door_rotating
+??$GetClassPtr@VCBaseDoor@@@@YAPAVCBaseDoor@@PAV0@@Z
+??$GetClassPtr@VCMomentaryDoor@@@@YAPAVCMomentaryDoor@@PAV0@@Z
+??$GetClassPtr@VCRotDoor@@@@YAPAVCRotDoor@@PAV0@@Z
 ?Blocked@CBaseDoor@@UAEXPAVCBaseEntity@@@Z
 ?CalcRatio@CMomentaryDoor@@UAEMPAVCBaseEntity@@@Z
 ?DoorActivate@CBaseDoor@@QAEHXZ
@@ -31,3 +31,7 @@ _func_door_rotating
 ?Spawn@CRotDoor@@UAEXXZ
 ?Use@CBaseDoor@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z
 ?Use@CMomentaryDoor@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z
+_func_door
+_func_door_rotating
+_func_water
+_momentary_door

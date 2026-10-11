@@ -1,8 +1,8 @@
-_ambient_generic
-_env_sound
-_radio_sentence
-_speaker
-_trigger_sound
+??$GetClassPtr@VCAmbientGeneric@@@@YAPAVCAmbientGeneric@@PAV0@@Z
+??$GetClassPtr@VCEnvSound@@@@YAPAVCEnvSound@@PAV0@@Z
+??$GetClassPtr@VCRadio@@@@YAPAVCRadio@@PAV0@@Z
+??$GetClassPtr@VCSpeaker@@@@YAPAVCSpeaker@@PAV0@@Z
+??$GetClassPtr@VCTriggerSound@@@@YAPAVCTriggerSound@@PAV0@@Z
 ?EMIT_GROUPNAME_SUIT@@YAXPAUedict_s@@PBD@Z
 ?EMIT_SOUND_DYN@@YAXPAUedict_s@@HPBDMMHH@Z
 ?EMIT_SOUND_SUIT@@YAXPAUedict_s@@PBD@Z
@@ -52,3 +52,8 @@ _trigger_sound
 ?USENTENCEG_PickSequential@@YAHHPADHH@Z
 ?Use@CRadio@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z
 ?memfgets@@YAPADPAEHAAHPADH@Z
+_ambient_generic
+_env_sound
+_radio_sentence
+_speaker
+_trigger_sound

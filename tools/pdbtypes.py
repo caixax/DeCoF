@@ -269,6 +269,8 @@ class Types(object):
             et, _it = struct.unpack_from("<II", d, 0)
             size, _ = numeric(d, 8)
             esize = self.size(et) or 1
+            if size == 0:
+                return self.name(et, "%s[]" % inner)
             return self.name(et, "%s[%d]" % (inner, size // esize))
         if kind == LF_PROCEDURE:
             rv, cc, _fa, _n, al = struct.unpack_from("<IBBHI", d, 0)

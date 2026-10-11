@@ -5,6 +5,8 @@
   python tools/build.py objdiff             write objdiff.json
   python tools/build.py report              objdiff report, per unit and function
   python tools/build.py all    [unit ...]   base + target + objdiff + report
+  python tools/build.py check  <unit ...>   compile and report only these units
+  python tools/build.py decomp <unit ...>   Ghidra pseudo C into build/decomp/ (reference)
   python tools/build.py link   <dll>        link all units of a DLL into build/bin/<dll>
                                             (only when the DLL has a "link" section and
                                             every unit compiles), then compare with retail
@@ -292,12 +294,71 @@ def link(dll):
     return True
 
 
+def check(units):
+    """Compile the units and print the per-function match of only those
+    units (a one-unit objdiff report): the edit-diff loop."""
+    build_base(units)
+    cfg = json.load(open(os.path.join(ROOT, "objdiff.json")))
+    names = {full for _d, _c, _u, full in units}
+    proj = os.path.join(ROOT, "build", "check_project")
+    os.makedirs(proj, exist_ok=True)
+    keep = []
+    for u in cfg["units"]:
+        if u["name"] not in names:
+            continue
+        for key in ("target_path", "base_path"):
+            full = os.path.join(ROOT, u[key])
+            if os.path.exists(full):
+                u[key] = os.path.relpath(full, proj).replace("\\", "/")
+            else:
+                del u[key]
+        keep.append(u)
+    cfg["units"] = keep
+    with open(os.path.join(proj, "objdiff.json"), "w") as f:
+        json.dump(cfg, f, indent=2)
+    out = os.path.join(proj, "report.json")
+    subprocess.call([OBJDIFF, "report", "generate", "-p", proj, "-o", out, "-f", "json"], cwd=ROOT)
+    rep = json.load(open(out))
+    for unit in rep.get("units", []):
+        m = unit.get("measures", {})
+        print("%-30s code %6.2f%%  (%s/%s bytes)" % (unit["name"], m.get("matched_code_percent", 0.0),
+                                                   m.get("matched_code", "0"), m.get("total_code", "0")))
+        for fn in sorted(unit.get("functions", []), key=lambda f: f.get("fuzzy_match_percent", 0.0)):
+            print("    %7.2f%%  %s" % (fn.get("fuzzy_match_percent", 0.0), fn["name"]))
+
+
+def decomp(units):
+    """Ghidra pseudo C of every function of the units, into build/decomp/<unit>/
+    (reference only, through the running GhidraMCP server)."""
+    if not mcp_up():
+        sys.exit("decomp needs the GhidraMCP server")
+    script = os.path.join(ROOT, "tools", "ghidra_scripts", "DecompileList.java")
+    for dll, d, u, full in units:
+        job = os.path.join(ROOT, "build", "jobs", "decomp_%s.txt" % full.replace("/", "_"))
+        with open(job, "w") as f:
+            f.write("out %s\n" % os.path.join(ROOT, "build", "decomp", *full.split("/")))
+            for name in unit_functions(u):
+                f.write("func %s\n" % name)
+        res = mcp_call("/run_ghidra_script", body={
+            "script_name": script, "args": job,
+            "program": d["ghidra_folder"] + "/" + d["ghidra_program"],
+            "timeout_seconds": 1800}, timeout=1900)
+        out = res.get("console_output", "")
+        print("decomp %-30s %s" % (full, "ok" if "DecompileList:" in out else json.dumps(res)[:300]))
+
+
 def main():
     if len(sys.argv) < 2:
         sys.exit(__doc__)
     cmd, sel = sys.argv[1], sys.argv[2:]
     if cmd == "link":
         link(sel[0])
+        return
+    if cmd == "decomp":
+        decomp(load_units(sel))
+        return
+    if cmd == "check":
+        check(load_units(sel))
         return
     all_units = load_units([])
     units = load_units(sel) if sel else all_units

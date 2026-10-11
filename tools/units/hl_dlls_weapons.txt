@@ -1,4 +1,4 @@
-_weaponbox
+??$GetClassPtr@VCWeaponBox@@@@YAPAVCWeaponBox@@PAV0@@Z
 ?AddAmmoNameToAmmoRegistry@@YAXPBD@Z
 ?AddDuplicate@CBasePlayerWeapon@@UAEHPAVCBasePlayerItem@@PAVCBasePlayer@@@Z
 ?AddMultiDamage@@YAXPAUentvars_s@@PAVCBaseEntity@@MH@Z
@@ -85,3 +85,4 @@ _weaponbox
 ?UTIL_PrecacheOtherWeapon@@YAXPBD@Z
 ?UpdateClientData@CBasePlayerWeapon@@UAEHPAVCBasePlayer@@@Z
 ?W_Precache@@YAXXZ
+_weaponbox

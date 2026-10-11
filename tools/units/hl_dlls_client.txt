@@ -1,4 +1,12 @@
 ??0CBasePlayerWeapon@@QAE@XZ
+??$GetClassPtr@VCBoat@@@@YAPAVCBoat@@PAV0@@Z
+??$GetClassPtr@VCBrowningWheelchair@@@@YAPAVCBrowningWheelchair@@PAV0@@Z
+??$GetClassPtr@VCCoFDocument@@@@YAPAVCCoFDocument@@PAV0@@Z
+??$GetClassPtr@VCCofTelephone@@@@YAPAVCCofTelephone@@PAV0@@Z
+??$GetClassPtr@VCFlare@@@@YAPAVCFlare@@PAV0@@Z
+??$GetClassPtr@VCItemPadlock@@@@YAPAVCItemPadlock@@PAV0@@Z
+??$GetClassPtr@VCPuzzleBarButton@@@@YAPAVCPuzzleBarButton@@PAV0@@Z
+??$GetClassPtr@VCWheelchair@@@@YAPAVCWheelchair@@PAV0@@Z
 ?ClientCommand@@YAXPAUedict_s@@@Z
 ?ClientDisconnect@@YAXPAUedict_s@@@Z
 ?ClientPrecache@@YAXXZ
@@ -34,4 +42,12 @@
 ?TertiaryAttack@CBasePlayerWeapon@@UAEXXZ
 ?WeaponToggle@CBasePlayerWeapon@@UAEXXZ
 ?iItemSlot@CBrowningWheelchair@@UAEHXZ
+_boat
+_weapon_browning_wheelchair
+_weapon_flare
+_cof_puzzlebarbutton
+_cof_telephone
+_wheelchair
+_cof_document
+_item_padlock
 ??0CBasePlayerItem@@QAE@XZ

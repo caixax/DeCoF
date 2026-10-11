@@ -1,4 +1,3 @@
-_grenade
 ?BounceSound@CGrenade@@UAEXXZ
 ?BounceTouch@CGrenade@@QAEXPAVCBaseEntity@@@Z
 ?DangerSoundThink@CGrenade@@QAEXXZ

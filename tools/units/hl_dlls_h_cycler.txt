@@ -1,8 +1,8 @@
-_cycler_prdroid
-_cycler_sprite
-_cycler
-_cycler_weapon
-_cycler_wreckage
+??$GetClassPtr@VCCyclerProbe@@@@YAPAVCCyclerProbe@@PAV0@@Z
+??$GetClassPtr@VCCyclerSprite@@@@YAPAVCCyclerSprite@@PAV0@@Z
+??$GetClassPtr@VCGenericCycler@@@@YAPAVCGenericCycler@@PAV0@@Z
+??$GetClassPtr@VCWeaponCycler@@@@YAPAVCWeaponCycler@@PAV0@@Z
+??$GetClassPtr@VCWreckage@@@@YAPAVCWreckage@@PAV0@@Z
 ?Deploy@CWeaponCycler@@UAEHXZ
 ?GenericCyclerSpawn@CCycler@@QAEXPADVVector@@1@Z
 ?GetItemInfo@CWeaponCycler@@UAEHPAUItemInfo@@@Z
@@ -32,3 +32,8 @@ _cycler_wreckage
 ?Use@CCycler@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z
 ?Use@CCyclerSprite@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z
 ?iItemSlot@CWeaponCycler@@UAEHXZ
+_cycler
+_cycler_prdroid
+_cycler_sprite
+_cycler_weapon
+_cycler_wreckage

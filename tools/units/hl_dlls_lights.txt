@@ -1,8 +1,8 @@
-_light_environment
-_light
-_light_glow
-_lightfader
-_trigger_lightstyle
+??$GetClassPtr@VCEnvLight@@@@YAPAVCEnvLight@@PAV0@@Z
+??$GetClassPtr@VCLight@@@@YAPAVCLight@@PAV0@@Z
+??$GetClassPtr@VCLightDynamic@@@@YAPAVCLightDynamic@@PAV0@@Z
+??$GetClassPtr@VCLightFader@@@@YAPAVCLightFader@@PAV0@@Z
+??$GetClassPtr@VCTriggerLightstyle@@@@YAPAVCTriggerLightstyle@@PAV0@@Z
 ?FadeThink@CLightFader@@QAEXXZ
 ?GetState@CLight@@UAE?AW4STATE@@XZ
 ?GetState@CLightDynamic@@UAE?AW4STATE@@XZ
@@ -27,3 +27,9 @@ _trigger_lightstyle
 ?Use@CLightDynamic@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z
 ?Use@CTriggerLightstyle@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z
 ?WaitThink@CLightFader@@QAEXXZ
+_light
+_light_environment
+_light_glow
+_light_spot
+_lightfader
+_trigger_lightstyle
