@@ -219,6 +219,8 @@ typedef struct entvars_s
 	edict_t		*euser2;
 	edict_t		*euser3;
 	edict_t		*euser4;
+
+	int			guess_cof_end_extra;	// CoF engine: sizeof(entvars_t) is 0x2AC (hw.dll clears it with memset 0x2AC), not saved
 } entvars_t;
 
 

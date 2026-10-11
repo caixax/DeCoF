@@ -17,12 +17,15 @@ Confirmed 2026-10-10 from the save/restore table `gEntvarsDescription` (102 TYPE
 | flags | 0x1A4 | 0x1A8 |
 | iuser1 | 0x244 | 0x248 |
 | euser4 (last saved field) | 0x2A0 | 0x2A4 |
-| sizeof(entvars_t) | 0x2A4 | 0x2A8 |
+| *(unnamed, 4 bytes, not saved)* | - | 0x2A8 |
+| sizeof(entvars_t) | 0x2A4 | 0x2AC |
+| sizeof(edict_t) | 0x324 | 0x32C |
 
 - 1.55 table: VA 0x10216B40 (PDB symbol `gEntvarsDescription`), offsets identical to the stock HLSDK. The 2012 builds (and so the PDB type information) use the stock layout.
 - 1.6a table: VA 0x1021AAE0 (file offset 0x219AE0). Every field from `sequence` on is shifted by +4.
 - The new field is absent from the save table, so its name and type are unknown. `src/engine/progdefs.h` names it `guess_cof_light_extra`. The hw.dll delta field tables (name, offset pairs at 0x01EB2630) do not cover entvars_t and the 1.6a hl.dll never reads the field.
-- Consequence: `edict_t` grows to at least 0x328 in 1.6a. cof-enhanced reports an edict stride of 0x32C, which would mean a second 4-byte change elsewhere in `edict_t`; not yet verified.
+- Second extra field, confirmed 2026-10-11: hw.dll clears an edict's fields with `memset( &ed->v, 0, 0x2AC )` (`push 0x2ac; push 0; lea edx, [ed+0x80]` at 0x01DD7C81, also at 0x01DA7A23, 0x01DA7E42, 0x01DE0CF4), so `sizeof(entvars_t)` is 0x2AC. Every saved field up to `euser4` (0x2A4) is accounted for, so the 4 bytes follow `euser4`; `src/engine/progdefs.h` names them `guess_cof_end_extra`.
+- Consequence: `edict_t` is 0x32C bytes in 1.6a (as cof-enhanced reports). hl.dll walks the edict array with that stride (`add edi, 0x32c` in `CHalfLifeMultiplay::Think` and `InitHUD`), which matches once both fields are declared.
 
 ## Engine interface tables (1.6a)
 
