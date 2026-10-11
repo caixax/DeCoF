@@ -12,6 +12,7 @@ writing rules, no decompiler artifacts, guess_ prefix).
 | Function order and line in the original file (1.55 debug build) | `docs/lines_hl_1.55.csv` (write the file in this order) |
 | Ghidra pseudo C (reference only, never commit) | `build/decomp/hl/dlls/<file>/` (`python tools/build.py decomp hl/dlls/<file>`) |
 | Exact instructions, strings, constants, member offsets of globals | `python tools/disasm.py hl "<decorated name>"` |
+| The same function in the 1.55 debug build (block structure, dropped constants, dead code) | `python tools/disasm.py --version 1.55 hl "<decorated name>"` |
 | Parameter and local names, block structure (1.55) | `python tools/pdbtypes.py versions/1.55/cl_dlls/hl.pdb func "CFoo::"` |
 | Class declaration (members, methods, order) | `python tools/hdrgen.py CFoo` (weapon classes are already in `src/dlls/weapons.h`) |
 | Member at an offset / vtable slot | `python tools/member.py --src src/dlls/items.cpp CBasePlayerWeapon 0x1e4`, `python tools/member.py --vt CBasePlayerWeapon 0x198` |
@@ -79,6 +80,44 @@ writing rules, no decompiler artifacts, guess_ prefix).
   `IN_ATTACK | IN_ATTACK2`; sprinting is `pev->flags & (1<<18)`.
 - `IronsightsTo`/`IronsightsFrom` are the same in every weapon except the
   enum names (copy from `CoF_P345.cpp`).
+
+## Read the 1.55 debug build first
+
+The 1.55 hl.dll is an unoptimized debug build of nearly the same source.
+Most remaining differences after a first draft come from source structure
+that the 1.6a release build merges or drops, and the debug build still
+shows it:
+
+- Statements repeated in both branches of an if/else (the release build
+  merges the copies after the branches). Example: glock AttachTaclight is
+  `if ( m_iClip ) { SendWeaponAnim( GLOCK_DRAW ); m_pPlayer->m_flNextAttack
+  = gpGlobals->time + 1; } else { ...NOSHOT...; same store }`. Writing the
+  store once after the if/else changes register use.
+- Unused locals whose initializer has side effects or affects register
+  allocation. The 1.55 PDB lists them (`tools/pdbtypes.py ... func`).
+  Examples: `float PlayerSpeed = m_pPlayer->pev->velocity.Length2D();`
+  after `Vector vecDir;` in PrimaryAttack (without it the v_angle +
+  punchangle sum loads its x operands in the other order); `int pitch = 95
+  + RANDOM_LONG( 0, 10 );` left before a sound call that no longer uses it
+  (retail calls RANDOM_LONG and drops the result).
+- Constants the release build folds away (the `+ 0x5f` above is the 95).
+- `x + 1` against `x + 1.0`: the debug build shows `fadd dword` (float
+  constant, write `1`) or `fadd qword` (double, write `1.0`).
+
+## More patterns
+
+- Operand order of a sum: the operand retail loads first is usually the
+  second one in the source. `v_angle + punchangle` loads punchangle
+  (+0x68) first.
+- Comparison constants survive: `cmp 3; jl` is `>= 3`, `cmp 2; jle` is
+  `> 2`. Write the constant that appears in the retail `cmp`.
+- `if ( g_pGameRules && !g_pGameRules->IsMultiplayer() )` and `if (
+  !g_pGameRules || !g_pGameRules->IsMultiplayer() )` differ in where the
+  null test jumps: both jumps to the same target means `&&`.
+- Spawn tests `pev->frags == -2` in most weapons (P345 uses -1): check the
+  constant per weapon.
+- Weapons without `_NOSHOT` sequences send every animation without a clip
+  test; the guide's clip-branch notes only apply where the model has them.
 
 ## What not to do
 
