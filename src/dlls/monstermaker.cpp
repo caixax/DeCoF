@@ -82,6 +82,8 @@ TYPEDESCRIPTION	CMonsterMaker::m_SaveData[] =
 	DEFINE_FIELD( CMonsterMaker, m_fActive, FIELD_BOOLEAN ),
 	DEFINE_FIELD( CMonsterMaker, m_fFadeChildren, FIELD_BOOLEAN ),
 	DEFINE_FIELD( CMonsterMaker, m_fSpawnDelay, FIELD_FLOAT ),
+	DEFINE_FIELD( CMonsterMaker, m_iMonsterBody, FIELD_INTEGER ),
+	DEFINE_FIELD( CMonsterMaker, keyscript, FIELD_STRING ),
 };
 
 

@@ -5096,6 +5096,14 @@ TYPEDESCRIPTION	CTriggerCamera::m_SaveData[] =
 	DEFINE_FIELD( CTriggerCamera, m_deceleration, FIELD_FLOAT ),
 	DEFINE_FIELD( CTriggerCamera, m_state, FIELD_INTEGER ),
 	DEFINE_FIELD( CTriggerCamera, m_iszViewEntity, FIELD_STRING ),
+	DEFINE_FIELD( CTriggerCamera, z_angle, FIELD_INTEGER ),
+	DEFINE_FIELD( CTriggerCamera, m_sSkipManager, FIELD_STRING ),
+	DEFINE_FIELD( CTriggerCamera, m_vOriginalPlayerAngles, FIELD_VECTOR ),
+	DEFINE_FIELD( CTriggerCamera, m_sAttachedModel, FIELD_STRING ),
+	DEFINE_FIELD( CTriggerCamera, m_iAttachment, FIELD_INTEGER ),
+	DEFINE_FIELD( CTriggerCamera, m_iKeepBlackBars, FIELD_INTEGER ),
+	DEFINE_FIELD( CTriggerCamera, m_iKeepNoHUD, FIELD_INTEGER ),
+	DEFINE_FIELD( CTriggerCamera, m_iKeepNoise, FIELD_INTEGER ),
 };
 
 IMPLEMENT_SAVERESTORE(CTriggerCamera,CBaseDelay);

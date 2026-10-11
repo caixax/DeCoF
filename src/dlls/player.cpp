@@ -5755,8 +5755,6 @@ TYPEDESCRIPTION	CStripWeapons::m_SaveData[] =
 	DEFINE_FIELD( CStripWeapons, m_iRpk, FIELD_INTEGER ),
 	DEFINE_FIELD( CStripWeapons, m_iGroza, FIELD_INTEGER ),
 	DEFINE_FIELD( CStripWeapons, m_iPK, FIELD_INTEGER ),
-	DEFINE_FIELD( CStripWeapons, m_iRemoveGasMask, FIELD_INTEGER ),
-	DEFINE_FIELD( CStripWeapons, m_iRemoveShield, FIELD_INTEGER ),
 };
 
 IMPLEMENT_SAVERESTORE( CStripWeapons, CPointEntity );

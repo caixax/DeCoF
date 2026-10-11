@@ -545,6 +545,15 @@ TYPEDESCRIPTION CBaseButton::m_SaveData[] =
 {
 	DEFINE_FIELD( CBaseButton, m_fStayPushed, FIELD_BOOLEAN ),
 	DEFINE_FIELD( CBaseButton, m_fRotating, FIELD_BOOLEAN ),
+	DEFINE_FIELD( CBaseButton, m_iszLockedBy, FIELD_STRING ),
+	DEFINE_FIELD( CBaseButton, m_iszLockedMessage, FIELD_STRING ),
+	DEFINE_FIELD( CBaseButton, m_iszUnLockedMessage, FIELD_STRING ),
+	DEFINE_FIELD( CBaseButton, m_ProperTarget, FIELD_STRING ),
+	DEFINE_FIELD( CBaseButton, m_iszLockedSound, FIELD_STRING ),
+	DEFINE_FIELD( CBaseButton, m_iszUnLockedSound, FIELD_STRING ),
+	DEFINE_FIELD( CBaseButton, m_isLocked, FIELD_BOOLEAN ),
+	DEFINE_FIELD( CBaseButton, m_fUnlockTime, FIELD_FLOAT ),
+	DEFINE_FIELD( CBaseButton, m_fNextUseTime, FIELD_FLOAT ),
 
 	// Wargon: Сохранение m_hide_use.
 	DEFINE_FIELD( CBaseButton, m_hide_use, FIELD_INTEGER ),

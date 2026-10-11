@@ -3,3 +3,8 @@ va,name,kind
 100B4AD0,_DllMain@12,func
 10222F48,?g_engfuncs@@3Uenginefuncs_s@@A,data
 10223188,?gpGlobals@@3PAUglobalvars_t@@A,data
+1016F5EC,_atof,func
+1016F5CE,__wtof,func
+1013DF50,__ftol2_sse,func
+1017BCBB,_stricmp,func
+100099E0,_PM_UpdateStepSound,func

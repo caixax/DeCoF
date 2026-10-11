@@ -62,6 +62,9 @@ LINK_ENTITY_TO_CLASS( monster_generic, CGenericMonster );
 TYPEDESCRIPTION	CGenericMonster::m_SaveData[] = 
 {
 	DEFINE_FIELD( CGenericMonster, m_iszGibModel, FIELD_STRING ),
+	DEFINE_FIELD( CGenericMonster, m_ChestNumbers, FIELD_INTEGER ),
+	DEFINE_FIELD( CGenericMonster, number1, FIELD_INTEGER ),
+	DEFINE_FIELD( CGenericMonster, number2, FIELD_INTEGER ),
 };
 
 IMPLEMENT_SAVERESTORE( CGenericMonster, CBaseMonster );

@@ -24,6 +24,8 @@ OBJDIFF = r"I:\Tools\bin\objdiff-cli.exe"
 # Ghidra default labels end with the 8 digit address (DAT_10001234,
 # s_some_text_10001234, PTR_FUN_10001234)
 UNNAMED = re.compile(r"^(?:DAT|FUN|LAB|PTR|s|u|thunk_FUN)_(?:.*_)?([0-9a-fA-F]{8})$")
+SWITCH = re.compile(r"^switchD_[0-9a-fA-F]+::switchdataD_([0-9a-fA-F]{8})$")
+LN = re.compile(r"^\$LN\d+$")
 
 
 def diff_json(unit, symbol):
@@ -170,6 +172,12 @@ def harvest(units, write, min_pct=80.0):
             na, nb = reloc_name(d["left"], a), reloc_name(d["right"], b)
             if not na or not nb or na == nb:
                 continue
+            # jump tables: Ghidra's switch label takes our compiler label
+            sw = SWITCH.match(na)
+            if sw and LN.match(nb) and reloc_addend(a) == reloc_addend(b):
+                key = (unit.split("/")[0], int(sw.group(1), 16))
+                found[key] = (nb, "label", "objdiff:%s:%s" % (unit, symbol))
+                continue
             m = UNNAMED.match(na)
             if not m or nb.startswith(("$", ".", "[")) or UNNAMED.match(nb):
                 continue
@@ -193,7 +201,8 @@ def harvest(units, write, min_pct=80.0):
     # example a struct accessed at different offsets), so none is trusted
     by_name = {}
     for key, v in found.items():
-        by_name.setdefault((key[0], v[0]), []).append(key)
+        if v[1] != "label":  # jump table labels are local to their object
+            by_name.setdefault((key[0], v[0]), []).append(key)
     for (dll, name), keys in by_name.items():
         if len(keys) > 1:
             print("%s maps to %d addresses (dropped)" % (name, len(keys)))

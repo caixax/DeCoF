@@ -172,7 +172,10 @@ public class DelinkUnits extends GhidraScript {
 				// a name lives at one address: drop stale copies elsewhere (the
 				// exporter refuses duplicate names), for the decorated name and
 				// for the plain primary name of C symbols
-				String[] spellings = name.startsWith("_") ? new String[] { name, name.substring(1) }
+				// ($LN jump table labels are local to their object: the same
+				// name may label several addresses)
+				String[] spellings = name.startsWith("$") ? new String[0]
+						: name.startsWith("_") ? new String[] { name, name.substring(1) }
 						: new String[] { name };
 				for (String spelling : spellings) {
 					List<Symbol> stale = new ArrayList<>();
@@ -196,16 +199,15 @@ public class DelinkUnits extends GhidraScript {
 					}
 				}
 				try {
+					Function fn = getFunctionAt(addr);
 					if (name.startsWith("_")) {
 						// the delinker looks for "_" + primary name
-						String plain = name.substring(1);
-						Function fn = getFunctionAt(addr);
-						if (fn != null && !fn.getName().equals(plain)) {
-							fn.setName(plain, SourceType.USER_DEFINED);
-						}
-						else if (fn == null && !hasLabel(symtab, addr, plain)) {
-							symtab.createLabel(addr, plain, SourceType.USER_DEFINED).setPrimary();
-						}
+						makePrimary(symtab, fn, addr, name.substring(1));
+					}
+					else if (!name.startsWith("?")) {
+						// "@name@n" (fastcall), "$LN" jump table labels and other
+						// names are emitted as the primary name itself
+						makePrimary(symtab, fn, addr, name);
 					}
 					if (!hasLabel(symtab, addr, name)) {
 						symtab.createLabel(addr, name, SourceType.USER_DEFINED);
@@ -213,6 +215,19 @@ public class DelinkUnits extends GhidraScript {
 				}
 				catch (ghidra.util.exception.DuplicateNameException e) {
 					// name already used by a folded copy or applied earlier
+				}
+				// the delinker prefers a "?" label: drop C++ names left at this
+				// address by earlier, wrong naming passes
+				Function cur = getFunctionAt(addr);
+				List<Symbol> here = new ArrayList<>();
+				for (Symbol s : symtab.getSymbols(addr)) {
+					here.add(s);
+				}
+				for (Symbol s : here) {
+					if (s.getName().startsWith("?") && !s.getName().equals(name) && !s.isDynamic()
+							&& (cur == null || !cur.getSymbol().equals(s))) {
+						s.delete();
+					}
 				}
 				if (kind.equals("data") && f.length > 3 && !f[3].isEmpty()) {
 					defineExtent(symtab, addr, Integer.parseInt(f[3]));
@@ -271,6 +286,32 @@ public class DelinkUnits extends GhidraScript {
 		catch (Exception e) {
 			printerr("could not define extent at " + addr + ": " + e.getMessage());
 		}
+	}
+
+	private static void makePrimary(SymbolTable symtab, Function fn, Address addr, String primary)
+			throws Exception {
+		if (fn != null) {
+			if (!fn.getName().equals(primary)) {
+				// a secondary label with that name would make the rename fail
+				for (Symbol s : symtab.getSymbols(addr)) {
+					if (s.getName().equals(primary) && !s.equals(fn.getSymbol())) {
+						s.delete();
+						break;
+					}
+				}
+				fn.setName(primary, SourceType.USER_DEFINED);
+			}
+			return;
+		}
+		for (Symbol s : symtab.getSymbols(addr)) {
+			if (s.getName().equals(primary)) {
+				if (!s.isPrimary()) {
+					s.setPrimary();
+				}
+				return;
+			}
+		}
+		symtab.createLabel(addr, primary, SourceType.USER_DEFINED).setPrimary();
 	}
 
 	private static boolean hasLabel(SymbolTable symtab, Address addr, String name) {

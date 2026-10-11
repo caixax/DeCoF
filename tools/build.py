@@ -127,7 +127,7 @@ def merged_symbols(d, dll):
         by_name.setdefault(name, []).append(va)
     forget = []
     for name, vas in by_name.items():
-        if len(vas) > 1:
+        if len(vas) > 1 and not name.startswith("$"):
             keep = [va for va in vas if va in curated]
             if len(keep) != 1:
                 best = sorted(vas, key=lambda va: (rank.get(va, 9), va))

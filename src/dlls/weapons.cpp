@@ -498,25 +498,63 @@ TYPEDESCRIPTION	CBasePlayerItem::m_SaveData[] =
 	// DEFINE_FIELD( CBasePlayerItem, m_iIdPrimary, FIELD_INTEGER ),
 	// DEFINE_FIELD( CBasePlayerItem, m_iIdSecondary, FIELD_INTEGER ),
 	DEFINE_FIELD( CBasePlayerItem, m_iCurrCaps, FIELD_INTEGER ), // Wargon: Сохранение m_iCurrCaps.
+	DEFINE_FIELD( CBasePlayerItem, strwmodel, FIELD_STRING ),
+	DEFINE_FIELD( CBasePlayerItem, script, FIELD_STRING ),
+	DEFINE_FIELD( CBasePlayerItem, m_iSprintState, FIELD_INTEGER ),
+	DEFINE_FIELD( CBasePlayerItem, m_iNextSprintAnim, FIELD_TIME ),
+	DEFINE_FIELD( CBasePlayerItem, m_bCanSuicide, FIELD_BOOLEAN ),
+	DEFINE_FIELD( CBasePlayerItem, m_iSuicideState, FIELD_INTEGER ),
+	DEFINE_FIELD( CBasePlayerItem, m_iSuicideButtonsNeeded, FIELD_INTEGER ),
+	DEFINE_FIELD( CBasePlayerItem, m_iSuicideButtonsPressed, FIELD_INTEGER ),
+	DEFINE_FIELD( CBasePlayerItem, m_iRageNeeded, FIELD_INTEGER ),
+	DEFINE_FIELD( CBasePlayerItem, m_iRageLevel, FIELD_INTEGER ),
+	DEFINE_FIELD( CBasePlayerItem, m_fNextRageDecrease, FIELD_TIME ),
+	DEFINE_FIELD( CBasePlayerItem, m_iSprintIdleAnim1, FIELD_INTEGER ),
+	DEFINE_FIELD( CBasePlayerItem, m_iSprintIdleAnim1, FIELD_TIME ),
+	DEFINE_FIELD( CBasePlayerItem, m_fReloadSpeed, FIELD_FLOAT ),
+	DEFINE_FIELD( CBasePlayerItem, m_bRifleReload, FIELD_BOOLEAN ),
+	DEFINE_FIELD( CBasePlayerItem, m_bWantToEndReload, FIELD_BOOLEAN ),
+	DEFINE_FIELD( CBasePlayerItem, m_bRaised, FIELD_BOOLEAN ),
+	DEFINE_FIELD( CBasePlayerItem, m_iReloadState, FIELD_INTEGER ),
+	DEFINE_FIELD( CBasePlayerItem, m_iNextReloadAnim, FIELD_TIME ),
+	DEFINE_FIELD( CBasePlayerItem, slotnumber, FIELD_INTEGER ),
+	DEFINE_FIELD( CBasePlayerItem, m_Accuracy, FIELD_FLOAT ),
+	DEFINE_FIELD( CBasePlayerItem, m_bCanDualWield, FIELD_BOOLEAN ),
 };
 IMPLEMENT_SAVERESTORE( CBasePlayerItem, CBaseAnimating );
 
 
 TYPEDESCRIPTION	CBasePlayerWeapon::m_SaveData[] = 
 {
-#if defined( CLIENT_WEAPONS )
-	DEFINE_FIELD( CBasePlayerWeapon, m_flNextPrimaryAttack, FIELD_FLOAT ),
-	DEFINE_FIELD( CBasePlayerWeapon, m_flNextSecondaryAttack, FIELD_FLOAT ),
-	DEFINE_FIELD( CBasePlayerWeapon, m_flTimeWeaponIdle, FIELD_FLOAT ),
 #else	// CLIENT_WEAPONS
 	DEFINE_FIELD( CBasePlayerWeapon, m_flNextPrimaryAttack, FIELD_TIME ),
 	DEFINE_FIELD( CBasePlayerWeapon, m_flNextSecondaryAttack, FIELD_TIME ),
+	DEFINE_FIELD( CBasePlayerWeapon, m_flNextTertiaryAttack, FIELD_TIME ),
 	DEFINE_FIELD( CBasePlayerWeapon, m_flTimeWeaponIdle, FIELD_TIME ),
+	DEFINE_FIELD( CBasePlayerWeapon, m_flAccuracyTime, FIELD_TIME ),
 #endif	// CLIENT_WEAPONS
 	DEFINE_FIELD( CBasePlayerWeapon, m_iPrimaryAmmoType, FIELD_INTEGER ),
 	DEFINE_FIELD( CBasePlayerWeapon, m_iSecondaryAmmoType, FIELD_INTEGER ),
 	DEFINE_FIELD( CBasePlayerWeapon, m_iClip, FIELD_INTEGER ),
 	DEFINE_FIELD( CBasePlayerWeapon, m_iDefaultAmmo, FIELD_INTEGER ),
+	DEFINE_FIELD( CBasePlayerWeapon, m_bCheckedIfShouldBeDeleted, FIELD_BOOLEAN ),
+	DEFINE_FIELD( CBasePlayerWeapon, custom_v_model, FIELD_STRING ),
+	DEFINE_FIELD( CBasePlayerWeapon, custom_w_model, FIELD_STRING ),
+	DEFINE_FIELD( CBasePlayerWeapon, custom_script, FIELD_STRING ),
+	DEFINE_FIELD( CBasePlayerWeapon, shoot_loop_sound, FIELD_SOUNDNAME ),
+	DEFINE_FIELD( CBasePlayerWeapon, shoot_loop_sound_end, FIELD_SOUNDNAME ),
+	DEFINE_FIELD( CBasePlayerWeapon, m_bShotLooping, FIELD_BOOLEAN ),
+	DEFINE_FIELD( CBasePlayerWeapon, m_fEmptyClickTime, FIELD_TIME ),
+	DEFINE_FIELD( CBasePlayerWeapon, m_bIronSights, FIELD_BOOLEAN ),
+	DEFINE_FIELD( CBasePlayerWeapon, m_fIronSightsForward, FIELD_FLOAT ),
+	DEFINE_FIELD( CBasePlayerWeapon, m_fIronSightsRight, FIELD_FLOAT ),
+	DEFINE_FIELD( CBasePlayerWeapon, m_fIronSightsUp, FIELD_FLOAT ),
+	DEFINE_FIELD( CBasePlayerWeapon, m_iIronSightsZoom, FIELD_INTEGER ),
+	DEFINE_FIELD( CBasePlayerWeapon, m_flKickPerShot, FIELD_FLOAT ),
+	DEFINE_FIELD( CBasePlayerWeapon, m_flCurrentKick, FIELD_FLOAT ),
+	DEFINE_FIELD( CBasePlayerWeapon, m_flNextKickReductionTime, FIELD_TIME ),
+	DEFINE_FIELD( CBasePlayerWeapon, m_AccuracyVector, FIELD_VECTOR ),
+	DEFINE_FIELD( CBasePlayerWeapon, m_bWaitingToReloadIronsights, FIELD_BOOLEAN ),
 //	DEFINE_FIELD( CBasePlayerWeapon, m_iClientClip, FIELD_INTEGER )	 , reset to zero on load so hud gets updated correctly
 //  DEFINE_FIELD( CBasePlayerWeapon, m_iClientWeaponState, FIELD_INTEGER ), reset to zero on load so hud gets updated correctly
 };
@@ -1393,6 +1431,7 @@ TYPEDESCRIPTION	CWeaponBox::m_SaveData[] =
 	DEFINE_ARRAY( CWeaponBox, m_rgiszAmmo, FIELD_STRING, MAX_AMMO_SLOTS ),
 	DEFINE_ARRAY( CWeaponBox, m_rgpPlayerItems, FIELD_CLASSPTR, MAX_ITEM_TYPES ),
 	DEFINE_FIELD( CWeaponBox, m_cAmmoTypes, FIELD_INTEGER ),
+	DEFINE_FIELD( CWeaponBox, weaponmodel, FIELD_STRING ),
 };
 
 IMPLEMENT_SAVERESTORE( CWeaponBox, CBaseEntity );

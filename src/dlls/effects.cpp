@@ -1719,6 +1719,10 @@ TYPEDESCRIPTION CEnvModel::m_SaveData[] =
 	DEFINE_FIELD( CEnvModel, m_iszSequence_Off, FIELD_STRING ),
 	DEFINE_FIELD( CEnvModel, m_iAction_On, FIELD_INTEGER ),
 	DEFINE_FIELD( CEnvModel, m_iAction_Off, FIELD_INTEGER ),
+	DEFINE_FIELD( CEnvModel, m_ChestNumbers, FIELD_INTEGER ),
+	DEFINE_FIELD( CEnvModel, number1, FIELD_INTEGER ),
+	DEFINE_FIELD( CEnvModel, number2, FIELD_INTEGER ),
+	DEFINE_FIELD( CEnvModel, m_bIssuedNote, FIELD_BOOLEAN ),
 };
 
 IMPLEMENT_SAVERESTORE( CEnvModel, CBaseAnimating );

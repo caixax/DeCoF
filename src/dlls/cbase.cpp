@@ -797,6 +797,10 @@ TYPEDESCRIPTION	CBaseEntity::m_SaveData[] =
 	DEFINE_FIELD( CBaseEntity, m_pfnTouch, FIELD_FUNCTION ),
 	DEFINE_FIELD( CBaseEntity, m_pfnUse, FIELD_FUNCTION ),
 	DEFINE_FIELD( CBaseEntity, m_pfnBlocked, FIELD_FUNCTION ),
+	DEFINE_FIELD( CBaseEntity, b_Saving, FIELD_BOOLEAN ),
+	DEFINE_FIELD( CBaseEntity, m_bFadeOut, FIELD_BOOLEAN ),
+	DEFINE_FIELD( CBaseEntity, m_bIsBoss, FIELD_BOOLEAN ),
+	DEFINE_FIELD( CBaseEntity, m_bFrozenByCamera, FIELD_BOOLEAN ),
 };
 
 

@@ -118,6 +118,12 @@ TYPEDESCRIPTION	CBaseMonster::m_SaveData[] =
 	DEFINE_FIELD( CBaseMonster, m_iRushMovetype, FIELD_INTEGER ), // buz
 	DEFINE_FIELD( CBaseMonster, m_flRushDistance, FIELD_FLOAT ), // buz
 	DEFINE_FIELD( CBaseMonster, m_iUseAlertAnims, FIELD_INTEGER ), // buz	
+	DEFINE_FIELD( CBaseMonster, m_vOriginalOrigin, FIELD_VECTOR ),
+	DEFINE_FIELD( CBaseMonster, m_bUngibbable, FIELD_BOOLEAN ),
+	DEFINE_FIELD( CBaseMonster, m_bWaitingToDie, FIELD_BOOLEAN ),
+	DEFINE_FIELD( CBaseMonster, m_bIsFlickerAppearing, FIELD_BOOLEAN ),
+	DEFINE_FIELD( CBaseMonster, m_flFlickerAppearTime, FIELD_TIME ),
+	DEFINE_FIELD( CBaseMonster, m_flNextFlickerAppear, FIELD_TIME ),
 };
 
 //IMPLEMENT_SAVERESTORE( CBaseMonster, CBaseToggle );
