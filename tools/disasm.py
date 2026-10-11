@@ -11,7 +11,9 @@ length is given.
 --version reads an older hl.dll with a PDB (1.0, 1.4 or 1.55) instead of
 1.6a, with the names and sizes of docs/symbols_<version>.csv. These are
 debug builds: constants and dead code that the 1.6a release build drops
-are still there.
+are still there. When the PDB is on disk (1.0, 1.55), each source
+statement starts with a "-- line N" row from its line table, which gives
+the original statement order and if/else layout.
 """
 import csv
 import glob
@@ -28,6 +30,23 @@ IMAGES = {"hl": "versions/1.6a/cryoffear/cl_dlls/hl.dll", "client": "versions/1.
           "hw": "versions/1.6a/hw.dll", "opengl32": "versions/1.6a/opengl32.dll"}
 OLD_HL = {"1.0": "versions/1.0/CryOfFear/cl_dlls/hl.dll", "1.4": "versions/hl.dll",
           "1.55": "versions/1.55/cl_dlls/hl.dll"}
+
+
+def statement_lines(image, va, base):
+    """{va: (file, line)} of the statements of the function at va, from the
+    PDB next to an older hl.dll (empty when there is none)."""
+    pdb_path = os.path.join(ROOT, os.path.splitext(image)[0] + ".pdb")
+    if not os.path.exists(pdb_path):
+        return {}
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    import pdbfile
+    pdb = pdbfile.PDB(pdb_path)
+    rva = va - base
+    for mod, _kind, start, length, _name in pdb.procedures():
+        if start <= rva < start + length:
+            return {base + r: (os.path.basename(f), ln) for f, r, ln in pdb.module_lines(mod)
+                    if start <= r < start + length}
+    return {}
 
 
 def main():
@@ -122,9 +141,12 @@ def main():
     rdata = [s for s in pe.sections if s.Name.startswith(b".rdata")]
     rdata_lo = base + rdata[0].VirtualAddress if rdata else 0
     rdata_hi = rdata_lo + rdata[0].Misc_VirtualSize if rdata else 0
+    lines = statement_lines(image, va, base) if version else {}
     md = capstone.Cs(capstone.CS_ARCH_X86, capstone.CS_MODE_32)
     print("%08X %s" % (va, names.get(va, "")))
     for ins in md.disasm(img[va - base:va - base + length], va):
+        if ins.address in lines:
+            print("-- line %d (%s)" % (lines[ins.address][1], lines[ins.address][0]))
         notes = []
         for tok in re.findall(r"0x[0-9a-f]+", ins.op_str):
             a = int(tok, 16)

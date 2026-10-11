@@ -12,7 +12,7 @@ writing rules, no decompiler artifacts, guess_ prefix).
 | Function order and line in the original file (1.55 debug build) | `docs/lines_hl_1.55.csv` (write the file in this order) |
 | Ghidra pseudo C (reference only, never commit) | `build/decomp/hl/dlls/<file>/` (`python tools/build.py decomp hl/dlls/<file>`) |
 | Exact instructions, strings, constants, member offsets of globals | `python tools/disasm.py hl "<decorated name>"` |
-| The same function in the 1.55 debug build (block structure, dropped constants, dead code) | `python tools/disasm.py --version 1.55 hl "<decorated name>"` |
+| The same function in the 1.55 debug build (statement lines from the PDB line table, block structure, dropped constants, dead code) | `python tools/disasm.py --version 1.55 hl "<decorated name>"` |
 | Parameter and local names, block structure (1.55) | `python tools/pdbtypes.py versions/1.55/cl_dlls/hl.pdb func "CFoo::"` |
 | Class declaration (members, methods, order) | `python tools/hdrgen.py CFoo` (weapon classes are already in `src/dlls/weapons.h`) |
 | Member at an offset / vtable slot | `python tools/member.py --src src/dlls/items.cpp CBasePlayerWeapon 0x1e4`, `python tools/member.py --vt CBasePlayerWeapon 0x198` |
@@ -84,6 +84,9 @@ writing rules, no decompiler artifacts, guess_ prefix).
 ## Read the 1.55 debug build first
 
 The 1.55 hl.dll is an unoptimized debug build of nearly the same source.
+`disasm.py --version 1.55` prints a `-- line N` row where each source
+statement starts (1.55 PDB line table): write the statements in that order
+and with that if/else layout.
 Most remaining differences after a first draft come from source structure
 that the 1.6a release build merges or drops, and the debug build still
 shows it:
