@@ -143,3 +143,20 @@ Status: opengl32.dll 367/367 MATCHED (100%); hl.dll 2 MATCHED; others TODO.
 Status: hl.dll 1,510 MATCHED + 3 EQUIVALENT of 5,434 functions; opengl32.dll 367/367; client.dll, hw.dll, GameUI.dll, cof.exe 0. Nine Paranoia-based hl units (client, combat, gamerules, ggrenade, maprules, multiplay_gamerules, player, triggers, weapons) do not compile against the CoF headers yet and need CoF rewrites; 94 CoF units have no source yet.
 
 Next: vtable scan for misnamed jmp thunks; then the other CoF weapons (same structure as the glock), then player.cpp.
+
+## 2026-10-11 (continued): weapons, base units, naming and delinker fixes
+
+- CoF weapons, all 100% except one function: glock, P345, VP70, TMP, revolver, M16, rifle, FAMAS, G43; shotgun 25 of 26 (ItemPostFrame EQUIVALENT, register allocation). Written by agents from `docs/howto_cof_source.md`, which now holds the matching patterns (read the 1.55 debug build first: `disasm.py --version 1.55` prints the PDB statement lines).
+- Paranoia-based units ported to CoF and compiling: weapons.cpp 88/88, gamerules.cpp 7/7, multiplay_gamerules.cpp 58/59, ggrenade.cpp 14/14, maprules.cpp 55/55, triggers.cpp 363/363, combat.cpp 43/44 (Killed: calls to empty same-file functions that MSVC 19.27 drops), client.cpp 52/63 (ClientCommand 99.995%; several functions wait for class headers).
+- Headers checked in the binary: skilldata_t G43 member, entvars_t 0x2AC / edict_t 0x32C, the 1.6a CBaseEntity field at 0xC4 (donator status), CWorld custom gloves at 0xF8, Bullet enum and SpawnBlood from the 1.55 PDB, iMaxAmmo1 out of line, CHalfLifeRules members, CGib::SpawnGib, inline weapon virtuals, cof_doctorboss.h.
+- Retail names, each with evidence: signature check by ret size (`tools/sigcheck.py`), byte-proven names for 190 unnamed functions (`tools/bytematch.py`, `tools/symbols/hl_bytes.csv`), misnamed GetClassPtr/InitTrigger, private save tables, RTTI vtable names, SufficientlyOffTheGround. `tools/sync_names.py` carries map changes into progress.csv and the unit lists.
+- Delinker: functions include their switch jump tables, alignment nops and no relocations on immediates that only look like addresses (base relocation check); the offcut table labels that made objdiff hang are gone.
+- Measurement: the objdiff report ignores relocation target names; `tools/relocaudit.py` checks them on matched functions (16 real differences among 1,829, all retail naming).
+- Repo: README.md, Markdown without hard wraps, .gitignore cleanup, AGENTS.MD untracked, all commits rewritten to the author caixax.
+- Original bugs found are listed in `docs/original_bugs.md`.
+
+Status: hl.dll 2,711 MATCHED + 1 EQUIVALENT of 5,438 functions (44.0% of code bytes); opengl32.dll 367/367; client.dll, hw.dll, GameUI.dll, cof.exe 0.
+
+Running at the end of this entry: agents on player.cpp and on 30 CoF units without source (melee weapons, tool items, two monster families, dual and book weapons).
+
+Next: commit the agents' units; class headers that client.cpp and multiplay_gamerules.cpp still declare locally (documents, boat, wheelchair, telephone, padlock, computer, particle, CEnvModel, CCoFSurvivalMode, CCoopLevelChangeManager, Steam user stats), then UTIL_BloodDrips with CParticle; full re-delink once no agent runs; remaining 56 CoF units; then client.dll (re-test /Ob1 first).
