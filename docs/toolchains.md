@@ -18,6 +18,10 @@ Raw data: `docs/versions.csv`.
 | **1.6a** | **client.dll** | **cl 19.27.29112 (VS 2019 16.7, v142 14.27)** | **link 14.27.29112** | Release (`D:\CoFFinalPatch\code\cl_dll\Release\client.pdb`) | static |
 | **1.6a** | **hl.dll** | **cl 19.27.29112 (VS 2019 16.7, v142 14.27)** | **link 14.27.29112** | Release (`D:\CoFFinalPatch\code\dlls\Releasehl\hl.pdb`) | static |
 | all | opengl32.dll | cl 12.00.8168 (VC++ 6.0 RTM, Standard Edition) | link 6.00.8168 | Release | MSVCRT.dll (/MD) |
+| **1.6a** | **hw.dll** (sw.dll identical) | **cl 12.00.8168 (VC++ 6.0 RTM), mostly Standard Edition objects, plus VC6 processor pack (12.00.9044) and VS 2005 (14.00.50727) objects** | **link 6.00.8168** | Release, no debug directory | static |
+| **1.6a** | **GameUI.dll** | **cl 12.00.8168 (VC++ 6.0 RTM), Standard Edition C++ objects** | **link 6.00.8168** | Release, no debug directory | static |
+| **1.6a** | **cof.exe** | **cl 12.00.8168 (VC++ 6.0 RTM)** | **link 6.00.8168** | Release, no debug directory | static |
+| **1.6a** | **CoFLaunchApp.exe** | **C# (.NET), no native compiler** | - | Release (`...\CoFLaunchApp\obj\x86\Release\CoFLaunchApp.pdb`) | mscoree.dll |
 
 ## Evidence
 
@@ -100,6 +104,63 @@ Reading: optimized Release code (/O2-class), `/GS` on, SSE2 scalar math
 (the VS 2019 default `/arch:SSE2`), no /RTC. Many functions keep an EBP
 frame, so `/Oy-` is possible; this needs disassembly to settle. The 1.55
 Debug build has no /RTC stack fill either (/ZI /Od without /RTC1).
+
+### 1.6a hw.dll, GameUI.dll, cof.exe, CoFLaunchApp.exe (Phase 0 inventory)
+
+All values from `tools/pe_inventory.py` (`docs/versions.csv`), 2026-10-10.
+
+- **hw.dll** (2013-04-21, linker 6.00): Rich header `Utc12_C_Std.8168` x92,
+  `Utc12_CPP_Std.8168` x98 (Standard Edition), `Utc12_C.8168` x199,
+  `Utc12_CPP.8168` x18, `Utc12_2_C.9044` x7 and `Utc12_2_CPP.9044` x3
+  (VC6 with the processor pack), `Utc12_2_C.8943` x1, `Utc13_C.8830` x3,
+  `Utc1400_C.50727` x72 (VS 2005), `Masm613.7299` x46, `Linker600.8168`.
+  The header does not say which of these entries are engine objects and
+  which come from prebuilt libraries (Miles, VGUI, steam_api_c); that is
+  settled per object when hw.dll units are built.
+- **GameUI.dll** (2013-04-21, linker 6.00): `Utc12_CPP_Std.8168` x131,
+  `Utc12_C.8168` x155, `Utc12_CPP.8168` x13, `Masm613.7299` x35,
+  `Linker600.8168`.
+- **cof.exe** (linker 6.00): `Utc12_C.8168` x122, `Utc12_CPP.8168` x10,
+  `Masm613.7299` x21, `Cvtres500.1720`, `Linker600.8168`. Version resource
+  1, 1, 1, 1.
+- **CoFLaunchApp.exe**: managed (imports only `mscoree.dll`), PDB path
+  `U:\common\Cry of Fear\CryOfFear\StatsResetProgram\CoFLaunchApp\...`,
+  assembly version 1.0.0. No native compiler involved.
+- The Standard Edition compiler has no optimizer; it accepts /O2 and
+  generates unoptimized code. The installed Professional Edition with /Od
+  produces the same code (proven on opengl32.dll).
+
+## Inline expansion experiment (/Ob1), 2026-10-11
+
+VC6 `/O2` implied `/Ob1` (expand only functions marked inline or defined in
+the class body); from VS 2005 on `/O2` implies `/Ob2` (also expand any
+suitable function). A project converted from the VC6 `hl.dsp` and
+`cl_dll.dsp` of the HLSDK and Paranoia (`/O2`, no `/Ob`) may keep the old
+behaviour. Read-only test: all units compiled with the current flags and
+again with `/Ob1` added, everything else equal.
+
+| DLL | Units compared | Functions | 100% now | 100% with /Ob1 | Lost |
+|---|---|---|---|---|---|
+| hl.dll | the 48 units that compile | 1,901 | 1,056 | 1,224 (+169) | 1 (`CSquadMonster::ScheduleChange`) |
+| client.dll | temporary units for `pm_shared/pm_shared.c`, `pm_math.c`, `pm_debug.c` (the client functions named so far) | 29 | 28 | 28 | 0 |
+| client.dll | `pm_math.c` plus `InterpolateAngles` and `VectorMatrix` (unnamed in client.dll, byte identical to the hl.dll copies) | 12 | 9 | 11 (+2) | 0 |
+| opengl32.dll | both units | 367 | 367 | 367 | 0 |
+
+Readings:
+
+- hl.dll: in 1.6a every entity export is a 5-byte `jmp GetClassPtr<T>`. The
+  template is not marked inline, so only `/Ob1` keeps it out of line;
+  with the current flags it is expanded into the export. The 169 gains
+  include those and functions whose callees stay calls under `/Ob1`.
+- client.dll: no client source is built yet, so the only evidence is the
+  shared pm_shared code. `InterpolateAngles` and `VectorMatrix` match only
+  with `/Ob1` in both DLLs, and their client.dll bytes equal the hl.dll
+  bytes. Two functions; to be confirmed when client units exist.
+- opengl32.dll: built with `/Od` (Standard Edition, no optimizer), so
+  inline expansion never happens and `/Ob1` changes nothing. The other VC6
+  binaries were also built by VC6, whose `/O2` already means `/Ob1`.
+- Status: no flag changed yet. The user approved `/Ob1` for hl.dll and
+  asked for these numbers before any change.
 
 ## Change between versions
 
