@@ -65,6 +65,23 @@ public:
 	virtual void RefreshSkillData( void );// fill skill data struct with proper values
 	virtual void Think( void ) = 0;// GR_Think - runs every server frame, should handle any timer tasks, periodic events, etc.
 	virtual BOOL IsAllowedToSpawn( CBaseEntity *pEntity ) = 0;  // Can this item spawn (eg monsters don't spawn in deathmatch).
+	virtual void StartVoteKick( CBasePlayer *pCaller, CBasePlayer *pVictim );
+	virtual void VoteKickThink( void );
+	char *m_sVoteKickVictimID;
+	bool m_bInVoteKick;
+	float m_flVoteKickTime;
+	int m_iVotesForKick;
+	int m_iVotesAgainstKick;
+	char *pVoteKickVictimID;
+	char *pVoted[33];
+	float m_flNextDevDonatorCheckTime;
+	float m_flNextLobbyUpdateTime;
+	bool m_bInLobby;
+	bool m_bReady[33];
+	float m_flNextLobbyCountDownTime;
+	int m_iLobbyCount;
+	bool m_bStartingGameFromLobby;
+	float m_flLobbyStartOverrideTime;
 
 	virtual BOOL FAllowFlashlight( void ) = 0;// Are players allowed to switch on their flashlight?
 	virtual BOOL FShouldSwitchWeapon( CBasePlayer *pPlayer, CBasePlayerItem *pWeapon ) = 0;// should the player switch to this weapon?
@@ -173,6 +190,7 @@ class CHalfLifeRules : public CGameRules
 {
 public:
 	CHalfLifeRules ( void );
+	CHalfLifeRules( const CHalfLifeRules & );
 
 // GR_Think
 	virtual void Think( void );
@@ -245,6 +263,7 @@ public:
 
 // Monsters
 	virtual BOOL FAllowMonsters( void );
+	virtual int PlayFootstepSounds( CBasePlayer *pl, float fvol );
 
 // Teamplay stuff	
 	virtual const char *GetTeamID( CBaseEntity *pEntity ) {return "";};
@@ -259,6 +278,8 @@ class CHalfLifeMultiplay : public CGameRules
 {
 public:
 	CHalfLifeMultiplay();
+	CHalfLifeMultiplay( const CHalfLifeMultiplay & );
+	virtual void ClientUserInfoChanged( CBasePlayer *pPlayer, char *infobuffer );
 
 // GR_Think
 	virtual void Think( void );

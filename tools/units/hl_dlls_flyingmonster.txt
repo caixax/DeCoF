@@ -1,0 +1,6 @@
+?CeilingZ@CFlyingMonster@@QAEMABVVector@@@Z
+?ChangeYaw@CFlyingMonster@@UAEMH@Z
+?FTriangulate@CFlyingMonster@@UAEHABVVector@@0MPAVCBaseEntity@@PAV2@@Z
+?FloorZ@CFlyingMonster@@QAEMABVVector@@@Z
+?Move@CFlyingMonster@@UAEXM@Z
+?MoveExecute@CFlyingMonster@@UAEXPAVCBaseEntity@@ABVVector@@M@Z

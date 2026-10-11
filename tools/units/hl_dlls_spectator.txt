@@ -1,0 +1,2 @@
+?SpectatorThink@CBaseSpectator@@QAEXXZ
+?SpectatorImpulseCommand@CBaseSpectator@@AAEXXZ

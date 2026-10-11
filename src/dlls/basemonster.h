@@ -42,6 +42,18 @@ public:
 		EHANDLE				m_hOldEnemy[ MAX_OLD_ENEMIES ];
 		Vector				m_vecOldEnemy[ MAX_OLD_ENEMIES ];
 
+		Vector				m_vOriginalOrigin;
+		bool				m_bIsFlickerAppearing;
+		float				m_flFlickerAppearTime;
+		float				m_flNextFlickerAppear;
+		void				GetPointsForKill( char *classname, CBasePlayer *pKiller );
+		bool				m_bWaitingToDie;
+		void EXPORT			KillRemove( void );
+		int					m_iLastDamageType;
+		void				GoreCalculation( int hitbox, float flDamage );
+		bool				m_bBurning;
+		virtual void		Ignite( void );
+
 		float				m_flFieldOfView;// width of monster's field of view ( dot product )
 		float				m_flWaitFinished;// if we're told to wait, this is the time that the wait will be over.
 		float				m_flMoveWaitFinished;
@@ -50,6 +62,8 @@ public:
 		Activity			m_IdealActivity;// monster should switch to this activity
 		
 		int					m_LastHitGroup; // the last body region that took damage
+		bool				m_bUngibbable;
+		void				CoFGib( void );
 		
 		MONSTERSTATE		m_MonsterState;// monster's current state
 		MONSTERSTATE		m_IdealMonsterState;// monster should change to this state
@@ -280,8 +294,7 @@ public:
 
 		BOOL FShouldEat( void );// see if a monster is 'hungry'
 		void Eat ( float flFullDuration );// make the monster 'full' for a while.
-
-		CBaseEntity *CheckTraceHullAttack( float flDist, int iDamage, int iDmgType );
+	CBaseEntity *CheckTraceHullAttack( float flDist, int iDamage, int iDmgType, bool playersonly, int positionoffset );
 		BOOL FacingIdeal( void );
 
 		BOOL FCheckAITrigger( void );// checks and, if necessary, fires the monster's trigger target. 

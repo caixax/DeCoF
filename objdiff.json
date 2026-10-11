@@ -36,6 +36,422 @@
       }
     },
     {
+      "name": "hl/game_shared/voice_gamemgr",
+      "target_path": "build/target/hl/game_shared/voice_gamemgr.obj",
+      "base_path": "build/base/hl/game_shared/voice_gamemgr.obj",
+      "metadata": {
+        "source_path": "src/game_shared/voice_gamemgr.cpp"
+      }
+    },
+    {
+      "name": "hl/dlls/ai_basenpc_schedule",
+      "target_path": "build/target/hl/dlls/ai_basenpc_schedule.obj",
+      "base_path": "build/base/hl/dlls/ai_basenpc_schedule.obj",
+      "metadata": {
+        "source_path": "src/dlls/AI_BaseNPC_Schedule.cpp"
+      }
+    },
+    {
+      "name": "hl/dlls/alias",
+      "target_path": "build/target/hl/dlls/alias.obj",
+      "base_path": "build/base/hl/dlls/alias.obj",
+      "metadata": {
+        "source_path": "src/dlls/alias.cpp"
+      }
+    },
+    {
+      "name": "hl/dlls/animating",
+      "target_path": "build/target/hl/dlls/animating.obj",
+      "base_path": "build/base/hl/dlls/animating.obj",
+      "metadata": {
+        "source_path": "src/dlls/animating.cpp"
+      }
+    },
+    {
+      "name": "hl/dlls/animation",
+      "target_path": "build/target/hl/dlls/animation.obj",
+      "base_path": "build/base/hl/dlls/animation.obj",
+      "metadata": {
+        "source_path": "src/dlls/animation.cpp"
+      }
+    },
+    {
+      "name": "hl/dlls/bmodels",
+      "target_path": "build/target/hl/dlls/bmodels.obj",
+      "base_path": "build/base/hl/dlls/bmodels.obj",
+      "metadata": {
+        "source_path": "src/dlls/bmodels.cpp"
+      }
+    },
+    {
+      "name": "hl/dlls/buttons",
+      "target_path": "build/target/hl/dlls/buttons.obj",
+      "base_path": "build/base/hl/dlls/buttons.obj",
+      "metadata": {
+        "source_path": "src/dlls/buttons.cpp"
+      }
+    },
+    {
+      "name": "hl/dlls/cbase",
+      "target_path": "build/target/hl/dlls/cbase.obj",
+      "base_path": "build/base/hl/dlls/cbase.obj",
+      "metadata": {
+        "source_path": "src/dlls/cbase.cpp"
+      }
+    },
+    {
+      "name": "hl/dlls/client",
+      "target_path": "build/target/hl/dlls/client.obj",
+      "base_path": "build/base/hl/dlls/client.obj",
+      "metadata": {
+        "source_path": "src/dlls/client.cpp"
+      }
+    },
+    {
+      "name": "hl/dlls/spectator",
+      "target_path": "build/target/hl/dlls/spectator.obj",
+      "base_path": "build/base/hl/dlls/spectator.obj",
+      "metadata": {
+        "source_path": "src/dlls/spectator.cpp"
+      }
+    },
+    {
+      "name": "hl/dlls/combat",
+      "target_path": "build/target/hl/dlls/combat.obj",
+      "base_path": "build/base/hl/dlls/combat.obj",
+      "metadata": {
+        "source_path": "src/dlls/combat.cpp"
+      }
+    },
+    {
+      "name": "hl/dlls/defaultai",
+      "target_path": "build/target/hl/dlls/defaultai.obj",
+      "base_path": "build/base/hl/dlls/defaultai.obj",
+      "metadata": {
+        "source_path": "src/dlls/defaultai.cpp"
+      }
+    },
+    {
+      "name": "hl/dlls/doors",
+      "target_path": "build/target/hl/dlls/doors.obj",
+      "base_path": "build/base/hl/dlls/doors.obj",
+      "metadata": {
+        "source_path": "src/dlls/doors.cpp"
+      }
+    },
+    {
+      "name": "hl/dlls/effects",
+      "target_path": "build/target/hl/dlls/effects.obj",
+      "base_path": "build/base/hl/dlls/effects.obj",
+      "metadata": {
+        "source_path": "src/dlls/effects.cpp"
+      }
+    },
+    {
+      "name": "hl/dlls/explode",
+      "target_path": "build/target/hl/dlls/explode.obj",
+      "base_path": "build/base/hl/dlls/explode.obj",
+      "metadata": {
+        "source_path": "src/dlls/explode.cpp"
+      }
+    },
+    {
+      "name": "hl/dlls/flyingmonster",
+      "target_path": "build/target/hl/dlls/flyingmonster.obj",
+      "base_path": "build/base/hl/dlls/flyingmonster.obj",
+      "metadata": {
+        "source_path": "src/dlls/flyingmonster.cpp"
+      }
+    },
+    {
+      "name": "hl/dlls/func_break",
+      "target_path": "build/target/hl/dlls/func_break.obj",
+      "base_path": "build/base/hl/dlls/func_break.obj",
+      "metadata": {
+        "source_path": "src/dlls/func_break.cpp"
+      }
+    },
+    {
+      "name": "hl/dlls/gamerules",
+      "target_path": "build/target/hl/dlls/gamerules.obj",
+      "base_path": "build/base/hl/dlls/gamerules.obj",
+      "metadata": {
+        "source_path": "src/dlls/gamerules.cpp"
+      }
+    },
+    {
+      "name": "hl/dlls/genericmonster",
+      "target_path": "build/target/hl/dlls/genericmonster.obj",
+      "base_path": "build/base/hl/dlls/genericmonster.obj",
+      "metadata": {
+        "source_path": "src/dlls/genericmonster.cpp"
+      }
+    },
+    {
+      "name": "hl/dlls/ggrenade",
+      "target_path": "build/target/hl/dlls/ggrenade.obj",
+      "base_path": "build/base/hl/dlls/ggrenade.obj",
+      "metadata": {
+        "source_path": "src/dlls/ggrenade.cpp"
+      }
+    },
+    {
+      "name": "hl/dlls/h_battery",
+      "target_path": "build/target/hl/dlls/h_battery.obj",
+      "base_path": "build/base/hl/dlls/h_battery.obj",
+      "metadata": {
+        "source_path": "src/dlls/h_battery.cpp"
+      }
+    },
+    {
+      "name": "hl/dlls/h_cine",
+      "target_path": "build/target/hl/dlls/h_cine.obj",
+      "base_path": "build/base/hl/dlls/h_cine.obj",
+      "metadata": {
+        "source_path": "src/dlls/h_cine.cpp"
+      }
+    },
+    {
+      "name": "hl/dlls/h_cycler",
+      "target_path": "build/target/hl/dlls/h_cycler.obj",
+      "base_path": "build/base/hl/dlls/h_cycler.obj",
+      "metadata": {
+        "source_path": "src/dlls/h_cycler.cpp"
+      }
+    },
+    {
+      "name": "hl/dlls/items",
+      "target_path": "build/target/hl/dlls/items.obj",
+      "base_path": "build/base/hl/dlls/items.obj",
+      "metadata": {
+        "source_path": "src/dlls/items.cpp"
+      }
+    },
+    {
+      "name": "hl/dlls/lights",
+      "target_path": "build/target/hl/dlls/lights.obj",
+      "base_path": "build/base/hl/dlls/lights.obj",
+      "metadata": {
+        "source_path": "src/dlls/lights.cpp"
+      }
+    },
+    {
+      "name": "hl/dlls/locus",
+      "target_path": "build/target/hl/dlls/locus.obj",
+      "base_path": "build/base/hl/dlls/locus.obj",
+      "metadata": {
+        "source_path": "src/dlls/locus.cpp"
+      }
+    },
+    {
+      "name": "hl/dlls/maprules",
+      "target_path": "build/target/hl/dlls/maprules.obj",
+      "base_path": "build/base/hl/dlls/maprules.obj",
+      "metadata": {
+        "source_path": "src/dlls/maprules.cpp"
+      }
+    },
+    {
+      "name": "hl/dlls/monstermaker",
+      "target_path": "build/target/hl/dlls/monstermaker.obj",
+      "base_path": "build/base/hl/dlls/monstermaker.obj",
+      "metadata": {
+        "source_path": "src/dlls/monstermaker.cpp"
+      }
+    },
+    {
+      "name": "hl/dlls/monsters",
+      "target_path": "build/target/hl/dlls/monsters.obj",
+      "base_path": "build/base/hl/dlls/monsters.obj",
+      "metadata": {
+        "source_path": "src/dlls/monsters.cpp"
+      }
+    },
+    {
+      "name": "hl/dlls/monsterstate",
+      "target_path": "build/target/hl/dlls/monsterstate.obj",
+      "base_path": "build/base/hl/dlls/monsterstate.obj",
+      "metadata": {
+        "source_path": "src/dlls/monsterstate.cpp"
+      }
+    },
+    {
+      "name": "hl/dlls/mortar",
+      "target_path": "build/target/hl/dlls/mortar.obj",
+      "base_path": "build/base/hl/dlls/mortar.obj",
+      "metadata": {
+        "source_path": "src/dlls/mortar.cpp"
+      }
+    },
+    {
+      "name": "hl/dlls/movewith",
+      "target_path": "build/target/hl/dlls/movewith.obj",
+      "base_path": "build/base/hl/dlls/movewith.obj",
+      "metadata": {
+        "source_path": "src/dlls/movewith.cpp"
+      }
+    },
+    {
+      "name": "hl/dlls/multiplay_gamerules",
+      "target_path": "build/target/hl/dlls/multiplay_gamerules.obj",
+      "base_path": "build/base/hl/dlls/multiplay_gamerules.obj",
+      "metadata": {
+        "source_path": "src/dlls/multiplay_gamerules.cpp"
+      }
+    },
+    {
+      "name": "hl/dlls/nodes",
+      "target_path": "build/target/hl/dlls/nodes.obj",
+      "base_path": "build/base/hl/dlls/nodes.obj",
+      "metadata": {
+        "source_path": "src/dlls/nodes.cpp"
+      }
+    },
+    {
+      "name": "hl/dlls/paranoia_wpn",
+      "target_path": "build/target/hl/dlls/paranoia_wpn.obj",
+      "base_path": "build/base/hl/dlls/paranoia_wpn.obj",
+      "metadata": {
+        "source_path": "src/dlls/paranoia_wpn.cpp"
+      }
+    },
+    {
+      "name": "hl/dlls/pathcorner",
+      "target_path": "build/target/hl/dlls/pathcorner.obj",
+      "base_path": "build/base/hl/dlls/pathcorner.obj",
+      "metadata": {
+        "source_path": "src/dlls/pathcorner.cpp"
+      }
+    },
+    {
+      "name": "hl/dlls/plane",
+      "target_path": "build/target/hl/dlls/plane.obj",
+      "base_path": "build/base/hl/dlls/plane.obj",
+      "metadata": {
+        "source_path": "src/dlls/plane.cpp"
+      }
+    },
+    {
+      "name": "hl/dlls/plats",
+      "target_path": "build/target/hl/dlls/plats.obj",
+      "base_path": "build/base/hl/dlls/plats.obj",
+      "metadata": {
+        "source_path": "src/dlls/plats.cpp"
+      }
+    },
+    {
+      "name": "hl/dlls/player",
+      "target_path": "build/target/hl/dlls/player.obj",
+      "base_path": "build/base/hl/dlls/player.obj",
+      "metadata": {
+        "source_path": "src/dlls/player.cpp"
+      }
+    },
+    {
+      "name": "hl/dlls/scripted",
+      "target_path": "build/target/hl/dlls/scripted.obj",
+      "base_path": "build/base/hl/dlls/scripted.obj",
+      "metadata": {
+        "source_path": "src/dlls/scripted.cpp"
+      }
+    },
+    {
+      "name": "hl/dlls/singleplay_gamerules",
+      "target_path": "build/target/hl/dlls/singleplay_gamerules.obj",
+      "base_path": "build/base/hl/dlls/singleplay_gamerules.obj",
+      "metadata": {
+        "source_path": "src/dlls/singleplay_gamerules.cpp"
+      }
+    },
+    {
+      "name": "hl/dlls/skill",
+      "target_path": "build/target/hl/dlls/skill.obj",
+      "base_path": "build/base/hl/dlls/skill.obj",
+      "metadata": {
+        "source_path": "src/dlls/skill.cpp"
+      }
+    },
+    {
+      "name": "hl/dlls/sound",
+      "target_path": "build/target/hl/dlls/sound.obj",
+      "base_path": "build/base/hl/dlls/sound.obj",
+      "metadata": {
+        "source_path": "src/dlls/sound.cpp"
+      }
+    },
+    {
+      "name": "hl/dlls/soundent",
+      "target_path": "build/target/hl/dlls/soundent.obj",
+      "base_path": "build/base/hl/dlls/soundent.obj",
+      "metadata": {
+        "source_path": "src/dlls/soundent.cpp"
+      }
+    },
+    {
+      "name": "hl/dlls/squadmonster",
+      "target_path": "build/target/hl/dlls/squadmonster.obj",
+      "base_path": "build/base/hl/dlls/squadmonster.obj",
+      "metadata": {
+        "source_path": "src/dlls/squadmonster.cpp"
+      }
+    },
+    {
+      "name": "hl/dlls/subs",
+      "target_path": "build/target/hl/dlls/subs.obj",
+      "base_path": "build/base/hl/dlls/subs.obj",
+      "metadata": {
+        "source_path": "src/dlls/subs.cpp"
+      }
+    },
+    {
+      "name": "hl/dlls/talkmonster",
+      "target_path": "build/target/hl/dlls/talkmonster.obj",
+      "base_path": "build/base/hl/dlls/talkmonster.obj",
+      "metadata": {
+        "source_path": "src/dlls/talkmonster.cpp"
+      }
+    },
+    {
+      "name": "hl/dlls/teamplay_gamerules",
+      "target_path": "build/target/hl/dlls/teamplay_gamerules.obj",
+      "base_path": "build/base/hl/dlls/teamplay_gamerules.obj",
+      "metadata": {
+        "source_path": "src/dlls/teamplay_gamerules.cpp"
+      }
+    },
+    {
+      "name": "hl/dlls/triggers",
+      "target_path": "build/target/hl/dlls/triggers.obj",
+      "base_path": "build/base/hl/dlls/triggers.obj",
+      "metadata": {
+        "source_path": "src/dlls/triggers.cpp"
+      }
+    },
+    {
+      "name": "hl/dlls/util",
+      "target_path": "build/target/hl/dlls/util.obj",
+      "base_path": "build/base/hl/dlls/util.obj",
+      "metadata": {
+        "source_path": "src/dlls/util.cpp"
+      }
+    },
+    {
+      "name": "hl/dlls/weapons",
+      "target_path": "build/target/hl/dlls/weapons.obj",
+      "base_path": "build/base/hl/dlls/weapons.obj",
+      "metadata": {
+        "source_path": "src/dlls/weapons.cpp"
+      }
+    },
+    {
+      "name": "hl/dlls/world",
+      "target_path": "build/target/hl/dlls/world.obj",
+      "base_path": "build/base/hl/dlls/world.obj",
+      "metadata": {
+        "source_path": "src/dlls/world.cpp"
+      }
+    },
+    {
       "name": "opengl32/opengl32",
       "target_path": "build/target/opengl32/opengl32.obj",
       "base_path": "build/base/opengl32/opengl32.obj",

@@ -1,0 +1,15 @@
+_grenade
+?BounceSound@CGrenade@@UAEXXZ
+?BounceTouch@CGrenade@@QAEXPAVCBaseEntity@@@Z
+?DangerSoundThink@CGrenade@@QAEXXZ
+?Detonate@CGrenade@@QAEXXZ
+?DetonateUse@CGrenade@@QAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z
+?Explode@CGrenade@@QAEXPAUTraceResult@@H@Z
+?Explode@CGrenade@@QAEXVVector@@0@Z
+?ExplodeTouch@CGrenade@@QAEXPAVCBaseEntity@@@Z
+?Killed@CGrenade@@UAEXPAUentvars_s@@H@Z
+?PreDetonate@CGrenade@@QAEXXZ
+?SlideTouch@CGrenade@@QAEXPAVCBaseEntity@@@Z
+?Smoke@CGrenade@@QAEXXZ
+?Spawn@CGrenade@@UAEXXZ
+?TumbleThink@CGrenade@@QAEXXZ

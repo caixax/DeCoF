@@ -1,0 +1,12 @@
+_soundent
+?Clear@CSound@@QAEXXZ
+?ClientSoundIndex@CSoundEnt@@SAHPAUedict_s@@@Z
+?IAllocSound@CSoundEnt@@QAEHXZ
+?ISoundsInList@CSoundEnt@@QAEHH@Z
+?Initialize@CSoundEnt@@QAEXXZ
+?InsertSound@CSoundEnt@@SAXHABVVector@@HM@Z
+?Precache@CSoundEnt@@UAEXXZ
+?Reset@CSound@@QAEXXZ
+?SoundPointerForIndex@CSoundEnt@@SAPAVCSound@@H@Z
+?Spawn@CSoundEnt@@UAEXXZ
+?Think@CSoundEnt@@UAEXXZ

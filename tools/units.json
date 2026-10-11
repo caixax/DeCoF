@@ -59,6 +59,266 @@
           "name": "pm_shared/pm_debug",
           "source": "src/pm_shared/pm_debug.c",
           "functions_file": "tools/units/hl_pm_shared_pm_debug.txt"
+        },
+        {
+          "name": "game_shared/voice_gamemgr",
+          "source": "src/game_shared/voice_gamemgr.cpp",
+          "functions_file": "tools/units/hl_game_shared_voice_gamemgr.txt"
+        },
+        {
+          "name": "dlls/ai_basenpc_schedule",
+          "source": "src/dlls/AI_BaseNPC_Schedule.cpp",
+          "functions_file": "tools/units/hl_dlls_ai_basenpc_schedule.txt"
+        },
+        {
+          "name": "dlls/alias",
+          "source": "src/dlls/alias.cpp",
+          "functions_file": "tools/units/hl_dlls_alias.txt"
+        },
+        {
+          "name": "dlls/animating",
+          "source": "src/dlls/animating.cpp",
+          "functions_file": "tools/units/hl_dlls_animating.txt"
+        },
+        {
+          "name": "dlls/animation",
+          "source": "src/dlls/animation.cpp",
+          "functions_file": "tools/units/hl_dlls_animation.txt"
+        },
+        {
+          "name": "dlls/bmodels",
+          "source": "src/dlls/bmodels.cpp",
+          "functions_file": "tools/units/hl_dlls_bmodels.txt"
+        },
+        {
+          "name": "dlls/buttons",
+          "source": "src/dlls/buttons.cpp",
+          "functions_file": "tools/units/hl_dlls_buttons.txt"
+        },
+        {
+          "name": "dlls/cbase",
+          "source": "src/dlls/cbase.cpp",
+          "functions_file": "tools/units/hl_dlls_cbase.txt"
+        },
+        {
+          "name": "dlls/client",
+          "source": "src/dlls/client.cpp",
+          "functions_file": "tools/units/hl_dlls_client.txt"
+        },
+        {
+          "name": "dlls/spectator",
+          "source": "src/dlls/spectator.cpp",
+          "functions_file": "tools/units/hl_dlls_spectator.txt"
+        },
+        {
+          "name": "dlls/combat",
+          "source": "src/dlls/combat.cpp",
+          "functions_file": "tools/units/hl_dlls_combat.txt"
+        },
+        {
+          "name": "dlls/defaultai",
+          "source": "src/dlls/defaultai.cpp",
+          "functions_file": "tools/units/hl_dlls_defaultai.txt"
+        },
+        {
+          "name": "dlls/doors",
+          "source": "src/dlls/doors.cpp",
+          "functions_file": "tools/units/hl_dlls_doors.txt"
+        },
+        {
+          "name": "dlls/effects",
+          "source": "src/dlls/effects.cpp",
+          "functions_file": "tools/units/hl_dlls_effects.txt"
+        },
+        {
+          "name": "dlls/explode",
+          "source": "src/dlls/explode.cpp",
+          "functions_file": "tools/units/hl_dlls_explode.txt"
+        },
+        {
+          "name": "dlls/flyingmonster",
+          "source": "src/dlls/flyingmonster.cpp",
+          "functions_file": "tools/units/hl_dlls_flyingmonster.txt"
+        },
+        {
+          "name": "dlls/func_break",
+          "source": "src/dlls/func_break.cpp",
+          "functions_file": "tools/units/hl_dlls_func_break.txt"
+        },
+        {
+          "name": "dlls/gamerules",
+          "source": "src/dlls/gamerules.cpp",
+          "functions_file": "tools/units/hl_dlls_gamerules.txt"
+        },
+        {
+          "name": "dlls/genericmonster",
+          "source": "src/dlls/genericmonster.cpp",
+          "functions_file": "tools/units/hl_dlls_genericmonster.txt"
+        },
+        {
+          "name": "dlls/ggrenade",
+          "source": "src/dlls/ggrenade.cpp",
+          "functions_file": "tools/units/hl_dlls_ggrenade.txt"
+        },
+        {
+          "name": "dlls/h_battery",
+          "source": "src/dlls/h_battery.cpp",
+          "functions_file": "tools/units/hl_dlls_h_battery.txt"
+        },
+        {
+          "name": "dlls/h_cine",
+          "source": "src/dlls/h_cine.cpp",
+          "functions_file": "tools/units/hl_dlls_h_cine.txt"
+        },
+        {
+          "name": "dlls/h_cycler",
+          "source": "src/dlls/h_cycler.cpp",
+          "functions_file": "tools/units/hl_dlls_h_cycler.txt"
+        },
+        {
+          "name": "dlls/items",
+          "source": "src/dlls/items.cpp",
+          "functions_file": "tools/units/hl_dlls_items.txt"
+        },
+        {
+          "name": "dlls/lights",
+          "source": "src/dlls/lights.cpp",
+          "functions_file": "tools/units/hl_dlls_lights.txt"
+        },
+        {
+          "name": "dlls/locus",
+          "source": "src/dlls/locus.cpp",
+          "functions_file": "tools/units/hl_dlls_locus.txt"
+        },
+        {
+          "name": "dlls/maprules",
+          "source": "src/dlls/maprules.cpp",
+          "functions_file": "tools/units/hl_dlls_maprules.txt"
+        },
+        {
+          "name": "dlls/monstermaker",
+          "source": "src/dlls/monstermaker.cpp",
+          "functions_file": "tools/units/hl_dlls_monstermaker.txt"
+        },
+        {
+          "name": "dlls/monsters",
+          "source": "src/dlls/monsters.cpp",
+          "functions_file": "tools/units/hl_dlls_monsters.txt"
+        },
+        {
+          "name": "dlls/monsterstate",
+          "source": "src/dlls/monsterstate.cpp",
+          "functions_file": "tools/units/hl_dlls_monsterstate.txt"
+        },
+        {
+          "name": "dlls/mortar",
+          "source": "src/dlls/mortar.cpp",
+          "functions_file": "tools/units/hl_dlls_mortar.txt"
+        },
+        {
+          "name": "dlls/movewith",
+          "source": "src/dlls/movewith.cpp",
+          "functions_file": "tools/units/hl_dlls_movewith.txt"
+        },
+        {
+          "name": "dlls/multiplay_gamerules",
+          "source": "src/dlls/multiplay_gamerules.cpp",
+          "functions_file": "tools/units/hl_dlls_multiplay_gamerules.txt"
+        },
+        {
+          "name": "dlls/nodes",
+          "source": "src/dlls/nodes.cpp",
+          "functions_file": "tools/units/hl_dlls_nodes.txt"
+        },
+        {
+          "name": "dlls/paranoia_wpn",
+          "source": "src/dlls/paranoia_wpn.cpp",
+          "functions_file": "tools/units/hl_dlls_paranoia_wpn.txt"
+        },
+        {
+          "name": "dlls/pathcorner",
+          "source": "src/dlls/pathcorner.cpp",
+          "functions_file": "tools/units/hl_dlls_pathcorner.txt"
+        },
+        {
+          "name": "dlls/plane",
+          "source": "src/dlls/plane.cpp",
+          "functions_file": "tools/units/hl_dlls_plane.txt"
+        },
+        {
+          "name": "dlls/plats",
+          "source": "src/dlls/plats.cpp",
+          "functions_file": "tools/units/hl_dlls_plats.txt"
+        },
+        {
+          "name": "dlls/player",
+          "source": "src/dlls/player.cpp",
+          "functions_file": "tools/units/hl_dlls_player.txt"
+        },
+        {
+          "name": "dlls/scripted",
+          "source": "src/dlls/scripted.cpp",
+          "functions_file": "tools/units/hl_dlls_scripted.txt"
+        },
+        {
+          "name": "dlls/singleplay_gamerules",
+          "source": "src/dlls/singleplay_gamerules.cpp",
+          "functions_file": "tools/units/hl_dlls_singleplay_gamerules.txt"
+        },
+        {
+          "name": "dlls/skill",
+          "source": "src/dlls/skill.cpp",
+          "functions_file": "tools/units/hl_dlls_skill.txt"
+        },
+        {
+          "name": "dlls/sound",
+          "source": "src/dlls/sound.cpp",
+          "functions_file": "tools/units/hl_dlls_sound.txt"
+        },
+        {
+          "name": "dlls/soundent",
+          "source": "src/dlls/soundent.cpp",
+          "functions_file": "tools/units/hl_dlls_soundent.txt"
+        },
+        {
+          "name": "dlls/squadmonster",
+          "source": "src/dlls/squadmonster.cpp",
+          "functions_file": "tools/units/hl_dlls_squadmonster.txt"
+        },
+        {
+          "name": "dlls/subs",
+          "source": "src/dlls/subs.cpp",
+          "functions_file": "tools/units/hl_dlls_subs.txt"
+        },
+        {
+          "name": "dlls/talkmonster",
+          "source": "src/dlls/talkmonster.cpp",
+          "functions_file": "tools/units/hl_dlls_talkmonster.txt"
+        },
+        {
+          "name": "dlls/teamplay_gamerules",
+          "source": "src/dlls/teamplay_gamerules.cpp",
+          "functions_file": "tools/units/hl_dlls_teamplay_gamerules.txt"
+        },
+        {
+          "name": "dlls/triggers",
+          "source": "src/dlls/triggers.cpp",
+          "functions_file": "tools/units/hl_dlls_triggers.txt"
+        },
+        {
+          "name": "dlls/util",
+          "source": "src/dlls/util.cpp",
+          "functions_file": "tools/units/hl_dlls_util.txt"
+        },
+        {
+          "name": "dlls/weapons",
+          "source": "src/dlls/weapons.cpp",
+          "functions_file": "tools/units/hl_dlls_weapons.txt"
+        },
+        {
+          "name": "dlls/world",
+          "source": "src/dlls/world.cpp",
+          "functions_file": "tools/units/hl_dlls_world.txt"
         }
       ],
       "toolchain": "msvc1427"

@@ -1,0 +1,6 @@
+?ChangeSchedule@CBaseMonster@@QAEXPAUSchedule_t@@@Z
+?ClearSchedule@CBaseMonster@@QAEXXZ
+?GetSchedule@CBaseMonster@@UAEPAUSchedule_t@@XZ
+?MaintainSchedule@CBaseMonster@@QAEXXZ
+?RunTask@CBaseMonster@@UAEXPAUTask_t@@@Z
+?StartTask@CBaseMonster@@UAEXPAUTask_t@@@Z

@@ -25,6 +25,7 @@ class CHalfLifeTeamplay : public CHalfLifeMultiplay
 {
 public:
 	CHalfLifeTeamplay();
+	CHalfLifeTeamplay( const CHalfLifeTeamplay & );
 
 	virtual BOOL ClientCommand( CBasePlayer *pPlayer, const char *pcmd );
 	virtual void ClientUserInfoChanged( CBasePlayer *pPlayer, char *infobuffer );

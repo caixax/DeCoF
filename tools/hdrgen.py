@@ -37,7 +37,7 @@ TYPE_SUBST = [
     (r"\bweapon_data_s\b", "weapon_data_t"), (r"\busercmd_s\b", "usercmd_t"),
     (r"\bnetadr_s\b", "netadr_t"), (r"\bcustomization_s\b", "customization_t"),
     (r"\bresource_s\b", "resource_t"), (r"\bdelta_s\b", "delta_t"),
-    (r"\bKeyValueData\b", "KeyValueData"),
+    (r"\bstd::basic_string<char,std::char_traits<char>,std::allocator<char> >", "std::string"),
 ]
 STRING_NAMES = re.compile(r"^(m_isz|m_str|isz|m_s[A-Z])")
 

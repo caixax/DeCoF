@@ -1,0 +1,1 @@
+?GetIdealState@CBaseMonster@@UAE?AW4MONSTERSTATE@@XZ

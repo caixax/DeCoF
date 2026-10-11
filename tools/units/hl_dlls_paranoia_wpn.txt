@@ -1,0 +1,9 @@
+?AdvanceSpread@@YA?AVVector@@AAV1@0M@Z
+?EqualizeSpread@@YAXPAMW4spread_equalize@@@Z
+?GetConeVectorForAngle@@YA?AVVector@@H@Z
+?LoadSpreadTable@@YAXPAD@Z
+?Restore@CBaseSpreadWeapon@@UAEHAAVCRestore@@@Z
+?Restore@CBaseToggleWeapon@@UAEHAAVCRestore@@@Z
+?Save@CBaseSpreadWeapon@@UAEHAAVCSave@@@Z
+?Save@CBaseToggleWeapon@@UAEHAAVCSave@@@Z
+?SetTablePointer@CBaseSpreadWeapon@@QAEXXZ

@@ -172,6 +172,13 @@ public:
 	// pointers to engine data
 	entvars_t *pev;		// Don't need to save/restore this pointer, the engine resets it
 
+	bool b_Saving;
+	bool m_bFrozenByCamera;
+	void SetModelCollisionBox( void );
+	void CorpseFolllow( void );
+	bool m_bIsBoss;
+	void BossDamageCheck( void );
+
 	// path corners
 	CBaseEntity			*m_pGoalEnt;// path corner we are heading towards
 	CBaseEntity			*m_pLink;// used for temporary link-list operations. 
@@ -234,6 +241,8 @@ public:
 
 	// buz - gas reactions (should be used by soldiers to turn gas mask on and off)
 	virtual void GasWarning( int warnlevel ) {};
+
+	void DeadRemoveThink( void );
 
 	// initialization functions
 	virtual void	Spawn( void ) { return; }
@@ -359,6 +368,9 @@ public:
 	void EXPORT SUB_DoNothing( void );
 	void EXPORT SUB_StartFadeOut ( void );
 	void EXPORT SUB_FadeOut ( void );
+	void EXPORT SUB_StartFadeInAndOut ( void );
+	void EXPORT SUB_FadeInAndOut ( void );
+	bool m_bFadeOut;
 	void EXPORT SUB_CallUseToggle( void ) // a think function used at spawn time. Don't apply the moveWith fix to it.
 	{ this->Use( this, this, USE_TOGGLE, 0 );	}
 	int			ShouldToggle( USE_TYPE useType, BOOL currentState );
@@ -446,6 +458,7 @@ public:
 
 	//
 	static CBaseEntity *Create( char *szName, const Vector &vecOrigin, const Vector &vecAngles, edict_t *pentOwner = NULL );
+	static CBaseEntity *CreateWithScript( char *szName, int message, const Vector &vecOrigin, const Vector &vecAngles, edict_t *pentOwner, int model );
 
 	virtual BOOL FBecomeProne( void ) {return FALSE;};
 	edict_t *edict() { return ENT( pev ); };
@@ -489,6 +502,11 @@ public:
 	int m_fireState;
 
 	virtual void SendInitMessage( CBasePlayer *player ) {}; // buz - does nothing by default
+
+	// CoF 1.6a: CBaseEntity is 4 bytes larger than in 1.55 (every derived
+	// class shifts by 4). No code reads the new member, so its position after
+	// ammo_groza and its name are unknown. See docs/structs.md.
+	int guess_m_iNew16a;
 };
 
 //LRC- moved here from player.cpp. I'd put it in util.h with its friends, but it needs CBaseEntity to be declared.
@@ -836,6 +854,17 @@ public:
 	virtual void Precache( void );
 	void RotSpawn( void );
 	virtual void KeyValue( KeyValueData* pkvd);
+	bool m_isLocked;
+	float m_fUnlockTime;
+	float m_fNextUseTime;
+	string_t m_iszLockedBy;
+	string_t m_iszLockedMessage;
+	string_t m_iszLockedSound;
+	string_t m_iszUnLockedSound;
+	string_t m_iszUnLockedMessage;
+	string_t m_iszChangeLevelName;
+	int m_ProperTarget;
+	void UnlockDoor( void );
 
 	void ButtonActivate( );
 	void SparkSoundCache( void );
@@ -1002,6 +1031,14 @@ public:
 // this moved here from world.cpp, to allow classes to be derived from it
 //=======================
 // CWorld
+struct cutscenesoundarray
+{
+	bool hasvalue;
+	CBaseEntity *pSoundMaker;
+	int m_iChannel;
+	int soundeffect;
+};
+
 //
 // This spawns first when each level begins.
 //=======================
@@ -1011,8 +1048,16 @@ public:
 	void Spawn( void );
 	void Precache( void );
 	void KeyValue( KeyValueData *pkvd );
+	string_t m_sCustomDoctorMap;
+	int player1model;
+	int player2model;
+	int player3model;
+	int player4model;
+	string_t m_sCustomSleeve;
+	string_t m_sCustomFingers;
 
 	CBaseAlias *m_pFirstAlias;
+	cutscenesoundarray cutscene_sound_array[64];
 };
 
 extern CWorld *g_pWorld;
