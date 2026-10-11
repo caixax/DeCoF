@@ -23,8 +23,13 @@ extern enginefuncs_t g_engfuncs;
 
 // The actual engine callbacks
 #define GETPLAYERUSERID (*g_engfuncs.pfnGetPlayerUserId)
-#define PRECACHE_MODEL	(*g_engfuncs.pfnPrecacheModel)
-#define PRECACHE_SOUND	(*g_engfuncs.pfnPrecacheSound)
+// CoF: PRECACHE_MODEL and PRECACHE_SOUND are functions (util.cpp)
+int PRECACHE_MODEL( int s, char *e );
+int PRECACHE_MODEL( int s );
+int PRECACHE_MODEL( char *s );
+int PRECACHE_SOUND( int s, char *e );
+int PRECACHE_SOUND( int s );
+int PRECACHE_SOUND( char *s );
 #define PRECACHE_GENERIC	(*g_engfuncs.pfnPrecacheGeneric)
 #define SET_MODEL		(*g_engfuncs.pfnSetModel)
 #define MODEL_INDEX		(*g_engfuncs.pfnModelIndex)

@@ -27,6 +27,7 @@ int LookupActivity( void *pmodel, entvars_t *pev, int activity );
 int LookupActivityHeaviest( void *pmodel, entvars_t *pev, int activity );
 int LookupSequence( void *pmodel, const char *label );
 void GetSequenceInfo( void *pmodel, entvars_t *pev, float *pflFrameRate, float *pflGroundSpeed );
+float GetSequenceTime( void *pmodel, int seqnum );
 int GetSequenceFlags( void *pmodel, entvars_t *pev );
 int LookupAnimationEvents( void *pmodel, entvars_t *pev, float flStart, float flEnd );
 float SetController( void *pmodel, entvars_t *pev, int iController, float flValue );

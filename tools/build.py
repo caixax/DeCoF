@@ -107,8 +107,10 @@ def merged_symbols(d, dll):
     rows = {}
     curated = set()
     base = os.path.join(ROOT, d["symbols"])
-    for i, path in enumerate((base, base.replace("_1.6a.csv", "_manual.csv"),
-                              base.replace("_1.6a.csv", "_auto.csv"))):
+    # base map, harvested names, then curated maps (later files win)
+    for i, path in enumerate((base, base.replace("_1.6a.csv", "_auto.csv"),
+                              base.replace("_1.6a.csv", "_usermsgs.csv"),
+                              base.replace("_1.6a.csv", "_manual.csv"))):
         if os.path.exists(path):
             for r in csv.DictReader(open(path)):
                 va = r["va"].upper()
