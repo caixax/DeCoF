@@ -38,7 +38,11 @@ import ghidra.program.model.data.Undefined1DataType;
 import ghidra.program.model.listing.CodeUnit;
 import ghidra.program.model.listing.Data;
 import ghidra.program.model.listing.Function;
+import ghidra.program.model.listing.Instruction;
 import ghidra.program.model.listing.Listing;
+import ghidra.program.model.scalar.Scalar;
+import ghidra.program.model.symbol.RefType;
+import ghidra.program.model.symbol.Reference;
 import ghidra.program.model.symbol.SourceType;
 import ghidra.program.model.symbol.Symbol;
 import ghidra.program.model.symbol.SymbolTable;
@@ -337,6 +341,7 @@ public class DelinkUnits extends GhidraScript {
 			Function fn = getFunctionAt(s.getAddress());
 			if (fn != null) {
 				set.add(fn.getBody());
+				addTrailingTables(set, fn);
 			}
 			else {
 				CodeUnit cu = currentProgram.getListing().getCodeUnitAt(s.getAddress());
@@ -344,6 +349,115 @@ public class DelinkUnits extends GhidraScript {
 			}
 		}
 		return set;
+	}
+
+	// MSVC emits the jump tables of a switch (the dword target table and the
+	// byte index table) right after the function, inside its COMDAT; Ghidra
+	// keeps them out of the function body. Add the bytes between the body
+	// and the end of the last data the function references there, up to the
+	// next function, so the table is part of the function like in our object.
+	private void addTrailingTables(AddressSet set, Function fn) {
+		Address end = fn.getBody().getMaxAddress();
+		Function next = getFunctionAfter(end);
+		if (next == null) {
+			return;
+		}
+		Address limit = next.getEntryPoint();
+		Address last = null;
+		Listing listing = currentProgram.getListing();
+		for (Address from : fn.getBody().getAddresses(true)) {
+			for (Reference r : currentProgram.getReferenceManager().getReferencesFrom(from)) {
+				Address to = r.getToAddress();
+				// only data reads (the table load of the switch jump), never
+				// calls or jumps into code Ghidra left outside any function
+				if (!r.getReferenceType().isData() || listing.getInstructionContaining(to) != null) {
+					continue;
+				}
+				if (to.compareTo(end) > 0 && to.compareTo(limit) < 0) {
+					CodeUnit cu = listing.getCodeUnitContaining(to);
+					Address max = cu != null ? cu.getMaxAddress() : to;
+					if (max.compareTo(limit) >= 0) {
+						max = limit.subtract(1);
+					}
+					if (last == null || max.compareTo(last) > 0) {
+						last = max;
+					}
+				}
+			}
+		}
+		if (last == null) {
+			return;
+		}
+		// the referenced item is only the start of a table (Ghidra defines
+		// the entries one by one): take everything up to the next function
+		// except the int3 fill the linker puts between functions
+		Address stop = limit.subtract(1);
+		try {
+			while (stop.compareTo(last) > 0 && getByte(stop) == (byte) 0xCC) {
+				stop = stop.subtract(1);
+			}
+		}
+		catch (Exception e) {
+			stop = last;
+		}
+		set.add(end.add(1), stop);
+		// the byte index table of a two-level switch is read with
+		// movzx r, byte ptr [r + table], an operand Ghidra often leaves
+		// without a reference: add it, or the relocation synthesizer keeps
+		// the raw absolute address
+		int tx = currentProgram.startTransaction("Switch table references");
+		try {
+			for (Instruction ins : listing.getInstructions(fn.getBody(), true)) {
+				for (int op = 0; op < ins.getNumOperands(); op++) {
+					for (Object o : ins.getOpObjects(op)) {
+						if (!(o instanceof Scalar)) {
+							continue;
+						}
+						long v = ((Scalar) o).getUnsignedValue();
+						Address to;
+						try {
+							to = toAddr(v);
+						}
+						catch (Exception e) {
+							continue;
+						}
+						if (to.compareTo(end) <= 0 || to.compareTo(stop) > 0) {
+							continue;
+						}
+						// the switch analysis may have referenced the table
+						// minus the index bias (after dec eax): the synthesizer
+						// only relocates a primary reference that equals the
+						// encoded address
+						Reference exact = null;
+						for (Reference r : ins.getOperandReferences(op)) {
+							if (r.getToAddress().equals(to)) {
+								exact = r;
+							}
+						}
+						if (exact == null) {
+							exact = currentProgram.getReferenceManager().addMemoryReference(ins.getAddress(), to,
+								RefType.DATA, SourceType.ANALYSIS, op);
+						}
+						if (!exact.isPrimary()) {
+							currentProgram.getReferenceManager().setPrimary(exact, true);
+						}
+						// the biased reference would be exported as an offcut
+						// label inside the table ("PTR_...+3"), which objdiff
+						// cannot handle: drop it
+						for (Reference r : ins.getOperandReferences(op)) {
+							Address a = r.getToAddress();
+							if (!a.equals(to) && a.compareTo(fn.getBody().getMaxAddress()) > 0
+									&& a.compareTo(stop) <= 0) {
+								currentProgram.getReferenceManager().delete(r);
+							}
+						}
+					}
+				}
+			}
+		}
+		finally {
+			currentProgram.endTransaction(tx, true);
+		}
 	}
 
 	// a failing unit must not abort the script: that would roll back the
