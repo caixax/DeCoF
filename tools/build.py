@@ -319,7 +319,8 @@ def check(units):
     with open(os.path.join(proj, "objdiff.json"), "w") as f:
         json.dump(cfg, f, indent=2)
     out = os.path.join(proj, "report.json")
-    subprocess.call([OBJDIFF, "report", "generate", "-p", proj, "-o", out, "-f", "json"], cwd=ROOT)
+    subprocess.call([OBJDIFF, "report", "generate", "-p", proj, "-o", out, "-f", "json"], cwd=ROOT,
+                    stderr=subprocess.DEVNULL)
     rep = json.load(open(out))
     for unit in rep.get("units", []):
         m = unit.get("measures", {})

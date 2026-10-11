@@ -53,6 +53,8 @@ def main():
     tlo, thi = base + text.VirtualAddress, base + text.VirtualAddress + text.Misc_VirtualSize
     names = {}
     for path in glob.glob(os.path.join(ROOT, "tools", "symbols", "hl_*.csv")):
+        if path.endswith("_datasizes.csv"):
+            continue
         for r in csv.DictReader(open(path)):
             names.setdefault(int(r["va"], 16), r["name"])
     vt = vtable(pe, img, base, cls)

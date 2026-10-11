@@ -456,7 +456,7 @@
       "target_path": "build/target/hl/dlls/cof_3dkeypad.obj",
       "base_path": "build/base/hl/dlls/cof_3dkeypad.obj",
       "metadata": {
-        "source_path": "src/dlls/cof_3dkeypad.cpp"
+        "source_path": "src/dlls/CoF_3DKeypad.cpp"
       }
     },
     {
@@ -464,7 +464,7 @@
       "target_path": "build/target/hl/dlls/cof_action.obj",
       "base_path": "build/base/hl/dlls/cof_action.obj",
       "metadata": {
-        "source_path": "src/dlls/cof_action.cpp"
+        "source_path": "src/dlls/CoF_Action.cpp"
       }
     },
     {
@@ -472,7 +472,7 @@
       "target_path": "build/target/hl/dlls/cof_animatedcamera.obj",
       "base_path": "build/base/hl/dlls/cof_animatedcamera.obj",
       "metadata": {
-        "source_path": "src/dlls/cof_animatedcamera.cpp"
+        "source_path": "src/dlls/CoF_AnimatedCamera.cpp"
       }
     },
     {
@@ -480,7 +480,7 @@
       "target_path": "build/target/hl/dlls/cof_axe.obj",
       "base_path": "build/base/hl/dlls/cof_axe.obj",
       "metadata": {
-        "source_path": "src/dlls/cof_axe.cpp"
+        "source_path": "src/dlls/CoF_Axe.cpp"
       }
     },
     {
@@ -488,7 +488,7 @@
       "target_path": "build/target/hl/dlls/cof_barshoot.obj",
       "base_path": "build/base/hl/dlls/cof_barshoot.obj",
       "metadata": {
-        "source_path": "src/dlls/cof_barshoot.cpp"
+        "source_path": "src/dlls/CoF_BarShoot.cpp"
       }
     },
     {
@@ -496,7 +496,7 @@
       "target_path": "build/target/hl/dlls/cof_boat.obj",
       "base_path": "build/base/hl/dlls/cof_boat.obj",
       "metadata": {
-        "source_path": "src/dlls/cof_boat.cpp"
+        "source_path": "src/dlls/CoF_Boat.cpp"
       }
     },
     {
@@ -504,7 +504,7 @@
       "target_path": "build/target/hl/dlls/cof_booklaser.obj",
       "base_path": "build/base/hl/dlls/cof_booklaser.obj",
       "metadata": {
-        "source_path": "src/dlls/cof_booklaser.cpp"
+        "source_path": "src/dlls/CoF_BookLaser.cpp"
       }
     },
     {
@@ -512,7 +512,7 @@
       "target_path": "build/target/hl/dlls/cof_booksimonsledgehammer.obj",
       "base_path": "build/base/hl/dlls/cof_booksimonsledgehammer.obj",
       "metadata": {
-        "source_path": "src/dlls/cof_booksimonsledgehammer.cpp"
+        "source_path": "src/dlls/CoF_BookSimonSledgehammer.cpp"
       }
     },
     {
@@ -520,7 +520,7 @@
       "target_path": "build/target/hl/dlls/cof_branch.obj",
       "base_path": "build/base/hl/dlls/cof_branch.obj",
       "metadata": {
-        "source_path": "src/dlls/cof_branch.cpp"
+        "source_path": "src/dlls/CoF_Branch.cpp"
       }
     },
     {
@@ -528,7 +528,7 @@
       "target_path": "build/target/hl/dlls/cof_browning_wheelchair.obj",
       "base_path": "build/base/hl/dlls/cof_browning_wheelchair.obj",
       "metadata": {
-        "source_path": "src/dlls/cof_browning_wheelchair.cpp"
+        "source_path": "src/dlls/CoF_Browning_Wheelchair.cpp"
       }
     },
     {
@@ -536,7 +536,7 @@
       "target_path": "build/target/hl/dlls/cof_camera.obj",
       "base_path": "build/base/hl/dlls/cof_camera.obj",
       "metadata": {
-        "source_path": "src/dlls/cof_camera.cpp"
+        "source_path": "src/dlls/CoF_Camera.cpp"
       }
     },
     {
@@ -544,7 +544,7 @@
       "target_path": "build/target/hl/dlls/cof_chainsawboss.obj",
       "base_path": "build/base/hl/dlls/cof_chainsawboss.obj",
       "metadata": {
-        "source_path": "src/dlls/cof_chainsawboss.cpp"
+        "source_path": "src/dlls/CoF_ChainsawBoss.cpp"
       }
     },
     {
@@ -552,7 +552,7 @@
       "target_path": "build/target/hl/dlls/cof_checkbrush.obj",
       "base_path": "build/base/hl/dlls/cof_checkbrush.obj",
       "metadata": {
-        "source_path": "src/dlls/cof_checkbrush.cpp"
+        "source_path": "src/dlls/CoF_CheckBrush.cpp"
       }
     },
     {
@@ -560,7 +560,7 @@
       "target_path": "build/target/hl/dlls/cof_coopbuttonpress.obj",
       "base_path": "build/base/hl/dlls/cof_coopbuttonpress.obj",
       "metadata": {
-        "source_path": "src/dlls/cof_coopbuttonpress.cpp"
+        "source_path": "src/dlls/CoF_CoopButtonPress.cpp"
       }
     },
     {
@@ -568,7 +568,7 @@
       "target_path": "build/target/hl/dlls/cof_cooplevelchangemanager.obj",
       "base_path": "build/base/hl/dlls/cof_cooplevelchangemanager.obj",
       "metadata": {
-        "source_path": "src/dlls/cof_cooplevelchangemanager.cpp"
+        "source_path": "src/dlls/CoF_CoopLevelChangeManager.cpp"
       }
     },
     {
@@ -576,7 +576,7 @@
       "target_path": "build/target/hl/dlls/cof_crab.obj",
       "base_path": "build/base/hl/dlls/cof_crab.obj",
       "metadata": {
-        "source_path": "src/dlls/cof_crab.cpp"
+        "source_path": "src/dlls/CoF_Crab.cpp"
       }
     },
     {
@@ -584,7 +584,7 @@
       "target_path": "build/target/hl/dlls/cof_cutscenemodel.obj",
       "base_path": "build/base/hl/dlls/cof_cutscenemodel.obj",
       "metadata": {
-        "source_path": "src/dlls/cof_cutscenemodel.cpp"
+        "source_path": "src/dlls/CoF_CutsceneModel.cpp"
       }
     },
     {
@@ -592,7 +592,7 @@
       "target_path": "build/target/hl/dlls/cof_developercommentary.obj",
       "base_path": "build/base/hl/dlls/cof_developercommentary.obj",
       "metadata": {
-        "source_path": "src/dlls/cof_developercommentary.cpp"
+        "source_path": "src/dlls/CoF_DeveloperCommentary.cpp"
       }
     },
     {
@@ -600,7 +600,7 @@
       "target_path": "build/target/hl/dlls/cof_doctorboss.obj",
       "base_path": "build/base/hl/dlls/cof_doctorboss.obj",
       "metadata": {
-        "source_path": "src/dlls/cof_doctorboss.cpp"
+        "source_path": "src/dlls/CoF_DoctorBoss.cpp"
       }
     },
     {
@@ -608,7 +608,7 @@
       "target_path": "build/target/hl/dlls/cof_doctorbossshoot.obj",
       "base_path": "build/base/hl/dlls/cof_doctorbossshoot.obj",
       "metadata": {
-        "source_path": "src/dlls/cof_doctorbossshoot.cpp"
+        "source_path": "src/dlls/CoF_DoctorBossShoot.cpp"
       }
     },
     {
@@ -616,7 +616,7 @@
       "target_path": "build/target/hl/dlls/cof_door_prop_view.obj",
       "base_path": "build/base/hl/dlls/cof_door_prop_view.obj",
       "metadata": {
-        "source_path": "src/dlls/cof_door_prop_view.cpp"
+        "source_path": "src/dlls/CoF_Door_Prop_View.cpp"
       }
     },
     {
@@ -624,7 +624,7 @@
       "target_path": "build/target/hl/dlls/cof_dual_weapon.obj",
       "base_path": "build/base/hl/dlls/cof_dual_weapon.obj",
       "metadata": {
-        "source_path": "src/dlls/cof_dual_weapon.cpp"
+        "source_path": "src/dlls/CoF_Dual_Weapon.cpp"
       }
     },
     {
@@ -632,7 +632,7 @@
       "target_path": "build/target/hl/dlls/cof_dualpistol.obj",
       "base_path": "build/base/hl/dlls/cof_dualpistol.obj",
       "metadata": {
-        "source_path": "src/dlls/cof_dualpistol.cpp"
+        "source_path": "src/dlls/CoF_DualPistol.cpp"
       }
     },
     {
@@ -640,7 +640,7 @@
       "target_path": "build/target/hl/dlls/cof_faceless.obj",
       "base_path": "build/base/hl/dlls/cof_faceless.obj",
       "metadata": {
-        "source_path": "src/dlls/cof_faceless.cpp"
+        "source_path": "src/dlls/CoF_Faceless.cpp"
       }
     },
     {
@@ -648,7 +648,7 @@
       "target_path": "build/target/hl/dlls/cof_facelessvalve.obj",
       "base_path": "build/base/hl/dlls/cof_facelessvalve.obj",
       "metadata": {
-        "source_path": "src/dlls/cof_facelessvalve.cpp"
+        "source_path": "src/dlls/CoF_FacelessValve.cpp"
       }
     },
     {
@@ -656,7 +656,7 @@
       "target_path": "build/target/hl/dlls/cof_famas.obj",
       "base_path": "build/base/hl/dlls/cof_famas.obj",
       "metadata": {
-        "source_path": "src/dlls/cof_famas.cpp"
+        "source_path": "src/dlls/CoF_FAMAS.cpp"
       }
     },
     {
@@ -664,7 +664,7 @@
       "target_path": "build/target/hl/dlls/cof_faster.obj",
       "base_path": "build/base/hl/dlls/cof_faster.obj",
       "metadata": {
-        "source_path": "src/dlls/cof_faster.cpp"
+        "source_path": "src/dlls/CoF_Faster.cpp"
       }
     },
     {
@@ -672,7 +672,7 @@
       "target_path": "build/target/hl/dlls/cof_flare.obj",
       "base_path": "build/base/hl/dlls/cof_flare.obj",
       "metadata": {
-        "source_path": "src/dlls/cof_flare.cpp"
+        "source_path": "src/dlls/CoF_Flare.cpp"
       }
     },
     {
@@ -680,7 +680,7 @@
       "target_path": "build/target/hl/dlls/cof_flashlight.obj",
       "base_path": "build/base/hl/dlls/cof_flashlight.obj",
       "metadata": {
-        "source_path": "src/dlls/cof_flashlight.cpp"
+        "source_path": "src/dlls/CoF_Flashlight.cpp"
       }
     },
     {
@@ -688,7 +688,7 @@
       "target_path": "build/target/hl/dlls/cof_flygare.obj",
       "base_path": "build/base/hl/dlls/cof_flygare.obj",
       "metadata": {
-        "source_path": "src/dlls/cof_flygare.cpp"
+        "source_path": "src/dlls/CoF_Flygare.cpp"
       }
     },
     {
@@ -696,7 +696,7 @@
       "target_path": "build/target/hl/dlls/cof_funcvalve.obj",
       "base_path": "build/base/hl/dlls/cof_funcvalve.obj",
       "metadata": {
-        "source_path": "src/dlls/cof_funcvalve.cpp"
+        "source_path": "src/dlls/CoF_FuncValve.cpp"
       }
     },
     {
@@ -704,7 +704,7 @@
       "target_path": "build/target/hl/dlls/cof_g43.obj",
       "base_path": "build/base/hl/dlls/cof_g43.obj",
       "metadata": {
-        "source_path": "src/dlls/cof_g43.cpp"
+        "source_path": "src/dlls/CoF_G43.cpp"
       }
     },
     {
@@ -712,7 +712,7 @@
       "target_path": "build/target/hl/dlls/cof_glock.obj",
       "base_path": "build/base/hl/dlls/cof_glock.obj",
       "metadata": {
-        "source_path": "src/dlls/cof_glock.cpp"
+        "source_path": "src/dlls/CoF_Glock.cpp"
       }
     },
     {
@@ -720,7 +720,7 @@
       "target_path": "build/target/hl/dlls/cof_interdoor.obj",
       "base_path": "build/base/hl/dlls/cof_interdoor.obj",
       "metadata": {
-        "source_path": "src/dlls/cof_interdoor.cpp"
+        "source_path": "src/dlls/CoF_InterDoor.cpp"
       }
     },
     {
@@ -728,7 +728,7 @@
       "target_path": "build/target/hl/dlls/cof_interdoorcoop.obj",
       "base_path": "build/base/hl/dlls/cof_interdoorcoop.obj",
       "metadata": {
-        "source_path": "src/dlls/cof_interdoorcoop.cpp"
+        "source_path": "src/dlls/CoF_InterDoorCoop.cpp"
       }
     },
     {
@@ -736,7 +736,7 @@
       "target_path": "build/target/hl/dlls/cof_keyitem.obj",
       "base_path": "build/base/hl/dlls/cof_keyitem.obj",
       "metadata": {
-        "source_path": "src/dlls/cof_keyitem.cpp"
+        "source_path": "src/dlls/CoF_KeyItem.cpp"
       }
     },
     {
@@ -744,7 +744,7 @@
       "target_path": "build/target/hl/dlls/cof_ladder.obj",
       "base_path": "build/base/hl/dlls/cof_ladder.obj",
       "metadata": {
-        "source_path": "src/dlls/cof_ladder.cpp"
+        "source_path": "src/dlls/CoF_Ladder.cpp"
       }
     },
     {
@@ -752,7 +752,7 @@
       "target_path": "build/target/hl/dlls/cof_lantern.obj",
       "base_path": "build/base/hl/dlls/cof_lantern.obj",
       "metadata": {
-        "source_path": "src/dlls/cof_lantern.cpp"
+        "source_path": "src/dlls/CoF_Lantern.cpp"
       }
     },
     {
@@ -760,7 +760,7 @@
       "target_path": "build/target/hl/dlls/cof_m16.obj",
       "base_path": "build/base/hl/dlls/cof_m16.obj",
       "metadata": {
-        "source_path": "src/dlls/cof_m16.cpp"
+        "source_path": "src/dlls/CoF_M16.cpp"
       }
     },
     {
@@ -768,7 +768,7 @@
       "target_path": "build/target/hl/dlls/cof_mobilephone.obj",
       "base_path": "build/base/hl/dlls/cof_mobilephone.obj",
       "metadata": {
-        "source_path": "src/dlls/cof_mobilephone.cpp"
+        "source_path": "src/dlls/CoF_MobilePhone.cpp"
       }
     },
     {
@@ -776,7 +776,7 @@
       "target_path": "build/target/hl/dlls/cof_monsterbaby.obj",
       "base_path": "build/base/hl/dlls/cof_monsterbaby.obj",
       "metadata": {
-        "source_path": "src/dlls/cof_monsterbaby.cpp"
+        "source_path": "src/dlls/CoF_MonsterBaby.cpp"
       }
     },
     {
@@ -784,7 +784,7 @@
       "target_path": "build/target/hl/dlls/cof_monsterchild.obj",
       "base_path": "build/base/hl/dlls/cof_monsterchild.obj",
       "metadata": {
-        "source_path": "src/dlls/cof_monsterchild.cpp"
+        "source_path": "src/dlls/CoF_MonsterChild.cpp"
       }
     },
     {
@@ -792,7 +792,7 @@
       "target_path": "build/target/hl/dlls/cof_monstercrazybitch.obj",
       "base_path": "build/base/hl/dlls/cof_monstercrazybitch.obj",
       "metadata": {
-        "source_path": "src/dlls/cof_monstercrazybitch.cpp"
+        "source_path": "src/dlls/CoF_MonsterCrazyBitch.cpp"
       }
     },
     {
@@ -800,7 +800,7 @@
       "target_path": "build/target/hl/dlls/cof_monstercustom.obj",
       "base_path": "build/base/hl/dlls/cof_monstercustom.obj",
       "metadata": {
-        "source_path": "src/dlls/cof_monstercustom.cpp"
+        "source_path": "src/dlls/CoF_MonsterCustom.cpp"
       }
     },
     {
@@ -808,7 +808,7 @@
       "target_path": "build/target/hl/dlls/cof_monsterkrypande.obj",
       "base_path": "build/base/hl/dlls/cof_monsterkrypande.obj",
       "metadata": {
-        "source_path": "src/dlls/cof_monsterkrypande.cpp"
+        "source_path": "src/dlls/CoF_MonsterKrypande.cpp"
       }
     },
     {
@@ -816,7 +816,7 @@
       "target_path": "build/target/hl/dlls/cof_monstersewmo.obj",
       "base_path": "build/base/hl/dlls/cof_monstersewmo.obj",
       "metadata": {
-        "source_path": "src/dlls/cof_monstersewmo.cpp"
+        "source_path": "src/dlls/CoF_MonsterSewmo.cpp"
       }
     },
     {
@@ -824,7 +824,7 @@
       "target_path": "build/target/hl/dlls/cof_monsterslower3.obj",
       "base_path": "build/base/hl/dlls/cof_monsterslower3.obj",
       "metadata": {
-        "source_path": "src/dlls/cof_monsterslower3.cpp"
+        "source_path": "src/dlls/CoF_MonsterSlower3.cpp"
       }
     },
     {
@@ -832,7 +832,7 @@
       "target_path": "build/target/hl/dlls/cof_nicecamera.obj",
       "base_path": "build/base/hl/dlls/cof_nicecamera.obj",
       "metadata": {
-        "source_path": "src/dlls/cof_nicecamera.cpp"
+        "source_path": "src/dlls/CoF_NiceCamera.cpp"
       }
     },
     {
@@ -840,7 +840,7 @@
       "target_path": "build/target/hl/dlls/cof_nightstick.obj",
       "base_path": "build/base/hl/dlls/cof_nightstick.obj",
       "metadata": {
-        "source_path": "src/dlls/cof_nightstick.cpp"
+        "source_path": "src/dlls/CoF_NightStick.cpp"
       }
     },
     {
@@ -848,7 +848,7 @@
       "target_path": "build/target/hl/dlls/cof_numeralplate.obj",
       "base_path": "build/base/hl/dlls/cof_numeralplate.obj",
       "metadata": {
-        "source_path": "src/dlls/cof_numeralplate.cpp"
+        "source_path": "src/dlls/CoF_NumeralPlate.cpp"
       }
     },
     {
@@ -856,7 +856,7 @@
       "target_path": "build/target/hl/dlls/cof_p345.obj",
       "base_path": "build/base/hl/dlls/cof_p345.obj",
       "metadata": {
-        "source_path": "src/dlls/cof_p345.cpp"
+        "source_path": "src/dlls/CoF_P345.cpp"
       }
     },
     {
@@ -864,7 +864,7 @@
       "target_path": "build/target/hl/dlls/cof_phonecall.obj",
       "base_path": "build/base/hl/dlls/cof_phonecall.obj",
       "metadata": {
-        "source_path": "src/dlls/cof_phonecall.cpp"
+        "source_path": "src/dlls/CoF_PhoneCall.cpp"
       }
     },
     {
@@ -872,7 +872,7 @@
       "target_path": "build/target/hl/dlls/cof_pushablevan.obj",
       "base_path": "build/base/hl/dlls/cof_pushablevan.obj",
       "metadata": {
-        "source_path": "src/dlls/cof_pushablevan.cpp"
+        "source_path": "src/dlls/CoF_PushableVan.cpp"
       }
     },
     {
@@ -880,7 +880,7 @@
       "target_path": "build/target/hl/dlls/cof_puzzlebars.obj",
       "base_path": "build/base/hl/dlls/cof_puzzlebars.obj",
       "metadata": {
-        "source_path": "src/dlls/cof_puzzlebars.cpp"
+        "source_path": "src/dlls/CoF_PuzzleBars.cpp"
       }
     },
     {
@@ -888,7 +888,7 @@
       "target_path": "build/target/hl/dlls/cof_puzzlebarsbutton.obj",
       "base_path": "build/base/hl/dlls/cof_puzzlebarsbutton.obj",
       "metadata": {
-        "source_path": "src/dlls/cof_puzzlebarsbutton.cpp"
+        "source_path": "src/dlls/CoF_PuzzleBarsButton.cpp"
       }
     },
     {
@@ -896,7 +896,7 @@
       "target_path": "build/target/hl/dlls/cof_radio.obj",
       "base_path": "build/base/hl/dlls/cof_radio.obj",
       "metadata": {
-        "source_path": "src/dlls/cof_radio.cpp"
+        "source_path": "src/dlls/CoF_Radio.cpp"
       }
     },
     {
@@ -904,7 +904,7 @@
       "target_path": "build/target/hl/dlls/cof_revolver.obj",
       "base_path": "build/base/hl/dlls/cof_revolver.obj",
       "metadata": {
-        "source_path": "src/dlls/cof_revolver.cpp"
+        "source_path": "src/dlls/CoF_Revolver.cpp"
       }
     },
     {
@@ -912,7 +912,7 @@
       "target_path": "build/target/hl/dlls/cof_rifle.obj",
       "base_path": "build/base/hl/dlls/cof_rifle.obj",
       "metadata": {
-        "source_path": "src/dlls/cof_rifle.cpp"
+        "source_path": "src/dlls/CoF_Rifle.cpp"
       }
     },
     {
@@ -920,7 +920,7 @@
       "target_path": "build/target/hl/dlls/cof_roofboss.obj",
       "base_path": "build/base/hl/dlls/cof_roofboss.obj",
       "metadata": {
-        "source_path": "src/dlls/cof_roofboss.cpp"
+        "source_path": "src/dlls/CoF_RoofBoss.cpp"
       }
     },
     {
@@ -928,7 +928,7 @@
       "target_path": "build/target/hl/dlls/cof_runningcrazy.obj",
       "base_path": "build/base/hl/dlls/cof_runningcrazy.obj",
       "metadata": {
-        "source_path": "src/dlls/cof_runningcrazy.cpp"
+        "source_path": "src/dlls/CoF_RunningCrazy.cpp"
       }
     },
     {
@@ -936,7 +936,7 @@
       "target_path": "build/target/hl/dlls/cof_sawcrazy.obj",
       "base_path": "build/base/hl/dlls/cof_sawcrazy.obj",
       "metadata": {
-        "source_path": "src/dlls/cof_sawcrazy.cpp"
+        "source_path": "src/dlls/CoF_SawCrazy.cpp"
       }
     },
     {
@@ -944,7 +944,7 @@
       "target_path": "build/target/hl/dlls/cof_sawrunner.obj",
       "base_path": "build/base/hl/dlls/cof_sawrunner.obj",
       "metadata": {
-        "source_path": "src/dlls/cof_sawrunner.cpp"
+        "source_path": "src/dlls/CoF_SawRunner.cpp"
       }
     },
     {
@@ -952,7 +952,7 @@
       "target_path": "build/target/hl/dlls/cof_sewerboss.obj",
       "base_path": "build/base/hl/dlls/cof_sewerboss.obj",
       "metadata": {
-        "source_path": "src/dlls/cof_sewerboss.cpp"
+        "source_path": "src/dlls/CoF_SewerBoss.cpp"
       }
     },
     {
@@ -960,7 +960,7 @@
       "target_path": "build/target/hl/dlls/cof_shotgun.obj",
       "base_path": "build/base/hl/dlls/cof_shotgun.obj",
       "metadata": {
-        "source_path": "src/dlls/cof_shotgun.cpp"
+        "source_path": "src/dlls/CoF_Shotgun.cpp"
       }
     },
     {
@@ -968,7 +968,7 @@
       "target_path": "build/target/hl/dlls/cof_sicksimon.obj",
       "base_path": "build/base/hl/dlls/cof_sicksimon.obj",
       "metadata": {
-        "source_path": "src/dlls/cof_sicksimon.cpp"
+        "source_path": "src/dlls/CoF_SickSimon.cpp"
       }
     },
     {
@@ -976,7 +976,7 @@
       "target_path": "build/target/hl/dlls/cof_sledgehammer.obj",
       "base_path": "build/base/hl/dlls/cof_sledgehammer.obj",
       "metadata": {
-        "source_path": "src/dlls/cof_sledgehammer.cpp"
+        "source_path": "src/dlls/CoF_Sledgehammer.cpp"
       }
     },
     {
@@ -984,7 +984,7 @@
       "target_path": "build/target/hl/dlls/cof_slower.obj",
       "base_path": "build/base/hl/dlls/cof_slower.obj",
       "metadata": {
-        "source_path": "src/dlls/cof_slower.cpp"
+        "source_path": "src/dlls/CoF_Slower.cpp"
       }
     },
     {
@@ -992,7 +992,7 @@
       "target_path": "build/target/hl/dlls/cof_slowertentacled.obj",
       "base_path": "build/base/hl/dlls/cof_slowertentacled.obj",
       "metadata": {
-        "source_path": "src/dlls/cof_slowertentacled.cpp"
+        "source_path": "src/dlls/CoF_SlowerTentacled.cpp"
       }
     },
     {
@@ -1000,7 +1000,7 @@
       "target_path": "build/target/hl/dlls/cof_spitter.obj",
       "base_path": "build/base/hl/dlls/cof_spitter.obj",
       "metadata": {
-        "source_path": "src/dlls/cof_spitter.cpp"
+        "source_path": "src/dlls/CoF_Spitter.cpp"
       }
     },
     {
@@ -1008,7 +1008,7 @@
       "target_path": "build/target/hl/dlls/cof_statues.obj",
       "base_path": "build/base/hl/dlls/cof_statues.obj",
       "metadata": {
-        "source_path": "src/dlls/cof_statues.cpp"
+        "source_path": "src/dlls/CoF_Statues.cpp"
       }
     },
     {
@@ -1016,7 +1016,7 @@
       "target_path": "build/target/hl/dlls/cof_statueuse.obj",
       "base_path": "build/base/hl/dlls/cof_statueuse.obj",
       "metadata": {
-        "source_path": "src/dlls/cof_statueuse.cpp"
+        "source_path": "src/dlls/CoF_StatueUse.cpp"
       }
     },
     {
@@ -1024,7 +1024,7 @@
       "target_path": "build/target/hl/dlls/cof_stranger.obj",
       "base_path": "build/base/hl/dlls/cof_stranger.obj",
       "metadata": {
-        "source_path": "src/dlls/cof_stranger.cpp"
+        "source_path": "src/dlls/CoF_Stranger.cpp"
       }
     },
     {
@@ -1032,7 +1032,7 @@
       "target_path": "build/target/hl/dlls/cof_strangle.obj",
       "base_path": "build/base/hl/dlls/cof_strangle.obj",
       "metadata": {
-        "source_path": "src/dlls/cof_strangle.cpp"
+        "source_path": "src/dlls/CoF_Strangle.cpp"
       }
     },
     {
@@ -1040,7 +1040,7 @@
       "target_path": "build/target/hl/dlls/cof_subtitlechange.obj",
       "base_path": "build/base/hl/dlls/cof_subtitlechange.obj",
       "metadata": {
-        "source_path": "src/dlls/cof_subtitlechange.cpp"
+        "source_path": "src/dlls/CoF_SubtitleChange.cpp"
       }
     },
     {
@@ -1048,7 +1048,7 @@
       "target_path": "build/target/hl/dlls/cof_subtitlemain.obj",
       "base_path": "build/base/hl/dlls/cof_subtitlemain.obj",
       "metadata": {
-        "source_path": "src/dlls/cof_subtitlemain.cpp"
+        "source_path": "src/dlls/CoF_SubtitleMain.cpp"
       }
     },
     {
@@ -1056,7 +1056,7 @@
       "target_path": "build/target/hl/dlls/cof_subwaybrickwall.obj",
       "base_path": "build/base/hl/dlls/cof_subwaybrickwall.obj",
       "metadata": {
-        "source_path": "src/dlls/cof_subwaybrickwall.cpp"
+        "source_path": "src/dlls/CoF_SubwayBrickWall.cpp"
       }
     },
     {
@@ -1064,7 +1064,7 @@
       "target_path": "build/target/hl/dlls/cof_suicider.obj",
       "base_path": "build/base/hl/dlls/cof_suicider.obj",
       "metadata": {
-        "source_path": "src/dlls/cof_suicider.cpp"
+        "source_path": "src/dlls/CoF_Suicider.cpp"
       }
     },
     {
@@ -1072,7 +1072,7 @@
       "target_path": "build/target/hl/dlls/cof_switchblade.obj",
       "base_path": "build/base/hl/dlls/cof_switchblade.obj",
       "metadata": {
-        "source_path": "src/dlls/cof_switchblade.cpp"
+        "source_path": "src/dlls/CoF_Switchblade.cpp"
       }
     },
     {
@@ -1080,7 +1080,7 @@
       "target_path": "build/target/hl/dlls/cof_syringe.obj",
       "base_path": "build/base/hl/dlls/cof_syringe.obj",
       "metadata": {
-        "source_path": "src/dlls/cof_syringe.cpp"
+        "source_path": "src/dlls/CoF_Syringe.cpp"
       }
     },
     {
@@ -1088,7 +1088,7 @@
       "target_path": "build/target/hl/dlls/cof_taller.obj",
       "base_path": "build/base/hl/dlls/cof_taller.obj",
       "metadata": {
-        "source_path": "src/dlls/cof_taller.cpp"
+        "source_path": "src/dlls/CoF_Taller.cpp"
       }
     },
     {
@@ -1096,7 +1096,7 @@
       "target_path": "build/target/hl/dlls/cof_taperecorder.obj",
       "base_path": "build/base/hl/dlls/cof_taperecorder.obj",
       "metadata": {
-        "source_path": "src/dlls/cof_taperecorder.cpp"
+        "source_path": "src/dlls/CoF_TapeRecorder.cpp"
       }
     },
     {
@@ -1104,7 +1104,7 @@
       "target_path": "build/target/hl/dlls/cof_telephone.obj",
       "base_path": "build/base/hl/dlls/cof_telephone.obj",
       "metadata": {
-        "source_path": "src/dlls/cof_telephone.cpp"
+        "source_path": "src/dlls/CoF_Telephone.cpp"
       }
     },
     {
@@ -1112,7 +1112,7 @@
       "target_path": "build/target/hl/dlls/cof_telescope.obj",
       "base_path": "build/base/hl/dlls/cof_telescope.obj",
       "metadata": {
-        "source_path": "src/dlls/cof_telescope.cpp"
+        "source_path": "src/dlls/CoF_Telescope.cpp"
       }
     },
     {
@@ -1120,7 +1120,7 @@
       "target_path": "build/target/hl/dlls/cof_thirdpersoninteraction.obj",
       "base_path": "build/base/hl/dlls/cof_thirdpersoninteraction.obj",
       "metadata": {
-        "source_path": "src/dlls/cof_thirdpersoninteraction.cpp"
+        "source_path": "src/dlls/CoF_ThirdPersonInteraction.cpp"
       }
     },
     {
@@ -1128,7 +1128,7 @@
       "target_path": "build/target/hl/dlls/cof_tmp.obj",
       "base_path": "build/base/hl/dlls/cof_tmp.obj",
       "metadata": {
-        "source_path": "src/dlls/cof_tmp.cpp"
+        "source_path": "src/dlls/CoF_TMP.cpp"
       }
     },
     {
@@ -1136,7 +1136,7 @@
       "target_path": "build/target/hl/dlls/cof_twitcher.obj",
       "base_path": "build/base/hl/dlls/cof_twitcher.obj",
       "metadata": {
-        "source_path": "src/dlls/cof_twitcher.cpp"
+        "source_path": "src/dlls/CoF_Twitcher.cpp"
       }
     },
     {
@@ -1144,7 +1144,7 @@
       "target_path": "build/target/hl/dlls/cof_twitcher2.obj",
       "base_path": "build/base/hl/dlls/cof_twitcher2.obj",
       "metadata": {
-        "source_path": "src/dlls/cof_twitcher2.cpp"
+        "source_path": "src/dlls/CoF_Twitcher2.cpp"
       }
     },
     {
@@ -1152,7 +1152,7 @@
       "target_path": "build/target/hl/dlls/cof_twitcher3.obj",
       "base_path": "build/base/hl/dlls/cof_twitcher3.obj",
       "metadata": {
-        "source_path": "src/dlls/cof_twitcher3.cpp"
+        "source_path": "src/dlls/CoF_Twitcher3.cpp"
       }
     },
     {
@@ -1160,7 +1160,7 @@
       "target_path": "build/target/hl/dlls/cof_twitcher4.obj",
       "base_path": "build/base/hl/dlls/cof_twitcher4.obj",
       "metadata": {
-        "source_path": "src/dlls/cof_twitcher4.cpp"
+        "source_path": "src/dlls/CoF_Twitcher4.cpp"
       }
     },
     {
@@ -1168,7 +1168,7 @@
       "target_path": "build/target/hl/dlls/cof_userpasswordnote.obj",
       "base_path": "build/base/hl/dlls/cof_userpasswordnote.obj",
       "metadata": {
-        "source_path": "src/dlls/cof_userpasswordnote.cpp"
+        "source_path": "src/dlls/CoF_UserPasswordNote.cpp"
       }
     },
     {
@@ -1176,7 +1176,7 @@
       "target_path": "build/target/hl/dlls/cof_vp70.obj",
       "base_path": "build/base/hl/dlls/cof_vp70.obj",
       "metadata": {
-        "source_path": "src/dlls/cof_vp70.cpp"
+        "source_path": "src/dlls/CoF_VP70.cpp"
       }
     },
     {
@@ -1184,7 +1184,7 @@
       "target_path": "build/target/hl/dlls/cof_watro.obj",
       "base_path": "build/base/hl/dlls/cof_watro.obj",
       "metadata": {
-        "source_path": "src/dlls/cof_watro.cpp"
+        "source_path": "src/dlls/CoF_Watro.cpp"
       }
     },
     {
@@ -1192,7 +1192,7 @@
       "target_path": "build/target/hl/dlls/cof_wheelchairplayer.obj",
       "base_path": "build/base/hl/dlls/cof_wheelchairplayer.obj",
       "metadata": {
-        "source_path": "src/dlls/cof_wheelchairplayer.cpp"
+        "source_path": "src/dlls/CoF_WheelchairPlayer.cpp"
       }
     },
     {
@@ -1216,7 +1216,7 @@
       "target_path": "build/target/hl/dlls/subtitle_multiple.obj",
       "base_path": "build/base/hl/dlls/subtitle_multiple.obj",
       "metadata": {
-        "source_path": "src/dlls/subtitle_multiple.cpp"
+        "source_path": "src/dlls/Subtitle_Multiple.cpp"
       }
     },
     {

@@ -28,7 +28,10 @@ def scan(path, func_va, size):
     img = pe.get_memory_mapped_image()
     md = capstone.Cs(capstone.CS_ARCH_X86, capstone.CS_MODE_32)
     md.detail = True
-    last_str = None
+    # the optimizer pushes the next message name before storing the
+    # previous result, so the name belongs to the call, not to the store
+    pending = None
+    returned = None
     out = {}
     for ins in md.disasm(img[func_va - base:func_va - base + size], func_va):
         if ins.mnemonic == "push" and ins.operands[0].type == capstone.x86.X86_OP_IMM:
@@ -38,12 +41,14 @@ def scan(path, func_va, size):
                 e = img.find(b"\0", o, o + 64)
                 s = img[o:e]
                 if e > o and all(32 <= c < 127 for c in s):
-                    last_str = s.decode()
+                    pending = s.decode()
+        if ins.mnemonic == "call":
+            returned, pending = pending, None
         if ins.mnemonic == "mov" and len(ins.operands) == 2 and ins.operands[0].type == capstone.x86.X86_OP_MEM \
                 and ins.operands[0].mem.base == 0 and ins.operands[1].type == capstone.x86.X86_OP_REG \
-                and ins.reg_name(ins.operands[1].reg) == "eax" and last_str:
-            out[last_str] = ins.operands[0].mem.disp & 0xFFFFFFFF
-            last_str = None
+                and ins.reg_name(ins.operands[1].reg) == "eax" and returned:
+            out[returned] = ins.operands[0].mem.disp & 0xFFFFFFFF
+            returned = None
     return out
 
 

@@ -572,6 +572,10 @@ int UTIL_SharedRandomLong( unsigned int seed, int low, int high );
 float UTIL_SharedRandomFloat( unsigned int seed, float low, float high );
 
 float UTIL_WeaponTimeBase( void );
+
+// CoF 1.6a (util.cpp, no symbol): plays a weapon sound; used by the weapons
+// of the final patch for their "weapons_new/" fire sounds
+void guess_UTIL_PlayWeaponSound( const char *sample, int guess_iParam2, bool guess_bParam3, Vector vecOrigin, CBaseEntity *pPlayer, bool guess_bParam6 );
 int GetStdLightStyle (int iStyle); //LRC- declared here so it can be used by everything that
 									// needs to deal with the standard lightstyles.
 // LRC- for aliases and groups

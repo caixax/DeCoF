@@ -709,7 +709,8 @@ public:
 	virtual void HandleAnimEvent( MonsterEvent_t *pEvent );
 	float m_flReviveTime;
 
-	int  GiveAmmo( int iAmount, char *szName, int iMax );
+	int  GiveAmmo( int iAmount, char *szName, int iMax, bool guess_bNoMessage );
+	BOOL guess_HasJustJumped( void );	// CoF 1.6a: returns m_bJustJumped != false
 	void SendAmmoUpdate(void);
 
 	void WaterMove( void );

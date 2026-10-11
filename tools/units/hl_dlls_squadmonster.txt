@@ -6,7 +6,8 @@
 ?NoFriendlyFire@CSquadMonster@@QAEHH@Z
 ?Restore@CSquadMonster@@UAEHAAVCRestore@@@Z
 ?Save@CSquadMonster@@UAEHAAVCSave@@@Z
+?ScheduleChange@CSquadMonster@@UAEXXZ
 ?SquadMakeEnemy@CSquadMonster@@QAEXPAVCBaseEntity@@@Z
 ?SquadRecruit@CSquadMonster@@QAEHHH@Z
 ?StartMonster@CSquadMonster@@UAEXXZ
-?ScheduleChange@CSquadMonster@@UAEXXZ
+?VacateSlot@CSquadMonster@@QAEXXZ

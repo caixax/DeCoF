@@ -12,6 +12,7 @@ import csv
 import glob
 import os
 import re
+import struct
 import sys
 
 import capstone
@@ -83,6 +84,9 @@ def main():
             return "%s+0x%X%s" % (spans[i][2], off, " (%s)" % m if m else "")
         return None
 
+    rdata = [s for s in pe.sections if s.Name.startswith(b".rdata")]
+    rdata_lo = base + rdata[0].VirtualAddress if rdata else 0
+    rdata_hi = rdata_lo + rdata[0].Misc_VirtualSize if rdata else 0
     md = capstone.Cs(capstone.CS_ARCH_X86, capstone.CS_MODE_32)
     print("%08X %s" % (va, names.get(va, "")))
     for ins in md.disasm(img[va - base:va - base + length], va):
@@ -99,6 +103,10 @@ def main():
                     n = inside(a)
                     if n:
                         notes.append(n)
+                    elif rdata_lo <= a < rdata_hi and ("dword" in ins.op_str or "qword" in ins.op_str):
+                        f = struct.unpack_from("<f", img, a - base)[0]
+                        d = struct.unpack_from("<d", img, a - base)[0]
+                        notes.append(("double %r" % d) if "qword" in ins.op_str else ("float %r" % f))
         print("  %08X  %-40s %s" % (ins.address, (ins.mnemonic + " " + ins.op_str)[:40],
                                      ("; " + ", ".join(notes)) if notes else ""))
 

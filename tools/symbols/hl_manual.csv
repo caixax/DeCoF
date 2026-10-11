@@ -8,3 +8,8 @@ va,name,kind
 1013DF50,__ftol2_sse,func
 1017BCBB,_stricmp,func
 100099E0,_PM_UpdateStepSound,func
+10226728,?gSkillData@@3Uskilldata_t@@A,data
+10231F50,?m_usThirdFlash@@3GA,data
+1016BE90,__libm_sse2_sqrt_precise,func
+101011D0,?ScheduleChange@CSquadMonster@@UAEXXZ,func
+10101980,?VacateSlot@CSquadMonster@@QAEXXZ,func

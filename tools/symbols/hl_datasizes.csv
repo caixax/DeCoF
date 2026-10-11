@@ -10,6 +10,7 @@ name,size,source
 ??_7CBaseMonster@@6B@,580,obj
 ??_7CBasePlatTrain@@6B@,292,obj
 ??_7CBasePlayer@@6B@,608,obj
+??_7CBasePlayerAmmo@@6B@,288,obj
 ??_7CBasePlayerItem@@6B@,388,obj
 ??_7CBasePlayerWeapon@@6B@,472,obj
 ??_7CBaseToggle@@6B@,288,obj
@@ -85,6 +86,8 @@ name,size,source
 ??_7CGenericMonster@@6B@,580,obj
 ??_7CGib@@6B@,284,obj
 ??_7CGibShooter@@6B@,288,obj
+??_7CGlock@@6B@,472,obj
+??_7CGlockAmmo@@6B@,288,obj
 ??_7CGlow@@6B@,284,obj
 ??_7CGrassSprite@@6B@,284,obj
 ??_7CGrenade@@6B@,584,obj
@@ -288,6 +291,7 @@ name,size,source
 ??_C@_05JFJFHPJI@stype@,6,obj
 ??_C@_05JHNHHMNA@WOUND@,6,obj
 ??_C@_05KBMIIEA@?1maps@,6,obj
+??_C@_05KINDNLLC@glock@,6,obj
 ??_C@_05KIPGMOIA@NFIRE@,6,obj
 ??_C@_05KOFPJBEN@m_dir@,6,obj
 ??_C@_05MCDBDOED@EFIRE@,6,obj
@@ -398,6 +402,7 @@ name,size,source
 ??_C@_07CIONNGDK@m_train@,8,obj
 ??_C@_07CJDBHDIN@primary@,8,obj
 ??_C@_07CJNHFDCG@TURN?5ON@,8,obj
+??_C@_07CLKEOJIH@number1@,8,obj
 ??_C@_07COBCGLDE@ACT_ARM@,8,obj
 ??_C@_07COKJJNNA@m_iWait@,8,obj
 ??_C@_07DDLPDDFL@m_speed@,8,obj
@@ -420,6 +425,7 @@ name,size,source
 ??_C@_07HNECPHEC@enddist@,8,obj
 ??_C@_07IAEFOCFG@?$CKplayer@,8,obj
 ??_C@_07IECLKIHP@?$HLblood4@,8,obj
+??_C@_07IJLKEE@number2@,8,obj
 ??_C@_07IKIALLDG@?5and?5?$CFs@,8,obj
 ??_C@_07ILBIFAOJ@m_ppath@,8,obj
 ??_C@_07ILHJIGAO@bodyque@,8,obj
@@ -452,6 +458,7 @@ name,size,source
 ??_C@_07NOKNLIHP@altpath@,8,obj
 ??_C@_07NPIJMNAB@Error?$CB?6@,8,obj
 ??_C@_07OAIDGMCI@skyname@,8,obj
+??_C@_07OGEBFOPB@suicide@,8,obj
 ??_C@_07OLJMCAFB@netname@,8,obj
 ??_C@_07ONPBMBOP@message@,8,obj
 ??_C@_07PABIOCAD@respawn@,8,obj
@@ -500,6 +507,7 @@ name,size,source
 ??_C@_08GIFCJGKA@m_iState@,9,obj
 ??_C@_08GJCBHBDF@m_iFlags@,9,obj
 ??_C@_08GOGBFAEM@gibmodel@,9,obj
+??_C@_08GOLJDKGA@b_Saving@,9,obj
 ??_C@_08HBEAMFFD@maxpunch@,9,obj
 ??_C@_08HIJCKPAK@?$HLyblood3@,9,obj
 ??_C@_08HKBEOLJF@TURN?5OFF@,9,obj
@@ -568,6 +576,7 @@ name,size,source
 ??_C@_09BIMFLJHE@?$HLbigshot2@,10,obj
 ??_C@_09BJCIJCBC@yaw_speed@,10,obj
 ??_C@_09BJKCIGCI@nextthink@,10,obj
+??_C@_09BJOHEOJI@keyscript@,10,obj
 ??_C@_09BMABOBGC@minspread@,10,obj
 ??_C@_09BNANHLNG@maxspread@,10,obj
 ??_C@_09BNDMKGMA@ACT_GLIDE@,10,obj
@@ -590,6 +599,7 @@ name,size,source
 ??_C@_09EADLKHON@secondary@,10,obj
 ??_C@_09EHCGJNBI@amplitude@,10,obj
 ??_C@_09EHMFNDJK@m_fDamage@,10,obj
+??_C@_09EILPGOKN@m_bIsBoss@,10,obj
 ??_C@_09EKLKHEGF@m_iHeight@,10,obj
 ??_C@_09EKPKCPJP@lfomodvol@,10,obj
 ??_C@_09ENDKGHG@ACT_STAND@,10,obj
@@ -625,6 +635,7 @@ name,size,source
 ??_C@_09JDKDMEBA@m_iValues@,10,obj
 ??_C@_09JDKMNDGN@directuse@,10,obj
 ??_C@_09JFPKDOKF@m_iszIdle@,10,obj
+??_C@_09JGAJOMPA@onehanded@,10,obj
 ??_C@_09JGAKDOFI@CEnvSpark@,10,obj
 ??_C@_09JGFLCGLI@m_iLFlags@,10,obj
 ??_C@_09JHALOFKC@Rain_Mode@,10,obj
@@ -673,6 +684,8 @@ name,size,source
 ??_C@_0BA@COMJHCCH@ACT_WALK_SCARED@,16,obj
 ??_C@_0BA@CPMFMELB@m_spriteTexture@,16,obj
 ??_C@_0BA@DABDFMJP@ACT_STRAFE_LEFT@,16,obj
+??_C@_0BA@DFIAAMMN@models?1null?4mdl@,16,obj
+??_C@_0BA@DLOPHGAJ@m_bWaitingToDie@,16,obj
 ??_C@_0BA@EAPIGAIH@Special?5Attack1@,16,obj
 ??_C@_0BA@EGAICAJI@func_rot_button@,16,obj
 ??_C@_0BA@EJMDOJFA@events?1train?4sc@,16,obj
@@ -680,6 +693,7 @@ name,size,source
 ??_C@_0BA@FEIPGEDK@m_iszTargetname@,16,obj
 ??_C@_0BA@FGNJEEBA@m_vecMasterAvel@,16,obj
 ??_C@_0BA@FINLDLMF@locked_sentence@,16,obj
+??_C@_0BA@FPBMCAOB@ironsight_right@,16,obj
 ??_C@_0BA@FPHDGFEO@m_flAttenuation@,16,obj
 ??_C@_0BA@GILAOABN@m_iszSpriteName@,16,obj
 ??_C@_0BA@GJPCGIHI@m_fFadeChildren@,16,obj
@@ -737,6 +751,7 @@ name,size,source
 ??_C@_0BB@DOELOHDO@m_iSpriteTexture@,17,obj
 ??_C@_0BB@EAPLFHEL@radsuit_finished@,17,obj
 ??_C@_0BB@EGBBPBGK@?6?$CKGraph?5Loaded?$CB?6@,17,obj
+??_C@_0BB@EIABPHPO@m_iszLockedSound@,17,obj
 ??_C@_0BB@ELCMIPNP@debris?1wood2?4wav@,17,obj
 ??_C@_0BB@ELIGMLEN@weapons?1ric2?4wav@,17,obj
 ??_C@_0BB@EMJBJDBM@sprites?1null?4spr@,17,obj
@@ -761,6 +776,7 @@ name,size,source
 ??_C@_0BB@ILMDIDMA@m_noiseAmplitude@,17,obj
 ??_C@_0BB@IMFDPFIC@mp_allowmonsters@,17,obj
 ??_C@_0BB@IPMDJPAO@items?1armour?4wav@,17,obj
+??_C@_0BB@JCOADJDD@models?1shell?4mdl@,17,obj
 ??_C@_0BB@JIEFKIOI@ACT_SMALL_FLINCH@,17,obj
 ??_C@_0BB@JIHMMKNF@m_bitsDamageType@,17,obj
 ??_C@_0BB@JKMKDKMM@TeleportToScript@,17,obj
@@ -804,6 +820,7 @@ name,size,source
 ??_C@_0BC@FLEPANPD@debris?1glass2?4wav@,18,obj
 ??_C@_0BC@GDALAHJA@weapon_9mmhandgun@,18,obj
 ??_C@_0BC@GDLHGGCB@models?1w_suit?4mdl@,18,obj
+??_C@_0BC@GHKCJBNJ@ironsight_forward@,18,obj
 ??_C@_0BC@GJFDHJHG@CScriptedSentence@,18,obj
 ??_C@_0BC@GJKIJIKO@debris?1flesh3?4wav@,18,obj
 ??_C@_0BC@HBACNNEA@ACT_INSPECT_FLOOR@,18,obj
@@ -816,8 +833,10 @@ name,size,source
 ??_C@_0BC@JABDNOFG@debris?1glass3?4wav@,18,obj
 ??_C@_0BC@JANPGMIG@m_iDripsPerSecond@,18,obj
 ??_C@_0BC@JFGEDHPE@m_strChangeTarget@,18,obj
+??_C@_0BC@JFMAGCM@ironsights_toggle@,18,obj
 ??_C@_0BC@JJECDOGP@light_environment@,18,obj
 ??_C@_0BC@JLJNDHDD@plats?1ttrain2?4wav@,18,obj
+??_C@_0BC@JONBMBKG@m_vOriginalOrigin@,18,obj
 ??_C@_0BC@KCPEELAL@debris?1flesh2?4wav@,18,obj
 ??_C@_0BC@KDKLKAFP@ACT_RANGE_ATTACK1@,18,obj
 ??_C@_0BC@KJNLDMIN@nmonqnmomnmomomno@,18,obj
@@ -840,6 +859,7 @@ name,size,source
 ??_C@_0BC@NHBEPEHO@m_iszSequence_Off@,18,obj
 ??_C@_0BC@NMOKKBGN@Graph?5not?5ready?$CB?6@,18,obj
 ??_C@_0BC@NNNLHPFN@debris?1glass1?4wav@,18,obj
+??_C@_0BC@OHFKKAKF@m_bFrozenByCamera@,18,obj
 ??_C@_0BC@OHGDGFAN@ACT_MELEE_ATTACK1@,18,obj
 ??_C@_0BC@OHNLLDGA@scripted_sequence@,18,obj
 ??_C@_0BC@PCDJNKLI@debris?1flesh7?4wav@,18,obj
@@ -866,6 +886,7 @@ name,size,source
 ??_C@_0BD@DDFODEJH@player?1pl_asf3?4wav@,19,obj
 ??_C@_0BD@DKJAMAOF@weapon_handgrenade@,19,obj
 ??_C@_0BD@EFPMPEO@m_imaxlivechildren@,19,obj
+??_C@_0BD@EIECJNIB@m_iszLockedMessage@,19,obj
 ??_C@_0BD@EJJAAKBC@m_iszTriggerTarget@,19,obj
 ??_C@_0BD@ENNHPNKC@buttons?1lever1?4wav@,19,obj
 ??_C@_0BD@FDGFPBJP@Idle?5Stop?5Shooting@,19,obj
@@ -883,6 +904,7 @@ name,size,source
 ??_C@_0BD@KEBLNHBF@ACT_FLINCH_STOMACH@,19,obj
 ??_C@_0BD@KNAKNICH@buttons?1spark4?4wav@,19,obj
 ??_C@_0BD@LAAPOIJP@buttons?1spark3?4wav@,19,obj
+??_C@_0BD@LCACMIFB@m_iszUnLockedSound@,19,obj
 ??_C@_0BD@LHAMEMMF@m_vecPostAssistVel@,19,obj
 ??_C@_0BD@LIEJFOIP@tlChaseEnemyFailed@,19,obj
 ??_C@_0BD@MEGNOLOC@?$CK?$CKNo?5Connections?$CB?6@,19,obj
@@ -891,6 +913,7 @@ name,size,source
 ??_C@_0BD@NEBPBHJI@m_vecRotWithOffset@,19,obj
 ??_C@_0BD@NGEGLPLE@buttons?1lever5?4wav@,19,obj
 ??_C@_0BD@NIOPMJLP@m_movementActivity@,19,obj
+??_C@_0BD@NNAGJPLP@pistol_reloadempty@,19,obj
 ??_C@_0BD@NPADOBCL@m_iszDefaultMember@,19,obj
 ??_C@_0BD@OAMCHJCM@buttons?1spark6?4wav@,19,obj
 ??_C@_0BD@OEKCJAMA@messageattenuation@,19,obj
@@ -915,6 +938,7 @@ name,size,source
 ??_C@_0BE@BKMJDNOF@plats?1talkmove2?4wav@,20,obj
 ??_C@_0BE@BNGAGBOI@doors?1doorstop3?4wav@,20,obj
 ??_C@_0BE@BNHODJIK@m_vecPostAssistAVel@,20,obj
+??_C@_0BE@BPDONPMN@weaponfunctionglock@,20,obj
 ??_C@_0BE@CAMCEHHF@buttons?1button1?4wav@,20,obj
 ??_C@_0BE@CBMJIEOC@?3?5In?5stopped?5anim?4?5@,20,obj
 ??_C@_0BE@CDGFFHGP@m_iTriggerCondition@,20,obj
@@ -968,6 +992,7 @@ name,size,source
 ??_C@_0BE@KDJHCPPB@m_fSequenceFinished@,20,obj
 ??_C@_0BE@KGFGDFNL@buttons?1button2?4wav@,20,obj
 ??_C@_0BE@KIPBNHMG@ACT_FLINCH_RIGHTARM@,20,obj
+??_C@_0BE@KKKHJHHD@aurora?1gunsmoke?4aur@,20,obj
 ??_C@_0BE@KNBCHALH@player?1pl_duct3?4wav@,20,obj
 ??_C@_0BE@LABHEAAP@player?1pl_duct4?4wav@,20,obj
 ??_C@_0BE@LGEPOMEA@m_vecMoveWithOffset@,20,obj
@@ -1014,6 +1039,8 @@ name,size,source
 ??_C@_0BF@DDCPJKEB@models?1w_battery?4mdl@,21,obj
 ??_C@_0BF@DHAEOICC@doors?1doormove10?4wav@,21,obj
 ??_C@_0BF@DJOOOKGD@buttons?1button10?4wav@,21,obj
+??_C@_0BF@DKFPPBMJ@models?1w_9mmclip?4mdl@,21,obj
+??_C@_0BF@DOFENBFI@models?1ammo?1clip?4mdl@,21,obj
 ??_C@_0BF@EBMNAAIE@Can?8t?5Create?5Route?$CB?6@,21,obj
 ??_C@_0BF@EGMNOHPE@player?1pl_slosh4?4wav@,21,obj
 ??_C@_0BF@EJOPDEBA@?3?5Stopped?5for?5?$CF?42f?4?5@,21,obj
@@ -1033,6 +1060,7 @@ name,size,source
 ??_C@_0BF@HIDIPGGD@TRAIN?$CI?$CFs?$CJ?3?5Dead?5end?5@,21,obj
 ??_C@_0BF@HMLDPGAB@Size?5of?5Routes?5?$DN?5?$CFd?6@,21,obj
 ??_C@_0BF@HPBCCMPJ@ignored?5trigger?5?$CFs?4?6@,21,obj
+??_C@_0BF@IDANKJPL@weapons?1item_get?4wav@,21,obj
 ??_C@_0BF@IIFBEHBM@models?1glassgibs?4mdl@,21,obj
 ??_C@_0BF@IPENJCJF@m_flMoveWaitFinished@,21,obj
 ??_C@_0BF@JAJEAEOJ@player?1pl_slosh2?4wav@,21,obj
@@ -1052,6 +1080,7 @@ name,size,source
 ??_C@_0BF@MMJOPCEA@player?1pl_grass4?4wav@,21,obj
 ??_C@_0BF@NBCCBNJB@NULL?5Ent?5in?5Create?$CB?6@,21,obj
 ??_C@_0BF@NBJLMCPI@player?1pl_grass3?4wav@,21,obj
+??_C@_0BF@NHLLOKJJ@m_iszUnLockedMessage@,21,obj
 ??_C@_0BF@NOKALICN@debris?1concrete3?4wav@,21,obj
 ??_C@_0BF@NPFAGCBF@player?1pl_grate3?4wav@,21,obj
 ??_C@_0BF@ODAKNONJ@common?1bodydrop4?4wav@,21,obj
@@ -1081,6 +1110,7 @@ name,size,source
 ??_C@_0BG@HNPANKJO@debris?1bustmetal1?4wav@,22,obj
 ??_C@_0BG@ICJLEFNA@TRAIN?$CI?$CFs?$CJ?3?5Lost?5path?6@,22,obj
 ??_C@_0BG@IDHDMAPD@models?1cindergibs?4mdl@,22,obj
+??_C@_0BG@IELCDALG@m_bIsFlickerAppearing@,22,obj
 ??_C@_0BG@JJCDGMNK@?$HM?5?5?5?5prim?5expand?3?5?$CFf?6@,22,obj
 ??_C@_0BG@KIEJIBEB@items?1suitcharge1?4wav@,22,obj
 ??_C@_0BG@KMIBAGDB@debris?1bustglass2?4wav@,22,obj
@@ -1093,6 +1123,8 @@ name,size,source
 ??_C@_0BG@NDKODCGH@debris?1bustflesh1?4wav@,22,obj
 ??_C@_0BG@NHHIEJCJ@player?1pl_ladder2?4wav@,22,obj
 ??_C@_0BG@PFBLLDCD@weapons?1g_bounce3?4wav@,22,obj
+??_C@_0BG@PIBAKJNL@m_flNextFlickerAppear@,22,obj
+??_C@_0BG@PILGFHNF@m_flFlickerAppearTime@,22,obj
 ??_C@_0BG@PLGEKIDA@debris?1bustmetal2?4wav@,22,obj
 ??_C@_0BG@PLLEOBIP@?$HM?5?5?5?5return?5time?3?5?$CFf?6@,22,obj
 ??_C@_0BG@PMEPCHFH@debris?1beamstart7?4wav@,22,obj
@@ -1194,15 +1226,18 @@ name,size,source
 ??_C@_0BL@PDIDECJC@No?5such?5sentence?5group?5?$CFs?6@,27,obj
 ??_C@_0BM@BEMFLHKF@Missing?5movewith?5entity?5?$CFs?6@,28,obj
 ??_C@_0BM@DFFKPKLL@?4NOD?5File?5will?5be?5updated?6?6@,28,obj
+??_C@_0BM@ECLECEMN@weapons?1sleeve_generic2?4wav@,28,obj
 ??_C@_0BM@EKPBDNMJ@Routing?5is?5inconsistent?$CB?$CB?$CB?6@,28,obj
 ??_C@_0BM@EPIFKIHE@GetPathToEnemyLKP?5failed?$CB?$CB?6@,28,obj
 ??_C@_0BM@HFKGBCFB@Playing?5sentence?5?$CFs?5?$CI?$CF?41f?$CJ?6@,28,obj
+??_C@_0BM@IJOIPHGI@weapons?1sleeve_generic3?4wav@,28,obj
 ??_C@_0BM@IKDFNEMI@PM?5?5Got?5a?5NaN?5origin?5on?5?$CFi?6@,28,obj
 ??_C@_0BM@LHAMECIN@Missing?5?8?$CJ?8?5in?5master?5?$CC?$CFs?$CC?6@,28,obj
 ??_C@_0BM@LIMMJEEB@models?1cine2_hvyweapons?4mdl@,28,obj
 ??_C@_0BM@MEBBBCLF@DropItem?$CI?$CJ?5?9?5No?5item?5name?$CB?6@,28,obj
 ??_C@_0BM@OJHBDKGJ@GetPathToHintNode?5failed?$CB?$CB?6@,28,obj
 ??_C@_0BN@DPICEKCN@Train?5?$CFs?5speed?5set?5to?5?$CF4?42f?6@,29,obj
+??_C@_0BN@FPGCMNJA@weapons?1glock?1glock_fire?4wav@,29,obj
 ??_C@_0BN@GHHOHFFC@Nodes?5need?5sorting?5?$CI?$CFd?0?$CFd?$CJ?$CB?6@,29,obj
 ??_C@_0BN@HIBFHKHI@mmmaaaabcdefgmmmmaaaammmaamm@,29,obj
 ??_C@_0BN@HLMJJOOP@?$CFs?5has?5no?5sequence?5named?3?$CFf?6@,29,obj
@@ -1214,19 +1249,25 @@ name,size,source
 ??_C@_0BN@NKJBKGKO@Gibbed?5monster?5is?5thinking?$CB?6@,29,obj
 ??_C@_0BN@PNGIJJLK@?$CK?5Can?8t?5change?5team?5to?5?8?$CFs?8?6@,29,obj
 ??_C@_0BO@EGPNDMKE@?$CK?$CKCould?5not?5malloc?5TempPool?$CB?6@,30,obj
+??_C@_0BO@GPLGDJEN@weapons?1glock?1glock_magin?4wav@,30,obj
 ??_C@_0BO@HEFLNGKF@Could?5not?5find?5a?5spawn?5spot?4?6@,30,obj
 ??_C@_0BO@HENPCDEL@Tried?5to?5move?5with?5no?5route?$CB?6@,30,obj
 ??_C@_0BO@HHBLLNNN@?$CFs?5Failed?5to?5reach?5script?$CB?$CB?$CB?6@,30,obj
 ??_C@_0BO@LHHCLPHO@?$CK?$CKCANCELLING?5pendulum?5think?$CB?6@,30,obj
+??_C@_0BO@LJAEOMHA@weapons?1glock?1glock_slide?4wav@,30,obj
 ??_C@_0BO@NLFIJHFN@?$CFs?3?5MoveTarget?5is?5missing?$CB?$DP?$CB?6@,30,obj
 ??_C@_0BO@NOOCMBG@No?5suitable?5combat?5schedule?$CB?6@,30,obj
 ??_C@_0BO@ONDNPJAA@?6All?5Connections?5are?5Paired?$CB?6@,30,obj
 ??_C@_0BP@BODAEFHN@?$CK?$CKConnectVisibleNodes?5FAILED?$CB?6@,31,obj
 ??_C@_0BP@CFGCHLJA@Train?5?$CFs?5speed?5accel?5to?5?$CF4?42f?6@,31,obj
+??_C@_0BP@CGNMKPEK@weapons?1glock?1glock_magout?4wav@,31,obj
+??_C@_0BP@CPNGHCE@weapons?1rifle?1rifle_insert?4wav@,31,obj
 ??_C@_0BP@DACJIFBB@GetPathToEnemyCorpse?5failed?$CB?$CB?6@,31,obj
 ??_C@_0BP@EAFEFBNI@DEBUG?3?5info_alias?5?$CFs?5turns?5on?6@,31,obj
 ??_C@_0BP@EIEDMBPL@Yaw?5speed?3?$CF3?41f?0Health?3?5?$CF3?41f?6@,31,obj
 ??_C@_0BP@FBHHIEPK@?$CFs?5has?5no?5sequence?5for?5act?3?$CFd?6@,31,obj
+??_C@_0BP@GCGGILCL@weapons?1mobile?1punch_swing?4wav@,31,obj
+??_C@_0BP@GJOFCMND@weapons?1glock?1glock_switch?4wav@,31,obj
 ??_C@_0BP@HCKPHKEP@?$CK?$CKCOULD?5NOT?5CREATE?5SOUNDENT?$CK?$CK?6@,31,obj
 ??_C@_0BP@IGPKCJMJ@env_beam?3?5unknown?5entity?5?$CC?$CFs?$CC?6@,31,obj
 ??_C@_0BP@KAGCAOND@Can?8t?5find?5a?5nearby?5track?5?$CB?$CB?$CB?6@,31,obj
@@ -1244,12 +1285,17 @@ name,size,source
 ??_C@_0CA@ONCFAFGN@Invalid?5State?5for?5GetSchedule?$CB?6@,32,obj
 ??_C@_0CA@PGNOPMJG@DEBUG?3?5info_alias?5?$CFs?5turns?5off?6@,32,obj
 ??_C@_0CA@PNHDMCPD@GetPathToLastPosition?5failed?$CB?$CB?6@,32,obj
+??_C@_0CB@BLADGCGI@models?1weapons?1glock?1v_glock?4md@,33,obj
 ??_C@_0CB@CJIPACK@Infinite?$CI?$DP?$CJ?5loop?5in?5DesiredList@,33,obj
 ??_C@_0CB@CNILIGKA@Too?5many?5entities?5were?5touched?$CB@,33,obj
 ??_C@_0CB@GALJJNOP@?$CFs?5entities?5cannot?5change?5value@,33,obj
+??_C@_0CB@HIGLPGL@weapons_new?1glock?1glock_fire?4wa@,33,obj
+??_C@_0CB@IAKGCOAH@models?1weapons?1glock?1w_glock?4md@,33,obj
 ??_C@_0CB@IDNBCOHJ@Missing?5?8?$CJ?8?5in?5target?5value?5?$CC?$CFs@,33,obj
 ??_C@_0CB@JCONAKNO@TrackTrainControls?3?5No?5train?5?$CFs@,33,obj
 ??_C@_0CB@JGPBIDDG@info_movewith?5can?8t?5find?5itself@,33,obj
+??_C@_0CB@JHMPEOJJ@weapons?1glock?1glock_magplace?4wa@,33,obj
+??_C@_0CB@JJOHIOAJ@weapons?1glock?1glock_rackback?4wa@,33,obj
 ??_C@_0CB@JLLBCFPD@Train?5?$CFs?5speed?5to?5?$CF4?42f?5?$CItimed?$CJ@,33,obj
 ??_C@_0CB@NBBJFBFI@Dormant?5entity?5?$CFs?5is?5thinking?$CB?$CB@,33,obj
 ??_C@_0CB@OOMIFAGD@find_hintnode?3?5graph?5not?5ready?$CB@,33,obj
@@ -1315,12 +1361,17 @@ name,size,source
 ??_C@_0CH@NCMENFAJ@Global?5Entity?5?$CFs?5?$CI?$CFs?$CJ?5not?5in?5ta@,39,obj
 ??_C@_0CH@OBNOEFIM@Can?8t?5find?5train?5for?5track?5chan@,39,obj
 ??_C@_0CH@PKPNODCC@Couldn?8t?5allocated?5Link?5Lookup?5@,39,obj
+??_C@_0CI@BNIPAHFF@player?1Vocal?1Suicide?1suicide_pa@,40,obj
 ??_C@_0CI@BNMOOOFH@locus_decal?5?$CC?$CFs?$CC?5can?8t?5find?5dec@,40,obj
 ??_C@_0CI@ELJFPHGM@Multisource?5?$CFs?5deactivated?5?$CI?$CFd?5@,40,obj
+??_C@_0CI@FAEHKGFO@player?1Vocal?1Suicide?1suicide_pa@,40,obj
+??_C@_0CI@FDAFPLKC@police?1models?1weapons?1glock?1p_g@,40,obj
 ??_C@_0CI@GFBDDDIA@DEBUG?3?5env_state?5?$CC?$CFs?$CC?5turned?5it@,40,obj
 ??_C@_0CI@JIKFOGLG@Global?5entity?5found?5?$CFs?0?5wrong?5c@,40,obj
 ??_C@_0CI@KCGMLGLA@Graph?5not?5ready?5for?5BuildNeares@,40,obj
 ??_C@_0CI@KKEGBKJD@LinkVisibleNodes?5?9?5Initial?5Conn@,40,obj
+??_C@_0CI@NGNDNEPA@player?1Vocal?1Suicide?1suicide_pa@,40,obj
+??_C@_0CI@PDNFNJLK@inventoryitems?1weapons?1weapon_g@,40,obj
 ??_C@_0CJ@BJBEHJOM@DEBUG?3?5info_alias?5?$CFs?5now?5refers@,41,obj
 ??_C@_0CJ@CACIBEMB@CGrassSprite?5Warning?3?5too?5many?5@,41,obj
 ??_C@_0CJ@DEIICDGF@?$CK?$CKLinkVisibleNodes?3?6can?8t?5write@,41,obj
@@ -1488,12 +1539,14 @@ name,size,source
 ??_C@_0L@HJAKCBAN@m_iszRatio@,11,obj
 ??_C@_0L@HKMPPNIK@m_Activity@,11,obj
 ??_C@_0L@HLIKNEFC@spawnflags@,11,obj
+??_C@_0L@HLPHEFNL@ironsights@,11,obj
 ??_C@_0L@HPDKAJAO@m_lastTime@,11,obj
 ??_C@_0L@IACEKKKC@?$HLsmscorch3@,11,obj
 ??_C@_0L@IEHBOPCH@m_MoveWith@,11,obj
 ??_C@_0L@IGEBJHMI@startspeed@,11,obj
 ??_C@_0L@ILOPDDCJ@No?5Nodes?$CB?6@,11,obj
 ??_C@_0L@IMCOBDFF@turnontime@,11,obj
+??_C@_0L@JCAJJBBA@m_isLocked@,11,obj
 ??_C@_0L@JCPHBAKJ@m_fEndTime@,11,obj
 ??_C@_0L@JILCNGEO@globalname@,11,obj
 ??_C@_0L@JJDPJLOD@?$HLsmscorch2@,11,obj
@@ -1551,6 +1604,7 @@ name,size,source
 ??_C@_0L@OMHPMBEA@CGunTarget@,11,obj
 ??_C@_0L@OMILKELJ@Arm?5Weapon@,11,obj
 ??_C@_0L@OOABJPOI@modelindex@,11,obj
+??_C@_0L@OPCIIGKD@m_bFadeOut@,11,obj
 ??_C@_0L@OPDEFEF@Rain_windX@,11,obj
 ??_C@_0L@PALLMNHH@VModEnable@,11,obj
 ??_C@_0L@PAPDKEGB@WaveHeight@,11,obj
@@ -1689,6 +1743,7 @@ name,size,source
 ??_C@_0N@GPKFIKFK@m_iszWhenHit@,13,obj
 ??_C@_0N@HAEOHIKC@item_battery@,13,obj
 ??_C@_0N@HCAEBJJL@monstercount@,13,obj
+??_C@_0N@HEDLNKIE@pistol_melee@,13,obj
 ??_C@_0N@HFDGKKOM@m_iOnOffMode@,13,obj
 ??_C@_0N@HHOEFNFF@m_brightness@,13,obj
 ??_C@_0N@HMOMNODP@m_bloodColor@,13,obj
@@ -1698,6 +1753,7 @@ name,size,source
 ??_C@_0N@IHGIGPNN@m_iMaxHealth@,13,obj
 ??_C@_0N@IKJKFJAM@weapon_snark@,13,obj
 ??_C@_0N@INNJHNOI@?6Enemy?5is?5?$CFs@,13,obj
+??_C@_0N@JFCGPEJF@weapon_glock@,13,obj
 ??_C@_0N@JFCNGHDI@maps?1graphs?1@,13,obj
 ??_C@_0N@JNEPMELP@m_flVelocity@,13,obj
 ??_C@_0N@KFLKKNIK@m_iStoppedBy@,13,obj
@@ -1726,12 +1782,15 @@ name,size,source
 ??_C@_0N@OJLDIBEI@mamamamamama@,13,obj
 ??_C@_0N@OONGPLL@Combat?5Stand@,13,obj
 ??_C@_0N@PAKBECFB@m_iDirection@,13,obj
+??_C@_0N@PDJLBBPH@ironsight_up@,13,obj
 ??_C@_0N@PGBGEAJH@m_iszSpeakAs@,13,obj
+??_C@_0N@PJIMHEPG@pistol_shoot@,13,obj
 ??_C@_0N@PLLFNHGM@?$CFs?3?5?$CFs?5?$CI?$CFs?$CJ?6@,13,obj
 ??_C@_0N@PMPIOGHN@m_hActivator@,13,obj
 ??_C@_0N@PNMHOEPJ@chaptertitle@,13,obj
 ??_C@_0O@BAMLJAA@ACT_ROLL_LEFT@,14,obj
 ??_C@_0O@BBIHFGCO@m_iszVelocity@,14,obj
+??_C@_0O@BCBCHGNP@pistol_reload@,14,obj
 ??_C@_0O@BDOBPBBM@m_vecMoveGoal@,14,obj
 ??_C@_0O@BONEAJJO@m_iTurnOnTime@,14,obj
 ??_C@_0O@CGAGPICB@CFuncRotating@,14,obj
@@ -1778,11 +1837,13 @@ name,size,source
 ??_C@_0O@HPGHPENF@Range?5Attack2@,14,obj
 ??_C@_0O@IAGKHDLE@CEnvShockwave@,14,obj
 ??_C@_0O@ICDLAPOA@messagevolume@,14,obj
+??_C@_0O@ICPIGIBG@m_fUnlockTime@,14,obj
 ??_C@_0O@IDKJFKFP@m_iBloodColor@,14,obj
 ??_C@_0O@IHAKEOCA@Firing?3?5?$CI?$CFs?$CJ?6@,14,obj
 ??_C@_0O@IIFGKEGG@m_iAction_Off@,14,obj
 ??_C@_0O@IIKBCNPH@fans?1fan2?4wav@,14,obj
 ??_C@_0O@IJLDGMLM@m_controlMins@,14,obj
+??_C@_0O@IJLMAEKJ@m_iszLockedBy@,14,obj
 ??_C@_0O@IJLNHIAM@m_targetState@,14,obj
 ??_C@_0O@IKFNGDE@m_flSoundTime@,14,obj
 ??_C@_0O@INFELHIE@monster_leech@,14,obj
@@ -1817,6 +1878,7 @@ name,size,source
 ??_C@_0O@ODFFPFJ@fans?1fan1?4wav@,14,obj
 ??_C@_0O@OGEMJDEP@m_iDamageType@,14,obj
 ??_C@_0O@OGPBOAJ@CEnvExplosion@,14,obj
+??_C@_0O@OHAKGAJB@m_bIssuedNote@,14,obj
 ??_C@_0O@OIAMBJND@item_antidote@,14,obj
 ??_C@_0O@OIFLOEBN@Rain_Distance@,14,obj
 ??_C@_0O@OJBGNANG@customstopsnd@,14,obj
@@ -1828,6 +1890,7 @@ name,size,source
 ??_C@_0O@PDMKMIML@pain_finished@,14,obj
 ??_C@_0O@PJHLELCL@TriggerTarget@,14,obj
 ??_C@_0O@PKADNALM@m_iszGibModel@,14,obj
+??_C@_0O@PLLOEEIP@m_bUngibbable@,14,obj
 ??_C@_0O@PMCPGNHD@WaitForScript@,14,obj
 ??_C@_0P@BBKDJIAO@m_flDistTooFar@,15,obj
 ??_C@_0P@BFGOAFJC@m_flNextCharge@,15,obj
@@ -1837,6 +1900,7 @@ name,size,source
 ??_C@_0P@BLEFEHOI@m_iPlayerReact@,15,obj
 ??_C@_0P@BLGPJBGG@ammo_gaussclip@,15,obj
 ??_C@_0P@CFKCHMA@CMomentaryDoor@,15,obj
+??_C@_0P@CILPONPM@ironsight_zoom@,15,obj
 ??_C@_0P@CKNFIDAM@violence_hgibs@,15,obj
 ??_C@_0P@CKNILPJE@Barnacle?5Chomp@,15,obj
 ??_C@_0P@CMHNNDIB@ACT_CROUCHIDLE@,15,obj
@@ -1848,6 +1912,7 @@ name,size,source
 ??_C@_0P@DLNBHAFF@monster_target@,15,obj
 ??_C@_0P@DLOGNGEL@LightningStart@,15,obj
 ??_C@_0P@DPFCCNCI@ACT_DIEFORWARD@,15,obj
+??_C@_0P@ECCOGGME@m_iMonsterBody@,15,obj
 ??_C@_0P@ECLCDMPO@m_iszTerminate@,15,obj
 ??_C@_0P@EDHAPIOG@m_minDripSpeed@,15,obj
 ??_C@_0P@EDHMCL@ACT_BIG_FLINCH@,15,obj
@@ -1888,10 +1953,12 @@ name,size,source
 ??_C@_0P@KGLDFBDE@m_iRespawnTime@,15,obj
 ??_C@_0P@KNLOKHLB@m_iTurnOffTime@,15,obj
 ??_C@_0P@KOBFCEIE@Route?5Failure?6@,15,obj
+??_C@_0P@LCNCAHNA@m_fNextUseTime@,15,obj
 ??_C@_0P@LLGPCJDJ@m_trackTopName@,15,obj
 ??_C@_0P@MMMIBFEG@m_vecFinalDest@,15,obj
 ??_C@_0P@MPDEGIBO@m_bHealthValue@,15,obj
 ??_C@_0P@NCELFOGM@m_flHungryTime@,15,obj
+??_C@_0P@NCGIEDPH@m_ChestNumbers@,15,obj
 ??_C@_0P@NDDAPDLL@weapon_satchel@,15,obj
 ??_C@_0P@NDHCCNML@CBaseAnimating@,15,obj
 ??_C@_0P@NGDPBEAP@func_breakable@,15,obj
@@ -1899,6 +1966,7 @@ name,size,source
 ??_C@_0P@NKKMLGMK@m_pDestination@,15,obj
 ??_C@_0P@NNIBFHLB@m_fRepeatFrame@,15,obj
 ??_C@_0P@NOIFMLKO@CBasePlatTrain@,15,obj
+??_C@_0P@NPACPBJB@m_ProperTarget@,15,obj
 ??_C@_0P@OAGCDPBD@monster_mortar@,15,obj
 ??_C@_0P@OCHGOGJL@m_iGibMaterial@,15,obj
 ??_C@_0P@OJPDPALH@m_fStoredThink@,15,obj
@@ -1917,6 +1985,7 @@ name,size,source
 ??_R0?AVCBaseMonster@@@8,27,obj
 ??_R0?AVCBasePlatTrain@@@8,29,obj
 ??_R0?AVCBasePlayer@@@8,26,obj
+??_R0?AVCBasePlayerAmmo@@@8,30,obj
 ??_R0?AVCBasePlayerItem@@@8,30,obj
 ??_R0?AVCBasePlayerWeapon@@@8,32,obj
 ??_R0?AVCBaseToggle@@@8,26,obj
@@ -1992,6 +2061,8 @@ name,size,source
 ??_R0?AVCGenericMonster@@@8,30,obj
 ??_R0?AVCGib@@@8,19,obj
 ??_R0?AVCGibShooter@@@8,26,obj
+??_R0?AVCGlock@@@8,21,obj
+??_R0?AVCGlockAmmo@@@8,25,obj
 ??_R0?AVCGlow@@@8,20,obj
 ??_R0?AVCGrassSprite@@@8,27,obj
 ??_R0?AVCGrenade@@@8,23,obj
@@ -2078,6 +2149,7 @@ name,size,source
 ??_R1A@?0A@EA@CBaseMonster@@8,28,obj
 ??_R1A@?0A@EA@CBasePlatTrain@@8,28,obj
 ??_R1A@?0A@EA@CBasePlayer@@8,28,obj
+??_R1A@?0A@EA@CBasePlayerAmmo@@8,28,obj
 ??_R1A@?0A@EA@CBasePlayerItem@@8,28,obj
 ??_R1A@?0A@EA@CBasePlayerWeapon@@8,28,obj
 ??_R1A@?0A@EA@CBaseToggle@@8,28,obj
@@ -2153,6 +2225,8 @@ name,size,source
 ??_R1A@?0A@EA@CGenericMonster@@8,28,obj
 ??_R1A@?0A@EA@CGib@@8,28,obj
 ??_R1A@?0A@EA@CGibShooter@@8,28,obj
+??_R1A@?0A@EA@CGlock@@8,28,obj
+??_R1A@?0A@EA@CGlockAmmo@@8,28,obj
 ??_R1A@?0A@EA@CGlow@@8,28,obj
 ??_R1A@?0A@EA@CGrassSprite@@8,28,obj
 ??_R1A@?0A@EA@CGrenade@@8,28,obj
@@ -2239,6 +2313,7 @@ name,size,source
 ??_R2CBaseMonster@@8,21,obj
 ??_R2CBasePlatTrain@@8,21,obj
 ??_R2CBasePlayer@@8,25,obj
+??_R2CBasePlayerAmmo@@8,9,obj
 ??_R2CBasePlayerItem@@8,17,obj
 ??_R2CBasePlayerWeapon@@8,21,obj
 ??_R2CBaseToggle@@8,17,obj
@@ -2314,6 +2389,8 @@ name,size,source
 ??_R2CGenericMonster@@8,25,obj
 ??_R2CGib@@8,9,obj
 ??_R2CGibShooter@@8,13,obj
+??_R2CGlock@@8,25,obj
+??_R2CGlockAmmo@@8,13,obj
 ??_R2CGlow@@8,13,obj
 ??_R2CGrassSprite@@8,13,obj
 ??_R2CGrenade@@8,25,obj
@@ -2400,6 +2477,7 @@ name,size,source
 ??_R3CBaseMonster@@8,16,obj
 ??_R3CBasePlatTrain@@8,16,obj
 ??_R3CBasePlayer@@8,16,obj
+??_R3CBasePlayerAmmo@@8,16,obj
 ??_R3CBasePlayerItem@@8,16,obj
 ??_R3CBasePlayerWeapon@@8,16,obj
 ??_R3CBaseToggle@@8,16,obj
@@ -2475,6 +2553,8 @@ name,size,source
 ??_R3CGenericMonster@@8,16,obj
 ??_R3CGib@@8,16,obj
 ??_R3CGibShooter@@8,16,obj
+??_R3CGlock@@8,16,obj
+??_R3CGlockAmmo@@8,16,obj
 ??_R3CGlow@@8,16,obj
 ??_R3CGrassSprite@@8,16,obj
 ??_R3CGrenade@@8,16,obj
@@ -2561,6 +2641,7 @@ name,size,source
 ??_R4CBaseMonster@@6B@,20,obj
 ??_R4CBasePlatTrain@@6B@,20,obj
 ??_R4CBasePlayer@@6B@,20,obj
+??_R4CBasePlayerAmmo@@6B@,20,obj
 ??_R4CBasePlayerItem@@6B@,20,obj
 ??_R4CBasePlayerWeapon@@6B@,20,obj
 ??_R4CBaseToggle@@6B@,20,obj
@@ -2636,6 +2717,8 @@ name,size,source
 ??_R4CGenericMonster@@6B@,20,obj
 ??_R4CGib@@6B@,20,obj
 ??_R4CGibShooter@@6B@,20,obj
+??_R4CGlock@@6B@,20,obj
+??_R4CGlockAmmo@@6B@,20,obj
 ??_R4CGlow@@6B@,20,obj
 ??_R4CGrassSprite@@6B@,20,obj
 ??_R4CGrenade@@6B@,20,obj
@@ -2800,6 +2883,7 @@ name,size,source
 ?gEvilImpulse101@@3HA,4,pdb
 ?gFunctionTable@@3UDLL_FUNCTIONS@@A,200,obj
 ?gGlobalEntitySaveData@@3PAUTYPEDESCRIPTION@@A,48,pdb
+?gGlobalState$initializer$@@3P6AXXZA,4,obj
 ?gGlobalState@@3VCGlobalState@@A,8,pdb
 ?gInitHUD@@3HA,4,pdb
 ?gMultiDamage@@3UMULTIDAMAGE@@A,12,pdb
@@ -3055,11 +3139,11 @@ name,size,source
 ?m_SaveData@CAutoTrigger@@2PAUTYPEDESCRIPTION@@A,32,pdb
 ?m_SaveData@CBaseAlias@@2PAUTYPEDESCRIPTION@@A,16,pdb
 ?m_SaveData@CBaseAnimating@@2PAUTYPEDESCRIPTION@@A,80,pdb
-?m_SaveData@CBaseButton@@2PAUTYPEDESCRIPTION@@A,144,obj
+?m_SaveData@CBaseButton@@2PAUTYPEDESCRIPTION@@A,288,pdb
 ?m_SaveData@CBaseDelay@@2PAUTYPEDESCRIPTION@@A,48,pdb
 ?m_SaveData@CBaseDoor@@2PAUTYPEDESCRIPTION@@A,160,pdb
-?m_SaveData@CBaseEntity@@2PAUTYPEDESCRIPTION@@A,288,obj
-?m_SaveData@CBaseMonster@@2PAUTYPEDESCRIPTION@@A,688,obj
+?m_SaveData@CBaseEntity@@2PAUTYPEDESCRIPTION@@A,352,pdb
+?m_SaveData@CBaseMonster@@2PAUTYPEDESCRIPTION@@A,784,pdb
 ?m_SaveData@CBasePlatTrain@@2PAUTYPEDESCRIPTION@@A,48,pdb
 ?m_SaveData@CBasePlayerAmmo@@2PAUTYPEDESCRIPTION@@A,16,pdb
 ?m_SaveData@CBasePlayerItem@@2PAUTYPEDESCRIPTION@@A,416,pdb
@@ -3116,7 +3200,7 @@ name,size,source
 ?m_SaveData@CEnvExplosion@@2PAUTYPEDESCRIPTION@@A,32,pdb
 ?m_SaveData@CEnvFog@@2PAUTYPEDESCRIPTION@@A,96,pdb
 ?m_SaveData@CEnvGlobal@@2PAUTYPEDESCRIPTION@@A,48,pdb
-?m_SaveData@CEnvModel@@0PAUTYPEDESCRIPTION@@A,64,obj
+?m_SaveData@CEnvModel@@0PAUTYPEDESCRIPTION@@A,128,pdb
 ?m_SaveData@CEnvRain@@2PAUTYPEDESCRIPTION@@A,224,pdb
 ?m_SaveData@CEnvShockwave@@2PAUTYPEDESCRIPTION@@A,160,pdb
 ?m_SaveData@CEnvShooter@@0PAUTYPEDESCRIPTION@@A,80,pdb
@@ -3137,7 +3221,7 @@ name,size,source
 ?m_SaveData@CGamePlayerZone@@2PAUTYPEDESCRIPTION@@A,64,pdb
 ?m_SaveData@CGameText@@2PAUTYPEDESCRIPTION@@A,32,pdb
 ?m_SaveData@CGasArea@@2PAUTYPEDESCRIPTION@@A,48,pdb
-?m_SaveData@CGenericMonster@@2PAUTYPEDESCRIPTION@@A,16,obj
+?m_SaveData@CGenericMonster@@2PAUTYPEDESCRIPTION@@A,64,pdb
 ?m_SaveData@CGibShooter@@2PAUTYPEDESCRIPTION@@A,192,pdb
 ?m_SaveData@CGlobalState@@2PAUTYPEDESCRIPTION@@A,16,pdb
 ?m_SaveData@CGlock@@2PAUTYPEDESCRIPTION@@A,32,pdb
@@ -3163,7 +3247,7 @@ name,size,source
 ?m_SaveData@CMobile@@2PAUTYPEDESCRIPTION@@A,48,pdb
 ?m_SaveData@CMomentaryDoor@@2PAUTYPEDESCRIPTION@@A,48,pdb
 ?m_SaveData@CMomentaryRotButton@@2PAUTYPEDESCRIPTION@@A,96,pdb
-?m_SaveData@CMonsterMaker@@2PAUTYPEDESCRIPTION@@A,128,obj
+?m_SaveData@CMonsterMaker@@2PAUTYPEDESCRIPTION@@A,160,pdb
 ?m_SaveData@CMotionManager@@2PAUTYPEDESCRIPTION@@A,64,pdb
 ?m_SaveData@CMotionThread@@2PAUTYPEDESCRIPTION@@A,96,pdb
 ?m_SaveData@CMultiAlias@@2PAUTYPEDESCRIPTION@@A,80,pdb
@@ -4159,16 +4243,15 @@ __real@00000000,4,obj
 __real@3c23d70a,4,obj
 __real@3dcccccd,4,obj
 __real@3e000000,4,obj
+__real@3e19999a,4,obj
 __real@3e4ccccd,4,obj
 __real@3e800000,4,obj
 __real@3e99999a,4,obj
 __real@3eb33333,4,obj
 __real@3ef0000000000000,8,obj
-__real@3efae147,4,obj
 __real@3f000000,4,obj
 __real@3f19999a,4,obj
 __real@3f266666,4,obj
-__real@3f333333,4,obj
 __real@3f400000,4,obj
 __real@3f40624dd2f1a9fc,8,obj
 __real@3f4ccccd,4,obj
@@ -4259,6 +4342,7 @@ __real@41f00000,4,obj
 __real@42000000,4,obj
 __real@42080000,4,obj
 __real@42100000,4,obj
+__real@42200000,4,obj
 __real@42340000,4,obj
 __real@42400000,4,obj
 __real@42480000,4,obj

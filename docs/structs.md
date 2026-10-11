@@ -168,3 +168,37 @@ Compared `CBasePlayer::m_SaveData` of 1.55 (0x10213D70, 206 fields) and
   overloaded virtuals take their slots in reverse declaration order (MSVC),
   confirmed on the 1.6a vtable of CBaseEntity (`SetNextThink`, `GetState`,
   `FVisible`).
+
+## Interface changes found while decompiling CoF_Glock.cpp (1.6a)
+
+Confirmed in the 1.6a code, 2026-10-11:
+
+- `CBaseEntity::GiveAmmo` (vtable +0x94) takes four arguments in 1.6a
+  (`ret 0x10`): `( int iAmount, char *szName, int iMax, bool )`. The new
+  bool suppresses the "Picked up ..." message in `CBasePlayer::GiveAmmo`.
+  Name unknown: `guess_bNoMessage`.
+- `PRECACHE_MODEL` and `PRECACHE_SOUND` are functions in util.cpp, each with
+  three overloads `( int s, char *e )`, `( int s )`, `( char *s )` (1.55 PDB
+  names and parameters), not the engine macros of the HLSDK.
+- util.cpp has a new function at 0x10116A40 (no symbol) that plays the
+  `weapons_new/` fire sounds:
+  `( const char *sample, int, bool, Vector vecOrigin, CBaseEntity *pPlayer,
+  bool )`, called with `m_pPlayer->EarPosition()` and `m_pPlayer`. It checks
+  `g_pGameRules->IsMultiplayer()` and `strstr( sample, "weapons" )` and
+  loops over the players. Name: `guess_UTIL_PlayWeaponSound`.
+- `CBasePlayer` has a new out of line getter at 0x100F5DA0 returning
+  `m_bJustJumped != false` as BOOL (the caller tests eax). Name:
+  `guess_HasJustJumped`.
+- `CBasePlayer::GetAutoaimVector` only returns `gpGlobals->v_forward`;
+  `CBasePlayerWeapon::DefaultReload` takes five arguments
+  `( int iClipSize, int iAnim, float fDelay, int body, bool infinitereload )`
+  and `DefaultDeploy` six.
+- Weapon constants of the glock: `WEAPON_GLOCK` 3, clip 15, weight 5, carry
+  150 (45 in multiplayer), bullet type 3 (`BULLET_PLAYER_357` in the Paranoia
+  enum). The ironsight toggle is `IN_CANCEL` (0x40); the suicide button mash
+  tests `IN_ATTACK | IN_ATTACK2`. Sprinting is entity flag `1<<18`.
+- gSkillData is at 0x10226728 (`DmgGlock` at +0x128); the glock event is the
+  1.55 global `m_usThirdFlash` (0x10231F50).
+- Convention: weapon animation enums are named after the sequence labels of
+  the retail view model (`tools/mdlseq.py`), for example `GLOCK_IRON_TO` for
+  sequence `iron_to` of `models/weapons/glock/v_glock.mdl`.

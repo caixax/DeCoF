@@ -64,7 +64,7 @@ public:
 
 #define WEAPON_NONE				0
 #define WEAPON_CROWBAR			1
-#define	WEAPON_GLOCK			2
+#define	WEAPON_GLOCK			3	// CoF (2 in the HLSDK)
 #define WEAPON_PYTHON			3
 #define WEAPON_MP5				4
 #define WEAPON_CHAINGUN			5
@@ -103,7 +103,7 @@ public:
 
 // weapon weight factors (for auto-switching)   (-1 = noswitch)
 #define CROWBAR_WEIGHT		0
-#define GLOCK_WEIGHT		10
+#define GLOCK_WEIGHT		5	// CoF (10 in the HLSDK)
 #define PYTHON_WEIGHT		15
 #define MP5_WEIGHT			15
 #define SHOTGUN_WEIGHT		15
@@ -144,7 +144,7 @@ public:
 #define WEAPON_NOCLIP			-1
 
 //#define CROWBAR_MAX_CLIP		WEAPON_NOCLIP
-#define GLOCK_MAX_CLIP			17
+#define GLOCK_MAX_CLIP			15	// CoF (17 in the HLSDK)
 #define PYTHON_MAX_CLIP			6
 #define MP5_MAX_CLIP			30  // buz: used in paranoia
 #define MP5_DEFAULT_AMMO		30  // buz: used in paranoia
