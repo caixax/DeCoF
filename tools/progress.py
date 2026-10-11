@@ -207,8 +207,10 @@ def write_md(per, cats, meta):
     others = [name for key, name in BINARIES if key not in SHOWN]
     o += ["Other binaries in the CSV (%s) are counted in `progress.json` only." % ", ".join(others), "",
           "## Counting rules", "",
-          "- **MATCHED**: objdiff reports 100 percent for the function: the rebuilt code is byte "
-          "identical to the retail binary (relocation targets included).",
+          "- **MATCHED**: the objdiff report gives 100 percent for the function: the instructions are "
+          "identical to the retail binary. The report does not compare the names of relocation targets "
+          "(many retail symbols are still unnamed); `tools/relocaudit.py` lists matched functions whose "
+          "relocations point at differently named symbols.",
           "- **EQUIVALENT**: the function compiles and its logic was verified against the assembly, "
           "but the code is not byte identical. The remaining difference is recorded in `docs/progress.csv`.",
           "- **TODO**: every other function, including stubs and functions that do not compile.",
