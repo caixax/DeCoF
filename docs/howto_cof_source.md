@@ -64,6 +64,18 @@ The 1.55 hl.dll is an unoptimized debug build of nearly the same source. `disasm
 - Globals that no header declares (`g_iDoctorMode`, `m_usRevolverShells`, `gmsg*` ids) take an `extern` at the top of the .cpp, with the type from the 1.55 PDB (`docs/symbols_1.55.csv`, module `globals.obj` and others).
 - Switch jump tables are part of the function on both sides since the delinker change of this session; `switchD_...` names on the retail side are naming only.
 
+## Patterns from the second batch of weapons
+
+- The fire event flags follow the 1.55 form of each weapon: `int flags = 0; if ( m_pPlayer->m_iViewValue != 1 ) flags = FEV_NOTHOST;` (M16, rifle, shotgun, FAMAS, G43) or the if/else form (pistols). Both give `setne`, but the choice moves other code, so take it from the 1.55 line rows.
+- A 1.55 `int pitch = 95 + RANDOM_LONG( 0, 10 );` before the fire sound is kept only when retail 1.6a still calls RANDOM_LONG there (VP70); in most weapons 1.6a dropped the line together with the call.
+- Checks that an earlier return already implies (`m_iSprintState == 1 || m_iSprintState > 2` after `if ( m_iSprintState ) return;`) are written anyway in the 1.55 order; the release build removes them.
+- Two calls that differ only in one argument (FireBulletsPlayer with `m_AccuracyVector` or `VECTOR_CONE_1DEGREES`, three GiveAmmo calls) are written out in full as in 1.55; retail merges them into one call with a select.
+- `test [m_afButtonPressed], 0x801` can come from `( x & IN_ATTACK ) || ( x & IN_ATTACK2 )`.
+- A WeaponIdle made only of early returns compiles to `ret 0`, the same as an empty body: keep the 1.55 body.
+- Rifle-class melee: `if ( m_pPlayer->m_fStamina <= 0 ) return;` then `m_pPlayer->SetNextThink( 0.23 ); m_pPlayer->SetThink( &CBasePlayer::MeleePushBack );`. Pistols use `WeaponMelee`.
+- Take member offsets from 1.6a (`tools/member.py`); 1.55 offsets differ (CBasePlayerWeapon members 4 lower, CBasePlayer very different). Use 1.55 only for statement order.
+- The `check` printout rounds per-function percentages: trust the unit line and `matched_functions` in `build/check_project/<unit>/report.json`.
+
 ## What not to do
 
 - Do not edit shared headers (`cbase.h`, `weapons.h`, `player.h`, `util.h`, ...) without coordinating: several files depend on them.
