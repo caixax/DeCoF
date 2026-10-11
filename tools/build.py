@@ -304,7 +304,9 @@ def check(units):
     build_base(units)
     cfg = json.load(open(os.path.join(ROOT, "objdiff.json")))
     names = {full for _d, _c, _u, full in units}
-    proj = os.path.join(ROOT, "build", "check_project")
+    # one project directory per unit set, so parallel checks do not collide
+    tag = "_".join(sorted(n.replace("/", "_") for n in names))[:120]
+    proj = os.path.join(ROOT, "build", "check_project", tag)
     os.makedirs(proj, exist_ok=True)
     keep = []
     for u in cfg["units"]:

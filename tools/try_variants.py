@@ -60,7 +60,8 @@ def score(unit, symbol):
         build.check(units)
     finally:
         sys.stdout = old
-    rep = json.load(open(os.path.join(ROOT, "build", "check_project", "report.json")))
+    tag = unit.replace("/", "_")
+    rep = json.load(open(os.path.join(ROOT, "build", "check_project", tag, "report.json")))
     for u in rep.get("units", []):
         for fn in u.get("functions", []):
             if fn["name"] == symbol:
