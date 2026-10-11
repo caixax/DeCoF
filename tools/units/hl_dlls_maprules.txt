@@ -54,3 +54,5 @@ _game_team_master
 _game_team_set
 _game_text
 _game_zone_player
+?IsTriggered@CGameTeamMaster@@QAEHPAVCBaseEntity@@@Z
+?TeamMatch@CGameTeamMaster@@AAEHPAVCBaseEntity@@@Z

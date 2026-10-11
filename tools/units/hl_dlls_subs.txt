@@ -41,3 +41,7 @@ _info_movewith
 _info_null
 _info_player_deathmatch
 _info_texlights
+?AngularMove@CBaseToggle@@QAEXVVector@@M@Z
+?AxisDir@CBaseToggle@@SAXPAUentvars_s@@@Z
+?FEntIsVisible@@YAHPAUentvars_s@@0@Z
+?LinearMove@CBaseToggle@@QAEXVVector@@M@Z

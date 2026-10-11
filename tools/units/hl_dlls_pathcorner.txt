@@ -18,3 +18,7 @@
 ?Use@CPathTrack@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z
 _path_corner
 _path_track
+?GetNext@CPathTrack@@QAEPAV1@XZ
+?GetPrevious@CPathTrack@@QAEPAV1@XZ
+?SetPrevious@CPathTrack@@QAEXPAV1@@Z
+?ValidPath@CPathTrack@@QAEPAV1@PAV1@H@Z

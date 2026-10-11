@@ -353,3 +353,14 @@ _trigger_textwindow
 _trigger_transition
 _watcher
 _watcher_count
+??$GetClassPtr@VCMotionThread@@@@YAPAVCMotionThread@@PAV0@@Z
+??$GetClassPtr@VCRenderFxFader@@@@YAPAVCRenderFxFader@@PAV0@@Z
+?Add@CInOutRegister@@QAEPAV1@PAVCBaseEntity@@@Z
+?Clone@CMultiManager@@AAEPAV1@XZ
+?FireOnEntry@CTriggerInOut@@QAEXPAVCBaseEntity@@@Z
+?FireOnLeaving@CTriggerInOut@@QAEXPAVCBaseEntity@@@Z
+?InitTrigger@CBaseTrigger@@QAEXXZ
+?IsRegistered@CInOutRegister@@QAEHPAVCBaseEntity@@@Z
+?PlayTrack@CTriggerCDAudio@@QAEXXZ
+?Prune@CInOutRegister@@QAEPAV1@XZ
+?ReportSuccess@CStartRush@@QAEXPAVCBaseEntity@@@Z

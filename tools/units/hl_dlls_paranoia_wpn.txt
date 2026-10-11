@@ -7,3 +7,13 @@
 ?Save@CBaseSpreadWeapon@@UAEHAAVCSave@@@Z
 ?Save@CBaseToggleWeapon@@UAEHAAVCSave@@@Z
 ?SetTablePointer@CBaseSpreadWeapon@@QAEXXZ
+?CalcSpread@CBaseSpreadWeapon@@QAEMXZ
+?DefPrimPunch@CBaseSpreadWeapon@@QAEXXZ
+?DefSecPunch@CBaseSpreadWeapon@@QAEXXZ
+?ExpandSpread@CBaseSpreadWeapon@@QAEMM@Z
+?GetSpreadVec2@CBaseToggleWeapon@@UAE?AVVector@@XZ
+?GetSpreadVec@CBaseToggleWeapon@@UAE?AVVector@@XZ
+?InitSpread@CBaseSpreadWeapon@@QAEXM@Z
+?InitToggling@CBaseToggleWeapon@@QAEXXZ
+?PrimaryAttack@CBaseToggleWeapon@@UAEXXZ
+?SecondaryAttack@CBaseToggleWeapon@@UAEXXZ

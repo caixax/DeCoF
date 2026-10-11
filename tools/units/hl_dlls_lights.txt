@@ -33,3 +33,5 @@ _light_glow
 _light_spot
 _lightfader
 _trigger_lightstyle
+?SetCorrectStyle@CLight@@QAEXXZ
+?SetStyle@CLight@@QAEXH@Z

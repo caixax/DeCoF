@@ -16,3 +16,17 @@
 ?StopFollowing@CTalkMonster@@UAEXHH@Z
 ?TakeDamage@CTalkMonster@@UAEHPAUentvars_s@@0MH@Z
 ?TalkInit@CTalkMonster@@QAEXXZ
+?FIdleHello@CTalkMonster@@QAEHXZ
+?FIdleSpeak@CTalkMonster@@QAEHXZ
+?FIdleStare@CTalkMonster@@QAEHXZ
+?GetVoicePitch@CTalkMonster@@QAEHXZ
+?HandleAnimEvent@CTalkMonster@@UAEXPAUMonsterEvent_t@@@Z
+?IdleHeadTurn@CTalkMonster@@QAEXAAVVector@@@Z
+?IdleRespond@CTalkMonster@@QAEXXZ
+?IsFollowing@CTalkMonster@@QAEHXZ
+?IsTalking@CTalkMonster@@QAEHXZ
+?Killed@CTalkMonster@@UAEXPAUentvars_s@@H@Z
+?PlayScriptedSentence@CTalkMonster@@UAEXPBDMMMHPAVCBaseEntity@@@Z
+?PlaySentence@CTalkMonster@@UAEXPBDMMM@Z
+?ShutUpFriends@CTalkMonster@@QAEXXZ
+?Talk@CTalkMonster@@QAEXM@Z

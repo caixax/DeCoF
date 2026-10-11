@@ -31,3 +31,4 @@
 ?Use@CPushable@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z
 _func_breakable
 _func_pushable
+?IsBreakable@CBreakable@@QAEHXZ

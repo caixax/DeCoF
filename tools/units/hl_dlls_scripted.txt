@@ -37,3 +37,5 @@
 ?Use@CScriptedSentence@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z
 _monster_furniture
 _scripted_sentence
+?AllowInterrupt@CCineMonster@@QAEXH@Z
+?CanInterrupt@CCineMonster@@QAEHXZ

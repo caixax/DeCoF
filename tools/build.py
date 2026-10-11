@@ -121,6 +121,7 @@ def merged_symbols(d, dll):
                               base.replace("_1.6a.csv", "_usermsgs.csv"),
                               base.replace("_1.6a.csv", "_vtable.csv"),
                               base.replace("_1.6a.csv", "_savetables.csv"),
+                              base.replace("_1.6a.csv", "_bytes.csv"),
                               base.replace("_1.6a.csv", "_manual.csv"))):
         if os.path.exists(path):
             for r in csv.DictReader(open(path)):

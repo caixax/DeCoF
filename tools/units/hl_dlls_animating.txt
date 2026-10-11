@@ -10,3 +10,11 @@
 ?SetBodygroup@CBaseAnimating@@QAEXHH@Z
 ?SetBones@CBaseAnimating@@QAEXPAY02MH@Z
 ?SetSequenceBox@CBaseAnimating@@QAEXXZ
+?GetAttachment@CBaseAnimating@@QAEXHAAVVector@@0@Z
+?GetBonePosition@CBaseAnimating@@QAEXHAAVVector@@0@Z
+?GetSequenceFlags@CBaseAnimating@@QAEHXZ
+?InitBoneControllers@CBaseAnimating@@QAEXXZ
+?LookupActivity@CBaseAnimating@@QAEHH@Z
+?ResetSequenceInfo@CBaseAnimating@@QAEXXZ
+?SetBlending@CBaseAnimating@@QAEMHM@Z
+?SetBoneController@CBaseAnimating@@QAEMHM@Z

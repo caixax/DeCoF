@@ -16,3 +16,4 @@
 ?TakeDamage@CBookSimon@@UAEHPAUentvars_s@@0MH@Z
 ?Use@CBookSimon@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z
 _monster_booksimon
+?SetTransparency@CSprite@@QAEXHHHHHH@Z

@@ -26,3 +26,6 @@
 _bodyque
 _infodecal
 _worldspawn
+??0CGlobalState@@QAE@XZ
+?ClearStates@CGlobalState@@QAEXXZ
+?Reset@CGlobalState@@QAEXXZ

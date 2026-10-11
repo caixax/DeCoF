@@ -37,3 +37,5 @@ _cycler_prdroid
 _cycler_sprite
 _cycler_weapon
 _cycler_wreckage
+?Animate@CCyclerSprite@@QAEXM@Z
+?Holster@CWeaponCycler@@QAEXH@Z

@@ -4,3 +4,6 @@
 ?FloorZ@CFlyingMonster@@QAEMABVVector@@@Z
 ?Move@CFlyingMonster@@UAEXM@Z
 ?MoveExecute@CFlyingMonster@@UAEXPAVCBaseEntity@@ABVVector@@M@Z
+?CheckLocalMove@CFlyingMonster@@UAEHABVVector@@0PAVCBaseEntity@@PAM@Z
+?HandleAnimEvent@CFlyingMonster@@UAEXPAUMonsterEvent_t@@@Z
+?Killed@CFlyingMonster@@UAEXPAUentvars_s@@H@Z

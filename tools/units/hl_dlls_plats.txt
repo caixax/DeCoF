@@ -125,3 +125,11 @@ _func_tracktrain
 _func_train
 _func_traincontrols
 _scripted_trainsequence
+?EvaluateTrain@CFuncTrackChange@@QAE?AW4TRAIN_CODE@@PAVCPathTrack@@@Z
+?NextThink@CFuncTrackTrain@@QAEXMH@Z
+?SetControls@CFuncTrackTrain@@QAEXPAUentvars_s@@@Z
+?SpawnInsideTrigger@CPlatTrigger@@QAEXPAVCFuncPlat@@@Z
+?StartSequence@CFuncTrackTrain@@QAEXPAVCTrainSequence@@@Z
+?StartSequence@CFuncTrain@@QAEXPAVCTrainSequence@@@Z
+?StopSequence@CFuncTrackTrain@@QAEXXZ
+?StopSequence@CFuncTrain@@QAEXXZ

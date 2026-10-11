@@ -32,3 +32,13 @@
 ?ShouldToggle@CBaseEntity@@QAEHW4USE_TYPE@@H@Z
 _GetEntityAPI
 _GetEntityAPI2
+?DispatchTouch@@YAXPAUedict_s@@0@Z
+?DispatchUse@@YAXPAUedict_s@@0@Z
+??4EHANDLE@@QAEPAVCBaseEntity@@PAV1@@Z
+??BEHANDLE@@QAEHXZ
+??BEHANDLE@@QAEPAVCBaseEntity@@XZ
+??CEHANDLE@@QAEPAVCBaseEntity@@XZ
+?Get@EHANDLE@@QAEPAUedict_s@@XZ
+?IsDormant@CBaseEntity@@QAEHXZ
+?Set@EHANDLE@@QAEPAUedict_s@@PAU2@@Z
+?ShouldToggle@CBaseEntity@@QAEHW4USE_TYPE@@@Z

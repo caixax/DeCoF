@@ -48,3 +48,7 @@ _PM_ViewPunch
 _PM_WalkMove
 _PM_WaterJump
 _PM_WaterMove
+_PM_Friction
+_PM_PlayGroupSound
+_PM_SplineFraction
+_PM_UpdateStepSound

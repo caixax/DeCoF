@@ -23,3 +23,4 @@
 ?StartTask@CHeadCrab@@UAEXPAUTask_t@@@Z
 ?TakeDamage@CHeadCrab@@UAEHPAUentvars_s@@0MH@Z
 _monster_ruben
+?SetState@CBaseMonster@@QAEXW4MONSTERSTATE@@@Z

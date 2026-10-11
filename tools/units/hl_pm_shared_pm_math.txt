@@ -16,3 +16,7 @@ _VectorTransform
 __VectorAdd
 __VectorSubtract
 _anglemod
+_Distance
+_Q_log2
+__DotProduct
+__VectorCopy

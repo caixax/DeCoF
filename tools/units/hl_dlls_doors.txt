@@ -35,3 +35,4 @@ _func_door
 _func_door_rotating
 _func_water
 _momentary_door
+?PlayLockSounds@@YAXPAUentvars_s@@PAUlocksounds@@HH@Z

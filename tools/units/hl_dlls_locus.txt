@@ -47,3 +47,4 @@ _calc_velocity_polar
 _locus_alias
 _locus_beam
 _locus_variable
+??$GetClassPtr@VCMark@@@@YAPAVCMark@@PAV0@@Z

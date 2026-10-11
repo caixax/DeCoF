@@ -57,3 +57,6 @@ _env_sound
 _radio_sentence
 _speaker
 _trigger_sound
+?FEnvSoundInRange@@YAHPAUentvars_s@@0PAM@Z
+?InitModulationParms@CAmbientGeneric@@QAEXXZ
+?SENTENCEG_PlayRndI@@YAHPAUedict_s@@HMMHH@Z

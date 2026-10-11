@@ -79,3 +79,8 @@ _func_button
 _func_rot_button
 _momentary_rot_button
 _multisource
+?ButtonActivate@CBaseButton@@QAEXXZ
+?ButtonResponseToTouch@CBaseButton@@QAE?AW4BUTTON_CODE@1@XZ
+?PlaySound@CMomentaryRotButton@@QAEXXZ
+?UpdateSelf@CMomentaryRotButton@@QAEXM@Z
+?UpdateSelfReturn@CMomentaryRotButton@@QAEXM@Z

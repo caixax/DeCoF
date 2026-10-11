@@ -6,3 +6,5 @@
 ?Update@CVoiceGameMgr@@QAEXN@Z
 ?UpdateMasks@CVoiceGameMgr@@AAEXXZ
 ?VoiceServerDebug@@YAXPBDZZ
+?PlayerHasBlockedPlayer@CVoiceGameMgr@@QAE_NPAVCBasePlayer@@0@Z
+?SetHelper@CVoiceGameMgr@@QAEXPAVIVoiceGameMgrHelper@@@Z

@@ -14,3 +14,8 @@
 ?SetBodygroup@@YAXPAXPAUentvars_s@@HH@Z
 ?SetBones@@YAXPAXPAY02MH@Z
 ?SetBodygroup@@YAXPAXPAUentvars_s@@HH@Z
+?StudioFrameAdvance@CBaseAnimating@@QAEMM@Z
+?GetAnimationEvent@@YAHPAXPAUentvars_s@@PAUMonsterEvent_t@@MMH@Z
+?GetSequenceFlags@@YAHPAXPAUentvars_s@@@Z
+?GetSequenceInfo@@YAXPAXPAUentvars_s@@PAM2@Z
+?SetBlending@@YAMPAXPAUentvars_s@@HM@Z

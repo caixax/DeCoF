@@ -57,3 +57,4 @@
 ?VecItemRespawnSpot@CHalfLifeMultiplay@@UAE?AVVector@@PAVCItem@@@Z
 ?VecWeaponRespawnSpot@CHalfLifeMultiplay@@UAE?AVVector@@PAVCBasePlayerItem@@@Z
 ?WeaponShouldRespawn@CHalfLifeMultiplay@@UAEHPAVCBasePlayerItem@@@Z
+?CountPlayersButNotMyself@@YAHPAVCBaseEntity@@@Z

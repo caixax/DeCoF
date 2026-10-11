@@ -74,3 +74,17 @@
 ?Use@CMonsterTarget@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z
 ?VecToYaw@CBaseMonster@@QAEMVVector@@@Z
 _monster_target
+?BBoxFlat@CBaseMonster@@QAEHXZ
+?Eat@CBaseMonster@@QAEXM@Z
+?FRouteClear@CBaseMonster@@QAEHXZ
+?FShouldEat@CBaseMonster@@QAEHXZ
+?InsertWaypoint@CBaseMonster@@QAEXVVector@@H@Z
+?MoveToEnemy@CBaseMonster@@QAEHW4Activity@@M@Z
+?MoveToNode@CBaseMonster@@QAEHW4Activity@@MABVVector@@@Z
+?MoveToTarget@CBaseMonster@@QAEHW4Activity@@M@Z
+?PopEnemy@CBaseMonster@@QAEHXZ
+?PushEnemy@CBaseMonster@@QAEXPAVCBaseEntity@@AAVVector@@@Z
+?RouteClear@CBaseMonster@@QAEXXZ
+?RouteNew@CBaseMonster@@QAEXXZ
+?RouteSimplify@CBaseMonster@@QAEXPAVCBaseEntity@@@Z
+?TaskIsRunning@CBaseMonster@@QAEHXZ

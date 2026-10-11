@@ -11,3 +11,7 @@
 ?Spawn@CSoundEnt@@UAEXXZ
 ?Think@CSoundEnt@@UAEXXZ
 _soundent
+?ActiveList@CSoundEnt@@SAHXZ
+?FIsScent@CSound@@QAEHXZ
+?FIsSound@CSound@@QAEHXZ
+?FreeSound@CSoundEnt@@SAXHH@Z

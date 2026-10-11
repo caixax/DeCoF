@@ -14,3 +14,8 @@
 ?UTIL_SetMoveWithAvelocity@@YAXPAVCBaseEntity@@VVector@@H@Z
 ?UTIL_SetMoveWithVelocity@@YAXPAVCBaseEntity@@VVector@@H@Z
 ?UTIL_SetVelocity@@YAXPAVCBaseEntity@@VVector@@@Z
+?AssistChildren@@YAXPAVCBaseEntity@@VVector@@1@Z
+?TryAssistEntity@@YAHPAVCBaseEntity@@@Z
+?UTIL_DesiredInfo@@YAXPAVCBaseEntity@@@Z
+?UTIL_DesiredPostAssist@@YAXPAVCBaseEntity@@@Z
+?UTIL_DesiredThink@@YAXPAVCBaseEntity@@@Z

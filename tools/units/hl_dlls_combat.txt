@@ -34,3 +34,11 @@
 ?TraceAttack@CBaseMonster@@UAEXPAUentvars_s@@MVVector@@PAUTraceResult@@H@Z
 ?TraceBleed@CBaseEntity@@UAEXMVVector@@PAUTraceResult@@H@Z
 ?WaitTillLand@CGib@@QAEXXZ
+?CallGibMonster@CBaseMonster@@QAEXXZ
+?DeadTakeDamage@CBaseMonster@@QAEHPAUentvars_s@@0MH@Z
+?Instance@CBaseEntity@@SAPAV1@PAUentvars_s@@@Z
+?MakeDamageBloodDecal@CBaseMonster@@QAEXHMPAUTraceResult@@ABVVector@@@Z
+?ShouldGibMonster@CBaseMonster@@QAEHH@Z
+?Spawn@CGib@@QAEXPBD@Z
+?SpawnGib@CGib@@SAXPAUentvars_s@@PBDH@Z
+?SpawnStickyGibs@CGib@@SAXPAUentvars_s@@VVector@@H@Z

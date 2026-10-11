@@ -54,3 +54,6 @@ _node_viewer_fly
 _node_viewer_human
 _node_viewer_large
 _testhull
+??0CQueuePriority@@QAE@XZ
+?AddNode@CNodeViewer@@QAEXHH@Z
+?HullIndex@CGraph@@QAEHPBVCBaseEntity@@@Z
