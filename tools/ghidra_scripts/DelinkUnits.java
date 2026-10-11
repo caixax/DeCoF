@@ -341,6 +341,7 @@ public class DelinkUnits extends GhidraScript {
 			Function fn = getFunctionAt(s.getAddress());
 			if (fn != null) {
 				set.add(fn.getBody());
+				addAlignmentGaps(set, fn);
 				addTrailingTables(set, fn);
 			}
 			else {
@@ -349,6 +350,55 @@ public class DelinkUnits extends GhidraScript {
 			}
 		}
 		return set;
+	}
+
+	// alignment padding inside a function (a multi-byte nop before a loop
+	// head) is not reached by any flow, so Ghidra leaves it out of the body;
+	// MSVC counts it as part of the function: fill holes of up to 15 bytes
+	private void addAlignmentGaps(AddressSet set, Function fn) {
+		Address prevEnd = null;
+		for (ghidra.program.model.address.AddressRange r : fn.getBody().getAddressRanges()) {
+			if (prevEnd != null) {
+				long gap = r.getMinAddress().subtract(prevEnd) - 1;
+				if (gap > 0 && gap < 16) {
+					set.add(prevEnd.add(1), r.getMinAddress().subtract(1));
+				}
+			}
+			prevEnd = r.getMaxAddress();
+		}
+	}
+
+	// hl.dll is a DLL: every absolute address in its code has a base
+	// relocation. A data reference from an instruction that has no base
+	// relocation is an immediate that only looks like an address (the
+	// flag 0x10000000 equals the image base): drop it, or the relocation
+	// synthesizer turns the constant into a relocation.
+	private void dropFalseAddressReferences(AddressSet set) {
+		ghidra.program.model.reloc.RelocationTable relocs = currentProgram.getRelocationTable();
+		if (relocs.getSize() == 0) {
+			return;
+		}
+		int tx = currentProgram.startTransaction("Drop false address references");
+		try {
+			for (Instruction ins : currentProgram.getListing().getInstructions(set, true)) {
+				Reference[] refs = ins.getReferencesFrom();
+				boolean relocated = false;
+				for (int k = 0; k < ins.getLength() && !relocated; k++) {
+					relocated = !relocs.getRelocations(ins.getAddress().add(k)).isEmpty();
+				}
+				if (relocated) {
+					continue;
+				}
+				for (Reference r : refs) {
+					if (!r.getReferenceType().isFlow() && r.isMemoryReference() && r.getOperandIndex() >= 0) {
+						currentProgram.getReferenceManager().delete(r);
+					}
+				}
+			}
+		}
+		finally {
+			currentProgram.endTransaction(tx, true);
+		}
 	}
 
 	// MSVC emits the jump tables of a switch (the dword target table and the
@@ -472,6 +522,7 @@ public class DelinkUnits extends GhidraScript {
 	}
 
 	private void export(File file, AddressSet set) throws Exception {
+		dropFalseAddressReferences(set);
 		AutoAnalysisManager aam = AutoAnalysisManager.getAnalysisManager(currentProgram);
 		Analyzer analyzer = aam.getAnalyzer(ANALYZER);
 		if (analyzer == null) {
