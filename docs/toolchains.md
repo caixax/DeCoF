@@ -159,8 +159,12 @@ Readings:
 - opengl32.dll: built with `/Od` (Standard Edition, no optimizer), so
   inline expansion never happens and `/Ob1` changes nothing. The other VC6
   binaries were also built by VC6, whose `/O2` already means `/Ob1`.
-- Status: no flag changed yet. The user approved `/Ob1` for hl.dll and
-  asked for these numbers before any change.
+- Decision (user, 2026-10-11): `/Ob1` is applied to hl.dll only
+  (`tools/units.json`). Rebuilt from the committed sources, hl.dll goes from
+  1,036 to 1,201 MATCHED functions. `CSquadMonster::ScheduleChange` drops
+  from 100% to 1.7% and is tracked as a known regression in
+  `docs/progress.csv`. client.dll and opengl32.dll keep their flags;
+  client.dll is tested again first thing once real client units exist.
 
 ## Change between versions
 
