@@ -93,6 +93,14 @@ The 1.55 hl.dll is an unoptimized debug build of nearly the same source. `disasm
 - Functions unnamed in the retail map are missing from the unit lists and never reported. `tools/bytematch.py` pairs them with our functions by bytes; check the address gaps of a unit when a function you wrote is not in the check output.
 - To test a header change without touching the repo, copy the .cpp next to a modified copy of the header in a scratch folder (`#include "x.h"` looks next to the .cpp first; an extra `/I` does not override it).
 
+## Patterns from the melee weapons
+
+- CAxe, CNightstick, CBranch, CSledgeHammer and CBookSimonSledgehammer are not in weapons.h: declare them in the .cpp (from `hdrgen.py`) before `LINK_ENTITY_TO_CLASS`, with their small inline methods (`ShouldWeaponIdle`, `CheckRangeAttack1/2`) in the class body. The 1.55 rows tell where each class lives.
+- Where 1.55 calls `EMIT_SOUND` (the util.h inline), retail shows `EMIT_SOUND_DYN( ..., 0, 100 )`: write `EMIT_SOUND`.
+- A pushed constant sequence in `GetSequenceTime` instead of a load of `pev->weaponanim` means the source passes the sequence directly.
+- The melee ItemPostFrame is one template (axe, nightstick, branch, booklaser): function scope `float speed` and `float time = 0`, a second `float speed` inside the fourth block; the sledgehammer drops the suicide check, the half time on sprint-to and the idle timer on sprint-from.
+- Content can differ from 1.55: Book Simon's SetYawSpeed and Spawn read the `cof_monsterhumanyawspeed` and `cof_monsterhumanscale` cvars in 1.6a. Use 1.55 for statement order and check the content against retail.
+
 ## What not to do
 
 - Do not edit shared headers (`cbase.h`, `weapons.h`, `player.h`, `util.h`, ...) without coordinating: several files depend on them.

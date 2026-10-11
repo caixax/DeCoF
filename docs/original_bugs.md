@@ -15,3 +15,9 @@ The reconstructed source keeps the behavior of the retail 1.6a binaries, includi
 | `CGameRules::StartVoteKick` (gamerules.cpp) | If `GETPLAYERAUTHID` returns NULL, `m_bInVoteKick` is still set while the victim id stays NULL; `VoteKickThink` never finishes that vote and no new vote kick can start. | no NULL test before the flag is set |
 | `CHalfLifeMultiplay::Think`, lobby (multiplay_gamerules.cpp) | `m_flNextLobbyUpdateTime` is set inside the per-player loop, so each second only the first player's ready state is sent. | the store is inside the loop body |
 | `CGameRules::RefreshSkillData` (gamerules.cpp) | Reads the monster and player damage adjustment cvars twice (harmless). | the cvar block appears twice in 1.6a |
+| `CSwitchblade::PrimaryAttack`, `RageAttack` (CoF_Switchblade.cpp) | In the first stance, case 2 plays `P1ATTACK2`, so `P1ATTACK3` is never used; in the second stance, PrimaryAttack case 2 plays `P2ATTACK2` instead of `P2ATTACK3`. | the pushed sequence numbers |
+| `CSwitchblade::ItemPostFrame` (CoF_Switchblade.cpp) | The sprint-from block times both stances with `SWITCHBLADE_P1_SPRINT_IDLE` instead of the sprint-from sequence, and the knife-stance jump only reads the length of `P2_SPRINT_TO` without playing it. | constant sequence pushed to GetSequenceTime, no SendWeaponAnim |
+| `CSwitchblade::Deploy` (CoF_Switchblade.cpp) | The draw sounds only play when `pev->max_health != 1`. | the test before the sound calls |
+| `CNightstick` attacks (CoF_NightStick.cpp) | All three attacks set `MeleeHitThinkNightStick2` as the think. | the same function pointer stored in each |
+| `CAxe::Fidget` (CoF_Axe.cpp) | Calls `RANDOM_LONG( 0, 599 )` and ignores the result. | the call with no use of eax |
+| `CSledgeHammer` (CoF_Sledgehammer.cpp) | Checks no suicide state, unlike the other melee weapons. | no m_iSuicideState test |
