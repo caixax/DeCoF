@@ -21,6 +21,7 @@
 */
 //CODIAC - Linux needs this for tolower
 #include <ctype.h>
+#include <time.h>	// _strtime, for func_timer
 
 #include "extdll.h"
 #include "util.h"
@@ -50,6 +51,19 @@ extern void SetMovedir(entvars_t* pev);
 extern Vector VecBModelOrigin( entvars_t* pevBModel );
 
 extern int gmsgTextWindow; // buz
+extern int gmsgHeadShield;
+extern int gmsgIronSights;
+extern int gmsgCameraZoom;
+extern int gmsgAttachCam;
+extern int gmsgModelAttach;
+extern int gmsgSkipScene;
+extern int gmsgBoard;
+
+extern void UTIL_ProMessage( CBaseEntity *pEntity, const char *pMessage, int colour, bool all );
+
+// util.cpp: the engine's SetView wrapped in a function
+#undef SET_VIEW
+extern void SET_VIEW( edict_t *pClient, edict_t *pViewent );
 
 class CFrictionModifier : public CBaseEntity
 {
@@ -2144,6 +2158,9 @@ LINK_ENTITY_TO_CLASS( trigger, CBaseTrigger );
 
 BOOL CBaseTrigger :: CanTouch( entvars_t *pevToucher )
 {
+	if ( pev->iuser1 )
+		return FALSE;
+
 	if ( !pev->netname )
 	{
 		// Only touch clients, monsters, or pushables (depending on flags)
@@ -2288,10 +2305,30 @@ void CTriggerHurt :: HurtTouch ( CBaseEntity *pOther )
 	if ( (pev->spawnflags & SF_TRIGGER_HURT_NO_CLIENTS) && pOther->IsPlayer() )
 		return;
 
+	if ( pOther->IsPlayer() )
+	{
+		CBasePlayer *pPlayer = GetClassPtr( (CBasePlayer *)pOther->pev );
+
+		if ( pPlayer )
+		{
+			if ( pev->iuser1 )
+			{
+				if ( pev->dmg >= pPlayer->pev->health )
+					pPlayer->m_bNoDeadFade = TRUE;
+			}
+
+			if ( pev->iuser2 )
+			{
+				if ( pev->dmg >= pPlayer->pev->health )
+					SET_VIEW( pPlayer->edict(), pPlayer->edict() );
+			}
+		}
+	}
+
 	// HACKHACK -- In multiplayer, players touch this based on packet receipt.
 	// So the players who send packets later aren't always hurt.  Keep track of
 	// how much time has passed and whether or not you've touched that player
-	if ( g_pGameRules->IsMultiplayer() )
+	if ( g_pGameRules && g_pGameRules->IsMultiplayer() )
 	{
 		if ( pev->dmgtime > gpGlobals->time )
 		{
@@ -2521,7 +2558,7 @@ void CTriggerHevCharge :: ChargeTouch ( CBaseEntity *pOther )
 	}
 
 	// The suit doesn't say much in multiplayer. Which is convenient, since it lets me be lazy here.
-	if ( g_pGameRules->IsMultiplayer() || pev->spawnflags & SF_HEVCHARGE_NOANNOUNCE)
+	if ( (g_pGameRules && g_pGameRules->IsMultiplayer()) || pev->spawnflags & SF_HEVCHARGE_NOANNOUNCE)
 		return;
 
 	// as long as the suit is charging, this think will never actually happen.
@@ -3354,10 +3391,10 @@ void CChangeLevel :: Spawn( void )
 
 void CChangeLevel :: ExecuteChangeLevel( void )
 {
-	MESSAGE_BEGIN( MSG_ALL, SVC_CDTRACK );
-		WRITE_BYTE( 3 );
-		WRITE_BYTE( 3 );
-	MESSAGE_END();
+//	MESSAGE_BEGIN( MSG_ALL, SVC_CDTRACK );
+//		WRITE_BYTE( 3 );
+//		WRITE_BYTE( 3 );
+//	MESSAGE_END();
 
 	MESSAGE_BEGIN(MSG_ALL, SVC_INTERMISSION);
 	MESSAGE_END();
@@ -3403,7 +3440,7 @@ void CChangeLevel :: ChangeLevelNow( CBaseEntity *pActivator )
 	ASSERT(!FStrEq(m_szMapName, ""));
 
 	// Don't work in deathmatch
-	if ( g_pGameRules->IsDeathmatch() )
+	if ( g_pGameRules && g_pGameRules->IsDeathmatch() )
 		return;
 
 	// Some people are firing these multiple times in a frame, disable
@@ -3419,6 +3456,9 @@ void CChangeLevel :: ChangeLevelNow( CBaseEntity *pActivator )
 		ALERT( at_aiconsole, "Player isn't in the transition volume %s, aborting\n", m_szLandmarkName );
 		return;
 	}
+
+	if ( pPlayer && pPlayer->IsPlayer() )
+		((CBasePlayer *)pPlayer)->m_iPlayerSaveLock = 1337;
 
 	// Create an entity to fire the changetarget
 	if ( m_changeTarget )
@@ -3708,7 +3748,11 @@ void CLadder :: Precache( void )
 //		pev->renderamt = 0;
 	}
 	else
+	{
 		pev->effects &= ~EF_NODRAW;
+	}
+
+	pev->iuser1 = 1;
 }
 
 
@@ -3718,6 +3762,246 @@ void CLadder :: Spawn( void )
 
 	SET_MODEL(ENT(pev), STRING(pev->model));    // set size and link into world
 	pev->movetype = MOVETYPE_PUSH;
+}
+
+
+//=========================================================
+// func_laddercontrol - enables the target ladder when no
+// player is inside, disables it when a player touches it
+//=========================================================
+class CLadderControl : public CBaseTrigger
+{
+public:
+	void KeyValue( KeyValueData *pkvd );
+	void Spawn( void );
+	void Precache( void );
+	void EXPORT LadderTouch( CBaseEntity *pOther );
+	void EXPORT LadderThink( void );
+	virtual int		Save( CSave &save );
+	virtual int		Restore( CRestore &restore );
+	static	TYPEDESCRIPTION m_SaveData[];
+
+	EHANDLE pTarget;
+};
+LINK_ENTITY_TO_CLASS( func_laddercontrol, CLadderControl );
+
+TYPEDESCRIPTION	CLadderControl::m_SaveData[] =
+{
+	DEFINE_FIELD( CLadderControl, pTarget, FIELD_EHANDLE ),
+};
+
+IMPLEMENT_SAVERESTORE(CLadderControl,CBaseTrigger);
+
+void CLadderControl :: KeyValue( KeyValueData *pkvd )
+{
+	CBaseTrigger::KeyValue( pkvd );
+}
+
+void CLadderControl :: Precache( void )
+{
+	pev->solid = SOLID_TRIGGER;
+
+	if ( CVAR_GET_FLOAT("showtriggers") == 0 )
+		pev->effects |= EF_NODRAW;
+	else
+		pev->effects &= ~EF_NODRAW;
+
+	pTarget = NULL;
+}
+
+void CLadderControl :: Spawn( void )
+{
+	Precache();
+
+	SET_MODEL(ENT(pev), STRING(pev->model));    // set size and link into world
+	pev->movetype = MOVETYPE_PUSH;
+
+	SetNextThink( 0.1 );
+	SetThink(&CLadderControl :: LadderThink );
+	SetTouch(&CLadderControl :: LadderTouch );
+}
+
+void CLadderControl :: LadderThink( void )
+{
+	CBaseEntity *pList[32];
+	int count = UTIL_EntitiesInBox( pList, 32, pev->mins, pev->maxs, FL_CLIENT );
+
+	if ( !count )
+	{
+		// nobody inside, turn the ladder back on
+		if ( !pTarget )
+			pTarget = UTIL_FindEntityByTargetname( NULL, STRING(pev->target) );
+
+		if ( pTarget )
+		{
+			if ( pTarget->pev->iuser1 != 1 )
+			{
+				pTarget->pev->iuser1 = 1;
+			}
+		}
+	}
+
+	SetNextThink( 0.1 );
+}
+
+void CLadderControl :: LadderTouch( CBaseEntity *pOther )
+{
+	entvars_t *pevToucher = pOther->pev;
+
+	// Only touch clients
+	if ( !(pevToucher->flags & FL_CLIENT) )
+		return;
+
+	if ( !CanTouch( pevToucher ) )
+		return;
+
+	if ( !pOther->IsPlayer() )
+		return;
+
+	CBaseEntity *pTarget = NULL;
+	CBasePlayer *pPlayer = GetClassPtr( (CBasePlayer *)pOther->pev );
+
+	if ( pPlayer )
+	{
+		if ( !pev->target )
+		{
+			UTIL_ProMessage( pPlayer, "Error: Mapper didn't specify target ladder!", 5, false );
+			return;
+		}
+
+		if ( pPlayer->m_pActiveItem )
+		{
+			if ( !pTarget )
+				pTarget = UTIL_FindEntityByTargetname( NULL, STRING(pev->target) );
+
+			if ( pTarget )
+			{
+				if ( pTarget->pev->iuser1 && !((CBasePlayerWeapon *)pPlayer->m_pActiveItem)->m_fInReload && !((CBasePlayerWeapon *)pPlayer->m_pActiveItem)->m_fInSpecialReload )
+				{
+					pTarget->pev->iuser1 = 0;
+				}
+			}
+			else
+				UTIL_ProMessage( pPlayer, "Error: Couldn't find target ladder!", 5, false );
+		}
+		else
+		{
+			if ( !pTarget )
+				pTarget = UTIL_FindEntityByTargetname( NULL, STRING(pev->target) );
+
+			if ( pTarget )
+			{
+				if ( pTarget->pev->iuser1 )
+				{
+					pTarget->pev->iuser1 = 0;
+				}
+			}
+			else
+				UTIL_ProMessage( pPlayer, "Error: Couldn't find target ladder!", 5, false );
+		}
+	}
+}
+
+
+//=========================================================
+// func_stairs - tells the player inside that he is on stairs
+//=========================================================
+class CFuncStairs : public CBaseTrigger
+{
+public:
+	void KeyValue( KeyValueData *pkvd );
+	void Spawn( void );
+	void Precache( void );
+	virtual int		Save( CSave &save );
+	virtual int		Restore( CRestore &restore );
+	static	TYPEDESCRIPTION m_SaveData[];
+	void EXPORT StairThink( void );
+
+	EHANDLE pTarget;
+};
+LINK_ENTITY_TO_CLASS( func_stairs, CFuncStairs );
+
+TYPEDESCRIPTION	CFuncStairs::m_SaveData[] =
+{
+	DEFINE_FIELD( CFuncStairs, pTarget, FIELD_EHANDLE ),
+};
+
+IMPLEMENT_SAVERESTORE(CFuncStairs,CBaseTrigger);
+
+void CFuncStairs :: KeyValue( KeyValueData *pkvd )
+{
+	CBaseTrigger::KeyValue( pkvd );
+}
+
+void CFuncStairs :: Precache( void )
+{
+	pev->solid = SOLID_TRIGGER;
+
+	if ( CVAR_GET_FLOAT("showtriggers") == 0 )
+		pev->effects |= EF_NODRAW;
+	else
+		pev->effects &= ~EF_NODRAW;
+}
+
+void CFuncStairs :: Spawn( void )
+{
+	Precache();
+
+	SET_MODEL(ENT(pev), STRING(pev->model));    // set size and link into world
+	pev->movetype = MOVETYPE_PUSH;
+
+	if ( g_pGameRules && g_pGameRules->IsMultiplayer() )
+		UTIL_Remove( this );
+
+	SetNextThink( 0.1 );
+	SetThink(&CFuncStairs :: StairThink );
+}
+
+void CFuncStairs :: StairThink( void )
+{
+	CBaseEntity *pList[32];
+	int count = UTIL_EntitiesInBox( pList, 32, pev->mins, pev->maxs, FL_CLIENT );
+
+	for ( int i = 0; i < count; i++ )
+	{
+		if ( pList[i]->IsPlayer() )
+		{
+			pTarget = pList[i];
+		}
+	}
+
+	if ( !count )
+	{
+		if ( pTarget )
+		{
+			CBasePlayer *pPlayer = GetClassPtr( (CBasePlayer *)pTarget->pev );
+
+			if ( pPlayer )
+			{
+				if ( pPlayer->m_OnStairs )
+				{
+					pPlayer->m_OnStairs = false;
+				}
+			}
+		}
+	}
+	else
+	{
+		if ( pTarget )
+		{
+			CBasePlayer *pPlayer = GetClassPtr( (CBasePlayer *)pTarget->pev );
+
+			if ( pPlayer )
+			{
+				if ( !pPlayer->m_OnStairs )
+				{
+					pPlayer->m_OnStairs = true;
+				}
+			}
+		}
+	}
+
+	SetNextThink( 0.1 );
 }
 
 
@@ -3795,6 +4079,12 @@ void CTriggerPush :: Touch( CBaseEntity *pOther )
 	case MOVETYPE_NOCLIP:
 	case MOVETYPE_FOLLOW:
 		return;
+	}
+
+	if ( pev->spawnflags & 4 )
+	{
+		if ( !(pevToucher->flags & FL_MONSTER) )
+			return;
 	}
 
 	Vector vecPush;
@@ -4104,13 +4394,13 @@ void CTriggerTeleport :: TeleportTouch( CBaseEntity *pOther )
 
 			// set new angle to face
 //			ALERT(at_console, "angles = %f %f %f\n", pOther->pev->angles.x, pOther->pev->angles.y, pOther->pev->angles.z);
-			pOther->pev->angles.y += ydiff;
+			pOther->pev->angles.y = ydiff + pOther->pev->angles.y;
 			if (pOther->IsPlayer())
 			{
 //				ALERT(at_console, "v_angle = %f %f %f\n", pOther->pev->v_angle.x, pOther->pev->v_angle.y, pOther->pev->v_angle.z);
-				pOther->pev->angles.x = pOther->pev->v_angle.x;
+//				pOther->pev->angles.x = pOther->pev->v_angle.x;
 //				pOther->pev->v_angle.y += ydiff;
-				pOther->pev->fixangle = TRUE;
+//				pOther->pev->fixangle = TRUE;
 			}
 
 			// set new velocity
@@ -4180,7 +4470,7 @@ LINK_ENTITY_TO_CLASS( trigger_autosave, CTriggerSave );
 
 void CTriggerSave::Spawn( void )
 {
-	if ( g_pGameRules->IsDeathmatch() )
+	if ( g_pGameRules && g_pGameRules->IsDeathmatch() )
 	{
 		REMOVE_ENTITY( ENT(pev) );
 		return;
@@ -4193,15 +4483,17 @@ void CTriggerSave::Spawn( void )
 void CTriggerSave::SaveTouch( CBaseEntity *pOther )
 {
 	if ( !UTIL_IsMasterTriggered( m_sMaster, pOther ) )
-		return;
+	{
+//		return;
 
-	// Only save on clients
-	if ( !pOther->IsPlayer() )
-		return;
-    
-	SetTouch( NULL );
-	UTIL_Remove( this );
-	SERVER_COMMAND( "autosave\n" );
+		// Only save on clients
+//		if ( !pOther->IsPlayer() )
+//			return;
+
+//		SetTouch( NULL );
+//		UTIL_Remove( this );
+//		SERVER_COMMAND( "autosave\n" );
+	}
 }
 
 #define SF_ENDSECTION_USEONLY		0x0001
@@ -4234,7 +4526,7 @@ void CTriggerEndSection::EndSectionUse( CBaseEntity *pActivator, CBaseEntity *pC
 
 void CTriggerEndSection::Spawn( void )
 {
-	if ( g_pGameRules->IsDeathmatch() )
+	if ( g_pGameRules && g_pGameRules->IsDeathmatch() )
 	{
 		REMOVE_ENTITY( ENT(pev) );
 		return;
@@ -5120,6 +5412,11 @@ void CTriggerCamera::Spawn( void )
 		m_acceleration = 500;
 	if ( m_deceleration == 0 )
 		m_deceleration = 500;
+
+	pev->iuser1 = 0;
+
+	if ( z_angle )
+		pev->angles.z = z_angle;
 }
 
 
@@ -5150,6 +5447,41 @@ void CTriggerCamera :: KeyValue( KeyValueData *pkvd )
 		m_iszViewEntity = ALLOC_STRING( pkvd->szValue );
 		pkvd->fHandled = TRUE;
 	}
+	else if (FStrEq(pkvd->szKeyName, "zangle"))
+	{
+		z_angle = atof( pkvd->szValue );
+		pkvd->fHandled = TRUE;
+	}
+	else if (FStrEq(pkvd->szKeyName, "skipmanager"))
+	{
+		m_sSkipManager = ALLOC_STRING( pkvd->szValue );
+		pkvd->fHandled = TRUE;
+	}
+	else if (FStrEq(pkvd->szKeyName, "m_sAttachedModel"))
+	{
+		m_sAttachedModel = ALLOC_STRING( pkvd->szValue );
+		pkvd->fHandled = TRUE;
+	}
+	else if (FStrEq(pkvd->szKeyName, "m_iAttachment"))
+	{
+		m_iAttachment = atoi( pkvd->szValue );
+		pkvd->fHandled = TRUE;
+	}
+	else if (FStrEq(pkvd->szKeyName, "keepblackbars"))
+	{
+		m_iKeepBlackBars = atoi( pkvd->szValue );
+		pkvd->fHandled = TRUE;
+	}
+	else if (FStrEq(pkvd->szKeyName, "keepnohud"))
+	{
+		m_iKeepNoHUD = atoi( pkvd->szValue );
+		pkvd->fHandled = TRUE;
+	}
+	else if (FStrEq(pkvd->szKeyName, "keepnoise"))
+	{
+		m_iKeepNoise = atoi( pkvd->szValue );
+		pkvd->fHandled = TRUE;
+	}
 	else
 		CBaseDelay::KeyValue( pkvd );
 }
@@ -5160,6 +5492,57 @@ void CTriggerCamera::Use( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYP
 {
 	if ( !ShouldToggle( useType, m_state ) )
 		return;
+
+	if ( value == 666 )
+	{
+		pev->iuser1 = 0;
+		m_state = 0;
+
+		for ( int i = 1; i <= gpGlobals->maxClients; i++ )
+		{
+			CBasePlayer *plr = (CBasePlayer *)UTIL_PlayerByIndex( i );
+
+			if ( plr )
+			{
+				if ( plr->IsAlive() )
+				{
+					SET_VIEW( plr->edict(), plr->edict() );
+
+					plr->m_hCurrentCamera = NULL;
+
+					pev->iuser1 = 0;
+
+					plr->pev->flags &= ~FL_NOTARGET;
+					plr->pev->takedamage = DAMAGE_AIM;
+
+					plr->EnableControl( TRUE );
+				}
+
+				if ( (pev->spawnflags & 16) && !m_iKeepNoHUD )
+					plr->m_iHideHUD &= ~HIDEHUD_HEALTH;
+
+				if ( (pev->spawnflags & 32) && !m_iKeepBlackBars )
+					plr->m_DrawBars = 0;
+
+				if ( pev->iuser2 )
+					plr->m_iHideHUD &= ~HIDEHUD_CUSTOMCROSSHAIR;
+
+				if ( pev->spawnflags & 256 )
+				{
+					MESSAGE_BEGIN( MSG_ONE, gmsgHeadShield, NULL, plr->pev );
+						WRITE_BYTE( 0 );
+						WRITE_BYTE( 0 );
+						WRITE_STRING( "" );
+						WRITE_BYTE( 0 );
+					MESSAGE_END();
+				}
+
+				plr->m_hCurrentCamera = NULL;
+			}
+		}
+
+		return;
+	}
 
 	// Toggle state
 	m_state = !m_state;
@@ -5172,12 +5555,39 @@ void CTriggerCamera::Use( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYP
 	{
 		pActivator = CBaseEntity::Instance(g_engfuncs.pfnPEntityOfEntIndex( 1 ));
 	}
-		
+
 	m_hPlayer = pActivator;
+
+	if ( pActivator && pActivator->IsPlayer() )
+		((CBasePlayer *)pActivator)->StopWheelchairMode();
 
 	m_flReturnTime = gpGlobals->time + m_flWait;
 	pev->speed = m_initialSpeed;
 	m_targetSpeed = m_initialSpeed;
+
+	if ( ((CBasePlayer *)pActivator)->m_pActiveItem && ((CBasePlayerWeapon *)((CBasePlayer *)pActivator)->m_pActiveItem)->m_bIronSights )
+	{
+		int on = 0;
+
+		if ( ((CBasePlayerWeapon *)((CBasePlayer *)pActivator)->m_pActiveItem)->m_bIronSights )
+			on = 1;
+
+		MESSAGE_BEGIN( MSG_ONE, gmsgIronSights, NULL, pActivator->pev );
+			WRITE_COORD( 0 );
+			WRITE_COORD( 0 );
+			WRITE_COORD( 0 );
+			WRITE_BYTE( 0 );
+			WRITE_BYTE( on );
+		MESSAGE_END();
+
+		MESSAGE_BEGIN( MSG_ONE, gmsgCameraZoom, NULL, pActivator->pev );
+			WRITE_COORD( 350 );
+			WRITE_BYTE( 0 );
+			WRITE_BYTE( 0 );
+		MESSAGE_END();
+
+		pActivator->pev->vuser2.x = 90;
+	}
 
 	if (FBitSet (pev->spawnflags, SF_CAMERA_PLAYER_TARGET ) )
 	{
@@ -5191,9 +5601,12 @@ void CTriggerCamera::Use( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYP
 	// Nothing to look at!
 	if ( m_hTarget == NULL )
 	{
+		UTIL_ProMessage( pActivator, "Nothing to look at!", 5, false );
 		return;
 	}
 
+	if ( pev->spawnflags & 512 )
+		((CBasePlayer *)pActivator)->ShowVGUIMenu( 166 );
 
 	if (FBitSet (pev->spawnflags, SF_CAMERA_PLAYER_TAKECONTROL ) )
 	{
@@ -5214,7 +5627,7 @@ void CTriggerCamera::Use( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYP
 	{
 		if ( m_pentPath->pev->speed != 0 )
 			m_targetSpeed = m_pentPath->pev->speed;
-		
+
 		m_flStopTime += m_pentPath->GetDelay();
 	}
 
@@ -5224,7 +5637,12 @@ void CTriggerCamera::Use( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYP
 		UTIL_SetOrigin( this, pActivator->pev->origin + pActivator->pev->view_ofs );
 		pev->angles.x = -pActivator->pev->angles.x;
 		pev->angles.y = pActivator->pev->angles.y;
-		pev->angles.z = 0;
+
+		if ( z_angle )
+			pev->angles.z = z_angle;
+		else
+			pev->angles.z = 0;
+
 		pev->velocity = pActivator->pev->velocity;
 	}
 	else
@@ -5238,19 +5656,136 @@ void CTriggerCamera::Use( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYP
 		CBaseEntity *pEntity = UTIL_FindEntityByTargetname(NULL, STRING(m_iszViewEntity));
 		if (pEntity)
 		{
-			SET_VIEW( pActivator->edict(), pEntity->edict() );
+			for ( int i = 1; i <= gpGlobals->maxClients; i++ )
+			{
+				CBasePlayer *plr = (CBasePlayer *)UTIL_PlayerByIndex( i );
+
+				if ( plr )
+				{
+					SET_VIEW( plr->edict(), pEntity->edict() );
+
+					plr->m_hCurrentCamera = this;
+
+					pev->iuser1 = 1;
+
+					plr->pev->flags |= FL_NOTARGET;
+					plr->pev->takedamage = DAMAGE_NO;
+
+					if (FBitSet (pev->spawnflags, SF_CAMERA_PLAYER_TAKECONTROL ) )
+						plr->EnableControl( FALSE );
+
+					if ( pev->spawnflags & 16 )
+						plr->m_iHideHUD |= HIDEHUD_HEALTH;
+
+					if ( pev->spawnflags & 256 )
+					{
+						MESSAGE_BEGIN( MSG_ONE, gmsgHeadShield, NULL, plr->pev );
+							WRITE_BYTE( 1 );
+							WRITE_BYTE( 1 );
+							WRITE_STRING( "" );
+							WRITE_BYTE( 0 );
+						MESSAGE_END();
+					}
+
+					plr->m_hCurrentCamera = this;
+
+					if ( plr->m_bIsTripping )
+						plr->StopMorphineTrip();
+				}
+			}
 		}
 	}
 	else
 	{
-		SET_VIEW( pActivator->edict(), edict() );
+		for ( int i = 1; i <= gpGlobals->maxClients; i++ )
+		{
+			CBasePlayer *plr = (CBasePlayer *)UTIL_PlayerByIndex( i );
+
+			if ( plr )
+			{
+				SET_VIEW( plr->edict(), edict() );
+				plr->m_hCurrentCamera = this;
+
+				pev->iuser1 = 1;
+
+				plr->pev->flags |= FL_NOTARGET;
+				plr->pev->takedamage = DAMAGE_NO;
+
+				if (FBitSet (pev->spawnflags, SF_CAMERA_PLAYER_TAKECONTROL ) )
+					plr->EnableControl( FALSE );
+
+				if ( (pev->spawnflags & 2048) && plr->pDeathScene && plr->IsAlive() )
+				{
+					UTIL_Remove( plr->pDeathScene );
+					plr->pDeathScene = NULL;
+					plr->m_pAttachedCamera = NULL;
+
+					MESSAGE_BEGIN( MSG_ONE, gmsgAttachCam, NULL, plr->pev );
+						WRITE_SHORT( 0 );
+						WRITE_BYTE( 0 );
+					MESSAGE_END();
+
+					MESSAGE_BEGIN( MSG_ONE, gmsgCameraZoom, NULL, plr->pev );
+						WRITE_COORD( 50 );
+						WRITE_BYTE( 0 );
+						WRITE_BYTE( 0 );
+					MESSAGE_END();
+
+					plr->pev->vuser2.x = 90;
+				}
+
+				if ( pev->spawnflags & 16 )
+					plr->m_iHideHUD |= HIDEHUD_HEALTH;
+
+				if ( pev->spawnflags & 32 )
+					plr->m_DrawBars = 1;
+
+				if ( pev->iuser2 )
+					plr->m_iHideHUD |= HIDEHUD_CUSTOMCROSSHAIR;
+
+				if ( pev->spawnflags & 256 )
+				{
+					MESSAGE_BEGIN( MSG_ONE, gmsgHeadShield, NULL, plr->pev );
+						WRITE_BYTE( 1 );
+						WRITE_BYTE( 1 );
+						WRITE_STRING( "" );
+						WRITE_BYTE( 0 );
+					MESSAGE_END();
+				}
+
+				plr->m_hCurrentCamera = this;
+
+				if ( plr->m_bIsTripping )
+					plr->StopMorphineTrip();
+			}
+		}
+	}
+
+	if ( m_sAttachedModel )
+	{
+		CBaseEntity *pAttachEnt = UTIL_FindEntityByTargetname( NULL, STRING(m_sAttachedModel) );
+
+		if ( pAttachEnt )
+		{
+			if ( m_hPlayer->IsPlayer() )
+			{
+				MESSAGE_BEGIN( MSG_ONE, gmsgModelAttach, NULL, m_hPlayer->pev );
+					WRITE_LONG( ENTINDEX( pAttachEnt->edict() ) );
+					WRITE_BYTE( m_iAttachment );
+				MESSAGE_END();
+			}
+		}
 	}
 
 	SET_MODEL(ENT(pev), STRING(pActivator->pev->model) );
 
+	pev->iuser1 = 1;
+
 	// follow the player down
 	SetThink(&CTriggerCamera:: FollowTarget );
 	SetNextThink( 0 );
+
+	m_vOriginalPlayerAngles = m_hPlayer->pev->v_angle;
 
 	m_moveDistance = 0;
 	Move();
@@ -5262,46 +5797,131 @@ void CTriggerCamera::FollowTarget( )
 	if (m_hPlayer == NULL)
 		return;
 
-	if (m_hTarget == NULL || m_flReturnTime < gpGlobals->time)
+	if ( g_pGameRules && !g_pGameRules->IsMultiplayer() )
 	{
-		if (m_hPlayer->IsAlive( ))
+		if ( (GetAsyncKeyState( VK_RETURN ) & 0x8000) && !(pev->spawnflags & 1024) )
 		{
-			SET_VIEW( m_hPlayer->edict(), m_hPlayer->edict() );
-			((CBasePlayer *)((CBaseEntity *)m_hPlayer))->EnableControl(TRUE);
+			MESSAGE_BEGIN( MSG_ONE, gmsgSkipScene, NULL, m_hPlayer->pev );
+			MESSAGE_END();
+
+			if ( g_pWorld )
+			{
+				for ( int i = 1; i <= 64; i++ )
+				{
+				}
+			}
 		}
+	}
+
+	if (m_hTarget == NULL || (m_flReturnTime < gpGlobals->time && m_flWait != 666))
+	{
+		pev->iuser1 = 0;
+
+		if ( pev->message )
+			FireTargets( STRING(pev->message), this, this, USE_TOGGLE, 0 );
+
+		for ( int i = 1; i <= gpGlobals->maxClients; i++ )
+		{
+			CBasePlayer *plr = (CBasePlayer *)UTIL_PlayerByIndex( i );
+
+			if ( plr )
+			{
+				if ( plr->IsAlive() )
+				{
+					SET_VIEW( plr->edict(), plr->edict() );
+
+					plr->m_hCurrentCamera = NULL;
+
+					pev->iuser1 = 0;
+
+					plr->pev->flags &= ~FL_NOTARGET;
+					plr->pev->takedamage = DAMAGE_AIM;
+
+					plr->EnableControl( TRUE );
+				}
+
+				if ( (pev->spawnflags & 16) && !m_iKeepNoHUD )
+					plr->m_iHideHUD &= ~HIDEHUD_HEALTH;
+
+				if ( (pev->spawnflags & 32) && !m_iKeepBlackBars )
+					plr->m_DrawBars = 0;
+
+				if ( pev->iuser2 )
+					plr->m_iHideHUD &= ~HIDEHUD_CUSTOMCROSSHAIR;
+
+				if ( pev->spawnflags & 256 )
+				{
+					MESSAGE_BEGIN( MSG_ONE, gmsgHeadShield, NULL, plr->pev );
+						WRITE_BYTE( 0 );
+						WRITE_BYTE( 0 );
+						WRITE_STRING( "" );
+						WRITE_BYTE( 0 );
+					MESSAGE_END();
+				}
+
+				plr->m_hCurrentCamera = NULL;
+			}
+		}
+
 		SUB_UseTargets( this, USE_TOGGLE, 0 );
 		pev->avelocity = Vector( 0, 0, 0 );
 		m_state = 0;
+
+		if ( m_sSkipManager )
+		{
+			CBaseEntity *pSkipTarget = UTIL_FindEntityByTargetname( NULL, STRING(m_sSkipManager) );
+
+			if ( pSkipTarget )
+			{
+				CBaseEntity *pPlayer = UTIL_FindEntityByClassname( NULL, "player" );
+
+				if ( pPlayer )
+					pSkipTarget->Use( pPlayer, pPlayer, USE_TOGGLE, 0 );
+			}
+		}
+
 		return;
 	}
 
-	Vector vecGoal = UTIL_VecToAngles( m_hTarget->pev->origin - pev->origin );
-	vecGoal.x = -vecGoal.x;
+	if ( pev->spawnflags & 64 )
+	{
+		Vector vecGoal = UTIL_VecToAngles( m_hTarget->pev->origin - pev->origin );
+		vecGoal.x = -vecGoal.x;
+		pev->angles.x = vecGoal.x;
+		pev->angles.y = vecGoal.y;
+	}
+	else
+	{
+		Vector vecGoal = UTIL_VecToAngles( m_hTarget->pev->origin - pev->origin );
+		vecGoal.x = -vecGoal.x;
 
-	if (pev->angles.y > 360)
-		pev->angles.y -= 360;
+		if (pev->angles.y > 360)
+			pev->angles.y -= 360;
 
-	if (pev->angles.y < 0)
-		pev->angles.y += 360;
+		if (pev->angles.y < 0)
+			pev->angles.y += 360;
 
-	float dx = vecGoal.x - pev->angles.x;
-	float dy = vecGoal.y - pev->angles.y;
+		float dx = vecGoal.x - pev->angles.x;
+		float dy = vecGoal.y - pev->angles.y;
 
-	if (dx < -180) 
-		dx += 360;
-	if (dx > 180) 
-		dx = dx - 360;
-	
-	if (dy < -180) 
-		dy += 360;
-	if (dy > 180) 
-		dy = dy - 360;
+		if (dx < -180)
+			dx += 360;
+		if (dx > 180)
+			dx = dx - 360;
 
-	pev->avelocity.x = dx * 40 * gpGlobals->frametime;
-	pev->avelocity.y = dy * 40 * gpGlobals->frametime;
+		if (dy < -180)
+			dy += 360;
+		if (dy > 180)
+			dy = dy - 360;
 
+		pev->avelocity.x = dx * 40 * gpGlobals->frametime;
+		pev->avelocity.y = dy * 40 * gpGlobals->frametime;
+	}
 
-	if (!(FBitSet (pev->spawnflags, SF_CAMERA_PLAYER_TAKECONTROL)))	
+	if ( z_angle )
+		pev->angles.z = z_angle;
+
+	if (!(FBitSet (pev->spawnflags, SF_CAMERA_PLAYER_TAKECONTROL)))
 	{
 		pev->velocity = pev->velocity * 0.8;
 		if (pev->velocity.Length( ) < 10.0) //LRC- whyyyyyy???
@@ -5405,6 +6025,8 @@ public:
 
 
 LINK_ENTITY_TO_CLASS( trigger_mp3, CTriggerMP3 );
+LINK_ENTITY_TO_CLASS( ambient_fmodstream, CTriggerMP3 );
+LINK_ENTITY_TO_CLASS( trigger_mp3audio, CTriggerMP3 );
 
 void CTriggerMP3::Use( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE useType, float value )
 {
@@ -5672,3 +6294,730 @@ TYPEDESCRIPTION	CGasArea::m_SaveData[] =
 };
 
 IMPLEMENT_SAVERESTORE(CGasArea,CBaseEntity);
+
+
+
+//=========================================================
+// trigger_cofteleport - teleports the touching player to
+// the target and remembers where he was put
+//=========================================================
+class CTriggerCofTeleport : public CBaseTrigger
+{
+public:
+	void Spawn( void );
+	void Touch( CBaseEntity *pOther );
+};
+LINK_ENTITY_TO_CLASS( trigger_cofteleport, CTriggerCofTeleport );
+
+void CTriggerCofTeleport :: Spawn( void )
+{
+	InitTrigger();
+}
+
+void CTriggerCofTeleport :: Touch( CBaseEntity *pOther )
+{
+	if ( !UTIL_IsMasterTriggered( m_sMaster, pOther ) )
+		return;
+
+	// Only teleport players
+	if ( !pOther->IsPlayer() )
+		return;
+
+	CBaseEntity *pTarget = NULL;
+	pTarget = UTIL_FindEntityByTargetname( pTarget, STRING(pev->target) );
+
+	if ( pTarget )
+	{
+		Vector tmp = pTarget->pev->origin;
+
+		CBasePlayer *pPlayer = (CBasePlayer *)pOther;
+
+		if ( pPlayer->IsPlayer() )
+		{
+			tmp.z -= pPlayer->pev->mins.z;// make origin adjustments in case the teleportee is a player. (origin in center, not at feet)
+		}
+
+		tmp.z++;
+		UTIL_SetOrigin( pPlayer, tmp );
+		pPlayer->m_vPreviousOrigin = tmp;
+
+		pPlayer->pev->angles = pTarget->pev->angles;
+		pPlayer->pev->velocity = pPlayer->pev->basevelocity = g_vecZero;
+		if ( pPlayer->IsPlayer() )
+		{
+			pPlayer->pev->v_angle = pTarget->pev->angles;
+			pPlayer->pev->fixangle = TRUE;
+		}
+
+		pPlayer->pev->flags &= ~FL_ONGROUND;
+		pPlayer->pev->fixangle = TRUE;
+	}
+
+	if ( pev->spawnflags & 1 )
+	{
+		SetTouch( NULL );
+		UTIL_Remove( this );
+	}
+}
+
+
+
+//=========================================================
+// cof_billboard - shows a notice board to the player
+//=========================================================
+class CCofBillBoard : public CBaseEntity
+{
+public:
+	void Spawn( void );
+	void Precache( void );
+	void Use( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE useType, float value );
+	void KeyValue( KeyValueData *pkvd );
+	virtual int		Save( CSave &save );
+	virtual int		Restore( CRestore &restore );
+	static	TYPEDESCRIPTION m_SaveData[];
+
+	string_t m_iszText;
+};
+LINK_ENTITY_TO_CLASS( cof_billboard, CCofBillBoard );
+
+void CCofBillBoard :: KeyValue( KeyValueData *pkvd )
+{
+	if (FStrEq(pkvd->szKeyName, "text"))
+	{
+		m_iszText = ALLOC_STRING( pkvd->szValue );
+		pkvd->fHandled = TRUE;
+	}
+	else
+		CBaseEntity::KeyValue( pkvd );
+}
+
+TYPEDESCRIPTION	CCofBillBoard::m_SaveData[] =
+{
+	DEFINE_FIELD( CCofBillBoard, m_iszText, FIELD_STRING ),
+};
+
+IMPLEMENT_SAVERESTORE(CCofBillBoard,CBaseEntity);
+
+void CCofBillBoard :: Spawn( void )
+{
+	Precache();
+	pev->solid = SOLID_NOT;
+	pev->effects = EF_NODRAW;
+
+	pev->movetype = MOVETYPE_NONE;
+}
+
+void CCofBillBoard :: Precache( void )
+{
+	if ( pev->noise )
+		PRECACHE_SOUND( (char *)STRING(pev->noise) );
+}
+
+void CCofBillBoard :: Use( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE useType, float value )
+{
+	if ( !pActivator->IsPlayer() )
+		return;
+
+	CBasePlayer *pPlayer = GetClassPtr( (CBasePlayer *)pActivator->pev );
+
+	if ( pPlayer )
+	{
+		MESSAGE_BEGIN( MSG_ONE, gmsgBoard, NULL, pPlayer->pev );
+			WRITE_STRING( STRING(pev->message) );
+		MESSAGE_END();
+
+		if ( m_iszText )
+			UTIL_ProMessage( pPlayer, STRING(m_iszText), 5, false );
+
+		if ( pev->noise )
+			EMIT_SOUND( ENT(pPlayer->pev), CHAN_VOICE, STRING(pev->noise), 1, ATTN_NORM );
+	}
+}
+
+
+
+//=========================================================
+// func_timer - prints the time when the player touches it
+//=========================================================
+class CFuncTimer : public CBaseTrigger
+{
+public:
+	void Spawn( void );
+	void EXPORT PlayerTouch( CBaseEntity *pOther );
+};
+LINK_ENTITY_TO_CLASS( func_timer, CFuncTimer );
+
+void CFuncTimer :: Spawn( void )
+{
+	InitTrigger();
+	SetTouch(&CFuncTimer :: PlayerTouch );
+	UTIL_SetOrigin( this, pev->origin );
+}
+
+void CFuncTimer :: PlayerTouch( CBaseEntity *pOther )
+{
+	if ( !pOther )
+		return;
+
+	if ( !pOther->IsPlayer() )
+		return;
+
+	char m_sTime[9];
+	_strtime( m_sTime );
+
+	// start or end of the run?
+	if ( !pev->iuser1 )
+	{
+		char szMessage[128];
+		sprintf( szMessage, "STARTING TIMER AT %s - SAVED IN CONSOLE", m_sTime );
+		UTIL_ProMessage( pOther, szMessage, 2, false );
+		ALERT( at_console, "Start time was %s\n", m_sTime );
+	}
+	else
+	{
+		char szMessage[128];
+		sprintf( szMessage, "ENDING TIMER AT %s - SAVED IN CONSOLE", m_sTime );
+		UTIL_ProMessage( pOther, szMessage, 2, false );
+		ALERT( at_console, "End time was %s\n", m_sTime );
+	}
+
+	UTIL_Remove( this );
+}
+
+int CountConnectedPlayers( void )
+{
+	int num = 0;
+
+	for ( int i = 1; i <= gpGlobals->maxClients; i++ )
+	{
+		CBaseEntity *pEnt = UTIL_PlayerByIndex( i );
+
+		if ( pEnt && pEnt->pev->fuser4 == 0 )
+		{
+			num++;
+		}
+	}
+
+	return num;
+}
+
+int CountConnectedLivePlayers( void )
+{
+	int num = 0;
+
+	for ( int i = 1; i <= gpGlobals->maxClients; i++ )
+	{
+		CBaseEntity *pEnt = UTIL_PlayerByIndex( i );
+
+		if ( pEnt && pEnt->IsAlive() && pEnt->pev->fuser4 == 0 )
+		{
+			num++;
+		}
+	}
+
+	return num;
+}
+
+
+
+//=========================================================
+// trigger_coop_changelevel - turns on (iuser1) when every
+// live player is inside
+//=========================================================
+class CTriggerCoopChangelevel : public CBaseTrigger
+{
+public:
+	void Spawn( void );
+	void EXPORT InsideThink( void );
+};
+LINK_ENTITY_TO_CLASS( trigger_coop_changelevel, CTriggerCoopChangelevel );
+
+void CTriggerCoopChangelevel :: Spawn( void )
+{
+	if (pev->angles != g_vecZero)
+		SetMovedir(pev);
+
+	pev->solid = SOLID_TRIGGER;
+	pev->movetype = MOVETYPE_NONE;
+	SET_MODEL(ENT(pev), STRING(pev->model));    // set size and link into world
+
+	SetThink(&CTriggerCoopChangelevel :: InsideThink );
+	SetNextThink( 0.1 );
+	UTIL_SetOrigin( this, pev->origin );
+}
+
+void CTriggerCoopChangelevel :: InsideThink( void )
+{
+	CBaseEntity *pList[32];
+
+	for ( int j = 0; j < 32; j++ )
+		pList[j] = NULL;
+
+	int count = UTIL_EntitiesInBox( pList, 32, pev->mins, pev->maxs, FL_CLIENT );
+	int playercount = CountConnectedLivePlayers();
+
+	int touchingplayercount = 0;
+
+	if ( count )
+	{
+		for ( int i = 0; i < count; i++ )
+		{
+			if ( pList[i] && Intersects( pList[i] ) )
+				touchingplayercount++;
+		}
+	}
+
+	if ( touchingplayercount >= playercount )
+	{
+		if ( pev->iuser1 != 1 )
+			pev->iuser1 = 1;
+	}
+	else
+	{
+		if ( pev->iuser1 != 0 )
+			pev->iuser1 = 0;
+	}
+
+	SetNextThink( 0 );
+}
+
+
+
+//=========================================================
+// trigger_booksimon - spawns the book simon at the spawn
+// point named in "message"
+//=========================================================
+class CTriggerBookSimon : public CBaseTrigger
+{
+public:
+	void Spawn( void );
+	void EXPORT PlayerTouch( CBaseEntity *pOther );
+};
+LINK_ENTITY_TO_CLASS( trigger_booksimon, CTriggerBookSimon );
+
+void CTriggerBookSimon :: Spawn( void )
+{
+	InitTrigger();
+	SetTouch(&CTriggerBookSimon :: PlayerTouch );
+	UTIL_SetOrigin( this, pev->origin );
+}
+
+void CTriggerBookSimon :: PlayerTouch( CBaseEntity *pOther )
+{
+	if ( !pOther )
+		return;
+
+	if ( !pOther->IsPlayer() )
+		return;
+
+	if ( pev->iuser1 == 1 && pev->message )
+	{
+		CBaseEntity *pSpawn = UTIL_FindEntityByTargetname( NULL, STRING(pev->message) );
+
+		if ( pSpawn )
+			CBaseEntity *pSimon = CBaseEntity::Create( "monster_booksimon", pSpawn->pev->origin, pSpawn->pev->angles, NULL );
+		else
+			ALERT( at_error, "Sick Simon Spawn: no info_simon_spawnpoint on level" );
+
+		if ( pev->target )
+			FireTargets( STRING(pev->target), this, this, USE_TOGGLE, 0 );
+
+		UTIL_Remove( this );
+		pev->iuser1 = 0;
+	}
+}
+
+
+
+//=========================================================
+// trigger_suicide - makes the player shoot himself with
+// the weapon he is holding
+//=========================================================
+class CTriggerSuicide : public CBaseTrigger
+{
+public:
+	void Spawn( void );
+	void Touch( CBaseEntity *pOther );
+	void StartSuicide( CBasePlayer *pPlayer );
+};
+LINK_ENTITY_TO_CLASS( trigger_suicide, CTriggerSuicide );
+
+void CTriggerSuicide :: Spawn( void )
+{
+	InitTrigger();
+
+	SetUse(&CTriggerSuicide :: ToggleUse );
+
+	UTIL_SetOrigin( this, pev->origin );
+}
+
+void CTriggerSuicide :: Touch( CBaseEntity *pOther )
+{
+	if ( !pOther->IsPlayer() )
+		return;
+
+	CBasePlayer *pPlayer = GetClassPtr( (CBasePlayer *)pOther->pev );
+
+	if ( pPlayer )
+	{
+		// iuser1 is the chance (1 in iuser1)
+		if ( pev->iuser1 <= 1 )
+		{
+			StartSuicide( pPlayer );
+			UTIL_Remove( this );
+		}
+		else
+		{
+			int random = RANDOM_LONG( 1, pev->iuser1 );
+
+			if ( random == 1 )
+			{
+				StartSuicide( pPlayer );
+				UTIL_Remove( this );
+			}
+			else
+				UTIL_Remove( this );
+		}
+	}
+}
+
+void CTriggerSuicide :: StartSuicide( CBasePlayer *pPlayer )
+{
+	if ( pPlayer )
+	{
+		if ( pPlayer && pPlayer->m_pActiveItem && pPlayer->IsAlive() )
+		{
+			int weaponid = pPlayer->m_pActiveItem->m_iId;
+			bool must_be_switched = false;
+
+			// dual wielding: switch to one of the guns first
+			if ( weaponid == 15 && !((CBasePlayerWeapon *)pPlayer->m_pActiveItem)->m_bIronSights && ((CBasePlayerWeapon *)pPlayer->m_pActiveItem)->m_flNextPrimaryAttack < gpGlobals->time && ((CBasePlayerWeapon *)pPlayer->m_pActiveItem)->m_flNextSecondaryAttack < gpGlobals->time && ((CBasePlayerWeapon *)pPlayer->m_pActiveItem)->m_flNextTertiaryAttack < gpGlobals->time )
+			{
+				if ( pPlayer->m_iDualWeaponLeftID == WEAPON_GLOCK || pPlayer->m_iDualWeaponLeftID == 7 || pPlayer->m_iDualWeaponLeftID == 21 || pPlayer->m_iDualWeaponLeftID == 19 || pPlayer->m_iDualWeaponLeftID == 23 )
+					weaponid = pPlayer->m_iDualWeaponLeftID;
+
+				if ( pPlayer->m_iDualWeaponRightID == WEAPON_GLOCK || pPlayer->m_iDualWeaponRightID == 7 || pPlayer->m_iDualWeaponRightID == 21 || pPlayer->m_iDualWeaponRightID == 19 || pPlayer->m_iDualWeaponRightID == 23 )
+					weaponid = pPlayer->m_iDualWeaponRightID;
+
+				must_be_switched = true;
+
+				pPlayer->SelectItem( STRING(pPlayer->GetPlayerWeapon( weaponid )->pev->classname) );
+			}
+
+			switch ( weaponid )
+			{
+			case 23:
+				{
+					CFAMAS *pFamas = (CFAMAS *)pPlayer->GetPlayerWeapon( weaponid );
+
+					if ( pFamas )
+					{
+						if ( !pFamas->m_bIronSights && pFamas->m_flNextPrimaryAttack < gpGlobals->time && pFamas->m_flNextSecondaryAttack < gpGlobals->time && pFamas->m_flNextTertiaryAttack < gpGlobals->time )
+						{
+							if ( must_be_switched )
+								pPlayer->GetPlayerWeapon( weaponid )->m_iSuicideState = 666;
+							else
+								pFamas->m_iSuicideState = 1;
+						}
+					}
+				}
+				break;
+			case WEAPON_GLOCK:
+				{
+					CGlock *pGlock = (CGlock *)pPlayer->GetPlayerWeapon( weaponid );
+
+					if ( pGlock )
+					{
+						if ( !pGlock->m_bWaitingToFix && !pGlock->m_bIronSights && pGlock->m_flNextPrimaryAttack < gpGlobals->time && pGlock->m_flNextSecondaryAttack < gpGlobals->time && pGlock->m_flNextTertiaryAttack < gpGlobals->time )
+						{
+							if ( must_be_switched )
+								pPlayer->GetPlayerWeapon( weaponid )->m_iSuicideState = 666;
+							else
+								pGlock->m_iSuicideState = 1;
+						}
+					}
+				}
+				break;
+			case 9:
+				{
+					CM16 *pM16 = (CM16 *)pPlayer->GetPlayerWeapon( weaponid );
+
+					if ( pM16 )
+					{
+						if ( !pM16->m_bIronSights && pM16->m_flNextPrimaryAttack < gpGlobals->time && pM16->m_flNextSecondaryAttack < gpGlobals->time && pM16->m_flNextTertiaryAttack < gpGlobals->time )
+						{
+							if ( must_be_switched )
+								pPlayer->GetPlayerWeapon( weaponid )->m_iSuicideState = 666;
+							else
+								pM16->m_iSuicideState = 1;
+						}
+					}
+				}
+				break;
+			case 7:
+				{
+					CP345 *pP345 = (CP345 *)pPlayer->GetPlayerWeapon( weaponid );
+
+					if ( pP345 )
+					{
+						if ( !pP345->m_bIronSights && pP345->m_flNextPrimaryAttack < gpGlobals->time && pP345->m_flNextSecondaryAttack < gpGlobals->time && pP345->m_flNextTertiaryAttack < gpGlobals->time )
+						{
+							if ( must_be_switched )
+								pPlayer->GetPlayerWeapon( weaponid )->m_iSuicideState = 666;
+							else
+								pP345->m_iSuicideState = 1;
+						}
+					}
+				}
+				break;
+			case 21:
+				{
+					CRevolver *pRevolver = (CRevolver *)pPlayer->GetPlayerWeapon( weaponid );
+
+					if ( pRevolver )
+					{
+						if ( !pRevolver->m_bIronSights && !pRevolver->m_bReloading && !pRevolver->m_bWantToEndReload && pRevolver->m_flNextPrimaryAttack < gpGlobals->time && pRevolver->m_flNextSecondaryAttack < gpGlobals->time && pRevolver->m_flNextTertiaryAttack < gpGlobals->time )
+						{
+							if ( must_be_switched )
+								pPlayer->GetPlayerWeapon( weaponid )->m_iSuicideState = 666;
+							else
+								pRevolver->m_iSuicideState = 1;
+						}
+					}
+				}
+				break;
+			case 11:
+				{
+					CRifle *pRifle = (CRifle *)pPlayer->GetPlayerWeapon( weaponid );
+
+					if ( pRifle )
+					{
+						if ( !pRifle->m_bIronSights && !pRifle->m_iWantToEjectShell && !pRifle->m_bWaitingToReload && !pRifle->m_bRaised && pRifle->m_flNextPrimaryAttack < gpGlobals->time && pRifle->m_flNextSecondaryAttack < gpGlobals->time && pRifle->m_flNextTertiaryAttack < gpGlobals->time )
+						{
+							if ( must_be_switched )
+								pPlayer->GetPlayerWeapon( weaponid )->m_iSuicideState = 666;
+							else
+								pRifle->m_iSuicideState = 1;
+						}
+					}
+				}
+			case 4:
+				{
+					CShotgun *pShotgun = (CShotgun *)pPlayer->GetPlayerWeapon( weaponid );
+
+					if ( pShotgun )
+					{
+						if ( !pShotgun->m_bIronSights && !pShotgun->m_fInReload && pShotgun->m_flNextPrimaryAttack < gpGlobals->time && pShotgun->m_flNextSecondaryAttack < gpGlobals->time && pShotgun->m_flNextTertiaryAttack < gpGlobals->time )
+						{
+							if ( must_be_switched )
+								pPlayer->GetPlayerWeapon( weaponid )->m_iSuicideState = 666;
+							else
+								pShotgun->m_iSuicideState = 1;
+						}
+					}
+				}
+				break;
+			case 14:
+				{
+					CTmp *pTMP = (CTmp *)pPlayer->GetPlayerWeapon( weaponid );
+
+					if ( pTMP )
+					{
+						if ( !pTMP->m_bIronSights && pTMP->m_flNextPrimaryAttack < gpGlobals->time && pTMP->m_flNextSecondaryAttack < gpGlobals->time && pTMP->m_flNextTertiaryAttack < gpGlobals->time )
+						{
+							if ( must_be_switched )
+								pPlayer->GetPlayerWeapon( weaponid )->m_iSuicideState = 666;
+							else
+								pTMP->m_iSuicideState = 1;
+						}
+					}
+				}
+			case 27:
+				{
+					CBasePlayerWeapon *guess_pWeapon = pPlayer->GetPlayerWeapon( weaponid );
+
+					if ( guess_pWeapon )
+					{
+						if ( !guess_pWeapon->m_bIronSights && guess_pWeapon->m_flNextPrimaryAttack < gpGlobals->time && guess_pWeapon->m_flNextSecondaryAttack < gpGlobals->time && guess_pWeapon->m_flNextTertiaryAttack < gpGlobals->time )
+						{
+							if ( must_be_switched )
+								pPlayer->GetPlayerWeapon( weaponid )->m_iSuicideState = 666;
+							else
+								guess_pWeapon->m_iSuicideState = 1;
+						}
+					}
+				}
+			case 19:
+				{
+					CVP70 *pVP70 = (CVP70 *)pPlayer->GetPlayerWeapon( weaponid );
+
+					if ( pVP70 )
+					{
+						if ( !pVP70->m_bIronSights && pVP70->m_flNextPrimaryAttack < gpGlobals->time && pVP70->m_flNextSecondaryAttack < gpGlobals->time && pVP70->m_flNextTertiaryAttack < gpGlobals->time )
+						{
+							if ( must_be_switched )
+								pPlayer->GetPlayerWeapon( weaponid )->m_iSuicideState = 666;
+							else
+								pVP70->m_iSuicideState = 1;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+//=========================================================
+// trigger_playercheckarea - when used, counts the players
+// inside and fires a target for that count
+//=========================================================
+class CTriggerPlayerCheckArea : public CBaseTrigger
+{
+public:
+	void Spawn( void );
+	void Use( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE useType, float value );
+	void KeyValue( KeyValueData *pkvd );
+
+	int trigger_one;
+	int trigger_two;
+	int trigger_three;
+	int trigger_four;
+};
+LINK_ENTITY_TO_CLASS( trigger_playercheckarea, CTriggerPlayerCheckArea );
+
+void CTriggerPlayerCheckArea :: Spawn( void )
+{
+	if (pev->angles != g_vecZero)
+		SetMovedir(pev);
+
+	pev->solid = SOLID_TRIGGER;
+	pev->movetype = MOVETYPE_NONE;
+	SET_MODEL(ENT(pev), STRING(pev->model));    // set size and link into world
+
+	UTIL_SetOrigin( this, pev->origin );
+}
+
+void CTriggerPlayerCheckArea :: Use( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE useType, float value )
+{
+	CBaseEntity *pList[32];
+
+	for ( int j = 0; j < 32; j++ )
+		pList[j] = NULL;
+
+	int count = UTIL_EntitiesInBox( pList, 32, pev->mins, pev->maxs, FL_CLIENT );
+
+	int touchingplayercount = 0;
+
+	CBasePlayer *pActivatingNerd = NULL;
+
+	if ( count )
+	{
+		for ( int i = 0; i < count; i++ )
+		{
+			if ( pList[i] && Intersects( pList[i] ) )
+			{
+				if ( !pActivatingNerd && pList[i]->IsAlive() )
+					pActivatingNerd = GetClassPtr( (CBasePlayer *)pList[i]->pev );
+
+				if ( pev->iuser1 )
+				{
+					if ( pList[i]->IsAlive() )
+						touchingplayercount++;
+				}
+				else
+					touchingplayercount++;
+			}
+		}
+	}
+
+	if ( !pActivatingNerd )
+	{
+		CBaseEntity *pPlayer = UTIL_FindEntityByClassname( NULL, "player" );
+
+		if ( pPlayer )
+			pActivatingNerd = GetClassPtr( (CBasePlayer *)pPlayer->pev );
+	}
+
+	int desiredplayers = 0;
+
+	if ( pev->target )
+		desiredplayers = CountConnectedLivePlayers();
+	else
+		desiredplayers = CountConnectedPlayers();
+
+	if ( pActivatingNerd )
+	{
+		if ( pev->target )
+		{
+			if ( desiredplayers == touchingplayercount )
+			{
+				FireTargets( STRING(pev->target), pActivatingNerd, pActivatingNerd, USE_TOGGLE, 0 );
+
+				if ( !pev->iuser3 )
+				{
+					SetTouch( NULL );
+					UTIL_Remove( this );
+				}
+
+				return;
+			}
+		}
+
+		switch ( touchingplayercount )
+		{
+		case 0:
+			if ( pev->message )
+				FireTargets( STRING(pev->message), pActivatingNerd, pActivatingNerd, USE_TOGGLE, 0 );
+			break;
+		case 1:
+			if ( trigger_one )
+				FireTargets( STRING(trigger_one), pActivatingNerd, pActivatingNerd, USE_TOGGLE, 0 );
+			break;
+		case 2:
+			if ( trigger_two )
+				FireTargets( STRING(trigger_two), pActivatingNerd, pActivatingNerd, USE_TOGGLE, 0 );
+			break;
+		case 3:
+			if ( trigger_three )
+				FireTargets( STRING(trigger_three), pActivatingNerd, pActivatingNerd, USE_TOGGLE, 0 );
+			break;
+		case 4:
+			if ( trigger_four )
+				FireTargets( STRING(trigger_four), pActivatingNerd, pActivatingNerd, USE_TOGGLE, 0 );
+		}
+	}
+
+	if ( !pev->iuser3 )
+	{
+		SetTouch( NULL );
+		UTIL_Remove( this );
+	}
+}
+
+void CTriggerPlayerCheckArea :: KeyValue( KeyValueData *pkvd )
+{
+	if (FStrEq(pkvd->szKeyName, "trigger_one"))
+	{
+		trigger_one = ALLOC_STRING( pkvd->szValue );
+		pkvd->fHandled = TRUE;
+	}
+	else if (FStrEq(pkvd->szKeyName, "trigger_two"))
+	{
+		trigger_two = ALLOC_STRING( pkvd->szValue );
+		pkvd->fHandled = TRUE;
+	}
+	else if (FStrEq(pkvd->szKeyName, "trigger_three"))
+	{
+		trigger_three = ALLOC_STRING( pkvd->szValue );
+		pkvd->fHandled = TRUE;
+	}
+	else if (FStrEq(pkvd->szKeyName, "trigger_four"))
+	{
+		trigger_four = ALLOC_STRING( pkvd->szValue );
+		pkvd->fHandled = TRUE;
+	}
+	else
+		CBaseDelay::KeyValue( pkvd );
+}

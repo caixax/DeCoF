@@ -17917,16 +17917,16 @@ hl,10107670,52,?UpdateGameMode@CHalfLifeTeamplay@@UAEXPAVCBasePlayer@@@Z,CHalfLi
 hl,101076B0,92,??$GetClassPtr@VCAutoTrigger@@@@YAPAVCAutoTrigger@@PAV0@@Z,GetClassPtr<CAutoTrigger>,HLSDK,dlls/triggers.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
 hl,10107710,92,??$GetClassPtr@VCBaseTrigger@@@@YAPAVCBaseTrigger@@PAV0@@Z,GetClassPtr<CBaseTrigger>,HLSDK,dlls/triggers.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
 hl,10107770,92,??$GetClassPtr@VCChangeLevel@@@@YAPAVCChangeLevel@@PAV0@@Z,GetClassPtr<CChangeLevel>,HLSDK,dlls/triggers.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
-hl,101077D0,92,??$GetClassPtr@VCCofBillBoard@@@@YAPAVCCofBillBoard@@PAV0@@Z,GetClassPtr<CCofBillBoard>,HLSDK,dlls/triggers.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,TODO,0.0,jmp_target_of_export+rtti,
+hl,101077D0,92,??$GetClassPtr@VCCofBillBoard@@@@YAPAVCCofBillBoard@@PAV0@@Z,GetClassPtr<CCofBillBoard>,HLSDK,dlls/triggers.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
 hl,10107830,92,??$GetClassPtr@VCEnvCustomize@@@@YAPAVCEnvCustomize@@PAV0@@Z,GetClassPtr<CEnvCustomize>,HLSDK,dlls/triggers.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
 hl,10107890,92,??$GetClassPtr@VCFireAndDie@@@@YAPAVCFireAndDie@@PAV0@@Z,GetClassPtr<CFireAndDie>,HLSDK,dlls/triggers.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
 hl,101078F0,92,??$GetClassPtr@VCFrictionModifier@@@@YAPAVCFrictionModifier@@PAV0@@Z,GetClassPtr<CFrictionModifier>,HLSDK,dlls/triggers.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
-hl,10107950,92,??$GetClassPtr@VCFuncStairs@@@@YAPAVCFuncStairs@@PAV0@@Z,GetClassPtr<CFuncStairs>,HLSDK,dlls/triggers.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,TODO,0.0,jmp_target_of_export+rtti,
-hl,101079B0,92,??$GetClassPtr@VCFuncTimer@@@@YAPAVCFuncTimer@@PAV0@@Z,GetClassPtr<CFuncTimer>,HLSDK,dlls/triggers.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,TODO,0.0,jmp_target_of_export+rtti,
+hl,10107950,92,??$GetClassPtr@VCFuncStairs@@@@YAPAVCFuncStairs@@PAV0@@Z,GetClassPtr<CFuncStairs>,HLSDK,dlls/triggers.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
+hl,101079B0,92,??$GetClassPtr@VCFuncTimer@@@@YAPAVCFuncTimer@@PAV0@@Z,GetClassPtr<CFuncTimer>,HLSDK,dlls/triggers.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
 hl,10107A10,92,??$GetClassPtr@VCGasArea@@@@YAPAVCGasArea@@PAV0@@Z,GetClassPtr<CGasArea>,HLSDK,dlls/triggers.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
 hl,10107A70,92,??$GetClassPtr@VCInOutRegister@@@@YAPAVCInOutRegister@@PAV0@@Z,GetClassPtr<CInOutRegister>,HLSDK,dlls/triggers.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
 hl,10107AD0,92,??$GetClassPtr@VCLadder@@@@YAPAVCLadder@@PAV0@@Z,GetClassPtr<CLadder>,HLSDK,dlls/triggers.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
-hl,10107B30,92,??$GetClassPtr@VCLadderControl@@@@YAPAVCLadderControl@@PAV0@@Z,GetClassPtr<CLadderControl>,HLSDK,dlls/triggers.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,TODO,0.0,jmp_target_of_export+rtti,
+hl,10107B30,92,??$GetClassPtr@VCLadderControl@@@@YAPAVCLadderControl@@PAV0@@Z,GetClassPtr<CLadderControl>,HLSDK,dlls/triggers.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
 hl,10107B90,92,??$GetClassPtr@VCMotionManager@@@@YAPAVCMotionManager@@PAV0@@Z,GetClassPtr<CMotionManager>,HLSDK,dlls/triggers.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
 hl,10107BF0,92,??0CMotionThread@@QAE@XZ,CMotionThread::CMotionThread,SPIRIT,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,6.5,hl_1.55_to_1.6a.csv,
 hl,10107C50,92,??$GetClassPtr@VCMultiManager@@@@YAPAVCMultiManager@@PAV0@@Z,GetClassPtr<CMultiManager>,HLSDK,dlls/triggers.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
@@ -17935,16 +17935,16 @@ hl,10107D10,92,??$GetClassPtr@VCRenderFxManager@@@@YAPAVCRenderFxManager@@PAV0@@
 hl,10107D70,92,??$GetClassPtr@VCStartRush@@@@YAPAVCStartRush@@PAV0@@Z,GetClassPtr<CStartRush>,HLSDK,dlls/triggers.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
 hl,10107DD0,92,??$GetClassPtr@VCStateWatcher@@@@YAPAVCStateWatcher@@PAV0@@Z,GetClassPtr<CStateWatcher>,HLSDK,dlls/triggers.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
 hl,10107E30,92,??$GetClassPtr@VCTargetCDAudio@@@@YAPAVCTargetCDAudio@@PAV0@@Z,GetClassPtr<CTargetCDAudio>,HLSDK,dlls/triggers.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
-hl,10107E90,92,??$GetClassPtr@VCTriggerBookSimon@@@@YAPAVCTriggerBookSimon@@PAV0@@Z,GetClassPtr<CTriggerBookSimon>,HLSDK,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,0.0,jmp_target_of_export+rtti,
+hl,10107E90,92,??$GetClassPtr@VCTriggerBookSimon@@@@YAPAVCTriggerBookSimon@@PAV0@@Z,GetClassPtr<CTriggerBookSimon>,HLSDK,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
 hl,10107EF0,92,??$GetClassPtr@VCTriggerBounce@@@@YAPAVCTriggerBounce@@PAV0@@Z,GetClassPtr<CTriggerBounce>,HLSDK,dlls/triggers.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
 hl,10107F50,92,??$GetClassPtr@VCTriggerCDAudio@@@@YAPAVCTriggerCDAudio@@PAV0@@Z,GetClassPtr<CTriggerCDAudio>,HLSDK,dlls/triggers.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
 hl,10107FB0,92,??$GetClassPtr@VCTriggerCamera@@@@YAPAVCTriggerCamera@@PAV0@@Z,GetClassPtr<CTriggerCamera>,HLSDK,dlls/triggers.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
 hl,10108010,92,??$GetClassPtr@VCTriggerChangeCVar@@@@YAPAVCTriggerChangeCVar@@PAV0@@Z,GetClassPtr<CTriggerChangeCVar>,HLSDK,dlls/triggers.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
 hl,10108070,92,??$GetClassPtr@VCTriggerChangeTarget@@@@YAPAVCTriggerChangeTarget@@PAV0@@Z,GetClassPtr<CTriggerChangeTarget>,HLSDK,dlls/triggers.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
 hl,101080D0,92,??$GetClassPtr@VCTriggerChangeValue@@@@YAPAVCTriggerChangeValue@@PAV0@@Z,GetClassPtr<CTriggerChangeValue>,HLSDK,dlls/triggers.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
-hl,10108130,92,??$GetClassPtr@VCTriggerCofTeleport@@@@YAPAVCTriggerCofTeleport@@PAV0@@Z,GetClassPtr<CTriggerCofTeleport>,HLSDK,dlls/triggers.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,TODO,0.0,jmp_target_of_export+rtti,
+hl,10108130,92,??$GetClassPtr@VCTriggerCofTeleport@@@@YAPAVCTriggerCofTeleport@@PAV0@@Z,GetClassPtr<CTriggerCofTeleport>,HLSDK,dlls/triggers.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
 hl,10108190,92,??$GetClassPtr@VCTriggerCommand@@@@YAPAVCTriggerCommand@@PAV0@@Z,GetClassPtr<CTriggerCommand>,HLSDK,dlls/triggers.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
-hl,101081F0,92,??$GetClassPtr@VCTriggerCoopChangelevel@@@@YAPAVCTriggerCoopChangelevel@@PAV0@@Z,GetClassPtr<CTriggerCoopChangelevel>,HLSDK,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,0.0,jmp_target_of_export+rtti,
+hl,101081F0,92,??$GetClassPtr@VCTriggerCoopChangelevel@@@@YAPAVCTriggerCoopChangelevel@@PAV0@@Z,GetClassPtr<CTriggerCoopChangelevel>,HLSDK,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
 hl,10108250,92,??$GetClassPtr@VCTriggerCounter@@@@YAPAVCTriggerCounter@@PAV0@@Z,GetClassPtr<CTriggerCounter>,HLSDK,dlls/triggers.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
 hl,101082B0,92,??$GetClassPtr@VCTriggerEndSection@@@@YAPAVCTriggerEndSection@@PAV0@@Z,GetClassPtr<CTriggerEndSection>,HLSDK,dlls/triggers.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
 hl,10108310,92,??$GetClassPtr@VCTriggerGoal@@@@YAPAVCTriggerGoal@@PAV0@@Z,GetClassPtr<CTriggerGoal>,HLSDK,dlls/triggers.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
@@ -17958,13 +17958,13 @@ hl,101085B0,92,??$GetClassPtr@VCTriggerMotion@@@@YAPAVCTriggerMotion@@PAV0@@Z,Ge
 hl,10108610,92,??$GetClassPtr@VCTriggerMultiple@@@@YAPAVCTriggerMultiple@@PAV0@@Z,GetClassPtr<CTriggerMultiple>,HLSDK,dlls/triggers.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
 hl,10108670,92,??$GetClassPtr@VCTriggerOnSight@@@@YAPAVCTriggerOnSight@@PAV0@@Z,GetClassPtr<CTriggerOnSight>,HLSDK,dlls/triggers.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
 hl,101086D0,92,??$GetClassPtr@VCTriggerOnce@@@@YAPAVCTriggerOnce@@PAV0@@Z,GetClassPtr<CTriggerOnce>,HLSDK,dlls/triggers.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
-hl,10108730,92,??$GetClassPtr@VCTriggerPlayerCheckArea@@@@YAPAVCTriggerPlayerCheckArea@@PAV0@@Z,GetClassPtr<CTriggerPlayerCheckArea>,HLSDK,dlls/triggers.cpp,1.4,1.4->1.55 same,TODO,0.0,jmp_target_of_export+rtti,
+hl,10108730,92,??$GetClassPtr@VCTriggerPlayerCheckArea@@@@YAPAVCTriggerPlayerCheckArea@@PAV0@@Z,GetClassPtr<CTriggerPlayerCheckArea>,HLSDK,dlls/triggers.cpp,1.4,1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
 hl,10108790,92,??$GetClassPtr@VCTriggerPush@@@@YAPAVCTriggerPush@@PAV0@@Z,GetClassPtr<CTriggerPush>,HLSDK,dlls/triggers.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
 hl,101087F0,92,??$GetClassPtr@VCTriggerRelay@@@@YAPAVCTriggerRelay@@PAV0@@Z,GetClassPtr<CTriggerRelay>,HLSDK,dlls/triggers.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
 hl,10108850,92,??$GetClassPtr@VCTriggerRotTest@@@@YAPAVCTriggerRotTest@@PAV0@@Z,GetClassPtr<CTriggerRotTest>,HLSDK,dlls/triggers.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
 hl,101088B0,92,??$GetClassPtr@VCTriggerSave@@@@YAPAVCTriggerSave@@PAV0@@Z,GetClassPtr<CTriggerSave>,HLSDK,dlls/triggers.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
 hl,10108910,92,??$GetClassPtr@VCTriggerSetPatrol@@@@YAPAVCTriggerSetPatrol@@PAV0@@Z,GetClassPtr<CTriggerSetPatrol>,HLSDK,dlls/triggers.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
-hl,10108970,92,??$GetClassPtr@VCTriggerSuicide@@@@YAPAVCTriggerSuicide@@PAV0@@Z,GetClassPtr<CTriggerSuicide>,HLSDK,dlls/triggers.cpp,1.4,1.4->1.55 same,TODO,0.0,jmp_target_of_export+rtti,
+hl,10108970,92,??$GetClassPtr@VCTriggerSuicide@@@@YAPAVCTriggerSuicide@@PAV0@@Z,GetClassPtr<CTriggerSuicide>,HLSDK,dlls/triggers.cpp,1.4,1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
 hl,101089D0,92,??$GetClassPtr@VCTriggerTeleport@@@@YAPAVCTriggerTeleport@@PAV0@@Z,GetClassPtr<CTriggerTeleport>,HLSDK,dlls/triggers.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
 hl,10108A30,92,??$GetClassPtr@VCTriggerTextWindow@@@@YAPAVCTriggerTextWindow@@PAV0@@Z,GetClassPtr<CTriggerTextWindow>,HLSDK,dlls/triggers.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
 hl,10108A90,92,??$GetClassPtr@VCTriggerVolume@@@@YAPAVCTriggerVolume@@PAV0@@Z,GetClassPtr<CTriggerVolume>,HLSDK,dlls/triggers.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
@@ -17980,14 +17980,14 @@ hl,101095E0,817,?Affect@CRenderFxManager@@QAEXPAVCBaseEntity@@H0@Z,CRenderFxMana
 hl,10109920,225,?AnnounceThink@CTriggerHevCharge@@QAEXXZ,CTriggerHevCharge::AnnounceThink,SPIRIT,dlls/triggers.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10109A10,9,?BuildChangeList@@YAHPAULEVELLIST@@H@Z,BuildChangeList,HLSDK,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,refbytes:paranoia:dlls__triggers.obj:score1,
 hl,10109A20,534,?CanSee@CTriggerOnSight@@QAEHPAVCBaseEntity@@0@Z,CTriggerOnSight::CanSee,SPIRIT,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,10109C40,207,?CanTouch@CBaseTrigger@@QAEHPAUentvars_s@@@Z,CBaseTrigger::CanTouch,SPIRIT,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,54.3,hl_1.55_to_1.6a.csv,
+hl,10109C40,207,?CanTouch@CBaseTrigger@@QAEHPAUentvars_s@@@Z,CBaseTrigger::CanTouch,SPIRIT,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10109D10,41,?ChangeFriction@CFrictionModifier@@QAEXPAVCBaseEntity@@@Z,CFrictionModifier::ChangeFriction,HLSDK,dlls/triggers.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,10109D40,482,?ChangeLevelNow@CChangeLevel@@QAEXPAVCBaseEntity@@@Z,CChangeLevel::ChangeLevelNow,HLSDK,dlls/triggers.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,TODO,92.3,hl_1.55_to_1.6a.csv,
+hl,10109D40,482,?ChangeLevelNow@CChangeLevel@@QAEXPAVCBaseEntity@@@Z,CChangeLevel::ChangeLevelNow,HLSDK,dlls/triggers.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10109F30,664,?ChangeList@CChangeLevel@@SAHPAULEVELLIST@@H@Z,CChangeLevel::ChangeList,HLSDK,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,100.0,hl_1.55_to_1.6a.csv,
-hl,1010A1D0,277,?ChargeTouch@CTriggerHevCharge@@QAEXPAVCBaseEntity@@@Z,CTriggerHevCharge::ChargeTouch,SPIRIT,dlls/triggers.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,TODO,97.4,hl_1.55_to_1.6a.csv,
+hl,1010A1D0,277,?ChargeTouch@CTriggerHevCharge@@QAEXPAVCBaseEntity@@@Z,CTriggerHevCharge::ChargeTouch,SPIRIT,dlls/triggers.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1010A2F0,268,,,UNKNOWN,guess:dlls/triggers.cpp,,,TODO,,,
-hl,1010A400,97,?CountConnectedLivePlayers@@YAHXZ,CountConnectedLivePlayers,COF,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
-hl,1010A470,79,?CountConnectedPlayers@@YAHXZ,CountConnectedPlayers,COF,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
+hl,1010A400,97,?CountConnectedLivePlayers@@YAHXZ,CountConnectedLivePlayers,COF,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
+hl,1010A470,79,?CountConnectedPlayers@@YAHXZ,CountConnectedPlayers,COF,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1010A4C0,300,?CounterUse@CTriggerCounter@@QAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CTriggerCounter::CounterUse,SPIRIT,dlls/triggers.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1010A5F0,468,?DamageThink@CGasArea@@QAEXXZ,CGasArea::DamageThink,PARANOIA,dlls/triggers.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1010A7D0,140,?DesiredAction@CAutoTrigger@@UAEXXZ,CAutoTrigger::DesiredAction,SPIRIT,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
@@ -17995,12 +17995,12 @@ hl,1010A860,21,?DesiredAction@CEnvCustomize@@UAEXXZ,CEnvCustomize::DesiredAction
 hl,1010A880,78,?EndSectionTouch@CTriggerEndSection@@QAEXPAVCBaseEntity@@@Z,CTriggerEndSection::EndSectionTouch,HLSDK,dlls/triggers.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1010A8D0,85,?EndSectionUse@CTriggerEndSection@@QAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CTriggerEndSection::EndSectionUse,HLSDK,dlls/triggers.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1010A930,329,?EvalLogic@CStateWatcher@@QAEHPAVCBaseEntity@@@Z,CStateWatcher::EvalLogic,COF,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,1010AAC0,23,?ExecuteChangeLevel@CChangeLevel@@QAEXXZ,CChangeLevel::ExecuteChangeLevel,HLSDK,dlls/triggers.cpp,2010-prototype,1.0->1.4 changed; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
+hl,1010AAC0,23,?ExecuteChangeLevel@CChangeLevel@@QAEXXZ,CChangeLevel::ExecuteChangeLevel,HLSDK,dlls/triggers.cpp,2010-prototype,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1010AAE0,689,?FadeThink@CRenderFxFader@@QAEXXZ,CRenderFxFader::FadeThink,COF,dlls/triggers.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1010ADA0,146,?FindLandmark@CChangeLevel@@SAPAUedict_s@@PBD@Z,CChangeLevel::FindLandmark,HLSDK,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1010AE40,113,,,UNKNOWN,guess:dlls/triggers.cpp,,,TODO,,,
 hl,1010AEC0,110,,,UNKNOWN,,,,TODO,,,
-hl,1010AF30,1379,?FollowTarget@CTriggerCamera@@QAEXXZ,CTriggerCamera::FollowTarget,HLSDK,dlls/triggers.cpp,2010-prototype,1.0->1.4 changed; 1.4->1.55 changed,TODO,47.1,hl_1.55_to_1.6a.csv,
+hl,1010AF30,1379,?FollowTarget@CTriggerCamera@@QAEXXZ,CTriggerCamera::FollowTarget,HLSDK,dlls/triggers.cpp,2010-prototype,1.0->1.4 changed; 1.4->1.55 changed,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1010B4A0,147,?GetActionFor@CEnvCustomize@@QAEHHHW4USE_TYPE@@PAD@Z,CEnvCustomize::GetActionFor,SPIRIT,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1010B540,85,?GetDestinationEntity@CStartRush@@QAEPAVCBaseEntity@@XZ,CStartRush::GetDestinationEntity,PARANOIA,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1010B5A0,7,?GetState@CMultiManager@@UAE?AW4STATE@@XZ,CMultiManager::GetState,COF,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
@@ -18011,26 +18011,26 @@ hl,1010B600,36,?GetState@CTriggerOnSight@@UAE?AW4STATE@@XZ,CTriggerOnSight::GetS
 hl,1010B630,16,?GetState@CWatcherCount@@UAE?AW4STATE@@XZ,CWatcherCount::GetState,COF,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1010B640,48,?GravityTouch@CTriggerGravity@@QAEXPAVCBaseEntity@@@Z,CTriggerGravity::GravityTouch,HLSDK,dlls/triggers.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,refbytes:paranoia:dlls__triggers.obj:score0,
 hl,1010B670,132,?HasTarget@CMultiManager@@UAEHH@Z,CMultiManager::HasTarget,COF,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,1010B700,689,?HurtTouch@CTriggerHurt@@QAEXPAVCBaseEntity@@@Z,CTriggerHurt::HurtTouch,SPIRIT,dlls/triggers.cpp,2010-prototype,1.0->1.4 changed; 1.4->1.55 same,TODO,77.2,hl_1.55_to_1.6a.csv,
+hl,1010B700,689,?HurtTouch@CTriggerHurt@@QAEXPAVCBaseEntity@@@Z,CTriggerHurt::HurtTouch,SPIRIT,dlls/triggers.cpp,2010-prototype,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1010B9C0,192,?InTransitionVolume@CChangeLevel@@SAHPAVCBaseEntity@@PAD@Z,CChangeLevel::InTransitionVolume,HLSDK,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1010BA80,185,?Spawn@CTriggerCDAudio@@UAEXXZ,CTriggerCDAudio::Spawn,HLSDK,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,0.8,hl_1.55_to_1.6a.csv,
-hl,1010BB40,249,?InsideThink@CTriggerCoopChangelevel@@QAEXXZ,CTriggerCoopChangelevel::InsideThink,COF,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
+hl,1010BB40,249,?InsideThink@CTriggerCoopChangelevel@@QAEXXZ,CTriggerCoopChangelevel::InsideThink,COF,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1010BC40,76,,,UNKNOWN,guess:dlls/triggers.cpp,,,TODO,,,
 hl,1010BC90,248,?KeyValue@CAutoTrigger@@UAEXPAUKeyValueData_s@@@Z,CAutoTrigger::KeyValue,HLSDK,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1010BD90,462,?KeyValue@CChangeLevel@@UAEXPAUKeyValueData_s@@@Z,CChangeLevel::KeyValue,HLSDK,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,1010BF60,104,?KeyValue@CCofBillBoard@@UAEXPAUKeyValueData_s@@@Z,CCofBillBoard::KeyValue,COF,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
+hl,1010BF60,104,?KeyValue@CCofBillBoard@@UAEXPAUKeyValueData_s@@@Z,CCofBillBoard::KeyValue,COF,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1010BFD0,930,?KeyValue@CEnvCustomize@@UAEXPAUKeyValueData_s@@@Z,CEnvCustomize::KeyValue,COF,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1010C380,109,?KeyValue@CFrictionModifier@@UAEXPAUKeyValueData_s@@@Z,CFrictionModifier::KeyValue,HLSDK,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,1010C3F0,9,?KeyValue@CFuncStairs@@UAEXPAUKeyValueData_s@@@Z,CFuncStairs::KeyValue,COF,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
+hl,1010C3F0,9,?KeyValue@CFuncStairs@@UAEXPAUKeyValueData_s@@@Z,CFuncStairs::KeyValue,COF,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1010C400,183,?KeyValue@CGasArea@@UAEXPAUKeyValueData_s@@@Z,CGasArea::KeyValue,PARANOIA,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1010C4C0,9,?KeyValue@CLadder@@UAEXPAUKeyValueData_s@@@Z,CLadder::KeyValue,HLSDK,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,refbytes:paranoia:dlls__triggers.obj:score1,
-hl,1010C4D0,9,?KeyValue@CLadderControl@@UAEXPAUKeyValueData_s@@@Z,CLadderControl::KeyValue,COF,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
+hl,1010C4D0,9,?KeyValue@CLadderControl@@UAEXPAUKeyValueData_s@@@Z,CLadderControl::KeyValue,COF,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1010C4E0,317,?KeyValue@CMotionManager@@UAEXPAUKeyValueData_s@@@Z,CMotionManager::KeyValue,SPIRIT,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1010C620,784,?KeyValue@CMultiManager@@UAEXPAUKeyValueData_s@@@Z,CMultiManager::KeyValue,COF,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1010C940,116,?KeyValue@CRenderFxManager@@UAEXPAUKeyValueData_s@@@Z,CRenderFxManager::KeyValue,COF,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1010C9C0,382,?KeyValue@CStateWatcher@@UAEXPAUKeyValueData_s@@@Z,CStateWatcher::KeyValue,COF,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1010CB40,116,?KeyValue@CTargetCDAudio@@UAEXPAUKeyValueData_s@@@Z,CTargetCDAudio::KeyValue,HLSDK,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,1010CBC0,716,?KeyValue@CTriggerCamera@@UAEXPAUKeyValueData_s@@@Z,CTriggerCamera::KeyValue,HLSDK,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,54.7,hl_1.55_to_1.6a.csv,
+hl,1010CBC0,716,?KeyValue@CTriggerCamera@@UAEXPAUKeyValueData_s@@@Z,CTriggerCamera::KeyValue,HLSDK,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1010CE90,104,?KeyValue@CTriggerChangeTarget@@UAEXPAUKeyValueData_s@@@Z,CTriggerChangeTarget::KeyValue,HLSDK,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1010CF00,104,?KeyValue@CTriggerChangeValue@@UAEXPAUKeyValueData_s@@@Z,CTriggerChangeValue::KeyValue,SPIRIT,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1010CF70,108,?KeyValue@CTriggerCounter@@UAEXPAUKeyValueData_s@@@Z,CTriggerCounter::KeyValue,SPIRIT,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
@@ -18038,12 +18038,12 @@ hl,1010CFE0,107,?KeyValue@CTriggerEndSection@@UAEXPAUKeyValueData_s@@@Z,CTrigger
 hl,1010D050,317,?KeyValue@CTriggerHurt@@UAEXPAUKeyValueData_s@@@Z,CTriggerHurt::KeyValue,SPIRIT,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1010D190,187,?KeyValue@CTriggerInOut@@UAEXPAUKeyValueData_s@@@Z,CTriggerInOut::KeyValue,SPIRIT,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1010D250,515,?KeyValue@CTriggerMotion@@UAEXPAUKeyValueData_s@@@Z,CTriggerMotion::KeyValue,SPIRIT,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,1010D460,319,?KeyValue@CTriggerPlayerCheckArea@@UAEXPAUKeyValueData_s@@@Z,CTriggerPlayerCheckArea::KeyValue,COF,dlls/triggers.cpp,1.4,1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
+hl,1010D460,319,?KeyValue@CTriggerPlayerCheckArea@@UAEXPAUKeyValueData_s@@@Z,CTriggerPlayerCheckArea::KeyValue,COF,dlls/triggers.cpp,1.4,1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1010D5A0,187,?KeyValue@CTriggerPush@@UAEXPAUKeyValueData_s@@@Z,CTriggerPush::KeyValue,HLSDK,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1010D660,406,?KeyValue@CTriggerRelay@@UAEXPAUKeyValueData_s@@@Z,CTriggerRelay::KeyValue,HLSDK,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1010D820,104,?KeyValue@CTriggerSetPatrol@@UAEXPAUKeyValueData_s@@@Z,CTriggerSetPatrol::KeyValue,SPIRIT,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,1010D890,214,?LadderThink@CLadderControl@@QAEXXZ,CLadderControl::LadderThink,COF,dlls/triggers.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
-hl,1010D970,268,?LadderTouch@CLadderControl@@QAEXPAVCBaseEntity@@@Z,CLadderControl::LadderTouch,COF,dlls/triggers.cpp,2010-prototype,1.0->1.4 changed; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
+hl,1010D890,214,?LadderThink@CLadderControl@@QAEXXZ,CLadderControl::LadderThink,COF,dlls/triggers.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
+hl,1010D970,268,?LadderTouch@CLadderControl@@QAEXPAVCBaseEntity@@@Z,CLadderControl::LadderTouch,COF,dlls/triggers.cpp,2010-prototype,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1010DA80,1801,?ManagerThink@CMultiManager@@QAEXXZ,CMultiManager::ManagerThink,COF,dlls/triggers.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1010E190,977,?ManagerUse@CMultiManager@@QAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CMultiManager::ManagerUse,COF,dlls/triggers.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1010E570,715,?Move@CTriggerCamera@@QAEXXZ,CTriggerCamera::Move,HLSDK,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
@@ -18074,30 +18074,30 @@ hl,1010EA90,15,?ObjectCaps@CWatcherCount@@UAEHXZ,CWatcherCount::ObjectCaps,COF,d
 hl,1010EAA0,31,?Play@CTargetCDAudio@@QAEXXZ,CTargetCDAudio::Play,HLSDK,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1010EAC0,155,?PlayCDTrack@@YAXH@Z,PlayCDTrack,HLSDK,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,refbytes:paranoia:dlls__triggers.obj:score12,
 hl,1010EB60,38,,,UNKNOWN,guess:dlls/triggers.cpp,,,TODO,,,
-hl,1010EB90,200,?PlayerTouch@CFuncTimer@@QAEXPAVCBaseEntity@@@Z,CFuncTimer::PlayerTouch,COF,dlls/triggers.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
-hl,1010EC60,209,?PlayerTouch@CTriggerBookSimon@@QAEXPAVCBaseEntity@@@Z,CTriggerBookSimon::PlayerTouch,COF,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
+hl,1010EB90,200,?PlayerTouch@CFuncTimer@@QAEXPAVCBaseEntity@@@Z,CFuncTimer::PlayerTouch,COF,dlls/triggers.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
+hl,1010EC60,209,?PlayerTouch@CTriggerBookSimon@@QAEXPAVCBaseEntity@@@Z,CTriggerBookSimon::PlayerTouch,COF,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1010ED40,20,?PostSpawn@CEnvCustomize@@UAEXXZ,CEnvCustomize::PostSpawn,COF,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1010ED60,33,?PostSpawn@CMotionManager@@UAEXXZ,CMotionManager::PostSpawn,SPIRIT,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1010ED90,205,?PostSpawn@CTriggerRotTest@@UAEXXZ,CTriggerRotTest::PostSpawn,SPIRIT,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,1010EE60,34,?Precache@CCofBillBoard@@UAEXXZ,CCofBillBoard::Precache,COF,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
+hl,1010EE60,34,?Precache@CCofBillBoard@@UAEXXZ,CCofBillBoard::Precache,COF,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1010EE90,31,?Precache@CEnvCustomize@@UAEXXZ,CEnvCustomize::Precache,COF,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1010EEB0,20,?Precache@CFireAndDie@@UAEXXZ,CFireAndDie::Precache,HLSDK,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,1010EED0,87,?Precache@CFuncStairs@@UAEXXZ,CFuncStairs::Precache,COF,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
-hl,1010EF30,139,?Precache@CLadder@@UAEXXZ,CLadder::Precache,HLSDK,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,81.5,hl_1.55_to_1.6a.csv,
-hl,1010EFC0,114,?Precache@CLadderControl@@UAEXXZ,CLadderControl::Precache,COF,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
+hl,1010EED0,87,?Precache@CFuncStairs@@UAEXXZ,CFuncStairs::Precache,COF,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
+hl,1010EF30,139,?Precache@CLadder@@UAEXXZ,CLadder::Precache,HLSDK,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
+hl,1010EFC0,114,?Precache@CLadderControl@@UAEXXZ,CLadderControl::Precache,COF,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1010F040,34,?Precache@CTriggerMultiple@@UAEXXZ,CTriggerMultiple::Precache,SPIRIT,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1010F070,134,,,UNKNOWN,guess:dlls/triggers.cpp,,,TODO,,,
 hl,1010F100,559,?RadiationThink@CTriggerHurt@@QAEXXZ,CTriggerHurt::RadiationThink,HLSDK,dlls/triggers.cpp,2010-prototype,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1010F330,56,,,UNKNOWN,guess:dlls/triggers.cpp,,,TODO,,,
 hl,1010F370,49,?Restore@CAutoTrigger@@UAEHAAVCRestore@@@Z,CAutoTrigger::Restore,HLSDK,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,refbytes:paranoia:dlls__triggers.obj:score3,
 hl,1010F3B0,49,?Restore@CChangeLevel@@UAEHAAVCRestore@@@Z,CChangeLevel::Restore,HLSDK,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,refbytes:paranoia:dlls__triggers.obj:score3,
-hl,1010F3F0,49,?Restore@CCofBillBoard@@UAEHAAVCRestore@@@Z,CCofBillBoard::Restore,COF,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
+hl,1010F3F0,49,?Restore@CCofBillBoard@@UAEHAAVCRestore@@@Z,CCofBillBoard::Restore,COF,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1010F430,49,?Restore@CEnvCustomize@@UAEHAAVCRestore@@@Z,CEnvCustomize::Restore,COF,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,refbytes:paranoia:dlls__triggers.obj:score3,
 hl,1010F470,49,?Restore@CFrictionModifier@@UAEHAAVCRestore@@@Z,CFrictionModifier::Restore,HLSDK,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,refbytes:paranoia:dlls__triggers.obj:score3,
-hl,1010F4B0,49,?Restore@CFuncStairs@@UAEHAAVCRestore@@@Z,CFuncStairs::Restore,COF,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
+hl,1010F4B0,49,?Restore@CFuncStairs@@UAEHAAVCRestore@@@Z,CFuncStairs::Restore,COF,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1010F4F0,49,?Restore@CGasArea@@UAEHAAVCRestore@@@Z,CGasArea::Restore,PARANOIA,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,refbytes:paranoia:dlls__triggers.obj:score3,
 hl,1010F530,49,?Restore@CInOutRegister@@UAEHAAVCRestore@@@Z,CInOutRegister::Restore,SPIRIT,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,refbytes:paranoia:dlls__triggers.obj:score3,
-hl,1010F570,49,?Restore@CLadderControl@@UAEHAAVCRestore@@@Z,CLadderControl::Restore,COF,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
+hl,1010F570,49,?Restore@CLadderControl@@UAEHAAVCRestore@@@Z,CLadderControl::Restore,COF,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1010F5B0,49,?Restore@CMotionManager@@UAEHAAVCRestore@@@Z,CMotionManager::Restore,PARANOIA,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,refbytes:paranoia:dlls__triggers.obj:score3,
 hl,1010F5F0,49,?Restore@CMotionThread@@UAEHAAVCRestore@@@Z,CMotionThread::Restore,SPIRIT,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,refbytes:paranoia:dlls__triggers.obj:score3,
 hl,1010F630,49,?Restore@CMultiManager@@UAEHAAVCRestore@@@Z,CMultiManager::Restore,COF,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,refbytes:paranoia:dlls__triggers.obj:score3,
@@ -18115,13 +18115,13 @@ hl,1010F8F0,49,?Restore@CTriggerRotTest@@UAEHAAVCRestore@@@Z,CTriggerRotTest::Re
 hl,1010F930,49,?Restore@CTriggerSetPatrol@@UAEHAAVCRestore@@@Z,CTriggerSetPatrol::Restore,SPIRIT,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,refbytes:paranoia:dlls__triggers.obj:score3,
 hl,1010F970,95,?Save@CAutoTrigger@@UAEHAAVCSave@@@Z,CAutoTrigger::Save,HLSDK,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1010F9D0,95,?Save@CChangeLevel@@UAEHAAVCSave@@@Z,CChangeLevel::Save,HLSDK,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,1010FA30,95,?Save@CCofBillBoard@@UAEHAAVCSave@@@Z,CCofBillBoard::Save,COF,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
+hl,1010FA30,95,?Save@CCofBillBoard@@UAEHAAVCSave@@@Z,CCofBillBoard::Save,COF,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1010FA90,95,?Save@CEnvCustomize@@UAEHAAVCSave@@@Z,CEnvCustomize::Save,COF,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1010FAF0,95,?Save@CFrictionModifier@@UAEHAAVCSave@@@Z,CFrictionModifier::Save,HLSDK,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,1010FB50,95,?Save@CFuncStairs@@UAEHAAVCSave@@@Z,CFuncStairs::Save,COF,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
+hl,1010FB50,95,?Save@CFuncStairs@@UAEHAAVCSave@@@Z,CFuncStairs::Save,COF,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1010FBB0,95,?Save@CGasArea@@UAEHAAVCSave@@@Z,CGasArea::Save,PARANOIA,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1010FC10,95,?Save@CInOutRegister@@UAEHAAVCSave@@@Z,CInOutRegister::Save,SPIRIT,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,1010FC70,95,?Save@CLadderControl@@UAEHAAVCSave@@@Z,CLadderControl::Save,COF,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
+hl,1010FC70,95,?Save@CLadderControl@@UAEHAAVCSave@@@Z,CLadderControl::Save,COF,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1010FCD0,95,?Save@CMotionManager@@UAEHAAVCSave@@@Z,CMotionManager::Save,PARANOIA,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1010FD30,95,?Save@CMotionThread@@UAEHAAVCSave@@@Z,CMotionThread::Save,SPIRIT,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1010FD90,95,?Save@CMultiManager@@UAEHAAVCSave@@@Z,CMultiManager::Save,COF,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
@@ -18137,30 +18137,30 @@ hl,101100F0,95,?Save@CTriggerPush@@UAEHAAVCSave@@@Z,CTriggerPush::Save,SPIRIT,dl
 hl,10110150,95,?Save@CTriggerRelay@@UAEHAAVCSave@@@Z,CTriggerRelay::Save,HLSDK,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,101101B0,95,?Save@CTriggerRotTest@@UAEHAAVCSave@@@Z,CTriggerRotTest::Save,SPIRIT,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10110210,95,?Save@CTriggerSetPatrol@@UAEHAAVCSave@@@Z,CTriggerSetPatrol::Save,SPIRIT,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,10110270,24,?SaveTouch@CTriggerSave@@QAEXPAVCBaseEntity@@@Z,CTriggerSave::SaveTouch,HLSDK,dlls/triggers.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
+hl,10110270,24,?SaveTouch@CTriggerSave@@QAEXPAVCBaseEntity@@@Z,CTriggerSave::SaveTouch,HLSDK,dlls/triggers.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10110290,162,?SetBoneController@CEnvCustomize@@QAEXMHPAVCBaseEntity@@@Z,CEnvCustomize::SetBoneController,SPIRIT,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,101105D0,196,?Spawn@CChangeLevel@@UAEXXZ,CChangeLevel::Spawn,HLSDK,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,101106A0,49,?Spawn@CCofBillBoard@@UAEXXZ,CCofBillBoard::Spawn,COF,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
+hl,101106A0,49,?Spawn@CCofBillBoard@@UAEXXZ,CCofBillBoard::Spawn,COF,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,101106E0,5,?Spawn@CEnvCustomize@@UAEXXZ,CEnvCustomize::Spawn,COF,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,101106F0,22,?Spawn@CFireAndDie@@UAEXXZ,CFireAndDie::Spawn,HLSDK,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,refbytes:paranoia:dlls__triggers.obj:score2,
 hl,10110710,76,?Spawn@CFrictionModifier@@UAEXXZ,CFrictionModifier::Spawn,HLSDK,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,10110760,111,?Spawn@CFuncStairs@@UAEXXZ,CFuncStairs::Spawn,COF,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
-hl,101107D0,33,?Spawn@CFuncTimer@@UAEXXZ,CFuncTimer::Spawn,COF,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
+hl,10110760,111,?Spawn@CFuncStairs@@UAEXXZ,CFuncStairs::Spawn,COF,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
+hl,101107D0,33,?Spawn@CFuncTimer@@UAEXXZ,CFuncTimer::Spawn,COF,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10110800,221,?Spawn@CGasArea@@UAEXXZ,CGasArea::Spawn,PARANOIA,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,101108E0,61,?Spawn@CLadder@@UAEXXZ,CLadder::Spawn,HLSDK,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,10110920,89,?Spawn@CLadderControl@@UAEXXZ,CLadderControl::Spawn,COF,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
+hl,10110920,89,?Spawn@CLadderControl@@UAEXXZ,CLadderControl::Spawn,COF,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10110980,259,?Spawn@CMultiManager@@UAEXXZ,CMultiManager::Spawn,COF,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10110A90,8,?Spawn@CRenderFxFader@@UAEXXZ,CRenderFxFader::Spawn,COF,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10110AA0,14,?Spawn@CStartRush@@UAEXXZ,CStartRush::Spawn,PARANOIA,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10110AB0,39,?Spawn@CStateWatcher@@UAEXXZ,CStateWatcher::Spawn,COF,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10110AE0,60,?Spawn@CTargetCDAudio@@UAEXXZ,CTargetCDAudio::Spawn,HLSDK,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,10110B20,33,?Spawn@CTriggerBookSimon@@UAEXXZ,CTriggerBookSimon::Spawn,COF,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
+hl,10110B20,33,?Spawn@CTriggerBookSimon@@UAEXXZ,CTriggerBookSimon::Spawn,COF,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10110B50,22,?Spawn@CTriggerBounce@@UAEXXZ,CTriggerBounce::Spawn,SPIRIT,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,10110B80,160,?Spawn@CTriggerCamera@@UAEXXZ,CTriggerCamera::Spawn,HLSDK,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,75.5,hl_1.55_to_1.6a.csv,
+hl,10110B80,160,?Spawn@CTriggerCamera@@UAEXXZ,CTriggerCamera::Spawn,HLSDK,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10110C20,3,?Spawn@CTriggerChangeTarget@@UAEXXZ,CTriggerChangeTarget::Spawn,HLSDK,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,10110C40,170,?Spawn@CTriggerCoopChangelevel@@UAEXXZ,CTriggerCoopChangelevel::Spawn,COF,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
+hl,10110C40,170,?Spawn@CTriggerCoopChangelevel@@UAEXXZ,CTriggerCoopChangelevel::Spawn,COF,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10110CF0,40,?Spawn@CTriggerCounter@@UAEXXZ,CTriggerCounter::Spawn,HLSDK,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,10110D20,80,?Spawn@CTriggerEndSection@@UAEXXZ,CTriggerEndSection::Spawn,HLSDK,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,91.7,hl_1.55_to_1.6a.csv,
+hl,10110D20,80,?Spawn@CTriggerEndSection@@UAEXXZ,CTriggerEndSection::Spawn,HLSDK,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10110D70,17,?Spawn@CTriggerGravity@@UAEXXZ,CTriggerGravity::Spawn,HLSDK,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10110D90,80,?Spawn@CTriggerHevCharge@@UAEXXZ,CTriggerHevCharge::Spawn,SPIRIT,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10110DE0,134,?Spawn@CTriggerHurt@@UAEXXZ,CTriggerHurt::Spawn,HLSDK,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
@@ -18169,18 +18169,18 @@ hl,10110ED0,101,?Spawn@CTriggerMonsterJump@@UAEXXZ,CTriggerMonsterJump::Spawn,HL
 hl,10110F40,54,?Spawn@CTriggerMultiple@@UAEXXZ,CTriggerMultiple::Spawn,HLSDK,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10110F80,115,?Spawn@CTriggerOnSight@@UAEXXZ,CTriggerOnSight::Spawn,SPIRIT,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10111000,15,?Spawn@CTriggerOnce@@UAEXXZ,CTriggerOnce::Spawn,HLSDK,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,10111010,146,?Spawn@CTriggerPlayerCheckArea@@UAEXXZ,CTriggerPlayerCheckArea::Spawn,COF,dlls/triggers.cpp,1.4,1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
+hl,10111010,146,?Spawn@CTriggerPlayerCheckArea@@UAEXXZ,CTriggerPlayerCheckArea::Spawn,COF,dlls/triggers.cpp,1.4,1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,101110B0,124,?Spawn@CTriggerPush@@UAEXXZ,CTriggerPush::Spawn,HLSDK,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10111130,3,?Spawn@CTriggerRelay@@UAEXXZ,CTriggerRelay::Spawn,HLSDK,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,10111140,58,?Spawn@CTriggerSave@@UAEXXZ,CTriggerSave::Spawn,HLSDK,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,90.0,hl_1.55_to_1.6a.csv,
+hl,10111140,58,?Spawn@CTriggerSave@@UAEXXZ,CTriggerSave::Spawn,HLSDK,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10111180,3,?Spawn@CTriggerSetPatrol@@UAEXXZ,CTriggerSetPatrol::Spawn,SPIRIT,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,10111190,36,?Spawn@CTriggerSuicide@@UAEXXZ,CTriggerSuicide::Spawn,COF,dlls/triggers.cpp,1.4,1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
+hl,10111190,36,?Spawn@CTriggerSuicide@@UAEXXZ,CTriggerSuicide::Spawn,COF,dlls/triggers.cpp,1.4,1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,101111C0,17,?Spawn@CTriggerTeleport@@UAEXXZ,CTriggerTeleport::Spawn,HLSDK,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,101111E0,95,?Spawn@CTriggerVolume@@UAEXXZ,CTriggerVolume::Spawn,HLSDK,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10111240,27,?Spawn@CWatcherCount@@UAEXXZ,CWatcherCount::Spawn,COF,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,10111260,274,?StairThink@CFuncStairs@@QAEXXZ,CFuncStairs::StairThink,COF,dlls/triggers.cpp,2010-prototype,1.0->1.4 changed; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
-hl,10111380,928,?StartSuicide@CTriggerSuicide@@QAEXPAVCBasePlayer@@@Z,CTriggerSuicide::StartSuicide,COF,dlls/triggers.cpp,1.4,1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
-hl,10111760,1178,?TeleportTouch@CTriggerTeleport@@QAEXPAVCBaseEntity@@@Z,CTriggerTeleport::TeleportTouch,SPIRIT,dlls/triggers.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,TODO,96.1,hl_1.55_to_1.6a.csv,
+hl,10111260,274,?StairThink@CFuncStairs@@QAEXXZ,CFuncStairs::StairThink,COF,dlls/triggers.cpp,2010-prototype,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
+hl,10111380,928,?StartSuicide@CTriggerSuicide@@QAEXPAVCBasePlayer@@@Z,CTriggerSuicide::StartSuicide,COF,dlls/triggers.cpp,1.4,1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
+hl,10111760,1178,?TeleportTouch@CTriggerTeleport@@QAEXPAVCBaseEntity@@@Z,CTriggerTeleport::TeleportTouch,SPIRIT,dlls/triggers.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10111C00,30,?Think@CFireAndDie@@UAEXXZ,CFireAndDie::Think,HLSDK,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,refbytes:paranoia:dlls__triggers.obj:score2,
 hl,10111C20,2813,?Think@CMotionThread@@UAEXXZ,CMotionThread::Think,SPIRIT,dlls/triggers.cpp,1.0,1.0->1.4 changed; 1.4->1.55 changed,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10112750,167,?Think@CStateWatcher@@UAEXXZ,CStateWatcher::Think,COF,dlls/triggers.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
@@ -18194,13 +18194,13 @@ hl,10112DD0,389,?Think@CWatcherCount@@UAEXXZ,CWatcherCount::Think,COF,dlls/trigg
 hl,10112F60,93,?ToggleUse@CBaseTrigger@@QAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CBaseTrigger::ToggleUse,HLSDK,dlls/triggers.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,refbytes:paranoia:dlls__triggers.obj:score4,
 hl,10112FC0,276,?Touch@CTriggerBounce@@UAEXPAVCBaseEntity@@@Z,CTriggerBounce::Touch,SPIRIT,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,101130E0,33,?Touch@CTriggerCDAudio@@UAEXPAVCBaseEntity@@@Z,CTriggerCDAudio::Touch,HLSDK,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,10113110,384,?Touch@CTriggerCofTeleport@@UAEXPAVCBaseEntity@@@Z,CTriggerCofTeleport::Touch,COF,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
+hl,10113110,384,?Touch@CTriggerCofTeleport@@UAEXPAVCBaseEntity@@@Z,CTriggerCofTeleport::Touch,COF,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10113290,79,?Touch@CTriggerInOut@@UAEXPAVCBaseEntity@@@Z,CTriggerInOut::Touch,SPIRIT,dlls/triggers.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,101132E0,152,?Touch@CTriggerMonsterJump@@UAEXPAVCBaseEntity@@@Z,CTriggerMonsterJump::Touch,HLSDK,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,10113380,482,?Touch@CTriggerPush@@UAEXPAVCBaseEntity@@@Z,CTriggerPush::Touch,HLSDK,dlls/triggers.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,TODO,94.7,hl_1.55_to_1.6a.csv,
-hl,10113580,95,?Touch@CTriggerSuicide@@UAEXPAVCBaseEntity@@@Z,CTriggerSuicide::Touch,COF,dlls/triggers.cpp,1.4,1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
+hl,10113380,482,?Touch@CTriggerPush@@UAEXPAVCBaseEntity@@@Z,CTriggerPush::Touch,HLSDK,dlls/triggers.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
+hl,10113580,95,?Touch@CTriggerSuicide@@UAEXPAVCBaseEntity@@@Z,CTriggerSuicide::Touch,COF,dlls/triggers.cpp,1.4,1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,101135E0,85,?TouchChangeLevel@CChangeLevel@@QAEXPAVCBaseEntity@@@Z,CChangeLevel::TouchChangeLevel,HLSDK,dlls/triggers.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,refbytes:paranoia:dlls__triggers.obj:score3,
-hl,10113640,221,?Use@CCofBillBoard@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CCofBillBoard::Use,COF,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
+hl,10113640,221,?Use@CCofBillBoard@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CCofBillBoard::Use,COF,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10113720,400,?Use@CEnvCustomize@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CEnvCustomize::Use,COF,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,101138B0,97,?Use@CGasArea@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CGasArea::Use,PARANOIA,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10113920,167,?Use@CMotionManager@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CMotionManager::Use,PARANOIA,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
@@ -18208,7 +18208,7 @@ hl,101139D0,157,?Use@CRenderFxManager@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CRen
 hl,10113A70,198,?Use@CStartRush@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CStartRush::Use,PARANOIA,dlls/triggers.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10113B40,8,?Use@CTargetCDAudio@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CTargetCDAudio::Use,HLSDK,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10113B50,8,?Use@CTriggerCDAudio@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CTriggerCDAudio::Use,HLSDK,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,10113B60,2535,?Use@CTriggerCamera@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CTriggerCamera::Use,HLSDK,dlls/triggers.cpp,1.0,1.0->1.4 changed; 1.4->1.55 changed,TODO,30.6,hl_1.55_to_1.6a.csv,
+hl,10113B60,2535,?Use@CTriggerCamera@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CTriggerCamera::Use,HLSDK,dlls/triggers.cpp,1.0,1.0->1.4 changed; 1.4->1.55 changed,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10114550,296,?Use@CTriggerChangeCVar@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CTriggerChangeCVar::Use,SPIRIT,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10114680,218,?Use@CTriggerChangeTarget@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CTriggerChangeTarget::Use,HLSDK,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10114760,115,?Use@CTriggerChangeValue@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CTriggerChangeValue::Use,SPIRIT,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
@@ -18216,23 +18216,23 @@ hl,101147E0,95,?Use@CTriggerCommand@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CTrigg
 hl,10114840,98,?Use@CTriggerGoal@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CTriggerGoal::Use,PARANOIA,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,101148B0,362,?Use@CTriggerMP3@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CTriggerMP3::Use,PARANOIA,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10114A20,2638,?Use@CTriggerMotion@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CTriggerMotion::Use,SPIRIT,dlls/triggers.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,10115480,479,?Use@CTriggerPlayerCheckArea@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CTriggerPlayerCheckArea::Use,COF,dlls/triggers.cpp,1.4,1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
+hl,10115480,479,?Use@CTriggerPlayerCheckArea@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CTriggerPlayerCheckArea::Use,COF,dlls/triggers.cpp,1.4,1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10115680,870,?Use@CTriggerRelay@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CTriggerRelay::Use,HLSDK,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,101159F0,108,?Use@CTriggerSetPatrol@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CTriggerSetPatrol::Use,SPIRIT,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10115A60,131,?Use@CTriggerTextWindow@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CTriggerTextWindow::Use,PARANOIA,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10115AF0,15,?UseChangeLevel@CChangeLevel@@QAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CChangeLevel::UseChangeLevel,HLSDK,dlls/triggers.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,refbytes:paranoia:dlls__triggers.obj:score1,
 hl,10115B00,38,?UseThink@CMultiManager@@QAEXXZ,CMultiManager::UseThink,COF,dlls/triggers.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10115B30,328,?VisionCheck@CTriggerOnSight@@QAEHXZ,CTriggerOnSight::VisionCheck,SPIRIT,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,99.1,hl_1.55_to_1.6a.csv,
-hl,10115C80,5,_ambient_fmodstream,ambient_fmodstream,HLSDK,dlls/triggers.cpp,,,TODO,0.0,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( ambient_fmodstream, CTriggerMP3 )"
-hl,10115C90,5,_cof_billboard,cof_billboard,HLSDK,dlls/triggers.cpp,,,TODO,0.0,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( cof_billboard, CCofBillBoard )"
+hl,10115C80,5,_ambient_fmodstream,ambient_fmodstream,HLSDK,dlls/triggers.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( ambient_fmodstream, CTriggerMP3 )"
+hl,10115C90,5,_cof_billboard,cof_billboard,HLSDK,dlls/triggers.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( cof_billboard, CCofBillBoard )"
 hl,10115CA0,5,_env_customize,env_customize,HLSDK,dlls/triggers.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( env_customize, CEnvCustomize )"
 hl,10115CB0,5,_env_render,env_render,HLSDK,dlls/triggers.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( env_render, CRenderFxManager )"
 hl,10115CC0,5,_fireanddie,fireanddie,HLSDK,dlls/triggers.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( fireanddie, CFireAndDie )"
 hl,10115CD0,5,_func_friction,func_friction,HLSDK,dlls/triggers.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( func_friction, CFrictionModifier )"
 hl,10115CE0,5,_func_ladder,func_ladder,HLSDK,dlls/triggers.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( func_ladder, CLadder )"
-hl,10115CF0,5,_func_laddercontrol,func_laddercontrol,HLSDK,dlls/triggers.cpp,,,TODO,0.0,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( func_laddercontrol, CLadderControl )"
-hl,10115D00,5,_func_stairs,func_stairs,HLSDK,dlls/triggers.cpp,,,TODO,0.0,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( func_stairs, CFuncStairs )"
-hl,10115D10,5,_func_timer,func_timer,HLSDK,dlls/triggers.cpp,,,TODO,0.0,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( func_timer, CFuncTimer )"
+hl,10115CF0,5,_func_laddercontrol,func_laddercontrol,HLSDK,dlls/triggers.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( func_laddercontrol, CLadderControl )"
+hl,10115D00,5,_func_stairs,func_stairs,HLSDK,dlls/triggers.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( func_stairs, CFuncStairs )"
+hl,10115D10,5,_func_timer,func_timer,HLSDK,dlls/triggers.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( func_timer, CFuncTimer )"
 hl,10115D20,5,_info_teleport_destination,info_teleport_destination,HLSDK,dlls/cbase.h,,,TODO,,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( info_teleport_destination, CPointEntity )"
 hl,10115D30,5,_inout_register,inout_register,HLSDK,dlls/triggers.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( inout_register, CInOutRegister )"
 hl,10115D40,5,_motion_manager,motion_manager,HLSDK,dlls/triggers.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( motion_manager, CMotionManager )"
@@ -18244,7 +18244,7 @@ hl,10115D90,5,_target_cdaudio,target_cdaudio,HLSDK,dlls/triggers.cpp,,,MATCHED,1
 hl,10115DA0,5,_trigger,trigger,HLSDK,dlls/triggers.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( trigger, CBaseTrigger )"
 hl,10115DB0,5,_trigger_auto,trigger_auto,HLSDK,dlls/triggers.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( trigger_auto, CAutoTrigger )"
 hl,10115DC0,5,_trigger_autosave,trigger_autosave,HLSDK,dlls/triggers.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( trigger_autosave, CTriggerSave )"
-hl,10115DD0,5,_trigger_booksimon,trigger_booksimon,HLSDK,dlls/triggers.cpp,,,TODO,0.0,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( trigger_booksimon, CTriggerBookSimon )"
+hl,10115DD0,5,_trigger_booksimon,trigger_booksimon,HLSDK,dlls/triggers.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( trigger_booksimon, CTriggerBookSimon )"
 hl,10115DE0,5,_trigger_bounce,trigger_bounce,HLSDK,dlls/triggers.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( trigger_bounce, CTriggerBounce )"
 hl,10115DF0,5,_trigger_camera,trigger_camera,HLSDK,dlls/triggers.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( trigger_camera, CTriggerCamera )"
 hl,10115E00,5,_trigger_cdaudio,trigger_cdaudio,HLSDK,dlls/triggers.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( trigger_cdaudio, CTriggerCDAudio )"
@@ -18252,9 +18252,9 @@ hl,10115E10,5,_trigger_changecvar,trigger_changecvar,HLSDK,dlls/triggers.cpp,,,M
 hl,10115E20,5,_trigger_changelevel,trigger_changelevel,HLSDK,dlls/triggers.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( trigger_changelevel, CChangeLevel )"
 hl,10115E30,5,_trigger_changetarget,trigger_changetarget,HLSDK,dlls/triggers.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( trigger_changetarget, CTriggerChangeTarget )"
 hl,10115E40,5,_trigger_changevalue,trigger_changevalue,HLSDK,dlls/triggers.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( trigger_changevalue, CTriggerChangeValue )"
-hl,10115E50,5,_trigger_cofteleport,trigger_cofteleport,HLSDK,dlls/triggers.cpp,,,TODO,0.0,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( trigger_cofteleport, CTriggerCofTeleport )"
+hl,10115E50,5,_trigger_cofteleport,trigger_cofteleport,HLSDK,dlls/triggers.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( trigger_cofteleport, CTriggerCofTeleport )"
 hl,10115E60,5,_trigger_command,trigger_command,HLSDK,dlls/triggers.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( trigger_command, CTriggerCommand )"
-hl,10115E70,5,_trigger_coop_changelevel,trigger_coop_changelevel,HLSDK,dlls/triggers.cpp,,,TODO,0.0,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( trigger_coop_changelevel, CTriggerCoopChangelevel )"
+hl,10115E70,5,_trigger_coop_changelevel,trigger_coop_changelevel,HLSDK,dlls/triggers.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( trigger_coop_changelevel, CTriggerCoopChangelevel )"
 hl,10115E80,5,_trigger_counter,trigger_counter,HLSDK,dlls/triggers.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( trigger_counter, CTriggerCounter )"
 hl,10115E90,5,_trigger_endsection,trigger_endsection,HLSDK,dlls/triggers.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( trigger_endsection, CTriggerEndSection )"
 hl,10115EA0,5,_trigger_gasarea,trigger_gasarea,HLSDK,dlls/triggers.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( trigger_gasarea, CGasArea )"
@@ -18266,16 +18266,16 @@ hl,10115EF0,5,_trigger_inout,trigger_inout,HLSDK,dlls/triggers.cpp,,,MATCHED,100
 hl,10115F00,5,_trigger_monsterjump,trigger_monsterjump,HLSDK,dlls/triggers.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( trigger_monsterjump, CTriggerMonsterJump )"
 hl,10115F10,5,_trigger_motion,trigger_motion,HLSDK,dlls/triggers.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( trigger_motion, CTriggerMotion )"
 hl,10115F20,5,_trigger_mp3,trigger_mp3,HLSDK,dlls/triggers.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( trigger_mp3, CTriggerMP3 )"
-hl,10115F30,5,_trigger_mp3audio,trigger_mp3audio,HLSDK,dlls/triggers.cpp,,,TODO,0.0,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( trigger_mp3audio, CTriggerMP3 )"
+hl,10115F30,5,_trigger_mp3audio,trigger_mp3audio,HLSDK,dlls/triggers.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( trigger_mp3audio, CTriggerMP3 )"
 hl,10115F40,5,_trigger_multiple,trigger_multiple,HLSDK,dlls/triggers.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( trigger_multiple, CTriggerMultiple )"
 hl,10115F50,5,_trigger_once,trigger_once,HLSDK,dlls/triggers.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( trigger_once, CTriggerOnce )"
 hl,10115F60,5,_trigger_onsight,trigger_onsight,HLSDK,dlls/triggers.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( trigger_onsight, CTriggerOnSight )"
-hl,10115F70,5,_trigger_playercheckarea,trigger_playercheckarea,HLSDK,dlls/triggers.cpp,,,TODO,0.0,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( trigger_playercheckarea, CTriggerPlayerCheckArea )"
+hl,10115F70,5,_trigger_playercheckarea,trigger_playercheckarea,HLSDK,dlls/triggers.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( trigger_playercheckarea, CTriggerPlayerCheckArea )"
 hl,10115F80,5,_trigger_push,trigger_push,HLSDK,dlls/triggers.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( trigger_push, CTriggerPush )"
 hl,10115F90,5,_trigger_relay,trigger_relay,HLSDK,dlls/triggers.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( trigger_relay, CTriggerRelay )"
 hl,10115FA0,5,_trigger_rottest,trigger_rottest,HLSDK,dlls/triggers.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( trigger_rottest, CTriggerRotTest )"
 hl,10115FB0,5,_trigger_startpatrol,trigger_startpatrol,HLSDK,dlls/triggers.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( trigger_startpatrol, CTriggerSetPatrol )"
-hl,10115FC0,5,_trigger_suicide,trigger_suicide,HLSDK,dlls/triggers.cpp,,,TODO,0.0,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( trigger_suicide, CTriggerSuicide )"
+hl,10115FC0,5,_trigger_suicide,trigger_suicide,HLSDK,dlls/triggers.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( trigger_suicide, CTriggerSuicide )"
 hl,10115FD0,5,_trigger_teleport,trigger_teleport,HLSDK,dlls/triggers.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( trigger_teleport, CTriggerTeleport )"
 hl,10115FE0,5,_trigger_textwindow,trigger_textwindow,HLSDK,dlls/triggers.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( trigger_textwindow, CTriggerTextWindow )"
 hl,10115FF0,5,_trigger_transition,trigger_transition,HLSDK,dlls/triggers.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( trigger_transition, CTriggerVolume )"
