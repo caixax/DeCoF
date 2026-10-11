@@ -465,22 +465,24 @@ void CGlock::PrimaryAttack( void )
 	m_pPlayer->SetAnimation( PLAYER_ATTACK1 );
 	m_pPlayer->pev->effects |= EF_MUZZLEFLASH;
 
-	UTIL_MakeVectors( m_pPlayer->pev->punchangle + m_pPlayer->pev->v_angle );
+	UTIL_MakeVectors( m_pPlayer->pev->v_angle + m_pPlayer->pev->punchangle );
 
 	Vector vecShellSrc = m_pPlayer->GetGunPosition( );
 	Vector vecAiming = m_pPlayer->GetAutoaimVector( AUTOAIM_10DEGREES );
 
+	Vector vecDir;
+	float PlayerSpeed = m_pPlayer->pev->velocity.Length2D();
+
 	m_flCurrentKick += m_flKickPerShot;
 	m_flNextKickReductionTime = gpGlobals->time + 0.55;
 
-	Vector vecDir;
 	vecDir = m_pPlayer->FireBulletsPlayer( 1, vecShellSrc, vecAiming, m_AccuracyVector, 8192, BULLET_PLAYER_357, 2, gSkillData.DmgGlock, m_pPlayer->pev, m_pPlayer->random_seed );
 
 	m_flTimeWeaponIdle = gpGlobals->time + 1;
 
 	m_pPlayer->ViewPunch( RANDOM_LONG( -2, 2 ), 1, 1 );
 
-	if ( !g_pGameRules || !g_pGameRules->IsMultiplayer() )
+	if ( g_pGameRules && !g_pGameRules->IsMultiplayer() )
 	{
 		Vector vecShellVelocity = gpGlobals->v_right * 220 + gpGlobals->v_up * 200 + gpGlobals->v_forward * 40;
 		Vector vecShellOrigin = pev->origin + pev->view_ofs + gpGlobals->v_forward * 80 + gpGlobals->v_right * 20;
@@ -594,12 +596,17 @@ void CGlock::AttachTaclight( void )
 	m_pPlayer->ShowHint( MAKE_STRING( "weaponfunctionglock" ), false );
 
 	if ( m_iClip )
+	{
 		SendWeaponAnim( GLOCK_DRAW );
+		m_pPlayer->m_flNextAttack = gpGlobals->time + 1;
+	}
 	else
+	{
 		SendWeaponAnim( GLOCK_DRAW_NOSHOT );
+		m_pPlayer->m_flNextAttack = gpGlobals->time + 1;
+	}
 
-	m_pPlayer->m_flNextAttack = gpGlobals->time + 1.0;
-	m_flNextPrimaryAttack = m_flNextSecondaryAttack = m_flNextTertiaryAttack = m_pPlayer->m_flNextAttack = gpGlobals->time + 1.0;
+	m_flNextPrimaryAttack = m_flNextSecondaryAttack = m_flNextTertiaryAttack = m_pPlayer->m_flNextAttack = gpGlobals->time + 1;
 }
 
 void CGlock::IronsightsTo( void )
@@ -774,14 +781,21 @@ void CGlock::ItemPostFrame( void )
 		}
 
 		if ( m_iClip )
+		{
 			SendWeaponAnim( GLOCK_HOLSTER );
+			m_pPlayer->m_flNextAttack = gpGlobals->time + 0.5;
+
+			SetNextThink( 1.0 );
+			SetThink( &CGlock::MidAttachTaclight );
+		}
 		else
+		{
 			SendWeaponAnim( GLOCK_HOLSTER_NOSHOT );
+			m_pPlayer->m_flNextAttack = gpGlobals->time + 0.5;
 
-		m_pPlayer->m_flNextAttack = gpGlobals->time + 0.5;
-
-		SetNextThink( 1.0 );
-		SetThink( &CGlock::MidAttachTaclight );
+			SetNextThink( 1.0 );
+			SetThink( &CGlock::MidAttachTaclight );
+		}
 
 		EMIT_SOUND( ENT( pev ), CHAN_VOICE, "weapons/sleeve_generic2.wav", 1, ATTN_NORM );
 
