@@ -1,5 +1,5 @@
 {
-  "commit": "7eca78d",
+  "commit": "7b5b683",
   "counting": "LIB rows excluded; bytes weighted by function size",
   "date": "2026-10-11",
   "dlls": {
@@ -180,64 +180,64 @@
     "hl.dll": {
       "bytes": {
         "EQUIVALENT": 2210,
-        "MATCHED": 389718,
-        "TODO": 725982,
+        "MATCHED": 405390,
+        "TODO": 710310,
         "total": 1117910
       },
       "categories": {
         "COF": {
           "bytes": {
             "EQUIVALENT": 2210,
-            "MATCHED": 104215,
-            "TODO": 360224,
+            "MATCHED": 107487,
+            "TODO": 356952,
             "total": 466649
           },
           "functions": {
             "EQUIVALENT": 1,
-            "MATCHED": 298,
-            "TODO": 1455,
+            "MATCHED": 329,
+            "TODO": 1424,
             "total": 1754
           }
         },
         "HLSDK": {
           "bytes": {
             "EQUIVALENT": 0,
-            "MATCHED": 222536,
-            "TODO": 208586,
+            "MATCHED": 234028,
+            "TODO": 197094,
             "total": 431122
           },
           "functions": {
             "EQUIVALENT": 0,
-            "MATCHED": 1542,
-            "TODO": 925,
+            "MATCHED": 1596,
+            "TODO": 871,
             "total": 2467
           }
         },
         "PARANOIA": {
           "bytes": {
             "EQUIVALENT": 0,
-            "MATCHED": 11234,
-            "TODO": 3740,
+            "MATCHED": 11378,
+            "TODO": 3596,
             "total": 14974
           },
           "functions": {
             "EQUIVALENT": 0,
-            "MATCHED": 62,
-            "TODO": 19,
+            "MATCHED": 64,
+            "TODO": 17,
             "total": 81
           }
         },
         "SPIRIT": {
           "bytes": {
             "EQUIVALENT": 0,
-            "MATCHED": 51733,
-            "TODO": 20908,
+            "MATCHED": 52497,
+            "TODO": 20144,
             "total": 72641
           },
           "functions": {
             "EQUIVALENT": 0,
-            "MATCHED": 343,
-            "TODO": 66,
+            "MATCHED": 347,
+            "TODO": 62,
             "total": 409
           }
         },
@@ -258,8 +258,8 @@
       },
       "functions": {
         "EQUIVALENT": 1,
-        "MATCHED": 2245,
-        "TODO": 3192,
+        "MATCHED": 2336,
+        "TODO": 3101,
         "total": 5438
       }
     },
@@ -341,14 +341,14 @@
   "shown_total": {
     "bytes": {
       "EQUIVALENT": 2210,
-      "MATCHED": 412647,
-      "TODO": 1380958,
+      "MATCHED": 428319,
+      "TODO": 1365286,
       "total": 1795815
     },
     "functions": {
       "EQUIVALENT": 1,
-      "MATCHED": 2612,
-      "TODO": 5338,
+      "MATCHED": 2703,
+      "TODO": 5247,
       "total": 7951
     }
   },
@@ -356,14 +356,14 @@
   "total": {
     "bytes": {
       "EQUIVALENT": 2210,
-      "MATCHED": 412647,
-      "TODO": 3688621,
+      "MATCHED": 428319,
+      "TODO": 3672949,
       "total": 4103478
     },
     "functions": {
       "EQUIVALENT": 1,
-      "MATCHED": 2612,
-      "TODO": 20722,
+      "MATCHED": 2703,
+      "TODO": 20631,
       "total": 23335
     }
   }

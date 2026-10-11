@@ -356,6 +356,19 @@ CGameRules *InstallGameRules( void )
 }
 
 //=========================================================
+// CoF 1.6a: set by CHalfLifeRules only (the byte at +0xDC)
+//=========================================================
+bool CGameRules::guess_IsMapperMode( void )
+{
+	CHalfLifeRules *pRules = dynamic_cast<CHalfLifeRules *>( this );
+
+	if ( !pRules )
+		return false;
+
+	return pRules->guess_m_bUnknownDC;
+}
+
+//=========================================================
 // vote kick: count the votes once the voting time is over
 //=========================================================
 void CGameRules::VoteKickThink( void )

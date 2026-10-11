@@ -492,6 +492,11 @@ public:
 	int ammo_rpk;
 	int ammo_groza;
 
+	// CoF 1.6a: 4 new bytes at 0xC4 (CBaseEntity is 4 bytes larger than in
+	// 1.55). CBasePlayer::IsDonator compares [this+0xC4] with 0, 3 and 4, and
+	// the "Donator status" alert in ClientCommand prints it. See docs/structs.md.
+	int guess_m_iNew16a;
+
 	//Special stuff for grenades and satchels.
 	float m_flStartThrow;
 	float m_flReleaseThrow;
@@ -503,10 +508,6 @@ public:
 
 	virtual void SendInitMessage( CBasePlayer *player ) {}; // buz - does nothing by default
 
-	// CoF 1.6a: CBaseEntity is 4 bytes larger than in 1.55 (every derived
-	// class shifts by 4). No code reads the new member, so its position after
-	// ammo_groza and its name are unknown. See docs/structs.md.
-	int guess_m_iNew16a;
 };
 
 //LRC- moved here from player.cpp. I'd put it in util.h with its friends, but it needs CBaseEntity to be declared.
@@ -1055,6 +1056,7 @@ public:
 	int player4model;
 	string_t m_sCustomSleeve;
 	string_t m_sCustomFingers;
+	string_t guess_m_sCustomGloves;	// CoF 1.6a: KeyValue "customgloves" stores here (+0xF8)
 
 	CBaseAlias *m_pFirstAlias;
 	cutscenesoundarray cutscene_sound_array[64];

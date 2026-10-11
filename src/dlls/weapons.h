@@ -217,6 +217,7 @@ typedef	enum
 	BULLET_PLAYER_357, // python
 	BULLET_PLAYER_BUCKSHOT, // shotgun
 	BULLET_PLAYER_CROWBAR, // crowbar swipe
+	BULLET_PLAYER_CS,		// CoF (1.55 PDB enum)
 
 	BULLET_MONSTER_9MM,
 	BULLET_MONSTER_MP5,
@@ -237,7 +238,8 @@ typedef	enum
 	BULLET_MONSTER_GLOCK,
 
 	BULLET_TERROR_AK,
-	BULLET_TERROR_RPK
+	BULLET_TERROR_RPK,
+	BULLET_PLAYER_RIFLE,	// CoF (1.55 PDB enum)
 } Bullet;
 
 
@@ -531,7 +533,7 @@ extern void ApplyMultiDamage(entvars_t* pevInflictor, entvars_t* pevAttacker );
 extern void AddMultiDamage( entvars_t *pevInflictor, CBaseEntity *pEntity, float flDamage, int bitsDamageType);
 
 extern void DecalGunshot( TraceResult *pTrace, int iBulletType );
-extern void SpawnBlood(Vector vecSpot, int bloodColor, float flDamage);
+extern void SpawnBlood(Vector vecSpot, int bloodColor, float flDamage, Vector velocity);
 extern int DamageDecal( CBaseEntity *pEntity, int bitsDamageType );
 extern void RadiusDamage( Vector vecSrc, entvars_t *pevInflictor, entvars_t *pevAttacker, float flDamage, float flRadius, int iClassIgnore, int bitsDamageType );
 
