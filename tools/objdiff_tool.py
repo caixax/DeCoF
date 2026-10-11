@@ -6,7 +6,10 @@
       for every function below 100%: where both sides have a relocation on
       the same aligned instruction and the retail side points at an unnamed
       symbol (DAT_/FUN_/LAB_ + address), take the name of our side as the
-      name of that retail address. Prints the proposals; with --write they
+      name of that retail address. String literals and float constants are
+      accepted from functions at 80% or more after their value is checked
+      against the retail bytes; every other name needs a function at 95% or
+      more. The evidence column says which kind it is. Prints the proposals; with --write they
       are added to tools/symbols/<dll>_auto.csv (merged into the symbol map
       by tools/map_names.py and used by the next delink).
 
@@ -154,7 +157,7 @@ def mnemonic(ins):
     return None
 
 
-def harvest(units, write, min_pct=80.0):
+def harvest(units, write, min_pct=80.0, strict_pct=95.0):
     found = {}
     conflicts = set()
     for unit, symbol, pct in report_functions(units):
@@ -189,12 +192,19 @@ def harvest(units, write, min_pct=80.0):
             if not constant_ok(key[0], va, nb):
                 print("value mismatch at %08X for %s in %s (source difference, not a name)" % (va, nb, symbol))
                 continue
+            # string literals and float constants are checked against the
+            # retail bytes above; any other name is code correspondence only,
+            # so it needs a function that is almost fully matched
+            validated = nb.startswith(("??_C@", "__real@", "__xmm@"))
+            if not validated and pct < strict_pct:
+                continue
             prev = found.get(key)
             if prev and prev[0] != nb:
                 print("conflict at %08X: %s vs %s (dropped)" % (va, prev[0], nb))
                 conflicts.add(key)
                 continue
-            found[key] = (nb, kind, "objdiff:%s:%s" % (unit, symbol))
+            found[key] = (nb, kind, "%s:objdiff:%s:%s (%.1f%%)" % (
+                "bytes" if validated else "aligned reference", unit, symbol, pct))
     for key in conflicts:
         found.pop(key, None)
     # one name, several addresses: the layout behind the name changed (for

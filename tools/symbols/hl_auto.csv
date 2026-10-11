@@ -1,173 +1,104 @@
 va,name,kind,evidence
-10001430,?PlayerHasBlockedPlayer@CVoiceGameMgr@@QAE_NPAVCBasePlayer@@0@Z,func,objdiff:hl/dlls/client:?Host_Say@@YAXPAUedict_s@@H@Z
-100017B0,_sscanf,func,objdiff:hl/game_shared/voice_gamemgr:?ClientCommand@CVoiceGameMgr@@QAE_NPAVCBasePlayer@@PBD@Z
-10005EA0,_PM_Friction,func,objdiff:hl/pm_shared/pm_shared:_PM_PlayerMove
-10006E30,_PM_MapTextureTypeStepType,func,objdiff:hl/pm_shared/pm_shared:_PM_CheckFalling
-100089F0,_PM_PlayWaterSounds,func,objdiff:hl/pm_shared/pm_shared:_PM_PlayerMove
-10008E48,$LN45,label,objdiff:hl/pm_shared/pm_shared:_PM_PlayerMove
-10008E60,$LN44,label,objdiff:hl/pm_shared/pm_shared:_PM_PlayerMove
-100094D0,_PM_SplineFraction,func,objdiff:hl/pm_shared/pm_shared:_PM_Duck
-1000AB70,?FScheduleValid@CBaseMonster@@QAEHXZ,func,objdiff:hl/dlls/ai_basenpc_schedule:?MaintainSchedule@CBaseMonster@@QAEXXZ
-1000AFBC,$LN118,label,objdiff:hl/dlls/ai_basenpc_schedule:?GetSchedule@CBaseMonster@@UAEPAUSchedule_t@@XZ
-1000AFE0,?GetTask@CBaseMonster@@QAEPAUTask_t@@XZ,func,objdiff:hl/dlls/monsters:?ReportAIState@CBaseMonster@@UAEXXZ
-1000B000,?IScheduleFlags@CBaseMonster@@QAEHXZ,func,objdiff:hl/dlls/monsterstate:?GetIdealState@CBaseMonster@@UAE?AW4MONSTERSTATE@@XZ
-1000BBF0,?SetTurnActivity@CBaseMonster@@QAEXXZ,func,objdiff:hl/dlls/ai_basenpc_schedule:?StartTask@CBaseMonster@@UAEXPAUTask_t@@@Z
-1000D09C,$LN771,label,objdiff:hl/dlls/ai_basenpc_schedule:?StartTask@CBaseMonster@@UAEXPAUTask_t@@@Z
-1000D20C,$LN772,label,objdiff:hl/dlls/ai_basenpc_schedule:?StartTask@CBaseMonster@@UAEXPAUTask_t@@@Z
-1000E7C0,?GetAttachment@CBaseAnimating@@QAEXHAAVVector@@0@Z,func,objdiff:hl/dlls/locus:?CalcVelocity@CCalcSubVelocity@@UAE?AVVector@@PAVCBaseEntity@@@Z
-1000E850,?GetBonePosition@CBaseAnimating@@QAEXHAAVVector@@0@Z,func,objdiff:hl/dlls/scripted:?CineCleanup@CBaseMonster@@QAEHXZ
-1000E8D0,?InitBoneControllers@CBaseAnimating@@QAEXXZ,func,objdiff:hl/dlls/monsters:?MonsterInitDead@CBaseMonster@@UAEXXZ
-1000E950,?LookupActivity@CBaseAnimating@@QAEHH@Z,func,objdiff:hl/dlls/monsters:?SetActivity@CBaseMonster@@UAEXW4Activity@@@Z
-1000E9E0,?ResetSequenceInfo@CBaseAnimating@@QAEXXZ,func,objdiff:hl/dlls/scripted:?Spawn@CFurniture@@UAEXXZ
-1000EB70,?SetBoneController@CBaseAnimating@@QAEMHM@Z,func,objdiff:hl/dlls/triggers:?SetBoneController@CEnvCustomize@@QAEXMHPAVCBaseEntity@@@Z
-1000EDA0,?StudioFrameAdvance@CBaseAnimating@@QAEMM@Z,func,objdiff:hl/dlls/h_cycler:?Think@CWreckage@@EAEXXZ
-1000F020,?GetAnimationEvent@@YAHPAXPAUentvars_s@@PAUMonsterEvent_t@@MMH@Z,func,objdiff:hl/dlls/animating:?DispatchAnimEvents@CBaseAnimating@@QAEXM@Z
-1000F290,?GetSequenceInfo@@YAXPAXPAUentvars_s@@PAM2@Z,func,objdiff:hl/dlls/h_cycler:?SecondaryAttack@CWeaponCycler@@UAEXXZ
-10010CAC,$LN21,label,objdiff:hl/dlls/bmodels:?Precache@CFuncRotating@@UAEXXZ
-10012A80,?ButtonActivate@CBaseButton@@QAEXXZ,func,objdiff:hl/dlls/buttons:?ButtonTouch@CBaseButton@@QAEXPAVCBaseEntity@@@Z
-10012D00,?ButtonResponseToTouch@CBaseButton@@QAE?AW4BUTTON_CODE@1@XZ,func,objdiff:hl/dlls/buttons:?ButtonTouch@CBaseButton@@QAEXPAVCBaseEntity@@@Z
-1001345C,$LN31,label,objdiff:hl/dlls/buttons:?DoSpark@@YAXPAUentvars_s@@ABVVector@@@Z
-100164A0,$LN36,label,objdiff:hl/dlls/buttons:?Use@CEnvState@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z
-10017740,??4EHANDLE@@QAEPAVCBaseEntity@@PAV1@@Z,func,objdiff:hl/dlls/triggers:?FadeThink@CRenderFxFader@@QAEXXZ
-10017780,??BEHANDLE@@QAEHXZ,func,objdiff:hl/dlls/triggers:?Think@CMotionThread@@UAEXXZ
-10017790,??BEHANDLE@@QAEPAVCBaseEntity@@XZ,func,objdiff:hl/dlls/triggers:?Think@CMotionThread@@UAEXXZ
-100177A0,??CEHANDLE@@QAEPAVCBaseEntity@@XZ,func,objdiff:hl/dlls/triggers:?Think@CMotionThread@@UAEXXZ
-10018350,?ShouldToggle@CBaseEntity@@QAEHW4USE_TYPE@@@Z,func,objdiff:hl/dlls/subs:?Use@CInfoMoveWith@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z
-1008AC80,?Spawn@CGib@@QAEXPBD@Z,func,objdiff:hl/dlls/effects:?CreateGib@CEnvShooter@@EAEPAVCBaseEntity@@VVector@@0@Z
-1008E010,?PlayLockSounds@@YAXPAUentvars_s@@PAUlocksounds@@HH@Z,func,objdiff:hl/dlls/doors:?Use@CBaseDoor@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z
-1008E95C,$LN54,label,objdiff:hl/dlls/doors:?Precache@CBaseDoor@@UAEXXZ
-1008E988,$LN55,label,objdiff:hl/dlls/doors:?Precache@CBaseDoor@@UAEXXZ
-1008E9AC,$LN56,label,objdiff:hl/dlls/doors:?Precache@CBaseDoor@@UAEXXZ
-1008E9D0,$LN57,label,objdiff:hl/dlls/doors:?Precache@CBaseDoor@@UAEXXZ
-1008EAE4,$LN15,label,objdiff:hl/dlls/doors:?Precache@CMomentaryDoor@@UAEXXZ
-100926A0,?BeamCreate@CBeam@@SAPAV1@PBDH@Z,func,objdiff:hl/dlls/locus:?Use@CLocusBeam@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z
-10093E2C,$LN29,label,objdiff:hl/dlls/effects:?CreateGib@CEnvShooter@@EAEPAVCBaseEntity@@VVector@@0@Z
-10094640,?EntsInit@CBeam@@QAEXHH@Z,func,objdiff:hl/dlls/locus:?Use@CLocusBeam@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z
-100974E4,$LN43,label,objdiff:hl/dlls/effects:?KeyValue@CEnvShooter@@EAEXPAUKeyValueData_s@@@Z
-10098980,?PasteDecal@CStaticDecal@@QAEHHPAVCBasePlayer@@@Z,func,objdiff:hl/dlls/effects:?SendInitMessage@CStaticDecal@@UAEXPAVCBasePlayer@@@Z
-10098B90,?PointEntInit@CBeam@@QAEXABVVector@@H@Z,func,objdiff:hl/dlls/locus:?Use@CLocusBeam@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z
-10098BF0,?PointsInit@CBeam@@QAEXABVVector@@0@Z,func,objdiff:hl/dlls/locus:?Use@CLocusBeam@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z
-100998E0,?PrecacheNoise@CEnvFootsteps@@QAEXPBD@Z,func,objdiff:hl/dlls/effects:?Precache@CEnvFootsteps@@UAEXXZ
-1009A090,?RandomTargetname@CBeam@@QAEPAVCBaseEntity@@PBD@Z,func,objdiff:hl/dlls/effects:?StrikeThink@CLaser@@QAEXXZ
-1009A0E0,?RelinkBeam@CBeam@@QAEXXZ,func,objdiff:hl/dlls/effects:?BeamDamage@CBeam@@QAEXPAUTraceResult@@@Z
-1009B650,?SendData@CEnvFog@@QAEXVVector@@HHH@Z,func,objdiff:hl/dlls/effects:?TurnOn@CEnvFog@@QAEXXZ
-1009F400,?SpriteCreate@CSprite@@SAPAV1@PBDABVVector@@H@Z,func,objdiff:hl/dlls/effects:?Use@CEnvWarpBall@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z
-100A1304,$LN61,label,objdiff:hl/dlls/effects:?Think@CEnvRain@@UAEXXZ
-100A1B20,?TurnOn@CSprite@@QAEXXZ,func,objdiff:hl/dlls/effects:?Use@CSprite@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z
-100A89A8,$LN54,label,objdiff:hl/dlls/effects:?Use@CEnvDecal@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z
-100ACB30,$LN84,label,objdiff:hl/dlls/func_break:?Die@CBreakable@@QAEXXZ
-100AD580,$LN15,label,objdiff:hl/dlls/func_break:?Precache@CBreakable@@UAEXXZ
-100B3920,?Die@CLegacyCineMonster@@QAEXXZ,func,objdiff:hl/dlls/h_cine:?CineThink@CLegacyCineMonster@@QAEXXZ
-100B5DD8,$LN14,label,objdiff:hl/dlls/items:?Spawn@CWorldItem@@UAEXXZ
-100B6B94,$LN26,label,objdiff:hl/dlls/lights:?GetStdLightStyle@@YAHH@Z
-100B74D0,?SetCorrectStyle@CLight@@QAEXXZ,func,objdiff:hl/dlls/lights:?WaitThink@CLightFader@@QAEXXZ
-100B7A2C,$LN13,label,objdiff:hl/dlls/lights:?Use@CLight@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z
-100B875C,$LN81,label,objdiff:hl/dlls/locus:?CalcPosition@CCalcPosition@@UAE?AVVector@@PAVCBaseEntity@@@Z
-100B8B24,$LN26,label,objdiff:hl/dlls/locus:?CalcVelocity@CCalcSubVelocity@@UAE?AVVector@@PAVCBaseEntity@@@Z
-100B8E40,$LN54,label,objdiff:hl/dlls/locus:?CalcVelocity@CCalcVelocityPath@@UAE?AVVector@@PAVCBaseEntity@@@Z
-100B9DE8,$LN48,label,objdiff:hl/dlls/locus:?Use@CLocusBeam@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z
-100BC070,?TryMakeMonster@CMonsterMaker@@QAEXXZ,func,objdiff:hl/dlls/monstermaker:?MakerThink@CMonsterMaker@@QAEXXZ
-100BD9F0,?Eat@CBaseMonster@@QAEXM@Z,func,objdiff:hl/dlls/ai_basenpc_schedule:?StartTask@CBaseMonster@@UAEXPAUTask_t@@@Z
-100BDBE4,$LN37,label,objdiff:hl/dlls/monsters:?FCheckAITrigger@CBaseMonster@@QAEHXZ
-100BDF30,?FRouteClear@CBaseMonster@@QAEHXZ,func,objdiff:hl/dlls/ai_basenpc_schedule:?StartTask@CBaseMonster@@UAEXPAUTask_t@@@Z
-100BE5B0,?FacingIdeal@CBaseMonster@@QAEHXZ,func,objdiff:hl/dlls/ai_basenpc_schedule:?GetSchedule@CBaseMonster@@UAEPAUSchedule_t@@XZ
-100C00F0,?MakeIdealYaw@CBaseMonster@@QAEXVVector@@@Z,func,objdiff:hl/dlls/talkmonster:?RunTask@CTalkMonster@@UAEXPAUTask_t@@@Z
-100C1120,?MoveToTarget@CBaseMonster@@QAEHW4Activity@@M@Z,func,objdiff:hl/dlls/ai_basenpc_schedule:?StartTask@CBaseMonster@@UAEXPAUTask_t@@@Z
-100C1670,?PushEnemy@CBaseMonster@@QAEXPAVCBaseEntity@@AAVVector@@@Z,func,objdiff:hl/dlls/squadmonster:?SquadMakeEnemy@CSquadMonster@@QAEXPAVCBaseEntity@@@Z
-100C1A70,?RouteClear@CBaseMonster@@QAEXXZ,func,objdiff:hl/dlls/talkmonster:?StopFollowing@CTalkMonster@@UAEXHH@Z
-100C26F0,?TaskIsRunning@CBaseMonster@@QAEHXZ,func,objdiff:hl/dlls/ai_basenpc_schedule:?MaintainSchedule@CBaseMonster@@QAEXXZ
-100C294C,$LN36,label,objdiff:hl/dlls/monsterstate:?GetIdealState@CBaseMonster@@UAE?AW4MONSTERSTATE@@XZ
-100C2A70,?SetState@CBaseMonster@@QAEXW4MONSTERSTATE@@@Z,func,objdiff:hl/dlls/scripted:?CineCleanup@CBaseMonster@@QAEHXZ
-100C4850,?UTIL_DesiredThink@@YAXPAVCBaseEntity@@@Z,func,objdiff:hl/dlls/triggers:?Spawn@CMultiManager@@UAEXXZ
-100CA6E0,??0CQueuePriority@@QAE@XZ,func,objdiff:hl/dlls/nodes:?FindShortestPath@CGraph@@QAEHPAHHHHH@Z
-100CA700,?AddNode@CNodeViewer@@QAEXHH@Z,func,objdiff:hl/dlls/nodes:?Spawn@CNodeViewer@@UAEXXZ
-100CB72C,$LN215,label,objdiff:hl/dlls/nodes:?BuildNodeGraph@CTestHull@@QAEXXZ
-100CD980,$LN82,label,objdiff:hl/dlls/nodes:?FindShortestPath@CGraph@@QAEHPAHHHHH@Z
-100CDE50,?HullIndex@CGraph@@QAEHPBVCBaseEntity@@@Z,func,objdiff:hl/dlls/monsters:?FindCover@CBaseMonster@@UAEHVVector@@0MM@Z
-100D0624,$LN47,label,objdiff:hl/dlls/paranoia_wpn:?GetConeVectorForAngle@@YA?AVVector@@H@Z
-100D1F00,?GetNext@CPathTrack@@QAEPAV1@XZ,func,objdiff:hl/dlls/plats:?Use@CFuncTrackAuto@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z
-100D1F30,?GetPrevious@CPathTrack@@QAEPAV1@XZ,func,objdiff:hl/dlls/plats:?DesiredAction@CFuncTrackTrain@@UAEXXZ
-100D2BA0,?ValidPath@CPathTrack@@QAEPAV1@PAV1@H@Z,func,objdiff:hl/dlls/plats:?DeadEnd@CFuncTrackTrain@@QAEXXZ
-100D2BF0,??0CPlane@@QAE@XZ,func,objdiff:hl/dlls/squadmonster:?NoFriendlyFire@CSquadMonster@@QAEHH@Z
-100D305C,??_9CFuncPlat@@$BBCE@AE,func,objdiff:hl/dlls/plats:?Blocked@CFuncPlat@@UAEXPAVCBaseEntity@@@Z
-100D3064,??_9CFuncPlat@@$BBCI@AE,func,objdiff:hl/dlls/plats:?Blocked@CFuncPlat@@UAEXPAVCBaseEntity@@@Z
-100D4394,$LN133,label,objdiff:hl/dlls/plats:?DesiredAction@CFuncTrackTrain@@UAEXXZ
-100D43F0,?EvaluateTrain@CFuncTrackChange@@QAE?AW4TRAIN_CODE@@PAVCPathTrack@@@Z,func,objdiff:hl/dlls/plats:?Use@CFuncTrackChange@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z
-100D4A40,?FixupAngles@@YAXAAVVector@@@Z,func,objdiff:hl/dlls/plats:?Next@CFuncTrain@@QAEXXZ
-100D6810,?NextThink@CFuncTrackTrain@@QAEXMH@Z,func,objdiff:hl/dlls/plats:?DesiredAction@CFuncTrackTrain@@UAEXXZ
-100D7258,$LN20,label,objdiff:hl/dlls/plats:?Precache@CFuncTrackTrain@@UAEXXZ
-100D8370,?StartSequence@CFuncTrackTrain@@QAEXPAVCTrainSequence@@@Z,func,objdiff:hl/dlls/plats:?Use@CTrainSequence@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z
-100D8390,?StartSequence@CFuncTrain@@QAEXPAVCTrainSequence@@@Z,func,objdiff:hl/dlls/plats:?Use@CTrainSequence@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z
-100D9A88,$LN116,label,objdiff:hl/dlls/plats:?Use@CTrainSequence@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z
-100DFEA0,?GetAutoaimVector@CBasePlayer@@QAE?AVVector@@M@Z,func,objdiff:hl/dlls/cof_glock:?PrimaryAttack@CGlock@@UAEXXZ
-100EA590,?PlayerSetGoalDesc@CBasePlayer@@QAEXHHH@Z,func,objdiff:hl/dlls/triggers:?Use@CTriggerGoal@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z
-100F1440,?ResetAutoaim@CBasePlayer@@QAEXXZ,func,objdiff:hl/dlls/player:?RemovePlayerItem@CBasePlayer@@UAEHPAVCBasePlayerItem@@@Z
-100F5A80,?StartObserver@CBasePlayer@@QAEXVVector@@0@Z,func,objdiff:hl/dlls/player:?StartDeathCam@CBasePlayer@@QAEXXZ
-100F5DA0,?guess_HasJustJumped@CBasePlayer@@QAE_NXZ,func,objdiff:hl/dlls/cof_glock:?ItemPostFrame@CGlock@@UAEXXZ
-100F5E50,?SwitchWeapon@CBasePlayer@@QAEHPAVCBasePlayerItem@@@Z,func,objdiff:hl/dlls/singleplay_gamerules:?GetNextBestWeapon@CHalfLifeRules@@UAEHPAVCBasePlayer@@PAVCBasePlayerItem@@@Z
-100F91B0,?ViewPunch@CBasePlayer@@QAEXMMM@Z,func,objdiff:hl/dlls/cof_glock:?PrimaryAttack@CGlock@@UAEXXZ
-100FB958,$LN33,label,objdiff:hl/dlls/scripted:?PossessEntity@CCineMonster@@UAEXXZ
-100FB964,$LN32,label,objdiff:hl/dlls/scripted:?PossessEntity@CCineMonster@@UAEXXZ
-100FCCC0,?InitModulationParms@CAmbientGeneric@@QAEXXZ,func,objdiff:hl/dlls/sound:?ToggleUse@CAmbientGeneric@@QAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z
-100FECC4,$LN23,label,objdiff:hl/dlls/sound:?SpeakerThink@CSpeaker@@QAEXXZ
-10100560,?ActiveList@CSoundEnt@@SAHXZ,func,objdiff:hl/dlls/monsters:?Listen@CBaseMonster@@QAEXXZ
-101005E0,?FIsScent@CSound@@QAEHXZ,func,objdiff:hl/dlls/monsters:?PBestScent@CBaseMonster@@UAEPAVCSound@@XZ
-101005F0,?FIsSound@CSound@@QAEHXZ,func,objdiff:hl/dlls/monsters:?PBestSound@CBaseMonster@@UAEPAVCSound@@XZ
-101011E0,?SquadAdd@CSquadMonster@@QAEHPAV1@@Z,func,objdiff:hl/dlls/squadmonster:?SquadRecruit@CSquadMonster@@QAEHHH@Z
-10101B50,?AngularMove@CBaseToggle@@QAEXVVector@@M@Z,func,objdiff:hl/dlls/doors:?DoorGoUp@CBaseDoor@@QAEXXZ
-10101E00,?AxisDir@CBaseToggle@@SAXPAUentvars_s@@@Z,func,objdiff:hl/dlls/plats:?SetupRotation@CFuncPlatRot@@QAEXXZ
-101025C0,?LinearMove@CBaseToggle@@QAEXVVector@@M@Z,func,objdiff:hl/dlls/plats:?Next@CGunTarget@@QAEXXZ
-10104110,?FIdleHello@CTalkMonster@@QAEHXZ,func,objdiff:hl/dlls/talkmonster:?RunTask@CTalkMonster@@UAEXPAUTask_t@@@Z
-101041F0,?FIdleSpeak@CTalkMonster@@QAEHXZ,func,objdiff:hl/dlls/talkmonster:?RunTask@CTalkMonster@@UAEXPAUTask_t@@@Z
-10104540,?FIdleStare@CTalkMonster@@QAEHXZ,func,objdiff:hl/dlls/talkmonster:?StartTask@CTalkMonster@@UAEXPAUTask_t@@@Z
-10104E20,?IdleHeadTurn@CTalkMonster@@QAEXAAVVector@@@Z,func,objdiff:hl/dlls/talkmonster:?RunTask@CTalkMonster@@UAEXPAUTask_t@@@Z
-10104EC0,?IdleRespond@CTalkMonster@@QAEXXZ,func,objdiff:hl/dlls/talkmonster:?StartTask@CTalkMonster@@UAEXPAUTask_t@@@Z
-10104F50,?IsTalking@CTalkMonster@@QAEHXZ,func,objdiff:hl/dlls/talkmonster:?RunTask@CTalkMonster@@UAEXPAUTask_t@@@Z
-101057C4,$LN112,label,objdiff:hl/dlls/talkmonster:?RunTask@CTalkMonster@@UAEXPAUTask_t@@@Z
-101057DC,$LN111,label,objdiff:hl/dlls/talkmonster:?RunTask@CTalkMonster@@UAEXPAUTask_t@@@Z
-10105D64,$LN127,label,objdiff:hl/dlls/talkmonster:?StartTask@CTalkMonster@@UAEXPAUTask_t@@@Z
-10105D9C,$LN126,label,objdiff:hl/dlls/talkmonster:?StartTask@CTalkMonster@@UAEXPAUTask_t@@@Z
-10107890,??$GetClassPtr@VCFireAndDie@@@@YAPAVCFireAndDie@@PAV0@@Z,func,objdiff:hl/dlls/triggers:?ChangeLevelNow@CChangeLevel@@QAEXPAVCBaseEntity@@@Z
-10108D80,?Add@CInOutRegister@@QAEPAV1@PAVCBaseEntity@@@Z,func,objdiff:hl/dlls/triggers:?Touch@CTriggerInOut@@UAEXPAVCBaseEntity@@@Z
-1010F070,?Prune@CInOutRegister@@QAEPAV1@XZ,func,objdiff:hl/dlls/triggers:?Think@CTriggerInOut@@UAEXXZ
-1010F330,?ReportSuccess@CStartRush@@QAEXPAVCBaseEntity@@@Z,func,objdiff:hl/dlls/ai_basenpc_schedule:?StartTask@CBaseMonster@@UAEXPAUTask_t@@@Z
-101164D0,?EntityIndex@CSaveRestoreBuffer@@QAEHH@Z,func,objdiff:hl/dlls/util:?WriteFields@CSave@@QAEHPBD0PAXPAUTYPEDESCRIPTION@@H@Z
-10116530,?EntityIndex@CSaveRestoreBuffer@@QAEHPAUentvars_s@@@Z,func,objdiff:hl/dlls/util:?WriteFields@CSave@@QAEHPBD0PAXPAUTYPEDESCRIPTION@@H@Z
-10116550,?EntityIndex@CSaveRestoreBuffer@@QAEHPAVCBaseEntity@@@Z,func,objdiff:hl/dlls/util:?WriteFields@CSave@@QAEHPBD0PAXPAUTYPEDESCRIPTION@@H@Z
-10116A30,?PRECACHE_SOUND@@YAHPAD@Z,func,objdiff:hl/dlls/util:?ReadField@CRestore@@QAEHPAXPAUTYPEDESCRIPTION@@HHHPAD0@Z
-10116A40,?guess_UTIL_PlayWeaponSound@@YAXPBDH_NVVector@@PAVCBaseEntity@@1@Z,func,objdiff:hl/dlls/cof_glock:?PrimaryAttack@CGlock@@UAEXXZ
-10116FC0,$LN98,label,objdiff:hl/dlls/util:?ReadField@CRestore@@QAEHPAXPAUTYPEDESCRIPTION@@HHHPAD0@Z
-10118390,?UTIL_EntitiesInBox@@YAHPAPAVCBaseEntity@@HABVVector@@1H@Z,func,objdiff:hl/dlls/triggers:?DamageThink@CGasArea@@QAEXXZ
-101185C0,?UTIL_FindEntityGeneric@@YAPAVCBaseEntity@@PBDAAVVector@@M@Z,func,objdiff:hl/dlls/scripted:?StartSentence@CScriptedSentence@@QAEHPAVCBaseMonster@@@Z
-10118780,?UTIL_FollowAliasReference@@YAPAVCBaseEntity@@PAV1@PBD@Z,func,objdiff:hl/dlls/util:?UTIL_FollowReference@@YAPAVCBaseEntity@@PAV1@PBD@Z
-10119B50,?UTIL_SayText@@YAXPBDPAVCBaseEntity@@@Z,func,objdiff:hl/dlls/teamplay_gamerules:?InitHUD@CHalfLifeTeamplay@@UAEXPAVCBasePlayer@@@Z
-10119BB0,?UTIL_SayTextAll@@YAXPBDPAVCBaseEntity@@@Z,func,objdiff:hl/dlls/teamplay_gamerules:?ClientUserInfoChanged@CHalfLifeTeamplay@@UAEXPAVCBasePlayer@@PAD@Z
-10119C00,?UTIL_ScreenFade@@YAXPAVCBaseEntity@@ABVVector@@MMHH@Z,func,objdiff:hl/dlls/effects:?Use@CFade@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z
-10119C50,?UTIL_ScreenFadeAll@@YAXABVVector@@MMHH@Z,func,objdiff:hl/dlls/player:?Use@CRevertSaved@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z
-1011A180,?UTIL_ShowMessage@@YAXPBDPAVCBaseEntity@@@Z,func,objdiff:hl/dlls/triggers:?ActivateMultiTrigger@CTriggerMultiple@@QAEXPAVCBaseEntity@@@Z
-1011A1D0,?UTIL_ShowMessageAll@@YAXPBD@Z,func,objdiff:hl/dlls/effects:?Use@CMessage@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z
-1011A220,?UTIL_ShowMessagePVS@@YAXPBDABVVector@@@Z,func,objdiff:hl/dlls/sound:?EMIT_SOUND_DYN@@YAXPAUedict_s@@HPBDMMHH@Z
-1011AB30,?UTIL_dtos1@@YAPADH@Z,func,objdiff:hl/dlls/multiplay_gamerules:?GoToIntermission@CHalfLifeMultiplay@@MAEXXZ
-1011AD60,?WriteData@CSave@@QAEXPBDH0@Z,func,objdiff:hl/dlls/util:?WriteFields@CSave@@QAEHPBD0PAXPAUTYPEDESCRIPTION@@H@Z
-1011B0AC,$LN49,label,objdiff:hl/dlls/util:?WriteFields@CSave@@QAEHPBD0PAXPAUTYPEDESCRIPTION@@H@Z
-1011B0F4,$LN50,label,objdiff:hl/dlls/util:?WriteFields@CSave@@QAEHPBD0PAXPAUTYPEDESCRIPTION@@H@Z
-1011B110,?WriteFloat@CSave@@QAEXPBDPBMH@Z,func,objdiff:hl/dlls/util:?WriteFields@CSave@@QAEHPBD0PAXPAUTYPEDESCRIPTION@@H@Z
-1011B190,?WriteInt@CSave@@QAEXPBDPBHH@Z,func,objdiff:hl/dlls/util:?WriteFields@CSave@@QAEHPBD0PAXPAUTYPEDESCRIPTION@@H@Z
-1011B220,?WritePositionVector@CSave@@QAEXPBDPBMH@Z,func,objdiff:hl/dlls/util:?WriteFields@CSave@@QAEHPBD0PAXPAUTYPEDESCRIPTION@@H@Z
-1011B320,?WriteString@CSave@@QAEXPBDPBHH@Z,func,objdiff:hl/dlls/util:?WriteFields@CSave@@QAEHPBD0PAXPAUTYPEDESCRIPTION@@H@Z
-1011B3C0,?WriteTime@CSave@@QAEXPBDPBMH@Z,func,objdiff:hl/dlls/util:?WriteFields@CSave@@QAEHPBD0PAXPAUTYPEDESCRIPTION@@H@Z
-1011B440,?WriteVector@CSave@@QAEXPBDPBMH@Z,func,objdiff:hl/dlls/util:?WriteFields@CSave@@QAEHPBD0PAXPAUTYPEDESCRIPTION@@H@Z
-1011C040,?CheckRespawn@CBasePlayerItem@@QAEXXZ,func,objdiff:hl/dlls/player:?AddPlayerItem@CBasePlayer@@UAEHPAVCBasePlayerItem@@@Z
-1011C560,?DefaultReload@CBasePlayerWeapon@@QAEHHHMH_N@Z,func,objdiff:hl/dlls/cof_glock:?Reload@CGlock@@UAEXXZ
-1013E080,__ftol2,func,objdiff:hl/dlls/plats:?KeyValue@CBasePlatTrain@@UAEXPAUKeyValueData_s@@@Z
-1016B5E0,__libm_sse2_acos_precise,func,objdiff:hl/dlls/util:?UTIL_AxisRotationToAngles@@YA?AVVector@@ABV1@M@Z
-1016BCC0,__libm_sse2_sin_precise,func,objdiff:hl/dlls/animating:?SetSequenceBox@CBaseAnimating@@QAEXXZ
-10171536,_calloc,func,objdiff:hl/dlls/nodes:?BuildRegionTables@CGraph@@QAEXXZ
-10171670,__CIfmod,func,objdiff:hl/dlls/effects:?Animate@CSprite@@QAEXM@Z
-10174F70,__libm_sse2_asin_precise,func,objdiff:hl/dlls/util:?UTIL_AxisRotationToAngles@@YA?AVVector@@ABV1@M@Z
-1019D1DB,__ehhandler$?DispatchRestore@@YAHPAUedict_s@@PAUsaverestore_s@@H@Z,func,objdiff:hl/dlls/cbase:?DispatchRestore@@YAHPAUedict_s@@PAUsaverestore_s@@H@Z
-1019E170,__ehhandler$??1UTIL_GroupTrace@@QAE@XZ,func,objdiff:hl/dlls/util:??1UTIL_GroupTrace@@QAE@XZ
-101A100C,__imp__CreateDirectoryA@8,data,objdiff:hl/dlls/nodes:?BuildNodeGraph@CTestHull@@QAEXXZ
+100017B0,_sscanf,func,"aligned reference, confirmed by hl/dlls/lights:?KeyValue@CEnvLight@@UAEXPAUKeyValueData_s@@@Z (95% or more)"
+1000AB70,?FScheduleValid@CBaseMonster@@QAEHXZ,func,"aligned reference, confirmed by hl/dlls/ai_basenpc_schedule:?MaintainSchedule@CBaseMonster@@QAEXXZ (95% or more)"
+1000AFE0,?GetTask@CBaseMonster@@QAEPAUTask_t@@XZ,func,"aligned reference, confirmed by hl/dlls/ai_basenpc_schedule:?MaintainSchedule@CBaseMonster@@QAEXXZ (95% or more)"
+1000B000,?IScheduleFlags@CBaseMonster@@QAEHXZ,func,"aligned reference, confirmed by hl/dlls/squadmonster:?GetIdealState@CSquadMonster@@UAE?AW4MONSTERSTATE@@XZ (95% or more)"
+1000E7C0,?GetAttachment@CBaseAnimating@@QAEXHAAVVector@@0@Z,func,"aligned reference, confirmed by hl/dlls/locus:?CalcPosition@CCalcPosition@@UAE?AVVector@@PAVCBaseEntity@@@Z (95% or more)"
+1000E850,?GetBonePosition@CBaseAnimating@@QAEXHAAVVector@@0@Z,func,"aligned reference, confirmed by hl/dlls/scripted:?CineCleanup@CBaseMonster@@QAEHXZ (95% or more)"
+1000E8D0,?InitBoneControllers@CBaseAnimating@@QAEXXZ,func,"aligned reference, confirmed by hl/dlls/h_cycler:?Spawn@CCycler@@UAEXXZ (95% or more)"
+1000E950,?LookupActivity@CBaseAnimating@@QAEHH@Z,func,"aligned reference, confirmed by hl/dlls/genericmonster:?Spawn@CDeadGenericMonster@@UAEXXZ (95% or more)"
+1000E9E0,?ResetSequenceInfo@CBaseAnimating@@QAEXXZ,func,"aligned reference, confirmed by hl/dlls/effects:?SetSequence@CEnvModel@@AAEXXZ (95% or more)"
+1000EB70,?SetBoneController@CBaseAnimating@@QAEMHM@Z,func,"aligned reference, confirmed by hl/dlls/monsters:?ChangeYaw@CBaseMonster@@UAEMH@Z (95% or more)"
+1000EDA0,?StudioFrameAdvance@CBaseAnimating@@QAEMM@Z,func,"aligned reference, confirmed by hl/dlls/h_cine:?CineThink@CLegacyCineMonster@@QAEXXZ (95% or more)"
+1000F020,?GetAnimationEvent@@YAHPAXPAUentvars_s@@PAUMonsterEvent_t@@MMH@Z,func,"aligned reference, confirmed by hl/dlls/animating:?DispatchAnimEvents@CBaseAnimating@@QAEXM@Z (95% or more)"
+1000F290,?GetSequenceInfo@@YAXPAXPAUentvars_s@@PAM2@Z,func,"aligned reference, confirmed by hl/dlls/h_cycler:?SecondaryAttack@CWeaponCycler@@UAEXXZ (95% or more)"
+10012A80,?ButtonActivate@CBaseButton@@QAEXXZ,func,"aligned reference, confirmed by hl/dlls/buttons:?ButtonTouch@CBaseButton@@QAEXPAVCBaseEntity@@@Z (95% or more)"
+10012D00,?ButtonResponseToTouch@CBaseButton@@QAE?AW4BUTTON_CODE@1@XZ,func,"aligned reference, confirmed by hl/dlls/buttons:?ButtonTouch@CBaseButton@@QAEXPAVCBaseEntity@@@Z (95% or more)"
+100164A0,$LN36,label,"aligned reference, confirmed by hl/dlls/buttons:?Use@CEnvState@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z (95% or more)"
+10017740,??4EHANDLE@@QAEPAVCBaseEntity@@PAV1@@Z,func,"aligned reference, confirmed by hl/dlls/buttons:?ButtonTouch@CBaseButton@@QAEXPAVCBaseEntity@@@Z (95% or more)"
+10017780,??BEHANDLE@@QAEHXZ,func,"aligned reference, confirmed by hl/dlls/ai_basenpc_schedule:?MaintainSchedule@CBaseMonster@@QAEXXZ (95% or more)"
+10017790,??BEHANDLE@@QAEPAVCBaseEntity@@XZ,func,"aligned reference, confirmed by hl/dlls/buttons:?ButtonBackHome@CBaseButton@@QAEXXZ (95% or more)"
+100177A0,??CEHANDLE@@QAEPAVCBaseEntity@@XZ,func,"aligned reference, confirmed by hl/dlls/doors:?DoorActivate@CBaseDoor@@QAEHXZ (95% or more)"
+10018350,?ShouldToggle@CBaseEntity@@QAEHW4USE_TYPE@@@Z,func,"aligned reference, confirmed by hl/dlls/bmodels:?PendulumUse@CPendulum@@QAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z (95% or more)"
+1008AC80,?Spawn@CGib@@QAEXPBD@Z,func,"aligned reference, confirmed by hl/dlls/effects:?CreateGib@CEnvShooter@@EAEPAVCBaseEntity@@VVector@@0@Z (95% or more)"
+1008E010,?PlayLockSounds@@YAXPAUentvars_s@@PAUlocksounds@@HH@Z,func,"aligned reference, confirmed by hl/dlls/buttons:?ButtonTouch@CBaseButton@@QAEXPAVCBaseEntity@@@Z (95% or more)"
+1008E95C,$LN54,label,"aligned reference, confirmed by hl/dlls/effects:?Use@CEnvDecal@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z (95% or more)"
+100926A0,?BeamCreate@CBeam@@SAPAV1@PBDH@Z,func,"aligned reference, confirmed by hl/dlls/effects:?TestThink@CTestEffect@@QAEXXZ (95% or more)"
+10093E2C,$LN29,label,"aligned reference, confirmed by hl/dlls/effects:?CreateGib@CEnvShooter@@EAEPAVCBaseEntity@@VVector@@0@Z (95% or more)"
+10094640,?EntsInit@CBeam@@QAEXHH@Z,func,"aligned reference, confirmed by hl/dlls/effects:?PostSpawn@CLaser@@UAEXXZ (95% or more)"
+100974E4,$LN43,label,"aligned reference, confirmed by hl/dlls/effects:?KeyValue@CEnvShooter@@EAEXPAUKeyValueData_s@@@Z (95% or more)"
+10098980,?PasteDecal@CStaticDecal@@QAEHHPAVCBasePlayer@@@Z,func,"aligned reference, confirmed by hl/dlls/effects:?SendInitMessage@CStaticDecal@@UAEXPAVCBasePlayer@@@Z (95% or more)"
+10098B90,?PointEntInit@CBeam@@QAEXABVVector@@H@Z,func,"aligned reference, confirmed by hl/dlls/locus:?Use@CLocusBeam@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z (95% or more)"
+10098BF0,?PointsInit@CBeam@@QAEXABVVector@@0@Z,func,"aligned reference, confirmed by hl/dlls/effects:?PostSpawn@CLaser@@UAEXXZ (95% or more)"
+100998E0,?PrecacheNoise@CEnvFootsteps@@QAEXPBD@Z,func,"aligned reference, confirmed by hl/dlls/effects:?Precache@CEnvFootsteps@@UAEXXZ (95% or more)"
+1009A090,?RandomTargetname@CBeam@@QAEPAVCBaseEntity@@PBD@Z,func,"aligned reference, confirmed by hl/dlls/effects:?StrikeThink@CLaser@@QAEXXZ (95% or more)"
+1009A0E0,?RelinkBeam@CBeam@@QAEXXZ,func,"aligned reference, confirmed by hl/dlls/effects:?BeamDamage@CBeam@@QAEXPAUTraceResult@@@Z (95% or more)"
+1009B650,?SendData@CEnvFog@@QAEXVVector@@HHH@Z,func,"aligned reference, confirmed by hl/dlls/effects:?FadeInDone@CEnvFog@@QAEXXZ (95% or more)"
+1009F400,?SpriteCreate@CSprite@@SAPAV1@PBDABVVector@@H@Z,func,"aligned reference, confirmed by hl/dlls/effects:?PostSpawn@CLaser@@UAEXXZ (95% or more)"
+100A1304,$LN61,label,"aligned reference, confirmed by hl/dlls/effects:?Think@CEnvRain@@UAEXXZ (95% or more)"
+100A1B20,?TurnOn@CSprite@@QAEXXZ,func,"aligned reference, confirmed by hl/dlls/effects:?Spawn@CSprite@@UAEXXZ (95% or more)"
+100A89A8,$LN54,label,"aligned reference, confirmed by hl/dlls/effects:?Use@CEnvDecal@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z (95% or more)"
+100ACB30,$LN84,label,"aligned reference, confirmed by hl/dlls/func_break:?Die@CBreakable@@QAEXXZ (95% or more)"
+100B3920,?Die@CLegacyCineMonster@@QAEXXZ,func,"aligned reference, confirmed by hl/dlls/h_cine:?CineThink@CLegacyCineMonster@@QAEXXZ (95% or more)"
+100B74D0,?SetCorrectStyle@CLight@@QAEXXZ,func,"aligned reference, confirmed by hl/dlls/lights:?Think@CLight@@UAEXXZ (95% or more)"
+100B875C,$LN81,label,"aligned reference, confirmed by hl/dlls/locus:?CalcPosition@CCalcPosition@@UAE?AVVector@@PAVCBaseEntity@@@Z (95% or more)"
+100B8E40,$LN54,label,"aligned reference, confirmed by hl/dlls/effects:?Use@CEnvDecal@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z (95% or more)"
+100B9DE8,$LN48,label,"aligned reference, confirmed by hl/dlls/locus:?Use@CLocusBeam@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z (95% or more)"
+100BC070,?TryMakeMonster@CMonsterMaker@@QAEXXZ,func,"aligned reference, confirmed by hl/dlls/monstermaker:?CyclicUse@CMonsterMaker@@QAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z (95% or more)"
+100C1670,?PushEnemy@CBaseMonster@@QAEXPAVCBaseEntity@@AAVVector@@@Z,func,"aligned reference, confirmed by hl/dlls/monsters:?GetEnemy@CBaseMonster@@UAEHXZ (95% or more)"
+100C1A70,?RouteClear@CBaseMonster@@QAEXXZ,func,"aligned reference, confirmed by hl/dlls/monsters:?Restore@CBaseMonster@@UAEHAAVCRestore@@@Z (95% or more)"
+100C26F0,?TaskIsRunning@CBaseMonster@@QAEHXZ,func,"aligned reference, confirmed by hl/dlls/ai_basenpc_schedule:?MaintainSchedule@CBaseMonster@@QAEXXZ (95% or more)"
+100C294C,$LN36,label,"aligned reference, confirmed by hl/dlls/buttons:?Use@CEnvState@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z (95% or more)"
+100C2A70,?SetState@CBaseMonster@@QAEXW4MONSTERSTATE@@@Z,func,"aligned reference, confirmed by hl/dlls/ai_basenpc_schedule:?MaintainSchedule@CBaseMonster@@QAEXXZ (95% or more)"
+100C4850,?UTIL_DesiredThink@@YAXPAVCBaseEntity@@@Z,func,"aligned reference, confirmed by hl/dlls/effects:?Spawn@CEnvBeamTrail@@UAEXXZ (95% or more)"
+100CA6E0,??0CQueuePriority@@QAE@XZ,func,"aligned reference, confirmed by hl/dlls/nodes:?FindShortestPath@CGraph@@QAEHPAHHHHH@Z (95% or more)"
+100CA700,?AddNode@CNodeViewer@@QAEXHH@Z,func,"aligned reference, confirmed by hl/dlls/nodes:?FindNodeConnections@CNodeViewer@@QAEXH@Z (95% or more)"
+100CB72C,$LN215,label,"aligned reference, confirmed by hl/dlls/nodes:?BuildNodeGraph@CTestHull@@QAEXXZ (95% or more)"
+100CD980,$LN82,label,"aligned reference, confirmed by hl/dlls/nodes:?FindShortestPath@CGraph@@QAEHPAHHHHH@Z (95% or more)"
+100CDE50,?HullIndex@CGraph@@QAEHPBVCBaseEntity@@@Z,func,"aligned reference, confirmed by hl/dlls/monsters:?BuildNearestRoute@CBaseMonster@@UAEHVVector@@0MM@Z (95% or more)"
+100D1F00,?GetNext@CPathTrack@@QAEPAV1@XZ,func,"aligned reference, confirmed by hl/dlls/pathcorner:?LookAhead@CPathTrack@@QAEPAV1@PAVVector@@MH@Z (95% or more)"
+100D1F30,?GetPrevious@CPathTrack@@QAEPAV1@XZ,func,"aligned reference, confirmed by hl/dlls/pathcorner:?LookAhead@CPathTrack@@QAEPAV1@PAVVector@@MH@Z (95% or more)"
+100D2BA0,?ValidPath@CPathTrack@@QAEPAV1@PAV1@H@Z,func,"aligned reference, confirmed by hl/dlls/pathcorner:?LookAhead@CPathTrack@@QAEPAV1@PAVVector@@MH@Z (95% or more)"
+100D2BF0,??0CPlane@@QAE@XZ,func,"aligned reference, confirmed by hl/dlls/squadmonster:?NoFriendlyFire@CSquadMonster@@QAEHH@Z (95% or more)"
+100D305C,??_9CFuncPlat@@$BBCE@AE,func,"aligned reference, confirmed by hl/dlls/plats:?Blocked@CFuncPlat@@UAEXPAVCBaseEntity@@@Z (95% or more)"
+100D3064,??_9CFuncPlat@@$BBCI@AE,func,"aligned reference, confirmed by hl/dlls/plats:?Blocked@CFuncPlat@@UAEXPAVCBaseEntity@@@Z (95% or more)"
+100D4394,$LN133,label,"aligned reference, confirmed by hl/dlls/plats:?DesiredAction@CFuncTrackTrain@@UAEXXZ (95% or more)"
+100D43F0,?EvaluateTrain@CFuncTrackChange@@QAE?AW4TRAIN_CODE@@PAVCPathTrack@@@Z,func,"aligned reference, confirmed by hl/dlls/plats:?Use@CFuncTrackAuto@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z (95% or more)"
+100D4A40,?FixupAngles@@YAXAAVVector@@@Z,func,"aligned reference, confirmed by hl/dlls/plats:?DesiredAction@CFuncTrackTrain@@UAEXXZ (95% or more)"
+100D6810,?NextThink@CFuncTrackTrain@@QAEXMH@Z,func,"aligned reference, confirmed by hl/dlls/plats:?DesiredAction@CFuncTrackTrain@@UAEXXZ (95% or more)"
+100D8370,?StartSequence@CFuncTrackTrain@@QAEXPAVCTrainSequence@@@Z,func,"aligned reference, confirmed by hl/dlls/plats:?Use@CTrainSequence@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z (95% or more)"
+100D8390,?StartSequence@CFuncTrain@@QAEXPAVCTrainSequence@@@Z,func,"aligned reference, confirmed by hl/dlls/plats:?Use@CTrainSequence@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z (95% or more)"
+100D9A88,$LN116,label,"aligned reference, confirmed by hl/dlls/plats:?Use@CTrainSequence@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z (95% or more)"
+100DFEA0,?GetAutoaimVector@CBasePlayer@@QAE?AVVector@@M@Z,func,"aligned reference, confirmed by hl/dlls/cof_glock:?PrimaryAttack@CGlock@@UAEXXZ (95% or more)"
+100F5E50,?SwitchWeapon@CBasePlayer@@QAEHPAVCBasePlayerItem@@@Z,func,"aligned reference, confirmed by hl/dlls/singleplay_gamerules:?GetNextBestWeapon@CHalfLifeRules@@UAEHPAVCBasePlayer@@PAVCBasePlayerItem@@@Z (95% or more)"
+100F91B0,?ViewPunch@CBasePlayer@@QAEXMMM@Z,func,"aligned reference, confirmed by hl/dlls/cof_glock:?PrimaryAttack@CGlock@@UAEXXZ (95% or more)"
+100FCCC0,?InitModulationParms@CAmbientGeneric@@QAEXXZ,func,"aligned reference, confirmed by hl/dlls/sound:?Precache@CAmbientGeneric@@UAEXXZ (95% or more)"
+10100560,?ActiveList@CSoundEnt@@SAHXZ,func,"aligned reference, confirmed by hl/dlls/monsters:?Listen@CBaseMonster@@QAEXXZ (95% or more)"
+101005E0,?FIsScent@CSound@@QAEHXZ,func,"aligned reference, confirmed by hl/dlls/monsters:?PBestScent@CBaseMonster@@UAEPAVCSound@@XZ (95% or more)"
+101005F0,?FIsSound@CSound@@QAEHXZ,func,"aligned reference, confirmed by hl/dlls/monsters:?Listen@CBaseMonster@@QAEXXZ (95% or more)"
+101011E0,?SquadAdd@CSquadMonster@@QAEHPAV1@@Z,func,"aligned reference, confirmed by hl/dlls/squadmonster:?SquadRecruit@CSquadMonster@@QAEHHH@Z (95% or more)"
+10101B50,?AngularMove@CBaseToggle@@QAEXVVector@@M@Z,func,"aligned reference, confirmed by hl/dlls/buttons:?ButtonReturn@CBaseButton@@QAEXXZ (95% or more)"
+10101E00,?AxisDir@CBaseToggle@@SAXPAUentvars_s@@@Z,func,"aligned reference, confirmed by hl/dlls/buttons:?Spawn@CMomentaryRotButton@@UAEXXZ (95% or more)"
+101025C0,?LinearMove@CBaseToggle@@QAEXVVector@@M@Z,func,"aligned reference, confirmed by hl/dlls/buttons:?ButtonReturn@CBaseButton@@QAEXXZ (95% or more)"
+10116A30,?PRECACHE_SOUND@@YAHPAD@Z,func,"aligned reference, confirmed by hl/dlls/animation:?SequencePrecache@@YAXPAXPBD@Z (95% or more)"
+10116A40,?guess_UTIL_PlayWeaponSound@@YAXPBDH_NVVector@@PAVCBaseEntity@@1@Z,func,"aligned reference, confirmed by hl/dlls/cof_glock:?PrimaryAttack@CGlock@@UAEXXZ (95% or more)"
+10118390,?UTIL_EntitiesInBox@@YAHPAPAVCBaseEntity@@HABVVector@@1H@Z,func,"aligned reference, confirmed by hl/dlls/func_break:?Die@CBreakable@@QAEXXZ (95% or more)"
+101185C0,?UTIL_FindEntityGeneric@@YAPAVCBaseEntity@@PBDAAVVector@@M@Z,func,"aligned reference, confirmed by hl/dlls/scripted:?StartSentence@CScriptedSentence@@QAEHPAVCBaseMonster@@@Z (95% or more)"
+10118780,?UTIL_FollowAliasReference@@YAPAVCBaseEntity@@PAV1@PBD@Z,func,"aligned reference, confirmed by hl/dlls/util:?UTIL_FollowReference@@YAPAVCBaseEntity@@PAV1@PBD@Z (95% or more)"
+10119B50,?UTIL_SayText@@YAXPBDPAVCBaseEntity@@@Z,func,"aligned reference, confirmed by hl/dlls/teamplay_gamerules:?ClientUserInfoChanged@CHalfLifeTeamplay@@UAEXPAVCBasePlayer@@PAD@Z (95% or more)"
+10119BB0,?UTIL_SayTextAll@@YAXPBDPAVCBaseEntity@@@Z,func,"aligned reference, confirmed by hl/dlls/teamplay_gamerules:?ClientUserInfoChanged@CHalfLifeTeamplay@@UAEXPAVCBasePlayer@@PAD@Z (95% or more)"
+10119C00,?UTIL_ScreenFade@@YAXPAVCBaseEntity@@ABVVector@@MMHH@Z,func,"aligned reference, confirmed by hl/dlls/cof_glock:?Holster@CGlock@@UAEXXZ (95% or more)"
+10119C50,?UTIL_ScreenFadeAll@@YAXABVVector@@MMHH@Z,func,"aligned reference, confirmed by hl/dlls/effects:?Use@CFade@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z (95% or more)"
+1011A180,?UTIL_ShowMessage@@YAXPBDPAVCBaseEntity@@@Z,func,"aligned reference, confirmed by hl/dlls/effects:?Use@CMessage@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z (95% or more)"
+1011A1D0,?UTIL_ShowMessageAll@@YAXPBD@Z,func,"aligned reference, confirmed by hl/dlls/effects:?Use@CMessage@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z (95% or more)"
+1011A220,?UTIL_ShowMessagePVS@@YAXPBDABVVector@@@Z,func,"aligned reference, confirmed by hl/dlls/util:?UTIL_EmitAmbientSound@@YAXPAUedict_s@@ABVVector@@PBDMMHH@Z (95% or more)"
+1011C560,?DefaultReload@CBasePlayerWeapon@@QAEHHHMH_N@Z,func,"aligned reference, confirmed by hl/dlls/cof_glock:?Reload@CGlock@@UAEXXZ (95% or more)"
+1013E080,__ftol2,func,"aligned reference, confirmed by hl/dlls/doors:?KeyValue@CBaseDoor@@UAEXPAUKeyValueData_s@@@Z (95% or more)"
+1016BCC0,__libm_sse2_sin_precise,func,"aligned reference, confirmed by hl/dlls/util:?UTIL_AxisRotationToVec@@YA?AVVector@@ABV1@M@Z (95% or more)"
+10171536,_calloc,func,"aligned reference, confirmed by hl/dlls/nodes:?AllocNodes@CGraph@@QAEHXZ (95% or more)"
+10171670,__CIfmod,func,"aligned reference, confirmed by hl/dlls/effects:?Animate@CSprite@@QAEXM@Z (95% or more)"
+1019D1DB,__ehhandler$?DispatchRestore@@YAHPAUedict_s@@PAUsaverestore_s@@H@Z,func,"aligned reference, confirmed by hl/dlls/cbase:?DispatchRestore@@YAHPAUedict_s@@PAUsaverestore_s@@H@Z (95% or more)"
+101A100C,__imp__CreateDirectoryA@8,data,"aligned reference, confirmed by hl/dlls/nodes:?BuildNodeGraph@CTestHull@@QAEXXZ (95% or more)"
 101A1234,??_C@_01GBGANLPD@0@,data,objdiff:hl/dlls/effects:?Use@CEnvFootsteps@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z
 101A1238,??_C@_0L@MCGJBOEN@sv_alltalk@,data,objdiff:hl/game_shared/voice_gamemgr:?UpdateMasks@CVoiceGameMgr@@AAEXXZ
 101A124C,??_C@_02DKCKIIND@?$CFs@,data,objdiff:hl/dlls/client:?Host_Say@@YAXPAUedict_s@@H@Z
@@ -1322,196 +1253,142 @@ va,name,kind,evidence
 101E6764,??_C@_0O@LOGEBMBD@m_finre?3?5?5?$CFi?6@,data,objdiff:hl/dlls/weapons:?PrintState@CBasePlayerWeapon@@QAEXXZ
 101E6774,??_C@_0O@DAGEOIDI@m_iclip?3?5?5?$CFi?6@,data,objdiff:hl/dlls/weapons:?PrintState@CBasePlayerWeapon@@QAEXXZ
 101E6DBC,??_C@_07ILHJIGAO@bodyque@,data,objdiff:hl/dlls/world:?InitBodyQue@@YAXXZ
-10211088,_nanmask,data,objdiff:hl/pm_shared/pm_shared:_PM_CheckVelocity
-10211090,?current_table@?4??PM_CheckWater@@9@9,data,objdiff:hl/pm_shared/pm_shared:_PM_CheckWater
-102110D8,?m_SaveData@CBaseAlias@@2PAUTYPEDESCRIPTION@@A,data,objdiff:hl/dlls/alias:?Save@CBaseAlias@@UAEHAAVCSave@@@Z
-102110E8,?m_SaveData@CInfoGroup@@2PAUTYPEDESCRIPTION@@A,data,objdiff:hl/dlls/alias:?Save@CInfoGroup@@UAEHAAVCSave@@@Z
-10211178,?m_SaveData@CBaseAnimating@@2PAUTYPEDESCRIPTION@@A,data,objdiff:hl/dlls/animating:?Save@CBaseAnimating@@UAEHAAVCSave@@@Z
-102111C8,?activity_map@@3PAUactivity_map_t@@A,data,objdiff:hl/dlls/monsters:?ReportAIState@CBaseMonster@@UAEXXZ
-10211430,?m_SaveData@CFuncRotating@@2PAUTYPEDESCRIPTION@@A,data,objdiff:hl/dlls/bmodels:?Save@CFuncRotating@@UAEHAAVCSave@@@Z
-10211490,?m_SaveData@CPendulum@@2PAUTYPEDESCRIPTION@@A,data,objdiff:hl/dlls/bmodels:?Save@CPendulum@@UAEHAAVCSave@@@Z
-10211510,?m_SaveData@CEnvGlobal@@2PAUTYPEDESCRIPTION@@A,data,objdiff:hl/dlls/buttons:?Save@CEnvGlobal@@UAEHAAVCSave@@@Z
-10211540,?m_SaveData@CEnvState@@2PAUTYPEDESCRIPTION@@A,data,objdiff:hl/dlls/buttons:?Save@CEnvState@@UAEHAAVCSave@@@Z
-10211580,?m_SaveData@CMomentaryRotButton@@2PAUTYPEDESCRIPTION@@A,data,objdiff:hl/dlls/buttons:?Save@CMomentaryRotButton@@UAEHAAVCSave@@@Z
-102115E0,?m_SaveData@CEnvSpark@@2PAUTYPEDESCRIPTION@@A,data,objdiff:hl/dlls/buttons:?Save@CEnvSpark@@UAEHAAVCSave@@@Z
-10211600,?m_SaveData@CMultiSource@@2PAUTYPEDESCRIPTION@@A,data,objdiff:hl/dlls/buttons:?Save@CMultiSource@@UAEHAAVCSave@@@Z
-10211640,?m_SaveData@CBaseButton@@2PAUTYPEDESCRIPTION@@A,data,objdiff:hl/dlls/buttons:?Save@CBaseButton@@UAEHAAVCSave@@@Z
-10211760,?m_SaveData@CBaseEntity@@2PAUTYPEDESCRIPTION@@A,data,objdiff:hl/dlls/cbase:?Save@CBaseEntity@@UAEHAAVCSave@@@Z
-10211E08,?entity_field_alias@@3PAUentity_field_alias_t@@A,data,objdiff:hl/dlls/client:?Player_Encode@@YAXPAUdelta_s@@PBE1@Z
-10213310,?slError@@3PAUSchedule_t@@A,data,objdiff:hl/dlls/ai_basenpc_schedule:?GetSchedule@CBaseMonster@@UAEPAUSchedule_t@@XZ
-10213A30,?m_SaveData@CBaseDoor@@2PAUTYPEDESCRIPTION@@A,data,objdiff:hl/dlls/doors:?Save@CBaseDoor@@UAEHAAVCSave@@@Z
-10213AD0,?m_SaveData@CMomentaryDoor@@2PAUTYPEDESCRIPTION@@A,data,objdiff:hl/dlls/doors:?Save@CMomentaryDoor@@UAEHAAVCSave@@@Z
-10213B00,?m_SaveData@CGlow@@2PAUTYPEDESCRIPTION@@A,data,objdiff:hl/dlls/effects:?Save@CGlow@@UAEHAAVCSave@@@Z
-10213BA0,?m_SaveData@CGibShooter@@2PAUTYPEDESCRIPTION@@A,data,objdiff:hl/dlls/effects:?Save@CGibShooter@@UAEHAAVCSave@@@Z
-10213D60,?m_SaveData@CEnvRain@@2PAUTYPEDESCRIPTION@@A,data,objdiff:hl/dlls/effects:?Save@CEnvRain@@UAEHAAVCSave@@@Z
-10213E40,?m_SaveData@CEnvShockwave@@2PAUTYPEDESCRIPTION@@A,data,objdiff:hl/dlls/effects:?Save@CEnvShockwave@@UAEHAAVCSave@@@Z
-10213EE0,?m_SaveData@CEnvDLight@@2PAUTYPEDESCRIPTION@@A,data,objdiff:hl/dlls/effects:?Save@CEnvDLight@@UAEHAAVCSave@@@Z
-10213F00,?ms_iNextFreeKey@CEnvDLight@@2HA,data,objdiff:hl/dlls/effects:?PostSpawn@CEnvDLight@@UAEXXZ
-10213F38,?m_SaveData@CEnvFog@@2PAUTYPEDESCRIPTION@@A,data,objdiff:hl/dlls/effects:?Save@CEnvFog@@UAEHAAVCSave@@@Z
-10213F98,?m_SaveData@CGrassSprite@@2PAUTYPEDESCRIPTION@@A,data,objdiff:hl/dlls/effects:?Save@CGrassSprite@@UAEHAAVCSave@@@Z
-102140D8,?m_SaveData@CEnvModel@@0PAUTYPEDESCRIPTION@@A,data,objdiff:hl/dlls/effects:?Save@CEnvModel@@EAEHAAVCSave@@@Z
-1021422C,?m_SaveData@CBubbling@@2PAUTYPEDESCRIPTION@@A,data,objdiff:hl/dlls/effects:?Save@CBubbling@@UAEHAAVCSave@@@Z
-10214260,?m_SaveData@CLightning@@2PAUTYPEDESCRIPTION@@A,data,objdiff:hl/dlls/effects:?Save@CLightning@@UAEHAAVCSave@@@Z
-10214330,?m_SaveData@CSprite@@2PAUTYPEDESCRIPTION@@A,data,objdiff:hl/dlls/effects:?Save@CSprite@@UAEHAAVCSave@@@Z
-10214350,?m_SaveData@CLaser@@2PAUTYPEDESCRIPTION@@A,data,objdiff:hl/dlls/effects:?Save@CLaser@@UAEHAAVCSave@@@Z
-102143D0,?m_SaveData@CRainSettings@@2PAUTYPEDESCRIPTION@@A,data,objdiff:hl/dlls/effects:?Save@CRainSettings@@UAEHAAVCSave@@@Z
-102143F0,?m_SaveData@CRainModify@@2PAUTYPEDESCRIPTION@@A,data,objdiff:hl/dlls/effects:?Save@CRainModify@@UAEHAAVCSave@@@Z
-10214450,?m_SaveData@CEnvExplosion@@2PAUTYPEDESCRIPTION@@A,data,objdiff:hl/dlls/explode:?Save@CEnvExplosion@@UAEHAAVCSave@@@Z
-102144B8,?pSpawnObjects@CBreakable@@2PAPBDA,data,objdiff:hl/dlls/func_break:?KeyValue@CBreakable@@UAEXPAUKeyValueData_s@@@Z
-1021451C,?m_soundNames@CPushable@@2PAPADA,data,objdiff:hl/dlls/func_break:?Move@CPushable@@QAEXPAVCBaseEntity@@H@Z
-10214528,?m_SaveData@CBreakable@@2PAUTYPEDESCRIPTION@@A,data,objdiff:hl/dlls/func_break:?Save@CBreakable@@UAEHAAVCSave@@@Z
-10214610,?fraglimit@@3Ucvar_s@@A,data,objdiff:hl/dlls/teamplay_gamerules:?Think@CHalfLifeTeamplay@@UAEXXZ
-10214638,?friendlyfire@@3Ucvar_s@@A,data,objdiff:hl/dlls/teamplay_gamerules:?FPlayerCanTakeDamage@CHalfLifeTeamplay@@UAEHPAVCBasePlayer@@PAVCBaseEntity@@@Z
-10214660,?weaponstay@@3Ucvar_s@@A,data,objdiff:hl/dlls/multiplay_gamerules:?FlWeaponRespawnTime@CHalfLifeMultiplay@@UAEMPAVCBasePlayerItem@@@Z
-102146C4,?teamlist@@3Ucvar_s@@A,data,objdiff:hl/dlls/teamplay_gamerules:??0CHalfLifeTeamplay@@QAE@XZ
-102146D8,?teamoverride@@3Ucvar_s@@A,data,objdiff:hl/dlls/teamplay_gamerules:??0CHalfLifeTeamplay@@QAE@XZ
-102146EC,?defaultteam@@3Ucvar_s@@A,data,objdiff:hl/dlls/teamplay_gamerules:?ClientUserInfoChanged@CHalfLifeTeamplay@@UAEXPAVCBasePlayer@@PAD@Z
-10214714,?fragsleft@@3Ucvar_s@@A,data,objdiff:hl/dlls/teamplay_gamerules:?Think@CHalfLifeTeamplay@@UAEXXZ
-10214728,?timeleft@@3Ucvar_s@@A,data,objdiff:hl/dlls/teamplay_gamerules:?Think@CHalfLifeTeamplay@@UAEXXZ
-102148A4,?mp_chattime@@3Ucvar_s@@A,data,objdiff:hl/dlls/multiplay_gamerules:?GoToIntermission@CHalfLifeMultiplay@@MAEXXZ
-10216978,?m_SaveData@CGenericMonster@@2PAUTYPEDESCRIPTION@@A,data,objdiff:hl/dlls/genericmonster:?Save@CGenericMonster@@UAEHAAVCSave@@@Z
-102169B8,?m_SaveData@CDeadGenericMonster@@2PAUTYPEDESCRIPTION@@A,data,objdiff:hl/dlls/genericmonster:?Save@CDeadGenericMonster@@UAEHAAVCSave@@@Z
-102169C8,?m_SaveData@CRecharge@@2PAUTYPEDESCRIPTION@@A,data,objdiff:hl/dlls/h_battery:?Save@CRecharge@@UAEHAAVCSave@@@Z
-10216A18,?m_SaveData@CCycler@@2PAUTYPEDESCRIPTION@@A,data,objdiff:hl/dlls/h_cycler:?Save@CCycler@@UAEHAAVCSave@@@Z
-10216A28,?m_SaveData@CCyclerSprite@@2PAUTYPEDESCRIPTION@@A,data,objdiff:hl/dlls/h_cycler:?Save@CCyclerSprite@@UAEHAAVCSave@@@Z
-10216A58,?m_SaveData@CWreckage@@0PAUTYPEDESCRIPTION@@A,data,objdiff:hl/dlls/h_cycler:?Save@CWreckage@@EAEHAAVCSave@@@Z
-10216A68,?m_SaveData@CItem@@2PAUTYPEDESCRIPTION@@A,data,objdiff:hl/dlls/items:?Save@CItem@@UAEHAAVCSave@@@Z
-10216A78,?m_SaveData@CLight@@2PAUTYPEDESCRIPTION@@A,data,objdiff:hl/dlls/lights:?Save@CLight@@UAEHAAVCSave@@@Z
-10216B08,?m_SaveData@CLightFader@@2PAUTYPEDESCRIPTION@@A,data,objdiff:hl/dlls/lights:?Save@CLightFader@@UAEHAAVCSave@@@Z
-10216B88,?m_SaveData@CTriggerLightstyle@@2PAUTYPEDESCRIPTION@@A,data,objdiff:hl/dlls/lights:?Save@CTriggerLightstyle@@UAEHAAVCSave@@@Z
-10216BB8,?m_SaveData@CLocusVariable@@2PAUTYPEDESCRIPTION@@A,data,objdiff:hl/dlls/locus:?Save@CLocusVariable@@UAEHAAVCSave@@@Z
-10216C18,?m_SaveData@CLocusAlias@@2PAUTYPEDESCRIPTION@@A,data,objdiff:hl/dlls/locus:?Save@CLocusAlias@@UAEHAAVCSave@@@Z
-10216C38,?m_SaveData@CLocusBeam@@2PAUTYPEDESCRIPTION@@A,data,objdiff:hl/dlls/locus:?Save@CLocusBeam@@UAEHAAVCSave@@@Z
-10216CF8,?m_SaveData@CRuleEntity@@2PAUTYPEDESCRIPTION@@A,data,objdiff:hl/dlls/maprules:?Save@CRuleEntity@@UAEHAAVCSave@@@Z
-10216D68,?m_SaveData@CMonsterMaker@@2PAUTYPEDESCRIPTION@@A,data,objdiff:hl/dlls/monstermaker:?Save@CMonsterMaker@@UAEHAAVCSave@@@Z
-10216E08,?m_SaveData@CBaseMonster@@2PAUTYPEDESCRIPTION@@A,data,objdiff:hl/dlls/monsters:?Save@CBaseMonster@@UAEHAAVCSave@@@Z
-102176BC,?pStateNames@?1??ReportAIState@CBaseMonster@@UAEXXZ@4PAPBDA,data,objdiff:hl/dlls/monsters:?ReportAIState@CBaseMonster@@UAEXXZ
-10217790,?m_SaveData@CFuncMortarField@@2PAUTYPEDESCRIPTION@@A,data,objdiff:hl/dlls/mortar:?Save@CFuncMortarField@@UAEHAAVCSave@@@Z
-10217ABC,?m_SaveData@CBaseSpreadWeapon@@2PAUTYPEDESCRIPTION@@A,data,objdiff:hl/dlls/paranoia_wpn:?Save@CBaseSpreadWeapon@@UAEHAAVCSave@@@Z
-10217B00,?m_SaveData@CPathTrack@@2PAUTYPEDESCRIPTION@@A,data,objdiff:hl/dlls/pathcorner:?Save@CPathTrack@@UAEHAAVCSave@@@Z
-10217B50,?m_SaveData@CPathCorner@@2PAUTYPEDESCRIPTION@@A,data,objdiff:hl/dlls/pathcorner:?Save@CPathCorner@@UAEHAAVCSave@@@Z
-10217BF0,?m_SaveData@CGunTarget@@2PAUTYPEDESCRIPTION@@A,data,objdiff:hl/dlls/plats:?Save@CGunTarget@@UAEHAAVCSave@@@Z
-10217C00,?m_SaveData@CFuncTrackTrain@@2PAUTYPEDESCRIPTION@@A,data,objdiff:hl/dlls/plats:?Save@CFuncTrackTrain@@UAEHAAVCSave@@@Z
-10217CF8,?m_SaveData@CTrainSequence@@2PAUTYPEDESCRIPTION@@A,data,objdiff:hl/dlls/plats:?Save@CTrainSequence@@UAEHAAVCSave@@@Z
-10217D88,?m_SaveData@CBasePlatTrain@@2PAUTYPEDESCRIPTION@@A,data,objdiff:hl/dlls/plats:?Save@CBasePlatTrain@@UAEHAAVCSave@@@Z
-10217FE4,?gInitHUD@@3HA,data,objdiff:hl/dlls/player:?Precache@CBasePlayer@@UAEXXZ
-10217FE8,?m_playerSaveData@CBasePlayer@@2PAUTYPEDESCRIPTION@@A,data,objdiff:hl/dlls/player:?Save@CBasePlayer@@UAEHAAVCSave@@@Z
-10218CD8,?m_szPoses@CDeadHEV@@2PAPADA,data,objdiff:hl/dlls/player:?Spawn@CDeadHEV@@UAEXXZ
-10218CE8,?m_SaveData@CStripWeapons@@2PAUTYPEDESCRIPTION@@A,data,objdiff:hl/dlls/player:?Save@CStripWeapons@@UAEHAAVCSave@@@Z
-10218E18,?m_SaveData@CRevertSaved@@2PAUTYPEDESCRIPTION@@A,data,objdiff:hl/dlls/player:?Save@CRevertSaved@@UAEHAAVCSave@@@Z
-10218E38,?m_SaveData@CScriptedSentence@@2PAUTYPEDESCRIPTION@@A,data,objdiff:hl/dlls/scripted:?Save@CScriptedSentence@@UAEHAAVCSave@@@Z
-10218ED8,?m_SaveData@CSpeaker@@2PAUTYPEDESCRIPTION@@A,data,objdiff:hl/dlls/sound:?Save@CSpeaker@@UAEHAAVCSave@@@Z
-10219978,?m_SaveData@CAmbientGeneric@@2PAUTYPEDESCRIPTION@@A,data,objdiff:hl/dlls/sound:?Save@CAmbientGeneric@@UAEHAAVCSave@@@Z
-102199D8,?m_SaveData@CEnvSound@@2PAUTYPEDESCRIPTION@@A,data,objdiff:hl/dlls/sound:?Save@CEnvSound@@UAEHAAVCSave@@@Z
-102199F8,?m_SaveData@CTriggerSound@@2PAUTYPEDESCRIPTION@@A,data,objdiff:hl/dlls/sound:?Save@CTriggerSound@@UAEHAAVCSave@@@Z
-10219A18,?m_SaveData@CSquadMonster@@2PAUTYPEDESCRIPTION@@A,data,objdiff:hl/dlls/squadmonster:?Save@CSquadMonster@@UAEHAAVCSave@@@Z
-10219A68,?m_SaveData@CBaseDelay@@2PAUTYPEDESCRIPTION@@A,data,objdiff:hl/dlls/subs:?Save@CBaseDelay@@UAEHAAVCSave@@@Z
-10219A98,?m_SaveData@CBaseToggle@@2PAUTYPEDESCRIPTION@@A,data,objdiff:hl/dlls/subs:?Save@CBaseToggle@@UAEHAAVCSave@@@Z
-10219C18,?m_SaveData@CTalkMonster@@2PAUTYPEDESCRIPTION@@A,data,objdiff:hl/dlls/talkmonster:?Save@CTalkMonster@@UAEHAAVCSave@@@Z
-10219CC8,?m_szFriends@CTalkMonster@@2PAPADA,data,objdiff:hl/dlls/talkmonster:?FindNearestFriend@CTalkMonster@@QAEPAVCBaseEntity@@H@Z
-10219D44,?slIdleResponse@@3PAUSchedule_t@@A,data,objdiff:hl/dlls/talkmonster:?SetAnswerQuestion@CTalkMonster@@UAEXPAV1@@Z
-10219E54,?slIdleStopShooting@@3PAUSchedule_t@@A,data,objdiff:hl/dlls/talkmonster:?TakeDamage@CTalkMonster@@UAEHPAUentvars_s@@0MH@Z
-10219FC0,?m_SaveData@CStateWatcher@@2PAUTYPEDESCRIPTION@@A,data,objdiff:hl/dlls/triggers:?Save@CStateWatcher@@UAEHAAVCSave@@@Z
-10219FF0,?m_SaveData@CRenderFxFader@@2PAUTYPEDESCRIPTION@@A,data,objdiff:hl/dlls/triggers:?Save@CRenderFxFader@@UAEHAAVCSave@@@Z
-1021A090,?m_SaveData@CEnvCustomize@@2PAUTYPEDESCRIPTION@@A,data,objdiff:hl/dlls/triggers:?Save@CEnvCustomize@@UAEHAAVCSave@@@Z
-1021A190,?m_SaveData@CInOutRegister@@2PAUTYPEDESCRIPTION@@A,data,objdiff:hl/dlls/triggers:?Save@CInOutRegister@@UAEHAAVCSave@@@Z
-1021A1C0,?m_SaveData@CTriggerInOut@@2PAUTYPEDESCRIPTION@@A,data,objdiff:hl/dlls/triggers:?Save@CTriggerInOut@@UAEHAAVCSave@@@Z
-1021A1F0,?m_SaveData@CChangeLevel@@2PAUTYPEDESCRIPTION@@A,data,objdiff:hl/dlls/triggers:?Save@CChangeLevel@@UAEHAAVCSave@@@Z
-1021A250,?m_SaveData@CTriggerPush@@2PAUTYPEDESCRIPTION@@A,data,objdiff:hl/dlls/triggers:?Save@CTriggerPush@@UAEHAAVCSave@@@Z
-1021A270,?m_SaveData@CTriggerSetPatrol@@2PAUTYPEDESCRIPTION@@A,data,objdiff:hl/dlls/triggers:?Save@CTriggerSetPatrol@@UAEHAAVCSave@@@Z
-1021A280,?m_SaveData@CTriggerMotion@@2PAUTYPEDESCRIPTION@@A,data,objdiff:hl/dlls/triggers:?Save@CTriggerMotion@@UAEHAAVCSave@@@Z
-1021A300,?m_SaveData@CMotionThread@@2PAUTYPEDESCRIPTION@@A,data,objdiff:hl/dlls/triggers:?Save@CMotionThread@@UAEHAAVCSave@@@Z
-1021A360,?m_SaveData@CMotionManager@@2PAUTYPEDESCRIPTION@@A,data,objdiff:hl/dlls/triggers:?Save@CMotionManager@@UAEHAAVCSave@@@Z
-1021A3A0,?m_SaveData@CTriggerChangeTarget@@2PAUTYPEDESCRIPTION@@A,data,objdiff:hl/dlls/triggers:?Save@CTriggerChangeTarget@@UAEHAAVCSave@@@Z
-1021A3B0,?m_SaveData@CTriggerChangeValue@@2PAUTYPEDESCRIPTION@@A,data,objdiff:hl/dlls/triggers:?Save@CTriggerChangeValue@@UAEHAAVCSave@@@Z
-1021A3C0,?m_SaveData@CTriggerChangeCVar@@2PAUTYPEDESCRIPTION@@A,data,objdiff:hl/dlls/triggers:?Save@CTriggerChangeCVar@@UAEHAAVCSave@@@Z
-1021A3D0,?m_SaveData@CTriggerCamera@@2PAUTYPEDESCRIPTION@@A,data,objdiff:hl/dlls/triggers:?Save@CTriggerCamera@@UAEHAAVCSave@@@Z
-1021A530,?m_SaveData@CGasArea@@2PAUTYPEDESCRIPTION@@A,data,objdiff:hl/dlls/triggers:?Save@CGasArea@@UAEHAAVCSave@@@Z
-1021A570,?m_SaveData@CFrictionModifier@@2PAUTYPEDESCRIPTION@@A,data,objdiff:hl/dlls/triggers:?Save@CFrictionModifier@@UAEHAAVCSave@@@Z
-1021A580,?m_SaveData@CAutoTrigger@@2PAUTYPEDESCRIPTION@@A,data,objdiff:hl/dlls/triggers:?Save@CAutoTrigger@@UAEHAAVCSave@@@Z
-1021A5A0,?m_SaveData@CTriggerRelay@@2PAUTYPEDESCRIPTION@@A,data,objdiff:hl/dlls/triggers:?Save@CTriggerRelay@@UAEHAAVCSave@@@Z
-1021A5C0,?m_SaveData@CTriggerRotTest@@2PAUTYPEDESCRIPTION@@A,data,objdiff:hl/dlls/triggers:?Save@CTriggerRotTest@@UAEHAAVCSave@@@Z
-1021A600,?m_SaveData@CMultiManager@@2PAUTYPEDESCRIPTION@@A,data,objdiff:hl/dlls/triggers:?Save@CMultiManager@@UAEHAAVCSave@@@Z
-1021AAE0,?gEntvarsDescription@@3PAUTYPEDESCRIPTION@@A,data,objdiff:hl/dlls/util:?WriteEntVars@CSave@@QAEHPBDPAUentvars_s@@@Z
-1021B140,?gSizes@@3PAHA,data,objdiff:hl/dlls/util:?WriteFields@CSave@@QAEHPBD0PAXPAUTYPEDESCRIPTION@@H@Z
-1021B188,?m_SaveData@CBasePlayerItem@@2PAUTYPEDESCRIPTION@@A,data,objdiff:hl/dlls/weapons:?Save@CBasePlayerItem@@UAEHAAVCSave@@@Z
-1021B4D8,?m_SaveData@CBasePlayerAmmo@@2PAUTYPEDESCRIPTION@@A,data,objdiff:hl/dlls/weapons:?Save@CBasePlayerAmmo@@UAEHAAVCSave@@@Z
-1021B4F0,?m_SaveData@CWeaponBox@@2PAUTYPEDESCRIPTION@@A,data,objdiff:hl/dlls/weapons:?Save@CWeaponBox@@UAEHAAVCSave@@@Z
-1021B940,?gDecals@@3PAUDLL_DECALLIST@@A,data,objdiff:hl/dlls/effects:?Use@CEnvDecal@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z
-1021BAF4,___security_cookie,data,objdiff:hl/pm_shared/pm_shared:_PM_WaterMove
-10220AB8,?g_bWantModEnable@@3V?$CBitVec@$0CA@@@A,data,objdiff:hl/game_shared/voice_gamemgr:?UpdateMasks@CVoiceGameMgr@@AAEXXZ
-10220ABC,?g_PlayerModEnable@@3V?$CBitVec@$0CA@@@A,data,objdiff:hl/game_shared/voice_gamemgr:?UpdateMasks@CVoiceGameMgr@@AAEXXZ
-10220AC0,?g_BanMasks@@3PAV?$CBitVec@$0CA@@@A,data,objdiff:hl/game_shared/voice_gamemgr:?UpdateMasks@CVoiceGameMgr@@AAEXXZ
-10220B40,?g_SentBanMasks@@3PAV?$CBitVec@$0CA@@@A,data,objdiff:hl/game_shared/voice_gamemgr:?UpdateMasks@CVoiceGameMgr@@AAEXXZ
-10220BC0,?g_SentGameRulesMasks@@3PAV?$CBitVec@$0CA@@@A,data,objdiff:hl/game_shared/voice_gamemgr:?UpdateMasks@CVoiceGameMgr@@AAEXXZ
-10220C40,_vec3_origin,data,objdiff:hl/pm_shared/pm_shared:_PM_Physics_Toss
-10220C50,_pmove,data,objdiff:hl/pm_shared/pm_shared:_PM_WaterMove
-10220C54,_g_onladder,data,objdiff:hl/pm_shared/pm_shared:_PM_PlayerMove
-10222D70,?szBuffer@?N@??GetMember@CInfoGroup@@QAEHPBD@Z@4PADA,data,objdiff:hl/dlls/alias:?GetMember@CInfoGroup@@QAEHPBD@Z
-10222DFC,?cached_frametime@@3MA,data,objdiff:hl/dlls/client:?PlayerPostThink@@YAXPAUedict_s@@@Z
-10222E00,?g_serveractive@@3HA,data,objdiff:hl/dlls/client:?ServerActivate@@YAXPAUedict_s@@HH@Z
-10222E08,?initialized@?1??Player_Encode@@YAXPAUdelta_s@@PBE1@Z@4HA,data,objdiff:hl/dlls/client:?Player_Encode@@YAXPAUdelta_s@@PBE1@Z
-10222EE4,?g_pGameRules@@3PAVCGameRules@@A,data,objdiff:hl/dlls/weapons:?RetireWeapon@CBasePlayerWeapon@@UAEXXZ
-10222EE8,?g_teamplay@@3HA,data,objdiff:hl/dlls/multiplay_gamerules:?DeathNotice@CHalfLifeMultiplay@@UAEXPAVCBasePlayer@@PAUentvars_s@@1@Z
-10222EEC,?g_Language@@3HA,data,objdiff:hl/dlls/combat:?BounceGibTouch@CGib@@QAEXPAVCBaseEntity@@@Z
-10222EFC,?g_iSkillLevel@@3HA,data,objdiff:hl/dlls/gamerules:?RefreshSkillData@CGameRules@@UAEXXZ
-10222F04,?g_fGameOver@@3HA,data,objdiff:hl/dlls/teamplay_gamerules:?Think@CHalfLifeTeamplay@@UAEXXZ
-10222F28,?g_vecAttackDir@@3VVector@@A,data,objdiff:hl/dlls/func_break:?TakeDamage@CBreakable@@UAEHPAUentvars_s@@0MH@Z
-10222F34,?g_vecZero@@3VVector@@B,data,objdiff:hl/dlls/weapons:?Spawn@CWeaponBox@@EAEXXZ
-10222F48,?g_engfuncs@@3Uenginefuncs_s@@A,data,objdiff:hl/dlls/world:?TriggerDecal@CDecal@@QAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z
-1022318C,?g_doingDesired@@3HA,data,objdiff:hl/dlls/movewith:?UTIL_MarkForDesired@@YAXPAVCBaseEntity@@@Z
-10223190,?g_pWorld@@3PAVCWorld@@A,data,objdiff:hl/dlls/util:?UTIL_FlushAliases@@YAXXZ
-10223198,?g_flIntermissionStartTime@@3MA,data,objdiff:hl/dlls/multiplay_gamerules:?GoToIntermission@CHalfLifeMultiplay@@MAEXXZ
-102231A8,?com_token@@3PADA,data,objdiff:hl/dlls/multiplay_gamerules:?COM_Parse@@YAPADPAD@Z
-10223788,?g_VoiceGameMgr@@3VCVoiceGameMgr@@A,data,objdiff:hl/dlls/teamplay_gamerules:?Think@CHalfLifeTeamplay@@UAEXXZ
-102238B0,?WorldGraph@@3VCGraph@@A,data,objdiff:hl/dlls/subs:?UpdateOnRemove@CBaseEntity@@QAEXXZ
-10225980,?gSCounter@@3HA,data,objdiff:hl/dlls/paranoia_wpn:?SetTablePointer@CBaseSpreadWeapon@@QAEXXZ
-10225988,?gDefaultSpread@@3Uspreadparams_s@@A,data,objdiff:hl/dlls/paranoia_wpn:?SetTablePointer@CBaseSpreadWeapon@@QAEXXZ
-10225A30,?gSpreadTable@@3PAUspreadparams_s@@A,data,objdiff:hl/dlls/paranoia_wpn:?SetTablePointer@CBaseSpreadWeapon@@QAEXXZ
-1022647C,?gEvilImpulse101@@3HA,data,objdiff:hl/dlls/items:?ItemTouch@CItem@@QAEXPAVCBaseEntity@@@Z
-102264B4,?gmsgKeyedDLight@@3HA,data,objdiff:hl/dlls/effects:?MakeLight@CEnvDLight@@UAEXH@Z
-102264C0,?gmsgAddShine@@3HA,data,objdiff:hl/dlls/bmodels:?Think@CFuncShine@@UAEXXZ
-102264CC,?gmsgCurWeapon@@3HA,data,objdiff:hl/dlls/weapons:?UpdateClientData@CBasePlayerWeapon@@UAEHPAVCBasePlayer@@@Z
-102264EC,?gmsgDeathMsg@@3HA,data,objdiff:hl/dlls/teamplay_gamerules:?DeathNotice@CHalfLifeTeamplay@@UAEXPAVCBasePlayer@@PAUentvars_s@@1@Z
-102264F0,?gmsgScoreInfo@@3HA,data,objdiff:hl/dlls/teamplay_gamerules:?ChangePlayerTeam@CHalfLifeTeamplay@@UAEXPAVCBasePlayer@@PBDHH@Z
-102264F4,?gmsgTeamInfo@@3HA,data,objdiff:hl/dlls/teamplay_gamerules:?RecountTeams@CHalfLifeTeamplay@@AAEX_N@Z
-102264FC,?gmsgGameMode@@3HA,data,objdiff:hl/dlls/teamplay_gamerules:?UpdateGameMode@CHalfLifeTeamplay@@UAEXPAVCBasePlayer@@@Z
-1022650C,?gmsgItemPickup@@3HA,data,objdiff:hl/dlls/items:?MyTouch@CItemLongJump@@EAEHPAVCBasePlayer@@@Z
-10226518,?gmsgSayText@@3HA,data,objdiff:hl/dlls/client:?Host_Say@@YAXPAUedict_s@@H@Z
-1022651C,?gmsgTextMsg@@3HA,data,objdiff:hl/dlls/util:?ClientPrint@@YAXPAUentvars_s@@HPBD1111@Z
-1022652C,?gmsgTeamNames@@3HA,data,objdiff:hl/dlls/teamplay_gamerules:?InitHUD@CHalfLifeTeamplay@@UAEXPAVCBasePlayer@@@Z
-10226530,?gmsgStatusIcon@@3HA,data,objdiff:hl/dlls/player:?Use@CHudSprite@@EAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z
-10226540,?gmsgTextWindow@@3HA,data,objdiff:hl/dlls/triggers:?Use@CTriggerTextWindow@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z
-1022654C,?gmsgGrass@@3HA,data,objdiff:hl/dlls/effects:?SendInitMessage@CGrassSprite@@UAEXPAVCBasePlayer@@@Z
-10226550,?gmsgRadioIcon@@3HA,data,objdiff:hl/dlls/sound:?Use@CRadio@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z
-10226558,?gmsgCustomDecal@@3HA,data,objdiff:hl/dlls/effects:?SendInitMessage@CStaticDecal@@UAEXPAVCBasePlayer@@@Z
-1022655C,?gmsgCustomDLight@@3HA,data,objdiff:hl/dlls/ggrenade:?Explode@CGrenade@@QAEXPAUTraceResult@@H@Z
-10226560,?gmsgSkymarker_Sky@@3HA,data,objdiff:hl/dlls/effects:?SendInitMessage@CEnvPos_Sky@@UAEXPAVCBasePlayer@@@Z
-10226564,?gmsgSkymarker_World@@3HA,data,objdiff:hl/dlls/effects:?SendInitMessage@CEnvPos_World@@UAEXPAVCBasePlayer@@@Z
-102268C0,?gszallsentencenames@@3PAY0BA@DA,data,objdiff:hl/dlls/sound:?SENTENCEG_Init@@YAXXZ
-1022C8C0,?gcallsentences@@3HA,data,objdiff:hl/dlls/sound:?SENTENCEG_Init@@YAXXZ
-1022C8C4,?fSentencesInit@@3HA,data,objdiff:hl/dlls/sound:?SENTENCEG_Init@@YAXXZ
-1022C8C8,?rgsentenceg@@3PAUsentenceg@@A,data,objdiff:hl/dlls/sound:?SENTENCEG_Init@@YAXXZ
-1022F168,?fTextureTypeInit@@3HA,data,objdiff:hl/dlls/sound:?TEXTURETYPE_Init@@YAXXZ
-1022F16C,?gcTextures@@3HA,data,objdiff:hl/dlls/sound:?TEXTURETYPE_Init@@YAXXZ
-1022F170,?grgszTextureName@@3PAY0N@DA,data,objdiff:hl/dlls/sound:?TEXTURETYPE_Init@@YAXXZ
-10230B70,?grgchTextureType@@3PADA,data,objdiff:hl/dlls/sound:?TEXTURETYPE_Init@@YAXXZ
-10230D70,?pSoundEnt@@3PAVCSoundEnt@@A,data,objdiff:hl/dlls/soundent:?SoundPointerForIndex@CSoundEnt@@SAPAVCSound@@H@Z
-10230D74,?pGoal@?1??SpectatorImpulseCommand@CBaseSpectator@@AAEXXZ@4PAUedict_s@@A,data,objdiff:hl/dlls/spectator:?SpectatorThink@CBaseSpectator@@QAEXXZ
-10230D78,?g_talkWaitTime@CTalkMonster@@2MA,data,objdiff:hl/dlls/talkmonster:?TalkInit@CTalkMonster@@QAEXXZ
-10230D80,?team_names@@3PAY0BA@DA,data,objdiff:hl/dlls/teamplay_gamerules:?TeamWithFewestPlayers@CHalfLifeTeamplay@@AAEPBDXZ
-10230F80,?team_scores@@3PAHA,data,objdiff:hl/dlls/teamplay_gamerules:?Think@CHalfLifeTeamplay@@UAEXXZ
-10231000,?num_teams@@3HA,data,objdiff:hl/dlls/teamplay_gamerules:?Think@CHalfLifeTeamplay@@UAEXXZ
-10231004,?last_frags@?1??Think@CHalfLifeTeamplay@@UAEXXZ@4HA,data,objdiff:hl/dlls/teamplay_gamerules:?Think@CHalfLifeTeamplay@@UAEXXZ
-10231008,?last_time@?1??Think@CHalfLifeTeamplay@@UAEXXZ@4HA,data,objdiff:hl/dlls/teamplay_gamerules:?Think@CHalfLifeTeamplay@@UAEXXZ
-10231014,?st_szNextMap@@3PADA,data,objdiff:hl/dlls/triggers:?ChangeLevelNow@CChangeLevel@@QAEXPAVCBaseEntity@@@Z
-10231034,?st_szNextSpot@@3PADA,data,objdiff:hl/dlls/triggers:?ChangeLevelNow@CChangeLevel@@QAEXPAVCBaseEntity@@@Z
-10231054,?g_groupmask@@3HA,data,objdiff:hl/dlls/util:??1UTIL_GroupTrace@@QAE@XZ
-10231058,?g_groupop@@3HA,data,objdiff:hl/dlls/util:??1UTIL_GroupTrace@@QAE@XZ
-10231888,?ItemInfoArray@CBasePlayerItem@@2PAUItemInfo@@A,data,objdiff:hl/dlls/weapons:?UTIL_PrecacheOtherWeapon@@YAXPBD@Z
-10231F08,?g_sModelIndexLaser@@3FA,data,objdiff:hl/dlls/nodes:?DrawThink@CNodeViewer@@QAEXXZ
-10231F10,?g_sModelIndexFireball@@3FA,data,objdiff:hl/dlls/ggrenade:?Explode@CGrenade@@QAEXPAUTraceResult@@H@Z
-10231F14,?g_sModelIndexSmoke@@3FA,data,objdiff:hl/dlls/h_cycler:?Think@CWreckage@@EAEXXZ
-10231F18,?g_sModelIndexWExplosion@@3FA,data,objdiff:hl/dlls/ggrenade:?Explode@CGrenade@@QAEXPAUTraceResult@@H@Z
-10231F60,?g_pBodyQueueHead@@3PAUedict_s@@A,data,objdiff:hl/dlls/world:?InitBodyQue@@YAXXZ
-10232278,?gGlobalState@@3VCGlobalState@@A,data,objdiff:hl/dlls/triggers:?DesiredAction@CAutoTrigger@@UAEXXZ
+10211088,_nanmask,data,"aligned reference, confirmed by hl/pm_shared/pm_shared:_PM_CheckVelocity (95% or more)"
+10211090,?current_table@?4??PM_CheckWater@@9@9,data,"aligned reference, confirmed by hl/pm_shared/pm_debug:_PM_DrawBBox (95% or more)"
+102110D8,?m_SaveData@CBaseAlias@@2PAUTYPEDESCRIPTION@@A,data,"aligned reference, confirmed by hl/dlls/alias:?Restore@CBaseAlias@@UAEHAAVCRestore@@@Z (95% or more)"
+102110E8,?m_SaveData@CInfoGroup@@2PAUTYPEDESCRIPTION@@A,data,"aligned reference, confirmed by hl/dlls/alias:?Restore@CInfoGroup@@UAEHAAVCRestore@@@Z (95% or more)"
+10211178,?m_SaveData@CBaseAnimating@@2PAUTYPEDESCRIPTION@@A,data,"aligned reference, confirmed by hl/dlls/animating:?Restore@CBaseAnimating@@UAEHAAVCRestore@@@Z (95% or more)"
+102111C8,?activity_map@@3PAUactivity_map_t@@A,data,"aligned reference, confirmed by hl/dlls/monsters:?ReportAIState@CBaseMonster@@UAEXXZ (95% or more)"
+10211430,?m_SaveData@CFuncRotating@@2PAUTYPEDESCRIPTION@@A,data,"aligned reference, confirmed by hl/dlls/bmodels:?Restore@CFuncRotating@@UAEHAAVCRestore@@@Z (95% or more)"
+10211490,?m_SaveData@CPendulum@@2PAUTYPEDESCRIPTION@@A,data,"aligned reference, confirmed by hl/dlls/bmodels:?Restore@CPendulum@@UAEHAAVCRestore@@@Z (95% or more)"
+10211510,?m_SaveData@CEnvGlobal@@2PAUTYPEDESCRIPTION@@A,data,"aligned reference, confirmed by hl/dlls/buttons:?Restore@CEnvGlobal@@UAEHAAVCRestore@@@Z (95% or more)"
+10211540,?m_SaveData@CEnvState@@2PAUTYPEDESCRIPTION@@A,data,"aligned reference, confirmed by hl/dlls/buttons:?Restore@CEnvState@@UAEHAAVCRestore@@@Z (95% or more)"
+10211580,?m_SaveData@CMomentaryRotButton@@2PAUTYPEDESCRIPTION@@A,data,"aligned reference, confirmed by hl/dlls/buttons:?Restore@CMomentaryRotButton@@UAEHAAVCRestore@@@Z (95% or more)"
+102115E0,?m_SaveData@CEnvSpark@@2PAUTYPEDESCRIPTION@@A,data,"aligned reference, confirmed by hl/dlls/buttons:?Restore@CEnvSpark@@UAEHAAVCRestore@@@Z (95% or more)"
+10211600,?m_SaveData@CMultiSource@@2PAUTYPEDESCRIPTION@@A,data,"aligned reference, confirmed by hl/dlls/buttons:?Restore@CMultiSource@@UAEHAAVCRestore@@@Z (95% or more)"
+10211640,?m_SaveData@CBaseButton@@2PAUTYPEDESCRIPTION@@A,data,"aligned reference, confirmed by hl/dlls/buttons:?Restore@CBaseButton@@UAEHAAVCRestore@@@Z (95% or more)"
+10211760,?m_SaveData@CBaseEntity@@2PAUTYPEDESCRIPTION@@A,data,"aligned reference, confirmed by hl/dlls/cbase:?Restore@CBaseEntity@@UAEHAAVCRestore@@@Z (95% or more)"
+10213A30,?m_SaveData@CBaseDoor@@2PAUTYPEDESCRIPTION@@A,data,"aligned reference, confirmed by hl/dlls/doors:?Restore@CBaseDoor@@UAEHAAVCRestore@@@Z (95% or more)"
+10213AD0,?m_SaveData@CMomentaryDoor@@2PAUTYPEDESCRIPTION@@A,data,"aligned reference, confirmed by hl/dlls/doors:?Restore@CMomentaryDoor@@UAEHAAVCRestore@@@Z (95% or more)"
+10213B00,?m_SaveData@CGlow@@2PAUTYPEDESCRIPTION@@A,data,"aligned reference, confirmed by hl/dlls/effects:?Restore@CGlow@@UAEHAAVCRestore@@@Z (95% or more)"
+10213BA0,?m_SaveData@CGibShooter@@2PAUTYPEDESCRIPTION@@A,data,"aligned reference, confirmed by hl/dlls/effects:?Restore@CGibShooter@@UAEHAAVCRestore@@@Z (95% or more)"
+10213D60,?m_SaveData@CEnvRain@@2PAUTYPEDESCRIPTION@@A,data,"aligned reference, confirmed by hl/dlls/effects:?Restore@CEnvRain@@UAEHAAVCRestore@@@Z (95% or more)"
+10213E40,?m_SaveData@CEnvShockwave@@2PAUTYPEDESCRIPTION@@A,data,"aligned reference, confirmed by hl/dlls/effects:?Restore@CEnvShockwave@@UAEHAAVCRestore@@@Z (95% or more)"
+10213EE0,?m_SaveData@CEnvDLight@@2PAUTYPEDESCRIPTION@@A,data,"aligned reference, confirmed by hl/dlls/effects:?Restore@CEnvDLight@@UAEHAAVCRestore@@@Z (95% or more)"
+10213F00,?ms_iNextFreeKey@CEnvDLight@@2HA,data,"aligned reference, confirmed by hl/dlls/effects:?PostSpawn@CEnvDLight@@UAEXXZ (95% or more)"
+10213F38,?m_SaveData@CEnvFog@@2PAUTYPEDESCRIPTION@@A,data,"aligned reference, confirmed by hl/dlls/effects:?Restore@CEnvFog@@UAEHAAVCRestore@@@Z (95% or more)"
+10213F98,?m_SaveData@CGrassSprite@@2PAUTYPEDESCRIPTION@@A,data,"aligned reference, confirmed by hl/dlls/effects:?Restore@CGrassSprite@@UAEHAAVCRestore@@@Z (95% or more)"
+102140D8,?m_SaveData@CEnvModel@@0PAUTYPEDESCRIPTION@@A,data,"aligned reference, confirmed by hl/dlls/effects:?Restore@CEnvModel@@EAEHAAVCRestore@@@Z (95% or more)"
+1021422C,?m_SaveData@CBubbling@@2PAUTYPEDESCRIPTION@@A,data,"aligned reference, confirmed by hl/dlls/effects:?Restore@CBubbling@@UAEHAAVCRestore@@@Z (95% or more)"
+10214260,?m_SaveData@CLightning@@2PAUTYPEDESCRIPTION@@A,data,"aligned reference, confirmed by hl/dlls/effects:?Restore@CLightning@@UAEHAAVCRestore@@@Z (95% or more)"
+10214330,?m_SaveData@CSprite@@2PAUTYPEDESCRIPTION@@A,data,"aligned reference, confirmed by hl/dlls/effects:?Restore@CSprite@@UAEHAAVCRestore@@@Z (95% or more)"
+10214350,?m_SaveData@CLaser@@2PAUTYPEDESCRIPTION@@A,data,"aligned reference, confirmed by hl/dlls/effects:?Restore@CLaser@@UAEHAAVCRestore@@@Z (95% or more)"
+102143D0,?m_SaveData@CRainSettings@@2PAUTYPEDESCRIPTION@@A,data,"aligned reference, confirmed by hl/dlls/effects:?Restore@CRainSettings@@UAEHAAVCRestore@@@Z (95% or more)"
+102143F0,?m_SaveData@CRainModify@@2PAUTYPEDESCRIPTION@@A,data,"aligned reference, confirmed by hl/dlls/effects:?Restore@CRainModify@@UAEHAAVCRestore@@@Z (95% or more)"
+10214450,?m_SaveData@CEnvExplosion@@2PAUTYPEDESCRIPTION@@A,data,"aligned reference, confirmed by hl/dlls/explode:?Restore@CEnvExplosion@@UAEHAAVCRestore@@@Z (95% or more)"
+102144B8,?pSpawnObjects@CBreakable@@2PAPBDA,data,"aligned reference, confirmed by hl/dlls/func_break:?KeyValue@CBreakable@@UAEXPAUKeyValueData_s@@@Z (95% or more)"
+1021451C,?m_soundNames@CPushable@@2PAPADA,data,"aligned reference, confirmed by hl/dlls/func_break:?Move@CPushable@@QAEXPAVCBaseEntity@@H@Z (95% or more)"
+10214528,?m_SaveData@CBreakable@@2PAUTYPEDESCRIPTION@@A,data,"aligned reference, confirmed by hl/dlls/func_break:?Precache@CPushable@@UAEXXZ (95% or more)"
+10214610,?fraglimit@@3Ucvar_s@@A,data,"aligned reference, confirmed by hl/dlls/teamplay_gamerules:?Think@CHalfLifeTeamplay@@UAEXXZ (95% or more)"
+10214638,?friendlyfire@@3Ucvar_s@@A,data,"aligned reference, confirmed by hl/dlls/teamplay_gamerules:?FPlayerCanTakeDamage@CHalfLifeTeamplay@@UAEHPAVCBasePlayer@@PAVCBaseEntity@@@Z (95% or more)"
+102146D8,?teamoverride@@3Ucvar_s@@A,data,"aligned reference, confirmed by hl/dlls/teamplay_gamerules:??0CHalfLifeTeamplay@@QAE@XZ (95% or more)"
+102146EC,?defaultteam@@3Ucvar_s@@A,data,"aligned reference, confirmed by hl/dlls/teamplay_gamerules:?ClientUserInfoChanged@CHalfLifeTeamplay@@UAEXPAVCBasePlayer@@PAD@Z (95% or more)"
+10214714,?fragsleft@@3Ucvar_s@@A,data,"aligned reference, confirmed by hl/dlls/teamplay_gamerules:?Think@CHalfLifeTeamplay@@UAEXXZ (95% or more)"
+10214728,?timeleft@@3Ucvar_s@@A,data,"aligned reference, confirmed by hl/dlls/teamplay_gamerules:?Think@CHalfLifeTeamplay@@UAEXXZ (95% or more)"
+10216978,?m_SaveData@CGenericMonster@@2PAUTYPEDESCRIPTION@@A,data,"aligned reference, confirmed by hl/dlls/genericmonster:?Restore@CGenericMonster@@UAEHAAVCRestore@@@Z (95% or more)"
+102169B8,?m_SaveData@CDeadGenericMonster@@2PAUTYPEDESCRIPTION@@A,data,"aligned reference, confirmed by hl/dlls/genericmonster:?Restore@CDeadGenericMonster@@UAEHAAVCRestore@@@Z (95% or more)"
+102169C8,?m_SaveData@CRecharge@@2PAUTYPEDESCRIPTION@@A,data,"aligned reference, confirmed by hl/dlls/h_battery:?Restore@CRecharge@@UAEHAAVCRestore@@@Z (95% or more)"
+10216A18,?m_SaveData@CCycler@@2PAUTYPEDESCRIPTION@@A,data,"aligned reference, confirmed by hl/dlls/h_cycler:?Restore@CCycler@@UAEHAAVCRestore@@@Z (95% or more)"
+10216A28,?m_SaveData@CCyclerSprite@@2PAUTYPEDESCRIPTION@@A,data,"aligned reference, confirmed by hl/dlls/h_cycler:?Restore@CCyclerSprite@@UAEHAAVCRestore@@@Z (95% or more)"
+10216A58,?m_SaveData@CWreckage@@0PAUTYPEDESCRIPTION@@A,data,"aligned reference, confirmed by hl/dlls/h_cycler:?Restore@CWreckage@@EAEHAAVCRestore@@@Z (95% or more)"
+10216A68,?m_SaveData@CItem@@2PAUTYPEDESCRIPTION@@A,data,"aligned reference, confirmed by hl/dlls/items:?Restore@CItem@@UAEHAAVCRestore@@@Z (95% or more)"
+10216A78,?m_SaveData@CLight@@2PAUTYPEDESCRIPTION@@A,data,"aligned reference, confirmed by hl/dlls/lights:?Restore@CLight@@UAEHAAVCRestore@@@Z (95% or more)"
+10216B08,?m_SaveData@CLightFader@@2PAUTYPEDESCRIPTION@@A,data,"aligned reference, confirmed by hl/dlls/lights:?Restore@CLightFader@@UAEHAAVCRestore@@@Z (95% or more)"
+10216B88,?m_SaveData@CTriggerLightstyle@@2PAUTYPEDESCRIPTION@@A,data,"aligned reference, confirmed by hl/dlls/lights:?Restore@CTriggerLightstyle@@UAEHAAVCRestore@@@Z (95% or more)"
+10216BB8,?m_SaveData@CLocusVariable@@2PAUTYPEDESCRIPTION@@A,data,"aligned reference, confirmed by hl/dlls/locus:?Restore@CLocusVariable@@UAEHAAVCRestore@@@Z (95% or more)"
+10216C18,?m_SaveData@CLocusAlias@@2PAUTYPEDESCRIPTION@@A,data,"aligned reference, confirmed by hl/dlls/locus:?Restore@CLocusAlias@@UAEHAAVCRestore@@@Z (95% or more)"
+10216C38,?m_SaveData@CLocusBeam@@2PAUTYPEDESCRIPTION@@A,data,"aligned reference, confirmed by hl/dlls/locus:?Restore@CLocusBeam@@UAEHAAVCRestore@@@Z (95% or more)"
+10216D68,?m_SaveData@CMonsterMaker@@2PAUTYPEDESCRIPTION@@A,data,"aligned reference, confirmed by hl/dlls/monstermaker:?Restore@CMonsterMaker@@UAEHAAVCRestore@@@Z (95% or more)"
+10216E08,?m_SaveData@CBaseMonster@@2PAUTYPEDESCRIPTION@@A,data,"aligned reference, confirmed by hl/dlls/monsters:?Restore@CBaseMonster@@UAEHAAVCRestore@@@Z (95% or more)"
+102176BC,?pStateNames@?1??ReportAIState@CBaseMonster@@UAEXXZ@4PAPBDA,data,"aligned reference, confirmed by hl/dlls/monsters:?ReportAIState@CBaseMonster@@UAEXXZ (95% or more)"
+10217790,?m_SaveData@CFuncMortarField@@2PAUTYPEDESCRIPTION@@A,data,"aligned reference, confirmed by hl/dlls/mortar:?Restore@CFuncMortarField@@UAEHAAVCRestore@@@Z (95% or more)"
+10217ABC,?m_SaveData@CBaseSpreadWeapon@@2PAUTYPEDESCRIPTION@@A,data,"aligned reference, confirmed by hl/dlls/paranoia_wpn:?Restore@CBaseSpreadWeapon@@UAEHAAVCRestore@@@Z (95% or more)"
+10217B00,?m_SaveData@CPathTrack@@2PAUTYPEDESCRIPTION@@A,data,"aligned reference, confirmed by hl/dlls/pathcorner:?Restore@CPathTrack@@UAEHAAVCRestore@@@Z (95% or more)"
+10217B50,?m_SaveData@CPathCorner@@2PAUTYPEDESCRIPTION@@A,data,"aligned reference, confirmed by hl/dlls/pathcorner:?Restore@CPathCorner@@UAEHAAVCRestore@@@Z (95% or more)"
+10217BF0,?m_SaveData@CGunTarget@@2PAUTYPEDESCRIPTION@@A,data,"aligned reference, confirmed by hl/dlls/plats:?Restore@CGunTarget@@UAEHAAVCRestore@@@Z (95% or more)"
+10217C00,?m_SaveData@CFuncTrackTrain@@2PAUTYPEDESCRIPTION@@A,data,"aligned reference, confirmed by hl/dlls/plats:?Restore@CFuncTrackTrain@@UAEHAAVCRestore@@@Z (95% or more)"
+10217CF8,?m_SaveData@CTrainSequence@@2PAUTYPEDESCRIPTION@@A,data,"aligned reference, confirmed by hl/dlls/plats:?Restore@CTrainSequence@@UAEHAAVCRestore@@@Z (95% or more)"
+10217D88,?m_SaveData@CBasePlatTrain@@2PAUTYPEDESCRIPTION@@A,data,"aligned reference, confirmed by hl/dlls/plats:?Restore@CBasePlatTrain@@UAEHAAVCRestore@@@Z (95% or more)"
+10218E38,?m_SaveData@CScriptedSentence@@2PAUTYPEDESCRIPTION@@A,data,"aligned reference, confirmed by hl/dlls/scripted:?Restore@CScriptedSentence@@UAEHAAVCRestore@@@Z (95% or more)"
+10218ED8,?m_SaveData@CSpeaker@@2PAUTYPEDESCRIPTION@@A,data,"aligned reference, confirmed by hl/dlls/sound:?Restore@CSpeaker@@UAEHAAVCRestore@@@Z (95% or more)"
+10219978,?m_SaveData@CAmbientGeneric@@2PAUTYPEDESCRIPTION@@A,data,"aligned reference, confirmed by hl/dlls/sound:?Restore@CAmbientGeneric@@UAEHAAVCRestore@@@Z (95% or more)"
+102199D8,?m_SaveData@CEnvSound@@2PAUTYPEDESCRIPTION@@A,data,"aligned reference, confirmed by hl/dlls/sound:?Restore@CEnvSound@@UAEHAAVCRestore@@@Z (95% or more)"
+102199F8,?m_SaveData@CTriggerSound@@2PAUTYPEDESCRIPTION@@A,data,"aligned reference, confirmed by hl/dlls/sound:?Restore@CTriggerSound@@UAEHAAVCRestore@@@Z (95% or more)"
+10219A18,?m_SaveData@CSquadMonster@@2PAUTYPEDESCRIPTION@@A,data,"aligned reference, confirmed by hl/dlls/squadmonster:?Restore@CSquadMonster@@UAEHAAVCRestore@@@Z (95% or more)"
+10219A68,?m_SaveData@CBaseDelay@@2PAUTYPEDESCRIPTION@@A,data,"aligned reference, confirmed by hl/dlls/subs:?Restore@CBaseDelay@@UAEHAAVCRestore@@@Z (95% or more)"
+10219A98,?m_SaveData@CBaseToggle@@2PAUTYPEDESCRIPTION@@A,data,"aligned reference, confirmed by hl/dlls/subs:?Restore@CBaseToggle@@UAEHAAVCRestore@@@Z (95% or more)"
+10219C18,?m_SaveData@CTalkMonster@@2PAUTYPEDESCRIPTION@@A,data,"aligned reference, confirmed by hl/dlls/talkmonster:?Restore@CTalkMonster@@UAEHAAVCRestore@@@Z (95% or more)"
+10219CC8,?m_szFriends@CTalkMonster@@2PAPADA,data,"aligned reference, confirmed by hl/dlls/talkmonster:?EnumFriends@CTalkMonster@@QAEPAVCBaseEntity@@PAV2@HH@Z (95% or more)"
+10219D44,?slIdleResponse@@3PAUSchedule_t@@A,data,"aligned reference, confirmed by hl/dlls/talkmonster:?SetAnswerQuestion@CTalkMonster@@UAEXPAV1@@Z (95% or more)"
+10219E54,?slIdleStopShooting@@3PAUSchedule_t@@A,data,"aligned reference, confirmed by hl/dlls/talkmonster:?TakeDamage@CTalkMonster@@UAEHPAUentvars_s@@0MH@Z (95% or more)"
+1021AAE0,?gEntvarsDescription@@3PAUTYPEDESCRIPTION@@A,data,"aligned reference, confirmed by hl/dlls/util:?ReadEntVars@CRestore@@QAEHPBDPAUentvars_s@@@Z (95% or more)"
+1021B140,?gSizes@@3PAHA,data,"aligned reference, confirmed by hl/dlls/util:?ReadFields@CRestore@@QAEHPBDPAXPAUTYPEDESCRIPTION@@H@Z (95% or more)"
+1021BAF4,___security_cookie,data,"aligned reference, confirmed by hl/dlls/alias:?KeyValue@CInfoGroup@@UAEXPAUKeyValueData_s@@@Z (95% or more)"
+10220AB8,?g_bWantModEnable@@3V?$CBitVec@$0CA@@@A,data,"aligned reference, confirmed by hl/game_shared/voice_gamemgr:?ClientCommand@CVoiceGameMgr@@QAE_NPAVCBasePlayer@@PBD@Z (95% or more)"
+10220ABC,?g_PlayerModEnable@@3V?$CBitVec@$0CA@@@A,data,"aligned reference, confirmed by hl/game_shared/voice_gamemgr:?ClientCommand@CVoiceGameMgr@@QAE_NPAVCBasePlayer@@PBD@Z (95% or more)"
+10220AC0,?g_BanMasks@@3PAV?$CBitVec@$0CA@@@A,data,"aligned reference, confirmed by hl/game_shared/voice_gamemgr:?ClientCommand@CVoiceGameMgr@@QAE_NPAVCBasePlayer@@PBD@Z (95% or more)"
+10220B40,?g_SentBanMasks@@3PAV?$CBitVec@$0CA@@@A,data,"aligned reference, confirmed by hl/game_shared/voice_gamemgr:?ClientConnected@CVoiceGameMgr@@QAEXPAUedict_s@@@Z (95% or more)"
+10220BC0,?g_SentGameRulesMasks@@3PAV?$CBitVec@$0CA@@@A,data,"aligned reference, confirmed by hl/game_shared/voice_gamemgr:?UpdateMasks@CVoiceGameMgr@@AAEXXZ (95% or more)"
+10220C40,_vec3_origin,data,"aligned reference, confirmed by hl/pm_shared/pm_shared:_PM_CheckWaterJump (95% or more)"
+10220C50,_pmove,data,"aligned reference, confirmed by hl/pm_shared/pm_debug:_PM_DrawPhysEntBBox (95% or more)"
+10222D70,?szBuffer@?N@??GetMember@CInfoGroup@@QAEHPBD@Z@4PADA,data,"aligned reference, confirmed by hl/dlls/alias:?GetMember@CInfoGroup@@QAEHPBD@Z (95% or more)"
+10222EE4,?g_pGameRules@@3PAVCGameRules@@A,data,"aligned reference, confirmed by hl/dlls/cbase:?DispatchSpawn@@YAHPAUedict_s@@@Z (95% or more)"
+10222EEC,?g_Language@@3HA,data,"aligned reference, confirmed by hl/dlls/effects:?Precache@CGibShooter@@UAEXXZ (95% or more)"
+10222EFC,?g_iSkillLevel@@3HA,data,"aligned reference, confirmed by hl/dlls/cbase:?DispatchSpawn@@YAHPAUedict_s@@@Z (95% or more)"
+10222F04,?g_fGameOver@@3HA,data,"aligned reference, confirmed by hl/dlls/teamplay_gamerules:?Think@CHalfLifeTeamplay@@UAEXXZ (95% or more)"
+10222F28,?g_vecAttackDir@@3VVector@@A,data,"aligned reference, confirmed by hl/dlls/cbase:?TakeDamage@CBaseEntity@@UAEHPAUentvars_s@@0MH@Z (95% or more)"
+10222F34,?g_vecZero@@3VVector@@B,data,"aligned reference, confirmed by hl/dlls/bmodels:?KeyValue@CFuncRotating@@UAEXPAUKeyValueData_s@@@Z (95% or more)"
+10222F48,?g_engfuncs@@3Uenginefuncs_s@@A,data,"aligned reference, confirmed by hl/dlls/ai_basenpc_schedule:?ChangeSchedule@CBaseMonster@@QAEXPAUSchedule_t@@@Z (95% or more)"
+1022318C,?g_doingDesired@@3HA,data,"aligned reference, confirmed by hl/dlls/movewith:?CheckDesiredList@@YAXXZ (95% or more)"
+10223190,?g_pWorld@@3PAVCWorld@@A,data,"aligned reference, confirmed by hl/dlls/effects:?Touch@CShot@@UAEXPAVCBaseEntity@@@Z (95% or more)"
+102231A8,?com_token@@3PADA,data,"aligned reference, confirmed by hl/dlls/paranoia_wpn:?LoadSpreadTable@@YAXPAD@Z (95% or more)"
+10223788,?g_VoiceGameMgr@@3VCVoiceGameMgr@@A,data,"aligned reference, confirmed by hl/dlls/teamplay_gamerules:?ClientCommand@CHalfLifeTeamplay@@UAEHPAVCBasePlayer@@PBD@Z (95% or more)"
+102238B0,?WorldGraph@@3VCGraph@@A,data,"aligned reference, confirmed by hl/dlls/monsters:?AdvanceRoute@CBaseMonster@@QAEXM@Z (95% or more)"
+10225980,?gSCounter@@3HA,data,"aligned reference, confirmed by hl/dlls/paranoia_wpn:?LoadSpreadTable@@YAXPAD@Z (95% or more)"
+10225988,?gDefaultSpread@@3Uspreadparams_s@@A,data,"aligned reference, confirmed by hl/dlls/paranoia_wpn:?LoadSpreadTable@@YAXPAD@Z (95% or more)"
+10225A30,?gSpreadTable@@3PAUspreadparams_s@@A,data,"aligned reference, confirmed by hl/dlls/paranoia_wpn:?LoadSpreadTable@@YAXPAD@Z (95% or more)"
+102264B4,?gmsgKeyedDLight@@3HA,data,"aligned reference, confirmed by hl/dlls/effects:?MakeLight@CEnvDLight@@UAEXH@Z (95% or more)"
+102264C0,?gmsgAddShine@@3HA,data,"aligned reference, confirmed by hl/dlls/bmodels:?Think@CFuncShine@@UAEXXZ (95% or more)"
+102264EC,?gmsgDeathMsg@@3HA,data,"aligned reference, confirmed by hl/dlls/teamplay_gamerules:?DeathNotice@CHalfLifeTeamplay@@UAEXPAVCBasePlayer@@PAUentvars_s@@1@Z (95% or more)"
+102264F0,?gmsgScoreInfo@@3HA,data,"aligned reference, confirmed by hl/dlls/teamplay_gamerules:?ChangePlayerTeam@CHalfLifeTeamplay@@UAEXPAVCBasePlayer@@PBDHH@Z (95% or more)"
+102264F4,?gmsgTeamInfo@@3HA,data,"aligned reference, confirmed by hl/dlls/teamplay_gamerules:?ChangePlayerTeam@CHalfLifeTeamplay@@UAEXPAVCBasePlayer@@PBDHH@Z (95% or more)"
+102264FC,?gmsgGameMode@@3HA,data,"aligned reference, confirmed by hl/dlls/teamplay_gamerules:?UpdateGameMode@CHalfLifeTeamplay@@UAEXPAVCBasePlayer@@@Z (95% or more)"
+1022650C,?gmsgItemPickup@@3HA,data,"aligned reference, confirmed by hl/dlls/items:?MyTouch@CItemArmour@@EAEHPAVCBasePlayer@@@Z (95% or more)"
+1022651C,?gmsgTextMsg@@3HA,data,"aligned reference, confirmed by hl/dlls/util:?ClientPrint@@YAXPAUentvars_s@@HPBD1111@Z (95% or more)"
+1022652C,?gmsgTeamNames@@3HA,data,"aligned reference, confirmed by hl/dlls/teamplay_gamerules:?InitHUD@CHalfLifeTeamplay@@UAEXPAVCBasePlayer@@@Z (95% or more)"
+1022654C,?gmsgGrass@@3HA,data,"aligned reference, confirmed by hl/dlls/effects:?SendInitMessage@CGrassSprite@@UAEXPAVCBasePlayer@@@Z (95% or more)"
+10226550,?gmsgRadioIcon@@3HA,data,"aligned reference, confirmed by hl/dlls/sound:?Use@CRadio@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z (95% or more)"
+10226558,?gmsgCustomDecal@@3HA,data,"aligned reference, confirmed by hl/dlls/effects:?SendInitMessage@CStaticDecal@@UAEXPAVCBasePlayer@@@Z (95% or more)"
+10226560,?gmsgSkymarker_Sky@@3HA,data,"aligned reference, confirmed by hl/dlls/effects:?SendInitMessage@CEnvPos_Sky@@UAEXPAVCBasePlayer@@@Z (95% or more)"
+10226564,?gmsgSkymarker_World@@3HA,data,"aligned reference, confirmed by hl/dlls/effects:?SendInitMessage@CEnvPos_World@@UAEXPAVCBasePlayer@@@Z (95% or more)"
+102268C0,?gszallsentencenames@@3PAY0BA@DA,data,"aligned reference, confirmed by hl/dlls/sound:?SENTENCEG_Init@@YAXXZ (95% or more)"
+1022C8C0,?gcallsentences@@3HA,data,"aligned reference, confirmed by hl/dlls/sound:?SENTENCEG_Init@@YAXXZ (95% or more)"
+1022C8C4,?fSentencesInit@@3HA,data,"aligned reference, confirmed by hl/dlls/sound:?SENTENCEG_GetIndex@@YAHPBD@Z (95% or more)"
+1022C8C8,?rgsentenceg@@3PAUsentenceg@@A,data,"aligned reference, confirmed by hl/dlls/sound:?SENTENCEG_GetIndex@@YAHPBD@Z (95% or more)"
+1022F16C,?gcTextures@@3HA,data,"aligned reference, confirmed by hl/dlls/sound:?TEXTURETYPE_Find@@YADPAD@Z (95% or more)"
+1022F170,?grgszTextureName@@3PAY0N@DA,data,"aligned reference, confirmed by hl/dlls/sound:?SENTENCEG_Init@@YAXXZ (95% or more)"
+10230B70,?grgchTextureType@@3PADA,data,"aligned reference, confirmed by hl/dlls/sound:?TEXTURETYPE_Find@@YADPAD@Z (95% or more)"
+10230D70,?pSoundEnt@@3PAVCSoundEnt@@A,data,"aligned reference, confirmed by hl/dlls/soundent:?Initialize@CSoundEnt@@QAEXXZ (95% or more)"
+10230D78,?g_talkWaitTime@CTalkMonster@@2MA,data,"aligned reference, confirmed by hl/dlls/talkmonster:?TalkInit@CTalkMonster@@QAEXXZ (95% or more)"
+10230D80,?team_names@@3PAY0BA@DA,data,"aligned reference, confirmed by hl/dlls/teamplay_gamerules:??0CHalfLifeTeamplay@@QAE@XZ (95% or more)"
+10230F80,?team_scores@@3PAHA,data,"aligned reference, confirmed by hl/dlls/teamplay_gamerules:??0CHalfLifeTeamplay@@QAE@XZ (95% or more)"
+10231000,?num_teams@@3HA,data,"aligned reference, confirmed by hl/dlls/teamplay_gamerules:??0CHalfLifeTeamplay@@QAE@XZ (95% or more)"
+10231004,?last_frags@?1??Think@CHalfLifeTeamplay@@UAEXXZ@4HA,data,"aligned reference, confirmed by hl/dlls/teamplay_gamerules:?Think@CHalfLifeTeamplay@@UAEXXZ (95% or more)"
+10231008,?last_time@?1??Think@CHalfLifeTeamplay@@UAEXXZ@4HA,data,"aligned reference, confirmed by hl/dlls/teamplay_gamerules:?Think@CHalfLifeTeamplay@@UAEXXZ (95% or more)"
+10231054,?g_groupmask@@3HA,data,"aligned reference, confirmed by hl/dlls/util:??0UTIL_GroupTrace@@QAE@HH@Z (95% or more)"
+10231058,?g_groupop@@3HA,data,"aligned reference, confirmed by hl/dlls/util:??0UTIL_GroupTrace@@QAE@HH@Z (95% or more)"
+10231888,?ItemInfoArray@CBasePlayerItem@@2PAUItemInfo@@A,data,"aligned reference, confirmed by hl/dlls/singleplay_gamerules:?GetNextBestWeapon@CHalfLifeRules@@UAEHPAVCBasePlayer@@PAVCBasePlayerItem@@@Z (95% or more)"
+10231F08,?g_sModelIndexLaser@@3FA,data,"aligned reference, confirmed by hl/dlls/nodes:?DrawThink@CNodeViewer@@QAEXXZ (95% or more)"
+10231F14,?g_sModelIndexSmoke@@3FA,data,"aligned reference, confirmed by hl/dlls/explode:?Smoke@CEnvExplosion@@QAEXXZ (95% or more)"
+10231F60,?g_pBodyQueueHead@@3PAUedict_s@@A,data,"aligned reference, confirmed by hl/dlls/nodes:?BuildNodeGraph@CTestHull@@QAEXXZ (95% or more)"
+10232278,?gGlobalState@@3VCGlobalState@@A,data,"aligned reference, confirmed by hl/dlls/buttons:?GetState@CMultiSource@@UAE?AW4STATE@@XZ (95% or more)"

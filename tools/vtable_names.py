@@ -13,7 +13,9 @@ leaves out of line), the jump target is named after the only function the
 Prints the names that differ from the current symbol map (tools/symbols/
 hl_1.6a.csv + hl_manual.csv) and the names that are new; --write stores
 the proposals with their evidence in tools/symbols/hl_vtable.csv, which
-tools/build.py merges as a curated map.
+tools/build.py merges as a curated map. Addresses named in hl_manual.csv
+are never proposed again. The vtables themselves get their decorated
+names (??_7Class@@6B@) from the 1.6a RTTI.
 """
 import csv
 import os
@@ -147,8 +149,14 @@ def main():
                 propose(a6, n55, ev)
     for va in conflicts:
         proposals.pop(va, None)
-    differ = {va: p for va, p in proposals.items() if va in current and current[va] != p[0]}
+    # curated names (hl_manual.csv, with their own evidence) are never overridden
+    manual = {int(r["va"], 16) for r in csv.DictReader(open(os.path.join(ROOT, "tools", "symbols", "hl_manual.csv")))}
+    differ = {va: p for va, p in proposals.items() if va in current and current[va] != p[0] and va not in manual}
     newnames = {va: p for va, p in proposals.items() if va not in current}
+    # the vtables themselves: the 1.6a RTTI complete object locator (offset
+    # 0) of class X sits right before the primary vtable of X
+    vftables = {va: ("??_7%s@@6B@" % cls, "RTTI: the complete object locator of .?AV%s@@ (offset 0) "
+                     "precedes this vtable" % cls) for cls, va in vt6.items() if va not in current}
     print("classes compared: %d, proposals: %d (skipped %d folded addresses)" % (compared, len(proposals), len(conflicts)))
     print("names that differ from the current map: %d" % len(differ))
     for va, (n, ev) in sorted(differ.items())[:60]:
@@ -156,13 +164,23 @@ def main():
     print("new names: %d" % len(newnames))
     for va, (n, ev) in sorted(newnames.items())[:20]:
         print("  %08X  %s" % (va, n))
+    print("vtable names from RTTI: %d" % len(vftables))
     if "--write" in sys.argv:
         path = os.path.join(ROOT, "tools", "symbols", "hl_vtable.csv")
+        rows = {va: (n, "func", ev) for va, (n, ev) in {**differ, **newnames}.items()}
+        rows.update({va: (n, "data", ev) for va, (n, ev) in vftables.items()})
+        # keep the evidence already recorded (possibly amended by hand) for
+        # entries whose name did not change
+        if os.path.exists(path):
+            for r in csv.DictReader(open(path)):
+                va = int(r["va"], 16)
+                if va in rows and rows[va][0] == r["name"]:
+                    rows[va] = (r["name"], r["kind"], r["evidence"])
         with open(path, "w", newline="") as f:
             w = csv.writer(f, lineterminator="\n")
             w.writerow(["va", "name", "kind", "evidence"])
-            for va, (n, ev) in sorted({**differ, **newnames}.items()):
-                w.writerow(["%08X" % va, n, "func", ev])
+            for va, (n, kind, ev) in sorted(rows.items()):
+                w.writerow(["%08X" % va, n, kind, ev])
         print("wrote %s" % os.path.relpath(path, ROOT))
 
 
