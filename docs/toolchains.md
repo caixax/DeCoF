@@ -1,8 +1,6 @@
 # Toolchains per DLL and game version
 
-Generated from `tools/pe_inventory.py` (Rich header, optional header,
-debug directory) and `tools/pdbfile.py` (S_COMPILE2 records in the PDBs).
-Raw data: `docs/versions.csv`.
+Generated from `tools/pe_inventory.py` (Rich header, optional header, debug directory) and `tools/pdbfile.py` (S_COMPILE2 records in the PDBs). Raw data: `docs/versions.csv`.
 
 ## Summary
 
@@ -27,67 +25,35 @@ Raw data: `docs/versions.csv`.
 
 ### 2010 to 1.55: Visual C++ .NET 2003
 
-- Rich header of every client.dll, hl.dll and server.dll from the prototype
-  to 1.55: `Utc1310_C/CPP.3077`, `Masm710.3077`, `Export710.3077`,
-  `Linker710.3077`. Optional header linker version 7.10.
-- The three hl.dll PDBs (1.0, 1.4, 1.55) agree: every game object carries
-  S_COMPILE2 "Microsoft (R) Optimizing Compiler" 13.10.3077, the link
-  record is "Microsoft (R) LINK" 7.10.3077, and the CRT comes from
-  `c:\Program Files (x86)\Microsoft Visual Studio .NET 2003\Vc7\lib\LIBCMTD.lib`
-  and `libcpmtd.lib`.
-- Original source root: `s:\CryofFear\Sourcecode\` (2012) and
-  `s:\half-life\CryOfFear\sourcecode\code_src\` (2010 prototype client).
+- Rich header of every client.dll, hl.dll and server.dll from the prototype to 1.55: `Utc1310_C/CPP.3077`, `Masm710.3077`, `Export710.3077`, `Linker710.3077`. Optional header linker version 7.10.
+- The three hl.dll PDBs (1.0, 1.4, 1.55) agree: every game object carries S_COMPILE2 "Microsoft (R) Optimizing Compiler" 13.10.3077, the link record is "Microsoft (R) LINK" 7.10.3077, and the CRT comes from `c:\Program Files (x86)\Microsoft Visual Studio .NET 2003\Vc7\lib\LIBCMTD.lib` and `libcpmtd.lib`.
+- Original source root: `s:\CryofFear\Sourcecode\` (2012) and `s:\half-life\CryOfFear\sourcecode\code_src\` (2010 prototype client).
 
 ### hl.dll 1.0 to 1.55 is a Debug build
 
-- Objects live in `s:\CryofFear\Sourcecode\dlls\debughl\`, the HLSDK
-  Debug output directory of `hl.dsp`.
-- S_COMPILE2 flags of the 159 game objects in 1.55: 156 C++ and 3 C objects
-  with flag 0x100 (fEC, Edit and Continue, so /ZI). VC++ 7.1 rejects /ZI
-  together with /O1, /O2 or /Ox, so this code is unoptimized (/Od).
-  CRT objects carry 0x2000 (/GS) instead.
+- Objects live in `s:\CryofFear\Sourcecode\dlls\debughl\`, the HLSDK Debug output directory of `hl.dsp`.
+- S_COMPILE2 flags of the 159 game objects in 1.55: 156 C++ and 3 C objects with flag 0x100 (fEC, Edit and Continue, so /ZI). VC++ 7.1 rejects /ZI together with /O1, /O2 or /Ox, so this code is unoptimized (/Od). CRT objects carry 0x2000 (/GS) instead.
 - Linked against LIBCMTD.lib (static debug CRT, /MTd).
-- Exports `trip_beam` and `?ManagerReport@CMultiManager@@QAEXXZ`. Both
-  exist only under `_DEBUG` in the HLSDK. They are gone in 1.6a.
-- All three PDBs match their DLLs exactly (RSDS GUID and age).
-  1.4 and 1.55 share PDB GUID D13BE348195D42DBBCCBF0E581F409B5 (ages 54
-  and 90): the same incremental PDB, linked again 36 times between the two
-  releases. 1.0 has its own GUID (age 784).
+- Exports `trip_beam` and `?ManagerReport@CMultiManager@@QAEXXZ`. Both exist only under `_DEBUG` in the HLSDK. They are gone in 1.6a.
+- All three PDBs match their DLLs exactly (RSDS GUID and age). 1.4 and 1.55 share PDB GUID D13BE348195D42DBBCCBF0E581F409B5 (ages 54 and 90): the same incremental PDB, linked again 36 times between the two releases. 1.0 has its own GUID (age 784).
 
 ### 1.6a (Steam): Visual Studio 2019 16.7, Release
 
 - PE timestamps 2020-10-28 (client.dll) and 2020-10-30 (hl.dll).
-- Optional header linker version 14.27, subsystem version 6.00, new
-  `.rsrc` section (side-by-side manifest).
-- Rich header of hl.dll: `Utc1900_CPP.29112` x159, `Utc1900_C.29112` x3,
-  `Linker1400.29112`, `Export1400.29112`, `Cvtres1400.29112`.
-  client.dll: `Utc1900_CPP.29112` x140, `Utc1900_C.29112` x3, same tools.
-  Build 29112 with linker 14.27 is the v142 toolset of VS 2019 16.7
-  (cl.exe 19.27.29112, link.exe 14.27.29112).
-- The other entries come from prebuilt static libraries, not from game code:
-  `Utc1900_*.27412` and `.28920`, `Masm1400.*` (static CRT and UCRT),
-  `Implib800.50727` (DevIL, irrKlang), `Linker600.8447` (Cg import libs),
-  `Implib1000.30319` (steam_api.lib), `AliasObj1100.41118`.
+- Optional header linker version 14.27, subsystem version 6.00, new `.rsrc` section (side-by-side manifest).
+- Rich header of hl.dll: `Utc1900_CPP.29112` x159, `Utc1900_C.29112` x3, `Linker1400.29112`, `Export1400.29112`, `Cvtres1400.29112`. client.dll: `Utc1900_CPP.29112` x140, `Utc1900_C.29112` x3, same tools. Build 29112 with linker 14.27 is the v142 toolset of VS 2019 16.7 (cl.exe 19.27.29112, link.exe 14.27.29112).
+- The other entries come from prebuilt static libraries, not from game code: `Utc1900_*.27412` and `.28920`, `Masm1400.*` (static CRT and UCRT), `Implib800.50727` (DevIL, irrKlang), `Linker600.8447` (Cg import libs), `Implib1000.30319` (steam_api.lib), `AliasObj1100.41118`.
 - No `Utc1900_LTCG_*` entries, so no /GL (no whole program optimization).
 - Imports contain no MSVCR/VCRUNTIME DLL, so the CRT is static (/MT).
-- 1.55 hl.dll had 159 game objects. 1.6a hl.dll has 162. The new exports
-  (`CBowlingBall`, `CMp5`, `weapon_mp5`, `ammo_mp5`, `bowling_ball`,
-  `cof_mp5modesaverestore`) account for the growth.
-- The 102 extra client.dll exports are implicit move constructors and move
-  assignment operators of the exported VGUI classes (`$$QAV01@`), which a
-  C++11 compiler generates. They are not new game code.
+- 1.55 hl.dll had 159 game objects. 1.6a hl.dll has 162. The new exports (`CBowlingBall`, `CMp5`, `weapon_mp5`, `ammo_mp5`, `bowling_ball`, `cof_mp5modesaverestore`) account for the growth.
+- The 102 extra client.dll exports are implicit move constructors and move assignment operators of the exported VGUI classes (`$$QAV01@`), which a C++11 compiler generates. They are not new game code.
 
 ### opengl32.dll: Paranoia wrapper, Visual C++ 6.0 Standard
 
-- Same file in the prototype, 1.0 and 1.6a
-  (SHA-256 26732d7a9aeb8079..., PE timestamp 2006-11-27).
-- Rich header: `Utc12_CPP_Std.8168` x2, `Linker600.8168`, `Masm613.7299`.
-  "Std" is the Standard Edition, whose compiler has no optimizer (it
-  accepts /O2 and ignores it).
-- Contains `PARANOIA_HACKS_V1` and `opengl32.log`. Source is in
-  `refs/Paranoia/code_src/opengl32/` (VC6 project, `/G6 /Gz /MD /W4 /GX /O2`).
-- The prototype also has `parnaoia_opengl32.dll` (2008, VC++ .NET 2003), a
-  later rebuild of the same wrapper that CoF never loads.
+- Same file in the prototype, 1.0 and 1.6a (SHA-256 26732d7a9aeb8079..., PE timestamp 2006-11-27).
+- Rich header: `Utc12_CPP_Std.8168` x2, `Linker600.8168`, `Masm613.7299`. "Std" is the Standard Edition, whose compiler has no optimizer (it accepts /O2 and ignores it).
+- Contains `PARANOIA_HACKS_V1` and `opengl32.log`. Source is in `refs/Paranoia/code_src/opengl32/` (VC6 project, `/G6 /Gz /MD /W4 /GX /O2`).
+- The prototype also has `parnaoia_opengl32.dll` (2008, VC++ .NET 2003), a later rebuild of the same wrapper that CoF never loads.
 
 ### Preliminary flag evidence for 1.6a (byte scans of .text, to be confirmed in the RE tool)
 
@@ -100,44 +66,21 @@ Raw data: `docs/versions.csv`.
 | frame `push ebp; mov ebp,esp` | 6416 | 5401 | about one per function |
 | aligned frames `and esp,-8/-16` | 246 | 52 | 5 |
 
-Reading: optimized Release code (/O2-class), `/GS` on, SSE2 scalar math
-(the VS 2019 default `/arch:SSE2`), no /RTC. Many functions keep an EBP
-frame, so `/Oy-` is possible; this needs disassembly to settle. The 1.55
-Debug build has no /RTC stack fill either (/ZI /Od without /RTC1).
+Reading: optimized Release code (/O2-class), `/GS` on, SSE2 scalar math (the VS 2019 default `/arch:SSE2`), no /RTC. Many functions keep an EBP frame, so `/Oy-` is possible; this needs disassembly to settle. The 1.55 Debug build has no /RTC stack fill either (/ZI /Od without /RTC1).
 
 ### 1.6a hw.dll, GameUI.dll, cof.exe, CoFLaunchApp.exe (Phase 0 inventory)
 
 All values from `tools/pe_inventory.py` (`docs/versions.csv`), 2026-10-10.
 
-- **hw.dll** (2013-04-21, linker 6.00): Rich header `Utc12_C_Std.8168` x92,
-  `Utc12_CPP_Std.8168` x98 (Standard Edition), `Utc12_C.8168` x199,
-  `Utc12_CPP.8168` x18, `Utc12_2_C.9044` x7 and `Utc12_2_CPP.9044` x3
-  (VC6 with the processor pack), `Utc12_2_C.8943` x1, `Utc13_C.8830` x3,
-  `Utc1400_C.50727` x72 (VS 2005), `Masm613.7299` x46, `Linker600.8168`.
-  The header does not say which of these entries are engine objects and
-  which come from prebuilt libraries (Miles, VGUI, steam_api_c); that is
-  settled per object when hw.dll units are built.
-- **GameUI.dll** (2013-04-21, linker 6.00): `Utc12_CPP_Std.8168` x131,
-  `Utc12_C.8168` x155, `Utc12_CPP.8168` x13, `Masm613.7299` x35,
-  `Linker600.8168`.
-- **cof.exe** (linker 6.00): `Utc12_C.8168` x122, `Utc12_CPP.8168` x10,
-  `Masm613.7299` x21, `Cvtres500.1720`, `Linker600.8168`. Version resource
-  1, 1, 1, 1.
-- **CoFLaunchApp.exe**: managed (imports only `mscoree.dll`), PDB path
-  `U:\common\Cry of Fear\CryOfFear\StatsResetProgram\CoFLaunchApp\...`,
-  assembly version 1.0.0. No native compiler involved.
-- The Standard Edition compiler has no optimizer; it accepts /O2 and
-  generates unoptimized code. The installed Professional Edition with /Od
-  produces the same code (proven on opengl32.dll).
+- **hw.dll** (2013-04-21, linker 6.00): Rich header `Utc12_C_Std.8168` x92, `Utc12_CPP_Std.8168` x98 (Standard Edition), `Utc12_C.8168` x199, `Utc12_CPP.8168` x18, `Utc12_2_C.9044` x7 and `Utc12_2_CPP.9044` x3 (VC6 with the processor pack), `Utc12_2_C.8943` x1, `Utc13_C.8830` x3, `Utc1400_C.50727` x72 (VS 2005), `Masm613.7299` x46, `Linker600.8168`. The header does not say which of these entries are engine objects and which come from prebuilt libraries (Miles, VGUI, steam_api_c); that is settled per object when hw.dll units are built.
+- **GameUI.dll** (2013-04-21, linker 6.00): `Utc12_CPP_Std.8168` x131, `Utc12_C.8168` x155, `Utc12_CPP.8168` x13, `Masm613.7299` x35, `Linker600.8168`.
+- **cof.exe** (linker 6.00): `Utc12_C.8168` x122, `Utc12_CPP.8168` x10, `Masm613.7299` x21, `Cvtres500.1720`, `Linker600.8168`. Version resource 1, 1, 1, 1.
+- **CoFLaunchApp.exe**: managed (imports only `mscoree.dll`), PDB path `U:\common\Cry of Fear\CryOfFear\StatsResetProgram\CoFLaunchApp\...`, assembly version 1.0.0. No native compiler involved.
+- The Standard Edition compiler has no optimizer; it accepts /O2 and generates unoptimized code. The installed Professional Edition with /Od produces the same code (proven on opengl32.dll).
 
 ## Inline expansion experiment (/Ob1), 2026-10-11
 
-VC6 `/O2` implied `/Ob1` (expand only functions marked inline or defined in
-the class body); from VS 2005 on `/O2` implies `/Ob2` (also expand any
-suitable function). A project converted from the VC6 `hl.dsp` and
-`cl_dll.dsp` of the HLSDK and Paranoia (`/O2`, no `/Ob`) may keep the old
-behaviour. Read-only test: all units compiled with the current flags and
-again with `/Ob1` added, everything else equal.
+VC6 `/O2` implied `/Ob1` (expand only functions marked inline or defined in the class body); from VS 2005 on `/O2` implies `/Ob2` (also expand any suitable function). A project converted from the VC6 `hl.dsp` and `cl_dll.dsp` of the HLSDK and Paranoia (`/O2`, no `/Ob`) may keep the old behaviour. Read-only test: all units compiled with the current flags and again with `/Ob1` added, everything else equal.
 
 | DLL | Units compared | Functions | 100% now | 100% with /Ob1 | Lost |
 |---|---|---|---|---|---|
@@ -148,32 +91,15 @@ again with `/Ob1` added, everything else equal.
 
 Readings:
 
-- hl.dll: in 1.6a every entity export is a 5-byte `jmp GetClassPtr<T>`. The
-  template is not marked inline, so only `/Ob1` keeps it out of line;
-  with the current flags it is expanded into the export. The 169 gains
-  include those and functions whose callees stay calls under `/Ob1`.
-- client.dll: no client source is built yet, so the only evidence is the
-  shared pm_shared code. `InterpolateAngles` and `VectorMatrix` match only
-  with `/Ob1` in both DLLs, and their client.dll bytes equal the hl.dll
-  bytes. Two functions; to be confirmed when client units exist.
-- opengl32.dll: built with `/Od` (Standard Edition, no optimizer), so
-  inline expansion never happens and `/Ob1` changes nothing. The other VC6
-  binaries were also built by VC6, whose `/O2` already means `/Ob1`.
-- Decision (user, 2026-10-11): `/Ob1` is applied to hl.dll only
-  (`tools/units.json`). Rebuilt from the committed sources, hl.dll goes from
-  1,036 to 1,201 MATCHED functions. `CSquadMonster::ScheduleChange` drops
-  from 100% to 1.7% and is tracked as a known regression in
-  `docs/progress.csv`. client.dll and opengl32.dll keep their flags;
-  client.dll is tested again first thing once real client units exist.
+- hl.dll: in 1.6a every entity export is a 5-byte `jmp GetClassPtr<T>`. The template is not marked inline, so only `/Ob1` keeps it out of line; with the current flags it is expanded into the export. The 169 gains include those and functions whose callees stay calls under `/Ob1`.
+- client.dll: no client source is built yet, so the only evidence is the shared pm_shared code. `InterpolateAngles` and `VectorMatrix` match only with `/Ob1` in both DLLs, and their client.dll bytes equal the hl.dll bytes. Two functions; to be confirmed when client units exist.
+- opengl32.dll: built with `/Od` (Standard Edition, no optimizer), so inline expansion never happens and `/Ob1` changes nothing. The other VC6 binaries were also built by VC6, whose `/O2` already means `/Ob1`.
+- Decision (user, 2026-10-11): `/Ob1` is applied to hl.dll only (`tools/units.json`). Rebuilt from the committed sources, hl.dll goes from 1,036 to 1,201 MATCHED functions. `CSquadMonster::ScheduleChange` drops from 100% to 1.7% and is tracked as a known regression in `docs/progress.csv`. client.dll and opengl32.dll keep their flags; client.dll is tested again first thing once real client units exist.
 
 ## Change between versions
 
 1. Prototype to 1.55: no toolchain change (VC++ .NET 2003 RTM throughout).
-2. 1.55 to 1.6a: client.dll and hl.dll were rebuilt in October 2020 with
-   VS 2019 16.7 (toolset 14.27). hl.dll also changed from Debug to Release.
-   The codegen of the target has nothing in common with the PDB builds, so
-   the PDBs give names, types, source files and link order, not byte
-   patterns.
+2. 1.55 to 1.6a: client.dll and hl.dll were rebuilt in October 2020 with VS 2019 16.7 (toolset 14.27). hl.dll also changed from Debug to Release. The codegen of the target has nothing in common with the PDB builds, so the PDBs give names, types, source files and link order, not byte patterns.
 3. opengl32.dll never changed.
 
 ## Toolchains needed for matching

@@ -1,7 +1,6 @@
 # Tooling
 
-Everything below lives outside the repository on this machine. Paths are
-the defaults the scripts use.
+Everything below lives outside the repository on this machine. Paths are the defaults the scripts use.
 
 | Tool | Location | Source |
 |---|---|---|
@@ -18,18 +17,12 @@ the defaults the scripts use.
 
 Downloads are kept in `I:\Tools\_downloads`.
 
-Why a separate compiler directory: the retail Rich header says build 29112.
-The 14.27 toolset that the current VS 2019 installer offers is the final
-servicing build 29120. VS 16.7.6 and 16.7.7 (October 2020, the month the
-1.6a DLLs were linked) ship 29112, so that package was extracted on its own
-and is used with the 14.27.29110 headers and libraries (same CRT version in
-both releases).
+Why a separate compiler directory: the retail Rich header says build 29112. The 14.27 toolset that the current VS 2019 installer offers is the final servicing build 29120. VS 16.7.6 and 16.7.7 (October 2020, the month the 1.6a DLLs were linked) ship 29112, so that package was extracted on its own and is used with the 14.27.29110 headers and libraries (same CRT version in both releases).
 
 ## Ghidra project
 
 - `re/CoF.gpr` (git-ignored), created by `python tools/ghidra_import.py`.
-- Folders `/1.6a`, `/1.55`, `/1.4`, `/1.0`, `/proto`; PDBs applied to the
-  1.0, 1.4 and 1.55 hl.dll.
+- Folders `/1.6a`, `/1.55`, `/1.4`, `/1.0`, `/proto`; PDBs applied to the 1.0, 1.4 and 1.55 hl.dll.
 
 ## MCP server (for the RE tools in Claude Code)
 
@@ -38,12 +31,8 @@ both releases).
    tools\ghidra_mcp_server.bat --project I:\Projects\cof-decompiled\re\CoF.gpr --program /1.6a/hl.dll
    ```
    It listens on 127.0.0.1:8089 only, with script execution enabled.
-2. `.mcp.json` in the repo root registers the stdio bridge as the `ghidra`
-   MCP server, with `GHIDRA_MCP_REQUIRE_PROGRAM_SELECTORS=1`: every tool call
-   must name its program (for example `/1.6a/hl.dll` or `/1.55/hl.dll`), so a
-   rename can not land in the wrong version.
-3. Claude Code picks the server up at session start and asks once to approve
-   it.
+2. `.mcp.json` in the repo root registers the stdio bridge as the `ghidra` MCP server, with `GHIDRA_MCP_REQUIRE_PROGRAM_SELECTORS=1`: every tool call must name its program (for example `/1.6a/hl.dll` or `/1.55/hl.dll`), so a rename can not land in the wrong version.
+3. Claude Code picks the server up at session start and asks once to approve it.
 
 ## Build and diff
 
@@ -55,19 +44,11 @@ python tools/build.py report              per unit / per function match
 python tools/build.py all    [unit ...]
 ```
 
-- Units and flags: `tools/units.json`. Retail addresses and decorated
-  names: `tools/symbols/<dll>_1.6a.csv` (`va,name,kind`).
-- `target` writes a job file and runs `tools/ghidra_scripts/DelinkUnits.java`
-  through the MCP server when it is up, or through headless Ghidra when it
-  is not. The script adds the decorated names as labels (readable primary
-  names are kept) and exports each unit as a COFF object with relocations,
-  so objdiff compares relocation targets by symbol name.
-- Outputs: `build/base/...obj` (ours), `build/target/...obj` (retail),
-  `build/report.json`.
+- Units and flags: `tools/units.json`. Retail addresses and decorated names: `tools/symbols/<dll>_1.6a.csv` (`va,name,kind`).
+- `target` writes a job file and runs `tools/ghidra_scripts/DelinkUnits.java` through the MCP server when it is up, or through headless Ghidra when it is not. The script adds the decorated names as labels (readable primary names are kept) and exports each unit as a COFF object with relocations, so objdiff compares relocation targets by symbol name.
+- Outputs: `build/base/...obj` (ours), `build/target/...obj` (retail), `build/report.json`.
 
-Flags in use for the 1.6a game DLLs (evidence in `docs/toolchains.md`):
-`/O2 /Oy- /GS /GR /EHsc /MT /fp:precise`, default `/arch:SSE2`, no `/GL`.
-Confirmed so far by one fully matching unit (`hl/dlls/h_export`).
+Flags in use for the 1.6a game DLLs (evidence in `docs/toolchains.md`): `/O2 /Oy- /GS /GR /EHsc /MT /fp:precise`, default `/arch:SSE2`, no `/GL`. Confirmed so far by one fully matching unit (`hl/dlls/h_export`).
 
 ## Other scripts
 
@@ -82,17 +63,13 @@ Confirmed so far by one fully matching unit (`hl/dlls/h_export`).
 
 ## Progress report hook
 
-`tools/hooks/pre-commit` reruns `tools/progress.py` on the staged
-`docs/progress.csv` and stages the three outputs whenever the CSV is part
-of a commit. `.git/hooks` is not versioned; install the hook once per clone:
+`tools/hooks/pre-commit` reruns `tools/progress.py` on the staged `docs/progress.csv` and stages the three outputs whenever the CSV is part of a commit. `.git/hooks` is not versioned; install the hook once per clone:
 
     cp tools/hooks/pre-commit .git/hooks/pre-commit
 
 ## Phase 1 naming pipeline
 
-`python tools/map_names.py [--skip-features] [--skip-refbuild] [--apply]`
-runs everything below in order (about 2 minutes plus the reference builds).
-The MCP server must be running for the feature export and for `--apply`.
+`python tools/map_names.py [--skip-features] [--skip-refbuild] [--apply]` runs everything below in order (about 2 minutes plus the reference builds). The MCP server must be running for the feature export and for `--apply`.
 
 | Step | Script | Output |
 |---|---|---|
@@ -108,6 +85,4 @@ The MCP server must be running for the feature export and for `--apply`.
 | Entity class sizes 1.55 vs 1.6a | `tools/class_sizes.py` | `docs/class_sizes.csv` |
 | Symbol maps, applied in Ghidra with demangling | `tools/ghidra_scripts/ApplyNames.java` | `tools/symbols/<dll>_1.6a.csv` |
 
-Hand-curated names go in `tools/symbols/<dll>_manual.csv` (never
-overwritten by the pipeline). Evidence for every name is kept in the
-`evidence` column of `docs/progress.csv`.
+Hand-curated names go in `tools/symbols/<dll>_manual.csv` (never overwritten by the pipeline). Evidence for every name is kept in the `evidence` column of `docs/progress.csv`.

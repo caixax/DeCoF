@@ -1,8 +1,6 @@
 # Original bugs and oddities kept in the source
 
-The reconstructed source keeps the behavior of the retail 1.6a binaries,
-including their bugs (AGENTS.md). This file lists what was found, so
-nobody "fixes" it by accident.
+The reconstructed source keeps the behavior of the retail 1.6a binaries, including their bugs (see the conventions in README.md). This file lists what was found, so nobody "fixes" it by accident.
 
 ## hl.dll
 
