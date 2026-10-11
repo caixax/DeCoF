@@ -1,9 +1,9 @@
 /***
 *
 *	Copyright (c) 1996-2002, Valve LLC. All rights reserved.
-*	
-*	This product contains software technology licensed from Id 
-*	Software, Inc. ("Id Technology").  Id Technology (c) 1996 Id Software, Inc. 
+*
+*	This product contains software technology licensed from Id
+*	Software, Inc. ("Id Technology").  Id Technology (c) 1996 Id Software, Inc.
 *	All Rights Reserved.
 *
 *   Use, distribution, and modification of this source code and/or resulting
@@ -32,6 +32,10 @@ DLL_GLOBAL CGameRules*	g_pGameRules = NULL;
 extern DLL_GLOBAL BOOL	g_fGameOver;
 extern int gmsgDeathMsg;	// client dll messages
 extern int gmsgMOTD;
+extern int gmsgSayText;
+
+extern int gEvilImpulse101;
+extern int gSpecialItemGive;
 
 int g_teamplay = 0;
 
@@ -70,7 +74,8 @@ edict_t *CGameRules :: GetPlayerSpawnSpot( CBasePlayer *pPlayer )
 	pPlayer->pev->angles = VARS(pentSpawnSpot)->angles;
 	pPlayer->pev->punchangle = g_vecZero;
 	pPlayer->pev->fixangle = TRUE;
-	
+	pPlayer->m_vPreviousOrigin = pPlayer->pev->origin;
+
 	return pentSpawnSpot;
 }
 
@@ -82,11 +87,20 @@ BOOL CGameRules::CanHavePlayerItem( CBasePlayer *pPlayer, CBasePlayerItem *pWeap
 	if ( pPlayer->pev->deadflag != DEAD_NO )
 		return FALSE;
 
+	if ( !gEvilImpulse101 && !gSpecialItemGive )
+	{
+		if ( pWeapon->pev->iuser4 != 1 )
+		{
+			if ( !( ( pPlayer->pev->button | pPlayer->m_afButtonPressed | pPlayer->m_afButtonReleased ) & IN_USE ) )
+				return FALSE;
+		}
+	}
+
 	if ( pWeapon->pszAmmo1() )
 	{
 		if ( !CanHaveAmmo( pPlayer, pWeapon->pszAmmo1(), pWeapon->iMaxAmmo1() ) )
 		{
-			// we can't carry anymore ammo for this gun. We can only 
+			// we can't carry anymore ammo for this gun. We can only
 			// have the gun if we aren't already carrying one of this type
 			if ( pPlayer->HasPlayerItem( pWeapon ) )
 			{
@@ -114,207 +128,168 @@ void CGameRules::RefreshSkillData ( void )
 {
 	int	iSkill;
 
-	iSkill = (int)CVAR_GET_FLOAT("skill");
+	iSkill = (int)CVAR_GET_FLOAT("difficulty");
 	g_iSkillLevel = iSkill;
 
 	if ( iSkill < 1 )
 	{
 		iSkill = 1;
 	}
-	else if ( iSkill > 3 )
+	else if ( iSkill > 4 )
 	{
-		iSkill = 3; 
+		iSkill = 4;
 	}
 
 	gSkillData.iSkillLevel = iSkill;
 
 	ALERT ( at_debug, "\nGAME SKILL LEVEL:%d\n",iSkill );
 
-	//Agrunt		
-	gSkillData.agruntHealth = GetSkillCvar( "sk_agrunt_health" );
-	gSkillData.agruntDmgPunch = GetSkillCvar( "sk_agrunt_dmg_punch");
+	// Syringe
+	gSkillData.syringeHeal = GetSkillCvar( "sk_syringe_heal" );
 
-	// Apache 
-	gSkillData.apacheHealth = GetSkillCvar( "sk_apache_health");
+	// Flare
+	gSkillData.flareBurnTime = GetSkillCvar( "sk_flare_burn_time" );
 
-	// Barney
-	gSkillData.barneyHealth = GetSkillCvar( "sk_barney_health");
+	// Spitter
+	gSkillData.spitterHealth = GetSkillCvar( "sk_spitter_health" );
 
-	// Big Momma
-	gSkillData.bigmommaHealthFactor = GetSkillCvar( "sk_bigmomma_health_factor" );
-	gSkillData.bigmommaDmgSlash = GetSkillCvar( "sk_bigmomma_dmg_slash" );
-	gSkillData.bigmommaDmgBlast = GetSkillCvar( "sk_bigmomma_dmg_blast" );
-	gSkillData.bigmommaRadiusBlast = GetSkillCvar( "sk_bigmomma_radius_blast" );
+	// AOM pills
+	gSkillData.aomPills = GetSkillCvar( "sk_aom_pills" );
 
-	// Bullsquid
-	gSkillData.bullsquidHealth = GetSkillCvar( "sk_bullsquid_health");
-	gSkillData.bullsquidDmgBite = GetSkillCvar( "sk_bullsquid_dmg_bite");
-	gSkillData.bullsquidDmgWhip = GetSkillCvar( "sk_bullsquid_dmg_whip");
-	gSkillData.bullsquidDmgSpit = GetSkillCvar( "sk_bullsquid_dmg_spit");
+	// Axe
+	gSkillData.DmgAxe = GetSkillCvar( "sk_cof_axe" );
 
-	// Gargantua
-	gSkillData.gargantuaHealth = GetSkillCvar( "sk_gargantua_health");
-	gSkillData.gargantuaDmgSlash = GetSkillCvar( "sk_gargantua_dmg_slash");
-	gSkillData.gargantuaDmgFire = GetSkillCvar( "sk_gargantua_dmg_fire");
-	gSkillData.gargantuaDmgStomp = GetSkillCvar( "sk_gargantua_dmg_stomp");
+	// Twitcher
+	gSkillData.twitcherHealth = GetSkillCvar( "sk_twitcher_health" );
+	gSkillData.twitcherDmgOneSlash = GetSkillCvar( "sk_twitcher_dmg_one_slash" );
+	gSkillData.twitcherDmgBothSlash = GetSkillCvar( "sk_twitcher_dmg_both_slash" );
 
-	// Hassassin
-	gSkillData.hassassinHealth = GetSkillCvar( "sk_hassassin_health");
+	// Twitcher 2
+	gSkillData.twitcher2Health = GetSkillCvar( "sk_twitcher2_health" );
+	gSkillData.twitcher2DmgOneSlash = GetSkillCvar( "sk_twitcher2_dmg_one_slash" );
+	gSkillData.twitcher2DmgBothSlash = GetSkillCvar( "sk_twitcher2_dmg_both_slash" );
 
-	// Headcrab
-	gSkillData.headcrabHealth = GetSkillCvar( "sk_headcrab_health");
-	gSkillData.headcrabDmgBite = GetSkillCvar( "sk_headcrab_dmg_bite");
+	// Twitcher 3
+	gSkillData.twitcher3Health = GetSkillCvar( "sk_twitcher3_health" );
+	gSkillData.twitcher3DmgOneSlash = GetSkillCvar( "sk_twitcher3_dmg_one_slash" );
+	gSkillData.twitcher3DmgBothSlash = GetSkillCvar( "sk_twitcher3_dmg_both_slash" );
 
-	// Hgrunt 
-	gSkillData.hgruntHealth = GetSkillCvar( "sk_hgrunt_health");
-	gSkillData.hgruntDmgKick = GetSkillCvar( "sk_hgrunt_kick");
-	gSkillData.hgruntShotgunPellets = GetSkillCvar( "sk_hgrunt_pellets");
-	gSkillData.hgruntGrenadeSpeed = GetSkillCvar( "sk_hgrunt_gspeed");
+	// Twitcher 4
+	gSkillData.twitcher4Health = GetSkillCvar( "sk_twitcher4_health" );
+	gSkillData.twitcher4DmgOneSlash = GetSkillCvar( "sk_twitcher4_dmg_one_slash" );
+	gSkillData.twitcher4DmgBothSlash = GetSkillCvar( "sk_twitcher4_dmg_both_slash" );
 
-	// Houndeye
-	gSkillData.houndeyeHealth = GetSkillCvar( "sk_houndeye_health");
-	gSkillData.houndeyeDmgBlast = GetSkillCvar( "sk_houndeye_dmg_blast");
+	// Sewmo
+	gSkillData.sewmoHealth = GetSkillCvar( "sk_sewmo_health" );
+	gSkillData.sewmoDmgOneSlash = GetSkillCvar( "sk_sewmo_dmg_one_slash" );
+	gSkillData.sewmoDmgBothSlash = GetSkillCvar( "sk_sewmo_dmg_both_slash" );
 
-	// ISlave
-	gSkillData.slaveHealth = GetSkillCvar( "sk_islave_health");
-	gSkillData.slaveDmgClaw = GetSkillCvar( "sk_islave_dmg_claw");
-	gSkillData.slaveDmgClawrake = GetSkillCvar( "sk_islave_dmg_clawrake");
-	gSkillData.slaveDmgZap = GetSkillCvar( "sk_islave_dmg_zap");
+	// Slower 3
+	gSkillData.slower3Health = GetSkillCvar( "sk_slower3_health" );
+	gSkillData.slower3DmgOneSlash = GetSkillCvar( "sk_slower3_dmg_one_slash" );
+	gSkillData.slower3DmgBothSlash = GetSkillCvar( "sk_slower3_dmg_both_slash" );
 
-	// Icthyosaur
-	gSkillData.ichthyosaurHealth = GetSkillCvar( "sk_ichthyosaur_health");
-	gSkillData.ichthyosaurDmgShake = GetSkillCvar( "sk_ichthyosaur_shake");
+	// Sewer boss
+	gSkillData.sewerbossHealth = GetSkillCvar( "sk_sewerboss_health" );
+	gSkillData.sewerbossMelee = GetSkillCvar( "sk_sewerboss_melee" );
 
-	// Leech
-	gSkillData.leechHealth = GetSkillCvar( "sk_leech_health");
-
-	gSkillData.leechDmgBite = GetSkillCvar( "sk_leech_dmg_bite");
-
-	// Controller
-	gSkillData.controllerHealth = GetSkillCvar( "sk_controller_health");
-	gSkillData.controllerDmgZap = GetSkillCvar( "sk_controller_dmgzap");
-	gSkillData.controllerSpeedBall = GetSkillCvar( "sk_controller_speedball");
-	gSkillData.controllerDmgBall = GetSkillCvar( "sk_controller_dmgball");
-
-	// Nihilanth
-	gSkillData.nihilanthHealth = GetSkillCvar( "sk_nihilanth_health");
-	gSkillData.nihilanthZap = GetSkillCvar( "sk_nihilanth_zap");
-
-	// Scientist
-	gSkillData.scientistHealth = GetSkillCvar( "sk_scientist_health");
-
-	// Snark
-	gSkillData.snarkHealth = GetSkillCvar( "sk_snark_health");
-	gSkillData.snarkDmgBite = GetSkillCvar( "sk_snark_dmg_bite");
-	gSkillData.snarkDmgPop = GetSkillCvar( "sk_snark_dmg_pop");
+	// Roof boss
+	gSkillData.roofbossHealth = GetSkillCvar( "sk_roofboss_health" );
+	gSkillData.roofbossHeadHit = GetSkillCvar( "sk_roofboss_headhit" );
+	gSkillData.roofbossHeadHealth = GetSkillCvar( "sk_roofboss_headhealth" );
+	gSkillData.roofbossAttackTime = GetSkillCvar( "sk_roofboss_attacktime" );
 
 	// Zombie
-	gSkillData.zombieHealth = GetSkillCvar( "sk_zombie_health");
-	gSkillData.zombieDmgOneSlash = GetSkillCvar( "sk_zombie_dmg_one_slash");
-	gSkillData.zombieDmgBothSlash = GetSkillCvar( "sk_zombie_dmg_both_slash");
+	gSkillData.zombieHealth = GetSkillCvar( "sk_zombie_health" );
+	gSkillData.zombieDmgOneSlash = GetSkillCvar( "sk_zombie_dmg_one_slash" );
+	gSkillData.zombieDmgBothSlash = GetSkillCvar( "sk_zombie_dmg_both_slash" );
 
-	//Turret
-	gSkillData.turretHealth = GetSkillCvar( "sk_turret_health");
+	// Taller
+	gSkillData.tallerHealth = GetSkillCvar( "sk_taller_health" );
+	gSkillData.tallerDmgPunch = GetSkillCvar( "sk_taller_dmg_punch" );
 
-	// MiniTurret
-	gSkillData.miniturretHealth = GetSkillCvar( "sk_miniturret_health");
-	
-	// Sentry Turret
-	gSkillData.sentryHealth = GetSkillCvar( "sk_sentry_health");
+	// Suicider
+	gSkillData.suiciderHealth = GetSkillCvar( "sk_suicider_health" );
+	gSkillData.suiciderBullet = GetSkillCvar( "sk_suicider_bullet" );
+	gSkillData.suiciderSuicide = GetSkillCvar( "sk_suicider_suicide" );
+
+	// Flygare
+	gSkillData.flygareAcid = GetSkillCvar( "sk_flygare_acid" );
+	gSkillData.flygareHealth = GetSkillCvar( "sk_flygare_health" );
+	gSkillData.flygareMelee = GetSkillCvar( "sk_flygare_melee" );
+
+	// Child
+	gSkillData.childHealth = GetSkillCvar( "sk_child_health" );
+	gSkillData.childDmgOneSlash = GetSkillCvar( "sk_child_dmg_one_slash" );
+	gSkillData.childDmgBothSlash = GetSkillCvar( "sk_child_dmg_both_slash" );
+
+	// Sawrunner
+	gSkillData.sawrunnerHealth = GetSkillCvar( "sk_sawrunner_health" );
+	gSkillData.sawrunnerDmgOneSlash = GetSkillCvar( "sk_sawrunner_dmg_one_slash" );
+	gSkillData.sawrunnerDmgBothSlash = GetSkillCvar( "sk_sawrunner_dmg_both_slash" );
+
+	// Doctor
+	gSkillData.doctorHealth = GetSkillCvar( "sk_doctor_health" );
+	gSkillData.doctorP345 = GetSkillCvar( "sk_doctor_p345" );
+	gSkillData.doctorRevolver = GetSkillCvar( "sk_doctor_revolver" );
+
+	// Crazy runner
+	gSkillData.rcrazyHealth = GetSkillCvar( "sk_rcrazy_health" );
+	gSkillData.rcrazyDmgOneSlash = GetSkillCvar( "sk_rcrazy_dmg_one_slash" );
+	gSkillData.rcrazyDmgBothSlash = GetSkillCvar( "sk_rcrazy_dmg_both_slash" );
+
+	// Faceless
+	gSkillData.facelessHealth = GetSkillCvar( "sk_faceless_health" );
+	gSkillData.facelessDmgOneSlash = GetSkillCvar( "sk_faceless_dmg_one_slash" );
+	gSkillData.facelessDmgBothSlash = GetSkillCvar( "sk_faceless_dmg_both_slash" );
+
+	// Chainsaw boss
+	gSkillData.chainsawbossHealth = GetSkillCvar( "sk_chainsawboss_health" );
+
+	// Faster
+	gSkillData.fasterHealth = GetSkillCvar( "sk_faster_health" );
+	gSkillData.fasterDmgOneSlash = GetSkillCvar( "sk_faster_dmg_one_slash" );
+	gSkillData.fasterDmgBothSlash = GetSkillCvar( "sk_faster_dmg_both_slash" );
+
+	// Krypande
+	gSkillData.krypandeHealth = GetSkillCvar( "sk_krypande_health" );
+	gSkillData.krypandeDmgOneSlash = GetSkillCvar( "sk_krypande_dmg_one_slash" );
+	gSkillData.krypandeDmgBothSlash = GetSkillCvar( "sk_krypande_dmg_both_slash" );
+
+	// Baby
+	gSkillData.babyHealth = GetSkillCvar( "sk_baby_health" );
+	gSkillData.babyDmg = GetSkillCvar( "sk_baby_damage" );
+
+	// Stranger
+	gSkillData.strangerHealth = GetSkillCvar( "sk_stranger_health" );
+	gSkillData.strangerDmg = GetSkillCvar( "sk_stranger_damage" );
 
 // PLAYER WEAPONS
+	gSkillData.DmgNightstick = GetSkillCvar( "sk_cof_nightstick" );
+	gSkillData.DmgSwitchblade = GetSkillCvar( "sk_cof_switchblade" );
+	gSkillData.DmgPunch = GetSkillCvar( "sk_cof_punch" );
+	gSkillData.DmgSwitchblade2 = GetSkillCvar( "sk_cof_2switchblade" );
+	gSkillData.DmgBranch = GetSkillCvar( "sk_cof_branch" );
+	gSkillData.DmgSledgehammer = GetSkillCvar( "sk_cof_sledgehammer" );
 
-	// Crowbar whack
-	gSkillData.plrDmgCrowbar = GetSkillCvar( "sk_plr_crowbar");
-	gSkillData.plrDmgCrowbarSec = GetSkillCvar( "sk_plr_crowbarsec"); // buz
+	// Weapon melee
+	gSkillData.DmgWeaponMelee = GetSkillCvar( "sk_cof_weapon_melee" );
 
-	// Glock Round
-	gSkillData.plrDmg9MM = GetSkillCvar( "sk_plr_9mm_bullet");
-
-	// 357 Round
-	gSkillData.plrDmg357 = GetSkillCvar( "sk_plr_357_bullet");
-
-	// MP5 Round
-	gSkillData.plrDmgMP5 = GetSkillCvar( "sk_plr_9mmAR_bullet");
-
-	// M203 grenade
-	gSkillData.plrDmgM203Grenade = GetSkillCvar( "sk_plr_9mmAR_grenade");
-
-	// Shotgun buckshot
-	gSkillData.plrDmgBuckshot = GetSkillCvar( "sk_plr_buckshot");
-
-	// Crossbow
-	gSkillData.plrDmgCrossbowClient = GetSkillCvar( "sk_plr_xbow_bolt_client");
-	gSkillData.plrDmgCrossbowMonster = GetSkillCvar( "sk_plr_xbow_bolt_monster");
-
-	// RPG
-	gSkillData.plrDmgRPG = GetSkillCvar( "sk_plr_rpg");
-
-	// Gauss gun
-	gSkillData.plrDmgGauss = GetSkillCvar( "sk_plr_gauss");
-
-	// Egon Gun
-	gSkillData.plrDmgEgonNarrow = GetSkillCvar( "sk_plr_egon_narrow");
-	gSkillData.plrDmgEgonWide = GetSkillCvar( "sk_plr_egon_wide");
-
-	// Hand Grendade
-	gSkillData.plrDmgHandGrenade = GetSkillCvar( "sk_plr_hand_grenade");
-
-	// Satchel Charge
-	gSkillData.plrDmgSatchel = GetSkillCvar( "sk_plr_satchel");
-
-	// Tripmine
-	gSkillData.plrDmgTripmine = GetSkillCvar( "sk_plr_tripmine");
-
-/////////
-// buz: paranoia weapons
-	gSkillData.plrDmgAps = GetSkillCvar( "sk_plr_aps");
-	gSkillData.plrDmgBarret = GetSkillCvar( "sk_plr_barret");
-	gSkillData.plrDmgAks = GetSkillCvar( "sk_plr_aks");
-	gSkillData.plrDmgAk47 = GetSkillCvar( "sk_plr_ak47");
-	gSkillData.plrDmgAsval = GetSkillCvar( "sk_plr_asval");
-	gSkillData.plrDmgRpk = GetSkillCvar( "sk_plr_rpk");
-	gSkillData.plrDmgGroza = GetSkillCvar( "sk_plr_groza");
-
-
-	// MONSTER WEAPONS
-	gSkillData.monDmg12MM = GetSkillCvar( "sk_12mm_bullet");
-	gSkillData.monDmgMP5 = GetSkillCvar ("sk_9mmAR_bullet" );
-	gSkillData.monDmg9MM = GetSkillCvar( "sk_9mm_bullet");
-	gSkillData.monDmgAK = GetSkillCvar( "sk_ak_bullet"); // buz
-	gSkillData.monDmgAsval = GetSkillCvar( "sk_asval_bullet"); // buz
-	gSkillData.monDmgGroza = GetSkillCvar( "sk_groza_bullet"); // buz
-	gSkillData.monTerDmgRPK = GetSkillCvar( "sk_ter_rpk_bullet"); // buz
-	gSkillData.monTerDmgAK = GetSkillCvar( "sk_ter_ak_bullet"); // buz
-	gSkillData.monDmgGlock = GetSkillCvar( "sk_glock_bullet"); // buz
-		
-	gSkillData.MilDmgKick = GetSkillCvar( "sk_mil_kick"); // buz
-	gSkillData.milHealth = GetSkillCvar( "sk_mil_health"); // buz
-	gSkillData.alphaHealth = GetSkillCvar( "sk_alpha_health"); // buz
-	gSkillData.terrorHealth = GetSkillCvar( "sk_terror_health"); // buz
-	gSkillData.cloneHealth = GetSkillCvar( "sk_clone_health"); // buz
-	gSkillData.cloneHealthHeavy = GetSkillCvar( "sk_clone_health_heavy"); // buz
-
-	// MONSTER HORNET
-	gSkillData.monDmgHornet = GetSkillCvar( "sk_hornet_dmg");
-
-	// PLAYER HORNET
-// Up to this point, player hornet damage and monster hornet damage were both using
-// monDmgHornet to determine how much damage to do. In tuning the hivehand, we now need
-// to separate player damage and monster hivehand damage. Since it's so late in the project, we've
-// added plrDmgHornet to the SKILLDATA struct, but not to the engine CVar list, so it's inaccesible
-// via SKILLS.CFG. Any player hivehand tuning must take place in the code. (sjb)
-	gSkillData.plrDmgHornet = 7;
-
+	gSkillData.DmgM16 = GetSkillCvar( "sk_cof_m16" );
+	gSkillData.DmgVP70 = GetSkillCvar( "sk_cof_VP70" );
+	gSkillData.DmgGlock = GetSkillCvar( "sk_cof_glock" );
+	gSkillData.DmgShotgun = GetSkillCvar( "sk_cof_shotgun" );
+	gSkillData.DmgP345 = GetSkillCvar( "sk_cof_p345" );
+	gSkillData.DmgRifle = GetSkillCvar( "sk_cof_rifle" );
+	gSkillData.DmgRevolver = GetSkillCvar( "sk_cof_revolver" );
+	gSkillData.guess_DmgG43 = GetSkillCvar( "sk_cof_g43" );
 
 	// HEALTH/CHARGE
 	gSkillData.suitchargerCapacity = GetSkillCvar( "sk_suitcharger" );
 	gSkillData.batteryCapacity = GetSkillCvar( "sk_battery" );
 	gSkillData.healthchargerCapacity = GetSkillCvar ( "sk_healthcharger" );
 	gSkillData.healthkitCapacity = GetSkillCvar ( "sk_healthkit" );
-	gSkillData.bighealthkitCapacity = GetSkillCvar ( "sk_bighealthkit" ); // buz
-	gSkillData.painkillerCapacity = GetSkillCvar ( "sk_painkiller" ); // buz
-	gSkillData.scientistHeal = GetSkillCvar ( "sk_scientist_heal" );
+	gSkillData.flashlightCharge = GetSkillCvar ( "sk_flashcharge" );
 
 	// monster damage adj
 	gSkillData.monHead = GetSkillCvar( "sk_monster_head" );
@@ -330,19 +305,31 @@ void CGameRules::RefreshSkillData ( void )
 	gSkillData.plrLeg = GetSkillCvar( "sk_player_leg" );
 	gSkillData.plrArm = GetSkillCvar( "sk_player_arm" );
 
-	// Wargon: Множители дамаги для monster_zombie. (1.1)
-	gSkillData.zomHead = GetSkillCvar( "sk_zombie_head" );
-	gSkillData.zomChest = GetSkillCvar( "sk_zombie_chest" );
-	gSkillData.zomStomach = GetSkillCvar( "sk_zombie_stomach" );
-	gSkillData.zomLeg = GetSkillCvar( "sk_zombie_leg" );
-	gSkillData.zomArm = GetSkillCvar( "sk_zombie_arm" );
+	// Shotgun buckshot
+	gSkillData.plrDmgBuckshot = GetSkillCvar( "sk_plr_buckshot" );
+
+	// The monster and player damage adjustments are read a second time
+	// below (1.55 and 1.6a both do this).
+
+	// monster damage adj
+	gSkillData.monHead = GetSkillCvar( "sk_monster_head" );
+	gSkillData.monChest = GetSkillCvar( "sk_monster_chest" );
+	gSkillData.monStomach = GetSkillCvar( "sk_monster_stomach" );
+	gSkillData.monLeg = GetSkillCvar( "sk_monster_leg" );
+	gSkillData.monArm = GetSkillCvar( "sk_monster_arm" );
+
+	// player damage adj
+	gSkillData.plrHead = GetSkillCvar( "sk_player_head" );
+	gSkillData.plrChest = GetSkillCvar( "sk_player_chest" );
+	gSkillData.plrStomach = GetSkillCvar( "sk_player_stomach" );
+	gSkillData.plrLeg = GetSkillCvar( "sk_player_leg" );
+	gSkillData.plrArm = GetSkillCvar( "sk_player_arm" );
 
 	// buz: maxspeeds
 	gSkillData.plrPrimaryMaxSpeed = GetSkillCvar( "sk_primary_speed" );
 	gSkillData.plrSecondaryMaxSpeed = GetSkillCvar( "sk_secondary_speed" );
-
-	// Wargon: Патроны из мертвых вражин. (1.1)
-	gSkillData.maxDeadEnemyAmmo = GetSkillCvar( "sk_dead_enemy_ammo" );
+	gSkillData.plrSprintMaxSpeed = GetSkillCvar( "sk_sprint_speed" );
+	gSkillData.plrStairMaxSpeed = GetSkillCvar( "sk_stair_speed" );
 }
 
 //=========================================================
@@ -362,27 +349,159 @@ CGameRules *InstallGameRules( void )
 	}
 	else
 	{
-		if ( teamplay.value > 0 )
-		{
-			// teamplay
+		// vanilla deathmatch
+		g_teamplay = 0;
+		return new CHalfLifeMultiplay;
+	}
+}
 
-			g_teamplay = 1;
-			return new CHalfLifeTeamplay;
-		}
-		if ((int)gpGlobals->deathmatch == 1)
+//=========================================================
+// vote kick: count the votes once the voting time is over
+//=========================================================
+void CGameRules::VoteKickThink( void )
+{
+	int i = 0;
+
+	if ( m_bInVoteKick )
+	{
+		CBasePlayer *pVictim = NULL;
+
+		if ( m_flVoteKickTime < gpGlobals->time && m_sVoteKickVictimID )
 		{
-			// vanilla deathmatch
-			g_teamplay = 0;
-			return new CHalfLifeMultiplay;
-		}
-		else
-		{
-			// vanilla deathmatch??
-			g_teamplay = 0;
-			return new CHalfLifeMultiplay;
+			UTIL_LogPrintf( "Votekick: Deciding to kick\n" );
+
+			for ( i = 1; i <= gpGlobals->maxClients; i++ )
+			{
+				CBasePlayer *plr = (CBasePlayer *)UTIL_PlayerByIndex( i );
+
+				if ( plr && !strcmp( GETPLAYERAUTHID( plr->edict() ), m_sVoteKickVictimID ) )
+				{
+					ALERT( at_console, "VOTEKICK - Found player %s with ID of %s against the kick ID of %s\n", STRING( plr->pev->netname ), GETPLAYERAUTHID( plr->edict() ), m_sVoteKickVictimID );
+					pVictim = plr;
+					pVoteKickVictimID = (char *)STRING( plr->pev->netname );
+				}
+			}
+
+			if ( pVictim )
+			{
+				if ( m_iVotesForKick > m_iVotesAgainstKick )
+				{
+					for ( i = 1; i <= gpGlobals->maxClients; i++ )
+					{
+						CBasePlayer *plr = (CBasePlayer *)UTIL_PlayerByIndex( i );
+
+						if ( plr )
+						{
+							char szText[128];
+							sprintf_s( szText, sizeof( szText ), " Vote kick: Kicking %s", STRING( pVictim->pev->netname ) );
+
+							MESSAGE_BEGIN( MSG_ONE, gmsgSayText, NULL, plr->pev );
+								WRITE_BYTE( ENTINDEX( plr->edict() ) );
+								WRITE_STRING( szText );
+							MESSAGE_END();
+						}
+					}
+
+					UTIL_EmitAmbientSound( ENT(0), g_vecZero, "common/votekick/votekick_succeeded.wav", 1, ATTN_NONE, 0, 100 );
+
+					char command[128];
+					sprintf( command, "kick \"%s\"\n", STRING( pVictim->pev->netname ) );
+					SERVER_COMMAND( command );
+				}
+				else
+				{
+					for ( i = 1; i <= gpGlobals->maxClients; i++ )
+					{
+						CBasePlayer *plr = (CBasePlayer *)UTIL_PlayerByIndex( i );
+
+						if ( plr )
+						{
+							MESSAGE_BEGIN( MSG_ONE, gmsgSayText, NULL, plr->pev );
+								WRITE_BYTE( ENTINDEX( plr->edict() ) );
+								WRITE_STRING( " Vote kick failed. Yes votes must exceed no votes." );
+							MESSAGE_END();
+						}
+					}
+
+					UTIL_EmitAmbientSound( ENT(0), g_vecZero, "common/votekick/votekick_failed.wav", 1, ATTN_NONE, 0, 100 );
+				}
+			}
+
+			m_bInVoteKick = false;
+			m_sVoteKickVictimID = NULL;
+			pVoteKickVictimID = NULL;
+
+			m_iVotesForKick = m_iVotesAgainstKick = 0;
+
+			for ( i = 1; i <= 32; i++ )
+				pVoted[i] = NULL;
 		}
 	}
 }
 
+//=========================================================
+// vote kick: pCaller wants pVictim kicked
+//=========================================================
+void CGameRules::StartVoteKick( CBasePlayer *pCaller, CBasePlayer *pVictim )
+{
+	if ( !pCaller || !pVictim )
+		return;
 
+	if ( m_bInVoteKick )
+	{
+		MESSAGE_BEGIN( MSG_ONE, gmsgSayText, NULL, pCaller->pev );
+			WRITE_BYTE( ENTINDEX( pCaller->edict() ) );
+			WRITE_STRING( " Vote kick already in progress" );
+		MESSAGE_END();
 
+		return;
+	}
+	else
+	{
+		char *idtest = (char *)GETPLAYERAUTHID( pVictim->edict() );
+
+		if ( idtest )
+		{
+			if ( !strcmp( idtest, "STEAM_ID_PENDING" ) )
+				return;
+
+			if ( !strcmp( idtest, "STEAM_ID_LAN" ) )
+				return;
+		}
+
+		m_bInVoteKick = true;
+		m_flVoteKickTime = gpGlobals->time + CVAR_GET_FLOAT( "sv_votekick_time" );
+
+		m_sVoteKickVictimID = (char *)GETPLAYERAUTHID( pVictim->edict() );
+
+		int i = 0;
+
+		m_iVotesForKick = m_iVotesAgainstKick = 0;
+
+		for ( i = 1; i <= 32; i++ )
+			pVoted[i] = NULL;
+
+		UTIL_LogPrintf( " Votekick called against %s\n", STRING( pVictim->pev->netname ) );
+
+		// the caller votes yes
+		pVoted[1] = (char *)GETPLAYERAUTHID( pCaller->edict() );
+		m_iVotesForKick = 1;
+
+		char szText[128];
+		sprintf( szText, " Vote kick called against %s", STRING( pVictim->pev->netname ) );
+
+		UTIL_EmitAmbientSound( ENT(0), g_vecZero, "common/votekick/votekick_notify.wav", 1, ATTN_NONE, 0, 100 );
+
+		for ( int i = 1; i <= gpGlobals->maxClients; i++ )
+		{
+			CBasePlayer *plr = (CBasePlayer *)UTIL_PlayerByIndex( i );
+			if ( plr )
+			{
+				MESSAGE_BEGIN( MSG_ONE, gmsgSayText, NULL, plr->pev );
+					WRITE_BYTE( ENTINDEX( plr->edict() ) );
+					WRITE_STRING( szText );
+				MESSAGE_END();
+			}
+		}
+	}
+}

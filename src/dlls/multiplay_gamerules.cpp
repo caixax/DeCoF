@@ -1,9 +1,9 @@
 /***
 *
 *	Copyright (c) 1996-2002, Valve LLC. All rights reserved.
-*	
-*	This product contains software technology licensed from Id 
-*	Software, Inc. ("Id Technology").  Id Technology (c) 1996 Id Software, Inc. 
+*
+*	This product contains software technology licensed from Id
+*	Software, Inc. ("Id Technology").  Id Technology (c) 1996 Id Software, Inc.
 *	All Rights Reserved.
 *
 *   Use, distribution, and modification of this source code and/or resulting
@@ -23,12 +23,13 @@
 #include	"player.h"
 #include	"weapons.h"
 #include	"gamerules.h"
- 
+
 #include	"skill.h"
 #include	"game.h"
 #include	"items.h"
 #include	"voice_gamemgr.h"
 #include	"hltv.h"
+#include	"shake.h"
 
 extern DLL_GLOBAL CGameRules	*g_pGameRules;
 extern DLL_GLOBAL BOOL	g_fGameOver;
@@ -36,22 +37,169 @@ extern int gmsgDeathMsg;	// client dll messages
 extern int gmsgScoreInfo;
 extern int gmsgMOTD;
 extern int gmsgServerName;
+extern int gmsgHealth;
+extern int gmsgBigPrick;
+extern int gmsgDevDonator;
+extern int gmsgLobby;
+extern int gmsgTimerPlus;
+extern int gmsgSimonMode;
+extern int gmsgGreyFade;
+extern int gmsgChapter;
+extern int gmsgMP3;
+extern int gmsgCustomSlv;
+extern int gmsgCustomFng;
+extern int gmsgCustomGlv;
+extern int gmsgMPModel;
 
 extern int g_teamplay;
+
+extern bool m_gbIsInCutscene;
+extern bool m_bHadSimonMode;
+extern int m_iSimonMode;
+extern int g_iSurvivalMode;
+extern int m_iMusicManagerLoops;
+extern float m_fMusicManagerFadeTime;
+
+extern int CountConnectedPlayers( void );
+extern void UTIL_ProMessage( CBaseEntity *pEntity, const char *pMessage, int colour, bool all );
+
+// The declarations below belong in headers that are not part of the tree
+// yet: CCoopLevelChangeManager (cof_cooplevelchangemanager.cpp), CEnvModel
+// and CCoFSurvivalMode (effects.h in 1.55) and the Steamworks interface
+// (steam_api.h). Layouts are the ones of the 1.55 PDB.
+class CCoopLevelChangeManager
+{
+public:
+	bool GivePlayerVariables( CBasePlayer *pPlayer );
+};
+
+extern CCoopLevelChangeManager *g_pLevelChange;
+
+class CEnvModel : public CBaseAnimating
+{
+	void Spawn( void );
+	void Precache( void );
+	void EXPORT Think( void );
+	void KeyValue( KeyValueData *pkvd );
+	STATE GetState( void );
+	void Use( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE useType, float value );
+	virtual int	ObjectCaps( void ) { return CBaseEntity :: ObjectCaps() & ~FCAP_ACROSS_TRANSITION; }
+
+	virtual int		Save( CSave &save );
+	virtual int		Restore( CRestore &restore );
+	static	TYPEDESCRIPTION m_SaveData[];
+	float VecToYaw( Vector vecDir );
+
+	void SetSequence( void );
+	bool m_bIssuedNote;
+	int m_ChestNumbers;
+	int number1;
+	int number2;
+
+	string_t m_iszSequence_On;
+	string_t m_iszSequence_Off;
+	int m_iAction_On;
+	int m_iAction_Off;
+
+public:
+	void VisibilityCheck( void );
+};
+
+class CCoFSurvivalMode : public CPointEntity
+{
+public:
+	void Spawn( void );
+	void Precache( void );
+	void Use( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE useType, float value );
+	void EXPORT SurvivalThink( void );
+
+	bool m_bSurvivalMode;
+	bool m_bSurvivalModeRunning;
+	int m_sSurvivalTriggerWhenWon;
+	int m_sSurvivalTriggerWhenAllDead;
+	int m_iSurvivalTimeInSeconds;
+	int m_iCurrentSurvivalTime;
+	float m_flNextSurvivalCount;
+	int m_iTimeSeconds;
+	int m_iTimeMinutes;
+	int m_iTimeHours;
+};
+
+class ISteamUserStats
+{
+public:
+	virtual bool RequestCurrentStats() = 0;
+};
+
+extern "C" __declspec( dllimport ) ISteamUserStats *SteamUserStats();
 
 #define ITEM_RESPAWN_TIME	30
 #define WEAPON_RESPAWN_TIME	20
 #define AMMO_RESPAWN_TIME	20
 
 float g_flIntermissionStartTime = 0;
+float g_flDeleteCFGFiles = 0;
+bool g_bHasDeletedCFGFiles = false;
+bool m_HasCheckedSimonMode = false;
+bool m_bSpawningSimon = false;
+float m_flSimonSpawnTime = 0;
 
 CVoiceGameMgr	g_VoiceGameMgr;
+
+/*
+==============
+CountPlayers
+
+Determine the current # of active players on the server for map cycling logic
+==============
+*/
+int CountPlayers( void )
+{
+	int	num = 0;
+
+	for ( int i = 1; i <= gpGlobals->maxClients; i++ )
+	{
+		CBaseEntity *pEnt = UTIL_PlayerByIndex( i );
+
+		if ( pEnt )
+		{
+			num = num + 1;
+		}
+	}
+
+	return num;
+}
+
+/*
+==============
+CountPlayersButNotMyself
+
+Same as CountPlayers, without pPlayer
+==============
+*/
+int CountPlayersButNotMyself( CBaseEntity *pPlayer )
+{
+	int	num = 0;
+
+	for ( int i = 1; i <= gpGlobals->maxClients; i++ )
+	{
+		CBaseEntity *pEnt = UTIL_PlayerByIndex( i );
+
+		if ( pEnt && pEnt != pPlayer )
+		{
+			num = num + 1;
+		}
+	}
+
+	return num;
+}
 
 class CMultiplayGameMgrHelper : public IVoiceGameMgrHelper
 {
 public:
 	virtual bool		CanPlayerHearPlayer(CBasePlayer *pListener, CBasePlayer *pTalker)
 	{
+/*
 		if ( g_teamplay )
 		{
 			if ( g_pGameRules->PlayerRelationship( pListener, pTalker ) != GR_TEAMMATE )
@@ -59,6 +207,7 @@ public:
 				return false;
 			}
 		}
+*/
 
 		return true;
 	}
@@ -73,12 +222,21 @@ CHalfLifeMultiplay :: CHalfLifeMultiplay()
 {
 	g_VoiceGameMgr.Init(&g_GameMgrHelper, gpGlobals->maxClients);
 
+	m_HasCheckedSimonMode = false;
+
+	m_bSpawningSimon = false;
+	m_flSimonSpawnTime = 0;
+
 	RefreshSkillData();
 	m_flIntermissionEndTime = 0;
 	g_flIntermissionStartTime = 0;
-	
+	g_flDeleteCFGFiles = gpGlobals->time + 30;
+	g_bHasDeletedCFGFiles = false;
+
+	CVAR_SET_FLOAT( "sv_coop", 1 );
+
 	// 11/8/98
-	// Modified by YWB:  Server .cfg file is now a cvar, so that 
+	// Modified by YWB:  Server .cfg file is now a cvar, so that
 	//  server ops can run multiple game servers, with different server .cfg files,
 	//  from a single installed directory.
 	// Mapcyclefile is already a cvar.
@@ -94,8 +252,8 @@ CHalfLifeMultiplay :: CHalfLifeMultiplay()
 		if ( servercfgfile && servercfgfile[0] )
 		{
 			char szCommand[256];
-			
-			ALERT( at_debug, "Executing dedicated server config file\n" );
+
+			ALERT( at_console, "Executing dedicated server config file\n" );
 			sprintf( szCommand, "exec %s\n", servercfgfile );
 			SERVER_COMMAND( szCommand );
 		}
@@ -108,18 +266,116 @@ CHalfLifeMultiplay :: CHalfLifeMultiplay()
 		if ( lservercfgfile && lservercfgfile[0] )
 		{
 			char szCommand[256];
-			
-			ALERT( at_debug, "Executing listen server config file\n" );
+
+			ALERT( at_console, "Executing listen server config file\n" );
 			sprintf( szCommand, "exec %s\n", lservercfgfile );
 			SERVER_COMMAND( szCommand );
 		}
 	}
 }
 
+inline char *GET_INFOBUFFER( edict_t *e )
+{
+	return (*g_engfuncs.pfnGetInfoKeyBuffer)( e );
+}
+
 BOOL CHalfLifeMultiplay::ClientCommand( CBasePlayer *pPlayer, const char *pcmd )
 {
 	if(g_VoiceGameMgr.ClientCommand(pPlayer, pcmd))
 		return TRUE;
+
+	if ( FStrEq( pcmd, "nerdrage" ) )
+	{
+		if ( pPlayer && pPlayer->IsDeveloper() )
+		{
+			char *player = (char *)CMD_ARGV( 1 );
+
+			for ( int i = 1; i <= gpGlobals->maxClients; i++ )
+			{
+				CBasePlayer *plr = (CBasePlayer *)UTIL_PlayerByIndex( i );
+
+				if ( plr && player && plr->pev->netname && !strcmp( STRING( plr->pev->netname ), player ) )
+				{
+					MESSAGE_BEGIN( MSG_ONE, gmsgBigPrick, NULL, plr->pev );
+						WRITE_BYTE( 1 );
+					MESSAGE_END();
+
+					plr->m_iIsAFaggot = 1;
+					plr->EnableControl( FALSE );
+				}
+			}
+		}
+	}
+	else if ( FStrEq( pcmd, "vote" ) )
+	{
+		int value = atoi( CMD_ARGV( 1 ) );
+
+		bool voted = false;
+		int i;
+
+		if ( g_pGameRules->m_bInVoteKick && g_pGameRules->m_sVoteKickVictimID )
+		{
+			for ( i = 1; i <= 32; i++ )
+			{
+				if ( pVoted[i] && !strcmp( GETPLAYERAUTHID( pPlayer->edict() ), pVoted[i] ) )
+					voted = true;
+			}
+
+			if ( !voted )
+			{
+				for ( i = 1; i <= 32; i++ )
+				{
+					if ( !g_pGameRules->pVoted[i] )
+					{
+						g_pGameRules->pVoted[i] = (char *)GETPLAYERAUTHID( pPlayer->edict() );
+
+						if ( value )
+						{
+							g_pGameRules->m_iVotesForKick++;
+						}
+						else
+							g_pGameRules->m_iVotesAgainstKick++;
+					}
+				}
+			}
+		}
+
+		return TRUE;
+	}
+	else if ( FStrEq( pcmd, "votekick" ) )
+	{
+		char *player = (char *)CMD_ARGV( 1 );
+
+		for ( int i = 1; i <= gpGlobals->maxClients; i++ )
+		{
+			CBasePlayer *plr = (CBasePlayer *)UTIL_PlayerByIndex( i );
+
+			if ( plr && player && plr->pev->netname )
+			{
+				char *name = (char *)STRING( plr->pev->netname );
+
+				if ( name )
+				{
+					for ( int k = 0; name[k]; k++ )
+						name[k] = tolower( name[k] );
+				}
+
+				if ( player )
+				{
+					for ( int k = 0; player[k]; k++ )
+						player[k] = tolower( player[k] );
+				}
+
+				if ( player && name && !strcmp( name, player ) )
+				{
+					g_pGameRules->StartVoteKick( pPlayer, plr );
+					break;
+				}
+			}
+		}
+
+		return TRUE;
+	}
 
 	return CGameRules::ClientCommand(pPlayer, pcmd);
 }
@@ -133,48 +389,7 @@ void CHalfLifeMultiplay::RefreshSkillData( void )
 
 // override some values for multiplay.
 
-	// suitcharger
-	gSkillData.suitchargerCapacity = 30;
-
-	// Crowbar whack
-	gSkillData.plrDmgCrowbar = 25;
-
-	// Glock Round
-	gSkillData.plrDmg9MM = 12;
-
-	// 357 Round
-	gSkillData.plrDmg357 = 40;
-
-	// MP5 Round
-	gSkillData.plrDmgMP5 = 12;
-
-	// M203 grenade
-	gSkillData.plrDmgM203Grenade = 100;
-
-	// Shotgun buckshot
-	gSkillData.plrDmgBuckshot = 20;// fewer pellets in deathmatch
-
-	// Crossbow
-	gSkillData.plrDmgCrossbowClient = 20;
-
-	// RPG
-	gSkillData.plrDmgRPG = 120;
-
-	// Egon
-	gSkillData.plrDmgEgonWide = 20;
-	gSkillData.plrDmgEgonNarrow = 10;
-
-	// Hand Grendade
-	gSkillData.plrDmgHandGrenade = 100;
-
-	// Satchel Charge
-	gSkillData.plrDmgSatchel = 120;
-
-	// Tripmine
-	gSkillData.plrDmgTripmine = 150;
-
-	// hornet
-	gSkillData.plrDmgHornet = 10;
+	m_flNextDevDonatorCheckTime = gpGlobals->time;
 }
 
 // longest the intermission can last, in seconds
@@ -188,14 +403,282 @@ extern cvar_t mp_chattime;
 //=========================================================
 void CHalfLifeMultiplay :: Think ( void )
 {
+	if ( m_flNextDevDonatorCheckTime < gpGlobals->time )
+	{
+		m_flNextDevDonatorCheckTime = gpGlobals->time + 2;
+
+		for ( int i = 1; i <= gpGlobals->maxClients; i++ )
+		{
+			CBasePlayer *plr = (CBasePlayer *)UTIL_PlayerByIndex( i );
+
+			if ( plr )
+			{
+				if ( plr->IsDeveloper() )
+					plr->pev->vuser1.y = 1;
+				else if ( plr->IsDonator() )
+					plr->pev->vuser1.y = 2;
+				else
+					plr->pev->vuser1.y = 0;
+
+				MESSAGE_BEGIN( MSG_ALL, gmsgDevDonator );
+					WRITE_BYTE( ENTINDEX( plr->edict() ) );
+					WRITE_BYTE( plr->pev->vuser1.y );
+				MESSAGE_END();
+			}
+		}
+	}
+
+	if ( m_bInLobby )
+	{
+		bool all_ready = true;
+		bool has_players = false;
+
+		for ( int i = 1; i <= gpGlobals->maxClients; i++ )
+		{
+			CBasePlayer *plr = (CBasePlayer *)UTIL_PlayerByIndex( i );
+
+			if ( plr )
+			{
+				if ( m_flNextLobbyUpdateTime < gpGlobals->time )
+				{
+					int voted = 0;
+
+					if ( m_bReady[ENTINDEX( plr->edict() )] )
+						voted = 1;
+
+					MESSAGE_BEGIN( MSG_ALL, gmsgLobby );
+						WRITE_BYTE( ENTINDEX( plr->edict() ) );
+						WRITE_BYTE( voted );
+						WRITE_BYTE( 0 );
+					MESSAGE_END();
+
+					m_flNextLobbyUpdateTime = gpGlobals->time + 1;
+				}
+			}
+
+			if ( plr && plr->pev->fuser4 == 0 && i <= 32 )
+			{
+				has_players = true;
+
+				if ( !(plr->m_iHideHUD & HIDEHUD_HEALTH) )
+					plr->m_iHideHUD |= HIDEHUD_HEALTH;
+
+				if ( !(plr->m_iHideHUD & HIDEHUD_WEAPONS) )
+					plr->m_iHideHUD |= HIDEHUD_WEAPONS;
+
+				if ( !(plr->pev->flags & FL_NOTARGET) )
+					plr->pev->flags |= FL_NOTARGET;
+
+				plr->EnableControl( FALSE );
+
+				UTIL_ScreenFade( plr, Vector( 0, 0, 0 ), 0, 1, 255, FFADE_OUT | FFADE_STAYOUT );
+
+				if ( !m_bReady[i] )
+				{
+					all_ready = false;
+				}
+			}
+		}
+
+		if ( m_flLobbyStartOverrideTime > 0 && m_flLobbyStartOverrideTime < gpGlobals->time )
+		{
+			m_bInLobby = false;
+
+			MESSAGE_BEGIN( MSG_ALL, gmsgLobby );
+				WRITE_BYTE( 0 );
+				WRITE_BYTE( 0 );
+				WRITE_BYTE( 1 );
+			MESSAGE_END();
+
+			for ( int i = 1; i <= gpGlobals->maxClients; i++ )
+			{
+				CBasePlayer *plr = (CBasePlayer *)UTIL_PlayerByIndex( i );
+
+				if ( plr && plr->pev->fuser4 == 0 )
+				{
+					plr->EnableControl( TRUE );
+					UTIL_ScreenFade( plr, Vector( 0, 0, 0 ), 0.75, 1, 255, FFADE_IN );
+
+					plr->m_iHideHUD &= ~HIDEHUD_HEALTH;
+					plr->m_iHideHUD &= ~HIDEHUD_WEAPONS;
+					plr->pev->flags &= ~FL_NOTARGET;
+				}
+			}
+
+			CBaseEntity *pLobbyEntity = NULL;
+
+			while ( pLobbyEntity = UTIL_FindEntityByClassname( pLobbyEntity, "cof_lobby_start" ) )
+				pLobbyEntity->Use( NULL, NULL, USE_TOGGLE, 1 );
+		}
+		else if ( has_players && all_ready )
+		{
+			if ( !m_bStartingGameFromLobby )
+			{
+				m_iLobbyCount = 3;
+				m_bStartingGameFromLobby = true;
+				m_flNextLobbyCountDownTime = gpGlobals->time;
+			}
+			else
+			{
+				if ( m_iLobbyCount >= 0 )
+				{
+					if ( m_flNextLobbyCountDownTime < gpGlobals->time )
+					{
+						UTIL_ProMessage( NULL, UTIL_VarArgs( "Starting in %i seconds", m_iLobbyCount ), 5, true );
+						m_iLobbyCount--;
+						m_flNextLobbyCountDownTime = gpGlobals->time + 1;
+						UTIL_EmitAmbientSound( ENT(0), g_vecZero, "common/wpn_hudoff.wav", 1, ATTN_NONE, 0, 100 );
+					}
+				}
+			}
+
+			if ( m_bStartingGameFromLobby && m_iLobbyCount < 0 )
+			{
+				m_bInLobby = false;
+
+				CBaseEntity *pLobbyEntity = NULL;
+
+				while ( pLobbyEntity = UTIL_FindEntityByClassname( pLobbyEntity, "cof_lobby_start" ) )
+					pLobbyEntity->Use( NULL, NULL, USE_TOGGLE, 1 );
+
+				MESSAGE_BEGIN( MSG_ALL, gmsgLobby );
+					WRITE_BYTE( 0 );
+					WRITE_BYTE( 0 );
+					WRITE_BYTE( 1 );
+				MESSAGE_END();
+
+				for ( int i = 1; i <= gpGlobals->maxClients; i++ )
+				{
+					CBasePlayer *plr = (CBasePlayer *)UTIL_PlayerByIndex( i );
+
+					if ( plr && plr->pev->fuser4 == 0 )
+					{
+						plr->EnableControl( TRUE );
+						UTIL_ScreenFade( plr, Vector( 0, 0, 0 ), 0.75, 1, 255, FFADE_IN );
+
+						plr->m_iHideHUD &= ~HIDEHUD_HEALTH;
+						plr->m_iHideHUD &= ~HIDEHUD_WEAPONS;
+						plr->pev->flags &= ~FL_NOTARGET;
+					}
+				}
+			}
+		}
+		else if ( m_bStartingGameFromLobby )
+		{
+			m_bStartingGameFromLobby = false;
+			m_iLobbyCount = 3;
+			m_flNextLobbyCountDownTime = gpGlobals->time;
+		}
+	}
+
+	CGameRules::VoteKickThink();
+
 	g_VoiceGameMgr.Update(gpGlobals->frametime);
 
 	///// Check game rules /////
-	static int last_frags;
-	static int last_time;
-
 	int frags_remaining = 0;
 	int time_remaining = 0;
+
+	if ( m_bSpawningSimon && m_flSimonSpawnTime < gpGlobals->time && !m_gbIsInCutscene )
+	{
+		m_bSpawningSimon = false;
+		m_flSimonSpawnTime = 0;
+
+		if ( !m_iSimonMode )
+		{
+			bool hassimontriggers = false;
+
+			CBaseEntity *pTrigger = UTIL_FindEntityByClassname( NULL, "trigger_booksimon" );
+
+			if ( pTrigger )
+			{
+				if ( RANDOM_LONG( 0, 1 ) == 1 )
+					hassimontriggers = true;
+			}
+
+			if ( !hassimontriggers || g_iSurvivalMode )
+			{
+				// spawn Simon on one of the spawn points
+				edict_t *pEdict = g_engfuncs.pfnPEntityOfEntIndex( 1 );
+				CBaseEntity *pEntity;
+				CBaseEntity *pList[32];
+				int i;
+				int count = 0;
+
+				for ( i = 1; i < gpGlobals->maxEntities; i++, pEdict++ )
+				{
+					if ( pEdict->free )	// Not in use
+						continue;
+
+					if ( !pEdict )
+						continue;
+
+					pEntity = CBaseEntity::Instance( pEdict );
+
+					if ( pEntity && FClassnameIs( pEntity->pev, "info_simon_spawnpoint" ) )
+					{
+						count++;
+
+						if ( count <= 30 )
+							pList[count] = pEntity;
+					}
+				}
+
+				if ( count > 0 )
+				{
+					CBaseEntity *pSpawn = pList[RANDOM_LONG( 1, count )];
+
+					if ( pSpawn )
+					{
+						if ( g_iSurvivalMode )
+						{
+							MESSAGE_BEGIN( MSG_ALL, gmsgTimerPlus );
+								WRITE_BYTE( 0 );
+								WRITE_BYTE( 0 );
+								WRITE_BYTE( 1 );
+							MESSAGE_END();
+						}
+
+						CBaseEntity *pSimon = CBaseEntity::Create( "monster_booksimon", pSpawn->pev->origin, pSpawn->pev->angles, NULL );
+					}
+				}
+			}
+			else
+			{
+				// let one of the trigger_booksimon spawn him
+				edict_t *pEdict = g_engfuncs.pfnPEntityOfEntIndex( 1 );
+				CBaseEntity *pEntity;
+				CBaseEntity *pList[32];
+				int i;
+				int count = 0;
+
+				for ( i = 1; i < gpGlobals->maxEntities; i++, pEdict++ )
+				{
+					if ( pEdict->free )	// Not in use
+						continue;
+
+					if ( !pEdict )
+						continue;
+
+					pEntity = CBaseEntity::Instance( pEdict );
+
+					if ( pEntity && FClassnameIs( pEntity->pev, "trigger_booksimon" ) )
+					{
+						count++;
+
+						if ( count <= 30 )
+							pList[count] = pEntity;
+					}
+				}
+
+				if ( count > 0 )
+				{
+					int random = RANDOM_LONG( 1, count );
+					pList[random]->pev->iuser1 = 1;
+				}
+			}
+		}
+	}
 
 	if ( g_fGameOver )   // someone else quit the game already
 	{
@@ -212,70 +695,13 @@ void CHalfLifeMultiplay :: Think ( void )
 		if ( m_flIntermissionEndTime < gpGlobals->time )
 		{
 			if ( m_iEndIntermissionButtonHit  // check that someone has pressed a key, or the max intermission time is over
-				|| ( ( g_flIntermissionStartTime + MAX_INTERMISSION_TIME ) < gpGlobals->time) ) 
+				|| ( ( g_flIntermissionStartTime + MAX_INTERMISSION_TIME ) < gpGlobals->time) )
 				ChangeLevel(); // intermission is over
 		}
 
 		return;
 	}
-
-	float flTimeLimit = timelimit.value * 60;
-	float flFragLimit = fraglimit.value;
-
-	time_remaining = (int)(flTimeLimit ? ( flTimeLimit - gpGlobals->time ) : 0);
-	
-	if ( flTimeLimit != 0 && gpGlobals->time >= flTimeLimit )
-	{
-		GoToIntermission();
-		return;
-	}
-
-	if ( flFragLimit )
-	{
-		int bestfrags = 9999;
-		int remain;
-
-		// check if any player is over the frag limit
-		for ( int i = 1; i <= gpGlobals->maxClients; i++ )
-		{
-			CBaseEntity *pPlayer = UTIL_PlayerByIndex( i );
-
-			if ( pPlayer && pPlayer->pev->frags >= flFragLimit )
-			{
-				GoToIntermission();
-				return;
-			}
-
-
-			if ( pPlayer )
-			{
-				remain = flFragLimit - pPlayer->pev->frags;
-				if ( remain < bestfrags )
-				{
-					bestfrags = remain;
-				}
-			}
-
-		}
-		frags_remaining = bestfrags;
-	}
-
-	// Updates when frags change
-	if ( frags_remaining != last_frags )
-	{
-		g_engfuncs.pfnCvar_DirectSet( &fragsleft, UTIL_VarArgs( "%i", frags_remaining ) );
-	}
-
-	// Updates once per second
-	if ( timeleft.value != last_time )
-	{
-		g_engfuncs.pfnCvar_DirectSet( &timeleft, UTIL_VarArgs( "%i", time_remaining ) );
-	}
-
-	last_frags = frags_remaining;
-	last_time  = time_remaining;
 }
-
 
 //=========================================================
 //=========================================================
@@ -399,6 +825,20 @@ BOOL CHalfLifeMultiplay :: GetNextBestWeapon( CBasePlayer *pPlayer, CBasePlayerI
 //=========================================================
 BOOL CHalfLifeMultiplay :: ClientConnected( edict_t *pEntity, const char *pszName, const char *pszAddress, char szRejectReason[ 128 ] )
 {
+	int players = CountConnectedPlayers();
+
+	if ( SteamUserStats() )
+		SteamUserStats()->RequestCurrentStats();
+
+	if ( players >= 4 )
+	{
+		strcpy( szRejectReason, "Server is full (4 players max)" );
+		return FALSE;
+	}
+
+	if ( pEntity )
+		pEntity->v.flags &= ~FL_NOTARGET;
+
 	g_VoiceGameMgr.ClientConnected(pEntity);
 	return TRUE;
 }
@@ -415,39 +855,44 @@ void CHalfLifeMultiplay :: UpdateGameMode( CBasePlayer *pPlayer )
 
 void CHalfLifeMultiplay :: InitHUD( CBasePlayer *pl )
 {
+	pl->pev->fuser4 = 0;
+	pl->m_bCustomSleeveApplied = false;
+
+	MESSAGE_BEGIN( MSG_ONE, gmsgCustomSlv, NULL, pl->pev );
+		WRITE_STRING( NULL );
+	MESSAGE_END();
+
+	MESSAGE_BEGIN( MSG_ONE, gmsgCustomFng, NULL, pl->pev );
+		WRITE_STRING( NULL );
+	MESSAGE_END();
+
+	MESSAGE_BEGIN( MSG_ONE, gmsgCustomGlv, NULL, pl->pev );
+		WRITE_STRING( NULL );
+	MESSAGE_END();
+
 	// notify other clients of player joining the game
-	UTIL_ClientPrintAll( HUD_PRINTNOTIFY, UTIL_VarArgs( "%s has joined the game\n", 
+	UTIL_ClientPrintAll( HUD_PRINTNOTIFY, UTIL_VarArgs( "%s has joined the game\n",
 		( pl->pev->netname && STRING(pl->pev->netname)[0] != 0 ) ? STRING(pl->pev->netname) : "unconnected" ) );
 
 	// team match?
 	if ( g_teamplay )
 	{
-		UTIL_LogPrintf( "\"%s<%i><%s><%s>\" entered the game\n",  
-			STRING( pl->pev->netname ), 
+		UTIL_LogPrintf( "\"%s<%i><%s><%s>\" entered the game\n",
+			STRING( pl->pev->netname ),
 			GETPLAYERUSERID( pl->edict() ),
 			GETPLAYERAUTHID( pl->edict() ),
 			g_engfuncs.pfnInfoKeyValue( g_engfuncs.pfnGetInfoKeyBuffer( pl->edict() ), "model" ) );
 	}
 	else
 	{
-		UTIL_LogPrintf( "\"%s<%i><%s><%i>\" entered the game\n",  
-			STRING( pl->pev->netname ), 
+		UTIL_LogPrintf( "\"%s<%i><%s><%i>\" entered the game\n",
+			STRING( pl->pev->netname ),
 			GETPLAYERUSERID( pl->edict() ),
 			GETPLAYERAUTHID( pl->edict() ),
 			GETPLAYERUSERID( pl->edict() ) );
 	}
 
 	UpdateGameMode( pl );
-
-	// sending just one score makes the hud scoreboard active;  otherwise
-	// it is just disabled for single play
-	MESSAGE_BEGIN( MSG_ONE, gmsgScoreInfo, NULL, pl->edict() );
-		WRITE_BYTE( ENTINDEX(pl->edict()) );
-		WRITE_SHORT( 0 );
-		WRITE_SHORT( 0 );
-		WRITE_SHORT( 0 );
-		WRITE_SHORT( 0 );
-	MESSAGE_END();
 
 	SendMOTDToClient( pl->edict() );
 
@@ -459,12 +904,33 @@ void CHalfLifeMultiplay :: InitHUD( CBasePlayer *pl )
 
 		if ( plr )
 		{
+			MESSAGE_BEGIN( MSG_ONE, gmsgHealth, NULL, pl->pev );
+				WRITE_BYTE( plr->pev->health );
+				WRITE_BYTE( ENTINDEX( plr->edict() ) );
+				if ( g_pGameRules->IsMultiplayer() )
+					WRITE_BYTE( 1 );
+				else
+					WRITE_BYTE( 0 );
+			MESSAGE_END();
+
 			MESSAGE_BEGIN( MSG_ONE, gmsgScoreInfo, NULL, pl->edict() );
 				WRITE_BYTE( i );	// client number
 				WRITE_SHORT( plr->pev->frags );
 				WRITE_SHORT( plr->m_iDeaths );
 				WRITE_SHORT( 0 );
 				WRITE_SHORT( GetTeamIndex( plr->m_szTeamName ) + 1 );
+			MESSAGE_END();
+
+			if ( plr->IsDeveloper() )
+				plr->pev->vuser1.y = 1;
+			else if ( plr->IsDonator() )
+				plr->pev->vuser1.y = 2;
+			else
+				plr->pev->vuser1.y = 0;
+
+			MESSAGE_BEGIN( MSG_ALL, gmsgDevDonator );
+				WRITE_BYTE( ENTINDEX( plr->edict() ) );
+				WRITE_BYTE( plr->pev->vuser1.y );
 			MESSAGE_END();
 		}
 	}
@@ -473,6 +939,54 @@ void CHalfLifeMultiplay :: InitHUD( CBasePlayer *pl )
 	{
 		MESSAGE_BEGIN( MSG_ONE, SVC_INTERMISSION, NULL, pl->edict() );
 		MESSAGE_END();
+	}
+
+	int value = ENTINDEX( pl->edict() );
+
+	if ( m_bInLobby && value > 0 && value <= 32 && gmsgLobby )
+	{
+		MESSAGE_BEGIN( MSG_ALL, gmsgLobby );
+			WRITE_BYTE( value );
+			WRITE_BYTE( 0 );
+			WRITE_BYTE( 0 );
+		MESSAGE_END();
+
+		if ( !(pl->m_iHideHUD & HIDEHUD_HEALTH) )
+			pl->m_iHideHUD |= HIDEHUD_HEALTH;
+
+		if ( !(pl->m_iHideHUD & HIDEHUD_WEAPONS) )
+			pl->m_iHideHUD |= HIDEHUD_WEAPONS;
+
+		if ( !(pl->pev->flags & FL_NOTARGET) )
+			pl->pev->flags |= FL_NOTARGET;
+
+		g_pGameRules->m_bReady[value] = false;
+	}
+
+	ClientUserInfoChanged( pl, GET_INFOBUFFER( pl->edict() ) );
+
+	if ( g_pGameRules && g_pGameRules->IsMultiplayer() )
+	{
+		edict_t *pEdict = g_engfuncs.pfnPEntityOfEntIndex( 1 );
+		CBaseEntity *pEntity;
+
+		for ( int i = 1; i < gpGlobals->maxEntities; i++, pEdict++ )
+		{
+			if ( pEdict->free )	// Not in use
+				continue;
+
+			pEntity = CBaseEntity::Instance( pEdict );
+			if ( !pEntity )
+				continue;
+
+			if ( pEntity->pev->iuser1 > 0 && FClassnameIs( pEntity->edict(), "env_model" ) )
+			{
+				CEnvModel *pModelEnt = GetClassPtr( (CEnvModel *)pEntity->pev );
+
+				if ( pModelEnt )
+					pModelEnt->VisibilityCheck();
+			}
+		}
 	}
 }
 
@@ -486,21 +1000,90 @@ void CHalfLifeMultiplay :: ClientDisconnected( edict_t *pClient )
 
 		if ( pPlayer )
 		{
+			// let go of whoever was reviving this player
+			if ( pPlayer->pPlayerReviving )
+			{
+				CBasePlayer *pReviver = GetClassPtr( (CBasePlayer *)pPlayer->pPlayerReviving->pev );
+
+				if ( pReviver )
+				{
+					pReviver->pPlayerReviving = NULL;
+					pReviver->pPlayerToRevive = NULL;
+					pReviver->m_flReviveTime = gpGlobals->time;
+				}
+			}
+
+			bool someonealive = false;
+			int i;
+
+			for ( i = 1; i <= gpGlobals->maxClients; i++ )
+			{
+				CBasePlayer *plr = (CBasePlayer *)UTIL_PlayerByIndex( i );
+
+				if ( plr && plr->pev->fuser4 == 0 && plr->IsAlive() )
+					someonealive = true;
+			}
+
+			bool survivalmode = false;
+
+			if ( !someonealive )
+			{
+				CBaseEntity *pSurvivalEntity = NULL;
+
+				while ( pSurvivalEntity = UTIL_FindEntityByClassname( pSurvivalEntity, "cof_survivalmode" ) )
+					survivalmode = true;
+
+				for ( i = 1; i <= gpGlobals->maxClients; i++ )
+				{
+					CBasePlayer *plr = (CBasePlayer *)UTIL_PlayerByIndex( i );
+
+					if ( plr )
+					{
+						if ( survivalmode )
+						{
+							plr->PlayerStopMP3( 1 );
+						}
+
+						if ( survivalmode && pSurvivalEntity && !pSurvivalEntity->pev->iuser3 )
+						{
+							if ( pSurvivalEntity->pev->target )
+							{
+								FireTargets( STRING( pSurvivalEntity->pev->target ), pSurvivalEntity, pSurvivalEntity, USE_TOGGLE, 0 );
+								pSurvivalEntity->pev->iuser3 = 1;
+								GetClassPtr( (CCoFSurvivalMode *)pSurvivalEntity->pev )->m_bSurvivalModeRunning = false;
+							}
+						}
+						else
+						{
+							plr->m_flDeadTime = gpGlobals->time + 5;
+							plr->m_bIssuedGameOver = false;
+							plr->m_bCoopGameOver = true;
+							plr->m_flNextCountDown = gpGlobals->time;
+							plr->m_iGameOverCounter = 5;
+							UTIL_ProMessage( plr, "Game over", 4, false );
+						}
+					}
+				}
+			}
+
+			pPlayer->pPlayerReviving = NULL;
+			pPlayer->pPlayerToRevive = NULL;
+
 			FireTargets( "game_playerleave", pPlayer, pPlayer, USE_TOGGLE, 0 );
 
 			// team match?
 			if ( g_teamplay )
 			{
-				UTIL_LogPrintf( "\"%s<%i><%s><%s>\" disconnected\n",  
-					STRING( pPlayer->pev->netname ), 
+				UTIL_LogPrintf( "\"%s<%i><%s><%s>\" disconnected\n",
+					STRING( pPlayer->pev->netname ),
 					GETPLAYERUSERID( pPlayer->edict() ),
 					GETPLAYERAUTHID( pPlayer->edict() ),
 					g_engfuncs.pfnInfoKeyValue( g_engfuncs.pfnGetInfoKeyBuffer( pPlayer->edict() ), "model" ) );
 			}
 			else
 			{
-				UTIL_LogPrintf( "\"%s<%i><%s><%i>\" disconnected\n",  
-					STRING( pPlayer->pev->netname ), 
+				UTIL_LogPrintf( "\"%s<%i><%s><%i>\" disconnected\n",
+					STRING( pPlayer->pev->netname ),
 					GETPLAYERUSERID( pPlayer->edict() ),
 					GETPLAYERAUTHID( pPlayer->edict() ),
 					GETPLAYERUSERID( pPlayer->edict() ) );
@@ -515,25 +1098,17 @@ void CHalfLifeMultiplay :: ClientDisconnected( edict_t *pClient )
 //=========================================================
 float CHalfLifeMultiplay :: FlPlayerFallDamage( CBasePlayer *pPlayer )
 {
-	int iFallDamage = (int)falldamage.value;
-
-	switch ( iFallDamage )
-	{
-	case 1://progressive
-		pPlayer->m_flFallVelocity -= PLAYER_MAX_SAFE_FALL_SPEED;
-		return pPlayer->m_flFallVelocity * DAMAGE_FOR_FALL_SPEED;
-		break;
-	default:
-	case 0:// fixed
-		return 10;
-		break;
-	}
-} 
+	pPlayer->m_flFallVelocity -= PLAYER_MAX_SAFE_FALL_SPEED;
+	return pPlayer->m_flFallVelocity * DAMAGE_FOR_FALL_SPEED;
+}
 
 //=========================================================
 //=========================================================
 BOOL CHalfLifeMultiplay::FPlayerCanTakeDamage( CBasePlayer *pPlayer, CBaseEntity *pAttacker )
 {
+	if ( pAttacker->IsPlayer() && !( pPlayer->pev->flags & FL_FAKECLIENT ) )
+		return FALSE;
+
 	return TRUE;
 }
 
@@ -558,24 +1133,138 @@ void CHalfLifeMultiplay :: PlayerThink( CBasePlayer *pPlayer )
 //=========================================================
 void CHalfLifeMultiplay :: PlayerSpawn( CBasePlayer *pPlayer )
 {
-	BOOL		addDefault;
 	CBaseEntity	*pWeaponEntity = NULL;
 
-	pPlayer->pev->weapons |= (1<<WEAPON_SUIT);
-	
-	addDefault = TRUE;
+	CLIENT_COMMAND( pPlayer->edict(), "donatorcheck\n" );
 
-	while ( pWeaponEntity = UTIL_FindEntityByClassname( pWeaponEntity, "game_player_equip" ))
+	pPlayer->pev->weapons |= (1<<WEAPON_SUIT);
+
+	bool survivalmode = false;
+
+	CBaseEntity *pSurvivalEntity = NULL;
+
+	while ( pSurvivalEntity = UTIL_FindEntityByClassname( pSurvivalEntity, "cof_survivalmode" ) )
+		survivalmode = true;
+
+	if ( !m_HasCheckedSimonMode && !m_bHadSimonMode )
 	{
-		pWeaponEntity->Touch( pPlayer );
-		addDefault = FALSE;
+		m_HasCheckedSimonMode = true;
+
+		if ( survivalmode )
+		{
+			m_bSpawningSimon = true;
+			m_flSimonSpawnTime = gpGlobals->time + RANDOM_LONG( 60, 180 );
+		}
+		else
+		{
+			int random = RANDOM_LONG( 1, 5 );
+
+			if ( random == 1 )
+			{
+				m_bSpawningSimon = true;
+				m_flSimonSpawnTime = gpGlobals->time + RANDOM_LONG( 20, 240 );
+			}
+		}
 	}
 
-	if ( addDefault )
+	if ( g_iSurvivalMode && g_pGameRules->IsMultiplayer() )
 	{
-		pPlayer->GiveNamedItem( "weapon_crowbar" );
-		pPlayer->GiveNamedItem( "weapon_9mmhandgun" );
-		pPlayer->GiveAmmo( 68, "9mm", _9MM_MAX_CARRY );// 4 full reloads
+		if ( m_iSimonMode )
+		{
+			MESSAGE_BEGIN( MSG_ONE, gmsgSimonMode, NULL, pPlayer->pev );
+				WRITE_BYTE( 1 );
+			MESSAGE_END();
+		}
+		else
+		{
+			MESSAGE_BEGIN( MSG_ONE, gmsgSimonMode, NULL, pPlayer->pev );
+				WRITE_BYTE( 0 );
+			MESSAGE_END();
+		}
+	}
+
+	if ( m_iSimonMode )
+	{
+		pPlayer->PlayerSetMP3( MAKE_STRING( "fucked.mp3" ), 1, 1 );
+
+		MESSAGE_BEGIN( MSG_ONE, gmsgGreyFade, NULL, pPlayer->pev );
+			WRITE_BYTE( 0 );
+			WRITE_BYTE( 0 );
+		MESSAGE_END();
+	}
+	else
+	{
+		char *m_pMusicManager = (char *)CVAR_GET_STRING( "sv_coop_music" );
+
+		if ( m_pMusicManager && strlen( m_pMusicManager ) > 1 )
+			pPlayer->PlayerSetMP3( MAKE_STRING( m_pMusicManager ), m_iMusicManagerLoops, m_fMusicManagerFadeTime );
+	}
+
+	bool givedefault = true;
+
+	// carry the weapons and stats over from the previous level
+	if ( g_pLevelChange )
+	{
+		if ( g_pLevelChange->GivePlayerVariables( pPlayer ) )
+			givedefault = false;
+	}
+
+	if ( givedefault )
+	{
+		while ( pWeaponEntity = UTIL_FindEntityByClassname( pWeaponEntity, "game_player_equip" ))
+			pWeaponEntity->Touch( pPlayer );
+	}
+
+	bool ingameover = false;
+
+	for ( int i = 1; i <= gpGlobals->maxClients; i++ )
+	{
+		CBasePlayer *plr = (CBasePlayer *)UTIL_PlayerByIndex( i );
+
+		if ( plr && plr->m_bCoopGameOver )
+		{
+			ingameover = true;
+
+			pPlayer->m_flDeadTime = plr->m_flDeadTime;
+			pPlayer->m_bIssuedGameOver = plr->m_bIssuedGameOver;
+			pPlayer->m_bCoopGameOver = plr->m_bCoopGameOver;
+			pPlayer->m_flNextCountDown = plr->m_flNextCountDown;
+			pPlayer->m_iGameOverCounter = plr->m_iGameOverCounter;
+		}
+
+		if ( plr && plr->pDeathScene && plr->pDeathScene->pev->iuser4 != 1 )
+		{
+			pPlayer->m_bCoopWaitingForCutsceneToEnd = true;
+			pPlayer->m_flNextCoopWaitingForCutsceneFadeTime = gpGlobals->time + 1;
+		}
+	}
+
+	if ( ingameover )
+	{
+		if ( !(pPlayer->m_iHideHUD & HIDEHUD_HEALTH) )
+			pPlayer->m_iHideHUD |= HIDEHUD_HEALTH;
+
+		if ( !(pPlayer->m_iHideHUD & HIDEHUD_WEAPONS) )
+			pPlayer->m_iHideHUD |= HIDEHUD_WEAPONS;
+
+		if ( !(pPlayer->pev->flags & FL_NOTARGET) )
+			pPlayer->pev->flags |= FL_NOTARGET;
+
+		pPlayer->EnableControl( FALSE );
+
+		UTIL_ScreenFade( pPlayer, Vector( 0, 0, 0 ), 0, 1, 255, FFADE_OUT | FFADE_STAYOUT );
+
+		MESSAGE_BEGIN( MSG_ONE, gmsgChapter, NULL, pPlayer->pev );
+			WRITE_STRING( "Game over" );
+			WRITE_STRING( NULL );
+		MESSAGE_END();
+
+		MESSAGE_BEGIN( MSG_ONE, gmsgMP3, NULL, pPlayer->pev );
+			WRITE_BYTE( 1 );
+			WRITE_BYTE( 1 );
+			WRITE_COORD( 0 );
+			WRITE_STRING( "game_over.mp3" );
+		MESSAGE_END();
 	}
 }
 
@@ -624,57 +1313,17 @@ void CHalfLifeMultiplay :: PlayerKilled( CBasePlayer *pVictim, entvars_t *pKille
 	if ( ktmp && (ktmp->Classify() == CLASS_PLAYER) )
 		peKiller = (CBasePlayer*)ktmp;
 
-	if ( pVictim->pev == pKiller )  
+	if ( pVictim->pev == pKiller )
 	{  // killed self
-		pKiller->frags -= 1;
+//		pKiller->frags -= 1;
 	}
 	else if ( ktmp && ktmp->IsPlayer() )
 	{
 		// if a player dies in a deathmatch game and the killer is a client, award the killer some points
-		pKiller->frags += IPointsForKill( peKiller, pVictim );
-		
+//		pKiller->frags += IPointsForKill( peKiller, pVictim );
+
 		FireTargets( "game_playerkill", ktmp, ktmp, USE_TOGGLE, 0 );
 	}
-	else
-	{  // killed by the world
-//MH	pKiller->frags -= 1;	this should be victim (we don't want to give the world frags)
-		pVictim->pev->frags -= 1;
-//END
-	}
-
-	// update the scores
-	// killed scores
-	MESSAGE_BEGIN( MSG_ALL, gmsgScoreInfo );
-		WRITE_BYTE( ENTINDEX(pVictim->edict()) );
-		WRITE_SHORT( pVictim->pev->frags );
-		WRITE_SHORT( pVictim->m_iDeaths );
-		WRITE_SHORT( 0 );
-		WRITE_SHORT( GetTeamIndex( pVictim->m_szTeamName ) + 1 );
-	MESSAGE_END();
-
-	// killers score, if it's a player
-	CBaseEntity *ep = CBaseEntity::Instance( pKiller );
-	if ( ep && ep->Classify() == CLASS_PLAYER )
-	{
-		CBasePlayer *PK = (CBasePlayer*)ep;
-
-		MESSAGE_BEGIN( MSG_ALL, gmsgScoreInfo );
-			WRITE_BYTE( ENTINDEX(PK->edict()) );
-			WRITE_SHORT( PK->pev->frags );
-			WRITE_SHORT( PK->m_iDeaths );
-			WRITE_SHORT( 0 );
-			WRITE_SHORT( GetTeamIndex( PK->m_szTeamName) + 1 );
-		MESSAGE_END();
-
-		// let the killer paint another decal as soon as he'd like.
-		PK->m_flNextDecalTime = gpGlobals->time;
-	}
-#ifndef HLDEMO_BUILD
-	if ( pVictim->HasNamedPlayerItem("weapon_satchel") )
-	{
-		DeactivateSatchels( pVictim );
-	}
-#endif
 }
 
 //=========================================================
@@ -943,12 +1592,14 @@ Vector CHalfLifeMultiplay :: VecWeaponRespawnSpot( CBasePlayerItem *pWeapon )
 //=========================================================
 int CHalfLifeMultiplay :: WeaponShouldRespawn( CBasePlayerItem *pWeapon )
 {
+	return GR_WEAPON_RESPAWN_NO;
+/*
 	if ( pWeapon->pev->spawnflags & SF_NORESPAWN )
 	{
 		return GR_WEAPON_RESPAWN_NO;
 	}
 
-	return GR_WEAPON_RESPAWN_YES;
+	return GR_WEAPON_RESPAWN_YES;*/
 }
 
 //=========================================================
@@ -999,12 +1650,14 @@ void CHalfLifeMultiplay::PlayerGotItem( CBasePlayer *pPlayer, CItem *pItem )
 //=========================================================
 int CHalfLifeMultiplay::ItemShouldRespawn( CItem *pItem )
 {
+	return GR_ITEM_RESPAWN_NO;
+/*
 	if ( pItem->pev->spawnflags & SF_NORESPAWN )
 	{
 		return GR_ITEM_RESPAWN_NO;
 	}
 
-	return GR_ITEM_RESPAWN_YES;
+	return GR_ITEM_RESPAWN_YES;*/
 }
 
 
@@ -1045,12 +1698,14 @@ BOOL CHalfLifeMultiplay::IsAllowedToSpawn( CBaseEntity *pEntity )
 //=========================================================
 int CHalfLifeMultiplay::AmmoShouldRespawn( CBasePlayerAmmo *pAmmo )
 {
+	return GR_AMMO_RESPAWN_NO;
+/*
 	if ( pAmmo->pev->spawnflags & SF_NORESPAWN )
 	{
 		return GR_AMMO_RESPAWN_NO;
 	}
 
-	return GR_AMMO_RESPAWN_YES;
+	return GR_AMMO_RESPAWN_YES;*/
 }
 
 //=========================================================
@@ -1116,6 +1771,7 @@ int CHalfLifeMultiplay::PlayerRelationship( CBaseEntity *pPlayer, CBaseEntity *p
 
 BOOL CHalfLifeMultiplay :: PlayFootstepSounds( CBasePlayer *pl, float fvol )
 {
+/*
 	if ( g_footsteps && g_footsteps->value == 0 )
 		return FALSE;
 
@@ -1123,18 +1779,23 @@ BOOL CHalfLifeMultiplay :: PlayFootstepSounds( CBasePlayer *pl, float fvol )
 		return TRUE;  // only make step sounds in multiplayer if the player is moving fast enough
 
 	return FALSE;
+*/
+	return TRUE;
 }
 
-BOOL CHalfLifeMultiplay :: FAllowFlashlight( void ) 
-{ 
-	return flashlight.value != 0; 
+BOOL CHalfLifeMultiplay :: FAllowFlashlight( void )
+{
+	return TRUE;
+
+//	return flashlight.value != 0;
 }
 
 //=========================================================
 //=========================================================
 BOOL CHalfLifeMultiplay :: FAllowMonsters( void )
 {
-	return ( allowmonsters.value != 0 );
+	return TRUE;
+//	return ( allowmonsters.value != 0 );
 }
 
 //=========================================================
@@ -1441,30 +2102,6 @@ int ReloadMapCycleFile( char *filename, mapcycle_t *cycle )
 
 /*
 ==============
-CountPlayers
-
-Determine the current # of active players on the server for map cycling logic
-==============
-*/
-int CountPlayers( void )
-{
-	int	num = 0;
-
-	for ( int i = 1; i <= gpGlobals->maxClients; i++ )
-	{
-		CBaseEntity *pEnt = UTIL_PlayerByIndex( i );
-
-		if ( pEnt )
-		{
-			num = num + 1;
-		}
-	}
-
-	return num;
-}
-
-/*
-==============
 ExtractCommandString
 
 Parse commands/key value pairs to issue right after map xxx command is issued on server
@@ -1698,5 +2335,106 @@ void CHalfLifeMultiplay :: SendMOTDToClient( edict_t *client )
 
 	FREE_FILE( aFileList );
 }
-	
 
+//=========================================================
+// ClientUserInfoChanged - every player is forced to the
+// model of his slot (police1 to police4, or the ones the
+// map sets on worldspawn)
+//=========================================================
+void CHalfLifeMultiplay::ClientUserInfoChanged( CBasePlayer *pPlayer, char *infobuffer )
+{
+	char *mdls = g_engfuncs.pfnInfoKeyValue( infobuffer, "model" );
+
+	int clientIndex = pPlayer->entindex();
+
+	char szPlayer1Model[256];
+	char szPlayer2Model[256];
+	char szPlayer3Model[256];
+	char szPlayer4Model[256];
+
+	strcpy( szPlayer1Model, "police1" );
+	strcpy( szPlayer2Model, "police2" );
+	strcpy( szPlayer3Model, "police3" );
+	strcpy( szPlayer4Model, "police4" );
+
+	if ( g_pWorld )
+	{
+		if ( g_pWorld->player1model )
+			strcpy( szPlayer1Model, STRING( g_pWorld->player1model ) );
+
+		if ( g_pWorld->player2model )
+			strcpy( szPlayer2Model, STRING( g_pWorld->player2model ) );
+
+		if ( g_pWorld->player3model )
+			strcpy( szPlayer3Model, STRING( g_pWorld->player3model ) );
+
+		if ( g_pWorld->player4model )
+			strcpy( szPlayer4Model, STRING( g_pWorld->player4model ) );
+	}
+
+	for ( int i = 1; i <= gpGlobals->maxClients; i++ )
+	{
+		CBasePlayer *plr = (CBasePlayer *)UTIL_PlayerByIndex( i );
+
+		if ( plr && plr == pPlayer )
+		{
+			switch ( i )
+			{
+			case 1:
+				if ( !FStrEq( mdls, szPlayer1Model ) )
+				{
+					g_engfuncs.pfnSetClientKeyValue( clientIndex, g_engfuncs.pfnGetInfoKeyBuffer( pPlayer->edict() ), "model", szPlayer1Model );
+
+					MESSAGE_BEGIN( MSG_ONE, gmsgMPModel, NULL, pPlayer->pev );
+					MESSAGE_END();
+					return;
+				}
+				break;
+
+			case 2:
+				if ( !FStrEq( mdls, szPlayer2Model ) )
+				{
+					g_engfuncs.pfnSetClientKeyValue( clientIndex, g_engfuncs.pfnGetInfoKeyBuffer( pPlayer->edict() ), "model", szPlayer2Model );
+
+					MESSAGE_BEGIN( MSG_ONE, gmsgMPModel, NULL, pPlayer->pev );
+					MESSAGE_END();
+					return;
+				}
+				break;
+
+			case 3:
+				if ( !FStrEq( mdls, szPlayer3Model ) )
+				{
+					g_engfuncs.pfnSetClientKeyValue( clientIndex, g_engfuncs.pfnGetInfoKeyBuffer( pPlayer->edict() ), "model", szPlayer3Model );
+
+					MESSAGE_BEGIN( MSG_ONE, gmsgMPModel, NULL, pPlayer->pev );
+					MESSAGE_END();
+					return;
+				}
+				break;
+
+			case 4:
+				if ( !FStrEq( mdls, szPlayer4Model ) )
+				{
+					g_engfuncs.pfnSetClientKeyValue( clientIndex, g_engfuncs.pfnGetInfoKeyBuffer( pPlayer->edict() ), "model", szPlayer4Model );
+
+					MESSAGE_BEGIN( MSG_ONE, gmsgMPModel, NULL, pPlayer->pev );
+					MESSAGE_END();
+					return;
+				}
+				break;
+
+			default:
+				if ( !FStrEq( mdls, "police1" ) )
+				{
+					g_engfuncs.pfnSetClientKeyValue( clientIndex, g_engfuncs.pfnGetInfoKeyBuffer( pPlayer->edict() ), "model", "police1" );
+
+					MESSAGE_BEGIN( MSG_ONE, gmsgMPModel, NULL, pPlayer->pev );
+					MESSAGE_END();
+					return;
+				}
+				break;
+			}
+		}
+	}
+}

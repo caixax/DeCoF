@@ -371,7 +371,7 @@ public:
 
 	int			iItemPosition( void ) { return ItemInfoArray[ m_iId ].iPosition; }
 	const char	*pszAmmo1( void )	{ return ItemInfoArray[ m_iId ].pszAmmo1; }
-	int			iMaxAmmo1( void )	{ return ItemInfoArray[ m_iId ].iMaxAmmo1; }
+	int			iMaxAmmo1( void );	// CoF: out of line in weapons.cpp (multiplayer limits)
 	const char	*pszAmmo2( void )	{ return ItemInfoArray[ m_iId ].pszAmmo2; }
 	int			iMaxAmmo2( void )	{ return ItemInfoArray[ m_iId ].iMaxAmmo2; }
 	const char	*pszName( void )	{ return ItemInfoArray[ m_iId ].pszName; }

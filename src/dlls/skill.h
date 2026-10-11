@@ -101,7 +101,7 @@ struct skilldata_t
 	float DmgP345;
 	float DmgRifle;
 	float DmgRevolver;
-	float guess_DmgG43;	// CoF 1.6a: RefreshSkillData stores "sk_cof_g43" here (+0x144), not in 1.55
+	float guess_DmgG43;	// CoF: RefreshSkillData stores "sk_cof_g43" here (+0x144) in 1.55 and 1.6a; the 1.55 PDB type lacks it
 
 // health/suit charge
 	float suitchargerCapacity;

@@ -268,6 +268,11 @@ public:
 // Teamplay stuff	
 	virtual const char *GetTeamID( CBaseEntity *pEntity ) {return "";};
 	virtual int PlayerRelationship( CBaseEntity *pPlayer, CBaseEntity *pTarget );
+
+	// CoF 1.6a: the constructor zeroes three more members (new CHalfLifeRules is 0xE8 bytes)
+	bool guess_m_bUnknownDC;
+	int guess_m_iUnknownE0;
+	int guess_m_iUnknownE4;
 };
 
 //=========================================================
