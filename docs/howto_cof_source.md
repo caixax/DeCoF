@@ -76,6 +76,23 @@ The 1.55 hl.dll is an unoptimized debug build of nearly the same source. `disasm
 - Take member offsets from 1.6a (`tools/member.py`); 1.55 offsets differ (CBasePlayerWeapon members 4 lower, CBasePlayer very different). Use 1.55 only for statement order.
 - The `check` printout rounds per-function percentages: trust the unit line and `matched_functions` in `build/check_project/<unit>/report.json`.
 
+## Patterns from the base units (weapons, combat, client, gamerules, triggers)
+
+- The 1.55 debug build is not always the same code as 1.6a: compare with the 1.6a disassembly before trusting a 1.55 statement (FireBulletsPlayer moved the doctor boss test into the shot loop; entvars_t offsets from 0x128 on are 4 higher in 1.6a).
+- A call in the 1.55 debug build with no test after it comes from an `if` whose whole body is commented out; the release build keeps the call and drops the test.
+- MSVC 19.27 drops calls to functions of the same file whose compiled body has no side effects (empty void function, `return FALSE;`), whatever the definition order and even with `__declspec(noinline)`. If retail keeps such a call, it cannot be reproduced from one file; note it and move on.
+- `/Ob1` sometimes keeps an inline helper as a call (the third `FStrEq` of a function stays out of line while the first two are inlined): write the source plainly. A helper the 1.55 build shows as a function (`GET_INFOBUFFER`) has to be `inline` in our source.
+- Write `FStrEq(...)` where retail calls it, `!strcmp( STRING( pev->classname ), ... )` where retail reads `pev->classname` directly, and `FClassnameIs( edict(), ... )` where retail goes through `pContainingEntity`.
+- A dead `sub eax, N` after the case tests of a switch gives the value of a case whose body was merged into default: a cheap check of enum values.
+- After `ucomiss`/`fucompp` and `test ah, 0x44`: `jnp skip` means the source says `!=`, `jp skip` means `==`.
+- Register base/index order in inlined copy loops and the load order of commutative operands depend on the whole function; a change in one block can flip another. Stop early on these.
+- `for ( i = 0; i < ARRAYSIZE( a ); i++ )` with a function scope `int i` compiles to an unsigned compare (`jb`).
+- A call written `CGameRules::VoteKickThink()` is a direct call in both builds: when the 1.55 build calls a virtual directly, the source used the qualified name.
+- A Steam API call compiles to `call [IAT]` and needs `extern "C" __declspec(dllimport)`.
+- In many objects the 1.6a functions are laid out in alphabetical order of their decorated names (some, like cbase.obj, keep source order). The neighbours of an unnamed retail function tell roughly what its name must be.
+- Functions unnamed in the retail map are missing from the unit lists and never reported. `tools/bytematch.py` pairs them with our functions by bytes; check the address gaps of a unit when a function you wrote is not in the check output.
+- To test a header change without touching the repo, copy the .cpp next to a modified copy of the header in a scratch folder (`#include "x.h"` looks next to the .cpp first; an extra `/I` does not override it).
+
 ## What not to do
 
 - Do not edit shared headers (`cbase.h`, `weapons.h`, `player.h`, `util.h`, ...) without coordinating: several files depend on them.
