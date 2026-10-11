@@ -3,8 +3,9 @@
 Usage: python tools/update_status.py [--report build/report.json]
 
 For every function in the objdiff report: 100% -> status MATCHED and
-match_percent 100; below 100 -> match_percent updated, MATCHED goes back to TODO, other
-statuses are left as is (TODO or EQUIVALENT are decided by hand). Functions are located by their
+match_percent 100 (an "EQUIVALENT: ..." note is cleared); below 100 ->
+match_percent updated, MATCHED goes back to TODO, other statuses are left as
+is (TODO or EQUIVALENT are decided by hand). Functions are located by their
 decorated name through tools/symbols/<dll>_1.6a.csv. Unit names in the report
 are "<dll>/<path>".
 """
@@ -50,8 +51,13 @@ def main():
             else:
                 new_status = row["status"]
             new_pct = "100" if pct >= 100.0 else "%.1f" % pct
-            if row["status"] != new_status or row["match_percent"] != new_pct:
-                row["status"], row["match_percent"] = new_status, new_pct
+            # the remaining-difference note of an EQUIVALENT function is
+            # obsolete once it matches
+            new_notes = row["notes"]
+            if new_status == "MATCHED" and new_notes.startswith("EQUIVALENT:"):
+                new_notes = ""
+            if row["status"] != new_status or row["match_percent"] != new_pct or row["notes"] != new_notes:
+                row["status"], row["match_percent"], row["notes"] = new_status, new_pct, new_notes
                 changed += 1
     with open(path, "w", newline="") as fh:
         w = csv.DictWriter(fh, fieldnames=fields, lineterminator="\n")
