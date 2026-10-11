@@ -482,8 +482,8 @@ void CGlock::PrimaryAttack( void )
 
 	if ( !g_pGameRules || !g_pGameRules->IsMultiplayer() )
 	{
-		Vector vecShellVelocity = gpGlobals->v_forward * 220 + gpGlobals->v_up * 200 + gpGlobals->v_right * 40;
-		Vector vecShellOrigin = pev->origin + pev->view_ofs + gpGlobals->v_right * 80 + gpGlobals->v_forward * 20;
+		Vector vecShellVelocity = gpGlobals->v_right * 220 + gpGlobals->v_up * 200 + gpGlobals->v_forward * 40;
+		Vector vecShellOrigin = pev->origin + pev->view_ofs + gpGlobals->v_forward * 80 + gpGlobals->v_right * 20;
 		EjectBrass( vecShellOrigin, vecShellVelocity, pev->angles.y, m_iShell, TE_BOUNCE_SHELL );
 	}
 
@@ -494,17 +494,17 @@ void CGlock::PrimaryAttack( void )
 
 	if ( m_bIronSights )
 	{
-		if ( m_iClip )
-			SendWeaponAnim( GLOCK_IRON_SHOOT );
-		else
+		if ( !m_iClip )
 			SendWeaponAnim( GLOCK_IRON_SHOOT_EMPTY );
+		else
+			SendWeaponAnim( GLOCK_IRON_SHOOT );
 	}
 	else
 	{
-		if ( m_iClip )
-			SendWeaponAnim( GLOCK_SHOOT_1 );
-		else
+		if ( !m_iClip )
 			SendWeaponAnim( GLOCK_SHOOT_EMPTY_1 );
+		else
+			SendWeaponAnim( GLOCK_SHOOT_1 );
 	}
 
 	m_pPlayer->ViewKnock( 3.0 );
@@ -817,8 +817,8 @@ void CGlock::ItemPostFrame( void )
 		{
 			m_flNextPrimaryAttack = gpGlobals->time + 0.7;
 			m_flTimeWeaponIdle = gpGlobals->time + 0.3;
-			m_iSprintState = 0;
 			m_iNextSprintAnim = gpGlobals->time + 0.7;
+			m_iSprintState = 0;
 
 			if ( m_iClip )
 				SendWeaponAnim( GLOCK_SPRINT_FROM );
@@ -862,8 +862,8 @@ void CGlock::ItemPostFrame( void )
 
 			time = GetSequenceTime( GET_MODEL_PTR( ENT( pev ) ), m_pPlayer->pev->weaponanim );
 			m_flNextPrimaryAttack = time + gpGlobals->time;
-			m_iSprintState = 0;
 			m_flTimeWeaponIdle = time + gpGlobals->time;
+			m_iSprintState = 0;
 		}
 
 		if ( speed > 0 && ( m_pPlayer->pev->flags & (1<<18) ) && m_iSprintState != 5 && m_iSprintState != 1 )
@@ -905,8 +905,8 @@ void CGlock::ItemPostFrame( void )
 
 			time = GetSequenceTime( GET_MODEL_PTR( ENT( pev ) ), m_pPlayer->pev->weaponanim );
 			m_flNextPrimaryAttack = gpGlobals->time + 0.7;
-			m_iSprintState = 0;
 			m_flTimeWeaponIdle = gpGlobals->time + 0.3;
+			m_iSprintState = 0;
 		}
 	}
 
