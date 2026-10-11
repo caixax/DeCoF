@@ -13,6 +13,7 @@ Units are named <dll>/<path>, for example hl/dlls/h_export. Config lives in
 tools/units.json. Outputs: build/base/<dll>/<path>.obj (ours) and
 build/target/<dll>/<path>.obj (retail, delinked).
 """
+import csv
 import json
 import os
 import subprocess
@@ -98,10 +99,45 @@ def mcp_call(path, body=None, query=None, timeout=120):
         return json.loads(r.read().decode())
 
 
-def write_job(d, items, job):
+def merged_symbols(d, dll):
+    """tools/symbols/<dll>_1.6a.csv + <dll>_manual.csv + <dll>_auto.csv
+    (later files override earlier ones), written to build/jobs/."""
+    rows = {}
+    curated = set()
+    base = os.path.join(ROOT, d["symbols"])
+    for i, path in enumerate((base, base.replace("_1.6a.csv", "_manual.csv"),
+                              base.replace("_1.6a.csv", "_auto.csv"))):
+        if os.path.exists(path):
+            for r in csv.DictReader(open(path)):
+                va = r["va"].upper()
+                rows[va] = (r["name"], r.get("kind") or "func")
+                if i > 0:
+                    curated.add(va)
+    # a name may live at one address only (the COFF exporter refuses
+    # duplicates): curated entries win, otherwise the name is dropped
+    by_name = {}
+    for va, (name, _kind) in rows.items():
+        by_name.setdefault(name, []).append(va)
+    for name, vas in by_name.items():
+        if len(vas) > 1:
+            keep = [va for va in vas if va in curated]
+            for va in vas:
+                if len(keep) != 1 or va != keep[0]:
+                    rows.pop(va, None)
+    out = os.path.join(ROOT, "build", "jobs", "symbols_%s.csv" % dll)
+    os.makedirs(os.path.dirname(out), exist_ok=True)
+    with open(out, "w", newline="") as f:
+        w = csv.writer(f, lineterminator="\n")
+        w.writerow(["va", "name", "kind"])
+        for va in sorted(rows):
+            w.writerow([va] + list(rows[va]))
+    return out
+
+
+def write_job(d, items, job, dll):
     os.makedirs(os.path.dirname(job), exist_ok=True)
     with open(job, "w") as f:
-        f.write("symbols %s\n" % os.path.join(ROOT, d["symbols"]))
+        f.write("symbols %s\n" % merged_symbols(d, dll))
         for u, full in items:
             f.write("unit %s\n" % obj_path("target", full))
             for name in unit_functions(u) + u.get("data", []):
@@ -122,7 +158,7 @@ def build_target(units):
     ok = True
     for dll, (d, items) in by_dll.items():
         job = os.path.join(ROOT, "build", "jobs", "delink_%s.txt" % dll)
-        write_job(d, items, job)
+        write_job(d, items, job, dll)
         for u, full in items:
             if os.path.exists(obj_path("target", full)):
                 os.remove(obj_path("target", full))

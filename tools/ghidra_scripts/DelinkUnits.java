@@ -66,7 +66,7 @@ public class DelinkUnits extends GhidraScript {
 					break;
 				case "unit":
 					if (out != null) {
-						export(out, set);
+						exportSafe(out, set);
 						units++;
 					}
 					out = new File(arg);
@@ -80,7 +80,7 @@ public class DelinkUnits extends GhidraScript {
 			}
 		}
 		if (out != null) {
-			export(out, set);
+			exportSafe(out, set);
 			units++;
 		}
 		println("DelinkUnits: exported " + units + " unit(s)");
@@ -106,18 +106,50 @@ public class DelinkUnits extends GhidraScript {
 						printerr("could not create function at " + addr);
 					}
 				}
-				if (!name.startsWith("?")) {
-					String plain = name.startsWith("_") ? name.substring(1) : name;
-					Function fn = getFunctionAt(addr);
-					if (fn != null) {
-						fn.setName(plain, SourceType.USER_DEFINED);
-					}
-					else if (!hasLabel(symtab, addr, plain)) {
-						symtab.createLabel(addr, plain, SourceType.USER_DEFINED).setPrimary();
+				// a name lives at one address: drop stale copies elsewhere (the
+				// exporter refuses duplicate names), for the decorated name and
+				// for the plain primary name of C symbols
+				String[] spellings = name.startsWith("_") ? new String[] { name, name.substring(1) }
+						: new String[] { name };
+				for (String spelling : spellings) {
+					List<Symbol> stale = new ArrayList<>();
+					symtab.getSymbols(spelling).forEach(stale::add);
+					for (Symbol other : stale) {
+						if (other.getAddress().equals(addr) || other.getSource() == SourceType.DEFAULT) {
+							continue;
+						}
+						Function ofn = getFunctionAt(other.getAddress());
+						try {
+							if (ofn != null && ofn.getSymbol().equals(other)) {
+								ofn.setName(null, SourceType.DEFAULT);
+							}
+							else {
+								other.delete();
+							}
+						}
+						catch (Exception e) {
+							printerr("could not clear " + spelling + " at " + other.getAddress());
+						}
 					}
 				}
-				if (!hasLabel(symtab, addr, name)) {
-					symtab.createLabel(addr, name, SourceType.USER_DEFINED);
+				try {
+					if (name.startsWith("_")) {
+						// the delinker looks for "_" + primary name
+						String plain = name.substring(1);
+						Function fn = getFunctionAt(addr);
+						if (fn != null && !fn.getName().equals(plain)) {
+							fn.setName(plain, SourceType.USER_DEFINED);
+						}
+						else if (fn == null && !hasLabel(symtab, addr, plain)) {
+							symtab.createLabel(addr, plain, SourceType.USER_DEFINED).setPrimary();
+						}
+					}
+					if (!hasLabel(symtab, addr, name)) {
+						symtab.createLabel(addr, name, SourceType.USER_DEFINED);
+					}
+				}
+				catch (ghidra.util.exception.DuplicateNameException e) {
+					// name already used by a folded copy or applied earlier
 				}
 				applied++;
 			}
@@ -160,6 +192,17 @@ public class DelinkUnits extends GhidraScript {
 		return set;
 	}
 
+	// a failing unit must not abort the script: that would roll back the
+	// symbol changes of the whole run
+	private void exportSafe(File file, AddressSet set) {
+		try {
+			export(file, set);
+		}
+		catch (Exception e) {
+			printerr("DelinkUnits: " + e.getMessage());
+		}
+	}
+
 	private void export(File file, AddressSet set) throws Exception {
 		AutoAnalysisManager aam = AutoAnalysisManager.getAnalysisManager(currentProgram);
 		Analyzer analyzer = aam.getAnalyzer(ANALYZER);
@@ -182,7 +225,7 @@ public class DelinkUnits extends GhidraScript {
 		exporter.setOptions(options);
 		file.getParentFile().mkdirs();
 		if (!exporter.export(file, currentProgram, set, monitor)) {
-			throw new RuntimeException("failed to export " + file);
+			throw new RuntimeException("failed to export " + file + ": " + exporter.getMessageLog());
 		}
 	}
 }
