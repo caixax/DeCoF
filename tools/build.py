@@ -114,16 +114,32 @@ def merged_symbols(d, dll):
                 if i > 0:
                     curated.add(va)
     # a name may live at one address only (the COFF exporter refuses
-    # duplicates): curated entries win, otherwise the name is dropped
+    # duplicates): curated entries win, then the strongest evidence in
+    # docs/progress.csv; the losers are forgotten in Ghidra
+    rank = {}
+    for r in csv.DictReader(open(os.path.join(ROOT, "docs", "progress.csv"))):
+        if r["dll"] == dll:
+            ev = r["evidence"]
+            rank[r["va"].upper()] = (0 if ev.startswith("refbytes") else 1 if "exports" in ev
+                                     else 2 if ev.startswith(("hl_1.55", "crt")) else 3)
     by_name = {}
     for va, (name, _kind) in rows.items():
         by_name.setdefault(name, []).append(va)
+    forget = []
     for name, vas in by_name.items():
         if len(vas) > 1:
             keep = [va for va in vas if va in curated]
+            if len(keep) != 1:
+                best = sorted(vas, key=lambda va: (rank.get(va, 9), va))
+                keep = [best[0]] if rank.get(best[0], 9) < rank.get(best[1], 9) else []
             for va in vas:
-                if len(keep) != 1 or va != keep[0]:
+                if not keep or va != keep[0]:
                     rows.pop(va, None)
+                    forget.append((va, name))
+    with open(os.path.join(ROOT, "build", "jobs", "forget_%s.csv" % dll), "w", newline="") as f:
+        w = csv.writer(f, lineterminator="\n")
+        w.writerow(["va", "name"])
+        w.writerows(forget)
     out = os.path.join(ROOT, "build", "jobs", "symbols_%s.csv" % dll)
     os.makedirs(os.path.dirname(out), exist_ok=True)
     with open(out, "w", newline="") as f:
@@ -138,6 +154,7 @@ def write_job(d, items, job, dll):
     os.makedirs(os.path.dirname(job), exist_ok=True)
     with open(job, "w") as f:
         f.write("symbols %s\n" % merged_symbols(d, dll))
+        f.write("forget %s\n" % os.path.join(ROOT, "build", "jobs", "forget_%s.csv" % dll))
         for u, full in items:
             f.write("unit %s\n" % obj_path("target", full))
             for name in unit_functions(u) + u.get("data", []):

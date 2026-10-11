@@ -72,8 +72,16 @@ public class DelinkUnits extends GhidraScript {
 					out = new File(arg);
 					set = new AddressSet();
 					break;
+				case "forget":
+					forgetSymbols(arg);
+					break;
 				case "include":
-					set.add(findSymbol(arg));
+					try {
+						set.add(findSymbol(arg));
+					}
+					catch (IllegalArgumentException e) {
+						printerr("DelinkUnits: skipping " + arg + " (" + e.getMessage() + ")");
+					}
 					break;
 				default:
 					throw new IllegalArgumentException("unknown directive: " + cmd);
@@ -84,6 +92,55 @@ public class DelinkUnits extends GhidraScript {
 			units++;
 		}
 		println("DelinkUnits: exported " + units + " unit(s)");
+	}
+
+	// Remove names that the symbol map dropped at an address (CSV va,name):
+	// labels are deleted, a function carrying the name gets its default name
+	private void forgetSymbols(String csv) throws Exception {
+		if (!new File(csv).exists()) {
+			return;
+		}
+		SymbolTable symtab = currentProgram.getSymbolTable();
+		int tx = currentProgram.startTransaction("Forget CoF names");
+		int n = 0;
+		try {
+			for (String raw : Files.readAllLines(Paths.get(csv))) {
+				String line = raw.strip();
+				if (line.isEmpty() || line.startsWith("va,")) {
+					continue;
+				}
+				String[] f = line.split(",", -1);
+				Address addr = toAddr(Long.parseUnsignedLong(f[0], 16));
+				String name = f[1];
+				String plain = name.startsWith("_") ? name.substring(1) : name;
+				List<Symbol> here = new ArrayList<>();
+				for (Symbol s : symtab.getSymbols(addr)) {
+					here.add(s);
+				}
+				for (Symbol s : here) {
+					if (!s.getName().equals(name) && !s.getName().equals(plain)) {
+						continue;
+					}
+					Function fn = getFunctionAt(addr);
+					try {
+						if (fn != null && fn.getSymbol().equals(s)) {
+							fn.setName(null, SourceType.DEFAULT);
+						}
+						else {
+							s.delete();
+						}
+						n++;
+					}
+					catch (Exception e) {
+						printerr("could not forget " + name + " at " + addr);
+					}
+				}
+			}
+		}
+		finally {
+			currentProgram.endTransaction(tx, true);
+		}
+		println("DelinkUnits: forgot " + n + " names");
 	}
 
 	private void applySymbols(String csv) throws Exception {

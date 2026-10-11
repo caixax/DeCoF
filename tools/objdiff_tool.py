@@ -21,7 +21,9 @@ import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OBJDIFF = r"I:\Tools\bin\objdiff-cli.exe"
-UNNAMED = re.compile(r"^(?:DAT|FUN|LAB|PTR|s|u|thunk_FUN)_([0-9a-fA-F]{6,8})")
+# Ghidra default labels end with the 8 digit address (DAT_10001234,
+# s_some_text_10001234, PTR_FUN_10001234)
+UNNAMED = re.compile(r"^(?:DAT|FUN|LAB|PTR|s|u|thunk_FUN)_(?:.*_)?([0-9a-fA-F]{8})$")
 
 
 def diff_json(unit, symbol):
@@ -94,8 +96,47 @@ def retail_bytes(dll, va, n):
     return img[va - base:va - base + n]
 
 
+_SPECIAL = ",/\\:. \n\t'-"
+
+
+def msvc_number(text):
+    """MSVC mangled number: one digit is 1..10, else hex in A..P ended by @."""
+    if text[0].isdigit():
+        return int(text[0]) + 1, text[1:]
+    end = text.index("@")
+    return int("".join("%X" % (ord(c) - ord("A")) for c in text[:end]), 16), text[end + 1:]
+
+
+def string_prefix(mangled):
+    """Decode the visible prefix of a ??_C@_0 string literal name."""
+    out = bytearray()
+    i = 0
+    while i < len(mangled) and mangled[i] != "@":
+        c = mangled[i]
+        if c != "?":
+            out.append(ord(c))
+            i += 1
+        elif mangled[i + 1] == "$":
+            out.append((ord(mangled[i + 2]) - 65) * 16 + ord(mangled[i + 3]) - 65)
+            i += 4
+        elif mangled[i + 1].isdigit():
+            out.append(ord(_SPECIAL[int(mangled[i + 1])]))
+            i += 2
+        else:
+            out.append(ord(mangled[i + 1]) + 0x80)
+            i += 2
+    return bytes(out)
+
+
 def constant_ok(dll, va, name):
-    """__real@<hex> / __xmm@<hex> names encode their value: check it."""
+    """__real@<hex> / __xmm@<hex> and ??_C@_0 string names encode their
+    value: check it against the retail bytes."""
+    m = re.match(r"^\?\?_C@_0(.*)$", name)
+    if m:
+        length, rest = msvc_number(m.group(1))
+        prefix = string_prefix(rest[rest.index("@") + 1:])
+        data = retail_bytes(dll, va, length)
+        return data.startswith(prefix[:length - 1]) and data[length - 1:length] == b"\0"
     m = re.match(r"^__(?:real|xmm)@([0-9a-f]+)$", name)
     if not m:
         return True
@@ -148,6 +189,16 @@ def harvest(units, write, min_pct=80.0):
             found[key] = (nb, kind, "objdiff:%s:%s" % (unit, symbol))
     for key in conflicts:
         found.pop(key, None)
+    # one name, several addresses: the layout behind the name changed (for
+    # example a struct accessed at different offsets), so none is trusted
+    by_name = {}
+    for key, v in found.items():
+        by_name.setdefault((key[0], v[0]), []).append(key)
+    for (dll, name), keys in by_name.items():
+        if len(keys) > 1:
+            print("%s maps to %d addresses (dropped)" % (name, len(keys)))
+            for key in keys:
+                found.pop(key)
     for (dll, va), (name, kind, ev) in sorted(found.items()):
         print("%s %08X %-5s %s" % (dll, va, kind, name))
     if write and found:

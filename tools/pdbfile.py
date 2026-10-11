@@ -183,6 +183,31 @@ class PDB(object):
         for rec in self.iter_records(s, 4, mod.sym_size):
             yield rec
 
+    def module_lines(self, mod):
+        """C11 line numbers of a module (VC 7.x debug builds).
+
+        Returns a list of (file name, rva, line) sorted by rva.
+        """
+        if mod.sym_stream == 0xFFFF or not mod.c11_size:
+            return []
+        s = self.stream(mod.sym_stream)[mod.sym_size:mod.sym_size + mod.c11_size]
+        c_file, _c_seg = struct.unpack_from("<HH", s, 0)
+        file_offs = struct.unpack_from("<%dI" % c_file, s, 4)
+        out = []
+        for fo in file_offs:
+            c_seg = struct.unpack_from("<H", s, fo)[0]
+            ln_offs = struct.unpack_from("<%dI" % c_seg, s, fo + 4)
+            name_at = fo + 4 + 4 * c_seg + 8 * c_seg
+            name = _cstr(s, name_at)[0]
+            for lo in ln_offs:
+                seg, n = struct.unpack_from("<HH", s, lo)
+                offs = struct.unpack_from("<%dI" % n, s, lo + 4)
+                lines = struct.unpack_from("<%dH" % n, s, lo + 4 + 4 * n)
+                for off, line in zip(offs, lines):
+                    out.append((name, self.rva(seg, off), line))
+        out.sort(key=lambda x: x[1])
+        return out
+
     def global_symbols(self):
         s = self.stream(self.sym_record_stream)
         for rec in self.iter_records(s):
