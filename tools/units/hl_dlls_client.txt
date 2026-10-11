@@ -51,3 +51,14 @@ _wheelchair
 _cof_document
 _item_padlock
 ??0CBasePlayerItem@@QAE@XZ
+?AddToFullPack@@YAHPAUentity_state_s@@HPAUedict_s@@1HHPAE@Z
+?CBasePlayerByIndex@@YAPAVCBasePlayer@@H@Z
+?ClientConnect@@YAHPAUedict_s@@PBD1QAD@Z
+?ClientKill@@YAXPAUedict_s@@@Z
+?CmdStart@@YAXPBUedict_s@@PBUusercmd_s@@I@Z
+?ConnectionlessPacket@@YAHPBUnetadr_s@@PBDPADPAH@Z
+?CreateBaseline@@YAXHHPAUentity_state_s@@PAUedict_s@@HVVector@@2@Z
+?GetWeaponData@@YAHPAUedict_s@@PAUweapon_data_s@@@Z
+?PlayerPreThink@@YAXPAUedict_s@@@Z
+?SetupVisibility@@YAXPAUedict_s@@0PAPAE1@Z
+?UpdateClientData@@YAXPBUedict_s@@HPAUclientdata_s@@@Z
