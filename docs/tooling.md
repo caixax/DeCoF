@@ -78,6 +78,15 @@ Confirmed so far by one fully matching unit (`hl/dlls/h_export`).
 | `tools/scan_calls.py` | engine table usage, messages, cvars, commands (`docs/calls/`) |
 | `tools/hdrstruct.py` | member lists of function tables from headers |
 | `tools/make_dist.py` | assemble `dist/` from retail 1.6a plus fully linked DLLs |
+| `tools/progress.py` | `docs/progress.json`, `docs/progress.svg`, `docs/PROGRESS.md` from `docs/progress.csv` (never edit the outputs by hand) |
+
+## Progress report hook
+
+`tools/hooks/pre-commit` reruns `tools/progress.py` on the staged
+`docs/progress.csv` and stages the three outputs whenever the CSV is part
+of a commit. `.git/hooks` is not versioned; install the hook once per clone:
+
+    cp tools/hooks/pre-commit .git/hooks/pre-commit
 
 ## Phase 1 naming pipeline
 

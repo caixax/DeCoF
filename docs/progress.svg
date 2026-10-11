@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="402" viewBox="0 0 760 402" role="img" aria-label="Cry of Fear decompilation progress">
+<rect x="0.5" y="0.5" width="759" height="401" rx="10" fill="#ffffff" stroke="#d0d7de"/>
+<text x="24" y="34" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="20" font-weight="600" fill="#1f2328">Cry of Fear decompilation progress</text>
+<rect x="24" y="48" width="12" height="12" rx="2" fill="#2da44e"/>
+<text x="41" y="58.5" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#1f2328">MATCHED</text>
+<rect x="123" y="48" width="12" height="12" rx="2" fill="#d4a72c"/>
+<text x="140" y="58.5" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#1f2328">EQUIVALENT</text>
+<rect x="246" y="48" width="12" height="12" rx="2" fill="#afb8c1"/>
+<text x="263" y="58.5" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#1f2328">TODO</text>
+<text x="736" y="58.5" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#57606a" text-anchor="end">percent of code bytes, function counts in brackets</text>
+<text x="24" y="92" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#1f2328">client.dll</text>
+<text x="736" y="92" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#1f2328" text-anchor="end">0.0% done (0 of 2146 functions)</text>
+<rect x="24" y="100" width="712" height="18" rx="4" fill="#afb8c1"/>
+<text x="24" y="134" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#57606a" xml:space="preserve">MATCHED 0.0% (0)   EQUIVALENT 0.0% (0)   TODO 100.0% (2146)   654976 code bytes</text>
+<text x="24" y="166" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#1f2328">hl.dll</text>
+<text x="736" y="166" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#1f2328" text-anchor="end">14.6% done (1036 of 5433 functions)</text>
+<rect x="24" y="174" width="712" height="18" rx="4" fill="#afb8c1"/>
+<rect x="24.00" y="174" width="103.75" height="18" fill="#2da44e"/>
+<text x="24" y="208" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#57606a" xml:space="preserve">MATCHED 14.6% (1036)   EQUIVALENT 0.0% (0)   TODO 85.4% (4397)   1117885 code bytes</text>
+<text x="24" y="240" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#1f2328">opengl32.dll</text>
+<text x="736" y="240" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#1f2328" text-anchor="end">100.0% done (367 of 367 functions)</text>
+<rect x="24" y="248" width="712" height="18" rx="4" fill="#afb8c1"/>
+<rect x="24.00" y="248" width="712.00" height="18" fill="#2da44e"/>
+<text x="24" y="282" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#57606a" xml:space="preserve">MATCHED 100.0% (367)   EQUIVALENT 0.0% (0)   TODO 0.0% (0)   22929 code bytes</text>
+<text x="24" y="314" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#1f2328">Total (client.dll, hl.dll, opengl32.dll)</text>
+<text x="736" y="314" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#1f2328" text-anchor="end">10.3% done (1403 of 7946 functions)</text>
+<rect x="24" y="322" width="712" height="18" rx="4" fill="#afb8c1"/>
+<rect x="24.00" y="322" width="73.67" height="18" fill="#2da44e"/>
+<text x="24" y="356" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#57606a" xml:space="preserve">MATCHED 10.3% (1403)   EQUIVALENT 0.0% (0)   TODO 89.7% (6543)   1795790 code bytes</text>
+<text x="24" y="386" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="11" fill="#57606a">Target build 1.6a | commit dd6bfda | 2026-10-11 | numbers from docs/progress.csv</text>
+</svg>
