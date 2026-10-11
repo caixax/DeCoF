@@ -122,6 +122,21 @@ shows it:
 - Weapons without `_NOSHOT` sequences send every animation without a clip
   test; the guide's clip-branch notes only apply where the model has them.
 
+- A four-timer chain `m_flNextPrimaryAttack = m_flNextSecondaryAttack =
+  m_flNextTertiaryAttack = m_flTimeWeaponIdle = gpGlobals->time + X;`
+  compiles to `shufps` + `movups [esi+0x1cc]`: when retail has that pair,
+  write the chain.
+- `m_bReloading = m_bWantToEndReload = false;` compiles to one word store.
+- Identical blocks written twice in the source (early outs, doctor mode
+  and normal `MESSAGE_BEGIN` blocks) are merged by the compiler: write them
+  twice when the 1.55 line rows show two copies.
+- Globals that no header declares (`g_iDoctorMode`, `m_usRevolverShells`,
+  `gmsg*` ids) take an `extern` at the top of the .cpp, with the type from
+  the 1.55 PDB (`docs/symbols_1.55.csv`, module `globals.obj` and others).
+- Switch jump tables are part of the function on both sides since the
+  delinker change of this session; `switchD_...` names on the retail side
+  are naming only.
+
 ## What not to do
 
 - Do not edit shared headers (`cbase.h`, `weapons.h`, `player.h`,
