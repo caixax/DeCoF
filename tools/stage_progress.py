@@ -2,6 +2,7 @@
 
   python tools/stage_progress.py <source_file> [<source_file> ...]
   python tools/stage_progress.py --va <dll>:<va> [...]
+  python tools/stage_progress.py --except <source_file> [...]
 
 The working copy of docs/progress.csv often carries results of several
 pieces of work at once (a source file, a name map change). This stages a
@@ -25,8 +26,10 @@ def main():
     args = sys.argv[1:]
     if not args:
         sys.exit(__doc__)
-    files, vas = set(), set()
-    if args[0] == "--va":
+    files, vas, except_files = set(), set(), None
+    if args[0] == "--except":
+        except_files = set(args[1:])
+    elif args[0] == "--va":
         for a in args[1:]:
             dll, va = a.split(":")
             vas.add((dll, va.upper()))
@@ -40,7 +43,10 @@ def main():
     out = []
     for r in old:
         w = work.get((r["dll"], r["va"]))
-        if w and (w["source_file"] in files or (r["dll"], r["va"]) in vas):
+        take = w and (w["source_file"] in files or (r["dll"], r["va"]) in vas)
+        if w and except_files is not None:
+            take = w["source_file"] not in except_files and r["source_file"] not in except_files
+        if take:
             if w != r:
                 taken += 1
             r = w
