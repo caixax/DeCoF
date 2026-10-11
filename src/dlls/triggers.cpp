@@ -5391,25 +5391,70 @@ LINK_ENTITY_TO_CLASS( trigger_textwindow, CTriggerTextWindow );
 
 //========== buz: mp3 control ===========================
 
+extern int m_iMusicManagerLoops;
+extern int m_iSimonMode;
+extern float m_fMusicManagerFadeTime;
+
 class CTriggerMP3 : public CBaseEntity
 {
 public:
-	void Use( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE useType, float value )
-	{
-		if ( !pActivator || !pActivator->IsPlayer() )
-		{
-			pActivator = CBaseEntity::Instance(g_engfuncs.pfnPEntityOfEntIndex( 1 ));
-		}
-
-		CBasePlayer* pPlayer = (CBasePlayer*)pActivator;
-		pPlayer->PlayerSetMP3(pev->message);
-	}
+	void Use( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE useType, float value );
 
 	int ObjectCaps( void ) { return CBaseEntity::ObjectCaps() & ~FCAP_ACROSS_TRANSITION; }
 };
 
 
 LINK_ENTITY_TO_CLASS( trigger_mp3, CTriggerMP3 );
+
+void CTriggerMP3::Use( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE useType, float value )
+{
+	if ( !pActivator || !pActivator->IsPlayer() )
+	{
+		pActivator = CBaseEntity::Instance(g_engfuncs.pfnPEntityOfEntIndex( 1 ));
+	}
+
+	if ( !pev->message )
+		return;
+
+	CBasePlayer* pPlayer = (CBasePlayer*)pActivator;
+
+	if ( pPlayer )
+	{
+		if ( g_pGameRules && g_pGameRules->IsMultiplayer() )
+		{
+			CVAR_SET_STRING( "sv_coop_music", STRING( pev->message ) );
+			m_fMusicManagerFadeTime = pev->frags;
+
+			if ( pev->spawnflags & 2 )
+				m_iMusicManagerLoops = 1;
+			else
+				m_iMusicManagerLoops = 0;
+
+			for ( int i = 1; i <= gpGlobals->maxClients; i++ )
+			{
+				CBasePlayer *plr = (CBasePlayer *)UTIL_PlayerByIndex( i );
+
+				if ( plr && !m_iSimonMode )
+				{
+					if ( pev->spawnflags & 2 )
+						plr->PlayerSetMP3( pev->message, 1, pev->frags );
+					else
+						plr->PlayerSetMP3( pev->message, 0, pev->frags );
+				}
+			}
+		}
+		else
+		{
+			if ( pev->spawnflags & 2 )
+				pPlayer->PlayerSetMP3( pev->message, 1, pev->frags );
+			else
+				pPlayer->PlayerSetMP3( pev->message, 0, pev->frags );
+		}
+	}
+
+	if ( pev->spawnflags & 1 )
+		UTIL_Remove( this );
+}
 
 
 
