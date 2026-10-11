@@ -44,6 +44,21 @@
             "?GiveFnptrsToDll@@YGXPAUenginefuncs_s@@PAUglobalvars_t@@@Z",
             "_DllMain@12"
           ]
+        },
+        {
+          "name": "pm_shared/pm_math",
+          "source": "src/pm_shared/pm_math.c",
+          "functions_file": "tools/units/hl_pm_shared_pm_math.txt"
+        },
+        {
+          "name": "pm_shared/pm_shared",
+          "source": "src/pm_shared/pm_shared.c",
+          "functions_file": "tools/units/hl_pm_shared_pm_shared.txt"
+        },
+        {
+          "name": "pm_shared/pm_debug",
+          "source": "src/pm_shared/pm_debug.c",
+          "functions_file": "tools/units/hl_pm_shared_pm_debug.txt"
         }
       ],
       "toolchain": "msvc1427"

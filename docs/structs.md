@@ -111,3 +111,14 @@ measured here.
   class, member names included. Apply the 1.6a deltas above on top.
 - 1.6a vtables (RTTI): 482 game classes keep the 1.55 vtable length, so no
   virtual functions were added or removed in those classes.
+
+## playermove_t (hl.dll 1.6a): 4 bytes after cmd
+
+Confirmed 2026-10-11 in code. `PM_AddGravity` (1.6a) reads
+`pmove->movevars` at offset 0x4F4F4; the Paranoia/HLSDK layout puts it at
+0x4F4F0. With 4 bytes inserted between `cmd` (ends at 0x4548C) and
+`numtouch` (0x45490 in retail, as cof-enhanced reported), every
+pm_shared function that only differed by those offsets matches retail.
+`src/pm_shared/pm_defs.h` has `int guess_pmove_pad;` there. Whether the
+bytes belong to a longer `usercmd_t` or to a new playermove_t member is
+open; the engine (hw.dll) defines the struct and will tell.

@@ -172,6 +172,10 @@ typedef struct playermove_s
 	// input to run through physics.
 	usercmd_t		cmd;
 
+	// CoF 1.6a: 4 bytes between cmd and numtouch (numtouch is at 0x45490,
+	// movevars at 0x4F4F4). Name and type unknown, see docs/structs.md.
+	int				guess_pmove_pad;
+
 	// Trace results for objects we collided with.
 	int				numtouch;
 	pmtrace_t		touchindex[MAX_PHYSENTS];

@@ -12,6 +12,30 @@
       }
     },
     {
+      "name": "hl/pm_shared/pm_math",
+      "target_path": "build/target/hl/pm_shared/pm_math.obj",
+      "base_path": "build/base/hl/pm_shared/pm_math.obj",
+      "metadata": {
+        "source_path": "src/pm_shared/pm_math.c"
+      }
+    },
+    {
+      "name": "hl/pm_shared/pm_shared",
+      "target_path": "build/target/hl/pm_shared/pm_shared.obj",
+      "base_path": "build/base/hl/pm_shared/pm_shared.obj",
+      "metadata": {
+        "source_path": "src/pm_shared/pm_shared.c"
+      }
+    },
+    {
+      "name": "hl/pm_shared/pm_debug",
+      "target_path": "build/target/hl/pm_shared/pm_debug.obj",
+      "base_path": "build/base/hl/pm_shared/pm_debug.obj",
+      "metadata": {
+        "source_path": "src/pm_shared/pm_debug.c"
+      }
+    },
+    {
       "name": "opengl32/opengl32",
       "target_path": "build/target/opengl32/opengl32.obj",
       "base_path": "build/base/opengl32/opengl32.obj",
