@@ -1,12 +1,17 @@
 """Disassemble retail code with names and strings.
 
-  python tools/disasm.py <dll> <va|decorated name> [bytes]
+  python tools/disasm.py [--version 1.55] <dll> <va|decorated name> [bytes]
 
 Prints the instructions of a function (or <bytes> bytes from <va>) with
 the symbol names of call/jump targets and data from the merged symbol map
 (build/jobs/symbols_<dll>.csv, else tools/symbols/<dll>_*.csv) and the
 text of referenced strings. Stops at the next function start when no
 length is given.
+
+--version reads an older hl.dll with a PDB (1.0, 1.4 or 1.55) instead of
+1.6a, with the names and sizes of docs/symbols_<version>.csv. These are
+debug builds: constants and dead code that the 1.6a release build drops
+are still there.
 """
 import csv
 import glob
@@ -21,28 +26,58 @@ import pefile
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 IMAGES = {"hl": "versions/1.6a/cryoffear/cl_dlls/hl.dll", "client": "versions/1.6a/cryoffear/cl_dlls/client.dll",
           "hw": "versions/1.6a/hw.dll", "opengl32": "versions/1.6a/opengl32.dll"}
+OLD_HL = {"1.0": "versions/1.0/CryOfFear/cl_dlls/hl.dll", "1.4": "versions/hl.dll",
+          "1.55": "versions/1.55/cl_dlls/hl.dll"}
 
 
 def main():
-    dll, what = sys.argv[1], sys.argv[2]
-    length = int(sys.argv[3], 0) if len(sys.argv) > 3 else None
-    pe = pefile.PE(os.path.join(ROOT, IMAGES[dll]), fast_load=True)
+    args = sys.argv[1:]
+    version = None
+    if args[:1] == ["--version"]:
+        version, args = args[1], args[2:]
+    dll, what = args[0], args[1]
+    length = int(args[2], 0) if len(args) > 2 else None
+    if version:
+        if dll != "hl" or version not in OLD_HL:
+            sys.exit("--version supports hl with %s" % ", ".join(sorted(OLD_HL)))
+        image = OLD_HL[version]
+    else:
+        image = IMAGES[dll]
+    pe = pefile.PE(os.path.join(ROOT, image), fast_load=True)
     base = pe.OPTIONAL_HEADER.ImageBase
     img = pe.get_memory_mapped_image()
     names = {}
-    paths = [os.path.join(ROOT, "build", "jobs", "symbols_%s.csv" % dll)]
-    if not os.path.exists(paths[0]):
-        paths = glob.glob(os.path.join(ROOT, "tools", "symbols", "%s_*.csv" % dll))
-    for p in paths:
-        for r in csv.DictReader(open(p)):
-            if "va" in r and "name" in r:
-                names.setdefault(int(r["va"], 16), r["name"])
     sizes = {}
-    for r in csv.DictReader(open(os.path.join(ROOT, "docs", "progress.csv"))):
-        if r["dll"] == dll:
-            sizes[int(r["va"], 16)] = int(r["size"] or 0)
-            if r["name"]:
-                names.setdefault(int(r["va"], 16), r["name"])
+    data_spans = {}
+    if version:
+        data = []
+        for r in csv.DictReader(open(os.path.join(ROOT, "docs", "symbols_%s.csv" % version))):
+            a = int(r["va"], 16)
+            name = r["decorated"] or r["name"]
+            if name.startswith("??_C@"):
+                continue    # print the string text instead
+            names.setdefault(a, name)
+            if r["kind"] == "func" and r["size"]:
+                sizes[a] = int(r["size"])
+            elif r["kind"] in ("public_data", "data_static"):
+                data.append((a, name))
+        # the PDB has no data sizes: a global spans up to the next one
+        data.sort()
+        for (a, name), (b, _n) in zip(data, data[1:]):
+            data_spans[name] = b - a
+    else:
+        paths = [os.path.join(ROOT, "build", "jobs", "symbols_%s.csv" % dll)]
+        if not os.path.exists(paths[0]):
+            paths = glob.glob(os.path.join(ROOT, "tools", "symbols", "%s_*.csv" % dll))
+        for p in paths:
+            for r in csv.DictReader(open(p)):
+                if "va" in r and "name" in r:
+                    names.setdefault(int(r["va"], 16), r["name"])
+        for r in csv.DictReader(open(os.path.join(ROOT, "docs", "progress.csv"))):
+            if r["dll"] == dll:
+                sizes[int(r["va"], 16)] = int(r["size"] or 0)
+                if r["name"]:
+                    names.setdefault(int(r["va"], 16), r["name"])
     if re.match(r"^(0x)?[0-9a-fA-F]{8}$", what):
         va = int(what, 16)
     else:
@@ -62,9 +97,9 @@ def main():
         return None
 
     # named globals with a size: references into them print as name+offset
-    sizes_by_name = {}
+    sizes_by_name = dict(data_spans)
     sp = os.path.join(ROOT, "tools", "symbols", "%s_datasizes.csv" % dll)
-    if os.path.exists(sp):
+    if os.path.exists(sp) and not version:
         sizes_by_name = {r["name"]: int(r["size"]) for r in csv.DictReader(open(sp))}
     spans = sorted((a, a + sizes_by_name[n], n) for a, n in names.items() if n in sizes_by_name)
     starts = [s[0] for s in spans]
