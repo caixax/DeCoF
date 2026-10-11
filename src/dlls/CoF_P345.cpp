@@ -704,7 +704,7 @@ void CP345::ItemPostFrame( void )
 
 	if ( !m_fInReload && !m_iSuicideState && m_iSprintState != 2 && m_flNextPrimaryAttack < gpGlobals->time )
 	{
-		if ( m_pPlayer->guess_HasJustJumped() && !m_bIronSights && m_flNextTertiaryAttack < gpGlobals->time )
+		if ( m_pPlayer->SufficientlyOffTheGround() && !m_bIronSights && m_flNextTertiaryAttack < gpGlobals->time )
 		{
 			if ( !m_iSprintState )
 			{

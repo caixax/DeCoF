@@ -855,7 +855,7 @@ void CRifle::ItemPostFrame( void )
 
 	if ( !m_bRifleReload && m_iSprintState != 2 && m_flNextPrimaryAttack < gpGlobals->time )
 	{
-		if ( !m_bRifleReload && m_pPlayer->guess_HasJustJumped() && !m_bIronSights && m_flNextTertiaryAttack < gpGlobals->time )
+		if ( !m_bRifleReload && m_pPlayer->SufficientlyOffTheGround() && !m_bIronSights && m_flNextTertiaryAttack < gpGlobals->time )
 		{
 			if ( !m_iSprintState )
 			{
