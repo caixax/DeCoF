@@ -292,8 +292,8 @@ public:
 	virtual int GetMode( void ) {return 0;}; // 0 means gun dont use mode
 
 	virtual void SetObjectCollisionBox( void );
-	virtual void IronsightsTo( void );	// inline in weapons.h:212
-	virtual void IronsightsFrom( void );	// inline in weapons.h:213
+	virtual void IronsightsTo( void ) { }
+	virtual void IronsightsFrom( void ) { }
 
 	virtual int		Save( CSave &save );
 	virtual int		Restore( CRestore &restore );
@@ -357,8 +357,8 @@ public:
 	int m_iSuicideState;
 	int m_iSuicideButtonsNeeded;
 	int m_iSuicideButtonsPressed;
-	virtual void StartSuicide( void );	// inline in weapons.h:283
-	virtual void StopSuicide( void );	// inline in weapons.h:284
+	virtual void StartSuicide( void ) { }
+	virtual void StopSuicide( void ) { }
 	int m_iRageNeeded;
 	int m_iRageLevel;
 	float m_fNextRageDecrease;
@@ -452,11 +452,11 @@ public:
 	// called by CBasePlayerWeapons ItemPostFrame()
 	virtual void PrimaryAttack( void ) { return; }				// do "+ATTACK"
 	virtual void SecondaryAttack( void ) { return; }			// do "+ATTACK2"
-	virtual void TertiaryAttack( void );	// inline in weapons.h:393
-	virtual void WeaponToggle( void );	// inline in weapons.h:394
-	virtual void RageAttack( void );	// inline in weapons.h:395
-	virtual void RageReset( void );	// inline in weapons.h:396
-	virtual float GetNextRageDecreaseTime( void );	// inline in weapons.h:397
+	virtual void TertiaryAttack( void ) { return; }
+	virtual void WeaponToggle( void ) { return; }
+	virtual void RageAttack( void ) { return; }
+	virtual void RageReset( void ) { return; }
+	virtual float GetNextRageDecreaseTime( void ) { return 0.75; }
 	virtual void Reload( void ) { return; }						// do "+RELOAD"
 	virtual void WeaponIdle( void ) { return; }					// called when no buttons pressed
 	virtual int UpdateClientData( CBasePlayer *pPlayer );		// sends hud info to client dll, if things have changed
@@ -464,7 +464,7 @@ public:
 	virtual BOOL ShouldWeaponIdle( void ) {return FALSE; };
 	virtual void Holster( void );
 	virtual BOOL UseDecrement( void ) { return FALSE; };
-	virtual void Fidget( void );	// inline in weapons.h:405
+	virtual void Fidget( void ) { return; }
 	
 	//LRC - used by weaponstrip
 	void DrainClip(CBasePlayer* pPlayer, BOOL keep, int i9mm, int i357, int iBuck, int iBolt, int iARGren, int iRock, int iUranium, int iSatchel, int iSnark, int iTrip, int iGren,
