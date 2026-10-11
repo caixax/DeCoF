@@ -13,3 +13,6 @@ va,name,kind,evidence
 1016BE90,__libm_sse2_sqrt_precise,func,CRT bytes (crt_bytes match); listed here so DelinkUnits removes a stale ?Length2D label at this address
 101011D0,?ScheduleChange@CSquadMonster@@UAEXXZ,func,CSquadMonster vtable slot +0x194 (ScheduleChange in the 1.55 PDB vtable layout) points here; body is jmp 10101980
 10101980,?VacateSlot@CSquadMonster@@QAEXXZ,func,jmp target of ScheduleChange (101011D0); the 1.55 ScheduleChange body is a single call to VacateSlot
+1000DA20,?GiveAmmo@CBaseEntity@@UAEHHPADH_N@Z,func,"code pops 16 bytes (or eax,-1; ret 0x10): four parameters in 1.6a, the 1.55 PDB name has three; the fourth is a bool (CBasePlayer::GiveAmmo tests it as a byte); tools/sigcheck.py"
+100E04D0,?GiveAmmo@CBasePlayer@@UAEHHPADH_N@Z,func,"ret 0x10: four parameters in 1.6a, the 1.55 PDB name has three; cmp byte ptr [ebp+0x14],0 makes the fourth a bool; tools/sigcheck.py"
+100E0A80,?GiveNamedItem@CBasePlayer@@QAEXPBD_N1@Z,func,"ret 0xc: three parameters in 1.6a, the 1.55 PDB name has two; [ebp+0xc] and [ebp+0x10] are both tested as bytes (bool); CGamePlayerEquip::EquipPlayer pushes three arguments; tools/sigcheck.py"
