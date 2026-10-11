@@ -74,8 +74,16 @@ def build_base(units):
         cmd += ["/D" + x for x in d["defines"]]
         cmd += ["/I" + os.path.join(ROOT, x) for x in d["includes"]]
         cmd += ["/Fo" + out, os.path.join(ROOT, u["source"])]
-        rc = subprocess.call(cmd, env=tc.env(), cwd=ROOT, stdout=subprocess.DEVNULL)
+        res = subprocess.run(cmd, env=tc.env(), cwd=ROOT, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+        rc = res.returncode
         print("base   %-30s %s" % (full, "ok" if rc == 0 else "FAILED (%d)" % rc))
+        if rc:
+            # cl prints its diagnostics on stdout: show the errors
+            errors = [l for l in res.stdout.decode("latin-1").splitlines() if ": error " in l or ": fatal error " in l]
+            for l in errors[:40]:
+                print("       " + l.replace(ROOT + os.sep, ""))
+            if len(errors) > 40:
+                print("       ... %d more errors" % (len(errors) - 40))
         ok &= rc == 0
     return ok
 
