@@ -697,7 +697,7 @@ public:
 	void SelectItem(const char *pstr);
 	void ItemPreFrame( void );
 	void ItemPostFrame( void );
-	void GiveNamedItem( const char *pszName, bool deletewhendropped );
+	void GiveNamedItem( const char *pszName, bool deletewhendropped, bool guess_bSkipDonatorCheck );	// CoF 1.6a: third parameter (weapon_tmp is given without the donator test)
 	void GiveNamedItemAmmo( const char *pszName, int defaultammo );
 	void EnableControl(BOOL fControl);
 	void FallEnableControl( int fControl );
