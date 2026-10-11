@@ -140,13 +140,20 @@ def merged_symbols(d, dll):
         w = csv.writer(f, lineterminator="\n")
         w.writerow(["va", "name"])
         w.writerows(forget)
+    # sizes of named globals (tools/data_sizes.py): DelinkUnits defines
+    # their extent so references into them become symbol+offset
+    sizes = {}
+    sp = base.replace("_1.6a.csv", "_datasizes.csv")
+    if os.path.exists(sp):
+        sizes = {r["name"]: r["size"] for r in csv.DictReader(open(sp))}
     out = os.path.join(ROOT, "build", "jobs", "symbols_%s.csv" % dll)
     os.makedirs(os.path.dirname(out), exist_ok=True)
     with open(out, "w", newline="") as f:
         w = csv.writer(f, lineterminator="\n")
-        w.writerow(["va", "name", "kind"])
+        w.writerow(["va", "name", "kind", "size"])
         for va in sorted(rows):
-            w.writerow([va] + list(rows[va]))
+            name, kind = rows[va]
+            w.writerow([va, name, kind, sizes.get(name, "") if kind == "data" else ""])
     return out
 
 
@@ -225,8 +232,23 @@ def write_objdiff(units):
 
 
 def report():
+    # objdiff refuses the whole report when one object is missing (a unit
+    # that does not compile): report from a copy of the config that leaves
+    # out missing objects
+    cfg = json.load(open(os.path.join(ROOT, "objdiff.json")))
+    proj = os.path.join(ROOT, "build", "report_project")
+    os.makedirs(proj, exist_ok=True)
+    for u in cfg["units"]:
+        for key in ("target_path", "base_path"):
+            full = os.path.join(ROOT, u[key])
+            if os.path.exists(full):
+                u[key] = os.path.relpath(full, proj).replace("\\", "/")
+            else:
+                del u[key]
+    with open(os.path.join(proj, "objdiff.json"), "w") as f:
+        json.dump(cfg, f, indent=2)
     out = os.path.join(ROOT, "build", "report.json")
-    rc = subprocess.call([OBJDIFF, "report", "generate", "-p", ROOT, "-o", out,
+    rc = subprocess.call([OBJDIFF, "report", "generate", "-p", proj, "-o", out,
                           "-f", "json-pretty"], cwd=ROOT)
     if rc != 0:
         return False

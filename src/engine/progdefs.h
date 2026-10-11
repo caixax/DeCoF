@@ -111,6 +111,7 @@ typedef struct entvars_s
 	float		friction;		// inverse elasticity of MOVETYPE_BOUNCE
 	
 	int			light_level;
+	int			guess_cof_light_extra;	// CoF engine: 4 more bytes here, not saved, never read by hl.dll
 
 	int			sequence;		// animation sequence
 	int			gaitsequence;	// movement animation sequence for player (0 for none)

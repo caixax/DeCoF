@@ -36,6 +36,8 @@ typedef struct usercmd_s
 // Experimental player impact stuff.
 	int		impact_index;
 	vec3_t	impact_position;
+
+	int		is_donator;		// CoF engine (delta.lst, DT_INTEGER)
 } usercmd_t;
 
 #endif // USERCMD_H

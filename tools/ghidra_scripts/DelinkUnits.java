@@ -32,11 +32,17 @@ import ghidra.app.util.Option;
 import ghidra.app.util.exporter.Exporter;
 import ghidra.program.model.address.Address;
 import ghidra.program.model.address.AddressSet;
+import ghidra.program.model.data.ArrayDataType;
+import ghidra.program.model.data.Undefined;
+import ghidra.program.model.data.Undefined1DataType;
 import ghidra.program.model.listing.CodeUnit;
+import ghidra.program.model.listing.Data;
 import ghidra.program.model.listing.Function;
+import ghidra.program.model.listing.Listing;
 import ghidra.program.model.symbol.SourceType;
 import ghidra.program.model.symbol.Symbol;
 import ghidra.program.model.symbol.SymbolTable;
+import ghidra.program.model.symbol.SymbolType;
 import ghidra.util.classfinder.ClassSearcher;
 
 public class DelinkUnits extends GhidraScript {
@@ -208,6 +214,9 @@ public class DelinkUnits extends GhidraScript {
 				catch (ghidra.util.exception.DuplicateNameException e) {
 					// name already used by a folded copy or applied earlier
 				}
+				if (kind.equals("data") && f.length > 3 && !f[3].isEmpty()) {
+					defineExtent(symtab, addr, Integer.parseInt(f[3]));
+				}
 				applied++;
 			}
 		}
@@ -215,6 +224,53 @@ public class DelinkUnits extends GhidraScript {
 			currentProgram.endTransaction(tx, true);
 		}
 		println("DelinkUnits: " + applied + " symbols applied from " + csv);
+	}
+
+	// Define a named global as undefined1[size] so that references into its
+	// middle are offsets from its symbol. The extent stops before the next
+	// named symbol; ranges holding instructions or typed data (pointers,
+	// strings: their references must survive) are left alone.
+	private void defineExtent(SymbolTable symtab, Address addr, int size) {
+		if (size <= 1) {
+			return;
+		}
+		Listing listing = currentProgram.getListing();
+		Address end = addr.add(size - 1);
+		Data first = listing.getDataAt(addr);
+		if (first != null && first.getLength() >= size) {
+			return;
+		}
+		for (Symbol s : symtab.getSymbols(new AddressSet(addr.add(1), end), SymbolType.LABEL, true)) {
+			if (!s.isDynamic() && s.getSource() != SourceType.DEFAULT) {
+				end = s.getAddress().subtract(1);
+				break;
+			}
+		}
+		if (end.compareTo(addr) <= 0) {
+			return;
+		}
+		AddressSet range = new AddressSet(addr, end);
+		if (listing.getInstructions(range, true).hasNext()) {
+			return;
+		}
+		for (Data d : listing.getDefinedData(range, true)) {
+			boolean undefinedType = Undefined.isUndefined(d.getDataType()) || d.getDataType() instanceof ArrayDataType
+					&& Undefined.isUndefined(((ArrayDataType) d.getDataType()).getDataType());
+			if (!d.getMinAddress().equals(addr) && !undefinedType) {
+				return;
+			}
+			if (d.getMaxAddress().compareTo(end) > 0) {
+				return;
+			}
+		}
+		try {
+			clearListing(addr, end);
+			int n = (int) end.subtract(addr) + 1;
+			createData(addr, new ArrayDataType(Undefined1DataType.dataType, n, 1));
+		}
+		catch (Exception e) {
+			printerr("could not define extent at " + addr + ": " + e.getMessage());
+		}
 	}
 
 	private static boolean hasLabel(SymbolTable symtab, Address addr, String name) {

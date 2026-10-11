@@ -28,7 +28,9 @@ fieldOffset, fieldSize, flags).
 - 1.6a table: VA 0x1021AAE0 (file offset 0x219AE0). Every field from
   `sequence` on is shifted by +4.
 - The new field is absent from the save table, so its name and type are
-  unknown. Placeholder name until evidence appears: `guess_light_level_pad`.
+  unknown. `src/engine/progdefs.h` names it `guess_cof_light_extra`.
+  The hw.dll delta field tables (name, offset pairs at 0x01EB2630) do not
+  cover entvars_t and the 1.6a hl.dll never reads the field.
 - Consequence: `edict_t` grows to at least 0x328 in 1.6a. cof-enhanced
   reports an edict stride of 0x32C, which would mean a second 4-byte change
   elsewhere in `edict_t`; not yet verified.
@@ -76,9 +78,12 @@ So `sizeof(CBaseEntity)` is 0xD8 in 1.55 (PDB) and 0xDC in 1.6a, and the
 new 4 bytes lie between 0xC4 and the end of the class: before or among
 `m_flStartThrow` (0xC4), `m_flReleaseThrow` (0xC8), `m_chargeReady`
 (0xCC), `m_fInAttack` (0xD0), `m_fireState` (0xD4), or at the end. The
-exact position is open until a 1.6a function that touches those fields is
-decompiled. MadSimonX puts an `int __PADDINGD4` at the end (unverified).
-Placeholder name: `guess_cbaseentity_pad`.
+exact position cannot be observed: no 1.6a function and no save table
+reads `m_flStartThrow` .. `m_fireState` (checked by comparing the member
+displacements of every function present in both builds,
+2026-10-11), so any position after `ammo_groza` produces the same code.
+`src/dlls/cbase.h` appends it as `int guess_m_iNew16a;`. MadSimonX also
+puts it at the end (`__PADDINGD4`, unverified).
 
 1.55 layout (PDB, Ghidra `get_struct_layout`): vtable 0x00, `pev` 0x04,
 `b_Saving` 0x08, `m_bFrozenByCamera` 0x09, `m_bIsBoss` 0x0A (CoF), Spirit
@@ -112,13 +117,54 @@ measured here.
 - 1.6a vtables (RTTI): 482 game classes keep the 1.55 vtable length, so no
   virtual functions were added or removed in those classes.
 
-## playermove_t (hl.dll 1.6a): 4 bytes after cmd
+## usercmd_t (CoF engine): is_donator after impact_position
 
-Confirmed 2026-10-11 in code. `PM_AddGravity` (1.6a) reads
-`pmove->movevars` at offset 0x4F4F4; the Paranoia/HLSDK layout puts it at
-0x4F4F0. With 4 bytes inserted between `cmd` (ends at 0x4548C) and
-`numtouch` (0x45490 in retail, as cof-enhanced reported), every
-pm_shared function that only differed by those offsets matches retail.
-`src/pm_shared/pm_defs.h` has `int guess_pmove_pad;` there. Whether the
-bytes belong to a longer `usercmd_t` or to a new playermove_t member is
-open; the engine (hw.dll) defines the struct and will tell.
+Confirmed 2026-10-11. The hw.dll delta field table for `usercmd_t` (name,
+offset pairs at 0x01EB2670) ends with `is_donator` at 0x34, and
+`cryoffear/delta.lst` has `DEFINE_DELTA( is_donator, DT_INTEGER, 3, 1.0 )`.
+So `sizeof(usercmd_t)` is 0x38 instead of 0x34. This is the 4 bytes that
+`playermove_t` has between `cmd` and `numtouch` (`PM_AddGravity` reads
+`pmove->movevars` at 0x4F4F4 instead of 0x4F4F0); with `int is_donator;`
+in `src/common/usercmd.h` the playermove_t placeholder is gone.
+
+## clientdata_t (CoF engine): isdonator at the end
+
+The hw.dll clientdata delta table (0x01EB26F8) ends with `isdonator` at
+0x1DC, after `vuser4`. `src/common/entity_state.h` has `int isdonator;`
+there; the type is a guess (the field has no delta.lst entry).
+
+## weapon_data_t (CoF): m_flNextTertiaryAttack
+
+1.55 PDB: `weapon_data_s` is 0x5C bytes with `float m_flNextTertiaryAttack`
+at 0x10, between `m_flNextSecondaryAttack` and `m_flTimeWeaponIdle`.
+Added to `src/common/weaponinfo.h`.
+
+## CBasePlayer (hl.dll 1.6a): changes from the save table
+
+Compared `CBasePlayer::m_SaveData` of 1.55 (0x10213D70, 206 fields) and
+1.6a (0x10217FE8, 207 fields), 2026-10-11:
+
+- new saved field `m_bUsedVanNumber` (BOOLEAN) at 0x399;
+- 12 more bytes between `m_pWheelchair` (0x390 in 1.6a) and `m_bJustJumped`
+  (0x39A -> 0x3AA), which includes `m_bUsedVanNumber`; the order of
+  `m_iCoopDeadYaw`, `m_bKilledLyingDown` and `m_bCustomSleeveApplied`
+  around it is still open;
+- arrays grew by one element: `m_strHintsShown` 32 -> 33,
+  `transferredentity_message`, `_origin`, `_classname`, `_clip` 50 -> 51,
+  `inventorySlot`, `inventorySlotModels`, `inventorySlotClassname` 6 -> 7.
+
+## Notes on the 1.55 PDB as a layout source
+
+- The 1.55 hl.dll is a debug build (objects in `.\debughl\`, frame
+  pointers, `this` spilled to `[ebp-4]`), so its code is not comparable
+  byte for byte, but its type stream and locals are complete:
+  `tools/pdbtypes.py` (classes, method order, virtual slots, locals) and
+  `tools/pdb_lines.py` (file and line of every function,
+  `docs/lines_hl_1.55.csv`).
+- VC 7.1 `std::string` is 28 bytes, VS2019 is 24. No CoF class has a
+  `std::string` data member (only `CBasePlayer::EncryptStatsFile` takes and
+  returns one), so this does not move any member.
+- Method lists in the type stream are stored in reverse declaration order;
+  overloaded virtuals take their slots in reverse declaration order (MSVC),
+  confirmed on the 1.6a vtable of CBaseEntity (`SetNextThink`, `GetState`,
+  `FVisible`).

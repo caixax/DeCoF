@@ -1337,6 +1337,7 @@ va,name,kind,evidence
 10225980,?gSCounter@@3HA,data,objdiff:hl/dlls/paranoia_wpn:?SetTablePointer@CBaseSpreadWeapon@@QAEXXZ
 10225988,?gDefaultSpread@@3Uspreadparams_s@@A,data,objdiff:hl/dlls/paranoia_wpn:?SetTablePointer@CBaseSpreadWeapon@@QAEXXZ
 10225A30,?gSpreadTable@@3PAUspreadparams_s@@A,data,objdiff:hl/dlls/paranoia_wpn:?SetTablePointer@CBaseSpreadWeapon@@QAEXXZ
+1022647C,?gEvilImpulse101@@3HA,data,objdiff:hl/dlls/items:?ItemTouch@CItem@@QAEXPAVCBaseEntity@@@Z
 102264B4,?gmsgKeyedDLight@@3HA,data,objdiff:hl/dlls/effects:?MakeLight@CEnvDLight@@UAEXH@Z
 102264C0,?gmsgAddShine@@3HA,data,objdiff:hl/dlls/bmodels:?Think@CFuncShine@@UAEXXZ
 102264CC,?gmsgCurWeapon@@3HA,data,objdiff:hl/dlls/weapons:?UpdateClientData@CBasePlayerWeapon@@UAEHPAVCBasePlayer@@@Z
