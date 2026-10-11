@@ -1,15 +1,15 @@
-va,name,kind
-100B4AA0,?GiveFnptrsToDll@@YGXPAUenginefuncs_s@@PAUglobalvars_t@@@Z,func
-100B4AD0,_DllMain@12,func
-10222F48,?g_engfuncs@@3Uenginefuncs_s@@A,data
-10223188,?gpGlobals@@3PAUglobalvars_t@@A,data
-1016F5EC,_atof,func
-1016F5CE,__wtof,func
-1013DF50,__ftol2_sse,func
-1017BCBB,_stricmp,func
-100099E0,_PM_UpdateStepSound,func
-10226728,?gSkillData@@3Uskilldata_t@@A,data
-10231F50,?m_usThirdFlash@@3GA,data
-1016BE90,__libm_sse2_sqrt_precise,func
-101011D0,?ScheduleChange@CSquadMonster@@UAEXXZ,func
-10101980,?VacateSlot@CSquadMonster@@QAEXXZ,func
+va,name,kind,evidence
+100B4AA0,?GiveFnptrsToDll@@YGXPAUenginefuncs_s@@PAUglobalvars_t@@@Z,func,export GiveFnptrsToDll@8 (ordinal 1)
+100B4AD0,_DllMain@12,func,called by the CRT DLL entry (dllmain_dispatch) with the DllMain arguments; same body as the 1.55 DllMain
+10222F48,?g_engfuncs@@3Uenginefuncs_s@@A,data,GiveFnptrsToDll copies 0x90 dwords of pengfuncsFromEngine here (rep movsd)
+10223188,?gpGlobals@@3PAUglobalvars_t@@A,data,GiveFnptrsToDll stores pGlobals here
+1016F5EC,_atof,func,libucrt.lib (SDK 10.0.19041) atof.obj: _atof follows __wtof in section order; both call common_atof; __wtof is the other one
+1016F5CE,__wtof,func,libucrt.lib (SDK 10.0.19041) atof.obj: __wtof precedes _atof in section order
+1013DF50,__ftol2_sse,func,code: SSE3 check then fisttp dword (32-bit result); __ftol2 at 1013E080 is the fisttp qword (64-bit) variant
+1017BCBB,_stricmp,func,code: __locale_changed check then __ascii_stricmp (UCRT _stricmp)
+100099E0,_PM_UpdateStepSound,func,1.55 name carry of PM_UpdateStepSound (C function: underscore decoration)
+10226728,?gSkillData@@3Uskilldata_t@@A,data,RefreshSkillData stores the skill level here after the "GAME SKILL LEVEL:%d" alert; "sk_syringe_heal" goes to +4 and "sk_cof_glock" to +0x128 (skilldata_t of the 1.55 PDB: iSkillLevel, syringeHeal, ... DmgGlock)
+10231F50,?m_usThirdFlash@@3GA,data,holds PRECACHE_EVENT( 1 "events/muzzleflash.sc" ); the 1.55 m_usThirdFlash (PDB) holds the same event
+1016BE90,__libm_sse2_sqrt_precise,func,CRT bytes (crt_bytes match); listed here so DelinkUnits removes a stale ?Length2D label at this address
+101011D0,?ScheduleChange@CSquadMonster@@UAEXXZ,func,CSquadMonster vtable slot +0x194 (ScheduleChange in the 1.55 PDB vtable layout) points here; body is jmp 10101980
+10101980,?VacateSlot@CSquadMonster@@QAEXXZ,func,jmp target of ScheduleChange (101011D0); the 1.55 ScheduleChange body is a single call to VacateSlot
