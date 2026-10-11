@@ -1,0 +1,8 @@
+va,name,kind,evidence
+10040A30,?GibMonster@CFlier@@UAEXXZ,func,vtable CFlier slot 132 (+0x210): 1.55 slot is ?GibMonster@CFlier@@UAEXXZ; 1.6a slot is a 5-byte jmp
+10041A80,?RunAI@CFlier@@UAEXXZ,func,vtable CFlier slot 74 (+0x128): 1.55 slot is ?RunAI@CFlier@@UAEXXZ; 1.6a slot is a 5-byte jmp
+10089D40,?GibMonster@CBaseMonster@@UAEXXZ,func,vtable CAnimatedCamera slot 132 (+0x210): 1.55 slot is ?GibMonster@CBaseMonster@@UAEXXZ
+100B9980,?Think@CMark@@UAEXXZ,func,vtable CMark slot 56 (+0xE0): 1.55 slot is ?Think@CMark@@UAEXXZ; 1.6a slot is a 5-byte jmp
+100BAF30,?Spawn@CGameScore@@UAEXXZ,func,vtable CGameScore slot 11 (+0x2C): 1.55 slot is ?Spawn@CGameScore@@UAEXXZ; 1.6a slot is a 5-byte jmp
+100C2970,?RunAI@CBaseMonster@@UAEXXZ,func,vtable CAnimatedCamera slot 74 (+0x128): 1.55 slot is ?RunAI@CBaseMonster@@UAEXXZ
+101028E0,?SUB_Remove@CBaseEntity@@QAEXXZ,func,"vtable CMark slot 56 (+0xE0): 1.55 slot is ?Think@CMark@@UAEXXZ; target of its jmp; the 1.55 body calls only ?SUB_Remove@CBaseEntity@@QAEXXZ; body is the HLSDK SUB_Remove (UpdateOnRemove, ""SUB_Remove called on entity with health > 0"" alert, REMOVE_ENTITY); DeadRemoveThink is the export at 10017AA0"

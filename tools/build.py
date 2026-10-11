@@ -102,14 +102,16 @@ def mcp_call(path, body=None, query=None, timeout=120):
 
 
 def merged_symbols(d, dll):
-    """tools/symbols/<dll>_1.6a.csv + <dll>_manual.csv + <dll>_auto.csv
-    (later files override earlier ones), written to build/jobs/."""
+    """tools/symbols/<dll>_1.6a.csv, then _auto.csv (harvested), then the
+    curated _usermsgs.csv, _vtable.csv and _manual.csv (later files
+    override earlier ones), written to build/jobs/."""
     rows = {}
     curated = set()
     base = os.path.join(ROOT, d["symbols"])
     # base map, harvested names, then curated maps (later files win)
     for i, path in enumerate((base, base.replace("_1.6a.csv", "_auto.csv"),
                               base.replace("_1.6a.csv", "_usermsgs.csv"),
+                              base.replace("_1.6a.csv", "_vtable.csv"),
                               base.replace("_1.6a.csv", "_manual.csv"))):
         if os.path.exists(path):
             for r in csv.DictReader(open(path)):

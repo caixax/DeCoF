@@ -1,1 +1,2 @@
 ?GetIdealState@CBaseMonster@@UAE?AW4MONSTERSTATE@@XZ
+?RunAI@CBaseMonster@@UAEXXZ

@@ -11,6 +11,7 @@
 ?FireBullets@CBaseEntity@@QAEXKVVector@@00MHHHPAUentvars_s@@@Z
 ?FireBulletsPlayer@CBaseEntity@@QAE?AVVector@@KV2@00MHHHPAUentvars_s@@H@Z
 ?GetDeathActivity@CBaseMonster@@UAE?AW4Activity@@XZ
+?GibMonster@CBaseMonster@@UAEXXZ
 ?GoreCalculation@CBaseMonster@@QAEXHM@Z
 ?HasAlienGibs@CBaseMonster@@UAEHXZ
 ?HasHumanGibs@CBaseMonster@@UAEHXZ

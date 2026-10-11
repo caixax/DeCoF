@@ -10,6 +10,7 @@
 ?DeathSound@CFlier@@UAEXXZ
 ?GetSchedule@CFlier@@UAEPAUSchedule_t@@XZ
 ?GetScheduleOfType@CFlier@@UAEPAUSchedule_t@@H@Z
+?GibMonster@CFlier@@UAEXXZ
 ?HandleAnimEvent@CFlier@@UAEXPAUMonsterEvent_t@@@Z
 ?HearingSensitivity@CFlier@@UAEMXZ
 ?IdleSound@CFlier@@UAEXXZ
@@ -21,6 +22,7 @@
 ?Precache@CFlier@@UAEXXZ
 ?Restore@CAcidSpit@@UAEHAAVCRestore@@@Z
 ?Restore@CFlier@@UAEHAAVCRestore@@@Z
+?RunAI@CFlier@@UAEXXZ
 ?RunTask@CFlier@@UAEXPAUTask_t@@@Z
 ?Save@CAcidSpit@@UAEHAAVCSave@@@Z
 ?Save@CFlier@@UAEHAAVCSave@@@Z
@@ -37,5 +39,3 @@
 ?TraceAttack@CFlier@@UAEXPAUentvars_s@@MVVector@@PAUTraceResult@@H@Z
 _acidspit
 _monster_nerd
-?GibMonster@CFlier@@UAEXXZ
-?RunAI@CFlier@@UAEXXZ

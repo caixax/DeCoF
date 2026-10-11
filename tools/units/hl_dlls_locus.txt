@@ -35,6 +35,7 @@
 ?Save@CLocusVariable@@UAEHAAVCSave@@@Z
 ?Spawn@CLocusBeam@@UAEXXZ
 ?Spawn@CLocusVariable@@UAEXXZ
+?Think@CMark@@UAEXXZ
 ?Use@CLocusAlias@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z
 ?Use@CLocusBeam@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z
 ?Use@CLocusVariable@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z

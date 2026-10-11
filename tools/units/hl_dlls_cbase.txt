@@ -32,4 +32,3 @@
 ?ShouldToggle@CBaseEntity@@QAEHW4USE_TYPE@@H@Z
 _GetEntityAPI
 _GetEntityAPI2
-?DeadRemoveThink@CBaseEntity@@QAEXXZ

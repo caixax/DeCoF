@@ -24,6 +24,7 @@
 ?Restore@CBaseDelay@@UAEHAAVCRestore@@@Z
 ?Restore@CBaseToggle@@UAEHAAVCRestore@@@Z
 ?SUB_DoNothing@CBaseEntity@@QAEXXZ
+?SUB_Remove@CBaseEntity@@QAEXXZ
 ?SUB_UseTargets@CBaseDelay@@QAEXPAVCBaseEntity@@W4USE_TYPE@@M@Z
 ?SUB_UseTargets@CBaseEntity@@QAEXPAV1@W4USE_TYPE@@M@Z
 ?Save@CBaseDelay@@UAEHAAVCSave@@@Z

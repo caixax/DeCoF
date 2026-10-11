@@ -24,6 +24,7 @@
 ?Save@CGameText@@UAEHAAVCSave@@@Z
 ?Save@CRuleEntity@@UAEHAAVCSave@@@Z
 ?Spawn@CGameCounter@@UAEXXZ
+?Spawn@CGameScore@@UAEXXZ
 ?Spawn@CRuleBrushEntity@@UAEXXZ
 ?Spawn@CRuleEntity@@UAEXXZ
 ?Spawn@CRulePointEntity@@UAEXXZ
