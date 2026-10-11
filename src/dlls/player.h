@@ -162,6 +162,11 @@ public:
 	EHANDLE m_pBoat;
 	EHANDLE m_pAttachedCamera;
 	EHANDLE m_pWheelchair;
+	// CoF 1.6a: new members (see docs/structs.md, CBasePlayer)
+	bool guess_m_bMuschi2;				// toggled by the "muschi2" client command, set by CRoofBoss
+	bool m_bUsedVanNumber;
+	float guess_m_flPhoneNumberTime;	// set in PhoneNumber, checked in PostThink
+	int guess_m_iPhoneNumberState;		// 0, 1 (PhoneNumber), 2 (PostThink)
 	int m_iCoopDeadYaw;
 	bool m_bKilledLyingDown;
 	bool m_bCustomSleeveApplied;
@@ -231,7 +236,7 @@ public:
 	int GetWeaponAnimation( void );
 	virtual void Use( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE useType, float value );
 	void ShowHint( int hint, bool showanyway );
-	string_t m_strHintsShown[32];
+	string_t m_strHintsShown[33];
 	void StartWheelchairMode( void );
 	void StopWheelchairMode( void );
 	float m_flTurnAroundTime;
@@ -284,11 +289,11 @@ public:
 	int m_bMirroredDualWield;
 	EHANDLE m_pCurrentDocument;
 	statistics playerstats;
-	documents documentsstruct[16];
-	int transferredentity_message[50];
-	Vector transferredentity_origin[50];
-	int transferredentity_classname[50];
-	int transferredentity_clip[50];
+	documents documentsstruct[17];
+	int transferredentity_message[51];
+	Vector transferredentity_origin[51];
+	int transferredentity_classname[51];
+	int transferredentity_clip[51];
 	int m_iDualWeaponLeftID;
 	int m_iDualWeaponRightID;
 	void GiveDualWeapon( int id1, int id2 );
@@ -422,10 +427,10 @@ public:
 	float m_fStamina;
 	float m_fStaminaChargeCyle;
 	float m_fStaminaBreatheCyle;
-	int inventorySlot[6];
-	int inventorySlotModels[6];
-	int inventorySlotClassname[6];
-	int ClientinventorySlot[6];
+	int inventorySlot[7];
+	int inventorySlotModels[7];
+	int inventorySlotClassname[7];
+	int ClientinventorySlot[7];
 	int AddItemToInventory( int name, int model, int classname );
 	int IsSlotFree( int slot );
 	void PrintInventoryInfoDebug( void );
