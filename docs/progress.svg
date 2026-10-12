@@ -13,21 +13,21 @@
 <rect x="24" y="100" width="712" height="18" rx="4" fill="#afb8c1"/>
 <text x="24" y="134" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#57606a" xml:space="preserve">MATCHED 0.0% (0)   EQUIVALENT 0.0% (0)   TODO 100.0% (2146)   654976 code bytes</text>
 <text x="24" y="166" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#1f2328">hl.dll</text>
-<text x="736" y="166" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#1f2328" text-anchor="end">82.0% done (4550 of 5376 functions)</text>
+<text x="736" y="166" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#1f2328" text-anchor="end">82.6% done (4554 of 5376 functions)</text>
 <rect x="24" y="174" width="712" height="18" rx="4" fill="#afb8c1"/>
-<rect x="24.00" y="174" width="574.84" height="18" fill="#2da44e"/>
-<rect x="598.84" y="174" width="9.13" height="18" fill="#d4a72c"/>
-<text x="24" y="208" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#57606a" xml:space="preserve">MATCHED 80.7% (4543)   EQUIVALENT 1.3% (7)   TODO 18.0% (826)   1111778 code bytes</text>
+<rect x="24.00" y="174" width="578.75" height="18" fill="#2da44e"/>
+<rect x="602.75" y="174" width="9.13" height="18" fill="#d4a72c"/>
+<text x="24" y="208" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#57606a" xml:space="preserve">MATCHED 81.3% (4547)   EQUIVALENT 1.3% (7)   TODO 17.4% (822)   1111778 code bytes</text>
 <text x="24" y="240" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#1f2328">opengl32.dll</text>
 <text x="736" y="240" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#1f2328" text-anchor="end">100.0% done (367 of 367 functions)</text>
 <rect x="24" y="248" width="712" height="18" rx="4" fill="#afb8c1"/>
 <rect x="24.00" y="248" width="712.00" height="18" fill="#2da44e"/>
 <text x="24" y="282" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#57606a" xml:space="preserve">MATCHED 100.0% (367)   EQUIVALENT 0.0% (0)   TODO 0.0% (0)   22929 code bytes</text>
 <text x="24" y="314" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#1f2328">Total (client.dll, hl.dll, opengl32.dll)</text>
-<text x="736" y="314" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#1f2328" text-anchor="end">52.2% done (4917 of 7889 functions)</text>
+<text x="736" y="314" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#1f2328" text-anchor="end">52.6% done (4921 of 7889 functions)</text>
 <rect x="24" y="322" width="712" height="18" rx="4" fill="#afb8c1"/>
-<rect x="24.00" y="322" width="366.22" height="18" fill="#2da44e"/>
-<rect x="390.22" y="322" width="5.67" height="18" fill="#d4a72c"/>
-<text x="24" y="356" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#57606a" xml:space="preserve">MATCHED 51.4% (4910)   EQUIVALENT 0.8% (7)   TODO 47.8% (2972)   1789683 code bytes</text>
-<text x="24" y="386" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="11" fill="#57606a">Target build 1.6a | commit 47ef1f3 | 2026-10-12 | numbers from docs/progress.csv</text>
+<rect x="24.00" y="322" width="368.65" height="18" fill="#2da44e"/>
+<rect x="392.65" y="322" width="5.67" height="18" fill="#d4a72c"/>
+<text x="24" y="356" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#57606a" xml:space="preserve">MATCHED 51.8% (4914)   EQUIVALENT 0.8% (7)   TODO 47.4% (2968)   1789683 code bytes</text>
+<text x="24" y="386" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="11" fill="#57606a">Target build 1.6a | commit 3e592e7 | 2026-10-12 | numbers from docs/progress.csv</text>
 </svg>
