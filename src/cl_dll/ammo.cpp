@@ -286,6 +286,10 @@ DECLARE_MESSAGE(m_Ammo, AmmoPickup);	// flashes an ammo pickup record
 DECLARE_MESSAGE(m_Ammo, WeapPickup);    // flashes a weapon pickup record
 DECLARE_MESSAGE(m_Ammo, HideWeapon);	// hides the weapon, ammo, and crosshair displays temporarily
 DECLARE_MESSAGE(m_Ammo, ItemPickup);
+DECLARE_MESSAGE(m_Ammo, WpnInfo);
+DECLARE_MESSAGE(m_Ammo, Accuracy);
+DECLARE_MESSAGE(m_Ammo, DualAmmo);
+DECLARE_MESSAGE(m_Ammo, WpnDeploy);
 
 DECLARE_COMMAND(m_Ammo, Slot1);
 DECLARE_COMMAND(m_Ammo, Slot2);
@@ -318,6 +322,10 @@ int CHudAmmo::Init(void)
 	HOOK_MESSAGE(ItemPickup);
 	HOOK_MESSAGE(HideWeapon);
 	HOOK_MESSAGE(AmmoX);
+	HOOK_MESSAGE(WpnInfo);
+	HOOK_MESSAGE(Accuracy);
+	HOOK_MESSAGE(DualAmmo);
+	HOOK_MESSAGE(WpnDeploy);
 
 	HOOK_COMMAND("slot1", Slot1);
 	HOOK_COMMAND("slot2", Slot2);
@@ -479,6 +487,22 @@ void CHudAmmo::Reset(void)
 	gWR.Reset();
 	gHR.Reset();
 
+	guess_m_iVP70Mags = 0;
+	guess_m_iGlockMags = 0;
+	guess_m_iShotgunMags = 0;
+	guess_m_iP345Mags = 0;
+	guess_m_iSyringes = 0;
+	guess_m_iFlares = 0;
+	guess_m_iM16Mags = 0;
+	guess_m_iTMPMags = 0;
+	guess_m_iRifleMags = 0;
+	guess_m_iRevolverAmmo = 0;
+	guess_m_iBrowningMags = 0;
+	guess_m_iG43Mags = 0;
+	guess_m_iMP5Mags = 0;
+	guess_m_iDualAmmoLeft = -1;
+	guess_m_iDualAmmoRight = -1;
+
 	//	VidInit();
 
 }
@@ -486,9 +510,53 @@ void CHudAmmo::Reset(void)
 int CHudAmmo::VidInit(void)
 {
 	// Load sprites for buckets (top row of weapon menu)
+	guess_m_flAccuracy = 0;
+
 	m_HUD_bucket0 = gHUD.GetSpriteIndex( "bucket1" );
 	m_HUD_selection = gHUD.GetSpriteIndex( "selection" );
 	m_mach = gHUD.GetSpriteIndex( "machinegun" );
+	guess_m_HUD_glock_mag = gHUD.GetSpriteIndex( "cof_glock_mag" );
+	guess_m_HUD_p345_mag = gHUD.GetSpriteIndex( "cof_p345_mag" );
+	guess_m_HUD_g43_mag = gHUD.GetSpriteIndex( "cof_g43_mag" );
+	guess_m_HUD_shotgun_box = gHUD.GetSpriteIndex( "cof_shotgun_box" );
+	guess_m_HUD_m76_mag = gHUD.GetSpriteIndex( "cof_m76_mag" );
+	guess_m_HUD_browning_mag = gHUD.GetSpriteIndex( "cof_browning_mag" );
+	guess_m_HUD_mp5_mag = gHUD.GetSpriteIndex( "cof_mp5_mag" );
+	guess_m_HUD_syringe_icon = gHUD.GetSpriteIndex( "cof_syringe_icon" );
+	guess_m_HUD_shotgun_box_icon = gHUD.GetSpriteIndex( "cof_shotgun_box_icon" );
+	guess_m_HUD_glock_mag_icon = gHUD.GetSpriteIndex( "cof_glock_mag_icon" );
+	guess_m_HUD_p345_mag_icon = gHUD.GetSpriteIndex( "cof_p345_mag_icon" );
+	guess_m_HUD_g43_mag_icon = gHUD.GetSpriteIndex( "cof_g43_mag_icon" );
+	guess_m_HUD_m76_mag_icon = gHUD.GetSpriteIndex( "cof_m76_mag_icon" );
+	guess_m_HUD_mag_cross = gHUD.GetSpriteIndex( "cof_mag_cross" );
+	guess_m_HUD_crosshair = gHUD.GetSpriteIndex( "cof_crosshair" );
+	guess_m_HUD_flare_icon = gHUD.GetSpriteIndex( "cof_flare_icon" );
+	guess_m_HUD_mp5_mag_icon = gHUD.GetSpriteIndex( "cof_mp5_mag_icon" );
+	guess_m_HUD_rifle_mag = gHUD.GetSpriteIndex( "cof_rifle_mag" );
+	guess_m_HUD_rifle_mag_icon = gHUD.GetSpriteIndex( "cof_rifle_mag_icon" );
+	guess_m_HUD_famas_mag = gHUD.GetSpriteIndex( "cof_famas_mag" );
+	guess_m_HUD_famas_mag_icon = gHUD.GetSpriteIndex( "cof_famas_mag_icon" );
+	guess_m_HUD_gm_inf = gHUD.GetSpriteIndex( "gm_inf" );
+	guess_m_HUD_m16_mag = gHUD.GetSpriteIndex( "cof_m16_mag" );
+	guess_m_HUD_m16_mag_icon = gHUD.GetSpriteIndex( "cof_m16_mag_icon" );
+	guess_m_HUD_vp70_mag = gHUD.GetSpriteIndex( "cof_vp70_mag" );
+	guess_m_HUD_vp70_mag_icon = gHUD.GetSpriteIndex( "cof_vp70_mag_icon" );
+	guess_m_HUD_tmp_mag = gHUD.GetSpriteIndex( "cof_tmp_mag" );
+	guess_m_HUD_tmp_mag_icon = gHUD.GetSpriteIndex( "cof_tmp_mag_icon" );
+	guess_m_HUD_revolver_cylinder = gHUD.GetSpriteIndex( "cof_revolver_cylinder" );
+
+	guess_m_prcGlockMag = &gHUD.GetSpriteRect( guess_m_HUD_glock_mag );
+	guess_m_prcShotgunBox = &gHUD.GetSpriteRect( guess_m_HUD_shotgun_box );
+	guess_m_prcM76Mag = &gHUD.GetSpriteRect( guess_m_HUD_m76_mag );
+	guess_m_prcM16Mag = &gHUD.GetSpriteRect( guess_m_HUD_m16_mag );
+	guess_m_prcP345Mag = &gHUD.GetSpriteRect( guess_m_HUD_p345_mag );
+	guess_m_prcTMPMag = &gHUD.GetSpriteRect( guess_m_HUD_tmp_mag );
+	guess_m_prcBrowningMag = &gHUD.GetSpriteRect( guess_m_HUD_browning_mag );
+	guess_m_prcRevolverCylinder = &gHUD.GetSpriteRect( guess_m_HUD_revolver_cylinder );
+	guess_m_prcGmInf = &gHUD.GetSpriteRect( guess_m_HUD_gm_inf );
+	guess_m_prcRifleMag = &gHUD.GetSpriteRect( guess_m_HUD_rifle_mag );
+	guess_m_prcG43Mag = &gHUD.GetSpriteRect( guess_m_HUD_g43_mag );
+	guess_m_prcMP5Mag = &gHUD.GetSpriteRect( guess_m_HUD_mp5_mag );
 
 	ghsprBuckets = gHUD.GetSprite(m_HUD_bucket0);
 	giBucketWidth = gHUD.GetSpriteRect(m_HUD_bucket0).right - gHUD.GetSpriteRect(m_HUD_bucket0).left;
@@ -596,74 +664,6 @@ void WeaponsResource :: SelectSlot( int iSlot, int fAdvance, int iDirection )
 	if ( gHUD.m_Menu.m_fMenuDisplayed && (fAdvance == FALSE) && (iDirection == 1) )
 	{ // menu is overriding slot use commands
 		gHUD.m_Menu.SelectMenuItem( iSlot + 1 );  // slots are one off the key numbers
-		return;
-	}
-
-	if ( iSlot > MAX_WEAPON_SLOTS )
-		return;
-
-	if ( gHUD.m_fPlayerDead || gHUD.m_iHideHUDDisplay & ( HIDEHUD_WEAPONS | HIDEHUD_ALL ) )
-		return;
-
-	if (!(gHUD.m_iWeaponBits & (1<<(WEAPON_SUIT)) ))
-		return;
-
-	if ( ! ( gHUD.m_iWeaponBits & ~(1<<(WEAPON_SUIT)) ))
-		return;
-
-	WEAPON *p = NULL;
-	bool fastSwitch = CVAR_GET_FLOAT( "hud_fastswitch" ) != 0;
-
-	if ( m_iSelectedColumn == -1 )
-	{
-		m_iSelectedColumn = iSlot;
-		memset(m_rgColumnSizes, 0, sizeof m_rgColumnSizes);
-		m_rgColumnSizes[iSlot] = 1;
-		gpActiveSel = GetFirstPos( iSlot );
-
-		// Wargon: hud_fastswitch для нового HUD'а.
-		if (gpActiveSel && fastSwitch && !(GetNextActivePos(gpActiveSel->iSlot, gpActiveSel->iSlotPos)) && (iSlot != 0))
-		{
-			ServerCmd(gpActiveSel->szName);
-			g_weaponselect = gpActiveSel->iId;
-			gpActiveSel = NULL;
-			gWR.m_iSelectedColumn = -1;
-			return;
-		}
-
-		PlaySound( "common/wpn_hudon.wav", 1 );
-		return;
-	}
-	else
-	{
-		if (iSlot == m_iSelectedColumn)
-		{
-			if (!gpActiveSel)
-				return;
-			PlaySound("common/wpn_moveselect.wav", 1);
-			gpActiveSel = GetNextActivePos( gpActiveSel->iSlot, gpActiveSel->iSlotPos );
-			if (!gpActiveSel)
-				gpActiveSel = GetFirstPos( iSlot );
-			return;
-		}
-		else
-		{
-			m_iSelectedColumn = iSlot;
-			gpActiveSel = GetFirstPos( iSlot );
-
-			// Wargon: hud_fastswitch для нового HUD'а.
-			if (gpActiveSel && fastSwitch && !(GetNextActivePos(gpActiveSel->iSlot, gpActiveSel->iSlotPos)) && (iSlot != 0))
-			{
-				ServerCmd(gpActiveSel->szName);
-				g_weaponselect = gpActiveSel->iId;
-				gpActiveSel = NULL;
-				gWR.m_iSelectedColumn = -1;
-				return;
-			}
-
-			PlaySound( "common/wpn_hudon.wav", 1 );
-			return;
-		}
 	}
 }
 
@@ -679,7 +679,7 @@ int CHudAmmo::MsgFunc_AmmoX(const char *pszName, int iSize, void *pbuf)
 	BEGIN_READ( pbuf, iSize );
 
 	int iIndex = READ_BYTE();
-	int iCount = READ_BYTE();
+	int iCount = READ_SHORT();
 
 	gWR.SetAmmo( iIndex, abs(iCount) );
 
@@ -910,19 +910,29 @@ int CHudAmmo::MsgFunc_WeaponList(const char *pszName, int iSize, void *pbuf )
 
 }
 
+int CHudAmmo::MsgFunc_Accuracy( const char *pszName, int iSize, void *pbuf )
+{
+	BEGIN_READ( pbuf, iSize );
+
+	guess_m_flAccuracy = READ_COORD();
+
+	return 1;
+}
+
+int CHudAmmo::MsgFunc_DualAmmo( const char *pszName, int iSize, void *pbuf )
+{
+	BEGIN_READ( pbuf, iSize );
+
+	guess_m_iDualAmmoLeft = READ_LONG();
+	guess_m_iDualAmmoRight = READ_LONG();
+
+	return 1;
+}
+
 //------------------------------------------------------------------------
 // Command Handlers
 //------------------------------------------------------------------------
 // Slot button pressed
-void CHudAmmo::SlotInput( int iSlot )
-{
-	// Let the Viewport use it first, for menus
-	if ( gViewPort && gViewPort->SlotInput( iSlot ) )
-		return;
-
-	gWR.SelectSlot(iSlot, FALSE, 1);
-}
-
 void CHudAmmo::UserCmd_Slot1(void)
 {
 	SlotInput( 0 );
@@ -971,6 +981,17 @@ void CHudAmmo::UserCmd_Slot9(void)
 void CHudAmmo::UserCmd_Slot10(void)
 {
 	SlotInput( 9 );
+}
+
+void CHudAmmo::SlotInput( int iSlot )
+{
+	return;
+
+	// Let the Viewport use it first, for menus
+	if ( gViewPort && gViewPort->SlotInput( iSlot ) )
+		return;
+
+	gWR.SelectSlot(iSlot, FALSE, 1);
 }
 
 void CHudAmmo::UserCmd_Close(void)

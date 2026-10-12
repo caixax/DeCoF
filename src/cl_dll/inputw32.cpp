@@ -41,8 +41,8 @@ extern cl_enginefunc_t gEngfuncs;
 
 extern int iMouseInUse;
 extern int g_iUser1;
-extern int guess_iViewEntity;
-extern int guess_iViewEntityActive;
+extern int guess_iModelAttachEnt;
+extern int guess_iModelAttachNum;
 extern int guess_iDefaultFOV;
 extern cl_entity_t *guess_pTelescopeEnt;
 extern float guess_flMouseOfsX;
@@ -318,7 +318,7 @@ void IN_MouseMove ( float frametime, usercmd_t *cmd)
 	int		mx, my;
 	vec3_t viewangles;
 
-	if ( guess_iViewEntity != -1 && guess_iViewEntityActive != -1 )
+	if ( guess_iModelAttachEnt != -1 && guess_iModelAttachNum != -1 )
 		return;
 
 	if ( g_iUser1 > 0 && g_iUser1 <= 4 )

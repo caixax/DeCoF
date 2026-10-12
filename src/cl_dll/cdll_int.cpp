@@ -49,6 +49,7 @@ TeamFortressViewport *gViewPort = NULL;
 void InitInput (void);
 void EV_HookEvents( void );
 void IN_Commands( void );
+void guess_IrrKlangFrame( void );
 
 /*
 ========================== 
@@ -263,6 +264,8 @@ Called by engine every frame that client .dll is loaded
 void DLLEXPORT HUD_Frame( double time )
 {
 	ServersThink( time );
+
+	guess_IrrKlangFrame();
 
 	GetClientVoiceMgr()->Frame(time);
 }

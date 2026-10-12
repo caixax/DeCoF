@@ -79,6 +79,11 @@ void EV_FireRPK( struct event_args_s *args );
 void EV_FireAK74( struct event_args_s *args );
 void EV_FireGroza( struct event_args_s *args );
 void EV_SmokePuff( struct event_args_s *args );
+void guess_EV_ClientSound( struct event_args_s *args );
+void guess_EV_RevolverShells( struct event_args_s *args );
+void guess_EV_ServerMuzzleFlash( struct event_args_s *args );
+void guess_EV_ViewPunch( struct event_args_s *args );
+void guess_EV_WeaponShoot( struct event_args_s *args );
 }
 
 #define VECTOR_CONE_1DEGREES Vector( 0.00873, 0.00873, 0.00873 )
@@ -136,11 +141,7 @@ float EV_HLDM_PlayTextureSound( int idx, pmtrace_t *ptr, float *vecSrc, float *v
 {
 	// hit the world, try to play sound based on texture material type
 	char chTextureType = CHAR_TEX_CONCRETE;
-	float fvol;
 	float fvolbar;
-	char *rgsz[4];
-	int cnt;
-	float fattn = ATTN_NORM;
 	int entity;
 	char *pTextureName;
 	char texname[ 64 ];
@@ -212,10 +213,7 @@ float EV_HLDM_PlayTextureSound( int idx, pmtrace_t *ptr, float *vecSrc, float *v
 	switch (chTextureType)
 	{
 	default:
-	case CHAR_TEX_CONCRETE: fvol = 0.9;	fvolbar = 0.6;
-		rgsz[0] = "player/pl_step1.wav";
-		rgsz[1] = "player/pl_step2.wav";
-		cnt = 2;
+	case CHAR_TEX_CONCRETE: fvolbar = 0.6;
 		// buz: streaks (like in isp3 was)
 		if ( pe && pe->solid == SOLID_BSP )
 		{
@@ -224,10 +222,7 @@ float EV_HLDM_PlayTextureSound( int idx, pmtrace_t *ptr, float *vecSrc, float *v
 			g_objmanager.AddObject(pObj);
 		}
 		break;
-	case CHAR_TEX_METAL: fvol = 0.9; fvolbar = 0.3;
-		rgsz[0] = "player/pl_metal1.wav";
-		rgsz[1] = "player/pl_metal2.wav";
-		cnt = 2;
+	case CHAR_TEX_METAL: fvolbar = 0.3;
 		// buz: smoke
 		if ( pe && pe->solid == SOLID_BSP )
 		{
@@ -235,17 +230,10 @@ float EV_HLDM_PlayTextureSound( int idx, pmtrace_t *ptr, float *vecSrc, float *v
 			g_objmanager.AddObject(pObj);
 		}
 		break;
-	case CHAR_TEX_GRASS: // buz
-	case CHAR_TEX_DIRT:	fvol = 0.9; fvolbar = 0.1;
-		rgsz[0] = "player/pl_dirt1.wav";
-		rgsz[1] = "player/pl_dirt2.wav";
-		rgsz[2] = "player/pl_dirt3.wav";
-		cnt = 3;
+	case 'U': // grass in materials.txt
+	case CHAR_TEX_DIRT:	fvolbar = 0.1;
 		break;
-	case CHAR_TEX_VENT:	fvol = 0.5; fvolbar = 0.3;
-		rgsz[0] = "player/pl_duct1.wav";
-		rgsz[1] = "player/pl_duct1.wav";
-		cnt = 2;
+	case CHAR_TEX_VENT:	fvolbar = 0.3;
 		// buz: smoke
 		if ( pe && pe->solid == SOLID_BSP )
 		{
@@ -253,17 +241,9 @@ float EV_HLDM_PlayTextureSound( int idx, pmtrace_t *ptr, float *vecSrc, float *v
 			g_objmanager.AddObject(pObj);
 		}
 		break;
-	case CHAR_TEX_GRATE: fvol = 0.9; fvolbar = 0.5;
-		rgsz[0] = "player/pl_grate1.wav";
-		rgsz[1] = "player/pl_grate4.wav";
-		cnt = 2;
+	case CHAR_TEX_GRATE: fvolbar = 0.5;
 		break;
-	case CHAR_TEX_TILE:	fvol = 0.8; fvolbar = 0.2;
-		rgsz[0] = "player/pl_tile1.wav";
-		rgsz[1] = "player/pl_tile3.wav";
-		rgsz[2] = "player/pl_tile2.wav";
-		rgsz[3] = "player/pl_tile4.wav";
-		cnt = 4;
+	case CHAR_TEX_TILE:	fvolbar = 0.2;
 		// buz: streaks (like in isp3 was)
 		if ( pe && pe->solid == SOLID_BSP )
 		{
@@ -272,19 +252,9 @@ float EV_HLDM_PlayTextureSound( int idx, pmtrace_t *ptr, float *vecSrc, float *v
 			g_objmanager.AddObject(pObj);
 		}
 		break;
-	case CHAR_TEX_SLOSH: fvol = 0.9; fvolbar = 0.0;
-		rgsz[0] = "player/pl_slosh1.wav";
-		rgsz[1] = "player/pl_slosh3.wav";
-		rgsz[2] = "player/pl_slosh2.wav";
-		rgsz[3] = "player/pl_slosh4.wav";
-		cnt = 4;
+	case CHAR_TEX_SLOSH: fvolbar = 0.0;
 		break;
-	case CHAR_TEX_WOODS: // buz
-	case CHAR_TEX_WOOD: fvol = 0.9; fvolbar = 0.2;
-		rgsz[0] = "debris/wood1.wav";
-		rgsz[1] = "debris/wood2.wav";
-		rgsz[2] = "debris/wood3.wav";
-		cnt = 3;
+	case CHAR_TEX_WOOD: fvolbar = 0.2;
 		// buz: smoke
 		if ( pe && pe->solid == SOLID_BSP )
 		{
@@ -292,27 +262,17 @@ float EV_HLDM_PlayTextureSound( int idx, pmtrace_t *ptr, float *vecSrc, float *v
 			g_objmanager.AddObject(pObj);
 		}
 		break;
-	case CHAR_TEX_GLASS:
-	case CHAR_TEX_COMPUTER:
-		fvol = 0.8; fvolbar = 0.2;
-		rgsz[0] = "debris/glass1.wav";
-		rgsz[1] = "debris/glass2.wav";
-		rgsz[2] = "debris/glass3.wav";
-		cnt = 3;
+	case 'J':
+	case 'K':
+		fvolbar = 0.2;
 		break;
 	case CHAR_TEX_FLESH:
 		if (iBulletType == BULLET_PLAYER_CROWBAR)
 			return 0.0; // crowbar already makes this sound
-		fvol = 1.0;	fvolbar = 0.2;
-		rgsz[0] = "weapons/bullet_hit1.wav";
-		rgsz[1] = "weapons/bullet_hit2.wav";
-		fattn = 1.0;
-		cnt = 2;
+		fvolbar = 0.2;
 		break;
 	}
 
-	// play material hit sound
-	gEngfuncs.pEventAPI->EV_PlaySound( 0, ptr->endpos, CHAN_STATIC, rgsz[gEngfuncs.pfnRandomLong(0,cnt-1)], fvol, fattn, 0, 96 + gEngfuncs.pfnRandomLong(0,0xf) );
 	return fvolbar;
 }
 
@@ -574,6 +534,8 @@ void EV_FireGlock1( event_args_t *args )
 
 void EV_FireGlock2( event_args_t *args )
 {
+	return;
+
 	int idx;
 	vec3_t origin;
 	vec3_t angles;
@@ -2272,4 +2234,207 @@ void EV_SmokePuff( struct event_args_s *args )
 	VectorNormalize(args->angles); // there is surface normal actually
 	CObject *pObj = new CSmokePuff( args->origin, args->angles, 0.8, 0.1, spd_min, spd_max, 10, 20, spd_side );
 	g_objmanager.AddObject(pObj);
+}
+
+void guess_V_ViewPunch( float x, float y, float z );
+
+extern int guess_iWheelchair;
+extern vec3_t guess_vecWheelchairAngles;
+extern cl_entity_t *guess_pTelescopeEnt;
+extern int guess_iTelescopeFlag;
+extern vec3_t guess_ev_punchanglevel;
+
+// muzzle flash of the weapon models seen by the studio renderer
+int guess_iMuzzleFlash;
+int guess_iMuzzleFlashType;
+int guess_iMuzzleFlashEnt;
+vec3_t guess_vecMuzzleFlashAngles;
+
+void guess_V_ViewPunch( float x, float y, float z )
+{
+	if ( !guess_pTelescopeEnt || guess_iTelescopeFlag > 0 )
+	{
+		guess_ev_punchanglevel[0] -= x * 20;
+		guess_ev_punchanglevel[1] += y * 20;
+		guess_ev_punchanglevel[2] += z * 20;
+	}
+}
+
+void guess_EV_ViewPunch( struct event_args_s *args )
+{
+	guess_V_ViewPunch( args->origin[0], args->origin[1], args->origin[2] );
+}
+
+void guess_EV_RevolverShells( struct event_args_s *args )
+{
+	int idx = args->entindex;
+	cl_entity_t *ent = gEngfuncs.GetEntityByIndex( idx );
+
+	if ( ent )
+	{
+		gEngfuncs.pEventAPI->EV_PlaySound( idx, ent->origin, CHAN_AUTO, "weapons/revolver/revolver_shell.wav", 1, 0.8, 0, 100 + gEngfuncs.pfnRandomLong( 0, 30 ) );
+	}
+}
+
+void guess_EV_ServerMuzzleFlash( struct event_args_s *args )
+{
+	int idx = args->entindex;
+	cl_entity_t *ent = gEngfuncs.GetEntityByIndex( idx );
+
+	if ( ent && ent->curstate.weaponmodel )
+	{
+		if ( gEngfuncs.GetEntityByIndex( ent->curstate.weaponmodel ) )
+		{
+			guess_iMuzzleFlash = 1;
+			guess_iMuzzleFlashType = args->iparam1;
+			guess_vecMuzzleFlashAngles = args->angles;
+			guess_iMuzzleFlashEnt = idx;
+		}
+	}
+}
+
+void guess_EV_WeaponShoot( event_args_t *args )
+{
+	int idx;
+	vec3_t origin;
+	vec3_t angles;
+	vec3_t velocity;
+
+	vec3_t ShellVelocity;
+	vec3_t ShellOrigin;
+	int shell;
+	vec3_t vecSrc, vecAiming;
+	vec3_t viewangles;
+	vec3_t up, right, forward;
+
+	if ( args->iparam1 != 3 )
+		return;
+
+	idx = args->entindex;
+	VectorCopy( args->origin, origin );
+	VectorCopy( args->angles, angles );
+	VectorCopy( args->velocity, velocity );
+
+	AngleVectors( angles, forward, right, up );
+
+	shell = gEngfuncs.pEventAPI->EV_FindModelIndex ("models/shell.mdl");// brass shell
+	EV_GetDefaultShellInfo( args, origin, velocity, ShellVelocity, ShellOrigin, forward, right, up, 20, -12, 4 );
+
+	if ( EV_IsLocal( idx ) )
+	{
+		EV_MuzzleFlash();
+		if ( args->iparam2 )
+			gEngfuncs.pEventAPI->EV_WeaponAnimation( 2, 0 );
+		else
+			gEngfuncs.pEventAPI->EV_WeaponAnimation( 3, 0 );
+
+		cl_entity_t *ent = GetViewEntity();
+		if (ent)
+			VectorCopy(ent->attachment[1] , ShellOrigin);
+	}
+
+	EV_EjectBrass ( ShellOrigin, ShellVelocity, angles[ YAW ], shell, TE_BOUNCE_SHELL );
+
+	gEngfuncs.pEventAPI->EV_PlaySound( idx, origin, CHAN_WEAPON, "weapons/glock/glock_fire.wav", 1, 0.8, 0, 94 + gEngfuncs.pfnRandomLong( 0, 0xf ) );
+
+	EV_GetGunPosition( args, vecSrc, origin );
+
+	gEngfuncs.GetViewAngles( viewangles );
+	viewangles[0] -= 3;
+	if ( !gHUD.guess_m_bViewLock )
+		gEngfuncs.SetViewAngles( viewangles );
+
+	if ( guess_iWheelchair )
+		guess_vecWheelchairAngles[0] -= 3;
+}
+
+void guess_EV_ClientSound( event_args_t *args )
+{
+	vec3_t origin;
+
+	VectorCopy( args->origin, origin );
+
+	switch ( args->iparam1 )
+	{
+	case 3:
+		switch ( args->iparam2 )
+		{
+		case 1: gEngfuncs.pEventAPI->EV_PlaySound( 0, origin, CHAN_WEAPON, "weapons/glock/glock_magout.wav", 1, 0.8, 0, 100 ); break;
+		case 2: gEngfuncs.pEventAPI->EV_PlaySound( 0, origin, CHAN_WEAPON, "weapons/glock/glock_magin.wav", 1, 0.8, 0, 100 ); break;
+		case 3: gEngfuncs.pEventAPI->EV_PlaySound( 0, origin, CHAN_WEAPON, "weapons/glock/glock_rackback.wav", 1, 0.8, 0, 100 ); break;
+		case 4: gEngfuncs.pEventAPI->EV_PlaySound( 0, origin, CHAN_WEAPON, "weapons/glock/glock_slide.wav", 1, 0.8, 0, 100 ); break;
+		}
+		break;
+	case 7:
+		switch ( args->iparam2 )
+		{
+		case 1: gEngfuncs.pEventAPI->EV_PlaySound( 0, origin, CHAN_WEAPON, "weapons/p345/p345_magout.wav", 1, 0.8, 0, 100 ); break;
+		case 2: gEngfuncs.pEventAPI->EV_PlaySound( 0, origin, CHAN_WEAPON, "weapons/p345/p345_magin.wav", 1, 0.8, 0, 100 ); break;
+		case 3: gEngfuncs.pEventAPI->EV_PlaySound( 0, origin, CHAN_WEAPON, "weapons/p345/p345_slide.wav", 1, 0.8, 0, 100 ); break;
+		}
+		break;
+	case 9:
+		switch ( args->iparam2 )
+		{
+		case 1: gEngfuncs.pEventAPI->EV_PlaySound( 0, origin, CHAN_WEAPON, "weapons/m16/m16_magout.wav", 1, 0.8, 0, 100 ); break;
+		case 2: gEngfuncs.pEventAPI->EV_PlaySound( 0, origin, CHAN_WEAPON, "weapons/m16/m16_magin.wav", 1, 0.8, 0, 100 ); break;
+		case 3: gEngfuncs.pEventAPI->EV_PlaySound( 0, origin, CHAN_WEAPON, "weapons/m16/m16_cock1.wav", 1, 0.8, 0, 100 ); break;
+		case 4: gEngfuncs.pEventAPI->EV_PlaySound( 0, origin, CHAN_WEAPON, "weapons/m16/m16_cock2.wav", 1, 0.8, 0, 100 ); break;
+		}
+		break;
+	case 26:
+		switch ( args->iparam2 )
+		{
+		case 1: gEngfuncs.pEventAPI->EV_PlaySound( 0, origin, CHAN_WEAPON, "weapons/g43/g43_magout.wav", 1, 0.8, 0, 100 ); break;
+		case 2: gEngfuncs.pEventAPI->EV_PlaySound( 0, origin, CHAN_WEAPON, "weapons/g43/g43_magin.wav", 1, 0.8, 0, 100 ); break;
+		case 3: gEngfuncs.pEventAPI->EV_PlaySound( 0, origin, CHAN_WEAPON, "weapons/g43/g43_cock.wav", 1, 0.8, 0, 100 ); break;
+		}
+		break;
+	case 27:
+		switch ( args->iparam2 )
+		{
+		case 1: gEngfuncs.pEventAPI->EV_PlaySound( 0, origin, CHAN_WEAPON, "weapons/mp5/mp5_magout.wav", 1, 0.8, 0, 100 ); break;
+		case 2: gEngfuncs.pEventAPI->EV_PlaySound( 0, origin, CHAN_WEAPON, "weapons/mp5/mp5_magin.wav", 1, 0.8, 0, 100 ); break;
+		case 3: gEngfuncs.pEventAPI->EV_PlaySound( 0, origin, CHAN_WEAPON, "weapons/mp5/mp5_cock.wav", 1, 0.8, 0, 100 ); break;
+		}
+		break;
+	case 14:
+		switch ( args->iparam2 )
+		{
+		case 1: gEngfuncs.pEventAPI->EV_PlaySound( 0, origin, CHAN_WEAPON, "weapons/tmp/tmp_magout.wav", 1, 0.8, 0, 100 ); break;
+		case 2: gEngfuncs.pEventAPI->EV_PlaySound( 0, origin, CHAN_WEAPON, "weapons/tmp/tmp_magin.wav", 1, 0.8, 0, 100 ); break;
+		case 3: gEngfuncs.pEventAPI->EV_PlaySound( 0, origin, CHAN_WEAPON, "weapons/tmp/tmp_charger_back.wav", 1, 0.8, 0, 100 ); break;
+		case 4: gEngfuncs.pEventAPI->EV_PlaySound( 0, origin, CHAN_WEAPON, "weapons/tmp/tmp_charger_forward.wav", 1, 0.8, 0, 100 ); break;
+		}
+		break;
+	case 4:
+		switch ( args->iparam2 )
+		{
+		case 2: gEngfuncs.pEventAPI->EV_PlaySound( 0, origin, CHAN_WEAPON, "weapons/shotgun/insert.wav", 1, 0.8, 0, 100 ); break;
+		case 3: gEngfuncs.pEventAPI->EV_PlaySound( 0, origin, CHAN_WEAPON, "weapons/shotgun/pump_seq.wav", 1, 0.8, 0, 100 ); break;
+		}
+		break;
+	case 21:
+		switch ( args->iparam2 )
+		{
+		case 1: gEngfuncs.pEventAPI->EV_PlaySound( 0, origin, CHAN_WEAPON, "weapons/revolver/revolver_cylinder_open.wav", 1, 0.8, 0, 100 ); break;
+		case 2: gEngfuncs.pEventAPI->EV_PlaySound( 0, origin, CHAN_WEAPON, "weapons/revolver/revolver_insert.wav", 1, 0.8, 0, 100 ); break;
+		case 3: gEngfuncs.pEventAPI->EV_PlaySound( 0, origin, CHAN_WEAPON, "weapons/revolver/revolver_cylinder_close.wav", 1, 0.8, 0, 100 ); break;
+		}
+	case 11:
+		switch ( args->iparam2 )
+		{
+		case 1: gEngfuncs.pEventAPI->EV_PlaySound( 0, origin, CHAN_WEAPON, "weapons/rifle/rifle_cock_back.wav", 1, 0.8, 0, 100 ); break;
+		case 2: gEngfuncs.pEventAPI->EV_PlaySound( 0, origin, CHAN_WEAPON, "weapons/rifle/rifle_cock_forward.wav", 1, 0.8, 0, 100 ); break;
+		}
+		break;
+	case 19:
+		switch ( args->iparam2 )
+		{
+		case 1: gEngfuncs.pEventAPI->EV_PlaySound( 0, origin, CHAN_WEAPON, "weapons/vp70/vp70_magin.wav", 1, 0.8, 0, 100 ); break;
+		case 2: gEngfuncs.pEventAPI->EV_PlaySound( 0, origin, CHAN_WEAPON, "weapons/vp70/vp70_magout.wav", 1, 0.8, 0, 100 ); break;
+		case 3: gEngfuncs.pEventAPI->EV_PlaySound( 0, origin, CHAN_WEAPON, "weapons/vp70/vp70_cock.wav", 1, 0.8, 0, 100 ); break;
+		}
+		break;
+	}
 }

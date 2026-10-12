@@ -29,6 +29,7 @@
 
 #pragma warning(disable: 4244)
 
+extern int guess_iDefaultFOV;
 extern "C" int		iJumpSpectator;
 extern "C" float	vJumpOrigin[3];
 extern "C" float	vJumpAngles[3]; 
@@ -483,8 +484,8 @@ void CHudSpectator::DirectorMessage( int iSize, void *pbuf )
 							break;
 
 		case DRC_CMD_EVENT	:
-							m_lastPrimaryObject		=	READ_WORD();
-							m_lastSecondaryObject	=	READ_WORD();
+							m_lastPrimaryObject		=	READ_SHORT();
+							m_lastSecondaryObject	=	READ_SHORT();
 							m_iObserverFlags		=	READ_LONG();
 														
 							if ( m_autoDirector->value )
@@ -517,7 +518,8 @@ void CHudSpectator::DirectorMessage( int iSize, void *pbuf )
 								vJumpAngles[1] = READ_COORD();
 								vJumpAngles[2] = READ_COORD();
 
-								gEngfuncs.SetViewAngles( vJumpAngles );
+								if ( !gHUD.guess_m_bViewLock )
+									gEngfuncs.SetViewAngles( vJumpAngles );
 
 								iJumpSpectator = 1;
 							}
@@ -576,7 +578,7 @@ void CHudSpectator::DirectorMessage( int iSize, void *pbuf )
 		case DRC_CMD_STATUS:
 							READ_LONG(); // total number of spectator slots
 							m_iSpectatorNumber = READ_LONG(); // total number of spectator
-							READ_WORD(); // total number of relay proxies
+							READ_SHORT(); // total number of relay proxies
 
 //							gViewPort->UpdateSpectatorPanel();
 							break;
@@ -739,7 +741,8 @@ void CHudSpectator::HandleButtonsDown( int ButtonPressed )
 
 			if ( g_iUser1 == OBS_ROAMING )
 			{
-				gEngfuncs.SetViewAngles( vJumpAngles );
+				if ( !gHUD.guess_m_bViewLock )
+					gEngfuncs.SetViewAngles( vJumpAngles );
 				iJumpSpectator = 1;
 	
 			}
@@ -835,7 +838,8 @@ void CHudSpectator::SetModes(int iNewMainMode, int iNewInsetMode)
 									if ( g_iUser2 )
 									{
 										V_GetChasePos( g_iUser2, v_cl_angles, vJumpOrigin, vJumpAngles );
-										gEngfuncs.SetViewAngles( vJumpAngles );
+										if ( !gHUD.guess_m_bViewLock )
+											gEngfuncs.SetViewAngles( vJumpAngles );
 										iJumpSpectator = 1;
 									}
 									break;
@@ -1076,7 +1080,7 @@ void CHudSpectator::DrawOverviewLayer()
 	if ( hasMapImage)
 	{
 		i = m_MapSprite->numframes / (4*3);
-		i = sqrt(i);
+		i = sqrt((float)i);
 		xTiles = i*4;
 		yTiles = i*3;
 	}
@@ -1618,6 +1622,6 @@ void CHudSpectator::InitHUDData()
 	g_iUser2 = 0; // fake not target until first camera command
 
 	// reset HUD FOV
-	gHUD.m_iFOV = 90;// CVAR_GET_FLOAT("default_fov"); // buz: turn off
+	gHUD.m_iFOV = guess_iDefaultFOV;// CVAR_GET_FLOAT("default_fov"); // buz: turn off
 }
 

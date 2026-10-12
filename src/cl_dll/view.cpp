@@ -79,6 +79,7 @@ void V_DropPunchAngle ( float frametime, float *ev_punchangle );
 void VectorAngles( const float *forward, float *angles );
 
 #include "r_studioint.h"
+#include "parsemsg.h"
 #include "com_model.h"
 
 extern engine_studio_api_t IEngineStudio;
@@ -111,6 +112,11 @@ vec3_t	g_CrosshairAngle; // buz
 //extern int g_DontDrawWorld; // buz
 
 vec3_t ev_punchangle;
+vec3_t guess_ev_punchanglevel;
+int guess_iPaused;
+
+bool guess_IrrKlangIsPaused( void );
+void guess_IrrKlangSetPaused( bool bPaused );
 
 cvar_t	*scr_ofsx;
 cvar_t	*scr_ofsy;
@@ -256,7 +262,7 @@ float V_CalcRoll (vec3_t angles, vec3_t velocity, float rollangle, float rollspe
     
 	side = DotProduct (velocity, right);
     sign = side < 0 ? -1 : 1;
-    side = fabs( side );
+    side = fabsf( side );
     
 	value = rollangle;
     if (side < rollspeed)
@@ -282,6 +288,8 @@ static pitchdrift_t pd;
 
 void V_StartPitchDrift( void )
 {
+	return;
+
 	if ( pd.laststop == gEngfuncs.GetClientTime() )
 	{
 		return;		// something else is keeping it from drifting
@@ -326,7 +334,7 @@ void V_DriftPitch ( struct ref_params_s *pparams )
 	// don't count small mouse motion
 	if (pd.nodrift)
 	{
-		if ( fabs( pparams->cmd->forwardmove ) < cl_forwardspeed->value )
+		if ( (fabs)( pparams->cmd->forwardmove ) < cl_forwardspeed->value )
 			pd.driftmove = 0;
 		else
 			pd.driftmove += pparams->frametime;
@@ -401,6 +409,14 @@ void V_CalcGunAngle ( struct ref_params_s *pparams )
 	viewent->angles[1] += pparams->punchangle[1]/2;
 	viewent->angles[2] += pparams->punchangle[2]/2;
 
+	viewent->angles[PITCH] += gHUD.guess_m_vecViewOfs[2];
+
+	if ( viewent->model && gHUD.m_Ammo.m_pWeapon && gHUD.m_Ammo.m_pWeapon->iId == 1 )
+	{
+		viewent->angles[PITCH] -= gHUD.guess_m_flYawOfs;
+		viewent->angles[YAW] -= gHUD.guess_m_flPitchOfs;
+	}
+
 	VectorCopy( viewent->angles, viewent->curstate.angles );
 	VectorCopy( viewent->angles, viewent->latched.prevangles );	
 }
@@ -441,13 +457,13 @@ void V_CalcViewRoll ( struct ref_params_s *pparams )
 
 	pparams->viewangles[ROLL] += side;
 
-	if ( pparams->health <= 0 && ( pparams->viewheight[2] != 0 ) )
-	{
-		// only roll the view if the player is dead and the viewheight[2] is nonzero 
-		// this is so deadcam in multiplayer will work.
-		pparams->viewangles[ROLL] = 80;	// dead view angle
-		return;
-	}
+//	if ( pparams->health <= 0 && ( pparams->viewheight[2] != 0 ) )
+//	{
+//		// only roll the view if the player is dead and the viewheight[2] is nonzero 
+//		// this is so deadcam in multiplayer will work.
+//		pparams->viewangles[ROLL] = 80;	// dead view angle
+//		return;
+//	}
 }
 
 
@@ -959,7 +975,7 @@ void V_SmoothInterpolateAngles( float * startAngle, float * endAngle, float * fi
 			d += 360.0f;
 		}
 
-		absd = fabs(d);
+		absd = fabsf(d);
 
 		if ( absd > 0.01f )
 		{
@@ -1735,6 +1751,22 @@ void DLLEXPORT V_CalcRefdef( struct ref_params_s *pparams )
 	if (pparams->spectator)
 		CONPRINT("=|=|=|=| paused!\n");*/
 
+	if ( pparams->paused )
+	{
+		if ( guess_iPaused != 1 )
+			guess_iPaused = 1;
+
+		if ( !guess_IrrKlangIsPaused() )
+			guess_IrrKlangSetPaused( true );
+	}
+	else
+	{
+		guess_iPaused = 0;
+
+		if ( guess_IrrKlangIsPaused() )
+			guess_IrrKlangSetPaused( false );
+	}
+
 	V_CalcNormalRefdef ( pparams );
 
 	// buz
@@ -1772,14 +1804,48 @@ V_DropPunchAngle
 
 =============
 */
+#define PUNCH_DAMPING		9.0f		// bigger number makes the response more damped, smaller is less damped
+#define PUNCH_SPRING_CONSTANT	65.0f	// bigger number increases the speed at which the view corrects
+
+#define clamp( val, min, max ) ( ((val) > (max)) ? (max) : ( ((val) < (min)) ? (min) : (val) ) )
+
 void V_DropPunchAngle ( float frametime, float *ev_punchangle )
 {
 	float	len;
-	
-	len = VectorNormalize ( ev_punchangle );
-	len -= (10.0 + len * 0.5) * frametime;
-	len = max( len, 0.0 );
-	VectorScale ( ev_punchangle, len, ev_punchangle );
+	float	damping;
+	float	springForceMagnitude;
+
+	if ( gEngfuncs.GetMaxClients() <= 1 )
+	{
+		len = VectorNormalize ( ev_punchangle );
+		len -= (10.0 + len * 0.5) * frametime;
+		len = max( len, 0.0 );
+		VectorScale ( ev_punchangle, len, ev_punchangle );
+		return;
+	}
+
+	if ( Length( ev_punchangle ) > 0.001 || Length( guess_ev_punchanglevel ) > 0.001 )
+	{
+		VectorMA( ev_punchangle, frametime, guess_ev_punchanglevel, ev_punchangle );
+		damping = 1 - (PUNCH_DAMPING * frametime);
+
+		if ( damping < 0 )
+		{
+			damping = 0;
+		}
+		VectorScale( guess_ev_punchanglevel, damping, guess_ev_punchanglevel );
+
+		// torsional spring
+		springForceMagnitude = PUNCH_SPRING_CONSTANT * frametime;
+		springForceMagnitude = clamp( springForceMagnitude, 0, 2 );
+
+		VectorMA( guess_ev_punchanglevel, -springForceMagnitude, ev_punchangle, guess_ev_punchanglevel );
+
+		// don't wrap around
+		ev_punchangle[0] = clamp( ev_punchangle[0], -89, 89 );
+		ev_punchangle[1] = clamp( ev_punchangle[1], -179, 179 );
+		ev_punchangle[2] = clamp( ev_punchangle[2], -89, 89 );
+	}
 }
 
 /*
@@ -1799,6 +1865,18 @@ void V_PunchAxis( int axis, float punch )
 V_Init
 =============
 */
+extern void CAM_ToFirstPerson( void );
+extern void CAM_ToThirdPerson( void );
+extern cl_entity_t *guess_pTelescopeEnt;
+extern cl_entity_t *guess_pCamTargetEnt;
+
+int guess_iModelAttachEnt = -1;
+int guess_iModelAttachNum = -1;
+
+int guess_MsgModelAttach( const char *pszName, int iSize, void *pbuf );
+int guess_MsgThirdPerson( const char *pszName, int iSize, void *pbuf );
+int guess_MsgCoopCamAnim( const char *pszName, int iSize, void *pbuf );
+
 void V_Init (void)
 {
 	gEngfuncs.pfnAddCommand ("centerview", V_StartPitchDrift );
@@ -1816,6 +1894,58 @@ void V_Init (void)
 	cl_waterdist		= gEngfuncs.pfnRegisterVariable( "cl_waterdist","4", 0 );
 	cl_chasedist		= gEngfuncs.pfnRegisterVariable( "cl_chasedist","112", 0 );
 	cl_forcepause		= gEngfuncs.pfnRegisterVariable( "cl_forcepause","0", 0 ); // buz test
+
+	gEngfuncs.pfnHookUserMsg( "ModelAttach", guess_MsgModelAttach );
+	gEngfuncs.pfnHookUserMsg( "ThirdPerson", guess_MsgThirdPerson );
+	gEngfuncs.pfnHookUserMsg( "CoopCamAnim", guess_MsgCoopCamAnim );
+}
+
+int guess_MsgModelAttach( const char *pszName, int iSize, void *pbuf )
+{
+	BEGIN_READ( pbuf, iSize );
+
+	guess_iModelAttachEnt = READ_LONG();
+	guess_iModelAttachNum = READ_BYTE();
+
+	return 1;
+}
+
+int guess_MsgThirdPerson( const char *pszName, int iSize, void *pbuf )
+{
+	BEGIN_READ( pbuf, iSize );
+
+	int iThirdPerson = READ_BYTE();
+	int iEntity = READ_SHORT();
+
+	if ( iEntity == 255 )
+		guess_pCamTargetEnt = NULL;
+	else
+		guess_pCamTargetEnt = gEngfuncs.GetEntityByIndex( iEntity );
+
+	if ( iThirdPerson )
+		CAM_ToThirdPerson();
+	else
+		CAM_ToFirstPerson();
+
+	return 1;
+}
+
+int guess_MsgCoopCamAnim( const char *pszName, int iSize, void *pbuf )
+{
+	BEGIN_READ( pbuf, iSize );
+
+	if ( guess_pTelescopeEnt )
+	{
+		int iSequence = READ_BYTE();
+
+		if ( iSequence >= 0 )
+		{
+			guess_pTelescopeEnt->curstate.animtime = gEngfuncs.GetClientTime();
+			guess_pTelescopeEnt->curstate.sequence = iSequence;
+		}
+	}
+
+	return 1;
 }
 
 

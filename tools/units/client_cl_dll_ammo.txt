@@ -36,3 +36,14 @@
 ?UserCmd_Slot7@CHudAmmo@@QAAXXZ
 ?UserCmd_Slot8@CHudAmmo@@QAAXXZ
 ?UserCmd_Slot9@CHudAmmo@@QAAXXZ
+?Reset@CHudAmmo@@UAEXXZ
+?VidInit@CHudAmmo@@UAEHXZ
+?SlotInput@CHudAmmo@@QAEXH@Z
+?SelectSlot@WeaponsResource@@QAEXHHH@Z
+?Draw@CHudAmmo@@UAEHM@Z
+?MsgFunc_Accuracy@CHudAmmo@@QAEHPBDHPAX@Z
+?MsgFunc_DualAmmo@CHudAmmo@@QAEHPBDHPAX@Z
+?__MsgFunc_Accuracy@@YAHPBDHPAX@Z
+?__MsgFunc_DualAmmo@@YAHPBDHPAX@Z
+?__MsgFunc_WpnInfo@@YAHPBDHPAX@Z
+?__MsgFunc_WpnDeploy@@YAHPBDHPAX@Z
