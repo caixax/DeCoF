@@ -132,3 +132,10 @@
 ?UTIL_ShowMessagePVS@@YAXPBDABVVector@@@Z
 ?UTIL_SplineFraction@@YAMMM@Z
 ?WriteData@CSave@@QAEXPBDH0@Z
+?PRECACHE_SOUND@@YAHH@Z
+?SET_VIEW@@YAXPAUedict_s@@0@Z
+?UTIL_BrushEntInSight@@YAHVVector@@0PAUedict_s@@PAVCBaseEntity@@@Z
+?UTIL_ScreenFadeBuild@@YAXAAUScreenFade@@ABVVector@@MMHH@Z
+?UTIL_ScreenFadeWrite@@YAXABUScreenFade@@PAVCBaseEntity@@@Z
+?UTIL_WallBetween@@YAHVVector@@0PAUedict_s@@PAVCBaseEntity@@@Z
+?WaterSplash@@YAXPAVCBaseEntity@@VVector@@@Z

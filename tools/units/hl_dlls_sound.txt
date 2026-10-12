@@ -60,3 +60,4 @@ _trigger_sound
 ?FEnvSoundInRange@@YAHPAUentvars_s@@0PAM@Z
 ?InitModulationParms@CAmbientGeneric@@QAEXXZ
 ?SENTENCEG_PlayRndI@@YAHPAUedict_s@@HMMHH@Z
+?EMIT_GROUPID_SUIT@@YAXPAUedict_s@@H@Z
