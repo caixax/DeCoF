@@ -16688,16 +16688,16 @@ hl,100B5E70,5,_item_security,item_security,HLSDK,dlls/items.cpp,,,MATCHED,100,ex
 hl,100B5E80,5,_item_suit,item_suit,HLSDK,dlls/items.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( item_suit, CItemSuit )"
 hl,100B5E90,5,_world_items,world_items,HLSDK,dlls/items.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( world_items, CWorldItem )"
 hl,100B5EA0,170,,,UNKNOWN,,,,TODO,,,
-hl,100B5F60,329,?Check@CItemPadlock@@QAEXXZ,CItemPadlock::Check,COF,dlls/item_padlock.cpp,2010-prototype,1.0->1.4 changed; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
-hl,100B60B0,255,?Finished@CItemPadlock@@QAEXXZ,CItemPadlock::Finished,COF,dlls/item_padlock.cpp,2010-prototype,1.0->1.4 changed; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
+hl,100B5F60,329,?Check@CItemPadlock@@QAEXXZ,CItemPadlock::Check,COF,dlls/item_padlock.cpp,2010-prototype,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
+hl,100B60B0,255,?Finished@CItemPadlock@@QAEXXZ,CItemPadlock::Finished,COF,dlls/item_padlock.cpp,2010-prototype,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100B61B0,79,,,UNKNOWN,guess:dlls/item_padlock.cpp,,,TODO,,,
-hl,100B6230,17,?GetState@CItemPadlock@@UAE?AW4STATE@@XZ,CItemPadlock::GetState,COF,dlls/item_padlock.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
-hl,100B6250,34,?Precache@CItemPadlock@@UAEXXZ,CItemPadlock::Precache,COF,dlls/item_padlock.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
-hl,100B6280,328,?Rotate@CItemPadlock@@QAEXH@Z,CItemPadlock::Rotate,COF,dlls/item_padlock.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
-hl,100B63E0,121,?SetSequenceByName@CItemPadlock@@QAEXPAD@Z,CItemPadlock::SetSequenceByName,COF,dlls/item_padlock.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
-hl,100B6460,185,?Spawn@CItemPadlock@@UAEXXZ,CItemPadlock::Spawn,COF,dlls/item_padlock.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
-hl,100B6520,451,?Use@CItemPadlock@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CItemPadlock::Use,COF,dlls/item_padlock.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
-hl,100B66F0,5,_item_padlock,item_padlock,HLSDK,dlls/client.cpp,,,TODO,0.0,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( item_padlock, CItemPadlock )"
+hl,100B6230,17,?GetState@CItemPadlock@@UAE?AW4STATE@@XZ,CItemPadlock::GetState,COF,dlls/item_padlock.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
+hl,100B6250,34,?Precache@CItemPadlock@@UAEXXZ,CItemPadlock::Precache,COF,dlls/item_padlock.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
+hl,100B6280,328,?Rotate@CItemPadlock@@QAEXH@Z,CItemPadlock::Rotate,COF,dlls/item_padlock.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
+hl,100B63E0,121,?SetSequenceByName@CItemPadlock@@QAEXPAD@Z,CItemPadlock::SetSequenceByName,COF,dlls/item_padlock.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
+hl,100B6460,185,?Spawn@CItemPadlock@@UAEXXZ,CItemPadlock::Spawn,COF,dlls/item_padlock.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
+hl,100B6520,451,?Use@CItemPadlock@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CItemPadlock::Use,COF,dlls/item_padlock.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
+hl,100B66F0,5,_item_padlock,item_padlock,HLSDK,dlls/item_padlock.cpp,,,MATCHED,100,exports+jmp_thunk,LINK_ENTITY_TO_CLASS in item_padlock.cpp (1.55); client.cpp does not define it
 hl,100B6700,92,??$GetClassPtr@VCEnvLight@@@@YAPAVCEnvLight@@PAV0@@Z,GetClassPtr<CEnvLight>,HLSDK,dlls/lights.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
 hl,100B6760,92,??$GetClassPtr@VCLight@@@@YAPAVCLight@@PAV0@@Z,GetClassPtr<CLight>,HLSDK,dlls/lights.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
 hl,100B67C0,92,??$GetClassPtr@VCLightDynamic@@@@YAPAVCLightDynamic@@PAV0@@Z,GetClassPtr<CLightDynamic>,HLSDK,dlls/lights.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
