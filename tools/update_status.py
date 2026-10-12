@@ -41,6 +41,18 @@ def main():
     print("report %s" % os.path.relpath(args.report, ROOT))
     rep = json.load(open(args.report))
     path = os.path.join(ROOT, "docs", "progress.csv")
+    # progress.csv is also written by tools/name_unit.py and add_name.py:
+    # read and write it under their lock
+    import name_unit
+    name_unit.lock()
+    try:
+        changed = update(rep, args, path)
+    finally:
+        name_unit.unlock()
+    print("updated %d rows" % changed)
+
+
+def update(rep, args, path):
     rows = list(csv.DictReader(open(path)))
     fields = list(rows[0].keys())
     index = {(r["dll"], r["va"]): r for r in rows}
@@ -81,7 +93,7 @@ def main():
                 row["status"], row["match_percent"], row["notes"] = new_status, new_pct, new_notes
                 changed += 1
     csvio.write_rows(path, fields, rows)
-    print("updated %d rows" % changed)
+    return changed
 
 
 if __name__ == "__main__":
