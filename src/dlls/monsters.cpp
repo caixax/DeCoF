@@ -34,6 +34,7 @@
 #include "soundent.h"
 #include "gamerules.h"
 #include "player.h" // buz
+#include <cmath>
 
 #define MONSTER_CUT_CORNER_DIST		8 // 8 means the monster's bounding box is contained without the box of the node in WC
 
@@ -45,6 +46,33 @@ extern DLL_GLOBAL	short	g_sModelIndexLaser;// holds the index for the laser beam
 extern DLL_GLOBAL	short	g_sModelIndexLaserDot;// holds the index for the laser beam dot
 
 extern CGraph WorldGraph;// the world node graph
+
+extern int g_iSurvivalMode;
+extern int m_iSimonMode;
+extern int gmsgTimerPlus;
+
+extern int CountConnectedPlayers( void );
+extern void UTIL_SplashCalculation( CBaseEntity *pEntity, int splashtype );
+
+// effects.cpp
+class CCoFSurvivalMode : public CPointEntity
+{
+public:
+	virtual void Spawn( void );
+	virtual void Precache( void );
+	virtual void Use( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE useType, float value );
+	void SurvivalThink( void );
+	bool m_bSurvivalMode;
+	bool m_bSurvivalModeRunning;
+	string_t m_sSurvivalTriggerWhenWon;
+	string_t m_sSurvivalTriggerWhenAllDead;
+	int m_iSurvivalTimeInSeconds;
+	int m_iCurrentSurvivalTime;
+	float m_flNextSurvivalCount;
+	int m_iTimeSeconds;
+	int m_iTimeMinutes;
+	int m_iTimeHours;
+};
 
 
 
@@ -160,6 +188,15 @@ int CBaseMonster::Restore( CRestore &restore )
 	return status;
 }
 
+
+void CBaseMonster :: Ignite( void )
+{
+	if ( m_bBurning )
+		return;
+
+	m_bBurning = true;
+	pev->renderfx = 135;
+}
 
 //=========================================================
 // Eat - makes a monster full for a little while.
@@ -332,6 +369,26 @@ void CBaseMonster :: Look ( int iDistance )
 
 	CBaseEntity	*pSightEnt = NULL;// the current visible entity that we're dealing with
 
+	if ( FClassnameIs( edict(), "monster_booksimon" ) && !m_hEnemy && pev->frags == 0 )
+	{
+		int random = RANDOM_LONG( 1, CountConnectedPlayers() );
+		CBaseEntity *pPlayer = UTIL_PlayerByIndex( random );
+
+		if ( pPlayer && !m_hEnemy )
+		{
+			iSighted |= bits_COND_SEE_CLIENT;
+			m_hEnemy = pPlayer;
+
+			PushEnemy( m_hEnemy, m_vecEnemyLKP );
+			SetConditions( bits_COND_NEW_ENEMY );
+			m_hEnemy = pPlayer;
+			m_vecEnemyLKP = m_hEnemy->pev->origin;
+
+			SetConditions( iSighted );
+			return;
+		}
+	}
+
 	// See no evil if prisoner is set
 	if ( !FBitSet( pev->spawnflags, SF_MONSTER_PRISONER ) )
 	{
@@ -360,9 +417,17 @@ void CBaseMonster :: Look ( int iDistance )
 					}
 				}
 
+				bool ishidden = false;
+
+				if ( g_pGameRules && g_pGameRules->IsMultiplayer() )
+				{
+					if ( pSightEnt->pev->fuser3 == 3 )
+						ishidden = true;
+				}
+
 				// the looker will want to consider this entity
 				// don't check anything else about an entity that can't be seen, or an entity that you don't care about.
-				if ( IRelationship( pSightEnt ) != R_NO && FInViewCone( pSightEnt ) && !FBitSet( pSightEnt->pev->flags, FL_NOTARGET ) && FVisible( pSightEnt ) )
+				if ( IRelationship( pSightEnt ) != R_NO && FInViewCone( pSightEnt ) && !FBitSet( pSightEnt->pev->flags, FL_NOTARGET ) && FVisible( pSightEnt ) && !ishidden )
 				{
 					if ( pSightEnt->IsPlayer() )
 					{
@@ -550,11 +615,83 @@ CSound* CBaseMonster :: PBestScent ( void )
 //=========================================================
 void CBaseMonster :: MonsterThink ( void )
 {
+	if ( m_bFrozenByCamera )
+	{
+		StopAnimation();
+		pev->framerate = 0;
+		SetNextThink( 0.1 );
+		return;
+	}
+
+	if ( m_bIsFlickerAppearing )
+	{
+		if ( m_flFlickerAppearTime > gpGlobals->time )
+		{
+			if ( m_flNextFlickerAppear < gpGlobals->time )
+			{
+				if ( pev->rendermode == kRenderTransAdd )
+				{
+					pev->rendermode = kRenderNormal;
+					pev->renderamt = 255;
+				}
+				else
+				{
+					pev->rendermode = kRenderTransAdd;
+					pev->renderamt = 0;
+				}
+
+				m_flNextFlickerAppear = gpGlobals->time;
+			}
+		}
+		else
+		{
+			if ( pev->rendermode == kRenderTransAdd )
+			{
+				pev->rendermode = kRenderNormal;
+				pev->renderamt = 255;
+			}
+
+			m_bIsFlickerAppearing = false;
+		}
+	}
+
+	if ( FClassnameIs( edict(), "monster_bosschainsaw" ) && m_Activity == ACT_COWER && !m_fSequenceFinished )
+	{
+		float flInterval = StudioFrameAdvance( );
+		SetNextThink( 0.1 );
+		FCheckAITrigger();
+		return;
+	}
+
+	if ( FClassnameIs( edict(), "monster_crazybitch" ) && m_Activity == ACT_SIGNAL1 && !m_fSequenceFinished && pev->health != 0 )
+	{
+		float flInterval = StudioFrameAdvance( );
+		SetNextThink( 0.1 );
+		FCheckAITrigger();
+		return;
+	}
+
+	if ( FClassnameIs( edict(), "monster_crazybitch" ) && m_Activity == ACT_SIGNAL2 && !m_fSequenceFinished && pev->health != 0 )
+	{
+		float flInterval = StudioFrameAdvance( );
+		SetNextThink( 0.1 );
+		FCheckAITrigger();
+		return;
+	}
+
 	SetNextThink( 0.1 );// keep monster thinking.
 
 	RunAI();
 
-	float flInterval = StudioFrameAdvance( ); // animate
+	float flInterval;
+
+	if ( !m_bFrozenByCamera )
+		flInterval = StudioFrameAdvance( ); // animate
+	else
+	{
+		pev->animtime = 0;
+		pev->framerate = 0;
+	}
 
 // start or end a fidget
 // This needs a better home -- switching animations over time should be encapsulated on a per-activity basis
@@ -1851,6 +1988,21 @@ void CBaseMonster :: Move ( float flInterval )
 	Vector		vecApex;
 	CBaseEntity	*pTargetEnt;
 
+	if ( m_bFrozenByCamera )
+		return;
+
+	if ( FClassnameIs( pev, "monster_slowerstuck" ) )
+		return;
+
+	if ( FClassnameIs( pev, "monster_spitter" ) )
+		return;
+
+	if ( FClassnameIs( pev, "monster_roofboss" ) )
+		return;
+
+	if ( FClassnameIs( pev, "monster_booksimon" ) && pev->frags != 0 )
+		return;
+
 	// Don't move if no valid route
 	if ( FRouteClear() )
 	{
@@ -1980,6 +2132,23 @@ void CBaseMonster :: Move ( float flInterval )
 					ALERT( at_aiconsole, "%s Failed to move (%d)!\n", STRING(pev->classname), HasMemory( bits_MEMORY_MOVE_FAILED ) );
 					//ALERT( at_aiconsole, "%f, %f, %f\n", pev->origin.z, (pev->origin + (vecDir * flCheckDist)).z, m_Route[m_iRouteIndex].vecLocation.z );
 
+					if ( FClassnameIs( edict(), "monster_sawcrazy" ) )
+					{
+						CBaseMonster *pBlockingMonster;
+
+						pBlockingMonster = pBlocker->MyMonsterPointer();
+
+						if ( pBlockingMonster && pBlockingMonster != this && !FClassnameIs( pBlockingMonster->edict(), "monster_booksimon" ) && pBlockingMonster->IsAlive() && !pBlockingMonster->IsPlayer() && !pBlockingMonster->m_bWaitingToDie )
+						{
+							Stop();
+							RouteClear();
+							ChangeSchedule( GetScheduleOfType( SCHED_MELEE_ATTACK1 ) );
+
+							pBlockingMonster->pev->health = 0;
+							pBlockingMonster->Killed( pBlockingMonster->pev, GIB_NEVER );
+						}
+					}
+
 					// buz: if blocker is player, tell him to move away from my path!
 					if (pBlocker->IsPlayer())
 						BlockedByPlayer((CBasePlayer*)pBlocker);
@@ -2036,6 +2205,12 @@ void CBaseMonster::MoveExecute( CBaseEntity *pTargetEnt, const Vector &vecDir, f
 //	float flYaw = UTIL_VecToYaw ( m_Route[ m_iRouteIndex ].vecLocation - pev->origin );// build a yaw that points to the goal.
 //	WALK_MOVE( ENT(pev), flYaw, m_flGroundSpeed * flInterval, WALKMOVE_NORMAL );
 	
+	if ( FClassnameIs( pev, "monster_bosschainsaw" ) && pev->skin == 1 )
+		return;
+
+	if ( FClassnameIs( pev, "monster_sewerboss" ) && pev->skin == 1 )
+		return;
+
 	// buz: strafing monsters movement
 	if (pev->gaitsequence)
 	{
@@ -2078,12 +2253,15 @@ void CBaseMonster::MoveExecute( CBaseEntity *pTargetEnt, const Vector &vecDir, f
 //=========================================================
 void CBaseMonster :: MonsterInit ( void )
 {
-	if (!g_pGameRules->FAllowMonsters())
+	if ( g_pGameRules && !g_pGameRules->FAllowMonsters() )
 	{
 		pev->flags |= FL_KILLME;		// Post this because some monster code modifies class data after calling this function
 //		REMOVE_ENTITY(ENT(pev));
 		return;
 	}
+
+	if ( m_bIsBoss )
+		m_bUngibbable = true;
 
 	// Set fields common to all monsters
 	pev->effects		= 0;
@@ -2093,6 +2271,16 @@ void CBaseMonster :: MonsterInit ( void )
 //		pev->takedamage		= DAMAGE_NO;
 //	else
 		pev->takedamage		= DAMAGE_AIM;
+
+	if ( g_pGameRules && g_pGameRules->IsMultiplayer() && false )
+	{
+		pev->health *= 1.25;
+
+		float flHealthExtra = 0;
+		flHealthExtra = CountConnectedPlayers() * 0.1;
+
+		pev->health *= 1 + flHealthExtra;
+	}
 
 	pev->ideal_yaw		= pev->angles.y;
 	pev->max_health		= pev->health;
@@ -2118,11 +2306,13 @@ void CBaseMonster :: MonsterInit ( void )
 
 	m_hEnemy			= NULL;
 
-	m_flDistTooFar		= 1024.0;
-	m_flDistLook		= 2048.0;
+	m_flDistTooFar		= 2048.0;
+	m_flDistLook		= 4096.0;
 
 	// set eye position
 	SetEyePosition();
+
+	m_vOriginalOrigin = pev->origin;
 
 	SetThink(&CBaseMonster :: MonsterInitThink );
 	SetNextThink( 0.1 );
@@ -2220,7 +2410,7 @@ void CBaseMonster :: StartMonster ( void )
 		if (!WALK_MOVE ( ENT(pev), 0, 0, WALKMOVE_NORMAL ) && !FBitSet( pev->spawnflags, SF_MONSTER_NO_YELLOW_BLOBS))
 		{
 			ALERT(at_debug, "%s \"%s\" stuck in wall--level design error", STRING(pev->classname), STRING(pev->targetname));
-			pev->effects = EF_BRIGHTFIELD;
+//			pev->effects = EF_BRIGHTFIELD;
 		}
 	}
 	else 
@@ -2289,26 +2479,27 @@ int CBaseMonster::TaskIsRunning( void )
 //=========================================================
 int CBaseMonster::IRelationship ( CBaseEntity *pTarget )
 {
-	static int iEnemy[18][18] =
-	{			 //   NONE	MACH	PLYR	HPASS	HMIL	AMIL	APASS	AMONST	APREY	APRED	INSECT	PLRALY	PBWPN	ABWPN	FACT_A	FACT_B	FACT_C	TERR
-	/*NONE*/		{ R_NO,	R_NO,	R_NO,	R_NO,	R_NO,	R_NO,	R_NO,	R_NO,	R_NO,	R_NO,	R_NO,	R_NO,	R_NO,	R_NO,	R_NO,	R_NO,	R_NO,	R_NO},
-	/*MACHINE*/		{ R_NO,	R_NO,	R_DL,	R_DL,	R_NO,	R_DL,	R_DL,	R_DL,	R_DL,	R_DL,	R_NO,	R_DL,	R_DL,	R_DL,	R_DL,	R_DL,	R_DL,	R_DL},
-	/*PLAYER*/		{ R_NO,	R_DL,	R_NO,	R_NO,	R_DL,	R_DL,	R_DL,	R_DL,	R_DL,	R_DL,	R_NO,	R_NO,	R_DL,	R_DL,	R_DL,	R_DL,	R_DL,	R_DL},
-	/*HUMANPASSIVE*/{ R_NO,	R_NO,	R_AL,	R_AL,	R_HT,	R_FR,	R_NO,	R_HT,	R_DL,	R_FR,	R_NO,	R_AL,	R_NO,	R_NO,	R_DL,	R_DL,	R_DL,	R_DL},
-	/*HUMANMILITAR*/{ R_NO,	R_NO,	R_HT,	R_DL,	R_NO,	R_HT,	R_DL,	R_DL,	R_DL,	R_DL,	R_NO,	R_HT,	R_NO,	R_NO,	R_DL,	R_DL,	R_DL,	R_DL},
-	/*ALIENMILITAR*/{ R_NO,	R_DL,	R_HT,	R_DL,	R_HT,	R_NO,	R_NO,	R_NO,	R_NO,	R_NO,	R_NO,	R_DL,	R_NO,	R_NO,	R_DL,	R_DL,	R_DL,	R_DL},
-	/*ALIENPASSIVE*/{ R_NO,	R_NO,	R_NO,	R_NO,	R_NO,	R_NO,	R_NO,	R_NO,	R_NO,	R_NO,	R_NO,	R_NO,	R_NO,	R_NO,	R_DL,	R_DL,	R_DL,	R_DL},
-	/*ALIENMONSTER*/{ R_NO,	R_DL,	R_DL,	R_DL,	R_DL,	R_NO,	R_NO,	R_NO,	R_NO,	R_NO,	R_NO,	R_DL,	R_NO,	R_NO,	R_DL,	R_DL,	R_DL,	R_DL},
-	/*ALIENPREY   */{ R_NO,	R_NO,	R_DL,	R_DL,	R_DL,	R_NO,	R_NO,	R_NO,	R_NO,	R_FR,	R_NO,	R_DL,	R_NO,	R_NO,	R_DL,	R_DL,	R_DL,	R_DL},
-	/*ALIENPREDATO*/{ R_NO,	R_NO,	R_DL,	R_DL,	R_DL,	R_NO,	R_NO,	R_NO,	R_HT,	R_DL,	R_NO,	R_DL,	R_NO,	R_NO,	R_DL,	R_DL,	R_DL,	R_DL},
-	/*INSECT*/		{ R_FR,	R_FR,	R_FR,	R_FR,	R_FR,	R_NO,	R_FR,	R_FR,	R_FR,	R_FR,	R_NO,	R_FR,	R_NO,	R_NO,	R_FR,	R_FR,	R_FR,	R_DL},
-	/*PLAYERALLY*/	{ R_NO,	R_DL,	R_AL,	R_AL,	R_DL,	R_DL,	R_DL,	R_DL,	R_DL,	R_DL,	R_NO,	R_NO,	R_NO,	R_NO,	R_DL,	R_DL,	R_DL,	R_DL},
-	/*PBIOWEAPON*/	{ R_NO,	R_NO,	R_DL,	R_DL,	R_DL,	R_DL,	R_DL,	R_DL,	R_DL,	R_DL,	R_NO,	R_DL,	R_NO,	R_DL,	R_DL,	R_DL,	R_DL,	R_DL},
-	/*ABIOWEAPON*/	{ R_NO,	R_NO,	R_DL,	R_DL,	R_DL,	R_AL,	R_NO,	R_DL,	R_DL,	R_NO,	R_NO,	R_DL,	R_DL,	R_NO,	R_DL,	R_DL,	R_DL,	R_DL},
-	/*FACTION_A*/   { R_NO,	R_DL,	R_DL,	R_DL,	R_DL,	R_DL,	R_DL,	R_DL,	R_DL,	R_DL,	R_NO,	R_DL,	R_DL,	R_DL,	R_AL,	R_DL,	R_DL,	R_DL},
-	/*FACTION_B*/   { R_NO,	R_DL,	R_DL,	R_DL,	R_DL,	R_DL,	R_DL,	R_DL,	R_DL,	R_DL,	R_NO,	R_DL,	R_DL,	R_DL,	R_DL,	R_AL,	R_DL,	R_DL},
-	/*FACTION_C*/   { R_NO,	R_DL,	R_DL,	R_DL,	R_DL,	R_DL,	R_DL,	R_DL,	R_DL,	R_DL,	R_NO,	R_DL,	R_DL,	R_DL,	R_DL,	R_DL,	R_AL,	R_DL},
-	/*TERRORISTS*/  { R_NO,	R_DL,	R_DL,	R_DL,	R_DL,	R_DL,	R_DL,	R_DL,	R_DL,	R_DL,	R_NO,	R_DL,	R_DL,	R_DL,	R_DL,	R_DL,	R_DL,	R_AL} // buz
+	static int iEnemy[19][19] =
+	{			 //   NONE	MACH	PLYR	HPASS	HMIL	AMIL	APASS	AMONST	APREY	APRED	INSECT	PLRALY	PBWPN	ABWPN	FACT_A	FACT_B	FACT_C	TERR	18
+	/*NONE*/		{ R_NO,	R_NO,	R_NO,	R_NO,	R_NO,	R_NO,	R_NO,	R_NO,	R_NO,	R_NO,	R_NO,	R_NO,	R_NO,	R_NO,	R_NO,	R_NO,	R_NO,	R_NO,	R_FR},
+	/*MACHINE*/		{ R_NO,	R_NO,	R_DL,	R_DL,	R_NO,	R_DL,	R_DL,	R_DL,	R_DL,	R_DL,	R_NO,	R_DL,	R_DL,	R_DL,	R_DL,	R_DL,	R_DL,	R_DL,	R_FR},
+	/*PLAYER*/		{ R_NO,	R_DL,	R_NO,	R_NO,	R_DL,	R_DL,	R_DL,	R_DL,	R_DL,	R_DL,	R_NO,	R_NO,	R_DL,	R_DL,	R_DL,	R_DL,	R_DL,	R_DL,	R_FR},
+	/*HUMANPASSIVE*/{ R_NO,	R_NO,	R_AL,	R_AL,	R_HT,	R_FR,	R_NO,	R_HT,	R_DL,	R_FR,	R_NO,	R_AL,	R_NO,	R_NO,	R_DL,	R_DL,	R_DL,	R_DL,	R_FR},
+	/*HUMANMILITAR*/{ R_NO,	R_NO,	R_HT,	R_DL,	R_NO,	R_HT,	R_DL,	R_DL,	R_DL,	R_DL,	R_NO,	R_HT,	R_NO,	R_NO,	R_DL,	R_DL,	R_DL,	R_DL,	R_FR},
+	/*ALIENMILITAR*/{ R_NO,	R_DL,	R_HT,	R_DL,	R_HT,	R_NO,	R_NO,	R_NO,	R_NO,	R_NO,	R_NO,	R_DL,	R_NO,	R_NO,	R_DL,	R_DL,	R_DL,	R_DL,	R_FR},
+	/*ALIENPASSIVE*/{ R_NO,	R_NO,	R_NO,	R_NO,	R_NO,	R_NO,	R_NO,	R_NO,	R_NO,	R_NO,	R_NO,	R_NO,	R_NO,	R_NO,	R_DL,	R_DL,	R_DL,	R_DL,	R_FR},
+	/*ALIENMONSTER*/{ R_NO,	R_DL,	R_DL,	R_DL,	R_DL,	R_NO,	R_NO,	R_NO,	R_NO,	R_NO,	R_NO,	R_DL,	R_NO,	R_NO,	R_DL,	R_DL,	R_DL,	R_DL,	R_FR},
+	/*ALIENPREY   */{ R_NO,	R_NO,	R_DL,	R_DL,	R_DL,	R_NO,	R_NO,	R_NO,	R_NO,	R_FR,	R_NO,	R_DL,	R_NO,	R_NO,	R_DL,	R_DL,	R_DL,	R_DL,	R_FR},
+	/*ALIENPREDATO*/{ R_NO,	R_NO,	R_DL,	R_DL,	R_DL,	R_NO,	R_NO,	R_NO,	R_HT,	R_DL,	R_NO,	R_DL,	R_NO,	R_NO,	R_DL,	R_DL,	R_DL,	R_DL,	R_FR},
+	/*INSECT*/		{ R_FR,	R_FR,	R_FR,	R_FR,	R_FR,	R_NO,	R_FR,	R_FR,	R_FR,	R_FR,	R_NO,	R_FR,	R_NO,	R_NO,	R_FR,	R_FR,	R_FR,	R_DL,	R_FR},
+	/*PLAYERALLY*/	{ R_NO,	R_DL,	R_AL,	R_AL,	R_DL,	R_DL,	R_DL,	R_DL,	R_DL,	R_DL,	R_NO,	R_NO,	R_NO,	R_NO,	R_DL,	R_DL,	R_DL,	R_DL,	R_FR},
+	/*PBIOWEAPON*/	{ R_NO,	R_NO,	R_DL,	R_DL,	R_DL,	R_DL,	R_DL,	R_DL,	R_DL,	R_DL,	R_NO,	R_DL,	R_NO,	R_DL,	R_DL,	R_DL,	R_DL,	R_DL,	R_FR},
+	/*ABIOWEAPON*/	{ R_NO,	R_NO,	R_DL,	R_DL,	R_DL,	R_AL,	R_NO,	R_DL,	R_DL,	R_NO,	R_NO,	R_DL,	R_DL,	R_NO,	R_DL,	R_DL,	R_DL,	R_DL,	R_FR},
+	/*FACTION_A*/   { R_NO,	R_DL,	R_DL,	R_DL,	R_DL,	R_DL,	R_DL,	R_DL,	R_DL,	R_DL,	R_NO,	R_DL,	R_DL,	R_DL,	R_AL,	R_DL,	R_DL,	R_DL,	R_FR},
+	/*FACTION_B*/   { R_NO,	R_DL,	R_DL,	R_DL,	R_DL,	R_DL,	R_DL,	R_DL,	R_DL,	R_DL,	R_NO,	R_DL,	R_DL,	R_DL,	R_DL,	R_AL,	R_DL,	R_DL,	R_FR},
+	/*FACTION_C*/   { R_NO,	R_DL,	R_DL,	R_DL,	R_DL,	R_DL,	R_DL,	R_DL,	R_DL,	R_DL,	R_NO,	R_DL,	R_DL,	R_DL,	R_DL,	R_DL,	R_AL,	R_DL,	R_FR},
+	/*TERRORISTS*/  { R_NO,	R_DL,	R_DL,	R_DL,	R_DL,	R_DL,	R_DL,	R_DL,	R_DL,	R_DL,	R_NO,	R_DL,	R_DL,	R_DL,	R_DL,	R_DL,	R_DL,	R_AL,	R_FR}, // buz
+	/*18*/			{ R_NO,	R_DL,	R_DL,	R_DL,	R_DL,	R_DL,	R_DL,	R_DL,	R_DL,	R_DL,	R_NO,	R_DL,	R_DL,	R_DL,	R_DL,	R_DL,	R_DL,	R_AL,	R_NO}
 	};
 	
 	int iTargClass = pTarget->Classify();
@@ -2726,6 +2917,10 @@ void CBaseMonster :: SetEyePosition ( void )
 
 void CBaseMonster :: HandleAnimEvent( MonsterEvent_t *pEvent )
 {
+	Vector vecSrc, vecAng;
+	Vector vecSrc2, vecAng2;
+	Vector vecSrc3, vecAng3;
+
 	switch( pEvent->event )
 	{
 	case SCRIPT_EVENT_DEAD:
@@ -2801,6 +2996,12 @@ void CBaseMonster :: HandleAnimEvent( MonsterEvent_t *pEvent )
 			{
 				EMIT_SOUND_DYN( ENT(pev), CHAN_BODY, "common/bodydrop4.wav", 1, ATTN_NORM, 0, 90 );
 			}
+
+			if ( pev->waterlevel )
+			{
+				EMIT_SOUND_DYN( ENT(pev), CHAN_AUTO, "player/water_splash.wav", 1, ATTN_NORM, 0, 100 );
+				UTIL_SplashCalculation( this, 0 );
+			}
 		}
 		break;
 
@@ -2815,6 +3016,12 @@ void CBaseMonster :: HandleAnimEvent( MonsterEvent_t *pEvent )
 			{
 				EMIT_SOUND( ENT(pev), CHAN_BODY, "common/bodydrop4.wav", 1, ATTN_NORM );
 			}
+
+			if ( pev->waterlevel )
+			{
+				EMIT_SOUND_DYN( ENT(pev), CHAN_AUTO, "player/water_splash.wav", 1, ATTN_NORM, 0, 100 );
+				UTIL_SplashCalculation( this, 0 );
+			}
 		}
 		break;
 
@@ -2824,6 +3031,32 @@ void CBaseMonster :: HandleAnimEvent( MonsterEvent_t *pEvent )
 			EMIT_SOUND( ENT(pev), CHAN_BODY, "zombie/claw_miss2.wav", 1, ATTN_NORM );
 			break;
 		}
+
+	case 1018:
+		EMIT_SOUND_DYN( ENT(pev), CHAN_BODY, "faster/faster_step.wav", 1, ATTN_NORM, 0, 95 + RANDOM_LONG( 0, 10 ) );
+		break;
+
+	case 1016:
+		GetAttachment( atoi( pEvent->options ), vecSrc2, vecAng2 );
+		SpawnBlood( vecSrc2, BLOOD_COLOR_RED, 60, pev->velocity );
+		pev->body = atoi( pEvent->options );
+		break;
+
+	case 1020:
+		if ( FClassnameIs( pev, "monster_sewmo" ) )
+			pev->body = atoi( pEvent->options );
+		else
+			SetBodygroup( 1, atoi( pEvent->options ) );
+		break;
+
+	case 1021:
+		pev->skin = atoi( pEvent->options );
+		break;
+
+	case 1019:
+		GetAttachment( 0, vecSrc, vecAng );
+		SpawnBlood( vecSrc, BLOOD_COLOR_RED, 45, pev->velocity );
+		break;
 
 	default:
 		ALERT( at_aiconsole, "Unhandled animation event %d for %s\n", pEvent->event, STRING(pev->classname) );
@@ -3642,5 +3875,122 @@ void CMonsterTarget::Use( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYP
 			pev->health = 0;
 		else
 			pev->health = 1;
+	}
+}
+
+void CBaseMonster :: GetPointsForKill( char *classname, CBasePlayer *pKiller )
+{
+	if ( !g_iSurvivalMode )
+		return;
+
+	if ( m_iSimonMode )
+		return;
+
+	CBaseEntity *pSpawnItem = NULL;
+
+	Vector Angles = pev->angles;
+	Angles.x = Angles.z = 0;
+
+	// drop a random item
+	if ( RANDOM_LONG( 1, 6 ) == 1 )
+	{
+		pSpawnItem = CBaseEntity::Create( "weapon_syringe", pev->origin, Angles, NULL );
+	}
+	else
+	{
+		int chance = RANDOM_LONG( 1, 100 );
+
+		if ( chance <= 5 )
+		{
+			if ( RANDOM_LONG( 0, 1 ) == 1 )
+				pSpawnItem = CBaseEntity::Create( "ammo_rifle", pev->origin, Angles, NULL );
+			else
+				pSpawnItem = CBaseEntity::Create( "ammo_g43", pev->origin, Angles, NULL );
+		}
+		else if ( chance > 5 && chance <= 10 )
+			pSpawnItem = CBaseEntity::Create( "ammo_revolver", pev->origin, Angles, NULL );
+		else if ( chance > 10 && chance <= 20 )
+			pSpawnItem = CBaseEntity::Create( "ammo_m16", pev->origin, Angles, NULL );
+		else if ( chance > 20 && chance <= 40 )
+			pSpawnItem = CBaseEntity::Create( "ammo_shells", pev->origin, Angles, NULL );
+		else if ( chance > 40 && chance <= 50 )
+			pSpawnItem = CBaseEntity::Create( "ammo_p345", pev->origin, Angles, NULL );
+		else if ( chance > 50 && chance <= 70 )
+			pSpawnItem = CBaseEntity::Create( "ammo_vp70", pev->origin, Angles, NULL );
+		else
+			pSpawnItem = CBaseEntity::Create( "ammo_glock", pev->origin, Angles, NULL );
+	}
+
+	int points = 20;
+
+	if ( FClassnameIs( edict(), "monster_nerd" ) )
+		points = 30;
+
+	if ( FClassnameIs( edict(), "monster_taller" ) )
+		points = 50;
+
+	if ( FClassnameIs( edict(), "monster_sawcrazy" ) )
+		points = 60;
+
+	if ( FClassnameIs( edict(), "monster_booksimon" ) )
+		points = 120;
+
+	pKiller->playerstats.suvivalpoints += points;
+
+	if ( pKiller && pKiller->IsPlayer() )
+	{
+		CBaseEntity *pSurvivalEntity = NULL;
+
+		pSurvivalEntity = UTIL_FindEntityByClassname( pSurvivalEntity, "cof_survivalmode" );
+
+		if ( pSurvivalEntity )
+		{
+			CCoFSurvivalMode *pGayEnt = GetClassPtr( (CCoFSurvivalMode *)pSurvivalEntity->pev );
+
+			if ( pGayEnt && pGayEnt->pev->iuser2 && pGayEnt->m_bSurvivalModeRunning == true )
+			{
+				pGayEnt->m_iCurrentSurvivalTime += points;
+
+				pGayEnt->m_iTimeSeconds += points;
+
+				if ( pGayEnt->m_iTimeSeconds >= 59 )
+				{
+					if ( pGayEnt->m_iTimeSeconds >= 60 )
+					{
+						int secs = pGayEnt->m_iTimeSeconds;
+						pGayEnt->m_iTimeSeconds = secs - 60;
+					}
+					else
+						pGayEnt->m_iTimeSeconds = 0;
+
+					pGayEnt->m_iTimeMinutes++;
+				}
+			}
+		}
+
+		for ( int i = 1; i <= gpGlobals->maxClients; i++ )
+		{
+			CBasePlayer *pPlayer = (CBasePlayer *)UTIL_PlayerByIndex( i );
+
+			if ( pPlayer )
+			{
+				if ( pPlayer == pKiller )
+				{
+					MESSAGE_BEGIN( MSG_ONE, gmsgTimerPlus, NULL, pKiller->pev );
+						WRITE_BYTE( points );
+						WRITE_BYTE( 1 );
+						WRITE_BYTE( 0 );
+					MESSAGE_END();
+				}
+				else
+				{
+					MESSAGE_BEGIN( MSG_ONE, gmsgTimerPlus, NULL, pPlayer->pev );
+						WRITE_BYTE( points );
+						WRITE_BYTE( 0 );
+						WRITE_BYTE( 0 );
+					MESSAGE_END();
+				}
+			}
+		}
 	}
 }
