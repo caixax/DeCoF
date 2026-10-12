@@ -109,3 +109,5 @@ va,name,kind,evidence
 1006EA40,?__MsgFunc_SetFOV@@YAHPBDHPAX@Z,func,handler pushed with the string SetFOV in CHud::Init (1006D0E5); calls 1006D9B0
 10030160,?MsgFunc_BlackBars@CBlackBar@@QAEHPBDHPAX@Z,func,"called by the BlackBars wrapper 10030320, hooked with the string BlackBars (push at 10030136); was MsgFunc_StatusIcon from refbytes"
 10030320,?__MsgFunc_BlackBars@@YAHPBDHPAX@Z,func,handler pushed with the string BlackBars (10030136); calls 10030160; was __MsgFunc_StatusIcon from refbytes
+10542BB8,?guess_iWheelchair@@3HA,data,"int written by the Wheelchair message handler (10071C90, hooked with the string Wheelchair) and cleared in CHud::VidInit; name is a guess"
+10542BB2,?guess_bWheelchairLock@@3_NA,data,byte set to 1 by the Wheelchair message handler (10071C90) when its byte argument is set; name is a guess
