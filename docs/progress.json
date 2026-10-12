@@ -1,5 +1,5 @@
 {
-  "commit": "2e6bedf",
+  "commit": "735ebb1",
   "counting": "LIB rows excluded; bytes weighted by function size",
   "date": "2026-10-12",
   "dlls": {
@@ -180,36 +180,36 @@
     "hl.dll": {
       "bytes": {
         "EQUIVALENT": 2210,
-        "MATCHED": 498560,
-        "TODO": 617140,
+        "MATCHED": 501118,
+        "TODO": 614582,
         "total": 1117910
       },
       "categories": {
         "COF": {
           "bytes": {
             "EQUIVALENT": 2210,
-            "MATCHED": 141301,
-            "TODO": 323138,
+            "MATCHED": 143762,
+            "TODO": 320677,
             "total": 466649
           },
           "functions": {
             "EQUIVALENT": 1,
-            "MATCHED": 502,
-            "TODO": 1251,
+            "MATCHED": 513,
+            "TODO": 1240,
             "total": 1754
           }
         },
         "HLSDK": {
           "bytes": {
             "EQUIVALENT": 0,
-            "MATCHED": 258513,
-            "TODO": 172609,
+            "MATCHED": 258610,
+            "TODO": 172512,
             "total": 431122
           },
           "functions": {
             "EQUIVALENT": 0,
-            "MATCHED": 1680,
-            "TODO": 787,
+            "MATCHED": 1682,
+            "TODO": 785,
             "total": 2467
           }
         },
@@ -258,8 +258,8 @@
       },
       "functions": {
         "EQUIVALENT": 1,
-        "MATCHED": 2829,
-        "TODO": 2608,
+        "MATCHED": 2842,
+        "TODO": 2595,
         "total": 5438
       }
     },
@@ -341,14 +341,14 @@
   "shown_total": {
     "bytes": {
       "EQUIVALENT": 2210,
-      "MATCHED": 521489,
-      "TODO": 1272116,
+      "MATCHED": 524047,
+      "TODO": 1269558,
       "total": 1795815
     },
     "functions": {
       "EQUIVALENT": 1,
-      "MATCHED": 3196,
-      "TODO": 4754,
+      "MATCHED": 3209,
+      "TODO": 4741,
       "total": 7951
     }
   },
@@ -356,14 +356,14 @@
   "total": {
     "bytes": {
       "EQUIVALENT": 2210,
-      "MATCHED": 521489,
-      "TODO": 3579779,
+      "MATCHED": 524047,
+      "TODO": 3577221,
       "total": 4103478
     },
     "functions": {
       "EQUIVALENT": 1,
-      "MATCHED": 3196,
-      "TODO": 20138,
+      "MATCHED": 3209,
+      "TODO": 20125,
       "total": 23335
     }
   }
