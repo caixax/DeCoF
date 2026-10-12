@@ -19,3 +19,14 @@
 ?VP70Shoot@CDualWeapon@@QAEXXZ
 ?WeaponIdle@CDualWeapon@@UAEXXZ
 _weapon_dualweapon
+?BranchHit@CDualWeapon@@QAEX_N@Z
+?FlareIgnite@CDualWeapon@@QAEX_N@Z
+?FlashlightSwitch@CDualWeapon@@QAEX_N@Z
+?GlockShoot@CDualWeapon@@QAEX_N@Z
+?MobileSwitch@CDualWeapon@@QAEX_N@Z
+?NightstickHit@CDualWeapon@@QAEX_N@Z
+?P345Shoot@CDualWeapon@@QAEX_N@Z
+?RevolverShoot@CDualWeapon@@QAEX_N@Z
+?SwitchbladeSlash@CDualWeapon@@QAEX_N@Z
+?UpdateWeaponAmmo@CDualWeapon@@QAEXXZ
+?WeaponSetBodygroup@@YAXPAXPAUentvars_s@@HH@Z
