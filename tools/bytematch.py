@@ -1,6 +1,6 @@
 """Pair retail functions with our compiled functions by identical bytes.
 
-  python tools/bytematch.py [--write] [--at va,va,...] [<unit> ...]
+  python tools/bytematch.py [--dll client] [--write] [--at va,va,...] [<unit> ...]
 
 A retail function that is unnamed in the symbol map (or carries a name
 that no object of ours defines) never meets its source counterpart in
@@ -17,9 +17,12 @@ one function of ours, nothing else identical.
 our function's length, for functions that have no row in progress.csv
 (Ghidra merged them into a neighbour).
 
-Prints the proposals; --write stores them in tools/symbols/hl_bytes.csv
-with their evidence (merged by tools/build.py before hl_manual.csv).
-Units default to every hl unit with both objects.
+Prints the proposals; --write stores them in tools/symbols/<dll>_bytes.csv
+with their evidence (merged by tools/build.py before <dll>_manual.csv).
+Units default to every unit of the dll (hl unless --dll) with both objects.
+The address range of a unit runs from the last function of the file
+before it to the first function of the file after it, so functions not
+yet attributed to any file (client.dll) are candidates too.
 """
 import bisect
 import csv
@@ -31,7 +34,7 @@ import sys
 import pefile
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-IMAGE = os.path.join(ROOT, "versions/1.6a/cryoffear/cl_dlls/hl.dll")
+IMAGES = {"hl": "versions/1.6a/cryoffear/cl_dlls/hl.dll", "client": "versions/1.6a/cryoffear/cl_dlls/client.dll"}
 DEFAULT = ("FUN_", "LAB_", "thunk_", "SUB_")
 
 
@@ -72,6 +75,11 @@ def coff_functions(path):
 
 def main():
     argv = sys.argv[1:]
+    dll = "hl"
+    if "--dll" in argv:
+        i = argv.index("--dll")
+        dll = argv[i + 1]
+        del argv[i:i + 2]
     at = []
     if "--at" in argv:
         i = argv.index("--at")
@@ -80,16 +88,16 @@ def main():
     args = [a for a in argv if a != "--write"]
     write = "--write" in sys.argv
     cfg = json.load(open(os.path.join(ROOT, "objdiff.json")))
-    units = args or [u["name"] for u in cfg["units"] if u["name"].startswith("hl/")]
+    units = args or [u["name"] for u in cfg["units"] if u["name"].startswith(dll + "/")]
     paths = {u["name"]: u for u in cfg["units"]}
-    pe = pefile.PE(IMAGE, fast_load=True)
+    pe = pefile.PE(os.path.join(ROOT, IMAGES[dll]), fast_load=True)
     base = pe.OPTIONAL_HEADER.ImageBase
     img = pe.get_memory_mapped_image()
     # retail functions: address -> (name, size, source file)
-    rows = [r for r in csv.DictReader(open(os.path.join(ROOT, "docs", "progress.csv"))) if r["dll"] == "hl"]
+    rows = [r for r in csv.DictReader(open(os.path.join(ROOT, "docs", "progress.csv"))) if r["dll"] == dll]
     starts = sorted(int(r["va"], 16) for r in rows)
     names = {}
-    for r in csv.DictReader(open(os.path.join(ROOT, "build", "jobs", "symbols_hl.csv"))):
+    for r in csv.DictReader(open(os.path.join(ROOT, "build", "jobs", "symbols_%s.csv" % dll))):
         names[int(r["va"], 16)] = r["name"]
     by_name = {}
     for va, n in names.items():
@@ -111,6 +119,15 @@ def main():
             continue
         lo = min(int(r["va"], 16) for r in mine)
         hi = max(int(r["va"], 16) for r in mine)
+        # widen to the neighbouring files: the rows in between belong to no
+        # file yet (non-LIB rows only; the CRT sits after all objects)
+        src = unit.split("/", 1)[1]
+        others = sorted(int(r["va"], 16) for r in rows if r["source_file"] and r["class"] != "LIB"
+                        and os.path.splitext(r["source_file"].replace("guess:", ""))[0] != src)
+        k = bisect.bisect_left(others, lo)
+        lo = others[k - 1] + 1 if k else lo
+        k = bisect.bisect_right(others, hi)
+        hi = others[k] - 1 if k < len(others) else hi
         # retail candidates: unpaired functions inside the unit's range
         cands = []
         for r in rows:
@@ -142,7 +159,9 @@ def main():
             for n in ns:
                 rev.setdefault(n, []).append(va)
         for va, ns in sorted(hits.items()):
-            if len(ns) == 1 and len(rev[ns[0]]) == 1:
+            # STL instantiations are toolchain code (class LIB) and many are
+            # identical to each other
+            if len(ns) == 1 and len(rev[ns[0]]) == 1 and "@std@@" not in ns[0]:
                 old = names.get(va, "")
                 proposals.append((va, ns[0], old, unit))
     for va, n, old, unit in proposals:
@@ -151,7 +170,7 @@ def main():
     if write:
         # earlier proposals are named in the merged map now and are not
         # proposed again: keep them and add the new ones
-        path = os.path.join(ROOT, "tools", "symbols", "hl_bytes.csv")
+        path = os.path.join(ROOT, "tools", "symbols", "%s_bytes.csv" % dll)
         rows = {}
         if os.path.exists(path):
             for r in csv.DictReader(open(path)):

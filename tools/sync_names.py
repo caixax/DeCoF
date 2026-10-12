@@ -1,6 +1,6 @@
 """Carry the merged retail symbol map into docs/progress.csv and the unit lists.
 
-  python tools/sync_names.py [--dry]
+  python tools/sync_names.py [--dry] [--dll client]
 
 After a name map change (tools/symbols/*.csv, merged into
 build/jobs/symbols_hl.csv by the last delink), progress.csv still shows the
@@ -43,15 +43,16 @@ def undecorate(names):
 
 def main():
     dry = "--dry" in sys.argv
+    dll = sys.argv[sys.argv.index("--dll") + 1] if "--dll" in sys.argv else "hl"
     path = os.path.join(ROOT, "docs", "progress.csv")
     rows = list(csv.DictReader(open(path, newline="")))
     fields = list(rows[0].keys())
     merged = {}
-    for r in csv.DictReader(open(os.path.join(ROOT, "build", "jobs", "symbols_hl.csv"))):
+    for r in csv.DictReader(open(os.path.join(ROOT, "build", "jobs", "symbols_%s.csv" % dll))):
         if r.get("kind", "func") == "func":
             merged[int(r["va"], 16)] = r["name"]
     cfg = json.load(open(os.path.join(ROOT, "tools", "units.json")))
-    units = {u["name"]: u for u in cfg["dlls"]["hl"]["units"]}
+    units = {u["name"]: u for u in cfg["dlls"][dll]["units"]}
     # rows that already belong to a unit, in address order; a few rows are
     # attributed to the wrong unit, so the unit of an address is the
     # majority of its nearest attributed neighbours on both sides
@@ -60,7 +61,7 @@ def main():
         unit_of_src[name + ".cpp"] = name
         unit_of_src[name + ".c"] = name
     attributed = sorted((int(r["va"], 16), unit_of_src[r["source_file"]]) for r in rows
-                        if r["dll"] == "hl" and r["class"] != "LIB" and r["source_file"] in unit_of_src)
+                        if r["dll"] == dll and r["class"] != "LIB" and r["source_file"] in unit_of_src)
     avas = [a for a, _u in attributed]
 
     def unit_at(va, k=4):
@@ -73,10 +74,10 @@ def main():
         return best if near.count(best) * 2 > len(near) else None
 
     byte_unit = {}
-    bp = os.path.join(ROOT, "tools", "symbols", "hl_bytes.csv")
+    bp = os.path.join(ROOT, "tools", "symbols", "%s_bytes.csv" % dll)
     if os.path.exists(bp):
         for b in csv.DictReader(open(bp)):
-            m = re.search(r" in hl/(\S+) ", b["evidence"])
+            m = re.search(r" in %s/(\S+) " % dll, b["evidence"])
             if m and m.group(1) in units:
                 byte_unit[int(b["va"], 16)] = m.group(1)
 
@@ -85,13 +86,18 @@ def main():
         import io
         text = subprocess.run(["git", "show", "HEAD:docs/progress.csv"], cwd=ROOT, stdout=subprocess.PIPE).stdout.decode()
         head = {(h["dll"], h["va"]): h for h in csv.DictReader(io.StringIO(text))}
+    # a curated name replaces the evidence of the name it corrects
+    manual = {}
+    mp = os.path.join(ROOT, "tools", "symbols", "%s_manual.csv" % dll)
+    if os.path.exists(mp):
+        manual = {int(m["va"], 16): m["name"] for m in csv.DictReader(open(mp))}
     changes = []
     for r in rows:
         h = head.get((r["dll"], r["va"]))
-        if h and r["dll"] == "hl" and r["class"] != "LIB" and h["name"] != r["name"]:
+        if h and r["dll"] == dll and r["class"] != "LIB" and h["name"] != r["name"]:
             # renamed by an earlier run: start again from the committed row
             r["name"], r["source_file"] = h["name"], h["source_file"]
-        if r["dll"] != "hl" or r["class"] == "LIB":
+        if r["dll"] != dll or r["class"] == "LIB":
             continue  # toolchain code is not decompiled; its names stay as they are
         va = int(r["va"], 16)
         new = merged.get(va)
@@ -99,13 +105,17 @@ def main():
             continue
         # a byte-proven name says which of our objects holds the function
         # (STL instantiations sit after the object that first uses them)
-        unit = byte_unit.get(va) or unit_at(va)
+        # (the client has no complete unit layout yet: tools/client_layout.py
+        # assigns its files, so only byte-proven units are used there)
+        unit = byte_unit.get(va) or (unit_at(va) if dll == "hl" else None)
         changes.append((r, new, unit))
     dem = undecorate(sorted({n for _r, n, _u in changes if n.startswith("?")}))
     lists = {}
     for r, new, unit in changes:
         old_name, old_src = r["name"], r["source_file"]
         r["name"] = new
+        if manual.get(int(r["va"], 16)) == new:
+            r["evidence"] = "%s_manual.csv" % dll
         if "@std@@" in new:
             r["class"] = "LIB"  # STL instantiation from the toolchain headers
         r["demangled"] = dem.get(new, r["demangled"]).split("(")[0].split(" ")[-1] if new in dem else r["demangled"]

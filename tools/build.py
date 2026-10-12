@@ -110,14 +110,16 @@ def mcp_call(path, body=None, query=None, timeout=120):
 
 
 def merged_symbols(d, dll):
-    """tools/symbols/<dll>_1.6a.csv, then _auto.csv (harvested), then the
+    """tools/symbols/<dll>_1.6a.csv, then _decorated.csv (decorated forms of
+    its undecorated C++ names), _auto.csv (harvested), then the
     curated _usermsgs.csv, _vtable.csv and _manual.csv (later files
     override earlier ones), written to build/jobs/."""
     rows = {}
     curated = set()
     base = os.path.join(ROOT, d["symbols"])
     # base map, harvested names, then curated maps (later files win)
-    for i, path in enumerate((base, base.replace("_1.6a.csv", "_auto.csv"),
+    for i, path in enumerate((base, base.replace("_1.6a.csv", "_decorated.csv"),
+                              base.replace("_1.6a.csv", "_auto.csv"),
                               base.replace("_1.6a.csv", "_usermsgs.csv"),
                               base.replace("_1.6a.csv", "_vtable.csv"),
                               base.replace("_1.6a.csv", "_savetables.csv"),
@@ -320,8 +322,12 @@ def check(units):
     """Compile the units and print the per-function match of only those
     units (a one-unit objdiff report): the edit-diff loop."""
     build_base(units)
-    cfg = json.load(open(os.path.join(ROOT, "objdiff.json")))
     names = {full for _d, _c, _u, full in units}
+    cfg = json.load(open(os.path.join(ROOT, "objdiff.json")))
+    # a unit created after the last objdiff.json (tools/make_unit.py)
+    if names - {u["name"] for u in cfg["units"]}:
+        write_objdiff(load_units([]))
+        cfg = json.load(open(os.path.join(ROOT, "objdiff.json")))
     # one project directory per unit set, so parallel checks do not collide
     tag = "_".join(sorted(n.replace("/", "_") for n in names))[:120]
     proj = os.path.join(ROOT, "build", "check_project", tag)

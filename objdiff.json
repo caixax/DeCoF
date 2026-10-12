@@ -1234,6 +1234,30 @@
       "metadata": {
         "source_path": "src/opengl32/OtherOGL.cpp"
       }
+    },
+    {
+      "name": "client/cl_dll/parsemsg",
+      "target_path": "build/target/client/cl_dll/parsemsg.obj",
+      "base_path": "build/base/client/cl_dll/parsemsg.obj",
+      "metadata": {
+        "source_path": "src/cl_dll/parsemsg.cpp"
+      }
+    },
+    {
+      "name": "client/cl_dll/studio_util",
+      "target_path": "build/target/client/cl_dll/studio_util.obj",
+      "base_path": "build/base/client/cl_dll/studio_util.obj",
+      "metadata": {
+        "source_path": "src/cl_dll/studio_util.cpp"
+      }
+    },
+    {
+      "name": "client/cl_dll/train",
+      "target_path": "build/target/client/cl_dll/train.obj",
+      "base_path": "build/base/client/cl_dll/train.obj",
+      "metadata": {
+        "source_path": "src/cl_dll/train.cpp"
+      }
     }
   ]
 }
