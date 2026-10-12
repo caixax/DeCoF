@@ -1,6 +1,6 @@
 """Pair retail functions with our compiled functions by identical bytes.
 
-  python tools/bytematch.py [--dll client] [--write] [--at va,va,...] [<unit> ...]
+  python tools/bytematch.py [--dll client] [--write] [--std] [--at va,va,...] [<unit> ...]
 
 A retail function that is unnamed in the symbol map (or carries a name
 that no object of ours defines) never meets its source counterpart in
@@ -85,7 +85,10 @@ def main():
         i = argv.index("--at")
         at = [int(x, 16) for x in argv[i + 1].split(",")]
         del argv[i:i + 2]
-    args = [a for a in argv if a != "--write"]
+    # --std also names STL instantiations (tools/sync_names.py then makes
+    # them class LIB: toolchain code that is not decompiled)
+    with_std = "--std" in argv
+    args = [a for a in argv if a not in ("--write", "--std")]
     write = "--write" in sys.argv
     cfg = json.load(open(os.path.join(ROOT, "objdiff.json")))
     units = args or [u["name"] for u in cfg["units"] if u["name"].startswith(dll + "/")]
@@ -161,7 +164,7 @@ def main():
         for va, ns in sorted(hits.items()):
             # STL instantiations are toolchain code (class LIB) and many are
             # identical to each other
-            if len(ns) == 1 and len(rev[ns[0]]) == 1 and "@std@@" not in ns[0]:
+            if len(ns) == 1 and len(rev[ns[0]]) == 1 and ("@std@@" not in ns[0] or with_std):
                 old = names.get(va, "")
                 proposals.append((va, ns[0], old, unit))
     for va, n, old, unit in proposals:
