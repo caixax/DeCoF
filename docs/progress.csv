@@ -13898,7 +13898,7 @@ hl,10027900,149,?WeaponIdle@CCamera@@UAEXXZ,CCamera::WeaponIdle,COF,dlls/cof_cam
 hl,100279A0,5,_camera_spot,camera_spot,HLSDK,dlls/cof_camera.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( camera_spot, CCameraSpot ) in cof_camera.cpp (1.55 line 37); the export sits between CCamera::WeaponIdle and _weapon_camera"
 hl,100279B0,5,_weapon_camera,weapon_camera,HLSDK,dlls/cof_camera.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( weapon_camera, CCamera )"
 hl,100279C0,92,??$GetClassPtr@VCChainsawBoss@@@@YAPAVCChainsawBoss@@PAV0@@Z,GetClassPtr<CChainsawBoss>,HLSDK,dlls/cof_chainsawboss.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
-hl,10027A20,92,??$GetClassPtr@VCThirdPersonInteraction@@@@YAPAVCThirdPersonInteraction@@PAV0@@Z,GetClassPtr<CThirdPersonInteraction>,HLSDK,dlls/cof_thirdpersoninteraction.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,0.0,jmp_target_of_export+rtti,
+hl,10027A20,92,??$GetClassPtr@VCThirdPersonInteraction@@@@YAPAVCThirdPersonInteraction@@PAV0@@Z,GetClassPtr<CThirdPersonInteraction>,HLSDK,dlls/cof_thirdpersoninteraction.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
 hl,10027A80,64,?AlertSound@CChainsawBoss@@UAEXXZ,CChainsawBoss::AlertSound,COF,dlls/cof_chainsawboss.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10027AC0,82,?AttackSound@CChainsawBoss@@QAEXXZ,CChainsawBoss::AttackSound,UNKNOWN,dlls/cof_chainsawboss.cpp,,,MATCHED,100,,
 hl,10027B20,5,?CheckRangeAttack1@CChainsawBoss@@UAEHMM@Z,CChainsawBoss::CheckRangeAttack1,COF,dlls/cof_chainsawboss.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
@@ -15417,14 +15417,14 @@ hl,1007D430,1009,?Use@CTelescope@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CTelescop
 hl,1007D830,5,_cof_telescope,cof_telescope,HLSDK,dlls/cof_telescope.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( cof_telescope, CTelescope )"
 hl,1007D840,5,_cof_telescope_camera,cof_telescope_camera,HLSDK,dlls/cof_telescope.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( cof_telescope_camera, CFixedCamera )"
 hl,1007D850,5,_cof_telescope_cancel,cof_telescope_cancel,HLSDK,dlls/cof_telescope.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( cof_telescope_cancel, CCofTelescopeCancel )"
-hl,1007D860,690,?HandleAnimEvent@CThirdPersonInteraction@@UAEXPAUMonsterEvent_t@@@Z,CThirdPersonInteraction::HandleAnimEvent,COF,dlls/cof_thirdpersoninteraction.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
-hl,1007DB20,179,?NahThink@CThirdPersonInteraction@@QAEXXZ,CThirdPersonInteraction::NahThink,COF,dlls/cof_thirdpersoninteraction.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
-hl,1007DBE0,34,?Precache@CThirdPersonInteraction@@UAEXXZ,CThirdPersonInteraction::Precache,COF,dlls/cof_thirdpersoninteraction.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
-hl,1007DC10,49,?Restore@CThirdPersonInteraction@@UAEHAAVCRestore@@@Z,CThirdPersonInteraction::Restore,COF,dlls/cof_thirdpersoninteraction.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
-hl,1007DC50,95,?Save@CThirdPersonInteraction@@UAEHAAVCSave@@@Z,CThirdPersonInteraction::Save,COF,dlls/cof_thirdpersoninteraction.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
+hl,1007D860,690,?HandleAnimEvent@CThirdPersonInteraction@@UAEXPAUMonsterEvent_t@@@Z,CThirdPersonInteraction::HandleAnimEvent,COF,dlls/cof_thirdpersoninteraction.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
+hl,1007DB20,179,?NahThink@CThirdPersonInteraction@@QAEXXZ,CThirdPersonInteraction::NahThink,COF,dlls/cof_thirdpersoninteraction.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
+hl,1007DBE0,34,?Precache@CThirdPersonInteraction@@UAEXXZ,CThirdPersonInteraction::Precache,COF,dlls/cof_thirdpersoninteraction.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
+hl,1007DC10,49,?Restore@CThirdPersonInteraction@@UAEHAAVCRestore@@@Z,CThirdPersonInteraction::Restore,COF,dlls/cof_thirdpersoninteraction.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
+hl,1007DC50,95,?Save@CThirdPersonInteraction@@UAEHAAVCSave@@@Z,CThirdPersonInteraction::Save,COF,dlls/cof_thirdpersoninteraction.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1007DCB0,121,,,UNKNOWN,guess:dlls/cof_thirdpersoninteraction.cpp,,,TODO,,,
-hl,1007DD30,678,?Spawn@CThirdPersonInteraction@@UAEXXZ,CThirdPersonInteraction::Spawn,COF,dlls/cof_thirdpersoninteraction.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
-hl,1007DFE0,5,_third_person_interaction,third_person_interaction,HLSDK,dlls/cof_thirdpersoninteraction.cpp,,,TODO,0.0,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( third_person_interaction, CThirdPersonInteraction )"
+hl,1007DD30,678,?Spawn@CThirdPersonInteraction@@UAEXXZ,CThirdPersonInteraction::Spawn,COF,dlls/cof_thirdpersoninteraction.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
+hl,1007DFE0,5,_third_person_interaction,third_person_interaction,HLSDK,dlls/cof_thirdpersoninteraction.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( third_person_interaction, CThirdPersonInteraction )"
 hl,1007DFF0,92,??$GetClassPtr@VCTMPAmmo@@@@YAPAVCTMPAmmo@@PAV0@@Z,GetClassPtr<CTMPAmmo>,HLSDK,dlls/cof_tmp.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
 hl,1007E050,92,??$GetClassPtr@VCTmp@@@@YAPAVCTmp@@PAV0@@Z,GetClassPtr<CTmp>,HLSDK,dlls/cof_tmp.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
 hl,1007E0B0,124,?AddAmmo@CTMPAmmo@@EAEHPAVCBaseEntity@@@Z,CTMPAmmo::AddAmmo,COF,dlls/cof_tmp.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
