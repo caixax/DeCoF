@@ -71,3 +71,8 @@ The reconstructed source keeps the behavior of the retail 1.6a binaries, includi
 | `CStatuePuzzleComplete::Use`, `CheckStatuePuzzle` (CoF_Statues.cpp) | No NULL test of `pActivator`; CheckStatuePuzzle may pass a NULL player. | no test |
 | `CTapeRecorder::BlinkThink` (CoF_TapeRecorder.cpp) | Checks `pSprite` for NULL only after using it. | the test after the use |
 | `CKeypadNew` (CoF_3DKeypad.cpp) | Reads the keyboard with `GetAsyncKeyState` in the server DLL. | the import call |
+| `CRoofBoss` (CoF_RoofBoss.cpp) | `pList[32]` is passed with `listMax` 96 (stack overflow risk); `if ( !m_bHasAttacked ) m_bHasAttacked = false;` and the same for `m_bStartingAttack` do nothing; `if ( !pEdict ) continue;` comes after `pEdict->free` was read; `pHead` is used without a null check. | the pushed list size and the dead stores |
+| `CBookSimon::SetActivity` (CoF_SickSimon.cpp) | Returns when `frags != 0` and then tests `frags != 0` again: dead code. | the second test |
+| `CDoctorBoss::DecideWhatToDo`, `MonsterThink`; `CDoctorHelper::Killed` (CoF_DoctorBoss.cpp) | Case 0 falls through into case 1 and then case 2; the `m_iGunType` switch has both gun branches inside each case; CDoctorHelper::Killed looks the doctor up and does nothing with it. | the case bodies and the unused result |
+| `CRuben::GetDamageAmount` (monster_ruben.cpp) | Returns a fixed 5 instead of a skill value. | the constant |
+| Sewer boss, chainsaw boss (CoF_SewerBoss.cpp, CoF_ChainsawBoss.cpp) | `IgnoreConditions` tests `ACT_MELEE_ATTACK1` twice (from the HLSDK zombie). | inherited |

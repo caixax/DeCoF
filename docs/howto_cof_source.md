@@ -172,6 +172,14 @@ The 1.55 hl.dll is an unoptimized debug build of nearly the same source. `disasm
 - `FClassnameIs( edict, ... )` inlines with a `neg/sbb/and` null test on the edict; `FClassnameIs( pev, ... )` does not.
 - Functions Ghidra merged into a neighbour have no row and no unit list entry: name them with `tools/bytematch.py --at <va,...>`.
 
+## Patterns from the bosses
+
+- 1.6a removed some debug alerts (the roof boss `ALERT( at_console, "ROOFBOSS - ..." )` calls): keep them as comments when retail has no `pfnAlertMessage` there.
+- An if whose body was commented out still shapes the code: `if ( flDelta >= 0.4 && (...).Length() <= 300 ) { }` produces no code of its own, but leaving it in changes the surrounding register use.
+- Spirit's monsters.h has `SF_MONSTER_NO_YELLOW_BLOBS` (128) in place of `SF_MONSTER_WAIT_FOR_SCRIPT`.
+- 1.55 save tables are 16-byte `TYPEDESCRIPTION` entries: reading them from the 1.55 data gives field order and types.
+- Unreferenced non-virtual methods (`CChainsawBoss::KillMonster`, `CRoofBoss::UpdateOnRemove`) are dropped from 1.6a by `/OPT:REF`; write them anyway.
+
 ## What not to do
 
 - Do not edit shared headers (`cbase.h`, `weapons.h`, `player.h`, `util.h`, ...) without coordinating: several files depend on them.
