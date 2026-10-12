@@ -212,3 +212,11 @@ Done and committed:
 Running when this was written (not committed): renderer milestone (Opus); hud.cpp and hud_redraw.cpp (Opus, also declares the CHud method at 1006CB10 that guess_HUDControl.cpp calls through a free stand-in); hud_spectator, cdll_int, ammo, view and ev_hldm leftovers (Sonnet); Cry of Fear menus batch A (Opus).
 
 Next: review those agents' results with my own check and relocaudit; switch guess_HUDControl.cpp to the CHud method; more Cry of Fear menu batches; vgui_TeamFortressViewport.cpp, vgui_ScorePanel, vgui_subtitles; hl leftovers (about 120 unnamed rows outside units).
+
+## 2026-10-12 (third session, stop)
+
+Stopped for tokens. Committed since the previous note: hud_spectator 28/28 and cdll_int 23/23 (MATCHED), ammo 48/49, view 28/29, ev_hldm 39/40; ModelAttach and Wheelchair globals named once; SetModes, EV_FireGlock2 and the 1009D190 stub fixed in Ghidra; every switch in client.dll and hl.dll checked resolved; guide patterns.
+
+NOT reviewed, NOT committed (in the working tree, from four stopped agents): renderer files (gl_*.cpp, StudioModelRenderer.cpp, GameStudioModelRenderer.cpp, particlemgr.cpp, quake_bsp.cpp, tri.cpp), hud.cpp and hud.h (CHud core agent; was also to declare the CHud method at 1006CB10 for guess_HUDControl.cpp), Cry of Fear menu files batch A and B (src/cl_dll/guess_*.cpp/.h new files), their unit lists, client name csvs and progress.csv rows. Next session: review each with my own check plus relocaudit, then commit or redo.
+
+Open items: guess_HUDControl.cpp still calls a free stand-in for the CHud method at 1006CB10 (two functions TODO); ammo WpnInfo/WpnDeploy/GetMags/SetMags need CHudAmmo methods in hud.h; a ParticleSystemManager member at 10080B90 is needed by MsgFunc_WpnDeploy; V_CalcNormalRefdef and CHudAmmo::Draw are large Cry of Fear rewrites still open.
