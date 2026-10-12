@@ -195,3 +195,20 @@ Next:
 2. Death notice viewport class (vgui_TeamFortressViewport.h) on Opus.
 3. Full re-delink of every unit and a full report compared with progress.csv (no agent running).
 4. Remaining hl TODO: CFlier::HandleAnimEvent 99.99%, class header extraction list.
+
+## 2026-10-12 (third session, evening)
+
+Totals (non-LIB rows): hl.dll 5158 MATCHED, 11 EQUIVALENT, 174 TODO of 5343 (96.5 percent); client.dll 749 MATCHED, 1397 TODO of 2146 (34.9 percent).
+
+Done and committed:
+- Client batch test finished (Sonnet on health, death, saytext, menu, in_camera, inputw32, message; Opus on status_icons and input). Review fixes needed for Sonnet results: saytext padding struct with casted vtable calls (reverted), health stand-in global and padding member, inputw32 stand-in global, hl GetEyePosition construction, StudioFrameAdvance moved to the wrong file. Opus results needed none. The comparison numbers are in this session's report.
+- Verification gap closed: client globals (gHUD at 0x1018A0C0) are named with extents, relocaudit reports wrong members and real symbol differences (with same-address, ICF fold, CRT, STL and import aliases), and update_status keeps such functions TODO. This exposed 25 client and about 40 hl functions that read wrong members or called wrong bases; most are fixed (IMPLEMENT_SAVERESTORE bases of nine CoF classes, SetModelCollisionBox, the m_playerSaveData name, a stale -200 label).
+- CHud (0x5590 bytes), CHudHealth, CHudAmmo, CVoiceStatus, TeamFortressViewport and CHUDControl layouts rebuilt; death.cpp, saytext.cpp, message.cpp, menu and status_icons fully matched.
+- hl: singleplay_gamerules, doors, locus, animation, animating, h_battery, spectator, paranoia_wpn, monsters, func_break, plats, cof_flygare, cof_phonecall, player GiveAmmo, and the new MP5 file (guess_CoF_MP5.cpp, 30 of 30); 185 header inline functions added to units; STL instantiations classed LIB; statue move functions named by position.
+- Tools: bytematch (client, widened windows, relocation tie-break, ICF folds, --std), align_names (position names with guards), name_unit and add_name (locked; add_name writes atomically after a crash truncated hl_manual.csv), client_layout, decorate_names, rtti.py, update_status with the relocation check, and delinker fixes (case-block offcuts, destructor padding, zero-filled extents, decorated import names, multiple-inheritance vtable names).
+- Khronos glext.h and khrplatform.h in src/external for the renderer; renderer and VGUI units with baselines (139 of 161 renderer functions match with the Paranoia source).
+- 32 units for the Cry of Fear VGUI classes (guess_<Class>.cpp from RTTI and the constructor ranges).
+
+Running when this was written (not committed): renderer milestone (Opus); hud.cpp and hud_redraw.cpp (Opus, also declares the CHud method at 1006CB10 that guess_HUDControl.cpp calls through a free stand-in); hud_spectator, cdll_int, ammo, view and ev_hldm leftovers (Sonnet); Cry of Fear menus batch A (Opus).
+
+Next: review those agents' results with my own check and relocaudit; switch guess_HUDControl.cpp to the CHud method; more Cry of Fear menu batches; vgui_TeamFortressViewport.cpp, vgui_ScorePanel, vgui_subtitles; hl leftovers (about 120 unnamed rows outside units).
