@@ -160,3 +160,17 @@ Status: hl.dll 2,711 MATCHED + 1 EQUIVALENT of 5,438 functions (44.0% of code by
 Running at the end of this entry: agents on player.cpp and on 30 CoF units without source (melee weapons, tool items, two monster families, dual and book weapons).
 
 Next: commit the agents' units; class headers that client.cpp and multiplay_gamerules.cpp still declare locally (documents, boat, wheelchair, telephone, padlock, computer, particle, CEnvModel, CCoFSurvivalMode, CCoopLevelChangeManager, Steam user stats), then UTIL_BloodDrips with CParticle; full re-delink once no agent runs; remaining 56 CoF units; then client.dll (re-test /Ob1 first).
+
+## 2026-10-12: agents resumed, hl.dll at 69.8%
+
+- Resumed the agents cut off by the usage limit (SendMessage keeps their context). Committed per unit: 30 CoF units at 100% (melee weapons, tool items, dual pistol and dual weapon, book laser, wheelchair, 24 monsters), syringe and suicider with one EQUIVALENT function each, pm_shared.c 53/56 (PM_PlayerMove EQUIVALENT: retail calls an empty function that MSVC 19.27 drops), and the HLSDK sweeps: monsters, AI_BaseNPC_Schedule, nodes, talkmonster, genericmonster, monstermaker, h_cine, bmodels, cbase, world, explode at 100%; buttons 84/88, items 60/62, lights 35/39, sound 56/63, util 116/137, effects.cpp 659/733, player.cpp 150/166.
+- Delinker: no $LN labels on retail tables (they split functions), int3 after a final no-return call kept, a spurious Ghidra function inside CGraph::CheckNode removed. `tools/symbols/hl_forget.csv` holds names removed for good.
+- Names: byte-proven names for the dual weapon helpers and their STL instantiations (now class LIB), MakeMonster/MakeMonsterThink swap, ToggleSwitch, MessageGet, ParticleRestore, FacingIdeal and others; `sync_names.py` sends a byte-proven name to the object that holds it.
+- Headers: human hull 12 (not 16).
+- `tools/csvio.py`: progress.csv writes use a temporary file with retries (a Windows sharing error had dropped the flare rows once).
+
+Status: hl.dll 3,943 MATCHED + 4 EQUIVALENT of 5,377 functions (69.8% of code bytes); opengl32.dll 367/367; client.dll, hw.dll, GameUI.dll, cof.exe 0.
+
+Stopped at the user's request (token budget): the agents on player.cpp, effects.cpp and the world/utility sweep (their work up to that point is committed).
+
+Next: finish player.cpp (16 functions), effects.cpp (74), util/sound/buttons/lights/items leftovers; class headers still declared locally (client.cpp, multiplay_gamerules.cpp, spitter: cof_importantclassdefs.h, effects.h classes, CParticle, CMp5, CAcidSpit), util.h declarations (UTIL_BloodDrips 5 parameters, UTIL_SplashCalculation, SET_VIEW, UTIL_ProMessage), guess_CLASS_COF_MONSTER, g_sModelIndexNull; full re-delink of all units; the 26 CoF units without source (bosses, doors, puzzles, ladder, boat, subtitles, phone call...); then client.dll.
