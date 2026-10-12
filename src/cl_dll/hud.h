@@ -114,6 +114,10 @@ public:
 	int MsgFunc_WeapPickup( const char *pszName, int iSize, void *pbuf );
 	int MsgFunc_ItemPickup( const char *pszName, int iSize, void *pbuf );
 	int MsgFunc_HideWeapon( const char *pszName, int iSize, void *pbuf );
+	int MsgFunc_WpnInfo( const char *pszName, int iSize, void *pbuf );
+	int MsgFunc_Accuracy( const char *pszName, int iSize, void *pbuf );
+	int MsgFunc_DualAmmo( const char *pszName, int iSize, void *pbuf );
+	int MsgFunc_WpnDeploy( const char *pszName, int iSize, void *pbuf );
 
 	void SlotInput( int iSlot );
 	void _cdecl UserCmd_Slot1( void );
@@ -147,6 +151,24 @@ public:
 	int		m_menuNumberSizeX;
 	int		m_menuNumberSizeY;
 
+	int		guess_m_iDualAmmoLeft;		// DualAmmo message
+	int		guess_m_iDualAmmoRight;
+
+	// magazine counts per weapon id (3, 19, 4, 7, 26, 27, 8, 9, 14, 11, 13, 20, 21)
+	int		guess_m_iGlockMags;
+	int		guess_m_iVP70Mags;
+	int		guess_m_iShotgunMags;
+	int		guess_m_iP345Mags;
+	int		guess_m_iG43Mags;
+	int		guess_m_iMP5Mags;
+	int		guess_m_iSyringes;
+	int		guess_m_iM16Mags;
+	int		guess_m_iTMPMags;
+	int		guess_m_iRifleMags;
+	int		guess_m_iFlares;
+	int		guess_m_iBrowningMags;
+	int		guess_m_iRevolverAmmo;
+
 //private:
 	float m_fFade;
 	RGBA  m_rgba;
@@ -154,6 +176,54 @@ public:
 	int	m_HUD_bucket0;
 	int m_HUD_selection;
 	int m_mach; // buz
+
+	// sprite indexes loaded in VidInit (names from the hud.txt entries)
+	int guess_m_HUD_glock_mag;
+	int guess_m_HUD_revolver_cylinder;
+	int guess_m_HUD_browning_mag;
+	int guess_m_HUD_p345_mag;
+	int guess_m_HUD_g43_mag;
+	int guess_m_HUD_mp5_mag;
+	int guess_m_HUD_m76_mag;
+	int guess_m_HUD_shotgun_box;
+	int guess_m_HUD_glock_mag_icon;
+	int guess_m_HUD_p345_mag_icon;
+	int guess_m_HUD_g43_mag_icon;
+	int guess_m_HUD_mp5_mag_icon;
+	int guess_m_HUD_shotgun_box_icon;
+	int guess_m_HUD_syringe_icon;
+	int guess_m_HUD_m76_mag_icon;
+	int guess_m_HUD_mag_cross;
+	int guess_m_HUD_crosshair;
+	int guess_m_HUD_m16_mag;
+	int guess_m_HUD_m16_mag_icon;
+	int guess_m_HUD_vp70_mag;
+	int guess_m_HUD_vp70_mag_icon;
+	int guess_m_HUD_tmp_mag;
+	int guess_m_HUD_tmp_mag_icon;
+	int guess_m_HUD_flare_icon;
+	int guess_m_HUD_famas_mag;
+	int guess_m_HUD_famas_mag_icon;
+	int guess_m_HUD_gm_inf;
+	int guess_m_HUD_rifle_mag;
+	int guess_m_HUD_rifle_mag_icon;
+
+	int guess_m_iDrawAmmo;
+	float guess_m_flAccuracy;			// Accuracy message
+
+	// &gHUD.GetSpriteRect() of the magazine sprites, set in VidInit
+	wrect_t *guess_m_prcGlockMag;
+	wrect_t *guess_m_prcShotgunBox;
+	wrect_t *guess_m_prcM76Mag;
+	wrect_t *guess_m_prcM16Mag;
+	wrect_t *guess_m_prcP345Mag;
+	wrect_t *guess_m_prcTMPMag;
+	wrect_t *guess_m_prcBrowningMag;
+	wrect_t *guess_m_prcRevolverCylinder;
+	wrect_t *guess_m_prcGmInf;
+	wrect_t *guess_m_prcRifleMag;
+	wrect_t *guess_m_prcG43Mag;
+	wrect_t *guess_m_prcMP5Mag;
 };
 
 //
@@ -465,6 +535,55 @@ public:
 //
 //-----------------------------------------------------
 //
+class CBlackBar: public CHudBase
+{
+public:
+	int Init( void );
+	int VidInit( void );
+	int Draw( float flTime );
+	int MsgFunc_BlackBars( const char *pszName, int iSize, void *pbuf );
+
+	int guess_m_iOn;			// BlackBars message
+	int guess_m_HUD_blackbar;	// "cof_blackbar"
+	int guess_m_iTop;			// -(sprite height) - 1
+	int guess_m_iBottom;		// ScreenHeight
+};
+
+//
+//-----------------------------------------------------
+//
+class CNeffect: public CHudBase
+{
+public:
+	int Init( void );
+	int VidInit( void );
+	int Draw( float flTime );
+
+	int guess_m_HUD_snoise;
+	int guess_m_HUD_arghnoise;
+	int guess_m_HUD_tv_scanlines;
+};
+
+//
+//-----------------------------------------------------
+//
+class CHudLensflare: public CHudBase
+{
+public:
+	int Init( void );
+	int VidInit( void );
+	int Draw( float flTime );
+	int MsgFunc_Lensflare( const char *pszName, int iSize, void *pbuf );
+
+	// 0x14-0x1f and 0x2c-0x193 are not referenced by any code of the 1.6a client.dll
+	int guess_m_iUnused[3];
+	Vector guess_m_vecSunPos;		// Lensflare message (three coords)
+	int guess_m_iUnused2[90];
+};
+
+//
+//-----------------------------------------------------
+//
 const int maxHUDMessages = 16;
 struct message_parms_t
 {
@@ -618,9 +737,106 @@ private:
 	int							m_iSpriteCount;
 	int							m_iSpriteCountAllRes;
 	float						m_flMouseSensitivity;
-	int							m_iConcussionEffect; 
+	int							m_iConcussionEffect;
 
 public:
+
+	// custom view model textures (CustomSlv, CustomFng and CustomGlv messages)
+	char	guess_m_szSleeveTexture[256];
+	char	guess_m_szFingerTexture[256];
+	char	guess_m_szGloveTexture[256];
+
+	// "savehack cofsave%i" sent from Redraw once the time has passed
+	bool	guess_m_bSaveHack;
+	float	guess_m_flSaveHackTime;
+	int		guess_m_iSaveHackSlot;
+
+	float	guess_m_flDamageTime;		// written by CHudHealth::MsgFunc_Damage
+	struct IVoiceTweak_s *guess_m_pVoiceTweak;	// gEngfuncs.pVoiceTweak, set in Init
+	char	*guess_m_pszHeadShieldSound;	// HeadShield message
+	int		guess_m_iHeadShieldSoundFlags;
+	int		guess_m_iUnlocks;			// Unlocks message (bit field)
+	bool	guess_m_bMenuClick;
+	float	guess_m_flMenuClickTime;
+	float	guess_m_flUnknown344;
+	float	guess_m_flUnknown348;
+	int		guess_m_iUnknown34C;
+	float	guess_m_flUnknown350;
+	float	guess_m_flViewLockTime;		// ViewLock message, 666 = forever
+	bool	guess_m_bViewLockWasOn;
+	int		guess_m_iFlashFlags;		// FlashFlags message (bit field)
+	HSPRITE	guess_m_hMuzzleflash;		// "sprites/muzzleflash.spr"
+
+	// 0x364-0xf1b (3000 bytes): not referenced by any code of the 1.6a, 1.55 or 1.0 client.dll
+	char	guess_m_szUnused364[3000];
+
+	// notes (AddNote message); the code uses index 1-16, so note 16 runs over the members that follow (original bug)
+	struct
+	{
+		char	guess_szLine[8][32];
+		char	guess_szText1[48];
+		char	guess_szText2[64];
+		char	guess_szText3[48];
+	} guess_m_Notes[16];
+
+	Vector	guess_m_vecIronSightOfs;	// IronSights message
+	Vector	guess_m_vecIronSightOfs2;
+	bool	guess_m_bIronSights;
+
+	// NewFade message
+	int		guess_m_iFadeR;
+	int		guess_m_iFadeG;
+	int		guess_m_iFadeB;
+	int		guess_m_iFadeA;
+	int		guess_m_iFadeAlpha;
+	float	guess_m_flFadeStart;
+	float	guess_m_flFadeTime;
+	float	guess_m_flFadeEnd;
+	bool	guess_m_bFadeOut;
+	bool	guess_m_bFadeHold;
+
+	bool	guess_m_bConcussed;			// Concuss message, second byte
+	int		guess_m_iClothes;			// Clothes message
+	int		guess_m_iClothesState;
+	bool	guess_m_bXboxFix[26];		// all set by the xboxfix command
+
+	// 0x2980-0x2a7f: not referenced by any code of the 1.6a, 1.55 or 1.0 client.dll
+	int		guess_m_iUnused2980[64];
+
+	float	guess_m_flResetTime;		// GetClientTime() at ResetHUD, InitHUD and VidInit
+	float	guess_m_flUnknown2A84;
+	bool	guess_m_bUnknown2A88;
+	bool	guess_m_bPhoneOff;			// PhoneOff message
+	int		guess_m_iBlackWhite;		// BlackWhite message
+	int		guess_m_iUnknown2A90;
+	int		guess_m_iLadder;			// Ladder message, 0 lets the inventory open
+	int		guess_m_iFallOver;			// FallOver message, "down" state
+	float	guess_m_flUnknown2A9C;
+	Vector	guess_m_vecViewOfs;
+	float	guess_m_flLadderTime;
+	Vector	guess_m_vecLadder;
+
+	// FPS statistics of Redraw ("FPS is %i with an average of %i and a max of %i")
+	int		guess_m_iFPSMin;
+	int		guess_m_iFPSMax;
+	int		guess_m_iFPSAverage;
+	bool	guess_m_bFPSToggle;
+	float	guess_m_flNextFPSTime;
+	int		guess_m_iUnused2AD0;		// not referenced
+	int		guess_m_iFPS[99];
+	int		guess_m_iFPSCount;
+
+	// inventory (Inventory message)
+	char	guess_m_szInventoryItem1[128];
+	char	guess_m_szInventoryItem2[128];
+	char	guess_m_szInventoryItem3[128];
+	char	guess_m_szInventoryItem4[128];
+	char	guess_m_szInventoryItem5[128];
+	char	guess_m_szInventoryItem6[128];
+	char	guess_m_szInventoryWeapon1[128];
+	char	guess_m_szInventoryWeapon2[128];
+	char	guess_m_szInventoryWeapon3[128];
+	int		guess_m_iUnused30E4;		// not referenced
 
 	HSPRITE						m_hsprCursor;
 	HSPRITE						m_hsprLogo; // buz: make public
@@ -641,7 +857,13 @@ public:
 	cvar_t	*RainInfo; // rain
 	cvar_t	*m_pZoomSpeed; // buz
 
-	CShinySurface *m_pShinySurface; //LRC
+	// CameraZoom and HoldBreath messages
+	bool	guess_m_bCameraZoomOn;
+	float	guess_m_flCameraZoomFOV;
+	int		guess_m_iCameraZoom;
+	int		guess_m_iHoldBreath;
+	float	guess_m_flNextSwayTime;
+
 	Vector	m_vecSkyPos; //LRC
 	int		m_iSkyMode;  //LRC
 	int		m_iGasMask; // buz
@@ -657,8 +879,30 @@ public:
 	float	m_SpecTank_distUp;
 	int		m_SpecTank_Ammo;
 
+	float	guess_m_flPitchOfs;
+	float	guess_m_flYawOfs;
+	Vector	guess_m_vecSpecTankAngles;	// view angles saved by V_CalcRefdef
+	float	guess_m_flSpecTankTime;
+	float	guess_m_flSpecTankFrametime;
+	int		guess_m_iMaglite;			// Maglite message
+	int		guess_m_iBlur;				// Blur message
+	int		guess_m_iUnreadSMS;			// UnreadSMS message
+	float	guess_m_flUnreadSMSTime;
+	bool	guess_m_bViewLock;			// ViewLock message: mouse and joystick input ignored
+	int		guess_m_iViewEntity;		// ViewEntity message
+	float	guess_m_flForwardTapTime;	// double-tap deadlines of +forward, +back, +moveleft, +moveright
+	float	guess_m_flBackTapTime;
+	float	guess_m_flLeftTapTime;
+	float	guess_m_flRightTapTime;
+
+	// 0x31d4-0x320b: not referenced by any code of the 1.6a, 1.55 or 1.0 client.dll
+	int		guess_m_iUnused31D4[14];
+
 	// buz: die time
 	float	m_flDeadTime;
+
+	float	guess_m_flGreyFadeStart;	// GreyFade message
+	float	guess_m_flGreyFadeEnd;
 
 	int m_iFontHeight;
 	int DrawHudNumber(int x, int y, int iFlags, int iNumber, int r, int g, int b );
@@ -678,7 +922,10 @@ private:
 
 //	struct cvar_s *default_fov; // buz: turn off
 public:
-	HSPRITE GetSprite( int index ) 
+	char	guess_m_szObjectiveTitle[256];	// Objectives message
+	char	guess_m_szObjectiveText[256];
+
+	HSPRITE GetSprite( int index )
 	{
 		return (index < 0) ? 0 : m_rghSprites[index];
 	}
@@ -688,7 +935,7 @@ public:
 		return m_rgrcRects[index];
 	}
 
-	
+
 	int GetSpriteIndex( const char *SpriteName );	// gets a sprite index, for use in the m_rghSprites[] array
 
 	CHudAmmo		m_Ammo;
@@ -696,6 +943,8 @@ public:
 	CHudSpectator		m_Spectator;
 	CHudGeiger		m_Geiger;
 	CHudBattery		m_Battery;
+	CBlackBar		guess_m_BlackBar;
+	CNeffect		guess_m_Neffect;
 	CHudTrain		m_Train;
 	CHudFlashlight	m_Flash;
 	CHudMessage		m_Message;
@@ -706,6 +955,7 @@ public:
 	CHudAmmoSecondary	m_AmmoSecondary;
 	CHudTextMessage m_TextMessage;
 	CHudStatusIcons m_StatusIcons;
+	CHudLensflare	guess_m_Lensflare;
 	CHudParticle	m_Particle; // (LRC) -- 30/08/02 November235: Particles to Order
 
 	void Init( void );
@@ -714,7 +964,7 @@ public:
 	int Redraw( float flTime, int intermission );
 	int UpdateClientData( client_data_t *cdata, float time );
 
-	CHud() : m_iSpriteCount(0), m_pHudList(NULL), m_pShinySurface(NULL) {}
+	CHud() : m_iSpriteCount(0), m_pHudList(NULL) {}
 	~CHud();			// destructor, frees allocated memory
 
 	// user messages

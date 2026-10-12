@@ -15,10 +15,12 @@
 #include "const.h"
 #include "camera.h"
 #include "in_defs.h"
+#include "parsemsg.h"
 
 #include "windows.h"
 
 float CL_KeyState (kbutton_t *key);
+void VectorAngles( const float *forward, float *angles );
 
 extern "C" 
 {
@@ -28,6 +30,13 @@ extern "C"
 }
 
 extern cl_enginefunc_t gEngfuncs;
+extern vec3_t v_origin;
+extern cl_entity_t *guess_pCamTargetEnt;
+
+cl_entity_t *guess_pTelescopeEnt;
+float guess_flTelescopeX, guess_flTelescopeY, guess_flTelescopeZ;
+float guess_flTelescopeLeft, guess_flTelescopeTop, guess_flTelescopeRight, guess_flTelescopeBottom;
+int guess_iTelescopeFlag;
 
 //-------------------------------------------------- Constants
 
@@ -67,6 +76,7 @@ cvar_t	*c_mindistance;
 
 // pitch, yaw, dist
 vec3_t cam_ofs;
+vec3_t guess_cam_old;
 
 
 // In third person
@@ -147,6 +157,36 @@ typedef struct
 
 extern trace_t SV_ClipMoveToEntity (edict_t *ent, vec3_t start, vec3_t mins, vec3_t maxs, vec3_t end);
 
+int __MsgFunc_Telescope( const char *pszName, int iSize, void *pbuf )
+{
+	BEGIN_READ( pbuf, iSize );
+
+	int index = READ_SHORT();
+
+	guess_flTelescopeX = READ_SHORT();
+	guess_flTelescopeY = READ_SHORT();
+	guess_flTelescopeZ = READ_SHORT();
+
+	guess_flTelescopeLeft = guess_flTelescopeX - 20;
+	guess_flTelescopeRight = guess_flTelescopeX + 20;
+	guess_flTelescopeTop = guess_flTelescopeY - 20;
+	guess_flTelescopeBottom = guess_flTelescopeY + 20;
+
+	if ( index == -1 )
+	{
+		guess_pTelescopeEnt = NULL;
+	}
+	else
+	{
+		guess_iTelescopeFlag = 0;
+		guess_pTelescopeEnt = gEngfuncs.GetEntityByIndex( index );
+	}
+
+	gHUD.guess_m_flNextSwayTime = gHUD.m_flTime;
+
+	return 1;
+}
+
 void DLLEXPORT CAM_Think( void )
 {
 	vec3_t origin;
@@ -177,6 +217,20 @@ void DLLEXPORT CAM_Think( void )
 
 	if( !cam_thirdperson )
 		return;
+
+	if ( g_iUser1 >= 1 && g_iUser1 <= 5 && guess_pCamTargetEnt )
+	{
+		vec3_t dir;
+		vec3_t target;
+
+		VectorCopy( guess_pCamTargetEnt->origin, target );
+		target[2] -= 36.0f;
+		VectorSubtract( target, v_origin, dir );
+		VectorAngles( dir, dir );
+		cam_idealpitch->value = -dir[0];
+		cam_idealyaw->value = dir[1];
+		return;
+	}
 	
 #ifdef LATER
 	if ( cam_contain->value )
@@ -192,7 +246,7 @@ void DLLEXPORT CAM_Think( void )
 	//
 	//movement of the camera with the mouse
 	//
-	if (cam_mousemove)
+	if (cam_mousemove && g_iUser1 <= 0)
 	{
 	    //get windows cursor position
 		GetCursorPos (&cam_mouse);
@@ -360,7 +414,7 @@ void DLLEXPORT CAM_Think( void )
 	}
 
 	// Move towards ideal
-	VectorCopy( cam_ofs, camAngles );
+	VectorCopy( guess_cam_old, camAngles );
 
 	gEngfuncs.GetViewAngles( (float *)viewangles );
 
@@ -403,9 +457,12 @@ void DLLEXPORT CAM_Think( void )
 			return;
 	}
 #endif
+	guess_cam_old[ 0 ] = camAngles[ 0 ];
+	guess_cam_old[ 1 ] = camAngles[ 1 ];
+	guess_cam_old[ 2 ] = dist;
 	cam_ofs[ 0 ] = camAngles[ 0 ];
 	cam_ofs[ 1 ] = camAngles[ 1 ];
-	cam_ofs[ 2 ] = dist;
+	cam_ofs[ 2 ] = camAngles[ 2 ];
 }
 
 extern void KeyDown (kbutton_t *b);	// HACK
@@ -495,6 +552,8 @@ void CAM_Init( void )
 	c_minyaw				= gEngfuncs.pfnRegisterVariable ( "c_minyaw",   "-135.0", 0 );
 	c_maxdistance			= gEngfuncs.pfnRegisterVariable ( "c_maxdistance",   "200.0", 0 );
 	c_mindistance			= gEngfuncs.pfnRegisterVariable ( "c_mindistance",   "30.0", 0 );
+
+	HOOK_MESSAGE( Telescope );
 }
 
 void CAM_ClearStates( void )

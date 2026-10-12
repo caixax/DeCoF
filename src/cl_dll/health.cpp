@@ -30,9 +30,14 @@
 #include "vgui_TeamFortressViewport.h" // buz
 #include "vgui_hud.h" // buz
 
+#undef fabs
+#include <cmath>
+
 
 DECLARE_MESSAGE(m_Health, Health )
 DECLARE_MESSAGE(m_Health, Damage )
+DECLARE_MESSAGE(m_Health, AdLib )
+DECLARE_MESSAGE(m_Health, Syringe )
 
 #define PAIN_NAME "sprites/%d_pain.spr"
 #define DAMAGE_NAME "sprites/%d_dmg.spr"
@@ -59,6 +64,8 @@ int CHudHealth::Init(void)
 {
 	HOOK_MESSAGE(Health);
 	HOOK_MESSAGE(Damage);
+	HOOK_MESSAGE(AdLib);
+	HOOK_MESSAGE(Syringe);
 	m_iHealth = 100;
 	m_fFade = 0;
 	m_iFlags = 0;
@@ -106,8 +113,30 @@ int CHudHealth:: MsgFunc_Health(const char *pszName,  int iSize, void *pbuf )
 	// TODO: update local health data
 	BEGIN_READ( pbuf, iSize );
 	int x = READ_BYTE();
+	int guess_iPlayer = READ_BYTE();
+	int guess_bCoop = READ_BYTE();
 
-	m_iFlags |= HUD_ACTIVE;
+	cl_entity_t *pLocal = gEngfuncs.GetLocalPlayer();
+	if ( !pLocal )
+		return 0;
+
+	int iLocalIndex = pLocal->index;
+
+	if ( !guess_bCoop )
+	{
+		m_iFlags |= HUD_ACTIVE;
+	}
+	else
+	{
+		if ( iLocalIndex < 0 || iLocalIndex > gEngfuncs.GetMaxClients() )
+			return 0;
+
+		guess_m_iCoopHealth[guess_iPlayer] = x;
+		m_iFlags |= HUD_ACTIVE;
+
+		if ( guess_iPlayer != iLocalIndex )
+			return 1;
+	}
 
 	// Only update the fade if we've changed health
 	if (x != m_iHealth)
@@ -137,9 +166,56 @@ int CHudHealth:: MsgFunc_Damage(const char *pszName,  int iSize, void *pbuf )
 
 	UpdateTiles(gHUD.m_flTime, bitsDamage);
 
+	if ( READ_BYTE() )
+		gHUD.guess_m_flDamageTime = gEngfuncs.GetClientTime() + 0.15;
+
 	// Actually took damage?
 	if ( damageTaken > 0 || armor > 0 )
 		CalcDamageDirection(vecFrom);
+
+	return 1;
+}
+
+
+int CHudHealth:: MsgFunc_AdLib(const char *pszName,  int iSize, void *pbuf )
+{
+	BEGIN_READ( pbuf, iSize );
+
+	float guess_flTime = READ_COORD();
+	int guess_iPlayer = READ_BYTE();
+	int guess_iState = READ_BYTE();
+
+	cl_entity_t *pLocal = gEngfuncs.GetLocalPlayer();
+	if ( !pLocal )
+		return 0;
+
+	int iLocalIndex = pLocal->index;
+	if ( iLocalIndex < 0 || iLocalIndex > gEngfuncs.GetMaxClients() )
+		return 0;
+
+	guess_m_iAdLibState[guess_iPlayer - 1] = guess_iState;
+	guess_m_flAdLibTime[guess_iPlayer - 1] = gEngfuncs.GetClientTime() + guess_flTime;
+
+	return 1;
+}
+
+
+int CHudHealth:: MsgFunc_Syringe(const char *pszName,  int iSize, void *pbuf )
+{
+	BEGIN_READ( pbuf, iSize );
+
+	int guess_iPlayer = READ_BYTE();
+	int guess_iState = READ_BYTE();
+
+	cl_entity_t *pLocal = gEngfuncs.GetLocalPlayer();
+	if ( !pLocal )
+		return 0;
+
+	int iLocalIndex = pLocal->index;
+	if ( iLocalIndex < 0 || iLocalIndex > gEngfuncs.GetMaxClients() )
+		return 0;
+
+	guess_m_bSyringe[guess_iPlayer - 1] = guess_iState != 0;
 
 	return 1;
 }
@@ -179,9 +255,6 @@ int CHudHealth::Draw(float flTime)
 
 	if ( (gHUD.m_iHideHUDDisplay & HIDEHUD_HEALTH) || gEngfuncs.IsSpectateOnly() )
 		return 1;
-
-	if ( !m_hSprite )
-		m_hSprite = LoadSprite(PAIN_NAME);
 
 #if (0) // buz: dont draw health!
 	int r, g, b;
@@ -325,6 +398,8 @@ void CHudHealth::CalcDamageDirection(vec3_t vecFrom)
 
 int CHudHealth::DrawPain(float flTime)
 {
+	return 1;
+
 	if (!(m_fAttackFront || m_fAttackRear || m_fAttackLeft || m_fAttackRight))
 		return 1;
 
@@ -399,6 +474,8 @@ int CHudHealth::DrawPain(float flTime)
 
 int CHudHealth::DrawDamage(float flTime)
 {
+	return 1;
+
 	int r, g, b, a;
 	DAMAGE_IMAGE *pdmg;
 

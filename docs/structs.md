@@ -30,6 +30,11 @@ Confirmed 2026-10-10 from the save/restore table `gEntvarsDescription` (102 TYPE
 ## ScreenFade (engine/shake.h, hl.dll 1.6a): floats instead of 4.12 fixed shorts
 
 `float duration; float holdTime; int fadeFlags; byte r, g, b, a;` (16 bytes; 1.55 and the HLSDK have `unsigned short duration, holdTime; short fadeFlags;`, 10 bytes). Confirmed by UTIL_ScreenFadeBuild (cvtdq2ps stores at +0 and +4, int at +8, bytes at +0xC..+0xF) and UTIL_ScreenFadeWrite (cvttss2si before WRITE_SHORT). The values are still FixedUnsigned16 results. LinkUserMessages registers the message with size 10 (the HLSDK size), not sizeof(ScreenFade).
+## CHud (client.dll 1.6a): 0x5590 bytes, Cry of Fear block before m_hsprCursor
+
+gHUD is at 0x1018A0C0. Cry of Fear inserted 0x30CC bytes after the Paranoia private members (custom sleeve, finger and glove texture names at 0x1C/0x11C/0x21C, the savehack command, damage time 0x328, notes 16 x 0x1A0 at 0xF1C, iron sight vectors, NewFade, xboxfix flags, FPS counters, inventory item names at 0x2C64), so m_hsprCursor is at 0x30E8 and m_flTime at 0x30F0 (Paranoia: 0x20 and 0x24). More Cry of Fear members follow the Paranoia ones (camera zoom, view lock byte 0x31BC, double-tap deadlines 0x31C4-0x31D0, objective strings 0x322C/0x332C). HUD elements: m_Ammo 0x342C, m_Health 0x3574, m_Spectator 0x39C8, CBlackBar 0x4C90, CNeffect 0x4CB4, CHudLensflare 0x51C4, m_scrinfo 0x536C. Full list in src/cl_dll/hud.h with the evidence of each member.
+
+Regions that no code in 1.6a, 1.55 or 1.0 reads are declared as `guess_m_...Unused...` arrays (0x364 char[3000], 0x2980 int[64], 0x2AD0, 0x30E4, 0x31D4 int[14], two in CHudLensflare): their types cannot be known, and the arrays keep every referenced member at its retail offset. CHudHealth has four [65] arrays (coop health, AdLib time and state, syringe) before m_hSprite at 0x384. CVoiceStatus has two bool[65] arrays at 0x18 and 0x59 (m_bInSquelchMode at 0x17860).
 ## Engine interface tables (1.6a)
 
 Confirmed 2026-10-10 from the copy loops in the exported entry points (`rep movsd` counts) and the member lists of the headers in `src/`.

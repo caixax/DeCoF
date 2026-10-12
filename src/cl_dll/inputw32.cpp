@@ -20,6 +20,8 @@
 #include "../engine/keydefs.h"
 #include "view.h"
 #include "windows.h"
+#include <math.h>
+#undef fabs
 
 #define MOUSE_BUTTON_COUNT 5
 
@@ -38,6 +40,17 @@ extern "C"
 extern cl_enginefunc_t gEngfuncs;
 
 extern int iMouseInUse;
+extern int g_iUser1;
+extern int guess_iViewEntity;
+extern int guess_iViewEntityActive;
+extern int guess_iDefaultFOV;
+extern cl_entity_t *guess_pTelescopeEnt;
+extern float guess_flMouseOfsX;
+extern float guess_flMouseOfsY;
+extern int guess_iMouseLook2On;
+extern bool guess_bMouseLook2Lock;
+extern float guess_flMouseOfs2X;
+extern float guess_flMouseOfs2Y;
 
 extern kbutton_t	in_strafe;
 extern kbutton_t	in_mlook;
@@ -159,7 +172,8 @@ void Force_CenterView_f (void)
 	{
 		gEngfuncs.GetViewAngles( (float *)viewangles );
 	    viewangles[PITCH] = 0;
-		gEngfuncs.SetViewAngles( (float *)viewangles );
+		if ( !gHUD.guess_m_bViewLock )
+			gEngfuncs.SetViewAngles( (float *)viewangles );
 	}
 }
 
@@ -304,6 +318,12 @@ void IN_MouseMove ( float frametime, usercmd_t *cmd)
 	int		mx, my;
 	vec3_t viewangles;
 
+	if ( guess_iViewEntity != -1 && guess_iViewEntityActive != -1 )
+		return;
+
+	if ( g_iUser1 > 0 && g_iUser1 <= 4 )
+		return;
+
 	gEngfuncs.GetViewAngles( (float *)viewangles );
 
 	if ( in_mlook.state & 1)
@@ -349,11 +369,13 @@ void IN_MouseMove ( float frametime, usercmd_t *cmd)
 		}
 		
 		// buz: slower turning when in sniper mode
-		if (gHUD.m_iFOV < 90)
+		if (gHUD.m_iFOV < guess_iDefaultFOV)
 		{
 			mouse_x *= 0.5;
 			mouse_y *= 0.5;
 		}
+
+		gEngfuncs.GetMaxClients();
 
 		// buz: remove turning if DEAD!
 		if (CL_IsDead())
@@ -396,7 +418,50 @@ void IN_MouseMove ( float frametime, usercmd_t *cmd)
 		}
 	}
 
-	gEngfuncs.SetViewAngles( (float *)viewangles );
+	if ( !gHUD.guess_m_bViewLock )
+	{
+		if ( !guess_pTelescopeEnt )
+			gEngfuncs.SetViewAngles( (float *)viewangles );
+	}
+
+	if ( guess_pTelescopeEnt )
+	{
+				vec3_t angles;
+
+		guess_flMouseOfsX += mouse_y * m_pitch->value;
+		guess_flMouseOfsY += mouse_x * m_yaw->value;
+
+		if ( guess_flMouseOfsX > 30 )
+			guess_flMouseOfsX = 30;
+		else if ( guess_flMouseOfsX < -60 )
+			guess_flMouseOfsX = -60;
+
+		if ( guess_flMouseOfsY > 60 )
+			guess_flMouseOfsY = 60;
+		if ( guess_flMouseOfsY < -60 )
+			guess_flMouseOfsY = -60;
+
+		angles[0] = guess_flMouseOfsX;
+		angles[1] = guess_flMouseOfsY * -1;
+		gEngfuncs.SetViewAngles( (float *)angles );
+	}
+
+	if ( guess_iMouseLook2On && !guess_bMouseLook2Lock )
+	{
+		
+		guess_flMouseOfs2X += mouse_y * m_pitch->value;
+		guess_flMouseOfs2Y += mouse_x * m_yaw->value;
+
+		if ( guess_flMouseOfs2X > 30 )
+			guess_flMouseOfs2X = 30;
+		else if ( guess_flMouseOfs2X < -60 )
+			guess_flMouseOfs2X = -60;
+
+		if ( guess_flMouseOfs2Y > 60 )
+			guess_flMouseOfs2Y = 60;
+		else if ( guess_flMouseOfs2Y < -60 )
+			guess_flMouseOfs2Y = -60;
+	}
 
 /*
 //#define TRACE_TEST
@@ -735,6 +800,8 @@ void IN_JoyMove ( float frametime, usercmd_t *cmd )
 
 	gEngfuncs.GetViewAngles( (float *)viewangles );
 
+	if ( g_iUser1 > 0 && g_iUser1 <= 4 )
+		return;
 
 	// complete initialization if first time in
 	// this is needed as cvars are not available at initialization time
@@ -756,12 +823,8 @@ void IN_JoyMove ( float frametime, usercmd_t *cmd )
 		return;
 	}
 
-	if (in_speed.state & 1)
-		speed = cl_movespeedkey->value;
-	else
-		speed = 1;
-
-	aspeed = speed * frametime;
+	speed = 1;
+	aspeed = frametime;
 
 	// loop through the axes
 	for (i = 0; i < JOY_MAX_AXES; i++)
@@ -779,7 +842,7 @@ void IN_JoyMove ( float frametime, usercmd_t *cmd )
 				// y=ax^b; where a = 300 and b = 1.3
 				// also x values are in increments of 800 (so this is factored out)
 				// then bounds check result to level out excessively high spin rates
-				fTemp = 300.0 * pow(abs(fAxisValue) / 800.0, 1.3);
+				fTemp = 300.0 * pow(fabsf(fAxisValue) / 800.0, 1.3);
 				if (fTemp > 14000.0)
 					fTemp = 14000.0;
 				// restore direction information
@@ -907,7 +970,8 @@ void IN_JoyMove ( float frametime, usercmd_t *cmd )
 	if (viewangles[PITCH] < -cl_pitchup->value)
 		viewangles[PITCH] = -cl_pitchup->value;
 
-	gEngfuncs.SetViewAngles( (float *)viewangles );
+	if ( !gHUD.guess_m_bViewLock )
+		gEngfuncs.SetViewAngles( (float *)viewangles );
 
 }
 

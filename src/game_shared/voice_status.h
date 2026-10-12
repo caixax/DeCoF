@@ -155,6 +155,9 @@ public:
 
 	enum			{MAX_VOICE_SPEAKERS=7};
 
+	bool			guess_m_bPlayerTalking[65];		// by player index; UpdateSpeakerStatus plays the radio start/end sound when it changes
+	bool			guess_m_bPlayerWasTalking[65];
+
 	float			m_LastUpdateServerState;		// Last time we called this function.
 	int				m_bServerModEnable;				// What we've sent to the server about our "voice_modenable" cvar.
 

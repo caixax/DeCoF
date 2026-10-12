@@ -79,13 +79,6 @@ void CHud :: MsgFunc_InitHUD( const char *pszName, int iSize, void *pbuf )
 	g_fStartDist = 0;
 	g_fEndDist = 0;
 
-	//LRC - clear all shiny surfaces
-	if (m_pShinySurface)
-	{
-		delete m_pShinySurface;
-		m_pShinySurface = NULL;
-	}
-
 	m_iSkyMode = SKY_OFF; //LRC
 
 	// prepare all hud data
@@ -173,23 +166,6 @@ void CHud :: MsgFunc_KeyedDLight( const char *pszName, int iSize, void *pbuf )
 //LRC
 void CHud :: MsgFunc_AddShine( const char *pszName, int iSize, void *pbuf )
 {
-//	CONPRINT("MSG:AddShine");
-	BEGIN_READ( pbuf, iSize );
-
-	float fScale = READ_BYTE();
-	float fAlpha = READ_BYTE()/255.0;
-	float fMinX = READ_COORD();
-	float fMaxX = READ_COORD();
-	float fMinY = READ_COORD();
-	float fMaxY = READ_COORD();
-	float fZ = READ_COORD();
-	char *szSprite = READ_STRING();
-
-//	gEngfuncs.Con_Printf("minx %f, maxx %f, miny %f, maxy %f\n", fMinX, fMaxX, fMinY, fMaxY);
-
-	CShinySurface *pSurface = new CShinySurface(fScale, fAlpha, fMinX, fMaxX, fMinY, fMaxY, fZ, szSprite);
-	pSurface->m_pNext = m_pShinySurface;
-	m_pShinySurface = pSurface;
 }
 
 //LRC
