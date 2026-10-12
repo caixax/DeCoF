@@ -1,0 +1,5 @@
+?FindSystem@ParticleSystemManager@@QAEPAVParticleSystem@@PAUcl_entity_s@@@Z
+?SortSystems@ParticleSystemManager@@QAEXXZ
+??0ParticleSystemManager@@QAE@XZ
+?AddSystem@ParticleSystemManager@@QAEXPAVParticleSystem@@@Z
+?UpdateSystems@ParticleSystemManager@@QAEXMH@Z

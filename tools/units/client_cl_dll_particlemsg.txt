@@ -1,0 +1,5 @@
+?MsgFunc_DelParticle@CHudParticle@@QAEHPBDHPAX@Z
+?VidInit@CHudParticle@@UAEHXZ
+?Draw@CHudParticle@@UAEHM@Z
+?__MsgFunc_DelParticle@@YAHPBDHPAX@Z
+?__MsgFunc_Particle@@YAHPBDHPAX@Z

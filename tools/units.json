@@ -1038,6 +1038,116 @@
           "name": "cl_dll/guess_HUDControl",
           "source": "src/cl_dll/guess_HUDControl.cpp",
           "functions_file": "tools/units/client_cl_dll_guess_HUDControl.txt"
+        },
+        {
+          "name": "cl_dll/gl_light_dynamic",
+          "source": "src/cl_dll/gl_light_dynamic.cpp",
+          "functions_file": "tools/units/client_cl_dll_gl_light_dynamic.txt"
+        },
+        {
+          "name": "cl_dll/gl_lightmap",
+          "source": "src/cl_dll/gl_lightmap.cpp",
+          "functions_file": "tools/units/client_cl_dll_gl_lightmap.txt"
+        },
+        {
+          "name": "cl_dll/gl_model",
+          "source": "src/cl_dll/gl_model.cpp",
+          "functions_file": "tools/units/client_cl_dll_gl_model.txt"
+        },
+        {
+          "name": "cl_dll/gl_postprocess",
+          "source": "src/cl_dll/gl_postprocess.cpp",
+          "functions_file": "tools/units/client_cl_dll_gl_postprocess.txt"
+        },
+        {
+          "name": "cl_dll/gl_sky",
+          "source": "src/cl_dll/gl_sky.cpp",
+          "functions_file": "tools/units/client_cl_dll_gl_sky.txt"
+        },
+        {
+          "name": "cl_dll/gl_texloader",
+          "source": "src/cl_dll/gl_texloader.cpp",
+          "functions_file": "tools/units/client_cl_dll_gl_texloader.txt"
+        },
+        {
+          "name": "cl_dll/glows",
+          "source": "src/cl_dll/glows.cpp",
+          "functions_file": "tools/units/client_cl_dll_glows.txt"
+        },
+        {
+          "name": "cl_dll/grass",
+          "source": "src/cl_dll/grass.cpp",
+          "functions_file": "tools/units/client_cl_dll_grass.txt"
+        },
+        {
+          "name": "cl_dll/particlemgr",
+          "source": "src/cl_dll/particlemgr.cpp",
+          "functions_file": "tools/units/client_cl_dll_particlemgr.txt"
+        },
+        {
+          "name": "cl_dll/particlemsg",
+          "source": "src/cl_dll/particlemsg.cpp",
+          "functions_file": "tools/units/client_cl_dll_particlemsg.txt"
+        },
+        {
+          "name": "cl_dll/particlesys",
+          "source": "src/cl_dll/particlesys.cpp",
+          "functions_file": "tools/units/client_cl_dll_particlesys.txt"
+        },
+        {
+          "name": "cl_dll/rain",
+          "source": "src/cl_dll/rain.cpp",
+          "functions_file": "tools/units/client_cl_dll_rain.txt"
+        },
+        {
+          "name": "cl_dll/triapiobjects",
+          "source": "src/cl_dll/triapiobjects.cpp",
+          "functions_file": "tools/units/client_cl_dll_triapiobjects.txt"
+        },
+        {
+          "name": "cl_dll/StudioModelRenderer",
+          "source": "src/cl_dll/StudioModelRenderer.cpp",
+          "functions_file": "tools/units/client_cl_dll_StudioModelRenderer.txt"
+        },
+        {
+          "name": "cl_dll/GameStudioModelRenderer",
+          "source": "src/cl_dll/GameStudioModelRenderer.cpp",
+          "functions_file": "tools/units/client_cl_dll_GameStudioModelRenderer.txt"
+        },
+        {
+          "name": "cl_dll/gl_debug",
+          "source": "src/cl_dll/gl_debug.cpp",
+          "functions_file": "tools/units/client_cl_dll_gl_debug.txt"
+        },
+        {
+          "name": "cl_dll/gl_decals",
+          "source": "src/cl_dll/gl_decals.cpp",
+          "functions_file": "tools/units/client_cl_dll_gl_decals.txt"
+        },
+        {
+          "name": "cl_dll/gl_renderer",
+          "source": "src/cl_dll/gl_renderer.cpp",
+          "functions_file": "tools/units/client_cl_dll_gl_renderer.txt"
+        },
+        {
+          "name": "cl_dll/gl_rsurf",
+          "source": "src/cl_dll/gl_rsurf.cpp",
+          "functions_file": "tools/units/client_cl_dll_gl_rsurf.txt"
+        },
+        {
+          "name": "cl_dll/gl_studiomodel",
+          "source": "src/cl_dll/gl_studiomodel.cpp",
+          "functions_file": "tools/units/client_cl_dll_gl_studiomodel.txt"
+        },
+        {
+          "name": "cl_dll/quake_bsp",
+          "source": "src/cl_dll/quake_bsp.cpp",
+          "functions_file": "tools/units/client_cl_dll_quake_bsp.txt"
+        },
+        {
+          "name": "cl_dll/tri",
+          "source": "src/cl_dll/tri.cpp",
+          "functions_file": "tools/units/client_cl_dll_tri.txt"
         }
       ]
     }

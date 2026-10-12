@@ -1,0 +1,8 @@
+?BlackFog@@YAXXZ
+?DrawRain@@YAXXZ
+?DrawSpriteAsPoly@@YAXHPAUrect_s@@0HMMMM@Z
+?OrthoDraw@@YAXHHMMMM@Z
+?OrthoGasMask@@YAXXZ
+?OrthoQuad@@YAXHHHH@Z
+?OrthoScope@@YAXXZ
+?UseTexture@@YAHAAHPAD@Z

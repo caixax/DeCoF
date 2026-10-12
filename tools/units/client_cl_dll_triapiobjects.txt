@@ -1,0 +1,8 @@
+?AddObject@CObjectsManager@@QAEXPAVCObject@@@Z
+?CalcViewMatrix@@YAXH@Z
+?MakeUpRight@@YAXPBMPAM1@Z
+?SetPoint@@YAXMMMPAY03M@Z
+??0CObjectsManager@@QAE@XZ
+?Draw@CObjectsManager@@QAEXXZ
+?Draw@CSmokePuff@@UAEHMM@Z
+?Reset@CObjectsManager@@QAEXXZ

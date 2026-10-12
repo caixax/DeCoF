@@ -1,0 +1,10 @@
+?EXT_LightPoint@@YAXVVector@@PAUlighting_ext@@H@Z
+?EXT_RecursiveLightPoint@@YAHPAUmnode_s@@ABVVector@@1PAUlighting_ext@@@Z
+?GL_DrawPoints@CStudioModelRenderer@@QAEXXZ
+?GL_RestoreRenderer@CStudioModelRenderer@@QAEXXZ
+?GL_SetupModel@CStudioModelRenderer@@QAEXH@Z
+?GL_SetupRenderer@CStudioModelRenderer@@QAEXH@Z
+?GL_SetupTextureHeader@CStudioModelRenderer@@QAEXXZ
+?PARSE_COLOR@@YAXAAVVector@@PAUcolor24@@@Z
+?VectorIRotate@@YAXABVVector@@QAY03$$CBMAAV1@@Z
+?VectorRotate@@YAXABVVector@@QAY03$$CBMAAV1@@Z

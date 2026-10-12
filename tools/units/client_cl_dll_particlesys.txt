@@ -1,0 +1,9 @@
+RandomRange::RandomRange
+?CalculateDistance@ParticleSystem@@QAEXXZ
+??0RandomRange@@QAE@PAD@Z
+?CreateParticle@ParticleType@@QAEPAUparticle@@PAVParticleSystem@@@Z
+?DrawParticle@ParticleSystem@@QAEXPAUparticle@@AAVVector@@1@Z
+?DrawSystem@ParticleSystem@@QAEXXZ
+?GetType@ParticleSystem@@QAEPAVParticleType@@PBD@Z
+?InitParticle@ParticleType@@QAEXPAUparticle@@PAVParticleSystem@@@Z
+?UTIL_GetClientEntityWithServerIndex@@YAPAUcl_entity_s@@H@Z

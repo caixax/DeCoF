@@ -1220,6 +1220,14 @@
       }
     },
     {
+      "name": "hl/dlls/guess_CoF_MP5",
+      "target_path": "build/target/hl/dlls/guess_CoF_MP5.obj",
+      "base_path": "build/base/hl/dlls/guess_CoF_MP5.obj",
+      "metadata": {
+        "source_path": "src/dlls/guess_CoF_MP5.cpp"
+      }
+    },
+    {
       "name": "opengl32/opengl32",
       "target_path": "build/target/opengl32/opengl32.obj",
       "base_path": "build/base/opengl32/opengl32.obj",
@@ -1449,6 +1457,190 @@
       "base_path": "build/base/client/cl_dll/hud_redraw.obj",
       "metadata": {
         "source_path": "src/cl_dll/hud_redraw.cpp"
+      }
+    },
+    {
+      "name": "client/cl_dll/guess_HUDControl",
+      "target_path": "build/target/client/cl_dll/guess_HUDControl.obj",
+      "base_path": "build/base/client/cl_dll/guess_HUDControl.obj",
+      "metadata": {
+        "source_path": "src/cl_dll/guess_HUDControl.cpp"
+      }
+    },
+    {
+      "name": "client/cl_dll/gl_light_dynamic",
+      "target_path": "build/target/client/cl_dll/gl_light_dynamic.obj",
+      "base_path": "build/base/client/cl_dll/gl_light_dynamic.obj",
+      "metadata": {
+        "source_path": "src/cl_dll/gl_light_dynamic.cpp"
+      }
+    },
+    {
+      "name": "client/cl_dll/gl_lightmap",
+      "target_path": "build/target/client/cl_dll/gl_lightmap.obj",
+      "base_path": "build/base/client/cl_dll/gl_lightmap.obj",
+      "metadata": {
+        "source_path": "src/cl_dll/gl_lightmap.cpp"
+      }
+    },
+    {
+      "name": "client/cl_dll/gl_model",
+      "target_path": "build/target/client/cl_dll/gl_model.obj",
+      "base_path": "build/base/client/cl_dll/gl_model.obj",
+      "metadata": {
+        "source_path": "src/cl_dll/gl_model.cpp"
+      }
+    },
+    {
+      "name": "client/cl_dll/gl_postprocess",
+      "target_path": "build/target/client/cl_dll/gl_postprocess.obj",
+      "base_path": "build/base/client/cl_dll/gl_postprocess.obj",
+      "metadata": {
+        "source_path": "src/cl_dll/gl_postprocess.cpp"
+      }
+    },
+    {
+      "name": "client/cl_dll/gl_sky",
+      "target_path": "build/target/client/cl_dll/gl_sky.obj",
+      "base_path": "build/base/client/cl_dll/gl_sky.obj",
+      "metadata": {
+        "source_path": "src/cl_dll/gl_sky.cpp"
+      }
+    },
+    {
+      "name": "client/cl_dll/gl_texloader",
+      "target_path": "build/target/client/cl_dll/gl_texloader.obj",
+      "base_path": "build/base/client/cl_dll/gl_texloader.obj",
+      "metadata": {
+        "source_path": "src/cl_dll/gl_texloader.cpp"
+      }
+    },
+    {
+      "name": "client/cl_dll/glows",
+      "target_path": "build/target/client/cl_dll/glows.obj",
+      "base_path": "build/base/client/cl_dll/glows.obj",
+      "metadata": {
+        "source_path": "src/cl_dll/glows.cpp"
+      }
+    },
+    {
+      "name": "client/cl_dll/grass",
+      "target_path": "build/target/client/cl_dll/grass.obj",
+      "base_path": "build/base/client/cl_dll/grass.obj",
+      "metadata": {
+        "source_path": "src/cl_dll/grass.cpp"
+      }
+    },
+    {
+      "name": "client/cl_dll/particlemgr",
+      "target_path": "build/target/client/cl_dll/particlemgr.obj",
+      "base_path": "build/base/client/cl_dll/particlemgr.obj",
+      "metadata": {
+        "source_path": "src/cl_dll/particlemgr.cpp"
+      }
+    },
+    {
+      "name": "client/cl_dll/particlemsg",
+      "target_path": "build/target/client/cl_dll/particlemsg.obj",
+      "base_path": "build/base/client/cl_dll/particlemsg.obj",
+      "metadata": {
+        "source_path": "src/cl_dll/particlemsg.cpp"
+      }
+    },
+    {
+      "name": "client/cl_dll/particlesys",
+      "target_path": "build/target/client/cl_dll/particlesys.obj",
+      "base_path": "build/base/client/cl_dll/particlesys.obj",
+      "metadata": {
+        "source_path": "src/cl_dll/particlesys.cpp"
+      }
+    },
+    {
+      "name": "client/cl_dll/rain",
+      "target_path": "build/target/client/cl_dll/rain.obj",
+      "base_path": "build/base/client/cl_dll/rain.obj",
+      "metadata": {
+        "source_path": "src/cl_dll/rain.cpp"
+      }
+    },
+    {
+      "name": "client/cl_dll/triapiobjects",
+      "target_path": "build/target/client/cl_dll/triapiobjects.obj",
+      "base_path": "build/base/client/cl_dll/triapiobjects.obj",
+      "metadata": {
+        "source_path": "src/cl_dll/triapiobjects.cpp"
+      }
+    },
+    {
+      "name": "client/cl_dll/StudioModelRenderer",
+      "target_path": "build/target/client/cl_dll/StudioModelRenderer.obj",
+      "base_path": "build/base/client/cl_dll/StudioModelRenderer.obj",
+      "metadata": {
+        "source_path": "src/cl_dll/StudioModelRenderer.cpp"
+      }
+    },
+    {
+      "name": "client/cl_dll/GameStudioModelRenderer",
+      "target_path": "build/target/client/cl_dll/GameStudioModelRenderer.obj",
+      "base_path": "build/base/client/cl_dll/GameStudioModelRenderer.obj",
+      "metadata": {
+        "source_path": "src/cl_dll/GameStudioModelRenderer.cpp"
+      }
+    },
+    {
+      "name": "client/cl_dll/gl_debug",
+      "target_path": "build/target/client/cl_dll/gl_debug.obj",
+      "base_path": "build/base/client/cl_dll/gl_debug.obj",
+      "metadata": {
+        "source_path": "src/cl_dll/gl_debug.cpp"
+      }
+    },
+    {
+      "name": "client/cl_dll/gl_decals",
+      "target_path": "build/target/client/cl_dll/gl_decals.obj",
+      "base_path": "build/base/client/cl_dll/gl_decals.obj",
+      "metadata": {
+        "source_path": "src/cl_dll/gl_decals.cpp"
+      }
+    },
+    {
+      "name": "client/cl_dll/gl_renderer",
+      "target_path": "build/target/client/cl_dll/gl_renderer.obj",
+      "base_path": "build/base/client/cl_dll/gl_renderer.obj",
+      "metadata": {
+        "source_path": "src/cl_dll/gl_renderer.cpp"
+      }
+    },
+    {
+      "name": "client/cl_dll/gl_rsurf",
+      "target_path": "build/target/client/cl_dll/gl_rsurf.obj",
+      "base_path": "build/base/client/cl_dll/gl_rsurf.obj",
+      "metadata": {
+        "source_path": "src/cl_dll/gl_rsurf.cpp"
+      }
+    },
+    {
+      "name": "client/cl_dll/gl_studiomodel",
+      "target_path": "build/target/client/cl_dll/gl_studiomodel.obj",
+      "base_path": "build/base/client/cl_dll/gl_studiomodel.obj",
+      "metadata": {
+        "source_path": "src/cl_dll/gl_studiomodel.cpp"
+      }
+    },
+    {
+      "name": "client/cl_dll/quake_bsp",
+      "target_path": "build/target/client/cl_dll/quake_bsp.obj",
+      "base_path": "build/base/client/cl_dll/quake_bsp.obj",
+      "metadata": {
+        "source_path": "src/cl_dll/quake_bsp.cpp"
+      }
+    },
+    {
+      "name": "client/cl_dll/tri",
+      "target_path": "build/target/client/cl_dll/tri.obj",
+      "base_path": "build/base/client/cl_dll/tri.obj",
+      "metadata": {
+        "source_path": "src/cl_dll/tri.cpp"
       }
     }
   ]
