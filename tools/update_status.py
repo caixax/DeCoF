@@ -9,7 +9,9 @@ is (TODO or EQUIVALENT are decided by hand). Functions are located by their
 decorated name through tools/symbols/<dll>_1.6a.csv. Unit names in the report
 are "<dll>/<path>". With unit names, only those units are written back:
 the report covers every unit of objdiff.json, and the objects of a unit an
-agent is working on can be stale or half edited.
+agent is working on can be stale or half edited. With unit names and no
+--report, the report of the last `build.py check` of exactly those units
+(build/check_project/<units>/report.json) is used.
 """
 import argparse
 import csv
@@ -25,9 +27,17 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--report", default=os.path.join(ROOT, "build", "report.json"))
+    ap.add_argument("--report")
     ap.add_argument("units", nargs="*")
     args = ap.parse_args()
+    if not args.report:
+        if args.units:
+            # same directory name as tools/build.py check
+            tag = "_".join(sorted(n.replace("/", "_") for n in args.units))[:120]
+            args.report = os.path.join(ROOT, "build", "check_project", tag, "report.json")
+        else:
+            args.report = os.path.join(ROOT, "build", "report.json")
+    print("report %s" % os.path.relpath(args.report, ROOT))
     rep = json.load(open(args.report))
     path = os.path.join(ROOT, "docs", "progress.csv")
     rows = list(csv.DictReader(open(path)))
