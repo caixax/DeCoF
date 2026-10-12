@@ -169,6 +169,10 @@ def differences(unit, fn):
         # the public function: toolchain code, named by bytes on the retail side
         if ("@std@@" in na and "@std@@" in nb) or (na.startswith("??$common_") and nb.startswith("_")):
             continue
+        # an import thunk spelled by Ghidra (VGUI.DLL::vgui::Color::Color)
+        # against our decorated name
+        if ".DLL::" in na.upper() and nb.startswith("?"):
+            continue
         if same_symbol(na, nb) or na.startswith("FID_conflict:"):
             # the same global at another offset is another member
             xa, xb = objdiff_tool.reloc_addend(a), objdiff_tool.reloc_addend(b)

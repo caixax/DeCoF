@@ -73,6 +73,8 @@ public class DelinkUnits extends GhidraScript {
 			switch (cmd) {
 				case "symbols":
 					dropCompilerLabels();
+					useImportedNames();
+					nameSecondaryVtables();
 					applySymbols(arg);
 					break;
 				case "unit":
@@ -103,6 +105,117 @@ public class DelinkUnits extends GhidraScript {
 			units++;
 		}
 		println("DelinkUnits: exported " + units + " unit(s)");
+	}
+
+	// A class with several vtables (multiple inheritance) gets the same
+	// Ghidra label "CFoo::vftable" on each, which the COFF export refuses.
+	// MSVC names each after its base subobject: ??_7CFoo@@6BCBase@@@. The
+	// RTTI complete object locator before the vtable gives the subobject
+	// offset, and the base class array the base at that offset.
+	private void nameSecondaryVtables() {
+		SymbolTable symtab = currentProgram.getSymbolTable();
+		java.util.Map<String, List<Symbol>> byName = new java.util.HashMap<>();
+		ghidra.program.model.symbol.SymbolIterator it = symtab.getAllSymbols(true);
+		while (it.hasNext()) {
+			Symbol sym = it.next();
+			if (sym.getName().equals("vftable") && !sym.isExternal()) {
+				byName.computeIfAbsent(sym.getName(true), k -> new ArrayList<>()).add(sym);
+			}
+		}
+		int tx = currentProgram.startTransaction("Vtable names");
+		int renamed = 0;
+		try {
+			for (List<Symbol> group : byName.values()) {
+				if (group.size() < 2) {
+					continue;
+				}
+				for (Symbol sym : group) {
+					try {
+						Address vt = sym.getAddress();
+						Address col = toAddr(getInt(vt.subtract(4)) & 0xffffffffL);
+						int subOffset = getInt(col.add(4));
+						Address td = toAddr(getInt(col.add(12)) & 0xffffffffL);
+						Address chd = toAddr(getInt(col.add(16)) & 0xffffffffL);
+						int nBases = getInt(chd.add(8));
+						Address bases = toAddr(getInt(chd.add(12)) & 0xffffffffL);
+						String cls = readTypeName(td);
+						String base = null;
+						for (int i = 1; i < nBases && base == null; i++) {
+							Address bcd = toAddr(getInt(bases.add(4 * i)) & 0xffffffffL);
+							if (getInt(bcd.add(8)) == subOffset) {
+								base = readTypeName(toAddr(getInt(bcd) & 0xffffffffL));
+							}
+						}
+						if (cls == null || base == null) {
+							continue;
+						}
+						String name = "??_7" + cls + "6B" + base + "@";
+						sym.setName(name, SourceType.ANALYSIS);
+						sym.setNamespace(currentProgram.getGlobalNamespace());
+						renamed++;
+					}
+					catch (Exception e) {
+						printerr("DelinkUnits: vtable at " + sym.getAddress() + ": " + e.getMessage());
+					}
+				}
+			}
+		}
+		finally {
+			currentProgram.endTransaction(tx, true);
+		}
+		println("DelinkUnits: " + renamed + " vtables of multiple inheritance classes named");
+	}
+
+	// ".?AVCVoiceStatus@@" -> "CVoiceStatus@@"
+	private String readTypeName(Address td) throws Exception {
+		StringBuilder sb = new StringBuilder();
+		Address a = td.add(8);
+		for (int i = 0; i < 256; i++) {
+			byte b = getByte(a.add(i));
+			if (b == 0) {
+				break;
+			}
+			sb.append((char) b);
+		}
+		String n = sb.toString();
+		return n.startsWith(".?AV") || n.startsWith(".?AU") ? n.substring(4) : null;
+	}
+
+	// Ghidra names imports by their demangled name: two overloads of one
+	// imported method (vgui::Label::Label) then share a name and the COFF
+	// export refuses the unit. Give every import its original (decorated)
+	// imported name.
+	private void useImportedNames() {
+		int tx = currentProgram.startTransaction("Imported names");
+		int renamed = 0;
+		try {
+			ghidra.program.model.symbol.ExternalManager em = currentProgram.getExternalManager();
+			// imports in nested namespaces (VGUI.DLL::vgui::Label) are not
+			// direct children of the library: walk every external symbol
+			List<Symbol> ext = new ArrayList<>();
+			currentProgram.getSymbolTable().getExternalSymbols().forEach(ext::add);
+			for (Symbol sym : ext) {
+				ghidra.program.model.symbol.ExternalLocation loc = em.getExternalLocation(sym);
+				if (loc == null) {
+					continue;
+				}
+				String orig = loc.getOriginalImportedName();
+				if (orig == null || orig.equals(loc.getLabel())) {
+					continue;
+				}
+				try {
+					loc.setName(em.getExternalLibrary(loc.getLibraryName()), orig, SourceType.IMPORTED);
+					renamed++;
+				}
+				catch (Exception e) {
+					// a name already taken: leave this one
+				}
+			}
+		}
+		finally {
+			currentProgram.endTransaction(tx, true);
+		}
+		println("DelinkUnits: " + renamed + " imports given their decorated names");
 	}
 
 	// $LN labels are local jump table labels of our objects; on the retail
