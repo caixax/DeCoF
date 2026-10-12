@@ -472,6 +472,85 @@ LINK_ENTITY_TO_CLASS( worldspawn, CWorld );
 //#define SF_WORLD_STARTSUIT	0x0008		// LRC- Start this level with an HEV suit!
 
 extern DLL_GLOBAL BOOL		g_fGameOver;
+extern int g_iAoMLevels;
+extern bool m_bHadSimonMode;
+extern int g_iDoctorMode;
+extern int g_iSurvivalMode;
+extern int m_iSimonMode;
+
+struct playervariables
+{
+	bool m_bUsed;
+	int m_iAllowedToUseTMP;
+	char *szPlayerName;
+	char *szLastUsedWeapon;
+	int m_iLastUsedWeaponID;
+	bool m_bIsADonator;
+	int m_iAmmoInventory[6];
+	int m_iAmmoInventoryAmount[6];
+	int m_iPlayerHealth;
+	int m_iPlayerStamina;
+	char szPlayerQuickSlot1[128];
+	char szPlayerQuickSlot2[128];
+	char szPlayerQuickSlot3[128];
+	bool m_bWasDead;
+	int suvivalpoints;
+	int shots_fired;
+	int shots_hit;
+	int syringes_used;
+	int shots_missed;
+	float gunaccuracy;
+	int timessaved;
+	int weaponscollected;
+	int damagetaken;
+	float distancetravelled_metres;
+	float distancetravelled_kilometres;
+	int time_seconds;
+	int time_minutes;
+	int time_hours;
+	int monsters_killed_melee;
+	int monsters_killed_shooting;
+	bool started_from_the_beginning;
+	int chosen_difficulty;
+	bool doctor_mode;
+	int m_iQuickSlotSlot[4];
+	char *szWeapon1;
+	int iClip1;
+	int iAmmo1;
+	char *szWeapon2;
+	int iClip2;
+	int iAmmo2;
+	char *szWeapon3;
+	int iClip3;
+	int iAmmo3;
+	char *szWeapon4;
+	int iClip4;
+	int iAmmo4;
+	char *szWeapon5;
+	int iClip5;
+	int iAmmo5;
+	char *szWeapon6;
+	int iClip6;
+	int iAmmo6;
+	char szQuickSel1[128];
+	char szQuickSel2[128];
+	char szQuickSel3[128];
+	bool m_bFirstDeploy[33];
+};
+
+class CCoopLevelChangeManager
+{
+public:
+	CCoopLevelChangeManager( void );
+	void GiveWeaponFromInventory( char *weapon, int slot, int i, CBasePlayer *pPlayer );
+	void SetPlayerVariables( CBasePlayer *pPlayer );
+	bool GivePlayerVariables( CBasePlayer *pPlayer );
+	bool m_bJustHadGameOver;
+	playervariables playervariablestruct[33];
+	playervariables playervariablestructstats[33];
+};
+
+extern CCoopLevelChangeManager *g_pLevelChange;
 float g_flWeaponCheat; 
 
 //BOOL g_startSuit; //LRC
@@ -481,16 +560,182 @@ void CWorld :: Spawn( void )
 	g_fGameOver = FALSE;
 	Precache( );
 	g_flWeaponCheat = CVAR_GET_FLOAT( "sv_cheats" );  // Is the impulse 101 command allowed?
+
+	if ( strstr( STRING( gpGlobals->mapname ), "aom_" ) )
+		g_iAoMLevels = 1;
+	else
+		g_iAoMLevels = 0;
+
+	if ( !strcmp( STRING( gpGlobals->mapname ), "c_start" ) )
+	{
+		CBaseEntity *pDave = NULL;
+
+		pDave = UTIL_FindEntityByClassname( NULL, "dave_benson_phillips" );
+
+		if ( !pDave )
+		{
+			CBaseEntity *pSpawnDave = CBaseEntity::Create( "dave_benson_phillips", g_vecZero, g_vecZero, NULL );
+
+			if ( pSpawnDave )
+				UTIL_SetOrigin( pSpawnDave, Vector( 613, -3156, -702 ) );
+		}
+	}
+}
+
+int precachetokenCounter;
+int foundmodels;
+int world_precache_models[64];
+int world_precache_sounds[64];
+int world_precache_sprites[64];
+int foundsounds;
+int foundsprites;
+
+extern char com_token[ 1500 ];
+char *COM_Parse( char *data );
+
+void SpecialMapPrecache( bool global )
+{
+	precachetokenCounter = 0;
+	foundmodels = 0;
+	foundsounds = 0;
+	foundsprites = 0;
+
+	// clear the lists
+	for ( int i = 0; i < 64; i++ )
+	{
+		world_precache_models[i] = 0;
+		world_precache_sounds[i] = 0;
+		world_precache_sprites[i] = 0;
+	}
+
+	char szFilename[MAX_PATH];
+
+	if ( global )
+	{
+		strcpy( szFilename, "maps/global_precache.txt" );
+	}
+	else
+	{
+		strcpy( szFilename, "maps/" );
+		strcat( szFilename, STRING( gpGlobals->mapname ) );
+		strcat( szFilename, "_precache.txt" );
+	}
+
+	char *filename = szFilename;
+
+	int length;
+	char *pFile;
+	char *aFile = pFile = (char *)LOAD_FILE_FOR_ME( filename, &length );
+
+	if ( !pFile || !length )
+	{
+		return;
+	}
+
+	while ( 1 )
+	{
+		pFile = COM_Parse( pFile );
+
+		if ( strlen( com_token ) <= 0 )
+			break;
+
+		if ( strcmp( com_token, "precache" ) )
+		{
+			ALERT( at_console, " *\n" );
+			ALERT( at_console, " * GetTokenFromItem parsing error: %s - unknown token!\n", com_token );
+			ALERT( at_console, " * Probably should be precache\n" );
+			ALERT( at_console, " *\n" );
+			FREE_FILE( aFile );
+			return;
+		}
+
+		pFile = COM_Parse( pFile );
+		if ( com_token[0] != '{' )
+		{
+			ALERT( at_console, " *\n" );
+			ALERT( at_console, " * GetTokenFromItem parsing error: expecting { after precache\n" );
+			ALERT( at_console, " *\n" );
+			break;
+		}
+
+		while ( 1 )
+		{
+			pFile = COM_Parse( pFile );
+			if ( com_token[0] == '}' )
+				break;
+
+			if ( !strcmp( "model", com_token ) )
+			{
+				pFile = COM_Parse( pFile );
+
+				foundmodels++;
+
+				world_precache_models[foundmodels] = ALLOC_STRING( com_token );
+			}
+			else if ( !strcmp( "sound", com_token ) )
+			{
+				pFile = COM_Parse( pFile );
+
+				foundsounds++;
+
+				world_precache_sounds[foundsounds] = ALLOC_STRING( com_token );
+			}
+			else if ( !strcmp( "sprite", com_token ) )
+			{
+				pFile = COM_Parse( pFile );
+
+				foundsprites++;
+
+				world_precache_sprites[foundsprites] = ALLOC_STRING( com_token );
+			}
+			else
+			{
+				ALERT( at_console, " *\n" );
+				ALERT( at_console, " * GetTokenFromItem parsing error: %s - unknown section name\n", com_token );
+				ALERT( at_console, " *\n" );
+			}
+		}
+
+		precachetokenCounter++;
+	}
+
+	FREE_FILE( aFile );
+
+	for ( int j = 1; j <= foundmodels; j++ )
+	{
+		if ( world_precache_models[j] )
+			PRECACHE_MODEL( (char *)STRING( world_precache_models[j] ) );
+	}
+
+	for ( int k = 1; k <= foundsounds; k++ )
+	{
+		if ( world_precache_sounds[k] )
+			PRECACHE_SOUND( (char *)STRING( world_precache_sounds[k] ) );
+	}
+
+	for ( int l = 1; l <= foundmodels; l++ )
+	{
+		if ( world_precache_sprites[l] )
+			PRECACHE_MODEL( (char *)STRING( world_precache_sprites[l] ) );
+	}
 }
 
 void CWorld :: Precache( void )
 {
+	if ( strstr( STRING( gpGlobals->mapname ), "doc_" ) )
+		g_iDoctorMode = 1;
+	else
+		g_iDoctorMode = 0;
+
+	g_iSurvivalMode = 0;
+
 	//LRC - set up the world lists
 	g_pWorld = this;
 	m_pAssistLink = NULL;
 	m_pFirstAlias = NULL;
 //	ALERT(at_console, "Clearing AssistList\n");
 
+	m_iSimonMode = 0;
 	g_pLastSpawn = NULL;
 	
 #if 1
@@ -505,11 +750,53 @@ void CWorld :: Precache( void )
 
 	// Set up game rules
 	if (g_pGameRules)
-	{
 		delete g_pGameRules;
-	}
+
+
+	if ( gpGlobals->mapname && !strcmp( STRING( gpGlobals->mapname ), "c_doc_city" ) )
+		CVAR_SET_FLOAT( "difficulty", 2 );
 
 	g_pGameRules = InstallGameRules( );
+
+	if ( g_pGameRules )
+	{
+		g_pGameRules->m_bInLobby = false;
+		g_pGameRules->m_bStartingGameFromLobby = false;
+		g_pGameRules->m_iLobbyCount = 0;
+		g_pGameRules->m_flNextLobbyCountDownTime = 0;
+		g_pGameRules->m_bStartingGameFromLobby = false;
+		g_pGameRules->m_flLobbyStartOverrideTime = 0;
+	}
+
+	if ( g_pGameRules && g_pGameRules->IsMultiplayer() )
+	{
+		if ( pev->iuser1 )
+		{
+			g_pGameRules->m_bInLobby = true;
+
+			if ( g_pLevelChange )
+			{
+				memset( g_pLevelChange->playervariablestruct, 0, sizeof( g_pLevelChange->playervariablestruct ) );
+				memset( g_pLevelChange->playervariablestructstats, 0, sizeof( g_pLevelChange->playervariablestructstats ) );
+			}
+
+			if ( CVAR_GET_FLOAT( "mp_footsteps" ) > 1 )
+				g_pGameRules->m_flLobbyStartOverrideTime = CVAR_GET_FLOAT( "mp_footsteps" ) + gpGlobals->time;
+			else
+				g_pGameRules->m_flLobbyStartOverrideTime = 0;
+
+			for ( int i = 1; i <= 32; i++ )
+				g_pGameRules->m_bReady[i] = false;
+		}
+
+		if ( !g_pLevelChange )
+			g_pLevelChange = new CCoopLevelChangeManager;
+	}
+	else
+	{
+		if ( g_pLevelChange )
+			delete g_pLevelChange;
+	}
 
 	//!!!UNDONE why is there so much Spawn code in the Precache function? I'll just keep it here 
 
@@ -545,13 +832,13 @@ void CWorld :: Precache( void )
 // sounds used from C physics code
 	PRECACHE_SOUND("common/null.wav");				// clears sound channels
 
-	PRECACHE_SOUND( "items/suitchargeok1.wav" );//!!! temporary sound for respawning weapons.
-	PRECACHE_SOUND( "items/gunpickup2.wav" );// player picks up a gun.
-
-	PRECACHE_SOUND( "common/bodydrop3.wav" );// dead bodies hitting the ground (animation events)
+	PRECACHE_SOUND( "common/bodydrop1.wav" );// dead bodies hitting the ground (animation events)
+	PRECACHE_SOUND( "common/bodydrop2.wav" );
+	PRECACHE_SOUND( "common/bodydrop3.wav" );
 	PRECACHE_SOUND( "common/bodydrop4.wav" );
 	
-	g_Language = (int)CVAR_GET_FLOAT( "sv_language" );
+	g_Language = 0;
+
 	if ( g_Language == LANGUAGE_GERMAN )
 	{
 		PRECACHE_MODEL( "models/germangibs.mdl" );
@@ -562,6 +849,11 @@ void CWorld :: Precache( void )
 		PRECACHE_MODEL( "models/agibs.mdl" );
 	}
 
+	PRECACHE_SOUND ("common/npc_step1.wav");
+	PRECACHE_SOUND ("common/npc_step2.wav");
+	PRECACHE_SOUND ("common/npc_step3.wav");
+	PRECACHE_SOUND ("common/npc_step4.wav");
+
 	PRECACHE_SOUND ("weapons/ric1.wav");
 	PRECACHE_SOUND ("weapons/ric2.wav");
 	PRECACHE_SOUND ("weapons/ric3.wav");
@@ -569,6 +861,18 @@ void CWorld :: Precache( void )
 	PRECACHE_SOUND ("weapons/ric5.wav");
 
 	PRECACHE_MODEL( "sprites/null.spr" ); //LRC
+
+	PRECACHE_MODEL( "sprites/muzzleflash.spr" );
+
+
+	SpecialMapPrecache( true );
+
+
+	if ( gpGlobals->mapname && !strcmp( STRING( gpGlobals->mapname ), "c_start" ) )
+		UTIL_PrecacheOther( "dave_benson_phillips" );
+
+	if ( g_pGameRules && g_pGameRules->IsMultiplayer() )
+		UTIL_PrecacheOther( "monster_booksimon" );
 
 //
 // Setup light animation tables. 'a' is total darkness, 'z' is maxbright.
@@ -652,6 +956,8 @@ void CWorld :: Precache( void )
 	{
 		CVAR_SET_FLOAT( "mp_defaultteam", 0 );
 	}
+
+	memset( cutscene_sound_array, 0, sizeof( cutscene_sound_array ) );
 }
 
 
@@ -660,15 +966,32 @@ void CWorld :: Precache( void )
 //
 void CWorld :: KeyValue( KeyValueData *pkvd )
 {
+	m_bHadSimonMode = false;
+
 	if ( FStrEq(pkvd->szKeyName, "skyname") )
 	{
 		// Sent over net now.
 		CVAR_SET_STRING( "sv_skyname", pkvd->szValue );
 		pkvd->fHandled = TRUE;
 	}
+	else if ( FStrEq(pkvd->szKeyName, "materialstxt") )
+	{
+		// Sent over net now.
+		CVAR_SET_STRING( "sv_custommaterials", pkvd->szValue );
+		pkvd->fHandled = TRUE;
+	}
 	else if ( FStrEq(pkvd->szKeyName, "sounds") )
 	{
 		gpGlobals->cdAudioTrack = atoi(pkvd->szValue);
+		pkvd->fHandled = TRUE;
+	}
+	else if ( FStrEq(pkvd->szKeyName, "nosimon") )
+	{
+		int value = atoi(pkvd->szValue);
+
+		if ( value )
+			m_bHadSimonMode = true;
+
 		pkvd->fHandled = TRUE;
 	}
 	else if ( FStrEq(pkvd->szKeyName, "WaveHeight") )
@@ -686,6 +1009,46 @@ void CWorld :: KeyValue( KeyValueData *pkvd )
 	else if ( FStrEq(pkvd->szKeyName, "chaptertitle") )
 	{
 		pev->netname = ALLOC_STRING(pkvd->szValue);
+		pkvd->fHandled = TRUE;
+	}
+	else if ( FStrEq(pkvd->szKeyName, "player1") )
+	{
+		player1model = ALLOC_STRING(pkvd->szValue);
+		pkvd->fHandled = TRUE;
+	}
+	else if ( FStrEq(pkvd->szKeyName, "player2") )
+	{
+		player2model = ALLOC_STRING(pkvd->szValue);
+		pkvd->fHandled = TRUE;
+	}
+	else if ( FStrEq(pkvd->szKeyName, "player3") )
+	{
+		player3model = ALLOC_STRING(pkvd->szValue);
+		pkvd->fHandled = TRUE;
+	}
+	else if ( FStrEq(pkvd->szKeyName, "player4") )
+	{
+		player4model = ALLOC_STRING(pkvd->szValue);
+		pkvd->fHandled = TRUE;
+	}
+	else if ( FStrEq(pkvd->szKeyName, "customsleeve") )
+	{
+		m_sCustomSleeve = ALLOC_STRING(pkvd->szValue);
+		pkvd->fHandled = TRUE;
+	}
+	else if ( FStrEq(pkvd->szKeyName, "customfingers") )
+	{
+		m_sCustomFingers = ALLOC_STRING(pkvd->szValue);
+		pkvd->fHandled = TRUE;
+	}
+	else if ( FStrEq(pkvd->szKeyName, "customgloves") )
+	{
+		guess_m_sCustomGloves = ALLOC_STRING(pkvd->szValue);
+		pkvd->fHandled = TRUE;
+	}
+	else if ( FStrEq(pkvd->szKeyName, "doctormap") )
+	{
+		m_sCustomDoctorMap = ALLOC_STRING(pkvd->szValue);
 		pkvd->fHandled = TRUE;
 	}
 	else if ( FStrEq(pkvd->szKeyName, "startdark") )
@@ -733,6 +1096,24 @@ void CWorld :: KeyValue( KeyValueData *pkvd )
 	else if ( FStrEq(pkvd->szKeyName, "allowmonsters") )
 	{
 		CVAR_SET_FLOAT( "mp_allowmonsters", atof(pkvd->szValue) );
+		pkvd->fHandled = TRUE;
+	}
+	else if ( FStrEq(pkvd->szKeyName, "noitemdropping") )
+	{
+		if ( atoi(pkvd->szValue) )
+		{
+			pev->spawnflags |= 8;
+		}
+		pkvd->fHandled = TRUE;
+	}
+	else if ( FStrEq(pkvd->szKeyName, "lobbymap") )
+	{
+		pev->iuser1 = atoi(pkvd->szValue);
+		pkvd->fHandled = TRUE;
+	}
+	else if ( FStrEq(pkvd->szKeyName, "dualrevolver") )
+	{
+		pev->iuser3 = atoi(pkvd->szValue);
 		pkvd->fHandled = TRUE;
 	}
 //LRC- ends
