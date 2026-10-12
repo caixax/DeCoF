@@ -33,12 +33,8 @@ def run(args, quiet=False):
     return res.returncode
 
 
-def main():
-    argv = sys.argv[1:]
-    dll = ["--dll", argv[argv.index("--dll") + 1]] if "--dll" in argv else []
-    units = [a for i, a in enumerate(argv) if not a.startswith("--") and (i == 0 or argv[i - 1] != "--dll")]
-    if not units:
-        sys.exit(__doc__)
+def lock():
+    """Take the naming lock (also used by tools/add_name.py)."""
     os.makedirs(os.path.dirname(LOCK), exist_ok=True)
     while True:
         try:
@@ -46,13 +42,29 @@ def main():
             break
         except FileExistsError:
             # a lock older than 30 minutes is left over from a killed run
-            if time.time() - os.path.getmtime(LOCK) > 1800:
-                os.remove(LOCK)
+            try:
+                if time.time() - os.path.getmtime(LOCK) > 1800:
+                    os.remove(LOCK)
+                    continue
+            except OSError:
                 continue
             time.sleep(5)
+    os.write(fd, str(os.getpid()).encode())
+    os.close(fd)
+
+
+def unlock():
+    os.remove(LOCK)
+
+
+def main():
+    argv = sys.argv[1:]
+    dll = ["--dll", argv[argv.index("--dll") + 1]] if "--dll" in argv else []
+    units = [a for i, a in enumerate(argv) if not a.startswith("--") and (i == 0 or argv[i - 1] != "--dll")]
+    if not units:
+        sys.exit(__doc__)
+    lock()
     try:
-        os.write(fd, str(os.getpid()).encode())
-        os.close(fd)
         tools = os.path.join(ROOT, "tools")
         if run([os.path.join(tools, "build.py"), "base"] + units):
             sys.exit("a unit does not compile: fix it first")
@@ -62,7 +74,7 @@ def main():
         run([os.path.join(tools, "sync_names.py")] + dll)
         run([os.path.join(tools, "build.py"), "target"] + units)
     finally:
-        os.remove(LOCK)
+        unlock()
 
 
 if __name__ == "__main__":

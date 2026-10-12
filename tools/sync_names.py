@@ -81,6 +81,14 @@ def main():
             if m and m.group(1) in units:
                 byte_unit[int(b["va"], 16)] = m.group(1)
 
+    # a position name says which object holds the function too
+    pp = os.path.join(ROOT, "tools", "symbols", "%s_position.csv" % dll)
+    if os.path.exists(pp):
+        for b in csv.DictReader(open(pp)):
+            m = re.search(r"^position in %s/(\S+) " % dll, b["evidence"])
+            if m and m.group(1) in units:
+                byte_unit[int(b["va"], 16)] = m.group(1)
+
     head = {}
     if "--since-head" in sys.argv:
         import io

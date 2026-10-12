@@ -28,6 +28,8 @@ import struct
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from decorate_names import short_name, undecorate  # noqa: E402
 
 
 def coff_order(path):
@@ -78,10 +80,20 @@ def main():
         if r["kind"] == "func":
             names[int(r["va"], 16)] = r["name"]
     retail_names = set(names.values())
+    index = json.load(open(os.path.join(ROOT, "build", "ref_index.json")))
+    side = "client" if dll == "client" else "server"
+    defined_in = {k: v for k, v in index.items() if k.endswith("/" + side)}
     proposals = []
     for unit in units:
         src = unit.split("/", 1)[1]
-        ours = [(n, s) for n, s in coff_order(os.path.join(ROOT, paths[unit]["base_path"])) if "@std@@" not in n]
+        # library templates (STL, VGUI1 Dar) live with whichever object
+        # first used them, not with this one
+        ours = [(n, s) for n, s in coff_order(os.path.join(ROOT, paths[unit]["base_path"])) if "@std@@" not in n and "@vgui@@" not in n]
+        # so do inline functions of headers (cl_util.h ConsolePrint): the
+        # reference index says where each function is defined
+        short = undecorate([n for n, _s in ours if n.startswith("?")])
+        ours = [(n, s) for n, s in ours
+                if not any(v.get(short_name(short.get(n, "")) or n, "").endswith(".h") for v in defined_in.values())]
         mine = [r for r in rows if os.path.splitext(r["source_file"].replace("guess:", ""))[0] == src]
         if not mine:
             print("%s: no rows" % unit)
@@ -117,11 +129,26 @@ def main():
             edge = ra == -1 or rb == len(window)
             if not gap_r and not gap_o:
                 continue
+            before = names.get(int(window[ra]["va"], 16), "start") if ra >= 0 else "start"
             if len(gap_r) == len(gap_o) and not edge:
                 for r, (n, s) in zip(gap_r, gap_o):
-                    before = names.get(int(window[ra]["va"], 16), "start") if ra >= 0 else "start"
                     proposals.append((r["va"], n, r["size"], s, unit, label, before))
-            elif gap_r or gap_o:
+            elif edge and gap_r and gap_o and 0 <= ra or edge and gap_r and gap_o and rb < len(window):
+                # at a window edge the retail rows next to the anchor are the
+                # first (or last) functions of this object; pair outward from
+                # the anchor while the sizes stay close, stop at the first
+                # pair that does not fit (a function of the neighbouring file)
+                pairs = list(zip(gap_r[::-1], gap_o[::-1])) if ra == -1 else list(zip(gap_r, gap_o))
+                taken = 0
+                for r, (n, s) in pairs:
+                    rs = int(r["size"] or 0)
+                    if not rs or not 0.75 <= s / rs <= 1.33:
+                        break
+                    proposals.append((r["va"], n, r["size"], s, unit, label, before if ra >= 0 else "edge before the first anchor"))
+                    taken += 1
+                print("%s: window edge after %s: %d retail, %d ours, %d paired by size" % (
+                    unit, before[:40], len(gap_r), len(gap_o), taken))
+            if (gap_r or gap_o) and not (edge and gap_r and gap_o) and len(gap_r) != len(gap_o):
                 print("%s: gap after %s: %d retail, %d ours%s" % (
                     unit, names.get(int(window[ra]["va"], 16), "?")[:40] if ra >= 0 else "window start",
                     len(gap_r), len(gap_o), " (window edge)" if edge else ""))
