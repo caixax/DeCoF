@@ -32,6 +32,7 @@
 #include "gamerules.h"
 #include "movewith.h"
 #include "locus.h"
+#include <cmath>
 
 char *GetCustomMPModel( char *s )
 {
@@ -117,6 +118,72 @@ float UTIL_WeaponTimeBase( void )
 #else
 	return gpGlobals->time;
 #endif
+}
+
+extern int gmsgPlaySFX;
+
+// CoF 1.6a (no symbol): sends a weapon sound to the clients (PlaySFX message)
+void guess_UTIL_PlayWeaponSound( const char *sample, int guess_iParam2, bool guess_bParam3, Vector vecOrigin, CBaseEntity *pPlayer, bool guess_bParam6 )
+{
+	int guess_iParam3 = guess_bParam3;
+
+	if ( g_pGameRules->IsMultiplayer() )
+	{
+		CBasePlayer *guess_pPlayer = GetClassPtr( (CBasePlayer *)pPlayer->pev );
+		vecOrigin = guess_pPlayer->GetGunPosition();
+
+		if ( strstr( sample, "weapons" ) && guess_bParam6 )
+		{
+			for ( int i = 1; i <= gpGlobals->maxClients; i++ )
+			{
+				CBaseEntity *guess_pEntity = UTIL_PlayerByIndex( i );
+				if ( !guess_pEntity )
+					continue;
+
+				MESSAGE_BEGIN( MSG_ONE, gmsgPlaySFX, NULL, guess_pEntity->pev );
+					WRITE_STRING( sample );
+					WRITE_BYTE( guess_iParam2 );
+					WRITE_BYTE( guess_iParam3 );
+					WRITE_COORD( vecOrigin.x );
+					WRITE_COORD( vecOrigin.y );
+					WRITE_COORD( vecOrigin.z );
+					if ( guess_pEntity == pPlayer )
+						WRITE_BYTE( 0 );
+					else
+						WRITE_BYTE( 1 );
+					WRITE_SHORT( ENTINDEX( guess_pEntity->edict() ) );
+				MESSAGE_END();
+			}
+			return;
+		}
+	}
+
+	if ( guess_bParam6 )
+	{
+		MESSAGE_BEGIN( MSG_ALL, gmsgPlaySFX );
+		WRITE_STRING( sample );
+		WRITE_BYTE( guess_iParam2 );
+		WRITE_BYTE( guess_iParam3 );
+		WRITE_COORD( vecOrigin.x );
+		WRITE_COORD( vecOrigin.y );
+		WRITE_COORD( vecOrigin.z );
+		WRITE_BYTE( 0 );
+		WRITE_SHORT( 1 );
+		MESSAGE_END();
+	}
+	else
+	{
+		MESSAGE_BEGIN( MSG_ONE, gmsgPlaySFX, NULL, pPlayer->pev );
+		WRITE_STRING( sample );
+		WRITE_BYTE( guess_iParam2 );
+		WRITE_BYTE( guess_iParam3 );
+		WRITE_COORD( vecOrigin.x );
+		WRITE_COORD( vecOrigin.y );
+		WRITE_COORD( vecOrigin.z );
+		WRITE_BYTE( 0 );
+		WRITE_SHORT( 1 );
+		MESSAGE_END();
+	}
 }
 
 static unsigned int glSeed = 0; 
@@ -385,6 +452,26 @@ TYPEDESCRIPTION	gEntvarsDescription[] =
 	DEFINE_ENTITY_FIELD( air_finished, FIELD_TIME ),
 	DEFINE_ENTITY_FIELD( pain_finished, FIELD_TIME ),
 	DEFINE_ENTITY_FIELD( radsuit_finished, FIELD_TIME ),
+
+	DEFINE_ENTITY_FIELD( iuser1, FIELD_INTEGER ),
+	DEFINE_ENTITY_FIELD( iuser2, FIELD_INTEGER ),
+	DEFINE_ENTITY_FIELD( iuser3, FIELD_INTEGER ),
+	DEFINE_ENTITY_FIELD( iuser4, FIELD_INTEGER ),
+
+	DEFINE_ENTITY_FIELD( fuser1, FIELD_FLOAT ),
+	DEFINE_ENTITY_FIELD( fuser2, FIELD_FLOAT ),
+	DEFINE_ENTITY_FIELD( fuser3, FIELD_FLOAT ),
+	DEFINE_ENTITY_FIELD( fuser4, FIELD_FLOAT ),
+
+	DEFINE_ENTITY_FIELD( vuser1, FIELD_VECTOR ),
+	DEFINE_ENTITY_FIELD( vuser2, FIELD_VECTOR ),
+	DEFINE_ENTITY_FIELD( vuser3, FIELD_VECTOR ),
+	DEFINE_ENTITY_FIELD( vuser4, FIELD_VECTOR ),
+
+	DEFINE_ENTITY_FIELD( euser1, FIELD_EDICT ),
+	DEFINE_ENTITY_FIELD( euser2, FIELD_EDICT ),
+	DEFINE_ENTITY_FIELD( euser3, FIELD_EDICT ),
+	DEFINE_ENTITY_FIELD( euser4, FIELD_EDICT ),
 };
 
 #define ENTVARS_COUNT		(sizeof(gEntvarsDescription)/sizeof(gEntvarsDescription[0]))
@@ -1313,6 +1400,208 @@ void UTIL_ShowMessageAll( const char *pString )
 	}
 }
 
+extern int gmsgModelAttach;
+
+#undef SET_VIEW
+void SET_VIEW( edict_t *pClient, edict_t *pViewent )
+{
+	entvars_t *pev = &pClient->v;
+
+	CBaseEntity *player = CBaseEntity::Instance( pClient );
+
+	if ( player && player->IsPlayer() )
+	{
+		MESSAGE_BEGIN( MSG_ONE, gmsgModelAttach, NULL, player->pev );
+			WRITE_SHORT( -1 );
+			WRITE_BYTE( -1 );
+		MESSAGE_END();
+
+		CBasePlayer *pPlayer = GetClassPtr( (CBasePlayer *)player->pev );
+
+		if ( pPlayer )
+		{
+			pPlayer->m_iViewEntIndex = ENTINDEX( pViewent );
+		}
+	}
+
+	(*g_engfuncs.pfnSetView)( pClient, pViewent );
+}
+
+extern int gmsgRipple;
+
+void WaterSplash( CBaseEntity *pEntity, Vector Origin )
+{
+	Vector start = pEntity->pev->origin + pEntity->pev->view_ofs;
+	Vector end = start - Vector( 0, 0, 100 );
+
+	TraceResult tr;
+	UTIL_TraceLine( start, end, ignore_monsters, dont_ignore_glass, ENT( pEntity->pev ), &tr );
+
+	if ( tr.flFraction != 1.0 )
+	{
+		if ( UTIL_PointContents( tr.vecEndPos ) == CONTENTS_WATER )
+		{
+			Vector SplashOrigin = tr.vecEndPos;
+
+			while ( UTIL_PointContents( SplashOrigin ) == CONTENTS_WATER )
+				SplashOrigin.z += 1;
+
+			MESSAGE_BEGIN( MSG_ALL, gmsgRipple );
+				WRITE_COORD( SplashOrigin.x );
+				WRITE_COORD( SplashOrigin.y );
+				WRITE_COORD( SplashOrigin.z );
+				WRITE_SHORT( 40 );
+			MESSAGE_END();
+		}
+	}
+}
+
+void UTIL_SplashCalculation( CBaseEntity *pEntity, int splashtype )
+{
+	Vector Position;
+
+	if ( FNullEnt( pEntity ) )
+		return;
+
+	Vector start = pEntity->pev->origin + pEntity->pev->view_ofs;
+	Vector end = start - Vector( 0, 0, 100 );
+
+	TraceResult tr;
+	UTIL_TraceLine( start, end, ignore_monsters, dont_ignore_glass, ENT( pEntity->pev ), &tr );
+
+	if ( tr.flFraction != 1.0 )
+	{
+		if ( UTIL_PointContents( tr.vecEndPos ) == CONTENTS_WATER )
+		{
+			// Position is never set, WaterSplash does not use it
+			WaterSplash( pEntity, Position );
+
+			switch ( splashtype )
+			{
+			case 1:
+				EMIT_SOUND_DYN( ENT( pEntity->pev ), CHAN_AUTO, "player/water_small_splash.wav", 1, ATTN_NORM, 0, 100 + RANDOM_LONG( -5, 5 ) );
+				break;
+			case 2:
+				EMIT_SOUND_DYN( ENT( pEntity->pev ), CHAN_AUTO, "player/water_splash.wav", 1, ATTN_NORM, 0, 100 + RANDOM_LONG( -5, 5 ) );
+				break;
+			case 3:
+				EMIT_SOUND_DYN( ENT( pEntity->pev ), CHAN_AUTO, "player/water_jump.wav", 1, ATTN_NORM, 0, 100 + RANDOM_LONG( -5, 5 ) );
+				break;
+			}
+		}
+	}
+}
+
+BOOL UTIL_WallBetween( Vector vecA, Vector vecB, edict_t *pentIgnore, CBaseEntity *pCheckEnt )
+{
+	TraceResult tr;
+	UTIL_TraceLine( vecA, vecB, ignore_monsters, pentIgnore, &tr );
+
+	if ( tr.flFraction >= 1.0 )
+	{
+		UTIL_TraceHull( vecA, vecB, dont_ignore_monsters, head_hull, pentIgnore, &tr );
+		if ( tr.flFraction < 1.0 )
+		{
+			CBaseEntity *pHit = CBaseEntity::Instance( tr.pHit );
+			if ( !pHit || pHit->IsBSPModel() )
+				return TRUE;
+		}
+	}
+
+	if ( tr.flFraction < 1.0 )
+	{
+		CBaseEntity *pEntity = CBaseEntity::Instance( tr.pHit );
+
+		if ( pEntity->IsBSPModel() )
+			return TRUE;
+
+		if ( pEntity != pCheckEnt )
+		{
+			if ( pEntity && pEntity->Classify() && pEntity->Classify() != CLASS_MACHINE )
+				return TRUE;
+			else
+				return TRUE;
+		}
+	}
+
+	return FALSE;
+}
+
+BOOL UTIL_BrushEntInSight( Vector vecA, Vector vecB, edict_t *pentIgnore, CBaseEntity *pCheckEnt )
+{
+	TraceResult tr;
+	UTIL_TraceLine( vecA, vecB, ignore_monsters, pentIgnore, &tr );
+
+	CBaseEntity *pList[32];
+	int count = UTIL_EntitiesInBox( pList, 32, pCheckEnt->pev->mins, pCheckEnt->pev->maxs, FL_CLIENT );
+
+	for ( int i = 0; i < count; i++ )
+	{
+		if ( pList[i]->IsPlayer() )
+		{
+			CBaseEntity *pToucher = CBaseEntity::Instance( pentIgnore );
+			if ( pToucher && pToucher == pList[i] )
+				return TRUE;
+		}
+	}
+
+	if ( tr.flFraction >= 1.0 )
+	{
+		UTIL_TraceHull( vecA, vecB, dont_ignore_monsters, head_hull, pentIgnore, &tr );
+		if ( tr.flFraction < 1.0 )
+		{
+			CBaseEntity *pHit = CBaseEntity::Instance( tr.pHit );
+			if ( !pHit || pHit->IsBSPModel() )
+			{
+				if ( FClassnameIs( pHit->pev, "worldspawn" ) )
+					return FALSE;
+
+				if ( FClassnameIs( pHit->pev, STRING( pCheckEnt->pev->classname ) ) )
+					return TRUE;
+			}
+		}
+	}
+
+	if ( tr.flFraction < 1.0 )
+	{
+		CBaseEntity *pEntity = CBaseEntity::Instance( tr.pHit );
+
+		if ( pEntity && pEntity->Classify() && pEntity->Classify() != CLASS_MACHINE )
+			return FALSE;
+
+		if ( FClassnameIs( pEntity->pev, "worldspawn" ) )
+			return FALSE;
+
+		if ( pEntity == pCheckEnt )
+			return TRUE;
+	}
+
+	return FALSE;
+}
+
+extern int gmsgProFont;
+
+void UTIL_ProMessage( CBaseEntity *pEntity, const char *pMessage, int colour, bool all )
+{
+	if ( !all && ( !pEntity || !pEntity->IsNetClient() ) )
+		return;
+
+	if ( all )
+	{
+		MESSAGE_BEGIN( MSG_ALL, gmsgProFont );
+			WRITE_BYTE( colour );
+			WRITE_STRING( pMessage );
+		MESSAGE_END();
+	}
+	else
+	{
+		MESSAGE_BEGIN( MSG_ONE_UNRELIABLE, gmsgProFont, NULL, pEntity->pev );
+			WRITE_BYTE( colour );
+			WRITE_STRING( pMessage );
+		MESSAGE_END();
+	}
+}
+
 void UTIL_ShowMessagePVS( const char *pString, const Vector &org ) // buz
 {
 	// loop through all players
@@ -1390,6 +1679,9 @@ void UTIL_SetEdictOrigin( edict_t *pEdict, const Vector &vecOrigin )
 // 'links' the entity into the world
 void UTIL_SetOrigin( CBaseEntity *pEntity, const Vector &vecOrigin )
 {
+	if ( pEntity->IsPlayer() )
+		((CBasePlayer *)pEntity)->m_vPreviousOrigin = vecOrigin;
+
 	SET_ORIGIN(ENT(pEntity->pev), vecOrigin );
 }
 
@@ -1597,7 +1889,18 @@ void UTIL_BloodStream( const Vector &origin, const Vector &direction, int color,
 	MESSAGE_END();
 }				
 
-void UTIL_BloodDrips( const Vector &origin, const Vector &direction, int color, int amount )
+class CParticle : public CPointEntity
+{
+public:
+	virtual void Spawn( void );
+	virtual void Precache( void );
+	virtual void SendInitMessage( CBasePlayer *player );
+	void KillParticle( void );
+	static CParticle *CreateParticle( int message, bool starton, Vector origin, int weaponattachment, float life, CBaseEntity *attachentity, float velocityx, float velocityy, float velocityz );
+	virtual void Use( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE useType, float value );
+};
+
+void UTIL_BloodDrips( const Vector &origin, const Vector &direction, int color, int amount, Vector velocity )
 {
 	if ( !UTIL_ShouldShowBlood( color ) )
 		return;
@@ -1605,6 +1908,9 @@ void UTIL_BloodDrips( const Vector &origin, const Vector &direction, int color, 
 	if ( color == DONT_BLEED || amount == 0 )
 		return;
 
+	CParticle *m_pParticle = CParticle::CreateParticle( MAKE_STRING( "aurora/blood_shot.aur" ), true, origin, 0, 0.25, NULL, velocity.x, velocity.y, velocity.z );
+
+/*
 	if ( g_Language == LANGUAGE_GERMAN && color == BLOOD_COLOR_RED )
 		color = 0;
 
@@ -1627,7 +1933,8 @@ void UTIL_BloodDrips( const Vector &origin, const Vector &direction, int color, 
 		WRITE_BYTE( color );								// color index into host_basepal
 		WRITE_BYTE( min( max( 3, amount / 10 ), 16 ) );		// size
 	MESSAGE_END();
-}				
+*/
+}
 
 Vector UTIL_RandomBloodVector( void )
 {
@@ -2091,10 +2398,58 @@ void UTIL_BubbleTrail( Vector from, Vector to, int count )
 }
 
 
+extern int gmsgBossBar;
+
 void UTIL_Remove( CBaseEntity *pEntity )
 {
 	if ( !pEntity )
 		return;
+
+	if ( pEntity->m_bIsBoss )
+	{
+		pEntity->m_bIsBoss = false;
+
+		for ( int i = 1; i <= gpGlobals->maxClients; i++ )
+		{
+			CBaseEntity *player = UTIL_PlayerByIndex( i );
+
+			if ( player )
+			{
+				if ( player->IsPlayer() )
+				{
+					CBasePlayer *pPlayer = GetClassPtr( (CBasePlayer *)player->pev );
+					if ( pPlayer )
+					{
+						if ( FStrEq( STRING( pEntity->pev->targetname ), STRING( pPlayer->m_sBossName ) ) )
+						{
+							pPlayer->m_iBossCurrentHealth = pEntity->pev->health;
+
+							if ( pPlayer->m_iBossCurrentHealth < 0 )
+								pPlayer->m_iBossCurrentHealth = 0;
+
+							pPlayer->m_sBossName = 0;
+
+							MESSAGE_BEGIN( MSG_ONE, gmsgBossBar, NULL, pPlayer->pev );
+								WRITE_BYTE( 2 );
+								WRITE_STRING( STRING( pPlayer->m_sBossBarEmpty ) );
+								WRITE_STRING( STRING( pPlayer->m_sBossBarFull ) );
+								WRITE_SHORT( pPlayer->m_iBossCurrentHealth );
+								WRITE_SHORT( pPlayer->m_iBossMaxHealth );
+							MESSAGE_END();
+
+							pEntity->m_bIsBoss = false;
+							pPlayer->m_bBossHealthBar = false;
+							pPlayer->m_sBossBarEmpty = 0;
+							pPlayer->m_sBossBarFull = 0;
+							pPlayer->m_iBossMaxHealth = 0;
+							pPlayer->m_iBossCurrentHealth = 0;
+							pPlayer->m_sBossName = 0;
+						}
+					}
+				}
+			}
+		}
+	}
 
 	pEntity->UpdateOnRemove();
 	pEntity->pev->flags |= FL_KILLME;
@@ -2775,6 +3130,8 @@ void CSave :: BufferData( const char *pdata, int size )
 //
 // --------------------------------------------------------------
 
+int lastintegervalue;
+
 int CRestore::ReadField( void *pBaseData, TYPEDESCRIPTION *pFields, int fieldCount, int startField, int size, char *pName, void *pData )
 {
 	int i, j, stringCount, fieldNumber, entityIndex;
@@ -2905,6 +3262,7 @@ int CRestore::ReadField( void *pBaseData, TYPEDESCRIPTION *pFields, int fieldCou
 					case FIELD_BOOLEAN:
 					case FIELD_INTEGER:
 						*((int *)pOutputData) = *( int *)pInputData;
+						lastintegervalue = *( int *)pInputData;
 					break;
 
 					case FIELD_SHORT:

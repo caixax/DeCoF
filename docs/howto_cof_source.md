@@ -180,6 +180,14 @@ The 1.55 hl.dll is an unoptimized debug build of nearly the same source. `disasm
 - 1.55 save tables are 16-byte `TYPEDESCRIPTION` entries: reading them from the 1.55 data gives field order and types.
 - Unreferenced non-virtual methods (`CChainsawBoss::KillMonster`, `CRoofBoss::UpdateOnRemove`) are dropped from 1.6a by `/OPT:REF`; write them anyway.
 
+## Patterns from the HLSDK leftovers (util, sound, subs)
+
+- MSVC 19.27 compiles `flValue != 1.0` and `>= 1.0` on a float as ucomiss/comiss against a float constant, even where the 1.55 debug build shows a double compare. Write the constant as in the HLSDK; do not add an `f` suffix to force it.
+- Retail `movzx reg, byte [param]; mov [param], reg` at the start of a function is an int local initialized from a bool parameter at the top: `int iValue = bValue;`.
+- A full MESSAGE_BEGIN ... MESSAGE_END block written out in both branches of an if/else can match where one shared body after `if ( ... ) MESSAGE_BEGIN( ... ); else MESSAGE_BEGIN( ... );` gets a different register allocation. Try both.
+- gEntvarsDescription has 102 entries in 1.6a: iuser1-4, fuser1-4, vuser1-4 and euser1-4 are appended. The count shows as `push 0x66` in ReadEntVars, WriteEntVars and EntvarsKeyvalue.
+- The ScreenFade struct (engine/shake.h) is `float duration; float holdTime; int fadeFlags; byte r, g, b, a;` in 1.6a (16 bytes; 1.55 still has the HLSDK shorts).
+- A function at 80-99% whose bytes are identical is usually a delinker extent problem, not source: check the retail bytes before editing. Tell the main agent instead of changing code.
 ## What not to do
 
 - Do not edit shared headers (`cbase.h`, `weapons.h`, `player.h`, `util.h`, ...) without coordinating: several files depend on them.

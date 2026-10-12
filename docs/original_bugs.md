@@ -76,3 +76,8 @@ The reconstructed source keeps the behavior of the retail 1.6a binaries, includi
 | `CDoctorBoss::DecideWhatToDo`, `MonsterThink`; `CDoctorHelper::Killed` (CoF_DoctorBoss.cpp) | Case 0 falls through into case 1 and then case 2; the `m_iGunType` switch has both gun branches inside each case; CDoctorHelper::Killed looks the doctor up and does nothing with it. | the case bodies and the unused result |
 | `CRuben::GetDamageAmount` (monster_ruben.cpp) | Returns a fixed 5 instead of a skill value. | the constant |
 | Sewer boss, chainsaw boss (CoF_SewerBoss.cpp, CoF_ChainsawBoss.cpp) | `IgnoreConditions` tests `ACT_MELEE_ATTACK1` twice (from the HLSDK zombie). | inherited |
+| `UTIL_SplashCalculation` (util.cpp) | Passes an uninitialized `Vector Position` to WaterSplash, which ignores that parameter. | the uninitialized local |
+| `UTIL_WallBetween` (util.cpp) | Calls Classify twice and returns TRUE on both branches; the null check on pEntity comes after the pointer is used. | both returns |
+| `UTIL_BrushEntInSight` (util.cpp) | `!pHit || pHit->IsBSPModel()` style test reads `pHit->pev` when pHit is NULL, pEntity can be NULL at FClassnameIs, and it passes `pev->mins/maxs` (local bounds, not absmin/absmax) to UTIL_EntitiesInBox. | the order of the tests and the bounds |
+| `UTIL_Remove` (util.cpp) | Sets `m_bIsBoss = false` twice. | the second store |
+| `guess_UTIL_PlayWeaponSound` (util.cpp) | Always sends entity index 1 in singleplayer. | the constant |
