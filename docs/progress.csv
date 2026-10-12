@@ -14872,7 +14872,7 @@ hl,10060E90,49,?Restore@CPhoneCall@@UAEHAAVCRestore@@@Z,CPhoneCall::Restore,COF,
 hl,10060ED0,95,?Save@CPhoneCall@@UAEHAAVCSave@@@Z,CPhoneCall::Save,COF,dlls/cof_phonecall.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10060F30,102,?Spawn@CPhoneCall@@UAEXXZ,CPhoneCall::Spawn,COF,dlls/cof_phonecall.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10060FA0,90,?Use@CPhoneCall@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CPhoneCall::Use,COF,dlls/cof_phonecall.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,10061000,530,?WaitForCall@CPhoneCall@@QAEXXZ,CPhoneCall::WaitForCall,COF,dlls/cof_phonecall.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,TODO,98.03,hl_1.55_to_1.6a.csv,
+hl,10061000,530,?WaitForCall@CPhoneCall@@QAEXXZ,CPhoneCall::WaitForCall,COF,dlls/cof_phonecall.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10061220,5,_cof_phonecall,cof_phonecall,HLSDK,dlls/cof_phonecall.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( cof_phonecall, CPhoneCall )"
 hl,10061230,92,??$GetClassPtr@VCPushableVan@@@@YAPAVCPushableVan@@PAV0@@Z,GetClassPtr<CPushableVan>,HLSDK,dlls/cof_pushablevan.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
 hl,10061290,28,?ObjectCaps@CPushableVan@@EAEHXZ,CPushableVan::ObjectCaps,COF,dlls/cof_pushablevan.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
