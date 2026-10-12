@@ -117,7 +117,6 @@
 ??$GetClassPtr@VCRainModify@@@@YAPAVCRainModify@@PAV0@@Z
 ??$GetClassPtr@VCRainSettings@@@@YAPAVCRainSettings@@PAV0@@Z
 ??$GetClassPtr@VCShake@@@@YAPAVCShake@@PAV0@@Z
-??0CShot@@QAE@XZ
 ??$GetClassPtr@VCSprite@@@@YAPAVCSprite@@PAV0@@Z
 ??$GetClassPtr@VCStaticDecal@@@@YAPAVCStaticDecal@@PAV0@@Z
 ??$GetClassPtr@VCTestEffect@@@@YAPAVCTestEffect@@PAV0@@Z
@@ -738,3 +737,4 @@ _cof_document
 ?UnlockCheck@CCofPhoneCheck@@QAEXH@Z
 ?VecToYaw@CEnvModel@@AAEMVVector@@@Z
 ?YesActivate@CCofYesNo@@QAEXPAVCBaseEntity@@@Z
+??$GetClassPtr@VCShot@@@@YAPAVCShot@@PAV0@@Z

@@ -15792,7 +15792,7 @@ hl,10092020,92,??$GetClassPtr@VCParticle@@@@YAPAVCParticle@@PAV0@@Z,GetClassPtr<
 hl,10092080,92,??$GetClassPtr@VCRainModify@@@@YAPAVCRainModify@@PAV0@@Z,GetClassPtr<CRainModify>,HLSDK,dlls/effects.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
 hl,100920E0,92,??$GetClassPtr@VCRainSettings@@@@YAPAVCRainSettings@@PAV0@@Z,GetClassPtr<CRainSettings>,HLSDK,dlls/effects.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
 hl,10092140,92,??$GetClassPtr@VCShake@@@@YAPAVCShake@@PAV0@@Z,GetClassPtr<CShake>,HLSDK,dlls/effects.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
-hl,100921A0,92,??0CShot@@QAE@XZ,CShot::CShot,SPIRIT,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,6.5,hl_1.55_to_1.6a.csv,
+hl,100921A0,92,??$GetClassPtr@VCShot@@@@YAPAVCShot@@PAV0@@Z,CShot>,SPIRIT,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_manual.csv,
 hl,10092200,92,??$GetClassPtr@VCSprite@@@@YAPAVCSprite@@PAV0@@Z,GetClassPtr<CSprite>,HLSDK,dlls/effects.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
 hl,10092260,92,??$GetClassPtr@VCStaticDecal@@@@YAPAVCStaticDecal@@PAV0@@Z,GetClassPtr<CStaticDecal>,HLSDK,dlls/effects.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
 hl,100922C0,92,??$GetClassPtr@VCTestEffect@@@@YAPAVCTestEffect@@PAV0@@Z,GetClassPtr<CTestEffect>,HLSDK,dlls/effects.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
