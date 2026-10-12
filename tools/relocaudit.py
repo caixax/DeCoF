@@ -45,6 +45,9 @@ def same_symbol(a, b):
         return True
     if b.startswith("?") and b[1:].startswith(a + "@"):
         return True
+    m = re.match(r"^(\w+)::RTTI_Type_Descriptor$", a)
+    if m and b == "??_R0?AV%s@@@8" % m.group(1):
+        return True
     m = re.match(r"^(\w+)::vftable$", a)
     return bool(m) and b == "??_7%s@@6B@" % m.group(1)
 
@@ -77,6 +80,61 @@ def unit_report(unit, extra):
     return {f["name"]: f.get("fuzzy_match_percent", 0.0) for u in rep.get("units", []) for f in u.get("functions", [])}
 
 
+_MAPS = {}
+
+
+def retail_map(dll):
+    """name -> retail address, address -> class (LIB rows) for one dll."""
+    if dll not in _MAPS:
+        import csv
+        names = {}
+        for r in csv.DictReader(open(os.path.join(ROOT, "build", "jobs", "symbols_%s.csv" % dll))):
+            names.setdefault(r["name"], int(r["va"], 16))
+        lib = set()
+        for r in csv.DictReader(open(os.path.join(ROOT, "docs", "progress.csv"))):
+            if r["dll"] == dll and r["class"] == "LIB":
+                lib.add(int(r["va"], 16))
+        _MAPS[dll] = (names, lib)
+    return _MAPS[dll]
+
+
+_OURS = {}
+
+
+def our_function(dll, name):
+    """(bytes, masked offsets) of one of our compiled functions, any unit."""
+    if dll not in _OURS:
+        import glob
+        from bytematch import coff_functions
+        funcs = {}
+        for path in glob.glob(os.path.join(ROOT, "build", "base", dll, "**", "*.obj"), recursive=True):
+            for n, f in coff_functions(path).items():
+                funcs.setdefault(n, f)
+        _OURS[dll] = funcs
+    return _OURS[dll].get(name)
+
+
+def same_place(dll, na, xa, nb, xb):
+    """The two targets are one retail place: the same address (an access
+    biased from a neighbouring global), a function folded by /OPT:ICF into
+    the retail one, or a CRT function the retail map names by its bytes."""
+    names, lib = retail_map(dll)
+    va = names.get(na)
+    if va is None:
+        return False
+    if va in lib:
+        return True
+    vb = names.get(nb)
+    if vb is not None:
+        return va + xa == vb + xb
+    f = our_function(dll, nb)
+    if f is None or xa or xb:
+        return False
+    code, masked = f
+    ret = objdiff_tool.retail_bytes(dll, va, len(code))
+    return len(ret) == len(code) and all(ret[i] == code[i] for i in range(len(code)) if i not in masked)
+
+
 def real_differences(unit):
     """{function: [(retail target, our target)]} for the functions of the
     unit that are at 100% in the plain report but whose relocations point
@@ -107,11 +165,17 @@ def differences(unit, fn):
         nb = objdiff_tool.reloc_name(d["right"], b)
         if not na or not nb or DEFAULT_NAME.search(na) or DEFAULT_NAME.search(nb):
             continue
-        if same_symbol(na, nb):
+        # two STL instantiations, or a CRT internal (common_strtime) against
+        # the public function: toolchain code, named by bytes on the retail side
+        if ("@std@@" in na and "@std@@" in nb) or (na.startswith("??$common_") and nb.startswith("_")):
+            continue
+        if same_symbol(na, nb) or na.startswith("FID_conflict:"):
             # the same global at another offset is another member
             xa, xb = objdiff_tool.reloc_addend(a), objdiff_tool.reloc_addend(b)
             if xa != xb and na == nb:
                 found.append(("%s+0x%x" % (na, xa), "%s+0x%x" % (nb, xb)))
+            continue
+        if same_place(unit.split("/")[0], na, objdiff_tool.reloc_addend(a), nb, objdiff_tool.reloc_addend(b)):
             continue
         found.append((na, nb))
     return sorted(set(found))

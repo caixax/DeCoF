@@ -41,12 +41,21 @@ def main():
     try:
         path = os.path.join(ROOT, "tools", "symbols", "%s_manual.csv" % dll)
         rows = list(csv.DictReader(open(path))) if os.path.exists(path) else []
+        for r in rows:
+            # an evidence text with an unquoted comma reads as extra fields
+            extra = r.pop(None, None)
+            if extra:
+                r["evidence"] = ",".join([r["evidence"]] + extra)
         rows = [r for r in rows if r["va"] != va]
         rows.append({"va": va, "name": name, "kind": "func", "evidence": evidence + " (added by an agent)"})
-        with open(path, "w", newline="") as f:
+        # write a temporary file and replace it: a failed write must not
+        # truncate the curated map
+        tmp = path + ".tmp"
+        with open(tmp, "w", newline="") as f:
             w = csv.DictWriter(f, fieldnames=["va", "name", "kind", "evidence"], lineterminator="\n")
             w.writeheader()
             w.writerows(rows)
+        os.replace(tmp, path)
         tools = os.path.join(ROOT, "tools")
         name_unit.run([os.path.join(tools, "build.py"), "target", unit], quiet=True)
         args = ["--dll", dll] if dll != "hl" else []
