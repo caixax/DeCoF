@@ -17110,7 +17110,7 @@ hl,100CA860,3785,?BuildNodeGraph@CTestHull@@QAEXXZ,CTestHull::BuildNodeGraph,HLS
 hl,100CB740,1152,?BuildRegionTables@CGraph@@QAEXXZ,CGraph::BuildRegionTables,HLSDK,dlls/nodes.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100CBBD0,26,?CallBuildNodeGraph@CTestHull@@QAEXXZ,CTestHull::CallBuildNodeGraph,HLSDK,dlls/nodes.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,refbytes:paranoia:dlls__nodes.obj:score1,
 hl,100CBBF0,338,?CheckNODFile@CGraph@@QAEHPAD@Z,CGraph::CheckNODFile,HLSDK,dlls/nodes.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,refbytes:paranoia:dlls__nodes.obj:score15,
-hl,100CBD50,15,?CheckNode@CGraph@@QAEXVVector@@H@Z,CGraph::CheckNode,HLSDK,dlls/nodes.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
+hl,100CBD50,644,?CheckNode@CGraph@@QAEXVVector@@H@Z,CGraph::CheckNode,HLSDK,dlls/nodes.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100CBD5F,629,,,UNKNOWN,guess:dlls/nodes.cpp,,,TODO,,,
 hl,100CBFE0,1486,?ComputeStaticRoutingTables@CGraph@@QAEXXZ,CGraph::ComputeStaticRoutingTables,HLSDK,dlls/nodes.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,refbytes:paranoia:dlls__nodes.obj:score14,
 hl,100CC5B0,52,?CopyToArray@CStack@@QAEXPAH@Z,CStack::CopyToArray,HLSDK,dlls/nodes.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,refbytes:paranoia:dlls__nodes.obj:score0,

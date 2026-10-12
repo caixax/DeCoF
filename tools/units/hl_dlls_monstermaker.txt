@@ -12,3 +12,4 @@
 ?ToggleUse@CMonsterMaker@@QAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z
 _monstermaker
 ?TryMakeMonster@CMonsterMaker@@QAEXXZ
+?MakeMonster@CMonsterMaker@@QAEPAVCBaseMonster@@XZ
