@@ -1148,6 +1148,61 @@
           "name": "cl_dll/tri",
           "source": "src/cl_dll/tri.cpp",
           "functions_file": "tools/units/client_cl_dll_tri.txt"
+        },
+        {
+          "name": "cl_dll/hud_spectator",
+          "source": "src/cl_dll/hud_spectator.cpp",
+          "functions_file": "tools/units/client_cl_dll_hud_spectator.txt"
+        },
+        {
+          "name": "cl_dll/hud_servers",
+          "source": "src/cl_dll/hud_servers.cpp",
+          "functions_file": "tools/units/client_cl_dll_hud_servers.txt"
+        },
+        {
+          "name": "cl_dll/cdll_int",
+          "source": "src/cl_dll/cdll_int.cpp",
+          "functions_file": "tools/units/client_cl_dll_cdll_int.txt"
+        },
+        {
+          "name": "cl_dll/entity",
+          "source": "src/cl_dll/entity.cpp",
+          "functions_file": "tools/units/client_cl_dll_entity.txt"
+        },
+        {
+          "name": "cl_dll/demo",
+          "source": "src/cl_dll/demo.cpp",
+          "functions_file": "tools/units/client_cl_dll_demo.txt"
+        },
+        {
+          "name": "cl_dll/exception",
+          "source": "src/cl_dll/exception.cpp",
+          "functions_file": "tools/units/client_cl_dll_exception.txt"
+        },
+        {
+          "name": "cl_dll/log",
+          "source": "src/cl_dll/log.cpp",
+          "functions_file": "tools/units/client_cl_dll_log.txt"
+        },
+        {
+          "name": "cl_dll/ammo",
+          "source": "src/cl_dll/ammo.cpp",
+          "functions_file": "tools/units/client_cl_dll_ammo.txt"
+        },
+        {
+          "name": "cl_dll/hud",
+          "source": "src/cl_dll/hud.cpp",
+          "functions_file": "tools/units/client_cl_dll_hud.txt"
+        },
+        {
+          "name": "cl_dll/view",
+          "source": "src/cl_dll/view.cpp",
+          "functions_file": "tools/units/client_cl_dll_view.txt"
+        },
+        {
+          "name": "cl_dll/ev_hldm",
+          "source": "src/cl_dll/ev_hldm.cpp",
+          "functions_file": "tools/units/client_cl_dll_ev_hldm.txt"
         }
       ]
     }

@@ -1642,6 +1642,94 @@
       "metadata": {
         "source_path": "src/cl_dll/tri.cpp"
       }
+    },
+    {
+      "name": "client/cl_dll/hud_spectator",
+      "target_path": "build/target/client/cl_dll/hud_spectator.obj",
+      "base_path": "build/base/client/cl_dll/hud_spectator.obj",
+      "metadata": {
+        "source_path": "src/cl_dll/hud_spectator.cpp"
+      }
+    },
+    {
+      "name": "client/cl_dll/hud_servers",
+      "target_path": "build/target/client/cl_dll/hud_servers.obj",
+      "base_path": "build/base/client/cl_dll/hud_servers.obj",
+      "metadata": {
+        "source_path": "src/cl_dll/hud_servers.cpp"
+      }
+    },
+    {
+      "name": "client/cl_dll/cdll_int",
+      "target_path": "build/target/client/cl_dll/cdll_int.obj",
+      "base_path": "build/base/client/cl_dll/cdll_int.obj",
+      "metadata": {
+        "source_path": "src/cl_dll/cdll_int.cpp"
+      }
+    },
+    {
+      "name": "client/cl_dll/entity",
+      "target_path": "build/target/client/cl_dll/entity.obj",
+      "base_path": "build/base/client/cl_dll/entity.obj",
+      "metadata": {
+        "source_path": "src/cl_dll/entity.cpp"
+      }
+    },
+    {
+      "name": "client/cl_dll/demo",
+      "target_path": "build/target/client/cl_dll/demo.obj",
+      "base_path": "build/base/client/cl_dll/demo.obj",
+      "metadata": {
+        "source_path": "src/cl_dll/demo.cpp"
+      }
+    },
+    {
+      "name": "client/cl_dll/exception",
+      "target_path": "build/target/client/cl_dll/exception.obj",
+      "base_path": "build/base/client/cl_dll/exception.obj",
+      "metadata": {
+        "source_path": "src/cl_dll/exception.cpp"
+      }
+    },
+    {
+      "name": "client/cl_dll/log",
+      "target_path": "build/target/client/cl_dll/log.obj",
+      "base_path": "build/base/client/cl_dll/log.obj",
+      "metadata": {
+        "source_path": "src/cl_dll/log.cpp"
+      }
+    },
+    {
+      "name": "client/cl_dll/ammo",
+      "target_path": "build/target/client/cl_dll/ammo.obj",
+      "base_path": "build/base/client/cl_dll/ammo.obj",
+      "metadata": {
+        "source_path": "src/cl_dll/ammo.cpp"
+      }
+    },
+    {
+      "name": "client/cl_dll/hud",
+      "target_path": "build/target/client/cl_dll/hud.obj",
+      "base_path": "build/base/client/cl_dll/hud.obj",
+      "metadata": {
+        "source_path": "src/cl_dll/hud.cpp"
+      }
+    },
+    {
+      "name": "client/cl_dll/view",
+      "target_path": "build/target/client/cl_dll/view.obj",
+      "base_path": "build/base/client/cl_dll/view.obj",
+      "metadata": {
+        "source_path": "src/cl_dll/view.cpp"
+      }
+    },
+    {
+      "name": "client/cl_dll/ev_hldm",
+      "target_path": "build/target/client/cl_dll/ev_hldm.obj",
+      "base_path": "build/base/client/cl_dll/ev_hldm.obj",
+      "metadata": {
+        "source_path": "src/cl_dll/ev_hldm.cpp"
+      }
     }
   ]
 }

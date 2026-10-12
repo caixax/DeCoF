@@ -1,0 +1,14 @@
+?UpdateCursorState@CHLVoiceStatusHelper@@UAEXXZ
+?GetAckIconHeight@CHLVoiceStatusHelper@@UAEHXZ
+?CanShowSpeakerLabels@CHLVoiceStatusHelper@@UAE_NXZ
+?AddHudElem@CHud@@QAEXPAVCHudBase@@@Z
+?COM_FileBase@@YAXPBDPAD@Z
+?GetSensitivity@CHud@@QAEMXZ
+?GetSpriteIndex@CHud@@QAEHPBD@Z
+?Init@CHud@@QAEXXZ
+?MsgFunc_Logo@CHud@@QAAHPBDHPAX@Z
+?MsgFunc_SetFOV@CHud@@QAAHPBDHPAX@Z
+?VidInit@CHud@@QAEXXZ
+?__MsgFunc_BigPrick@@YAHPBDHPAX@Z
+?__MsgFunc_SetFOV@@YAHPBDHPAX@Z
+?MsgFunc_BigPrick@CHud@@QAAHPBDHPAX@Z

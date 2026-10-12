@@ -1,0 +1,3 @@
+?GetExceptionStrings@@YAXKPAPBD0@Z
+?LoadCrashRpt@@YAXXZ
+?UnloadCrashRpt@@YAXXZ
