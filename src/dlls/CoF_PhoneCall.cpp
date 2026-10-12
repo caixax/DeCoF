@@ -486,7 +486,7 @@ void CPhoneCall::WaitForCall( void )
 		SetNextThink( 3 );
 		SetThink( &CPhoneCall::ChangeSubtitle );
 		m_hPhoneUser = pPlayer;
-		pPlayer->m_flNextAttack = gpGlobals->time + 4.0;
+		pPlayer->m_flNextAttack = gpGlobals->time + 4;
 	}
 
 	// CoF: also reached after the call was answered, which overrides the 3 second delay above (original bug)

@@ -417,7 +417,7 @@ void CFlier :: HandleAnimEvent( MonsterEvent_t *pEvent )
 			Vector vecStart = pev->origin;
 			Vector vecEnd = vecStart - gpGlobals->v_up * 96;
 
-			UTIL_TraceHull( vecStart, vecEnd, dont_ignore_monsters, head_hull, ENT( pev ), &tr );
+			UTIL_TraceHull( vecStart, vecEnd, dont_ignore_monsters, human_hull, ENT( pev ), &tr );
 
 			if ( tr.pHit )
 			{
