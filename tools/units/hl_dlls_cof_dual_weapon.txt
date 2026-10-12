@@ -16,3 +16,6 @@
 ?Spawn@CDualWeaponRight@@UAEXXZ
 ?WeaponThink@CDualWeaponRight@@QAEXPAVCBasePlayer@@@Z
 _dualwield
+?HasDualWeapon@CDualWeaponRight@@QAE_NPAVCBasePlayer@@@Z
+?SendWeaponAnim@CDualWeaponRight@@QAEXPAVCBasePlayer@@H@Z
+?SetVariables@CDualWeaponRight@@QAEXMMH@Z

@@ -379,7 +379,7 @@ void CDualWeaponRight::WeaponThink( CBasePlayer *pPlayer )
 
 void CDualWeaponRight::SetVariables( float primarydelay, float secondarydelay, int idleanimation )
 {
-	m_flNextIdleTime = primarydelay;
-	m_flPrimaryAttackDelay = secondarydelay;
-	m_sModel = idleanimation;
+	m_flPrimaryAttackDelay = primarydelay;
+	m_flSecondaryAttackDelay = secondarydelay;
+	m_iIdleAnimation = idleanimation;
 }
