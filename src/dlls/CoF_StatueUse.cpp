@@ -53,7 +53,7 @@ TYPEDESCRIPTION CStatueUse::m_SaveData[] =
 	DEFINE_FIELD( CStatueUse, m_iStatueType, FIELD_INTEGER ),
 };
 
-IMPLEMENT_SAVERESTORE( CStatueUse, CBaseToggle );
+IMPLEMENT_SAVERESTORE( CStatueUse, CBaseEntity );
 
 LINK_ENTITY_TO_CLASS( trigger_statueuse, CStatueUse );
 

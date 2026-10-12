@@ -50,7 +50,7 @@ TYPEDESCRIPTION CCoFCoopAllPlayersButton::m_SaveData[] =
 	DEFINE_FIELD( CCoFCoopAllPlayersButton, m_sMaster, FIELD_STRING ),
 };
 
-IMPLEMENT_SAVERESTORE( CCoFCoopAllPlayersButton, CBaseToggle );
+IMPLEMENT_SAVERESTORE( CCoFCoopAllPlayersButton, CBaseEntity );
 
 LINK_ENTITY_TO_CLASS( func_coopallplayersbutton, CCoFCoopAllPlayersButton );
 

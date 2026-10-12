@@ -88,7 +88,7 @@ TYPEDESCRIPTION CPasswordNote::m_SaveData[] =
 	DEFINE_FIELD( CPasswordNote, m_bIssuedNote, FIELD_BOOLEAN ),
 };
 
-IMPLEMENT_SAVERESTORE( CPasswordNote, CBaseAnimating );
+IMPLEMENT_SAVERESTORE( CPasswordNote, CBaseEntity );
 
 LINK_ENTITY_TO_CLASS( cof_passwordnote, CPasswordNote );
 

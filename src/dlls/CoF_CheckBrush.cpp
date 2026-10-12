@@ -52,7 +52,7 @@ TYPEDESCRIPTION CCheckBrush::m_SaveData[] =
 	DEFINE_FIELD( CCheckBrush, m_sMaster, FIELD_STRING ),
 };
 
-IMPLEMENT_SAVERESTORE( CCheckBrush, CBaseToggle );
+IMPLEMENT_SAVERESTORE( CCheckBrush, CBaseEntity );
 
 LINK_ENTITY_TO_CLASS( trigger_checkbrush, CCheckBrush );
 

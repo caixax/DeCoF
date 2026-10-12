@@ -6559,7 +6559,7 @@ TYPEDESCRIPTION	CCofInterDoorOnOff::m_SaveData[] =
 	DEFINE_FIELD( CCofInterDoorOnOff, m_iszNewLockedBy, FIELD_STRING ),
 };
 
-IMPLEMENT_SAVERESTORE( CCofInterDoorOnOff, CBaseMonster );
+IMPLEMENT_SAVERESTORE( CCofInterDoorOnOff, CBaseEntity );
 
 LINK_ENTITY_TO_CLASS( cof_interdooronoff, CCofInterDoorOnOff );
 
@@ -9702,7 +9702,7 @@ TYPEDESCRIPTION	CCoFMDLCutscene::m_SaveData[] =
 	DEFINE_FIELD( CCoFMDLCutscene, m_iCurrentAnimation, FIELD_INTEGER ),
 };
 
-IMPLEMENT_SAVERESTORE( CCoFMDLCutscene, CBaseMonster );
+IMPLEMENT_SAVERESTORE( CCoFMDLCutscene, CBaseEntity );
 
 void CCoFMDLCutscene::Use( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE useType, float value )
 {

@@ -216,7 +216,7 @@ TYPEDESCRIPTION	CAnimatedCameraModel::m_SaveData[] =
 	DEFINE_FIELD( CAnimatedCameraModel, m_iCurrentAnimation, FIELD_INTEGER ),
 };
 
-IMPLEMENT_SAVERESTORE( CAnimatedCameraModel, CBaseMonster );
+IMPLEMENT_SAVERESTORE( CAnimatedCameraModel, CBaseEntity );
 
 LINK_ENTITY_TO_CLASS( camera_model, CAnimatedCameraModel );
 

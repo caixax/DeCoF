@@ -781,7 +781,7 @@ TYPEDESCRIPTION CCoFLadderManagerUse::m_SaveData[] =
 	DEFINE_FIELD( CCoFLadderManagerUse, m_sMaster, FIELD_STRING ),
 };
 
-IMPLEMENT_SAVERESTORE( CCoFLadderManagerUse, CBaseToggle );
+IMPLEMENT_SAVERESTORE( CCoFLadderManagerUse, CBaseEntity );
 
 LINK_ENTITY_TO_CLASS( cof_ladder_manager_use, CCoFLadderManagerUse );
 
