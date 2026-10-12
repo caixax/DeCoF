@@ -131,7 +131,13 @@ def main():
                 continue
             before = names.get(int(window[ra]["va"], 16), "start") if ra >= 0 else "start"
             if len(gap_r) == len(gap_o) and not edge:
+                # a Cry of Fear change makes the sizes differ, but not by more
+                # than this; CRT helpers (_fabsl, __vsnprintf_l) are not ours
                 for r, (n, s) in zip(gap_r, gap_o):
+                    rs = int(r["size"] or 0)
+                    crt = n.startswith("__") or (n.startswith("_") and n[1:2].islower())
+                    if crt or not rs or not 0.4 <= s / rs <= 2.5:
+                        continue
                     proposals.append((r["va"], n, r["size"], s, unit, label, before))
             elif edge and gap_r and gap_o and 0 <= ra or edge and gap_r and gap_o and rb < len(window):
                 # at a window edge the retail rows next to the anchor are the

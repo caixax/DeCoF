@@ -73,6 +73,68 @@ def coff_functions(path):
     return out
 
 
+def coff_relocs(path):
+    """{function name: [(offset, type, target symbol, addend)]} of a COFF
+    object: what each relocated field of our code points at."""
+    data = open(path, "rb").read()
+    _m, nsec, _ts, symptr, nsym, opt, _ch = struct.unpack_from("<HHIIIHH", data, 0)
+    strtab = symptr + 18 * nsym
+    names = {}
+    i = 0
+    while i < nsym:
+        o = symptr + 18 * i
+        raw = data[o:o + 8]
+        if raw[:4] == b"\0\0\0\0":
+            off = struct.unpack_from("<I", raw, 4)[0]
+            names[i] = data[strtab + off:data.index(b"\0", strtab + off)].decode("latin-1")
+        else:
+            names[i] = raw.rstrip(b"\0").decode("latin-1")
+        naux = data[o + 17]
+        i += 1 + naux
+    secrel = []
+    for k in range(nsec):
+        o = 20 + opt + 40 * k
+        size, praw, prel, _pl, nrel, _nl, chars = struct.unpack_from("<IIIIHHI", data, o + 16)
+        rel = []
+        for j in range(nrel):
+            va, si, typ = struct.unpack_from("<IIH", data, prel + 10 * j)
+            addend = struct.unpack_from("<i", data, praw + va)[0] if praw else 0
+            rel.append((va, typ, names.get(si, ""), addend))
+        secrel.append(rel)
+    out = {}
+    i = 0
+    while i < nsym:
+        o = symptr + 18 * i
+        value, secnum, typ, cls, naux = struct.unpack_from("<IhHBB", data, o + 8)
+        if secnum > 0 and typ == 0x20 and cls == 2 and value == 0:
+            out[names[i]] = secrel[secnum - 1]
+        i += 1 + naux
+    return out
+
+
+def relocs_agree(img, base, va, relocs, by_name):
+    """None when no relocation target of ours has a retail address, else
+    whether every one that has points where the retail code points."""
+    known = 0
+    for off, typ, sym, addend in relocs:
+        targets = by_name.get(sym)
+        if not targets or len(targets) != 1:
+            continue
+        field = struct.unpack_from("<i", img, va - base + off)[0]
+        if typ == 0x14:  # IMAGE_REL_I386_REL32
+            actual = va + off + 4 + field
+            expect = targets[0] + addend
+        elif typ == 0x06:  # IMAGE_REL_I386_DIR32
+            actual = field & 0xFFFFFFFF
+            expect = targets[0] + addend
+        else:
+            continue
+        known += 1
+        if actual != expect:
+            return False
+    return True if known else None
+
+
 def main():
     argv = sys.argv[1:]
     dll = "hl"
@@ -106,11 +168,13 @@ def main():
     for va, n in names.items():
         by_name.setdefault(n, []).append(va)
     ours_all = {}
+    relocs_all = {}
     for unit in units:
         u = paths.get(unit)
         if not u or not os.path.exists(os.path.join(ROOT, u["base_path"])):
             continue
         ours_all[unit] = coff_functions(os.path.join(ROOT, u["base_path"]))
+        relocs_all[unit] = coff_relocs(os.path.join(ROOT, u["base_path"]))
     defined = set()
     for funcs in ours_all.values():
         defined.update(funcs)
@@ -157,16 +221,45 @@ def main():
                 ret = img[va - base:va - base + len(code)]
                 if all(ret[i] == code[i] for i in range(len(code)) if i not in masked):
                     hits.setdefault(va, []).append(n)
+        # identical bytes with relocations masked can still differ in what
+        # the relocations point at (the same code for another class): keep
+        # the pairs whose relocation targets agree with the retail code
+        rel = relocs_all.get(unit, {})
+        ambiguous = {va for va, ns in hits.items() if len(ns) > 1}
+        counts = {}
+        for va, ns in hits.items():
+            for n in ns:
+                counts[n] = counts.get(n, 0) + 1
+        by_reloc = set()
+        for va in list(hits):
+            ns = hits[va]
+            if va in ambiguous or any(counts[n] > 1 for n in ns):
+                good = [n for n in ns if relocs_agree(img, base, va, rel.get(n, []), by_name) is True]
+                if good:
+                    hits[va] = good
+                    by_reloc.add(va)
         rev = {}
         for va, ns in hits.items():
             for n in ns:
                 rev.setdefault(n, []).append(va)
+        # several of ours that agree with one retail function and with no
+        # other: the linker folded them (/OPT:ICF); the first name stands for
+        # all of them
+        folded = {}
+        for va, ns in list(hits.items()):
+            agree = all(relocs_agree(img, base, va, rel.get(n, []), by_name) is not False for n in ns)
+            if len(ns) > 1 and all(len(rev[n]) == 1 for n in ns) and agree:
+                folded[va] = sorted(ns)
+                hits[va] = [sorted(ns)[0]]
         for va, ns in sorted(hits.items()):
             # STL instantiations are toolchain code (class LIB) and many are
             # identical to each other
             if len(ns) == 1 and len(rev[ns[0]]) == 1 and ("@std@@" not in ns[0] or with_std):
                 old = names.get(va, "")
-                proposals.append((va, ns[0], old, unit))
+                note = " (relocation targets agree)" if va in by_reloc else ""
+                if va in folded:
+                    note = " (folded by /OPT:ICF with %s)" % ", ".join(folded[va][1:])
+                proposals.append((va, ns[0], old, unit + note))
     for va, n, old, unit in proposals:
         print("%08X  %-60s (now %s)  %s" % (va, n, old or "unnamed", unit))
     print("%d proposals" % len(proposals))
