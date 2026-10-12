@@ -14337,7 +14337,7 @@ hl,10040870,84,?GetIdealSpeed@CFlier@@QAEMMAAVVector@@@Z,CFlier::GetIdealSpeed,U
 hl,100408D0,142,?GetSchedule@CFlier@@UAEPAUSchedule_t@@XZ,CFlier::GetSchedule,COF,dlls/cof_flygare.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10040960,152,?GetScheduleOfType@CFlier@@UAEPAUSchedule_t@@H@Z,CFlier::GetScheduleOfType,COF,dlls/cof_flygare.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10040A30,5,?GibMonster@CFlier@@UAEXXZ,CFlier::GibMonster,COF,dlls/cof_flygare.cpp,,,MATCHED,100,vtable (tools/symbols/hl_vtable.csv),5-byte jmp thunk (tail call)
-hl,10040A40,1041,?HandleAnimEvent@CFlier@@UAEXPAUMonsterEvent_t@@@Z,CFlier::HandleAnimEvent,COF,dlls/cof_flygare.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,TODO,99.99,hl_1.55_to_1.6a.csv,
+hl,10040A40,1041,?HandleAnimEvent@CFlier@@UAEXPAUMonsterEvent_t@@@Z,CFlier::HandleAnimEvent,COF,dlls/cof_flygare.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10040E70,7,?HearingSensitivity@CFlier@@UAEMXZ,CFlier::HearingSensitivity,COF,dlls/cof_flygare.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10040E80,79,?IdleSound@CFlier@@UAEXXZ,CFlier::IdleSound,COF,dlls/cof_flygare.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10040ED0,121,?Killed@CFlier@@UAEXPAUentvars_s@@H@Z,CFlier::Killed,COF,dlls/cof_flygare.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
