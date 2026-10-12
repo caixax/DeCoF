@@ -11,3 +11,4 @@ _HUD_Key_Event
 _HUD_Shutdown
 _KB_Find
 ?CL_IsDead@@YAHXZ
+?ShutdownInput@@YAXXZ

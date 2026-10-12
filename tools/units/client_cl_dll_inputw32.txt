@@ -11,3 +11,6 @@ _IN_ActivateMouse
 _IN_ClearStates
 _IN_DeactivateMouse
 _IN_MouseEvent
+?Force_CenterView_f@@YAXXZ
+?IN_Init@@YAXXZ
+?RawValuePointer@@YAPAKH@Z

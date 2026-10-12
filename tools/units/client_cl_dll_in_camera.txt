@@ -7,3 +7,5 @@
 _CAM_Think
 _CL_CameraOffset
 _CL_IsThirdPerson
+?abs@@YAMM@Z
+?__MsgFunc_Telescope@@YAHPBDHPAX@Z

@@ -10,3 +10,9 @@ va,name,kind,evidence
 10010120,_VectorTransform,func,"inside the pm_math.c run (functions in decorated-name order from _AngleIMatrix 1000F3F0 to _anglemod 10010280); C function of pm_shared/pm_math.c, same body as the C++ copy ?VectorTransform@@YAXPBMQAY03MPAM@Z matched by refbytes"
 1008B270,?MsgFunc_StatusIcon@CHudStatusIcons@@QAEHPBDHPAX@Z,func,bytes identical to our MsgFunc_StatusIcon; calls EnableIcon and DisableIcon of the unit (added by an agent)
 1007DEA0,?MessageAdd@CHudMessage@@QAEXPBDM@Z,func,"the other CHudMessage::MessageAdd overload: 1007DE40 is the client_textmessage_t one (identical bytes), and decorated-name order puts PBDM after PAU; was CHudMessage::MessageAdd from client_1.6a_ghidra_names.csv"
+1006C310,?__MsgFunc_AdLib@@YAHPBDHPAX@Z,func,HOOK_MESSAGE order in CHudHealth::Init: the pushes before the strings AdLib pair the string with this wrapper at 1006C310 (added by an agent)
+1006C330,?__MsgFunc_Damage@@YAHPBDHPAX@Z,func,HOOK_MESSAGE order in CHudHealth::Init: the pushes before the strings Damage pair the string with this wrapper at 1006C330 (added by an agent)
+1006C350,?__MsgFunc_Health@@YAHPBDHPAX@Z,func,HOOK_MESSAGE order in CHudHealth::Init: the pushes before the strings Health pair the string with this wrapper at 1006C350 (added by an agent)
+1006C370,?__MsgFunc_Syringe@@YAHPBDHPAX@Z,func,HOOK_MESSAGE order in CHudHealth::Init: the pushes before the strings Syringe pair the string with this wrapper at 1006C370 (added by an agent)
+1007C9F0,?__MsgFunc_Telescope@@YAHPBDHPAX@Z,func,"user message handler: CAM_Init hooks it with the string ""Telescope"" (pfnHookUserMsg slot); body reads BEGIN_READ and four READ_SHORT then GetEntityByIndex (added by an agent)"
+1018A0C0,?gHUD@@3VCHud@@A,data,"this pointer of 14 calls to CHud methods (CHud::Init, VidInit, AddHudElem, GetSpriteIndex, ...), mov ecx 0x1018a0c0"

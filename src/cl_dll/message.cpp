@@ -23,6 +23,9 @@
 #include <string.h>
 #include <stdio.h>
 #include "parsemsg.h"
+#include <math.h>
+
+#undef fabs
 
 void SubtitleMessageAdd( client_textmessage_t *tempMessage ); // buz
 void ShowTip( client_textmessage_t *tempMessage ); // buz
