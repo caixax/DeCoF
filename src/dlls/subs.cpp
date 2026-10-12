@@ -279,7 +279,7 @@ void FireTargets( const char *targetName, CBaseEntity *pActivator, CBaseEntity *
 		useType = USE_OFF;
 	}
 
-	ALERT( at_aiconsole, "Firing: (%s)\n", targetName );
+	//ALERT( at_aiconsole, "Firing: (%s)\n", targetName );
 
 	pTarget = UTIL_FindEntityByTargetname(pTarget, targetName, pActivator);
 	if( !pTarget )
@@ -332,7 +332,7 @@ void FireTargets( const char *targetName, CBaseEntity *pActivator, CBaseEntity *
 			}
 			else
 		{
-			ALERT( at_aiconsole, "Found: %s, firing (%s)\n", STRING(pTarget->pev->classname), targetName );
+			//ALERT( at_aiconsole, "Found: %s, firing (%s)\n", STRING(pTarget->pev->classname), targetName );
 			pTarget->Use( pActivator, pCaller, useType, value );
 		}
 	}

@@ -17809,7 +17809,7 @@ hl,10101E00,174,?AxisDir@CBaseToggle@@SAXPAUentvars_s@@@Z,CBaseToggle::AxisDir,U
 hl,10101EB0,34,?AxisValue@CBaseToggle@@SAMHABVVector@@@Z,CBaseToggle::AxisValue,HLSDK,dlls/subs.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,refbytes:paranoia:dlls__subs.obj:score0,
 hl,10101EE0,59,?DelayThink@CBaseDelay@@QAEXXZ,CBaseDelay::DelayThink,HLSDK,dlls/subs.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10101F20,193,?FEntIsVisible@@YAHPAUentvars_s@@0@Z,FEntIsVisible,UNKNOWN,dlls/subs.cpp,,,MATCHED,100,,
-hl,10101FF0,469,?FireTargets@@YAXPBDPAVCBaseEntity@@1W4USE_TYPE@@M@Z,FireTargets,HLSDK,dlls/subs.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,85.0,hl_1.55_to_1.6a.csv,
+hl,10101FF0,469,?FireTargets@@YAXPBDPAVCBaseEntity@@1W4USE_TYPE@@M@Z,FireTargets,HLSDK,dlls/subs.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,84.2,hl_1.55_to_1.6a.csv,
 hl,101021D0,177,?GetMovedir@@YA?AVVector@@V1@@Z,GetMovedir,SPIRIT,dlls/subs.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,refbytes:paranoia:dlls__subs.obj:score4,
 hl,10102290,34,?GetState@CBaseDMStart@@UAE?AW4STATE@@PAVCBaseEntity@@@Z,CBaseDMStart::GetState,SPIRIT,dlls/subs.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,101022C0,39,?GetState@CBaseToggle@@UAE?AW4STATE@@XZ,CBaseToggle::GetState,SPIRIT,dlls/subs.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
