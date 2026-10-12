@@ -218,6 +218,13 @@ The 1.55 hl.dll is an unoptimized debug build of nearly the same source. `disasm
 - Check the `msg_dest` value that is pushed: the ripple messages push 2 (`MSG_ALL`), not `MSG_PVS`.
 - A filter that hides every retail `s_`/`DAT_` row can hide a wrong literal: check those literals by value against the retail bytes.
 - `REG_USER_MSG( "ScreenFade", 10 )`: 1.6a registers the HLSDK size although the ScreenFade struct in engine/shake.h is 16 bytes there.
+## Patterns from the HLSDK leftovers (second pass)
+
+- Cry of Fear adds early returns at the top of base HLSDK functions, `if ( FClassnameIs( pev, "monster_spitter" ) ) return;`: look for them when a retail function is larger than the HLSDK one.  Look also for calls Cry of Fear dropped (`ResetEmptySound()` in a WeaponIdle).
+- `IMPLEMENT_SAVERESTORE( CClass, CBaseEntity )` is common in Cry of Fear classes that derive from CBaseToggle or CBaseMonster: the retail Save/Restore call CBaseEntity::Save/Restore. The relocation check shows it.
+- A local declared at function scope and one in a nested block cannot share stack space: when retail has a smaller frame, move the declaration into its block (`char szMessage[128];` in GiveAmmo).
+- `-(float)sin( yaw )` (the cast before the negation) when retail negates a float (16-byte `xorps` mask).
+
 ## What not to do
 
 - Do not edit shared headers (`cbase.h`, `weapons.h`, `player.h`, `util.h`, ...) without coordinating: several files depend on them.
