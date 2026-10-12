@@ -25,6 +25,10 @@
 #include "cbase.h"
 #include "saverestore.h"
 #include "doors.h"
+#include "player.h"
+#include <cmath>
+
+extern void UTIL_ProMessage( CBaseEntity *pEntity, const char *pMessage, int colour, bool all );
 
 
 #define SF_BUTTON_DONTMOVE		1
@@ -584,6 +588,15 @@ void CBaseButton::Precache( void )
 		PRECACHE_SOUND ("buttons/spark6.wav");
 	}
 
+
+	PRECACHE_MODEL ("sprites/glow04.spr");
+
+	if (m_iszLockedSound)
+		PRECACHE_SOUND ((char*)STRING(m_iszLockedSound));
+
+	if (m_iszUnLockedSound)
+		PRECACHE_SOUND ((char*)STRING(m_iszUnLockedSound));
+
 	// get door button sounds, for doors which require buttons to open
 
 	if (m_bLockedSound)
@@ -661,6 +674,36 @@ void CBaseButton::KeyValue( KeyValueData *pkvd )
 	else if (FStrEq(pkvd->szKeyName, "unlocked_sentence"))
 	{
 		m_bUnlockedSentence = atof(pkvd->szValue);
+		pkvd->fHandled = TRUE;
+	}
+	else if (FStrEq(pkvd->szKeyName, "lockedby"))
+	{
+		m_iszLockedBy = ALLOC_STRING(pkvd->szValue);
+		pkvd->fHandled = TRUE;
+	}
+	else if (FStrEq(pkvd->szKeyName, "lockedmsg"))
+	{
+		m_iszLockedMessage = ALLOC_STRING(pkvd->szValue);
+		pkvd->fHandled = TRUE;
+	}
+	else if (FStrEq(pkvd->szKeyName, "lockedsnd"))
+	{
+		m_iszLockedSound = ALLOC_STRING(pkvd->szValue);
+		pkvd->fHandled = TRUE;
+	}
+	else if (FStrEq(pkvd->szKeyName, "unlockedsnd"))
+	{
+		m_iszUnLockedSound = ALLOC_STRING(pkvd->szValue);
+		pkvd->fHandled = TRUE;
+	}
+	else if (FStrEq(pkvd->szKeyName, "unlockedmsg"))
+	{
+		m_iszUnLockedMessage = ALLOC_STRING(pkvd->szValue);
+		pkvd->fHandled = TRUE;
+	}
+	else if (FStrEq(pkvd->szKeyName, "propertarget"))
+	{
+		m_ProperTarget = ALLOC_STRING(pkvd->szValue);
 		pkvd->fHandled = TRUE;
 	}
 	else if (FStrEq(pkvd->szKeyName, "sounds"))
@@ -763,6 +806,18 @@ void CBaseButton::Spawn( )
 	}
 	SET_MODEL(ENT(pev), STRING(pev->model));
 
+	if ( m_iszLockedBy )
+	{
+		m_isLocked = true;
+	}
+	else
+	{
+		m_isLocked = false;
+	}
+
+	m_fUnlockTime = 0;
+	m_fNextUseTime = 0;
+
 	//LRC
 //	if (m_iStyle >= 32) LIGHT_STYLE(m_iStyle, "z"); buz
 //	else if (m_iStyle <= -32) LIGHT_STYLE(-m_iStyle, "a");
@@ -810,6 +865,53 @@ void CBaseButton::Spawn( )
 			SetUse(&CBaseButton:: ButtonUse_IgnorePlayer );
 		else
 			SetUse(&CBaseButton:: ButtonUse );
+	}
+}
+
+void CBaseButton::UnlockDoor( void )
+{
+	CBaseEntity *pPlayer = NULL;
+	pPlayer = UTIL_FindEntityByClassname( NULL, "player" );
+
+	if ( !pPlayer )
+		return;
+
+	if ( m_iszLockedBy && m_isLocked )
+	{
+		unsigned int i = 0;
+
+		m_isLocked = false;
+
+		if ( m_iszUnLockedMessage )
+		{
+			UTIL_ProMessage( pPlayer, STRING( m_iszUnLockedMessage ), 5, false );
+		}
+
+		if ( m_iszUnLockedSound )
+			EMIT_SOUND( ENT( GetClassPtr( (CBasePlayer *)pPlayer->pev )->pev ), CHAN_AUTO, STRING( m_iszUnLockedSound ), 1, 0.8 );
+
+		if ( pev->spawnflags & 2048 )
+		{
+			m_fUnlockTime = m_fNextUseTime = 0;
+			ButtonUse( pPlayer, pPlayer, USE_TOGGLE, 0 );
+		}
+		else
+		{
+			m_fUnlockTime = m_fNextUseTime = gpGlobals->time + 1;
+		}
+
+		if ( m_ProperTarget )
+			FireTargets( STRING( m_ProperTarget ), this, this, USE_TOGGLE, 0 );
+	}
+	else
+	{
+		if ( m_iszLockedMessage )
+			UTIL_ProMessage( pPlayer, STRING( m_iszLockedMessage ), 5, false );
+
+		if ( m_iszLockedSound )
+			EMIT_SOUND( ENT( GetClassPtr( (CBasePlayer *)pPlayer->pev )->pev ), CHAN_AUTO, STRING( m_iszLockedSound ), 1, 0.8 );
+
+		m_fNextUseTime = gpGlobals->time + 0.75;
 	}
 }
 
@@ -908,6 +1010,34 @@ void CBaseButton::ButtonUse ( CBaseEntity *pActivator, CBaseEntity *pCaller, USE
 		return;		
 
 	m_hActivator = pActivator;
+
+	if ( m_fUnlockTime > gpGlobals->time )
+		return;
+
+	if ( m_fNextUseTime > gpGlobals->time )
+		return;
+
+	if ( pActivator->IsPlayer() )
+	{
+		CBasePlayer *pPlayer = (CBasePlayer *)pActivator;
+
+		if ( m_iszLockedBy && m_isLocked )
+		{
+			if ( m_iszLockedMessage )
+			{
+				UTIL_ProMessage( pPlayer, STRING( m_iszLockedMessage ), 5, false );
+			}
+
+			if ( m_iszLockedSound )
+			{
+				EMIT_SOUND( ENT( pPlayer->pev ), CHAN_AUTO, STRING( m_iszLockedSound ), 1, 0.8 );
+			}
+
+			m_fNextUseTime = gpGlobals->time + 0.75;
+			return;
+		}
+	}
+
 	if ( m_toggle_state == TS_AT_TOP)
 	{
 		if (!m_fStayPushed && FBitSet(pev->spawnflags, SF_BUTTON_TOGGLE))
@@ -1587,6 +1717,9 @@ void CEnvSpark::Precache(void)
 	PRECACHE_SOUND( "buttons/spark4.wav" );
 	PRECACHE_SOUND( "buttons/spark5.wav" );
 	PRECACHE_SOUND( "buttons/spark6.wav" );
+
+
+	PRECACHE_MODEL( "sprites/glow04.spr" );
 }
 
 void CEnvSpark::KeyValue( KeyValueData *pkvd )
