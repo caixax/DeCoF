@@ -47,6 +47,11 @@ Every tool output stays in the working context, so large outputs repeated over m
 - `name_unit.py` names the `__MsgFunc_X` wrappers by position, and they all match because they differ only in the callee: check them against the `HOOK_MESSAGE` pushes in `Init` and fix wrong ones with `add_name.py`.
 - `x += a * b` and `x = a * b + x` compile differently: try both.
 - One retail global has one name in every file: before you name a Cry of Fear global (`extern int guess_iWheelchair;`), grep src/ for its address in comments and for other `guess_` names of the same global, and find what writes it (a user message handler named by its `HOOK_MESSAGE` string is the best evidence: 0x10542BB8 is written by the Wheelchair message).
+- A function Cry of Fear disabled keeps `return;` as its first statement with the old body below: it compiles to `ret 0` (cdecl) or `ret N` and its callers keep the call; an empty body gets inlined away. `if ( 0 )` around the old body works too.
+- `fabsf( x )` gives the float `andps`, `(fabs)( x )` the double one, and plain `fabs` stays the cl_util.h macro (compare and branch).
+- `vec3_t v = args->angles;` (Vector assignment) loads all three components first; `VectorCopy` interleaves loads and stores.
+- `x ? 2 : 3` compiles branchless (`neg`/`sbb`); when retail branches, write an if/else with two calls and let the compiler merge the tails.
+- A retail function that is 0% or cut short at its first `ret` while ours looks right is usually a Ghidra function whose switch was never resolved: tell the main agent.
 - Inside one object the functions are in decorated-name order (most files) or in source order (a few). `tools/align_names.py` uses this; a gap it reports ("3 retail, 1 ours") means functions missing on one side: written in Cry of Fear and not in the reference file yet, or removed.
 - `python tools/disasm.py client "<decorated name>"` and `--outline` work on the 1.6a client.dll; `--version` does not apply (no symbols in the older client builds).
 ## Facts that hold for the CoF weapons
