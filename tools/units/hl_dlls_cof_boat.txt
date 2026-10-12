@@ -18,3 +18,7 @@
 ?TurnRight@CBoat@@QAEXXZ
 _boat_exit
 _boat_hide_spot
+_boat
+?ExitCheck@CBoat@@QAEXXZ
+?SetCollision@CBoat@@QAEXXZ
+?Splash@@YAXVVector@@@Z
