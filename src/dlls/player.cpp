@@ -8902,10 +8902,10 @@ int CBasePlayer :: GiveAmmo( int iCount, char *szName, int iMax, bool guess_bNoM
 	if ( iAdd < 1 )
 		return i;
 
-	char szMessage[128];
-
 	if ( !guess_bNoMessage )
 	{
+		char szMessage[128];
+
 		if ( szName == "buckshot" )
 			sprintf( szMessage, "Picked up a box of %i shells", iAdd );
 		else if ( szName == "m16" )

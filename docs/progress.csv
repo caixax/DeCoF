@@ -17431,7 +17431,7 @@ hl,100E0310,90,?GetPlayerWeapon@CBasePlayer@@QAEPAVCBasePlayerWeapon@@H@Z,CBaseP
 hl,100E0370,15,?GetState@CHudSprite@@EAE?AW4STATE@@XZ,CHudSprite::GetState,SPIRIT,dlls/player.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100E0380,19,?GetState@CPlayerFreeze@@EAE?AW4STATE@@XZ,CPlayerFreeze::GetState,SPIRIT,dlls/player.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100E03A0,219,?GetWeaponAnimation@CBasePlayer@@QAEHXZ,CBasePlayer::GetWeaponAnimation,COF,dlls/player.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,100E04D0,984,?GiveAmmo@CBasePlayer@@UAEHHPADH_N@Z,CBasePlayer::GiveAmmo,HLSDK,dlls/player.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,TODO,99.29,hl_1.55_to_1.6a.csv,
+hl,100E04D0,984,?GiveAmmo@CBasePlayer@@UAEHHPADH_N@Z,CBasePlayer::GiveAmmo,HLSDK,dlls/player.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100E08B0,456,?GiveDualWeapon@CBasePlayer@@QAEXHH@Z,CBasePlayer::GiveDualWeapon,COF,dlls/player.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100E0A80,600,?GiveNamedItem@CBasePlayer@@QAEXPBD_N1@Z,CBasePlayer::GiveNamedItem,HLSDK,dlls/player.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100E0CE0,199,,,UNKNOWN,guess:dlls/player.cpp,,,TODO,,,
