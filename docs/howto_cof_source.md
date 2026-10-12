@@ -195,6 +195,14 @@ The 1.55 hl.dll is an unoptimized debug build of nearly the same source. `disasm
 - `ThinkSet` with the string `"CheckIfDead"` in the 1.55 debug build means `SetThink( CheckIfDead )` in the source.
 - Vtable slot 0xd0 is `IsPlayer` and slot 0xbc is `IsAlive` in CBaseEntity.
 - Edit source files with Python or the Edit tool: `sed -i` in Git Bash turns CRLF files into LF.
+## Patterns from player.cpp
+
+- A float subtraction compiled as two `cvtps2pd` and a `subsd` is a `(double)` cast in the source, for example `m_flTimeDelta = (double)m_flTime - m_fOldTime;` (from the HLSDK hud_redraw.cpp).
+- `test eax,eax; je; sub eax,1; je; sub eax,1; jne` comes from `if ( x ) switch ( x ) { case 1: ... case 2: ... }`.
+- When retail hoists a shared store above a branch and compares early, the source may duplicate the whole branch body, including the stores after the call, in both arms.
+- Check the `msg_dest` value that is pushed: the ripple messages push 2 (`MSG_ALL`), not `MSG_PVS`.
+- A filter that hides every retail `s_`/`DAT_` row can hide a wrong literal: check those literals by value against the retail bytes.
+- `REG_USER_MSG( "ScreenFade", 10 )`: 1.6a registers the HLSDK size although the ScreenFade struct in engine/shake.h is 16 bytes there.
 ## What not to do
 
 - Do not edit shared headers (`cbase.h`, `weapons.h`, `player.h`, `util.h`, ...) without coordinating: several files depend on them.

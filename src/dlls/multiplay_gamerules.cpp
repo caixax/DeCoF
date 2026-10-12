@@ -38,7 +38,7 @@ extern int gmsgScoreInfo;
 extern int gmsgMOTD;
 extern int gmsgServerName;
 extern int gmsgHealth;
-extern int gmsgBigPrick;
+extern int gmsgFaggot;
 extern int gmsgDevDonator;
 extern int gmsgLobby;
 extern int gmsgTimerPlus;
@@ -296,7 +296,7 @@ BOOL CHalfLifeMultiplay::ClientCommand( CBasePlayer *pPlayer, const char *pcmd )
 
 				if ( plr && player && plr->pev->netname && !strcmp( STRING( plr->pev->netname ), player ) )
 				{
-					MESSAGE_BEGIN( MSG_ONE, gmsgBigPrick, NULL, plr->pev );
+					MESSAGE_BEGIN( MSG_ONE, gmsgFaggot, NULL, plr->pev );
 						WRITE_BYTE( 1 );
 					MESSAGE_END();
 

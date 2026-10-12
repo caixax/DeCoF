@@ -1293,7 +1293,7 @@ void LinkUserMessages( void )
 	gmsgSetFOV = REG_USER_MSG( "SetFOV", 1 );
 	gmsgShowMenu = REG_USER_MSG( "ShowMenu", -1 );
 	gmsgShake = REG_USER_MSG( "ScreenShake", sizeof(ScreenShake) );
-	gmsgFade = REG_USER_MSG( "ScreenFade", sizeof(ScreenFade) );
+	gmsgFade = REG_USER_MSG( "ScreenFade", 10 );
 	gmsgAmmoX = REG_USER_MSG( "AmmoX", 3 );
 	gmsgTeamNames = REG_USER_MSG( "TeamNames", -1 );
 	gmsgStatusIcon = REG_USER_MSG( "StatusIcon", -1 );
@@ -4337,7 +4337,7 @@ void CBasePlayer::PreThink(void)
 		}
 	}
 
-	if ( pPlayerToRevive && ( !pPlayerToRevive->IsAlive() || GetClassPtr( (CBasePlayer *)pPlayerToRevive->pev )->pPlayerReviving != this ) )
+	if ( pPlayerToRevive && ( pPlayerToRevive->IsAlive() || GetClassPtr( (CBasePlayer *)pPlayerToRevive->pev )->pPlayerReviving != this ) )
 	{
 		int animDesired;
 
@@ -5266,6 +5266,1743 @@ void ShiftMonsters( Vector origin )
 		}
 	}
 }
+
+void CBasePlayer::PostThink()
+{
+	if ( m_bInPhoneCall )
+	{
+		if ( guess_m_iPhoneNumberState )
+		switch ( guess_m_iPhoneNumberState )
+		{
+		case 1:
+			if ( gpGlobals->time > guess_m_flPhoneNumberTime )
+			{
+				guess_m_iPhoneNumberState = 2;
+				EMIT_SOUND( ENT(pev), CHAN_AUTO, "ambience/van_number.wav", 1, ATTN_NORM );
+				guess_m_flPhoneNumberTime = gpGlobals->time + 6.5;
+			}
+			break;
+
+		case 2:
+			if ( gpGlobals->time > guess_m_flPhoneNumberTime )
+			{
+				guess_m_iPhoneNumberState = 0;
+
+				if ( m_pActiveItem && FClassnameIs( m_pActiveItem->edict(), "weapon_mobile" ) )
+				{
+					CMobile *pMobile = GetClassPtr( (CMobile *)m_pActiveItem->pev );
+
+					if ( pMobile )
+					{
+						if ( m_iMobileFlashMode )
+						{
+							pMobile->m_flTimeWeaponIdle = gpGlobals->time + 1.1;
+							pMobile->SendWeaponAnim( 16 );
+							m_flNextAttack = gpGlobals->time + 1.1;
+							m_bInPhoneCall = false;
+						}
+						else
+						{
+							pMobile->m_flTimeWeaponIdle = gpGlobals->time + 1.1;
+							pMobile->SendWeaponAnim( 15 );
+							m_flNextAttack = gpGlobals->time + 1.1;
+							m_bInPhoneCall = false;
+						}
+						EMIT_SOUND( ENT(pev), CHAN_AUTO, "phone/tone_send.wav", 1, ATTN_NORM );
+						m_iHideHUD &= ~HIDEHUD_HEALTH;
+						m_DrawBars = 0;
+						pev->fuser3 = 0;
+					}
+				}
+			}
+			break;
+		}
+	}
+
+	if ( m_pActiveItem && m_pActiveItem->m_iId == 10 )
+	{
+		if ( pev->rendercolor.x != m_pActiveItem->pev->rendercolor.x )
+			pev->rendercolor.x = m_pActiveItem->pev->rendercolor.x;
+
+		if ( pev->rendercolor.y != m_pActiveItem->pev->rendercolor.y )
+			pev->rendercolor.y = m_pActiveItem->pev->rendercolor.y;
+
+		if ( pev->rendercolor.z != m_pActiveItem->pev->rendercolor.z )
+			pev->rendercolor.z = m_pActiveItem->pev->rendercolor.z;
+
+		if ( pev->renderamt != m_pActiveItem->pev->renderamt )
+			pev->renderamt = m_pActiveItem->pev->renderamt;
+	}
+
+	if ( g_pGameRules && g_pGameRules->IsMultiplayer() && gpGlobals->time > m_flNextMPPlayerNameCheck )
+	{
+		m_flNextMPPlayerNameCheck = gpGlobals->time + 0.15;
+
+		TraceResult tr;
+
+		UTIL_MakeVectors( pev->v_angle );
+		Vector vecSrc = GetGunPosition();
+		Vector vecEnd = vecSrc + gpGlobals->v_forward * 384;
+
+		UTIL_TraceLine( vecSrc, vecEnd, dont_ignore_monsters, ENT(pev), &tr );
+
+		if ( tr.pHit )
+		{
+			CBaseEntity *pEntity = CBaseEntity::Instance( tr.pHit );
+
+			if ( pEntity && pEntity->IsPlayer() && pEntity != this )
+			{
+				if ( m_iLookingAtPlayer != ENTINDEX( pEntity->edict() ) )
+				{
+					m_iLookingAtPlayer = ENTINDEX( pEntity->edict() );
+
+					MESSAGE_BEGIN( MSG_ONE, gmsgLookingAt, NULL, pev );
+						WRITE_BYTE( m_iLookingAtPlayer );
+					MESSAGE_END();
+
+					m_flPlayerNameDieTime = gpGlobals->time + 0.15;
+				}
+			}
+			else if ( m_iLookingAtPlayer )
+			{
+				m_iLookingAtPlayer = 0;
+
+				MESSAGE_BEGIN( MSG_ONE, gmsgLookingAt, NULL, pev );
+					WRITE_BYTE( m_iLookingAtPlayer );
+				MESSAGE_END();
+			}
+		}
+		else if ( m_iLookingAtPlayer )
+		{
+			m_iLookingAtPlayer = 0;
+
+			MESSAGE_BEGIN( MSG_ONE, gmsgLookingAt, NULL, pev );
+				WRITE_BYTE( m_iLookingAtPlayer );
+			MESSAGE_END();
+		}
+	}
+
+	if ( pev->movetype == MOVETYPE_NOCLIP )
+		pev->movetype = MOVETYPE_WALK;
+
+	if ( pev->flags & FL_GODMODE )
+		pev->flags &= ~FL_GODMODE;
+
+	if ( m_bJustJumped )
+	{
+		if ( ( pev->flags & FL_ONGROUND ) || gpGlobals->time > m_flMaxJustJumpedTime )
+			m_bJustJumped = false;
+	}
+
+	if ( gpGlobals->time > m_flNextTimeTakenCheck && !m_gbIsInCutscene )
+	{
+		playerstats.time_seconds++;
+
+		if ( playerstats.time_seconds > 59 )
+		{
+			playerstats.time_seconds = 0;
+			playerstats.time_minutes++;
+		}
+
+		if ( playerstats.time_minutes > 59 )
+		{
+			playerstats.time_minutes = 0;
+			playerstats.time_hours++;
+		}
+
+		m_flNextTimeTakenCheck = gpGlobals->time + 1;
+	}
+
+	if ( g_fGameOver )
+		goto pt_end;         // intermission or finale
+
+	if ( !IsAlive() )
+		goto pt_end;
+
+	if ( pPlayerReviving && !pPlayerReviving->IsAlive() )
+		pPlayerReviving = NULL;
+
+	if ( m_bCoopWaitingForCutsceneToEnd )
+	{
+		UTIL_ScreenFade( this, Vector( 0, 0, 0 ), 0, 1, 255, FFADE_OUT | FFADE_STAYOUT );
+		EnableControl( FALSE );
+
+		if ( !( m_iHideHUD & HIDEHUD_HEALTH ) )
+			m_iHideHUD |= HIDEHUD_HEALTH;
+
+		if ( !( m_iHideHUD & HIDEHUD_WEAPONS ) )
+			m_iHideHUD |= HIDEHUD_WEAPONS;
+
+		if ( !( pev->flags & FL_NOTARGET ) )
+			pev->flags |= FL_NOTARGET;
+
+		if ( gpGlobals->time > m_flNextCoopWaitingForCutsceneFadeTime )
+		{
+			m_flNextCoopWaitingForCutsceneFadeTime = gpGlobals->time + 5;
+			UTIL_ProMessage( this, "Please wait until cutscene has finished.", 2, false );
+		}
+	}
+
+	if ( gpGlobals->time > m_flNextDistanceCheckTime )
+	{
+		float distance = ( m_vPreviousOrigin - pev->origin ).Length2D();
+		m_vPreviousOrigin = pev->origin;
+
+		playerstats.distancetravelled_metres += distance / 39.3700787;
+
+		if ( playerstats.distancetravelled_metres > 999 )
+		{
+			playerstats.distancetravelled_metres = 0;
+			playerstats.distancetravelled_kilometres += 1;
+		}
+
+		m_flNextDistanceCheckTime = gpGlobals->time + 0.1;
+	}
+
+	if ( m_bRestored )
+	{
+		ShiftMonsters( pev->origin );
+		m_OnStairs = false;
+		m_bRestored = false;
+
+		//if ( m_iPlayerSaveLock != 1337 )
+		//	CLIENT_COMMAND( edict(), "disconnect\n" );
+
+		m_iPlayerSaveLock = 0;
+
+		m_iWeaponVolume = 1000;
+
+		if ( playerstats.started_from_the_beginning )
+		{
+			int difficulty = CVAR_GET_FLOAT( "difficulty" );
+			int language = CVAR_GET_FLOAT( "cof_subtitlelanguage" );
+
+			if ( language != playerstats.language )
+				CVAR_SET_FLOAT( "cof_subtitlelanguage", playerstats.language );
+
+			if ( difficulty != playerstats.chosen_difficulty )
+				CVAR_SET_FLOAT( "difficulty", playerstats.chosen_difficulty );
+
+			if ( g_pGameRules )
+				g_pGameRules->RefreshSkillData();
+		}
+
+		m_iClientUnlockedClothes = 0;
+
+		if ( m_iQuickSlotSlot[1] )
+		{
+			MESSAGE_BEGIN( MSG_ONE, gmsgQSlotUpdate, NULL, pev );
+				WRITE_BYTE( 1 );
+				WRITE_BYTE( m_iQuickSlotSlot[1] );
+			MESSAGE_END();
+		}
+
+		if ( m_iQuickSlotSlot[2] )
+		{
+			MESSAGE_BEGIN( MSG_ONE, gmsgQSlotUpdate, NULL, pev );
+				WRITE_BYTE( 2 );
+				WRITE_BYTE( m_iQuickSlotSlot[2] );
+			MESSAGE_END();
+		}
+
+		if ( m_iQuickSlotSlot[3] )
+		{
+			MESSAGE_BEGIN( MSG_ONE, gmsgQSlotUpdate, NULL, pev );
+				WRITE_BYTE( 3 );
+				WRITE_BYTE( m_iQuickSlotSlot[3] );
+			MESSAGE_END();
+		}
+
+		if ( gmsgConcuss && m_bIsTripping )
+		{
+			MESSAGE_BEGIN( MSG_ONE, gmsgConcuss, NULL, pev );
+				WRITE_BYTE( 10 );
+				WRITE_BYTE( 1 );
+			MESSAGE_END();
+		}
+
+		if ( m_pActiveItem && m_pActiveItem->m_pPlayer )
+		{
+			((CBasePlayerWeapon *)m_pActiveItem)->m_flTimeWeaponIdle = gpGlobals->time;
+			((CBasePlayerWeapon *)m_pActiveItem)->WeaponIdle();
+
+			gDualWeapon.m_flNextPrimaryAttack = gpGlobals->time;
+			gDualWeapon.m_flNextSecondaryAttack = gpGlobals->time;
+			gDualWeapon.m_flNextIdleTime = gpGlobals->time;
+			gDualWeapon.WeaponThink( this );
+		}
+
+		if ( pev->vuser1.x )
+		{
+			MESSAGE_BEGIN( MSG_ONE, gmsgHeadShield, NULL, pev );
+				WRITE_BYTE( 1 );
+				WRITE_BYTE( 10 );
+				WRITE_STRING( "" );
+				WRITE_BYTE( 0 );
+			MESSAGE_END();
+
+			m_iHeadShieldOn = 1;
+
+			UTIL_ScreenFade( this, Vector( 0, 0, 0 ), 0.5, 0.1, 255, 0 );
+
+			EMIT_SOUND_DYN( ENT(pev), CHAN_AUTO, "unlockables/nv_on.wav", 1, ATTN_NORM, 0, PITCH_NORM );
+
+			ViewPunch( -24, 0.5, 0.5 );
+		}
+	}
+
+	if ( clientmaterials )
+	{
+		MESSAGE_BEGIN( MSG_ONE, gmsgMaterials, NULL, pev );
+		MESSAGE_END();
+
+		clientmaterials = false;
+	}
+
+	if ( m_iMp3NeedsUpdate )
+	{
+		if ( FStringNull( m_strCurrentMp3 ) )
+		{
+			MESSAGE_BEGIN( MSG_ONE, gmsgMP3, NULL, pev );
+				WRITE_BYTE( 0 );
+				WRITE_BYTE( 0 );
+				WRITE_COORD( m_fMp3FadeTime );
+				WRITE_STRING( "nothing" );
+			MESSAGE_END();
+
+			m_fMp3FadeTime = 0;
+		}
+		else
+		{
+			MESSAGE_BEGIN( MSG_ONE, gmsgMP3, NULL, pev );
+				if ( m_bMp3ShouldLoop )
+					WRITE_BYTE( 1 );
+				else
+					WRITE_BYTE( 0 );
+
+				WRITE_BYTE( 1 );
+				WRITE_COORD( m_fMp3FadeInTime );
+				WRITE_STRING( STRING( m_strCurrentMp3 ) );
+			MESSAGE_END();
+		}
+
+		m_iMp3NeedsUpdate = 0;
+	}
+
+	if ( m_iUsingMic )
+		m_iWeaponVolume = 1000;
+
+	if ( m_iHeadShieldOn == 101 )
+	{
+		if ( m_pActiveItem )
+		{
+			if ( gpGlobals->time > ((CBasePlayerWeapon *)m_pActiveItem)->m_flNextPrimaryAttack && gpGlobals->time > ((CBasePlayerWeapon *)m_pActiveItem)->m_flNextSecondaryAttack && gpGlobals->time > ((CBasePlayerWeapon *)m_pActiveItem)->m_flNextTertiaryAttack && !m_pActiveItem->m_iSuicideState && !m_pActiveItem->m_iSprintState && !((CBasePlayerWeapon *)m_pActiveItem)->m_fInReload && gpGlobals->time > m_flNextAttack )
+			{
+				m_pStoredNightVisionWeapon = (CBasePlayerWeapon *)m_pActiveItem;
+				m_pActiveItem->Holster();
+				m_flNextNightVisionTime = GetSequenceTime( GET_MODEL_PTR( ENT( m_pActiveItem->pev ) ), pev->weaponanim ) + gpGlobals->time;
+				m_pActiveItem = NULL;
+			}
+		}
+		else if ( gpGlobals->time > m_flNextNightVisionTime )
+		{
+			MESSAGE_BEGIN( MSG_ONE, gmsgHeadShield, NULL, pev );
+				WRITE_BYTE( 1 );
+				WRITE_BYTE( 10 );
+				WRITE_STRING( "" );
+				if ( pev->vuser1.x )
+					WRITE_BYTE( 0 );
+				else
+					WRITE_BYTE( 1 );
+			MESSAGE_END();
+
+			m_flNextNightVisionTime = gpGlobals->time + 0.7;
+
+			m_iHeadShieldOn = 1;
+
+			UTIL_ScreenFade( this, Vector( 0, 0, 0 ), 0.5, 0.1, 255, FFADE_OUT );
+
+			EMIT_SOUND_DYN( ENT(pev), CHAN_AUTO, "unlockables/nv_on.wav", 1, ATTN_NORM, 0, PITCH_NORM );
+
+			ViewPunch( -24, 0.5, 0.5 );
+		}
+	}
+
+	if ( m_iHeadShieldOn == 100 )
+	{
+		if ( m_pActiveItem )
+		{
+			if ( gpGlobals->time > ((CBasePlayerWeapon *)m_pActiveItem)->m_flNextPrimaryAttack && gpGlobals->time > ((CBasePlayerWeapon *)m_pActiveItem)->m_flNextSecondaryAttack && gpGlobals->time > ((CBasePlayerWeapon *)m_pActiveItem)->m_flNextTertiaryAttack && !m_pActiveItem->m_iSuicideState && !m_pActiveItem->m_iSprintState && !((CBasePlayerWeapon *)m_pActiveItem)->m_fInReload && gpGlobals->time > m_flNextAttack )
+			{
+				m_pStoredNightVisionWeapon = (CBasePlayerWeapon *)m_pActiveItem;
+				m_pActiveItem->Holster();
+				m_flNextNightVisionTime = GetSequenceTime( GET_MODEL_PTR( ENT( m_pActiveItem->pev ) ), pev->weaponanim ) + gpGlobals->time;
+				m_pActiveItem = NULL;
+			}
+		}
+		else if ( gpGlobals->time > m_flNextNightVisionTime )
+		{
+			MESSAGE_BEGIN( MSG_ONE, gmsgHeadShield, NULL, pev );
+				WRITE_BYTE( 0 );
+				WRITE_BYTE( 10 );
+				WRITE_STRING( "" );
+				if ( pev->vuser1.x )
+					WRITE_BYTE( 0 );
+				else
+					WRITE_BYTE( 1 );
+			MESSAGE_END();
+
+			m_flNextNightVisionTime = gpGlobals->time + 0.7;
+
+			m_iHeadShieldOn = 0;
+
+			UTIL_ScreenFade( this, Vector( 0, 0, 0 ), 0.5, 0.1, 255, 0 );
+
+			EMIT_SOUND_DYN( ENT(pev), CHAN_AUTO, "unlockables/nv_off.wav", 1, ATTN_NORM, 0, PITCH_NORM );
+
+			ViewPunch( -24, -0.5, -0.5 );
+		}
+	}
+
+	if ( m_pStoredNightVisionWeapon && m_flNextNightVisionTime != 666 && gpGlobals->time > m_flNextNightVisionTime )
+	{
+		m_pStoredNightVisionWeapon->Deploy();
+		m_pStoredNightVisionWeapon->UpdateItemInfo();
+		m_pActiveItem = m_pStoredNightVisionWeapon;
+		m_pStoredNightVisionWeapon = NULL;
+	}
+
+	if ( b_GoingThroughADoor && g_pGameRules && g_pGameRules->IsMultiplayer() && IsAlive() )
+	{
+		if ( !( pev->effects & EF_NODRAW ) )
+			pev->effects |= EF_NODRAW;
+	}
+
+	if ( pev->vuser4.x != pev->fuser3 )
+		pev->vuser4.x = pev->fuser3;
+
+	if ( pDeathScene && pDeathScene->pev->euser1 )
+		pDeathScene->pev->origin = pDeathScene->pev->euser1->v.origin;
+
+	if ( m_bWaitingToFall && pev->fuser3 != 2 )
+	{
+		int animDesired = LookupSequence( "taller_fall" );
+
+		if ( animDesired == -1 )
+			animDesired = 0;
+
+		if ( pev->sequence != animDesired || !m_fSequenceLoops )
+			pev->frame = 0;
+
+		pev->gaitsequence = 0;
+		m_flSequenceOverrideTime = GetSequenceTime( GET_MODEL_PTR( ENT(pev) ), animDesired ) + gpGlobals->time;
+
+		if ( pev->sequence != animDesired )
+		{
+			pev->sequence = animDesired;
+			pev->frame = 0;
+			ResetSequenceInfo();
+		}
+	}
+
+	if ( pev->fuser3 == 2 && !m_bHasGotUp && gpGlobals->time > m_flSequenceOverrideTime )
+	{
+		int animDesired = LookupSequence( "taller_lie" );
+
+		if ( animDesired == -1 )
+			animDesired = 0;
+
+		if ( pev->sequence != animDesired || !m_fSequenceLoops )
+			pev->frame = 0;
+
+		pev->gaitsequence = 0;
+		m_flSequenceOverrideTime = GetSequenceTime( GET_MODEL_PTR( ENT(pev) ), animDesired ) + gpGlobals->time;
+
+		if ( pev->sequence != animDesired )
+		{
+			pev->sequence = animDesired;
+			pev->frame = 0;
+			ResetSequenceInfo();
+		}
+	}
+
+	if ( m_bWaitingToFall && ( pev->flags & FL_ONGROUND ) && pev->fuser3 == 0 )
+	{
+		EMIT_SOUND_DYN( ENT(pev), CHAN_AUTO, "taller/taller_player_impact.wav", 1, ATTN_NORM, 0, 90 );
+
+		int animDesired = LookupSequence( "taller_land" );
+
+		if ( animDesired == -1 )
+			animDesired = 0;
+
+		if ( pev->sequence != animDesired || !m_fSequenceLoops )
+			pev->frame = 0;
+
+		pev->gaitsequence = 0;
+		m_flSequenceOverrideTime = GetSequenceTime( GET_MODEL_PTR( ENT(pev) ), animDesired ) + gpGlobals->time;
+
+		if ( pev->sequence != animDesired )
+		{
+			pev->sequence = animDesired;
+			pev->frame = 0;
+			ResetSequenceInfo();
+		}
+
+		pev->velocity.x /= 2;
+		pev->velocity.y /= 2;
+		pev->velocity.z /= 2;
+
+		if ( g_pGameRules && g_pGameRules->IsMultiplayer() )
+			m_fFallingTime = gpGlobals->time + 3;
+		else
+			m_fFallingTime = gpGlobals->time + 5;
+
+		m_bShouldFallFreeze = true;
+
+		pev->fuser3 = 2;
+
+		MESSAGE_BEGIN( MSG_ONE, gmsgFallOver, NULL, pev );
+			WRITE_BYTE( 1 );
+			WRITE_BYTE( RANDOM_LONG( 6, 12 ) );
+		MESSAGE_END();
+
+		ShowHint( 100, false );
+
+		ViewPunch( -30, RANDOM_LONG( -35, 35 ), RANDOM_LONG( -35, 35 ) );
+		Pain();
+
+		pev->flags &= ~(1<<18);
+
+		if ( !( pev->flags & (1<<19) ) )
+		{
+			if ( !m_OnStairs )
+				pev->maxspeed = gSkillData.plrPrimaryMaxSpeed;
+			else
+				pev->maxspeed = gSkillData.plrStairMaxSpeed;
+		}
+		else
+		{
+			if ( !m_OnStairs )
+				pev->maxspeed = gSkillData.plrSecondaryMaxSpeed;
+			else
+				pev->maxspeed = gSkillData.plrStairMaxSpeed;
+		}
+
+		if ( pev->maxspeed < 30 )
+			pev->maxspeed = 30;
+	}
+
+	if ( m_flTurnVectorTime > gpGlobals->time )
+	{
+		m_fOldTime = m_flTime;
+		m_flTime = gpGlobals->time;
+		m_flTimeDelta = (double)m_flTime - m_fOldTime;
+
+		Vector vecGoal = UTIL_VecToAngles( m_vTurnVector - ( pev->origin + pev->view_ofs ) );
+		vecGoal.x = -vecGoal.x;
+
+		if ( pev->angles.y > 360 )
+			pev->angles.y -= 360;
+
+		if ( pev->angles.y < 0 )
+			pev->angles.y += 360;
+
+		float dx = vecGoal.x - pev->angles.x;
+		float dy = vecGoal.y - pev->angles.y;
+
+		if ( dx < -180 )
+			dx += 360;
+
+		if ( dx > 180 )
+			dx -= 360;
+
+		if ( dy < -180 )
+			dy += 360;
+
+		if ( dy > 180 )
+			dy -= 360;
+
+		pev->angles.x = vecGoal.x;
+		pev->angles.y = vecGoal.y;
+
+		pev->fixangle = TRUE;
+	}
+
+	m_flTime = gpGlobals->time;
+
+	if ( !m_bWaterVoiceCancel )
+	{
+		if ( pev->waterlevel >= 3 )
+		{
+			m_bWaterVoiceCancel = true;
+			EMIT_SOUND( ENT(pev), CHAN_VOICE, "common/null.wav", 1, ATTN_NORM );
+		}
+	}
+	else
+	{
+		if ( pev->waterlevel < 3 )
+			m_bWaterVoiceCancel = false;
+	}
+
+	if ( pev->waterlevel >= 1 && pev->waterlevel < 3 && !( pev->flags & FL_ONGROUND ) )
+	{
+		if ( gpGlobals->time > m_flRippleTime )
+		{
+			TraceResult splashtr;
+			Vector SplashStart, SplashEnd;
+
+			SplashStart = pev->origin + pev->view_ofs;
+			SplashEnd = SplashStart - Vector( 0, 0, 1024 );
+
+			UTIL_TraceLine( SplashStart, SplashEnd, ignore_monsters, dont_ignore_glass, ENT(pev), &splashtr );
+
+			if ( splashtr.flFraction != 1.0 )
+			{
+				if ( UTIL_PointContents( splashtr.vecEndPos ) == CONTENTS_WATER )
+				{
+					Vector SplashOrigin = splashtr.vecEndPos;
+
+					while ( UTIL_PointContents( SplashOrigin ) == CONTENTS_WATER )
+						SplashOrigin.z += 1;
+
+					float speed = pev->velocity.Length2D();
+
+					if ( speed > 20 )
+					{
+						MESSAGE_BEGIN( MSG_ALL, gmsgRipple );
+							WRITE_COORD( SplashOrigin.x );
+							WRITE_COORD( SplashOrigin.y );
+							WRITE_COORD( SplashOrigin.z );
+							WRITE_SHORT( 30 );
+						MESSAGE_END();
+					}
+					else
+					{
+						MESSAGE_BEGIN( MSG_ALL, gmsgRipple );
+							WRITE_COORD( SplashOrigin.x );
+							WRITE_COORD( SplashOrigin.y );
+							WRITE_COORD( SplashOrigin.z );
+							WRITE_SHORT( 20 );
+						MESSAGE_END();
+					}
+				}
+			}
+
+			m_flRippleTime = gpGlobals->time + 0.25;
+		}
+	}
+	else
+	{
+		if ( m_flRippleTime > gpGlobals->time )
+			m_flRippleTime = gpGlobals->time;
+	}
+
+	if ( m_bWasInShallowWater )
+	{
+		if ( pev->waterlevel < 1 )
+			m_bWasInShallowWater = false;
+	}
+	else
+	{
+		if ( pev->waterlevel > 0 )
+			m_bWasInShallowWater = true;
+	}
+
+	if ( m_bWasDrowning )
+	{
+		if ( pev->waterlevel < 3 )
+		{
+			m_bWasDrowning = false;
+			EMIT_SOUND( ENT(pev), CHAN_VOICE, "player/vocal/water_surface.wav", 1, ATTN_NORM );
+		}
+	}
+
+	if ( m_bStartedDrowning )
+	{
+		if ( pev->waterlevel < 3 )
+			m_bStartedDrowning = false;
+	}
+
+	if ( !m_bSubmerged )
+	{
+		if ( pev->waterlevel >= 3 )
+		{
+			if ( !( pev->flags & FL_ONGROUND ) )
+			{
+				if ( m_bWasInShallowWater )
+					EMIT_SOUND( ENT(pev), CHAN_AUTO, "player/water_small_splash.wav", 1, ATTN_NORM );
+				else
+					EMIT_SOUND( ENT(pev), CHAN_AUTO, "player/water_splash.wav", 1, ATTN_NORM );
+			}
+			else
+			{
+				EMIT_SOUND( ENT(pev), CHAN_AUTO, "player/water_small_splash.wav", 1, ATTN_NORM );
+			}
+
+			m_bSubmerged = true;
+		}
+	}
+	else
+	{
+		if ( pev->waterlevel < 3 )
+		{
+			EMIT_SOUND( ENT(pev), CHAN_AUTO, "player/water_jump.wav", 1, ATTN_NORM );
+			m_bSubmerged = false;
+		}
+	}
+
+	if ( pev->waterlevel > 2 )
+	{
+		if ( !HasNamedPlayerItem( "weapon_action" ) )
+			GiveNamedItem( "weapon_action", false, false );
+
+		if ( m_pActiveItem && !FClassnameIs( m_pActiveItem->edict(), "weapon_action" ) )
+			m_pStoredActionItem = m_pActiveItem;
+
+		if ( HasNamedPlayerItem( "weapon_action" ) )
+		{
+			if ( ( m_pActiveItem && !FClassnameIs( m_pActiveItem->edict(), "weapon_action" ) ) || !m_pActiveItem )
+			{
+				CBasePlayerItem *pItem = NULL;
+
+				for ( int i = 0; i < MAX_ITEM_TYPES; i++ )
+				{
+					if ( m_rgpPlayerItems[ i ] )
+					{
+						pItem = m_rgpPlayerItems[ i ];
+
+						while ( pItem )
+						{
+							if ( FClassnameIs( pItem->pev, "weapon_action" ) )
+								break;
+
+							pItem = pItem->m_pNext;
+						}
+					}
+
+					if ( pItem )
+						break;
+				}
+
+				if ( pItem )
+				{
+					pItem->Deploy();
+					pItem->UpdateItemInfo();
+					m_pActiveItem = pItem;
+				}
+			}
+		}
+
+		if ( m_pActiveItem && FClassnameIs( m_pActiveItem->edict(), "weapon_action" ) && m_pActiveItem->pev->frags != 1 )
+			m_pActiveItem->pev->frags = 1;
+	}
+	else
+	{
+		if ( ( !m_pActiveItem || ( m_pActiveItem && FClassnameIs( m_pActiveItem->edict(), "weapon_action" ) && pev->fuser3 <= 0 ) )
+			&& ( pev->button & IN_ATTACK2 ) && gpGlobals->time > m_flNextPunchTime )
+		{
+			if ( !HasNamedPlayerItem( "weapon_action" ) )
+				GiveNamedItem( "weapon_action", false, false );
+
+			if ( m_pActiveItem && !FClassnameIs( m_pActiveItem->edict(), "weapon_action" ) )
+				m_pStoredActionItem = m_pActiveItem;
+			else
+				m_pStoredActionItem = NULL;
+
+			if ( HasNamedPlayerItem( "weapon_action" ) )
+			{
+				if ( ( m_pActiveItem && !FClassnameIs( m_pActiveItem->edict(), "weapon_action" ) ) || !m_pActiveItem )
+				{
+					CBasePlayerItem *pItem = NULL;
+
+					for ( int i = 0; i < MAX_ITEM_TYPES; i++ )
+					{
+						if ( m_rgpPlayerItems[ i ] )
+						{
+							pItem = m_rgpPlayerItems[ i ];
+
+							while ( pItem )
+							{
+								if ( FClassnameIs( pItem->pev, "weapon_action" ) )
+									break;
+
+								pItem = pItem->m_pNext;
+							}
+						}
+
+						if ( pItem )
+							break;
+					}
+
+					if ( pItem )
+					{
+						pItem->Deploy();
+						pItem->UpdateItemInfo();
+						m_pActiveItem = pItem;
+					}
+				}
+			}
+
+			if ( m_pActiveItem && FClassnameIs( m_pActiveItem->edict(), "weapon_action" ) )
+			{
+				SetNextThink( 0.233 );
+				SetThink( &CBasePlayer::MeleeHitThinkPunch );
+
+				m_flNextPunchTime = gpGlobals->time + 1;
+
+				TraceResult tr;
+
+				UTIL_MakeVectors( pev->v_angle );
+				Vector vecSrc = GetGunPosition();
+				Vector vecEnd = vecSrc + gpGlobals->v_forward * 32;
+
+				UTIL_TraceLine( vecSrc, vecEnd, dont_ignore_monsters, ENT(pev), &tr );
+
+				ViewPunch( 1, 1, 3 );
+				EMIT_SOUND( ENT(pev), CHAN_AUTO, "weapons/mobile/punch_swing.wav", 1, ATTN_NORM );
+
+				if ( tr.flFraction < 1.0 )
+				{
+					if ( m_pActiveItem && FClassnameIs( m_pActiveItem->edict(), "weapon_action" ) && m_pActiveItem->pev->frags != 4 )
+						m_pActiveItem->pev->frags = 10;
+				}
+				else
+				{
+					if ( m_pActiveItem && FClassnameIs( m_pActiveItem->edict(), "weapon_action" ) && m_pActiveItem->pev->frags != 5 )
+						m_pActiveItem->pev->frags = 11;
+				}
+			}
+		}
+
+		if ( !HasWeapons() && ( pev->flags & (1<<18) ) && !m_bWaitingToFall && m_flFallVelocity < 350 && gpGlobals->time > m_flNextAttack )
+		{
+			if ( !HasNamedPlayerItem( "weapon_action" ) )
+				GiveNamedItem( "weapon_action", false, false );
+
+			if ( m_pActiveItem && !FClassnameIs( m_pActiveItem->edict(), "weapon_action" ) )
+				m_pStoredActionItem = m_pActiveItem;
+
+			if ( HasNamedPlayerItem( "weapon_action" ) )
+			{
+				if ( ( m_pActiveItem && !FClassnameIs( m_pActiveItem->edict(), "weapon_action" ) ) || !m_pActiveItem )
+				{
+					CBasePlayerItem *pItem = NULL;
+
+					for ( int i = 0; i < MAX_ITEM_TYPES; i++ )
+					{
+						if ( m_rgpPlayerItems[ i ] )
+						{
+							pItem = m_rgpPlayerItems[ i ];
+
+							while ( pItem )
+							{
+								if ( FClassnameIs( pItem->pev, "weapon_action" ) )
+									break;
+
+								pItem = pItem->m_pNext;
+							}
+						}
+
+						if ( pItem )
+							break;
+					}
+
+					if ( pItem )
+					{
+						pItem->Deploy();
+						pItem->UpdateItemInfo();
+						m_pActiveItem = pItem;
+					}
+				}
+			}
+
+			if ( m_pActiveItem && FClassnameIs( m_pActiveItem->edict(), "weapon_action" ) && m_pActiveItem->pev->frags != 2 )
+				m_pActiveItem->pev->frags = 2;
+		}
+		else if ( !HasWeapons() && !m_pStoredActionItem && pev->fuser3 <= 0 )
+		{
+			if ( ( pev->button & IN_ATTACK2 ) && gpGlobals->time > m_flNextPunchTime )
+			{
+				if ( !HasNamedPlayerItem( "weapon_action" ) )
+					GiveNamedItem( "weapon_action", false, false );
+
+				if ( m_pActiveItem && !FClassnameIs( m_pActiveItem->edict(), "weapon_action" ) )
+					m_pStoredActionItem = m_pActiveItem;
+
+				if ( HasNamedPlayerItem( "weapon_action" ) )
+				{
+					if ( ( m_pActiveItem && !FClassnameIs( m_pActiveItem->edict(), "weapon_action" ) ) || !m_pActiveItem )
+					{
+						CBasePlayerItem *pItem = NULL;
+
+						for ( int i = 0; i < MAX_ITEM_TYPES; i++ )
+						{
+							if ( m_rgpPlayerItems[ i ] )
+							{
+								pItem = m_rgpPlayerItems[ i ];
+
+								while ( pItem )
+								{
+									if ( FClassnameIs( pItem->pev, "weapon_action" ) )
+										break;
+
+									pItem = pItem->m_pNext;
+								}
+							}
+
+							if ( pItem )
+								break;
+						}
+
+						if ( pItem )
+						{
+							pItem->Deploy();
+							pItem->UpdateItemInfo();
+							m_pActiveItem = pItem;
+						}
+					}
+				}
+
+				if ( m_pActiveItem && FClassnameIs( m_pActiveItem->edict(), "weapon_action" ) && m_pActiveItem->pev->frags != 2 )
+				{
+					SetNextThink( 0.233 );
+					SetThink( &CBasePlayer::MeleeHitThinkPunch );
+
+					m_flNextPunchTime = gpGlobals->time + 1;
+
+					TraceResult tr;
+
+					UTIL_MakeVectors( pev->v_angle );
+					Vector vecSrc = GetGunPosition();
+					Vector vecEnd = vecSrc + gpGlobals->v_forward * 32;
+
+					UTIL_TraceLine( vecSrc, vecEnd, dont_ignore_monsters, ENT(pev), &tr );
+
+					ViewPunch( 1, 1, 3 );
+					EMIT_SOUND( ENT(pev), CHAN_AUTO, "weapons/mobile/punch_swing.wav", 1, ATTN_NORM );
+
+					if ( tr.flFraction < 1.0 )
+					{
+						if ( m_pActiveItem && FClassnameIs( m_pActiveItem->edict(), "weapon_action" ) && m_pActiveItem->pev->frags != 4 )
+							m_pActiveItem->pev->frags = 10;
+					}
+					else
+					{
+						if ( m_pActiveItem && FClassnameIs( m_pActiveItem->edict(), "weapon_action" ) && m_pActiveItem->pev->frags != 5 )
+							m_pActiveItem->pev->frags = 11;
+					}
+				}
+			}
+		}
+		else
+		{
+			if ( m_pActiveItem && FClassnameIs( m_pActiveItem->edict(), "weapon_action" ) && m_pActiveItem->pev->frags != 20 )
+			{
+				if ( m_pActiveItem->pev->frags == 3 )
+				{
+					m_pActiveItem->Holster();
+					m_pActiveItem = NULL;
+
+					if ( m_pStoredActionItem && HasNamedPlayerItem( STRING( m_pStoredActionItem->pev->classname ) ) )
+					{
+						m_pStoredActionItem->Deploy();
+						m_pStoredActionItem->UpdateItemInfo();
+						m_pActiveItem = m_pStoredActionItem;
+						m_pStoredActionItem = NULL;
+					}
+				}
+				else if ( m_pActiveItem->pev->frags != 5 )
+				{
+					m_pActiveItem->Holster();
+					m_pActiveItem = NULL;
+
+					if ( m_pStoredActionItem && HasNamedPlayerItem( STRING( m_pStoredActionItem->pev->classname ) ) )
+					{
+						m_pStoredActionItem->Deploy();
+						m_pStoredActionItem->UpdateItemInfo();
+						m_pActiveItem = m_pStoredActionItem;
+						m_pStoredActionItem = NULL;
+					}
+				}
+			}
+		}
+	}
+
+	if ( m_pAttachedCamera )
+	{
+		CBaseEntity *pEntity = CBaseEntity::Instance( m_pAttachedCamera->edict() );
+
+		if ( pEntity )
+			((CBaseAnimating *)pEntity)->StudioFrameAdvance( 0 );
+	}
+
+	if ( m_iIsAFaggot )
+	{
+		if ( !( pev->flags & FL_FROZEN ) )
+			EnableControl( FALSE );
+	}
+
+	pev->vuser2[1] = pev->velocity.Length2D();
+
+	if ( foot_splash )
+	{
+		TraceResult splashtr;
+		Vector SplashStart, SplashEnd;
+
+		switch ( foot_splash )
+		{
+		case 1:
+			SplashStart = pev->origin + pev->view_ofs - gpGlobals->v_right * 6;
+			SplashEnd = SplashStart - Vector( 0, 0, 100 );
+
+			UTIL_TraceLine( SplashStart, SplashEnd, ignore_monsters, dont_ignore_glass, ENT(pev), &splashtr );
+
+			if ( splashtr.flFraction != 1.0 )
+			{
+				if ( UTIL_PointContents( splashtr.vecEndPos ) == CONTENTS_WATER )
+				{
+					Vector SplashOrigin = splashtr.vecEndPos;
+
+					while ( UTIL_PointContents( SplashOrigin ) == CONTENTS_WATER )
+						SplashOrigin.z += 1;
+
+					MESSAGE_BEGIN( MSG_ALL, gmsgRipple );
+						WRITE_COORD( SplashOrigin.x );
+						WRITE_COORD( SplashOrigin.y );
+						WRITE_COORD( SplashOrigin.z );
+						WRITE_SHORT( 10 );
+					MESSAGE_END();
+				}
+			}
+			break;
+
+		case 2:
+			SplashStart = pev->origin + pev->view_ofs + gpGlobals->v_right * 6;
+			SplashEnd = SplashStart - Vector( 0, 0, 100 );
+
+			UTIL_TraceLine( SplashStart, SplashEnd, ignore_monsters, dont_ignore_glass, ENT(pev), &splashtr );
+
+			if ( splashtr.flFraction != 1.0 )
+			{
+				if ( UTIL_PointContents( splashtr.vecEndPos ) == CONTENTS_WATER )
+				{
+					Vector SplashOrigin = splashtr.vecEndPos;
+
+					while ( UTIL_PointContents( SplashOrigin ) == CONTENTS_WATER )
+						SplashOrigin.z += 1;
+
+					MESSAGE_BEGIN( MSG_ALL, gmsgRipple );
+						WRITE_COORD( SplashOrigin.x );
+						WRITE_COORD( SplashOrigin.y );
+						WRITE_COORD( SplashOrigin.z );
+						WRITE_SHORT( 10 );
+					MESSAGE_END();
+				}
+			}
+			break;
+
+		case 3:
+			SplashStart = pev->origin + pev->view_ofs;
+			SplashEnd = SplashStart - Vector( 0, 0, 100 );
+
+			UTIL_TraceLine( SplashStart, SplashEnd, ignore_monsters, dont_ignore_glass, ENT(pev), &splashtr );
+
+			if ( splashtr.flFraction != 1.0 )
+			{
+				if ( UTIL_PointContents( splashtr.vecEndPos ) == CONTENTS_WATER )
+				{
+					Vector SplashOrigin = splashtr.vecEndPos;
+
+					while ( UTIL_PointContents( SplashOrigin ) == CONTENTS_WATER )
+						SplashOrigin.z += 1;
+
+					MESSAGE_BEGIN( MSG_ALL, gmsgRipple );
+						WRITE_COORD( SplashOrigin.x );
+						WRITE_COORD( SplashOrigin.y );
+						WRITE_COORD( SplashOrigin.z );
+						WRITE_SHORT( 40 );
+					MESSAGE_END();
+				}
+			}
+			break;
+		}
+
+		foot_splash = 0;
+	}
+
+	if ( m_iFlashlightFlags != m_iClientFlashlightFlags )
+	{
+		m_iClientFlashlightFlags = m_iFlashlightFlags;
+
+		if ( g_pGameRules && g_pGameRules->IsMultiplayer() )
+		{
+			pev->frags = m_iFlashlightFlags;
+
+			MESSAGE_BEGIN( MSG_ALL, gmsgScoreInfo );
+				WRITE_BYTE( ENTINDEX( edict() ) );
+				WRITE_SHORT( pev->frags );
+				WRITE_SHORT( m_iDeaths );
+				WRITE_SHORT( 0 );
+				WRITE_SHORT( g_pGameRules->GetTeamIndex( m_szTeamName ) + 1 );
+			MESSAGE_END();
+		}
+
+		MESSAGE_BEGIN( MSG_ONE, gmsgFlashFlags, NULL, pev );
+			WRITE_SHORT( m_iFlashlightFlags );
+		MESSAGE_END();
+	}
+
+	if ( m_iHealthCap > 0 )
+	{
+		if ( m_iHealthCap == 1 )
+		{
+			if ( pev->health > 80 )
+				pev->health = 80;
+		}
+
+		if ( m_iHealthCap == 2 )
+		{
+			if ( pev->health > 66 )
+				pev->health = 66;
+		}
+	}
+
+	if ( m_bPhoneLow && !m_iPhoneDisabled
+		&& gpGlobals->time > m_fNextPhoneWarnTime )
+	{
+		if ( m_pActiveItem && FClassnameIs( m_pActiveItem->edict(), "weapon_mobile" ) )
+		{
+			EMIT_SOUND_DYN( edict(), CHAN_AUTO, "weapons/mobile/low_battery_warn.wav", 1, ATTN_NONE, 0, PITCH_NORM );
+			EMIT_SOUND_DYN( edict(), CHAN_AUTO, "phone/phone_vibrate.wav", 1, ATTN_NONE, 0, PITCH_NORM );
+		}
+		else
+		{
+			EMIT_SOUND_DYN( edict(), CHAN_AUTO, "weapons/mobile/low_battery_warn.wav", 0.25, ATTN_NONE, 0, PITCH_NORM );
+			EMIT_SOUND_DYN( edict(), CHAN_AUTO, "phone/phone_vibrate.wav", 0.25, ATTN_NONE, 0, PITCH_NORM );
+		}
+
+		m_fNextPhoneWarnTime = gpGlobals->time + 10;
+	}
+
+	if ( m_hCurrentCamera && FClassnameIs( m_hCurrentCamera->edict(), "camera" ) )
+	{
+		if ( m_hCurrentCamera->pev->message )
+		{
+			CBaseEntity *pCameraTarget = UTIL_FindEntityByTargetname( NULL, STRING( m_hCurrentCamera->pev->message ) );
+
+			if ( pCameraTarget )
+			{
+				Vector VecSrc, VecAng;
+			}
+		}
+	}
+
+	if ( m_iSwitchbladeCuts > 10 )
+		m_iSwitchbladeCuts = 10;
+
+	if ( m_iSwitchbladeCuts < 0 )
+		m_iSwitchbladeCuts = 0;
+
+	entvars_t *pevGround;
+
+	pevGround = VARS( pev->groundentity );
+
+	if ( pevGround && ( pevGround->flags & FL_MONSTER ) && ( pev->flags & FL_ONGROUND ) )
+		pev->velocity = pev->velocity - gpGlobals->v_forward * CVAR_GET_FLOAT( "cof_monsterpushstrength" );
+
+	if ( m_gbIsInCutscene )
+	{
+		if ( pev->renderamt != 0 )
+			pev->renderamt = 0;
+
+		if ( !IsInCutscene() )
+			m_gbIsInCutscene = false;
+	}
+	else
+	{
+		if ( pev->renderamt != 255 )
+			pev->renderamt = 255;
+
+		if ( IsInCutscene() )
+		{
+			if ( m_pActiveItem && ((CBasePlayerWeapon *)m_pActiveItem)->m_bIronSights )
+				m_pActiveItem->IronsightsFrom();
+
+			m_gbIsInCutscene = true;
+		}
+	}
+
+	if ( m_bWeaponWaitingToDeploy && gpGlobals->time > m_flNextAttack )
+	{
+		m_pLastItem = m_pActiveItem;
+		m_pActiveItem = m_pNextItem;
+
+		if ( m_pActiveItem && !FClassnameIs( m_pActiveItem->edict(), "weapon_action" ) )
+		{
+			m_pActiveItem->Deploy();
+			m_pActiveItem->UpdateItemInfo();
+		}
+
+		m_bWeaponWaitingToDeploy = false;
+	}
+
+	if ( m_pActiveItem )
+	{
+		if ( m_iFlashlightFlags & 1 )
+		{
+			if ( !m_iPhoneDisabled )
+			{
+				if ( !FClassnameIs( m_pActiveItem->pev, "weapon_mobile" ) )
+				{
+					if ( FClassnameIs( m_pActiveItem->pev, "weapon_dualweapon" ) )
+					{
+						CDualWeapon *pDualWeapon = GetClassPtr( (CDualWeapon *)m_pActiveItem->pev );
+
+						if ( pDualWeapon->m_iLeftWeaponID != 2 && pDualWeapon->m_iRightWeaponID != 2 )
+						{
+							m_iFlashlightFlags &= ~1;
+
+							if ( !m_iPhoneDisabled )
+								m_iFlashlightFlags |= 2;
+						}
+					}
+					else
+					{
+						m_iFlashlightFlags &= ~1;
+
+						if ( !m_iPhoneDisabled )
+							m_iFlashlightFlags |= 2;
+					}
+				}
+			}
+			else
+			{
+				m_iFlashlightFlags &= ~1;
+			}
+		}
+
+		if ( m_iFlashlightFlags & 16 )
+		{
+			if ( !FClassnameIs( m_pActiveItem->pev, "weapon_flare" ) && !FClassnameIs( m_pActiveItem->pev, "weapon_booklaser" ) )
+				m_iFlashlightFlags &= ~16;
+		}
+
+		if ( m_iFlashlightFlags & 2 )
+		{
+			if ( m_iPhoneDisabled )
+			{
+				m_iFlashlightFlags &= ~2;
+			}
+			else
+			{
+				if ( FClassnameIs( m_pActiveItem->pev, "weapon_mobile" ) )
+				{
+					if ( !m_iPhoneDisabled )
+						m_iFlashlightFlags |= 1;
+
+					m_iFlashlightFlags &= ~2;
+				}
+
+				if ( !HasNamedPlayerItem( "weapon_mobile" ) )
+				{
+					m_iFlashlightFlags &= ~1;
+					m_iFlashlightFlags &= ~2;
+				}
+
+				if ( FClassnameIs( m_pActiveItem->pev, "weapon_dualweapon" ) )
+				{
+					CDualWeapon *pDualWeapon = GetClassPtr( (CDualWeapon *)m_pActiveItem->pev );
+
+					if ( pDualWeapon )
+					{
+						if ( pDualWeapon->m_iLeftWeaponID == 2 || pDualWeapon->m_iRightWeaponID == 2 )
+						{
+							if ( !m_iPhoneDisabled )
+								m_iFlashlightFlags |= 1;
+
+							m_iFlashlightFlags &= ~2;
+						}
+					}
+				}
+			}
+		}
+
+		if ( m_iFlashlightFlags & 4 )
+		{
+			if ( !HasTaclight() )
+				m_iFlashlightFlags &= ~4;
+			else if ( !FClassnameIs( m_pActiveItem->pev, "weapon_glock" ) )
+				m_iFlashlightFlags &= ~4;
+		}
+
+		if ( m_iFlashlightFlags & 8 )
+		{
+			if ( !FClassnameIs( m_pActiveItem->pev, "weapon_flashlight" ) && !FClassnameIs( m_pActiveItem->pev, "weapon_dualweapon" ) )
+			{
+				m_iFlashlightFlags &= ~8;
+				m_iFlashlight = 0;
+			}
+		}
+	}
+	else
+	{
+		if ( m_iFlashlightFlags & 1 )
+		{
+			m_iFlashlightFlags &= ~1;
+
+			if ( !( m_iFlashlightFlags & 2 ) && !m_iPhoneDisabled )
+				m_iFlashlightFlags |= 2;
+		}
+
+		if ( m_iFlashlightFlags & 2 )
+		{
+			if ( !HasNamedPlayerItem( "weapon_mobile" ) || m_iPhoneDisabled )
+			{
+				m_iFlashlightFlags &= ~1;
+				m_iFlashlightFlags &= ~2;
+			}
+		}
+
+		if ( m_iFlashlightFlags & 4 )
+			m_iFlashlightFlags &= ~4;
+
+		if ( m_iFlashlightFlags & 8 )
+		{
+			m_iFlashlightFlags &= ~8;
+			m_iFlashlight = 0;
+		}
+
+		if ( m_iFlashlightFlags & 16 )
+			m_iFlashlightFlags &= ~16;
+	}
+
+	if ( gpGlobals->time > m_fFallingTime && m_bShouldFallFreeze && IsAlive() )
+	{
+		if ( m_bWaitingToFall )
+		{
+			if ( g_pGameRules && g_pGameRules->IsMultiplayer() )
+			{
+				if ( !m_bHasGotUp )
+				{
+					PlayerAnimation( "taller_getup", false );
+					m_bHasGotUp = true;
+					m_flGetupTime = m_flSequenceOverrideTime;
+				}
+
+				if ( gpGlobals->time > m_flGetupTime )
+				{
+					MESSAGE_BEGIN( MSG_ONE, gmsgFallOver, NULL, pev );
+						WRITE_BYTE( 0 );
+					MESSAGE_END();
+
+					m_iSequenceOverride = -1;
+					m_iGaitSequenceOverride = -1;
+
+					if ( pev->fuser3 == 2 )
+						m_bWeaponWaitingToDeploy = true;
+
+					pev->fuser3 = 0;
+					m_bShouldFallFreeze = false;
+					m_bWaitingToFall = false;
+					SetAnimation( PLAYER_WALK );
+				}
+			}
+			else
+			{
+				MESSAGE_BEGIN( MSG_ONE, gmsgFallOver, NULL, pev );
+					WRITE_BYTE( 0 );
+				MESSAGE_END();
+
+				if ( pev->fuser3 == 2 )
+					m_bWeaponWaitingToDeploy = true;
+
+				int animDesired = LookupSequence( "taller_getup" );
+
+				if ( animDesired == -1 )
+					animDesired = 0;
+
+				if ( pev->sequence != animDesired || !m_fSequenceLoops )
+					pev->frame = 0;
+
+				pev->gaitsequence = 0;
+				m_flSequenceOverrideTime = GetSequenceTime( GET_MODEL_PTR( ENT(pev) ), animDesired ) + gpGlobals->time;
+
+				if ( pev->sequence != animDesired )
+				{
+					pev->sequence = animDesired;
+					pev->frame = 0;
+					ResetSequenceInfo();
+				}
+
+				pev->fuser3 = 0;
+				m_bShouldFallFreeze = false;
+				m_bWaitingToFall = false;
+			}
+		}
+		else
+		{
+			MESSAGE_BEGIN( MSG_ONE, gmsgFallOver, NULL, pev );
+				WRITE_BYTE( 0 );
+			MESSAGE_END();
+
+			pev->fuser3 = 0;
+			m_bShouldFallFreeze = false;
+		}
+	}
+
+	if ( IsOnLadder() )
+	{
+		if ( !m_ClientLadder )
+		{
+			MESSAGE_BEGIN( MSG_ONE, gmsgLadder, NULL, pev );
+				WRITE_BYTE( 1 );
+				WRITE_COORD( m_LadderAngles.x );
+				WRITE_COORD( m_LadderAngles.y );
+				WRITE_COORD( m_LadderAngles.z );
+			MESSAGE_END();
+
+			pev->flags |= (1<<17);
+			m_ClientLadder = 1;
+		}
+	}
+	else
+	{
+		if ( m_ClientLadder )
+		{
+			MESSAGE_BEGIN( MSG_ONE, gmsgLadder, NULL, pev );
+				WRITE_BYTE( 0 );
+				WRITE_COORD( 0 );
+				WRITE_COORD( 0 );
+				WRITE_COORD( 0 );
+			MESSAGE_END();
+
+			pev->flags &= ~(1<<17);
+			m_ClientLadder = 0;
+		}
+	}
+
+	if ( m_iClientViewEntIndex != m_iViewEntIndex )
+	{
+		MESSAGE_BEGIN( MSG_ONE, gmsgViewEntity, NULL, pev );
+			WRITE_SHORT( m_iViewEntIndex );
+		MESSAGE_END();
+
+		m_iClientViewEntIndex = m_iViewEntIndex;
+	}
+
+	StaminaThink();
+	BreatheThink();
+
+	HeartBeatCheck();
+
+	if ( pev->flags & (1<<18) )
+	{
+		if ( pev->vuser2.z != 1 )
+			pev->vuser2.z = 1;
+	}
+	else
+	{
+		if ( pev->vuser2.z != 0 )
+			pev->vuser2.z = 0;
+	}
+
+	if ( m_bIsTripping && gpGlobals->time > m_flNextMorphineDreamTime )
+	{
+		m_flNextMorphineDreamTime = gpGlobals->time + 11;
+		EMIT_SOUND_DYN( edict(), CHAN_AUTO, "player/morphine_dream.wav", 0.65, ATTN_NORM, 0, PITCH_NORM );
+	}
+
+	if ( m_bIsTripping && gpGlobals->time > m_fTrippingTime )
+		StopMorphineTrip();
+
+	if ( m_ClientDrawBars != m_DrawBars )
+	{
+		MESSAGE_BEGIN( MSG_ONE, gmsgBlackBars, NULL, pev );
+			WRITE_BYTE( m_DrawBars );
+		MESSAGE_END();
+
+		m_ClientDrawBars = m_DrawBars;
+	}
+
+	if ( EHandlesNotSame( m_pAttachedCamera, m_pClientAttachedCamera ) )
+	{
+		if ( !m_pAttachedCamera )
+		{
+			MESSAGE_BEGIN( MSG_ONE, gmsgAttachCam, NULL, pev );
+				WRITE_SHORT( -1 );
+				WRITE_BYTE( 0 );
+			MESSAGE_END();
+		}
+		else
+		{
+			MESSAGE_BEGIN( MSG_ONE, gmsgAttachCam, NULL, pev );
+				WRITE_SHORT( ENTINDEX( m_pAttachedCamera->edict() ) );
+				WRITE_BYTE( 0 );
+			MESSAGE_END();
+		}
+
+		m_pClientAttachedCamera = m_pAttachedCamera;
+	}
+
+	if ( EHandlesNotSame( m_pBoat, m_pClientBoat ) )
+	{
+		if ( !m_pBoat )
+		{
+			MESSAGE_BEGIN( MSG_ONE, gmsgBoat, NULL, pev );
+				WRITE_SHORT( -1 );
+			MESSAGE_END();
+		}
+		else
+		{
+			MESSAGE_BEGIN( MSG_ONE, gmsgBoat, NULL, pev );
+				WRITE_SHORT( ENTINDEX( m_pBoat->edict() ) );
+			MESSAGE_END();
+		}
+
+		m_pClientBoat = m_pBoat;
+	}
+
+	if ( m_sClientObjectiveText != m_sObjectiveText )
+	{
+		m_sClientObjectiveText = m_sObjectiveText;
+
+		int language = CVAR_GET_FLOAT( "cof_subtitlelanguage" );
+		char m_sLanguage[128];
+
+		switch ( language )
+		{
+		case 0:
+			strcpy( m_sLanguage, "txtfiles/hints.txt" );
+			break;
+		case 1:
+			strcpy( m_sLanguage, "txtfiles/hints.txt" );
+			break;
+		case 2:
+			strcpy( m_sLanguage, "txtfiles/languages/dutch/hints.txt" );
+			break;
+		case 3:
+			strcpy( m_sLanguage, "txtfiles/languages/french/hints.txt" );
+			break;
+		case 4:
+			strcpy( m_sLanguage, "txtfiles/languages/german/hints.txt" );
+			break;
+		case 5:
+			strcpy( m_sLanguage, "txtfiles/languages/norwegian/hints.txt" );
+			break;
+		case 6:
+			strcpy( m_sLanguage, "txtfiles/languages/spanish/hints.txt" );
+			break;
+		case 7:
+			strcpy( m_sLanguage, "txtfiles/languages/swedish/hints.txt" );
+			break;
+		default:
+			strcpy( m_sLanguage, "txtfiles/hints.txt" );
+			break;
+		}
+
+		if ( m_sCustomObjectives )
+			strcpy( m_sLanguage, STRING( m_sCustomObjectives ) );
+
+		m_sCustomObjectives = 0;
+
+		MESSAGE_BEGIN( MSG_ONE, gmsgObjectives, NULL, pev );
+			WRITE_STRING( STRING( m_sObjectiveText ) );
+			WRITE_STRING( m_sLanguage );
+			if ( showobjective )
+			{
+				showobjective = false;
+				WRITE_BYTE( 1 );
+			}
+			else
+				WRITE_BYTE( 0 );
+		MESSAGE_END();
+	}
+
+	if ( m_iClientBlurActive != m_iBlurActive )
+	{
+		MESSAGE_BEGIN( MSG_ONE, gmsgBlur, NULL, pev );
+			WRITE_BYTE( m_iBlurActive );
+		MESSAGE_END();
+
+		m_iClientBlurActive = m_iBlurActive;
+	}
+
+	if ( m_iClientFlashlight != m_iFlashlight )
+	{
+		MESSAGE_BEGIN( MSG_ONE, gmsgMaglite, NULL, pev );
+			WRITE_BYTE( m_iFlashlight );
+		MESSAGE_END();
+
+		m_iClientFlashlight = m_iFlashlight;
+	}
+
+	// Handle Tank controlling
+	if ( m_pTank != NULL )
+	{ // if they've moved too far from the gun,  or selected a weapon, unuse the gun
+		if ( m_pTank->OnControls( pev ) && !pev->weaponmodel )
+		{
+			//m_pTank->Use( this, this, USE_SET, 2 );	// try fire the gun
+		}
+		else
+		{  // they've moved off the platform
+			m_pTank->Use( this, this, USE_OFF, 0 );
+			m_pTank = NULL;
+		}
+	}
+
+	if ( m_pSpecTank != NULL )
+	{
+		if ( m_pSpecTank->OnControls( pev ) && !pev->weaponmodel )
+		{
+			m_pSpecTank->Use( this, this, USE_SET, 2 );	// try fire the gun
+		}
+		else
+		{
+			m_pSpecTank->Use( this, this, USE_OFF, 0 );
+			m_pSpecTank = NULL;
+		}
+	}
+
+	// do weapon stuff
+	ItemPostFrame( );
+
+	if ( gDualWeapon.HasDualWeapon( this ) )
+		gDualWeapon.WeaponThink( this );
+
+	if ( FBitSet( pev->flags, FL_ONGROUND ) && pev->health > 0 && m_flFallVelocity > 175 && m_flFallVelocity < 350 )
+	{
+		pev->flags |= FL_ONGROUND;
+
+		if ( pev->watertype == CONTENT_WATER )
+		{
+			if ( !pev->groundentity || VARS( pev->groundentity )->velocity.z == 0 )
+				UTIL_SplashCalculation( this, 1 );
+		}
+	}
+
+	// check to see if player landed hard enough to make a sound
+	// falling farther than half of the maximum safe distance, but not as far a max safe distance will
+	// play a bootscrape sound, and no damage will be inflicted. Fallling a distance shorter than half
+	// of maximum safe distance will make no sound. Falling farther than max safe distance will play a
+	// fallpain sound, and damage will be inflicted based on how far the player fell
+
+	if ( (FBitSet(pev->flags, FL_ONGROUND)) && (pev->health > 0) && m_flFallVelocity >= 350 )
+	{
+		// ALERT ( at_console, "%f\n", m_flFallVelocity );
+
+		if (pev->watertype == CONTENT_WATER)
+		{
+			// Did he hit the world or a non-moving entity?
+			// BUG - this happens all the time in water, especially when
+			// BUG - water has current force
+			if ( !pev->groundentity || VARS(pev->groundentity)->velocity.z == 0 )
+				UTIL_SplashCalculation( this, 1 );
+		}
+		else if ( m_flFallVelocity > 580 )
+		{// after this point, we start doing damage
+
+			float flFallDamage = g_pGameRules->FlPlayerFallDamage( this );
+
+			if ( flFallDamage > pev->health )
+			{//splat
+				// note: play on item channel because we play footstep landing on body channel
+				EMIT_SOUND(ENT(pev), CHAN_ITEM, "common/bodysplat.wav", 1, ATTN_NORM);
+			}
+
+			if ( flFallDamage > 0 )
+			{
+				TripOver();
+				TakeDamage(VARS(eoNullEntity), VARS(eoNullEntity), flFallDamage, DMG_FALL );
+				pev->punchangle.x = 0;
+			}
+		}
+
+		if ( IsAlive() )
+		{
+			SetAnimation( PLAYER_WALK );
+		}
+	}
+
+	if (FBitSet(pev->flags, FL_ONGROUND))
+	{
+		if (m_flFallVelocity > 64 && g_pGameRules && !g_pGameRules->IsMultiplayer())
+		{
+			CSoundEnt::InsertSound ( bits_SOUND_PLAYER, pev->origin, m_flFallVelocity, 0.2 );
+			// ALERT( at_console, "fall %f\n", m_flFallVelocity );
+		}
+		m_flFallVelocity = 0;
+	}
+
+	// select the proper animation for the player character
+	if ( IsAlive() )
+	{
+		if (!pev->velocity.x && !pev->velocity.y)
+			SetAnimation( PLAYER_IDLE );
+		else if ((pev->velocity.x || pev->velocity.y) && (FBitSet(pev->flags, FL_ONGROUND)))
+			SetAnimation( PLAYER_WALK );
+		else if (pev->waterlevel > 1)
+			SetAnimation( PLAYER_WALK );
+	}
+
+	float flInterval;
+
+	flInterval = StudioFrameAdvance( );
+	DispatchAnimEvents( flInterval );
+
+	if ( pDeathScene )
+	{
+		float flInterval = pDeathScene->StudioFrameAdvance( );
+		pDeathScene->DispatchAnimEvents( flInterval );
+	}
+
+	CheckPowerups(pev);
+
+	UpdatePlayerSound();
+
+	// Track button info so we can detect 'pressed' and 'released' buttons next frame
+	m_afButtonLast = pev->button;
+
+pt_end:
+	if ( m_iClientViewEntIndex != m_iViewEntIndex )
+	{
+		MESSAGE_BEGIN( MSG_ONE, gmsgViewEntity, NULL, pev );
+			WRITE_SHORT( m_iViewEntIndex );
+		MESSAGE_END();
+
+		m_iClientViewEntIndex = m_iViewEntIndex;
+	}
+
+	if ( m_iMp3NeedsUpdate )
+	{
+		if ( FStringNull( m_strCurrentMp3 ) )
+		{
+			MESSAGE_BEGIN( MSG_ONE, gmsgMP3, NULL, pev );
+				WRITE_BYTE( 0 );
+				WRITE_BYTE( 0 );
+				WRITE_COORD( m_fMp3FadeTime );
+				WRITE_STRING( "nothing" );
+			MESSAGE_END();
+
+			m_fMp3FadeTime = 0;
+		}
+		else
+		{
+			MESSAGE_BEGIN( MSG_ONE, gmsgMP3, NULL, pev );
+				if ( m_bMp3ShouldLoop )
+					WRITE_BYTE( 1 );
+				else
+					WRITE_BYTE( 0 );
+
+				WRITE_BYTE( 1 );
+				WRITE_COORD( m_fMp3FadeInTime );
+				WRITE_STRING( STRING( m_strCurrentMp3 ) );
+			MESSAGE_END();
+		}
+
+		m_iMp3NeedsUpdate = 0;
+	}
+}
+
 
 bool CBasePlayer::IsInCutscene( void )
 {
@@ -7859,10 +9596,10 @@ void CBasePlayer :: UpdateClientData( void )
 			WRITE_COORD( damageOrigin.x );
 			WRITE_COORD( damageOrigin.y );
 			WRITE_COORD( damageOrigin.z );
-			if ( m_bitsDamageType & DMG_FALL )
-				WRITE_BYTE( 0 );
-			else
+			if ( !( m_bitsDamageType & DMG_FALL ) )
 				WRITE_BYTE( 1 );
+			else
+				WRITE_BYTE( 0 );
 		MESSAGE_END();
 
 		pev->dmg_take = 0;

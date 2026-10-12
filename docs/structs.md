@@ -27,6 +27,9 @@ Confirmed 2026-10-10 from the save/restore table `gEntvarsDescription` (102 TYPE
 - Second extra field, confirmed 2026-10-11: hw.dll clears an edict's fields with `memset( &ed->v, 0, 0x2AC )` (`push 0x2ac; push 0; lea edx, [ed+0x80]` at 0x01DD7C81, also at 0x01DA7A23, 0x01DA7E42, 0x01DE0CF4), so `sizeof(entvars_t)` is 0x2AC. Every saved field up to `euser4` (0x2A4) is accounted for, so the 4 bytes follow `euser4`; `src/engine/progdefs.h` names them `guess_cof_end_extra`.
 - Consequence: `edict_t` is 0x32C bytes in 1.6a (as cof-enhanced reports). hl.dll walks the edict array with that stride (`add edi, 0x32c` in `CHalfLifeMultiplay::Think` and `InitHUD`), which matches once both fields are declared.
 
+## ScreenFade (engine/shake.h, hl.dll 1.6a): floats instead of 4.12 fixed shorts
+
+`float duration; float holdTime; int fadeFlags; byte r, g, b, a;` (16 bytes; 1.55 and the HLSDK have `unsigned short duration, holdTime; short fadeFlags;`, 10 bytes). Confirmed by UTIL_ScreenFadeBuild (cvtdq2ps stores at +0 and +4, int at +8, bytes at +0xC..+0xF) and UTIL_ScreenFadeWrite (cvttss2si before WRITE_SHORT). The values are still FixedUnsigned16 results. LinkUserMessages registers the message with size 10 (the HLSDK size), not sizeof(ScreenFade).
 ## Engine interface tables (1.6a)
 
 Confirmed 2026-10-10 from the copy loops in the exported entry points (`rep movsd` counts) and the member lists of the headers in `src/`.

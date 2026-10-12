@@ -84,3 +84,6 @@ The reconstructed source keeps the behavior of the retail 1.6a binaries, includi
 | `CCoFPlayerCheck::Use` (effects.cpp) | Case 3 tests `player1trigger` but fires `player3trigger`. | the field name |
 | `CCoFStats::Use` (effects.cpp) | Normal mode: a score of 9 to 12 gives grade 0. Doctor mode with unlocks: `unlockflags = 0` wipes the earlier flags before setting 0x1000000. | the grade table and the store |
 | `CCoFRandomTimedSpawner::CheckIfDead` (effects.cpp) | In the `iuser4` branch the delay from `iuser1` is overwritten by the final `SetNextThink( 0.25 )` (no `return`). | the missing return |
+| `CBasePlayer::PostThink` (player.cpp) | In multiplayer, `pev->frags = m_iFlashlightFlags;` overwrites the score with the flashlight flags, which ScoreInfo then sends. | the store |
+| `CBasePlayer::PostThink` (player.cpp) | The punch logic tests `frags != 4` but sets `frags = 10`, and tests `!= 5` but sets `11` (1.55 set 4 and 5; the tests were not updated). | the constants |
+| `CBasePlayer::PostThink` (player.cpp) | The first CDualWeapon block uses `pDualWeapon` without a null check (the second checks it); dead leftovers `dx`/`dy`, an unused `pCameraTarget`, and `pev->flags |= FL_ONGROUND` in a branch that already requires it. | as written |
