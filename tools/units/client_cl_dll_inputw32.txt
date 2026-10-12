@@ -1,0 +1,13 @@
+?IN_Commands@@YAXXZ
+?IN_JoyMove@@YAXMPAUusercmd_s@@@Z
+?IN_MouseMove@@YAXMPAUusercmd_s@@@Z
+?IN_Move@@YAXMPAUusercmd_s@@@Z
+?IN_ReadJoystick@@YAHXZ
+?IN_StartupJoystick@@YAXXZ
+?IN_StartupMouse@@YAXXZ
+?Joy_AdvancedUpdate_f@@YAXXZ
+IN_Accumulate
+IN_ActivateMouse
+IN_ClearStates
+IN_DeactivateMouse
+IN_MouseEvent

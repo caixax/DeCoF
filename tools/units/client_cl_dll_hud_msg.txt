@@ -1,0 +1,4 @@
+?MsgFunc_Damage@CHud@@QAAHPBDHPAX@Z
+?MsgFunc_KeyedDLight@CHud@@QAAXPBDHPAX@Z
+?MsgFunc_RainData@CHud@@QAAHPBDHPAX@Z
+?MsgFunc_SetFog@CHud@@QAAXPBDHPAX@Z

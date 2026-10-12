@@ -932,6 +932,101 @@
           "name": "game_shared/voice_banmgr",
           "source": "src/game_shared/voice_banmgr.cpp",
           "functions_file": "tools/units/client_game_shared_voice_banmgr.txt"
+        },
+        {
+          "name": "cl_dll/health",
+          "source": "src/cl_dll/health.cpp",
+          "functions_file": "tools/units/client_cl_dll_health.txt"
+        },
+        {
+          "name": "cl_dll/battery",
+          "source": "src/cl_dll/battery.cpp",
+          "functions_file": "tools/units/client_cl_dll_battery.txt"
+        },
+        {
+          "name": "cl_dll/flashlight",
+          "source": "src/cl_dll/flashlight.cpp",
+          "functions_file": "tools/units/client_cl_dll_flashlight.txt"
+        },
+        {
+          "name": "cl_dll/geiger",
+          "source": "src/cl_dll/geiger.cpp",
+          "functions_file": "tools/units/client_cl_dll_geiger.txt"
+        },
+        {
+          "name": "cl_dll/statusbar",
+          "source": "src/cl_dll/statusbar.cpp",
+          "functions_file": "tools/units/client_cl_dll_statusbar.txt"
+        },
+        {
+          "name": "cl_dll/status_icons",
+          "source": "src/cl_dll/status_icons.cpp",
+          "functions_file": "tools/units/client_cl_dll_status_icons.txt"
+        },
+        {
+          "name": "cl_dll/saytext",
+          "source": "src/cl_dll/saytext.cpp",
+          "functions_file": "tools/units/client_cl_dll_saytext.txt"
+        },
+        {
+          "name": "cl_dll/message",
+          "source": "src/cl_dll/message.cpp",
+          "functions_file": "tools/units/client_cl_dll_message.txt"
+        },
+        {
+          "name": "cl_dll/menu",
+          "source": "src/cl_dll/menu.cpp",
+          "functions_file": "tools/units/client_cl_dll_menu.txt"
+        },
+        {
+          "name": "cl_dll/death",
+          "source": "src/cl_dll/death.cpp",
+          "functions_file": "tools/units/client_cl_dll_death.txt"
+        },
+        {
+          "name": "cl_dll/text_message",
+          "source": "src/cl_dll/text_message.cpp",
+          "functions_file": "tools/units/client_cl_dll_text_message.txt"
+        },
+        {
+          "name": "cl_dll/ammo_secondary",
+          "source": "src/cl_dll/ammo_secondary.cpp",
+          "functions_file": "tools/units/client_cl_dll_ammo_secondary.txt"
+        },
+        {
+          "name": "cl_dll/ammohistory",
+          "source": "src/cl_dll/ammohistory.cpp",
+          "functions_file": "tools/units/client_cl_dll_ammohistory.txt"
+        },
+        {
+          "name": "cl_dll/input",
+          "source": "src/cl_dll/input.cpp",
+          "functions_file": "tools/units/client_cl_dll_input.txt"
+        },
+        {
+          "name": "cl_dll/inputw32",
+          "source": "src/cl_dll/inputw32.cpp",
+          "functions_file": "tools/units/client_cl_dll_inputw32.txt"
+        },
+        {
+          "name": "cl_dll/in_camera",
+          "source": "src/cl_dll/in_camera.cpp",
+          "functions_file": "tools/units/client_cl_dll_in_camera.txt"
+        },
+        {
+          "name": "cl_dll/ev_common",
+          "source": "src/cl_dll/ev_common.cpp",
+          "functions_file": "tools/units/client_cl_dll_ev_common.txt"
+        },
+        {
+          "name": "cl_dll/hud_msg",
+          "source": "src/cl_dll/hud_msg.cpp",
+          "functions_file": "tools/units/client_cl_dll_hud_msg.txt"
+        },
+        {
+          "name": "cl_dll/hud_redraw",
+          "source": "src/cl_dll/hud_redraw.cpp",
+          "functions_file": "tools/units/client_cl_dll_hud_redraw.txt"
         }
       ]
     }

@@ -1,0 +1,3 @@
+?GetNumWidth@CHud@@QAEHHH@Z
+?Redraw@CHud@@QAEHMH@Z
+?ScaleColors@@YAXAAH00H@Z

@@ -1,0 +1,6 @@
+?Draw@CHudStatusBar@@UAEHM@Z
+?Init@CHudStatusBar@@UAEHXZ
+?MsgFunc_StatusText@CHudStatusBar@@QAEHPBDHPAX@Z
+?ParseStatusString@CHudStatusBar@@QAEXH@Z
+?Reset@CHudStatusBar@@UAEXXZ
+?MsgFunc_StatusValue@CHudStatusBar@@QAEHPBDHPAX@Z

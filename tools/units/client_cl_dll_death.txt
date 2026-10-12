@@ -1,0 +1,4 @@
+?Init@CHudDeathNotice@@UAEHXZ
+?InitHUDData@CHudDeathNotice@@UAEXXZ
+?MsgFunc_DeathMsg@CHudDeathNotice@@QAEHPBDHPAX@Z
+?VidInit@CHudDeathNotice@@UAEHXZ

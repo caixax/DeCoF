@@ -1298,6 +1298,158 @@
       "metadata": {
         "source_path": "src/game_shared/voice_banmgr.cpp"
       }
+    },
+    {
+      "name": "client/cl_dll/health",
+      "target_path": "build/target/client/cl_dll/health.obj",
+      "base_path": "build/base/client/cl_dll/health.obj",
+      "metadata": {
+        "source_path": "src/cl_dll/health.cpp"
+      }
+    },
+    {
+      "name": "client/cl_dll/battery",
+      "target_path": "build/target/client/cl_dll/battery.obj",
+      "base_path": "build/base/client/cl_dll/battery.obj",
+      "metadata": {
+        "source_path": "src/cl_dll/battery.cpp"
+      }
+    },
+    {
+      "name": "client/cl_dll/flashlight",
+      "target_path": "build/target/client/cl_dll/flashlight.obj",
+      "base_path": "build/base/client/cl_dll/flashlight.obj",
+      "metadata": {
+        "source_path": "src/cl_dll/flashlight.cpp"
+      }
+    },
+    {
+      "name": "client/cl_dll/geiger",
+      "target_path": "build/target/client/cl_dll/geiger.obj",
+      "base_path": "build/base/client/cl_dll/geiger.obj",
+      "metadata": {
+        "source_path": "src/cl_dll/geiger.cpp"
+      }
+    },
+    {
+      "name": "client/cl_dll/statusbar",
+      "target_path": "build/target/client/cl_dll/statusbar.obj",
+      "base_path": "build/base/client/cl_dll/statusbar.obj",
+      "metadata": {
+        "source_path": "src/cl_dll/statusbar.cpp"
+      }
+    },
+    {
+      "name": "client/cl_dll/status_icons",
+      "target_path": "build/target/client/cl_dll/status_icons.obj",
+      "base_path": "build/base/client/cl_dll/status_icons.obj",
+      "metadata": {
+        "source_path": "src/cl_dll/status_icons.cpp"
+      }
+    },
+    {
+      "name": "client/cl_dll/saytext",
+      "target_path": "build/target/client/cl_dll/saytext.obj",
+      "base_path": "build/base/client/cl_dll/saytext.obj",
+      "metadata": {
+        "source_path": "src/cl_dll/saytext.cpp"
+      }
+    },
+    {
+      "name": "client/cl_dll/message",
+      "target_path": "build/target/client/cl_dll/message.obj",
+      "base_path": "build/base/client/cl_dll/message.obj",
+      "metadata": {
+        "source_path": "src/cl_dll/message.cpp"
+      }
+    },
+    {
+      "name": "client/cl_dll/menu",
+      "target_path": "build/target/client/cl_dll/menu.obj",
+      "base_path": "build/base/client/cl_dll/menu.obj",
+      "metadata": {
+        "source_path": "src/cl_dll/menu.cpp"
+      }
+    },
+    {
+      "name": "client/cl_dll/death",
+      "target_path": "build/target/client/cl_dll/death.obj",
+      "base_path": "build/base/client/cl_dll/death.obj",
+      "metadata": {
+        "source_path": "src/cl_dll/death.cpp"
+      }
+    },
+    {
+      "name": "client/cl_dll/text_message",
+      "target_path": "build/target/client/cl_dll/text_message.obj",
+      "base_path": "build/base/client/cl_dll/text_message.obj",
+      "metadata": {
+        "source_path": "src/cl_dll/text_message.cpp"
+      }
+    },
+    {
+      "name": "client/cl_dll/ammo_secondary",
+      "target_path": "build/target/client/cl_dll/ammo_secondary.obj",
+      "base_path": "build/base/client/cl_dll/ammo_secondary.obj",
+      "metadata": {
+        "source_path": "src/cl_dll/ammo_secondary.cpp"
+      }
+    },
+    {
+      "name": "client/cl_dll/ammohistory",
+      "target_path": "build/target/client/cl_dll/ammohistory.obj",
+      "base_path": "build/base/client/cl_dll/ammohistory.obj",
+      "metadata": {
+        "source_path": "src/cl_dll/ammohistory.cpp"
+      }
+    },
+    {
+      "name": "client/cl_dll/input",
+      "target_path": "build/target/client/cl_dll/input.obj",
+      "base_path": "build/base/client/cl_dll/input.obj",
+      "metadata": {
+        "source_path": "src/cl_dll/input.cpp"
+      }
+    },
+    {
+      "name": "client/cl_dll/inputw32",
+      "target_path": "build/target/client/cl_dll/inputw32.obj",
+      "base_path": "build/base/client/cl_dll/inputw32.obj",
+      "metadata": {
+        "source_path": "src/cl_dll/inputw32.cpp"
+      }
+    },
+    {
+      "name": "client/cl_dll/in_camera",
+      "target_path": "build/target/client/cl_dll/in_camera.obj",
+      "base_path": "build/base/client/cl_dll/in_camera.obj",
+      "metadata": {
+        "source_path": "src/cl_dll/in_camera.cpp"
+      }
+    },
+    {
+      "name": "client/cl_dll/ev_common",
+      "target_path": "build/target/client/cl_dll/ev_common.obj",
+      "base_path": "build/base/client/cl_dll/ev_common.obj",
+      "metadata": {
+        "source_path": "src/cl_dll/ev_common.cpp"
+      }
+    },
+    {
+      "name": "client/cl_dll/hud_msg",
+      "target_path": "build/target/client/cl_dll/hud_msg.obj",
+      "base_path": "build/base/client/cl_dll/hud_msg.obj",
+      "metadata": {
+        "source_path": "src/cl_dll/hud_msg.cpp"
+      }
+    },
+    {
+      "name": "client/cl_dll/hud_redraw",
+      "target_path": "build/target/client/cl_dll/hud_redraw.obj",
+      "base_path": "build/base/client/cl_dll/hud_redraw.obj",
+      "metadata": {
+        "source_path": "src/cl_dll/hud_redraw.cpp"
+      }
     }
   ]
 }

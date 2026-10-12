@@ -1,0 +1,6 @@
+?ConvertCRtoNL@@YAPADPAD@Z
+?Init@CHudTextMessage@@UAEHXZ
+?LocaliseTextString@CHudTextMessage@@SAPADPBDPADH@Z
+?LookupString@CHudTextMessage@@QAEPADPBDPAH@Z
+?MsgFunc_TextMsg@CHudTextMessage@@QAEHPBDHPAX@Z
+?StripEndNewlineFromString@@YAXPAD@Z

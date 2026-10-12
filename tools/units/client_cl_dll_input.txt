@@ -1,0 +1,15 @@
+?CL_KeyState@@YAMPAUkbutton_s@@@Z
+?InitInput@@YAXXZ
+?KB_Add@@YAXPBDPAUkbutton_s@@@Z
+?KB_ConvertString@@YAHPADPAPAD@Z
+?KB_Init@@YAXXZ
+?KB_Shutdown@@YAXXZ
+?KeyDown@@YAXPAUkbutton_s@@@Z
+?KeyUp@@YAXPAUkbutton_s@@@Z
+CL_CreateMove
+HUD_Key_Event
+HUD_Shutdown
+KB_Find
+?CL_IsDead@@YAHXZ
+_HUD_Key_Event
+_KB_Find

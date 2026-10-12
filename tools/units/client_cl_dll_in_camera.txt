@@ -1,0 +1,9 @@
+?CAM_ClearStates@@YAXXZ
+?CAM_Init@@YAXXZ
+?CAM_StartDistance@@YAXXZ
+?CAM_StartMouseMove@@YAXXZ
+?CAM_ToFirstPerson@@YAXXZ
+?MoveToward@@YAMMMM@Z
+CAM_Think
+CL_CameraOffset
+CL_IsThirdPerson

@@ -1,0 +1,6 @@
+?DisableIcon@CHudStatusIcons@@QAEXPAD@Z
+?Draw@CHudStatusIcons@@UAEHM@Z
+?EnableIcon@CHudStatusIcons@@QAEXPADEEE@Z
+?Init@CHudStatusIcons@@UAEHXZ
+CHudStatusIcons::MsgFunc_StatusIcon
+?Reset@CHudStatusIcons@@UAEXXZ

@@ -1,0 +1,2 @@
+va,name,kind,evidence
+1008ACF0,?MsgFunc_StatusValue@CHudStatusBar@@QAEHPBDHPAX@Z,func,"position in client/cl_dll/statusbar (name order), after ?MsgFunc_StatusText@CHudStatusBar@@QAEHPBDHPAX@Z; sizes retail 69, ours 69"
