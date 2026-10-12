@@ -1,13 +1,15 @@
 """Write objdiff results back into docs/progress.csv.
 
-Usage: python tools/update_status.py [--report build/report.json]
+Usage: python tools/update_status.py [--report build/report.json] [<unit> ...]
 
 For every function in the objdiff report: 100% -> status MATCHED and
 match_percent 100 (an "EQUIVALENT: ..." note is cleared); below 100 ->
 match_percent updated, MATCHED goes back to TODO, other statuses are left as
 is (TODO or EQUIVALENT are decided by hand). Functions are located by their
 decorated name through tools/symbols/<dll>_1.6a.csv. Unit names in the report
-are "<dll>/<path>".
+are "<dll>/<path>". With unit names, only those units are written back:
+the report covers every unit of objdiff.json, and the objects of a unit an
+agent is working on can be stale or half edited.
 """
 import argparse
 import csv
@@ -24,6 +26,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--report", default=os.path.join(ROOT, "build", "report.json"))
+    ap.add_argument("units", nargs="*")
     args = ap.parse_args()
     rep = json.load(open(args.report))
     path = os.path.join(ROOT, "docs", "progress.csv")
@@ -33,6 +36,8 @@ def main():
     symbols = {}
     changed = 0
     for unit in rep.get("units", []):
+        if args.units and unit["name"] not in args.units:
+            continue
         dll = unit["name"].split("/")[0]
         if dll not in symbols:
             # the merged map used by the last delink (1.6a + manual + auto

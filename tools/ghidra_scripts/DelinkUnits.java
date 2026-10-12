@@ -367,6 +367,7 @@ public class DelinkUnits extends GhidraScript {
 			if (fn != null) {
 				set.add(fn.getBody());
 				addAlignmentGaps(set, fn);
+				addDestructorPadding(set, fn, name);
 				addTrailingTables(set, fn);
 			}
 			else {
@@ -410,6 +411,32 @@ public class DelinkUnits extends GhidraScript {
 					}
 				}
 			}
+		}
+	}
+
+	// MSVC 19.27 ends a destructor that has an EH frame (it is noexcept, so
+	// an exception that escapes it must reach terminate) with 5 bytes of
+	// int3 inside its own COMDAT; the linker fill comes after them
+	private void addDestructorPadding(AddressSet set, Function fn, String name) {
+		if (!name.startsWith("??1")) {
+			return;
+		}
+		try {
+			byte[] head = getBytes(fn.getEntryPoint(), 6);
+			byte[] eh = { 0x55, (byte) 0x8B, (byte) 0xEC, 0x6A, (byte) 0xFF, 0x68 };
+			if (!java.util.Arrays.equals(head, eh)) {
+				return;
+			}
+			Address next = fn.getBody().getMaxAddress().add(1);
+			for (int i = 0; i < 5; i++) {
+				if (getByte(next.add(i)) != (byte) 0xCC || getFunctionAt(next.add(i)) != null) {
+					return;
+				}
+			}
+			set.add(next, next.add(4));
+		}
+		catch (Exception e) {
+			// end of the block
 		}
 	}
 
@@ -537,11 +564,12 @@ public class DelinkUnits extends GhidraScript {
 							currentProgram.getReferenceManager().setPrimary(exact, true);
 						}
 						// the biased reference would be exported as an offcut
-						// label inside the table ("PTR_...+3"), which objdiff
-						// cannot handle: drop it
+						// label inside the table ("PTR_...+3") or inside a
+						// case block ("caseD_4+1"), which objdiff cannot
+						// handle: drop it
 						for (Reference r : ins.getOperandReferences(op)) {
 							Address a = r.getToAddress();
-							if (!a.equals(to) && a.compareTo(fn.getBody().getMaxAddress()) > 0
+							if (!a.equals(to) && a.compareTo(fn.getEntryPoint()) >= 0
 									&& a.compareTo(stop) <= 0) {
 								currentProgram.getReferenceManager().delete(r);
 							}
