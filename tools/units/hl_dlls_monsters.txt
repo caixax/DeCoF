@@ -90,3 +90,5 @@ _monster_target
 ?TaskIsRunning@CBaseMonster@@QAEHXZ
 ?IsLockedByMaster@CBaseEntity@@QAEHXZ
 ?FacingIdeal@CBaseMonster@@QAEHXZ
+?CheckAttacks@CBaseMonster@@QAEXPAVCBaseEntity@@M@Z
+?MakeIdealYaw@CBaseMonster@@QAEXVVector@@@Z

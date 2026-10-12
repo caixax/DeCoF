@@ -8,3 +8,4 @@
 ?Use@CItemPadlock@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z
 _item_padlock
 ?Cancel@CItemPadlock@@QAEXXZ
+?GetRotationForNumber@@YAHH@Z

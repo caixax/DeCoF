@@ -44,3 +44,4 @@
 ?SpawnStickyGibs@CGib@@SAXPAUentvars_s@@VVector@@H@Z
 ?SpawnHeadGib@CGib@@SAXPAUentvars_s@@PBD@Z
 ?SpawnRandomGibs@CGib@@SAXPAUentvars_s@@HHPBD@Z
+?GetSmallFlinchActivity@CBaseMonster@@QAE?AW4Activity@@XZ

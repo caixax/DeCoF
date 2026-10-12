@@ -6,3 +6,5 @@
 ?Save@CThirdPersonInteraction@@UAEHAAVCSave@@@Z
 ?Spawn@CThirdPersonInteraction@@UAEXXZ
 _third_person_interaction
+??0Vector@@QAE@XZ
+?SetSequenceByName@CThirdPersonInteraction@@QAEXPAD@Z

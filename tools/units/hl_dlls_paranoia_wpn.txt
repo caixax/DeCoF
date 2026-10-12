@@ -18,3 +18,6 @@
 ?PrimaryAttack@CBaseToggleWeapon@@UAEXXZ
 ?SecondaryAttack@CBaseToggleWeapon@@UAEXXZ
 ?GetMode@CBaseToggleWeapon@@UAEHXZ
+?GetSpreadVec1@CBaseToggleWeapon@@UAE?AVVector@@XZ
+?GetSpreadVec@CBaseSpreadWeapon@@UAE?AVVector@@XZ
+?WeaponIdle@CBaseToggleWeapon@@UAEXXZ

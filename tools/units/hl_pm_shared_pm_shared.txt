@@ -52,3 +52,4 @@ _PM_Friction
 _PM_PlayGroupSound
 _PM_SplineFraction
 _PM_UpdateStepSound
+_PM_MapTextureTypeStepType

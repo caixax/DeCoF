@@ -30,3 +30,10 @@ _weapon_dualweapon
 ?SwitchbladeSlash@CDualWeapon@@QAEX_N@Z
 ?UpdateWeaponAmmo@CDualWeapon@@QAEXXZ
 ?WeaponSetBodygroup@@YAXPAXPAUentvars_s@@HH@Z
+?GetAttackDelayForWeapon@CDualWeapon@@QAEMH@Z
+?GetSprintFrom@@YAHH_NPAVCBasePlayer@@@Z
+?GetSprintIdle@@YAHH_NPAVCBasePlayer@@@Z
+?GetSprintTo@@YAHH_NPAVCBasePlayer@@@Z
+?IsMelee@@YA_NH@Z
+?MessageGet@@YAXH@Z
+?CameraShoot@CDualWeapon@@QAEX_N@Z
