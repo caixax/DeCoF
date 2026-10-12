@@ -26,6 +26,7 @@
 #include <stdio.h>
 
 #include "vgui_TeamFortressViewport.h"
+#include "guess_HUDControl.h"
 
 extern float *GetClientColor( int clientIndex );
 
@@ -97,8 +98,6 @@ int ScrollTextUp( void )
 
 int CHudSayText :: Draw( float flTime )
 {
-	int y = Y_START;
-
 	if ( ( gViewPort && gViewPort->AllowedToPrintText() == FALSE) || !m_HUD_saytext->value )
 		return 1;
 
@@ -122,7 +121,8 @@ int CHudSayText :: Draw( float flTime )
 		}
 	}
 
-	for ( int i = 0; i < MAX_LINES; i++ )
+	int i;
+	for ( i = 0; i < MAX_LINES; i++ )
 	{
 		if ( *g_szLineBuffer[i] )
 		{
@@ -135,21 +135,17 @@ int CHudSayText :: Draw( float flTime )
 				strncpy( buf, g_szLineBuffer[i], min(g_iNameLengths[i], MAX_PLAYER_NAME_LENGTH+32) );
 				buf[ min(g_iNameLengths[i], MAX_PLAYER_NAME_LENGTH+31) ] = 0;
 				gEngfuncs.pfnDrawSetTextColor( g_pflNameColors[i][0], g_pflNameColors[i][1], g_pflNameColors[i][2] );
-				int x = DrawConsoleString( LINE_START, y, buf );
-
-				// color is reset after each string draw
-				DrawConsoleString( x, y, g_szLineBuffer[i] + g_iNameLengths[i] );
-			}
-			else
-			{
-				// normal draw
-				DrawConsoleString( LINE_START, y, g_szLineBuffer[i] );
 			}
 		}
-
-		y += line_height;
 	}
 
+	// Cry of Fear: the lines are drawn by the labels of the HUD panel (the text, without its
+	// color byte, is passed as the format string)
+	if ( gViewPort && gViewPort->guess_m_pHUDControl )
+	{
+		for ( i = 0; i < MAX_LINES; i++ )
+			gViewPort->guess_m_pHUDControl->guess_m_pSayTextLabel[i]->setText( g_szLineBuffer[i] + 1 );
+	}
 
 	return 1;
 }

@@ -1,0 +1,7 @@
+?Initialize@CTeamMenuPanel@@UAEXXZ
+?SetActiveInfo@CTeamMenuPanel@@UAEXH@Z
+?SlotInput@CTeamMenuPanel@@UAE_NH@Z
+?Update@CTeamMenuPanel@@UAEXXZ
+?paintBackground@CTeamMenuPanel@@UAEXXZ
+??0CMenuPanel@@QAE@HHHHHH@Z
+?Open@CTeamMenuPanel@@UAEXXZ

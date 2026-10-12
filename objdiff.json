@@ -1730,6 +1730,182 @@
       "metadata": {
         "source_path": "src/cl_dll/ev_hldm.cpp"
       }
+    },
+    {
+      "name": "client/cl_dll/vgui_ScorePanel",
+      "target_path": "build/target/client/cl_dll/vgui_ScorePanel.obj",
+      "base_path": "build/base/client/cl_dll/vgui_ScorePanel.obj",
+      "metadata": {
+        "source_path": "src/cl_dll/vgui_ScorePanel.cpp"
+      }
+    },
+    {
+      "name": "client/cl_dll/vgui_ServerBrowser",
+      "target_path": "build/target/client/cl_dll/vgui_ServerBrowser.obj",
+      "base_path": "build/base/client/cl_dll/vgui_ServerBrowser.obj",
+      "metadata": {
+        "source_path": "src/cl_dll/vgui_ServerBrowser.cpp"
+      }
+    },
+    {
+      "name": "client/cl_dll/vgui_SchemeManager",
+      "target_path": "build/target/client/cl_dll/vgui_SchemeManager.obj",
+      "base_path": "build/base/client/cl_dll/vgui_SchemeManager.obj",
+      "metadata": {
+        "source_path": "src/cl_dll/vgui_SchemeManager.cpp"
+      }
+    },
+    {
+      "name": "client/cl_dll/vgui_CustomObjects",
+      "target_path": "build/target/client/cl_dll/vgui_CustomObjects.obj",
+      "base_path": "build/base/client/cl_dll/vgui_CustomObjects.obj",
+      "metadata": {
+        "source_path": "src/cl_dll/vgui_CustomObjects.cpp"
+      }
+    },
+    {
+      "name": "client/cl_dll/vgui_ControlConfigPanel",
+      "target_path": "build/target/client/cl_dll/vgui_ControlConfigPanel.obj",
+      "base_path": "build/base/client/cl_dll/vgui_ControlConfigPanel.obj",
+      "metadata": {
+        "source_path": "src/cl_dll/vgui_ControlConfigPanel.cpp"
+      }
+    },
+    {
+      "name": "client/cl_dll/vgui_ConsolePanel",
+      "target_path": "build/target/client/cl_dll/vgui_ConsolePanel.obj",
+      "base_path": "build/base/client/cl_dll/vgui_ConsolePanel.obj",
+      "metadata": {
+        "source_path": "src/cl_dll/vgui_ConsolePanel.cpp"
+      }
+    },
+    {
+      "name": "client/cl_dll/vgui_gamma",
+      "target_path": "build/target/client/cl_dll/vgui_gamma.obj",
+      "base_path": "build/base/client/cl_dll/vgui_gamma.obj",
+      "metadata": {
+        "source_path": "src/cl_dll/vgui_gamma.cpp"
+      }
+    },
+    {
+      "name": "client/cl_dll/vgui_hud",
+      "target_path": "build/target/client/cl_dll/vgui_hud.obj",
+      "base_path": "build/base/client/cl_dll/vgui_hud.obj",
+      "metadata": {
+        "source_path": "src/cl_dll/vgui_hud.cpp"
+      }
+    },
+    {
+      "name": "client/cl_dll/vgui_int",
+      "target_path": "build/target/client/cl_dll/vgui_int.obj",
+      "base_path": "build/base/client/cl_dll/vgui_int.obj",
+      "metadata": {
+        "source_path": "src/cl_dll/vgui_int.cpp"
+      }
+    },
+    {
+      "name": "client/cl_dll/vgui_MOTDWindow",
+      "target_path": "build/target/client/cl_dll/vgui_MOTDWindow.obj",
+      "base_path": "build/base/client/cl_dll/vgui_MOTDWindow.obj",
+      "metadata": {
+        "source_path": "src/cl_dll/vgui_MOTDWindow.cpp"
+      }
+    },
+    {
+      "name": "client/cl_dll/vgui_paranoiatext",
+      "target_path": "build/target/client/cl_dll/vgui_paranoiatext.obj",
+      "base_path": "build/base/client/cl_dll/vgui_paranoiatext.obj",
+      "metadata": {
+        "source_path": "src/cl_dll/vgui_paranoiatext.cpp"
+      }
+    },
+    {
+      "name": "client/cl_dll/vgui_SpectatorPanel",
+      "target_path": "build/target/client/cl_dll/vgui_SpectatorPanel.obj",
+      "base_path": "build/base/client/cl_dll/vgui_SpectatorPanel.obj",
+      "metadata": {
+        "source_path": "src/cl_dll/vgui_SpectatorPanel.cpp"
+      }
+    },
+    {
+      "name": "client/cl_dll/vgui_subtitles",
+      "target_path": "build/target/client/cl_dll/vgui_subtitles.obj",
+      "base_path": "build/base/client/cl_dll/vgui_subtitles.obj",
+      "metadata": {
+        "source_path": "src/cl_dll/vgui_subtitles.cpp"
+      }
+    },
+    {
+      "name": "client/cl_dll/vgui_teammenu",
+      "target_path": "build/target/client/cl_dll/vgui_teammenu.obj",
+      "base_path": "build/base/client/cl_dll/vgui_teammenu.obj",
+      "metadata": {
+        "source_path": "src/cl_dll/vgui_teammenu.cpp"
+      }
+    },
+    {
+      "name": "client/cl_dll/vgui_tips",
+      "target_path": "build/target/client/cl_dll/vgui_tips.obj",
+      "base_path": "build/base/client/cl_dll/vgui_tips.obj",
+      "metadata": {
+        "source_path": "src/cl_dll/vgui_tips.cpp"
+      }
+    },
+    {
+      "name": "client/cl_dll/vgui_ClassMenu",
+      "target_path": "build/target/client/cl_dll/vgui_ClassMenu.obj",
+      "base_path": "build/base/client/cl_dll/vgui_ClassMenu.obj",
+      "metadata": {
+        "source_path": "src/cl_dll/vgui_ClassMenu.cpp"
+      }
+    },
+    {
+      "name": "client/cl_dll/vgui_TeamFortressViewport",
+      "target_path": "build/target/client/cl_dll/vgui_TeamFortressViewport.obj",
+      "base_path": "build/base/client/cl_dll/vgui_TeamFortressViewport.obj",
+      "metadata": {
+        "source_path": "src/cl_dll/vgui_TeamFortressViewport.cpp"
+      }
+    },
+    {
+      "name": "client/game_shared/vgui_helpers",
+      "target_path": "build/target/client/game_shared/vgui_helpers.obj",
+      "base_path": "build/base/client/game_shared/vgui_helpers.obj",
+      "metadata": {
+        "source_path": "src/game_shared/vgui_helpers.cpp"
+      }
+    },
+    {
+      "name": "client/game_shared/vgui_loadtga",
+      "target_path": "build/target/client/game_shared/vgui_loadtga.obj",
+      "base_path": "build/base/client/game_shared/vgui_loadtga.obj",
+      "metadata": {
+        "source_path": "src/game_shared/vgui_loadtga.cpp"
+      }
+    },
+    {
+      "name": "client/game_shared/vgui_scrollbar2",
+      "target_path": "build/target/client/game_shared/vgui_scrollbar2.obj",
+      "base_path": "build/base/client/game_shared/vgui_scrollbar2.obj",
+      "metadata": {
+        "source_path": "src/game_shared/vgui_scrollbar2.cpp"
+      }
+    },
+    {
+      "name": "client/game_shared/voice_status",
+      "target_path": "build/target/client/game_shared/voice_status.obj",
+      "base_path": "build/base/client/game_shared/voice_status.obj",
+      "metadata": {
+        "source_path": "src/game_shared/voice_status.cpp"
+      }
+    },
+    {
+      "name": "client/game_shared/voice_vgui_tweakdlg",
+      "target_path": "build/target/client/game_shared/voice_vgui_tweakdlg.obj",
+      "base_path": "build/base/client/game_shared/voice_vgui_tweakdlg.obj",
+      "metadata": {
+        "source_path": "src/game_shared/voice_vgui_tweakdlg.cpp"
+      }
     }
   ]
 }

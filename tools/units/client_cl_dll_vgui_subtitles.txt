@@ -1,0 +1,4 @@
+??0CSubtitle@@QAE@XZ
+?FontFromMessage@@YAPAVFont@vgui@@AAPBD@Z
+?Initialize@CSubtitle@@QAEXXZ
+?SubtitleInit@@YAXXZ

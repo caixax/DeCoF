@@ -1,0 +1,13 @@
+??0CLabelHeader@@QAE@XZ
+??0ScorePanel@@QAE@HHHH@Z
+?DeathMsg@ScorePanel@@QAEXHH@Z
+?FillGrid@ScorePanel@@QAEXXZ
+?HACK_GetPlayerUniqueID@@YA_NHQAD@Z
+?MouseOverCell@ScorePanel@@QAEXHH@Z
+?Open@ScorePanel@@QAEXXZ
+?RebuildTeams@ScorePanel@@QAEXXZ
+?calcAlignment@CLabelHeader@@QAEXHHAAH0@Z
+?internalMousePressed@HitTestPanel@ScorePanel@@UAEXW4MouseCode@vgui@@@Z
+?mousePressed@ScorePanel@@UAEXW4MouseCode@vgui@@PAVPanel@3@@Z
+?paint@CLabelHeader@@UAEXXZ
+?paintBackground@CLabelHeader@@UAEXXZ

@@ -1,0 +1,17 @@
+?ForEachBannedPlayer@@YAXQAD@Z
+?GetClientVoiceMgr@@YAPAVCVoiceStatus@@XZ
+?HandleReqStateMsg@CVoiceStatus@@QAEXHPAX@Z
+??0CVoiceStatus@@QAE@XZ
+??1CHudBase@@UAE@XZ
+??_GCHudBase@@UAEPAXI@Z
+??_GCVoiceStatus@@UAEPAXI@Z
+?Draw@CHudBase@@UAEHM@Z
+?FindVoiceLabel@CVoiceStatus@@QAEPAVCVoiceLabel@@H@Z
+?Frame@CVoiceStatus@@QAEXN@Z
+?FreeBitmaps@CVoiceStatus@@QAEXXZ
+?GetFreeVoiceLabel@CVoiceStatus@@QAEPAVCVoiceLabel@@XZ
+?HandleVoiceMaskMsg@CVoiceStatus@@QAEXHPAX@Z
+?IsPlayerAudible@CVoiceStatus@@QAE_NH@Z
+?UpdateBanButton@CVoiceStatus@@QAEXH@Z
+?UpdateSpeakerImage@CVoiceStatus@@QAEXPAVLabel@vgui@@H@Z
+?VidInit@CVoiceStatus@@UAEHXZ

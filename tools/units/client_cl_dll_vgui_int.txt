@@ -1,0 +1,3 @@
+?VGui_GetPanel@@YAPAXXZ
+_VGui_Startup
+_VGui_ViewportPaintBackground

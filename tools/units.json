@@ -1203,6 +1203,116 @@
           "name": "cl_dll/ev_hldm",
           "source": "src/cl_dll/ev_hldm.cpp",
           "functions_file": "tools/units/client_cl_dll_ev_hldm.txt"
+        },
+        {
+          "name": "cl_dll/vgui_ScorePanel",
+          "source": "src/cl_dll/vgui_ScorePanel.cpp",
+          "functions_file": "tools/units/client_cl_dll_vgui_ScorePanel.txt"
+        },
+        {
+          "name": "cl_dll/vgui_ServerBrowser",
+          "source": "src/cl_dll/vgui_ServerBrowser.cpp",
+          "functions_file": "tools/units/client_cl_dll_vgui_ServerBrowser.txt"
+        },
+        {
+          "name": "cl_dll/vgui_SchemeManager",
+          "source": "src/cl_dll/vgui_SchemeManager.cpp",
+          "functions_file": "tools/units/client_cl_dll_vgui_SchemeManager.txt"
+        },
+        {
+          "name": "cl_dll/vgui_CustomObjects",
+          "source": "src/cl_dll/vgui_CustomObjects.cpp",
+          "functions_file": "tools/units/client_cl_dll_vgui_CustomObjects.txt"
+        },
+        {
+          "name": "cl_dll/vgui_ControlConfigPanel",
+          "source": "src/cl_dll/vgui_ControlConfigPanel.cpp",
+          "functions_file": "tools/units/client_cl_dll_vgui_ControlConfigPanel.txt"
+        },
+        {
+          "name": "cl_dll/vgui_ConsolePanel",
+          "source": "src/cl_dll/vgui_ConsolePanel.cpp",
+          "functions_file": "tools/units/client_cl_dll_vgui_ConsolePanel.txt"
+        },
+        {
+          "name": "cl_dll/vgui_gamma",
+          "source": "src/cl_dll/vgui_gamma.cpp",
+          "functions_file": "tools/units/client_cl_dll_vgui_gamma.txt"
+        },
+        {
+          "name": "cl_dll/vgui_hud",
+          "source": "src/cl_dll/vgui_hud.cpp",
+          "functions_file": "tools/units/client_cl_dll_vgui_hud.txt"
+        },
+        {
+          "name": "cl_dll/vgui_int",
+          "source": "src/cl_dll/vgui_int.cpp",
+          "functions_file": "tools/units/client_cl_dll_vgui_int.txt"
+        },
+        {
+          "name": "cl_dll/vgui_MOTDWindow",
+          "source": "src/cl_dll/vgui_MOTDWindow.cpp",
+          "functions_file": "tools/units/client_cl_dll_vgui_MOTDWindow.txt"
+        },
+        {
+          "name": "cl_dll/vgui_paranoiatext",
+          "source": "src/cl_dll/vgui_paranoiatext.cpp",
+          "functions_file": "tools/units/client_cl_dll_vgui_paranoiatext.txt"
+        },
+        {
+          "name": "cl_dll/vgui_SpectatorPanel",
+          "source": "src/cl_dll/vgui_SpectatorPanel.cpp",
+          "functions_file": "tools/units/client_cl_dll_vgui_SpectatorPanel.txt"
+        },
+        {
+          "name": "cl_dll/vgui_subtitles",
+          "source": "src/cl_dll/vgui_subtitles.cpp",
+          "functions_file": "tools/units/client_cl_dll_vgui_subtitles.txt"
+        },
+        {
+          "name": "cl_dll/vgui_teammenu",
+          "source": "src/cl_dll/vgui_teammenu.cpp",
+          "functions_file": "tools/units/client_cl_dll_vgui_teammenu.txt"
+        },
+        {
+          "name": "cl_dll/vgui_tips",
+          "source": "src/cl_dll/vgui_tips.cpp",
+          "functions_file": "tools/units/client_cl_dll_vgui_tips.txt"
+        },
+        {
+          "name": "cl_dll/vgui_ClassMenu",
+          "source": "src/cl_dll/vgui_ClassMenu.cpp",
+          "functions_file": "tools/units/client_cl_dll_vgui_ClassMenu.txt"
+        },
+        {
+          "name": "cl_dll/vgui_TeamFortressViewport",
+          "source": "src/cl_dll/vgui_TeamFortressViewport.cpp",
+          "functions_file": "tools/units/client_cl_dll_vgui_TeamFortressViewport.txt"
+        },
+        {
+          "name": "game_shared/vgui_helpers",
+          "source": "src/game_shared/vgui_helpers.cpp",
+          "functions_file": "tools/units/client_game_shared_vgui_helpers.txt"
+        },
+        {
+          "name": "game_shared/vgui_loadtga",
+          "source": "src/game_shared/vgui_loadtga.cpp",
+          "functions_file": "tools/units/client_game_shared_vgui_loadtga.txt"
+        },
+        {
+          "name": "game_shared/vgui_scrollbar2",
+          "source": "src/game_shared/vgui_scrollbar2.cpp",
+          "functions_file": "tools/units/client_game_shared_vgui_scrollbar2.txt"
+        },
+        {
+          "name": "game_shared/voice_status",
+          "source": "src/game_shared/voice_status.cpp",
+          "functions_file": "tools/units/client_game_shared_voice_status.txt"
+        },
+        {
+          "name": "game_shared/voice_vgui_tweakdlg",
+          "source": "src/game_shared/voice_vgui_tweakdlg.cpp",
+          "functions_file": "tools/units/client_game_shared_voice_vgui_tweakdlg.txt"
         }
       ]
     }

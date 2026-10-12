@@ -23,6 +23,7 @@
 #include <stdio.h>
 
 #include "vgui_TeamFortressViewport.h"
+#include "guess_HUDControl.h"
 
 DECLARE_MESSAGE( m_DeathNotice, DeathMsg );
 
@@ -165,136 +166,25 @@ int CHudDeathNotice :: MsgFunc_DeathMsg( const char *pszName, int iSize, void *p
 	int killer = READ_BYTE();
 	int victim = READ_BYTE();
 
-	char killedwith[32];
-	strcpy( killedwith, "d_" );
-	strncat( killedwith, READ_STRING(), 32 );
-
-	if (gViewPort)
-		gViewPort->DeathMsg( killer, victim );
-
-	gHUD.m_Spectator.DeathMessage(victim);
-
-	int i;
-	for ( i = 0; i < MAX_DEATHNOTICES; i++ )
+	// Cry of Fear: only "<name> died." in the top right corner of the HUD panel
+	char *victim_name = g_PlayerInfoList[ victim ].name;
+	if ( victim_name && gViewPort )
 	{
-		if ( rgDeathNoticeList[i].iId == 0 )
-			break;
-	}
-	if ( i == MAX_DEATHNOTICES )
-	{ // move the rest of the list forward to make room for this item
-		memmove( rgDeathNoticeList, rgDeathNoticeList+1, sizeof(DeathNoticeItem) * MAX_DEATHNOTICES );
-		i = MAX_DEATHNOTICES - 1;
-	}
-
-	if (gViewPort)
-		gViewPort->GetAllPlayersInfo();
-
-	// Get the Killer's name
-	char *killer_name = g_PlayerInfoList[ killer ].name;
-	if ( !killer_name )
-	{
-		killer_name = "";
-		rgDeathNoticeList[i].szKiller[0] = 0;
-	}
-	else
-	{
-		rgDeathNoticeList[i].KillerColor = GetClientColor( killer );
-		strncpy( rgDeathNoticeList[i].szKiller, killer_name, MAX_PLAYER_NAME_LENGTH );
-		rgDeathNoticeList[i].szKiller[MAX_PLAYER_NAME_LENGTH-1] = 0;
-	}
-
-	// Get the Victim's name
-	char *victim_name = NULL;
-	// If victim is -1, the killer killed a specific, non-player object (like a sentrygun)
-	if ( ((char)victim) != -1 )
-		victim_name = g_PlayerInfoList[ victim ].name;
-	if ( !victim_name )
-	{
-		victim_name = "";
-		rgDeathNoticeList[i].szVictim[0] = 0;
-	}
-	else
-	{
-		rgDeathNoticeList[i].VictimColor = GetClientColor( victim );
-		strncpy( rgDeathNoticeList[i].szVictim, victim_name, MAX_PLAYER_NAME_LENGTH );
-		rgDeathNoticeList[i].szVictim[MAX_PLAYER_NAME_LENGTH-1] = 0;
-	}
-
-	// Is it a non-player object kill?
-	if ( ((char)victim) == -1 )
-	{
-		rgDeathNoticeList[i].iNonPlayerKill = TRUE;
-
-		// Store the object's name in the Victim slot (skip the d_ bit)
-		strcpy( rgDeathNoticeList[i].szVictim, killedwith+2 );
-	}
-	else
-	{
-		if ( killer == victim || killer == 0 )
-			rgDeathNoticeList[i].iSuicide = TRUE;
-
-		if ( !strcmp( killedwith, "d_teammate" ) )
-			rgDeathNoticeList[i].iTeamKill = TRUE;
-	}
-
-	// Find the sprite in the list
-	int spr = gHUD.GetSpriteIndex( killedwith );
-
-	rgDeathNoticeList[i].iId = spr;
-
-	DEATHNOTICE_DISPLAY_TIME = CVAR_GET_FLOAT( "hud_deathnotice_time" );
-	rgDeathNoticeList[i].flDisplayTime = gHUD.m_flTime + DEATHNOTICE_DISPLAY_TIME;
-
-	if (rgDeathNoticeList[i].iNonPlayerKill)
-	{
-		ConsolePrint( rgDeathNoticeList[i].szKiller );
-		ConsolePrint( " killed a " );
-		ConsolePrint( rgDeathNoticeList[i].szVictim );
-		ConsolePrint( "\n" );
-	}
-	else
-	{
-		// record the death notice in the console
-		if ( rgDeathNoticeList[i].iSuicide )
+		if ( gViewPort->guess_m_pHUDControl )
 		{
-			ConsolePrint( rgDeathNoticeList[i].szVictim );
+			char szText[128];
+			int w, h;
 
-			if ( !strcmp( killedwith, "d_world" ) )
-			{
-				ConsolePrint( " died" );
-			}
-			else
-			{
-				ConsolePrint( " killed self" );
-			}
+			strcpy( szText, victim_name );
+			strcat( szText, " died." );
+
+			gViewPort->guess_m_pHUDControl->guess_m_pPagerFont->getTextSize( szText, w, h );
+			gViewPort->guess_m_pHUDControl->guess_m_pDeathLabel->setSize( w, h );
+			gViewPort->guess_m_pHUDControl->guess_m_pDeathLabel->setPos( ScreenWidth - w - 5, 0 );
+			ConsolePrint( szText );
+			gViewPort->guess_m_pHUDControl->guess_m_iDeathAlpha = 0;
+			gViewPort->guess_m_pHUDControl->guess_m_pDeathLabel->setText( szText );
 		}
-		else if ( rgDeathNoticeList[i].iTeamKill )
-		{
-			ConsolePrint( rgDeathNoticeList[i].szKiller );
-			ConsolePrint( " killed his teammate " );
-			ConsolePrint( rgDeathNoticeList[i].szVictim );
-		}
-		else
-		{
-			ConsolePrint( rgDeathNoticeList[i].szKiller );
-			ConsolePrint( " killed " );
-			ConsolePrint( rgDeathNoticeList[i].szVictim );
-		}
-
-		if ( killedwith && *killedwith && (*killedwith > 13 ) && strcmp( killedwith, "d_world" ) && !rgDeathNoticeList[i].iTeamKill )
-		{
-			ConsolePrint( " with " );
-
-			// replace the code names with the 'real' names
-			if ( !strcmp( killedwith+2, "egon" ) )
-				strcpy( killedwith, "d_gluon gun" );
-			if ( !strcmp( killedwith+2, "gauss" ) )
-				strcpy( killedwith, "d_tau cannon" );
-
-			ConsolePrint( killedwith+2 ); // skip over the "d_" part
-		}
-
-		ConsolePrint( "\n" );
 	}
 
 	return 1;

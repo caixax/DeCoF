@@ -1,0 +1,2 @@
+??0ScrollBarButton@@QAE@PBDHHHH@Z
+?paintBackground@ScrollBarButton@@UAEXXZ

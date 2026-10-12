@@ -1,0 +1,5 @@
+??0CGammaView@@QAE@XZ
+?GammaGraphInit@@YAXXZ
+?GraphDisable@@YAXXZ
+?GraphEnable@@YAXXZ
+?paint@CGammaView@@MAEXXZ

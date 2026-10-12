@@ -1,0 +1,6 @@
+??0CClassMenuPanel@@QAE@HHHHHH@Z
+?SetActiveInfo@CClassMenuPanel@@UAEXH@Z
+?SlotInput@CClassMenuPanel@@UAE_NH@Z
+?Initialize@CClassMenuPanel@@UAEXXZ
+?Open@CClassMenuPanel@@UAEXXZ
+?Update@CClassMenuPanel@@UAEXXZ
