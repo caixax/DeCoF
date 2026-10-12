@@ -89,7 +89,7 @@ The 1.55 hl.dll is an unoptimized debug build of nearly the same source. `disasm
 
 - The 1.55 debug build is not always the same code as 1.6a: compare with the 1.6a disassembly before trusting a 1.55 statement (FireBulletsPlayer moved the doctor boss test into the shot loop; entvars_t offsets from 0x128 on are 4 higher in 1.6a).
 - A call in the 1.55 debug build with no test after it comes from an `if` whose whole body is commented out; the release build keeps the call and drops the test.
-- MSVC 19.27 drops calls to functions of the same file whose compiled body has no side effects (empty void function, `return FALSE;`), whatever the definition order and even with `__declspec(noinline)`. If retail keeps such a call, it cannot be reproduced from one file; note it and move on.
+- MSVC 19.27 drops calls to functions of the same file whose compiled body has no side effects (empty void function, `return FALSE;`), whatever the definition order and even with `__declspec(noinline)`. If retail keeps such a call, it cannot be reproduced from one file; note it and move on. Exception: an empty function that takes a `Vector` by value (`CBoat::Splash`) keeps its calls, because building the argument copy is not removed with it.
 - `/Ob1` sometimes keeps an inline helper as a call (the third `FStrEq` of a function stays out of line while the first two are inlined): write the source plainly. A helper the 1.55 build shows as a function (`GET_INFOBUFFER`) has to be `inline` in our source.
 - Write `FStrEq(...)` where retail calls it, `!strcmp( STRING( pev->classname ), ... )` where retail reads `pev->classname` directly, and `FClassnameIs( edict(), ... )` where retail goes through `pContainingEntity`.
 - A dead `sub eax, N` after the case tests of a switch gives the value of a case whose body was merged into default: a cheap check of enum values.
@@ -154,6 +154,13 @@ The 1.55 hl.dll is an unoptimized debug build of nearly the same source. `disasm
 - A 1.55 `jmp` after an if/else plus a retail fall-through into the next case means a missing `break`; merged identical cases are still written out separately.
 - Use `EXPORT` on the think and touch functions retail exports (`SawTouch`, `FakeDeath`, `ActivateSewmo`, `ActivateSpitter`, the `InactiveThink`s).
 - `PRECACHE_SOUND( int )` compiles to a call to a helper (`STRING()` then `PRECACHE_SOUND`); `FClassnameIs( pEnt->pev, ... )` inlines as a strcmp on `pev->classname`.
+
+## Patterns from the world entities
+
+- A 1.55 `jmp` back to the loop increment is `continue`, not `break`.
+- `CBaseAnimating::HandleAnimEvent` is an empty inline, so calls to it vanish; a switch with only `default:` that calls `CBaseMonster::HandleAnimEvent` compiles to a tail jump.
+- If the retail push order looks swapped against 1.55, check which parameter is which (the first push is the last parameter), as in `GetDescriptionFromItem( "3dmdl", STRING( pev->message ) )`.
+- A class that grew between builds shows in the retail save table count and the member offsets: `CCoFLadderManager::m_cAnimation` is `int [33]` in 1.6a (32 in 1.55).
 
 ## What not to do
 

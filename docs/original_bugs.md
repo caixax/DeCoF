@@ -57,3 +57,10 @@ The reconstructed source keeps the behavior of the retail 1.6a binaries, includi
 | `CMonsterCrazyBitch::MonsterThink` (CoF_MonsterCrazyBitch.cpp) | No `break` after the rifle case (falls into the shotgun case) nor after the TMP case (falls into the MP5 and VP70 cases). | case bodies run into each other |
 | Zombie-derived monsters (several CoF_*.cpp) | Keep the HLSDK test `(m_Activity == ACT_MELEE_ATTACK1) \|\| (m_Activity == ACT_MELEE_ATTACK1)`. | inherited from zombie.cpp |
 | `CCrab` (CoF_Crab.cpp) | Uses the krypande skill values and the slower sounds (possibly intended). | the gSkillData offsets and strings |
+| `CCoFLadderManager::KeyValue` (CoF_Ladder.cpp) | `animation13` does not increment `m_iNumAnimations`. | the missing increment in that case |
+| `CCoFLadderManager::StartNextAnimation` (CoF_Ladder.cpp) | Inside `if ( m_bDescending )` it also tests `!m_bDescending`, so that branch never runs. | the nested test |
+| `CCoFLadderManager::StartPreviousAnimation` (CoF_Ladder.cpp) | Overwrites `m_cAnimation[]` entries for good and sets `m_bEnableControl = true` even when no delay was found. | stores in both paths |
+| `CCoFLadderManagerUse::Use` (CoF_Ladder.cpp) | The use sound plays on the activator, not on the entity. | the edict passed to the sound call |
+| `CKeyitemModel::Spawn`, `KeyitemUse` (CoF_KeyItem.cpp) | A key with no item file is removed but the function carries on; keys with spawnflag 1 are removed when the difficulty is not 4; on difficulty 4 KeyitemUse sets the player's `m_iTapes = 5`. | 1.55 statement order |
+| `CWheelchair::TakeDamage`, `HandleAnimEvent` (CoF_WheelchairPlayer.cpp) | `flDamage = pev->health - 1` is never used; HandleAnimEvent calls the base handler twice for default events. | dead store, two calls |
+| `CPushableVan` (CoF_PushableVan.cpp) | Passes an unused argument to the "Max nerds are grabbing" message. | the extra push |
