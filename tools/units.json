@@ -797,6 +797,11 @@
           "name": "dlls/subtitle_multiple",
           "source": "src/dlls/Subtitle_Multiple.cpp",
           "functions_file": "tools/units/hl_dlls_subtitle_multiple.txt"
+        },
+        {
+          "name": "dlls/guess_CoF_MP5",
+          "source": "src/dlls/guess_CoF_MP5.cpp",
+          "functions_file": "tools/units/hl_dlls_guess_CoF_MP5.txt"
         }
       ],
       "toolchain": "msvc1427"

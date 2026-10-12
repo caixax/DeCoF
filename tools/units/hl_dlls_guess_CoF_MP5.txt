@@ -1,0 +1,7 @@
+??$GetClassPtr@VCMP5Ammo@@@@YAPAVCMP5Ammo@@PAV0@@Z
+??$GetClassPtr@VCMp5@@@@YAPAVCMp5@@PAV0@@Z
+?SuicideShot@CMp5@@QAEXXZ
+_ammo_mp5
+_weapon_mp5
+??$GetClassPtr@VCMP5ModeSaveRestoreMP5@@@@YAPAVCMP5ModeSaveRestoreMP5@@PAV0@@Z
+_cof_mp5modesaverestore

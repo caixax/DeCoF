@@ -30,5 +30,5 @@
 <rect x="24.00" y="322" width="419.24" height="18" fill="#2da44e"/>
 <rect x="443.24" y="322" width="19.80" height="18" fill="#d4a72c"/>
 <text x="24" y="356" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#57606a" xml:space="preserve">MATCHED 58.9% (5601)   EQUIVALENT 2.8% (11)   TODO 38.3% (2277)   1789683 code bytes</text>
-<text x="24" y="386" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="11" fill="#57606a">Target build 1.6a | commit 40877f1 | 2026-10-12 | numbers from docs/progress.csv</text>
+<text x="24" y="386" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="11" fill="#57606a">Target build 1.6a | commit 741dd36 | 2026-10-12 | numbers from docs/progress.csv</text>
 </svg>
