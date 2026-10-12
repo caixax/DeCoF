@@ -46,6 +46,7 @@ Every tool output stays in the working context, so large outputs repeated over m
 - A HUD method that Cry of Fear disabled with `return 1;` at the top and the old body left below stays out of line (8 bytes); a bare `return 1;` body is not the same.
 - `name_unit.py` names the `__MsgFunc_X` wrappers by position, and they all match because they differ only in the callee: check them against the `HOOK_MESSAGE` pushes in `Init` and fix wrong ones with `add_name.py`.
 - `x += a * b` and `x = a * b + x` compile differently: try both.
+- One retail global has one name in every file: before you name a Cry of Fear global (`extern int guess_iWheelchair;`), grep src/ for its address in comments and for other `guess_` names of the same global, and find what writes it (a user message handler named by its `HOOK_MESSAGE` string is the best evidence: 0x10542BB8 is written by the Wheelchair message).
 - Inside one object the functions are in decorated-name order (most files) or in source order (a few). `tools/align_names.py` uses this; a gap it reports ("3 retail, 1 ours") means functions missing on one side: written in Cry of Fear and not in the reference file yet, or removed.
 - `python tools/disasm.py client "<decorated name>"` and `--outline` work on the 1.6a client.dll; `--version` does not apply (no symbols in the older client builds).
 ## Facts that hold for the CoF weapons

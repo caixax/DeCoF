@@ -47,8 +47,8 @@ extern int guess_iDefaultFOV;
 extern cl_entity_t *guess_pTelescopeEnt;
 extern float guess_flMouseOfsX;
 extern float guess_flMouseOfsY;
-extern int guess_iMouseLook2On;
-extern bool guess_bMouseLook2Lock;
+extern int guess_iWheelchair;
+extern bool guess_bWheelchairLock;
 extern float guess_flMouseOfs2X;
 extern float guess_flMouseOfs2Y;
 
@@ -446,7 +446,7 @@ void IN_MouseMove ( float frametime, usercmd_t *cmd)
 		gEngfuncs.SetViewAngles( (float *)angles );
 	}
 
-	if ( guess_iMouseLook2On && !guess_bMouseLook2Lock )
+	if ( guess_iWheelchair && !guess_bWheelchairLock )
 	{
 		
 		guess_flMouseOfs2X += mouse_y * m_pitch->value;
