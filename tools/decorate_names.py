@@ -42,7 +42,7 @@ def coff_symbols(path):
         else:
             name = raw.rstrip(b"\0").decode("latin-1")
         _value, secnum, typ, cls, naux = struct.unpack_from("<IhHBB", data, o + 8)
-        if secnum > 0 and typ == 0x20 and cls == 2 and name.startswith("?"):
+        if secnum > 0 and typ == 0x20 and cls == 2 and name.startswith(("?", "_")):
             out.append(name)
         i += 1 + naux
     return out
@@ -71,15 +71,18 @@ def main():
     dll = sys.argv[1]
     write = "--write" in sys.argv
     base = os.path.join(ROOT, "tools", "symbols", "%s_1.6a.csv" % dll)
+    # C++ names without decoration, and C names without the leading
+    # underscore of the object symbol (export names such as CL_CreateMove)
     rows = [r for r in csv.DictReader(open(base)) if r["kind"] == "func"
-            and "::" in r["name"] and not r["name"].startswith("?")]
+            and not r["name"].startswith(("?", "_"))]
     # decorated names of every reference object of this side
     side = "client" if dll == "client" else "server"
     objs = {}
     for repo in REPOS:
         for p in glob.glob(os.path.join(ROOT, "build", "refobj", "%s_%s" % (repo, side), "*.obj")):
             objs[(repo, os.path.basename(p))] = coff_symbols(p)
-    names = sorted({n for v in objs.values() for n in v})
+    cnames = {n for v in objs.values() for n in v if n.startswith("_")}
+    names = sorted({n for v in objs.values() for n in v if n.startswith("?")})
     und = undecorate(names)
     by_short = {}
     for n in names:
@@ -89,7 +92,17 @@ def main():
     found = []
     skipped = 0
     for r in rows:
-        cands = by_short.get(r["name"], set())
+        want = r["name"]
+        # "CHudMessage::CHudMessage::MessageAdd" (doubled class prefix)
+        parts = want.split("::")
+        if len(parts) == 3 and parts[0] == parts[1]:
+            want = parts[0] + "::" + parts[2]
+        if "::" not in want:
+            cands = {"_" + want} & cnames
+            if len(cands) == 1:
+                found.append((r["va"], next(iter(cands)), r["name"], r["evidence"]))
+                continue
+        cands = by_short.get(want, set())
         # the object named in the evidence ("refbytes:paranoia:cl_dll__train.obj")
         m = re.match(r"refbytes:(\w+):([\w.]+\.obj)", r["evidence"])
         if m and (m.group(1), m.group(2)) in objs:
@@ -109,8 +122,8 @@ def main():
             w = csv.writer(f, lineterminator="\n")
             w.writerow(["va", "name", "kind", "evidence"])
             for va, n, old, ev in found:
-                w.writerow([va, n, "func", "only decorated symbol of the reference objects that undecorates to %s; was %s (%s)"
-                            % (old, old, ev)])
+                why = ("C symbol of the reference objects for the export name %s" % old) if n.startswith("_") else                     ("only decorated symbol of the reference objects that undecorates to %s" % old)
+                w.writerow([va, n, "func", "%s; was %s (%s)" % (why, old, ev)])
         print("wrote %s" % os.path.relpath(path, ROOT))
 
 
