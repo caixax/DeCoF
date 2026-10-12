@@ -13,6 +13,10 @@ import argparse
 import csv
 import json
 import os
+import sys
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import csvio  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -59,10 +63,7 @@ def main():
             if row["status"] != new_status or row["match_percent"] != new_pct or row["notes"] != new_notes:
                 row["status"], row["match_percent"], row["notes"] = new_status, new_pct, new_notes
                 changed += 1
-    with open(path, "w", newline="") as fh:
-        w = csv.DictWriter(fh, fieldnames=fields, lineterminator="\n")
-        w.writeheader()
-        w.writerows(rows)
+    csvio.write_rows(path, fields, rows)
     print("updated %d rows" % changed)
 
 

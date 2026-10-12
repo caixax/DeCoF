@@ -22,6 +22,9 @@ import os
 import subprocess
 import sys
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import csvio  # noqa: E402
+
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 UNDNAME = r"I:\Tools\msvc-14.27.29112\bin\Hostx86\x86\undname.exe"
 
@@ -101,10 +104,7 @@ def main():
     if dry:
         print("%d rows (dry run)" % len(changes))
         return
-    with open(path, "w", newline="") as f:
-        w = csv.DictWriter(f, fieldnames=fields, lineterminator="\n")
-        w.writeheader()
-        w.writerows(rows)
+    csvio.write_rows(path, fields, rows)
     for unit, names in lists.items():
         lf = os.path.join(ROOT, units[unit]["functions_file"])
         have = [l.strip() for l in open(lf) if l.strip()] if os.path.exists(lf) else []
