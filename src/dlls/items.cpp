@@ -30,6 +30,7 @@
 #include "gamerules.h"
 
 extern int gmsgItemPickup;
+extern void UTIL_ProMessage( CBaseEntity *pEntity, const char *pMessage, int colour, bool all );
 
 class CWorldItem : public CBaseEntity
 {
@@ -126,7 +127,7 @@ void CItem::ItemTouch( CBaseEntity *pOther )
 	CBasePlayer *pPlayer = (CBasePlayer *)pOther;
 
 	// ok, a player is touching this item, but can he have it?
-	if ( !g_pGameRules->CanHaveItem( pPlayer, this ) )
+	if ( g_pGameRules && !g_pGameRules->CanHaveItem( pPlayer, this ) )
 	{
 		// no? Ignore the touch.
 		return;
@@ -143,7 +144,7 @@ void CItem::ItemTouch( CBaseEntity *pOther )
 
 		// player grabbed the item. 
 		g_pGameRules->PlayerGotItem( pPlayer, this );
-		if ( g_pGameRules->ItemShouldRespawn( this ) == GR_ITEM_RESPAWN_YES )
+		if ( g_pGameRules && g_pGameRules->ItemShouldRespawn( this ) == GR_ITEM_RESPAWN_YES )
 		{
 			Respawn(); 
 		}
@@ -216,14 +217,6 @@ class CItemSuit : public CItem
 
 		if ( pPlayer->pev->weapons & (1<<WEAPON_SUIT) )
 			return FALSE;
-
-		if ( pev->spawnflags & SF_SUIT_WITHHEADSHIELD )
-		{
-			if ( pPlayer->pev->weapons & (1<<WEAPON_HEADSHIELD) )
-				return FALSE;
-
-			pPlayer->pev->weapons |= (1<<WEAPON_HEADSHIELD);
-		}
 
 		if ( pev->spawnflags & SF_SUIT_WITHARMOR )
 		{
@@ -448,75 +441,138 @@ class CItemLongJump : public CItem
 LINK_ENTITY_TO_CLASS( item_longjump, CItemLongJump );
 
 
-// buz: gasmask
-class CItemGasMask : public CItem
+class CGlockTacLight : public CItem
 {
 	void Spawn( void )
 	{ 
 		Precache( );
-		SET_MODEL(ENT(pev), "models/w_gasmask.mdl");
+		SET_MODEL(ENT(pev), "models/weapons/glock/glock_taclight.mdl");
 		CItem::Spawn( );
+
+		pev->message = MAKE_STRING( "inventoryitems/taclight.txt" );
 	}
 	void Precache( void )
 	{
-		PRECACHE_MODEL ("models/w_gasmask.mdl");
-		PRECACHE_SOUND( "items/gunpickup2.wav" );
+		PRECACHE_MODEL ("models/weapons/glock/glock_taclight.mdl");
 	}
 	BOOL MyTouch( CBasePlayer *pPlayer )
 	{
-	//	if ( pPlayer->m_iHasGasMask )
-		if ( pPlayer->pev->weapons & (1<<WEAPON_GASMASK) )
+		if ( pPlayer && pPlayer->m_afButtonPressed & IN_USE )
 		{
-			return FALSE;
+			if ( pPlayer->InventoryAddCheck( this ) )
+			{
+
+				return TRUE;
+			}
 		}
-
-	//	pPlayer->m_iHasGasMask = 1;
-		pPlayer->pev->weapons |= (1<<WEAPON_GASMASK);
-
-		MESSAGE_BEGIN( MSG_ONE, gmsgItemPickup, NULL, pPlayer->pev );
-			WRITE_STRING( STRING(pev->classname) );
-		MESSAGE_END();
-
-		EMIT_SOUND( pPlayer->edict(), CHAN_ITEM, "items/gunpickup2.wav", 1, ATTN_NORM );
-		return TRUE;
+		return FALSE;
 	}
 };
 
-LINK_ENTITY_TO_CLASS( item_gasmask, CItemGasMask );
+LINK_ENTITY_TO_CLASS( item_glocktaclight, CGlockTacLight );
 
-
-
-
-// buz: head shield
-class CItemHeadShield : public CItem
+class CPhoneBattery : public CItem
 {
 	void Spawn( void )
 	{ 
 		Precache( );
-		SET_MODEL(ENT(pev), "models/w_headshield.mdl");
+		SET_MODEL(ENT(pev), "models/items/phone_battery.mdl");
 		CItem::Spawn( );
+
+
+		pev->renderfx = 99;
+
+		pev->message = MAKE_STRING( "inventoryitems/mobile_battery.txt" );
 	}
 	void Precache( void )
 	{
-		PRECACHE_MODEL ("models/w_headshield.mdl");
-		PRECACHE_SOUND( "items/gunpickup2.wav" );
+		PRECACHE_MODEL ("models/items/phone_battery.mdl");
 	}
 	BOOL MyTouch( CBasePlayer *pPlayer )
 	{
-		if ( pPlayer->pev->weapons & (1<<WEAPON_HEADSHIELD) )
+		if ( pPlayer && pPlayer->m_afButtonPressed & IN_USE )
 		{
-			return FALSE;
+			if ( pPlayer->InventoryAddCheck( this ) )
+			{
+
+				return TRUE;
+			}
 		}
-
-		pPlayer->pev->weapons |= (1<<WEAPON_HEADSHIELD);
-
-		MESSAGE_BEGIN( MSG_ONE, gmsgItemPickup, NULL, pPlayer->pev );
-			WRITE_STRING( STRING(pev->classname) );
-		MESSAGE_END();
-
-		EMIT_SOUND( pPlayer->edict(), CHAN_ITEM, "items/gunpickup2.wav", 1, ATTN_NORM );
-		return TRUE;
+		return FALSE;
 	}
 };
 
-LINK_ENTITY_TO_CLASS( item_headshield, CItemHeadShield );
+LINK_ENTITY_TO_CLASS( item_phonebattery, CPhoneBattery );
+
+class CDaveBensonPhillips : public CItem
+{
+	void Spawn( void )
+	{ 
+		Precache( );
+		SET_MODEL(ENT(pev), "models/props/inomhusd/dave_benson_phillips.mdl");
+		CItem::Spawn( );
+
+		pev->iuser1 = 0;
+	}
+	void Precache( void )
+	{
+		PRECACHE_MODEL ("models/props/inomhusd/dave_benson_phillips.mdl");
+		PRECACHE_SOUND( "ambience/really_muschi.wav" );
+	}
+	BOOL MyTouch( CBasePlayer *pPlayer )
+	{
+		if ( pPlayer && pPlayer->m_afButtonReleased & IN_USE )
+		{
+			pev->iuser1++;
+
+			if ( pev->iuser1 == 100 )
+			{
+				EMIT_SOUND( edict(), CHAN_AUTO, "ambience/really_muschi.wav", 1, ATTN_NONE );
+				UTIL_Remove( this );
+				UTIL_ProMessage( pPlayer, "Congratulations! You got DAVE BENSON PHILLIPS!", 1, false );
+			}
+		}
+		return FALSE;
+	}
+};
+
+LINK_ENTITY_TO_CLASS( dave_benson_phillips, CDaveBensonPhillips );
+
+class CNightVision : public CItem
+{
+	void Spawn( void )
+	{ 
+		Precache( );
+		SET_MODEL(ENT(pev), "models/items/w_nightvision.mdl");
+		CItem::Spawn( );
+
+
+		pev->renderfx = 99;
+	}
+	void Precache( void )
+	{
+		PRECACHE_MODEL ("models/items/w_nightvision.mdl");
+	}
+	void SendInitMessage( CBasePlayer *player )
+	{
+		if ( player )
+		{
+			if ( !player->CheckingEndingOrUnlockables( 0x1000000, false, false ) )
+				UTIL_Remove( this );
+		}
+	}
+	BOOL MyTouch( CBasePlayer *pPlayer )
+	{
+		if ( pPlayer && pPlayer->m_afButtonPressed & IN_USE )
+		{
+			pPlayer->ShowHint( MAKE_STRING( "nightvision" ), false );
+			pPlayer->m_bHasNightVision = true;
+			EMIT_SOUND( ENT(pev), CHAN_ITEM, "weapons/item_get.wav", 1, 0.8 );
+			UTIL_ProMessage( pPlayer, "You got the Nightvision", 2, false );
+			return TRUE;
+		}
+		return FALSE;
+	}
+};
+
+LINK_ENTITY_TO_CLASS( item_nightvision, CNightVision );
