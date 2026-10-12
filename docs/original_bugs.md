@@ -87,3 +87,4 @@ The reconstructed source keeps the behavior of the retail 1.6a binaries, includi
 | `CBasePlayer::PostThink` (player.cpp) | In multiplayer, `pev->frags = m_iFlashlightFlags;` overwrites the score with the flashlight flags, which ScoreInfo then sends. | the store |
 | `CBasePlayer::PostThink` (player.cpp) | The punch logic tests `frags != 4` but sets `frags = 10`, and tests `!= 5` but sets `11` (1.55 set 4 and 5; the tests were not updated). | the constants |
 | `CBasePlayer::PostThink` (player.cpp) | The first CDualWeapon block uses `pDualWeapon` without a null check (the second checks it); dead leftovers `dx`/`dy`, an unused `pCameraTarget`, and `pev->flags |= FL_ONGROUND` in a branch that already requires it. | as written |
+| `GetEyePosition` (animation.cpp) | `vecEyePosition = pstudiohdr->eyeposition;` assigns the pointer parameter (Vector converts to float*) instead of copying the eye position, so the caller's vector is never written. | the assignment |

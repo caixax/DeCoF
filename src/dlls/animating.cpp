@@ -287,7 +287,7 @@ void CBaseAnimating :: SetSequenceBox( void )
 		Vector xvector, yvector;
 		xvector.x = cos(yaw);
 		xvector.y = sin(yaw);
-		yvector.x = -sin(yaw);
+		yvector.x = -(float)sin(yaw);
 		yvector.y = cos(yaw);
 		Vector bounds[2];
 

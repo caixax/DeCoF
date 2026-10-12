@@ -12,44 +12,14 @@
 *   without written permission from Valve LLC.
 *
 ****/
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
-#include "../common/nowin.h"
-
-typedef int BOOL;
-#define TRUE	 1	
-#define FALSE	0
-
-// hack into header files that we can ship
-typedef int qboolean;
-typedef unsigned char byte;
-#include "../utils/common/mathlib.h"
-#include "const.h"
-#include "progdefs.h"
-#include "edict.h"
-#include "eiface.h"
-
+#include "extdll.h"
+#include "util.h"
+#include "cbase.h"
 #include "studio.h"
-
-#ifndef ACTIVITY_H
 #include "activity.h"
-#endif
-
 #include "activitymap.h"
-
-#ifndef ANIMATION_H
 #include "animation.h"
-#endif
-
-#ifndef SCRIPTEVENT_H
 #include "scriptevent.h"
-#endif
-
-#ifndef ENGINECALLBACK_H
-#include "enginecallback.h"
-#endif
 
 extern globalvars_t				*gpGlobals;
 
@@ -150,7 +120,7 @@ void GetEyePosition ( void *pmodel, float *vecEyePosition )
 		return;
 	}
 
-	VectorCopy ( pstudiohdr->eyeposition, vecEyePosition );
+	vecEyePosition = pstudiohdr->eyeposition;
 }
 
 int LookupSequence( void *pmodel, const char *label )
@@ -276,6 +246,31 @@ float GetSequenceTime( void *pmodel, int seqnum )
 		return (pseqdesc->numframes - 1) / pseqdesc->fps;
 	else
 		return 0;
+}
+
+
+float GetSequenceTimeNamed( void *pmodel, char *sequence )
+{
+	studiohdr_t *pstudiohdr;
+	
+	pstudiohdr = (studiohdr_t *)pmodel;
+	if (! pstudiohdr)
+		return 0;
+
+	int iSequence = LookupSequence( pmodel, sequence );
+	if (iSequence > -1)
+	{
+		mstudioseqdesc_t	*pseqdesc;
+
+		pseqdesc = (mstudioseqdesc_t *)((byte *)pstudiohdr + pstudiohdr->seqindex) + (int)iSequence;
+
+		if (pseqdesc->numframes > 1)
+			return (pseqdesc->numframes - 1) / pseqdesc->fps;
+		else
+			return 0;
+	}
+
+	return 0;
 }
 
 
