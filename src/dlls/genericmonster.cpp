@@ -21,6 +21,7 @@
 #include	"monsters.h"
 #include	"schedule.h"
 #include	"animation.h"
+#include	"player.h"
 
 // For holograms, make them not solid so the player can walk through them
 //LRC- this seems to interfere with SF_MONSTER_CLIP
@@ -74,6 +75,11 @@ void CGenericMonster::KeyValue( KeyValueData *pkvd )
 	if (FStrEq(pkvd->szKeyName, "m_bloodColor"))
 	{
 		m_bloodColor = atoi(pkvd->szValue);
+		pkvd->fHandled = TRUE;
+	}
+	else if (FStrEq(pkvd->szKeyName, "chestnums"))
+	{
+		m_ChestNumbers = atoi(pkvd->szValue);
 		pkvd->fHandled = TRUE;
 	}
 	else if (FStrEq(pkvd->szKeyName, "m_iszGibModel"))
@@ -195,6 +201,15 @@ void CGenericMonster :: Spawn()
 	{
 		pev->takedamage = DAMAGE_NO;
 	}
+
+	number1 = RANDOM_LONG( 0, 8 );
+	number2 = RANDOM_LONG( 0, 8 );
+
+	if ( m_ChestNumbers )
+	{
+		SetBodygroup( 1, number1 );
+		SetBodygroup( 2, number2 );
+	}
 }
 
 //=========================================================
@@ -206,6 +221,27 @@ void CGenericMonster :: Precache()
 	if (m_iszGibModel)
 		PRECACHE_MODEL( (char*)STRING(m_iszGibModel) ); //LRC
 }	
+
+void CGenericMonster :: Use( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE useType, float value )
+{
+	int realnumber = number1 + 1;
+	int realnumber2 = number2 + 1;
+	char szTempKey[8];
+
+	sprintf( szTempKey, "%i7%i9", realnumber, realnumber2 );
+
+	int codenumber = atoi( szTempKey );
+
+	CBaseEntity *player = UTIL_FindEntityByClassname( NULL, "player" );
+
+	if ( player )
+	{
+		CBasePlayer *pPlayer = GetClassPtr( (CBasePlayer *)player->pev );
+
+		if ( pPlayer )
+			pPlayer->m_iKeypadNumber = codenumber;
+	}
+}
 
 //=========================================================
 // AI Schedules Specific to this monster

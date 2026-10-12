@@ -437,8 +437,8 @@ extern DLL_GLOBAL int			g_Language;
 
 #define VEC_HULL_MIN		Vector(-16, -16, -36)
 #define VEC_HULL_MAX		Vector( 16,  16,  36)
-#define VEC_HUMAN_HULL_MIN	Vector( -16, -16, 0 )
-#define VEC_HUMAN_HULL_MAX	Vector( 16, 16, 72 )
+#define VEC_HUMAN_HULL_MIN	Vector( -12, -12, 0 )	// CoF (16 in the HLSDK)
+#define VEC_HUMAN_HULL_MAX	Vector( 12, 12, 72 )	// CoF
 #define VEC_HUMAN_HULL_DUCK	Vector( 16, 16, 36 )
 
 #define VEC_VIEW			Vector( 0, 0, 28 )
