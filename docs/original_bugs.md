@@ -21,3 +21,10 @@ The reconstructed source keeps the behavior of the retail 1.6a binaries, includi
 | `CNightstick` attacks (CoF_NightStick.cpp) | All three attacks set `MeleeHitThinkNightStick2` as the think. | the same function pointer stored in each |
 | `CAxe::Fidget` (CoF_Axe.cpp) | Calls `RANDOM_LONG( 0, 599 )` and ignores the result. | the call with no use of eax |
 | `CSledgeHammer` (CoF_Sledgehammer.cpp) | Checks no suicide state, unlike the other melee weapons. | no m_iSuicideState test |
+| `CTwitcher4` (CoF_Twitcher4.cpp) | Uses the Twitcher 1 skill values (`twitcherHealth`, `twitcherDmgOneSlash`, `twitcherDmgBothSlash`); the `twitcher4*` members are never read. Same in 1.55. | the gSkillData offsets loaded |
+| `CFaceless`, `CFacelessV` (CoF_Faceless.cpp, CoF_FacelessValve.cpp) | Use `zombieHealth` and the zombie slash damages; the `faceless*` members are never read. Same in 1.55. | the gSkillData offsets loaded |
+| `CFaster::TraceAttack` (CoF_Faster.cpp) | No `break` after `case HITGROUP_HEAD`: it falls into case 8, so a head hit makes sparks and plays `HeadHitSound` twice. | no jmp between the two case bodies |
+| `SpawnHeadGibs` (CZombie in CoF_Slower.cpp, CSlower3) | Loops `i` from 0 to 4 while the switch covers 0 to 3; for `i == 4`, `vecVol` is uninitialized (in retail it keeps the previous gib's velocity). | loop bound 5, four case bodies |
+| `CFaster::Precache` (CoF_Faster.cpp) | Precaches `pDeathSounds` twice. | two identical precache loops |
+| `CZombie::TraceAttack` (CoF_Slower.cpp) | Calls `IsHeadless()` and ignores the result (retail drops the call). | 1.55 call with no use of the result |
+| `CZombie::Spawn` (CoF_Slower.cpp) | Uneven hull: the minimum is `-scale, -scale, 0`, the maximum the fixed `8, 8, 72`. | the UTIL_SetSize arguments |

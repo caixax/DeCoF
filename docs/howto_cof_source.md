@@ -101,6 +101,17 @@ The 1.55 hl.dll is an unoptimized debug build of nearly the same source. `disasm
 - The melee ItemPostFrame is one template (axe, nightstick, branch, booklaser): function scope `float speed` and `float time = 0`, a second `float speed` inside the fourth block; the sledgehammer drops the suicide check, the half time on sprint-to and the idle timer on sprint-from.
 - Content can differ from 1.55: Book Simon's SetYawSpeed and Spawn read the `cof_monsterhumanyawspeed` and `cof_monsterhumanscale` cvars in 1.6a. Use 1.55 for statement order and check the content against retail.
 
+## Patterns from the CoF monsters
+
+- The 1.6a monsters read cvars where 1.55 had constants: `SetYawSpeed` uses `ys = CVAR_GET_FLOAT( "cof_monsterhumanyawspeed" );`, `Spawn` uses `int guess_iScale = CVAR_GET_FLOAT( "cof_monsterhumanscale" );` then `UTIL_SetSize( pev, Vector( -s, -s, 0 ), Vector( s, s, 72 ) )` (one int local gives the single `cvttss2si` plus `neg`).
+- entvars `+0x114` is `body`: `if ( pev->body == -1 ) pev->body = RANDOM_LONG( 0, 10 );`. The view offset `0x41e00000` (28) is `VEC_VIEW`.
+- `CheckTraceHullAttack` has no default arguments in CoF: `( 55, gSkillData.x, DMG_SLASH, false, 0 )`.
+- Keep the HLSDK `velocity + v_forward * -100`; retail compiles it to `mulss 100` plus `subss`.
+- In 1.55, a `break` in the last switch case produces no code; a missing `break` before another case is a missing `jmp`, which is how a fallthrough shows.
+- A local the 1.55 PDB lists for an otherwise empty body is still declared (`CSlower3::AlertSound` is `int pitch;` with the rest commented out; retail is `ret 0`).
+- The Killed copies inline the kill statistics: `if ( m_iLastDamageType & (1 << 26) ) ((CBasePlayer *)pAttacker)->playerstats.monsters_killed_melee++; else ...monsters_killed_shooting++;` then `GetPointsForKill( (char *)STRING( pev->classname ), (CBasePlayer *)pAttacker )`; only the twitchers add the `weapon_axe` check that sets `m_iFoundHoodies |= 0x20000`.
+- `bool newgore;` is defined in CoF_Slower.cpp (the 1.55 PDB module); player.cpp declares it `extern`.
+
 ## What not to do
 
 - Do not edit shared headers (`cbase.h`, `weapons.h`, `player.h`, `util.h`, ...) without coordinating: several files depend on them.
