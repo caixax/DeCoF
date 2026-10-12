@@ -14438,31 +14438,31 @@ hl,10047E70,6,?iItemSlot@CGlock@@UAEHXZ,CGlock::iItemSlot,HLSDK,dlls/cof_glock.c
 hl,10047E80,5,_ammo_glock,ammo_glock,HLSDK,dlls/cof_glock.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( ammo_glock, CGlockAmmo )"
 hl,10047E90,5,_weapon_beretta,weapon_beretta,HLSDK,dlls/cof_glock.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( weapon_beretta, CGlock )"
 hl,10047EA0,5,_weapon_glock,weapon_glock,HLSDK,dlls/cof_glock.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( weapon_glock, CGlock )"
-hl,10047EB0,92,??$GetClassPtr@VCCofInterDoorExitChange@@@@YAPAVCCofInterDoorExitChange@@PAV0@@Z,GetClassPtr<CCofInterDoorExitChange>,HLSDK,dlls/cof_interdoor.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,0.0,jmp_target_of_export+rtti,
-hl,10047F10,92,??$GetClassPtr@VCInterDoor@@@@YAPAVCInterDoor@@PAV0@@Z,GetClassPtr<CInterDoor>,HLSDK,dlls/cof_interdoor.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,TODO,0.0,jmp_target_of_export+rtti,
-hl,10047F70,92,??$GetClassPtr@VCInterDoorDisable@@@@YAPAVCInterDoorDisable@@PAV0@@Z,GetClassPtr<CInterDoorDisable>,HLSDK,dlls/cof_interdoor.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,TODO,0.0,jmp_target_of_export+rtti,
+hl,10047EB0,92,??$GetClassPtr@VCCofInterDoorExitChange@@@@YAPAVCCofInterDoorExitChange@@PAV0@@Z,GetClassPtr<CCofInterDoorExitChange>,HLSDK,dlls/cof_interdoor.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
+hl,10047F10,92,??$GetClassPtr@VCInterDoor@@@@YAPAVCInterDoor@@PAV0@@Z,GetClassPtr<CInterDoor>,HLSDK,dlls/cof_interdoor.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
+hl,10047F70,92,??$GetClassPtr@VCInterDoorDisable@@@@YAPAVCInterDoorDisable@@PAV0@@Z,GetClassPtr<CInterDoorDisable>,HLSDK,dlls/cof_interdoor.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
 hl,10047FD0,92,??$GetClassPtr@VCPointEntity@@@@YAPAVCPointEntity@@PAV0@@Z,GetClassPtr<CPointEntity>,HLSDK,dlls/cbase.h,2010-prototype,1.0->1.4 same; 1.4->1.55 same,TODO,,jmp_target_of_export+rtti,
 hl,10048030,16,,,UNKNOWN,guess:dlls/cof_interdoor.cpp,,,TODO,,,
-hl,10048040,43,?EndGame@CInterDoor@@QAEXXZ,CInterDoor::EndGame,COF,dlls/cof_interdoor.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
-hl,10048070,1232,?EndSequence@CInterDoor@@QAEXXZ,CInterDoor::EndSequence,COF,dlls/cof_interdoor.cpp,2010-prototype,1.0->1.4 changed; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
+hl,10048040,43,?EndGame@CInterDoor@@QAEXXZ,CInterDoor::EndGame,COF,dlls/cof_interdoor.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
+hl,10048070,1232,?EndSequence@CInterDoor@@QAEXXZ,CInterDoor::EndSequence,COF,dlls/cof_interdoor.cpp,2010-prototype,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10048540,12,,,UNKNOWN,guess:dlls/cof_interdoor.cpp,,,TODO,,,
-hl,10048550,838,?KeyValue@CInterDoor@@UAEXPAUKeyValueData_s@@@Z,CInterDoor::KeyValue,COF,dlls/cof_interdoor.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
-hl,100488A0,18,?ObjectCaps@CInterDoor@@UAEHXZ,CInterDoor::ObjectCaps,COF,dlls/cof_interdoor.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
-hl,100488C0,143,?Precache@CInterDoor@@UAEXXZ,CInterDoor::Precache,COF,dlls/cof_interdoor.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
-hl,10048950,49,?Restore@CInterDoor@@UAEHAAVCRestore@@@Z,CInterDoor::Restore,COF,dlls/cof_interdoor.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
-hl,10048990,95,?Save@CInterDoor@@UAEHAAVCSave@@@Z,CInterDoor::Save,COF,dlls/cof_interdoor.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
+hl,10048550,838,?KeyValue@CInterDoor@@UAEXPAUKeyValueData_s@@@Z,CInterDoor::KeyValue,COF,dlls/cof_interdoor.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
+hl,100488A0,18,?ObjectCaps@CInterDoor@@UAEHXZ,CInterDoor::ObjectCaps,COF,dlls/cof_interdoor.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
+hl,100488C0,143,?Precache@CInterDoor@@UAEXXZ,CInterDoor::Precache,COF,dlls/cof_interdoor.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
+hl,10048950,49,?Restore@CInterDoor@@UAEHAAVCRestore@@@Z,CInterDoor::Restore,COF,dlls/cof_interdoor.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
+hl,10048990,95,?Save@CInterDoor@@UAEHAAVCSave@@@Z,CInterDoor::Save,COF,dlls/cof_interdoor.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100489F0,429,,,UNKNOWN,guess:dlls/cof_interdoor.cpp,,,TODO,,,
-hl,10048BA0,40,?Spawn@CCofInterDoorExitChange@@UAEXXZ,CCofInterDoorExitChange::Spawn,COF,dlls/cof_interdoor.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
-hl,10048BD0,160,?Spawn@CInterDoor@@UAEXXZ,CInterDoor::Spawn,COF,dlls/cof_interdoor.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
-hl,10048C70,49,?Spawn@CInterDoorDisable@@UAEXXZ,CInterDoorDisable::Spawn,COF,dlls/cof_interdoor.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
+hl,10048BA0,40,?Spawn@CCofInterDoorExitChange@@UAEXXZ,CCofInterDoorExitChange::Spawn,COF,dlls/cof_interdoor.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
+hl,10048BD0,160,?Spawn@CInterDoor@@UAEXXZ,CInterDoor::Spawn,COF,dlls/cof_interdoor.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
+hl,10048C70,49,?Spawn@CInterDoorDisable@@UAEXXZ,CInterDoorDisable::Spawn,COF,dlls/cof_interdoor.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10048CB0,398,,,UNKNOWN,guess:dlls/cof_interdoor.cpp,,,TODO,,,
-hl,10048E40,170,?UnlockDoor@CInterDoor@@QAEXPAVCBaseEntity@@@Z,CInterDoor::UnlockDoor,COF,dlls/cof_interdoor.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
-hl,10048EF0,119,?Use@CCofInterDoorExitChange@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CCofInterDoorExitChange::Use,COF,dlls/cof_interdoor.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
-hl,10048F70,776,?Use@CInterDoor@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CInterDoor::Use,COF,dlls/cof_interdoor.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
-hl,10049280,236,?Use@CInterDoorDisable@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CInterDoorDisable::Use,COF,dlls/cof_interdoor.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
-hl,10049370,5,_cof_inter_door_exitchange,cof_inter_door_exitchange,HLSDK,dlls/cof_interdoor.cpp,,,TODO,0.0,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( cof_inter_door_exitchange, CCofInterDoorExitChange )"
-hl,10049380,5,_inter_door,inter_door,HLSDK,dlls/cof_interdoor.cpp,,,TODO,0.0,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( inter_door, CInterDoor )"
-hl,10049390,5,_inter_door_disable,inter_door_disable,HLSDK,dlls/cof_interdoor.cpp,,,TODO,0.0,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( inter_door_disable, CInterDoorDisable )"
+hl,10048E40,170,?UnlockDoor@CInterDoor@@QAEXPAVCBaseEntity@@@Z,CInterDoor::UnlockDoor,COF,dlls/cof_interdoor.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
+hl,10048EF0,119,?Use@CCofInterDoorExitChange@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CCofInterDoorExitChange::Use,COF,dlls/cof_interdoor.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
+hl,10048F70,776,?Use@CInterDoor@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CInterDoor::Use,COF,dlls/cof_interdoor.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
+hl,10049280,236,?Use@CInterDoorDisable@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CInterDoorDisable::Use,COF,dlls/cof_interdoor.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
+hl,10049370,5,_cof_inter_door_exitchange,cof_inter_door_exitchange,HLSDK,dlls/cof_interdoor.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( cof_inter_door_exitchange, CCofInterDoorExitChange )"
+hl,10049380,5,_inter_door,inter_door,HLSDK,dlls/cof_interdoor.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( inter_door, CInterDoor )"
+hl,10049390,5,_inter_door_disable,inter_door_disable,HLSDK,dlls/cof_interdoor.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( inter_door_disable, CInterDoorDisable )"
 hl,100493A0,5,_inter_door_exit,inter_door_exit,HLSDK,dlls/cbase.h,,,TODO,,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( inter_door_exit, CPointEntity )"
 hl,100493B0,445,,,UNKNOWN,,,,TODO,,,
 hl,1004958C,181,,,UNKNOWN,,,,TODO,,,
