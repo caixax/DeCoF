@@ -13205,7 +13205,7 @@ hl,10006120,94,_PM_GetRandomStuckOffsets,PM_GetRandomStuckOffsets,HLSDK,pm_share
 hl,10006180,44,_PM_GetVisEntInfo,PM_GetVisEntInfo,HLSDK,pm_shared/pm_shared.c,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,refbytes:paranoia:pm_shared__pm_shared.obj:score1,
 hl,100061B0,32,_PM_InWater,PM_InWater,HLSDK,pm_shared/pm_shared.c,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,refbytes:paranoia:pm_shared__pm_shared.obj:score1,
 hl,100061D0,33,_PM_Init,PM_Init,HLSDK,pm_shared/pm_shared.c,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,refbytes:paranoia:pm_shared__pm_shared.obj:score3,
-hl,10006200,795,_PM_InitTextureTypes,PM_InitTextureTypes,HLSDK,pm_shared/pm_shared.c,1.0,1.0->1.4 changed; 1.4->1.55 same,TODO,99.5,hl_1.55_to_1.6a.csv,
+hl,10006200,795,_PM_InitTextureTypes,PM_InitTextureTypes,HLSDK,pm_shared/pm_shared.c,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10006520,1036,_PM_Jump,PM_Jump,HLSDK,pm_shared/pm_shared.c,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10006930,262,_PM_Ladder,PM_Ladder,HLSDK,pm_shared/pm_shared.c,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10006A40,1003,_PM_LadderMove,PM_LadderMove,HLSDK,pm_shared/pm_shared.c,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
@@ -13215,7 +13215,7 @@ hl,10006F90,269,_PM_NoClip,PM_NoClip,HLSDK,pm_shared/pm_shared.c,1.0,1.0->1.4 sa
 hl,100070A0,962,_PM_Physics_Toss,PM_Physics_Toss,HLSDK,pm_shared/pm_shared.c,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10007470,205,_PM_PlayGroupSound,,UNKNOWN,pm_shared/pm_shared.c,,,MATCHED,100,,
 hl,10007550,4813,_PM_PlayStepSound,PM_PlayStepSound,HLSDK,pm_shared/pm_shared.c,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,10008A00,1096,_PM_PlayerMove,PM_PlayerMove,HLSDK,pm_shared/pm_shared.c,1.0,1.0->1.4 same; 1.4->1.55 same,EQUIVALENT,90.9,hl_1.55_to_1.6a.csv,EQUIVALENT: PM_PlayWaterSounds is empty in retail (its 1.55 body has no code either) but retail still tail-jumps to it twice; MSVC 19.27 drops calls to an empty function of the same file (also after moving the definition). With the HLSDK body back the calls stay but the game would play wade sounds retail does not. The switch tables are split by the harvested $LN44/$LN45 labels until the next delink.
+hl,10008A00,1096,_PM_PlayerMove,PM_PlayerMove,HLSDK,pm_shared/pm_shared.c,1.0,1.0->1.4 same; 1.4->1.55 same,EQUIVALENT,97.5,hl_1.55_to_1.6a.csv,EQUIVALENT: PM_PlayWaterSounds is empty in retail (its 1.55 body has no code either) but retail still tail-jumps to it twice; MSVC 19.27 drops calls to an empty function of the same file (also after moving the definition). With the HLSDK body back the calls stay but the game would play wade sounds retail does not. The switch tables are split by the harvested $LN44/$LN45 labels until the next delink.
 hl,10008E70,117,_PM_PreventMegaBunnyJumping,PM_PreventMegaBunnyJumping,HLSDK,pm_shared/pm_shared.c,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,refbytes:paranoia:pm_shared__pm_shared.obj:score4,
 hl,10008EF0,262,_PM_PushEntity,PM_PushEntity,HLSDK,pm_shared/pm_shared.c,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10009000,180,_PM_ReduceTimers,PM_ReduceTimers,HLSDK,pm_shared/pm_shared.c,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,refbytes:paranoia:pm_shared__pm_shared.obj:score4,

@@ -72,6 +72,7 @@ public class DelinkUnits extends GhidraScript {
 			String arg = line.substring(sp + 1).strip();
 			switch (cmd) {
 				case "symbols":
+					dropCompilerLabels();
 					applySymbols(arg);
 					break;
 				case "unit":
@@ -102,6 +103,30 @@ public class DelinkUnits extends GhidraScript {
 			units++;
 		}
 		println("DelinkUnits: exported " + units + " unit(s)");
+	}
+
+	// $LN labels are local jump table labels of our objects; on the retail
+	// side they came from earlier harvests and split a function from its
+	// own switch tables (which are now part of the function): remove all
+	private void dropCompilerLabels() throws Exception {
+		SymbolTable symtab = currentProgram.getSymbolTable();
+		List<Symbol> labels = new ArrayList<>();
+		for (Symbol s : symtab.getAllSymbols(false)) {
+			if (s.getName().startsWith("$LN") && s.getName().substring(3).matches("[0-9]+")
+					&& s.getSymbolType() == SymbolType.LABEL) {
+				labels.add(s);
+			}
+		}
+		int tx = currentProgram.startTransaction("Drop $LN labels");
+		try {
+			for (Symbol s : labels) {
+				s.delete();
+			}
+		}
+		finally {
+			currentProgram.endTransaction(tx, true);
+		}
+		println("DelinkUnits: dropped " + labels.size() + " $LN labels");
 	}
 
 	// Remove names that the symbol map dropped at an address (CSV va,name):
@@ -365,6 +390,26 @@ public class DelinkUnits extends GhidraScript {
 				}
 			}
 			prevEnd = r.getMaxAddress();
+		}
+		// a function that ends in a call to a no-return function (the /GS
+		// range check failure) is followed by an int3 that MSVC counts as
+		// part of the function
+		Instruction last = currentProgram.getListing().getInstructionContaining(fn.getBody().getMaxAddress());
+		if (last != null && last.getFlowType().isCall()) {
+			for (Address target : last.getFlows()) {
+				Function callee = getFunctionAt(target);
+				if (callee != null && callee.hasNoReturn()) {
+					Address next = last.getMaxAddress().add(1);
+					try {
+						if (getByte(next) == (byte) 0xCC && getFunctionAt(next) == null) {
+							set.add(next, next);
+						}
+					}
+					catch (Exception e) {
+						// end of the block
+					}
+				}
+			}
 		}
 	}
 

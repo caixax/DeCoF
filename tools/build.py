@@ -152,6 +152,14 @@ def merged_symbols(d, dll):
                 if not keep or va != keep[0]:
                     rows.pop(va, None)
                     forget.append((va, name))
+    # names removed for good (tools/symbols/<dll>_forget.csv, with evidence)
+    fp = base.replace("_1.6a.csv", "_forget.csv")
+    if os.path.exists(fp):
+        for r in csv.DictReader(open(fp)):
+            va = r["va"].upper()
+            if rows.get(va, ("",))[0] == r["name"]:
+                rows.pop(va)
+            forget.append((va, r["name"]))
     with open(os.path.join(ROOT, "build", "jobs", "forget_%s.csv" % dll), "w", newline="") as f:
         w = csv.writer(f, lineterminator="\n")
         w.writerow(["va", "name"])

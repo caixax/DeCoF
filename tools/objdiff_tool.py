@@ -175,11 +175,9 @@ def harvest(units, write, min_pct=80.0, strict_pct=95.0):
             na, nb = reloc_name(d["left"], a), reloc_name(d["right"], b)
             if not na or not nb or na == nb:
                 continue
-            # jump tables: Ghidra's switch label takes our compiler label
-            sw = SWITCH.match(na)
-            if sw and LN.match(nb) and reloc_addend(a) == reloc_addend(b):
-                key = (unit.split("/")[0], int(sw.group(1), 16))
-                found[key] = (nb, "label", "objdiff:%s:%s" % (unit, symbol))
+            # jump tables are part of their function (DelinkUnits): their
+            # compiler labels ($LN) are local to our object and not harvested
+            if SWITCH.match(na) or LN.match(nb):
                 continue
             m = UNNAMED.match(na)
             if not m or nb.startswith(("$", ".", "[")) or UNNAMED.match(nb):
