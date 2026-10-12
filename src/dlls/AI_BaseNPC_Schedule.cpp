@@ -26,6 +26,7 @@
 #include "defaultai.h"
 #include "soundent.h"
 #include "rushscript.h" // buz
+#include <cmath>
 
 extern CGraph WorldGraph;
 
@@ -508,7 +509,9 @@ void CBaseMonster :: RunTask ( Task_t *pTask )
 			{
 				pev->deadflag = DEAD_DEAD;
 				
-				SetThink ( NULL );
+				SetThink ( &CBaseEntity::DeadRemoveThink );
+				SetNextThink( 20 );
+
 				StopAnimation();
 
 				if ( !BBoxFlat() )
@@ -1328,11 +1331,27 @@ case TASK_GET_PATH_TO_BESTSCENT:
 		}
 	case TASK_SMALL_FLINCH:
 		{
-			m_IdealActivity = GetSmallFlinchActivity();
+			if ( FClassnameIs( pev, "monster_bosschainsaw" ) && pev->skin == 1 )
+				break;
+
+			if ( FClassnameIs( pev, "monster_booksimon" ) )
+				break;
+
+			if ( FClassnameIs( pev, "monster_doctorboss" ) )
+				break;
+
+			if ( FClassnameIs( pev, "monster_sewerboss" ) && pev->skin == 1 )
+				break;
+
+			if ( GetSmallFlinchActivity() != ACT_EXCITED )
+				m_IdealActivity = GetSmallFlinchActivity();
+			else
+				TaskComplete();
 			break;
 		}
 	case TASK_DIE:
 		{
+			m_bFrozenByCamera = false;
 			RouteClear();	
 			
 			m_IdealActivity = GetDeathActivity();
@@ -1348,6 +1367,7 @@ case TASK_GET_PATH_TO_BESTSCENT:
 		}
 	case TASK_SOUND_DIE:
 		{
+			m_bWaitingToDie = true;
 			DeathSound();
 			TaskComplete();
 			break;
@@ -1360,12 +1380,16 @@ case TASK_GET_PATH_TO_BESTSCENT:
 		}
 	case TASK_SOUND_PAIN:
 		{
-			PainSound();
-			TaskComplete();
+			if ( !m_bWaitingToDie )
+			{
+				PainSound();
+				TaskComplete();
+			}
 			break;
 		}
 	case TASK_SOUND_DEATH:
 		{
+			m_bWaitingToDie = true;
 			DeathSound();
 			TaskComplete();
 			break;
@@ -1373,7 +1397,7 @@ case TASK_GET_PATH_TO_BESTSCENT:
 	case TASK_SOUND_ANGRY:
 		{
 			// sounds are complete as soon as we get here, cause we've already played them.
-			ALERT ( at_aiconsole, "SOUND\n" );			
+//			ALERT ( at_aiconsole, "SOUND\n" );			
 			TaskComplete();
 			break;
 		}
