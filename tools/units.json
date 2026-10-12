@@ -1313,6 +1313,166 @@
           "name": "game_shared/voice_vgui_tweakdlg",
           "source": "src/game_shared/voice_vgui_tweakdlg.cpp",
           "functions_file": "tools/units/client_game_shared_voice_vgui_tweakdlg.txt"
+        },
+        {
+          "name": "cl_dll/guess_AmmoInventory",
+          "source": "src/cl_dll/guess_AmmoInventory.cpp",
+          "functions_file": "tools/units/client_cl_dll_guess_AmmoInventory.txt"
+        },
+        {
+          "name": "cl_dll/guess_BookMenu",
+          "source": "src/cl_dll/guess_BookMenu.cpp",
+          "functions_file": "tools/units/client_cl_dll_guess_BookMenu.txt"
+        },
+        {
+          "name": "cl_dll/guess_ClothesMenu",
+          "source": "src/cl_dll/guess_ClothesMenu.cpp",
+          "functions_file": "tools/units/client_cl_dll_guess_ClothesMenu.txt"
+        },
+        {
+          "name": "cl_dll/guess_CoopStats",
+          "source": "src/cl_dll/guess_CoopStats.cpp",
+          "functions_file": "tools/units/client_cl_dll_guess_CoopStats.txt"
+        },
+        {
+          "name": "cl_dll/guess_Credits",
+          "source": "src/cl_dll/guess_Credits.cpp",
+          "functions_file": "tools/units/client_cl_dll_guess_Credits.txt"
+        },
+        {
+          "name": "cl_dll/guess_CutsceneSkip",
+          "source": "src/cl_dll/guess_CutsceneSkip.cpp",
+          "functions_file": "tools/units/client_cl_dll_guess_CutsceneSkip.txt"
+        },
+        {
+          "name": "cl_dll/guess_Documents",
+          "source": "src/cl_dll/guess_Documents.cpp",
+          "functions_file": "tools/units/client_cl_dll_guess_Documents.txt"
+        },
+        {
+          "name": "cl_dll/guess_VGUIExtraMenu",
+          "source": "src/cl_dll/guess_VGUIExtraMenu.cpp",
+          "functions_file": "tools/units/client_cl_dll_guess_VGUIExtraMenu.txt"
+        },
+        {
+          "name": "cl_dll/guess_GameMenu",
+          "source": "src/cl_dll/guess_GameMenu.cpp",
+          "functions_file": "tools/units/client_cl_dll_guess_GameMenu.txt"
+        },
+        {
+          "name": "cl_dll/guess_Language",
+          "source": "src/cl_dll/guess_Language.cpp",
+          "functions_file": "tools/units/client_cl_dll_guess_Language.txt"
+        },
+        {
+          "name": "cl_dll/guess_BlackBar",
+          "source": "src/cl_dll/guess_BlackBar.cpp",
+          "functions_file": "tools/units/client_cl_dll_guess_BlackBar.txt"
+        },
+        {
+          "name": "cl_dll/guess_Neffect",
+          "source": "src/cl_dll/guess_Neffect.cpp",
+          "functions_file": "tools/units/client_cl_dll_guess_Neffect.txt"
+        },
+        {
+          "name": "cl_dll/guess_Padlock",
+          "source": "src/cl_dll/guess_Padlock.cpp",
+          "functions_file": "tools/units/client_cl_dll_guess_Padlock.txt"
+        },
+        {
+          "name": "cl_dll/guess_SaveLoad",
+          "source": "src/cl_dll/guess_SaveLoad.cpp",
+          "functions_file": "tools/units/client_cl_dll_guess_SaveLoad.txt"
+        },
+        {
+          "name": "cl_dll/guess_Scope",
+          "source": "src/cl_dll/guess_Scope.cpp",
+          "functions_file": "tools/units/client_cl_dll_guess_Scope.txt"
+        },
+        {
+          "name": "cl_dll/guess_Telephone",
+          "source": "src/cl_dll/guess_Telephone.cpp",
+          "functions_file": "tools/units/client_cl_dll_guess_Telephone.txt"
+        },
+        {
+          "name": "cl_dll/guess_TVFrame",
+          "source": "src/cl_dll/guess_TVFrame.cpp",
+          "functions_file": "tools/units/client_cl_dll_guess_TVFrame.txt"
+        },
+        {
+          "name": "cl_dll/guess_Unlockables",
+          "source": "src/cl_dll/guess_Unlockables.cpp",
+          "functions_file": "tools/units/client_cl_dll_guess_Unlockables.txt"
+        },
+        {
+          "name": "cl_dll/guess_AnimalStatue",
+          "source": "src/cl_dll/guess_AnimalStatue.cpp",
+          "functions_file": "tools/units/client_cl_dll_guess_AnimalStatue.txt"
+        },
+        {
+          "name": "cl_dll/guess_VGUIBillboard",
+          "source": "src/cl_dll/guess_VGUIBillboard.cpp",
+          "functions_file": "tools/units/client_cl_dll_guess_VGUIBillboard.txt"
+        },
+        {
+          "name": "cl_dll/guess_BossBar",
+          "source": "src/cl_dll/guess_BossBar.cpp",
+          "functions_file": "tools/units/client_cl_dll_guess_BossBar.txt"
+        },
+        {
+          "name": "cl_dll/guess_Computer",
+          "source": "src/cl_dll/guess_Computer.cpp",
+          "functions_file": "tools/units/client_cl_dll_guess_Computer.txt"
+        },
+        {
+          "name": "cl_dll/guess_Difficulty",
+          "source": "src/cl_dll/guess_Difficulty.cpp",
+          "functions_file": "tools/units/client_cl_dll_guess_Difficulty.txt"
+        },
+        {
+          "name": "cl_dll/guess_GameOver",
+          "source": "src/cl_dll/guess_GameOver.cpp",
+          "functions_file": "tools/units/client_cl_dll_guess_GameOver.txt"
+        },
+        {
+          "name": "cl_dll/guess_RECBInventory",
+          "source": "src/cl_dll/guess_RECBInventory.cpp",
+          "functions_file": "tools/units/client_cl_dll_guess_RECBInventory.txt"
+        },
+        {
+          "name": "cl_dll/guess_Keypad",
+          "source": "src/cl_dll/guess_Keypad.cpp",
+          "functions_file": "tools/units/client_cl_dll_guess_Keypad.txt"
+        },
+        {
+          "name": "cl_dll/guess_NoteDocument",
+          "source": "src/cl_dll/guess_NoteDocument.cpp",
+          "functions_file": "tools/units/client_cl_dll_guess_NoteDocument.txt"
+        },
+        {
+          "name": "cl_dll/guess_Phone",
+          "source": "src/cl_dll/guess_Phone.cpp",
+          "functions_file": "tools/units/client_cl_dll_guess_Phone.txt"
+        },
+        {
+          "name": "cl_dll/guess_PuzzleBar",
+          "source": "src/cl_dll/guess_PuzzleBar.cpp",
+          "functions_file": "tools/units/client_cl_dll_guess_PuzzleBar.txt"
+        },
+        {
+          "name": "cl_dll/guess_Save",
+          "source": "src/cl_dll/guess_Save.cpp",
+          "functions_file": "tools/units/client_cl_dll_guess_Save.txt"
+        },
+        {
+          "name": "cl_dll/guess_UserDocument",
+          "source": "src/cl_dll/guess_UserDocument.cpp",
+          "functions_file": "tools/units/client_cl_dll_guess_UserDocument.txt"
+        },
+        {
+          "name": "cl_dll/guess_Yesno",
+          "source": "src/cl_dll/guess_Yesno.cpp",
+          "functions_file": "tools/units/client_cl_dll_guess_Yesno.txt"
         }
       ]
     }
