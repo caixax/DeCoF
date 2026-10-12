@@ -1118,6 +1118,31 @@ public:
 };
 
 
+class CMp5 : public CBasePlayerWeapon
+{
+public:
+	virtual void Spawn( void );
+	virtual void Precache( void );
+	virtual int iItemSlot( void ) { return 1; }
+	virtual int GetItemInfo( ItemInfo *p );
+	virtual void IronsightsTo( void );
+	virtual void IronsightsFrom( void );
+	virtual void SendInitMessage( CBasePlayer *player );
+	virtual void PrimaryAttack( void );
+	virtual void SecondaryAttack( void );
+	virtual void TertiaryAttack( void );
+	virtual void ItemPostFrame( void );
+	virtual void Holster( void );
+	virtual int Deploy( void );
+	virtual void Reload( void );
+	virtual void WeaponIdle( void );
+	int m_iShell;
+	void SuicideShot( void );
+	virtual void StartSuicide( void );
+	virtual void StopSuicide( void );
+};
+
+
 class CVP70 : public CBasePlayerWeapon
 {
 public:

@@ -35,8 +35,8 @@ extern int gmsgMOTD;
 CHalfLifeRules::CHalfLifeRules( void )
 {
 	guess_m_bUnknownDC = false;
-	guess_m_iUnknownE4 = 0;
-	guess_m_iUnknownE0 = 0;
+	guess_m_flUnknownE4 = 0;
+	guess_m_flUnknownE0 = 0;
 
 	CVAR_SET_FLOAT( "sv_coop", 0 );
 

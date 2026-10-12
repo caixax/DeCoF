@@ -23,6 +23,7 @@
 #include	"movewith.h"
 #include	"skill.h"
 #include	"player.h"
+#include	"studio.h"
 
 void EntvarsKeyvalue( entvars_t *pev, KeyValueData *pkvd );
 
@@ -524,6 +525,22 @@ void CBaseEntity::CorpseFolllow( void )
 
 	pev->origin = pev->euser1->v.origin;
 	SetNextThink( 0 );
+}
+
+void CBaseEntity :: SetModelCollisionBox( void )
+{
+	studiohdr_t *pstudiohdr;
+	pstudiohdr = (studiohdr_t*)GET_MODEL_PTR( ENT(pev) );
+
+	if (pstudiohdr == NULL)
+	{
+		ALERT(at_console,"Unable to fetch model pointer!\n");
+		return;
+	}
+
+	mstudioseqdesc_t	*pseqdesc;
+	pseqdesc = (mstudioseqdesc_t *)((byte *)pstudiohdr + pstudiohdr->seqindex);
+	UTIL_SetSize(pev,pseqdesc[ pev->sequence ].bbmin,pseqdesc[ pev->sequence ].bbmax);
 }
 
 //LRC
