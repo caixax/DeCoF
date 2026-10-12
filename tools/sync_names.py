@@ -19,6 +19,7 @@ import bisect
 import csv
 import json
 import os
+import re
 import subprocess
 import sys
 
@@ -71,6 +72,14 @@ def main():
         # the address must lie inside that unit's span of neighbours
         return best if near.count(best) * 2 > len(near) else None
 
+    byte_unit = {}
+    bp = os.path.join(ROOT, "tools", "symbols", "hl_bytes.csv")
+    if os.path.exists(bp):
+        for b in csv.DictReader(open(bp)):
+            m = re.search(r" in hl/(\S+) ", b["evidence"])
+            if m and m.group(1) in units:
+                byte_unit[int(b["va"], 16)] = m.group(1)
+
     head = {}
     if "--since-head" in sys.argv:
         import io
@@ -88,13 +97,17 @@ def main():
         new = merged.get(va)
         if not new or new == r["name"] or not new.startswith(("?", "_")):
             continue
-        unit = unit_at(va)
+        # a byte-proven name says which of our objects holds the function
+        # (STL instantiations sit after the object that first uses them)
+        unit = byte_unit.get(va) or unit_at(va)
         changes.append((r, new, unit))
     dem = undecorate(sorted({n for _r, n, _u in changes if n.startswith("?")}))
     lists = {}
     for r, new, unit in changes:
         old_name, old_src = r["name"], r["source_file"]
         r["name"] = new
+        if "@std@@" in new:
+            r["class"] = "LIB"  # STL instantiation from the toolchain headers
         r["demangled"] = dem.get(new, r["demangled"]).split("(")[0].split(" ")[-1] if new in dem else r["demangled"]
         if unit and (not old_src or old_src.startswith("guess:") or old_name):
             src = os.path.splitext(units[unit]["source"])[1]
