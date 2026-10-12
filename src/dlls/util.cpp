@@ -33,6 +33,83 @@
 #include "movewith.h"
 #include "locus.h"
 
+char *GetCustomMPModel( char *s )
+{
+	if ( strstr( s, "branch" ) )
+		return "police/models/weapons/branch/v_branch.mdl";
+	if ( strstr( s, "glock" ) )
+		return "police/models/weapons/glock/v_glock.mdl";
+	if ( strstr( s, "m16" ) )
+		return "police/models/weapons/m16/v_m16.mdl";
+	if ( strstr( s, "nightstick" ) )
+		return "police/models/weapons/nightstick/v_nightstick.mdl";
+	if ( strstr( s, "p345" ) )
+		return "police/models/weapons/p345/v_p345.mdl";
+	if ( strstr( s, "revolver" ) )
+		return "police/models/weapons/revolver/v_revolver.mdl";
+	if ( strstr( s, "rifle" ) )
+		return "police/models/weapons/rifle/v_rifle.mdl";
+	if ( strstr( s, "shotgun" ) )
+		return "police/models/weapons/shotgun/v_shotgun.mdl";
+	if ( strstr( s, "sledgehammer" ) )
+		return "police/models/weapons/sledgehammer/v_sledgehammer.mdl";
+	if ( strstr( s, "switchblade" ) )
+		return "police/models/weapons/switchblade/v_switchblade.mdl";
+	if ( strstr( s, "syringe" ) )
+		return "police/models/weapons/syringe/v_syringe.mdl";
+	if ( strstr( s, "tmp" ) )
+		return "police/models/weapons/tmp/v_tmp.mdl";
+	if ( strstr( s, "vp70" ) )
+		return "police/models/weapons/vp70/v_vp70.mdl";
+
+	return NULL;
+}
+
+int PRECACHE_MODEL( int s, char *e )
+{
+	if ( FStringNull( s ) )
+		return PRECACHE_MODEL( e );
+	return PRECACHE_MODEL( s );
+}
+
+int PRECACHE_MODEL( int s ) { return PRECACHE_MODEL( (char *)STRING( s ) ); }
+
+int PRECACHE_MODEL( char *s )
+{
+	if ( !s || !*s )
+	{
+		ALERT( at_console, "Warning: modelname not specified\n" );
+		return 0;
+	}
+
+	if ( s[0] == '*' )
+		return 0;
+
+	byte *data = LOAD_FILE_FOR_ME( s, NULL );
+	if ( data )
+	{
+		FREE_FILE( data );
+
+		return (*g_engfuncs.pfnPrecacheModel)( s );
+	}
+
+	return 0;
+}
+
+int PRECACHE_SOUND( int s, char *e )
+{
+	if ( FStringNull( s ) )
+		return PRECACHE_SOUND( e );
+	return PRECACHE_SOUND( s );
+}
+
+int PRECACHE_SOUND( int s ) { return PRECACHE_SOUND( (char *)STRING( s ) ); }
+
+int PRECACHE_SOUND( char *s )
+{
+	return (*g_engfuncs.pfnPrecacheSound)( s );
+}
+
 float UTIL_WeaponTimeBase( void )
 {
 #if defined( CLIENT_WEAPONS )
