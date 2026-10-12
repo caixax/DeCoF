@@ -59,3 +59,4 @@ _sprintf_s
 ?do_put@?$num_put@DV?$ostreambuf_iterator@DU?$char_traits@D@std@@@std@@@std@@MBE?AV?$ostreambuf_iterator@DU?$char_traits@D@std@@@2@V32@AAVios_base@2@D_N@Z
 ?do_thousands_sep@?$numpunct@D@std@@MBEDXZ
 ?do_truename@?$numpunct@D@std@@MBE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@XZ
+??_G?$codecvt@DDU_Mbstatet@@@std@@MAEPAXI@Z

@@ -37,3 +37,10 @@ _weapon_dualweapon
 ?IsMelee@@YA_NH@Z
 ?MessageGet@@YAXH@Z
 ?CameraShoot@CDualWeapon@@QAEX_N@Z
+??0bad_array_new_length@std@@QAE@XZ
+??1?$codecvt@DDU_Mbstatet@@@std@@MAE@XZ
+?do_tolower@?$ctype@D@std@@MBEDD@Z
+?do_tolower@?$ctype@D@std@@MBEPBDPADPBD@Z
+?do_toupper@?$ctype@D@std@@MBEDD@Z
+?do_toupper@?$ctype@D@std@@MBEPBDPADPBD@Z
+?eof@?$_Narrow_char_traits@DH@std@@SAHXZ
