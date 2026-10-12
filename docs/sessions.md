@@ -174,3 +174,24 @@ Status: hl.dll 3,943 MATCHED + 4 EQUIVALENT of 5,377 functions (69.8% of code by
 Stopped at the user's request (token budget): the agents on player.cpp, effects.cpp and the world/utility sweep (their work up to that point is committed).
 
 Next: finish player.cpp (16 functions), effects.cpp (74), util/sound/buttons/lights/items leftovers; class headers still declared locally (client.cpp, multiplay_gamerules.cpp, spitter: cof_importantclassdefs.h, effects.h classes, CParticle, CMp5, CAcidSpit), util.h declarations (UTIL_BloodDrips 5 parameters, UTIL_SplashCalculation, SET_VIEW, UTIL_ProMessage), guess_CLASS_COF_MONSTER, g_sModelIndexNull; full re-delink of all units; the 26 CoF units without source (bosses, doors, puzzles, ladder, boat, subtitles, phone call...); then client.dll.
+
+## 2026-10-12 (second session)
+
+Done and committed:
+- hl.dll: util, subs, sound, buttons, lights, items, effects at 100%; player.cpp 218 of 220 plus PostThink, CheatImpulseCommands and ClientCommand EQUIVALENT (register swaps, notes in progress.csv). hl.dll totals (non-LIB): 4,876 MATCHED, 10 EQUIVALENT, 490 TODO of 5,376 (90.7% MATCHED).
+- Delinker: biased switch references into case blocks dropped; noexcept destructors keep their 5 int3. bytematch now widens a unit's range to the neighbouring files: 94 already matching hl functions were found outside the attributed ranges and named.
+- ScreenFade is 16 bytes in 1.6a (docs/structs.md); LinkUserMessages registers size 10. UTIL_BloodDrips declared once in util.h. Names fixed: EMIT_GROUPID_SUIT, GetClassPtr<CShot/CBloodSplat/CSprayCan/CBasePlayerItem>, gmsgFaggot.
+- update_status now reads the check report of the given units (build/report.json is stale) and floors percentages.
+- client.dll set up: Paranoia cl_dll copied to src/cl_dll, /Ob1 confirmed (51 functions match only with it, none without). Names: 419 undecorated names decorated (client_decorated.csv), pm_math C names fixed, object layout written to progress.csv (tools/client_layout.py). New tools: align_names.py (position names), name_unit.py (locked naming pass), add_name.py (agent-recorded names with evidence). cdll_int.h uses the HLSDK HSPRITE fix. client totals: 155 MATCHED of 2,146 non-LIB rows.
+- docs/agent_prompt.md: prompt template with the name evidence rule; guide has a client section with no notes from the test units.
+
+Stopped mid-work (user out of tokens), NOT reviewed, NOT committed:
+- Client batch: Sonnet health+death, saytext+menu, in_camera+inputw32; Opus message+input+status_icons. Edited files in the working tree: src/cl_dll/death.cpp, health.cpp, in_camera.cpp, menu.cpp, saytext.cpp, status_icons.cpp; name files client_bytes/position/manual.csv (client_manual.csv has an agent add_name entry to review), unit lists and progress.csv rows.
+- Verified by me before the stop: saytext 6 of 7 (Draw 51.84%), menu 7 of 7, health 3 of 3 named, death 3 of 4 (MsgFunc_DeathMsg needs a viewport member at 0x142c: a CoF class with a Font* at +0xe90 and a panel at +0x3e0, header work for Opus).
+- Sonnet observations so far: saytext+menu 54k tokens and 7 tool uses (did not run the naming pass), health+death 81k tokens and 22 tool uses (stopped correctly at the shared header). Metrics script: scratchpad agent_metrics.py (counts check/show/disasm/shell from subagents/agent-<id>.jsonl).
+
+Next:
+1. Review the working tree edits above with my own check, then resume or redo the client batch and give the user the comparison table (counted from the command logs).
+2. Death notice viewport class (vgui_TeamFortressViewport.h) on Opus.
+3. Full re-delink of every unit and a full report compared with progress.csv (no agent running).
+4. Remaining hl TODO: CFlier::HandleAnimEvent 99.99%, class header extraction list.
