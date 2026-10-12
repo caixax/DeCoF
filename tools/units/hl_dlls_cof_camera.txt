@@ -12,3 +12,5 @@
 ?Spawn@CCamera@@UAEXXZ
 ?WeaponIdle@CCamera@@UAEXXZ
 _weapon_camera
+_camera_spot
+?Spawn@CCameraSpot@@EAEXXZ
