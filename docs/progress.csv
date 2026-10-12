@@ -13924,13 +13924,13 @@ hl,10028B30,95,?Save@CCheckBrush@@UAEHAAVCSave@@@Z,CCheckBrush::Save,COF,dlls/co
 hl,10028B90,161,?Spawn@CCheckBrush@@UAEXXZ,CCheckBrush::Spawn,COF,dlls/cof_checkbrush.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10028C40,327,?Use@CCheckBrush@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CCheckBrush::Use,COF,dlls/cof_checkbrush.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10028D90,5,_trigger_checkbrush,trigger_checkbrush,HLSDK,dlls/cof_checkbrush.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( trigger_checkbrush, CCheckBrush )"
-hl,10028DA0,92,??$GetClassPtr@VCCoFCoopAllPlayersButton@@@@YAPAVCCoFCoopAllPlayersButton@@PAV0@@Z,GetClassPtr<CCoFCoopAllPlayersButton>,HLSDK,dlls/cof_coopbuttonpress.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,0.0,jmp_target_of_export+rtti,
-hl,10028E00,18,?ObjectCaps@CCoFCoopAllPlayersButton@@UAEHXZ,CCoFCoopAllPlayersButton::ObjectCaps,COF,dlls/cof_coopbuttonpress.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
-hl,10028E20,49,?Restore@CCoFCoopAllPlayersButton@@UAEHAAVCRestore@@@Z,CCoFCoopAllPlayersButton::Restore,COF,dlls/cof_coopbuttonpress.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
-hl,10028E60,95,?Save@CCoFCoopAllPlayersButton@@UAEHAAVCSave@@@Z,CCoFCoopAllPlayersButton::Save,COF,dlls/cof_coopbuttonpress.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
-hl,10028EC0,156,?Spawn@CCoFCoopAllPlayersButton@@UAEXXZ,CCoFCoopAllPlayersButton::Spawn,COF,dlls/cof_coopbuttonpress.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
-hl,10028F60,248,?Use@CCoFCoopAllPlayersButton@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CCoFCoopAllPlayersButton::Use,COF,dlls/cof_coopbuttonpress.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
-hl,10029060,5,_func_coopallplayersbutton,func_coopallplayersbutton,HLSDK,dlls/cof_coopbuttonpress.cpp,,,TODO,0.0,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( func_coopallplayersbutton, CCoFCoopAllPlayersButton )"
+hl,10028DA0,92,??$GetClassPtr@VCCoFCoopAllPlayersButton@@@@YAPAVCCoFCoopAllPlayersButton@@PAV0@@Z,GetClassPtr<CCoFCoopAllPlayersButton>,HLSDK,dlls/cof_coopbuttonpress.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
+hl,10028E00,18,?ObjectCaps@CCoFCoopAllPlayersButton@@UAEHXZ,CCoFCoopAllPlayersButton::ObjectCaps,COF,dlls/cof_coopbuttonpress.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
+hl,10028E20,49,?Restore@CCoFCoopAllPlayersButton@@UAEHAAVCRestore@@@Z,CCoFCoopAllPlayersButton::Restore,COF,dlls/cof_coopbuttonpress.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
+hl,10028E60,95,?Save@CCoFCoopAllPlayersButton@@UAEHAAVCSave@@@Z,CCoFCoopAllPlayersButton::Save,COF,dlls/cof_coopbuttonpress.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
+hl,10028EC0,156,?Spawn@CCoFCoopAllPlayersButton@@UAEXXZ,CCoFCoopAllPlayersButton::Spawn,COF,dlls/cof_coopbuttonpress.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
+hl,10028F60,248,?Use@CCoFCoopAllPlayersButton@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CCoFCoopAllPlayersButton::Use,COF,dlls/cof_coopbuttonpress.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
+hl,10029060,5,_func_coopallplayersbutton,func_coopallplayersbutton,HLSDK,dlls/cof_coopbuttonpress.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( func_coopallplayersbutton, CCoFCoopAllPlayersButton )"
 hl,10029070,26,,,UNKNOWN,,,,TODO,,,
 hl,10029090,3942,?GivePlayerVariables@CCoopLevelChangeManager@@QAE_NPAVCBasePlayer@@@Z,CCoopLevelChangeManager::GivePlayerVariables,COF,dlls/cof_cooplevelchangemanager.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
 hl,1002A000,1121,?GiveWeaponFromInventory@CCoopLevelChangeManager@@QAEXPADHHPAVCBasePlayer@@@Z,CCoopLevelChangeManager::GiveWeaponFromInventory,COF,dlls/cof_cooplevelchangemanager.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
