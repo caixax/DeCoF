@@ -14916,12 +14916,12 @@ hl,100632E0,5,_cof_puzzlebar2,cof_puzzlebar2,HLSDK,dlls/cof_puzzlebars.cpp,,,MAT
 hl,100632F0,5,_cof_puzzlebar3,cof_puzzlebar3,HLSDK,dlls/cof_puzzlebars.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( cof_puzzlebar3, CPuzzleBar3 )"
 hl,10063300,5,_cof_puzzlebar4,cof_puzzlebar4,HLSDK,dlls/cof_puzzlebars.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( cof_puzzlebar4, CPuzzleBar4 )"
 hl,10063310,5,_cof_puzzlebar5,cof_puzzlebar5,HLSDK,dlls/cof_puzzlebars.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( cof_puzzlebar5, CPuzzleBar5 )"
-hl,10063320,24,?Precache@CPuzzleBarButton@@UAEXXZ,CPuzzleBarButton::Precache,COF,dlls/cof_puzzlebarsbutton.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
-hl,10063340,49,?Restore@CPuzzleBarButton@@UAEHAAVCRestore@@@Z,CPuzzleBarButton::Restore,COF,dlls/cof_puzzlebarsbutton.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
-hl,10063380,95,?Save@CPuzzleBarButton@@UAEHAAVCSave@@@Z,CPuzzleBarButton::Save,COF,dlls/cof_puzzlebarsbutton.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
-hl,100633E0,128,?Spawn@CPuzzleBarButton@@UAEXXZ,CPuzzleBarButton::Spawn,COF,dlls/cof_puzzlebarsbutton.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
+hl,10063320,24,?Precache@CPuzzleBarButton@@UAEXXZ,CPuzzleBarButton::Precache,COF,dlls/cof_puzzlebarsbutton.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
+hl,10063340,49,?Restore@CPuzzleBarButton@@UAEHAAVCRestore@@@Z,CPuzzleBarButton::Restore,COF,dlls/cof_puzzlebarsbutton.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
+hl,10063380,95,?Save@CPuzzleBarButton@@UAEHAAVCSave@@@Z,CPuzzleBarButton::Save,COF,dlls/cof_puzzlebarsbutton.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
+hl,100633E0,128,?Spawn@CPuzzleBarButton@@UAEXXZ,CPuzzleBarButton::Spawn,COF,dlls/cof_puzzlebarsbutton.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10063460,280,,,UNKNOWN,guess:dlls/cof_puzzlebarsbutton.cpp,,,TODO,,,
-hl,10063590,294,?Use@CPuzzleBarButton@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CPuzzleBarButton::Use,COF,dlls/cof_puzzlebarsbutton.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
+hl,10063590,294,?Use@CPuzzleBarButton@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CPuzzleBarButton::Use,COF,dlls/cof_puzzlebarsbutton.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100636C0,5,_cof_puzzlebarbutton,cof_puzzlebarbutton,HLSDK,dlls/client.cpp,,,TODO,0.0,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( cof_puzzlebarbutton, CPuzzleBarButton )"
 hl,100636D0,92,??$GetClassPtr@VCRadioWeapon@@@@YAPAVCRadioWeapon@@PAV0@@Z,GetClassPtr<CRadioWeapon>,HLSDK,dlls/cof_radio.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,0.0,jmp_target_of_export+rtti,
 hl,10063730,27,?Deploy@CRadioWeapon@@UAEHXZ,CRadioWeapon::Deploy,COF,dlls/cof_radio.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
