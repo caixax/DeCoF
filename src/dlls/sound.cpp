@@ -620,10 +620,15 @@ void CAmbientGeneric :: InitModulationParms(void)
 // if it's playing, innactive if not.  If the sound is not
 // a looping sound, never mark it as active.
 //
+extern bool m_gbIsInCutscene;
+
 void CAmbientGeneric :: ToggleUse ( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE useType, float value )
 {
 	char* szSoundFile = (char*) STRING(pev->message);
 	float fraction;
+
+	if ( m_gbIsInCutscene && CVAR_GET_FLOAT( "host_framerate" ) != 0 )
+		return;
 
 	if ( useType != USE_TOGGLE )
 	{
@@ -728,6 +733,17 @@ void CAmbientGeneric :: ToggleUse ( CBaseEntity *pActivator, CBaseEntity *pCalle
 	}
 	else 
 	{// turn sound on
+
+		if ( m_gbIsInCutscene && g_pWorld )
+		{
+			for ( int i = 1; i <= 64; i++ )
+			{
+				if ( !g_pWorld->cutscene_sound_array[i].hasvalue )
+				{
+					break;
+				}
+			}
+		}
 
 		// only toggle if this is a looping sound.  If not looping, each
 		// trigger will cause the sound to play.  If the sound is still
@@ -1184,13 +1200,34 @@ void CTriggerSound :: Touch( CBaseEntity *pOther )
 		CBasePlayer *pPlayer = (CBasePlayer*)pOther;
 		if (pPlayer->m_pentSndLast != this->edict())
 		{
-			pPlayer->m_pentSndLast = ENT(pev);
-			pPlayer->m_flSndRoomtype = m_flRoomtype;
-			pPlayer->m_flSndRange = 0;
+			if ( pPlayer->pev->vuser1.x != 0 )
+			{
+				if ( pPlayer->m_iHeadShieldOn )
+				{
+					pPlayer->m_iOldRoomType = m_flRoomtype;
+				}
+				else
+				{
+					pPlayer->m_pentSndLast = ENT(pev);
+					pPlayer->m_flSndRoomtype = m_flRoomtype;
+					pPlayer->m_flSndRange = 0;
 
-			MESSAGE_BEGIN( MSG_ONE, SVC_ROOMTYPE, NULL, pPlayer->edict() );		// use the magic #1 for "one client"
-				WRITE_SHORT( (short)m_flRoomtype );					// sequence number
-			MESSAGE_END();
+					MESSAGE_BEGIN( MSG_ONE, SVC_ROOMTYPE, NULL, pPlayer->edict() );		// use the magic #1 for "one client"
+						WRITE_SHORT( (short)m_flRoomtype );					// sequence number
+					MESSAGE_END();
+				}
+			}
+			else
+			{
+				pPlayer->m_pentSndLast = ENT(pev);
+				pPlayer->m_flSndRoomtype = m_flRoomtype;
+				pPlayer->m_flSndRange = 0;
+				pPlayer->m_iOldRoomType = m_flRoomtype;
+
+				MESSAGE_BEGIN( MSG_ONE, SVC_ROOMTYPE, NULL, pPlayer->edict() );		// use the magic #1 for "one client"
+					WRITE_SHORT( (short)m_flRoomtype );					// sequence number
+				MESSAGE_END();
+			}
 
 			SUB_UseTargets(pPlayer, USE_TOGGLE, 0);
 		}
@@ -1480,6 +1517,8 @@ void SENTENCEG_Stop(edict_t *entity, int isentenceg, int ipick)
 // Should be called from world spawn, only works on the
 // first call and is ignored subsequently.
 
+extern int g_iAoMLevels;
+
 void SENTENCEG_Init()
 {
 	char buffer[512];
@@ -1500,7 +1539,14 @@ void SENTENCEG_Init()
 
 	
 	int filePos = 0, fileSize;
-	byte *pMemFile = g_engfuncs.pfnLoadFileForMe( "sound/sentences.txt", &fileSize );
+	byte *pMemFile;
+
+
+	if ( g_iAoMLevels )
+		pMemFile = g_engfuncs.pfnLoadFileForMe( "sound/aom_sentences.txt", &fileSize );
+	else
+		pMemFile = g_engfuncs.pfnLoadFileForMe( "sound/sentences.txt", &fileSize );
+
 	if ( !pMemFile )
 		return;
 
@@ -1625,9 +1671,14 @@ int SENTENCEG_Lookup(const char *sample, char *sentencenum)
 	return -1;
 }
 
+extern bool m_bMorphineMuffle;
+
 void EMIT_SOUND_DYN(edict_t *entity, int channel, const char *sample, float volume, float attenuation,
 						   int flags, int pitch)
 {
+	if ( m_bMorphineMuffle && sample != "player/morphine_dream.wav" )
+		volume = volume * 0.25;
+
 	if (sample && *sample == '!')
 	{
 		char name[32];
@@ -1778,7 +1829,13 @@ void TEXTURETYPE_Init()
 	gcTextures = 0;
 	memset(buffer, 0, 512);
 
-	pMemFile = g_engfuncs.pfnLoadFileForMe( "sound/materials.txt", &fileSize );
+	char *m_sMaterials = (char *)CVAR_GET_STRING( "sv_custommaterials" );
+
+	if ( strlen( m_sMaterials ) > 2 )
+		pMemFile = g_engfuncs.pfnLoadFileForMe( m_sMaterials, &fileSize );
+	else
+		pMemFile = g_engfuncs.pfnLoadFileForMe( "sound/materials.txt", &fileSize );
+
 	if ( !pMemFile )
 		return;
 
@@ -1850,7 +1907,7 @@ char TEXTURETYPE_Find(char *name)
 // returns volume of strike instrument (crowbar) to play
 //   (this is not used for footsteps, only attack sound effects. --LRC)
 
-float TEXTURETYPE_PlaySound(TraceResult *ptr,  Vector vecSrc, Vector vecEnd, int iBulletType, char* chRetTexType)
+float TEXTURETYPE_PlaySound(CBasePlayer *pPlayer, TraceResult *ptr,  Vector vecSrc, Vector vecEnd, int iBulletType, char* chRetTexType)
 {
 // hit the world, try to play sound based on texture material type
 	
@@ -1865,7 +1922,7 @@ float TEXTURETYPE_PlaySound(TraceResult *ptr,  Vector vecSrc, Vector vecEnd, int
 	int cnt;
 	float fattn = ATTN_NORM;
 
-	if ( !g_pGameRules->PlayTextureSounds() )
+	if ( g_pGameRules && !g_pGameRules->PlayTextureSounds() )
 		return 0.0;
 
 	CBaseEntity *pEntity = CBaseEntity::Instance(ptr->pHit);
@@ -1917,112 +1974,189 @@ float TEXTURETYPE_PlaySound(TraceResult *ptr,  Vector vecSrc, Vector vecEnd, int
 		*chRetTexType = chTextureType;
 	}
 
+	bool playtwigsnap = false;
 	switch (chTextureType)
 	{
 	default:
-	case CHAR_TEX_CONCRETE: fvol = 0.9;	fvolbar = 0.6;
-		rgsz[0] = "player/pl_step1.wav";
-		rgsz[1] = "player/pl_step2.wav";
-		cnt = 2;
+	case CHAR_TEX_CONCRETE: fvol = 0.9; fvolbar = 0.6;
+		rgsz[0] = "player/footsteps/concrete1.wav";
+		rgsz[1] = "player/footsteps/concrete2.wav";
+		rgsz[2] = "player/footsteps/concrete3.wav";
+		rgsz[3] = "player/footsteps/concrete4.wav";
+		cnt = 4;
 		break;
 	case CHAR_TEX_METAL: fvol = 0.9; fvolbar = 0.3;
-		rgsz[0] = "player/pl_metal1.wav";
-		rgsz[1] = "player/pl_metal2.wav";
-		cnt = 2;
+		rgsz[0] = "player/footsteps/metal1.wav";
+		rgsz[1] = "player/footsteps/metal2.wav";
+		rgsz[2] = "player/footsteps/metal3.wav";
+		rgsz[3] = "player/footsteps/metal4.wav";
+		cnt = 4;
 		break;
-	case CHAR_TEX_DIRT:	fvol = 0.9; fvolbar = 0.1;
-		rgsz[0] = "player/pl_dirt1.wav";
-		rgsz[1] = "player/pl_dirt2.wav";
-		rgsz[2] = "player/pl_dirt3.wav";
-		cnt = 3;
+	case CHAR_TEX_DIRT: fvol = 0.9; fvolbar = 0.1;
+		rgsz[0] = "player/footsteps/dirt1.wav";
+		rgsz[1] = "player/footsteps/dirt2.wav";
+		rgsz[2] = "player/footsteps/dirt3.wav";
+		rgsz[3] = "player/footsteps/dirt4.wav";
+		cnt = 4;
 		break;
-	case CHAR_TEX_VENT:	fvol = 0.5; fvolbar = 0.3;
-		rgsz[0] = "player/pl_duct1.wav";
-		rgsz[1] = "player/pl_duct1.wav";
-		cnt = 2;
+	case CHAR_TEX_VENT: fvol = 0.5; fvolbar = 0.3;
+		rgsz[0] = "player/footsteps/metal1.wav";
+		rgsz[1] = "player/footsteps/metal2.wav";
+		rgsz[2] = "player/footsteps/metal3.wav";
+		rgsz[3] = "player/footsteps/metal4.wav";
+		cnt = 4;
 		break;
 	case CHAR_TEX_GRATE: fvol = 0.9; fvolbar = 0.5;
-		rgsz[0] = "player/pl_grate1.wav";
-		rgsz[1] = "player/pl_grate4.wav";
-		cnt = 2;
+		rgsz[0] = "player/footsteps/metal1.wav";
+		rgsz[1] = "player/footsteps/metal2.wav";
+		rgsz[2] = "player/footsteps/metal3.wav";
+		rgsz[3] = "player/footsteps/metal4.wav";
+		cnt = 4;
 		break;
-	case CHAR_TEX_TILE:	fvol = 0.8; fvolbar = 0.2;
-		rgsz[0] = "player/pl_tile1.wav";
-		rgsz[1] = "player/pl_tile3.wav";
-		rgsz[2] = "player/pl_tile2.wav";
-		rgsz[3] = "player/pl_tile4.wav";
+	case CHAR_TEX_TILE: fvol = 0.8; fvolbar = 0.2;
+		rgsz[0] = "player/footsteps/concrete1.wav";
+		rgsz[1] = "player/footsteps/concrete2.wav";
+		rgsz[2] = "player/footsteps/concrete3.wav";
+		rgsz[3] = "player/footsteps/concrete4.wav";
 		cnt = 4;
 		break;
 	case CHAR_TEX_SLOSH: fvol = 0.9; fvolbar = 0.0;
-		rgsz[0] = "player/pl_slosh1.wav";
-		rgsz[1] = "player/pl_slosh3.wav";
-		rgsz[2] = "player/pl_slosh2.wav";
-		rgsz[3] = "player/pl_slosh4.wav";
+		rgsz[0] = "player/footsteps/splash1.wav";
+		rgsz[1] = "player/footsteps/splash2.wav";
+		rgsz[2] = "player/footsteps/splash3.wav";
+		rgsz[3] = "player/footsteps/splash4.wav";
 		cnt = 4;
 		break;
-	case CHAR_TEX_GRASS: fvol = 0.9; fvolbar = 0.0; // buz
-		rgsz[0] = "player/pl_grass1.wav";
-		rgsz[1] = "player/pl_grass3.wav";
-		rgsz[2] = "player/pl_grass2.wav";
-		rgsz[3] = "player/pl_grass4.wav";
+	case 'U': fvol = 0.9; fvolbar = 0.0;
+		rgsz[0] = "player/footsteps/grass1.wav";
+		rgsz[1] = "player/footsteps/grass2.wav";
+		rgsz[2] = "player/footsteps/grass3.wav";
+		rgsz[3] = "player/footsteps/grass4.wav";
 		cnt = 4;
 		break;
-	case CHAR_TEX_WOOD: case CHAR_TEX_WOODS: fvol = 0.9; fvolbar = 0.2; // buz
-		rgsz[0] = "debris/wood1.wav";
-		rgsz[1] = "debris/wood2.wav";
-		rgsz[2] = "debris/wood3.wav";
-		cnt = 3;
+	case CHAR_TEX_WOOD: fvol = 0.9; fvolbar = 0.2;
+		rgsz[0] = "player/footsteps/wood1.wav";
+		rgsz[1] = "player/footsteps/wood2.wav";
+		rgsz[2] = "player/footsteps/wood3.wav";
+		rgsz[3] = "player/footsteps/wood4.wav";
+		cnt = 4;
 		break;
-	case CHAR_TEX_GLASS:
-	case CHAR_TEX_COMPUTER:
-		fvol = 0.8; fvolbar = 0.2;
-		rgsz[0] = "debris/glass1.wav";
-		rgsz[1] = "debris/glass2.wav";
-		rgsz[2] = "debris/glass3.wav";
-		cnt = 3;
+	case 'J':
+	case 'K':
+		rgsz[0] = "player/footsteps/concrete1.wav";
+		rgsz[1] = "player/footsteps/concrete2.wav";
+		rgsz[2] = "player/footsteps/concrete3.wav";
+		rgsz[3] = "player/footsteps/concrete4.wav";
+		cnt = 4;
 		break;
 	case CHAR_TEX_FLESH:
-		if (iBulletType == BULLET_PLAYER_CROWBAR)
-			return 0.0; // crowbar already makes this sound
-		fvol = 1.0;	fvolbar = 0.2;
-		rgsz[0] = "weapons/bullet_hit1.wav";
-		rgsz[1] = "weapons/bullet_hit2.wav";
-		fattn = 1.0;
-		cnt = 2;
+		rgsz[0] = "player/footsteps/concrete1.wav";
+		rgsz[1] = "player/footsteps/concrete2.wav";
+		rgsz[2] = "player/footsteps/concrete3.wav";
+		rgsz[3] = "player/footsteps/concrete4.wav";
+		cnt = 4;
+		break;
+	case 'Z':
+		rgsz[0] = "player/footsteps/carpet1.wav";
+		rgsz[1] = "player/footsteps/carpet2.wav";
+		rgsz[2] = "player/footsteps/carpet3.wav";
+		rgsz[3] = "player/footsteps/carpet4.wav";
+		cnt = 4;
+		break;
+	case 'I':
+		rgsz[0] = "player/footsteps/mud1.wav";
+		rgsz[1] = "player/footsteps/mud2.wav";
+		rgsz[2] = "player/footsteps/mud3.wav";
+		rgsz[3] = "player/footsteps/mud4.wav";
+		cnt = 4;
+		break;
+	case 'O':
+		rgsz[0] = "player/footsteps/sand1.wav";
+		rgsz[1] = "player/footsteps/sand2.wav";
+		rgsz[2] = "player/footsteps/sand3.wav";
+		rgsz[3] = "player/footsteps/sand4.wav";
+		cnt = 4;
+		break;
+	case 'P':
+		rgsz[0] = "player/footsteps/snow1.wav";
+		rgsz[1] = "player/footsteps/snow2.wav";
+		rgsz[2] = "player/footsteps/snow3.wav";
+		rgsz[3] = "player/footsteps/snow4.wav";
+		cnt = 4;
+		break;
+	case 'Y':
+		rgsz[0] = "player/footsteps/glass1.wav";
+		rgsz[1] = "player/footsteps/glass2.wav";
+		rgsz[2] = "player/footsteps/glass3.wav";
+		rgsz[3] = "player/footsteps/glass4.wav";
+		cnt = 4;
+		break;
+	case 'H':
+		rgsz[0] = "player/footsteps/paper1.wav";
+		rgsz[1] = "player/footsteps/paper2.wav";
+		rgsz[2] = "player/footsteps/paper3.wav";
+		rgsz[3] = "player/footsteps/paper4.wav";
+		cnt = 4;
+		break;
+	case 'R':
+		rgsz[0] = "player/footsteps/gravel1.wav";
+		rgsz[1] = "player/footsteps/gravel2.wav";
+		rgsz[2] = "player/footsteps/gravel3.wav";
+		rgsz[3] = "player/footsteps/gravel4.wav";
+		cnt = 4;
+		break;
+	case 'B':
+		rgsz[0] = "player/footsteps/grass1.wav";
+		rgsz[1] = "player/footsteps/grass2.wav";
+		rgsz[2] = "player/footsteps/grass3.wav";
+		rgsz[3] = "player/footsteps/grass4.wav";
+
+		if ( RANDOM_LONG( 1, 10 ) <= 3 )
+			playtwigsnap = true;
+
+		cnt = 4;
 		break;
 	}
 
-	// did we hit a breakable?
-
-	if (pEntity && FClassnameIs(pEntity->pev, "func_breakable"))
-	{
-		// drop volumes, the object will already play a damaged sound
-		fvol /= 1.5;
-		fvolbar /= 2.0;	
-	}
-	else if (chTextureType == CHAR_TEX_COMPUTER)
-	{
-		// play random spark if computer
-
-		if ( ptr->flFraction != 1.0 && RANDOM_LONG(0,1))
-		{
-			UTIL_Sparks( ptr->vecEndPos );
-
-			float flVolume = RANDOM_FLOAT ( 0.7 , 1.0 );//random volume range
-			switch ( RANDOM_LONG(0,1) )
-			{
-				case 0: UTIL_EmitAmbientSound(ENT(0), ptr->vecEndPos, "buttons/spark5.wav", flVolume, ATTN_NORM, 0, 100); break;
-				case 1: UTIL_EmitAmbientSound(ENT(0), ptr->vecEndPos, "buttons/spark6.wav", flVolume, ATTN_NORM, 0, 100); break;
-				// case 0: EMIT_SOUND(ENT(pev), CHAN_VOICE, "buttons/spark5.wav", flVolume, ATTN_NORM);	break;
-				// case 1: EMIT_SOUND(ENT(pev), CHAN_VOICE, "buttons/spark6.wav", flVolume, ATTN_NORM);	break;
-			}
-		}
-	}
+	fvol = 0.9; fvolbar = 0.6;
 
 	// play material hit sound
 	UTIL_EmitAmbientSound(ENT(0), ptr->vecEndPos, rgsz[RANDOM_LONG(0,cnt-1)], fvol, fattn, 0, 96 + RANDOM_LONG(0,0xf));
-	//EMIT_SOUND_DYN( ENT(m_pPlayer->pev), CHAN_WEAPON, rgsz[RANDOM_LONG(0,cnt-1)], fvol, ATTN_NORM, 0, 96 + RANDOM_LONG(0,0xf));
-			
+
+	if ( playtwigsnap && pPlayer )
+	{
+		switch ( RANDOM_LONG( 0, 8 ) )
+		{
+		case 0:
+			EMIT_SOUND_DYN( ENT(pPlayer->pev), CHAN_BODY, "player/footsteps/twig_snap1.wav", 1, ATTN_NORM, 0, 96 + RANDOM_LONG(0,0xf) );
+			break;
+		case 1:
+			EMIT_SOUND_DYN( ENT(pPlayer->pev), CHAN_BODY, "player/footsteps/twig_snap2.wav", 1, ATTN_NORM, 0, 96 + RANDOM_LONG(0,0xf) );
+			break;
+		case 2:
+			EMIT_SOUND_DYN( ENT(pPlayer->pev), CHAN_BODY, "player/footsteps/twig_snap3.wav", 1, ATTN_NORM, 0, 96 + RANDOM_LONG(0,0xf) );
+			break;
+		case 3:
+			EMIT_SOUND_DYN( ENT(pPlayer->pev), CHAN_BODY, "player/footsteps/twig_snap4.wav", 1, ATTN_NORM, 0, 96 + RANDOM_LONG(0,0xf) );
+			break;
+		case 4:
+			EMIT_SOUND_DYN( ENT(pPlayer->pev), CHAN_BODY, "player/footsteps/twig_snap5.wav", 1, ATTN_NORM, 0, 96 + RANDOM_LONG(0,0xf) );
+			break;
+		case 5:
+			EMIT_SOUND_DYN( ENT(pPlayer->pev), CHAN_BODY, "player/footsteps/twig_snap6.wav", 1, ATTN_NORM, 0, 96 + RANDOM_LONG(0,0xf) );
+			break;
+		case 6:
+			EMIT_SOUND_DYN( ENT(pPlayer->pev), CHAN_BODY, "player/footsteps/twig_snap7.wav", 1, ATTN_NORM, 0, 96 + RANDOM_LONG(0,0xf) );
+			break;
+		case 7:
+			EMIT_SOUND_DYN( ENT(pPlayer->pev), CHAN_BODY, "player/footsteps/twig_snap8.wav", 1, ATTN_NORM, 0, 96 + RANDOM_LONG(0,0xf) );
+			break;
+		case 8:
+			EMIT_SOUND_DYN( ENT(pPlayer->pev), CHAN_BODY, "player/footsteps/twig_snap9.wav", 1, ATTN_NORM, 0, 96 + RANDOM_LONG(0,0xf) );
+			break;
+		}
+	}
+
 	return fvolbar;
 }
 
@@ -2294,4 +2428,62 @@ void CRadio::Use( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE useTyp
 			WRITE_BYTE( pev->renderamt );
 		MESSAGE_END();
 	}
+}
+
+char *TEXTURETYPE_GetTextureType( TraceResult *ptr, Vector vecSrc, Vector vecEnd, int iBulletType )
+{
+// hit the world, try to play sound based on texture material type
+	
+	char chTextureType;
+	float rgfl1[3];
+	float rgfl2[3];
+	const char *pTextureName;
+	char szbuffer[64];
+	float fattn = ATTN_NORM;
+
+	CBaseEntity *pEntity = CBaseEntity::Instance(ptr->pHit);
+
+	chTextureType = 0;
+
+	if (pEntity && pEntity->Classify() != CLASS_NONE && pEntity->Classify() != CLASS_MACHINE)
+		// hit body
+		chTextureType = CHAR_TEX_FLESH;
+	else
+	{
+		// hit world
+
+		// find texture under strike, get material type
+
+		// copy trace vector into array for trace_texture
+
+		vecSrc.CopyToArray(rgfl1);
+		vecEnd.CopyToArray(rgfl2);
+
+		// get texture from entity or world (world is ent(0))
+		if (pEntity)
+			pTextureName = TRACE_TEXTURE( ENT(pEntity->pev), rgfl1, rgfl2 );
+		else
+			pTextureName = TRACE_TEXTURE( ENT(0), rgfl1, rgfl2 );
+			
+		if ( pTextureName )
+		{
+			// strip leading '-0' or '{' or '!'
+			if (*pTextureName == '-' || *pTextureName == '+')
+				pTextureName += 2;
+
+			if (*pTextureName == '{' || *pTextureName == '!' || *pTextureName == '~' || *pTextureName == ' ')
+				pTextureName++;
+			// '}}'
+			strcpy(szbuffer, pTextureName);
+			szbuffer[CBTEXTURENAMEMAX - 1] = 0;
+				
+			// ALERT ( at_console, "texture hit: %s\n", szbuffer);
+
+			// get texture type
+			chTextureType = TEXTURETYPE_Find(szbuffer);
+			return (char *)chTextureType;
+		}
+	}
+
+	return (char *)CHAR_TEX_CONCRETE;
 }
