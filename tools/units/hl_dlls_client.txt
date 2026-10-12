@@ -42,14 +42,11 @@
 ?TertiaryAttack@CBasePlayerWeapon@@UAEXXZ
 ?WeaponToggle@CBasePlayerWeapon@@UAEXXZ
 ?iItemSlot@CBrowningWheelchair@@UAEHXZ
-_boat
 _weapon_browning_wheelchair
 _weapon_flare
 _cof_puzzlebarbutton
 _cof_telephone
-_wheelchair
 _cof_document
-_item_padlock
 ??0CBasePlayerItem@@QAE@XZ
 ?AddToFullPack@@YAHPAUentity_state_s@@HPAUedict_s@@1HHPAE@Z
 ?CBasePlayerByIndex@@YAPAVCBasePlayer@@H@Z
