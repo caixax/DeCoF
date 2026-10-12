@@ -25,6 +25,8 @@
 #include "cbase.h"
 #include "doors.h"
 #include "movewith.h"
+#include "effects.h"
+#include <cmath>
 
 extern DLL_GLOBAL Vector		g_vecAttackDir;
 
@@ -1089,3 +1091,327 @@ void CPendulum :: RopeTouch ( CBaseEntity *pOther )
 }
 
 
+class CCameraSpot : public CBaseToggle
+{
+public:
+	void	Spawn( void );
+
+	// Bmodels don't go across transitions
+	virtual int	ObjectCaps( void ) { return CBaseEntity :: ObjectCaps() & ~FCAP_ACROSS_TRANSITION; }
+};
+
+LINK_ENTITY_TO_CLASS( camera_spot_trigger, CCameraSpot );
+
+void CCameraSpot :: Spawn( void )
+{
+	pev->angles		= g_vecZero;
+	pev->movetype	= MOVETYPE_PUSH;  // so it doesn't get pushed by anything
+	pev->solid		= SOLID_BSP;
+	SET_MODEL( ENT(pev), STRING(pev->model) );
+}
+
+
+class CFuncTrainButts : public CBaseToggle
+{
+public:
+	void	Spawn( void );
+	void	EXPORT PropThink( void );
+	void	Use( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE useType, float value );
+
+	// Bmodels don't go across transitions
+	virtual int	ObjectCaps( void ) { return CBaseEntity :: ObjectCaps() & ~FCAP_ACROSS_TRANSITION; }
+};
+
+LINK_ENTITY_TO_CLASS( func_trainbutts, CFuncTrainButts );
+
+void CFuncTrainButts :: Spawn( void )
+{
+	pev->movetype	= MOVETYPE_PUSH;
+
+	pev->solid		= SOLID_NOT;
+	SET_MODEL( ENT(pev), STRING(pev->model) );
+	UTIL_SetSize( pev, pev->mins, pev->maxs );
+	UTIL_SetOrigin( this, pev->origin );
+
+	switch ( pev->iuser1 )
+	{
+	case 0:
+		pev->iuser2 = pev->origin.x + pev->iuser3;
+		break;
+	case 1:
+		pev->iuser2 = pev->origin.y + pev->iuser3;
+		break;
+	case 2:
+		pev->iuser2 = pev->origin.z + pev->iuser3;
+		break;
+	}
+
+	pev->vuser1 = pev->origin;
+}
+
+void CFuncTrainButts :: Use( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE useType, float value )
+{
+	if ( !pActivator )
+		return;
+
+	SetNextThink( 0.1 );
+	SetThink( &CFuncTrainButts::PropThink );
+}
+
+void CFuncTrainButts :: PropThink( void )
+{
+	switch ( pev->iuser1 )
+	{
+	case 0:
+		if ( pev->iuser3 > pev->origin.x )
+		{
+			pev->origin.x += pev->fuser1;
+		}
+
+		if ( pev->iuser3 <= pev->origin.x )
+		{
+			pev->origin = pev->vuser1;
+		}
+		break;
+	case 1:
+		if ( pev->iuser3 > pev->origin.y )
+		{
+			pev->origin.y += pev->fuser1;
+		}
+
+		if ( pev->iuser3 <= pev->origin.y )
+		{
+			pev->origin = pev->vuser1;
+		}
+		break;
+	case 2:
+		if ( pev->iuser3 > pev->origin.z )
+		{
+			pev->origin.z += pev->fuser1;
+		}
+
+		if ( pev->iuser3 <= pev->origin.z )
+		{
+			pev->origin = pev->vuser1;
+		}
+		break;
+	}
+
+	Vector nerds;
+	nerds[pev->iuser1] = pev->iuser3;
+	LinearMove( nerds, pev->fuser1 );
+}
+
+
+class CFuncFogField : public CBaseToggle
+{
+public:
+	void	Spawn( void );
+	void	Precache( void );
+	void	TurnOn( void );
+	void	TurnOff( void );
+	void	CreateFogSprites( void );
+	void	EXPORT SpawnThink( void );
+	void	EXPORT FogUse( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE useType, float value );
+	void	KeyValue( KeyValueData *pkvd );
+
+	// Bmodels don't go across transitions
+	virtual int	ObjectCaps( void ) { return CBaseEntity :: ObjectCaps() & ~FCAP_ACROSS_TRANSITION; }
+
+	int		IsNearPlayer( Vector position );
+};
+
+LINK_ENTITY_TO_CLASS( func_fogfield, CFuncFogField );
+
+void CFuncFogField :: KeyValue( KeyValueData *pkvd )
+{
+	if (FStrEq(pkvd->szKeyName, "axis"))
+	{
+		pev->iuser1 = atoi(pkvd->szValue);
+		pkvd->fHandled = TRUE;
+	}
+	else
+		CBaseToggle::KeyValue( pkvd );
+}
+
+void CFuncFogField :: Precache( void )
+{
+	PRECACHE_MODEL( "sprites/mist1.spr" );
+	PRECACHE_MODEL( "sprites/mist2.spr" );
+	PRECACHE_MODEL( "sprites/mist3.spr" );
+	PRECACHE_MODEL( "sprites/mist4.spr" );
+	PRECACHE_MODEL( "sprites/mist5.spr" );
+}
+
+void CFuncFogField :: Spawn( void )
+{
+	Precache();
+
+	pev->angles		= g_vecZero;
+	pev->movetype	= MOVETYPE_NONE;
+	pev->solid		= SOLID_NOT;
+	SET_MODEL( ENT(pev), STRING(pev->model) );
+	UTIL_SetOrigin( this, pev->origin );
+
+
+	pev->effects |= EF_NODRAW;
+
+
+	if ( pev->spawnflags & 2 )
+		TurnOn();
+	else
+		TurnOff();
+
+	SetUse( &CFuncFogField :: FogUse );
+}
+
+void CFuncFogField :: FogUse( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE useType, float value )
+{
+	if ( !ShouldToggle( useType ) ) return;
+
+	m_hActivator = pActivator;
+
+
+	if ( pev->iuser2 )
+	{
+
+		TurnOff();
+	}
+	else
+	{
+
+		TurnOn();
+	}
+}
+
+void CFuncFogField :: TurnOn( void )
+{
+	pev->iuser2 = 1;
+	SetNextThink( 0.1 );
+	SetThink( &CFuncFogField::SpawnThink );
+}
+
+void CFuncFogField :: TurnOff( void )
+{
+	pev->iuser2 = 0;
+
+	SetThink( NULL );
+	SetNextThink( 0 );
+}
+
+void CFuncFogField :: SpawnThink( void )
+{
+	int amountoftimes;
+
+	if ( pev->size.y > pev->size.x )
+		amountoftimes = pev->size.y / 170;
+	else
+		amountoftimes = pev->size.x / 170;
+
+	for ( int i = 0; i < amountoftimes; i++ )
+	{
+		CreateFogSprites();
+	}
+
+
+	SetNextThink( 0.1 );
+	SetThink( &CFuncFogField::SpawnThink );
+}
+
+int CFuncFogField :: IsNearPlayer( Vector position )
+{
+	int radius = CVAR_GET_FLOAT( "sv_fogradius" );
+
+	CBaseEntity *pEntity = NULL;
+
+	while ( ( pEntity = UTIL_FindEntityInSphere( pEntity, position, radius ) ) != NULL )
+	{
+		if ( FClassnameIs( pEntity->pev, "player" ) )
+		{
+			return TRUE;
+		}
+	}
+
+	return FALSE;
+}
+
+void CFuncFogField :: CreateFogSprites( void )
+{
+	Vector TrueOrigin = pev->origin;
+
+	int halfX = pev->size.x / 2;
+	int halfY = pev->size.y / 2;
+
+	int fuckX = RANDOM_LONG( -halfX, halfX );
+	int fuckY = RANDOM_LONG( -halfY, halfY );
+
+	Vector SpritePos;
+	SpritePos.x = TrueOrigin.x + fuckX;
+	SpritePos.y = TrueOrigin.y + fuckY;
+	SpritePos.z = TrueOrigin.z;
+
+	if ( !IsNearPlayer( SpritePos ) )
+		return;
+
+	int m_szSprite;
+
+	switch ( RANDOM_LONG( 0, 4 ) )
+	{
+	case 0:
+		m_szSprite = MAKE_STRING( "sprites/mist1.spr" );
+		break;
+	case 1:
+		m_szSprite = MAKE_STRING( "sprites/mist2.spr" );
+		break;
+	case 2:
+		m_szSprite = MAKE_STRING( "sprites/mist3.spr" );
+		break;
+	case 3:
+		m_szSprite = MAKE_STRING( "sprites/mist4.spr" );
+		break;
+	case 4:
+		m_szSprite = MAKE_STRING( "sprites/mist5.spr" );
+		break;
+	}
+
+	CSprite *pSprite = CSprite::SpriteCreate( STRING( m_szSprite ), SpritePos, TRUE );
+	pSprite->SetTransparency( kRenderTransAdd, 255, 255, 255, 32, kRenderFxNone );
+	pSprite->pev->velocity.x = RANDOM_FLOAT( 3, 7 );
+	pSprite->pev->velocity.y = RANDOM_FLOAT( 3, 7 );
+	pSprite->pev->velocity.z = RANDOM_FLOAT( 2, 5 );
+	pSprite->SetScale( 1.0 );
+	pSprite->SetNextThink( 1.0 );
+	pSprite->SUB_StartFadeInAndOut();
+}
+
+
+class CAsylumLookAt : public CBaseEntity
+{
+public:
+	void	Spawn( void );
+	void	Use( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE useType, float value );
+
+	virtual STATE GetState( void ) { return pev->frame?STATE_ON:STATE_OFF; };
+
+	// Bmodels don't go across transitions
+	virtual int	ObjectCaps( void ) { return CBaseEntity :: ObjectCaps() & ~FCAP_ACROSS_TRANSITION; }
+};
+
+LINK_ENTITY_TO_CLASS( func_asylumlookat, CAsylumLookAt );
+
+void CAsylumLookAt :: Spawn( void )
+{
+	pev->angles		= g_vecZero;
+	pev->movetype	= MOVETYPE_PUSH;  // so it doesn't get pushed by anything
+	pev->solid		= SOLID_BSP;
+	SET_MODEL( ENT(pev), STRING(pev->model) );
+
+	// If it can't move/go away, it's really part of the world
+	if (!m_pMoveWith) //LRC
+		pev->flags |= FL_WORLDBRUSH;
+}
+
+void CAsylumLookAt :: Use( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE useType, float value )
+{
+	pev->renderfx = 162;
+}
