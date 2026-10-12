@@ -636,8 +636,6 @@ void CBaseToggleWeapon::WeaponIdle(void)
 		InitSpread( m_pMySpread->returntime );
 	}
 
-	ResetEmptySound( );
-
 	m_pPlayer->GetAutoaimVector( AUTOAIM_5DEGREES );
 
 	if ( m_flTimeWeaponIdle > UTIL_WeaponTimeBase() )

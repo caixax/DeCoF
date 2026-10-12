@@ -1167,6 +1167,11 @@ void CBaseMonster :: CheckAttacks ( CBaseEntity *pTarget, float flDist )
 	Vector2D	vec2LOS;
 	float		flDot;
 
+	if ( FClassnameIs( pev, "monster_sewerboss" ) && pev->skin == 1 )
+	{
+		return;
+	}
+
 	UTIL_MakeVectors ( pev->angles );
 
 	vec2LOS = ( pTarget->pev->origin - pev->origin ).Make2D();
@@ -2782,6 +2787,21 @@ CBaseEntity *CBaseMonster :: BestVisibleEnemy ( void )
 void CBaseMonster :: MakeIdealYaw( Vector vecTarget )
 {
 	Vector	vecProjection;
+
+	if ( FClassnameIs( pev, "monster_slowerstuck" ) )
+	{
+		return;
+	}
+
+	if ( m_bFrozenByCamera )
+	{
+		return;
+	}
+
+	if ( FClassnameIs( pev, "monster_spitter" ) )
+	{
+		return;
+	}
 	
 	// strafing monster needs to face 90 degrees away from its goal
 	if ( m_movementActivity == ACT_STRAFE_LEFT )
