@@ -6,3 +6,6 @@
 ?Spawn@CCofTelephone@@UAEXXZ
 ?Use@CCofTelephone@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z
 ?WrongNumber@CCofTelephone@@QAEXXZ
+_cof_telephone
+?TelephoneRight@CCofTelephone@@QAEXXZ
+?TelephoneWrong@CCofTelephone@@QAEXXZ

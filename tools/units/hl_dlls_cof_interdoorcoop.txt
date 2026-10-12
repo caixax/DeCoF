@@ -22,3 +22,11 @@
 _inter_door_coop
 _inter_door_coop_changelevel
 _inter_door_disable_coop
+_inter_door_exit_coop
+?BuildPlayerList@CInterDoorCoopChangeLevel@@QAEXPAVCBasePlayer@@@Z
+?EnableDoor@CInterDoorCoop@@QAEX_N@Z
+?IsLocked@CInterDoorCoop@@QAEHXZ
+?SetCollision@CInterDoorCoop@@QAEXXZ
+?SetSequenceByName@CInterDoorCoop@@QAEXPAD@Z
+?ShiftMonsters@CInterDoorCoop@@QAEXXZ
+?UnlockDoor@CInterDoorCoop@@QAEXPAVCBaseEntity@@@Z

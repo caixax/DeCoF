@@ -727,3 +727,4 @@ _trigger_followme
 ?SpriteCreate@CSprite@@SAPAV1@PBDABVVector@@H@Z
 ?SpriteInit@CSprite@@QAEXPBDABVVector@@@Z
 ?TurnOn@CSprite@@QAEXXZ
+_cof_document

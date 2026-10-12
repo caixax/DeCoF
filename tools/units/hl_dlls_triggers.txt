@@ -364,3 +364,5 @@ _watcher_count
 ?PlayTrack@CTriggerCDAudio@@QAEXXZ
 ?Prune@CInOutRegister@@QAEPAV1@XZ
 ?ReportSuccess@CStartRush@@QAEXPAVCBaseEntity@@@Z
+_info_teleport_destination
+_motion_thread

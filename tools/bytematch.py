@@ -1,6 +1,6 @@
 """Pair retail functions with our compiled functions by identical bytes.
 
-  python tools/bytematch.py [--write] [<unit> ...]
+  python tools/bytematch.py [--write] [--at va,va,...] [<unit> ...]
 
 A retail function that is unnamed in the symbol map (or carries a name
 that no object of ours defines) never meets its source counterpart in
@@ -12,6 +12,10 @@ instructions must be identical); the sizes must be equal (for a function
 whose COMDAT also holds jump tables, the retail range runs to the next
 function). Only one-to-one matches are proposed: one retail function,
 one function of ours, nothing else identical.
+
+--at tests only the given retail addresses (hex, comma separated), with
+our function's length, for functions that have no row in progress.csv
+(Ghidra merged them into a neighbour).
 
 Prints the proposals; --write stores them in tools/symbols/hl_bytes.csv
 with their evidence (merged by tools/build.py before hl_manual.csv).
@@ -67,7 +71,13 @@ def coff_functions(path):
 
 
 def main():
-    args = [a for a in sys.argv[1:] if a != "--write"]
+    argv = sys.argv[1:]
+    at = []
+    if "--at" in argv:
+        i = argv.index("--at")
+        at = [int(x, 16) for x in argv[i + 1].split(",")]
+        del argv[i:i + 2]
+    args = [a for a in argv if a != "--write"]
     write = "--write" in sys.argv
     cfg = json.load(open(os.path.join(ROOT, "objdiff.json")))
     units = args or [u["name"] for u in cfg["units"] if u["name"].startswith("hl/")]
@@ -113,12 +123,16 @@ def main():
             k = bisect.bisect_right(starts, va)
             end = starts[k] if k < len(starts) else va + int(r["size"])
             cands.append((va, n, int(r["size"]), end - va))
+        if at:
+            # addresses given by hand (no function row there, for example
+            # where Ghidra merged two functions): sizes come from our side
+            cands = [(va, names.get(va, ""), None, None) for va in at if lo - 0x10000 <= va <= hi + 0x10000]
         # our candidates: functions whose name has no retail address
         unpaired = {n: f for n, f in funcs.items() if n not in by_name}
         hits = {}
         for va, rn, size, span in cands:
             for n, (code, masked) in unpaired.items():
-                if len(code) not in (size, span):
+                if size is not None and len(code) not in (size, span):
                     continue
                 ret = img[va - base:va - base + len(code)]
                 if all(ret[i] == code[i] for i in range(len(code)) if i not in masked):

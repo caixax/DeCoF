@@ -14,3 +14,4 @@
 ?TumbleThink@CGrenade@@QAEXXZ
 ?ShootContact@CGrenade@@SAPAV1@PAUentvars_s@@VVector@@1@Z
 ?ShootSatchelCharge@CGrenade@@SAPAV1@PAUentvars_s@@VVector@@1@Z
+_grenade

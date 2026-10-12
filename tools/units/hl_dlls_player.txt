@@ -182,3 +182,4 @@ _player_weaponstrip
 ?SwingSound@CBasePlayer@@QAEXXZ
 ?SwitchWeapon@CBasePlayer@@QAEHPAVCBasePlayerItem@@@Z
 ?ViewPunch@CBasePlayer@@QAEXMMM@Z
+_player

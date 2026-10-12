@@ -39,3 +39,6 @@ _monster_furniture
 _scripted_sentence
 ?AllowInterrupt@CCineMonster@@QAEXH@Z
 ?CanInterrupt@CCineMonster@@QAEHXZ
+_aiscripted_sequence
+_scripted_action
+_scripted_sequence

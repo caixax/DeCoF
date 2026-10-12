@@ -9,3 +9,4 @@
 ?Spawn@CBrowningWheelchair@@UAEXXZ
 ?TertiaryAttack@CBrowningWheelchair@@UAEXXZ
 ?WeaponIdle@CBrowningWheelchair@@UAEXXZ
+_weapon_browning_wheelchair

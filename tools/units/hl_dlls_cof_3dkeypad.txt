@@ -9,3 +9,5 @@
 ?Save@CKeypadNew@@EAEHAAVCSave@@@Z
 ?Spawn@CKeypadNew@@EAEXXZ
 _cof_keypadnew
+?EnterNumber@CKeypadNew@@AAEXH@Z
+?SetSequenceByName@CKeypadNew@@AAEXPAD@Z

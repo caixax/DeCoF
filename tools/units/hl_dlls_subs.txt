@@ -45,3 +45,5 @@ _info_texlights
 ?AxisDir@CBaseToggle@@SAXPAUentvars_s@@@Z
 ?FEntIsVisible@@YAHPAUentvars_s@@0@Z
 ?LinearMove@CBaseToggle@@QAEXVVector@@M@Z
+_info_landmark
+_info_player_start

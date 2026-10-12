@@ -18,3 +18,8 @@
 _cof_inter_door_exitchange
 _inter_door
 _inter_door_disable
+_inter_door_exit
+?EnableDoor@CInterDoor@@QAEX_N@Z
+?IsLocked@CInterDoor@@QAEHXZ
+?ShiftMonsters@CInterDoor@@QAEXXZ
+?StartSequence@CInterDoor@@QAEXXZ

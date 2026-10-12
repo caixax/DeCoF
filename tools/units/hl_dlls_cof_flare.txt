@@ -12,3 +12,4 @@
 ?Spawn@CFlare@@UAEXXZ
 ?ThrowRemove@CFlare@@QAEXXZ
 ?WeaponIdle@CFlare@@UAEXXZ
+_weapon_flare
