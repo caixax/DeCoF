@@ -16,6 +16,7 @@ agent is working on can be stale or half edited. With unit names and no
 import argparse
 import csv
 import json
+import math
 import os
 import sys
 
@@ -69,7 +70,8 @@ def main():
                 new_status = "TODO"
             else:
                 new_status = row["status"]
-            new_pct = "100" if pct >= 100.0 else "%.1f" % pct
+            # floored: 99.995 must not read as 100
+            new_pct = "100" if pct >= 100.0 else "%.2f" % (math.floor(pct * 100) / 100)
             # the remaining-difference note of an EQUIVALENT function is
             # obsolete once it matches
             new_notes = row["notes"]
