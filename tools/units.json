@@ -854,6 +854,86 @@
           "winmm.lib"
         ]
       }
+    },
+    "client": {
+      "ghidra_folder": "/1.6a",
+      "ghidra_program": "client.dll",
+      "symbols": "tools/symbols/client_1.6a.csv",
+      "cflags": [
+        "/nologo",
+        "/c",
+        "/O2",
+        "/Ob1",
+        "/Oy-",
+        "/GS",
+        "/GR",
+        "/EHsc",
+        "/MT",
+        "/W3",
+        "/Gd",
+        "/fp:precise",
+        "/Zc:wchar_t",
+        "/Zc:forScope"
+      ],
+      "defines": [
+        "WIN32",
+        "NDEBUG",
+        "_WINDOWS",
+        "CLIENT_DLL",
+        "CLIENT_WEAPONS"
+      ],
+      "includes": [
+        "src/cl_dll",
+        "src/utils/vgui/include",
+        "src/engine",
+        "src/common",
+        "src/pm_shared",
+        "src/dlls",
+        "src/game_shared"
+      ],
+      "toolchain": "msvc1427",
+      "units": [
+        {
+          "name": "cl_dll/parsemsg",
+          "source": "src/cl_dll/parsemsg.cpp",
+          "functions_file": "tools/units/client_cl_dll_parsemsg.txt"
+        },
+        {
+          "name": "cl_dll/studio_util",
+          "source": "src/cl_dll/studio_util.cpp",
+          "functions_file": "tools/units/client_cl_dll_studio_util.txt"
+        },
+        {
+          "name": "cl_dll/train",
+          "source": "src/cl_dll/train.cpp",
+          "functions_file": "tools/units/client_cl_dll_train.txt"
+        },
+        {
+          "name": "pm_shared/pm_shared",
+          "source": "src/pm_shared/pm_shared.c",
+          "functions_file": "tools/units/client_pm_shared_pm_shared.txt"
+        },
+        {
+          "name": "pm_shared/pm_math",
+          "source": "src/pm_shared/pm_math.c",
+          "functions_file": "tools/units/client_pm_shared_pm_math.txt"
+        },
+        {
+          "name": "pm_shared/pm_debug",
+          "source": "src/pm_shared/pm_debug.c",
+          "functions_file": "tools/units/client_pm_shared_pm_debug.txt"
+        },
+        {
+          "name": "common/interface",
+          "source": "src/common/interface.cpp",
+          "functions_file": "tools/units/client_common_interface.txt"
+        },
+        {
+          "name": "game_shared/voice_banmgr",
+          "source": "src/game_shared/voice_banmgr.cpp",
+          "functions_file": "tools/units/client_game_shared_voice_banmgr.txt"
+        }
+      ]
     }
   }
 }

@@ -1258,6 +1258,46 @@
       "metadata": {
         "source_path": "src/cl_dll/train.cpp"
       }
+    },
+    {
+      "name": "client/pm_shared/pm_shared",
+      "target_path": "build/target/client/pm_shared/pm_shared.obj",
+      "base_path": "build/base/client/pm_shared/pm_shared.obj",
+      "metadata": {
+        "source_path": "src/pm_shared/pm_shared.c"
+      }
+    },
+    {
+      "name": "client/pm_shared/pm_math",
+      "target_path": "build/target/client/pm_shared/pm_math.obj",
+      "base_path": "build/base/client/pm_shared/pm_math.obj",
+      "metadata": {
+        "source_path": "src/pm_shared/pm_math.c"
+      }
+    },
+    {
+      "name": "client/pm_shared/pm_debug",
+      "target_path": "build/target/client/pm_shared/pm_debug.obj",
+      "base_path": "build/base/client/pm_shared/pm_debug.obj",
+      "metadata": {
+        "source_path": "src/pm_shared/pm_debug.c"
+      }
+    },
+    {
+      "name": "client/common/interface",
+      "target_path": "build/target/client/common/interface.obj",
+      "base_path": "build/base/client/common/interface.obj",
+      "metadata": {
+        "source_path": "src/common/interface.cpp"
+      }
+    },
+    {
+      "name": "client/game_shared/voice_banmgr",
+      "target_path": "build/target/client/game_shared/voice_banmgr.obj",
+      "base_path": "build/base/client/game_shared/voice_banmgr.obj",
+      "metadata": {
+        "source_path": "src/game_shared/voice_banmgr.cpp"
+      }
     }
   ]
 }
