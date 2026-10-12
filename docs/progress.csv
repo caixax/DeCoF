@@ -16948,9 +16948,9 @@ hl,100C26F0,25,?TaskIsRunning@CBaseMonster@@QAEHXZ,CBaseMonster::TaskIsRunning,U
 hl,100C2710,71,?Use@CMonsterTarget@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CMonsterTarget::Use,SPIRIT,dlls/monsters.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100C2760,74,?VecToYaw@CBaseMonster@@QAEMVVector@@@Z,CBaseMonster::VecToYaw,HLSDK,dlls/monsters.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,,refbytes:paranoia:dlls__monsters.obj:score1,
 hl,100C27B0,5,_monster_target,monster_target,HLSDK,dlls/monsters.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( monster_target, CMonsterTarget )"
-hl,100C27C0,395,?GetIdealState@CBaseMonster@@UAE?AW4MONSTERSTATE@@XZ,CBaseMonster::GetIdealState,HLSDK,dlls/monsterstate.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,TODO,92.0,hl_1.55_to_1.6a.csv,
+hl,100C27C0,395,?GetIdealState@CBaseMonster@@UAE?AW4MONSTERSTATE@@XZ,CBaseMonster::GetIdealState,HLSDK,dlls/monsterstate.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100C2970,250,?RunAI@CBaseMonster@@UAEXXZ,CBaseMonster::RunAI,HLSDK,dlls/monsterstate.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,vtable (tools/symbols/hl_vtable.csv),
-hl,100C2A70,99,?SetState@CBaseMonster@@QAEXW4MONSTERSTATE@@@Z,CBaseMonster::SetState,UNKNOWN,dlls/monster_ruben.cpp,,,TODO,0.0,,
+hl,100C2A70,99,?SetState@CBaseMonster@@QAEXW4MONSTERSTATE@@@Z,CBaseMonster::SetState,UNKNOWN,dlls/monsterstate.cpp,,,MATCHED,100,,
 hl,100C2AE0,92,??$GetClassPtr@VCHeadCrab@@@@YAPAVCHeadCrab@@PAV0@@Z,GetClassPtr<CHeadCrab>,HLSDK,dlls/monster_ruben.cpp,1.4,1.4->1.55 same,TODO,0.0,jmp_target_of_export+rtti,
 hl,100C2B40,83,?AlertSound@CHeadCrab@@UAEXXZ,CHeadCrab::AlertSound,HLSDK,dlls/monster_ruben.cpp,1.4,1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
 hl,100C2BA0,21,?BodyTarget@CHeadCrab@@UAE?AVVector@@ABV2@@Z,CHeadCrab::BodyTarget,HLSDK,dlls/monster_ruben.cpp,1.4,1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
