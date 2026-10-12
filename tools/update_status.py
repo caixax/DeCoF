@@ -29,6 +29,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--report")
+    ap.add_argument("--no-relocs", action="store_true")
     ap.add_argument("units", nargs="*")
     args = ap.parse_args()
     if not args.report:
@@ -41,6 +42,17 @@ def main():
     print("report %s" % os.path.relpath(args.report, ROOT))
     rep = json.load(open(args.report))
     path = os.path.join(ROOT, "docs", "progress.csv")
+    # a function at 100% whose relocations point at other symbols (or at
+    # another member of the same global) is not matched: tools/relocaudit.py
+    real = {}
+    if not args.no_relocs:
+        import relocaudit
+        for unit in rep.get("units", []):
+            if args.units and unit["name"] not in args.units:
+                continue
+            if any(fn.get("fuzzy_match_percent", 0.0) >= 100.0 for fn in unit.get("functions", [])):
+                real[unit["name"]] = relocaudit.real_differences(unit["name"]) or {}
+    args.real = real
     # progress.csv is also written by tools/name_unit.py and add_name.py:
     # read and write it under their lock
     import name_unit
@@ -75,6 +87,9 @@ def update(rep, args, path):
             if row is None:
                 continue
             pct = fn.get("fuzzy_match_percent", 0.0)
+            wrong = args.real.get(unit["name"], {}).get(fn["name"])
+            if wrong and pct >= 100.0:
+                pct = 99.99
             # a MATCHED function that no longer matches goes back to TODO
             if pct >= 100.0:
                 new_status = "MATCHED"
@@ -87,6 +102,11 @@ def update(rep, args, path):
             # the remaining-difference note of an EQUIVALENT function is
             # obsolete once it matches
             new_notes = row["notes"]
+            if wrong:
+                new_notes = "relocation targets differ (instructions identical): " + "; ".join(
+                    "retail %s, ours %s" % p for p in wrong[:3])
+            elif new_notes.startswith("relocation targets differ"):
+                new_notes = ""
             if new_status == "MATCHED" and new_notes.startswith("EQUIVALENT:"):
                 new_notes = ""
             if row["status"] != new_status or row["match_percent"] != new_pct or row["notes"] != new_notes:

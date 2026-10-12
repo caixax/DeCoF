@@ -297,10 +297,13 @@ public class DelinkUnits extends GhidraScript {
 		if (listing.getInstructions(range, true).hasNext()) {
 			return;
 		}
+		// a zero-initialized global (CHud gHUD) stores no pointers or strings:
+		// the types Ghidra guessed inside it carry no references to keep
+		boolean zeroFilled = allZero(addr, end);
 		for (Data d : listing.getDefinedData(range, true)) {
 			boolean undefinedType = Undefined.isUndefined(d.getDataType()) || d.getDataType() instanceof ArrayDataType
 					&& Undefined.isUndefined(((ArrayDataType) d.getDataType()).getDataType());
-			if (!d.getMinAddress().equals(addr) && !undefinedType) {
+			if (!d.getMinAddress().equals(addr) && !undefinedType && !zeroFilled) {
 				return;
 			}
 			if (d.getMaxAddress().compareTo(end) > 0) {
@@ -314,6 +317,25 @@ public class DelinkUnits extends GhidraScript {
 		}
 		catch (Exception e) {
 			printerr("could not define extent at " + addr + ": " + e.getMessage());
+		}
+	}
+
+	private boolean allZero(Address from, Address to) {
+		try {
+			int n = (int) to.subtract(from) + 1;
+			byte[] b = new byte[n];
+			if (currentProgram.getMemory().getBytes(from, b) != n) {
+				return true; // uninitialized memory reads short
+			}
+			for (byte x : b) {
+				if (x != 0) {
+					return false;
+				}
+			}
+			return true;
+		}
+		catch (Exception e) {
+			return true; // uninitialized block
 		}
 	}
 

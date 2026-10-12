@@ -13,10 +13,12 @@ rows whose relocation target names differ:
 - naming: the retail side still has a Ghidra default name (FUN_, DAT_,
   s_..., switchD_, caseD_) or the two names are the same symbol spelled
   differently; the code matches, the retail map lacks a name;
-- real: both sides have real names and they differ. Either our source
-  calls something else, or the retail name is wrong (check the evidence).
+- real: both sides have real names and they differ, or the same global is
+  accessed at another offset (another member). Either our source uses
+  something else, or the retail name is wrong (check the evidence).
 
-Units default to every hl unit with both objects. Prints the real
+Units default to every hl unit with both objects. tools/update_status.py
+uses real_differences(): a function with real differences stays TODO. Prints the real
 differences and a count per kind.
 """
 import json
@@ -36,8 +38,12 @@ DEFAULT_NAME = re.compile(r"^(?:DAT|FUN|LAB|PTR|s|u|thunk_FUN|switchD|caseD|SUB|
 
 def same_symbol(a, b):
     """Equal names, or Ghidra's demangled spelling of a vtable
-    (CFoo::vftable) against the decorated one (??_7CFoo@@6B@)."""
-    if a == b:
+    (CFoo::vftable) against the decorated one (??_7CFoo@@6B@), or the
+    same CRT function under its alias (_stricmp and __stricmp), or an
+    undecorated retail name against our decorated one."""
+    if a == b or a.lstrip("_") == b.lstrip("_"):
+        return True
+    if b.startswith("?") and b[1:].startswith(a + "@"):
         return True
     m = re.match(r"^(\w+)::vftable$", a)
     return bool(m) and b == "??_7%s@@6B@" % m.group(1)
@@ -71,6 +77,46 @@ def unit_report(unit, extra):
     return {f["name"]: f.get("fuzzy_match_percent", 0.0) for u in rep.get("units", []) for f in u.get("functions", [])}
 
 
+def real_differences(unit):
+    """{function: [(retail target, our target)]} for the functions of the
+    unit that are at 100% in the plain report but whose relocations point
+    at other symbols (or other offsets of the same symbol); None when the
+    unit has no report."""
+    plain = unit_report(unit, [])
+    if plain is None:
+        return None
+    named = unit_report(unit, ["-c", "functionRelocDiffs=name_address"])
+    if named is None:
+        return None
+    out = {}
+    for fn, pct in sorted(plain.items()):
+        if pct < 100.0 or named.get(fn, 0.0) >= 100.0:
+            continue
+        found = differences(unit, fn)
+        if found:
+            out[fn] = found
+    return out
+
+
+def differences(unit, fn):
+    d = objdiff_tool.diff_json(unit, fn)
+    _l, _r, li, ri = objdiff_tool.rows(d, fn)
+    found = []
+    for a, b in zip(li, ri):
+        na = objdiff_tool.reloc_name(d["left"], a)
+        nb = objdiff_tool.reloc_name(d["right"], b)
+        if not na or not nb or DEFAULT_NAME.search(na) or DEFAULT_NAME.search(nb):
+            continue
+        if same_symbol(na, nb):
+            # the same global at another offset is another member
+            xa, xb = objdiff_tool.reloc_addend(a), objdiff_tool.reloc_addend(b)
+            if xa != xb and na == nb:
+                found.append(("%s+0x%x" % (na, xa), "%s+0x%x" % (nb, xb)))
+            continue
+        found.append((na, nb))
+    return sorted(set(found))
+
+
 def main():
     units = sys.argv[1:]
     if not units:
@@ -91,15 +137,7 @@ def main():
             if named.get(fn, 0.0) >= 100.0:
                 counts["clean"] += 1
                 continue
-            d = objdiff_tool.diff_json(unit, fn)
-            _l, _r, li, ri = objdiff_tool.rows(d, fn)
-            found = []
-            for a, b in zip(li, ri):
-                na = objdiff_tool.reloc_name(d["left"], a)
-                nb = objdiff_tool.reloc_name(d["right"], b)
-                if not na or not nb or same_symbol(na, nb) or DEFAULT_NAME.search(na) or DEFAULT_NAME.search(nb):
-                    continue
-                found.append((na, nb))
+            found = differences(unit, fn)
             if found:
                 counts["real"] += 1
                 real.append((unit, fn, sorted(set(found))))
