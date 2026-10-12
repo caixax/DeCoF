@@ -1,5 +1,4 @@
 HistoryResource::AddToHistory
-HistoryResource::AddToHistory
 ?AddToHistory@HistoryResource@@QAEXHHH@Z
 ?AddToHistory@HistoryResource@@QAEXHPBDH@Z
 ?CheckClearHistory@HistoryResource@@QAEXXZ

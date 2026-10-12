@@ -6,10 +6,8 @@
 ?KB_Shutdown@@YAXXZ
 ?KeyDown@@YAXPAUkbutton_s@@@Z
 ?KeyUp@@YAXPAUkbutton_s@@@Z
-CL_CreateMove
-HUD_Key_Event
-HUD_Shutdown
-KB_Find
-?CL_IsDead@@YAHXZ
+_CL_CreateMove
 _HUD_Key_Event
+_HUD_Shutdown
 _KB_Find
+?CL_IsDead@@YAHXZ

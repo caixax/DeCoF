@@ -4,6 +4,6 @@
 ?CAM_StartMouseMove@@YAXXZ
 ?CAM_ToFirstPerson@@YAXXZ
 ?MoveToward@@YAMMMM@Z
-CAM_Think
-CL_CameraOffset
-CL_IsThirdPerson
+_CAM_Think
+_CL_CameraOffset
+_CL_IsThirdPerson

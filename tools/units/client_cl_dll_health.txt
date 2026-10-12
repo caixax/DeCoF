@@ -1,1 +1,3 @@
 ?GetPainColor@CHudHealth@@QAEXAAH00@Z
+?__MsgFunc_Damage@@YAHPBDHPAX@Z
+?__MsgFunc_Health@@YAHPBDHPAX@Z

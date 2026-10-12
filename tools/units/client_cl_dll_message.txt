@@ -1,7 +1,6 @@
 ?FadeBlend@CHudMessage@@QAEMMMMM@Z
 ?Init@CHudMessage@@UAEHXZ
-CHudMessage::MessageAdd
-CHudMessage::MessageAdd
+?MessageAdd@CHudMessage@@QAEXPBDM@Z
 ?MessageScanNextChar@CHudMessage@@QAEXXZ
 ?MessageScanStart@CHudMessage@@QAEXXZ
 ?MsgFunc_GameTitle@CHudMessage@@QAEHPBDHPAX@Z
