@@ -14,3 +14,4 @@
 ?TakeDamage@CChainsawBoss@@UAEHPAUentvars_s@@0MH@Z
 ?TraceAttack@CChainsawBoss@@UAEXPAUentvars_s@@MVVector@@PAUTraceResult@@H@Z
 _monster_bosschainsaw
+?AttackSound@CChainsawBoss@@QAEXXZ
