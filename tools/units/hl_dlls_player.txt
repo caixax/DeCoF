@@ -1,11 +1,9 @@
-??0CBloodSplat@@QAE@XZ
 ??$GetClassPtr@VCDeadHEV@@@@YAPAVCDeadHEV@@PAV0@@Z
 ??$GetClassPtr@VCGiver@@@@YAPAVCGiver@@PAV0@@Z
 ??$GetClassPtr@VCHudSprite@@@@YAPAVCHudSprite@@PAV0@@Z
 ??$GetClassPtr@VCInfoIntermission@@@@YAPAVCInfoIntermission@@PAV0@@Z
 ??$GetClassPtr@VCPlayerFreeze@@@@YAPAVCPlayerFreeze@@PAV0@@Z
 ??$GetClassPtr@VCRevertSaved@@@@YAPAVCRevertSaved@@PAV0@@Z
-??0CSprayCan@@QAE@XZ
 ??$GetClassPtr@VCStripWeapons@@@@YAPAVCStripWeapons@@PAV0@@Z
 ?AddDocument@CBasePlayer@@QAEXPAVCCoFDocument@@@Z
 ?AddItemToInventory@CBasePlayer@@QAEHHHH@Z
@@ -219,3 +217,6 @@ _player
 ?StopWheelchairMode@CBasePlayer@@QAEXXZ
 ?ToFirstPerson@CBasePlayer@@QAEXXZ
 ?strstrtolower@@YA_NPAD0@Z
+??$GetClassPtr@VCSprayCan@@@@YAPAVCSprayCan@@PAV0@@Z
+??$GetClassPtr@VCBloodSplat@@@@YAPAVCBloodSplat@@PAV0@@Z
+??$GetClassPtr@VCBasePlayerItem@@@@YAPAVCBasePlayerItem@@PAV0@@Z

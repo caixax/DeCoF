@@ -42,7 +42,6 @@
 ?TertiaryAttack@CBasePlayerWeapon@@UAEXXZ
 ?WeaponToggle@CBasePlayerWeapon@@UAEXXZ
 ?iItemSlot@CBrowningWheelchair@@UAEHXZ
-??0CBasePlayerItem@@QAE@XZ
 ?AddToFullPack@@YAHPAUentity_state_s@@HPAUedict_s@@1HHPAE@Z
 ?CBasePlayerByIndex@@YAPAVCBasePlayer@@H@Z
 ?ClientConnect@@YAHPAUedict_s@@PBD1QAD@Z

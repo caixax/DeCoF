@@ -17350,15 +17350,15 @@ hl,100D9E60,5,_func_tracktrain,func_tracktrain,HLSDK,dlls/plats.cpp,,,MATCHED,10
 hl,100D9E70,5,_func_train,func_train,HLSDK,dlls/plats.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( func_train, CFuncTrain )"
 hl,100D9E80,5,_func_traincontrols,func_traincontrols,HLSDK,dlls/plats.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( func_traincontrols, CFuncTrainControls )"
 hl,100D9E90,5,_scripted_trainsequence,scripted_trainsequence,HLSDK,dlls/plats.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( scripted_trainsequence, CTrainSequence )"
-hl,100D9EA0,92,??0CBasePlayerItem@@QAE@XZ,CBasePlayerItem::CBasePlayerItem,HLSDK,dlls/client.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,6.5,hl_1.55_to_1.6a.csv,
-hl,100D9F00,92,??0CBloodSplat@@QAE@XZ,CBloodSplat::CBloodSplat,HLSDK,dlls/player.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,6.5,hl_1.55_to_1.6a.csv,
+hl,100D9EA0,92,??$GetClassPtr@VCBasePlayerItem@@@@YAPAVCBasePlayerItem@@PAV0@@Z,CBasePlayerItem>,HLSDK,dlls/player.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_manual.csv,
+hl,100D9F00,92,??$GetClassPtr@VCBloodSplat@@@@YAPAVCBloodSplat@@PAV0@@Z,CBloodSplat>,HLSDK,dlls/player.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_manual.csv,
 hl,100D9F60,92,??$GetClassPtr@VCDeadHEV@@@@YAPAVCDeadHEV@@PAV0@@Z,GetClassPtr<CDeadHEV>,HLSDK,dlls/player.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
 hl,100D9FC0,92,??$GetClassPtr@VCGiver@@@@YAPAVCGiver@@PAV0@@Z,GetClassPtr<CGiver>,HLSDK,dlls/player.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
 hl,100DA020,92,??$GetClassPtr@VCHudSprite@@@@YAPAVCHudSprite@@PAV0@@Z,GetClassPtr<CHudSprite>,HLSDK,dlls/player.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
 hl,100DA080,92,??$GetClassPtr@VCInfoIntermission@@@@YAPAVCInfoIntermission@@PAV0@@Z,GetClassPtr<CInfoIntermission>,HLSDK,dlls/player.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
 hl,100DA0E0,92,??$GetClassPtr@VCPlayerFreeze@@@@YAPAVCPlayerFreeze@@PAV0@@Z,GetClassPtr<CPlayerFreeze>,HLSDK,dlls/player.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
 hl,100DA140,92,??$GetClassPtr@VCRevertSaved@@@@YAPAVCRevertSaved@@PAV0@@Z,GetClassPtr<CRevertSaved>,HLSDK,dlls/player.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
-hl,100DA1A0,92,??0CSprayCan@@QAE@XZ,CSprayCan::CSprayCan,HLSDK,dlls/player.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,6.5,hl_1.55_to_1.6a.csv,
+hl,100DA1A0,92,??$GetClassPtr@VCSprayCan@@@@YAPAVCSprayCan@@PAV0@@Z,CSprayCan>,HLSDK,dlls/player.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_manual.csv,
 hl,100DA200,92,??$GetClassPtr@VCStripWeapons@@@@YAPAVCStripWeapons@@PAV0@@Z,GetClassPtr<CStripWeapons>,HLSDK,dlls/player.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
 hl,100DA260,64,,,UNKNOWN,guess:dlls/player.cpp,,,TODO,,,
 hl,100DA2A0,395,,,UNKNOWN,,,,TODO,,,
