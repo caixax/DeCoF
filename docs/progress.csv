@@ -17845,15 +17845,15 @@ hl,10102FA0,5,_info_null,info_null,HLSDK,dlls/subs.cpp,,,MATCHED,100,exports+jmp
 hl,10102FB0,5,_info_player_deathmatch,info_player_deathmatch,HLSDK,dlls/subs.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( info_player_deathmatch, CBaseDMStart )"
 hl,10102FC0,5,_info_player_start,info_player_start,HLSDK,dlls/subs.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( info_player_start, CPointEntity )"
 hl,10102FD0,5,_info_texlights,info_texlights,HLSDK,dlls/subs.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( info_texlights, CNullEntity )"
-hl,10102FE0,92,??$GetClassPtr@VCSubtitleMultiple@@@@YAPAVCSubtitleMultiple@@PAV0@@Z,GetClassPtr<CSubtitleMultiple>,HLSDK,dlls/subtitle_multiple.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,TODO,0.0,jmp_target_of_export+rtti,
-hl,10103040,232,?ChangeSubtitle@CSubtitleMultiple@@QAEXXZ,CSubtitleMultiple::ChangeSubtitle,COF,dlls/subtitle_multiple.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
-hl,10103130,3255,?KeyValue@CSubtitleMultiple@@UAEXPAUKeyValueData_s@@@Z,CSubtitleMultiple::KeyValue,COF,dlls/subtitle_multiple.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
-hl,10103DF0,15,?ObjectCaps@CSubtitleMultiple@@UAEHXZ,CSubtitleMultiple::ObjectCaps,COF,dlls/subtitle_multiple.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
-hl,10103E00,49,?Restore@CSubtitleMultiple@@UAEHAAVCRestore@@@Z,CSubtitleMultiple::Restore,COF,dlls/subtitle_multiple.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
-hl,10103E40,95,?Save@CSubtitleMultiple@@UAEHAAVCSave@@@Z,CSubtitleMultiple::Save,COF,dlls/subtitle_multiple.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
-hl,10103EA0,90,?Spawn@CSubtitleMultiple@@UAEXXZ,CSubtitleMultiple::Spawn,COF,dlls/subtitle_multiple.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
-hl,10103F00,90,?Use@CSubtitleMultiple@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CSubtitleMultiple::Use,COF,dlls/subtitle_multiple.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
-hl,10103F60,5,_subtitle_multiple,subtitle_multiple,HLSDK,dlls/subtitle_multiple.cpp,,,TODO,0.0,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( subtitle_multiple, CSubtitleMultiple )"
+hl,10102FE0,92,??$GetClassPtr@VCSubtitleMultiple@@@@YAPAVCSubtitleMultiple@@PAV0@@Z,GetClassPtr<CSubtitleMultiple>,HLSDK,dlls/subtitle_multiple.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
+hl,10103040,232,?ChangeSubtitle@CSubtitleMultiple@@QAEXXZ,CSubtitleMultiple::ChangeSubtitle,COF,dlls/subtitle_multiple.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
+hl,10103130,3255,?KeyValue@CSubtitleMultiple@@UAEXPAUKeyValueData_s@@@Z,CSubtitleMultiple::KeyValue,COF,dlls/subtitle_multiple.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
+hl,10103DF0,15,?ObjectCaps@CSubtitleMultiple@@UAEHXZ,CSubtitleMultiple::ObjectCaps,COF,dlls/subtitle_multiple.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
+hl,10103E00,49,?Restore@CSubtitleMultiple@@UAEHAAVCRestore@@@Z,CSubtitleMultiple::Restore,COF,dlls/subtitle_multiple.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
+hl,10103E40,95,?Save@CSubtitleMultiple@@UAEHAAVCSave@@@Z,CSubtitleMultiple::Save,COF,dlls/subtitle_multiple.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
+hl,10103EA0,90,?Spawn@CSubtitleMultiple@@UAEXXZ,CSubtitleMultiple::Spawn,COF,dlls/subtitle_multiple.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
+hl,10103F00,90,?Use@CSubtitleMultiple@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CSubtitleMultiple::Use,COF,dlls/subtitle_multiple.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
+hl,10103F60,5,_subtitle_multiple,subtitle_multiple,HLSDK,dlls/subtitle_multiple.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( subtitle_multiple, CSubtitleMultiple )"
 hl,10103F70,97,,,UNKNOWN,,,,TODO,,,
 hl,10103FE0,52,,,UNKNOWN,,,,TODO,,,
 hl,10104020,31,,,UNKNOWN,,,,TODO,,,
