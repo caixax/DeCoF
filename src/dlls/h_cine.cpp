@@ -28,6 +28,9 @@
 #include	"monsters.h"
 #include	"decals.h"
 
+// TODO(header): CoF UTIL_BloodDrips has a fifth parameter (1.55 PDB), util.h still declares four
+extern void UTIL_BloodDrips( const Vector &origin, const Vector &direction, int color, int amount, Vector velocity );
+
 
 class CLegacyCineMonster : public CBaseMonster
 {
@@ -206,7 +209,7 @@ void CCineBlood :: BloodGush ( void )
 
 	if ( RANDOM_FLOAT ( 0 , 1 ) < 0.7 )// larger chance of globs
 	{
-		UTIL_BloodDrips( pev->origin, UTIL_RandomBloodVector(), BLOOD_COLOR_RED, 10 );
+		UTIL_BloodDrips( pev->origin, UTIL_RandomBloodVector(), BLOOD_COLOR_RED, 10, g_vecZero );
 	}
 	else// slim chance of geyser
 	{

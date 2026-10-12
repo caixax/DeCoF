@@ -16558,7 +16558,7 @@ hl,100B3360,92,??$GetClassPtr@VCCineBarney@@@@YAPAVCCineBarney@@PAV0@@Z,GetClass
 hl,100B33C0,92,??$GetClassPtr@VCCineBlood@@@@YAPAVCCineBlood@@PAV0@@Z,GetClassPtr<CCineBlood>,HLSDK,dlls/h_cine.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
 hl,100B3420,92,??$GetClassPtr@VCCinePanther@@@@YAPAVCCinePanther@@PAV0@@Z,GetClassPtr<CCinePanther>,HLSDK,dlls/h_cine.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
 hl,100B3480,92,??$GetClassPtr@VCCineScientist@@@@YAPAVCCineScientist@@PAV0@@Z,GetClassPtr<CCineScientist>,HLSDK,dlls/h_cine.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
-hl,100B34E0,685,?BloodGush@CCineBlood@@QAEXXZ,CCineBlood::BloodGush,HLSDK,dlls/h_cine.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,TODO,92.2,hl_1.55_to_1.6a.csv,
+hl,100B34E0,685,?BloodGush@CCineBlood@@QAEXXZ,CCineBlood::BloodGush,HLSDK,dlls/h_cine.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100B3790,23,?BloodStart@CCineBlood@@QAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CCineBlood::BloodStart,HLSDK,dlls/h_cine.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100B37B0,265,?CineSpawn@CLegacyCineMonster@@QAEXPAD@Z,CLegacyCineMonster::CineSpawn,HLSDK,dlls/h_cine.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100B38C0,102,?CineThink@CLegacyCineMonster@@QAEXXZ,CLegacyCineMonster::CineThink,HLSDK,dlls/h_cine.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
