@@ -52,10 +52,24 @@ void IN_Shutdown( void );
 void V_Init( void );
 void VectorAngles( const float *forward, float *angles );
 int CL_ButtonBits( int );
+void guess_MP3_Shutdown( void );
+bool guess_InCameraView( void );
+
+extern cl_entity_t *guess_pTelescopeEnt;
+extern int guess_iWheelchair;
+extern int guess_iBoat;
+extern int guess_iKeyEvents;
+extern bool guess_bCanDodge;
+extern bool guess_bXboxFix;
+extern vec3_t guess_vecIronsightOfs;
+extern vec3_t guess_vecWheelchairAngles;
+extern vec3_t guess_vecWheelchairOrigin;
 
 // xxx need client dll function to get and clear impuse
 extern cvar_t *in_joystick;
 
+int	guess_iDonator;
+bool	guess_bIronsightEdit;
 int	in_impulse	= 0;
 int	in_cancel	= 0;
 
@@ -77,6 +91,33 @@ cvar_t	*cl_yawspeed;
 cvar_t	*cl_pitchspeed;
 cvar_t	*cl_anglespeedkey;
 cvar_t	*cl_vsmoothing;
+cvar_t	*cg_water;
+cvar_t	*r_weather;
+cvar_t	*cl_ripples;
+cvar_t	*fps_current;
+cvar_t	*cl_noiseeffect;
+cvar_t	*cl_noiseamount;
+cvar_t	*cl_subtitles;
+cvar_t	*cl_vignette;
+cvar_t	*cl_fovmultiplier;
+cvar_t	*cl_lazyweapon_force;
+cvar_t	*cl_weapon_idle_dampener;
+cvar_t	*cl_weapon_idle_speed;
+cvar_t	*xbox_controller_sensitivityx;
+cvar_t	*xbox_controller_sensitivityy;
+cvar_t	*cl_smokeparticlelimit;
+cvar_t	*cl_cheapweaponsmoke;
+cvar_t	*cl_fastcredits;
+cvar_t	*cl_waterspeed_x;
+cvar_t	*cl_waterspeed_y;
+cvar_t	*cl_coop_language;
+cvar_t	*cl_lowflashlight;
+cvar_t	*cl_propdistance;
+cvar_t	*cl_nodoubletapdodge;
+cvar_t	*cl_downwiththesickness;
+cvar_t	*cl_bloodeffects;
+cvar_t	*cl_crosshair;
+cvar_t	*cl_cameraeffect;
 /*
 ===============================================================================
 
@@ -102,8 +143,6 @@ state bit 2 is edge triggered on the down to up transition
 kbutton_t	in_mlook;
 kbutton_t	in_klook;
 kbutton_t	in_jlook;
-kbutton_t	in_left;
-kbutton_t	in_right;
 kbutton_t	in_forward;
 kbutton_t	in_back;
 kbutton_t	in_lookup;
@@ -124,6 +163,10 @@ kbutton_t	in_alt1;
 kbutton_t	in_score;
 kbutton_t	in_break;
 kbutton_t	in_graph;  // Display the netgraph
+kbutton_t	in_attack3;
+kbutton_t	in_inventory;
+kbutton_t	in_dodge;
+kbutton_t	in_objectives;
 
 typedef struct kblist_s
 {
@@ -395,33 +438,65 @@ void IN_UpDown(void) {KeyDown(&in_up);}
 void IN_UpUp(void) {KeyUp(&in_up);}
 void IN_DownDown(void) {KeyDown(&in_down);}
 void IN_DownUp(void) {KeyUp(&in_down);}
-void IN_LeftDown(void) {KeyDown(&in_left);}
-void IN_LeftUp(void) {KeyUp(&in_left);}
-void IN_RightDown(void) {KeyDown(&in_right);}
-void IN_RightUp(void) {KeyUp(&in_right);}
 
 void IN_ForwardDown(void)
 {
+	if ( g_iUser1 )
+		return;
+
+	if ( guess_bIronsightEdit )
+	{
+		guess_vecIronsightOfs[1] += 0.25;
+		return;
+	}
+
 	KeyDown(&in_forward);
 	gHUD.m_Spectator.HandleButtonsDown( IN_FORWARD );
+
+	if ( ( in_dodge.state & 1 ) && guess_bCanDodge )
+		gEngfuncs.pfnServerCmd( "dodgeforward" );
+
+	if ( guess_iKeyEvents )
+		gEngfuncs.pfnServerCmd( "forwardpressed" );
 }
 
 void IN_ForwardUp(void)
 {
 	KeyUp(&in_forward);
 	gHUD.m_Spectator.HandleButtonsUp( IN_FORWARD );
+
+	if ( guess_iKeyEvents )
+		gEngfuncs.pfnServerCmd( "forwardreleased" );
 }
 
 void IN_BackDown(void)
 {
+	if ( g_iUser1 )
+		return;
+
+	if ( guess_bIronsightEdit )
+	{
+		guess_vecIronsightOfs[1] -= 0.25;
+		return;
+	}
+
 	KeyDown(&in_back);
 	gHUD.m_Spectator.HandleButtonsDown( IN_BACK );
+
+	if ( ( in_dodge.state & 1 ) && guess_bCanDodge )
+		gEngfuncs.pfnServerCmd( "dodgebackward" );
+
+	if ( guess_iKeyEvents )
+		gEngfuncs.pfnServerCmd( "backpressed" );
 }
 
 void IN_BackUp(void)
 {
 	KeyUp(&in_back);
 	gHUD.m_Spectator.HandleButtonsUp( IN_BACK );
+
+	if ( guess_iKeyEvents )
+		gEngfuncs.pfnServerCmd( "backreleased" );
 }
 void IN_LookupDown(void) {KeyDown(&in_lookup);}
 void IN_LookupUp(void) {KeyUp(&in_lookup);}
@@ -429,8 +504,20 @@ void IN_LookdownDown(void) {KeyDown(&in_lookdown);}
 void IN_LookdownUp(void) {KeyUp(&in_lookdown);}
 void IN_MoveleftDown(void)
 {
+	if ( g_iUser1 )
+		return;
+
+	if ( guess_bIronsightEdit )
+	{
+		guess_vecIronsightOfs[0] -= 0.25;
+		return;
+	}
+
 	KeyDown(&in_moveleft);
 	gHUD.m_Spectator.HandleButtonsDown( IN_MOVELEFT );
+
+	if ( ( in_dodge.state & 1 ) && guess_bCanDodge )
+		gEngfuncs.pfnServerCmd( "dodgeleft" );
 }
 
 void IN_MoveleftUp(void)
@@ -441,8 +528,20 @@ void IN_MoveleftUp(void)
 
 void IN_MoverightDown(void)
 {
+	if ( guess_bIronsightEdit )
+	{
+		guess_vecIronsightOfs[0] += 0.25;
+		return;
+	}
+
+	if ( g_iUser1 )
+		return;
+
 	KeyDown(&in_moveright);
 	gHUD.m_Spectator.HandleButtonsDown( IN_MOVERIGHT );
+
+	if ( ( in_dodge.state & 1 ) && guess_bCanDodge )
+		gEngfuncs.pfnServerCmd( "dodgeright" );
 }
 
 void IN_MoverightUp(void)
@@ -450,7 +549,13 @@ void IN_MoverightUp(void)
 	KeyUp(&in_moveright);
 	gHUD.m_Spectator.HandleButtonsUp( IN_MOVERIGHT );
 }
-void IN_SpeedDown(void) {KeyDown(&in_speed);}
+
+void IN_SpeedDown(void)
+{
+	if ( strcmp( gEngfuncs.pfnGetLevelName(), "maps/c_nightmare.bsp" ) )
+		KeyDown(&in_speed);
+}
+
 void IN_SpeedUp(void) {KeyUp(&in_speed);}
 void IN_StrafeDown(void) {KeyDown(&in_strafe);}
 void IN_StrafeUp(void) {KeyUp(&in_strafe);}
@@ -462,31 +567,84 @@ void IN_Attack2Down(void)
 {
 	KeyDown(&in_attack2);
 
-	gHUD.m_Spectator.HandleButtonsDown( IN_ATTACK2 );
+	if ( guess_bIronsightEdit )
+	{
+		gEngfuncs.pfnServerCmd( "ironsightzoomout" );
+		return;
+	}
+
+	if ( guess_iKeyEvents )
+		gEngfuncs.pfnServerCmd( "attack2pressed" );
+
+	if ( g_iUser1 <= 0 || g_iUser1 > 5 )
+	{
+		if ( guess_pTelescopeEnt )
+			gEngfuncs.pfnServerCmd( "telescopecancel" );
+
+		gHUD.m_Spectator.HandleButtonsDown( IN_ATTACK2 );
+	}
 }
 
-void IN_Attack2Up(void) {KeyUp(&in_attack2);}
+void IN_Attack2Up(void)
+{
+	KeyUp(&in_attack2);
+
+	if ( guess_iKeyEvents )
+		gEngfuncs.pfnServerCmd( "attack2released" );
+}
+
 void IN_UseDown (void)
 {
+	if ( g_iUser1 )
+		return;
+
+	if ( guess_iBoat )
+		gEngfuncs.pfnServerCmd( "boatdisembark" );
+
+	if ( guess_pTelescopeEnt )
+		gEngfuncs.pfnServerCmd( "telescopecancel" );
+
 	KeyDown(&in_use);
 	gHUD.m_Spectator.HandleButtonsDown( IN_USE );
 }
 void IN_UseUp (void) {KeyUp(&in_use);}
 void IN_JumpDown (void)
 {
+	if ( g_iUser1 )
+		return;
+
+	if ( guess_bIronsightEdit )
+	{
+		guess_vecIronsightOfs[2] += 0.25;
+		return;
+	}
+
 	KeyDown(&in_jump);
 	gHUD.m_Spectator.HandleButtonsDown( IN_JUMP );
-
 }
 void IN_JumpUp (void) {KeyUp(&in_jump);}
 void IN_DuckDown(void)
 {
+	if ( g_iUser1 )
+		return;
+
+	if ( guess_bIronsightEdit )
+	{
+		guess_vecIronsightOfs[2] -= 0.25;
+		return;
+	}
+
 	KeyDown(&in_duck);
 	gHUD.m_Spectator.HandleButtonsDown( IN_DUCK );
-
 }
 void IN_DuckUp(void) {KeyUp(&in_duck);}
-void IN_ReloadDown(void) {KeyDown(&in_reload);}
+void IN_ReloadDown(void)
+{
+	if ( guess_iWheelchair )
+		gEngfuncs.pfnServerCmd( "wheelchairreload" );
+
+	KeyDown(&in_reload);
+}
 void IN_ReloadUp(void) {KeyUp(&in_reload);}
 void IN_Alt1Down(void) {KeyDown(&in_alt1);}
 void IN_Alt1Up(void) {KeyUp(&in_alt1);}
@@ -495,14 +653,112 @@ void IN_GraphUp(void) {KeyUp(&in_graph);}
 
 void IN_AttackDown(void)
 {
-	KeyDown( &in_attack );
-	gHUD.m_Spectator.HandleButtonsDown( IN_ATTACK );
+	if ( guess_bIronsightEdit )
+	{
+		gEngfuncs.pfnServerCmd( "ironsightzoomin" );
+		return;
+	}
+
+	if ( guess_iKeyEvents )
+		gEngfuncs.pfnServerCmd( "attack1pressed" );
+
+	if ( g_iUser1 <= 0 || g_iUser1 > 5 )
+	{
+		if ( guess_iWheelchair )
+		{
+			char szEndVec[64];
+			char szFire[64];
+			vec3_t forward, right;
+			int x, y, z;
+
+			x = guess_vecWheelchairOrigin[0];
+			y = guess_vecWheelchairOrigin[1];
+			z = guess_vecWheelchairOrigin[2];
+
+			gEngfuncs.pfnAngleVectors( guess_vecWheelchairAngles, forward, right, NULL );
+
+			sprintf( szEndVec, "wheelchairendvec %i %i %i", (int)( guess_vecWheelchairOrigin[0] + forward[0] * 4096 ), (int)( guess_vecWheelchairOrigin[1] + forward[1] * 4096 ), (int)( guess_vecWheelchairOrigin[2] + forward[2] * 4096 ) );
+			gEngfuncs.pfnServerCmd( szEndVec );
+
+			sprintf( szFire, "wheelchairfire1 %i %i %i", x, y, z );
+			gEngfuncs.pfnServerCmd( szFire );
+		}
+
+		if ( guess_pTelescopeEnt )
+			gEngfuncs.pfnServerCmd( "telescopecancel" );
+
+		KeyDown( &in_attack );
+		gHUD.m_Spectator.HandleButtonsDown( IN_ATTACK );
+	}
 }
 
 void IN_AttackUp(void)
 {
 	KeyUp( &in_attack );
 	in_cancel = 0;
+
+	if ( guess_iKeyEvents )
+		gEngfuncs.pfnServerCmd( "attack1released" );
+}
+
+void IN_Attack3Down(void)
+{
+	if ( !g_iUser1 )
+		KeyDown( &in_attack3 );
+}
+
+void IN_Attack3Up(void) {KeyUp(&in_attack3);}
+void IN_DodgeDown(void) {KeyDown(&in_dodge);}
+void IN_DodgeUp(void) {KeyUp(&in_dodge);}
+
+void IN_InventoryDown(void)
+{
+	KeyDown( &in_inventory );
+
+	if ( g_iUser1 > 4 )
+		return;
+
+	if ( !strcmp( gEngfuncs.pfnGetLevelName(), "maps/c_nightmare.bsp" ) )
+		return;
+
+	if ( guess_iWheelchair )
+		return;
+
+	if ( strstr( gEngfuncs.pfnGetLevelName(), "game_menu" ) )
+		return;
+
+	if ( guess_InCameraView() )
+		return;
+}
+
+void IN_InventoryUp(void) {KeyUp(&in_inventory);}
+
+void IN_ObjectivesDown(void)
+{
+	KeyDown( &in_objectives );
+
+	if ( g_iUser1 > 4 )
+		return;
+
+	if ( !strcmp( gEngfuncs.pfnGetLevelName(), "maps/c_nightmare.bsp" ) )
+		return;
+
+	if ( strstr( gEngfuncs.pfnGetLevelName(), "game_menu" ) )
+		return;
+
+	if ( guess_InCameraView() )
+		return;
+}
+
+void IN_ObjectivesUp(void) {KeyUp(&in_objectives);}
+
+void IN_Documents(void)
+{
+}
+
+void guess_IN_XboxFix(void)
+{
+	guess_bXboxFix = false;
 }
 
 // Special handling
@@ -620,12 +876,6 @@ void CL_AdjustAngles ( float frametime, float *viewangles )
 		speed = frametime;
 	}
 
-	if (!(in_strafe.state & 1))
-	{
-		viewangles[YAW] -= speed*cl_yawspeed->value*CL_KeyState (&in_right);
-		viewangles[YAW] += speed*cl_yawspeed->value*CL_KeyState (&in_left);
-		viewangles[YAW] = anglemod(viewangles[YAW]);
-	}
 	if (in_klook.state & 1)
 	{
 		V_StopPitchDrift ();
@@ -633,11 +883,8 @@ void CL_AdjustAngles ( float frametime, float *viewangles )
 		viewangles[PITCH] += speed*cl_pitchspeed->value * CL_KeyState (&in_back);
 	}
 	
-	up = CL_KeyState (&in_lookup);
 	down = CL_KeyState(&in_lookdown);
-	
-	viewangles[PITCH] -= speed*cl_pitchspeed->value * up;
-	viewangles[PITCH] += speed*cl_pitchspeed->value * down;
+	up = CL_KeyState (&in_lookup);
 
 	if (up || down)
 		V_StopPitchDrift ();
@@ -662,8 +909,6 @@ if active == 1 then we are 1) not playing back demos ( where our commands are ig
 2 ) we have finished signing on to server
 ================
 */
-extern float	gLightLevel;
-
 void DLLEXPORT CL_CreateMove ( float frametime, struct usercmd_s *cmd, int active )
 {	
 	vec3_t viewangles;
@@ -681,12 +926,6 @@ void DLLEXPORT CL_CreateMove ( float frametime, struct usercmd_s *cmd, int activ
 		
 		gEngfuncs.SetViewAngles( (float *)viewangles );
 
-		if ( in_strafe.state & 1 )
-		{
-			cmd->sidemove += cl_sidespeed->value * CL_KeyState (&in_right);
-			cmd->sidemove -= cl_sidespeed->value * CL_KeyState (&in_left);
-		}
-
 		cmd->sidemove += cl_sidespeed->value * CL_KeyState (&in_moveright);
 		cmd->sidemove -= cl_sidespeed->value * CL_KeyState (&in_moveleft);
 
@@ -699,30 +938,17 @@ void DLLEXPORT CL_CreateMove ( float frametime, struct usercmd_s *cmd, int activ
 			cmd->forwardmove -= cl_backspeed->value * CL_KeyState (&in_back);
 		}	
 
-		// adjust for speed key
-		if ( in_speed.state & 1 )
+		if ( ( in_dodge.state & 1 ) && guess_bCanDodge )
 		{
-			cmd->forwardmove *= cl_movespeedkey->value;
-			cmd->sidemove *= cl_movespeedkey->value;
-			cmd->upmove *= cl_movespeedkey->value;
+			if ( in_forward.state & 1 )
+				gEngfuncs.pfnServerCmd( "dodgeforward" );
+			else if ( in_back.state & 1 )
+				gEngfuncs.pfnServerCmd( "dodgebackward" );
+			else if ( in_moveright.state & 1 )
+				gEngfuncs.pfnServerCmd( "dodgeright" );
+			else if ( in_moveleft.state & 1 )
+				gEngfuncs.pfnServerCmd( "dodgeleft" );
 		}
-
-		// clip to maxspeed
-		// buz: little fix - dont need to do it here, pm code will handle it
-	/*	float spd = gEngfuncs.GetClientMaxspeed();
-		if ( spd != 0.0 )
-		{
-			// scale the 3 speeds so that the total velocity is not > cl.maxspeed
-			float fmov = sqrt( (cmd->forwardmove*cmd->forwardmove) + (cmd->sidemove*cmd->sidemove) + (cmd->upmove*cmd->upmove) );
-
-			if ( fmov > spd )
-			{
-				float fratio = spd / fmov;
-				cmd->forwardmove *= fratio;
-				cmd->sidemove *= fratio;
-				cmd->upmove *= fratio;
-			}
-		}*/
 
 		// Allow mice and other controllers to add their inputs
 		IN_Move ( frametime, cmd );
@@ -781,20 +1007,53 @@ void DLLEXPORT CL_CreateMove ( float frametime, struct usercmd_s *cmd, int activ
 		// всем спасибо, все свободны
 		gEngfuncs.SetViewAngles( (float *)viewangles );
 	}
-	
-	if ( g_iAlive )
+
+	if ( guess_iWheelchair )
 	{
-		VectorCopy( viewangles, cmd->viewangles );
-		VectorCopy( viewangles, oldangles );
+		cmd->impact_position = guess_vecWheelchairAngles;
+		cmd->impact_position[2] = 1;
 	}
 	else
 	{
-		VectorCopy( oldangles, cmd->viewangles );
+		cmd->impact_position[2] = 0;
+	}
+	
+	if ( g_iAlive )
+	{
+		if ( guess_iWheelchair )
+		{
+			VectorCopy( guess_vecWheelchairAngles, cmd->viewangles );
+			oldangles = guess_vecWheelchairAngles;
+		}
+		else
+		{
+			VectorCopy( viewangles, cmd->viewangles );
+			oldangles = viewangles;
+		}
+	}
+	else
+	{
+		if ( guess_iWheelchair )
+		{
+			VectorCopy( guess_vecWheelchairAngles, cmd->viewangles );
+		}
+		else
+		{
+			VectorCopy( oldangles, cmd->viewangles );
+		}
 	}
 
-	// buz: HACK - send our light level in roll angle
-	//  because cmd->lightlevel is buggy thing
-	cmd->viewangles[ROLL] = gLightLevel;
+	if ( GetClientVoiceMgr()->m_bTalking )
+	{
+		if ( cmd->viewangles[ROLL] != 1 )
+			cmd->viewangles[ROLL] = 1;
+	}
+	else if ( cmd->viewangles[ROLL] != 0 )
+	{
+		cmd->viewangles[ROLL] = 0;
+	}
+
+	cmd->is_donator = guess_iDonator;
 }
 
 /*
@@ -851,19 +1110,14 @@ int CL_ButtonBits( int bResetState )
 		bits |= IN_USE;
 	}
 
-	if (in_cancel)
+	if (in_attack3.state & 3)
 	{
 		bits |= IN_CANCEL;
 	}
 
-	if ( in_left.state & 3 )
+	if ( in_dodge.state & 3 )
 	{
 		bits |= IN_LEFT;
-	}
-	
-	if (in_right.state & 3)
-	{
-		bits |= IN_RIGHT;
 	}
 	
 	if ( in_moveleft.state & 3 )
@@ -891,7 +1145,17 @@ int CL_ButtonBits( int bResetState )
 		bits |= IN_ALT1;
 	}
 
+	if (in_speed.state & 3)
+	{
+		bits |= IN_RUN;
+	}
+
 	if ( in_score.state & 3 )
+	{
+		bits |= IN_SCORE;
+	}
+
+	if ( gEngfuncs.pfnGetLevelName() && strstr( gEngfuncs.pfnGetLevelName(), "cof_" ) )
 	{
 		bits |= IN_SCORE;
 	}
@@ -910,14 +1174,15 @@ int CL_ButtonBits( int bResetState )
 		in_forward.state &= ~2;
 		in_back.state &= ~2;
 		in_use.state &= ~2;
-		in_left.state &= ~2;
-		in_right.state &= ~2;
 		in_moveleft.state &= ~2;
 		in_moveright.state &= ~2;
 		in_attack2.state &= ~2;
+		in_attack3.state &= ~2;
 		in_reload.state &= ~2;
 		in_alt1.state &= ~2;
 		in_score.state &= ~2;
+		in_inventory.state &= ~2;
+		in_speed.state &= ~2;
 	}
 
 	return bits;
@@ -932,21 +1197,6 @@ CL_ResetButtonBits
 void CL_ResetButtonBits( int bits )
 {
 	int bitsNew = CL_ButtonBits( 0 ) ^ bits;
-
-	// Has the attack button been changed
-	if ( bitsNew & IN_ATTACK )
-	{
-		// Was it pressed? or let go?
-		if ( bits & IN_ATTACK )
-		{
-			KeyDown( &in_attack );
-		}
-		else
-		{
-			// totally clear state
-			in_attack.state &= ~7;
-		}
-	}
 }
 
 /*
@@ -960,10 +1210,6 @@ void InitInput (void)
 	gEngfuncs.pfnAddCommand ("-moveup",IN_UpUp);
 	gEngfuncs.pfnAddCommand ("+movedown",IN_DownDown);
 	gEngfuncs.pfnAddCommand ("-movedown",IN_DownUp);
-	gEngfuncs.pfnAddCommand ("+left",IN_LeftDown);
-	gEngfuncs.pfnAddCommand ("-left",IN_LeftUp);
-	gEngfuncs.pfnAddCommand ("+right",IN_RightDown);
-	gEngfuncs.pfnAddCommand ("-right",IN_RightUp);
 	gEngfuncs.pfnAddCommand ("+forward",IN_ForwardDown);
 	gEngfuncs.pfnAddCommand ("-forward",IN_ForwardUp);
 	gEngfuncs.pfnAddCommand ("+back",IN_BackDown);
@@ -978,8 +1224,8 @@ void InitInput (void)
 	gEngfuncs.pfnAddCommand ("-moveleft", IN_MoveleftUp);
 	gEngfuncs.pfnAddCommand ("+moveright", IN_MoverightDown);
 	gEngfuncs.pfnAddCommand ("-moveright", IN_MoverightUp);
-	gEngfuncs.pfnAddCommand ("+speed", IN_SpeedDown);
-	gEngfuncs.pfnAddCommand ("-speed", IN_SpeedUp);
+	gEngfuncs.pfnAddCommand ("+sprint", IN_SpeedDown);
+	gEngfuncs.pfnAddCommand ("-sprint", IN_SpeedUp);
 	gEngfuncs.pfnAddCommand ("+attack", IN_AttackDown);
 	gEngfuncs.pfnAddCommand ("-attack", IN_AttackUp);
 	gEngfuncs.pfnAddCommand ("+attack2", IN_Attack2Down);
@@ -1009,6 +1255,16 @@ void InitInput (void)
 	gEngfuncs.pfnAddCommand ("-graph", IN_GraphUp);
 	gEngfuncs.pfnAddCommand ("+break",IN_BreakDown);
 	gEngfuncs.pfnAddCommand ("-break",IN_BreakUp);
+	gEngfuncs.pfnAddCommand ("+attack3", IN_Attack3Down);
+	gEngfuncs.pfnAddCommand ("-attack3", IN_Attack3Up);
+	gEngfuncs.pfnAddCommand ("+dodge", IN_DodgeDown);
+	gEngfuncs.pfnAddCommand ("-dodge", IN_DodgeUp);
+	gEngfuncs.pfnAddCommand ("xboxfix", guess_IN_XboxFix);
+	gEngfuncs.pfnAddCommand ("documents", IN_Documents);
+	gEngfuncs.pfnAddCommand ("+inventory", IN_InventoryDown);
+	gEngfuncs.pfnAddCommand ("-inventory", IN_InventoryUp);
+	gEngfuncs.pfnAddCommand ("+objectives", IN_ObjectivesDown);
+	gEngfuncs.pfnAddCommand ("-objectives", IN_ObjectivesUp);
 
 	lookstrafe			= gEngfuncs.pfnRegisterVariable ( "lookstrafe", "0", FCVAR_ARCHIVE );
 	lookspring			= gEngfuncs.pfnRegisterVariable ( "lookspring", "0", FCVAR_ARCHIVE );
@@ -1016,19 +1272,48 @@ void InitInput (void)
 	cl_yawspeed			= gEngfuncs.pfnRegisterVariable ( "cl_yawspeed", "210", 0 );
 	cl_pitchspeed		= gEngfuncs.pfnRegisterVariable ( "cl_pitchspeed", "225", 0 );
 	cl_upspeed			= gEngfuncs.pfnRegisterVariable ( "cl_upspeed", "320", 0 );
-	cl_forwardspeed		= gEngfuncs.pfnRegisterVariable ( "cl_forwardspeed", "400", FCVAR_ARCHIVE );
-	cl_backspeed		= gEngfuncs.pfnRegisterVariable ( "cl_backspeed", "400", FCVAR_ARCHIVE );
-	cl_sidespeed		= gEngfuncs.pfnRegisterVariable ( "cl_sidespeed", "400", 0 );
+	cl_forwardspeed		= gEngfuncs.pfnRegisterVariable ( "cl_forwardspeed", "230", FCVAR_ARCHIVE );
+	cl_backspeed		= gEngfuncs.pfnRegisterVariable ( "cl_backspeed", "200", FCVAR_ARCHIVE );
+	cl_sidespeed		= gEngfuncs.pfnRegisterVariable ( "cl_sidespeed", "210", FCVAR_ARCHIVE );
 	cl_movespeedkey		= gEngfuncs.pfnRegisterVariable ( "cl_movespeedkey", "0.3", 0 );
 	cl_pitchup			= gEngfuncs.pfnRegisterVariable ( "cl_pitchup", "89", 0 );
-	cl_pitchdown		= gEngfuncs.pfnRegisterVariable ( "cl_pitchdown", "89", 0 );
+	cl_pitchdown		= gEngfuncs.pfnRegisterVariable ( "cl_pitchdown", "85", 0 );
 
 	cl_vsmoothing		= gEngfuncs.pfnRegisterVariable ( "cl_vsmoothing", "0.05", FCVAR_ARCHIVE );
+
+	cg_water			= gEngfuncs.pfnRegisterVariable ( "cg_water", "1", FCVAR_ARCHIVE );
+	cl_ripples			= gEngfuncs.pfnRegisterVariable ( "cl_ripples", "1", FCVAR_ARCHIVE );
+	cl_subtitles		= gEngfuncs.pfnRegisterVariable ( "cl_subtitles", "1", FCVAR_ARCHIVE );
+	r_weather			= gEngfuncs.pfnRegisterVariable ( "r_weather", "1", FCVAR_ARCHIVE );
+	fps_current			= gEngfuncs.pfnRegisterVariable ( "fps_current", "1", 0 );
+	cl_noiseeffect		= gEngfuncs.pfnRegisterVariable ( "cl_noiseeffect", "0", FCVAR_ARCHIVE );
+	cl_noiseamount		= gEngfuncs.pfnRegisterVariable ( "cl_noiseamount", "0.5", FCVAR_ARCHIVE );
+	cl_vignette			= gEngfuncs.pfnRegisterVariable ( "cl_vignette", "1", FCVAR_ARCHIVE );
+	cl_fovmultiplier	= gEngfuncs.pfnRegisterVariable ( "cl_fovmultiplier", "1", FCVAR_ARCHIVE );
 
 	m_pitch			    = gEngfuncs.pfnRegisterVariable ( "m_pitch","0.022", FCVAR_ARCHIVE );
 	m_yaw				= gEngfuncs.pfnRegisterVariable ( "m_yaw","0.022", FCVAR_ARCHIVE );
 	m_forward			= gEngfuncs.pfnRegisterVariable ( "m_forward","1", FCVAR_ARCHIVE );
 	m_side				= gEngfuncs.pfnRegisterVariable ( "m_side","0.8", FCVAR_ARCHIVE );
+
+	cl_lazyweapon_force		= gEngfuncs.pfnRegisterVariable ( "cl_lazyweapon_force", "2", FCVAR_ARCHIVE );
+	cl_weapon_idle_speed	= gEngfuncs.pfnRegisterVariable ( "cl_weapon_idle_speed", "4", FCVAR_ARCHIVE );
+	cl_weapon_idle_dampener	= gEngfuncs.pfnRegisterVariable ( "cl_weapon_idle_dampener", "2", FCVAR_ARCHIVE );
+	xbox_controller_sensitivityx	= gEngfuncs.pfnRegisterVariable ( "xbox_controller_sensitivityx", "10", FCVAR_ARCHIVE );
+	xbox_controller_sensitivityy	= gEngfuncs.pfnRegisterVariable ( "xbox_controller_sensitivityy", "10", FCVAR_ARCHIVE );
+	cl_smokeparticlelimit	= gEngfuncs.pfnRegisterVariable ( "cl_smokeparticlelimit", "5", FCVAR_ARCHIVE );
+	cl_cheapweaponsmoke		= gEngfuncs.pfnRegisterVariable ( "cl_cheapweaponsmoke", "0", FCVAR_ARCHIVE );
+	cl_bloodeffects			= gEngfuncs.pfnRegisterVariable ( "cl_bloodeffects", "1", FCVAR_ARCHIVE );
+	cl_cameraeffect			= gEngfuncs.pfnRegisterVariable ( "cl_cameraeffect", "0", FCVAR_ARCHIVE );
+	cl_crosshair			= gEngfuncs.pfnRegisterVariable ( "cl_crosshair", "1", FCVAR_ARCHIVE );
+	cl_fastcredits			= gEngfuncs.pfnRegisterVariable ( "cl_fastcredits", "0", FCVAR_ARCHIVE );
+	cl_waterspeed_x			= gEngfuncs.pfnRegisterVariable ( "cl_waterspeed_x", "32", FCVAR_ARCHIVE );
+	cl_waterspeed_y			= gEngfuncs.pfnRegisterVariable ( "cl_waterspeed_y", "20", FCVAR_ARCHIVE );
+	cl_coop_language		= gEngfuncs.pfnRegisterVariable ( "cl_coop_language", "1", FCVAR_ARCHIVE );
+	cl_lowflashlight		= gEngfuncs.pfnRegisterVariable ( "cl_lowflashlight", "0", FCVAR_ARCHIVE );
+	cl_propdistance			= gEngfuncs.pfnRegisterVariable ( "cl_propdistance", "0", FCVAR_ARCHIVE );
+	cl_downwiththesickness	= gEngfuncs.pfnRegisterVariable ( "cl_downwiththesickness", "0", FCVAR_ARCHIVE );
+	cl_nodoubletapdodge		= gEngfuncs.pfnRegisterVariable ( "cl_nodoubletapdodge", "0", FCVAR_ARCHIVE );
 
 	// Initialize third person camera controls.
 	CAM_Init();
@@ -1054,4 +1339,5 @@ void ShutdownInput (void)
 void DLLEXPORT HUD_Shutdown( void )
 {
 	ShutdownInput();
+	guess_MP3_Shutdown();
 }

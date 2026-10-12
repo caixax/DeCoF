@@ -10,6 +10,7 @@ va,name,kind,evidence
 1006C310,?__MsgFunc_Damage@@YAHPBDHPAX@Z,func,"position in client/cl_dll/health (name order), after ?VidInit@CHudHealth@@UAEHXZ; sizes retail 24, ours 24"
 1006C330,?__MsgFunc_Health@@YAHPBDHPAX@Z,func,"position in client/cl_dll/health (name order), after ?VidInit@CHudHealth@@UAEHXZ; sizes retail 24, ours 24"
 1006C350,?__MsgFunc_Syringe@@YAHPBDHPAX@Z,func,"position in client/cl_dll/health (name order), after ?__MsgFunc_Health@@YAHPBDHPAX@Z; sizes retail 24, ours 24"
+10078520,?CL_AdjustAngles@@YAXMPAM@Z,func,"position in client/cl_dll/input (name order), after edge before the first anchor; sizes retail 325, ours 325"
 10078670,?CL_ButtonBits@@YAHH@Z,func,"position in client/cl_dll/input (name order), after edge before the first anchor; sizes retail 436, ours 395"
 1007A870,?ShutdownInput@@YAXXZ,func,"position in client/cl_dll/input (name order), after ?KeyUp@@YAXPAUkbutton_s@@@Z; sizes retail 10, ours 10"
 1007AD60,?Force_CenterView_f@@YAXXZ,func,"position in client/cl_dll/inputw32 (name order), after edge before the first anchor; sizes retail 61, ours 49"
