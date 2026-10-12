@@ -17650,7 +17650,7 @@ hl,100FC0B0,5,_monster_furniture,monster_furniture,HLSDK,dlls/scripted.cpp,,,MAT
 hl,100FC0C0,5,_scripted_action,scripted_action,HLSDK,dlls/scripted.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( scripted_action, CCineMonster )"
 hl,100FC0D0,5,_scripted_sentence,scripted_sentence,HLSDK,dlls/scripted.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( scripted_sentence, CScriptedSentence )"
 hl,100FC0E0,5,_scripted_sequence,scripted_sequence,HLSDK,dlls/scripted.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( scripted_sequence, CCineMonster )"
-hl,100FC0F0,69,??0CHalfLifeRules@@QAE@XZ,CHalfLifeRules::CHalfLifeRules,HLSDK,dlls/singleplay_gamerules.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,40.00,hl_1.55_to_1.6a.csv,
+hl,100FC0F0,69,??0CHalfLifeRules@@QAE@XZ,CHalfLifeRules::CHalfLifeRules,HLSDK,dlls/singleplay_gamerules.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100FC140,13,?AllowAutoTargetCrosshair@CHalfLifeRules@@UAEHXZ,CHalfLifeRules::AllowAutoTargetCrosshair,HLSDK,dlls/singleplay_gamerules.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100FC150,8,?AmmoShouldRespawn@CHalfLifeRules@@UAEHPAVCBasePlayerAmmo@@@Z,CHalfLifeRules::AmmoShouldRespawn,HLSDK,dlls/singleplay_gamerules.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100FC160,8,?CanHaveItem@CHalfLifeRules@@UAEHPAVCBasePlayer@@PAVCItem@@@Z,CHalfLifeRules::CanHaveItem,HLSDK,dlls/singleplay_gamerules.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
@@ -17662,7 +17662,7 @@ hl,100FC1B0,3,?DeathNotice@CHalfLifeRules@@UAEXPAVCBasePlayer@@PAUentvars_s@@1@Z
 hl,100FC1C0,6,?FAllowFlashlight@CHalfLifeRules@@UAEHXZ,CHalfLifeRules::FAllowFlashlight,HLSDK,dlls/gamerules.h,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100FC1D0,6,?FAllowMonsters@CHalfLifeRules@@UAEHXZ,CHalfLifeRules::FAllowMonsters,HLSDK,dlls/singleplay_gamerules.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100FC1E0,8,?FPlayerCanRespawn@CHalfLifeRules@@UAEHPAVCBasePlayer@@@Z,CHalfLifeRules::FPlayerCanRespawn,HLSDK,dlls/singleplay_gamerules.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,100FC1F0,62,?FShouldSwitchWeapon@CHalfLifeRules@@UAEHPAVCBasePlayer@@PAVCBasePlayerItem@@@Z,CHalfLifeRules::FShouldSwitchWeapon,HLSDK,dlls/singleplay_gamerules.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,TODO,72.00,hl_1.55_to_1.6a.csv,
+hl,100FC1F0,62,?FShouldSwitchWeapon@CHalfLifeRules@@UAEHPAVCBasePlayer@@PAVCBasePlayerItem@@@Z,CHalfLifeRules::FShouldSwitchWeapon,HLSDK,dlls/singleplay_gamerules.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100FC230,9,?FlAmmoRespawnTime@CHalfLifeRules@@UAEMPAVCBasePlayerAmmo@@@Z,CHalfLifeRules::FlAmmoRespawnTime,HLSDK,dlls/singleplay_gamerules.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100FC240,3,?FlHealthChargerRechargeTime@CHalfLifeRules@@UAEMXZ,CHalfLifeRules::FlHealthChargerRechargeTime,HLSDK,dlls/singleplay_gamerules.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100FC250,9,?FlItemRespawnTime@CHalfLifeRules@@UAEMPAVCItem@@@Z,CHalfLifeRules::FlItemRespawnTime,HLSDK,dlls/singleplay_gamerules.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
@@ -17679,13 +17679,13 @@ hl,100FC410,3,?IsCoOp@CHalfLifeRules@@UAEHXZ,CHalfLifeRules::IsCoOp,HLSDK,dlls/s
 hl,100FC420,3,?IsDeathmatch@CHalfLifeRules@@UAEHXZ,CHalfLifeRules::IsDeathmatch,HLSDK,dlls/singleplay_gamerules.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100FC430,3,?IsMultiplayer@CHalfLifeRules@@UAEHXZ,CHalfLifeRules::IsMultiplayer,HLSDK,dlls/singleplay_gamerules.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100FC440,8,?ItemShouldRespawn@CHalfLifeRules@@UAEHPAVCItem@@@Z,CHalfLifeRules::ItemShouldRespawn,HLSDK,dlls/singleplay_gamerules.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,100FC450,45,?PlayFootstepSounds@CHalfLifeRules@@UAEHPAVCBasePlayer@@M@Z,CHalfLifeRules::PlayFootstepSounds,COF,dlls/singleplay_gamerules.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,0.00,hl_1.55_to_1.6a.csv,
+hl,100FC450,45,?PlayFootstepSounds@CHalfLifeRules@@UAEHPAVCBasePlayer@@M@Z,CHalfLifeRules::PlayFootstepSounds,COF,dlls/singleplay_gamerules.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100FC480,3,?PlayerGotAmmo@CHalfLifeRules@@UAEXPAVCBasePlayer@@PADH@Z,CHalfLifeRules::PlayerGotAmmo,HLSDK,dlls/singleplay_gamerules.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100FC490,3,?PlayerGotItem@CHalfLifeRules@@UAEXPAVCBasePlayer@@PAVCItem@@@Z,CHalfLifeRules::PlayerGotItem,HLSDK,dlls/singleplay_gamerules.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100FC4A0,3,?PlayerGotWeapon@CHalfLifeRules@@UAEXPAVCBasePlayer@@PAVCBasePlayerItem@@@Z,CHalfLifeRules::PlayerGotWeapon,HLSDK,dlls/singleplay_gamerules.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100FC4B0,3,?PlayerKilled@CHalfLifeRules@@UAEXPAVCBasePlayer@@PAUentvars_s@@1@Z,CHalfLifeRules::PlayerKilled,HLSDK,dlls/singleplay_gamerules.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100FC4C0,5,?PlayerRelationship@CHalfLifeRules@@UAEHPAVCBaseEntity@@0@Z,CHalfLifeRules::PlayerRelationship,HLSDK,dlls/singleplay_gamerules.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,100FC4D0,293,?PlayerSpawn@CHalfLifeRules@@UAEXPAVCBasePlayer@@@Z,CHalfLifeRules::PlayerSpawn,HLSDK,dlls/singleplay_gamerules.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,27.04,hl_1.55_to_1.6a.csv,
+hl,100FC4D0,293,?PlayerSpawn@CHalfLifeRules@@UAEXPAVCBasePlayer@@@Z,CHalfLifeRules::PlayerSpawn,HLSDK,dlls/singleplay_gamerules.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100FC600,3,?PlayerThink@CHalfLifeRules@@UAEXPAVCBasePlayer@@@Z,CHalfLifeRules::PlayerThink,HLSDK,dlls/singleplay_gamerules.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100FC610,3,?Think@CHalfLifeRules@@UAEXXZ,CHalfLifeRules::Think,HLSDK,dlls/singleplay_gamerules.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100FC620,33,?VecAmmoRespawnSpot@CHalfLifeRules@@UAE?AVVector@@PAVCBasePlayerAmmo@@@Z,CHalfLifeRules::VecAmmoRespawnSpot,HLSDK,dlls/singleplay_gamerules.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,

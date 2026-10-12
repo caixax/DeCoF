@@ -34,6 +34,12 @@ extern int gmsgMOTD;
 //=========================================================
 CHalfLifeRules::CHalfLifeRules( void )
 {
+	guess_m_bUnknownDC = false;
+	guess_m_iUnknownE4 = 0;
+	guess_m_iUnknownE0 = 0;
+
+	CVAR_SET_FLOAT( "sv_coop", 0 );
+
 	RefreshSkillData();
 }
 
@@ -76,6 +82,11 @@ BOOL CHalfLifeRules::FShouldSwitchWeapon( CBasePlayer *pPlayer, CBasePlayerItem 
 	}
 
 	if ( !pPlayer->m_pActiveItem->CanHolster() )
+	{
+		return FALSE;
+	}
+
+	if ( pWeapon->iFlags() & guess_ITEM_FLAG_NOAUTOSWITCHTO )
 	{
 		return FALSE;
 	}
@@ -183,7 +194,19 @@ float CHalfLifeRules::FlPlayerFallDamage( CBasePlayer *pPlayer )
 //=========================================================
 void CHalfLifeRules :: PlayerSpawn( CBasePlayer *pPlayer )
 {
+	CBaseEntity	*pTriggerEntity = NULL;
 	CBaseEntity	*pWeaponEntity = NULL;
+
+	if ( strlen( CVAR_GET_STRING( "map_trigger_ent" ) ) > 1 && !strcmp( CVAR_GET_STRING( "map_trigger_ent_map" ), STRING( gpGlobals->mapname ) ) )
+	{
+		while ( pTriggerEntity = UTIL_FindEntityByTargetname( pTriggerEntity, CVAR_GET_STRING( "map_trigger_ent" ) ) )
+		{
+			pTriggerEntity->Use( pPlayer, pPlayer, USE_TOGGLE, 0 );
+		}
+
+		CVAR_SET_STRING( "map_trigger_ent", "" );
+		CVAR_SET_STRING( "map_trigger_ent_map", "" );
+	}
 
 // LRC what's wrong with allowing "game_player_equip" entities in single player? (The
 // level designer is God: if he wants the player to start with a weapon, we should allow it!)
@@ -394,5 +417,15 @@ int CHalfLifeRules::PlayerRelationship( CBaseEntity *pPlayer, CBaseEntity *pTarg
 //=========================================================
 BOOL CHalfLifeRules :: FAllowMonsters( void )
 {
+	return TRUE;
+}
+
+//=========================================================
+//=========================================================
+int CHalfLifeRules :: PlayFootstepSounds( CBasePlayer *pl, float fvol )
+{
+	if ( pl->pev->vuser4[0] == 1 )
+		return FALSE;
+
 	return TRUE;
 }
