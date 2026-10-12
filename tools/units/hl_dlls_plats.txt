@@ -133,3 +133,4 @@ _scripted_trainsequence
 ?StartSequence@CFuncTrain@@QAEXPAVCTrainSequence@@@Z
 ?StopSequence@CFuncTrackTrain@@QAEXXZ
 ?StopSequence@CFuncTrain@@QAEXXZ
+?ObjectCaps@CFuncTrackTrain@@UAEHXZ

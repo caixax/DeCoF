@@ -23,3 +23,4 @@ _inter_door_exit
 ?IsLocked@CInterDoor@@QAEHXZ
 ?ShiftMonsters@CInterDoor@@QAEXXZ
 ?StartSequence@CInterDoor@@QAEXXZ
+??$GetClassPtr@VCPointEntity@@@@YAPAVCPointEntity@@PAV0@@Z

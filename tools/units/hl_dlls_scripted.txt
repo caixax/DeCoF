@@ -42,3 +42,5 @@ _scripted_sentence
 _aiscripted_sequence
 _scripted_action
 _scripted_sequence
+?GetState@CCineMonster@@UAE?AW4STATE@@XZ
+?ObjectCaps@CCineMonster@@UAEHXZ

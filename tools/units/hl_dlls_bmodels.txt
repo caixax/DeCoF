@@ -92,3 +92,6 @@ _func_wall_toggle
 ?TurnOff@CFuncFogField@@QAEXXZ
 ?TurnOn@CFuncFogField@@QAEXXZ
 ?UpdateSpeed@CFuncConveyor@@QAEXM@Z
+?GetDelay@CBaseToggle@@UAEMXZ
+?GetToggleState@CBaseToggle@@UAEHXZ
+?HandleAnimEvent@CBaseAnimating@@UAEXPAUMonsterEvent_t@@@Z

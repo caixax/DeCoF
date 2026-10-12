@@ -32,3 +32,5 @@
 _func_breakable
 _func_pushable
 ?IsBreakable@CBreakable@@QAEHXZ
+?Classify@CBreakable@@UAEHXZ
+?ObjectCaps@CBreakable@@UAEHXZ

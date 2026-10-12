@@ -19,3 +19,4 @@
 ?TeamWithFewestPlayers@CHalfLifeTeamplay@@AAEPBDXZ
 ?Think@CHalfLifeTeamplay@@UAEXXZ
 ?UpdateGameMode@CHalfLifeTeamplay@@UAEXPAVCBasePlayer@@@Z
+?GetGameDescription@CHalfLifeTeamplay@@UAEPBDXZ

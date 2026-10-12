@@ -220,3 +220,6 @@ _player
 ??$GetClassPtr@VCSprayCan@@@@YAPAVCSprayCan@@PAV0@@Z
 ??$GetClassPtr@VCBloodSplat@@@@YAPAVCBloodSplat@@PAV0@@Z
 ??$GetClassPtr@VCBasePlayerItem@@@@YAPAVCBasePlayerItem@@PAV0@@Z
+?GiveAmmo@CBasePlayer@@UAEHHPADH_N@Z
+?GiveNamedItem@CBasePlayer@@QAEXPBD_N1@Z
+?VARS@@YAPAUentvars_s@@H@Z

@@ -38,3 +38,5 @@
 ?VecItemRespawnSpot@CHalfLifeRules@@UAE?AVVector@@PAVCItem@@@Z
 ?VecWeaponRespawnSpot@CHalfLifeRules@@UAE?AVVector@@PAVCBasePlayerItem@@@Z
 ?WeaponShouldRespawn@CHalfLifeRules@@UAEHPAVCBasePlayerItem@@@Z
+?FAllowFlashlight@CHalfLifeRules@@UAEHXZ
+?GetTeamID@CHalfLifeRules@@UAEPBDPAVCBaseEntity@@@Z

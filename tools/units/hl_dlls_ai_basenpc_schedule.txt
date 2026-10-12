@@ -10,3 +10,7 @@
 ?IScheduleFlags@CBaseMonster@@QAEHXZ
 ?NextScheduledTask@CBaseMonster@@QAEXXZ
 ?SetTurnActivity@CBaseMonster@@QAEXXZ
+?FClassnameIs@@YAHPAUentvars_s@@PBD@Z
+?FStrEq@@YAHPBD0@Z
+?IsAction@CCineMonster@@QAEHXZ
+?Normalize@Vector2D@@QBE?AV1@XZ

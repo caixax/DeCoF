@@ -104,3 +104,4 @@ _weaponbox
 ?Save@CCSFlashbang@@UAEHAAVCSave@@@Z
 ?WeaponDelay@CBasePlayerWeapon@@QAEXH@Z
 ?WeaponDelayTime@CBasePlayerWeapon@@QAEXM@Z
+?iMaxAmmo1@CBasePlayerItem@@QAEHXZ

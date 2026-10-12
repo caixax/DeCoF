@@ -42,3 +42,5 @@ _GetEntityAPI2
 ?IsDormant@CBaseEntity@@QAEHXZ
 ?Set@EHANDLE@@QAEPAUedict_s@@PAU2@@Z
 ?ShouldToggle@CBaseEntity@@QAEHW4USE_TYPE@@@Z
+?Activate@CBaseEntity@@UAEXXZ
+?Normalize@Vector@@QBE?AV1@XZ

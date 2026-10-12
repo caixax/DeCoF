@@ -21,3 +21,4 @@ _Q_log2
 __DotProduct
 __VectorCopy
 _AngleBetweenVectors
+_CrossProduct

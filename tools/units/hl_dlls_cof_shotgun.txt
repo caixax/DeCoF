@@ -24,3 +24,4 @@
 ?WeaponIdle@CShotgun@@UAEXXZ
 _ammo_shells
 _weapon_shotgun
+?iItemSlot@CShotgun@@UAEHXZ

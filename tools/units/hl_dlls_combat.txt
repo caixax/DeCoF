@@ -42,3 +42,5 @@
 ?Spawn@CGib@@QAEXPBD@Z
 ?SpawnGib@CGib@@SAXPAUentvars_s@@PBDH@Z
 ?SpawnStickyGibs@CGib@@SAXPAUentvars_s@@VVector@@H@Z
+?SpawnHeadGib@CGib@@SAXPAUentvars_s@@PBD@Z
+?SpawnRandomGibs@CGib@@SAXPAUentvars_s@@HHPBD@Z

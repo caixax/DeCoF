@@ -59,3 +59,5 @@ _item_phonebattery
 _item_security
 _item_suit
 _world_items
+?MyTouch@CItem@@UAEHPAVCBasePlayer@@@Z
+?ObjectCaps@CItem@@UAEHXZ

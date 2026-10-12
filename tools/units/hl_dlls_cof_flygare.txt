@@ -44,3 +44,4 @@ _monster_nerd
 ?GetIdealSpeed@CFlier@@QAEMMAAVVector@@@Z
 ?MetalHitSound@CFlier@@QAEXXZ
 ?Shoot@CAcidSpit@@SAXPAUentvars_s@@VVector@@1@Z
+?MySquadMonsterPointer@CSquadMonster@@UAEPAV1@XZ

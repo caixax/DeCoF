@@ -15,3 +15,4 @@ _soundent
 ?FIsScent@CSound@@QAEHXZ
 ?FIsSound@CSound@@QAEHXZ
 ?FreeSound@CSoundEnt@@SAXHH@Z
+?ObjectCaps@CSoundEnt@@UAEHXZ

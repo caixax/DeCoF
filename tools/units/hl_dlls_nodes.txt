@@ -58,3 +58,4 @@ _testhull
 ?AddNode@CNodeViewer@@QAEXHH@Z
 ?HullIndex@CGraph@@QAEHPBVCBaseEntity@@@Z
 ?Spawn@CTestHull@@QAEXPAUentvars_s@@@Z
+?ObjectCaps@CNodeEnt@@EAEHXZ

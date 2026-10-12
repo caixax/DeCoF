@@ -18,3 +18,4 @@ _monster_crab
 ??$GetClassPtr@VCGib@@@@YAPAVCGib@@PAV0@@Z
 ?AttackSound@CCrab@@QAEXXZ
 ?IsHeadless@CCrab@@QAEHXZ
+?ObjectCaps@CGib@@UAEHXZ

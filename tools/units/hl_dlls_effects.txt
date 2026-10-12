@@ -738,3 +738,10 @@ _cof_document
 ?VecToYaw@CEnvModel@@AAEMVVector@@@Z
 ?YesActivate@CCofYesNo@@QAEXPAVCBaseEntity@@@Z
 ??$GetClassPtr@VCShot@@@@YAPAVCShot@@PAV0@@Z
+?Center@CBeam@@UAE?AVVector@@XZ
+?GetState@CLaser@@UAE?AW4STATE@@XZ
+?GetState@CSprite@@UAE?AW4STATE@@XZ
+?ObjectCaps@CBeam@@UAEHXZ
+?ObjectCaps@CRainModify@@UAEHXZ
+?ObjectCaps@CRainSettings@@UAEHXZ
+?ObjectCaps@CSprite@@UAEHXZ

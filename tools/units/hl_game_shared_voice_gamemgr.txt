@@ -8,3 +8,5 @@
 ?VoiceServerDebug@@YAXPBDZZ
 ?PlayerHasBlockedPlayer@CVoiceGameMgr@@QAE_NPAVCBasePlayer@@0@Z
 ?SetHelper@CVoiceGameMgr@@QAEXPAVIVoiceGameMgrHelper@@@Z
+?CallMonsterThink@CBaseMonster@@QAEXXZ
+?SUB_CallUseToggle@CBaseEntity@@QAEXXZ
