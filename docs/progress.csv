@@ -15023,19 +15023,19 @@ hl,1006A0C0,343,?UTIL_FindRoofBossTargetsInSphere@@YAHPAPAVCBaseEntity@@HABVVect
 hl,1006A290,5,_info_roofboss_target,info_roofboss_target,HLSDK,dlls/cof_roofboss.cpp,,,TODO,0.0,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( info_roofboss_target, CInfoRoofBossTarget )"
 hl,1006A2A0,5,_monster_roofboss,monster_roofboss,HLSDK,dlls/cof_roofboss.cpp,,,TODO,0.0,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( monster_roofboss, CRoofBoss )"
 hl,1006A2B0,5,_roofboss_head,roofboss_head,HLSDK,dlls/cof_roofboss.cpp,,,TODO,0.0,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( roofboss_head, CRoofBossHead )"
-hl,1006A2C0,92,??$GetClassPtr@VCRCrazy@@@@YAPAVCRCrazy@@PAV0@@Z,GetClassPtr<CRCrazy>,HLSDK,dlls/cof_runningcrazy.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,TODO,0.0,jmp_target_of_export+rtti,
-hl,1006A320,82,?AlertSound@CRCrazy@@UAEXXZ,CRCrazy::AlertSound,COF,dlls/cof_runningcrazy.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
-hl,1006A380,5,?CheckRangeAttack1@CRCrazy@@UAEHMM@Z,CRCrazy::CheckRangeAttack1,COF,dlls/cof_runningcrazy.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
-hl,1006A390,5,?CheckRangeAttack2@CRCrazy@@UAEHMM@Z,CRCrazy::CheckRangeAttack2,COF,dlls/cof_runningcrazy.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
-hl,1006A3A0,17,?Classify@CRCrazy@@UAEHXZ,CRCrazy::Classify,COF,dlls/cof_runningcrazy.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
-hl,1006A3C0,639,?HandleAnimEvent@CRCrazy@@UAEXPAUMonsterEvent_t@@@Z,CRCrazy::HandleAnimEvent,COF,dlls/cof_runningcrazy.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
-hl,1006A640,98,?IgnoreConditions@CRCrazy@@UAEHXZ,CRCrazy::IgnoreConditions,COF,dlls/cof_runningcrazy.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
-hl,1006A6B0,354,?Killed@CRCrazy@@UAEXPAUentvars_s@@H@Z,CRCrazy::Killed,COF,dlls/cof_runningcrazy.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
-hl,1006A820,91,?Precache@CRCrazy@@UAEXXZ,CRCrazy::Precache,COF,dlls/cof_runningcrazy.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
-hl,1006A880,52,?SetYawSpeed@CRCrazy@@UAEXXZ,CRCrazy::SetYawSpeed,COF,dlls/cof_runningcrazy.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
-hl,1006A8C0,331,?Spawn@CRCrazy@@UAEXXZ,CRCrazy::Spawn,COF,dlls/cof_runningcrazy.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
-hl,1006AA10,491,?TakeDamage@CRCrazy@@UAEHPAUentvars_s@@0MH@Z,CRCrazy::TakeDamage,COF,dlls/cof_runningcrazy.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
-hl,1006AC00,5,_monster_rcrazy,monster_rcrazy,HLSDK,dlls/cof_runningcrazy.cpp,,,TODO,0.0,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( monster_rcrazy, CRCrazy )"
+hl,1006A2C0,92,??$GetClassPtr@VCRCrazy@@@@YAPAVCRCrazy@@PAV0@@Z,GetClassPtr<CRCrazy>,HLSDK,dlls/cof_runningcrazy.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
+hl,1006A320,82,?AlertSound@CRCrazy@@UAEXXZ,CRCrazy::AlertSound,COF,dlls/cof_runningcrazy.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
+hl,1006A380,5,?CheckRangeAttack1@CRCrazy@@UAEHMM@Z,CRCrazy::CheckRangeAttack1,COF,dlls/cof_runningcrazy.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
+hl,1006A390,5,?CheckRangeAttack2@CRCrazy@@UAEHMM@Z,CRCrazy::CheckRangeAttack2,COF,dlls/cof_runningcrazy.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
+hl,1006A3A0,17,?Classify@CRCrazy@@UAEHXZ,CRCrazy::Classify,COF,dlls/cof_runningcrazy.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
+hl,1006A3C0,639,?HandleAnimEvent@CRCrazy@@UAEXPAUMonsterEvent_t@@@Z,CRCrazy::HandleAnimEvent,COF,dlls/cof_runningcrazy.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
+hl,1006A640,98,?IgnoreConditions@CRCrazy@@UAEHXZ,CRCrazy::IgnoreConditions,COF,dlls/cof_runningcrazy.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
+hl,1006A6B0,354,?Killed@CRCrazy@@UAEXPAUentvars_s@@H@Z,CRCrazy::Killed,COF,dlls/cof_runningcrazy.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
+hl,1006A820,91,?Precache@CRCrazy@@UAEXXZ,CRCrazy::Precache,COF,dlls/cof_runningcrazy.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
+hl,1006A880,52,?SetYawSpeed@CRCrazy@@UAEXXZ,CRCrazy::SetYawSpeed,COF,dlls/cof_runningcrazy.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
+hl,1006A8C0,331,?Spawn@CRCrazy@@UAEXXZ,CRCrazy::Spawn,COF,dlls/cof_runningcrazy.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
+hl,1006AA10,491,?TakeDamage@CRCrazy@@UAEHPAUentvars_s@@0MH@Z,CRCrazy::TakeDamage,COF,dlls/cof_runningcrazy.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
+hl,1006AC00,5,_monster_rcrazy,monster_rcrazy,HLSDK,dlls/cof_runningcrazy.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( monster_rcrazy, CRCrazy )"
 hl,1006AC10,92,??$GetClassPtr@VCSawCrazy@@@@YAPAVCSawCrazy@@PAV0@@Z,GetClassPtr<CSawCrazy>,HLSDK,dlls/cof_sawcrazy.cpp,1.4,1.4->1.55 same,TODO,0.0,jmp_target_of_export+rtti,
 hl,1006AC70,5,?CheckMeleeAttack1@CSawCrazy@@UAEHMM@Z,CSawCrazy::CheckMeleeAttack1,COF,dlls/cof_sawcrazy.cpp,1.4,1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
 hl,1006AC80,5,?CheckMeleeAttack2@CSawCrazy@@UAEHMM@Z,CSawCrazy::CheckMeleeAttack2,COF,dlls/cof_sawcrazy.cpp,1.4,1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
