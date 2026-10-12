@@ -28,3 +28,9 @@ The reconstructed source keeps the behavior of the retail 1.6a binaries, includi
 | `CFaster::Precache` (CoF_Faster.cpp) | Precaches `pDeathSounds` twice. | two identical precache loops |
 | `CZombie::TraceAttack` (CoF_Slower.cpp) | Calls `IsHeadless()` and ignores the result (retail drops the call). | 1.55 call with no use of the result |
 | `CZombie::Spawn` (CoF_Slower.cpp) | Uneven hull: the minimum is `-scale, -scale, 0`, the maximum the fixed `8, 8, 72`. | the UTIL_SetSize arguments |
+| `PM_CheckParamters` (pm_shared.c) | `inwheelchair` is set to 0 or 1 and then tested with `!= 2`, so the test is always true. | the compare constant |
+| `PM_PlayStepSound` (pm_shared.c) | Twig snaps use `RandomLong( 0, 8 )` with cases 0 and 2 to 9: case 1 plays nothing and twig_snap9 never plays; the volume is `RandomLong( 0, 0 ) + fvol`; `roll` is set to 0 in both branches and then doubled. | the switch range and the arguments |
+| `PM_DropPunchAngle` (pm_shared.c) | The `damping = 3` assignments are always overwritten. | dead stores in 1.55 |
+| `PM_UnDuckNew` (pm_shared.c) | Sets `bInDuck = true` right before testing `!bInDuck`; nothing calls it. | the store before the test |
+| `PM_WalkMove` (pm_shared.c) | The low stance multiplies wishspeed by 0.75 a second time when `iStepLeft` is set. | two multiplies by 0.75 |
+| `PM_PlayWaterSounds` (pm_shared.c) | Empty in 1.6a (and without code in 1.55), so entering or leaving water plays no wade sound, although PM_PlayerMove still calls it. | retail body is `ret 0` |
