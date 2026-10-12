@@ -24,6 +24,21 @@
 #include "util.h"
 #include "cbase.h"
 
+extern int g_iAoMLevels;
+
+// buz: dynamic light entity
+#define SF_DYNLIGHT_STARTOFF 1
+
+class CDynamicLight : public CPointEntity
+{
+public:
+	void Spawn( void );
+	void Precache( void );
+	STATE GetState( void );
+	void Use( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE useType, float value );
+	static CDynamicLight *CreateLight( Vector origin, int r, int g, int b, int radius );
+};
+
 //LRC
 int GetStdLightStyle (int iStyle)
 {
@@ -194,6 +209,33 @@ void CLight :: KeyValue( KeyValueData* pkvd)
 		pev->target = ALLOC_STRING( pkvd->szValue );
 		pkvd->fHandled = TRUE;
 	}
+	else if (FStrEq(pkvd->szKeyName, "_light"))
+	{
+		int r, g, b, v, j;
+		j = sscanf( pkvd->szValue, "%d %d %d %d\n", &r, &g, &b, &v );
+		if (j == 1)
+		{
+			g = b = r;
+		}
+		else if (j == 4)
+		{
+			r = r * (v / 255.0);
+			g = g * (v / 255.0);
+			b = b * (v / 255.0);
+		}
+
+		// simulate qrad direct, ambient,and gamma adjustments, as well as engine scaling
+		r = pow( r / 114.0, 0.6 ) * 264;
+		g = pow( g / 114.0, 0.6 ) * 264;
+		b = pow( b / 114.0, 0.6 ) * 264;
+
+		pev->iuser1 = r;
+		pev->iuser2 = g;
+		pev->iuser3 = b;
+		pev->iuser4 = v;
+
+		pkvd->fHandled = TRUE;
+	}
 	else
 	{
 		CPointEntity::KeyValue( pkvd );
@@ -287,6 +329,34 @@ void CLight :: Spawn( void )
 	{       // inert light
 		REMOVE_ENTITY(ENT(pev));
 		return;
+	}
+
+	if (g_iAoMLevels)
+	{
+		if (pev->targetname)
+		{
+			CDynamicLight *pLight = CDynamicLight::CreateLight( pev->origin, pev->rendercolor.x, pev->rendercolor.y, pev->rendercolor.z, 100 );
+
+			if (pLight)
+			{
+				pLight->pev->targetname = pev->targetname;
+				pLight->pev->rendercolor.x = pev->iuser1;
+				pLight->pev->rendercolor.y = pev->iuser2;
+				pLight->pev->rendercolor.z = pev->iuser3;
+				pLight->pev->origin = pev->origin;
+				pLight->pev->renderamt = pev->iuser4;
+				pLight->pev->renderfx = 71; // dynamic light
+
+				if (FBitSet(pev->spawnflags,SF_LIGHT_START_OFF))
+					pLight->pev->spawnflags = SF_DYNLIGHT_STARTOFF;
+				else
+					pLight->pev->spawnflags = 0;
+
+				pLight->Spawn();
+				REMOVE_ENTITY(ENT(pev));
+				return;
+			}
+		}
 	}
 	
 	if (FBitSet(pev->spawnflags,SF_LIGHT_START_OFF))
