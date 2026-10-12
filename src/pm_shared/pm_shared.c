@@ -68,12 +68,12 @@ typedef struct hull_s
 } hull_t;
 
 // Ducking time
-#define TIME_TO_DUCK	0.4
+#define TIME_TO_DUCK	0.6
 #define VEC_DUCK_HULL_MIN	-18
 #define VEC_DUCK_HULL_MAX	18
 #define VEC_DUCK_VIEW		12
 #define PM_DEAD_VIEWHEIGHT	-8
-#define MAX_CLIMB_SPEED	200
+#define MAX_CLIMB_SPEED	90
 #define STUCK_MOVEUP 1
 #define STUCK_MOVEDOWN -1
 #define VEC_HULL_MIN		-36
@@ -95,11 +95,16 @@ typedef struct hull_s
 #define CHAR_TEX_COMPUTER	'P'
 #define CHAR_TEX_GLASS		'Y'
 #define CHAR_TEX_FLESH		'F'
-// buz: paranoia texture types:
-#define CHAR_TEX_WOODS		'Z'
-#define CHAR_TEX_ASFALT		'A'
-#define CHAR_TEX_BETON		'B'
-#define CHAR_TEX_GRASS		'R'
+// Cry of Fear texture types (names from sound/materials.txt):
+#define CHAR_TEX_CARPET		'Z'
+#define CHAR_TEX_GRASS		'U'
+#define CHAR_TEX_MUD		'I'
+#define CHAR_TEX_SAND		'O'
+#define CHAR_TEX_SNOW		'P'
+#define CHAR_TEX_BRKGLASS	'Y'
+#define CHAR_TEX_PAPER		'H'
+#define CHAR_TEX_GRAVEL		'R'
+#define CHAR_TEX_RANDOMTWIGSNAP	'B'
 
 #define STEP_CONCRETE	0		// default step sound
 #define STEP_METAL		1		// metal floor
@@ -110,12 +115,18 @@ typedef struct hull_s
 #define STEP_SLOSH		6		// shallow liquid puddle
 #define STEP_WADE		7		// wading in liquid
 #define STEP_LADDER		8		// climbing ladder
-// buz: paranoia step types:
 #define STEP_WOOD		9
-#define STEP_WOODS		10
-#define STEP_ASFALT		11
-#define STEP_BETON		12
-#define STEP_GRASS		13
+// step types of the Cry of Fear texture types:
+#define STEP_CARPET		10
+#define STEP_FLESH		11
+#define STEP_GRASS		12
+#define STEP_MUD		13
+#define STEP_SAND		14
+#define STEP_SNOW		15
+#define STEP_BRKGLASS	16
+#define STEP_PAPER		17
+#define STEP_GRAVEL		18
+#define STEP_RANDOMTWIGSNAP	19
 
 #define PLAYER_FATAL_FALL_SPEED		1024// approx 60 feet
 #define PLAYER_MAX_SAFE_FALL_SPEED	580// approx 20 feet
@@ -158,8 +169,12 @@ static int rgStuckLast[MAX_CLIENTS][2];
 static int gcTextures = 0;
 static char grgszTextureName[CTEXTURESMAX][CBTEXTURENAMEMAX];	
 static char grgchTextureType[CTEXTURESMAX];
+static qboolean bTextureTypeInit = false;
 
 int g_onladder = 0;
+
+int iClientResetMaterials;
+extern int foot_splash;
 
 void PM_SwapTextures( int i, int j )
 {
@@ -202,7 +217,7 @@ void PM_InitTextureTypes()
 	int i, j;
 	byte *pMemFile;
 	int fileSize, filePos;
-	static qboolean bTextureTypeInit = false;
+	const char *szValue;
 
 	if ( bTextureTypeInit )
 		return;
@@ -213,8 +228,21 @@ void PM_InitTextureTypes()
 	gcTextures = 0;
 	memset(buffer, 0, 512);
 
-	fileSize = pmove->COM_FileSize( "sound/materials.txt" );
-	pMemFile = pmove->COM_LoadFile( "sound/materials.txt", 5, NULL );
+	szValue = pmove->PM_Info_ValueForKey( pmove->physinfo, "mtl" );
+
+	if ( szValue && strlen( szValue ) > 2 )
+	{
+		fileSize = pmove->COM_FileSize( szValue );
+		pMemFile = pmove->COM_LoadFile( szValue, 5, NULL );
+
+		pmove->Con_Printf( "Loading CUSTOM materials %s\n", szValue );
+	}
+	else
+	{
+		fileSize = pmove->COM_FileSize( "sound/materials.txt" );
+		pMemFile = pmove->COM_LoadFile( "sound/materials.txt", 5, NULL );
+	}
+
 	if ( !pMemFile )
 		return;
 
@@ -324,6 +352,17 @@ void PM_PlayGroupSound( const char* szValue, int irand, float fvol )
 	pmove->PM_PlaySound( CHAN_BODY, szValue, fvol, ATTN_NORM, 0, PITCH_NORM );
 }
 
+void PM_ViewPunch( float p, float y, float r )
+{
+	if ( pmove->multiplayer )
+		return;
+
+	// vuser3 is punch speed
+	pmove->vuser3[0] -= p * 20;
+	pmove->vuser3[1] += y * 20;
+	pmove->vuser3[2] += r * 20;
+}
+
 void PM_PlayStepSound( int step, float fvol )
 {
 	static int iSkipStep = 0;
@@ -331,14 +370,87 @@ void PM_PlayStepSound( int step, float fvol )
 	vec3_t hvel;
 	const char* szValue;
 	int iType;
+	int bagpitch;
+	int pitchrand;
+	int low;
+	int roll;
 
 	pmove->iStepLeft = !pmove->iStepLeft;
+
+	if ( pmove->fuser3 )
+		return;
 
 	if ( !pmove->runfuncs )
 	{
 		return;
 	}
-	
+
+	// reload the material list when the client asks for it
+	if ( iClientResetMaterials == 1 )
+	{
+		bTextureTypeInit = false;
+		iClientResetMaterials = 0;
+		PM_InitTextureTypes();
+		bTextureTypeInit = true;
+	}
+
+	// equipment noise
+	if ( ( pmove->cmd.buttons & IN_RUN ) && ( pmove->flags & (1<<18) ) )
+	{
+		if ( pmove->waterlevel < 3 )
+		{
+			bagpitch = PITCH_NORM + pmove->RandomLong( -30, 30 );
+
+			if ( pmove->multiplayer )
+				pmove->PM_PlaySound( CHAN_AUTO, "player/sprint/equipment_movement.wav", 0.7, ATTN_NORM, 0, bagpitch );
+			else
+				pmove->PM_PlaySound( CHAN_AUTO, "player/sprint/bag_movement.wav", 0.7, ATTN_NORM, 0, bagpitch );
+		}
+	}
+	else
+	{
+		if ( pmove->waterlevel < 3 )
+		{
+			bagpitch = PITCH_NORM + pmove->RandomLong( -30, 30 );
+
+			if ( pmove->multiplayer )
+				pmove->PM_PlaySound( CHAN_AUTO, "player/sprint/equipment_movement.wav", 0.1, ATTN_NORM, 0, bagpitch );
+			else
+				pmove->PM_PlaySound( CHAN_AUTO, "player/sprint/bag_movement.wav", 0.1, ATTN_NORM, 0, bagpitch );
+		}
+	}
+
+	low = atoi( pmove->PM_Info_ValueForKey( pmove->physinfo, "low" ) );
+
+	// view bob on every step
+	if ( pmove->waterlevel < 3 && !pmove->multiplayer )
+	{
+		if ( low )
+		{
+			if ( pmove->iStepLeft )
+				roll = -2;
+			else
+				roll = 1;
+
+			if ( ( pmove->cmd.buttons & IN_RUN ) && ( pmove->flags & (1<<18) ) )
+				PM_ViewPunch( -3, 1, roll );
+			else
+				PM_ViewPunch( -0.75, 0.5, roll );
+		}
+		else
+		{
+			if ( pmove->iStepLeft )
+				roll = 0;
+			else
+				roll = 0;
+
+			if ( ( pmove->cmd.buttons & IN_RUN ) && ( pmove->flags & (1<<18) ) )
+				PM_ViewPunch( -3, 1, roll * 2 );
+			else
+				PM_ViewPunch( -0.75, 0.5, roll );
+		}
+	}
+
 	irand = pmove->RandomLong(0,1) + ( pmove->iStepLeft * 2 );
 
 	// FIXME mp_footsteps needs to be a movevar
@@ -348,8 +460,8 @@ void PM_PlayStepSound( int step, float fvol )
 	VectorCopy( pmove->velocity, hvel );
 	hvel[2] = 0.0;
 
-	if ( pmove->multiplayer && ( !g_onladder && Length( hvel ) <= 220 ) )
-		return;
+//	if ( pmove->multiplayer && ( !g_onladder && Length( hvel ) <= 220 ) )
+//		return;
 
 	//LRC - custom footstep sounds
 	switch ( step )
@@ -398,6 +510,18 @@ void PM_PlayStepSound( int step, float fvol )
 			step = iType;
 	}
 
+	// crawling noise
+	if ( ( pmove->flags & FL_DUCKING ) && pmove->waterlevel < 3 )
+	{
+		switch ( pmove->RandomLong( 0, 3 ) )
+		{
+		case 0:	pmove->PM_PlaySound( CHAN_AUTO, "player/footsteps/crawl1.wav", 0.7, ATTN_NORM, 0, PITCH_NORM );	break;
+		case 1:	pmove->PM_PlaySound( CHAN_AUTO, "player/footsteps/crawl2.wav", 0.7, ATTN_NORM, 0, PITCH_NORM );	break;
+		case 2:	pmove->PM_PlaySound( CHAN_AUTO, "player/footsteps/crawl3.wav", 0.7, ATTN_NORM, 0, PITCH_NORM );	break;
+		case 3:	pmove->PM_PlaySound( CHAN_AUTO, "player/footsteps/crawl4.wav", 0.7, ATTN_NORM, 0, PITCH_NORM );	break;
+		}
+	}
+
 	// irand - 0,1 for right foot, 2,3 for left foot
 	// used to alternate left and right foot
 	// FIXME, move to player state
@@ -406,87 +530,234 @@ void PM_PlayStepSound( int step, float fvol )
 	{
 	default:
 	case STEP_CONCRETE:
-		switch (irand)
+		switch ( pmove->RandomLong( 0, 3 ) )
 		{
 		// right foot
-		case 0:	pmove->PM_PlaySound( CHAN_BODY, "player/pl_step1.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
-		case 1:	pmove->PM_PlaySound( CHAN_BODY, "player/pl_step3.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
+		case 0:	pmove->PM_PlaySound( CHAN_BODY, "player/footsteps/concrete1.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
+		case 1:	pmove->PM_PlaySound( CHAN_BODY, "player/footsteps/concrete2.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
 		// left foot
-		case 2:	pmove->PM_PlaySound( CHAN_BODY, "player/pl_step2.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
-		case 3:	pmove->PM_PlaySound( CHAN_BODY, "player/pl_step4.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
+		case 2:	pmove->PM_PlaySound( CHAN_BODY, "player/footsteps/concrete3.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
+		case 3:	pmove->PM_PlaySound( CHAN_BODY, "player/footsteps/concrete4.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
+		}
+		break;
+	case STEP_WOOD:
+		switch ( pmove->RandomLong( 0, 3 ) )
+		{
+		// right foot
+		case 0:	pmove->PM_PlaySound( CHAN_BODY, "player/footsteps/wood1.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
+		case 1:	pmove->PM_PlaySound( CHAN_BODY, "player/footsteps/wood2.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
+		// left foot
+		case 2:	pmove->PM_PlaySound( CHAN_BODY, "player/footsteps/wood3.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
+		case 3:	pmove->PM_PlaySound( CHAN_BODY, "player/footsteps/wood4.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
+		}
+		break;
+	case STEP_CARPET:
+		switch ( pmove->RandomLong( 0, 3 ) )
+		{
+		// right foot
+		case 0:	pmove->PM_PlaySound( CHAN_BODY, "player/footsteps/carpet1.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
+		case 1:	pmove->PM_PlaySound( CHAN_BODY, "player/footsteps/carpet2.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
+		// left foot
+		case 2:	pmove->PM_PlaySound( CHAN_BODY, "player/footsteps/carpet3.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
+		case 3:	pmove->PM_PlaySound( CHAN_BODY, "player/footsteps/carpet4.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
+		}
+		break;
+	case STEP_BRKGLASS:
+		switch ( pmove->RandomLong( 0, 3 ) )
+		{
+		// right foot
+		case 0:	pmove->PM_PlaySound( CHAN_BODY, "player/footsteps/glass1.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
+		case 1:	pmove->PM_PlaySound( CHAN_BODY, "player/footsteps/glass2.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
+		// left foot
+		case 2:	pmove->PM_PlaySound( CHAN_BODY, "player/footsteps/glass3.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
+		case 3:	pmove->PM_PlaySound( CHAN_BODY, "player/footsteps/glass4.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
+		}
+		break;
+	case STEP_PAPER:
+		switch ( pmove->RandomLong( 0, 3 ) )
+		{
+		// right foot
+		case 0:	pmove->PM_PlaySound( CHAN_BODY, "player/footsteps/paper1.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
+		case 1:	pmove->PM_PlaySound( CHAN_BODY, "player/footsteps/paper2.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
+		// left foot
+		case 2:	pmove->PM_PlaySound( CHAN_BODY, "player/footsteps/paper3.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
+		case 3:	pmove->PM_PlaySound( CHAN_BODY, "player/footsteps/paper4.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
+		}
+		break;
+	case STEP_SNOW:
+		switch ( pmove->RandomLong( 0, 3 ) )
+		{
+		// right foot
+		case 0:	pmove->PM_PlaySound( CHAN_BODY, "player/footsteps/snow1.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
+		case 1:	pmove->PM_PlaySound( CHAN_BODY, "player/footsteps/snow2.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
+		// left foot
+		case 2:	pmove->PM_PlaySound( CHAN_BODY, "player/footsteps/snow3.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
+		case 3:	pmove->PM_PlaySound( CHAN_BODY, "player/footsteps/snow4.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
+		}
+		break;
+	case STEP_SAND:
+		switch ( pmove->RandomLong( 0, 3 ) )
+		{
+		// right foot
+		case 0:	pmove->PM_PlaySound( CHAN_BODY, "player/footsteps/sand1.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
+		case 1:	pmove->PM_PlaySound( CHAN_BODY, "player/footsteps/sand2.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
+		// left foot
+		case 2:	pmove->PM_PlaySound( CHAN_BODY, "player/footsteps/sand3.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
+		case 3:	pmove->PM_PlaySound( CHAN_BODY, "player/footsteps/sand4.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
+		}
+		break;
+	case STEP_MUD:
+		switch ( pmove->RandomLong( 0, 3 ) )
+		{
+		// right foot
+		case 0:	pmove->PM_PlaySound( CHAN_BODY, "player/footsteps/mud1.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
+		case 1:	pmove->PM_PlaySound( CHAN_BODY, "player/footsteps/mud2.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
+		// left foot
+		case 2:	pmove->PM_PlaySound( CHAN_BODY, "player/footsteps/mud3.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
+		case 3:	pmove->PM_PlaySound( CHAN_BODY, "player/footsteps/mud4.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
+		}
+		break;
+	case STEP_FLESH:
+		switch ( pmove->RandomLong( 0, 3 ) )
+		{
+		// right foot
+		case 0:	pmove->PM_PlaySound( CHAN_BODY, "player/footsteps/mud1.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
+		case 1:	pmove->PM_PlaySound( CHAN_BODY, "player/footsteps/mud2.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
+		// left foot
+		case 2:	pmove->PM_PlaySound( CHAN_BODY, "player/footsteps/mud3.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
+		case 3:	pmove->PM_PlaySound( CHAN_BODY, "player/footsteps/mud4.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
+		}
+		break;
+	case STEP_GRASS:
+		switch ( pmove->RandomLong( 0, 3 ) )
+		{
+		// right foot
+		case 0:	pmove->PM_PlaySound( CHAN_BODY, "player/footsteps/grass1.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
+		case 1:	pmove->PM_PlaySound( CHAN_BODY, "player/footsteps/grass2.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
+		// left foot
+		case 2:	pmove->PM_PlaySound( CHAN_BODY, "player/footsteps/grass3.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
+		case 3:	pmove->PM_PlaySound( CHAN_BODY, "player/footsteps/grass4.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
+		}
+		break;
+	case STEP_RANDOMTWIGSNAP:
+		switch ( pmove->RandomLong( 0, 3 ) )
+		{
+		// right foot
+		case 0:	pmove->PM_PlaySound( CHAN_BODY, "player/footsteps/grass1.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
+		case 1:	pmove->PM_PlaySound( CHAN_BODY, "player/footsteps/grass2.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
+		// left foot
+		case 2:	pmove->PM_PlaySound( CHAN_BODY, "player/footsteps/grass3.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
+		case 3:	pmove->PM_PlaySound( CHAN_BODY, "player/footsteps/grass4.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
+		}
+
+		if ( pmove->RandomLong( 1, 10 ) <= 3 )
+		{
+			pitchrand = PITCH_NORM + pmove->RandomLong( -5, 5 );
+			switch ( pmove->RandomLong( 0, 8 ) )
+			{
+			case 0:	pmove->PM_PlaySound( CHAN_AUTO, "player/footsteps/twig_snap1.wav", pmove->RandomLong( 0, 0 ) + fvol, ATTN_NORM, 0, pitchrand );	break;
+			case 2:	pmove->PM_PlaySound( CHAN_AUTO, "player/footsteps/twig_snap2.wav", pmove->RandomLong( 0, 0 ) + fvol, ATTN_NORM, 0, pitchrand );	break;
+			case 3:	pmove->PM_PlaySound( CHAN_AUTO, "player/footsteps/twig_snap3.wav", pmove->RandomLong( 0, 0 ) + fvol, ATTN_NORM, 0, pitchrand );	break;
+			case 4:	pmove->PM_PlaySound( CHAN_AUTO, "player/footsteps/twig_snap4.wav", pmove->RandomLong( 0, 0 ) + fvol, ATTN_NORM, 0, pitchrand );	break;
+			case 5:	pmove->PM_PlaySound( CHAN_AUTO, "player/footsteps/twig_snap5.wav", pmove->RandomLong( 0, 0 ) + fvol, ATTN_NORM, 0, pitchrand );	break;
+			case 6:	pmove->PM_PlaySound( CHAN_AUTO, "player/footsteps/twig_snap6.wav", pmove->RandomLong( 0, 0 ) + fvol, ATTN_NORM, 0, pitchrand );	break;
+			case 7:	pmove->PM_PlaySound( CHAN_AUTO, "player/footsteps/twig_snap7.wav", pmove->RandomLong( 0, 0 ) + fvol, ATTN_NORM, 0, pitchrand );	break;
+			case 8:	pmove->PM_PlaySound( CHAN_AUTO, "player/footsteps/twig_snap8.wav", pmove->RandomLong( 0, 0 ) + fvol, ATTN_NORM, 0, pitchrand );	break;
+			case 9:	pmove->PM_PlaySound( CHAN_AUTO, "player/footsteps/twig_snap9.wav", pmove->RandomLong( 0, 0 ) + fvol, ATTN_NORM, 0, pitchrand );	break;
+			}
+		}
+		break;
+	case STEP_GRAVEL:
+		switch ( pmove->RandomLong( 0, 3 ) )
+		{
+		// right foot
+		case 0:	pmove->PM_PlaySound( CHAN_BODY, "player/footsteps/gravel1.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
+		case 1:	pmove->PM_PlaySound( CHAN_BODY, "player/footsteps/gravel2.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
+		// left foot
+		case 2:	pmove->PM_PlaySound( CHAN_BODY, "player/footsteps/gravel3.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
+		case 3:	pmove->PM_PlaySound( CHAN_BODY, "player/footsteps/gravel4.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
 		}
 		break;
 	case STEP_METAL:
-		switch(irand)
+		switch ( pmove->RandomLong( 0, 3 ) )
 		{
 		// right foot
-		case 0:	pmove->PM_PlaySound( CHAN_BODY, "player/pl_metal1.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
-		case 1:	pmove->PM_PlaySound( CHAN_BODY, "player/pl_metal3.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
+		case 0:	pmove->PM_PlaySound( CHAN_BODY, "player/footsteps/metal1.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
+		case 1:	pmove->PM_PlaySound( CHAN_BODY, "player/footsteps/metal2.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
 		// left foot
-		case 2:	pmove->PM_PlaySound( CHAN_BODY, "player/pl_metal2.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
-		case 3:	pmove->PM_PlaySound( CHAN_BODY, "player/pl_metal4.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
+		case 2:	pmove->PM_PlaySound( CHAN_BODY, "player/footsteps/metal3.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
+		case 3:	pmove->PM_PlaySound( CHAN_BODY, "player/footsteps/metal4.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
 		}
 		break;
 	case STEP_DIRT:
-		switch(irand)
+		switch ( irand )
 		{
 		// right foot
-		case 0:	pmove->PM_PlaySound( CHAN_BODY, "player/pl_dirt1.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
-		case 1:	pmove->PM_PlaySound( CHAN_BODY, "player/pl_dirt3.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
+		case 0:	pmove->PM_PlaySound( CHAN_BODY, "player/footsteps/dirt1.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
+		case 1:	pmove->PM_PlaySound( CHAN_BODY, "player/footsteps/dirt2.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
 		// left foot
-		case 2:	pmove->PM_PlaySound( CHAN_BODY, "player/pl_dirt2.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
-		case 3:	pmove->PM_PlaySound( CHAN_BODY, "player/pl_dirt4.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
+		case 2:	pmove->PM_PlaySound( CHAN_BODY, "player/footsteps/dirt3.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
+		case 3:	pmove->PM_PlaySound( CHAN_BODY, "player/footsteps/dirt4.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
 		}
 		break;
 	case STEP_VENT:
-		switch(irand)
+		switch ( pmove->RandomLong( 0, 3 ) )
 		{
 		// right foot
-		case 0:	pmove->PM_PlaySound( CHAN_BODY, "player/pl_duct1.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
-		case 1:	pmove->PM_PlaySound( CHAN_BODY, "player/pl_duct3.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
+		case 0:	pmove->PM_PlaySound( CHAN_BODY, "player/footsteps/metal1.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
+		case 1:	pmove->PM_PlaySound( CHAN_BODY, "player/footsteps/metal2.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
 		// left foot
-		case 2:	pmove->PM_PlaySound( CHAN_BODY, "player/pl_duct2.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
-		case 3:	pmove->PM_PlaySound( CHAN_BODY, "player/pl_duct4.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
+		case 2:	pmove->PM_PlaySound( CHAN_BODY, "player/footsteps/metal3.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
+		case 3:	pmove->PM_PlaySound( CHAN_BODY, "player/footsteps/metal4.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
 		}
 		break;
 	case STEP_GRATE:
-		switch(irand)
+		switch ( pmove->RandomLong( 0, 3 ) )
 		{
 		// right foot
-		case 0:	pmove->PM_PlaySound( CHAN_BODY, "player/pl_grate1.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
-		case 1:	pmove->PM_PlaySound( CHAN_BODY, "player/pl_grate3.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
+		case 0:	pmove->PM_PlaySound( CHAN_BODY, "player/footsteps/metal1.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
+		case 1:	pmove->PM_PlaySound( CHAN_BODY, "player/footsteps/metal2.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
 		// left foot
-		case 2:	pmove->PM_PlaySound( CHAN_BODY, "player/pl_grate2.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
-		case 3:	pmove->PM_PlaySound( CHAN_BODY, "player/pl_grate4.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
+		case 2:	pmove->PM_PlaySound( CHAN_BODY, "player/footsteps/metal3.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
+		case 3:	pmove->PM_PlaySound( CHAN_BODY, "player/footsteps/metal4.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
 		}
 		break;
 	case STEP_TILE:
-		if ( !pmove->RandomLong(0,4) )
-			irand = 4;
-		switch(irand)
+		switch ( pmove->RandomLong( 0, 3 ) )
 		{
 		// right foot
-		case 0:	pmove->PM_PlaySound( CHAN_BODY, "player/pl_tile1.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
-		case 1:	pmove->PM_PlaySound( CHAN_BODY, "player/pl_tile3.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
+		case 0:	pmove->PM_PlaySound( CHAN_BODY, "player/footsteps/concrete1.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
+		case 1:	pmove->PM_PlaySound( CHAN_BODY, "player/footsteps/concrete2.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
 		// left foot
-		case 2:	pmove->PM_PlaySound( CHAN_BODY, "player/pl_tile2.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
-		case 3:	pmove->PM_PlaySound( CHAN_BODY, "player/pl_tile4.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
-		case 4: pmove->PM_PlaySound( CHAN_BODY, "player/pl_tile5.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
+		case 2:	pmove->PM_PlaySound( CHAN_BODY, "player/footsteps/concrete3.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
+		case 3:	pmove->PM_PlaySound( CHAN_BODY, "player/footsteps/concrete4.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
 		}
 		break;
+
 	case STEP_SLOSH:
-		switch(irand)
+		if ( pmove->iStepLeft )
+			foot_splash = 1;
+		else
+			foot_splash = 2;
+
+		switch ( pmove->RandomLong( 0, 3 ) )
 		{
 		// right foot
-		case 0:	pmove->PM_PlaySound( CHAN_BODY, "player/pl_slosh1.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
-		case 1:	pmove->PM_PlaySound( CHAN_BODY, "player/pl_slosh3.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
+		case 0:	pmove->PM_PlaySound( CHAN_BODY, "player/footsteps/splash1.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
+		case 1:	pmove->PM_PlaySound( CHAN_BODY, "player/footsteps/splash2.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
 		// left foot
-		case 2:	pmove->PM_PlaySound( CHAN_BODY, "player/pl_slosh2.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
-		case 3:	pmove->PM_PlaySound( CHAN_BODY, "player/pl_slosh4.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
+		case 2:	pmove->PM_PlaySound( CHAN_BODY, "player/footsteps/splash3.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
+		case 3:	pmove->PM_PlaySound( CHAN_BODY, "player/footsteps/splash4.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
 		}
 		break;
+
 	case STEP_WADE:
-		if ( iSkipStep == 0 )
+		if ( pmove->waterlevel >= 3 )
+			break;
+
+		foot_splash = 3;
+
+	/*	if ( iSkipStep == 0 )
 		{
 			iSkipStep++;
 			break;
@@ -495,86 +766,33 @@ void PM_PlayStepSound( int step, float fvol )
 		if ( iSkipStep++ == 3 )
 		{
 			iSkipStep = 0;
-		}
+		}*/
 
-		switch (irand)
+		switch ( irand )
 		{
 		// right foot
-		case 0:	pmove->PM_PlaySound( CHAN_BODY, "player/pl_wade1.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
-		case 1:	pmove->PM_PlaySound( CHAN_BODY, "player/pl_wade2.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
+		case 0:	pmove->PM_PlaySound( CHAN_BODY, "player/footsteps/wade1.wav", fvol, ATTN_NORM, 0, 80 );	break;
+		case 1:	pmove->PM_PlaySound( CHAN_BODY, "player/footsteps/wade2.wav", fvol, ATTN_NORM, 0, 80 );	break;
 		// left foot
-		case 2:	pmove->PM_PlaySound( CHAN_BODY, "player/pl_wade3.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
-		case 3:	pmove->PM_PlaySound( CHAN_BODY, "player/pl_wade4.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
+		case 2:	pmove->PM_PlaySound( CHAN_BODY, "player/footsteps/wade3.wav", fvol, ATTN_NORM, 0, 80 );	break;
+		case 3:	pmove->PM_PlaySound( CHAN_BODY, "player/footsteps/wade4.wav", fvol, ATTN_NORM, 0, 80 );	break;
 		}
 		break;
+
 	case STEP_LADDER:
-		switch(irand)
-		{
-		// right foot
-		case 0:	pmove->PM_PlaySound( CHAN_BODY, "player/pl_ladder1.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
-		case 1:	pmove->PM_PlaySound( CHAN_BODY, "player/pl_ladder3.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
-		// left foot
-		case 2:	pmove->PM_PlaySound( CHAN_BODY, "player/pl_ladder2.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
-		case 3:	pmove->PM_PlaySound( CHAN_BODY, "player/pl_ladder4.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
-		}
-		break;
+		if ( pmove->iStepLeft )
+			PM_ViewPunch( -5, 0.5, 0 );
+		else
+			PM_ViewPunch( -5, -0.5, 0 );
 
-	// buz: paranoia steps
-	case STEP_WOODS:
-		switch(irand)
+		switch ( pmove->RandomLong( 0, 3 ) )
 		{
 		// right foot
-		case 0:	pmove->PM_PlaySound( CHAN_BODY, "player/pl_wood_scr1.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
-		case 1:	pmove->PM_PlaySound( CHAN_BODY, "player/pl_wood_scr2.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
+		case 0:	pmove->PM_PlaySound( CHAN_BODY, "player/footsteps/metal1.wav", fvol, ATTN_NORM, 0, 150 );	break;
+		case 1:	pmove->PM_PlaySound( CHAN_BODY, "player/footsteps/metal2.wav", fvol, ATTN_NORM, 0, 150 );	break;
 		// left foot
-		case 2:	pmove->PM_PlaySound( CHAN_BODY, "player/pl_wood_scr3.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
-		case 3:	pmove->PM_PlaySound( CHAN_BODY, "player/pl_wood_scr4.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
-		}
-		break;
-	case STEP_WOOD:
-		switch(irand)
-		{
-		// right foot
-		case 0:	pmove->PM_PlaySound( CHAN_BODY, "player/pl_wood1.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
-		case 1:	pmove->PM_PlaySound( CHAN_BODY, "player/pl_wood2.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
-		// left foot
-		case 2:	pmove->PM_PlaySound( CHAN_BODY, "player/pl_wood3.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
-		case 3:	pmove->PM_PlaySound( CHAN_BODY, "player/pl_wood4.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
-		}
-		break;
-	case STEP_ASFALT:
-		switch(irand)
-		{
-		// right foot
-		case 0:	pmove->PM_PlaySound( CHAN_BODY, "player/pl_asf1.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
-		case 1:	pmove->PM_PlaySound( CHAN_BODY, "player/pl_asf2.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
-		// left foot
-		case 2:	pmove->PM_PlaySound( CHAN_BODY, "player/pl_asf3.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
-		case 3:	pmove->PM_PlaySound( CHAN_BODY, "player/pl_asf4.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
-		}
-		break;
-	case STEP_BETON:
-	//	pmove->Con_Printf ("beton\n");
-		switch(irand)
-		{
-		// right foot
-		case 0:	pmove->PM_PlaySound( CHAN_BODY, "player/pl_beton1.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
-		case 1:	pmove->PM_PlaySound( CHAN_BODY, "player/pl_beton2.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
-		// left foot
-		case 2:	pmove->PM_PlaySound( CHAN_BODY, "player/pl_beton3.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
-		case 3:	pmove->PM_PlaySound( CHAN_BODY, "player/pl_beton4.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
-		}
-		break;
-	case STEP_GRASS:
-	//	pmove->Con_Printf ("grass\n");
-		switch(irand)
-		{
-		// right foot
-		case 0:	pmove->PM_PlaySound( CHAN_BODY, "player/pl_grass1.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
-		case 1:	pmove->PM_PlaySound( CHAN_BODY, "player/pl_grass2.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
-		// left foot
-		case 2:	pmove->PM_PlaySound( CHAN_BODY, "player/pl_grass3.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
-		case 3:	pmove->PM_PlaySound( CHAN_BODY, "player/pl_grass4.wav", fvol, ATTN_NORM, 0, PITCH_NORM );	break;
+		case 2:	pmove->PM_PlaySound( CHAN_BODY, "player/footsteps/metal3.wav", fvol, ATTN_NORM, 0, 150 );	break;
+		case 3:	pmove->PM_PlaySound( CHAN_BODY, "player/footsteps/metal4.wav", fvol, ATTN_NORM, 0, 150 );	break;
 		}
 		break;
 	}
@@ -586,18 +804,23 @@ int PM_MapTextureTypeStepType(char chTextureType)
 	{
 		default:
 		case CHAR_TEX_CONCRETE:	return STEP_CONCRETE;	
-		case CHAR_TEX_METAL: return STEP_METAL;	
-		case CHAR_TEX_DIRT: return STEP_DIRT;	
-		case CHAR_TEX_VENT: return STEP_VENT;	
-		case CHAR_TEX_GRATE: return STEP_GRATE;	
+		case CHAR_TEX_METAL: return STEP_METAL;
+		case CHAR_TEX_DIRT: return STEP_DIRT;
+		case CHAR_TEX_VENT: return STEP_VENT;
+		case CHAR_TEX_GRATE: return STEP_GRATE;
 		case CHAR_TEX_TILE: return STEP_TILE;
 		case CHAR_TEX_SLOSH: return STEP_SLOSH;
-		// buz: paranoia
 		case CHAR_TEX_WOOD: return STEP_WOOD;
-		case CHAR_TEX_WOODS: return STEP_WOODS;
-		case CHAR_TEX_ASFALT: return STEP_ASFALT;
-		case CHAR_TEX_BETON: return STEP_BETON;
+		case CHAR_TEX_CARPET: return STEP_CARPET;
+		case CHAR_TEX_FLESH: return STEP_FLESH;
 		case CHAR_TEX_GRASS: return STEP_GRASS;
+		case CHAR_TEX_MUD: return STEP_MUD;
+		case CHAR_TEX_SAND: return STEP_SAND;
+		case CHAR_TEX_SNOW: return STEP_SNOW;
+		case CHAR_TEX_BRKGLASS: return STEP_BRKGLASS;
+		case CHAR_TEX_PAPER: return STEP_PAPER;
+		case CHAR_TEX_GRAVEL: return STEP_GRAVEL;
+		case CHAR_TEX_RANDOMTWIGSNAP: return STEP_RANDOMTWIGSNAP;
 	}
 }
 
@@ -656,6 +879,18 @@ void PM_UpdateStepSound( void )
 	float flduck;
 	int	fLadder;
 	int step;
+	int low;
+	int walksteptime = atoi( pmove->PM_Info_ValueForKey( pmove->physinfo, "asd" ) );
+	int runsteptime = atoi( pmove->PM_Info_ValueForKey( pmove->physinfo, "bsd" ) );
+	int sprintsteptime = atoi( pmove->PM_Info_ValueForKey( pmove->physinfo, "csd" ) );
+
+	low = atoi( pmove->PM_Info_ValueForKey( pmove->physinfo, "low" ) );
+
+	if ( low && pmove->iStepLeft )
+	{
+		runsteptime *= 1.25;
+		sprintsteptime *= 1.25;
+	}
 
 	if ( pmove->flTimeStepSound > 0 )
 		return;
@@ -727,7 +962,7 @@ void PM_UpdateStepSound( void )
 			// get material type
 			step = PM_MapTextureTypeStepType( pmove->chtexturetype );
 
-			switch ( pmove->chtexturetype )
+		/*	switch ( pmove->chtexturetype )
 			{
 			default:
 			case CHAR_TEX_CONCRETE:						
@@ -764,7 +999,16 @@ void PM_UpdateStepSound( void )
 				fvol = fWalking ? 0.2 : 0.5;
 				pmove->flTimeStepSound = fWalking ? 400 : 300;
 				break;
-			}
+			}*/
+
+			fvol = fWalking ? 0.2 : 0.5;
+			pmove->flTimeStepSound = runsteptime;
+
+			if ( ( pmove->cmd.buttons & IN_RUN ) && ( pmove->flags & (1<<18) ) )
+				pmove->flTimeStepSound = sprintsteptime;
+
+			if ( pmove->flags & (1<<19) )
+				pmove->flTimeStepSound = walksteptime;
 		}
 		
 		pmove->flTimeStepSound += flduck; // slower step time if ducking
@@ -1193,10 +1437,25 @@ void PM_WalkMove ()
 	float downdist, updist;
 
 	pmtrace_t trace;
+	int low;
 	
 	// Copy movement amounts
 	fmove = pmove->cmd.forwardmove;
 	smove = pmove->cmd.sidemove;
+
+	if ( pmove->fuser3 && pmove->fuser3 < 50 )
+		return;
+
+	if ( pmove->fuser3 >= 50 )
+	{
+		pmove->forward[0] = 0;
+		pmove->forward[1] = 0;
+		pmove->forward[2] = 0;
+
+		pmove->right[0] = 0;
+		pmove->right[1] = 0;
+		pmove->right[2] = 0;
+	}
 	
 	// Zero out z components of movement vectors
 	pmove->forward[2] = 0;
@@ -1227,6 +1486,19 @@ void PM_WalkMove ()
 		VectorScale (wishvel, pmove->maxspeed/wishspeed, wishvel);
 		wishspeed = pmove->maxspeed;
 	}
+
+	low = atoi( pmove->PM_Info_ValueForKey( pmove->physinfo, "low" ) );
+
+	if ( low && !( pmove->flags & (1<<18) ) )
+	{
+		wishspeed *= 0.75;
+
+		if ( pmove->iStepLeft )
+			wishspeed *= 0.75;
+	}
+
+	if ( wishspeed < 30 )
+		wishspeed = 30;
 
 	// Set pmove velocity
 	pmove->velocity[2] = 0;
@@ -1507,7 +1779,12 @@ void PM_WaterMove (void)
 		wishspeed = pmove->maxspeed;
 	}
 	// Slow us down a bit.
-	wishspeed *= 0.8;
+	if ( ( pmove->cmd.buttons & IN_RUN ) && ( pmove->flags & (1<<18) ) )
+	{
+		// sprinting, keep full speed
+	}
+	else
+		wishspeed *= 0.8;
 
 	VectorAdd (pmove->velocity, pmove->basevelocity, pmove->velocity);
 // Water friction
@@ -2085,7 +2362,7 @@ void PM_UnDuck( void )
 
 	VectorCopy( pmove->origin, newOrigin );
 
-	if ( pmove->onground != -1 )
+	if ( pmove->onground != -1 && pmove->flags & FL_DUCKING && pmove->bInDuck == false )
 	{
 		for ( i = 0; i < 3; i++ )
 		{
@@ -2121,7 +2398,7 @@ void PM_UnDuck( void )
 	}
 }
 
-void PM_Duck( void )
+void PM_UnDuckNew( void )
 {
 	int i;
 	float time;
@@ -2145,6 +2422,82 @@ void PM_Duck( void )
 	// Prevent ducking if the iuser3 variable is set
 	if ( pmove->iuser3 || pmove->dead )
 	{
+		return;
+	}
+
+	if ( pmove->fuser3 || ( pmove->cmd.buttons & IN_DUCK ) || ( pmove->bInDuck ) || ( pmove->flags & FL_DUCKING ) )
+	{
+		if ( pmove->fuser3 || pmove->cmd.buttons & IN_DUCK )
+		{
+			if ( pmove->fuser3 || ( (nButtonPressed & IN_DUCK ) && !( pmove->flags & FL_DUCKING ) ) )
+			{
+				// Use 1 second so super long jump will work
+				pmove->flDuckTime = 1000;
+				pmove->bInDuck    = true;
+			}
+
+			time = max( 0.0, ( 1.0 - (float)pmove->flDuckTime / 1000.0 ) );
+			
+			if ( !pmove->bInDuck )
+			{
+				if ( ( (float)pmove->flDuckTime / 1000.0 <= ( 1.0 - TIME_TO_DUCK ) ) ||
+					 ( pmove->onground == -1 ) || pmove->fuser3 )
+				{
+					pmove->usehull = 0;
+					pmove->view_ofs[2] = VEC_VIEW;
+					pmove->flags &= ~FL_DUCKING;
+					pmove->bInDuck = true;
+
+					if ( pmove->onground != -1 )
+					{
+						for ( i = 0; i < 3; i++ )
+						{
+							pmove->origin[i] += ( pmove->player_mins[1][i] - pmove->player_mins[0][i] );
+						}
+						// See if we are stuck?
+						PM_FixPlayerCrouchStuck( STUCK_MOVEDOWN );
+
+						// Recatagorize position since ducking can change origin
+						PM_CatagorizePosition();
+					}
+				}
+				else
+				{
+					float fMore = (VEC_DUCK_HULL_MIN - VEC_HULL_MAX);
+
+					// Calc parametric time
+					duckFraction = PM_SplineFraction( time, (1.0/TIME_TO_DUCK) );
+					pmove->view_ofs[2] = ((VEC_DUCK_VIEW - fMore ) * duckFraction) + (VEC_VIEW * (1-duckFraction));
+				}
+			}
+		}
+	}
+}
+
+void PM_Duck( void )
+{
+	int i;
+	float time;
+	float duckFraction;
+
+	int buttonsChanged	= ( pmove->oldbuttons ^ pmove->cmd.buttons );	// These buttons have changed this frame
+	int nButtonPressed	=  buttonsChanged & pmove->cmd.buttons;		// The changed ones still down are "pressed"
+
+	int duckchange		= buttonsChanged & IN_DUCK ? 1 : 0;
+	int duckpressed		= nButtonPressed & IN_DUCK ? 1 : 0;
+
+	if ( pmove->cmd.buttons & IN_DUCK )
+	{
+		pmove->oldbuttons |= IN_DUCK;
+	}
+	else
+	{
+		pmove->oldbuttons &= ~IN_DUCK;
+	}
+
+	// Prevent ducking if the iuser3 variable is set
+	if ( pmove->iuser3 || pmove->dead || pmove->fuser3 )
+	{
 		// Try to unduck
 		if ( pmove->flags & FL_DUCKING )
 		{
@@ -2160,11 +2513,11 @@ void PM_Duck( void )
 		pmove->cmd.upmove      *= 0.333;
 	}
 
-	if ( ( pmove->cmd.buttons & IN_DUCK ) || ( pmove->bInDuck ) || ( pmove->flags & FL_DUCKING ) )
+	if ( pmove->fuser3 || ( pmove->cmd.buttons & IN_DUCK ) || ( pmove->bInDuck ) || ( pmove->flags & FL_DUCKING ) )
 	{
-		if ( pmove->cmd.buttons & IN_DUCK )
+		if ( pmove->fuser3 || pmove->cmd.buttons & IN_DUCK )
 		{
-			if ( (nButtonPressed & IN_DUCK ) && !( pmove->flags & FL_DUCKING ) )
+			if ( pmove->fuser3 || ( (nButtonPressed & IN_DUCK ) && !( pmove->flags & FL_DUCKING ) ) )
 			{
 				// Use 1 second so super long jump will work
 				pmove->flDuckTime = 1000;
@@ -2177,7 +2530,7 @@ void PM_Duck( void )
 			{
 				// Finish ducking immediately if duck time is over or not on ground
 				if ( ( (float)pmove->flDuckTime / 1000.0 <= ( 1.0 - TIME_TO_DUCK ) ) ||
-					 ( pmove->onground == -1 ) )
+					 ( pmove->onground == -1 ) || pmove->fuser3 )
 				{
 					pmove->usehull = 1;
 					pmove->view_ofs[2] = VEC_DUCK_VIEW;
@@ -2333,7 +2686,7 @@ physent_t *PM_Ladder( void )
 	{
 		pe = &pmove->moveents[i];
 		
-		if ( pe->model && (modtype_t)pmove->PM_GetModelType( pe->model ) == mod_brush && pe->skin == CONTENTS_LADDER )
+		if ( pe->model && (modtype_t)pmove->PM_GetModelType( pe->model ) == mod_brush && pe->skin == CONTENTS_LADDER && pe->iuser1 != 1 )
 		{
 
 			hull = (hull_t *)pmove->PM_HullForBsp( pe, test );
@@ -2608,9 +2961,12 @@ PM_Jump
 void PM_Jump (void)
 {
 	int i;
+	int bagpitch;
 	qboolean tfc = false;
-
 	qboolean cansuperjump = false;
+
+	if ( pmove->fuser3 )
+		return;
 
 	if (pmove->dead)
 	{
@@ -2653,23 +3009,9 @@ void PM_Jump (void)
 		// play swiming sound
 		if ( pmove->flSwimTime <= 0 )
 		{
-			// Don't play sound again for 1 second
-			pmove->flSwimTime = 1000;
-			switch ( pmove->RandomLong( 0, 3 ) )
-			{ 
-			case 0:
-				pmove->PM_PlaySound( CHAN_BODY, "player/pl_wade1.wav", 1, ATTN_NORM, 0, PITCH_NORM );
-				break;
-			case 1:
-				pmove->PM_PlaySound( CHAN_BODY, "player/pl_wade2.wav", 1, ATTN_NORM, 0, PITCH_NORM );
-				break;
-			case 2:
-				pmove->PM_PlaySound( CHAN_BODY, "player/pl_wade3.wav", 1, ATTN_NORM, 0, PITCH_NORM );
-				break;
-			case 3:
-				pmove->PM_PlaySound( CHAN_BODY, "player/pl_wade4.wav", 1, ATTN_NORM, 0, PITCH_NORM );
-				break;
-			}
+			// Don't play sound again for 5 seconds
+			pmove->flSwimTime = 5000;
+			pmove->PM_PlaySound( CHAN_BODY, "player/vocal/water_breathe.wav", 1, ATTN_NORM, 0, PITCH_NORM + pmove->RandomLong( -10, 10 ) );
 		}
 
 		return;
@@ -2700,6 +3042,16 @@ void PM_Jump (void)
 	else
 	{
 		PM_PlayStepSound( PM_MapTextureTypeStepType( pmove->chtexturetype ), 1.0 );
+	}
+
+	if ( pmove->waterlevel < 3 )
+	{
+		bagpitch = PITCH_NORM + pmove->RandomLong( -30, 30 );
+
+		if ( pmove->multiplayer )
+			pmove->PM_PlaySound( CHAN_AUTO, "player/sprint/equipment_movement.wav", 1, ATTN_NORM, 0, bagpitch );
+		else
+			pmove->PM_PlaySound( CHAN_AUTO, "player/sprint/bag_movement.wav", 1, ATTN_NORM, 0, bagpitch );
 	}
 
 	// See if user can super long jump?
@@ -2838,7 +3190,7 @@ void PM_CheckFalling( void )
 				//pmove->PM_PlaySound( CHAN_VOICE, "player/pl_fallpain2.wav", 1, ATTN_NORM, 0, PITCH_NORM );
 				//break;
 			//case 1:
-				pmove->PM_PlaySound( CHAN_VOICE, "player/pl_fallpain3.wav", 1, ATTN_NORM, 0, PITCH_NORM );
+				pmove->PM_PlaySound( CHAN_VOICE, "player/pl_fallpain.wav", 1, ATTN_NORM, 0, PITCH_NORM );
 			//	break;
 			//}
 			fvol = 1.0;
@@ -2850,7 +3202,7 @@ void PM_CheckFalling( void )
 
 			if ( tfc )
 			{
-				pmove->PM_PlaySound( CHAN_VOICE, "player/pl_fallpain3.wav", 1, ATTN_NORM, 0, PITCH_NORM );
+				pmove->PM_PlaySound( CHAN_VOICE, "player/pl_fallpain.wav", 1, ATTN_NORM, 0, PITCH_NORM );
 			}
 
 			fvol = 0.85;
@@ -2868,6 +3220,14 @@ void PM_CheckFalling( void )
 			pmove->flTimeStepSound = 0;
 			
 			PM_UpdateStepSound();
+
+			if ( pmove->waterlevel < 3 )
+			{
+				if ( pmove->multiplayer )
+					pmove->PM_PlaySound( CHAN_AUTO, "player/sprint/equipment_movement.wav", 0.7, ATTN_NORM, 0, PITCH_NORM );
+				else
+					pmove->PM_PlaySound( CHAN_AUTO, "player/sprint/bag_movement.wav", 0.7, ATTN_NORM, 0, PITCH_NORM );
+			}
 			
 			// play step sound for current texture
 			PM_PlayStepSound( PM_MapTextureTypeStepType( pmove->chtexturetype ), fvol );
@@ -2904,7 +3264,7 @@ PM_PlayWaterSounds
 void PM_PlayWaterSounds( void )
 {
 	// Did we enter or leave water?
-	if  ( ( pmove->oldwaterlevel == 0 && pmove->waterlevel != 0 && pmove->watertype > CONTENT_FLYFIELD) ||
+/*	if  ( ( pmove->oldwaterlevel == 0 && pmove->waterlevel != 0 && pmove->watertype > CONTENT_FLYFIELD) ||
 		  ( pmove->oldwaterlevel != 0 && pmove->waterlevel == 0 ))
 	{
 		switch ( pmove->RandomLong(0,3) )
@@ -2922,7 +3282,7 @@ void PM_PlayWaterSounds( void )
 			pmove->PM_PlaySound( CHAN_BODY, "player/pl_wade4.wav", 1, ATTN_NORM, 0, PITCH_NORM );
 			break;
 		}
-	}
+	}*/
 }
 
 /*
@@ -2974,6 +3334,7 @@ PM_DropPunchAngle
 
 void PM_DropPunchAngle ( vec3_t punchangle )
 {
+	qboolean inwheelchairdead = false;
 /*	float	len;
 	
 	len = VectorNormalize ( punchangle );
@@ -2982,13 +3343,29 @@ void PM_DropPunchAngle ( vec3_t punchangle )
 	VectorScale ( punchangle, len, punchangle);*/
 
 	// buz: у нас теперь новый, свежеспертый из хл2, пунч.
+	int correctionspeed = 65;
+	int punchdamping = 9;
 	float damping;
 	float springForceMagnitude;
+
+	if ( pmove->dead )
+	{
+		pmove->vuser3[2] = 670;
+		damping = 3;
+	}
+
+	inwheelchairdead = atoi( pmove->PM_Info_ValueForKey( pmove->physinfo, "chr" ) ) == 2 ? true : false;
+
+	if ( inwheelchairdead )
+	{
+		pmove->vuser3[0] = 670;
+		damping = 3;
+	}
 
 	if ( Length(punchangle) > 0.001 || Length(pmove->vuser3) > 0.001 )
 	{
 		VectorMA(punchangle, pmove->frametime, pmove->vuser3, punchangle);
-		damping = 1 - (PUNCH_DAMPING * pmove->frametime);
+		damping = 1 - (punchdamping * pmove->frametime);
 		
 		if ( damping < 0 )
 		{
@@ -2998,7 +3375,7 @@ void PM_DropPunchAngle ( vec3_t punchangle )
 		 
 		// torsional spring
 		// UNDONE: Per-axis spring constant?
-		springForceMagnitude = PUNCH_SPRING_CONSTANT * pmove->frametime;
+		springForceMagnitude = correctionspeed * pmove->frametime;
 		springForceMagnitude = clamp(springForceMagnitude, 0, 2 );
 
 		VectorMA(pmove->vuser3, -springForceMagnitude, punchangle, pmove->vuser3);
@@ -3021,6 +3398,15 @@ void PM_CheckParamters( void )
 	float spd;
 //	float maxspeed;
 	vec3_t	v_angle;
+	int inwheelchair;
+
+	if ( ( pmove->cmd.buttons & IN_RUN ) && ( pmove->flags & (1<<18) ) )
+		pmove->cmd.sidemove = 0;
+	else
+	{
+		if ( pmove->cmd.sidemove != 0 && pmove->cmd.forwardmove != 0 )
+			pmove->cmd.forwardmove /= 2;
+	}
 
 	spd = ( pmove->cmd.forwardmove * pmove->cmd.forwardmove ) +
 		  ( pmove->cmd.sidemove * pmove->cmd.sidemove ) +
@@ -3057,26 +3443,42 @@ void PM_CheckParamters( void )
 
 	PM_DropPunchAngle( pmove->punchangle );
 
-	// Take angles from command.
-	if ( !pmove->dead )
-	{
-		VectorCopy ( pmove->cmd.viewangles, v_angle );         
-		VectorAdd( v_angle, pmove->punchangle, v_angle );
+	inwheelchair = atoi( pmove->PM_Info_ValueForKey( pmove->physinfo, "chr" ) ) >= 1 ? true : false;
 
-		// Set up view angles.
-		pmove->angles[ROLL]	=	PM_CalcRoll ( v_angle, pmove->velocity, pmove->movevars->rollangle, pmove->movevars->rollspeed )*4;
-		pmove->angles[PITCH] =	v_angle[PITCH];
-		pmove->angles[YAW]   =	v_angle[YAW];
-	}
-	else
+	if ( inwheelchair != 2 && pmove->fuser3 < 50 )
 	{
-		VectorCopy( pmove->oldangles, pmove->angles );
+		// Take angles from command.
+		if ( !pmove->dead )
+		{
+			if ( pmove->cmd.impact_position[2] > 0 )
+			{
+				pmove->cmd.viewangles[0] = pmove->cmd.impact_position[0];
+				pmove->cmd.viewangles[1] = pmove->cmd.impact_position[1];
+			}
+
+			VectorCopy ( pmove->cmd.viewangles, v_angle );         
+			VectorAdd( v_angle, pmove->punchangle, v_angle );
+
+			// Set up view angles.
+			pmove->angles[ROLL]	=	PM_CalcRoll ( v_angle, pmove->velocity, pmove->movevars->rollangle, pmove->movevars->rollspeed )*4;
+			pmove->angles[PITCH] =	v_angle[PITCH];
+			pmove->angles[YAW]   =	v_angle[YAW];
+		}
+		else
+		{
+			VectorCopy( pmove->oldangles, pmove->angles );
+		}
 	}
 
 	// Set dead player view_offset
 	if ( pmove->dead )
 	{
 		pmove->view_ofs[2] = PM_DEAD_VIEWHEIGHT;
+	}
+	else
+	{
+		if ( pmove->view_ofs[2] == PM_DEAD_VIEWHEIGHT )
+			pmove->view_ofs[2] = VEC_VIEW;
 	}
 
 	// Adjust client view angles to match values used on server.
@@ -3210,12 +3612,6 @@ void PM_PlayerMove ( qboolean server )
 			//  it will be set immediately again next frame if necessary
 			pmove->movetype = MOVETYPE_WALK;
 		}
-	}
-
-	// Slow down, I'm pulling it! (a box maybe) but only when I'm standing on ground
-	if ( ( pmove->onground != -1 ) && ( pmove->cmd.buttons & IN_USE) )
-	{
-		VectorScale( pmove->velocity, 0.3, pmove->velocity );
 	}
 
 	// Handle movement
