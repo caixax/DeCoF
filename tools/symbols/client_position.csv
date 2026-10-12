@@ -36,7 +36,6 @@ va,name,kind,evidence
 1007A870,?ShutdownInput@@YAXXZ,func,"position in client/cl_dll/input (name order), after ?KeyUp@@YAXPAUkbutton_s@@@Z; sizes retail 10, ours 10"
 1007AD60,?Force_CenterView_f@@YAXXZ,func,"position in client/cl_dll/inputw32 (name order), after edge before the first anchor; sizes retail 61, ours 49"
 1007C0A0,?RawValuePointer@@YAPAKH@Z,func,"position in client/cl_dll/inputw32 (name order), after ?Joy_AdvancedUpdate_f@@YAXXZ; sizes retail 60, ours 84"
-1007C9F0,?abs@@YAMM@Z,func,"position in client/cl_dll/in_camera (name order), after ?MoveToward@@YAMMMM@Z; sizes retail 221, ours 25"
 1007D7E0,?InitHUDData@CHudMenu@@UAEXXZ,func,"position in client/cl_dll/menu (name order), after ?Init@CHudMenu@@UAEHXZ; sizes retail 19, ours 19"
 10080AF0,?AddSystem@ParticleSystemManager@@QAEXPAVParticleSystem@@@Z,func,"position in client/cl_dll/particlemgr (name order), after edge before the first anchor; sizes retail 16, ours 16"
 10080C90,?UpdateSystems@ParticleSystemManager@@QAEXMH@Z,func,"position in client/cl_dll/particlemgr (name order), after ?SortSystems@ParticleSystemManager@@QAEXXZ; sizes retail 237, ours 204"

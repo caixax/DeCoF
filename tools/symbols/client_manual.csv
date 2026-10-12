@@ -75,3 +75,37 @@ va,name,kind,evidence
 10079970,?IN_UseDown@@YAXXZ,func,"registered by InitInput with the string +use (push 10079970 before the string push); KeyDown(&in_use), HandleButtonsDown(IN_USE), ServerCmd boatdisembark and telescopecancel (added by an agent)"
 10079A50,?IN_UseUp@@YAXXZ,func,registered by InitInput with the string -use (push 10079A50 before the string push); KeyUp(&in_use) (added by an agent)
 10078670,?CL_ButtonBits@@YAHH@Z,func,"already named CL_ButtonBits in the retail map; called by CL_CreateMove (push 1) and CL_ResetButtonBits (push 0), between CL_AdjustAngles and CL_IsDead in decorated-name order of input.obj (added by an agent)"
+100362B0,??0CHUDControl@@QAE@XZ,func,constructor: writes the CHUDControl vtable 101452CC (RTTI .?AVCHUDControl@@); TeamFortressViewport calls it after new(0x104C) and stores the object at +0x142C (added by an agent)
+10038350,??1CHUDControl@@QAE@XZ,func,destructor: writes the CHUDControl vtable 101452CC then deletes the twelve 0x24-byte images loaded by the constructor (added by an agent)
+10038900,?guess_HUDControlInit@@YAXXZ,func,hooks the 16 user messages Stamina..SimonMode (strings) with the handlers of this object; called from CHud::Init after SubtitleInit like the Paranoia XxxInit functions (added by an agent)
+10038A10,?guess_UpdateHUDVisibility@CHUDControl@@QAEXXZ,func,called by CHUDControl::solve (1003CDBC); hides the bars on maps/c_nightmare.bsp or when hud_draw is 0 (added by an agent)
+10038DF0,?Initialize@CHUDControl@@QAEXXZ,func,"called at the end of the constructor and by TeamFortressViewport::Initialize next to the other panels' Initialize calls (Paranoia pattern, as CRadioIcon::Initialize) (added by an agent)"
+10039210,?guess_UpdateLogo@CHUDControl@@QAEXXZ,func,"called by CHUDControl::solve (1003CDC3); fades the logo panel at +0xFD4, string host_framerate (added by an agent)"
+100393D0,?guess_MsgCameraZoom@@YAHPBDHPAX@Z,func,handler hooked for user message CameraZoom (string) in 10038900 (added by an agent)
+10039430,?guess_MsgChapter@@YAHPBDHPAX@Z,func,handler hooked for user message Chapter (string) in 10038900 (added by an agent)
+10039560,?guess_MsgCoFLogo@@YAHPBDHPAX@Z,func,handler hooked for user message CoFLogo (string) in 10038900 (added by an agent)
+10039800,?guess_MsgControlHint@@YAHPBDHPAX@Z,func,handler hooked for user message ControlHint (string) in 10038900 (added by an agent)
+10039A20,?guess_MsgDevDonator@@YAHPBDHPAX@Z,func,handler hooked for user message DevDonator (string) in 10038900 (added by an agent)
+10039A70,?guess_MsgHealthCap@@YAHPBDHPAX@Z,func,handler hooked for user message HealthCap (string) in 10038900 (added by an agent)
+10039C60,?guess_MsgHoldBreath@@YAHPBDHPAX@Z,func,handler hooked for user message HoldBreath (string) in 10038900 (added by an agent)
+10039C90,?guess_MsgIntrodn@@YAHPBDHPAX@Z,func,handler hooked for user message Introdn (string) in 10038900 (added by an agent)
+10039F40,?guess_MsgLobby@@YAHPBDHPAX@Z,func,handler hooked for user message Lobby (string) in 10038900 (added by an agent)
+1003A140,?guess_MsgLookingAt@@YAHPBDHPAX@Z,func,handler hooked for user message LookingAt (string) in 10038900 (added by an agent)
+1003A170,?guess_MsgMPModel@@YAHPBDHPAX@Z,func,handler hooked for user message MPModel (string) in 10038900 (added by an agent)
+1003A180,?guess_MsgShowHint@@YAHPBDHPAX@Z,func,handler hooked for user message ShowHint (string) in 10038900 (added by an agent)
+1003A330,?guess_MsgSimonMode@@YAHPBDHPAX@Z,func,handler hooked for user message SimonMode (string) in 10038900 (added by an agent)
+1003A360,?guess_MsgStamina@@YAHPBDHPAX@Z,func,handler hooked for user message Stamina (string) in 10038900 (added by an agent)
+1003A3E0,?guess_MsgTimer@@YAHPBDHPAX@Z,func,handler hooked for user message Timer (string) in 10038900 (added by an agent)
+1003A580,?guess_MsgTimerPlus@@YAHPBDHPAX@Z,func,handler hooked for user message TimerPlus (string) in 10038900 (added by an agent)
+1003A930,?ParseHintTokens@@YAXPAD0@Z,func,its own error strings 'ParseHintTokens Couldn't open file %s' and 'ParseHintTokens Error parsing file %s' (added by an agent)
+1003B0C0,?guess_DrawMessages@CHUDControl@@QAEXXZ,func,"called by CHUDControl::paint (1003BEDB); hint bar, chapter title and message strip, string cl_subtitles (added by an agent)"
+1003BBD0,?guess_ShowSMSIcon@CHUDControl@@QAEX_N@Z,func,"sets the alpha +0xFFC to 255, the flag +0xFF4 and the visibility of the SMS icon panel +0xFF0; called by Initialize and twice at 10071A75/10071AD4 (added by an agent)"
+1003BC10,?paint@CHUDControl@@MAEXXZ,func,"CHUDControl vtable slot 112 (+0x1C0), vgui::Panel::paint (added by an agent)"
+1003BF00,?paintBackground@CHUDControl@@MAEXXZ,func,"CHUDControl vtable slot 111 (+0x1BC), vgui::Panel::paintBackground; jumps to the import of Panel::paintBackground (added by an agent)"
+1003BF20,?solve@CHUDControl@@MAEXXZ,func,"CHUDControl vtable slot 110 (+0x1B8), vgui::Panel::solve; ends with a call to the import of Panel::solve (added by an agent)"
+1006F9D0,?MsgFunc_BigPrick@CHud@@QAAHPBDHPAX@Z,func,"called by the BigPrick wrapper 1006E4D0, which CHud::Init hooks with the string BigPrick (push at 1006D2D1); was MsgFunc_SetFOV from refbytes"
+1006E4D0,?__MsgFunc_BigPrick@@YAHPBDHPAX@Z,func,handler pushed with the string BigPrick in CHud::Init (1006D2D1); calls 1006F9D0
+1006D9B0,?MsgFunc_SetFOV@CHud@@QAAHPBDHPAX@Z,func,"called by the SetFOV wrapper 1006EA40, which CHud::Init hooks with the string SetFOV (push at 1006D0E5)"
+1006EA40,?__MsgFunc_SetFOV@@YAHPBDHPAX@Z,func,handler pushed with the string SetFOV in CHud::Init (1006D0E5); calls 1006D9B0
+10030160,?MsgFunc_BlackBars@CBlackBar@@QAEHPBDHPAX@Z,func,"called by the BlackBars wrapper 10030320, hooked with the string BlackBars (push at 10030136); was MsgFunc_StatusIcon from refbytes"
+10030320,?__MsgFunc_BlackBars@@YAHPBDHPAX@Z,func,handler pushed with the string BlackBars (10030136); calls 10030160; was __MsgFunc_StatusIcon from refbytes
