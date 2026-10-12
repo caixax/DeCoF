@@ -13208,7 +13208,7 @@ hl,100061D0,33,_PM_Init,PM_Init,HLSDK,pm_shared/pm_shared.c,1.0,1.0->1.4 same; 1
 hl,10006200,795,_PM_InitTextureTypes,PM_InitTextureTypes,HLSDK,pm_shared/pm_shared.c,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10006520,1036,_PM_Jump,PM_Jump,HLSDK,pm_shared/pm_shared.c,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10006930,262,_PM_Ladder,PM_Ladder,HLSDK,pm_shared/pm_shared.c,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,10006A40,1003,_PM_LadderMove,PM_LadderMove,HLSDK,pm_shared/pm_shared.c,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,99.99,hl_1.55_to_1.6a.csv,"relocation targets differ (instructions identical): retail __real@c3480000, ours __real@c2b40000"
+hl,10006A40,1003,_PM_LadderMove,PM_LadderMove,HLSDK,pm_shared/pm_shared.c,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10006E30,145,,,UNKNOWN,guess:pm_shared/pm_shared.c,,,TODO,,,
 hl,10006F30,96,_PM_Move,PM_Move,HLSDK,pm_shared/pm_shared.c,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,refbytes:paranoia:pm_shared__pm_shared.obj:score4,
 hl,10006F90,269,_PM_NoClip,PM_NoClip,HLSDK,pm_shared/pm_shared.c,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,refbytes:paranoia:pm_shared__pm_shared.obj:score11,
@@ -13283,7 +13283,7 @@ hl,1000D9D0,8,?GetState@CBaseEntity@@UAE?AW4STATE@@PAV1@@Z,CBaseEntity::GetState
 hl,1000D9E0,3,?GetState@CBaseEntity@@UAE?AW4STATE@@XZ,CBaseEntity::GetState,SPIRIT,dlls/cbase.h,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1000D9F0,17,?GetState@CInfoAlias@@UAE?AW4STATE@@XZ,CInfoAlias::GetState,SPIRIT,dlls/alias.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1000DA10,3,?GetToggleState@CBaseEntity@@UAEHXZ,CBaseEntity::GetToggleState,HLSDK,dlls/cbase.h,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,1000DA20,6,?GiveAmmo@CBaseEntity@@UAEHHPADH_N@Z,CBaseEntity::GiveAmmo,HLSDK,dlls/cbase.h,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
+hl,1000DA20,6,?GiveAmmo@CBaseEntity@@UAEHHPADH_N@Z,CBaseEntity::GiveAmmo,HLSDK,dlls/alias.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_manual.csv,
 hl,1000DA30,89,?HasTarget@CBaseEntity@@UAEHH@Z,CBaseEntity::HasTarget,HLSDK,dlls/cbase.h,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1000DA90,19,?Illumination@CBaseEntity@@UAEHXZ,CBaseEntity::Illumination,HLSDK,dlls/cbase.h,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1000DAB0,6,?IsAlias@CBaseAlias@@UAEHXZ,CBaseAlias::IsAlias,SPIRIT,dlls/cbase.h,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
@@ -13638,13 +13638,13 @@ hl,10017F30,202,?Restore@CBaseEntity@@UAEHAAVCRestore@@@Z,CBaseEntity::Restore,H
 hl,10018000,111,?Save@CBaseEntity@@UAEHAAVCSave@@@Z,CBaseEntity::Save,HLSDK,dlls/cbase.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10018070,22,?Set@EHANDLE@@QAEPAUedict_s@@PAU2@@Z,EHANDLE::Set,UNKNOWN,dlls/cbase.cpp,,,MATCHED,100,,
 hl,10018090,80,?SetEternalThink@CBaseEntity@@QAEXXZ,CBaseEntity::SetEternalThink,SPIRIT,dlls/cbase.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,100180E0,90,?UTIL_AutoSetSize@CBaseEntity@@QAEXXZ,CBaseEntity::UTIL_AutoSetSize,SPIRIT,dlls/cbase.h,,,TODO,,similar:1.00,
+hl,100180E0,90,?SetModelCollisionBox@CBaseEntity@@QAEXXZ,CBaseEntity::SetModelCollisionBox,SPIRIT,dlls/cbase.cpp,,,MATCHED,100,hl_manual.csv,
 hl,10018140,528,?SetObjectCollisionBox@@YAXPAUentvars_s@@@Z,SetObjectCollisionBox,HLSDK,dlls/cbase.cpp,,,MATCHED,100,refbytes:paranoia:dlls__cbase.obj:score2,
 hl,10018350,57,?ShouldToggle@CBaseEntity@@QAEHW4USE_TYPE@@@Z,CBaseEntity::ShouldToggle,UNKNOWN,dlls/cbase.cpp,,,MATCHED,100,,
 hl,100183A0,46,?ShouldToggle@CBaseEntity@@QAEHW4USE_TYPE@@H@Z,CBaseEntity::ShouldToggle,HLSDK,dlls/cbase.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,refbytes:paranoia:dlls__cbase.obj:score0,
 hl,100183D0,47,_GetEntityAPI,GetEntityAPI,HLSDK,dlls/cbase.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,refbytes:paranoia:dlls__cbase.obj:score0,
 hl,10018400,55,_GetEntityAPI2,GetEntityAPI2,HLSDK,dlls/cbase.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,refbytes:paranoia:dlls__cbase.obj:score1,
-hl,10018440,92,??$GetClassPtr@VCBasePlayerWeapon@@@@YAPAVCBasePlayerWeapon@@PAV0@@Z,CBasePlayerWeapon>,HLSDK,dlls/client.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
+hl,10018440,92,??$GetClassPtr@VCBasePlayerWeapon@@@@YAPAVCBasePlayerWeapon@@PAV0@@Z,CBasePlayerWeapon>,HLSDK,dlls/client.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_manual.csv,
 hl,100184A0,92,??$GetClassPtr@VCBoat@@@@YAPAVCBoat@@PAV0@@Z,GetClassPtr<CBoat>,HLSDK,dlls/client.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
 hl,10018500,92,??$GetClassPtr@VCBrowningWheelchair@@@@YAPAVCBrowningWheelchair@@PAV0@@Z,GetClassPtr<CBrowningWheelchair>,HLSDK,dlls/client.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
 hl,10018560,92,??$GetClassPtr@VCCoFDocument@@@@YAPAVCCoFDocument@@PAV0@@Z,GetClassPtr<CCoFDocument>,HLSDK,dlls/client.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
@@ -13769,8 +13769,8 @@ hl,100207C0,1251,?KeyValue@CAnimatedCameraModel@@UAEXPAUKeyValueData_s@@@Z,CAnim
 hl,10020CB0,37,?ModelCameraUse@CAnimatedCameraModel@@QAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CAnimatedCameraModel::ModelCameraUse,COF,dlls/cof_animatedcamera.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10020CE0,12,?Precache@CAnimatedCamera@@UAEXXZ,CAnimatedCamera::Precache,COF,dlls/cof_animatedcamera.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10020CF0,47,?Precache@CAnimatedCameraModel@@UAEXXZ,CAnimatedCameraModel::Precache,COF,dlls/cof_animatedcamera.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,10020D20,49,?Restore@CAnimatedCameraModel@@UAEHAAVCRestore@@@Z,CAnimatedCameraModel::Restore,COF,dlls/cof_animatedcamera.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,99.99,hl_1.55_to_1.6a.csv,"relocation targets differ (instructions identical): retail ?Restore@CBaseEntity@@UAEHAAVCRestore@@@Z, ours ?Restore@CBaseMonster@@UAEHAAVCRestore@@@Z"
-hl,10020D60,95,?Save@CAnimatedCameraModel@@UAEHAAVCSave@@@Z,CAnimatedCameraModel::Save,COF,dlls/cof_animatedcamera.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,99.99,hl_1.55_to_1.6a.csv,"relocation targets differ (instructions identical): retail ?Save@CBaseEntity@@UAEHAAVCSave@@@Z, ours ?Save@CBaseMonster@@UAEHAAVCSave@@@Z"
+hl,10020D20,49,?Restore@CAnimatedCameraModel@@UAEHAAVCRestore@@@Z,CAnimatedCameraModel::Restore,COF,dlls/cof_animatedcamera.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
+hl,10020D60,95,?Save@CAnimatedCameraModel@@UAEHAAVCSave@@@Z,CAnimatedCameraModel::Save,COF,dlls/cof_animatedcamera.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10020DC0,156,?Spawn@CAnimatedCamera@@UAEXXZ,CAnimatedCamera::Spawn,COF,dlls/cof_animatedcamera.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10020E60,191,?Spawn@CAnimatedCameraModel@@UAEXXZ,CAnimatedCameraModel::Spawn,COF,dlls/cof_animatedcamera.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10020F20,169,?StartNextAnimation@CAnimatedCameraModel@@QAEXXZ,CAnimatedCameraModel::StartNextAnimation,COF,dlls/cof_animatedcamera.cpp,2010-prototype,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
@@ -13919,15 +13919,15 @@ hl,10028920,92,??$GetClassPtr@VCCheckBrush@@@@YAPAVCCheckBrush@@PAV0@@Z,GetClass
 hl,10028980,278,?KeyValue@CCheckBrush@@UAEXPAUKeyValueData_s@@@Z,CCheckBrush::KeyValue,COF,dlls/cof_checkbrush.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10028AA0,18,?ObjectCaps@CCheckBrush@@UAEHXZ,CCheckBrush::ObjectCaps,COF,dlls/cof_checkbrush.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10028AC0,34,?Precache@CCheckBrush@@UAEXXZ,CCheckBrush::Precache,COF,dlls/cof_checkbrush.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,10028AF0,49,?Restore@CCheckBrush@@UAEHAAVCRestore@@@Z,CCheckBrush::Restore,COF,dlls/cof_checkbrush.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,99.99,hl_1.55_to_1.6a.csv,"relocation targets differ (instructions identical): retail ?Restore@CBaseEntity@@UAEHAAVCRestore@@@Z, ours ?Restore@CBaseToggle@@UAEHAAVCRestore@@@Z"
-hl,10028B30,95,?Save@CCheckBrush@@UAEHAAVCSave@@@Z,CCheckBrush::Save,COF,dlls/cof_checkbrush.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,99.99,hl_1.55_to_1.6a.csv,"relocation targets differ (instructions identical): retail ?Save@CBaseEntity@@UAEHAAVCSave@@@Z, ours ?Save@CBaseToggle@@UAEHAAVCSave@@@Z"
+hl,10028AF0,49,?Restore@CCheckBrush@@UAEHAAVCRestore@@@Z,CCheckBrush::Restore,COF,dlls/cof_checkbrush.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
+hl,10028B30,95,?Save@CCheckBrush@@UAEHAAVCSave@@@Z,CCheckBrush::Save,COF,dlls/cof_checkbrush.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10028B90,161,?Spawn@CCheckBrush@@UAEXXZ,CCheckBrush::Spawn,COF,dlls/cof_checkbrush.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10028C40,327,?Use@CCheckBrush@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CCheckBrush::Use,COF,dlls/cof_checkbrush.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10028D90,5,_trigger_checkbrush,trigger_checkbrush,HLSDK,dlls/cof_checkbrush.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( trigger_checkbrush, CCheckBrush )"
 hl,10028DA0,92,??$GetClassPtr@VCCoFCoopAllPlayersButton@@@@YAPAVCCoFCoopAllPlayersButton@@PAV0@@Z,GetClassPtr<CCoFCoopAllPlayersButton>,HLSDK,dlls/cof_coopbuttonpress.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
 hl,10028E00,18,?ObjectCaps@CCoFCoopAllPlayersButton@@UAEHXZ,CCoFCoopAllPlayersButton::ObjectCaps,COF,dlls/cof_coopbuttonpress.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,10028E20,49,?Restore@CCoFCoopAllPlayersButton@@UAEHAAVCRestore@@@Z,CCoFCoopAllPlayersButton::Restore,COF,dlls/cof_coopbuttonpress.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,99.99,hl_1.55_to_1.6a.csv,"relocation targets differ (instructions identical): retail ?Restore@CBaseEntity@@UAEHAAVCRestore@@@Z, ours ?Restore@CBaseToggle@@UAEHAAVCRestore@@@Z"
-hl,10028E60,95,?Save@CCoFCoopAllPlayersButton@@UAEHAAVCSave@@@Z,CCoFCoopAllPlayersButton::Save,COF,dlls/cof_coopbuttonpress.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,99.99,hl_1.55_to_1.6a.csv,"relocation targets differ (instructions identical): retail ?Save@CBaseEntity@@UAEHAAVCSave@@@Z, ours ?Save@CBaseToggle@@UAEHAAVCSave@@@Z"
+hl,10028E20,49,?Restore@CCoFCoopAllPlayersButton@@UAEHAAVCRestore@@@Z,CCoFCoopAllPlayersButton::Restore,COF,dlls/cof_coopbuttonpress.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
+hl,10028E60,95,?Save@CCoFCoopAllPlayersButton@@UAEHAAVCSave@@@Z,CCoFCoopAllPlayersButton::Save,COF,dlls/cof_coopbuttonpress.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10028EC0,156,?Spawn@CCoFCoopAllPlayersButton@@UAEXXZ,CCoFCoopAllPlayersButton::Spawn,COF,dlls/cof_coopbuttonpress.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10028F60,248,?Use@CCoFCoopAllPlayersButton@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CCoFCoopAllPlayersButton::Use,COF,dlls/cof_coopbuttonpress.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10029060,5,_func_coopallplayersbutton,func_coopallplayersbutton,HLSDK,dlls/cof_coopbuttonpress.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( func_coopallplayersbutton, CCoFCoopAllPlayersButton )"
@@ -13936,7 +13936,7 @@ hl,10029090,3942,?GivePlayerVariables@CCoopLevelChangeManager@@QAE_NPAVCBasePlay
 hl,1002A000,1121,?GiveWeaponFromInventory@CCoopLevelChangeManager@@QAEXPADHHPAVCBasePlayer@@@Z,CCoopLevelChangeManager::GiveWeaponFromInventory,COF,dlls/cof_cooplevelchangemanager.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1002A480,1012,?SetPlayerVariables@CCoopLevelChangeManager@@QAEXPAVCBasePlayer@@@Z,CCoopLevelChangeManager::SetPlayerVariables,COF,dlls/cof_cooplevelchangemanager.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1002A880,92,??$GetClassPtr@VCCrab@@@@YAPAVCCrab@@PAV0@@Z,GetClassPtr<CCrab>,HLSDK,dlls/cof_crab.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
-hl,1002A8E0,92,??$GetClassPtr@VCGib@@@@YAPAVCGib@@PAV0@@Z,CGib>,HLSDK,dlls/cof_crab.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
+hl,1002A8E0,92,??$GetClassPtr@VCGib@@@@YAPAVCGib@@PAV0@@Z,CGib>,HLSDK,dlls/cof_crab.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_manual.csv,
 hl,1002A940,90,?AlertSound@CCrab@@UAEXXZ,CCrab::AlertSound,COF,dlls/cof_crab.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1002A9A0,91,?AttackSound@CCrab@@QAEXXZ,CCrab::AttackSound,UNKNOWN,dlls/cof_crab.cpp,,,MATCHED,100,,
 hl,1002AA00,5,?CheckRangeAttack1@CCrab@@UAEHMM@Z,CCrab::CheckRangeAttack1,COF,dlls/cof_crab.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
@@ -14376,8 +14376,8 @@ hl,10042740,611,?KeyValue@CFuncValve@@UAEXPAUKeyValueData_s@@@Z,CFuncValve::KeyV
 hl,100429B0,18,?ObjectCaps@CFuncValve@@UAEHXZ,CFuncValve::ObjectCaps,COF,dlls/cof_funcvalve.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100429D0,44,?Precache@CFuncValve@@UAEXXZ,CFuncValve::Precache,COF,dlls/cof_funcvalve.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10042A00,251,?ProThink@CFuncValve@@QAEXXZ,CFuncValve::ProThink,COF,dlls/cof_funcvalve.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,10042B00,49,?Restore@CFuncValve@@UAEHAAVCRestore@@@Z,CFuncValve::Restore,COF,dlls/cof_funcvalve.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,99.99,hl_1.55_to_1.6a.csv,"relocation targets differ (instructions identical): retail ?Restore@CBaseEntity@@UAEHAAVCRestore@@@Z, ours ?Restore@CBaseToggle@@UAEHAAVCRestore@@@Z"
-hl,10042B40,95,?Save@CFuncValve@@UAEHAAVCSave@@@Z,CFuncValve::Save,COF,dlls/cof_funcvalve.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,99.99,hl_1.55_to_1.6a.csv,"relocation targets differ (instructions identical): retail ?Save@CBaseEntity@@UAEHAAVCSave@@@Z, ours ?Save@CBaseToggle@@UAEHAAVCSave@@@Z"
+hl,10042B00,49,?Restore@CFuncValve@@UAEHAAVCRestore@@@Z,CFuncValve::Restore,COF,dlls/cof_funcvalve.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
+hl,10042B40,95,?Save@CFuncValve@@UAEHAAVCSave@@@Z,CFuncValve::Save,COF,dlls/cof_funcvalve.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10042BA0,324,?Spawn@CFuncValve@@UAEXXZ,CFuncValve::Spawn,COF,dlls/cof_funcvalve.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10042CF0,171,?UnlockValve@CFuncValve@@QAEXPAVCBaseEntity@@@Z,CFuncValve::UnlockValve,UNKNOWN,dlls/cof_funcvalve.cpp,,,MATCHED,100,,
 hl,10042DA0,911,?Use@CFuncValve@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CFuncValve::Use,COF,dlls/cof_funcvalve.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
@@ -14551,7 +14551,7 @@ hl,1004E050,34,?Precache@CKeyitemModel@@EAEXXZ,CKeyitemModel::Precache,COF,dlls/
 hl,1004E080,49,?Restore@CKeyitemModel@@EAEHAAVCRestore@@@Z,CKeyitemModel::Restore,COF,dlls/cof_keyitem.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1004E0C0,95,?Save@CKeyitemModel@@EAEHAAVCSave@@@Z,CKeyitemModel::Save,COF,dlls/cof_keyitem.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1004E120,57,?SendInitMessage@CKeyitemModel@@EAEXPAVCBasePlayer@@@Z,CKeyitemModel::SendInitMessage,COF,dlls/cof_keyitem.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,1004E160,477,?Spawn@CKeyitemModel@@EAEXXZ,CKeyitemModel::Spawn,COF,dlls/cof_keyitem.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,99.99,hl_1.55_to_1.6a.csv,"relocation targets differ (instructions identical): retail ?UTIL_AutoSetSize@CBaseEntity@@QAEXXZ, ours ?SetModelCollisionBox@CBaseEntity@@QAEXXZ"
+hl,1004E160,477,?Spawn@CKeyitemModel@@EAEXXZ,CKeyitemModel::Spawn,COF,dlls/cof_keyitem.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1004E340,5,_item_key,item_key,HLSDK,dlls/cof_keyitem.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( item_key, CKeyitemModel )"
 hl,1004E350,92,??$GetClassPtr@VCCoFLadderEndBottom@@@@YAPAVCCoFLadderEndBottom@@PAV0@@Z,GetClassPtr<CCoFLadderEndBottom>,HLSDK,dlls/cof_ladder.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
 hl,1004E3B0,92,??$GetClassPtr@VCCoFLadderEndTop@@@@YAPAVCCoFLadderEndTop@@PAV0@@Z,GetClassPtr<CCoFLadderEndTop>,HLSDK,dlls/cof_ladder.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
@@ -14563,9 +14563,9 @@ hl,1004F120,18,?ObjectCaps@CCoFLadderManagerUse@@UAEHXZ,CCoFLadderManagerUse::Ob
 hl,1004F140,34,?Precache@CCoFLadderManager@@EAEXXZ,CCoFLadderManager::Precache,COF,dlls/cof_ladder.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1004F170,34,?Precache@CCoFLadderManagerUse@@UAEXXZ,CCoFLadderManagerUse::Precache,COF,dlls/cof_ladder.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1004F1A0,49,?Restore@CCoFLadderManager@@EAEHAAVCRestore@@@Z,CCoFLadderManager::Restore,COF,dlls/cof_ladder.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,1004F1E0,49,?Restore@CCoFLadderManagerUse@@UAEHAAVCRestore@@@Z,CCoFLadderManagerUse::Restore,COF,dlls/cof_ladder.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,99.99,hl_1.55_to_1.6a.csv,"relocation targets differ (instructions identical): retail ?Restore@CBaseEntity@@UAEHAAVCRestore@@@Z, ours ?Restore@CBaseToggle@@UAEHAAVCRestore@@@Z"
+hl,1004F1E0,49,?Restore@CCoFLadderManagerUse@@UAEHAAVCRestore@@@Z,CCoFLadderManagerUse::Restore,COF,dlls/cof_ladder.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1004F220,95,?Save@CCoFLadderManager@@EAEHAAVCSave@@@Z,CCoFLadderManager::Save,COF,dlls/cof_ladder.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,1004F280,95,?Save@CCoFLadderManagerUse@@UAEHAAVCSave@@@Z,CCoFLadderManagerUse::Save,COF,dlls/cof_ladder.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,99.99,hl_1.55_to_1.6a.csv,"relocation targets differ (instructions identical): retail ?Save@CBaseEntity@@UAEHAAVCSave@@@Z, ours ?Save@CBaseToggle@@UAEHAAVCSave@@@Z"
+hl,1004F280,95,?Save@CCoFLadderManagerUse@@UAEHAAVCSave@@@Z,CCoFLadderManagerUse::Save,COF,dlls/cof_ladder.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1004F2E0,71,?Spawn@CCoFLadderEndBottom@@EAEXXZ,CCoFLadderEndBottom::Spawn,COF,dlls/cof_ladder.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1004F330,71,?Spawn@CCoFLadderEndTop@@EAEXXZ,CCoFLadderEndTop::Spawn,COF,dlls/cof_ladder.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1004F380,95,?Spawn@CCoFLadderManager@@EAEXXZ,CCoFLadderManager::Spawn,COF,dlls/cof_ladder.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
@@ -14768,38 +14768,38 @@ hl,10059C70,331,?Spawn@CSlower3@@UAEXXZ,CSlower3::Spawn,COF,dlls/cof_monsterslow
 hl,1005A050,491,?TakeDamage@CSlower3@@UAEHPAUentvars_s@@0MH@Z,CSlower3::TakeDamage,COF,dlls/cof_monsterslower3.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1005A240,100,?TraceAttack@CSlower3@@UAEXPAUentvars_s@@MVVector@@PAUTraceResult@@H@Z,CSlower3::TraceAttack,COF,dlls/cof_monsterslower3.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1005A2B0,5,_monster_slower3,monster_slower3,HLSDK,dlls/cof_monsterslower3.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( monster_slower3, CSlower3 )"
-hl,1005A2C0,92,??$GetClassPtr@VCMP5Ammo@@@@YAPAVCMP5Ammo@@PAV0@@Z,GetClassPtr<CMP5Ammo>,HLSDK,guess:dlls/guess_CoF_MP5.cpp,,,TODO,,jmp_target_of_export+rtti,
-hl,1005A320,92,??$GetClassPtr@VCMp5@@@@YAPAVCMp5@@PAV0@@Z,GetClassPtr<CMp5>,HLSDK,guess:dlls/guess_CoF_MP5.cpp,,,TODO,,jmp_target_of_export+rtti,
-hl,1005A380,124,,,COF,guess:dlls/guess_CoF_MP5.cpp,,,TODO,,,
-hl,1005A400,135,,,COF,guess:dlls/guess_CoF_MP5.cpp,,,TODO,,,
-hl,1005A490,113,,,COF,guess:dlls/guess_CoF_MP5.cpp,,,TODO,,,
-hl,1005A510,50,,,COF,guess:dlls/guess_CoF_MP5.cpp,,,TODO,,,
-hl,1005A550,716,,,COF,guess:dlls/guess_CoF_MP5.cpp,,,TODO,,,
-hl,1005A820,747,,,COF,guess:dlls/guess_CoF_MP5.cpp,,,TODO,,,
+hl,1005A2C0,92,??$GetClassPtr@VCMP5Ammo@@@@YAPAVCMP5Ammo@@PAV0@@Z,GetClassPtr<CMP5Ammo>,HLSDK,guess:dlls/guess_CoF_MP5.cpp,,,MATCHED,100,jmp_target_of_export+rtti,
+hl,1005A320,92,??$GetClassPtr@VCMp5@@@@YAPAVCMp5@@PAV0@@Z,GetClassPtr<CMp5>,HLSDK,guess:dlls/guess_CoF_MP5.cpp,,,MATCHED,100,jmp_target_of_export+rtti,
+hl,1005A380,124,?AddAmmo@CMP5Ammo@@EAEHPAVCBaseEntity@@@Z,CMP5Ammo::AddAmmo,COF,dlls/guess_CoF_MP5.cpp,,,MATCHED,100,,
+hl,1005A400,135,?Deploy@CMp5@@UAEHXZ,CMp5::Deploy,COF,dlls/guess_CoF_MP5.cpp,,,MATCHED,100,,
+hl,1005A490,113,?GetItemInfo@CMp5@@UAEHPAUItemInfo@@@Z,CMp5::GetItemInfo,COF,dlls/guess_CoF_MP5.cpp,,,MATCHED,100,,
+hl,1005A510,50,?Holster@CMp5@@UAEXXZ,CMp5::Holster,COF,dlls/guess_CoF_MP5.cpp,,,MATCHED,100,,
+hl,1005A550,716,?IronsightsFrom@CMp5@@UAEXXZ,CMp5::IronsightsFrom,COF,dlls/guess_CoF_MP5.cpp,,,MATCHED,100,,
+hl,1005A820,747,?IronsightsTo@CMp5@@UAEXXZ,CMp5::IronsightsTo,COF,dlls/guess_CoF_MP5.cpp,,,MATCHED,100,,
 hl,1005AB10,1961,,,COF,guess:dlls/guess_CoF_MP5.cpp,,,TODO,,,
-hl,1005B2C0,24,,,COF,guess:dlls/guess_CoF_MP5.cpp,,,TODO,,,
-hl,1005B2E0,287,,,COF,guess:dlls/guess_CoF_MP5.cpp,,,TODO,,,
-hl,1005B400,1888,,,COF,guess:dlls/guess_CoF_MP5.cpp,,,TODO,,,
-hl,1005BB60,247,,,COF,guess:dlls/guess_CoF_MP5.cpp,,,TODO,,,
-hl,1005BC60,193,,,COF,guess:dlls/guess_CoF_MP5.cpp,,,TODO,,,
+hl,1005B2C0,24,?Precache@CMP5Ammo@@EAEXXZ,CMP5Ammo::Precache,COF,dlls/guess_CoF_MP5.cpp,,,MATCHED,100,,
+hl,1005B2E0,287,?Precache@CMp5@@UAEXXZ,CMp5::Precache,COF,dlls/guess_CoF_MP5.cpp,,,MATCHED,100,hl_manual.csv,
+hl,1005B400,1888,?PrimaryAttack@CMp5@@UAEXXZ,CMp5::PrimaryAttack,COF,dlls/guess_CoF_MP5.cpp,,,MATCHED,100,hl_manual.csv,
+hl,1005BB60,247,?Reload@CMp5@@UAEXXZ,CMp5::Reload,COF,dlls/guess_CoF_MP5.cpp,,,MATCHED,100,hl_manual.csv,
+hl,1005BC60,193,?SecondaryAttack@CMp5@@UAEXXZ,CMp5::SecondaryAttack,COF,dlls/guess_CoF_MP5.cpp,,,MATCHED,100,hl_manual.csv,
 hl,1005BD30,109,,,COF,guess:dlls/guess_CoF_MP5.cpp,,,TODO,,,
-hl,1005BDA0,79,,,COF,guess:dlls/guess_CoF_MP5.cpp,,,TODO,,,
-hl,1005BDF0,39,,,COF,guess:dlls/guess_CoF_MP5.cpp,,,TODO,,,
-hl,1005BE20,279,,,COF,guess:dlls/guess_CoF_MP5.cpp,,,TODO,,,
-hl,1005BF40,377,,,COF,guess:dlls/guess_CoF_MP5.cpp,,,TODO,,,
-hl,1005C0C0,233,,,COF,guess:dlls/guess_CoF_MP5.cpp,,,TODO,,,
-hl,1005C1B0,138,?SuicideShot@CMp5@@QAEXXZ,CMp5::SuicideShot,COF,guess:dlls/guess_CoF_MP5.cpp,1.6a,,TODO,,hl_1.6a_exports.csv,
-hl,1005C240,187,,,COF,guess:dlls/guess_CoF_MP5.cpp,,,TODO,,,
-hl,1005C300,144,,,COF,guess:dlls/guess_CoF_MP5.cpp,,,TODO,,,
-hl,1005C390,6,,,COF,guess:dlls/guess_CoF_MP5.cpp,,,TODO,,,
-hl,1005C3A0,5,_ammo_mp5,ammo_mp5,HLSDK,guess:dlls/guess_CoF_MP5.cpp,,,TODO,,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( ammo_mp5, CMP5Ammo )"
-hl,1005C3B0,5,_weapon_mp5,weapon_mp5,HLSDK,guess:dlls/guess_CoF_MP5.cpp,,,TODO,,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( weapon_mp5, CMp5 )"
-hl,1005C3C0,92,??$GetClassPtr@VCMP5ModeSaveRestoreMP5@@@@YAPAVCMP5ModeSaveRestoreMP5@@PAV0@@Z,GetClassPtr<CMP5ModeSaveRestoreMP5>,HLSDK,guess:dlls/guess_CoF_MP5.cpp,,,TODO,,jmp_target_of_export+rtti,
-hl,1005C420,355,,,COF,guess:dlls/guess_CoF_MP5.cpp,,,TODO,,,
-hl,1005C590,15,,,COF,guess:dlls/guess_CoF_MP5.cpp,,,TODO,,,
-hl,1005C5A0,71,,,COF,guess:dlls/guess_CoF_MP5.cpp,,,TODO,,,
-hl,1005C5F0,357,,,COF,guess:dlls/guess_CoF_MP5.cpp,,,TODO,,,
-hl,1005C760,5,_cof_mp5modesaverestore,cof_mp5modesaverestore,HLSDK,guess:dlls/guess_CoF_MP5.cpp,,,TODO,,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( cof_mp5modesaverestore, CMP5ModeSaveRestoreMP5 )"
+hl,1005BDA0,79,?SendInitMessage@CMp5@@UAEXPAVCBasePlayer@@@Z,CMp5::SendInitMessage,COF,dlls/guess_CoF_MP5.cpp,,,MATCHED,100,,
+hl,1005BDF0,39,?Spawn@CMP5Ammo@@EAEXXZ,CMP5Ammo::Spawn,COF,dlls/guess_CoF_MP5.cpp,,,MATCHED,100,,
+hl,1005BE20,279,?Spawn@CMp5@@UAEXXZ,CMp5::Spawn,COF,dlls/guess_CoF_MP5.cpp,,,MATCHED,100,,
+hl,1005BF40,377,?StartSuicide@CMp5@@UAEXXZ,CMp5::StartSuicide,COF,dlls/guess_CoF_MP5.cpp,,,MATCHED,100,,
+hl,1005C0C0,233,?StopSuicide@CMp5@@UAEXXZ,CMp5::StopSuicide,COF,dlls/guess_CoF_MP5.cpp,,,MATCHED,100,,
+hl,1005C1B0,138,?SuicideShot@CMp5@@QAEXXZ,CMp5::SuicideShot,COF,guess:dlls/guess_CoF_MP5.cpp,1.6a,,MATCHED,100,hl_1.6a_exports.csv,
+hl,1005C240,187,?TertiaryAttack@CMp5@@UAEXXZ,CMp5::TertiaryAttack,COF,dlls/guess_CoF_MP5.cpp,,,MATCHED,100,,
+hl,1005C300,144,?WeaponIdle@CMp5@@UAEXXZ,CMp5::WeaponIdle,COF,dlls/guess_CoF_MP5.cpp,,,MATCHED,100,,
+hl,1005C390,6,?iItemSlot@CMp5@@UAEHXZ,CMp5::iItemSlot,COF,dlls/guess_CoF_MP5.cpp,,,MATCHED,100,,
+hl,1005C3A0,5,_ammo_mp5,ammo_mp5,HLSDK,guess:dlls/guess_CoF_MP5.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( ammo_mp5, CMP5Ammo )"
+hl,1005C3B0,5,_weapon_mp5,weapon_mp5,HLSDK,guess:dlls/guess_CoF_MP5.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( weapon_mp5, CMp5 )"
+hl,1005C3C0,92,??$GetClassPtr@VCMP5ModeSaveRestoreMP5@@@@YAPAVCMP5ModeSaveRestoreMP5@@PAV0@@Z,GetClassPtr<CMP5ModeSaveRestoreMP5>,HLSDK,guess:dlls/guess_CoF_MP5.cpp,,,MATCHED,100,jmp_target_of_export+rtti,
+hl,1005C420,355,?KeyValue@CMP5ModeSaveRestoreMP5@@UAEXPAUKeyValueData_s@@@Z,CMP5ModeSaveRestoreMP5::KeyValue,COF,dlls/guess_CoF_MP5.cpp,,,MATCHED,100,,
+hl,1005C590,15,?ObjectCaps@CMP5ModeSaveRestoreMP5@@UAEHXZ,CMP5ModeSaveRestoreMP5::ObjectCaps,COF,dlls/guess_CoF_MP5.cpp,,,MATCHED,100,,
+hl,1005C5A0,71,?Spawn@CMP5ModeSaveRestoreMP5@@UAEXXZ,CMP5ModeSaveRestoreMP5::Spawn,COF,dlls/guess_CoF_MP5.cpp,,,MATCHED,100,,
+hl,1005C5F0,357,?Use@CMP5ModeSaveRestoreMP5@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CMP5ModeSaveRestoreMP5::Use,COF,dlls/guess_CoF_MP5.cpp,,,MATCHED,100,hl_manual.csv,
+hl,1005C760,5,_cof_mp5modesaverestore,cof_mp5modesaverestore,HLSDK,guess:dlls/guess_CoF_MP5.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( cof_mp5modesaverestore, CMP5ModeSaveRestoreMP5 )"
 hl,1005C770,92,??$GetClassPtr@VCRealCamera@@@@YAPAVCRealCamera@@PAV0@@Z,GetClassPtr<CRealCamera>,HLSDK,dlls/cof_nicecamera.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
 hl,1005C7D0,92,??$GetClassPtr@VCViewPoint@@@@YAPAVCViewPoint@@PAV0@@Z,GetClassPtr<CViewPoint>,HLSDK,dlls/cof_nicecamera.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
 hl,1005C830,18,?CameraUse@CRealCamera@@QAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CRealCamera::CameraUse,COF,dlls/cof_nicecamera.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
@@ -14877,7 +14877,7 @@ hl,10061220,5,_cof_phonecall,cof_phonecall,HLSDK,dlls/cof_phonecall.cpp,,,MATCHE
 hl,10061230,92,??$GetClassPtr@VCPushableVan@@@@YAPAVCPushableVan@@PAV0@@Z,GetClassPtr<CPushableVan>,HLSDK,dlls/cof_pushablevan.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
 hl,10061290,28,?ObjectCaps@CPushableVan@@EAEHXZ,CPushableVan::ObjectCaps,COF,dlls/cof_pushablevan.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100612B0,34,?Precache@CPushableVan@@EAEXXZ,CPushableVan::Precache,COF,dlls/cof_pushablevan.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,100612E0,270,?Spawn@CPushableVan@@EAEXXZ,CPushableVan::Spawn,COF,dlls/cof_pushablevan.cpp,1.0,1.0->1.4 changed; 1.4->1.55 changed,TODO,99.99,hl_1.55_to_1.6a.csv,"relocation targets differ (instructions identical): retail ?UTIL_AutoSetSize@CBaseEntity@@QAEXXZ, ours ?SetModelCollisionBox@CBaseEntity@@QAEXXZ"
+hl,100612E0,270,?Spawn@CPushableVan@@EAEXXZ,CPushableVan::Spawn,COF,dlls/cof_pushablevan.cpp,1.0,1.0->1.4 changed; 1.4->1.55 changed,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100613F0,1129,?VanThink@CPushableVan@@AAEXXZ,CPushableVan::VanThink,COF,dlls/cof_pushablevan.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10061860,900,?VanUse@CPushableVan@@AAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CPushableVan::VanUse,COF,dlls/cof_pushablevan.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10061BF0,5,_cof_pushablevan,cof_pushablevan,HLSDK,dlls/cof_pushablevan.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( cof_pushablevan, CPushableVan )"
@@ -15256,8 +15256,8 @@ hl,10075AF0,92,??$GetClassPtr@VCStatueUse@@@@YAPAVCStatueUse@@PAV0@@Z,GetClassPt
 hl,10075B50,186,?KeyValue@CStatueUse@@UAEXPAUKeyValueData_s@@@Z,CStatueUse::KeyValue,COF,dlls/cof_statueuse.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10075C10,18,?ObjectCaps@CStatueUse@@UAEHXZ,CStatueUse::ObjectCaps,COF,dlls/cof_statueuse.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10075C30,12,?Precache@CStatueUse@@UAEXXZ,CStatueUse::Precache,COF,dlls/cof_statueuse.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,10075C40,49,?Restore@CStatueUse@@UAEHAAVCRestore@@@Z,CStatueUse::Restore,COF,dlls/cof_statueuse.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,99.99,hl_1.55_to_1.6a.csv,"relocation targets differ (instructions identical): retail ?Restore@CBaseEntity@@UAEHAAVCRestore@@@Z, ours ?Restore@CBaseToggle@@UAEHAAVCRestore@@@Z"
-hl,10075C80,95,?Save@CStatueUse@@UAEHAAVCSave@@@Z,CStatueUse::Save,COF,dlls/cof_statueuse.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,99.99,hl_1.55_to_1.6a.csv,"relocation targets differ (instructions identical): retail ?Save@CBaseEntity@@UAEHAAVCSave@@@Z, ours ?Save@CBaseToggle@@UAEHAAVCSave@@@Z"
+hl,10075C40,49,?Restore@CStatueUse@@UAEHAAVCRestore@@@Z,CStatueUse::Restore,COF,dlls/cof_statueuse.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
+hl,10075C80,95,?Save@CStatueUse@@UAEHAAVCSave@@@Z,CStatueUse::Save,COF,dlls/cof_statueuse.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10075CE0,131,?Spawn@CStatueUse@@UAEXXZ,CStatueUse::Spawn,COF,dlls/cof_statueuse.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10075D70,400,?Use@CStatueUse@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CStatueUse::Use,COF,dlls/cof_statueuse.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10075F20,5,_trigger_statueuse,trigger_statueuse,HLSDK,dlls/cof_statueuse.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( trigger_statueuse, CStatueUse )"
@@ -15521,8 +15521,8 @@ hl,10082FC0,339,?KeyValue@CPasswordNote@@EAEXPAUKeyValueData_s@@@Z,CPasswordNote
 hl,10083120,755,?NoteUse@CPasswordNote@@AAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CPasswordNote::NoteUse,COF,dlls/cof_userpasswordnote.cpp,2010-prototype,1.0->1.4 changed; 1.4->1.55 same,TODO,99.99,hl_1.55_to_1.6a.csv,"relocation targets differ (instructions identical): retail ?m_SaveData@CEnvELight@@2PAUTYPEDESCRIPTION@@A, ours ?pUsernames@CCofComputer@@2PAPBDA"
 hl,10083420,28,?ObjectCaps@CPasswordNote@@EAEHXZ,CPasswordNote::ObjectCaps,COF,dlls/cof_userpasswordnote.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10083440,47,?Precache@CPasswordNote@@EAEXXZ,CPasswordNote::Precache,COF,dlls/cof_userpasswordnote.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,10083470,49,?Restore@CPasswordNote@@EAEHAAVCRestore@@@Z,CPasswordNote::Restore,COF,dlls/cof_userpasswordnote.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,99.99,hl_1.55_to_1.6a.csv,"relocation targets differ (instructions identical): retail ?Restore@CBaseEntity@@UAEHAAVCRestore@@@Z, ours ?Restore@CBaseAnimating@@UAEHAAVCRestore@@@Z"
-hl,100834B0,95,?Save@CPasswordNote@@EAEHAAVCSave@@@Z,CPasswordNote::Save,COF,dlls/cof_userpasswordnote.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,99.99,hl_1.55_to_1.6a.csv,"relocation targets differ (instructions identical): retail ?Save@CBaseEntity@@UAEHAAVCSave@@@Z, ours ?Save@CBaseAnimating@@UAEHAAVCSave@@@Z"
+hl,10083470,49,?Restore@CPasswordNote@@EAEHAAVCRestore@@@Z,CPasswordNote::Restore,COF,dlls/cof_userpasswordnote.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
+hl,100834B0,95,?Save@CPasswordNote@@EAEHAAVCSave@@@Z,CPasswordNote::Save,COF,dlls/cof_userpasswordnote.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10083510,214,?Spawn@CPasswordNote@@EAEXXZ,CPasswordNote::Spawn,COF,dlls/cof_userpasswordnote.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100835F0,5,_cof_passwordnote,cof_passwordnote,HLSDK,dlls/cof_userpasswordnote.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( cof_passwordnote, CPasswordNote )"
 hl,10083600,92,??$GetClassPtr@VCVP70@@@@YAPAVCVP70@@PAV0@@Z,GetClassPtr<CVP70>,HLSDK,dlls/cof_vp70.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
@@ -15965,11 +15965,11 @@ hl,1009A390,54,?RestartCampaign@CCoFCoopStats@@AAEXXZ,CCoFCoopStats::RestartCamp
 hl,1009A3D0,49,?Restore@CBubbling@@UAEHAAVCRestore@@@Z,CBubbling::Restore,HLSDK,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,refbytes:hlsdk:dlls__effects.obj:score3,
 hl,1009A410,49,?Restore@CCoFClothesMenu@@EAEHAAVCRestore@@@Z,CCoFClothesMenu::Restore,COF,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1009A450,49,?Restore@CCoFDocument@@UAEHAAVCRestore@@@Z,CCoFDocument::Restore,COF,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,1009A490,49,?Restore@CCoFMDLCutscene@@EAEHAAVCRestore@@@Z,CCoFMDLCutscene::Restore,COF,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,99.99,hl_1.55_to_1.6a.csv,"relocation targets differ (instructions identical): retail ?Restore@CBaseEntity@@UAEHAAVCRestore@@@Z, ours ?Restore@CBaseMonster@@UAEHAAVCRestore@@@Z"
+hl,1009A490,49,?Restore@CCoFMDLCutscene@@EAEHAAVCRestore@@@Z,CCoFMDLCutscene::Restore,COF,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1009A4D0,49,?Restore@CCofBossHealthBar@@UAEHAAVCRestore@@@Z,CCofBossHealthBar::Restore,COF,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1009A510,49,?Restore@CCofComputer@@UAEHAAVCRestore@@@Z,CCofComputer::Restore,COF,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1009A550,49,?Restore@CCofGoodPointsTrigger@@UAEHAAVCRestore@@@Z,CCofGoodPointsTrigger::Restore,COF,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,1009A590,49,?Restore@CCofInterDoorOnOff@@UAEHAAVCRestore@@@Z,CCofInterDoorOnOff::Restore,COF,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,99.99,hl_1.55_to_1.6a.csv,"relocation targets differ (instructions identical): retail ?Restore@CBaseEntity@@UAEHAAVCRestore@@@Z, ours ?Restore@CBaseMonster@@UAEHAAVCRestore@@@Z"
+hl,1009A590,49,?Restore@CCofInterDoorOnOff@@UAEHAAVCRestore@@@Z,CCofInterDoorOnOff::Restore,COF,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1009A5D0,49,?Restore@CCofKeypad@@UAEHAAVCRestore@@@Z,CCofKeypad::Restore,COF,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1009A610,49,?Restore@CCofLevelTrigger@@UAEHAAVCRestore@@@Z,CCofLevelTrigger::Restore,COF,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1009A650,49,?Restore@CCofSkipManager@@UAEHAAVCRestore@@@Z,CCofSkipManager::Restore,COF,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
@@ -15995,11 +15995,11 @@ hl,1009AAF0,206,?ReturnFOV@CCofCameraZoom@@QAEXXZ,CCofCameraZoom::ReturnFOV,COF,
 hl,1009ABC0,95,?Save@CBubbling@@UAEHAAVCSave@@@Z,CBubbling::Save,HLSDK,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1009AC20,95,?Save@CCoFClothesMenu@@EAEHAAVCSave@@@Z,CCoFClothesMenu::Save,COF,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1009AC80,95,?Save@CCoFDocument@@UAEHAAVCSave@@@Z,CCoFDocument::Save,COF,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,1009ACE0,95,?Save@CCoFMDLCutscene@@EAEHAAVCSave@@@Z,CCoFMDLCutscene::Save,COF,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,99.99,hl_1.55_to_1.6a.csv,"relocation targets differ (instructions identical): retail ?Save@CBaseEntity@@UAEHAAVCSave@@@Z, ours ?Save@CBaseMonster@@UAEHAAVCSave@@@Z"
+hl,1009ACE0,95,?Save@CCoFMDLCutscene@@EAEHAAVCSave@@@Z,CCoFMDLCutscene::Save,COF,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1009AD40,95,?Save@CCofBossHealthBar@@UAEHAAVCSave@@@Z,CCofBossHealthBar::Save,COF,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1009ADA0,95,?Save@CCofComputer@@UAEHAAVCSave@@@Z,CCofComputer::Save,COF,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1009AE00,95,?Save@CCofGoodPointsTrigger@@UAEHAAVCSave@@@Z,CCofGoodPointsTrigger::Save,COF,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,1009AE60,95,?Save@CCofInterDoorOnOff@@UAEHAAVCSave@@@Z,CCofInterDoorOnOff::Save,COF,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,99.99,hl_1.55_to_1.6a.csv,"relocation targets differ (instructions identical): retail ?Save@CBaseEntity@@UAEHAAVCSave@@@Z, ours ?Save@CBaseMonster@@UAEHAAVCSave@@@Z"
+hl,1009AE60,95,?Save@CCofInterDoorOnOff@@UAEHAAVCSave@@@Z,CCofInterDoorOnOff::Save,COF,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1009AEC0,95,?Save@CCofKeypad@@UAEHAAVCSave@@@Z,CCofKeypad::Save,COF,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1009AF20,95,?Save@CCofLevelTrigger@@UAEHAAVCSave@@@Z,CCofLevelTrigger::Save,COF,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1009AF80,95,?Save@CCofSkipManager@@UAEHAAVCSave@@@Z,CCofSkipManager::Save,COF,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
@@ -16437,7 +16437,7 @@ hl,100AB000,1000,?Use@CEnvExplosion@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CEnvEx
 hl,100AB3F0,5,_env_explosion,env_explosion,HLSDK,dlls/explode.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( env_explosion, CEnvExplosion )"
 hl,100AB400,5,_spark_shower,spark_shower,HLSDK,dlls/explode.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( spark_shower, CShower )"
 hl,100AB410,177,?CeilingZ@CFlyingMonster@@QAEMABVVector@@@Z,CFlyingMonster::CeilingZ,HLSDK,dlls/flyingmonster.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,100AB4D0,198,?ChangeYaw@CFlyingMonster@@UAEMH@Z,CFlyingMonster::ChangeYaw,HLSDK,dlls/flyingmonster.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,TODO,99.99,hl_1.55_to_1.6a.csv,"relocation targets differ (instructions identical): retail __real@c3480000, ours __real@c2b40000"
+hl,100AB4D0,198,?ChangeYaw@CFlyingMonster@@UAEMH@Z,CFlyingMonster::ChangeYaw,HLSDK,dlls/flyingmonster.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100AB5A0,365,?CheckLocalMove@CFlyingMonster@@UAEHABVVector@@0PAVCBaseEntity@@PAM@Z,CFlyingMonster::CheckLocalMove,UNKNOWN,dlls/flyingmonster.cpp,,,MATCHED,100,,
 hl,100AB710,35,?FTriangulate@CFlyingMonster@@UAEHABVVector@@0MPAVCBaseEntity@@PAV2@@Z,CFlyingMonster::FTriangulate,HLSDK,dlls/flyingmonster.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,refbytes:paranoia:dlls__flyingmonster.obj:score1,
 hl,100AB740,103,?FloorZ@CFlyingMonster@@QAEMABVVector@@@Z,CFlyingMonster::FloorZ,HLSDK,dlls/flyingmonster.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,refbytes:paranoia:dlls__flyingmonster.obj:score1,
@@ -16743,7 +16743,7 @@ hl,100B7F30,92,??$GetClassPtr@VCCalcVelocityPolar@@@@YAPAVCCalcVelocityPolar@@PA
 hl,100B7F90,92,??$GetClassPtr@VCLocusAlias@@@@YAPAVCLocusAlias@@PAV0@@Z,GetClassPtr<CLocusAlias>,HLSDK,dlls/locus.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
 hl,100B7FF0,92,??$GetClassPtr@VCLocusBeam@@@@YAPAVCLocusBeam@@PAV0@@Z,GetClassPtr<CLocusBeam>,HLSDK,dlls/locus.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
 hl,100B8050,92,??$GetClassPtr@VCLocusVariable@@@@YAPAVCLocusVariable@@PAV0@@Z,GetClassPtr<CLocusVariable>,HLSDK,dlls/locus.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
-hl,100B80B0,92,??$GetClassPtr@VCMark@@@@YAPAVCMark@@PAV0@@Z,CMark>,SPIRIT,dlls/locus.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
+hl,100B80B0,92,??$GetClassPtr@VCMark@@@@YAPAVCMark@@PAV0@@Z,CMark>,SPIRIT,dlls/locus.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_manual.csv,
 hl,100B8110,207,?CalcLocus_Position@@YA?AVVector@@PAVCBaseEntity@@0PBD@Z,CalcLocus_Position,SPIRIT,dlls/locus.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100B81E0,94,?CalcLocus_Ratio@@YAMPAVCBaseEntity@@PBD@Z,CalcLocus_Ratio,SPIRIT,dlls/locus.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,refbytes:paranoia:dlls__locus.obj:score4,
 hl,100B8240,207,?CalcLocus_Velocity@@YA?AVVector@@PAVCBaseEntity@@0PBD@Z,CalcLocus_Velocity,SPIRIT,dlls/locus.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
@@ -16847,7 +16847,7 @@ hl,100BB8F0,15,?CallTryMakeMonster@CMonsterMaker@@QAEXXZ,CMonsterMaker::CallTryM
 hl,100BB900,8,?CyclicUse@CMonsterMaker@@QAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CMonsterMaker::CyclicUse,HLSDK,dlls/monstermaker.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100BB910,119,?DeathNotice@CMonsterMaker@@UAEXPAUentvars_s@@@Z,CMonsterMaker::DeathNotice,HLSDK,dlls/monstermaker.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100BB990,415,?KeyValue@CMonsterMaker@@UAEXPAUKeyValueData_s@@@Z,CMonsterMaker::KeyValue,HLSDK,dlls/monstermaker.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,100BBB30,643,?MakeMonster@CMonsterMaker@@QAEPAVCBaseMonster@@XZ,CMonsterMaker::MakeMonster,SPIRIT,dlls/monstermaker.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
+hl,100BBB30,643,?MakeMonster@CMonsterMaker@@QAEPAVCBaseMonster@@XZ,CMonsterMaker::MakeMonster,SPIRIT,dlls/monstermaker.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_manual.csv,
 hl,100BBDD0,30,?MakerThink@CMonsterMaker@@QAEXXZ,CMonsterMaker::MakerThink,HLSDK,dlls/monstermaker.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100BBDF0,66,?Precache@CMonsterMaker@@UAEXXZ,CMonsterMaker::Precache,HLSDK,dlls/monstermaker.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100BBE40,49,?Restore@CMonsterMaker@@UAEHAAVCRestore@@@Z,CMonsterMaker::Restore,HLSDK,dlls/monstermaker.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
@@ -17360,13 +17360,13 @@ hl,100DA0E0,92,??$GetClassPtr@VCPlayerFreeze@@@@YAPAVCPlayerFreeze@@PAV0@@Z,GetC
 hl,100DA140,92,??$GetClassPtr@VCRevertSaved@@@@YAPAVCRevertSaved@@PAV0@@Z,GetClassPtr<CRevertSaved>,HLSDK,dlls/player.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
 hl,100DA1A0,92,??$GetClassPtr@VCSprayCan@@@@YAPAVCSprayCan@@PAV0@@Z,CSprayCan>,HLSDK,dlls/player.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_manual.csv,
 hl,100DA200,92,??$GetClassPtr@VCStripWeapons@@@@YAPAVCStripWeapons@@PAV0@@Z,GetClassPtr<CStripWeapons>,HLSDK,dlls/player.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
-hl,100DA260,64,??$_Destroy_range@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@std@@YAXPAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@QAV10@AAV?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@0@@Z,>,LIB,dlls/player.cpp,,,TODO,,,
+hl,100DA260,64,??$_Destroy_range@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@std@@YAXPAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@QAV10@AAV?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@0@@Z,>,LIB,dlls/player.cpp,,,MATCHED,100,,
 hl,100DA2A0,395,,,UNKNOWN,,,,TODO,,,
-hl,100DA460,108,??$_Uninitialized_move@PAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@YAPAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@QAV10@0PAV10@AAV?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@0@@Z,>,LIB,dlls/player.cpp,,,TODO,,,
+hl,100DA460,108,??$_Uninitialized_move@PAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@YAPAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@QAV10@0PAV10@AAV?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@0@@Z,>,LIB,dlls/player.cpp,,,MATCHED,100,,
 hl,100DA4D0,260,,,UNKNOWN,,,,TODO,,,
-hl,100DA5E0,153,??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z,>,LIB,dlls/player.cpp,,,TODO,,,
+hl,100DA5E0,153,??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z,>,LIB,dlls/player.cpp,,,MATCHED,100,,
 hl,100DA680,80,,,UNKNOWN,,,,TODO,,,
-hl,100DA6D0,1553,?AddDocument@CBasePlayer@@QAEXPAVCCoFDocument@@@Z,CBasePlayer::AddDocument,COF,dlls/player.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,TODO,99.99,hl_1.55_to_1.6a.csv,"relocation targets differ (instructions identical): retail ??$_Destroy_range@V?$fuzzer_allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@fuzzer@@@std@@YAXPAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@QAV10@AAV?$fuzzer_allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@fuzzer@@@Z, ours ??$_Destroy_range@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@std@@YAXPAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@QAV10@AAV?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@0@@Z"
+hl,100DA6D0,1553,?AddDocument@CBasePlayer@@QAEXPAVCCoFDocument@@@Z,CBasePlayer::AddDocument,COF,dlls/player.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100DACF0,65,?AddGoodPoint@CBasePlayer@@QAEXH_N@Z,CBasePlayer::AddGoodPoint,UNKNOWN,dlls/player.cpp,,,MATCHED,100,,
 hl,100DAD40,447,?AddItemToInventory@CBasePlayer@@QAEHHHH@Z,CBasePlayer::AddItemToInventory,COF,dlls/player.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100DAF10,374,?AddPlayerItem@CBasePlayer@@UAEHPAVCBasePlayerItem@@@Z,CBasePlayer::AddPlayerItem,HLSDK,dlls/player.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
@@ -17381,7 +17381,7 @@ hl,100DBFB0,111,?CalculateAccuracy@CBasePlayer@@QAEMXZ,CBasePlayer::CalculateAcc
 hl,100DC020,59,,,UNKNOWN,,,,TODO,,,
 hl,100DC080,69,,,UNKNOWN,,,,TODO,,,
 hl,100DC0D0,1671,?CheatImpulseCommands@CBasePlayer@@QAEXH@Z,CBasePlayer::CheatImpulseCommands,HLSDK,dlls/player.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,EQUIVALENT,99.98,hl_1.55_to_1.6a.csv,"EQUIVALENT: impulse 202, the z part of pev->origin + pev->view_ofs adds with two registers swapped; swapping the operands makes it worse"
-hl,100DC820,467,?CheckBeatenEnding@CBasePlayer@@QAE_NH@Z,CBasePlayer::CheckBeatenEnding,COF,dlls/player.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,99.99,hl_1.55_to_1.6a.csv,"relocation targets differ (instructions identical): retail FID_conflict:__ltoa, ours _itoa"
+hl,100DC820,467,?CheckBeatenEnding@CBasePlayer@@QAE_NH@Z,CBasePlayer::CheckBeatenEnding,COF,dlls/player.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100DCA10,212,?CheckMorphineRestore@CBasePlayer@@QAEXXZ,CBasePlayer::CheckMorphineRestore,UNKNOWN,dlls/player.cpp,,,MATCHED,100,,
 hl,100DCAF0,31,,,UNKNOWN,,,,TODO,,,
 hl,100DCB10,847,?CheckQuickDualWield@CBasePlayer@@QAEXPAD0@Z,CBasePlayer::CheckQuickDualWield,COF,dlls/player.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
@@ -17431,9 +17431,9 @@ hl,100E0310,90,?GetPlayerWeapon@CBasePlayer@@QAEPAVCBasePlayerWeapon@@H@Z,CBaseP
 hl,100E0370,15,?GetState@CHudSprite@@EAE?AW4STATE@@XZ,CHudSprite::GetState,SPIRIT,dlls/player.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100E0380,19,?GetState@CPlayerFreeze@@EAE?AW4STATE@@XZ,CPlayerFreeze::GetState,SPIRIT,dlls/player.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100E03A0,219,?GetWeaponAnimation@CBasePlayer@@QAEHXZ,CBasePlayer::GetWeaponAnimation,COF,dlls/player.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,100E04D0,984,?GiveAmmo@CBasePlayer@@UAEHHPADH_N@Z,CBasePlayer::GiveAmmo,HLSDK,dlls/player.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
+hl,100E04D0,984,?GiveAmmo@CBasePlayer@@UAEHHPADH_N@Z,CBasePlayer::GiveAmmo,HLSDK,dlls/player.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_manual.csv,
 hl,100E08B0,456,?GiveDualWeapon@CBasePlayer@@QAEXHH@Z,CBasePlayer::GiveDualWeapon,COF,dlls/player.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,100E0A80,600,?GiveNamedItem@CBasePlayer@@QAEXPBD_N1@Z,CBasePlayer::GiveNamedItem,HLSDK,dlls/player.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
+hl,100E0A80,600,?GiveNamedItem@CBasePlayer@@QAEXPBD_N1@Z,CBasePlayer::GiveNamedItem,HLSDK,dlls/player.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_manual.csv,
 hl,100E0CE0,199,,,UNKNOWN,guess:dlls/player.cpp,,,TODO,,,
 hl,100E0DB0,2259,?GlobalCheckingEndingOrUnlockables@@YA_NH@Z,GlobalCheckingEndingOrUnlockables,COF,dlls/player.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100E1690,2564,,,UNKNOWN,guess:dlls/player.cpp,,,TODO,,,
@@ -17515,11 +17515,11 @@ hl,100F0F60,61,?RemoveAmmo@CBasePlayer@@QAEXPBDH@Z,CBasePlayer::RemoveAmmo,SPIRI
 hl,100F0FA0,929,?RemoveItems@CBasePlayer@@QAEXHHHHHHHHHHHHHHHHHHHH@Z,CBasePlayer::RemoveItems,SPIRIT,dlls/player.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100F1350,211,?RemovePlayerItem@CBasePlayer@@UAEHPAVCBasePlayerItem@@@Z,CBasePlayer::RemovePlayerItem,HLSDK,dlls/player.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100F1440,124,?ResetAutoaim@CBasePlayer@@QAEXXZ,CBasePlayer::ResetAutoaim,UNKNOWN,dlls/player.cpp,,,MATCHED,100,,
-hl,100F14C0,794,?Restore@CBasePlayer@@UAEHAAVCRestore@@@Z,CBasePlayer::Restore,HLSDK,dlls/player.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,TODO,99.99,hl_1.55_to_1.6a.csv,"relocation targets differ (instructions identical): retail ?m_SaveData@CBasePlayer@@2PAUTYPEDESCRIPTION@@A, ours ?m_playerSaveData@CBasePlayer@@2PAUTYPEDESCRIPTION@@A"
+hl,100F14C0,794,?Restore@CBasePlayer@@UAEHAAVCRestore@@@Z,CBasePlayer::Restore,HLSDK,dlls/player.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100F17E0,49,?Restore@CRevertSaved@@UAEHAAVCRestore@@@Z,CRevertSaved::Restore,HLSDK,dlls/player.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,refbytes:paranoia:dlls__player.obj:score3,
 hl,100F1820,49,?Restore@CStripWeapons@@UAEHAAVCRestore@@@Z,CStripWeapons::Restore,SPIRIT,dlls/player.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100F1860,221,?RevivePlayer@CBasePlayer@@QAEXXZ,CBasePlayer::RevivePlayer,COF,dlls/player.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,100F1940,67,?Save@CBasePlayer@@UAEHAAVCSave@@@Z,CBasePlayer::Save,HLSDK,dlls/player.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,TODO,99.99,hl_1.55_to_1.6a.csv,"relocation targets differ (instructions identical): retail ?m_SaveData@CBasePlayer@@2PAUTYPEDESCRIPTION@@A, ours ?m_playerSaveData@CBasePlayer@@2PAUTYPEDESCRIPTION@@A"
+hl,100F1940,67,?Save@CBasePlayer@@UAEHAAVCSave@@@Z,CBasePlayer::Save,HLSDK,dlls/player.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100F1990,95,?Save@CRevertSaved@@UAEHAAVCSave@@@Z,CRevertSaved::Save,HLSDK,dlls/player.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100F19F0,95,?Save@CStripWeapons@@UAEHAAVCSave@@@Z,CStripWeapons::Save,SPIRIT,dlls/player.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100F1A50,456,?SelectItem@CBasePlayer@@QAEXPBD@Z,CBasePlayer::SelectItem,HLSDK,dlls/player.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
@@ -17534,7 +17534,7 @@ hl,100F2D40,176,?SetCorrectView@CBasePlayer@@QAEXXZ,CBasePlayer::SetCorrectView,
 hl,100F2DF0,30,?SetCustomDecalFrames@CBasePlayer@@QAEXH@Z,CBasePlayer::SetCustomDecalFrames,HLSDK,dlls/player.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100F2E10,181,?SetDualWieldWeapon@CBasePlayer@@QAEXH@Z,CBasePlayer::SetDualWieldWeapon,COF,dlls/player.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100F2ED0,2825,?SetEndingOrUnlockables@CBasePlayer@@QAEXH_N00@Z,CBasePlayer::SetEndingOrUnlockables,COF,dlls/player.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,100F39E0,84,?SetJumpHeight@CBasePlayer@@QAEXH@Z,CBasePlayer::SetJumpHeight,UNKNOWN,dlls/player.cpp,,,TODO,99.99,,"relocation targets differ (instructions identical): retail FID_conflict:__ltoa, ours _itoa"
+hl,100F39E0,84,?SetJumpHeight@CBasePlayer@@QAEXH@Z,CBasePlayer::SetJumpHeight,UNKNOWN,dlls/player.cpp,,,MATCHED,100,,
 hl,100F3A40,428,?SetSuitUpdate@CBasePlayer@@QAEXPADHH@Z,CBasePlayer::SetSuitUpdate,HLSDK,dlls/player.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100F3BF0,385,?ShiftMonsters@@YAXVVector@@@Z,ShiftMonsters,UNKNOWN,dlls/player.cpp,,,MATCHED,100,,
 hl,100F3D90,660,?ShowHint@CBasePlayer@@QAEXH_N@Z,CBasePlayer::ShowHint,COF,dlls/player.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
@@ -17586,14 +17586,14 @@ hl,100F92A0,208,?Vomit@CBasePlayer@@QAEXXZ,CBasePlayer::Vomit,COF,dlls/player.cp
 hl,100F9370,1052,?WaterMove@CBasePlayer@@QAEXXZ,CBasePlayer::WaterMove,HLSDK,dlls/player.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100F9790,836,?WeaponMelee@CBasePlayer@@QAEXXZ,CBasePlayer::WeaponMelee,COF,dlls/player.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100F9AE0,139,?WheelchairPlayerDeathThink@CBasePlayer@@QAEXXZ,CBasePlayer::WheelchairPlayerDeathThink,COF,dlls/player.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,100F9B70,383,?WriteBeatenEnding@CBasePlayer@@QAEXHH@Z,CBasePlayer::WriteBeatenEnding,COF,dlls/player.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,99.99,hl_1.55_to_1.6a.csv,"relocation targets differ (instructions identical): retail FID_conflict:__ltoa, ours _itoa"
-hl,100F9CF0,22,?_Destroy@?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@AAEXPAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@0@Z,>::_Destroy,LIB,dlls/player.cpp,,,TODO,,,
+hl,100F9B70,383,?WriteBeatenEnding@CBasePlayer@@QAEXHH@Z,CBasePlayer::WriteBeatenEnding,COF,dlls/player.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
+hl,100F9CF0,22,?_Destroy@?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@AAEXPAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@0@Z,>::_Destroy,LIB,dlls/player.cpp,,,MATCHED,100,,
 hl,100F9D10,10,,,UNKNOWN,,,,TODO,,,
 hl,100F9D20,131,,,UNKNOWN,,,,TODO,,,
 hl,100F9DB0,131,,,UNKNOWN,,,,TODO,,,
-hl,100F9E40,28,?deallocate@?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@QAEXQAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@I@Z,>::deallocate,LIB,dlls/player.cpp,,,TODO,,,
+hl,100F9E40,28,?deallocate@?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@QAEXQAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@I@Z,>::deallocate,LIB,dlls/player.cpp,,,MATCHED,100,,
 hl,100F9E60,379,,,UNKNOWN,,,,TODO,,,
-hl,100F9FE0,186,?open@?$basic_filebuf@DU?$char_traits@D@std@@@std@@QAEPAV12@PBDHH@Z,>::open,LIB,dlls/player.cpp,,,TODO,,,
+hl,100F9FE0,186,?open@?$basic_filebuf@DU?$char_traits@D@std@@@std@@QAEPAV12@PBDHH@Z,>::open,LIB,dlls/player.cpp,,,MATCHED,100,,
 hl,100FA0A0,124,?strstrtolower@@YA_NPAD0@Z,strstrtolower,UNKNOWN,dlls/player.cpp,,,MATCHED,100,,
 hl,100FA120,5,_hud_sprite,hud_sprite,HLSDK,dlls/player.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( hud_sprite, CHudSprite )"
 hl,100FA130,5,_info_intermission,info_intermission,HLSDK,dlls/player.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( info_intermission, CInfoIntermission )"
@@ -17795,7 +17795,7 @@ hl,10101550,56,?SquadPasteEnemyInfo@CSquadMonster@@QAEXXZ,CSquadMonster::SquadPa
 hl,10101590,713,?SquadRecruit@CSquadMonster@@QAEHHH@Z,CSquadMonster::SquadRecruit,HLSDK,dlls/squadmonster.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10101860,166,?SquadRemove@CSquadMonster@@QAEXPAV1@@Z,CSquadMonster::SquadRemove,UNKNOWN,dlls/squadmonster.cpp,,,MATCHED,100,,
 hl,10101910,108,?StartMonster@CSquadMonster@@UAEXXZ,CSquadMonster::StartMonster,HLSDK,dlls/squadmonster.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,10101980,71,?VacateSlot@CSquadMonster@@QAEXXZ,CSquadMonster::VacateSlot,HLSDK,dlls/squadmonster.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,vtable+jmp_target (CSquadMonster vtable +0x194 -> jmp 0x10101980),"was misnamed ScheduleChange by the 1.55 name carry; the /Ob1 ""regression"" was this naming error"
+hl,10101980,71,?VacateSlot@CSquadMonster@@QAEXXZ,CSquadMonster::VacateSlot,HLSDK,dlls/squadmonster.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_manual.csv,"was misnamed ScheduleChange by the 1.55 name carry; the /Ob1 ""regression"" was this naming error"
 hl,101019D0,92,??$GetClassPtr@VCBaseDMStart@@@@YAPAVCBaseDMStart@@PAV0@@Z,GetClassPtr<CBaseDMStart>,HLSDK,dlls/subs.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
 hl,10101A30,92,??$GetClassPtr@VCBaseDelay@@@@YAPAVCBaseDelay@@PAV0@@Z,GetClassPtr<CBaseDelay>,HLSDK,dlls/subs.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
 hl,10101A90,92,??$GetClassPtr@VCInfoMoveWith@@@@YAPAVCInfoMoveWith@@PAV0@@Z,GetClassPtr<CInfoMoveWith>,HLSDK,dlls/subs.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
@@ -17927,9 +17927,9 @@ hl,10107A70,92,??$GetClassPtr@VCInOutRegister@@@@YAPAVCInOutRegister@@PAV0@@Z,Ge
 hl,10107AD0,92,??$GetClassPtr@VCLadder@@@@YAPAVCLadder@@PAV0@@Z,GetClassPtr<CLadder>,HLSDK,dlls/triggers.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
 hl,10107B30,92,??$GetClassPtr@VCLadderControl@@@@YAPAVCLadderControl@@PAV0@@Z,GetClassPtr<CLadderControl>,HLSDK,dlls/triggers.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
 hl,10107B90,92,??$GetClassPtr@VCMotionManager@@@@YAPAVCMotionManager@@PAV0@@Z,GetClassPtr<CMotionManager>,HLSDK,dlls/triggers.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
-hl,10107BF0,92,??$GetClassPtr@VCMotionThread@@@@YAPAVCMotionThread@@PAV0@@Z,CMotionThread>,SPIRIT,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
+hl,10107BF0,92,??$GetClassPtr@VCMotionThread@@@@YAPAVCMotionThread@@PAV0@@Z,CMotionThread>,SPIRIT,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_manual.csv,
 hl,10107C50,92,??$GetClassPtr@VCMultiManager@@@@YAPAVCMultiManager@@PAV0@@Z,GetClassPtr<CMultiManager>,HLSDK,dlls/triggers.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
-hl,10107CB0,92,??$GetClassPtr@VCRenderFxFader@@@@YAPAVCRenderFxFader@@PAV0@@Z,CRenderFxFader>,COF,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
+hl,10107CB0,92,??$GetClassPtr@VCRenderFxFader@@@@YAPAVCRenderFxFader@@PAV0@@Z,CRenderFxFader>,COF,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_manual.csv,
 hl,10107D10,92,??$GetClassPtr@VCRenderFxManager@@@@YAPAVCRenderFxManager@@PAV0@@Z,GetClassPtr<CRenderFxManager>,HLSDK,dlls/triggers.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
 hl,10107D70,92,??$GetClassPtr@VCStartRush@@@@YAPAVCStartRush@@PAV0@@Z,GetClassPtr<CStartRush>,HLSDK,dlls/triggers.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
 hl,10107DD0,92,??$GetClassPtr@VCStateWatcher@@@@YAPAVCStateWatcher@@PAV0@@Z,GetClassPtr<CStateWatcher>,HLSDK,dlls/triggers.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
@@ -18012,7 +18012,7 @@ hl,1010B640,48,?GravityTouch@CTriggerGravity@@QAEXPAVCBaseEntity@@@Z,CTriggerGra
 hl,1010B670,132,?HasTarget@CMultiManager@@UAEHH@Z,CMultiManager::HasTarget,COF,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1010B700,689,?HurtTouch@CTriggerHurt@@QAEXPAVCBaseEntity@@@Z,CTriggerHurt::HurtTouch,SPIRIT,dlls/triggers.cpp,2010-prototype,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1010B9C0,192,?InTransitionVolume@CChangeLevel@@SAHPAVCBaseEntity@@PAD@Z,CChangeLevel::InTransitionVolume,HLSDK,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,1010BA80,185,?InitTrigger@CBaseTrigger@@QAEXXZ,CBaseTrigger::InitTrigger,HLSDK,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
+hl,1010BA80,185,?InitTrigger@CBaseTrigger@@QAEXXZ,CBaseTrigger::InitTrigger,HLSDK,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_manual.csv,
 hl,1010BB40,249,?InsideThink@CTriggerCoopChangelevel@@QAEXXZ,CTriggerCoopChangelevel::InsideThink,COF,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1010BC40,76,?IsRegistered@CInOutRegister@@QAEHPAVCBaseEntity@@@Z,CInOutRegister::IsRegistered,UNKNOWN,dlls/triggers.cpp,,,MATCHED,100,,
 hl,1010BC90,248,?KeyValue@CAutoTrigger@@UAEXPAUKeyValueData_s@@@Z,CAutoTrigger::KeyValue,HLSDK,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,

@@ -116,7 +116,7 @@ va,name,kind,evidence
 10217D88,?m_SaveData@CBasePlatTrain@@2PAUTYPEDESCRIPTION@@A,data,"WriteFields table pushed by CBasePlatTrain::Save (100D7530), 3 fields"
 10217DB8,?m_SaveData@CFuncPlatRot@@2PAUTYPEDESCRIPTION@@A,data,"WriteFields table pushed by CFuncPlatRot::Save (100D7590), 2 fields"
 10217DD8,?m_SaveData@CFuncTrain@@2PAUTYPEDESCRIPTION@@A,data,"WriteFields table pushed by CFuncTrain::Save (100D76B0), 6 fields"
-10217FE8,?m_SaveData@CBasePlayer@@2PAUTYPEDESCRIPTION@@A,data,"WriteFields table pushed by CBasePlayer::Save (100F1940), 207 fields"
+10217FE8,?m_playerSaveData@CBasePlayer@@2PAUTYPEDESCRIPTION@@A,data,"WriteFields table pushed by CBasePlayer::Save (100F1940), 207 fields; name from the 1.55 PDB (CBasePlayer::m_playerSaveData)"
 10218CE8,?m_SaveData@CStripWeapons@@2PAUTYPEDESCRIPTION@@A,data,"WriteFields table pushed by CStripWeapons::Save (100F19F0), 19 fields"
 10218E18,?m_SaveData@CRevertSaved@@2PAUTYPEDESCRIPTION@@A,data,"WriteFields table pushed by CRevertSaved::Save (100F1990), 2 fields"
 10218E38,?m_SaveData@CScriptedSentence@@2PAUTYPEDESCRIPTION@@A,data,"WriteFields table pushed by CScriptedSentence::Save (100FB9B0), 10 fields"

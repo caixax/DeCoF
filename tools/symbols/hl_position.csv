@@ -1,0 +1,4 @@
+va,name,kind,evidence
+1005C240,?TertiaryAttack@CMp5@@UAEXXZ,func,"position in hl/dlls/guess_CoF_MP5 (name order), after ?SuicideShot@CMp5@@QAEXXZ; sizes retail 187, ours 187"
+1005C300,?WeaponIdle@CMp5@@UAEXXZ,func,"position in hl/dlls/guess_CoF_MP5 (name order), after ?SuicideShot@CMp5@@QAEXXZ; sizes retail 144, ours 148"
+1005C390,?iItemSlot@CMp5@@UAEHXZ,func,"position in hl/dlls/guess_CoF_MP5 (name order), after ?SuicideShot@CMp5@@QAEXXZ; sizes retail 6, ours 6"

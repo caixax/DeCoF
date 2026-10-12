@@ -44,3 +44,4 @@ _GetEntityAPI2
 ?ShouldToggle@CBaseEntity@@QAEHW4USE_TYPE@@@Z
 ?Activate@CBaseEntity@@UAEXXZ
 ?Normalize@Vector@@QBE?AV1@XZ
+?SetModelCollisionBox@CBaseEntity@@QAEXXZ
