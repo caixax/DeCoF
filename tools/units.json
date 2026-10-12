@@ -1027,6 +1027,11 @@
           "name": "cl_dll/hud_redraw",
           "source": "src/cl_dll/hud_redraw.cpp",
           "functions_file": "tools/units/client_cl_dll_hud_redraw.txt"
+        },
+        {
+          "name": "cl_dll/guess_HUDControl",
+          "source": "src/cl_dll/guess_HUDControl.cpp",
+          "functions_file": "tools/units/client_cl_dll_guess_HUDControl.txt"
         }
       ]
     }

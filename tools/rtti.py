@@ -1,74 +1,68 @@
-"""Find MSVC RTTI vtables in a PE image.
+"""List the RTTI classes of a DLL with their vtables.
 
-  python tools/rtti.py <dll> <class> [slots]
-      print the primary vtable of <class>: slot, offset, function address,
-      known name (tools/symbols/<dll>_*.csv) and the first instructions
+  python tools/rtti.py [hl|client] [<class name part>]
 
-The vtable is found from the type descriptor (".?AV<class>@@"), the
-complete object locator that points at it (offset 0) and the pointer to
-that locator, which sits right before the vtable.
+MSVC /GR puts a type descriptor (".?AVCHUDControl@@") and a complete
+object locator before every vtable. This prints, per vtable, its address,
+the class name, the offset of that vtable inside the object and the slot
+count; with a name part, also every slot whose target is not a library
+function (the class's own methods, by address). A client.dll class with no
+PDB gets its name from here.
 """
-import csv
-import glob
 import os
+import re
 import struct
 import sys
 
-import capstone
 import pefile
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+IMAGES = {"hl": "versions/1.6a/cryoffear/cl_dlls/hl.dll", "client": "versions/1.6a/cryoffear/cl_dlls/client.dll"}
 
 
-def vtable(pe, img, base, cls):
-    td_name = (".?AV%s@@" % cls).encode() + b"\x00"
-    pos = img.find(td_name)
-    if pos < 0:
-        td_name = (".?AU%s@@" % cls).encode() + b"\x00"
-        pos = img.find(td_name)
-    if pos < 0:
-        return None
-    td = base + pos - 8
-    col = None
-    for off in range(0, len(img) - 20, 4):
-        sig, o, _cd, ptd = struct.unpack_from("<IIII", img, off)
-        if ptd == td and sig == 0 and o == 0:
-            col = base + off
-            break
-    if col is None:
-        return None
-    ref = img.find(struct.pack("<I", col))
-    while ref >= 0 and ref % 4:
-        ref = img.find(struct.pack("<I", col), ref + 1)
-    return base + ref + 4 if ref >= 0 else None
+def vtables(dll):
+    pe = pefile.PE(os.path.join(ROOT, IMAGES[dll]), fast_load=True)
+    base = pe.OPTIONAL_HEADER.ImageBase
+    data = bytes(pe.get_memory_mapped_image())
+    tds = {}
+    for m in re.finditer(rb"\.\?A[VU][^\0]{1,200}\0", data):
+        tds[m.start() - 8 + base] = m.group(0)[:-1].decode("latin-1")
+    cols = {}
+    for off in range(0, len(data) - 20, 4):
+        sig, o, _cd, ptd, pch = struct.unpack_from("<IIIII", data, off)
+        if sig == 0 and ptd in tds and base <= pch < base + len(data):
+            cols[off + base] = (tds[ptd], o)
+    text = [s for s in pe.sections if s.Name.startswith(b".text")][0]
+    tlo = base + text.VirtualAddress
+    thi = tlo + text.Misc_VirtualSize
+    out = []
+    for off in range(0, len(data) - 8, 4):
+        p = struct.unpack_from("<I", data, off)[0]
+        if p not in cols:
+            continue
+        slots = []
+        while True:
+            q = struct.unpack_from("<I", data, off + 4 + 4 * len(slots))[0]
+            if not tlo <= q < thi:
+                break
+            slots.append(q)
+        if slots:
+            name, o = cols[p]
+            out.append((off + 4 + base, name, o, slots))
+    return sorted(out)
 
 
 def main():
-    dll, cls = sys.argv[1], sys.argv[2]
-    nslots = int(sys.argv[3]) if len(sys.argv) > 3 else 400
-    pe = pefile.PE(dll, fast_load=True)
-    base = pe.OPTIONAL_HEADER.ImageBase
-    img = pe.get_memory_mapped_image()
-    text = [s for s in pe.sections if s.Name.startswith(b".text")][0]
-    tlo, thi = base + text.VirtualAddress, base + text.VirtualAddress + text.Misc_VirtualSize
-    names = {}
-    for path in glob.glob(os.path.join(ROOT, "tools", "symbols", "hl_*.csv")):
-        if path.endswith("_datasizes.csv"):
+    args = sys.argv[1:]
+    dll = args[0] if args and args[0] in IMAGES else "client"
+    part = args[1] if len(args) > 1 else (args[0] if args and args[0] not in IMAGES else None)
+    for va, name, o, slots in vtables(dll):
+        if part and part not in name:
             continue
-        for r in csv.DictReader(open(path)):
-            names.setdefault(int(r["va"], 16), r["name"])
-    vt = vtable(pe, img, base, cls)
-    if vt is None:
-        sys.exit("no vtable found for %s" % cls)
-    print("vtable of %s at %08X" % (cls, vt))
-    md = capstone.Cs(capstone.CS_ARCH_X86, capstone.CS_MODE_32)
-    for slot in range(nslots):
-        f = struct.unpack_from("<I", img, vt - base + 4 * slot)[0]
-        if not tlo <= f < thi:
-            break
-        code = img[f - base:f - base + 32]
-        ins = "; ".join("%s %s" % (i.mnemonic, i.op_str) for i in list(md.disasm(code, f))[:5])
-        print("%3d +0x%03X %08X %-60s %s" % (slot, slot * 4, f, names.get(f, "")[:60], ins))
+        print("%08X %-50s offset %d, %d slots" % (va, name, o, len(slots)))
+        if part:
+            for i, s in enumerate(slots):
+                print("    slot %3d (+0x%x)  %08X" % (i, 4 * i, s))
 
 
 if __name__ == "__main__":

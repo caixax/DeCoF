@@ -1,5 +1,5 @@
 {
-  "commit": "8d85002",
+  "commit": "87c9884",
   "counting": "LIB rows excluded; bytes weighted by function size",
   "date": "2026-10-12",
   "dlls": {
@@ -59,14 +59,14 @@
           "bytes": {
             "EQUIVALENT": 0,
             "MATCHED": 34,
-            "TODO": 4533,
-            "total": 4567
+            "TODO": 30380,
+            "total": 30414
           },
           "functions": {
             "EQUIVALENT": 0,
             "MATCHED": 1,
-            "TODO": 20,
-            "total": 21
+            "TODO": 46,
+            "total": 47
           }
         },
         "HLSDK": {
@@ -115,14 +115,14 @@
           "bytes": {
             "EQUIVALENT": 0,
             "MATCHED": 24680,
-            "TODO": 362456,
-            "total": 387136
+            "TODO": 336609,
+            "total": 361289
           },
           "functions": {
             "EQUIVALENT": 0,
             "MATCHED": 60,
-            "TODO": 1241,
-            "total": 1301
+            "TODO": 1215,
+            "total": 1275
           }
         }
       },
