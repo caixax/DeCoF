@@ -18,3 +18,9 @@
 ?WheelchairUse@CWheelchair@@QAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z
 _wheelchair_exit
 _wheelchair_hide_spot
+_wheelchair
+?MoveBack@CWheelchair@@QAEXXZ
+?MoveForward@CWheelchair@@QAEXXZ
+?SetCollision@CWheelchair@@QAEXXZ
+?TurnLeft@CWheelchair@@QAEXXZ
+?TurnRight@CWheelchair@@QAEXXZ
