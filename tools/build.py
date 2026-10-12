@@ -348,8 +348,16 @@ def check(units):
         m = unit.get("measures", {})
         print("%-30s code %6.2f%%  (%s/%s bytes)" % (unit["name"], m.get("matched_code_percent", 0.0),
                                                    m.get("matched_code", "0"), m.get("total_code", "0")))
-        for fn in sorted(unit.get("functions", []), key=lambda f: f.get("fuzzy_match_percent", 0.0)):
-            print("    %7.2f%%  %s" % (fn.get("fuzzy_match_percent", 0.0), fn["name"]))
+        funcs = unit.get("functions", [])
+        exact = [fn for fn in funcs if fn.get("fuzzy_match_percent", 0.0) >= 100.0]
+        print("    %d of %d functions at 100%%" % (len(exact), len(funcs)))
+        # only the functions below 100% (the full list costs a lot of output
+        # on large units); --all prints every function
+        for fn in sorted(funcs, key=lambda f: f.get("fuzzy_match_percent", 0.0)):
+            pct = fn.get("fuzzy_match_percent", 0.0)
+            if pct < 100.0 or SHOW_ALL:
+                # floor, so 99.996 does not print as 100.00
+                print("    %7.2f%%  %s" % (int(pct * 100) / 100.0, fn["name"]))
 
 
 def decomp(units):
@@ -372,7 +380,14 @@ def decomp(units):
         print("decomp %-30s %s" % (full, "ok" if "DecompileList:" in out else json.dumps(res)[:300]))
 
 
+SHOW_ALL = False
+
+
 def main():
+    global SHOW_ALL
+    if "--all" in sys.argv:
+        SHOW_ALL = True
+        sys.argv.remove("--all")
     if len(sys.argv) < 2:
         sys.exit(__doc__)
     cmd, sel = sys.argv[1], sys.argv[2:]

@@ -1,6 +1,6 @@
 """Disassemble retail code with names and strings.
 
-  python tools/disasm.py [--version 1.55] <dll> <va|decorated name> [bytes]
+  python tools/disasm.py [--version 1.55] [--outline] <dll> <va|decorated name> [bytes]
 
 Prints the instructions of a function (or <bytes> bytes from <va>) with
 the symbol names of call/jump targets and data from the merged symbol map
@@ -14,6 +14,11 @@ debug builds: constants and dead code that the 1.6a release build drops
 are still there. When the PDB is on disk (1.0, 1.55), each source
 statement starts with a "-- line N" row from its line table, which gives
 the original statement order and if/else layout.
+
+--outline prints one row per source statement (or per run up to a call or
+jump without a line table) with only the calls, strings, named globals,
+immediates, member offsets and jump targets: a fraction of the size of the
+full listing.
 """
 import csv
 import glob
@@ -49,8 +54,65 @@ def statement_lines(image, va, base):
     return {}
 
 
+def print_outline(insns, lines, names, cs, inside):
+    """One row per source statement (1.55 line table) or per run of
+    instructions up to a call or jump (no line table): the calls, strings,
+    named globals, immediates, member offsets ([reg+0x..], not the frame)
+    and jump targets (as line numbers when known). A fraction of the full
+    listing, enough to see statement order and if/else layout."""
+    starts = sorted(lines)
+    import bisect
+
+    def line_of(a):
+        i = bisect.bisect_right(starts, a) - 1
+        return lines[starts[i]][1] if i >= 0 else None
+
+    rows = []
+    cur, items = None, []
+    for ins in insns:
+        key = lines[ins.address][1] if ins.address in lines else None
+        if key is not None and items or (not lines and items and cur == "break"):
+            rows.append((cur, items))
+            items = []
+        if key is not None:
+            cur = key
+        op = ins.op_str
+        if ins.mnemonic == "call":
+            t = int(op, 16) if re.match(r"^0x[0-9a-f]+$", op) else None
+            items.append("call " + (names.get(t, op) if t else op))
+        elif ins.mnemonic.startswith("j"):
+            t = int(op, 16) if re.match(r"^0x[0-9a-f]+$", op) else None
+            ln = line_of(t) if (t and lines) else None
+            items.append("%s %s" % (ins.mnemonic, ("L%d" % ln) if ln else op))
+        elif ins.mnemonic.startswith("ret"):
+            items.append(ins.mnemonic)
+        else:
+            for tok in re.findall(r"0x[0-9a-f]+", op):
+                a = int(tok, 16)
+                n = names.get(a) or (('"%s"' % cs(a)) if cs(a) else None) or inside(a)
+                if n:
+                    items.append(n)
+            m = re.search(r"\[(e[a-z]{2}) \+ (0x[0-9a-f]+)\]", op)
+            if m and m.group(1) not in ("ebp", "esp"):
+                items.append("+" + m.group(2))
+            m = re.match(r"^(push|cmp|mov|and|or|test|sub|add) .*?, (0x[0-9a-f]+|\d+)$", ins.mnemonic + " " + op) or                 re.match(r"^push (0x[0-9a-f]+|\d+)$", ins.mnemonic + " " + op)
+            if m and ins.mnemonic in ("push", "cmp", "test", "and", "or"):
+                imm = m.group(m.lastindex)
+                if int(imm, 0) not in names:
+                    items.append("%s %s" % (ins.mnemonic, imm))
+        if not lines and ins.mnemonic in ("call",) or not lines and ins.mnemonic.startswith(("j", "ret")):
+            cur = "break"
+    if items:
+        rows.append((cur, items))
+    for key, items in rows:
+        label = ("L%d" % key) if isinstance(key, int) else ""
+        print("%-6s %s" % (label, ", ".join(items)))
+
+
 def main():
     args = sys.argv[1:]
+    outline = "--outline" in args
+    args = [a for a in args if a != "--outline"]
     version = None
     if args[:1] == ["--version"]:
         version, args = args[1], args[2:]
@@ -144,7 +206,11 @@ def main():
     lines = statement_lines(image, va, base) if version else {}
     md = capstone.Cs(capstone.CS_ARCH_X86, capstone.CS_MODE_32)
     print("%08X %s" % (va, names.get(va, "")))
-    for ins in md.disasm(img[va - base:va - base + length], va):
+    insns = list(md.disasm(img[va - base:va - base + length], va))
+    if outline:
+        print_outline(insns, lines, names, cs, inside)
+        return
+    for ins in insns:
         if ins.address in lines:
             print("-- line %d (%s)" % (lines[ins.address][1], lines[ins.address][0]))
         notes = []

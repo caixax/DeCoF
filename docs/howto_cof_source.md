@@ -16,6 +16,15 @@ How the first files (`src/dlls/CoF_Glock.cpp`, `src/dlls/CoF_P345.cpp`) were wri
 | Member at an offset / vtable slot | `python tools/member.py --src src/dlls/items.cpp CBasePlayerWeapon 0x1e4`, `python tools/member.py --vt CBasePlayerWeapon 0x198` |
 | Animation enum | `python tools/mdlseq.py versions/1.6a/cryoffear/models/weapons/<w>/v_<w>.mdl PREFIX` |
 
+## Keep the output small
+
+Every tool output stays in the working context, so large outputs repeated over many builds are the main cost of this work:
+
+- `python tools/build.py check <unit>` prints only the functions below 100% (`--all` for every function).
+- `python tools/objdiff_tool.py show <unit> "<name>"` prints only the differing rows with 3 rows of context (`--full` for every row).
+- `python tools/disasm.py --version 1.55 --outline hl "<name>"` prints one row per source statement (calls, strings, constants, member offsets, jump targets as line numbers): read the 1.55 build this way and use the full listing only for the one statement you need. `--outline` also works on the 1.6a code. A byte count limits any listing: `python tools/disasm.py hl <va> 0x80`.
+- Do not print whole files or whole decompiler dumps; read the part you need.
+
 ## Loop
 
 1. Write the file (functions in the 1.55 line order, class `CFooAmmo` defined in the .cpp with in-class bodies like the HLSDK ammo classes).

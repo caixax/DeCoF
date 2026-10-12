@@ -67,15 +67,35 @@ def reloc_addend(ins):
     return int(rel.get("addend", "0"))
 
 
-def show(unit, symbol):
+def show(unit, symbol, full=False, context=3):
+    """Retail and ours side by side. By default only the differing rows
+    with a few rows of context; runs of identical rows are collapsed
+    (--full prints every row)."""
     d = diff_json(unit, symbol)
     l, r, li, ri = rows(d, symbol)
     print("%s  retail %s%%  ours %s%%" % (symbol, (l or {}).get("match_percent"), (r or {}).get("match_percent")))
-    for a, b in zip(li + [{}] * (len(ri) - len(li)), ri + [{}] * (len(li) - len(ri))):
+    pairs = list(zip(li + [{}] * (len(ri) - len(li)), ri + [{}] * (len(li) - len(ri))))
+    marks = [bool(a.get("diff_kind") or b.get("diff_kind")) for a, b in pairs]
+    keep = set(range(len(pairs))) if full else set()
+    if not full:
+        for i, m in enumerate(marks):
+            if m:
+                keep.update(range(max(0, i - context), min(len(pairs), i + context + 1)))
+    skipped = 0
+    for i, (a, b) in enumerate(pairs):
+        if i not in keep:
+            skipped += 1
+            continue
+        if skipped:
+            print("  ... %d identical rows ..." % skipped)
+            skipped = 0
         fa = (a.get("instruction") or {}).get("formatted", "")
         fb = (b.get("instruction") or {}).get("formatted", "")
-        mark = " " if not a.get("diff_kind") and not b.get("diff_kind") else "*"
+        mark = "*" if marks[i] else " "
         print("%s %-48s | %-48s %s" % (mark, fa[:48], fb[:48], a.get("diff_kind", "") or b.get("diff_kind", "")))
+    if skipped:
+        print("  ... %d identical rows ..." % skipped)
+    print("%d rows, %d differ" % (len(pairs), sum(marks)))
 
 
 def report_functions(units):
@@ -241,7 +261,7 @@ def main():
     if len(sys.argv) < 3:
         sys.exit(__doc__)
     if sys.argv[1] == "show":
-        show(sys.argv[2], sys.argv[3])
+        show(sys.argv[2], sys.argv[3], full="--full" in sys.argv)
     elif sys.argv[1] == "harvest":
         args = [a for a in sys.argv[2:] if not a.startswith("--")]
         harvest(args, "--write" in sys.argv)
