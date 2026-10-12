@@ -22,6 +22,7 @@
 #include	"game.h"
 #include	"movewith.h"
 #include	"skill.h"
+#include	"player.h"
 
 void EntvarsKeyvalue( entvars_t *pev, KeyValueData *pkvd );
 
@@ -32,6 +33,7 @@ extern "C" char PM_FindTextureType( char *name );
 extern Vector VecBModelOrigin( entvars_t* pevBModel );
 extern DLL_GLOBAL Vector		g_vecAttackDir;
 extern DLL_GLOBAL int			g_iSkillLevel;
+extern int gmsgBossBar;
 
 static DLL_FUNCTIONS gFunctionTable = 
 {
@@ -274,6 +276,12 @@ void DispatchSave( edict_t *pent, SAVERESTOREDATA *pSaveData )
 		if ( pEntity->ObjectCaps() & FCAP_DONT_SAVE )
 			return;
 
+		if ( pEntity && pEntity->pev && pEntity->pev->classname && strstr( STRING( pEntity->pev->classname ), "monster_" ) && !FClassnameIs( pEntity->edict(), "monster_generic" ) )
+		{
+			if ( !pEntity->IsAlive() || pEntity->m_bFrozenByCamera )
+				return;
+		}
+
 		// These don't use ltime & nextthink as times really, but we'll fudge around it.
 		if ( pEntity->pev->movetype == MOVETYPE_PUSH )
 		{
@@ -505,6 +513,19 @@ CBaseEntity * EHANDLE :: operator -> ()
 	return (CBaseEntity *)GET_PRIVATE( Get( ) ); 
 }
 
+void CBaseEntity::CorpseFolllow( void )
+{
+	if ( !pev->euser1 )
+	{
+		SetThink( NULL );
+		DontThink();
+		return;
+	}
+
+	pev->origin = pev->euser1->v.origin;
+	SetNextThink( 0 );
+}
+
 //LRC
 void CBaseEntity::Activate( void )
 {
@@ -700,6 +721,8 @@ int CBaseEntity :: TakeHealth( float flHealth, int bitsDamageType )
 
 	if (pev->health > pev->max_health)
 		pev->health = pev->max_health;
+
+	BossDamageCheck();
 
 	return 1;
 }
@@ -1005,6 +1028,43 @@ CBaseEntity * CBaseEntity::Create( char *szName, const Vector &vecOrigin, const 
 	pEntity->pev->angles = vecAngles;
 	DispatchSpawn( pEntity->edict() );
 	return pEntity;
+}
+
+void CBaseEntity::BossDamageCheck( void )
+{
+	if ( m_bIsBoss )
+	{
+		for ( int i = 1; i <= gpGlobals->maxClients; i++ )
+		{
+			CBaseEntity *player = UTIL_PlayerByIndex( i );
+			if ( player )
+			{
+				if ( player->IsPlayer() )
+				{
+					CBasePlayer *pPlayer = GetClassPtr( (CBasePlayer *)player->pev );
+
+					if ( pPlayer )
+					{
+						if ( FStrEq( STRING( pev->targetname ), STRING( pPlayer->m_sBossName ) ) )
+						{
+							pPlayer->m_iBossCurrentHealth = pev->health;
+
+							if ( pPlayer->m_iBossCurrentHealth < 0 )
+								pPlayer->m_iBossCurrentHealth = 0;
+
+							MESSAGE_BEGIN( MSG_ONE, gmsgBossBar, NULL, pPlayer->pev );
+								WRITE_BYTE( 1 );
+								WRITE_STRING( STRING( pPlayer->m_sBossBarEmpty ) );
+								WRITE_STRING( STRING( pPlayer->m_sBossBarFull ) );
+								WRITE_SHORT( pPlayer->m_iBossCurrentHealth );
+								WRITE_SHORT( pPlayer->m_iBossMaxHealth );
+							MESSAGE_END();
+						}
+					}
+				}
+			}
+		}
+	}
 }
 
 
