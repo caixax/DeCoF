@@ -112,6 +112,16 @@ The 1.55 hl.dll is an unoptimized debug build of nearly the same source. `disasm
 - The Killed copies inline the kill statistics: `if ( m_iLastDamageType & (1 << 26) ) ((CBasePlayer *)pAttacker)->playerstats.monsters_killed_melee++; else ...monsters_killed_shooting++;` then `GetPointsForKill( (char *)STRING( pev->classname ), (CBasePlayer *)pAttacker )`; only the twitchers add the `weapon_axe` check that sets `m_iFoundHoodies |= 0x20000`.
 - `bool newgore;` is defined in CoF_Slower.cpp (the 1.55 PDB module); player.cpp declares it `extern`.
 
+## Patterns from the tool items
+
+- For commutative adds the 1.55 operand order is not reliable for 1.6a: `Ignite` needed `gpGlobals->time + gSkillData.flareBurnTime` although 1.55 has the reverse. The general rule (retail loads the second source operand first) is what worked.
+- A retail function with no entry in the symbol map is absorbed by its neighbour and shows as a very low match on an otherwise identical function: check the address against our functions with `tools/bytematch.py` or a direct byte compare.
+- In single-symbol `objdiff_tool.py show`, references to other functions of the same unit (`mov [esi+0x78], &Func`, `jmp Func`) are flagged; the unit report counts them as matched.
+- The 1.55 debug build drops unreachable code after a `return` (except loop heads reached by a back edge): a jump in the line numbers means dead source.
+- Two separate bool stores (`m_bThrowing = false; m_bThrown = false;`) merge into one word store, like the chained form.
+- An unused `float speed = ...Length2D();` disappears entirely in 1.6a, sqrt included.
+- Where 1.55 calls `?EMIT_SOUND_DYN` directly with `edict()`, write `EMIT_SOUND_DYN( edict(), ... )`; `STOP_SOUND` inlines to `EMIT_SOUND_DYN( ..., 0, 0, SND_STOP, PITCH_NORM )`. `strcpy( x, "" )` becomes one byte store and `strcmp` an inline loop.
+
 ## What not to do
 
 - Do not edit shared headers (`cbase.h`, `weapons.h`, `player.h`, `util.h`, ...) without coordinating: several files depend on them.
