@@ -64,3 +64,10 @@ The reconstructed source keeps the behavior of the retail 1.6a binaries, includi
 | `CKeyitemModel::Spawn`, `KeyitemUse` (CoF_KeyItem.cpp) | A key with no item file is removed but the function carries on; keys with spawnflag 1 are removed when the difficulty is not 4; on difficulty 4 KeyitemUse sets the player's `m_iTapes = 5`. | 1.55 statement order |
 | `CWheelchair::TakeDamage`, `HandleAnimEvent` (CoF_WheelchairPlayer.cpp) | `flDamage = pev->health - 1` is never used; HandleAnimEvent calls the base handler twice for default events. | dead store, two calls |
 | `CPushableVan` (CoF_PushableVan.cpp) | Passes an unused argument to the "Max nerds are grabbing" message. | the extra push |
+| `CInterDoorCoop::ShiftMonsters`, `Use` (CoF_InterDoorCoop.cpp) | ShiftMonsters calls `pTarget->MyMonsterPointer()` instead of using the entity it found; Use checks the "useunlock" door against the classname "inter_door" (not "inter_door_coop") and then casts it to CInterDoorCoop. | the call and the string |
+| `CInterDoor::EndSequence` (CoF_InterDoor.cpp) | Both branches of the `m_iMusicFadeIn` test call `PlayerSetMP3( ..., 0 )`, so the fade-in setting is never used. | identical calls |
+| `CNumeralPlateLeft::Think` (CoF_NumeralPlate.cpp) | `scriptleft`, `scriptright` and `codenumber` are uninitialized when the skin is not 1 to 3. | no store on the default path |
+| `CCofTelephone::TelephoneRight`, `TelephoneWrong` (CoF_Telephone.cpp) | Use `m_pPlayer->pev` before checking `m_pPlayer`. | the test after the use |
+| `CStatuePuzzleComplete::Use`, `CheckStatuePuzzle` (CoF_Statues.cpp) | No NULL test of `pActivator`; CheckStatuePuzzle may pass a NULL player. | no test |
+| `CTapeRecorder::BlinkThink` (CoF_TapeRecorder.cpp) | Checks `pSprite` for NULL only after using it. | the test after the use |
+| `CKeypadNew` (CoF_3DKeypad.cpp) | Reads the keyboard with `GetAsyncKeyState` in the server DLL. | the import call |

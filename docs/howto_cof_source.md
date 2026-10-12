@@ -162,6 +162,16 @@ The 1.55 hl.dll is an unoptimized debug build of nearly the same source. `disasm
 - If the retail push order looks swapped against 1.55, check which parameter is which (the first push is the last parameter), as in `GetDescriptionFromItem( "3dmdl", STRING( pev->message ) )`.
 - A class that grew between builds shows in the retail save table count and the member offsets: `CCoFLadderManager::m_cAnimation` is `int [33]` in 1.6a (32 in 1.55).
 
+## Patterns from the puzzles and doors
+
+- Where retail compares with `jl` but 1.55 has `jb`, the source casts: `(int)strlen( szCode ) >= pev->iuser3`.
+- MSVC 19.27 merges two adjacent `memset` calls on neighbouring arrays into one call: write both, as in 1.55.
+- A null check written after a dereference (`if ( pSprite )`) is removed by the compiler: keep it in the source.
+- Leave locals uninitialized where retail loads an arbitrary register on the default path of a switch.
+- When `ObjectCaps` folds to a constant after the `m_pMoveWith` call, take the `|` and `&` order from 1.55 (`( CBaseEntity::ObjectCaps() | FCAP_IMPULSE_USE ) & ~FCAP_ACROSS_TRANSITION`).
+- `FClassnameIs( edict, ... )` inlines with a `neg/sbb/and` null test on the edict; `FClassnameIs( pev, ... )` does not.
+- Functions Ghidra merged into a neighbour have no row and no unit list entry: name them with `tools/bytematch.py --at <va,...>`.
+
 ## What not to do
 
 - Do not edit shared headers (`cbase.h`, `weapons.h`, `player.h`, `util.h`, ...) without coordinating: several files depend on them.
