@@ -39,3 +39,8 @@
 ?TraceAttack@CFlier@@UAEXPAUentvars_s@@MVVector@@PAUTraceResult@@H@Z
 _acidspit
 _monster_nerd
+?AttackSound@CFlier@@QAEXXZ
+?GetAcceleration@CFlier@@QAEMMMAAVVector@@@Z
+?GetIdealSpeed@CFlier@@QAEMMAAVVector@@@Z
+?MetalHitSound@CFlier@@QAEXXZ
+?Shoot@CAcidSpit@@SAXPAUentvars_s@@VVector@@1@Z

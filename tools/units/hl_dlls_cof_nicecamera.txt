@@ -10,3 +10,4 @@
 ?Think@CRealCamera@@UAEXXZ
 _real_camera
 _view_point
+?SetSequenceByName@CRealCamera@@QAEXPAD@Z

@@ -8,3 +8,4 @@
 ?Spawn@CCutsceneModel@@UAEXXZ
 ?StartNextAnimation@CCutsceneModel@@QAEXXZ
 _cutscene_model
+?SetSequenceByName@CCutsceneModel@@QAEXPAD@Z

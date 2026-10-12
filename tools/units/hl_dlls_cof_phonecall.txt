@@ -12,4 +12,3 @@
 ?Use@CPhoneCall@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z
 ?WaitForCall@CPhoneCall@@QAEXXZ
 _cof_phonecall
-_subtitle_main
