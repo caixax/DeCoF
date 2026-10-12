@@ -135,14 +135,22 @@ def main():
         print("%08X  %-60s (now %s)  %s" % (va, n, old or "unnamed", unit))
     print("%d proposals" % len(proposals))
     if write:
+        # earlier proposals are named in the merged map now and are not
+        # proposed again: keep them and add the new ones
         path = os.path.join(ROOT, "tools", "symbols", "hl_bytes.csv")
+        rows = {}
+        if os.path.exists(path):
+            for r in csv.DictReader(open(path)):
+                rows[int(r["va"], 16)] = (r["name"], r["kind"], r["evidence"])
+        for va, n, old, unit in proposals:
+            rows[va] = (n, "func", "bytes identical to %s in %s (relocated fields masked), one-to-one%s"
+                        % (n, unit, "; was %s" % old if old else ""))
         with open(path, "w", newline="") as f:
             w = csv.writer(f, lineterminator="\n")
             w.writerow(["va", "name", "kind", "evidence"])
-            for va, n, old, unit in proposals:
-                w.writerow(["%08X" % va, n, "func", "bytes identical to %s in %s (relocated fields masked), one-to-one%s"
-                            % (n, unit, "; was %s" % old if old else "")])
-        print("wrote %s" % os.path.relpath(path, ROOT))
+            for va in sorted(rows):
+                w.writerow(["%08X" % va] + list(rows[va]))
+        print("wrote %s (%d entries)" % (os.path.relpath(path, ROOT), len(rows)))
 
 
 if __name__ == "__main__":

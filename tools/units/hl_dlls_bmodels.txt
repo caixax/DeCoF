@@ -89,4 +89,3 @@ _func_shine
 _func_trainbutts
 _func_wall
 _func_wall_toggle
-_camera_spot
