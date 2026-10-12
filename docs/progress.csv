@@ -14004,12 +14004,12 @@ hl,1002EDE0,12,?Precache@CDoctorBossShoot@@UAEXXZ,CDoctorBossShoot::Precache,COF
 hl,1002EDF0,114,?Spawn@CDoctorBossShoot@@UAEXXZ,CDoctorBossShoot::Spawn,COF,dlls/cof_doctorbossshoot.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
 hl,1002EE70,390,?TraceAttack@CDoctorBossShoot@@UAEXPAUentvars_s@@MVVector@@PAUTraceResult@@H@Z,CDoctorBossShoot::TraceAttack,COF,dlls/cof_doctorbossshoot.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
 hl,1002F010,5,_cof_doctorshoot,cof_doctorshoot,HLSDK,dlls/cof_doctorbossshoot.cpp,,,TODO,0.0,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( cof_doctorshoot, CDoctorBossShoot )"
-hl,1002F020,92,??$GetClassPtr@VCDoorPropView@@@@YAPAVCDoorPropView@@PAV0@@Z,GetClassPtr<CDoorPropView>,HLSDK,dlls/cof_door_prop_view.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,TODO,0.0,jmp_target_of_export+rtti,
-hl,1002F080,48,?CameraUse@CDoorPropView@@QAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CDoorPropView::CameraUse,COF,dlls/cof_door_prop_view.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
-hl,1002F0B0,3,?Classify@CDoorPropView@@UAEHXZ,CDoorPropView::Classify,COF,dlls/cof_door_prop_view.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
-hl,1002F0C0,12,?Precache@CDoorPropView@@UAEXXZ,CDoorPropView::Precache,COF,dlls/cof_door_prop_view.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
-hl,1002F0D0,156,?Spawn@CDoorPropView@@UAEXXZ,CDoorPropView::Spawn,COF,dlls/cof_door_prop_view.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
-hl,1002F170,5,_door_prop_view,door_prop_view,HLSDK,dlls/cof_door_prop_view.cpp,,,TODO,0.0,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( door_prop_view, CDoorPropView )"
+hl,1002F020,92,??$GetClassPtr@VCDoorPropView@@@@YAPAVCDoorPropView@@PAV0@@Z,GetClassPtr<CDoorPropView>,HLSDK,dlls/cof_door_prop_view.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
+hl,1002F080,48,?CameraUse@CDoorPropView@@QAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CDoorPropView::CameraUse,COF,dlls/cof_door_prop_view.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
+hl,1002F0B0,3,?Classify@CDoorPropView@@UAEHXZ,CDoorPropView::Classify,COF,dlls/cof_door_prop_view.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
+hl,1002F0C0,12,?Precache@CDoorPropView@@UAEXXZ,CDoorPropView::Precache,COF,dlls/cof_door_prop_view.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
+hl,1002F0D0,156,?Spawn@CDoorPropView@@UAEXXZ,CDoorPropView::Spawn,COF,dlls/cof_door_prop_view.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
+hl,1002F170,5,_door_prop_view,door_prop_view,HLSDK,dlls/cof_door_prop_view.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( door_prop_view, CDoorPropView )"
 hl,1002F180,92,??$GetClassPtr@VCDualWeapon@@@@YAPAVCDualWeapon@@PAV0@@Z,GetClassPtr<CDualWeapon>,HLSDK,dlls/cof_dualpistol.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
 hl,1002F1E0,87,,,UNKNOWN,guess:dlls/cof_dualpistol.cpp,,,TODO,,,
 hl,1002F240,8,,,UNKNOWN,,,,TODO,,,
