@@ -6,7 +6,6 @@
 ??$GetClassPtr@VCFuncTrain@@@@YAPAVCFuncTrain@@PAV0@@Z
 ??$GetClassPtr@VCFuncTrainControls@@@@YAPAVCFuncTrainControls@@PAV0@@Z
 ??$GetClassPtr@VCGunTarget@@@@YAPAVCGunTarget@@PAV0@@Z
-??0CPlatTrigger@@QAE@XZ
 ??$GetClassPtr@VCTrainSequence@@@@YAPAVCTrainSequence@@PAV0@@Z
 ?Activate@CGunTarget@@UAEXXZ
 ?ArrivalNotify@CTrainSequence@@QAEXXZ
@@ -134,3 +133,4 @@ _scripted_trainsequence
 ?StopSequence@CFuncTrackTrain@@QAEXXZ
 ?StopSequence@CFuncTrain@@QAEXXZ
 ?ObjectCaps@CFuncTrackTrain@@UAEHXZ
+??$GetClassPtr@VCPlatTrigger@@@@YAPAVCPlatTrigger@@PAV0@@Z

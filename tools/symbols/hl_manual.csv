@@ -33,3 +33,4 @@ va,name,kind,evidence
 100DA1A0,??$GetClassPtr@VCSprayCan@@@@YAPAVCSprayCan@@PAV0@@Z,func,"GetClassPtr template body: pfnCreateEntity, pfnPvAllocEntPrivateData(0xdc), stores ??_7CSprayCan@@6B@; was ??0CSprayCan@@QAE@XZ from hl_1.55_to_1.6a.csv"
 100D9EA0,??$GetClassPtr@VCBasePlayerItem@@@@YAPAVCBasePlayerItem@@PAV0@@Z,func,"GetClassPtr template body: pfnCreateEntity, pfnPvAllocEntPrivateData(0x16c = sizeof CBasePlayerItem); was ??0CBasePlayerItem@@QAE@XZ from hl_1.55_to_1.6a.csv"
 10226650,?gmsgFaggot@@3HA,data,"1.55 PDB name of the variable LinkUserMessages registers at this position (player.obj, message Faggot in 1.55); 1.6a only renamed the message string to BigPrick; was ?gmsgBigPrick@@3HA (named after the message)"
+100D2FA0,??$GetClassPtr@VCPlatTrigger@@@@YAPAVCPlatTrigger@@PAV0@@Z,func,"GetClassPtr template body: pfnCreateEntity, pfnPvAllocEntPrivateData(0xe0), stores ??_7CPlatTrigger@@6B@; was ??0CPlatTrigger@@QAE@XZ from hl_1.55_to_1.6a.csv"
