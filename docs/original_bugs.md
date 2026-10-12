@@ -48,3 +48,12 @@ The reconstructed source keeps the behavior of the retail 1.6a binaries, includi
 | `CBaseMonster::MonsterThink` (monsters.cpp) | The second `m_bFrozenByCamera` branch leaves `flInterval` uninitialized (dead code: the first check already returns). | 1.55 statement order |
 | `CMonsterMaker::MakeMonster` (monstermaker.cpp) | Calls `pMonst->Spawn()` a second time after DispatchSpawn for any classname containing "monster_". | the extra virtual call |
 | `CBaseMonster::Look`, Book Simon block (monsters.cpp) | Sets `m_hEnemy = pPlayer` twice. | two EHANDLE assignments |
+| `CSawRunner` sounds (CoF_SawRunner.cpp) | `pAttackHitSounds` holds `chainsaw_attack_miss.wav` and `pAttackMissSounds` holds `chainsaw_attack_hit.wav`. Same in 1.55. | the string tables |
+| `CSawCrazy::MonsterThink` (CoF_SawCrazy.cpp) | After a saw hit it sets `fuser1` (the idle sound timer) instead of `fuser2`; `fuser2` never advances, so the saw does 200 damage on every think. | the stored entvars field |
+| `CMonsterBaby::Killed`, `FakeDeath` (CoF_MonsterBaby.cpp) | With `CallGibMonster()` commented out, `if ( ShouldGibMonster( iGib ) ) return;` makes the return the if body, so an already dead baby that should not gib runs the death code again; in FakeDeath the `else if ( pev->flags & FL_MONSTER )` hangs off `if ( pOwner )`, so `BecomeDead()` is skipped when there is an owner. | 1.55 line layout |
+| `CTaller` punch (CoF_Taller.cpp) | The swing sound plays on every punch, hits included (no `else`). | no jump over the sound call |
+| `CMonsterCustom::m_SaveData` (CoF_MonsterCustom.cpp) | Lists `attackhitwallsound1` twice and never saves `attackhitwallsound2`. | the retail save table |
+| `CSuicider::HeadExplode` (CoF_Suicider.cpp) | `vecSrc` is never set (its GetAttachment is commented out), so the damage sphere is centred on an uninitialized vector. | no store before the use |
+| `CMonsterCrazyBitch::MonsterThink` (CoF_MonsterCrazyBitch.cpp) | No `break` after the rifle case (falls into the shotgun case) nor after the TMP case (falls into the MP5 and VP70 cases). | case bodies run into each other |
+| Zombie-derived monsters (several CoF_*.cpp) | Keep the HLSDK test `(m_Activity == ACT_MELEE_ATTACK1) \|\| (m_Activity == ACT_MELEE_ATTACK1)`. | inherited from zombie.cpp |
+| `CCrab` (CoF_Crab.cpp) | Uses the krypande skill values and the slower sounds (possibly intended). | the gSkillData offsets and strings |

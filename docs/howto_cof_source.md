@@ -137,6 +137,15 @@ The 1.55 hl.dll is an unoptimized debug build of nearly the same source. `disasm
 - `xor eax, eax; je` inside a 1.55 condition is a literal `&& 0`: 1.6a keeps the calls before it (`IsMultiplayer()`) and drops the body.
 - When objdiff shows `.dword $LN` inserts, a truncated retail function or a function paired with the wrong retail name, compare the raw bytes with relocations masked before changing source: these were all retail-side problems (fixed in the delinker, the Ghidra function bodies or the name map).
 
+## Patterns from the second monster group
+
+- Monster size: `int guess_iScale = CVAR_GET_FLOAT( "cof_monsterhumanscale" ); UTIL_SetSize( pev, Vector( -guess_iScale, -guess_iScale, 0 ), Vector( guess_iScale, guess_iScale, H ) );`; for the taller the doubling is in the declaration (`(int)CVAR_GET_FLOAT( ... ) * 2`). Yaw speed: `int ys; ys = CVAR_GET_FLOAT( "cof_monsterhumanyawspeed" );`.
+- A 1.55 `if ( X )` followed by a `return` line whose false jump goes to the next statement is an if whose call was commented out: the return became the body.
+- A call to a same-file function like `IsHeadless()` stays when its result is tested and is dropped when unused.
+- A 1.55 `jmp` after an if/else plus a retail fall-through into the next case means a missing `break`; merged identical cases are still written out separately.
+- Use `EXPORT` on the think and touch functions retail exports (`SawTouch`, `FakeDeath`, `ActivateSewmo`, `ActivateSpitter`, the `InactiveThink`s).
+- `PRECACHE_SOUND( int )` compiles to a call to a helper (`STRING()` then `PRECACHE_SOUND`); `FClassnameIs( pEnt->pev, ... )` inlines as a strcmp on `pev->classname`.
+
 ## What not to do
 
 - Do not edit shared headers (`cbase.h`, `weapons.h`, `player.h`, `util.h`, ...) without coordinating: several files depend on them.
