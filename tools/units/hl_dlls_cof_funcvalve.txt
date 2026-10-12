@@ -10,3 +10,6 @@
 ?Spawn@CFuncValve@@UAEXXZ
 ?Use@CFuncValve@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z
 _func_valve
+?DegreesCheck@CFuncValve@@QAEXXZ
+?UnlockValve@CFuncValve@@QAEXPAVCBaseEntity@@@Z
+?ValveReturn@CFuncValve@@QAEXXZ
