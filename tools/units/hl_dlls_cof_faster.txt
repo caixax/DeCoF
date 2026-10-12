@@ -15,3 +15,4 @@
 ?TakeDamage@CFaster@@UAEHPAUentvars_s@@0MH@Z
 ?TraceAttack@CFaster@@UAEXPAUentvars_s@@MVVector@@PAUTraceResult@@H@Z
 _monster_faster
+?AttackSound@CFaster@@QAEXXZ

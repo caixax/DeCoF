@@ -16,3 +16,4 @@
 ?WeaponIdle@CSwitchblade@@UAEXXZ
 _weapon_knife
 _weapon_switchblade
+?FindHullIntersectionSwitchblade@@YAXABVVector@@AAUTraceResult@@PAM2PAUedict_s@@@Z

@@ -12,3 +12,4 @@
 ?Spawn@CFaceless@@UAEXXZ
 ?TakeDamage@CFaceless@@UAEHPAUentvars_s@@0MH@Z
 _monster_faceless
+?AttackSound@CFaceless@@QAEXXZ

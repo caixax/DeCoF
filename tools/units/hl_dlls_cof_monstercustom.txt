@@ -16,3 +16,4 @@
 ?Spawn@CCustomMonster@@UAEXXZ
 ?TakeDamage@CCustomMonster@@UAEHPAUentvars_s@@0MH@Z
 _monster_custom
+?AttackSound@CCustomMonster@@QAEXXZ

@@ -30,3 +30,4 @@ _inter_door_exit_coop
 ?SetSequenceByName@CInterDoorCoop@@QAEXPAD@Z
 ?ShiftMonsters@CInterDoorCoop@@QAEXXZ
 ?UnlockDoor@CInterDoorCoop@@QAEXPAVCBaseEntity@@@Z
+_sprintf_s

@@ -13,3 +13,4 @@
 ?Spawn@CTwitcher3@@UAEXXZ
 ?TakeDamage@CTwitcher3@@UAEHPAUentvars_s@@0MH@Z
 _monster_twitcher3
+?AttackSound@CTwitcher3@@QAEXXZ

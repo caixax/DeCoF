@@ -15,3 +15,5 @@
 ?TraceAttack@CZombie@@UAEXPAUentvars_s@@MVVector@@PAUTraceResult@@H@Z
 _monster_slower
 _monster_zombie
+?AttackSound@CZombie@@QAEXXZ
+?IsHeadless@CZombie@@QAEHXZ

@@ -12,3 +12,4 @@
 ?Spawn@CSawrunner@@UAEXXZ
 ?TakeDamage@CSawrunner@@UAEHPAUentvars_s@@0MH@Z
 _monster_sawrunner
+?AttackSound@CSawrunner@@QAEXXZ

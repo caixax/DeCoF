@@ -728,3 +728,13 @@ _trigger_followme
 ?SpriteInit@CSprite@@QAEXPBDABVVector@@@Z
 ?TurnOn@CSprite@@QAEXXZ
 _cof_document
+?AllowToContinue@CCofStressTest@@QAEXXZ
+?CalculatePoints@@YAHPAVCBasePlayer@@@Z
+?CalculatePointsDoctor@@YAHPAVCBasePlayer@@@Z
+?DistanceCheck@CCofPhoneCheck@@QAEXH@Z
+?Drop@CDrip@@SAXVVector@@0@Z
+?NoActivate@CCofYesNo@@QAEXPAVCBaseEntity@@@Z
+?SetCollision@CBurningBarrel@@AAEXXZ
+?UnlockCheck@CCofPhoneCheck@@QAEXH@Z
+?VecToYaw@CEnvModel@@AAEMVVector@@@Z
+?YesActivate@CCofYesNo@@QAEXPAVCBaseEntity@@@Z

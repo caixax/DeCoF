@@ -13,3 +13,5 @@
 ?TakeDamage@CSlower3@@UAEHPAUentvars_s@@0MH@Z
 ?TraceAttack@CSlower3@@UAEXPAUentvars_s@@MVVector@@PAUTraceResult@@H@Z
 _monster_slower3
+?AttackSound@CSlower3@@QAEXXZ
+?IsHeadless@CSlower3@@QAEHXZ

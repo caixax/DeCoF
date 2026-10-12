@@ -14,3 +14,4 @@
 ?Spawn@CTaller@@UAEXXZ
 ?TakeDamage@CTaller@@UAEHPAUentvars_s@@0MH@Z
 _monster_taller
+?AttackSound@CTaller@@QAEXXZ

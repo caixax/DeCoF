@@ -14,3 +14,5 @@
 ?TakeDamage@CKrypande@@UAEHPAUentvars_s@@0MH@Z
 ?TraceAttack@CKrypande@@UAEXPAUentvars_s@@MVVector@@PAUTraceResult@@H@Z
 _monster_krypande
+?AttackSound@CKrypande@@QAEXXZ
+?IsHeadless@CKrypande@@QAEHXZ

@@ -16,3 +16,5 @@
 ?Spawn@CCrazyBitch@@UAEXXZ
 ?TakeDamage@CCrazyBitch@@UAEHPAUentvars_s@@0MH@Z
 _monster_crazybitch
+?AttackSound@CCrazyBitch@@QAEXXZ
+?StopSuicide@CCrazyBitch@@QAEXXZ

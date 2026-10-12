@@ -7,3 +7,6 @@
 ?CheckLocalMove@CFlyingMonster@@UAEHABVVector@@0PAVCBaseEntity@@PAM@Z
 ?HandleAnimEvent@CFlyingMonster@@UAEXPAUMonsterEvent_t@@@Z
 ?Killed@CFlyingMonster@@UAEXPAUentvars_s@@H@Z
+?ProbeZ@CFlyingMonster@@QAEHABVVector@@0PAM@Z
+?ShouldAdvanceRoute@CFlyingMonster@@UAEHM@Z
+?Stop@CFlyingMonster@@UAEXXZ

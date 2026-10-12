@@ -22,3 +22,4 @@
 ?StartTask@CSewmo@@UAEXPAUTask_t@@@Z
 ?TakeDamage@CSewmo@@UAEHPAUentvars_s@@0MH@Z
 _monster_sewmo
+?AttackSound@CSewmo@@QAEXXZ

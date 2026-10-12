@@ -12,3 +12,4 @@
 ?Spawn@CChild@@UAEXXZ
 ?TakeDamage@CChild@@UAEHPAUentvars_s@@0MH@Z
 _monster_child
+?AttackSound@CChild@@QAEXXZ

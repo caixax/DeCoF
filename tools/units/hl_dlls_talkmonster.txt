@@ -30,3 +30,8 @@
 ?PlaySentence@CTalkMonster@@UAEXPBDMMM@Z
 ?ShutUpFriends@CTalkMonster@@QAEXXZ
 ?Talk@CTalkMonster@@QAEXM@Z
+?AlertFriends@CTalkMonster@@QAEXXZ
+?CanFollow@CTalkMonster@@QAEHXZ
+?CanPlaySentence@CTalkMonster@@UAEHH@Z
+?TargetDistance@CTalkMonster@@QAEMXZ
+?Touch@CTalkMonster@@UAEXPAVCBaseEntity@@@Z

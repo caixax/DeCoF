@@ -89,3 +89,6 @@ _func_shine
 _func_trainbutts
 _func_wall
 _func_wall_toggle
+?TurnOff@CFuncFogField@@QAEXXZ
+?TurnOn@CFuncFogField@@QAEXXZ
+?UpdateSpeed@CFuncConveyor@@QAEXM@Z

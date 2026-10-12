@@ -139,3 +139,10 @@
 ?UTIL_ScreenFadeWrite@@YAXABUScreenFade@@PAVCBaseEntity@@@Z
 ?UTIL_WallBetween@@YAHVVector@@0PAUedict_s@@PAVCBaseEntity@@@Z
 ?WaterSplash@@YAXPAVCBaseEntity@@VVector@@@Z
+?WritePositionVector@CSave@@QAEXPBDABVVector@@@Z
+?WritePositionVector@CSave@@QAEXPBDPBMH@Z
+?WriteShort@CSave@@QAEXPBDPBFH@Z
+?WriteString@CSave@@QAEXPBD0@Z
+?WriteString@CSave@@QAEXPBDPBHH@Z
+?WriteTime@CSave@@QAEXPBDPBMH@Z
+?WriteVector@CSave@@QAEXPBDPBMH@Z

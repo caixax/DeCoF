@@ -13,3 +13,4 @@
 ?TakeDamage@CFacelessV@@UAEHPAUentvars_s@@0MH@Z
 ?TraceAttack@CFacelessV@@UAEXPAUentvars_s@@MVVector@@PAUTraceResult@@H@Z
 _monster_facelessv
+?AttackSound@CFacelessV@@QAEXXZ

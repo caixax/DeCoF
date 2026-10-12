@@ -12,3 +12,4 @@
 ?Spawn@CSlowerstuck@@UAEXXZ
 ?TakeDamage@CSlowerstuck@@UAEHPAUentvars_s@@0MH@Z
 _monster_slowerstuck
+?AttackSound@CSlowerstuck@@QAEXXZ

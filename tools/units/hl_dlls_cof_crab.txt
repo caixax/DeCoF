@@ -16,3 +16,5 @@
 ?TraceAttack@CCrab@@UAEXPAUentvars_s@@MVVector@@PAUTraceResult@@H@Z
 _monster_crab
 ??$GetClassPtr@VCGib@@@@YAPAVCGib@@PAV0@@Z
+?AttackSound@CCrab@@QAEXXZ
+?IsHeadless@CCrab@@QAEHXZ
