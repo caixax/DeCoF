@@ -253,6 +253,7 @@ va,name,kind,evidence
 100D0230,?DefPrimPunch@CBaseSpreadWeapon@@QAEXXZ,func,"bytes identical to ?DefPrimPunch@CBaseSpreadWeapon@@QAEXXZ in hl/dlls/paranoia_wpn (relocated fields masked), one-to-one"
 100D02E0,?DefSecPunch@CBaseSpreadWeapon@@QAEXXZ,func,"bytes identical to ?DefSecPunch@CBaseSpreadWeapon@@QAEXXZ in hl/dlls/paranoia_wpn (relocated fields masked), one-to-one"
 100D0410,?ExpandSpread@CBaseSpreadWeapon@@QAEMM@Z,func,"bytes identical to ?ExpandSpread@CBaseSpreadWeapon@@QAEMM@Z in hl/dlls/paranoia_wpn (relocated fields masked), one-to-one"
+100D0680,?GetMode@CBaseToggleWeapon@@UAEHXZ,func,"bytes identical to ?GetMode@CBaseToggleWeapon@@UAEHXZ in hl/dlls/paranoia_wpn (relocated fields masked), one-to-one"
 100D0700,?GetSpreadVec2@CBaseToggleWeapon@@UAE?AVVector@@XZ,func,"bytes identical to ?GetSpreadVec2@CBaseToggleWeapon@@UAE?AVVector@@XZ in hl/dlls/paranoia_wpn (relocated fields masked), one-to-one"
 100D07C0,?GetSpreadVec@CBaseToggleWeapon@@UAE?AVVector@@XZ,func,"bytes identical to ?GetSpreadVec@CBaseToggleWeapon@@UAE?AVVector@@XZ in hl/dlls/paranoia_wpn (relocated fields masked), one-to-one"
 100D0830,?InitSpread@CBaseSpreadWeapon@@QAEXM@Z,func,"bytes identical to ?InitSpread@CBaseSpreadWeapon@@QAEXM@Z in hl/dlls/paranoia_wpn (relocated fields masked), one-to-one"

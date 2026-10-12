@@ -1,2 +1,4 @@
 ?SpectatorThink@CBaseSpectator@@QAEXXZ
 ?SpectatorImpulseCommand@CBaseSpectator@@AAEXXZ
+?SpectatorConnect@CBaseSpectator@@QAEXXZ
+?SpectatorDisconnect@CBaseSpectator@@QAEXXZ

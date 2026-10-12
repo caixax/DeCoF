@@ -80,3 +80,6 @@
 ?UseDecrement@CBasePlayerWeapon@@UAEHXZ
 ?WeaponIdle@CBasePlayerWeapon@@UAEXXZ
 ?iItemSlot@CBasePlayerItem@@UAEHXZ
+?SpectatorConnect@@YAXPAUedict_s@@@Z
+?SpectatorDisconnect@@YAXPAUedict_s@@@Z
+?SpectatorThink@@YAXPAUedict_s@@@Z

@@ -17,3 +17,4 @@
 ?InitToggling@CBaseToggleWeapon@@QAEXXZ
 ?PrimaryAttack@CBaseToggleWeapon@@UAEXXZ
 ?SecondaryAttack@CBaseToggleWeapon@@UAEXXZ
+?GetMode@CBaseToggleWeapon@@UAEHXZ

@@ -18,3 +18,4 @@
 ?ResetSequenceInfo@CBaseAnimating@@QAEXXZ
 ?SetBlending@CBaseAnimating@@QAEMHM@Z
 ?SetBoneController@CBaseAnimating@@QAEMHM@Z
+?StudioFrameAdvance@CBaseAnimating@@QAEMM@Z
