@@ -25,7 +25,8 @@ def main():
     args = ap.parse_args()
     names = []
     for r in csv.DictReader(open(os.path.join(ROOT, "docs", "progress.csv"))):
-        if r["dll"] == args.dll and r["source_file"].lower() == args.source_file.lower() \
+        # "guess:" rows lie between two functions of the file (tools/client_layout.py)
+        if r["dll"] == args.dll and r["source_file"].lower().replace("guess:", "") == args.source_file.lower() \
                 and r["class"] != "LIB" and r["name"]:
             names.append(r["name"])
     if not names:

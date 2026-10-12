@@ -33,6 +33,14 @@ Every tool output stays in the working context, so large outputs repeated over m
 4. For shape questions (if/else order, operand order, locals) write the alternatives into a variants file and run `python tools/try_variants.py hl/dlls/<file> "<decorated name>" <file> --keep`.
 5. After 8 failed attempts on a function, stop: it stays TODO or becomes EQUIVALENT with the exact remaining difference in progress.csv.
 
+## client.dll units
+
+- Toolchain: the same compiler and flags as hl.dll, including `/Ob1` (51 client functions match only with it, none only without it).
+- No build of client.dll has a PDB. Names come from the reference source (refs/Paranoia first, then refs/halflife and refs/Spirit), strings and exports; code shared with the server (pm_shared, common headers) can use the hl.dll 1.55 PDB. There is no line table: follow the reference file's function order and layout.
+- `src/cl_dll/<file>.cpp` starts as the Paranoia file. Apply only the differences the retail code shows.
+- Unit function list: `tools/units/client_cl_dll_<file>.txt`. Functions that Cry of Fear changed match no reference bytes and may have no retail name, so objdiff cannot pair them yet. Once the file compiles (and after adding functions), run `python tools/name_unit.py --dll client client/cl_dll/<file>`: it names unnamed retail functions of the unit by identical bytes or by their position in the object, updates the unit list and delinks. A position name is a proposal until the function reaches 100%; report the ones that stay below.
+- Inside one object the functions are in decorated-name order (most files) or in source order (a few). `tools/align_names.py` uses this; a gap it reports ("3 retail, 1 ours") means functions missing on one side: written in Cry of Fear and not in the reference file yet, or removed.
+- `python tools/disasm.py client "<decorated name>"` and `--outline` work on the 1.6a client.dll; `--version` does not apply (no symbols in the older client builds).
 ## Facts that hold for the CoF weapons
 
 - Globals: `gpGlobals->v_forward` is +0x28, `v_up` +0x34, `v_right` +0x40. Shell eject: `vecShellVelocity = gpGlobals->v_right * 220 + gpGlobals->v_up * 200 + gpGlobals->v_forward * 40`, `vecShellOrigin = pev->origin + pev->view_ofs + gpGlobals->v_forward * 80 + gpGlobals->v_right * 20`, `EjectBrass( vecShellOrigin, vecShellVelocity, pev->angles.y, m_iShell, TE_BOUNCE_SHELL )`.
