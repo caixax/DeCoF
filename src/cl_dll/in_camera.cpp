@@ -5,6 +5,7 @@
 // $NoKeywords: $
 //=============================================================================
 
+#include <cmath>
 #include "hud.h"
 #include "cl_util.h"
 #include "camera.h"
@@ -475,8 +476,6 @@ void CAM_Init( void )
 	gEngfuncs.pfnAddCommand( "-camin", CAM_InUp );
 	gEngfuncs.pfnAddCommand( "+camout", CAM_OutDown );
 	gEngfuncs.pfnAddCommand( "-camout", CAM_OutUp );
-	gEngfuncs.pfnAddCommand( "thirdperson", CAM_ToThirdPerson );
-	gEngfuncs.pfnAddCommand( "firstperson", CAM_ToFirstPerson );
 	gEngfuncs.pfnAddCommand( "+cammousemove",CAM_StartMouseMove);
 	gEngfuncs.pfnAddCommand( "-cammousemove",CAM_EndMouseMove);
 	gEngfuncs.pfnAddCommand( "+camdistance", CAM_StartDistance );
