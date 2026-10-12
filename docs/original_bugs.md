@@ -81,3 +81,6 @@ The reconstructed source keeps the behavior of the retail 1.6a binaries, includi
 | `UTIL_BrushEntInSight` (util.cpp) | `!pHit || pHit->IsBSPModel()` style test reads `pHit->pev` when pHit is NULL, pEntity can be NULL at FClassnameIs, and it passes `pev->mins/maxs` (local bounds, not absmin/absmax) to UTIL_EntitiesInBox. | the order of the tests and the bounds |
 | `UTIL_Remove` (util.cpp) | Sets `m_bIsBoss = false` twice. | the second store |
 | `guess_UTIL_PlayWeaponSound` (util.cpp) | Always sends entity index 1 in singleplayer. | the constant |
+| `CCoFPlayerCheck::Use` (effects.cpp) | Case 3 tests `player1trigger` but fires `player3trigger`. | the field name |
+| `CCoFStats::Use` (effects.cpp) | Normal mode: a score of 9 to 12 gives grade 0. Doctor mode with unlocks: `unlockflags = 0` wipes the earlier flags before setting 0x1000000. | the grade table and the store |
+| `CCoFRandomTimedSpawner::CheckIfDead` (effects.cpp) | In the `iuser4` branch the delay from `iuser1` is overwritten by the final `SetNextThink( 0.25 )` (no `return`). | the missing return |

@@ -257,6 +257,7 @@ extern const char *GetClassnameForId[];
 extern bool showobjective;
 extern int g_iSurvivalMode;
 extern int m_iSimonMode;
+extern bool m_gbIsInCutscene;
 
 extern void UTIL_ProMessage( CBaseEntity *pEntity, const char *pMessage, int colour, bool all );
 extern float GetSequenceTimeNamed( void *pmodel, char *sequence );
@@ -1948,6 +1949,9 @@ class CEnvModel : public CBaseAnimating
 	string_t m_iszSequence_Off;
 	int m_iAction_On;
 	int m_iAction_Off;
+
+public:
+	void VisibilityCheck( void );
 };
 
 TYPEDESCRIPTION CEnvModel::m_SaveData[] =
@@ -1987,9 +1991,82 @@ void CEnvModel::KeyValue( KeyValueData *pkvd )
 		m_iAction_Off = atoi(pkvd->szValue);
 		pkvd->fHandled = TRUE;
 	}
+	else if (FStrEq(pkvd->szKeyName, "chestnums"))
+	{
+		m_ChestNumbers = atoi(pkvd->szValue);
+		pkvd->fHandled = TRUE;
+	}
 	else
 	{
 		CBaseAnimating::KeyValue( pkvd );
+	}
+}
+
+void CEnvModel::VisibilityCheck( void )
+{
+	if ( pev->iuser1 )
+	{
+		bool has1 = false;
+		bool has2 = false;
+		bool has3 = false;
+		bool has4 = false;
+
+		if ( CVAR_GET_FLOAT( "mp_copsalwaysvisible" ) > 0 )
+			has1 = has2 = has3 = has4 = true;
+
+		for ( int i = 1; i <= gpGlobals->maxClients; i++ )
+		{
+			CBasePlayer *plr = (CBasePlayer *)UTIL_PlayerByIndex( i );
+
+			if ( plr && plr->pev->fuser4 == 0 )
+			{
+				switch ( i )
+				{
+				case 1:
+					has1 = true;
+					pev->effects &= ~EF_NODRAW;
+					break;
+
+				case 2:
+					has2 = true;
+					pev->effects &= ~EF_NODRAW;
+					break;
+
+				case 3:
+					has3 = true;
+					pev->effects &= ~EF_NODRAW;
+					break;
+
+				case 4:
+					has4 = true;
+					pev->effects &= ~EF_NODRAW;
+					break;
+				}
+			}
+		}
+
+		switch ( pev->iuser1 )
+		{
+		case 1:
+			if ( !has1 )
+				pev->effects |= EF_NODRAW;
+			break;
+
+		case 2:
+			if ( !has2 )
+				pev->effects |= EF_NODRAW;
+			break;
+
+		case 3:
+			if ( !has3 )
+				pev->effects |= EF_NODRAW;
+			break;
+
+		case 4:
+			if ( !has4 )
+				pev->effects |= EF_NODRAW;
+			break;
+		}
 	}
 }
 
@@ -1998,6 +2075,12 @@ void CEnvModel :: Spawn( void )
 	Precache();
 	SET_MODEL( ENT(pev), STRING(pev->model) );
 	UTIL_SetOrigin(this, pev->origin);
+
+	if ( pev->model )
+	{
+		if ( strstr( STRING(pev->model), "skogsris" ) )
+			pev->renderfx = 94;
+	}
 
 	if (pev->spawnflags & SF_ENVMODEL_SOLID)
 	{
@@ -2011,12 +2094,32 @@ void CEnvModel :: Spawn( void )
 		DROP_TO_FLOOR ( ENT(pev) );
 	}
 
-	SetBoneController( 0, 0 );
-	SetBoneController( 1, 0 );
+	if ( !pev->renderfx )
+	{
+		if ( pev->model )
+		{
+			if ( !strstr( STRING(pev->model), "obbsror" ) )
+				pev->renderfx = 92;
+		}
+	}
+
+	SetBoneController( 0, pev->fuser1 );
+	SetBoneController( 1, pev->fuser2 );
+	SetBoneController( 2, pev->fuser3 );
+	SetBoneController( 3, pev->fuser4 );
 
 	SetSequence();
 	
 	SetNextThink( 0.1 );
+
+	number1 = RANDOM_LONG( 0, 8 );
+	number2 = RANDOM_LONG( 0, 8 );
+
+	if ( m_ChestNumbers )
+	{
+		SetBodygroup( 1, number1 );
+		SetBodygroup( 2, number2 );
+	}
 }
 
 void CEnvModel::Precache( void )
@@ -2034,6 +2137,27 @@ STATE CEnvModel::GetState( void )
 
 void CEnvModel::Use( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE useType, float value )
 {
+	if ( m_ChestNumbers )
+	{
+		int realnumber = number1 + 1;
+		int realnumber2 = number2 + 1;
+		char szTempKey[8];
+
+		sprintf( szTempKey, "%i7%i9", realnumber, realnumber2 );
+
+		int codenumber = atoi( szTempKey );
+
+		CBaseEntity *player = UTIL_FindEntityByClassname( NULL, "player" );
+
+		if ( player )
+		{
+			CBasePlayer *pPlayer = GetClassPtr( (CBasePlayer *)player->pev );
+
+			if ( pPlayer )
+				pPlayer->m_iKeypadNumber = codenumber;
+		}
+	}
+
 	if (ShouldToggle(useType, !(pev->spawnflags & SF_ENVMODEL_OFF)))
 	{
 		if (pev->spawnflags & SF_ENVMODEL_OFF)
@@ -2046,9 +2170,53 @@ void CEnvModel::Use( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE use
 	}
 }
 
+float CEnvModel::VecToYaw( Vector vecDir )
+{
+	if (vecDir.x == 0 && vecDir.y == 0 && vecDir.z == 0)
+		return pev->angles.y;
+
+	return UTIL_VecToYaw( vecDir );
+}
+
 void CEnvModel::Think( void )
 {
 	int iTemp;
+
+	if ( pev->spawnflags & 8 )
+	{
+		CBaseEntity *pent = UTIL_FindEntityByClassname( NULL, "player" );
+
+		if ( pent && !m_gbIsInCutscene )
+		{
+			Vector2D vec2LOS;
+
+
+			UTIL_MakeVectors( pev->angles );
+
+			vec2LOS = ( pent->pev->origin - pev->origin ).Make2D();
+			vec2LOS = vec2LOS.Normalize();
+
+			float flDot = DotProduct( vec2LOS, gpGlobals->v_forward.Make2D() );
+
+
+			if ( flDot >= 0 )
+			{
+				float yaw = VecToYaw( pent->pev->origin - pev->origin ) - pev->angles.y;
+
+				if (yaw > 180) yaw -= 360;
+				if (yaw < -180) yaw += 360;
+
+
+				SetBoneController( 0, yaw );
+			}
+		}
+
+		if ( m_gbIsInCutscene )
+		{
+
+			SetBoneController( 0, 0 );
+		}
+	}
 
 //	ALERT(at_console, "env_model Think fr=%f\n", pev->framerate);
 
@@ -2085,7 +2253,11 @@ void CEnvModel::Think( void )
 			return;
 		}
 	}
-	SetNextThink( 0.1 );
+
+	if ( pev->spawnflags & 8 )
+		SetNextThink( 0 );
+	else
+		SetNextThink( 0.1 );
 }
 
 void CEnvModel :: SetSequence( void )
@@ -2099,6 +2271,9 @@ void CEnvModel :: SetSequence( void )
 
 	if (!iszSeq)
 		return;
+
+	VisibilityCheck();
+
 	pev->sequence = LookupSequence( STRING( iszSeq ));
 
 	if (pev->sequence == -1)
@@ -2874,7 +3049,7 @@ void CBlood::Use( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE useTyp
 	if ( pev->spawnflags & SF_BLOOD_STREAM )
 		UTIL_BloodStream( BloodPosition(pActivator), Direction(pActivator), (Color() == BLOOD_COLOR_RED) ? 70 : Color(), BloodAmount() );
 	else
-		UTIL_BloodDrips( BloodPosition(pActivator), Direction(pActivator), Color(), BloodAmount() );
+		UTIL_BloodDrips( BloodPosition(pActivator), Direction(pActivator), Color(), BloodAmount(), g_vecZero );
 
 	if ( pev->spawnflags & SF_BLOOD_DECAL )
 	{
@@ -12216,6 +12391,1222 @@ void CCoFStartDoctorMode::Use( CBaseEntity *pActivator, CBaseEntity *pCaller, US
 }
 
 LINK_ENTITY_TO_CLASS( cof_startdoctormode, CCoFStartDoctorMode );
+
+//=========================================================
+// cof_stats
+//=========================================================
+class CCoFStats : public CPointEntity
+{
+	virtual void Spawn( void );
+	virtual void Use( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE useType, float value );
+};
+
+void CCoFStats::Spawn( void )
+{
+	UTIL_SetOrigin( this, pev->origin );
+	pev->solid = SOLID_NOT;
+	pev->effects = EF_NODRAW;
+	pev->v_angle = g_vecZero;
+}
+
+void CCoFStats::Use( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE useType, float value )
+{
+	CBaseEntity *player = UTIL_FindEntityByClassname( NULL, "player" );
+
+	if ( player )
+	{
+		CBasePlayer *pPlayer = GetClassPtr( (CBasePlayer *)player->pev );
+
+		if ( pPlayer )
+		{
+			int points = 0;
+			int m_iGrade = 0;
+
+			if ( pPlayer->playerstats.doctor_mode )
+				points = CalculatePointsDoctor( pPlayer );
+			else
+				points = CalculatePoints( pPlayer );
+
+			if ( pPlayer->playerstats.doctor_mode )
+			{
+				points = CalculatePointsDoctor( pPlayer );
+
+				if ( points <= 2 )
+					m_iGrade = 7;
+
+				if ( points <= 4 && points > 2 )
+					m_iGrade = 6;
+
+				if ( points <= 10 && points > 4 )
+					m_iGrade = 5;
+
+				if ( points <= 14 && points > 10 )
+					m_iGrade = 4;
+
+				if ( points <= 16 && points > 14 )
+					m_iGrade = 3;
+
+				if ( points == 17 )
+					m_iGrade = 2;
+
+				if ( points >= 18 )
+					m_iGrade = 1;
+			}
+			else
+			{
+				if ( points <= 4 )
+					m_iGrade = 7;
+
+				if ( points <= 8 && points > 4 )
+					m_iGrade = 6;
+
+				if ( points <= 16 && points > 12 )
+					m_iGrade = 5;
+
+				if ( points <= 20 && points > 16 )
+					m_iGrade = 4;
+
+				if ( points <= 24 && points > 20 )
+					m_iGrade = 3;
+
+				if ( points < 28 && points > 24 )
+					m_iGrade = 2;
+
+				if ( points >= 28 )
+					m_iGrade = 1;
+			}
+
+			int ending6 = 0;
+			int ending7 = 0;
+
+
+			if ( pPlayer->playerstats.doctor_mode )
+				ending6 = 1;
+
+
+			if ( pPlayer->CheckingEndingOrUnlockables( 0, false, true ) )
+				ending7 = 1;
+
+			int unlockflags = 0;
+
+			if ( pPlayer->CheckingEndingOrUnlockables( 1, false, false ) )
+				unlockflags |= 1;
+			if ( pPlayer->CheckingEndingOrUnlockables( 2, false, false ) )
+				unlockflags |= 2;
+			if ( pPlayer->CheckingEndingOrUnlockables( 4, false, false ) )
+				unlockflags |= 4;
+			if ( pPlayer->CheckingEndingOrUnlockables( 8, false, false ) )
+				unlockflags |= 8;
+			if ( pPlayer->CheckingEndingOrUnlockables( 0x10, false, false ) )
+				unlockflags |= 0x10;
+			if ( pPlayer->CheckingEndingOrUnlockables( 0x20, false, false ) )
+				unlockflags |= 0x20;
+			if ( pPlayer->CheckingEndingOrUnlockables( 0x40, false, false ) )
+				unlockflags |= 0x40;
+			if ( pPlayer->CheckingEndingOrUnlockables( 0x80, false, false ) )
+				unlockflags |= 0x80;
+			if ( pPlayer->CheckingEndingOrUnlockables( 0x100, false, false ) )
+				unlockflags |= 0x100;
+			if ( pPlayer->CheckingEndingOrUnlockables( 0x200, false, false ) )
+				unlockflags |= 0x200;
+			if ( pPlayer->CheckingEndingOrUnlockables( 0x400, false, false ) )
+				unlockflags |= 0x400;
+			if ( pPlayer->CheckingEndingOrUnlockables( 0x800, false, false ) )
+				unlockflags |= 0x800;
+			if ( pPlayer->CheckingEndingOrUnlockables( 0x1000, false, false ) )
+				unlockflags |= 0x1000;
+			if ( pPlayer->CheckingEndingOrUnlockables( 0x2000, false, false ) )
+				unlockflags |= 0x2000;
+			if ( pPlayer->CheckingEndingOrUnlockables( 0x4000, false, false ) )
+				unlockflags |= 0x4000;
+			if ( pPlayer->CheckingEndingOrUnlockables( 0x8000, false, false ) )
+				unlockflags |= 0x8000;
+			if ( pPlayer->CheckingEndingOrUnlockables( 0x10000, false, false ) )
+				unlockflags |= 0x10000;
+			if ( pPlayer->CheckingEndingOrUnlockables( 0x20000, false, false ) )
+				unlockflags |= 0x20000;
+			if ( pPlayer->CheckingEndingOrUnlockables( 0x40000, false, false ) )
+				unlockflags |= 0x40000;
+			if ( pPlayer->CheckingEndingOrUnlockables( 0x80000, false, false ) )
+				unlockflags |= 0x80000;
+			if ( pPlayer->CheckingEndingOrUnlockables( 0x100000, false, false ) )
+				unlockflags |= 0x100000;
+			if ( pPlayer->CheckingEndingOrUnlockables( 0x200000, false, false ) )
+				unlockflags |= 0x200000;
+			if ( pPlayer->CheckingEndingOrUnlockables( 0x400000, false, false ) )
+				unlockflags |= 0x400000;
+			if ( pPlayer->CheckingEndingOrUnlockables( 0x800000, false, false ) )
+				unlockflags |= 0x800000;
+			if ( pPlayer->CheckingEndingOrUnlockables( 0x1000000, false, false ) )
+				unlockflags |= 0x1000000;
+			if ( pPlayer->CheckingEndingOrUnlockables( 0x2000000, false, false ) )
+				unlockflags |= 0x2000000;
+			if ( pPlayer->CheckingEndingOrUnlockables( 0x4000000, false, false ) )
+				unlockflags |= 0x4000000;
+			if ( pPlayer->CheckingEndingOrUnlockables( 0x8000000, false, false ) )
+				unlockflags |= 0x8000000;
+			if ( pPlayer->CheckingEndingOrUnlockables( 0x10000000, false, false ) )
+				unlockflags |= 0x10000000;
+			if ( pPlayer->CheckingEndingOrUnlockables( 0x20000000, false, false ) )
+				unlockflags |= 0x20000000;
+			if ( pPlayer->CheckingEndingOrUnlockables( 0x40000000, false, false ) )
+				unlockflags |= 0x40000000;
+			if ( pPlayer->CheckingEndingOrUnlockables( 0x80000000, false, false ) )
+				unlockflags |= 0x80000000;
+
+
+			if ( pPlayer->playerstats.started_from_the_beginning && pPlayer->playerstats.can_unlock_shit && pPlayer->playerstats.doctor_mode )
+			{
+				unlockflags = 0;
+
+				if ( !pPlayer->CheckingEndingOrUnlockables( 0x1000000, false, false ) )
+					pPlayer->SetEndingOrUnlockables( 0x1000000, false, false, false );
+
+				unlockflags |= 0x1000000;
+			}
+
+
+			MESSAGE_BEGIN( MSG_ONE, gmsgCredits, NULL, pPlayer->pev );
+				if ( pev->message )
+					WRITE_BYTE( 1 );
+				else
+					WRITE_BYTE( 0 );
+				WRITE_STRING( "nah" );
+				WRITE_SHORT( pPlayer->playerstats.shots_fired );
+				WRITE_SHORT( pPlayer->playerstats.shots_hit );
+				WRITE_SHORT( pPlayer->playerstats.syringes_used );
+				WRITE_SHORT( pPlayer->playerstats.shots_missed );
+				WRITE_COORD( pPlayer->CalculateAccuracy() );
+				WRITE_SHORT( pPlayer->playerstats.timessaved );
+				WRITE_SHORT( pPlayer->playerstats.weaponscollected );
+				WRITE_SHORT( pPlayer->playerstats.damagetaken );
+				WRITE_SHORT( pPlayer->playerstats.distancetravelled_metres );
+				WRITE_SHORT( pPlayer->playerstats.distancetravelled_kilometres );
+				WRITE_SHORT( pPlayer->playerstats.time_seconds );
+				WRITE_SHORT( pPlayer->playerstats.time_minutes );
+				WRITE_SHORT( pPlayer->playerstats.time_hours );
+				WRITE_SHORT( pPlayer->playerstats.monsters_killed_melee );
+				WRITE_SHORT( pPlayer->playerstats.monsters_killed_shooting );
+
+				if ( pPlayer->playerstats.started_from_the_beginning && pPlayer->playerstats.can_unlock_shit )
+					WRITE_BYTE( 1 );
+				else
+					WRITE_BYTE( 0 );
+				WRITE_BYTE( 30 );
+
+				if ( pev->spawnflags & 1 )
+					WRITE_BYTE( 1 );
+				else
+					WRITE_BYTE( 0 );
+				WRITE_BYTE( pPlayer->playerstats.chosen_difficulty );
+				WRITE_LONG( unlockflags );
+				WRITE_BYTE( 0 );
+				WRITE_BYTE( m_iGrade );
+				if ( pPlayer->playerstats.doctor_mode )
+					WRITE_BYTE( 1 );
+				else
+					WRITE_BYTE( 0 );
+				WRITE_BYTE( 1 );
+
+
+				if ( g_pGameRules && g_pGameRules->IsMultiplayer() )
+					WRITE_BYTE( 1 );
+				else
+					WRITE_BYTE( 0 );
+
+
+				WRITE_BYTE( ending6 );
+				WRITE_BYTE( ending7 );
+
+
+				if ( pPlayer->CheckingEndingOrUnlockables( 0, true, false ) )
+					WRITE_BYTE( 1 );
+				else
+					WRITE_BYTE( 0 );
+
+
+				if ( pPlayer->CheckingEndingOrUnlockables( 0, false, true ) )
+					WRITE_BYTE( 1 );
+				else
+					WRITE_BYTE( 0 );
+
+
+				if ( pPlayer->playerstats.started_from_the_beginning && strstr( STRING(gpGlobals->mapname), "c_ending" ) )
+					WRITE_BYTE( 1 );
+				else
+					WRITE_BYTE( 0 );
+			MESSAGE_END();
+		}
+	}
+}
+
+LINK_ENTITY_TO_CLASS( cof_stats, CCoFStats );
+
+//=========================================================
+// cof_spawnpointonoff
+//=========================================================
+class CCoFSpawnPointOnOff : public CPointEntity
+{
+	virtual void Spawn( void );
+	virtual void Use( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE useType, float value );
+};
+
+void CCoFSpawnPointOnOff::Spawn( void )
+{
+	UTIL_SetOrigin( this, pev->origin );
+	pev->solid = SOLID_NOT;
+	pev->effects = EF_NODRAW;
+	pev->v_angle = g_vecZero;
+}
+
+void CCoFSpawnPointOnOff::Use( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE useType, float value )
+{
+	if ( !pev->message )
+		return;
+
+	CBaseEntity *pSpawn = UTIL_FindEntityByTargetname( NULL, STRING(pev->message) );
+
+	if ( pSpawn )
+	{
+		pSpawn->pev->iuser1 = pev->iuser1;
+
+		if ( pev->spawnflags & 1 )
+		{
+			if ( FClassnameIs( pSpawn->edict(), "cof_coop_spawn1" ) )
+			{
+				CBaseEntity *player = UTIL_PlayerByIndex( 1 );
+
+				if ( player )
+				{
+					if ( player->IsPlayer() )
+					{
+						UTIL_SetOrigin( player, pSpawn->pev->origin );
+						player->pev->angles = pSpawn->pev->angles;
+						player->pev->fixangle = TRUE;
+					}
+				}
+			}
+
+			if ( FClassnameIs( pSpawn->edict(), "cof_coop_spawn2" ) )
+			{
+				CBaseEntity *player = UTIL_PlayerByIndex( 2 );
+
+				if ( player )
+				{
+					if ( player->IsPlayer() )
+					{
+						UTIL_SetOrigin( player, pSpawn->pev->origin );
+						player->pev->angles = pSpawn->pev->angles;
+						player->pev->fixangle = TRUE;
+					}
+				}
+			}
+
+			if ( FClassnameIs( pSpawn->edict(), "cof_coop_spawn3" ) )
+			{
+				CBaseEntity *player = UTIL_PlayerByIndex( 3 );
+
+				if ( player )
+				{
+					if ( player->IsPlayer() )
+					{
+						UTIL_SetOrigin( player, pSpawn->pev->origin );
+						player->pev->angles = pSpawn->pev->angles;
+						player->pev->fixangle = TRUE;
+					}
+				}
+			}
+
+			if ( FClassnameIs( pSpawn->edict(), "cof_coop_spawn4" ) )
+			{
+				CBaseEntity *player = UTIL_PlayerByIndex( 4 );
+
+				if ( player )
+				{
+					if ( player->IsPlayer() )
+					{
+						UTIL_SetOrigin( player, pSpawn->pev->origin );
+						player->pev->angles = pSpawn->pev->angles;
+						player->pev->fixangle = TRUE;
+					}
+				}
+			}
+		}
+	}
+}
+
+LINK_ENTITY_TO_CLASS( cof_spawnpointonoff, CCoFSpawnPointOnOff );
+
+//=========================================================
+// cof_coop_spawn1 to cof_coop_spawn4
+//=========================================================
+class CCoFCoopSpawn : public CPointEntity
+{
+	virtual void Spawn( void );
+};
+
+void CCoFCoopSpawn::Spawn( void )
+{
+	UTIL_SetOrigin( this, pev->origin );
+	pev->solid = SOLID_NOT;
+	pev->effects = EF_NODRAW;
+	pev->v_angle = g_vecZero;
+}
+
+LINK_ENTITY_TO_CLASS( cof_coop_spawn1, CCoFCoopSpawn );
+LINK_ENTITY_TO_CLASS( cof_coop_spawn2, CCoFCoopSpawn );
+LINK_ENTITY_TO_CLASS( cof_coop_spawn3, CCoFCoopSpawn );
+LINK_ENTITY_TO_CLASS( cof_coop_spawn4, CCoFCoopSpawn );
+
+//=========================================================
+// cof_lobby_start
+//=========================================================
+class CCoFLobbyStart : public CPointEntity
+{
+	virtual void Spawn( void );
+	virtual void Use( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE useType, float value );
+};
+
+void CCoFLobbyStart::Spawn( void )
+{
+	UTIL_SetOrigin( this, pev->origin );
+	pev->solid = SOLID_NOT;
+	pev->effects = EF_NODRAW;
+	pev->v_angle = g_vecZero;
+}
+
+void CCoFLobbyStart::Use( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE useType, float value )
+{
+	if ( !pev->message )
+		return;
+
+	if ( g_pLevelChange )
+	{
+		memset( g_pLevelChange->playervariablestruct, 0, sizeof( g_pLevelChange->playervariablestruct ) );
+		memset( g_pLevelChange->playervariablestructstats, 0, sizeof( g_pLevelChange->playervariablestructstats ) );
+	}
+
+
+
+	CBaseEntity *player = UTIL_FindEntityByClassname( NULL, "player" );
+
+	if ( player )
+	{
+		CBasePlayer *pPlayer = GetClassPtr( (CBasePlayer *)player->pev );
+
+		if ( pPlayer )
+			FireTargets( STRING(pev->message), pPlayer, this, USE_TOGGLE, 0 );
+	}
+}
+
+LINK_ENTITY_TO_CLASS( cof_lobby_start, CCoFLobbyStart );
+
+//=========================================================
+// cof_coop_stats
+//=========================================================
+class CCoFCoopStats : public CPointEntity
+{
+	virtual void Spawn( void );
+	virtual void Use( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE useType, float value );
+	void RestartCampaign( void );
+};
+
+void CCoFCoopStats::Spawn( void )
+{
+	UTIL_SetOrigin( this, pev->origin );
+	pev->solid = SOLID_NOT;
+	pev->effects = EF_NODRAW;
+	pev->v_angle = g_vecZero;
+}
+
+void CCoFCoopStats::RestartCampaign( void )
+{
+	if ( pev->message )
+		CHANGE_LEVEL( (char *)STRING(pev->message), NULL );
+	else
+		CHANGE_LEVEL( "cof_campaign_01", NULL );
+}
+
+void CCoFCoopStats::Use( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE useType, float value )
+{
+	if ( pev->spawnflags & 1 )
+	{
+		SetThink( &CCoFCoopStats::RestartCampaign );
+		SetNextThink( 30 );
+	}
+	else
+	{
+		SetThink( &CCoFCoopStats::RestartCampaign );
+		SetNextThink( 260 );
+	}
+
+	for ( int i = 1; i <= 4; i++ )
+	{
+		CBasePlayer *pPlayer = (CBasePlayer *)UTIL_PlayerByIndex( i );
+
+		if ( pPlayer )
+		{
+
+
+
+			pPlayer->SetEndingOrUnlockables( 0, false, false, true );
+
+			MESSAGE_BEGIN( MSG_ALL, gmsgBeatCoop );
+			MESSAGE_END();
+
+			MESSAGE_BEGIN( MSG_ALL, gmsgCoopStats );
+				WRITE_BYTE( ENTINDEX( pPlayer->edict() ) );
+				WRITE_SHORT( pPlayer->playerstats.shots_fired );
+				WRITE_SHORT( pPlayer->playerstats.shots_hit );
+				WRITE_SHORT( pPlayer->playerstats.syringes_used );
+				WRITE_SHORT( pPlayer->playerstats.shots_missed );
+				WRITE_COORD( pPlayer->CalculateAccuracy() );
+				//WRITE_SHORT( pPlayer->playerstats.timessaved );
+				//WRITE_SHORT( pPlayer->playerstats.weaponscollected );
+				WRITE_SHORT( pPlayer->playerstats.damagetaken );
+				//WRITE_SHORT( pPlayer->playerstats.distancetravelled_metres );
+				//WRITE_SHORT( pPlayer->playerstats.distancetravelled_kilometres );
+				WRITE_SHORT( pPlayer->playerstats.time_seconds );
+				WRITE_SHORT( pPlayer->playerstats.time_minutes );
+				WRITE_SHORT( pPlayer->playerstats.time_hours );
+				WRITE_SHORT( pPlayer->playerstats.monsters_killed_melee );
+				WRITE_SHORT( pPlayer->playerstats.monsters_killed_shooting );
+				WRITE_BYTE( 1 );
+				if ( pPlayer->IsDeveloper() )
+					WRITE_BYTE( 1 );
+				else
+					WRITE_BYTE( 0 );
+				if ( pPlayer->IsDonator() )
+					WRITE_BYTE( 1 );
+				else
+					WRITE_BYTE( 0 );
+
+
+				if ( pPlayer->CheckingEndingOrUnlockables( 0, true, false ) )
+					WRITE_BYTE( 1 );
+				else
+					WRITE_BYTE( 0 );
+
+
+				if ( pPlayer->CheckingEndingOrUnlockables( 0, false, true ) )
+					WRITE_BYTE( 1 );
+				else
+					WRITE_BYTE( 0 );
+				if ( g_iSurvivalMode )
+					WRITE_BYTE( 1 );
+				else
+					WRITE_BYTE( 0 );
+				if ( g_iSurvivalMode )
+					WRITE_SHORT( pPlayer->playerstats.suvivalpoints );
+				else
+					WRITE_SHORT( 0 );
+				if ( pev->spawnflags & 1 )
+					WRITE_BYTE( 1 );
+				else
+					WRITE_BYTE( 0 );
+				if ( g_iSurvivalMode )
+				{
+
+					int overallpoints = 0;
+
+					for ( int i = 1; i <= 4; i++ )
+					{
+						CBasePlayer *pPlayer = (CBasePlayer *)UTIL_PlayerByIndex( i );
+
+						if ( pPlayer )
+							overallpoints += pPlayer->playerstats.suvivalpoints;
+					}
+
+					WRITE_SHORT( overallpoints );
+				}
+				else
+					WRITE_SHORT( 0 );
+			MESSAGE_END();
+		}
+	}
+}
+
+LINK_ENTITY_TO_CLASS( cof_coop_stats, CCoFCoopStats );
+
+//=========================================================
+// cof_introduction
+//=========================================================
+class CCoFIntroduction : public CPointEntity
+{
+	virtual void Spawn( void );
+	virtual void Use( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE useType, float value );
+};
+
+void CCoFIntroduction::Spawn( void )
+{
+	UTIL_SetOrigin( this, pev->origin );
+	pev->solid = SOLID_NOT;
+	pev->effects = EF_NODRAW;
+	pev->v_angle = g_vecZero;
+}
+
+void CCoFIntroduction::Use( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE useType, float value )
+{
+	MESSAGE_BEGIN( MSG_ALL, gmsgIntrodn );
+		WRITE_BYTE( pev->iuser1 );
+		WRITE_BYTE( pev->iuser2 );
+
+		if ( g_pGameRules && g_pGameRules->IsMultiplayer() )
+			WRITE_BYTE( 1 );
+		else
+			WRITE_BYTE( 0 );
+	MESSAGE_END();
+}
+
+LINK_ENTITY_TO_CLASS( cof_introduction, CCoFIntroduction );
+
+//=========================================================
+// cof_simpletext
+//=========================================================
+class CCoFSimpleText : public CPointEntity
+{
+	virtual void Spawn( void );
+	virtual void Use( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE useType, float value );
+};
+
+void CCoFSimpleText::Spawn( void )
+{
+	UTIL_SetOrigin( this, pev->origin );
+	pev->solid = SOLID_NOT;
+	pev->effects = EF_NODRAW;
+	pev->v_angle = g_vecZero;
+}
+
+void CCoFSimpleText::Use( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE useType, float value )
+{
+	if ( !pev->message )
+		return;
+
+	bool all = false;
+
+
+	if ( pev->spawnflags & 1 )
+		all = true;
+
+	CBaseEntity *player = UTIL_FindEntityByClassname( NULL, "player" );
+
+	if ( player )
+		UTIL_ProMessage( player, STRING(pev->message), pev->iuser1, all );
+}
+
+LINK_ENTITY_TO_CLASS( cof_simpletext, CCoFSimpleText );
+
+//=========================================================
+// cof_survivalmode
+//=========================================================
+class CCoFSurvivalMode : public CPointEntity
+{
+public:
+	virtual void Spawn( void );
+	virtual void Precache( void );
+	virtual void Use( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE useType, float value );
+	void SurvivalThink( void );
+	bool m_bSurvivalMode;
+	bool m_bSurvivalModeRunning;
+	string_t m_sSurvivalTriggerWhenWon;
+	string_t m_sSurvivalTriggerWhenAllDead;
+	int m_iSurvivalTimeInSeconds;
+	int m_iCurrentSurvivalTime;
+	float m_flNextSurvivalCount;
+	int m_iTimeSeconds;
+	int m_iTimeMinutes;
+	int m_iTimeHours;
+};
+
+void CCoFSurvivalMode::Spawn( void )
+{
+	Precache();
+
+	UTIL_SetOrigin( this, pev->origin );
+	pev->solid = SOLID_NOT;
+	pev->effects = EF_NODRAW;
+	pev->v_angle = g_vecZero;
+}
+
+void CCoFSurvivalMode::Precache( void )
+{
+	PRECACHE_SOUND( "common/survival_timeplus.wav" );
+}
+
+void CCoFSurvivalMode::SurvivalThink( void )
+{
+	if ( m_bSurvivalMode == true && m_bSurvivalModeRunning == true )
+	{
+		if ( pev->fuser1 < gpGlobals->time )
+		{
+			if ( m_iTimeSeconds == 60 )
+			{
+				m_iTimeSeconds = 0;
+				m_iTimeMinutes++;
+			}
+
+			if ( m_iTimeMinutes == 60 )
+			{
+				m_iTimeMinutes = 0;
+				m_iTimeHours++;
+			}
+
+			MESSAGE_BEGIN( MSG_ALL, gmsgTimer );
+				WRITE_BYTE( 2 );
+				WRITE_BYTE( m_iTimeSeconds );
+				WRITE_BYTE( m_iTimeMinutes );
+				WRITE_BYTE( m_iTimeHours );
+				WRITE_SHORT( m_iSurvivalTimeInSeconds );
+			MESSAGE_END();
+
+
+
+
+
+			pev->fuser1 = gpGlobals->time + 3;
+		}
+	}
+
+	if ( m_bSurvivalMode == true && m_bSurvivalModeRunning == true && !m_iSimonMode )
+	{
+		if ( m_flNextSurvivalCount < gpGlobals->time )
+		{
+			m_flNextSurvivalCount = gpGlobals->time + 1;
+
+			if ( m_iCurrentSurvivalTime >= m_iSurvivalTimeInSeconds )
+			{
+				CBaseEntity *player = UTIL_FindEntityByClassname( NULL, "player" );
+
+				if ( player && m_sSurvivalTriggerWhenWon && !pev->iuser3 )
+				{
+					m_bSurvivalModeRunning = false;
+
+					CBaseEntity *pSurvivalEnt = NULL;
+					pSurvivalEnt = UTIL_FindEntityByTargetname( NULL, STRING(m_sSurvivalTriggerWhenWon) );
+
+					if ( pSurvivalEnt )
+					{
+						pev->iuser3 = 1;
+
+						for ( int players = 1; players <= gpGlobals->maxClients; players++ )
+						{
+							CBasePlayer *plr = (CBasePlayer *)UTIL_PlayerByIndex( players );
+
+							if ( plr )
+							{
+								MESSAGE_BEGIN( MSG_ONE, gmsgTimer, NULL, plr->pev );
+									WRITE_BYTE( 0 );
+									WRITE_BYTE( 0 );
+									WRITE_BYTE( 0 );
+									WRITE_BYTE( 0 );
+									WRITE_SHORT( 0 );
+								MESSAGE_END();
+
+								plr->PlayerStopMP3( 1 );
+							}
+						}
+
+						FireTargets( STRING(m_sSurvivalTriggerWhenWon), this, this, USE_TOGGLE, 0 );
+					}
+				}
+			}
+			else if ( !m_iSimonMode )
+			{
+				m_iCurrentSurvivalTime++;
+
+
+				m_iTimeSeconds++;
+
+				if ( m_iTimeSeconds == 60 )
+				{
+					m_iTimeSeconds = 0;
+					m_iTimeMinutes++;
+				}
+
+				if ( m_iTimeMinutes == 60 )
+				{
+					m_iTimeMinutes = 0;
+					m_iTimeHours++;
+				}
+			}
+		}
+	}
+
+	SetNextThink( 0 );
+}
+
+void CCoFSurvivalMode::Use( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE useType, float value )
+{
+	if ( pev->iuser2 == 1 )
+		return;
+
+	if ( pev->target && pev->message )
+	{
+		m_bSurvivalModeRunning = true;
+		m_bSurvivalMode = true;
+		m_sSurvivalTriggerWhenWon = pev->message;
+		m_sSurvivalTriggerWhenAllDead = pev->target;
+		m_iSurvivalTimeInSeconds = pev->iuser1;
+		m_iCurrentSurvivalTime = 0;
+		pev->iuser2 = 1;
+		SetThink( &CCoFSurvivalMode::SurvivalThink );
+		SetNextThink( 0.1 );
+
+		g_iSurvivalMode = 1;
+
+		for ( int i = 1; i <= gpGlobals->maxClients; i++ )
+		{
+			CBasePlayer *plr = (CBasePlayer *)UTIL_PlayerByIndex( i );
+
+			if ( plr )
+			{
+				MESSAGE_BEGIN( MSG_ONE, gmsgTimer, NULL, plr->pev );
+					WRITE_BYTE( 1 );
+					WRITE_BYTE( 0 );
+					WRITE_BYTE( 0 );
+					WRITE_BYTE( 0 );
+					WRITE_SHORT( m_iSurvivalTimeInSeconds );
+				MESSAGE_END();
+			}
+		}
+	}
+}
+
+LINK_ENTITY_TO_CLASS( cof_survivalmode, CCoFSurvivalMode );
+
+//=========================================================
+// cof_coopgameover
+//=========================================================
+class CCoFCoopGameOver : public CPointEntity
+{
+	virtual void Spawn( void );
+	virtual void Use( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE useType, float value );
+};
+
+void CCoFCoopGameOver::Spawn( void )
+{
+	UTIL_SetOrigin( this, pev->origin );
+	pev->solid = SOLID_NOT;
+	pev->effects = EF_NODRAW;
+	pev->v_angle = g_vecZero;
+}
+
+void CCoFCoopGameOver::Use( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE useType, float value )
+{
+	CBaseEntity *pSurvivalEntity = NULL;
+
+	while ( ( pSurvivalEntity = UTIL_FindEntityByClassname( pSurvivalEntity, "cof_survivalmode" ) ) != NULL )
+	{
+		pSurvivalEntity->SetThink( NULL );
+	}
+
+	for ( int i = 1; i <= gpGlobals->maxClients; i++ )
+	{
+		CBasePlayer *plr = (CBasePlayer *)UTIL_PlayerByIndex( i );
+
+		if ( plr && plr->pev->fuser4 == 0 )
+		{
+			plr->m_flDeadTime = gpGlobals->time + 10;
+			plr->m_bIssuedGameOver = false;
+			plr->m_bCoopGameOver = true;
+			plr->m_flNextCountDown = gpGlobals->time;
+			plr->m_iGameOverCounter = 10;
+
+			plr->EnableControl( FALSE );
+			plr->pev->flags |= FL_NOTARGET;
+
+			MESSAGE_BEGIN( MSG_ONE, gmsgGreyFade, NULL, plr->pev );
+				WRITE_BYTE( 0 );
+				WRITE_BYTE( 2 );
+			MESSAGE_END();
+
+			MESSAGE_BEGIN( MSG_ONE, gmsgChapter, NULL, plr->pev );
+				WRITE_STRING( "Game over" );
+				WRITE_STRING( NULL );
+			MESSAGE_END();
+
+			MESSAGE_BEGIN( MSG_ONE, gmsgMP3, NULL, plr->pev );
+				WRITE_BYTE( 1 );
+				WRITE_BYTE( 1 );
+				WRITE_COORD( 0 );
+				WRITE_STRING( "game_over.mp3" );
+			MESSAGE_END();
+		}
+	}
+}
+
+LINK_ENTITY_TO_CLASS( cof_coopgameover, CCoFCoopGameOver );
+
+//=========================================================
+// cof_randomtimedspawner
+//=========================================================
+class CCoFRandomTimedSpawner : public CPointEntity
+{
+public:
+	virtual void Spawn( void );
+	virtual void SendInitMessage( CBasePlayer *player );
+	void CheckIfDead( void );
+	void SpawnMonster( void );
+	void DelayStart( void );
+};
+
+void CCoFRandomTimedSpawner::Spawn( void )
+{
+	UTIL_SetOrigin( this, pev->origin );
+	pev->solid = SOLID_NOT;
+	pev->effects = EF_NODRAW;
+	pev->v_angle = g_vecZero;
+}
+
+void CCoFRandomTimedSpawner::SendInitMessage( CBasePlayer *player )
+{
+	if ( !pev->message )
+		return;
+
+	if ( pev->iuser1 )
+	{
+		SetNextThink( pev->iuser1 );
+		SetThink( &CCoFRandomTimedSpawner::DelayStart );
+	}
+	else
+		DelayStart();
+}
+
+void CCoFRandomTimedSpawner::DelayStart( void )
+{
+	float mintime = pev->iuser1;
+	float maxtime = pev->iuser2;
+	float spawntime = maxtime - mintime;
+
+	SetNextThink( RANDOM_FLOAT( 0, spawntime ) );
+	SetThink( &CCoFRandomTimedSpawner::SpawnMonster );
+}
+
+void CCoFRandomTimedSpawner::SpawnMonster( void )
+{
+	edict_t *pEdict;
+	int ents;
+	CBaseEntity *pSpawnEnt[16];
+	CBaseEntity *pEntity;
+	ents = 0;
+
+	pEdict = INDEXENT( 1 );
+
+	for ( int i = 1; i < gpGlobals->maxEntities; i++, pEdict++ )
+	{
+		if ( pEdict->free )
+			continue;
+
+		pEntity = CBaseEntity::Instance( pEdict );
+		if ( !pEntity )
+			continue;
+
+		if ( FStrEq( STRING(pev->message), STRING(pEntity->pev->targetname) ) )
+		{
+			if ( ents < 16 )
+			{
+				pSpawnEnt[ents] = pEntity;
+				ents++;
+			}
+		}
+	}
+
+	if ( ents > 0 )
+	{
+		int spawnat = RANDOM_LONG( 0, ents );
+
+		if ( spawnat == ents )
+			spawnat--;
+
+		if ( pSpawnEnt[spawnat] && pev->target )
+		{
+			Vector origin = pSpawnEnt[spawnat]->pev->origin;
+			Vector angles = pSpawnEnt[spawnat]->pev->angles;
+
+			CBaseEntity *pCreate = CBaseEntity::Create( (char *)STRING(pev->target), origin, angles, NULL );
+
+			if ( pCreate )
+			{
+				pev->euser1 = pCreate->edict();
+				SetThink( &CCoFRandomTimedSpawner::CheckIfDead );
+				SetNextThink( 0 );
+			}
+		}
+	}
+}
+
+void CCoFRandomTimedSpawner::CheckIfDead( void )
+{
+	if ( pev->euser1 )
+	{
+		CBaseEntity *pEntity = CBaseEntity::Instance( pev->euser1 );
+
+		if ( pEntity )
+		{
+			if ( !pEntity->IsAlive() )
+			{
+
+
+
+				if ( pev->iuser4 )
+				{
+					pev->iuser3++;
+
+					if ( pev->iuser3 <= pev->iuser4 )
+					{
+						if ( pev->iuser1 )
+						{
+							SetNextThink( pev->iuser1 );
+							SetThink( &CCoFRandomTimedSpawner::DelayStart );
+						}
+						else
+						{
+							SetThink( NULL );
+							DelayStart();
+							return;
+						}
+					}
+				}
+				else
+				{
+					if ( pev->iuser1 )
+					{
+						SetNextThink( pev->iuser1 );
+						SetThink( &CCoFRandomTimedSpawner::DelayStart );
+						return;
+					}
+					else
+					{
+						SetThink( NULL );
+						DelayStart();
+						return;
+					}
+				}
+			}
+		}
+	}
+
+	SetNextThink( 0.25 );
+}
+
+LINK_ENTITY_TO_CLASS( cof_randomtimedspawner, CCoFRandomTimedSpawner );
+
+//=========================================================
+// cof_customiseplayer
+//=========================================================
+class CCoFCustomisePlayerModels : public CPointEntity
+{
+	virtual void Spawn( void );
+	virtual void Use( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE useType, float value );
+	virtual void KeyValue( KeyValueData *pkvd );
+	int player1model;
+	int player2model;
+	int player3model;
+	int player4model;
+	int sleevetexture;
+	int fingerstexture;
+	int guess_glovestexture;
+};
+
+void CCoFCustomisePlayerModels::KeyValue( KeyValueData *pkvd )
+{
+	if ( FStrEq( pkvd->szKeyName, "player1" ) )
+	{
+		player1model = ALLOC_STRING( pkvd->szValue );
+		pkvd->fHandled = TRUE;
+	}
+	else if ( FStrEq( pkvd->szKeyName, "player2" ) )
+	{
+		player2model = ALLOC_STRING( pkvd->szValue );
+		pkvd->fHandled = TRUE;
+	}
+	else if ( FStrEq( pkvd->szKeyName, "player3" ) )
+	{
+		player3model = ALLOC_STRING( pkvd->szValue );
+		pkvd->fHandled = TRUE;
+	}
+	else if ( FStrEq( pkvd->szKeyName, "player4" ) )
+	{
+		player4model = ALLOC_STRING( pkvd->szValue );
+		pkvd->fHandled = TRUE;
+	}
+	else if ( FStrEq( pkvd->szKeyName, "sleeve" ) )
+	{
+		sleevetexture = ALLOC_STRING( pkvd->szValue );
+		pkvd->fHandled = TRUE;
+	}
+	else if ( FStrEq( pkvd->szKeyName, "fingers" ) )
+	{
+		fingerstexture = ALLOC_STRING( pkvd->szValue );
+		pkvd->fHandled = TRUE;
+	}
+	else if ( FStrEq( pkvd->szKeyName, "gloves" ) )
+	{
+		guess_glovestexture = ALLOC_STRING( pkvd->szValue );
+		pkvd->fHandled = TRUE;
+	}
+	else
+		CBaseEntity::KeyValue( pkvd );
+}
+
+void CCoFCustomisePlayerModels::Spawn( void )
+{
+	UTIL_SetOrigin( this, pev->origin );
+	pev->solid = SOLID_NOT;
+	pev->effects = EF_NODRAW;
+	pev->v_angle = g_vecZero;
+}
+
+void CCoFCustomisePlayerModels::Use( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE useType, float value )
+{
+	if ( g_pWorld )
+	{
+		if ( player1model )
+			g_pWorld->player1model = player1model;
+
+		if ( player2model )
+			g_pWorld->player2model = player2model;
+
+		if ( player3model )
+			g_pWorld->player3model = player3model;
+
+		if ( player4model )
+			g_pWorld->player4model = player4model;
+
+		if ( sleevetexture )
+			g_pWorld->m_sCustomSleeve = sleevetexture;
+
+		if ( fingerstexture )
+			g_pWorld->m_sCustomFingers = fingerstexture;
+
+		if ( guess_glovestexture )
+			g_pWorld->guess_m_sCustomGloves = guess_glovestexture;
+
+
+		for ( int i = 1; i <= gpGlobals->maxClients; i++ )
+		{
+			CBasePlayer *plr = (CBasePlayer *)UTIL_PlayerByIndex( i );
+
+			if ( plr )
+			{
+				if ( sleevetexture )
+				{
+					MESSAGE_BEGIN( MSG_ONE, gmsgCustomSlv, NULL, plr->pev );
+						WRITE_STRING( STRING(g_pWorld->m_sCustomSleeve) );
+					MESSAGE_END();
+				}
+
+				if ( fingerstexture )
+				{
+					MESSAGE_BEGIN( MSG_ONE, gmsgCustomFng, NULL, plr->pev );
+						WRITE_STRING( STRING(g_pWorld->m_sCustomFingers) );
+					MESSAGE_END();
+				}
+
+				if ( guess_glovestexture )
+				{
+					MESSAGE_BEGIN( MSG_ONE, gmsgCustomGlv, NULL, plr->pev );
+						WRITE_STRING( STRING(g_pWorld->guess_m_sCustomGloves) );
+					MESSAGE_END();
+				}
+			}
+
+			if ( plr && g_pGameRules && g_pGameRules->IsMultiplayer() )
+				g_pGameRules->ClientUserInfoChanged( plr, GET_PLAYER_INFOBUFFER( plr->edict() ) );
+		}
+	}
+}
+
+LINK_ENTITY_TO_CLASS( cof_customiseplayer, CCoFCustomisePlayerModels );
+
+//=========================================================
+// cof_playercheck
+//=========================================================
+class CCoFPlayerCheck : public CPointEntity
+{
+	virtual void Spawn( void );
+	virtual void Use( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE useType, float value );
+	virtual void KeyValue( KeyValueData *pkvd );
+	int player1trigger;
+	int player2trigger;
+	int player3trigger;
+	int player4trigger;
+};
+
+void CCoFPlayerCheck::KeyValue( KeyValueData *pkvd )
+{
+	if ( FStrEq( pkvd->szKeyName, "player1trigger" ) )
+	{
+		player1trigger = ALLOC_STRING( pkvd->szValue );
+		pkvd->fHandled = TRUE;
+	}
+	else if ( FStrEq( pkvd->szKeyName, "player2trigger" ) )
+	{
+		player2trigger = ALLOC_STRING( pkvd->szValue );
+		pkvd->fHandled = TRUE;
+	}
+	else if ( FStrEq( pkvd->szKeyName, "player3trigger" ) )
+	{
+		player3trigger = ALLOC_STRING( pkvd->szValue );
+		pkvd->fHandled = TRUE;
+	}
+	else if ( FStrEq( pkvd->szKeyName, "player4trigger" ) )
+	{
+		player4trigger = ALLOC_STRING( pkvd->szValue );
+		pkvd->fHandled = TRUE;
+	}
+	else
+		CBaseEntity::KeyValue( pkvd );
+}
+
+void CCoFPlayerCheck::Spawn( void )
+{
+	UTIL_SetOrigin( this, pev->origin );
+	pev->solid = SOLID_NOT;
+	pev->effects = EF_NODRAW;
+	pev->v_angle = g_vecZero;
+}
+
+void CCoFPlayerCheck::Use( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE useType, float value )
+{
+	int players = 0;
+
+	if ( pev->spawnflags & 1 )
+		players = CountConnectedLivePlayers();
+	else
+		players = CountConnectedPlayers();
+
+	CBaseEntity *pPlayer = UTIL_FindEntityByClassname( NULL, "player" );
+
+	if ( pPlayer )
+	{
+		switch ( players )
+		{
+		case 1:
+			if ( player1trigger )
+				FireTargets( STRING(player1trigger), pPlayer, pPlayer, USE_TOGGLE, 0 );
+			break;
+
+		case 2:
+			if ( player2trigger )
+				FireTargets( STRING(player2trigger), pPlayer, pPlayer, USE_TOGGLE, 0 );
+			break;
+
+		case 3:
+			// original bug: tests player1trigger but fires player3trigger
+			if ( player1trigger )
+				FireTargets( STRING(player3trigger), pPlayer, pPlayer, USE_TOGGLE, 0 );
+			break;
+
+		case 4:
+			if ( player4trigger )
+				FireTargets( STRING(player4trigger), pPlayer, pPlayer, USE_TOGGLE, 0 );
+			break;
+		}
+	}
+}
+
+LINK_ENTITY_TO_CLASS( cof_playercheck, CCoFPlayerCheck );
 
 
 /*

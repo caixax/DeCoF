@@ -13,7 +13,6 @@
 
 extern int gmsgCameraZoom;
 
-extern void UTIL_BloodDrips( const Vector &origin, const Vector &direction, int color, int amount, Vector velocity );
 
 class CThirdPersonInteraction : public CBaseMonster
 {

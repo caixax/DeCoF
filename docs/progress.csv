@@ -15683,11 +15683,11 @@ hl,1008F740,92,??$GetClassPtr@VCBurningBarrel@@@@YAPAVCBurningBarrel@@PAV0@@Z,Ge
 hl,1008F7A0,92,??$GetClassPtr@VCCoFChangeLevel@@@@YAPAVCCoFChangeLevel@@PAV0@@Z,GetClassPtr<CCoFChangeLevel>,HLSDK,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
 hl,1008F800,92,??$GetClassPtr@VCCoFCloseVGUI@@@@YAPAVCCoFCloseVGUI@@PAV0@@Z,GetClassPtr<CCoFCloseVGUI>,HLSDK,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
 hl,1008F860,92,??$GetClassPtr@VCCoFClothesMenu@@@@YAPAVCCoFClothesMenu@@PAV0@@Z,GetClassPtr<CCoFClothesMenu>,HLSDK,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
-hl,1008F8C0,92,??$GetClassPtr@VCCoFCoopGameOver@@@@YAPAVCCoFCoopGameOver@@PAV0@@Z,GetClassPtr<CCoFCoopGameOver>,HLSDK,dlls/effects.cpp,1.4,1.4->1.55 same,TODO,0.0,jmp_target_of_export+rtti,
-hl,1008F920,92,??$GetClassPtr@VCCoFCoopSpawn@@@@YAPAVCCoFCoopSpawn@@PAV0@@Z,GetClassPtr<CCoFCoopSpawn>,HLSDK,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,0.0,jmp_target_of_export+rtti,
-hl,1008F980,92,??$GetClassPtr@VCCoFCoopStats@@@@YAPAVCCoFCoopStats@@PAV0@@Z,GetClassPtr<CCoFCoopStats>,HLSDK,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,0.0,jmp_target_of_export+rtti,
+hl,1008F8C0,92,??$GetClassPtr@VCCoFCoopGameOver@@@@YAPAVCCoFCoopGameOver@@PAV0@@Z,GetClassPtr<CCoFCoopGameOver>,HLSDK,dlls/effects.cpp,1.4,1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
+hl,1008F920,92,??$GetClassPtr@VCCoFCoopSpawn@@@@YAPAVCCoFCoopSpawn@@PAV0@@Z,GetClassPtr<CCoFCoopSpawn>,HLSDK,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
+hl,1008F980,92,??$GetClassPtr@VCCoFCoopStats@@@@YAPAVCCoFCoopStats@@PAV0@@Z,GetClassPtr<CCoFCoopStats>,HLSDK,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
 hl,1008F9E0,92,??$GetClassPtr@VCCoFCredits@@@@YAPAVCCoFCredits@@PAV0@@Z,GetClassPtr<CCoFCredits>,HLSDK,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
-hl,1008FA40,92,??$GetClassPtr@VCCoFCustomisePlayerModels@@@@YAPAVCCoFCustomisePlayerModels@@PAV0@@Z,GetClassPtr<CCoFCustomisePlayerModels>,HLSDK,dlls/effects.cpp,1.4,1.4->1.55 same,TODO,0.0,jmp_target_of_export+rtti,
+hl,1008FA40,92,??$GetClassPtr@VCCoFCustomisePlayerModels@@@@YAPAVCCoFCustomisePlayerModels@@PAV0@@Z,GetClassPtr<CCoFCustomisePlayerModels>,HLSDK,dlls/effects.cpp,1.4,1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
 hl,1008FAA0,92,??$GetClassPtr@VCCoFDeadCat@@@@YAPAVCCoFDeadCat@@PAV0@@Z,GetClassPtr<CCoFDeadCat>,HLSDK,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
 hl,1008FB00,92,??$GetClassPtr@VCCoFDoctorWeaponSet@@@@YAPAVCCoFDoctorWeaponSet@@PAV0@@Z,GetClassPtr<CCoFDoctorWeaponSet>,HLSDK,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
 hl,1008FB60,92,??$GetClassPtr@VCCoFDoctorWeaponTrigger@@@@YAPAVCCoFDoctorWeaponTrigger@@PAV0@@Z,GetClassPtr<CCoFDoctorWeaponTrigger>,HLSDK,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
@@ -15697,23 +15697,23 @@ hl,1008FC80,92,??$GetClassPtr@VCCoFFatFuckingCunt@@@@YAPAVCCoFFatFuckingCunt@@PA
 hl,1008FCE0,92,??$GetClassPtr@VCCoFGameBegin@@@@YAPAVCCoFGameBegin@@PAV0@@Z,GetClassPtr<CCoFGameBegin>,HLSDK,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
 hl,1008FD40,92,??$GetClassPtr@VCCoFGreyFade@@@@YAPAVCCoFGreyFade@@PAV0@@Z,GetClassPtr<CCoFGreyFade>,HLSDK,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
 hl,1008FDA0,92,??$GetClassPtr@VCCoFHoodie@@@@YAPAVCCoFHoodie@@PAV0@@Z,GetClassPtr<CCoFHoodie>,HLSDK,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
-hl,1008FE00,92,??$GetClassPtr@VCCoFIntroduction@@@@YAPAVCCoFIntroduction@@PAV0@@Z,GetClassPtr<CCoFIntroduction>,HLSDK,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,0.0,jmp_target_of_export+rtti,
+hl,1008FE00,92,??$GetClassPtr@VCCoFIntroduction@@@@YAPAVCCoFIntroduction@@PAV0@@Z,GetClassPtr<CCoFIntroduction>,HLSDK,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
 hl,1008FE60,92,??$GetClassPtr@VCCoFKillPlayer@@@@YAPAVCCoFKillPlayer@@PAV0@@Z,GetClassPtr<CCoFKillPlayer>,HLSDK,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
 hl,1008FEC0,92,??$GetClassPtr@VCCoFLadderClimb@@@@YAPAVCCoFLadderClimb@@PAV0@@Z,GetClassPtr<CCoFLadderClimb>,HLSDK,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
-hl,1008FF20,92,??$GetClassPtr@VCCoFLobbyStart@@@@YAPAVCCoFLobbyStart@@PAV0@@Z,GetClassPtr<CCoFLobbyStart>,HLSDK,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,0.0,jmp_target_of_export+rtti,
+hl,1008FF20,92,??$GetClassPtr@VCCoFLobbyStart@@@@YAPAVCCoFLobbyStart@@PAV0@@Z,GetClassPtr<CCoFLobbyStart>,HLSDK,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
 hl,1008FF80,92,??$GetClassPtr@VCCoFLookAt@@@@YAPAVCCoFLookAt@@PAV0@@Z,GetClassPtr<CCoFLookAt>,HLSDK,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
 hl,1008FFE0,92,??$GetClassPtr@VCCoFMDLCutscene@@@@YAPAVCCoFMDLCutscene@@PAV0@@Z,GetClassPtr<CCoFMDLCutscene>,HLSDK,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
 hl,10090040,92,??$GetClassPtr@VCCoFObjective@@@@YAPAVCCoFObjective@@PAV0@@Z,GetClassPtr<CCoFObjective>,HLSDK,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
-hl,100900A0,92,??$GetClassPtr@VCCoFPlayerCheck@@@@YAPAVCCoFPlayerCheck@@PAV0@@Z,GetClassPtr<CCoFPlayerCheck>,HLSDK,dlls/effects.cpp,1.4,1.4->1.55 same,TODO,0.0,jmp_target_of_export+rtti,
-hl,10090100,92,??$GetClassPtr@VCCoFRandomTimedSpawner@@@@YAPAVCCoFRandomTimedSpawner@@PAV0@@Z,GetClassPtr<CCoFRandomTimedSpawner>,HLSDK,dlls/effects.cpp,1.4,1.4->1.55 same,TODO,0.0,jmp_target_of_export+rtti,
+hl,100900A0,92,??$GetClassPtr@VCCoFPlayerCheck@@@@YAPAVCCoFPlayerCheck@@PAV0@@Z,GetClassPtr<CCoFPlayerCheck>,HLSDK,dlls/effects.cpp,1.4,1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
+hl,10090100,92,??$GetClassPtr@VCCoFRandomTimedSpawner@@@@YAPAVCCoFRandomTimedSpawner@@PAV0@@Z,GetClassPtr<CCoFRandomTimedSpawner>,HLSDK,dlls/effects.cpp,1.4,1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
 hl,10090160,92,??$GetClassPtr@VCCoFSimonSpeak@@@@YAPAVCCoFSimonSpeak@@PAV0@@Z,GetClassPtr<CCoFSimonSpeak>,HLSDK,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
-hl,100901C0,92,??$GetClassPtr@VCCoFSimpleText@@@@YAPAVCCoFSimpleText@@PAV0@@Z,GetClassPtr<CCoFSimpleText>,HLSDK,dlls/effects.cpp,1.4,1.4->1.55 same,TODO,0.0,jmp_target_of_export+rtti,
+hl,100901C0,92,??$GetClassPtr@VCCoFSimpleText@@@@YAPAVCCoFSimpleText@@PAV0@@Z,GetClassPtr<CCoFSimpleText>,HLSDK,dlls/effects.cpp,1.4,1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
 hl,10090220,92,??$GetClassPtr@VCCoFSlowMotion@@@@YAPAVCCoFSlowMotion@@PAV0@@Z,GetClassPtr<CCoFSlowMotion>,HLSDK,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
-hl,10090280,92,??$GetClassPtr@VCCoFSpawnPointOnOff@@@@YAPAVCCoFSpawnPointOnOff@@PAV0@@Z,GetClassPtr<CCoFSpawnPointOnOff>,HLSDK,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,0.0,jmp_target_of_export+rtti,
+hl,10090280,92,??$GetClassPtr@VCCoFSpawnPointOnOff@@@@YAPAVCCoFSpawnPointOnOff@@PAV0@@Z,GetClassPtr<CCoFSpawnPointOnOff>,HLSDK,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
 hl,100902E0,92,??$GetClassPtr@VCCoFStartDoctorMode@@@@YAPAVCCoFStartDoctorMode@@PAV0@@Z,GetClassPtr<CCoFStartDoctorMode>,HLSDK,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
-hl,10090340,92,??$GetClassPtr@VCCoFStats@@@@YAPAVCCoFStats@@PAV0@@Z,GetClassPtr<CCoFStats>,HLSDK,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,0.0,jmp_target_of_export+rtti,
+hl,10090340,92,??$GetClassPtr@VCCoFStats@@@@YAPAVCCoFStats@@PAV0@@Z,GetClassPtr<CCoFStats>,HLSDK,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
 hl,100903A0,92,??$GetClassPtr@VCCoFStopWheelchair@@@@YAPAVCCoFStopWheelchair@@PAV0@@Z,GetClassPtr<CCoFStopWheelchair>,HLSDK,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
-hl,10090400,92,??$GetClassPtr@VCCoFSurvivalMode@@@@YAPAVCCoFSurvivalMode@@PAV0@@Z,GetClassPtr<CCoFSurvivalMode>,HLSDK,dlls/effects.cpp,1.4,1.4->1.55 same,TODO,0.0,jmp_target_of_export+rtti,
+hl,10090400,92,??$GetClassPtr@VCCoFSurvivalMode@@@@YAPAVCCoFSurvivalMode@@PAV0@@Z,GetClassPtr<CCoFSurvivalMode>,HLSDK,dlls/effects.cpp,1.4,1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
 hl,10090460,92,??$GetClassPtr@VCCoFWheelchairMode@@@@YAPAVCCoFWheelchairMode@@PAV0@@Z,GetClassPtr<CCoFWheelchairMode>,HLSDK,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
 hl,100904C0,92,??$GetClassPtr@VCCofBlackAndWhite@@@@YAPAVCCofBlackAndWhite@@PAV0@@Z,GetClassPtr<CCofBlackAndWhite>,HLSDK,dlls/effects.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
 hl,10090520,92,??$GetClassPtr@VCCofBlur@@@@YAPAVCCofBlur@@PAV0@@Z,GetClassPtr<CCofBlur>,HLSDK,dlls/effects.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
@@ -15800,7 +15800,7 @@ hl,10092320,92,??$GetClassPtr@VCTriggerFollow@@@@YAPAVCTriggerFollow@@PAV0@@Z,Ge
 hl,10092380,49,?Activate@CEnvSky@@UAEXXZ,CEnvSky::Activate,SPIRIT,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100923C0,49,?Activate@CLightning@@UAEXXZ,CLightning::Activate,HLSDK,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10092400,278,?Affect@CEnvBeamTrail@@QAEXPAVCBaseEntity@@W4USE_TYPE@@@Z,CEnvBeamTrail::Affect,UNKNOWN,dlls/effects.cpp,,,MATCHED,100,,
-hl,10092520,25,?AllowToContinue@CCofStressTest@@QAEXXZ,CCofStressTest::AllowToContinue,UNKNOWN,dlls/effects.cpp,,,TODO,,,
+hl,10092520,25,?AllowToContinue@CCofStressTest@@QAEXXZ,CCofStressTest::AllowToContinue,UNKNOWN,dlls/effects.cpp,,,MATCHED,100,,
 hl,10092540,80,,,UNKNOWN,,,,TODO,,,
 hl,10092590,125,?Animate@CSprite@@QAEXM@Z,CSprite::Animate,HLSDK,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10092610,72,?AnimateThink@CSprite@@QAEXXZ,CSprite::AnimateThink,HLSDK,dlls/effects.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
@@ -15811,27 +15811,27 @@ hl,10092850,216,?BeamInit@CBeam@@QAEXPBDH@Z,CBeam::BeamInit,UNKNOWN,dlls/effects
 hl,10092930,323,?BeamUpdatePoints@CLightning@@QAEXXZ,CLightning::BeamUpdatePoints,SPIRIT,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10092A80,260,?BeamUpdateVars@CLightning@@QAEXXZ,CLightning::BeamUpdateVars,HLSDK,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10092B90,334,?BloodPosition@CBlood@@QAE?AVVector@@PAVCBaseEntity@@@Z,CBlood::BloodPosition,HLSDK,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,10092CE0,630,?CalculatePoints@@YAHPAVCBasePlayer@@@Z,CalculatePoints,UNKNOWN,dlls/effects.cpp,,,TODO,,,
-hl,10092F60,320,?CalculatePointsDoctor@@YAHPAVCBasePlayer@@@Z,CalculatePointsDoctor,UNKNOWN,dlls/effects.cpp,,,TODO,,,
+hl,10092CE0,630,?CalculatePoints@@YAHPAVCBasePlayer@@@Z,CalculatePoints,UNKNOWN,dlls/effects.cpp,,,MATCHED,100,,
+hl,10092F60,320,?CalculatePointsDoctor@@YAHPAVCBasePlayer@@@Z,CalculatePointsDoctor,UNKNOWN,dlls/effects.cpp,,,MATCHED,100,,
 hl,100930A0,145,?CanThink@CItemSoda@@QAEXXZ,CItemSoda::CanThink,HLSDK,dlls/effects.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10093140,165,?CanTouch@CItemSoda@@QAEXPAVCBaseEntity@@@Z,CItemSoda::CanTouch,HLSDK,dlls/effects.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100931F0,377,?CatUse@CCoFDeadCat@@AAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CCoFDeadCat::CatUse,COF,dlls/effects.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10093370,94,?Center@CBeam@@UAE?AVVector@@XZ,CBeam::Center,HLSDK,dlls/effects.h,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,,hl_1.55_to_1.6a.csv,
-hl,100933D0,178,?CheckIfDead@CCoFRandomTimedSpawner@@QAEXXZ,CCoFRandomTimedSpawner::CheckIfDead,COF,dlls/effects.cpp,1.4,1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
+hl,100933D0,178,?CheckIfDead@CCoFRandomTimedSpawner@@QAEXXZ,CCoFRandomTimedSpawner::CheckIfDead,COF,dlls/effects.cpp,1.4,1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10093490,3,?Classify@CCoFMDLCutscene@@EAEHXZ,CCoFMDLCutscene::Classify,COF,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100934A0,1128,?ComputerCheck@CCofComputer@@QAEXPAVCBaseEntity@@PAD1@Z,CCofComputer::ComputerCheck,COF,dlls/effects.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10093910,1306,?CreateGib@CEnvShooter@@EAEPAVCBaseEntity@@VVector@@0@Z,CEnvShooter::CreateGib,HLSDK,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10093E40,397,?CreateGib@CGibShooter@@UAEPAVCBaseEntity@@VVector@@0@Z,CGibShooter::CreateGib,HLSDK,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10093FD0,144,?CreateLight@CDynamicLight@@SAPAV1@VVector@@HHHH@Z,CDynamicLight::CreateLight,COF,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10094060,278,?CreateParticle@CParticle@@SAPAV1@H_NVVector@@HMPAVCBaseEntity@@MMM@Z,CParticle::CreateParticle,COF,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,10094180,78,?DelayStart@CCoFRandomTimedSpawner@@QAEXXZ,CCoFRandomTimedSpawner::DelayStart,COF,dlls/effects.cpp,1.4,1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
+hl,10094180,78,?DelayStart@CCoFRandomTimedSpawner@@QAEXXZ,CCoFRandomTimedSpawner::DelayStart,COF,dlls/effects.cpp,1.4,1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100941D0,31,?DesiredAction@CEnvDLight@@UAEXXZ,CEnvDLight::DesiredAction,SPIRIT,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100941F0,109,?Direction@CBlood@@QAE?AVVector@@PAVCBaseEntity@@@Z,CBlood::Direction,HLSDK,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10094260,13,?Disconnect@CCofStressTest@@QAEXXZ,CCofStressTest::Disconnect,COF,dlls/effects.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,10094270,190,?DistanceCheck@CCofPhoneCheck@@QAEXH@Z,CCofPhoneCheck::DistanceCheck,UNKNOWN,dlls/effects.cpp,,,TODO,,,
+hl,10094270,190,?DistanceCheck@CCofPhoneCheck@@QAEXH@Z,CCofPhoneCheck::DistanceCheck,UNKNOWN,dlls/effects.cpp,,,MATCHED,100,,
 hl,10094330,64,?DoSparks@CBeam@@QAEXABVVector@@0@Z,CBeam::DoSparks,HLSDK,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10094370,653,?DoSpawnStuff@CCofMonsterRandomSpawn@@QAEXXZ,CCofMonsterRandomSpawn::DoSpawnStuff,COF,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,10094600,58,?Drop@CDrip@@SAXVVector@@0@Z,CDrip::Drop,UNKNOWN,dlls/effects.cpp,,,TODO,,,
+hl,10094600,58,?Drop@CDrip@@SAXVVector@@0@Z,CDrip::Drop,UNKNOWN,dlls/effects.cpp,,,MATCHED,100,,
 hl,10094640,85,?EntsInit@CBeam@@QAEXHH@Z,CBeam::EntsInit,UNKNOWN,dlls/effects.cpp,,,MATCHED,100,,
 hl,100946A0,76,?Expand@CSprite@@QAEXMM@Z,CSprite::Expand,UNKNOWN,dlls/effects.cpp,,,MATCHED,100,,
 hl,100946F0,150,?ExpandThink@CSprite@@QAEXXZ,CSprite::ExpandThink,HLSDK,dlls/effects.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
@@ -15865,10 +15865,10 @@ hl,10095190,41,?IsPointEntity@@YAHPAVCBaseEntity@@@Z,IsPointEntity,UNKNOWN,dlls/
 hl,100951C0,234,?KeyValue@CBlood@@UAEXPAUKeyValueData_s@@@Z,CBlood::KeyValue,HLSDK,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100952B0,276,?KeyValue@CBubbling@@UAEXPAUKeyValueData_s@@@Z,CBubbling::KeyValue,HLSDK,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100953D0,187,?KeyValue@CCoFClothesMenu@@EAEXPAUKeyValueData_s@@@Z,CCoFClothesMenu::KeyValue,COF,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,10095490,469,?KeyValue@CCoFCustomisePlayerModels@@EAEXPAUKeyValueData_s@@@Z,CCoFCustomisePlayerModels::KeyValue,COF,dlls/effects.cpp,1.4,1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
+hl,10095490,469,?KeyValue@CCoFCustomisePlayerModels@@EAEXPAUKeyValueData_s@@@Z,CCoFCustomisePlayerModels::KeyValue,COF,dlls/effects.cpp,1.4,1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10095670,683,?KeyValue@CCoFDocument@@UAEXPAUKeyValueData_s@@@Z,CCoFDocument::KeyValue,COF,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10095920,1798,?KeyValue@CCoFMDLCutscene@@EAEXPAUKeyValueData_s@@@Z,CCoFMDLCutscene::KeyValue,COF,dlls/effects.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,10096030,319,?KeyValue@CCoFPlayerCheck@@EAEXPAUKeyValueData_s@@@Z,CCoFPlayerCheck::KeyValue,COF,dlls/effects.cpp,1.4,1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
+hl,10096030,319,?KeyValue@CCoFPlayerCheck@@EAEXPAUKeyValueData_s@@@Z,CCoFPlayerCheck::KeyValue,COF,dlls/effects.cpp,1.4,1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10096170,187,?KeyValue@CCofBossHealthBar@@UAEXPAUKeyValueData_s@@@Z,CCofBossHealthBar::KeyValue,COF,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10096230,308,?KeyValue@CCofCameraZoom@@UAEXPAUKeyValueData_s@@@Z,CCofCameraZoom::KeyValue,COF,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10096370,369,?KeyValue@CCofGoodPointsTrigger@@UAEXPAUKeyValueData_s@@@Z,CCofGoodPointsTrigger::KeyValue,COF,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
@@ -15878,7 +15878,7 @@ hl,100965D0,487,?KeyValue@CCofSkipManager@@UAEXPAUKeyValueData_s@@@Z,CCofSkipMan
 hl,100967C0,103,?KeyValue@CCofTriggerMobile@@UAEXPAUKeyValueData_s@@@Z,CCofTriggerMobile::KeyValue,COF,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10096830,517,?KeyValue@CCofYesNo@@UAEXPAUKeyValueData_s@@@Z,CCofYesNo::KeyValue,COF,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10096A40,382,?KeyValue@CEnvFog@@UAEXPAUKeyValueData_s@@@Z,CEnvFog::KeyValue,SPIRIT,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,10096BC0,366,?KeyValue@CEnvModel@@EAEXPAUKeyValueData_s@@@Z,CEnvModel::KeyValue,SPIRIT,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,88.4,hl_1.55_to_1.6a.csv,
+hl,10096BC0,366,?KeyValue@CEnvModel@@EAEXPAUKeyValueData_s@@@Z,CEnvModel::KeyValue,SPIRIT,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10096D30,730,?KeyValue@CEnvRain@@UAEXPAUKeyValueData_s@@@Z,CEnvRain::KeyValue,SPIRIT,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10097010,566,?KeyValue@CEnvShockwave@@UAEXPAUKeyValueData_s@@@Z,CEnvShockwave::KeyValue,SPIRIT,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10097250,658,?KeyValue@CEnvShooter@@EAEXPAUKeyValueData_s@@@Z,CEnvShooter::KeyValue,HLSDK,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
@@ -15894,7 +15894,7 @@ hl,10098370,370,?KeyValue@CShake@@UAEXPAUKeyValueData_s@@@Z,CShake::KeyValue,HLS
 hl,100984F0,79,?KillParticle@CParticle@@QAEXXZ,CParticle::KillParticle,COF,dlls/effects.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10098540,202,?MakeLight@CEnvDLight@@UAEXH@Z,CEnvDLight::MakeLight,SPIRIT,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10098610,310,?MakeLight@CEnvELight@@UAEXH@Z,CEnvELight::MakeLight,SPIRIT,dlls/effects.cpp,1.0,1.0->1.4 changed; 1.4->1.55 changed,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,10098750,229,?NoActivate@CCofYesNo@@QAEXPAVCBaseEntity@@@Z,CCofYesNo::NoActivate,UNKNOWN,dlls/effects.cpp,,,TODO,,,
+hl,10098750,229,?NoActivate@CCofYesNo@@QAEXPAVCBaseEntity@@@Z,CCofYesNo::NoActivate,UNKNOWN,dlls/effects.cpp,,,MATCHED,100,,
 hl,10098840,18,?ObjectCaps@CAoMPills@@EAEHXZ,CAoMPills::ObjectCaps,COF,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10098860,42,?ObjectCaps@CBeam@@UAEHXZ,CBeam::ObjectCaps,HLSDK,dlls/effects.h,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,,hl_1.55_to_1.6a.csv,
 hl,10098890,15,?ObjectCaps@CBubbling@@UAEHXZ,CBubbling::ObjectCaps,HLSDK,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
@@ -15923,7 +15923,7 @@ hl,10099110,31,?Precache@CCoFDocument@@UAEXXZ,CCoFDocument::Precache,COF,dlls/ef
 hl,10099130,71,?Precache@CCoFHoodie@@EAEXXZ,CCoFHoodie::Precache,COF,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10099180,34,?Precache@CCoFMDLCutscene@@EAEXXZ,CCoFMDLCutscene::Precache,COF,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100991B0,34,?Precache@CCoFSimonSpeak@@EAEXXZ,CCoFSimonSpeak::Precache,COF,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,100991E0,12,?Precache@CCoFSurvivalMode@@UAEXXZ,CCoFSurvivalMode::Precache,COF,dlls/effects.cpp,1.4,1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
+hl,100991E0,12,?Precache@CCoFSurvivalMode@@UAEXXZ,CCoFSurvivalMode::Precache,COF,dlls/effects.cpp,1.4,1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100991F0,12,?Precache@CCoFWheelchairMode@@EAEXXZ,CCoFWheelchairMode::Precache,COF,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10099200,64,?Precache@CCofBreatheToggle@@UAEXXZ,CCofBreatheToggle::Precache,COF,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10099240,34,?Precache@CCofChapter@@EAEXXZ,CCofChapter::Precache,COF,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
@@ -15961,7 +15961,7 @@ hl,10099E90,508,?RandomPoint@CLightning@@QAEXAAVVector@@@Z,CLightning::RandomPoi
 hl,1009A090,75,?RandomTargetname@CBeam@@QAEPAVCBaseEntity@@PBD@Z,CBeam::RandomTargetname,UNKNOWN,dlls/effects.cpp,,,MATCHED,100,,
 hl,1009A0E0,327,?RelinkBeam@CBeam@@QAEXXZ,CBeam::RelinkBeam,UNKNOWN,dlls/effects.cpp,,,MATCHED,100,,
 hl,1009A230,330,?ReportEffect@CCofStressTest@@QAEXXZ,CCofStressTest::ReportEffect,COF,dlls/effects.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,1009A390,54,?RestartCampaign@CCoFCoopStats@@AAEXXZ,CCoFCoopStats::RestartCampaign,COF,dlls/effects.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
+hl,1009A390,54,?RestartCampaign@CCoFCoopStats@@AAEXXZ,CCoFCoopStats::RestartCampaign,COF,dlls/effects.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1009A3D0,49,?Restore@CBubbling@@UAEHAAVCRestore@@@Z,CBubbling::Restore,HLSDK,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,refbytes:hlsdk:dlls__effects.obj:score3,
 hl,1009A410,49,?Restore@CCoFClothesMenu@@EAEHAAVCRestore@@@Z,CCoFClothesMenu::Restore,COF,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1009A450,49,?Restore@CCoFDocument@@UAEHAAVCRestore@@@Z,CCoFDocument::Restore,COF,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
@@ -16023,16 +16023,16 @@ hl,1009B5F0,95,?Save@CSprite@@UAEHAAVCSave@@@Z,CSprite::Save,HLSDK,dlls/effects.
 hl,1009B650,161,?SendData@CEnvFog@@QAEXVVector@@HHH@Z,CEnvFog::SendData,UNKNOWN,dlls/effects.cpp,,,MATCHED,100,,
 hl,1009B700,67,?SendInitMessage@CCoFClothesMenu@@EAEXPAVCBasePlayer@@@Z,CCoFClothesMenu::SendInitMessage,COF,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1009B750,363,?SendInitMessage@CCoFHoodie@@EAEXPAVCBasePlayer@@@Z,CCoFHoodie::SendInitMessage,COF,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,1009B900,67,?SendInitMessage@CCoFRandomTimedSpawner@@UAEXPAVCBasePlayer@@@Z,CCoFRandomTimedSpawner::SendInitMessage,COF,dlls/effects.cpp,1.4,1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
+hl,1009B900,67,?SendInitMessage@CCoFRandomTimedSpawner@@UAEXPAVCBasePlayer@@@Z,CCoFRandomTimedSpawner::SendInitMessage,COF,dlls/effects.cpp,1.4,1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1009B950,112,?SendInitMessage@CCofLensFlare@@UAEXPAVCBasePlayer@@@Z,CCofLensFlare::SendInitMessage,COF,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1009B9C0,177,?SendInitMessage@CEnvPos_Sky@@UAEXPAVCBasePlayer@@@Z,CEnvPos_Sky::SendInitMessage,PARANOIA,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1009BA80,130,?SendInitMessage@CEnvPos_World@@UAEXPAVCBasePlayer@@@Z,CEnvPos_World::SendInitMessage,PARANOIA,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1009BB10,222,?SendInitMessage@CGrassSprite@@UAEXPAVCBasePlayer@@@Z,CGrassSprite::SendInitMessage,PARANOIA,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1009BBF0,110,?SendInitMessage@CParticle@@UAEXPAVCBasePlayer@@@Z,CParticle::SendInitMessage,PARANOIA,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1009BC60,442,?SendInitMessage@CStaticDecal@@UAEXPAVCBasePlayer@@@Z,CStaticDecal::SendInitMessage,PARANOIA,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,1009BE20,90,?SetCollision@CBurningBarrel@@AAEXXZ,CBurningBarrel::SetCollision,UNKNOWN,dlls/effects.cpp,,,TODO,,,
+hl,1009BE20,90,?SetCollision@CBurningBarrel@@AAEXXZ,CBurningBarrel::SetCollision,UNKNOWN,dlls/effects.cpp,,,MATCHED,100,,
 hl,1009BE80,70,?SetEndEntity@CBeam@@QAEXH@Z,CBeam::SetEndEntity,UNKNOWN,dlls/effects.cpp,,,MATCHED,100,,
-hl,1009BED0,225,?SetSequence@CEnvModel@@AAEXXZ,CEnvModel::SetSequence,SPIRIT,dlls/effects.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,TODO,96.7,hl_1.55_to_1.6a.csv,
+hl,1009BED0,225,?SetSequence@CEnvModel@@AAEXXZ,CEnvModel::SetSequence,SPIRIT,dlls/effects.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1009BFC0,70,?SetStartEntity@CBeam@@QAEXH@Z,CBeam::SetStartEntity,UNKNOWN,dlls/effects.cpp,,,MATCHED,100,,
 hl,1009C010,1523,?ShootThink@CGibShooter@@QAEXXZ,CGibShooter::ShootThink,HLSDK,dlls/effects.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1009C610,92,?Spawn@CAoMPills@@EAEXXZ,CAoMPills::Spawn,COF,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
@@ -16043,11 +16043,11 @@ hl,1009C7F0,333,?Spawn@CBurningBarrel@@EAEXXZ,CBurningBarrel::Spawn,COF,dlls/eff
 hl,1009C940,71,?Spawn@CCoFChangeLevel@@EAEXXZ,CCoFChangeLevel::Spawn,COF,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1009C990,76,?Spawn@CCoFCloseVGUI@@EAEXXZ,CCoFCloseVGUI::Spawn,COF,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1009C9E0,71,?Spawn@CCoFClothesMenu@@EAEXXZ,CCoFClothesMenu::Spawn,COF,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,1009CA30,71,?Spawn@CCoFCoopGameOver@@EAEXXZ,CCoFCoopGameOver::Spawn,COF,dlls/effects.cpp,1.4,1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
-hl,1009CA80,71,?Spawn@CCoFCoopSpawn@@EAEXXZ,CCoFCoopSpawn::Spawn,COF,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
-hl,1009CAD0,71,?Spawn@CCoFCoopStats@@EAEXXZ,CCoFCoopStats::Spawn,COF,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
+hl,1009CA30,71,?Spawn@CCoFCoopGameOver@@EAEXXZ,CCoFCoopGameOver::Spawn,COF,dlls/effects.cpp,1.4,1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
+hl,1009CA80,71,?Spawn@CCoFCoopSpawn@@EAEXXZ,CCoFCoopSpawn::Spawn,COF,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
+hl,1009CAD0,71,?Spawn@CCoFCoopStats@@EAEXXZ,CCoFCoopStats::Spawn,COF,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1009CB20,101,?Spawn@CCoFCredits@@EAEXXZ,CCoFCredits::Spawn,COF,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,1009CB90,71,?Spawn@CCoFCustomisePlayerModels@@EAEXXZ,CCoFCustomisePlayerModels::Spawn,COF,dlls/effects.cpp,1.4,1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
+hl,1009CB90,71,?Spawn@CCoFCustomisePlayerModels@@EAEXXZ,CCoFCustomisePlayerModels::Spawn,COF,dlls/effects.cpp,1.4,1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1009CBE0,164,?Spawn@CCoFDeadCat@@EAEXXZ,CCoFDeadCat::Spawn,COF,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1009CC90,71,?Spawn@CCoFDoctorWeaponSet@@EAEXXZ,CCoFDoctorWeaponSet::Spawn,COF,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1009CCE0,71,?Spawn@CCoFDoctorWeaponTrigger@@EAEXXZ,CCoFDoctorWeaponTrigger::Spawn,COF,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
@@ -16058,23 +16058,23 @@ hl,1009CE50,71,?Spawn@CCoFFatFuckingCunt@@EAEXXZ,CCoFFatFuckingCunt::Spawn,COF,d
 hl,1009CEA0,71,?Spawn@CCoFGameBegin@@EAEXXZ,CCoFGameBegin::Spawn,COF,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1009CEF0,71,?Spawn@CCoFGreyFade@@EAEXXZ,CCoFGreyFade::Spawn,COF,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1009CF40,121,?Spawn@CCoFHoodie@@EAEXXZ,CCoFHoodie::Spawn,COF,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,1009CFD0,71,?Spawn@CCoFIntroduction@@EAEXXZ,CCoFIntroduction::Spawn,COF,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
+hl,1009CFD0,71,?Spawn@CCoFIntroduction@@EAEXXZ,CCoFIntroduction::Spawn,COF,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1009D020,71,?Spawn@CCoFKillPlayer@@EAEXXZ,CCoFKillPlayer::Spawn,COF,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1009D070,71,?Spawn@CCoFLadderClimb@@EAEXXZ,CCoFLadderClimb::Spawn,COF,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,1009D0C0,71,?Spawn@CCoFLobbyStart@@EAEXXZ,CCoFLobbyStart::Spawn,COF,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
+hl,1009D0C0,71,?Spawn@CCoFLobbyStart@@EAEXXZ,CCoFLobbyStart::Spawn,COF,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1009D110,71,?Spawn@CCoFLookAt@@EAEXXZ,CCoFLookAt::Spawn,COF,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1009D160,156,?Spawn@CCoFMDLCutscene@@EAEXXZ,CCoFMDLCutscene::Spawn,COF,dlls/effects.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1009D200,71,?Spawn@CCoFObjective@@EAEXXZ,CCoFObjective::Spawn,COF,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,1009D250,71,?Spawn@CCoFPlayerCheck@@EAEXXZ,CCoFPlayerCheck::Spawn,COF,dlls/effects.cpp,1.4,1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
-hl,1009D2A0,71,?Spawn@CCoFRandomTimedSpawner@@UAEXXZ,CCoFRandomTimedSpawner::Spawn,COF,dlls/effects.cpp,1.4,1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
+hl,1009D250,71,?Spawn@CCoFPlayerCheck@@EAEXXZ,CCoFPlayerCheck::Spawn,COF,dlls/effects.cpp,1.4,1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
+hl,1009D2A0,71,?Spawn@CCoFRandomTimedSpawner@@UAEXXZ,CCoFRandomTimedSpawner::Spawn,COF,dlls/effects.cpp,1.4,1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1009D2F0,76,?Spawn@CCoFSimonSpeak@@EAEXXZ,CCoFSimonSpeak::Spawn,COF,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,1009D340,71,?Spawn@CCoFSimpleText@@EAEXXZ,CCoFSimpleText::Spawn,COF,dlls/effects.cpp,1.4,1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
+hl,1009D340,71,?Spawn@CCoFSimpleText@@EAEXXZ,CCoFSimpleText::Spawn,COF,dlls/effects.cpp,1.4,1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1009D390,71,?Spawn@CCoFSlowMotion@@EAEXXZ,CCoFSlowMotion::Spawn,COF,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,1009D3E0,71,?Spawn@CCoFSpawnPointOnOff@@EAEXXZ,CCoFSpawnPointOnOff::Spawn,COF,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
+hl,1009D3E0,71,?Spawn@CCoFSpawnPointOnOff@@EAEXXZ,CCoFSpawnPointOnOff::Spawn,COF,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1009D430,71,?Spawn@CCoFStartDoctorMode@@EAEXXZ,CCoFStartDoctorMode::Spawn,COF,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,1009D480,71,?Spawn@CCoFStats@@EAEXXZ,CCoFStats::Spawn,COF,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
+hl,1009D480,71,?Spawn@CCoFStats@@EAEXXZ,CCoFStats::Spawn,COF,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1009D4D0,71,?Spawn@CCoFStopWheelchair@@EAEXXZ,CCoFStopWheelchair::Spawn,COF,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,1009D520,76,?Spawn@CCoFSurvivalMode@@UAEXXZ,CCoFSurvivalMode::Spawn,COF,dlls/effects.cpp,1.4,1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
+hl,1009D520,76,?Spawn@CCoFSurvivalMode@@UAEXXZ,CCoFSurvivalMode::Spawn,COF,dlls/effects.cpp,1.4,1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1009D570,76,?Spawn@CCoFWheelchairMode@@EAEXXZ,CCoFWheelchairMode::Spawn,COF,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1009D5C0,40,?Spawn@CCofBlackAndWhite@@UAEXXZ,CCofBlackAndWhite::Spawn,COF,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1009D5F0,40,?Spawn@CCofBlur@@UAEXXZ,CCofBlur::Spawn,COF,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
@@ -16131,7 +16131,7 @@ hl,1009E520,99,?Spawn@CEnvDecal@@UAEXXZ,CEnvDecal::Spawn,SPIRIT,dlls/effects.cpp
 hl,1009E590,103,?Spawn@CEnvFog@@UAEXXZ,CEnvFog::Spawn,SPIRIT,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1009E600,5,?Spawn@CEnvFootsteps@@UAEXXZ,CEnvFootsteps::Spawn,SPIRIT,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1009E610,36,?Spawn@CEnvFunnel@@UAEXXZ,CEnvFunnel::Spawn,HLSDK,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,1009E640,532,?Spawn@CEnvModel@@EAEXXZ,CEnvModel::Spawn,SPIRIT,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,49.2,hl_1.55_to_1.6a.csv,
+hl,1009E640,532,?Spawn@CEnvModel@@EAEXXZ,CEnvModel::Spawn,SPIRIT,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1009E860,40,?Spawn@CEnvPos_Sky@@UAEXXZ,CEnvPos_Sky::Spawn,PARANOIA,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1009E890,40,?Spawn@CEnvPos_World@@UAEXXZ,CEnvPos_World::Spawn,PARANOIA,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1009E8C0,308,?Spawn@CEnvRain@@UAEXXZ,CEnvRain::Spawn,SPIRIT,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
@@ -16155,7 +16155,7 @@ hl,1009F110,222,?Spawn@CSprite@@UAEXXZ,CSprite::Spawn,HLSDK,dlls/effects.cpp,1.0
 hl,1009F1F0,40,?Spawn@CStaticDecal@@UAEXXZ,CStaticDecal::Spawn,PARANOIA,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1009F220,5,?Spawn@CTestEffect@@UAEXXZ,CTestEffect::Spawn,HLSDK,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1009F230,40,?Spawn@CTriggerFollow@@UAEXXZ,CTriggerFollow::Spawn,PARANOIA,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,1009F260,402,?SpawnMonster@CCoFRandomTimedSpawner@@QAEXXZ,CCoFRandomTimedSpawner::SpawnMonster,COF,dlls/effects.cpp,1.4,1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
+hl,1009F260,402,?SpawnMonster@CCoFRandomTimedSpawner@@QAEXXZ,CCoFRandomTimedSpawner::SpawnMonster,COF,dlls/effects.cpp,1.4,1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1009F400,95,?SpriteCreate@CSprite@@SAPAV1@PBDABVVector@@H@Z,CSprite::SpriteCreate,UNKNOWN,dlls/effects.cpp,,,MATCHED,100,,
 hl,1009F460,56,?SpriteInit@CSprite@@QAEXPBDABVVector@@@Z,CSprite::SpriteInit,UNKNOWN,dlls/effects.cpp,,,MATCHED,100,,
 hl,1009F4A0,1539,?StartNextAnimation@CCoFMDLCutscene@@AAEXXZ,CCoFMDLCutscene::StartNextAnimation,COF,dlls/effects.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
@@ -16164,14 +16164,14 @@ hl,1009FBD0,31,?StartTrailThink@CEnvBeamTrail@@QAEXXZ,CEnvBeamTrail::StartTrailT
 hl,1009FBF0,790,?StrikeThink@CLaser@@QAEXXZ,CLaser::StrikeThink,HLSDK,dlls/effects.cpp,2010-prototype,1.0->1.4 changed; 1.4->1.55 changed,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1009FF20,1085,?StrikeThink@CLightning@@QAEXXZ,CLightning::StrikeThink,HLSDK,dlls/effects.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100A0360,101,?StrikeUse@CLightning@@QAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CLightning::StrikeUse,HLSDK,dlls/effects.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,100A03D0,709,?SurvivalThink@CCoFSurvivalMode@@QAEXXZ,CCoFSurvivalMode::SurvivalThink,COF,dlls/effects.cpp,1.4,1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
+hl,100A03D0,709,?SurvivalThink@CCoFSurvivalMode@@QAEXXZ,CCoFSurvivalMode::SurvivalThink,COF,dlls/effects.cpp,1.4,1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100A06A0,182,?SwitchModel@CCofTrainProp@@QAEXXZ,CCofTrainProp::SwitchModel,COF,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100A0770,763,?TestThink@CTestEffect@@QAEXXZ,CTestEffect::TestThink,HLSDK,dlls/effects.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100A0A70,35,?Think@CCoFDeadCat@@EAEXXZ,CCoFDeadCat::Think,COF,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100A0AA0,55,?Think@CCofGameMenu@@UAEXXZ,CCofGameMenu::Think,COF,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100A0AE0,105,?Think@CDripper@@EAEXXZ,CDripper::Think,COF,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100A0B50,59,?Think@CEnvDLight@@UAEXXZ,CEnvDLight::Think,SPIRIT,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,100A0B90,543,?Think@CEnvModel@@EAEXXZ,CEnvModel::Think,SPIRIT,dlls/effects.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,TODO,23.3,hl_1.55_to_1.6a.csv,
+hl,100A0B90,543,?Think@CEnvModel@@EAEXXZ,CEnvModel::Think,SPIRIT,dlls/effects.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100A0DB0,1364,?Think@CEnvRain@@UAEXXZ,CEnvRain::Think,SPIRIT,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100A1320,99,?Think@CEnvSky@@UAEXXZ,CEnvSky::Think,PARANOIA,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100A1390,68,?Think@CEnvWarpBall@@UAEXXZ,CEnvWarpBall::Think,SPIRIT,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
@@ -16193,16 +16193,16 @@ hl,100A1C10,48,?TurnOnBumpMaps@CCofStressTest@@QAEXXZ,CCofStressTest::TurnOnBump
 hl,100A1C40,48,?TurnOnDynLight@CCofStressTest@@QAEXXZ,CCofStressTest::TurnOnDynLight,COF,dlls/effects.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100A1C70,48,?TurnOnWater@CCofStressTest@@QAEXXZ,CCofStressTest::TurnOnWater,COF,dlls/effects.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100A1CA0,48,?TurnOnWeather@CCofStressTest@@QAEXXZ,CCofStressTest::TurnOnWeather,COF,dlls/effects.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,100A1CD0,172,?UnlockCheck@CCofPhoneCheck@@QAEXH@Z,CCofPhoneCheck::UnlockCheck,UNKNOWN,dlls/effects.cpp,,,TODO,,,
-hl,100A1D80,374,?Use@CBlood@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CBlood::Use,HLSDK,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,90.2,hl_1.55_to_1.6a.csv,
+hl,100A1CD0,172,?UnlockCheck@CCofPhoneCheck@@QAEXH@Z,CCofPhoneCheck::UnlockCheck,UNKNOWN,dlls/effects.cpp,,,MATCHED,100,,
+hl,100A1D80,374,?Use@CBlood@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CBlood::Use,HLSDK,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100A1F00,97,?Use@CBubbling@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CBubbling::Use,HLSDK,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100A1F70,151,?Use@CCoFChangeLevel@@EAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CCoFChangeLevel::Use,COF,dlls/effects.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100A2010,57,?Use@CCoFCloseVGUI@@EAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CCoFCloseVGUI::Use,COF,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100A2050,711,?Use@CCoFClothesMenu@@EAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CCoFClothesMenu::Use,COF,dlls/effects.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,100A2320,398,?Use@CCoFCoopGameOver@@EAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CCoFCoopGameOver::Use,COF,dlls/effects.cpp,1.4,1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
-hl,100A24B0,601,?Use@CCoFCoopStats@@EAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CCoFCoopStats::Use,COF,dlls/effects.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
+hl,100A2320,398,?Use@CCoFCoopGameOver@@EAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CCoFCoopGameOver::Use,COF,dlls/effects.cpp,1.4,1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
+hl,100A24B0,601,?Use@CCoFCoopStats@@EAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CCoFCoopStats::Use,COF,dlls/effects.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100A2710,4554,?Use@CCoFCredits@@EAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CCoFCredits::Use,COF,dlls/effects.cpp,1.0,1.0->1.4 changed; 1.4->1.55 changed,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,100A38E0,491,?Use@CCoFCustomisePlayerModels@@EAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CCoFCustomisePlayerModels::Use,COF,dlls/effects.cpp,1.4,1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
+hl,100A38E0,491,?Use@CCoFCustomisePlayerModels@@EAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CCoFCustomisePlayerModels::Use,COF,dlls/effects.cpp,1.4,1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100A3AD0,64,?Use@CCoFDoctorWeaponSet@@EAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CCoFDoctorWeaponSet::Use,COF,dlls/effects.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100A3B10,125,?Use@CCoFDoctorWeaponTrigger@@EAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CCoFDoctorWeaponTrigger::Use,COF,dlls/effects.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100A3B90,237,?Use@CCoFDocument@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CCoFDocument::Use,COF,dlls/effects.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
@@ -16211,22 +16211,22 @@ hl,100A3D10,765,?Use@CCoFEntityRestore@@EAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CCo
 hl,100A4010,109,?Use@CCoFFatFuckingCunt@@EAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CCoFFatFuckingCunt::Use,COF,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100A4080,323,?Use@CCoFGameBegin@@EAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CCoFGameBegin::Use,COF,dlls/effects.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100A41D0,105,?Use@CCoFGreyFade@@EAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CCoFGreyFade::Use,COF,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,100A4240,114,?Use@CCoFIntroduction@@EAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CCoFIntroduction::Use,COF,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
+hl,100A4240,114,?Use@CCoFIntroduction@@EAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CCoFIntroduction::Use,COF,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100A42C0,219,?Use@CCoFKillPlayer@@EAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CCoFKillPlayer::Use,COF,dlls/effects.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100A43A0,337,?Use@CCoFLadderClimb@@EAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CCoFLadderClimb::Use,COF,dlls/effects.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,100A4500,122,?Use@CCoFLobbyStart@@EAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CCoFLobbyStart::Use,COF,dlls/effects.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
+hl,100A4500,122,?Use@CCoFLobbyStart@@EAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CCoFLobbyStart::Use,COF,dlls/effects.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100A4580,229,?Use@CCoFLookAt@@EAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CCoFLookAt::Use,COF,dlls/effects.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100A4670,1162,?Use@CCoFMDLCutscene@@EAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CCoFMDLCutscene::Use,COF,dlls/effects.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100A4B00,84,?Use@CCoFObjective@@EAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CCoFObjective::Use,COF,dlls/effects.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,100A4B60,179,?Use@CCoFPlayerCheck@@EAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CCoFPlayerCheck::Use,COF,dlls/effects.cpp,1.4,1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
+hl,100A4B60,179,?Use@CCoFPlayerCheck@@EAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CCoFPlayerCheck::Use,COF,dlls/effects.cpp,1.4,1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100A4C30,123,?Use@CCoFSimonSpeak@@EAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CCoFSimonSpeak::Use,COF,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,100A4CB0,87,?Use@CCoFSimpleText@@EAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CCoFSimpleText::Use,COF,dlls/effects.cpp,1.4,1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
+hl,100A4CB0,87,?Use@CCoFSimpleText@@EAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CCoFSimpleText::Use,COF,dlls/effects.cpp,1.4,1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100A4D10,98,?Use@CCoFSlowMotion@@EAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CCoFSlowMotion::Use,COF,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,100A4D80,738,?Use@CCoFSpawnPointOnOff@@EAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CCoFSpawnPointOnOff::Use,COF,dlls/effects.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
+hl,100A4D80,738,?Use@CCoFSpawnPointOnOff@@EAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CCoFSpawnPointOnOff::Use,COF,dlls/effects.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100A5070,322,?Use@CCoFStartDoctorMode@@EAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CCoFStartDoctorMode::Use,COF,dlls/effects.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,100A51C0,1791,?Use@CCoFStats@@EAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CCoFStats::Use,COF,dlls/effects.cpp,1.0,1.0->1.4 changed; 1.4->1.55 changed,TODO,0.0,hl_1.55_to_1.6a.csv,
+hl,100A51C0,1791,?Use@CCoFStats@@EAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CCoFStats::Use,COF,dlls/effects.cpp,1.0,1.0->1.4 changed; 1.4->1.55 changed,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100A58C0,44,?Use@CCoFStopWheelchair@@EAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CCoFStopWheelchair::Use,COF,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,100A58F0,271,?Use@CCoFSurvivalMode@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CCoFSurvivalMode::Use,COF,dlls/effects.cpp,1.4,1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
+hl,100A58F0,271,?Use@CCoFSurvivalMode@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CCoFSurvivalMode::Use,COF,dlls/effects.cpp,1.4,1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100A5A00,227,?Use@CCoFWheelchairMode@@EAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CCoFWheelchairMode::Use,COF,dlls/effects.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100A5AF0,183,?Use@CCofBlackAndWhite@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CCofBlackAndWhite::Use,COF,dlls/effects.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100A5BB0,58,?Use@CCofBlur@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CCofBlur::Use,COF,dlls/effects.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
@@ -16274,7 +16274,7 @@ hl,100A89D0,173,?Use@CEnvELight@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CEnvELight
 hl,100A8A80,52,?Use@CEnvFog@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CEnvFog::Use,SPIRIT,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100A8AC0,715,?Use@CEnvFootsteps@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CEnvFootsteps::Use,SPIRIT,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100A8D90,239,?Use@CEnvFunnel@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CEnvFunnel::Use,HLSDK,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,100A8E80,212,?Use@CEnvModel@@EAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CEnvModel::Use,SPIRIT,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,39.5,hl_1.55_to_1.6a.csv,
+hl,100A8E80,212,?Use@CEnvModel@@EAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CEnvModel::Use,SPIRIT,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100A8F60,313,?Use@CEnvQuakeFx@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CEnvQuakeFx::Use,SPIRIT,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100A90A0,79,?Use@CEnvRain@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CEnvRain::Use,SPIRIT,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100A90F0,477,?Use@CEnvShockwave@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CEnvShockwave::Use,SPIRIT,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
@@ -16289,9 +16289,9 @@ hl,100A9AD0,113,?Use@CShake@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CShake::Use,HL
 hl,100A9B50,100,?Use@CSprite@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CSprite::Use,HLSDK,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100A9BC0,40,?Use@CTestEffect@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CTestEffect::Use,HLSDK,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100A9BF0,150,?Use@CTriggerFollow@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CTriggerFollow::Use,PARANOIA,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,100A9C90,74,?VecToYaw@CEnvModel@@AAEMVVector@@@Z,CEnvModel::VecToYaw,HLSDK,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,,refbytes:paranoia:dlls__monsters.obj:score1,
-hl,100A9CE0,302,?VisibilityCheck@CEnvModel@@QAEXXZ,CEnvModel::VisibilityCheck,COF,dlls/effects.cpp,1.4,1.4->1.55 same,TODO,0.0,hl_1.55_to_1.6a.csv,
-hl,100A9E30,327,?YesActivate@CCofYesNo@@QAEXPAVCBaseEntity@@@Z,CCofYesNo::YesActivate,UNKNOWN,dlls/effects.cpp,,,TODO,,,
+hl,100A9C90,74,?VecToYaw@CEnvModel@@AAEMVVector@@@Z,CEnvModel::VecToYaw,HLSDK,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,refbytes:paranoia:dlls__monsters.obj:score1,
+hl,100A9CE0,302,?VisibilityCheck@CEnvModel@@QAEXXZ,CEnvModel::VisibilityCheck,COF,dlls/effects.cpp,1.4,1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
+hl,100A9E30,327,?YesActivate@CCofYesNo@@QAEXPAVCBaseEntity@@@Z,CCofYesNo::YesActivate,UNKNOWN,dlls/effects.cpp,,,MATCHED,100,,
 hl,100A9F80,338,?Zap@CLightning@@QAEXABVVector@@0@Z,CLightning::Zap,HLSDK,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100AA0E0,5,_aom_pills,aom_pills,HLSDK,dlls/effects.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( aom_pills, CAoMPills )"
 hl,100AA0F0,5,_beam,beam,HLSDK,dlls/effects.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( beam, CBeam )"
@@ -16308,15 +16308,15 @@ hl,100AA190,5,_cof_clearitems,cof_clearitems,HLSDK,dlls/effects.cpp,,,MATCHED,10
 hl,100AA1A0,5,_cof_closeallvgui,cof_closeallvgui,HLSDK,dlls/effects.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( cof_closeallvgui, CCoFCloseVGUI )"
 hl,100AA1B0,5,_cof_clothesmenu,cof_clothesmenu,HLSDK,dlls/effects.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( cof_clothesmenu, CCoFClothesMenu )"
 hl,100AA1C0,5,_cof_computer,cof_computer,HLSDK,dlls/effects.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( cof_computer, CCofComputer )"
-hl,100AA1D0,5,_cof_coop_spawn1,cof_coop_spawn1,HLSDK,dlls/effects.cpp,,,TODO,0.0,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( cof_coop_spawn1, CCoFCoopSpawn )"
-hl,100AA1E0,5,_cof_coop_spawn2,cof_coop_spawn2,HLSDK,dlls/effects.cpp,,,TODO,0.0,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( cof_coop_spawn2, CCoFCoopSpawn )"
-hl,100AA1F0,5,_cof_coop_spawn3,cof_coop_spawn3,HLSDK,dlls/effects.cpp,,,TODO,0.0,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( cof_coop_spawn3, CCoFCoopSpawn )"
-hl,100AA200,5,_cof_coop_spawn4,cof_coop_spawn4,HLSDK,dlls/effects.cpp,,,TODO,0.0,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( cof_coop_spawn4, CCoFCoopSpawn )"
-hl,100AA210,5,_cof_coop_stats,cof_coop_stats,HLSDK,dlls/effects.cpp,,,TODO,0.0,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( cof_coop_stats, CCoFCoopStats )"
-hl,100AA220,5,_cof_coopgameover,cof_coopgameover,HLSDK,dlls/effects.cpp,,,TODO,0.0,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( cof_coopgameover, CCoFCoopGameOver )"
+hl,100AA1D0,5,_cof_coop_spawn1,cof_coop_spawn1,HLSDK,dlls/effects.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( cof_coop_spawn1, CCoFCoopSpawn )"
+hl,100AA1E0,5,_cof_coop_spawn2,cof_coop_spawn2,HLSDK,dlls/effects.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( cof_coop_spawn2, CCoFCoopSpawn )"
+hl,100AA1F0,5,_cof_coop_spawn3,cof_coop_spawn3,HLSDK,dlls/effects.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( cof_coop_spawn3, CCoFCoopSpawn )"
+hl,100AA200,5,_cof_coop_spawn4,cof_coop_spawn4,HLSDK,dlls/effects.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( cof_coop_spawn4, CCoFCoopSpawn )"
+hl,100AA210,5,_cof_coop_stats,cof_coop_stats,HLSDK,dlls/effects.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( cof_coop_stats, CCoFCoopStats )"
+hl,100AA220,5,_cof_coopgameover,cof_coopgameover,HLSDK,dlls/effects.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( cof_coopgameover, CCoFCoopGameOver )"
 hl,100AA230,5,_cof_cracker,cof_cracker,HLSDK,dlls/effects.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( cof_cracker, CCofCracker )"
 hl,100AA240,5,_cof_credits,cof_credits,HLSDK,dlls/effects.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( cof_credits, CCoFCredits )"
-hl,100AA250,5,_cof_customiseplayer,cof_customiseplayer,HLSDK,dlls/effects.cpp,,,TODO,0.0,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( cof_customiseplayer, CCoFCustomisePlayerModels )"
+hl,100AA250,5,_cof_customiseplayer,cof_customiseplayer,HLSDK,dlls/effects.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( cof_customiseplayer, CCoFCustomisePlayerModels )"
 hl,100AA260,5,_cof_deadcat,cof_deadcat,HLSDK,dlls/effects.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( cof_deadcat, CCoFDeadCat )"
 hl,100AA270,5,_cof_difficultysettings,cof_difficultysettings,HLSDK,dlls/effects.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( cof_difficultysettings, CCofDifficultySettings )"
 hl,100AA280,5,_cof_doctorweaponset,cof_doctorweaponset,HLSDK,dlls/effects.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( cof_doctorweaponset, CCoFDoctorWeaponSet )"
@@ -16334,7 +16334,7 @@ hl,100AA330,5,_cof_greyfade,cof_greyfade,HLSDK,dlls/effects.cpp,,,MATCHED,100,ex
 hl,100AA340,5,_cof_hint,cof_hint,HLSDK,dlls/effects.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( cof_hint, CCofShowHint )"
 hl,100AA350,5,_cof_hoodie,cof_hoodie,HLSDK,dlls/effects.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( cof_hoodie, CCoFHoodie )"
 hl,100AA360,5,_cof_interdooronoff,cof_interdooronoff,HLSDK,dlls/effects.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( cof_interdooronoff, CCofInterDoorOnOff )"
-hl,100AA370,5,_cof_introduction,cof_introduction,HLSDK,dlls/effects.cpp,,,TODO,0.0,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( cof_introduction, CCoFIntroduction )"
+hl,100AA370,5,_cof_introduction,cof_introduction,HLSDK,dlls/effects.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( cof_introduction, CCoFIntroduction )"
 hl,100AA380,5,_cof_keypad,cof_keypad,HLSDK,dlls/effects.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( cof_keypad, CCofKeypad )"
 hl,100AA390,5,_cof_keypad2,cof_keypad2,HLSDK,dlls/effects.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( cof_keypad2, CCofKeypad2 )"
 hl,100AA3A0,5,_cof_keypad3,cof_keypad3,HLSDK,dlls/effects.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( cof_keypad3, CCofKeypad3 )"
@@ -16345,7 +16345,7 @@ hl,100AA3E0,5,_cof_ladderclimb,cof_ladderclimb,HLSDK,dlls/effects.cpp,,,MATCHED,
 hl,100AA3F0,5,_cof_lensflare,cof_lensflare,HLSDK,dlls/effects.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( cof_lensflare, CCofLensFlare )"
 hl,100AA400,5,_cof_leveltrigger,cof_leveltrigger,HLSDK,dlls/effects.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( cof_leveltrigger, CCofLevelTrigger )"
 hl,100AA410,5,_cof_loadgame,cof_loadgame,HLSDK,dlls/effects.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( cof_loadgame, CCofLoadGame )"
-hl,100AA420,5,_cof_lobby_start,cof_lobby_start,HLSDK,dlls/effects.cpp,,,TODO,0.0,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( cof_lobby_start, CCoFLobbyStart )"
+hl,100AA420,5,_cof_lobby_start,cof_lobby_start,HLSDK,dlls/effects.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( cof_lobby_start, CCoFLobbyStart )"
 hl,100AA430,5,_cof_logo,cof_logo,HLSDK,dlls/effects.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( cof_logo, CCofLogo )"
 hl,100AA440,5,_cof_lookat,cof_lookat,HLSDK,dlls/effects.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( cof_lookat, CCoFLookAt )"
 hl,100AA450,5,_cof_maxhealthchange,cof_maxhealthchange,HLSDK,dlls/effects.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( cof_maxhealthchange, CCofMaxHealthChange )"
@@ -16356,20 +16356,20 @@ hl,100AA490,5,_cof_phonecheck,cof_phonecheck,HLSDK,dlls/effects.cpp,,,MATCHED,10
 hl,100AA4A0,5,_cof_phonedisable,cof_phonedisable,HLSDK,dlls/effects.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( cof_phonedisable, CCofPhoneDisable )"
 hl,100AA4B0,5,_cof_phonetrigger,cof_phonetrigger,HLSDK,dlls/effects.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( cof_phonetrigger, CCofPhoneTrigger )"
 hl,100AA4C0,5,_cof_playerbreathetoggle,cof_playerbreathetoggle,HLSDK,dlls/effects.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( cof_playerbreathetoggle, CCofBreatheToggle )"
-hl,100AA4D0,5,_cof_playercheck,cof_playercheck,HLSDK,dlls/effects.cpp,,,TODO,0.0,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( cof_playercheck, CCoFPlayerCheck )"
-hl,100AA4E0,5,_cof_randomtimedspawner,cof_randomtimedspawner,HLSDK,dlls/effects.cpp,,,TODO,0.0,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( cof_randomtimedspawner, CCoFRandomTimedSpawner )"
+hl,100AA4D0,5,_cof_playercheck,cof_playercheck,HLSDK,dlls/effects.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( cof_playercheck, CCoFPlayerCheck )"
+hl,100AA4E0,5,_cof_randomtimedspawner,cof_randomtimedspawner,HLSDK,dlls/effects.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( cof_randomtimedspawner, CCoFRandomTimedSpawner )"
 hl,100AA4F0,5,_cof_serversettings,cof_serversettings,HLSDK,dlls/effects.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( cof_serversettings, CCofServerSettings )"
 hl,100AA500,5,_cof_simonspeak,cof_simonspeak,HLSDK,dlls/effects.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( cof_simonspeak, CCoFSimonSpeak )"
-hl,100AA510,5,_cof_simpletext,cof_simpletext,HLSDK,dlls/effects.cpp,,,TODO,0.0,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( cof_simpletext, CCoFSimpleText )"
+hl,100AA510,5,_cof_simpletext,cof_simpletext,HLSDK,dlls/effects.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( cof_simpletext, CCoFSimpleText )"
 hl,100AA520,5,_cof_skipmanager,cof_skipmanager,HLSDK,dlls/effects.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( cof_skipmanager, CCofSkipManager )"
 hl,100AA530,5,_cof_slowmotion,cof_slowmotion,HLSDK,dlls/effects.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( cof_slowmotion, CCoFSlowMotion )"
-hl,100AA540,5,_cof_spawnpointonoff,cof_spawnpointonoff,HLSDK,dlls/effects.cpp,,,TODO,0.0,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( cof_spawnpointonoff, CCoFSpawnPointOnOff )"
+hl,100AA540,5,_cof_spawnpointonoff,cof_spawnpointonoff,HLSDK,dlls/effects.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( cof_spawnpointonoff, CCoFSpawnPointOnOff )"
 hl,100AA550,5,_cof_speedchange,cof_speedchange,HLSDK,dlls/effects.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( cof_speedchange, CCofSpeedChange )"
 hl,100AA560,5,_cof_startdoctormode,cof_startdoctormode,HLSDK,dlls/effects.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( cof_startdoctormode, CCoFStartDoctorMode )"
-hl,100AA570,5,_cof_stats,cof_stats,HLSDK,dlls/effects.cpp,,,TODO,0.0,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( cof_stats, CCoFStats )"
+hl,100AA570,5,_cof_stats,cof_stats,HLSDK,dlls/effects.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( cof_stats, CCoFStats )"
 hl,100AA580,5,_cof_stopwheelchair,cof_stopwheelchair,HLSDK,dlls/effects.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( cof_stopwheelchair, CCoFStopWheelchair )"
 hl,100AA590,5,_cof_stresstest,cof_stresstest,HLSDK,dlls/effects.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( cof_stresstest, CCofStressTest )"
-hl,100AA5A0,5,_cof_survivalmode,cof_survivalmode,HLSDK,dlls/effects.cpp,,,TODO,0.0,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( cof_survivalmode, CCoFSurvivalMode )"
+hl,100AA5A0,5,_cof_survivalmode,cof_survivalmode,HLSDK,dlls/effects.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( cof_survivalmode, CCoFSurvivalMode )"
 hl,100AA5B0,5,_cof_teleport,cof_teleport,HLSDK,dlls/effects.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( cof_teleport, CCofTeleport )"
 hl,100AA5C0,5,_cof_trainprop,cof_trainprop,HLSDK,dlls/effects.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( cof_trainprop, CCofTrainProp )"
 hl,100AA5D0,5,_cof_triggeron,cof_triggeron,HLSDK,dlls/effects.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( cof_triggeron, CCofTriggerOn )"

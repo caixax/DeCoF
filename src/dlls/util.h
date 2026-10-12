@@ -280,7 +280,7 @@ extern int			UTIL_PointContents		(const Vector &vec);
 
 extern int			UTIL_IsMasterTriggered	(string_t sMaster, CBaseEntity *pActivator);
 extern void			UTIL_BloodStream( const Vector &origin, const Vector &direction, int color, int amount );
-extern void			UTIL_BloodDrips( const Vector &origin, const Vector &direction, int color, int amount );
+extern void			UTIL_BloodDrips( const Vector &origin, const Vector &direction, int color, int amount, Vector velocity );
 extern Vector		UTIL_RandomBloodVector( void );
 extern void			UTIL_CustomDecal( TraceResult *pTrace, const char *name, int persistent = 0 ); // Wargon: Это должно быть объявлено здесь чтобы можно было рисовать кастомне декали из кода монстриков.
 extern BOOL			UTIL_ShouldShowBlood( int bloodColor );

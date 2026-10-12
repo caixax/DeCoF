@@ -25,8 +25,6 @@
 #include	"player.h"
 #include	"cof_doctorboss.h"
 
-// TODO(header): CoF UTIL_BloodDrips has a fifth parameter (1.55 PDB), util.h still declares four
-extern void UTIL_BloodDrips( const Vector &origin, const Vector &direction, int color, int amount, Vector velocity );
 
 class CDoctorBossShoot : public CBaseDelay
 {

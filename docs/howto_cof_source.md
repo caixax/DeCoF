@@ -188,6 +188,13 @@ The 1.55 hl.dll is an unoptimized debug build of nearly the same source. `disasm
 - gEntvarsDescription has 102 entries in 1.6a: iuser1-4, fuser1-4, vuser1-4 and euser1-4 are appended. The count shows as `push 0x66` in ReadEntVars, WriteEntVars and EntvarsKeyvalue.
 - The ScreenFade struct (engine/shake.h) is `float duration; float holdTime; int fadeFlags; byte r, g, b, a;` in 1.6a (16 bytes; 1.55 still has the HLSDK shorts).
 - A function at 80-99% whose bytes are identical is usually a delinker extent problem, not source: check the retail bytes before editing. Tell the main agent instead of changing code.
+## Patterns from effects.cpp
+
+- When 1.6a code reads past the size of a 1.55 PDB class, the PDB type is stale: add the missing member with a `guess_` name.
+- A method folded by /OPT:ICF with an identical method of another class (retail shows the other class's name) matches when written as its own method. Example: `CEnvModel::VecToYaw` appears in retail as `CBaseMonster::VecToYaw`.
+- `ThinkSet` with the string `"CheckIfDead"` in the 1.55 debug build means `SetThink( CheckIfDead )` in the source.
+- Vtable slot 0xd0 is `IsPlayer` and slot 0xbc is `IsAlive` in CBaseEntity.
+- Edit source files with Python or the Edit tool: `sed -i` in Git Bash turns CRLF files into LF.
 ## What not to do
 
 - Do not edit shared headers (`cbase.h`, `weapons.h`, `player.h`, `util.h`, ...) without coordinating: several files depend on them.

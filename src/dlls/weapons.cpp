@@ -46,8 +46,6 @@ extern int gmsgCustomGlv;
 
 extern void UTIL_ProMessage( CBaseEntity *pEntity, const char *pMessage, int colour, bool all );
 
-// TODO(header): CoF UTIL_BloodDrips has a fifth parameter (1.55 PDB), util.h still declares four
-extern void UTIL_BloodDrips( const Vector &origin, const Vector &direction, int color, int amount, Vector velocity );
 
 #define NOT_USED 255
 
