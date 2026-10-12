@@ -15609,7 +15609,7 @@ hl,1008A280,38,?HasAlienGibs@CBaseMonster@@UAEHXZ,CBaseMonster::HasAlienGibs,HLS
 hl,1008A2B0,38,?HasHumanGibs@CBaseMonster@@UAEHXZ,CBaseMonster::HasHumanGibs,HLSDK,dlls/combat.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1008A2E0,37,?Instance@CBaseEntity@@SAPAV1@PAUentvars_s@@@Z,CBaseEntity::Instance,UNKNOWN,dlls/combat.cpp,,,MATCHED,100,,
 hl,1008A310,24,?KillRemove@CBaseMonster@@QAEXXZ,CBaseMonster::KillRemove,COF,dlls/combat.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,1008A330,262,?Killed@CBaseMonster@@UAEXPAUentvars_s@@H@Z,CBaseMonster::Killed,HLSDK,dlls/combat.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,TODO,85.21,hl_1.55_to_1.6a.csv,
+hl,1008A330,262,?Killed@CBaseMonster@@UAEXPAUentvars_s@@H@Z,CBaseMonster::Killed,HLSDK,dlls/combat.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,EQUIVALENT,85.21,hl_1.55_to_1.6a.csv,"EQUIVALENT: same statements as 1.55; retail keeps the HasMemory(bits_MEMORY_KILLED) gib-and-return block inline and the later ShouldGibMonster test jumps back into it, ours moves that block out of line; 7 source shapes of both blocks gave identical code"
 hl,1008A440,193,?LimitVelocity@CGib@@QAEXXZ,CGib::LimitVelocity,HLSDK,dlls/combat.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,refbytes:paranoia:dlls__combat.obj:score3,
 hl,1008A510,384,?MakeDamageBloodDecal@CBaseMonster@@QAEXHMPAUTraceResult@@ABVVector@@@Z,CBaseMonster::MakeDamageBloodDecal,UNKNOWN,dlls/combat.cpp,,,MATCHED,100,,
 hl,1008A690,848,?RadiusDamage@@YAXVVector@@PAUentvars_s@@1MMHH@Z,RadiusDamage,HLSDK,dlls/combat.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
@@ -16454,7 +16454,7 @@ hl,100AC080,348,?BreakTouch@CBreakable@@QAEXPAVCBaseEntity@@@Z,CBreakable::Break
 hl,100AC1E0,95,?BreakUse@CBreakable@@QAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CBreakable::BreakUse,SPIRIT,dlls/func_break.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100AC240,7,?Classify@CBreakable@@UAEHXZ,CBreakable::Classify,SPIRIT,dlls/func_break.h,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100AC250,52,?DamageDecal@CBreakable@@UAEHH@Z,CBreakable::DamageDecal,HLSDK,dlls/func_break.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,100AC290,251,?DamageSound@CBreakable@@QAEXXZ,CBreakable::DamageSound,HLSDK,dlls/func_break.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,57.03,hl_1.55_to_1.6a.csv,
+hl,100AC290,251,?DamageSound@CBreakable@@QAEXXZ,CBreakable::DamageSound,HLSDK,dlls/func_break.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100AC440,1773,?Die@CBreakable@@QAEXXZ,CBreakable::Die,HLSDK,dlls/func_break.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100ACB60,30,?GetState@CBreakable@@UAE?AW4STATE@@XZ,CBreakable::GetState,SPIRIT,dlls/func_break.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100ACB80,13,?IsBreakable@CBreakable@@QAEHXZ,CBreakable::IsBreakable,UNKNOWN,dlls/func_break.cpp,,,MATCHED,100,,
@@ -16467,7 +16467,7 @@ hl,100AD150,637,?Move@CPushable@@QAEXPAVCBaseEntity@@H@Z,CPushable::Move,HLSDK,d
 hl,100AD3D0,15,?ObjectCaps@CBreakable@@UAEHXZ,CBreakable::ObjectCaps,HLSDK,dlls/func_break.h,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100AD3E0,18,?ObjectCaps@CPushable@@UAEHXZ,CPushable::ObjectCaps,HLSDK,dlls/func_break.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100AD400,382,?Precache@CBreakable@@UAEXXZ,CBreakable::Precache,HLSDK,dlls/func_break.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,100AD5B0,61,?Precache@CPushable@@UAEXXZ,CPushable::Precache,HLSDK,dlls/func_break.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
+hl,100AD5B0,61,?Precache@CPushable@@UAEXXZ,CPushable::Precache,HLSDK,dlls/func_break.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,99.99,hl_1.55_to_1.6a.csv,"relocation targets differ (instructions identical): retail ?m_SaveData@CBreakable@@2PAUTYPEDESCRIPTION@@A, ours ?m_soundNames@CPushable@@2PAPADA"
 hl,100AD5F0,103,?RespawnFadeThink@CBreakable@@QAEXXZ,CBreakable::RespawnFadeThink,SPIRIT,dlls/func_break.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100AD660,278,?RespawnThink@CBreakable@@QAEXXZ,CBreakable::RespawnThink,SPIRIT,dlls/func_break.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100AD780,72,?RespawnUse@CBreakable@@QAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CBreakable::RespawnUse,SPIRIT,dlls/func_break.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,

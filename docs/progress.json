@@ -1,5 +1,5 @@
 {
-  "commit": "bc8951b",
+  "commit": "a9793b3",
   "counting": "LIB rows excluded; bytes weighted by function size",
   "date": "2026-10-12",
   "dlls": {
@@ -179,9 +179,9 @@
     },
     "hl.dll": {
       "bytes": {
-        "EQUIVALENT": 49496,
-        "MATCHED": 997335,
-        "TODO": 64947,
+        "EQUIVALENT": 49758,
+        "MATCHED": 997525,
+        "TODO": 64495,
         "total": 1111778
       },
       "categories": {
@@ -201,15 +201,15 @@
         },
         "HLSDK": {
           "bytes": {
-            "EQUIVALENT": 36340,
-            "MATCHED": 390805,
-            "TODO": 4606,
+            "EQUIVALENT": 36602,
+            "MATCHED": 390995,
+            "TODO": 4154,
             "total": 431751
           },
           "functions": {
-            "EQUIVALENT": 4,
+            "EQUIVALENT": 5,
             "MATCHED": 2437,
-            "TODO": 26,
+            "TODO": 25,
             "total": 2467
           }
         },
@@ -257,9 +257,9 @@
         }
       },
       "functions": {
-        "EQUIVALENT": 10,
+        "EQUIVALENT": 11,
         "MATCHED": 5075,
-        "TODO": 291,
+        "TODO": 290,
         "total": 5376
       }
     },
@@ -340,30 +340,30 @@
   },
   "shown_total": {
     "bytes": {
-      "EQUIVALENT": 49496,
-      "MATCHED": 1060609,
-      "TODO": 679578,
+      "EQUIVALENT": 49758,
+      "MATCHED": 1060799,
+      "TODO": 679126,
       "total": 1789683
     },
     "functions": {
-      "EQUIVALENT": 10,
+      "EQUIVALENT": 11,
       "MATCHED": 5626,
-      "TODO": 2253,
+      "TODO": 2252,
       "total": 7889
     }
   },
   "target_version": "1.6a",
   "total": {
     "bytes": {
-      "EQUIVALENT": 49496,
-      "MATCHED": 1060609,
-      "TODO": 2987241,
+      "EQUIVALENT": 49758,
+      "MATCHED": 1060799,
+      "TODO": 2986789,
       "total": 4097346
     },
     "functions": {
-      "EQUIVALENT": 10,
+      "EQUIVALENT": 11,
       "MATCHED": 5626,
-      "TODO": 17637,
+      "TODO": 17636,
       "total": 23273
     }
   }
