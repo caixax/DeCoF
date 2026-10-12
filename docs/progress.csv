@@ -16433,7 +16433,7 @@ hl,100AAD10,91,?Spawn@CEnvExplosion@@UAEXXZ,CEnvExplosion::Spawn,HLSDK,dlls/expl
 hl,100AAD70,370,?Spawn@CShower@@EAEXXZ,CShower::Spawn,HLSDK,dlls/explode.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100AAEF0,126,?Think@CShower@@EAEXXZ,CShower::Think,HLSDK,dlls/explode.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100AAF70,139,?Touch@CShower@@EAEXPAVCBaseEntity@@@Z,CShower::Touch,HLSDK,dlls/explode.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,100AB000,1000,?Use@CEnvExplosion@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CEnvExplosion::Use,HLSDK,dlls/explode.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,TODO,79.1,hl_1.55_to_1.6a.csv,
+hl,100AB000,1000,?Use@CEnvExplosion@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CEnvExplosion::Use,HLSDK,dlls/explode.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100AB3F0,5,_env_explosion,env_explosion,HLSDK,dlls/explode.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( env_explosion, CEnvExplosion )"
 hl,100AB400,5,_spark_shower,spark_shower,HLSDK,dlls/explode.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( spark_shower, CShower )"
 hl,100AB410,177,?CeilingZ@CFlyingMonster@@QAEMABVVector@@@Z,CFlyingMonster::CeilingZ,HLSDK,dlls/flyingmonster.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,

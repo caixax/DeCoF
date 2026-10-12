@@ -150,6 +150,17 @@ void CEnvExplosion::Spawn( void )
 
 extern int gmsgCustomDLight; // buz
 
+class CParticle : public CPointEntity
+{
+public:
+	virtual void Spawn( void );
+	virtual void Precache( void );
+	virtual void SendInitMessage( CBasePlayer *player );
+	void KillParticle( void );
+	static CParticle *CreateParticle( int message, bool starton, Vector origin, int weaponattachment, float life, CBaseEntity *attachentity, float velocityx, float velocityy, float velocityz );
+	virtual void Use( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE useType, float value );
+};
+
 void CEnvExplosion::Use( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE useType, float value )
 { 
 	TraceResult tr;
@@ -197,6 +208,7 @@ void CEnvExplosion::Use( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE
 	// draw fireball
 	if ( !( pev->spawnflags & SF_ENVEXPLOSION_NOFIREBALL ) )
 	{
+		/*
 		MESSAGE_BEGIN( MSG_PAS, SVC_TEMPENTITY, pev->origin );
 			WRITE_BYTE( TE_EXPLOSION);
 			WRITE_COORD( pev->origin.x );
@@ -207,6 +219,10 @@ void CEnvExplosion::Use( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE
 			WRITE_BYTE( 15  ); // framerate
 			WRITE_BYTE( TE_EXPLFLAG_NONE );
 		MESSAGE_END();
+		*/
+
+		CParticle *m_pParticle = CParticle::CreateParticle( MAKE_STRING( "aurora/explosion.aur" ), true, pev->origin, 0, 0.1, this, 0, 0, 0 );
+		CParticle *m_pParticle2 = CParticle::CreateParticle( MAKE_STRING( "aurora/blacksmoke.aur" ), true, pev->origin, 0, 0.1, this, 0, 0, 0 );
 
 		// buz:
 		MESSAGE_BEGIN( MSG_PAS, gmsgCustomDLight, pev->origin );
