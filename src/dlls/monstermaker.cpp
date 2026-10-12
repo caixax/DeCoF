@@ -97,6 +97,16 @@ void CMonsterMaker :: KeyValue( KeyValueData *pkvd )
 		m_cNumMonsters = atoi(pkvd->szValue);
 		pkvd->fHandled = TRUE;
 	}
+	else if ( FStrEq(pkvd->szKeyName, "monsterbody") )
+	{
+		m_iMonsterBody = atoi(pkvd->szValue);
+		pkvd->fHandled = TRUE;
+	}
+	else if ( FStrEq(pkvd->szKeyName, "keyscript") )
+	{
+		keyscript = ALLOC_STRING( pkvd->szValue );
+		pkvd->fHandled = TRUE;
+	}
 	else if ( FStrEq(pkvd->szKeyName, "m_imaxlivechildren") )
 	{
 		m_iMaxLiveChildren = atoi(pkvd->szValue);
@@ -137,7 +147,9 @@ void CMonsterMaker :: Spawn( )
 			if ( FBitSet ( pev->spawnflags, SF_MONSTERMAKER_START_ON ) )
 			{// start making monsters as soon as monstermaker spawns
 				m_fActive = TRUE;
-				SetThink(&CMonsterMaker :: MakerThink );
+
+				if ( !( pev->spawnflags & 64 ) )
+					SetThink(&CMonsterMaker :: MakerThink );
 			}
 			else
 			{// wait to be activated.
@@ -148,9 +160,12 @@ void CMonsterMaker :: Spawn( )
 	}
 	else
 	{// no targetname, just start.
+		if ( !( pev->spawnflags & 64 ) )
+		{
 			SetNextThink( m_flDelay );
 			m_fActive = TRUE;
 			SetThink(&CMonsterMaker :: MakerThink );
+		}
 	}
 
 	if ( m_cNumMonsters == 1 || (m_cNumMonsters != -1 && pev->spawnflags & SF_MONSTERMAKER_LEAVECORPSE ))
@@ -162,12 +177,22 @@ void CMonsterMaker :: Spawn( )
 		m_fFadeChildren = TRUE;
 	}
 
+	if ( pev->spawnflags & 64 )
+	{
+		SetThink(&CMonsterMaker::CallTryMakeMonster );
+		int nextspawn = RANDOM_LONG( 0, 90 );
+		SetNextThink( nextspawn );
+	}
+
 	m_flGround = 0;
 }
 
 void CMonsterMaker :: Precache( void )
 {
 	CBaseMonster::Precache();
+
+	if ( pev->model )
+		PRECACHE_MODEL( (char *)STRING( pev->model ) );
 
 	UTIL_PrecacheOther( STRING( m_iszMonsterClassname ) );
 }
@@ -177,9 +202,12 @@ void CMonsterMaker :: Precache( void )
 //=========================================================
 void CMonsterMaker::TryMakeMonster( void )
 {
-	if ( m_iMaxLiveChildren > 0 && m_cLiveChildren >= m_iMaxLiveChildren )
-	{// not allowed to make a new one yet. Too many live ones out right now.
-		return;
+	if ( !( pev->spawnflags & 64 ) )
+	{
+		if ( m_iMaxLiveChildren > 0 && m_cLiveChildren >= m_iMaxLiveChildren )
+		{// not allowed to make a new one yet. Too many live ones out right now.
+			return;
+		}
 	}
 
 	if ( !m_flGround )
@@ -196,12 +224,15 @@ void CMonsterMaker::TryMakeMonster( void )
 	maxs.z = pev->origin.z;
 	mins.z = m_flGround;
 
-	CBaseEntity *pList[2];
-	int count = UTIL_EntitiesInBox( pList, 2, mins, maxs, FL_CLIENT|FL_MONSTER );
-	if ( count )
+	if ( !( pev->spawnflags & 32 ) )
 	{
-		// don't build a stack of monsters!
-		return;
+		CBaseEntity *pList[2];
+		int count = UTIL_EntitiesInBox( pList, 2, mins, maxs, FL_CLIENT|FL_MONSTER );
+		if ( count )
+		{
+			// don't build a stack of monsters!
+			return;
+		}
 	}
 
 	if (m_fSpawnDelay)
@@ -261,12 +292,23 @@ CBaseMonster* CMonsterMaker::MakeMonster( void )
 	pevCreate->angles = pev->angles;
 	SetBits( pevCreate->spawnflags, SF_MONSTER_FALL_TO_GROUND );
 
+	if ( FStrEq( STRING( m_iszMonsterClassname ), "item_key" ) )
+	{
+		if ( keyscript )
+		{
+			pevCreate->message = keyscript;
+		}
+	}
+
 	if (pev->spawnflags & SF_MONSTERMAKER_NO_WPN_DROP)
 		SetBits( pevCreate->spawnflags, SF_MONSTER_NO_WPN_DROP);
 
 	// Children hit monsterclip brushes
 	if ( pev->spawnflags & SF_MONSTERMAKER_MONSTERCLIP )
 		SetBits( pevCreate->spawnflags, SF_MONSTER_HITMONSTERCLIP );
+
+	if ( pev->model )
+		pevCreate->model = pev->model;
 
 	DispatchSpawn( ENT( pevCreate ) );
 	pevCreate->owner = edict();
@@ -286,6 +328,11 @@ CBaseMonster* CMonsterMaker::MakeMonster( void )
 		pevCreate->targetname = pev->netname;
 	}
 
+	if ( pev->spawnflags & 2 )
+		pevCreate->owner = edict();
+
+	pevCreate->body = m_iMonsterBody;
+
 	m_cLiveChildren++;// count this monster
 	m_cNumMonsters--;
 
@@ -297,9 +344,25 @@ CBaseMonster* CMonsterMaker::MakeMonster( void )
 	}
 	else if (m_fActive)
 	{
-		SetNextThink( m_flDelay );
-		SetThink(&CMonsterMaker:: MakerThink );
+		if ( !( pev->spawnflags & 64 ) )
+		{
+			SetNextThink( m_flDelay );
+			SetThink(&CMonsterMaker:: MakerThink );
+		}
 	}
+
+	if ( pMonst )
+	{
+		if ( pev->spawnflags & 64 )
+		{
+			pMonst->m_bIsFlickerAppearing = true;
+			pMonst->m_flNextFlickerAppear = gpGlobals->time;
+			pMonst->m_flFlickerAppearTime = gpGlobals->time + 0.5;
+		}
+	}
+
+	if ( pMonst && strstr( STRING( pMonst->pev->classname ), "monster_" ) )
+		pMonst->Spawn();
 
 	return pMonst;
 }
@@ -330,10 +393,13 @@ void CMonsterMaker :: ToggleUse ( CBaseEntity *pActivator, CBaseEntity *pCaller,
 	else
 	{
 		m_fActive = TRUE;
-		SetThink(&CMonsterMaker :: MakerThink );
+
+		if ( !( pev->spawnflags & 64 ) )
+			SetThink(&CMonsterMaker :: MakerThink );
 	}
 
-	SetNextThink( 0 );
+	if ( !( pev->spawnflags & 64 ) )
+		SetNextThink( 0 );
 }
 
 //=========================================================
@@ -346,11 +412,24 @@ void CMonsterMaker :: MakerThink ( void )
 	TryMakeMonster();
 }
 
+void CMonsterMaker :: CallTryMakeMonster ( void )
+{
+	m_fActive = TRUE;
+	TryMakeMonster();
+}
 
 //=========================================================
 //=========================================================
 void CMonsterMaker :: DeathNotice ( entvars_t *pevChild )
 {
+	if ( pev->spawnflags & 64 )
+	{
+		SetThink(&CMonsterMaker::CallTryMakeMonster );
+		int nextspawn = RANDOM_LONG( 0, 90 );
+		SetNextThink( nextspawn );
+		return;
+	}
+
 	// ok, we've gotten the deathnotice from our child, now clear out its owner if we don't want it to fade.
 	m_cLiveChildren--;
 
@@ -358,6 +437,9 @@ void CMonsterMaker :: DeathNotice ( entvars_t *pevChild )
 	{
 		pevChild->owner = NULL;
 	}
+
+	if ( pev->spawnflags & 2 )
+		pevChild->owner = edict();
 }
 
 
