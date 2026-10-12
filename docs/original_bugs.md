@@ -44,3 +44,7 @@ The reconstructed source keeps the behavior of the retail 1.6a binaries, includi
 | `VP70Shoot` (CoF_DualPistol.cpp) | Throttles the right hand's empty click with the left hand's timer (`gDualWeapon.m_fEmptyClickTime`). | the member read |
 | `MessageGet` (CoF_DualPistol.cpp) | Same bug as `CMobile::MessageGet`: tests the unused array `sLineText` (always true) and can send an uninitialized `DestinationText`. | the test and the write |
 | `GetSprintFrom`, `GetSprintTo`, `GetSprintIdle` (CoF_DualPistol.cpp) | Never called: the sprint code in `CDualWeapon::ItemPostFrame` is commented out, but retail still contains them. | no callers in 1.6a |
+| `CBaseMonster::GetPointsForKill` (monsters.cpp) | Adds to `pKiller->playerstats.suvivalpoints` before the `if ( pKiller && pKiller->IsPlayer() )` null check. | the store before the test |
+| `CBaseMonster::MonsterThink` (monsters.cpp) | The second `m_bFrozenByCamera` branch leaves `flInterval` uninitialized (dead code: the first check already returns). | 1.55 statement order |
+| `CMonsterMaker::MakeMonster` (monstermaker.cpp) | Calls `pMonst->Spawn()` a second time after DispatchSpawn for any classname containing "monster_". | the extra virtual call |
+| `CBaseMonster::Look`, Book Simon block (monsters.cpp) | Sets `m_hEnemy = pPlayer` twice. | two EHANDLE assignments |

@@ -131,6 +131,12 @@ The 1.55 hl.dll is an unoptimized debug build of nearly the same source. `disasm
 - An `if ( x )` with no body and code only in the else (lines commented out in 1.55) compiles the same as `if ( !x )`.
 - Functions missing from a unit list are not checked at all: compare every function you write that the check does not list against its retail address (`tools/bytematch.py`).
 
+## Patterns from the AI sweep
+
+- Float `fabs`: monsters.cpp and AI_BaseNPC_Schedule.cpp use the float overload (`andps` mask, float compare), func_break.cpp and nodes.cpp the double one. In 1.55 those files called `?fabs@@YAMM@Z`; with MSVC 19.27 the float overload comes from `<cmath>`, so those files include it after the project headers.
+- `xor eax, eax; je` inside a 1.55 condition is a literal `&& 0`: 1.6a keeps the calls before it (`IsMultiplayer()`) and drops the body.
+- When objdiff shows `.dword $LN` inserts, a truncated retail function or a function paired with the wrong retail name, compare the raw bytes with relocations masked before changing source: these were all retail-side problems (fixed in the delinker, the Ghidra function bodies or the name map).
+
 ## What not to do
 
 - Do not edit shared headers (`cbase.h`, `weapons.h`, `player.h`, `util.h`, ...) without coordinating: several files depend on them.
