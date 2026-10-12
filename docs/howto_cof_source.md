@@ -122,6 +122,15 @@ The 1.55 hl.dll is an unoptimized debug build of nearly the same source. `disasm
 - An unused `float speed = ...Length2D();` disappears entirely in 1.6a, sqrt included.
 - Where 1.55 calls `?EMIT_SOUND_DYN` directly with `edict()`, write `EMIT_SOUND_DYN( edict(), ... )`; `STOP_SOUND` inlines to `EMIT_SOUND_DYN( ..., 0, 0, SND_STOP, PITCH_NORM )`. `strcpy( x, "" )` becomes one byte store and `strcmp` an inline loop.
 
+## Patterns from the dual weapons
+
+- One sound call, not two: when retail has a single `call dword ptr [eax+0x104]` (EarPosition) where 1.55 had a per-hand if/else of EMIT_SOUND_DYN, 1.6a used one `guess_UTIL_PlayWeaponSound` call. Two identical calls in an if/else compile to a hoisted `mov eax, [eax+0x104]; call eax` instead; when the branches also hold other statements (an ammo decrement), the duplicated form matches.
+- gmsgKillWpnPart messages use `MSG_ONE_UNRELIABLE` (8).
+- Empty helpers (CameraShoot, TMPShoot, SetBodyForWeapons) lose their calls in retail, so their switch cases merge with the default.
+- CDualWeaponRight members are 4 bytes higher in 1.6a than in 1.55, like CBasePlayerWeapon: never take offsets from 1.55.
+- An `if ( x )` with no body and code only in the else (lines commented out in 1.55) compiles the same as `if ( !x )`.
+- Functions missing from a unit list are not checked at all: compare every function you write that the check does not list against its retail address (`tools/bytematch.py`).
+
 ## What not to do
 
 - Do not edit shared headers (`cbase.h`, `weapons.h`, `player.h`, `util.h`, ...) without coordinating: several files depend on them.
