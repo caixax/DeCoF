@@ -1,5 +1,5 @@
 {
-  "commit": "13e9604",
+  "commit": "6698f20",
   "counting": "LIB rows excluded; bytes weighted by function size",
   "date": "2026-10-13",
   "dlls": {
@@ -50,8 +50,8 @@
     "client.dll": {
       "bytes": {
         "EQUIVALENT": 8367,
-        "MATCHED": 261733,
-        "TODO": 384876,
+        "MATCHED": 280757,
+        "TODO": 365852,
         "total": 654976
       },
       "categories": {
@@ -72,28 +72,28 @@
         "HLSDK": {
           "bytes": {
             "EQUIVALENT": 0,
-            "MATCHED": 87903,
-            "TODO": 72934,
+            "MATCHED": 94581,
+            "TODO": 66256,
             "total": 160837
           },
           "functions": {
             "EQUIVALENT": 0,
-            "MATCHED": 376,
-            "TODO": 168,
+            "MATCHED": 388,
+            "TODO": 156,
             "total": 544
           }
         },
         "PARANOIA": {
           "bytes": {
             "EQUIVALENT": 0,
-            "MATCHED": 64790,
-            "TODO": 29912,
+            "MATCHED": 73323,
+            "TODO": 21379,
             "total": 94702
           },
           "functions": {
             "EQUIVALENT": 0,
-            "MATCHED": 219,
-            "TODO": 42,
+            "MATCHED": 226,
+            "TODO": 35,
             "total": 261
           }
         },
@@ -114,22 +114,22 @@
         "UNKNOWN": {
           "bytes": {
             "EQUIVALENT": 0,
-            "MATCHED": 76947,
-            "TODO": 131462,
+            "MATCHED": 80760,
+            "TODO": 127649,
             "total": 208409
           },
           "functions": {
             "EQUIVALENT": 0,
-            "MATCHED": 327,
-            "TODO": 531,
+            "MATCHED": 341,
+            "TODO": 517,
             "total": 858
           }
         }
       },
       "functions": {
         "EQUIVALENT": 3,
-        "MATCHED": 1007,
-        "TODO": 1136,
+        "MATCHED": 1040,
+        "TODO": 1103,
         "total": 2146
       }
     },
@@ -180,9 +180,9 @@
     "hl.dll": {
       "bytes": {
         "EQUIVALENT": 49758,
-        "MATCHED": 1015499,
+        "MATCHED": 1015521,
         "TODO": 41369,
-        "total": 1106626
+        "total": 1106648
       },
       "categories": {
         "COF": {
@@ -216,15 +216,15 @@
         "PARANOIA": {
           "bytes": {
             "EQUIVALENT": 0,
-            "MATCHED": 14929,
+            "MATCHED": 14951,
             "TODO": 45,
-            "total": 14974
+            "total": 14996
           },
           "functions": {
             "EQUIVALENT": 0,
-            "MATCHED": 78,
+            "MATCHED": 79,
             "TODO": 3,
-            "total": 81
+            "total": 82
           }
         },
         "SPIRIT": {
@@ -258,9 +258,9 @@
       },
       "functions": {
         "EQUIVALENT": 11,
-        "MATCHED": 5157,
+        "MATCHED": 5158,
         "TODO": 165,
-        "total": 5333
+        "total": 5334
       }
     },
     "hw.dll": {
@@ -341,30 +341,30 @@
   "shown_total": {
     "bytes": {
       "EQUIVALENT": 58125,
-      "MATCHED": 1300161,
-      "TODO": 426245,
-      "total": 1784531
+      "MATCHED": 1319207,
+      "TODO": 407221,
+      "total": 1784553
     },
     "functions": {
       "EQUIVALENT": 14,
-      "MATCHED": 6531,
-      "TODO": 1301,
-      "total": 7846
+      "MATCHED": 6565,
+      "TODO": 1268,
+      "total": 7847
     }
   },
   "target_version": "1.6a",
   "total": {
     "bytes": {
       "EQUIVALENT": 58125,
-      "MATCHED": 1300161,
-      "TODO": 2733908,
-      "total": 4092194
+      "MATCHED": 1319207,
+      "TODO": 2714884,
+      "total": 4092216
     },
     "functions": {
       "EQUIVALENT": 14,
-      "MATCHED": 6531,
-      "TODO": 16685,
-      "total": 23230
+      "MATCHED": 6565,
+      "TODO": 16652,
+      "total": 23231
     }
   }
 }
