@@ -1228,6 +1228,14 @@
       }
     },
     {
+      "name": "hl/dlls/guess_CoF_BowlingBall",
+      "target_path": "build/target/hl/dlls/guess_CoF_BowlingBall.obj",
+      "base_path": "build/base/hl/dlls/guess_CoF_BowlingBall.obj",
+      "metadata": {
+        "source_path": "src/dlls/guess_CoF_BowlingBall.cpp"
+      }
+    },
+    {
       "name": "opengl32/opengl32",
       "target_path": "build/target/opengl32/opengl32.obj",
       "base_path": "build/base/opengl32/opengl32.obj",
@@ -2161,6 +2169,38 @@
       "base_path": "build/base/client/cl_dll/guess_Yesno.obj",
       "metadata": {
         "source_path": "src/cl_dll/guess_Yesno.cpp"
+      }
+    },
+    {
+      "name": "client/cl_dll/util",
+      "target_path": "build/target/client/cl_dll/util.obj",
+      "base_path": "build/base/client/cl_dll/util.obj",
+      "metadata": {
+        "source_path": "src/cl_dll/util.cpp"
+      }
+    },
+    {
+      "name": "client/cl_dll/hl/hl_events",
+      "target_path": "build/target/client/cl_dll/hl/hl_events.obj",
+      "base_path": "build/base/client/cl_dll/hl/hl_events.obj",
+      "metadata": {
+        "source_path": "src/cl_dll/hl/hl_events.cpp"
+      }
+    },
+    {
+      "name": "client/cl_dll/hl/hl_objects",
+      "target_path": "build/target/client/cl_dll/hl/hl_objects.obj",
+      "base_path": "build/base/client/cl_dll/hl/hl_objects.obj",
+      "metadata": {
+        "source_path": "src/cl_dll/hl/hl_objects.cpp"
+      }
+    },
+    {
+      "name": "client/cl_dll/hl/hl_weapons",
+      "target_path": "build/target/client/cl_dll/hl/hl_weapons.obj",
+      "base_path": "build/base/client/cl_dll/hl/hl_weapons.obj",
+      "metadata": {
+        "source_path": "src/cl_dll/hl/hl_weapons.cpp"
       }
     }
   ]

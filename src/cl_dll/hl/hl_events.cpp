@@ -47,11 +47,16 @@ void EV_FireRPK( struct event_args_s *args );
 void EV_FireAK74( struct event_args_s *args );
 void EV_FireGroza( struct event_args_s *args );
 void EV_SmokePuff( struct event_args_s *args );
+void guess_EV_ViewPunch( struct event_args_s *args );
+void guess_EV_WeaponShoot( struct event_args_s *args );
+void guess_EV_ClientSound( struct event_args_s *args );
+void guess_EV_ServerMuzzleFlash( struct event_args_s *args );
+void guess_EV_RevolverShells( struct event_args_s *args );
 }
 
 /*
 ======================
-Game_HookEvents
+EV_HookEvents
 
 Associate script file name with callback functions.  Callback's must be extern "C" so
  the engine doesn't get confused about name mangling stuff.  Note that the format is
@@ -62,7 +67,7 @@ Associate script file name with callback functions.  Callback's must be extern "
 That was what we were going to do, but we ran out of time...oh well.
 ======================
 */
-void Game_HookEvents( void )
+void EV_HookEvents( void )
 {
 	gEngfuncs.pfnHookEvent( "events/glock1.sc",					EV_FireGlock1 );
 	gEngfuncs.pfnHookEvent( "events/glock2.sc",					EV_FireGlock2 );
@@ -91,4 +96,9 @@ void Game_HookEvents( void )
 	gEngfuncs.pfnHookEvent( "events/ak74.sc",					EV_FireAK74 );
 	gEngfuncs.pfnHookEvent( "events/groza.sc",					EV_FireGroza );
 	gEngfuncs.pfnHookEvent( "events/smokepuff.sc",				EV_SmokePuff );
+	gEngfuncs.pfnHookEvent( "events/viewpunch.sc",				guess_EV_ViewPunch );
+	gEngfuncs.pfnHookEvent( "events/weaponshoot.sc",			guess_EV_WeaponShoot );
+	gEngfuncs.pfnHookEvent( "events/clientsound.sc",			guess_EV_ClientSound );
+	gEngfuncs.pfnHookEvent( "events/muzzleflash.sc",			guess_EV_ServerMuzzleFlash );
+	gEngfuncs.pfnHookEvent( "events/revolvershells.sc",			guess_EV_RevolverShells );
 }

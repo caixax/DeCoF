@@ -1478,6 +1478,26 @@
           "name": "cl_dll/guess_Yesno",
           "source": "src/cl_dll/guess_Yesno.cpp",
           "functions_file": "tools/units/client_cl_dll_guess_Yesno.txt"
+        },
+        {
+          "name": "cl_dll/util",
+          "source": "src/cl_dll/util.cpp",
+          "functions_file": "tools/units/client_cl_dll_util.txt"
+        },
+        {
+          "name": "cl_dll/hl/hl_events",
+          "source": "src/cl_dll/hl/hl_events.cpp",
+          "functions_file": "tools/units/client_cl_dll_hl_hl_events.txt"
+        },
+        {
+          "name": "cl_dll/hl/hl_objects",
+          "source": "src/cl_dll/hl/hl_objects.cpp",
+          "functions_file": "tools/units/client_cl_dll_hl_hl_objects.txt"
+        },
+        {
+          "name": "cl_dll/hl/hl_weapons",
+          "source": "src/cl_dll/hl/hl_weapons.cpp",
+          "functions_file": "tools/units/client_cl_dll_hl_hl_weapons.txt"
         }
       ]
     }

@@ -219,3 +219,4 @@ va,name,kind,evidence
 100556F0,?VidInit@GLManager@@QAEXXZ,func,"called with ecx = gl (101BE5F8) in CHud::VidInit, as gl.VidInit() in Paranoia (added by an agent)"
 100860E0,?ResetRain@@YAXXZ,func,called from CHud::VidInit before m_flDeadTime = 0 as in Paranoia (rain) (added by an agent)
 1007BBE0,?IN_Shutdown@@YAXXZ,func,"5-byte thunk jmp IN_DeactivateMouse (1007C1D0), called by ShutdownInput as in the HLSDK (IN_Shutdown calls IN_DeactivateMouse)"
+1006C5A0,?UpdateBeams@@YAXXZ,func,"Game_AddObjects tail-jumps here when pBeam and pBeam2 are set, as hl_objects.cpp Game_AddObjects calls UpdateBeams; body follows UpdateBeams (GetLocalPlayer, GetViewAngles, HUD_GetLastOrg, VectorMA 2048, EV_PlayerTrace, pBeam/pBeam2 target and die)"
