@@ -204,12 +204,6 @@ va,name,kind,evidence
 10071020,?MsgFunc_PlaySFX@CHud@@QAAHPBDHPAX@Z,func,"called by __MsgFunc_PlaySFX (push gHUD), which CHud::Init passes with ""PlaySFX"" to pfnHookUserMsg; handlers of hud_msg.cpp are in decorated-name order (added by an agent)"
 1006FF40,?MsgFunc_Inventory@CHud@@QAAHPBDHPAX@Z,func,"called by __MsgFunc_Inventory (push gHUD), which CHud::Init passes with ""Inventory"" to pfnHookUserMsg; handlers of hud_msg.cpp are in decorated-name order (added by an agent)"
 10070B50,?MsgFunc_Materials@CHud@@QAAHPBDHPAX@Z,func,"called by __MsgFunc_Materials (push gHUD), which CHud::Init passes with ""Materials"" to pfnHookUserMsg; handlers of hud_msg.cpp are in decorated-name order (added by an agent)"
-100AA2B0,?MsgFunc_ValClass@TeamFortressViewport@@QAEHPBDHPAX@Z,func,"named in client_manual.csv; ValClass handler inside the viewport window, same size as ours (71) (added by an agent)"
-100A9DA0,?MsgFunc_ScoreInfo@TeamFortressViewport@@QAEHPBDHPAX@Z,func,"named in client_manual.csv; ScoreInfo HOOK_MESSAGE handler inside the viewport window, same size as ours (150) (added by an agent)"
-100AA0D0,?MsgFunc_TeamScore@TeamFortressViewport@@QAEHPBDHPAX@Z,func,"named in client_manual.csv; TeamScore handler inside the viewport window, same size as ours (155) (added by an agent)"
-100A9FD0,?MsgFunc_TeamInfo@TeamFortressViewport@@QAEHPBDHPAX@Z,func,"named in client_manual.csv; TeamInfo handler inside the viewport window, same size as ours (97) (added by an agent)"
-100AA170,?MsgFunc_VGUIMenu@TeamFortressViewport@@QAEHPBDHPAX@Z,func,named in client_manual.csv; VGUIMenu handler inside the viewport window between TeamScore and ValClass in name order
-100A9E80,?MsgFunc_ShowTextWindow@TeamFortressViewport@@QAEHPBDHPAX@Z,func,"named in client_manual.csv; viewport message handler inside the viewport window, same size as ours (270) (added by an agent)"
 1008BC10,?InitHeadShield@@YAXXZ,func,"called from CHud::Init between InitRain and GrassInit as in Paranoia; hooks the ""HeadShield"" message (added by an agent)"
 1008BCE0,?ResetHeadShield@@YAXXZ,func,called from CHud::VidInit before m_flFOV = -1 as in Paranoia (buz) (added by an agent)
 1009C830,?RadioIconInit@@YAXXZ,func,"called from CHud::Init after GrassInit as in Paranoia; hooks the ""RadioIcon"" message (added by an agent)"
@@ -217,62 +211,22 @@ va,name,kind,evidence
 100A3B90,?TabPanelInit@@YAXXZ,func,"called from CHud::Init after SubtitleInit as in Paranoia; hooks the ""TabPanel"" message and creates gpanel_hidetime (added by an agent)"
 10053BB0,?Init@GLManager@@QAEXXZ,func,"called with ecx = gl (101BE5F8) right after Log(""Initializing variables"") in CHud::Init, as gl.Init() in Paranoia (added by an agent)"
 100556F0,?VidInit@GLManager@@QAEXXZ,func,"called with ecx = gl (101BE5F8) in CHud::VidInit, as gl.VidInit() in Paranoia (added by an agent)"
-100860E0,?ResetRain@@YAXXZ,func,called from CHud::VidInit before m_flDeadTime = 0 as in Paranoia (rain) (added by an agent)
 1007BBE0,?IN_Shutdown@@YAXXZ,func,"5-byte thunk jmp IN_DeactivateMouse (1007C1D0), called by ShutdownInput as in the HLSDK (IN_Shutdown calls IN_DeactivateMouse)"
-1006C5A0,?UpdateBeams@@YAXXZ,func,"Game_AddObjects tail-jumps here when pBeam and pBeam2 are set, as hl_objects.cpp Game_AddObjects calls UpdateBeams; body follows UpdateBeams (GetLocalPlayer, GetViewAngles, HUD_GetLastOrg, VectorMA 2048, EV_PlayerTrace, pBeam/pBeam2 target and die)"
-1003E610,?guess_MsgBossBar@@YAHPBDHPAX@Z,func,"hooked as ""BossBar"" by guess_BossBarInit (1003E7D0); reads gViewPort->guess_m_pBossBar (added by an agent)"
-1003E7F0,?solve@CBossBar@@UAEXXZ,func,"CBossBar vtable slot 110 (solve), ends in a tail call to Panel::solve (added by an agent)"
-1003E0B0,?guess_MsgBoard@@YAHPBDHPAX@Z,func,"hooked as ""Board"" by guess_BoardInit (1003E1E0); reads gViewPort->guess_m_pVGUIBillboard (added by an agent)"
-1003D850,?ActionSignal@CAnimalStatue@@QAEXH@Z,func,"string ""Unknown AnimalStatue ActionSignal %i.""; called by CAnimalStatueHandler_Command::actionPerformed (1003DBC0) (added by an agent)"
-1003EEF0,?ActionSignal@CComputer@@QAEXH@Z,func,"string ""Unknown Computer ActionSignal %i.""; called by CComputerHandler_Command::actionPerformed (1003F390) (added by an agent)"
-1003F070,?guess_MsgComputer@@YAHPBDHPAX@Z,func,"hooked as ""Computer"" by guess_ComputerInit (1003F370); reads gViewPort->guess_m_pComputer (added by an agent)"
-1003F4B0,?solve@CComputer@@MAEXXZ,func,"CComputer vtable slot 110 (solve), ends in Panel::solve (added by an agent)"
-10040280,?ActionSignal@CDifficulty@@QAEXH@Z,func,"strings ""campaign %s"", ""skillset 1""-""skillset 4"", ""closegame""; called by CDifficultyHandler_Command::actionPerformed (10040580) (added by an agent)"
-1002AFB0,?ActionSignal@CDocuments@@QAEXH@Z,func,"string ""recalldocument %i""; called by CDocumentsHandler_Command::actionPerformed (1002B130) (added by an agent)"
-1001E5D0,?Init@CHudBase@@UAEHXZ,func,"restore: was MATCHED 100% in cl_dll/cdll_int; the 3-byte return-0 body is folded with CommandButton::IsNotValid, which bytematch proposed from guess_AmmoInventory (added by an agent)"
-1001E420,?ActionSignal@CAmmoInventory@@QAEXH@Z,func,"strings ""dropammo 1""-""dropammo 6"", inventory_toggle.wav; called by CAmmoInventoryHandler_Command::actionPerformed (1001E950) (added by an agent)"
-1001E6A0,?guess_MsgAmmoInv@@YAHPBDHPAX@Z,func,"hooked as ""AmmoInv"" by guess_AmmoInvInit (1001E930); reads gViewPort->guess_m_pAmmoInventory (added by an agent)"
-1001EA70,?setVisible@CAmmoInventory@@UAEX_N@Z,func,"CAmmoInventory vtable slot 9 (setVisible), ends in Panel::setVisible (added by an agent)"
-1003E340,?paintBackground@CVGUIBillboard@@MAEXXZ,func,"CVGUIBillboard vtable slot 111 (paintBackground), jmp Panel::paintBackground (added by an agent)"
-1055B5C8,_guess_iDucking,data,int set to 1 by PM_PlayerMove (100157C7) while pmove->bInDuck or FL_DUCKING and cleared otherwise; PM_PlayerMove is its only reference; name is a guess
-1055B5C4,_iClientResetMaterials,data,int that PM_PlayStepSound compares with 1 before it clears bTextureTypeInit and calls PM_InitTextureTypes; the same code in hl.dll uses iClientResetMaterials (1.55 PDB)
-1055B5CC,_guess_iStepPunchRun,data,"int set by PM_PlayStepSound in multiplayer to 1 when IN_RUN and flag 1<<18 are set, else 0; V_CalcNormalRefdef then punches the view by -3, 1 instead of -0.75, 0.5 (the singleplayer PM_ViewPunch values for a run step); name is a guess"
-1055B5D0,_guess_iStepPunch,data,int set to 1 by PM_PlayStepSound in multiplayer; V_CalcNormalRefdef clears it and calls the view punch for the step; name is a guess
-100ABB50,?paintBackground@TeamOnlyCommandButton@@UAEXXZ,func,"last function of the viewport object (67 bytes, isArmed then the armed colors like ours) before the CTeamMenuPanel constructor; the old position name ??0CMenuPanel@@QAE@HHHHHH@Z of vgui_teammenu was wrong (22%) (added by an agent)"
-1003BC00,?guess_UpdateOnPlayerInfo@CHUDControl@@QAEXXZ,func,TeamFortressViewport::UpdateOnPlayerInfo tail-jumps here with guess_m_pHUDControl (+0x142c) in ecx; the body is ret 0 (empty thiscall); between guess_ShowSMSIcon and paint in the CHUDControl object; name is a guess
 1004B210,?ActionSignal@CYesno@@QAEXH@Z,func,strings yesnoactivate/yesnono and Unknown Yesno ActionSignal; called by CYesnoHandler_Command::actionPerformed
-1004A5E0,?ActionSignal@CSave@@QAEXH@Z,func,strings cofsave 19573 and Unknown Save ActionSignal; called by CSaveHandler_Command::actionPerformed
-1004A1B0,?ActionSignal@CPuzzleBar@@QAEXH@Z,func,strings boilercheck 1-5; called by CPuzzleBarHandler_Command::actionPerformed
-10049A20,?guess_PressDigit@CPhone@@QAEXH@Z,func,plays phone/tone_zero..nine.wav and appends the digit; called by CPhone::ActionSignal cases 1-10
-10045710,??0CKeypad@@QAE@XZ,func,stores the CKeypad vftable; loads gfx/vgui/640_panelback.tga and creates CKeypadHandler_Command objects
-10046AC0,?paintBackground@CKeypad@@MAEXXZ,func,"CKeypad vftable slot 111 (paintBackground), tail call to Panel::paintBackground (added by an agent)"
-10046AD0,??0CNoteDocument@@QAE@HHHHHH@Z,func,"stores the CNoteDocument vftable, creates CNoteDocumentHandler_Command objects and the notecancel CImageLabel (added by an agent)"
-10047150,?guess_CountLines@CNoteDocument@@QAEHXZ,func,opens /notes/<text of the page> and returns the number of lines; called by the two line scroll functions before wrapping guess_m_iLine
-10047550,?guess_MsgNoteDoc@@YAHPBDHPAX@Z,func,hooked by guess_NoteDocInit with the string NoteDoc
-10048430,?guess_NextLine@CNoteDocument@@QAEXXZ,func,increments guess_m_iLine and wraps to 1; CNoteDocument::ActionSignal case 2
-100487D0,?guess_PrevLine@CNoteDocument@@QAEXXZ,func,decrements guess_m_iLine and wraps to the line count; CNoteDocument::ActionSignal case 1
-10048C50,?guess_ReadLine@CNoteDocument@@QAEXXZ,func,reads line guess_m_iLine of the page text file; called by guess_SetPage
-10048F10,?paint@CNoteDocument@@MAEXXZ,func,"CNoteDocument vftable slot 112 (paint), ends with Panel::paint (added by an agent)"
-10049020,?paintBackground@CNoteDocument@@MAEXXZ,func,"CNoteDocument vftable slot 111 (paintBackground), tail call to Panel::paintBackground (added by an agent)"
-10049030,?setVisible@CNoteDocument@@UAEX_N@Z,func,"CNoteDocument vftable slot 9 (setVisible), tail call to Panel::setVisible (added by an agent)"
-10048720,?guess_NextPage@CNoteDocument@@QAEXXZ,func,switches guess_m_iPage 1-4 by the image names and calls guess_SetPage; unreferenced function between guess_NextLine and guess_NoteDocInit
-10048AA0,?guess_PrevPage@CNoteDocument@@QAEXXZ,func,switches guess_m_iPage 1-4 to the previous page with an image and calls guess_SetPage; unreferenced function between guess_PrevLine and guess_SetPage
-1004AAD0,?guess_GetPassword@CUserDocument@@QAEPBDH@Z,func,returns the passwords apple45..jillanddavid for 1-8; CUserDocument::paint calls it when guess_m_iType is 2 (640_pass%i.tga)
-1004AB60,?guess_GetUsername@CUserDocument@@QAEPBDH@Z,func,returns the user names davidspc..dorrardavid for 1-8; CUserDocument::paint calls it when guess_m_iType is 1 (640_user%i.tga)
-1004AF70,?paintBackground@CUserDocument@@MAEXXZ,func,"CUserDocument vftable slot 111 (paintBackground), tail call to Panel::paintBackground (added by an agent)"
-10043130,?ActionSignal@CRECBInventory@@QAEXH@Z,func,string Unknown Inventory ActionSignal; called by CRECBInventoryHandler_Command::actionPerformed (added by an agent)
-100439D0,?guess_DoAction@CRECBInventory@@QAEXH@Z,func,"runs guess_m_iAction (inventoryequip, inventorycombine, inventoryuse, inventorydrop, quickselset, inventorydualwield) on a slot; unreferenced function between guess_Reset and Initialize (added by an agent)"
-10043EA0,?Initialize@CRECBInventory@@QAEXXZ,func,called by TeamFortressViewport::Initialize like the other panels' Initialize; resets the quick slot pictures (added by an agent)
-100441A0,?guess_MsgQSlotClear@@YAHPBDHPAX@Z,func,hooked by guess_QSlotInit with the string QSlotClear (added by an agent)
-100443C0,?guess_MsgQSlotUpdate@@YAHPBDHPAX@Z,func,hooked by guess_QSlotInit with the string QSlotUpdate (added by an agent)
-10044670,?guess_SelectItem@CRECBInventory@@QAEXH@Z,func,"CRECBInventory::ActionSignal cases 1-6 (item slots); opens the item menu, sends inventorycombine and inventorydualwield (added by an agent)"
-10044A30,?guess_Update@CRECBInventory@@QAEXXZ,func,called by the InventChck message handler and Initialize; lays out the panel for cof_ maps (640_inventory_p.tga) or the others (added by an agent)
-10044EF0,?setVisible@CRECBInventory@@UAEX_N@Z,func,"CRECBInventory vftable slot 9 (setVisible), ends with Panel::setVisible (added by an agent)"
-100451F0,?solve@CRECBInventory@@MAEXXZ,func,"CRECBInventory vftable slot 110 (solve), ends with Panel::solve (added by an agent)"
 100335F0,?ActionSignal@CTelephone@@QAEXH@Z,func,called by CTelephoneHandler_Command::actionPerformed (10033A90); switch on 1-12 with telephone_receiver_down.wav
 10033790,?guess_Dial@CTelephone@@QAEXXZ,func,called by ActionSignal case 11; telephoneright/telephonewrong server commands
 100338A0,?guess_MsgTelephone@@YAHPBDHPAX@Z,func,hooked for the Telephone user message in guess_TelephoneInit (10033A70)
 10033B50,?setVisible@CTelephone@@UAEX_N@Z,func,vtable slot 9 (setVisible) of CTelephone; freeze 1024/unfreeze 1024
+1003E610,?guess_MsgBossBar@@YAHPBDHPAX@Z,func,"hooked as ""BossBar"" by guess_BossBarInit (1003E7D0); reads gViewPort->guess_m_pBossBar (added by an agent)"
+1003E7F0,?solve@CBossBar@@UAEXXZ,func,"CBossBar vtable slot 110 (solve), ends in a tail call to Panel::solve (added by an agent)"
+1004A5E0,?ActionSignal@CSave@@QAEXH@Z,func,strings cofsave 19573 and Unknown Save ActionSignal; called by CSaveHandler_Command::actionPerformed
+1004A1B0,?ActionSignal@CPuzzleBar@@QAEXH@Z,func,strings boilercheck 1-5; called by CPuzzleBarHandler_Command::actionPerformed
+100A9DA0,?MsgFunc_ScoreInfo@TeamFortressViewport@@QAEHPBDHPAX@Z,func,"named in client_manual.csv; ScoreInfo HOOK_MESSAGE handler inside the viewport window, same size as ours (150) (added by an agent)"
+100A9E80,?MsgFunc_ShowTextWindow@TeamFortressViewport@@QAEHPBDHPAX@Z,func,"named in client_manual.csv; viewport message handler inside the viewport window, same size as ours (270) (added by an agent)"
+100A9FD0,?MsgFunc_TeamInfo@TeamFortressViewport@@QAEHPBDHPAX@Z,func,"named in client_manual.csv; TeamInfo handler inside the viewport window, same size as ours (97) (added by an agent)"
+100AA0D0,?MsgFunc_TeamScore@TeamFortressViewport@@QAEHPBDHPAX@Z,func,"named in client_manual.csv; TeamScore handler inside the viewport window, same size as ours (155) (added by an agent)"
+100AA170,?MsgFunc_VGUIMenu@TeamFortressViewport@@QAEHPBDHPAX@Z,func,named in client_manual.csv; VGUIMenu handler inside the viewport window between TeamScore and ValClass in name order
+100AA2B0,?MsgFunc_ValClass@TeamFortressViewport@@QAEHPBDHPAX@Z,func,"named in client_manual.csv; ValClass handler inside the viewport window, same size as ours (71) (added by an agent)"
 100AA620,?SetNextMenu@CMenuPanel@@QAEXPAV1@@Z,func,"named by reference bytes; inline CMenuPanel method emitted in the viewport window between SetCurrentMenu and ShowCommandMenu, same size as ours (41) (added by an agent)"
 100AAE50,?actionPerformed@CMenuHandler_ToggleCvar@@UAEXPAVPanel@vgui@@@Z,func,"named by reference bytes; inline handler emitted in the viewport window, same size as ours (44) (added by an agent)"
 100A3DF0,??0CMenuHandler_StringCommand@@QAE@PAD@Z,func,"named by reference bytes; inline constructor emitted in the viewport window in name order after ??0BuildButton, same size as ours (56) (added by an agent)"
@@ -287,23 +241,65 @@ va,name,kind,evidence
 100A3E30,??0DetpackButton@@QAE@HPBDHHHH@Z,func,"inline constructor: CommandButton(..., false) then the int member at +0x130; first of three identical ctors between ??0CMenuHandler_StringCommand and ??0MenuSeparator in name order (Detpack < Disguise < Feign) (added by an agent)"
 100A3E70,??0DisguiseButton@@QAE@HPBDHHHH@Z,func,"inline constructor: CommandButton(..., false) then the int member at +0x130; second of three identical ctors between ??0CMenuHandler_StringCommand and ??0MenuSeparator in name order (added by an agent)"
 100A3EB0,??0FeignButton@@QAE@HPBDHHHH@Z,func,"inline constructor: CommandButton(..., false) then the int member at +0x130; third of three identical ctors between ??0CMenuHandler_StringCommand and ??0MenuSeparator in name order (added by an agent)"
+10049A20,?guess_PressDigit@CPhone@@QAEXH@Z,func,plays phone/tone_zero..nine.wav and appends the digit; called by CPhone::ActionSignal cases 1-10
+1003E0B0,?guess_MsgBoard@@YAHPBDHPAX@Z,func,"hooked as ""Board"" by guess_BoardInit (1003E1E0); reads gViewPort->guess_m_pVGUIBillboard (added by an agent)"
 100309E0,??0CSaveLoad@@QAE@XZ,func,stores the CSaveLoad vftable; called by the viewport after new(0x184); gfx/vgui/save_load.tga
 100314A0,?ActionSignal@CSaveLoad@@QAEXH@Z,func,called by CSaveLoadHandler_Command::actionPerformed (100327C0); cofload/unfreezesave commands
 10031C10,?guess_MsgSaveLoad@@YAHPBDHPAX@Z,func,hooked for the SaveLoad user message in guess_SaveLoadInit (10032320)
 10031E90,?guess_ReadSlot@CSaveLoad@@QAEXH@Z,func,called five times by guess_UpdateSlots with 1-5; %ssaveinfo%i.cof
 10032340,?guess_WriteSaveInfo@CSaveLoad@@QAEXPBD@Z,func,called by ActionSignal with saveinfo1.cof-saveinfo5.cof; Creating save directory
+1003D850,?ActionSignal@CAnimalStatue@@QAEXH@Z,func,"string ""Unknown AnimalStatue ActionSignal %i.""; called by CAnimalStatueHandler_Command::actionPerformed (1003DBC0) (added by an agent)"
+10045710,??0CKeypad@@QAE@XZ,func,stores the CKeypad vftable; loads gfx/vgui/640_panelback.tga and creates CKeypadHandler_Command objects
+10046AC0,?paintBackground@CKeypad@@MAEXXZ,func,"CKeypad vftable slot 111 (paintBackground), tail call to Panel::paintBackground (added by an agent)"
+1003EEF0,?ActionSignal@CComputer@@QAEXH@Z,func,"string ""Unknown Computer ActionSignal %i.""; called by CComputerHandler_Command::actionPerformed (1003F390) (added by an agent)"
+1003F070,?guess_MsgComputer@@YAHPBDHPAX@Z,func,"hooked as ""Computer"" by guess_ComputerInit (1003F370); reads gViewPort->guess_m_pComputer (added by an agent)"
+1003F4B0,?solve@CComputer@@MAEXXZ,func,"CComputer vtable slot 110 (solve), ends in Panel::solve (added by an agent)"
 1002BCF0,?ActionSignal@CVGUIExtraMenu@@QAEXH@Z,func,called by CVGUIExtraMenuHandler_Command::actionPerformed (1002BE20); opens the donate/soundtrack/facebook web pages
 10035B60,?setVisible@CUnlockables@@UAEX_N@Z,func,vtable slot 9 (setVisible) of CUnlockables
+10046AD0,??0CNoteDocument@@QAE@HHHHHH@Z,func,"stores the CNoteDocument vftable, creates CNoteDocumentHandler_Command objects and the notecancel CImageLabel (added by an agent)"
+10047150,?guess_CountLines@CNoteDocument@@QAEHXZ,func,opens /notes/<text of the page> and returns the number of lines; called by the two line scroll functions before wrapping guess_m_iLine
+10047550,?guess_MsgNoteDoc@@YAHPBDHPAX@Z,func,hooked by guess_NoteDocInit with the string NoteDoc
+10048430,?guess_NextLine@CNoteDocument@@QAEXXZ,func,increments guess_m_iLine and wraps to 1; CNoteDocument::ActionSignal case 2
+100487D0,?guess_PrevLine@CNoteDocument@@QAEXXZ,func,decrements guess_m_iLine and wraps to the line count; CNoteDocument::ActionSignal case 1
+10048C50,?guess_ReadLine@CNoteDocument@@QAEXXZ,func,reads line guess_m_iLine of the page text file; called by guess_SetPage
+10048F10,?paint@CNoteDocument@@MAEXXZ,func,"CNoteDocument vftable slot 112 (paint), ends with Panel::paint (added by an agent)"
+10049020,?paintBackground@CNoteDocument@@MAEXXZ,func,"CNoteDocument vftable slot 111 (paintBackground), tail call to Panel::paintBackground (added by an agent)"
+10049030,?setVisible@CNoteDocument@@UAEX_N@Z,func,"CNoteDocument vftable slot 9 (setVisible), tail call to Panel::setVisible (added by an agent)"
+10040280,?ActionSignal@CDifficulty@@QAEXH@Z,func,"strings ""campaign %s"", ""skillset 1""-""skillset 4"", ""closegame""; called by CDifficultyHandler_Command::actionPerformed (10040580) (added by an agent)"
+10048720,?guess_NextPage@CNoteDocument@@QAEXXZ,func,switches guess_m_iPage 1-4 by the image names and calls guess_SetPage; unreferenced function between guess_NextLine and guess_NoteDocInit
+10071D80,?guess_AverageFPS@CHud@@QAEHH@Z,func,"CHud method called only by CHud::Redraw on maps/video_stress_test.bsp; keeps 50 samples at gHUD+0x2AD4 with the count at +0x2C60 and returns their average, stored into +0x2AC4 for the FPS is %i with an average of %i message (added by an agent)"
+1002AFB0,?ActionSignal@CDocuments@@QAEXH@Z,func,"string ""recalldocument %i""; called by CDocumentsHandler_Command::actionPerformed (1002B130) (added by an agent)"
+10072480,?guess_DrawNewFade@CHud@@QAEXM@Z,func,CHud method without callers in the hud_redraw window (ret 4: one unused argument); draws a full screen quad colored by the NewFade members gHUD+0x2938..0x2959 behind gl.IsGLAllowed
 1002C390,??0CGameMenu@@QAE@XZ,func,stores the CGameMenu vftable; called by the viewport after new(0xc748); gfx/vgui/menu_logo.tga
 1002D8D0,?ActionSignal@CGameMenu@@QAEXH@Z,func,called by CGameMenuHandler_Command::actionPerformed (1002EBC0); optionshack commands
 1002E6C0,?guess_LoadCampaigns@CGameMenu@@QAEXXZ,func,"called by ActionSignal case 3; *.custom search, calls guess_ParseCampaign (1002E340) (added by an agent)"
 1002EA30,?guess_ResetButtonPositions@CGameMenu@@QAEXXZ,func,called by setVisible and solve; setPos of the ten menu pictures
+10048AA0,?guess_PrevPage@CNoteDocument@@QAEXXZ,func,switches guess_m_iPage 1-4 to the previous page with an image and calls guess_SetPage; unreferenced function between guess_PrevLine and guess_SetPage
+1001E5D0,?Init@CHudBase@@UAEHXZ,func,"restore: was MATCHED 100% in cl_dll/cdll_int; the 3-byte return-0 body is folded with CommandButton::IsNotValid, which bytematch proposed from guess_AmmoInventory (added by an agent)"
+1001E420,?ActionSignal@CAmmoInventory@@QAEXH@Z,func,"strings ""dropammo 1""-""dropammo 6"", inventory_toggle.wav; called by CAmmoInventoryHandler_Command::actionPerformed (1001E950) (added by an agent)"
+1001E6A0,?guess_MsgAmmoInv@@YAHPBDHPAX@Z,func,"hooked as ""AmmoInv"" by guess_AmmoInvInit (1001E930); reads gViewPort->guess_m_pAmmoInventory (added by an agent)"
+1001EA70,?setVisible@CAmmoInventory@@UAEX_N@Z,func,"CAmmoInventory vtable slot 9 (setVisible), ends in Panel::setVisible (added by an agent)"
+1004AAD0,?guess_GetPassword@CUserDocument@@QAEPBDH@Z,func,returns the passwords apple45..jillanddavid for 1-8; CUserDocument::paint calls it when guess_m_iType is 2 (640_pass%i.tga)
+1004AB60,?guess_GetUsername@CUserDocument@@QAEPBDH@Z,func,returns the user names davidspc..dorrardavid for 1-8; CUserDocument::paint calls it when guess_m_iType is 1 (640_user%i.tga)
+1004AF70,?paintBackground@CUserDocument@@MAEXXZ,func,"CUserDocument vftable slot 111 (paintBackground), tail call to Panel::paintBackground (added by an agent)"
+1003E340,?paintBackground@CVGUIBillboard@@MAEXXZ,func,"CVGUIBillboard vtable slot 111 (paintBackground), jmp Panel::paintBackground (added by an agent)"
 1001F2B0,??0CClothesMenu@@QAE@XZ,func,stores the CClothesMenu vftable; called by the viewport after new(0xf8); Close/Reset buttons
 1001F9D0,?ActionSignal@CClothesMenu@@QAEXH@Z,func,called by CClothesMenuHandler_Command::actionPerformed (10020370); Unknown clothesmenu ActionSignal %i.
 10020E20,??0CCoopStats@@QAE@XZ,func,stores the CCoopStats vftable; called by the viewport after new(0x190); STATS - CAMPAIGN WILL AUTORESTART SOON
 100227C0,?SetEndingOrUnlockables@@YAXH_N00@Z,func,same code as CBasePlayer::SetEndingOrUnlockables of hl.dll (1.55 PDB): scriptsettings.dat/alt.dat and the same obfuscated lines
 10023590,?guess_MsgBeatCoop@@YAHPBDHPAX@Z,func,hooked for the BeatCoop user message in guess_CoopStatsInit (10023E40)
 100235B0,?guess_MsgCoopStats@@YAHPBDHPAX@Z,func,hooked for the CoopStats user message in guess_CoopStatsInit (10023E40)
+1006C5A0,?UpdateBeams@@YAXXZ,func,"Game_AddObjects tail-jumps here when pBeam and pBeam2 are set, as hl_objects.cpp Game_AddObjects calls UpdateBeams; body follows UpdateBeams (GetLocalPlayer, GetViewAngles, HUD_GetLastOrg, VectorMA 2048, EV_PlayerTrace, pBeam/pBeam2 target and die)"
+10043130,?ActionSignal@CRECBInventory@@QAEXH@Z,func,string Unknown Inventory ActionSignal; called by CRECBInventoryHandler_Command::actionPerformed (added by an agent)
+100439D0,?guess_DoAction@CRECBInventory@@QAEXH@Z,func,"runs guess_m_iAction (inventoryequip, inventorycombine, inventoryuse, inventorydrop, quickselset, inventorydualwield) on a slot; unreferenced function between guess_Reset and Initialize (added by an agent)"
+10043EA0,?Initialize@CRECBInventory@@QAEXXZ,func,called by TeamFortressViewport::Initialize like the other panels' Initialize; resets the quick slot pictures (added by an agent)
+100441A0,?guess_MsgQSlotClear@@YAHPBDHPAX@Z,func,hooked by guess_QSlotInit with the string QSlotClear (added by an agent)
+100443C0,?guess_MsgQSlotUpdate@@YAHPBDHPAX@Z,func,hooked by guess_QSlotInit with the string QSlotUpdate (added by an agent)
+10044670,?guess_SelectItem@CRECBInventory@@QAEXH@Z,func,"CRECBInventory::ActionSignal cases 1-6 (item slots); opens the item menu, sends inventorycombine and inventorydualwield (added by an agent)"
+10044A30,?guess_Update@CRECBInventory@@QAEXXZ,func,called by the InventChck message handler and Initialize; lays out the panel for cof_ maps (640_inventory_p.tga) or the others (added by an agent)
+10044EF0,?setVisible@CRECBInventory@@UAEX_N@Z,func,"CRECBInventory vftable slot 9 (setVisible), ends with Panel::setVisible (added by an agent)"
+100451F0,?solve@CRECBInventory@@MAEXXZ,func,"CRECBInventory vftable slot 110 (solve), ends with Panel::solve (added by an agent)"
+1055B5C8,_guess_iDucking,data,int set to 1 by PM_PlayerMove (100157C7) while pmove->bInDuck or FL_DUCKING and cleared otherwise; PM_PlayerMove is its only reference; name is a guess
 100AAEB0,?cursorEntered@CViewPortInputHandler@@UAEXPAVPanel@vgui@@@Z,func,"inline InputSignal handler of vgui_TeamFortressViewport (.cpp/.h), position in the name ordered tail of the viewport object: ret 4 after cursorEntered@CMenuHandler_PopupSubMenuInput (added by an agent)"
 100AAEC0,?cursorEntered@SpectToggleButton@@UAEXPAVPanel@vgui@@@Z,func,"inline InputSignal handler of vgui_TeamFortressViewport (.cpp/.h), position in the name ordered tail of the viewport object: 14 bytes, CommandButton::cursorEntered thunk, same size as ours (added by an agent)"
 100AAED0,?cursorEntered@ToggleCommandButton@@UAEXPAVPanel@vgui@@@Z,func,"inline InputSignal handler of vgui_TeamFortressViewport (.cpp/.h), position in the name ordered tail of the viewport object: 14 bytes, CommandButton::cursorEntered thunk, same size as ours (added by an agent)"
@@ -336,9 +332,34 @@ va,name,kind,evidence
 100AB0E0,?mouseDoublePressed@SpectToggleButton@@UAEXW4MouseCode@vgui@@PAVPanel@3@@Z,func,"inline InputSignal handler of vgui_TeamFortressViewport (.cpp/.h), position in the name ordered tail of the viewport object: 24 empty handlers between cursorMoved@CDragNDropHandler and mousePressed@CDragNDropHandler, groups of 4 (ret 0xC, ret 4, ret 8...) in name order (added by an agent)"
 100AB0F0,?mouseDoublePressed@ToggleCommandButton@@UAEXW4MouseCode@vgui@@PAVPanel@3@@Z,func,"inline InputSignal handler of vgui_TeamFortressViewport (.cpp/.h), position in the name ordered tail of the viewport object: 24 empty handlers between cursorMoved@CDragNDropHandler and mousePressed@CDragNDropHandler, groups of 4 (ret 0xC, ret 4, ret 8...) in name order (added by an agent)"
 100AB170,?mousePressed@CMenuHandler_PopupSubMenuInput@@UAEXW4MouseCode@vgui@@PAVPanel@3@@Z,func,"inline InputSignal handler of vgui_TeamFortressViewport (.cpp/.h), position in the name ordered tail of the viewport object: ret 8 between mousePressed@CDragNDropHandler and mousePressed@CViewPortInputHandler (added by an agent)"
+100AB1A0,?mousePressed@SpectToggleButton@@UAEXW4MouseCode@vgui@@PAVPanel@3@@Z,func,"inline InputSignal handler of vgui_TeamFortressViewport (.cpp/.h), position in the name ordered tail of the viewport object: 21 bytes after mousePressed@CViewPortInputHandler, same size as ours (added by an agent)"
+100AB1C0,?mousePressed@ToggleCommandButton@@UAEXW4MouseCode@vgui@@PAVPanel@3@@Z,func,"inline InputSignal handler of vgui_TeamFortressViewport (.cpp/.h), position in the name ordered tail of the viewport object: 21 bytes, same size as ours (added by an agent)"
+100AB210,?mouseReleased@CMenuHandler_PopupSubMenuInput@@UAEXW4MouseCode@vgui@@PAVPanel@3@@Z,func,"inline InputSignal handler of vgui_TeamFortressViewport (.cpp/.h), position in the name ordered tail of the viewport object: 8 empty handlers (ret 8) between the mouseReleased of CDragNDropHandler (100AB1E0) and paint@CPickupMessage (added by an agent)"
+100AB220,?mouseReleased@CViewPortInputHandler@@UAEXW4MouseCode@vgui@@PAVPanel@3@@Z,func,"inline InputSignal handler of vgui_TeamFortressViewport (.cpp/.h), position in the name ordered tail of the viewport object: 8 empty handlers (ret 8) between the mouseReleased of CDragNDropHandler (100AB1E0) and paint@CPickupMessage (added by an agent)"
+100AB230,?mouseReleased@SpectToggleButton@@UAEXW4MouseCode@vgui@@PAVPanel@3@@Z,func,"inline InputSignal handler of vgui_TeamFortressViewport (.cpp/.h), position in the name ordered tail of the viewport object: 8 empty handlers (ret 8) between the mouseReleased of CDragNDropHandler (100AB1E0) and paint@CPickupMessage (added by an agent)"
+100AB240,?mouseReleased@ToggleCommandButton@@UAEXW4MouseCode@vgui@@PAVPanel@3@@Z,func,"inline InputSignal handler of vgui_TeamFortressViewport (.cpp/.h), position in the name ordered tail of the viewport object: 8 empty handlers (ret 8) between the mouseReleased of CDragNDropHandler (100AB1E0) and paint@CPickupMessage (added by an agent)"
+100AB250,?mouseWheeled@CMenuHandler_PopupSubMenuInput@@UAEXHPAVPanel@vgui@@@Z,func,"inline InputSignal handler of vgui_TeamFortressViewport (.cpp/.h), position in the name ordered tail of the viewport object: 8 empty handlers (ret 8) between the mouseReleased of CDragNDropHandler (100AB1E0) and paint@CPickupMessage (added by an agent)"
+100AB260,?mouseWheeled@CViewPortInputHandler@@UAEXHPAVPanel@vgui@@@Z,func,"inline InputSignal handler of vgui_TeamFortressViewport (.cpp/.h), position in the name ordered tail of the viewport object: 8 empty handlers (ret 8) between the mouseReleased of CDragNDropHandler (100AB1E0) and paint@CPickupMessage (added by an agent)"
+100AB270,?mouseWheeled@SpectToggleButton@@UAEXHPAVPanel@vgui@@@Z,func,"inline InputSignal handler of vgui_TeamFortressViewport (.cpp/.h), position in the name ordered tail of the viewport object: 8 empty handlers (ret 8) between the mouseReleased of CDragNDropHandler (100AB1E0) and paint@CPickupMessage (added by an agent)"
+100AB280,?mouseWheeled@ToggleCommandButton@@UAEXHPAVPanel@vgui@@@Z,func,"inline InputSignal handler of vgui_TeamFortressViewport (.cpp/.h), position in the name ordered tail of the viewport object: 8 empty handlers (ret 8) between the mouseReleased of CDragNDropHandler (100AB1E0) and paint@CPickupMessage (added by an agent)"
+100AB510,?paint@CScreenMessage@@MAEXXZ,func,"named in the map; paint of the buz screen message panel in the viewport window, same size as ours (248) (added by an agent)"
+100AB610,?paint@CScrollingMessage@@MAEXXZ,func,"named in the map; paint of the scrolling message panel in the viewport window, same size as ours (144) (added by an agent)"
+100AB6A0,?paint@ShadowTextPanel@@UAEXXZ,func,"named in the map; inline paint of vgui_shadowtext.h emitted in the viewport window, same size as ours (230) (added by an agent)"
+100AB790,?paint@SpectButton@@UAEXXZ,func,"inline paint of the viewport header between paint@ShadowTextPanel and paint@SpectToggleButton in name order, 77 bytes like ours (added by an agent)"
 100AB7E0,?paint@SpectToggleButton@@UAEXXZ,func,"named in the map; inline paint of the viewport header, same size as ours (134) (added by an agent)"
 100AB870,?paint@TeamOnlyCommandButton@@UAEXXZ,func,"inline paint of the viewport header between paint@SpectToggleButton and paint@ToggleCommandButton in name order, 77 bytes like ours (added by an agent)"
 100AB8C0,?paint@ToggleCommandButton@@UAEXXZ,func,"named in the map; inline paint of the viewport header, same size as ours (100) (added by an agent)"
+100AB930,?paintBackground@SpectButton@@UAEXXZ,func,"inline paintBackground of the viewport header after paint@ToggleCommandButton in name order, 67 bytes like ours (added by an agent)"
+100AB980,?paintBackground@SpectToggleButton@@UAEXXZ,func,"inline paintBackground of the viewport header, second of the 67 byte group in name order (added by an agent)"
+100AB9D0,?paintBackground@TeamFortressViewport@@UAEXXZ,func,"virtual paintBackground of the viewport, between paintBackground@SpectToggleButton and paintBackground@TeamOnlyCommandButton in name order (Cry of Fear changed it: 384 bytes) (added by an agent)"
+100ABB50,?paintBackground@TeamOnlyCommandButton@@UAEXXZ,func,"last function of the viewport object (67 bytes, isArmed then the armed colors like ours) before the CTeamMenuPanel constructor; the old position name ??0CMenuPanel@@QAE@HHHHHH@Z of vgui_teammenu was wrong (22%) (added by an agent)"
+1055B5C4,_iClientResetMaterials,data,int that PM_PlayStepSound compares with 1 before it clears bTextureTypeInit and calls PM_InitTextureTypes; the same code in hl.dll uses iClientResetMaterials (1.55 PDB)
+1055B5CC,_guess_iStepPunchRun,data,"int set by PM_PlayStepSound in multiplayer to 1 when IN_RUN and flag 1<<18 are set, else 0; V_CalcNormalRefdef then punches the view by -3, 1 instead of -0.75, 0.5 (the singleplayer PM_ViewPunch values for a run step); name is a guess"
+1055B5D0,_guess_iStepPunch,data,int set to 1 by PM_PlayStepSound in multiplayer; V_CalcNormalRefdef clears it and calls the view punch for the step; name is a guess
+100862B0,?WaterLandingEffect@@YAXPAUcl_drip@@@Z,func,"called from ProcessRain for drips with landInWater 1, Paranoia WaterLandingEffect body (FX limit strings), fx type 0 drawn with waterring.spr (added by an agent)"
+10085600,?guess_FallingDripEffect@@YAXVVector@@M@Z,func,called from CHud::Think with the local player origin; creates rain fx type 3 that DrawFXObjects drops with ambience/drip.wav; no name in any reference (added by an agent)
+100858A0,?ProcessFXObjects@@YAXXZ,func,"Paranoia ProcessFXObjects body (string Rain error: failed to allocate memory block for fx objects), called from HUD_DrawTransparentTriangles before ProcessRain (added by an agent)"
+100860E0,?ResetRain@@YAXXZ,func,"Paranoia ResetRain: clears both MemBlocks, zeroes the counters and tail-calls InitRain; called from CHud::VidInit (added by an agent)"
 10026550,??0CCredits@@QAE@XZ,func,stores the CCredits vftable; called by the viewport after new(0x7dc); Statistics and grade (added by an agent)
 10026CD0,?guess_CountLines@CCredits@@QAEHXZ,func,"called by guess_MsgCredits, result stored to +0x7c0 (line count); getline loop on the file at +0x2c0 (added by an agent)"
 10026E70,?guess_MsgCredits@@YAHPBDHPAX@Z,func,hooked for the Credits user message in guess_CreditsInit (10029450 area) (added by an agent)
@@ -346,8 +367,17 @@ va,name,kind,evidence
 10029180,?guess_ShowUnlock@CCredits@@QAEXHPBDHPADH@Z,func,called by solve with the Unlocked: texts and the unlock models (added by an agent)
 10029420,?guess_va@@YAPADPBDZZ,func,"vsprintf into a static buffer, called with the stat formats by guess_MsgCredits and guess_MsgCoopStats (added by an agent)"
 100294C0,?solve@CCredits@@MAEXXZ,func,vtable slot 110 (solve) of CCredits (added by an agent)
+10092390,?DrawFXObjects@@YAXXZ,func,"Paranoia DrawFXObjects: sprites/waterring.spr, walks g_fxArray, called from HUD_DrawTransparentTriangles after DrawRain (added by an agent)"
 100A95B0,?InputSignalHideCommandMenu@TeamFortressViewport@@QAEXXZ,func,follows InputPlayerSpecial in name order; tests m_pCurrentCommandMenu (+0xc4) and compares the time with m_flMenuOpenTime like the HLSDK InputSignalHideCommandMenu; Ghidra had it inside __CmdFunc_CloseCommandMenu
 100AB1E0,?mouseReleased@CDragNDropHandler@@UAEXW4MouseCode@vgui@@PAVPanel@3@@Z,func,"CDragNDropHandler vtable slot of mouseReleased; clears m_bDragging (+8) and calls the panel's setDragged(false) through m_pPanel (+4), as the HLSDK CDragNDropHandler::mouseReleased"
+1003BC00,?guess_UpdateOnPlayerInfo@CHUDControl@@QAEXXZ,func,TeamFortressViewport::UpdateOnPlayerInfo tail-jumps here with guess_m_pHUDControl (+0x142c) in ecx; the body is ret 0 (empty thiscall); between guess_ShowSMSIcon and paint in the CHUDControl object; name is a guess
+100641D0,?guess_LoadFaceTexture@@YAXXZ,func,costume face textures (models/costumes/*_Face.tga) by gHUD.guess_m_iClothesState; flag 104D26D2 cleared with the other costume flags by guess_SetCustomHoodie (added by an agent)
+10064340,?guess_LoadHoodieTexture@@YAX_N@Z,func,"costume hoodie textures (models/costumes/*_Hoodie.tga, sv_custom_hoodie); flag 104D26C5 cleared by guess_SetCustomHoodie (added by an agent)"
+10064680,?guess_LoadIntroductionTexture@@YAXH@Z,func,gfx/vgui/introductions/<language>/*.TGA by cof_subtitlelanguage (added by an agent)
+10064A40,?guess_LoadPoliceSleeveTexture@@YAXXZ,func,gHUD.guess_m_szSleeveTexture or police/police_sleeve.tga (added by an agent)
+10064AC0,?guess_CaptureScreenTexture@@YAXHH@Z,func,256x256 texture filled with glCopyTexImage2D from the screen centre; called from GL_DrawPoints (added by an agent)
+10064C10,?guess_CaptureBlurTexture@@YAXHH@Z,func,same as guess_CaptureScreenTexture with its own texture; called from CHud::DrawBlurTest and GL_DrawPoints (added by an agent)
+10064EC0,?guess_LoadJeansTexture@@YAXXZ,func,costume jeans textures (models/costumes/*_Jeans.tga); flag 104D26D1 cleared by guess_SetCustomHoodie (added by an agent)
+10064FF0,?guess_LoadWaterLoTexture@@YAXXZ,func,"textures/water_lo.tga loader, same pattern as the costume texture loaders; unreferenced, missing from the Ghidra function list (added by an agent)"
 100327D0,?solve@CSaveLoad@@MAEXXZ,func,"CSaveLoad vtable slot 110 (solve) points here; the body is only jmp Panel::solve, the inline solve of the class header"
-10092390,?DrawFXObjects@@YAXXZ,func,"Paranoia DrawFXObjects: sprites/waterring.spr, walks g_fxArray, called from HUD_DrawTransparentTriangles after DrawRain (added by an agent)"
 101BE5F8,?gl@@3VGLManager@@A,data,CHud::Init passes it in ecx to GLManager::Init (1006CF78) and CHud::VidInit to GLManager::VidInit; GLManager gl in Paranoia glmanager.cpp
