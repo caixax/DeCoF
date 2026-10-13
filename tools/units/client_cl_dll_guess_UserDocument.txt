@@ -1,0 +1,12 @@
+??0CUserDocument@@QAE@HHHHHH@Z
+?ActionSignal@CUserDocument@@QAEXH@Z
+?Initialize@CUserDocument@@QAEXXZ
+?KeyInput@CUserDocument@@QAEHHHPBD@Z
+?guess_MsgUserDoc@@YAHPBDHPAX@Z
+?guess_UserDocInit@@YAXXZ
+?actionPerformed@CUserDocumentHandler_Command@@UAEXPAVPanel@vgui@@@Z
+?paint@CUserDocument@@MAEXXZ
+?setVisible@CUserDocument@@UAEX_N@Z
+?guess_GetPassword@CUserDocument@@QAEPBDH@Z
+?guess_GetUsername@CUserDocument@@QAEPBDH@Z
+?paintBackground@CUserDocument@@MAEXXZ

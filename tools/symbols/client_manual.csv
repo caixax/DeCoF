@@ -240,3 +240,32 @@ va,name,kind,evidence
 1055B5D0,_guess_iStepPunch,data,int set to 1 by PM_PlayStepSound in multiplayer; V_CalcNormalRefdef clears it and calls the view punch for the step; name is a guess
 100ABB50,?paintBackground@TeamOnlyCommandButton@@UAEXXZ,func,"last function of the viewport object (67 bytes, isArmed then the armed colors like ours) before the CTeamMenuPanel constructor; the old position name ??0CMenuPanel@@QAE@HHHHHH@Z of vgui_teammenu was wrong (22%) (added by an agent)"
 1003BC00,?guess_UpdateOnPlayerInfo@CHUDControl@@QAEXXZ,func,TeamFortressViewport::UpdateOnPlayerInfo tail-jumps here with guess_m_pHUDControl (+0x142c) in ecx; the body is ret 0 (empty thiscall); between guess_ShowSMSIcon and paint in the CHUDControl object; name is a guess
+1004B210,?ActionSignal@CYesno@@QAEXH@Z,func,strings yesnoactivate/yesnono and Unknown Yesno ActionSignal; called by CYesnoHandler_Command::actionPerformed
+1004A5E0,?ActionSignal@CSave@@QAEXH@Z,func,strings cofsave 19573 and Unknown Save ActionSignal; called by CSaveHandler_Command::actionPerformed
+1004A1B0,?ActionSignal@CPuzzleBar@@QAEXH@Z,func,strings boilercheck 1-5; called by CPuzzleBarHandler_Command::actionPerformed
+10049A20,?guess_PressDigit@CPhone@@QAEXH@Z,func,plays phone/tone_zero..nine.wav and appends the digit; called by CPhone::ActionSignal cases 1-10
+10045710,??0CKeypad@@QAE@XZ,func,stores the CKeypad vftable; loads gfx/vgui/640_panelback.tga and creates CKeypadHandler_Command objects
+10046AC0,?paintBackground@CKeypad@@MAEXXZ,func,"CKeypad vftable slot 111 (paintBackground), tail call to Panel::paintBackground (added by an agent)"
+10046AD0,??0CNoteDocument@@QAE@HHHHHH@Z,func,"stores the CNoteDocument vftable, creates CNoteDocumentHandler_Command objects and the notecancel CImageLabel (added by an agent)"
+10047150,?guess_CountLines@CNoteDocument@@QAEHXZ,func,opens /notes/<text of the page> and returns the number of lines; called by the two line scroll functions before wrapping guess_m_iLine
+10047550,?guess_MsgNoteDoc@@YAHPBDHPAX@Z,func,hooked by guess_NoteDocInit with the string NoteDoc
+10048430,?guess_NextLine@CNoteDocument@@QAEXXZ,func,increments guess_m_iLine and wraps to 1; CNoteDocument::ActionSignal case 2
+100487D0,?guess_PrevLine@CNoteDocument@@QAEXXZ,func,decrements guess_m_iLine and wraps to the line count; CNoteDocument::ActionSignal case 1
+10048C50,?guess_ReadLine@CNoteDocument@@QAEXXZ,func,reads line guess_m_iLine of the page text file; called by guess_SetPage
+10048F10,?paint@CNoteDocument@@MAEXXZ,func,"CNoteDocument vftable slot 112 (paint), ends with Panel::paint (added by an agent)"
+10049020,?paintBackground@CNoteDocument@@MAEXXZ,func,"CNoteDocument vftable slot 111 (paintBackground), tail call to Panel::paintBackground (added by an agent)"
+10049030,?setVisible@CNoteDocument@@UAEX_N@Z,func,"CNoteDocument vftable slot 9 (setVisible), tail call to Panel::setVisible (added by an agent)"
+10048720,?guess_NextPage@CNoteDocument@@QAEXXZ,func,switches guess_m_iPage 1-4 by the image names and calls guess_SetPage; unreferenced function between guess_NextLine and guess_NoteDocInit
+10048AA0,?guess_PrevPage@CNoteDocument@@QAEXXZ,func,switches guess_m_iPage 1-4 to the previous page with an image and calls guess_SetPage; unreferenced function between guess_PrevLine and guess_SetPage
+1004AAD0,?guess_GetPassword@CUserDocument@@QAEPBDH@Z,func,returns the passwords apple45..jillanddavid for 1-8; CUserDocument::paint calls it when guess_m_iType is 2 (640_pass%i.tga)
+1004AB60,?guess_GetUsername@CUserDocument@@QAEPBDH@Z,func,returns the user names davidspc..dorrardavid for 1-8; CUserDocument::paint calls it when guess_m_iType is 1 (640_user%i.tga)
+1004AF70,?paintBackground@CUserDocument@@MAEXXZ,func,"CUserDocument vftable slot 111 (paintBackground), tail call to Panel::paintBackground (added by an agent)"
+10043130,?ActionSignal@CRECBInventory@@QAEXH@Z,func,string Unknown Inventory ActionSignal; called by CRECBInventoryHandler_Command::actionPerformed (added by an agent)
+100439D0,?guess_DoAction@CRECBInventory@@QAEXH@Z,func,"runs guess_m_iAction (inventoryequip, inventorycombine, inventoryuse, inventorydrop, quickselset, inventorydualwield) on a slot; unreferenced function between guess_Reset and Initialize (added by an agent)"
+10043EA0,?Initialize@CRECBInventory@@QAEXXZ,func,called by TeamFortressViewport::Initialize like the other panels' Initialize; resets the quick slot pictures (added by an agent)
+100441A0,?guess_MsgQSlotClear@@YAHPBDHPAX@Z,func,hooked by guess_QSlotInit with the string QSlotClear (added by an agent)
+100443C0,?guess_MsgQSlotUpdate@@YAHPBDHPAX@Z,func,hooked by guess_QSlotInit with the string QSlotUpdate (added by an agent)
+10044670,?guess_SelectItem@CRECBInventory@@QAEXH@Z,func,"CRECBInventory::ActionSignal cases 1-6 (item slots); opens the item menu, sends inventorycombine and inventorydualwield (added by an agent)"
+10044A30,?guess_Update@CRECBInventory@@QAEXXZ,func,called by the InventChck message handler and Initialize; lays out the panel for cof_ maps (640_inventory_p.tga) or the others (added by an agent)
+10044EF0,?setVisible@CRECBInventory@@UAEX_N@Z,func,"CRECBInventory vftable slot 9 (setVisible), ends with Panel::setVisible (added by an agent)"
+100451F0,?solve@CRECBInventory@@MAEXXZ,func,"CRECBInventory vftable slot 110 (solve), ends with Panel::solve (added by an agent)"

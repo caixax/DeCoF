@@ -1,0 +1,17 @@
+??0CRECBInventory@@QAE@HHHHHH@Z
+?guess_Reset@CRECBInventory@@QAEXXZ
+?KeyInput@CRECBInventory@@QAEHHHPBD@Z
+?guess_IsCursorOver@CRECBInventory@@QAE_NHHHH@Z
+?guess_MsgInventChck@@YAHPBDHPAX@Z
+?guess_SetAction@CRECBInventory@@QAEXH@Z
+?guess_QSlotInit@@YAXXZ
+?actionPerformed@CRECBInventoryHandler_Command@@UAEXPAVPanel@vgui@@@Z
+?ActionSignal@CRECBInventory@@QAEXH@Z
+?guess_DoAction@CRECBInventory@@QAEXH@Z
+?Initialize@CRECBInventory@@QAEXXZ
+?guess_MsgQSlotClear@@YAHPBDHPAX@Z
+?guess_MsgQSlotUpdate@@YAHPBDHPAX@Z
+?guess_SelectItem@CRECBInventory@@QAEXH@Z
+?guess_Update@CRECBInventory@@QAEXXZ
+?setVisible@CRECBInventory@@UAEX_N@Z
+?solve@CRECBInventory@@MAEXXZ

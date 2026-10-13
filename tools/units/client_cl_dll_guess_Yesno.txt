@@ -1,0 +1,6 @@
+??0CYesno@@QAE@XZ
+?Initialize@CYesno@@QAEXXZ
+?guess_MsgYesNo@@YAHPBDHPAX@Z
+?guess_YesNoInit@@YAXXZ
+?actionPerformed@CYesnoHandler_Command@@UAEXPAVPanel@vgui@@@Z
+?ActionSignal@CYesno@@QAEXH@Z

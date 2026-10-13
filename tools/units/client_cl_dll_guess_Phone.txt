@@ -1,0 +1,11 @@
+??0CPhone@@QAE@XZ
+?ActionSignal@CPhone@@QAEXH@Z
+?guess_Clear@CPhone@@QAEXXZ
+?Initialize@CPhone@@QAEXXZ
+?KeyInput@CPhone@@QAEHHHPBD@Z
+?guess_MsgPhone@@YAHPBDHPAX@Z
+?guess_Dial@CPhone@@QAEXXZ
+?guess_PhoneInit@@YAXXZ
+?actionPerformed@CPhoneHandler_Command@@UAEXPAVPanel@vgui@@@Z
+?setVisible@CPhone@@UAEX_N@Z
+?guess_PressDigit@CPhone@@QAEXH@Z

@@ -105,3 +105,10 @@ The reconstructed source keeps the behavior of the retail 1.6a binaries, includi
 | CGameOver::solve (client guess_GameOver.cpp) | Returns before Panel::solve when there is no local player. | as written |
 | CAmmoInventory (client guess_AmmoInventory.cpp) | setVisible tests the pfnGetLevelName pointer, which is never null; the panel is never created, so the AmmoInv message does nothing. | as written |
 | CBossBar (client guess_BossBar.cpp) | Every bar is placed at y = image height. | as written |
+| CSave (client guess_Save.cpp) | The constructor's error text names 640_panelback.tga instead of 640_savegame.tga. | the string |
+| guess_MsgYesNo (client guess_Yesno.cpp) | Calls vgui_LoadTGA twice and leaks the first image. | as written |
+| CPhone (client guess_Phone.cpp) | setText( guess_m_szNumber, strlen( ... ) ) resolves to the variadic setText( fmt, ... ), so the dialled number is used as a format string. | as written |
+| CKeypad (client guess_Keypad.cpp) | The destructor deletes 3 of its 5 images. | as written |
+| CNoteDocument (client guess_NoteDocument.cpp) | guess_ClearString clears only the first character; "languages/norwegian/" plus the page name overflows the 16-byte text arrays; guess_SetPage uses an uninitialised image when the page is not 1 to 4; guess_PrevPage case 1 falls through and case 2 has an extra m_iPage != 1 test; paint calls drawSetTextPos but prints nothing. | as written |
+| CRECBInventory (client guess_RECBInventory.cpp) | A successful combine resets guess_m_iDualWield instead of guess_m_iCombine; guess_IsCursorOver uses the width for both axes; solve allocates a new LineBorder every frame; Initialize clears each quick-slot weapon string before looking up its picture, so the picture is never loaded; guess_DoAction is never called. | as written |
+| ScorePanel (client vgui_ScorePanel.cpp) | RebuildTeams: the inner for ( int j ... ) shadows the outer j, so the empty-slot search result is ignored; Update returns right after GetAllPlayersInfo, so the rest of the scoreboard code is dead. | as written |
