@@ -14,3 +14,4 @@
 ?MsgFunc_Health@CHudHealth@@QAEHPBDHPAX@Z
 ?MsgFunc_Syringe@CHudHealth@@QAEHPBDHPAX@Z
 ?__MsgFunc_AdLib@@YAHPBDHPAX@Z
+?VidInit@CHudHealth@@UAEHXZ

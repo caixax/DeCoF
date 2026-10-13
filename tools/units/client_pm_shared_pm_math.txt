@@ -21,3 +21,4 @@ __VectorCopy
 _AngleBetweenVectors
 _InterpolateAngles
 _VectorMatrix
+_Distance

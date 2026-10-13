@@ -7,3 +7,5 @@
 ?GetPlayerBan@CVoiceBanMgr@@QAE_NQBD@Z
 ?InternalFindPlayerSquelch@CVoiceBanMgr@@IAEPAVBannedPlayer@1@QBD@Z
 ?SetPlayerBan@CVoiceBanMgr@@QAEXQBD_N@Z
+?AddBannedPlayer@CVoiceBanMgr@@IAEPAVBannedPlayer@1@QBD@Z
+?Term@CVoiceBanMgr@@QAEXXZ

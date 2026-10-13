@@ -1,2 +1,3 @@
 ?ConLog@@YAXPBDZZ
 ?Log@@YAXPBDZZ
+?SetupLogging@@YAXXZ

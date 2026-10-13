@@ -5,3 +5,4 @@ CGameStudioModelRenderer::`scalar_deleting_destructor'
 ?R_StudioInit@@YAXXZ
 ?R_StudioDrawModel@@YAHH@Z
 ??_GCGameStudioModelRenderer@@UAEPAXI@Z
+_HUD_GetStudioModelInterface

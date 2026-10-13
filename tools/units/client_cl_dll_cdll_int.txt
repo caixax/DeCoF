@@ -21,3 +21,4 @@ _Initialize
 ??_GCHudAmmoSecondary@@UAEPAXI@Z
 ??_GCHudHealth@@UAEPAXI@Z
 ?Init@CHudBase@@UAEHXZ
+_HUD_ConnectionlessPacket

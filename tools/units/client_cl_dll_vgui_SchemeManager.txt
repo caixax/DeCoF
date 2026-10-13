@@ -14,3 +14,5 @@
 ?getBorderColor@CSchemeManager@@QAEXHAAH000@Z
 ?getFgArmedColor@CSchemeManager@@QAEXHAAH000@Z
 ?getFgMousedownColor@CSchemeManager@@QAEXHAAH000@Z
+??0CScheme@CSchemeManager@@QAE@XZ
+?getSchemeHandle@CSchemeManager@@QAEHPBD@Z

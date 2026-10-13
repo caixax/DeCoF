@@ -2,3 +2,4 @@
 ?InitHUDData@CHudDeathNotice@@UAEXXZ
 ?MsgFunc_DeathMsg@CHudDeathNotice@@QAEHPBDHPAX@Z
 ?VidInit@CHudDeathNotice@@UAEHXZ
+?GetClientColor@@YAPAMH@Z

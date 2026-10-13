@@ -5,3 +5,4 @@
 ?ScrollTextUp@@YAHXZ
 ?VidInit@CHudSayText@@UAEHXZ
 ?Draw@CHudSayText@@UAEHM@Z
+?EnsureTextFitsInOneLineAndWrapIfHaveTo@CHudSayText@@QAEXH@Z

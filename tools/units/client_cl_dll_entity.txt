@@ -1,2 +1,8 @@
 _HUD_AddEntity
 _HUD_CreateEntities
+_HUD_GetUserEntity
+_HUD_ProcessPlayerState
+_HUD_StudioEvent
+_HUD_TempEntUpdate
+_HUD_TxferLocalOverrides
+_HUD_TxferPredictionData

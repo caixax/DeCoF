@@ -16,3 +16,11 @@
 ?UpdateSpeakerImage@CVoiceStatus@@QAEXPAVLabel@vgui@@H@Z
 ?VidInit@CVoiceStatus@@UAEHXZ
 ?UpdateSpeakerStatus@CVoiceStatus@@QAEXHH@Z
+?CreateEntities@CVoiceStatus@@QAEXXZ
+?IsInSquelchMode@CVoiceStatus@@QAE_NXZ
+?IsPlayerBlocked@CVoiceStatus@@QAE_NH@Z
+?RepositionLabels@CVoiceStatus@@QAEXXZ
+?SetPlayerBlockedState@CVoiceStatus@@QAEXH_N@Z
+?StartSquelchMode@CVoiceStatus@@QAEXXZ
+?StopSquelchMode@CVoiceStatus@@QAEXXZ
+?UpdateServerState@CVoiceStatus@@QAEX_N@Z

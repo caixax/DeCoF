@@ -2,3 +2,12 @@
 ?MsgFunc_KeyedDLight@CHud@@QAAXPBDHPAX@Z
 ?MsgFunc_RainData@CHud@@QAAHPBDHPAX@Z
 ?MsgFunc_SetFog@CHud@@QAAXPBDHPAX@Z
+?MsgFunc_AddShine@CHud@@QAAXPBDHPAX@Z
+?MsgFunc_Concuss@CHud@@QAAHPBDHPAX@Z
+?MsgFunc_GameMode@CHud@@QAAHPBDHPAX@Z
+?MsgFunc_GasMask@CHud@@QAAHPBDHPAX@Z
+?MsgFunc_InitHUD@CHud@@QAAXPBDHPAX@Z
+?MsgFunc_PlayMP3@CHud@@QAAHPBDHPAX@Z
+?MsgFunc_ResetHUD@CHud@@QAAHPBDHPAX@Z
+?MsgFunc_SetSky@CHud@@QAAXPBDHPAX@Z
+?MsgFunc_SpecTank@CHud@@QAAHPBDHPAX@Z

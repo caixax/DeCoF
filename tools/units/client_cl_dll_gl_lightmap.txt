@@ -11,3 +11,4 @@
 ?BumpMarkFaces@@YAXXZ
 ?LightmapSize@@YAHPAUmsurface_s@@@Z
 ?LightmapsNeedsUpdate@@YAHXZ
+?ApplyGamma@@YAMM@Z
