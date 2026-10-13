@@ -45,6 +45,18 @@ def same_symbol(a, b):
         return True
     if b.startswith("?") and b[1:].startswith(a + "@"):
         return True
+    # namespaced and anonymous-namespace vtables: Ghidra writes
+    # vgui::CDefaultInputSignal::vftable and _anon_8C64A114::Handler::vftable,
+    # MSVC ??_7CDefaultInputSignal@vgui@@6B@ and ??_7Handler@?A0x2730726c@@6B@
+    # (the anonymous namespace hash depends on the file path)
+    m = re.match(r"^(?:(\w+)::)?(\w+)::vftable$", a)
+    if m and b.startswith("??_7%s@" % m.group(2)):
+        return True
+    # operator new of a class, and imports by ordinal
+    if a.endswith("::operator_new") and b.startswith("??2"):
+        return True
+    if re.match(r"^[\w.]+\.DLL::Ordinal_\d+$", a, re.I):
+        return True
     m = re.match(r"^(\w+)::RTTI_Type_Descriptor$", a)
     if m and b == "??_R0?AV%s@@@8" % m.group(1):
         return True
