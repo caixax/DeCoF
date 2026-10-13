@@ -14,3 +14,4 @@ _IN_MouseEvent
 ?Force_CenterView_f@@YAXXZ
 ?IN_Init@@YAXXZ
 ?RawValuePointer@@YAPAKH@Z
+?IN_Shutdown@@YAXXZ

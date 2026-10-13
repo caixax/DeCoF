@@ -7,6 +7,7 @@ va,name,kind,evidence
 1000C950,??0CVoiceVGUITweakDlg@@QAE@XZ,func,"position in client/game_shared/voice_vgui_tweakdlg (name order), after edge before the first anchor; sizes retail 299, ours 299"
 1000D420,??1CVoiceVGUITweakDlg@@QAE@XZ,func,"position in client/game_shared/voice_vgui_tweakdlg (name order), after ??0TweakScroller@@QAE@XZ; sizes retail 27, ours 27"
 1000DD80,?Close@CVoiceVGUITweakDlg@@UAEXXZ,func,"position in client/game_shared/voice_vgui_tweakdlg (name order), after ??0TweakScroller@@QAE@XZ; sizes retail 63, ours 63"
+1001F060,?ActionSignal@CBookMenu@@QAEXH@Z,func,"position in client/cl_dll/guess_BookMenu (name order), after ??1CBookMenu@@QAE@XZ; sizes retail 414, ours 444"
 10030120,?Draw@CBlackBar@@UAEHM@Z,func,"position in client/cl_dll/guess_BlackBar (name order), after edge before the first anchor; sizes retail 8, ours 8"
 10030130,?Init@CBlackBar@@UAEHXZ,func,"position in client/cl_dll/guess_BlackBar (name order), after edge before the first anchor; sizes retail 44, ours 44"
 100302E0,?VidInit@CBlackBar@@UAEHXZ,func,"position in client/cl_dll/guess_BlackBar (name order), after ?MsgFunc_BlackBars@CBlackBar@@QAEHPBDHPAX@Z; sizes retail 61, ours 60"

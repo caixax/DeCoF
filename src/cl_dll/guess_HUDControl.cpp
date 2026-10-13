@@ -18,7 +18,6 @@
 #include <stdio.h>
 
 // a method of CHud in 1.6a (called with ecx = &gHUD): the key bound to a command, read from config.cfg
-extern char *guess_GetKeyForCommand( char *pszCommand );
 
 extern bool		guess_g_bMPModel;
 extern bool		guess_bWheelchairLock;
@@ -644,8 +643,8 @@ void ParseHintTokens( char *pszName, char *pszFile )
 
 		if ( bFound )
 		{
-			if ( guess_GetKeyForCommand( gViewPort->guess_m_pHUDControl->guess_m_szHintCfgButton ) )
-				strcat( gViewPort->guess_m_pHUDControl->guess_m_szHintLine1, guess_GetKeyForCommand( gViewPort->guess_m_pHUDControl->guess_m_szHintCfgButton ) );
+			if ( gHUD.guess_GetKeyForCommand( gViewPort->guess_m_pHUDControl->guess_m_szHintCfgButton ) )
+				strcat( gViewPort->guess_m_pHUDControl->guess_m_szHintLine1, gHUD.guess_GetKeyForCommand( gViewPort->guess_m_pHUDControl->guess_m_szHintCfgButton ) );
 			else
 				strcat( gViewPort->guess_m_pHUDControl->guess_m_szHintLine1, gViewPort->guess_m_pHUDControl->guess_m_szHintNoButton );
 			strcat( gViewPort->guess_m_pHUDControl->guess_m_szHintLine1, szAfter );
@@ -681,8 +680,8 @@ void ParseHintTokens( char *pszName, char *pszFile )
 
 		if ( bFound )
 		{
-			if ( guess_GetKeyForCommand( gViewPort->guess_m_pHUDControl->guess_m_szHintCfgButton ) )
-				strcat( gViewPort->guess_m_pHUDControl->guess_m_szHintLine2, guess_GetKeyForCommand( gViewPort->guess_m_pHUDControl->guess_m_szHintCfgButton ) );
+			if ( gHUD.guess_GetKeyForCommand( gViewPort->guess_m_pHUDControl->guess_m_szHintCfgButton ) )
+				strcat( gViewPort->guess_m_pHUDControl->guess_m_szHintLine2, gHUD.guess_GetKeyForCommand( gViewPort->guess_m_pHUDControl->guess_m_szHintCfgButton ) );
 			else
 				strcat( gViewPort->guess_m_pHUDControl->guess_m_szHintLine2, gViewPort->guess_m_pHUDControl->guess_m_szHintNoButton );
 			strcat( gViewPort->guess_m_pHUDControl->guess_m_szHintLine2, szAfter );
@@ -718,8 +717,8 @@ void ParseHintTokens( char *pszName, char *pszFile )
 
 		if ( bFound )
 		{
-			if ( guess_GetKeyForCommand( gViewPort->guess_m_pHUDControl->guess_m_szHintCfgButton ) )
-				strcat( gViewPort->guess_m_pHUDControl->guess_m_szHintLine3, guess_GetKeyForCommand( gViewPort->guess_m_pHUDControl->guess_m_szHintCfgButton ) );
+			if ( gHUD.guess_GetKeyForCommand( gViewPort->guess_m_pHUDControl->guess_m_szHintCfgButton ) )
+				strcat( gViewPort->guess_m_pHUDControl->guess_m_szHintLine3, gHUD.guess_GetKeyForCommand( gViewPort->guess_m_pHUDControl->guess_m_szHintCfgButton ) );
 			else
 				strcat( gViewPort->guess_m_pHUDControl->guess_m_szHintLine3, gViewPort->guess_m_pHUDControl->guess_m_szHintNoButton );
 			strcat( gViewPort->guess_m_pHUDControl->guess_m_szHintLine3, szAfter );
@@ -1858,8 +1857,8 @@ void CHUDControl::solve()
 	// lobby
 	if ( guess_m_pLobbyLabel[0] && guess_m_bLobby )
 	{
-		if ( guess_GetKeyForCommand( "+attack" ) )
-			sprintf( szText, "Press %s to become ready/unready", guess_GetKeyForCommand( "+attack" ) );
+		if ( gHUD.guess_GetKeyForCommand( "+attack" ) )
+			sprintf( szText, "Press %s to become ready/unready", gHUD.guess_GetKeyForCommand( "+attack" ) );
 		else
 			strcpy( szText, "Press Primary Attack to become ready/unready" );
 		guess_m_pVoteLabel->setText( szText );

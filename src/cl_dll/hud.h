@@ -388,6 +388,7 @@ struct extra_player_info_t
 	short deaths;
 	short playerclass;
 	short teamnumber;
+	short guess_unknown;	// 1.6a: two more bytes, the entries are 0x1A apart (GetPlayerTextColor, MsgFunc_ScoreInfo) and teamname is at +0xA (MsgFunc_TeamInfo)
 	char teamname[MAX_TEAM_NAME];
 };
 
@@ -758,9 +759,7 @@ public:
 	int		guess_m_iUnlocks;			// Unlocks message (bit field)
 	bool	guess_m_bMenuClick;
 	float	guess_m_flMenuClickTime;
-	float	guess_m_flUnknown344;
-	float	guess_m_flUnknown348;
-	int		guess_m_iUnknown34C;
+	Vector	guess_m_vecUnknown344;		// only cleared by VidInit (Vector(0,0,0): movq + one dword)
 	float	guess_m_flUnknown350;
 	float	guess_m_flViewLockTime;		// ViewLock message, 666 = forever
 	bool	guess_m_bViewLockWasOn;
@@ -822,8 +821,7 @@ public:
 	int		guess_m_iFPSAverage;
 	bool	guess_m_bFPSToggle;
 	float	guess_m_flNextFPSTime;
-	int		guess_m_iUnused2AD0;		// not referenced
-	int		guess_m_iFPS[99];
+	int		guess_m_iFPS[100];			// the code uses index 1-100, so index 100 is guess_m_iFPSCount (original bug)
 	int		guess_m_iFPSCount;
 
 	// inventory (Inventory message)
@@ -988,6 +986,42 @@ public:
 	int  _cdecl MsgFunc_PlayMP3( const char *pszName, int iSize, void *pbuf ); // buz
 	int  _cdecl MsgFunc_RainData( const char *pszName, int iSize, void *pbuf ); // buz
 
+	// Cry of Fear messages (hooked in CHud::Init)
+	int  _cdecl MsgFunc_ProFont( const char *pszName, int iSize, void *pbuf );
+	int  _cdecl MsgFunc_Maglite( const char *pszName, int iSize, void *pbuf );
+	int  _cdecl MsgFunc_Blur( const char *pszName, int iSize, void *pbuf );
+	int  _cdecl MsgFunc_UnreadSMS( const char *pszName, int iSize, void *pbuf );
+	int  _cdecl MsgFunc_ViewKnock( const char *pszName, int iSize, void *pbuf );
+	int  _cdecl MsgFunc_CoFWeapon( const char *pszName, int iSize, void *pbuf );
+	int  _cdecl MsgFunc_ViewEntity( const char *pszName, int iSize, void *pbuf );
+	int  _cdecl MsgFunc_ViewLock( const char *pszName, int iSize, void *pbuf );
+	int  _cdecl MsgFunc_Ladder( const char *pszName, int iSize, void *pbuf );
+	int  _cdecl MsgFunc_FallOver( const char *pszName, int iSize, void *pbuf );
+	int  _cdecl MsgFunc_BlackWhite( const char *pszName, int iSize, void *pbuf );
+	int  _cdecl MsgFunc_WeaponBody( const char *pszName, int iSize, void *pbuf );
+	int  _cdecl MsgFunc_PhoneOff( const char *pszName, int iSize, void *pbuf );
+	int  _cdecl MsgFunc_Muzzleflash( const char *pszName, int iSize, void *pbuf );
+	int  _cdecl MsgFunc_FlashFlags( const char *pszName, int iSize, void *pbuf );
+	int  _cdecl MsgFunc_Boat( const char *pszName, int iSize, void *pbuf );
+	int  _cdecl MsgFunc_Ripple( const char *pszName, int iSize, void *pbuf );
+	int  _cdecl MsgFunc_AddNote( const char *pszName, int iSize, void *pbuf );
+	int  _cdecl MsgFunc_AttachCam( const char *pszName, int iSize, void *pbuf );
+	int  _cdecl MsgFunc_BigPrick( const char *pszName, int iSize, void *pbuf );
+	int  _cdecl MsgFunc_NewFade( const char *pszName, int iSize, void *pbuf );
+	int  _cdecl MsgFunc_SkipScene( const char *pszName, int iSize, void *pbuf );
+	int  _cdecl MsgFunc_IronSights( const char *pszName, int iSize, void *pbuf );
+	int  _cdecl MsgFunc_Wheelchair( const char *pszName, int iSize, void *pbuf );
+	int  _cdecl MsgFunc_GreyFade( const char *pszName, int iSize, void *pbuf );
+	int  _cdecl MsgFunc_TakePhoto( const char *pszName, int iSize, void *pbuf );
+	int  _cdecl MsgFunc_Objectives( const char *pszName, int iSize, void *pbuf );
+	int  _cdecl MsgFunc_Unlocks( const char *pszName, int iSize, void *pbuf );
+	int  _cdecl MsgFunc_CustomSlv( const char *pszName, int iSize, void *pbuf );
+	int  _cdecl MsgFunc_CustomFng( const char *pszName, int iSize, void *pbuf );
+	int  _cdecl MsgFunc_CustomGlv( const char *pszName, int iSize, void *pbuf );
+	int  _cdecl MsgFunc_PlaySFX( const char *pszName, int iSize, void *pbuf );
+	int  _cdecl MsgFunc_Inventory( const char *pszName, int iSize, void *pbuf );
+	int  _cdecl MsgFunc_Materials( const char *pszName, int iSize, void *pbuf );
+
 	// Screen information
 	SCREENINFO	m_scrinfo;
 
@@ -1002,6 +1036,16 @@ public:
 	void AddHudElem(CHudBase *p);
 
 	float GetSensitivity();
+
+	char *guess_GetKeyForCommand( char *pszCommand );	// the key bound to a command in config.cfg ("Couldn't get key for bind %s!")
+	char *guess_GetInventoryItem( int iSlot );			// guess_m_szInventoryItem1-6, slot 1-6
+	int guess_AverageFPS( int iFPS );					// adds a sample to guess_m_iFPS, returns the average of the last 50
+
+	// never called in 1.6a
+	int guess_AddUnknown5590( int iValue );
+	int guess_SubUnknown5590( int iValue );
+
+	int		guess_m_iUnknown5590;	// only read by guess_AddUnknown5590; gHUD is 0x5598 bytes (MP3FileInfo object at gHUD+0x5598)
 };
 
 class TeamFortressViewport;
