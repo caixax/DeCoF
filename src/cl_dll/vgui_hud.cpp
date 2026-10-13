@@ -532,7 +532,7 @@ void CHud2::paint()
 	//
 	// draw ammo counters
 	//
-	if ( (gHUD.m_iWeaponBits & (1<<(WEAPON_SUIT))) && ShouldDrawHUD() ) // Wargon: Информация о патронах рисуется только если hud_draw = 1.
+	if ( ShouldDrawHUD() ) // Wargon: Информация о патронах рисуется только если hud_draw = 1.
 	{
 		WEAPON *pw = gHUD.m_Ammo.m_pWeapon; // shorthand
 		if (gHUD.m_SpecTank_on)
