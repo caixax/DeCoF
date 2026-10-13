@@ -36,6 +36,10 @@ float current_contrast = 0;
 color24	lightmaps[MAX_LIGHTMAPS*BLOCK_WIDTH*BLOCK_HEIGHT];
 color24 blocklights[BLOCKLIGHTS_SIZE];
 
+// cleared when the lightmaps are not loaded yet, never read
+bool guess_lightmapsResetA;
+bool guess_lightmapsResetB;
+
 int lightmapstotal;
 
 static model_t *world;
@@ -383,7 +387,12 @@ void UploadLightmaps( int base )
 
 int LightmapsNeedsUpdate()
 {
-	if (!lightmaps_initialized) return TRUE;
+	if (!lightmaps_initialized)
+	{
+		guess_lightmapsResetA = false;
+		guess_lightmapsResetB = false;
+		return TRUE;
+	}
 	if (current_gamma != cv_gamma->value) return TRUE;
 	if (current_brightness != cv_brightness->value) return TRUE;
 	if (current_contrast != cv_contrast->value) return TRUE;
@@ -420,9 +429,11 @@ void UpdateLightmaps()
 
 	const char* curmapname = gEngfuncs.pfnGetLevelName();
 	lightmaps_initialized = 1;
-	current_gamma = cv_gamma->value;
-	current_brightness = cv_brightness->value;
+	if (cv_contrast->value > 2) gEngfuncs.Cvar_SetValue("gl_contrast", 2);
+	if (cv_brightness->value > 0.3) gEngfuncs.Cvar_SetValue("gl_brightness", 0.3);
 	current_contrast = cv_contrast->value;
+	current_brightness = cv_brightness->value;
+	current_gamma = cv_gamma->value;
 	if (current_gamma < 0) current_gamma = 1;
 	if (cv_bump->value) current_bumpstate = 1;
 	else current_bumpstate = 0;

@@ -173,7 +173,7 @@ int CreateTexture(const char* filename, int mipmaps, int useid)
 	if (!(hdr->Width == 16 || hdr->Width == 32 || hdr->Width == 64 || hdr->Width == 128 || hdr->Width == 256 || hdr->Width == 512 || hdr->Width == 1024) ||
 		!(hdr->Height == 16 || hdr->Height == 32 || hdr->Height == 64 || hdr->Height == 128 || hdr->Height == 256 || hdr->Height == 512 || hdr->Height == 1024))
 	{
-		ConLog("Error: texture %s has bad dimensions (%d x %d)\n", filename, hdr->Width, hdr->Height);
+	//	ConLog("Error: texture %s has bad dimensions (%d x %d)\n", filename, hdr->Width, hdr->Height);
 		gEngfuncs.COM_FreeFile(file);
 		return 0;
 	}
@@ -323,7 +323,7 @@ int Create_DSDT_Texture(const char* filename)
 	if (!(hdr->Width == 16 || hdr->Width == 32 || hdr->Width == 64 || hdr->Width == 128 || hdr->Width == 256 || hdr->Width == 512 || hdr->Width == 1024) ||
 		!(hdr->Height == 16 || hdr->Height == 32 || hdr->Height == 64 || hdr->Height == 128 || hdr->Height == 256 || hdr->Height == 512 || hdr->Height == 1024))
 	{
-		ConLog("Error: texture %s has bad dimensions (%d x %d)\n", filename, hdr->Width, hdr->Height);
+	//	ConLog("Error: texture %s has bad dimensions (%d x %d)\n", filename, hdr->Width, hdr->Height);
 		gEngfuncs.COM_FreeFile(file);
 		return 0;
 	}

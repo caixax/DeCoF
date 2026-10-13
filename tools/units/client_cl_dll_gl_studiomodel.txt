@@ -8,3 +8,6 @@
 ?PARSE_COLOR@@YAXAAVVector@@PAUcolor24@@@Z
 ?VectorIRotate@@YAXABVVector@@QAY03$$CBMAAV1@@Z
 ?VectorRotate@@YAXABVVector@@QAY03$$CBMAAV1@@Z
+?Chrome@CStudioModelRenderer@@QAEXPAHHVVector@@@Z
+?GL_SetupLighting@CStudioModelRenderer@@QAEXXZ
+?Lighting@CStudioModelRenderer@@QAEXAAVVector@@HHV2@@Z

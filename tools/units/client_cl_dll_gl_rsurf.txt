@@ -21,3 +21,15 @@
 ?SetTextureMatrix@@YAXHHH@Z
 ?SetupTexMatrix@@YAXPAUmsurface_s@@ABVVector@@@Z
 ?SetupTexMatrix_Reflected@@YAXPAUmsurface_s@@ABVVector@@@Z
+?AddPolyToSkyChain@@YAXPAUmsurface_s@@@Z
+?AddPolyToSpecularChain@@YAXPAUmsurface_s@@@Z
+?DisableVertexArray@@YAXXZ
+?DrawBumpedPoly@@YAXPAUmsurface_s@@@Z
+?DrawHighQualitySpecularChain@@YAXXZ
+?DrawLowQualitySpecularChain@@YAXH@Z
+?DrawNormalPoly@@YAXPAUmsurface_s@@@Z
+?DrawPolyFirstPass@@YAXPAUmsurface_s@@@Z
+?PrepareFirstPass@@YAXXZ
+?RenderAdditionalBumpPass@@YAXXZ
+?RenderSecondPass@@YAXXZ
+?RenderSpecular@@YAXXZ

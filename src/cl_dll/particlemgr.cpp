@@ -126,15 +126,22 @@ void ParticleSystemManager::UpdateSystems( float frametime, int sky ) //LRC - no
 		// buz
 		cl_entity_t *ent = pSystem->GetEntity();
 
-		if ((ent->curstate.renderfx == 70 && !sky) ||
-			(ent->curstate.renderfx != 70 && sky))
+		if (ent->curstate.renderfx == 70 || sky)
 		{
 			pLast = pSystem;
 			pSystem = pSystem->m_pNextSystem;
-			continue;
 		}
-
-		if(	pSystem->UpdateSystem(frametime, /*right, up,*/ localPlayer->curstate.messagenum) )
+		else if (ent->curstate.renderfx == 184)
+		{
+			pLast = pSystem;
+			pSystem = pSystem->m_pNextSystem;
+		}
+		else if (ent->curstate.renderfx == 137)
+		{
+			pLast = pSystem;
+			pSystem = pSystem->m_pNextSystem;
+		}
+		else if(	pSystem->UpdateSystem(frametime, /*right, up,*/ localPlayer->curstate.messagenum) )
 		{
 			pSystem->DrawSystem();
 			pLast = pSystem;

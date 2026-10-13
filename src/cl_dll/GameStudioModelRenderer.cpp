@@ -73,7 +73,7 @@ R_StudioDrawModel
 */
 int R_StudioDrawModel( int flags )
 {
-	if (IEngineStudio.GetCurrentEntity() != IEngineStudio.GetViewEntity())
+	if (IEngineStudio.GetCurrentEntity() != IEngineStudio.GetViewEntity() && IEngineStudio.GetCurrentEntity()->curstate.renderfx != 161)
 		RendererDrawNormal(); // buz: make shure that world draws before any studiomodel
 	return g_StudioRenderer.StudioDrawModel( flags );
 }

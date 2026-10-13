@@ -17,3 +17,7 @@
 ?LoadDecalTexture@@YAHPBD@Z
 ?LoadDecals@@YAXXZ
 ?MsgCustomDecal@@YAHPBDHPAX@Z
+??1DecalGroup@@QAE@XZ
+?CreateDecalTrace@@YAXVVector@@0PBDH@Z
+?DrawDecals@@YAXXZ
+?GetEntry@DecalGroup@@QAEPAVDecalGroupEntry@@H@Z

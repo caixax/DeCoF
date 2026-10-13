@@ -25,6 +25,8 @@
 
 extern vec3_t	render_origin;
 extern vec3_t	render_angles;
+extern int		guess_g_iDickMode;
+extern vec3_t	guess_vecCameraAttachment;
 
 
 float	savedMinmaxs[6];
@@ -62,6 +64,17 @@ cvar_t *cv_lambert;
 cvar_t *cv_drawbrushents;
 cvar_t *cv_clipplanes;
 cvar_t *cv_showplane;
+cvar_t *guess_cv_screenblur;
+cvar_t *guess_cv_blurstepsx;
+cvar_t *guess_cv_blurstepsy;
+cvar_t *guess_cv_opacity;
+cvar_t *guess_cv_reducedlightradius;
+cvar_t *guess_cv_reducedlightxangle;
+cvar_t *guess_cv_reducedlightzangle;
+cvar_t *guess_cv_reducedlightcolour1;
+cvar_t *guess_cv_reducedlightcolour2;
+cvar_t *guess_cv_reducedlightcolour3;
+cvar_t *guess_cv_fullbrighttextures;
 
 int		norm_cubemap_id = 0;
 int		default_normalmap_id = 0;
@@ -310,7 +323,8 @@ int IsEntityMoved(cl_entity_t *e)
 {
 	if (e->angles[0] || e->angles[1] || e->angles[2] ||
 		e->origin[0] || e->origin[1] || e->origin[2] ||
-		e->curstate.renderfx == 70) // skybox models reques separate pass
+		e->curstate.renderfx == 70 || // skybox models reques separate pass
+		e->curstate.renderfx == 137 || e->curstate.renderfx == 184)
 		return TRUE;
 	else
 		return FALSE;
@@ -357,7 +371,7 @@ void R_DrawBrushModel (cl_entity_t *e, int onlyfirstpass)
 		VectorAdd (e->origin, clmodel->maxs, maxs);
 	}
 
-	if (e->curstate.renderfx == 70) // skybox entity
+	if (e->curstate.renderfx == 70 || e->curstate.renderfx == 137 || e->curstate.renderfx == 184) // skybox entity
 	{
 		if (!gl.Paranoia_hacks)
 			return;
@@ -446,16 +460,10 @@ e->angles[0] = -e->angles[0];	// stupid quake bug
 	{
 		gl.glDisable(GL_ALPHA_TEST);
 	}
-	else if (e->curstate.rendermode == kRenderTransTexture || e->curstate.rendermode == kRenderTransAdd)
-	{
-		gl.glDepthMask(GL_TRUE);
-		gl.glDisable(GL_BLEND);
-	}
 
 	if (!onlyfirstpass)
 	{
-		RenderAdditionalBumpPass();
-		if (e->curstate.renderfx != 70 && cv_dynamiclight->value && cv_entdynamiclight->value)
+		if (e->curstate.renderfx != 70 && e->curstate.renderfx != 137 && cv_dynamiclight->value && cv_entdynamiclight->value)
 			DrawDynamicLightForEntity(e);
 		RenderSecondPass();
 		RenderSpecular();
@@ -463,7 +471,7 @@ e->angles[0] = -e->angles[0];	// stupid quake bug
 
 	gl.glPopMatrix ();
 
-	if (e->curstate.renderfx == 70)
+	if (e->curstate.renderfx == 70 || e->curstate.renderfx == 137 || e->curstate.renderfx == 184)
 	{
 		gl.glTranslatef(-trans[0], -trans[1], -trans[2]);
 		gl.glDepthRange (0, 0.8);
@@ -483,6 +491,9 @@ void RecursiveDrawWorld (mnode_t *node)
 	msurface_t	*surf, **mark;
 	mleaf_t		*pleaf;
 	double		dot;
+
+	if (guess_g_iDickMode)
+		return;
 
 	if (node->contents == CONTENTS_SOLID)
 		return;		// solid
@@ -669,7 +680,8 @@ void DrawBump()
 //	CONPRINT("static start\n");
 
 	// Draw non-moved brush entities
-	for (int k = 0; k < numrenderents; k++)
+	int k;
+	for (k = 0; k < numrenderents; k++)
 	{
 		if (!IsEntityMoved(renderents[k])/* && !IsEntityTransparent(renderents[k])*/)
 			R_DrawBrushModel (renderents[k], TRUE);
@@ -1064,7 +1076,89 @@ int RendererFilterEntities( int type, struct cl_entity_s *ent, const char *model
 		return 0;
 	}
 
-	if (ent->curstate.renderfx == 70 && ent->model->type == mod_sprite)
+	if (ent->curstate.renderfx == 184)
+	{
+		DynamicLight *dl = MY_AllocDlight(-300);
+		dl->origin = guess_vecCameraAttachment;
+		dl->radius = 320;
+		dl->color = Vector(0.3, 0.33, 0.34);
+		dl->die = gEngfuncs.GetClientTime() + 0.01;
+	}
+
+	if (ent->curstate.renderfx == 72)
+	{
+		int radius = gEngfuncs.pfnRandomFloat(60, 80);
+		DynamicLight *dl = MY_AllocDlight(ent->index);
+		dl->origin = ent->curstate.origin;
+		dl->angles = ent->curstate.angles;
+		dl->radius = radius;
+		dl->color[0] = gEngfuncs.pfnRandomFloat(-10, 5) + 250;
+		dl->color[1] = gEngfuncs.pfnRandomFloat(-10, 10) + 190;
+		dl->color[2] = gEngfuncs.pfnRandomFloat(-10, 10) + 70;
+		dl->die = gEngfuncs.GetClientTime() + 0.01;
+		return 0;
+	}
+
+	if (ent->curstate.renderfx == 73)
+	{
+		DynamicLight *dl = MY_AllocDlight(ent->index);
+		dl->origin = ent->attachment[0];
+		dl->angles = ent->curstate.angles;
+		dl->radius = 100;
+		dl->color[0] = 254;
+		dl->color[1] = 242;
+		dl->color[2] = 192;
+		dl->die = gEngfuncs.GetClientTime() + 0.01;
+	}
+
+	if (ent->curstate.renderfx == 165)
+	{
+		DynamicLight *dl = MY_AllocDlight(ent->index);
+		float flicker1 = gEngfuncs.pfnRandomFloat(-0.5, 0.5);
+		float flicker2 = gEngfuncs.pfnRandomFloat(-0.1, 0.05);
+		dl->origin = ent->origin;
+		dl->origin[2] += 5;
+		dl->radius = gEngfuncs.pfnRandomLong(-15, 15) + 220;
+		dl->die = gEngfuncs.GetClientTime() + 0.01;
+		dl->color = Vector(flicker1 + 1.15f, flicker2 + 0.2f, flicker2 + 0.1f);
+	}
+
+	if (ent->curstate.renderfx == 68)
+	{
+		DynamicLight *dl = MY_AllocDlight(ent->index);
+		float flicker1 = gEngfuncs.pfnRandomFloat(-0.5, 0.5);
+		float flicker2 = gEngfuncs.pfnRandomFloat(-0.1, 0.05);
+		dl->origin = ent->attachment[3];
+		dl->radius = gEngfuncs.pfnRandomLong(-15, 15) + 220;
+		dl->die = gEngfuncs.GetClientTime() + 0.01;
+		dl->color = Vector(flicker1 + 1.15f, flicker2 + 0.2f, flicker2 + 0.1f);
+	}
+
+	if (ent->curstate.renderfx == 245)
+	{
+		if (!ent->curstate.rendercolor.r && !ent->curstate.rendercolor.g && !ent->curstate.rendercolor.b &&
+			(ent->curstate.renderamt == 255 || ent->curstate.renderamt == 0))
+		{
+			DynamicLight *dl = MY_AllocDlight(ent->index);
+			dl->origin = Vector(ent->origin[0], ent->origin[1], ent->origin[2] + 6);
+			dl->radius = gEngfuncs.pfnRandomLong(-5, 5) + 220;
+			dl->die = gEngfuncs.GetClientTime() + 0.01;
+			dl->color = Vector(0.4, 0.4, 0.4);
+		}
+		else
+		{
+			float r = ent->curstate.rendercolor.r / 255;
+			float g = ent->curstate.rendercolor.g / 255;
+			float b = ent->curstate.rendercolor.b / 255;
+			DynamicLight *dl = MY_AllocDlight(ent->index);
+			dl->origin = Vector(ent->origin[0], ent->origin[1], ent->origin[2] + 6);
+			dl->radius = gEngfuncs.pfnRandomLong(-5, 5) + ent->curstate.renderamt;
+			dl->die = gEngfuncs.GetClientTime() + 0.01;
+			dl->color = Vector(r, g, b);
+		}
+	}
+
+	if ((ent->curstate.renderfx == 70 || ent->curstate.renderfx == 184 || ent->curstate.renderfx == 137) && ent->model->type == mod_sprite)
 	{
 		StoreSkyboxEntity(ent);
 		return 0;
@@ -1172,6 +1266,17 @@ void RendererInit()
 	cv_drawbrushents = gEngfuncs.pfnRegisterVariable( "gl_brushents","1", 0 );
 	cv_clipplanes = gEngfuncs.pfnRegisterVariable( "gl_clipplanes","0", 0 );
 	cv_showplane = gEngfuncs.pfnRegisterVariable( "gl_showplane","0", 0 );
+	guess_cv_screenblur = gEngfuncs.pfnRegisterVariable( "gl_screenblur","1", FCVAR_ARCHIVE );
+	guess_cv_blurstepsx = gEngfuncs.pfnRegisterVariable( "gl_blurstepsx","32", FCVAR_ARCHIVE );
+	guess_cv_blurstepsy = gEngfuncs.pfnRegisterVariable( "gl_blurstepsy","24", FCVAR_ARCHIVE );
+	guess_cv_opacity = gEngfuncs.pfnRegisterVariable( "gl_opacity","0.5", FCVAR_ARCHIVE );
+	guess_cv_reducedlightradius = gEngfuncs.pfnRegisterVariable( "cof_reducedlightradius","60", 0 );
+	guess_cv_reducedlightxangle = gEngfuncs.pfnRegisterVariable( "cof_reducedlightxangle","50", 0 );
+	guess_cv_reducedlightzangle = gEngfuncs.pfnRegisterVariable( "cof_reducedlightzangle","90", 0 );
+	guess_cv_reducedlightcolour1 = gEngfuncs.pfnRegisterVariable( "cof_reducedlightcolour1","0.23", 0 );
+	guess_cv_reducedlightcolour2 = gEngfuncs.pfnRegisterVariable( "cof_reducedlightcolour2","0.23", 0 );
+	guess_cv_reducedlightcolour3 = gEngfuncs.pfnRegisterVariable( "cof_reducedlightcolour3","0.26", 0 );
+	guess_cv_fullbrighttextures = gEngfuncs.pfnRegisterVariable( "cof_fullbrighttextures","0.5", 0 );
 
 	gEngfuncs.pfnAddCommand ("dumptextures", DumpTextures);
 	gEngfuncs.pfnAddCommand ("dumplevel", DumpLevel);

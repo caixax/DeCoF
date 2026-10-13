@@ -492,7 +492,7 @@ void CreateDecal(vec3_t endpos, vec3_t pnormal, const char *name, int persistent
 
 	vec3_t right, up;
 	GetUpRight(pnormal, up, right);
-	float radius = sqrt(xsize*xsize + ysize*ysize);
+	float radius = sqrt((float)(xsize*xsize + ysize*ysize));
 
 	float texc_orig_x = DotProduct(endpos, right);
 	float texc_orig_y = DotProduct(endpos, up);
@@ -754,7 +754,8 @@ void DrawDecals()
 
 	SetTexEnvs(ENVSTATE_REPLACE);
 
-	for (int i = 0; i < numdecals; i++)
+	int i;
+	for (i = 0; i < numdecals; i++)
 	{
 		if (DrawSingleDecal(&decals[i]))
 			decalrendercounter++;

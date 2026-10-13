@@ -68,7 +68,7 @@ int CHudParticle:: MsgFunc_Particle(const char *pszName,  int iSize, void *pbuf 
 int CHudParticle:: MsgFunc_DelParticle(const char *pszName,  int iSize, void *pbuf )
 {
 	BEGIN_READ( pbuf, iSize );
-	int entindex = READ_BYTE();
+	int entindex = READ_SHORT();
 	g_pParticleSystems.DeleteSystemWithEntity( entindex );
 	return 1;
 }

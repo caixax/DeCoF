@@ -877,10 +877,14 @@ void DrawDynamicLights()
 			// change something after the light set up
 			if (current_light->key != -666) // dont set clip planes for flashlight
 				worldLightFrustum.GL_FrustumSetClipPlanes();
+			if (current_light->key != -665)
+				worldLightFrustum.GL_FrustumSetClipPlanes();
 
 			if (!SetupSpotLight())
 			{
 				if (current_light->key != -666)
+					worldLightFrustum.GL_DisableClipPlanes();
+				if (current_light->key != -665)
 					worldLightFrustum.GL_DisableClipPlanes();
 				continue;
 			}
@@ -902,7 +906,7 @@ void DrawDynamicLights()
 		{
 			for (int k = 0; k < numrenderents; k++)
 			{
-				if (!IsEntityMoved(renderents[k]) && renderents[k]->curstate.renderfx != 70)
+				if (!IsEntityMoved(renderents[k]) && renderents[k]->curstate.renderfx != 70 && renderents[k]->curstate.renderfx != 137)
 				{
 					vec3_t mins, maxs;
 					cl_entity_t *e = renderents[k];
@@ -930,6 +934,8 @@ void DrawDynamicLights()
 			FinishSpotLight();
 
 			if (current_light->key != -666)
+				worldLightFrustum.GL_DisableClipPlanes();
+			if (current_light->key != -665)
 				worldLightFrustum.GL_DisableClipPlanes();
 		}
 		else
@@ -1250,7 +1256,7 @@ int GetDlightsForPoint(vec3_t point, vec3_t mins, vec3_t maxs, DynamicLight **pO
 	{
 		if (dl->die >= time && dl->radius)
 		{
-			if (!alwaysFlashlight || dl->key != -666) // hack for viewmodels - they always need flashlight
+			if (!alwaysFlashlight || (dl->key != -666 && dl->key != -665)) // hack for viewmodels - they always need flashlight
 			{
 				// check distance
 				vec3_t vec = point - dl->origin;

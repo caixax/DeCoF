@@ -6,3 +6,5 @@
 ?OrthoQuad@@YAXHHHH@Z
 ?OrthoScope@@YAXXZ
 ?UseTexture@@YAHAAHPAD@Z
+?RenderFog@@YAXXZ
+?OrthoDraw@@YAXHHMMMMHHHH@Z

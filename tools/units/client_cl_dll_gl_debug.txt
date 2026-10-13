@@ -6,3 +6,4 @@
 ?RecursiveDrawTextureVecs@@YAHPAUmnode_s@@ABVVector@@1@Z
 ?TextureId@@YAHPBD@Z
 ?WriteTGA_24@@YAHPAUcolor24@@GGPBD@Z
+?DumpTextures@@YAXXZ

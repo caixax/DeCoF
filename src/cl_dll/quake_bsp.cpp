@@ -9,6 +9,9 @@
 #include "cdll_int.h"
 #include "com_model.h"
 #include "gl_renderer.h"
+#include <math.h>
+
+#undef fabs
 
 
 
@@ -515,7 +518,8 @@ void FrustumCheck::GL_FrustumSetClipPlanes()
 		}
 
 		float dists[5];
-		for (int i=0 ; i<4 ; i++)
+		int i;
+		for (i=0 ; i<4 ; i++)
 			dists[i] = DotProduct(render_origin, frustum[i].normal) - frustum[i].dist;
 		dists[4] = DotProduct(render_origin, farclip.normal) - farclip.dist;
 

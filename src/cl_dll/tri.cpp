@@ -220,9 +220,17 @@ void RenderFog ( void )
 	//Not in water and we want fog.
 	bool bFog = g_iWaterLevel < 2 && g_fStartDist > 0 && g_fEndDist > 0;
 	if (bFog)
-		gEngfuncs.pTriAPI->Fog ( g_fFogColor, g_fStartDist, g_fEndDist, bFog );
-//	else
-//		gEngfuncs.pTriAPI->Fog ( g_fFogColor, 10000, 10001, 0 );
+	{
+		glEnable(GL_FOG);
+		glFogi(GL_FOG_MODE, GL_LINEAR);
+		glFogfv(GL_FOG_COLOR, g_fFogColor);
+		glFogf(GL_FOG_DENSITY, 1.0f);
+		glHint(GL_FOG_HINT, GL_NICEST);
+		glFogf(GL_FOG_START, g_fStartDist);
+		glFogf(GL_FOG_END, g_fEndDist);
+	}
+	else
+		glDisable(GL_FOG);
 }
 
 
@@ -325,12 +333,21 @@ void DrawSpriteAsPoly( HSPRITE hspr, wrect_t *rect, wrect_t *screenpos, int mode
 	gEngfuncs.pTriAPI->End();
 }
 
-void OrthoDraw(HSPRITE spr, int mode, float r, float g, float b, float a)
+void OrthoDraw(HSPRITE spr, int mode, float r, float g, float b, float a, int width = -1, int height = -1, int x = -1, int y = -1)
 {
 	if (!spr) return;
 
 	const struct model_s *sprmodel = gEngfuncs.GetSpritePointer(spr);
 	gEngfuncs.pTriAPI->RenderMode(mode);
+
+	if (x >= 0 && y >= 0 && width >= 0 && height >= 0)
+	{
+		gEngfuncs.pTriAPI->SpriteTexture( (struct model_s *) sprmodel, 0);
+		gEngfuncs.pTriAPI->CullFace( TRI_NONE ); //no culling
+		gEngfuncs.pTriAPI->Color4f( r, g, b, a );
+		OrthoQuad(x, y, x + width, y + height);
+		return;
+	}
 
 	int frames = SPR_Frames(spr);
 
@@ -698,16 +715,13 @@ void DrawGlows(); // buz
 
 void DLLEXPORT HUD_DrawTransparentTriangles( void )
 {
+	RenderFog();
 	BlackFog();
 
 	if (g_DrawHeadShied)
 		return; // buz: dont draw anything else in headshield's pass
 
 	RendererDrawTransparent(); // buz
-
-   	//22/03/03 LRC: shiny surfaces
-	if (gHUD.m_pShinySurface)
-		gHUD.m_pShinySurface->DrawAll(v_origin);
 
 	// LRC: find out the time elapsed since the last redraw
 	static float fOldTime, fTime;
@@ -728,10 +742,13 @@ void DLLEXPORT HUD_DrawTransparentTriangles( void )
 
 	GrassDraw();
 
-	ProcessFXObjects();
-	ProcessRain();
-	DrawRain();
-	DrawFXObjects();
+	if (CVAR_GET_FLOAT("r_weather"))
+	{
+		ProcessFXObjects();
+		ProcessRain();
+		DrawRain();
+		DrawFXObjects();
+	}
 
 	DrawGlows();
 

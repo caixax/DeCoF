@@ -473,6 +473,9 @@ void CStudioModelRenderer::StudioSetUpTransform (int trivial_accept)
 			f = 0;
 		}
 
+		if (f > 1) f = 1;
+		if (f < -1) f = -1;
+
 		for (i = 0; i < 3; i++)
 		{
 			modelpos[i] += (m_pCurrentEntity->origin[i] - m_pCurrentEntity->latched.prevorigin[i]) * f;
@@ -1502,11 +1505,11 @@ void CStudioModelRenderer::StudioProcessGait( entity_state_t *pplayer )
 	m_pCurrentEntity->curstate.controller[0] = ((flYaw / 4.0) + 30) / (60.0 / 255.0);
 	m_pCurrentEntity->curstate.controller[1] = ((flYaw / 4.0) + 30) / (60.0 / 255.0);
 	m_pCurrentEntity->curstate.controller[2] = ((flYaw / 4.0) + 30) / (60.0 / 255.0);
-	m_pCurrentEntity->curstate.controller[3] = ((flYaw / 4.0) + 30) / (60.0 / 255.0);
+//	m_pCurrentEntity->curstate.controller[3] = ((flYaw / 4.0) + 30) / (60.0 / 255.0);
 	m_pCurrentEntity->latched.prevcontroller[0] = m_pCurrentEntity->curstate.controller[0];
 	m_pCurrentEntity->latched.prevcontroller[1] = m_pCurrentEntity->curstate.controller[1];
 	m_pCurrentEntity->latched.prevcontroller[2] = m_pCurrentEntity->curstate.controller[2];
-	m_pCurrentEntity->latched.prevcontroller[3] = m_pCurrentEntity->curstate.controller[3];
+//	m_pCurrentEntity->latched.prevcontroller[3] = m_pCurrentEntity->curstate.controller[3];
 
 	m_pCurrentEntity->angles[YAW] = m_pPlayerInfo->gaityaw;
 	if (m_pCurrentEntity->angles[YAW] < -0)
@@ -1930,13 +1933,129 @@ extern vec3_t v_origin, v_angles;
 int g_HeadShieldState;
 float g_HeadShieldSwitchTime;
 
+// what the head shield entity shows: 0 night vision goggles, 1 tv frame, 2 death,
+// 3 second weapon (DualWield), 5 telescope, 6 model sent by the HeadShield message,
+// 7 book menu, 10 gas mask
+int guess_g_iHeadShieldType;
+char guess_g_szDualModel[64];
+int guess_g_iDualBody;
+int guess_g_iDualWeapon1;
+int guess_g_iDualWeapon2;
+int guess_g_iDualEntIndex;
+int guess_g_iDualLighting;
+int guess_g_iDualFlash;
+int guess_g_iDualFlashType;
+int guess_g_iGasMaskSimon;
+cl_entity_t *guess_g_pHeadShieldEnt;
+
+extern int guess_iWheelchair;
+extern int guess_iBoat;
+extern int guess_iDoctor;
+extern cl_entity_t *guess_pAttachCamEnt;
+extern bool guess_bAttachCam;
+extern vec3_t guess_vecCameraAttachment;
+extern vec3_t guess_vecCameraAngles;
+extern int guess_iUnknown1054506C;
+extern int guess_iUnknown101902FC;
+extern int guess_iUnknown101B27C8;
+extern cl_entity_t *guess_pDualEnt;
+cl_entity_t *guess_GetDualEntity( void );
+bool guess_InCameraView( void );
+int CL_IsThirdPerson( void );
+
 int CStudioModelRenderer::StudioDrawHeadShield( void )
 {
 	alight_t lighting;
 	vec3_t dir;
 //	int savedDoInterp;
-	
-	g_HeadShieldEnt.model = IEngineStudio.Mod_ForName("models/v_headshield.mdl", 1);
+
+	if ((guess_InCameraView() && guess_g_iHeadShieldType != 6 && guess_g_iHeadShieldType != 7) ||
+		((gHUD.m_iHideHUDDisplay & HIDEHUD_WEAPONS) && guess_g_iHeadShieldType == 3) ||
+		guess_iUnknown1054506C > 2 ||
+		(CL_IsThirdPerson() && guess_g_iHeadShieldType != 6 && guess_g_iHeadShieldType != 7) ||
+		(guess_g_iHeadShieldType == 10 && g_HeadShieldState == SHIELD_ON) ||
+		((guess_pAttachCamEnt || guess_iWheelchair || guess_iBoat) && guess_g_iHeadShieldType != 6 && guess_g_iHeadShieldType != 7))
+		return 0;
+
+	if (guess_g_iHeadShieldType == 0)
+		g_HeadShieldEnt.model = IEngineStudio.Mod_ForName("models/nv_goggles.mdl", 1);
+	if (guess_g_iHeadShieldType == 1)
+		g_HeadShieldEnt.model = IEngineStudio.Mod_ForName("models/items/tv_frame.mdl", 1);
+	if (guess_g_iHeadShieldType == 2)
+		g_HeadShieldEnt.model = IEngineStudio.Mod_ForName(guess_iDoctor ? "models/weapons/v_death_doctor.mdl" : "models/weapons/v_death.mdl", 1);
+	if (guess_g_iHeadShieldType == 5)
+		g_HeadShieldEnt.model = IEngineStudio.Mod_ForName("models/props/blandat/v_telescope.mdl", 1);
+	if (guess_g_iHeadShieldType == 6)
+	{
+		if (!gHUD.guess_m_pszHeadShieldSound)
+			goto skipmodel;
+
+		g_HeadShieldEnt.model = IEngineStudio.Mod_ForName(gHUD.guess_m_pszHeadShieldSound, 1);
+		g_HeadShieldEnt.curstate.body = gHUD.guess_m_iHeadShieldSoundFlags;
+	}
+	if (guess_g_iHeadShieldType == 7)
+		g_HeadShieldEnt.model = IEngineStudio.Mod_ForName("models/bookmenu.mdl", 1);
+	if (guess_g_iHeadShieldType == 10)
+		g_HeadShieldEnt.model = IEngineStudio.Mod_ForName(guess_g_iGasMaskSimon ? "models/weapons/v_gasmask_simon.mdl" : "models/weapons/v_gasmask.mdl", 1);
+	if (guess_g_iHeadShieldType == 3)
+	{
+		if (guess_g_iDualWeapon1 == 10 || guess_g_iDualWeapon1 == 1)
+			guess_g_iDualLighting = 1;
+
+		g_HeadShieldEnt.model = IEngineStudio.Mod_ForName(strlen(guess_g_szDualModel) > 1 ? guess_g_szDualModel : "models/null.mdl", 1);
+	}
+
+skipmodel:
+	cl_entity_t *viewmodel = gEngfuncs.GetViewModel();
+
+	if (guess_g_iHeadShieldType == 3)
+	{
+		if (viewmodel)
+			goto setupdone;
+	}
+	else if (guess_g_iHeadShieldType == 6 || guess_g_iHeadShieldType == 7)
+	{
+		vec3_t forward, right, up;
+		int yaw = (int)(gEngfuncs.GetClientTime() * 30) % 360;
+
+		if (guess_g_iHeadShieldType == 7)
+			yaw = v_angles[0];
+
+		if (guess_pAttachCamEnt && guess_bAttachCam)
+		{
+			VectorCopy( guess_vecCameraAttachment, g_HeadShieldEnt.origin );
+			VectorCopy( guess_vecCameraAttachment, g_HeadShieldEnt.curstate.origin );
+			gEngfuncs.pfnAngleVectors( guess_vecCameraAngles, forward, right, up );
+		}
+		else
+		{
+			VectorCopy( v_origin, g_HeadShieldEnt.origin );
+			VectorCopy( v_origin, g_HeadShieldEnt.curstate.origin );
+			gEngfuncs.pfnAngleVectors( v_angles, forward, right, up );
+		}
+
+		if (guess_g_iHeadShieldType == 7)
+		{
+			g_HeadShieldEnt.angles[0] = v_angles[0];
+			g_HeadShieldEnt.curstate.angles[0] = v_angles[0];
+			g_HeadShieldEnt.origin = g_HeadShieldEnt.curstate.origin + forward * 70;
+			g_HeadShieldEnt.angles[1] = v_angles[1] + 180;
+			g_HeadShieldEnt.angles[2] = v_angles[2];
+			g_HeadShieldEnt.curstate.angles[1] = g_HeadShieldEnt.angles[1];
+			g_HeadShieldEnt.curstate.angles[2] = g_HeadShieldEnt.angles[2];
+		}
+		else
+		{
+			float dist = guess_iUnknown101902FC;
+			g_HeadShieldEnt.angles[2] = 0;
+			g_HeadShieldEnt.curstate.angles[2] = 0;
+			g_HeadShieldEnt.origin = g_HeadShieldEnt.curstate.origin + forward * dist;
+			g_HeadShieldEnt.angles[0] = g_HeadShieldEnt.curstate.angles[0] = guess_iUnknown101B27C8;
+			g_HeadShieldEnt.angles[1] = g_HeadShieldEnt.curstate.angles[1] = yaw;
+		}
+		goto setupdone;
+	}
+
 	VectorCopy( v_origin, g_HeadShieldEnt.origin );
 	VectorCopy( v_origin, g_HeadShieldEnt.curstate.origin );
 	VectorCopy( v_angles, g_HeadShieldEnt.angles );
@@ -1944,10 +2063,17 @@ int CStudioModelRenderer::StudioDrawHeadShield( void )
 	g_HeadShieldEnt.angles[PITCH] *= -1;
 	g_HeadShieldEnt.curstate.angles[PITCH] *= -1;
 
+setupdone:
 //	savedDoInterp = m_fDoInterp;
 //	m_fDoInterp = 0;
 
 	m_pCurrentEntity = &g_HeadShieldEnt;
+
+	if (guess_g_iHeadShieldType == 3)
+		g_HeadShieldEnt.curstate.body = strlen(guess_g_szDualModel) > 1 ? guess_g_iDualBody : 0;
+	else
+		g_HeadShieldEnt.curstate.body = guess_g_iHeadShieldType == 6 ? gHUD.guess_m_iHeadShieldSoundFlags : 0;
+
 	IEngineStudio.GetTimes( &m_nFrameCount, &m_clTime, &m_clOldTime );
 	IEngineStudio.GetViewInfo( m_vRenderOrigin, m_vUp, m_vRight, m_vNormal );
 	IEngineStudio.GetAliasScale( &m_fSoftwareXScale, &m_fSoftwareYScale );
@@ -1960,6 +2086,14 @@ int CStudioModelRenderer::StudioDrawHeadShield( void )
 
 	StudioSetUpTransform( 0 );
 
+	if (guess_g_iHeadShieldType == 3 && gHUD.m_Ammo.m_pWeapon && gHUD.m_Ammo.m_pWeapon->iId == 15)
+	{
+		(*m_protationmatrix)[0][1] *= -1;
+		(*m_protationmatrix)[1][1] *= -1;
+		(*m_protationmatrix)[2][1] *= -1;
+		gEngfuncs.pTriAPI->CullFace( TRI_NONE );
+	}
+
 	(*m_pModelsDrawn)++;
 	(*m_pStudioModelCount)++; // render data cache cookie
 
@@ -1968,6 +2102,8 @@ int CStudioModelRenderer::StudioDrawHeadShield( void )
 
 	StudioSetupBones( );
 	StudioSaveBones( );
+
+	guess_g_pHeadShieldEnt = m_pCurrentEntity;
 
 	if (cv_renderer->value && cv_nsr->value)
 	{
@@ -1981,12 +2117,6 @@ int CStudioModelRenderer::StudioDrawHeadShield( void )
 
 		// model and frame independant
 		IEngineStudio.StudioSetupLighting (&lighting);
-
-		// get remap colors
-		m_nTopColor = m_pCurrentEntity->curstate.colormap & 0xFF;
-		m_nBottomColor = (m_pCurrentEntity->curstate.colormap & 0xFF00) >> 8;
-
-		IEngineStudio.StudioSetRemapColors( m_nTopColor, m_nBottomColor );
 	}
 
 //	gEngfuncs.pTriAPI->RenderMode( kRenderTransAlpha );
@@ -1997,43 +2127,172 @@ int CStudioModelRenderer::StudioDrawHeadShield( void )
 	return 1;
 }
 
+int __MsgFunc_DualAnim(const char *pszName, int iSize, void *pbuf)
+{
+	studiohdr_t *pStudioHeader;
+	mstudioseqdesc_t *pseq;
+
+	BEGIN_READ( pbuf, iSize );
+	int anim = READ_BYTE();
+
+	if (!strcmp(guess_g_szDualModel, "models/null.mdl"))
+	{
+		guess_g_iHeadShieldType = 0;
+		g_HeadShieldState = SHIELD_OFF;
+	}
+	else
+	{
+		guess_g_iHeadShieldType = 3;
+		g_HeadShieldState = SHIELD_ON;
+	}
+
+	g_HeadShieldEnt.curstate.animtime = gEngfuncs.GetClientTime();
+	g_HeadShieldEnt.curstate.sequence = anim;
+
+	// get animation length in seconds
+	pStudioHeader = (studiohdr_t *)IEngineStudio.Mod_Extradata (IEngineStudio.Mod_ForName(guess_g_szDualModel, 1));
+	pseq = (mstudioseqdesc_t *)((byte *)pStudioHeader + pStudioHeader->seqindex) + anim;
+	g_HeadShieldSwitchTime = gEngfuncs.GetClientTime() + (pseq->numframes / pseq->fps);
+	return 1;
+}
+
+int __MsgFunc_DualFlash(const char *pszName, int iSize, void *pbuf)
+{
+	BEGIN_READ( pbuf, iSize );
+	int type = READ_BYTE();
+
+	if (guess_g_iHeadShieldType == 3)
+	{
+		guess_g_iDualFlash = 1;
+		guess_g_iDualFlashType = type;
+	}
+	return 1;
+}
+
+int __MsgFunc_DualWield(const char *pszName, int iSize, void *pbuf)
+{
+	BEGIN_READ( pbuf, iSize );
+	strcpy(guess_g_szDualModel, READ_STRING());
+	guess_g_iDualBody = READ_BYTE();
+	guess_g_iDualWeapon1 = READ_BYTE();
+	guess_g_iDualWeapon2 = READ_BYTE();
+	guess_g_iDualEntIndex = READ_SHORT();
+
+	cl_entity_t *ent = guess_GetDualEntity();
+	if (ent)
+		guess_pDualEnt = ent;
+
+	if (!strcmp(guess_g_szDualModel, "models/null.mdl"))
+	{
+		guess_g_iHeadShieldType = 0;
+		g_HeadShieldState = SHIELD_OFF;
+	}
+	else
+	{
+		guess_g_iHeadShieldType = 3;
+		g_HeadShieldState = SHIELD_ON;
+	}
+
+	IEngineStudio.Mod_Extradata (IEngineStudio.Mod_ForName(guess_g_szDualModel, 1));
+	return 1;
+}
+
 // buz - head shield message
 int __MsgFunc_HeadShield(const char *pszName, int iSize, void *pbuf)
 {
 	studiohdr_t *pStudioHeader;
 	mstudioseqdesc_t *pseq;
 
+	guess_g_iGasMaskSimon = 0;
 	BEGIN_READ( pbuf, iSize );
-	
+
 	// 0 is OFF; 1 is ON; 2 is fast switch to ON
-	switch (READ_BYTE())
+	int mode = READ_BYTE();
+	guess_g_iHeadShieldType = READ_BYTE();
+	gHUD.guess_m_pszHeadShieldSound = READ_STRING();
+	guess_g_iGasMaskSimon = READ_BYTE();
+
+	if (guess_g_iHeadShieldType == 6 && gHUD.guess_m_pszHeadShieldSound)
+	{
+		pStudioHeader = (studiohdr_t *)IEngineStudio.Mod_Extradata (IEngineStudio.Mod_ForName(gHUD.guess_m_pszHeadShieldSound, 1));
+		g_HeadShieldEnt.curstate.body = gHUD.guess_m_iHeadShieldSoundFlags;
+	}
+
+	switch (mode)
 	{
 	case 0:
-		g_HeadShieldState = SHIELD_TURNING_OFF;
-		g_HeadShieldEnt.curstate.animtime = gEngfuncs.GetClientTime();
-		g_HeadShieldEnt.curstate.sequence = SHIELDANIM_HOLSTER;
+		if (guess_g_iHeadShieldType != 7)
+		{
+			g_HeadShieldState = SHIELD_TURNING_OFF;
+			g_HeadShieldEnt.curstate.animtime = gEngfuncs.GetClientTime();
+			g_HeadShieldEnt.curstate.sequence = SHIELDANIM_HOLSTER;
+		}
 
 		// get animation length in seconds
-		pStudioHeader = (studiohdr_t *)IEngineStudio.Mod_Extradata (IEngineStudio.Mod_ForName("models/v_headshield.mdl", 1));
+		if (guess_g_iHeadShieldType == 0)
+			pStudioHeader = (studiohdr_t *)IEngineStudio.Mod_Extradata (IEngineStudio.Mod_ForName("models/nv_goggles.mdl", 1));
+		if (guess_g_iHeadShieldType == 1)
+			pStudioHeader = (studiohdr_t *)IEngineStudio.Mod_Extradata (IEngineStudio.Mod_ForName("models/items/tv_frame.mdl", 1));
+		if (guess_g_iHeadShieldType == 2)
+			pStudioHeader = (studiohdr_t *)IEngineStudio.Mod_Extradata (IEngineStudio.Mod_ForName(guess_iDoctor ? "models/weapons/v_death_doctor.mdl" : "models/weapons/v_death.mdl", 1));
+		if (guess_g_iHeadShieldType == 5)
+			pStudioHeader = (studiohdr_t *)IEngineStudio.Mod_Extradata (IEngineStudio.Mod_ForName("models/props/blandat/v_telescope.mdl", 1));
+		if (guess_g_iHeadShieldType == 7)
+			pStudioHeader = (studiohdr_t *)IEngineStudio.Mod_Extradata (IEngineStudio.Mod_ForName("models/bookmenu.mdl", 1));
+		if (guess_g_iHeadShieldType == 10)
+			pStudioHeader = (studiohdr_t *)IEngineStudio.Mod_Extradata (IEngineStudio.Mod_ForName(guess_g_iGasMaskSimon ? "models/weapons/v_gasmask_simon.mdl" : "models/weapons/v_gasmask.mdl", 1));
+
 		pseq = (mstudioseqdesc_t *)((byte *)pStudioHeader + pStudioHeader->seqindex) + SHIELDANIM_HOLSTER;
 		g_HeadShieldSwitchTime = gEngfuncs.GetClientTime() + (pseq->numframes / pseq->fps);
 		break;
 
 	case 1:
 		g_HeadShieldState = SHIELD_TURNING_ON;
-		g_HeadShieldEnt.curstate.animtime = gEngfuncs.GetClientTime();
-		g_HeadShieldEnt.curstate.sequence = SHIELDANIM_DRAW;
+		if (guess_g_iHeadShieldType == 7)
+		{
+			g_HeadShieldEnt.curstate.animtime = gEngfuncs.GetClientTime();
+			g_HeadShieldEnt.curstate.sequence = SHIELDANIM_IDLE;
+		}
+		else
+		{
+			g_HeadShieldEnt.curstate.animtime = gEngfuncs.GetClientTime();
+			g_HeadShieldEnt.curstate.sequence = SHIELDANIM_DRAW;
+		}
 
 		// get animation length in seconds
-		pStudioHeader = (studiohdr_t *)IEngineStudio.Mod_Extradata (IEngineStudio.Mod_ForName("models/v_headshield.mdl", 1));
+		if (guess_g_iHeadShieldType == 0)
+			pStudioHeader = (studiohdr_t *)IEngineStudio.Mod_Extradata (IEngineStudio.Mod_ForName("models/nv_goggles.mdl", 1));
+		if (guess_g_iHeadShieldType == 1)
+			pStudioHeader = (studiohdr_t *)IEngineStudio.Mod_Extradata (IEngineStudio.Mod_ForName("models/items/tv_frame.mdl", 1));
+		if (guess_g_iHeadShieldType == 7)
+			pStudioHeader = (studiohdr_t *)IEngineStudio.Mod_Extradata (IEngineStudio.Mod_ForName("models/bookmenu.mdl", 1));
+		if (guess_g_iHeadShieldType == 10)
+			pStudioHeader = (studiohdr_t *)IEngineStudio.Mod_Extradata (IEngineStudio.Mod_ForName(guess_g_iGasMaskSimon ? "models/weapons/v_gasmask_simon.mdl" : "models/weapons/v_gasmask.mdl", 1));
+		if (guess_g_iHeadShieldType == 2)
+		{
+			if (!CL_IsThirdPerson())
+				gEngfuncs.pfnPlaySoundByName("weapons/dead_arm.wav", 1);
+			pStudioHeader = (studiohdr_t *)IEngineStudio.Mod_Extradata (IEngineStudio.Mod_ForName(guess_iDoctor ? "models/weapons/v_death_doctor.mdl" : "models/weapons/v_death.mdl", 1));
+		}
+		if (guess_g_iHeadShieldType == 5)
+			pStudioHeader = (studiohdr_t *)IEngineStudio.Mod_Extradata (IEngineStudio.Mod_ForName("models/props/blandat/v_telescope.mdl", 1));
+
 		pseq = (mstudioseqdesc_t *)((byte *)pStudioHeader + pStudioHeader->seqindex) + SHIELDANIM_DRAW;
 		g_HeadShieldSwitchTime = gEngfuncs.GetClientTime() + (pseq->numframes / pseq->fps);
 		break;
 
 	case 2:
 		g_HeadShieldState = SHIELD_ON;
-		g_HeadShieldEnt.curstate.animtime = gEngfuncs.GetClientTime();
-		g_HeadShieldEnt.curstate.sequence = SHIELDANIM_IDLE;
+		if (guess_g_iHeadShieldType == 2)
+		{
+			g_HeadShieldEnt.curstate.animtime = gEngfuncs.GetClientTime();
+			g_HeadShieldEnt.curstate.sequence = 2;
+		}
+		else
+		{
+			g_HeadShieldEnt.curstate.animtime = gEngfuncs.GetClientTime();
+			g_HeadShieldEnt.curstate.sequence = SHIELDANIM_IDLE;
+		}
 	}
 	return 1;
 }
@@ -2044,17 +2303,50 @@ void ResetHeadShield( void ) // buz
 	g_HeadShieldEnt.curstate.framerate = 1;
 	g_HeadShieldState = SHIELD_OFF;
 	g_HeadShieldSwitchTime = 0;
+	guess_g_iHeadShieldType = 0;
 }
 
 void InitHeadShield( void ) // buz
 {
 	HOOK_MESSAGE(HeadShield);
+	HOOK_MESSAGE(DualWield);
+	HOOK_MESSAGE(DualAnim);
+	HOOK_MESSAGE(DualFlash);
+}
+
+// converts an angle in radians to degrees in the range 0..360
+double guess_RadiansToDegrees( double angle )
+{
+	double degrees = angle * 180 / M_PI;
+
+	if (degrees > 360)
+		degrees = fmod(degrees, 360);
+
+	if (degrees < 0)
+	{
+		degrees *= -1;
+		return 360 - fmod(degrees, 360);
+	}
+
+	return degrees;
 }
 
 int HeadShieldThink( void ) // buz: return 1 to draw shield
 {
 //	gEngfuncs.Con_Printf("shield state: %d\n", g_HeadShieldState); // test
 	float time = gEngfuncs.GetClientTime();
+
+	if (gHUD.m_Ammo.m_pWeapon && guess_g_iHeadShieldType == 3)
+	{
+		if (gHUD.m_Ammo.m_pWeapon && gHUD.m_Ammo.m_pWeapon->iId != 15)
+			return 0;
+	}
+	else if (guess_g_iHeadShieldType == 7)
+	{
+		if (!gHUD.guess_m_bMenuClick)
+			return 0;
+		return 1;
+	}
 
 	switch (g_HeadShieldState)
 	{
@@ -2070,7 +2362,9 @@ int HeadShieldThink( void ) // buz: return 1 to draw shield
 		{
 			g_HeadShieldState = SHIELD_ON;
 			g_HeadShieldEnt.curstate.animtime = time;
-			g_HeadShieldEnt.curstate.sequence = SHIELDANIM_IDLE;
+			g_HeadShieldEnt.curstate.sequence = 2;
+			if (guess_g_iHeadShieldType != 2)
+				g_HeadShieldEnt.curstate.sequence = SHIELDANIM_IDLE;
 		}
 		return 1;
 
@@ -2137,11 +2431,13 @@ int CStudioModelRenderer::StudioDrawCustomEntity(cl_entity_t *ent, int amb, int 
 		IEngineStudio.StudioSetupLighting (&lighting);
 
 		// get remap colors
-		m_nTopColor = m_pCurrentEntity->curstate.colormap & 0xFF;
-		m_nBottomColor = (m_pCurrentEntity->curstate.colormap & 0xFF00) >> 8;
+	//	m_nTopColor = m_pCurrentEntity->curstate.colormap & 0xFF;
+	//	m_nBottomColor = (m_pCurrentEntity->curstate.colormap & 0xFF00) >> 8;
 
-		IEngineStudio.StudioSetRemapColors( m_nTopColor, m_nBottomColor );
+	//	IEngineStudio.StudioSetRemapColors( m_nTopColor, m_nBottomColor );
 	}
+
+	gEngfuncs.Con_Printf("Drawing custom entity %s\n", m_pCurrentEntity->model->name);
 
 //	gEngfuncs.pTriAPI->RenderMode( kRenderTransAlpha );
 	StudioRenderModel( );

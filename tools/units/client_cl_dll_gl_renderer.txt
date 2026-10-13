@@ -21,3 +21,9 @@
 ?RendererVidInit@@YAXXZ
 ?ResetRenderState@@YAXXZ
 ?RestoreWorldDrawing@@YAXXZ
+?CreateNormalizationCubemap@@YAHXZ
+?IsEntityMoved@@YAHPAUcl_entity_s@@@Z
+?R_DrawBrushModel@@YAXPAUcl_entity_s@@H@Z
+?RecursiveDrawWorld@@YAXPAUmnode_s@@@Z
+?RendererTentsUpdate@@YAXXZ
+?getCubeVector@@YAXHHHAAVVector@@@Z

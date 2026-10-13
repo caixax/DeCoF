@@ -8,3 +8,7 @@
 ?R_LightPoint@@YAHAAVVector@@0@Z
 ?RecursiveLightPoint@@YAHPAUmnode_s@@ABVVector@@1AAV2@@Z
 ?SignbitsForPlane@@YAHPAUmplane_s@@@Z
+?PerpendicularVector@@YAXAAVVector@@ABV1@@Z
+?R_SetFrustum@FrustumCheck@@QAEXVVector@@0M@Z
+?R_SetFrustum@FrustumCheck@@QAEXVVector@@0MMM@Z
+?RotatePointAroundVector@@YAXAAVVector@@ABV1@1M@Z

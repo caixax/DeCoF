@@ -20,6 +20,7 @@
 cvar_t *v_posteffects;
 cvar_t *v_grayscale;
 extern cvar_t *cv_specular_nocombiners;
+extern int guess_g_iDickMode;
 
 
 
@@ -40,6 +41,7 @@ float GetGrayscaleFactor()
 
 int g_screen_texture = 0;
 int g_weights_texture = 0; //for cards with no register combiners support
+bool guess_bReinitScreenTexture;
 
 int UseRectangleTextures()
 {
@@ -135,6 +137,45 @@ void DrawQuad(int width, int height, int ofsX = 0, int ofsY = 0)
 
 void ApplyPostEffects()
 {
+	if (guess_g_iDickMode)
+	{
+		glMatrixMode(GL_MODELVIEW);
+		glPushMatrix();
+		glLoadIdentity();
+		glMatrixMode(GL_PROJECTION);
+		glPushMatrix();
+		glLoadIdentity();
+		glOrtho(0, 1, 1, 0, 0.1f, 100);
+
+		glDisable(GL_DEPTH_TEST);
+		glCullFace(GL_NONE);
+		glDisable(GL_CULL_FACE);
+		glDisable(GL_TEXTURE_2D);
+		glColor4f(gEngfuncs.pfnRandomFloat(0, 1), gEngfuncs.pfnRandomFloat(0, 1), gEngfuncs.pfnRandomFloat(0, 1), 1);
+
+		glBegin(GL_QUADS);
+		glVertex3f(0, 1, -1);
+		glVertex3f(1, 1, -1);
+		glVertex3f(1, 0, -1);
+		glVertex3f(0, 0, -1);
+		glEnd();
+
+		glEnable(GL_DEPTH_TEST);
+		glEnable(GL_CULL_FACE);
+		glEnable(GL_TEXTURE_2D);
+		glMatrixMode(GL_MODELVIEW);
+		glPopMatrix();
+		glMatrixMode(GL_PROJECTION);
+		glPopMatrix();
+		glMatrixMode(GL_MODELVIEW);
+	}
+
+	if (guess_bReinitScreenTexture)
+	{
+		InitScreenTexture();
+		guess_bReinitScreenTexture = false;
+	}
+
 	if (!gl.IsGLAllowed() || !v_posteffects->value)
 		return;
 
