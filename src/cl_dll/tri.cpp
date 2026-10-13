@@ -58,84 +58,6 @@ int UseTexture(HSPRITE &hsprSpr, char * str)
 // rain
 void SetPoint( float x, float y, float z, float (*matrix)[4]);
 
-//
-//-----------------------------------------------------
-//
-
-//LRC - code for CShinySurface, declared in hud.h
-CShinySurface::CShinySurface( float fScale, float fAlpha, float fMinX, float fMaxX, float fMinY, float fMaxY, float fZ, char *szSprite)
-{
-	m_fScale = fScale; m_fAlpha = fAlpha;
-	m_fMinX = fMinX; m_fMinY = fMinY;
-	m_fMaxX = fMaxX; m_fMaxY = fMaxY;
-	m_fZ = fZ;
-	m_hsprSprite = 0;
-	sprintf( m_szSprite, szSprite );
-	m_pNext = NULL;
-}
-
-CShinySurface::~CShinySurface()
-{
-	if (m_pNext)
-		delete m_pNext;
-}
-
-void CShinySurface::DrawAll(const vec3_t &org)
-{
-	gEngfuncs.pTriAPI->RenderMode( kRenderTransAdd ); //kRenderTransTexture );
-	gEngfuncs.pTriAPI->CullFace( TRI_NONE );
-
-	for(CShinySurface *pCurrent = this; pCurrent; pCurrent = pCurrent->m_pNext)
-	{
-		pCurrent->Draw(org);
-	}
-
-	gEngfuncs.pTriAPI->RenderMode( kRenderNormal );
-}
-
-void CShinySurface::Draw(const vec3_t &org)
-{
-	// add 5 to the view height, so that we don't get an ugly repeating texture as it approaches 0.
-	float fHeight = org.z - m_fZ + 5;
-
-	// only visible from above
-//	if (fHeight < 0) return;
-	if (fHeight < 5) return;
-
-	// fade out if we're really close to the surface, so they don't see an ugly repeating texture
-//	if (fHeight < 15)
-//		gEngfuncs.pTriAPI->Color4f( 1.0, 1.0, 1.0, (fHeight - 5)*0.1*m_fAlpha );
-//	else
-		gEngfuncs.pTriAPI->Color4f( 1.0, 1.0, 1.0, m_fAlpha );
-
-	// check whether the texture is valid
-	if (!UseTexture(m_hsprSprite, m_szSprite)) return;
-
-//	gEngfuncs.Con_Printf("minx %f, maxx %f, miny %f, maxy %f\n", m_fMinX, m_fMaxX, m_fMinY, m_fMaxY);
-
-	float fFactor = 1/(m_fScale*fHeight);
-	float fMinTX = (org.x - m_fMinX)*fFactor;
-	float fMaxTX = (org.x - m_fMaxX)*fFactor;
-	float fMinTY = (org.y - m_fMinY)*fFactor;
-	float fMaxTY = (org.y - m_fMaxY)*fFactor;
-//	gEngfuncs.pTriAPI->Color4f( 1.0, 1.0, 1.0, m_fAlpha );
-	gEngfuncs.pTriAPI->Begin( TRI_QUADS );
-		gEngfuncs.pTriAPI->TexCoord2f(	fMinTX,		fMinTY					);
-		gEngfuncs.pTriAPI->Vertex3f  (	m_fMinX,	m_fMinY,	m_fZ+0.02	); // add 0.02 to avoid z-buffer problems
-		gEngfuncs.pTriAPI->TexCoord2f(	fMinTX,		fMaxTY					);
-		gEngfuncs.pTriAPI->Vertex3f  (	m_fMinX,	m_fMaxY,	m_fZ+0.02	);
-		gEngfuncs.pTriAPI->TexCoord2f(	fMaxTX,		fMaxTY					);
-		gEngfuncs.pTriAPI->Vertex3f  (	m_fMaxX,	m_fMaxY,	m_fZ+0.02	);
-		gEngfuncs.pTriAPI->TexCoord2f(	fMaxTX,		fMinTY					);
-		gEngfuncs.pTriAPI->Vertex3f  (	m_fMaxX,	m_fMinY,	m_fZ+0.02	);
-	gEngfuncs.pTriAPI->End();
-}
-
-//
-//-----------------------------------------------------
-//
-
-
 //LRCT
 //#define TEST_IT
 #if defined( TEST_IT )
@@ -482,6 +404,20 @@ DrawRain
 Рисование капель и снежинок.
 =================================
 */
+void guess_OrthoCrosshair( int width, int height )
+{
+	HSPRITE spr = SPR_Load("sprites/crosshair_new.spr");
+	if (!spr)
+	{
+		gEngfuncs.Con_Printf("ERROR: Can't load sprites/crosshair_new.spr\n");
+		return;
+	}
+
+	OrthoDraw(spr, kRenderTransAdd, 255, 255, 255, 1.0, width, height, ScreenWidth / 2 - width / 2, ScreenHeight / 2 - height / 2);
+
+	gEngfuncs.pTriAPI->RenderMode(kRenderNormal); //return to normal
+}
+
 //extern cl_drip FirstChainDrip;
 extern MemBlock<cl_drip>	g_dripsArray;
 extern MemBlock<cl_rainfx>	g_fxArray;
@@ -624,6 +560,11 @@ void DrawFXObjects( void )
 
 	float curtime = gEngfuncs.GetClientTime();
 
+	// go through objects list
+//	cl_rainfx* curFX = FirstChainFX.p_Next;
+	g_fxArray.StartPass();
+	cl_rainfx* curFX = g_fxArray.GetCurrent();
+
 	// usual triapi stuff
 	HSPRITE hsprTexture;
 	const model_s *pTexture;
@@ -632,19 +573,75 @@ void DrawFXObjects( void )
 	gEngfuncs.pTriAPI->SpriteTexture( (struct model_s *)pTexture, 0 );
 	gEngfuncs.pTriAPI->RenderMode( kRenderTransAdd );
 	gEngfuncs.pTriAPI->CullFace( TRI_NONE );
-	
-	// go through objects list
-//	cl_rainfx* curFX = FirstChainFX.p_Next;
-	g_fxArray.StartPass();
-	cl_rainfx* curFX = g_fxArray.GetCurrent();
+
+	const model_s *pSplashTexture;
+	hsprTexture = LoadSprite( "sprites/wsplash_x.spr" );
+	pSplashTexture = gEngfuncs.GetSpritePointer( hsprTexture );
+	gEngfuncs.pTriAPI->SpriteTexture( (struct model_s *)pSplashTexture, 0 );
+	gEngfuncs.pTriAPI->RenderMode( kRenderTransAdd );
+	gEngfuncs.pTriAPI->CullFace( TRI_NONE );
+
+	const model_s *pDripTexture;
+	hsprTexture = LoadSprite( "sprites/hi_rain.spr" );
+	pDripTexture = gEngfuncs.GetSpritePointer( hsprTexture );
+	gEngfuncs.pTriAPI->SpriteTexture( (struct model_s *)pDripTexture, 0 );
+	gEngfuncs.pTriAPI->RenderMode( kRenderTransAdd );
+	gEngfuncs.pTriAPI->CullFace( TRI_NONE );
 
 	while (curFX != NULL)
 	{
 	//	cl_rainfx* nextFX = curFX->p_Next;
-					
-		// fadeout
-		float alpha = ((curFX->birthTime + curFX->life - curtime) / curFX->life) * curFX->alpha;
-		float size = (curtime - curFX->birthTime) * MAXRINGHALFSIZE;
+		float alpha;
+		float size = 5;
+
+		if (curFX->guess_type == 1)
+		{
+			if (curFX->guess_frame < pSplashTexture->numframes - 1)
+				curFX->guess_frame++;
+
+			alpha = 0.4;
+			size = 5;
+		}
+		else if (curFX->guess_type == 2)
+		{
+			float frac = (gEngfuncs.GetClientTime() - curFX->birthTime) / curFX->life;
+			frac = min(1, frac);
+
+			alpha = curFX->alpha - curFX->alpha * frac;
+			size = frac * 1.2 * curFX->guess_scale;
+		}
+		else if (curFX->guess_type == 3)
+		{
+			float frac = (gEngfuncs.GetClientTime() - curFX->birthTime) / curFX->life;
+			frac = min(1, frac);
+
+			curFX->guess_start[2] -= (int)(frac * 512);
+			curFX->origin[2] = curFX->guess_start[2];
+
+			int contents = gEngfuncs.PM_PointContents( curFX->origin, NULL );
+			if (curFX->origin[2] <= curFX->guess_start[2] - 512 || contents == CONTENTS_SOLID || contents == CONTENTS_WATER)
+			{
+				gEngfuncs.pfnPlaySoundByNameAtLocation( "ambience/drip.wav", 1.0, curFX->origin );
+				alpha = 0;
+			}
+			else
+				alpha = curFX->alpha - curFX->alpha * frac;
+		}
+		else
+		{
+			// fadeout
+			alpha = ((curFX->birthTime + curFX->life - curtime) / curFX->life) * curFX->alpha;
+			size = (curtime - curFX->birthTime) * MAXRINGHALFSIZE;
+		}
+
+		if (curFX->guess_type == 1)
+			gEngfuncs.pTriAPI->SpriteTexture( (struct model_s *)pSplashTexture, curFX->guess_frame );
+		else if (curFX->guess_type == 2)
+			gEngfuncs.pTriAPI->SpriteTexture( (struct model_s *)pTexture, 0 );
+		else if (curFX->guess_type == 3)
+			gEngfuncs.pTriAPI->SpriteTexture( (struct model_s *)pDripTexture, 0 );
+		else
+			gEngfuncs.pTriAPI->SpriteTexture( (struct model_s *)pTexture, 0 );
 
 		// --- draw quad --------------------------
 		gEngfuncs.pTriAPI->Color4f( 1.0, 1.0, 1.0, alpha );
@@ -666,9 +663,68 @@ void DrawFXObjects( void )
 		// --- draw quad end ----------------------
 
 	//	curFX = nextFX;
-		g_fxArray.MoveNext();
+		if (alpha <= 0)
+			g_fxArray.DeleteCurrent();
+		else
+			g_fxArray.MoveNext();
 		curFX = g_fxArray.GetCurrent();
 	}
+}
+
+extern int fxcounter;
+
+void guess_SplashEffect( cl_drip *drip )
+{
+	if (fxcounter >= MAXFX)
+	{
+		gEngfuncs.Con_Printf( "Rain error: FX limit overflow!\n" );
+		return;
+	}
+
+	cl_rainfx *newFX = g_fxArray.Allocate();
+	if (!newFX)
+	{
+		gEngfuncs.Con_Printf( "Rain error: failed to allocate FX object!\n");
+		return;
+	}
+
+	newFX->alpha = gEngfuncs.pfnRandomFloat(0.6, 0.9);
+	VectorCopy(drip->origin, newFX->origin);
+	newFX->origin[2] = drip->origin[2];
+
+	newFX->birthTime = gEngfuncs.GetClientTime();
+	newFX->life = gEngfuncs.pfnRandomFloat(0.7, 1);
+	newFX->guess_type = 1;
+	newFX->guess_frame = 0;
+
+	fxcounter++;
+}
+
+void guess_RingEffect( cl_drip *drip )
+{
+	if (fxcounter >= MAXFX)
+	{
+		gEngfuncs.Con_Printf( "Rain error: FX limit overflow!\n" );
+		return;
+	}
+
+	cl_rainfx *newFX = g_fxArray.Allocate();
+	if (!newFX)
+	{
+		gEngfuncs.Con_Printf( "Rain error: failed to allocate FX object!\n");
+		return;
+	}
+
+	newFX->alpha = gEngfuncs.pfnRandomFloat(0.6, 0.9);
+	VectorCopy(drip->origin, newFX->origin);
+	newFX->origin[2] = drip->origin[2];
+
+	newFX->birthTime = gEngfuncs.GetClientTime();
+	newFX->life = gEngfuncs.pfnRandomFloat(0.7, 1);
+	newFX->guess_type = 0;
+	newFX->guess_frame = 0;
+
+	fxcounter++;
 }
 
 

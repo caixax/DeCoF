@@ -36,3 +36,8 @@ CGameStudioModelRenderer::`scalar_deleting_destructor'
 ?StudioEstimateGait@CStudioModelRenderer@@UAEXPAUentity_state_s@@@Z
 ?StudioProcessGait@CStudioModelRenderer@@UAEXPAUentity_state_s@@@Z
 ?StudioSetUpTransform@CStudioModelRenderer@@UAEXH@Z
+?guess_RadiansToDegrees@@YANN@Z
+?StudioDrawHeadShield@CStudioModelRenderer@@QAEHXZ
+?__MsgFunc_DualAnim@@YAHPBDHPAX@Z
+?__MsgFunc_DualFlash@@YAHPBDHPAX@Z
+?__MsgFunc_DualWield@@YAHPBDHPAX@Z

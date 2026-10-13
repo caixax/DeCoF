@@ -8,3 +8,7 @@
 ?UseTexture@@YAHAAHPAD@Z
 ?RenderFog@@YAXXZ
 ?OrthoDraw@@YAXHHMMMMHHHH@Z
+?guess_SplashEffect@@YAXPAUcl_drip@@@Z
+?guess_RingEffect@@YAXPAUcl_drip@@@Z
+?guess_OrthoCrosshair@@YAXHH@Z
+?DrawFXObjects@@YAXXZ

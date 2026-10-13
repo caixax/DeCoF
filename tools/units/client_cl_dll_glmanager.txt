@@ -1,0 +1,14 @@
+?Init@GLManager@@QAEXXZ
+?IsGLAllowed@GLManager@@QAEHXZ
+?LoadFunctions@GLManager@@AAEHXZ
+?Load_ARB_VBO@GLManager@@AAEHXZ
+?Load_ARB_dot3@GLManager@@AAEHXZ
+?Load_ARB_fragment_program@GLManager@@AAEHXZ
+?Load_ARB_multitexture@GLManager@@AAEHXZ
+?Load_ARB_texture_cube_map@GLManager@@AAEHXZ
+?Load_EXT_texture_3D@GLManager@@AAEHXZ
+?Load_NV_fragment_program@GLManager@@AAEHXZ
+?Load_NV_register_combiners@GLManager@@AAEHXZ
+?Load_Rectangle_Textures@GLManager@@AAEHXZ
+?LogDebugInfo@GLManager@@AAEXXZ
+?VidInit@GLManager@@QAEXXZ

@@ -349,3 +349,5 @@ va,name,kind,evidence
 100A95B0,?InputSignalHideCommandMenu@TeamFortressViewport@@QAEXXZ,func,follows InputPlayerSpecial in name order; tests m_pCurrentCommandMenu (+0xc4) and compares the time with m_flMenuOpenTime like the HLSDK InputSignalHideCommandMenu; Ghidra had it inside __CmdFunc_CloseCommandMenu
 100AB1E0,?mouseReleased@CDragNDropHandler@@UAEXW4MouseCode@vgui@@PAVPanel@3@@Z,func,"CDragNDropHandler vtable slot of mouseReleased; clears m_bDragging (+8) and calls the panel's setDragged(false) through m_pPanel (+4), as the HLSDK CDragNDropHandler::mouseReleased"
 100327D0,?solve@CSaveLoad@@MAEXXZ,func,"CSaveLoad vtable slot 110 (solve) points here; the body is only jmp Panel::solve, the inline solve of the class header"
+10092390,?DrawFXObjects@@YAXXZ,func,"Paranoia DrawFXObjects: sprites/waterring.spr, walks g_fxArray, called from HUD_DrawTransparentTriangles after DrawRain (added by an agent)"
+101BE5F8,?gl@@3VGLManager@@A,data,CHud::Init passes it in ecx to GLManager::Init (1006CF78) and CHud::VidInit to GLManager::VidInit; GLManager gl in Paranoia glmanager.cpp

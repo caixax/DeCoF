@@ -48,6 +48,9 @@ Init
 
 ====================
 */
+extern int guess_g_iDualWeapon1;
+extern int guess_g_iDualWeapon2;
+
 void CStudioModelRenderer::Init( void )
 {
 	// Set up some variables shared with engine
@@ -64,6 +67,9 @@ void CStudioModelRenderer::Init( void )
 	m_plighttransform		= (float (*)[MAXSTUDIOBONES][3][4])IEngineStudio.StudioGetLightTransform();
 	m_paliastransform		= (float (*)[3][4])IEngineStudio.StudioGetAliasTransform();
 	m_protationmatrix		= (float (*)[3][4])IEngineStudio.StudioGetRotationMatrix();
+
+	guess_g_iDualWeapon1 = -1;
+	guess_g_iDualWeapon2 = -1;
 }
 
 /*
@@ -1960,7 +1966,7 @@ extern int guess_iUnknown101902FC;
 extern int guess_iUnknown101B27C8;
 extern cl_entity_t *guess_pDualEnt;
 cl_entity_t *guess_GetDualEntity( void );
-bool guess_InCameraView( void );
+bool guess_IsViewEntityActive( void );
 int CL_IsThirdPerson( void );
 
 int CStudioModelRenderer::StudioDrawHeadShield( void )
@@ -1969,7 +1975,7 @@ int CStudioModelRenderer::StudioDrawHeadShield( void )
 	vec3_t dir;
 //	int savedDoInterp;
 
-	if ((guess_InCameraView() && guess_g_iHeadShieldType != 6 && guess_g_iHeadShieldType != 7) ||
+	if ((guess_IsViewEntityActive() && guess_g_iHeadShieldType != 6 && guess_g_iHeadShieldType != 7) ||
 		((gHUD.m_iHideHUDDisplay & HIDEHUD_WEAPONS) && guess_g_iHeadShieldType == 3) ||
 		guess_iUnknown1054506C > 2 ||
 		(CL_IsThirdPerson() && guess_g_iHeadShieldType != 6 && guess_g_iHeadShieldType != 7) ||

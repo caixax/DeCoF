@@ -40,6 +40,7 @@ extern engine_studio_api_t IEngineStudio;
 #include "kbutton.h"
 #include "guess_HUDControl.h"
 #include "guess_CutsceneSkip.h"
+#include "rain.h"
 
 #define MAX_LOGO_FRAMES 56
 
@@ -88,7 +89,6 @@ extern kbutton_t in_moveright;
 
 float guess_flNextSoundCacheTime;
 
-void WaterLandingEffect( vec3_t origin, float flScale );
 
 // true while the view is set to another entity than the local player (ViewEntity message)
 bool guess_IsViewEntityActive( void )
@@ -138,7 +138,7 @@ void CHud::Think(void)
 		if ( gEngfuncs.GetClientTime() > guess_flUnknown105595A8 )
 		{
 			guess_iUnknown105595AC++;
-			WaterLandingEffect( gEngfuncs.GetLocalPlayer()->origin, 1.0 );
+			guess_FallingDripEffect( gEngfuncs.GetLocalPlayer()->origin, 1.0 );
 			guess_flUnknown105595A8 = gEngfuncs.GetClientTime() + guess_iUnknown105595AC * 0.05 + gEngfuncs.pfnRandomFloat( 0.1, 0.25 );
 		}
 	}

@@ -1,2 +1,3 @@
 name,size,source
 ?gHUD@@3VCHud@@A,21912,"extent up to the MP3FileInfo object at 0x1018F658 (vtable stored at 101392DE); highest reference below it is +0x558C"
+?gl@@3VGLManager@@A,552,"retail references reach gl+0x224 (GLManager::IsGLAllowed reads +0x214); the next referenced object starts at gl+0x318"

@@ -26,8 +26,12 @@
 
 #include "gl_renderer.h"
 #include "gl_dlight.h"
+#include "gl_texloader.h"
 
 extern engine_studio_api_t IEngineStudio;
+extern int guess_g_iUnlockClothes;
+extern int guess_g_iHeadShieldType;
+extern int guess_iDoctorMode;
 
 //
 // Custom model rendering, based on modelviewer's code
@@ -58,6 +62,548 @@ vec3_t	g_chromeright[MAXSTUDIOBONES];	// chrome vector "right" in bone reference
 //vec3_t	g_vright;		// needs to be set to viewer's right in order for chrome to work
 float	alpha = 1; // buz: current alpha
 int		useblending = FALSE;
+
+// Cry of Fear: replacement textures for the player and costume models
+int		guess_g_iHoodieTexture;
+int		guess_g_iSleeveTexture;
+int		guess_g_iPageLockedTexture;
+bool	guess_g_bPageLockedLoaded;
+bool	guess_g_bHoodieLoaded;
+bool	guess_g_bSleeveLoaded;
+bool	guess_g_bHandsLoaded;
+int		guess_g_iHandsTexture;
+int		guess_g_iGloveTexture;
+bool	guess_g_bGloveLoaded;
+bool	guess_g_bJeansLoaded;
+bool	guess_g_bFaceLoaded;
+bool	guess_g_bPoliceSleeveLoaded;
+int		guess_g_iJeansTexture;
+int		guess_g_iFaceTexture;
+int		guess_g_iPoliceSleeveTexture;
+int		guess_g_iIntroductionTexture;
+bool	guess_g_bIntroductionLoaded;
+bool	guess_g_bBlurTextureCaptured;
+bool	guess_g_bScreenTextureCaptured;
+int		guess_g_iBlurTexture;
+int		guess_g_iOldTexture;
+int		guess_g_iScreenTexture;
+
+void guess_LoadFaceTexture( void )
+{
+	char texture[256];
+
+	if (!gHUD.guess_m_iClothes)
+		return;
+
+	if (!guess_g_iFaceTexture)
+		guess_g_iFaceTexture = current_ext_texture_id++;
+
+	if (guess_g_bFaceLoaded)
+		return;
+
+	guess_g_bFaceLoaded = false;
+
+	switch (gHUD.guess_m_iClothesState)
+	{
+	case 1:
+	case 2:
+	case 3:
+	case 4:
+	case 5:
+	case 6:
+	case 8:
+	case 9:
+		return;
+	case 7:
+		sprintf(texture, "models/costumes/black_metal/Black_Metal_Face.tga");
+		break;
+	case 10:
+		sprintf(texture, "models/costumes/sick_simon/Sick_Simon_Face.tga");
+		break;
+	case 11:
+		sprintf(texture, "models/costumes/twitcher/Twitcher_Face.tga");
+		break;
+	}
+
+	if (CreateTexture(texture, 0, guess_g_iFaceTexture))
+		guess_g_bFaceLoaded = true;
+}
+
+void guess_LoadGloveTexture( void )
+{
+	int result;
+
+	if (!guess_g_iGloveTexture)
+		guess_g_iGloveTexture = current_ext_texture_id++;
+
+	if (guess_g_bGloveLoaded)
+		return;
+
+	guess_g_bGloveLoaded = false;
+
+	if (strlen(gHUD.guess_m_szGloveTexture) > 2)
+		result = CreateTexture(gHUD.guess_m_szGloveTexture, 0, guess_g_iGloveTexture);
+
+	if (result)
+		guess_g_bGloveLoaded = true;
+}
+
+void guess_LoadHoodieTexture( bool bUnlock )
+{
+	char texture[256];
+
+	if (!guess_g_iHoodieTexture)
+		guess_g_iHoodieTexture = current_ext_texture_id++;
+
+	if (guess_g_bHoodieLoaded)
+		return;
+
+	guess_g_bHoodieLoaded = false;
+
+	if (bUnlock && guess_g_iUnlockClothes)
+	{
+		switch (guess_g_iUnlockClothes)
+		{
+		case 1:
+			sprintf(texture, "models/costumes/Leatherhoff/Leatherhoff_Hoodie.tga");
+			break;
+		case 2:
+			sprintf(texture, "models/costumes/ModDB/ModDB_Hoodie.tga");
+			break;
+		case 3:
+			sprintf(texture, "models/costumes/Hello_Kitty/Hello_Kitty_Hoodie.tga");
+			break;
+		case 4:
+			sprintf(texture, "models/costumes/AoM/AoM_Hoodie.tga");
+			break;
+		case 5:
+			sprintf(texture, "models/costumes/Camo/Camo_Hoodie.tga");
+			break;
+		case 6:
+			sprintf(texture, "models/costumes/HLC/HLC_Hoodie.tga");
+			break;
+		case 7:
+			sprintf(texture, "models/costumes/black_metal/Black_Metal_Hoodie.tga");
+			break;
+		case 8:
+			sprintf(texture, "models/costumes/Team_Psykskallar/Team_Psykskallar_Hoodie.tga");
+			break;
+		case 9:
+			sprintf(texture, "models/costumes/Awesome/Awesome_Hoodie.tga");
+			break;
+		case 10:
+			sprintf(texture, "models/costumes/Sick_Simon/Sick_Simon_Hoodie.tga");
+			break;
+		case 11:
+			sprintf(texture, "models/costumes/Twitcher/Twitcher_hoodie.tga");
+			break;
+		}
+	}
+	else
+	{
+		switch (gHUD.guess_m_iClothesState)
+		{
+		case 1:
+			sprintf(texture, "models/costumes/Leatherhoff/Leatherhoff_Hoodie.tga");
+			break;
+		case 2:
+			sprintf(texture, "models/costumes/ModDB/ModDB_Hoodie.tga");
+			break;
+		case 3:
+			sprintf(texture, "models/costumes/Hello_Kitty/Hello_Kitty_Hoodie.tga");
+			break;
+		case 4:
+			sprintf(texture, "models/costumes/AoM/AoM_Hoodie.tga");
+			break;
+		case 5:
+			sprintf(texture, "models/costumes/Camo/Camo_Hoodie.tga");
+			break;
+		case 6:
+			sprintf(texture, "models/costumes/HLC/HLC_Hoodie.tga");
+			break;
+		case 7:
+			sprintf(texture, "models/costumes/Black_Metal/Black_Metal_Hoodie.tga");
+			break;
+		case 8:
+			sprintf(texture, "models/costumes/Team_Psykskallar/Team_Psykskallar_Hoodie.tga");
+			break;
+		case 9:
+			sprintf(texture, "models/costumes/Awesome/Awesome_Hoodie.tga");
+			break;
+		case 10:
+			sprintf(texture, "models/costumes/Sick_Simon/Sick_Simon_Hoodie.tga");
+			break;
+		case 11:
+			sprintf(texture, "models/costumes/Twitcher/Twitcher_Hoodie.tga");
+			break;
+		case 12:
+			{
+				char *custom = gEngfuncs.pfnGetCvarString("sv_custom_hoodie");
+				if (custom)
+					sprintf(texture, "models/costumes/%s", custom);
+			}
+			break;
+		}
+	}
+
+	if (CreateTexture(texture, 0, guess_g_iHoodieTexture))
+		guess_g_bHoodieLoaded = true;
+}
+
+void guess_LoadIntroductionTexture( int type )
+{
+	int result;
+	int language = CVAR_GET_FLOAT("cof_subtitlelanguage");
+
+	if (language < 2)
+		return;
+
+	if (!guess_g_iIntroductionTexture)
+		guess_g_iIntroductionTexture = current_ext_texture_id++;
+
+	if (guess_g_bIntroductionLoaded)
+		return;
+
+	guess_g_bIntroductionLoaded = false;
+
+	switch (language)
+	{
+	case 2:
+		if (type == 1)
+			result = CreateTexture("gfx/vgui/introductions/dutch/dutch_sp.TGA", 0, guess_g_iIntroductionTexture);
+		else if (type == 2)
+			result = CreateTexture("gfx/vgui/introductions/dutch/dutch_doc.TGA", 0, guess_g_iIntroductionTexture);
+		else if (type == 3)
+			result = CreateTexture("gfx/vgui/introductions/dutch/dutch_coop.TGA", 0, guess_g_iIntroductionTexture);
+		else
+			return;
+		break;
+	case 3:
+		if (type == 1)
+			result = CreateTexture("gfx/vgui/introductions/french/french_sp.TGA", 0, guess_g_iIntroductionTexture);
+		else if (type == 2)
+			result = CreateTexture("gfx/vgui/introductions/french/french_doc.TGA", 0, guess_g_iIntroductionTexture);
+		else if (type == 3)
+			result = CreateTexture("gfx/vgui/introductions/french/french_coop.TGA", 0, guess_g_iIntroductionTexture);
+		else
+			return;
+		break;
+	case 4:
+		if (type == 1)
+			result = CreateTexture("gfx/vgui/introductions/german/german_sp.TGA", 0, guess_g_iIntroductionTexture);
+		else if (type == 2)
+			result = CreateTexture("gfx/vgui/introductions/german/german_doc.TGA", 0, guess_g_iIntroductionTexture);
+		else if (type == 3)
+			result = CreateTexture("gfx/vgui/introductions/german/german_coop.TGA", 0, guess_g_iIntroductionTexture);
+		else
+			return;
+		break;
+	case 5:
+		if (type == 1)
+			result = CreateTexture("gfx/vgui/introductions/norwegian/norwegian_sp.TGA", 0, guess_g_iIntroductionTexture);
+		else if (type == 2)
+			result = CreateTexture("gfx/vgui/introductions/norwegian/norwegian_doc.TGA", 0, guess_g_iIntroductionTexture);
+		else if (type == 3)
+			result = CreateTexture("gfx/vgui/introductions/norwegian/norwegian_coop.TGA", 0, guess_g_iIntroductionTexture);
+		else
+			return;
+		break;
+	case 6:
+		if (type == 1)
+			result = CreateTexture("gfx/vgui/introductions/spanish/spanish_sp.TGA", 0, guess_g_iIntroductionTexture);
+		else if (type == 2)
+			result = CreateTexture("gfx/vgui/introductions/spanish/spanish_doc.TGA", 0, guess_g_iIntroductionTexture);
+		else if (type == 3)
+			result = CreateTexture("gfx/vgui/introductions/spanish/spanish_coop.TGA", 0, guess_g_iIntroductionTexture);
+		else
+			return;
+		break;
+	case 7:
+		if (type == 1)
+			result = CreateTexture("gfx/vgui/introductions/swedish/swedish_sp.TGA", 0, guess_g_iIntroductionTexture);
+		else if (type == 2)
+			result = CreateTexture("gfx/vgui/introductions/swedish/swedish_doc.TGA", 0, guess_g_iIntroductionTexture);
+		else if (type == 3)
+			result = CreateTexture("gfx/vgui/introductions/swedish/swedish_coop.TGA", 0, guess_g_iIntroductionTexture);
+		else
+			return;
+		break;
+	default:
+		return;
+	}
+
+	if (result)
+		guess_g_bIntroductionLoaded = true;
+}
+
+void guess_LoadPageLockedTexture( void )
+{
+	if (!guess_g_iPageLockedTexture)
+		guess_g_iPageLockedTexture = current_ext_texture_id++;
+
+	if (guess_g_bPageLockedLoaded)
+		return;
+
+	guess_g_bPageLockedLoaded = false;
+
+	if (CreateTexture("models/page_locked.tga", 0, guess_g_iPageLockedTexture))
+		guess_g_bPageLockedLoaded = true;
+}
+
+void guess_LoadHandsTexture( char *modelname )
+{
+	char texture[256];
+	int result;
+
+	if (!guess_g_iHandsTexture)
+		guess_g_iHandsTexture = current_ext_texture_id++;
+
+	if (guess_g_bHandsLoaded)
+		return;
+
+	guess_g_bHandsLoaded = false;
+
+	if (!modelname)
+		return;
+
+	if (strstr(modelname, "police3"))
+		result = CreateTexture("police/police3_hands.tga", 0, guess_g_iHandsTexture);
+	else
+		result = CreateTexture("police/police_hands.tga", 0, guess_g_iHandsTexture);
+
+	if (strlen(gHUD.guess_m_szFingerTexture) > 2)
+	{
+		strcpy(texture, gHUD.guess_m_szFingerTexture);
+
+		if (strstr(modelname, "police3"))
+		{
+			strcpy(texture, gHUD.guess_m_szFingerTexture - 4);
+			strcat(texture, "_black.tga");
+			result = CreateTexture(texture, 0, guess_g_iHandsTexture);
+		}
+		else
+			result = CreateTexture(gHUD.guess_m_szFingerTexture, 0, guess_g_iHandsTexture);
+	}
+
+	if (result)
+		guess_g_bHandsLoaded = true;
+}
+
+void guess_LoadPoliceSleeveTexture( void )
+{
+	if (!guess_g_iPoliceSleeveTexture)
+		guess_g_iPoliceSleeveTexture = current_ext_texture_id++;
+
+	if (guess_g_bPoliceSleeveLoaded)
+		return;
+
+	guess_g_bPoliceSleeveLoaded = false;
+
+	int result;
+	if (strlen(gHUD.guess_m_szSleeveTexture) > 2)
+		result = CreateTexture(gHUD.guess_m_szSleeveTexture, 0, guess_g_iPoliceSleeveTexture);
+	else
+		result = CreateTexture("police/police_sleeve.tga", 0, guess_g_iPoliceSleeveTexture);
+
+	if (result)
+		guess_g_bPoliceSleeveLoaded = true;
+}
+
+void guess_CaptureScreenTexture( int width, int height )
+{
+	if (!guess_g_iScreenTexture)
+	{
+		unsigned char *data = new unsigned char[256*256*3];
+		memset(data, 0, 256*256*3);
+
+		gl.glGetIntegerv(GL_TEXTURE_BINDING_2D, &guess_g_iScreenTexture);
+		gl.glBindTexture(GL_TEXTURE_2D, current_ext_texture_id);
+		gl.glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+		gl.glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+		gl.glTexImage2D(GL_TEXTURE_2D, 0, 3, 256, 256, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
+		gl.glBindTexture(GL_TEXTURE_2D, guess_g_iScreenTexture);
+
+		delete[] data;
+		guess_g_iScreenTexture = current_ext_texture_id++;
+	}
+
+	gl.glGetIntegerv(GL_TEXTURE_BINDING_2D, &guess_g_iOldTexture);
+	gl.glBindTexture(GL_TEXTURE_2D, guess_g_iScreenTexture);
+
+	int x = ScreenWidth / 2;
+	if (width)
+		x = ScreenWidth / 2 - width / 2;
+
+	int y = ScreenHeight / 2;
+	if (height)
+		y = ScreenHeight / 2 - height / 2;
+
+	gl.glCopyTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, x, y, width, height, 0);
+	guess_g_bScreenTextureCaptured = true;
+}
+
+void guess_CaptureBlurTexture( int width, int height )
+{
+	if (!guess_g_iBlurTexture)
+	{
+		unsigned char *data = new unsigned char[256*256*3];
+		memset(data, 0, 256*256*3);
+
+		gl.glGetIntegerv(GL_TEXTURE_BINDING_2D, &guess_g_iBlurTexture);
+		gl.glBindTexture(GL_TEXTURE_2D, current_ext_texture_id);
+		gl.glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+		gl.glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+		gl.glTexImage2D(GL_TEXTURE_2D, 0, 3, 256, 256, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
+		gl.glBindTexture(GL_TEXTURE_2D, guess_g_iBlurTexture);
+
+		delete[] data;
+		guess_g_iBlurTexture = current_ext_texture_id++;
+	}
+
+	gl.glGetIntegerv(GL_TEXTURE_BINDING_2D, &guess_g_iOldTexture);
+	gl.glBindTexture(GL_TEXTURE_2D, guess_g_iBlurTexture);
+
+	int x = ScreenWidth / 2;
+	if (width)
+		x = ScreenWidth / 2 - width / 2;
+
+	int y = ScreenHeight / 2;
+	if (height)
+		y = ScreenHeight / 2 - height / 2;
+
+	gl.glCopyTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, x, y, width, height, 0);
+	guess_g_bBlurTextureCaptured = true;
+}
+
+void guess_LoadSleeveTexture( void )
+{
+	char texture[256];
+
+	if (!gHUD.guess_m_iClothes && strlen(gHUD.guess_m_szFingerTexture) <= 2)
+		return;
+
+	if (!guess_g_iSleeveTexture)
+		guess_g_iSleeveTexture = current_ext_texture_id++;
+
+	if (guess_g_bSleeveLoaded)
+		return;
+
+	guess_g_bSleeveLoaded = false;
+
+	switch (gHUD.guess_m_iClothesState)
+	{
+	case 1:
+		sprintf(texture, "models/costumes/leatherhoff/Leatherhoff_Sleeve.tga");
+		break;
+	case 2:
+		sprintf(texture, "models/costumes/moddb/ModDB_Sleeve.tga");
+		break;
+	case 3:
+		sprintf(texture, "models/costumes/hello_kitty/Hello_Kitty_Sleeve.tga");
+		break;
+	case 4:
+	case 7:
+	case 8:
+	case 9:
+		sprintf(texture, "models/costumes/awesome/Awesome_Sleeve.tga");
+		break;
+	case 5:
+		sprintf(texture, "models/costumes/camo/Camo_Sleeve.tga");
+		break;
+	case 6:
+		sprintf(texture, "models/costumes/hlc/HLC_Sleeve.tga");
+		break;
+	case 10:
+		sprintf(texture, "models/costumes/sick_simon/Sick_Simon_Sleeve.tga");
+		break;
+	case 11:
+		sprintf(texture, "models/costumes/twitcher/twitcher_sleeve.tga");
+		break;
+	case 12:
+		return;
+	}
+
+	if (strlen(gHUD.guess_m_szSleeveTexture) > 2)
+		strcpy(texture, gHUD.guess_m_szSleeveTexture);
+
+	if (CreateTexture(texture, 0, guess_g_iSleeveTexture))
+		guess_g_bSleeveLoaded = true;
+}
+
+void guess_LoadJeansTexture( void )
+{
+	char texture[256];
+
+	if (!gHUD.guess_m_iClothes && !guess_g_iUnlockClothes)
+		return;
+
+	if (!guess_g_iJeansTexture)
+		guess_g_iJeansTexture = current_ext_texture_id++;
+
+	if (guess_g_bJeansLoaded)
+		return;
+
+	guess_g_bJeansLoaded = false;
+
+	int clothes = gHUD.guess_m_iClothesState;
+	if (guess_g_iUnlockClothes)
+		clothes = guess_g_iUnlockClothes;
+
+	switch (clothes)
+	{
+	case 1:
+		sprintf(texture, "models/costumes/leatherhoff/Leatherhoff_Jeans.tga");
+		break;
+	case 2:
+	case 5:
+	case 6:
+	case 8:
+		return;
+	case 3:
+		sprintf(texture, "models/costumes/hello_kitty/Hello_Kitty_Jeans.tga");
+		break;
+	case 4:
+		sprintf(texture, "models/costumes/AoM/AoM_Jeans.tga");
+		break;
+	case 7:
+		sprintf(texture, "models/costumes/black_metal/Black_Metal_Jeans.tga");
+		break;
+	case 9:
+		sprintf(texture, "models/costumes/awesome/Awesome_Jeans.tga");
+		break;
+	case 10:
+		sprintf(texture, "models/costumes/sick_simon/Sick_Simon_Jeans.tga");
+		break;
+	case 11:
+		sprintf(texture, "models/costumes/twitcher/Twitcher_Jeans.tga");
+		break;
+	}
+
+	if (CreateTexture(texture, 0, guess_g_iJeansTexture))
+		guess_g_bJeansLoaded = true;
+}
+
+int		guess_g_iWaterLoTexture;
+bool	guess_g_bWaterLoLoaded;
+
+void guess_LoadWaterLoTexture( void )
+{
+	if (!guess_g_iWaterLoTexture)
+		guess_g_iWaterLoTexture = current_ext_texture_id++;
+
+	if (guess_g_bWaterLoLoaded)
+		return;
+
+	guess_g_bWaterLoLoaded = false;
+
+	if (CreateTexture("textures/water_lo.tga", 0, guess_g_iWaterLoTexture))
+		guess_g_bWaterLoLoaded = true;
+}
+
+static float guess_VectorDistance( vec3_t a, vec3_t b )
+{
+	return Length(b - a);
+}
 
 
 //================================================
@@ -122,7 +668,7 @@ void CStudioModelRenderer::GL_SetupRenderer( int rendermode )
 		alpha = (float)m_pCurrentEntity->curstate.renderamt / 255.0;
 		useblending = TRUE;
 	}
-	else if (rendermode == kRenderTransAlpha)
+	else if (rendermode == kRenderTransAlpha || rendermode == kRenderTransTexture)
 	{
 		gl.glDepthMask(GL_FALSE);
 		gl.glEnable(GL_BLEND);
@@ -205,8 +751,44 @@ void CStudioModelRenderer::GL_SetupRenderer( int rendermode )
 
 	// buz special hack for transparent parts on head shield -
 	// use less alpha
-	if (!strcmp(m_pRenderModel->name, "models/v_headshield.mdl"))
-		alpha = 0.7;
+	if (guess_g_iHeadShieldType == 0)
+	{
+		if (!strcmp(m_pRenderModel->name, "models/nv_goggles.mdl"))
+			alpha = 0.7;
+	}
+	else if (guess_g_iHeadShieldType == 10)
+	{
+		if (!strcmp(m_pRenderModel->name, "models/weapons/v_gasmask.mdl") || !strcmp(m_pRenderModel->name, "models/weapons/v_gasmask_simon.mdl"))
+			alpha = 0.7;
+	}
+	else if (guess_g_iHeadShieldType == 1)
+	{
+		if (!strcmp(m_pRenderModel->name, "models/items/tv_frame.mdl"))
+			alpha = 0.7;
+	}
+	else if (guess_g_iHeadShieldType == 2)
+	{
+		if (guess_iDoctorMode)
+		{
+			if (!strcmp(m_pRenderModel->name, "models/weapons/v_death_doctor.mdl"))
+				alpha = 0.7;
+		}
+		else
+		{
+			if (!strcmp(m_pRenderModel->name, "models/weapons/v_death.mdl"))
+				alpha = 0.7;
+		}
+	}
+	else if (guess_g_iHeadShieldType == 5)
+	{
+		if (!strcmp(m_pRenderModel->name, "models/props/blandat/v_telescope.mdl"))
+			alpha = 0.7;
+	}
+	else if (guess_g_iHeadShieldType == 6 && gHUD.guess_m_pszHeadShieldSound)
+	{
+		if (!strcmp(m_pRenderModel->name, gHUD.guess_m_pszHeadShieldSound))
+			alpha = 0.7;
+	}
 }
 
 void CStudioModelRenderer::GL_RestoreRenderer()

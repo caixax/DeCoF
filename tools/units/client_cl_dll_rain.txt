@@ -1,1 +1,9 @@
 ?InitRain@@YAXXZ
+?guess_VectorDistance@@YAMVVector@@0@Z
+?guess_SplashLandingEffect@@YAXPAUcl_drip@@@Z
+?ProcessRain@@YAXXZ
+?guess_RippleEffect@@YAXVVector@@M@Z
+?WaterLandingEffect@@YAXPAUcl_drip@@@Z
+?guess_FallingDripEffect@@YAXVVector@@M@Z
+?ProcessFXObjects@@YAXXZ
+?ResetRain@@YAXXZ

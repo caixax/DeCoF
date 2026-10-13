@@ -17,6 +17,10 @@
 #include "custom_alloc.h"
 
 void WaterLandingEffect(cl_drip *drip);
+void guess_SplashLandingEffect(cl_drip *drip);
+float guess_VectorDistance(vec3_t a, vec3_t b);
+
+extern cvar_t *cl_ripples;
 
 
 rain_properties     Rain;
@@ -102,8 +106,16 @@ void ProcessRain( void )
 		// remove drip if its origin lower than minHeight
 		if (curDrip->origin.z < curDrip->minHeight) 
 		{
-			if (curDrip->landInWater/* && Rain.weatherMode == 0*/)
-				WaterLandingEffect(curDrip); // create water rings
+			if (player)
+			{
+				if (guess_VectorDistance(player->origin, curDrip->origin) <= 500)
+				{
+					if (curDrip->landInWater == 1)
+						WaterLandingEffect(curDrip); // create water rings
+					if (curDrip->landInWater == 2)
+						guess_SplashLandingEffect(curDrip);
+				}
+			}
 
 			if (gHUD.RainInfo->value)
 			{
@@ -234,7 +246,7 @@ void ProcessRain( void )
 			if (contents == CONTENTS_WATER)
 				newClDrip->landInWater = 1;
 			else
-				newClDrip->landInWater = 0;
+				newClDrip->landInWater = 2;
 
 			// add to first place in chain
 		//	newClDrip->p_Next = FirstChainDrip.p_Next;
@@ -247,7 +259,7 @@ void ProcessRain( void )
 		}
 		else
 		{
-			gEngfuncs.Con_Printf( "Rain error: Drip limit overflow!\n" );
+		//	gEngfuncs.Con_Printf( "Rain error: Drip limit overflow!\n" );
 			return;
 		}
 	}
@@ -255,7 +267,7 @@ void ProcessRain( void )
 	if (gHUD.RainInfo->value) // print debug info
 	{
 		gEngfuncs.Con_Printf( "Rain info: Drips exist: %i\n", dripcounter );
-		gEngfuncs.Con_Printf( "Rain info: FX's exist: %i\n", fxcounter );
+		gEngfuncs.Con_Printf( "Rain info: FXs exist: %i\n", fxcounter );
 		gEngfuncs.Con_Printf( "Rain info: Attempted/Dropped: %i, %i\n", debug_attempted, debug_dropped);
 		if (debug_howmany)
 		{
@@ -276,12 +288,15 @@ WaterLandingEffect
 */
 void WaterLandingEffect(cl_drip *drip)
 {
+	if (!cl_ripples->value)
+		return;
+
 	if (fxcounter >= MAXFX)
 	{
 		gEngfuncs.Con_Printf( "Rain error: FX limit overflow!\n" );
 		return;
-	}	
-	
+	}
+
 //	cl_rainfx *newFX = new cl_rainfx;
 	cl_rainfx *newFX = g_fxArray.Allocate();
 	if (!newFX)
@@ -289,13 +304,15 @@ void WaterLandingEffect(cl_drip *drip)
 		gEngfuncs.Con_Printf( "Rain error: failed to allocate FX object!\n");
 		return;
 	}
-			
+
 	newFX->alpha = gEngfuncs.pfnRandomFloat(0.6, 0.9);
 	VectorCopy(drip->origin, newFX->origin);
 	newFX->origin[2] = drip->minHeight; // correct position
-			
+
 	newFX->birthTime = gEngfuncs.GetClientTime();
 	newFX->life = gEngfuncs.pfnRandomFloat(0.7, 1);
+	newFX->guess_type = 0;
+	newFX->guess_frame = 0;
 
 	// add to first place in chain
 //	newFX->p_Next = FirstChainFX.p_Next;
@@ -304,6 +321,103 @@ void WaterLandingEffect(cl_drip *drip)
 //		newFX->p_Next->p_Prev = newFX;
 //	FirstChainFX.p_Next = newFX;
 			
+	fxcounter++;
+}
+
+float guess_VectorDistance(vec3_t a, vec3_t b)
+{
+	return Length(b - a);
+}
+
+void guess_SplashLandingEffect(cl_drip *drip)
+{
+	if (CVAR_GET_FLOAT("r_weather") < 2)
+		return;
+
+	if (fxcounter >= MAXFX)
+	{
+		gEngfuncs.Con_Printf( "Rain error: FX limit overflow!\n" );
+		return;
+	}
+
+	cl_rainfx *newFX = g_fxArray.Allocate();
+	if (!newFX)
+	{
+		gEngfuncs.Con_Printf( "Rain error: failed to allocate FX object!\n");
+		return;
+	}
+
+	newFX->alpha = gEngfuncs.pfnRandomFloat(0.6, 0.9);
+	VectorCopy(drip->origin, newFX->origin);
+	newFX->origin[2] = drip->minHeight; // correct position
+
+	newFX->birthTime = gEngfuncs.GetClientTime();
+	newFX->life = gEngfuncs.pfnRandomFloat(0.7, 1);
+	newFX->guess_type = 1;
+	newFX->guess_frame = 0;
+
+	fxcounter++;
+}
+
+void guess_RippleEffect(vec3_t origin, float flScale)
+{
+	if (!cl_ripples->value)
+		return;
+
+	if (fxcounter >= MAXFX)
+	{
+		gEngfuncs.Con_Printf( "Rain error: FX limit overflow!\n" );
+		return;
+	}
+
+	cl_rainfx *newFX = g_fxArray.Allocate();
+	if (!newFX)
+	{
+		gEngfuncs.Con_Printf( "Rain error: failed to allocate FX object!\n");
+		return;
+	}
+
+	newFX->alpha = 1.0;
+	VectorCopy(origin, newFX->origin);
+	newFX->origin[2] = origin[2] + 0.5;
+
+	newFX->birthTime = gEngfuncs.GetClientTime();
+	newFX->life = gEngfuncs.pfnRandomFloat(0.7, 1);
+	newFX->guess_type = 2;
+	newFX->guess_frame = 0;
+	newFX->guess_scale = flScale;
+
+	fxcounter++;
+}
+
+void guess_FallingDripEffect(vec3_t origin, float flScale)
+{
+	if (CVAR_GET_FLOAT("r_weather") < 2)
+		return;
+
+	if (fxcounter >= MAXFX)
+	{
+		gEngfuncs.Con_Printf( "Rain error: FX limit overflow!\n" );
+		return;
+	}
+
+	cl_rainfx *newFX = g_fxArray.Allocate();
+	if (!newFX)
+	{
+		gEngfuncs.Con_Printf( "Rain error: failed to allocate FX object!\n");
+		return;
+	}
+
+	newFX->alpha = 1.0;
+	newFX->birthTime = gEngfuncs.GetClientTime();
+	newFX->life = gEngfuncs.pfnRandomFloat(0.7, 1);
+	newFX->guess_type = 3;
+	newFX->guess_frame = 0;
+	newFX->guess_scale = flScale;
+	VectorCopy(origin, newFX->origin);
+	newFX->origin[2] += gEngfuncs.pfnRandomFloat(-1, 1);
+	newFX->guess_start = newFX->origin;
+
 	fxcounter++;
 }
 

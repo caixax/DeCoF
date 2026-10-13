@@ -1498,6 +1498,16 @@
           "name": "cl_dll/hl/hl_weapons",
           "source": "src/cl_dll/hl/hl_weapons.cpp",
           "functions_file": "tools/units/client_cl_dll_hl_hl_weapons.txt"
+        },
+        {
+          "name": "cl_dll/glmanager",
+          "source": "src/cl_dll/glmanager.cpp",
+          "functions_file": "tools/units/client_cl_dll_glmanager.txt"
+        },
+        {
+          "name": "cl_dll/mp3",
+          "source": "src/cl_dll/mp3.cpp",
+          "functions_file": "tools/units/client_cl_dll_mp3.txt"
         }
       ]
     }

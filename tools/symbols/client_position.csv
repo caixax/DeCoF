@@ -171,6 +171,7 @@ va,name,kind,evidence
 1008B270,?MsgFunc_StatusIcon@CHudStatusIcons@@QAEHPBDHPAX@Z,func,"position in client/cl_dll/status_icons (name order), after ?Init@CHudStatusIcons@@UAEHXZ; sizes retail 108, ours 108"
 1008BAB0,?HeadShieldThink@@YAHXZ,func,"position in client/cl_dll/StudioModelRenderer (name order), after ??__G@YGXPAX0IIP6EPAX00@Z@Z; sizes retail 183, ours 114"
 1008BDD0,?StudioCalcBoneAdj@CStudioModelRenderer@@UAEXMPAMPBE1E@Z,func,"position in client/cl_dll/StudioModelRenderer (name order), after ?StudioCalcAttachments@CStudioModelRenderer@@UAEXXZ; sizes retail 567, ours 612"
+1008C7E0,?StudioDrawHeadShield@CStudioModelRenderer@@QAEHXZ,func,"position in client/cl_dll/StudioModelRenderer (name order), after ?StudioDrawCustomEntity@CStudioModelRenderer@@QAEHPAUcl_entity_s@@HH@Z; sizes retail 1779, ours 1782"
 1008E270,?StudioEstimateGait@CStudioModelRenderer@@UAEXPAUentity_state_s@@@Z,func,"position in client/cl_dll/StudioModelRenderer (name order), after ?StudioEstimateFrame@CStudioModelRenderer@@UAEMPAUmstudioseqdesc_t@@@Z; sizes retail 703, ours 703"
 1008EAE0,?StudioProcessGait@CStudioModelRenderer@@UAEXPAUentity_state_s@@@Z,func,"position in client/cl_dll/StudioModelRenderer (name order), after ?StudioPlayerBlend@CStudioModelRenderer@@UAEXPAUmstudioseqdesc_t@@PAHPAM@Z; sizes retail 748, ours 753"
 1008F210,?StudioSetUpTransform@CStudioModelRenderer@@UAEXH@Z,func,"position in client/cl_dll/StudioModelRenderer (name order), after ?StudioSaveBones@CStudioModelRenderer@@UAEXXZ; sizes retail 1610, ours 1595"

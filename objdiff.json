@@ -2202,6 +2202,22 @@
       "metadata": {
         "source_path": "src/cl_dll/hl/hl_weapons.cpp"
       }
+    },
+    {
+      "name": "client/cl_dll/glmanager",
+      "target_path": "build/target/client/cl_dll/glmanager.obj",
+      "base_path": "build/base/client/cl_dll/glmanager.obj",
+      "metadata": {
+        "source_path": "src/cl_dll/glmanager.cpp"
+      }
+    },
+    {
+      "name": "client/cl_dll/mp3",
+      "target_path": "build/target/client/cl_dll/mp3.obj",
+      "base_path": "build/base/client/cl_dll/mp3.obj",
+      "metadata": {
+        "source_path": "src/cl_dll/mp3.cpp"
+      }
     }
   ]
 }

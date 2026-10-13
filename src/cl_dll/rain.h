@@ -5,8 +5,8 @@
 #define SNOWSPEED	200		// скорость падения снежинок
 #define SNOWFADEDIST	80
 
-#define MAXDRIPS	2000	// лимит капель (можно увеличить при необходимости)
-#define MAXFX		2000	// лимит дополнительных частиц (круги по воде и т.п.)
+#define MAXDRIPS	4000	// лимит капель (можно увеличить при необходимости)
+#define MAXFX		4000	// лимит дополнительных частиц (круги по воде и т.п.)
 
 #define DRIP_SPRITE_HALFHEIGHT	46
 #define DRIP_SPRITE_HALFWIDTH	8
@@ -49,6 +49,10 @@ typedef struct cl_rainfx
 	float		life;
 	vec3_t		origin;
 	float		alpha;
+	int			guess_type;		// 0 - water ring, 1 - splash, 2 - ripple, 3 - falling drip
+	int			guess_frame;	// splash sprite frame
+	int			guess_scale;	// ripple size
+	vec3_t		guess_start;	// falling drip start point
 	
 //	cl_rainfx*		p_Next;		// next fx in chain
 //	cl_rainfx*		p_Prev;		// previous fx in chain
@@ -59,6 +63,8 @@ void ProcessRain( void );
 void ProcessFXObjects( void );
 void ResetRain( void );
 void InitRain( void );
+void guess_FallingDripEffect( vec3_t origin, float flScale );
+void guess_RippleEffect( vec3_t origin, float flScale );
 
 #endif
 
