@@ -1,0 +1,6 @@
+??0CBossBar@@QAE@XZ
+??1CBossBar@@QAE@XZ
+?Initialize@CBossBar@@QAEXXZ
+?guess_BossBarInit@@YAXXZ
+?guess_MsgBossBar@@YAHPBDHPAX@Z
+?solve@CBossBar@@UAEXXZ

@@ -1,0 +1,9 @@
+??0CComputer@@QAE@XZ
+?Initialize@CComputer@@QAEXXZ
+?KeyInput@CComputer@@QAEHHHPBD@Z
+?guess_ComputerInit@@YAXXZ
+?actionPerformed@CComputerHandler_Command@@UAEXPAVPanel@vgui@@@Z
+?setVisible@CComputer@@UAEX_N@Z
+?ActionSignal@CComputer@@QAEXH@Z
+?guess_MsgComputer@@YAHPBDHPAX@Z
+?solve@CComputer@@MAEXXZ

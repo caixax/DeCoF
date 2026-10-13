@@ -99,3 +99,9 @@ The reconstructed source keeps the behavior of the retail 1.6a binaries, includi
 | ServersCancel (client hud_servers.cpp) | Calls g_pServers->RequestList() instead of CancelRequest(), so cancelling the server list requests it again (RequestList at 100745F0 is a byte match). | the call |
 | CPuzzleBar2 to CPuzzleBar5 ::Use (CoF_PuzzleBars.cpp) | SetThink( &CPuzzleBar::BarCheck ) instead of the class's own BarCheck (copy-paste from CPuzzleBar): the bars run the first bar's check on their own entity. | the think function |
 | CBowlingBall::BowlingUse (guess_CoF_BowlingBall.cpp) | Looks up the player with GetClassPtr and does nothing with it: using the ball has no effect. | as written |
+| CComputer (client guess_Computer.cpp) | The password field shows "Invalid password or password!". | the string |
+| CVGUIBillboard (client guess_VGUIBillboard.cpp) | paint passes the HUD message as the format string of Label::setText; the constructor loads 640_gustavdahlwelcome.tga twice and leaks the first copy. | as written |
+| CDocuments (client guess_Documents.cpp) | Reads gHUD notes 1 to 16 of a 16-entry array (one past the end). | the index range |
+| CGameOver::solve (client guess_GameOver.cpp) | Returns before Panel::solve when there is no local player. | as written |
+| CAmmoInventory (client guess_AmmoInventory.cpp) | setVisible tests the pfnGetLevelName pointer, which is never null; the panel is never created, so the AmmoInv message does nothing. | as written |
+| CBossBar (client guess_BossBar.cpp) | Every bar is placed at y = image height. | as written |
