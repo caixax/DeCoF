@@ -8,7 +8,7 @@
 #include "parsemsg.h"
 #include "vgui_TeamFortressViewport.h"
 #include "guess_HUDControl.h"
-#include "C:/Users/caixa/AppData/Local/Temp/claude/I--Projects-cof-decompiled/9d5a61fc-25ad-462b-8008-0b9766477ef9/scratchpad/tmpinc/guess_Credits.h"
+#include "guess_Credits.h"
 
 extern int guess_g_iLetterboxHeight;
 

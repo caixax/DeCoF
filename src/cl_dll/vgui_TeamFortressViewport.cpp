@@ -33,6 +33,7 @@
 #include<VGUI_Font.h>
 #include<VGUI_App.h>
 #include<VGUI_BuildGroup.h>
+#include<VGUI_TextEntry.h>
 
 #include "vgui_paranoiatext.h"// buz
 
@@ -65,6 +66,38 @@
 #include "vgui_gamma.h" // buz
 #include "vgui_screenmsg.h" // buz
 
+// Cry of Fear panels
+#include "guess_HUDControl.h"
+#include "guess_BossBar.h"
+#include "guess_Documents.h"
+#include "guess_VGUIBillboard.h"
+#include "guess_NoteDocument.h"
+#include "guess_Keypad.h"
+#include "guess_Save.h"
+#include "guess_Yesno.h"
+#include "guess_Unlockables.h"
+#include "guess_ClothesMenu.h"
+#include "guess_Padlock.h"
+#include "guess_Telephone.h"
+#include "guess_BookMenu.h"
+#include "guess_SaveLoad.h"
+#include "guess_Language.h"
+#include "guess_GameMenu.h"
+#include "guess_CutsceneSkip.h"
+#include "guess_Computer.h"
+#include "guess_AnimalStatue.h"
+#include "guess_UserDocument.h"
+#include "guess_PuzzleBar.h"
+#include "guess_Phone.h"
+#include "guess_Difficulty.h"
+#include "guess_GameOver.h"
+#include "guess_Scope.h"
+#include "guess_TVFrame.h"
+#include "guess_CoopStats.h"
+#include "guess_Credits.h"
+#include "guess_RECBInventory.h"
+#include "guess_VGUIExtraMenu.h"
+
 
 extern int g_iVisibleMouse;
 class CCommandMenu;
@@ -73,6 +106,7 @@ int g_iTeamNumber;
 int g_iUser1;
 int g_iUser2;
 int g_iUser3;
+int guess_iVGUIMenuNoMusic;	// second byte of the VGUIMenu message, read by CGameOver::setVisible
 
 // Scoreboard positions
 #define SBOARD_INDENT_X			XRES(104)
@@ -399,6 +433,21 @@ CommandButton *CCommandMenu::FindButtonWithSubmenu( CCommandMenu *pSubMenu )
 	return NULL;
 }
 
+// fires the armed buttons of the menu (opens their submenu), never called in 1.6a
+void CCommandMenu::guess_FireArmedButton( void )
+{
+	for ( int i = 0; i < m_iButtons; i++ )
+	{
+		if ( !m_aButtons[i]->IsNotValid() && m_aButtons[i]->isArmed() )
+		{
+			if ( m_aButtons[i]->GetSubMenu() )
+				gViewPort->SetCurrentCommandMenu( m_aButtons[i]->GetSubMenu() );
+			else
+				m_aButtons[i]->fireActionSignal();
+		}
+	}
+}
+
 // Recalculate the visible buttons
 bool CCommandMenu::RecalculateVisibles( int iYOffset, bool bHideAll )
 {
@@ -649,9 +698,40 @@ TeamFortressViewport::TeamFortressViewport(int x,int y,int wide,int tall) : Pane
 	m_pScreenMsg = NULL;
 	m_pRadio = NULL; // buz
 	m_pGamma = NULL; // buz
+	guess_m_pHUDControl = NULL;
+	guess_m_pBossBar = NULL;
+	guess_m_pVGUIBillboard = NULL;
+	guess_m_pNoteDocument = NULL;
+	guess_m_pKeypad = NULL;
+	guess_m_pPhone = NULL;
+	guess_m_pDifficulty = NULL;
+	guess_m_pPuzzleBar = NULL;
+	guess_m_pSave = NULL;
+	guess_m_pYesno = NULL;
+	guess_m_pAnimalStatue = NULL;
+	guess_m_pComputer = NULL;
+	guess_m_pUserDocument = NULL;
+	guess_m_pCutsceneSkip = NULL;
+	guess_m_pPadlock = NULL;
+	guess_m_pSaveLoad = NULL;
+	guess_m_pGameMenu = NULL;
+	guess_m_pScope = NULL;
+	guess_m_pTVFrame = NULL;
+	guess_m_pGameOver = NULL;
+	guess_m_pLanguage = NULL;
+	guess_m_pTelephone = NULL;
+	guess_m_pDocuments = NULL;
+	guess_m_pCredits = NULL;
+	guess_m_pClothesMenu = NULL;
+	guess_m_pUnlockables = NULL;
+	guess_m_pBookMenu = NULL;
+	guess_m_pCoopStats = NULL;
+	guess_m_pVGUIExtraMenu = NULL;
 
 	// Wargon: Скроллящийся текст.
 	m_pScrollingMsg = NULL;
+
+	guess_m_pRECBInventory = NULL;
 
 	CreatePickupMessagePanels(); // buz
 
@@ -712,6 +792,9 @@ TeamFortressViewport::TeamFortressViewport(int x,int y,int wide,int tall) : Pane
 //	CreateClassMenu();
 //	CreateSpectatorMenu();
 	CreateScoreBoard();
+	guess_CreateRECBInventory();
+	guess_CreateNoteDocument();
+	guess_CreateUserDocument();
 	// Init command menus
 	m_iNumMenus = 0;
 	m_iCurrentTeamNumber = m_iUser1 = m_iUser2 = m_iUser3 = 0;
@@ -734,9 +817,87 @@ TeamFortressViewport::TeamFortressViewport(int x,int y,int wide,int tall) : Pane
 	m_pSubtitle->setParent(this);
 	m_pSubtitle->setVisible(false);
 
+	guess_m_pHUDControl = new CHUDControl();
+	guess_m_pHUDControl->setParent(this);
+
+	guess_m_pBossBar = new CBossBar();
+	guess_m_pBossBar->setParent(this);
+
+	guess_m_pDocuments = new CDocuments();
+	guess_m_pDocuments->setParent(this);
+
 	// buz
 	m_pRadio = new CRadioIcon();
 	m_pRadio->setParent(this);
+
+	guess_m_pVGUIBillboard = new CVGUIBillboard();
+	guess_m_pVGUIBillboard->setParent(this);
+
+	guess_m_pKeypad = new CKeypad();
+	guess_m_pKeypad->setParent(this);
+
+	guess_m_pSave = new CSave();
+	guess_m_pSave->setParent(this);
+
+	guess_m_pYesno = new CYesno();
+	guess_m_pYesno->setParent(this);
+
+	guess_m_pCoopStats = new CCoopStats();
+	guess_m_pCoopStats->setParent(this);
+
+	guess_m_pUnlockables = new CUnlockables();
+	guess_m_pUnlockables->setParent(this);
+
+	guess_m_pClothesMenu = new CClothesMenu();
+	guess_m_pClothesMenu->setParent(this);
+
+	guess_m_pPadlock = new CPadlock();
+	guess_m_pPadlock->setParent(this);
+
+	guess_m_pTelephone = new CTelephone();
+	guess_m_pTelephone->setParent(this);
+
+	guess_m_pBookMenu = new CBookMenu();
+	guess_m_pBookMenu->setParent(this);
+
+	guess_m_pSaveLoad = new CSaveLoad();
+	guess_m_pSaveLoad->setParent(this);
+
+	guess_m_pLanguage = new CLanguage();
+	guess_m_pLanguage->setParent(this);
+
+	guess_m_pGameMenu = new CGameMenu();
+	guess_m_pGameMenu->setParent(this);
+
+	guess_m_pCutsceneSkip = new CCutsceneSkip();
+	guess_m_pCutsceneSkip->setParent(this);
+
+	guess_m_pComputer = new CComputer();
+	guess_m_pComputer->setParent(this);
+
+	guess_m_pAnimalStatue = new CAnimalStatue();
+	guess_m_pAnimalStatue->setParent(this);
+
+	guess_m_pPuzzleBar = new CPuzzleBar();
+	guess_m_pPuzzleBar->setParent(this);
+
+	guess_m_pPhone = new CPhone();
+	guess_m_pPhone->setParent(this);
+
+	guess_m_pDifficulty = new CDifficulty();
+	guess_m_pDifficulty->setParent(this);
+
+	guess_m_pGameOver = new CGameOver();
+	guess_m_pGameOver->setParent(this);
+
+	guess_m_pScope = new CScope();
+	guess_m_pScope->setParent(this);
+
+	guess_m_pCredits = new CCredits();
+	guess_m_pCredits->setParent(this);
+
+	guess_m_pTVFrame = new CTVFrame();
+	guess_m_pTVFrame->setParent(this);
 
 	// buz
 	m_pTabPanel = new CTabPanel();
@@ -757,6 +918,9 @@ TeamFortressViewport::TeamFortressViewport(int x,int y,int wide,int tall) : Pane
 	// Wargon: Скроллящийся текст.
 	m_pScrollingMsg = new CScrollingMessage();
 	m_pScrollingMsg->setParent(this);
+
+	guess_m_pVGUIExtraMenu = new CVGUIExtraMenu();
+	guess_m_pVGUIExtraMenu->setParent(this);
 }
 
 //-----------------------------------------------------------------------------
@@ -806,7 +970,75 @@ void TeamFortressViewport::Initialize( void )
 	if (m_pScrollingMsg)
 		m_pScrollingMsg->Initialize();
 
+	if (guess_m_pHUDControl)
+		guess_m_pHUDControl->Initialize();
+	if (guess_m_pBossBar)
+		guess_m_pBossBar->Initialize();
+	if (guess_m_pVGUIBillboard)
+		guess_m_pVGUIBillboard->Initialize();
+	if (guess_m_pKeypad)
+		guess_m_pKeypad->Initialize();
+	if (guess_m_pSave)
+		guess_m_pSave->Initialize();
+	if (guess_m_pYesno)
+		guess_m_pYesno->Initialize();
+	if (guess_m_pCoopStats)
+		guess_m_pCoopStats->Initialize();
+	if (guess_m_pVGUIExtraMenu)
+		guess_m_pVGUIExtraMenu->Initialize();
+	if (guess_m_pClothesMenu)
+		guess_m_pClothesMenu->Initialize();
+	if (guess_m_pUnlockables)
+		guess_m_pUnlockables->Initialize();
+	if (guess_m_pScope)
+		guess_m_pScope->Initialize();
+	if (guess_m_pCredits)
+		guess_m_pCredits->Initialize();
+	if (guess_m_pLanguage)
+		guess_m_pLanguage->Initialize();
+	if (guess_m_pTVFrame)
+		guess_m_pTVFrame->Initialize();
+	if (guess_m_pSaveLoad)
+		guess_m_pSaveLoad->Initialize();
+	if (guess_m_pGameMenu)
+		guess_m_pGameMenu->Initialize();
+	if (guess_m_pPadlock)
+		guess_m_pPadlock->Initialize();
+	if (guess_m_pDocuments)
+		guess_m_pDocuments->Initialize();
+	if (guess_m_pTelephone)
+		guess_m_pTelephone->Initialize();
+	if (guess_m_pBookMenu)
+		guess_m_pBookMenu->Initialize();
+	if (guess_m_pCutsceneSkip)
+		guess_m_pCutsceneSkip->Initialize();
+	if (guess_m_pComputer)
+		guess_m_pComputer->Initialize();
+	if (guess_m_pAnimalStatue)
+		guess_m_pAnimalStatue->Initialize();
+	if (guess_m_pPuzzleBar)
+		guess_m_pPuzzleBar->Initialize();
+	if (guess_m_pPhone)
+		guess_m_pPhone->Initialize();
+	if (guess_m_pDifficulty)
+		guess_m_pDifficulty->Initialize();
+	if (guess_m_pGameOver)
+		guess_m_pGameOver->Initialize();
+	if (guess_m_pNoteDocument)
+		guess_m_pNoteDocument->Initialize();
+	if (guess_m_pUserDocument)
+		guess_m_pUserDocument->Initialize();
+	if (guess_m_pRECBInventory)
+		guess_m_pRECBInventory->Initialize();
+
 	InitializePickupMessagePanels(); // buz
+
+	if (guess_m_pNoteDocument)
+		guess_m_pNoteDocument->setVisible(false);
+	if (guess_m_pUserDocument)
+		guess_m_pUserDocument->setVisible(false);
+	if (guess_m_pRECBInventory)
+		guess_m_pRECBInventory->setVisible(false);
 
 	// Make sure all menus are hidden
 	HideVGUIMenu();
@@ -1728,6 +1960,27 @@ void TeamFortressViewport::CreateServerBrowser( void )
 	m_pServerBrowser->setVisible(false);
 }
 
+void TeamFortressViewport::guess_CreateRECBInventory( void )
+{
+	guess_m_pRECBInventory = new CRECBInventory( 255, false, 0, 0, ScreenWidth, ScreenHeight );
+	guess_m_pRECBInventory->setParent( this );
+	guess_m_pRECBInventory->setVisible( false );
+}
+
+void TeamFortressViewport::guess_CreateNoteDocument( void )
+{
+	guess_m_pNoteDocument = new CNoteDocument( 0, false, 0, 0, ScreenWidth, ScreenHeight );
+	guess_m_pNoteDocument->setParent( this );
+	guess_m_pNoteDocument->setVisible( false );
+}
+
+void TeamFortressViewport::guess_CreateUserDocument( void )
+{
+	guess_m_pUserDocument = new CUserDocument( 0, false, 0, 0, ScreenWidth, ScreenHeight );
+	guess_m_pUserDocument->setParent( this );
+	guess_m_pUserDocument->setVisible( false );
+}
+
 
 //======================================================================
 // Set the VGUI Menu
@@ -1912,6 +2165,27 @@ void TeamFortressViewport::ShowVGUIMenu( int iMenu )
 		pNewMenu = CreateTextWindow( SHOW_MAPBRIEFING );
 		break;
 
+	// Cry of Fear menus
+	case 32:
+		if ( guess_m_pDifficulty )
+			guess_m_pDifficulty->setVisible( true );
+		break;
+
+	case 36:
+		if ( guess_m_pLanguage )
+			guess_m_pLanguage->setVisible( true );
+		break;
+
+	case 37:
+		if ( guess_m_pGameMenu )
+			guess_m_pGameMenu->setVisible( true );
+		break;
+
+	case 35:
+		if ( guess_m_pGameOver )
+			guess_m_pGameOver->setVisible( true );
+		break;
+
 	case MENU_INTRO:
 		pNewMenu = CreateTextWindow( SHOW_MOTD );
 		break;
@@ -1920,12 +2194,28 @@ void TeamFortressViewport::ShowVGUIMenu( int iMenu )
 		pNewMenu = CreateTextWindow( SHOW_CLASSDESC );
 		break;
 
+	case 38:
+		pNewMenu = guess_ShowDisabledMenu();
+		break;
+
 	case MENU_SPECHELP:
 		pNewMenu = CreateTextWindow( SHOW_SPECHELP );
 		break;
 //	case MENU_CLASS:
 //		pNewMenu = ShowClassMenu();
 //		break;
+
+	case 30:
+		pNewMenu = guess_ShowRECBInventory();
+		break;
+
+	case 31:
+		pNewMenu = guess_ShowNoteDocument();
+		break;
+
+	case 34:
+		pNewMenu = guess_ShowUserDocument();
+		break;
 
 	default:
 		break;
@@ -1965,6 +2255,65 @@ void TeamFortressViewport::ShowVGUIMenu( int iMenu )
 		UpdateCursorState();
 	}
 }
+
+// menu 38 of ShowVGUIMenu, its panel is gone in 1.6a
+CMenuPanel* TeamFortressViewport::guess_ShowDisabledMenu()
+{
+	// Don't open menus in demo playback
+	if ( gEngfuncs.pDemoAPI->IsPlayingback() )
+		return NULL;
+
+	return NULL;
+}
+
+CMenuPanel* TeamFortressViewport::guess_ShowNoteDocument()
+{
+	// Don't open menus in demo playback
+	if ( gEngfuncs.pDemoAPI->IsPlayingback() )
+		return NULL;
+
+	guess_m_pNoteDocument->Reset();
+	return guess_m_pNoteDocument;
+}
+
+CMenuPanel* TeamFortressViewport::guess_ShowRECBInventory()
+{
+	// Don't open menus in demo playback
+	if ( gEngfuncs.pDemoAPI->IsPlayingback() )
+		return NULL;
+
+	guess_m_pRECBInventory->Reset();
+	return guess_m_pRECBInventory;
+}
+
+CMenuPanel* TeamFortressViewport::guess_ShowUserDocument()
+{
+	// Don't open menus in demo playback
+	if ( gEngfuncs.pDemoAPI->IsPlayingback() )
+		return NULL;
+
+	guess_m_pUserDocument->Reset();
+	return guess_m_pUserDocument;
+}
+
+void TeamFortressViewport::guess_HideNoteDocument( void )
+{
+	if ( guess_m_pNoteDocument )
+	{
+		guess_m_pNoteDocument->setVisible( false );
+		UpdateCursorState();
+	}
+}
+
+void TeamFortressViewport::guess_HideUserDocument( void )
+{
+	if ( guess_m_pUserDocument )
+	{
+		guess_m_pUserDocument->setVisible( false );
+		UpdateCursorState();
+	}
+}
+
 
 // Removes all VGUI Menu's onscreen
 void TeamFortressViewport::HideVGUIMenu()
@@ -2075,6 +2424,8 @@ void TeamFortressViewport::UpdateOnPlayerInfo()
 //		m_pClassMenu->Update();
 	if (m_pScoreBoard)
 		m_pScoreBoard->Update();
+	if (guess_m_pHUDControl)
+		guess_m_pHUDControl->guess_UpdateOnPlayerInfo();
 }
 
 void TeamFortressViewport::UpdateCursorState()
@@ -2087,21 +2438,42 @@ void TeamFortressViewport::UpdateCursorState()
 		App::getInstance()->setCursorOveride( App::getInstance()->getScheme()->getCursor(Scheme::SchemeCursor::scu_arrow) );
 		return;
 	}
-	else if ( m_pCurrentCommandMenu )
-	{
+	else if ( (guess_m_pRECBInventory && guess_m_pRECBInventory->isVisible()) ||
+		(guess_m_pVGUIBillboard && guess_m_pVGUIBillboard->isVisible()) ||
+		(guess_m_pKeypad && guess_m_pKeypad->isVisible()) ||
+		(guess_m_pSave && guess_m_pSave->isVisible()) ||
+		(guess_m_pYesno && guess_m_pYesno->isVisible()) ||
+		(guess_m_pClothesMenu && guess_m_pClothesMenu->isVisible()) ||
+		(guess_m_pUnlockables && guess_m_pUnlockables->isVisible()) ||
+		(guess_m_pSaveLoad && guess_m_pSaveLoad->isVisible()) ||
+		(guess_m_pLanguage && guess_m_pLanguage->isVisible()) ||
+		(guess_m_pGameMenu && guess_m_pGameMenu->isVisible()) ||
+		(guess_m_pPadlock && guess_m_pPadlock->isVisible()) ||
+		(guess_m_pDocuments && guess_m_pDocuments->isVisible()) ||
+		(guess_m_pTelephone && guess_m_pTelephone->isVisible()) ||
+		(guess_m_pBookMenu && guess_m_pBookMenu->isVisible()) ||
+		(guess_m_pComputer && guess_m_pComputer->isVisible()) ||
+		(guess_m_pAnimalStatue && guess_m_pAnimalStatue->isVisible()) ||
+		(guess_m_pPuzzleBar && guess_m_pPuzzleBar->isVisible()) ||
+		(guess_m_pPhone && guess_m_pPhone->isVisible()) ||
+		(guess_m_pDifficulty && guess_m_pDifficulty->isVisible()) ||
+		(guess_m_pGameOver && guess_m_pGameOver->isVisible()) ||
+		(guess_m_pNoteDocument && guess_m_pNoteDocument->isVisible()) ||
+		(guess_m_pUserDocument && guess_m_pUserDocument->isVisible()) ||
+		(guess_m_pVGUIExtraMenu && guess_m_pVGUIExtraMenu->isVisible()) ||
 		// commandmenu doesn't have cursor if hud_capturemouse is turned off
-		if ( gHUD.m_pCvarStealMouse->value != 0.0f )
-		{
-			g_iVisibleMouse = true;
-			App::getInstance()->setCursorOveride( App::getInstance()->getScheme()->getCursor(Scheme::SchemeCursor::scu_arrow) );
-			return;
-		}
+		(m_pCurrentCommandMenu && gHUD.m_pCvarStealMouse->value != 0.0f) )
+	{
+		g_iVisibleMouse = true;
+		App::getInstance()->setCursorOveride( App::getInstance()->getScheme()->getCursor(Scheme::SchemeCursor::scu_arrow) );
+		return;
 	}
 
 	// Don't reset mouse in demo playback
 	if ( !gEngfuncs.pDemoAPI->IsPlayingback() )
 	{
-		IN_ResetMouse();
+		if ( gViewPort->guess_m_pPadlock && !gViewPort->guess_m_pPadlock->isVisible() )
+			IN_ResetMouse();
 	}
 
 	g_iVisibleMouse = false;
@@ -2168,6 +2540,16 @@ void TeamFortressViewport::paintBackground()
 		m_flScoreBoardLastUpdated = gHUD.m_flTime + 0.5;
 	}
 
+	// Cry of Fear: the scoreboard is never shown, the HUD panel takes its updates
+	if ( m_pScoreBoard->isVisible() )
+		m_pScoreBoard->setVisible( false );
+
+	if ( guess_m_pHUDControl->isVisible() && (m_flScoreBoardLastUpdated < gHUD.m_flTime) )
+	{
+		m_pScoreBoard->Update();
+		m_flScoreBoardLastUpdated = gHUD.m_flTime + 0.5;
+	}
+
 	int extents[4];
 	getAbsExtents(extents[0],extents[1],extents[2],extents[3]);
 	VGui_ViewportPaintBackground(extents);
@@ -2228,9 +2610,26 @@ int	TeamFortressViewport::KeyInput( int down, int keynum, const char *pszCurrent
 	if (m_pParanoiaText && m_pParanoiaText->isVisible())
 		return m_pParanoiaText->KeyInput(down, keynum, pszCurrentBinding);
 
-	// buz
-	if (down && m_pTabPanel && (keynum == K_TAB))
-		return m_pTabPanel->Toggle();
+	if (guess_m_pRECBInventory && guess_m_pRECBInventory->isVisible())
+		return guess_m_pRECBInventory->KeyInput(down, keynum, pszCurrentBinding);
+
+	if (guess_m_pDocuments && guess_m_pDocuments->isVisible())
+		return guess_m_pDocuments->KeyInput(down, keynum, pszCurrentBinding);
+
+	if (guess_m_pUserDocument && guess_m_pUserDocument->isVisible())
+		return guess_m_pUserDocument->KeyInput(down, keynum, pszCurrentBinding);
+
+	if (guess_m_pComputer && guess_m_pComputer->isVisible())
+		return guess_m_pComputer->KeyInput(down, keynum, pszCurrentBinding);
+
+	if (guess_m_pPuzzleBar && guess_m_pPuzzleBar->isVisible())
+		return guess_m_pPuzzleBar->KeyInput(down, keynum, pszCurrentBinding);
+
+	if (guess_m_pKeypad && guess_m_pKeypad->isVisible())
+		return guess_m_pKeypad->KeyInput(down, keynum, pszCurrentBinding);
+
+	if (guess_m_pNoteDocument && guess_m_pNoteDocument->isVisible())
+		return guess_m_pNoteDocument->KeyInput(down, keynum, pszCurrentBinding);
 
 	// Enter gets out of Spectator Mode by bringing up the Team Menu
 	if (m_iUser1 && gEngfuncs.Con_IsVisible() == false )
@@ -2238,6 +2637,21 @@ int	TeamFortressViewport::KeyInput( int down, int keynum, const char *pszCurrent
 		if ( down && (keynum == K_ENTER || keynum == K_KP_ENTER) )
 			ShowVGUIMenu( MENU_TEAM );
 	}
+
+	// phone number keys
+	if ( guess_m_pPhone && guess_m_pPhone->isVisible() && gEngfuncs.GetClientTime() > guess_m_flKeyInputTime )
+	{
+		guess_m_flKeyInputTime = gEngfuncs.GetClientTime() + 0.2;
+
+		if ( keynum >= '0' && keynum <= '9' )
+			guess_m_pPhone->guess_PressDigit( keynum - '0' );
+
+		if ( keynum == K_ENTER )
+			guess_m_pPhone->guess_Dial();
+	}
+
+	if (guess_m_pPhone && guess_m_pPhone->isVisible())
+		return guess_m_pPhone->KeyInput(down, keynum, pszCurrentBinding);
 
 	// Open Text Window?
 	if (m_pCurrentMenu && gEngfuncs.Con_IsVisible() == false)
@@ -2391,12 +2805,44 @@ int TeamFortressViewport::MsgFunc_VGUIMenu(const char *pszName, int iSize, void 
 	BEGIN_READ( pbuf, iSize );
 
 	int iMenu = READ_BYTE();
+	guess_iVGUIMenuNoMusic = READ_BYTE();
 
 	// Map briefing includes the name of the map (because it's sent down before the client knows what map it is)
 	if (iMenu == MENU_MAPBRIEFING)
 	{
 		strncpy( m_sMapName, READ_STRING(), sizeof(m_sMapName) );
 		m_sMapName[ sizeof(m_sMapName) - 1 ] = '\0';
+	}
+	else if ( iMenu == 166 )
+	{
+		if ( guess_m_pYesno && guess_m_pYesno->isVisible() )
+		{
+			guess_m_pYesno->setVisible( false );
+			UpdateCursorState();
+		}
+	}
+	else if ( iMenu == 188 )
+	{
+		if ( guess_m_pUnlockables && !guess_m_pUnlockables->isVisible() )
+		{
+			HideTopMenu();
+			guess_m_pUnlockables->setVisible( true );
+			UpdateCursorState();
+		}
+	}
+	else if ( iMenu == 200 )
+	{
+		HideTopMenu();
+		return 1;
+	}
+	else if ( iMenu == 222 )
+	{
+		if ( gViewPort->guess_m_pRECBInventory->isVisible() )
+		{
+			gViewPort->HideTopMenu();
+			PlaySound( "inventory/inventory_close.wav", 1 );
+		}
+		return 1;
 	}
 
 	// Bring up the menu6
@@ -2496,7 +2942,8 @@ int TeamFortressViewport::MsgFunc_TeamScore( const char *pszName, int iSize, voi
 	char *TeamName = READ_STRING();
 
 	// find the team matching the name
-	for ( int i = 1; i <= m_pScoreBoard->m_iNumTeams; i++ )
+	int i;
+	for ( i = 1; i <= m_pScoreBoard->m_iNumTeams; i++ )
 	{
 		if ( !stricmp( TeamName, g_TeamInfo[i].name ) )
 			break;

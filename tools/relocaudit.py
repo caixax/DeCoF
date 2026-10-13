@@ -52,6 +52,11 @@ def same_symbol(a, b):
     m = re.match(r"^(?:(\w+)::)?(\w+)::vftable$", a)
     if m and b.startswith("??_7%s@" % m.group(2)):
         return True
+    # template vtables: std::basic_ifstream<char,std::char_traits<char>_>::vftable
+    # against ??_7?$basic_ifstream@DU?$char_traits@D@std@@@std@@6B@
+    m = re.match(r"^(?:\w+::)*(\w+)<.*>_?::vftable$", a)
+    if m and b.startswith("??_7?$%s@" % m.group(1)):
+        return True
     # operator new of a class, and imports by ordinal
     if a.endswith("::operator_new") and b.startswith("??2"):
         return True

@@ -1,0 +1,9 @@
+?guess_CountLines@CCredits@@QAEHXZ
+?Initialize@CCredits@@QAEXXZ
+?guess_va@@YAPADPBDZZ
+?guess_CreditsInit@@YAXXZ
+??0CCredits@@QAE@XZ
+?guess_MsgCredits@@YAHPBDHPAX@Z
+?guess_SetLine@CCredits@@QAEXHH@Z
+?guess_ShowUnlock@CCredits@@QAEXHPBDHPADH@Z
+?solve@CCredits@@MAEXXZ

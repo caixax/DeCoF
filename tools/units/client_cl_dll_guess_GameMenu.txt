@@ -1,0 +1,13 @@
+?guess_GetVersion@@YAPBDXZ
+?Initialize@CGameMenu@@QAEXXZ
+?guess_MsgGameMenu@@YAHPBDHPAX@Z
+?guess_ParseCampaign@CGameMenu@@QAEXPADH@Z
+?guess_GameMenuInit@@YAXXZ
+?actionPerformed@CGameMenuHandler_Command@@UAEXPAVPanel@vgui@@@Z
+?paintBackground@CCampaignSlider@@UAEXXZ
+?setVisible@CGameMenu@@UAEX_N@Z
+?solve@CGameMenu@@MAEXXZ
+??0CGameMenu@@QAE@XZ
+?ActionSignal@CGameMenu@@QAEXH@Z
+?guess_LoadCampaigns@CGameMenu@@QAEXXZ
+?guess_ResetButtonPositions@CGameMenu@@QAEXXZ

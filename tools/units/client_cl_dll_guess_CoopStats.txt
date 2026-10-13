@@ -1,0 +1,6 @@
+?Initialize@CCoopStats@@QAEXXZ
+?guess_CoopStatsInit@@YAXXZ
+??0CCoopStats@@QAE@XZ
+?SetEndingOrUnlockables@@YAXH_N00@Z
+?guess_MsgBeatCoop@@YAHPBDHPAX@Z
+?guess_MsgCoopStats@@YAHPBDHPAX@Z
