@@ -3,5 +3,4 @@
 ?SlotInput@CTeamMenuPanel@@UAE_NH@Z
 ?Update@CTeamMenuPanel@@UAEXXZ
 ?paintBackground@CTeamMenuPanel@@UAEXXZ
-??0CMenuPanel@@QAE@HHHHHH@Z
 ?Open@CTeamMenuPanel@@UAEXXZ

@@ -18,6 +18,7 @@ public:
 	void guess_UpdateLogo();
 	void guess_DrawMessages();
 	void guess_ShowSMSIcon( bool bShow );
+	void guess_UpdateOnPlayerInfo();
 
 protected:
 	virtual void solve();

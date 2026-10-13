@@ -1,3 +1,11 @@
 ?GetNumWidth@CHud@@QAEHHH@Z
 ?Redraw@CHud@@QAEHMH@Z
 ?ScaleColors@@YAXAAH00H@Z
+?DrawHudNumberString@CHud@@QAEHHHHHHHH@Z
+?DrawHudStringReverse@CHud@@QAEHHHHPADHHH@Z
+?DrawBlurTest@CHud@@QAEXM@Z
+?guess_RedrawFrame@@YAXXZ
+?guess_IsViewEntityActive@@YA_NXZ
+?Think@CHud@@QAEXXZ
+?guess_AverageFPS@CHud@@QAEHH@Z
+?guess_DrawNewFade@CHud@@QAEXM@Z

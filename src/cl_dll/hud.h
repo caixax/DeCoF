@@ -136,6 +136,9 @@ public:
 
 	void LoadMenuSettings( void );
 
+	int guess_GetMags( int iId );							// magazine count of a weapon id
+	void guess_SetMags( int iId, int iDivisor, int iAmount );
+
 	// buz: these variables loaded from file menu_settings.txt
 	int		m_menuSizeX;
 	int		m_menuSizeY;
@@ -1039,7 +1042,10 @@ public:
 
 	char *guess_GetKeyForCommand( char *pszCommand );	// the key bound to a command in config.cfg ("Couldn't get key for bind %s!")
 	char *guess_GetInventoryItem( int iSlot );			// guess_m_szInventoryItem1-6, slot 1-6
+	char *CheckItem( char *pszName, char *pszFile );	// the value of key pszName in an item script (" * CheckItem parsing error")
 	int guess_AverageFPS( int iFPS );					// adds a sample to guess_m_iFPS, returns the average of the last 50
+	void DrawBlurTest( float frametime );				// buz: a free function in Paranoia, the screen blur of Cry of Fear
+	void guess_DrawNewFade( float flTime );				// draws the NewFade fade, never called in 1.6a (the argument is unused)
 
 	// never called in 1.6a
 	int guess_AddUnknown5590( int iValue );
@@ -1052,6 +1058,8 @@ class TeamFortressViewport;
 
 extern CHud gHUD;
 extern TeamFortressViewport *gViewPort;
+
+bool guess_IsViewEntityActive( void );	// the view is on another entity than the local player (ViewEntity message)
 
 extern int g_iPlayerClass;
 extern int g_iTeamNumber;

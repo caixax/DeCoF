@@ -11,3 +11,14 @@
 ?mousePressed@ScorePanel@@UAEXW4MouseCode@vgui@@PAVPanel@3@@Z
 ?paint@CLabelHeader@@UAEXXZ
 ?paintBackground@CLabelHeader@@UAEXXZ
+?Initialize@ScorePanel@@QAEXXZ
+?SortPlayers@ScorePanel@@QAEXHPAD@Z
+?SortTeams@ScorePanel@@QAEXXZ
+?Update@ScorePanel@@QAEXXZ
+?cursorMoved@ScorePanel@@UAEXHHPAVPanel@vgui@@@Z
+?doPaint@CTextImage2@@UAEXPAVPanel@vgui@@@Z
+?getTextSize@CLabelHeader@@UAEXAAH0@Z
+?setFgColor@CLabelHeader@@UAEXHHHH@Z
+?setFgColor@CLabelHeader@@UAEXW4SchemeColor@Scheme@vgui@@@Z
+?setFont@CLabelHeader@@UAEXPAVFont@vgui@@@Z
+?setText@CLabelHeader@@UAEXHPBD@Z

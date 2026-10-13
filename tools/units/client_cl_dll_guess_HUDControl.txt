@@ -26,3 +26,4 @@
 ?paint@CHUDControl@@MAEXXZ
 ?paintBackground@CHUDControl@@MAEXXZ
 ?solve@CHUDControl@@MAEXXZ
+?guess_UpdateOnPlayerInfo@CHUDControl@@QAEXXZ

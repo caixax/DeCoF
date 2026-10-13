@@ -124,6 +124,7 @@ public:
 	}
 };
 int guess_iDefaultFOV = 90;
+int guess_iSkipSceneFramerate = 2;	// host_framerate while a scene is skipped (SkipScene message, CHud::Redraw)
 static CHLVoiceStatusHelper g_VoiceStatusHelper;
 
 
@@ -150,7 +151,7 @@ extern vec3_t guess_vecIronsightOfs;
 extern bool guess_bCustomFingerTexture;	// CustomFng message
 extern bool guess_bCustomGloveTexture;	// CustomGlv message
 extern int guess_iGreyFade;				// GreyFade message
-extern float guess_flUnknown105431E0;	// read and written by CHud::Redraw
+extern float guess_flNextSoundCacheTime;	// "ambience/soundcache" in CHud::Redraw
 extern bool guess_bUnknown105431E9;
 extern bool guess_bUnknown10545081;
 extern float guess_flUnknown105595A0;
@@ -749,7 +750,7 @@ void CHud :: Init( void )
 	gl.Init();
 
 	guess_m_iBlur = 0;
-	guess_flUnknown105431E0 = 0;
+	guess_flNextSoundCacheTime = 0;
 	guess_m_bMenuClick = false;
 	guess_m_flMenuClickTime = 0;
 	guess_bUnknown10545081 = false;
@@ -1046,7 +1047,7 @@ void CHud :: VidInit( void )
 	gHUD.guess_m_szGloveTexture[0] = 0;
 	guess_bCustomFingerTexture = false;
 	guess_bCustomGloveTexture = false;
-	guess_flUnknown105431E0 = 0;
+	guess_flNextSoundCacheTime = 0;
 	guess_iHudActive = 1;
 	guess_IrrKlangSetParams( 0, 0, 0, 0 );
 

@@ -2,3 +2,6 @@
 ?FontFromMessage@@YAPAVFont@vgui@@AAPBD@Z
 ?Initialize@CSubtitle@@QAEXXZ
 ?SubtitleInit@@YAXXZ
+?AddMessage@CSubtitle@@QAEXPAUclient_textmessage_s@@@Z
+?paint@CSubtitleTextPanel@@UAEXXZ
+?paintBackground@CSubtitleTextPanel@@UAEXXZ

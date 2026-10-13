@@ -1709,6 +1709,11 @@ void CHUDControl::guess_ShowSMSIcon( bool bShow )
 	guess_m_pSMSIcon->setVisible( bShow );
 }
 
+// called by TeamFortressViewport::UpdateOnPlayerInfo, empty in 1.6a
+void CHUDControl::guess_UpdateOnPlayerInfo()
+{
+}
+
 void CHUDControl::paint()
 {
 	int h, w;

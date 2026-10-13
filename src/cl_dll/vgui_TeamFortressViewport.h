@@ -454,6 +454,7 @@ public:
 	CommandButton *FindButtonWithSubmenu( CCommandMenu *pSubMenu );
 
 	void		ClearButtonsOfArmedState( void );
+	void		guess_FireArmedButton( void );	// never called in 1.6a
 
 
 	bool		KeyInput( int keyNum );
@@ -560,6 +561,17 @@ public:
 	void ToggleServerBrowser( void );
 
 	CMenuPanel* CreateTextWindow( int iTextToShow );
+
+	// Cry of Fear menus (CMenuPanel based, opened through ShowVGUIMenu)
+	void guess_CreateRECBInventory( void );
+	void guess_CreateNoteDocument( void );
+	void guess_CreateUserDocument( void );
+	CMenuPanel* guess_ShowDisabledMenu( void );		// menu 38
+	CMenuPanel* guess_ShowNoteDocument( void );		// menu 31
+	CMenuPanel* guess_ShowRECBInventory( void );	// menu 30
+	CMenuPanel* guess_ShowUserDocument( void );		// menu 34
+	void guess_HideNoteDocument( void );			// never called in 1.6a
+	void guess_HideUserDocument( void );			// never called in 1.6a
 
 	CCommandMenu *CreateSubMenu( CommandButton *pButton, CCommandMenu *pParentMenu, int iYOffset, int iXOffset = 0 );
 

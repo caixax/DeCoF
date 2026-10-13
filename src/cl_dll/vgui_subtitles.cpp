@@ -244,7 +244,8 @@ void CSubtitle::paintBackground()
 
 			// find oldest child to start fading int
 			float mintime = 99999;
-			for (int i = 0; i < m_pLayer->getChildCount(); i++)
+			int i;
+			for (i = 0; i < m_pLayer->getChildCount(); i++)
 			{
 				CSubtitleTextPanel *chld = (CSubtitleTextPanel*)m_pLayer->getChild(i);
 				if (chld->isVisible() && chld->m_fBirthTime < mintime)
