@@ -47,3 +47,10 @@ _PM_SortTextures
 _PM_UnDuckNew
 _PM_UpdateStepSound
 _PM_WalkMove
+_PM_AddToTouched
+_PM_CheckVelocity
+_PM_InitTextureTypes
+_PM_PlayerMove
+_PM_MapTextureTypeStepType
+_PM_PlayStepSound
+_PM_PlayWaterSounds

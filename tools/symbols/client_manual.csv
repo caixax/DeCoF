@@ -220,3 +220,21 @@ va,name,kind,evidence
 100860E0,?ResetRain@@YAXXZ,func,called from CHud::VidInit before m_flDeadTime = 0 as in Paranoia (rain) (added by an agent)
 1007BBE0,?IN_Shutdown@@YAXXZ,func,"5-byte thunk jmp IN_DeactivateMouse (1007C1D0), called by ShutdownInput as in the HLSDK (IN_Shutdown calls IN_DeactivateMouse)"
 1006C5A0,?UpdateBeams@@YAXXZ,func,"Game_AddObjects tail-jumps here when pBeam and pBeam2 are set, as hl_objects.cpp Game_AddObjects calls UpdateBeams; body follows UpdateBeams (GetLocalPlayer, GetViewAngles, HUD_GetLastOrg, VectorMA 2048, EV_PlayerTrace, pBeam/pBeam2 target and die)"
+1003E610,?guess_MsgBossBar@@YAHPBDHPAX@Z,func,"hooked as ""BossBar"" by guess_BossBarInit (1003E7D0); reads gViewPort->guess_m_pBossBar (added by an agent)"
+1003E7F0,?solve@CBossBar@@UAEXXZ,func,"CBossBar vtable slot 110 (solve), ends in a tail call to Panel::solve (added by an agent)"
+1003E0B0,?guess_MsgBoard@@YAHPBDHPAX@Z,func,"hooked as ""Board"" by guess_BoardInit (1003E1E0); reads gViewPort->guess_m_pVGUIBillboard (added by an agent)"
+1003D850,?ActionSignal@CAnimalStatue@@QAEXH@Z,func,"string ""Unknown AnimalStatue ActionSignal %i.""; called by CAnimalStatueHandler_Command::actionPerformed (1003DBC0) (added by an agent)"
+1003EEF0,?ActionSignal@CComputer@@QAEXH@Z,func,"string ""Unknown Computer ActionSignal %i.""; called by CComputerHandler_Command::actionPerformed (1003F390) (added by an agent)"
+1003F070,?guess_MsgComputer@@YAHPBDHPAX@Z,func,"hooked as ""Computer"" by guess_ComputerInit (1003F370); reads gViewPort->guess_m_pComputer (added by an agent)"
+1003F4B0,?solve@CComputer@@MAEXXZ,func,"CComputer vtable slot 110 (solve), ends in Panel::solve (added by an agent)"
+10040280,?ActionSignal@CDifficulty@@QAEXH@Z,func,"strings ""campaign %s"", ""skillset 1""-""skillset 4"", ""closegame""; called by CDifficultyHandler_Command::actionPerformed (10040580) (added by an agent)"
+1002AFB0,?ActionSignal@CDocuments@@QAEXH@Z,func,"string ""recalldocument %i""; called by CDocumentsHandler_Command::actionPerformed (1002B130) (added by an agent)"
+1001E5D0,?Init@CHudBase@@UAEHXZ,func,"restore: was MATCHED 100% in cl_dll/cdll_int; the 3-byte return-0 body is folded with CommandButton::IsNotValid, which bytematch proposed from guess_AmmoInventory (added by an agent)"
+1001E420,?ActionSignal@CAmmoInventory@@QAEXH@Z,func,"strings ""dropammo 1""-""dropammo 6"", inventory_toggle.wav; called by CAmmoInventoryHandler_Command::actionPerformed (1001E950) (added by an agent)"
+1001E6A0,?guess_MsgAmmoInv@@YAHPBDHPAX@Z,func,"hooked as ""AmmoInv"" by guess_AmmoInvInit (1001E930); reads gViewPort->guess_m_pAmmoInventory (added by an agent)"
+1001EA70,?setVisible@CAmmoInventory@@UAEX_N@Z,func,"CAmmoInventory vtable slot 9 (setVisible), ends in Panel::setVisible (added by an agent)"
+1003E340,?paintBackground@CVGUIBillboard@@MAEXXZ,func,"CVGUIBillboard vtable slot 111 (paintBackground), jmp Panel::paintBackground (added by an agent)"
+1055B5C8,_guess_iDucking,data,int set to 1 by PM_PlayerMove (100157C7) while pmove->bInDuck or FL_DUCKING and cleared otherwise; PM_PlayerMove is its only reference; name is a guess
+1055B5C4,_iClientResetMaterials,data,int that PM_PlayStepSound compares with 1 before it clears bTextureTypeInit and calls PM_InitTextureTypes; the same code in hl.dll uses iClientResetMaterials (1.55 PDB)
+1055B5CC,_guess_iStepPunchRun,data,"int set by PM_PlayStepSound in multiplayer to 1 when IN_RUN and flag 1<<18 are set, else 0; V_CalcNormalRefdef then punches the view by -3, 1 instead of -0.75, 0.5 (the singleplayer PM_ViewPunch values for a run step); name is a guess"
+1055B5D0,_guess_iStepPunch,data,int set to 1 by PM_PlayStepSound in multiplayer; V_CalcNormalRefdef clears it and calls the view punch for the step; name is a guess

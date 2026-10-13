@@ -52,3 +52,4 @@ va,name,kind,evidence
 10213F14,?pUsernames@CCofComputer@@2PAPBDA,data,address of our pUsernames reference in CCofComputer::Spawn and CPasswordNote::NoteUse (instructions identical); retail spelled it as m_SaveData@CEnvELight plus offset
 10218EE8,?rgdpvpreset@@3PAUdynpitchvol@@A,data,address of our rgdpvpreset reference in CAmbientGeneric::InitModulationParms (instructions identical); retail spelled it as m_SaveData@CScriptedSentence plus offset
 10231E08,?AmmoInfoArray@CBasePlayerItem@@2PAUAmmoInfo@@A,data,address of our AmmoInfoArray reference in AddAmmoNameToAmmoRegistry (instructions identical); 0x100 bytes end at g_sModelIndexLaser (10231F08)
+100089F0,_PM_PlayWaterSounds,func,1.55 PDB: PM_PlayWaterSounds (pm_shared.obj); PM_PlayerMove tail-jumps here and the body is ret 0

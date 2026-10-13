@@ -32,6 +32,7 @@
 	int		iJumpSpectator;
 	float	vJumpOrigin[3];
 	float	vJumpAngles[3];	
+
 #endif
 
 static int pm_shared_initialized = 0;
@@ -174,7 +175,14 @@ static qboolean bTextureTypeInit = false;
 int g_onladder = 0;
 
 int iClientResetMaterials;
+#ifdef CLIENT_DLL
+int guess_iDucking;			// Cry of Fear: set while the player is ducked, never read
+int guess_iStepPunchRun;		// Cry of Fear: the step that asked for a view punch was a run step
+int guess_iStepPunch;			// Cry of Fear: V_CalcNormalRefdef punches the view for a multiplayer step
+#endif
+#ifndef CLIENT_DLL
 extern int foot_splash;
+#endif
 
 void PM_SwapTextures( int i, int j )
 {
@@ -419,6 +427,19 @@ void PM_PlayStepSound( int step, float fvol )
 				pmove->PM_PlaySound( CHAN_AUTO, "player/sprint/bag_movement.wav", 0.1, ATTN_NORM, 0, bagpitch );
 		}
 	}
+
+#ifdef CLIENT_DLL
+	// the view punch of a multiplayer step is done by the view code
+	if ( pmove->multiplayer )
+	{
+		guess_iStepPunch = 1;
+
+		if ( ( pmove->cmd.buttons & IN_RUN ) && ( pmove->flags & (1<<18) ) )
+			guess_iStepPunchRun = 1;
+		else
+			guess_iStepPunchRun = 0;
+	}
+#endif
 
 	low = atoi( pmove->PM_Info_ValueForKey( pmove->physinfo, "low" ) );
 
@@ -735,10 +756,12 @@ void PM_PlayStepSound( int step, float fvol )
 		break;
 
 	case STEP_SLOSH:
+#ifndef CLIENT_DLL
 		if ( pmove->iStepLeft )
 			foot_splash = 1;
 		else
 			foot_splash = 2;
+#endif
 
 		switch ( pmove->RandomLong( 0, 3 ) )
 		{
@@ -755,7 +778,9 @@ void PM_PlayStepSound( int step, float fvol )
 		if ( pmove->waterlevel >= 3 )
 			break;
 
+#ifndef CLIENT_DLL
 		foot_splash = 3;
+#endif
 
 	/*	if ( iSkipStep == 0 )
 		{
@@ -3263,8 +3288,10 @@ PM_PlayWaterSounds
 */
 void PM_PlayWaterSounds( void )
 {
+	return;
+
 	// Did we enter or leave water?
-/*	if  ( ( pmove->oldwaterlevel == 0 && pmove->waterlevel != 0 && pmove->watertype > CONTENT_FLYFIELD) ||
+	if  ( ( pmove->oldwaterlevel == 0 && pmove->waterlevel != 0 && pmove->watertype > CONTENT_FLYFIELD) ||
 		  ( pmove->oldwaterlevel != 0 && pmove->waterlevel == 0 ))
 	{
 		switch ( pmove->RandomLong(0,3) )
@@ -3282,7 +3309,7 @@ void PM_PlayWaterSounds( void )
 			pmove->PM_PlaySound( CHAN_BODY, "player/pl_wade4.wav", 1, ATTN_NORM, 0, PITCH_NORM );
 			break;
 		}
-	}*/
+	}
 }
 
 /*
@@ -3593,6 +3620,18 @@ void PM_PlayerMove ( qboolean server )
 			g_onladder = 1;
 		}
 	}
+
+#ifdef CLIENT_DLL
+	if ( !pmove->bInDuck && !( pmove->flags & FL_DUCKING ) )
+	{
+		if ( guess_iDucking )
+			guess_iDucking = 0;
+	}
+	else if ( guess_iDucking != 1 )
+	{
+		guess_iDucking = 1;
+	}
+#endif
 
 	PM_UpdateStepSound();
 
