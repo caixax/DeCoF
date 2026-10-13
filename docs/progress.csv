@@ -1624,7 +1624,7 @@ client,1006BCE0,8,?DrawDamage@CHudHealth@@AAEHM@Z,CHudHealth::DrawDamage,UNKNOWN
 client,1006BCF0,8,?DrawPain@CHudHealth@@AAEHM@Z,CHudHealth::DrawPain,UNKNOWN,cl_dll/health.cpp,,,MATCHED,100,,
 client,1006BD00,82,?GetPainColor@CHudHealth@@QAEXAAH00@Z,CHudHealth::GetPainColor,HLSDK,cl_dll/health.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__health.obj:score1,
 client,1006BD60,186,?Init@CHudHealth@@UAEHXZ,CHudHealth::Init,UNKNOWN,cl_dll/health.cpp,,,MATCHED,100,,
-client,1006BE20,238,?MsgFunc_AdLib@CHudHealth@@QAEHPBDHPAX@Z,CHudHealth::MsgFunc_AdLib,UNKNOWN,cl_dll/health.cpp,,,TODO,46.86,,
+client,1006BE20,238,?MsgFunc_AdLib@CHudHealth@@QAEHPBDHPAX@Z,CHudHealth::MsgFunc_AdLib,UNKNOWN,cl_dll/health.cpp,,,MATCHED,100,,
 client,1006BF10,181,?MsgFunc_Damage@CHudHealth@@QAEHPBDHPAX@Z,CHudHealth::MsgFunc_Damage,UNKNOWN,cl_dll/health.cpp,,,MATCHED,100,,
 client,1006BFE0,152,?MsgFunc_Health@CHudHealth@@QAEHPBDHPAX@Z,CHudHealth::MsgFunc_Health,UNKNOWN,cl_dll/health.cpp,,,TODO,91.48,,
 client,1006C080,98,?MsgFunc_Syringe@CHudHealth@@QAEHPBDHPAX@Z,CHudHealth::MsgFunc_Syringe,UNKNOWN,cl_dll/health.cpp,,,MATCHED,100,,

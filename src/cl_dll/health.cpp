@@ -29,6 +29,8 @@
 
 #include "vgui_TeamFortressViewport.h" // buz
 #include "vgui_hud.h" // buz
+#include "guess_HUDControl.h"
+#include "vgui_loadtga.h"
 
 #undef fabs
 #include <cmath>
@@ -193,8 +195,25 @@ int CHudHealth:: MsgFunc_AdLib(const char *pszName,  int iSize, void *pbuf )
 	if ( iLocalIndex < 0 || iLocalIndex > gEngfuncs.GetMaxClients() )
 		return 0;
 
-	guess_m_iAdLibState[guess_iPlayer - 1] = guess_iState;
+	int guess_iIndex = guess_iPlayer - 1;
 	guess_m_flAdLibTime[guess_iPlayer - 1] = gEngfuncs.GetClientTime() + guess_flTime;
+	guess_m_iAdLibState[guess_iPlayer - 1] = guess_iState;
+
+	if ( gViewPort && gViewPort->guess_m_pHUDControl && guess_iIndex >= 0 && guess_iIndex <= 3 )
+	{
+		switch ( guess_iState )
+		{
+		case 0:
+			gViewPort->guess_m_pHUDControl->guess_m_pFollowIconPanel[guess_iIndex]->setImage( vgui_LoadTGA( "gfx/vgui/coop_follow_icon.tga" ) );
+			break;
+		case 1:
+			gViewPort->guess_m_pHUDControl->guess_m_pFollowIconPanel[guess_iIndex]->setImage( vgui_LoadTGA( "gfx/vgui/coop_health_icon.tga" ) );
+			break;
+		case 2:
+			gViewPort->guess_m_pHUDControl->guess_m_pFollowIconPanel[guess_iIndex]->setImage( vgui_LoadTGA( "gfx/vgui/coop_something_icon.tga" ) );
+			break;
+		}
+	}
 
 	return 1;
 }
