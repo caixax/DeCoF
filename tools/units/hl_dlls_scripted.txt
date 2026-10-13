@@ -44,3 +44,4 @@ _scripted_action
 _scripted_sequence
 ?GetState@CCineMonster@@UAE?AW4STATE@@XZ
 ?ObjectCaps@CCineMonster@@UAEHXZ
+??$GetClassPtr@VCCineMonster@@@@YAPAVCCineMonster@@PAV0@@Z

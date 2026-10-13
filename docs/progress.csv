@@ -13732,8 +13732,8 @@ hl,1001F060,3,?WeaponIdle@CBasePlayerWeapon@@UAEXXZ,CBasePlayerWeapon::WeaponIdl
 hl,1001F070,3,?WeaponToggle@CBasePlayerWeapon@@UAEXXZ,CBasePlayerWeapon::WeaponToggle,COF,dlls/client.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1001F080,3,?iItemSlot@CBasePlayerItem@@UAEHXZ,CBasePlayerItem::iItemSlot,HLSDK,dlls/weapons.h,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1001F090,6,?iItemSlot@CBrowningWheelchair@@UAEHXZ,CBrowningWheelchair::iItemSlot,COF,dlls/client.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,1001F0A0,75,?respawn@@YAXPAUentvars_s@@H@Z,respawn,UNKNOWN,,,,TODO,0.0,,
-hl,1001F0F0,112,?set_suicide_frame@@YAXPAUentvars_s@@@Z,set_suicide_frame,UNKNOWN,,,,TODO,0.0,,
+hl,1001F0A0,75,?respawn@@YAXPAUentvars_s@@H@Z,respawn,UNKNOWN,,,,MATCHED,100,,
+hl,1001F0F0,112,?set_suicide_frame@@YAXPAUentvars_s@@@Z,set_suicide_frame,UNKNOWN,,,,MATCHED,100,,
 hl,1001F160,49,_sprintf,sprintf,LIB,,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,,refbytes:paranoia:dlls__client.obj:score2,
 hl,1001F1A0,92,??$GetClassPtr@VCKeypadNew@@@@YAPAVCKeypadNew@@PAV0@@Z,GetClassPtr<CKeypadNew>,HLSDK,dlls/cof_3dkeypad.cpp,1.55,,MATCHED,100,jmp_target_of_export+rtti,
 hl,1001F200,309,?EnterNumber@CKeypadNew@@AAEXH@Z,CKeypadNew::EnterNumber,UNKNOWN,dlls/cof_3dkeypad.cpp,,,MATCHED,100,,
@@ -16514,8 +16514,8 @@ hl,100B0B50,853,?Spawn@CGenericMonster@@UAEXXZ,CGenericMonster::Spawn,HLSDK,dlls
 hl,100B0EB0,115,?Use@CGenericMonster@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CGenericMonster::Use,COF,dlls/genericmonster.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100B0F30,5,_monster_generic,monster_generic,HLSDK,dlls/genericmonster.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( monster_generic, CGenericMonster )"
 hl,100B0F40,5,_monster_generic_dead,monster_generic_dead,HLSDK,dlls/genericmonster.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( monster_generic_dead, CDeadGenericMonster )"
-hl,100B0F50,92,??$GetClassPtr@VCGrenade@@@@YAPAVCGrenade@@PAV0@@Z,GetClassPtr<CGrenade>,HLSDK,dlls/weapons.h,2010-prototype,1.0->1.4 same; 1.4->1.55 same,TODO,,jmp_target_of_export+rtti,
-hl,100B0FB0,4,?BloodColor@CGrenade@@UAEHXZ,CGrenade::BloodColor,HLSDK,dlls/weapons.h,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,,hl_1.55_to_1.6a.csv,
+hl,100B0F50,92,??$GetClassPtr@VCGrenade@@@@YAPAVCGrenade@@PAV0@@Z,GetClassPtr<CGrenade>,HLSDK,dlls/weapons.h,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
+hl,100B0FB0,4,?BloodColor@CGrenade@@UAEHXZ,CGrenade::BloodColor,HLSDK,dlls/weapons.h,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100B0FC0,3,?BounceSound@CGrenade@@UAEXXZ,CGrenade::BounceSound,HLSDK,dlls/ggrenade.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100B0FD0,907,?BounceTouch@CGrenade@@QAEXPAVCBaseEntity@@@Z,CGrenade::BounceTouch,HLSDK,dlls/ggrenade.cpp,2010-prototype,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100B1360,289,?DangerSoundThink@CGrenade@@QAEXXZ,CGrenade::DangerSoundThink,HLSDK,dlls/ggrenade.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
@@ -17209,7 +17209,7 @@ hl,100D2B00,154,?Use@CPathTrack@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CPathTrack
 hl,100D2BA0,34,?ValidPath@CPathTrack@@QAEPAV1@PAV1@H@Z,CPathTrack::ValidPath,UNKNOWN,dlls/pathcorner.cpp,,,MATCHED,100,,
 hl,100D2BD0,5,_path_corner,path_corner,HLSDK,dlls/pathcorner.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( path_corner, CPathCorner )"
 hl,100D2BE0,5,_path_track,path_track,HLSDK,dlls/pathcorner.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( path_track, CPathTrack )"
-hl,100D2BF0,10,??0CPlane@@QAE@XZ,CPlane::CPlane,UNKNOWN,,,,TODO,,,
+hl,100D2BF0,10,??0CPlane@@QAE@XZ,CPlane::CPlane,UNKNOWN,,,,MATCHED,100,,
 hl,100D2C00,75,?InitializePlane@CPlane@@QAEXABVVector@@0@Z,CPlane::InitializePlane,HLSDK,dlls/plane.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,refbytes:paranoia:dlls__plane.obj:score0,
 hl,100D2C50,77,?PointInFront@CPlane@@QAEHABVVector@@@Z,CPlane::PointInFront,HLSDK,dlls/plane.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,refbytes:paranoia:dlls__plane.obj:score1,
 hl,100D2CA0,92,??$GetClassPtr@VCFuncPlat@@@@YAPAVCFuncPlat@@PAV0@@Z,GetClassPtr<CFuncPlat>,HLSDK,dlls/plats.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
@@ -17604,7 +17604,7 @@ hl,100FA160,5,_player,player,HLSDK,dlls/player.cpp,,,MATCHED,100,exports+jmp_thu
 hl,100FA170,5,_player_freeze,player_freeze,HLSDK,dlls/player.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( player_freeze, CPlayerFreeze )"
 hl,100FA180,5,_player_loadsaved,player_loadsaved,HLSDK,dlls/player.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( player_loadsaved, CRevertSaved )"
 hl,100FA190,5,_player_weaponstrip,player_weaponstrip,HLSDK,dlls/player.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( player_weaponstrip, CStripWeapons )"
-hl,100FA1A0,92,??$GetClassPtr@VCCineMonster@@@@YAPAVCCineMonster@@PAV0@@Z,GetClassPtr<CCineMonster>,HLSDK,dlls/scripted.h,2010-prototype,1.0->1.4 same; 1.4->1.55 same,TODO,,jmp_target_of_export+rtti,
+hl,100FA1A0,92,??$GetClassPtr@VCCineMonster@@@@YAPAVCCineMonster@@PAV0@@Z,GetClassPtr<CCineMonster>,HLSDK,dlls/scripted.h,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
 hl,100FA200,92,??$GetClassPtr@VCFurniture@@@@YAPAVCFurniture@@PAV0@@Z,GetClassPtr<CFurniture>,HLSDK,dlls/scripted.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
 hl,100FA260,92,??$GetClassPtr@VCScriptedSentence@@@@YAPAVCScriptedSentence@@PAV0@@Z,GetClassPtr<CScriptedSentence>,HLSDK,dlls/scripted.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
 hl,100FA2C0,125,?AcceptableSpeaker@CScriptedSentence@@QAEHPAVCBaseMonster@@@Z,CScriptedSentence::AcceptableSpeaker,HLSDK,dlls/scripted.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
@@ -18281,7 +18281,7 @@ hl,10115FE0,5,_trigger_textwindow,trigger_textwindow,HLSDK,dlls/triggers.cpp,,,M
 hl,10115FF0,5,_trigger_transition,trigger_transition,HLSDK,dlls/triggers.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( trigger_transition, CTriggerVolume )"
 hl,10116000,5,_watcher,watcher,HLSDK,dlls/triggers.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( watcher, CStateWatcher )"
 hl,10116010,5,_watcher_count,watcher_count,HLSDK,dlls/triggers.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( watcher_count, CWatcherCount )"
-hl,10116020,14,??0CSaveRestoreBuffer@@QAE@PAUsaverestore_s@@@Z,CSaveRestoreBuffer::CSaveRestoreBuffer,HLSDK,,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,,reloc:10017030,
+hl,10116020,14,??0CSaveRestoreBuffer@@QAE@PAUsaverestore_s@@@Z,CSaveRestoreBuffer::CSaveRestoreBuffer,HLSDK,,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,reloc:10017030,
 hl,10116040,56,??0UTIL_GroupTrace@@QAE@HH@Z,UTIL_GroupTrace::UTIL_GroupTrace,HLSDK,dlls/util.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,refbytes:paranoia:dlls__util.obj:score1,
 hl,10116080,3,??1CSaveRestoreBuffer@@QAE@XZ,CSaveRestoreBuffer::~CSaveRestoreBuffer,COF,dlls/util.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10116090,76,??1UTIL_GroupTrace@@QAE@XZ,UTIL_GroupTrace::~UTIL_GroupTrace,HLSDK,dlls/util.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,refbytes:paranoia:dlls__util.obj:score4,

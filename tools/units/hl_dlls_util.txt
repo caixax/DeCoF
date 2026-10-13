@@ -148,3 +148,4 @@
 ?WriteVector@CSave@@QAEXPBDPBMH@Z
 ?PRECACHE_MODEL@@YAHHPAD@Z
 ?PRECACHE_SOUND@@YAHHPAD@Z
+??0CSaveRestoreBuffer@@QAE@PAUsaverestore_s@@@Z

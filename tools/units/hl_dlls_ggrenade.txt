@@ -16,3 +16,5 @@
 ?ShootSatchelCharge@CGrenade@@SAPAV1@PAUentvars_s@@VVector@@1@Z
 _grenade
 ?UseSatchelCharges@CGrenade@@SAXPAUentvars_s@@W4SATCHELCODE@1@@Z
+??$GetClassPtr@VCGrenade@@@@YAPAVCGrenade@@PAV0@@Z
+?BloodColor@CGrenade@@UAEHXZ
