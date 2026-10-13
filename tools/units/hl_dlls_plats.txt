@@ -134,3 +134,4 @@ _scripted_trainsequence
 ?StopSequence@CFuncTrain@@QAEXXZ
 ?ObjectCaps@CFuncTrackTrain@@UAEHXZ
 ??$GetClassPtr@VCPlatTrigger@@@@YAPAVCPlatTrigger@@PAV0@@Z
+?FixupAngles@@YAXAAVVector@@@Z

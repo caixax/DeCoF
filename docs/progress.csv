@@ -17242,7 +17242,7 @@ hl,100D44E0,579,?Find@CFuncTrackChange@@QAEXXZ,CFuncTrackChange::Find,HLSDK,dlls
 hl,100D4730,492,?Find@CFuncTrackTrain@@QAEXXZ,CFuncTrackTrain::Find,HLSDK,dlls/plats.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100D4920,171,?Find@CFuncTrainControls@@QAEXXZ,CFuncTrainControls::Find,HLSDK,dlls/plats.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100D49D0,102,,,UNKNOWN,dlls/plats.cpp,,,TODO,,,
-hl,100D4A40,66,?FixupAngles@@YAXAAVVector@@@Z,FixupAngles,UNKNOWN,dlls/plats.cpp,,,TODO,,,
+hl,100D4A40,66,?FixupAngles@@YAXAAVVector@@@Z,FixupAngles,UNKNOWN,dlls/plats.cpp,,,MATCHED,100,,
 hl,100D4A90,7,?GetState@CFuncTrain@@UAE?AW4STATE@@XZ,CFuncTrain::GetState,SPIRIT,dlls/plats.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100D4AA0,27,?GetState@CTrainSequence@@UAE?AW4STATE@@XZ,CTrainSequence::GetState,SPIRIT,dlls/plats.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100D4AC0,151,?GoDown@CFuncPlat@@UAEXXZ,CFuncPlat::GoDown,HLSDK,dlls/plats.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
