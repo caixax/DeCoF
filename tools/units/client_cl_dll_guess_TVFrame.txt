@@ -1,0 +1,4 @@
+??0CTVFrame@@QAE@XZ
+?Initialize@CTVFrame@@QAEXXZ
+?guess_MsgTVFrame@@YAHPBDHPAX@Z
+?guess_TVFrameInit@@YAXXZ

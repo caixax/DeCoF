@@ -1,0 +1,4 @@
+??0CLanguage@@QAE@XZ
+?Initialize@CLanguage@@QAEXXZ
+?actionPerformed@CLanguageHandler_Command@@UAEXPAVPanel@vgui@@@Z
+?ActionSignal@CLanguage@@QAEXH@Z
