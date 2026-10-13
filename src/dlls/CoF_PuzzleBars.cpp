@@ -287,14 +287,14 @@ void CPuzzleBar2::Use( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE u
 		pev->iuser1 = 1;
 		pev->iuser2 = 1;
 		SetNextThink( 1 );
-		SetThink( &CPuzzleBar2::BarCheck );
+		SetThink( &CPuzzleBar::BarCheck );
 	}
 	else
 	{
 		SetSequenceByName( "open" );
 		pev->iuser1 = 0;
 		SetNextThink( 1 );
-		SetThink( &CPuzzleBar2::BarCheck );
+		SetThink( &CPuzzleBar::BarCheck );
 	}
 }
 
@@ -480,14 +480,14 @@ void CPuzzleBar3::Use( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE u
 		pev->iuser1 = 1;
 		pev->iuser2 = 1;
 		SetNextThink( 1 );
-		SetThink( &CPuzzleBar3::BarCheck );
+		SetThink( &CPuzzleBar::BarCheck );
 	}
 	else
 	{
 		SetSequenceByName( "open" );
 		pev->iuser1 = 0;
 		SetNextThink( 1 );
-		SetThink( &CPuzzleBar3::BarCheck );
+		SetThink( &CPuzzleBar::BarCheck );
 	}
 }
 
@@ -673,14 +673,14 @@ void CPuzzleBar4::Use( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE u
 		pev->iuser1 = 1;
 		pev->iuser2 = 1;
 		SetNextThink( 1 );
-		SetThink( &CPuzzleBar4::BarCheck );
+		SetThink( &CPuzzleBar::BarCheck );
 	}
 	else
 	{
 		SetSequenceByName( "open" );
 		pev->iuser1 = 0;
 		SetNextThink( 1 );
-		SetThink( &CPuzzleBar4::BarCheck );
+		SetThink( &CPuzzleBar::BarCheck );
 	}
 }
 
@@ -866,14 +866,14 @@ void CPuzzleBar5::Use( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE u
 		pev->iuser1 = 1;
 		pev->iuser2 = 1;
 		SetNextThink( 1 );
-		SetThink( &CPuzzleBar5::BarCheck );
+		SetThink( &CPuzzleBar::BarCheck );
 	}
 	else
 	{
 		SetSequenceByName( "open" );
 		pev->iuser1 = 0;
 		SetNextThink( 1 );
-		SetThink( &CPuzzleBar5::BarCheck );
+		SetThink( &CPuzzleBar::BarCheck );
 	}
 }
 

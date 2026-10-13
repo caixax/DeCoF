@@ -48,3 +48,7 @@ va,name,kind,evidence
 1005BB60,?Reload@CMp5@@UAEXXZ,func,"CMp5 vtable slot of Reload; DefaultReload calls (recorded by the MP5 agent, confirmed by objdiff)"
 1005BC60,?SecondaryAttack@CMp5@@UAEXXZ,func,"CMp5 vtable slot of SecondaryAttack (recorded by the MP5 agent, confirmed by objdiff)"
 1005C5F0,?Use@CMP5ModeSaveRestoreMP5@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,func,CMP5ModeSaveRestoreMP5 vtable slot of Use; reads the mapper mode fields of CHalfLifeRules (recorded by the MP5 agent)
+10211028,_PM_boxpnt,data,address of our _PM_boxpnt reference in _PM_DrawBBox (instructions identical to retail); retail spelled it as a neighbour global plus offset
+10213F14,?pUsernames@CCofComputer@@2PAPBDA,data,address of our pUsernames reference in CCofComputer::Spawn and CPasswordNote::NoteUse (instructions identical); retail spelled it as m_SaveData@CEnvELight plus offset
+10218EE8,?rgdpvpreset@@3PAUdynpitchvol@@A,data,address of our rgdpvpreset reference in CAmbientGeneric::InitModulationParms (instructions identical); retail spelled it as m_SaveData@CScriptedSentence plus offset
+10231E08,?AmmoInfoArray@CBasePlayerItem@@2PAUAmmoInfo@@A,data,address of our AmmoInfoArray reference in AddAmmoNameToAmmoRegistry (instructions identical); 0x100 bytes end at g_sModelIndexLaser (10231F08)

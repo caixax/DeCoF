@@ -97,3 +97,4 @@ The reconstructed source keeps the behavior of the retail 1.6a binaries, includi
 | EV_ClientSound (client ev_hldm.cpp, guess_EV_ClientSound) | Case 21 (revolver) has no break and falls into case 11 (rifle): the revolver sound plays, then a rifle sound with the same iparam2. | the missing break |
 | V_DropPunchAngle (client view.cpp) | The new spring branch runs only when GetMaxClients() > 1. | as written |
 | ServersCancel (client hud_servers.cpp) | Calls g_pServers->RequestList() instead of CancelRequest(), so cancelling the server list requests it again (RequestList at 100745F0 is a byte match). | the call |
+| CPuzzleBar2 to CPuzzleBar5 ::Use (CoF_PuzzleBars.cpp) | SetThink( &CPuzzleBar::BarCheck ) instead of the class's own BarCheck (copy-paste from CPuzzleBar): the bars run the first bar's check on their own entity. | the think function |
