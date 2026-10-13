@@ -1,5 +1,8 @@
 va,name,kind,evidence
 10006E30,_PM_MapTextureTypeStepType,func,"position in hl/pm_shared/pm_shared (name order), after _PM_LadderMove; sizes retail 145, ours 248"
+100252C0,?ObjectCaps@CBowlingBall@@UAEHXZ,func,"position in hl/dlls/guess_CoF_BowlingBall (name order), after ?BowlingUse@CBowlingBall@@AAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z; sizes retail 28, ours 28"
+100252E0,?Precache@CBowlingBall@@UAEXXZ,func,"position in hl/dlls/guess_CoF_BowlingBall (name order), after ?BowlingUse@CBowlingBall@@AAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z; sizes retail 47, ours 47"
+10025310,?Spawn@CBowlingBall@@UAEXXZ,func,"position in hl/dlls/guess_CoF_BowlingBall (name order), after ?BowlingUse@CBowlingBall@@AAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z; sizes retail 201, ours 201"
 10031DD0,?GetAttackDelayForWeapon@CDualWeapon@@QAEMH@Z,func,"position in hl/dlls/cof_dualpistol (name order), after ?FlashlightSwitch@CDualWeapon@@QAEX_N@Z; sizes retail 122, ours 189"
 10032070,?GetSprintFrom@@YAHH_NPAVCBasePlayer@@@Z,func,"position in hl/dlls/cof_dualpistol (name order), after ?GetModelForWeapon@CDualWeapon@@QAEPADH_N@Z; sizes retail 157, ours 221"
 10032150,?GetSprintIdle@@YAHH_NPAVCBasePlayer@@@Z,func,"position in hl/dlls/cof_dualpistol (name order), after ?GetModelForWeapon@CDualWeapon@@QAEPADH_N@Z; sizes retail 171, ours 237"

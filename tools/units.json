@@ -802,6 +802,11 @@
           "name": "dlls/guess_CoF_MP5",
           "source": "src/dlls/guess_CoF_MP5.cpp",
           "functions_file": "tools/units/hl_dlls_guess_CoF_MP5.txt"
+        },
+        {
+          "name": "dlls/guess_CoF_BowlingBall",
+          "source": "src/dlls/guess_CoF_BowlingBall.cpp",
+          "functions_file": "tools/units/hl_dlls_guess_CoF_BowlingBall.txt"
         }
       ],
       "toolchain": "msvc1427"

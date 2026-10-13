@@ -13850,12 +13850,12 @@ hl,10024DC0,52,?SetYawSpeed@CBookSimonSledgehammer@@UAEXXZ,CBookSimonSledgehamme
 hl,10024E00,358,?Spawn@CBookSimonSledgehammer@@UAEXXZ,CBookSimonSledgehammer::Spawn,COF,dlls/cof_booksimonsledgehammer.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10024F70,692,?TakeDamage@CBookSimonSledgehammer@@UAEHPAUentvars_s@@0MH@Z,CBookSimonSledgehammer::TakeDamage,COF,dlls/cof_booksimonsledgehammer.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10025230,5,_monster_booksimonsledgehammer,monster_booksimonsledgehammer,HLSDK,dlls/cof_booksimonsledgehammer.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( monster_booksimonsledgehammer, CBookSimonSledgehammer )"
-hl,10025240,92,??$GetClassPtr@VCBowlingBall@@@@YAPAVCBowlingBall@@PAV0@@Z,GetClassPtr<CBowlingBall>,HLSDK,,,,TODO,,jmp_target_of_export+rtti,
-hl,100252A0,25,?BowlingUse@CBowlingBall@@AAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CBowlingBall::BowlingUse,COF,,1.6a,,TODO,,hl_1.6a_exports.csv,
-hl,100252C0,28,,,UNKNOWN,,,,TODO,,,
-hl,100252E0,47,,,UNKNOWN,,,,TODO,,,
-hl,10025310,201,,,UNKNOWN,,,,TODO,,,
-hl,100253E0,5,_bowling_ball,bowling_ball,HLSDK,,,,TODO,,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( bowling_ball, CBowlingBall )"
+hl,10025240,92,??$GetClassPtr@VCBowlingBall@@@@YAPAVCBowlingBall@@PAV0@@Z,GetClassPtr<CBowlingBall>,COF,guess:dlls/guess_CoF_BowlingBall.cpp,,,MATCHED,100,jmp_target_of_export+rtti,
+hl,100252A0,25,?BowlingUse@CBowlingBall@@AAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CBowlingBall::BowlingUse,COF,guess:dlls/guess_CoF_BowlingBall.cpp,1.6a,,MATCHED,100,hl_1.6a_exports.csv,
+hl,100252C0,28,?ObjectCaps@CBowlingBall@@UAEHXZ,CBowlingBall::ObjectCaps,COF,dlls/guess_CoF_BowlingBall.cpp,,,MATCHED,100,,
+hl,100252E0,47,?Precache@CBowlingBall@@UAEXXZ,CBowlingBall::Precache,COF,dlls/guess_CoF_BowlingBall.cpp,,,MATCHED,100,,
+hl,10025310,201,?Spawn@CBowlingBall@@UAEXXZ,CBowlingBall::Spawn,COF,dlls/guess_CoF_BowlingBall.cpp,,,MATCHED,100,,
+hl,100253E0,5,_bowling_ball,bowling_ball,COF,guess:dlls/guess_CoF_BowlingBall.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( bowling_ball, CBowlingBall )"
 hl,100253F0,92,??$GetClassPtr@VCBranch@@@@YAPAVCBranch@@PAV0@@Z,GetClassPtr<CBranch>,HLSDK,dlls/cof_branch.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
 hl,10025450,249,?Deploy@CBranch@@UAEHXZ,CBranch::Deploy,COF,dlls/cof_branch.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10025550,179,?Fidget@CBranch@@UAEXXZ,CBranch::Fidget,COF,dlls/cof_branch.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
