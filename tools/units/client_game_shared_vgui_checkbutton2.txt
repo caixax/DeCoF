@@ -1,0 +1,9 @@
+??0CCheckButton2@vgui@@QAE@XZ
+?DeleteImages@CCheckButton2@vgui@@QAEXXZ
+?IsChecked@CCheckButton2@vgui@@QAE_NXZ
+?SetCheckboxLeft@CCheckButton2@vgui@@QAEX_N@Z
+?SetChecked@CCheckButton2@vgui@@QAEX_N@Z
+?SetText@CCheckButton2@vgui@@QAAXPBDZZ
+?SetTextColor@CCheckButton2@vgui@@QAEXHHHH@Z
+?SetupControls@CCheckButton2@vgui@@IAEXXZ
+?internalMousePressed@CCheckButton2@vgui@@UAEXW4MouseCode@2@@Z

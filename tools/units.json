@@ -1508,6 +1508,31 @@
           "name": "cl_dll/mp3",
           "source": "src/cl_dll/mp3.cpp",
           "functions_file": "tools/units/client_cl_dll_mp3.txt"
+        },
+        {
+          "name": "cl_dll/vgui_tabpanel",
+          "source": "src/cl_dll/vgui_tabpanel.cpp",
+          "functions_file": "tools/units/client_cl_dll_vgui_tabpanel.txt"
+        },
+        {
+          "name": "game_shared/vgui_checkbutton2",
+          "source": "src/game_shared/vgui_checkbutton2.cpp",
+          "functions_file": "tools/units/client_game_shared_vgui_checkbutton2.txt"
+        },
+        {
+          "name": "game_shared/vgui_grid",
+          "source": "src/game_shared/vgui_grid.cpp",
+          "functions_file": "tools/units/client_game_shared_vgui_grid.txt"
+        },
+        {
+          "name": "game_shared/vgui_listbox",
+          "source": "src/game_shared/vgui_listbox.cpp",
+          "functions_file": "tools/units/client_game_shared_vgui_listbox.txt"
+        },
+        {
+          "name": "game_shared/vgui_slider2",
+          "source": "src/game_shared/vgui_slider2.cpp",
+          "functions_file": "tools/units/client_game_shared_vgui_slider2.txt"
         }
       ]
     }

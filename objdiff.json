@@ -2218,6 +2218,46 @@
       "metadata": {
         "source_path": "src/cl_dll/mp3.cpp"
       }
+    },
+    {
+      "name": "client/cl_dll/vgui_tabpanel",
+      "target_path": "build/target/client/cl_dll/vgui_tabpanel.obj",
+      "base_path": "build/base/client/cl_dll/vgui_tabpanel.obj",
+      "metadata": {
+        "source_path": "src/cl_dll/vgui_tabpanel.cpp"
+      }
+    },
+    {
+      "name": "client/game_shared/vgui_checkbutton2",
+      "target_path": "build/target/client/game_shared/vgui_checkbutton2.obj",
+      "base_path": "build/base/client/game_shared/vgui_checkbutton2.obj",
+      "metadata": {
+        "source_path": "src/game_shared/vgui_checkbutton2.cpp"
+      }
+    },
+    {
+      "name": "client/game_shared/vgui_grid",
+      "target_path": "build/target/client/game_shared/vgui_grid.obj",
+      "base_path": "build/base/client/game_shared/vgui_grid.obj",
+      "metadata": {
+        "source_path": "src/game_shared/vgui_grid.cpp"
+      }
+    },
+    {
+      "name": "client/game_shared/vgui_listbox",
+      "target_path": "build/target/client/game_shared/vgui_listbox.obj",
+      "base_path": "build/base/client/game_shared/vgui_listbox.obj",
+      "metadata": {
+        "source_path": "src/game_shared/vgui_listbox.cpp"
+      }
+    },
+    {
+      "name": "client/game_shared/vgui_slider2",
+      "target_path": "build/target/client/game_shared/vgui_slider2.obj",
+      "base_path": "build/base/client/game_shared/vgui_slider2.obj",
+      "metadata": {
+        "source_path": "src/game_shared/vgui_slider2.cpp"
+      }
     }
   ]
 }
