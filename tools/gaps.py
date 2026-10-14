@@ -58,9 +58,19 @@ def main():
         if a >= lib_start:
             break
         e = a + s
-        # skip the fill after a function
-        while e < b and byte_at(e) in (0xCC, 0x90):
-            e += 1
+        # skip the fill after a function: int3, nop, and the multi-byte nops
+        # (66 90, 0F 1F 00, 0F 1F 40 00) MSVC puts before an aligned switch table
+        while e < b:
+            if byte_at(e) in (0xCC, 0x90):
+                e += 1
+            elif data[e - start:e - start + 2] == b"\x66\x90":
+                e += 2
+            elif data[e - start:e - start + 3] == b"\x0f\x1f\x00":
+                e += 3
+            elif data[e - start:e - start + 4] == b"\x0f\x1f\x40\x00":
+                e += 4
+            else:
+                break
         if b - e >= minimum:
             k = kind(e, b)
             total[k] = total.get(k, 0) + b - e

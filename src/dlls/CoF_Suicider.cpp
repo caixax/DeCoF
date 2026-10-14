@@ -486,7 +486,7 @@ void CSuicider :: SpawnHeadGibs( Vector vecPos )
 	CSprite *pSprite = CSprite::SpriteCreate( "sprites/head_burst.spr", vecPos, TRUE );
 	pSprite->pev->scale = 1.0;
 	pSprite->AnimateAndDie( 20 );
-	pSprite->SetTransparency( kRenderTransAlpha, 32, 0, 0, 255, kRenderFxNoDissipation );
+	pSprite->SetTransparency( kRenderTransAlpha, 32, 0, 0, 255, kRenderFxNone );
 
 	for ( int i = 0; i < 5; i++ )
 	{

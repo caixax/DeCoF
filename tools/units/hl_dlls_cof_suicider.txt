@@ -22,3 +22,4 @@
 ?TakeDamage@CSuicider@@UAEHPAUentvars_s@@0MH@Z
 ?TraceAttack@CSuicider@@UAEXPAUentvars_s@@MVVector@@PAUTraceResult@@H@Z
 _monster_suicider
+?SpawnHeadGibs@CSuicider@@QAEXVVector@@@Z

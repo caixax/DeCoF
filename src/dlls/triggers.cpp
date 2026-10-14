@@ -3692,9 +3692,9 @@ void NextLevel( void )
 	// go back to start if no trigger_changelevel
 	if ( !pEnt )
 	{
-		gpGlobals->mapname = MAKE_STRING("start");
+		gpGlobals->mapname = MAKE_STRING("c_start");
 		pChange = GetClassPtr( (CChangeLevel *)NULL );
-		strcpy(pChange->m_szMapName, "start");
+		strcpy(pChange->m_szMapName, "c_start");
 	}
 	else
 		pChange = GetClassPtr( (CChangeLevel *)pEnt->pev );
@@ -5417,6 +5417,71 @@ void CTriggerCamera::Spawn( void )
 
 	if ( z_angle )
 		pev->angles.z = z_angle;
+}
+
+void CTriggerCamera::SkipCutscene( void )
+{
+	if ( m_flWait != 666 )
+	{
+		if ( m_hPlayer->IsAlive() )
+		{
+			SET_VIEW( m_hPlayer->edict(), m_hPlayer->edict() );
+			((CBasePlayer *)((CBaseEntity *)m_hPlayer))->EnableControl( TRUE );
+			((CBasePlayer *)((CBaseEntity *)m_hPlayer))->m_hCurrentCamera = NULL;
+		}
+
+		pev->iuser1 = 0;
+
+		if ( pev->message )
+			FireTargets( STRING(pev->message), this, this, USE_TOGGLE, 0 );
+
+		for ( int i = 1; i <= gpGlobals->maxClients; i++ )
+		{
+			CBasePlayer *plr = (CBasePlayer *)UTIL_PlayerByIndex( i );
+
+			if ( plr )
+			{
+				if ( (pev->spawnflags & 16) && !m_iKeepNoHUD )
+					plr->m_iHideHUD &= ~HIDEHUD_HEALTH;
+
+				if ( (pev->spawnflags & 32) && !m_iKeepBlackBars )
+					plr->m_DrawBars = 0;
+
+				if ( pev->iuser2 )
+					plr->m_iHideHUD &= ~HIDEHUD_CUSTOMCROSSHAIR;
+
+				if ( pev->spawnflags & 256 )
+				{
+					MESSAGE_BEGIN( MSG_ONE, gmsgHeadShield, NULL, plr->pev );
+						WRITE_BYTE( 0 );
+						WRITE_BYTE( 0 );
+						WRITE_STRING( "" );
+						WRITE_BYTE( 0 );
+					MESSAGE_END();
+				}
+
+				plr->m_hCurrentCamera = NULL;
+			}
+		}
+
+		SUB_UseTargets( this, USE_TOGGLE, 0 );
+		pev->avelocity = Vector( 0, 0, 0 );
+		m_state = 0;
+		return;
+	}
+
+	if ( m_sSkipManager )
+	{
+		CBaseEntity *pSkipTarget = UTIL_FindEntityByTargetname( NULL, STRING(m_sSkipManager) );
+
+		if ( pSkipTarget )
+		{
+			CBasePlayer *pPlayer = (CBasePlayer *)((CBaseEntity *)m_hPlayer);
+
+			if ( pPlayer )
+				pSkipTarget->Use( pPlayer, pPlayer, USE_TOGGLE, 0 );
+		}
+	}
 }
 
 

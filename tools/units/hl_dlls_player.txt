@@ -253,3 +253,7 @@ _player
 ?SelectPrevItem@CBasePlayer@@QAEXH@Z
 ?ToNormalMo@CBasePlayer@@QAEXXZ
 ?ToSlowMo@CBasePlayer@@QAEXXZ
+?PackDeadPlayerItems@CBasePlayer@@QAEXXZ
+?RenewItems@CBasePlayer@@QAEXXZ
+?UpdateStatusBar@CBasePlayer@@QAEXXZ
+?VibrateCheck@CBasePlayer@@QAEXXZ

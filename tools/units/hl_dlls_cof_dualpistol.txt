@@ -47,3 +47,6 @@ _weapon_dualweapon
 ?SetAmmoValues@CDualWeapon@@QAEXXZ
 ?SetBodyForWeapons@CDualWeapon@@QAEX_N@Z
 ?TMPShoot@CDualWeapon@@QAEX_N@Z
+??$_Destroy_in_place@PAD@std@@YAXAAPAD@Z
+??1error_category@std@@UAE@XZ
+?imbue@?$basic_streambuf@DU?$char_traits@D@std@@@std@@MAEXABVlocale@2@@Z

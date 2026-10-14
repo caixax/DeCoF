@@ -90,3 +90,8 @@
 ?RegisterEncoders@@YAXXZ
 ?ServerDeactivate@@YAXXZ
 ?StartFrame@@YAXXZ
+?AllowLagCompensation@@YAHXZ
+?CreateInstancedBaselines@@YAXXZ
+?GetGameDescription@@YAPBDXZ
+?ParmsNewLevel@@YAXXZ
+?Sys_Error@@YAXPBD@Z

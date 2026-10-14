@@ -13639,8 +13639,8 @@ hl,10017600,36,?Killed@CBaseEntity@@UAEXPAUentvars_s@@H@Z,CBaseEntity::Killed,HL
 hl,10017630,48,?DamageDecal@CBaseEntity@@UAEHH@Z,CBaseEntity::DamageDecal,HLSDK,dlls/cbase.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10017660,134,?IsInWorld@CBaseEntity@@UAEHXZ,CBaseEntity::IsInWorld,HLSDK,dlls/cbase.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,refbytes:paranoia:dlls__cbase.obj:score0,
 hl,100176F0,41,?GetNextTarget@CBaseEntity@@UAEPAV1@XZ,CBaseEntity::GetNextTarget,HLSDK,dlls/cbase.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,10017720,5,,,UNKNOWN,,,,TODO,,,found by tools/gaps.py (no Ghidra function before)
-hl,10017730,5,,,UNKNOWN,,,,TODO,,,found by tools/gaps.py (no Ghidra function before)
+hl,10017720,5,??1CRestore@@QAE@XZ,CRestore::~CRestore,UNKNOWN,dlls/cbase.cpp,,,MATCHED,100,hl_manual.csv,found by tools/gaps.py (no Ghidra function before)
+hl,10017730,5,??1CSave@@QAE@XZ,CSave::~CSave,UNKNOWN,dlls/cbase.cpp,,,MATCHED,100,hl_manual.csv,found by tools/gaps.py (no Ghidra function before)
 hl,10017740,57,??4EHANDLE@@QAEPAVCBaseEntity@@PAV1@@Z,EHANDLE::operator=,UNKNOWN,dlls/cbase.cpp,,,MATCHED,100,,
 hl,10017780,12,??BEHANDLE@@QAEHXZ,int,UNKNOWN,dlls/cbase.cpp,,,MATCHED,100,,
 hl,10017790,16,??BEHANDLE@@QAEPAVCBaseEntity@@XZ,*,UNKNOWN,dlls/cbase.cpp,,,MATCHED,100,,
@@ -13684,7 +13684,7 @@ hl,10018800,92,??$GetClassPtr@VCWheelchair@@@@YAPAVCWheelchair@@PAV0@@Z,GetClass
 hl,10018860,5,?AddDuplicate@CBasePlayerItem@@UAEHPAV1@PAVCBasePlayer@@@Z,CBasePlayerItem::AddDuplicate,HLSDK,dlls/weapons.h,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10018870,1082,?AddToFullPack@@YAHPAUentity_state_s@@HPAUedict_s@@1HHPAE@Z,AddToFullPack,UNKNOWN,dlls/client.cpp,,,MATCHED,100,,
 hl,10018CB0,15,?AddWeapon@CBasePlayerWeapon@@UAEHXZ,CBasePlayerWeapon::AddWeapon,HLSDK,dlls/weapons.h,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,10018CC0,6,,,UNKNOWN,,,,TODO,,,found by tools/gaps.py (no Ghidra function before)
+hl,10018CC0,6,?AllowLagCompensation@@YAHXZ,AllowLagCompensation,UNKNOWN,dlls/client.cpp,,,MATCHED,100,hl_manual.csv,found by tools/gaps.py (no Ghidra function before)
 hl,10018CD0,70,?CBasePlayerByIndex@@YAPAVCBasePlayer@@H@Z,CBasePlayerByIndex,UNKNOWN,dlls/client.cpp,,,MATCHED,100,,
 hl,10018D20,6,?CanDeploy@CBasePlayerItem@@UAEHXZ,CBasePlayerItem::CanDeploy,HLSDK,dlls/weapons.h,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10018D30,6,?CanHolster@CBasePlayerItem@@UAEHXZ,CBasePlayerItem::CanHolster,HLSDK,dlls/weapons.h,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
@@ -13699,14 +13699,14 @@ hl,1001DA90,57,?CmdEnd@@YAXPBUedict_s@@@Z,CmdEnd,UNKNOWN,guess:dlls/client.cpp,,
 hl,1001DAD0,109,?CmdStart@@YAXPBUedict_s@@PBUusercmd_s@@I@Z,CmdStart,UNKNOWN,dlls/client.cpp,,,MATCHED,100,,
 hl,1001DB40,16,?ConnectionlessPacket@@YAHPBUnetadr_s@@PBDPADPAH@Z,ConnectionlessPacket,UNKNOWN,dlls/client.cpp,,,MATCHED,100,,
 hl,1001DB50,384,?CreateBaseline@@YAXHHPAUentity_state_s@@PAUedict_s@@HVVector@@2@Z,CreateBaseline,UNKNOWN,dlls/client.cpp,,,MATCHED,100,,
-hl,1001DCD0,3,,,UNKNOWN,,,,TODO,,,found by tools/gaps.py (no Ghidra function before)
+hl,1001DCD0,3,?CreateInstancedBaselines@@YAXXZ,CreateInstancedBaselines,UNKNOWN,dlls/client.cpp,,,MATCHED,100,hl_manual.csv,found by tools/gaps.py (no Ghidra function before)
 hl,1001DCE0,214,?Custom_Encode@@YAXPAUdelta_s@@PBE1@Z,Custom_Encode,HLSDK,dlls/client.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1001DDC0,169,?Custom_Entity_FieldInit@@YAXPAUdelta_s@@@Z,Custom_Entity_FieldInit,HLSDK,dlls/client.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,refbytes:paranoia:dlls__client.obj:score9,
 hl,1001DE70,6,?Deploy@CBasePlayerItem@@UAEHXZ,CBasePlayerItem::Deploy,HLSDK,dlls/weapons.h,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1001DE80,337,?Entity_Encode@@YAXPAUdelta_s@@PBE1@Z,Entity_Encode,HLSDK,dlls/client.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1001DFE0,115,?Entity_FieldInit@@YAXPAUdelta_s@@@Z,Entity_FieldInit,HLSDK,dlls/client.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,refbytes:paranoia:dlls__client.obj:score6,
 hl,1001E060,3,?Fidget@CBasePlayerWeapon@@UAEXXZ,CBasePlayerWeapon::Fidget,COF,dlls/client.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,1001E070,6,,,UNKNOWN,,,,TODO,,,found by tools/gaps.py (no Ghidra function before)
+hl,1001E070,6,?GetGameDescription@@YAPBDXZ,GetGameDescription,UNKNOWN,dlls/client.cpp,,,MATCHED,100,hl_manual.csv,found by tools/gaps.py (no Ghidra function before)
 hl,1001E080,32,?GetHullBounds@@YAHHPAM0@Z,GetHullBounds,HLSDK,dlls/client.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,refbytes:paranoia:dlls__client.obj:score0,
 hl,1001E0A0,5,?GetItemInfo@CBasePlayerItem@@UAEHPAUItemInfo@@@Z,CBasePlayerItem::GetItemInfo,HLSDK,dlls/weapons.h,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1001E0B0,3,?GetMode@CBasePlayerItem@@UAEHXZ,CBasePlayerItem::GetMode,PARANOIA,dlls/weapons.h,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
@@ -13729,7 +13729,7 @@ hl,1001E650,15,?ObjectCaps@CItemPadlock@@UAEHXZ,CItemPadlock::ObjectCaps,COF,dll
 hl,1001E660,18,?ObjectCaps@CPuzzleBarButton@@UAEHXZ,CPuzzleBarButton::ObjectCaps,COF,dlls/client.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1001E680,28,?ObjectCaps@CWheelchair@@UAEHXZ,CWheelchair::ObjectCaps,COF,dlls/client.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1001E6A0,35,?ParmsChangeLevel@@YAXXZ,ParmsChangeLevel,UNKNOWN,dlls/client.cpp,,,MATCHED,100,,found by tools/gaps.py (no Ghidra function before)
-hl,1001E6D0,3,,,UNKNOWN,,,,TODO,,,found by tools/gaps.py (no Ghidra function before)
+hl,1001E6D0,3,?ParmsNewLevel@@YAXXZ,ParmsNewLevel,UNKNOWN,dlls/client.cpp,,,MATCHED,100,hl_manual.csv,found by tools/gaps.py (no Ghidra function before)
 hl,1001E6E0,117,?PlayerCustomization@@YAXPAUedict_s@@PAUcustomization_s@@@Z,PlayerCustomization,HLSDK,dlls/client.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,refbytes:paranoia:dlls__client.obj:score7,
 hl,1001E760,3,?PlayerJump@CBasePlayerItem@@UAEXXZ,CBasePlayerItem::PlayerJump,PARANOIA,dlls/weapons.h,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1001E770,49,?PlayerPostThink@@YAXPAUedict_s@@@Z,PlayerPostThink,HLSDK,dlls/client.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
@@ -13756,7 +13756,7 @@ hl,1001ECC0,25,?SpectatorThink@@YAXPAUedict_s@@@Z,SpectatorThink,HLSDK,dlls/clie
 hl,1001ECE0,54,?StartFrame@@YAXXZ,StartFrame,UNKNOWN,dlls/client.cpp,,,MATCHED,100,,found by tools/gaps.py (no Ghidra function before)
 hl,1001ED20,3,?StartSuicide@CBasePlayerItem@@UAEXXZ,CBasePlayerItem::StartSuicide,COF,dlls/client.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1001ED30,3,?StopSuicide@CBasePlayerItem@@UAEXXZ,CBasePlayerItem::StopSuicide,COF,dlls/client.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,1001ED40,3,,,UNKNOWN,,,,TODO,,,found by tools/gaps.py (no Ghidra function before)
+hl,1001ED40,3,?Sys_Error@@YAXPBD@Z,Sys_Error,UNKNOWN,dlls/client.cpp,,,MATCHED,100,hl_manual.csv,found by tools/gaps.py (no Ghidra function before)
 hl,1001ED50,3,?TertiaryAttack@CBasePlayerWeapon@@UAEXXZ,CBasePlayerWeapon::TertiaryAttack,COF,dlls/client.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1001ED60,693,?UpdateClientData@@YAXPBUedict_s@@HPAUclientdata_s@@@Z,UpdateClientData,UNKNOWN,dlls/client.cpp,,,MATCHED,100,,
 hl,1001F020,5,?UpdateClientData@CBasePlayerItem@@UAEHPAVCBasePlayer@@@Z,CBasePlayerItem::UpdateClientData,HLSDK,dlls/weapons.h,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
@@ -13988,8 +13988,7 @@ hl,1002AF30,107,?PainSound@CCrab@@UAEXXZ,CCrab::PainSound,COF,dlls/cof_crab.cpp,
 hl,1002AFA0,255,?Precache@CCrab@@UAEXXZ,CCrab::Precache,COF,dlls/cof_crab.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1002B0A0,52,?SetYawSpeed@CCrab@@UAEXXZ,CCrab::SetYawSpeed,COF,dlls/cof_crab.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1002B0E0,331,?Spawn@CCrab@@UAEXXZ,CCrab::Spawn,COF,dlls/cof_crab.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,1002B230,637,,,UNKNOWN,,,,TODO,,,found by tools/gaps.py (no Ghidra function before)
-hl,1002B4AD,3,,,UNKNOWN,,,,TODO,,,found by tools/gaps.py (no Ghidra function before)
+hl,1002B230,637,?SpawnHeadGibs@CCrab@@QAEXVVector@@@Z,CCrab::SpawnHeadGibs,UNKNOWN,dlls/cof_crab.cpp,,,MATCHED,100,hl_manual.csv,found by tools/gaps.py (no Ghidra function before)
 hl,1002B4C0,491,?TakeDamage@CCrab@@UAEHPAUentvars_s@@0MH@Z,CCrab::TakeDamage,COF,dlls/cof_crab.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1002B6B0,100,?TraceAttack@CCrab@@UAEXPAUentvars_s@@MVVector@@PAUTraceResult@@H@Z,CCrab::TraceAttack,COF,dlls/cof_crab.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1002B720,5,_monster_crab,monster_crab,HLSDK,dlls/cof_crab.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( monster_crab, CCrab )"
@@ -14056,7 +14055,7 @@ hl,1002F260,10,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (no
 hl,1002F270,10,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
 hl,1002F280,15,??$_Construct_in_place@PADABQAD@std@@YAXAAPADABQAD@Z,&>,LIB,dlls/cof_dualpistol.cpp,,,TODO,,,
 hl,1002F290,53,??$_Deallocate@$07$0A@@std@@YAXPAXI@Z,"std::_Deallocate<8,0>",LIB,dlls/cof_dualpistol.cpp,,,TODO,,,
-hl,1002F2D0,3,,,UNKNOWN,,,,TODO,,,found by tools/gaps.py (no Ghidra function before)
+hl,1002F2D0,3,??$_Destroy_in_place@PAD@std@@YAXAAPAD@Z,*>,LIB,dlls/cof_dualpistol.cpp,,,MATCHED,100,hl_manual.csv,found by tools/gaps.py (no Ghidra function before)
 hl,1002F2E0,27,??$_Fputc@D@std@@YA_NDPAU_iobuf@@@Z,std::_Fputc<char>,LIB,dlls/cof_dualpistol.cpp,,,TODO,,,
 hl,1002F300,77,??$_Immortalize_memcpy_image@V_Iostream_error_category2@std@@@std@@YAABV_Iostream_error_category2@0@XZ,std::_Iostream_error_category2>,LIB,dlls/cof_dualpistol.cpp,,,TODO,,,
 hl,1002F350,301,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
@@ -14096,7 +14095,7 @@ hl,10030650,69,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (no
 hl,100306A0,69,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
 hl,100306F0,17,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
 hl,10030710,17,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
-hl,10030730,3,,,UNKNOWN,,,,TODO,,,found by tools/gaps.py (no Ghidra function before)
+hl,10030730,3,??1error_category@std@@UAE@XZ,std::error_category::~error_category,LIB,dlls/cof_dualpistol.cpp,,,MATCHED,100,hl_manual.csv,found by tools/gaps.py (no Ghidra function before)
 hl,10030740,17,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
 hl,10030760,7,??1?$codecvt@DDU_Mbstatet@@@std@@MAE@XZ,_Mbstatet>,LIB,dlls/cof_dualpistol.cpp,,,MATCHED,100,,
 hl,10030770,17,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
@@ -14130,7 +14129,7 @@ hl,10030DC0,96,??_Gios_base@std@@UAEPAXI@Z,std::ios_base::`scalar deleting destr
 hl,10030E30,48,??_Gruntime_error@std@@UAEPAXI@Z,std::runtime_error::`scalar deleting destructor',LIB,,1.0,1.0->1.4 same; 1.4->1.55 same,,,hl_1.55_to_1.6a.csv,
 hl,10030E60,48,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
 hl,10030E90,370,?BranchHit@CDualWeapon@@QAEX_N@Z,CDualWeapon::BranchHit,UNKNOWN,dlls/cof_dualpistol.cpp,,,MATCHED,100,,
-hl,10031010,3,,,UNKNOWN,,,,TODO,,,found by tools/gaps.py (no Ghidra function before)
+hl,10031010,3,?CameraShoot@CDualWeapon@@QAEX_N@Z,CDualWeapon::CameraShoot,UNKNOWN,dlls/cof_dualpistol.cpp,,,MATCHED,100,hl_manual.csv,found by tools/gaps.py (no Ghidra function before)
 hl,10031020,1833,?Deploy@CDualWeapon@@UAEHXZ,CDualWeapon::Deploy,COF,dlls/cof_dualpistol.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100317C0,739,?FlareDoIgnite@CDualWeapon@@QAEXXZ,CDualWeapon::FlareDoIgnite,COF,dlls/cof_dualpistol.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10031AB0,255,?FlareIgnite@CDualWeapon@@QAEX_N@Z,CDualWeapon::FlareIgnite,UNKNOWN,dlls/cof_dualpistol.cpp,,,MATCHED,100,,
@@ -14213,7 +14212,7 @@ hl,10037B90,60,?equivalent@error_category@std@@UBE_NHABVerror_condition@2@@Z,std
 hl,10037BD0,310,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
 hl,10037D10,6,?iItemSlot@CDualWeapon@@UAEHXZ,CDualWeapon::iItemSlot,COF,dlls/cof_dual_weapon.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10037D20,30,?imbue@?$basic_filebuf@DU?$char_traits@D@std@@@std@@MAEXABVlocale@2@@Z,>::imbue,LIB,dlls/cof_dualpistol.cpp,,,TODO,,,
-hl,10037D40,3,?CameraShoot@CDualWeapon@@QAEX_N@Z,CDualWeapon::CameraShoot,UNKNOWN,dlls/cof_dualpistol.cpp,,,MATCHED,100,,
+hl,10037D40,3,?imbue@?$basic_streambuf@DU?$char_traits@D@std@@@std@@MAEXABVlocale@2@@Z,>::imbue,LIB,dlls/cof_dualpistol.cpp,,,MATCHED,100,hl_manual.csv,
 hl,10037D50,23,?make_error_code@std@@YA?AVerror_code@1@W4io_errc@1@@Z,std::make_error_code,LIB,,,,,,hl_1.6a_crt_strong.csv,
 hl,10037D70,171,?message@_Iostream_error_category2@std@@UBE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@H@Z,std::_Iostream_error_category2::message,LIB,dlls/cof_dualpistol.cpp,,,TODO,,,
 hl,10037E20,6,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
@@ -14526,7 +14525,7 @@ hl,100496B0,92,??$GetClassPtr@VCInterDoorCoopChangeLevel@@@@YAPAVCInterDoorCoopC
 hl,10049710,92,??$GetClassPtr@VCInterDoorDisableCoop@@@@YAPAVCInterDoorDisableCoop@@PAV0@@Z,GetClassPtr<CInterDoorDisableCoop>,HLSDK,dlls/cof_interdoorcoop.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
 hl,10049770,8,??$_Maklocchr@D@std@@YADDPADABU_Cvtvec@@@Z,std::_Maklocchr<char>,LIB,dlls/cof_interdoorcoop.cpp,,,MATCHED,100,,
 hl,10049780,75,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
-hl,100497D0,3,,,UNKNOWN,,,,TODO,,,found by tools/gaps.py (no Ghidra function before)
+hl,100497D0,3,??$_Pocma@V?$allocator@D@std@@@std@@YAXAAV?$allocator@D@0@0@Z,>,LIB,dlls/cof_interdoorcoop.cpp,,,MATCHED,100,hl_manual.csv,found by tools/gaps.py (no Ghidra function before)
 hl,100497E0,16,??$flush@DU?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@@Z,>,LIB,dlls/cof_interdoorcoop.cpp,,,MATCHED,100,,
 hl,100497F0,343,??$use_facet@V?$num_put@DV?$ostreambuf_iterator@DU?$char_traits@D@std@@@std@@@std@@@std@@YAABV?$num_put@DV?$ostreambuf_iterator@DU?$char_traits@D@std@@@std@@@0@ABVlocale@0@@Z,>,LIB,dlls/cof_interdoorcoop.cpp,,,MATCHED,100,,
 hl,10049950,522,??$use_facet@V?$numpunct@D@std@@@std@@YAABV?$numpunct@D@0@ABVlocale@0@@Z,>,LIB,dlls/cof_interdoorcoop.cpp,,,MATCHED,100,,
@@ -14780,8 +14779,7 @@ hl,10057D80,107,?PainSound@CKrypande@@UAEXXZ,CKrypande::PainSound,COF,dlls/cof_m
 hl,10057DF0,287,?Precache@CKrypande@@UAEXXZ,CKrypande::Precache,COF,dlls/cof_monsterkrypande.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10057F10,52,?SetYawSpeed@CKrypande@@UAEXXZ,CKrypande::SetYawSpeed,COF,dlls/cof_monsterkrypande.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10057F50,331,?Spawn@CKrypande@@UAEXXZ,CKrypande::Spawn,COF,dlls/cof_monsterkrypande.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,100580A0,637,,,UNKNOWN,,,,TODO,,,found by tools/gaps.py (no Ghidra function before)
-hl,1005831D,3,,,UNKNOWN,,,,TODO,,,found by tools/gaps.py (no Ghidra function before)
+hl,100580A0,637,?SpawnHeadGibs@CKrypande@@QAEXVVector@@@Z,CKrypande::SpawnHeadGibs,UNKNOWN,dlls/cof_monsterkrypande.cpp,,,MATCHED,100,hl_manual.csv,found by tools/gaps.py (no Ghidra function before)
 hl,10058330,491,?TakeDamage@CKrypande@@UAEHPAUentvars_s@@0MH@Z,CKrypande::TakeDamage,COF,dlls/cof_monsterkrypande.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10058520,100,?TraceAttack@CKrypande@@UAEXPAUentvars_s@@MVVector@@PAUTraceResult@@H@Z,CKrypande::TraceAttack,COF,dlls/cof_monsterkrypande.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10058590,5,_monster_krypande,monster_krypande,HLSDK,dlls/cof_monsterkrypande.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( monster_krypande, CKrypande )"
@@ -14824,8 +14822,7 @@ hl,10059AC0,107,?PainSound@CSlower3@@UAEXXZ,CSlower3::PainSound,COF,dlls/cof_mon
 hl,10059B30,255,?Precache@CSlower3@@UAEXXZ,CSlower3::Precache,COF,dlls/cof_monsterslower3.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10059C30,52,?SetYawSpeed@CSlower3@@UAEXXZ,CSlower3::SetYawSpeed,COF,dlls/cof_monsterslower3.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10059C70,331,?Spawn@CSlower3@@UAEXXZ,CSlower3::Spawn,COF,dlls/cof_monsterslower3.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,10059DC0,637,,,UNKNOWN,,,,TODO,,,found by tools/gaps.py (no Ghidra function before)
-hl,1005A03D,3,,,UNKNOWN,,,,TODO,,,found by tools/gaps.py (no Ghidra function before)
+hl,10059DC0,637,?SpawnHeadGibs@CSlower3@@QAEXVVector@@@Z,CSlower3::SpawnHeadGibs,UNKNOWN,dlls/cof_monsterslower3.cpp,,,MATCHED,100,hl_manual.csv,found by tools/gaps.py (no Ghidra function before)
 hl,1005A050,491,?TakeDamage@CSlower3@@UAEHPAUentvars_s@@0MH@Z,CSlower3::TakeDamage,COF,dlls/cof_monsterslower3.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1005A240,100,?TraceAttack@CSlower3@@UAEXPAUentvars_s@@MVVector@@PAUTraceResult@@H@Z,CSlower3::TraceAttack,COF,dlls/cof_monsterslower3.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1005A2B0,5,_monster_slower3,monster_slower3,HLSDK,dlls/cof_monsterslower3.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( monster_slower3, CSlower3 )"
@@ -15219,8 +15216,7 @@ hl,10071F80,107,?PainSound@CZombie@@UAEXXZ,CZombie::PainSound,HLSDK,dlls/cof_slo
 hl,10072000,271,?Precache@CZombie@@UAEXXZ,CZombie::Precache,HLSDK,dlls/cof_slower.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10072110,52,?SetYawSpeed@CZombie@@UAEXXZ,CZombie::SetYawSpeed,HLSDK,dlls/cof_slower.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10072150,344,?Spawn@CZombie@@UAEXXZ,CZombie::Spawn,HLSDK,dlls/cof_slower.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,100722B0,637,,,UNKNOWN,,,,TODO,,,found by tools/gaps.py (no Ghidra function before)
-hl,1007252D,3,,,UNKNOWN,,,,TODO,,,found by tools/gaps.py (no Ghidra function before)
+hl,100722B0,637,?SpawnHeadGibs@CZombie@@QAEXVVector@@@Z,CZombie::SpawnHeadGibs,UNKNOWN,dlls/cof_slower.cpp,,,MATCHED,100,hl_manual.csv,found by tools/gaps.py (no Ghidra function before)
 hl,10072540,491,?TakeDamage@CZombie@@UAEHPAUentvars_s@@0MH@Z,CZombie::TakeDamage,HLSDK,dlls/cof_slower.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10072730,100,?TraceAttack@CZombie@@UAEXPAUentvars_s@@MVVector@@PAUTraceResult@@H@Z,CZombie::TraceAttack,PARANOIA,dlls/cof_slower.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100727A0,5,_monster_slower,monster_slower,HLSDK,dlls/cof_slower.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( monster_slower, CZombie )"
@@ -15389,8 +15385,7 @@ hl,10078780,235,?SetActivity@CSuicider@@UAEXW4Activity@@@Z,CSuicider::SetActivit
 hl,100788A0,52,?SetYawSpeed@CSuicider@@UAEXXZ,CSuicider::SetYawSpeed,COF,dlls/cof_suicider.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100788E0,617,?Shoot@CSuicider@@QAEXXZ,CSuicider::Shoot,COF,dlls/cof_suicider.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10078B50,396,?Spawn@CSuicider@@UAEXXZ,CSuicider::Spawn,COF,dlls/cof_suicider.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,10078CE0,637,,,UNKNOWN,,,,TODO,,,found by tools/gaps.py (no Ghidra function before)
-hl,10078F5D,3,,,UNKNOWN,,,,TODO,,,found by tools/gaps.py (no Ghidra function before)
+hl,10078CE0,637,?SpawnHeadGibs@CSuicider@@QAEXVVector@@@Z,CSuicider::SpawnHeadGibs,UNKNOWN,dlls/cof_suicider.cpp,,,MATCHED,100,hl_manual.csv,found by tools/gaps.py (no Ghidra function before)
 hl,10078F70,557,?TakeDamage@CSuicider@@UAEHPAUentvars_s@@0MH@Z,CSuicider::TakeDamage,COF,dlls/cof_suicider.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100791A0,191,?TraceAttack@CSuicider@@UAEXPAUentvars_s@@MVVector@@PAUTraceResult@@H@Z,CSuicider::TraceAttack,COF,dlls/cof_suicider.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10079260,5,_monster_suicider,monster_suicider,HLSDK,dlls/cof_suicider.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( monster_suicider, CSuicider )"
@@ -17174,7 +17169,7 @@ hl,100CA580,8,?WeaponShouldRespawn@CHalfLifeMultiplay@@UAEHPAVCBasePlayerItem@@@
 hl,100CA590,92,??$GetClassPtr@VCNodeEnt@@@@YAPAVCNodeEnt@@PAV0@@Z,GetClassPtr<CNodeEnt>,HLSDK,dlls/nodes.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
 hl,100CA5F0,92,??$GetClassPtr@VCNodeViewer@@@@YAPAVCNodeViewer@@PAV0@@Z,GetClassPtr<CNodeViewer>,HLSDK,dlls/nodes.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
 hl,100CA650,92,??$GetClassPtr@VCTestHull@@@@YAPAVCTestHull@@PAV0@@Z,GetClassPtr<CTestHull>,HLSDK,dlls/nodes.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
-hl,100CA6B0,3,,,UNKNOWN,,,,TODO,,,found by tools/gaps.py (no Ghidra function before)
+hl,100CA6B0,3,??0CACHE_ENTRY@@QAE@XZ,CACHE_ENTRY::CACHE_ENTRY,UNKNOWN,dlls/nodes.cpp,,,MATCHED,100,hl_manual.csv,found by tools/gaps.py (no Ghidra function before)
 hl,100CA6C0,29,??0CQueue@@QAE@XZ,CQueue::CQueue,UNKNOWN,dlls/nodes.cpp,,,MATCHED,100,,found by tools/gaps.py (no Ghidra function before)
 hl,100CA6E0,9,??0CQueuePriority@@QAE@XZ,CQueuePriority::CQueuePriority,UNKNOWN,dlls/nodes.cpp,,,MATCHED,100,,
 hl,100CA6F0,13,??0CStack@@QAE@XZ,CStack::CStack,UNKNOWN,dlls/nodes.cpp,,,MATCHED,100,,found by tools/gaps.py (no Ghidra function before)
@@ -17579,7 +17574,7 @@ hl,100E9230,2162,?MultiplayerKilled@CBasePlayer@@UAEXPAUentvars_s@@H@Z,CBasePlay
 hl,100E9AB0,919,?MultiplayerPlayerDeathThink@CBasePlayer@@QAEXXZ,CBasePlayer::MultiplayerPlayerDeathThink,COF,dlls/player.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100E9E50,60,?MultiplayerTouch@CBasePlayer@@QAEXPAVCBaseEntity@@@Z,CBasePlayer::MultiplayerTouch,COF,dlls/player.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100E9E90,6,?ObjectCaps@CSprayCan@@UAEHXZ,CSprayCan::ObjectCaps,HLSDK,dlls/player.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,100E9EA0,3,,,UNKNOWN,,,,TODO,,,found by tools/gaps.py (no Ghidra function before)
+hl,100E9EA0,3,?PackDeadPlayerItems@CBasePlayer@@QAEXXZ,CBasePlayer::PackDeadPlayerItems,UNKNOWN,dlls/player.cpp,,,MATCHED,100,hl_manual.csv,found by tools/gaps.py (no Ghidra function before)
 hl,100E9EB0,318,?Pain@CBasePlayer@@QAEXXZ,CBasePlayer::Pain,HLSDK,dlls/player.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100E9FF0,503,?PhoneNumber@CBasePlayer@@QAEXH@Z,CBasePlayer::PhoneNumber,COF,dlls/player.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100EA1F0,80,?PlayNewDoorSound@CBasePlayer@@QAEXXZ,CBasePlayer::PlayNewDoorSound,COF,dlls/player.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
@@ -17601,7 +17596,7 @@ hl,100F0BA0,949,?RemoveAllItems@CBasePlayer@@QAEXH@Z,CBasePlayer::RemoveAllItems
 hl,100F0F60,61,?RemoveAmmo@CBasePlayer@@QAEXPBDH@Z,CBasePlayer::RemoveAmmo,SPIRIT,dlls/player.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100F0FA0,929,?RemoveItems@CBasePlayer@@QAEXHHHHHHHHHHHHHHHHHHHH@Z,CBasePlayer::RemoveItems,SPIRIT,dlls/player.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100F1350,211,?RemovePlayerItem@CBasePlayer@@UAEHPAVCBasePlayerItem@@@Z,CBasePlayer::RemovePlayerItem,HLSDK,dlls/player.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,100F1430,3,,,UNKNOWN,,,,TODO,,,found by tools/gaps.py (no Ghidra function before)
+hl,100F1430,3,?RenewItems@CBasePlayer@@QAEXXZ,CBasePlayer::RenewItems,UNKNOWN,dlls/player.cpp,,,MATCHED,100,hl_manual.csv,found by tools/gaps.py (no Ghidra function before)
 hl,100F1440,124,?ResetAutoaim@CBasePlayer@@QAEXXZ,CBasePlayer::ResetAutoaim,UNKNOWN,dlls/player.cpp,,,MATCHED,100,,
 hl,100F14C0,794,?Restore@CBasePlayer@@UAEHAAVCRestore@@@Z,CBasePlayer::Restore,HLSDK,dlls/player.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100F17E0,49,?Restore@CRevertSaved@@UAEHAAVCRestore@@@Z,CRevertSaved::Restore,HLSDK,dlls/player.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,refbytes:paranoia:dlls__player.obj:score3,
@@ -17663,7 +17658,7 @@ hl,100F6AA0,494,?TripOver@CBasePlayer@@QAEXXZ,CBasePlayer::TripOver,COF,dlls/pla
 hl,100F6CA0,6530,?UpdateClientData@CBasePlayer@@UAEXXZ,CBasePlayer::UpdateClientData,HLSDK,dlls/player.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100F8630,161,?UpdateGeigerCounter@CBasePlayer@@QAEXXZ,CBasePlayer::UpdateGeigerCounter,UNKNOWN,dlls/player.cpp,,,MATCHED,100,hl_manual.csv,
 hl,100F86E0,455,?UpdatePlayerSound@CBasePlayer@@QAEXXZ,CBasePlayer::UpdatePlayerSound,HLSDK,dlls/player.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,100F88B0,3,,,UNKNOWN,,,,TODO,,,found by tools/gaps.py (no Ghidra function before)
+hl,100F88B0,3,?UpdateStatusBar@CBasePlayer@@QAEXXZ,CBasePlayer::UpdateStatusBar,UNKNOWN,dlls/player.cpp,,,MATCHED,100,hl_manual.csv,found by tools/gaps.py (no Ghidra function before)
 hl,100F88C0,703,?Use@CBasePlayer@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CBasePlayer::Use,COF,dlls/player.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100F8B80,353,?Use@CGiver@@EAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CGiver::Use,COF,dlls/player.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100F8CF0,245,?Use@CHudSprite@@EAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CHudSprite::Use,SPIRIT,dlls/player.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
@@ -17672,7 +17667,7 @@ hl,100F8EC0,93,?Use@CRevertSaved@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CRevertSa
 hl,100F8F20,235,?Use@CStripWeapons@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CStripWeapons::Use,HLSDK,dlls/player.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100F9010,26,?VARS@@YAPAUentvars_s@@H@Z,VARS,HLSDK,dlls/util.h,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,refbytes:paranoia:dlls__gauss.obj:score1,
 hl,100F9030,187,?VecVelocityForDamage@@YA?AVVector@@M@Z,VecVelocityForDamage,HLSDK,dlls/player.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,refbytes:paranoia:dlls__player.obj:score4,
-hl,100F90F0,3,,,UNKNOWN,,,,TODO,,,found by tools/gaps.py (no Ghidra function before)
+hl,100F90F0,3,?VibrateCheck@CBasePlayer@@QAEXXZ,CBasePlayer::VibrateCheck,UNKNOWN,dlls/player.cpp,,,MATCHED,100,hl_manual.csv,found by tools/gaps.py (no Ghidra function before)
 hl,100F9100,53,?ViewKnock@CBasePlayer@@QAEXM@Z,CBasePlayer::ViewKnock,COF,dlls/player.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100F9140,111,?ViewLock@CBasePlayer@@QAEX_NM@Z,CBasePlayer::ViewLock,COF,dlls/player.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100F91B0,229,?ViewPunch@CBasePlayer@@QAEXMMM@Z,CBasePlayer::ViewPunch,UNKNOWN,dlls/player.cpp,,,MATCHED,100,,
@@ -18156,7 +18151,7 @@ hl,1010E190,977,?ManagerUse@CMultiManager@@QAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,
 hl,1010E570,715,?Move@CTriggerCamera@@QAEXXZ,CTriggerCamera::Move,HLSDK,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1010E840,36,?MultiTouch@CTriggerMultiple@@QAEXPAVCBaseEntity@@@Z,CTriggerMultiple::MultiTouch,SPIRIT,dlls/triggers.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,refbytes:paranoia:dlls__triggers.obj:score2,
 hl,1010E870,8,?MultiWaitOver@CTriggerMultiple@@QAEXXZ,CTriggerMultiple::MultiWaitOver,SPIRIT,dlls/triggers.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,1010E880,172,,,UNKNOWN,,,,TODO,,,found by tools/gaps.py (no Ghidra function before)
+hl,1010E880,172,?NextLevel@@YAXXZ,NextLevel,UNKNOWN,dlls/triggers.cpp,,,MATCHED,100,hl_manual.csv,found by tools/gaps.py (no Ghidra function before)
 hl,1010E930,15,?ObjectCaps@CAutoTrigger@@UAEHXZ,CAutoTrigger::ObjectCaps,HLSDK,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1010E940,15,?ObjectCaps@CBaseTrigger@@UAEHXZ,CBaseTrigger::ObjectCaps,SPIRIT,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1010E950,15,?ObjectCaps@CEnvCustomize@@UAEHXZ,CEnvCustomize::ObjectCaps,COF,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
@@ -18247,7 +18242,7 @@ hl,101101B0,95,?Save@CTriggerRotTest@@UAEHAAVCSave@@@Z,CTriggerRotTest::Save,SPI
 hl,10110210,95,?Save@CTriggerSetPatrol@@UAEHAAVCSave@@@Z,CTriggerSetPatrol::Save,SPIRIT,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10110270,24,?SaveTouch@CTriggerSave@@QAEXPAVCBaseEntity@@@Z,CTriggerSave::SaveTouch,HLSDK,dlls/triggers.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10110290,162,?SetBoneController@CEnvCustomize@@QAEXMHPAVCBaseEntity@@@Z,CEnvCustomize::SetBoneController,SPIRIT,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,10110340,641,,,UNKNOWN,,,,TODO,,,found by tools/gaps.py (no Ghidra function before)
+hl,10110340,641,?SkipCutscene@CTriggerCamera@@QAEXXZ,CTriggerCamera::SkipCutscene,UNKNOWN,dlls/triggers.cpp,,,MATCHED,100,hl_manual.csv,found by tools/gaps.py (no Ghidra function before)
 hl,101105D0,196,?Spawn@CChangeLevel@@UAEXXZ,CChangeLevel::Spawn,HLSDK,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,101106A0,49,?Spawn@CCofBillBoard@@UAEXXZ,CCofBillBoard::Spawn,COF,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,101106E0,5,?Spawn@CEnvCustomize@@UAEXXZ,CEnvCustomize::Spawn,COF,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
@@ -18265,10 +18260,10 @@ hl,10110AB0,39,?Spawn@CStateWatcher@@UAEXXZ,CStateWatcher::Spawn,COF,dlls/trigge
 hl,10110AE0,60,?Spawn@CTargetCDAudio@@UAEXXZ,CTargetCDAudio::Spawn,HLSDK,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10110B20,33,?Spawn@CTriggerBookSimon@@UAEXXZ,CTriggerBookSimon::Spawn,COF,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10110B50,22,?Spawn@CTriggerBounce@@UAEXXZ,CTriggerBounce::Spawn,SPIRIT,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,10110B70,5,,,UNKNOWN,,,,TODO,,,found by tools/gaps.py (no Ghidra function before)
+hl,10110B70,5,?Spawn@CTriggerCDAudio@@UAEXXZ,CTriggerCDAudio::Spawn,UNKNOWN,dlls/triggers.cpp,,,MATCHED,100,hl_manual.csv,found by tools/gaps.py (no Ghidra function before)
 hl,10110B80,160,?Spawn@CTriggerCamera@@UAEXXZ,CTriggerCamera::Spawn,HLSDK,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10110C20,3,?Spawn@CTriggerChangeTarget@@UAEXXZ,CTriggerChangeTarget::Spawn,HLSDK,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,10110C30,5,,,UNKNOWN,,,,TODO,,,found by tools/gaps.py (no Ghidra function before)
+hl,10110C30,5,?Spawn@CTriggerCofTeleport@@UAEXXZ,CTriggerCofTeleport::Spawn,UNKNOWN,dlls/triggers.cpp,,,MATCHED,100,hl_manual.csv,found by tools/gaps.py (no Ghidra function before)
 hl,10110C40,170,?Spawn@CTriggerCoopChangelevel@@UAEXXZ,CTriggerCoopChangelevel::Spawn,COF,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10110CF0,40,?Spawn@CTriggerCounter@@UAEXXZ,CTriggerCounter::Spawn,HLSDK,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10110D20,80,?Spawn@CTriggerEndSection@@UAEXXZ,CTriggerEndSection::Spawn,HLSDK,dlls/triggers.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
@@ -18393,7 +18388,7 @@ hl,10115FF0,5,_trigger_transition,trigger_transition,HLSDK,dlls/triggers.cpp,,,M
 hl,10116000,5,_watcher,watcher,HLSDK,dlls/triggers.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( watcher, CStateWatcher )"
 hl,10116010,5,_watcher_count,watcher_count,HLSDK,dlls/triggers.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( watcher_count, CWatcherCount )"
 hl,10116020,14,??0CSaveRestoreBuffer@@QAE@PAUsaverestore_s@@@Z,CSaveRestoreBuffer::CSaveRestoreBuffer,HLSDK,,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,reloc:10017030,
-hl,10116030,9,,,UNKNOWN,,,,TODO,,,found by tools/gaps.py (no Ghidra function before)
+hl,10116030,9,??0CSaveRestoreBuffer@@QAE@XZ,CSaveRestoreBuffer::CSaveRestoreBuffer,UNKNOWN,dlls/util.cpp,,,MATCHED,100,hl_manual.csv,found by tools/gaps.py (no Ghidra function before)
 hl,10116040,56,??0UTIL_GroupTrace@@QAE@HH@Z,UTIL_GroupTrace::UTIL_GroupTrace,HLSDK,dlls/util.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,refbytes:paranoia:dlls__util.obj:score1,
 hl,10116080,3,??1CSaveRestoreBuffer@@QAE@XZ,CSaveRestoreBuffer::~CSaveRestoreBuffer,COF,dlls/util.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10116090,76,??1UTIL_GroupTrace@@QAE@XZ,UTIL_GroupTrace::~UTIL_GroupTrace,HLSDK,dlls/util.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,refbytes:paranoia:dlls__util.obj:score4,

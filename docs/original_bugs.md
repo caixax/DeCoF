@@ -129,3 +129,4 @@ The reconstructed source keeps the behavior of the retail 1.6a binaries, includi
 | V_CalcNormalRefdef (client view.cpp) | The bob loop adds bob * 0.4 * forward to view->angles instead of view->origin. | as written |
 | V_CalcNormalRefdef (client view.cpp) | The wheelchair block calls AngleVectors( viewmodel->angles, ... ) even when viewmodel is NULL, and never uses the results. | as written |
 | V_CalcNormalRefdef (client view.cpp) | The maglite block tests tr->endpos (an array) for NULL; rendercolor / 255 is an integer division, so the color is 0 or 1; the dlight key is ent->index in one branch and view->index in the other; guess_iUnknown10542BC8 = 0 is stored twice. | as written |
+| CTriggerCamera::SkipCutscene (hl triggers.cpp) | Calls m_hPlayer->IsAlive() without checking the handle, so an empty handle crashes (HLSDK FollowTarget has the same pattern). | as written |

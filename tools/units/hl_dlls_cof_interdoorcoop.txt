@@ -60,3 +60,4 @@ _sprintf_s
 ?do_thousands_sep@?$numpunct@D@std@@MBEDXZ
 ?do_truename@?$numpunct@D@std@@MBE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@XZ
 ??_G?$codecvt@DDU_Mbstatet@@@std@@MAEPAXI@Z
+??$_Pocma@V?$allocator@D@std@@@std@@YAXAAV?$allocator@D@0@0@Z

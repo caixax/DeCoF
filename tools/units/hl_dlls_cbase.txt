@@ -49,3 +49,5 @@ _GetEntityAPI2
 ?DefaultUse@CBasePlayerAmmo@@QAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z
 ?DefaultUse@CBasePlayerItem@@QAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z
 ?DeadRemoveThink@CBaseEntity@@QAEXXZ
+??1CRestore@@QAE@XZ
+??1CSave@@QAE@XZ

@@ -15,3 +15,4 @@
 _monster_slower3
 ?AttackSound@CSlower3@@QAEXXZ
 ?IsHeadless@CSlower3@@QAEHXZ
+?SpawnHeadGibs@CSlower3@@QAEXVVector@@@Z

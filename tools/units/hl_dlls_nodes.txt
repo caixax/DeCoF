@@ -63,3 +63,4 @@ _testhull
 ??0CStack@@QAE@XZ
 ?Pop@CStack@@QAEHXZ
 ?Top@CStack@@QAEHXZ
+??0CACHE_ENTRY@@QAE@XZ

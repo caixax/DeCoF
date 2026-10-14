@@ -19,3 +19,4 @@ _monster_crab
 ?AttackSound@CCrab@@QAEXXZ
 ?IsHeadless@CCrab@@QAEHXZ
 ?ObjectCaps@CGib@@UAEHXZ
+?SpawnHeadGibs@CCrab@@QAEXVVector@@@Z

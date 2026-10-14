@@ -16,3 +16,4 @@
 _monster_krypande
 ?AttackSound@CKrypande@@QAEXXZ
 ?IsHeadless@CKrypande@@QAEHXZ
+?SpawnHeadGibs@CKrypande@@QAEXVVector@@@Z
