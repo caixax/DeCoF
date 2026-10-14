@@ -29,6 +29,9 @@
 #include "ammo.h"
 #include "ammohistory.h"
 #include "vgui_TeamFortressViewport.h"
+#include "particlemgr.h"
+
+extern int guess_iUnknown1055959C;
 
 WEAPON *gpActiveSel;	// NULL means off, 1 means just the menu bar, otherwise
 						// this points to the active weapon menu item
@@ -927,6 +930,76 @@ int CHudAmmo::MsgFunc_DualAmmo( const char *pszName, int iSize, void *pbuf )
 	guess_m_iDualAmmoRight = READ_LONG();
 
 	return 1;
+}
+
+// Cry of Fear: the weapon in hand changed, drop the particle systems of the view model
+int CHudAmmo::MsgFunc_WpnDeploy( const char *pszName, int iSize, void *pbuf )
+{
+	g_pParticleSystems.guess_KillViewModelSystems( true );
+	guess_iUnknown1055959C = 0;
+
+	return 1;
+}
+
+// Cry of Fear: magazine count of a weapon (id, rounds per magazine, rounds)
+int CHudAmmo::MsgFunc_WpnInfo( const char *pszName, int iSize, void *pbuf )
+{
+	BEGIN_READ( pbuf, iSize );
+
+	int iId = READ_BYTE();
+	int iDivisor = READ_BYTE();
+	int iAmount = READ_SHORT();
+
+	guess_SetMags( iId, iDivisor, iAmount );
+
+	return 1;
+}
+
+int CHudAmmo::guess_GetMags( int iId )
+{
+	switch ( iId )
+	{
+	case 3:	return guess_m_iGlockMags;
+	case 20:	return guess_m_iBrowningMags;
+	case 19:	return guess_m_iVP70Mags;
+	case 4:	return guess_m_iShotgunMags;
+	case 21:	return guess_m_iRevolverAmmo;
+	case 7:	return guess_m_iP345Mags;
+	case 8:	return guess_m_iSyringes;
+	case 13:	return guess_m_iFlares;
+	case 9:	return guess_m_iM16Mags;
+	case 14:	return guess_m_iTMPMags;
+	case 11:	return guess_m_iRifleMags;
+	case 26:	return guess_m_iG43Mags;
+	case 27:	return guess_m_iMP5Mags;
+	}
+
+	return 0;
+}
+
+void CHudAmmo::guess_SetMags( int iId, int iDivisor, int iAmount )
+{
+	WEAPON *pWeapon = gWR.GetWeapon( iId );
+
+	if ( !pWeapon )
+		return;
+
+	switch ( iId )
+	{
+	case 3:	guess_m_iGlockMags = iAmount / iDivisor;	break;
+	case 19:	guess_m_iVP70Mags = iAmount / iDivisor;	break;
+	case 20:	guess_m_iBrowningMags = iAmount / iDivisor;	break;
+	case 4:	guess_m_iShotgunMags = gWR.CountAmmo( pWeapon->iAmmoType );	break;
+	case 7:	guess_m_iP345Mags = iAmount / iDivisor;	break;
+	case 8:	guess_m_iSyringes = iAmount;	break;
+	case 13:	guess_m_iFlares = iAmount;	break;
+	case 9:	guess_m_iM16Mags = iAmount / iDivisor;	break;
+	case 14:	guess_m_iTMPMags = iAmount / iDivisor;	break;
+	case 11:	guess_m_iRifleMags = gWR.CountAmmo( pWeapon->iAmmoType );	break;
+	case 21:	guess_m_iRevolverAmmo = gWR.CountAmmo( pWeapon->iAmmoType );	break;
+	case 26:	guess_m_iG43Mags = iAmount / iDivisor;	break;
+	case 27:	guess_m_iMP5Mags = iAmount / iDivisor;	break;
+	}
 }
 
 //------------------------------------------------------------------------

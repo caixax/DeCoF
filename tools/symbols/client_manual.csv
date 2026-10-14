@@ -996,3 +996,14 @@ va,name,kind,evidence
 10091C60,?guess_LoadCompressedTGA@guess_CTGALoader@@QAE_NPAUguess_Texture@@PADPAU_iobuf@@@Z,func,"RLE TGA reader: strings ""TGA LOAD: Could not read RLE header"", ""Too many pixels read""; called by 10091F80 when the header matches the type 10 signature; NeHe lesson 33 LoadCompressedTGA; name is a guess"
 10091F80,?guess_LoadTGA@guess_CTGALoader@@QAE_NPAUguess_Texture@@PAD@Z,func,"fopen ""rb"", reads the 12-byte header and compares it with the type 2 and type 10 signatures at this+0x30 and this+0x3c (""TGA LOAD: TGA file must be type 2 or type 10""); NeHe lesson 33 LoadTGA; no callers; name is a guess"
 10092050,?guess_LoadUncompressedTGA@guess_CTGALoader@@QAE_NPAUguess_Texture@@PADPAU_iobuf@@@Z,func,"reads the 6-byte info header and the image data and swaps red and blue (""TGA LOAD: Could not read image data""); NeHe lesson 33 LoadUncompressedTGA; name is a guess"
+1001C090,?__MsgFunc_AmmoPickup@@YAHPBDHPAX@Z,func,"CHudAmmo::Init passes it to pfnHookUserMsg with the string ""AmmoPickup"" (HOOK_MESSAGE(AmmoPickup))"
+1001C0B0,?__MsgFunc_AmmoX@@YAHPBDHPAX@Z,func,"CHudAmmo::Init passes it to pfnHookUserMsg with the string ""AmmoX"" (HOOK_MESSAGE(AmmoX))"
+1001C0D0,?__MsgFunc_CurWeapon@@YAHPBDHPAX@Z,func,"CHudAmmo::Init passes it to pfnHookUserMsg with the string ""CurWeapon"" (HOOK_MESSAGE(CurWeapon))"
+1001C110,?__MsgFunc_HideWeapon@@YAHPBDHPAX@Z,func,"CHudAmmo::Init passes it to pfnHookUserMsg with the string ""HideWeapon"" (HOOK_MESSAGE(HideWeapon))"
+1001C130,?__MsgFunc_ItemPickup@@YAHPBDHPAX@Z,func,"CHudAmmo::Init passes it to pfnHookUserMsg with the string ""ItemPickup"" (HOOK_MESSAGE(ItemPickup))"
+1001C150,?__MsgFunc_WeapPickup@@YAHPBDHPAX@Z,func,"CHudAmmo::Init passes it to pfnHookUserMsg with the string ""WeapPickup"" (HOOK_MESSAGE(WeapPickup))"
+1001C170,?__MsgFunc_WeaponList@@YAHPBDHPAX@Z,func,"CHudAmmo::Init passes it to pfnHookUserMsg with the string ""WeaponList"" (HOOK_MESSAGE(WeaponList))"
+1001A070,?guess_GetMags@CHudAmmo@@QAEHH@Z,func,switch on the weapon id returning the CHudAmmo magazine member (+0x50..+0x80); called 19 times by CHudAmmo::Draw; name is a guess
+1001B4B0,?MsgFunc_WpnDeploy@CHudAmmo@@QAEHPBDHPAX@Z,func,called by __MsgFunc_WpnDeploy (hooked with the string WpnDeploy in CHudAmmo::Init)
+1001B4D0,?MsgFunc_WpnInfo@CHudAmmo@@QAEHPBDHPAX@Z,func,"called by __MsgFunc_WpnInfo (hooked with the string WpnInfo in CHudAmmo::Init); reads byte, byte, short and calls 1001B610"
+1001B610,?guess_SetMags@CHudAmmo@@QAEXHHH@Z,func,called by CHudAmmo::MsgFunc_WpnInfo; stores amount / divisor (or gWR.CountAmmo) in the magazine member of the weapon id; name is a guess

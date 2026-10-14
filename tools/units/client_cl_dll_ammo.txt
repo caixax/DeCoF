@@ -47,3 +47,14 @@
 ?__MsgFunc_DualAmmo@@YAHPBDHPAX@Z
 ?__MsgFunc_WpnInfo@@YAHPBDHPAX@Z
 ?__MsgFunc_WpnDeploy@@YAHPBDHPAX@Z
+?__MsgFunc_AmmoPickup@@YAHPBDHPAX@Z
+?__MsgFunc_AmmoX@@YAHPBDHPAX@Z
+?__MsgFunc_CurWeapon@@YAHPBDHPAX@Z
+?__MsgFunc_HideWeapon@@YAHPBDHPAX@Z
+?__MsgFunc_ItemPickup@@YAHPBDHPAX@Z
+?__MsgFunc_WeapPickup@@YAHPBDHPAX@Z
+?__MsgFunc_WeaponList@@YAHPBDHPAX@Z
+?guess_GetMags@CHudAmmo@@QAEHH@Z
+?MsgFunc_WpnDeploy@CHudAmmo@@QAEHPBDHPAX@Z
+?MsgFunc_WpnInfo@CHudAmmo@@QAEHPBDHPAX@Z
+?guess_SetMags@CHudAmmo@@QAEXHHH@Z
