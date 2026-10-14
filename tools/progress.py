@@ -35,8 +35,16 @@ BINARIES = [
     ("gameui", "GameUI.dll"),
     ("launcher", "cof.exe"),
 ]
-# binaries drawn in the SVG and given a table in PROGRESS.md
+# binaries given a category table in PROGRESS.md and counted in "shown_total"
 SHOWN = ["client", "hl", "opengl32"]
+# why a binary has not started, drawn next to its bar in the SVG
+NOTES = {
+    "hw": "waits for Visual C++ 6.0, not installed",
+    "gameui": "waits for Visual C++ 6.0, not installed",
+    "launcher": "waits for Visual C++ 6.0, not installed",
+}
+# in scope but not in the CSV yet: (name, note)
+NOT_INVENTORIED = [("CoFLaunchApp.exe", ".NET (C#) settings launcher, not inventoried yet")]
 CATEGORIES = ["HLSDK", "PARANOIA", "SPIRIT", "COF", "UNKNOWN"]
 STATES = ["MATCHED", "EQUIVALENT", "TODO"]
 
@@ -123,11 +131,16 @@ def write_svg(per, meta):
     width = 760
     pad = 24
     bar_w = width - 2 * pad
-    rows = [(name, per[key]) for key, name in BINARIES if key in SHOWN]
+    rows = [(name, per[key], NOTES.get(key)) for key, name in BINARIES]
+    rows += [(name, None, note) for name, note in NOT_INVENTORIED]
+    shown = empty()
     total = empty()
-    for _, d in rows:
-        merge(total, d)
-    rows.append(("Total (%s)" % ", ".join(n for k, n in BINARIES if k in SHOWN), total))
+    for key, name in BINARIES:
+        merge(total, per[key])
+        if key in SHOWN:
+            merge(shown, per[key])
+    rows.append(("Started binaries (%s)" % ", ".join(n for k, n in BINARIES if k in SHOWN), shown, None))
+    rows.append(("All binaries (CoFLaunchApp.exe not counted yet)", total, None))
 
     row_h = 74
     top = 78
@@ -150,7 +163,19 @@ def write_svg(per, meta):
     o.append('<text x="%d" y="58.5" %s font-size="12" fill="#57606a" text-anchor="end">'
              'percent of code bytes, function counts in brackets</text>' % (width - pad, font))
     y = top
-    for name, d in rows:
+    for name, d, note in rows:
+        if d is None:
+            # in scope, no rows in the CSV yet
+            o.append('<text x="%d" y="%d" %s font-size="14" font-weight="600" fill="#1f2328">%s</text>'
+                     % (pad, y + 14, font, esc(name)))
+            o.append('<text x="%d" y="%d" %s font-size="14" font-weight="600" fill="#1f2328" text-anchor="end">'
+                     'not started</text>' % (width - pad, y + 14, font))
+            o.append('<rect x="%d" y="%d" width="%d" height="18" rx="4" fill="%s"/>'
+                     % (pad, y + 22, bar_w, COLORS["TODO"]))
+            o.append('<text x="%d" y="%d" %s font-size="12" fill="#57606a">%s</text>'
+                     % (pad, y + 56, font, esc(note)))
+            y += row_h
+            continue
         b, fn = d["bytes"], d["functions"]
         done = pct(b["MATCHED"] + b["EQUIVALENT"], b["total"])
         o.append('<text x="%d" y="%d" %s font-size="14" font-weight="600" fill="#1f2328">%s</text>'
@@ -169,6 +194,8 @@ def write_svg(per, meta):
         detail = "MATCHED %.1f%% (%d)   EQUIVALENT %.1f%% (%d)   TODO %.1f%% (%d)   %d code bytes" % (
             pct(b["MATCHED"], b["total"]), fn["MATCHED"], pct(b["EQUIVALENT"], b["total"]), fn["EQUIVALENT"],
             pct(b["TODO"], b["total"]), fn["TODO"], b["total"])
+        if note:
+            detail += "   (%s)" % note
         o.append('<text x="%d" y="%d" %s font-size="12" fill="#57606a" xml:space="preserve">%s</text>'
                  % (pad, by + 34, font, esc(detail)))
         y += row_h
@@ -204,8 +231,14 @@ def write_md(per, cats, meta):
         o.append("| **All** | **%d** | **%d** | **%d** | **%.1f%%** |" % (
             fn["MATCHED"], fn["EQUIVALENT"], fn["total"], pct(b["MATCHED"] + b["EQUIVALENT"], b["total"])))
         o.append("")
-    others = [name for key, name in BINARIES if key not in SHOWN]
-    o += ["Other binaries in the CSV (%s) are counted in `progress.json` only." % ", ".join(others), "",
+    o += ["## Not started", ""]
+    for key, name in BINARIES:
+        if key not in SHOWN:
+            o.append("- %s: %d functions in the CSV, all TODO%s." % (
+                name, per[key]["functions"]["total"], " (%s)" % NOTES[key] if key in NOTES else ""))
+    for name, note in NOT_INVENTORIED:
+        o.append("- %s: %s." % (name, note))
+    o += ["",
           "## Counting rules", "",
           "- **MATCHED**: the objdiff report gives 100 percent for the function: the instructions are "
           "identical to the retail binary. The report does not compare the names of relocation targets "
