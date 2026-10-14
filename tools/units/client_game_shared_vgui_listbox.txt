@@ -5,3 +5,9 @@
 ?SetScrollRange@CListBox@vgui@@QAEXH@Z
 ?Term@CListBox@vgui@@QAEXXZ
 ?setPixelScroll@CListBox@vgui@@UAEXH@Z
+?AddItem@CListBox@vgui@@QAEXPAVPanel@2@@Z
+?GetNumItems@CListBox@vgui@@QAEHXZ
+?GetScrollMax@CListBox@vgui@@QAEHXZ
+?SetScrollPos@CListBox@vgui@@QAEXH@Z
+?intChanged@ListBoxSignal@CListBox@vgui@@UAEXHPAVPanel@3@@Z
+?paintBackground@CListBox@vgui@@UAEXXZ

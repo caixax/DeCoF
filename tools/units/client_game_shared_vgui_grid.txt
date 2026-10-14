@@ -14,3 +14,17 @@ vgui::CGrid::CGridEntry::`vector_deleting_destructor'
 ?SetDimensions@CGrid@vgui@@QAE_NHH@Z
 ?SetRowHeight@CGrid@vgui@@QAE_NHH@Z
 ?Term@CGrid@vgui@@QAEXXZ
+??0CGrid@vgui@@QAE@XZ
+??_ECGridEntry@CGrid@vgui@@QAEPAXI@Z
+??_GCGrid@vgui@@UAEPAXI@Z
+?AutoSetRowHeights@CGrid@vgui@@QAEXXZ
+?CalcFitColumnWidth@CGrid@vgui@@QAEHH@Z
+?CalcFitRowHeight@CGrid@vgui@@QAEHH@Z
+?CopyColumnWidths@CGrid@vgui@@QAE_NPAV12@@Z
+?GetEntry@CGrid@vgui@@QAEPAVPanel@2@HH@Z
+?RepositionContents@CGrid@vgui@@QAEXXZ
+?SetEntry@CGrid@vgui@@QAE_NHHPAVPanel@2@@Z
+?SetRowUnderline@CGrid@vgui@@QAEXH_NHHHHH@Z
+?SetSpacing@CGrid@vgui@@QAEXHH@Z
+?getCellAtPoint@CGrid@vgui@@QAE_NHHAAH0@Z
+?paint@CGrid@vgui@@UAEXXZ

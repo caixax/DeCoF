@@ -7,3 +7,8 @@
 ?SetTextColor@CCheckButton2@vgui@@QAEXHHHH@Z
 ?SetupControls@CCheckButton2@vgui@@IAEXXZ
 ?internalMousePressed@CCheckButton2@vgui@@UAEXW4MouseCode@2@@Z
+?SetHandler@CCheckButton2@vgui@@QAEXPAVICheckButton2Handler@2@@Z
+?SetImages@CCheckButton2@vgui@@QAEXPAVImage@2@0@Z
+?SetImages@CCheckButton2@vgui@@QAEXPBD0@Z
+?cursorMoved@CDefaultInputSignal@vgui@@UAEXHHPAVPanel@2@@Z
+?mousePressed@CCheckButton2@vgui@@MAEXW4MouseCode@2@PAVPanel@2@@Z
