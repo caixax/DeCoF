@@ -36,7 +36,7 @@ class CCoFLadderManager : public CPointEntity
 	virtual void Spawn( void );
 	virtual void Precache( void );
 	virtual void Use( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE useType, float value );
-	void LadderThink( void );
+	void EXPORT LadderThink( void );
 	void StartNextAnimation( void );
 	void StartPreviousAnimation( void );
 	virtual void KeyValue( KeyValueData *pkvd );

@@ -36,7 +36,7 @@ class CWheelchair : public CBaseMonster
 public:
 	virtual void Spawn( void );
 	virtual void Precache( void );
-	void WheelchairUse( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE useType, float value );
+	void EXPORT WheelchairUse( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE useType, float value );
 	void MoveForward( void );
 	void MoveBack( void );
 	void TurnLeft( void );
@@ -52,14 +52,14 @@ public:
 	float wheelchairtime2;
 	float wheelchairtime3;
 	float wheelchairtime4;
-	void Embark( void );
+	void EXPORT Embark( void );
 	void ExitCheck( void );
-	void Disembark( void );
+	void EXPORT Disembark( void );
 	CBaseEntity *pExitEntity;
 	CBaseEntity *pExitTeller;
 	void SetCollision( void );
 	virtual void HandleAnimEvent( MonsterEvent_t *pEvent );
-	void WheelchairThink( void );
+	void EXPORT WheelchairThink( void );
 	void SetSequenceByName( char *szSequence );
 	virtual int ObjectCaps( void ) { return CBaseEntity :: ObjectCaps() | FCAP_IMPULSE_USE; }
 	CBasePlayer *m_pPlayer;

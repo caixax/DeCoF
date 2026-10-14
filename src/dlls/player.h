@@ -200,7 +200,7 @@ public:
 	bool m_bChoking;
 	void TripOver( void );
 	int DistanceToTheGround( void );
-	void MeleePushBack( void );
+	void EXPORT MeleePushBack( void );
 	float m_flNextTimeTakenCheck;
 	bool m_bLowHealth;
 	float m_flNextMorphineDreamTime;
@@ -245,7 +245,7 @@ public:
 	Vector m_vTurnVector;
 	bool m_bStartedDrowning;
 	bool m_bWaterVoiceCancel;
-	void WeaponMelee( void );
+	void EXPORT WeaponMelee( void );
 	void CheckQuickDualWield( char *quicksel, char *lastquicksel );
 	CBaseAnimating *pDeathScene;
 	int m_iDoctorWeapon;
@@ -269,7 +269,7 @@ public:
 	int m_iClientDualWeaponLeftAmmo;
 	int m_iClientDualWeaponRightAmmo;
 	int g_iDoorSound;
-	void PlayNewDoorSound( void );
+	void EXPORT PlayNewDoorSound( void );
 	void DualWield( int slot1, int slot2 );
 	void AddGoodPoint( int amount, bool subtract );
 	int m_iGoodPoints;
@@ -359,9 +359,9 @@ public:
 	void VibrateCheck( void );
 	float m_fVibrateTime;
 	bool m_bVibrate;
-	void GameStart( void );
-	void CrashGame( void );
-	void DemoStart( void );
+	void EXPORT GameStart( void );
+	void EXPORT CrashGame( void );
+	void EXPORT DemoStart( void );
 	char DestinationText[256];
 	int SufficientlyOffTheGround( void );
 	int m_iViewEntIndex;
@@ -377,16 +377,16 @@ public:
 	void QuickSelectItem( int number );
 	void MoveStatue( int Direction, int Type );
 	void FindHullIntersection( const Vector &vecSrc, TraceResult &tr, float *mins, float *maxs, edict_t *pEntity );
-	void MeleeHitThinkPunch( void );
-	void MeleeHitThinkSwitchblade( void );
-	void MeleeHitThinkSwitchblade2( void );
-	void MeleeHitThinkSwitchblade3( void );
-	void MeleeHitThinkNightStick( void );
-	void MeleeHitThinkNightStick2( void );
-	void MeleeHitThinkNightStick3( void );
-	void MeleeHitThinkBranch( void );
-	void MeleeHitThinkAxe( void );
-	void MeleeHitThinkSledgeHammer( void );
+	void EXPORT MeleeHitThinkPunch( void );
+	void EXPORT MeleeHitThinkSwitchblade( void );
+	void EXPORT MeleeHitThinkSwitchblade2( void );
+	void EXPORT MeleeHitThinkSwitchblade3( void );
+	void EXPORT MeleeHitThinkNightStick( void );
+	void EXPORT MeleeHitThinkNightStick2( void );
+	void EXPORT MeleeHitThinkNightStick3( void );
+	void EXPORT MeleeHitThinkBranch( void );
+	void EXPORT MeleeHitThinkAxe( void );
+	void EXPORT MeleeHitThinkSledgeHammer( void );
 	void ShowVGUIMenu( int iMenuID );
 	void PhoneNumber( int number );
 	static const char *pMorphineInjectionSounds[0];
@@ -413,8 +413,8 @@ public:
 	int m_iMorphineRecover;
 	void CheckMorphineRestore( void );
 	bool m_bHasSaved;
-	void PreSave( int slot );
-	void EndSave( void );
+	void EXPORT PreSave( int slot );
+	void EXPORT EndSave( void );
 	void StaminaThink( void );
 	void BreatheThink( void );
 	float m_fUnderwaterBreatheTime;
@@ -704,7 +704,7 @@ public:
 	void EnableControl(BOOL fControl);
 	void FallEnableControl( int fControl );
 	void PlayerAnimation( const char *anim, bool gait );
-	void MultiplayerTouch( CBaseEntity *pOther );
+	void EXPORT MultiplayerTouch( CBaseEntity *pOther );
 	EHANDLE pPlayerToRevive;
 	EHANDLE pPlayerReviving;
 	CBaseEntity *pCorpseEnt;
@@ -716,8 +716,8 @@ public:
 
 	void WaterMove( void );
 	void EXPORT PlayerDeathThink( void );
-	void MultiplayerPlayerDeathThink( void );
-	void WheelchairPlayerDeathThink( void );
+	void EXPORT MultiplayerPlayerDeathThink( void );
+	void EXPORT WheelchairPlayerDeathThink( void );
 	void RevivePlayer( void );
 	void PlayerUse( void );
 

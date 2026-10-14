@@ -48,3 +48,4 @@ _GetEntityAPI2
 ?CreateWithScript@CBaseEntity@@SAPAV1@PADHABVVector@@1PAUedict_s@@H@Z
 ?DefaultUse@CBasePlayerAmmo@@QAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z
 ?DefaultUse@CBasePlayerItem@@QAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z
+?DeadRemoveThink@CBaseEntity@@QAEXXZ

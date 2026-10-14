@@ -63,20 +63,24 @@ def unit_functions(u):
     return u.get("functions", [])
 
 
-def build_base(units):
+def build_base(units, kind="base", extra=()):
+    """Compile the units into build/<kind>/. The link may add flags that
+    change only how functions are packaged (link section "cflags_extra",
+    objects in build/link_obj/), so the objects objdiff compares stay as
+    they are."""
     ok = True
     for dll, d, u, full in units:
         tc = toolchain(d)
         tc.check()
-        out = obj_path("base", full)
+        out = obj_path(kind, full)
         os.makedirs(os.path.dirname(out), exist_ok=True)
-        cmd = [tc.cl_path()] + d["cflags"]
+        cmd = [tc.cl_path()] + d["cflags"] + list(extra)
         cmd += ["/D" + x for x in d["defines"]]
         cmd += ["/I" + os.path.join(ROOT, x) for x in d["includes"]]
         cmd += ["/Fo" + out, os.path.join(ROOT, u["source"])]
         res = subprocess.run(cmd, env=tc.env(), cwd=ROOT, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
         rc = res.returncode
-        print("base   %-30s %s" % (full, "ok" if rc == 0 else "FAILED (%d)" % rc))
+        print("%-6s %-30s %s" % (kind[:6], full, "ok" if rc == 0 else "FAILED (%d)" % rc))
         if rc:
             # cl prints its diagnostics on stdout: show the errors
             errors = [l for l in res.stdout.decode("latin-1").splitlines() if ": error " in l or ": fatal error " in l]
@@ -304,7 +308,8 @@ def link(dll):
         if missing:
             sys.exit("units missing from the link order: %s" % " ".join(missing))
         units.sort(key=lambda x: pos[x[3].split("/", 1)[1]])
-    if not build_base(units):
+    kind = "link_obj" if lk.get("cflags_extra") else "base"
+    if not build_base(units, kind, lk.get("cflags_extra", ())):
         sys.exit("not linking: some units do not compile")
     tc = toolchain(cfg)
     tmp = os.path.join(ROOT, "build", "link", dll)
@@ -319,7 +324,7 @@ def link(dll):
         libs.append(lib)
     out = os.path.join(tmp, lk["out"])
     cmd = [tc.link_path()] + lk["flags"] + ["/out:" + out, "/map:" + out + ".map"]
-    cmd += [obj_path("base", full) for _d, _c, _u, full in units] + lk["libs"] + libs
+    cmd += [obj_path(kind, full) for _d, _c, _u, full in units] + lk["libs"] + libs
     res = subprocess.run(cmd, env=tc.env(), cwd=ROOT, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
     log = res.stdout.decode("latin-1").splitlines()
     with open(out + ".log", "w") as f:

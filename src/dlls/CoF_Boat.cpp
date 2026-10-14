@@ -37,7 +37,7 @@ class CBoat : public CBaseAnimating
 public:
 	virtual void Spawn( void );
 	virtual void Precache( void );
-	void BoatUse( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE useType, float value );
+	void EXPORT BoatUse( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE useType, float value );
 	void MoveForward( void );
 	void MoveBack( void );
 	void TurnLeft( void );
@@ -49,14 +49,14 @@ public:
 	float boattime2;
 	float boattime3;
 	float boattime4;
-	void Embark( void );
+	void EXPORT Embark( void );
 	void ExitCheck( void );
-	void Disembark( void );
+	void EXPORT Disembark( void );
 	CBaseEntity *pExitEntity;
 	CBaseEntity *pExitTeller;
 	void SetCollision( void );
 	virtual void HandleAnimEvent( MonsterEvent_t *pEvent );
-	void BoatThink( void );
+	void EXPORT BoatThink( void );
 	void SetSequenceByName( char *szSequence );
 	virtual int ObjectCaps( void ) { return CBaseEntity :: ObjectCaps() | FCAP_IMPULSE_USE; }
 	CBasePlayer *m_pPlayer;

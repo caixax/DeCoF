@@ -32,7 +32,7 @@ class CKeyitemModel : public CBaseAnimating
 	virtual void Precache( void );
 	virtual void SendInitMessage( CBasePlayer *player );
 	virtual int ObjectCaps( void ) { return CBaseEntity :: ObjectCaps() | FCAP_IMPULSE_USE; }
-	void KeyitemUse( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE useType, float value );
+	void EXPORT KeyitemUse( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE useType, float value );
 	virtual void KeyValue( KeyValueData *pkvd );
 	void SetItemVariables( const char * );
 	char *GetDescriptionFromItem( char *item, char *filename );

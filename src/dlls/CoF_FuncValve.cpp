@@ -32,7 +32,7 @@ public:
 	void ValveReturn( void );
 	void DegreesCheck( void );
 	void Off( void );
-	void ProThink( void );
+	void EXPORT ProThink( void );
 	virtual void Use( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE useType, float value );
 	virtual int ObjectCaps( void ) { return (CBaseEntity :: ObjectCaps() | FCAP_CONTINUOUS_USE) & ~FCAP_ACROSS_TRANSITION; }
 	virtual int Save( CSave &save );
@@ -40,7 +40,7 @@ public:
 	virtual STATE GetState( void );
 	virtual void KeyValue( KeyValueData *pkvd );
 	void UnlockValve( CBaseEntity *pActivator );
-	void FindTargetEnt( void );
+	void EXPORT FindTargetEnt( void );
 	string_t m_sLockedBy;
 	string_t m_sLockedMsg;
 	string_t m_sUnlockedMsg;

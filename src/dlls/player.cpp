@@ -110,7 +110,7 @@ class CBoat : public CBaseAnimating
 public:
 	virtual void Spawn( void );
 	virtual void Precache( void );
-	void BoatUse( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE useType, float value );
+	void EXPORT BoatUse( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE useType, float value );
 	void MoveForward( void );
 	void MoveBack( void );
 	void TurnLeft( void );
@@ -122,14 +122,14 @@ public:
 	float boattime2;
 	float boattime3;
 	float boattime4;
-	void Embark( void );
+	void EXPORT Embark( void );
 	void ExitCheck( void );
-	void Disembark( void );
+	void EXPORT Disembark( void );
 	CBaseEntity *pExitEntity;
 	CBaseEntity *pExitTeller;
 	void SetCollision( void );
 	virtual void HandleAnimEvent( MonsterEvent_t *pEvent );
-	void BoatThink( void );
+	void EXPORT BoatThink( void );
 	void SetSequenceByName( char *szSequence );
 	virtual int ObjectCaps( void ) { return CBaseEntity :: ObjectCaps() | FCAP_IMPULSE_USE; }
 	CBasePlayer *m_pPlayer;
@@ -140,7 +140,7 @@ class CWheelchair : public CBaseMonster
 public:
 	virtual void Spawn( void );
 	virtual void Precache( void );
-	void WheelchairUse( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE useType, float value );
+	void EXPORT WheelchairUse( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE useType, float value );
 	void MoveForward( void );
 	void MoveBack( void );
 	void TurnLeft( void );
@@ -156,14 +156,14 @@ public:
 	float wheelchairtime2;
 	float wheelchairtime3;
 	float wheelchairtime4;
-	void Embark( void );
+	void EXPORT Embark( void );
 	void ExitCheck( void );
-	void Disembark( void );
+	void EXPORT Disembark( void );
 	CBaseEntity *pExitEntity;
 	CBaseEntity *pExitTeller;
 	void SetCollision( void );
 	virtual void HandleAnimEvent( MonsterEvent_t *pEvent );
-	void WheelchairThink( void );
+	void EXPORT WheelchairThink( void );
 	void SetSequenceByName( char *szSequence );
 	virtual int ObjectCaps( void ) { return CBaseEntity :: ObjectCaps() | FCAP_IMPULSE_USE; }
 	CBasePlayer *m_pPlayer;
@@ -208,8 +208,8 @@ public:
 	virtual void Spawn( void );
 	virtual void Precache( void );
 	void Rotate( int number );
-	void Check( void );
-	void Finished( void );
+	void EXPORT Check( void );
+	void EXPORT Finished( void );
 	virtual STATE GetState( void );
 	virtual void Use( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE useType, float value );
 	virtual int ObjectCaps( void ) { return CBaseAnimating :: ObjectCaps() & ~FCAP_ACROSS_TRANSITION; }
@@ -260,7 +260,7 @@ public:
 	virtual void Spawn( void );
 	virtual void Precache( void );
 	virtual void SendInitMessage( CBasePlayer *player );
-	void KillParticle( void );
+	void EXPORT KillParticle( void );
 	static CParticle *CreateParticle( int message, bool starton, Vector origin, int weaponattachment, float life, CBaseEntity *attachentity, float velocityx, float velocityy, float velocityz );
 	virtual void Use( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE useType, float value );
 };
@@ -435,54 +435,8 @@ public:
 	int m_iTimeHours;
 };
 
-// cbase.cpp
-class CDualWeaponRight : public CBaseEntity
-{
-public:
-	virtual void Spawn( void );
-	virtual void Precache( void );
-	int m_iCurrentShot;
-	void SetModel( CBasePlayer *pPlayer, int model );
-	void SendWeaponAnim( CBasePlayer *pPlayer, int anim );
-	bool HasDualWeapon( CBasePlayer *pPlayer );
-	void WeaponThink( CBasePlayer *pPlayer );
-	void SetDualBodyGroup( CBasePlayer *pPlayer, int group1, int group2 );
-	int dualbody;
-	int m_iID;
-	CBasePlayer *m_pPlayer;
-	float m_fEmptyClickTime;
-	void MeleeHitThinkBranch( void );
-	void MeleeHitThinkPunch( void );
-	void MeleeHitThinkSwitchblade( void );
-	void MeleeHitThinkSwitchblade2( void );
-	void MeleeHitThinkSwitchblade3( void );
-	void MeleeHitThinkNightStick( void );
-	void MeleeHitThinkNightStick2( void );
-	void MeleeHitThinkNightStick3( void );
-	float m_flNextIdleTime;
-	float m_flPrimaryAttackDelay;
-	float m_flSecondaryAttackDelay;
-	float m_flNextPrimaryAttack;
-	float m_flNextSecondaryAttack;
-	int shoot_loop_sound;
-	int shoot_loop_sound_end;
-	bool m_bShotLooping;
-	int m_iSprintState;
-	int m_iWeaponMode;
-	int m_iThinkState;
-	float m_flThinkDecay;
-	float m_fIdleAnimation1Time;
-	float m_fIdleAnimation2Time;
-	string_t m_sModel;
-	int m_iIdleAnimation;
-	int m_iIdleAnimation2;
-	void SetVariables( float primarydelay, float secondarydelay, int idleanimation );
-	virtual int Save( CSave &save );
-	virtual int Restore( CRestore &restore );
-	static TYPEDESCRIPTION m_SaveData[];
-};
+#include "CoF_Dual_Weapon.h"
 
-extern CDualWeaponRight gDualWeapon;
 
 // cof_keypad.h
 class CCofKeypad : public CBaseEntity

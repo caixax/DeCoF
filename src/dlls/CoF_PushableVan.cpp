@@ -22,10 +22,10 @@
 class CPushableVan : public CBaseAnimating
 {
 	virtual void Spawn( void );
-	void VanThink( void );
+	void EXPORT VanThink( void );
 	virtual void Precache( void );
 	virtual int ObjectCaps( void ) { return CBaseEntity :: ObjectCaps() | FCAP_CONTINUOUS_USE; }
-	void VanUse( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE useType, float value );
+	void EXPORT VanUse( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE useType, float value );
 	bool longx;
 	bool longy;
 	int length;

@@ -25,6 +25,9 @@
 #include	"player.h"
 #include	"weapons.h"
 #include	"studio.h"
+#include	"CoF_Dual_Weapon.h"
+
+CDualWeaponRight gDualWeapon;
 
 void EntvarsKeyvalue( entvars_t *pev, KeyValueData *pkvd );
 
@@ -513,6 +516,12 @@ EHANDLE :: operator int ()
 CBaseEntity * EHANDLE :: operator -> ()
 {
 	return (CBaseEntity *)GET_PRIVATE( Get( ) ); 
+}
+
+// Cry of Fear: think function of a removed corpse
+void CBaseEntity::DeadRemoveThink( void )
+{
+	SUB_Remove();
 }
 
 void CBaseEntity::CorpseFolllow( void )

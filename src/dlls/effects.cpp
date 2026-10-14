@@ -45,7 +45,7 @@ public:
 	virtual void Spawn( void );
 	virtual void Precache( void );
 	virtual void SendInitMessage( CBasePlayer *player );
-	void KillParticle( void );
+	void EXPORT KillParticle( void );
 	static CParticle *CreateParticle( int message, bool starton, Vector origin, int weaponattachment, float life, CBaseEntity *attachentity, float velocityx, float velocityy, float velocityz );
 	virtual void Use( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE useType, float value );
 };
@@ -254,7 +254,7 @@ extern int gSpecialItemGive;
 extern int m_iMusicManagerLoops;
 extern float m_fMusicManagerFadeTime;
 extern const char *GetClassnameForId[];
-extern bool showobjective;
+bool showobjective;
 extern int g_iSurvivalMode;
 extern int m_iSimonMode;
 extern bool m_gbIsInCutscene;
@@ -7164,7 +7164,7 @@ public:
 	virtual void Spawn( void );
 	virtual void Precache( void );
 	virtual void Use( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE useType, float value );
-	void PropThink( void );
+	void EXPORT PropThink( void );
 	void SwitchModel( void );
 };
 
@@ -7619,13 +7619,13 @@ class CCofStressTest : public CBaseEntity
 {
 public:
 	virtual void Spawn( void );
-	void TurnOnBumpMaps( void );
-	void TurnOnWater( void );
-	void TurnOnDynLight( void );
-	void TurnOnWeather( void );
-	void StartNextEffect( void );
-	void ReportEffect( void );
-	void Disconnect( void );
+	void EXPORT TurnOnBumpMaps( void );
+	void EXPORT TurnOnWater( void );
+	void EXPORT TurnOnDynLight( void );
+	void EXPORT TurnOnWeather( void );
+	void EXPORT StartNextEffect( void );
+	void EXPORT ReportEffect( void );
+	void EXPORT Disconnect( void );
 	void AllowToContinue( void );
 	virtual void Use( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE useType, float value );
 	int currenteffect;
@@ -8122,7 +8122,7 @@ public:
 	virtual void Spawn( void );
 	virtual void Use( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE useType, float value );
 	virtual void KeyValue( KeyValueData *pkvd );
-	void ReturnFOV( void );
+	void EXPORT ReturnFOV( void );
 };
 
 LINK_ENTITY_TO_CLASS( cof_camerazoom, CCofCameraZoom );
@@ -9446,10 +9446,10 @@ class CCoFMDLCutscene : public CBaseMonster
 	virtual void Precache( void );
 	virtual void Use( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE useType, float value );
 	virtual void KeyValue( KeyValueData *pkvd );
-	void GetTargetEnt( void );
+	void EXPORT GetTargetEnt( void );
 	virtual int Save( CSave &save );
 	virtual int Restore( CRestore &restore );
-	void StartNextAnimation( void );
+	void EXPORT StartNextAnimation( void );
 	virtual int Classify( void );
 	static TYPEDESCRIPTION m_SaveData[];
 	int m_cAnimation[33];
@@ -10354,7 +10354,7 @@ class CCofMonsterRandomSpawn : public CBaseEntity
 public:
 	virtual void Spawn( void );
 	virtual void Precache( void );
-	void DoSpawnStuff( void );
+	void EXPORT DoSpawnStuff( void );
 };
 
 LINK_ENTITY_TO_CLASS( cof_monster_random_spawn, CCofMonsterRandomSpawn );
@@ -11940,8 +11940,8 @@ class CCoFDeadCat : public CBaseAnimating
 {
 	virtual void Spawn( void );
 	virtual void Precache( void );
-	virtual void Think( void );
-	void CatUse( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE useType, float value );
+	virtual void EXPORT Think( void );
+	void EXPORT CatUse( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE useType, float value );
 	virtual int ObjectCaps( void ) { return (CBaseEntity :: ObjectCaps() & ~FCAP_ACROSS_TRANSITION) | FCAP_IMPULSE_USE; }
 };
 
@@ -12017,7 +12017,7 @@ class CCoFHoodie : public CBaseAnimating
 	virtual void Spawn( void );
 	virtual void Precache( void );
 	virtual void SendInitMessage( CBasePlayer *pPlayer );
-	void HoodieUse( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE useType, float value );
+	void EXPORT HoodieUse( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE useType, float value );
 	virtual int ObjectCaps( void ) { return (CBaseEntity :: ObjectCaps() & ~FCAP_ACROSS_TRANSITION) | FCAP_IMPULSE_USE; }
 };
 
@@ -12224,7 +12224,7 @@ class CAoMPills : public CBaseAnimating
 {
 	virtual void Spawn( void );
 	virtual void Precache( void );
-	void PillsUse( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE useType, float value );
+	void EXPORT PillsUse( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE useType, float value );
 	virtual int ObjectCaps( void ) { return (CBaseEntity :: ObjectCaps() & ~FCAP_ACROSS_TRANSITION) | FCAP_IMPULSE_USE; }
 };
 
@@ -12309,7 +12309,7 @@ class CCoFStartDoctorMode : public CPointEntity
 {
 	virtual void Spawn( void );
 	virtual void Use( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE useType, float value );
-	void GiveGun( void );
+	void EXPORT GiveGun( void );
 };
 
 void CCoFStartDoctorMode::Spawn( void )
@@ -12808,7 +12808,7 @@ class CCoFCoopStats : public CPointEntity
 {
 	virtual void Spawn( void );
 	virtual void Use( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE useType, float value );
-	void RestartCampaign( void );
+	void EXPORT RestartCampaign( void );
 };
 
 void CCoFCoopStats::Spawn( void )
@@ -13005,7 +13005,7 @@ public:
 	virtual void Spawn( void );
 	virtual void Precache( void );
 	virtual void Use( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE useType, float value );
-	void SurvivalThink( void );
+	void EXPORT SurvivalThink( void );
 	bool m_bSurvivalMode;
 	bool m_bSurvivalModeRunning;
 	string_t m_sSurvivalTriggerWhenWon;
@@ -13245,9 +13245,9 @@ class CCoFRandomTimedSpawner : public CPointEntity
 public:
 	virtual void Spawn( void );
 	virtual void SendInitMessage( CBasePlayer *player );
-	void CheckIfDead( void );
-	void SpawnMonster( void );
-	void DelayStart( void );
+	void EXPORT CheckIfDead( void );
+	void EXPORT SpawnMonster( void );
+	void EXPORT DelayStart( void );
 };
 
 void CCoFRandomTimedSpawner::Spawn( void )

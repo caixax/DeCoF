@@ -51,7 +51,7 @@ public:
 	void AlertSound( void );
 	void DeathSound( void );
 	void AttackSound( void );
-	void KillMonster( void );
+	void EXPORT KillMonster( void );
 	void HeadHitSound( void );
 	void TraceAttack( entvars_t *pevAttacker, float flDamage, Vector vecDir, TraceResult *ptr, int bitsDamageType );
 	void Killed( entvars_t *pevAttacker, int iGib );

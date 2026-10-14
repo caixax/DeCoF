@@ -812,6 +812,16 @@
           "name": "dlls/h_ai",
           "source": "src/dlls/h_ai.cpp",
           "functions_file": "tools/units/hl_dlls_h_ai.txt"
+        },
+        {
+          "name": "dlls/game",
+          "source": "src/dlls/game.cpp",
+          "functions_file": "tools/units/hl_dlls_game.txt"
+        },
+        {
+          "name": "dlls/globals",
+          "source": "src/dlls/globals.cpp",
+          "functions_file": "tools/units/hl_dlls_globals.txt"
         }
       ],
       "toolchain": "msvc1427",
@@ -826,8 +836,8 @@
           "/dynamicbase",
           "/nxcompat",
           "/safeseh",
-          "/opt:ref",
-          "/opt:icf",
+          "/opt:noref",
+          "/opt:noicf",
           "/incremental:no",
           "/manifest",
           "/manifest:embed",
@@ -837,6 +847,9 @@
           "/pdbaltpath:D:\\CoFFinalPatch\\code\\dlls\\Releasehl\\hl.pdb",
           "/tlbid:1",
           "/def:src/dlls/hl.def"
+        ],
+        "cflags_extra": [
+          "/Zc:inline"
         ],
         "libs": [
           "kernel32.lib",
@@ -970,9 +983,11 @@
           "dlls/explode",
           "dlls/flyingmonster",
           "dlls/func_break",
+          "dlls/game",
           "dlls/gamerules",
           "dlls/genericmonster",
           "dlls/ggrenade",
+          "dlls/globals",
           "dlls/h_ai",
           "dlls/h_battery",
           "dlls/h_cine",

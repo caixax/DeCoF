@@ -13649,7 +13649,7 @@ hl,100177B0,351,?BossDamageCheck@CBaseEntity@@QAEXXZ,CBaseEntity::BossDamageChec
 hl,10017910,57,?CorpseFolllow@CBaseEntity@@QAEXXZ,CBaseEntity::CorpseFolllow,COF,dlls/cbase.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10017950,148,?Create@CBaseEntity@@SAPAV1@PADABVVector@@1PAUedict_s@@@Z,CBaseEntity::Create,HLSDK,dlls/cbase.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100179F0,176,?CreateWithScript@CBaseEntity@@SAPAV1@PADHABVVector@@1PAUedict_s@@H@Z,CBaseEntity::CreateWithScript,UNKNOWN,dlls/cbase.cpp,,,MATCHED,100,hl_manual.csv,
-hl,10017AA0,5,,,UNKNOWN,,,,TODO,,,found by tools/gaps.py (no Ghidra function before)
+hl,10017AA0,5,?DeadRemoveThink@CBaseEntity@@QAEXXZ,CBaseEntity::DeadRemoveThink,UNKNOWN,dlls/cbase.cpp,,,MATCHED,100,hl_manual.csv,found by tools/gaps.py (no Ghidra function before)
 hl,10017AB0,15,?DefaultUse@CBasePlayerAmmo@@QAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CBasePlayerAmmo::DefaultUse,PARANOIA,dlls/weapons.h,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,refbytes:paranoia:dlls__agrunt.obj:score1,
 hl,10017AC0,15,?DefaultUse@CBasePlayerItem@@QAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CBasePlayerItem::DefaultUse,PARANOIA,dlls/weapons.h,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,refbytes:paranoia:dlls__agrunt.obj:score1,
 hl,10017AD0,40,?DontThink@CBaseEntity@@QAEXXZ,CBaseEntity::DontThink,SPIRIT,dlls/cbase.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
@@ -16552,7 +16552,7 @@ hl,100ADF00,343,?TraceAttack@CBreakable@@UAEXPAUentvars_s@@MVVector@@PAUTraceRes
 hl,100AE060,166,?Use@CPushable@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CPushable::Use,HLSDK,dlls/func_break.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100AE110,5,_func_breakable,func_breakable,HLSDK,dlls/func_break.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( func_breakable, CBreakable )"
 hl,100AE120,5,_func_pushable,func_pushable,HLSDK,dlls/func_break.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( func_pushable, CPushable )"
-hl,100AE130,5092,,,UNKNOWN,,,,TODO,,,found by tools/gaps.py (no Ghidra function before)
+hl,100AE130,5092,?GameDLLInit@@YAXXZ,GameDLLInit,HLSDK,dlls/game.cpp,1.0,,MATCHED,100,,found by tools/gaps.py (no Ghidra function before)
 hl,100AF520,53,?CanHaveAmmo@CGameRules@@UAEHPAVCBasePlayer@@PBDH@Z,CGameRules::CanHaveAmmo,HLSDK,dlls/gamerules.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,refbytes:paranoia:dlls__gamerules.obj:score2,
 hl,100AF560,175,?CanHavePlayerItem@CGameRules@@UAEHPAVCBasePlayer@@PAVCBasePlayerItem@@@Z,CGameRules::CanHavePlayerItem,HLSDK,dlls/gamerules.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100AF610,245,?GetPlayerSpawnSpot@CGameRules@@UAEPAUedict_s@@PAVCBasePlayer@@@Z,CGameRules::GetPlayerSpawnSpot,HLSDK,dlls/gamerules.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,

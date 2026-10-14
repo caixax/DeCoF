@@ -41,7 +41,7 @@ public:
 	int m_iGunType;
 	int m_iActivity;
 	bool m_bJustTakenDamage;
-	void DecideWhatToDo( void );
+	void EXPORT DecideWhatToDo( void );
 };
 
 #endif // COF_DOCTORBOSS_H

@@ -1244,6 +1244,22 @@
       }
     },
     {
+      "name": "hl/dlls/game",
+      "target_path": "build/target/hl/dlls/game.obj",
+      "base_path": "build/base/hl/dlls/game.obj",
+      "metadata": {
+        "source_path": "src/dlls/game.cpp"
+      }
+    },
+    {
+      "name": "hl/dlls/globals",
+      "target_path": "build/target/hl/dlls/globals.obj",
+      "base_path": "build/base/hl/dlls/globals.obj",
+      "metadata": {
+        "source_path": "src/dlls/globals.cpp"
+      }
+    },
+    {
       "name": "opengl32/opengl32",
       "target_path": "build/target/opengl32/opengl32.obj",
       "base_path": "build/base/opengl32/opengl32.obj",

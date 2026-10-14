@@ -34,9 +34,9 @@ public:
 	virtual void SetYawSpeed( void );
 	virtual int Classify( void );
 	virtual void HandleAnimEvent( MonsterEvent_t *pEvent );
-	void WatroThink( void );
-	void InactiveThink( void );
-	void ActivateWatro( void );
+	void EXPORT WatroThink( void );
+	void EXPORT InactiveThink( void );
+	void EXPORT ActivateWatro( void );
 	int m_iActivated;
 	int m_iActivating;
 	int m_iAttacking;

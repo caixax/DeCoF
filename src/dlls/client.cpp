@@ -82,7 +82,7 @@ class CBoat : public CBaseAnimating
 public:
 	virtual void Spawn( void );
 	virtual void Precache( void );
-	void BoatUse( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE useType, float value );
+	void EXPORT BoatUse( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE useType, float value );
 	void MoveForward( void );
 	void MoveBack( void );
 	void TurnLeft( void );
@@ -94,14 +94,14 @@ public:
 	float boattime2;
 	float boattime3;
 	float boattime4;
-	void Embark( void );
+	void EXPORT Embark( void );
 	void ExitCheck( void );
-	void Disembark( void );
+	void EXPORT Disembark( void );
 	CBaseEntity *pExitEntity;
 	CBaseEntity *pExitTeller;
 	void SetCollision( void );
 	virtual void HandleAnimEvent( MonsterEvent_t *pEvent );
-	void BoatThink( void );
+	void EXPORT BoatThink( void );
 	void SetSequenceByName( char *szSequence );
 	virtual int ObjectCaps( void ) { return CBaseEntity :: ObjectCaps() | FCAP_IMPULSE_USE; }
 	CBasePlayer *m_pPlayer;
@@ -112,7 +112,7 @@ class CWheelchair : public CBaseMonster
 public:
 	virtual void Spawn( void );
 	virtual void Precache( void );
-	void WheelchairUse( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE useType, float value );
+	void EXPORT WheelchairUse( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE useType, float value );
 	void MoveForward( void );
 	void MoveBack( void );
 	void TurnLeft( void );
@@ -128,14 +128,14 @@ public:
 	float wheelchairtime2;
 	float wheelchairtime3;
 	float wheelchairtime4;
-	void Embark( void );
+	void EXPORT Embark( void );
 	void ExitCheck( void );
-	void Disembark( void );
+	void EXPORT Disembark( void );
 	CBaseEntity *pExitEntity;
 	CBaseEntity *pExitTeller;
 	void SetCollision( void );
 	virtual void HandleAnimEvent( MonsterEvent_t *pEvent );
-	void WheelchairThink( void );
+	void EXPORT WheelchairThink( void );
 	void SetSequenceByName( char *szSequence );
 	virtual int ObjectCaps( void ) { return CBaseEntity :: ObjectCaps() | FCAP_IMPULSE_USE; }
 	CBasePlayer *m_pPlayer;
@@ -180,8 +180,8 @@ public:
 	virtual void Spawn( void );
 	virtual void Precache( void );
 	void Rotate( int number );
-	void Check( void );
-	void Finished( void );
+	void EXPORT Check( void );
+	void EXPORT Finished( void );
 	virtual STATE GetState( void );
 	virtual void Use( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE useType, float value );
 	virtual int ObjectCaps( void ) { return CBaseAnimating :: ObjectCaps() & ~FCAP_ACROSS_TRANSITION; }
@@ -232,7 +232,7 @@ public:
 	virtual void Spawn( void );
 	virtual void Precache( void );
 	virtual void SendInitMessage( CBasePlayer *player );
-	void KillParticle( void );
+	void EXPORT KillParticle( void );
 	static CParticle *CreateParticle( int message, bool starton, Vector origin, int weaponattachment, float life, CBaseEntity *attachentity, float velocityx, float velocityy, float velocityz );
 	virtual void Use( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE useType, float value );
 };

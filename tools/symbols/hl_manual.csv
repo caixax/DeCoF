@@ -104,3 +104,5 @@ va,name,kind,evidence
 100B2530,?VecCheckThrow@@YA?AVVector@@PAUentvars_s@@ABV1@V1@MM@Z,func,byte-identical to VecCheckThrow of the Paranoia h_ai.cpp with relocations masked (scratch compile with the hl flags)
 100B2740,?VecCheckToss@@YA?AVVector@@PAUentvars_s@@ABV1@V1@M@Z,func,byte-identical to VecCheckToss of the Paranoia h_ai.cpp with relocations masked (scratch compile with the hl flags)
 100017A0,___local_stdio_scanf_options,func,"UCRT inline: returns the address of its _OptionsStorage (10220AB0), right after __local_stdio_printf_options at 10001790; not CBaseEntity::TeamID"
+100AE130,?GameDLLInit@@YAXXZ,func,"the three CVAR_GET_POINTER calls (sv_gravity, sv_aim, mp_footsteps), 449 CVAR_REGISTER calls and SERVER_COMMAND exec skill.cfg of the HLSDK GameDLLInit (game.obj in the 1.55 PDB)"
+10017AA0,?DeadRemoveThink@CBaseEntity@@QAEXXZ,func,"jmp to CBaseEntity::SUB_Remove (101028E0); between CreateWithScript and DefaultUse in the name order of cbase.obj, which defines it in the 1.55 PDB (added by an agent)"

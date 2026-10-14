@@ -621,8 +621,8 @@ public:
 	virtual int iItemSlot( void ) { return 1; }
 	virtual int GetItemInfo( ItemInfo *p );
 	virtual void Fidget( void );
-	void TurnOn( void );
-	void TurnOff( void );
+	void EXPORT TurnOn( void );
+	void EXPORT TurnOff( void );
 	void ToggleSwitch( void );
 	virtual void ItemPostFrame( void );
 	virtual void Holster( void );
@@ -645,10 +645,10 @@ public:
 	virtual void Spawn( void );
 	virtual void Precache( void );
 	virtual int GetItemInfo( ItemInfo *p );
-	void FixBattery( void );
-	void FlashToggle( void );
-	void FlashOff( void );
-	void MidBatteryFix( void );
+	void EXPORT FixBattery( void );
+	void EXPORT FlashToggle( void );
+	void EXPORT FlashOff( void );
+	void EXPORT MidBatteryFix( void );
 	virtual void ItemPostFrame( void );
 	void MessageGet( void );
 	virtual void PrimaryAttack( void );
@@ -675,16 +675,16 @@ public:
 	virtual void Fidget( void );
 	virtual void IronsightsTo( void );
 	virtual void IronsightsFrom( void );
-	void AttachTaclight( void );
-	void MidAttachTaclight( void );
+	void EXPORT AttachTaclight( void );
+	void EXPORT MidAttachTaclight( void );
 	bool m_bWaitingToFix;
 	virtual void PrimaryAttack( void );
 	virtual void SecondaryAttack( void );
 	virtual void TertiaryAttack( void );
 	virtual void ItemPostFrame( void );
 	virtual void Holster( void );
-	void ToggleSwitch( void );
-	void SuicideShot( void );
+	void EXPORT ToggleSwitch( void );
+	void EXPORT SuicideShot( void );
 	virtual void StartSuicide( void );
 	virtual void StopSuicide( void );
 	virtual int Deploy( void );
@@ -708,11 +708,11 @@ public:
 	virtual void IronsightsTo( void );
 	virtual void IronsightsFrom( void );
 	int m_iRotation;
-	void SuicideShot( void );
+	void EXPORT SuicideShot( void );
 	virtual void StartSuicide( void );
 	virtual void StopSuicide( void );
-	void ResetCylinder( void );
-	void SetCylinder( void );
+	void EXPORT ResetCylinder( void );
+	void EXPORT SetCylinder( void );
 	bool m_bReloading;
 	bool m_bWantToEndReload;
 	bool m_bInsertBullet;
@@ -722,7 +722,7 @@ public:
 	virtual void TertiaryAttack( void );
 	virtual void ItemPostFrame( void );
 	virtual void Holster( void );
-	void ReloadInsert( void );
+	void EXPORT ReloadInsert( void );
 	virtual int Deploy( void );
 	virtual void Reload( void );
 	virtual void WeaponIdle( void );
@@ -765,10 +765,10 @@ public:
 	virtual void Precache( void );
 	virtual int iItemSlot( void ) { return 1; }
 	virtual int GetItemInfo( ItemInfo *p );
-	void MobileFlashToggle( void );
-	void ThrowRemove( void );
-	void FlareDoIgnite( void );
-	void FlareRedeploy( void );
+	void EXPORT MobileFlashToggle( void );
+	void EXPORT ThrowRemove( void );
+	void EXPORT FlareDoIgnite( void );
+	void EXPORT FlareRedeploy( void );
 	void SetAmmoValues( void );
 	void UpdateWeaponAmmo( void );
 	void SetBodyForWeapons( bool left );
@@ -784,13 +784,13 @@ public:
 	void P345Shoot( bool left );
 	void RevolverShoot( bool left );
 	void StartVP70Shoot( bool left );
-	void VP70Shoot( void );
+	void EXPORT VP70Shoot( void );
 	void TMPShoot( bool left );
 	void FlareIgnite( bool left );
 	int m_iRightWeaponID;
 	int m_iLeftWeaponID;
-	void ReloadFinishLeft( void );
-	void ReloadFinishRight( void );
+	void EXPORT ReloadFinishLeft( void );
+	void EXPORT ReloadFinishRight( void );
 	float GetAttackDelayForWeapon( int weaponid );
 	char *GetModelForWeapon( int weaponid, bool left );
 	virtual void PrimaryAttack( void );
@@ -832,7 +832,7 @@ public:
 	virtual void Reload( void );
 	virtual void WeaponIdle( void );
 	int m_iShell;
-	void SuicideShot( void );
+	void EXPORT SuicideShot( void );
 	virtual void StartSuicide( void );
 	virtual void StopSuicide( void );
 };
@@ -850,7 +850,7 @@ public:
 	virtual void SecondaryAttack( void );
 	virtual void IronsightsTo( void );
 	virtual void IronsightsFrom( void );
-	void SuicideShot( void );
+	void EXPORT SuicideShot( void );
 	virtual void StartSuicide( void );
 	virtual void StopSuicide( void );
 	virtual void PrimaryAttack( void );
@@ -872,7 +872,7 @@ public:
 	virtual int iItemSlot( void ) { return 1; }
 	virtual int GetItemInfo( ItemInfo *p );
 	virtual void Fidget( void );
-	void SuicideShot( void );
+	void EXPORT SuicideShot( void );
 	virtual void StartSuicide( void );
 	virtual void StopSuicide( void );
 	virtual void PrimaryAttack( void );
@@ -880,16 +880,16 @@ public:
 	virtual void TertiaryAttack( void );
 	virtual void ItemPostFrame( void );
 	virtual void Holster( void );
-	void RifleEjectBrass( void );
-	void DoReload( void );
-	void InsertBullet( void );
-	void PostZoom( void );
+	void EXPORT RifleEjectBrass( void );
+	void EXPORT DoReload( void );
+	void EXPORT InsertBullet( void );
+	void EXPORT PostZoom( void );
 	int m_iWantToPullBolt;
 	float m_flNextBoltPullTime;
 	int m_iWantToEjectShell;
 	float m_flNextShellEjectTime;
 	bool m_bWaitingToReload;
-	void Zoom( void );
+	void EXPORT Zoom( void );
 	virtual int Save( CSave &save );
 	virtual int Restore( CRestore &restore );
 	static TYPEDESCRIPTION m_SaveData[];
@@ -947,7 +947,7 @@ public:
 	virtual void Holster( void );
 	virtual void IronsightsTo( void );
 	virtual void IronsightsFrom( void );
-	void SuicideShot( void );
+	void EXPORT SuicideShot( void );
 	virtual void StartSuicide( void );
 	virtual void StopSuicide( void );
 	virtual int Deploy( void );
@@ -972,7 +972,7 @@ public:
 	virtual void Holster( void );
 	virtual void IronsightsTo( void );
 	virtual void IronsightsFrom( void );
-	void SuicideShot( void );
+	void EXPORT SuicideShot( void );
 	virtual void StartSuicide( void );
 	virtual void StopSuicide( void );
 	virtual int Deploy( void );
@@ -994,7 +994,7 @@ public:
 	virtual int GetItemInfo( ItemInfo *p );
 	virtual void IronsightsTo( void );
 	virtual void IronsightsFrom( void );
-	void SuicideShot( void );
+	void EXPORT SuicideShot( void );
 	virtual void StartSuicide( void );
 	virtual void StopSuicide( void );
 	virtual void Fidget( void );
@@ -1009,8 +1009,8 @@ public:
 	int m_fInReload;
 	float m_flNextReload;
 	int m_iShell;
-	void LolShell( void );
-	void ShellInsert( void );
+	void EXPORT LolShell( void );
+	void EXPORT ShellInsert( void );
 };
 
 
@@ -1047,7 +1047,7 @@ public:
 	virtual void RageAttack( void );
 	virtual float GetNextRageDecreaseTime( void );
 	int m_iBloodAmount;
-	void BloodFingerprint( void );
+	void EXPORT BloodFingerprint( void );
 	virtual void PrimaryAttack( void );
 	virtual void SecondaryAttack( void );
 	int Swing( int );
@@ -1069,13 +1069,13 @@ public:
 	static TYPEDESCRIPTION m_SaveData[];
 	virtual void ItemPostFrame( void );
 	CBasePlayer *pHealVictim;
-	void BladeRetract( void );
+	void EXPORT BladeRetract( void );
 	virtual void Spawn( void );
 	virtual void Precache( void );
 	virtual int GetItemInfo( ItemInfo *p );
-	void DestroyItem( void );
-	void Redeploy( void );
-	void Inject( void );
+	void EXPORT DestroyItem( void );
+	void EXPORT Redeploy( void );
+	void EXPORT Inject( void );
 	bool b_HasUsed;
 	virtual void PrimaryAttack( void );
 	virtual void SecondaryAttack( void );
@@ -1093,7 +1093,7 @@ public:
 	virtual void Precache( void );
 	virtual int iItemSlot( void ) { return 1; }
 	virtual int GetItemInfo( ItemInfo *p );
-	void SuicideShot( void );
+	void EXPORT SuicideShot( void );
 	virtual void StartSuicide( void );
 	virtual void StopSuicide( void );
 	virtual void IronsightsTo( void );
@@ -1104,7 +1104,7 @@ public:
 	virtual void WeaponToggle( void );
 	virtual void SecondaryAttack( void );
 	virtual void TertiaryAttack( void );
-	void Shoot( void );
+	void EXPORT Shoot( void );
 	virtual void ItemPostFrame( void );
 	virtual void Holster( void );
 	virtual int Deploy( void );
@@ -1137,7 +1137,7 @@ public:
 	virtual void Reload( void );
 	virtual void WeaponIdle( void );
 	int m_iShell;
-	void SuicideShot( void );
+	void EXPORT SuicideShot( void );
 	virtual void StartSuicide( void );
 	virtual void StopSuicide( void );
 };
@@ -1153,14 +1153,14 @@ public:
 	virtual void Fidget( void );
 	virtual void IronsightsTo( void );
 	virtual void IronsightsFrom( void );
-	void SuicideShot( void );
+	void EXPORT SuicideShot( void );
 	virtual void StartSuicide( void );
 	virtual void StopSuicide( void );
 	int shoot_num;
 	virtual void PrimaryAttack( void );
 	virtual void SecondaryAttack( void );
 	virtual void TertiaryAttack( void );
-	void Shoot( void );
+	void EXPORT Shoot( void );
 	virtual void ItemPostFrame( void );
 	virtual void Holster( void );
 	virtual int Deploy( void );
@@ -1183,8 +1183,8 @@ public:
 	virtual void Holster( void );
 	virtual void WeaponIdle( void );
 	virtual int ShouldWeaponIdle( void ) { return 1; }
-	void FlareThink( void );
-	void Redeploy( void );
+	void EXPORT FlareThink( void );
+	void EXPORT Redeploy( void );
 	bool m_bThrowing;
 	bool m_bThrown;
 	bool m_bNoRedeploy;
@@ -1193,8 +1193,8 @@ public:
 	virtual int Save( CSave &save );
 	virtual int Restore( CRestore &restore );
 	static TYPEDESCRIPTION m_SaveData[];
-	void ThrowRemove( void );
-	void Ignite( void );
+	void EXPORT ThrowRemove( void );
+	void EXPORT Ignite( void );
 	float m_fNextBurnTime;
 };
 

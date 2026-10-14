@@ -156,7 +156,7 @@ public:
 	virtual void Spawn( void );
 	virtual void Precache( void );
 	virtual void SendInitMessage( CBasePlayer *player );
-	void KillParticle( void );
+	void EXPORT KillParticle( void );
 	static CParticle *CreateParticle( int message, bool starton, Vector origin, int weaponattachment, float life, CBaseEntity *attachentity, float velocityx, float velocityy, float velocityz );
 	virtual void Use( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE useType, float value );
 };

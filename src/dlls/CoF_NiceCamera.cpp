@@ -45,7 +45,7 @@ public:
 	void Precache( void );
 	void StartAnimation( void );
 	void HandleAnimEvent( MonsterEvent_t *pEvent );
-	void Think( void );
+	void EXPORT Think( void );
 	void EXPORT CameraUse( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE useType, float value );
 };
 

@@ -175,7 +175,7 @@ public:
 	bool b_Saving;
 	bool m_bFrozenByCamera;
 	void SetModelCollisionBox( void );
-	void CorpseFolllow( void );
+	void EXPORT CorpseFolllow( void );
 	bool m_bIsBoss;
 	void BossDamageCheck( void );
 
@@ -242,7 +242,7 @@ public:
 	// buz - gas reactions (should be used by soldiers to turn gas mask on and off)
 	virtual void GasWarning( int warnlevel ) {};
 
-	void DeadRemoveThink( void );
+	void EXPORT DeadRemoveThink( void );
 
 	// initialization functions
 	virtual void	Spawn( void ) { return; }

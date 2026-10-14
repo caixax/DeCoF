@@ -4,7 +4,7 @@
 
 Out-of-scope DLLs that the game DLLs import from (steam_api.dll) ship
 without their .lib. This writes a .def file with every exported name of the
-retail DLL, in the DLL's own order with its ordinals, and runs lib.exe of
+retail DLL, by name in the DLL's own order, and runs lib.exe of
 the target toolchain on it. Nothing of the DLL's code is used.
 """
 import os
@@ -25,7 +25,7 @@ def main():
     lines = ["LIBRARY %s" % name, "EXPORTS"]
     for s in pe.DIRECTORY_ENTRY_EXPORT.symbols:
         if s.name:
-            lines.append("\t%s @%d" % (s.name.decode(), s.ordinal))
+            lines.append("\t%s" % s.name.decode())
     os.makedirs(os.path.dirname(os.path.abspath(out)), exist_ok=True)
     deffile = os.path.splitext(out)[0] + ".def"
     with open(deffile, "w") as f:

@@ -22,8 +22,8 @@ public:
 	virtual void Spawn( void );
 	virtual void Precache( void );
 	void Rotate( int number );
-	void Check( void );
-	void Finished( void );
+	void EXPORT Check( void );
+	void EXPORT Finished( void );
 	virtual STATE GetState( void );
 	virtual void Use( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE useType, float value );
 	virtual int ObjectCaps( void ) { return CBaseAnimating :: ObjectCaps() & ~FCAP_ACROSS_TRANSITION; }
