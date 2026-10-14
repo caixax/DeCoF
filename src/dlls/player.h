@@ -225,6 +225,7 @@ public:
 	int m_iGameOverCounter;
 	int IsDeveloper( void );
 	int IsDonator( void );
+	bool guess_IsInSteamGroup( unsigned int iGroupID );	// CoF 1.6a: unreferenced
 	float m_flSequenceOverrideTime;
 	int m_iSequenceOverride;
 	float m_flGetupTime;
@@ -253,6 +254,7 @@ public:
 	EHANDLE m_pClientAttachedCamera;
 	bool EHandlesNotSame( EHANDLE edict1, EHANDLE edict2 );
 	bool CanBeDualWielded( int weaponid );
+	bool guess_CanUseWeapon( int weaponid );	// CoF 1.6a: unreferenced
 	bool IsAFlashlight( int weaponid );
 	bool m_bInWater;
 	int m_iPhoneMessage;

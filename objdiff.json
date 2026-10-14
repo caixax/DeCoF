@@ -1236,6 +1236,14 @@
       }
     },
     {
+      "name": "hl/dlls/h_ai",
+      "target_path": "build/target/hl/dlls/h_ai.obj",
+      "base_path": "build/base/hl/dlls/h_ai.obj",
+      "metadata": {
+        "source_path": "src/dlls/h_ai.cpp"
+      }
+    },
+    {
       "name": "opengl32/opengl32",
       "target_path": "build/target/opengl32/opengl32.obj",
       "base_path": "build/base/opengl32/opengl32.obj",

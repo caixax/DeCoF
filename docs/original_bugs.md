@@ -124,3 +124,5 @@ The reconstructed source keeps the behavior of the retail 1.6a binaries, includi
 | CTabPanel::LoadMessage (client vgui_tabpanel.cpp) | FontFromMessage advances only a copy of the text pointer, so the text and the title are shown with their @font prefix. | as written |
 | CHud::MsgFunc_AttachCam (client hud_msg.cpp) | Reads a SHORT, two BYTEs and three LONGs while the server writes only a SHORT and a BYTE, so it reads past the end of the message; the LONGs land in a vector that render_origin overwrites later. | as written |
 | CHud::MsgFunc_ViewLock (client hud_msg.cpp) | Reads a second COORD past the end of the message when the first COORD is not 666. | as written |
+| ApplyCFGSettingToPlayer, ApplyCFGSettingToPlayerLate (hl multiplay_gamerules.cpp) | The quicksel1 to quicksel3 lines copy the player's m_sQuickSelN into the line buffer (strcpy in the wrong direction), so saved quick-select slots are never restored. | as written |
+| ApplyCFGSettingToPlayer, ApplyCFGSettingToPlayerLate (hl multiplay_gamerules.cpp) | Each config line is copied into a 256-byte buffer with no length check. | as written |

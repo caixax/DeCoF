@@ -15,3 +15,4 @@ va,name,evidence
 100D4394,$LN133,"jump table label from an earlier harvest; tables are part of their function since the delinker change, and the label split the function"
 100D9A88,$LN116,"jump table label from an earlier harvest; tables are part of their function since the delinker change, and the label split the function"
 101A1F78,__real@c3480000,"stale label: the float at 101A1F78 is -90.0 (bytes 0000b4c2), not -200"
+100360F0,FUN_100360f0,"default Ghidra label of CDualWeapon::TMPShoot, created when the ret 4 stub was recreated"

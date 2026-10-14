@@ -807,6 +807,11 @@
           "name": "dlls/guess_CoF_BowlingBall",
           "source": "src/dlls/guess_CoF_BowlingBall.cpp",
           "functions_file": "tools/units/hl_dlls_guess_CoF_BowlingBall.txt"
+        },
+        {
+          "name": "dlls/h_ai",
+          "source": "src/dlls/h_ai.cpp",
+          "functions_file": "tools/units/hl_dlls_h_ai.txt"
         }
       ],
       "toolchain": "msvc1427"

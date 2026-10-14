@@ -135,3 +135,5 @@ _scripted_trainsequence
 ?ObjectCaps@CFuncTrackTrain@@UAEHXZ
 ??$GetClassPtr@VCPlatTrigger@@@@YAPAVCPlatTrigger@@PAV0@@Z
 ?FixupAngles@@YAXAAVVector@@@Z
+?Fix@@YAMM@Z
+?PlatSpawnInsideTrigger@@YAXPAUentvars_s@@@Z

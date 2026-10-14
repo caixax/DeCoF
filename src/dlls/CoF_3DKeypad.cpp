@@ -23,6 +23,7 @@
 #include "animation.h"
 #include "monsterevent.h"
 #include "player.h"
+#include "items.h"
 
 extern int gmsgAttachCam;
 

@@ -16,6 +16,8 @@
 // teamplay_gamerules.cpp
 //
 #include <ctype.h>
+#include <sys/stat.h>
+#include <fstream>
 
 #include	"extdll.h"
 #include	"util.h"
@@ -58,6 +60,7 @@ extern bool m_bHadSimonMode;
 extern int m_iSimonMode;
 extern int g_iSurvivalMode;
 extern int m_iMusicManagerLoops;
+extern bool gNoWeaponDrop;
 extern float m_fMusicManagerFadeTime;
 
 extern int CountConnectedPlayers( void );
@@ -192,6 +195,379 @@ int CountPlayersButNotMyself( CBaseEntity *pPlayer )
 	}
 
 	return num;
+}
+
+/*
+==============
+DeleteAllCFGFiles
+
+Removes every saved player .cfg file from txtfiles
+==============
+*/
+void DeleteAllCFGFiles( void )
+{
+	HANDLE hFind;
+	char gamedir[1024];
+
+	GET_GAME_DIR( gamedir );
+	strcat( gamedir, "\\txtfiles\\" );
+
+	std::string path = gamedir;
+	std::string searchPattern = "*.cfg";
+	std::string fullSearchPath = path + searchPattern;
+
+	WIN32_FIND_DATA FindData;
+	hFind = FindFirstFile( fullSearchPath.c_str(), &FindData );
+
+	if ( hFind == INVALID_HANDLE_VALUE )
+	{
+		return;
+	}
+
+	struct stat stFileInfo;
+
+	do
+	{
+		std::string filePath = path + FindData.cFileName;
+		int intStat = stat( filePath.c_str(), &stFileInfo );
+
+		if ( intStat == 0 )
+			DeleteFile( filePath.c_str() );
+	}
+	while ( FindNextFile( hFind, &FindData ) > 0 );
+}
+
+/*
+==============
+ApplyCFGSettingToPlayer
+
+Restores the player state saved in txtfiles/<netname>.cfg
+==============
+*/
+void ApplyCFGSettingToPlayer( CBasePlayer *pPlayer )
+{
+	if ( !pPlayer )
+		return;
+
+	pPlayer->m_flNextTimeTakenCheck = gpGlobals->time;
+
+	HANDLE hFind;
+	char gamedir[1024];
+
+	GET_GAME_DIR( gamedir );
+	strcat( gamedir, "\\txtfiles\\" );
+
+	std::string path = gamedir;
+	std::string searchPattern = "*.cfg";
+	std::string fullSearchPath = path + searchPattern;
+
+	WIN32_FIND_DATA FindData;
+	hFind = FindFirstFile( fullSearchPath.c_str(), &FindData );
+
+	if ( hFind == INVALID_HANDLE_VALUE )
+	{
+		return;
+	}
+
+	struct stat stFileInfo;
+
+	do
+	{
+		std::string filePath = path + FindData.cFileName;
+		int intStat = stat( filePath.c_str(), &stFileInfo );
+
+		if ( intStat == 0 )
+		{
+			char szName[256];
+			strcpy( szName, STRING( pPlayer->pev->netname ) );
+			strcat( szName, ".cfg" );
+
+			if ( !strcmp( szName, FindData.cFileName ) )
+			{
+				char szFile[1024];
+				char buffer[256];
+				sprintf( szFile, "%s", FindData.cFileName );
+
+				char filename[1024];
+				GET_GAME_DIR( filename );
+				strcat( filename, "/txtfiles/" );
+				strcat( filename, STRING( pPlayer->pev->netname ) );
+				strcat( filename, ".cfg" );
+
+				std::ifstream file( filename );
+				std::string line;
+
+				while ( std::getline( file, line ) )
+				{
+					if ( strstr( line.c_str(), "health " ) )
+					{
+						line.erase( 0, strlen( "health " ) );
+						strcpy( buffer, line.c_str() );
+						buffer[line.length()] = 0;
+						pPlayer->pev->health = atoi( buffer );
+					}
+
+					if ( strstr( line.c_str(), "stamina " ) )
+					{
+						line.erase( 0, strlen( "stamina " ) );
+						strcpy( buffer, line.c_str() );
+						buffer[line.length()] = 0;
+						pPlayer->m_fStamina = atoi( buffer );
+					}
+
+					if ( strstr( line.c_str(), "quicksel1 " ) )
+					{
+						line.erase( 0, strlen( "quicksel1 " ) );
+						strcpy( buffer, line.c_str() );
+						buffer[line.length()] = 0;
+						strcpy( buffer, pPlayer->m_sQuickSel1 );
+					}
+
+					if ( strstr( line.c_str(), "quicksel2 " ) )
+					{
+						line.erase( 0, strlen( "quicksel2 " ) );
+						strcpy( buffer, line.c_str() );
+						buffer[line.length()] = 0;
+						strcpy( buffer, pPlayer->m_sQuickSel2 );
+					}
+
+					if ( strstr( line.c_str(), "quicksel3 " ) )
+					{
+						line.erase( 0, strlen( "quicksel3 " ) );
+						strcpy( buffer, line.c_str() );
+						buffer[line.length()] = 0;
+						strcpy( buffer, pPlayer->m_sQuickSel3 );
+					}
+
+					if ( strstr( line.c_str(), "playerstats_shotsfired " ) )
+					{
+						line.erase( 0, strlen( "playerstats_shotsfired " ) );
+						strcpy( buffer, line.c_str() );
+						buffer[line.length()] = 0;
+						pPlayer->playerstats.shots_fired = atoi( buffer );
+					}
+
+					if ( strstr( line.c_str(), "playerstats_shotshit " ) )
+					{
+						line.erase( 0, strlen( "playerstats_shotshit " ) );
+						strcpy( buffer, line.c_str() );
+						buffer[line.length()] = 0;
+						pPlayer->playerstats.shots_hit = atoi( buffer );
+					}
+
+					if ( strstr( line.c_str(), "playerstats_syringesused " ) )
+					{
+						line.erase( 0, strlen( "playerstats_syringesused " ) );
+						strcpy( buffer, line.c_str() );
+						buffer[line.length()] = 0;
+						pPlayer->playerstats.syringes_used = atoi( buffer );
+					}
+
+					if ( strstr( line.c_str(), "playerstats_monsterskilledmelee " ) )
+					{
+						line.erase( 0, strlen( "playerstats_monsterskilledmelee " ) );
+						strcpy( buffer, line.c_str() );
+						buffer[line.length()] = 0;
+						pPlayer->playerstats.monsters_killed_melee = atoi( buffer );
+					}
+
+					if ( strstr( line.c_str(), "playerstats_monsterskilledshooting " ) )
+					{
+						line.erase( 0, strlen( "playerstats_monsterskilledshooting " ) );
+						strcpy( buffer, line.c_str() );
+						buffer[line.length()] = 0;
+						pPlayer->playerstats.monsters_killed_shooting = atoi( buffer );
+					}
+
+					if ( strstr( line.c_str(), "playerstats_seconds " ) )
+					{
+						line.erase( 0, strlen( "playerstats_seconds " ) );
+						strcpy( buffer, line.c_str() );
+						buffer[line.length()] = 0;
+						pPlayer->playerstats.time_seconds = atoi( buffer );
+					}
+
+					if ( strstr( line.c_str(), "playerstats_minutes " ) )
+					{
+						line.erase( 0, strlen( "playerstats_minutes " ) );
+						strcpy( buffer, line.c_str() );
+						buffer[line.length()] = 0;
+						pPlayer->playerstats.time_minutes = atoi( buffer );
+					}
+
+					if ( strstr( line.c_str(), "playerstats_hours " ) )
+					{
+						line.erase( 0, strlen( "playerstats_hours " ) );
+						strcpy( buffer, line.c_str() );
+						buffer[line.length()] = 0;
+						pPlayer->playerstats.time_hours = atoi( buffer );
+					}
+
+					if ( strstr( line.c_str(), "playerstats_damagetaken " ) )
+					{
+						line.erase( 0, strlen( "playerstats_damagetaken " ) );
+						strcpy( buffer, line.c_str() );
+						buffer[line.length()] = 0;
+						pPlayer->playerstats.damagetaken = atoi( buffer );
+					}
+
+					if ( strstr( line.c_str(), "weapon_" ) )
+					{
+						strcpy( buffer, line.c_str() );
+						buffer[line.length()] = 0;
+
+						pPlayer->GiveNamedItem( line.c_str(), false, false );
+
+						for ( int i = 0; i < MAX_ITEM_TYPES; i++ )
+						{
+							if ( pPlayer->m_rgpPlayerItems[i] && !FClassnameIs( pPlayer->m_rgpPlayerItems[i]->pev, "weapon_action" ) )
+							{
+								CBasePlayerItem *pPlayerItem = pPlayer->m_rgpPlayerItems[i];
+
+								while ( pPlayerItem )
+								{
+									if ( pPlayerItem->pszAmmo1() && FClassnameIs( pPlayerItem->pev, line.c_str() ) )
+									{
+										if ( std::getline( file, line ) )
+										{
+											strcpy( buffer, line.c_str() );
+											buffer[line.length()] = 0;
+											((CBasePlayerWeapon *)pPlayerItem)->m_iClip = atoi( buffer );
+										}
+
+										if ( std::getline( file, line ) )
+										{
+											strcpy( buffer, line.c_str() );
+											buffer[line.length()] = 0;
+											pPlayer->m_rgAmmo[((CBasePlayerWeapon *)pPlayerItem)->m_iPrimaryAmmoType] = atoi( buffer );
+										}
+									}
+
+									pPlayerItem = pPlayerItem->m_pNext;
+								}
+							}
+						}
+					}
+				}
+
+				DeleteFile( filePath.c_str() );
+			}
+		}
+	}
+	while ( FindNextFile( hFind, &FindData ) > 0 );
+
+	for ( int i = 1; i <= 6; i++ )
+		pPlayer->InventoryMessage( i, pPlayer->inventorySlot[i], 0 );
+}
+
+/*
+==============
+ApplyCFGSettingToPlayerLate
+
+Applies maps/<mapname>.cfg to a player who joins after the level started
+==============
+*/
+void ApplyCFGSettingToPlayerLate( CBasePlayer *pPlayer )
+{
+	if ( !pPlayer )
+		return;
+
+	char buffer[256];
+	char filename[1024];
+
+	GET_GAME_DIR( filename );
+	strcat( filename, "/maps/" );
+	strcat( filename, STRING( gpGlobals->mapname ) );
+	strcat( filename, ".cfg" );
+
+	std::ifstream file( filename );
+	std::string line;
+
+	while ( std::getline( file, line ) )
+	{
+		if ( strstr( line.c_str(), "health " ) )
+		{
+			line.erase( 0, strlen( "health " ) );
+			strcpy( buffer, line.c_str() );
+			buffer[line.length()] = 0;
+			pPlayer->pev->health = atoi( buffer );
+		}
+
+		if ( strstr( line.c_str(), "stamina " ) )
+		{
+			line.erase( 0, strlen( "stamina " ) );
+			strcpy( buffer, line.c_str() );
+			buffer[line.length()] = 0;
+			pPlayer->m_fStamina = atoi( buffer );
+		}
+
+		if ( strstr( line.c_str(), "quicksel1 " ) )
+		{
+			line.erase( 0, strlen( "quicksel1 " ) );
+			strcpy( buffer, line.c_str() );
+			buffer[line.length()] = 0;
+			strcpy( buffer, pPlayer->m_sQuickSel1 );
+		}
+
+		if ( strstr( line.c_str(), "quicksel2 " ) )
+		{
+			line.erase( 0, strlen( "quicksel2 " ) );
+			strcpy( buffer, line.c_str() );
+			buffer[line.length()] = 0;
+			strcpy( buffer, pPlayer->m_sQuickSel2 );
+		}
+
+		if ( strstr( line.c_str(), "quicksel3 " ) )
+		{
+			line.erase( 0, strlen( "quicksel3 " ) );
+			strcpy( buffer, line.c_str() );
+			buffer[line.length()] = 0;
+			strcpy( buffer, pPlayer->m_sQuickSel3 );
+		}
+
+		if ( strstr( line.c_str(), "weapon_" ) )
+		{
+			strcpy( buffer, line.c_str() );
+			buffer[line.length()] = 0;
+
+			gNoWeaponDrop = true;
+			pPlayer->GiveNamedItem( line.c_str(), false, false );
+			gNoWeaponDrop = false;
+
+			for ( int i = 0; i < MAX_ITEM_TYPES; i++ )
+			{
+				if ( pPlayer->m_rgpPlayerItems[i] && !FClassnameIs( pPlayer->m_rgpPlayerItems[i]->pev, "weapon_action" ) )
+				{
+					CBasePlayerItem *pPlayerItem = pPlayer->m_rgpPlayerItems[i];
+
+					while ( pPlayerItem )
+					{
+						if ( pPlayerItem->pszAmmo1() && FClassnameIs( pPlayerItem->pev, line.c_str() ) )
+						{
+							if ( std::getline( file, line ) )
+							{
+								strcpy( buffer, line.c_str() );
+								buffer[line.length()] = 0;
+								((CBasePlayerWeapon *)pPlayerItem)->m_iClip = atoi( buffer );
+							}
+
+							if ( std::getline( file, line ) )
+							{
+								strcpy( buffer, line.c_str() );
+								buffer[line.length()] = 0;
+								pPlayer->m_rgAmmo[((CBasePlayerWeapon *)pPlayerItem)->m_iPrimaryAmmoType] = atoi( buffer );
+							}
+						}
+
+						pPlayerItem = pPlayerItem->m_pNext;
+					}
+				}
+			}
+		}
+	}
+
+	for ( int i = 1; i <= 6; i++ )
+		pPlayer->InventoryMessage( i, pPlayer->inventorySlot[i], 0 );
 }
 
 class CMultiplayGameMgrHelper : public IVoiceGameMgrHelper

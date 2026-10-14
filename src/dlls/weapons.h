@@ -302,7 +302,7 @@ public:
 	static	TYPEDESCRIPTION m_SaveData[];
 
 	virtual int AddToPlayer( CBasePlayer *pPlayer );	// return TRUE if the item you want the item added to the player inventory
-	virtual int AddDuplicate( CBasePlayerItem *pItem, CBasePlayer *pPlayer );	// inline in weapons.h:221
+	virtual int AddDuplicate( CBasePlayerItem *pItem, CBasePlayer *pPlayer ) { return FALSE; }	// return TRUE if you want your duplicate removed from world
 	void EXPORT DestroyItem( void );
 	void EXPORT DefaultTouch( CBaseEntity *pOther );	// default weapon touch
 

@@ -243,3 +243,7 @@ _player
 ?IsAFlashlight@CBasePlayer@@QAE_NH@Z
 ?CheckSuitUpdate@CBasePlayer@@QAEXXZ
 ?UpdateGeigerCounter@CBasePlayer@@QAEXXZ
+?Spawn@CSprayCan@@QAEXPAUentvars_s@@@Z
+?CheckPowerups@@YAXPAUentvars_s@@@Z
+?guess_IsInSteamGroup@CBasePlayer@@QAE_NI@Z
+?guess_CanUseWeapon@CBasePlayer@@QAE_NH@Z

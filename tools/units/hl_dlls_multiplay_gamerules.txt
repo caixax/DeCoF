@@ -78,3 +78,6 @@
 ?SetDefaultPlayerTeam@CGameRules@@UAEPBDPAVCBasePlayer@@@Z
 ?ShouldAutoAim@CGameRules@@UAEHPAVCBasePlayer@@PAUedict_s@@@Z
 ?UpdateGameMode@CGameRules@@UAEXPAVCBasePlayer@@@Z
+?DeleteAllCFGFiles@@YAXXZ
+?ApplyCFGSettingToPlayer@@YAXPAVCBasePlayer@@@Z
+?ApplyCFGSettingToPlayerLate@@YAXPAVCBasePlayer@@@Z

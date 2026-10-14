@@ -7865,7 +7865,7 @@ void CSprayCan::Spawn ( entvars_t *pevOwner )
 	pev->frame = 0;
 
 	SetNextThink( 0.1 );
-	EMIT_SOUND(ENT(pev), CHAN_VOICE, "player/sprayer.wav", 1, ATTN_NORM);
+	//EMIT_SOUND(ENT(pev), CHAN_VOICE, "player/sprayer.wav", 1, ATTN_NORM);
 }
 
 void CSprayCan::Think( void )
@@ -14457,6 +14457,18 @@ bool CBasePlayer::CanBeDualWielded( int weaponid )
 	return false;
 }
 
+bool CBasePlayer::guess_CanUseWeapon( int weaponid )
+{
+	// MP5A3: Steam group members and mapper mode only
+	if ( weaponid == 27 )
+	{
+		if ( !guess_IsInSteamGroup( 4632074 ) && !guess_IsInSteamGroup( 764566 ) && !g_pGameRules->guess_IsMapperMode() )
+			return false;
+	}
+
+	return true;
+}
+
 void CBasePlayer::GiveDualWeapon( int id1, int id2 )
 {
 	if ( id1 == 13 && id1 != id2 )
@@ -16411,6 +16423,25 @@ int CBasePlayer::IsDonator( void )
 	}
 
 	return 0;
+}
+
+bool CBasePlayer::guess_IsInSteamGroup( unsigned int iGroupID )
+{
+	if ( SteamFriends() )
+	{
+		if ( SteamFriends()->GetClanCount() > 0 )
+		{
+			for ( int i = 0; i < SteamFriends()->GetClanCount(); i++ )
+			{
+				CSteamID groupID = SteamFriends()->GetClanByIndex( i );
+
+				if ( groupID.GetEAccountType() == k_EAccountTypeClan && groupID.GetAccountID() == iGroupID )
+					return true;
+			}
+		}
+	}
+
+	return false;
 }
 
 bool GlobalCheckingEndingOrUnlockables( int type )

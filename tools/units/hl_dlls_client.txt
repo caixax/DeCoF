@@ -85,3 +85,4 @@
 ?SpectatorThink@@YAXPAUedict_s@@@Z
 ?respawn@@YAXPAUentvars_s@@H@Z
 ?set_suicide_frame@@YAXPAUentvars_s@@@Z
+?AddDuplicate@CBasePlayerItem@@UAEHPAV1@PAVCBasePlayer@@@Z

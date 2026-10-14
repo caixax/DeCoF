@@ -11,3 +11,4 @@
 _cof_keypadnew
 ?EnterNumber@CKeypadNew@@AAEXH@Z
 ?SetSequenceByName@CKeypadNew@@AAEXPAD@Z
+?ItemUse@CItem@@QAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z

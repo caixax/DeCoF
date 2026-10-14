@@ -23,6 +23,7 @@
 #include	"movewith.h"
 #include	"skill.h"
 #include	"player.h"
+#include	"weapons.h"
 #include	"studio.h"
 
 void EntvarsKeyvalue( entvars_t *pev, KeyValueData *pkvd );
@@ -1041,6 +1042,30 @@ CBaseEntity * CBaseEntity::Create( char *szName, const Vector &vecOrigin, const 
 	}
 	pEntity = Instance( pent );
 	pEntity->pev->owner = pentOwner;
+	pEntity->pev->origin = vecOrigin;
+	pEntity->pev->angles = vecAngles;
+	DispatchSpawn( pEntity->edict() );
+	return pEntity;
+}
+
+CBaseEntity * CBaseEntity::CreateWithScript( char *szName, int message, const Vector &vecOrigin, const Vector &vecAngles, edict_t *pentOwner, int model )
+{
+	edict_t	*pent;
+	CBaseEntity *pEntity;
+
+	pent = CREATE_NAMED_ENTITY( MAKE_STRING( szName ));
+	if ( FNullEnt( pent ) )
+	{
+		ALERT ( at_debug, "NULL Ent in Create!\n" );
+		return NULL;
+	}
+	pEntity = Instance( pent );
+	pEntity->pev->owner = pentOwner;
+	pEntity->pev->message = message;
+
+	if ( model )
+		pEntity->pev->model = model;
+
 	pEntity->pev->origin = vecOrigin;
 	pEntity->pev->angles = vecAngles;
 	DispatchSpawn( pEntity->edict() );
