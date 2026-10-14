@@ -62,7 +62,8 @@ void CTabPanel::LoadMessage(const char *pszName, int iSize, void *pbuf)
 	static char dst_buffer[4096];
 	CHudTextMessage::LocaliseTextString( READ_STRING(), dst_buffer, 4096 );
 	char *pText = dst_buffer;
-	Font *pFont = FontFromMessage(pText);
+	const char *pFontText = pText;
+	Font *pFont = FontFromMessage(pFontText);
 	m_pTextPanel->setText(pText);
 	m_pTextPanel->setFont( pFont );
 
@@ -82,7 +83,8 @@ void CTabPanel::LoadMessage(const char *pszName, int iSize, void *pbuf)
 			gEngfuncs.Con_Printf("%d, ",pText[i]);
 		gEngfuncs.Con_Printf("\n");*/
 
-		pFont = FontFromMessage(pText);
+		const char *pTitleText = pText;
+		pFont = FontFromMessage(pTitleText);
 		m_pTitle->setFont( pFont );
 		m_pTitle->setText(pText);		
 		m_pTitle->setVisible(true);
