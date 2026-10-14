@@ -319,7 +319,8 @@ def link(dll):
     for src, lib in lk.get("implibs", {}).items():
         lib = os.path.join(tmp, lib)
         if subprocess.call([sys.executable, os.path.join(ROOT, "tools", "implib.py"),
-                            os.path.join(ROOT, src), lib], stdout=subprocess.DEVNULL) != 0:
+                            os.path.join(ROOT, src), lib, os.path.join(ROOT, "build", kind, dll)],
+                           stdout=subprocess.DEVNULL) != 0:
             sys.exit("import library for %s failed" % src)
         libs.append(lib)
     out = os.path.join(tmp, lk["out"])
