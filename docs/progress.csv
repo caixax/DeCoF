@@ -13161,7 +13161,7 @@ hl,10001510,500,?UpdateMasks@CVoiceGameMgr@@AAEXXZ,CVoiceGameMgr::UpdateMasks,HL
 hl,10001710,121,?VoiceServerDebug@@YAXPBDZZ,VoiceServerDebug,HLSDK,game_shared/voice_gamemgr.cpp,,,MATCHED,100,refbytes:paranoia:game_shared__voice_gamemgr.obj:score5,
 hl,10001790,6,___local_stdio_printf_options,__local_stdio_printf_options,LIB,,,,,,reloc:10001710,
 hl,100017A0,6,?TeamID@CBaseEntity@@UAEPBDXZ,CBaseEntity::TeamID,HLSDK,dlls/cbase.h,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,,refbytes:paranoia:dlls__aflock.obj:score1,
-hl,100017B0,37,_sscanf,,UNKNOWN,,,,TODO,,,
+hl,100017B0,37,_sscanf,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
 hl,100017E0,265,_PM_DrawBBox,PM_DrawBBox,HLSDK,pm_shared/pm_debug.c,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100018F0,2857,_PM_DrawPhysEntBBox,PM_DrawPhysEntBBox,HLSDK,pm_shared/pm_debug.c,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10002420,148,_PM_DrawRectangle,PM_DrawRectangle,HLSDK,pm_shared/pm_debug.c,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,refbytes:paranoia:pm_shared__pm_debug.obj:score4,
@@ -14027,74 +14027,74 @@ hl,1002F0D0,156,?Spawn@CDoorPropView@@UAEXXZ,CDoorPropView::Spawn,COF,dlls/cof_d
 hl,1002F170,5,_door_prop_view,door_prop_view,HLSDK,dlls/cof_door_prop_view.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( door_prop_view, CDoorPropView )"
 hl,1002F180,92,??$GetClassPtr@VCDualWeapon@@@@YAPAVCDualWeapon@@PAV0@@Z,GetClassPtr<CDualWeapon>,HLSDK,dlls/cof_dualpistol.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
 hl,1002F1E0,87,,,UNKNOWN,guess:dlls/cof_dualpistol.cpp,,,TODO,,,
-hl,1002F240,8,,,UNKNOWN,,,,TODO,,,
-hl,1002F250,8,,,UNKNOWN,,,,TODO,,,
-hl,1002F260,10,,,UNKNOWN,,,,TODO,,,
-hl,1002F270,10,,,UNKNOWN,,,,TODO,,,
+hl,1002F240,8,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
+hl,1002F250,8,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
+hl,1002F260,10,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
+hl,1002F270,10,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
 hl,1002F280,15,??$_Construct_in_place@PADABQAD@std@@YAXAAPADABQAD@Z,&>,LIB,dlls/cof_dualpistol.cpp,,,TODO,,,
 hl,1002F290,53,??$_Deallocate@$07$0A@@std@@YAXPAXI@Z,"std::_Deallocate<8,0>",LIB,dlls/cof_dualpistol.cpp,,,TODO,,,
 hl,1002F2E0,27,??$_Fputc@D@std@@YA_NDPAU_iobuf@@@Z,std::_Fputc<char>,LIB,dlls/cof_dualpistol.cpp,,,TODO,,,
 hl,1002F300,77,??$_Immortalize_memcpy_image@V_Iostream_error_category2@std@@@std@@YAABV_Iostream_error_category2@0@XZ,std::_Iostream_error_category2>,LIB,dlls/cof_dualpistol.cpp,,,TODO,,,
-hl,1002F350,301,,,UNKNOWN,,,,TODO,,,
-hl,1002F49F,167,,,UNKNOWN,,,,TODO,,,
+hl,1002F350,301,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
+hl,1002F49F,167,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
 hl,1002F550,159,??$getline@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@YAAAV?$basic_istream@DU?$char_traits@D@std@@@0@AAV10@AAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@@Z,>,LIB,dlls/cof_dualpistol.cpp,,,TODO,,,
 hl,1002F5F0,343,??$use_facet@V?$codecvt@DDU_Mbstatet@@@std@@@std@@YAABV?$codecvt@DDU_Mbstatet@@@0@ABVlocale@0@@Z,>,LIB,dlls/cof_dualpistol.cpp,,,TODO,,,
 hl,1002F750,373,??$use_facet@V?$ctype@D@std@@@std@@YAABV?$ctype@D@0@ABVlocale@0@@Z,>,LIB,dlls/cof_dualpistol.cpp,,,TODO,,,
-hl,1002F8D0,564,,,UNKNOWN,,,,TODO,,,
-hl,1002FB10,470,,,UNKNOWN,,,,TODO,,,
-hl,1002FCF0,160,,,UNKNOWN,,,,TODO,,,
+hl,1002F8D0,564,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
+hl,1002FB10,470,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
+hl,1002FCF0,160,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
 hl,1002FDA0,424,??0_System_error@std@@IAE@Verror_code@1@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@1@@Z,std::_System_error::_System_error,LIB,dlls/cof_dualpistol.cpp,,,TODO,,,
 hl,1002FF50,65,??0_System_error@std@@QAE@ABV01@@Z,std::_System_error::_System_error,LIB,dlls/cof_dualpistol.cpp,,,TODO,,,
-hl,1002FFA0,51,,,UNKNOWN,,,,TODO,,,
-hl,1002FFE0,51,,,UNKNOWN,,,,TODO,,,
+hl,1002FFA0,51,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
+hl,1002FFE0,51,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
 hl,10030020,24,??0bad_array_new_length@std@@QAE@XZ,std::bad_array_new_length::bad_array_new_length,LIB,dlls/cof_dualpistol.cpp,,,TODO,,,
-hl,10030040,51,,,UNKNOWN,,,,TODO,,,
+hl,10030040,51,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
 hl,10030080,45,??0exception@std@@QAE@ABV01@@Z,std::exception::exception,LIB,dlls/cof_dualpistol.cpp,,,TODO,,,
-hl,100300B0,71,,,UNKNOWN,,,,TODO,,,
+hl,100300B0,71,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
 hl,10030100,187,??0failure@ios_base@std@@QAE@PBDABVerror_code@2@@Z,std::ios_base::failure::failure,LIB,dlls/cof_dualpistol.cpp,,,TODO,,,
-hl,100301C0,51,,,UNKNOWN,,,,TODO,,,
-hl,10030200,71,,,UNKNOWN,,,,TODO,,,
-hl,10030250,26,,,UNKNOWN,,,,TODO,,,
-hl,10030270,26,,,UNKNOWN,,,,TODO,,,
-hl,10030290,312,,,UNKNOWN,,,,TODO,,,
+hl,100301C0,51,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
+hl,10030200,71,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
+hl,10030250,26,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
+hl,10030270,26,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
+hl,10030290,312,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
 hl,100303D0,67,??1?$basic_ifstream@DU?$char_traits@D@std@@@std@@UAE@XZ,>,LIB,dlls/cof_dualpistol.cpp,,,TODO,,,
-hl,10030420,71,,,UNKNOWN,,,,TODO,,,
+hl,10030420,71,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
 hl,10030470,28,??1?$basic_istream@DU?$char_traits@D@std@@@std@@UAE@XZ,>,LIB,dlls/cof_dualpistol.cpp,,,TODO,,,
 hl,100304D0,42,??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ,>,LIB,dlls/cof_dualpistol.cpp,,,TODO,,,
 hl,10030510,58,??1?$ctype@D@std@@MAE@XZ,std::ctype<char>::~ctype<char>,LIB,dlls/cof_dualpistol.cpp,,,TODO,,,
 hl,10030550,13,??1?$unique_ptr@V_Facet_base@std@@U?$default_delete@V_Facet_base@std@@@2@@std@@QAE@XZ,>,LIB,dlls/cof_dualpistol.cpp,,,TODO,,,
-hl,10030570,207,,,UNKNOWN,,,,TODO,,,
-hl,10030650,69,,,UNKNOWN,,,,TODO,,,
-hl,100306A0,69,,,UNKNOWN,,,,TODO,,,
+hl,10030570,207,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
+hl,10030650,69,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
+hl,100306A0,69,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
 hl,10030760,7,??1?$codecvt@DDU_Mbstatet@@@std@@MAE@XZ,_Mbstatet>,LIB,dlls/cof_dualpistol.cpp,,,TODO,,,
-hl,10030790,64,,,UNKNOWN,,,,TODO,,,
+hl,10030790,64,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
 hl,100307E0,25,??1locale@std@@QAE@XZ,std::locale::~locale,LIB,dlls/cof_dualpistol.cpp,,,TODO,,,
-hl,10030800,76,,,UNKNOWN,,,,TODO,,,
-hl,10030860,96,,,UNKNOWN,,,,TODO,,,
+hl,10030800,76,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
+hl,10030860,96,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
 hl,100308F0,137,??_D?$basic_ifstream@DU?$char_traits@D@std@@@std@@QAEXXZ,destructor',LIB,dlls/cof_dualpistol.cpp,,,TODO,,,
 hl,1003097E,8,??_G?$basic_ifstream@DU?$char_traits@D@std@@@std@@UAEPAXI@Z,"std::basic_ifstream<char,std::char_traits<char> >::`scalar deleting destructor'",LIB,,1.0,1.0->1.4 changed; 1.4->1.55 changed,,,hl_1.55_to_1.6a.csv,
 hl,10030986,8,??_G?$basic_istream@DU?$char_traits@D@std@@@std@@UAEPAXI@Z,"std::basic_istream<char,std::char_traits<char> >::`scalar deleting destructor'",LIB,,1.0,1.0->1.4 changed; 1.4->1.55 changed,,,hl_1.55_to_1.6a.csv,
 hl,10030990,35,??_G?$basic_filebuf@DU?$char_traits@D@std@@@std@@UAEPAXI@Z,destructor',LIB,dlls/cof_dualpistol.cpp,,,TODO,,,
-hl,100309C0,41,,,UNKNOWN,,,,TODO,,,
+hl,100309C0,41,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
 hl,100309F0,96,??_G?$basic_ios@DU?$char_traits@D@std@@@std@@UAEPAXI@Z,"std::basic_ios<char,std::char_traits<char> >::`scalar deleting destructor'",LIB,,1.0,1.0->1.4 same; 1.4->1.55 same,,,hl_1.55_to_1.6a.csv,
-hl,10030A60,123,,,UNKNOWN,,,,TODO,,,
+hl,10030A60,123,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
 hl,10030AE0,80,??_G?$basic_streambuf@DU?$char_traits@D@std@@@std@@UAEPAXI@Z,destructor',LIB,dlls/cof_dualpistol.cpp,,,TODO,,,
-hl,10030B30,36,,,UNKNOWN,,,,TODO,,,
+hl,10030B30,36,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
 hl,10030B60,83,??_G?$ctype@D@std@@MAEPAXI@Z,destructor',LIB,dlls/cof_dualpistol.cpp,,,TODO,,,
 hl,10030BC0,36,??_G_Facet_base@std@@UAEPAXI@Z,destructor',LIB,dlls/cof_dualpistol.cpp,,,TODO,,,
 hl,10030BF0,30,??_G_Iostream_error_category2@std@@UAEPAXI@Z,destructor',LIB,dlls/cof_dualpistol.cpp,,,TODO,,,
-hl,10030C10,48,,,UNKNOWN,,,,TODO,,,
+hl,10030C10,48,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
 hl,10030C40,48,??_Gbad_alloc@std@@UAEPAXI@Z,std::bad_alloc::`scalar deleting destructor',LIB,,1.0,1.0->1.4 same; 1.4->1.55 same,,,hl_1.55_to_1.6a.csv,
-hl,10030C70,48,,,UNKNOWN,,,,TODO,,,
-hl,10030CA0,48,,,UNKNOWN,,,,TODO,,,
-hl,10030CD0,36,,,UNKNOWN,,,,TODO,,,
-hl,10030D00,36,,,UNKNOWN,,,,TODO,,,
-hl,10030D30,48,,,UNKNOWN,,,,TODO,,,
-hl,10030D60,36,,,UNKNOWN,,,,TODO,,,
+hl,10030C70,48,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
+hl,10030CA0,48,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
+hl,10030CD0,36,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
+hl,10030D00,36,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
+hl,10030D30,48,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
+hl,10030D60,36,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
 hl,10030D90,48,??_Gfailure@ios_base@std@@UAEPAXI@Z,std::ios_base::failure::`scalar deleting destructor',LIB,,1.0,1.0->1.4 same; 1.4->1.55 same,,,hl_1.55_to_1.6a.csv,
 hl,10030DC0,96,??_Gios_base@std@@UAEPAXI@Z,std::ios_base::`scalar deleting destructor',LIB,,1.0,1.0->1.4 same; 1.4->1.55 same,,,hl_1.55_to_1.6a.csv,
 hl,10030E30,48,??_Gruntime_error@std@@UAEPAXI@Z,std::runtime_error::`scalar deleting destructor',LIB,,1.0,1.0->1.4 same; 1.4->1.55 same,,,hl_1.55_to_1.6a.csv,
-hl,10030E60,48,,,UNKNOWN,,,,TODO,,,
+hl,10030E60,48,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
 hl,10030E90,370,?BranchHit@CDualWeapon@@QAEX_N@Z,CDualWeapon::BranchHit,UNKNOWN,dlls/cof_dualpistol.cpp,,,MATCHED,100,,
 hl,10031020,1833,?Deploy@CDualWeapon@@UAEHXZ,CDualWeapon::Deploy,COF,dlls/cof_dualpistol.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100317C0,739,?FlareDoIgnite@CDualWeapon@@QAEXXZ,CDualWeapon::FlareDoIgnite,COF,dlls/cof_dualpistol.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
@@ -14139,31 +14139,31 @@ hl,10037150,19,?_Gnavail@?$basic_streambuf@DU?$char_traits@D@std@@@std@@IBE_JXZ,
 hl,10037170,5,?_Incref@facet@locale@std@@UAEXXZ,std::locale::facet::_Incref,LIB,dlls/cof_dualpistol.cpp,,,TODO,,,
 hl,10037180,231,?_Init@?$basic_filebuf@DU?$char_traits@D@std@@@std@@IAEXPAU_iobuf@@W4_Initfl@12@@Z,>::_Init,LIB,dlls/cof_dualpistol.cpp,,,TODO,,,
 hl,10037270,138,?_Initcvt@?$basic_filebuf@DU?$char_traits@D@std@@@std@@IAEXABV?$codecvt@DDU_Mbstatet@@@2@@Z,>::_Initcvt,LIB,dlls/cof_dualpistol.cpp,,,TODO,,,
-hl,10037300,497,,,UNKNOWN,,,,TODO,,,
-hl,10037489,33,,,UNKNOWN,,,,TODO,,,
-hl,10037530,15,,,UNKNOWN,,,,TODO,,,
-hl,10037540,3,,,UNKNOWN,,,,TODO,,,
-hl,10037550,180,,,UNKNOWN,,,,TODO,,,
-hl,100375C8,18,,,UNKNOWN,,,,TODO,,,
+hl,10037300,497,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
+hl,10037489,33,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
+hl,10037530,15,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
+hl,10037540,3,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
+hl,10037550,180,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
+hl,100375C8,18,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
 hl,10037630,19,?_Pnavail@?$basic_streambuf@DU?$char_traits@D@std@@@std@@IBE_JXZ,>::_Pnavail,LIB,dlls/cof_dualpistol.cpp,,,TODO,,,
 hl,10037650,35,?_Reset_back@?$basic_filebuf@DU?$char_traits@D@std@@@std@@AAEXXZ,"std::basic_filebuf<char,std::char_traits<char> >::_Reset_back",LIB,,,,,,hl_1.6a_crt_strong.csv,
-hl,10037680,28,,,UNKNOWN,,,,TODO,,,
-hl,100376A0,15,,,UNKNOWN,,,,TODO,,,
-hl,100376B0,3,,,UNKNOWN,,,,TODO,,,
-hl,100376C0,10,,,UNKNOWN,,,,TODO,,,
-hl,100376D0,313,,,UNKNOWN,,,,TODO,,,
-hl,10037810,224,,,UNKNOWN,,,,TODO,,,
-hl,10037900,113,,,UNKNOWN,,,,TODO,,,
+hl,10037680,28,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
+hl,100376A0,15,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
+hl,100376B0,3,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
+hl,100376C0,10,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
+hl,100376D0,313,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
+hl,10037810,224,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
+hl,10037900,113,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
 hl,10037980,18,?default_error_condition@error_category@std@@UBE?AVerror_condition@2@H@Z,std::error_category::default_error_condition,LIB,,,,,,hl_1.6a_crt_strong.csv,
 hl,100379A0,3,?do_always_noconv@?$codecvt@DDU_Mbstatet@@@std@@MBE_NXZ,_Mbstatet>::do_always_noconv,LIB,dlls/cof_dualpistol.cpp,,,TODO,,,
 hl,100379B0,3,?do_always_noconv@codecvt_base@std@@MBE_NXZ,std::codecvt_base::do_always_noconv,LIB,dlls/cof_dualpistol.cpp,,,TODO,,,
-hl,100379C0,6,,,UNKNOWN,,,,TODO,,,
-hl,100379D0,28,,,UNKNOWN,,,,TODO,,,
+hl,100379C0,6,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
+hl,100379D0,28,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
 hl,100379F0,21,?do_length@?$codecvt@DDU_Mbstatet@@@std@@MBEHAAU_Mbstatet@@PBD1I@Z,_Mbstatet>::do_length,LIB,dlls/cof_dualpistol.cpp,,,TODO,,,
-hl,10037A10,6,,,UNKNOWN,,,,TODO,,,
+hl,10037A10,6,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
 hl,10037A20,10,?do_narrow@?$ctype@D@std@@MBEDDD@Z,std::ctype<char>::do_narrow,LIB,dlls/cof_dualpistol.cpp,,,TODO,,,
 hl,10037A30,31,?do_narrow@?$ctype@D@std@@MBEPBDPBD0DPAD@Z,std::ctype<char>::do_narrow,LIB,dlls/cof_dualpistol.cpp,,,TODO,,,
-hl,10037A50,28,,,UNKNOWN,,,,TODO,,,
+hl,10037A50,28,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
 hl,10037A70,24,?do_tolower@?$ctype@D@std@@MBEDD@Z,std::ctype<char>::do_tolower,LIB,dlls/cof_dualpistol.cpp,,,TODO,,,
 hl,10037A90,48,?do_tolower@?$ctype@D@std@@MBEPBDPADPBD@Z,std::ctype<char>::do_tolower,LIB,dlls/cof_dualpistol.cpp,,,TODO,,,
 hl,10037AC0,24,?do_toupper@?$ctype@D@std@@MBEDD@Z,std::ctype<char>::do_toupper,LIB,dlls/cof_dualpistol.cpp,,,TODO,,,
@@ -14173,18 +14173,18 @@ hl,10037B30,10,?do_widen@?$ctype@D@std@@MBEDD@Z,std::ctype<char>::do_widen,LIB,d
 hl,10037B40,31,?do_widen@?$ctype@D@std@@MBEPBDPBD0PAD@Z,std::ctype<char>::do_widen,LIB,dlls/cof_dualpistol.cpp,,,TODO,,,
 hl,10037B60,39,?equivalent@error_category@std@@UBE_NABVerror_code@2@H@Z,std::error_category::equivalent,LIB,dlls/cof_dualpistol.cpp,,,TODO,,,
 hl,10037B90,60,?equivalent@error_category@std@@UBE_NHABVerror_condition@2@@Z,std::error_category::equivalent,LIB,dlls/cof_dualpistol.cpp,,,TODO,,,
-hl,10037BD0,310,,,UNKNOWN,,,,TODO,,,
+hl,10037BD0,310,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
 hl,10037D10,6,?iItemSlot@CDualWeapon@@UAEHXZ,CDualWeapon::iItemSlot,COF,dlls/cof_dual_weapon.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10037D20,30,?imbue@?$basic_filebuf@DU?$char_traits@D@std@@@std@@MAEXABVlocale@2@@Z,>::imbue,LIB,dlls/cof_dualpistol.cpp,,,TODO,,,
 hl,10037D40,3,?CameraShoot@CDualWeapon@@QAEX_N@Z,CDualWeapon::CameraShoot,UNKNOWN,dlls/cof_dualpistol.cpp,,,MATCHED,100,,
 hl,10037D50,23,?make_error_code@std@@YA?AVerror_code@1@W4io_errc@1@@Z,std::make_error_code,LIB,,,,,,hl_1.6a_crt_strong.csv,
 hl,10037D70,171,?message@_Iostream_error_category2@std@@UBE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@H@Z,std::_Iostream_error_category2::message,LIB,dlls/cof_dualpistol.cpp,,,TODO,,,
-hl,10037E20,6,,,UNKNOWN,,,,TODO,,,
+hl,10037E20,6,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
 hl,10037E30,359,?overflow@?$basic_filebuf@DU?$char_traits@D@std@@@std@@MAEHH@Z,>::overflow,LIB,dlls/cof_dualpistol.cpp,,,TODO,,,
-hl,10037FA0,6,,,UNKNOWN,,,,TODO,,,
+hl,10037FA0,6,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
 hl,10037FB0,170,?pbackfail@?$basic_filebuf@DU?$char_traits@D@std@@@std@@MAEHH@Z,>::pbackfail,LIB,dlls/cof_dualpistol.cpp,,,TODO,,,
-hl,10038060,6,,,UNKNOWN,,,,TODO,,,
-hl,10038070,242,,,UNKNOWN,,,,TODO,,,
+hl,10038060,6,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
+hl,10038070,242,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
 hl,10038170,215,?seekoff@?$basic_filebuf@DU?$char_traits@D@std@@@std@@MAE?AV?$fpos@U_Mbstatet@@@2@_JHH@Z,>::seekoff,LIB,dlls/cof_dualpistol.cpp,,,TODO,,,
 hl,10038250,45,?seekoff@?$basic_streambuf@DU?$char_traits@D@std@@@std@@MAE?AV?$fpos@U_Mbstatet@@@2@_JHH@Z,>::seekoff,LIB,dlls/cof_dualpistol.cpp,,,TODO,,,
 hl,10038280,197,?seekpos@?$basic_filebuf@DU?$char_traits@D@std@@@std@@MAE?AV?$fpos@U_Mbstatet@@@2@V32@H@Z,>::seekpos,LIB,dlls/cof_dualpistol.cpp,,,TODO,,,
@@ -14196,7 +14196,7 @@ hl,10038420,5,?showmanyc@?$basic_streambuf@DU?$char_traits@D@std@@@std@@MAE_JXZ,
 hl,10038430,100,?snextc@?$basic_streambuf@DU?$char_traits@D@std@@@std@@QAEHXZ,>::snextc,LIB,dlls/cof_dualpistol.cpp,,,TODO,,,
 hl,100384A0,45,?sync@?$basic_filebuf@DU?$char_traits@D@std@@@std@@MAEHXZ,>::sync,LIB,dlls/cof_dualpistol.cpp,,,TODO,,,
 hl,100384D0,3,?sync@?$basic_streambuf@DU?$char_traits@D@std@@@std@@MAEHXZ,>::sync,LIB,dlls/cof_dualpistol.cpp,,,TODO,,,
-hl,100384E0,734,,,UNKNOWN,,,,TODO,,,
+hl,100384E0,734,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
 hl,100387C0,37,?uflow@?$basic_streambuf@DU?$char_traits@D@std@@@std@@MAEHXZ,>::uflow,LIB,dlls/cof_dualpistol.cpp,,,TODO,,,
 hl,100387F0,61,?underflow@?$basic_filebuf@DU?$char_traits@D@std@@@std@@MAEHXZ,>::underflow,LIB,dlls/cof_dualpistol.cpp,,,TODO,,,
 hl,10038830,4,?eof@?$_Narrow_char_traits@DH@std@@SAHXZ,"std::_Narrow_char_traits<char,int>::eof",LIB,dlls/cof_dualpistol.cpp,,,TODO,,,
@@ -14479,31 +14479,31 @@ hl,10049370,5,_cof_inter_door_exitchange,cof_inter_door_exitchange,HLSDK,dlls/co
 hl,10049380,5,_inter_door,inter_door,HLSDK,dlls/cof_interdoor.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( inter_door, CInterDoor )"
 hl,10049390,5,_inter_door_disable,inter_door_disable,HLSDK,dlls/cof_interdoor.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( inter_door_disable, CInterDoorDisable )"
 hl,100493A0,5,_inter_door_exit,inter_door_exit,HLSDK,dlls/cof_interdoor.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( inter_door_exit, CPointEntity )"
-hl,100493B0,445,,,UNKNOWN,,,,TODO,,,
-hl,1004958C,181,,,UNKNOWN,,,,TODO,,,
+hl,100493B0,445,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
+hl,1004958C,181,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
 hl,10049650,92,??$GetClassPtr@VCInterDoorCoop@@@@YAPAVCInterDoorCoop@@PAV0@@Z,GetClassPtr<CInterDoorCoop>,HLSDK,dlls/cof_interdoorcoop.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
 hl,100496B0,92,??$GetClassPtr@VCInterDoorCoopChangeLevel@@@@YAPAVCInterDoorCoopChangeLevel@@PAV0@@Z,GetClassPtr<CInterDoorCoopChangeLevel>,HLSDK,dlls/cof_interdoorcoop.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
 hl,10049710,92,??$GetClassPtr@VCInterDoorDisableCoop@@@@YAPAVCInterDoorDisableCoop@@PAV0@@Z,GetClassPtr<CInterDoorDisableCoop>,HLSDK,dlls/cof_interdoorcoop.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
 hl,10049770,8,??$_Maklocchr@D@std@@YADDPADABU_Cvtvec@@@Z,std::_Maklocchr<char>,LIB,dlls/cof_interdoorcoop.cpp,,,TODO,,,
-hl,10049780,75,,,UNKNOWN,,,,TODO,,,
+hl,10049780,75,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
 hl,100497E0,16,??$flush@DU?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@@Z,>,LIB,dlls/cof_interdoorcoop.cpp,,,TODO,,,
 hl,100497F0,343,??$use_facet@V?$num_put@DV?$ostreambuf_iterator@DU?$char_traits@D@std@@@std@@@std@@@std@@YAABV?$num_put@DV?$ostreambuf_iterator@DU?$char_traits@D@std@@@std@@@0@ABVlocale@0@@Z,>,LIB,dlls/cof_interdoorcoop.cpp,,,TODO,,,
 hl,10049950,522,??$use_facet@V?$numpunct@D@std@@@std@@YAABV?$numpunct@D@0@ABVlocale@0@@Z,>,LIB,dlls/cof_interdoorcoop.cpp,,,TODO,,,
-hl,10049B60,564,,,UNKNOWN,,,,TODO,,,
-hl,10049DA0,456,,,UNKNOWN,,,,TODO,,,
-hl,10049F70,172,,,UNKNOWN,,,,TODO,,,
+hl,10049B60,564,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
+hl,10049DA0,456,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
+hl,10049F70,172,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
 hl,1004A020,148,??0sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@AAV12@@Z,>::sentry::sentry,LIB,dlls/cof_interdoorcoop.cpp,,,TODO,,,
 hl,1004A0C0,36,??1?$_Tidy_guard@V?$numpunct@D@std@@@std@@QAE@XZ,>,LIB,dlls/cof_interdoorcoop.cpp,,,TODO,,,
 hl,1004A0F0,67,??1?$basic_ofstream@DU?$char_traits@D@std@@@std@@UAE@XZ,>,LIB,dlls/cof_interdoorcoop.cpp,,,TODO,,,
 hl,1004A140,28,??1?$basic_ostream@DU?$char_traits@D@std@@@std@@UAE@XZ,>,LIB,dlls/cof_interdoorcoop.cpp,,,TODO,,,
 hl,1004A170,44,??1?$numpunct@D@std@@MAE@XZ,std::numpunct<char>::~numpunct<char>,LIB,dlls/cof_interdoorcoop.cpp,,,TODO,,,
-hl,1004A1A0,387,,,UNKNOWN,,,,TODO,,,
-hl,1004A350,397,,,UNKNOWN,,,,TODO,,,
+hl,1004A1A0,387,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
+hl,1004A350,397,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
 hl,1004A510,137,??_D?$basic_ofstream@DU?$char_traits@D@std@@@std@@QAEXXZ,destructor',LIB,dlls/cof_interdoorcoop.cpp,,,TODO,,,
 hl,1004A59E,8,??_G?$basic_ofstream@DU?$char_traits@D@std@@@std@@UAEPAXI@Z,"std::basic_ofstream<char,std::char_traits<char> >::`scalar deleting destructor'",LIB,,1.0,1.0->1.4 changed; 1.4->1.55 changed,,,hl_1.55_to_1.6a.csv,
 hl,1004A5A6,8,??_G?$basic_ostream@DU?$char_traits@D@std@@@std@@UAEPAXI@Z,"std::basic_ostream<char,std::char_traits<char> >::`scalar deleting destructor'",LIB,,1.0,1.0->1.4 changed; 1.4->1.55 changed,,,hl_1.55_to_1.6a.csv,
-hl,1004A5B0,41,,,UNKNOWN,,,,TODO,,,
-hl,1004A5E0,123,,,UNKNOWN,,,,TODO,,,
+hl,1004A5B0,41,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
+hl,1004A5E0,123,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
 hl,1004A660,36,??_G?$codecvt@DDU_Mbstatet@@@std@@MAEPAXI@Z,destructor',LIB,dlls/cof_interdoorcoop.cpp,,,TODO,,,
 hl,1004A690,69,??_G?$numpunct@D@std@@MAEPAXI@Z,destructor',LIB,dlls/cof_interdoorcoop.cpp,,,TODO,,,
 hl,1004A6E0,1466,?BuildPlayerList@CInterDoorCoopChangeLevel@@QAEXPAVCBasePlayer@@@Z,CInterDoorCoopChangeLevel::BuildPlayerList,UNKNOWN,dlls/cof_interdoorcoop.cpp,,,MATCHED,100,,
@@ -14532,11 +14532,11 @@ hl,1004BF00,506,?Use@CInterDoorCoop@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CInter
 hl,1004C100,604,?Use@CInterDoorCoopChangeLevel@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CInterDoorCoopChangeLevel::Use,COF,dlls/cof_interdoorcoop.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1004C360,236,?Use@CInterDoorDisableCoop@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CInterDoorDisableCoop::Use,COF,dlls/cof_interdoorcoop.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1004C450,190,?_Ffmt@?$num_put@DV?$ostreambuf_iterator@DU?$char_traits@D@std@@@std@@@std@@ABAPADPADDH@Z,>::_Ffmt,LIB,dlls/cof_interdoorcoop.cpp,,,TODO,,,
-hl,1004C510,1273,,,UNKNOWN,,,,TODO,,,
-hl,1004CA10,1182,,,UNKNOWN,,,,TODO,,,
+hl,1004C510,1273,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
+hl,1004CA10,1182,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
 hl,1004CEB0,113,?_Put@?$num_put@DV?$ostreambuf_iterator@DU?$char_traits@D@std@@@std@@@std@@ABA?AV?$ostreambuf_iterator@DU?$char_traits@D@std@@@2@V32@PBDI@Z,>::_Put,LIB,dlls/cof_interdoorcoop.cpp,,,TODO,,,
 hl,1004CF30,104,?_Rep@?$num_put@DV?$ostreambuf_iterator@DU?$char_traits@D@std@@@std@@@std@@ABA?AV?$ostreambuf_iterator@DU?$char_traits@D@std@@@2@V32@DI@Z,>::_Rep,LIB,dlls/cof_interdoorcoop.cpp,,,TODO,,,
-hl,1004CFA0,10,,,UNKNOWN,,,,TODO,,,
+hl,1004CFA0,10,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
 hl,1004CFB0,204,?close@?$basic_filebuf@DU?$char_traits@D@std@@@std@@QAEPAV12@XZ,>::close,LIB,dlls/cof_interdoorcoop.cpp,,,TODO,,,
 hl,1004D080,4,?do_decimal_point@?$numpunct@D@std@@MBEDXZ,std::numpunct<char>::do_decimal_point,LIB,dlls/cof_interdoorcoop.cpp,,,TODO,,,
 hl,1004D090,59,?do_falsename@?$numpunct@D@std@@MBE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@XZ,std::numpunct<char>::do_falsename,LIB,dlls/cof_interdoorcoop.cpp,,,TODO,,,
@@ -14551,7 +14551,7 @@ hl,1004D6E0,207,?do_put@?$num_put@DV?$ostreambuf_iterator@DU?$char_traits@D@std@
 hl,1004D7B0,435,?do_put@?$num_put@DV?$ostreambuf_iterator@DU?$char_traits@D@std@@@std@@@std@@MBE?AV?$ostreambuf_iterator@DU?$char_traits@D@std@@@2@V32@AAVios_base@2@D_N@Z,>::do_put,LIB,dlls/cof_interdoorcoop.cpp,,,TODO,,,
 hl,1004D970,4,?do_thousands_sep@?$numpunct@D@std@@MBEDXZ,std::numpunct<char>::do_thousands_sep,LIB,dlls/cof_interdoorcoop.cpp,,,TODO,,,
 hl,1004D980,59,?do_truename@?$numpunct@D@std@@MBE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@XZ,std::numpunct<char>::do_truename,LIB,dlls/cof_interdoorcoop.cpp,,,TODO,,,
-hl,1004D9C0,338,,,UNKNOWN,,,,TODO,,,
+hl,1004D9C0,338,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
 hl,1004DB20,5,_inter_door_coop,inter_door_coop,HLSDK,dlls/cof_interdoorcoop.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( inter_door_coop, CInterDoorCoop )"
 hl,1004DB30,5,_inter_door_coop_changelevel,inter_door_coop_changelevel,HLSDK,dlls/cof_interdoorcoop.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( inter_door_coop_changelevel, CInterDoorCoopChangeLevel )"
 hl,1004DB40,5,_inter_door_disable_coop,inter_door_disable_coop,HLSDK,dlls/cof_interdoorcoop.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( inter_door_disable_coop, CInterDoorDisableCoop )"
@@ -15816,7 +15816,7 @@ hl,10092380,49,?Activate@CEnvSky@@UAEXXZ,CEnvSky::Activate,SPIRIT,dlls/effects.c
 hl,100923C0,49,?Activate@CLightning@@UAEXXZ,CLightning::Activate,HLSDK,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10092400,278,?Affect@CEnvBeamTrail@@QAEXPAVCBaseEntity@@W4USE_TYPE@@@Z,CEnvBeamTrail::Affect,UNKNOWN,dlls/effects.cpp,,,MATCHED,100,,
 hl,10092520,25,?AllowToContinue@CCofStressTest@@QAEXXZ,CCofStressTest::AllowToContinue,UNKNOWN,dlls/effects.cpp,,,MATCHED,100,,
-hl,10092540,80,,,UNKNOWN,,,,TODO,,,
+hl,10092540,80,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
 hl,10092590,125,?Animate@CSprite@@QAEXM@Z,CSprite::Animate,HLSDK,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10092610,72,?AnimateThink@CSprite@@QAEXXZ,CSprite::AnimateThink,HLSDK,dlls/effects.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10092660,57,?AnimateUntilDead@CSprite@@QAEXXZ,CSprite::AnimateUntilDead,HLSDK,dlls/effects.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
@@ -17030,14 +17030,14 @@ hl,100C4FD0,5,?CanPlayerHearPlayer@CMultiplayGameMgrHelper@@UAE_NPAVCBasePlayer@
 hl,100C4FE0,36,??_GCMultiplayGameMgrHelper@@UAEPAXI@Z,CMultiplayGameMgrHelper::`scalar deleting destructor',LIB,,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,,hl_1.55_to_1.6a.csv,
 hl,100C5010,36,??_GIVoiceGameMgrHelper@@UAEPAXI@Z,IVoiceGameMgrHelper::`scalar deleting destructor',LIB,,1.0,1.0->1.4 same; 1.4->1.55 same,TODO,,hl_1.55_to_1.6a.csv,
 hl,100C5040,74,,,UNKNOWN,guess:dlls/multiplay_gamerules.cpp,,,TODO,,,
-hl,100C5090,77,,,UNKNOWN,,,,TODO,,,
-hl,100C50E0,160,,,UNKNOWN,,,,TODO,,,
+hl,100C5090,77,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
+hl,100C50E0,160,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
 hl,100C5180,292,??0CHalfLifeMultiplay@@QAE@XZ,CHalfLifeMultiplay::CHalfLifeMultiplay,HLSDK,dlls/multiplay_gamerules.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100C52C0,6,?AllowAutoTargetCrosshair@CGameRules@@UAEHXZ,CGameRules::AllowAutoTargetCrosshair,HLSDK,dlls/gamerules.h,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100C52D0,32,?AllowAutoTargetCrosshair@CHalfLifeMultiplay@@UAEHXZ,CHalfLifeMultiplay::AllowAutoTargetCrosshair,COF,dlls/multiplay_gamerules.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100C52F0,8,?AmmoShouldRespawn@CHalfLifeMultiplay@@UAEHPAVCBasePlayerAmmo@@@Z,CHalfLifeMultiplay::AmmoShouldRespawn,HLSDK,dlls/multiplay_gamerules.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100C5300,4706,,,UNKNOWN,guess:dlls/multiplay_gamerules.cpp,,,TODO,,,
-hl,100C6570,2151,,,UNKNOWN,,,,TODO,,,
+hl,100C6570,2151,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
 hl,100C6DE0,265,?COM_Parse@@YAPADPAD@Z,COM_Parse,HLSDK,dlls/multiplay_gamerules.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,refbytes:paranoia:dlls__multiplay_gamerules.obj:score0,
 hl,100C6EF0,73,?COM_TokenWaiting@@YAHPAD@Z,COM_TokenWaiting,HLSDK,dlls/multiplay_gamerules.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,refbytes:paranoia:dlls__multiplay_gamerules.obj:score2,
 hl,100C6F40,8,?CanHaveItem@CHalfLifeMultiplay@@UAEHPAVCBasePlayer@@PAVCItem@@@Z,CHalfLifeMultiplay::CanHaveItem,HLSDK,dlls/multiplay_gamerules.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
@@ -17377,9 +17377,9 @@ hl,100DA140,92,??$GetClassPtr@VCRevertSaved@@@@YAPAVCRevertSaved@@PAV0@@Z,GetCla
 hl,100DA1A0,92,??$GetClassPtr@VCSprayCan@@@@YAPAVCSprayCan@@PAV0@@Z,CSprayCan>,HLSDK,dlls/player.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_manual.csv,
 hl,100DA200,92,??$GetClassPtr@VCStripWeapons@@@@YAPAVCStripWeapons@@PAV0@@Z,GetClassPtr<CStripWeapons>,HLSDK,dlls/player.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
 hl,100DA260,64,??$_Destroy_range@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@std@@YAXPAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@QAV10@AAV?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@0@@Z,>,LIB,dlls/player.cpp,,,MATCHED,100,,
-hl,100DA2A0,395,,,UNKNOWN,,,,TODO,,,
+hl,100DA2A0,395,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
 hl,100DA460,108,??$_Uninitialized_move@PAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@YAPAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@QAV10@0PAV10@AAV?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@0@@Z,>,LIB,dlls/player.cpp,,,MATCHED,100,,
-hl,100DA4D0,260,,,UNKNOWN,,,,TODO,,,
+hl,100DA4D0,260,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
 hl,100DA5E0,153,??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z,>,LIB,dlls/player.cpp,,,MATCHED,100,,
 hl,100DA680,80,??1?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@QAE@XZ,>,LIB,dlls/player.cpp,,,TODO,,,
 hl,100DA6D0,1553,?AddDocument@CBasePlayer@@QAEXPAVCCoFDocument@@@Z,CBasePlayer::AddDocument,COF,dlls/player.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
@@ -17421,7 +17421,7 @@ hl,100DEEC0,50,?DualWieldAnimation@CBasePlayer@@QAEXH@Z,CBasePlayer::DualWieldAn
 hl,100DEF00,29,?Duck@CBasePlayer@@UAEXXZ,CBasePlayer::Duck,HLSDK,dlls/player.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100DEF20,182,?EHandlesNotSame@CBasePlayer@@QAE_NVEHANDLE@@0@Z,CBasePlayer::EHandlesNotSame,UNKNOWN,dlls/player.cpp,,,MATCHED,100,,
 hl,100DEFF0,90,?EnableControl@CBasePlayer@@QAEXH@Z,CBasePlayer::EnableControl,UNKNOWN,dlls/player.cpp,,,MATCHED,100,,
-hl,100DF050,170,,,UNKNOWN,,,,TODO,,,
+hl,100DF050,170,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
 hl,100DF100,128,?EndSave@CBasePlayer@@QAEXXZ,CBasePlayer::EndSave,COF,dlls/player.cpp,2010-prototype,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100DF180,1274,?EntSelectSpawnPoint@@YAPAUedict_s@@PAVCBaseEntity@@@Z,EntSelectSpawnPoint,HLSDK,dlls/player.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100DF690,13,?FBecomeProne@CBasePlayer@@UAEHXZ,CBasePlayer::FBecomeProne,HLSDK,dlls/player.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
@@ -17604,11 +17604,11 @@ hl,100F9790,836,?WeaponMelee@CBasePlayer@@QAEXXZ,CBasePlayer::WeaponMelee,COF,dl
 hl,100F9AE0,139,?WheelchairPlayerDeathThink@CBasePlayer@@QAEXXZ,CBasePlayer::WheelchairPlayerDeathThink,COF,dlls/player.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100F9B70,383,?WriteBeatenEnding@CBasePlayer@@QAEXHH@Z,CBasePlayer::WriteBeatenEnding,COF,dlls/player.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100F9CF0,22,?_Destroy@?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@AAEXPAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@0@Z,>::_Destroy,LIB,dlls/player.cpp,,,MATCHED,100,,
-hl,100F9D10,10,,,UNKNOWN,,,,TODO,,,
-hl,100F9D20,131,,,UNKNOWN,,,,TODO,,,
-hl,100F9DB0,131,,,UNKNOWN,,,,TODO,,,
+hl,100F9D10,10,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
+hl,100F9D20,131,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
+hl,100F9DB0,131,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
 hl,100F9E40,28,?deallocate@?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@QAEXQAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@I@Z,>::deallocate,LIB,dlls/player.cpp,,,MATCHED,100,,
-hl,100F9E60,379,,,UNKNOWN,,,,TODO,,,
+hl,100F9E60,379,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
 hl,100F9FE0,186,?open@?$basic_filebuf@DU?$char_traits@D@std@@@std@@QAEPAV12@PBDHH@Z,>::open,LIB,dlls/player.cpp,,,MATCHED,100,,
 hl,100FA0A0,124,?strstrtolower@@YA_NPAD0@Z,strstrtolower,UNKNOWN,dlls/player.cpp,,,MATCHED,100,,
 hl,100FA120,5,_hud_sprite,hud_sprite,HLSDK,dlls/player.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( hud_sprite, CHudSprite )"
@@ -18515,13 +18515,13 @@ hl,1011E760,49,?Restore@CBasePlayerItem@@UAEHAAVCRestore@@@Z,CBasePlayerItem::Re
 hl,1011E7A0,49,?Restore@CBasePlayerWeapon@@UAEHAAVCRestore@@@Z,CBasePlayerWeapon::Restore,HLSDK,dlls/weapons.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1011E7E0,49,?Restore@CBrowningWheelchair@@UAEHAAVCRestore@@@Z,CBrowningWheelchair::Restore,COF,dlls/weapons.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1011E820,49,,,UNKNOWN,guess:dlls/weapons.cpp,,,TODO,,,
-hl,1011E860,49,,,UNKNOWN,,,,TODO,,,
+hl,1011E860,49,?Restore@CCSAug@@UAEHAAVCRestore@@@Z,CCSAug::Restore,UNKNOWN,dlls/weapons.cpp,,,MATCHED,100,hl_manual.csv,
 hl,1011E8A0,49,?Restore@CCSBomb@@UAEHAAVCRestore@@@Z,CCSBomb::Restore,UNKNOWN,dlls/weapons.cpp,,,MATCHED,100,,
-hl,1011E8E0,49,,,UNKNOWN,,,,TODO,,,
+hl,1011E8E0,49,?Restore@CCSElites@@UAEHAAVCRestore@@@Z,CCSElites::Restore,UNKNOWN,dlls/weapons.cpp,,,MATCHED,100,hl_manual.csv,
 hl,1011E920,49,?Restore@CCSFamas@@UAEHAAVCRestore@@@Z,CCSFamas::Restore,UNKNOWN,dlls/weapons.cpp,,,MATCHED,100,,
 hl,1011E960,49,?Restore@CCSFlashbang@@UAEHAAVCRestore@@@Z,CCSFlashbang::Restore,UNKNOWN,dlls/weapons.cpp,,,MATCHED,100,,
-hl,1011E9A0,49,,,UNKNOWN,,,,TODO,,,
-hl,1011E9E0,49,,,UNKNOWN,,,,TODO,,,
+hl,1011E9A0,49,?Restore@CCSG3SG1@@UAEHAAVCRestore@@@Z,CCSG3SG1::Restore,UNKNOWN,dlls/weapons.cpp,,,MATCHED,100,hl_manual.csv,
+hl,1011E9E0,49,?Restore@CCSM4A1@@UAEHAAVCRestore@@@Z,CCSM4A1::Restore,UNKNOWN,dlls/weapons.cpp,,,MATCHED,100,hl_manual.csv,
 hl,1011EA20,49,?Restore@CDualWeapon@@UAEHAAVCRestore@@@Z,CDualWeapon::Restore,COF,dlls/weapons.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1011EA60,49,?Restore@CFlare@@UAEHAAVCRestore@@@Z,CFlare::Restore,COF,dlls/weapons.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1011EAA0,49,?Restore@CGlock@@UAEHAAVCRestore@@@Z,CGlock::Restore,COF,dlls/weapons.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
@@ -18539,13 +18539,13 @@ hl,1011ED80,95,?Save@CBasePlayerItem@@UAEHAAVCSave@@@Z,CBasePlayerItem::Save,HLS
 hl,1011EDE0,95,?Save@CBasePlayerWeapon@@UAEHAAVCSave@@@Z,CBasePlayerWeapon::Save,HLSDK,dlls/weapons.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1011EE40,95,?Save@CBrowningWheelchair@@UAEHAAVCSave@@@Z,CBrowningWheelchair::Save,COF,dlls/weapons.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1011EEA0,95,,,UNKNOWN,guess:dlls/weapons.cpp,,,TODO,,,
-hl,1011EF00,95,,,UNKNOWN,,,,TODO,,,
+hl,1011EF00,95,?Save@CCSAug@@UAEHAAVCSave@@@Z,CCSAug::Save,UNKNOWN,dlls/weapons.cpp,,,MATCHED,100,hl_manual.csv,
 hl,1011EF60,95,?Save@CCSBomb@@UAEHAAVCSave@@@Z,CCSBomb::Save,UNKNOWN,dlls/weapons.cpp,,,MATCHED,100,,
-hl,1011EFC0,95,,,UNKNOWN,,,,TODO,,,
+hl,1011EFC0,95,?Save@CCSElites@@UAEHAAVCSave@@@Z,CCSElites::Save,UNKNOWN,dlls/weapons.cpp,,,MATCHED,100,hl_manual.csv,
 hl,1011F020,95,?Save@CCSFamas@@UAEHAAVCSave@@@Z,CCSFamas::Save,UNKNOWN,dlls/weapons.cpp,,,MATCHED,100,,
 hl,1011F080,95,?Save@CCSFlashbang@@UAEHAAVCSave@@@Z,CCSFlashbang::Save,UNKNOWN,dlls/weapons.cpp,,,MATCHED,100,,
-hl,1011F0E0,95,,,UNKNOWN,,,,TODO,,,
-hl,1011F140,95,,,UNKNOWN,,,,TODO,,,
+hl,1011F0E0,95,?Save@CCSG3SG1@@UAEHAAVCSave@@@Z,CCSG3SG1::Save,UNKNOWN,dlls/weapons.cpp,,,MATCHED,100,hl_manual.csv,
+hl,1011F140,95,?Save@CCSM4A1@@UAEHAAVCSave@@@Z,CCSM4A1::Save,UNKNOWN,dlls/weapons.cpp,,,MATCHED,100,hl_manual.csv,
 hl,1011F1A0,95,?Save@CDualWeapon@@UAEHAAVCSave@@@Z,CDualWeapon::Save,COF,dlls/weapons.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1011F200,95,?Save@CFlare@@UAEHAAVCSave@@@Z,CFlare::Save,COF,dlls/weapons.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1011F260,95,?Save@CGlock@@UAEHAAVCSave@@@Z,CGlock::Save,COF,dlls/weapons.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,

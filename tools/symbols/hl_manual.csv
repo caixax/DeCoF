@@ -53,3 +53,11 @@ va,name,kind,evidence
 10218EE8,?rgdpvpreset@@3PAUdynpitchvol@@A,data,address of our rgdpvpreset reference in CAmbientGeneric::InitModulationParms (instructions identical); retail spelled it as m_SaveData@CScriptedSentence plus offset
 10231E08,?AmmoInfoArray@CBasePlayerItem@@2PAUAmmoInfo@@A,data,address of our AmmoInfoArray reference in AddAmmoNameToAmmoRegistry (instructions identical); 0x100 bytes end at g_sModelIndexLaser (10231F08)
 100089F0,_PM_PlayWaterSounds,func,1.55 PDB: PM_PlayWaterSounds (pm_shared.obj); PM_PlayerMove tail-jumps here and the body is ret 0
+1011E860,?Restore@CCSAug@@UAEHAAVCRestore@@@Z,func,"IMPLEMENT_SAVERESTORE( CCSAug, CBasePlayerWeapon ): calls CBasePlayerWeapon::Restore and passes the string ""CCSAug"" with the class save table"
+1011E8E0,?Restore@CCSElites@@UAEHAAVCRestore@@@Z,func,"IMPLEMENT_SAVERESTORE( CCSElites, CBasePlayerWeapon ): calls CBasePlayerWeapon::Restore and passes the string ""CCSElites"" with the class save table"
+1011E9A0,?Restore@CCSG3SG1@@UAEHAAVCRestore@@@Z,func,"IMPLEMENT_SAVERESTORE( CCSG3SG1, CBasePlayerWeapon ): calls CBasePlayerWeapon::Restore and passes the string ""CCSG3SG1"" with the class save table"
+1011E9E0,?Restore@CCSM4A1@@UAEHAAVCRestore@@@Z,func,"IMPLEMENT_SAVERESTORE( CCSM4A1, CBasePlayerWeapon ): calls CBasePlayerWeapon::Restore and passes the string ""CCSM4A1"" with the class save table"
+1011EF00,?Save@CCSAug@@UAEHAAVCSave@@@Z,func,"IMPLEMENT_SAVERESTORE( CCSAug, CBasePlayerWeapon ): calls CBasePlayerWeapon::Save and passes the string ""CCSAug"" with the class save table"
+1011EFC0,?Save@CCSElites@@UAEHAAVCSave@@@Z,func,"IMPLEMENT_SAVERESTORE( CCSElites, CBasePlayerWeapon ): calls CBasePlayerWeapon::Save and passes the string ""CCSElites"" with the class save table"
+1011F0E0,?Save@CCSG3SG1@@UAEHAAVCSave@@@Z,func,"IMPLEMENT_SAVERESTORE( CCSG3SG1, CBasePlayerWeapon ): calls CBasePlayerWeapon::Save and passes the string ""CCSG3SG1"" with the class save table"
+1011F140,?Save@CCSM4A1@@UAEHAAVCSave@@@Z,func,"IMPLEMENT_SAVERESTORE( CCSM4A1, CBasePlayerWeapon ): calls CBasePlayerWeapon::Save and passes the string ""CCSM4A1"" with the class save table"
