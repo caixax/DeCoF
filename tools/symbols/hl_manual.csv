@@ -80,3 +80,5 @@ va,name,kind,evidence
 100E8EB0,?MoveStatue@CBasePlayer@@QAEXHH@Z,func,"finds statue_eagle and the other statues by classname and moves them, as our CBasePlayer::MoveStatue"
 100DCE80,?CheckTimeBasedDamage@CBasePlayer@@QAEXXZ,func,"tests m_bitsDamageType & DMG_TIMEBASED (0xffffc000) and the 2-second gpGlobals->time interval, as HLSDK CBasePlayer::CheckTimeBasedDamage"
 100E4C30,?IsDeveloper@CBasePlayer@@QAEHXZ,func,"compares the player auth id with the developer STEAM_0 ids, as our CBasePlayer::IsDeveloper"
+100DC020,?CanBeDualWielded@CBasePlayer@@QAE_NH@Z,func,"switch on the weapon id 1..21 whose case 21 tests g_pWorld->pev->iuser3, as our CBasePlayer::CanBeDualWielded"
+100E4BF0,?IsAFlashlight@CBasePlayer@@QAE_NH@Z,func,"switch on the weapon id 1..13 returning true for the flashlight ids, as our CBasePlayer::IsAFlashlight"

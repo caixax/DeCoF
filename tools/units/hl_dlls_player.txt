@@ -239,3 +239,5 @@ _player
 ?MoveStatue@CBasePlayer@@QAEXHH@Z
 ?CheckTimeBasedDamage@CBasePlayer@@QAEXXZ
 ?IsDeveloper@CBasePlayer@@QAEHXZ
+?CanBeDualWielded@CBasePlayer@@QAE_NH@Z
+?IsAFlashlight@CBasePlayer@@QAE_NH@Z

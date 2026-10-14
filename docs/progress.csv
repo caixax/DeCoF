@@ -17394,7 +17394,7 @@ hl,100DB740,47,?BarnacleVictimBitten@CBasePlayer@@UAEXPAUentvars_s@@@Z,CBasePlay
 hl,100DB770,8,?BarnacleVictimReleased@CBasePlayer@@UAEXXZ,CBasePlayer::BarnacleVictimReleased,HLSDK,dlls/player.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100DB780,1985,?BreatheThink@CBasePlayer@@QAEXXZ,CBasePlayer::BreatheThink,COF,dlls/player.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100DBFB0,111,?CalculateAccuracy@CBasePlayer@@QAEMXZ,CBasePlayer::CalculateAccuracy,UNKNOWN,dlls/player.cpp,,,MATCHED,100,,
-hl,100DC020,59,,,UNKNOWN,,,,TODO,,,
+hl,100DC020,59,?CanBeDualWielded@CBasePlayer@@QAE_NH@Z,CBasePlayer::CanBeDualWielded,UNKNOWN,dlls/player.cpp,,,MATCHED,100,hl_manual.csv,
 hl,100DC080,69,,,UNKNOWN,,,,TODO,,,
 hl,100DC0D0,1671,?CheatImpulseCommands@CBasePlayer@@QAEXH@Z,CBasePlayer::CheatImpulseCommands,HLSDK,dlls/player.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,EQUIVALENT,99.98,hl_1.55_to_1.6a.csv,"EQUIVALENT: impulse 202, the z part of pev->origin + pev->view_ofs adds with two registers swapped; swapping the operands makes it worse"
 hl,100DC820,467,?CheckBeatenEnding@CBasePlayer@@QAE_NH@Z,CBasePlayer::CheckBeatenEnding,COF,dlls/player.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
@@ -17472,7 +17472,7 @@ hl,100E40E0,522,?InventoryEquip@CBasePlayer@@QAEXH@Z,CBasePlayer::InventoryEquip
 hl,100E42F0,100,?InventoryIsFull@CBasePlayer@@QAEHXZ,CBasePlayer::InventoryIsFull,UNKNOWN,dlls/player.cpp,,,MATCHED,100,hl_manual.csv,
 hl,100E4360,169,?InventoryMessage@CBasePlayer@@QAEXHHH@Z,CBasePlayer::InventoryMessage,COF,dlls/player.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100E4410,2011,?InventoryUse@CBasePlayer@@QAEXH@Z,CBasePlayer::InventoryUse,COF,dlls/player.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,100E4BF0,38,,,UNKNOWN,guess:dlls/player.cpp,,,TODO,,,
+hl,100E4BF0,38,?IsAFlashlight@CBasePlayer@@QAE_NH@Z,CBasePlayer::IsAFlashlight,UNKNOWN,dlls/player.cpp,,,MATCHED,100,hl_manual.csv,
 hl,100E4C30,298,?IsDeveloper@CBasePlayer@@QAEHXZ,CBasePlayer::IsDeveloper,UNKNOWN,dlls/player.cpp,,,MATCHED,100,hl_manual.csv,
 hl,100E4D60,156,?IsDonator@CBasePlayer@@QAEHXZ,CBasePlayer::IsDonator,UNKNOWN,dlls/player.cpp,,,MATCHED,100,hl_manual.csv,
 hl,100E4E00,76,?IsInCutscene@CBasePlayer@@QAE_NXZ,CBasePlayer::IsInCutscene,UNKNOWN,dlls/player.cpp,,,MATCHED,100,hl_manual.csv,
