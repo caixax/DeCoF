@@ -15068,13 +15068,13 @@ void CBasePlayer::PlayerAnimation( const char *anim, bool gait )
 
 int CBasePlayer::IsDeveloper( void )
 {
+	if ( guess_m_iNew16a == 4 )
+		return 1;
+
 	if ( !strcmp( GETPLAYERAUTHID( edict() ), "STEAM_0:0:3663311" ) )
 		return 1;
 
 	if ( !strcmp( GETPLAYERAUTHID( edict() ), "STEAM_0:0:4453997" ) )
-		return 1;
-
-	if ( !strcmp( GETPLAYERAUTHID( edict() ), "STEAM_0:0:20366455" ) )
 		return 1;
 
 	if ( !strcmp( GETPLAYERAUTHID( edict() ), "STEAM_0:1:4458650" ) )

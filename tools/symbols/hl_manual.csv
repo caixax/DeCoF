@@ -78,3 +78,5 @@ va,name,kind,evidence
 100E4D60,?IsDonator@CBasePlayer@@QAEHXZ,func,tests g_pGameRules and the donator state; same size as ours (156)
 100E4E00,?IsInCutscene@CBasePlayer@@QAE_NXZ,func,tests the EHANDLE at +0x2348 (the cutscene camera); same size as ours (76)
 100E8EB0,?MoveStatue@CBasePlayer@@QAEXHH@Z,func,"finds statue_eagle and the other statues by classname and moves them, as our CBasePlayer::MoveStatue"
+100DCE80,?CheckTimeBasedDamage@CBasePlayer@@QAEXXZ,func,"tests m_bitsDamageType & DMG_TIMEBASED (0xffffc000) and the 2-second gpGlobals->time interval, as HLSDK CBasePlayer::CheckTimeBasedDamage"
+100E4C30,?IsDeveloper@CBasePlayer@@QAEHXZ,func,"compares the player auth id with the developer STEAM_0 ids, as our CBasePlayer::IsDeveloper"

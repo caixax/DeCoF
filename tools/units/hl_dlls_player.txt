@@ -237,3 +237,5 @@ _player
 ?IsDonator@CBasePlayer@@QAEHXZ
 ?IsInCutscene@CBasePlayer@@QAE_NXZ
 ?MoveStatue@CBasePlayer@@QAEXHH@Z
+?CheckTimeBasedDamage@CBasePlayer@@QAEXXZ
+?IsDeveloper@CBasePlayer@@QAEHXZ
