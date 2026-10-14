@@ -6,3 +6,4 @@
 ?Initialize@CHud2@@QAEXXZ
 ?ShouldDrawHUD@@YAHXZ
 ?paintBackground@CHud2@@MAEXXZ
+?Hud2Init@@YAXXZ

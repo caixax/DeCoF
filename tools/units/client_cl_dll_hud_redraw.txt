@@ -9,3 +9,5 @@
 ?Think@CHud@@QAEXXZ
 ?guess_AverageFPS@CHud@@QAEHH@Z
 ?guess_DrawNewFade@CHud@@QAEXM@Z
+?DrawHudString@CHud@@QAEHHHHPADHHH@Z
+?DrawHudNumber@CHud@@QAEHHHHHHHH@Z

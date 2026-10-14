@@ -5,3 +5,4 @@
 ?paintBackground@CTeamMenuPanel@@UAEXXZ
 ?Open@CTeamMenuPanel@@UAEXXZ
 ?Reset@CTeamMenuPanel@@UAEXXZ
+??0CTeamMenuPanel@@QAE@HHHHHH@Z
