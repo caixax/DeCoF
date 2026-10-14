@@ -2696,23 +2696,23 @@ client,100AD510,46,?ShowTip@@YAXPAUclient_textmessage_s@@@Z,ShowTip,PARANOIA,gue
 client,100AD540,368,?VGuiAddScreenMessage@@YAXPAUclient_textmessage_s@@@Z,VGuiAddScreenMessage,PARANOIA,guess:cl_dll/vgui_tips.cpp,,,MATCHED,100,similar:1.00,
 client,100AD6B0,375,?VGuiAddScrollingMessage@@YAXPAUclient_textmessage_s@@@Z,VGuiAddScrollingMessage,PARANOIA,guess:cl_dll/vgui_tips.cpp,,,MATCHED,100,similar:1.00,
 client,100AD830,416,?paintBackground@CTips@@MAEXXZ,CTips::paintBackground,PARANOIA,cl_dll/vgui_tips.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__vgui_tips.obj:score8,
-client,100AD9D0,1139,?guess_AddViewmodelBob@@YAXPAUref_params_s@@AAVVector@@1MMPAUcl_entity_s@@_N@Z,guess_AddViewmodelBob,UNKNOWN,cl_dll/view.cpp,,,TODO,99.12,client_manual.csv,
+client,100AD9D0,1139,?guess_AddViewmodelBob@@YAXPAUref_params_s@@AAVVector@@1MMPAUcl_entity_s@@_N@Z,guess_AddViewmodelBob,UNKNOWN,cl_dll/view.cpp,,,TODO,99.12,client_manual.csv,99.12%: retail has a dead load of gHUD.m_Ammo.m_pWeapon before if ( bLeft ) in both arms; 8 attempts
 client,100ADE50,91,?guess_NormalizeAngles360@@YAXMM@Z,guess_NormalizeAngles360,UNKNOWN,cl_dll/view.cpp,,,MATCHED,100,client_manual.csv,
 client,100ADEC0,578,?guess_CalcViewModelLag@@YAXMAAVVector@@00PAUcl_entity_s@@_N@Z,guess_CalcViewModelLag,UNKNOWN,cl_dll/view.cpp,,,TODO,,client_manual.csv,
-client,100AE110,1060,?guess_CalcViewmodelBob@@YAMPAUref_params_s@@MM@Z,guess_CalcViewmodelBob,UNKNOWN,cl_dll/view.cpp,,,TODO,97.69,client_manual.csv,
+client,100AE110,1060,?guess_CalcViewmodelBob@@YAMPAUref_params_s@@MM@Z,guess_CalcViewmodelBob,UNKNOWN,cl_dll/view.cpp,,,TODO,97.69,client_manual.csv,97.69%: retail keeps 320.0 in xmm4 and 0 in xmm2 (ours xmm5 and xmm3); 8 attempts
 client,100AE540,576,?guess_SetupMagliteLight@@YAXVVector@@0MM@Z,guess_SetupMagliteLight,UNKNOWN,cl_dll/view.cpp,,,MATCHED,100,client_manual.csv,
 client,100AE780,16,?guess_GetDualEntity@@YAPAUcl_entity_s@@XZ,guess_GetDualEntity,UNKNOWN,cl_dll/view.cpp,,,MATCHED,100,client_manual.csv,
 client,100AE790,192,?MaxAngleBetweenAngles@@YAMPAM0@Z,MaxAngleBetweenAngles,UNKNOWN,cl_dll/view.cpp,,,MATCHED,100,client_manual.csv,
 client,100AE850,330,?guess_V_DecayPunchAngle@@YAXVVector@@PAUref_params_s@@@Z,guess_V_DecayPunchAngle,UNKNOWN,cl_dll/view.cpp,,,MATCHED,100,client_manual.csv,
 client,100AE9A0,110,?guess_V_ViewPunch@@YAXMMM@Z,guess_V_ViewPunch,UNKNOWN,,,,MATCHED,100,client_manual.csv,
 client,100AEA10,1106,?SetupFlashlight@@YAXVVector@@0MM@Z,SetupFlashlight,UNKNOWN,cl_dll/view.cpp,,,MATCHED,100,client_manual.csv,
-client,100AEE70,725,?guess_SetupViewModelLight@@YAXVVector@@0MM@Z,guess_SetupViewModelLight,UNKNOWN,cl_dll/view.cpp,,,TODO,99.26,client_manual.csv,
+client,100AEE70,725,?guess_SetupViewModelLight@@YAXVVector@@0MM@Z,guess_SetupViewModelLight,UNKNOWN,cl_dll/view.cpp,,,TODO,99.26,client_manual.csv,"99.26%: register choice in addideal = (1 - tr.fraction)*30 (retail fraction in xmm2, 1.0 in xmm0, movaps xmm1,xmm0); 8 attempts"
 client,100AF150,9,?guess_GetBobMode@@YAHPAUref_params_s@@@Z,guess_GetBobMode,UNKNOWN,cl_dll/view.cpp,,,MATCHED,100,client_manual.csv,
 client,100AF160,231,?V_AddIdle@@YAXPAUref_params_s@@@Z,V_AddIdle,UNKNOWN,cl_dll/view.cpp,,,MATCHED,100,,
 client,100AF250,429,?V_CalcBob@@YAMPAUref_params_s@@@Z,V_CalcBob,UNKNOWN,cl_dll/view.cpp,,,MATCHED,100,,
 client,100AF400,568,?V_CalcGunAngle@@YAXPAUref_params_s@@@Z,V_CalcGunAngle,UNKNOWN,cl_dll/view.cpp,,,MATCHED,100,,
 client,100AF640,335,?V_CalcIntermissionRefdef@@YAXPAUref_params_s@@@Z,V_CalcIntermissionRefdef,UNKNOWN,cl_dll/view.cpp,,,MATCHED,100,,
-client,100AF790,8402,?V_CalcNormalRefdef@@YAXPAUref_params_s@@@Z,V_CalcNormalRefdef,UNKNOWN,cl_dll/view.cpp,,,TODO,32.01,client_manual.csv,
+client,100AF790,8402,?V_CalcNormalRefdef@@YAXPAUref_params_s@@@Z,V_CalcNormalRefdef,UNKNOWN,cl_dll/view.cpp,,,TODO,97.87,client_manual.csv,"97.87%: register allocation and stack slots only (ent/view spill slots swapped, water block shares one slot for waterOffset and waterDist, operand order of commutative adds such as bob + simorg[2]); 8 attempts"
 client,100B1870,160,?V_CalcRoll@@YAMVVector@@0MM@Z,V_CalcRoll,UNKNOWN,cl_dll/view.cpp,,,MATCHED,100,,
 client,100B1910,1576,?V_CalcSpectatorRefdef@@YAXPAUref_params_s@@@Z,V_CalcSpectatorRefdef,UNKNOWN,cl_dll/view.cpp,,,MATCHED,100,,
 client,100B1F60,138,?V_CalcViewRoll@@YAXPAUref_params_s@@@Z,V_CalcViewRoll,UNKNOWN,cl_dll/view.cpp,,,MATCHED,100,,

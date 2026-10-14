@@ -126,3 +126,6 @@ The reconstructed source keeps the behavior of the retail 1.6a binaries, includi
 | CHud::MsgFunc_ViewLock (client hud_msg.cpp) | Reads a second COORD past the end of the message when the first COORD is not 666. | as written |
 | ApplyCFGSettingToPlayer, ApplyCFGSettingToPlayerLate (hl multiplay_gamerules.cpp) | The quicksel1 to quicksel3 lines copy the player's m_sQuickSelN into the line buffer (strcpy in the wrong direction), so saved quick-select slots are never restored. | as written |
 | ApplyCFGSettingToPlayer, ApplyCFGSettingToPlayerLate (hl multiplay_gamerules.cpp) | Each config line is copied into a 256-byte buffer with no length check. | as written |
+| V_CalcNormalRefdef (client view.cpp) | The bob loop adds bob * 0.4 * forward to view->angles instead of view->origin. | as written |
+| V_CalcNormalRefdef (client view.cpp) | The wheelchair block calls AngleVectors( viewmodel->angles, ... ) even when viewmodel is NULL, and never uses the results. | as written |
+| V_CalcNormalRefdef (client view.cpp) | The maglite block tests tr->endpos (an array) for NULL; rendercolor / 255 is an integer division, so the color is 0 or 1; the dlight key is ent->index in one branch and view->index in the other; guess_iUnknown10542BC8 = 0 is stored twice. | as written |

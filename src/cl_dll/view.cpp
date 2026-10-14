@@ -536,6 +536,50 @@ extern void RenderFog( void ); //LRC
 extern int g_DrawHeadShied; // buz
 extern int HeadShieldThink( void ); // buz
 
+// cof
+extern "C" int guess_iStepPunch;		// pm_shared.c
+extern "C" int guess_iStepPunchRun;
+
+void guess_V_ViewPunch( float x, float y, float z );
+void guess_MuzzleFlash( cl_entity_t *pEntity, int iAttachment, bool bAlt, float flScale );
+void guess_AddViewmodelBob( struct ref_params_s *pparams, Vector &origin, Vector &angles, float frametime, float curtime, cl_entity_t *view, bool bLeft );
+void guess_CalcViewModelLag( float frametime, Vector &origin, Vector &angles, Vector &original_angles, cl_entity_t *view, bool bLeft );
+void guess_SetupMagliteLight( vec3_t origin, vec3_t angles, float time, float frametime );
+void guess_SetupViewModelLight( vec3_t origin, vec3_t angles, float time, float frametime );
+
+extern int guess_iUnknown1054506C;
+extern int guess_iWheelchair;			// the wheelchair entity (0 when off)
+extern int guess_iBoat;					// the boat entity (0 when off)
+extern vec3_t guess_vecWheelchairOrigin;	// attachment 0 of the wheelchair, set by the studio renderer
+extern vec3_t guess_vecBoatOrigin;		// attachment 0 of the boat, set by the studio renderer
+extern cl_entity_t *guess_pTelescopeEnt;
+extern int guess_iTelescopeFlag;
+extern cl_entity_t *guess_pAttachCamEnt;
+extern int guess_iAttachCamFlag;
+extern int guess_iUnknown10542BC8;
+extern bool guess_bUnknown10542BB3;
+extern bool guess_bUnknown104CE4A3;
+extern vec3_t guess_vecCameraAttachment;
+extern vec3_t guess_vecCameraAngles;
+extern vec3_t guess_vecModelAttachOrigin;	// attachment of the ModelAttach entity, set by the studio renderer
+extern vec3_t guess_vecDualAttachment0;		// attachments 0 and 1 of the left hand weapon, set by the studio renderer
+extern vec3_t guess_vecDualAttachment1;
+extern int guess_iModelAttachEnt;
+extern int guess_iModelAttachNum;
+extern int guess_g_iHeadShieldType;
+extern int guess_g_iDualWeapon1;
+extern int guess_g_iDualWeapon2;
+extern cl_entity_t g_HeadShieldEnt;
+
+vec3_t guess_vecWheelchairAngles;		// added to the wheelchair angles (the knock back subtracts from it)
+vec3_t guess_vecWheelchairViewAngles;	// the view angles in the wheelchair
+float guess_flUnknown105595A0;
+float guess_flUnknown105595A4;
+float guess_flUnknown105595A8;
+int guess_iUnknown105595AC;
+bool guess_bUnknown10559514;			// cleared by the AttachCam message
+bool guess_bCanDodge;					// on the ground and not noclipping
+
 void V_CalcNormalRefdef ( struct ref_params_s *pparams )
 {
 	cl_entity_t		*ent, *view;
@@ -554,6 +598,63 @@ void V_CalcNormalRefdef ( struct ref_params_s *pparams )
 
 //	CONPRINT("calcrefdef\n");
 
+	guess_iUnknown1054506C = pparams->waterlevel;
+
+	// cof: view punch of a multiplayer step
+	if ( guess_iStepPunch )
+	{
+		guess_iStepPunch = 0;
+
+		if ( guess_iStepPunchRun )
+			guess_V_ViewPunch( -3, 1, 0 );
+		else
+			guess_V_ViewPunch( -0.75, 0.5, 0 );
+	}
+
+	// cof: wheelchair view
+	if ( guess_iWheelchair && ( guess_vecWheelchairOrigin[0] || guess_vecWheelchairOrigin[1] || guess_vecWheelchairOrigin[2] ) )
+	{
+		vec3_t forward, right, up;
+		cl_entity_t *player, *viewmodel;
+
+		guess_vecWheelchairOrigin.z -= 24;
+
+		VectorCopy( guess_vecWheelchairOrigin, pparams->simorg );
+		VectorCopy( guess_vecWheelchairOrigin, pparams->vieworg );
+
+		viewmodel = gEngfuncs.GetViewModel();
+
+		guess_vecWheelchairViewAngles[0] = ((cl_entity_t *)guess_iWheelchair)->curstate.angles[0] + guess_vecWheelchairAngles[0];
+		guess_vecWheelchairViewAngles[1] = ((cl_entity_t *)guess_iWheelchair)->curstate.angles[1] - guess_vecWheelchairAngles[1];
+		guess_vecWheelchairViewAngles[2] = ((cl_entity_t *)guess_iWheelchair)->curstate.angles[2];
+
+		VectorCopy( guess_vecWheelchairViewAngles, pparams->viewangles );
+		VectorCopy( pparams->viewangles, pparams->cl_viewangles );
+
+		player = gEngfuncs.GetLocalPlayer();
+
+		if ( player )
+		{
+			VectorCopy( pparams->viewangles, player->angles );
+			VectorCopy( pparams->viewangles, player->curstate.angles );
+		}
+
+		if ( viewmodel )
+		{
+			viewmodel->curstate.origin = guess_vecWheelchairOrigin;
+			viewmodel->origin = guess_vecWheelchairOrigin;
+			viewmodel->angles = guess_vecWheelchairViewAngles;
+		}
+
+		gEngfuncs.pfnAngleVectors( viewmodel->angles, forward, right, up );
+	}
+
+	if ( gEngfuncs.IsNoClipping() || !pparams->onground )
+		guess_bCanDodge = false;
+
+	if ( !gEngfuncs.IsNoClipping() && pparams->onground && !guess_bCanDodge )
+		guess_bCanDodge = true;
+
 	// buz
 	g_DrawHeadShied = 0;
 	if (pparams->nextView == 1)
@@ -563,32 +664,12 @@ void V_CalcNormalRefdef ( struct ref_params_s *pparams )
 		g_DrawHeadShied = 1;
 		return;
 	}
-	else if ((pparams->nextView == 0) && HeadShieldThink() && !(pparams->viewentity > pparams->maxclients))
+	else if ( ( pparams->nextView == 0 && HeadShieldThink() && guess_g_iHeadShieldType == 6 ) ||
+		( pparams->nextView == 0 && HeadShieldThink() && guess_g_iHeadShieldType == 7 ) ||
+		( pparams->nextView == 0 && HeadShieldThink() && !(pparams->viewentity > pparams->maxclients) ) )
 	{
 		pparams->nextView = 1;
 	}
-
-	// buz
-/*	if (g_DontDrawWorld)
-	{
-		pparams->onlyClientDraw = 1;
-		return;
-	}
-*/
-/*	//LRC - if this is the second pass through, then we've just drawn the sky, and now we're setting up the normal view.
-	if (pparams->nextView == 1)
-	{
-		view = gEngfuncs.GetViewModel();
-		view->model = savedviewmodel;
-		pparams->viewangles[0] = v_angles.x;
-		pparams->viewangles[1] = v_angles.y;
-		pparams->viewangles[2] = v_angles.z;
-		pparams->vieworg[0] = v_origin.x;
-		pparams->vieworg[1] = v_origin.y;
-		pparams->vieworg[2] = v_origin.z;
-		pparams->nextView = 0;
-		return;
-	}*/
 
 //	gEngfuncs.Con_Printf("cross angle: %f, %f, %f\n", pparams->crosshairangle[0], pparams->crosshairangle[1], pparams->crosshairangle[2]);
 	VectorCopy(pparams->crosshairangle, g_CrosshairAngle); // save it for crosshair rendering
@@ -604,15 +685,30 @@ void V_CalcNormalRefdef ( struct ref_params_s *pparams )
 		// ent is the player model ( visible when out of body )
 		ent = gEngfuncs.GetLocalPlayer();
 	}
-	
+
 	// view is the weapon model (only visible from inside body )
 	view = gEngfuncs.GetViewModel();
+
+	// cof: the weapon model takes the render color and amount of the player
+	view->curstate.rendercolor.r = ent->curstate.rendercolor.r;
+	view->curstate.rendercolor.g = ent->curstate.rendercolor.g;
+	view->curstate.rendercolor.b = ent->curstate.rendercolor.b;
+	view->curstate.renderamt = ent->curstate.renderamt;
 
 	//LRC - don't show weapon models when we're drawing the sky.
 	if (gHUD.m_iSkyMode == SKY_ON)
 	{
 		savedviewmodel = view->model;
 		view->model = NULL;
+	}
+
+	// cof: the weapon model is in the water
+	if ( gEngfuncs.PM_PointContents( view->origin, NULL ) == CONTENTS_WATER )
+	{
+		guess_flUnknown105595A0 = gEngfuncs.GetClientTime();
+		guess_flUnknown105595A4 = 10;
+		guess_flUnknown105595A8 = gEngfuncs.GetClientTime();
+		guess_iUnknown105595AC = 0;
 	}
 
 	// transform the view offset by the model's matrix to get the offset from
@@ -629,16 +725,82 @@ void V_CalcNormalRefdef ( struct ref_params_s *pparams )
 	gEngfuncs.V_CalcShake();
 	gEngfuncs.V_ApplyShake( pparams->vieworg, pparams->viewangles, 1.0 );
 
+	// cof: telescope view
+	if ( guess_pTelescopeEnt )
+	{
+		VectorCopy( guess_pTelescopeEnt->origin, pparams->vieworg );
+
+		if ( !guess_iTelescopeFlag )
+		{
+			vec3_t vecAngles, forward, right;
+			vec3_t vecStart, vecEnd;
+			pmtrace_t *tr;
+
+			VectorCopy( pparams->viewangles, vecAngles );
+			gEngfuncs.pfnAngleVectors( vecAngles, forward, right, NULL );
+
+			vecEnd = guess_pTelescopeEnt->origin + forward * 4096;
+			vecStart = forward * 128 + guess_pTelescopeEnt->origin;
+
+			tr = gEngfuncs.PM_TraceLine( vecStart, vecEnd, PM_TRACELINE_PHYSENTSONLY, 1, -1 );
+
+			if ( tr->ent )
+			{
+				cl_entity_t *pHit = gEngfuncs.GetEntityByIndex( PM_GetPhysEntInfo( tr->ent ) );
+
+				if ( pHit && pHit->curstate.solid == SOLID_BSP && pHit->curstate.renderfx == 162 )
+				{
+					gEngfuncs.pfnServerCmd( "telescopefinish" );
+					guess_iTelescopeFlag = 1;
+				}
+			}
+		}
+	}
+
+	// cof: boat view
+	if ( guess_iBoat && ( guess_vecBoatOrigin[0] || guess_vecBoatOrigin[1] || guess_vecBoatOrigin[2] ) )
+	{
+		VectorCopy( guess_vecBoatOrigin, pparams->vieworg );
+		VectorCopy( ((cl_entity_t *)guess_iBoat)->curstate.angles, pparams->viewangles );
+	}
+
+	// cof: camera attached to an entity
+	if ( guess_pAttachCamEnt && guess_bUnknown10542BB3 && !guess_bUnknown104CE4A3 )
+	{
+		guess_iUnknown10542BC8 = 0;
+
+		VectorCopy( guess_vecCameraAttachment, pparams->vieworg );
+		VectorCopy( guess_vecCameraAngles, pparams->viewangles );
+
+		if ( !guess_bUnknown10559514 )
+		{
+			guess_bUnknown10559514 = true;
+			gEngfuncs.SetViewAngles( pparams->viewangles );
+		}
+	}
+	else if ( guess_bUnknown104CE4A3 )
+	{
+		VectorAdd( pparams->viewangles, guess_vecCameraAngles, pparams->viewangles );
+
+		if ( !guess_bUnknown10559514 )
+		{
+			guess_bUnknown10559514 = true;
+			gEngfuncs.SetViewAngles( pparams->viewangles );
+		}
+	}
+
+	guess_iUnknown10542BC8 = 0;
+
 	// never let view origin sit exactly on a node line, because a water plane can
 	// dissapear when viewed with the eye exactly on it.
 	// FIXME, we send origin at 1/128 now, change this?
 	// the server protocol only specifies to 1/16 pixel, so add 1/32 in each axis
-	
+
 	pparams->vieworg[0] += 1.0/32;
 	pparams->vieworg[1] += 1.0/32;
 	pparams->vieworg[2] += 1.0/32;
 
-	// Check for problems around water, move the viewer artificially if necessary 
+	// Check for problems around water, move the viewer artificially if necessary
 	// -- this prevents drawing errors in GL due to waves
 
 	waterOffset = 0;
@@ -664,11 +826,11 @@ void V_CalcNormalRefdef ( struct ref_params_s *pparams )
 		{
 			waterEntity = 0;	// Don't need this in software
 		}
-		
+
 		VectorCopy( pparams->vieworg, point );
 
 		// Eyes are above water, make sure we're above the waves
-		if ( pparams->waterlevel == 2 )	
+		if ( pparams->waterlevel == 2 )
 		{
 			point[2] -= waterDist;
 			for ( i = 0; i < waterDist; i++ )
@@ -697,9 +859,9 @@ void V_CalcNormalRefdef ( struct ref_params_s *pparams )
 	}
 
 	pparams->vieworg[2] += waterOffset;
-	
+
 	V_CalcViewRoll ( pparams );
-	
+
 	V_AddIdle ( pparams );
 
 	// offsets
@@ -707,7 +869,10 @@ void V_CalcNormalRefdef ( struct ref_params_s *pparams )
 
 	AngleVectors ( angles, pparams->forward, pparams->right, pparams->up );
 
-	SetupFlashlight(pparams->vieworg, pparams->viewangles, pparams->time, pparams->frametime); // buz
+	// cof: the flashlight is set up at the end, from the weapon model
+	gHUD.guess_m_vecSpecTankAngles = pparams->viewangles;
+	gHUD.guess_m_flSpecTankTime = pparams->time;
+	gHUD.guess_m_flSpecTankFrametime = pparams->frametime;
 
 	// buz: spec tank view
 	if (gHUD.m_SpecTank_on)
@@ -726,11 +891,15 @@ void V_CalcNormalRefdef ( struct ref_params_s *pparams )
 			pparams->vieworg[i] += scr_ofsx->value*pparams->forward[i] + scr_ofsy->value*pparams->right[i] + scr_ofsz->value*pparams->up[i];
 		}
 	}
-	
+
 	// Treating cam_ofs[2] as the distance
 	if( CL_IsThirdPerson() )
 	{
 		vec3_t ofs;
+		vec3_t vecStart, vecEnd, vecDir, vecMove, vecUp, vecDown;
+		pmtrace_t tr, tr2;
+
+		vecStart = pparams->vieworg;
 
 		ofs[0] = ofs[1] = ofs[2] = 0.0;
 
@@ -743,18 +912,53 @@ void V_CalcNormalRefdef ( struct ref_params_s *pparams )
 
 		for ( i = 0; i < 3; i++ )
 		{
-			pparams->vieworg[ i ] += -ofs[2] * camForward[ i ];
+			pparams->vieworg[ i ] -= ofs[2] * camForward[ i ];
 		}
+
+		// cof: keep the camera out of the walls
+		VectorSubtract( pparams->vieworg, vecStart, vecDir );
+		VectorNormalize( vecDir );
+		vecMove = vecDir * 16;
+		VectorAdd( pparams->vieworg, vecMove, vecEnd );
+
+		gEngfuncs.pEventAPI->EV_PushPMStates();
+
+		do
+		{
+			gEngfuncs.pEventAPI->EV_SetTraceHull( 2 );
+			gEngfuncs.pEventAPI->EV_PlayerTrace( vecStart, vecEnd, PM_WORLD_ONLY, -1, &tr );
+
+			if ( tr.fraction == 0 )
+				vecStart[2] -= 1;
+		} while ( tr.fraction == 0 );
+
+		VectorSubtract( tr.endpos, vecMove, pparams->vieworg );
+
+		while ( gEngfuncs.PM_PointContents( pparams->vieworg, NULL ) == CONTENTS_SKY )
+		{
+			vec3_t vecBack = ( vecStart - vecEnd ).Normalize();
+			VectorAdd( pparams->vieworg, vecBack, pparams->vieworg );
+		}
+
+		vecUp = Vector( pparams->vieworg ) + Vector( 0, 0, 4096 );
+		vecDown = Vector( pparams->vieworg ) - Vector( 0, 0, 8 );
+
+		gEngfuncs.pEventAPI->EV_PlayerTrace( vecDown, vecUp, PM_WORLD_ONLY, -1, &tr2 );
+
+		if ( tr.endpos[2] == tr2.endpos[2] )
+			pparams->vieworg[2] -= 20;
+
+		gEngfuncs.pEventAPI->EV_PopPMStates();
 	}
-	
+
 	// Give gun our viewangles
 	VectorCopy ( pparams->cl_viewangles, view->angles );
-	
+
 	// set up gun position
 	V_CalcGunAngle ( pparams );
 
 	// Use predicted origin as view origin.
-	VectorCopy ( pparams->simorg, view->origin );      
+	VectorCopy ( pparams->simorg, view->origin );
 	view->origin[2] += ( waterOffset );
 	VectorAdd( view->origin, pparams->viewheight, view->origin );
 
@@ -763,7 +967,7 @@ void V_CalcNormalRefdef ( struct ref_params_s *pparams )
 
 	for ( i = 0; i < 3; i++ )
 	{
-		view->origin[ i ] += bob * 0.4 * pparams->forward[ i ];
+		view->angles[ i ] += bob * 0.4 * pparams->forward[ i ];
 	}
 	view->origin[2] += bob;
 
@@ -774,7 +978,7 @@ void V_CalcNormalRefdef ( struct ref_params_s *pparams )
 
 	// pushing the view origin down off of the same X/Z plane as the ent's origin will give the
 	// gun a very nice 'shifting' effect when the player looks up/down. If there is a problem
-	// with view model distortion, this may be a cause. (SJB). 
+	// with view model distortion, this may be a cause. (SJB).
 	view->origin[2] -= 1;
 
 	// fudge position around to keep amount of weapon visible
@@ -809,7 +1013,7 @@ void V_CalcNormalRefdef ( struct ref_params_s *pparams )
 	if ( !pparams->smoothing && pparams->onground && pparams->simorg[2] - oldz > 0)
 	{
 		float steptime;
-		
+
 		steptime = pparams->time - lasttime;
 		if (steptime < 0)
 	//FIXME		I_Error ("steptime < 0");
@@ -907,7 +1111,7 @@ void V_CalcNormalRefdef ( struct ref_params_s *pparams )
 		float pitch = camAngles[ 0 ];
 
 		// Normalize angles
-		if ( pitch > 180 ) 
+		if ( pitch > 180 )
 			pitch -= 360.0;
 		else if ( pitch < -180 )
 			pitch += 360;
@@ -929,11 +1133,19 @@ void V_CalcNormalRefdef ( struct ref_params_s *pparams )
 		viewentity = gEngfuncs.GetEntityByIndex( pparams->viewentity );
 		if ( viewentity )
 		{
-			VectorCopy( viewentity->origin, pparams->vieworg );
-			VectorCopy( viewentity->angles, pparams->viewangles );
+			// cof: a ModelAttach message puts the view on an attachment of an entity
+			if ( guess_iModelAttachEnt == -1 || guess_iModelAttachNum == -1 )
+			{
+				VectorCopy( viewentity->origin, pparams->vieworg );
+				VectorCopy( viewentity->angles, pparams->viewangles );
 
-			// Store off overridden viewangles
-			v_angles = pparams->viewangles;
+				// Store off overridden viewangles
+				v_angles = pparams->viewangles;
+			}
+			else
+			{
+				VectorCopy( guess_vecModelAttachOrigin, pparams->vieworg );
+			}
 		}
 	}
 
@@ -955,6 +1167,149 @@ void V_CalcNormalRefdef ( struct ref_params_s *pparams )
 
 	// buz
 	g_iWaterLevel = pparams->waterlevel;
+
+	// cof: weapon model bob and lag
+	guess_AddViewmodelBob( pparams, view->origin, view->angles, pparams->frametime, gEngfuncs.GetClientTime(), view, false );
+	guess_CalcViewModelLag( pparams->frametime, view->origin, view->angles, v_angles, view, false );
+
+	// cof: flashlight in the left hand
+	if ( !guess_iPaused && guess_g_iHeadShieldType == 3 && guess_g_iDualWeapon1 == 10 && !guess_IsViewEntityActive() && !guess_iBoat && !guess_iWheelchair && !guess_pTelescopeEnt )
+	{
+		pmtrace_t *tr = gEngfuncs.PM_TraceLine( guess_vecDualAttachment0, guess_vecDualAttachment1, PM_TRACELINE_PHYSENTSONLY, 1, -1 );
+
+		if ( !g_HeadShieldEnt.curstate.rendercolor.r && !g_HeadShieldEnt.curstate.rendercolor.g && !g_HeadShieldEnt.curstate.rendercolor.b &&
+			( g_HeadShieldEnt.curstate.renderamt == 255 || !g_HeadShieldEnt.curstate.renderamt ) )
+		{
+			DynamicLight *dl = MY_AllocDlight( -50 );
+			dl->origin = tr->endpos;
+			dl->radius = gEngfuncs.pfnRandomLong( -5, 5 ) + 220;
+			dl->die = gEngfuncs.GetClientTime() + 0.01;
+			dl->color = Vector( 0.4, 0.4, 0.4 );
+		}
+		else
+		{
+			float r = g_HeadShieldEnt.curstate.rendercolor.r / 255;
+			float g = g_HeadShieldEnt.curstate.rendercolor.g / 255;
+			float b = g_HeadShieldEnt.curstate.rendercolor.b / 255;
+
+			DynamicLight *dl = MY_AllocDlight( -50 );
+			dl->origin = tr->endpos;
+			dl->radius = gEngfuncs.pfnRandomLong( -5, 5 ) + g_HeadShieldEnt.curstate.renderamt;
+			dl->die = gEngfuncs.GetClientTime() + 0.01;
+			dl->color = Vector( r, g, b );
+		}
+	}
+
+	if ( view->model && !guess_iPaused )
+	{
+		cl_entity_t *player = gEngfuncs.GetLocalPlayer();
+		WEAPON *pWeapon = gHUD.m_Ammo.m_pWeapon;
+
+		// cof: flashlight in the right hand
+		if ( !guess_iBoat && pWeapon && !guess_iWheelchair && !guess_pTelescopeEnt && !guess_IsViewEntityActive() && player &&
+			( pWeapon->iId == 10 || guess_g_iDualWeapon2 == 10 ) )
+		{
+			pmtrace_t *tr = gEngfuncs.PM_TraceLine( view->attachment[0], view->attachment[1], PM_TRACELINE_PHYSENTSONLY, 1, -1 );
+
+			if ( !view->curstate.rendercolor.r && !view->curstate.rendercolor.g && !view->curstate.rendercolor.b &&
+				( view->curstate.renderamt == 255 || !view->curstate.renderamt ) )
+			{
+				DynamicLight *dl = MY_AllocDlight( ent->index );
+				dl->origin = tr->endpos;
+				dl->radius = gEngfuncs.pfnRandomLong( -5, 5 ) + 220;
+				dl->die = gEngfuncs.GetClientTime() + 0.01;
+				dl->color = Vector( 0.4, 0.4, 0.4 );
+			}
+			else
+			{
+				float r = view->curstate.rendercolor.r / 255;
+				float g = view->curstate.rendercolor.g / 255;
+				float b = view->curstate.rendercolor.b / 255;
+
+				DynamicLight *dl = MY_AllocDlight( view->index );
+				dl->origin = tr->endpos;
+				dl->radius = gEngfuncs.pfnRandomLong( -5, 5 ) + view->curstate.renderamt;
+				dl->die = gEngfuncs.GetClientTime() + 0.01;
+				dl->color = Vector( r, g, b );
+			}
+		}
+
+		// cof: muzzle light
+		if ( !guess_iPaused && !guess_iBoat && !guess_iWheelchair && !guess_pTelescopeEnt && !guess_IsViewEntityActive() && player &&
+			( gHUD.guess_m_iFlashFlags & 16 ) && pWeapon && ( pWeapon->iId == 13 || pWeapon->iId == 25 || guess_g_iDualWeapon2 == 13 ) )
+		{
+			DynamicLight *dl = MY_AllocDlight( ent->index );
+
+			float flRed = gEngfuncs.pfnRandomFloat( -0.5, 0.5 );
+			float flGreen = gEngfuncs.pfnRandomFloat( -0.1, 0.05 );
+
+			dl->origin = view->attachment[0];
+			dl->radius = gEngfuncs.pfnRandomLong( -15, 15 ) + 220;
+			dl->die = gEngfuncs.GetClientTime() + 0.01;
+
+			if ( pWeapon->iId == 25 )
+			{
+				dl->color = Vector( flRed + 1.15f, flGreen + 0.6f, flGreen + 0.1f );
+			}
+			else
+			{
+				dl->color = Vector( flRed + 1.15f, flGreen + 0.2f, flGreen + 0.1f );
+				guess_MuzzleFlash( view, 0, true, 0.3 );
+			}
+		}
+	}
+
+	// cof: green light around the player
+	cl_entity_t *player = gEngfuncs.GetLocalPlayer();
+	bool bCamera = false;
+	if ( guess_pAttachCamEnt )
+		bCamera = !guess_iAttachCamFlag;
+
+	if ( !guess_iPaused && !bCamera && !guess_iBoat && !guess_iWheelchair && !guess_pTelescopeEnt && !guess_IsViewEntityActive() && player &&
+		( gHUD.guess_m_iFlashFlags & 64 ) )
+	{
+		DynamicLight *dl = MY_AllocDlight( 0 );
+		dl->origin = player->origin;
+		dl->radius = 900;
+		dl->color.x = 0.1;
+		dl->color.y = 0.9;
+		dl->color.z = 0.1;
+		dl->die = pparams->time + 0.01;
+	}
+
+	// cof: maglite
+	cl_entity_t *viewmodel = gEngfuncs.GetViewModel();
+
+	if ( viewmodel && gHUD.guess_m_iMaglite && ( ( gHUD.m_Ammo.m_pWeapon && gHUD.m_Ammo.m_pWeapon->iId == 1 ) || guess_g_iDualWeapon2 == 1 ) )
+	{
+		cl_entity_t *localplayer = gEngfuncs.GetLocalPlayer();
+		pmtrace_t *tr = gEngfuncs.PM_TraceLine( viewmodel->attachment[0], viewmodel->attachment[1], PM_TRACELINE_PHYSENTSONLY, 1, -1 );
+
+		if ( !guess_iBoat && !guess_iWheelchair && !guess_pTelescopeEnt && !guess_IsViewEntityActive() && localplayer && tr->endpos && gEngfuncs.GetViewModel() )
+		{
+			vec3_t dir;
+			VectorSubtract( viewmodel->attachment[1], viewmodel->attachment[0], dir );
+			VectorAngles( dir, dir );
+			dir[0] = -dir[0];
+
+			guess_SetupMagliteLight( tr->endpos, dir, pparams->time, pparams->frametime );
+		}
+	}
+
+	SetupFlashlight( view->attachment[1], pparams->viewangles, pparams->time, pparams->frametime ); // buz
+	guess_SetupViewModelLight( view->attachment[1], pparams->viewangles, pparams->time, pparams->frametime );
+
+	// cof: the left hand weapon follows the weapon model
+	if ( guess_g_iHeadShieldType == 3 )
+	{
+		VectorCopy( view->origin, g_HeadShieldEnt.origin );
+		VectorCopy( view->origin, g_HeadShieldEnt.curstate.origin );
+		VectorCopy( view->angles, g_HeadShieldEnt.angles );
+		VectorCopy( view->angles, g_HeadShieldEnt.curstate.angles );
+
+		guess_AddViewmodelBob( pparams, g_HeadShieldEnt.origin, g_HeadShieldEnt.angles, pparams->frametime, gEngfuncs.GetClientTime(), &g_HeadShieldEnt, true );
+		guess_CalcViewModelLag( pparams->frametime, g_HeadShieldEnt.origin, g_HeadShieldEnt.angles, g_HeadShieldEnt.angles, &g_HeadShieldEnt, true );
+	}
 }
 
 void V_SmoothInterpolateAngles( float * startAngle, float * endAngle, float * finalAngle, float degreesPerSec )
@@ -1971,23 +2326,14 @@ void guess_NormalizeAngles360( float pitch, float yaw )
 		yaw += 360;
 }
 
+inline bool guess_IsFinite( float f )
+{
+	return ( *(unsigned long *)&f & 0x7F800000 ) != 0x7F800000;
+}
+
 bool guess_VectorIsValid( float x, float y, float z )
 {
-	float f;
-
-	f = x;
-	if ( ( *(unsigned long *)&f & 0x7F800000 ) == 0x7F800000 )
-		return false;
-
-	f = y;
-	if ( ( *(unsigned long *)&f & 0x7F800000 ) == 0x7F800000 )
-		return false;
-
-	f = z;
-	if ( ( *(unsigned long *)&f & 0x7F800000 ) == 0x7F800000 )
-		return false;
-
-	return true;
+	return guess_IsFinite( x ) && guess_IsFinite( y ) && guess_IsFinite( z );
 }
 
 void guess_V_DecayPunchAngle( Vector punch, struct ref_params_s *pparams )
