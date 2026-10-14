@@ -29,19 +29,20 @@ extern float v_idlescale;
 float in_fov;
 extern void HUD_SetCmdBits( int bits );
 
+extern cvar_t *cl_fovmultiplier;
+
 int CHud::UpdateClientData(client_data_t *cdata, float time)
 {
 	memcpy(m_vecOrigin, cdata->origin, sizeof(vec3_t));
 	memcpy(m_vecAngles, cdata->viewangles, sizeof(vec3_t));
 	
 	m_iKeyBits = CL_ButtonBits( 0 );
-	m_iWeaponBits = cdata->iWeaponBits;
 
 	in_fov = cdata->fov;
 
 	Think();
 
-	cdata->fov = m_flFOV;//m_iFOV; buz
+	cdata->fov = m_flFOV * cl_fovmultiplier->value;//m_iFOV; buz
 	
 	v_idlescale = m_iConcussionEffect;
 

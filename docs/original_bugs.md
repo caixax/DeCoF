@@ -122,3 +122,5 @@ The reconstructed source keeps the behavior of the retail 1.6a binaries, includi
 | guess_SetSteamAppValue (client glmanager.cpp) | Opens HKCU\Software\Valve\Steam\Apps\70_Cry of Fear with RegCreateKeyEx and never closes the key. | as written |
 | GLManager::VidInit (client glmanager.cpp) | The success message says "Succesfully". | the string |
 | CTabPanel::LoadMessage (client vgui_tabpanel.cpp) | FontFromMessage advances only a copy of the text pointer, so the text and the title are shown with their @font prefix. | as written |
+| CHud::MsgFunc_AttachCam (client hud_msg.cpp) | Reads a SHORT, two BYTEs and three LONGs while the server writes only a SHORT and a BYTE, so it reads past the end of the message; the LONGs land in a vector that render_origin overwrites later. | as written |
+| CHud::MsgFunc_ViewLock (client hud_msg.cpp) | Reads a second COORD past the end of the message when the first COORD is not 666. | as written |

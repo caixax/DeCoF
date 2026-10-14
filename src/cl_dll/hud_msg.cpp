@@ -709,7 +709,11 @@ int CHud :: MsgFunc_PlayMP3( const char *pszName, int iSize, void *pbuf ) //AJH 
 		if ( flFadeTime != 0 )
 			guess_IrrKlangSetParams( -1, -1, gEngfuncs.GetClientTime(), flFadeTime );
 
-		guess_IrrKlangSetLoop( iLoop != 0 );
+		if ( iLoop )
+			guess_IrrKlangSetLoop( true );
+		else
+			guess_IrrKlangSetLoop( false );
+
 		guess_IrrKlangSetStopping( false );
 		guess_IrrKlangPlay( szFile );
 	}
@@ -824,7 +828,7 @@ int CHud :: MsgFunc_ViewKnock( const char *pszName, int iSize, void *pbuf )
 	float flKnock = READ_BYTE();
 	angles[0] -= flKnock;
 
-	if ( !guess_m_bViewLock )
+	if ( !gHUD.guess_m_bViewLock )
 		gEngfuncs.SetViewAngles( angles );
 
 	if ( guess_iWheelchair )
@@ -863,7 +867,11 @@ int CHud :: MsgFunc_ViewLock( const char *pszName, int iSize, void *pbuf )
 	else
 		guess_m_flViewLockTime = gEngfuncs.GetClientTime() + READ_COORD();
 
-	guess_m_bViewLockWasOn = ( guess_m_flViewLockTime > 0 && guess_m_bViewLock );
+	if ( guess_m_flViewLockTime > 0 )
+		guess_m_bViewLockWasOn = ( guess_m_bViewLock != 0 );
+	else
+		guess_m_bViewLockWasOn = false;
+
 	guess_m_bViewLock = ( iLock != 0 );
 
 	return 1;
@@ -1102,30 +1110,30 @@ int CHud :: MsgFunc_AttachCam( const char *pszName, int iSize, void *pbuf )
 	guess_vecUnknown105431B4.y = READ_LONG();
 	guess_vecUnknown105431B4.z = READ_LONG();
 
-	guess_vecUnknown105431B4 = render_origin;
 	guess_iUnknown10542BC8 = 1;
+	guess_vecUnknown105431B4 = render_origin;
 	guess_flUnknown10542BCC = 2;
 	guess_flUnknown10542BD4 = 2;
 	guess_flUnknown10542BD0 = 8.5;
 	guess_bUnknown10542BB3 = false;
 	guess_bUnknown10559514 = false;
 
-	if ( iEntity > 0 )
-	{
-		guess_pAttachCamEnt = gEngfuncs.GetEntityByIndex( iEntity );
-		guess_vecUnknown105431CC = render_origin;
-		gEngfuncs.GetViewAngles( guess_vecUnknown105431C0 );
-	}
-	else
+	if ( iEntity <= 0 )
 	{
 		if ( guess_pAttachCamEnt )
 		{
-			guess_vecUnknown105431B4 = guess_vecCameraAttachment;
 			guess_iUnknown10542BC8 = 2;
+			guess_vecUnknown105431B4 = guess_vecCameraAttachment;
 			guess_flUnknown10542BCC = 2.5;
 		}
 
 		guess_pAttachCamEnt = NULL;
+	}
+	else
+	{
+		guess_pAttachCamEnt = gEngfuncs.GetEntityByIndex( iEntity );
+		guess_vecUnknown105431CC = render_origin;
+		gEngfuncs.GetViewAngles( guess_vecUnknown105431C0 );
 	}
 
 	return 1;
@@ -1153,8 +1161,14 @@ int CHud :: MsgFunc_NewFade( const char *pszName, int iSize, void *pbuf )
 	int iHold = READ_BYTE();
 
 	guess_m_flFadeEnd = gEngfuncs.GetClientTime() + READ_COORD();
-	guess_m_bFadeOut = ( iFadeOut != 0 );
-	guess_m_bFadeHold = ( iHold != 0 );
+	if ( iFadeOut )
+		guess_m_bFadeOut = true;
+	else
+		guess_m_bFadeOut = false;
+	if ( iHold )
+		guess_m_bFadeHold = true;
+	else
+		guess_m_bFadeHold = false;
 
 	return 1;
 }
@@ -1359,40 +1373,46 @@ int CHud :: MsgFunc_PlaySFX( const char *pszName, int iSize, void *pbuf )
 
 	vec3_t origin = Vector( x, y, z );
 
-	if ( !iEngine )
+	if ( iEngine )
 	{
-		guess_IrrKlangPlaySFX( pszSound, iType, iFlag != 0, origin );
+		if ( strstr( pszSound, "weapons_new/" ) )
+		{
+			bool bFound = false;
+			int j = 0;
+
+			for ( unsigned int i = 0; i < strlen( pszSound ); i++ )
+			{
+				if ( bFound )
+					szName[j++] = pszSound[i];
+				else if ( pszSound[i] == '/' || pszSound[i] == '\\' )
+					bFound = true;
+			}
+
+			if ( bFound )
+			{
+				szName[j] = '\0';
+				strcpy( szSound, "weapons/" );
+				strcat( szSound, szName );
+				pszSound = szSound;
+			}
+		}
+
+		if ( strstr( pszSound, "fire" ) || strstr( pszSound, "shoot" ) )
+			gEngfuncs.pEventAPI->EV_PlaySound( 0, origin, CHAN_WEAPON, pszSound, 1.0, 0.8, 0, PITCH_NORM );
+		else
+			gEngfuncs.pEventAPI->EV_PlaySound( 0, origin, CHAN_AUTO, pszSound, 1.0, 0.8, 0, PITCH_NORM );
+
 		return 1;
 	}
-
-	if ( strstr( pszSound, "weapons_new/" ) )
-	{
-		bool bFound = false;
-		int j = 0;
-
-		for ( unsigned int i = 0; i < strlen( pszSound ); i++ )
-		{
-			if ( bFound )
-				szName[j++] = pszSound[i];
-			else if ( pszSound[i] == '/' || pszSound[i] == '\\' )
-				bFound = true;
-		}
-
-		if ( bFound )
-		{
-			szName[j] = '\0';
-			strcpy( szSound, "weapons/" );
-			strcat( szSound, szName );
-			pszSound = szSound;
-		}
-	}
-
-	if ( strstr( pszSound, "fire" ) || strstr( pszSound, "shoot" ) )
-		gEngfuncs.pEventAPI->EV_PlaySound( 0, origin, CHAN_WEAPON, pszSound, 1.0, 0.8, 0, PITCH_NORM );
 	else
-		gEngfuncs.pEventAPI->EV_PlaySound( 0, origin, CHAN_AUTO, pszSound, 1.0, 0.8, 0, PITCH_NORM );
+	{
+		bool bFlag = false;
+		if ( iFlag )
+			bFlag = true;
+		guess_IrrKlangPlaySFX( pszSound, iType, bFlag, origin );
 
-	return 1;
+		return 1;
+	}
 }
 
 int CHud :: MsgFunc_Inventory( const char *pszName, int iSize, void *pbuf )

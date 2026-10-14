@@ -1039,3 +1039,8 @@ va,name,kind,evidence
 10096A00,?getCellRenderer@FooTablePanel@?A0x41e71573@@UAEPAVPanel@vgui@@HH_N00@Z,func,"calls ControlConfigPanel::GetCVar and returns a label or the text entry, as the HLSDK FooTablePanel::getCellRenderer (anonymous namespace hash of our build)"
 1013B108,??_C@_00CNPNBAHC@@,data,"the empty string literal """"; Ghidra labels it PTR_1013b108, which objdiff does not treat as a string; 260 paired references"
 10190600,___security_cookie,data,the /GS cookie every protected function xors with ebp in its prologue (261 paired references)
+10545050,?guess_g_CgContext@@3Vguess_CCgContext@@A,data,CHud::MsgFunc_InitHUD calls its guess_Shutdown (hud_msg agent); 2 paired references; extent up to guess_iUnknown1054506C
+10545078,?guess_g_CgWater@@3Vguess_CCgWater@@A,data,"CHud::MsgFunc_InitHUD resets it (hud_msg agent); extent up to guess_bUnknown10545081, which may be one of its members"
+10545118,?guess_g_TextureManager@@3Vguess_CTextureManager@@A,data,"CHud::MsgFunc_InitHUD calls guess_IsHardware, guess_Reset and guess_LoadPlayerShadow on it (hud_msg agent); extent up to the next named symbol"
+10543338,?in_fov@@3MA,data,"CHud::UpdateClientData stores cdata->fov here before Think, as in_fov in HLSDK hud_update.cpp"
+105433B0,?cl_fovmultiplier@@3PAUcvar_s@@A,data,"InitInput stores the ""cl_fovmultiplier"" cvar here; CHud::UpdateClientData multiplies m_flFOV by its value"

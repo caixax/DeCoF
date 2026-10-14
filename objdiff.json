@@ -2274,6 +2274,14 @@
       "metadata": {
         "source_path": "src/cl_dll/guess_TGALoader.cpp"
       }
+    },
+    {
+      "name": "client/cl_dll/hud_update",
+      "target_path": "build/target/client/cl_dll/hud_update.obj",
+      "base_path": "build/base/client/cl_dll/hud_update.obj",
+      "metadata": {
+        "source_path": "src/cl_dll/hud_update.cpp"
+      }
     }
   ]
 }

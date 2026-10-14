@@ -85,3 +85,6 @@
 ?__CmdFunc_guess_ToUnlockables@@YAXXZ
 ?__CmdFunc_ToggleServerBrowser@@YAXXZ
 ?__CmdFunc_guess_Unlockables@@YAXXZ
+?__MsgFunc_AddNote@@YAHPBDHPAX@Z
+?__MsgFunc_AddShine@@YAHPBDHPAX@Z
+?__MsgFunc_AttachCam@@YAHPBDHPAX@Z

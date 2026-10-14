@@ -590,3 +590,8 @@ _iJumpSpectator,4,"our object, capped at the next retail symbol"
 ?guess_iM16BurstMode@@3HA,4,type size
 ?guess_flCurrentKick@@3MA,4,type size
 ?guess_pTelescopeEnt@@3PAUcl_entity_s@@A,4,"our object, capped at the next retail symbol"
+?guess_g_CgContext@@3Vguess_CCgContext@@A,28,gap to the next named retail symbol
+?guess_g_CgWater@@3Vguess_CCgWater@@A,9,gap to the next named retail symbol
+?guess_g_TextureManager@@3Vguess_CTextureManager@@A,16,gap to the next named retail symbol
+?in_fov@@3MA,4,type size
+?cl_fovmultiplier@@3PAUcvar_s@@A,4,type size

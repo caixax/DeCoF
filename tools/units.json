@@ -1543,6 +1543,11 @@
           "name": "cl_dll/guess_TGALoader",
           "source": "src/cl_dll/guess_TGALoader.cpp",
           "functions_file": "tools/units/client_cl_dll_guess_TGALoader.txt"
+        },
+        {
+          "name": "cl_dll/hud_update",
+          "source": "src/cl_dll/hud_update.cpp",
+          "functions_file": "tools/units/client_cl_dll_hud_update.txt"
         }
       ]
     }
