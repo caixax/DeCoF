@@ -71,12 +71,12 @@ public:
 
 private:
 
+	IVoiceTweak			*m_pVoiceTweak;		// Engine voice tweak API.
+
 	int					m_DlgWidth;
 	int					m_DlgHeight;
 
 	Label				m_Label;		
-	
-	IVoiceTweak			*m_pVoiceTweak;		// Engine voice tweak API.
 
 	TweakScroller		m_MicVolume;
 	TweakScroller		m_SpeakerVolume;
