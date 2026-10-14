@@ -3,5 +3,6 @@
 ?AddCVarFromInputStream@ControlConfigPanel@@QAEXPAVInputStream@vgui@@@Z
 ?GetCVar@ControlConfigPanel@@QAEXHPADH0H@Z
 ?GetCVarBind@ControlConfigPanel@@QAEXPBDPADH1H@Z
-?startCellEditing@FooTablePanel@?A0x615d16ed@@UAEPAVPanel@vgui@@HH@Z
+?startCellEditing@FooTablePanel@?A0x41e71573@@UAEPAVPanel@vgui@@HH@Z
 ?GetCVarCount@ControlConfigPanel@@QAEHXZ
+?getCellRenderer@FooTablePanel@?A0x41e71573@@UAEPAVPanel@vgui@@HH_N00@Z

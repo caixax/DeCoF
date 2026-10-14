@@ -866,54 +866,54 @@ client,10020B90,373,,,LIB,guess:cl_dll/guess_ClothesMenu.cpp,,,TODO,,,STL/iostre
 client,10020D10,260,,,LIB,guess:cl_dll/guess_ClothesMenu.cpp,,,TODO,,,STL/iostream instantiation (toolchain code) placed before the object that first uses it
 client,10020E20,1553,??0CCoopStats@@QAE@XZ,CCoopStats::CCoopStats,COF,guess:cl_dll/guess_CoopStats.cpp,,,MATCHED,100,client_manual.csv,
 client,10021440,160,,,LIB,guess:cl_dll/guess_CoopStats.cpp,,,TODO,,,STL/iostream instantiation (toolchain code) placed before the object that first uses it
-client,100214F0,424,??0_System_error@std@@IAE@Verror_code@1@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@1@@Z,std::_System_error::_System_error,LIB,cl_dll/guess_CoopStats.cpp,,,TODO,,,
-client,100216A0,65,??0_System_error@std@@QAE@ABV01@@Z,std::_System_error::_System_error,LIB,cl_dll/guess_CoopStats.cpp,,,TODO,,,
+client,100214F0,424,??0_System_error@std@@IAE@Verror_code@1@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@1@@Z,std::_System_error::_System_error,LIB,cl_dll/guess_CoopStats.cpp,,,MATCHED,100,,
+client,100216A0,65,??0_System_error@std@@QAE@ABV01@@Z,std::_System_error::_System_error,LIB,cl_dll/guess_CoopStats.cpp,,,MATCHED,100,,
 client,100216F0,51,,,LIB,guess:cl_dll/guess_CoopStats.cpp,,,TODO,,,STL/iostream instantiation (toolchain code) placed before the object that first uses it
 client,10021730,51,,,LIB,guess:cl_dll/guess_CoopStats.cpp,,,TODO,,,STL/iostream instantiation (toolchain code) placed before the object that first uses it
-client,10021770,24,??0bad_array_new_length@std@@QAE@XZ,std::bad_array_new_length::bad_array_new_length,LIB,cl_dll/guess_CoopStats.cpp,,,TODO,,,
+client,10021770,24,??0bad_array_new_length@std@@QAE@XZ,std::bad_array_new_length::bad_array_new_length,LIB,cl_dll/guess_CoopStats.cpp,,,MATCHED,100,,
 client,10021790,51,,,LIB,guess:cl_dll/guess_CoopStats.cpp,,,TODO,,,STL/iostream instantiation (toolchain code) placed before the object that first uses it
-client,100217D0,45,??0exception@std@@QAE@ABV01@@Z,std::exception::exception,LIB,cl_dll/guess_CoopStats.cpp,,,TODO,,,
+client,100217D0,45,??0exception@std@@QAE@ABV01@@Z,std::exception::exception,LIB,cl_dll/guess_CoopStats.cpp,,,MATCHED,100,,
 client,10021800,71,,,LIB,guess:cl_dll/guess_CoopStats.cpp,,,TODO,,,STL/iostream instantiation (toolchain code) placed before the object that first uses it
-client,10021850,187,??0failure@ios_base@std@@QAE@PBDABVerror_code@2@@Z,std::ios_base::failure::failure,LIB,cl_dll/guess_CoopStats.cpp,,,TODO,,,
+client,10021850,187,??0failure@ios_base@std@@QAE@PBDABVerror_code@2@@Z,std::ios_base::failure::failure,LIB,cl_dll/guess_CoopStats.cpp,,,TODO,99.99,,"relocation targets differ (instructions identical): retail std::ios_base::failure::vftable, ours ??_7failure@ios_base@std@@6B@"
 client,10021910,51,,,LIB,guess:cl_dll/guess_CoopStats.cpp,,,TODO,,,STL/iostream instantiation (toolchain code) placed before the object that first uses it
-client,10021950,148,??0sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@AAV12@@Z,>::sentry::sentry,LIB,cl_dll/guess_CoopStats.cpp,,,TODO,,,
+client,10021950,148,??0sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@AAV12@@Z,>::sentry::sentry,LIB,cl_dll/guess_CoopStats.cpp,,,MATCHED,100,,
 client,100219F0,71,,,LIB,guess:cl_dll/guess_CoopStats.cpp,,,TODO,,,STL/iostream instantiation (toolchain code) placed before the object that first uses it
 client,10021A40,26,,,LIB,guess:cl_dll/guess_CoopStats.cpp,,,TODO,,,STL/iostream instantiation (toolchain code) placed before the object that first uses it
 client,10021A60,26,,,LIB,guess:cl_dll/guess_CoopStats.cpp,,,TODO,,,STL/iostream instantiation (toolchain code) placed before the object that first uses it
 client,10021A80,158,,,LIB,guess:cl_dll/guess_CoopStats.cpp,,,TODO,,,STL/iostream instantiation (toolchain code) placed before the object that first uses it
-client,10021B30,67,??1?$basic_ifstream@DU?$char_traits@D@std@@@std@@UAE@XZ,>,LIB,cl_dll/guess_CoopStats.cpp,,,TODO,,,
+client,10021B30,67,??1?$basic_ifstream@DU?$char_traits@D@std@@@std@@UAE@XZ,>,LIB,cl_dll/guess_CoopStats.cpp,,,MATCHED,100,,
 client,10021B80,71,,,LIB,guess:cl_dll/guess_CoopStats.cpp,,,TODO,,,STL/iostream instantiation (toolchain code) placed before the object that first uses it
-client,10021BD0,28,??1?$basic_istream@DU?$char_traits@D@std@@@std@@UAE@XZ,>,LIB,cl_dll/guess_CoopStats.cpp,,,TODO,,,
-client,10021BF0,67,??1?$basic_ofstream@DU?$char_traits@D@std@@@std@@UAE@XZ,>,LIB,cl_dll/guess_CoopStats.cpp,,,TODO,,,
-client,10021C40,28,??1?$basic_ostream@DU?$char_traits@D@std@@@std@@UAE@XZ,>,LIB,cl_dll/guess_CoopStats.cpp,,,TODO,,,
-client,10021CA0,42,??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ,>,LIB,cl_dll/guess_CoopStats.cpp,,,TODO,,,
-client,10021CE0,58,??1?$ctype@D@std@@MAE@XZ,std::ctype<char>::~ctype<char>,LIB,cl_dll/guess_CoopStats.cpp,,,TODO,,,
-client,10021D20,13,??1?$unique_ptr@V_Facet_base@std@@U?$default_delete@V_Facet_base@std@@@2@@std@@QAE@XZ,>,LIB,cl_dll/guess_CoopStats.cpp,,,TODO,,,
+client,10021BD0,28,??1?$basic_istream@DU?$char_traits@D@std@@@std@@UAE@XZ,>,LIB,cl_dll/guess_CoopStats.cpp,,,MATCHED,100,,
+client,10021BF0,67,??1?$basic_ofstream@DU?$char_traits@D@std@@@std@@UAE@XZ,>,LIB,cl_dll/guess_CoopStats.cpp,,,MATCHED,100,,
+client,10021C40,28,??1?$basic_ostream@DU?$char_traits@D@std@@@std@@UAE@XZ,>,LIB,cl_dll/guess_CoopStats.cpp,,,MATCHED,100,,
+client,10021CA0,42,??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ,>,LIB,cl_dll/guess_CoopStats.cpp,,,MATCHED,100,,
+client,10021CE0,58,??1?$ctype@D@std@@MAE@XZ,std::ctype<char>::~ctype<char>,LIB,cl_dll/guess_CoopStats.cpp,,,MATCHED,100,,
+client,10021D20,13,??1?$unique_ptr@V_Facet_base@std@@U?$default_delete@V_Facet_base@std@@@2@@std@@QAE@XZ,>,LIB,cl_dll/guess_CoopStats.cpp,,,MATCHED,100,,
 client,10021D50,207,,,LIB,guess:cl_dll/guess_CoopStats.cpp,,,TODO,,,STL/iostream instantiation (toolchain code) placed before the object that first uses it
 client,10021E30,69,,,LIB,guess:cl_dll/guess_CoopStats.cpp,,,TODO,,,STL/iostream instantiation (toolchain code) placed before the object that first uses it
 client,10021E80,69,,,LIB,guess:cl_dll/guess_CoopStats.cpp,,,TODO,,,STL/iostream instantiation (toolchain code) placed before the object that first uses it
-client,10021F40,7,??1?$codecvt@DDU_Mbstatet@@@std@@MAE@XZ,_Mbstatet>,LIB,cl_dll/guess_CoopStats.cpp,,,TODO,,,
+client,10021F40,7,??1?$codecvt@DDU_Mbstatet@@@std@@MAE@XZ,_Mbstatet>,LIB,cl_dll/guess_CoopStats.cpp,,,MATCHED,100,,
 client,10021F70,64,,,LIB,guess:cl_dll/guess_CoopStats.cpp,,,TODO,,,STL/iostream instantiation (toolchain code) placed before the object that first uses it
-client,10021FC0,25,??1locale@std@@QAE@XZ,std::locale::~locale,LIB,cl_dll/guess_CoopStats.cpp,,,TODO,,,
+client,10021FC0,25,??1locale@std@@QAE@XZ,std::locale::~locale,LIB,cl_dll/guess_CoopStats.cpp,,,MATCHED,100,,
 client,10021FE0,76,,,LIB,guess:cl_dll/guess_CoopStats.cpp,,,TODO,,,STL/iostream instantiation (toolchain code) placed before the object that first uses it
 client,10022040,96,,,LIB,guess:cl_dll/guess_CoopStats.cpp,,,TODO,,,STL/iostream instantiation (toolchain code) placed before the object that first uses it
 client,100220D0,137,,,LIB,guess:cl_dll/guess_CoopStats.cpp,,,TODO,,,STL/iostream instantiation (toolchain code) placed before the object that first uses it
-client,10022160,137,??_D?$basic_ofstream@DU?$char_traits@D@std@@@std@@QAEXXZ,destructor',LIB,cl_dll/guess_CoopStats.cpp,,,TODO,,,
+client,10022160,137,??_D?$basic_ofstream@DU?$char_traits@D@std@@@std@@QAEXXZ,destructor',LIB,cl_dll/guess_CoopStats.cpp,,,TODO,87.80,,
 client,100221EE,8,,,LIB,guess:cl_dll/guess_CoopStats.cpp,,,TODO,,,STL/iostream instantiation (toolchain code) placed before the object that first uses it
 client,100221F6,8,,,LIB,guess:cl_dll/guess_CoopStats.cpp,,,TODO,,,STL/iostream instantiation (toolchain code) placed before the object that first uses it
 client,100221FE,8,,,LIB,guess:cl_dll/guess_CoopStats.cpp,,,TODO,,,STL/iostream instantiation (toolchain code) placed before the object that first uses it
 client,10022206,8,,,LIB,guess:cl_dll/guess_CoopStats.cpp,,,TODO,,,STL/iostream instantiation (toolchain code) placed before the object that first uses it
-client,10022210,35,??_G?$basic_filebuf@DU?$char_traits@D@std@@@std@@UAEPAXI@Z,destructor',LIB,cl_dll/guess_CoopStats.cpp,,,TODO,,,
-client,10022240,41,??_G?$basic_ifstream@DU?$char_traits@D@std@@@std@@UAEPAXI@Z,destructor',LIB,cl_dll/guess_CoopStats.cpp,,,TODO,,,
+client,10022210,35,??_G?$basic_filebuf@DU?$char_traits@D@std@@@std@@UAEPAXI@Z,destructor',LIB,cl_dll/guess_CoopStats.cpp,,,MATCHED,100,,
+client,10022240,41,??_G?$basic_ifstream@DU?$char_traits@D@std@@@std@@UAEPAXI@Z,destructor',LIB,cl_dll/guess_CoopStats.cpp,,,MATCHED,100,,
 client,10022270,96,,,LIB,guess:cl_dll/guess_CoopStats.cpp,,,TODO,,,STL/iostream instantiation (toolchain code) placed before the object that first uses it
-client,100222E0,123,??_G?$basic_istream@DU?$char_traits@D@std@@@std@@UAEPAXI@Z,destructor',LIB,cl_dll/guess_CoopStats.cpp,,,TODO,,,
-client,10022360,41,??_G?$basic_ofstream@DU?$char_traits@D@std@@@std@@UAEPAXI@Z,destructor',LIB,cl_dll/guess_CoopStats.cpp,,,TODO,,,
-client,10022390,123,??_G?$basic_ostream@DU?$char_traits@D@std@@@std@@UAEPAXI@Z,destructor',LIB,cl_dll/guess_CoopStats.cpp,,,TODO,,,
-client,10022410,80,??_G?$basic_streambuf@DU?$char_traits@D@std@@@std@@UAEPAXI@Z,destructor',LIB,cl_dll/guess_CoopStats.cpp,,,TODO,,,
+client,100222E0,123,??_G?$basic_istream@DU?$char_traits@D@std@@@std@@UAEPAXI@Z,destructor',LIB,cl_dll/guess_CoopStats.cpp,,,TODO,87.17,,
+client,10022360,41,??_G?$basic_ofstream@DU?$char_traits@D@std@@@std@@UAEPAXI@Z,destructor',LIB,cl_dll/guess_CoopStats.cpp,,,MATCHED,100,,
+client,10022390,123,??_G?$basic_ostream@DU?$char_traits@D@std@@@std@@UAEPAXI@Z,destructor',LIB,cl_dll/guess_CoopStats.cpp,,,TODO,87.17,,
+client,10022410,80,??_G?$basic_streambuf@DU?$char_traits@D@std@@@std@@UAEPAXI@Z,destructor',LIB,cl_dll/guess_CoopStats.cpp,,,MATCHED,100,,
 client,10022460,36,,,LIB,guess:cl_dll/guess_CoopStats.cpp,,,TODO,,,STL/iostream instantiation (toolchain code) placed before the object that first uses it
-client,10022490,83,??_G?$ctype@D@std@@MAEPAXI@Z,destructor',LIB,cl_dll/guess_CoopStats.cpp,,,TODO,,,
-client,100224F0,36,??_G_Facet_base@std@@UAEPAXI@Z,destructor',LIB,cl_dll/guess_CoopStats.cpp,,,TODO,,,
-client,10022520,30,??_G_Iostream_error_category2@std@@UAEPAXI@Z,destructor',LIB,cl_dll/guess_CoopStats.cpp,,,TODO,,,
+client,10022490,83,??_G?$ctype@D@std@@MAEPAXI@Z,destructor',LIB,cl_dll/guess_CoopStats.cpp,,,MATCHED,100,,
+client,100224F0,36,??_G_Facet_base@std@@UAEPAXI@Z,destructor',LIB,cl_dll/guess_CoopStats.cpp,,,MATCHED,100,,
+client,10022520,30,??_G_Iostream_error_category2@std@@UAEPAXI@Z,destructor',LIB,cl_dll/guess_CoopStats.cpp,,,MATCHED,100,,
 client,10022540,48,,,LIB,guess:cl_dll/guess_CoopStats.cpp,,,TODO,,,STL/iostream instantiation (toolchain code) placed before the object that first uses it
 client,10022570,48,,,LIB,guess:cl_dll/guess_CoopStats.cpp,,,TODO,,,STL/iostream instantiation (toolchain code) placed before the object that first uses it
 client,100225A0,48,,,LIB,guess:cl_dll/guess_CoopStats.cpp,,,TODO,,,STL/iostream instantiation (toolchain code) placed before the object that first uses it
@@ -931,19 +931,19 @@ client,10023570,22,?Initialize@CCoopStats@@QAEXXZ,CCoopStats::Initialize,COF,cl_
 client,10023590,22,?guess_MsgBeatCoop@@YAHPBDHPAX@Z,,COF,cl_dll/guess_CoopStats.cpp,,,MATCHED,100,client_manual.csv,
 client,100235B0,2161,?guess_MsgCoopStats@@YAHPBDHPAX@Z,guess_MsgCoopStats,COF,guess:cl_dll/guess_CoopStats.cpp,,,MATCHED,100,client_manual.csv,
 client,10023E40,36,?guess_CoopStatsInit@@YAXXZ,guess_CoopStatsInit,COF,cl_dll/guess_CoopStats.cpp,,,MATCHED,100,,
-client,10023E70,17,?_Decref@facet@locale@std@@UAEPAV_Facet_base@3@XZ,std::locale::facet::_Decref,LIB,cl_dll/guess_CoopStats.cpp,,,TODO,,,
-client,10023E90,203,?_Endwrite@?$basic_filebuf@DU?$char_traits@D@std@@@std@@IAE_NXZ,>::_Endwrite,LIB,cl_dll/guess_CoopStats.cpp,,,TODO,,,
-client,10023F60,19,?_Gnavail@?$basic_streambuf@DU?$char_traits@D@std@@@std@@IBE_JXZ,>::_Gnavail,LIB,cl_dll/guess_CoopStats.cpp,,,TODO,,,
-client,10023F80,5,?_Incref@facet@locale@std@@UAEXXZ,std::locale::facet::_Incref,LIB,cl_dll/guess_CoopStats.cpp,,,TODO,,,
-client,10023F90,231,?_Init@?$basic_filebuf@DU?$char_traits@D@std@@@std@@IAEXPAU_iobuf@@W4_Initfl@12@@Z,>::_Init,LIB,cl_dll/guess_CoopStats.cpp,,,TODO,,,
-client,10024080,138,?_Initcvt@?$basic_filebuf@DU?$char_traits@D@std@@@std@@IAEXABV?$codecvt@DDU_Mbstatet@@@2@@Z,>::_Initcvt,LIB,cl_dll/guess_CoopStats.cpp,,,TODO,,,
+client,10023E70,17,?_Decref@facet@locale@std@@UAEPAV_Facet_base@3@XZ,std::locale::facet::_Decref,LIB,cl_dll/guess_CoopStats.cpp,,,MATCHED,100,,
+client,10023E90,203,?_Endwrite@?$basic_filebuf@DU?$char_traits@D@std@@@std@@IAE_NXZ,>::_Endwrite,LIB,cl_dll/guess_CoopStats.cpp,,,MATCHED,100,,
+client,10023F60,19,?_Gnavail@?$basic_streambuf@DU?$char_traits@D@std@@@std@@IBE_JXZ,>::_Gnavail,LIB,cl_dll/guess_CoopStats.cpp,,,MATCHED,100,,
+client,10023F80,5,?_Incref@facet@locale@std@@UAEXXZ,std::locale::facet::_Incref,LIB,cl_dll/guess_CoopStats.cpp,,,MATCHED,100,,
+client,10023F90,231,?_Init@?$basic_filebuf@DU?$char_traits@D@std@@@std@@IAEXPAU_iobuf@@W4_Initfl@12@@Z,>::_Init,LIB,cl_dll/guess_CoopStats.cpp,,,MATCHED,100,,
+client,10024080,138,?_Initcvt@?$basic_filebuf@DU?$char_traits@D@std@@@std@@IAEXABV?$codecvt@DDU_Mbstatet@@@2@@Z,>::_Initcvt,LIB,cl_dll/guess_CoopStats.cpp,,,MATCHED,100,,
 client,10024110,497,,,LIB,guess:cl_dll/guess_CoopStats.cpp,,,TODO,,,STL/iostream instantiation (toolchain code) placed before the object that first uses it
 client,10024299,33,,,LIB,guess:cl_dll/guess_CoopStats.cpp,,,TODO,,,STL/iostream instantiation (toolchain code) placed before the object that first uses it
 client,10024340,15,,,LIB,guess:cl_dll/guess_CoopStats.cpp,,,TODO,,,STL/iostream instantiation (toolchain code) placed before the object that first uses it
 client,10024350,3,,,LIB,guess:cl_dll/guess_CoopStats.cpp,,,TODO,,,STL/iostream instantiation (toolchain code) placed before the object that first uses it
 client,10024360,180,,,LIB,guess:cl_dll/guess_CoopStats.cpp,,,TODO,,,STL/iostream instantiation (toolchain code) placed before the object that first uses it
 client,100243D8,18,,,LIB,guess:cl_dll/guess_CoopStats.cpp,,,TODO,,,STL/iostream instantiation (toolchain code) placed before the object that first uses it
-client,10024440,19,?_Pnavail@?$basic_streambuf@DU?$char_traits@D@std@@@std@@IBE_JXZ,>::_Pnavail,LIB,cl_dll/guess_CoopStats.cpp,,,TODO,,,
+client,10024440,19,?_Pnavail@?$basic_streambuf@DU?$char_traits@D@std@@@std@@IBE_JXZ,>::_Pnavail,LIB,cl_dll/guess_CoopStats.cpp,,,MATCHED,100,,
 client,10024460,35,?_Reset_back@?$basic_filebuf@DU?$char_traits@D@std@@@std@@AAEXXZ,"std::basic_filebuf<char,std::char_traits<char> >::_Reset_back",LIB,,,,,,client_1.6a_crt_strong.csv,
 client,10024490,28,,,LIB,guess:cl_dll/guess_CoopStats.cpp,,,TODO,,,STL/iostream instantiation (toolchain code) placed before the object that first uses it
 client,100244B0,15,,,LIB,guess:cl_dll/guess_CoopStats.cpp,,,TODO,,,STL/iostream instantiation (toolchain code) placed before the object that first uses it
@@ -952,67 +952,67 @@ client,100244D0,10,,,LIB,guess:cl_dll/guess_CoopStats.cpp,,,TODO,,,STL/iostream 
 client,100244E0,313,,,LIB,guess:cl_dll/guess_CoopStats.cpp,,,TODO,,,STL/iostream instantiation (toolchain code) placed before the object that first uses it
 client,10024620,224,,,LIB,guess:cl_dll/guess_CoopStats.cpp,,,TODO,,,STL/iostream instantiation (toolchain code) placed before the object that first uses it
 client,10024710,113,,,LIB,guess:cl_dll/guess_CoopStats.cpp,,,TODO,,,STL/iostream instantiation (toolchain code) placed before the object that first uses it
-client,10024790,204,?close@?$basic_filebuf@DU?$char_traits@D@std@@@std@@QAEPAV12@XZ,>::close,LIB,cl_dll/guess_CoopStats.cpp,,,TODO,,,
+client,10024790,204,?close@?$basic_filebuf@DU?$char_traits@D@std@@@std@@QAEPAV12@XZ,>::close,LIB,cl_dll/guess_CoopStats.cpp,,,MATCHED,100,,
 client,10024860,18,?default_error_condition@error_category@std@@UBE?AVerror_condition@2@H@Z,std::error_category::default_error_condition,LIB,,,,,,client_1.6a_crt_strong.csv,
-client,10024880,3,?do_always_noconv@?$codecvt@DDU_Mbstatet@@@std@@MBE_NXZ,_Mbstatet>::do_always_noconv,LIB,cl_dll/guess_CoopStats.cpp,,,TODO,,,
-client,10024890,3,?do_always_noconv@codecvt_base@std@@MBE_NXZ,std::codecvt_base::do_always_noconv,LIB,cl_dll/guess_CoopStats.cpp,,,TODO,,,
+client,10024880,3,?do_always_noconv@?$codecvt@DDU_Mbstatet@@@std@@MBE_NXZ,_Mbstatet>::do_always_noconv,LIB,cl_dll/guess_CoopStats.cpp,,,MATCHED,100,,
+client,10024890,3,?do_always_noconv@codecvt_base@std@@MBE_NXZ,std::codecvt_base::do_always_noconv,LIB,cl_dll/guess_CoopStats.cpp,,,MATCHED,100,,
 client,100248A0,6,,,LIB,guess:cl_dll/guess_CoopStats.cpp,,,TODO,,,STL/iostream instantiation (toolchain code) placed before the object that first uses it
 client,100248B0,28,,,LIB,guess:cl_dll/guess_CoopStats.cpp,,,TODO,,,STL/iostream instantiation (toolchain code) placed before the object that first uses it
-client,100248D0,21,?do_length@?$codecvt@DDU_Mbstatet@@@std@@MBEHAAU_Mbstatet@@PBD1I@Z,_Mbstatet>::do_length,LIB,cl_dll/guess_CoopStats.cpp,,,TODO,,,
+client,100248D0,21,?do_length@?$codecvt@DDU_Mbstatet@@@std@@MBEHAAU_Mbstatet@@PBD1I@Z,_Mbstatet>::do_length,LIB,cl_dll/guess_CoopStats.cpp,,,MATCHED,100,,
 client,100248F0,6,,,LIB,guess:cl_dll/guess_CoopStats.cpp,,,TODO,,,STL/iostream instantiation (toolchain code) placed before the object that first uses it
-client,10024900,10,?do_narrow@?$ctype@D@std@@MBEDDD@Z,std::ctype<char>::do_narrow,LIB,cl_dll/guess_CoopStats.cpp,,,TODO,,,
-client,10024910,31,?do_narrow@?$ctype@D@std@@MBEPBDPBD0DPAD@Z,std::ctype<char>::do_narrow,LIB,cl_dll/guess_CoopStats.cpp,,,TODO,,,
+client,10024900,10,?do_narrow@?$ctype@D@std@@MBEDDD@Z,std::ctype<char>::do_narrow,LIB,cl_dll/guess_CoopStats.cpp,,,MATCHED,100,,
+client,10024910,31,?do_narrow@?$ctype@D@std@@MBEPBDPBD0DPAD@Z,std::ctype<char>::do_narrow,LIB,cl_dll/guess_CoopStats.cpp,,,MATCHED,100,,
 client,10024930,28,,,LIB,guess:cl_dll/guess_CoopStats.cpp,,,TODO,,,STL/iostream instantiation (toolchain code) placed before the object that first uses it
-client,10024950,24,?do_tolower@?$ctype@D@std@@MBEDD@Z,std::ctype<char>::do_tolower,LIB,cl_dll/guess_CoopStats.cpp,,,TODO,,,
-client,10024970,48,?do_tolower@?$ctype@D@std@@MBEPBDPADPBD@Z,std::ctype<char>::do_tolower,LIB,cl_dll/guess_CoopStats.cpp,,,TODO,,,
-client,100249A0,24,?do_toupper@?$ctype@D@std@@MBEDD@Z,std::ctype<char>::do_toupper,LIB,cl_dll/guess_CoopStats.cpp,,,TODO,,,
-client,100249C0,48,?do_toupper@?$ctype@D@std@@MBEPBDPADPBD@Z,std::ctype<char>::do_toupper,LIB,cl_dll/guess_CoopStats.cpp,,,TODO,,,
-client,100249F0,20,?do_unshift@?$codecvt@DDU_Mbstatet@@@std@@MBEHAAU_Mbstatet@@PAD1AAPAD@Z,_Mbstatet>::do_unshift,LIB,cl_dll/guess_CoopStats.cpp,,,TODO,,,
-client,10024A10,10,?do_widen@?$ctype@D@std@@MBEDD@Z,std::ctype<char>::do_widen,LIB,cl_dll/guess_CoopStats.cpp,,,TODO,,,
-client,10024A20,31,?do_widen@?$ctype@D@std@@MBEPBDPBD0PAD@Z,std::ctype<char>::do_widen,LIB,cl_dll/guess_CoopStats.cpp,,,TODO,,,
-client,10024A40,39,?equivalent@error_category@std@@UBE_NABVerror_code@2@H@Z,std::error_category::equivalent,LIB,cl_dll/guess_CoopStats.cpp,,,TODO,,,
-client,10024A70,60,?equivalent@error_category@std@@UBE_NHABVerror_condition@2@@Z,std::error_category::equivalent,LIB,cl_dll/guess_CoopStats.cpp,,,TODO,,,
+client,10024950,24,?do_tolower@?$ctype@D@std@@MBEDD@Z,std::ctype<char>::do_tolower,LIB,cl_dll/guess_CoopStats.cpp,,,MATCHED,100,,
+client,10024970,48,?do_tolower@?$ctype@D@std@@MBEPBDPADPBD@Z,std::ctype<char>::do_tolower,LIB,cl_dll/guess_CoopStats.cpp,,,MATCHED,100,,
+client,100249A0,24,?do_toupper@?$ctype@D@std@@MBEDD@Z,std::ctype<char>::do_toupper,LIB,cl_dll/guess_CoopStats.cpp,,,MATCHED,100,,
+client,100249C0,48,?do_toupper@?$ctype@D@std@@MBEPBDPADPBD@Z,std::ctype<char>::do_toupper,LIB,cl_dll/guess_CoopStats.cpp,,,MATCHED,100,,
+client,100249F0,20,?do_unshift@?$codecvt@DDU_Mbstatet@@@std@@MBEHAAU_Mbstatet@@PAD1AAPAD@Z,_Mbstatet>::do_unshift,LIB,cl_dll/guess_CoopStats.cpp,,,MATCHED,100,,
+client,10024A10,10,?do_widen@?$ctype@D@std@@MBEDD@Z,std::ctype<char>::do_widen,LIB,cl_dll/guess_CoopStats.cpp,,,MATCHED,100,,
+client,10024A20,31,?do_widen@?$ctype@D@std@@MBEPBDPBD0PAD@Z,std::ctype<char>::do_widen,LIB,cl_dll/guess_CoopStats.cpp,,,MATCHED,100,,
+client,10024A40,39,?equivalent@error_category@std@@UBE_NABVerror_code@2@H@Z,std::error_category::equivalent,LIB,cl_dll/guess_CoopStats.cpp,,,MATCHED,100,,
+client,10024A70,60,?equivalent@error_category@std@@UBE_NHABVerror_condition@2@@Z,std::error_category::equivalent,LIB,cl_dll/guess_CoopStats.cpp,,,MATCHED,100,,
 client,10024AB0,249,,,LIB,guess:cl_dll/guess_CoopStats.cpp,,,TODO,,,STL/iostream instantiation (toolchain code) placed before the object that first uses it
-client,10024BB0,30,?imbue@?$basic_filebuf@DU?$char_traits@D@std@@@std@@MAEXABVlocale@2@@Z,>::imbue,LIB,cl_dll/guess_CoopStats.cpp,,,TODO,,,
-client,10024BD0,3,?_Alloc_proxy@_Container_base0@std@@QAEXABU_Fake_allocator@2@@Z,std::_Container_base0::_Alloc_proxy,LIB,cl_dll/guess_CoopStats.cpp,,,TODO,,,
+client,10024BB0,30,?imbue@?$basic_filebuf@DU?$char_traits@D@std@@@std@@MAEXABVlocale@2@@Z,>::imbue,LIB,cl_dll/guess_CoopStats.cpp,,,MATCHED,100,,
+client,10024BD0,3,?_Alloc_proxy@_Container_base0@std@@QAEXABU_Fake_allocator@2@@Z,std::_Container_base0::_Alloc_proxy,LIB,cl_dll/guess_CoopStats.cpp,,,MATCHED,100,,
 client,10024BE0,379,,,LIB,guess:cl_dll/guess_CoopStats.cpp,,,TODO,,,STL/iostream instantiation (toolchain code) placed before the object that first uses it
 client,10024D60,23,?make_error_code@std@@YA?AVerror_code@1@W4io_errc@1@@Z,std::make_error_code,LIB,,,,,,client_1.6a_crt_strong.csv,
-client,10024D80,171,?message@_Iostream_error_category2@std@@UBE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@H@Z,std::_Iostream_error_category2::message,LIB,cl_dll/guess_CoopStats.cpp,,,TODO,,,
+client,10024D80,171,?message@_Iostream_error_category2@std@@UBE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@H@Z,std::_Iostream_error_category2::message,LIB,cl_dll/guess_CoopStats.cpp,,,MATCHED,100,,
 client,10024E30,6,,,LIB,guess:cl_dll/guess_CoopStats.cpp,,,TODO,,,STL/iostream instantiation (toolchain code) placed before the object that first uses it
-client,10024E40,186,?open@?$basic_filebuf@DU?$char_traits@D@std@@@std@@QAEPAV12@PBDHH@Z,>::open,LIB,cl_dll/guess_CoopStats.cpp,,,TODO,,,
-client,10024F00,359,?overflow@?$basic_filebuf@DU?$char_traits@D@std@@@std@@MAEHH@Z,>::overflow,LIB,cl_dll/guess_CoopStats.cpp,,,TODO,,,
+client,10024E40,186,?open@?$basic_filebuf@DU?$char_traits@D@std@@@std@@QAEPAV12@PBDHH@Z,>::open,LIB,cl_dll/guess_CoopStats.cpp,,,MATCHED,100,,
+client,10024F00,359,?overflow@?$basic_filebuf@DU?$char_traits@D@std@@@std@@MAEHH@Z,>::overflow,LIB,cl_dll/guess_CoopStats.cpp,,,MATCHED,100,,
 client,10025070,6,,,LIB,guess:cl_dll/guess_CoopStats.cpp,,,TODO,,,STL/iostream instantiation (toolchain code) placed before the object that first uses it
-client,10025080,170,?pbackfail@?$basic_filebuf@DU?$char_traits@D@std@@@std@@MAEHH@Z,>::pbackfail,LIB,cl_dll/guess_CoopStats.cpp,,,TODO,,,
+client,10025080,170,?pbackfail@?$basic_filebuf@DU?$char_traits@D@std@@@std@@MAEHH@Z,>::pbackfail,LIB,cl_dll/guess_CoopStats.cpp,,,MATCHED,100,,
 client,10025130,6,,,LIB,guess:cl_dll/guess_CoopStats.cpp,,,TODO,,,STL/iostream instantiation (toolchain code) placed before the object that first uses it
 client,10025140,242,,,LIB,guess:cl_dll/guess_CoopStats.cpp,,,TODO,,,STL/iostream instantiation (toolchain code) placed before the object that first uses it
-client,10025240,215,?seekoff@?$basic_filebuf@DU?$char_traits@D@std@@@std@@MAE?AV?$fpos@U_Mbstatet@@@2@_JHH@Z,>::seekoff,LIB,cl_dll/guess_CoopStats.cpp,,,TODO,,,
-client,10025320,45,?seekoff@?$basic_streambuf@DU?$char_traits@D@std@@@std@@MAE?AV?$fpos@U_Mbstatet@@@2@_JHH@Z,>::seekoff,LIB,cl_dll/guess_CoopStats.cpp,,,TODO,,,
-client,10025350,197,?seekpos@?$basic_filebuf@DU?$char_traits@D@std@@@std@@MAE?AV?$fpos@U_Mbstatet@@@2@V32@H@Z,>::seekpos,LIB,cl_dll/guess_CoopStats.cpp,,,TODO,,,
-client,10025420,45,?seekpos@?$basic_streambuf@DU?$char_traits@D@std@@@std@@MAE?AV?$fpos@U_Mbstatet@@@2@V32@H@Z,>::seekpos,LIB,cl_dll/guess_CoopStats.cpp,,,TODO,,,
-client,10025450,82,?setbuf@?$basic_filebuf@DU?$char_traits@D@std@@@std@@MAEPAV?$basic_streambuf@DU?$char_traits@D@std@@@2@PAD_J@Z,>::setbuf,LIB,cl_dll/guess_CoopStats.cpp,,,TODO,,,
-client,100254B0,5,?setbuf@?$basic_streambuf@DU?$char_traits@D@std@@@std@@MAEPAV12@PAD_J@Z,>::setbuf,LIB,cl_dll/guess_CoopStats.cpp,,,TODO,,,
-client,100254C0,35,?setstate@?$basic_ios@DU?$char_traits@D@std@@@std@@QAEXH_N@Z,>::setstate,LIB,cl_dll/guess_CoopStats.cpp,,,TODO,,,
-client,100254F0,5,?showmanyc@?$basic_streambuf@DU?$char_traits@D@std@@@std@@MAE_JXZ,>::showmanyc,LIB,cl_dll/guess_CoopStats.cpp,,,TODO,,,
-client,10025500,100,?snextc@?$basic_streambuf@DU?$char_traits@D@std@@@std@@QAEHXZ,>::snextc,LIB,cl_dll/guess_CoopStats.cpp,,,TODO,,,
-client,10025570,45,?sync@?$basic_filebuf@DU?$char_traits@D@std@@@std@@MAEHXZ,>::sync,LIB,cl_dll/guess_CoopStats.cpp,,,TODO,,,
-client,100255A0,3,?sync@?$basic_streambuf@DU?$char_traits@D@std@@@std@@MAEHXZ,>::sync,LIB,cl_dll/guess_CoopStats.cpp,,,TODO,,,
+client,10025240,215,?seekoff@?$basic_filebuf@DU?$char_traits@D@std@@@std@@MAE?AV?$fpos@U_Mbstatet@@@2@_JHH@Z,>::seekoff,LIB,cl_dll/guess_CoopStats.cpp,,,MATCHED,100,,
+client,10025320,45,?seekoff@?$basic_streambuf@DU?$char_traits@D@std@@@std@@MAE?AV?$fpos@U_Mbstatet@@@2@_JHH@Z,>::seekoff,LIB,cl_dll/guess_CoopStats.cpp,,,MATCHED,100,,
+client,10025350,197,?seekpos@?$basic_filebuf@DU?$char_traits@D@std@@@std@@MAE?AV?$fpos@U_Mbstatet@@@2@V32@H@Z,>::seekpos,LIB,cl_dll/guess_CoopStats.cpp,,,MATCHED,100,,
+client,10025420,45,?seekpos@?$basic_streambuf@DU?$char_traits@D@std@@@std@@MAE?AV?$fpos@U_Mbstatet@@@2@V32@H@Z,>::seekpos,LIB,cl_dll/guess_CoopStats.cpp,,,MATCHED,100,,
+client,10025450,82,?setbuf@?$basic_filebuf@DU?$char_traits@D@std@@@std@@MAEPAV?$basic_streambuf@DU?$char_traits@D@std@@@2@PAD_J@Z,>::setbuf,LIB,cl_dll/guess_CoopStats.cpp,,,MATCHED,100,,
+client,100254B0,5,?setbuf@?$basic_streambuf@DU?$char_traits@D@std@@@std@@MAEPAV12@PAD_J@Z,>::setbuf,LIB,cl_dll/guess_CoopStats.cpp,,,MATCHED,100,,
+client,100254C0,35,?setstate@?$basic_ios@DU?$char_traits@D@std@@@std@@QAEXH_N@Z,>::setstate,LIB,cl_dll/guess_CoopStats.cpp,,,MATCHED,100,,
+client,100254F0,5,?showmanyc@?$basic_streambuf@DU?$char_traits@D@std@@@std@@MAE_JXZ,>::showmanyc,LIB,cl_dll/guess_CoopStats.cpp,,,MATCHED,100,,
+client,10025500,100,?snextc@?$basic_streambuf@DU?$char_traits@D@std@@@std@@QAEHXZ,>::snextc,LIB,cl_dll/guess_CoopStats.cpp,,,MATCHED,100,,
+client,10025570,45,?sync@?$basic_filebuf@DU?$char_traits@D@std@@@std@@MAEHXZ,>::sync,LIB,cl_dll/guess_CoopStats.cpp,,,MATCHED,100,,
+client,100255A0,3,?sync@?$basic_streambuf@DU?$char_traits@D@std@@@std@@MAEHXZ,>::sync,LIB,cl_dll/guess_CoopStats.cpp,,,MATCHED,100,,
 client,100255B0,734,,,LIB,guess:cl_dll/guess_CoopStats.cpp,,,TODO,,,STL/iostream instantiation (toolchain code) placed before the object that first uses it
-client,10025890,37,?uflow@?$basic_streambuf@DU?$char_traits@D@std@@@std@@MAEHXZ,>::uflow,LIB,cl_dll/guess_CoopStats.cpp,,,TODO,,,
-client,100258C0,61,?underflow@?$basic_filebuf@DU?$char_traits@D@std@@@std@@MAEHXZ,>::underflow,LIB,cl_dll/guess_CoopStats.cpp,,,TODO,,,
-client,10025900,4,?eof@?$_Narrow_char_traits@DH@std@@SAHXZ,"std::_Narrow_char_traits<char,int>::eof",LIB,cl_dll/guess_CoopStats.cpp,,,TODO,,,
-client,10025910,14,?what@exception@std@@UBEPBDXZ,std::exception::what,LIB,cl_dll/guess_CoopStats.cpp,,,TODO,,,
-client,10025920,496,?xsgetn@?$basic_filebuf@DU?$char_traits@D@std@@@std@@MAE_JPAD_J@Z,>::xsgetn,LIB,cl_dll/guess_CoopStats.cpp,,,TODO,,,
-client,10025B10,200,?xsgetn@?$basic_streambuf@DU?$char_traits@D@std@@@std@@MAE_JPAD_J@Z,>::xsgetn,LIB,cl_dll/guess_CoopStats.cpp,,,TODO,,,
-client,10025BE0,377,?xsputn@?$basic_filebuf@DU?$char_traits@D@std@@@std@@MAE_JPBD_J@Z,>::xsputn,LIB,cl_dll/guess_CoopStats.cpp,,,TODO,,,
-client,10025D60,192,?xsputn@?$basic_streambuf@DU?$char_traits@D@std@@@std@@MAE_JPBD_J@Z,>::xsputn,LIB,cl_dll/guess_CoopStats.cpp,,,TODO,,,
+client,10025890,37,?uflow@?$basic_streambuf@DU?$char_traits@D@std@@@std@@MAEHXZ,>::uflow,LIB,cl_dll/guess_CoopStats.cpp,,,MATCHED,100,,
+client,100258C0,61,?underflow@?$basic_filebuf@DU?$char_traits@D@std@@@std@@MAEHXZ,>::underflow,LIB,cl_dll/guess_CoopStats.cpp,,,MATCHED,100,,
+client,10025900,4,?eof@?$_Narrow_char_traits@DH@std@@SAHXZ,"std::_Narrow_char_traits<char,int>::eof",LIB,cl_dll/guess_CoopStats.cpp,,,MATCHED,100,,
+client,10025910,14,?what@exception@std@@UBEPBDXZ,std::exception::what,LIB,cl_dll/guess_CoopStats.cpp,,,MATCHED,100,,
+client,10025920,496,?xsgetn@?$basic_filebuf@DU?$char_traits@D@std@@@std@@MAE_JPAD_J@Z,>::xsgetn,LIB,cl_dll/guess_CoopStats.cpp,,,MATCHED,100,,
+client,10025B10,200,?xsgetn@?$basic_streambuf@DU?$char_traits@D@std@@@std@@MAE_JPAD_J@Z,>::xsgetn,LIB,cl_dll/guess_CoopStats.cpp,,,MATCHED,100,,
+client,10025BE0,377,?xsputn@?$basic_filebuf@DU?$char_traits@D@std@@@std@@MAE_JPBD_J@Z,>::xsputn,LIB,cl_dll/guess_CoopStats.cpp,,,MATCHED,100,,
+client,10025D60,192,?xsputn@?$basic_streambuf@DU?$char_traits@D@std@@@std@@MAE_JPBD_J@Z,>::xsputn,LIB,cl_dll/guess_CoopStats.cpp,,,MATCHED,100,,
 client,10025E20,64,,,LIB,guess:cl_dll/guess_CoopStats.cpp,,,TODO,,,STL/iostream instantiation (toolchain code) placed before the object that first uses it
 client,10025E60,395,,,LIB,guess:cl_dll/guess_CoopStats.cpp,,,TODO,,,STL/iostream instantiation (toolchain code) placed before the object that first uses it
 client,10026020,108,,,LIB,guess:cl_dll/guess_CoopStats.cpp,,,TODO,,,STL/iostream instantiation (toolchain code) placed before the object that first uses it
 client,10026090,564,,,LIB,guess:cl_dll/guess_CoopStats.cpp,,,TODO,,,STL/iostream instantiation (toolchain code) placed before the object that first uses it
 client,100262D0,470,,,LIB,guess:cl_dll/guess_CoopStats.cpp,,,TODO,,,STL/iostream instantiation (toolchain code) placed before the object that first uses it
-client,100264B0,153,??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z,>,LIB,cl_dll/guess_CoopStats.cpp,,,TODO,,,
+client,100264B0,153,??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z,>,LIB,cl_dll/guess_CoopStats.cpp,,,MATCHED,100,,
 client,10026550,1814,??0CCredits@@QAE@XZ,CCredits::CCredits,COF,guess:cl_dll/guess_Credits.cpp,,,MATCHED,100,client_manual.csv,
-client,10026C70,80,??1?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@QAE@XZ,>,LIB,cl_dll/guess_Credits.cpp,,,TODO,,,
+client,10026C70,80,??1?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@QAE@XZ,>,LIB,cl_dll/guess_Credits.cpp,,,MATCHED,100,,
 client,10026CD0,354,?guess_CountLines@CCredits@@QAEHXZ,CCredits::guess_CountLines,COF,cl_dll/guess_Credits.cpp,,,MATCHED,100,,
 client,10026E40,46,?Initialize@CCredits@@QAEXXZ,CCredits::Initialize,COF,cl_dll/guess_Credits.cpp,,,MATCHED,100,,
 client,10026E70,8342,?guess_MsgCredits@@YAHPBDHPAX@Z,guess_MsgCredits,COF,guess:cl_dll/guess_Credits.cpp,,,EQUIVALENT,93.96,client_manual.csv,"EQUIVALENT: label position loop (retail reloads iStartY and adds or subtracts an i*32 counter with a branch, ours two counters and a cmove), READ_* locals in other stack slots, the distance float loaded earlier in retail, and a different block layout in the Ending seen part (8 variants)"
@@ -1020,9 +1020,9 @@ client,10028F90,484,?guess_SetLine@CCredits@@QAEXHH@Z,CCredits::guess_SetLine,CO
 client,10029180,657,?guess_ShowUnlock@CCredits@@QAEXHPBDHPADH@Z,CCredits::guess_ShowUnlock,COF,guess:cl_dll/guess_Credits.cpp,,,MATCHED,100,client_manual.csv,
 client,10029420,48,?guess_va@@YAPADPBDZZ,guess_va,COF,cl_dll/guess_Credits.cpp,,,MATCHED,100,,
 client,10029450,20,?guess_CreditsInit@@YAXXZ,guess_CreditsInit,COF,cl_dll/guess_Credits.cpp,,,MATCHED,100,,
-client,10029470,22,?_Destroy@?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@AAEXPAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@0@Z,>::_Destroy,LIB,cl_dll/guess_Credits.cpp,,,TODO,,,
+client,10029470,22,?_Destroy@?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@AAEXPAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@0@Z,>::_Destroy,LIB,cl_dll/guess_Credits.cpp,,,MATCHED,100,,
 client,10029490,10,,,LIB,guess:cl_dll/guess_Credits.cpp,,,TODO,,,STL/iostream instantiation (toolchain code) placed before the object that first uses it
-client,100294A0,28,?deallocate@?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@QAEXQAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@I@Z,>::deallocate,LIB,cl_dll/guess_Credits.cpp,,,TODO,,,
+client,100294A0,28,?deallocate@?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@QAEXQAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@I@Z,>::deallocate,LIB,cl_dll/guess_Credits.cpp,,,MATCHED,100,,
 client,100294C0,4110,?solve@CCredits@@MAEXXZ,CCredits::solve,COF,guess:cl_dll/guess_Credits.cpp,,,EQUIVALENT,97.65,client_manual.csv,"EQUIVALENT: register choice; retail keeps &guess_m_iBrightness in ebx and 255 in esi and spills this to [ebp-0x24], ours addresses [edi+0x7c8] directly and keeps 255 in ebx; some loop locals in other stack slots (8 variants)"
 client,1002A4D0,964,??0CCutsceneSkip@@QAE@XZ,CCutsceneSkip::CCutsceneSkip,COF,cl_dll/guess_CutsceneSkip.cpp,,,MATCHED,100,,
 client,1002A8C0,8,?Initialize@CCutsceneSkip@@QAEXXZ,CCutsceneSkip::Initialize,COF,cl_dll/guess_CutsceneSkip.cpp,,,MATCHED,100,,
@@ -1441,7 +1441,7 @@ client,10058F50,98,?InitDecals@@YAXXZ,InitDecals,PARANOIA,cl_dll/gl_decals.cpp,,
 client,10058FC0,333,?LoadDecalTexture@@YAHPBD@Z,LoadDecalTexture,PARANOIA,cl_dll/gl_decals.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__gl_decals.obj:score11,
 client,10059110,817,?LoadDecals@@YAXXZ,LoadDecals,PARANOIA,guess:cl_dll/gl_decals.cpp,,,MATCHED,100,reloc:10060B10,
 client,10059450,165,?MsgCustomDecal@@YAHPBDHPAX@Z,MsgCustomDecal,PARANOIA,cl_dll/gl_decals.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__gl_decals.obj:score4,
-client,10059500,234,?PasteViewDecal@@YAXXZ,PasteViewDecal,PARANOIA,,,,TODO,,reloc:10058F50,
+client,10059500,234,?PasteViewDecal@@YAXXZ,PasteViewDecal,PARANOIA,,,,MATCHED,100,reloc:10058F50,
 client,100595F0,106,?ApplyGamma@@YAMM@Z,ApplyGamma,PARANOIA,cl_dll/gl_lightmap.cpp,,,MATCHED,100,reloc:10065710,
 client,10059660,542,?BuildLightMap_Combine@@YAXPAUmsurface_s@@@Z,BuildLightMap_Combine,UNKNOWN,cl_dll/gl_lightmap.cpp,,,MATCHED,100,,
 client,10059880,257,?BuildLightMap_FromBaselight@@YAXPAUmsurface_s@@@Z,BuildLightMap_FromBaselight,UNKNOWN,cl_dll/gl_lightmap.cpp,,,MATCHED,100,,
@@ -1564,7 +1564,7 @@ client,100630E0,104,?SetTextureMatrix@@YAXHHH@Z,SetTextureMatrix,PARANOIA,cl_dll
 client,10063150,389,?SetupTexMatrix@@YAXPAUmsurface_s@@ABVVector@@@Z,SetupTexMatrix,PARANOIA,cl_dll/gl_rsurf.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__gl_rsurf.obj:score7,
 client,100632E0,361,?SetupTexMatrix_Reflected@@YAXPAUmsurface_s@@ABVVector@@@Z,SetupTexMatrix_Reflected,PARANOIA,cl_dll/gl_rsurf.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__gl_rsurf.obj:score7,
 client,10063450,808,,,UNKNOWN,,,,TODO,,,
-client,10063780,1997,?DrawSky@@YAXXZ,DrawSky,PARANOIA,,,,TODO,,reloc:1005FF50,
+client,10063780,1997,?DrawSky@@YAXXZ,DrawSky,PARANOIA,,,,MATCHED,100,reloc:1005FF50,
 client,10063F50,82,?InitSky@@YAXXZ,InitSky,PARANOIA,cl_dll/gl_sky.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__gl_sky.obj:score9,
 client,10063FB0,132,?MsgSkyMarker_Sky@@YAHPBDHPAX@Z,MsgSkyMarker_Sky,PARANOIA,cl_dll/gl_sky.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__gl_sky.obj:score13,
 client,10064040,94,?MsgSkyMarker_World@@YAHPBDHPAX@Z,MsgSkyMarker_World,PARANOIA,cl_dll/gl_sky.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__gl_sky.obj:score7,
@@ -1614,7 +1614,7 @@ client,1006A030,447,?GetDetailTextureData@@YAHPADAAH11@Z,GetDetailTextureData,PA
 client,1006A1F0,284,?LoadCacheTexture@@YAHPBDHH@Z,LoadCacheTexture,PARANOIA,cl_dll/gl_texloader.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__gl_texloader.obj:score5,
 client,1006A310,257,?NormalizeMipMap@@YAXPAUcolor24@@HH@Z,NormalizeMipMap,PARANOIA,cl_dll/gl_texloader.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__gl_texloader.obj:score4,
 client,1006A420,705,?ParseDetailTextureDataFile@@YAHXZ,ParseDetailTextureDataFile,PARANOIA,cl_dll/gl_texloader.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__gl_texloader.obj:score29,
-client,1006A6F0,188,?SortTexturesByDetailTexID@@YAXXZ,SortTexturesByDetailTexID,PARANOIA,,,,TODO,,similar:0.50,
+client,1006A6F0,188,?SortTexturesByDetailTexID@@YAXXZ,SortTexturesByDetailTexID,PARANOIA,,,,MATCHED,100,similar:0.50,
 client,1006A7C0,139,?AlphaDist@@YAMABVVector@@0M@Z,AlphaDist,PARANOIA,cl_dll/grass.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__grass.obj:score3,
 client,1006A850,521,?DrawSpriteFacingPlayer@@YAXPAUgrass_sprite_s@@PAUgrass_type_s@@ABVVector@@M@Z,DrawSpriteFacingPlayer,PARANOIA,cl_dll/grass.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__grass.obj:score12,
 client,1006AA60,474,?DrawSpriteParallel@@YAXPAUgrass_sprite_s@@PAUgrass_type_s@@ABVVector@@M@Z,DrawSpriteParallel,PARANOIA,cl_dll/grass.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__grass.obj:score11,
@@ -2039,7 +2039,7 @@ client,10081920,1077,?DrawParticle@ParticleSystem@@QAEXPAUparticle@@AAVVector@@1
 client,10081D60,140,?DrawSystem@ParticleSystem@@QAEXXZ,ParticleSystem::DrawSystem,UNKNOWN,cl_dll/particlesys.cpp,,,TODO,99.99,,"relocation targets differ (instructions identical): retail ?guess_vecCameraAttachment@@3VVector@@A, ours ?guess_vecCameraAngles@@3VVector@@A"
 client,10081DF0,64,?GetType@ParticleSystem@@QAEPAVParticleType@@PBD@Z,ParticleSystem::GetType,UNKNOWN,cl_dll/particlesys.cpp,,,MATCHED,100,,
 client,10081E30,1196,?InitParticle@ParticleType@@QAEXPAUparticle@@PAVParticleSystem@@@Z,ParticleType::InitParticle,UNKNOWN,cl_dll/particlesys.cpp,,,MATCHED,100,,
-client,100822E0,3766,?ParseType@ParticleSystem@@QAEPAVParticleType@@AAPAD@Z,ParticleSystem::ParseType,SPIRIT,,,,TODO,,client_1.6a_ghidra_names.csv,
+client,100822E0,3766,?ParseType@ParticleSystem@@QAEPAVParticleType@@AAPAD@Z,ParticleSystem::ParseType,SPIRIT,,,,MATCHED,100,client_1.6a_ghidra_names.csv,
 client,100831A0,49,?SinLookup@ParticleSystem@@SAMH@Z,ParticleSystem::SinLookup,SPIRIT,cl_dll/particlesys.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__particlesys.obj:score2,
 client,100831E0,62,?UTIL_GetClientEntityWithServerIndex@@YAPAUcl_entity_s@@H@Z,UTIL_GetClientEntityWithServerIndex,UNKNOWN,cl_dll/particlesys.cpp,,,MATCHED,100,,
 client,10083220,2493,?UpdateParticle@ParticleSystem@@QAE_NPAUparticle@@M@Z,ParticleSystem::UpdateParticle,UNKNOWN,cl_dll/particlesys.cpp,,,MATCHED,100,,
@@ -2228,10 +2228,10 @@ client,100938C0,318,?OrthoQuad@@YAXHHHH@Z,OrthoQuad,PARANOIA,cl_dll/tri.cpp,,,MA
 client,10093A00,439,?OrthoScope@@YAXXZ,OrthoScope,PARANOIA,cl_dll/tri.cpp,,,MATCHED,100,similar:1.00,
 client,10093BC0,183,?RenderFog@@YAXXZ,RenderFog,UNKNOWN,cl_dll/tri.cpp,,,MATCHED,100,,
 client,10093C80,104,?UseTexture@@YAHAAHPAD@Z,UseTexture,SPIRIT,cl_dll/tri.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__tri.obj:score6,
-client,10093CF0,38,_HUD_DrawNormalTriangles,HUD_DrawNormalTriangles,HLSDK,,,,TODO,,client_1.6a_exports.csv,
-client,10093D10,255,_HUD_DrawTransparentTriangles,HUD_DrawTransparentTriangles,HLSDK,,,,TODO,,client_1.6a_exports.csv,
+client,10093CF0,38,_HUD_DrawNormalTriangles,HUD_DrawNormalTriangles,HLSDK,,,,TODO,60.00,client_1.6a_exports.csv,
+client,10093D10,255,_HUD_DrawTransparentTriangles,HUD_DrawTransparentTriangles,HLSDK,,,,TODO,73.33,client_1.6a_exports.csv,
 client,10093E10,16,??0CObjectsManager@@QAE@XZ,CObjectsManager::CObjectsManager,UNKNOWN,cl_dll/triapiobjects.cpp,,,MATCHED,100,,
-client,10093E20,435,??0CSmokePuff@@QAE@VVector@@0MMMMMMMMMM@Z,CSmokePuff::CSmokePuff,PARANOIA,,,,TODO,,client_1.6a_ghidra_names.csv,
+client,10093E20,435,??0CSmokePuff@@QAE@VVector@@0MMMMMMMMMM@Z,CSmokePuff::CSmokePuff,PARANOIA,,,,MATCHED,100,client_1.6a_ghidra_names.csv,
 client,10094000,28,?AddObject@CObjectsManager@@QAEXPAVCObject@@@Z,CObjectsManager::AddObject,PARANOIA,cl_dll/triapiobjects.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__triapiobjects.obj:score1,
 client,10094020,76,?CalcViewMatrix@@YAXH@Z,CalcViewMatrix,PARANOIA,cl_dll/triapiobjects.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__triapiobjects.obj:score2,
 client,10094070,173,?Draw@CObjectsManager@@QAEXXZ,CObjectsManager::Draw,UNKNOWN,cl_dll/triapiobjects.cpp,,,MATCHED,100,,
@@ -2292,7 +2292,7 @@ client,100969A0,42,?GetCVarBind@ControlConfigPanel@@QAEXPBDPADH1H@Z,ControlConfi
 client,100969D0,7,?GetCVarCount@ControlConfigPanel@@QAEHXZ,ControlConfigPanel::GetCVarCount,UNKNOWN,cl_dll/vgui_ControlConfigPanel.cpp,,,MATCHED,100,,
 client,100969E3,8,,,LIB,guess:cl_dll/vgui_ControlConfigPanel.cpp,,,TODO,,,vtordisp adjustor thunk of vgui::DataInputStream (compiler generated)
 client,100969EB,8,,,LIB,guess:cl_dll/vgui_ControlConfigPanel.cpp,,,TODO,,,vtordisp adjustor thunk of vgui::DataInputStream (compiler generated)
-client,10096A00,376,,,UNKNOWN,guess:cl_dll/vgui_ControlConfigPanel.cpp,,,TODO,,,FooTablePanel::getCellRenderer: inline in the class body; our object does not emit FooTablePanel (nothing instantiates it in our ControlConfigPanel)
+client,10096A00,376,?getCellRenderer@FooTablePanel@?A0x41e71573@@UAEPAVPanel@vgui@@HH_N00@Z,namespace'::FooTablePanel::getCellRenderer,UNKNOWN,guess:cl_dll/vgui_ControlConfigPanel.cpp,,,MATCHED,100,client_manual.csv,FooTablePanel::getCellRenderer: inline in the class body; our object does not emit FooTablePanel (nothing instantiates it in our ControlConfigPanel)
 client,10096B80,8,,,LIB,guess:cl_dll/vgui_ControlConfigPanel.cpp,,,TODO,,,vtordisp adjustor thunk of vgui::DataInputStream (compiler generated)
 client,10096B90,11,,,LIB,guess:cl_dll/vgui_ControlConfigPanel.cpp,,,TODO,,,vtordisp adjustor thunk of vgui::DataInputStream (compiler generated)
 client,10096B9B,8,,,LIB,guess:cl_dll/vgui_ControlConfigPanel.cpp,,,TODO,,,vtordisp adjustor thunk of vgui::DataInputStream (compiler generated)
@@ -2300,7 +2300,7 @@ client,10096BA3,8,,,LIB,guess:cl_dll/vgui_ControlConfigPanel.cpp,,,TODO,,,vtordi
 client,10096BAB,8,,,LIB,guess:cl_dll/vgui_ControlConfigPanel.cpp,,,TODO,,,vtordisp adjustor thunk of vgui::DataInputStream (compiler generated)
 client,10096BB3,8,,,LIB,guess:cl_dll/vgui_ControlConfigPanel.cpp,,,TODO,,,vtordisp adjustor thunk of vgui::DataInputStream (compiler generated)
 client,10096BBB,8,,,LIB,guess:cl_dll/vgui_ControlConfigPanel.cpp,,,TODO,,,vtordisp adjustor thunk of vgui::DataInputStream (compiler generated)
-client,10096BD0,48,?startCellEditing@FooTablePanel@?A0x615d16ed@@UAEPAVPanel@vgui@@HH@Z,`anonymous namespace'::FooTablePanel::startCellEditing,HLSDK,cl_dll/vgui_ControlConfigPanel.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__vgui_ControlConfigPanel.obj:score1,
+client,10096BD0,48,?startCellEditing@FooTablePanel@?A0x41e71573@@UAEPAVPanel@vgui@@HH@Z,namespace'::FooTablePanel::startCellEditing,HLSDK,cl_dll/vgui_ControlConfigPanel.cpp,,,MATCHED,100,client_manual.csv,
 client,10096C00,69,??0CImageLabel@@QAE@PBDHH@Z,CImageLabel::CImageLabel,HLSDK,cl_dll/vgui_CustomObjects.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__vgui_CustomObjects.obj:score1,
 client,10096C50,75,??0CImageLabel@@QAE@PBDHHHH@Z,CImageLabel::CImageLabel,HLSDK,cl_dll/vgui_CustomObjects.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__vgui_CustomObjects.obj:score3,
 client,10096CA0,136,??0CTFScrollButton@@QAE@HPBDHHHH@Z,CTFScrollButton::CTFScrollButton,HLSDK,cl_dll/vgui_CustomObjects.cpp,,,MATCHED,100,client_1.6a_ghidra_names.csv,
@@ -2463,36 +2463,36 @@ client,1009F680,177,?setText@CLabelHeader@@UAEXHPBD@Z,CLabelHeader::setText,HLSD
 client,1009F740,360,CLabelHeader::setText,CLabelHeader::setText,HLSDK,cl_dll/vgui_ScorePanel.h,,,TODO,,refbytes:paranoia:cl_dll__vgui_ScorePanel.obj:score8,
 client,1009F8B0,125,??0CSBLabel@@QAE@PAD0@Z,CSBLabel::CSBLabel,HLSDK,cl_dll/vgui_ServerBrowser.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__vgui_ServerBrowser.obj:score0,
 client,1009F930,1850,??0ServerBrowser@@QAE@HHHH@Z,ServerBrowser::ServerBrowser,HLSDK,cl_dll/vgui_ServerBrowser.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__vgui_ServerBrowser.obj:score70,
-client,100A0070,112,?DoConnect@ServerBrowserTablePanel@?A0x102b5bc2@@QAEXXZ,`anonymous namespace'::ServerBrowserTablePanel::DoConnect,HLSDK,cl_dll/vgui_ServerBrowser.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__vgui_ServerBrowser.obj:score9,
-client,100A00E0,15,?actionPerformed@CancelHandler@?A0x102b5bc2@@UAEXPAVPanel@vgui@@@Z,`anonymous namespace'::CancelHandler::actionPerformed,HLSDK,cl_dll/vgui_ServerBrowser.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__vgui_ServerBrowser.obj:score2,
-client,100A00F0,117,?actionPerformed@ConnectHandler@?A0x102b5bc2@@UAEXPAVPanel@vgui@@@Z,`anonymous namespace'::ConnectHandler::actionPerformed,HLSDK,cl_dll/vgui_ServerBrowser.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__vgui_ServerBrowser.obj:score10,
+client,100A0070,112,?DoConnect@ServerBrowserTablePanel@?A0x1d568137@@QAEXXZ,namespace'::ServerBrowserTablePanel::DoConnect,HLSDK,cl_dll/vgui_ServerBrowser.cpp,,,MATCHED,100,client_manual.csv,
+client,100A00E0,15,?actionPerformed@CancelHandler@?A0x1d568137@@UAEXPAVPanel@vgui@@@Z,namespace'::CancelHandler::actionPerformed,HLSDK,cl_dll/vgui_ServerBrowser.cpp,,,MATCHED,100,client_manual.csv,
+client,100A00F0,117,?actionPerformed@ConnectHandler@?A0x1d568137@@UAEXPAVPanel@vgui@@@Z,namespace'::ConnectHandler::actionPerformed,HLSDK,cl_dll/vgui_ServerBrowser.cpp,,,MATCHED,100,client_manual.csv,
 client,100A0170,16,,,UNKNOWN,guess:cl_dll/vgui_ServerBrowser.cpp,,,TODO,,,
 client,100A0180,8,,,UNKNOWN,guess:cl_dll/vgui_ServerBrowser.cpp,,,TODO,,,
-client,100A0190,3,,,UNKNOWN,guess:cl_dll/vgui_ServerBrowser.cpp,,,TODO,,,
-client,100A01A0,3,,,UNKNOWN,guess:cl_dll/vgui_ServerBrowser.cpp,,,TODO,,,
-client,100A01B0,3,,,UNKNOWN,guess:cl_dll/vgui_ServerBrowser.cpp,,,TODO,,,
-client,100A01C0,3,,,UNKNOWN,guess:cl_dll/vgui_ServerBrowser.cpp,,,TODO,,,
-client,100A01D0,3,,,UNKNOWN,guess:cl_dll/vgui_ServerBrowser.cpp,,,TODO,,,
-client,100A01E0,3,,,UNKNOWN,guess:cl_dll/vgui_ServerBrowser.cpp,,,TODO,,,
-client,100A01F0,461,?getCellRenderer@ServerBrowserTablePanel@?A0x102b5bc2@@UAEPAVPanel@vgui@@HH_N00@Z,`anonymous namespace'::ServerBrowserTablePanel::getCellRenderer,HLSDK,guess:cl_dll/vgui_ServerBrowser.cpp,,,MATCHED,100,similar:0.71,
-client,100A03E0,45,?getCellTall@ServerBrowserTablePanel@?A0x102b5bc2@@UAEHH@Z,`anonymous namespace'::ServerBrowserTablePanel::getCellTall,HLSDK,cl_dll/vgui_ServerBrowser.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__vgui_ServerBrowser.obj:score3,
-client,100A0410,101,?getRowCount@ServerBrowserTablePanel@?A0x102b5bc2@@UAEHXZ,`anonymous namespace'::ServerBrowserTablePanel::getRowCount,HLSDK,cl_dll/vgui_ServerBrowser.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__vgui_ServerBrowser.obj:score6,
-client,100A0480,3,,,UNKNOWN,guess:cl_dll/vgui_ServerBrowser.cpp,,,TODO,,,
-client,100A0490,3,,,UNKNOWN,guess:cl_dll/vgui_ServerBrowser.cpp,,,TODO,,,
-client,100A04A0,3,,,UNKNOWN,guess:cl_dll/vgui_ServerBrowser.cpp,,,TODO,,,
-client,100A04B0,3,,,UNKNOWN,guess:cl_dll/vgui_ServerBrowser.cpp,,,TODO,,,
-client,100A04C0,3,,,UNKNOWN,guess:cl_dll/vgui_ServerBrowser.cpp,,,TODO,,,
-client,100A04D0,3,,,UNKNOWN,guess:cl_dll/vgui_ServerBrowser.cpp,,,TODO,,,
-client,100A04E0,3,,,UNKNOWN,guess:cl_dll/vgui_ServerBrowser.cpp,,,TODO,,,
-client,100A04F0,3,,,UNKNOWN,guess:cl_dll/vgui_ServerBrowser.cpp,,,TODO,,,
-client,100A0500,127,?mouseDoublePressed@CBrowser_InputSignal@?A0x102b5bc2@@UAEXW4MouseCode@vgui@@PAVPanel@4@@Z,`anonymous namespace'::CBrowser_InputSignal::mouseDoublePressed,HLSDK,cl_dll/vgui_ServerBrowser.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__vgui_ServerBrowser.obj:score5,
-client,100A0580,13,,,UNKNOWN,guess:cl_dll/vgui_ServerBrowser.cpp,,,TODO,,,
-client,100A0590,119,?mousePressed@CBrowser_InputSignal@?A0x102b5bc2@@UAEXW4MouseCode@vgui@@PAVPanel@4@@Z,`anonymous namespace'::CBrowser_InputSignal::mousePressed,HLSDK,cl_dll/vgui_ServerBrowser.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__vgui_ServerBrowser.obj:score4,
-client,100A0610,13,,,UNKNOWN,guess:cl_dll/vgui_ServerBrowser.cpp,,,TODO,,,
-client,100A0620,3,,,UNKNOWN,guess:cl_dll/vgui_ServerBrowser.cpp,,,TODO,,,
-client,100A0630,3,,,UNKNOWN,guess:cl_dll/vgui_ServerBrowser.cpp,,,TODO,,,
-client,100A0640,3,,,UNKNOWN,guess:cl_dll/vgui_ServerBrowser.cpp,,,TODO,,,
-client,100A0650,3,,,UNKNOWN,guess:cl_dll/vgui_ServerBrowser.cpp,,,TODO,,,
+client,100A0190,3,?cursorEntered@CBrowser_InputSignal@?A0x1d568137@@UAEXPAVPanel@vgui@@@Z,namespace'::CBrowser_InputSignal::cursorEntered,UNKNOWN,guess:cl_dll/vgui_ServerBrowser.cpp,,,MATCHED,100,client_manual.csv,
+client,100A01A0,3,?cursorEntered@LabelSortInputHandler@@UAEXPAVPanel@vgui@@@Z,LabelSortInputHandler::cursorEntered,UNKNOWN,guess:cl_dll/vgui_ServerBrowser.cpp,,,MATCHED,100,client_manual.csv,
+client,100A01B0,3,?cursorExited@CBrowser_InputSignal@?A0x1d568137@@UAEXPAVPanel@vgui@@@Z,namespace'::CBrowser_InputSignal::cursorExited,UNKNOWN,guess:cl_dll/vgui_ServerBrowser.cpp,,,MATCHED,100,client_manual.csv,
+client,100A01C0,3,?cursorExited@LabelSortInputHandler@@UAEXPAVPanel@vgui@@@Z,LabelSortInputHandler::cursorExited,UNKNOWN,guess:cl_dll/vgui_ServerBrowser.cpp,,,MATCHED,100,client_manual.csv,
+client,100A01D0,3,?cursorMoved@CBrowser_InputSignal@?A0x1d568137@@UAEXHHPAVPanel@vgui@@@Z,namespace'::CBrowser_InputSignal::cursorMoved,UNKNOWN,guess:cl_dll/vgui_ServerBrowser.cpp,,,MATCHED,100,client_manual.csv,
+client,100A01E0,3,?cursorMoved@LabelSortInputHandler@@UAEXHHPAVPanel@vgui@@@Z,LabelSortInputHandler::cursorMoved,UNKNOWN,guess:cl_dll/vgui_ServerBrowser.cpp,,,MATCHED,100,client_manual.csv,
+client,100A01F0,461,?getCellRenderer@ServerBrowserTablePanel@?A0x1d568137@@UAEPAVPanel@vgui@@HH_N00@Z,namespace'::ServerBrowserTablePanel::getCellRenderer,HLSDK,guess:cl_dll/vgui_ServerBrowser.cpp,,,MATCHED,100,client_manual.csv,
+client,100A03E0,45,?getCellTall@ServerBrowserTablePanel@?A0x1d568137@@UAEHH@Z,namespace'::ServerBrowserTablePanel::getCellTall,HLSDK,cl_dll/vgui_ServerBrowser.cpp,,,MATCHED,100,client_manual.csv,
+client,100A0410,101,?getRowCount@ServerBrowserTablePanel@?A0x1d568137@@UAEHXZ,namespace'::ServerBrowserTablePanel::getRowCount,HLSDK,cl_dll/vgui_ServerBrowser.cpp,,,MATCHED,100,client_manual.csv,
+client,100A0480,3,?keyFocusTicked@CBrowser_InputSignal@?A0x1d568137@@UAEXPAVPanel@vgui@@@Z,namespace'::CBrowser_InputSignal::keyFocusTicked,UNKNOWN,guess:cl_dll/vgui_ServerBrowser.cpp,,,MATCHED,100,client_manual.csv,
+client,100A0490,3,?keyFocusTicked@LabelSortInputHandler@@UAEXPAVPanel@vgui@@@Z,LabelSortInputHandler::keyFocusTicked,UNKNOWN,guess:cl_dll/vgui_ServerBrowser.cpp,,,MATCHED,100,client_manual.csv,
+client,100A04A0,3,?keyPressed@CBrowser_InputSignal@?A0x1d568137@@UAEXW4KeyCode@vgui@@PAVPanel@4@@Z,namespace'::CBrowser_InputSignal::keyPressed,UNKNOWN,guess:cl_dll/vgui_ServerBrowser.cpp,,,MATCHED,100,client_manual.csv,
+client,100A04B0,3,?keyPressed@LabelSortInputHandler@@UAEXW4KeyCode@vgui@@PAVPanel@3@@Z,LabelSortInputHandler::keyPressed,UNKNOWN,guess:cl_dll/vgui_ServerBrowser.cpp,,,MATCHED,100,client_manual.csv,
+client,100A04C0,3,?keyReleased@CBrowser_InputSignal@?A0x1d568137@@UAEXW4KeyCode@vgui@@PAVPanel@4@@Z,namespace'::CBrowser_InputSignal::keyReleased,UNKNOWN,guess:cl_dll/vgui_ServerBrowser.cpp,,,MATCHED,100,client_manual.csv,
+client,100A04D0,3,?keyReleased@LabelSortInputHandler@@UAEXW4KeyCode@vgui@@PAVPanel@3@@Z,LabelSortInputHandler::keyReleased,UNKNOWN,guess:cl_dll/vgui_ServerBrowser.cpp,,,MATCHED,100,client_manual.csv,
+client,100A04E0,3,?keyTyped@CBrowser_InputSignal@?A0x1d568137@@UAEXW4KeyCode@vgui@@PAVPanel@4@@Z,namespace'::CBrowser_InputSignal::keyTyped,UNKNOWN,guess:cl_dll/vgui_ServerBrowser.cpp,,,MATCHED,100,client_manual.csv,
+client,100A04F0,3,?keyTyped@LabelSortInputHandler@@UAEXW4KeyCode@vgui@@PAVPanel@3@@Z,LabelSortInputHandler::keyTyped,UNKNOWN,guess:cl_dll/vgui_ServerBrowser.cpp,,,MATCHED,100,client_manual.csv,
+client,100A0500,127,?mouseDoublePressed@CBrowser_InputSignal@?A0x1d568137@@UAEXW4MouseCode@vgui@@PAVPanel@4@@Z,namespace'::CBrowser_InputSignal::mouseDoublePressed,HLSDK,cl_dll/vgui_ServerBrowser.cpp,,,MATCHED,100,client_manual.csv,
+client,100A0580,13,?mouseDoublePressed@LabelSortInputHandler@@UAEXW4MouseCode@vgui@@PAVPanel@3@@Z,LabelSortInputHandler::mouseDoublePressed,UNKNOWN,guess:cl_dll/vgui_ServerBrowser.cpp,,,MATCHED,100,client_manual.csv,
+client,100A0590,119,?mousePressed@CBrowser_InputSignal@?A0x1d568137@@UAEXW4MouseCode@vgui@@PAVPanel@4@@Z,namespace'::CBrowser_InputSignal::mousePressed,HLSDK,cl_dll/vgui_ServerBrowser.cpp,,,MATCHED,100,client_manual.csv,
+client,100A0610,13,?mousePressed@LabelSortInputHandler@@UAEXW4MouseCode@vgui@@PAVPanel@3@@Z,LabelSortInputHandler::mousePressed,UNKNOWN,guess:cl_dll/vgui_ServerBrowser.cpp,,,MATCHED,100,client_manual.csv,
+client,100A0620,3,?mouseReleased@CBrowser_InputSignal@?A0x1d568137@@UAEXW4MouseCode@vgui@@PAVPanel@4@@Z,namespace'::CBrowser_InputSignal::mouseReleased,UNKNOWN,guess:cl_dll/vgui_ServerBrowser.cpp,,,MATCHED,100,client_manual.csv,
+client,100A0630,3,?mouseReleased@LabelSortInputHandler@@UAEXW4MouseCode@vgui@@PAVPanel@3@@Z,LabelSortInputHandler::mouseReleased,UNKNOWN,guess:cl_dll/vgui_ServerBrowser.cpp,,,MATCHED,100,client_manual.csv,
+client,100A0640,3,?mouseWheeled@CBrowser_InputSignal@?A0x1d568137@@UAEXHPAVPanel@vgui@@@Z,namespace'::CBrowser_InputSignal::mouseWheeled,UNKNOWN,guess:cl_dll/vgui_ServerBrowser.cpp,,,MATCHED,100,client_manual.csv,
+client,100A0650,3,?mouseWheeled@LabelSortInputHandler@@UAEXHPAVPanel@vgui@@@Z,LabelSortInputHandler::mouseWheeled,UNKNOWN,guess:cl_dll/vgui_ServerBrowser.cpp,,,MATCHED,100,client_manual.csv,
 client,100A0660,394,?setSize@ServerBrowser@@UAEXHH@Z,ServerBrowser::setSize,HLSDK,cl_dll/vgui_ServerBrowser.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__vgui_ServerBrowser.obj:score24,
 client,100A07F0,5,,,UNKNOWN,,,,TODO,,,
 client,100A0800,36,??0SpectatorPanel@@QAE@HHHH@Z,SpectatorPanel::SpectatorPanel,HLSDK,cl_dll/vgui_SpectatorPanel.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__vgui_SpectatorPanel.obj:score0,
