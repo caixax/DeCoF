@@ -4,3 +4,6 @@
 ?Initialize@CClassMenuPanel@@UAEXXZ
 ?Open@CClassMenuPanel@@UAEXXZ
 ?Update@CClassMenuPanel@@UAEXXZ
+?Reset@CClassMenuPanel@@UAEXXZ
+?actionPerformed@CMenuHandler_StringCommand@@UAEXPAVPanel@vgui@@@Z
+?actionPerformed@CMenuHandler_TextWindow@@UAEXPAVPanel@vgui@@@Z

@@ -22,3 +22,7 @@
 ?setFgColor@CLabelHeader@@UAEXW4SchemeColor@Scheme@vgui@@@Z
 ?setFont@CLabelHeader@@UAEXPAVFont@vgui@@@Z
 ?setText@CLabelHeader@@UAEXHPBD@Z
+?actionPerformed@CMenuHandler_StringCommandWatch@@UAEXPAVPanel@vgui@@@Z
+?getSize@CTextImage2@@UAEXAAH0@Z
+?setColor@CTextImage2@@UAEXVColor@vgui@@@Z
+?setPos@CTextImage2@@UAEXHH@Z

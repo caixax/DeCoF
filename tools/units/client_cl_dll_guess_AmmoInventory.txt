@@ -7,3 +7,5 @@
 ?ActionSignal@CAmmoInventory@@QAEXH@Z
 ?guess_MsgAmmoInv@@YAHPBDHPAX@Z
 ?setVisible@CAmmoInventory@@UAEX_N@Z
+?paint@ColorButton@@UAEXXZ
+?paintBackground@ColorButton@@UAEXXZ

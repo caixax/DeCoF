@@ -4,3 +4,4 @@
 ?Update@CTeamMenuPanel@@UAEXXZ
 ?paintBackground@CTeamMenuPanel@@UAEXXZ
 ?Open@CTeamMenuPanel@@UAEXXZ
+?Reset@CTeamMenuPanel@@UAEXXZ

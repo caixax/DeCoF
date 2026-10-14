@@ -11,3 +11,6 @@
 ?Reset@CMenuPanel@@UAEXXZ
 ?SetActiveInfo@CMenuPanel@@UAEXH@Z
 ?SlotInput@CMenuPanel@@UAE_NH@Z
+?Close@CMenuPanel@@UAEXXZ
+?Open@CMenuPanel@@UAEXXZ
+?paintBackground@CTransparentPanel@@UAEXXZ
