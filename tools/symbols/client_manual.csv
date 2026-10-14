@@ -970,3 +970,4 @@ va,name,kind,evidence
 101B2F1C,?guess_iM16BurstMode@@3HA,data,HUD_ProcessPlayerState stores (int)src->vuser3[0] here; the server UpdateClientData sets vuser3.x from the M16 b_BurstMode; name is a guess
 101B2F20,?guess_flCurrentKick@@3MA,data,HUD_ProcessPlayerState stores src->vuser3[1] here; the server UpdateClientData sets vuser3.y from the active weapon m_flCurrentKick; name is a guess
 10055620,?guess_SetSteamAppValue@@YAHPBD0@Z,func,GLManager::VidInit calls it with LaunchOptions and -num_edicts 2048 -gl; RegCreateKeyEx on HKCU Software\Valve\Steam\Apps\70_Cry of Fear then RegSetValueEx REG_SZ; between LogDebugInfo and VidInit in the object; name is a guess
+105436D8,?guess_pTelescopeEnt@@3PAUcl_entity_s@@A,data,address from 2 paired references in functions of identical size (our global plus addend against the retail address)

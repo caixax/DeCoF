@@ -589,3 +589,4 @@ _iJumpSpectator,4,"our object, capped at the next retail symbol"
 ?guess_flRevolverRotation@@3MA,4,type size
 ?guess_iM16BurstMode@@3HA,4,type size
 ?guess_flCurrentKick@@3MA,4,type size
+?guess_pTelescopeEnt@@3PAUcl_entity_s@@A,4,"our object, capped at the next retail symbol"
