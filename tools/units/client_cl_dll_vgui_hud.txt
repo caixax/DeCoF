@@ -3,3 +3,6 @@
 ?UpdateArmor@CHud2@@QAEXH@Z
 ?UpdateHealth@CHud2@@QAEXH@Z
 ?paint@CHud2@@MAEXXZ
+?Initialize@CHud2@@QAEXXZ
+?ShouldDrawHUD@@YAHXZ
+?paintBackground@CHud2@@MAEXXZ

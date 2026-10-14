@@ -37,3 +37,7 @@
 ?Think@CHudServers@@QAEXN@Z
 ?ServerResponse@@YAXPAUnet_response_s@@@Z
 ?ServersGetInfo@@YAPBDH@Z
+?BroadcastServersList@@YAXH@Z
+?ListResponse@@YAXPAUnet_response_s@@@Z
+?ServerRules@@YAXH@Z
+?SortServers@@YAXPBD@Z

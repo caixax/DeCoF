@@ -19,3 +19,5 @@
 ?actionPerformed@CParanoiaTextPanel@@UAEXPAVPanel@vgui@@@Z
 ?paintBackground@CMyButton@@UAEXXZ
 ?paintBackground@CMyScrollbutton@@UAEXXZ
+?internalCursorExited@CMyButton@@UAEXXZ
+?internalCursorExited@CMyScrollbutton@@UAEXXZ

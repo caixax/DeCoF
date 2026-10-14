@@ -37,3 +37,5 @@ CommandButton::CommandButton
 ?getParentMenu@CommandButton@@QAEPAVCCommandMenu@@XZ
 ?keyFocusTicked@CHandler_ButtonHighlight@@UAEXPAVPanel@vgui@@@Z
 ?setParentMenu@CommandButton@@QAEXPAVCCommandMenu@@@Z
+?cursorEntered@CHandler_CommandButtonHighlight@@UAEXPAVPanel@vgui@@@Z
+?cursorExited@CHandler_CommandButtonHighlight@@UAEXPAVPanel@vgui@@@Z

@@ -107,9 +107,6 @@ int ShouldDrawHUD()
 	if ((gHUD.m_iHideHUDDisplay & HIDEHUD_HEALTH) || gEngfuncs.IsSpectateOnly() )
 		return FALSE;
 
-	if (gHUD.m_iWeaponBits & (1<<(WEAPON_SUIT)))
-		return TRUE;
-
 	return FALSE;
 }
 
