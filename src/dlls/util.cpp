@@ -2147,7 +2147,7 @@ void UTIL_Ricochet( const Vector &position, float scale )
 BOOL UTIL_TeamsMatch( const char *pTeamName1, const char *pTeamName2 )
 {
 	// Everyone matches unless it's teamplay
-	if ( !g_pGameRules->IsTeamplay() )
+	if ( g_pGameRules && !g_pGameRules->IsTeamplay() )
 		return TRUE;
 
 	// Both on a team?

@@ -105,3 +105,13 @@ _weaponbox
 ?WeaponDelay@CBasePlayerWeapon@@QAEXH@Z
 ?WeaponDelayTime@CBasePlayerWeapon@@QAEXM@Z
 ?iMaxAmmo1@CBasePlayerItem@@QAEHXZ
+?Restore@CCSAug@@UAEHAAVCRestore@@@Z
+?Restore@CCSElites@@UAEHAAVCRestore@@@Z
+?Restore@CCSG3SG1@@UAEHAAVCRestore@@@Z
+?Restore@CCSM4A1@@UAEHAAVCRestore@@@Z
+?Save@CCSAug@@UAEHAAVCSave@@@Z
+?Save@CCSElites@@UAEHAAVCSave@@@Z
+?Save@CCSG3SG1@@UAEHAAVCSave@@@Z
+?Save@CCSM4A1@@UAEHAAVCSave@@@Z
+?Restore@CCSAWP@@UAEHAAVCRestore@@@Z
+?Save@CCSAWP@@UAEHAAVCSave@@@Z
