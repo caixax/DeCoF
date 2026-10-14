@@ -2290,16 +2290,16 @@ client,10096850,212,?AddCVarFromInputStream@ControlConfigPanel@@QAEXPAVInputStre
 client,10096930,107,?GetCVar@ControlConfigPanel@@QAEXHPADH0H@Z,ControlConfigPanel::GetCVar,HLSDK,cl_dll/vgui_ControlConfigPanel.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__vgui_ControlConfigPanel.obj:score0,
 client,100969A0,42,?GetCVarBind@ControlConfigPanel@@QAEXPBDPADH1H@Z,ControlConfigPanel::GetCVarBind,HLSDK,cl_dll/vgui_ControlConfigPanel.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__vgui_ControlConfigPanel.obj:score4,
 client,100969D0,7,?GetCVarCount@ControlConfigPanel@@QAEHXZ,ControlConfigPanel::GetCVarCount,UNKNOWN,cl_dll/vgui_ControlConfigPanel.cpp,,,MATCHED,100,,
-client,100969E3,8,,,UNKNOWN,guess:cl_dll/vgui_ControlConfigPanel.cpp,,,TODO,,,
-client,100969EB,8,,,UNKNOWN,guess:cl_dll/vgui_ControlConfigPanel.cpp,,,TODO,,,
-client,10096A00,376,,,UNKNOWN,guess:cl_dll/vgui_ControlConfigPanel.cpp,,,TODO,,,
-client,10096B80,8,,,UNKNOWN,guess:cl_dll/vgui_ControlConfigPanel.cpp,,,TODO,,,
-client,10096B90,11,,,UNKNOWN,guess:cl_dll/vgui_ControlConfigPanel.cpp,,,TODO,,,
-client,10096B9B,8,,,UNKNOWN,guess:cl_dll/vgui_ControlConfigPanel.cpp,,,TODO,,,
-client,10096BA3,8,,,UNKNOWN,guess:cl_dll/vgui_ControlConfigPanel.cpp,,,TODO,,,
-client,10096BAB,8,,,UNKNOWN,guess:cl_dll/vgui_ControlConfigPanel.cpp,,,TODO,,,
-client,10096BB3,8,,,UNKNOWN,guess:cl_dll/vgui_ControlConfigPanel.cpp,,,TODO,,,
-client,10096BBB,8,,,UNKNOWN,guess:cl_dll/vgui_ControlConfigPanel.cpp,,,TODO,,,
+client,100969E3,8,,,LIB,guess:cl_dll/vgui_ControlConfigPanel.cpp,,,TODO,,,vtordisp adjustor thunk of vgui::DataInputStream (compiler generated)
+client,100969EB,8,,,LIB,guess:cl_dll/vgui_ControlConfigPanel.cpp,,,TODO,,,vtordisp adjustor thunk of vgui::DataInputStream (compiler generated)
+client,10096A00,376,,,UNKNOWN,guess:cl_dll/vgui_ControlConfigPanel.cpp,,,TODO,,,FooTablePanel::getCellRenderer: inline in the class body; our object does not emit FooTablePanel (nothing instantiates it in our ControlConfigPanel)
+client,10096B80,8,,,LIB,guess:cl_dll/vgui_ControlConfigPanel.cpp,,,TODO,,,vtordisp adjustor thunk of vgui::DataInputStream (compiler generated)
+client,10096B90,11,,,LIB,guess:cl_dll/vgui_ControlConfigPanel.cpp,,,TODO,,,vtordisp adjustor thunk of vgui::DataInputStream (compiler generated)
+client,10096B9B,8,,,LIB,guess:cl_dll/vgui_ControlConfigPanel.cpp,,,TODO,,,vtordisp adjustor thunk of vgui::DataInputStream (compiler generated)
+client,10096BA3,8,,,LIB,guess:cl_dll/vgui_ControlConfigPanel.cpp,,,TODO,,,vtordisp adjustor thunk of vgui::DataInputStream (compiler generated)
+client,10096BAB,8,,,LIB,guess:cl_dll/vgui_ControlConfigPanel.cpp,,,TODO,,,vtordisp adjustor thunk of vgui::DataInputStream (compiler generated)
+client,10096BB3,8,,,LIB,guess:cl_dll/vgui_ControlConfigPanel.cpp,,,TODO,,,vtordisp adjustor thunk of vgui::DataInputStream (compiler generated)
+client,10096BBB,8,,,LIB,guess:cl_dll/vgui_ControlConfigPanel.cpp,,,TODO,,,vtordisp adjustor thunk of vgui::DataInputStream (compiler generated)
 client,10096BD0,48,?startCellEditing@FooTablePanel@?A0x615d16ed@@UAEPAVPanel@vgui@@HH@Z,`anonymous namespace'::FooTablePanel::startCellEditing,HLSDK,cl_dll/vgui_ControlConfigPanel.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__vgui_ControlConfigPanel.obj:score1,
 client,10096C00,69,??0CImageLabel@@QAE@PBDHH@Z,CImageLabel::CImageLabel,HLSDK,cl_dll/vgui_CustomObjects.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__vgui_CustomObjects.obj:score1,
 client,10096C50,75,??0CImageLabel@@QAE@PBDHHHH@Z,CImageLabel::CImageLabel,HLSDK,cl_dll/vgui_CustomObjects.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__vgui_CustomObjects.obj:score3,
