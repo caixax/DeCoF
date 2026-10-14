@@ -2258,6 +2258,14 @@
       "metadata": {
         "source_path": "src/game_shared/vgui_slider2.cpp"
       }
+    },
+    {
+      "name": "client/cl_dll/vgui_radio",
+      "target_path": "build/target/client/cl_dll/vgui_radio.obj",
+      "base_path": "build/base/client/cl_dll/vgui_radio.obj",
+      "metadata": {
+        "source_path": "src/cl_dll/vgui_radio.cpp"
+      }
     }
   ]
 }

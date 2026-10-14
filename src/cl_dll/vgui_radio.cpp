@@ -119,7 +119,7 @@ void CRadioIcon::Show(const char *title, float time, int _r, int _g, int _b, int
 		setVisible(true);
 		m_fShowTime = curtime;
 		m_fHideTime = curtime + time;
-		char *pText = CHudTextMessage::BufferedLocaliseTextString(title);
+		const char *pText = CHudTextMessage::BufferedLocaliseTextString(title);
 		Font *pFont = FontFromMessage(pText);
 		m_pLabel->setFont(pFont);
 		m_pLabel->setText(pText);
@@ -156,7 +156,7 @@ void CRadioIcon::paintBackground()
 			// next title queued
 			m_fShowTime = curtime;
 			m_fHideTime = curtime + nextTime;
-			char *pText = CHudTextMessage::BufferedLocaliseTextString(nextTitle);
+			const char *pText = CHudTextMessage::BufferedLocaliseTextString(nextTitle);
 			Font *pFont = FontFromMessage(pText);
 			m_pLabel->setFont(pFont);
 			m_pLabel->setText(pText);			

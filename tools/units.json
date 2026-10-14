@@ -1533,6 +1533,11 @@
           "name": "game_shared/vgui_slider2",
           "source": "src/game_shared/vgui_slider2.cpp",
           "functions_file": "tools/units/client_game_shared_vgui_slider2.txt"
+        },
+        {
+          "name": "cl_dll/vgui_radio",
+          "source": "src/cl_dll/vgui_radio.cpp",
+          "functions_file": "tools/units/client_cl_dll_vgui_radio.txt"
         }
       ]
     }
