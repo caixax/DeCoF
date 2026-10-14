@@ -1118,7 +1118,9 @@
         "src/pm_shared",
         "src/dlls",
         "src/game_shared",
-        "src/external"
+        "src/external",
+        "refs/irrklang-1.6.0/include",
+        "refs/id3lib-3.8.3/include"
       ],
       "toolchain": "msvc1427",
       "units": [

@@ -128,3 +128,10 @@ Added 2026-10-11. Independent clean-room GoldSrc engine (GPL), client and server
 Not a git repo. Downloaded 2026-10-11 with steamcmd from the user's own Half-Life license: app 70, branch `steam_legacy` (last pre-25th-anniversary build), platform linux, into `I:\Tools\_downloads\hl_linux_legacy` (outside the repo, never committed). Built with GCC 4.6.1, not stripped: `hw.so` 6,352 named functions, `valve/cl_dlls/gameui.so`, `hl_linux`. Imported in the Ghidra project under `/ref_linux`.
 
 Use: carry Valve's function and global names to the CoF 2013 Windows builds (`tools/match_versions.py hw linux 1.6a --data-propagation --src-image .../hw.so --dst-image versions/1.6a/hw.dll`). The Linux build is about six years newer (SDL2, no DirectDraw/DirectInput), so only functions that kept their strings, globals and call structure match. Names only; never code.
+
+## L. irrKlang 1.6.0 and id3lib 3.8.3 headers (client.dll mp3.cpp)
+
+Not git repos; headers and import libraries only, in `refs/irrklang-1.6.0` and `refs/id3lib-3.8.3` (git-ignored), on the client include path. Third-party libraries, out of scope (the game ships their DLLs); needed to compile `cl_dll/mp3.cpp`, which calls irrKlang through its interfaces and id3lib through its classes.
+
+- irrKlang: client.dll passes the SDK version string "1.6.0" to `createIrrKlangDevice`, so it was compiled with the 1.6.0 headers (the game itself ships the July 2010 `irrKlang.dll`). Ambiera now offers downloads to existing licensees only and its official URL `https://www.ambiera.at/downloads/irrKlang-32bit-1.6.0.zip` returns 404; the file was taken from the Internet Archive snapshot of that official URL (2026-10-15). Its own DLLs are the February 2018 1.6.0 build. Kept: `include/*.h`, `lib/Win32-visualStudio/irrKlang.lib`, `readme.txt`. Free for non-commercial use (see readme).
+- id3lib 3.8.3: the version string of the shipped `id3lib.dll`. Source tarball from the project's SourceForge page (`https://sourceforge.net/projects/id3lib/files/id3lib/3.8.3/`), LGPL. Kept: `include/id3.h`, `include/id3/*.h`, COPYING, README.
