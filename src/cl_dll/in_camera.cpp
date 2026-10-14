@@ -32,6 +32,7 @@ extern "C"
 extern cl_enginefunc_t gEngfuncs;
 extern vec3_t v_origin;
 extern cl_entity_t *guess_pCamTargetEnt;
+extern int guess_iPlayerMode;
 
 cl_entity_t *guess_pTelescopeEnt;
 float guess_flTelescopeX, guess_flTelescopeY, guess_flTelescopeZ;
@@ -218,7 +219,7 @@ void DLLEXPORT CAM_Think( void )
 	if( !cam_thirdperson )
 		return;
 
-	if ( g_iUser1 >= 1 && g_iUser1 <= 5 && guess_pCamTargetEnt )
+	if ( guess_iPlayerMode >= 1 && guess_iPlayerMode <= 5 && guess_pCamTargetEnt )
 	{
 		vec3_t dir;
 		vec3_t target;
@@ -246,7 +247,7 @@ void DLLEXPORT CAM_Think( void )
 	//
 	//movement of the camera with the mouse
 	//
-	if (cam_mousemove && g_iUser1 <= 0)
+	if (cam_mousemove && guess_iPlayerMode <= 0)
 	{
 	    //get windows cursor position
 		GetCursorPos (&cam_mouse);
@@ -414,7 +415,7 @@ void DLLEXPORT CAM_Think( void )
 	}
 
 	// Move towards ideal
-	VectorCopy( guess_cam_old, camAngles );
+	VectorCopy( cam_ofs, camAngles );
 
 	gEngfuncs.GetViewAngles( (float *)viewangles );
 
@@ -457,12 +458,12 @@ void DLLEXPORT CAM_Think( void )
 			return;
 	}
 #endif
-	guess_cam_old[ 0 ] = camAngles[ 0 ];
-	guess_cam_old[ 1 ] = camAngles[ 1 ];
-	guess_cam_old[ 2 ] = dist;
 	cam_ofs[ 0 ] = camAngles[ 0 ];
 	cam_ofs[ 1 ] = camAngles[ 1 ];
-	cam_ofs[ 2 ] = camAngles[ 2 ];
+	cam_ofs[ 2 ] = dist;
+	guess_cam_old[ 0 ] = camAngles[ 0 ];
+	guess_cam_old[ 1 ] = camAngles[ 1 ];
+	guess_cam_old[ 2 ] = camAngles[ 2 ];
 }
 
 extern void KeyDown (kbutton_t *b);	// HACK

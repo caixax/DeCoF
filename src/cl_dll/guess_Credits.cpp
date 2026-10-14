@@ -18,6 +18,9 @@
 extern int guess_iMenuMode;
 extern int guess_g_iHeadShieldType;
 extern cl_entity_t g_HeadShieldEnt;
+extern int g_HeadShieldState;
+
+#define SHIELD_ON	0
 extern cvar_t *cl_fastcredits;
 extern int guess_iUnknown101902FC;
 
@@ -715,7 +718,7 @@ void CCredits::guess_ShowUnlock( int iUnlock, const char *pszText, int iDistance
 
 	gHUD.guess_m_pszHeadShieldSound = pszModel;
 	gHUD.guess_m_iHeadShieldSoundFlags = iBody;
-	g_HeadShieldEnt.curstate.sequence = 0;
+	g_HeadShieldState = SHIELD_ON;
 }
 
 char *guess_va( const char *format, ... )

@@ -88,6 +88,7 @@ extern kbutton_t in_moveleft;
 extern kbutton_t in_moveright;
 
 float guess_flNextSoundCacheTime;
+float guess_flGunParam1;	// vuser2[1] of the local player state, set by HUD_ProcessPlayerState
 
 
 // true while the view is set to another entity than the local player (ViewEntity message)
@@ -133,7 +134,7 @@ int CHud :: guess_AverageFPS( int iFPS )
 // Think
 void CHud::Think(void)
 {
-	if ( guess_flUnknown105595A4 + guess_flUnknown105595A0 > gEngfuncs.GetClientTime() && guess_iUnknown1054506C < 3 && gEngfuncs.GetLocalPlayer() )
+	if ( guess_flUnknown105595A0 + guess_flUnknown105595A4 > gEngfuncs.GetClientTime() && guess_iUnknown1054506C < 3 && gEngfuncs.GetLocalPlayer() )
 	{
 		if ( gEngfuncs.GetClientTime() > guess_flUnknown105595A8 )
 		{
@@ -794,8 +795,8 @@ int CHud::GetNumWidth( int iNumber, int iFlags )
 
 }	
 
-extern int guess_iBlurTexture;
-void guess_CopyScreenToTexture( int iWidth, int iHeight, int iUnused1, int iUnused2 );
+extern int guess_g_iBlurTexture;
+void guess_CaptureBlurTexture( int width, int height, int iUnused1, int iUnused2 );
 
 // buz
 void CHud :: DrawBlurTest( float frametime )
@@ -809,9 +810,9 @@ void CHud :: DrawBlurTest( float frametime )
 
 	if ( ( cv_blurtest->value || gHUD.guess_m_iBlur || guess_iUnknown1054506C > 2 || bDamaged ) && frametime )
 	{
-		guess_CopyScreenToTexture( ScreenWidth, ScreenHeight, 0, 0 );
+		guess_CaptureBlurTexture( ScreenWidth, ScreenHeight, 0, 0 );
 
-		if ( !guess_iBlurTexture )
+		if ( !guess_g_iBlurTexture )
 			return;
 
 		glDisable( GL_TEXTURE_GEN_S );
@@ -832,7 +833,7 @@ void CHud :: DrawBlurTest( float frametime )
 
 		for ( int i = 0; i < iSteps; i++ )
 		{
-			gl.glBindTexture( GL_TEXTURE_2D, guess_iBlurTexture );
+			gl.glBindTexture( GL_TEXTURE_2D, guess_g_iBlurTexture );
 			gl.glEnable( GL_BLEND );
 			gl.glBlendFunc( GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA );
 			gl.glColor4f( 1, 1, 1, guess_cv_opacity->value );

@@ -25,6 +25,11 @@ public:
 	int  IsGLAllowed();
 	bool IsExtensionSupported (const char *ext);
 
+	// Cry of Fear: 0x48 bytes before the gl functions; Init fills the two arrays at 0x30 and 0x3c
+	byte	guess_m_bUnused00[48];	// not referenced by any code
+	byte	guess_m_bArray30[12];	// Init: 2 at index 2, 0 elsewhere
+	byte	guess_m_bArray3C[12];	// Init: 10 at index 2, 0 elsewhere
+
 	// imported gl functions (initialization failed if not present)
 	void (APIENTRY *glAccum)		(GLenum op, GLfloat value);
 	void (APIENTRY *glAlphaFunc)	(GLenum func, GLclampf ref);

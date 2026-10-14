@@ -442,7 +442,7 @@ void guess_CaptureScreenTexture( int width, int height )
 	guess_g_bScreenTextureCaptured = true;
 }
 
-void guess_CaptureBlurTexture( int width, int height )
+void guess_CaptureBlurTexture( int width, int height, int iUnused1, int iUnused2 )
 {
 	if (!guess_g_iBlurTexture)
 	{

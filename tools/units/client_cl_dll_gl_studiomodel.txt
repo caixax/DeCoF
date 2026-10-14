@@ -20,6 +20,6 @@
 ?guess_LoadIntroductionTexture@@YAXH@Z
 ?guess_LoadPoliceSleeveTexture@@YAXXZ
 ?guess_CaptureScreenTexture@@YAXHH@Z
-?guess_CaptureBlurTexture@@YAXHH@Z
+?guess_CaptureBlurTexture@@YAXHHHH@Z
 ?guess_LoadJeansTexture@@YAXXZ
 ?guess_LoadWaterLoTexture@@YAXXZ

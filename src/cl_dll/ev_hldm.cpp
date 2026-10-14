@@ -2240,8 +2240,8 @@ void guess_V_ViewPunch( float x, float y, float z );
 
 extern int guess_iWheelchair;
 extern vec3_t guess_vecWheelchairAngles;
-extern cl_entity_t *guess_pTelescopeEnt;
-extern int guess_iTelescopeFlag;
+extern cl_entity_t *guess_pAttachCamEnt;
+extern int guess_iAttachCamFlag;
 extern vec3_t guess_ev_punchanglevel;
 
 // muzzle flash of the weapon models seen by the studio renderer
@@ -2252,7 +2252,7 @@ vec3_t guess_vecMuzzleFlashAngles;
 
 void guess_V_ViewPunch( float x, float y, float z )
 {
-	if ( !guess_pTelescopeEnt || guess_iTelescopeFlag > 0 )
+	if ( !guess_pAttachCamEnt || guess_iAttachCamFlag > 0 )
 	{
 		guess_ev_punchanglevel[0] -= x * 20;
 		guess_ev_punchanglevel[1] += y * 20;

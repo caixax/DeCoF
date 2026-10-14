@@ -35,6 +35,15 @@ extern int g_iGunMode;
 int g_iAlive = 1;
 int g_flashlight; // buz
 
+// Cry of Fear: local player values the server sends in the vuser fields (client.cpp UpdateClientData)
+extern int guess_iDoctorMode;			// vuser1[0]
+extern float guess_flGunParam1;		// vuser2[1]
+float guess_flSprintFlag;			// vuser2[2]: the server's FL flag 1<<18 (running)
+int guess_iM16BurstMode;				// vuser3[0]
+float guess_flCurrentKick;			// vuser3[1]: the active weapon's m_flCurrentKick
+int guess_iPlayerMode;				// vuser4[0]: the server's pev->fuser3 (0 normal, 5 developer commentary, 10 weapon special)
+float guess_flRevolverRotation;		// vuser4[2]
+
 int GlowFilterEntities ( int type, struct cl_entity_s *ent, const char *modelname ); // buz
 
 extern "C" 
@@ -195,20 +204,19 @@ void DLLEXPORT HUD_ProcessPlayerState( struct entity_state_s *dst, const struct 
 		g_iUser3 = src->iuser3;
 
 		// buz
-		g_vSpread = src->vuser1;
 		g_iGunMode = src->vuser2[0];
-		// test
-		//gEngfuncs.Con_Printf("received spread: %f\n", g_vSpread[0]);
-	}
-
-	// buz: get flashlight status
-	if (dst->effects & EF_DIMLIGHT)
-	{
-		g_flashlight = 1;
-	//	gEngfuncs.pEfxAPI->CL_AllocDlight (gEngfuncs.GetLocalPlayer()->index);
+		guess_flGunParam1 = src->vuser2[1];
+		guess_flSprintFlag = src->vuser2[2];
+		guess_iDoctorMode = src->vuser1[0];
+		guess_iPlayerMode = src->vuser4[0];
+		guess_flRevolverRotation = src->vuser4[2];
+		guess_iM16BurstMode = src->vuser3[0];
+		guess_flCurrentKick = src->vuser3[1];
 	}
 	else
-		g_flashlight = 0;
+	{
+		dst->vuser1 = src->vuser1;
+	}
 }
 
 /*

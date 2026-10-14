@@ -57,8 +57,33 @@ GLManager::GLManager()
 void GLManager::Init()
 {
 //	v_GLAllowed = gEngfuncs.pfnRegisterVariable( "gl_clientfx", "1", 0 );
+	int i;
+
+	for ( i = 0; i <= 11; i++ )
+		guess_m_bArray30[i] = ( i == 2 ) ? 2 : 0;
+
+	for ( i = 0; i <= 11; i++ )
+		guess_m_bArray3C[i] = ( i == 2 ) ? 10 : 0;
 }
 
+
+// Cry of Fear: writes a string value under the game's Steam registry key (the key is never closed)
+int guess_SetSteamAppValue( const char *pszValueName, const char *pszData )
+{
+	char szKey[1024];
+	HKEY hKey;
+	DWORD dwDisposition;
+
+	strcpy( szKey, "Software\\Valve\\Steam\\Apps\\70_Cry of Fear" );
+
+	if ( RegCreateKeyEx( HKEY_CURRENT_USER, szKey, 0, NULL, 0, KEY_ALL_ACCESS, NULL, &hKey, &dwDisposition ) == ERROR_SUCCESS )
+	{
+		RegSetValueEx( hKey, pszValueName, 0, REG_SZ, (const BYTE *)pszData, strlen( pszData ) + 1 );
+		return 1;
+	}
+
+	return 0;
+}
 
 void GLManager::VidInit()
 {
@@ -78,6 +103,47 @@ void GLManager::VidInit()
 		return;
 	}
 	
+	// Cry of Fear: offer to switch the game to OpenGL
+	if ( !IEngineStudio.IsHardware() )
+	{
+		if ( MessageBox( NULL, "You appear to be running Cry of Fear in software mode\nCry of Fear does not support software mode. Would you like to switch to OpenGL now?", NULL, MB_YESNO ) == IDYES )
+		{
+			if ( guess_SetSteamAppValue( "LaunchOptions", " -num_edicts 2048 -gl" ) )
+				MessageBox( NULL, "Succesfully set OpenGL mode. Please restart Steam and Cry of Fear", NULL, MB_OK );
+			else
+				MessageBox( NULL, "Unable to set OpenGL mode.", NULL, MB_OK );
+
+			gEngfuncs.pfnClientCmd( "exit" );
+		}
+	}
+	else if ( IEngineStudio.IsHardware() != 1 )
+	{
+		if ( IEngineStudio.IsHardware() == 2 )
+		{
+			if ( MessageBox( NULL, "You appear to be running Cry of Fear in Direct 3D mode\nCry of Fear does not support Direct3D. Would you like to switch to OpenGL now?", NULL, MB_YESNO ) == IDYES )
+			{
+				if ( guess_SetSteamAppValue( "LaunchOptions", " -num_edicts 2048 -gl" ) )
+					MessageBox( NULL, "Succesfully set OpenGL mode. Please restart Steam and Cry of Fear", NULL, MB_OK );
+				else
+					MessageBox( NULL, "Unable to set OpenGL mode.", NULL, MB_OK );
+
+				gEngfuncs.pfnClientCmd( "exit" );
+			}
+		}
+		else
+		{
+			if ( MessageBox( NULL, "You appear to be running Cry of Fear in an unsupported video mode\nCry of Fear only runs in OpenGL. Would you like to switch to OpenGL now?", NULL, MB_YESNO ) == IDYES )
+			{
+				if ( guess_SetSteamAppValue( "LaunchOptions", " -num_edicts 2048 -gl" ) )
+					MessageBox( NULL, "Succesfully set OpenGL mode. Please restart Cry of Fear", NULL, MB_OK );
+				else
+					MessageBox( NULL, "Unable to set OpenGL mode.", NULL, MB_OK );
+
+				gEngfuncs.pfnClientCmd( "exit" );
+			}
+		}
+	}
+
 	if (!IEngineStudio.IsHardware())
 	{
 		Log("GL manager: Software renderer\n");

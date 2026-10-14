@@ -12,3 +12,8 @@
 ?Load_Rectangle_Textures@GLManager@@AAEHXZ
 ?LogDebugInfo@GLManager@@AAEXXZ
 ?VidInit@GLManager@@QAEXXZ
+??0GLManager@@QAE@XZ
+??1GLManager@@QAE@XZ
+?IsExtensionSupported@GLManager@@QAE_NPBD@Z
+?gluLookAt@GLManager@@QAEXNNNNNNNNN@Z
+?guess_SetSteamAppValue@@YAHPBD0@Z

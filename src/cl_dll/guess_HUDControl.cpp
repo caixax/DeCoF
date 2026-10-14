@@ -19,7 +19,7 @@
 
 // a method of CHud in 1.6a (called with ecx = &gHUD): the key bound to a command, read from config.cfg
 
-extern bool		guess_g_bMPModel;
+extern bool		guess_g_bHandsLoaded;
 extern bool		guess_bWheelchairLock;
 extern int		guess_g_iDickMode;
 extern int		guess_iWheelchair;
@@ -404,7 +404,7 @@ int guess_MsgLookingAt( const char *pszName, int iSize, void *pbuf )
 
 int guess_MsgMPModel( const char *pszName, int iSize, void *pbuf )
 {
-	guess_g_bMPModel = false;
+	guess_g_bHandsLoaded = false;
 
 	return 1;
 }

@@ -141,7 +141,7 @@ float guess_flWeaponIdleSpeed;	// "cl_weapon_idle_speed" cvar
 float guess_flWeaponIdleDampener;	// "cl_weapon_idle_dampener" cvar
 
 extern int guess_iDonator;
-extern int guess_iKeyEvents;
+extern cl_entity_t *guess_pAttachCamEnt;	// the entity the view is attached to (AttachCam message)
 extern int guess_iBoat;
 extern int guess_iWheelchair;
 extern bool guess_bWheelchairLock;
@@ -474,7 +474,7 @@ void __CmdFunc_ToggleServerBrowser( void )
 
 void __CmdFunc_guess_FinishLadder( void )
 {
-	guess_iKeyEvents = 0;
+	guess_pAttachCamEnt = NULL;
 }
 
 void __CmdFunc_guess_DonatorCheck( void )
@@ -1070,7 +1070,7 @@ void CHud :: VidInit( void )
 	guess_flWeaponIdleDampener = CVAR_GET_FLOAT( "cl_weapon_idle_dampener" );
 	guess_bUnknown105431E9 = false;
 	guess_m_bIronSights = false;
-	guess_vecIronsightOfs.x = guess_vecIronsightOfs.y = guess_vecIronsightOfs.z = 0;
+	guess_vecIronsightOfs.y = guess_vecIronsightOfs.x = guess_vecIronsightOfs.z = 0;
 	guess_m_vecIronSightOfs.x = guess_m_vecIronSightOfs.y = guess_m_vecIronSightOfs.z = 0;
 	guess_m_vecIronSightOfs2.x = guess_m_vecIronSightOfs2.y = guess_m_vecIronSightOfs2.z = 0;
 	guess_flUnknown105595A0 = 0;
@@ -1079,7 +1079,7 @@ void CHud :: VidInit( void )
 	guess_iUnknown105595AC = 0;
 	guess_m_iFlashFlags = 0;
 	guess_pTelescopeEnt = NULL;
-	guess_iKeyEvents = 0;
+	guess_pAttachCamEnt = NULL;
 	guess_iBoat = 0;
 	guess_iWheelchair = 0;
 	guess_m_iCameraZoom = 0;

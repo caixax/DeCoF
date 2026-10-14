@@ -58,7 +58,7 @@ bool guess_InCameraView( void );
 extern cl_entity_t *guess_pTelescopeEnt;
 extern int guess_iWheelchair;
 extern int guess_iBoat;
-extern int guess_iKeyEvents;
+extern cl_entity_t *guess_pAttachCamEnt;
 extern bool guess_bCanDodge;
 extern bool guess_bXboxFix;
 extern vec3_t guess_vecIronsightOfs;
@@ -456,7 +456,7 @@ void IN_ForwardDown(void)
 	if ( ( in_dodge.state & 1 ) && guess_bCanDodge )
 		gEngfuncs.pfnServerCmd( "dodgeforward" );
 
-	if ( guess_iKeyEvents )
+	if ( guess_pAttachCamEnt )
 		gEngfuncs.pfnServerCmd( "forwardpressed" );
 }
 
@@ -465,7 +465,7 @@ void IN_ForwardUp(void)
 	KeyUp(&in_forward);
 	gHUD.m_Spectator.HandleButtonsUp( IN_FORWARD );
 
-	if ( guess_iKeyEvents )
+	if ( guess_pAttachCamEnt )
 		gEngfuncs.pfnServerCmd( "forwardreleased" );
 }
 
@@ -486,7 +486,7 @@ void IN_BackDown(void)
 	if ( ( in_dodge.state & 1 ) && guess_bCanDodge )
 		gEngfuncs.pfnServerCmd( "dodgebackward" );
 
-	if ( guess_iKeyEvents )
+	if ( guess_pAttachCamEnt )
 		gEngfuncs.pfnServerCmd( "backpressed" );
 }
 
@@ -495,7 +495,7 @@ void IN_BackUp(void)
 	KeyUp(&in_back);
 	gHUD.m_Spectator.HandleButtonsUp( IN_BACK );
 
-	if ( guess_iKeyEvents )
+	if ( guess_pAttachCamEnt )
 		gEngfuncs.pfnServerCmd( "backreleased" );
 }
 void IN_LookupDown(void) {KeyDown(&in_lookup);}
@@ -573,7 +573,7 @@ void IN_Attack2Down(void)
 		return;
 	}
 
-	if ( guess_iKeyEvents )
+	if ( guess_pAttachCamEnt )
 		gEngfuncs.pfnServerCmd( "attack2pressed" );
 
 	if ( g_iUser1 <= 0 || g_iUser1 > 5 )
@@ -589,7 +589,7 @@ void IN_Attack2Up(void)
 {
 	KeyUp(&in_attack2);
 
-	if ( guess_iKeyEvents )
+	if ( guess_pAttachCamEnt )
 		gEngfuncs.pfnServerCmd( "attack2released" );
 }
 
@@ -659,7 +659,7 @@ void IN_AttackDown(void)
 		return;
 	}
 
-	if ( guess_iKeyEvents )
+	if ( guess_pAttachCamEnt )
 		gEngfuncs.pfnServerCmd( "attack1pressed" );
 
 	if ( g_iUser1 <= 0 || g_iUser1 > 5 )
@@ -697,7 +697,7 @@ void IN_AttackUp(void)
 	KeyUp( &in_attack );
 	in_cancel = 0;
 
-	if ( guess_iKeyEvents )
+	if ( guess_pAttachCamEnt )
 		gEngfuncs.pfnServerCmd( "attack1released" );
 }
 

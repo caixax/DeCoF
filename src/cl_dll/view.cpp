@@ -1868,6 +1868,7 @@ V_Init
 extern void CAM_ToFirstPerson( void );
 extern void CAM_ToThirdPerson( void );
 extern cl_entity_t *guess_pTelescopeEnt;
+extern cl_entity_t *guess_pAttachCamEnt;
 extern cl_entity_t *guess_pCamTargetEnt;
 
 int guess_iModelAttachEnt = -1;
@@ -1934,14 +1935,14 @@ int guess_MsgCoopCamAnim( const char *pszName, int iSize, void *pbuf )
 {
 	BEGIN_READ( pbuf, iSize );
 
-	if ( guess_pTelescopeEnt )
+	if ( guess_pAttachCamEnt )
 	{
 		int iSequence = READ_BYTE();
 
 		if ( iSequence >= 0 )
 		{
-			guess_pTelescopeEnt->curstate.animtime = gEngfuncs.GetClientTime();
-			guess_pTelescopeEnt->curstate.sequence = iSequence;
+			guess_pAttachCamEnt->curstate.animtime = gEngfuncs.GetClientTime();
+			guess_pAttachCamEnt->curstate.sequence = iSequence;
 		}
 	}
 

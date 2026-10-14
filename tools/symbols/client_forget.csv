@@ -1,2 +1,7 @@
 va,name,evidence
 1007C9F0,?abs@@YAMM@Z,"stale position label: 1007C9F0 is __MsgFunc_Telescope (CAM_Init hooks it with the string Telescope)"
+10064C10,?guess_CaptureBlurTexture@@YAXHH@Z,"renamed: CHud::DrawBlurTest passes four arguments, the definition takes four"
+1054370C,?guess_cam_old@@3VVector@@A,"renamed: this address is the HLSDK cam_ofs; guess_cam_old is 10543700"
+10542BC0,?guess_iKeyEvents@@3HA,"renamed: the AttachCam entity pointer guess_pAttachCamEnt"
+104D26C7,?guess_g_bMPModel@@3_NA,"duplicate name of guess_g_bHandsLoaded"
+104D26E8,?guess_iBlurTexture@@3HA,"duplicate name of guess_g_iBlurTexture"

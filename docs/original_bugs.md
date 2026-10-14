@@ -119,3 +119,5 @@ The reconstructed source keeps the behavior of the retail 1.6a binaries, includi
 | CSaveLoad::guess_ReadSlot (client guess_SaveLoad.cpp) | The slot label gets the line left over after the read loop. | as written |
 | CVGUIExtraMenu (client guess_VGUIExtraMenu.cpp) | Every rollover loads a new TGA and never frees it. | as written |
 | guess_MsgCoopStats (client guess_CoopStats.cpp) | Always writes "Ending seen: 7" first. | as written |
+| guess_SetSteamAppValue (client glmanager.cpp) | Opens HKCU\Software\Valve\Steam\Apps8_Cry of Fear with RegCreateKeyEx and never closes the key. | as written |
+| GLManager::VidInit (client glmanager.cpp) | The success message says "Succesfully". | the string |

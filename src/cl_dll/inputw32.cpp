@@ -41,6 +41,7 @@ extern cl_enginefunc_t gEngfuncs;
 
 extern int iMouseInUse;
 extern int g_iUser1;
+extern int guess_iPlayerMode;
 extern int guess_iModelAttachEnt;
 extern int guess_iModelAttachNum;
 extern int guess_iDefaultFOV;
@@ -321,7 +322,7 @@ void IN_MouseMove ( float frametime, usercmd_t *cmd)
 	if ( guess_iModelAttachEnt != -1 && guess_iModelAttachNum != -1 )
 		return;
 
-	if ( g_iUser1 > 0 && g_iUser1 <= 4 )
+	if ( guess_iPlayerMode > 0 && guess_iPlayerMode <= 4 )
 		return;
 
 	gEngfuncs.GetViewAngles( (float *)viewangles );
@@ -800,7 +801,7 @@ void IN_JoyMove ( float frametime, usercmd_t *cmd )
 
 	gEngfuncs.GetViewAngles( (float *)viewangles );
 
-	if ( g_iUser1 > 0 && g_iUser1 <= 4 )
+	if ( guess_iPlayerMode > 0 && guess_iPlayerMode <= 4 )
 		return;
 
 	// complete initialization if first time in
