@@ -14852,12 +14852,12 @@ hl,1005C300,144,?WeaponIdle@CMp5@@UAEXXZ,CMp5::WeaponIdle,COF,dlls/guess_CoF_MP5
 hl,1005C390,6,?iItemSlot@CMp5@@UAEHXZ,CMp5::iItemSlot,COF,dlls/guess_CoF_MP5.cpp,,,MATCHED,100,,
 hl,1005C3A0,5,_ammo_mp5,ammo_mp5,HLSDK,guess:dlls/guess_CoF_MP5.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( ammo_mp5, CMP5Ammo )"
 hl,1005C3B0,5,_weapon_mp5,weapon_mp5,HLSDK,guess:dlls/guess_CoF_MP5.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( weapon_mp5, CMp5 )"
-hl,1005C3C0,92,??$GetClassPtr@VCMP5ModeSaveRestoreMP5@@@@YAPAVCMP5ModeSaveRestoreMP5@@PAV0@@Z,GetClassPtr<CMP5ModeSaveRestoreMP5>,HLSDK,guess:dlls/guess_CoF_MP5.cpp,,,MATCHED,100,jmp_target_of_export+rtti,
-hl,1005C420,355,?KeyValue@CMP5ModeSaveRestoreMP5@@UAEXPAUKeyValueData_s@@@Z,CMP5ModeSaveRestoreMP5::KeyValue,COF,dlls/guess_CoF_MP5.cpp,,,MATCHED,100,,
-hl,1005C590,15,?ObjectCaps@CMP5ModeSaveRestoreMP5@@UAEHXZ,CMP5ModeSaveRestoreMP5::ObjectCaps,COF,dlls/guess_CoF_MP5.cpp,,,MATCHED,100,,
-hl,1005C5A0,71,?Spawn@CMP5ModeSaveRestoreMP5@@UAEXXZ,CMP5ModeSaveRestoreMP5::Spawn,COF,dlls/guess_CoF_MP5.cpp,,,MATCHED,100,,
-hl,1005C5F0,357,?Use@CMP5ModeSaveRestoreMP5@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CMP5ModeSaveRestoreMP5::Use,COF,dlls/guess_CoF_MP5.cpp,,,MATCHED,100,hl_manual.csv,
-hl,1005C760,5,_cof_mp5modesaverestore,cof_mp5modesaverestore,HLSDK,guess:dlls/guess_CoF_MP5.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( cof_mp5modesaverestore, CMP5ModeSaveRestoreMP5 )"
+hl,1005C3C0,92,??$GetClassPtr@VCMP5ModeSaveRestoreMP5@@@@YAPAVCMP5ModeSaveRestoreMP5@@PAV0@@Z,GetClassPtr<CMP5ModeSaveRestoreMP5>,HLSDK,dlls/guess_CoF_MP5ModeSaveRestore.cpp,,,MATCHED,100,jmp_target_of_export+rtti,
+hl,1005C420,355,?KeyValue@CMP5ModeSaveRestoreMP5@@UAEXPAUKeyValueData_s@@@Z,CMP5ModeSaveRestoreMP5::KeyValue,COF,dlls/guess_CoF_MP5ModeSaveRestore.cpp,,,MATCHED,100,,
+hl,1005C590,15,?ObjectCaps@CMP5ModeSaveRestoreMP5@@UAEHXZ,CMP5ModeSaveRestoreMP5::ObjectCaps,COF,dlls/guess_CoF_MP5ModeSaveRestore.cpp,,,MATCHED,100,,
+hl,1005C5A0,71,?Spawn@CMP5ModeSaveRestoreMP5@@UAEXXZ,CMP5ModeSaveRestoreMP5::Spawn,COF,dlls/guess_CoF_MP5ModeSaveRestore.cpp,,,MATCHED,100,,
+hl,1005C5F0,357,?Use@CMP5ModeSaveRestoreMP5@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CMP5ModeSaveRestoreMP5::Use,COF,dlls/guess_CoF_MP5ModeSaveRestore.cpp,,,MATCHED,100,hl_manual.csv,
+hl,1005C760,5,_cof_mp5modesaverestore,cof_mp5modesaverestore,HLSDK,dlls/guess_CoF_MP5ModeSaveRestore.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( cof_mp5modesaverestore, CMP5ModeSaveRestoreMP5 )"
 hl,1005C770,92,??$GetClassPtr@VCRealCamera@@@@YAPAVCRealCamera@@PAV0@@Z,GetClassPtr<CRealCamera>,HLSDK,dlls/cof_nicecamera.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
 hl,1005C7D0,92,??$GetClassPtr@VCViewPoint@@@@YAPAVCViewPoint@@PAV0@@Z,GetClassPtr<CViewPoint>,HLSDK,dlls/cof_nicecamera.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
 hl,1005C830,18,?CameraUse@CRealCamera@@QAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CRealCamera::CameraUse,COF,dlls/cof_nicecamera.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,

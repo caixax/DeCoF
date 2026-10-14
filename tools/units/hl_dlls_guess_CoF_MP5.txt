@@ -3,8 +3,6 @@
 ?SuicideShot@CMp5@@QAEXXZ
 _ammo_mp5
 _weapon_mp5
-??$GetClassPtr@VCMP5ModeSaveRestoreMP5@@@@YAPAVCMP5ModeSaveRestoreMP5@@PAV0@@Z
-_cof_mp5modesaverestore
 ?AddAmmo@CMP5Ammo@@EAEHPAVCBaseEntity@@@Z
 ?Deploy@CMp5@@UAEHXZ
 ?GetItemInfo@CMp5@@UAEHPAUItemInfo@@@Z
@@ -24,9 +22,5 @@ _cof_mp5modesaverestore
 ?Reload@CMp5@@UAEXXZ
 ?SecondaryAttack@CMp5@@UAEXXZ
 ?Precache@CMp5@@UAEXXZ
-?KeyValue@CMP5ModeSaveRestoreMP5@@UAEXPAUKeyValueData_s@@@Z
-?Spawn@CMP5ModeSaveRestoreMP5@@UAEXXZ
-?ObjectCaps@CMP5ModeSaveRestoreMP5@@UAEHXZ
-?Use@CMP5ModeSaveRestoreMP5@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z
 ?ItemPostFrame@CMp5@@UAEXXZ
 ?SendInitMessage@CMP5Ammo@@EAEXPAVCBasePlayer@@@Z

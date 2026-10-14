@@ -822,6 +822,11 @@
           "name": "dlls/globals",
           "source": "src/dlls/globals.cpp",
           "functions_file": "tools/units/hl_dlls_globals.txt"
+        },
+        {
+          "name": "dlls/guess_CoF_MP5ModeSaveRestore",
+          "source": "src/dlls/guess_CoF_MP5ModeSaveRestore.cpp",
+          "functions_file": "tools/units/hl_dlls_guess_CoF_MP5ModeSaveRestore.txt"
         }
       ],
       "toolchain": "msvc1427",
@@ -930,6 +935,7 @@
           "dlls/cof_monstersewmo",
           "dlls/cof_monsterslower3",
           "dlls/guess_CoF_MP5",
+          "dlls/guess_CoF_MP5ModeSaveRestore",
           "dlls/cof_nicecamera",
           "dlls/cof_nightstick",
           "dlls/cof_numeralplate",

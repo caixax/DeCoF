@@ -1260,6 +1260,14 @@
       }
     },
     {
+      "name": "hl/dlls/guess_CoF_MP5ModeSaveRestore",
+      "target_path": "build/target/hl/dlls/guess_CoF_MP5ModeSaveRestore.obj",
+      "base_path": "build/base/hl/dlls/guess_CoF_MP5ModeSaveRestore.obj",
+      "metadata": {
+        "source_path": "src/dlls/guess_CoF_MP5ModeSaveRestore.cpp"
+      }
+    },
+    {
       "name": "opengl32/opengl32",
       "target_path": "build/target/opengl32/opengl32.obj",
       "base_path": "build/base/opengl32/opengl32.obj",
