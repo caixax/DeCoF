@@ -2266,6 +2266,14 @@
       "metadata": {
         "source_path": "src/cl_dll/vgui_radio.cpp"
       }
+    },
+    {
+      "name": "client/cl_dll/guess_TGALoader",
+      "target_path": "build/target/client/cl_dll/guess_TGALoader.obj",
+      "base_path": "build/base/client/cl_dll/guess_TGALoader.obj",
+      "metadata": {
+        "source_path": "src/cl_dll/guess_TGALoader.cpp"
+      }
     }
   ]
 }
