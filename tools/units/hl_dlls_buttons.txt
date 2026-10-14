@@ -119,3 +119,4 @@ _multisource
 ?Stop@CBaseMonster@@UAEXXZ
 ?StopFollowing@CBaseMonster@@UAEXHH@Z
 ?StopSneaking@CBasePlayer@@UAEXXZ
+??0WayPoint_t@@QAE@XZ

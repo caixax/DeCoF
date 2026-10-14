@@ -14,3 +14,4 @@
 ?FStrEq@@YAHPBD0@Z
 ?IsAction@CCineMonster@@QAEHXZ
 ?Normalize@Vector2D@@QBE?AV1@XZ
+?FHaveSchedule@CBaseMonster@@QAEHXZ

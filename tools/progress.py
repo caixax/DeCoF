@@ -39,9 +39,9 @@ BINARIES = [
 SHOWN = ["client", "hl", "opengl32"]
 # why a binary has not started, drawn next to its bar in the SVG
 NOTES = {
-    "hw": "waits for Visual C++ 6.0, not installed",
-    "gameui": "waits for Visual C++ 6.0, not installed",
-    "launcher": "waits for Visual C++ 6.0, not installed",
+    "hw": "not started (VC6 installed; processor pack and VS 2005 objects need those compilers)",
+    "gameui": "not started (VC6 installed)",
+    "launcher": "not started (VC6 installed)",
 }
 # in scope but not in the CSV yet: (name, note)
 NOT_INVENTORIED = [("CoFLaunchApp.exe", ".NET (C#) settings launcher, not inventoried yet")]

@@ -16,3 +16,5 @@ _soundent
 ?FIsSound@CSound@@QAEHXZ
 ?FreeSound@CSoundEnt@@SAXHH@Z
 ?ObjectCaps@CSoundEnt@@UAEHXZ
+??0CSound@@QAE@XZ
+?FreeList@CSoundEnt@@SAHXZ

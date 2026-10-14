@@ -33,3 +33,4 @@
 _info_roofboss_target
 _monster_roofboss
 _roofboss_head
+?UpdateOnRemove@CRoofBoss@@QAEXXZ

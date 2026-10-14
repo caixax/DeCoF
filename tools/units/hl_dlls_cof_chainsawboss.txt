@@ -15,3 +15,4 @@
 ?TraceAttack@CChainsawBoss@@UAEXPAUentvars_s@@MVVector@@PAUTraceResult@@H@Z
 _monster_bosschainsaw
 ?AttackSound@CChainsawBoss@@QAEXXZ
+?KillMonster@CChainsawBoss@@QAEXXZ

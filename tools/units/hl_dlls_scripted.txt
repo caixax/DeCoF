@@ -45,3 +45,6 @@ _scripted_sequence
 ?GetState@CCineMonster@@UAE?AW4STATE@@XZ
 ?ObjectCaps@CCineMonster@@UAEHXZ
 ??$GetClassPtr@VCCineMonster@@@@YAPAVCCineMonster@@PAV0@@Z
+?Die@CCineMonster@@QAEXXZ
+?Die@CFurniture@@QAEXXZ
+?Pain@CCineMonster@@QAEXXZ

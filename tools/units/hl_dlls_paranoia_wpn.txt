@@ -21,3 +21,8 @@
 ?GetSpreadVec1@CBaseToggleWeapon@@UAE?AVVector@@XZ
 ?GetSpreadVec@CBaseSpreadWeapon@@UAE?AVVector@@XZ
 ?WeaponIdle@CBaseToggleWeapon@@UAEXXZ
+??0spreadparams_s@@QAE@XZ
+?DebugListSpreadTable@@YAXXZ
+?Holster@CBaseToggleWeapon@@UAEXH@Z
+?PlayerJump@CBaseSpreadWeapon@@UAEXXZ
+?Reload@CBaseToggleWeapon@@UAEXXZ

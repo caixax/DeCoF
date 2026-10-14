@@ -10,3 +10,4 @@
 ?ProbeZ@CFlyingMonster@@QAEHABVVector@@0PAM@Z
 ?ShouldAdvanceRoute@CFlyingMonster@@UAEHM@Z
 ?Stop@CFlyingMonster@@UAEXXZ
+?GetStoppedActivity@CFlyingMonster@@UAE?AW4Activity@@XZ

@@ -95,3 +95,4 @@ _func_wall_toggle
 ?GetDelay@CBaseToggle@@UAEMXZ
 ?GetToggleState@CBaseToggle@@UAEHXZ
 ?HandleAnimEvent@CBaseAnimating@@UAEXPAUMonsterEvent_t@@@Z
+?IsOn@CFuncWallToggle@@QAEHXZ

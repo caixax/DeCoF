@@ -21,3 +21,4 @@ _ammo_flashlightbattery
 _weapon_flashlight
 ?AddAmmo@CBasePlayerAmmo@@UAEHPAVCBaseEntity@@@Z
 ?ObjectCaps@CBasePlayerAmmo@@UAEHXZ
+?ToggleSwitch@CFlashlight@@QAEXXZ

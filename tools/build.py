@@ -294,20 +294,43 @@ def link(dll):
     cfg = json.load(open(CONFIG))["dlls"][dll]
     if "link" not in cfg:
         sys.exit("%s has no link section in tools/units.json" % dll)
+    lk = cfg["link"]
     units = load_units([])
     units = [x for x in units if x[0] == dll]
+    # "order": the units in the order of the retail image (the link order)
+    if "order" in lk:
+        pos = {n: i for i, n in enumerate(lk["order"])}
+        missing = [full for _d, _c, _u, full in units if full.split("/", 1)[1] not in pos]
+        if missing:
+            sys.exit("units missing from the link order: %s" % " ".join(missing))
+        units.sort(key=lambda x: pos[x[3].split("/", 1)[1]])
     if not build_base(units):
         sys.exit("not linking: some units do not compile")
     tc = toolchain(cfg)
-    lk = cfg["link"]
     tmp = os.path.join(ROOT, "build", "link", dll)
     os.makedirs(tmp, exist_ok=True)
+    # "implibs": import libraries made from retail third-party DLLs
+    libs = []
+    for src, lib in lk.get("implibs", {}).items():
+        lib = os.path.join(tmp, lib)
+        if subprocess.call([sys.executable, os.path.join(ROOT, "tools", "implib.py"),
+                            os.path.join(ROOT, src), lib], stdout=subprocess.DEVNULL) != 0:
+            sys.exit("import library for %s failed" % src)
+        libs.append(lib)
     out = os.path.join(tmp, lk["out"])
     cmd = [tc.link_path()] + lk["flags"] + ["/out:" + out, "/map:" + out + ".map"]
-    cmd += [obj_path("base", full) for _d, _c, _u, full in units] + lk["libs"]
-    rc = subprocess.call(cmd, env=tc.env(), cwd=ROOT, stdout=subprocess.DEVNULL)
-    if rc != 0:
-        sys.exit("link failed (%d)" % rc)
+    cmd += [obj_path("base", full) for _d, _c, _u, full in units] + lk["libs"] + libs
+    res = subprocess.run(cmd, env=tc.env(), cwd=ROOT, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+    log = res.stdout.decode("latin-1").splitlines()
+    with open(out + ".log", "w") as f:
+        f.write("\n".join(log) + "\n")
+    msgs = [l for l in log if " error " in l or " warning " in l or "fatal error" in l]
+    if res.returncode != 0:
+        print("\n".join(msgs[:40]))
+        sys.exit("link failed (%d), %d messages, full log build/link/%s/%s.log"
+                 % (res.returncode, len(msgs), dll, lk["out"]))
+    if msgs:
+        print("%d linker warnings, full log build/link/%s/%s.log" % (len(msgs), dll, lk["out"]))
     bindir = os.path.join(ROOT, "build", "bin")
     os.makedirs(bindir, exist_ok=True)
     import shutil

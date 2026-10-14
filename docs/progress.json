@@ -1,5 +1,5 @@
 {
-  "commit": "0503727",
+  "commit": "183dd57",
   "counting": "LIB rows excluded; bytes weighted by function size",
   "date": "2026-10-14",
   "dlls": {
@@ -180,9 +180,9 @@
     "hl.dll": {
       "bytes": {
         "EQUIVALENT": 53368,
-        "MATCHED": 1039216,
-        "TODO": 0,
-        "total": 1092584
+        "MATCHED": 1039658,
+        "TODO": 12038,
+        "total": 1105064
       },
       "categories": {
         "COF": {
@@ -244,23 +244,23 @@
         "UNKNOWN": {
           "bytes": {
             "EQUIVALENT": 0,
-            "MATCHED": 88814,
-            "TODO": 0,
-            "total": 88814
+            "MATCHED": 89256,
+            "TODO": 12038,
+            "total": 101294
           },
           "functions": {
             "EQUIVALENT": 0,
-            "MATCHED": 503,
-            "TODO": 0,
-            "total": 503
+            "MATCHED": 507,
+            "TODO": 83,
+            "total": 590
           }
         }
       },
       "functions": {
         "EQUIVALENT": 11,
-        "MATCHED": 5239,
-        "TODO": 0,
-        "total": 5250
+        "MATCHED": 5243,
+        "TODO": 83,
+        "total": 5337
       }
     },
     "hw.dll": {
@@ -341,30 +341,30 @@
   "shown_total": {
     "bytes": {
       "EQUIVALENT": 89839,
-      "MATCHED": 1582567,
-      "TODO": 89526,
-      "total": 1761932
+      "MATCHED": 1583009,
+      "TODO": 101564,
+      "total": 1774412
     },
     "functions": {
       "EQUIVALENT": 31,
-      "MATCHED": 7422,
-      "TODO": 233,
-      "total": 7686
+      "MATCHED": 7426,
+      "TODO": 316,
+      "total": 7773
     }
   },
   "target_version": "1.6a",
   "total": {
     "bytes": {
       "EQUIVALENT": 89839,
-      "MATCHED": 1582567,
-      "TODO": 2397189,
-      "total": 4069595
+      "MATCHED": 1583009,
+      "TODO": 2409227,
+      "total": 4082075
     },
     "functions": {
       "EQUIVALENT": 31,
-      "MATCHED": 7422,
-      "TODO": 15617,
-      "total": 23070
+      "MATCHED": 7426,
+      "TODO": 15700,
+      "total": 23157
     }
   }
 }

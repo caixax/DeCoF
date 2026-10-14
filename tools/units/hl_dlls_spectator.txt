@@ -2,3 +2,4 @@
 ?SpectatorImpulseCommand@CBaseSpectator@@AAEXXZ
 ?SpectatorConnect@CBaseSpectator@@QAEXXZ
 ?SpectatorDisconnect@CBaseSpectator@@QAEXXZ
+?Spawn@CBaseSpectator@@UAEXXZ

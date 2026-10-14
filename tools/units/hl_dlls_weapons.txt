@@ -115,3 +115,5 @@ _weaponbox
 ?Save@CCSM4A1@@UAEHAAVCSave@@@Z
 ?Restore@CCSAWP@@UAEHAAVCRestore@@@Z
 ?Save@CCSAWP@@UAEHAAVCSave@@@Z
+?CanCurrentlySuicide@CBasePlayerWeapon@@QAE_NXZ
+?UTIL_PrecacheSpecialItems@@YAXXZ

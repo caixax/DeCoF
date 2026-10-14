@@ -157,3 +157,4 @@
 ?UTIL_dtos4@@YAPADH@Z
 ?WriteFloat@CSave@@QAEXPBDPBMH@Z
 ?WriteInt@CSave@@QAEXPBDPBHH@Z
+?BufferSkipZString@CRestore@@AAEHXZ

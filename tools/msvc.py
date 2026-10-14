@@ -40,7 +40,9 @@ def env():
         os.path.join(SDK_DIR, "Lib", SDK_VER, "ucrt", "x86"),
         os.path.join(SDK_DIR, "Lib", SDK_VER, "um", "x86"),
     ])
-    e["PATH"] = TOOLS_DIR + os.pathsep + e.get("PATH", "")
+    # rc.exe and mt.exe (the linker embeds the manifest with them)
+    sdk_bin = os.path.join(SDK_DIR, "bin", SDK_VER, "x86")
+    e["PATH"] = os.pathsep.join([TOOLS_DIR, sdk_bin, e.get("PATH", "")])
     # Keep the compiler from picking up stray settings
     for k in ("CL", "_CL_", "LINK", "_LINK_"):
         e.pop(k, None)

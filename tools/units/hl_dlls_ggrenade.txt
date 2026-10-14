@@ -18,3 +18,4 @@ _grenade
 ?UseSatchelCharges@CGrenade@@SAXPAUentvars_s@@W4SATCHELCODE@1@@Z
 ??$GetClassPtr@VCGrenade@@@@YAPAVCGrenade@@PAV0@@Z
 ?BloodColor@CGrenade@@UAEHXZ
+?ShootTimed@CGrenade@@SAPAV1@PAUentvars_s@@VVector@@1M@Z

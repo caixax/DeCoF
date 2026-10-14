@@ -19,3 +19,4 @@ _dualwield
 ?HasDualWeapon@CDualWeaponRight@@QAE_NPAVCBasePlayer@@@Z
 ?SendWeaponAnim@CDualWeaponRight@@QAEXPAVCBasePlayer@@H@Z
 ?SetVariables@CDualWeaponRight@@QAEXMMH@Z
+?SetDualBodyGroup@CDualWeaponRight@@QAEXPAVCBasePlayer@@HH@Z

@@ -57,7 +57,6 @@ enum mp5_e
 };
 
 LINK_ENTITY_TO_CLASS( weapon_mp5, CMp5 );
-LINK_ENTITY_TO_CLASS( weapon_uzi, CMp5 );
 
 
 void CMp5::StartSuicide( void )

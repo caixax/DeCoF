@@ -19,3 +19,4 @@
 ?SquadMemberInRange@CSquadMonster@@QAEHABVVector@@M@Z
 ?SquadPasteEnemyInfo@CSquadMonster@@QAEXXZ
 ?SquadRemove@CSquadMonster@@QAEXPAV1@@Z
+?NoFriendlyFire@CSquadMonster@@QAEHXZ

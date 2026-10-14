@@ -35,3 +35,7 @@
 ?CanPlaySentence@CTalkMonster@@UAEHH@Z
 ?TargetDistance@CTalkMonster@@QAEMXZ
 ?Touch@CTalkMonster@@UAEXPAVCBaseEntity@@@Z
+?FOkToSpeak@CTalkMonster@@UAEHXZ
+?Precache@CTalkMonster@@UAEXXZ
+?PrescheduleThink@CTalkMonster@@UAEXXZ
+?TrySmellTalk@CTalkMonster@@QAEXXZ

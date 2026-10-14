@@ -247,3 +247,9 @@ _player
 ?CheckPowerups@@YAXPAUentvars_s@@@Z
 ?guess_IsInSteamGroup@CBasePlayer@@QAE_NI@Z
 ?guess_CanUseWeapon@CBasePlayer@@QAE_NH@Z
+?DebugDocuments@CBasePlayer@@QAEXXZ
+?FlashlightIsOn@CBasePlayer@@QAEHXZ
+?PrintInventoryClassnameInfoDebug@CBasePlayer@@QAEXXZ
+?SelectPrevItem@CBasePlayer@@QAEXH@Z
+?ToNormalMo@CBasePlayer@@QAEXXZ
+?ToSlowMo@CBasePlayer@@QAEXXZ

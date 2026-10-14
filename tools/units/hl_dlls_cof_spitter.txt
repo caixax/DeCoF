@@ -17,3 +17,4 @@
 ?Spawn@CSpitter@@UAEXXZ
 ?TakeDamage@CSpitter@@UAEHPAUentvars_s@@0MH@Z
 _monster_spitter
+?AttackSound@CSpitter@@QAEXXZ

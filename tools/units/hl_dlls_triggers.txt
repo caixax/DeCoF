@@ -368,3 +368,4 @@ _info_teleport_destination
 _motion_thread
 ??9Vector@@QBEHABV0@@Z
 ?ObjectCaps@CStartRush@@UAEHXZ
+??0LEVELLIST@@QAE@XZ
