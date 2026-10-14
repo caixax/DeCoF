@@ -241,3 +241,5 @@ _player
 ?IsDeveloper@CBasePlayer@@QAEHXZ
 ?CanBeDualWielded@CBasePlayer@@QAE_NH@Z
 ?IsAFlashlight@CBasePlayer@@QAE_NH@Z
+?CheckSuitUpdate@CBasePlayer@@QAEXXZ
+?UpdateGeigerCounter@CBasePlayer@@QAEXXZ

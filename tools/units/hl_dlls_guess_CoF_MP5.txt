@@ -28,3 +28,5 @@ _cof_mp5modesaverestore
 ?Spawn@CMP5ModeSaveRestoreMP5@@UAEXXZ
 ?ObjectCaps@CMP5ModeSaveRestoreMP5@@UAEHXZ
 ?Use@CMP5ModeSaveRestoreMP5@@UAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z
+?ItemPostFrame@CMp5@@UAEXXZ
+?SendInitMessage@CMP5Ammo@@EAEXPAVCBasePlayer@@@Z

@@ -604,7 +604,7 @@ void CMp5::ItemPostFrame( void )
 			{
 				m_iSprintState = 5;
 
-				SendWeaponAnim( MP5_SPRINT_TO );
+				SendWeaponAnim( MP5_JUMP );
 
 				time = GetSequenceTime( GET_MODEL_PTR( ENT( pev ) ), m_pPlayer->pev->weaponanim );
 				m_flNextPrimaryAttack = time * 0.5 + gpGlobals->time;
@@ -613,7 +613,7 @@ void CMp5::ItemPostFrame( void )
 		}
 		else if ( m_iSprintState == 5 )
 		{
-			SendWeaponAnim( MP5_SPRINT_END );
+			SendWeaponAnim( MP5_LAND );
 
 			time = GetSequenceTime( GET_MODEL_PTR( ENT( pev ) ), m_pPlayer->pev->weaponanim );
 			m_flNextPrimaryAttack = time + gpGlobals->time;
@@ -669,16 +669,13 @@ class CMP5Ammo : public CBasePlayerAmmo
 	}
 	void SendInitMessage( CBasePlayer *player )
 	{
-		if ( player )
-		{
-			bool bNotMapper = player->guess_m_iNew16a != 2 && player->guess_m_iNew16a != 3 && player->guess_m_iNew16a != 4;
+		bool bNotMapper = player && player->guess_m_iNew16a != 2 && player->guess_m_iNew16a != 3 && player->guess_m_iNew16a != 4;
 
-			if ( ( !g_pGameRules || !g_pGameRules->guess_IsMapperMode() ) && bNotMapper )
-			{
-				CBaseEntity *pAmmo = CBaseEntity::Create( "ammo_glock", pev->origin, pev->angles, NULL );
-				if ( pAmmo )
-					UTIL_Remove( this );
-			}
+		if ( ( !g_pGameRules || !g_pGameRules->guess_IsMapperMode() ) && bNotMapper )
+		{
+			CBaseEntity *pAmmo = CBaseEntity::Create( "ammo_glock", pev->origin, pev->angles, NULL );
+			if ( pAmmo )
+				UTIL_Remove( this );
 		}
 	}
 	void Precache( void )
