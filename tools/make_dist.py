@@ -1,12 +1,16 @@
 """Assemble a playable game in dist/ from retail 1.6a plus rebuilt DLLs.
 
-Usage: python tools/make_dist.py [--dry-run] [--bin build/bin]
+Usage: python tools/make_dist.py [--dry-run] [--keep] [--bin build/bin]
 
 1. Deletes dist/ and copies versions/1.6a into it (files are copied, never
    hard linked, so the game can not write through into versions/).
 2. For every in-scope DLL, if the build produced <bin>/<name> the retail
    copy in dist/ is replaced. The build only writes a DLL to <bin> when it
    links completely from src/, so a missing file means "keep retail".
+
+--keep leaves an existing dist/ in place and only sets every in-scope DLL
+to its rebuilt or retail copy (for example --keep --bin <empty dir> puts
+the retail DLLs back for a comparison run).
 """
 import argparse
 import hashlib
@@ -38,6 +42,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--bin", default=os.path.join(ROOT, "build", "bin"))
+    ap.add_argument("--keep", action="store_true")
     args = ap.parse_args()
 
     if not os.path.isdir(RETAIL):
@@ -59,9 +64,13 @@ def main():
               % (DIST, RETAIL, len(replace)))
         return
 
-    if os.path.exists(DIST):
-        shutil.rmtree(DIST)
-    shutil.copytree(RETAIL, DIST)
+    if args.keep and os.path.isdir(DIST):
+        for name, rel in sorted(DLLS.items()):
+            shutil.copyfile(os.path.join(RETAIL, rel), os.path.join(DIST, rel))
+    else:
+        if os.path.exists(DIST):
+            shutil.rmtree(DIST)
+        shutil.copytree(RETAIL, DIST)
     for name, built, rel in replace:
         dest = os.path.join(DIST, rel)
         shutil.copyfile(built, dest)
