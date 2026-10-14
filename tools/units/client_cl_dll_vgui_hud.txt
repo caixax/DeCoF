@@ -7,3 +7,6 @@
 ?ShouldDrawHUD@@YAHXZ
 ?paintBackground@CHud2@@MAEXXZ
 ?Hud2Init@@YAXXZ
+??0CHud2@@QAE@XZ
+?FindAmmoImageForWeapon@CHud2@@IAEPAVBitmapTGA@vgui@@PBD@Z
+?solve@CHud2@@UAEXXZ

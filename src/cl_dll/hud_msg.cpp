@@ -16,6 +16,9 @@
 //  hud_msg.cpp
 //
 
+#include <string>
+#include <list>
+
 #include "hud.h"
 #include "cl_util.h"
 #include "parsemsg.h"
@@ -27,6 +30,8 @@
 #include "guess_HUDControl.h"
 #include "guess_RECBInventory.h"
 #include "guess_Documents.h"
+#include "glmanager.h"
+#include "guess_CgWater.h"
 #include "..\game_shared\vgui_loadtga.h"
 #include <direct.h>
 
@@ -44,7 +49,7 @@ int guess_iGetUpTapCount;			// +jump presses since the FallOver message
 bool guess_bCustomFingerTexture;	// CustomFng message
 bool guess_bCustomGloveTexture;		// CustomGlv message
 bool guess_bWheelchairLock;			// Wheelchair message
-bool guess_bUnknown10542BB3;		// cleared by AttachCam
+bool guess_bAttachCam;		// cleared by AttachCam
 int guess_g_iDickMode;
 int guess_iWheelchair;				// Wheelchair message, the entity (0 when off)
 int guess_iBoat;					// Boat message, the entity (0 when off)
@@ -82,35 +87,7 @@ extern bool guess_g_bSleeveLoaded;
 extern bool guess_g_bGloveLoaded;
 extern bool guess_g_bPoliceSleeveLoaded;
 
-void guess_MuzzleFlash( cl_entity_t *pEntity, int iAttachment, int iType, float flScale );
-
-// Cry of Fear renderer objects reset by InitHUD (the source files that define
-// them are not written yet: texture cache at 0x10545118, Cg context at
-// 0x10545050, Cg water shader at 0x10545078)
-class guess_CTextureManager
-{
-public:
-	bool guess_IsHardware( void );		// IEngineStudio.IsHardware() == 1
-	void guess_Reset( void );
-	void guess_LoadPlayerShadow( void );	// "playershadow"
-};
-
-class guess_CCgContext
-{
-public:
-	void guess_Shutdown( void );
-	bool guess_Init( void );			// cgCreateContext, vertex and fragment profiles
-};
-
-class guess_CCgWater
-{
-public:
-	void guess_Init( void );			// "cg_water", "black_vp.cg", "fp20_water_fp.cg"
-};
-
-extern guess_CTextureManager guess_g_TextureManager;
-extern guess_CCgContext guess_g_CgContext;
-extern guess_CCgWater guess_g_CgWater;
+void guess_MuzzleFlash( cl_entity_t *pEntity, int iAttachment, bool bAlt, float flScale );
 
 //=========================================================
 // Declarations this file takes from the Steamworks SDK
@@ -941,7 +918,7 @@ int CHud :: MsgFunc_Muzzleflash( const char *pszName, int iSize, void *pbuf )
 	cl_entity_t *pEntity = gEngfuncs.GetEntityByIndex( iEntity );
 
 	if ( pEntity )
-		guess_MuzzleFlash( pEntity, iAttachment, 0, 1.0 );
+		guess_MuzzleFlash( pEntity, iAttachment, false, 1.0 );
 
 	return 1;
 }
@@ -1115,7 +1092,7 @@ int CHud :: MsgFunc_AttachCam( const char *pszName, int iSize, void *pbuf )
 	guess_flUnknown10542BCC = 2;
 	guess_flUnknown10542BD4 = 2;
 	guess_flUnknown10542BD0 = 8.5;
-	guess_bUnknown10542BB3 = false;
+	guess_bAttachCam = false;
 	guess_bUnknown10559514 = false;
 
 	if ( iEntity <= 0 )

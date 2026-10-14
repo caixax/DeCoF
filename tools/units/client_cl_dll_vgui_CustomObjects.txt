@@ -39,3 +39,12 @@ CommandButton::CommandButton
 ?setParentMenu@CommandButton@@QAEXPAVCCommandMenu@@@Z
 ?cursorEntered@CHandler_CommandButtonHighlight@@UAEXPAVPanel@vgui@@@Z
 ?cursorExited@CHandler_CommandButtonHighlight@@UAEXPAVPanel@vgui@@@Z
+?keyPressed@CHandler_ButtonHighlight@@UAEXW4KeyCode@vgui@@PAVPanel@3@@Z
+?keyReleased@CHandler_ButtonHighlight@@UAEXW4KeyCode@vgui@@PAVPanel@3@@Z
+?keyTyped@CHandler_ButtonHighlight@@UAEXW4KeyCode@vgui@@PAVPanel@3@@Z
+?mouseDoublePressed@CHandler_ButtonHighlight@@UAEXW4MouseCode@vgui@@PAVPanel@3@@Z
+?mousePressed@CHandler_ButtonHighlight@@UAEXW4MouseCode@vgui@@PAVPanel@3@@Z
+?mouseReleased@CHandler_ButtonHighlight@@UAEXW4MouseCode@vgui@@PAVPanel@3@@Z
+?mouseWheeled@CHandler_ButtonHighlight@@UAEXHPAVPanel@vgui@@@Z
+?paintBackground@CImageLabel@@UAEXXZ
+?paintBackground@CTFScrollButton@@UAEXXZ

@@ -12,3 +12,5 @@
 ?guess_RingEffect@@YAXPAUcl_drip@@@Z
 ?guess_OrthoCrosshair@@YAXHH@Z
 ?DrawFXObjects@@YAXXZ
+_HUD_DrawNormalTriangles
+_HUD_DrawTransparentTriangles

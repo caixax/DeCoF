@@ -21,3 +21,4 @@
 ?CreateDecalTrace@@YAXVVector@@0PBDH@Z
 ?DrawDecals@@YAXXZ
 ?GetEntry@DecalGroup@@QAEPAVDecalGroupEntry@@H@Z
+?PasteViewDecal@@YAXXZ

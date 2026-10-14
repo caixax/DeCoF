@@ -13,3 +13,4 @@
 ?LoadCacheTexture@@YAHPBDHH@Z
 ?NormalizeMipMap@@YAXPAUcolor24@@HH@Z
 ?ParseDetailTextureDataFile@@YAHXZ
+?SortTexturesByDetailTexID@@YAXXZ

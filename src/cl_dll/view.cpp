@@ -557,7 +557,7 @@ extern int guess_iTelescopeFlag;
 extern cl_entity_t *guess_pAttachCamEnt;
 extern int guess_iAttachCamFlag;
 extern int guess_iUnknown10542BC8;
-extern bool guess_bUnknown10542BB3;
+extern bool guess_bAttachCam;
 extern bool guess_bUnknown104CE4A3;
 extern vec3_t guess_vecCameraAttachment;
 extern vec3_t guess_vecCameraAngles;
@@ -572,6 +572,8 @@ extern int guess_g_iDualWeapon2;
 extern cl_entity_t g_HeadShieldEnt;
 
 vec3_t guess_vecWheelchairAngles;		// added to the wheelchair angles (the knock back subtracts from it)
+float guess_flMouseOfs2X;				// second mouse look pair of IN_MouseMove
+float guess_flMouseOfs2Y;
 vec3_t guess_vecWheelchairViewAngles;	// the view angles in the wheelchair
 float guess_flUnknown105595A0;
 float guess_flUnknown105595A4;
@@ -765,7 +767,7 @@ void V_CalcNormalRefdef ( struct ref_params_s *pparams )
 	}
 
 	// cof: camera attached to an entity
-	if ( guess_pAttachCamEnt && guess_bUnknown10542BB3 && !guess_bUnknown104CE4A3 )
+	if ( guess_pAttachCamEnt && guess_bAttachCam && !guess_bUnknown104CE4A3 )
 	{
 		guess_iUnknown10542BC8 = 0;
 

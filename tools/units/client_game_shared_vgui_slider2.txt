@@ -22,3 +22,14 @@
 ?setRangeWindowEnabled@Slider2@vgui@@UAEX_N@Z
 ?setSize@Slider2@vgui@@UAEXHH@Z
 ?setValue@Slider2@vgui@@UAEXH@Z
+?cursorEntered@FooDefaultSliderSignal@?A0x3314b717@@UAEXPAVPanel@vgui@@@Z
+?cursorExited@FooDefaultSliderSignal@?A0x3314b717@@UAEXPAVPanel@vgui@@@Z
+?cursorMoved@FooDefaultSliderSignal@?A0x3314b717@@UAEXHHPAVPanel@vgui@@@Z
+?keyFocusTicked@FooDefaultSliderSignal@?A0x3314b717@@UAEXPAVPanel@vgui@@@Z
+?keyPressed@FooDefaultSliderSignal@?A0x3314b717@@UAEXW4KeyCode@vgui@@PAVPanel@4@@Z
+?keyReleased@FooDefaultSliderSignal@?A0x3314b717@@UAEXW4KeyCode@vgui@@PAVPanel@4@@Z
+?keyTyped@FooDefaultSliderSignal@?A0x3314b717@@UAEXW4KeyCode@vgui@@PAVPanel@4@@Z
+?mouseDoublePressed@FooDefaultSliderSignal@?A0x3314b717@@UAEXW4MouseCode@vgui@@PAVPanel@4@@Z
+?mousePressed@FooDefaultSliderSignal@?A0x3314b717@@UAEXW4MouseCode@vgui@@PAVPanel@4@@Z
+?mouseReleased@FooDefaultSliderSignal@?A0x3314b717@@UAEXW4MouseCode@vgui@@PAVPanel@4@@Z
+?mouseWheeled@FooDefaultSliderSignal@?A0x3314b717@@UAEXHPAVPanel@vgui@@@Z

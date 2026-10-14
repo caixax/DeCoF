@@ -1751,6 +1751,26 @@
           "name": "cl_dll/hud_update",
           "source": "src/cl_dll/hud_update.cpp",
           "functions_file": "tools/units/client_cl_dll_hud_update.txt"
+        },
+        {
+          "name": "cl_dll/guess_CgContext",
+          "source": "src/cl_dll/guess_CgContext.cpp",
+          "functions_file": "tools/units/client_cl_dll_guess_CgContext.txt"
+        },
+        {
+          "name": "cl_dll/guess_CgWater",
+          "source": "src/cl_dll/guess_CgWater.cpp",
+          "functions_file": "tools/units/client_cl_dll_guess_CgWater.txt"
+        },
+        {
+          "name": "cl_dll/guess_PBuffer",
+          "source": "src/cl_dll/guess_PBuffer.cpp",
+          "functions_file": "tools/units/client_cl_dll_guess_PBuffer.txt"
+        },
+        {
+          "name": "cl_dll/guess_TextureManager",
+          "source": "src/cl_dll/guess_TextureManager.cpp",
+          "functions_file": "tools/units/client_cl_dll_guess_TextureManager.txt"
         }
       ]
     }

@@ -48,8 +48,7 @@ extern int guess_iModelAttachEnt;
 extern int guess_iModelAttachNum;
 extern int guess_iDefaultFOV;
 extern cl_entity_t *guess_pTelescopeEnt;
-extern float guess_flMouseOfsX;
-extern float guess_flMouseOfsY;
+extern vec3_t guess_vecWheelchairAngles;
 extern int guess_iWheelchair;
 extern bool guess_bWheelchairLock;
 extern float guess_flMouseOfs2X;
@@ -433,27 +432,6 @@ void IN_MouseMove ( float frametime, usercmd_t *cmd)
 	{
 				vec3_t angles;
 
-		guess_flMouseOfsX += mouse_y * m_pitch->value;
-		guess_flMouseOfsY += mouse_x * m_yaw->value;
-
-		if ( guess_flMouseOfsX > 30 )
-			guess_flMouseOfsX = 30;
-		else if ( guess_flMouseOfsX < -60 )
-			guess_flMouseOfsX = -60;
-
-		if ( guess_flMouseOfsY > 60 )
-			guess_flMouseOfsY = 60;
-		if ( guess_flMouseOfsY < -60 )
-			guess_flMouseOfsY = -60;
-
-		angles[0] = guess_flMouseOfsX;
-		angles[1] = guess_flMouseOfsY * -1;
-		gEngfuncs.SetViewAngles( (float *)angles );
-	}
-
-	if ( guess_iWheelchair && !guess_bWheelchairLock )
-	{
-		
 		guess_flMouseOfs2X += mouse_y * m_pitch->value;
 		guess_flMouseOfs2Y += mouse_x * m_yaw->value;
 
@@ -464,8 +442,29 @@ void IN_MouseMove ( float frametime, usercmd_t *cmd)
 
 		if ( guess_flMouseOfs2Y > 60 )
 			guess_flMouseOfs2Y = 60;
-		else if ( guess_flMouseOfs2Y < -60 )
+		if ( guess_flMouseOfs2Y < -60 )
 			guess_flMouseOfs2Y = -60;
+
+		angles[0] = guess_flMouseOfs2X;
+		angles[1] = guess_flMouseOfs2Y * -1;
+		gEngfuncs.SetViewAngles( (float *)angles );
+	}
+
+	if ( guess_iWheelchair && !guess_bWheelchairLock )
+	{
+		
+		guess_vecWheelchairAngles[0] += mouse_y * m_pitch->value;
+		guess_vecWheelchairAngles[1] += mouse_x * m_yaw->value;
+
+		if ( guess_vecWheelchairAngles[0] > 30 )
+			guess_vecWheelchairAngles[0] = 30;
+		else if ( guess_vecWheelchairAngles[0] < -60 )
+			guess_vecWheelchairAngles[0] = -60;
+
+		if ( guess_vecWheelchairAngles[1] > 60 )
+			guess_vecWheelchairAngles[1] = 60;
+		else if ( guess_vecWheelchairAngles[1] < -60 )
+			guess_vecWheelchairAngles[1] = -60;
 	}
 
 /*

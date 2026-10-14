@@ -31,7 +31,7 @@
 #include "vgui_TeamFortressViewport.h"
 #include "particlemgr.h"
 
-extern int guess_iUnknown1055959C;
+extern float guess_flUnknown1055959C;
 
 WEAPON *gpActiveSel;	// NULL means off, 1 means just the menu bar, otherwise
 						// this points to the active weapon menu item
@@ -936,7 +936,7 @@ int CHudAmmo::MsgFunc_DualAmmo( const char *pszName, int iSize, void *pbuf )
 int CHudAmmo::MsgFunc_WpnDeploy( const char *pszName, int iSize, void *pbuf )
 {
 	g_pParticleSystems.guess_KillViewModelSystems( true );
-	guess_iUnknown1055959C = 0;
+	guess_flUnknown1055959C = 0;
 
 	return 1;
 }

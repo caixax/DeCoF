@@ -1,0 +1,11 @@
+?guess_CheckMipmapSupport@guess_CTextureManager@@QAEXXZ
+?guess_CreateTexture@guess_CTextureManager@@QAEXHHPAIII@Z
+?guess_FindImageFile@guess_CTextureManager@@QAE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@ABV23@@Z
+?guess_GetPath@guess_CTextureManager@@QAE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@ABV23@HPAH@Z
+?guess_GetTexture@guess_CTextureManager@@QAEPAUguess_texture_s@@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+?guess_GetTexture@guess_CTextureManager@@QAEPAUguess_texture_s@@PBD@Z
+?guess_IsHardware@guess_CTextureManager@@QAE_NXZ
+?guess_Load@guess_CTextureManager@@QAEPAUguess_texture_s@@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+?guess_LoadPlayerShadow@guess_CTextureManager@@QAEXXZ
+?guess_Reset@guess_CTextureManager@@QAEXXZ
+?guess_UploadImage@guess_CTextureManager@@QAEXPAUguess_texture_s@@@Z

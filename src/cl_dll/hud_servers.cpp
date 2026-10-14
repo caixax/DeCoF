@@ -1178,7 +1178,7 @@ void ServersCancel( void )
 {
 	if ( g_pServers )
 	{
-		g_pServers->RequestList();
+		g_pServers->CancelRequest();
 	}
 }
 

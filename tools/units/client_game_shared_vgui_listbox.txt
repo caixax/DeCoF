@@ -11,3 +11,5 @@
 ?SetScrollPos@CListBox@vgui@@QAEXH@Z
 ?intChanged@ListBoxSignal@CListBox@vgui@@UAEXHPAVPanel@3@@Z
 ?paintBackground@CListBox@vgui@@UAEXXZ
+?setPos@CListBox@vgui@@UAEXHH@Z
+?setSize@CListBox@vgui@@UAEXHH@Z

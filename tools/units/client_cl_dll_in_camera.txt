@@ -8,3 +8,4 @@ _CAM_Think
 _CL_CameraOffset
 _CL_IsThirdPerson
 ?__MsgFunc_Telescope@@YAHPBDHPAX@Z
+?CAM_ToThirdPerson@@YAXXZ

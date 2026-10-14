@@ -6,3 +6,4 @@
 ?Draw@CObjectsManager@@QAEXXZ
 ?Draw@CSmokePuff@@UAEHMM@Z
 ?Reset@CObjectsManager@@QAEXXZ
+??0CSmokePuff@@QAE@VVector@@0MMMMMMMMMM@Z

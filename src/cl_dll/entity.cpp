@@ -933,12 +933,13 @@ void DLLEXPORT HUD_StudioEvent( const struct mstudioevent_s *event, const struct
 			gEngfuncs.pfnPlaySoundByNameAtLocation( "player/player_swim.wav", 1.0, (float *)&entity->attachment[0] );
 			gEngfuncs.pfnServerCmd( "swimboost" );
 
-			if ( guess_iUnknown1054506C > 2 )
+			if ( guess_iUnknown1054506C >= 3 )
 			{
 				int iBubble = gEngfuncs.pEventAPI->EV_FindModelIndex( "sprites/bubble.spr" );
+				TEMPENTITY *pBubble[5];
 				int i;
 
-				for ( i = 1; i < 6; i++ )
+				for ( i = 1; i <= 5; i++ )
 				{
 					float x = gEngfuncs.pfnRandomFloat( -5, 5 );
 					float y = gEngfuncs.pfnRandomFloat( -5, 5 );
@@ -948,10 +949,10 @@ void DLLEXPORT HUD_StudioEvent( const struct mstudioevent_s *event, const struct
 					vecOrigin.y += y;
 					vecOrigin.z += 5;
 					vec3_t vecVelocity( 0, 0, 15 );
-					gEngfuncs.pEfxAPI->R_TempSprite( vecOrigin, vecVelocity, 0.15, iBubble, kRenderTransAlpha, kRenderFxNone, 128, 1, guess_FTENT_FADE );
+					pBubble[i] = gEngfuncs.pEfxAPI->R_TempSprite( vecOrigin, vecVelocity, 0.15, iBubble, kRenderTransAlpha, kRenderFxNone, 128, 1, guess_FTENT_FADE );
 				}
 
-				for ( i = 1; i < 6; i++ )
+				for ( i = 1; i <= 5; i++ )
 				{
 					float x = gEngfuncs.pfnRandomFloat( -5, 5 );
 					float y = gEngfuncs.pfnRandomFloat( -5, 5 );
@@ -961,7 +962,7 @@ void DLLEXPORT HUD_StudioEvent( const struct mstudioevent_s *event, const struct
 					vecOrigin.y += y;
 					vecOrigin.z += 5;
 					vec3_t vecVelocity( 0, 0, 15 );
-					gEngfuncs.pEfxAPI->R_TempSprite( vecOrigin, vecVelocity, 0.15, iBubble, kRenderTransAlpha, kRenderFxNone, 255, 1, guess_FTENT_FADE );
+					pBubble[i] = gEngfuncs.pEfxAPI->R_TempSprite( vecOrigin, vecVelocity, 0.15, iBubble, kRenderTransAlpha, kRenderFxNone, 255, 1, guess_FTENT_FADE );
 				}
 			}
 		}
@@ -1081,14 +1082,10 @@ void DLLEXPORT HUD_StudioEvent( const struct mstudioevent_s *event, const struct
 		}
 	case 5050:
 		{
-			char *sample;
-
 			if ( gEngfuncs.pfnRandomLong( 0, 1 ) == 1 )
-				sample = "weapons/flare/flare_strike1.wav";
+				gEngfuncs.pEventAPI->EV_PlaySound( entity->index, (float *)&entity->attachment[0], CHAN_WEAPON, "weapons/flare/flare_strike1.wav", 1.0, 0.8, 0, PITCH_NORM );
 			else
-				sample = "weapons/flare/flare_strike2.wav";
-
-			gEngfuncs.pEventAPI->EV_PlaySound( entity->index, (float *)&entity->attachment[0], CHAN_WEAPON, sample, 1.0, 0.8, 0, PITCH_NORM );
+				gEngfuncs.pEventAPI->EV_PlaySound( entity->index, (float *)&entity->attachment[0], CHAN_WEAPON, "weapons/flare/flare_strike2.wav", 1.0, 0.8, 0, PITCH_NORM );
 
 			ParticleSystem *pSystem = new ParticleSystem( entity->index, "aurora/flare_sparks_short.aur", 1, 0, entity->model->name );
 			g_pParticleSystems.AddSystem( pSystem );

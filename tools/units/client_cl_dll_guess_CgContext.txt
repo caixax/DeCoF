@@ -1,0 +1,6 @@
+?guess_FindProgram@guess_CCgContext@@QAEPAUguess_cgprogram_s@@PBD@Z
+?guess_GetFragmentProfile@guess_CCgContext@@QAE?AW4CGprofile@@XZ
+?guess_Init@guess_CCgContext@@QAE_NXZ
+?guess_IsProgramValid@guess_CCgContext@@QAE_NPBDH@Z
+?guess_RemoveProgram@guess_CCgContext@@QAEPAUguess_cgprogram_s@@PAU2@@Z
+?guess_Shutdown@guess_CCgContext@@QAEXXZ

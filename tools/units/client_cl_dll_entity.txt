@@ -6,3 +6,4 @@ _HUD_StudioEvent
 _HUD_TempEntUpdate
 _HUD_TxferLocalOverrides
 _HUD_TxferPredictionData
+?guess_MuzzleFlash@@YAXPAUcl_entity_s@@H_NM@Z

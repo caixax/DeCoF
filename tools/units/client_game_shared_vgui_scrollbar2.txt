@@ -23,3 +23,5 @@
 ?setSlider@ScrollBar2@vgui@@UAEXPAVSlider2@2@@Z
 ?setValue@ScrollBar2@vgui@@UAEXH@Z
 ?validate@ScrollBar2@vgui@@UAEXXZ
+?actionPerformed@FooDefaultButtonSignal@?A0x4a7d4a50@@UAEXPAVPanel@vgui@@@Z
+?intChanged@FooDefaultScrollBarIntChangeSignal@?A0x4a7d4a50@@UAEXHPAVPanel@vgui@@@Z

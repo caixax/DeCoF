@@ -9,3 +9,4 @@
 ?SetPlayerBan@CVoiceBanMgr@@QAEXQBD_N@Z
 ?AddBannedPlayer@CVoiceBanMgr@@IAEPAVBannedPlayer@1@QBD@Z
 ?Term@CVoiceBanMgr@@QAEXXZ
+??1CVoiceBanMgr@@QAE@XZ

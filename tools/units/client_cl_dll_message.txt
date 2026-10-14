@@ -11,3 +11,4 @@
 ?YPosition@CHudMessage@@QAEHMH@Z
 ?Draw@CHudMessage@@UAEHM@Z
 ?MessageAdd@CHudMessage@@QAEXPAUclient_textmessage_s@@@Z
+?MessageDrawScan@CHudMessage@@QAEXPAUclient_textmessage_s@@M@Z

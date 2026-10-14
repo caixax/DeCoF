@@ -30,7 +30,7 @@ _V_CalcRefdef
 ?MaxAngleBetweenAngles@@YAMPAM0@Z
 ?guess_AddViewmodelBob@@YAXPAUref_params_s@@AAVVector@@1MMPAUcl_entity_s@@_N@Z
 ?guess_NormalizeAngles360@@YAXMM@Z
-?guess_CalcViewModelLag@@YAXMPAMAAVVector@@0PAUcl_entity_s@@_N@Z
+?guess_CalcViewModelLag@@YAXMAAVVector@@00PAUcl_entity_s@@_N@Z
 ?guess_CalcViewmodelBob@@YAMPAUref_params_s@@MM@Z
 ?guess_SetupMagliteLight@@YAXVVector@@0MM@Z
 ?guess_GetDualEntity@@YAPAUcl_entity_s@@XZ
@@ -38,6 +38,4 @@ _V_CalcRefdef
 ?SetupFlashlight@@YAXVVector@@0MM@Z
 ?guess_SetupViewModelLight@@YAXVVector@@0MM@Z
 ?guess_GetBobMode@@YAHPAUref_params_s@@@Z
-?guess_VectorIsValid@@YA_NVVector@@@Z
-?guess_CalcViewModelLag@@YAXMAAVVector@@00PAUcl_entity_s@@_N@Z
 ?guess_VectorIsValid@@YA_NMMM@Z

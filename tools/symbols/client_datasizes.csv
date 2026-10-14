@@ -536,7 +536,7 @@ _grgchTextureType,512,"our object, capped at the next retail symbol"
 ?gd@?1??GetVGUITGAName@@YAPADPBD@Z@4PADA,256,"our object, capped at the next retail symbol"
 ?errorshows@@3PAHA,40,"our object, capped at the next retail symbol"
 ?guess_vecIronsightOfs@@3VVector@@A,12,"our object, capped at the next retail symbol"
-?guess_vecWheelchairAngles@@3VVector@@A,12,type size
+?guess_vecWheelchairAngles@@3VVector@@A,8,only [0] and [1] are used; guess_flMouseOfs2X follows at 10559504
 ?guess_pCamTargetEnt@@3PAUcl_entity_s@@A,4,"our object, capped at the next retail symbol"
 ?guess_iPaused@@3HA,4,"our object, capped at the next retail symbol"
 ?guess_pDualEnt@@3PAUcl_entity_s@@A,4,type size
@@ -556,7 +556,7 @@ _vJumpAngles,12,"our object, capped at the next retail symbol"
 ?cl_waterdist@@3PAUcvar_s@@A,4,"our object, capped at the next retail symbol"
 ?cl_chasedist@@3PAUcvar_s@@A,4,"our object, capped at the next retail symbol"
 ?v_idlescale@@3MA,4,"our object, capped at the next retail symbol"
-?guess_iUnknown1055959C@@3HA,4,"our object, capped at the next retail symbol"
+?guess_flUnknown1055959C@@3MA,4,"our object, capped at the next retail symbol"
 ?guess_flUnknown105595A0@@3MA,4,"our object, capped at the next retail symbol"
 ?guess_flUnknown105595A4@@3MA,4,"our object, capped at the next retail symbol"
 ?guess_flUnknown105595A8@@3MA,4,"our object, capped at the next retail symbol"
@@ -595,3 +595,15 @@ _iJumpSpectator,4,"our object, capped at the next retail symbol"
 ?guess_g_TextureManager@@3Vguess_CTextureManager@@A,16,gap to the next named retail symbol
 ?in_fov@@3MA,4,type size
 ?cl_fovmultiplier@@3PAUcvar_s@@A,4,type size
+?guess_bAttachCam@@3_NA,1,type size
+?guess_vecBoatOrigin@@3VVector@@A,12,type size
+?guess_vecWheelchairViewAngles@@3VVector@@A,12,type size
+?guess_vecModelAttachOrigin@@3VVector@@A,12,type size
+?guess_vecDualAttachment0@@3VVector@@A,12,type size
+?guess_vecDualAttachment1@@3VVector@@A,12,type size
+?guess_bUnknown104CE4A3@@3_NA,1,type size
+?guess_bUnknown10559514@@3_NA,1,type size
+?guess_bCanDodge@@3_NA,1,type size
+?guess_vecCameraAngles@@3VVector@@A,12,type size
+?guess_flMouseOfs2X@@3MA,4,type size
+?guess_flMouseOfs2Y@@3MA,4,type size

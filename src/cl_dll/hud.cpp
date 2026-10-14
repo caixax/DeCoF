@@ -158,7 +158,7 @@ extern float guess_flUnknown105595A0;
 extern float guess_flUnknown105595A4;
 extern float guess_flUnknown105595A8;
 extern int guess_iUnknown105595AC;
-extern int guess_iUnknown1055959C;
+extern float guess_flUnknown1055959C;
 
 int guess_IsInDonatorGroup1( void );	// Steam clan 0x29D6CA
 int guess_IsInDonatorGroup2( void );	// Steam clan 0x46AE0A
@@ -1087,7 +1087,7 @@ void CHud :: VidInit( void )
 	guess_pCamTargetEnt = NULL;
 	guess_bWheelchairLock = false;
 	guess_m_iHoldBreath = 0;
-	guess_iUnknown1055959C = 0;
+	guess_flUnknown1055959C = 0;
 	guess_bXboxFix = false;
 	guess_m_bCameraZoomOn = false;
 	guess_m_bXboxFix[0] = false;

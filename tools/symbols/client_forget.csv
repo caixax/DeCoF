@@ -5,3 +5,5 @@ va,name,evidence
 10542BC0,?guess_iKeyEvents@@3HA,"renamed: the AttachCam entity pointer guess_pAttachCamEnt"
 104D26C7,?guess_g_bMPModel@@3_NA,"duplicate name of guess_g_bHandsLoaded"
 104D26E8,?guess_iBlurTexture@@3HA,"duplicate name of guess_g_iBlurTexture"
+100ADEC0,?guess_CalcViewModelLag@@YAXMPAMAAVVector@@0PAUcl_entity_s@@_N@Z,"old signature of the view.cpp function, renamed when its parameters were settled"
+100B31E0,?guess_VectorIsValid@@YA_NVVector@@@Z,"old signature of the view.cpp function, renamed when its parameters were settled"

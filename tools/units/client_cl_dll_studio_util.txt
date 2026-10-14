@@ -6,3 +6,4 @@
 ?QuaternionMatrix@@YAXQAMPAY03M@Z
 ?VectorCompare@@YAHPBM0@Z
 ?VectorTransform@@YAXPBMQAY03MPAM@Z
+?QuaternionSlerp@@YAXQAM0M0@Z

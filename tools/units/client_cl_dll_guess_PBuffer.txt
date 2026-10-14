@@ -1,0 +1,4 @@
+?guess_Create@guess_CPBuffer@@QAEXXZ
+?guess_MakeCurrent@guess_CPBuffer@@QAEXXZ
+?guess_Shutdown@guess_CPBuffer@@QAEXXZ
+?guess_SwitchToWindow@guess_CPBuffer@@QAEXXZ

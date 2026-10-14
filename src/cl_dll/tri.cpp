@@ -7,6 +7,9 @@
 
 // Triangle rendering, if any
 
+#include <string>
+#include <list>
+
 #include "hud.h"
 #include "cl_util.h"
 #include "wrect.h"
@@ -27,6 +30,7 @@
 
 #include "triapiobjects.h"
 #include "gl_renderer.h" // buz
+#include "guess_CgWater.h"
 
 #define DLLEXPORT __declspec( dllexport )
 
@@ -753,6 +757,8 @@ void DLLEXPORT HUD_DrawNormalTriangles( void )
 
 	RendererDrawNormal(); // buz
 
+	guess_g_CgWater.guess_UpdateEntities();
+
 #if defined( TEST_IT )
 //	Draw_Triangles();
 #endif
@@ -807,6 +813,13 @@ void DLLEXPORT HUD_DrawTransparentTriangles( void )
 	}
 
 	DrawGlows();
+
+	if ( CVAR_GET_FLOAT( "cg_water" ) )
+	{
+		guess_g_CgWater.guess_PreDraw();
+		guess_g_CgWater.guess_Render();
+		guess_g_CgWater.guess_PostDraw();
+	}
 
 /*	HSPRITE spr = SPR_Load("sprites/test0.spr");
 	const struct model_s *sprmodel = gEngfuncs.GetSpritePointer(spr);

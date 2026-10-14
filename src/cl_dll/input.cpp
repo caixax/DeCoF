@@ -93,7 +93,7 @@ void guess_MP3_Shutdown( void );
 void ParseHintTokens( char *pszName, char *pszFile );
 int guess_IsInDonatorGroup1( void );	// Steam clan 0x29D6CA
 int guess_IsInDonatorGroup2( void );	// Steam clan 0x46AE0A
-void guess_GetCwd( char *pszDir );
+void GetCurrentPath( char *path );
 
 extern cl_entity_t *guess_pTelescopeEnt;
 extern int guess_iWheelchair;
@@ -108,7 +108,7 @@ extern int guess_iMenuMode;
 extern bool guess_bCanDodge;
 extern bool guess_bXboxFix;
 extern vec3_t guess_vecIronsightOfs;
-extern vec3_t guess_vecWheelchairAngles;
+extern vec3_t guess_vecWheelchairViewAngles;
 extern vec3_t guess_vecWheelchairOrigin;
 
 // xxx need client dll function to get and clear impuse
@@ -803,7 +803,7 @@ void IN_AttackDown(void)
 			y = guess_vecWheelchairOrigin[1];
 			z = guess_vecWheelchairOrigin[2];
 
-			gEngfuncs.pfnAngleVectors( guess_vecWheelchairAngles, forward, right, NULL );
+			gEngfuncs.pfnAngleVectors( guess_vecWheelchairViewAngles, forward, right, NULL );
 
 			sprintf( szEndVec, "wheelchairendvec %i %i %i", (int)( guess_vecWheelchairOrigin[0] + forward[0] * 4096 ), (int)( guess_vecWheelchairOrigin[1] + forward[1] * 4096 ), (int)( guess_vecWheelchairOrigin[2] + forward[2] * 4096 ) );
 			gEngfuncs.pfnServerCmd( szEndVec );
@@ -1227,7 +1227,7 @@ void DLLEXPORT CL_CreateMove ( float frametime, struct usercmd_s *cmd, int activ
 
 	if ( guess_iWheelchair )
 	{
-		cmd->impact_position = guess_vecWheelchairAngles;
+		cmd->impact_position = guess_vecWheelchairViewAngles;
 		cmd->impact_position[2] = 1;
 	}
 	else
@@ -1239,8 +1239,8 @@ void DLLEXPORT CL_CreateMove ( float frametime, struct usercmd_s *cmd, int activ
 	{
 		if ( guess_iWheelchair )
 		{
-			VectorCopy( guess_vecWheelchairAngles, cmd->viewangles );
-			oldangles = guess_vecWheelchairAngles;
+			VectorCopy( guess_vecWheelchairViewAngles, cmd->viewangles );
+			oldangles = guess_vecWheelchairViewAngles;
 		}
 		else
 		{
@@ -1252,7 +1252,7 @@ void DLLEXPORT CL_CreateMove ( float frametime, struct usercmd_s *cmd, int activ
 	{
 		if ( guess_iWheelchair )
 		{
-			VectorCopy( guess_vecWheelchairAngles, cmd->viewangles );
+			VectorCopy( guess_vecWheelchairViewAngles, cmd->viewangles );
 		}
 		else
 		{
@@ -1558,7 +1558,7 @@ void InitInput (void)
 		{
 			char szDir[MAX_PATH];
 
-			guess_GetCwd( szDir );
+			GetCurrentPath( szDir );
 
 			for ( int i = 0; szDir[i]; i++ )
 				szDir[i] = tolower( szDir[i] );

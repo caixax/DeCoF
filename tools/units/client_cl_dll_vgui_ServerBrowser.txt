@@ -29,3 +29,5 @@
 ?mouseReleased@LabelSortInputHandler@@UAEXW4MouseCode@vgui@@PAVPanel@3@@Z
 ?mouseWheeled@CBrowser_InputSignal@?A0x1d568137@@UAEXHPAVPanel@vgui@@@Z
 ?mouseWheeled@LabelSortInputHandler@@UAEXHPAVPanel@vgui@@@Z
+?actionPerformed@RefreshHandler@?A0x1d568137@@UAEXPAVPanel@vgui@@@Z
+?actionPerformed@StopHandler@?A0x1d568137@@UAEXPAVPanel@vgui@@@Z

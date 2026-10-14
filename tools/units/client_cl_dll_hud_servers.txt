@@ -41,3 +41,9 @@
 ?ListResponse@@YAXPAUnet_response_s@@@Z
 ?ServerRules@@YAXH@Z
 ?SortServers@@YAXPBD@Z
+?ServersList@@YAXXZ
+?ServersGetCount@@YAHXZ
+?ServersIsQuerying@@YAHXZ
+?CancelRequest@CHudServers@@QAEXXZ
+?GetServerCount@CHudServers@@QAEHXZ
+?isQuerying@CHudServers@@QAEHXZ

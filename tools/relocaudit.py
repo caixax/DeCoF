@@ -66,7 +66,38 @@ def same_symbol(a, b):
     if m and b == "??_R0?AV%s@@@8" % m.group(1):
         return True
     m = re.match(r"^(\w+)::vftable$", a)
-    return bool(m) and b == "??_7%s@@6B@" % m.group(1)
+    if m and b == "??_7%s@@6B@" % m.group(1):
+        return True
+    # an import by name (CGGL.DLL::cgGLEnableProfile) against our C name
+    # (_cgGLEnableProfile) or its import pointer (__imp__cgGLEnableProfile)
+    m = re.match(r"^[\w.]+\.DLL::(\w+)$", a, re.I)
+    if m and b.replace("__imp_", "").lstrip("_") == m.group(1).lstrip("_"):
+        return True
+    # the same decorated name with and without back references
+    # (...6BPanel@vgui@@@ against ...6BPanel@1@@), or Ghidra's demangled
+    # spelling of any vtable (vgui::CListBox::ListBoxSignal::vftable)
+    if b.startswith("?"):
+        ub = undname(b)
+        if a.startswith("?"):
+            return ub is not None and ub == undname(a)
+        if ub and ub.replace("const ", "").replace("`vftable'", "vftable") == a:
+            return True
+    return False
+
+
+UNDNAME = r"I:\Tools\msvc-14.27.29112\bin\Hostx86\x86\undname.exe"
+_UND = {}
+
+
+def undname(name):
+    if name not in _UND:
+        try:
+            out = subprocess.run([UNDNAME, name], capture_output=True, text=True).stdout
+            m = re.search(r'is :- "(.*)"', out)
+            _UND[name] = m.group(1) if m else None
+        except OSError:
+            _UND[name] = None
+    return _UND[name]
 
 
 def unit_report(unit, extra):

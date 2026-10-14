@@ -2290,6 +2290,38 @@
       "metadata": {
         "source_path": "src/cl_dll/hud_update.cpp"
       }
+    },
+    {
+      "name": "client/cl_dll/guess_CgContext",
+      "target_path": "build/target/client/cl_dll/guess_CgContext.obj",
+      "base_path": "build/base/client/cl_dll/guess_CgContext.obj",
+      "metadata": {
+        "source_path": "src/cl_dll/guess_CgContext.cpp"
+      }
+    },
+    {
+      "name": "client/cl_dll/guess_CgWater",
+      "target_path": "build/target/client/cl_dll/guess_CgWater.obj",
+      "base_path": "build/base/client/cl_dll/guess_CgWater.obj",
+      "metadata": {
+        "source_path": "src/cl_dll/guess_CgWater.cpp"
+      }
+    },
+    {
+      "name": "client/cl_dll/guess_PBuffer",
+      "target_path": "build/target/client/cl_dll/guess_PBuffer.obj",
+      "base_path": "build/base/client/cl_dll/guess_PBuffer.obj",
+      "metadata": {
+        "source_path": "src/cl_dll/guess_PBuffer.cpp"
+      }
+    },
+    {
+      "name": "client/cl_dll/guess_TextureManager",
+      "target_path": "build/target/client/cl_dll/guess_TextureManager.obj",
+      "base_path": "build/base/client/cl_dll/guess_TextureManager.obj",
+      "metadata": {
+        "source_path": "src/cl_dll/guess_TextureManager.cpp"
+      }
     }
   ]
 }

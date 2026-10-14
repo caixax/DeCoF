@@ -24,3 +24,13 @@
 ?StartSquelchMode@CVoiceStatus@@QAEXXZ
 ?StopSquelchMode@CVoiceStatus@@QAEXXZ
 ?UpdateServerState@CVoiceStatus@@QAEX_N@Z
+?__MsgFunc_ReqState@@YAHPBDHPAX@Z
+?__MsgFunc_VoiceMask@@YAHPBDHPAX@Z
+?Init@CHudBase@@UAEHXZ
+?InitHUDData@CHudBase@@UAEXXZ
+?Reset@CHudBase@@UAEXXZ
+?Think@CHudBase@@UAEXXZ
+?VidInit@CHudBase@@UAEHXZ
+??1CVoiceStatus@@UAE@XZ
+?Init@CVoiceStatus@@UAEHPAVIVoiceStatusHelper@@PAPAVPanel@vgui@@@Z
+?ShowBannedCallback@@YAXXZ
