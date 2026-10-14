@@ -7,3 +7,12 @@ RandomRange::RandomRange
 ?GetType@ParticleSystem@@QAEPAVParticleType@@PBD@Z
 ?InitParticle@ParticleType@@QAEXPAUparticle@@PAVParticleSystem@@@Z
 ?UTIL_GetClientEntityWithServerIndex@@YAPAUcl_entity_s@@H@Z
+?CosLookup@ParticleSystem@@SAMH@Z
+?SinLookup@ParticleSystem@@SAMH@Z
+??0ParticleType@@QAE@PAV0@@Z
+??1ParticleSystem@@QAE@XZ
+?ActivateParticle@ParticleSystem@@QAEPAUparticle@@XZ
+?AddPlaceholderType@ParticleSystem@@QAEPAVParticleType@@PBD@Z
+?AllocateParticles@ParticleSystem@@QAEXH@Z
+?UpdateParticle@ParticleSystem@@QAE_NPAUparticle@@M@Z
+?UpdateSystem@ParticleSystem@@QAE_NMH@Z

@@ -81,6 +81,8 @@ void VectorAngles( const float *forward, float *angles );
 #include "r_studioint.h"
 #include "parsemsg.h"
 #include "com_model.h"
+#include "vgui_TeamFortressViewport.h"
+#include "guess_RECBInventory.h"
 
 extern engine_studio_api_t IEngineStudio;
 
@@ -1202,7 +1204,7 @@ float MaxAngleBetweenAngles(  float * a1, float * a2 )
 			d += 360;
 		}
 
-		d = fabs(d);
+		d = fabsf(d);
 
 		if ( d > maxd )
 			maxd=d;
@@ -1949,6 +1951,467 @@ int guess_MsgCoopCamAnim( const char *pszName, int iSize, void *pbuf )
 	return 1;
 }
 
+extern int guess_g_iDualEntIndex;
+
+cl_entity_t *guess_GetDualEntity( void )
+{
+	return gEngfuncs.GetEntityByIndex( guess_g_iDualEntIndex );
+}
+
+void guess_NormalizeAngles360( float pitch, float yaw )
+{
+	while ( pitch > 360 )
+		pitch -= 360;
+	while ( pitch < 0 )
+		pitch += 360;
+
+	while ( yaw > 360 )
+		yaw -= 360;
+	while ( yaw < 0 )
+		yaw += 360;
+}
+
+bool guess_VectorIsValid( float x, float y, float z )
+{
+	float f;
+
+	f = x;
+	if ( ( *(unsigned long *)&f & 0x7F800000 ) == 0x7F800000 )
+		return false;
+
+	f = y;
+	if ( ( *(unsigned long *)&f & 0x7F800000 ) == 0x7F800000 )
+		return false;
+
+	f = z;
+	if ( ( *(unsigned long *)&f & 0x7F800000 ) == 0x7F800000 )
+		return false;
+
+	return true;
+}
+
+void guess_V_DecayPunchAngle( Vector punch, struct ref_params_s *pparams )
+{
+	float	damping;
+	float	springForceMagnitude;
+
+	if ( Length( punch ) > 0.001 || Length( guess_ev_punchanglevel ) > 0.001 )
+	{
+		VectorMA( punch, pparams->frametime, guess_ev_punchanglevel, punch );
+		damping = 1 - (PUNCH_DAMPING * pparams->frametime);
+
+		if ( damping < 0 )
+		{
+			damping = 0;
+		}
+		VectorScale( guess_ev_punchanglevel, damping, guess_ev_punchanglevel );
+
+		// torsional spring
+		springForceMagnitude = PUNCH_SPRING_CONSTANT * pparams->frametime;
+		springForceMagnitude = clamp( springForceMagnitude, 0, 2 );
+
+		VectorMA( guess_ev_punchanglevel, -springForceMagnitude, punch, guess_ev_punchanglevel );
+
+		// don't wrap around
+		ev_punchangle[0] = clamp( ev_punchangle[0], -89, 89 );
+		ev_punchangle[1] = clamp( ev_punchangle[1], -179, 179 );
+		ev_punchangle[2] = clamp( ev_punchangle[2], -89, 89 );
+	}
+}
+
+//===============================
+// view model lag and bob
+//===============================
+#define HL2_BOB_CYCLE_MAX	0.45f
+#define HL2_BOB_UP			0.5f
+
+extern float guess_flWeaponIdleSpeed;
+extern float guess_flWeaponIdleDampener;
+extern float guess_flGunParam1;
+extern float guess_flSprintFlag;
+extern int guess_g_iHeadShieldType;
+extern int guess_iAttachCamFlag;
+
+float guess_g_fMaxViewModelLag = 1.5f;
+Vector guess_vecLastFacing;
+
+float guess_g_verticalBob;
+float guess_g_lateralBob;
+float guess_flWeaponLower;
+float guess_flUnknown1055959C;
+
+int guess_GetBobMode( struct ref_params_s *pparams )
+{
+	cl_entity_t *player = gEngfuncs.GetLocalPlayer();
+
+	return 0;
+}
+
+float guess_CalcViewmodelBob( struct ref_params_s *pparams, float frametime, float curtime )
+{
+	static	float bobtime;
+	static	float lastbobtime;
+	float	cycle;
+	float	speed;
+
+	if ( guess_flUnknown1055959C > 5 )
+		guess_flUnknown1055959C = 5;
+	else if ( guess_flUnknown1055959C < 0 )
+		guess_flUnknown1055959C = 0;
+
+	cl_entity_t *player = gEngfuncs.GetLocalPlayer();
+
+	if ( ( !frametime ) || ( player == NULL ) )
+	{
+		return 0.0f;
+	}
+
+	if ( guess_GetBobMode( pparams ) == 1 || gHUD.guess_m_iLadder || gHUD.guess_m_iFallOver || guess_iAttachCamFlag )
+	{
+		if ( gHUD.guess_m_iLadder || gHUD.guess_m_iFallOver || guess_iAttachCamFlag )
+		{
+			if ( gViewPort && gViewPort->guess_m_pRECBInventory && gViewPort->guess_m_pRECBInventory->isVisible() )
+				gViewPort->HideTopMenu();
+		}
+
+		if ( gHUD.guess_m_iLadder || gHUD.guess_m_iFallOver || guess_iAttachCamFlag )
+		{
+			if ( guess_flWeaponLower < 20 )
+				guess_flWeaponLower += gHUD.m_flTimeDelta * 100;
+			if ( guess_flWeaponLower > 20 )
+				guess_flWeaponLower = 20;
+		}
+		else if ( guess_g_iHeadShieldType == 3 )
+		{
+			if ( guess_flWeaponLower < 20 )
+				guess_flWeaponLower += gHUD.m_flTimeDelta * 100;
+			if ( guess_flWeaponLower > 20 )
+				guess_flWeaponLower = 20;
+		}
+		else if ( guess_flWeaponLower != 0 )
+		{
+			guess_flWeaponLower = 0;
+		}
+
+		speed = guess_flGunParam1 * 8;
+		speed = clamp( speed, -400, 400 );
+	}
+	else
+	{
+		if ( guess_flWeaponLower > 0 )
+			guess_flWeaponLower -= gHUD.m_flTimeDelta * 100;
+		if ( guess_flWeaponLower < 0 )
+			guess_flWeaponLower = 0;
+
+		if ( guess_flSprintFlag > 0 )
+		{
+			speed = 0;
+		}
+		else
+		{
+			speed = guess_flGunParam1 * 2;
+			speed = clamp( speed, -320, 320 );
+		}
+	}
+
+	float bob_offset = ( speed - 0.0f ) / ( 320.0f - 0.0f ) + 0.0f;
+
+	bobtime += ( curtime - lastbobtime ) * bob_offset;
+	lastbobtime = curtime;
+
+	//Calculate the vertical bob
+	cycle = bobtime - (int)(bobtime/HL2_BOB_CYCLE_MAX)*HL2_BOB_CYCLE_MAX;
+	cycle /= HL2_BOB_CYCLE_MAX;
+
+	if ( cycle < HL2_BOB_UP )
+	{
+		cycle = M_PI * cycle / HL2_BOB_UP;
+	}
+	else
+	{
+		cycle = M_PI + M_PI*(cycle-HL2_BOB_UP)/(1.0 - HL2_BOB_UP);
+	}
+
+	guess_g_verticalBob = speed*0.005f;
+	guess_g_verticalBob = guess_g_verticalBob*0.3 + guess_g_verticalBob*0.7*sin(cycle);
+
+	if ( guess_g_verticalBob > 4.0f )
+		guess_g_verticalBob = 4.0f;
+	else if ( guess_g_verticalBob < -7.0f )
+		guess_g_verticalBob = -7.0f;
+
+	//Calculate the lateral bob
+	cycle = bobtime - (int)(bobtime/HL2_BOB_CYCLE_MAX*2)*HL2_BOB_CYCLE_MAX*2;
+	cycle /= HL2_BOB_CYCLE_MAX*2;
+
+	if ( cycle < HL2_BOB_UP )
+	{
+		cycle = M_PI * cycle / HL2_BOB_UP;
+	}
+	else
+	{
+		cycle = M_PI + M_PI*(cycle-HL2_BOB_UP)/(1.0 - HL2_BOB_UP);
+	}
+
+	guess_g_lateralBob = speed*0.005f;
+	guess_g_lateralBob = guess_g_lateralBob*0.3 + guess_g_lateralBob*0.7*sin(cycle);
+
+	if ( guess_g_lateralBob > 4.0f )
+		guess_g_lateralBob = 4.0f;
+	else if ( guess_g_lateralBob < -7.0f )
+		guess_g_lateralBob = -7.0f;
+
+	if ( guess_flSprintFlag > 0 )
+		guess_g_lateralBob *= 2;
+
+	return 0.0f;
+}
+
+void guess_AddViewmodelBob( struct ref_params_s *pparams, Vector &origin, Vector &angles, float frametime, float curtime, cl_entity_t *view, bool bLeft )
+{
+	Vector	forward, right, up;
+	AngleVectors( angles, forward, right, up );
+
+	Vector	vforward, vright, vup;
+	AngleVectors( pparams->cl_viewangles, vforward, vright, vup );
+
+	guess_CalcViewmodelBob( pparams, frametime, curtime );
+
+	if ( gHUD.guess_m_bIronSights )
+	{
+		guess_g_lateralBob = 0;
+		guess_g_verticalBob = 0;
+	}
+
+	// Apply bob, but scaled down to 40%
+	VectorMA( origin, guess_g_verticalBob * 0.1f, forward, origin );
+
+	// Z bob a bit more
+	origin[2] += guess_g_verticalBob * 0.1f;
+
+	// bob the angles
+	angles[ ROLL ]	+= guess_g_verticalBob * 0.5f;
+	angles[ PITCH ]	-= guess_g_verticalBob * 0.4f;
+
+	angles[ YAW ]	-= guess_g_lateralBob  * 0.3f;
+
+	VectorMA( origin, guess_g_lateralBob * 0.8f, right, origin );
+
+	if ( !view )
+		return;
+
+	view->origin = origin;
+	view->angles = angles;
+
+	view->origin = view->origin - vforward * guess_flUnknown1055959C;
+
+	if ( !gHUD.guess_m_iLadder && !gHUD.guess_m_iFallOver && !guess_iAttachCamFlag )
+	{
+		view->curstate.angles[0] -= guess_flWeaponLower;
+
+		if ( bLeft )
+		{
+			view->curstate.angles[1] += guess_flWeaponLower * 0.5f;
+			view->curstate.angles[2] += guess_flWeaponLower * 0.5f;
+		}
+		else
+		{
+			view->curstate.angles[1] -= guess_flWeaponLower * 0.5f;
+			view->curstate.angles[2] -= guess_flWeaponLower * 0.5f;
+		}
+	}
+	else
+	{
+		view->curstate.angles[0] -= guess_flWeaponLower * 2;
+
+		if ( bLeft )
+			view->curstate.angles[1] += guess_flWeaponLower * 0.5f;
+		else
+			view->curstate.angles[1] -= guess_flWeaponLower * 0.5f;
+	}
+
+	float flSin = sin( gEngfuncs.GetClientTime() / guess_flWeaponIdleSpeed );
+	float flCos = cos( gEngfuncs.GetClientTime() / guess_flWeaponIdleSpeed );
+
+	flSin = flSin / guess_flWeaponIdleDampener;
+	flCos = flCos / guess_flWeaponIdleDampener;
+
+	if ( gHUD.guess_m_bIronSights )
+	{
+		flCos = 0;
+		flSin = 0;
+	}
+
+	view->origin = view->origin + vright * flSin;
+	view->origin = view->origin + vforward * ( flSin * 0.5f );
+	view->origin = view->origin + vup * ( flCos * 0.5f );
+}
+
+void guess_CalcViewModelLag( float frametime, Vector &origin, Vector &angles, Vector &original_angles, cl_entity_t *view, bool bLeft )
+{
+	if ( gHUD.guess_m_bIronSights )
+		return;
+
+	Vector vOriginalOrigin = origin;
+	Vector vOriginalAngles = angles;
+
+	// Calculate our drift
+	Vector	forward, right, up;
+	AngleVectors( angles, forward, NULL, NULL );
+
+	if ( frametime != 0.0f )
+	{
+		Vector vDifference;
+		VectorSubtract( forward, guess_vecLastFacing, vDifference );
+
+		float flForce = CVAR_GET_FLOAT( "cl_lazyweapon_force" );
+		flForce = clamp( flForce, 0, 10 );
+
+		float flSpeed = 5.0f;
+
+		// If we start to lag too far behind, we'll increase the "catch up" speed.  Solves the problem with fast cl_yawspeed, m_yaw or joysticks
+		//  rotating quickly.  The old code would slam lastfacing with origin causing the viewmodel to pop to a new position
+		float flDiff = vDifference.Length();
+		if ( (flDiff > guess_g_fMaxViewModelLag) && (guess_g_fMaxViewModelLag > 0.0f) )
+		{
+			float flScale = flDiff / guess_g_fMaxViewModelLag;
+			flSpeed *= flScale;
+		}
+
+		VectorMA( guess_vecLastFacing, flSpeed * frametime, vDifference, guess_vecLastFacing );
+		// Make sure it doesn't grow out of control!!!
+		VectorNormalize( guess_vecLastFacing );
+		VectorMA( origin, flForce, vDifference * -1.0f, origin );
+	}
+
+	AngleVectors( original_angles, forward, right, up );
+
+	if ( guess_g_fMaxViewModelLag == 0.0f )
+	{
+		origin = vOriginalOrigin;
+		angles = vOriginalAngles;
+	}
+}
+
+//===============================
+// cof: lights
+//===============================
+extern cvar_t *cl_lowflashlight;
+extern cl_entity_t *guess_pAttachCamEnt;
+extern int guess_iBoat;
+extern int guess_iWheelchair;
+
+void guess_SetupMagliteLight( vec3_t origin, vec3_t angles, float time, float frametime )
+{
+	if ( !( gHUD.guess_m_iFlashFlags & 8 ) )
+		return;
+
+	if ( guess_IsViewEntityActive() || guess_pAttachCamEnt || guess_iBoat || guess_pTelescopeEnt || guess_iWheelchair )
+		return;
+
+	static float add = 0;
+	float addideal = 0;
+	pmtrace_t tr;
+	vec3_t fwd, right, up;
+	AngleVectors(angles, fwd, right, up);
+	fwd = origin + (fwd*150);
+	gEngfuncs.pEventAPI->EV_SetTraceHull( 2 );
+	gEngfuncs.pEventAPI->EV_PlayerTrace( origin, fwd, PM_NORMAL, -1, &tr );
+	if (tr.fraction < 1.0)
+		addideal = (1 - tr.fraction)*30;
+	float speed = (add - addideal)*10;
+	if (speed < 0) speed *= -1;
+	if (add < addideal)
+	{
+		add += frametime*speed;
+		if (add > addideal) add = addideal;
+	}
+	else if (add > addideal)
+	{
+		add -= frametime*speed;
+		if (add < addideal) add = addideal;
+	}
+
+	DynamicLight *flashlight = MY_AllocDlight(-8);
+	flashlight->origin = origin;
+	flashlight->radius = 700;
+	flashlight->die = time + 0.01;
+	flashlight->angles = angles;
+	if ( cl_lowflashlight->value == 1 )
+		strcpy(flashlight->spot_texture, "gfx/low/flashlight2.tga");
+	else if ( cl_lowflashlight->value == 0 )
+		strcpy(flashlight->spot_texture, "gfx/flashlight2.tga");
+	flashlight->cone_hor = 50+add;
+	flashlight->cone_ver = 50+add;
+	flashlight->color = Vector(1.4, 1.4, 1.4); // make model dymanic lighting happy
+}
+
+void guess_SetupViewModelLight( vec3_t origin, vec3_t angles, float time, float frametime )
+{
+	cl_entity_t *player = gEngfuncs.GetLocalPlayer();
+	cl_entity_t *view = gEngfuncs.GetViewModel();
+
+	if ( !player || !view )
+		return;
+
+	if ( !( gHUD.guess_m_iFlashFlags & 4 ) )
+		return;
+
+	if ( guess_IsViewEntityActive() || guess_pAttachCamEnt || guess_iBoat || guess_pTelescopeEnt || guess_iWheelchair )
+		return;
+
+	origin = gEngfuncs.PM_TraceLine( v_origin, view->attachment[1], PM_TRACELINE_PHYSENTSONLY, 1, -1 )->endpos;
+
+	static float add = 0;
+	float addideal = 0;
+	pmtrace_t tr;
+	vec3_t fwd, right, up;
+	AngleVectors(angles, fwd, right, up);
+	fwd = view->attachment[2];
+	gEngfuncs.pEventAPI->EV_SetTraceHull( 2 );
+	gEngfuncs.pEventAPI->EV_PlayerTrace( origin, fwd, PM_NORMAL, -1, &tr );
+	if (tr.fraction < 1.0)
+		addideal = (1 - tr.fraction)*30;
+	float speed = (add - addideal)*10;
+	if (speed < 0) speed *= -1;
+	if (add < addideal)
+	{
+		add += frametime*speed;
+		if (add > addideal) add = addideal;
+	}
+	else if (add > addideal)
+	{
+		add -= frametime*speed;
+		if (add < addideal) add = addideal;
+	}
+
+	if ( gHUD.guess_m_iFlashFlags & 4 )
+	{
+		view = gEngfuncs.GetViewModel();
+
+		if ( view->model )
+		{
+			vec3_t dir;
+			VectorSubtract( view->attachment[2], view->attachment[1], dir );
+			VectorAngles( dir, dir );
+			dir[0] = -dir[0];
+
+			DynamicLight *light = MY_AllocDlight(-66);
+			light->origin = origin;
+			light->radius = 700;
+			light->die = time + 0.01;
+			light->angles = dir;
+			if ( cl_lowflashlight->value == 1 )
+				strcpy(light->spot_texture, "gfx/low/flashlight2.tga");
+			else if ( cl_lowflashlight->value == 0 )
+				strcpy(light->spot_texture, "gfx/flashlight2.tga");
+			light->cone_hor = 70;
+			light->cone_ver = 70;
+			light->color = Vector(0.5, 0.5, 0.5);
+		}
+	}
+}
+
 
 //#define TRACE_TEST
 #if defined( TRACE_TEST )
@@ -2040,8 +2503,22 @@ void V_Move( int mx, int my )
 //===============================
 void SetupFlashlight(vec3_t origin, vec3_t angles, float time, float frametime)
 {
-	if (!g_flashlight)
+	cl_entity_t *player = gEngfuncs.GetLocalPlayer();
+	if ( !player )
 		return;
+
+	if ( !( gHUD.guess_m_iFlashFlags & 3 ) )
+		return;
+
+	if ( guess_IsViewEntityActive() || guess_pAttachCamEnt || guess_iBoat || guess_pTelescopeEnt || guess_iWheelchair )
+		return;
+
+	if ( gHUD.guess_m_iFlashFlags & 2 )
+	{
+		origin = player->curstate.origin;
+		angles[0] = CVAR_GET_FLOAT( "cof_reducedlightxangle" );
+		angles[2] = CVAR_GET_FLOAT( "cof_reducedlightzangle" );
+	}
 
 	static float add = 0;
 	float addideal = 0;
@@ -2052,7 +2529,12 @@ void SetupFlashlight(vec3_t origin, vec3_t angles, float time, float frametime)
 	gEngfuncs.pEventAPI->EV_SetTraceHull( 2 );
 	gEngfuncs.pEventAPI->EV_PlayerTrace( origin, fwd, PM_NORMAL, -1, &tr );
 	if (tr.fraction < 1.0)
-		addideal = (1 - tr.fraction)*30;
+	{
+		if ( gHUD.guess_m_iFlashFlags & 2 )
+			addideal = (1 - tr.fraction)*CVAR_GET_FLOAT( "cof_reducedlightradius" );
+		else
+			addideal = (1 - tr.fraction)*30;
+	}
 	float speed = (add - addideal)*10;
 	if (speed < 0) speed *= -1;
 	if (add < addideal)
@@ -2066,13 +2548,37 @@ void SetupFlashlight(vec3_t origin, vec3_t angles, float time, float frametime)
 		if (add < addideal) add = addideal;
 	}
 
-	DynamicLight *flashlight = MY_AllocDlight(-666);
-	flashlight->origin = origin + Vector(0,0,-13) + (right*5);
-	flashlight->radius = 700;
-	flashlight->die = time + 0.01;
-	flashlight->angles = angles;
-	strcpy(flashlight->spot_texture, "gfx/flashlight.tga");
-	flashlight->cone_hor = 50+add;
-	flashlight->cone_ver = 50+add;
-	flashlight->color = Vector(1.4, 1.4, 1.4); // make model dymanic lighting happy
+	if ( gHUD.guess_m_iFlashFlags & 1 )
+	{
+		DynamicLight *flashlight = MY_AllocDlight(-1);
+		flashlight->origin = origin;
+		flashlight->radius = 700;
+		flashlight->die = time + 0.01;
+		flashlight->angles = angles;
+		if ( cl_lowflashlight->value == 1 )
+			strcpy(flashlight->spot_texture, "gfx/low/flashlight.tga");
+		else if ( cl_lowflashlight->value == 0 )
+			strcpy(flashlight->spot_texture, "gfx/flashlight.tga");
+		flashlight->cone_hor = 50+add;
+		flashlight->cone_ver = 50+add;
+		flashlight->color = Vector(0.46, 0.46, 0.51);
+	}
+
+	if ( ( gHUD.guess_m_iFlashFlags & 2 ) && !( gHUD.guess_m_iFlashFlags & 4 ) )
+	{
+		gEngfuncs.PM_TraceLine( origin, origin + Vector( 0, 0, -1024 ), PM_TRACELINE_PHYSENTSONLY, 1, -1 );
+
+		DynamicLight *reducedlight = MY_AllocDlight(-2);
+		reducedlight->origin = origin;
+		reducedlight->radius = 700;
+		reducedlight->die = time + 0.01;
+		reducedlight->angles = angles;
+		if ( cl_lowflashlight->value == 1 )
+			strcpy(reducedlight->spot_texture, "gfx/low/flashlight.tga");
+		else if ( cl_lowflashlight->value == 0 )
+			strcpy(reducedlight->spot_texture, "gfx/flashlight.tga");
+		reducedlight->cone_hor = 50+add;
+		reducedlight->cone_ver = 50+add;
+		reducedlight->color = Vector( CVAR_GET_FLOAT( "cof_reducedlightcolour1" ), CVAR_GET_FLOAT( "cof_reducedlightcolour2" ), CVAR_GET_FLOAT( "cof_reducedlightcolour3" ) );
+	}
 }

@@ -117,6 +117,9 @@ public:
 	RandomRange m_SprayPitch;
 	RandomRange m_SprayYaw;
 	ParticleType *m_pSprayType;
+	int guess_m_iSprayYawMode;	// "sprayyaw": 1 player, 2 player_random_low, 3 player_random_med, 4 player_random_hi
+	int guess_m_iInheritAngle;	// "inheritangle weapon"
+	int guess_m_iWaterOnly;		// "wateronly 1": drawn only in water
 
 	RandomRange m_Gravity;
 	RandomRange m_WindStrength;
@@ -141,7 +144,7 @@ public:
 class ParticleSystem
 {
 public:
-	ParticleSystem( int entindex, char *szFilename );//int iParticles );
+	ParticleSystem( int entindex, char *szFilename, int iViewModel, int iAttachment, char *szModel );//int iParticles );
 //	ParticleSystem( int iParticles );
 	~ParticleSystem( void );
 	void AllocateParticles( int iParticles );
@@ -180,7 +183,18 @@ public:
 	float			m_fViewerDist;
 	int				m_iEntIndex;
 
-private:
+	int				guess_m_iViewModel;		// the system follows the view model (Particle message)
+	int				guess_m_iAttachment;	// attachment of the source entity the particles start at, or -1
+	char			guess_m_szModel[128];	// view model the system was created on (Particle message)
+	int				guess_m_iState;			// 1 fading out, 2 remove now
+	float			guess_m_flDieTime;
+	float			guess_m_flFadeStart;
+	float			guess_m_flFadeTime;
+	int				guess_m_iFadeOut;		// set by the KillWpnPart message
+	int				guess_m_iBone;
+	int				guess_m_iLimited;		// "limited": counts against cl_smokeparticlelimit
+
+//private:
 	// the block of allocated particles
 	particle*		m_pAllParticles;
 	// First particles in the linked list for the active particles and the dead particles

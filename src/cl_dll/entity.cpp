@@ -23,8 +23,13 @@
 #include "grass.h" // buz
 #include "gl_renderer.h" // buz
 #include "gl_dlight.h" // buz
+#include "particlemgr.h"
 
 #define DLLEXPORT __declspec( dllexport )
+
+// Cry of Fear temp entity flags (not in r_efx.h)
+#define guess_FTENT_GROW		0x00100000	// scale grows by 0.001 every frame
+#define guess_FTENT_FADE		0x00200000	// renderamt drops by 25 every frame
 
 void Game_AddObjects( void );
 
@@ -43,6 +48,15 @@ int guess_iM16BurstMode;				// vuser3[0]
 float guess_flCurrentKick;			// vuser3[1]: the active weapon's m_flCurrentKick
 int guess_iPlayerMode;				// vuser4[0]: the server's pev->fuser3 (0 normal, 5 developer commentary, 10 weapon special)
 float guess_flRevolverRotation;		// vuser4[2]
+
+cl_entity_t guess_muzzleflash;		// flash model drawn by guess_MuzzleFlash
+TEMPENTITY *guess_pGunSmoke;
+int guess_iGunSmoke;
+
+extern cvar_t *cl_cheapweaponsmoke;
+extern int guess_iUnknown1054506C;
+
+void guess_IrrKlangPlaySound( const char *pszSample, int iType, int iUnused, Vector vecOrigin );
 
 int GlowFilterEntities ( int type, struct cl_entity_s *ent, const char *modelname ); // buz
 
@@ -136,6 +150,8 @@ void DLLEXPORT HUD_TxferLocalOverrides( struct entity_state_s *state, const stru
 
 	state->vuser1 = client->vuser1;// buz: spread vector
 	state->vuser2 = client->vuser2;// buz: gun params
+	state->vuser3 = client->vuser3;
+	state->vuser4 = client->vuser4;
 
 	RendererUpdateEntityList(); // buz
 }
@@ -281,6 +297,8 @@ void DLLEXPORT HUD_TxferPredictionData ( struct entity_state_s *ps, const struct
 	VectorCopy( ppcd->vuser2, pcd->vuser2 );
 	VectorCopy( ppcd->vuser3, pcd->vuser3 );
 	VectorCopy( ppcd->vuser4, pcd->vuser4 );
+
+	pcd->isdonator = ppcd->isdonator;
 
 	memcpy( wd, pwd, 32 * sizeof( weapon_data_t ) );
 }
@@ -647,9 +665,9 @@ void DlightFlash(float *origin)
 	dl->origin.y = origin[1];
 	dl->origin.z = origin[2];
 	dl->radius = 128;
-	dl->color.r = 180;
-	dl->color.g = 160;
-	dl->color.b = 120;
+	dl->color.r = 225;
+	dl->color.g = 170;
+	dl->color.b = 105;
 	dl->die = gEngfuncs.GetClientTime() + 0.06;
 
 	DynamicLight *dl2 = MY_AllocDlight (0);
@@ -657,8 +675,225 @@ void DlightFlash(float *origin)
 	dl2->origin.y = origin[1];
 	dl2->origin.z = origin[2];
 	dl2->radius = 128;
-	dl2->color = Vector(0.7f, 0.6f, 0.5f);
+	dl2->color = Vector(0.7f, 0.43f, 0.14f);
 	dl2->die = gEngfuncs.GetClientTime() + 0.06;
+}
+
+/*
+=========================
+guess_MuzzleFlash
+
+Cry of Fear: draws the flash model at an attachment of the entity
+=========================
+*/
+void guess_MuzzleFlash( cl_entity_t *pEntity, int iAttachment, bool bAlt, float flScale )
+{
+	vec3_t vecSmokeVelocity( 0, 0, 10 );
+
+	bool bCS = false;
+	if ( strstr( pEntity->model->name, "models/cs/" ) )
+		bCS = true;
+
+	cl_entity_t *pPlayer = gEngfuncs.GetLocalPlayer();
+
+	if ( !pPlayer )
+		return;
+
+	WEAPON *pWeapon = NULL;
+	if ( gHUD.m_Ammo.m_pWeapon )
+		pWeapon = gHUD.m_Ammo.m_pWeapon;
+
+	int iModelIndex;
+	struct model_s *pModel = gEngfuncs.CL_LoadModel( "models/flash1.mdl", &iModelIndex );
+	float flFlashScale = 4;
+
+	if ( pWeapon )
+	{
+		if ( pWeapon->iId == 4 )
+			flFlashScale = 6;
+		else if ( pWeapon->iId == 21 )
+			flFlashScale = 6;
+		else
+		{
+			flFlashScale = 4;
+
+			if ( pWeapon->iId == 9 )
+			{
+				pModel = gEngfuncs.CL_LoadModel( "models/flash2.mdl", &iModelIndex );
+				flFlashScale = 6;
+			}
+
+			if ( pWeapon->iId == 11 )
+			{
+				pModel = gEngfuncs.CL_LoadModel( "models/flash2.mdl", &iModelIndex );
+				flFlashScale = 10;
+			}
+
+			if ( pWeapon->iId == 26 )
+			{
+				pModel = gEngfuncs.CL_LoadModel( "models/flash2.mdl", &iModelIndex );
+				flFlashScale = 6;
+			}
+
+			if ( pWeapon->iId == 27 )
+			{
+				pModel = gEngfuncs.CL_LoadModel( "models/flash2.mdl", &iModelIndex );
+				flFlashScale = 2;
+			}
+
+			if ( pWeapon->iId == 23 )
+			{
+				pModel = gEngfuncs.CL_LoadModel( "models/flash2.mdl", &iModelIndex );
+				flFlashScale = 9;
+			}
+
+			if ( pWeapon->iId == 11 )
+			{
+				pModel = gEngfuncs.CL_LoadModel( "models/flash2.mdl", &iModelIndex );
+				flFlashScale = 9;
+			}
+
+			if ( pWeapon->iId == 14 )
+			{
+				pModel = gEngfuncs.CL_LoadModel( "models/flash1.mdl", &iModelIndex );
+				flFlashScale = 4;
+			}
+		}
+	}
+
+	if ( bAlt )
+		pModel = gEngfuncs.CL_LoadModel( "models/flash3.mdl", &iModelIndex );
+
+	if ( bCS )
+		flFlashScale = 2;
+
+	flFlashScale += gEngfuncs.pfnRandomFloat( -1, 1 );
+
+	guess_muzzleflash = *pPlayer;
+	guess_muzzleflash.model = pModel;
+	guess_muzzleflash.curstate.modelindex = iModelIndex;
+	guess_muzzleflash.curstate.scale = flFlashScale * flScale;
+	guess_muzzleflash.index = 0;
+	guess_muzzleflash.origin = pEntity->attachment[iAttachment];
+	guess_muzzleflash.angles = pEntity->angles;
+	guess_muzzleflash.angles[2] = gEngfuncs.pfnRandomFloat( 1, 359 );
+
+	if ( bAlt )
+		guess_muzzleflash.angles[1] += 90;
+
+	guess_muzzleflash.curstate.rendermode = kRenderTransAdd;
+	guess_muzzleflash.curstate.renderamt = 100;
+	guess_muzzleflash.curstate.renderfx = 161;
+	guess_muzzleflash.curstate.sequence = 0;
+	guess_muzzleflash.curstate.animtime = gEngfuncs.GetClientTime();
+
+	gEngfuncs.CL_CreateVisibleEntity( ET_NORMAL, &guess_muzzleflash );
+
+	if ( cl_cheapweaponsmoke->value )
+	{
+		guess_iGunSmoke = gEngfuncs.pEventAPI->EV_FindModelIndex( "sprites/gunsmoke.spr" );
+		guess_pGunSmoke = gEngfuncs.pEfxAPI->R_TempSprite( (float *)&pEntity->attachment[0], vecSmokeVelocity, 0.05, guess_iGunSmoke, kRenderTransAdd, kRenderFxFadeFast, 255, 1, FTENT_SPRANIMATE | guess_FTENT_GROW | guess_FTENT_FADE );
+	}
+
+	if ( !bAlt )
+	{
+		DlightFlash( (float *)&pEntity->attachment[iAttachment] );
+		return;
+	}
+
+	dlight_t *dl = gEngfuncs.pEfxAPI->CL_AllocDlight( 0 );
+	dl->origin = pPlayer->origin;
+	dl->radius = 128;
+	dl->color.r = 225;
+	dl->color.g = 96;
+	dl->color.b = 0;
+	dl->die = gEngfuncs.GetClientTime() + 0.06;
+
+	DynamicLight *dl2 = MY_AllocDlight( 0 );
+	dl2->origin = pPlayer->origin;
+	dl2->radius = 128;
+	dl2->color = Vector( 1.0f, 0.37f, 0.0f );
+	dl2->die = gEngfuncs.GetClientTime() + 0.06;
+}
+
+/*
+=========================
+guess_MuzzleFlashAt
+
+Cry of Fear: the same flash at a given origin, never called in 1.6a
+=========================
+*/
+void guess_MuzzleFlashAt( struct model_s *pModel, int iAttachment, Vector vecOrigin, Vector vecAngles )
+{
+	vec3_t vecSmokeVelocity( 0, 0, 10 );
+
+	bool bCS = false;
+	if ( strstr( pModel->name, "models/cs/" ) )
+		bCS = true;
+
+	cl_entity_t *pPlayer = gEngfuncs.GetLocalPlayer();
+
+	if ( !pPlayer )
+		return;
+
+	int iModelIndex;
+	struct model_s *pFlashModel = gEngfuncs.CL_LoadModel( "models/flash1.mdl", &iModelIndex );
+	WEAPON *pWeapon = gHUD.m_Ammo.m_pWeapon;
+	float flFlashScale = 4;
+
+	if ( pWeapon )
+	{
+		if ( pWeapon->iId == 4 )
+			flFlashScale = 6;
+		else
+		{
+			flFlashScale = 4;
+
+			if ( pWeapon->iId == 9 )
+			{
+				pFlashModel = gEngfuncs.CL_LoadModel( "models/flash2.mdl", &iModelIndex );
+				flFlashScale = 6;
+			}
+
+			if ( pWeapon->iId == 11 )
+			{
+				pFlashModel = gEngfuncs.CL_LoadModel( "models/flash2.mdl", &iModelIndex );
+				flFlashScale = 6;
+			}
+
+			if ( pWeapon->iId == 14 )
+			{
+				pFlashModel = gEngfuncs.CL_LoadModel( "models/flash2.mdl", &iModelIndex );
+				flFlashScale = 2;
+			}
+		}
+	}
+
+	if ( bCS )
+		flFlashScale = 2;
+
+	flFlashScale += gEngfuncs.pfnRandomFloat( -1, 1 );
+
+	guess_muzzleflash = *pPlayer;
+	guess_muzzleflash.curstate.scale = flFlashScale;
+	guess_muzzleflash.curstate.modelindex = iModelIndex;
+	guess_muzzleflash.index = 0;
+	guess_muzzleflash.model = pFlashModel;
+	guess_muzzleflash.origin = vecOrigin;
+	guess_muzzleflash.angles = vecAngles;
+	guess_muzzleflash.angles[2] = gEngfuncs.pfnRandomFloat( 1, 359 );
+	guess_muzzleflash.curstate.rendermode = kRenderTransAdd;
+	guess_muzzleflash.curstate.renderamt = 100;
+
+	gEngfuncs.CL_CreateVisibleEntity( ET_NORMAL, &guess_muzzleflash );
+
+	if ( cl_cheapweaponsmoke->value )
+	{
+		guess_iGunSmoke = gEngfuncs.pEventAPI->EV_FindModelIndex( "sprites/gunsmoke.spr" );
+		guess_pGunSmoke = gEngfuncs.pEfxAPI->R_TempSprite( vecOrigin, vecSmokeVelocity, 0.05, guess_iGunSmoke, kRenderTransAdd, kRenderFxFadeFast, 255, 1, FTENT_SPRANIMATE | guess_FTENT_GROW | guess_FTENT_FADE );
+	}
+
+	DlightFlash( vecOrigin );
 }
 
 
@@ -672,37 +907,113 @@ fired during this frame, handle the event by it's tag ( e.g., muzzleflash, sound
 */
 void DLLEXPORT HUD_StudioEvent( const struct mstudioevent_s *event, const struct cl_entity_s *entity )
 {
-	// buz test
-/*	gEngfuncs.Con_Printf("fired event by entity with floor color: %i, %i, %i, %i\n",
-		entity->cvFloorColor.r,
-		entity->cvFloorColor.g,
-		entity->cvFloorColor.b,
-		entity->cvFloorColor.a);*/
-	
+	bool bCS = false;
+	if ( strstr( entity->model->name, "models/cs/" ) )
+		bCS = true;
+
+	cl_entity_t *pPlayer = gEngfuncs.GetLocalPlayer();
+
 	switch( event->event )
 	{
 	case 5001:
-		gEngfuncs.pEfxAPI->R_MuzzleFlash( (float *)&entity->attachment[0], atoi( event->options) );
-		DlightFlash((float *)&entity->attachment[0]);
+		guess_MuzzleFlash( (cl_entity_t *)entity, 0, false, 1.0 );
 		break;
 	case 5011:
-		gEngfuncs.pEfxAPI->R_MuzzleFlash( (float *)&entity->attachment[1], atoi( event->options) );
-		DlightFlash((float *)&entity->attachment[1]);
+		guess_MuzzleFlash( (cl_entity_t *)entity, 1, false, 1.0 );
 		break;
 	case 5021:
-		gEngfuncs.pEfxAPI->R_MuzzleFlash( (float *)&entity->attachment[2], atoi( event->options) );
-		DlightFlash((float *)&entity->attachment[2]);
+		guess_MuzzleFlash( (cl_entity_t *)entity, 2, false, 1.0 );
 		break;
 	case 5031:
-		gEngfuncs.pEfxAPI->R_MuzzleFlash( (float *)&entity->attachment[3], atoi( event->options) );
-		DlightFlash((float *)&entity->attachment[3]);
+		guess_MuzzleFlash( (cl_entity_t *)entity, 3, false, 1.0 );
+		break;
+	case 5060:
+		if ( pPlayer )
+		{
+			gEngfuncs.pfnPlaySoundByNameAtLocation( "player/player_swim.wav", 1.0, (float *)&entity->attachment[0] );
+			gEngfuncs.pfnServerCmd( "swimboost" );
+
+			if ( guess_iUnknown1054506C > 2 )
+			{
+				int iBubble = gEngfuncs.pEventAPI->EV_FindModelIndex( "sprites/bubble.spr" );
+				int i;
+
+				for ( i = 1; i < 6; i++ )
+				{
+					float x = gEngfuncs.pfnRandomFloat( -5, 5 );
+					float y = gEngfuncs.pfnRandomFloat( -5, 5 );
+					vec3_t vecOrigin = entity->attachment[1];
+					float z = gEngfuncs.pfnRandomFloat( -2, 2 );
+					vecOrigin.x += x;
+					vecOrigin.y += y;
+					vecOrigin.z += 5;
+					vec3_t vecVelocity( 0, 0, 15 );
+					gEngfuncs.pEfxAPI->R_TempSprite( vecOrigin, vecVelocity, 0.15, iBubble, kRenderTransAlpha, kRenderFxNone, 128, 1, guess_FTENT_FADE );
+				}
+
+				for ( i = 1; i < 6; i++ )
+				{
+					float x = gEngfuncs.pfnRandomFloat( -5, 5 );
+					float y = gEngfuncs.pfnRandomFloat( -5, 5 );
+					vec3_t vecOrigin = entity->attachment[0];
+					float z = gEngfuncs.pfnRandomFloat( -2, 2 );
+					vecOrigin.x += x;
+					vecOrigin.y += y;
+					vecOrigin.z += 5;
+					vec3_t vecVelocity( 0, 0, 15 );
+					gEngfuncs.pEfxAPI->R_TempSprite( vecOrigin, vecVelocity, 0.15, iBubble, kRenderTransAlpha, kRenderFxNone, 255, 1, guess_FTENT_FADE );
+				}
+			}
+		}
 		break;
 	case 5002:
 		gEngfuncs.pEfxAPI->R_SparkEffect( (float *)&entity->attachment[0], atoi( event->options), -100, 100 );
 		break;
 	// Client side sound
-	case 5004:		
-		gEngfuncs.pfnPlaySoundByNameAtLocation( (char *)event->options, 1.0, (float *)&entity->attachment[0] );
+	case 5004:
+		if ( gHUD.m_Ammo.m_pWeapon && ( gHUD.m_Ammo.m_pWeapon->iId == 20 || gHUD.m_Ammo.m_pWeapon->iId == 23 || gHUD.m_Ammo.m_pWeapon->iId == 26
+			|| gHUD.m_Ammo.m_pWeapon->iId == 3 || gHUD.m_Ammo.m_pWeapon->iId == 9 || gHUD.m_Ammo.m_pWeapon->iId == 27 || gHUD.m_Ammo.m_pWeapon->iId == 7
+			|| gHUD.m_Ammo.m_pWeapon->iId == 21 || gHUD.m_Ammo.m_pWeapon->iId == 11 || gHUD.m_Ammo.m_pWeapon->iId == 4 || gHUD.m_Ammo.m_pWeapon->iId == 14
+			|| gHUD.m_Ammo.m_pWeapon->iId == 19 ) )
+		{
+			if ( strstr( event->options, "weapons/" ) )
+			{
+				char szName[256];
+				bool bFound = false;
+				unsigned int j = 0;
+
+				for ( unsigned int i = 0; i < strlen( event->options ); i++ )
+				{
+					if ( bFound )
+						szName[j++] = event->options[i];
+					else if ( event->options[i] == '/' || event->options[i] == '\\' )
+						bFound = true;
+				}
+
+				if ( bFound )
+				{
+					char szSound[256];
+					vec3_t vecOrigin;
+
+					szName[j] = 0;
+					strcpy( szSound, "weapons_new/" );
+					strcat( szSound, szName );
+					guess_IrrKlangPlaySound( szSound, 0, 0, vecOrigin );
+				}
+				break;
+			}
+		}
+
+		if ( bCS )
+		{
+			char szSound[64];
+
+			strcpy( szSound, "cs/" );
+			strcat( szSound, event->options );
+			gEngfuncs.pfnPlaySoundByNameAtLocation( szSound, 1.0, (float *)&entity->attachment[0] );
+		}
+		else
+			gEngfuncs.pfnPlaySoundByNameAtLocation( (char *)event->options, 1.0, (float *)&entity->attachment[0] );
 		break;
 	case 5005: // buz: left foot step (attach 3)
 		{
@@ -725,7 +1036,7 @@ void DLLEXPORT HUD_StudioEvent( const struct mstudioevent_s *event, const struct
 							wp->entity.curstate.framerate = 20;
 							//wp->entity.curstate.rendercolor.r = entity->cvFloorColor.r;
 							//wp->entity.curstate.rendercolor.g = entity->cvFloorColor.g;
-							//wp->entity.curstate.rendercolor.b = entity->cvFloorColor.b;							
+							//wp->entity.curstate.rendercolor.b = entity->cvFloorColor.b;
 						}
 					}
 				}
@@ -768,6 +1079,68 @@ void DLLEXPORT HUD_StudioEvent( const struct mstudioevent_s *event, const struct
 			EV_EjectBrass ( (float *)&entity->attachment[1], VecDir, 0, shell, TE_BOUNCE_SHELL );
 			break;
 		}
+	case 5050:
+		{
+			char *sample;
+
+			if ( gEngfuncs.pfnRandomLong( 0, 1 ) == 1 )
+				sample = "weapons/flare/flare_strike1.wav";
+			else
+				sample = "weapons/flare/flare_strike2.wav";
+
+			gEngfuncs.pEventAPI->EV_PlaySound( entity->index, (float *)&entity->attachment[0], CHAN_WEAPON, sample, 1.0, 0.8, 0, PITCH_NORM );
+
+			ParticleSystem *pSystem = new ParticleSystem( entity->index, "aurora/flare_sparks_short.aur", 1, 0, entity->model->name );
+			g_pParticleSystems.AddSystem( pSystem );
+			break;
+		}
+	case 5051:
+		{
+			char szCommand[64];
+
+			sprintf( szCommand, "throwflare %i %i %i", (int)entity->attachment[1][0], (int)entity->attachment[1][1], (int)entity->attachment[1][2] );
+			gEngfuncs.pfnServerCmd( szCommand );
+			break;
+		}
+	case 5080:
+		{
+			char szCommand[64];
+
+			sprintf( szCommand, "zoominmdl %i", atoi( event->options ) );
+			gEngfuncs.pfnServerCmd( szCommand );
+			break;
+		}
+	case 5090:
+		switch ( gEngfuncs.pfnRandomLong( 0, 3 ) )
+		{
+		case 0:
+			gEngfuncs.pfnPlaySoundByNameAtLocation( "common/bodydrop1.wav", 1.0, (float *)&entity->attachment[0] );
+			break;
+		case 1:
+			gEngfuncs.pfnPlaySoundByNameAtLocation( "common/bodydrop2.wav", 1.0, (float *)&entity->attachment[0] );
+			break;
+		case 2:
+			gEngfuncs.pfnPlaySoundByNameAtLocation( "common/bodydrop3.wav", 1.0, (float *)&entity->attachment[0] );
+			break;
+		case 3:
+			gEngfuncs.pfnPlaySoundByNameAtLocation( "common/bodydrop4.wav", 1.0, (float *)&entity->attachment[0] );
+			break;
+		}
+		break;
+	case 5093:
+		gEngfuncs.pfnPlaySoundByNameAtLocation( "player/get_up.wav", 0.5, (float *)&entity->attachment[0] );
+		break;
+	case 5094:
+		switch ( gEngfuncs.pfnRandomLong( 0, 1 ) )
+		{
+		case 0:
+			PlaySound( "player/ladder_1.wav", 1 );
+			break;
+		case 1:
+			PlaySound( "player/ladder_2.wav", 1 );
+			break;
+		}
+		break;
 	default:
 		break;
 	}
@@ -934,6 +1307,12 @@ void DLLEXPORT HUD_TempEntUpdate (
 				for ( i = 0; i < 3; i++ ) 
 					pTemp->entity.origin[i] += pTemp->entity.baseline.origin[i] * frametime;
 			}
+
+			if ( pTemp->flags & guess_FTENT_GROW )
+				pTemp->entity.curstate.scale += 0.001;
+
+			if ( pTemp->flags & guess_FTENT_FADE )
+				pTemp->entity.curstate.renderamt -= 25;
 			
 			if ( pTemp->flags & FTENT_SPRANIMATE )
 			{

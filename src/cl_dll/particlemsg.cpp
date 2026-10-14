@@ -13,6 +13,7 @@
 #include <stdio.h>
 
 //extern ParticleSystemManager* g_pParticleSystems; // buz
+extern cvar_t *cl_cheapweaponsmoke;
 
 DECLARE_MESSAGE(m_Particle, Particle)
 DECLARE_MESSAGE(m_Particle, DelParticle) // buz
@@ -52,11 +53,25 @@ int CHudParticle:: MsgFunc_Particle(const char *pszName,  int iSize, void *pbuf 
 //	float ax = 0;//READ_COORD();
 //	float ay = 0;//READ_COORD();
 //	float az = 0;//READ_COORD();
-	char *sz = READ_STRING();
+	char sz[128];
+	strncpy( sz, READ_STRING(), sizeof( sz ) );
+	int iViewModel = READ_BYTE();
+	char szModel[128];
+	strncpy( szModel, READ_STRING(), sizeof( szModel ) );
+	int iAttachment = READ_SHORT();
 //	gEngfuncs.Con_Printf("Message received\n");
 	//char sz[255];
 
-	ParticleSystem *pSystem = new ParticleSystem(entindex, sz);//"aurora/smoke.aur");
+	if ( strstr( sz, "gunsmoke.aur" ) && cl_cheapweaponsmoke->value )
+		return 1;
+
+	if ( strstr( sz, "blood_shot.aur" ) && CVAR_GET_FLOAT( "cl_bloodeffects" ) == 0 )
+		return 1;
+
+	if ( iViewModel )
+		entindex = gEngfuncs.GetViewModel()->index;
+
+	ParticleSystem *pSystem = new ParticleSystem(entindex, sz, iViewModel, iAttachment, szModel);//"aurora/smoke.aur");
 
 //	g_pParticleSystems->AddSystem(pSystem);
 	g_pParticleSystems.AddSystem(pSystem); // buz

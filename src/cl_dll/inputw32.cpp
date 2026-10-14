@@ -19,6 +19,8 @@
 #include "in_defs.h"
 #include "../engine/keydefs.h"
 #include "view.h"
+#include "vgui_TeamFortressViewport.h"
+#include "guess_Padlock.h"
 #include "windows.h"
 #include <math.h>
 #undef fabs
@@ -275,7 +277,8 @@ FIXME: Call through to engine?
 */
 void IN_ResetMouse( void )
 {
-	SetCursorPos ( gEngfuncs.GetWindowCenterX(), gEngfuncs.GetWindowCenterY() );	
+	if ( !strstr( gEngfuncs.pfnGetLevelName(), "game_menu" ) )
+		SetCursorPos ( gEngfuncs.GetWindowCenterX(), gEngfuncs.GetWindowCenterY() );	
 }
 
 /*
@@ -415,7 +418,8 @@ void IN_MouseMove ( float frametime, usercmd_t *cmd)
 		// if the mouse has moved, force it to the center, so there's room to move
 		if ( mx || my )
 		{
-			IN_ResetMouse();
+			if ( gViewPort->guess_m_pPadlock && !gViewPort->guess_m_pPadlock->isVisible() )
+				IN_ResetMouse();
 		}
 	}
 
