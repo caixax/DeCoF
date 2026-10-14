@@ -71,3 +71,10 @@ va,name,kind,evidence
 1011B190,?WriteInt@CSave@@QAEXPBDPBHH@Z,func,"forwards to CSave::BufferField; sits between CSave::WriteFunction and WritePositionVector in decorated-name order, as HLSDK CSave::WriteInt"
 1011E820,?Restore@CCSAWP@@UAEHAAVCRestore@@@Z,func,"IMPLEMENT_SAVERESTORE( CCSAWP, CBasePlayerWeapon ): calls CBasePlayerWeapon::Restore and passes the string ""CCSAWP"" with the class save table"
 1011EEA0,?Save@CCSAWP@@UAEHAAVCSave@@@Z,func,"IMPLEMENT_SAVERESTORE( CCSAWP, CBasePlayerWeapon ): calls CBasePlayerWeapon::Save and passes the string ""CCSAWP"" with the class save table"
+100DB150,?AutoaimDeflection@CBasePlayer@@QAE?AVVector@@AAV2@MM@Z,func,UTIL_MakeVectors and UTIL_TraceLine loop of HLSDK CBasePlayer::AutoaimDeflection; size 1516 against our 1509
+100E0CE0,?GiveNamedItemAmmo@CBasePlayer@@QAEXPBDH@Z,func,"creates the named entity, DispatchSpawn and DispatchTouch it like GiveNamedItem; same size as ours (199)"
+100E1690,?GlobalSetEndingOrUnlockables@@YAXH_N@Z,func,reads and writes /scriptsettings.dat like the client SetEndingOrUnlockables; size 2564 against our 2565
+100E42F0,?InventoryIsFull@CBasePlayer@@QAEHXZ,func,calls CBasePlayer::IsSlotFree for the inventory slots; size 100 against our 101
+100E4D60,?IsDonator@CBasePlayer@@QAEHXZ,func,tests g_pGameRules and the donator state; same size as ours (156)
+100E4E00,?IsInCutscene@CBasePlayer@@QAE_NXZ,func,tests the EHANDLE at +0x2348 (the cutscene camera); same size as ours (76)
+100E8EB0,?MoveStatue@CBasePlayer@@QAEXHH@Z,func,"finds statue_eagle and the other statues by classname and moves them, as our CBasePlayer::MoveStatue"

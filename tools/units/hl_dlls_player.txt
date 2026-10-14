@@ -230,3 +230,10 @@ _player
 ?deallocate@?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@QAEXQAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@I@Z
 ?open@?$basic_filebuf@DU?$char_traits@D@std@@@std@@QAEPAV12@PBDHH@Z
 ??1?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@QAE@XZ
+?AutoaimDeflection@CBasePlayer@@QAE?AVVector@@AAV2@MM@Z
+?GiveNamedItemAmmo@CBasePlayer@@QAEXPBDH@Z
+?GlobalSetEndingOrUnlockables@@YAXH_N@Z
+?InventoryIsFull@CBasePlayer@@QAEHXZ
+?IsDonator@CBasePlayer@@QAEHXZ
+?IsInCutscene@CBasePlayer@@QAE_NXZ
+?MoveStatue@CBasePlayer@@QAEXHH@Z

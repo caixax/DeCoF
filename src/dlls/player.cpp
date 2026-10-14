@@ -7006,7 +7006,7 @@ pt_end:
 
 bool CBasePlayer::IsInCutscene( void )
 {
-	if ( m_hCurrentCamera || ( m_pAttachedCamera && m_iViewEntIndex && m_iViewEntIndex != ENTINDEX( edict() ) ) )
+	if ( ( m_hCurrentCamera || m_pAttachedCamera ) && m_iViewEntIndex && m_iViewEntIndex != ENTINDEX( edict() ) )
 		return true;
 
 	return false;
@@ -8015,7 +8015,7 @@ void CBasePlayer::GiveNamedItemAmmo( const char *pszName, int defaultammo )
 	if ( strstr( STRING( pent->v.classname ), "weapon_" ) )
 	{
 		if ( defaultammo >= 0 )
-			pent->v.health = defaultammo;
+			pent->v.frags = defaultammo;
 	}
 
 	DispatchSpawn( pent );
@@ -10261,7 +10261,7 @@ Vector CBasePlayer :: AutoaimDeflection( Vector &vecSrc, float flDist, float flD
 			continue;
 //		if (pev->team > 0 && pEdict->v.team == pev->team)
 //			continue;	// don't aim at teammate
-		if ( !g_pGameRules->ShouldAutoAim( this, pEdict ) )
+		if ( g_pGameRules && !g_pGameRules->ShouldAutoAim( this, pEdict ) )
 			continue;
 
 		pEntity = Instance( pEdict );
@@ -10303,7 +10303,7 @@ Vector CBasePlayer :: AutoaimDeflection( Vector &vecSrc, float flDist, float flD
 		// don't shoot at friends
 		if (IRelationship( pEntity ) < 0)
 		{
-			if ( !pEntity->IsPlayer() && !g_pGameRules->IsDeathmatch())
+			if ( !pEntity->IsPlayer() && g_pGameRules && !g_pGameRules->IsDeathmatch())
 				// ALERT( at_console, "friend\n");
 				continue;
 		}
@@ -16404,7 +16404,7 @@ int CBasePlayer::IsDonator( void )
 			{
 				CSteamID groupID = SteamFriends()->GetClanByIndex( i );
 
-				if ( groupID.GetEAccountType() == k_EAccountTypeClan && groupID.GetAccountID() == 2742986 )
+				if ( groupID.GetEAccountType() == k_EAccountTypeClan && groupID.GetAccountID() == 2741962 )
 					return 1;
 			}
 		}
