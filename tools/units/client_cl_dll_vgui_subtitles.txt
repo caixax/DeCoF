@@ -5,3 +5,5 @@
 ?AddMessage@CSubtitle@@QAEXPAUclient_textmessage_s@@@Z
 ?paint@CSubtitleTextPanel@@UAEXXZ
 ?paintBackground@CSubtitleTextPanel@@UAEXXZ
+?SubtitleMessageAdd@@YAXPAUclient_textmessage_s@@@Z
+?paintBackground@CSubtitle@@MAEXXZ
