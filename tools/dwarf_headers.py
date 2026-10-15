@@ -20,6 +20,22 @@ import sys
 from elftools.elf.elffile import ELFFile
 
 
+def member_offset(loc):
+    """DW_AT_data_member_location: a constant, or an expression
+    DW_OP_plus_uconst <ULEB128> (0x23) as GCC writes it."""
+    if isinstance(loc, int):
+        return loc
+    if isinstance(loc, list) and loc and loc[0] == 0x23:
+        v, shift = 0, 0
+        for b in loc[1:]:
+            v |= (b & 0x7F) << shift
+            shift += 7
+            if not b & 0x80:
+                break
+        return v
+    return None
+
+
 def attr(die, name, default=None):
     a = die.attributes.get(name)
     if a is None:
@@ -102,16 +118,29 @@ def body(t, indent="\t"):
                 continue
             d = declarator(sub, name)
             bits = attr(c, "DW_AT_bit_size")
-            loc = attr(c, "DW_AT_data_member_location")
-            if isinstance(loc, list):
-                loc = loc[-1] if loc else None
+            loc = member_offset(attr(c, "DW_AT_data_member_location"))
             lines.append("%s%s%s;%s" % (indent, d, " : %d" % bits if bits else "",
                                         "\t// +%d" % loc if isinstance(loc, int) else ""))
         elif c.tag == "DW_TAG_enumerator":
             lines.append("%s%s = %s," % (indent, attr(c, "DW_AT_name"), attr(c, "DW_AT_const_value")))
         elif c.tag == "DW_TAG_subprogram" and attr(c, "DW_AT_name"):
-            lines.append("%s// method %s%s" % (indent, "virtual " if "DW_AT_virtuality" in c.attributes else "",
-                                               attr(c, "DW_AT_name")))
+            # the method with its parameters (the first, artificial one is this)
+            ps = []
+            for p in c.iter_children():
+                if p.tag == "DW_TAG_formal_parameter" and not attr(p, "DW_AT_artificial"):
+                    ps.append(declarator(type_die(p), attr(p, "DW_AT_name", "")))
+                elif p.tag == "DW_TAG_unspecified_parameters":
+                    ps.append("...")
+            virt = "DW_AT_virtuality" in c.attributes
+            slot = attr(c, "DW_AT_vtable_elem_location")
+            if isinstance(slot, list) and slot and slot[0] == 0x10:  # DW_OP_constu
+                slot = member_offset([0x23] + slot[1:])
+            name = attr(c, "DW_AT_name")
+            ret = "" if name == attr(t, "DW_AT_name") or name.startswith("~") else None
+            d = declarator(type_die(c), "%s( %s )" % (name, ", ".join(ps) or "void")) if ret is None \
+                else "%s( %s )" % (name, ", ".join(ps) or "void")
+            lines.append("%s%s%s;%s" % (indent, "virtual " if virt else "", d,
+                                        "\t// vtable slot %s (Linux, destructors take two)" % slot if virt and isinstance(slot, int) else ""))
         elif c.tag == "DW_TAG_inheritance":
             lines.append("%s// base %s" % (indent, declarator(type_die(c), "")))
     return lines
@@ -142,7 +171,16 @@ def main():
             return os.path.normpath(n).replace("\\", "/").lstrip("./")
 
         top = cu.get_top_DIE()
-        for die in top.iter_children():
+        def walk(parent):
+            # declarations inside namespaces (namespace vgui { class Button ... })
+            for d in parent.iter_children():
+                if d.tag == "DW_TAG_namespace":
+                    for x in walk(d):
+                        yield x
+                else:
+                    yield d
+
+        for die in walk(top):
             f = attr(die, "DW_AT_decl_file")
             if not f or "DW_AT_abstract_origin" in die.attributes:
                 continue
@@ -153,11 +191,17 @@ def main():
             name = attr(die, "DW_AT_name")
             tag = die.tag
             text = None
-            if tag in TAGWORD and name and not attr(die, "DW_AT_declaration"):
+            if tag in TAGWORD and name and "DW_AT_declaration" not in die.attributes:
                 size = attr(die, "DW_AT_byte_size")
                 text = "\n".join(["%s %s\t// size %s" % (TAGWORD[tag], name, size), "{"] + body(die) + ["};"])
             elif tag == "DW_TAG_typedef" and name:
-                text = "typedef %s;" % declarator(type_die(die), name)
+                sub = type_die(die)
+                if sub is not None and sub.tag in TAGWORD and attr(sub, "DW_AT_name") is None:
+                    # typedef struct { ... } name;
+                    text = "\n".join(["typedef %s\t// size %s" % (TAGWORD[sub.tag], attr(sub, "DW_AT_byte_size")), "{"]
+                                     + body(sub) + ["} %s;" % name])
+                else:
+                    text = "typedef %s;" % declarator(sub, name)
             elif tag == "DW_TAG_subprogram" and name and attr(die, "DW_AT_external"):
                 ps = []
                 for c in die.iter_children():
