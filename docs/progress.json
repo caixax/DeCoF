@@ -1,8 +1,38 @@
 {
-  "commit": "94454e0",
+  "commit": "e20f586",
   "counting": "LIB rows excluded; bytes weighted by function size",
   "date": "2026-10-15",
   "dlls": {
+    "CoFLaunchApp.exe": {
+      "bytes": {
+        "EQUIVALENT": 4014,
+        "MATCHED": 3665,
+        "TODO": 0,
+        "total": 7679
+      },
+      "categories": {
+        "COF": {
+          "bytes": {
+            "EQUIVALENT": 4014,
+            "MATCHED": 3665,
+            "TODO": 0,
+            "total": 7679
+          },
+          "functions": {
+            "EQUIVALENT": 2,
+            "MATCHED": 49,
+            "TODO": 0,
+            "total": 51
+          }
+        }
+      },
+      "functions": {
+        "EQUIVALENT": 2,
+        "MATCHED": 49,
+        "TODO": 0,
+        "total": 51
+      }
+    },
     "GameUI.dll": {
       "bytes": {
         "EQUIVALENT": 0,
@@ -340,31 +370,31 @@
   },
   "shown_total": {
     "bytes": {
-      "EQUIVALENT": 90929,
-      "MATCHED": 1639988,
+      "EQUIVALENT": 94943,
+      "MATCHED": 1643653,
       "TODO": 46351,
-      "total": 1777268
+      "total": 1784947
     },
     "functions": {
-      "EQUIVALENT": 32,
-      "MATCHED": 7817,
+      "EQUIVALENT": 34,
+      "MATCHED": 7866,
       "TODO": 77,
-      "total": 7926
+      "total": 7977
     }
   },
   "target_version": "1.6a",
   "total": {
     "bytes": {
-      "EQUIVALENT": 90929,
-      "MATCHED": 1647146,
+      "EQUIVALENT": 94943,
+      "MATCHED": 1650811,
       "TODO": 2197360,
-      "total": 3935435
+      "total": 3943114
     },
     "functions": {
-      "EQUIVALENT": 32,
-      "MATCHED": 7830,
+      "EQUIVALENT": 34,
+      "MATCHED": 7879,
       "TODO": 14400,
-      "total": 22262
+      "total": 22313
     }
   }
 }

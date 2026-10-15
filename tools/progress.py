@@ -34,9 +34,10 @@ BINARIES = [
     ("hw", "hw.dll"),
     ("gameui", "GameUI.dll"),
     ("launcher", "cof.exe"),
+    ("coflaunchapp", "CoFLaunchApp.exe"),
 ]
 # binaries given a category table in PROGRESS.md and counted in "shown_total"
-SHOWN = ["client", "hl", "opengl32"]
+SHOWN = ["client", "hl", "opengl32", "coflaunchapp"]
 # why a binary has not started, drawn next to its bar in the SVG
 NOTES = {
     "hw": "not started (VC6 installed; processor pack and VS 2005 objects need those compilers)",
@@ -44,7 +45,7 @@ NOTES = {
     "launcher": "not started (VC6 installed)",
 }
 # in scope but not in the CSV yet: (name, note)
-NOT_INVENTORIED = [("CoFLaunchApp.exe", ".NET (C#) settings launcher, not inventoried yet")]
+NOT_INVENTORIED = []
 CATEGORIES = ["HLSDK", "PARANOIA", "SPIRIT", "COF", "UNKNOWN"]
 STATES = ["MATCHED", "EQUIVALENT", "TODO"]
 
