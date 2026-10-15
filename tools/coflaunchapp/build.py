@@ -205,6 +205,11 @@ def compile_exe():
     for line in warnings:
         print(line.strip())
     print("built %s" % os.path.relpath(exe, ROOT))
+    # tools/make_dist.py takes complete rebuilt binaries from build/bin
+    import shutil
+    bindir = os.path.join(ROOT, "build", "bin")
+    os.makedirs(bindir, exist_ok=True)
+    shutil.copyfile(exe, os.path.join(bindir, "CoFLaunchApp.exe"))
 
 
 def main():
