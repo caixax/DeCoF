@@ -32,6 +32,23 @@ def main():
             top = cu.get_top_DIE()
             cuname = top.attributes.get("DW_AT_name")
             cuname = cuname.value.decode("latin-1") if cuname else ""
+            # line of the first instruction of each address in the unit's own
+            # file: the definition line of C++ methods, whose DIE carries only
+            # the declaration's line inside the class
+            firstline = {}
+            primary = 1
+            lp = dwarf.line_program_for_CU(cu)
+            if lp is not None:
+                # the unit's own file is not always entry 1 of its file table
+                base = cuname.replace("\\", "/").split("/")[-1].lower()
+                for i, fe in enumerate(lp["file_entry"]):
+                    if fe.name.decode("latin-1").replace("\\", "/").split("/")[-1].lower() == base:
+                        primary = i + 1
+                        break
+                for e in lp.get_entries():
+                    st = e.state
+                    if st is not None and not st.end_sequence and st.file == primary:
+                        firstline.setdefault(st.address, st.line)
             for die in cu.iter_DIEs():
                 if die.tag != "DW_TAG_subprogram":
                     continue
@@ -40,7 +57,7 @@ def main():
                     # build: keep it, without an address
                     df = die.attributes.get("DW_AT_decl_file")
                     if INLINED is not None and "DW_AT_inline" in die.attributes and "DW_AT_name" in die.attributes \
-                            and df is not None and df.value == 1:
+                            and df is not None and df.value == primary:
                         line = die.attributes.get("DW_AT_decl_line")
                         INLINED.append([cuname, die.attributes["DW_AT_name"].value.decode("latin-1"),
                                         line.value if line else ""])
@@ -54,7 +71,8 @@ def main():
                     or die.attributes.get("DW_AT_name")
                 name = name.value.decode("latin-1") if name else ""
                 line = die.attributes.get("DW_AT_decl_line")
-                funcs.setdefault(lo, [lo, size, name, cuname, line.value if line else ""])
+                line = line.value if line else firstline.get(lo, "")
+                funcs.setdefault(lo, [lo, size, name, cuname, line])
     symtab = elf.get_section_by_name(".symtab")
     for s in symtab.iter_symbols():
         if s["st_info"]["type"] == "STT_FUNC" and s["st_value"]:

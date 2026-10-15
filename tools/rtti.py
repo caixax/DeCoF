@@ -1,6 +1,6 @@
 """List the RTTI classes of a DLL with their vtables.
 
-  python tools/rtti.py [hl|client] [<class name part>]
+  python tools/rtti.py [hl|client|gameui|hw|launcher] [<class name part>]
 
 MSVC /GR puts a type descriptor (".?AVCHUDControl@@") and a complete
 object locator before every vtable. This prints, per vtable, its address,
@@ -17,7 +17,8 @@ import sys
 import pefile
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-IMAGES = {"hl": "versions/1.6a/cryoffear/cl_dlls/hl.dll", "client": "versions/1.6a/cryoffear/cl_dlls/client.dll"}
+IMAGES = {"hl": "versions/1.6a/cryoffear/cl_dlls/hl.dll", "client": "versions/1.6a/cryoffear/cl_dlls/client.dll",
+          "gameui": "versions/1.6a/cryoffear/cl_dlls/GameUI.dll", "hw": "versions/1.6a/hw.dll", "launcher": "versions/1.6a/cof.exe"}
 
 
 def vtables(dll):

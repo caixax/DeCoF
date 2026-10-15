@@ -73,6 +73,13 @@ def main():
         x = by_va.get(int(r["from_va"], 16) - GHIDRA_ELF_BASE)
         if x:
             anchor[r["to_va"].upper()] = x
+    # virtual methods paired through the vtables (tools/vtable_linux.py)
+    vp = os.path.join(m, "%s_vtable_linux.csv" % dll)
+    if os.path.exists(vp):
+        for r in csv.DictReader(open(vp)):
+            x = by_va.get(int(r["linux_va"], 16))
+            if x:
+                anchor.setdefault(r["windows_va"].upper(), x)
     for r in rows:
         if r["va"] not in anchor and r["name"].startswith("_") and not r["name"].startswith("__"):
             n = r["name"][1:]
