@@ -1,22 +1,29 @@
 """Source file of every function of a Linux GoldSrc library (hw.so, gameui.so).
 
-  python tools/elf_files.py <lib.so> <out.csv>
+  python tools/elf_files.py <lib.so> <out.csv> [--inlined <out2.csv>]
 
 The Linux steam_legacy builds carry DWARF debug information: every
 compile unit names its source file and lists its functions (subprograms
 with their address). Writes va,size,name,file,line for every function of
 the library: file is the compile unit's source path, line the line of the
 function's declaration. Functions the DWARF does not cover (CRT, glue)
-fall back to the symbol table with an empty file.
+fall back to the symbol table with an empty file. --inlined also writes
+file,name,line of the functions GCC inlined everywhere (no address): an
+unoptimized Windows build still has them as separate functions.
 """
 import csv
 import sys
 
 from elftools.elf.elffile import ELFFile
 
+INLINED = None  # [file, name, line] of functions without an address (--inlined)
+
 
 def main():
+    global INLINED
     lib, out = sys.argv[1], sys.argv[2]
+    if "--inlined" in sys.argv:
+        INLINED = []
     elf = ELFFile(open(lib, "rb"))
     funcs = {}
     if elf.has_dwarf_info():
@@ -26,7 +33,17 @@ def main():
             cuname = top.attributes.get("DW_AT_name")
             cuname = cuname.value.decode("latin-1") if cuname else ""
             for die in cu.iter_DIEs():
-                if die.tag != "DW_TAG_subprogram" or "DW_AT_low_pc" not in die.attributes:
+                if die.tag != "DW_TAG_subprogram":
+                    continue
+                if "DW_AT_low_pc" not in die.attributes:
+                    # a function GCC only inlined still exists in an /Od
+                    # build: keep it, without an address
+                    df = die.attributes.get("DW_AT_decl_file")
+                    if INLINED is not None and "DW_AT_inline" in die.attributes and "DW_AT_name" in die.attributes \
+                            and df is not None and df.value == 1:
+                        line = die.attributes.get("DW_AT_decl_line")
+                        INLINED.append([cuname, die.attributes["DW_AT_name"].value.decode("latin-1"),
+                                        line.value if line else ""])
                     continue
                 lo = die.attributes["DW_AT_low_pc"].value
                 hi = die.attributes.get("DW_AT_high_pc")
@@ -55,6 +72,16 @@ def main():
             w.writerow(["%08X" % va, size, name, fl, line])
     print("%d functions, %d with a file, %d files" % (len(rows), sum(1 for f in rows if f[3]),
                                                       len(set(f[3] for f in rows if f[3]))))
+    if INLINED is not None:
+        seen = set()
+        with open(sys.argv[sys.argv.index("--inlined") + 1], "w", newline="") as fh:
+            w = csv.writer(fh, lineterminator="\n")
+            w.writerow(["file", "name", "line"])
+            for f, n, l in INLINED:
+                if (f, n) not in seen:
+                    seen.add((f, n))
+                    w.writerow([f, n, l])
+        print("%d inlined-only functions" % len(seen))
 
 
 if __name__ == "__main__":
