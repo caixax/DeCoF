@@ -12685,465 +12685,465 @@ gameui,100AD060,10,,,UNKNOWN,,,,TODO,,,
 gameui,100AD070,19,,,UNKNOWN,,,,TODO,,,
 gameui,100AD090,110,,,UNKNOWN,,,,TODO,,,
 gameui,100AD100,120,,,UNKNOWN,,,,TODO,,,
-gameui,100AD188,11,,,UNKNOWN,,,,TODO,,,
+gameui,100AD188,11,,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(atox.obj)"
 gameui,100AD193,89,,,UNKNOWN,,,,TODO,,,
-gameui,100AD1ED,100,,,UNKNOWN,,,,TODO,,,
-gameui,100AD25E,29,,,UNKNOWN,,,,TODO,,,
-gameui,100AD27B,61,,,UNKNOWN,,,,TODO,,,
-gameui,100AD2B8,28,,,UNKNOWN,,,,TODO,,,
-gameui,100AD2D4,93,,,UNKNOWN,,,,TODO,,,
-gameui,100AD331,61,,,UNKNOWN,,,,TODO,,,
-gameui,100AD36E,29,,,UNKNOWN,,,,TODO,,,
-gameui,100AD3A7,24,,,UNKNOWN,,,,TODO,,,
+gameui,100AD1ED,100,,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCPMT.LIB(ios.obj)"
+gameui,100AD25E,29,,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCPMT.LIB(ios.obj)"
+gameui,100AD27B,61,,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCPMT.LIB(ios.obj)"
+gameui,100AD2B8,28,,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(rtti.obj)"
+gameui,100AD2D4,93,,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCPMT.LIB(ios.obj)"
+gameui,100AD331,61,,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCPMT.LIB(ios.obj)"
+gameui,100AD36E,29,,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCPMT.LIB(ios.obj)"
+gameui,100AD3A7,24,,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(rtti.obj)"
 gameui,100AD3BF,89,,,UNKNOWN,,,,TODO,,,
-gameui,100AD419,61,,,UNKNOWN,,,,TODO,,,
-gameui,100AD456,29,,,UNKNOWN,,,,TODO,,,
-gameui,100AD48F,24,,,UNKNOWN,,,,TODO,,,
-gameui,100AD4D1,12,,,UNKNOWN,,,,TODO,,,
-gameui,100AD4DD,12,,,UNKNOWN,,,,TODO,,,
-gameui,100AD4EA,23,,,UNKNOWN,,,,TODO,,,
-gameui,100AD502,56,,,UNKNOWN,,,,TODO,,,
-gameui,100AD54A,41,,,UNKNOWN,,,,TODO,,,
-gameui,100AD573,28,,,UNKNOWN,,,,TODO,,,
+gameui,100AD419,61,,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCPMT.LIB(ios.obj)"
+gameui,100AD456,29,,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCPMT.LIB(ios.obj)"
+gameui,100AD48F,24,,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(rtti.obj)"
+gameui,100AD4D1,12,,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(fgetchar.obj)"
+gameui,100AD4DD,12,,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(fgetchar.obj)"
+gameui,100AD4EA,23,__fpmath,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(fpinit.obj)"
+gameui,100AD502,56,__cfltcvt_init,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(fpinit.obj)"
+gameui,100AD54A,41,??1type_info@@UAE@XZ,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(typinfo.obj)"
+gameui,100AD573,28,,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(rtti.obj)"
 gameui,100AD5F9,14,,operator_new,LIB,,,,,,ghidra,
-gameui,100AD607,139,,,UNKNOWN,,,,TODO,,,
-gameui,100AD692,11,,,UNKNOWN,,,,TODO,,,
-gameui,100AD69D,186,,,UNKNOWN,,,,TODO,,,
-gameui,100AD757,82,,,UNKNOWN,,,,TODO,,,
-gameui,100AD7A9,207,,,UNKNOWN,,,,TODO,,,
-gameui,100AD878,39,,__ftol,LIB,,,,,,ghidra,
-gameui,100AD8A0,254,,_strncpy,LIB,,,,,,ghidra,
-gameui,100AD99E,18,,_malloc,LIB,,,,,,ghidra,
-gameui,100AD9B0,44,,__nh_malloc,LIB,,,,,,ghidra,
-gameui,100AD9DC,78,,,UNKNOWN,,,,TODO,,,
+gameui,100AD607,139,_atol,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(atox.obj)"
+gameui,100AD692,11,,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(atox.obj)"
+gameui,100AD69D,186,__atoi64,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(atox.obj)"
+gameui,100AD757,82,_sprintf,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(sprintf.obj)"
+gameui,100AD7A9,207,_ceil,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(ceil.obj)"
+gameui,100AD878,39,__ftol,__ftol,LIB,,,,,,ghidra,
+gameui,100AD8A0,254,_strncpy,_strncpy,LIB,,,,,,ghidra,
+gameui,100AD99E,18,_malloc,_malloc,LIB,,,,,,ghidra,
+gameui,100AD9B0,44,__nh_malloc,__nh_malloc,LIB,,,,,,ghidra,
+gameui,100AD9DC,78,__heap_alloc,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(malloc.obj)"
 gameui,100ADA30,664,,,UNKNOWN,,,,TODO,,,
-gameui,100ADD65,72,,,UNKNOWN,,,,TODO,,,
-gameui,100ADDAD,312,,,UNKNOWN,,,,TODO,,,
-gameui,100ADEE5,81,,,UNKNOWN,,,,TODO,,,
+gameui,100ADD65,72,_free,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(free.obj)"
+gameui,100ADDAD,312,_realloc,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(realloc.obj)"
+gameui,100ADEE5,81,__snprintf,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(snprintf.obj)"
 gameui,100ADF40,129,,_strcmp,LIB,,,,,,ghidra,
-gameui,100ADFCC,111,,,UNKNOWN,,,,TODO,,,
-gameui,100AE03B,204,,,UNKNOWN,,,,TODO,,,
-gameui,100AE110,123,,_strlen,LIB,,,,,,ghidra,
+gameui,100ADFCC,111,_toupper,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(toupper.obj)"
+gameui,100AE03B,204,__toupper_lk,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(toupper.obj)"
+gameui,100AE110,123,_strlen,_strlen,LIB,,,,,,ghidra,
 gameui,100AE190,7,,,UNKNOWN,,,,TODO,,,
-gameui,100AE1A0,224,,,UNKNOWN,,,,TODO,,,
-gameui,100AE280,56,,_strncmp,LIB,,,,,,ghidra,
-gameui,100AE2C0,88,,_memset,LIB,,,,,,ghidra,
-gameui,100AE318,45,,,UNKNOWN,,,,TODO,,,
-gameui,100AE345,17,,,UNKNOWN,,,,TODO,,,
-gameui,100AE356,17,,__exit,LIB,,,,,,ghidra,
-gameui,100AE367,15,,,UNKNOWN,,,,TODO,,,
+gameui,100AE1A0,224,,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(mbscat.obj)"
+gameui,100AE280,56,_strncmp,_strncmp,LIB,,,,,,ghidra,
+gameui,100AE2C0,88,_memset,_memset,LIB,,,,,,ghidra,
+gameui,100AE318,45,__cinit,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(crt0dat.obj)"
+gameui,100AE345,17,_exit,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(crt0dat.obj)"
+gameui,100AE356,17,__exit,__exit,LIB,,,,,,ghidra,
+gameui,100AE367,15,__cexit,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(crt0dat.obj)"
 gameui,100AE385,163,,,UNKNOWN,,,,TODO,,,
-gameui,100AE42A,9,,,UNKNOWN,,,,TODO,,,
-gameui,100AE433,9,,,UNKNOWN,,,,TODO,,,
-gameui,100AE43C,26,,,UNKNOWN,,,,TODO,,,
-gameui,100AE456,340,,,UNKNOWN,,,,TODO,,,
-gameui,100AE5AA,78,,,UNKNOWN,,,,TODO,,,
-gameui,100AE5F8,44,,,UNKNOWN,,,,TODO,,,
+gameui,100AE42A,9,,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(crt0dat.obj)"
+gameui,100AE433,9,,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(crt0dat.obj)"
+gameui,100AE43C,26,__initterm,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(crt0dat.obj)"
+gameui,100AE456,340,_qsort,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(qsort.obj)"
+gameui,100AE5AA,78,_shortsort,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(qsort.obj)"
+gameui,100AE5F8,44,_swap,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(qsort.obj)"
 gameui,100AE630,664,,,UNKNOWN,,,,TODO,,,
-gameui,100AE970,133,,,UNKNOWN,,,,TODO,,,
-gameui,100AE9F0,126,,,UNKNOWN,,,,TODO,,,
-gameui,100AEA6E,18,,,UNKNOWN,,,,TODO,,,
-gameui,100AEAD9,37,,,UNKNOWN,,,,TODO,,,
-gameui,100AEAFE,29,,,UNKNOWN,,,,TODO,,,
-gameui,100AEB24,61,,,UNKNOWN,,,,TODO,,,
-gameui,100AEB61,112,,,UNKNOWN,,,,TODO,,,
-gameui,100AEBD1,65,,,UNKNOWN,,,,TODO,,,
-gameui,100AEC12,64,,,UNKNOWN,,,,TODO,,,
-gameui,100AEC60,47,,,UNKNOWN,,,,TODO,,,
+gameui,100AE970,133,_strstr,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(strstr.obj)"
+gameui,100AE9F0,126,__onexit,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(onexit.obj)"
+gameui,100AEA6E,18,_atexit,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(onexit.obj)"
+gameui,100AEAD9,37,_wcscpy,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(wcscat.obj)"
+gameui,100AEAFE,29,_wcslen,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(wcslen.obj)"
+gameui,100AEB24,61,_wcsncpy,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(wcsncpy.obj)"
+gameui,100AEB61,112,__snwprintf,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(snwprint.obj)"
+gameui,100AEBD1,65,_wcsstr,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(wcsstr.obj)"
+gameui,100AEC12,64,_wcsncat,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(wcsncat.obj)"
+gameui,100AEC60,47,__chkstk,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(chkstk.obj)"
 gameui,100AEC8F,45,,,UNKNOWN,,,,TODO,,,
-gameui,100AECC3,7,,,UNKNOWN,,,,TODO,,,
-gameui,100AECCA,7,,,UNKNOWN,,,,TODO,,,
-gameui,100AECD1,7,,,UNKNOWN,,,,TODO,,,
-gameui,100AECD8,79,,,UNKNOWN,,,,TODO,,,
-gameui,100AED27,54,,,UNKNOWN,,,,TODO,,,
-gameui,100AED77,84,,,UNKNOWN,,,,TODO,,,
-gameui,100AEDCB,37,,,UNKNOWN,,,,TODO,,,
-gameui,100AEDF0,182,,,UNKNOWN,,,,TODO,,,
+gameui,100AECC3,7,,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(trnsctrl.obj)"
+gameui,100AECCA,7,,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(trnsctrl.obj)"
+gameui,100AECD1,7,,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(trnsctrl.obj)"
+gameui,100AECD8,79,?_UnwindNestedFrames@@YGXPAUEHRegistrationNode@@PAUEHExceptionRecord@@@Z,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(trnsctrl.obj)"
+gameui,100AED27,54,___CxxFrameHandler,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(trnsctrl.obj)"
+gameui,100AED77,84,?_CallCatchBlock2@@YAPAXPAUEHRegistrationNode@@PBU_s_FuncInfo@@PAXHK@Z,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(trnsctrl.obj)"
+gameui,100AEDCB,37,?CatchGuardHandler@@YA?AW4_EXCEPTION_DISPOSITION@@PAUEHExceptionRecord@@PAUCatchGuardRN@@PAX2@Z,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(trnsctrl.obj)"
+gameui,100AEDF0,182,?_CallSETranslator@@YAHPAUEHExceptionRecord@@PAUEHRegistrationNode@@PAX2PBU_s_FuncInfo@@H1@Z,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(trnsctrl.obj)"
 gameui,100AEEA6,114,,,UNKNOWN,,,,TODO,,,
-gameui,100AEF1B,123,,,UNKNOWN,,,,TODO,,,
-gameui,100AEF98,32,,__global_unwind2,LIB,,,,,,ghidra,
+gameui,100AEF1B,123,?_GetRangeOfTrysToCheck@@YAPBU_s_TryBlockMapEntry@@PBU_s_FuncInfo@@HHPAI1@Z,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(trnsctrl.obj)"
+gameui,100AEF98,32,__global_unwind2,__global_unwind2,LIB,,,,,,ghidra,
 gameui,100AEFDA,104,,__local_unwind2,LIB,,,,,,ghidra,
-gameui,100AF042,35,,__abnormal_termination,LIB,,,,,,ghidra,
-gameui,100AF065,9,,__NLG_Notify1,LIB,,,,,,ghidra,
-gameui,100AF06E,24,,,UNKNOWN,,,,TODO,,,
-gameui,100AF086,87,,,UNKNOWN,,,,TODO,,,
+gameui,100AF042,35,__abnormal_termination,__abnormal_termination,LIB,,,,,,ghidra,
+gameui,100AF065,9,__NLG_Notify1,__NLG_Notify1,LIB,,,,,,ghidra,
+gameui,100AF06E,24,__NLG_Notify,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(exsup.obj)"
+gameui,100AF086,87,_atof,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(atof.obj)"
 gameui,100AF0F0,188,,,UNKNOWN,,,,TODO,,,
-gameui,100AF1AC,111,,,UNKNOWN,,,,TODO,,,
-gameui,100AF21B,80,,,UNKNOWN,,,,TODO,,,
-gameui,100AF33E,40,,,UNKNOWN,,,,TODO,,,
-gameui,100AF38E,46,,,UNKNOWN,,,,TODO,,,
-gameui,100AF4CF,11,,,UNKNOWN,,,,TODO,,,
-gameui,100AF51C,14,,,UNKNOWN,,,,TODO,,,
-gameui,100AF53B,14,,,UNKNOWN,,,,TODO,,,
-gameui,100AF557,17,,,UNKNOWN,,,,TODO,,,
-gameui,100AF568,17,,,UNKNOWN,,,,TODO,,,
-gameui,100AF5A4,49,,,UNKNOWN,,,,TODO,,,
-gameui,100AF5D5,76,,__fclose_lk,LIB,,,,,,ghidra,
-gameui,100AF621,47,,,UNKNOWN,,,,TODO,,,
-gameui,100AF650,232,,,UNKNOWN,,,,TODO,,,
-gameui,100AF738,34,,,UNKNOWN,,,,TODO,,,
-gameui,100AF75A,353,,,UNKNOWN,,,,TODO,,,
-gameui,100AF8BB,44,,,UNKNOWN,,,,TODO,,,
-gameui,100AF8E7,141,,,UNKNOWN,,,,TODO,,,
-gameui,100AF974,49,,,UNKNOWN,,,,TODO,,,
-gameui,100AF9A5,19,,,UNKNOWN,,,,TODO,,,
-gameui,100AF9B8,143,,,UNKNOWN,,,,TODO,,,
-gameui,100AFA47,149,,,UNKNOWN,,,,TODO,,,
-gameui,100AFADC,562,,,UNKNOWN,,,,TODO,,,
-gameui,100AFD0E,27,,,UNKNOWN,,,,TODO,,,
-gameui,100AFD29,250,,,UNKNOWN,,,,TODO,,,
-gameui,100AFE23,1007,,,UNKNOWN,,,,TODO,,,
-gameui,100B0212,39,,,UNKNOWN,,,,TODO,,,
-gameui,100B0239,111,,,UNKNOWN,,,,TODO,,,
-gameui,100B02A8,73,,,UNKNOWN,,,,TODO,,,
-gameui,100B02F1,719,,,UNKNOWN,,,,TODO,,,
-gameui,100B05C0,352,,,UNKNOWN,,,,TODO,,,
-gameui,100B0720,220,,,UNKNOWN,,,,TODO,,,
-gameui,100B0800,291,,_strncat,LIB,,,,,,ghidra,
-gameui,100B0930,39,,_strrchr,LIB,,,,,,ghidra,
-gameui,100B095F,111,,,UNKNOWN,,,,TODO,,,
-gameui,100B09CE,203,,,UNKNOWN,,,,TODO,,,
-gameui,100B0A99,223,,,UNKNOWN,,,,TODO,,,
-gameui,100B0B78,202,,,UNKNOWN,,,,TODO,,,
-gameui,100B0C42,40,,,UNKNOWN,,,,TODO,,,
-gameui,100B0C6A,52,,,UNKNOWN,,,,TODO,,,
+gameui,100AF1AC,111,__vsnwprintf,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(vsnwprnt.obj)"
+gameui,100AF21B,80,__vsnprintf,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(vsnprint.obj)"
+gameui,100AF33E,40,_isspace,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(_ctype.obj)"
+gameui,100AF38E,46,_isalnum,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(_ctype.obj)"
+gameui,100AF4CF,11,,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(abs.obj)"
+gameui,100AF51C,14,_iswdigit,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(_wctype.obj)"
+gameui,100AF53B,14,_iswspace,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(_wctype.obj)"
+gameui,100AF557,17,,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(_wctype.obj)"
+gameui,100AF568,17,,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(_wctype.obj)"
+gameui,100AF5A4,49,_fclose,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(fclose.obj)"
+gameui,100AF5D5,76,__fclose_lk,__fclose_lk,LIB,,,,,,ghidra,
+gameui,100AF621,47,,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(fread.obj)"
+gameui,100AF650,232,__fread_lk,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(fread.obj)"
+gameui,100AF738,34,_ftell,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(ftell.obj)"
+gameui,100AF75A,353,__ftell_lk,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(ftell.obj)"
+gameui,100AF8BB,44,_fseek,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(fseek.obj)"
+gameui,100AF8E7,141,__fseek_lk,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(fseek.obj)"
+gameui,100AF974,49,,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(fopen.obj)"
+gameui,100AF9A5,19,,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(fopen.obj)"
+gameui,100AF9B8,143,__Getdays,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(strftime.obj)"
+gameui,100AFA47,149,__Getmonths,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(strftime.obj)"
+gameui,100AFADC,562,__Gettnames,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(strftime.obj)"
+gameui,100AFD0E,27,_strftime,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(strftime.obj)"
+gameui,100AFD29,250,__Strftime,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(strftime.obj)"
+gameui,100AFE23,1007,__expandtime,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(strftime.obj)"
+gameui,100B0212,39,__store_str,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(strftime.obj)"
+gameui,100B0239,111,__store_num,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(strftime.obj)"
+gameui,100B02A8,73,__store_number,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(strftime.obj)"
+gameui,100B02F1,719,__store_winword,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(strftime.obj)"
+gameui,100B05C0,352,_localtime,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(localtim.obj)"
+gameui,100B0720,220,_time,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(time.obj)"
+gameui,100B0800,291,_strncat,_strncat,LIB,,,,,,ghidra,
+gameui,100B0930,39,_strrchr,_strrchr,LIB,,,,,,ghidra,
+gameui,100B095F,111,_tolower,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(tolower.obj)"
+gameui,100B09CE,203,__tolower_lk,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(tolower.obj)"
+gameui,100B0A99,223,__wcsicmp,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(wcsicmp.obj)"
+gameui,100B0B78,202,_asctime,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(asctime.obj)"
+gameui,100B0C42,40,_store_dt,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(asctime.obj)"
+gameui,100B0C6A,52,_sscanf,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(sscanf.obj)"
 gameui,100B0C9E,80,,,UNKNOWN,,,,TODO,,,
-gameui,100B0D20,34,,,UNKNOWN,,,,TODO,,,
-gameui,100B0D42,28,,,UNKNOWN,,,,TODO,,,
-gameui,100B0D63,24,,,UNKNOWN,,,,TODO,,,
-gameui,100B0D7B,24,,,UNKNOWN,,,,TODO,,,
-gameui,100B0D93,28,,,UNKNOWN,,,,TODO,,,
+gameui,100B0D20,34,??0__non_rtti_object@@QAE@PBD@Z,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(rtti.obj)"
+gameui,100B0D42,28,,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(rtti.obj)"
+gameui,100B0D63,24,,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(rtti.obj)"
+gameui,100B0D7B,24,,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(rtti.obj)"
+gameui,100B0D93,28,,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(rtti.obj)"
 gameui,100B0DB4,148,,,UNKNOWN,,,,TODO,,,
-gameui,100B0E7A,25,,,UNKNOWN,,,,TODO,,,
+gameui,100B0E7A,25,,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(rtti.obj)"
 gameui,100B0E93,229,,,UNKNOWN,,,,TODO,,,
-gameui,100B0FAA,24,,,UNKNOWN,,,,TODO,,,
-gameui,100B0FC2,28,,,UNKNOWN,,,,TODO,,,
-gameui,100B0FE3,24,,,UNKNOWN,,,,TODO,,,
-gameui,100B0FFB,26,,,UNKNOWN,,,,TODO,,,
-gameui,100B1015,90,,,UNKNOWN,,,,TODO,,,
-gameui,100B106F,249,,,UNKNOWN,,,,TODO,,,
-gameui,100B1168,312,,,UNKNOWN,,,,TODO,,,
-gameui,100B12A0,35,,,UNKNOWN,,,,TODO,,,
-gameui,100B12C3,44,,,UNKNOWN,,,,TODO,,,
-gameui,100B12EF,170,,,UNKNOWN,,,,TODO,,,
-gameui,100B1399,23,,,UNKNOWN,,,,TODO,,,
-gameui,100B13B0,517,,,UNKNOWN,,,,TODO,,,
-gameui,100B15B5,23,,,UNKNOWN,,,,TODO,,,
-gameui,100B15CC,81,,,UNKNOWN,,,,TODO,,,
-gameui,100B1620,208,,,UNKNOWN,,,,TODO,,,
-gameui,100B16F0,181,,,UNKNOWN,,,,TODO,,,
-gameui,100B17B0,257,,,UNKNOWN,,,,TODO,,,
-gameui,100B18C0,172,,_memcmp,LIB,,,,,,ghidra,
-gameui,100B196C,217,,,UNKNOWN,,,,TODO,,,
-gameui,100B1A45,157,,entry,ENGINE,,,,TODO,,ghidra,
+gameui,100B0FAA,24,,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(rtti.obj)"
+gameui,100B0FC2,28,,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(rtti.obj)"
+gameui,100B0FE3,24,,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(rtti.obj)"
+gameui,100B0FFB,26,?FindCompleteObject@@YAPAXPAPAX@Z,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(rtti.obj)"
+gameui,100B1015,90,?FindSITargetTypeInstance@@YAPBU_s_RTTIBaseClassDescriptor@@PAXPBU_s_RTTICompleteObjectLocator@@PAUTypeDescriptor@@H2@Z,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(rtti.obj)"
+gameui,100B106F,249,?FindMITargetTypeInstance@@YAPBU_s_RTTIBaseClassDescriptor@@PAXPBU_s_RTTICompleteObjectLocator@@PAUTypeDescriptor@@H2@Z,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(rtti.obj)"
+gameui,100B1168,312,?FindVITargetTypeInstance@@YAPBU_s_RTTIBaseClassDescriptor@@PAXPBU_s_RTTICompleteObjectLocator@@PAUTypeDescriptor@@H2@Z,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(rtti.obj)"
+gameui,100B12A0,35,?PMDtoOffset@@YAHPAXABUPMD@@@Z,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(rtti.obj)"
+gameui,100B12C3,44,,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(mkdir.obj)"
+gameui,100B12EF,170,_strtod,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(strtod.obj)"
+gameui,100B1399,23,,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(strtol.obj)"
+gameui,100B13B0,517,_strtoxl,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(strtol.obj)"
+gameui,100B15B5,23,,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(strtol.obj)"
+gameui,100B15CC,81,_vsprintf,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(vsprintf.obj)"
+gameui,100B1620,208,__stricmp,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(stricmp.obj)"
+gameui,100B16F0,181,_fabs,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(fabs.obj)"
+gameui,100B17B0,257,__strnicmp,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(strnicmp.obj)"
+gameui,100B18C0,172,_memcmp,_memcmp,LIB,,,,,,ghidra,
+gameui,100B196C,217,__CRT_INIT@12,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(dllcrt0.obj)"
+gameui,100B1A45,157,__DllMainCRTStartup@12,entry,LIB,,,,,,ghidra,"VC6 runtime library, bytes identical to LIBCMT.LIB(dllcrt0.obj)"
 gameui,100B1AE2,48,,__amsg_exit,LIB,,,,,,ghidra,
-gameui,100B1B15,582,,,UNKNOWN,,,,TODO,,,
-gameui,100B1D5B,283,,,UNKNOWN,,,,TODO,,,
-gameui,100B1E76,185,,,UNKNOWN,,,,TODO,,,
-gameui,100B1F2F,280,,,UNKNOWN,,,,TODO,,,
-gameui,100B204A,37,,,UNKNOWN,,,,TODO,,,
-gameui,100B206F,204,,,UNKNOWN,,,,TODO,,,
-gameui,100B213B,83,,,UNKNOWN,,,,TODO,,,
-gameui,100B218E,122,,,UNKNOWN,,,,TODO,,,
-gameui,100B2208,117,,,UNKNOWN,,,,TODO,,,
-gameui,100B227D,41,,,UNKNOWN,,,,TODO,,,
-gameui,100B22A6,41,,,UNKNOWN,,,,TODO,,,
-gameui,100B22CF,41,,,UNKNOWN,,,,TODO,,,
-gameui,100B22F8,41,,,UNKNOWN,,,,TODO,,,
-gameui,100B2321,53,,,UNKNOWN,,,,TODO,,,
-gameui,100B2356,33,,,UNKNOWN,,,,TODO,,,
-gameui,100B2377,125,,,UNKNOWN,,,,TODO,,,
-gameui,100B2400,20,,,UNKNOWN,,,,TODO,,,
+gameui,100B1B15,582,_setlocale,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(setlocal.obj)"
+gameui,100B1D5B,283,__setlocale_set_cat,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(setlocal.obj)"
+gameui,100B1E76,185,__setlocale_get_all,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(setlocal.obj)"
+gameui,100B1F2F,280,__expandlocale,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(setlocal.obj)"
+gameui,100B204A,37,__strcats,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(setlocal.obj)"
+gameui,100B206F,204,___lc_strtolc,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(setlocal.obj)"
+gameui,100B213B,83,___lc_lctostr,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(setlocal.obj)"
+gameui,100B218E,122,_towlower,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(towlower.obj)"
+gameui,100B2208,117,__towlower_lk,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(towlower.obj)"
+gameui,100B227D,41,_wcschr,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(wcschr.obj)"
+gameui,100B22A6,41,,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(wtox.obj)"
+gameui,100B22CF,41,,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(wtox.obj)"
+gameui,100B22F8,41,__wtoi64,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(wtox.obj)"
+gameui,100B2321,53,_wcscmp,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(wcscmp.obj)"
+gameui,100B2356,33,,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(getenv.obj)"
+gameui,100B2377,125,__getenv_lk,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(getenv.obj)"
+gameui,100B2400,20,,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(asin.obj)"
 gameui,100B2414,9,,,UNKNOWN,,,,TODO,,,
 gameui,100B241D,157,,,UNKNOWN,,,,TODO,,,
-gameui,100B24C0,25,,,UNKNOWN,,,,TODO,,,
+gameui,100B24C0,25,__CIpow,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(pow.obj)"
 gameui,100B24D9,9,,,UNKNOWN,,,,TODO,,,
 gameui,100B24E2,467,,,UNKNOWN,,,,TODO,,,
 gameui,100B26B5,40,,,UNKNOWN,,,,TODO,,,
-gameui,100B26EE,28,,,UNKNOWN,,,,TODO,,,
-gameui,100B270A,61,,,UNKNOWN,,,,TODO,,,
-gameui,100B2747,74,,,UNKNOWN,,,,TODO,,,
-gameui,100B2791,31,,exception::operator=,ENGINE,,,,TODO,,ghidra,
-gameui,100B27B0,22,,exception::~exception,ENGINE,,,,TODO,,ghidra,
-gameui,100B27D4,31,,,UNKNOWN,,,,TODO,,,
-gameui,100B27F3,58,,__CxxThrowException@8,LIB,,,,,,ghidra,
-gameui,100B282D,18,,,UNKNOWN,,,,TODO,,,
-gameui,100B283F,62,,,UNKNOWN,,,,TODO,,,
-gameui,100B287D,41,,,UNKNOWN,,,,TODO,,,
-gameui,100B28A6,90,,,UNKNOWN,,,,TODO,,,
-gameui,100B2966,62,,__fassign,LIB,,,,,,ghidra,
-gameui,100B29A4,97,,,UNKNOWN,,,,TODO,,,
-gameui,100B2A05,194,,,UNKNOWN,,,,TODO,,,
-gameui,100B2AC7,85,,,UNKNOWN,,,,TODO,,,
-gameui,100B2B1C,167,,,UNKNOWN,,,,TODO,,,
-gameui,100B2BC3,147,,,UNKNOWN,,,,TODO,,,
-gameui,100B2C56,81,,__cfltcvt,LIB,,,,,,ghidra,
-gameui,100B2CA7,37,,,UNKNOWN,,,,TODO,,,
-gameui,100B2CCC,41,,,UNKNOWN,,,,TODO,,,
-gameui,100B2CF5,108,,,UNKNOWN,,,,TODO,,,
-gameui,100B2D61,97,,,UNKNOWN,,,,TODO,,,
-gameui,100B2DC2,21,,,UNKNOWN,,,,TODO,,,
-gameui,100B2DEF,117,,,UNKNOWN,,,,TODO,,,
-gameui,100B2E70,52,,__allmul,LIB,,,,,,ghidra,
-gameui,100B2EA4,280,,,UNKNOWN,,,,TODO,,,
+gameui,100B26EE,28,,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(rtti.obj)"
+gameui,100B270A,61,??0exception@@QAE@ABQBD@Z,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(stdexcpt.obj)"
+gameui,100B2747,74,??0exception@@QAE@ABV0@@Z,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(stdexcpt.obj)"
+gameui,100B2791,31,??4exception@@QAEAAV0@ABV0@@Z,exception::operator=,LIB,,,,,,ghidra,"VC6 runtime library, bytes identical to LIBCMT.LIB(stdexcpt.obj)"
+gameui,100B27B0,22,??1exception@@UAE@XZ,exception::~exception,LIB,,,,,,ghidra,"VC6 runtime library, bytes identical to LIBCMT.LIB(stdexcpt.obj)"
+gameui,100B27D4,31,__EH_prolog,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(ehprolog.obj)"
+gameui,100B27F3,58,__CxxThrowException@8,__CxxThrowException@8,LIB,,,,,,ghidra,
+gameui,100B282D,18,__setdefaultprecision,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(fp8.obj)"
+gameui,100B283F,62,__ms_p5_test_fdiv,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(testfdiv.obj)"
+gameui,100B287D,41,__ms_p5_mp_test_fdiv,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(testfdiv.obj)"
+gameui,100B28A6,90,__forcdecpt,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(cvt.obj)"
+gameui,100B2966,62,__fassign,__fassign,LIB,,,,,,ghidra,
+gameui,100B29A4,97,__cftoe,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(cvt.obj)"
+gameui,100B2A05,194,__cftoe2,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(cvt.obj)"
+gameui,100B2AC7,85,__cftof,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(cvt.obj)"
+gameui,100B2B1C,167,__cftof2,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(cvt.obj)"
+gameui,100B2BC3,147,__cftog,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(cvt.obj)"
+gameui,100B2C56,81,__cfltcvt,__cfltcvt,LIB,,,,,,ghidra,
+gameui,100B2CA7,37,__shift,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(cvt.obj)"
+gameui,100B2CCC,41,__mtinitlocks,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(mlock.obj)"
+gameui,100B2CF5,108,__mtdeletelocks,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(mlock.obj)"
+gameui,100B2D61,97,__lock,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(mlock.obj)"
+gameui,100B2DC2,21,__unlock,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(mlock.obj)"
+gameui,100B2DEF,117,__isctype,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(isctype.obj)"
+gameui,100B2E70,52,__allmul,__allmul,LIB,,,,,,ghidra,
+gameui,100B2EA4,280,__flsbuf,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(_flsbuf.obj)"
 gameui,100B2FBC,1825,,,UNKNOWN,,,,TODO,,,
-gameui,100B36FD,53,,,UNKNOWN,,,,TODO,,,
-gameui,100B3732,49,,,UNKNOWN,,,,TODO,,,
-gameui,100B3763,56,,,UNKNOWN,,,,TODO,,,
-gameui,100B379B,13,,,UNKNOWN,,,,TODO,,,
-gameui,100B37A8,16,,,UNKNOWN,,,,TODO,,,
-gameui,100B37B8,14,,,UNKNOWN,,,,TODO,,,
-gameui,100B37C6,84,,,UNKNOWN,,,,TODO,,,
-gameui,100B381A,96,,,UNKNOWN,,,,TODO,,,
-gameui,100B387A,152,,,UNKNOWN,,,,TODO,,,
-gameui,100B3912,165,,,UNKNOWN,,,,TODO,,,
-gameui,100B39B7,691,,,UNKNOWN,,,,TODO,,,
-gameui,100B3C6A,535,,,UNKNOWN,,,,TODO,,,
-gameui,100B3E81,136,,,UNKNOWN,,,,TODO,,,
-gameui,100B3F09,40,,,UNKNOWN,,,,TODO,,,
-gameui,100B3F31,37,,,UNKNOWN,,,,TODO,,,
-gameui,100B3F56,45,,,UNKNOWN,,,,TODO,,,
-gameui,100B3F83,18,,__frnd,LIB,,,,,,ghidra,
-gameui,100B3F95,41,,,UNKNOWN,,,,TODO,,,
-gameui,100B3FFE,36,,,UNKNOWN,,,,TODO,,,
-gameui,100B4022,90,,,UNKNOWN,,,,TODO,,,
-gameui,100B407C,193,,,UNKNOWN,,,,TODO,,,
-gameui,100B413D,14,,,UNKNOWN,,,,TODO,,,
-gameui,100B414B,15,,,UNKNOWN,,,,TODO,,,
-gameui,100B415A,35,,,UNKNOWN,,,,TODO,,,
-gameui,100B417D,86,,,UNKNOWN,,,,TODO,,,
-gameui,100B41FD,27,,,UNKNOWN,,,,TODO,,,
-gameui,100B4218,60,,,UNKNOWN,,,,TODO,,,
-gameui,100B4254,117,,,UNKNOWN,,,,TODO,,,
-gameui,100B42E6,62,,,UNKNOWN,,,,TODO,,,
-gameui,100B4324,43,,,UNKNOWN,,,,TODO,,,
-gameui,100B434F,811,,,UNKNOWN,,,,TODO,,,
-gameui,100B467A,777,,,UNKNOWN,,,,TODO,,,
-gameui,100B4983,177,,,UNKNOWN,,,,TODO,,,
-gameui,100B4A34,251,,,UNKNOWN,,,,TODO,,,
-gameui,100B4B2F,758,,,UNKNOWN,,,,TODO,,,
-gameui,100B4EF6,815,,,UNKNOWN,,,,TODO,,,
+gameui,100B36FD,53,_write_char,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(output.obj)"
+gameui,100B3732,49,_write_multi_char,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(output.obj)"
+gameui,100B3763,56,_write_string,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(output.obj)"
+gameui,100B379B,13,_get_int_arg,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(cprintf.obj)"
+gameui,100B37A8,16,_get_int64_arg,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(cprintf.obj)"
+gameui,100B37B8,14,_get_short_arg,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(cprintf.obj)"
+gameui,100B37C6,84,__handle_qnan1,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(fpexcept.obj)"
+gameui,100B381A,96,__handle_qnan2,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(fpexcept.obj)"
+gameui,100B387A,152,__except1,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(fpexcept.obj)"
+gameui,100B3912,165,__except2,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(fpexcept.obj)"
+gameui,100B39B7,691,__raise_exc,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(fpexcept.obj)"
+gameui,100B3C6A,535,__handle_exc,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(fpexcept.obj)"
+gameui,100B3E81,136,__umatherr,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(fpexcept.obj)"
+gameui,100B3F09,40,__set_errno,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(fpexcept.obj)"
+gameui,100B3F31,37,__get_fname,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(fpexcept.obj)"
+gameui,100B3F56,45,__errcode,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(fpexcept.obj)"
+gameui,100B3F83,18,__frnd,__frnd,LIB,,,,,,ghidra,
+gameui,100B3F95,41,__set_exp,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(util.obj)"
+gameui,100B3FFE,36,__set_bexp,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(util.obj)"
+gameui,100B4022,90,__sptype,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(util.obj)"
+gameui,100B407C,193,__decomp,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(util.obj)"
+gameui,100B413D,14,__statfp,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(fpctrl.obj)"
+gameui,100B414B,15,__clrfp,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(fpctrl.obj)"
+gameui,100B415A,35,__ctrlfp,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(fpctrl.obj)"
+gameui,100B417D,86,__set_statfp,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(fpctrl.obj)"
+gameui,100B41FD,27,__callnewh,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(handler.obj)"
+gameui,100B4218,60,__heap_init,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(heapinit.obj)"
+gameui,100B4254,117,__heap_term,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(heapinit.obj)"
+gameui,100B42E6,62,___sbh_heap_init,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(sbheap.obj)"
+gameui,100B4324,43,___sbh_find_block,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(sbheap.obj)"
+gameui,100B434F,811,___sbh_free_block,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(sbheap.obj)"
+gameui,100B467A,777,___sbh_alloc_block,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(sbheap.obj)"
+gameui,100B4983,177,___sbh_alloc_new_region,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(sbheap.obj)"
+gameui,100B4A34,251,___sbh_alloc_new_group,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(sbheap.obj)"
+gameui,100B4B2F,758,___sbh_resize_block,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(sbheap.obj)"
+gameui,100B4EF6,815,___sbh_heap_check,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(sbheap.obj)"
 gameui,100B5225,511,,,UNKNOWN,,,,TODO,,,
-gameui,100B5449,43,,,UNKNOWN,,,,TODO,,,
-gameui,100B5474,69,,,UNKNOWN,,,,TODO,,,
+gameui,100B5449,43,_strncnt,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(a_cmp.obj)"
+gameui,100B5474,69,__msize,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(msize.obj)"
 gameui,100B54B9,1837,,,UNKNOWN,,,,TODO,,,
-gameui,100B5C06,32,,,UNKNOWN,,,,TODO,,,
-gameui,100B5C26,49,,,UNKNOWN,,,,TODO,,,
-gameui,100B5C57,57,,,UNKNOWN,,,,TODO,,,
-gameui,100B5C90,13,,,UNKNOWN,,,,TODO,,,
-gameui,100B5C9D,16,,,UNKNOWN,,,,TODO,,,
-gameui,100B5CAD,155,,,UNKNOWN,,,,TODO,,,
-gameui,100B5D48,435,,,UNKNOWN,,,,TODO,,,
-gameui,100B5EFB,170,,,UNKNOWN,,,,TODO,,,
-gameui,100B5FA5,93,,,UNKNOWN,,,,TODO,,,
+gameui,100B5C06,32,_write_char,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(woutput.obj)"
+gameui,100B5C26,49,_write_multi_char,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(output.obj)"
+gameui,100B5C57,57,_write_string,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(woutput.obj)"
+gameui,100B5C90,13,_get_int_arg,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(cprintf.obj)"
+gameui,100B5C9D,16,_get_int64_arg,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(cprintf.obj)"
+gameui,100B5CAD,155,___InternalCxxFrameHandler,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(frame.obj)"
+gameui,100B5D48,435,?FindHandler@@YAXPAUEHExceptionRecord@@PAUEHRegistrationNode@@PAU_CONTEXT@@PAXPBU_s_FuncInfo@@EH1@Z,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(frame.obj)"
+gameui,100B5EFB,170,?FindHandlerForForeignException@@YAXPAUEHExceptionRecord@@PAUEHRegistrationNode@@PAU_CONTEXT@@PAXPBU_s_FuncInfo@@HH1@Z,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(frame.obj)"
+gameui,100B5FA5,93,?TypeMatch@@YAHPBU_s_HandlerType@@PBU_s_CatchableType@@PBU_s_ThrowInfo@@@Z,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(frame.obj)"
 gameui,100B6002,132,,,UNKNOWN,,,,TODO,,,
-gameui,100B60B6,123,,,UNKNOWN,,,,TODO,,,
+gameui,100B60B6,123,?CatchIt@@YAXPAUEHExceptionRecord@@PAUEHRegistrationNode@@PAU_CONTEXT@@PAXPBU_s_FuncInfo@@PBU_s_HandlerType@@PBU_s_CatchableType@@PBU_s_TryBlockMapEntry@@H1E@Z,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(frame.obj)"
 gameui,100B6131,165,,,UNKNOWN,,,,TODO,,,
 gameui,100B61FE,78,,,UNKNOWN,,,,TODO,,,
 gameui,100B6276,440,,,UNKNOWN,,,,TODO,,,
 gameui,100B643A,86,,,UNKNOWN,,,,TODO,,,
-gameui,100B64A1,35,,,UNKNOWN,,,,TODO,,,
+gameui,100B64A1,35,?AdjustPointer@@YAPAXPAXABUPMD@@@Z,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(frame.obj)"
 gameui,100B64D0,76,,__CallSettingFrame@12,LIB,,,,,,ghidra,
-gameui,100B651C,84,,,UNKNOWN,,,,TODO,,,
-gameui,100B6570,30,,,UNKNOWN,,,,TODO,,,
-gameui,100B658E,19,,,UNKNOWN,,,,TODO,,,
-gameui,100B65A1,103,,,UNKNOWN,,,,TODO,,,
-gameui,100B6608,160,,,UNKNOWN,,,,TODO,,,
+gameui,100B651C,84,__mtinit,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(tidtable.obj)"
+gameui,100B6570,30,__mtterm,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(tidtable.obj)"
+gameui,100B658E,19,__initptd,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(tidtable.obj)"
+gameui,100B65A1,103,__getptd,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(tidtable.obj)"
+gameui,100B6608,160,__freeptd,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(tidtable.obj)"
 gameui,100B66B4,86,,,UNKNOWN,,,,TODO,,,
 gameui,100B672D,79,,,UNKNOWN,,,,TODO,,,
-gameui,100B6783,127,,,UNKNOWN,,,,TODO,,,
-gameui,100B6802,82,,,UNKNOWN,,,,TODO,,,
-gameui,100B6920,47,,,UNKNOWN,,,,TODO,,,
-gameui,100B694F,35,,,UNKNOWN,,,,TODO,,,
-gameui,100B6972,47,,,UNKNOWN,,,,TODO,,,
-gameui,100B69A1,35,,,UNKNOWN,,,,TODO,,,
-gameui,100B69C4,93,,,UNKNOWN,,,,TODO,,,
-gameui,100B6A21,131,,,UNKNOWN,,,,TODO,,,
-gameui,100B6AA4,43,,__freebuf,LIB,,,,,,ghidra,
-gameui,100B6ACF,47,,,UNKNOWN,,,,TODO,,,
-gameui,100B6AFE,46,,,UNKNOWN,,,,TODO,,,
-gameui,100B6B2C,92,,,UNKNOWN,,,,TODO,,,
-gameui,100B6B91,164,,,UNKNOWN,,,,TODO,,,
-gameui,100B6C35,220,,,UNKNOWN,,,,TODO,,,
-gameui,100B6D11,101,,,UNKNOWN,,,,TODO,,,
-gameui,100B6D76,473,,,UNKNOWN,,,,TODO,,,
-gameui,100B6F4F,115,,,UNKNOWN,,,,TODO,,,
-gameui,100B6FC2,9,,,UNKNOWN,,,,TODO,,,
-gameui,100B6FCB,9,,,UNKNOWN,,,,TODO,,,
-gameui,100B6FD4,444,,,UNKNOWN,,,,TODO,,,
-gameui,100B7190,84,,,UNKNOWN,,,,TODO,,,
-gameui,100B71E4,101,,,UNKNOWN,,,,TODO,,,
-gameui,100B7249,115,,,UNKNOWN,,,,TODO,,,
-gameui,100B72BC,368,,,UNKNOWN,,,,TODO,,,
-gameui,100B742C,200,,,UNKNOWN,,,,TODO,,,
-gameui,100B74F4,46,,,UNKNOWN,,,,TODO,,,
-gameui,100B7538,647,,,UNKNOWN,,,,TODO,,,
-gameui,100B77BF,33,,,UNKNOWN,,,,TODO,,,
-gameui,100B77E0,428,,,UNKNOWN,,,,TODO,,,
-gameui,100B798C,320,,,UNKNOWN,,,,TODO,,,
-gameui,100B7ACC,266,,,UNKNOWN,,,,TODO,,,
-gameui,100B7BD6,194,,,UNKNOWN,,,,TODO,,,
-gameui,100B7C98,2597,,,UNKNOWN,,,,TODO,,,
-gameui,100B86BD,55,,,UNKNOWN,,,,TODO,,,
-gameui,100B86F4,26,,,UNKNOWN,,,,TODO,,,
-gameui,100B870E,23,,,UNKNOWN,,,,TODO,,,
-gameui,100B8725,36,,,UNKNOWN,,,,TODO,,,
-gameui,100B8811,27,,,UNKNOWN,,,,TODO,,,
-gameui,100B882C,185,,,UNKNOWN,,,,TODO,,,
-gameui,100B88E5,153,,,UNKNOWN,,,,TODO,,,
-gameui,100B897E,436,,,UNKNOWN,,,,TODO,,,
-gameui,100B8B32,306,,,UNKNOWN,,,,TODO,,,
-gameui,100B8C64,6,,,UNKNOWN,,,,TODO,,,
-gameui,100B8C6A,57,,,UNKNOWN,,,,TODO,,,
-gameui,100B8CA3,339,,,UNKNOWN,,,,TODO,,,
-gameui,100B8EB8,846,,,UNKNOWN,,,,TODO,,,
-gameui,100B9206,400,,,UNKNOWN,,,,TODO,,,
-gameui,100B956B,55,,,UNKNOWN,,,,TODO,,,
-gameui,100B966D,290,,,UNKNOWN,,,,TODO,,,
-gameui,100B978F,55,,,UNKNOWN,,,,TODO,,,
-gameui,100B97C6,78,,,UNKNOWN,,,,TODO,,,
-gameui,100B9814,581,,,UNKNOWN,,,,TODO,,,
-gameui,100B9A60,62,,,UNKNOWN,,,,TODO,,,
-gameui,100B9AA0,58,,,UNKNOWN,,,,TODO,,,
-gameui,100B9ADA,381,,,UNKNOWN,,,,TODO,,,
-gameui,100B9C57,88,,,UNKNOWN,,,,TODO,,,
-gameui,100B9CAF,135,,,UNKNOWN,,,,TODO,,,
-gameui,100B9D36,516,,,UNKNOWN,,,,TODO,,,
-gameui,100B9F3A,86,,,UNKNOWN,,,,TODO,,,
-gameui,100B9F90,189,,,UNKNOWN,,,,TODO,,,
-gameui,100BA04D,55,,,UNKNOWN,,,,TODO,,,
-gameui,100BA084,134,,,UNKNOWN,,,,TODO,,,
-gameui,100BA10A,26,,,UNKNOWN,,,,TODO,,,
-gameui,100BA124,102,,,UNKNOWN,,,,TODO,,,
-gameui,100BA18A,31,,,UNKNOWN,,,,TODO,,,
-gameui,100BA1A9,98,,,UNKNOWN,,,,TODO,,,
-gameui,100BA20B,54,,,UNKNOWN,,,,TODO,,,
-gameui,100BA241,230,,,UNKNOWN,,,,TODO,,,
-gameui,100BA327,57,,,UNKNOWN,,,,TODO,,,
-gameui,100BA360,33,,,UNKNOWN,,,,TODO,,,
+gameui,100B6783,127,__fltin2,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(cfin.obj)"
+gameui,100B6802,82,_iswctype,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(iswctype.obj)"
+gameui,100B6920,47,,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(_file.obj)"
+gameui,100B694F,35,,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(_file.obj)"
+gameui,100B6972,47,,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(_file.obj)"
+gameui,100B69A1,35,,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(_file.obj)"
+gameui,100B69C4,93,__close,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(close.obj)"
+gameui,100B6A21,131,__close_lk,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(close.obj)"
+gameui,100B6AA4,43,__freebuf,__freebuf,LIB,,,,,,ghidra,
+gameui,100B6ACF,47,_fflush,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(fflush.obj)"
+gameui,100B6AFE,46,__fflush_lk,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(fflush.obj)"
+gameui,100B6B2C,92,__flush,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(fflush.obj)"
+gameui,100B6B91,164,_flsall,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(fflush.obj)"
+gameui,100B6C35,220,__filbuf,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(_filbuf.obj)"
+gameui,100B6D11,101,,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(lseek.obj)"
+gameui,100B6D76,473,__read_lk,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(read.obj)"
+gameui,100B6F4F,115,__dosmaperr,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(dosmap.obj)"
+gameui,100B6FC2,9,__errno,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(dosmap.obj)"
+gameui,100B6FCB,9,___doserrno,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(dosmap.obj)"
+gameui,100B6FD4,444,__ioinit,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(ioinit.obj)"
+gameui,100B7190,84,__ioterm,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(ioinit.obj)"
+gameui,100B71E4,101,,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(lseek.obj)"
+gameui,100B7249,115,__lseek_lk,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(lseek.obj)"
+gameui,100B72BC,368,__openfile,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(_open.obj)"
+gameui,100B742C,200,__getstream,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(stream.obj)"
+gameui,100B74F4,46,___tzset,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(tzset.obj)"
+gameui,100B7538,647,__tzset_lk,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(tzset.obj)"
+gameui,100B77BF,33,__isindst,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(tzset.obj)"
+gameui,100B77E0,428,__isindst_lk,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(tzset.obj)"
+gameui,100B798C,320,_cvtdate,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(tzset.obj)"
+gameui,100B7ACC,266,_gmtime,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(gmtime.obj)"
+gameui,100B7BD6,194,___loctotime_t,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(dtoxtime.obj)"
+gameui,100B7C98,2597,__input,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(input.obj)"
+gameui,100B86BD,55,__hextodec,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(cscanf.obj)"
+gameui,100B86F4,26,__inc,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(input.obj)"
+gameui,100B870E,23,__un_inc,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(input.obj)"
+gameui,100B8725,36,__whiteout,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(input.obj)"
+gameui,100B8811,27,__seh_longjmp_unwind@4,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(exsup3.obj)"
+gameui,100B882C,185,__setenvp,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(stdenvp.obj)"
+gameui,100B88E5,153,__setargv,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(stdargv.obj)"
+gameui,100B897E,436,_parse_cmdline,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(stdargv.obj)"
+gameui,100B8B32,306,___crtGetEnvironmentStringsA,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(a_env.obj)"
+gameui,100B8C64,6,_DllMain@12,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(dllmain.obj)"
+gameui,100B8C6A,57,__FF_MSGBANNER,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(crt0msg.obj)"
+gameui,100B8CA3,339,__NMSG_WRITE,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(crt0msg.obj)"
+gameui,100B8EB8,846,__get_lc_time,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(inittime.obj)"
+gameui,100B9206,400,__free_lc_time,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(inittime.obj)"
+gameui,100B956B,55,_fix_grouping,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(initmon.obj)"
+gameui,100B966D,290,__get_lc_lconv,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(initmon.obj)"
+gameui,100B978F,55,_fix_grouping,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(initmon.obj)"
+gameui,100B97C6,78,__free_lc_lconv,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(initmon.obj)"
+gameui,100B9814,581,___init_ctype,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(initctyp.obj)"
+gameui,100B9A60,62,_strcspn,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(strcspn.obj)"
+gameui,100B9AA0,58,_strpbrk,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(strpbrk.obj)"
+gameui,100B9ADA,381,___get_qualified_locale,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(getqloc.obj)"
+gameui,100B9C57,88,_TranslateName,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(getqloc.obj)"
+gameui,100B9CAF,135,_GetLcidFromLangCountry,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(getqloc.obj)"
+gameui,100B9D36,516,_LangCountryEnumProc@4,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(getqloc.obj)"
+gameui,100B9F3A,86,_GetLcidFromLanguage,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(getqloc.obj)"
+gameui,100B9F90,189,_LanguageEnumProc@4,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(getqloc.obj)"
+gameui,100BA04D,55,_GetLcidFromCountry,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(getqloc.obj)"
+gameui,100BA084,134,_CountryEnumProc@4,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(getqloc.obj)"
+gameui,100BA10A,26,_GetLcidFromDefault,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(getqloc.obj)"
+gameui,100BA124,102,_ProcessCodePage,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(getqloc.obj)"
+gameui,100BA18A,31,_TestDefaultCountry,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(getqloc.obj)"
+gameui,100BA1A9,98,_TestDefaultLanguage,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(getqloc.obj)"
+gameui,100BA20B,54,_IsThisWindowsNT,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(getqloc.obj)"
+gameui,100BA241,230,_crtGetLocaleInfoA@16,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(getqloc.obj)"
+gameui,100BA327,57,_LcidFromHexString,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(getqloc.obj)"
+gameui,100BA360,33,_GetPrimaryLen,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(getqloc.obj)"
 gameui,100BA381,491,,,UNKNOWN,,,,TODO,,,
-gameui,100BA58A,48,,,UNKNOWN,,,,TODO,,,
-gameui,100BA5BA,63,,__mbsnbicoll,LIB,,,,,,ghidra,
-gameui,100BA5F9,110,,,UNKNOWN,,,,TODO,,,
-gameui,100BA840,23,,,UNKNOWN,,,,TODO,,,
-gameui,100BA857,60,,__startOneArgErrorHandling,LIB,,,,,,ghidra,
-gameui,100BA8A0,21,,,UNKNOWN,,,,TODO,,,
-gameui,100BA8B5,23,,,UNKNOWN,,,,TODO,,,
-gameui,100BA8CC,25,,,UNKNOWN,,,,TODO,,,
-gameui,100BA8E5,67,,__fload_withFB,LIB,,,,,,ghidra,
-gameui,100BA928,22,,,UNKNOWN,,,,TODO,,,
-gameui,100BA93E,13,,,UNKNOWN,,,,TODO,,,
-gameui,100BA94B,42,,__math_exit,LIB,,,,,,ghidra,
-gameui,100BA989,163,,,UNKNOWN,,,,TODO,,,
-gameui,100BAC37,304,,,UNKNOWN,,,,TODO,,,
-gameui,100BAD67,101,,,UNKNOWN,,,,TODO,,,
-gameui,100BADCC,70,,,UNKNOWN,,,,TODO,,,
-gameui,100BAE30,19,,,UNKNOWN,,,,TODO,,,
-gameui,100BAE43,20,,,UNKNOWN,,,,TODO,,,
-gameui,100BAE57,53,,,UNKNOWN,,,,TODO,,,
-gameui,100BAE8C,22,,,UNKNOWN,,,,TODO,,,
-gameui,100BAECD,146,,,UNKNOWN,,,,TODO,,,
-gameui,100BAF5F,137,,,UNKNOWN,,,,TODO,,,
-gameui,100BAFE8,53,,,UNKNOWN,,,,TODO,,,
-gameui,100BB01D,73,,,UNKNOWN,,,,TODO,,,
-gameui,100BB066,86,,,UNKNOWN,,,,TODO,,,
-gameui,100BB0BC,140,,,UNKNOWN,,,,TODO,,,
-gameui,100BB148,27,,,UNKNOWN,,,,TODO,,,
-gameui,100BB163,12,,,UNKNOWN,,,,TODO,,,
-gameui,100BB16F,27,,,UNKNOWN,,,,TODO,,,
-gameui,100BB18A,141,,,UNKNOWN,,,,TODO,,,
-gameui,100BB217,364,,,UNKNOWN,,,,TODO,,,
-gameui,100BB383,22,,,UNKNOWN,,,,TODO,,,
-gameui,100BB399,22,,,UNKNOWN,,,,TODO,,,
-gameui,100BB3AF,122,,,UNKNOWN,,,,TODO,,,
-gameui,100BB429,45,,,UNKNOWN,,,,TODO,,,
-gameui,100BB456,46,,,UNKNOWN,,,,TODO,,,
-gameui,100BB484,45,,,UNKNOWN,,,,TODO,,,
-gameui,100BB4B1,119,,,UNKNOWN,,,,TODO,,,
-gameui,100BB528,92,,,UNKNOWN,,,,TODO,,,
-gameui,100BB584,182,,,UNKNOWN,,,,TODO,,,
-gameui,100BB63A,9,,__fptrap,LIB,,,,,,ghidra,
+gameui,100BA58A,48,_wcsncnt,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(w_cmp.obj)"
+gameui,100BA5BA,63,__mbsnbicoll,__mbsnbicoll,LIB,,,,,,ghidra,
+gameui,100BA5F9,110,___wtomb_environ,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(wtombenv.obj)"
+gameui,100BA840,23,__startTwoArgErrorHandling,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(genexcep.obj)"
+gameui,100BA857,60,__startOneArgErrorHandling,__startOneArgErrorHandling,LIB,,,,,,ghidra,
+gameui,100BA8A0,21,__twoToTOS,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(common.obj)"
+gameui,100BA8B5,23,__load_CW,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(common.obj)"
+gameui,100BA8CC,25,__convertTOStoQNaN,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(common.obj)"
+gameui,100BA8E5,67,__fload_withFB,__fload_withFB,LIB,,,,,,ghidra,
+gameui,100BA928,22,__checkTOS_withFB,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(common.obj)"
+gameui,100BA93E,13,__fast_exit,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(common.obj)"
+gameui,100BA94B,42,__math_exit,__math_exit,LIB,,,,,,ghidra,
+gameui,100BA989,163,__check_range_exit,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(common.obj)"
+gameui,100BAC37,304,__powhlp,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(powhlp.obj)"
+gameui,100BAD67,101,__d_inttype,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(powhlp.obj)"
+gameui,100BADCC,70,?__CxxUnhandledExceptionFilter@@YGJPAU_EXCEPTION_POINTERS@@@Z,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(unhandld.obj)"
+gameui,100BAE30,19,__statusfp,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(ieee87.obj)"
+gameui,100BAE43,20,__clearfp,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(ieee87.obj)"
+gameui,100BAE57,53,__control87,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(ieee87.obj)"
+gameui,100BAE8C,22,__controlfp,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(ieee87.obj)"
+gameui,100BAECD,146,__abstract_cw,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(ieee87.obj)"
+gameui,100BAF5F,137,__hw_cw,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(ieee87.obj)"
+gameui,100BAFE8,53,__abstract_sw,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(ieee87.obj)"
+gameui,100BB01D,73,__ZeroTail,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(intrncvt.obj)"
+gameui,100BB066,86,__IncMan,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(intrncvt.obj)"
+gameui,100BB0BC,140,__RoundMan,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(intrncvt.obj)"
+gameui,100BB148,27,__CopyMan,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(intrncvt.obj)"
+gameui,100BB163,12,__FillZeroMan,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(intrncvt.obj)"
+gameui,100BB16F,27,__IsZeroMan,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(intrncvt.obj)"
+gameui,100BB18A,141,__ShrMan,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(intrncvt.obj)"
+gameui,100BB217,364,__ld12cvt,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(intrncvt.obj)"
+gameui,100BB383,22,,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(intrncvt.obj)"
+gameui,100BB399,22,,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(intrncvt.obj)"
+gameui,100BB3AF,122,__ld12told,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(intrncvt.obj)"
+gameui,100BB429,45,,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(intrncvt.obj)"
+gameui,100BB456,46,__atoldbl,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(intrncvt.obj)"
+gameui,100BB484,45,,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(intrncvt.obj)"
+gameui,100BB4B1,119,__fptostr,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(_fptostr.obj)"
+gameui,100BB528,92,__fltout2,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(cfout.obj)"
+gameui,100BB584,182,___dtold,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(cfout.obj)"
+gameui,100BB63A,9,__fptrap,__fptrap,LIB,,,,,,ghidra,
 gameui,100BB643,318,,,UNKNOWN,,,,TODO,,,
-gameui,100BB78C,101,,,UNKNOWN,,,,TODO,,,
-gameui,100BB7F1,395,,,UNKNOWN,,,,TODO,,,
-gameui,100BB97C,68,,,UNKNOWN,,,,TODO,,,
-gameui,100BB9C0,41,,,UNKNOWN,,,,TODO,,,
-gameui,100BB9E9,89,,,UNKNOWN,,,,TODO,,,
-gameui,100BBA42,105,,,UNKNOWN,,,,TODO,,,
-gameui,100BBAB0,104,,__aulldiv,LIB,,,,,,ghidra,
-gameui,100BBB20,117,,__aullrem,LIB,,,,,,ghidra,
-gameui,100BBB95,3,,,UNKNOWN,,,,TODO,,,
-gameui,100BBB98,93,,,UNKNOWN,,,,TODO,,,
-gameui,100BBBF5,201,,,UNKNOWN,,,,TODO,,,
-gameui,100BBCE8,249,,,UNKNOWN,,,,TODO,,,
-gameui,100BBDF1,28,,,UNKNOWN,,,,TODO,,,
-gameui,100BBE0D,28,,,UNKNOWN,,,,TODO,,,
-gameui,100BBE29,24,,,UNKNOWN,,,,TODO,,,
-gameui,100BBE41,141,,,UNKNOWN,,,,TODO,,,
-gameui,100BBECE,318,,,UNKNOWN,,,,TODO,,,
-gameui,100BC00C,58,,,UNKNOWN,,,,TODO,,,
-gameui,100BC046,23,,,UNKNOWN,,,,TODO,,,
+gameui,100BB78C,101,,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(lseek.obj)"
+gameui,100BB7F1,395,__write_lk,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(write.obj)"
+gameui,100BB97C,68,__getbuf,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(_getbuf.obj)"
+gameui,100BB9C0,41,__isatty,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(isatty.obj)"
+gameui,100BB9E9,89,_wctomb,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(wctomb.obj)"
+gameui,100BBA42,105,__wctomb_lk,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(wctomb.obj)"
+gameui,100BBAB0,104,__aulldiv,__aulldiv,LIB,,,,,,ghidra,
+gameui,100BBB20,117,__aullrem,__aullrem,LIB,,,,,,ghidra,
+gameui,100BBB95,3,,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(initcoll.obj)"
+gameui,100BBB98,93,,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(mbstowcs.obj)"
+gameui,100BBBF5,201,__mbtowc_lk,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(mbtowc.obj)"
+gameui,100BBCE8,249,__putwc_lk,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(fputwc.obj)"
+gameui,100BBDF1,28,,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(validate.obj)"
+gameui,100BBE0D,28,,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(validate.obj)"
+gameui,100BBE29,24,?_ValidateExecute@@YAHP6GHXZ@Z,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(validate.obj)"
+gameui,100BBE41,141,_calloc,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(calloc.obj)"
+gameui,100BBECE,318,__XcptFilter,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(winxfltr.obj)"
+gameui,100BC00C,58,_xcptlookup,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(winxfltr.obj)"
+gameui,100BC046,23,_abort,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(abort.obj)"
 gameui,100BC05D,1185,,,UNKNOWN,,,,TODO,,,
-gameui,100BC52E,60,,,UNKNOWN,,,,TODO,,,
+gameui,100BC52E,60,___STRINGTOLD,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(strgtold.obj)"
 gameui,100BC56A,423,,,UNKNOWN,,,,TODO,,,
-gameui,100BC7B0,291,,,UNKNOWN,,,,TODO,,,
-gameui,100BC8D3,124,,,UNKNOWN,,,,TODO,,,
-gameui,100BC94F,127,,,UNKNOWN,,,,TODO,,,
-gameui,100BC9CE,66,,,UNKNOWN,,,,TODO,,,
-gameui,100BCA10,167,,,UNKNOWN,,,,TODO,,,
-gameui,100BCAB7,95,,,UNKNOWN,,,,TODO,,,
-gameui,100BCB16,34,,,UNKNOWN,,,,TODO,,,
-gameui,100BCB38,147,,,UNKNOWN,,,,TODO,,,
-gameui,100BCBE2,719,,,UNKNOWN,,,,TODO,,,
-gameui,100BCEC0,31,,__allshl,LIB,,,,,,ghidra,
-gameui,100BCF08,110,,,UNKNOWN,,,,TODO,,,
-gameui,100BCF76,429,,,UNKNOWN,,,,TODO,,,
-gameui,100BD123,74,,,UNKNOWN,,,,TODO,,,
-gameui,100BD16D,51,,,UNKNOWN,,,,TODO,,,
-gameui,100BD1A0,41,,,UNKNOWN,,,,TODO,,,
-gameui,100BD1C9,389,,,UNKNOWN,,,,TODO,,,
-gameui,100BD35E,28,,,UNKNOWN,,,,TODO,,,
-gameui,100BD37A,137,,,UNKNOWN,,,,TODO,,,
-gameui,100BD403,312,,,UNKNOWN,,,,TODO,,,
-gameui,100BD541,45,,,UNKNOWN,,,,TODO,,,
-gameui,100BD56E,92,,,UNKNOWN,,,,TODO,,,
-gameui,100BD5CA,42,,,UNKNOWN,,,,TODO,,,
-gameui,100BD60F,49,,,UNKNOWN,,,,TODO,,,
-gameui,100BD640,134,,,UNKNOWN,,,,TODO,,,
-gameui,100BD6C6,27,,,UNKNOWN,,,,TODO,,,
+gameui,100BC7B0,291,__alloc_osfhnd,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(osfinfo.obj)"
+gameui,100BC8D3,124,__set_osfhnd,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(osfinfo.obj)"
+gameui,100BC94F,127,__free_osfhnd,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(osfinfo.obj)"
+gameui,100BC9CE,66,__get_osfhandle,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(osfinfo.obj)"
+gameui,100BCA10,167,__open_osfhandle,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(osfinfo.obj)"
+gameui,100BCAB7,95,__lock_fhandle,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(osfinfo.obj)"
+gameui,100BCB16,34,__unlock_fhandle,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(osfinfo.obj)"
+gameui,100BCB38,147,__commit,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(commit.obj)"
+gameui,100BCBE2,719,__sopen,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(open.obj)"
+gameui,100BCEC0,31,__allshl,__allshl,LIB,,,,,,ghidra,
+gameui,100BCF08,110,__ungetc_lk,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(ungetc.obj)"
+gameui,100BCF76,429,__setmbcp,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(mbctype.obj)"
+gameui,100BD123,74,_getSystemCP,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(mbctype.obj)"
+gameui,100BD16D,51,_CPtoLCID,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(mbctype.obj)"
+gameui,100BD1A0,41,_setSBCS,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(mbctype.obj)"
+gameui,100BD1C9,389,_setSBUpLow,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(mbctype.obj)"
+gameui,100BD35E,28,___initmbctable,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(mbctype.obj)"
+gameui,100BD37A,137,___crtMessageBoxA,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(crtmbox.obj)"
+gameui,100BD403,312,___getlocaleinfo,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(inithelp.obj)"
+gameui,100BD541,45,__itoa,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(xtoa.obj)"
+gameui,100BD56E,92,_xtoa,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(xtoa.obj)"
+gameui,100BD5CA,42,__ltoa,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(xtoa.obj)"
+gameui,100BD60F,49,__i64toa,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(xtoa.obj)"
+gameui,100BD640,134,_x64toa@20,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(xtoa.obj)"
+gameui,100BD6C6,27,__ui64toa,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(xtoa.obj)"
 gameui,100BD6E1,597,,,UNKNOWN,,,,TODO,,,
-gameui,100BD95E,43,,,UNKNOWN,,,,TODO,,,
-gameui,100BD989,391,,,UNKNOWN,,,,TODO,,,
-gameui,100BDB10,88,,,UNKNOWN,,,,TODO,,,
-gameui,100BDB68,103,,,UNKNOWN,,,,TODO,,,
-gameui,100BDBCF,208,,,UNKNOWN,,,,TODO,,,
-gameui,100BEA2B,33,,__copysign,LIB,,,,,,ghidra,
-gameui,100BEA4C,37,,,UNKNOWN,,,,TODO,,,
-gameui,100BEA87,231,,,UNKNOWN,,,,TODO,,,
-gameui,100BEB6E,661,,,UNKNOWN,,,,TODO,,,
-gameui,100BEE45,146,,,UNKNOWN,,,,TODO,,,
-gameui,100BEED7,386,,,UNKNOWN,,,,TODO,,,
-gameui,100BF0BB,386,,,UNKNOWN,,,,TODO,,,
-gameui,100BF23D,61,,,UNKNOWN,,,,TODO,,,
-gameui,100BF28C,33,,,UNKNOWN,,,,TODO,,,
-gameui,100BF2AD,94,,___add_12,LIB,,,,,,ghidra,
-gameui,100BF30B,46,,,UNKNOWN,,,,TODO,,,
-gameui,100BF339,45,,,UNKNOWN,,,,TODO,,,
-gameui,100BF366,199,,,UNKNOWN,,,,TODO,,,
-gameui,100BF42D,659,,,UNKNOWN,,,,TODO,,,
-gameui,100BF6C0,295,,,UNKNOWN,,,,TODO,,,
-gameui,100BF7E7,544,,,UNKNOWN,,,,TODO,,,
-gameui,100BFA07,124,,,UNKNOWN,,,,TODO,,,
-gameui,100BFA83,89,,,UNKNOWN,,,,TODO,,,
-gameui,100BFADC,293,,,UNKNOWN,,,,TODO,,,
+gameui,100BD95E,43,_strncnt,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(a_cmp.obj)"
+gameui,100BD989,391,___crtsetenv,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(setenv.obj)"
+gameui,100BDB10,88,_findenv,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(setenv.obj)"
+gameui,100BDB68,103,_copy_environ,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(setenv.obj)"
+gameui,100BDBCF,208,__87except,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(87except.obj)"
+gameui,100BEA2B,33,__copysign,__copysign,LIB,,,,,,ghidra,
+gameui,100BEA4C,37,__chgsign,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(ieeemisc.obj)"
+gameui,100BEA87,231,__logb,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(ieeemisc.obj)"
+gameui,100BEB6E,661,__nextafter,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(ieeemisc.obj)"
+gameui,100BEE45,146,__fpclass,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(ieeemisc.obj)"
+gameui,100BEED7,386,_signal,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(winsig.obj)"
+gameui,100BF0BB,386,_raise,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(winsig.obj)"
+gameui,100BF23D,61,_siglookup,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(winsig.obj)"
+gameui,100BF28C,33,___addl,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(mantold.obj)"
+gameui,100BF2AD,94,___add_12,___add_12,LIB,,,,,,ghidra,
+gameui,100BF30B,46,___shl_12,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(mantold.obj)"
+gameui,100BF339,45,___shr_12,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(mantold.obj)"
+gameui,100BF366,199,___mtold12,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(mantold.obj)"
+gameui,100BF42D,659,_$I10_OUTPUT,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(x10fout.obj)"
+gameui,100BF6C0,295,__flswbuf,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(_flswbuf.obj)"
+gameui,100BF7E7,544,___ld12mul,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(tenpow.obj)"
+gameui,100BFA07,124,___multtenpow12,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(tenpow.obj)"
+gameui,100BFA83,89,,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(chsize.obj)"
+gameui,100BFADC,293,__chsize_lk,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(chsize.obj)"
 gameui,100BFC01,264,,,UNKNOWN,,,,TODO,,,
 gameui,100BFD14,275,,,UNKNOWN,,,,TODO,,,
-gameui,100BFE32,151,,,UNKNOWN,,,,TODO,,,
-gameui,100BFEC9,43,,,UNKNOWN,,,,TODO,,,
-gameui,100BFEF4,486,,,UNKNOWN,,,,TODO,,,
-gameui,100C00DA,89,,,UNKNOWN,,,,TODO,,,
-gameui,100C0133,97,,,UNKNOWN,,,,TODO,,,
-gameui,100C0338,308,,,UNKNOWN,,,,TODO,,,
+gameui,100BFE32,151,__mbschr,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(mbschr.obj)"
+gameui,100BFEC9,43,,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(mbsdup.obj)"
+gameui,100BFEF4,486,_ldexp,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(ldexp.obj)"
+gameui,100C00DA,89,,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(chsize.obj)"
+gameui,100C0133,97,__setmode_lk,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(setmode.obj)"
+gameui,100C0338,308,__strlwr,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(strlwr.obj)"
 hl,100010A0,24,??0CVoiceGameMgr@@QAE@XZ,CVoiceGameMgr::CVoiceGameMgr,UNKNOWN,game_shared/voice_gamemgr.cpp,,,MATCHED,100,hl_manual.csv,
 hl,100010C0,7,??1CVoiceGameMgr@@UAE@XZ,CVoiceGameMgr::~CVoiceGameMgr,HLSDK,game_shared/voice_gamemgr.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100010D0,48,??4CBitVecAccessor@@QAEXH@Z,CBitVecAccessor::operator=,HLSDK,game_shared/voice_gamemgr.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,refbytes:paranoia:game_shared__voice_gamemgr.obj:score0,
@@ -32545,9 +32545,9 @@ hw,01E8A2FC,498,,,UNKNOWN,,,,TODO,,,
 hw,01E8A517,48,_wcsncnt,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(w_cmp.obj)"
 hw,01E8A547,248,__wcsnicmp,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(wcsnicmp.obj)"
 launcher,0140100A,10,,,UNKNOWN,,,,TODO,,,
-launcher,01401014,12,,,UNKNOWN,,,,TODO,,,
-launcher,0140102A,13,,,UNKNOWN,,,,TODO,,,
-launcher,01401037,28,,,UNKNOWN,,,,TODO,,,
+launcher,01401014,12,,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(fgetchar.obj)"
+launcher,0140102A,13,??0DNameNode@@IAE@XZ,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(undname.obj)"
+launcher,01401037,28,,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(rtti.obj)"
 launcher,01401053,16,,,UNKNOWN,,,,TODO,,,
 launcher,01401063,255,,CCommandLine::CreateCmdLine,ENGINE,,,,TODO,,linux_symbols:string:0.75,
 launcher,01401162,44,,,UNKNOWN,,,,TODO,,,
@@ -32560,7 +32560,7 @@ launcher,01401419,67,,CreateInterface,ENGINE,,,,TODO,,ghidra,
 launcher,0140146B,65,,,UNKNOWN,,,,TODO,,,
 launcher,014014AC,18,,,UNKNOWN,,,,TODO,,,
 launcher,014014BE,26,,,UNKNOWN,,,,TODO,,,
-launcher,014014D8,6,,,UNKNOWN,,,,TODO,,,
+launcher,014014D8,6,,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBC.LIB(mterrno.obj)"
 launcher,01401505,135,,,UNKNOWN,,,,TODO,,,
 launcher,0140158C,186,,,UNKNOWN,,,,TODO,,,
 launcher,01401646,108,,,UNKNOWN,,,,TODO,,,
@@ -32570,274 +32570,274 @@ launcher,01401853,1357,,main,ENGINE,,,,TODO,,linux_symbols:string:0.288,
 launcher,01401DA0,75,,,UNKNOWN,,,,TODO,,,
 launcher,01401EA5,172,,,UNKNOWN,,,,TODO,,,
 launcher,01401F51,125,,,UNKNOWN,,,,TODO,,,
-launcher,01402016,28,,,UNKNOWN,,,,TODO,,,
+launcher,01402016,28,,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(rtti.obj)"
 launcher,01402032,7,,,UNKNOWN,,,,TODO,,,
 launcher,01402039,69,,,UNKNOWN,,,,TODO,,,
 launcher,0140209F,76,,,UNKNOWN,,,,TODO,,,
 launcher,014020EB,46,,,UNKNOWN,,,,TODO,,,
 launcher,01402119,94,,,UNKNOWN,,,,TODO,,,
-launcher,01402177,6,,,UNKNOWN,,,,TODO,,,
+launcher,01402177,6,,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBC.LIB(mterrno.obj)"
 launcher,01402191,27,,,UNKNOWN,,,,TODO,,,
 launcher,014021AC,101,,,UNKNOWN,,,,TODO,,,
 launcher,01402211,647,,,UNKNOWN,,,,TODO,,,
-launcher,01402528,126,,,UNKNOWN,,,,TODO,,,
-launcher,014025A6,18,,,UNKNOWN,,,,TODO,,,
-launcher,014025E7,41,,,UNKNOWN,,,,TODO,,,
-launcher,01402610,28,,,UNKNOWN,,,,TODO,,,
-launcher,01402696,11,,,UNKNOWN,,,,TODO,,,
-launcher,01402774,40,,,UNKNOWN,,,,TODO,,,
-launcher,01402905,65,,,UNKNOWN,,,,TODO,,,
-launcher,01402946,49,,,UNKNOWN,,,,TODO,,,
-launcher,01402977,76,,__fclose_lk,LIB,,,,,,ghidra,
-launcher,014029C3,49,,,UNKNOWN,,,,TODO,,,
-launcher,014029FF,49,,,UNKNOWN,,,,TODO,,,
-launcher,01402A30,19,,,UNKNOWN,,,,TODO,,,
-launcher,01402A50,47,,,UNKNOWN,,,,TODO,,,
+launcher,01402528,126,__onexit,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(onexit.obj)"
+launcher,014025A6,18,_atexit,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(onexit.obj)"
+launcher,014025E7,41,??1type_info@@UAE@XZ,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(typinfo.obj)"
+launcher,01402610,28,,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(rtti.obj)"
+launcher,01402696,11,,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(atox.obj)"
+launcher,01402774,40,_isspace,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(_ctype.obj)"
+launcher,01402905,65,,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(printf.obj)"
+launcher,01402946,49,_fclose,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(fclose.obj)"
+launcher,01402977,76,__fclose_lk,__fclose_lk,LIB,,,,,,ghidra,
+launcher,014029C3,49,_fgetc,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(fgetc.obj)"
+launcher,014029FF,49,,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(fopen.obj)"
+launcher,01402A30,19,,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(fopen.obj)"
+launcher,01402A50,47,__chkstk,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(chkstk.obj)"
 launcher,01402A80,7,,,UNKNOWN,,,,TODO,,,
-launcher,01402A90,224,,,UNKNOWN,,,,TODO,,,
+launcher,01402A90,224,,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(mbscat.obj)"
 launcher,01402B70,14,,operator_new,LIB,,,,,,ghidra,
-launcher,01402B80,123,,_strlen,LIB,,,,,,ghidra,
-launcher,01402C00,88,,_memset,LIB,,,,,,ghidra,
+launcher,01402B80,123,_strlen,_strlen,LIB,,,,,,ghidra,
+launcher,01402C00,88,_memset,_memset,LIB,,,,,,ghidra,
 launcher,01402C60,664,,,UNKNOWN,,,,TODO,,,
-launcher,01402FA0,133,,,UNKNOWN,,,,TODO,,,
-launcher,01403020,81,,,UNKNOWN,,,,TODO,,,
+launcher,01402FA0,133,_strstr,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(strstr.obj)"
+launcher,01403020,81,__snprintf,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(snprintf.obj)"
 launcher,01403080,129,,_strcmp,LIB,,,,,,ghidra,
-launcher,01403110,39,,_strrchr,LIB,,,,,,ghidra,
+launcher,01403110,39,_strrchr,_strrchr,LIB,,,,,,ghidra,
 launcher,01403150,188,,,UNKNOWN,,,,TODO,,,
-launcher,0140320C,205,,,UNKNOWN,,,,TODO,,,
-launcher,014032D9,200,,,UNKNOWN,,,,TODO,,,
-launcher,014033A1,32,,,UNKNOWN,,,,TODO,,,
-launcher,014033C1,100,,___timet_from_ft,LIB,,,,,,ghidra,
-launcher,01403425,33,,,UNKNOWN,,,,TODO,,,
-launcher,01403446,148,,,UNKNOWN,,,,TODO,,,
-launcher,014034DA,82,,,UNKNOWN,,,,TODO,,,
-launcher,0140352C,33,,,UNKNOWN,,,,TODO,,,
-launcher,0140354D,125,,,UNKNOWN,,,,TODO,,,
-launcher,014035D0,254,,_strncpy,LIB,,,,,,ghidra,
-launcher,014036D4,23,,,UNKNOWN,,,,TODO,,,
-launcher,014036EB,62,,,UNKNOWN,,,,TODO,,,
-launcher,01403729,43,,,UNKNOWN,,,,TODO,,,
-launcher,01403754,811,,,UNKNOWN,,,,TODO,,,
-launcher,01403A7F,777,,,UNKNOWN,,,,TODO,,,
-launcher,01403D88,177,,,UNKNOWN,,,,TODO,,,
-launcher,01403E39,251,,,UNKNOWN,,,,TODO,,,
-launcher,01403F34,758,,,UNKNOWN,,,,TODO,,,
-launcher,014042FB,815,,,UNKNOWN,,,,TODO,,,
-launcher,0140462A,72,,,UNKNOWN,,,,TODO,,,
-launcher,01404672,18,,_malloc,LIB,,,,,,ghidra,
-launcher,01404684,44,,__nh_malloc,LIB,,,,,,ghidra,
-launcher,014046B0,78,,,UNKNOWN,,,,TODO,,,
-launcher,014046FE,184,,,UNKNOWN,,,,TODO,,,
-launcher,014047B6,699,,,UNKNOWN,,,,TODO,,,
-launcher,01404A71,112,,,UNKNOWN,,,,TODO,,,
-launcher,01404AE1,23,,,UNKNOWN,,,,TODO,,,
-launcher,01404AF8,134,,,UNKNOWN,,,,TODO,,,
+launcher,0140320C,205,__findfirst,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(findfile.obj)"
+launcher,014032D9,200,__findnext,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(findfile.obj)"
+launcher,014033A1,32,__findclose,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(findfile.obj)"
+launcher,014033C1,100,___timet_from_ft,___timet_from_ft,LIB,,,,,,ghidra,
+launcher,01403425,33,,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(getenv.obj)"
+launcher,01403446,148,,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(putenv.obj)"
+launcher,014034DA,82,_sprintf,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(sprintf.obj)"
+launcher,0140352C,33,,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(getenv.obj)"
+launcher,0140354D,125,,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(getenv.obj)"
+launcher,014035D0,254,_strncpy,_strncpy,LIB,,,,,,ghidra,
+launcher,014036D4,23,__set_sbh_threshold,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(sbheap.obj)"
+launcher,014036EB,62,___sbh_heap_init,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(sbheap.obj)"
+launcher,01403729,43,___sbh_find_block,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(sbheap.obj)"
+launcher,01403754,811,___sbh_free_block,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(sbheap.obj)"
+launcher,01403A7F,777,___sbh_alloc_block,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(sbheap.obj)"
+launcher,01403D88,177,___sbh_alloc_new_region,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(sbheap.obj)"
+launcher,01403E39,251,___sbh_alloc_new_group,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(sbheap.obj)"
+launcher,01403F34,758,___sbh_resize_block,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(sbheap.obj)"
+launcher,014042FB,815,___sbh_heap_check,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(sbheap.obj)"
+launcher,0140462A,72,_free,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(free.obj)"
+launcher,01404672,18,_malloc,_malloc,LIB,,,,,,ghidra,
+launcher,01404684,44,__nh_malloc,__nh_malloc,LIB,,,,,,ghidra,
+launcher,014046B0,78,__heap_alloc,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(malloc.obj)"
+launcher,014046FE,184,___dtoxmode,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(stat.obj)"
+launcher,014047B6,699,__stat,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(stat.obj)"
+launcher,01404A71,112,_IsRootUNCName,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(stat.obj)"
+launcher,01404AE1,23,,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(strtol.obj)"
+launcher,01404AF8,134,__chdir,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(chdir.obj)"
 launcher,01404B7E,253,,entry,ENGINE,,,,TODO,,ghidra,
 launcher,01404C86,34,,__amsg_exit,LIB,,,,,,ghidra,
 launcher,01404CAB,35,,,UNKNOWN,,,,TODO,,,
-launcher,01404CCF,45,,,UNKNOWN,,,,TODO,,,
-launcher,01404CFC,17,,,UNKNOWN,,,,TODO,,,
-launcher,01404D0D,17,,__exit,LIB,,,,,,ghidra,
+launcher,01404CCF,45,__cinit,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(crt0dat.obj)"
+launcher,01404CFC,17,_exit,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(crt0dat.obj)"
+launcher,01404D0D,17,__exit,__exit,LIB,,,,,,ghidra,
 launcher,01404D3C,163,,,UNKNOWN,,,,TODO,,,
-launcher,01404DE1,9,,,UNKNOWN,,,,TODO,,,
-launcher,01404DEA,9,,,UNKNOWN,,,,TODO,,,
-launcher,01404DF3,26,,,UNKNOWN,,,,TODO,,,
-launcher,01404E0D,312,,,UNKNOWN,,,,TODO,,,
-launcher,01404F45,69,,,UNKNOWN,,,,TODO,,,
-launcher,01404F8A,41,,,UNKNOWN,,,,TODO,,,
-launcher,0140501F,97,,,UNKNOWN,,,,TODO,,,
-launcher,01405080,21,,,UNKNOWN,,,,TODO,,,
-launcher,014050AD,117,,,UNKNOWN,,,,TODO,,,
-launcher,014051DE,47,,,UNKNOWN,,,,TODO,,,
-launcher,0140520D,35,,,UNKNOWN,,,,TODO,,,
-launcher,01405230,47,,,UNKNOWN,,,,TODO,,,
-launcher,0140525F,35,,,UNKNOWN,,,,TODO,,,
-launcher,01405282,141,,,UNKNOWN,,,,TODO,,,
-launcher,0140530F,42,,,UNKNOWN,,,,TODO,,,
+launcher,01404DE1,9,,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(crt0dat.obj)"
+launcher,01404DEA,9,,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(crt0dat.obj)"
+launcher,01404DF3,26,__initterm,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(crt0dat.obj)"
+launcher,01404E0D,312,_realloc,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(realloc.obj)"
+launcher,01404F45,69,__msize,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(msize.obj)"
+launcher,01404F8A,41,__mtinitlocks,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(mlock.obj)"
+launcher,0140501F,97,__lock,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(mlock.obj)"
+launcher,01405080,21,__unlock,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(mlock.obj)"
+launcher,014050AD,117,__isctype,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(isctype.obj)"
+launcher,014051DE,47,,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(_file.obj)"
+launcher,0140520D,35,,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(_file.obj)"
+launcher,01405230,47,,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(_file.obj)"
+launcher,0140525F,35,,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(_file.obj)"
+launcher,01405282,141,__stbuf,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(_sftbuf.obj)"
+launcher,0140530F,42,__ftbuf,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(_sftbuf.obj)"
 launcher,01405339,1825,,,UNKNOWN,,,,TODO,,,
-launcher,01405A7A,53,,,UNKNOWN,,,,TODO,,,
-launcher,01405AAF,49,,,UNKNOWN,,,,TODO,,,
-launcher,01405AE0,56,,,UNKNOWN,,,,TODO,,,
-launcher,01405B18,13,,,UNKNOWN,,,,TODO,,,
-launcher,01405B25,16,,,UNKNOWN,,,,TODO,,,
-launcher,01405B35,14,,,UNKNOWN,,,,TODO,,,
-launcher,01405B43,93,,,UNKNOWN,,,,TODO,,,
-launcher,01405BA0,131,,,UNKNOWN,,,,TODO,,,
-launcher,01405C23,43,,__freebuf,LIB,,,,,,ghidra,
-launcher,01405C4E,47,,,UNKNOWN,,,,TODO,,,
-launcher,01405C7D,46,,,UNKNOWN,,,,TODO,,,
-launcher,01405CAB,92,,,UNKNOWN,,,,TODO,,,
-launcher,01405D10,164,,,UNKNOWN,,,,TODO,,,
-launcher,01405DB4,220,,,UNKNOWN,,,,TODO,,,
-launcher,01405E90,368,,,UNKNOWN,,,,TODO,,,
-launcher,01406000,200,,,UNKNOWN,,,,TODO,,,
-launcher,014060C8,280,,,UNKNOWN,,,,TODO,,,
-launcher,014061E0,115,,,UNKNOWN,,,,TODO,,,
-launcher,01406253,9,,,UNKNOWN,,,,TODO,,,
-launcher,0140625C,9,,,UNKNOWN,,,,TODO,,,
-launcher,01406265,194,,,UNKNOWN,,,,TODO,,,
-launcher,01406327,403,,,UNKNOWN,,,,TODO,,,
-launcher,014064BA,92,,,UNKNOWN,,,,TODO,,,
-launcher,01406516,103,,,UNKNOWN,,,,TODO,,,
-launcher,0140657D,391,,,UNKNOWN,,,,TODO,,,
-launcher,01406704,88,,,UNKNOWN,,,,TODO,,,
-launcher,0140675C,103,,,UNKNOWN,,,,TODO,,,
-launcher,014067C3,63,,__mbsnbicoll,LIB,,,,,,ghidra,
-launcher,01406802,110,,,UNKNOWN,,,,TODO,,,
-launcher,01406870,60,,,UNKNOWN,,,,TODO,,,
+launcher,01405A7A,53,_write_char,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(output.obj)"
+launcher,01405AAF,49,_write_multi_char,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(output.obj)"
+launcher,01405AE0,56,_write_string,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(output.obj)"
+launcher,01405B18,13,_get_int_arg,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(cprintf.obj)"
+launcher,01405B25,16,_get_int64_arg,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(cprintf.obj)"
+launcher,01405B35,14,_get_short_arg,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(cprintf.obj)"
+launcher,01405B43,93,__close,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(close.obj)"
+launcher,01405BA0,131,__close_lk,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(close.obj)"
+launcher,01405C23,43,__freebuf,__freebuf,LIB,,,,,,ghidra,
+launcher,01405C4E,47,_fflush,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(fflush.obj)"
+launcher,01405C7D,46,__fflush_lk,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(fflush.obj)"
+launcher,01405CAB,92,__flush,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(fflush.obj)"
+launcher,01405D10,164,_flsall,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(fflush.obj)"
+launcher,01405DB4,220,__filbuf,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(_filbuf.obj)"
+launcher,01405E90,368,__openfile,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(_open.obj)"
+launcher,01406000,200,__getstream,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(stream.obj)"
+launcher,014060C8,280,__flsbuf,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(_flsbuf.obj)"
+launcher,014061E0,115,__dosmaperr,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(dosmap.obj)"
+launcher,01406253,9,__errno,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(dosmap.obj)"
+launcher,0140625C,9,___doserrno,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(dosmap.obj)"
+launcher,01406265,194,___loctotime_t,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(dtoxtime.obj)"
+launcher,01406327,403,___crtwsetenv,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(wsetenv.obj)"
+launcher,014064BA,92,_wfindenv,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(wsetenv.obj)"
+launcher,01406516,103,_copy_environ,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(setenv.obj)"
+launcher,0140657D,391,___crtsetenv,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(setenv.obj)"
+launcher,01406704,88,_findenv,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(setenv.obj)"
+launcher,0140675C,103,_copy_environ,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(setenv.obj)"
+launcher,014067C3,63,__mbsnbicoll,__mbsnbicoll,LIB,,,,,,ghidra,
+launcher,01406802,110,___wtomb_environ,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(wtombenv.obj)"
+launcher,01406870,60,__heap_init,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(heapinit.obj)"
 launcher,01406930,664,,,UNKNOWN,,,,TODO,,,
-launcher,01406C8F,27,,,UNKNOWN,,,,TODO,,,
-launcher,01406CAA,405,,,UNKNOWN,,,,TODO,,,
-launcher,01406E3F,114,,,UNKNOWN,,,,TODO,,,
-launcher,01406EB1,165,,,UNKNOWN,,,,TODO,,,
-launcher,01406F56,67,,,UNKNOWN,,,,TODO,,,
-launcher,01406F99,115,,,UNKNOWN,,,,TODO,,,
-launcher,0140700C,123,,,UNKNOWN,,,,TODO,,,
-launcher,01407087,149,,,UNKNOWN,,,,TODO,,,
-launcher,0140711C,329,,,UNKNOWN,,,,TODO,,,
-launcher,01407265,81,,,UNKNOWN,,,,TODO,,,
-launcher,014072B6,123,,,UNKNOWN,,,,TODO,,,
-launcher,01407331,318,,,UNKNOWN,,,,TODO,,,
-launcher,0140746F,58,,,UNKNOWN,,,,TODO,,,
-launcher,014074A9,88,,,UNKNOWN,,,,TODO,,,
-launcher,01407501,185,,,UNKNOWN,,,,TODO,,,
-launcher,014075BA,153,,,UNKNOWN,,,,TODO,,,
-launcher,01407653,436,,,UNKNOWN,,,,TODO,,,
-launcher,01407807,306,,,UNKNOWN,,,,TODO,,,
-launcher,01407939,444,,,UNKNOWN,,,,TODO,,,
-launcher,01407AF5,84,,,UNKNOWN,,,,TODO,,,
-launcher,01407B49,84,,,UNKNOWN,,,,TODO,,,
-launcher,01407BBB,19,,,UNKNOWN,,,,TODO,,,
-launcher,01407BCE,103,,,UNKNOWN,,,,TODO,,,
-launcher,01407CE4,32,,__global_unwind2,LIB,,,,,,ghidra,
+launcher,01406C8F,27,__callnewh,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(handler.obj)"
+launcher,01406CAA,405,__mbsicmp,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(mbsicmp.obj)"
+launcher,01406E3F,114,__mbsrchr,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(mbsrchr.obj)"
+launcher,01406EB1,165,__fullpath,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(fullpath.obj)"
+launcher,01406F56,67,__getdrive,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(drive.obj)"
+launcher,01406F99,115,__chdrive,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(drive.obj)"
+launcher,0140700C,123,__mbctolower,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(mbtolwr.obj)"
+launcher,01407087,149,__mbspbrk,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(mbspbrk.obj)"
+launcher,0140711C,329,__spawnve,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(spawnve.obj)"
+launcher,01407265,81,,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(spawnve.obj)"
+launcher,014072B6,123,__mbctoupper,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(mbtoupr.obj)"
+launcher,01407331,318,__XcptFilter,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(winxfltr.obj)"
+launcher,0140746F,58,_xcptlookup,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(winxfltr.obj)"
+launcher,014074A9,88,__wincmdln,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(wincmdln.obj)"
+launcher,01407501,185,__setenvp,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(stdenvp.obj)"
+launcher,014075BA,153,__setargv,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(stdargv.obj)"
+launcher,01407653,436,_parse_cmdline,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(stdargv.obj)"
+launcher,01407807,306,___crtGetEnvironmentStringsA,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(a_env.obj)"
+launcher,01407939,444,__ioinit,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(ioinit.obj)"
+launcher,01407AF5,84,__ioterm,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(ioinit.obj)"
+launcher,01407B49,84,__mtinit,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(tidtable.obj)"
+launcher,01407BBB,19,__initptd,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(tidtable.obj)"
+launcher,01407BCE,103,__getptd,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(tidtable.obj)"
+launcher,01407CE4,32,__global_unwind2,__global_unwind2,LIB,,,,,,ghidra,
 launcher,01407D26,104,,__local_unwind2,LIB,,,,,,ghidra,
-launcher,01407DBA,24,,,UNKNOWN,,,,TODO,,,
-launcher,01407E99,27,,,UNKNOWN,,,,TODO,,,
-launcher,01407EB4,57,,,UNKNOWN,,,,TODO,,,
-launcher,01407EED,339,,,UNKNOWN,,,,TODO,,,
+launcher,01407DBA,24,__NLG_Notify,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(exsup.obj)"
+launcher,01407E99,27,__seh_longjmp_unwind@4,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(exsup3.obj)"
+launcher,01407EB4,57,__FF_MSGBANNER,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(crt0msg.obj)"
+launcher,01407EED,339,__NMSG_WRITE,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(crt0msg.obj)"
 launcher,01408071,318,,,UNKNOWN,,,,TODO,,,
-launcher,014081BA,141,,,UNKNOWN,,,,TODO,,,
-launcher,014082C8,41,,,UNKNOWN,,,,TODO,,,
-launcher,014082F1,89,,,UNKNOWN,,,,TODO,,,
-launcher,0140834A,105,,,UNKNOWN,,,,TODO,,,
-launcher,014083C0,104,,__aulldiv,LIB,,,,,,ghidra,
-launcher,01408430,117,,__aullrem,LIB,,,,,,ghidra,
-launcher,014084A5,291,,,UNKNOWN,,,,TODO,,,
-launcher,014085C8,124,,,UNKNOWN,,,,TODO,,,
-launcher,01408644,127,,,UNKNOWN,,,,TODO,,,
-launcher,014086C3,66,,,UNKNOWN,,,,TODO,,,
-launcher,01408705,167,,,UNKNOWN,,,,TODO,,,
-launcher,014087AC,95,,,UNKNOWN,,,,TODO,,,
-launcher,0140880B,34,,,UNKNOWN,,,,TODO,,,
-launcher,0140882D,147,,,UNKNOWN,,,,TODO,,,
-launcher,014088C0,101,,,UNKNOWN,,,,TODO,,,
-launcher,01408925,395,,,UNKNOWN,,,,TODO,,,
-launcher,01408AB0,101,,,UNKNOWN,,,,TODO,,,
-launcher,01408B15,473,,,UNKNOWN,,,,TODO,,,
-launcher,01408CEE,68,,,UNKNOWN,,,,TODO,,,
-launcher,01408D49,719,,,UNKNOWN,,,,TODO,,,
-launcher,01409018,101,,,UNKNOWN,,,,TODO,,,
-launcher,0140907D,115,,,UNKNOWN,,,,TODO,,,
-launcher,014090F0,46,,,UNKNOWN,,,,TODO,,,
-launcher,01409134,647,,,UNKNOWN,,,,TODO,,,
-launcher,014093BB,33,,,UNKNOWN,,,,TODO,,,
-launcher,014093DC,428,,,UNKNOWN,,,,TODO,,,
-launcher,01409588,320,,,UNKNOWN,,,,TODO,,,
-launcher,014096F2,37,,,UNKNOWN,,,,TODO,,,
-launcher,01409717,29,,,UNKNOWN,,,,TODO,,,
-launcher,01409734,104,,,UNKNOWN,,,,TODO,,,
-launcher,0140979C,41,,,UNKNOWN,,,,TODO,,,
-launcher,014097C5,225,,,UNKNOWN,,,,TODO,,,
-launcher,014098A6,46,,,UNKNOWN,,,,TODO,,,
-launcher,014098D4,151,,,UNKNOWN,,,,TODO,,,
-launcher,0140996B,43,,,UNKNOWN,,,,TODO,,,
+launcher,014081BA,141,_calloc,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(calloc.obj)"
+launcher,014082C8,41,__isatty,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(isatty.obj)"
+launcher,014082F1,89,_wctomb,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(wctomb.obj)"
+launcher,0140834A,105,__wctomb_lk,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(wctomb.obj)"
+launcher,014083C0,104,__aulldiv,__aulldiv,LIB,,,,,,ghidra,
+launcher,01408430,117,__aullrem,__aullrem,LIB,,,,,,ghidra,
+launcher,014084A5,291,__alloc_osfhnd,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(osfinfo.obj)"
+launcher,014085C8,124,__set_osfhnd,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(osfinfo.obj)"
+launcher,01408644,127,__free_osfhnd,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(osfinfo.obj)"
+launcher,014086C3,66,__get_osfhandle,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(osfinfo.obj)"
+launcher,01408705,167,__open_osfhandle,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(osfinfo.obj)"
+launcher,014087AC,95,__lock_fhandle,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(osfinfo.obj)"
+launcher,0140880B,34,__unlock_fhandle,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(osfinfo.obj)"
+launcher,0140882D,147,__commit,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(commit.obj)"
+launcher,014088C0,101,,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(lseek.obj)"
+launcher,01408925,395,__write_lk,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(write.obj)"
+launcher,01408AB0,101,,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(lseek.obj)"
+launcher,01408B15,473,__read_lk,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(read.obj)"
+launcher,01408CEE,68,__getbuf,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(_getbuf.obj)"
+launcher,01408D49,719,__sopen,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(open.obj)"
+launcher,01409018,101,,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(lseek.obj)"
+launcher,0140907D,115,__lseek_lk,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(lseek.obj)"
+launcher,014090F0,46,___tzset,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(tzset.obj)"
+launcher,01409134,647,__tzset_lk,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(tzset.obj)"
+launcher,014093BB,33,__isindst,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(tzset.obj)"
+launcher,014093DC,428,,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(tzset.obj)"
+launcher,01409588,320,_cvtdate,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(tzset.obj)"
+launcher,014096F2,37,_wcscpy,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(wcscat.obj)"
+launcher,01409717,29,_wcslen,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(wcslen.obj)"
+launcher,01409734,104,___mbtow_environ,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(mbtowenv.obj)"
+launcher,0140979C,41,_wcschr,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(wcschr.obj)"
+launcher,014097C5,225,__wcsnicoll,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(wcsnicol.obj)"
+launcher,014098A6,46,__wcsdup,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(wcsdup.obj)"
+launcher,014098D4,151,__mbschr,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(mbschr.obj)"
+launcher,0140996B,43,,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(mbsdup.obj)"
 launcher,01409996,597,,,UNKNOWN,,,,TODO,,,
-launcher,01409C13,43,,,UNKNOWN,,,,TODO,,,
-launcher,01409C3E,429,,,UNKNOWN,,,,TODO,,,
-launcher,01409DEB,74,,,UNKNOWN,,,,TODO,,,
-launcher,01409E35,51,,,UNKNOWN,,,,TODO,,,
-launcher,01409E68,41,,,UNKNOWN,,,,TODO,,,
-launcher,01409E91,389,,,UNKNOWN,,,,TODO,,,
-launcher,0140A026,28,,,UNKNOWN,,,,TODO,,,
+launcher,01409C13,43,_strncnt,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(a_cmp.obj)"
+launcher,01409C3E,429,__setmbcp,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(mbctype.obj)"
+launcher,01409DEB,74,_getSystemCP,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(mbctype.obj)"
+launcher,01409E35,51,_CPtoLCID,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(mbctype.obj)"
+launcher,01409E68,41,_setSBCS,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(mbctype.obj)"
+launcher,01409E91,389,_setSBUpLow,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(mbctype.obj)"
+launcher,0140A026,28,___initmbctable,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(mbctype.obj)"
 launcher,0140A042,511,,,UNKNOWN,,,,TODO,,,
-launcher,0140A266,43,,,UNKNOWN,,,,TODO,,,
-launcher,0140A2A0,208,,,UNKNOWN,,,,TODO,,,
-launcher,0140A370,39,,,UNKNOWN,,,,TODO,,,
-launcher,0140A3C0,213,,,UNKNOWN,,,,TODO,,,
-launcher,0140A495,55,,,UNKNOWN,,,,TODO,,,
-launcher,0140A4D4,111,,,UNKNOWN,,,,TODO,,,
-launcher,0140A543,204,,,UNKNOWN,,,,TODO,,,
-launcher,0140A610,58,,,UNKNOWN,,,,TODO,,,
-launcher,0140A64A,70,,,UNKNOWN,,,,TODO,,,
-launcher,0140A690,489,,,UNKNOWN,,,,TODO,,,
-launcher,0140A879,518,,,UNKNOWN,,,,TODO,,,
-launcher,0140AB13,17,,,UNKNOWN,,,,TODO,,,
-launcher,0140AB5C,49,,,UNKNOWN,,,,TODO,,,
-launcher,0140AB8D,137,,,UNKNOWN,,,,TODO,,,
-launcher,0140AC16,9,,,UNKNOWN,,,,TODO,,,
-launcher,0140AC1F,582,,,UNKNOWN,,,,TODO,,,
-launcher,0140AE65,283,,,UNKNOWN,,,,TODO,,,
-launcher,0140AF80,185,,,UNKNOWN,,,,TODO,,,
-launcher,0140B039,280,,,UNKNOWN,,,,TODO,,,
-launcher,0140B154,37,,,UNKNOWN,,,,TODO,,,
-launcher,0140B179,204,,,UNKNOWN,,,,TODO,,,
-launcher,0140B245,83,,,UNKNOWN,,,,TODO,,,
-launcher,0140B298,89,,,UNKNOWN,,,,TODO,,,
-launcher,0140B2F1,293,,,UNKNOWN,,,,TODO,,,
-launcher,0140B416,139,,,UNKNOWN,,,,TODO,,,
+launcher,0140A266,43,_strncnt,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(a_cmp.obj)"
+launcher,0140A2A0,208,__stricmp,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(stricmp.obj)"
+launcher,0140A370,39,,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(getcwd.obj)"
+launcher,0140A3C0,213,__getdcwd_lk,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(getcwd.obj)"
+launcher,0140A495,55,__validdrive,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(getcwd.obj)"
+launcher,0140A4D4,111,_toupper,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(toupper.obj)"
+launcher,0140A543,204,,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(toupper.obj)"
+launcher,0140A610,58,_strpbrk,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(strpbrk.obj)"
+launcher,0140A64A,70,,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(access.obj)"
+launcher,0140A690,489,__dospawn,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(dospawn.obj)"
+launcher,0140A879,518,__cenvarg,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(cenvarg.obj)"
+launcher,0140AB13,17,__ismbblead,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(ismbbyte.obj)"
+launcher,0140AB5C,49,_x_ismbbtype,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(ismbbyte.obj)"
+launcher,0140AB8D,137,___crtMessageBoxA,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(crtmbox.obj)"
+launcher,0140AC16,9,__fptrap,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(crt0fp.obj)"
+launcher,0140AC1F,582,_setlocale,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(setlocal.obj)"
+launcher,0140AE65,283,__setlocale_set_cat,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(setlocal.obj)"
+launcher,0140AF80,185,__setlocale_get_all,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(setlocal.obj)"
+launcher,0140B039,280,__expandlocale,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(setlocal.obj)"
+launcher,0140B154,37,__strcats,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(setlocal.obj)"
+launcher,0140B179,204,___lc_strtolc,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(setlocal.obj)"
+launcher,0140B245,83,___lc_lctostr,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(setlocal.obj)"
+launcher,0140B298,89,,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(chsize.obj)"
+launcher,0140B2F1,293,__chsize_lk,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(chsize.obj)"
+launcher,0140B416,139,_atol,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(atox.obj)"
 launcher,0140B566,498,,,UNKNOWN,,,,TODO,,,
-launcher,0140B781,48,,,UNKNOWN,,,,TODO,,,
-launcher,0140B7B1,248,,,UNKNOWN,,,,TODO,,,
-launcher,0140B920,203,,,UNKNOWN,,,,TODO,,,
-launcher,0140BA7C,846,,,UNKNOWN,,,,TODO,,,
-launcher,0140BDCA,400,,,UNKNOWN,,,,TODO,,,
-launcher,0140C12F,55,,,UNKNOWN,,,,TODO,,,
-launcher,0140C231,290,,,UNKNOWN,,,,TODO,,,
-launcher,0140C353,55,,,UNKNOWN,,,,TODO,,,
-launcher,0140C38A,78,,,UNKNOWN,,,,TODO,,,
-launcher,0140C3D8,581,,,UNKNOWN,,,,TODO,,,
-launcher,0140C620,62,,,UNKNOWN,,,,TODO,,,
-launcher,0140C660,56,,_strncmp,LIB,,,,,,ghidra,
-launcher,0140C698,381,,,UNKNOWN,,,,TODO,,,
-launcher,0140C815,88,,,UNKNOWN,,,,TODO,,,
-launcher,0140C86D,135,,,UNKNOWN,,,,TODO,,,
-launcher,0140C8F4,516,,,UNKNOWN,,,,TODO,,,
-launcher,0140CAF8,86,,,UNKNOWN,,,,TODO,,,
-launcher,0140CB4E,189,,,UNKNOWN,,,,TODO,,,
-launcher,0140CC0B,55,,,UNKNOWN,,,,TODO,,,
-launcher,0140CC42,134,,,UNKNOWN,,,,TODO,,,
-launcher,0140CCC8,26,,,UNKNOWN,,,,TODO,,,
-launcher,0140CCE2,102,,,UNKNOWN,,,,TODO,,,
-launcher,0140CD48,31,,,UNKNOWN,,,,TODO,,,
-launcher,0140CD67,98,,,UNKNOWN,,,,TODO,,,
-launcher,0140CDC9,54,,,UNKNOWN,,,,TODO,,,
-launcher,0140CDFF,230,,,UNKNOWN,,,,TODO,,,
-launcher,0140CEE5,57,,,UNKNOWN,,,,TODO,,,
-launcher,0140CF1E,33,,,UNKNOWN,,,,TODO,,,
-launcher,0140CF3F,89,,,UNKNOWN,,,,TODO,,,
-launcher,0140CF98,97,,,UNKNOWN,,,,TODO,,,
-launcher,0140D0AE,117,,,UNKNOWN,,,,TODO,,,
-launcher,0140D123,143,,,UNKNOWN,,,,TODO,,,
-launcher,0140D1B2,149,,,UNKNOWN,,,,TODO,,,
-launcher,0140D247,562,,,UNKNOWN,,,,TODO,,,
-launcher,0140D494,250,,,UNKNOWN,,,,TODO,,,
-launcher,0140D58E,1007,,,UNKNOWN,,,,TODO,,,
-launcher,0140D97D,39,,,UNKNOWN,,,,TODO,,,
-launcher,0140D9A4,111,,,UNKNOWN,,,,TODO,,,
-launcher,0140DA13,73,,,UNKNOWN,,,,TODO,,,
-launcher,0140DA5C,719,,,UNKNOWN,,,,TODO,,,
-launcher,0140DD2B,312,,,UNKNOWN,,,,TODO,,,
+launcher,0140B781,48,_wcsncnt,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(w_cmp.obj)"
+launcher,0140B7B1,248,__wcsnicmp,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(wcsnicmp.obj)"
+launcher,0140B920,203,,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(tolower.obj)"
+launcher,0140BA7C,846,__get_lc_time,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(inittime.obj)"
+launcher,0140BDCA,400,__free_lc_time,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(inittime.obj)"
+launcher,0140C12F,55,_fix_grouping,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(initmon.obj)"
+launcher,0140C231,290,__get_lc_lconv,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(initmon.obj)"
+launcher,0140C353,55,_fix_grouping,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(initmon.obj)"
+launcher,0140C38A,78,__free_lc_lconv,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(initmon.obj)"
+launcher,0140C3D8,581,___init_ctype,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(initctyp.obj)"
+launcher,0140C620,62,_strcspn,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(strcspn.obj)"
+launcher,0140C660,56,_strncmp,_strncmp,LIB,,,,,,ghidra,
+launcher,0140C698,381,___get_qualified_locale,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(getqloc.obj)"
+launcher,0140C815,88,_TranslateName,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(getqloc.obj)"
+launcher,0140C86D,135,_GetLcidFromLangCountry,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(getqloc.obj)"
+launcher,0140C8F4,516,_LangCountryEnumProc@4,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(getqloc.obj)"
+launcher,0140CAF8,86,_GetLcidFromLanguage,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(getqloc.obj)"
+launcher,0140CB4E,189,_LanguageEnumProc@4,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(getqloc.obj)"
+launcher,0140CC0B,55,_GetLcidFromCountry,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(getqloc.obj)"
+launcher,0140CC42,134,_CountryEnumProc@4,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(getqloc.obj)"
+launcher,0140CCC8,26,_GetLcidFromDefault,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(getqloc.obj)"
+launcher,0140CCE2,102,_ProcessCodePage,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(getqloc.obj)"
+launcher,0140CD48,31,_TestDefaultCountry,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(getqloc.obj)"
+launcher,0140CD67,98,_TestDefaultLanguage,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(getqloc.obj)"
+launcher,0140CDC9,54,_IsThisWindowsNT,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(getqloc.obj)"
+launcher,0140CDFF,230,_crtGetLocaleInfoA@16,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(getqloc.obj)"
+launcher,0140CEE5,57,_LcidFromHexString,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(getqloc.obj)"
+launcher,0140CF1E,33,_GetPrimaryLen,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(getqloc.obj)"
+launcher,0140CF3F,89,,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(chsize.obj)"
+launcher,0140CF98,97,__setmode_lk,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(setmode.obj)"
+launcher,0140D0AE,117,,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(towlower.obj)"
+launcher,0140D123,143,__Getdays,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(strftime.obj)"
+launcher,0140D1B2,149,__Getmonths,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(strftime.obj)"
+launcher,0140D247,562,__Gettnames,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(strftime.obj)"
+launcher,0140D494,250,__Strftime,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(strftime.obj)"
+launcher,0140D58E,1007,__expandtime,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(strftime.obj)"
+launcher,0140D97D,39,__store_str,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(strftime.obj)"
+launcher,0140D9A4,111,__store_num,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(strftime.obj)"
+launcher,0140DA13,73,__store_number,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(strftime.obj)"
+launcher,0140DA5C,719,__store_winword,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(strftime.obj)"
+launcher,0140DD2B,312,___getlocaleinfo,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(inithelp.obj)"
 launcher,0140DE69,423,,,UNKNOWN,,,,TODO,,,
-launcher,0140E02E,45,,,UNKNOWN,,,,TODO,,,
-launcher,0140E05B,92,,,UNKNOWN,,,,TODO,,,
-launcher,0140E0B7,42,,,UNKNOWN,,,,TODO,,,
-launcher,0140E0FC,49,,,UNKNOWN,,,,TODO,,,
-launcher,0140E12D,134,,,UNKNOWN,,,,TODO,,,
-launcher,0140E1B3,27,,,UNKNOWN,,,,TODO,,,
-launcher,0140E1D0,257,,,UNKNOWN,,,,TODO,,,
+launcher,0140E02E,45,__itoa,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(xtoa.obj)"
+launcher,0140E05B,92,_xtoa,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(xtoa.obj)"
+launcher,0140E0B7,42,__ltoa,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(xtoa.obj)"
+launcher,0140E0FC,49,__i64toa,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(xtoa.obj)"
+launcher,0140E12D,134,_x64toa@20,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(xtoa.obj)"
+launcher,0140E1B3,27,__ui64toa,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(xtoa.obj)"
+launcher,0140E1D0,257,__strnicmp,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(strnicmp.obj)"
 launcher,0140E2D1,491,,,UNKNOWN,,,,TODO,,,
-launcher,0140E4DA,48,,,UNKNOWN,,,,TODO,,,
-launcher,0140E50A,82,,,UNKNOWN,,,,TODO,,,
+launcher,0140E4DA,48,_wcsncnt,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(w_cmp.obj)"
+launcher,0140E50A,82,_iswctype,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(iswctype.obj)"
 launcher,0140E56C,264,,,UNKNOWN,,,,TODO,,,
 launcher,0140E67F,275,,,UNKNOWN,,,,TODO,,,
 opengl32,10001000,25,?sys_glMultiTexCoord2fARB@@YGXIMM@Z,sys_glMultiTexCoord2fARB,PARANOIA,src/opengl32/opengl32.cpp,2010-prototype,"same file in prototype, 1.0 and 1.6a",MATCHED,100,vc6_link_map,
