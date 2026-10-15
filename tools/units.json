@@ -2108,6 +2108,31 @@
           "name": "engine/CL_MAIN",
           "source": "src/engine_hw/CL_MAIN.C",
           "functions_file": "tools/units/hw_engine_CL_MAIN.txt"
+        },
+        {
+          "name": "engine/qgl",
+          "source": "src/engine_hw/qgl.c",
+          "functions_file": "tools/units/hw_engine_qgl.txt"
+        },
+        {
+          "name": "engine/GL_DRAW",
+          "source": "src/engine_hw/GL_DRAW.C",
+          "functions_file": "tools/units/hw_engine_GL_DRAW.txt"
+        },
+        {
+          "name": "engine/GL_RMAIN",
+          "source": "src/engine_hw/GL_RMAIN.C",
+          "functions_file": "tools/units/hw_engine_GL_RMAIN.txt"
+        },
+        {
+          "name": "engine/GL_RMISC",
+          "source": "src/engine_hw/GL_RMISC.C",
+          "functions_file": "tools/units/hw_engine_GL_RMISC.txt"
+        },
+        {
+          "name": "engine/GL_WARP",
+          "source": "src/engine_hw/GL_WARP.C",
+          "functions_file": "tools/units/hw_engine_GL_WARP.txt"
         }
       ]
     },
