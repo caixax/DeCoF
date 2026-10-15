@@ -3,43 +3,66 @@
 #ifndef MP3_H
 #define MP3_H
 
-#include "fmod.h"
-#include "fmod_errors.h"
-#include "windows.h"
-
+// Cry of Fear plays the music and the 2D sound effects with irrKlang (cl_dll/mp3.cpp)
+// instead of FMOD. The class keeps the Paranoia interface (Initialize, Shutdown,
+// PlayMP3, StopMP3, Frame); the object, the sound engine and the sounds are static
+// globals of mp3.cpp.
 class CMP3
 {
-private:
-	float			(_stdcall * VER)	(void);//AJH get fmod dll version
-	signed char		(_stdcall * SCL)	(FSOUND_STREAM *stream);
-	signed char		(_stdcall * SOP)	(int outputtype);
-	signed char		(_stdcall * SBS)	(int len_ms);
-	signed char		(_stdcall * SDRV)	(int driver);
-	signed char		(_stdcall * INIT)	(int mixrate, int maxsoftwarechannels, unsigned int flags);
-	FSOUND_STREAM*		(_stdcall * SOF)	(const char *filename, unsigned int mode,int memlength);				//AJH old fmod
-	FSOUND_STREAM*		(_stdcall * SO)	(const char *filename, unsigned int mode,int offset, int memlength);	//AJH use new fmod
-	int 			(_stdcall * SPLAY)	(int channel, FSOUND_STREAM *stream);
-	void			(_stdcall * CLOSE)	( void );
+public:
+	CMP3();
 
-	int				(_stdcall * SETVOL)	(int channel, int vol); // buz
-	
-	FSOUND_STREAM  *m_Stream;
-	int		m_iIsPlaying;
-	HINSTANCE	m_hFMod;
+	void	Disabled_guess( void );	// disabled, only the return is left
+	void	Frame( void );
+	int		Initialize( void );
+	int		PlayMP3( const char *pszSong );
+	int		PlayMP3Path_guess( const char *pszPath );
+	void	PlaySFX_guess( const char *pszSample, int iType, bool bFlag, Vector vecOrigin );
+	int		SetPaused_guess( bool bPaused );
+	int		Shutdown( void );
+	int		StopMP3( float fade );
+
+	bool	m_bInitialized_guess;		// Initialize() was called
+	cl_entity_t	*m_pLocalPlayer_guess;
+	Vector	m_vecUnknown08_guess;		// only cleared by the constructor
+	Vector	m_vecUnknown14_guess;
+	Vector	m_vecUnknown20_guess;
+	int		m_iUnknown2C_guess;			// only cleared by Initialize()
+	int		m_iUnknown30_guess;
+	bool	m_bUnknown34_guess;
+	bool	m_bUnknown35_guess;
 
 	// buz: mp3 file name:
-	char m_szMP3File[128];
+	char	m_szMP3File[128];
+	int		m_iIsPlaying;
+	int		m_iIsPaused_guess;
+
+	int		m_iVolume_guess;			// music volume (0-255) forced while m_bHold_guess is set
+	bool	m_bHold_guess;				// never set: PlayMP3 only stores the song while it is set
+	const char	*m_pszPending_guess;
+
 	// buz: for fadeout:
 	float	m_flFadeoutStart;
 	float	m_flFadeoutDuration;
+	float	m_flFadeinStart_guess;		// set by the PlayMP3 message, never read
+	float	m_flFadeinDuration_guess;
 
-public:
-	int		Initialize();
-	int		Shutdown();
-	int		PlayMP3( const char *pszSong );
-	int		StopMP3(float fade);
-	void	Frame();
+	bool	m_bLoop_guess;
+	bool	m_bStopping_guess;
 };
 
-extern CMP3 gMP3;
+void guess_IrrKlangInit( void );
+void guess_MP3_Shutdown( void );
+void guess_IrrKlangFrame( void );
+void IrrKlangInitialize_guess( void );
+bool guess_IrrKlangIsPaused( void );
+void guess_IrrKlangPlay( const char *pszFile );
+void guess_IrrKlangPlaySFX( const char *pszFile, int iType, bool bFlag, vec3_t vecOrigin );
+void guess_IrrKlangSetParams( float flParm1, float flParm2, float flParm3, float flParm4 );
+void guess_IrrKlangSetLoop( bool bLoop );
+void guess_IrrKlangSetPaused( bool bPaused );
+void guess_IrrKlangSetStopping( bool bStopping );
+void guess_IrrKlangStop( float flFadeTime );
+
+// not in 1.6a: cdll_int.cpp still defines it and hud_redraw.cpp still uses it
 #endif

@@ -80,7 +80,7 @@ def same_symbol(a, b):
         ub = undname(b)
         if a.startswith("?"):
             return ub is not None and ub == undname(a)
-        if ub and ub.replace("const ", "").replace("`vftable'", "vftable") == a:
+        if ub and ub.replace("const ", "").replace("`local vftable'", "vftable").replace("`vftable'", "vftable") == a:
             return True
     return False
 

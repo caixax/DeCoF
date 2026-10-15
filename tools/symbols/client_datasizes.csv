@@ -607,3 +607,4 @@ _iJumpSpectator,4,"our object, capped at the next retail symbol"
 ?guess_vecCameraAngles@@3VVector@@A,12,type size
 ?guess_flMouseOfs2X@@3MA,4,type size
 ?guess_flMouseOfs2Y@@3MA,4,type size
+?gMP3Info_guess@@3VMP3FileInfo@@A,120,type size

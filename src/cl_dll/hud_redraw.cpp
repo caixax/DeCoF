@@ -292,7 +292,7 @@ void guess_RedrawFrame( void )
 {
 	return;
 
-	gMP3.Frame();
+//	gMP3.Frame();
 }
 
 // Redraw

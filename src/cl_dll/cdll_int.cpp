@@ -18,6 +18,7 @@
 // this implementation handles the linking of the engine to the DLL
 //
 
+#include "MP3FileInfo.h"	// id3lib before the HLSDK min/max macros
 #include "hud.h"
 #include "cl_util.h"
 #include "netadr.h"
@@ -43,7 +44,7 @@ extern "C"
 
 cl_enginefunc_t gEngfuncs;
 CHud gHUD;
-CMP3 gMP3;
+MP3FileInfo gMP3Info_guess;	// tag reader of the music player (the object after gHUD)
 TeamFortressViewport *gViewPort = NULL;
 
 void InitInput (void);

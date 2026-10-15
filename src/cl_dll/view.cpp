@@ -574,6 +574,7 @@ extern cl_entity_t g_HeadShieldEnt;
 vec3_t guess_vecWheelchairAngles;		// added to the wheelchair angles (the knock back subtracts from it)
 float guess_flMouseOfs2X;				// second mouse look pair of IN_MouseMove
 float guess_flMouseOfs2Y;
+cl_entity_t *guess_pDualEnt;			// the left hand weapon entity of the dual wield mode
 vec3_t guess_vecWheelchairViewAngles;	// the view angles in the wheelchair
 float guess_flUnknown105595A0;
 float guess_flUnknown105595A4;

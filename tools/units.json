@@ -1804,6 +1804,11 @@
           "name": "cl_dll/guess_Blur",
           "source": "src/cl_dll/guess_Blur.cpp",
           "functions_file": "tools/units/client_cl_dll_guess_Blur.txt"
+        },
+        {
+          "name": "cl_dll/MP3FileInfo",
+          "source": "src/cl_dll/MP3FileInfo.cpp",
+          "functions_file": "tools/units/client_cl_dll_MP3FileInfo.txt"
         }
       ],
       "link": {
@@ -1951,6 +1956,7 @@
           "cl_dll/log",
           "cl_dll/menu",
           "cl_dll/message",
+          "cl_dll/MP3FileInfo",
           "cl_dll/mp3",
           "cl_dll/parsemsg",
           "cl_dll/particlemgr",

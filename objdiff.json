@@ -2364,6 +2364,14 @@
       }
     },
     {
+      "name": "client/cl_dll/MP3FileInfo",
+      "target_path": "build/target/client/cl_dll/MP3FileInfo.obj",
+      "base_path": "build/base/client/cl_dll/MP3FileInfo.obj",
+      "metadata": {
+        "source_path": "src/cl_dll/MP3FileInfo.cpp"
+      }
+    },
+    {
       "name": "hw/engine/crc",
       "target_path": "build/target/hw/engine/crc.obj",
       "base_path": "build/base/hw/engine/crc.obj",

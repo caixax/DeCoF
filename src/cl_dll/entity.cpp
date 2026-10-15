@@ -56,7 +56,7 @@ int guess_iGunSmoke;
 extern cvar_t *cl_cheapweaponsmoke;
 extern int guess_iUnknown1054506C;
 
-void guess_IrrKlangPlaySound( const char *pszSample, int iType, int iUnused, Vector vecOrigin );
+void guess_IrrKlangPlaySFX( const char *pszFile, int iType, bool bFlag, vec3_t vecOrigin );
 
 int GlowFilterEntities ( int type, struct cl_entity_s *ent, const char *modelname ); // buz
 
@@ -1002,7 +1002,7 @@ void DLLEXPORT HUD_StudioEvent( const struct mstudioevent_s *event, const struct
 					szName[j] = 0;
 					strcpy( szSound, "weapons_new/" );
 					strcat( szSound, szName );
-					guess_IrrKlangPlaySound( szSound, 0, 0, vecOrigin );
+					guess_IrrKlangPlaySFX( szSound, 0, false, vecOrigin );
 				}
 				break;
 			}

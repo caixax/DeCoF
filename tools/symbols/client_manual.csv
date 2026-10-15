@@ -1213,3 +1213,35 @@ va,name,kind,evidence
 1001CF80,?guess_InitScreen@guess_CBlur@@QAEXXZ,func,between battery.cpp and cdll_int.cpp; bytes identical to the compiled guess_Blur.cpp (relocations masked); method order follows the alphabetical layout
 100642B0,?guess_LoadGloveTexture@@YAXH@Z,func,"same function as before (glove texture loader); its only caller GL_DrawPoints (10066B14) pushes one argument (push 0, add esp 4), so it takes an unused int (added by an agent)"
 10065210,?guess_VecDistance@@YAMVVector@@0@Z,func,"only caller GL_SetupLighting (10067EDD, distance from v_origin to curstate.origin for the flickering lights); two Vectors by value, Length(b - a); same bytes as guess_VectorDistance of rain.cpp (100855B0), a second copy in this object (added by an agent)"
+1007FD50,?PlayMP3@CMP3@@QAEHPBD@Z,func,"identical bytes to our CMP3::PlayMP3 (strings %s/mp3/%s, MP3Volume, -nomusic, the end song list); Paranoia CMP3::PlayMP3 structure (m_szMP3File strcmp, strcpy); called by guess_IrrKlangPlay (added by an agent)"
+1007F6E0,??0CMP3@@QAE@XZ,func,identical bytes to our CMP3 constructor; called by guess_IrrKlangInit right after operator new(0xE0) (added by an agent)
+1007F730,?Disabled_guess@CMP3@@QAEXXZ,func,"identical bytes (ret 0, a disabled function); no callers; between the CMP3 constructor and CMP3::Frame in the object (added by an agent)"
+1007F740,?Frame@CMP3@@QAEXXZ,func,"identical bytes to our CMP3::Frame (volume and MP3Volume cvars, fadeout by GetClientTime as in Paranoia CMP3::Frame); called by guess_IrrKlangFrame (added by an agent)"
+1007F940,?Initialize@CMP3@@QAEHXZ,func,identical bytes to our CMP3::Initialize; called by guess_IrrKlangFrame when the initialized flag is clear (added by an agent)
+1007F9E0,?guess_IrrKlangInit@@YAXXZ,func,identical bytes; called by CHud::Init; calls createIrrKlangDevice with the string 1.6.0 (added by an agent)
+1007FA40,?guess_MP3_Shutdown@@YAXXZ,func,identical bytes; called by HUD_Shutdown and guess_IrrKlangInit; drops the irrKlang engine and deletes the CMP3 object (added by an agent)
+1007FAC0,?IrrKlangInitialize_guess@@YAXXZ,func,identical bytes (tail jump to CMP3::Initialize through the CMP3 pointer); no callers (added by an agent)
+1007FAF0,?guess_IrrKlangPlay@@YAXPBD@Z,func,"identical bytes; calls CMP3::PlayMP3; called by CHud::MsgFunc_PlayMP3, CGameMenu, CGameOver, CCredits, guess_MsgCoopStats (added by an agent)"
+1007FB10,?guess_IrrKlangPlaySFX@@YAXPBDH_NVVector@@@Z,func,identical bytes; calls the CMP3 sound effect method; called by CHud::MsgFunc_PlaySFX (bool third argument) and HUD_StudioEvent (added by an agent)
+1007FB50,?guess_IrrKlangSetParams@@YAXMMMM@Z,func,"identical bytes; called by CHud::Init, CHud::VidInit and CHud::MsgFunc_PlayMP3; writes the four fade floats of CMP3 (added by an agent)"
+1007FBB0,?guess_IrrKlangSetLoop@@YAX_N@Z,func,"identical bytes; writes CMP3+0xDC, read by CMP3::PlayMP3 as the play2D loop flag (added by an agent)"
+1007FBF0,?guess_IrrKlangSetStopping@@YAX_N@Z,func,"identical bytes; writes CMP3+0xDD, also set by CMP3::StopMP3 (added by an agent)"
+1007FC10,?guess_IrrKlangStop@@YAXM@Z,func,identical bytes; calls CMP3::StopMP3; called by __CmdFunc_StopMP3 and CHud::MsgFunc_PlayMP3 (added by an agent)
+1007FC30,?PrintAverage_guess@@YGXPBEI@Z,func,"identical bytes (stdcall, sums a byte buffer and center-prints the average with %.3f); no callers (added by an agent)"
+10080300,?PlayMP3Path_guess@CMP3@@QAEHPBD@Z,func,identical bytes (PlayMP3 that passes the path to play2D unchanged); no callers (added by an agent)
+10080410,?PlaySFX_guess@CMP3@@QAEXPBDH_NVVector@@@Z,func,"called only by guess_IrrKlangPlaySFX with the same six argument dwords (ret 0x18); strings weapons/, weapons_new/, %s/sound/%s, volume; our function differs only in register save placement (added by an agent)"
+10080710,?SetPaused_guess@CMP3@@QAEH_N@Z,func,identical bytes; called by guess_IrrKlangSetPaused; calls ISoundEngine::setAllSoundsPaused and writes CMP3+0xBC read by guess_IrrKlangIsPaused (added by an agent)
+10080770,?Shutdown@CMP3@@QAEHXZ,func,"identical bytes (return 1); Paranoia CMP3::Shutdown name, sorted between the CMP3 methods SetPaused_guess and StopMP3 in the object (added by an agent)"
+10080780,?StopMP3@CMP3@@QAEHM@Z,func,"identical bytes to our CMP3::StopMP3 (Paranoia CMP3::StopMP3 fade logic, -nomusic); called by guess_IrrKlangStop (added by an agent)"
+1007E870,??_GID3_Tag@@UAEPAXI@Z,func,"bytes identical to the compiled MP3FileInfo.cpp (CodeProject class MP3FileInfo 1.0 with Cry of Fear changes), alphabetical order of its object"
+1007E8A0,?Free@MP3FileInfo@@QAEXXZ,func,"bytes identical to the compiled MP3FileInfo.cpp (CodeProject class MP3FileInfo 1.0 with Cry of Fear changes), alphabetical order of its object"
+1007EA20,?GetTitle_guess@MP3FileInfo@@QAEPADPBD@Z,func,"bytes identical to the compiled MP3FileInfo.cpp (CodeProject class MP3FileInfo 1.0 with Cry of Fear changes), alphabetical order of its object"
+1007EBF0,?Init@MP3FileInfo@@QAE_NPBD@Z,func,"bytes identical to the compiled MP3FileInfo.cpp (CodeProject class MP3FileInfo 1.0 with Cry of Fear changes), alphabetical order of its object"
+1007EDB0,?ShowAllFrames@MP3FileInfo@@QAEXXZ,func,"bytes identical to the compiled MP3FileInfo.cpp (CodeProject class MP3FileInfo 1.0 with Cry of Fear changes), alphabetical order of its object"
+1007F200,?m_getNewString@MP3FileInfo@@IAEPADW4ID3_FrameID@@@Z,func,"bytes identical to the compiled MP3FileInfo.cpp (CodeProject class MP3FileInfo 1.0 with Cry of Fear changes), alphabetical order of its object"
+1007F2C0,?m_getString@MP3FileInfo@@IAE_NW4ID3_FrameID@@PAD@Z,func,"bytes identical to the compiled MP3FileInfo.cpp (CodeProject class MP3FileInfo 1.0 with Cry of Fear changes), alphabetical order of its object"
+1007F3C0,?m_parseGenre@MP3FileInfo@@IAEXXZ,func,"bytes identical to the compiled MP3FileInfo.cpp (CodeProject class MP3FileInfo 1.0 with Cry of Fear changes), alphabetical order of its object"
+1007F4D0,?m_parseHeader@MP3FileInfo@@IAEXXZ,func,"bytes identical to the compiled MP3FileInfo.cpp (CodeProject class MP3FileInfo 1.0 with Cry of Fear changes), alphabetical order of its object"
+1018F658,?gMP3Info_guess@@3VMP3FileInfo@@A,data,"MP3FileInfo object right after gHUD (1018A0C0 + 0x5598) in cdll_int.obj, its destructor ??1MP3FileInfo is in cdll_int.obj"
+1001D290,??_GMP3FileInfo@@UAEPAXI@Z,func,"slot 0 of the MP3FileInfo vtable, in cdll_int.obj (mp3 agent)"
+1001D3C0,??1MP3FileInfo@@UAE@XZ,func,"MP3FileInfo destructor (calls Free), in cdll_int.obj (mp3 agent)"
