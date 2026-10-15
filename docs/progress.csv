@@ -25202,7 +25202,7 @@ hw,01D5268F,22,,,UNKNOWN,,,,TODO,,,
 hw,01D526A5,18,,,UNKNOWN,,,,TODO,,,
 hw,01D526B7,15,,,UNKNOWN,,,,TODO,,,
 hw,01D526C6,148,_DT_Initialize,DT_Initialize,ENGINE,engine/DetailTexture.cpp,,,TODO,,linux_symbols:data:0.911,
-hw,01D5275A,438,,,UNKNOWN,guess:engine/DetailTexture.cpp,,,TODO,,,
+hw,01D5275A,438,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,linux: _Z11DT_GetTokenRPcR10ParseStateRSs
 hw,01D52920,452,_DT_Parse,DT_Parse,ENGINE,engine/DetailTexture.cpp,,,TODO,,linux_symbols:string:0.772,
 hw,01D52AFC,580,_DT_LoadDetailMapFile,DT_LoadDetailMapFile,ENGINE,engine/DetailTexture.cpp,,,TODO,,linux_symbols:string:0.875,
 hw,01D52D40,255,,,UNKNOWN,guess:engine/DetailTexture.cpp,,,TODO,,,
@@ -28117,7 +28117,7 @@ hw,01DEC465,47,,,UNKNOWN,guess:engine/sv_steam3.cpp,,,TODO,,,
 hw,01DEC494,39,,,UNKNOWN,guess:engine/sv_steam3.cpp,,,TODO,,,
 hw,01DEC4BB,32,,,UNKNOWN,guess:engine/sv_steam3.cpp,,,TODO,,,
 hw,01DEC4DB,30,_Steam_NotifyOfLevelChange,Steam_NotifyOfLevelChange,ENGINE,engine/sv_steam3.cpp,,,TODO,,linux_symbols:callee:1.0,
-hw,01DEC4F9,94,,,UNKNOWN,guess:engine/sv_steam3.cpp,,,TODO,,,
+hw,01DEC4F9,94,,,UNKNOWN,engine/sv_steam3.cpp,,,TODO,,,linux: Steam_Shutdown
 hw,01DEC557,78,_Steam_Activate,Steam_Activate,ENGINE,engine/sv_steam3.cpp,,,TODO,,linux_symbols:caller:0.667,
 hw,01DEC5A5,28,_Steam_RunFrame,Steam_RunFrame,ENGINE,engine/sv_steam3.cpp,,,TODO,,linux_symbols:caller:1.0,
 hw,01DEC5C1,33,,,UNKNOWN,guess:engine/sv_steam3.cpp,,,TODO,,,
@@ -29200,16 +29200,16 @@ hw,01E0B14D,129,,,UNKNOWN,,,,TODO,,,
 hw,01E0B1CE,10,,,UNKNOWN,,,,TODO,,,
 hw,01E0B1D8,27,,,UNKNOWN,,,,TODO,,,
 hw,01E0B1F3,484,_Voice_GetOutputData,Voice_GetOutputData,ENGINE,engine/voice.cpp,,,TODO,,linux_symbols:string:0.833,
-hw,01E0B3D7,35,,,UNKNOWN,guess:engine/voice.cpp,,,TODO,,,
+hw,01E0B3D7,35,,,UNKNOWN,engine/voice.cpp,,,TODO,,,linux: GetVoiceChannel
 hw,01E0B3FA,153,_Voice_RegisterCvars,Voice_RegisterCvars,ENGINE,engine/voice.cpp,,,TODO,,linux_symbols:data:0.8,
 hw,01E0B493,765,_Voice_Init,Voice_Init,ENGINE,engine/voice.cpp,,,TODO,,linux_symbols:string:0.616,
-hw,01E0B790,97,,,UNKNOWN,guess:engine/voice.cpp,,,TODO,,,
-hw,01E0B7F1,19,,,UNKNOWN,guess:engine/voice.cpp,,,TODO,,,
-hw,01E0B804,48,,,UNKNOWN,guess:engine/voice.cpp,,,TODO,,,
-hw,01E0B834,308,,,UNKNOWN,guess:engine/voice.cpp,,,TODO,,,
+hw,01E0B790,97,,,UNKNOWN,engine/voice.cpp,,,TODO,,,linux: Voice_EndChannel
+hw,01E0B7F1,19,,,UNKNOWN,engine/voice.cpp,,,TODO,,,linux: _Z23Voice_NotifyFreeChanneli
+hw,01E0B804,48,,,UNKNOWN,engine/voice.cpp,,,TODO,,,linux: Voice_EndAllChannels
+hw,01E0B834,308,,,UNKNOWN,engine/voice.cpp,,,TODO,,,linux: Voice_Deinit
 hw,01E0B968,46,_Voice_GetLoopback,Voice_GetLoopback,ENGINE,engine/voice.cpp,,,TODO,,linux_symbols:data1:0.667,
-hw,01E0B996,46,,,UNKNOWN,guess:engine/voice.cpp,,,TODO,,,
-hw,01E0B9C4,99,,,UNKNOWN,guess:engine/voice.cpp,,,TODO,,,
+hw,01E0B996,46,,,UNKNOWN,engine/voice.cpp,,,TODO,,,linux: Voice_LocalPlayerTalkingAck
+hw,01E0B9C4,99,,,UNKNOWN,engine/voice.cpp,,,TODO,,,linux: _Z26Voice_UpdateVoiceTweakModev
 hw,01E0BA27,807,_Voice_Idle,Voice_Idle,ENGINE,engine/voice.cpp,,,TODO,,linux_symbols:string:0.841,
 hw,01E0BD4E,47,,,UNKNOWN,,,,TODO,,,
 hw,01E0BD7D,279,,,UNKNOWN,,,,TODO,,,
@@ -29288,8 +29288,8 @@ hw,01E0E4E0,46,,,UNKNOWN,,,,TODO,,,
 hw,01E0E510,27,,,UNKNOWN,,,,TODO,,,
 hw,01E0E530,293,_VoiceSE_GetSoundDataCallback,VoiceSE_GetSoundDataCallback,ENGINE,engine/voice_sound_engine_interface.cpp,,,TODO,,linux_symbols:caller:0.685,
 hw,01E0E655,31,_VoiceSE_RegisterCvars,VoiceSE_RegisterCvars,ENGINE,engine/voice_sound_engine_interface.cpp,,,TODO,,linux_symbols:data:0.8,
-hw,01E0E674,126,,,UNKNOWN,guess:engine/voice_sound_engine_interface.cpp,,,TODO,,,
-hw,01E0E6F2,5,,,UNKNOWN,guess:engine/voice_sound_engine_interface.cpp,,,TODO,,,
+hw,01E0E674,126,,,UNKNOWN,engine/voice_sound_engine_interface.cpp,,,TODO,,,linux: _Z12VoiceSE_Initv
+hw,01E0E6F2,5,,,UNKNOWN,engine/voice_sound_engine_interface.cpp,,,TODO,,,linux: _Z12VoiceSE_Termv
 hw,01E0E6F7,255,_VoiceSE_Idle,VoiceSE_Idle,ENGINE,engine/voice_sound_engine_interface.cpp,,,TODO,,linux_symbols:data1:0.667,
 hw,01E0E7F6,140,_VoiceSE_StartChannel,VoiceSE_StartChannel,ENGINE,engine/voice_sound_engine_interface.cpp,,,TODO,,linux_symbols:string:0.833,
 hw,01E0E882,27,,,UNKNOWN,,,,TODO,,,
