@@ -54,6 +54,27 @@ Every tool output stays in the working context, so large outputs repeated over m
 - A retail function that is 0% or cut short at its first `ret` while ours looks right is usually a Ghidra function whose switch was never resolved: tell the main agent.
 - Inside one object the functions are in decorated-name order (most files) or in source order (a few). `tools/align_names.py` uses this; a gap it reports ("3 retail, 1 ours") means functions missing on one side: written in Cry of Fear and not in the reference file yet, or removed.
 - `python tools/disasm.py client "<decorated name>"` and `--outline` work on the 1.6a client.dll; `--version` does not apply (no symbols in the older client builds).
+## hw.dll units (the VC6 engine)
+
+hw.dll is Cry of Fear's own GoldSrc engine build (2013, Visual C++ 6.0). Valve never released the source, so files are written from the binary; the Linux steam_legacy `hw.so` (about 2019) carries full DWARF and gives names, prototypes, locals, struct layouts and the file of every function. First unit: `src/engine_hw/crc.c` (13/13 at 100%), the model for everything below.
+
+| What | Where |
+|---|---|
+| Rows of one source file (names, status) | `docs/progress.csv` rows with dll `hw` and source_file `engine/<file>` or `guess:engine/<file>` |
+| Ghidra pseudo C of an address range plus the exact text of every string it uses | `python tools/range.py hw <start> <end>` (writes build/decomp/hw_<start>.c) |
+| Names, prototypes, local declarations in declaration order, globals of a file | `python tools/dwarf_file.py I:/Tools/_downloads/hl_linux_legacy/hw.so engine/<file> [--types]` |
+| Original header declarations (structs with offsets, typedefs, externs) | `build/dwarf_hw/<path>.h` (regenerate: `python tools/dwarf_headers.py I:/Tools/_downloads/hl_linux_legacy/hw.so build/dwarf_hw`) |
+| Engine names of globals and helpers by address | ReHLDS (`refs/ReHLDS/rehlds/engine`, consultation only) and the DWARF |
+| Record a name | `python tools/add_name.py --dll hw hw/engine/<file> <va> "_<Name>" "<evidence>"` (C functions are `_Name`) |
+
+Rules that hold for this build:
+- Every engine object is built with `/Od` (the Standard Edition has no optimizer): code is literal, so statement order, expression shape and the declaration order of locals decide the bytes. Locals take stack slots by declaration order; write them in the order the DWARF gives.
+- The functions of a file appear in source order (no alphabetical sort, unlike the 2020 game DLLs), and functions GCC inlined in the Linux build are separate functions here.
+- The 2013 file is an older version than the Linux one: functions added later are missing, some functions are shorter. Write what the Windows assembly does; the DWARF only names things.
+- Calls through the engine's anti-cheat hook table (`call [0x01ebf980]` with a pointer to an argument) are `g_engdstAddrs.pfnXxx( &arg )` (`build/dwarf_hw/engine/APIProxy.h`, `cl_enginefunc_dst_t`).
+- Headers live in `src/engine_hw/` and are named like the originals (`common.h`, `cvar.h`, ...). Each header belongs to the agent that owns its .c file; any agent may add a missing prototype or extern to any header, but only the owner changes a struct.
+- Retail string literals go into `.data` (VC6 without /GF): the strings at the end of `tools/range.py` output are exact.
+
 ## Facts that hold for the CoF weapons
 
 - Globals: `gpGlobals->v_forward` is +0x28, `v_up` +0x34, `v_right` +0x40. Shell eject: `vecShellVelocity = gpGlobals->v_right * 220 + gpGlobals->v_up * 200 + gpGlobals->v_forward * 40`, `vecShellOrigin = pev->origin + pev->view_ofs + gpGlobals->v_forward * 80 + gpGlobals->v_right * 20`, `EjectBrass( vecShellOrigin, vecShellVelocity, pev->angles.y, m_iShell, TE_BOUNCE_SHELL )`.
