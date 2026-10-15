@@ -1220,19 +1220,19 @@
       }
     },
     {
-      "name": "hl/dlls/guess_CoF_MP5",
-      "target_path": "build/target/hl/dlls/guess_CoF_MP5.obj",
-      "base_path": "build/base/hl/dlls/guess_CoF_MP5.obj",
+      "name": "hl/dlls/CoF_MP5_guess",
+      "target_path": "build/target/hl/dlls/CoF_MP5_guess.obj",
+      "base_path": "build/base/hl/dlls/CoF_MP5_guess.obj",
       "metadata": {
-        "source_path": "src/dlls/guess_CoF_MP5.cpp"
+        "source_path": "src/dlls/CoF_MP5_guess.cpp"
       }
     },
     {
-      "name": "hl/dlls/guess_CoF_BowlingBall",
-      "target_path": "build/target/hl/dlls/guess_CoF_BowlingBall.obj",
-      "base_path": "build/base/hl/dlls/guess_CoF_BowlingBall.obj",
+      "name": "hl/dlls/CoF_BowlingBall_guess",
+      "target_path": "build/target/hl/dlls/CoF_BowlingBall_guess.obj",
+      "base_path": "build/base/hl/dlls/CoF_BowlingBall_guess.obj",
       "metadata": {
-        "source_path": "src/dlls/guess_CoF_BowlingBall.cpp"
+        "source_path": "src/dlls/CoF_BowlingBall_guess.cpp"
       }
     },
     {
@@ -1260,11 +1260,11 @@
       }
     },
     {
-      "name": "hl/dlls/guess_CoF_MP5ModeSaveRestore",
-      "target_path": "build/target/hl/dlls/guess_CoF_MP5ModeSaveRestore.obj",
-      "base_path": "build/base/hl/dlls/guess_CoF_MP5ModeSaveRestore.obj",
+      "name": "hl/dlls/CoF_MP5ModeSaveRestore_guess",
+      "target_path": "build/target/hl/dlls/CoF_MP5ModeSaveRestore_guess.obj",
+      "base_path": "build/base/hl/dlls/CoF_MP5ModeSaveRestore_guess.obj",
       "metadata": {
-        "source_path": "src/dlls/guess_CoF_MP5ModeSaveRestore.cpp"
+        "source_path": "src/dlls/CoF_MP5ModeSaveRestore_guess.cpp"
       }
     },
     {
@@ -1500,11 +1500,11 @@
       }
     },
     {
-      "name": "client/cl_dll/guess_HUDControl",
-      "target_path": "build/target/client/cl_dll/guess_HUDControl.obj",
-      "base_path": "build/base/client/cl_dll/guess_HUDControl.obj",
+      "name": "client/cl_dll/HUDControl_guess",
+      "target_path": "build/target/client/cl_dll/HUDControl_guess.obj",
+      "base_path": "build/base/client/cl_dll/HUDControl_guess.obj",
       "metadata": {
-        "source_path": "src/cl_dll/guess_HUDControl.cpp"
+        "source_path": "src/cl_dll/HUDControl_guess.cpp"
       }
     },
     {
@@ -1948,259 +1948,259 @@
       }
     },
     {
-      "name": "client/cl_dll/guess_AmmoInventory",
-      "target_path": "build/target/client/cl_dll/guess_AmmoInventory.obj",
-      "base_path": "build/base/client/cl_dll/guess_AmmoInventory.obj",
+      "name": "client/cl_dll/AmmoInventory_guess",
+      "target_path": "build/target/client/cl_dll/AmmoInventory_guess.obj",
+      "base_path": "build/base/client/cl_dll/AmmoInventory_guess.obj",
       "metadata": {
-        "source_path": "src/cl_dll/guess_AmmoInventory.cpp"
+        "source_path": "src/cl_dll/AmmoInventory_guess.cpp"
       }
     },
     {
-      "name": "client/cl_dll/guess_BookMenu",
-      "target_path": "build/target/client/cl_dll/guess_BookMenu.obj",
-      "base_path": "build/base/client/cl_dll/guess_BookMenu.obj",
+      "name": "client/cl_dll/BookMenu_guess",
+      "target_path": "build/target/client/cl_dll/BookMenu_guess.obj",
+      "base_path": "build/base/client/cl_dll/BookMenu_guess.obj",
       "metadata": {
-        "source_path": "src/cl_dll/guess_BookMenu.cpp"
+        "source_path": "src/cl_dll/BookMenu_guess.cpp"
       }
     },
     {
-      "name": "client/cl_dll/guess_ClothesMenu",
-      "target_path": "build/target/client/cl_dll/guess_ClothesMenu.obj",
-      "base_path": "build/base/client/cl_dll/guess_ClothesMenu.obj",
+      "name": "client/cl_dll/ClothesMenu_guess",
+      "target_path": "build/target/client/cl_dll/ClothesMenu_guess.obj",
+      "base_path": "build/base/client/cl_dll/ClothesMenu_guess.obj",
       "metadata": {
-        "source_path": "src/cl_dll/guess_ClothesMenu.cpp"
+        "source_path": "src/cl_dll/ClothesMenu_guess.cpp"
       }
     },
     {
-      "name": "client/cl_dll/guess_CoopStats",
-      "target_path": "build/target/client/cl_dll/guess_CoopStats.obj",
-      "base_path": "build/base/client/cl_dll/guess_CoopStats.obj",
+      "name": "client/cl_dll/CoopStats_guess",
+      "target_path": "build/target/client/cl_dll/CoopStats_guess.obj",
+      "base_path": "build/base/client/cl_dll/CoopStats_guess.obj",
       "metadata": {
-        "source_path": "src/cl_dll/guess_CoopStats.cpp"
+        "source_path": "src/cl_dll/CoopStats_guess.cpp"
       }
     },
     {
-      "name": "client/cl_dll/guess_Credits",
-      "target_path": "build/target/client/cl_dll/guess_Credits.obj",
-      "base_path": "build/base/client/cl_dll/guess_Credits.obj",
+      "name": "client/cl_dll/Credits_guess",
+      "target_path": "build/target/client/cl_dll/Credits_guess.obj",
+      "base_path": "build/base/client/cl_dll/Credits_guess.obj",
       "metadata": {
-        "source_path": "src/cl_dll/guess_Credits.cpp"
+        "source_path": "src/cl_dll/Credits_guess.cpp"
       }
     },
     {
-      "name": "client/cl_dll/guess_CutsceneSkip",
-      "target_path": "build/target/client/cl_dll/guess_CutsceneSkip.obj",
-      "base_path": "build/base/client/cl_dll/guess_CutsceneSkip.obj",
+      "name": "client/cl_dll/CutsceneSkip_guess",
+      "target_path": "build/target/client/cl_dll/CutsceneSkip_guess.obj",
+      "base_path": "build/base/client/cl_dll/CutsceneSkip_guess.obj",
       "metadata": {
-        "source_path": "src/cl_dll/guess_CutsceneSkip.cpp"
+        "source_path": "src/cl_dll/CutsceneSkip_guess.cpp"
       }
     },
     {
-      "name": "client/cl_dll/guess_Documents",
-      "target_path": "build/target/client/cl_dll/guess_Documents.obj",
-      "base_path": "build/base/client/cl_dll/guess_Documents.obj",
+      "name": "client/cl_dll/Documents_guess",
+      "target_path": "build/target/client/cl_dll/Documents_guess.obj",
+      "base_path": "build/base/client/cl_dll/Documents_guess.obj",
       "metadata": {
-        "source_path": "src/cl_dll/guess_Documents.cpp"
+        "source_path": "src/cl_dll/Documents_guess.cpp"
       }
     },
     {
-      "name": "client/cl_dll/guess_VGUIExtraMenu",
-      "target_path": "build/target/client/cl_dll/guess_VGUIExtraMenu.obj",
-      "base_path": "build/base/client/cl_dll/guess_VGUIExtraMenu.obj",
+      "name": "client/cl_dll/VGUIExtraMenu_guess",
+      "target_path": "build/target/client/cl_dll/VGUIExtraMenu_guess.obj",
+      "base_path": "build/base/client/cl_dll/VGUIExtraMenu_guess.obj",
       "metadata": {
-        "source_path": "src/cl_dll/guess_VGUIExtraMenu.cpp"
+        "source_path": "src/cl_dll/VGUIExtraMenu_guess.cpp"
       }
     },
     {
-      "name": "client/cl_dll/guess_GameMenu",
-      "target_path": "build/target/client/cl_dll/guess_GameMenu.obj",
-      "base_path": "build/base/client/cl_dll/guess_GameMenu.obj",
+      "name": "client/cl_dll/GameMenu_guess",
+      "target_path": "build/target/client/cl_dll/GameMenu_guess.obj",
+      "base_path": "build/base/client/cl_dll/GameMenu_guess.obj",
       "metadata": {
-        "source_path": "src/cl_dll/guess_GameMenu.cpp"
+        "source_path": "src/cl_dll/GameMenu_guess.cpp"
       }
     },
     {
-      "name": "client/cl_dll/guess_Language",
-      "target_path": "build/target/client/cl_dll/guess_Language.obj",
-      "base_path": "build/base/client/cl_dll/guess_Language.obj",
+      "name": "client/cl_dll/Language_guess",
+      "target_path": "build/target/client/cl_dll/Language_guess.obj",
+      "base_path": "build/base/client/cl_dll/Language_guess.obj",
       "metadata": {
-        "source_path": "src/cl_dll/guess_Language.cpp"
+        "source_path": "src/cl_dll/Language_guess.cpp"
       }
     },
     {
-      "name": "client/cl_dll/guess_BlackBar",
-      "target_path": "build/target/client/cl_dll/guess_BlackBar.obj",
-      "base_path": "build/base/client/cl_dll/guess_BlackBar.obj",
+      "name": "client/cl_dll/BlackBar_guess",
+      "target_path": "build/target/client/cl_dll/BlackBar_guess.obj",
+      "base_path": "build/base/client/cl_dll/BlackBar_guess.obj",
       "metadata": {
-        "source_path": "src/cl_dll/guess_BlackBar.cpp"
+        "source_path": "src/cl_dll/BlackBar_guess.cpp"
       }
     },
     {
-      "name": "client/cl_dll/guess_Neffect",
-      "target_path": "build/target/client/cl_dll/guess_Neffect.obj",
-      "base_path": "build/base/client/cl_dll/guess_Neffect.obj",
+      "name": "client/cl_dll/Neffect_guess",
+      "target_path": "build/target/client/cl_dll/Neffect_guess.obj",
+      "base_path": "build/base/client/cl_dll/Neffect_guess.obj",
       "metadata": {
-        "source_path": "src/cl_dll/guess_Neffect.cpp"
+        "source_path": "src/cl_dll/Neffect_guess.cpp"
       }
     },
     {
-      "name": "client/cl_dll/guess_Padlock",
-      "target_path": "build/target/client/cl_dll/guess_Padlock.obj",
-      "base_path": "build/base/client/cl_dll/guess_Padlock.obj",
+      "name": "client/cl_dll/Padlock_guess",
+      "target_path": "build/target/client/cl_dll/Padlock_guess.obj",
+      "base_path": "build/base/client/cl_dll/Padlock_guess.obj",
       "metadata": {
-        "source_path": "src/cl_dll/guess_Padlock.cpp"
+        "source_path": "src/cl_dll/Padlock_guess.cpp"
       }
     },
     {
-      "name": "client/cl_dll/guess_SaveLoad",
-      "target_path": "build/target/client/cl_dll/guess_SaveLoad.obj",
-      "base_path": "build/base/client/cl_dll/guess_SaveLoad.obj",
+      "name": "client/cl_dll/SaveLoad_guess",
+      "target_path": "build/target/client/cl_dll/SaveLoad_guess.obj",
+      "base_path": "build/base/client/cl_dll/SaveLoad_guess.obj",
       "metadata": {
-        "source_path": "src/cl_dll/guess_SaveLoad.cpp"
+        "source_path": "src/cl_dll/SaveLoad_guess.cpp"
       }
     },
     {
-      "name": "client/cl_dll/guess_Scope",
-      "target_path": "build/target/client/cl_dll/guess_Scope.obj",
-      "base_path": "build/base/client/cl_dll/guess_Scope.obj",
+      "name": "client/cl_dll/Scope_guess",
+      "target_path": "build/target/client/cl_dll/Scope_guess.obj",
+      "base_path": "build/base/client/cl_dll/Scope_guess.obj",
       "metadata": {
-        "source_path": "src/cl_dll/guess_Scope.cpp"
+        "source_path": "src/cl_dll/Scope_guess.cpp"
       }
     },
     {
-      "name": "client/cl_dll/guess_Telephone",
-      "target_path": "build/target/client/cl_dll/guess_Telephone.obj",
-      "base_path": "build/base/client/cl_dll/guess_Telephone.obj",
+      "name": "client/cl_dll/Telephone_guess",
+      "target_path": "build/target/client/cl_dll/Telephone_guess.obj",
+      "base_path": "build/base/client/cl_dll/Telephone_guess.obj",
       "metadata": {
-        "source_path": "src/cl_dll/guess_Telephone.cpp"
+        "source_path": "src/cl_dll/Telephone_guess.cpp"
       }
     },
     {
-      "name": "client/cl_dll/guess_TVFrame",
-      "target_path": "build/target/client/cl_dll/guess_TVFrame.obj",
-      "base_path": "build/base/client/cl_dll/guess_TVFrame.obj",
+      "name": "client/cl_dll/TVFrame_guess",
+      "target_path": "build/target/client/cl_dll/TVFrame_guess.obj",
+      "base_path": "build/base/client/cl_dll/TVFrame_guess.obj",
       "metadata": {
-        "source_path": "src/cl_dll/guess_TVFrame.cpp"
+        "source_path": "src/cl_dll/TVFrame_guess.cpp"
       }
     },
     {
-      "name": "client/cl_dll/guess_Unlockables",
-      "target_path": "build/target/client/cl_dll/guess_Unlockables.obj",
-      "base_path": "build/base/client/cl_dll/guess_Unlockables.obj",
+      "name": "client/cl_dll/Unlockables_guess",
+      "target_path": "build/target/client/cl_dll/Unlockables_guess.obj",
+      "base_path": "build/base/client/cl_dll/Unlockables_guess.obj",
       "metadata": {
-        "source_path": "src/cl_dll/guess_Unlockables.cpp"
+        "source_path": "src/cl_dll/Unlockables_guess.cpp"
       }
     },
     {
-      "name": "client/cl_dll/guess_AnimalStatue",
-      "target_path": "build/target/client/cl_dll/guess_AnimalStatue.obj",
-      "base_path": "build/base/client/cl_dll/guess_AnimalStatue.obj",
+      "name": "client/cl_dll/AnimalStatue_guess",
+      "target_path": "build/target/client/cl_dll/AnimalStatue_guess.obj",
+      "base_path": "build/base/client/cl_dll/AnimalStatue_guess.obj",
       "metadata": {
-        "source_path": "src/cl_dll/guess_AnimalStatue.cpp"
+        "source_path": "src/cl_dll/AnimalStatue_guess.cpp"
       }
     },
     {
-      "name": "client/cl_dll/guess_VGUIBillboard",
-      "target_path": "build/target/client/cl_dll/guess_VGUIBillboard.obj",
-      "base_path": "build/base/client/cl_dll/guess_VGUIBillboard.obj",
+      "name": "client/cl_dll/VGUIBillboard_guess",
+      "target_path": "build/target/client/cl_dll/VGUIBillboard_guess.obj",
+      "base_path": "build/base/client/cl_dll/VGUIBillboard_guess.obj",
       "metadata": {
-        "source_path": "src/cl_dll/guess_VGUIBillboard.cpp"
+        "source_path": "src/cl_dll/VGUIBillboard_guess.cpp"
       }
     },
     {
-      "name": "client/cl_dll/guess_BossBar",
-      "target_path": "build/target/client/cl_dll/guess_BossBar.obj",
-      "base_path": "build/base/client/cl_dll/guess_BossBar.obj",
+      "name": "client/cl_dll/BossBar_guess",
+      "target_path": "build/target/client/cl_dll/BossBar_guess.obj",
+      "base_path": "build/base/client/cl_dll/BossBar_guess.obj",
       "metadata": {
-        "source_path": "src/cl_dll/guess_BossBar.cpp"
+        "source_path": "src/cl_dll/BossBar_guess.cpp"
       }
     },
     {
-      "name": "client/cl_dll/guess_Computer",
-      "target_path": "build/target/client/cl_dll/guess_Computer.obj",
-      "base_path": "build/base/client/cl_dll/guess_Computer.obj",
+      "name": "client/cl_dll/Computer_guess",
+      "target_path": "build/target/client/cl_dll/Computer_guess.obj",
+      "base_path": "build/base/client/cl_dll/Computer_guess.obj",
       "metadata": {
-        "source_path": "src/cl_dll/guess_Computer.cpp"
+        "source_path": "src/cl_dll/Computer_guess.cpp"
       }
     },
     {
-      "name": "client/cl_dll/guess_Difficulty",
-      "target_path": "build/target/client/cl_dll/guess_Difficulty.obj",
-      "base_path": "build/base/client/cl_dll/guess_Difficulty.obj",
+      "name": "client/cl_dll/Difficulty_guess",
+      "target_path": "build/target/client/cl_dll/Difficulty_guess.obj",
+      "base_path": "build/base/client/cl_dll/Difficulty_guess.obj",
       "metadata": {
-        "source_path": "src/cl_dll/guess_Difficulty.cpp"
+        "source_path": "src/cl_dll/Difficulty_guess.cpp"
       }
     },
     {
-      "name": "client/cl_dll/guess_GameOver",
-      "target_path": "build/target/client/cl_dll/guess_GameOver.obj",
-      "base_path": "build/base/client/cl_dll/guess_GameOver.obj",
+      "name": "client/cl_dll/GameOver_guess",
+      "target_path": "build/target/client/cl_dll/GameOver_guess.obj",
+      "base_path": "build/base/client/cl_dll/GameOver_guess.obj",
       "metadata": {
-        "source_path": "src/cl_dll/guess_GameOver.cpp"
+        "source_path": "src/cl_dll/GameOver_guess.cpp"
       }
     },
     {
-      "name": "client/cl_dll/guess_RECBInventory",
-      "target_path": "build/target/client/cl_dll/guess_RECBInventory.obj",
-      "base_path": "build/base/client/cl_dll/guess_RECBInventory.obj",
+      "name": "client/cl_dll/RECBInventory_guess",
+      "target_path": "build/target/client/cl_dll/RECBInventory_guess.obj",
+      "base_path": "build/base/client/cl_dll/RECBInventory_guess.obj",
       "metadata": {
-        "source_path": "src/cl_dll/guess_RECBInventory.cpp"
+        "source_path": "src/cl_dll/RECBInventory_guess.cpp"
       }
     },
     {
-      "name": "client/cl_dll/guess_Keypad",
-      "target_path": "build/target/client/cl_dll/guess_Keypad.obj",
-      "base_path": "build/base/client/cl_dll/guess_Keypad.obj",
+      "name": "client/cl_dll/Keypad_guess",
+      "target_path": "build/target/client/cl_dll/Keypad_guess.obj",
+      "base_path": "build/base/client/cl_dll/Keypad_guess.obj",
       "metadata": {
-        "source_path": "src/cl_dll/guess_Keypad.cpp"
+        "source_path": "src/cl_dll/Keypad_guess.cpp"
       }
     },
     {
-      "name": "client/cl_dll/guess_NoteDocument",
-      "target_path": "build/target/client/cl_dll/guess_NoteDocument.obj",
-      "base_path": "build/base/client/cl_dll/guess_NoteDocument.obj",
+      "name": "client/cl_dll/NoteDocument_guess",
+      "target_path": "build/target/client/cl_dll/NoteDocument_guess.obj",
+      "base_path": "build/base/client/cl_dll/NoteDocument_guess.obj",
       "metadata": {
-        "source_path": "src/cl_dll/guess_NoteDocument.cpp"
+        "source_path": "src/cl_dll/NoteDocument_guess.cpp"
       }
     },
     {
-      "name": "client/cl_dll/guess_Phone",
-      "target_path": "build/target/client/cl_dll/guess_Phone.obj",
-      "base_path": "build/base/client/cl_dll/guess_Phone.obj",
+      "name": "client/cl_dll/Phone_guess",
+      "target_path": "build/target/client/cl_dll/Phone_guess.obj",
+      "base_path": "build/base/client/cl_dll/Phone_guess.obj",
       "metadata": {
-        "source_path": "src/cl_dll/guess_Phone.cpp"
+        "source_path": "src/cl_dll/Phone_guess.cpp"
       }
     },
     {
-      "name": "client/cl_dll/guess_PuzzleBar",
-      "target_path": "build/target/client/cl_dll/guess_PuzzleBar.obj",
-      "base_path": "build/base/client/cl_dll/guess_PuzzleBar.obj",
+      "name": "client/cl_dll/PuzzleBar_guess",
+      "target_path": "build/target/client/cl_dll/PuzzleBar_guess.obj",
+      "base_path": "build/base/client/cl_dll/PuzzleBar_guess.obj",
       "metadata": {
-        "source_path": "src/cl_dll/guess_PuzzleBar.cpp"
+        "source_path": "src/cl_dll/PuzzleBar_guess.cpp"
       }
     },
     {
-      "name": "client/cl_dll/guess_Save",
-      "target_path": "build/target/client/cl_dll/guess_Save.obj",
-      "base_path": "build/base/client/cl_dll/guess_Save.obj",
+      "name": "client/cl_dll/Save_guess",
+      "target_path": "build/target/client/cl_dll/Save_guess.obj",
+      "base_path": "build/base/client/cl_dll/Save_guess.obj",
       "metadata": {
-        "source_path": "src/cl_dll/guess_Save.cpp"
+        "source_path": "src/cl_dll/Save_guess.cpp"
       }
     },
     {
-      "name": "client/cl_dll/guess_UserDocument",
-      "target_path": "build/target/client/cl_dll/guess_UserDocument.obj",
-      "base_path": "build/base/client/cl_dll/guess_UserDocument.obj",
+      "name": "client/cl_dll/UserDocument_guess",
+      "target_path": "build/target/client/cl_dll/UserDocument_guess.obj",
+      "base_path": "build/base/client/cl_dll/UserDocument_guess.obj",
       "metadata": {
-        "source_path": "src/cl_dll/guess_UserDocument.cpp"
+        "source_path": "src/cl_dll/UserDocument_guess.cpp"
       }
     },
     {
-      "name": "client/cl_dll/guess_Yesno",
-      "target_path": "build/target/client/cl_dll/guess_Yesno.obj",
-      "base_path": "build/base/client/cl_dll/guess_Yesno.obj",
+      "name": "client/cl_dll/Yesno_guess",
+      "target_path": "build/target/client/cl_dll/Yesno_guess.obj",
+      "base_path": "build/base/client/cl_dll/Yesno_guess.obj",
       "metadata": {
-        "source_path": "src/cl_dll/guess_Yesno.cpp"
+        "source_path": "src/cl_dll/Yesno_guess.cpp"
       }
     },
     {
@@ -2300,11 +2300,11 @@
       }
     },
     {
-      "name": "client/cl_dll/guess_TGALoader",
-      "target_path": "build/target/client/cl_dll/guess_TGALoader.obj",
-      "base_path": "build/base/client/cl_dll/guess_TGALoader.obj",
+      "name": "client/cl_dll/TGALoader_guess",
+      "target_path": "build/target/client/cl_dll/TGALoader_guess.obj",
+      "base_path": "build/base/client/cl_dll/TGALoader_guess.obj",
       "metadata": {
-        "source_path": "src/cl_dll/guess_TGALoader.cpp"
+        "source_path": "src/cl_dll/TGALoader_guess.cpp"
       }
     },
     {
@@ -2316,35 +2316,35 @@
       }
     },
     {
-      "name": "client/cl_dll/guess_CgContext",
-      "target_path": "build/target/client/cl_dll/guess_CgContext.obj",
-      "base_path": "build/base/client/cl_dll/guess_CgContext.obj",
+      "name": "client/cl_dll/CgContext_guess",
+      "target_path": "build/target/client/cl_dll/CgContext_guess.obj",
+      "base_path": "build/base/client/cl_dll/CgContext_guess.obj",
       "metadata": {
-        "source_path": "src/cl_dll/guess_CgContext.cpp"
+        "source_path": "src/cl_dll/CgContext_guess.cpp"
       }
     },
     {
-      "name": "client/cl_dll/guess_CgWater",
-      "target_path": "build/target/client/cl_dll/guess_CgWater.obj",
-      "base_path": "build/base/client/cl_dll/guess_CgWater.obj",
+      "name": "client/cl_dll/CgWater_guess",
+      "target_path": "build/target/client/cl_dll/CgWater_guess.obj",
+      "base_path": "build/base/client/cl_dll/CgWater_guess.obj",
       "metadata": {
-        "source_path": "src/cl_dll/guess_CgWater.cpp"
+        "source_path": "src/cl_dll/CgWater_guess.cpp"
       }
     },
     {
-      "name": "client/cl_dll/guess_PBuffer",
-      "target_path": "build/target/client/cl_dll/guess_PBuffer.obj",
-      "base_path": "build/base/client/cl_dll/guess_PBuffer.obj",
+      "name": "client/cl_dll/PBuffer_guess",
+      "target_path": "build/target/client/cl_dll/PBuffer_guess.obj",
+      "base_path": "build/base/client/cl_dll/PBuffer_guess.obj",
       "metadata": {
-        "source_path": "src/cl_dll/guess_PBuffer.cpp"
+        "source_path": "src/cl_dll/PBuffer_guess.cpp"
       }
     },
     {
-      "name": "client/cl_dll/guess_TextureManager",
-      "target_path": "build/target/client/cl_dll/guess_TextureManager.obj",
-      "base_path": "build/base/client/cl_dll/guess_TextureManager.obj",
+      "name": "client/cl_dll/TextureManager_guess",
+      "target_path": "build/target/client/cl_dll/TextureManager_guess.obj",
+      "base_path": "build/base/client/cl_dll/TextureManager_guess.obj",
       "metadata": {
-        "source_path": "src/cl_dll/guess_TextureManager.cpp"
+        "source_path": "src/cl_dll/TextureManager_guess.cpp"
       }
     },
     {
@@ -2356,11 +2356,11 @@
       }
     },
     {
-      "name": "client/cl_dll/guess_Blur",
-      "target_path": "build/target/client/cl_dll/guess_Blur.obj",
-      "base_path": "build/base/client/cl_dll/guess_Blur.obj",
+      "name": "client/cl_dll/Blur_guess",
+      "target_path": "build/target/client/cl_dll/Blur_guess.obj",
+      "base_path": "build/base/client/cl_dll/Blur_guess.obj",
       "metadata": {
-        "source_path": "src/cl_dll/guess_Blur.cpp"
+        "source_path": "src/cl_dll/Blur_guess.cpp"
       }
     },
     {
@@ -2449,6 +2449,46 @@
       "base_path": "build/base/hw/engine/net_chan.obj",
       "metadata": {
         "source_path": "src/engine_hw/net_chan.c"
+      }
+    },
+    {
+      "name": "hw/engine/pmovetst",
+      "target_path": "build/target/hw/engine/pmovetst.obj",
+      "base_path": "build/base/hw/engine/pmovetst.obj",
+      "metadata": {
+        "source_path": "src/engine_hw/pmovetst.c"
+      }
+    },
+    {
+      "name": "hw/engine/world",
+      "target_path": "build/target/hw/engine/world.obj",
+      "base_path": "build/base/hw/engine/world.obj",
+      "metadata": {
+        "source_path": "src/engine_hw/world.c"
+      }
+    },
+    {
+      "name": "hw/engine/hashpak",
+      "target_path": "build/target/hw/engine/hashpak.obj",
+      "base_path": "build/base/hw/engine/hashpak.obj",
+      "metadata": {
+        "source_path": "src/engine_hw/hashpak.c"
+      }
+    },
+    {
+      "name": "hw/engine/sv_log",
+      "target_path": "build/target/hw/engine/sv_log.obj",
+      "base_path": "build/base/hw/engine/sv_log.obj",
+      "metadata": {
+        "source_path": "src/engine_hw/sv_log.c"
+      }
+    },
+    {
+      "name": "hw/engine/sv_upld",
+      "target_path": "build/target/hw/engine/sv_upld.obj",
+      "base_path": "build/base/hw/engine/sv_upld.obj",
+      "metadata": {
+        "source_path": "src/engine_hw/sv_upld.c"
       }
     }
   ]
