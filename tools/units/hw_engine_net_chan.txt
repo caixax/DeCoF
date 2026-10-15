@@ -28,3 +28,5 @@ _Netchan_IsReceiving
 _Netchan_IncomingReady
 _Netchan_UpdateProgress
 _Netchan_Init
+_Netchan_CompressPacket
+_Netchan_DecompressPacket

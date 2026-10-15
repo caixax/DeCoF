@@ -36,4 +36,37 @@ typedef struct dheader_s
 	lump_t	lumps[HEADER_LUMPS];
 } dheader_t;
 
+#define	MAX_MAP_HULLS		4
+
+#define	MAXLIGHTMAPS		4
+
+#define	NUM_AMBIENTS		4		// automatic ambient sounds
+
+// the contents that const.h leaves to this file
+#define	CONTENTS_ORIGIN		-7		// removed at csg time
+#define	CONTENTS_CLIP		-8		// changed to contents_solid
+#define	CONTENTS_CURRENT_0		-9
+#define	CONTENTS_CURRENT_90		-10
+#define	CONTENTS_CURRENT_180	-11
+#define	CONTENTS_CURRENT_270	-12
+#define	CONTENTS_CURRENT_UP		-13
+#define	CONTENTS_CURRENT_DOWN	-14
+
+#define CONTENTS_TRANSLUCENT	-15
+
+typedef struct
+{
+	float		mins[3], maxs[3];
+	float		origin[3];
+	int			headnode[MAX_MAP_HULLS];
+	int			visleafs;		// not including the solid leaf 0
+	int			firstface, numfaces;
+} dmodel_t;
+
+typedef struct
+{
+	int			planenum;
+	short		children[2];	// negative numbers are contents
+} dclipnode_t;
+
 #endif // BSPFILE_H

@@ -43,4 +43,19 @@ typedef struct
 	byte	r, g, b;
 } color24;
 
+#define	MAX_QPATH	64		// max length of a quake game pathname
+
+typedef unsigned int	uint32;
+
+// precache limits of this engine build (sv.model_precache, sv.sound_precache,
+// sv.generic_precache are 768 entries in the Windows binary)
+#define	MAX_MODELS			768
+#define	MAX_SOUNDS			768
+#define	MAX_SOUNDS_HASHLOOKUP_SIZE	( MAX_SOUNDS * 2 - 1 )
+#define	MAX_GENERIC			768
+#define	MAX_LIGHTSTYLES		64
+
+// buildnum.c
+int		build_number( void );
+
 #endif // QUAKEDEF_H

@@ -39,3 +39,5 @@ _DELTA_ClearStats_f
 _DELTA_PrintStats
 _DELTA_DumpStats_f
 _DELTA_Init
+_DELTA_FindField
+_DELTA_Shutdown

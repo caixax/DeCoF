@@ -6,4 +6,6 @@
 void	ClientDLL_ChatInputPosition( int *x, int *y );
 int		ClientDLL_Key_Event( int down, int keynum, const char *pszCurrentBinding );
 
+extern	struct modfuncs_s	g_modfuncs;
+
 #endif // CDLL_INT_H
