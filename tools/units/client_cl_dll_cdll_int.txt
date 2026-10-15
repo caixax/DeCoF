@@ -20,5 +20,11 @@ _Initialize
 ??_GCHudAmmo@@UAEPAXI@Z
 ??_GCHudAmmoSecondary@@UAEPAXI@Z
 ??_GCHudHealth@@UAEPAXI@Z
-?Init@CHudBase@@UAEHXZ
 _HUD_ConnectionlessPacket
+??_GCHudGeiger@@UAEPAXI@Z
+??_GCHudTrain@@UAEPAXI@Z
+??_GCHudDeathNotice@@UAEPAXI@Z
+??_GCHudSayText@@UAEPAXI@Z
+??_GCBlackBar@@UAEPAXI@Z
+??_GCHudParticle@@UAEPAXI@Z
+??_GCHudTextMessage@@UAEPAXI@Z

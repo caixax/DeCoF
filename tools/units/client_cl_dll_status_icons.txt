@@ -4,3 +4,4 @@
 ?Init@CHudStatusIcons@@UAEHXZ
 ?MsgFunc_StatusIcon@CHudStatusIcons@@QAEHPBDHPAX@Z
 ?Reset@CHudStatusIcons@@UAEXXZ
+?VidInit@CHudStatusIcons@@UAEHXZ

@@ -124,30 +124,27 @@ int CHudHealth:: MsgFunc_Health(const char *pszName,  int iSize, void *pbuf )
 
 	int iLocalIndex = pLocal->index;
 
-	if ( !guess_bCoop )
-	{
-		m_iFlags |= HUD_ACTIVE;
-	}
-	else
+	if ( guess_bCoop )
 	{
 		if ( iLocalIndex < 0 || iLocalIndex > gEngfuncs.GetMaxClients() )
 			return 0;
 
 		guess_m_iCoopHealth[guess_iPlayer] = x;
-		m_iFlags |= HUD_ACTIVE;
-
-		if ( guess_iPlayer != iLocalIndex )
-			return 1;
 	}
 
-	// Only update the fade if we've changed health
-	if (x != m_iHealth)
+	m_iFlags |= HUD_ACTIVE;
+
+	if ( !guess_bCoop || guess_iPlayer == iLocalIndex )
 	{
-		m_fFade = FADE_TIME;
-		m_iHealth = x;
-	}
+		// Only update the fade if we've changed health
+		if (x != m_iHealth)
+		{
+			m_fFade = FADE_TIME;
+			m_iHealth = x;
+		}
 
-	gViewPort->m_pHud2->UpdateHealth(x); // buz
+		gViewPort->m_pHud2->UpdateHealth(x); // buz
+	}
 
 	return 1;
 }

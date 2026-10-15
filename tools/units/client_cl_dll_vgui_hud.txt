@@ -10,3 +10,4 @@
 ??0CHud2@@QAE@XZ
 ?FindAmmoImageForWeapon@CHud2@@IAEPAVBitmapTGA@vgui@@PBD@Z
 ?solve@CHud2@@UAEXXZ
+??1CHud2@@QAE@XZ

@@ -4,3 +4,7 @@
 ?guess_IsProgramValid@guess_CCgContext@@QAE_NPBDH@Z
 ?guess_RemoveProgram@guess_CCgContext@@QAEPAUguess_cgprogram_s@@PAU2@@Z
 ?guess_Shutdown@guess_CCgContext@@QAEXXZ
+??0guess_CCgContext@@QAE@XZ
+??1guess_CCgContext@@QAE@XZ
+?guess_AddProgram@guess_CCgContext@@QAEPAUguess_cgprogram_s@@PBDH@Z
+?guess_IsInitialized@guess_CCgContext@@QAE_NXZ

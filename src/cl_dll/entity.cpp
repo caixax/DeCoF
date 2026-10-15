@@ -972,22 +972,25 @@ void DLLEXPORT HUD_StudioEvent( const struct mstudioevent_s *event, const struct
 		break;
 	// Client side sound
 	case 5004:
+		{
+		const char *pszOptions = event->options;
+
 		if ( gHUD.m_Ammo.m_pWeapon && ( gHUD.m_Ammo.m_pWeapon->iId == 20 || gHUD.m_Ammo.m_pWeapon->iId == 23 || gHUD.m_Ammo.m_pWeapon->iId == 26
 			|| gHUD.m_Ammo.m_pWeapon->iId == 3 || gHUD.m_Ammo.m_pWeapon->iId == 9 || gHUD.m_Ammo.m_pWeapon->iId == 27 || gHUD.m_Ammo.m_pWeapon->iId == 7
 			|| gHUD.m_Ammo.m_pWeapon->iId == 21 || gHUD.m_Ammo.m_pWeapon->iId == 11 || gHUD.m_Ammo.m_pWeapon->iId == 4 || gHUD.m_Ammo.m_pWeapon->iId == 14
 			|| gHUD.m_Ammo.m_pWeapon->iId == 19 ) )
 		{
-			if ( strstr( event->options, "weapons/" ) )
+			if ( strstr( pszOptions, "weapons/" ) )
 			{
 				char szName[256];
 				bool bFound = false;
 				unsigned int j = 0;
 
-				for ( unsigned int i = 0; i < strlen( event->options ); i++ )
+				for ( unsigned int i = 0; i < strlen( pszOptions ); i++ )
 				{
 					if ( bFound )
-						szName[j++] = event->options[i];
-					else if ( event->options[i] == '/' || event->options[i] == '\\' )
+						szName[j++] = pszOptions[i];
+					else if ( pszOptions[i] == '/' || pszOptions[i] == '\\' )
 						bFound = true;
 				}
 
@@ -1007,15 +1010,16 @@ void DLLEXPORT HUD_StudioEvent( const struct mstudioevent_s *event, const struct
 
 		if ( bCS )
 		{
-			char szSound[64];
+			char szSound[128];
 
 			strcpy( szSound, "cs/" );
-			strcat( szSound, event->options );
+			strcat( szSound, pszOptions );
 			gEngfuncs.pfnPlaySoundByNameAtLocation( szSound, 1.0, (float *)&entity->attachment[0] );
 		}
 		else
-			gEngfuncs.pfnPlaySoundByNameAtLocation( (char *)event->options, 1.0, (float *)&entity->attachment[0] );
+			gEngfuncs.pfnPlaySoundByNameAtLocation( (char *)pszOptions, 1.0, (float *)&entity->attachment[0] );
 		break;
+		}
 	case 5005: // buz: left foot step (attach 3)
 		{
 			int contents = gEngfuncs.PM_PointContents( (float *)&entity->attachment[3], NULL );

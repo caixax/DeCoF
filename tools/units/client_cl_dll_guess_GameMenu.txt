@@ -11,3 +11,6 @@
 ?ActionSignal@CGameMenu@@QAEXH@Z
 ?guess_LoadCampaigns@CGameMenu@@QAEXXZ
 ?guess_ResetButtonPositions@CGameMenu@@QAEXXZ
+??$?HDU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@ABV10@0@Z
+??$?HDU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@ABV10@QBD@Z
+??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@U_String_constructor_concat_tag@1@ABV01@QBDI2I@Z

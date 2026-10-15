@@ -110,6 +110,7 @@ public:
 	guess_cgprogram_t *guess_AddProgram( const char *name, int type );
 	guess_cgprogram_t *guess_FindProgram( const char *name );
 	CGprofile guess_GetFragmentProfile( void );
+	bool guess_IsInitialized( void );
 	bool guess_IsProgramValid( const char *path, int type );
 	guess_cgprogram_t *guess_RemoveProgram( guess_cgprogram_t *program );
 	void guess_Shutdown( void );

@@ -12,3 +12,4 @@
 ?R_SetFrustum@FrustumCheck@@QAEXVVector@@0M@Z
 ?R_SetFrustum@FrustumCheck@@QAEXVVector@@0MMM@Z
 ?RotatePointAroundVector@@YAXAAVVector@@ABV1@1M@Z
+?BoxOnPlaneSide@@YAHAAVVector@@0PAUmplane_s@@@Z

@@ -27,3 +27,4 @@
 ?setColor@CTextImage2@@UAEXVColor@vgui@@@Z
 ?setPos@CTextImage2@@UAEXHH@Z
 ?setText@CLabelHeader@@UAEXPBD@Z
+??1CLabelHeader@@QAE@XZ

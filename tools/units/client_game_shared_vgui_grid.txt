@@ -28,3 +28,6 @@ vgui::CGrid::CGridEntry::`vector_deleting_destructor'
 ?SetSpacing@CGrid@vgui@@QAEXHH@Z
 ?getCellAtPoint@CGrid@vgui@@QAE_NHHAAH0@Z
 ?paint@CGrid@vgui@@UAEXXZ
+?GetXSpacing@CGrid@vgui@@QAEHXZ
+?GetYSpacing@CGrid@vgui@@QAEHXZ
+?paintBackground@CGrid@vgui@@UAEXXZ

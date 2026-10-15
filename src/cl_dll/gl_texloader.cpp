@@ -610,6 +610,44 @@ void CreateExtDataForTextures( )
 }
 
 
+// Cry of Fear: the format checks of CreateTexture without the upload
+// (nothing calls it in 1.6a; the file stays loaded when the texture is valid)
+int guess_CheckTexture(const char* filename)
+{
+	if (!gl.IsGLAllowed())
+		return 0;
+
+	int length = 0;
+	char *file = (char *)gEngfuncs.COM_LoadFile( (char*)filename, 5, &length );
+	if (!file)
+		return 0;
+
+	TGAheader *hdr = (TGAheader *)file;
+	if (!(hdr->DataType == 2) || (hdr->BPP != 24))
+	{
+		gEngfuncs.COM_FreeFile(file);
+		return 0;
+	}
+
+	int maxtexsize;
+	gl.glGetIntegerv(GL_MAX_TEXTURE_SIZE, &maxtexsize);
+	if (hdr->Width > maxtexsize || hdr->Height > maxtexsize)
+	{
+		gEngfuncs.COM_FreeFile(file);
+		return 0;
+	}
+
+	if (!(hdr->Width == 16 || hdr->Width == 32 || hdr->Width == 64 || hdr->Width == 128 || hdr->Width == 256 || hdr->Width == 512 || hdr->Width == 1024) ||
+		!(hdr->Height == 16 || hdr->Height == 32 || hdr->Height == 64 || hdr->Height == 128 || hdr->Height == 256 || hdr->Height == 512 || hdr->Height == 1024))
+	{
+		gEngfuncs.COM_FreeFile(file);
+		return 0;
+	}
+
+	return 1;
+}
+
+
 // ===========================
 // Sorting textures pointers in world->textures array by detail texture id.
 // This may allow us make less state switches during rendering

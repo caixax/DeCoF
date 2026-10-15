@@ -205,7 +205,6 @@ ParticleSystem::ParticleSystem( int iEntIndex, char *szFilename, int iViewModel,
 	guess_m_iViewModel = iViewModel;
 	m_iEntIndex = iEntIndex;
 	guess_m_iAttachment = iAttachment;
-	strncpy( guess_m_szModel, szModel, sizeof( guess_m_szModel ) );
 	m_pNextSystem = NULL;
 	m_pFirstType = NULL;
 	guess_m_iFadeOut = 0;
@@ -213,6 +212,7 @@ ParticleSystem::ParticleSystem( int iEntIndex, char *szFilename, int iViewModel,
 	guess_m_flFadeStart = 0;
 	guess_m_flFadeTime = 0;
 	guess_m_iBone = -1;
+	strncpy( guess_m_szModel, szModel, sizeof( guess_m_szModel ) );
 	if (!c_bCosTableInit)
 	{
 		for (int i = 0; i < 360+90; i++)

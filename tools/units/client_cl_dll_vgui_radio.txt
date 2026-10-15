@@ -5,3 +5,4 @@
 ?Reposition@CRadioIcon@@IAEXXZ
 ?Show@CRadioIcon@@QAEXPBDMHHHH@Z
 ?paintBackground@CRadioIcon@@MAEXXZ
+??1CRadioIcon@@QAE@XZ

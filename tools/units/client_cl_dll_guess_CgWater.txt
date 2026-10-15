@@ -5,3 +5,6 @@
 ?guess_RenderQuad@guess_CCgWater@@QAEXXZ
 ?guess_SetBlackShader@guess_CCgWater@@QAEXXZ
 ?guess_UpdateEntities@guess_CCgWater@@QAEXXZ
+?guess_Render@guess_CCgWater@@QAEXXZ
+??0guess_CCgWater@@QAE@XZ
+?guess_EndShaders@guess_CCgWater@@QAEXXZ

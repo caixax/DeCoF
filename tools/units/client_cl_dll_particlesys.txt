@@ -17,3 +17,4 @@ RandomRange::RandomRange
 ?UpdateParticle@ParticleSystem@@QAE_NPAUparticle@@M@Z
 ?UpdateSystem@ParticleSystem@@QAE_NMH@Z
 ?ParseType@ParticleSystem@@QAEPAVParticleType@@AAPAD@Z
+??0ParticleSystem@@QAE@HPADHH0@Z

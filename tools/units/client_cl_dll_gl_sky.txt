@@ -5,3 +5,4 @@
 ?SetSkyAngles@@YAXXZ
 ?StoreSkyboxEntity@@YAXPAUcl_entity_s@@@Z
 ?DrawSky@@YAXXZ
+?CheckSky@@YAXXZ

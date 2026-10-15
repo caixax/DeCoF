@@ -148,6 +148,47 @@ void InitSky()
 
 void CheckSky()
 {
+	// Cry of Fear: multiplayer games always use the black sky
+	if (gEngfuncs.GetMaxClients() > 1)
+	{
+		if (!sky_base_texturenum)
+		{
+			sky_base_texturenum = current_ext_texture_id;
+			current_ext_texture_id += 6;
+			Log("sky base texturenum set\n");
+		}
+
+		const char *skyname = "black";
+
+		if (current_skyname[0] != 0 && !strcmp(current_skyname, skyname))
+			return;
+
+		skyloaded = 0;
+
+		static char* skysuffixes[] = {"lf", "bk", "rt", "ft", "up", "dn"};
+
+		for (int i = 0; i < 6; i++)
+		{
+			char path[256];
+			sprintf(path, "gfx/env/%s%s.tga", skyname, skysuffixes[i]);
+			int ret = CreateTexture(path, MIPS_NO, sky_base_texturenum + i);
+			if (!ret)
+			{
+				ConLog("Sky error: cant load sky face %s\n", path);
+				ConLog("Use gl_customsky 1 to reenable sky\n");
+				gEngfuncs.Cvar_SetValue( "gl_customsky", 0 );
+				return;
+			}
+			gl.glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP );
+			gl.glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP );
+		}
+
+		strcpy(current_skyname, skyname);
+		skyloaded = 1;
+		ConLog("Loaded skybox %s\n", skyname);
+		return;
+	}
+
 	if (!sky_base_texturenum)
 	{
 		sky_base_texturenum = current_ext_texture_id;

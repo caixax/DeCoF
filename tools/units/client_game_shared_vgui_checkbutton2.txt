@@ -23,3 +23,4 @@
 ?mouseReleased@CDefaultInputSignal@vgui@@UAEXW4MouseCode@2@PAVPanel@2@@Z
 ?mouseWheeled@CDefaultInputSignal@vgui@@UAEXHPAVPanel@2@@Z
 ??1CCheckButton2@vgui@@QAE@XZ
+?GetCheckboxLeft@CCheckButton2@vgui@@QAE_NXZ

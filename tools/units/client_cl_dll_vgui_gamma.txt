@@ -3,3 +3,4 @@
 ?GraphDisable@@YAXXZ
 ?GraphEnable@@YAXXZ
 ?paint@CGammaView@@MAEXXZ
+??1CGammaView@@QAE@XZ

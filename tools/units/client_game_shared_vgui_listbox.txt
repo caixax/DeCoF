@@ -13,3 +13,5 @@
 ?paintBackground@CListBox@vgui@@UAEXXZ
 ?setPos@CListBox@vgui@@UAEXHH@Z
 ?setSize@CListBox@vgui@@UAEXHH@Z
+?GetScrollPos@CListBox@vgui@@QAEHXZ
+?Init@CListBox@vgui@@QAEXXZ

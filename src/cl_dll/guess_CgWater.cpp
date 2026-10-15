@@ -59,6 +59,12 @@ void guess_CCgWater::guess_DrawBlackQuad( void )
 	glMatrixMode( GL_MODELVIEW );
 }
 
+void guess_CCgWater::guess_EndShaders( void )
+{
+	guess_g_CgContext.guess_DisableFragmentProfile();
+	guess_g_CgContext.guess_DisableVertexProfile();
+}
+
 void guess_CCgWater::guess_Init( void )
 {
 	if ( IEngineStudio.IsHardware() != 1 )
@@ -247,20 +253,22 @@ void guess_CCgWater::guess_Render( void )
 		float t = gEngfuncs.pfnGetCvarFloat( "cl_waterspeed_y" );
 		t = cos( gEngfuncs.GetClientTime() ) / t;
 
-		float z = ent->curstate.maxs[2] + 1.0f;
+		vec3_t mins = ent->curstate.mins;
+		vec3_t maxs = ent->curstate.maxs;
+		float z = maxs[2] + 1.0f;
 
 		vec3_t v1, v2, v3, v4;
-		v1[0] = ent->curstate.mins[0];
-		v1[1] = ent->curstate.mins[1];
+		v1[0] = mins[0];
+		v1[1] = mins[1];
 		v1[2] = z;
-		v2[0] = ent->curstate.mins[0];
-		v2[1] = ent->curstate.maxs[1];
+		v2[0] = mins[0];
+		v2[1] = maxs[1];
 		v2[2] = z;
-		v3[0] = ent->curstate.maxs[0];
-		v3[1] = ent->curstate.maxs[1];
+		v3[0] = maxs[0];
+		v3[1] = maxs[1];
 		v3[2] = z;
-		v4[0] = ent->curstate.maxs[0];
-		v4[1] = ent->curstate.mins[1];
+		v4[0] = maxs[0];
+		v4[1] = mins[1];
 		v4[2] = z;
 
 		glBegin( GL_QUADS );
@@ -317,19 +325,21 @@ void guess_CCgWater::guess_Render( void )
 		if ( !ent || ent->curstate.skin != CONTENTS_WATER )
 			continue;
 
+		vec3_t mins = ent->curstate.mins;
+		vec3_t maxs = ent->curstate.maxs;
 		vec3_t v1, v2, v3, v4;
-		v1[0] = ent->curstate.mins[0];
-		v1[1] = ent->curstate.mins[1];
-		v1[2] = ent->curstate.maxs[2];
-		v2[0] = ent->curstate.mins[0];
-		v2[1] = ent->curstate.maxs[1];
-		v2[2] = ent->curstate.maxs[2];
-		v3[0] = ent->curstate.maxs[0];
-		v3[1] = ent->curstate.maxs[1];
-		v3[2] = ent->curstate.maxs[2];
-		v4[0] = ent->curstate.maxs[0];
-		v4[1] = ent->curstate.mins[1];
-		v4[2] = ent->curstate.maxs[2];
+		v1[0] = mins[0];
+		v1[1] = mins[1];
+		v1[2] = maxs[2];
+		v2[0] = mins[0];
+		v2[1] = maxs[1];
+		v2[2] = maxs[2];
+		v3[0] = maxs[0];
+		v3[1] = maxs[1];
+		v3[2] = maxs[2];
+		v4[0] = maxs[0];
+		v4[1] = mins[1];
+		v4[2] = maxs[2];
 
 		glBegin( GL_QUADS );
 		glVertex3fv( v1 );

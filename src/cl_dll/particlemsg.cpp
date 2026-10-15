@@ -17,11 +17,16 @@ extern cvar_t *cl_cheapweaponsmoke;
 
 DECLARE_MESSAGE(m_Particle, Particle)
 DECLARE_MESSAGE(m_Particle, DelParticle) // buz
+DECLARE_MESSAGE(m_Particle, KillWpnPart)
+DECLARE_MESSAGE(m_Particle, Ignite)
 
 int CHudParticle::Init(void)
 {
 //	ConsolePrint("Hooking Particle message\n"); // 30/08/02 November235: Just a debug
 	HOOK_MESSAGE(Particle);
+	gEngfuncs.pfnHookUserMsg("DelPart", __MsgFunc_DelParticle); // buz
+	HOOK_MESSAGE(KillWpnPart);
+	HOOK_MESSAGE(Ignite);
 	gHUD.AddHudElem(this);
 
 /*	if (g_pParticleSystems)
@@ -85,6 +90,20 @@ int CHudParticle:: MsgFunc_DelParticle(const char *pszName,  int iSize, void *pb
 	BEGIN_READ( pbuf, iSize );
 	int entindex = READ_SHORT();
 	g_pParticleSystems.DeleteSystemWithEntity( entindex );
+	return 1;
+}
+
+int CHudParticle::MsgFunc_KillWpnPart(const char *pszName, int iSize, void *pbuf )
+{
+	BEGIN_READ( pbuf, iSize );
+	bool bNow = READ_BYTE() != 0;
+	g_pParticleSystems.guess_KillViewModelSystems( bNow );
+	return 1;
+}
+
+int CHudParticle::MsgFunc_Ignite(const char *pszName, int iSize, void *pbuf )
+{
+	BEGIN_READ( pbuf, iSize );
 	return 1;
 }
 

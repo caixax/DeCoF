@@ -3,3 +3,4 @@
 ?Sys_LoadModule@@YAPAUHInterfaceModule_t@@PBD@Z
 _CreateInterface
 ?Sys_FreeModule@@YAXPAUHInterfaceModule_t@@@Z
+?Sys_GetFactoryThis@@YAP6APAVIBaseInterface@@PBDPAH@ZXZ

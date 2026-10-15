@@ -29,9 +29,15 @@
 #include "ammo.h"
 #include "ammohistory.h"
 #include "vgui_TeamFortressViewport.h"
+#include "guess_Scope.h"
 #include "particlemgr.h"
 
 extern float guess_flUnknown1055959C;
+extern cvar_t *cl_crosshair;
+extern int guess_g_iDualWeapon1;
+extern int guess_g_iDualWeapon2;
+extern int guess_iM16BurstMode;
+extern float guess_flCurrentKick;
 
 WEAPON *gpActiveSel;	// NULL means off, 1 means just the menu bar, otherwise
 						// this points to the active weapon menu item
@@ -1169,41 +1175,10 @@ void CHudAmmo::UserCmd_PrevWeapon(void)
 
 int CHudAmmo::Draw(float flTime)
 {
-//	int a, x, y, r, g, b;
-//	int AmmoWidth;
+	int a, x, y, r, g, b;
+	int AmmoWidth;
 
-	if (!(gHUD.m_iWeaponBits & (1<<(WEAPON_SUIT)) ))
-		return 1;
-
-/*	if (gHUD.m_SpecTank_on)
-	{
-			// infinite ammo?
-			if (gHUD.m_SpecTank_Ammo != -1)
-			{
-			//	gEngfuncs.Con_Printf("draw ammo: %d", gHUD.m_SpecTank_Ammo);
-				y = ScreenHeight - gHUD.m_iFontHeight - gHUD.m_iFontHeight/2;
-				AmmoWidth = gHUD.GetSpriteRect(gHUD.m_HUD_number_0).right - gHUD.GetSpriteRect(gHUD.m_HUD_number_0).left;
-				int iIconWidth = gHUD.GetSpriteRect(m_mach).right - gHUD.GetSpriteRect(m_mach).left;
-
-				a = (int) max( MIN_ALPHA, m_fFade );
-				if (m_fFade > 0)
-					m_fFade -= (gHUD.m_flTimeDelta * 20);
-				
-				UnpackRGB(r,g,b, gHUD.m_iHUDColor);
-				ScaleColors(r, g, b, a );
-
-				x = ScreenWidth - (4 * AmmoWidth) - iIconWidth;
-				x = gHUD.DrawHudNumber(x, y, DHN_3DIGITS | DHN_DRAWZERO, gHUD.m_SpecTank_Ammo, r, g, b);
-
-				x += AmmoWidth/2;
-
-				SPR_Set(gHUD.GetSprite(m_mach), r, g, b );
-				SPR_DrawAdditive(0, x, y, &gHUD.GetSpriteRect(m_mach));
-			}
-		return 1;
-	}*/
-
-	if ( (gHUD.m_iHideHUDDisplay & ( HIDEHUD_WEAPONS | HIDEHUD_ALL )))
+	if ( gHUD.m_iHideHUDDisplay & ( HIDEHUD_WEAPONS | HIDEHUD_ALL | HIDEHUD_HEALTH ) )
 		return 1;
 
 	// Draw Weapon Menu
@@ -1215,24 +1190,208 @@ int CHudAmmo::Draw(float flTime)
 	if (!(m_iFlags & HUD_ACTIVE))
 		return 0;
 
-	if (!m_pWeapon)
-	{
-//		CONPRINT("AmmoDraw: NO pWeapon\n");
-		return 0;
-	}
-//	CONPRINT("AmmoDraw: pWeapon ok\n");
-
 	WEAPON *pw = m_pWeapon; // shorthand
+
+	if (!pw)
+		return 0;
+
+	AmmoWidth = gHUD.GetSpriteRect(gHUD.m_HUD_number_0).right - gHUD.GetSpriteRect(gHUD.m_HUD_number_0).left;
+
+	// dual weapons
+	if ( pw->iId == 15 )
+	{
+		bool bLeftSingle = false;
+		bool bRightSingle = false;
+		int iCylinderBullet = ( guess_m_prcRevolverCylinder->bottom - guess_m_prcRevolverCylinder->top ) / 6;
+
+		if ( ( guess_g_iDualWeapon2 == 3 || guess_g_iDualWeapon2 == 19 || guess_g_iDualWeapon2 == 7 || guess_g_iDualWeapon2 == 21 || guess_g_iDualWeapon2 == 13 )
+			&& guess_g_iDualWeapon1 != 3 && guess_g_iDualWeapon1 != 7 && guess_g_iDualWeapon1 != 21 && guess_g_iDualWeapon1 != 13 )
+			bLeftSingle = true;
+
+		if ( ( guess_g_iDualWeapon1 == 3 || guess_g_iDualWeapon1 == 7 || guess_g_iDualWeapon1 == 19 || guess_g_iDualWeapon1 == 21 || guess_g_iDualWeapon1 == 13 )
+			&& guess_g_iDualWeapon2 != 3 && guess_g_iDualWeapon2 != 7 && guess_g_iDualWeapon2 != 21 && guess_g_iDualWeapon2 != 13 )
+			bRightSingle = true;
+
+		if ( gViewPort && gViewPort->m_pHud2 )
+		{
+			bool bCrosshair = false;
+
+			switch ( guess_g_iDualWeapon1 )
+			{
+			case 3:
+			case 7:
+			case 14:
+			case 19:
+			case 20:
+			case 21:
+				bCrosshair = true;
+				break;
+			}
+
+			switch ( guess_g_iDualWeapon2 )
+			{
+			case 3:
+			case 7:
+			case 14:
+			case 19:
+			case 20:
+			case 21:
+				bCrosshair = true;
+				break;
+			}
+
+			if ( cl_crosshair->value < 1 )
+				bCrosshair = false;
+
+			if ( !gViewPort->guess_m_pScope || ( !gViewPort->guess_m_pScope->guess_m_iScope && bCrosshair ) )
+			{
+				guess_flCurrentKick = 7;
+
+				float flGap = guess_flCurrentKick * 3;
+				int iLength = ScreenWidth / 100;
+
+				FillRGBA( ScreenWidth / 2 + flGap, ScreenHeight / 2, iLength, 1, 255, 0, 0, 200 );
+				FillRGBA( ScreenWidth / 2 - ( iLength + flGap ), ScreenHeight / 2, iLength, 1, 255, 0, 0, 200 );
+				FillRGBA( ScreenWidth / 2 - 1, ScreenHeight / 2 + flGap, 2, iLength, 255, 0, 0, 200 );
+			}
+
+			int iWidth = gHUD.GetSpriteRect( guess_m_HUD_glock_mag ).right - gHUD.GetSpriteRect( guess_m_HUD_glock_mag ).left;
+			int yMag = ScreenHeight - ( gHUD.GetSpriteRect( guess_m_HUD_glock_mag ).bottom - gHUD.GetSpriteRect( guess_m_HUD_glock_mag ).top ) * 1.1;
+			int yCylinder = ScreenHeight - ( gHUD.GetSpriteRect( guess_m_HUD_revolver_cylinder ).bottom - gHUD.GetSpriteRect( guess_m_HUD_revolver_cylinder ).top ) * 1.1;
+			int iBullet = ( guess_m_prcGlockMag->bottom - guess_m_prcGlockMag->top ) / 6;
+			int yIcon = ScreenHeight - ( gHUD.GetSpriteRect( guess_m_HUD_glock_mag_icon ).bottom - gHUD.GetSpriteRect( guess_m_HUD_glock_mag_icon ).top );
+
+			x = ScreenWidth - 8 * AmmoWidth + AmmoWidth / 2 - iWidth * 1.1;
+			int xRight = x + iWidth * 1.1 + iWidth * 1.5;
+			int xLeft = x - iWidth * 1.5;
+
+			if ( bRightSingle )
+				xLeft = xLeft + iWidth * 1.5;
+
+			switch ( guess_g_iDualWeapon1 )
+			{
+			case 3:
+				SPR_Set( gHUD.GetSprite( guess_m_HUD_glock_mag ), 255, 255, 255 );
+				SPR_DrawHoles( guess_m_iDualAmmoLeft, xLeft + iWidth * 1.1, yMag - iBullet, guess_m_prcGlockMag );
+				SPR_Set( gHUD.GetSprite( guess_m_HUD_glock_mag_icon ), 255, 255, 255 );
+				SPR_DrawHoles( 0, xLeft + iWidth * 1.1, yIcon, &gHUD.GetSpriteRect( guess_m_HUD_glock_mag_icon ) );
+				break;
+			case 19:
+				SPR_Set( gHUD.GetSprite( guess_m_HUD_vp70_mag ), 255, 255, 255 );
+				SPR_DrawHoles( guess_m_iDualAmmoLeft, xLeft + iWidth * 1.1, yMag - iBullet, guess_m_prcGlockMag );
+				SPR_Set( gHUD.GetSprite( guess_m_HUD_vp70_mag_icon ), 255, 255, 255 );
+				SPR_DrawHoles( 0, xLeft + iWidth * 1.1, yIcon, &gHUD.GetSpriteRect( guess_m_HUD_vp70_mag_icon ) );
+				break;
+			case 20:
+				SPR_Set( gHUD.GetSprite( guess_m_HUD_browning_mag ), 255, 255, 255 );
+				SPR_DrawHoles( guess_m_iDualAmmoLeft, xLeft + iWidth * 1.1, yMag - iBullet, guess_m_prcGlockMag );
+				SPR_Set( gHUD.GetSprite( guess_m_HUD_glock_mag_icon ), 255, 255, 255 );
+				SPR_DrawHoles( 0, xLeft + iWidth * 1.1, yIcon, &gHUD.GetSpriteRect( guess_m_HUD_glock_mag_icon ) );
+				break;
+			case 7:
+				SPR_Set( gHUD.GetSprite( guess_m_HUD_p345_mag ), 255, 255, 255 );
+				SPR_DrawHoles( guess_m_iDualAmmoLeft, xLeft + iWidth * 1.1, yMag - iBullet, guess_m_prcP345Mag );
+				SPR_Set( gHUD.GetSprite( guess_m_HUD_p345_mag_icon ), 255, 255, 255 );
+				SPR_DrawHoles( 0, xLeft + iWidth * 1.1, yIcon, &gHUD.GetSpriteRect( guess_m_HUD_p345_mag_icon ) );
+				break;
+			case 14:
+				SPR_Set( gHUD.GetSprite( guess_m_HUD_tmp_mag ), 255, 255, 255 );
+				SPR_DrawHoles( guess_m_iDualAmmoLeft, xLeft + iWidth * 1.1, yMag - iBullet, guess_m_prcP345Mag );
+				SPR_Set( gHUD.GetSprite( guess_m_HUD_tmp_mag_icon ), 255, 255, 255 );
+				SPR_DrawHoles( 0, xLeft + iWidth * 1.1, yIcon, &gHUD.GetSpriteRect( guess_m_HUD_tmp_mag_icon ) );
+				break;
+			case 21:
+				SPR_Set( gHUD.GetSprite( guess_m_HUD_revolver_cylinder ), 255, 255, 255 );
+				SPR_DrawHoles( guess_m_iDualAmmoLeft, xLeft + iWidth * 1.1, yCylinder - iCylinderBullet, guess_m_prcRevolverCylinder );
+				break;
+			case 13:
+				SPR_Set( gHUD.GetSprite( guess_m_HUD_flare_icon ), 255, 255, 255 );
+				SPR_DrawHoles( 0, xLeft + iWidth * 1.1, yIcon, &gHUD.GetSpriteRect( guess_m_HUD_flare_icon ) );
+				break;
+			}
+
+			if ( guess_GetMags( guess_g_iDualWeapon1 ) )
+			{
+				int xCross = xLeft + iWidth * 1.1;
+				int xNumber = xLeft + iWidth * 1.0;
+
+				if ( bRightSingle )
+				{
+					xCross = xLeft + iWidth * 2.1;
+					xNumber = xLeft + iWidth * 2.6;
+				}
+
+				a = (int) max( MIN_ALPHA, m_fFade );
+				iWidth = gHUD.GetSpriteRect( guess_m_HUD_mag_cross ).right - gHUD.GetSpriteRect( guess_m_HUD_mag_cross ).left;
+
+				if (m_fFade > 0)
+					m_fFade -= (gHUD.m_flTimeDelta * 20);
+
+				UnpackRGB(r,g,b, gHUD.m_iHUDColor);
+				ScaleColors(r, g, b, a );
+
+				SPR_Set( gHUD.GetSprite( guess_m_HUD_mag_cross ), 255, 255, 255 );
+				SPR_DrawHoles( 0, xCross, yIcon, &gHUD.GetSpriteRect( guess_m_HUD_mag_cross ) );
+				gHUD.DrawHudNumber( xNumber, yIcon, DHN_3DIGITS | DHN_DRAWZERO, guess_GetMags( guess_g_iDualWeapon1 ), r, g, b );
+			}
+
+			switch ( guess_g_iDualWeapon2 )
+			{
+			case 3:
+				SPR_Set( gHUD.GetSprite( guess_m_HUD_glock_mag ), 255, 255, 255 );
+				SPR_DrawHoles( guess_m_iDualAmmoRight, xRight, yMag - iBullet, guess_m_prcGlockMag );
+				SPR_Set( gHUD.GetSprite( guess_m_HUD_glock_mag_icon ), 255, 255, 255 );
+				SPR_DrawHoles( 0, xRight, yIcon, &gHUD.GetSpriteRect( guess_m_HUD_glock_mag_icon ) );
+				break;
+			case 19:
+				SPR_Set( gHUD.GetSprite( guess_m_HUD_vp70_mag ), 255, 255, 255 );
+				SPR_DrawHoles( guess_m_iDualAmmoRight, xRight, yMag - iBullet, guess_m_prcGlockMag );
+				SPR_Set( gHUD.GetSprite( guess_m_HUD_glock_mag_icon ), 255, 255, 255 );
+				SPR_DrawHoles( 0, xRight, yIcon, &gHUD.GetSpriteRect( guess_m_HUD_vp70_mag_icon ) );
+				break;
+			case 20:
+				SPR_Set( gHUD.GetSprite( guess_m_HUD_browning_mag ), 255, 255, 255 );
+				SPR_DrawHoles( guess_m_iDualAmmoRight, xRight, yMag - iBullet, guess_m_prcGlockMag );
+				SPR_Set( gHUD.GetSprite( guess_m_HUD_glock_mag_icon ), 255, 255, 255 );
+				SPR_DrawHoles( 0, xRight, yIcon, &gHUD.GetSpriteRect( guess_m_HUD_glock_mag_icon ) );
+				break;
+			case 7:
+				SPR_Set( gHUD.GetSprite( guess_m_HUD_p345_mag ), 255, 255, 255 );
+				SPR_DrawHoles( guess_m_iDualAmmoRight, xRight, yMag - iBullet, guess_m_prcP345Mag );
+				SPR_Set( gHUD.GetSprite( guess_m_HUD_p345_mag_icon ), 255, 255, 255 );
+				SPR_DrawHoles( 0, xRight, yIcon, &gHUD.GetSpriteRect( guess_m_HUD_p345_mag_icon ) );
+				break;
+			case 14:
+				SPR_Set( gHUD.GetSprite( guess_m_HUD_tmp_mag ), 255, 255, 255 );
+				SPR_DrawHoles( guess_m_iDualAmmoRight, xRight, yMag - iBullet, guess_m_prcP345Mag );
+				SPR_Set( gHUD.GetSprite( guess_m_HUD_tmp_mag_icon ), 255, 255, 255 );
+				SPR_DrawHoles( 0, xRight, yIcon, &gHUD.GetSpriteRect( guess_m_HUD_tmp_mag_icon ) );
+				break;
+			case 21:
+				SPR_Set( gHUD.GetSprite( guess_m_HUD_revolver_cylinder ), 255, 255, 255 );
+				SPR_DrawHoles( guess_m_iDualAmmoRight, xRight, yCylinder - iCylinderBullet, guess_m_prcRevolverCylinder );
+				break;
+			case 13:
+				SPR_Set( gHUD.GetSprite( guess_m_HUD_flare_icon ), 255, 255, 255 );
+				SPR_DrawHoles( 0, xRight, yIcon, &gHUD.GetSpriteRect( guess_m_HUD_flare_icon ) );
+				break;
+			}
+
+			if ( guess_GetMags( guess_g_iDualWeapon2 ) )
+			{
+				UnpackRGB(r,g,b, gHUD.m_iHUDColor);
+				ScaleColors(r, g, b, a );
+
+				SPR_Set( gHUD.GetSprite( guess_m_HUD_mag_cross ), 255, 255, 255 );
+				SPR_DrawHoles( 0, xRight + ( bLeftSingle ? iWidth : iWidth * 2 ), yIcon, &gHUD.GetSpriteRect( guess_m_HUD_mag_cross ) );
+				gHUD.DrawHudNumber( bLeftSingle ? xRight + iWidth : (int)( xRight + iWidth * 1.1 ), yIcon, DHN_3DIGITS | DHN_DRAWZERO, guess_GetMags( guess_g_iDualWeapon2 ), r, g, b );
+			}
+		}
+	}
 
 	// SPR_Draw Ammo
 	if ((pw->iAmmoType < 0) && (pw->iAmmo2Type < 0))
 		return 0;
-
-#if (0) // buz: turn off
-
-	int iFlags = DHN_DRAWZERO; // draw 0 values
-
-	AmmoWidth = gHUD.GetSpriteRect(gHUD.m_HUD_number_0).right - gHUD.GetSpriteRect(gHUD.m_HUD_number_0).left;
 
 	a = (int) max( MIN_ALPHA, m_fFade );
 
@@ -1243,87 +1402,332 @@ int CHudAmmo::Draw(float flTime)
 
 	ScaleColors(r, g, b, a );
 
-	// Does this weapon have a clip?
 	y = ScreenHeight - gHUD.m_iFontHeight - gHUD.m_iFontHeight/2;
+
+	if ( guess_m_iDrawAmmo )
+	{
+		if ( pw->iId <= 0 || pw->iId == 8 || pw->iId == 13 || pw->iId >= 200 )
+			guess_m_iDrawAmmo = 0;
+	}
+	else
+	{
+		if ( pw->iId > 0 && pw->iId != 8 && pw->iId != 13 && pw->iId < 200 )
+			guess_m_iDrawAmmo = 1;
+	}
+
+	if ( cl_crosshair->value < 1 )
+		guess_m_iDrawAmmo = 0;
 
 	// Does weapon have any ammo at all?
 	if (m_pWeapon->iAmmoType > 0)
 	{
-		int iIconWidth = m_pWeapon->rcAmmo.right - m_pWeapon->rcAmmo.left;
-		
+		int iSpace = AmmoWidth / 10;
+		x = AmmoWidth / 2 - AmmoWidth * 8;
+
 		if (pw->iClip >= 0)
 		{
-			// room for the number and the '|' and the current ammo
-			
-			x = ScreenWidth - (8 * AmmoWidth) - iIconWidth;
-			x = gHUD.DrawHudNumber(x, y, iFlags | DHN_3DIGITS, pw->iClip, r, g, b);
-
-			wrect_t rc;
-			rc.top = 0;
-			rc.left = 0;
-			rc.right = AmmoWidth;
-			rc.bottom = 100;
-
-			int iBarWidth =  AmmoWidth/10;
-
-			x += AmmoWidth/2;
+			x += ScreenWidth;
 
 			UnpackRGB(r,g,b, gHUD.m_iHUDColor);
 
-			// draw the | bar
-			FillRGBA(x, y, iBarWidth, gHUD.m_iFontHeight, r, g, b, a);
+			int iMag;
+			if ( pw->iId == 21 )
+				iMag = guess_m_HUD_revolver_cylinder;
+			else
+				iMag = guess_m_HUD_glock_mag;
 
-			x += iBarWidth + AmmoWidth/2;;
+			int yMag = ScreenHeight - ( gHUD.GetSpriteRect( iMag ).bottom - gHUD.GetSpriteRect( iMag ).top ) * 1.1;
+			int iMagWidth = gHUD.GetSpriteRect( iMag ).left - gHUD.GetSpriteRect( iMag ).right;
+			int iBullet = ( guess_m_prcGlockMag->bottom - guess_m_prcGlockMag->top ) / 6;
+			int iCylinderBullet = ( guess_m_prcRevolverCylinder->bottom - guess_m_prcRevolverCylinder->top ) / 6;
 
-			// GL Seems to need this
+			x -= iMagWidth * 1.1;
+			int xNumber = x + 0.0;
+
+			if ( pw->iId == 4 )
+			{
+				UnpackRGB(r,g,b, gHUD.m_iHUDColor);
+				ScaleColors(r, g, b, a );
+				gHUD.DrawHudNumber( xNumber, y, DHN_3DIGITS | DHN_DRAWZERO, guess_GetMags( 4 ), r, g, b );
+				SPR_Set( gHUD.GetSprite( guess_m_HUD_shotgun_box ), 255, 255, 255 );
+				SPR_DrawHoles( pw->iClip, x + iMagWidth * 1.1, yMag - iBullet, guess_m_prcShotgunBox );
+			}
+
+			if ( pw->iId == 11 )
+			{
+				UnpackRGB(r,g,b, gHUD.m_iHUDColor);
+				ScaleColors(r, g, b, a );
+				gHUD.DrawHudNumber( xNumber, y, DHN_3DIGITS | DHN_DRAWZERO, guess_GetMags( 11 ), r, g, b );
+				SPR_Set( gHUD.GetSprite( guess_m_HUD_rifle_mag ), 255, 255, 255 );
+				SPR_DrawHoles( pw->iClip, x + iMagWidth * 1.1, yMag - iBullet, guess_m_prcRifleMag );
+			}
+
+			if ( pw->iId == 9 )
+			{
+				UnpackRGB(r,g,b, gHUD.m_iHUDColor);
+				ScaleColors(r, g, b, a );
+				gHUD.DrawHudNumber( xNumber, y, DHN_3DIGITS | DHN_DRAWZERO, guess_GetMags( 9 ), r, g, b );
+				SPR_Set( gHUD.GetSprite( guess_m_HUD_m16_mag ), 255, 255, 255 );
+				SPR_DrawHoles( pw->iClip, x + iMagWidth * 1.1, yMag - iBullet, guess_m_prcM16Mag );
+			}
+
+			if ( pw->iId == 26 )
+			{
+				UnpackRGB(r,g,b, gHUD.m_iHUDColor);
+				ScaleColors(r, g, b, a );
+				gHUD.DrawHudNumber( xNumber, y, DHN_3DIGITS | DHN_DRAWZERO, guess_GetMags( 26 ), r, g, b );
+				SPR_Set( gHUD.GetSprite( guess_m_HUD_g43_mag ), 255, 255, 255 );
+				SPR_DrawHoles( pw->iClip, x + iMagWidth * 1.1, yMag - iBullet, guess_m_prcG43Mag );
+			}
+
+			if ( pw->iId == 27 )
+			{
+				UnpackRGB(r,g,b, gHUD.m_iHUDColor);
+				ScaleColors(r, g, b, a );
+				gHUD.DrawHudNumber( xNumber, y, DHN_3DIGITS | DHN_DRAWZERO, guess_GetMags( 27 ), r, g, b );
+				SPR_Set( gHUD.GetSprite( guess_m_HUD_mp5_mag ), 255, 255, 255 );
+				SPR_DrawHoles( pw->iClip, x + iMagWidth * 1.1, yMag - iBullet, guess_m_prcG43Mag );
+			}
+
+			if ( pw->iId == 23 )
+			{
+				UnpackRGB(r,g,b, gHUD.m_iHUDColor);
+				ScaleColors(r, g, b, a );
+				SPR_Set( gHUD.GetSprite( guess_m_HUD_famas_mag ), 255, 255, 255 );
+				SPR_DrawHoles( pw->iClip, x + iMagWidth * 1.1, yMag - iBullet, guess_m_prcM16Mag );
+			}
+
+			if ( pw->iId == 14 )
+			{
+				UnpackRGB(r,g,b, gHUD.m_iHUDColor);
+				ScaleColors(r, g, b, a );
+				gHUD.DrawHudNumber( xNumber, y, DHN_3DIGITS | DHN_DRAWZERO, guess_GetMags( 14 ), r, g, b );
+				SPR_Set( gHUD.GetSprite( guess_m_HUD_tmp_mag ), 255, 255, 255 );
+				SPR_DrawHoles( pw->iClip, x + iMagWidth * 1.1, yMag - iBullet, guess_m_prcTMPMag );
+			}
+
+			if ( pw->iId == 3 )
+			{
+				UnpackRGB(r,g,b, gHUD.m_iHUDColor);
+				ScaleColors(r, g, b, a );
+				gHUD.DrawHudNumber( xNumber, y, DHN_3DIGITS | DHN_DRAWZERO, guess_GetMags( 3 ), r, g, b );
+				SPR_Set( gHUD.GetSprite( guess_m_HUD_glock_mag ), 255, 255, 255 );
+				SPR_DrawHoles( pw->iClip, x + iMagWidth * 1.1, yMag - iBullet, guess_m_prcGlockMag );
+			}
+
+			if ( pw->iId == 19 )
+			{
+				UnpackRGB(r,g,b, gHUD.m_iHUDColor);
+				ScaleColors(r, g, b, a );
+				gHUD.DrawHudNumber( xNumber, y, DHN_3DIGITS | DHN_DRAWZERO, guess_GetMags( 19 ), r, g, b );
+				SPR_Set( gHUD.GetSprite( guess_m_HUD_vp70_mag ), 255, 255, 255 );
+				SPR_DrawHoles( pw->iClip, x + iMagWidth * 1.1, yMag - iBullet, guess_m_prcGlockMag );
+			}
+
+			if ( pw->iId == 21 )
+			{
+				UnpackRGB(r,g,b, gHUD.m_iHUDColor);
+				ScaleColors(r, g, b, a );
+				gHUD.DrawHudNumber( xNumber, y, DHN_3DIGITS | DHN_DRAWZERO, guess_GetMags( 21 ), r, g, b );
+				SPR_Set( gHUD.GetSprite( guess_m_HUD_revolver_cylinder ), 255, 255, 255 );
+				SPR_DrawHoles( pw->iClip, x + iMagWidth * 1.1, yMag - iCylinderBullet, guess_m_prcRevolverCylinder );
+			}
+
+			if ( pw->iId == 20 )
+			{
+				UnpackRGB(r,g,b, gHUD.m_iHUDColor);
+				ScaleColors(r, g, b, a );
+				gHUD.DrawHudNumber( xNumber, y, DHN_3DIGITS | DHN_DRAWZERO, guess_GetMags( 20 ), r, g, b );
+				SPR_Set( gHUD.GetSprite( guess_m_HUD_browning_mag ), 255, 255, 255 );
+				SPR_DrawHoles( pw->iClip, x + iMagWidth * 1.1, yMag - iBullet, guess_m_prcGlockMag );
+			}
+
+			if ( pw->iId == 7 )
+			{
+				UnpackRGB(r,g,b, gHUD.m_iHUDColor);
+				ScaleColors(r, g, b, a );
+				gHUD.DrawHudNumber( xNumber, y, DHN_3DIGITS | DHN_DRAWZERO, guess_GetMags( 7 ), r, g, b );
+				SPR_Set( gHUD.GetSprite( guess_m_HUD_p345_mag ), 255, 255, 255 );
+				SPR_DrawHoles( pw->iClip, x + iMagWidth * 1.1, yMag - iBullet, guess_m_prcP345Mag );
+			}
+
+			if ( pw->iId == 8 )
+			{
+				UnpackRGB(r,g,b, gHUD.m_iHUDColor);
+				ScaleColors(r, g, b, a );
+				gHUD.DrawHudNumber( xNumber, y, DHN_3DIGITS | DHN_DRAWZERO, guess_GetMags( 8 ), r, g, b );
+			}
+
+			if ( pw->iId == 13 )
+			{
+				UnpackRGB(r,g,b, gHUD.m_iHUDColor);
+				ScaleColors(r, g, b, a );
+				gHUD.DrawHudNumber( xNumber, y, DHN_3DIGITS | DHN_DRAWZERO, guess_GetMags( 13 ), r, g, b );
+			}
+
+			if ( pw->iId > 199 )
+			{
+				UnpackRGB(r,g,b, gHUD.m_iHUDColor);
+				ScaleColors(r, g, b, a );
+				gHUD.DrawHudNumber( xNumber, y, DHN_3DIGITS | DHN_DRAWZERO, gWR.CountAmmo( pw->iAmmoType ), r, g, b );
+			}
+
+			int yIcon = ScreenHeight - ( gHUD.GetSpriteRect( guess_m_HUD_glock_mag_icon ).bottom - gHUD.GetSpriteRect( guess_m_HUD_glock_mag_icon ).top );
+
+			if ( pw->iId == 4 )
+			{
+				SPR_Set( gHUD.GetSprite( guess_m_HUD_shotgun_box_icon ), 255, 255, 255 );
+				SPR_DrawHoles( 0, x + iMagWidth * 1.1, yIcon, &gHUD.GetSpriteRect( guess_m_HUD_shotgun_box_icon ) );
+			}
+
+			if ( pw->iId == 11 )
+			{
+				SPR_Set( gHUD.GetSprite( guess_m_HUD_rifle_mag_icon ), 255, 255, 255 );
+				SPR_DrawHoles( 0, x + iMagWidth * 1.1, yIcon, &gHUD.GetSpriteRect( guess_m_HUD_rifle_mag_icon ) );
+			}
+
+			if ( pw->iId == 8 )
+			{
+				SPR_Set( gHUD.GetSprite( guess_m_HUD_syringe_icon ), 255, 255, 255 );
+				SPR_DrawHoles( 0, x + iMagWidth * 1.1, yIcon, &gHUD.GetSpriteRect( guess_m_HUD_syringe_icon ) );
+			}
+
+			if ( pw->iId == 13 )
+			{
+				SPR_Set( gHUD.GetSprite( guess_m_HUD_flare_icon ), 255, 255, 255 );
+				SPR_DrawHoles( 0, x + iMagWidth * 1.1, yIcon, &gHUD.GetSpriteRect( guess_m_HUD_flare_icon ) );
+			}
+
+			if ( pw->iId == 9 )
+			{
+				SPR_Set( gHUD.GetSprite( guess_m_HUD_m16_mag_icon ), 255, 255, 255 );
+				SPR_DrawHoles( guess_iM16BurstMode, x + iMagWidth * 1.1, yIcon, &gHUD.GetSpriteRect( guess_m_HUD_m16_mag_icon ) );
+			}
+
+			if ( pw->iId == 26 )
+			{
+				SPR_Set( gHUD.GetSprite( guess_m_HUD_g43_mag_icon ), 255, 255, 255 );
+				SPR_DrawHoles( 0, x + iMagWidth * 1.1, yIcon, &gHUD.GetSpriteRect( guess_m_HUD_g43_mag_icon ) );
+			}
+
+			if ( pw->iId == 27 )
+			{
+				SPR_Set( gHUD.GetSprite( guess_m_HUD_mp5_mag_icon ), 255, 255, 255 );
+				SPR_DrawHoles( 0, x + iMagWidth * 1.1, yIcon, &gHUD.GetSpriteRect( guess_m_HUD_mp5_mag_icon ) );
+			}
+
+			if ( pw->iId == 23 )
+			{
+				SPR_Set( gHUD.GetSprite( guess_m_HUD_famas_mag_icon ), 255, 255, 255 );
+				SPR_DrawHoles( 0, x + iMagWidth * 1.1, yIcon, &gHUD.GetSpriteRect( guess_m_HUD_famas_mag_icon ) );
+			}
+
+			if ( pw->iId == 14 )
+			{
+				SPR_Set( gHUD.GetSprite( guess_m_HUD_tmp_mag_icon ), 255, 255, 255 );
+				SPR_DrawHoles( 0, x + iMagWidth * 1.1, yIcon, &gHUD.GetSpriteRect( guess_m_HUD_tmp_mag_icon ) );
+			}
+
+			if ( pw->iId == 3 )
+			{
+				SPR_Set( gHUD.GetSprite( guess_m_HUD_glock_mag_icon ), 255, 255, 255 );
+				SPR_DrawHoles( 0, x + iMagWidth * 1.1, yIcon, &gHUD.GetSpriteRect( guess_m_HUD_glock_mag_icon ) );
+			}
+
+			if ( pw->iId == 20 )
+			{
+				SPR_Set( gHUD.GetSprite( guess_m_HUD_glock_mag_icon ), 255, 255, 255 );
+				SPR_DrawHoles( 0, x + iMagWidth * 1.1, yIcon, &gHUD.GetSpriteRect( guess_m_HUD_glock_mag_icon ) );
+			}
+
+			if ( pw->iId == 19 )
+			{
+				SPR_Set( gHUD.GetSprite( guess_m_HUD_vp70_mag_icon ), 255, 255, 255 );
+				SPR_DrawHoles( 0, x + iMagWidth * 1.1, yIcon, &gHUD.GetSpriteRect( guess_m_HUD_vp70_mag_icon ) );
+			}
+
+			if ( pw->iId == 7 )
+			{
+				SPR_Set( gHUD.GetSprite( guess_m_HUD_p345_mag_icon ), 255, 255, 255 );
+				SPR_DrawHoles( 0, x + iMagWidth * 1.1, yIcon, &gHUD.GetSpriteRect( guess_m_HUD_p345_mag_icon ) );
+			}
+
+			x += AmmoWidth / 4 + iSpace;
+
+			if ( pw->iId != 15 && pw->iId != 1 )
+			{
+				SPR_Set( gHUD.GetSprite( guess_m_HUD_mag_cross ), 255, 255, 255 );
+				SPR_DrawHoles( 0, x, yIcon, &gHUD.GetSpriteRect( guess_m_HUD_mag_cross ) );
+
+				int iCrossWidth = gHUD.GetSpriteRect( guess_m_HUD_mag_cross ).right - gHUD.GetSpriteRect( guess_m_HUD_mag_cross ).left;
+
+				if ( pw->iId == 23 )
+				{
+					SPR_Set( gHUD.GetSprite( guess_m_HUD_gm_inf ), 255, 255, 255 );
+					SPR_DrawAdditive( 0, x + iCrossWidth * 1.1, y, guess_m_prcGmInf );
+				}
+			}
+
+			if ( pw->iId > 0 && !gHUD.guess_m_bIronSights && cl_crosshair->value && ( !gViewPort->guess_m_pScope || !gViewPort->guess_m_pScope->guess_m_iScope ) )
+			{
+				UnpackRGB(r,g,b, gHUD.m_iHUDColor);
+				ScaleColors(r, g, b, a );
+
+				if ( pw->iId > 199 )
+					gHUD.DrawHudNumber( x, y, DHN_3DIGITS | DHN_DRAWZERO, pw->iClip, r, g, b );
+
+				float flGap = guess_flCurrentKick * 3;
+				int iLength = ScreenWidth / 100;
+
+				FillRGBA( ScreenWidth / 2 + flGap, ScreenHeight / 2, iLength, 1, 255, 0, 0, 200 );
+				FillRGBA( ScreenWidth / 2 - ( iLength + flGap ), ScreenHeight / 2, iLength, 1, 255, 0, 0, 200 );
+				FillRGBA( ScreenWidth / 2 - 1, ScreenHeight / 2 + flGap, 2, iLength, 255, 0, 0, 200 );
+			}
+
 			ScaleColors(r, g, b, a );
-			x = gHUD.DrawHudNumber(x, y, iFlags | DHN_3DIGITS, gWR.CountAmmo(pw->iAmmoType), r, g, b);		
-
-
 		}
 		else
 		{
-			// SPR_Draw a bullets only line
-			x = ScreenWidth - 4 * AmmoWidth - iIconWidth;
-			x = gHUD.DrawHudNumber(x, y, iFlags | DHN_3DIGITS, gWR.CountAmmo(pw->iAmmoType), r, g, b);
+			UnpackRGB(r,g,b, gHUD.m_iHUDColor);
+
+			int iMagWidth = gHUD.GetSpriteRect( guess_m_HUD_glock_mag ).left - gHUD.GetSpriteRect( guess_m_HUD_glock_mag ).right;
+
+			x = ScreenWidth + x - iMagWidth * 1.1;
+			int xNumber = x + 0.0;
+
+			if ( pw->iId == 8 )
+			{
+				UnpackRGB(r,g,b, gHUD.m_iHUDColor);
+				ScaleColors(r, g, b, a );
+				gHUD.DrawHudNumber( xNumber, y, DHN_3DIGITS | DHN_DRAWZERO, guess_GetMags( 8 ), r, g, b );
+			}
+
+			if ( pw->iId == 13 )
+			{
+				UnpackRGB(r,g,b, gHUD.m_iHUDColor);
+				ScaleColors(r, g, b, a );
+				gHUD.DrawHudNumber( xNumber, y, DHN_3DIGITS | DHN_DRAWZERO, guess_GetMags( 13 ), r, g, b );
+			}
+
+			int yIcon = ScreenHeight - ( gHUD.GetSpriteRect( guess_m_HUD_glock_mag_icon ).bottom - gHUD.GetSpriteRect( guess_m_HUD_glock_mag_icon ).top );
+
+			if ( pw->iId == 8 )
+			{
+				SPR_Set( gHUD.GetSprite( guess_m_HUD_syringe_icon ), 255, 255, 255 );
+				SPR_DrawHoles( 0, x + iMagWidth * 1.1, yIcon, &gHUD.GetSpriteRect( guess_m_HUD_syringe_icon ) );
+			}
+
+			if ( pw->iId == 13 )
+			{
+				SPR_Set( gHUD.GetSprite( guess_m_HUD_flare_icon ), 255, 255, 255 );
+				SPR_DrawHoles( 0, x + iMagWidth * 1.1, yIcon, &gHUD.GetSpriteRect( guess_m_HUD_flare_icon ) );
+			}
+
+			SPR_Set( gHUD.GetSprite( guess_m_HUD_mag_cross ), 255, 255, 255 );
+			SPR_DrawHoles( 0, AmmoWidth / 4 + x + iSpace, yIcon, &gHUD.GetSpriteRect( guess_m_HUD_mag_cross ) );
+
+			ScaleColors(r, g, b, a );
 		}
-
-		// Draw the ammo Icon
-		int iOffset = (m_pWeapon->rcAmmo.bottom - m_pWeapon->rcAmmo.top)/8;
-		SPR_Set(m_pWeapon->hAmmo, r, g, b);
-		SPR_DrawAdditive(0, x, y - iOffset, &m_pWeapon->rcAmmo);
-	}
-
-	// Does weapon have seconday ammo?
-	if (pw->iAmmo2Type > 0) 
-	{
-		int iIconWidth = m_pWeapon->rcAmmo2.right - m_pWeapon->rcAmmo2.left;
-
-		// Do we have secondary ammo?
-		if ((pw->iAmmo2Type != 0) && (gWR.CountAmmo(pw->iAmmo2Type) > 0))
-		{
-			y -= gHUD.m_iFontHeight + gHUD.m_iFontHeight/4;
-			x = ScreenWidth - 4 * AmmoWidth - iIconWidth;
-			x = gHUD.DrawHudNumber(x, y, iFlags|DHN_3DIGITS, gWR.CountAmmo(pw->iAmmo2Type), r, g, b);
-
-			// Draw the ammo Icon
-			SPR_Set(m_pWeapon->hAmmo2, r, g, b);
-			int iOffset = (m_pWeapon->rcAmmo2.bottom - m_pWeapon->rcAmmo2.top)/8;
-			SPR_DrawAdditive(0, x, y - iOffset, &m_pWeapon->rcAmmo2);
-		}
-	}
-
-#endif // buz
-
-	// buz: draw crosshair...
-	if ( g_iGunMode == 3 )
-	{
-		SPR_Set(m_pWeapon->hZoomedCrosshair, 255, 255, 255);
-		SPR_DrawHoles(0,
-			(ScreenWidth - SPR_Width(m_pWeapon->hZoomedCrosshair, 0))/2,
-			(ScreenHeight - SPR_Height(m_pWeapon->hZoomedCrosshair, 0))/2,
-			&m_pWeapon->rcZoomedCrosshair);
-	//	SetCrosshair(m_pWeapon->hZoomedCrosshair, m_pWeapon->rcZoomedCrosshair, 255, 255, 255);
 	}
 
 	return 1;

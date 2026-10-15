@@ -7,3 +7,5 @@
 ?guess_FallingDripEffect@@YAXVVector@@M@Z
 ?ProcessFXObjects@@YAXXZ
 ?ResetRain@@YAXXZ
+??__Eg_dripsArray@@YAXXZ
+??__Eg_fxArray@@YAXXZ

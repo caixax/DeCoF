@@ -19,7 +19,12 @@
 
 cvar_t *v_posteffects;
 cvar_t *v_grayscale;
+int guess_iGreyFade;		// GreyFade message (fade time in seconds, 0: DEAD_GRAYSCALE_TIME)
 extern cvar_t *cv_specular_nocombiners;
+extern cl_entity_t *guess_pAttachCamEnt;
+extern int guess_iAttachCamFlag;
+extern int guess_iBoat;
+extern int guess_g_iHeadShieldType;
 extern int guess_g_iDickMode;
 
 
@@ -27,13 +32,50 @@ extern int guess_g_iDickMode;
 float GetGrayscaleFactor()
 {
 	float grayscale = v_grayscale->value;
+	float alpha;
+	bool attachcam = false;
 
-	if (gHUD.m_flDeadTime)
+	if (guess_pAttachCamEnt)
+		attachcam = (guess_iAttachCamFlag == 0);
+
+	if ((gHUD.guess_m_iFlashFlags & 0x40) && !guess_IsViewEntityActive() && !attachcam)
+		grayscale = 0.6;
+
+	if (gHUD.guess_m_iBlackWhite)
 	{
-		float fact = (gEngfuncs.GetClientTime() - gHUD.m_flDeadTime) / DEAD_GRAYSCALE_TIME;
+		alpha = gHUD.guess_m_iBlackWhite;
+		grayscale = alpha / 255;
+	}
+
+	if (guess_g_iHeadShieldType == 1)
+		grayscale = 0.25;
+
+	if (gHUD.guess_m_flGreyFadeStart)
+	{
+		float fact;
+		if (guess_iGreyFade)
+			fact = (gEngfuncs.GetClientTime() - gHUD.guess_m_flGreyFadeStart) / guess_iGreyFade;
+		else
+			fact = (gEngfuncs.GetClientTime() - gHUD.guess_m_flGreyFadeStart) / DEAD_GRAYSCALE_TIME;
 		if (fact > 1) fact = 1;
 		if (fact > grayscale) grayscale = fact;
 	}
+
+	if (gHUD.guess_m_flGreyFadeEnd)
+	{
+		alpha /= 255;
+		float fact;
+		if (guess_iGreyFade)
+			fact = (gEngfuncs.GetClientTime() - gHUD.guess_m_flGreyFadeEnd) / guess_iGreyFade;
+		else
+			fact = (gEngfuncs.GetClientTime() - gHUD.guess_m_flGreyFadeEnd) / DEAD_GRAYSCALE_TIME;
+		if (fact > 1) fact = 1;
+		grayscale = alpha - fact * alpha;
+		if (grayscale < 0) grayscale = 0;
+	}
+
+	if (guess_iBoat)
+		grayscale = 0;
 
 	return grayscale;
 }

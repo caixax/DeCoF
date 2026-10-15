@@ -747,6 +747,16 @@ void DrawBump()
 //		CONPRINT("%d brush ents drawn\n", numrenderents);
 }
 
+// "texturetest" command (hud.cpp): clears the texture chains of the world
+void guess_TextureTest( void )
+{
+	model_t *world = gEngfuncs.GetEntityByIndex(0)->model;
+
+	texture_t** tex = (texture_t**)world->textures;
+	for (int i = 0; i < world->numtextures; i++)
+		tex[i]->texturechain = NULL;
+}
+
 
 int MsgCustomDlight(const char *pszName, int iSize, void *pbuf)
 {

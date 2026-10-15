@@ -29,15 +29,10 @@ protected:
 	virtual void paint();
 
 protected:
-	// Wargon: »конка юза.
-	CImageLabel *m_pUsageIcon;
-	float m_fUsageUpdateTime;
-
-	// painkiller icon
-	CImageLabel	*m_pMedkitsIcon;
-	Label		*m_pMedkitsCount;
-	int		m_pMedkitsOldNum;
-	float	m_fMedkitUpdateTime;
+	int m_iHealthBarWidth, m_iHealthBarHeight;
+	int m_iHealthBarXpos, m_iHealthBarYpos;
+	int m_iArmorBarWidth, m_iArmorBarHeight;
+	int m_iArmorBarXpos, m_iArmorBarYpos;
 
 	// health and armor bars
 	ImageHolder *m_pBitmapHealthFull;
@@ -48,13 +43,18 @@ protected:
 	ImageHolder *m_pBitmapArmorEmpty;
 	ImageHolder *m_pBitmapArmorFlash;
 
+	// Wargon: »конка юза.
+	CImageLabel *m_pUsageIcon;
+	float m_fUsageUpdateTime;
+
+	// painkiller icon
+	CImageLabel	*m_pMedkitsIcon;
+	Label		*m_pMedkitsCount;
+	int		m_pMedkitsOldNum;
+	float	m_fMedkitUpdateTime;
+
 	ImageHolder *m_pHealthIcon;
 	ImageHolder *m_pArmorIcon;
-
-	int m_iHealthBarWidth, m_iHealthBarHeight;
-	int m_iHealthBarXpos, m_iHealthBarYpos;
-	int m_iArmorBarWidth, m_iArmorBarHeight;
-	int m_iArmorBarXpos, m_iArmorBarYpos;
 
 	BitmapTGA* m_pWeaponIconsArray[NUM_WEAPON_ICONS];
 	BitmapTGA* FindAmmoImageForWeapon(const char *wpn);

@@ -16,3 +16,4 @@
 ?getFgMousedownColor@CSchemeManager@@QAEXHAAH000@Z
 ??0CScheme@CSchemeManager@@QAE@XZ
 ?getSchemeHandle@CSchemeManager@@QAEHPBD@Z
+?Scheme_Init@@YAXXZ

@@ -241,7 +241,6 @@ va,name,kind,evidence
 1002E6C0,?guess_LoadCampaigns@CGameMenu@@QAEXXZ,func,"called by ActionSignal case 3; *.custom search, calls guess_ParseCampaign (1002E340) (added by an agent)"
 1002EA30,?guess_ResetButtonPositions@CGameMenu@@QAEXXZ,func,called by setVisible and solve; setPos of the ten menu pictures
 10048AA0,?guess_PrevPage@CNoteDocument@@QAEXXZ,func,switches guess_m_iPage 1-4 to the previous page with an image and calls guess_SetPage; unreferenced function between guess_PrevLine and guess_SetPage
-1001E5D0,?Init@CHudBase@@UAEHXZ,func,"restore: was MATCHED 100% in cl_dll/cdll_int; the 3-byte return-0 body is folded with CommandButton::IsNotValid, which bytematch proposed from guess_AmmoInventory (added by an agent)"
 1001E420,?ActionSignal@CAmmoInventory@@QAEXH@Z,func,"strings ""dropammo 1""-""dropammo 6"", inventory_toggle.wav; called by CAmmoInventoryHandler_Command::actionPerformed (1001E950) (added by an agent)"
 1001E6A0,?guess_MsgAmmoInv@@YAHPBDHPAX@Z,func,"hooked as ""AmmoInv"" by guess_AmmoInvInit (1001E930); reads gViewPort->guess_m_pAmmoInventory (added by an agent)"
 1001EA70,?setVisible@CAmmoInventory@@UAEX_N@Z,func,"CAmmoInventory vtable slot 9 (setVisible), ends in Panel::setVisible (added by an agent)"
@@ -340,7 +339,7 @@ va,name,kind,evidence
 100641D0,?guess_LoadFaceTexture@@YAXXZ,func,costume face textures (models/costumes/*_Face.tga) by gHUD.guess_m_iClothesState; flag 104D26D2 cleared with the other costume flags by guess_SetCustomHoodie (added by an agent)
 10064340,?guess_LoadHoodieTexture@@YAX_N@Z,func,"costume hoodie textures (models/costumes/*_Hoodie.tga, sv_custom_hoodie); flag 104D26C5 cleared by guess_SetCustomHoodie (added by an agent)"
 10064680,?guess_LoadIntroductionTexture@@YAXH@Z,func,gfx/vgui/introductions/<language>/*.TGA by cof_subtitlelanguage (added by an agent)
-10064A40,?guess_LoadPoliceSleeveTexture@@YAXXZ,func,gHUD.guess_m_szSleeveTexture or police/police_sleeve.tga (added by an agent)
+10064A40,?guess_LoadPoliceSleeveTexture@@YAXH@Z,func,"same function as before (police sleeve texture loader); its only caller GL_DrawPoints (100668EE) pushes one argument (push 0, add esp 4), so it takes an unused int (added by an agent)"
 10064AC0,?guess_CaptureScreenTexture@@YAXHH@Z,func,256x256 texture filled with glCopyTexImage2D from the screen centre; called from GL_DrawPoints (added by an agent)
 10064C10,?guess_CaptureBlurTexture@@YAXHHHH@Z,func,"same as guess_CaptureScreenTexture with its own texture; called from CHud::DrawBlurTest and GL_DrawPoints (added by an agent); CHud::DrawBlurTest pushes four arguments (ScreenWidth, ScreenHeight, 0, 0), the last two unused"
 10064EC0,?guess_LoadJeansTexture@@YAXXZ,func,costume jeans textures (models/costumes/*_Jeans.tga); flag 104D26D1 cleared by guess_SetCustomHoodie (added by an agent)
@@ -1137,7 +1136,6 @@ va,name,kind,evidence
 10087860,?guess_UpdateEntities@guess_CCgWater@@QAEXXZ,func,bytes identical to ?guess_UpdateEntities@guess_CCgWater@@QAEXXZ in client/cl_dll/guess_CgWater (relocated fields masked)
 10087950,?guess_Create@guess_CPBuffer@@QAEXXZ,func,bytes identical to ?guess_Create@guess_CPBuffer@@QAEXXZ in client/cl_dll/guess_PBuffer (relocated fields masked)
 10087B00,?guess_MakeCurrent@guess_CPBuffer@@QAEXXZ,func,bytes identical to ?guess_MakeCurrent@guess_CPBuffer@@QAEXXZ in client/cl_dll/guess_PBuffer (relocated fields masked)
-10090C20,?guess_Shutdown@guess_CPBuffer@@QAEXXZ,func,bytes identical to ?guess_Shutdown@guess_CPBuffer@@QAEXXZ in client/cl_dll/guess_PBuffer (relocated fields masked)
 10087D30,?guess_SwitchToWindow@guess_CPBuffer@@QAEXXZ,func,bytes identical to ?guess_SwitchToWindow@guess_CPBuffer@@QAEXXZ in client/cl_dll/guess_PBuffer (relocated fields masked)
 100880A0,?guess_CheckMipmapSupport@guess_CTextureManager@@QAEXXZ,func,bytes identical to ?guess_CheckMipmapSupport@guess_CTextureManager@@QAEXXZ in client/cl_dll/guess_TextureManager (relocated fields masked)
 10088140,?guess_CreateTexture@guess_CTextureManager@@QAEXHHPAIII@Z,func,bytes identical to ?guess_CreateTexture@guess_CTextureManager@@QAEXHHPAIII@Z in client/cl_dll/guess_TextureManager (relocated fields masked)
@@ -1152,3 +1150,66 @@ va,name,kind,evidence
 10089880,?guess_UploadImage@guess_CTextureManager@@QAEXPAUguess_texture_s@@@Z,func,bytes identical to ?guess_UploadImage@guess_CTextureManager@@QAEXPAUguess_texture_s@@@Z in client/cl_dll/guess_TextureManager (relocated fields masked)
 10559504,?guess_flMouseOfs2X@@3MA,data,"IN_MouseMove adds the mouse delta to it (second pair), CHud::Redraw raises it by 5 up to 40"
 10559508,?guess_flMouseOfs2Y@@3MA,data,IN_MouseMove adds the mouse delta to it and clamps it to -60..60
+10087D20,?guess_Shutdown@guess_CPBuffer@@QAEXXZ,func,alphabetical slot between guess_ReleaseTexture and guess_SwitchToWindow in the guess_PBuffer object (renderer agent); 10090C20 is another empty function
+1002C250,??$?HDU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@ABV10@0@Z,func,"identical bytes (bytematch --at); std::operator+(string,string) called from CGameMenu::guess_LoadCampaigns, STL instantiation placed before guess_GameMenu.obj (added by an agent)"
+1002C2A0,??$?HDU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@ABV10@QBD@Z,func,"identical bytes (bytematch --at); std::operator+(string,const char*) called from CGameMenu::guess_LoadCampaigns, STL instantiation placed before guess_GameMenu.obj (added by an agent)"
+1002C2F0,??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@U_String_constructor_concat_tag@1@ABV01@QBDI2I@Z,func,identical bytes (bytematch --at); basic_string concat constructor called by the two std::operator+ at 1002C250 and 1002C2A0 (added by an agent)
+10088400,?guess_FindTexture@guess_CTextureManager@@QAE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@ABV23@PAH@Z,func,source order between GetPath and GetTexture; calls FindNumberedTextures and FindImageFile (added by an agent)
+10088CF0,?guess_FindNumberedTextures@guess_CTextureManager@@QAE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@ABV23@PAH@Z,func,source order after GetTexture; sprintf %i loop over FindImageFile (added by an agent)
+10089A00,?guess_LoadImage@guess_CTextureManager@@QAEPAUguess_texture_s@@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z,func,source order after GetTexture(char*); GetPath then UploadImage (added by an agent)
+10089C80,?guess_LoadSprite@guess_CTextureManager@@QAEPAUguess_texture_s@@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z,func,source order before Load; SPR_Load and SpriteTexture calls (added by an agent)
+10089F20,?guess_LoadTexture@guess_CTextureManager@@QAE_NHPBDH_N@Z,func,"source order after Load; IsHardware, GetPath, UploadImage (added by an agent)"
+1007D630,?StartLog@@YAXXZ,func,"tail-call target (jmp) of SetupLogging after its ret, pushes the three banner strings (Paranoia client library loaded) to Log like Paranoia StartLog; Ghidra merged it into SetupLogging (added by an agent)"
+10065260,?guess_UpdatePlayerFlashlights@@YAXXZ,func,"only caller StudioCalcAttachments (1008BD9A, after GetMaxClients() > 1); loops over g_PlayerInfoList/g_PlayerExtraInfo, MY_AllocDlight, gfx/low/flashlight2.tga and gfx/flashlight2.tga, cl_lowflashlight (added by an agent)"
+100863F0,?guess_AddProgram@guess_CCgContext@@QAEPAUguess_cgprogram_s@@PBDH@Z,func,"string %s/cgshaders/%s; calls FindProgram, Init, IsProgramValid; name order before FindProgram (added by an agent)"
+10087FE0,??1guess_CTextureManager@@QAE@XZ,func,calls guess_Reset then frees the texture list; name order between ??1?$_Alloc_construct_ptr and ??1guess_texture_s (added by an agent)
+1008A280,?guess_IsExtensionSupported@@YAEPBD0@Z,func,tolower compare loop over the GL extension string; called by CheckMipmapSupport (added by an agent)
+10086570,?guess_IsInitialized@guess_CCgContext@@QAE_NXZ,func,returns the bool at +0x10 written by guess_Init; name order between GetFragmentProfile and IsProgramValid (added by an agent)
+1005EB40,?guess_TextureTest@@YAXXZ,func,"target of the jmp in __CmdFunc_guess_TextureTest (texturetest command, hud.cpp); clears world texture chains (added by an agent)"
+10087920,??1guess_CPBuffer@@QAE@XZ,func,empty body (ret 0); name order right after ??0guess_CPBuffer (added by an agent)
+10087930,?guess_BindTexture@guess_CPBuffer@@QAEXXZ,func,string Couldnt bind pbuffer to render texture; wglBindTexImageARB (added by an agent)
+10087D00,?guess_ReleaseTexture@guess_CPBuffer@@QAEXXZ,func,string Couldnt release pbuffer to render texture; wglReleaseTexImageARB (added by an agent)
+10080D90,?Init@CHudParticle@@UAEHXZ,func,"hooks Particle, DelPart, KillWpnPart, Ignite and calls AddHudElem; vtable Init slot (added by an agent)"
+10080E20,?MsgFunc_Ignite@CHudParticle@@QAEHPBDHPAX@Z,func,called by the __MsgFunc wrapper hooked as Ignite (10081020) (added by an agent)
+10080E40,?MsgFunc_KillWpnPart@CHudParticle@@QAEHPBDHPAX@Z,func,called by the __MsgFunc wrapper hooked as KillWpnPart (10081040) (added by an agent)
+10081020,?__MsgFunc_Ignite@@YAHPBDHPAX@Z,func,pushed with the string Ignite in CHudParticle::Init (added by an agent)
+10081040,?__MsgFunc_KillWpnPart@@YAHPBDHPAX@Z,func,pushed with the string KillWpnPart in CHudParticle::Init (added by an agent)
+10081060,?__MsgFunc_Particle@@YAHPBDHPAX@Z,func,pushed with the string Particle in CHudParticle::Init; calls MsgFunc_Particle (added by an agent)
+10080E80,?MsgFunc_Particle@CHudParticle@@QAEHPBDHPAX@Z,func,called by the __MsgFunc wrapper hooked as Particle (10081060) (added by an agent)
+10081080,??0ParticleSystem@@QAE@HPADHH0@Z,func,"called by MsgFunc_Particle with five arguments (entity, aurora file, view model flag, attachment, model); first function of particlesys.obj (added by an agent)"
+10083E90,?BoxOnPlaneSide@@YAHAAVVector@@0PAUmplane_s@@@Z,func,switch on plane signbits with the BoxOnPlaneSide error string; called by FrustumCheck::R_CullBox; first in quake_bsp name order (added by an agent)
+1005E230,?GetGrayscaleFactor@@YAMXZ,func,reads v_grayscale; called by ApplyPostEffects; name order between DrawQuad and InitPostEffects (added by an agent)
+100692D0,?guess_CheckTexture@@YAHPBD@Z,func,"CreateTexture's TGA type, bpp, GL_MAX_TEXTURE_SIZE and power of two checks without the upload; no callers (added by an agent)"
+10063450,?CheckSky@@YAXXZ,func,"called by DrawSky; gfx/env/%s%s.tga, gl_customsky, sv_skyname strings; name order before DrawSky (added by an agent)"
+10090860,?__MsgFunc_HeadShield@@YAHPBDHPAX@Z,func,"InitHeadShield (1008BC10) hooks 10090860 with the string HeadShield; reads type, gHUD+0x330 model name and body as our __MsgFunc_HeadShield (added by an agent)"
+100010D0,??__Eg_dripsArray@@YAXXZ,func,"dynamic initializer of g_dripsArray (MemBlock<cl_drip> constructor inlined, atexit of its destructor); .text$di (added by an agent)"
+10001180,??__Eg_fxArray@@YAXXZ,func,"dynamic initializer of g_fxArray (MemBlock<cl_rainfx> constructor inlined, atexit of its destructor); .text$di (added by an agent)"
+100532F0,?_exceptionCB@@YGJPAU_EXCEPTION_POINTERS@@@Z,func,passed to SetUnhandledExceptionFilter by LoadCrashRpt; static in exception.cpp (added by an agent)
+1004B5E0,?Draw@CHudDeathNotice@@UAEHM@Z,func,"walks rgDeathNoticeList, calls TeamFortressViewport::AllowedToPrintText; name order before GetClientColor; vtable Draw slot (added by an agent)"
+10086850,?guess_EndShaders@guess_CCgWater@@QAEXXZ,func,disables the Cg fragment then vertex profile; name order between guess_DrawBlackQuad and guess_Init (added by an agent)
+10090130,?guess_StudioMuzzleFlash@CStudioModelRenderer@@QAEXPADH_NM@Z,func,"only caller StudioDrawPlayer (1008E0E6) after the weapon model, when guess_iMuzzleFlash is set for this entity; thiscall, own attachment loop, flash1/flash2/flash3.mdl, police p_m16/p_rifle/p_tmp, models/shell.mdl (added by an agent)"
+10087EA0,??$_Construct_in_place@PAU?$_List_node@Uguess_texture_s@@PAX@std@@AAPAU12@@std@@YAXAAPAU?$_List_node@Uguess_texture_s@@PAX@0@0@Z,func,"STL instantiation; name order: the AAPAU12 variant sorts before the ABQAU12 one, both between operator+ and _Free_non_head (added by an agent)"
+10087EB0,??$_Construct_in_place@PAU?$_List_node@Uguess_texture_s@@PAX@std@@ABQAU12@@std@@YAXAAPAU?$_List_node@Uguess_texture_s@@PAX@0@ABQAU10@@Z,func,STL instantiation; name order after the AAPAU12 variant (added by an agent)
+1008A220,?_Xran@?$_String_val@U?$_Simple_types@D@std@@@std@@SAXXZ,func,pushes invalid string position and calls _Xinvalid_argument; called by basic_string::erase (1008A230) (added by an agent)
+1001CFC0,??_GCHudGeiger@@UAEPAXI@Z,func,"slot 0 of the CHudGeiger vtable (1013F5C4, RTTI .?AVCHudGeiger@@) (added by an agent)"
+1001CFF0,??_GCHudTrain@@UAEPAXI@Z,func,"slot 0 of the CHudTrain vtable (1013F5E4, RTTI .?AVCHudTrain@@) (added by an agent)"
+1001D050,??_GCHudDeathNotice@@UAEPAXI@Z,func,"slot 0 of the CHudDeathNotice vtable (1013F624, RTTI .?AVCHudDeathNotice@@) (added by an agent)"
+1001D0B0,??_GCHudSayText@@UAEPAXI@Z,func,"slot 0 of the CHudSayText vtable (1013F664, RTTI .?AVCHudSayText@@) (added by an agent)"
+1001D110,??_GCBlackBar@@UAEPAXI@Z,func,"slot 0 of the CBlackBar vtable (1013F6A4, RTTI .?AVCBlackBar@@) (added by an agent)"
+1001D1A0,??_GCHudParticle@@UAEPAXI@Z,func,"slot 0 of the CHudParticle vtable (1013F704, RTTI .?AVCHudParticle@@) (added by an agent)"
+1001D1D0,??_GCHudTextMessage@@UAEPAXI@Z,func,"slot 0 of the CHudTextMessage vtable (1013F724, RTTI .?AVCHudTextMessage@@) (added by an agent)"
+1007D340,?Draw@CHudLensflare@@UAEHM@Z,func,"CHudLensflare vtable 1013F784 (RTTI .?AVCHudLensflare@@): slots Init, VidInit, Draw; MsgFunc and wrapper in the alphabetical order of the object, right before log.cpp"
+1007D350,?Init@CHudLensflare@@UAEHXZ,func,"CHudLensflare vtable 1013F784 (RTTI .?AVCHudLensflare@@): slots Init, VidInit, Draw; MsgFunc and wrapper in the alphabetical order of the object, right before log.cpp"
+1007D390,?MsgFunc_Lensflare@CHudLensflare@@QAEHPBDHPAX@Z,func,"CHudLensflare vtable 1013F784 (RTTI .?AVCHudLensflare@@): slots Init, VidInit, Draw; MsgFunc and wrapper in the alphabetical order of the object, right before log.cpp"
+1007D3D0,?VidInit@CHudLensflare@@UAEHXZ,func,"CHudLensflare vtable 1013F784 (RTTI .?AVCHudLensflare@@): slots Init, VidInit, Draw; MsgFunc and wrapper in the alphabetical order of the object, right before log.cpp"
+1007D3E0,?__MsgFunc_Lensflare@@YAHPBDHPAX@Z,func,"CHudLensflare vtable 1013F784 (RTTI .?AVCHudLensflare@@): slots Init, VidInit, Draw; MsgFunc and wrapper in the alphabetical order of the object, right before log.cpp"
+1001CB20,??0guess_CBlurTexture@@QAE@XZ,func,between battery.cpp and cdll_int.cpp; bytes identical to the compiled guess_Blur.cpp (relocations masked); method order follows the alphabetical layout
+1001CB30,?guess_AnimateNextFrame@guess_CBlur@@QAE_NH@Z,func,between battery.cpp and cdll_int.cpp; bytes identical to the compiled guess_Blur.cpp (relocations masked); method order follows the alphabetical layout
+1001CBA0,?guess_BindTexture@guess_CBlurTexture@@QAEXHH@Z,func,between battery.cpp and cdll_int.cpp; bytes identical to the compiled guess_Blur.cpp (relocations masked); method order follows the alphabetical layout
+1001CBE0,?guess_Draw@guess_CBlurTexture@@QAEXHH@Z,func,between battery.cpp and cdll_int.cpp; bytes identical to the compiled guess_Blur.cpp (relocations masked); method order follows the alphabetical layout
+1001CD30,?guess_DrawBlur@guess_CBlur@@QAEXXZ,func,between battery.cpp and cdll_int.cpp; bytes identical to the compiled guess_Blur.cpp (relocations masked); method order follows the alphabetical layout
+1001CDC0,?guess_DrawQuad@guess_CBlurTexture@@QAEXHHH@Z,func,between battery.cpp and cdll_int.cpp; bytes identical to the compiled guess_Blur.cpp (relocations masked); method order follows the alphabetical layout
+1001CEE0,?guess_Init@guess_CBlurTexture@@QAEXHH@Z,func,between battery.cpp and cdll_int.cpp; bytes identical to the compiled guess_Blur.cpp (relocations masked); method order follows the alphabetical layout
+1001CF80,?guess_InitScreen@guess_CBlur@@QAEXXZ,func,between battery.cpp and cdll_int.cpp; bytes identical to the compiled guess_Blur.cpp (relocations masked); method order follows the alphabetical layout
+100642B0,?guess_LoadGloveTexture@@YAXH@Z,func,"same function as before (glove texture loader); its only caller GL_DrawPoints (10066B14) pushes one argument (push 0, add esp 4), so it takes an unused int (added by an agent)"
+10065210,?guess_VecDistance@@YAMVVector@@0@Z,func,"only caller GL_SetupLighting (10067EDD, distance from v_origin to curstate.origin for the flickering lights); two Vectors by value, Length(b - a); same bytes as guess_VectorDistance of rain.cpp (100855B0), a second copy in this object (added by an agent)"

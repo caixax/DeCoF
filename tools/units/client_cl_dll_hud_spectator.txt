@@ -27,3 +27,4 @@
 ?InitHUDData@CHudSpectator@@UAEXXZ
 ?Reset@CHudSpectator@@UAEXXZ
 ?AddOverviewEntity@CHudSpectator@@QAE_NHPAUcl_entity_s@@PBD@Z
+?DrawOverview@CHudSpectator@@QAEXXZ

@@ -2069,6 +2069,27 @@
           "functions_file": "tools/units/hw_engine_net_chan.txt"
         }
       ]
+    },
+    "launcher": {
+      "toolchain": "vc6",
+      "ghidra_folder": "/1.6a",
+      "ghidra_program": "cof.exe",
+      "symbols": "tools/symbols/launcher_1.6a.csv",
+      "cflags": [
+        "/nologo",
+        "/c",
+        "/G5",
+        "/W3",
+        "/O2"
+      ],
+      "defines": [
+        "WIN32",
+        "_WINDOWS"
+      ],
+      "includes": [
+        "src/launcher"
+      ],
+      "units": []
     }
   }
 }

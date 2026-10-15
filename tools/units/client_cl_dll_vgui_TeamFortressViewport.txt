@@ -144,3 +144,4 @@ TeamFortressViewport::operator_new
 ?InputSignalHideCommandMenu@TeamFortressViewport@@QAEXXZ
 ?mouseReleased@CDragNDropHandler@@UAEXW4MouseCode@vgui@@PAVPanel@3@@Z
 ?UpdateOnPlayerInfo@TeamFortressViewport@@QAEXXZ
+?UpdateHighlights@TeamFortressViewport@@QAEXXZ

@@ -534,6 +534,8 @@ public:
 	int Draw(float flTime);
 	int MsgFunc_Particle(const char *pszName, int iSize, void *pbuf );
 	int MsgFunc_DelParticle(const char *pszName, int iSize, void *pbuf ); // buz
+	int MsgFunc_KillWpnPart(const char *pszName, int iSize, void *pbuf );
+	int MsgFunc_Ignite(const char *pszName, int iSize, void *pbuf );
 };
 
 //

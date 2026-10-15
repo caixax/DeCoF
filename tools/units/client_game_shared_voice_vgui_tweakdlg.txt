@@ -15,3 +15,5 @@
 ?Open@CMenuPanel@@UAEXXZ
 ?paintBackground@CTransparentPanel@@UAEXXZ
 ?paintBackground@CVoiceVGUITweakDlg@@UAEXXZ
+?GetVoiceTweakDlg@@YAPAVCMenuPanel@@XZ
+?IsTweakDlgOpen@@YA_NXZ

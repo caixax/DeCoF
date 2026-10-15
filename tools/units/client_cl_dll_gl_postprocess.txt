@@ -4,3 +4,4 @@
 ?UseRectangleTextures@@YAHXZ
 ?ApplyPostEffects@@YAXXZ
 ?InitScreenTexture@@YAXXZ
+?GetGrayscaleFactor@@YAMXZ

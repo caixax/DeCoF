@@ -12,6 +12,8 @@
 #include "cl_entity.h"
 #include "dlight.h"
 #include "triangleapi.h"
+#include "pm_defs.h"
+#include "pmtrace.h"
 
 #include <stdio.h>
 #include <string.h>
@@ -32,6 +34,31 @@ extern engine_studio_api_t IEngineStudio;
 extern int guess_g_iUnlockClothes;
 extern int guess_g_iHeadShieldType;
 extern int guess_iDoctorMode;
+extern cl_entity_t *guess_pAttachCamEnt;
+extern int guess_g_iDualLighting;
+extern int g_DrawHeadShied;
+extern int guess_g_iDickMode;
+extern int guess_iBoat;
+extern cl_entity_t *guess_pTelescopeEnt;
+extern int guess_iUnknown1054506C;
+extern vec3_t guess_vecBoatOrigin;
+extern cvar_t *cl_propdistance;
+extern cvar_t *cl_cameraeffect;
+extern cvar_t *guess_cv_fullbrighttextures;
+extern bool guess_bCustomFingerTexture;
+extern bool guess_bCustomGloveTexture;
+extern int guess_iGoro;
+extern int guess_g_iDualWeapon1;
+extern int guess_g_iDualWeapon2;
+extern float guess_flUnknown105595A0;
+extern float guess_flUnknown105595A4;
+bool guess_IsViewEntityActive( void );
+extern int guess_iDifficulty;
+extern cl_entity_t *guess_g_pHeadShieldEnt;
+extern vec3_t guess_vecDualAttachment0, guess_vecDualAttachment1;
+extern cvar_t *cl_lowflashlight;
+extern vec3_t v_origin, v_angles;
+extern "C" int CL_IsThirdPerson( void );
 
 //
 // Custom model rendering, based on modelviewer's code
@@ -129,7 +156,7 @@ void guess_LoadFaceTexture( void )
 		guess_g_bFaceLoaded = true;
 }
 
-void guess_LoadGloveTexture( void )
+void guess_LoadGloveTexture( int iUnused )
 {
 	int result;
 
@@ -389,7 +416,7 @@ void guess_LoadHandsTexture( char *modelname )
 		guess_g_bHandsLoaded = true;
 }
 
-void guess_LoadPoliceSleeveTexture( void )
+void guess_LoadPoliceSleeveTexture( int iUnused )
 {
 	if (!guess_g_iPoliceSleeveTexture)
 		guess_g_iPoliceSleeveTexture = current_ext_texture_id++;
@@ -585,6 +612,8 @@ void guess_LoadJeansTexture( void )
 
 int		guess_g_iWaterLoTexture;
 bool	guess_g_bWaterLoLoaded;
+bool	guess_g_bTakePhoto;				// TakePhoto message, GL_DrawPoints captures the screen into the photo texture
+bool	guess_bUnknown104CE4A3;			// read by V_CalcNormalRefdef with the attach camera
 
 void guess_LoadWaterLoTexture( void )
 {
@@ -600,9 +629,105 @@ void guess_LoadWaterLoTexture( void )
 		guess_g_bWaterLoLoaded = true;
 }
 
-static float guess_VectorDistance( vec3_t a, vec3_t b )
+// a copy of guess_VectorDistance in rain.cpp (identical bytes at 100855B0)
+float guess_VecDistance( vec3_t a, vec3_t b )
 {
 	return Length(b - a);
+}
+
+//
+// Cry of Fear: flashlights of the other players in multiplayer
+// (called from StudioCalcAttachments, the light starts at attachment 3 of the player model)
+//
+void guess_UpdatePlayerFlashlights( void )
+{
+	cl_entity_t *localplayer = gEngfuncs.GetLocalPlayer();
+
+	if (guess_pAttachCamEnt)
+		return;
+
+	for (int i = 0; i < MAX_PLAYERS + 1; i++)
+	{
+		cl_entity_t *ent = gEngfuncs.GetEntityByIndex(i);
+
+		if (!ent || !g_PlayerInfoList[i].name)
+			continue;
+
+		int flags = g_PlayerExtraInfo[i].frags;
+
+		if ((flags & 1) || (flags & 8) || (flags & 32))
+		{
+			vec3_t origin, forward;
+			origin = ent->attachment[3];
+
+			if (ent == localplayer)
+				gEngfuncs.pfnAngleVectors(v_angles, forward, NULL, NULL);
+			else
+			{
+				vec3_t angles;
+				VectorCopy(ent->angles, angles);
+				angles[0] *= -1;
+				gEngfuncs.pfnAngleVectors(angles, forward, NULL, NULL);
+			}
+
+			if (flags & 1)
+			{
+				vec3_t end = forward * 32 + origin;
+				pmtrace_t *tr = gEngfuncs.PM_TraceLine(origin, end, PM_TRACELINE_PHYSENTSONLY, 1, -1);
+				DynamicLight *dl = MY_AllocDlight(-i);
+				dl->origin = tr->endpos;
+				dl->angles = ent->angles;
+				dl->radius = 60;
+				dl->color = Vector(0.46, 0.46, 0.51);
+				dl->die = gEngfuncs.GetClientTime() + 0.1;
+			}
+
+			if (flags & 8)
+			{
+				vec3_t end = forward * 4096 + origin;
+				pmtrace_t *tr = gEngfuncs.PM_TraceLine(origin, end, PM_TRACELINE_PHYSENTSONLY, 1, -1);
+				DynamicLight *dl = MY_AllocDlight(-i);
+				dl->origin = tr->endpos;
+				dl->angles = ent->angles;
+				dl->radius = 60;
+				dl->color = Vector(0.7, 0.65, 0.65);
+				dl->die = gEngfuncs.GetClientTime() + 0.1;
+			}
+
+			if (flags & 32)
+			{
+				ent->curstate.body = 1;
+				vec3_t end = forward * 128 + origin;
+				gEngfuncs.PM_TraceLine(origin, end, PM_TRACELINE_PHYSENTSONLY, 1, -1);
+
+				vec3_t angles;
+				VectorCopy(ent->angles, angles);
+				angles[0] *= -1;
+				if (ent == localplayer)
+					angles = v_angles;
+
+				vec3_t lightorg;
+				VectorCopy(ent->attachment[3], lightorg);
+				if (localplayer == ent && !CL_IsThirdPerson())
+					lightorg = v_origin;
+
+				DynamicLight *dl = MY_AllocDlight(-i);
+				dl->origin = lightorg;
+				dl->angles = angles;
+				dl->radius = 700;
+				dl->color = Vector(0.7, 0.65, 0.65);
+				dl->die = gEngfuncs.GetClientTime() + 0.1;
+				dl->cone_hor = 50;
+				dl->cone_ver = 50;
+				if (cl_lowflashlight->value == 1)
+					strcpy(dl->spot_texture, "gfx/low/flashlight2.tga");
+				else if (cl_lowflashlight->value == 0)
+					strcpy(dl->spot_texture, "gfx/flashlight2.tga");
+			}
+		}
+		else
+			ent->curstate.body = 0;
+	}
 }
 
 
@@ -914,7 +1039,7 @@ void CStudioModelRenderer::Lighting (vec3_t &lv, int bone, int flags, vec3_t nor
 		// buz: now add all dynamic lights
 		for (int i = 0; i < g_numdynlights; i++)
 		{
-			lightcos = -DotProduct (normal, g_bdynlightvec[i][bone]);
+			lightcos = -(DotProduct (normal, g_bdynlightvec[i][bone]));
 			if (lightcos > 0)
 				VectorMA(illum, lightcos, g_dynlightcolor[i], illum);
 		}
@@ -935,6 +1060,31 @@ void CStudioModelRenderer::Lighting (vec3_t &lv, int bone, int flags, vec3_t nor
 	if (illum[2] > 1.0) illum[2] = 1.0;*/
 
 	lv = illum;
+
+	// Cry of Fear: attachments of the left hand weapon (DualWield), for its muzzle flash and light
+	cl_entity_t *pSavedEntity = m_pCurrentEntity;
+
+	if (guess_g_iDualLighting && !(gHUD.m_iHideHUDDisplay & HIDEHUD_WEAPONS) && guess_g_pHeadShieldEnt)
+	{
+		m_pCurrentEntity = guess_g_pHeadShieldEnt;
+		StudioCalcAttachments();
+		IEngineStudio.StudioClientEvents();
+
+		if (m_pCurrentEntity->index > 0)
+		{
+			cl_entity_t *ent = gEngfuncs.GetEntityByIndex(m_pCurrentEntity->index);
+			memcpy(ent->attachment, m_pCurrentEntity->attachment, sizeof(vec3_t) * 4);
+		}
+
+		if (guess_g_iDualLighting)
+		{
+			guess_vecDualAttachment0 = m_pCurrentEntity->attachment[0];
+			guess_vecDualAttachment1 = m_pCurrentEntity->attachment[1];
+			guess_g_iDualLighting = 0;
+		}
+	}
+
+	m_pCurrentEntity = pSavedEntity;
 }
 
 
@@ -991,7 +1141,18 @@ void CStudioModelRenderer::GL_SetupLighting ()
 	if (m_pCurrentEntity->curstate.renderfx == 60) // light tester entity
 		return;
 
-	if (!strcmp(m_pRenderModel->name, "models/v_headshield.mdl"))
+	// Cry of Fear: every head shield model gets the head shield lighting
+	if (guess_g_iHeadShieldType == 0 && !strcmp(m_pRenderModel->name, "models/nv_goggles.mdl"))
+		isheadshield = TRUE;
+	else if (guess_g_iHeadShieldType == 7 && !strcmp(m_pRenderModel->name, "models/bookmenu.mdl"))
+		isheadshield = TRUE;
+	if (guess_g_iHeadShieldType == 10 && (!strcmp(m_pRenderModel->name, "models/weapons/v_gasmask.mdl") || !strcmp(m_pRenderModel->name, "models/weapons/v_gasmask_simon.mdl")))
+		isheadshield = TRUE;
+	if (guess_g_iHeadShieldType == 1 && !strcmp(m_pRenderModel->name, "models/items/tv_frame.mdl"))
+		isheadshield = TRUE;
+	if (guess_g_iHeadShieldType == 5 && !strcmp(m_pRenderModel->name, "models/props/blandat/v_telescope.mdl"))
+		isheadshield = TRUE;
+	if (guess_g_iHeadShieldType == 6 && gHUD.guess_m_pszHeadShieldSound && !strcmp(m_pRenderModel->name, gHUD.guess_m_pszHeadShieldSound))
 		isheadshield = TRUE;
 
 	vec3_t center = (m_pCurrentEntity->curstate.mins + m_pCurrentEntity->curstate.maxs) / 2;
@@ -1015,6 +1176,138 @@ void CStudioModelRenderer::GL_SetupLighting ()
 //	light.addlight = Vector(1, 1, 1);
 //	light.lightdir = Vector(0, -1, 0);
 
+	// Cry of Fear: fixed lighting for some models and render effects
+	if (!strcmp(m_pRenderModel->name, "models/flash1.mdl") || !strcmp(m_pRenderModel->name, "models/flash2.mdl"))
+		light.ambientlight = Vector(0.15, 0.15, 0.15);
+
+	if (g_DrawHeadShied && (guess_g_iHeadShieldType == 6 || guess_g_iHeadShieldType == 7))
+		light.ambientlight = Vector(0.15, 0.15, 0.15);
+
+	if (m_pCurrentEntity->curstate.renderfx == 100)
+	{
+		float bright = gEngfuncs.pfnGetCvarFloat("brightvalue");
+		light.ambientlight = Vector(bright, bright, bright);
+	}
+
+	if (m_pCurrentEntity->curstate.renderfx == 137)
+	{
+		float bright = gEngfuncs.pfnGetCvarFloat("skybrightvalue");
+		float r = gEngfuncs.pfnGetCvarFloat("skybrightcolourr");
+		float g = gEngfuncs.pfnGetCvarFloat("skybrightcolourg");
+		float b = gEngfuncs.pfnGetCvarFloat("skybrightcolourb");
+
+		if (!strcmp(m_pRenderModel->name, "models/props/sky_stars.mdl"))
+		{
+			bright = gEngfuncs.pfnRandomFloat(-0.1, 0.1) + 0.5;
+			r = gEngfuncs.pfnRandomFloat(-0.1, 0.1) + 0.1;
+			light.ambientlight[0] = light.ambientlight[1] = light.ambientlight[2] = bright;
+			light.addlight[0] = light.addlight[1] = light.addlight[2] = r;
+		}
+		else
+		{
+			light.ambientlight[0] = light.ambientlight[1] = light.ambientlight[2] = bright;
+			light.addlight[0] = r;
+			light.addlight[1] = g;
+			light.addlight[2] = b;
+		}
+	}
+
+	if (m_pCurrentEntity->curstate.renderfx > 100 && m_pCurrentEntity->curstate.renderfx <= 200 && m_pCurrentEntity->curstate.renderfx != 101 && m_pCurrentEntity->curstate.renderfx != 137)
+	{
+		float bright = (float)(m_pCurrentEntity->curstate.renderfx - 100) / 100;
+		light.ambientlight = Vector(bright, bright, bright);
+	}
+
+	if (m_pCurrentEntity->curstate.renderfx == 101)
+	{
+		light.ambientlight = Vector(0.1, 0.1, 0.1);
+		light.addlight = Vector(0.15, 0.1, 0.1);
+	}
+
+	if (m_pCurrentEntity->curstate.renderfx == 167)
+	{
+		light.ambientlight = Vector(0.1, 0.1, 0.1);
+		light.addlight = Vector(0.1, 0.1, 0.1);
+	}
+
+	if (m_pCurrentEntity->curstate.renderfx == 99 || m_pCurrentEntity->curstate.renderfx == 123 || m_pCurrentEntity->curstate.renderfx == 245 || m_pCurrentEntity->curstate.renderfx == 165)
+	{
+		static bool guess_bFlicker;
+
+		float dist = guess_VecDistance(v_origin, m_pCurrentEntity->curstate.origin) - 64;
+		if (dist < 0)
+			dist = 0;
+		if (dist > 255.0)
+			dist = 255;
+
+		float flicker;
+		if (guess_bFlicker)
+		{
+			flicker = (float)((int)(gHUD.m_flTime * 10) % 25) / 100;
+			if (flicker <= 0)
+			{
+				guess_bFlicker = false;
+				flicker = 0;
+			}
+			else if (flicker >= 0.25)
+				flicker = 0.25;
+		}
+		else
+		{
+			flicker = (float)((int)(gHUD.m_flTime * 10) % 25) / 100;
+			if (flicker <= 0)
+			{
+				guess_bFlicker = true;
+				flicker = 0;
+			}
+			else if (flicker >= 0.25)
+				flicker = 0.25;
+		}
+
+		gHUD.guess_m_flUnknown2A84 = flicker * 4;
+
+		float add = 0.25 - gHUD.guess_m_flUnknown2A84;
+		if (add > 0.25)
+			add = 0.25;
+		if (add < 0)
+			add = 0;
+
+		switch (guess_iDifficulty)
+		{
+		case 0:
+		case 2:
+			if (dist < 96)
+			{
+				light.ambientlight = Vector(0.25, 0.25, 0.25);
+				if (guess_bFlicker)
+					light.addlight = Vector(add, 0.0f, 0.0f);
+				else
+					light.addlight = Vector(gHUD.guess_m_flUnknown2A84, 0.0f, 0.0f);
+			}
+			break;
+		case 1:
+			if (dist < 96)
+			{
+				light.ambientlight = Vector(0.5, 0.5, 0.5);
+				if (guess_bFlicker)
+					light.addlight = Vector(add, 0.0f, 0.0f);
+				else
+					light.addlight = Vector(gHUD.guess_m_flUnknown2A84, 0.0f, 0.0f);
+			}
+			break;
+		case 3:
+			if (dist < 96)
+			{
+				light.ambientlight = Vector(0.1, 0.1, 0.1);
+				if (guess_bFlicker)
+					light.addlight = Vector(add, 0.0f, 0.0f);
+				else
+					light.addlight = Vector(gHUD.guess_m_flUnknown2A84, 0.0f, 0.0f);
+			}
+			break;
+		}
+	}
+
 	// TODO: only do it for bones that actually have textures
 	int i;
 	for (i = 0; i < m_pStudioHeader->numbones; i++)
@@ -1037,10 +1330,14 @@ void CStudioModelRenderer::GL_SetupLighting ()
 
 	int isViewModel = (m_pCurrentEntity == gEngfuncs.GetViewModel()) ? TRUE : FALSE;
 
+	// Cry of Fear: the view model is brighter while the flashlight is on
+	if ((gHUD.guess_m_iFlashFlags & 8) && isViewModel)
+		light.addlight = Vector(0.2, 0.2, 0.2);
+
 	int numlights;
-	numlights = GetDlightsForPoint(m_pCurrentEntity->origin, 
+	numlights = GetDlightsForPoint(m_pCurrentEntity->origin,
 		m_pCurrentEntity->curstate.mins, m_pCurrentEntity->curstate.maxs, dlights, isViewModel);
-	
+
 	for (i = 0; i < numlights; i++)
 	{
 		if (g_numdynlights == MAX_MODEL_DYNLIGHTS)
@@ -1086,7 +1383,7 @@ void CStudioModelRenderer::GL_SetupLighting ()
 				vec[1] = (*m_pbonetransform)[b][1][3] - dlights[i]->origin[1];
 				vec[2] = (*m_pbonetransform)[b][2][3] - dlights[i]->origin[2];
 			}
-			
+
 			float dist = DotProduct(vec, vec);
 			float atten = (dist / r - 1) * -1;
 			if (atten < 0) atten = 0;
@@ -1117,6 +1414,23 @@ void CStudioModelRenderer::GL_SetupLighting ()
 		g_dynlightcolor[g_numdynlights][1] = ApplyGamma(dlights[i]->color[1]) / 2;
 		g_dynlightcolor[g_numdynlights][2] = ApplyGamma(dlights[i]->color[2]) / 2;
 		g_numdynlights++;
+	}
+
+	// Cry of Fear: render effects 31 to 40 darken the model
+	if (m_pCurrentEntity->curstate.renderfx > 30 && m_pCurrentEntity->curstate.renderfx <= 40)
+	{
+		int dark = m_pCurrentEntity->curstate.renderfx - 30;
+		if (dark < 0)
+			dark = 0;
+		if (dark > 10)
+			dark = 10;
+
+		vec3_t amb = light.ambientlight;
+		float scale = dark / 10.0f;
+		amb[0] -= scale;
+		amb[1] -= scale;
+		amb[2] -= scale;
+		light.ambientlight = amb;
 	}
 }
 
@@ -1155,6 +1469,83 @@ void CStudioModelRenderer::GL_SetupModel ( int bodypart )
 
 void CStudioModelRenderer::GL_DrawPoints ( )
 {
+	// Cry of Fear: nothing is drawn in this mode
+	if (guess_g_iDickMode)
+		return;
+
+	bool bMultiplayer = false;
+	if (gEngfuncs.GetMaxClients() > 1)
+		bMultiplayer = true;
+
+	// Cry of Fear: no view model while the view is on the boat, the attach camera or the telescope
+	int isViewModel = (m_pCurrentEntity == gEngfuncs.GetViewModel()) ? TRUE : FALSE;
+	if (isViewModel && (guess_iBoat || guess_pAttachCamEnt || guess_pTelescopeEnt))
+		return;
+
+	if (isViewModel && guess_iUnknown1054506C >= 3 && gHUD.m_Ammo.m_pWeapon && gHUD.m_Ammo.m_pWeapon->iId != 17)
+		return;
+
+	// Cry of Fear: props with render effects 92 to 94 are not drawn far from the player
+	if (m_pCurrentEntity->curstate.renderfx == 92 && !guess_IsViewEntityActive() && !guess_pAttachCamEnt)
+	{
+		const char *level = gEngfuncs.pfnGetLevelName();
+		if (cl_propdistance->value || (level && (strstr(level, "college1dark") || strstr(level, "forest1") || strstr(level, "forest2") ||
+			strstr(level, "forest3") || strstr(level, "forest4") || strstr(level, "forest5") || strstr(level, "forest6"))))
+		{
+			cl_entity_t *player = gEngfuncs.GetLocalPlayer();
+			if (player)
+			{
+				vec3_t dist;
+				if (guess_iBoat)
+				{
+					VectorSubtract(guess_vecBoatOrigin, m_pCurrentEntity->origin, dist);
+				}
+				else if (guess_pTelescopeEnt)
+				{
+					VectorSubtract(guess_pTelescopeEnt->origin, m_pCurrentEntity->origin, dist);
+				}
+				else
+				{
+					VectorSubtract(player->origin, m_pCurrentEntity->origin, dist);
+				}
+
+				if (level && (strstr(level, "college1dark") || strstr(level, "forest1") || strstr(level, "forest2") ||
+					strstr(level, "forest3") || strstr(level, "forest4") || strstr(level, "forest5") || strstr(level, "forest6")))
+				{
+					if (Length(dist) > 800)
+						return;
+				}
+
+				if (Length(dist) > 1000)
+					return;
+			}
+		}
+	}
+
+	if (m_pCurrentEntity->curstate.renderfx == 93 && !guess_IsViewEntityActive() && !guess_pAttachCamEnt)
+	{
+		cl_entity_t *player = gEngfuncs.GetLocalPlayer();
+		if (player)
+		{
+			vec3_t dist;
+			VectorSubtract(player->origin, m_pCurrentEntity->origin, dist);
+			if (Length(dist) > 1000)
+				return;
+		}
+	}
+
+	if (m_pCurrentEntity->curstate.renderfx == 94 && !guess_IsViewEntityActive() && !guess_pAttachCamEnt)
+	{
+		cl_entity_t *player = gEngfuncs.GetLocalPlayer();
+		if (player)
+		{
+			vec3_t dist;
+			VectorSubtract(player->origin, m_pCurrentEntity->origin, dist);
+			if (Length(dist) > 600)
+				return;
+		}
+	}
+
 	byte *pvertbone = ((byte *)m_pStudioHeader + m_pSubModel->vertinfoindex);
 	byte *pnormbone = ((byte *)m_pStudioHeader + m_pSubModel->norminfoindex);
 
@@ -1187,9 +1578,11 @@ void CStudioModelRenderer::GL_DrawPoints ( )
 // clip and draw all triangles
 //
 
+	bool bBlurTexture = false;
+
 	vec3_t *lv = g_pvlightvalues;
 	int j;
-	for (j = 0; j < m_pSubModel->nummesh; j++) 
+	for (j = 0; j < m_pSubModel->nummesh; j++)
 	{
 		int flags = ptexture[pskinref[pmesh[j].skinref]].flags;
 		for (i = 0; i < pmesh[j].numnorms; i++, lv++, pstudionorms++, pnormbone++)
@@ -1210,19 +1603,210 @@ void CStudioModelRenderer::GL_DrawPoints ( )
 
 	gl.glCullFace(GL_FRONT);
 
-	for (j = 0; j < m_pSubModel->nummesh; j++) 
+	mstudiobone_t *pbones = (mstudiobone_t *)((byte *)m_pStudioHeader + m_pStudioHeader->boneindex);
+
+	for (j = 0; j < m_pSubModel->nummesh; j++)
 	{
-		float s, t;		
+		float s, t;
 		short		*ptricmds;
 
 		pmesh = (mstudiomesh_t *)((byte *)m_pStudioHeader + m_pSubModel->meshindex) + j;
 		ptricmds = (short *)((byte *)m_pStudioHeader + pmesh->triindex);
 
-		s = 1.0/(float)ptexture[pskinref[pmesh->skinref]].width;
-		t = 1.0/(float)ptexture[pskinref[pmesh->skinref]].height;
-
 		mstudiotexture_t *ptex = &ptexture[pskinref[pmesh->skinref]];
-		gl.glBindTexture( GL_TEXTURE_2D, (ptex->index & 0xFFFF));
+
+		s = 1.0/(float)ptex->width;
+		t = 1.0/(float)ptex->height;
+
+		// Cry of Fear: replacement textures for the clothes, the hands and the screens
+		if (strstr(ptex->name, "hoodie_grey") || strstr(ptex->name, "hoodie_blood"))
+		{
+			if (gHUD.guess_m_iClothes && !strstr(m_pRenderModel->name, "unfolded_clothes") && !strstr(m_pRenderModel->name, "booksimon"))
+			{
+				guess_LoadHoodieTexture(false);
+				if (guess_g_bHoodieLoaded)
+					gl.glBindTexture( GL_TEXTURE_2D, guess_g_iHoodieTexture );
+				else
+					gl.glBindTexture( GL_TEXTURE_2D, (ptex->index & 0xFFFF) );
+			}
+			else if (strstr(m_pRenderModel->name, "unfolded_clothes") && guess_g_iUnlockClothes > 0)
+			{
+				guess_LoadHoodieTexture(true);
+				if (guess_g_bHoodieLoaded)
+					gl.glBindTexture( GL_TEXTURE_2D, guess_g_iHoodieTexture );
+				else
+					gl.glBindTexture( GL_TEXTURE_2D, (ptex->index & 0xFFFF) );
+			}
+			else
+				gl.glBindTexture( GL_TEXTURE_2D, (ptex->index & 0xFFFF) );
+		}
+		else if (strstr(ptex->name, "jeans") && !strstr(ptex->name, "jeanss"))
+		{
+			if ((gHUD.guess_m_iClothes || guess_g_iUnlockClothes) &&
+				!strstr(m_pRenderModel->name, "badkarne1") &&
+				!strstr(m_pRenderModel->name, "sophie.mdl") &&
+				!strstr(m_pRenderModel->name, "tortyrscen") &&
+				!strstr(m_pRenderModel->name, "deadvictim") &&
+				!strstr(m_pRenderModel->name, "booksimon") &&
+				!strstr(m_pRenderModel->name, "coopend") &&
+				!strstr(m_pRenderModel->name, "coop") &&
+				!strstr(m_pRenderModel->name, "gettingshotgun") &&
+				!strstr(m_pRenderModel->name, "booksimon") &&
+				!strstr(m_pRenderModel->name, "sophie_dead"))
+			{
+				guess_LoadJeansTexture();
+				if (guess_g_bJeansLoaded)
+					gl.glBindTexture( GL_TEXTURE_2D, guess_g_iJeansTexture );
+				else
+					gl.glBindTexture( GL_TEXTURE_2D, (ptex->index & 0xFFFF) );
+			}
+			else
+				gl.glBindTexture( GL_TEXTURE_2D, (ptex->index & 0xFFFF) );
+		}
+		else if (strstr(ptex->name, "head_face"))
+		{
+			if (gHUD.guess_m_iClothes && !strstr(m_pRenderModel->name, "booksimon"))
+			{
+				guess_LoadFaceTexture();
+				if (guess_g_bFaceLoaded)
+					gl.glBindTexture( GL_TEXTURE_2D, guess_g_iFaceTexture );
+				else
+					gl.glBindTexture( GL_TEXTURE_2D, (ptex->index & 0xFFFF) );
+			}
+			else
+				gl.glBindTexture( GL_TEXTURE_2D, (ptex->index & 0xFFFF) );
+		}
+		else if (strstr(ptex->name, "page"))
+		{
+			// pages of the book menu that are not unlocked yet
+			if (g_DrawHeadShied)
+			{
+				if ((strstr(ptex->name, "page1") && !(gHUD.guess_m_iUnlocks & 0x2000000)) ||
+					(strstr(ptex->name, "page2") && !(gHUD.guess_m_iUnlocks & 0x4000000)) ||
+					(strstr(ptex->name, "page3") && !(gHUD.guess_m_iUnlocks & 0x8000000)) ||
+					(strstr(ptex->name, "page4") && !(gHUD.guess_m_iUnlocks & 0x10000000)) ||
+					(strstr(ptex->name, "page5") && !(gHUD.guess_m_iUnlocks & 0x20000000)))
+				{
+					guess_LoadPageLockedTexture();
+					if (guess_g_bPageLockedLoaded)
+						gl.glBindTexture( GL_TEXTURE_2D, guess_g_iPageLockedTexture );
+					else
+						gl.glBindTexture( GL_TEXTURE_2D, (ptex->index & 0xFFFF) );
+				}
+				else
+					gl.glBindTexture( GL_TEXTURE_2D, (ptex->index & 0xFFFF) );
+			}
+			else
+				gl.glBindTexture( GL_TEXTURE_2D, (ptex->index & 0xFFFF) );
+		}
+		else if (strstr(ptex->name, "sleeve"))
+		{
+			int isViewModel = (m_pCurrentEntity == gEngfuncs.GetViewModel()) ? TRUE : FALSE;
+			if (isViewModel && gHUD.m_Ammo.m_pWeapon && gHUD.m_Ammo.m_pWeapon->iId == 20)
+				isViewModel = FALSE;
+
+			if (bMultiplayer)
+			{
+				if (g_DrawHeadShied || isViewModel || (guess_pAttachCamEnt && m_pCurrentEntity == guess_pAttachCamEnt))
+				{
+					guess_LoadPoliceSleeveTexture(0);
+					if (guess_g_bPoliceSleeveLoaded)
+						gl.glBindTexture( GL_TEXTURE_2D, guess_g_iPoliceSleeveTexture );
+					else
+						gl.glBindTexture( GL_TEXTURE_2D, (ptex->index & 0xFFFF) );
+				}
+				else
+					gl.glBindTexture( GL_TEXTURE_2D, (ptex->index & 0xFFFF) );
+			}
+			else if (!gHUD.guess_m_iClothes && strlen(gHUD.guess_m_szSleeveTexture) <= 2)
+				gl.glBindTexture( GL_TEXTURE_2D, (ptex->index & 0xFFFF) );
+			else
+			{
+				guess_LoadSleeveTexture();
+				if (guess_g_bSleeveLoaded)
+					gl.glBindTexture( GL_TEXTURE_2D, guess_g_iSleeveTexture );
+				else
+					gl.glBindTexture( GL_TEXTURE_2D, (ptex->index & 0xFFFF) );
+			}
+		}
+		else if (strstr(ptex->name, "fingers"))
+		{
+			int isViewModel = (m_pCurrentEntity == gEngfuncs.GetViewModel()) ? TRUE : FALSE;
+
+			if (!bMultiplayer && !guess_bCustomFingerTexture)
+				gl.glBindTexture( GL_TEXTURE_2D, (ptex->index & 0xFFFF) );
+			else if (!g_DrawHeadShied && !isViewModel && (!guess_pAttachCamEnt || m_pCurrentEntity != guess_pAttachCamEnt))
+				gl.glBindTexture( GL_TEXTURE_2D, (ptex->index & 0xFFFF) );
+			else
+			{
+				// the hands of the player model
+				cl_entity_t *player = gEngfuncs.GetLocalPlayer();
+				if (player && player->model)
+				{
+					int index = player->index - 1;
+					model_t *model;
+
+					if (index >= 0 && index <= gEngfuncs.GetMaxClients() && (model = IEngineStudio.SetupPlayerModel(index)) != NULL)
+					{
+						guess_LoadHandsTexture(model->name);
+						if (guess_g_bHandsLoaded)
+							gl.glBindTexture( GL_TEXTURE_2D, guess_g_iHandsTexture );
+						else
+							gl.glBindTexture( GL_TEXTURE_2D, (ptex->index & 0xFFFF) );
+					}
+					else
+						gl.glBindTexture( GL_TEXTURE_2D, (ptex->index & 0xFFFF) );
+				}
+			}
+		}
+		else if (strstr(ptex->name, "glove"))
+		{
+			if (m_pCurrentEntity == gEngfuncs.GetViewModel() && guess_bCustomGloveTexture)
+			{
+				guess_LoadGloveTexture(0);
+				if (guess_g_bGloveLoaded)
+					gl.glBindTexture( GL_TEXTURE_2D, guess_g_iGloveTexture );
+				else
+					gl.glBindTexture( GL_TEXTURE_2D, (ptex->index & 0xFFFF) );
+			}
+			else
+				gl.glBindTexture( GL_TEXTURE_2D, (ptex->index & 0xFFFF) );
+		}
+		else if (strstr(ptex->name, "cam_vfind"))
+		{
+			// camera viewfinder shows the blurred screen
+			if (cl_cameraeffect->value)
+			{
+				guess_CaptureBlurTexture(ptex->width, ptex->height, 0, 0);
+				if (guess_g_bBlurTextureCaptured)
+				{
+					bBlurTexture = true;
+					gl.glBindTexture( GL_TEXTURE_2D, guess_g_iBlurTexture );
+					guess_g_bBlurTextureCaptured = false;
+				}
+				else
+					gl.glBindTexture( GL_TEXTURE_2D, (ptex->index & 0xFFFF) );
+			}
+			else
+				gl.glBindTexture( GL_TEXTURE_2D, (ptex->index & 0xFFFF) );
+		}
+		else if (strstr(ptex->name, "diffusegay"))
+		{
+			// photo taken by the TakePhoto message
+			if (guess_g_bTakePhoto)
+			{
+				guess_CaptureScreenTexture(ptex->width, ptex->height);
+				guess_g_bTakePhoto = false;
+			}
+
+			if (guess_g_bScreenTextureCaptured)
+				gl.glBindTexture( GL_TEXTURE_2D, guess_g_iScreenTexture );
+			else
+				gl.glBindTexture( GL_TEXTURE_2D, (ptex->index & 0xFFFF) );
+		}
+		else
+			gl.glBindTexture( GL_TEXTURE_2D, (ptex->index & 0xFFFF) );
+
 	//	byte *pal = (byte *)m_pStudioHeader + ptex->width * ptex->height + ((ptex->index>>16) & 0xFFFF);
 	//	gl.glColorTableEXT(0x81fb,GL_RGB,256,GL_RGB,GL_UNSIGNED_BYTE,pal);
 	//	CONPRINT("texture %s (low: %d, high: %d), %d x %d\n", ptex->name,
@@ -1241,7 +1825,7 @@ void CStudioModelRenderer::GL_DrawPoints ( )
 			gl.glEnable(GL_ALPHA_TEST);
 			gl.glAlphaFunc(GL_GREATER, 0.5);
 		}
-	
+
 		if (ptexture[pskinref[pmesh->skinref]].flags & STUDIO_NF_CHROME)
 		{
 			while (i = *(ptricmds++))
@@ -1260,17 +1844,27 @@ void CStudioModelRenderer::GL_DrawPoints ( )
 				{
 					// FIX: put these in as integer coords, not floats
 					gl.glTexCoord2f(g_chrome[ptricmds[1]][0]*s, g_chrome[ptricmds[1]][1]*t);
-					
-					float *lv = (float*)&g_pvlightvalues[ptricmds[1]];
-					gl.glColor4f( lv[0], lv[1], lv[2], alpha );
+
+					if (strstr(ptex->name, "fullbright"))
+					{
+						float bright = guess_cv_fullbrighttextures->value;
+						if (strstr(ptex->name, "corona_"))
+							bright += gEngfuncs.pfnRandomFloat(-0.1, 0.1);
+						gl.glColor4f( bright, bright, bright, alpha );
+					}
+					else
+					{
+						float *lv = (float*)&g_pvlightvalues[ptricmds[1]];
+						gl.glColor4f( lv[0], lv[1], lv[2], alpha );
+					}
 
 					float *av = g_pxformverts[ptricmds[0]];
 					gl.glVertex3f(av[0], av[1], av[2]);
 				}
 				gl.glEnd( );
-			}	
-		} 
-		else 
+			}
+		}
+		else
 		{
 			while (i = *(ptricmds++))
 			{
@@ -1286,16 +1880,186 @@ void CStudioModelRenderer::GL_DrawPoints ( )
 
 				for( ; i > 0; i--, ptricmds += 4)
 				{
+					// Cry of Fear: hide one hand of the view model while the other one holds a second weapon
+					if (gHUD.m_Ammo.m_pWeapon && gHUD.m_Ammo.m_pWeapon->iId == 15 && !guess_iGoro)
+					{
+						if (guess_g_iHeadShieldType == 3 && g_DrawHeadShied)
+						{
+							if (guess_g_iDualWeapon1 == 13)
+							{
+								if (strstr(pbones[pvertbone[ptricmds[0]]].name, "r_"))
+									continue;
+							}
+							else
+							{
+								if (strstr(pbones[pvertbone[ptricmds[0]]].name, "l_"))
+									continue;
+							}
+						}
+
+						if (m_pCurrentEntity == gEngfuncs.GetViewModel())
+						{
+							if (guess_g_iDualWeapon2 == 13)
+							{
+								if (strstr(pbones[pvertbone[ptricmds[0]]].name, "r_"))
+									continue;
+							}
+							else
+							{
+								if (strstr(pbones[pvertbone[ptricmds[0]]].name, "l_"))
+									continue;
+							}
+						}
+					}
+
+					// Cry of Fear: severed limbs (bits in curstate.playerclass)
+					int severed = m_pCurrentEntity->curstate.playerclass;
+					if (severed > 0)
+					{
+						if (severed & 0x100)
+						{
+							if (!strcmp(pbones[pvertbone[ptricmds[0]]].name, "Bip01 L Leg1"))
+								continue;
+							if (!strcmp(pbones[pvertbone[ptricmds[0]]].name, "Bip01 L Leg"))
+								continue;
+							if (!strcmp(pbones[pvertbone[ptricmds[0]]].name, "Bip01 L Foot"))
+								continue;
+						}
+						else if (severed & 0x80)
+						{
+							if (!strcmp(pbones[pvertbone[ptricmds[0]]].name, "Bip01 L Leg1"))
+								continue;
+							if (!strcmp(pbones[pvertbone[ptricmds[0]]].name, "Bip01 L Foot"))
+								continue;
+						}
+
+						if (severed & 0x400)
+						{
+							if (!strcmp(pbones[pvertbone[ptricmds[0]]].name, "Bip01 R Leg1"))
+								continue;
+							if (!strcmp(pbones[pvertbone[ptricmds[0]]].name, "Bip01 R Leg"))
+								continue;
+							if (!strcmp(pbones[pvertbone[ptricmds[0]]].name, "Bip01 R Foot"))
+								continue;
+						}
+						else if (severed & 0x200)
+						{
+							if (!strcmp(pbones[pvertbone[ptricmds[0]]].name, "Bip01 R Leg1"))
+								continue;
+							if (!strcmp(pbones[pvertbone[ptricmds[0]]].name, "Bip01 R Foot"))
+								continue;
+						}
+
+						if (severed & 0x10)
+						{
+							if (!strcmp(pbones[pvertbone[ptricmds[0]]].name, "Bip01 L Arm1"))
+								continue;
+							if (!strcmp(pbones[pvertbone[ptricmds[0]]].name, "Bip01 L Arm2"))
+								continue;
+							if (!strcmp(pbones[pvertbone[ptricmds[0]]].name, "Bip01 L Hand"))
+								continue;
+						}
+						else if (severed & 8)
+						{
+							if (!strcmp(pbones[pvertbone[ptricmds[0]]].name, "Bip01 L Arm2"))
+								continue;
+							if (!strcmp(pbones[pvertbone[ptricmds[0]]].name, "Bip01 L Hand"))
+								continue;
+						}
+						else if (severed & 2)
+						{
+							if (!strcmp(pbones[pvertbone[ptricmds[0]]].name, "Bip01 L Hand"))
+								continue;
+						}
+
+						if (severed & 0x40)
+						{
+							if (!strcmp(pbones[pvertbone[ptricmds[0]]].name, "Bip01 R Arm1"))
+								continue;
+							if (!strcmp(pbones[pvertbone[ptricmds[0]]].name, "Bip01 R Arm2"))
+								continue;
+							if (!strcmp(pbones[pvertbone[ptricmds[0]]].name, "Bip01 R Hand"))
+								continue;
+						}
+						else if (severed & 0x20)
+						{
+							if (!strcmp(pbones[pvertbone[ptricmds[0]]].name, "Bip01 R Arm2"))
+								continue;
+							if (!strcmp(pbones[pvertbone[ptricmds[0]]].name, "Bip01 R Hand"))
+								continue;
+						}
+						else if (severed & 4)
+						{
+							if (!strcmp(pbones[pvertbone[ptricmds[0]]].name, "Bip01 R Hand"))
+								continue;
+						}
+					}
+
 					// FIX: put these in as integer coords, not floats
 					gl.glTexCoord2f(ptricmds[2]*s, ptricmds[3]*t);
-					
-					float *lv = (float*)&g_pvlightvalues[ptricmds[1]];
-					gl.glColor4f( lv[0], lv[1], lv[2], alpha );
-				//	gl.glColor4f( 0.5, 0.5, 0.5, alpha );
-				//	gl.glColor4f( 1, 1, 1, alpha );
 
-					float *av = g_pxformverts[ptricmds[0]];
-					gl.glVertex3f(av[0], av[1], av[2]);
+					if (guess_cv_fullbrighttextures->value)
+					{
+						int isViewModel = (m_pCurrentEntity == gEngfuncs.GetViewModel()) ? TRUE : FALSE;
+
+						if (strstr(ptex->name, "fullbright"))
+						{
+							if (strstr(ptex->name, "fullbright_mess"))
+							{
+								if (!gHUD.guess_m_bPhoneOff)
+								{
+									gl.glColor4f( guess_cv_fullbrighttextures->value, guess_cv_fullbrighttextures->value, guess_cv_fullbrighttextures->value, alpha );
+								}
+								else
+								{
+									float *lv = (float*)&g_pvlightvalues[ptricmds[1]];
+									gl.glColor4f( lv[0], lv[1], lv[2], alpha );
+								}
+							}
+							else
+							{
+								float bright = guess_cv_fullbrighttextures->value;
+								if (strstr(ptex->name, "corona_"))
+									bright += gEngfuncs.pfnRandomFloat(-0.1, 0.1);
+								gl.glColor4f( bright, bright, bright, alpha );
+							}
+						}
+						else if ((g_DrawHeadShied || isViewModel) && (strstr(ptex->name, "sleeve") || strstr(ptex->name, "glove")))
+						{
+							// the hands fade in after the view came back
+							float scale;
+							if (guess_flUnknown105595A0 + guess_flUnknown105595A4 > gEngfuncs.GetClientTime())
+							{
+								float frac = (gEngfuncs.GetClientTime() - guess_flUnknown105595A0) / guess_flUnknown105595A4;
+								if (frac > 1)
+									frac = 1;
+								scale = (1 - frac) + 2;
+							}
+							else
+								scale = 1;
+
+							float *lv = (float*)&g_pvlightvalues[ptricmds[1]];
+							gl.glColor4f( lv[0] / scale, lv[1] / scale, lv[2] / scale, alpha );
+						}
+						else
+						{
+							float *lv = (float*)&g_pvlightvalues[ptricmds[1]];
+							gl.glColor4f( lv[0], lv[1], lv[2], alpha );
+						}
+
+						float *av = g_pxformverts[ptricmds[0]];
+						gl.glVertex3f(av[0], av[1], av[2]);
+					}
+					else
+					{
+						float *lv = (float*)&g_pvlightvalues[ptricmds[1]];
+						gl.glColor4f( lv[0], lv[1], lv[2], alpha );
+					//	gl.glColor4f( 0.5, 0.5, 0.5, alpha );
+					//	gl.glColor4f( 1, 1, 1, alpha );
+
+						float *av = g_pxformverts[ptricmds[0]];
+						gl.glVertex3f(av[0], av[1], av[2]);
+					}
 				}
 				gl.glEnd( );
 			}
@@ -1311,6 +2075,9 @@ void CStudioModelRenderer::GL_DrawPoints ( )
 			gl.glDisable(GL_ALPHA_TEST);
 			gl.glAlphaFunc(GL_GREATER, 0); // if leave 0.5, then grass sprites looks strange, i dunno why
 		}
+
+		if (bBlurTexture)
+			gl.glBindTexture( GL_TEXTURE_2D, guess_g_iOldTexture );
 	}
 }
 

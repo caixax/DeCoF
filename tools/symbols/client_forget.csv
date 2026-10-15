@@ -7,3 +7,6 @@ va,name,evidence
 104D26E8,?guess_iBlurTexture@@3HA,"duplicate name of guess_g_iBlurTexture"
 100ADEC0,?guess_CalcViewModelLag@@YAXMPAMAAVVector@@0PAUcl_entity_s@@_N@Z,"old signature of the view.cpp function, renamed when its parameters were settled"
 100B31E0,?guess_VectorIsValid@@YA_NVVector@@@Z,"old signature of the view.cpp function, renamed when its parameters were settled"
+10064A40,?guess_LoadPoliceSleeveTexture@@YAXXZ,"old signature or name, renamed by the studio renderer work (unused int parameter, rain.cpp owns guess_VectorDistance)"
+100642B0,?guess_LoadGloveTexture@@YAXXZ,"old signature or name, renamed by the studio renderer work (unused int parameter, rain.cpp owns guess_VectorDistance)"
+10065210,?guess_VectorDistance@@YAMVVector@@0@Z,"old signature or name, renamed by the studio renderer work (unused int parameter, rain.cpp owns guess_VectorDistance)"

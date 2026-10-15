@@ -9,3 +9,4 @@
 ?setVisible@CAmmoInventory@@UAEX_N@Z
 ?paint@ColorButton@@UAEXXZ
 ?paintBackground@ColorButton@@UAEXXZ
+?IsNotValid@CommandButton@@UAEHXZ

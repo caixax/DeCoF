@@ -31,6 +31,10 @@
 #include "GameStudioModelRenderer.h"
 
 #include "gl_renderer.h"
+#include "gl_dlight.h"
+#include "entity_types.h"
+#include "r_efx.h"
+#include "event_api.h"
 
 // Global engine <-> studio model rendering code interface
 engine_studio_api_t IEngineStudio;
@@ -1092,6 +1096,30 @@ extern float  sky_speed;
 extern int skylight_amb;
 extern int skylight_shade;
 
+// Cry of Fear
+extern int guess_g_iDualFlash;
+extern int guess_g_iDualWeapon2;
+extern float guess_flRevolverRotation;
+extern int guess_iModelAttachEnt;
+extern int guess_iModelAttachNum;
+extern int guess_iBoat;
+extern int guess_iWheelchair;
+extern cl_entity_t *guess_pAttachCamEnt;
+extern bool guess_bAttachCam;
+extern vec3_t guess_vecBoatOrigin;
+extern vec3_t guess_vecWheelchairOrigin;
+extern vec3_t guess_vecModelAttachOrigin;
+extern vec3_t guess_vecCameraAttachment;
+extern vec3_t guess_vecCameraAngles;
+void DlightFlash( float *origin );
+void VectorAngles( const float *forward, float *angles );
+extern int guess_iMuzzleFlash;
+extern int guess_iMuzzleFlashType;
+extern int guess_iMuzzleFlashEnt;
+extern vec3_t guess_vecMuzzleFlashAngles;
+bool guess_IsViewEntityActive( void );
+void EV_EjectBrass( float *origin, float *velocity, float rotation, int model, int soundtype );
+
 /*
 ====================
 StudioDrawModel
@@ -1104,6 +1132,29 @@ int CStudioModelRenderer::StudioDrawModel( int flags )
 	vec3_t dir;
 
 	m_pCurrentEntity = IEngineStudio.GetCurrentEntity();
+
+	if (!m_pCurrentEntity)
+		return 0;
+
+	// Cry of Fear: no interpolation for the entity the camera is attached to
+	int saveinterp = m_fDoInterp;
+	if (guess_pAttachCamEnt && guess_pAttachCamEnt == m_pCurrentEntity)
+		m_fDoInterp = 0;
+
+	if (IEngineStudio.GetViewEntity() == m_pCurrentEntity && (gHUD.m_iHideHUDDisplay & HIDEHUD_WEAPONS))
+		return 0;
+
+	// Cry of Fear: muzzle flash light of the left hand weapon
+	if (guess_g_iDualFlash)
+	{
+		cl_entity_t *player = gEngfuncs.GetLocalPlayer();
+		if (player)
+		{
+			guess_g_iDualFlash = 0;
+			DlightFlash(player->origin);
+		}
+	}
+
 	IEngineStudio.GetTimes( &m_nFrameCount, &m_clTime, &m_clOldTime );
 	IEngineStudio.GetViewInfo( m_vRenderOrigin, m_vUp, m_vRight, m_vNormal );
 	IEngineStudio.GetAliasScale( &m_fSoftwareXScale, &m_fSoftwareYScale );
@@ -1132,10 +1183,10 @@ int CStudioModelRenderer::StudioDrawModel( int flags )
 
 		save_interp = m_fDoInterp;
 		m_fDoInterp = 0;
-		
+
 		// draw as though it were a player
 		result = StudioDrawPlayer( flags, &deadplayer );
-		
+
 		m_fDoInterp = save_interp;
 		return result;
 	}
@@ -1149,16 +1200,31 @@ int CStudioModelRenderer::StudioDrawModel( int flags )
 
 	StudioSetUpTransform( 0 );
 
+	// Cry of Fear: mirror the view model when the left hand holds a second weapon
+	if (m_pCurrentEntity == IEngineStudio.GetViewEntity() && gHUD.m_Ammo.m_pWeapon && gHUD.m_Ammo.m_pWeapon->iId == 15 && guess_g_iDualWeapon2 == 13)
+	{
+		(*m_protationmatrix)[0][1] *= -1;
+		(*m_protationmatrix)[1][1] *= -1;
+		(*m_protationmatrix)[2][1] *= -1;
+		gEngfuncs.pTriAPI->CullFace( TRI_NONE );
+	}
+
 	if (flags & STUDIO_RENDER)
 	{
 		// buz
-		if (m_pCurrentEntity->curstate.renderfx == 70)
+		if (m_pCurrentEntity->curstate.renderfx == 70 || m_pCurrentEntity->curstate.renderfx == 137 || m_pCurrentEntity->curstate.renderfx == 184)
 		{
 			if (!gl.IsGLAllowed())
+			{
+				m_fDoInterp = saveinterp;
 				return 0;
+			}
 
 			if (!gl.Paranoia_hacks)
+			{
+				m_fDoInterp = saveinterp;
 				return 0; // dont draw skybox entites, DepthRange will be incorrect
+			}
 
 			// FIXME: check bbox for sky models
 		}
@@ -1166,14 +1232,32 @@ int CStudioModelRenderer::StudioDrawModel( int flags )
 		{
 			// see if the bounding box lets us trivially reject
 			if (!IEngineStudio.StudioCheckBBox ())
+			{
+				m_fDoInterp = saveinterp;
 				return 0;
+			}
 		}
 
 		(*m_pModelsDrawn)++;
 		(*m_pStudioModelCount)++; // render data cache cookie
 
 		if (m_pStudioHeader->numbodyparts == 0)
+		{
+			m_fDoInterp = saveinterp;
 			return 1;
+		}
+	}
+
+	// Cry of Fear: the revolver cylinder rotation drives bone controllers 0 to 2
+	if (m_pCurrentEntity == IEngineStudio.GetViewEntity() && gHUD.m_Ammo.m_pWeapon && gHUD.m_Ammo.m_pWeapon->iId == 21)
+	{
+		byte rotation = 255 - (int)(guess_flRevolverRotation / 360 * 255);
+		m_pCurrentEntity->curstate.controller[0] = rotation;
+		m_pCurrentEntity->curstate.controller[1] = rotation;
+		m_pCurrentEntity->curstate.controller[2] = rotation;
+		m_pCurrentEntity->latched.prevcontroller[0] = m_pCurrentEntity->curstate.controller[0];
+		m_pCurrentEntity->latched.prevcontroller[1] = m_pCurrentEntity->curstate.controller[1];
+		m_pCurrentEntity->latched.prevcontroller[2] = m_pCurrentEntity->curstate.controller[2];
 	}
 
 	if (m_pCurrentEntity->curstate.movetype == MOVETYPE_FOLLOW)
@@ -1212,16 +1296,17 @@ int CStudioModelRenderer::StudioDrawModel( int flags )
 			IEngineStudio.StudioDynamicLight(m_pCurrentEntity, &lighting );
 			IEngineStudio.StudioEntityLight( &lighting );
 
-			// buz: копируем освещенность в глобальный вектор
+			// buz: light checker entity, store the lighting and skip drawing
 			if (m_pCurrentEntity->curstate.renderfx == 60)
 			{
 				VectorCopy(lighting.color, gLighting);
 				gLightLevel = (float)lighting.shadelight / 192;
+				m_fDoInterp = saveinterp;
 				return 0;
 			}
 
 			// buz: apply custom lighting to sky models
-			if (m_pCurrentEntity->curstate.renderfx == 70)
+			if (m_pCurrentEntity->curstate.renderfx == 70 || m_pCurrentEntity->curstate.renderfx == 137 || m_pCurrentEntity->curstate.renderfx == 184)
 			{
 				if (skylight_amb != -1) lighting.ambientlight = skylight_amb;
 				if (skylight_shade != -1) lighting.shadelight = skylight_shade;
@@ -1229,16 +1314,10 @@ int CStudioModelRenderer::StudioDrawModel( int flags )
 
 			// model and frame independant
 			IEngineStudio.StudioSetupLighting (&lighting);
-
-			// get remap colors
-			m_nTopColor = m_pCurrentEntity->curstate.colormap & 0xFF;
-			m_nBottomColor = (m_pCurrentEntity->curstate.colormap & 0xFF00) >> 8;
-
-			IEngineStudio.StudioSetRemapColors( m_nTopColor, m_nBottomColor );
 		}
 
 		// buz
-		if (m_pCurrentEntity->curstate.renderfx == 70)
+		if (m_pCurrentEntity->curstate.renderfx == 70 || m_pCurrentEntity->curstate.renderfx == 137 || m_pCurrentEntity->curstate.renderfx == 184)
 		{
 			vec3_t trans = render_origin - sky_origin;
 			if (sky_speed)
@@ -1283,7 +1362,7 @@ int CStudioModelRenderer::StudioDrawModel( int flags )
 			else IEngineStudio.StudioSetupLighting (&lighting);
 
 			gEngfuncs.pTriAPI->RenderMode( kRenderTransAdd );
-			m_pCurrentEntity->curstate.renderamt = 255;				
+			m_pCurrentEntity->curstate.renderamt = 255;
 
 			StudioRenderModel( );
 
@@ -1295,11 +1374,13 @@ int CStudioModelRenderer::StudioDrawModel( int flags )
 		}
 	}
 
-
+	// Cry of Fear: attachment of the ModelAttach entity for the view
+	if (guess_iModelAttachEnt > -1 && guess_iModelAttachNum > -1 && guess_iModelAttachEnt == m_pCurrentEntity->curstate.colormap)
+		guess_vecModelAttachOrigin = m_pCurrentEntity->attachment[guess_iModelAttachEnt];
 
 	//LRC
 	if (m_pCurrentEntity->curstate.renderfx == kRenderFxReflection )
-	{ 
+	{
 		m_pCurrentEntity->curstate.renderfx = kRenderFxNone;
 		(*m_protationmatrix)[2][2] *= -1;
 		gEngfuncs.pTriAPI->CullFace( TRI_NONE ); // we're turning the model inside out, so we need to draw
@@ -1310,13 +1391,19 @@ int CStudioModelRenderer::StudioDrawModel( int flags )
 		{
 			// see if the bounding box lets us trivially reject, also sets
 			if (!IEngineStudio.StudioCheckBBox ())
+			{
+				m_fDoInterp = saveinterp;
 				return 0;
+			}
 
 			(*m_pModelsDrawn)++;
 			(*m_pStudioModelCount)++; // render data cache cookie
 
 			if (m_pStudioHeader->numbodyparts == 0)
+			{
+				m_fDoInterp = saveinterp;
 				return 1;
+			}
 		}
 
 		if (m_pCurrentEntity->curstate.movetype == MOVETYPE_FOLLOW)
@@ -1356,12 +1443,6 @@ int CStudioModelRenderer::StudioDrawModel( int flags )
 
 				// model and frame independant
 				IEngineStudio.StudioSetupLighting (&lighting);
-
-				// get remap colors
-				m_nTopColor = m_pCurrentEntity->curstate.colormap & 0xFF;
-				m_nBottomColor = (m_pCurrentEntity->curstate.colormap & 0xFF00) >> 8;
-
-				IEngineStudio.StudioSetRemapColors( m_nTopColor, m_nBottomColor );
 			}
 
 			StudioRenderModel( );
@@ -1372,6 +1453,32 @@ int CStudioModelRenderer::StudioDrawModel( int flags )
 		m_pCurrentEntity->curstate.renderfx = kRenderFxReflection;
 	}
 
+	// Cry of Fear: attachments the view needs (boat, wheelchair, attach camera)
+	if (guess_iBoat && m_pCurrentEntity == (cl_entity_t *)guess_iBoat)
+		VectorCopy(m_pCurrentEntity->attachment[0], guess_vecBoatOrigin);
+
+	if (guess_iWheelchair && m_pCurrentEntity == (cl_entity_t *)guess_iWheelchair)
+		VectorCopy(m_pCurrentEntity->attachment[0], guess_vecWheelchairOrigin);
+
+	if (guess_pAttachCamEnt && m_pCurrentEntity == guess_pAttachCamEnt)
+	{
+		VectorCopy(m_pCurrentEntity->attachment[0], guess_vecCameraAttachment);
+
+		vec3_t angles;
+		VectorSubtract(m_pCurrentEntity->attachment[1], m_pCurrentEntity->attachment[0], angles);
+		VectorAngles(angles, angles);
+		angles[0] = -angles[0];
+		guess_vecCameraAngles = angles;
+
+		vec3_t roll;
+		VectorSubtract(m_pCurrentEntity->attachment[3], m_pCurrentEntity->attachment[0], roll);
+		VectorAngles(roll, roll);
+		guess_vecCameraAngles[2] = roll[0];
+
+		guess_bAttachCam = true;
+	}
+
+	m_fDoInterp = saveinterp;
 	return 1;
 }
 
@@ -1556,6 +1663,10 @@ int CStudioModelRenderer::StudioDrawPlayer( int flags, entity_state_t *pplayer )
 	alight_t lighting;
 	vec3_t dir;
 
+	// Cry of Fear: no player models while a view entity or the attach camera is active
+	if (guess_IsViewEntityActive() || guess_pAttachCamEnt)
+		return 0;
+
 	m_pCurrentEntity = IEngineStudio.GetCurrentEntity();
 	IEngineStudio.GetTimes( &m_nFrameCount, &m_clTime, &m_clOldTime );
 	IEngineStudio.GetViewInfo( m_vRenderOrigin, m_vUp, m_vRight, m_vNormal );
@@ -1566,6 +1677,13 @@ int CStudioModelRenderer::StudioDrawPlayer( int flags, entity_state_t *pplayer )
 	// Con_DPrintf("DrawPlayer %d %d (%d)\n", m_nFrameCount, pplayer->player_index, m_pCurrentEntity->curstate.sequence );
 
 	// Con_DPrintf("Player %.2f %.2f %.2f\n", pplayer->velocity[0], pplayer->velocity[1], pplayer->velocity[2] );
+
+	// Cry of Fear: the model stays upright, the pitch goes to bone controller 3
+	float pitch = m_pCurrentEntity->angles[0];
+	m_pCurrentEntity->angles[0] = 0;
+	m_pCurrentEntity->curstate.angles[0] = 0;
+	m_pCurrentEntity->prevstate.angles[0] = 0;
+	m_pCurrentEntity->latched.prevangles[0] = 0;
 
 	m_nPlayerIndex = pplayer->number - 1;
 
@@ -1587,26 +1705,67 @@ int CStudioModelRenderer::StudioDrawPlayer( int flags, entity_state_t *pplayer )
 		m_pPlayerInfo = IEngineStudio.PlayerInfo( m_nPlayerIndex );
 
 		VectorCopy( m_pCurrentEntity->angles, orig_angles );
-	
+
 		StudioProcessGait( pplayer );
 
 		m_pPlayerInfo->gaitsequence = pplayer->gaitsequence;
 		m_pPlayerInfo = NULL;
+
+		float look = pitch + 30;
+		if (look < 0)
+			look = 0;
+		if (look > 60)
+			look = 60;
+		look = look / 60;
+		if (look > 1)
+			look = 1;
+		if (look < -1)
+			look = 1;
+
+		float controller = 255 - look * 255;
+		if (controller > 255)
+			controller = 255;
+		if (controller < 0)
+			controller = 0;
+
+		m_pCurrentEntity->curstate.controller[3] = (int)controller;
+		m_pCurrentEntity->latched.prevcontroller[3] = m_pCurrentEntity->curstate.controller[3];
 
 		StudioSetUpTransform( 0 );
 		VectorCopy( orig_angles, m_pCurrentEntity->angles );
 	}
 	else
 	{
+		float look = pitch + 30;
+		if (look < 0)
+			look = 0;
+
 		m_pCurrentEntity->curstate.controller[0] = 127;
 		m_pCurrentEntity->curstate.controller[1] = 127;
 		m_pCurrentEntity->curstate.controller[2] = 127;
-		m_pCurrentEntity->curstate.controller[3] = 127;
+
+		if (look > 60)
+			look = 60;
+		look = look / 60;
+
 		m_pCurrentEntity->latched.prevcontroller[0] = m_pCurrentEntity->curstate.controller[0];
 		m_pCurrentEntity->latched.prevcontroller[1] = m_pCurrentEntity->curstate.controller[1];
 		m_pCurrentEntity->latched.prevcontroller[2] = m_pCurrentEntity->curstate.controller[2];
+
+		if (look > 1)
+			look = 1;
+		if (look < -1)
+			look = 1;
+
+		float controller = 255 - look * 255;
+		if (controller > 255)
+			controller = 255;
+		if (controller < 0)
+			controller = 0;
+
+		m_pCurrentEntity->curstate.controller[3] = (int)controller;
 		m_pCurrentEntity->latched.prevcontroller[3] = m_pCurrentEntity->curstate.controller[3];
-		
+
 		m_pPlayerInfo = IEngineStudio.PlayerInfo( m_nPlayerIndex );
 		m_pPlayerInfo->gaitsequence = 0;
 
@@ -1648,17 +1807,6 @@ int CStudioModelRenderer::StudioDrawPlayer( int flags, entity_state_t *pplayer )
 
 	if (flags & STUDIO_RENDER)
 	{
-		if (m_pCvarHiModels->value && m_pRenderModel != m_pCurrentEntity->model  )
-		{
-			// show highest resolution multiplayer model
-			m_pCurrentEntity->curstate.body = 255;
-		}
-
-		if (!(m_pCvarDeveloper->value == 0 && gEngfuncs.GetMaxClients() == 1 ) && ( m_pRenderModel == m_pCurrentEntity->model ) )
-		{
-			m_pCurrentEntity->curstate.body = 1; // force helmet
-		}
-
 		if (cv_renderer->value && cv_nsr->value)
 		{
 			GL_SetupLighting(); // buz
@@ -1711,11 +1859,144 @@ int CStudioModelRenderer::StudioDrawPlayer( int flags, entity_state_t *pplayer )
 
 			StudioCalcAttachments( );
 
+			// Cry of Fear: muzzle flash of this player's weapon
+			if (guess_iMuzzleFlash && guess_iMuzzleFlashEnt == m_pCurrentEntity->index)
+			{
+				guess_iMuzzleFlash = 0;
+				guess_StudioMuzzleFlash( pweaponmodel->name, 0, false, 1.0 );
+			}
+
 			*m_pCurrentEntity = saveent;
 		}
 	}
 
+	m_pCurrentEntity->angles[0] = pitch;
+	m_pCurrentEntity->curstate.angles[0] = pitch;
+	m_pCurrentEntity->prevstate.angles[0] = pitch;
+	m_pCurrentEntity->latched.prevangles[0] = pitch;
+
 	return 1;
+}
+
+/*
+====================
+guess_StudioMuzzleFlash
+
+Cry of Fear: flash model and light at an attachment of the weapon model of
+another player (called by StudioDrawPlayer after the weapon is drawn)
+====================
+*/
+cl_entity_t guess_tpmuzzleflash;
+
+void CStudioModelRenderer::guess_StudioMuzzleFlash( char *modelname, int iAttachment, bool bAlt, float flScale )
+{
+	int i;
+	mstudioattachment_t *pattachment;
+	float attachment[4][3];
+
+	if ( m_pStudioHeader->numattachments > 4 )
+	{
+		gEngfuncs.Con_DPrintf( "Too many attachments on %s\n", modelname );
+		exit( -1 );
+	}
+
+	// calculate attachment points
+	pattachment = (mstudioattachment_t *)((byte *)m_pStudioHeader + m_pStudioHeader->attachmentindex);
+	for (i = 0; i < m_pStudioHeader->numattachments; i++)
+	{
+		VectorTransform( pattachment[i].org, (*m_plighttransform)[pattachment[i].bone], attachment[i] );
+	}
+
+	if ( !modelname )
+		return;
+
+	bool bCS = false;
+	if ( strstr( modelname, "models/cs/" ) )
+		bCS = true;
+
+	cl_entity_t *pPlayer = gEngfuncs.GetLocalPlayer();
+
+	if ( !pPlayer )
+		return;
+
+	int iModelIndex;
+	struct model_s *pModel = gEngfuncs.CL_LoadModel( "models/flash1.mdl", &iModelIndex );
+
+	if ( !strcmp( modelname, "police/models/weapons/m16/p_m16.mdl" ) )
+		pModel = gEngfuncs.CL_LoadModel( "models/flash2.mdl", &iModelIndex );
+
+	float flFlashScale;
+
+	if ( !strcmp( modelname, "police/models/weapons/rifle/p_rifle.mdl" ) )
+	{
+		pModel = gEngfuncs.CL_LoadModel( "models/flash2.mdl", &iModelIndex );
+		flFlashScale = 4;
+	}
+	else
+		flFlashScale = 3;
+
+	if ( !strcmp( modelname, "police/models/weapons/tmp/p_tmp.mdl" ) )
+	{
+		pModel = gEngfuncs.CL_LoadModel( "models/flash1.mdl", &iModelIndex );
+		flFlashScale = 2;
+	}
+
+	if ( bAlt )
+		pModel = gEngfuncs.CL_LoadModel( "models/flash3.mdl", &iModelIndex );
+
+	if ( bCS )
+		flFlashScale = 2;
+
+	flFlashScale += gEngfuncs.pfnRandomFloat( -1, 1 );
+
+	guess_tpmuzzleflash = *pPlayer;
+	guess_tpmuzzleflash.model = pModel;
+	guess_tpmuzzleflash.curstate.modelindex = iModelIndex;
+	guess_tpmuzzleflash.curstate.scale = flFlashScale * flScale;
+	guess_tpmuzzleflash.player = 0;
+	guess_tpmuzzleflash.origin = attachment[iAttachment];
+	guess_tpmuzzleflash.angles = Vector( pPlayer->angles );
+	guess_tpmuzzleflash.angles[2] = gEngfuncs.pfnRandomFloat( 1, 359 );
+
+	if ( bAlt == true )
+		guess_tpmuzzleflash.angles[1] += 90;
+
+	guess_tpmuzzleflash.curstate.rendermode = kRenderTransAdd;
+	guess_tpmuzzleflash.curstate.renderamt = 100;
+
+	gEngfuncs.CL_CreateVisibleEntity( ET_NORMAL, &guess_tpmuzzleflash );
+
+	if ( !bAlt )
+	{
+		DlightFlash( attachment[iAttachment] );
+	}
+	else
+	{
+		dlight_t *dl = gEngfuncs.pEfxAPI->CL_AllocDlight( 0 );
+		VectorCopy( attachment[iAttachment], dl->origin );
+		dl->radius = 128;
+		dl->color.r = 225;
+		dl->color.g = 96;
+		dl->color.b = 0;
+		dl->die = gEngfuncs.GetClientTime() + 0.06;
+
+		DynamicLight *dl2 = MY_AllocDlight( 0 );
+		VectorCopy( attachment[iAttachment], dl2->origin );
+		dl2->radius = 128;
+		dl2->color = Vector( 1.0f, 0.37f, 0.0f );
+		dl2->die = gEngfuncs.GetClientTime() + 0.06;
+	}
+
+	vec3_t angles, forward, right, up;
+	angles = pPlayer->angles;
+	gEngfuncs.pfnAngleVectors( angles, forward, right, up );
+
+	if ( guess_iMuzzleFlashType == 3 )
+	{
+		int shell = gEngfuncs.pEventAPI->EV_FindModelIndex( "models/shell.mdl" );
+		vec3_t velocity = guess_vecMuzzleFlashAngles / 20;
+		EV_EjectBrass( attachment[1], velocity, 0, shell, TE_BOUNCE_SHELL );
+	}
 }
 
 /*
@@ -1724,6 +2005,8 @@ StudioCalcAttachments
 
 ====================
 */
+void guess_UpdatePlayerFlashlights( void );
+
 void CStudioModelRenderer::StudioCalcAttachments( void )
 {
 	int i;
@@ -1741,6 +2024,9 @@ void CStudioModelRenderer::StudioCalcAttachments( void )
 	{
 		VectorTransform( pattachment[i].org, (*m_plighttransform)[pattachment[i].bone],  m_pCurrentEntity->attachment[i] );
 	}
+
+	if ( gEngfuncs.GetMaxClients() > 1 )
+		guess_UpdatePlayerFlashlights();
 }
 
 /*
@@ -1956,18 +2242,23 @@ cl_entity_t *guess_g_pHeadShieldEnt;
 
 extern int guess_iWheelchair;
 extern int guess_iBoat;
-extern int guess_iDoctor;
+extern int guess_iDoctorMode;
 extern cl_entity_t *guess_pAttachCamEnt;
 extern bool guess_bAttachCam;
-extern vec3_t guess_vecCameraAttachment;
-extern vec3_t guess_vecCameraAngles;
+vec3_t guess_vecDualAttachment0;		// attachments 0 and 1 of the left hand weapon (DualWield), read by V_CalcNormalRefdef
+vec3_t guess_vecCameraAttachment;
+vec3_t guess_vecDualAttachment1;
+vec3_t guess_vecCameraAngles;
+vec3_t guess_vecBoatOrigin;				// attachment 0 of the boat, read by V_CalcNormalRefdef
+vec3_t guess_vecWheelchairOrigin;		// attachment 0 of the wheelchair, read by V_CalcNormalRefdef and CL_CreateMove
+vec3_t guess_vecModelAttachOrigin;		// attachment of the ModelAttach entity, read by V_CalcNormalRefdef
 extern int guess_iUnknown1054506C;
 extern int guess_iUnknown101902FC;
 extern int guess_iUnknown101B27C8;
 extern cl_entity_t *guess_pDualEnt;
 cl_entity_t *guess_GetDualEntity( void );
 bool guess_IsViewEntityActive( void );
-int CL_IsThirdPerson( void );
+extern "C" int CL_IsThirdPerson( void );
 
 int CStudioModelRenderer::StudioDrawHeadShield( void )
 {
@@ -1977,7 +2268,7 @@ int CStudioModelRenderer::StudioDrawHeadShield( void )
 
 	if ((guess_IsViewEntityActive() && guess_g_iHeadShieldType != 6 && guess_g_iHeadShieldType != 7) ||
 		((gHUD.m_iHideHUDDisplay & HIDEHUD_WEAPONS) && guess_g_iHeadShieldType == 3) ||
-		guess_iUnknown1054506C > 2 ||
+		guess_iUnknown1054506C >= 3 ||
 		(CL_IsThirdPerson() && guess_g_iHeadShieldType != 6 && guess_g_iHeadShieldType != 7) ||
 		(guess_g_iHeadShieldType == 10 && g_HeadShieldState == SHIELD_ON) ||
 		((guess_pAttachCamEnt || guess_iWheelchair || guess_iBoat) && guess_g_iHeadShieldType != 6 && guess_g_iHeadShieldType != 7))
@@ -1988,7 +2279,12 @@ int CStudioModelRenderer::StudioDrawHeadShield( void )
 	if (guess_g_iHeadShieldType == 1)
 		g_HeadShieldEnt.model = IEngineStudio.Mod_ForName("models/items/tv_frame.mdl", 1);
 	if (guess_g_iHeadShieldType == 2)
-		g_HeadShieldEnt.model = IEngineStudio.Mod_ForName(guess_iDoctor ? "models/weapons/v_death_doctor.mdl" : "models/weapons/v_death.mdl", 1);
+	{
+		if (guess_iDoctorMode)
+			g_HeadShieldEnt.model = IEngineStudio.Mod_ForName("models/weapons/v_death_doctor.mdl", 1);
+		else
+			g_HeadShieldEnt.model = IEngineStudio.Mod_ForName("models/weapons/v_death.mdl", 1);
+	}
 	if (guess_g_iHeadShieldType == 5)
 		g_HeadShieldEnt.model = IEngineStudio.Mod_ForName("models/props/blandat/v_telescope.mdl", 1);
 	if (guess_g_iHeadShieldType == 6)
@@ -2002,13 +2298,21 @@ int CStudioModelRenderer::StudioDrawHeadShield( void )
 	if (guess_g_iHeadShieldType == 7)
 		g_HeadShieldEnt.model = IEngineStudio.Mod_ForName("models/bookmenu.mdl", 1);
 	if (guess_g_iHeadShieldType == 10)
-		g_HeadShieldEnt.model = IEngineStudio.Mod_ForName(guess_g_iGasMaskSimon ? "models/weapons/v_gasmask_simon.mdl" : "models/weapons/v_gasmask.mdl", 1);
+	{
+		if (guess_g_iGasMaskSimon)
+			g_HeadShieldEnt.model = IEngineStudio.Mod_ForName("models/weapons/v_gasmask_simon.mdl", 1);
+		else
+			g_HeadShieldEnt.model = IEngineStudio.Mod_ForName("models/weapons/v_gasmask.mdl", 1);
+	}
 	if (guess_g_iHeadShieldType == 3)
 	{
 		if (guess_g_iDualWeapon1 == 10 || guess_g_iDualWeapon1 == 1)
 			guess_g_iDualLighting = 1;
 
-		g_HeadShieldEnt.model = IEngineStudio.Mod_ForName(strlen(guess_g_szDualModel) > 1 ? guess_g_szDualModel : "models/null.mdl", 1);
+		if (strlen(guess_g_szDualModel) > 1)
+			g_HeadShieldEnt.model = IEngineStudio.Mod_ForName(guess_g_szDualModel, 1);
+		else
+			g_HeadShieldEnt.model = IEngineStudio.Mod_ForName("models/null.mdl", 1);
 	}
 
 skipmodel:
@@ -2043,8 +2347,8 @@ skipmodel:
 		if (guess_g_iHeadShieldType == 7)
 		{
 			g_HeadShieldEnt.angles[0] = v_angles[0];
-			g_HeadShieldEnt.curstate.angles[0] = v_angles[0];
 			g_HeadShieldEnt.origin = g_HeadShieldEnt.curstate.origin + forward * 70;
+			g_HeadShieldEnt.curstate.angles[0] = v_angles[0];
 			g_HeadShieldEnt.angles[1] = v_angles[1] + 180;
 			g_HeadShieldEnt.angles[2] = v_angles[2];
 			g_HeadShieldEnt.curstate.angles[1] = g_HeadShieldEnt.angles[1];
@@ -2240,13 +2544,23 @@ int __MsgFunc_HeadShield(const char *pszName, int iSize, void *pbuf)
 		if (guess_g_iHeadShieldType == 1)
 			pStudioHeader = (studiohdr_t *)IEngineStudio.Mod_Extradata (IEngineStudio.Mod_ForName("models/items/tv_frame.mdl", 1));
 		if (guess_g_iHeadShieldType == 2)
-			pStudioHeader = (studiohdr_t *)IEngineStudio.Mod_Extradata (IEngineStudio.Mod_ForName(guess_iDoctor ? "models/weapons/v_death_doctor.mdl" : "models/weapons/v_death.mdl", 1));
+		{
+			if (guess_iDoctorMode)
+				pStudioHeader = (studiohdr_t *)IEngineStudio.Mod_Extradata (IEngineStudio.Mod_ForName("models/weapons/v_death_doctor.mdl", 1));
+			else
+				pStudioHeader = (studiohdr_t *)IEngineStudio.Mod_Extradata (IEngineStudio.Mod_ForName("models/weapons/v_death.mdl", 1));
+		}
 		if (guess_g_iHeadShieldType == 5)
 			pStudioHeader = (studiohdr_t *)IEngineStudio.Mod_Extradata (IEngineStudio.Mod_ForName("models/props/blandat/v_telescope.mdl", 1));
 		if (guess_g_iHeadShieldType == 7)
 			pStudioHeader = (studiohdr_t *)IEngineStudio.Mod_Extradata (IEngineStudio.Mod_ForName("models/bookmenu.mdl", 1));
 		if (guess_g_iHeadShieldType == 10)
-			pStudioHeader = (studiohdr_t *)IEngineStudio.Mod_Extradata (IEngineStudio.Mod_ForName(guess_g_iGasMaskSimon ? "models/weapons/v_gasmask_simon.mdl" : "models/weapons/v_gasmask.mdl", 1));
+		{
+			if (guess_g_iGasMaskSimon)
+				pStudioHeader = (studiohdr_t *)IEngineStudio.Mod_Extradata (IEngineStudio.Mod_ForName("models/weapons/v_gasmask_simon.mdl", 1));
+			else
+				pStudioHeader = (studiohdr_t *)IEngineStudio.Mod_Extradata (IEngineStudio.Mod_ForName("models/weapons/v_gasmask.mdl", 1));
+		}
 
 		pseq = (mstudioseqdesc_t *)((byte *)pStudioHeader + pStudioHeader->seqindex) + SHIELDANIM_HOLSTER;
 		g_HeadShieldSwitchTime = gEngfuncs.GetClientTime() + (pseq->numframes / pseq->fps);
@@ -2273,12 +2587,20 @@ int __MsgFunc_HeadShield(const char *pszName, int iSize, void *pbuf)
 		if (guess_g_iHeadShieldType == 7)
 			pStudioHeader = (studiohdr_t *)IEngineStudio.Mod_Extradata (IEngineStudio.Mod_ForName("models/bookmenu.mdl", 1));
 		if (guess_g_iHeadShieldType == 10)
-			pStudioHeader = (studiohdr_t *)IEngineStudio.Mod_Extradata (IEngineStudio.Mod_ForName(guess_g_iGasMaskSimon ? "models/weapons/v_gasmask_simon.mdl" : "models/weapons/v_gasmask.mdl", 1));
+		{
+			if (guess_g_iGasMaskSimon)
+				pStudioHeader = (studiohdr_t *)IEngineStudio.Mod_Extradata (IEngineStudio.Mod_ForName("models/weapons/v_gasmask_simon.mdl", 1));
+			else
+				pStudioHeader = (studiohdr_t *)IEngineStudio.Mod_Extradata (IEngineStudio.Mod_ForName("models/weapons/v_gasmask.mdl", 1));
+		}
 		if (guess_g_iHeadShieldType == 2)
 		{
 			if (!CL_IsThirdPerson())
 				gEngfuncs.pfnPlaySoundByName("weapons/dead_arm.wav", 1);
-			pStudioHeader = (studiohdr_t *)IEngineStudio.Mod_Extradata (IEngineStudio.Mod_ForName(guess_iDoctor ? "models/weapons/v_death_doctor.mdl" : "models/weapons/v_death.mdl", 1));
+			if (guess_iDoctorMode)
+				pStudioHeader = (studiohdr_t *)IEngineStudio.Mod_Extradata (IEngineStudio.Mod_ForName("models/weapons/v_death_doctor.mdl", 1));
+			else
+				pStudioHeader = (studiohdr_t *)IEngineStudio.Mod_Extradata (IEngineStudio.Mod_ForName("models/weapons/v_death.mdl", 1));
 		}
 		if (guess_g_iHeadShieldType == 5)
 			pStudioHeader = (studiohdr_t *)IEngineStudio.Mod_Extradata (IEngineStudio.Mod_ForName("models/props/blandat/v_telescope.mdl", 1));
@@ -2344,14 +2666,15 @@ int HeadShieldThink( void ) // buz: return 1 to draw shield
 
 	if (gHUD.m_Ammo.m_pWeapon && guess_g_iHeadShieldType == 3)
 	{
-		if (gHUD.m_Ammo.m_pWeapon && gHUD.m_Ammo.m_pWeapon->iId != 15)
+		WEAPON *pWeapon = gHUD.m_Ammo.m_pWeapon;
+		if (pWeapon && pWeapon->iId != 15)
 			return 0;
 	}
 	else if (guess_g_iHeadShieldType == 7)
 	{
-		if (!gHUD.guess_m_bMenuClick)
-			return 0;
-		return 1;
+		if (gHUD.guess_m_bMenuClick)
+			return 1;
+		return 0;
 	}
 
 	switch (g_HeadShieldState)
@@ -2370,7 +2693,10 @@ int HeadShieldThink( void ) // buz: return 1 to draw shield
 			g_HeadShieldEnt.curstate.animtime = time;
 			g_HeadShieldEnt.curstate.sequence = 2;
 			if (guess_g_iHeadShieldType != 2)
+			{
 				g_HeadShieldEnt.curstate.sequence = SHIELDANIM_IDLE;
+				return 1;
+			}
 		}
 		return 1;
 

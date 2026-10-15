@@ -378,10 +378,11 @@ bool guess_CTextureManager::guess_LoadTexture( int texture, const char *name, in
 
 	if ( check )
 	{
-		for ( ; it != guess_m_Textures.end(); ++it )
+		while ( it != guess_m_Textures.end() )
 		{
-			if ( it->guess_texture == texture )
+			if ( (*it).guess_texture == texture )
 				return true;
+			it++;
 		}
 	}
 
@@ -425,8 +426,14 @@ byte guess_IsExtensionSupported( const char *extension, const char *extensions )
 	{
 		int j = 0;
 
-		while ( tolower( extensions[i] ) == tolower( extension[j] ) )
+		while ( 1 )
 		{
+			int a = tolower( extensions[i] );
+			int b = tolower( extension[j] );
+
+			if ( b != a )
+				break;
+
 			if ( j == extlen - 1 )
 				return true;
 

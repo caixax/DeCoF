@@ -40,31 +40,31 @@ guess_cgprogram_t *guess_CCgContext::guess_AddProgram( const char *name, int typ
 	if ( !guess_m_context )
 		guess_Init();
 
-	if ( program )
-		return program;
+	if ( !program )
+	{
+		char path[128];
+		sprintf( path, "%s/cgshaders/%s", gEngfuncs.pfnGetGameDirectory(), name );
 
-	char path[128];
-	sprintf( path, "%s/cgshaders/%s", gEngfuncs.pfnGetGameDirectory(), name );
+		if ( guess_IsProgramValid( path, type ) )
+		{
+			program = new guess_cgprogram_t;
+			strcpy( program->guess_name, name );
 
-	if ( !guess_IsProgramValid( path, type ) )
-		return program;
+			if ( type == guess_CGTYPE_FRAGMENT )
+				program->guess_program = cgCreateProgramFromFile( guess_m_context, CG_SOURCE, path, guess_m_fragmentProfile, "main", NULL );
+			else if ( type == guess_CGTYPE_VERTEX )
+				program->guess_program = cgCreateProgramFromFile( guess_m_context, CG_SOURCE, path, guess_m_vertexProfile, "main", NULL );
 
-	program = new guess_cgprogram_t;
-	strcpy( program->guess_name, name );
+			program->guess_type = type;
+			program->guess_prev = NULL;
+			program->guess_next = guess_m_pPrograms;
+			if ( guess_m_pPrograms )
+				guess_m_pPrograms->guess_prev = program;
+			guess_m_pPrograms = program;
 
-	if ( type == guess_CGTYPE_FRAGMENT )
-		program->guess_program = cgCreateProgramFromFile( guess_m_context, CG_SOURCE, path, guess_m_fragmentProfile, "main", NULL );
-	else if ( type == guess_CGTYPE_VERTEX )
-		program->guess_program = cgCreateProgramFromFile( guess_m_context, CG_SOURCE, path, guess_m_vertexProfile, "main", NULL );
-
-	program->guess_type = type;
-	program->guess_prev = NULL;
-	program->guess_next = guess_m_pPrograms;
-	if ( guess_m_pPrograms )
-		guess_m_pPrograms->guess_prev = program;
-	guess_m_pPrograms = program;
-
-	cgGLLoadProgram( program->guess_program );
+			cgGLLoadProgram( program->guess_program );
+		}
+	}
 
 	return program;
 }
@@ -83,6 +83,11 @@ guess_cgprogram_t *guess_CCgContext::guess_FindProgram( const char *name )
 CGprofile guess_CCgContext::guess_GetFragmentProfile( void )
 {
 	return guess_m_fragmentProfile;
+}
+
+bool guess_CCgContext::guess_IsInitialized( void )
+{
+	return guess_m_bInitialized;
 }
 
 bool guess_CCgContext::guess_IsProgramValid( const char *path, int type )

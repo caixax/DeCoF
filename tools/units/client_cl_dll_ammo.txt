@@ -58,3 +58,16 @@
 ?MsgFunc_WpnDeploy@CHudAmmo@@QAEHPBDHPAX@Z
 ?MsgFunc_WpnInfo@CHudAmmo@@QAEHPBDHPAX@Z
 ?guess_SetMags@CHudAmmo@@QAEXHHH@Z
+?__CmdFunc_Close@@YAXXZ
+?__CmdFunc_NextWeapon@@YAXXZ
+?__CmdFunc_PrevWeapon@@YAXXZ
+?__CmdFunc_Slot10@@YAXXZ
+?__CmdFunc_Slot1@@YAXXZ
+?__CmdFunc_Slot2@@YAXXZ
+?__CmdFunc_Slot3@@YAXXZ
+?__CmdFunc_Slot4@@YAXXZ
+?__CmdFunc_Slot5@@YAXXZ
+?__CmdFunc_Slot6@@YAXXZ
+?__CmdFunc_Slot7@@YAXXZ
+?__CmdFunc_Slot8@@YAXXZ
+?__CmdFunc_Slot9@@YAXXZ

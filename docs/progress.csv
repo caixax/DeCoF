@@ -1,9 +1,21 @@
 dll,va,size,name,demangled,class,source_file,first_version,changed,status,match_percent,evidence,notes
-client,100010D0,165,,,UNKNOWN,,,,TODO,,,
-client,10001180,165,,,UNKNOWN,,,,TODO,,,
+client,100010D0,165,??__Eg_dripsArray@@YAXXZ,'g_dripsArray'',UNKNOWN,,,,MATCHED,100,client_manual.csv,
+client,10001180,165,??__Eg_fxArray@@YAXXZ,'g_fxArray'',UNKNOWN,,,,MATCHED,100,client_manual.csv,
+client,10001230,22,,,UNKNOWN,,,,TODO,,,found by tools/gaps.py (no Ghidra function before)
+client,10001250,10,,,UNKNOWN,,,,TODO,,,found by tools/gaps.py (no Ghidra function before)
+client,10001260,22,,,UNKNOWN,,,,TODO,,,found by tools/gaps.py (no Ghidra function before)
+client,10001280,22,,,UNKNOWN,,,,TODO,,,found by tools/gaps.py (no Ghidra function before)
+client,100012A0,22,,,UNKNOWN,,,,TODO,,,found by tools/gaps.py (no Ghidra function before)
+client,100012C0,22,,,UNKNOWN,,,,TODO,,,found by tools/gaps.py (no Ghidra function before)
+client,100012D6,22,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
+client,100012EC,12,,,UNKNOWN,,,,TODO,,,found by tools/gaps.py (no Ghidra function before)
+client,100012F8,12,,,UNKNOWN,,,,TODO,,,found by tools/gaps.py (no Ghidra function before)
+client,10001304,22,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
+client,1000131A,12,,,UNKNOWN,,,,TODO,,,found by tools/gaps.py (no Ghidra function before)
 client,10001330,34,??0InterfaceReg@@QAE@P6APAVIBaseInterface@@XZPBD@Z,InterfaceReg::InterfaceReg,COF,common/interface.cpp,,,MATCHED,100,refbytes:paranoia:common__interface.obj:score0,
 client,10001360,19,?Sys_FreeModule@@YAXPAUHInterfaceModule_t@@@Z,Sys_FreeModule,UNKNOWN,common/interface.cpp,,,MATCHED,100,,
 client,10001380,26,?Sys_GetFactory@@YAP6APAVIBaseInterface@@PBDPAH@ZPAUHInterfaceModule_t@@@Z,Sys_GetFactory,HLSDK,common/interface.cpp,,,MATCHED,100,refbytes:paranoia:common__interface.obj:score1,
+client,100013A0,6,?Sys_GetFactoryThis@@YAP6APAVIBaseInterface@@PBDPAH@ZXZ,,UNKNOWN,common/interface.cpp,,,MATCHED,100,,found by tools/gaps.py (no Ghidra function before)
 client,100013B0,14,?Sys_LoadModule@@YAPAUHInterfaceModule_t@@PBD@Z,Sys_LoadModule,HLSDK,common/interface.cpp,,,MATCHED,100,refbytes:paranoia:common__interface.obj:score1,
 client,100013C0,110,_CreateInterface,CreateInterface,HLSDK,common/interface.cpp,,,MATCHED,100,refbytes:paranoia:common__interface.obj:score1,
 client,10001430,41,??0?$Dar@D@vgui@@QAE@H@Z,vgui::Dar<char>::Dar<char>,LIB,,,,TODO,,refbytes:paranoia:cl_dll__ammo.obj:score1,
@@ -138,6 +150,7 @@ client,10003A50,30,??A?$Dar@PAVRepaintSignal@vgui@@@vgui@@QAEPAVRepaintSignal@1@
 client,10003A70,30,??A?$Dar@PAVSurfaceBase@vgui@@@vgui@@QAEPAVSurfaceBase@1@H@Z,vgui::Dar<vgui::SurfaceBase *>::operator[],LIB,,,,TODO,,client_1.6a_exports.csv,
 client,10003A90,30,??A?$Dar@PAVTickSignal@vgui@@@vgui@@QAEPAVTickSignal@1@H@Z,vgui::Dar<vgui::TickSignal *>::operator[],LIB,,,,TODO,,client_1.6a_exports.csv,
 client,10003AB0,76,?DeleteImages@CCheckButton2@vgui@@QAEXXZ,vgui::CCheckButton2::DeleteImages,HLSDK,game_shared/vgui_checkbutton2.cpp,,,MATCHED,100,refbytes:paranoia:game_shared__vgui_checkbutton2.obj:score1,
+client,10003B00,7,?GetCheckboxLeft@CCheckButton2@vgui@@QAE_NXZ,vgui::CCheckButton2::GetCheckboxLeft,UNKNOWN,game_shared/vgui_checkbutton2.cpp,,,MATCHED,100,,found by tools/gaps.py (no Ghidra function before)
 client,10003B10,7,?IsChecked@CCheckButton2@vgui@@QAE_NXZ,vgui::CCheckButton2::IsChecked,HLSDK,game_shared/vgui_checkbutton2.cpp,,,MATCHED,100,client_1.6a_ghidra_names.csv,
 client,10003B20,21,?SetCheckboxLeft@CCheckButton2@vgui@@QAEX_N@Z,vgui::CCheckButton2::SetCheckboxLeft,HLSDK,game_shared/vgui_checkbutton2.cpp,,,MATCHED,100,refbytes:paranoia:game_shared__vgui_checkbutton2.obj:score1,
 client,10003B40,21,?SetChecked@CCheckButton2@vgui@@QAEX_N@Z,vgui::CCheckButton2::SetChecked,HLSDK,game_shared/vgui_checkbutton2.cpp,,,MATCHED,100,refbytes:paranoia:game_shared__vgui_checkbutton2.obj:score1,
@@ -377,6 +390,8 @@ client,10007270,37,?GetColumnWidth@CGrid@vgui@@QAEHH@Z,vgui::CGrid::GetColumnWid
 client,100072A0,20,?GetEntry@CGrid@vgui@@QAEPAVPanel@2@HH@Z,vgui::CGrid::GetEntry,UNKNOWN,game_shared/vgui_grid.cpp,,,MATCHED,100,,
 client,100072C0,109,?GetEntryBox@CGrid@vgui@@QAE_NHHAAH000@Z,vgui::CGrid::GetEntryBox,HLSDK,game_shared/vgui_grid.cpp,,,MATCHED,100,refbytes:paranoia:game_shared__vgui_grid.obj:score0,
 client,10007330,37,?GetRowHeight@CGrid@vgui@@QAEHH@Z,vgui::CGrid::GetRowHeight,HLSDK,game_shared/vgui_grid.cpp,,,MATCHED,100,refbytes:paranoia:game_shared__vgui_grid.obj:score0,
+client,10007360,7,?GetXSpacing@CGrid@vgui@@QAEHXZ,vgui::CGrid::GetXSpacing,UNKNOWN,game_shared/vgui_grid.cpp,,,MATCHED,100,,found by tools/gaps.py (no Ghidra function before)
+client,10007370,7,?GetYSpacing@CGrid@vgui@@QAEHXZ,vgui::CGrid::GetYSpacing,UNKNOWN,game_shared/vgui_grid.cpp,,,MATCHED,100,,found by tools/gaps.py (no Ghidra function before)
 client,10007380,67,?GridEntry@CGrid@vgui@@IAEPAVCGridEntry@12@HH@Z,vgui::CGrid::GridEntry,HLSDK,game_shared/vgui_grid.cpp,,,MATCHED,100,refbytes:paranoia:game_shared__vgui_grid.obj:score0,
 client,100073D0,126,?RepositionContents@CGrid@vgui@@QAEXXZ,vgui::CGrid::RepositionContents,UNKNOWN,game_shared/vgui_grid.cpp,,,MATCHED,100,,
 client,10007450,66,?SetColumnWidth@CGrid@vgui@@QAE_NHH@Z,vgui::CGrid::SetColumnWidth,HLSDK,game_shared/vgui_grid.cpp,,,MATCHED,100,refbytes:paranoia:game_shared__vgui_grid.obj:score1,
@@ -388,6 +403,7 @@ client,100076D0,75,?SetSpacing@CGrid@vgui@@QAEXHH@Z,vgui::CGrid::SetSpacing,UNKN
 client,10007720,134,?Term@CGrid@vgui@@QAEXXZ,vgui::CGrid::Term,HLSDK,game_shared/vgui_grid.cpp,,,MATCHED,100,client_1.6a_ghidra_names.csv,
 client,100077B0,129,?getCellAtPoint@CGrid@vgui@@QAE_NHHAAH0@Z,vgui::CGrid::getCellAtPoint,UNKNOWN,game_shared/vgui_grid.cpp,,,MATCHED,100,,
 client,10007840,173,?paint@CGrid@vgui@@UAEXXZ,vgui::CGrid::paint,UNKNOWN,game_shared/vgui_grid.cpp,,,MATCHED,100,,
+client,100078F0,5,?paintBackground@CGrid@vgui@@UAEXXZ,vgui::CGrid::paintBackground,UNKNOWN,game_shared/vgui_grid.cpp,,,MATCHED,100,,found by tools/gaps.py (no Ghidra function before)
 client,10007900,271,?AlignPanel@@YAXPAVPanel@vgui@@0H@Z,AlignPanel,HLSDK,game_shared/vgui_helpers.cpp,,,MATCHED,100,refbytes:paranoia:game_shared__vgui_helpers.obj:score0,
 client,10007A10,273,??0CListBox@vgui@@QAE@XZ,vgui::CListBox::CListBox,HLSDK,game_shared/vgui_listbox.cpp,,,MATCHED,100,refbytes:paranoia:game_shared__vgui_listbox.obj:score2,
 client,10007B30,11,??0IntChangeSignal@vgui@@QAE@$$QAV01@@Z,vgui::IntChangeSignal::IntChangeSignal,LIB,,,,TODO,,refbytes:paranoia:cl_dll__hud.obj:score1,
@@ -408,6 +424,8 @@ client,10008130,150,?AddItem@CListBox@vgui@@QAEXPAVPanel@2@@Z,vgui::CListBox::Ad
 client,100081D0,36,?GetItemWidth@CListBox@vgui@@QAEHXZ,vgui::CListBox::GetItemWidth,HLSDK,game_shared/vgui_listbox.cpp,,,MATCHED,100,refbytes:paranoia:game_shared__vgui_listbox.obj:score0,
 client,10008200,27,?GetNumItems@CListBox@vgui@@QAEHXZ,vgui::CListBox::GetNumItems,UNKNOWN,game_shared/vgui_listbox.cpp,,,MATCHED,100,,
 client,10008220,17,?GetScrollMax@CListBox@vgui@@QAEHXZ,vgui::CListBox::GetScrollMax,UNKNOWN,game_shared/vgui_listbox.cpp,,,MATCHED,100,,
+client,10008240,7,?GetScrollPos@CListBox@vgui@@QAEHXZ,vgui::CListBox::GetScrollPos,UNKNOWN,game_shared/vgui_listbox.cpp,,,MATCHED,100,,found by tools/gaps.py (no Ghidra function before)
+client,10008250,5,?Init@CListBox@vgui@@QAEXXZ,vgui::CListBox::Init,UNKNOWN,game_shared/vgui_listbox.cpp,,,MATCHED,100,,found by tools/gaps.py (no Ghidra function before)
 client,10008260,267,?InternalLayout@CListBox@vgui@@IAEXXZ,vgui::CListBox::InternalLayout,HLSDK,game_shared/vgui_listbox.cpp,,,MATCHED,100,client_1.6a_ghidra_names.csv,
 client,10008370,65,?SetScrollPos@CListBox@vgui@@QAEXH@Z,vgui::CListBox::SetScrollPos,UNKNOWN,game_shared/vgui_listbox.cpp,,,MATCHED,100,,
 client,100083C0,48,?SetScrollRange@CListBox@vgui@@QAEXH@Z,vgui::CListBox::SetScrollRange,HLSDK,game_shared/vgui_listbox.cpp,,,MATCHED,100,refbytes:paranoia:game_shared__vgui_listbox.obj:score1,
@@ -512,6 +530,7 @@ client,1000A5D0,16,?setRangeWindowEnabled@Slider2@vgui@@UAEX_N@Z,vgui::Slider2::
 client,1000A5E0,32,?setSize@Slider2@vgui@@UAEXHH@Z,vgui::Slider2::setSize,HLSDK,game_shared/vgui_slider2.cpp,,,MATCHED,100,refbytes:paranoia:game_shared__vgui_slider2.obj:score0,
 client,1000A600,76,?setValue@Slider2@vgui@@UAEXH@Z,vgui::Slider2::setValue,HLSDK,game_shared/vgui_slider2.cpp,,,MATCHED,100,refbytes:paranoia:game_shared__vgui_slider2.obj:score0,
 client,1000A650,12,??0CVoiceBanMgr@@QAE@XZ,CVoiceBanMgr::CVoiceBanMgr,HLSDK,game_shared/voice_banmgr.cpp,,,MATCHED,100,refbytes:paranoia:game_shared__voice_banmgr.obj:score1,
+client,1000A660,5,??1CVoiceBanMgr@@QAE@XZ,CVoiceBanMgr::~CVoiceBanMgr,UNKNOWN,,,,MATCHED,100,client_manual.csv,found by tools/gaps.py (no Ghidra function before)
 client,1000A670,84,?AddBannedPlayer@CVoiceBanMgr@@IAEPAVBannedPlayer@1@QBD@Z,CVoiceBanMgr::AddBannedPlayer,HLSDK,game_shared/voice_banmgr.cpp,,,MATCHED,100,client_1.6a_ghidra_names.csv,
 client,1000A6D0,274,?Clear@CVoiceBanMgr@@IAEXXZ,CVoiceBanMgr::Clear,HLSDK,game_shared/voice_banmgr.cpp,,,MATCHED,100,refbytes:paranoia:game_shared__voice_banmgr.obj:score0,
 client,1000A7F0,68,?ForEachBannedPlayer@CVoiceBanMgr@@QAEXP6AXQAD@Z@Z,CVoiceBanMgr::ForEachBannedPlayer,HLSDK,game_shared/voice_banmgr.cpp,,,MATCHED,100,refbytes:paranoia:game_shared__voice_banmgr.obj:score0,
@@ -526,6 +545,9 @@ client,1000AB60,50,__snprintf,_snprintf,LIB,,,,TODO,,refbytes:paranoia:cl_dll__v
 client,1000ABA0,295,??0CVoiceStatus@@QAE@XZ,CVoiceStatus::CVoiceStatus,UNKNOWN,game_shared/voice_status.cpp,,,MATCHED,100,,
 client,1000ACD0,111,??0TextImage@vgui@@QAE@$$QAV01@@Z,vgui::TextImage::TextImage,LIB,,,,TODO,,refbytes:paranoia:cl_dll__ammo.obj:score3,
 client,1000AD40,111,??0TextImage@vgui@@QAE@ABV01@@Z,vgui::TextImage::TextImage,LIB,,,,TODO,,refbytes:paranoia:cl_dll__ammo.obj:score3,
+client,1000ADB0,3,,,UNKNOWN,,,,TODO,,,found by tools/gaps.py (no Ghidra function before)
+client,1000ADC0,3,,,UNKNOWN,,,,TODO,,,found by tools/gaps.py (no Ghidra function before)
+client,1000ADD0,3,,,UNKNOWN,,,,TODO,,,found by tools/gaps.py (no Ghidra function before)
 client,1000ADE0,7,??1CHudBase@@UAE@XZ,CHudBase::~CHudBase,HLSDK,game_shared/voice_status.cpp,,,MATCHED,100,client_1.6a_ghidra_names.csv,
 client,1000ADF0,261,??1CVoiceStatus@@UAE@XZ,CVoiceStatus::~CVoiceStatus,UNKNOWN,,,,MATCHED,100,client_manual.csv,
 client,1000AF00,130,??4TextImage@vgui@@QAEAAV01@$$QAV01@@Z,vgui::TextImage::operator=,LIB,,,,TODO,,refbytes:paranoia:cl_dll__ammo.obj:score0,
@@ -543,7 +565,7 @@ client,1000B540,6,?GetClientVoiceMgr@@YAPAVCVoiceStatus@@XZ,GetClientVoiceMgr,HL
 client,1000B550,8,?GetFreeVoiceLabel@CVoiceStatus@@QAEPAVCVoiceLabel@@XZ,CVoiceStatus::GetFreeVoiceLabel,UNKNOWN,game_shared/voice_status.cpp,,,MATCHED,100,,
 client,1000B560,72,?HandleReqStateMsg@CVoiceStatus@@QAEXHPAX@Z,CVoiceStatus::HandleReqStateMsg,HLSDK,game_shared/voice_status.cpp,,,MATCHED,100,refbytes:paranoia:game_shared__voice_status.obj:score5,
 client,1000B5B0,215,?HandleVoiceMaskMsg@CVoiceStatus@@QAEXHPAX@Z,CVoiceStatus::HandleVoiceMaskMsg,UNKNOWN,game_shared/voice_status.cpp,,,MATCHED,100,,
-client,1000B690,3,,,UNKNOWN,,,,TODO,,,
+client,1000B690,3,?Init@CHudBase@@UAEHXZ,CHudBase::Init,UNKNOWN,game_shared/voice_status.cpp,,,MATCHED,100,client_manual.csv,
 client,1000B6A0,679,?Init@CVoiceStatus@@UAEHPAVIVoiceStatusHelper@@PAPAVPanel@vgui@@@Z,CVoiceStatus::Init,HLSDK,,,,MATCHED,100,client_manual.csv,
 client,1000B950,3,?InitHUDData@CHudBase@@UAEXXZ,CHudBase::InitHUDData,UNKNOWN,,,,MATCHED,100,client_manual.csv,
 client,1000B960,7,?IsInSquelchMode@CVoiceStatus@@QAE_NXZ,CVoiceStatus::IsInSquelchMode,HLSDK,game_shared/voice_status.cpp,,,MATCHED,100,client_1.6a_ghidra_names.csv,
@@ -552,6 +574,7 @@ client,1000B9A0,90,?IsPlayerBlocked@CVoiceStatus@@QAE_NH@Z,CVoiceStatus::IsPlaye
 client,1000BA00,571,?RepositionLabels@CVoiceStatus@@QAEXXZ,CVoiceStatus::RepositionLabels,HLSDK,game_shared/voice_status.cpp,,,MATCHED,100,client_1.6a_ghidra_names.csv,
 client,1000BC40,3,?Reset@CHudBase@@UAEXXZ,CHudBase::Reset,UNKNOWN,,,,MATCHED,100,client_manual.csv,
 client,1000BC50,299,?SetPlayerBlockedState@CVoiceStatus@@QAEXH_N@Z,CVoiceStatus::SetPlayerBlockedState,HLSDK,game_shared/voice_status.cpp,,,MATCHED,100,client_1.6a_ghidra_names.csv,
+client,1000BD80,68,?ShowBannedCallback@@YAXXZ,ShowBannedCallback,UNKNOWN,,,,MATCHED,100,client_manual.csv,found by tools/gaps.py (no Ghidra function before)
 client,1000BDD0,28,?StartSquelchMode@CVoiceStatus@@QAEXXZ,CVoiceStatus::StartSquelchMode,HLSDK,game_shared/voice_status.cpp,,,MATCHED,100,client_1.6a_ghidra_names.csv,
 client,1000BDF0,18,?StopSquelchMode@CVoiceStatus@@QAEXXZ,CVoiceStatus::StopSquelchMode,HLSDK,game_shared/voice_status.cpp,,,MATCHED,100,client_1.6a_ghidra_names.csv,
 client,1000BE10,3,?Think@CHudBase@@UAEXXZ,CHudBase::Think,UNKNOWN,,,,MATCHED,100,client_manual.csv,
@@ -612,7 +635,9 @@ client,1000DD20,36,??4TextPanel@vgui@@QAEAAV01@ABV01@@Z,vgui::TextPanel::operato
 client,1000DD50,43,?Close@CMenuPanel@@UAEXXZ,CMenuPanel::Close,HLSDK,game_shared/voice_vgui_tweakdlg.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__vgui_ClassMenu.obj:score1,
 client,1000DD80,63,?Close@CVoiceVGUITweakDlg@@UAEXXZ,CVoiceVGUITweakDlg::Close,UNKNOWN,game_shared/voice_vgui_tweakdlg.cpp,,,MATCHED,100,,
 client,1000DDC0,49,?GetValue@TweakScroller@@QAEMXZ,TweakScroller::GetValue,HLSDK,game_shared/voice_vgui_tweakdlg.cpp,,,MATCHED,100,refbytes:paranoia:game_shared__voice_vgui_tweakdlg.obj:score0,
+client,1000DE00,6,?GetVoiceTweakDlg@@YAPAVCMenuPanel@@XZ,GetVoiceTweakDlg,UNKNOWN,game_shared/voice_vgui_tweakdlg.cpp,,,MATCHED,100,,found by tools/gaps.py (no Ghidra function before)
 client,1000DE10,354,?Init@TweakScroller@@QAEXPAVPanel@vgui@@PADH@Z,TweakScroller::Init,HLSDK,game_shared/voice_vgui_tweakdlg.cpp,,,MATCHED,100,refbytes:paranoia:game_shared__voice_vgui_tweakdlg.obj:score0,
+client,1000DF80,6,?IsTweakDlgOpen@@YA_NXZ,IsTweakDlgOpen,UNKNOWN,game_shared/voice_vgui_tweakdlg.cpp,,,MATCHED,100,,found by tools/gaps.py (no Ghidra function before)
 client,1000DF90,28,?Open@CMenuPanel@@UAEXXZ,CMenuPanel::Open,HLSDK,game_shared/voice_vgui_tweakdlg.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__vgui_ClassMenu.obj:score1,
 client,1000DFB0,689,?Open@CVoiceVGUITweakDlg@@UAEXXZ,CVoiceVGUITweakDlg::Open,HLSDK,game_shared/voice_vgui_tweakdlg.cpp,,,MATCHED,100,client_1.6a_ghidra_names.csv,
 client,1000E270,31,?Reset@CMenuPanel@@UAEXXZ,CMenuPanel::Reset,UNKNOWN,game_shared/voice_vgui_tweakdlg.cpp,,,MATCHED,100,,
@@ -626,6 +651,8 @@ client,1000E430,265,_PM_DrawBBox,,UNKNOWN,pm_shared/pm_debug.c,,,MATCHED,100,,
 client,1000E540,2857,_PM_DrawPhysEntBBox,,UNKNOWN,pm_shared/pm_debug.c,,,MATCHED,100,,
 client,1000F070,148,_PM_DrawRectangle,PM_DrawRectangle,HLSDK,pm_shared/pm_debug.c,,,MATCHED,100,refbytes:paranoia:pm_shared__pm_debug.obj:score0,
 client,1000F110,249,_PM_ParticleLine,PM_ParticleLine,HLSDK,pm_shared/pm_debug.c,,,MATCHED,100,reloc:1000F070,
+client,1000F210,3,_PM_ShowClipBox,,UNKNOWN,pm_shared/pm_debug.c,,,MATCHED,100,,found by tools/gaps.py (no Ghidra function before)
+client,1000F220,265,_PM_ViewEntity,,UNKNOWN,pm_shared/pm_debug.c,,,MATCHED,100,,found by tools/gaps.py (no Ghidra function before)
 client,1000F330,177,_AngleBetweenVectors,,UNKNOWN,pm_shared/pm_math.c,,,MATCHED,100,,
 client,1000F3F0,408,_AngleIMatrix,AngleIMatrix,HLSDK,pm_shared/pm_math.c,,,MATCHED,100,refbytes:paranoia:pm_shared__pm_math.obj:score3,
 client,1000F590,408,_AngleMatrix,AngleMatrix,HLSDK,pm_shared/pm_math.c,,,MATCHED,100,client_manual.csv,
@@ -707,7 +734,7 @@ client,10016BA0,1848,_PM_WalkMove,,UNKNOWN,pm_shared/pm_shared.c,,,MATCHED,100,,
 client,100172E0,148,_PM_WaterJump,PM_WaterJump,HLSDK,pm_shared/pm_shared.c,,,MATCHED,100,refbytes:paranoia:pm_shared__pm_shared.obj:score6,
 client,10017380,1052,_PM_WaterMove,,UNKNOWN,pm_shared/pm_shared.c,,,MATCHED,100,,
 client,100177A0,27,?CountAmmo@WeaponsResource@@QAEHH@Z,WeaponsResource::CountAmmo,UNKNOWN,cl_dll/ammo.cpp,,,MATCHED,100,,
-client,100177C0,8615,?Draw@CHudAmmo@@UAEHM@Z,CHudAmmo::Draw,UNKNOWN,cl_dll/ammo.cpp,,,TODO,2.30,client_manual.csv,
+client,100177C0,8615,?Draw@CHudAmmo@@UAEHM@Z,CHudAmmo::Draw,UNKNOWN,cl_dll/ammo.cpp,,,TODO,87.42,client_manual.csv,
 client,10019A10,173,?DrawAmmoBar@@YAXPAUWEAPON@@HHHH@Z,DrawAmmoBar,UNKNOWN,cl_dll/ammo.cpp,,,MATCHED,100,,
 client,10019AC0,156,?DrawBar@@YAHHHHHM@Z,DrawBar,HLSDK,cl_dll/ammo.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__ammo.obj:score3,
 client,10019B60,988,?DrawWList@CHudAmmo@@QAEHM@Z,CHudAmmo::DrawWList,HLSDK,cl_dll/ammo.cpp,,,MATCHED,100,client_1.6a_ghidra_names.csv,
@@ -754,6 +781,19 @@ client,1001BB10,15,?UserCmd_Slot7@CHudAmmo@@QAAXXZ,CHudAmmo::UserCmd_Slot7,UNKNO
 client,1001BB20,15,?UserCmd_Slot8@CHudAmmo@@QAAXXZ,CHudAmmo::UserCmd_Slot8,UNKNOWN,cl_dll/ammo.cpp,,,MATCHED,100,,
 client,1001BB30,15,?UserCmd_Slot9@CHudAmmo@@QAAXXZ,CHudAmmo::UserCmd_Slot9,UNKNOWN,cl_dll/ammo.cpp,,,MATCHED,100,,
 client,1001BB40,1105,?VidInit@CHudAmmo@@UAEHXZ,CHudAmmo::VidInit,UNKNOWN,cl_dll/ammo.cpp,,,MATCHED,100,client_manual.csv,
+client,1001BFA0,12,?__CmdFunc_Close@@YAXXZ,__CmdFunc_Close,UNKNOWN,cl_dll/ammo.cpp,,,MATCHED,100,,found by tools/gaps.py (no Ghidra function before)
+client,1001BFB0,12,?__CmdFunc_NextWeapon@@YAXXZ,__CmdFunc_NextWeapon,UNKNOWN,cl_dll/ammo.cpp,,,MATCHED,100,,found by tools/gaps.py (no Ghidra function before)
+client,1001BFC0,12,?__CmdFunc_PrevWeapon@@YAXXZ,__CmdFunc_PrevWeapon,UNKNOWN,cl_dll/ammo.cpp,,,MATCHED,100,,found by tools/gaps.py (no Ghidra function before)
+client,1001BFD0,12,?__CmdFunc_Slot10@@YAXXZ,__CmdFunc_Slot10,UNKNOWN,cl_dll/ammo.cpp,,,MATCHED,100,,found by tools/gaps.py (no Ghidra function before)
+client,1001BFE0,12,?__CmdFunc_Slot1@@YAXXZ,__CmdFunc_Slot1,UNKNOWN,cl_dll/ammo.cpp,,,MATCHED,100,,found by tools/gaps.py (no Ghidra function before)
+client,1001BFF0,12,?__CmdFunc_Slot2@@YAXXZ,__CmdFunc_Slot2,UNKNOWN,cl_dll/ammo.cpp,,,MATCHED,100,,found by tools/gaps.py (no Ghidra function before)
+client,1001C000,12,?__CmdFunc_Slot3@@YAXXZ,__CmdFunc_Slot3,UNKNOWN,cl_dll/ammo.cpp,,,MATCHED,100,,found by tools/gaps.py (no Ghidra function before)
+client,1001C010,12,?__CmdFunc_Slot4@@YAXXZ,__CmdFunc_Slot4,UNKNOWN,cl_dll/ammo.cpp,,,MATCHED,100,,found by tools/gaps.py (no Ghidra function before)
+client,1001C020,12,?__CmdFunc_Slot5@@YAXXZ,__CmdFunc_Slot5,UNKNOWN,cl_dll/ammo.cpp,,,MATCHED,100,,found by tools/gaps.py (no Ghidra function before)
+client,1001C030,12,?__CmdFunc_Slot6@@YAXXZ,__CmdFunc_Slot6,UNKNOWN,cl_dll/ammo.cpp,,,MATCHED,100,,found by tools/gaps.py (no Ghidra function before)
+client,1001C040,12,?__CmdFunc_Slot7@@YAXXZ,__CmdFunc_Slot7,UNKNOWN,cl_dll/ammo.cpp,,,MATCHED,100,,found by tools/gaps.py (no Ghidra function before)
+client,1001C050,12,?__CmdFunc_Slot8@@YAXXZ,__CmdFunc_Slot8,UNKNOWN,cl_dll/ammo.cpp,,,MATCHED,100,,found by tools/gaps.py (no Ghidra function before)
+client,1001C060,12,?__CmdFunc_Slot9@@YAXXZ,__CmdFunc_Slot9,UNKNOWN,cl_dll/ammo.cpp,,,MATCHED,100,,found by tools/gaps.py (no Ghidra function before)
 client,1001C070,24,?__MsgFunc_Accuracy@@YAHPBDHPAX@Z,__MsgFunc_Accuracy,UNKNOWN,cl_dll/ammo.cpp,,,MATCHED,100,client_manual.csv,
 client,1001C090,24,?__MsgFunc_AmmoPickup@@YAHPBDHPAX@Z,__MsgFunc_AmmoPickup,UNKNOWN,cl_dll/ammo.cpp,,,MATCHED,100,client_manual.csv,
 client,1001C0B0,24,?__MsgFunc_AmmoX@@YAHPBDHPAX@Z,__MsgFunc_AmmoX,UNKNOWN,cl_dll/ammo.cpp,,,MATCHED,100,client_manual.csv,
@@ -782,23 +822,26 @@ client,1001CA00,61,?Init@CHudBattery@@UAEHXZ,CHudBattery::Init,HLSDK,cl_dll/batt
 client,1001CA40,72,?MsgFunc_Battery@CHudBattery@@QAEHPBDHPAX@Z,CHudBattery::MsgFunc_Battery,UNKNOWN,cl_dll/battery.cpp,,,MATCHED,100,,
 client,1001CA90,103,?VidInit@CHudBattery@@UAEHXZ,CHudBattery::VidInit,HLSDK,cl_dll/battery.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__battery.obj:score8,
 client,1001CB00,24,?__MsgFunc_Battery@@YAHPBDHPAX@Z,__MsgFunc_Battery,LIB,,,,,,reloc:1001CA00,
-client,1001CB30,97,,,UNKNOWN,,,,TODO,,,
-client,1001CBE0,332,,,UNKNOWN,,,,TODO,,,
-client,1001CDC0,283,,,UNKNOWN,,,,TODO,,,
-client,1001CEE0,154,,,UNKNOWN,,,,TODO,,,
-client,1001CF80,50,,,UNKNOWN,,,,TODO,,,
-client,1001CFC0,36,,,UNKNOWN,,,,TODO,,,
-client,1001CFF0,36,,,UNKNOWN,,,,TODO,,,
+client,1001CB20,3,??0guess_CBlurTexture@@QAE@XZ,,COF,cl_dll/guess_Blur.cpp,,,MATCHED,100,,found by tools/gaps.py (no Ghidra function before)
+client,1001CB30,97,?guess_AnimateNextFrame@guess_CBlur@@QAE_NH@Z,,COF,cl_dll/guess_Blur.cpp,,,MATCHED,100,,
+client,1001CBA0,52,?guess_BindTexture@guess_CBlurTexture@@QAEXHH@Z,,COF,cl_dll/guess_Blur.cpp,,,MATCHED,100,,found by tools/gaps.py (no Ghidra function before)
+client,1001CBE0,332,?guess_Draw@guess_CBlurTexture@@QAEXHH@Z,,COF,cl_dll/guess_Blur.cpp,,,MATCHED,100,,
+client,1001CD30,136,?guess_DrawBlur@guess_CBlur@@QAEXXZ,,COF,cl_dll/guess_Blur.cpp,,,TODO,91.90,,found by tools/gaps.py (no Ghidra function before)
+client,1001CDC0,283,?guess_DrawQuad@guess_CBlurTexture@@QAEXHHH@Z,,COF,cl_dll/guess_Blur.cpp,,,MATCHED,100,,
+client,1001CEE0,154,?guess_Init@guess_CBlurTexture@@QAEXHH@Z,,COF,cl_dll/guess_Blur.cpp,,,MATCHED,100,,
+client,1001CF80,50,?guess_InitScreen@guess_CBlur@@QAEXXZ,,COF,cl_dll/guess_Blur.cpp,,,MATCHED,100,,
+client,1001CFC0,36,??_GCHudGeiger@@UAEPAXI@Z,destructor',UNKNOWN,,,,MATCHED,100,client_manual.csv,
+client,1001CFF0,36,??_GCHudTrain@@UAEPAXI@Z,destructor',UNKNOWN,,,,MATCHED,100,client_manual.csv,
 client,1001D020,39,??_GCHudStatusBar@@UAEPAXI@Z,destructor',COF,cl_dll/cdll_int.cpp,,,MATCHED,100,client_1.6a_ghidra_names.csv,
-client,1001D050,36,,,UNKNOWN,,,,TODO,,,
+client,1001D050,36,??_GCHudDeathNotice@@UAEPAXI@Z,destructor',UNKNOWN,,,,MATCHED,100,client_manual.csv,
 client,1001D080,36,??_GCHudMenu@@UAEPAXI@Z,CHudMenu::`scalar deleting destructor',LIB,,,,TODO,,refbytes:paranoia:cl_dll__cdll_int.obj:score1,
-client,1001D0B0,36,,,UNKNOWN,,,,TODO,,,
+client,1001D0B0,36,??_GCHudSayText@@UAEPAXI@Z,destructor',UNKNOWN,,,,MATCHED,100,client_manual.csv,
 client,1001D0E0,36,??_GCHudBattery@@UAEPAXI@Z,destructor',COF,cl_dll/cdll_int.cpp,,,MATCHED,100,client_1.6a_ghidra_names.csv,
-client,1001D110,36,??_GCHudMenu@@UAEPAXI@Z,CHudMenu::`scalar deleting destructor',LIB,,,,TODO,,refbytes:paranoia:cl_dll__cdll_int.obj:score2,
+client,1001D110,36,??_GCHudMenu@@UAEPAXI@Z,CHudMenu::`scalar deleting destructor',LIB,,,,MATCHED,100,refbytes:paranoia:cl_dll__cdll_int.obj:score2,
 client,1001D140,36,??_GCNeffect@@UAEPAXI@Z,destructor',COF,cl_dll/cdll_int.cpp,,,MATCHED,100,client_1.6a_ghidra_names.csv,
 client,1001D170,36,??_GCHudFlashlight@@UAEPAXI@Z,destructor',COF,cl_dll/cdll_int.cpp,,,MATCHED,100,client_1.6a_ghidra_names.csv,
-client,1001D1A0,36,,,UNKNOWN,,,,TODO,,,
-client,1001D1D0,36,,,UNKNOWN,,,,TODO,,,
+client,1001D1A0,36,??_GCHudParticle@@UAEPAXI@Z,destructor',UNKNOWN,,,,MATCHED,100,client_manual.csv,
+client,1001D1D0,36,??_GCHudTextMessage@@UAEPAXI@Z,destructor',UNKNOWN,,,,MATCHED,100,client_manual.csv,
 client,1001D200,39,??_GCHudMessage@@UAEPAXI@Z,destructor',COF,cl_dll/cdll_int.cpp,,,MATCHED,100,client_1.6a_ghidra_names.csv,
 client,1001D230,39,??_GCHudStatusIcons@@UAEPAXI@Z,destructor',COF,cl_dll/cdll_int.cpp,,,MATCHED,100,client_1.6a_ghidra_names.csv,
 client,1001D260,39,??_GCHudLensflare@@UAEPAXI@Z,destructor',UNKNOWN,cl_dll/cdll_int.cpp,,,MATCHED,100,,
@@ -821,9 +864,10 @@ client,1001D560,21,_HUD_VidInit,HUD_VidInit,HLSDK,cl_dll/cdll_int.cpp,,,MATCHED,
 client,1001D580,23,_HUD_VoiceStatus,HUD_VoiceStatus,HLSDK,cl_dll/cdll_int.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__cdll_int.obj:score1,
 client,1001D5A0,62,_Initialize,Initialize,HLSDK,cl_dll/cdll_int.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__cdll_int.obj:score2,
 client,1001D5E0,3616,??0CAmmoInventory@@QAE@XZ,CAmmoInventory::CAmmoInventory,COF,cl_dll/guess_AmmoInventory.cpp,,,MATCHED,100,,
+client,1001E400,23,,,UNKNOWN,,,,TODO,,,found by tools/gaps.py (no Ghidra function before)
 client,1001E420,293,?ActionSignal@CAmmoInventory@@QAEXH@Z,CAmmoInventory::ActionSignal,COF,cl_dll/guess_AmmoInventory.cpp,,,MATCHED,100,client_manual.csv,
 client,1001E570,92,?Initialize@CAmmoInventory@@QAEXXZ,CAmmoInventory::Initialize,COF,cl_dll/guess_AmmoInventory.cpp,,,MATCHED,100,,
-client,1001E5D0,3,?Init@CHudBase@@UAEHXZ,CHudBase::Init,UNKNOWN,cl_dll/cdll_int.cpp,,,MATCHED,100,client_manual.csv,
+client,1001E5D0,3,?IsNotValid@CommandButton@@UAEHXZ,CommandButton::IsNotValid,UNKNOWN,cl_dll/guess_AmmoInventory.cpp,,,MATCHED,100,client_manual.csv,
 client,1001E5E0,190,?KeyInput@CAmmoInventory@@QAEHHHPBD@Z,CAmmoInventory::KeyInput,COF,cl_dll/guess_AmmoInventory.cpp,,,MATCHED,100,,
 client,1001E6A0,635,?guess_MsgAmmoInv@@YAHPBDHPAX@Z,guess_MsgAmmoInv,COF,cl_dll/guess_AmmoInventory.cpp,,,MATCHED,100,client_manual.csv,
 client,1001E930,20,?guess_AmmoInvInit@@YAXXZ,guess_AmmoInvInit,COF,cl_dll/guess_AmmoInventory.cpp,,,MATCHED,100,,
@@ -839,6 +883,7 @@ client,1001F220,8,?Initialize@CBookMenu@@QAEXXZ,CBookMenu::Initialize,COF,cl_dll
 client,1001F230,14,?actionPerformed@CBookMenuHandler_Command@@UAEXPAVPanel@vgui@@@Z,CBookMenuHandler_Command::actionPerformed,COF,cl_dll/guess_BookMenu.cpp,,,MATCHED,100,,
 client,1001F240,108,?setVisible@CBookMenu@@UAEX_N@Z,CBookMenu::setVisible,COF,cl_dll/guess_BookMenu.cpp,,,MATCHED,100,,
 client,1001F2B0,1802,??0CClothesMenu@@QAE@XZ,CClothesMenu::CClothesMenu,COF,guess:cl_dll/guess_ClothesMenu.cpp,,,EQUIVALENT,99.99,client_manual.csv,"EQUIVALENT: the loop counter i and y sit in swapped stack slots (retail i at [ebp-0x14], y at [ebp-0x18]); declaration order does not move them"
+client,1001F9C0,7,,,UNKNOWN,,,,TODO,,,found by tools/gaps.py (no Ghidra function before)
 client,1001F9D0,1023,?ActionSignal@CClothesMenu@@QAEXH@Z,CClothesMenu::ActionSignal,COF,guess:cl_dll/guess_ClothesMenu.cpp,,,MATCHED,100,client_manual.csv,
 client,1001FE60,18,?Initialize@CClothesMenu@@QAEXXZ,CClothesMenu::Initialize,COF,cl_dll/guess_ClothesMenu.cpp,,,MATCHED,100,,
 client,1001FE80,72,?guess_KeyInput@CClothesMenu@@QAEHHHPBD@Z,CClothesMenu::guess_KeyInput,COF,cl_dll/guess_ClothesMenu.cpp,,,MATCHED,100,,
@@ -848,6 +893,7 @@ client,10020230,279,?guess_SetCustomHoodie@@YAXXZ,guess_SetCustomHoodie,COF,cl_d
 client,10020350,30,?guess_ClothesInit@@YAXXZ,guess_ClothesInit,COF,cl_dll/guess_ClothesMenu.cpp,,,MATCHED,100,,
 client,10020370,14,?actionPerformed@CClothesMenuHandler_Command@@UAEXPAVPanel@vgui@@@Z,CClothesMenuHandler_Command::actionPerformed,COF,cl_dll/guess_ClothesMenu.cpp,,,MATCHED,100,,
 client,10020380,445,,,LIB,guess:cl_dll/guess_ClothesMenu.cpp,,,TODO,,,STL/iostream instantiation (toolchain code) placed before the object that first uses it
+client,10020556,6,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
 client,1002055C,181,,,LIB,guess:cl_dll/guess_ClothesMenu.cpp,,,TODO,,,STL/iostream instantiation (toolchain code) placed before the object that first uses it
 client,10020620,87,,,LIB,guess:cl_dll/guess_ClothesMenu.cpp,,,TODO,,,STL/iostream instantiation (toolchain code) placed before the object that first uses it
 client,10020680,8,,,LIB,guess:cl_dll/guess_ClothesMenu.cpp,,,TODO,,,STL/iostream instantiation (toolchain code) placed before the object that first uses it
@@ -856,9 +902,11 @@ client,100206A0,10,,,LIB,guess:cl_dll/guess_ClothesMenu.cpp,,,TODO,,,STL/iostrea
 client,100206B0,10,,,LIB,guess:cl_dll/guess_ClothesMenu.cpp,,,TODO,,,STL/iostream instantiation (toolchain code) placed before the object that first uses it
 client,100206C0,15,,,LIB,guess:cl_dll/guess_ClothesMenu.cpp,,,TODO,,,STL/iostream instantiation (toolchain code) placed before the object that first uses it
 client,100206D0,53,,,LIB,guess:cl_dll/guess_ClothesMenu.cpp,,,TODO,,,STL/iostream instantiation (toolchain code) placed before the object that first uses it
+client,10020710,3,,,UNKNOWN,,,,TODO,,,found by tools/gaps.py (no Ghidra function before)
 client,10020720,27,,,LIB,guess:cl_dll/guess_ClothesMenu.cpp,,,TODO,,,STL/iostream instantiation (toolchain code) placed before the object that first uses it
 client,10020740,77,,,LIB,guess:cl_dll/guess_ClothesMenu.cpp,,,TODO,,,STL/iostream instantiation (toolchain code) placed before the object that first uses it
 client,10020790,301,,,LIB,guess:cl_dll/guess_ClothesMenu.cpp,,,TODO,,,STL/iostream instantiation (toolchain code) placed before the object that first uses it
+client,100208D6,9,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
 client,100208DF,167,,,LIB,guess:cl_dll/guess_ClothesMenu.cpp,,,TODO,,,STL/iostream instantiation (toolchain code) placed before the object that first uses it
 client,10020990,159,,,LIB,guess:cl_dll/guess_ClothesMenu.cpp,,,TODO,,,STL/iostream instantiation (toolchain code) placed before the object that first uses it
 client,10020A30,343,,,LIB,guess:cl_dll/guess_ClothesMenu.cpp,,,TODO,,,STL/iostream instantiation (toolchain code) placed before the object that first uses it
@@ -886,17 +934,27 @@ client,10021B80,71,,,LIB,guess:cl_dll/guess_CoopStats.cpp,,,TODO,,,STL/iostream 
 client,10021BD0,28,??1?$basic_istream@DU?$char_traits@D@std@@@std@@UAE@XZ,>,LIB,cl_dll/guess_CoopStats.cpp,,,MATCHED,100,,
 client,10021BF0,67,??1?$basic_ofstream@DU?$char_traits@D@std@@@std@@UAE@XZ,>,LIB,cl_dll/guess_CoopStats.cpp,,,MATCHED,100,,
 client,10021C40,28,??1?$basic_ostream@DU?$char_traits@D@std@@@std@@UAE@XZ,>,LIB,cl_dll/guess_CoopStats.cpp,,,MATCHED,100,,
+client,10021C60,51,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
 client,10021CA0,42,??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ,>,LIB,cl_dll/guess_CoopStats.cpp,,,MATCHED,100,,
+client,10021CD0,7,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
 client,10021CE0,58,??1?$ctype@D@std@@MAE@XZ,std::ctype<char>::~ctype<char>,LIB,cl_dll/guess_CoopStats.cpp,,,MATCHED,100,,
 client,10021D20,13,??1?$unique_ptr@V_Facet_base@std@@U?$default_delete@V_Facet_base@std@@@2@@std@@QAE@XZ,>,LIB,cl_dll/guess_CoopStats.cpp,,,MATCHED,100,,
+client,10021D30,7,,,UNKNOWN,,,,TODO,,,found by tools/gaps.py (no Ghidra function before)
+client,10021D40,7,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
 client,10021D50,207,,,LIB,guess:cl_dll/guess_CoopStats.cpp,,,TODO,,,STL/iostream instantiation (toolchain code) placed before the object that first uses it
 client,10021E30,69,,,LIB,guess:cl_dll/guess_CoopStats.cpp,,,TODO,,,STL/iostream instantiation (toolchain code) placed before the object that first uses it
 client,10021E80,69,,,LIB,guess:cl_dll/guess_CoopStats.cpp,,,TODO,,,STL/iostream instantiation (toolchain code) placed before the object that first uses it
+client,10021ED0,17,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
+client,10021EF0,17,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
+client,10021F10,3,,,UNKNOWN,,,,TODO,,,found by tools/gaps.py (no Ghidra function before)
+client,10021F20,17,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
 client,10021F40,7,??1?$codecvt@DDU_Mbstatet@@@std@@MAE@XZ,_Mbstatet>,LIB,cl_dll/guess_CoopStats.cpp,,,MATCHED,100,,
+client,10021F50,17,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
 client,10021F70,64,,,LIB,guess:cl_dll/guess_CoopStats.cpp,,,TODO,,,STL/iostream instantiation (toolchain code) placed before the object that first uses it
 client,10021FC0,25,??1locale@std@@QAE@XZ,std::locale::~locale,LIB,cl_dll/guess_CoopStats.cpp,,,MATCHED,100,,
 client,10021FE0,76,,,LIB,guess:cl_dll/guess_CoopStats.cpp,,,TODO,,,STL/iostream instantiation (toolchain code) placed before the object that first uses it
 client,10022040,96,,,LIB,guess:cl_dll/guess_CoopStats.cpp,,,TODO,,,STL/iostream instantiation (toolchain code) placed before the object that first uses it
+client,100220B0,17,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
 client,100220D0,137,,,LIB,guess:cl_dll/guess_CoopStats.cpp,,,TODO,,,STL/iostream instantiation (toolchain code) placed before the object that first uses it
 client,10022160,137,??_D?$basic_ofstream@DU?$char_traits@D@std@@@std@@QAEXXZ,destructor',LIB,cl_dll/guess_CoopStats.cpp,,,TODO,87.80,,
 client,100221EE,8,,,LIB,guess:cl_dll/guess_CoopStats.cpp,,,TODO,,,STL/iostream instantiation (toolchain code) placed before the object that first uses it
@@ -1013,6 +1071,7 @@ client,100262D0,470,,,LIB,guess:cl_dll/guess_CoopStats.cpp,,,TODO,,,STL/iostream
 client,100264B0,153,??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z,>,LIB,cl_dll/guess_CoopStats.cpp,,,MATCHED,100,,
 client,10026550,1814,??0CCredits@@QAE@XZ,CCredits::CCredits,COF,guess:cl_dll/guess_Credits.cpp,,,MATCHED,100,client_manual.csv,
 client,10026C70,80,??1?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@QAE@XZ,>,LIB,cl_dll/guess_Credits.cpp,,,MATCHED,100,,
+client,10026CC0,7,,,UNKNOWN,,,,TODO,,,found by tools/gaps.py (no Ghidra function before)
 client,10026CD0,354,?guess_CountLines@CCredits@@QAEHXZ,CCredits::guess_CountLines,COF,cl_dll/guess_Credits.cpp,,,MATCHED,100,,
 client,10026E40,46,?Initialize@CCredits@@QAEXXZ,CCredits::Initialize,COF,cl_dll/guess_Credits.cpp,,,MATCHED,100,,
 client,10026E70,8342,?guess_MsgCredits@@YAHPBDHPAX@Z,guess_MsgCredits,COF,guess:cl_dll/guess_Credits.cpp,,,EQUIVALENT,93.96,client_manual.csv,"EQUIVALENT: label position loop (retail reloads iStartY and adds or subtracts an i*32 counter with a branch, ours two counters and a cmove), READ_* locals in other stack slots, the distance float loaded earlier in retail, and a different block layout in the Ending seen part (8 variants)"
@@ -1025,6 +1084,7 @@ client,10029490,10,,,LIB,guess:cl_dll/guess_Credits.cpp,,,TODO,,,STL/iostream in
 client,100294A0,28,?deallocate@?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@QAEXQAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@I@Z,>::deallocate,LIB,cl_dll/guess_Credits.cpp,,,MATCHED,100,,
 client,100294C0,4110,?solve@CCredits@@MAEXXZ,CCredits::solve,COF,guess:cl_dll/guess_Credits.cpp,,,EQUIVALENT,97.65,client_manual.csv,"EQUIVALENT: register choice; retail keeps &guess_m_iBrightness in ebx and 255 in esi and spills this to [ebp-0x24], ours addresses [edi+0x7c8] directly and keeps 255 in ebx; some loop locals in other stack slots (8 variants)"
 client,1002A4D0,964,??0CCutsceneSkip@@QAE@XZ,CCutsceneSkip::CCutsceneSkip,COF,cl_dll/guess_CutsceneSkip.cpp,,,MATCHED,100,,
+client,1002A8A0,23,,,UNKNOWN,,,,TODO,,,found by tools/gaps.py (no Ghidra function before)
 client,1002A8C0,8,?Initialize@CCutsceneSkip@@QAEXXZ,CCutsceneSkip::Initialize,COF,cl_dll/guess_CutsceneSkip.cpp,,,MATCHED,100,,
 client,1002A8D0,1675,??0CDocuments@@QAE@XZ,CDocuments::CDocuments,COF,cl_dll/guess_Documents.cpp,,,MATCHED,100,,
 client,1002AF60,73,??1CDocuments@@QAE@XZ,CDocuments::~CDocuments,COF,cl_dll/guess_Documents.cpp,,,MATCHED,100,,
@@ -1040,10 +1100,11 @@ client,1002BE10,8,?Initialize@CVGUIExtraMenu@@QAEXXZ,CVGUIExtraMenu::Initialize,
 client,1002BE20,14,?actionPerformed@CVGUIExtraMenuHandler_Command@@UAEXPAVPanel@vgui@@@Z,CVGUIExtraMenuHandler_Command::actionPerformed,COF,cl_dll/guess_VGUIExtraMenu.cpp,,,MATCHED,100,,
 client,1002BE30,45,?setVisible@CVGUIExtraMenu@@UAEX_N@Z,CVGUIExtraMenu::setVisible,COF,cl_dll/guess_VGUIExtraMenu.cpp,,,MATCHED,100,,
 client,1002BE60,1000,?solve@CVGUIExtraMenu@@MAEXXZ,CVGUIExtraMenu::solve,COF,cl_dll/guess_VGUIExtraMenu.cpp,,,MATCHED,100,,
-client,1002C250,74,,,COF,guess:cl_dll/guess_VGUIExtraMenu.cpp,,,TODO,,,
-client,1002C2A0,77,,,COF,guess:cl_dll/guess_VGUIExtraMenu.cpp,,,TODO,,,
-client,1002C2F0,160,,,COF,guess:cl_dll/guess_VGUIExtraMenu.cpp,,,TODO,,,
+client,1002C250,74,??$?HDU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@ABV10@0@Z,>,LIB,guess:cl_dll/guess_VGUIExtraMenu.cpp,,,MATCHED,100,client_manual.csv,
+client,1002C2A0,77,??$?HDU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@ABV10@QBD@Z,>,LIB,guess:cl_dll/guess_VGUIExtraMenu.cpp,,,MATCHED,100,client_manual.csv,
+client,1002C2F0,160,??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@U_String_constructor_concat_tag@1@ABV01@QBDI2I@Z,>,LIB,guess:cl_dll/guess_VGUIExtraMenu.cpp,,,MATCHED,100,client_manual.csv,
 client,1002C390,5394,??0CGameMenu@@QAE@XZ,CGameMenu::CGameMenu,COF,guess:cl_dll/guess_GameMenu.cpp,,,MATCHED,100,client_manual.csv,
+client,1002D8B0,23,,,UNKNOWN,,,,TODO,,,found by tools/gaps.py (no Ghidra function before)
 client,1002D8D0,1688,?ActionSignal@CGameMenu@@QAEXH@Z,CGameMenu::ActionSignal,COF,guess:cl_dll/guess_GameMenu.cpp,,,MATCHED,100,client_manual.csv,
 client,1002DFA0,6,?guess_GetVersion@@YAPBDXZ,guess_GetVersion,COF,cl_dll/guess_GameMenu.cpp,,,MATCHED,100,,
 client,1002DFB0,71,?Initialize@CGameMenu@@QAEXXZ,CGameMenu::Initialize,COF,cl_dll/guess_GameMenu.cpp,,,MATCHED,100,,
@@ -1057,6 +1118,7 @@ client,1002EBD0,286,?paintBackground@CCampaignSlider@@UAEXXZ,CCampaignSlider::pa
 client,1002ECF0,435,?setVisible@CGameMenu@@UAEX_N@Z,CGameMenu::setVisible,COF,cl_dll/guess_GameMenu.cpp,,,MATCHED,100,,
 client,1002EEB0,2573,?solve@CGameMenu@@MAEXXZ,CGameMenu::solve,COF,cl_dll/guess_GameMenu.cpp,,,MATCHED,100,,
 client,1002F8C0,1247,??0CLanguage@@QAE@XZ,CLanguage::CLanguage,COF,cl_dll/guess_Language.cpp,,,MATCHED,100,,
+client,1002FDA0,23,,,UNKNOWN,,,,TODO,,,found by tools/gaps.py (no Ghidra function before)
 client,1002FDC0,791,?ActionSignal@CLanguage@@QAEXH@Z,CLanguage::ActionSignal,COF,guess:cl_dll/guess_Language.cpp,,,MATCHED,100,client_manual.csv,
 client,10030100,8,?Initialize@CLanguage@@QAEXXZ,CLanguage::Initialize,COF,cl_dll/guess_Language.cpp,,,MATCHED,100,,
 client,10030110,14,?actionPerformed@CLanguageHandler_Command@@UAEXPAVPanel@vgui@@@Z,CLanguageHandler_Command::actionPerformed,COF,cl_dll/guess_Language.cpp,,,MATCHED,100,,
@@ -1069,12 +1131,14 @@ client,10030340,274,?Draw@CNeffect@@UAEHM@Z,CNeffect::Draw,COF,cl_dll/guess_Neff
 client,10030460,21,?Init@CNeffect@@UAEHXZ,CNeffect::Init,COF,cl_dll/guess_Neffect.cpp,,,MATCHED,100,,
 client,10030480,64,?VidInit@CNeffect@@UAEHXZ,CNeffect::VidInit,COF,cl_dll/guess_Neffect.cpp,,,MATCHED,100,,
 client,100304C0,970,??0CPadlock@@QAE@XZ,CPadlock::CPadlock,COF,cl_dll/guess_Padlock.cpp,,,MATCHED,100,,
+client,10030890,23,,,UNKNOWN,,,,TODO,,,found by tools/gaps.py (no Ghidra function before)
 client,100308B0,137,?ActionSignal@CPadlock@@QAEXH@Z,CPadlock::ActionSignal,COF,cl_dll/guess_Padlock.cpp,,,MATCHED,100,,
 client,10030950,8,?Initialize@CPadlock@@QAEXXZ,CPadlock::Initialize,COF,cl_dll/guess_Padlock.cpp,,,MATCHED,100,,
 client,10030960,71,?guess_MsgPadlock@@YAHPBDHPAX@Z,guess_MsgPadlock,COF,cl_dll/guess_Padlock.cpp,,,MATCHED,100,,
 client,100309B0,20,?guess_PadlockInit@@YAXXZ,guess_PadlockInit,COF,cl_dll/guess_Padlock.cpp,,,MATCHED,100,,
 client,100309D0,14,?actionPerformed@CPadlockHandler_Command@@UAEXPAVPanel@vgui@@@Z,CPadlockHandler_Command::actionPerformed,COF,cl_dll/guess_Padlock.cpp,,,MATCHED,100,,
 client,100309E0,2712,??0CSaveLoad@@QAE@XZ,CSaveLoad::CSaveLoad,COF,guess:cl_dll/guess_SaveLoad.cpp,,,MATCHED,100,client_manual.csv,
+client,10031480,23,,,UNKNOWN,,,,TODO,,,found by tools/gaps.py (no Ghidra function before)
 client,100314A0,1860,?ActionSignal@CSaveLoad@@QAEXH@Z,CSaveLoad::ActionSignal,COF,guess:cl_dll/guess_SaveLoad.cpp,,,MATCHED,100,client_manual.csv,
 client,10031C00,8,?Initialize@CSaveLoad@@QAEXXZ,CSaveLoad::Initialize,COF,cl_dll/guess_SaveLoad.cpp,,,MATCHED,100,,
 client,10031C10,448,?guess_MsgSaveLoad@@YAHPBDHPAX@Z,guess_MsgSaveLoad,COF,guess:cl_dll/guess_SaveLoad.cpp,,,MATCHED,100,client_manual.csv,
@@ -1086,10 +1150,12 @@ client,10032340,1145,?guess_WriteSaveInfo@CSaveLoad@@QAEXPBD@Z,CSaveLoad::guess_
 client,100327C0,14,?actionPerformed@CSaveLoadHandler_Command@@UAEXPAVPanel@vgui@@@Z,CSaveLoadHandler_Command::actionPerformed,COF,cl_dll/guess_SaveLoad.cpp,,,MATCHED,100,,
 client,100327D0,5,?solve@CSaveLoad@@MAEXXZ,CSaveLoad::solve,COF,cl_dll/guess_SaveLoad.cpp,,,MATCHED,100,client_manual.csv,
 client,100327E0,964,??0CScope@@QAE@XZ,CScope::CScope,COF,cl_dll/guess_Scope.cpp,,,MATCHED,100,,
+client,10032BB0,23,,,UNKNOWN,,,,TODO,,,found by tools/gaps.py (no Ghidra function before)
 client,10032BD0,18,?Initialize@CScope@@QAEXXZ,CScope::Initialize,COF,cl_dll/guess_Scope.cpp,,,MATCHED,100,,
 client,10032BF0,201,?guess_MsgScope@@YAHPBDHPAX@Z,guess_MsgScope,COF,cl_dll/guess_Scope.cpp,,,MATCHED,100,,
 client,10032CC0,20,?guess_ScopeInit@@YAXXZ,guess_ScopeInit,COF,cl_dll/guess_Scope.cpp,,,MATCHED,100,,
 client,10032CE0,2284,??0CTelephone@@QAE@XZ,CTelephone::CTelephone,COF,cl_dll/guess_Telephone.cpp,,,MATCHED,100,,
+client,100335D0,23,,,UNKNOWN,,,,TODO,,,found by tools/gaps.py (no Ghidra function before)
 client,100335F0,215,?ActionSignal@CTelephone@@QAEXH@Z,CTelephone::ActionSignal,COF,guess:cl_dll/guess_Telephone.cpp,,,MATCHED,100,client_manual.csv,
 client,10033700,132,?guess_PressDigit@CTelephone@@QAEXH@Z,CTelephone::guess_PressDigit,COF,cl_dll/guess_Telephone.cpp,,,MATCHED,100,,
 client,10033790,193,?guess_Dial@CTelephone@@QAEXXZ,CTelephone::guess_Dial,COF,guess:cl_dll/guess_Telephone.cpp,,,EQUIVALENT,93.13,client_manual.csv,"EQUIVALENT: register allocation only; retail keeps &guess_m_szDialed in ebx (pushed in the prologue) and pPlayer in edi (pushed late), ours the other way round (8 variants)"
@@ -1100,6 +1166,7 @@ client,10033A90,14,?actionPerformed@CTelephoneHandler_Command@@UAEXPAVPanel@vgui
 client,10033AA0,164,?paint@CTelephone@@MAEXXZ,CTelephone::paint,COF,cl_dll/guess_Telephone.cpp,,,MATCHED,100,,
 client,10033B50,161,?setVisible@CTelephone@@UAEX_N@Z,CTelephone::setVisible,COF,guess:cl_dll/guess_Telephone.cpp,,,MATCHED,100,client_manual.csv,
 client,10033C00,59,??0CTVFrame@@QAE@XZ,CTVFrame::CTVFrame,COF,cl_dll/guess_TVFrame.cpp,,,MATCHED,100,,
+client,10033C40,7,,,UNKNOWN,,,,TODO,,,found by tools/gaps.py (no Ghidra function before)
 client,10033C50,18,?Initialize@CTVFrame@@QAEXXZ,CTVFrame::Initialize,COF,cl_dll/guess_TVFrame.cpp,,,MATCHED,100,,
 client,10033C70,43,?guess_MsgTVFrame@@YAHPBDHPAX@Z,guess_MsgTVFrame,COF,cl_dll/guess_TVFrame.cpp,,,MATCHED,100,,
 client,10033CA0,20,?guess_TVFrameInit@@YAXXZ,guess_TVFrameInit,COF,cl_dll/guess_TVFrame.cpp,,,MATCHED,100,,
@@ -1140,6 +1207,7 @@ client,10039C60,34,?guess_MsgHoldBreath@@YAHPBDHPAX@Z,guess_MsgHoldBreath,COF,gu
 client,10039C90,650,?guess_MsgIntrodn@@YAHPBDHPAX@Z,guess_MsgIntrodn,COF,guess:cl_dll/guess_HUDControl.cpp,,,MATCHED,100,client_manual.csv,
 client,10039F40,512,?guess_MsgLobby@@YAHPBDHPAX@Z,guess_MsgLobby,COF,guess:cl_dll/guess_HUDControl.cpp,,,MATCHED,100,client_manual.csv,
 client,1003A140,44,?guess_MsgLookingAt@@YAHPBDHPAX@Z,guess_MsgLookingAt,COF,guess:cl_dll/guess_HUDControl.cpp,,,MATCHED,100,client_manual.csv,
+client,1003A170,13,?guess_MsgMPModel@@YAHPBDHPAX@Z,guess_MsgMPModel,UNKNOWN,,,,MATCHED,100,client_manual.csv,found by tools/gaps.py (no Ghidra function before)
 client,1003A180,432,?guess_MsgShowHint@@YAHPBDHPAX@Z,guess_MsgShowHint,COF,guess:cl_dll/guess_HUDControl.cpp,,,MATCHED,100,client_manual.csv,
 client,1003A330,34,?guess_MsgSimonMode@@YAHPBDHPAX@Z,guess_MsgSimonMode,COF,guess:cl_dll/guess_HUDControl.cpp,,,MATCHED,100,client_manual.csv,
 client,1003A360,122,?guess_MsgStamina@@YAHPBDHPAX@Z,guess_MsgStamina,COF,guess:cl_dll/guess_HUDControl.cpp,,,MATCHED,100,client_manual.csv,
@@ -1160,6 +1228,7 @@ client,1003D9E0,436,?guess_MsgStatue@@YAHPBDHPAX@Z,guess_MsgStatue,COF,cl_dll/gu
 client,1003DBA0,20,?guess_StatueInit@@YAXXZ,guess_StatueInit,COF,cl_dll/guess_AnimalStatue.cpp,,,MATCHED,100,,
 client,1003DBC0,14,?actionPerformed@CAnimalStatueHandler_Command@@UAEXPAVPanel@vgui@@@Z,CAnimalStatueHandler_Command::actionPerformed,COF,cl_dll/guess_AnimalStatue.cpp,,,MATCHED,100,,
 client,1003DBD0,1021,??0CVGUIBillboard@@QAE@XZ,CVGUIBillboard::CVGUIBillboard,COF,cl_dll/guess_VGUIBillboard.cpp,,,MATCHED,100,,
+client,1003DFD0,23,,,UNKNOWN,,,,TODO,,,found by tools/gaps.py (no Ghidra function before)
 client,1003DFF0,59,?ActionSignal@CVGUIBillboard@@QAEXH@Z,CVGUIBillboard::ActionSignal,COF,cl_dll/guess_VGUIBillboard.cpp,,,MATCHED,100,,
 client,1003E030,37,?Initialize@CVGUIBillboard@@QAEXXZ,CVGUIBillboard::Initialize,COF,cl_dll/guess_VGUIBillboard.cpp,,,MATCHED,100,,
 client,1003E060,72,?KeyInput@CVGUIBillboard@@QAEHHHPBD@Z,CVGUIBillboard::KeyInput,COF,cl_dll/guess_VGUIBillboard.cpp,,,MATCHED,100,,
@@ -1176,6 +1245,7 @@ client,1003E610,437,?guess_MsgBossBar@@YAHPBDHPAX@Z,guess_MsgBossBar,COF,guess:c
 client,1003E7D0,20,?guess_BossBarInit@@YAXXZ,guess_BossBarInit,COF,cl_dll/guess_BossBar.cpp,,,MATCHED,100,,
 client,1003E7F0,121,?solve@CBossBar@@UAEXXZ,CBossBar::solve,COF,guess:cl_dll/guess_BossBar.cpp,,,MATCHED,100,client_manual.csv,
 client,1003E870,1627,??0CComputer@@QAE@XZ,CComputer::CComputer,COF,cl_dll/guess_Computer.cpp,,,MATCHED,100,,
+client,1003EED0,23,,,UNKNOWN,,,,TODO,,,found by tools/gaps.py (no Ghidra function before)
 client,1003EEF0,244,?ActionSignal@CComputer@@QAEXH@Z,CComputer::ActionSignal,COF,guess:cl_dll/guess_Computer.cpp,,,MATCHED,100,client_manual.csv,
 client,1003EFF0,34,?Initialize@CComputer@@QAEXXZ,CComputer::Initialize,COF,cl_dll/guess_Computer.cpp,,,MATCHED,100,,
 client,1003F020,72,?KeyInput@CComputer@@QAEHHHPBD@Z,CComputer::KeyInput,COF,cl_dll/guess_Computer.cpp,,,MATCHED,100,,
@@ -1251,6 +1321,7 @@ client,10048F10,261,?paint@CNoteDocument@@MAEXXZ,CNoteDocument::paint,COF,guess:
 client,10049020,5,?paintBackground@CNoteDocument@@MAEXXZ,,COF,cl_dll/guess_NoteDocument.cpp,,,MATCHED,100,client_manual.csv,
 client,10049030,9,?setVisible@CNoteDocument@@UAEX_N@Z,CNoteDocument::setVisible,COF,guess:cl_dll/guess_NoteDocument.cpp,,,MATCHED,100,client_manual.csv,
 client,10049040,2283,??0CPhone@@QAE@XZ,CPhone::CPhone,COF,cl_dll/guess_Phone.cpp,,,MATCHED,100,,
+client,10049930,23,,,UNKNOWN,,,,TODO,,,found by tools/gaps.py (no Ghidra function before)
 client,10049950,162,?ActionSignal@CPhone@@QAEXH@Z,CPhone::ActionSignal,COF,cl_dll/guess_Phone.cpp,,,MATCHED,100,,
 client,10049A20,339,?guess_PressDigit@CPhone@@QAEXH@Z,CPhone::guess_PressDigit,COF,guess:cl_dll/guess_Phone.cpp,,,MATCHED,100,client_manual.csv,
 client,10049BA0,80,?guess_Clear@CPhone@@QAEXXZ,CPhone::guess_Clear,COF,cl_dll/guess_Phone.cpp,,,MATCHED,100,,
@@ -1270,6 +1341,7 @@ client,1004A330,20,?guess_PuzzlebarInit@@YAXXZ,guess_PuzzlebarInit,COF,cl_dll/gu
 client,1004A350,14,?actionPerformed@CPuzzleBarHandler_Command@@UAEXPAVPanel@vgui@@@Z,CPuzzleBarHandler_Command::actionPerformed,COF,cl_dll/guess_PuzzleBar.cpp,,,MATCHED,100,,
 client,1004A360,9,?setVisible@CPuzzleBar@@UAEX_N@Z,CPuzzleBar::setVisible,COF,cl_dll/guess_PuzzleBar.cpp,,,MATCHED,100,,
 client,1004A370,590,??0CSave@@QAE@XZ,CSave::CSave,COF,cl_dll/guess_Save.cpp,,,MATCHED,100,,
+client,1004A5C0,23,,,UNKNOWN,,,,TODO,,,found by tools/gaps.py (no Ghidra function before)
 client,1004A5E0,166,?ActionSignal@CSave@@QAEXH@Z,CSave::ActionSignal,COF,guess:cl_dll/guess_Save.cpp,,,MATCHED,100,client_manual.csv,
 client,1004A6A0,8,?Initialize@CSave@@QAEXXZ,CSave::Initialize,COF,cl_dll/guess_Save.cpp,,,MATCHED,100,,
 client,1004A6B0,80,?guess_MsgSave@@YAHPBDHPAX@Z,guess_MsgSave,COF,cl_dll/guess_Save.cpp,,,MATCHED,100,,
@@ -1288,12 +1360,13 @@ client,1004ADF0,373,?paint@CUserDocument@@MAEXXZ,CUserDocument::paint,COF,cl_dll
 client,1004AF70,5,?paintBackground@CUserDocument@@MAEXXZ,,COF,cl_dll/guess_UserDocument.cpp,,,MATCHED,100,client_manual.csv,
 client,1004AF80,9,?setVisible@CUserDocument@@UAEX_N@Z,CUserDocument::setVisible,COF,cl_dll/guess_UserDocument.cpp,,,MATCHED,100,,
 client,1004AF90,606,??0CYesno@@QAE@XZ,CYesno::CYesno,COF,cl_dll/guess_Yesno.cpp,,,MATCHED,100,,
+client,1004B1F0,23,,,UNKNOWN,,,,TODO,,,found by tools/gaps.py (no Ghidra function before)
 client,1004B210,529,?ActionSignal@CYesno@@QAEXH@Z,CYesno::ActionSignal,COF,guess:cl_dll/guess_Yesno.cpp,,,MATCHED,100,client_manual.csv,
 client,1004B440,22,?Initialize@CYesno@@QAEXXZ,CYesno::Initialize,COF,cl_dll/guess_Yesno.cpp,,,MATCHED,100,,
 client,1004B460,330,?guess_MsgYesNo@@YAHPBDHPAX@Z,guess_MsgYesNo,COF,cl_dll/guess_Yesno.cpp,,,MATCHED,100,,
 client,1004B5B0,20,?guess_YesNoInit@@YAXXZ,guess_YesNoInit,COF,cl_dll/guess_Yesno.cpp,,,MATCHED,100,,
 client,1004B5D0,14,?actionPerformed@CYesnoHandler_Command@@UAEXPAVPanel@vgui@@@Z,CYesnoHandler_Command::actionPerformed,COF,cl_dll/guess_Yesno.cpp,,,MATCHED,100,,
-client,1004B5E0,532,,,UNKNOWN,,,,TODO,,,
+client,1004B5E0,532,?Draw@CHudDeathNotice@@UAEHM@Z,CHudDeathNotice::Draw,UNKNOWN,,,,MATCHED,100,client_manual.csv,
 client,1004B800,61,?GetClientColor@@YAPAMH@Z,GetClientColor,HLSDK,cl_dll/death.cpp,,,MATCHED,100,reloc:100753E0,
 client,1004B860,54,?Init@CHudDeathNotice@@UAEHXZ,CHudDeathNotice::Init,HLSDK,cl_dll/death.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__death.obj:score7,
 client,1004B8A0,21,?InitHUDData@CHudDeathNotice@@UAEXXZ,CHudDeathNotice::InitHUDData,HLSDK,cl_dll/death.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__death.obj:score1,
@@ -1302,17 +1375,18 @@ client,1004BA40,28,?VidInit@CHudDeathNotice@@UAEHXZ,CHudDeathNotice::VidInit,HLS
 client,1004BA60,24,?__MsgFunc_DeathMsg@@YAHPBDHPAX@Z,__MsgFunc_DeathMsg,LIB,,,,,,refbytes:paranoia:cl_dll__death.obj:score2,
 client,1004BA80,92,?Demo_WriteBuffer@@YAXHHPAE@Z,Demo_WriteBuffer,HLSDK,cl_dll/demo.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__demo.obj:score4,
 client,1004BAE0,149,_Demo_ReadBuffer,Demo_ReadBuffer,HLSDK,cl_dll/demo.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__demo.obj:score2,
-client,1004BB80,169,,,UNKNOWN,,,,TODO,,,
-client,1004BC30,1166,,,UNKNOWN,,,,TODO,87.96,,
+client,1004BB80,169,?DlightFlash@@YAXPAM@Z,DlightFlash,UNKNOWN,cl_dll/entity.cpp,,,MATCHED,100,,
+client,1004BC30,1166,?guess_MuzzleFlash@@YAXPAUcl_entity_s@@H_NM@Z,guess_MuzzleFlash,UNKNOWN,,,,TODO,87.96,client_manual.csv,
 client,1004C0C0,586,,,UNKNOWN,,,,TODO,,,
 client,1004C310,126,_HUD_AddEntity,HUD_AddEntity,HLSDK,cl_dll/entity.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__entity.obj:score4,
 client,1004C390,245,_HUD_CreateEntities,HUD_CreateEntities,HLSDK,cl_dll/entity.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__entity.obj:score6,
 client,1004C490,3,_HUD_GetUserEntity,HUD_GetUserEntity,HLSDK,cl_dll/entity.cpp,,,MATCHED,100,client_1.6a_exports.csv,
 client,1004C4A0,544,_HUD_ProcessPlayerState,HUD_ProcessPlayerState,HLSDK,cl_dll/entity.cpp,,,MATCHED,100,client_1.6a_exports.csv,
-client,1004C6C0,2772,_HUD_StudioEvent,HUD_StudioEvent,HLSDK,cl_dll/entity.cpp,,,TODO,97.51,client_1.6a_exports.csv,
+client,1004C6C0,2772,_HUD_StudioEvent,HUD_StudioEvent,HLSDK,cl_dll/entity.cpp,,,TODO,99.53,client_1.6a_exports.csv,
 client,1004D250,2786,_HUD_TempEntUpdate,HUD_TempEntUpdate,HLSDK,cl_dll/entity.cpp,,,MATCHED,100,client_1.6a_exports.csv,
 client,1004DD40,192,_HUD_TxferLocalOverrides,HUD_TxferLocalOverrides,HLSDK,cl_dll/entity.cpp,,,MATCHED,100,client_1.6a_exports.csv,
 client,1004DE00,464,_HUD_TxferPredictionData,HUD_TxferPredictionData,HLSDK,cl_dll/entity.cpp,,,MATCHED,100,client_1.6a_exports.csv,
+client,1004DFD0,5,,,UNKNOWN,,,,TODO,,,found by tools/gaps.py (no Ghidra function before)
 client,1004DFE0,17,?EV_CreateTracer@@YAXPAM0@Z,EV_CreateTracer,HLSDK,cl_dll/ev_common.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__ev_common.obj:score1,
 client,1004E000,74,?EV_EjectBrass@@YAXPAM0MHH@Z,EV_EjectBrass,HLSDK,cl_dll/ev_common.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__ev_common.obj:score1,
 client,1004E050,511,?EV_GetDefaultShellInfo@@YAXPAUevent_args_s@@PAM111111MMM@Z,EV_GetDefaultShellInfo,HLSDK,guess:cl_dll/ev_common.cpp,,,MATCHED,100,reloc:10051F60,
@@ -1342,6 +1416,7 @@ client,10050250,258,_EV_FireCrossbow,EV_FireCrossbow,HLSDK,cl_dll/ev_hldm.cpp,,,
 client,10050360,1073,_EV_FireCrossbow2,EV_FireCrossbow2,HLSDK,cl_dll/ev_hldm.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__ev_hldm.obj:score37,
 client,100507A0,2751,_EV_FireGauss,EV_FireGauss,HLSDK,guess:cl_dll/ev_hldm.cpp,,,MATCHED,100,similar:0.70,
 client,10051260,543,_EV_FireGlock1,,UNKNOWN,cl_dll/ev_hldm.cpp,,,MATCHED,100,,
+client,10051480,3,_EV_FireGlock2,,UNKNOWN,,,,MATCHED,100,client_manual.csv,found by tools/gaps.py (no Ghidra function before)
 client,10051490,638,_EV_FireGroza,EV_FireGroza,PARANOIA,guess:cl_dll/ev_hldm.cpp,,,MATCHED,100,similar:0.90,
 client,10051710,829,_EV_FireMP5,EV_FireMP5,HLSDK,guess:cl_dll/ev_hldm.cpp,,,MATCHED,100,similar:0.90,
 client,10051A50,415,_EV_FirePython,EV_FirePython,HLSDK,guess:cl_dll/ev_hldm.cpp,,,MATCHED,100,similar:0.85,
@@ -1361,9 +1436,11 @@ client,10052CA0,346,_EV_TripmineFire,EV_TripmineFire,HLSDK,cl_dll/ev_hldm.cpp,,,
 client,10052E00,51,_guess_EV_ViewPunch,,UNKNOWN,cl_dll/ev_hldm.cpp,,,MATCHED,100,client_manual.csv,
 client,10052E40,509,_guess_EV_WeaponShoot,,UNKNOWN,,,,MATCHED,100,client_manual.csv,
 client,10053040,80,?GetExceptionStrings@@YAXKPAPBD0@Z,GetExceptionStrings,PARANOIA,cl_dll/exception.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__exception.obj:score2,
+client,10053090,71,?InstallExceptionHandler@@YAXXZ,InstallExceptionHandler,UNKNOWN,cl_dll/exception.cpp,,,MATCHED,100,,found by tools/gaps.py (no Ghidra function before)
 client,100530E0,428,?LoadCrashRpt@@YAXXZ,LoadCrashRpt,PARANOIA,cl_dll/exception.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__exception.obj:score21,
+client,10053290,46,?UnInstallExceptionHandler@@YAXXZ,UnInstallExceptionHandler,UNKNOWN,cl_dll/exception.cpp,,,MATCHED,100,,found by tools/gaps.py (no Ghidra function before)
 client,100532C0,45,?UnloadCrashRpt@@YAXXZ,UnloadCrashRpt,PARANOIA,cl_dll/exception.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__exception.obj:score5,
-client,100532F0,568,?_exceptionCB@@YGJPAU_EXCEPTION_POINTERS@@@Z,_exceptionCB,PARANOIA,,,,TODO,,similar:0.85,
+client,100532F0,568,?_exceptionCB@@YGJPAU_EXCEPTION_POINTERS@@@Z,_exceptionCB,PARANOIA,,,,MATCHED,100,similar:0.85,
 client,10053530,8,?Draw@CHudFlashlight@@UAEHM@Z,CHudFlashlight::Draw,UNKNOWN,cl_dll/flashlight.cpp,,,MATCHED,100,,
 client,10053540,74,?Init@CHudFlashlight@@UAEHXZ,CHudFlashlight::Init,HLSDK,cl_dll/flashlight.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__flashlight.obj:score6,
 client,10053590,65,?MsgFunc_FlashBat@CHudFlashlight@@QAEHPBDHPAX@Z,CHudFlashlight::MsgFunc_FlashBat,HLSDK,cl_dll/flashlight.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__flashlight.obj:score2,
@@ -1419,6 +1496,8 @@ client,100576D0,133,?TextureId@@YAHPBD@Z,TextureId,PARANOIA,cl_dll/gl_debug.cpp,
 client,10057760,241,?WriteTGA_24@@YAHPAUcolor24@@GGPBD@Z,WriteTGA_24,PARANOIA,cl_dll/gl_debug.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__gl_debug.obj:score9,
 client,10057860,35,_fprintf,fprintf,LIB,,,,TODO,,refbytes:paranoia:cl_dll__com_weapons.obj:score1,
 client,10057890,100,??0DecalGroup@@QAE@PBDHPAVDecalGroupEntry@@@Z,DecalGroup::DecalGroup,PARANOIA,cl_dll/gl_decals.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__gl_decals.obj:score2,
+client,10057900,3,,,UNKNOWN,,,,TODO,,,found by tools/gaps.py (no Ghidra function before)
+client,10057910,3,,,UNKNOWN,,,,TODO,,,found by tools/gaps.py (no Ghidra function before)
 client,10057920,41,??1DecalGroup@@QAE@XZ,DecalGroup::~DecalGroup,UNKNOWN,cl_dll/gl_decals.cpp,,,MATCHED,100,,
 client,10057950,56,?AllocDecal@@YAPAUcustomdecal_s@@XZ,AllocDecal,PARANOIA,cl_dll/gl_decals.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__gl_decals.obj:score0,
 client,10057990,35,?AllocStaticDecal@@YAPAUcustomdecal_s@@XZ,AllocStaticDecal,PARANOIA,cl_dll/gl_decals.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__gl_decals.obj:score0,
@@ -1456,6 +1535,8 @@ client,1005A0E0,44,?StyleIndex@@YAHPAUmsurface_s@@H@Z,StyleIndex,PARANOIA,cl_dll
 client,1005A110,985,?UpdateLightmaps@@YAXXZ,UpdateLightmaps,PARANOIA,cl_dll/gl_lightmap.cpp,,,MATCHED,100,similar:0.68,
 client,1005A4F0,120,?UploadBlocklights@@YAXPAUmsurface_s@@@Z,UploadBlocklights,PARANOIA,cl_dll/gl_lightmap.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__gl_lightmap.obj:score0,
 client,1005A570,155,?UploadLightmaps@@YAXH@Z,UploadLightmaps,PARANOIA,cl_dll/gl_lightmap.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__gl_lightmap.obj:score5,
+client,1005A610,3,,,UNKNOWN,,,,TODO,,,found by tools/gaps.py (no Ghidra function before)
+client,1005A620,3,,,UNKNOWN,,,,TODO,,,found by tools/gaps.py (no Ghidra function before)
 client,1005A630,277,?Create1DAttenuationForOldCards@@YAHXZ,Create1DAttenuationForOldCards,PARANOIA,cl_dll/gl_light_dynamic.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__gl_light_dynamic.obj:score14,
 client,1005A750,359,?Create2DAttenuationForOldCards@@YAHXZ,Create2DAttenuationForOldCards,PARANOIA,cl_dll/gl_light_dynamic.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__gl_light_dynamic.obj:score17,
 client,1005A8C0,572,?Create3DAttenuationTexture@@YAHXZ,Create3DAttenuationTexture,PARANOIA,cl_dll/gl_light_dynamic.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__gl_light_dynamic.obj:score17,
@@ -1494,13 +1575,14 @@ client,1005D0E0,1462,?R_DrawSprite@@YAXPAUcl_entity_s@@@Z,R_DrawSprite,UNKNOWN,c
 client,1005D6A0,250,?R_GetSpriteFrame@@YAPAUmspriteframe_s@@PAUmodel_s@@H@Z,R_GetSpriteFrame,PARANOIA,cl_dll/gl_model.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__gl_model.obj:score3,
 client,1005D7A0,2388,?ApplyPostEffects@@YAXXZ,ApplyPostEffects,UNKNOWN,cl_dll/gl_postprocess.cpp,,,MATCHED,100,,
 client,1005E100,289,?DrawQuad@@YAXHHHH@Z,DrawQuad,SPIRIT,cl_dll/gl_postprocess.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__gl_postprocess.obj:score8,
-client,1005E230,457,,,UNKNOWN,guess:cl_dll/gl_postprocess.cpp,,,TODO,,,
+client,1005E230,457,?GetGrayscaleFactor@@YAMXZ,GetGrayscaleFactor,UNKNOWN,guess:cl_dll/gl_postprocess.cpp,,,MATCHED,100,client_manual.csv,
 client,1005E400,50,?InitPostEffects@@YAXXZ,InitPostEffects,PARANOIA,cl_dll/gl_postprocess.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__gl_postprocess.obj:score6,
 client,1005E440,452,?InitScreenTexture@@YAXXZ,InitScreenTexture,UNKNOWN,cl_dll/gl_postprocess.cpp,,,MATCHED,100,,
 client,1005E610,241,?MakeWeightsTexture@@YAXXZ,MakeWeightsTexture,PARANOIA,cl_dll/gl_postprocess.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__gl_postprocess.obj:score13,
 client,1005E710,39,?UseRectangleTextures@@YAHXZ,UseRectangleTextures,PARANOIA,cl_dll/gl_postprocess.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__gl_postprocess.obj:score4,
 client,1005E740,475,??0GL_MtexStateSaver@@QAE@XZ,GL_MtexStateSaver::GL_MtexStateSaver,PARANOIA,cl_dll/gl_renderer.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__gl_renderer.obj:score33,
 client,1005E920,536,??1GL_MtexStateSaver@@QAE@XZ,GL_MtexStateSaver::~GL_MtexStateSaver,PARANOIA,cl_dll/gl_renderer.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__gl_renderer.obj:score37,
+client,1005EB40,55,?guess_TextureTest@@YAXXZ,guess_TextureTest,UNKNOWN,,,,MATCHED,100,client_manual.csv,found by tools/gaps.py (no Ghidra function before)
 client,1005EB80,192,?CreateDefaultNormalMap@@YAHXZ,CreateDefaultNormalMap,PARANOIA,cl_dll/gl_renderer.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__gl_renderer.obj:score11,
 client,1005EC40,435,?CreateNormalizationCubemap@@YAHXZ,CreateNormalizationCubemap,UNKNOWN,cl_dll/gl_renderer.cpp,,,MATCHED,100,,
 client,1005EE00,176,?DisableWorldDrawing@@YAXPAUref_params_s@@@Z,DisableWorldDrawing,PARANOIA,cl_dll/gl_renderer.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__gl_renderer.obj:score3,
@@ -1563,7 +1645,7 @@ client,10062FE0,227,?SetTexPointer@@YAXHH@Z,SetTexPointer,PARANOIA,guess:cl_dll/
 client,100630E0,104,?SetTextureMatrix@@YAXHHH@Z,SetTextureMatrix,PARANOIA,cl_dll/gl_rsurf.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__gl_rsurf.obj:score5,
 client,10063150,389,?SetupTexMatrix@@YAXPAUmsurface_s@@ABVVector@@@Z,SetupTexMatrix,PARANOIA,cl_dll/gl_rsurf.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__gl_rsurf.obj:score7,
 client,100632E0,361,?SetupTexMatrix_Reflected@@YAXPAUmsurface_s@@ABVVector@@@Z,SetupTexMatrix_Reflected,PARANOIA,cl_dll/gl_rsurf.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__gl_rsurf.obj:score7,
-client,10063450,808,,,UNKNOWN,,,,TODO,,,
+client,10063450,808,?CheckSky@@YAXXZ,CheckSky,UNKNOWN,,,,MATCHED,100,client_manual.csv,
 client,10063780,1997,?DrawSky@@YAXXZ,DrawSky,PARANOIA,,,,MATCHED,100,reloc:1005FF50,
 client,10063F50,82,?InitSky@@YAXXZ,InitSky,PARANOIA,cl_dll/gl_sky.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__gl_sky.obj:score9,
 client,10063FB0,132,?MsgSkyMarker_Sky@@YAHPBDHPAX@Z,MsgSkyMarker_Sky,PARANOIA,cl_dll/gl_sky.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__gl_sky.obj:score13,
@@ -1572,29 +1654,29 @@ client,100640A0,91,?ResetSky@@YAXXZ,ResetSky,PARANOIA,cl_dll/gl_sky.cpp,,,MATCHE
 client,10064100,101,?SetSkyAngles@@YAXXZ,SetSkyAngles,PARANOIA,cl_dll/gl_sky.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__gl_sky.obj:score11,
 client,10064170,84,?StoreSkyboxEntity@@YAXPAUcl_entity_s@@@Z,StoreSkyboxEntity,PARANOIA,cl_dll/gl_sky.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__gl_sky.obj:score6,
 client,100641D0,192,?guess_LoadFaceTexture@@YAXXZ,guess_LoadFaceTexture,UNKNOWN,cl_dll/gl_studiomodel.cpp,,,MATCHED,100,client_manual.csv,
-client,100642B0,131,?guess_LoadGloveTexture@@YAXXZ,guess_LoadGloveTexture,UNKNOWN,cl_dll/gl_studiomodel.cpp,,,MATCHED,100,,
+client,100642B0,131,?guess_LoadGloveTexture@@YAXH@Z,guess_LoadGloveTexture,UNKNOWN,cl_dll/gl_studiomodel.cpp,,,MATCHED,100,client_manual.csv,
 client,10064340,735,?guess_LoadHoodieTexture@@YAX_N@Z,guess_LoadHoodieTexture,UNKNOWN,cl_dll/gl_studiomodel.cpp,,,MATCHED,100,client_manual.csv,
 client,10064680,471,?guess_LoadIntroductionTexture@@YAXH@Z,guess_LoadIntroductionTexture,UNKNOWN,cl_dll/gl_studiomodel.cpp,,,MATCHED,100,client_manual.csv,
 client,10064870,85,?guess_LoadPageLockedTexture@@YAXXZ,guess_LoadPageLockedTexture,UNKNOWN,cl_dll/gl_studiomodel.cpp,,,MATCHED,100,,
 client,100648D0,360,?guess_LoadHandsTexture@@YAXPAD@Z,guess_LoadHandsTexture,UNKNOWN,cl_dll/gl_studiomodel.cpp,,,MATCHED,100,,
-client,10064A40,117,?guess_LoadPoliceSleeveTexture@@YAXXZ,guess_LoadPoliceSleeveTexture,UNKNOWN,cl_dll/gl_studiomodel.cpp,,,MATCHED,100,client_manual.csv,
+client,10064A40,117,?guess_LoadPoliceSleeveTexture@@YAXH@Z,guess_LoadPoliceSleeveTexture,UNKNOWN,cl_dll/gl_studiomodel.cpp,,,MATCHED,100,client_manual.csv,
 client,10064AC0,327,?guess_CaptureScreenTexture@@YAXHH@Z,guess_CaptureScreenTexture,UNKNOWN,cl_dll/gl_studiomodel.cpp,,,MATCHED,100,client_manual.csv,
 client,10064C10,327,?guess_CaptureBlurTexture@@YAXHHHH@Z,guess_CaptureBlurTexture,UNKNOWN,cl_dll/gl_studiomodel.cpp,,,MATCHED,100,client_manual.csv,
 client,10064D60,304,?guess_LoadSleeveTexture@@YAXXZ,guess_LoadSleeveTexture,UNKNOWN,cl_dll/gl_studiomodel.cpp,,,MATCHED,100,,
 client,10064EC0,232,?guess_LoadJeansTexture@@YAXXZ,guess_LoadJeansTexture,UNKNOWN,cl_dll/gl_studiomodel.cpp,,,MATCHED,100,client_manual.csv,
 client,10064FF0,85,?guess_LoadWaterLoTexture@@YAXXZ,guess_LoadWaterLoTexture,UNKNOWN,cl_dll/gl_studiomodel.cpp,,,MATCHED,100,client_manual.csv,
 client,10065050,439,?Chrome@CStudioModelRenderer@@QAEXPAHHVVector@@@Z,CStudioModelRenderer::Chrome,UNKNOWN,cl_dll/gl_studiomodel.cpp,,,MATCHED,100,,
-client,10065210,67,,,UNKNOWN,,,,TODO,,,
-client,10065260,1186,,,UNKNOWN,,,,TODO,,,
+client,10065210,67,?guess_VecDistance@@YAMVVector@@0@Z,guess_VecDistance,UNKNOWN,,,,MATCHED,100,client_manual.csv,
+client,10065260,1186,?guess_UpdatePlayerFlashlights@@YAXXZ,guess_UpdatePlayerFlashlights,UNKNOWN,,,,MATCHED,100,client_manual.csv,
 client,10065710,383,?EXT_LightPoint@@YAXVVector@@PAUlighting_ext@@H@Z,EXT_LightPoint,PARANOIA,cl_dll/gl_studiomodel.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__gl_studiomodel.obj:score13,
 client,10065890,1618,?EXT_RecursiveLightPoint@@YAHPAUmnode_s@@ABVVector@@1PAUlighting_ext@@@Z,EXT_RecursiveLightPoint,PARANOIA,cl_dll/gl_studiomodel.cpp,,,MATCHED,100,reloc:10065710,
-client,10065EF0,6481,?GL_DrawPoints@CStudioModelRenderer@@QAEXXZ,CStudioModelRenderer::GL_DrawPoints,PARANOIA,cl_dll/gl_studiomodel.cpp,,,TODO,18.74,client_1.6a_ghidra_names.csv,
+client,10065EF0,6481,?GL_DrawPoints@CStudioModelRenderer@@QAEXXZ,CStudioModelRenderer::GL_DrawPoints,PARANOIA,cl_dll/gl_studiomodel.cpp,,,TODO,96.01,client_1.6a_ghidra_names.csv,
 client,10067850,104,?GL_RestoreRenderer@CStudioModelRenderer@@QAEXXZ,CStudioModelRenderer::GL_RestoreRenderer,PARANOIA,cl_dll/gl_studiomodel.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__gl_studiomodel.obj:score7,
-client,100678D0,3720,?GL_SetupLighting@CStudioModelRenderer@@QAEXXZ,CStudioModelRenderer::GL_SetupLighting,UNKNOWN,cl_dll/gl_studiomodel.cpp,,,TODO,41.14,,
+client,100678D0,3720,?GL_SetupLighting@CStudioModelRenderer@@QAEXXZ,CStudioModelRenderer::GL_SetupLighting,UNKNOWN,cl_dll/gl_studiomodel.cpp,,,TODO,98.03,,
 client,10068770,91,?GL_SetupModel@CStudioModelRenderer@@QAEXH@Z,CStudioModelRenderer::GL_SetupModel,PARANOIA,cl_dll/gl_studiomodel.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__gl_studiomodel.obj:score2,
 client,100687D0,1193,?GL_SetupRenderer@CStudioModelRenderer@@QAEXH@Z,CStudioModelRenderer::GL_SetupRenderer,PARANOIA,cl_dll/gl_studiomodel.cpp,,,MATCHED,100,client_1.6a_ghidra_names.csv,
 client,10068C80,235,?GL_SetupTextureHeader@CStudioModelRenderer@@QAEXXZ,CStudioModelRenderer::GL_SetupTextureHeader,PARANOIA,cl_dll/gl_studiomodel.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__gl_studiomodel.obj:score10,
-client,10068D70,804,?Lighting@CStudioModelRenderer@@QAEXAAVVector@@HHV2@@Z,CStudioModelRenderer::Lighting,UNKNOWN,cl_dll/gl_studiomodel.cpp,,,TODO,68.61,,
+client,10068D70,804,?Lighting@CStudioModelRenderer@@QAEXAAVVector@@HHV2@@Z,CStudioModelRenderer::Lighting,UNKNOWN,cl_dll/gl_studiomodel.cpp,,,MATCHED,100,,
 client,100690A0,77,?PARSE_COLOR@@YAXAAVVector@@PAUcolor24@@@Z,PARSE_COLOR,PARANOIA,cl_dll/gl_studiomodel.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__gl_studiomodel.obj:score1,
 client,100690F0,138,?VectorIRotate@@YAXABVVector@@QAY03$$CBMAAV1@@Z,VectorIRotate,PARANOIA,cl_dll/gl_studiomodel.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__gl_studiomodel.obj:score0,
 client,10069180,138,?VectorRotate@@YAXABVVector@@QAY03$$CBMAAV1@@Z,VectorRotate,PARANOIA,cl_dll/gl_studiomodel.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__gl_studiomodel.obj:score0,
@@ -1602,7 +1684,7 @@ client,10069210,53,??0DetailTexture@@QAE@PADH@Z,DetailTexture::DetailTexture,PAR
 client,10069250,50,??0ExtTextureData@@QAE@PAD@Z,ExtTextureData::ExtTextureData,PARANOIA,cl_dll/gl_texloader.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__gl_texloader.obj:score0,
 client,10069290,28,??1DetailTexture@@QAE@XZ,DetailTexture::~DetailTexture,PARANOIA,cl_dll/gl_texloader.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__gl_texloader.obj:score2,
 client,100692B0,28,??1ExtTextureData@@QAE@XZ,ExtTextureData::~ExtTextureData,PARANOIA,cl_dll/gl_texloader.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__gl_texloader.obj:score2,
-client,100692D0,254,,,UNKNOWN,guess:cl_dll/gl_texloader.cpp,,,TODO,,,
+client,100692D0,254,?guess_CheckTexture@@YAHPBD@Z,guess_CheckTexture,UNKNOWN,guess:cl_dll/gl_texloader.cpp,,,MATCHED,100,client_manual.csv,
 client,100693D0,60,?CompareDetailIDs@@YAHPAUtexture_s@@0@Z,CompareDetailIDs,PARANOIA,cl_dll/gl_texloader.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__gl_texloader.obj:score0,
 client,10069410,541,?CreateExtDataForTextures@@YAXXZ,CreateExtDataForTextures,PARANOIA,guess:cl_dll/gl_texloader.cpp,,,MATCHED,100,similar:0.59,
 client,10069630,1209,?CreateTexture@@YAHPBDHH@Z,CreateTexture,PARANOIA,guess:cl_dll/gl_texloader.cpp,,,MATCHED,100,reloc:10058FC0,
@@ -1615,6 +1697,7 @@ client,1006A1F0,284,?LoadCacheTexture@@YAHPBDHH@Z,LoadCacheTexture,PARANOIA,cl_d
 client,1006A310,257,?NormalizeMipMap@@YAXPAUcolor24@@HH@Z,NormalizeMipMap,PARANOIA,cl_dll/gl_texloader.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__gl_texloader.obj:score4,
 client,1006A420,705,?ParseDetailTextureDataFile@@YAHXZ,ParseDetailTextureDataFile,PARANOIA,cl_dll/gl_texloader.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__gl_texloader.obj:score29,
 client,1006A6F0,188,?SortTexturesByDetailTexID@@YAXXZ,SortTexturesByDetailTexID,PARANOIA,,,,MATCHED,100,similar:0.50,
+client,1006A7B0,3,,,UNKNOWN,,,,TODO,,,found by tools/gaps.py (no Ghidra function before)
 client,1006A7C0,139,?AlphaDist@@YAMABVVector@@0M@Z,AlphaDist,PARANOIA,cl_dll/grass.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__grass.obj:score3,
 client,1006A850,521,?DrawSpriteFacingPlayer@@YAXPAUgrass_sprite_s@@PAUgrass_type_s@@ABVVector@@M@Z,DrawSpriteFacingPlayer,PARANOIA,cl_dll/grass.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__grass.obj:score12,
 client,1006AA60,474,?DrawSpriteParallel@@YAXPAUgrass_sprite_s@@PAUgrass_type_s@@ABVVector@@M@Z,DrawSpriteParallel,PARANOIA,cl_dll/grass.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__grass.obj:score11,
@@ -1624,7 +1707,6 @@ client,1006AED0,766,?GrassDraw@@YAXXZ,GrassDraw,UNKNOWN,cl_dll/grass.cpp,,,MATCH
 client,1006B1D0,20,?GrassInit@@YAXXZ,GrassInit,PARANOIA,cl_dll/grass.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__grass.obj:score2,
 client,1006B1F0,51,?GrassVidInit@@YAXXZ,GrassVidInit,PARANOIA,cl_dll/grass.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__grass.obj:score1,
 client,1006B230,33,?MsgGrassInfo@@YAHPBDHPAX@Z,MsgGrassInfo,PARANOIA,guess:cl_dll/grass.cpp,,,MATCHED,100,reloc:1006B1D0,
-client,1006B251,524,,,UNKNOWN,guess:cl_dll/grass.cpp,,,TODO,,,
 client,1006B460,369,?PlaceGrassModel@@YAXPAUgrass_type_s@@PAUcl_entity_s@@@Z,PlaceGrassModel,PARANOIA,cl_dll/grass.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__grass.obj:score5,
 client,1006B5E0,398,?PlaceGrassSprite@@YAXPAUgrass_type_s@@PAUgrass_sprite_s@@@Z,PlaceGrassSprite,PARANOIA,guess:cl_dll/grass.cpp,,,MATCHED,100,reloc:1006B8C0,
 client,1006B770,322,?UpdateGrassModelPosition@@YAXPAUgrass_type_s@@PAUcl_entity_s@@ABVVector@@2@Z,UpdateGrassModelPosition,PARANOIA,cl_dll/grass.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__grass.obj:score4,
@@ -1637,7 +1719,7 @@ client,1006BD00,82,?GetPainColor@CHudHealth@@QAEXAAH00@Z,CHudHealth::GetPainColo
 client,1006BD60,186,?Init@CHudHealth@@UAEHXZ,CHudHealth::Init,UNKNOWN,cl_dll/health.cpp,,,MATCHED,100,,
 client,1006BE20,238,?MsgFunc_AdLib@CHudHealth@@QAEHPBDHPAX@Z,CHudHealth::MsgFunc_AdLib,UNKNOWN,cl_dll/health.cpp,,,MATCHED,100,,
 client,1006BF10,181,?MsgFunc_Damage@CHudHealth@@QAEHPBDHPAX@Z,CHudHealth::MsgFunc_Damage,UNKNOWN,cl_dll/health.cpp,,,MATCHED,100,,
-client,1006BFE0,152,?MsgFunc_Health@CHudHealth@@QAEHPBDHPAX@Z,CHudHealth::MsgFunc_Health,UNKNOWN,cl_dll/health.cpp,,,TODO,91.48,,
+client,1006BFE0,152,?MsgFunc_Health@CHudHealth@@QAEHPBDHPAX@Z,CHudHealth::MsgFunc_Health,UNKNOWN,cl_dll/health.cpp,,,MATCHED,100,,
 client,1006C080,98,?MsgFunc_Syringe@CHudHealth@@QAEHPBDHPAX@Z,CHudHealth::MsgFunc_Syringe,UNKNOWN,cl_dll/health.cpp,,,MATCHED,100,,
 client,1006C0F0,64,?Reset@CHudHealth@@UAEXXZ,CHudHealth::Reset,UNKNOWN,cl_dll/health.cpp,,,MATCHED,100,,
 client,1006C130,354,?UpdateTiles@CHudHealth@@AAEXMJ@Z,CHudHealth::UpdateTiles,UNKNOWN,cl_dll/health.cpp,,,MATCHED,100,,
@@ -1659,6 +1741,7 @@ client,1006C820,35,?CanShowSpeakerLabels@CHLVoiceStatusHelper@@UAE_NXZ,CHLVoiceS
 client,1006C850,36,??_GCHLVoiceStatusHelper@@UAEPAXI@Z,destructor',UNKNOWN,guess:cl_dll/hud.cpp,,,MATCHED,100,client_manual.csv,
 client,1006C880,36,??_GIVoiceStatusHelper@@UAEPAXI@Z,destructor',UNKNOWN,guess:cl_dll/hud.cpp,,,MATCHED,100,client_manual.csv,
 client,1006C8B0,339,??1CHud@@QAE@XZ,CHud::~CHud,UNKNOWN,guess:cl_dll/hud.cpp,,,MATCHED,100,client_manual.csv,
+client,1006CA10,7,??1CBlackBar@@UAE@XZ,CBlackBar::~CBlackBar,UNKNOWN,cl_dll/hud.cpp,,,TODO,99.99,,"relocation targets differ (instructions identical): retail IVoiceStatusHelper::vftable, ours ??_7CHudBase@@6B@"
 client,1006CA20,82,?AddHudElem@CHud@@QAEXPAVCHudBase@@@Z,CHud::AddHudElem,HLSDK,cl_dll/hud.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__hud.obj:score0,
 client,1006CA80,132,?COM_FileBase@@YAXPBDPAD@Z,COM_FileBase,HLSDK,cl_dll/hud.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__hud.obj:score1,
 client,1006CB10,684,?guess_GetKeyForCommand@CHud@@QAEPADPAD@Z,CHud::guess_GetKeyForCommand,UNKNOWN,guess:cl_dll/hud.cpp,,,MATCHED,100,client_manual.csv,
@@ -1673,7 +1756,18 @@ client,1006D980,35,?MsgFunc_Logo@CHud@@QAAHPBDHPAX@Z,CHud::MsgFunc_Logo,HLSDK,cl
 client,1006D9B0,29,?MsgFunc_SetFOV@CHud@@QAAHPBDHPAX@Z,CHud::MsgFunc_SetFOV,HLSDK,cl_dll/hud.cpp,,,MATCHED,100,client_manual.csv,
 client,1006D9D0,16,?guess_AddUnknown5590@CHud@@QAEHH@Z,CHud::guess_AddUnknown5590,UNKNOWN,cl_dll/hud.cpp,,,MATCHED,100,,
 client,1006D9E0,2063,?VidInit@CHud@@QAEXXZ,CHud::VidInit,HLSDK,guess:cl_dll/hud.cpp,,,MATCHED,100,client_1.6a_ghidra_names.csv,
+client,1006E1F0,13,?__CmdFunc_guess_BeginSPGame@@YAXXZ,__CmdFunc_guess_BeginSPGame,UNKNOWN,,,,MATCHED,100,client_manual.csv,found by tools/gaps.py (no Ghidra function before)
+client,1006E200,15,?__CmdFunc_CloseCommandMenu@@YAXXZ,__CmdFunc_CloseCommandMenu,UNKNOWN,,,,MATCHED,100,client_manual.csv,found by tools/gaps.py (no Ghidra function before)
 client,1006E210,202,?__CmdFunc_guess_DonatorCheck@@YAXXZ,__CmdFunc_guess_DonatorCheck,UNKNOWN,guess:cl_dll/hud.cpp,,,EQUIVALENT,71.82,client_manual.csv,"EQUIVALENT: block layout differs; retail uses cmove for iDonator = 3 (not group 1, group 2 set) and jumps for the group 1 branch, ours the opposite with cmove for = 2 (10 variants)"
+client,1006E2E0,11,?__CmdFunc_guess_FinishLadder@@YAXXZ,__CmdFunc_guess_FinishLadder,UNKNOWN,,,,MATCHED,100,client_manual.csv,found by tools/gaps.py (no Ghidra function before)
+client,1006E2F0,15,?__CmdFunc_ForceCloseCommandMenu@@YAXXZ,__CmdFunc_ForceCloseCommandMenu,UNKNOWN,,,,MATCHED,100,client_manual.csv,found by tools/gaps.py (no Ghidra function before)
+client,1006E300,15,?__CmdFunc_InputPlayerSpecial@@YAXXZ,__CmdFunc_InputPlayerSpecial,UNKNOWN,,,,MATCHED,100,client_manual.csv,found by tools/gaps.py (no Ghidra function before)
+client,1006E310,3,?__CmdFunc_guess_MP3Player@@YAXXZ,__CmdFunc_guess_MP3Player,UNKNOWN,,,,MATCHED,100,client_manual.csv,found by tools/gaps.py (no Ghidra function before)
+client,1006E320,22,?__CmdFunc_OpenCommandMenu@@YAXXZ,__CmdFunc_OpenCommandMenu,UNKNOWN,,,,MATCHED,100,client_manual.csv,found by tools/gaps.py (no Ghidra function before)
+client,1006E340,13,?__CmdFunc_guess_ReturnMenu@@YAXXZ,__CmdFunc_guess_ReturnMenu,UNKNOWN,,,,MATCHED,100,client_manual.csv,found by tools/gaps.py (no Ghidra function before)
+client,1006E350,15,?__CmdFunc_StopMP3@@YAXXZ,__CmdFunc_StopMP3,UNKNOWN,,,,MATCHED,100,client_manual.csv,found by tools/gaps.py (no Ghidra function before)
+client,1006E360,5,?__CmdFunc_guess_TextureTest@@YAXXZ,__CmdFunc_guess_TextureTest,UNKNOWN,,,,MATCHED,100,client_manual.csv,found by tools/gaps.py (no Ghidra function before)
+client,1006E370,51,?__CmdFunc_guess_To3DMenu@@YAXXZ,__CmdFunc_guess_To3DMenu,UNKNOWN,,,,MATCHED,100,client_manual.csv,found by tools/gaps.py (no Ghidra function before)
 client,1006E440,27,?__MsgFunc_AddNote@@YAHPBDHPAX@Z,__MsgFunc_AddNote,UNKNOWN,cl_dll/hud.cpp,,,MATCHED,100,,
 client,1006E460,32,?__MsgFunc_AddShine@@YAHPBDHPAX@Z,__MsgFunc_AddShine,UNKNOWN,cl_dll/hud.cpp,,,MATCHED,100,,
 client,1006E480,33,?__MsgFunc_AllowSpec@@YAHPBDHPAX@Z,__MsgFunc_AllowSpec,LIB,,,,,,refbytes:paranoia:cl_dll__hud.obj:score2,
@@ -1789,6 +1883,7 @@ client,10071A30,177,?MsgFunc_UnreadSMS@CHud@@QAAHPBDHPAX@Z,CHud::MsgFunc_UnreadS
 client,10071AF0,38,?MsgFunc_ViewEntity@CHud@@QAAHPBDHPAX@Z,CHud::MsgFunc_ViewEntity,UNKNOWN,cl_dll/hud_msg.cpp,,,MATCHED,100,client_manual.csv,
 client,10071B20,126,?MsgFunc_ViewKnock@CHud@@QAAHPBDHPAX@Z,CHud::MsgFunc_ViewKnock,UNKNOWN,cl_dll/hud_msg.cpp,,,MATCHED,100,client_manual.csv,
 client,10071BA0,159,?MsgFunc_ViewLock@CHud@@QAAHPBDHPAX@Z,CHud::MsgFunc_ViewLock,UNKNOWN,cl_dll/hud_msg.cpp,,,MATCHED,100,client_manual.csv,
+client,10071C40,5,?MsgFunc_ViewMode@CHud@@QAAXPBDHPAX@Z,CHud::MsgFunc_ViewMode,UNKNOWN,,,,TODO,,client_manual.csv,found by tools/gaps.py (no Ghidra function before)
 client,10071C50,49,?MsgFunc_WeaponBody@CHud@@QAAHPBDHPAX@Z,CHud::MsgFunc_WeaponBody,UNKNOWN,cl_dll/hud_msg.cpp,,,MATCHED,100,client_manual.csv,
 client,10071C90,100,?MsgFunc_Wheelchair@CHud@@QAAHPBDHPAX@Z,CHud::MsgFunc_Wheelchair,UNKNOWN,cl_dll/hud_msg.cpp,,,MATCHED,100,client_manual.csv,
 client,10071D00,124,?strstrtolower@@YA_NPAD0@Z,strstrtolower,UNKNOWN,cl_dll/hud_msg.cpp,,,MATCHED,100,client_manual.csv,
@@ -1809,6 +1904,7 @@ client,10073A50,122,??0CHudServers@@QAE@XZ,CHudServers::CHudServers,HLSDK,cl_dll
 client,10073AD0,148,??1CHudServers@@QAE@XZ,CHudServers::~CHudServers,UNKNOWN,cl_dll/hud_servers.cpp,,,MATCHED,100,,
 client,10073B70,141,?AddServer@CHudServers@@QAEXPAPAUserver_s@1@PAU21@@Z,CHudServers::AddServer,HLSDK,cl_dll/hud_servers.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__hud_servers.obj:score2,
 client,10073C00,23,?BroadcastServersList@@YAXH@Z,BroadcastServersList,UNKNOWN,cl_dll/hud_servers.cpp,,,MATCHED,100,,
+client,10073C20,40,?CancelRequest@CHudServers@@QAEXXZ,CHudServers::CancelRequest,UNKNOWN,,,,MATCHED,100,client_manual.csv,found by tools/gaps.py (no Ghidra function before)
 client,10073C50,49,?ClearRequestList@CHudServers@@QAEXPAPAUrequest_s@1@@Z,CHudServers::ClearRequestList,HLSDK,cl_dll/hud_servers.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__hud_servers.obj:score1,
 client,10073C90,59,?ClearServerList@CHudServers@@QAEXPAPAUserver_s@1@@Z,CHudServers::ClearServerList,UNKNOWN,cl_dll/hud_servers.cpp,,,MATCHED,100,,
 client,10073CD0,145,?CompareField@@YAHPAUserver_s@CHudServers@@0PBDH@Z,CompareField,HLSDK,cl_dll/hud_servers.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__hud_servers.obj:score5,
@@ -1816,6 +1912,7 @@ client,10073D70,115,?CompareServers@CHudServers@@QAEHPAUserver_s@1@0@Z,CHudServe
 client,10073DF0,33,?FindRequest@CHudServers@@QAEPAUrequest_s@1@HPAU21@@Z,CHudServers::FindRequest,HLSDK,cl_dll/hud_servers.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__hud_servers.obj:score0,
 client,10073E20,26,?FnServerCompare@@YAHPBX0@Z,FnServerCompare,UNKNOWN,cl_dll/hud_servers.cpp,,,MATCHED,100,,
 client,10073E40,35,?GetServer@CHudServers@@AAEPAUserver_s@1@H@Z,CHudServers::GetServer,HLSDK,cl_dll/hud_servers.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__hud_servers.obj:score0,
+client,10073E70,7,?GetServerCount@CHudServers@@QAEHXZ,CHudServers::GetServerCount,UNKNOWN,,,,MATCHED,100,client_manual.csv,found by tools/gaps.py (no Ghidra function before)
 client,10073E80,28,?GetServerInfo@CHudServers@@QAEPADH@Z,CHudServers::GetServerInfo,UNKNOWN,cl_dll/hud_servers.cpp,,,MATCHED,100,,
 client,10073EA0,23,?ListResponse@@YAXPAUnet_response_s@@@Z,ListResponse,UNKNOWN,cl_dll/hud_servers.cpp,,,MATCHED,100,,
 client,10073EC0,125,?ListResponse@CHudServers@@QAEXPAUnet_response_s@@@Z,CHudServers::ListResponse,HLSDK,cl_dll/hud_servers.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__hud_servers.obj:score3,
@@ -1850,6 +1947,7 @@ client,10074B80,33,?ServersThink@@YAXN@Z,ServersThink,UNKNOWN,cl_dll/hud_servers
 client,10074BB0,23,?SortServers@@YAXPBD@Z,SortServers,UNKNOWN,cl_dll/hud_servers.cpp,,,MATCHED,100,,
 client,10074BD0,219,?SortServers@CHudServers@@QAEXPBD@Z,CHudServers::SortServers,UNKNOWN,cl_dll/hud_servers.cpp,,,MATCHED,100,,
 client,10074CB0,117,?Think@CHudServers@@QAEXN@Z,CHudServers::Think,UNKNOWN,cl_dll/hud_servers.cpp,,,MATCHED,100,,
+client,10074D30,12,?isQuerying@CHudServers@@QAEHXZ,CHudServers::isQuerying,UNKNOWN,,,,MATCHED,100,client_manual.csv,found by tools/gaps.py (no Ghidra function before)
 client,10074D40,115,?AddOverviewEntity@CHudSpectator@@QAE_NHPAUcl_entity_s@@PBD@Z,CHudSpectator::AddOverviewEntity,HLSDK,cl_dll/hud_spectator.cpp,,,MATCHED,100,client_1.6a_ghidra_names.csv,
 client,10074DC0,86,?AddOverviewEntityToList@CHudSpectator@@QAE_NHPAUcl_entity_s@@N@Z,CHudSpectator::AddOverviewEntityToList,HLSDK,cl_dll/hud_spectator.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__hud_spectator.obj:score0,
 client,10074E20,60,?CheckOverviewEntities@CHudSpectator@@QAEXXZ,CHudSpectator::CheckOverviewEntities,HLSDK,cl_dll/hud_spectator.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__hud_spectator.obj:score1,
@@ -1857,6 +1955,7 @@ client,10074E60,435,?CheckSettings@CHudSpectator@@QAEXXZ,CHudSpectator::CheckSet
 client,10075020,84,?DeathMessage@CHudSpectator@@QAEXH@Z,CHudSpectator::DeathMessage,HLSDK,cl_dll/hud_spectator.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__hud_spectator.obj:score4,
 client,10075080,808,?DirectorMessage@CHudSpectator@@QAEXHPAX@Z,CHudSpectator::DirectorMessage,HLSDK,cl_dll/hud_spectator.cpp,,,MATCHED,100,client_1.6a_ghidra_names.csv,
 client,100753E0,874,?Draw@CHudSpectator@@UAEHM@Z,CHudSpectator::Draw,HLSDK,cl_dll/hud_spectator.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__hud_spectator.obj:score24,
+client,10075750,78,?DrawOverview@CHudSpectator@@QAEXXZ,CHudSpectator::DrawOverview,UNKNOWN,cl_dll/hud_spectator.cpp,,,MATCHED,100,,found by tools/gaps.py (no Ghidra function before)
 client,100757B0,2786,?DrawOverviewEntities@CHudSpectator@@QAEXXZ,CHudSpectator::DrawOverviewEntities,HLSDK,cl_dll/hud_spectator.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__hud_spectator.obj:score107,
 client,100762A0,1459,?DrawOverviewLayer@CHudSpectator@@QAEXXZ,CHudSpectator::DrawOverviewLayer,UNKNOWN,cl_dll/hud_spectator.cpp,,,MATCHED,100,,
 client,10076860,446,?FindNextPlayer@CHudSpectator@@QAEX_N@Z,CHudSpectator::FindNextPlayer,HLSDK,cl_dll/hud_spectator.cpp,,,MATCHED,100,client_1.6a_ghidra_names.csv,
@@ -1887,12 +1986,51 @@ client,10078670,436,?CL_ButtonBits@@YAHH@Z,CL_ButtonBits,UNKNOWN,cl_dll/input.cp
 client,10078830,12,?CL_IsDead@@YAHXZ,CL_IsDead,UNKNOWN,cl_dll/input.cpp,,,MATCHED,100,,
 client,10078840,165,?CL_KeyState@@YAMPAUkbutton_s@@@Z,CL_KeyState,HLSDK,cl_dll/input.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__input.obj:score2,
 client,100788F0,9,?CL_ResetButtonBits@@YAXH@Z,CL_ResetButtonBits,UNKNOWN,cl_dll/input.cpp,,,MATCHED,100,,
+client,10078900,12,?IN_Alt1Down@@YAXXZ,IN_Alt1Down,UNKNOWN,,,,MATCHED,100,client_manual.csv,found by tools/gaps.py (no Ghidra function before)
+client,10078910,12,?IN_Alt1Up@@YAXXZ,IN_Alt1Up,UNKNOWN,,,,MATCHED,100,client_manual.csv,found by tools/gaps.py (no Ghidra function before)
+client,10078920,234,?IN_Attack2Down@@YAXXZ,IN_Attack2Down,UNKNOWN,,,,MATCHED,100,client_manual.csv,found by tools/gaps.py (no Ghidra function before)
+client,10078A10,35,?IN_Attack2Up@@YAXXZ,IN_Attack2Up,UNKNOWN,,,,MATCHED,100,client_manual.csv,found by tools/gaps.py (no Ghidra function before)
+client,10078A40,142,?IN_Attack3Down@@YAXXZ,IN_Attack3Down,UNKNOWN,,,,MATCHED,100,client_manual.csv,found by tools/gaps.py (no Ghidra function before)
+client,10078AD0,12,?IN_Attack3Up@@YAXXZ,IN_Attack3Up,UNKNOWN,,,,MATCHED,100,client_manual.csv,found by tools/gaps.py (no Ghidra function before)
 client,10078AE0,543,?IN_AttackDown@@YAXXZ,IN_AttackDown,UNKNOWN,cl_dll/input.cpp,,,MATCHED,100,client_manual.csv,
+client,10078D00,45,?IN_AttackUp@@YAXXZ,IN_AttackUp,UNKNOWN,,,,MATCHED,100,client_manual.csv,found by tools/gaps.py (no Ghidra function before)
 client,10078D30,245,?IN_BackDown@@YAXXZ,IN_BackDown,UNKNOWN,cl_dll/input.cpp,,,MATCHED,100,client_manual.csv,
+client,10078E30,47,?IN_BackUp@@YAXXZ,IN_BackUp,UNKNOWN,,,,MATCHED,100,client_manual.csv,found by tools/gaps.py (no Ghidra function before)
+client,10078E60,12,?IN_BreakDown@@YAXXZ,IN_BreakDown,UNKNOWN,,,,MATCHED,100,client_manual.csv,found by tools/gaps.py (no Ghidra function before)
+client,10078E70,12,?IN_BreakUp@@YAXXZ,IN_BreakUp,UNKNOWN,,,,MATCHED,100,client_manual.csv,found by tools/gaps.py (no Ghidra function before)
+client,10078E80,11,?IN_Cancel@@YAXXZ,IN_Cancel,UNKNOWN,,,,MATCHED,100,client_manual.csv,found by tools/gaps.py (no Ghidra function before)
+client,10078E90,3,?IN_Documents@@YAXXZ,IN_Documents,UNKNOWN,,,,MATCHED,100,client_manual.csv,found by tools/gaps.py (no Ghidra function before)
+client,10078EA0,12,?IN_DodgeDown@@YAXXZ,IN_DodgeDown,UNKNOWN,,,,MATCHED,100,client_manual.csv,found by tools/gaps.py (no Ghidra function before)
+client,10078EB0,12,?IN_DodgeUp@@YAXXZ,IN_DodgeUp,UNKNOWN,,,,MATCHED,100,client_manual.csv,found by tools/gaps.py (no Ghidra function before)
+client,10078EC0,12,?IN_DownDown@@YAXXZ,IN_DownDown,UNKNOWN,,,,MATCHED,100,client_manual.csv,found by tools/gaps.py (no Ghidra function before)
+client,10078ED0,12,?IN_DownUp@@YAXXZ,IN_DownUp,UNKNOWN,,,,MATCHED,100,client_manual.csv,found by tools/gaps.py (no Ghidra function before)
+client,10078EE0,85,?IN_DuckDown@@YAXXZ,IN_DuckDown,UNKNOWN,,,,MATCHED,100,client_manual.csv,found by tools/gaps.py (no Ghidra function before)
 client,10078F50,245,?IN_ForwardDown@@YAXXZ,IN_ForwardDown,UNKNOWN,cl_dll/input.cpp,,,MATCHED,100,client_manual.csv,
+client,10079050,47,?IN_ForwardUp@@YAXXZ,IN_ForwardUp,UNKNOWN,,,,MATCHED,100,client_manual.csv,found by tools/gaps.py (no Ghidra function before)
+client,10079080,12,?IN_GraphDown@@YAXXZ,IN_GraphDown,UNKNOWN,,,,MATCHED,100,client_manual.csv,found by tools/gaps.py (no Ghidra function before)
+client,10079090,12,?IN_GraphUp@@YAXXZ,IN_GraphUp,UNKNOWN,,,,MATCHED,100,client_manual.csv,found by tools/gaps.py (no Ghidra function before)
+client,100790A0,23,?IN_Impulse@@YAXXZ,IN_Impulse,UNKNOWN,,,,MATCHED,100,client_manual.csv,found by tools/gaps.py (no Ghidra function before)
+client,100790C0,259,?IN_InventoryDown@@YAXXZ,IN_InventoryDown,UNKNOWN,,,,MATCHED,100,client_manual.csv,found by tools/gaps.py (no Ghidra function before)
+client,100791D0,12,?IN_InventoryUp@@YAXXZ,IN_InventoryUp,UNKNOWN,,,,MATCHED,100,client_manual.csv,found by tools/gaps.py (no Ghidra function before)
+client,100791E0,12,?IN_JLookDown@@YAXXZ,IN_JLookDown,UNKNOWN,,,,MATCHED,100,client_manual.csv,found by tools/gaps.py (no Ghidra function before)
+client,100791F0,12,?IN_JLookUp@@YAXXZ,IN_JLookUp,UNKNOWN,,,,MATCHED,100,client_manual.csv,found by tools/gaps.py (no Ghidra function before)
+client,10079200,119,?IN_JumpDown@@YAXXZ,IN_JumpDown,UNKNOWN,,,,MATCHED,100,client_manual.csv,found by tools/gaps.py (no Ghidra function before)
+client,10079280,12,?IN_JumpUp@@YAXXZ,IN_JumpUp,UNKNOWN,,,,MATCHED,100,client_manual.csv,found by tools/gaps.py (no Ghidra function before)
 client,10079340,225,?IN_MoveleftDown@@YAXXZ,IN_MoveleftDown,UNKNOWN,cl_dll/input.cpp,,,MATCHED,100,client_manual.csv,
+client,10079430,29,?IN_MoveleftUp@@YAXXZ,IN_MoveleftUp,UNKNOWN,,,,MATCHED,100,client_manual.csv,found by tools/gaps.py (no Ghidra function before)
 client,10079450,225,?IN_MoverightDown@@YAXXZ,IN_MoverightDown,UNKNOWN,cl_dll/input.cpp,,,MATCHED,100,client_manual.csv,
+client,10079540,38,?IN_MoverightUp@@YAXXZ,IN_MoverightUp,UNKNOWN,,,,MATCHED,100,client_manual.csv,found by tools/gaps.py (no Ghidra function before)
 client,10079570,627,?IN_ObjectivesDown@@YAXXZ,IN_ObjectivesDown,UNKNOWN,cl_dll/input.cpp,,,TODO,99.65,client_manual.csv,
+client,100797F0,12,?IN_ObjectivesUp@@YAXXZ,IN_ObjectivesUp,UNKNOWN,,,,MATCHED,100,client_manual.csv,found by tools/gaps.py (no Ghidra function before)
+client,10079800,77,?guess_IN_XboxFix@@YAXXZ,guess_IN_XboxFix,UNKNOWN,,,,MATCHED,100,client_manual.csv,found by tools/gaps.py (no Ghidra function before)
+client,10079850,35,?IN_ReloadDown@@YAXXZ,IN_ReloadDown,UNKNOWN,,,,MATCHED,100,client_manual.csv,found by tools/gaps.py (no Ghidra function before)
+client,10079880,12,?IN_ReloadUp@@YAXXZ,IN_ReloadUp,UNKNOWN,,,,MATCHED,100,client_manual.csv,found by tools/gaps.py (no Ghidra function before)
+client,10079890,28,?IN_ScoreDown@@YAXXZ,IN_ScoreDown,UNKNOWN,,,,MATCHED,100,client_manual.csv,found by tools/gaps.py (no Ghidra function before)
+client,100798B0,28,?IN_ScoreUp@@YAXXZ,IN_ScoreUp,UNKNOWN,,,,MATCHED,100,client_manual.csv,found by tools/gaps.py (no Ghidra function before)
+client,100798D0,70,?IN_SpeedDown@@YAXXZ,IN_SpeedDown,UNKNOWN,,,,MATCHED,100,client_manual.csv,found by tools/gaps.py (no Ghidra function before)
+client,10079920,12,?IN_SpeedUp@@YAXXZ,IN_SpeedUp,UNKNOWN,,,,MATCHED,100,client_manual.csv,found by tools/gaps.py (no Ghidra function before)
+client,10079930,12,?IN_StrafeDown@@YAXXZ,IN_StrafeDown,UNKNOWN,,,,MATCHED,100,client_manual.csv,found by tools/gaps.py (no Ghidra function before)
+client,10079940,12,?IN_StrafeUp@@YAXXZ,IN_StrafeUp,UNKNOWN,,,,MATCHED,100,client_manual.csv,found by tools/gaps.py (no Ghidra function before)
 client,10079A60,2774,?InitInput@@YAXXZ,InitInput,HLSDK,cl_dll/input.cpp,,,MATCHED,100,reloc:1001D4A0,
 client,1007A540,86,?KB_Add@@YAXPBDPAUkbutton_s@@@Z,KB_Add,HLSDK,cl_dll/input.cpp,,,MATCHED,100,reloc:1007A710,
 client,1007A5A0,357,?KB_ConvertString@@YAHPADPAPAD@Z,KB_ConvertString,HLSDK,cl_dll/input.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__input.obj:score7,
@@ -1913,6 +2051,7 @@ client,1007B580,1360,?IN_MouseMove@@YAXMPAUusercmd_s@@@Z,IN_MouseMove,HLSDK,cl_d
 client,1007BAD0,67,?IN_Move@@YAXMPAUusercmd_s@@@Z,IN_Move,HLSDK,cl_dll/inputw32.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__inputw32.obj:score0,
 client,1007BB20,133,?IN_ReadJoystick@@YAHXZ,IN_ReadJoystick,HLSDK,cl_dll/inputw32.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__inputw32.obj:score11,
 client,1007BBB0,45,?IN_ResetMouse@@YAXXZ,IN_ResetMouse,UNKNOWN,cl_dll/inputw32.cpp,,,MATCHED,100,,
+client,1007BBE0,5,?IN_Shutdown@@YAXXZ,IN_Shutdown,UNKNOWN,,,,MATCHED,100,client_manual.csv,found by tools/gaps.py (no Ghidra function before)
 client,1007BBF0,436,?IN_StartupJoystick@@YAXXZ,IN_StartupJoystick,HLSDK,cl_dll/inputw32.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__inputw32.obj:score35,
 client,1007BDB0,189,?IN_StartupMouse@@YAXXZ,IN_StartupMouse,HLSDK,cl_dll/inputw32.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__inputw32.obj:score8,
 client,1007BE70,552,?Joy_AdvancedUpdate_f@@YAXXZ,Joy_AdvancedUpdate_f,HLSDK,cl_dll/inputw32.cpp,,,MATCHED,100,similar:1.00,
@@ -1923,24 +2062,39 @@ client,1007C1A0,40,_IN_ClearStates,IN_ClearStates,HLSDK,cl_dll/inputw32.cpp,,,MA
 client,1007C1D0,46,_IN_DeactivateMouse,IN_DeactivateMouse,HLSDK,cl_dll/inputw32.cpp,,,MATCHED,100,client_1.6a_exports.csv,
 client,1007C200,106,_IN_MouseEvent,IN_MouseEvent,HLSDK,cl_dll/inputw32.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__inputw32.obj:score7,
 client,1007C270,209,?CAM_ClearStates@@YAXXZ,CAM_ClearStates,HLSDK,cl_dll/in_camera.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__in_camera.obj:score1,
+client,1007C350,31,?CAM_EndDistance@@YAXXZ,CAM_EndDistance,UNKNOWN,cl_dll/in_camera.cpp,,,MATCHED,100,,found by tools/gaps.py (no Ghidra function before)
+client,1007C370,21,?CAM_EndMouseMove@@YAXXZ,CAM_EndMouseMove,UNKNOWN,cl_dll/in_camera.cpp,,,MATCHED,100,,found by tools/gaps.py (no Ghidra function before)
+client,1007C390,12,?CAM_InDown@@YAXXZ,CAM_InDown,UNKNOWN,cl_dll/in_camera.cpp,,,MATCHED,100,,found by tools/gaps.py (no Ghidra function before)
+client,1007C3A0,12,?CAM_InUp@@YAXXZ,CAM_InUp,UNKNOWN,cl_dll/in_camera.cpp,,,MATCHED,100,,found by tools/gaps.py (no Ghidra function before)
 client,1007C3B0,580,?CAM_Init@@YAXXZ,CAM_Init,HLSDK,guess:cl_dll/in_camera.cpp,,,MATCHED,100,similar:0.51,
+client,1007C600,12,?CAM_OutDown@@YAXXZ,CAM_OutDown,UNKNOWN,cl_dll/in_camera.cpp,,,MATCHED,100,,found by tools/gaps.py (no Ghidra function before)
+client,1007C610,12,?CAM_OutUp@@YAXXZ,CAM_OutUp,UNKNOWN,cl_dll/in_camera.cpp,,,MATCHED,100,,found by tools/gaps.py (no Ghidra function before)
+client,1007C620,12,?CAM_PitchDownDown@@YAXXZ,CAM_PitchDownDown,UNKNOWN,cl_dll/in_camera.cpp,,,MATCHED,100,,found by tools/gaps.py (no Ghidra function before)
+client,1007C630,12,?CAM_PitchDownUp@@YAXXZ,CAM_PitchDownUp,UNKNOWN,cl_dll/in_camera.cpp,,,MATCHED,100,,found by tools/gaps.py (no Ghidra function before)
+client,1007C640,12,?CAM_PitchUpDown@@YAXXZ,CAM_PitchUpDown,UNKNOWN,cl_dll/in_camera.cpp,,,MATCHED,100,,found by tools/gaps.py (no Ghidra function before)
+client,1007C650,12,?CAM_PitchUpUp@@YAXXZ,CAM_PitchUpUp,UNKNOWN,cl_dll/in_camera.cpp,,,MATCHED,100,,found by tools/gaps.py (no Ghidra function before)
 client,1007C660,193,?CAM_StartDistance@@YAXXZ,CAM_StartDistance,HLSDK,cl_dll/in_camera.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__in_camera.obj:score12,
 client,1007C730,192,?CAM_StartMouseMove@@YAXXZ,CAM_StartMouseMove,HLSDK,cl_dll/in_camera.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__in_camera.obj:score19,
 client,1007C7F0,33,?CAM_ToFirstPerson@@YAXXZ,CAM_ToFirstPerson,HLSDK,cl_dll/in_camera.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__in_camera.obj:score3,
 client,1007C820,100,?CAM_ToThirdPerson@@YAXXZ,CAM_ToThirdPerson,UNKNOWN,cl_dll/in_camera.cpp,,,MATCHED,100,,
+client,1007C890,47,?CAM_ToggleSnapto@@YAXXZ,CAM_ToggleSnapto,UNKNOWN,cl_dll/in_camera.cpp,,,MATCHED,100,,found by tools/gaps.py (no Ghidra function before)
+client,1007C8C0,12,?CAM_YawLeftDown@@YAXXZ,CAM_YawLeftDown,UNKNOWN,cl_dll/in_camera.cpp,,,MATCHED,100,,found by tools/gaps.py (no Ghidra function before)
+client,1007C8D0,12,?CAM_YawLeftUp@@YAXXZ,CAM_YawLeftUp,UNKNOWN,cl_dll/in_camera.cpp,,,MATCHED,100,,found by tools/gaps.py (no Ghidra function before)
+client,1007C8E0,12,?CAM_YawRightDown@@YAXXZ,CAM_YawRightDown,UNKNOWN,cl_dll/in_camera.cpp,,,MATCHED,100,,found by tools/gaps.py (no Ghidra function before)
+client,1007C8F0,12,?CAM_YawRightUp@@YAXXZ,CAM_YawRightUp,UNKNOWN,cl_dll/in_camera.cpp,,,MATCHED,100,,found by tools/gaps.py (no Ghidra function before)
 client,1007C900,232,?MoveToward@@YAMMMM@Z,MoveToward,HLSDK,cl_dll/in_camera.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__in_camera.obj:score8,
 client,1007C9F0,221,?__MsgFunc_Telescope@@YAHPBDHPAX@Z,__MsgFunc_Telescope,UNKNOWN,cl_dll/in_camera.cpp,,,MATCHED,100,client_manual.csv,
 client,1007CAD0,2051,_CAM_Think,CAM_Think,HLSDK,guess:cl_dll/in_camera.cpp,,,MATCHED,100,client_1.6a_exports.csv,
 client,1007D2E0,46,_CL_CameraOffset,CL_CameraOffset,HLSDK,cl_dll/in_camera.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__in_camera.obj:score3,
 client,1007D310,43,_CL_IsThirdPerson,CL_IsThirdPerson,HLSDK,cl_dll/in_camera.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__in_camera.obj:score4,
-client,1007D340,5,,,UNKNOWN,,,,TODO,,,
-client,1007D350,60,,,UNKNOWN,,,,TODO,,,
-client,1007D390,58,,,UNKNOWN,,,,TODO,,,
-client,1007D3D0,6,,,UNKNOWN,,,,TODO,,,
-client,1007D3E0,24,,,UNKNOWN,,,,TODO,,,
+client,1007D340,5,?Draw@CHudLensflare@@UAEHM@Z,,COF,cl_dll/lensflare.cpp,,,MATCHED,100,,
+client,1007D350,60,?Init@CHudLensflare@@UAEHXZ,,COF,cl_dll/lensflare.cpp,,,MATCHED,100,,
+client,1007D390,58,?MsgFunc_Lensflare@CHudLensflare@@QAEHPBDHPAX@Z,,COF,cl_dll/lensflare.cpp,,,MATCHED,100,,
+client,1007D3D0,6,?VidInit@CHudLensflare@@UAEHXZ,,COF,cl_dll/lensflare.cpp,,,MATCHED,100,,
+client,1007D3E0,24,?__MsgFunc_Lensflare@@YAHPBDHPAX@Z,,COF,cl_dll/lensflare.cpp,,,MATCHED,100,,
 client,1007D400,201,?ConLog@@YAXPBDZZ,ConLog,PARANOIA,cl_dll/log.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__log.obj:score13,
 client,1007D4D0,185,?Log@@YAXPBDZZ,Log,PARANOIA,cl_dll/log.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__log.obj:score12,
-client,1007D590,193,?SetupLogging@@YAXXZ,SetupLogging,PARANOIA,cl_dll/log.cpp,,,TODO,80.85,reloc:1001D4A0,
+client,1007D590,193,?SetupLogging@@YAXXZ,SetupLogging,PARANOIA,cl_dll/log.cpp,,,MATCHED,100,reloc:1001D4A0,
 client,1007D660,324,?Draw@CHudMenu@@UAEHM@Z,CHudMenu::Draw,HLSDK,cl_dll/menu.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__menu.obj:score7,
 client,1007D7B0,47,?Init@CHudMenu@@UAEHXZ,CHudMenu::Init,HLSDK,cl_dll/menu.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__menu.obj:score4,
 client,1007D7E0,19,?InitHUDData@CHudMenu@@UAEXXZ,CHudMenu::InitHUDData,UNKNOWN,cl_dll/menu.cpp,,,MATCHED,100,,
@@ -2006,7 +2160,9 @@ client,10080980,41,?READ_HIRESANGLE@@YAMXZ,READ_HIRESANGLE,UNKNOWN,cl_dll/parsem
 client,100809B0,83,?READ_LONG@@YAHXZ,READ_LONG,HLSDK,cl_dll/parsemsg.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__parsemsg.obj:score4,
 client,10080A10,74,?READ_SHORT@@YAHXZ,READ_SHORT,HLSDK,cl_dll/parsemsg.cpp,,,MATCHED,100,reloc:1001B110,
 client,10080A60,84,?READ_STRING@@YAPADXZ,READ_STRING,HLSDK,cl_dll/parsemsg.cpp,,,MATCHED,100,reloc:1001B040,
+client,10080AC0,5,?READ_WORD@@YAHXZ,READ_WORD,UNKNOWN,cl_dll/parsemsg.cpp,,,MATCHED,100,,found by tools/gaps.py (no Ghidra function before)
 client,10080AD0,9,??0ParticleSystemManager@@QAE@XZ,ParticleSystemManager::ParticleSystemManager,UNKNOWN,cl_dll/particlemgr.cpp,,,MATCHED,100,,
+client,10080AE0,5,??1ParticleSystemManager@@QAE@XZ,ParticleSystemManager::~ParticleSystemManager,UNKNOWN,,,,MATCHED,100,client_manual.csv,found by tools/gaps.py (no Ghidra function before)
 client,10080AF0,16,?AddSystem@ParticleSystemManager@@QAEXPAVParticleSystem@@@Z,ParticleSystemManager::AddSystem,UNKNOWN,cl_dll/particlemgr.cpp,,,MATCHED,100,,
 client,10080B00,55,?ClearSystems@ParticleSystemManager@@QAEXXZ,ParticleSystemManager::ClearSystems,SPIRIT,cl_dll/particlemgr.cpp,,,MATCHED,100,client_1.6a_ghidra_names.csv,
 client,10080B40,74,?DeleteSystemWithEntity@ParticleSystemManager@@QAEXH@Z,ParticleSystemManager::DeleteSystemWithEntity,PARANOIA,cl_dll/particlemgr.cpp,,,MATCHED,100,client_1.6a_ghidra_names.csv,
@@ -2015,19 +2171,20 @@ client,10080BE0,33,?FindSystem@ParticleSystemManager@@QAEPAVParticleSystem@@PAUc
 client,10080C10,117,?SortSystems@ParticleSystemManager@@QAEXXZ,ParticleSystemManager::SortSystems,SPIRIT,cl_dll/particlemgr.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__particlemgr.obj:score1,
 client,10080C90,237,?UpdateSystems@ParticleSystemManager@@QAEXMH@Z,ParticleSystemManager::UpdateSystems,UNKNOWN,cl_dll/particlemgr.cpp,,,TODO,29.84,,
 client,10080D80,8,?Draw@CHudParticle@@UAEHM@Z,CHudParticle::Draw,UNKNOWN,cl_dll/particlemsg.cpp,,,MATCHED,100,,
-client,10080D90,88,,,UNKNOWN,,,,TODO,,,
+client,10080D90,88,?Init@CHudParticle@@UAEHXZ,CHudParticle::Init,UNKNOWN,,,,MATCHED,100,client_manual.csv,
 client,10080DF0,42,?MsgFunc_DelParticle@CHudParticle@@QAEHPBDHPAX@Z,CHudParticle::MsgFunc_DelParticle,PARANOIA,cl_dll/particlemsg.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__particlemsg.obj:score3,
-client,10080E20,26,,,UNKNOWN,guess:cl_dll/particlemsg.cpp,,,TODO,,,
-client,10080E40,50,,,UNKNOWN,guess:cl_dll/particlemsg.cpp,,,TODO,,,
-client,10080E80,368,,,UNKNOWN,guess:cl_dll/particlemsg.cpp,,,TODO,,,
+client,10080E20,26,?MsgFunc_Ignite@CHudParticle@@QAEHPBDHPAX@Z,CHudParticle::MsgFunc_Ignite,UNKNOWN,guess:cl_dll/particlemsg.cpp,,,MATCHED,100,client_manual.csv,
+client,10080E40,50,?MsgFunc_KillWpnPart@CHudParticle@@QAEHPBDHPAX@Z,CHudParticle::MsgFunc_KillWpnPart,UNKNOWN,guess:cl_dll/particlemsg.cpp,,,MATCHED,100,client_manual.csv,
+client,10080E80,368,?MsgFunc_Particle@CHudParticle@@QAEHPBDHPAX@Z,CHudParticle::MsgFunc_Particle,UNKNOWN,cl_dll/particlemsg.cpp,,,MATCHED,100,,
 client,10080FF0,16,?VidInit@CHudParticle@@UAEHXZ,CHudParticle::VidInit,SPIRIT,cl_dll/particlemsg.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__particlemsg.obj:score2,
 client,10081000,24,?__MsgFunc_DelParticle@@YAHPBDHPAX@Z,__MsgFunc_DelParticle,UNKNOWN,cl_dll/particlemsg.cpp,,,MATCHED,100,,
-client,10081020,24,?__MsgFunc_Particle@@YAHPBDHPAX@Z,__MsgFunc_Particle,UNKNOWN,cl_dll/particlemsg.cpp,,,MATCHED,100,,
-client,10081040,24,,,UNKNOWN,,,,TODO,,,
-client,10081060,24,,,UNKNOWN,,,,TODO,,,
-client,10081080,702,??0ParticleSystem@@QAE@HPAD@Z,ParticleSystem::ParticleSystem,SPIRIT,,,,TODO,,client_1.6a_ghidra_names.csv,
+client,10081020,24,?__MsgFunc_Ignite@@YAHPBDHPAX@Z,__MsgFunc_Ignite,UNKNOWN,cl_dll/particlemsg.cpp,,,MATCHED,100,client_manual.csv,
+client,10081040,24,?__MsgFunc_KillWpnPart@@YAHPBDHPAX@Z,__MsgFunc_KillWpnPart,UNKNOWN,,,,MATCHED,100,client_manual.csv,
+client,10081060,24,?__MsgFunc_Particle@@YAHPBDHPAX@Z,__MsgFunc_Particle,UNKNOWN,,,,MATCHED,100,client_manual.csv,
+client,10081080,702,??0ParticleSystem@@QAE@HPADHH0@Z,ParticleSystem::ParticleSystem,SPIRIT,,,,MATCHED,100,client_manual.csv,
 client,10081340,796,??0ParticleType@@QAE@PAV0@@Z,ParticleType::ParticleType,UNKNOWN,cl_dll/particlesys.cpp,,,MATCHED,100,,
 client,10081660,137,??0RandomRange@@QAE@PAD@Z,RandomRange::RandomRange,SPIRIT,cl_dll/particlesys.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__particlesys.obj:score3,
+client,100816F0,3,,,UNKNOWN,,,,TODO,,,found by tools/gaps.py (no Ghidra function before)
 client,10081700,60,??1ParticleSystem@@QAE@XZ,ParticleSystem::~ParticleSystem,UNKNOWN,cl_dll/particlesys.cpp,,,MATCHED,100,,
 client,10081740,31,?ActivateParticle@ParticleSystem@@QAEPAUparticle@@XZ,ParticleSystem::ActivateParticle,UNKNOWN,cl_dll/particlesys.cpp,,,MATCHED,100,,
 client,10081760,82,?AddPlaceholderType@ParticleSystem@@QAEPAVParticleType@@PBD@Z,ParticleSystem::AddPlaceholderType,UNKNOWN,cl_dll/particlesys.cpp,,,MATCHED,100,,
@@ -2044,7 +2201,7 @@ client,100831A0,49,?SinLookup@ParticleSystem@@SAMH@Z,ParticleSystem::SinLookup,S
 client,100831E0,62,?UTIL_GetClientEntityWithServerIndex@@YAPAUcl_entity_s@@H@Z,UTIL_GetClientEntityWithServerIndex,UNKNOWN,cl_dll/particlesys.cpp,,,MATCHED,100,,
 client,10083220,2493,?UpdateParticle@ParticleSystem@@QAE_NPAUparticle@@M@Z,ParticleSystem::UpdateParticle,UNKNOWN,cl_dll/particlesys.cpp,,,MATCHED,100,,
 client,10083C00,648,?UpdateSystem@ParticleSystem@@QAE_NMH@Z,ParticleSystem::UpdateSystem,UNKNOWN,cl_dll/particlesys.cpp,,,MATCHED,100,,
-client,10083E90,386,,,UNKNOWN,,,,TODO,,,
+client,10083E90,386,?BoxOnPlaneSide@@YAHAAVVector@@0PAUmplane_s@@@Z,BoxOnPlaneSide,UNKNOWN,,,,MATCHED,100,client_manual.csv,
 client,10084040,189,?DrawDebugFrustumPlane@@YAXXZ,DrawDebugFrustumPlane,PARANOIA,cl_dll/quake_bsp.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__quake_bsp.obj:score13,
 client,10084100,65,?GL_DisableClipPlanes@FrustumCheck@@QAEXXZ,FrustumCheck::GL_DisableClipPlanes,PARANOIA,cl_dll/quake_bsp.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__quake_bsp.obj:score3,
 client,10084150,1636,?GL_FrustumSetClipPlanes@FrustumCheck@@QAEXXZ,FrustumCheck::GL_FrustumSetClipPlanes,PARANOIA,cl_dll/quake_bsp.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__quake_bsp.obj:score74,
@@ -2059,6 +2216,8 @@ client,10084E40,565,?R_SetFrustum@FrustumCheck@@QAEXVVector@@0MMM@Z,FrustumCheck
 client,10085080,664,?RecursiveLightPoint@@YAHPAUmnode_s@@ABVVector@@1AAV2@@Z,RecursiveLightPoint,PARANOIA,cl_dll/quake_bsp.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__quake_bsp.obj:score5,
 client,10085320,570,?RotatePointAroundVector@@YAXAAVVector@@ABV1@1M@Z,RotatePointAroundVector,UNKNOWN,cl_dll/quake_bsp.cpp,,,MATCHED,100,,
 client,10085560,42,?SignbitsForPlane@@YAHPAUmplane_s@@@Z,SignbitsForPlane,PARANOIA,cl_dll/quake_bsp.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__quake_bsp.obj:score0,
+client,10085590,3,,,UNKNOWN,,,,TODO,,,found by tools/gaps.py (no Ghidra function before)
+client,100855A0,3,,,UNKNOWN,,,,TODO,,,found by tools/gaps.py (no Ghidra function before)
 client,100855B0,67,?guess_VectorDistance@@YAMVVector@@0@Z,guess_VectorDistance,UNKNOWN,cl_dll/rain.cpp,,,MATCHED,100,,
 client,10085600,313,?guess_FallingDripEffect@@YAXVVector@@M@Z,guess_FallingDripEffect,SPIRIT,cl_dll/rain.cpp,,,MATCHED,100,client_manual.csv,
 client,10085740,272,?guess_SplashLandingEffect@@YAXPAUcl_drip@@@Z,guess_SplashLandingEffect,UNKNOWN,cl_dll/rain.cpp,,,MATCHED,100,,
@@ -2068,57 +2227,68 @@ client,10085980,1878,?ProcessRain@@YAXXZ,ProcessRain,UNKNOWN,cl_dll/rain.cpp,,,M
 client,100860E0,163,?ResetRain@@YAXXZ,ResetRain,UNKNOWN,cl_dll/rain.cpp,,,MATCHED,100,client_manual.csv,
 client,10086190,280,?guess_RippleEffect@@YAXVVector@@M@Z,guess_RippleEffect,UNKNOWN,cl_dll/rain.cpp,,,MATCHED,100,,
 client,100862B0,253,?WaterLandingEffect@@YAXPAUcl_drip@@@Z,WaterLandingEffect,UNKNOWN,cl_dll/rain.cpp,,,MATCHED,100,client_manual.csv,
-client,100863B0,20,,,UNKNOWN,,,,TODO,,,
-client,100863D0,20,,,UNKNOWN,,,,TODO,,,
-client,100863F0,294,,,UNKNOWN,,,,TODO,,,
+client,100863B0,20,??0guess_CCgContext@@QAE@XZ,guess_CCgContext::guess_CCgContext,UNKNOWN,cl_dll/guess_CgContext.cpp,,,MATCHED,100,,
+client,100863D0,20,??1guess_CCgContext@@QAE@XZ,guess_CCgContext::~guess_CCgContext,UNKNOWN,cl_dll/guess_CgContext.cpp,,,MATCHED,100,,
+client,100863F0,294,?guess_AddProgram@guess_CCgContext@@QAEPAUguess_cgprogram_s@@PBDH@Z,guess_CCgContext::guess_AddProgram,UNKNOWN,,,,MATCHED,100,client_manual.csv,
 client,10086520,53,?guess_FindProgram@guess_CCgContext@@QAEPAUguess_cgprogram_s@@PBD@Z,,COF,cl_dll/guess_CgContext.cpp,,,MATCHED,100,,
 client,10086560,4,?guess_GetFragmentProfile@guess_CCgContext@@QAE?AW4CGprofile@@XZ,,COF,cl_dll/guess_CgContext.cpp,,,MATCHED,100,,
+client,10086570,4,?guess_IsInitialized@guess_CCgContext@@QAE_NXZ,guess_CCgContext::guess_IsInitialized,UNKNOWN,,,,MATCHED,100,client_manual.csv,found by tools/gaps.py (no Ghidra function before)
 client,10086580,103,?guess_IsProgramValid@guess_CCgContext@@QAE_NPBDH@Z,,COF,cl_dll/guess_CgContext.cpp,,,MATCHED,100,,
 client,100865F0,66,?guess_RemoveProgram@guess_CCgContext@@QAEPAUguess_cgprogram_s@@PAU2@@Z,,COF,cl_dll/guess_CgContext.cpp,,,MATCHED,100,,
 client,10086640,41,?guess_Shutdown@guess_CCgContext@@QAEXXZ,,COF,cl_dll/guess_CgContext.cpp,,,MATCHED,100,,
 client,10086670,83,?guess_Init@guess_CCgContext@@QAE_NXZ,,COF,cl_dll/guess_CgContext.cpp,,,MATCHED,100,,
+client,100866D0,7,??0guess_CCgWater@@QAE@XZ,guess_CCgWater::guess_CCgWater,UNKNOWN,cl_dll/guess_CgWater.cpp,,,MATCHED,100,,found by tools/gaps.py (no Ghidra function before)
 client,100866E0,359,?guess_DrawBlackQuad@guess_CCgWater@@QAEXXZ,,COF,cl_dll/guess_CgWater.cpp,,,MATCHED,100,,
+client,10086850,55,?guess_EndShaders@guess_CCgWater@@QAEXXZ,guess_CCgWater::guess_EndShaders,UNKNOWN,,,,MATCHED,100,client_manual.csv,found by tools/gaps.py (no Ghidra function before)
 client,10086890,944,?guess_Init@guess_CCgWater@@QAEXXZ,,COF,cl_dll/guess_CgWater.cpp,,,MATCHED,100,,
 client,10086C40,112,?guess_PostDraw@guess_CCgWater@@QAEXXZ,,COF,cl_dll/guess_CgWater.cpp,,,MATCHED,100,,
 client,10086CB0,90,?guess_PreDraw@guess_CCgWater@@QAEXXZ,,COF,cl_dll/guess_CgWater.cpp,,,MATCHED,100,,
-client,10086D10,2235,,,UNKNOWN,,,,TODO,,,
+client,10086D10,2235,?guess_Render@guess_CCgWater@@QAEXXZ,guess_CCgWater::guess_Render,UNKNOWN,cl_dll/guess_CgWater.cpp,,,TODO,95.86,,
 client,100875D0,497,?guess_RenderQuad@guess_CCgWater@@QAEXXZ,,COF,cl_dll/guess_CgWater.cpp,,,MATCHED,100,,
 client,100877D0,142,?guess_SetBlackShader@guess_CCgWater@@QAEXXZ,,COF,cl_dll/guess_CgWater.cpp,,,MATCHED,100,,
 client,10087860,168,?guess_UpdateEntities@guess_CCgWater@@QAEXXZ,,COF,cl_dll/guess_CgWater.cpp,,,MATCHED,100,,
-client,10087910,6,,,UNKNOWN,,,,TODO,,,
+client,10087910,6,??0guess_CPBuffer@@QAE@XZ,guess_CPBuffer::guess_CPBuffer,UNKNOWN,cl_dll/guess_PBuffer.cpp,,,MATCHED,100,,
+client,10087920,3,??1guess_CPBuffer@@QAE@XZ,guess_CPBuffer::~guess_CPBuffer,UNKNOWN,,,,MATCHED,100,client_manual.csv,found by tools/gaps.py (no Ghidra function before)
+client,10087930,31,?guess_BindTexture@guess_CPBuffer@@QAEXXZ,guess_CPBuffer::guess_BindTexture,UNKNOWN,,,,MATCHED,100,client_manual.csv,found by tools/gaps.py (no Ghidra function before)
 client,10087950,431,?guess_Create@guess_CPBuffer@@QAEXXZ,,COF,cl_dll/guess_PBuffer.cpp,,,MATCHED,100,,
 client,10087B00,87,?guess_MakeCurrent@guess_CPBuffer@@QAEXXZ,,COF,cl_dll/guess_PBuffer.cpp,,,MATCHED,100,,
+client,10087B60,416,?guess_Prepare@guess_CPBuffer@@QAEXXZ,guess_CPBuffer::guess_Prepare,UNKNOWN,cl_dll/guess_PBuffer.cpp,,,MATCHED,100,,found by tools/gaps.py (no Ghidra function before)
+client,10087D00,31,?guess_ReleaseTexture@guess_CPBuffer@@QAEXXZ,guess_CPBuffer::guess_ReleaseTexture,UNKNOWN,,,,MATCHED,100,client_manual.csv,found by tools/gaps.py (no Ghidra function before)
+client,10087D20,3,?guess_Shutdown@guess_CPBuffer@@QAEXXZ,guess_CPBuffer::guess_Shutdown,UNKNOWN,,,,MATCHED,100,client_manual.csv,found by tools/gaps.py (no Ghidra function before)
 client,10087D30,29,?guess_SwitchToWindow@guess_CPBuffer@@QAEXXZ,,COF,cl_dll/guess_PBuffer.cpp,,,MATCHED,100,,
-client,10087D50,138,,,UNKNOWN,,,,TODO,,,
-client,10087DE0,82,,,UNKNOWN,,,,TODO,,,
-client,10087E40,90,,,UNKNOWN,,,,TODO,,,
-client,10087EA0,15,,,UNKNOWN,,,,TODO,,,
-client,10087EB0,15,,,UNKNOWN,,,,TODO,,,
-client,10087ED0,124,,,UNKNOWN,,,,TODO,,,
-client,10087F70,74,,,UNKNOWN,,,,TODO,,,
-client,10087FC0,19,,,UNKNOWN,,,,TODO,,,
-client,10087FE0,82,,,UNKNOWN,,,,TODO,,,
-client,10088040,83,,,UNKNOWN,,,,TODO,,,
+client,10087D50,138,??$?8DU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA_NABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@0@Z,>,LIB,cl_dll/guess_TextureManager.cpp,,,MATCHED,100,,
+client,10087DE0,82,??$?HDU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@$$QAV10@ABV10@@Z,>,LIB,cl_dll/guess_TextureManager.cpp,,,MATCHED,100,,
+client,10087E40,90,??$?HDU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@$$QAV10@QBD@Z,>,LIB,cl_dll/guess_TextureManager.cpp,,,MATCHED,100,,
+client,10087EA0,15,??$_Construct_in_place@PAU?$_List_node@Uguess_texture_s@@PAX@std@@AAPAU12@@std@@YAXAAPAU?$_List_node@Uguess_texture_s@@PAX@0@0@Z,&>,LIB,,,,MATCHED,100,client_manual.csv,
+client,10087EB0,15,??$_Construct_in_place@PAU?$_List_node@Uguess_texture_s@@PAX@std@@ABQAU12@@std@@YAXAAPAU?$_List_node@Uguess_texture_s@@PAX@0@ABQAU10@@Z,&>,LIB,,,,MATCHED,100,client_manual.csv,
+client,10087EC0,3,,,UNKNOWN,,,,TODO,,,found by tools/gaps.py (no Ghidra function before)
+client,10087ED0,124,??$_Free_non_head@V?$allocator@U?$_List_node@Uguess_texture_s@@PAX@std@@@std@@@?$_List_node@Uguess_texture_s@@PAX@std@@SAXAAV?$allocator@U?$_List_node@Uguess_texture_s@@PAX@std@@@1@PAU01@@Z,>,LIB,cl_dll/guess_TextureManager.cpp,,,MATCHED,100,,
+client,10087F50,3,,,UNKNOWN,,,,TODO,,,found by tools/gaps.py (no Ghidra function before)
+client,10087F60,3,,,UNKNOWN,,,,TODO,,,found by tools/gaps.py (no Ghidra function before)
+client,10087F70,74,??0guess_CTextureManager@@QAE@XZ,guess_CTextureManager::guess_CTextureManager,COF,cl_dll/guess_TextureManager.cpp,,,MATCHED,100,,
+client,10087FC0,19,??1?$_Alloc_construct_ptr@V?$allocator@U?$_List_node@Uguess_texture_s@@PAX@std@@@std@@@std@@QAE@XZ,>,LIB,cl_dll/guess_TextureManager.cpp,,,MATCHED,100,,
+client,10087FE0,82,??1guess_CTextureManager@@QAE@XZ,guess_CTextureManager::~guess_CTextureManager,UNKNOWN,,,,MATCHED,100,client_manual.csv,
+client,10088040,83,??1guess_texture_s@@QAE@XZ,guess_texture_s::~guess_texture_s,UNKNOWN,cl_dll/guess_TextureManager.cpp,,,MATCHED,100,,
 client,100880A0,154,?guess_CheckMipmapSupport@guess_CTextureManager@@QAEXXZ,,COF,cl_dll/guess_TextureManager.cpp,,,MATCHED,100,,
 client,10088140,359,?guess_CreateTexture@guess_CTextureManager@@QAEXHHPAIII@Z,,COF,cl_dll/guess_TextureManager.cpp,,,MATCHED,100,,
 client,100882B0,325,?guess_GetPath@guess_CTextureManager@@QAE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@ABV23@HPAH@Z,,COF,cl_dll/guess_TextureManager.cpp,,,MATCHED,100,,
-client,10088400,2173,,,UNKNOWN,,,,TODO,,,
+client,10088400,2173,?guess_FindTexture@guess_CTextureManager@@QAE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@ABV23@PAH@Z,guess_CTextureManager::guess_FindTexture,COF,,,,TODO,93.73,client_manual.csv,
 client,10088CA0,79,?guess_GetTexture@guess_CTextureManager@@QAEPAUguess_texture_s@@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z,,COF,cl_dll/guess_TextureManager.cpp,,,MATCHED,100,,
-client,10088CF0,2293,,,UNKNOWN,,,,TODO,,,
+client,10088CF0,2293,?guess_FindNumberedTextures@guess_CTextureManager@@QAE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@ABV23@PAH@Z,guess_CTextureManager::guess_FindNumberedTextures,COF,,,,MATCHED,100,client_manual.csv,
 client,100895F0,567,?guess_FindImageFile@guess_CTextureManager@@QAE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@ABV23@@Z,,COF,cl_dll/guess_TextureManager.cpp,,,MATCHED,100,,
 client,10089830,13,?guess_IsHardware@guess_CTextureManager@@QAE_NXZ,,COF,cl_dll/guess_TextureManager.cpp,,,MATCHED,100,,
 client,10089840,64,?guess_Reset@guess_CTextureManager@@QAEXXZ,,COF,cl_dll/guess_TextureManager.cpp,,,MATCHED,100,,
 client,10089880,206,?guess_UploadImage@guess_CTextureManager@@QAEXPAUguess_texture_s@@@Z,,COF,cl_dll/guess_TextureManager.cpp,,,MATCHED,100,,
 client,10089950,161,?guess_GetTexture@guess_CTextureManager@@QAEPAUguess_texture_s@@PBD@Z,,COF,cl_dll/guess_TextureManager.cpp,,,MATCHED,100,,
-client,10089A00,634,,,UNKNOWN,,,,TODO,,,
-client,10089C80,619,,,UNKNOWN,,,,TODO,,,
+client,10089A00,634,?guess_LoadImage@guess_CTextureManager@@QAEPAUguess_texture_s@@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z,guess_CTextureManager::guess_LoadImage,COF,,,,MATCHED,100,client_manual.csv,
+client,10089C80,619,?guess_LoadSprite@guess_CTextureManager@@QAEPAUguess_texture_s@@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z,guess_CTextureManager::guess_LoadSprite,COF,,,,MATCHED,100,client_manual.csv,
 client,10089EF0,44,?guess_Load@guess_CTextureManager@@QAEPAUguess_texture_s@@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z,,COF,cl_dll/guess_TextureManager.cpp,,,MATCHED,100,,
-client,10089F20,746,,,UNKNOWN,,,,TODO,,,
+client,10089F20,746,?guess_LoadTexture@guess_CTextureManager@@QAE_NHPBDH_N@Z,guess_CTextureManager::guess_LoadTexture,COF,,,,MATCHED,100,client_manual.csv,
 client,1008A210,11,?guess_LoadPlayerShadow@guess_CTextureManager@@QAEXXZ,,COF,cl_dll/guess_TextureManager.cpp,,,MATCHED,100,,
-client,1008A220,10,,,UNKNOWN,,,,TODO,,,
-client,1008A230,79,,,UNKNOWN,,,,TODO,,,
-client,1008A280,170,,,UNKNOWN,,,,TODO,,,
-client,1008A330,239,,,UNKNOWN,,,,TODO,,,
+client,1008A220,10,?_Xran@?$_String_val@U?$_Simple_types@D@std@@@std@@SAXXZ,>::_Xran,LIB,,,,MATCHED,100,client_manual.csv,
+client,1008A230,79,?erase@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@II@Z,>::erase,LIB,cl_dll/guess_TextureManager.cpp,,,MATCHED,100,,
+client,1008A280,170,?guess_IsExtensionSupported@@YAEPBD0@Z,guess_IsExtensionSupported,UNKNOWN,,,,TODO,96.00,client_manual.csv,
+client,1008A330,239,?push_back@?$list@Uguess_texture_s@@V?$allocator@Uguess_texture_s@@@std@@@std@@QAEXABUguess_texture_s@@@Z,>::push_back,LIB,cl_dll/guess_TextureManager.cpp,,,MATCHED,100,,
 client,1008A420,382,?Draw@CHudSayText@@UAEHM@Z,CHudSayText::Draw,UNKNOWN,cl_dll/saytext.cpp,,,MATCHED,100,,
 client,1008A5A0,496,?EnsureTextFitsInOneLineAndWrapIfHaveTo@CHudSayText@@QAEXH@Z,CHudSayText::EnsureTextFitsInOneLineAndWrapIfHaveTo,HLSDK,cl_dll/saytext.cpp,,,MATCHED,100,client_1.6a_ghidra_names.csv,
 client,1008A790,96,?Init@CHudSayText@@UAEHXZ,CHudSayText::Init,HLSDK,cl_dll/saytext.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__saytext.obj:score10,
@@ -2134,7 +2304,7 @@ client,1008AC80,112,?MsgFunc_StatusText@CHudStatusBar@@QAEHPBDHPAX@Z,CHudStatusB
 client,1008ACF0,69,?MsgFunc_StatusValue@CHudStatusBar@@QAEHPBDHPAX@Z,CHudStatusBar::MsgFunc_StatusValue,UNKNOWN,cl_dll/statusbar.cpp,,,MATCHED,100,,
 client,1008AD40,642,?ParseStatusString@CHudStatusBar@@QAEXH@Z,CHudStatusBar::ParseStatusString,HLSDK,cl_dll/statusbar.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__statusbar.obj:score16,
 client,1008AFD0,63,?Reset@CHudStatusBar@@UAEXXZ,CHudStatusBar::Reset,HLSDK,cl_dll/statusbar.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__statusbar.obj:score2,
-client,1008B010,6,,,UNKNOWN,,,,TODO,,,
+client,1008B010,6,?VidInit@CHudStatusBar@@UAEHXZ,CHudStatusBar::VidInit,UNKNOWN,cl_dll/statusbar.cpp,,,MATCHED,100,,
 client,1008B020,24,?__MsgFunc_StatusText@@YAHPBDHPAX@Z,__MsgFunc_StatusText,LIB,,,,,,reloc:1008AC20,
 client,1008B040,24,?__MsgFunc_StatusValue@@YAHPBDHPAX@Z,__MsgFunc_StatusValue,LIB,,,,,,reloc:1008AC20,
 client,1008B060,66,?DisableIcon@CHudStatusIcons@@QAEXPAD@Z,CHudStatusIcons::DisableIcon,HLSDK,cl_dll/status_icons.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__status_icons.obj:score2,
@@ -2143,7 +2313,7 @@ client,1008B120,274,?EnableIcon@CHudStatusIcons@@QAEXPADEEE@Z,CHudStatusIcons::E
 client,1008B240,47,?Init@CHudStatusIcons@@UAEHXZ,CHudStatusIcons::Init,HLSDK,cl_dll/status_icons.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__status_icons.obj:score4,
 client,1008B270,108,?MsgFunc_StatusIcon@CHudStatusIcons@@QAEHPBDHPAX@Z,CHudStatusIcons::MsgFunc_StatusIcon,HLSDK,cl_dll/status_icons.cpp,,,MATCHED,100,client_manual.csv,
 client,1008B2E0,28,?Reset@CHudStatusIcons@@UAEXXZ,CHudStatusIcons::Reset,HLSDK,cl_dll/status_icons.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__status_icons.obj:score1,
-client,1008B300,6,,,UNKNOWN,,,,TODO,,,
+client,1008B300,6,?VidInit@CHudStatusIcons@@UAEHXZ,CHudStatusIcons::VidInit,UNKNOWN,cl_dll/status_icons.cpp,,,MATCHED,100,,
 client,1008B310,24,?__MsgFunc_StatusIcon@@YAHPBDHPAX@Z,__MsgFunc_StatusIcon,LIB,,,,,,refbytes:paranoia:cl_dll__status_icons.obj:score2,
 client,1008B330,153,??0CStudioModelRenderer@@QAE@XZ,CStudioModelRenderer::CStudioModelRenderer,HLSDK,cl_dll/StudioModelRenderer.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__StudioModelRenderer.obj:score0,
 client,1008B3D0,28,??0Vector@@QAE@ABV0@@Z,Vector::Vector,UNKNOWN,cl_dll/StudioModelRenderer.cpp,,,MATCHED,100,,
@@ -2153,20 +2323,20 @@ client,1008BA00,52,??0position_history_t@@QAE@ABU0@@Z,position_history_t::positi
 client,1008BA40,7,??1CStudioModelRenderer@@UAE@XZ,CStudioModelRenderer::~CStudioModelRenderer,HLSDK,cl_dll/StudioModelRenderer.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__StudioModelRenderer.obj:score1,
 client,1008BA50,38,??_GCStudioModelRenderer@@UAEPAXI@Z,destructor',COF,cl_dll/StudioModelRenderer.cpp,,,MATCHED,100,client_1.6a_ghidra_names.csv,
 client,1008BA80,43,??__G@YGXPAX0IIP6EPAX00@Z@Z,`vector copy constructor iterator',COF,cl_dll/StudioModelRenderer.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__StudioModelRenderer.obj:score0,
-client,1008BAB0,183,?HeadShieldThink@@YAHXZ,HeadShieldThink,UNKNOWN,cl_dll/StudioModelRenderer.cpp,,,TODO,84.27,,
+client,1008BAB0,183,?HeadShieldThink@@YAHXZ,HeadShieldThink,UNKNOWN,cl_dll/StudioModelRenderer.cpp,,,MATCHED,100,,
 client,1008BB70,147,?Init@CStudioModelRenderer@@UAEXXZ,CStudioModelRenderer::Init,HLSDK,cl_dll/StudioModelRenderer.cpp,,,MATCHED,100,client_1.6a_ghidra_names.csv,
 client,1008BC10,68,?InitHeadShield@@YAXXZ,InitHeadShield,UNKNOWN,guess:cl_dll/StudioModelRenderer.cpp,,,MATCHED,100,client_manual.csv,
 client,1008BC60,115,?guess_RadiansToDegrees@@YANN@Z,guess_RadiansToDegrees,UNKNOWN,cl_dll/StudioModelRenderer.cpp,,,MATCHED,100,,
 client,1008BCE0,61,?ResetHeadShield@@YAXXZ,ResetHeadShield,UNKNOWN,guess:cl_dll/StudioModelRenderer.cpp,,,MATCHED,100,client_manual.csv,
-client,1008BD20,161,?StudioCalcAttachments@CStudioModelRenderer@@UAEXXZ,CStudioModelRenderer::StudioCalcAttachments,HLSDK,cl_dll/StudioModelRenderer.cpp,,,TODO,93.10,client_1.6a_ghidra_names.csv,
+client,1008BD20,161,?StudioCalcAttachments@CStudioModelRenderer@@UAEXXZ,CStudioModelRenderer::StudioCalcAttachments,HLSDK,cl_dll/StudioModelRenderer.cpp,,,MATCHED,100,client_1.6a_ghidra_names.csv,
 client,1008BDD0,567,?StudioCalcBoneAdj@CStudioModelRenderer@@UAEXMPAMPBE1E@Z,CStudioModelRenderer::StudioCalcBoneAdj,UNKNOWN,cl_dll/StudioModelRenderer.cpp,,,MATCHED,100,,
 client,1008C040,442,?StudioCalcBonePosition@CStudioModelRenderer@@UAEXHMPAUmstudiobone_t@@PAUmstudioanim_t@@PAM2@Z,CStudioModelRenderer::StudioCalcBonePosition,HLSDK,cl_dll/StudioModelRenderer.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__StudioModelRenderer.obj:score1,
 client,1008C200,492,?StudioCalcBoneQuaterion@CStudioModelRenderer@@UAEXHMPAUmstudiobone_t@@PAUmstudioanim_t@@PAM2@Z,CStudioModelRenderer::StudioCalcBoneQuaterion,HLSDK,cl_dll/StudioModelRenderer.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__StudioModelRenderer.obj:score3,
 client,1008C3F0,606,?StudioCalcRotations@CStudioModelRenderer@@UAEXQAY02MPAY03MPAUmstudioseqdesc_t@@PAUmstudioanim_t@@M@Z,CStudioModelRenderer::StudioCalcRotations,HLSDK,cl_dll/StudioModelRenderer.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__StudioModelRenderer.obj:score6,
 client,1008C650,393,?StudioDrawCustomEntity@CStudioModelRenderer@@QAEHPAUcl_entity_s@@HH@Z,CStudioModelRenderer::StudioDrawCustomEntity,PARANOIA,cl_dll/StudioModelRenderer.cpp,,,MATCHED,100,client_1.6a_ghidra_names.csv,
-client,1008C7E0,1779,?StudioDrawHeadShield@CStudioModelRenderer@@QAEHXZ,CStudioModelRenderer::StudioDrawHeadShield,UNKNOWN,cl_dll/StudioModelRenderer.cpp,,,TODO,93.15,,
-client,1008CEE0,3042,?StudioDrawModel@CStudioModelRenderer@@UAEHH@Z,CStudioModelRenderer::StudioDrawModel,HLSDK,cl_dll/StudioModelRenderer.cpp,,,TODO,66.97,client_1.6a_ghidra_names.csv,
-client,1008DAD0,1676,?StudioDrawPlayer@CStudioModelRenderer@@UAEHHPAUentity_state_s@@@Z,CStudioModelRenderer::StudioDrawPlayer,HLSDK,cl_dll/StudioModelRenderer.cpp,,,TODO,69.94,client_1.6a_ghidra_names.csv,
+client,1008C7E0,1779,?StudioDrawHeadShield@CStudioModelRenderer@@QAEHXZ,CStudioModelRenderer::StudioDrawHeadShield,UNKNOWN,cl_dll/StudioModelRenderer.cpp,,,TODO,99.00,,
+client,1008CEE0,3042,?StudioDrawModel@CStudioModelRenderer@@UAEHH@Z,CStudioModelRenderer::StudioDrawModel,HLSDK,cl_dll/StudioModelRenderer.cpp,,,MATCHED,100,client_1.6a_ghidra_names.csv,
+client,1008DAD0,1676,?StudioDrawPlayer@CStudioModelRenderer@@UAEHHPAUentity_state_s@@@Z,CStudioModelRenderer::StudioDrawPlayer,HLSDK,cl_dll/StudioModelRenderer.cpp,,,MATCHED,100,client_1.6a_ghidra_names.csv,
 client,1008E160,261,?StudioEstimateFrame@CStudioModelRenderer@@UAEMPAUmstudioseqdesc_t@@@Z,CStudioModelRenderer::StudioEstimateFrame,HLSDK,cl_dll/StudioModelRenderer.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__StudioModelRenderer.obj:score0,
 client,1008E270,703,?StudioEstimateGait@CStudioModelRenderer@@UAEXPAUentity_state_s@@@Z,CStudioModelRenderer::StudioEstimateGait,UNKNOWN,cl_dll/StudioModelRenderer.cpp,,,MATCHED,100,,
 client,1008E530,101,?StudioEstimateInterpolant@CStudioModelRenderer@@UAEMXZ,CStudioModelRenderer::StudioEstimateInterpolant,HLSDK,cl_dll/StudioModelRenderer.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__StudioModelRenderer.obj:score3,
@@ -2183,12 +2353,12 @@ client,1008F150,183,?StudioSaveBones@CStudioModelRenderer@@UAEXXZ,CStudioModelRe
 client,1008F210,1610,?StudioSetUpTransform@CStudioModelRenderer@@UAEXH@Z,CStudioModelRenderer::StudioSetUpTransform,UNKNOWN,cl_dll/StudioModelRenderer.cpp,,,MATCHED,100,,
 client,1008F860,1863,?StudioSetupBones@CStudioModelRenderer@@UAEXXZ,CStudioModelRenderer::StudioSetupBones,HLSDK,cl_dll/StudioModelRenderer.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__StudioModelRenderer.obj:score20,
 client,1008FFB0,370,?StudioSlerpBones@CStudioModelRenderer@@UAEXQAY03MQAY02M01M@Z,CStudioModelRenderer::StudioSlerpBones,HLSDK,cl_dll/StudioModelRenderer.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__StudioModelRenderer.obj:score5,
-client,10090130,1209,,,UNKNOWN,,,,TODO,,,
+client,10090130,1209,?guess_StudioMuzzleFlash@CStudioModelRenderer@@QAEXPADH_NM@Z,CStudioModelRenderer::guess_StudioMuzzleFlash,UNKNOWN,,,,TODO,86.90,client_manual.csv,
 client,100905F0,128,,,UNKNOWN,,,,TODO,,,
 client,10090670,201,?__MsgFunc_DualAnim@@YAHPBDHPAX@Z,__MsgFunc_DualAnim,UNKNOWN,cl_dll/StudioModelRenderer.cpp,,,MATCHED,100,,
 client,10090740,53,?__MsgFunc_DualFlash@@YAHPBDHPAX@Z,__MsgFunc_DualFlash,UNKNOWN,cl_dll/StudioModelRenderer.cpp,,,MATCHED,100,,
 client,10090780,210,?__MsgFunc_DualWield@@YAHPBDHPAX@Z,__MsgFunc_DualWield,UNKNOWN,cl_dll/StudioModelRenderer.cpp,,,MATCHED,100,,
-client,10090860,950,,,UNKNOWN,,,,TODO,,,
+client,10090860,950,?__MsgFunc_HeadShield@@YAHPBDHPAX@Z,__MsgFunc_HeadShield,UNKNOWN,,,,MATCHED,100,client_manual.csv,
 client,10090C20,3,?guess_Shutdown@guess_CPBuffer@@QAEXXZ,,COF,cl_dll/guess_PBuffer.cpp,,,MATCHED,100,,
 client,10090C30,408,?AngleMatrix@@YAXPBMPAY03M@Z,AngleMatrix,HLSDK,cl_dll/studio_util.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__studio_util.obj:score11,
 client,10090DD0,316,?AngleQuaternion@@YAXPAMQAM@Z,AngleQuaternion,HLSDK,cl_dll/studio_util.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__studio_util.obj:score9,
@@ -2232,6 +2402,8 @@ client,10093CF0,38,_HUD_DrawNormalTriangles,HUD_DrawNormalTriangles,HLSDK,,,,MAT
 client,10093D10,255,_HUD_DrawTransparentTriangles,HUD_DrawTransparentTriangles,HLSDK,,,,MATCHED,100,client_1.6a_exports.csv,
 client,10093E10,16,??0CObjectsManager@@QAE@XZ,CObjectsManager::CObjectsManager,UNKNOWN,cl_dll/triapiobjects.cpp,,,MATCHED,100,,
 client,10093E20,435,??0CSmokePuff@@QAE@VVector@@0MMMMMMMMMM@Z,CSmokePuff::CSmokePuff,PARANOIA,,,,MATCHED,100,client_1.6a_ghidra_names.csv,
+client,10093FE0,3,,,UNKNOWN,,,,TODO,,,found by tools/gaps.py (no Ghidra function before)
+client,10093FF0,5,??1CObjectsManager@@QAE@XZ,CObjectsManager::~CObjectsManager,UNKNOWN,cl_dll/triapiobjects.cpp,,,MATCHED,100,,found by tools/gaps.py (no Ghidra function before)
 client,10094000,28,?AddObject@CObjectsManager@@QAEXPAVCObject@@@Z,CObjectsManager::AddObject,PARANOIA,cl_dll/triapiobjects.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__triapiobjects.obj:score1,
 client,10094020,76,?CalcViewMatrix@@YAXH@Z,CalcViewMatrix,PARANOIA,cl_dll/triapiobjects.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__triapiobjects.obj:score2,
 client,10094070,173,?Draw@CObjectsManager@@QAEXXZ,CObjectsManager::Draw,UNKNOWN,cl_dll/triapiobjects.cpp,,,MATCHED,100,,
@@ -2290,6 +2462,7 @@ client,10096850,212,?AddCVarFromInputStream@ControlConfigPanel@@QAEXPAVInputStre
 client,10096930,107,?GetCVar@ControlConfigPanel@@QAEXHPADH0H@Z,ControlConfigPanel::GetCVar,HLSDK,cl_dll/vgui_ControlConfigPanel.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__vgui_ControlConfigPanel.obj:score0,
 client,100969A0,42,?GetCVarBind@ControlConfigPanel@@QAEXPBDPADH1H@Z,ControlConfigPanel::GetCVarBind,HLSDK,cl_dll/vgui_ControlConfigPanel.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__vgui_ControlConfigPanel.obj:score4,
 client,100969D0,7,?GetCVarCount@ControlConfigPanel@@QAEHXZ,ControlConfigPanel::GetCVarCount,UNKNOWN,cl_dll/vgui_ControlConfigPanel.cpp,,,MATCHED,100,,
+client,100969E0,3,?SetCVarBind@ControlConfigPanel@@QAEXPBD00@Z,ControlConfigPanel::SetCVarBind,UNKNOWN,cl_dll/vgui_ControlConfigPanel.cpp,,,MATCHED,100,,found by tools/gaps.py (no Ghidra function before)
 client,100969E3,8,,,LIB,guess:cl_dll/vgui_ControlConfigPanel.cpp,,,TODO,,,vtordisp adjustor thunk of vgui::DataInputStream (compiler generated)
 client,100969EB,8,,,LIB,guess:cl_dll/vgui_ControlConfigPanel.cpp,,,TODO,,,vtordisp adjustor thunk of vgui::DataInputStream (compiler generated)
 client,10096A00,376,?getCellRenderer@FooTablePanel@?A0x41e71573@@UAEPAVPanel@vgui@@HH_N00@Z,namespace'::FooTablePanel::getCellRenderer,UNKNOWN,guess:cl_dll/vgui_ControlConfigPanel.cpp,,,MATCHED,100,client_manual.csv,FooTablePanel::getCellRenderer: inline in the class body; our object does not emit FooTablePanel (nothing instantiates it in our ControlConfigPanel)
@@ -2348,15 +2521,17 @@ client,10097A50,21,?setBoundKey@CommandButton@@QAEXD@Z,CommandButton::setBoundKe
 client,10097A70,16,?setParentMenu@CommandButton@@QAEXPAVCCommandMenu@@@Z,CommandButton::setParentMenu,UNKNOWN,cl_dll/vgui_CustomObjects.cpp,,,MATCHED,100,,
 client,10097A80,45,?setText@CommandButton@@UAEXPBD@Z,CommandButton::setText,HLSDK,cl_dll/vgui_CustomObjects.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__vgui_CustomObjects.obj:score2,
 client,10097AB0,191,??0CGammaView@@QAE@XZ,CGammaView::CGammaView,PARANOIA,cl_dll/vgui_gamma.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__vgui_gamma.obj:score7,
+client,10097B70,7,??1CGammaView@@QAE@XZ,CGammaView::~CGammaView,UNKNOWN,cl_dll/vgui_gamma.cpp,,,MATCHED,100,,found by tools/gaps.py (no Ghidra function before)
 client,10097B80,36,?GammaGraphInit@@YAXXZ,GammaGraphInit,PARANOIA,cl_dll/vgui_gamma.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__vgui_gamma.obj:score4,
 client,10097BB0,24,?GraphDisable@@YAXXZ,GraphDisable,PARANOIA,guess:cl_dll/vgui_gamma.cpp,,,MATCHED,100,reloc:10097B80,
 client,10097BD0,24,?GraphEnable@@YAXXZ,GraphEnable,PARANOIA,guess:cl_dll/vgui_gamma.cpp,,,MATCHED,100,reloc:10097B80,
 client,10097BF0,442,?paint@CGammaView@@MAEXXZ,CGammaView::paint,PARANOIA,cl_dll/vgui_gamma.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__vgui_gamma.obj:score18,
 client,10097DB0,162,??0CHud2@@QAE@XZ,CHud2::CHud2,UNKNOWN,cl_dll/vgui_hud.cpp,,,MATCHED,100,,
+client,10097E60,42,??1CHud2@@QAE@XZ,CHud2::~CHud2,UNKNOWN,cl_dll/vgui_hud.cpp,,,MATCHED,100,,found by tools/gaps.py (no Ghidra function before)
 client,10097E90,20,?CanUseInit@@YAXXZ,CanUseInit,PARANOIA,cl_dll/vgui_hud.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__vgui_hud.obj:score2,
 client,10097EB0,5,?FindAmmoImageForWeapon@CHud2@@IAEPAVBitmapTGA@vgui@@PBD@Z,CHud2::FindAmmoImageForWeapon,UNKNOWN,cl_dll/vgui_hud.cpp,,,MATCHED,100,,
 client,10097EC0,3,?Hud2Init@@YAXXZ,Hud2Init,UNKNOWN,cl_dll/vgui_hud.cpp,,,MATCHED,100,client_manual.csv,
-client,10097ED0,41,?Initialize@CHud2@@QAEXXZ,CHud2::Initialize,UNKNOWN,cl_dll/vgui_hud.cpp,,,TODO,99.60,,
+client,10097ED0,41,?Initialize@CHud2@@QAEXXZ,CHud2::Initialize,UNKNOWN,cl_dll/vgui_hud.cpp,,,MATCHED,100,,
 client,10097F00,123,?LoadResolutionImage@@YAPAVBitmapTGA@vgui@@PBD@Z,LoadResolutionImage,PARANOIA,cl_dll/vgui_hud.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__vgui_hud.obj:score6,
 client,10097F80,41,?ShouldDrawHUD@@YAHXZ,ShouldDrawHUD,UNKNOWN,cl_dll/vgui_hud.cpp,,,MATCHED,100,,
 client,10097FB0,68,?UpdateArmor@CHud2@@QAEXH@Z,CHud2::UpdateArmor,PARANOIA,cl_dll/vgui_hud.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__vgui_hud.obj:score1,
@@ -2376,6 +2551,7 @@ client,10098880,5,??4Layout@vgui@@QAEAAV01@$$QAV01@@Z,vgui::Layout::operator=,LI
 client,10098890,5,??4Layout@vgui@@QAEAAV01@ABV01@@Z,vgui::Layout::operator=,LIB,,,,TODO,,client_1.6a_exports.csv,
 client,100988A0,58,??4SurfaceBase@vgui@@QAEAAV01@ABV01@@Z,vgui::SurfaceBase::operator=,LIB,,,,TODO,,refbytes:paranoia:cl_dll__vgui_int.obj:score0,
 client,100988E0,6,?VGui_GetPanel@@YAPAXXZ,VGui_GetPanel,HLSDK,cl_dll/vgui_int.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__vgui_int.obj:score1,
+client,100988F0,63,,,UNKNOWN,,,,TODO,,,found by tools/gaps.py (no Ghidra function before)
 client,10098930,169,_VGui_Startup,VGui_Startup,HLSDK,guess:cl_dll/vgui_int.cpp,,,MATCHED,100,reloc:1001D560,
 client,100989E0,6,_VGui_ViewportPaintBackground,VGui_ViewportPaintBackground,HLSDK,cl_dll/vgui_int.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__vgui_int.obj:score1,
 client,10098A10,1753,??0CMessageWindowPanel@@QAE@PBD0HHHHHH@Z,CMessageWindowPanel::CMessageWindowPanel,COF,cl_dll/vgui_MOTDWindow.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__vgui_MOTDWindow.obj:score59,
@@ -2408,6 +2584,7 @@ client,1009C280,335,?paintBackground@CMyButton@@UAEXXZ,CMyButton::paintBackgroun
 client,1009C3D0,335,?paintBackground@CMyScrollbutton@@UAEXXZ,CMyScrollbutton::paintBackground,UNKNOWN,cl_dll/vgui_paranoiatext.cpp,,,MATCHED,100,,
 client,1009C520,268,?paintBackground@CMySlider@@UAEXXZ,CMySlider::paintBackground,PARANOIA,cl_dll/vgui_paranoiatext.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__vgui_paranoiatext.obj:score0,
 client,1009C630,304,??0CRadioIcon@@QAE@XZ,CRadioIcon::CRadioIcon,UNKNOWN,cl_dll/vgui_radio.cpp,,,MATCHED,100,,
+client,1009C760,23,??1CRadioIcon@@QAE@XZ,CRadioIcon::~CRadioIcon,UNKNOWN,cl_dll/vgui_radio.cpp,,,MATCHED,100,,found by tools/gaps.py (no Ghidra function before)
 client,1009C780,42,?Initialize@CRadioIcon@@QAEXXZ,CRadioIcon::Initialize,UNKNOWN,cl_dll/vgui_radio.cpp,,,MATCHED,100,,
 client,1009C7B0,120,?MsgShowRadioIcon@@YAHPBDHPAX@Z,MsgShowRadioIcon,UNKNOWN,cl_dll/vgui_radio.cpp,,,MATCHED,100,,
 client,1009C830,20,?RadioIconInit@@YAXXZ,RadioIconInit,UNKNOWN,guess:cl_dll/vgui_radio.cpp,,,MATCHED,100,client_manual.csv,
@@ -2420,6 +2597,7 @@ client,1009CD50,14,??1CScheme@CSchemeManager@@QAE@XZ,CSchemeManager::CScheme::~C
 client,1009CD60,83,??1CSchemeManager@@UAE@XZ,CSchemeManager::~CSchemeManager,HLSDK,cl_dll/vgui_SchemeManager.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__vgui_SchemeManager.obj:score3,
 client,1009CDC0,38,??_GCSchemeManager@@UAEPAXI@Z,destructor',UNKNOWN,cl_dll/vgui_SchemeManager.cpp,,,MATCHED,100,,
 client,1009CDF0,919,?LoadScheme@CSchemeManager@@AAEHPBD@Z,CSchemeManager::LoadScheme,PARANOIA,cl_dll/vgui_SchemeManager.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__vgui_SchemeManager.obj:score29,
+client,1009D190,3,?Scheme_Init@@YAXXZ,Scheme_Init,UNKNOWN,cl_dll/vgui_SchemeManager.cpp,,,MATCHED,100,,found by tools/gaps.py (no Ghidra function before)
 client,1009D1A0,43,?getBgArmedColor@CSchemeManager@@QAEXHAAH000@Z,CSchemeManager::getBgArmedColor,UNKNOWN,cl_dll/vgui_SchemeManager.cpp,,,MATCHED,100,,
 client,1009D1D0,43,?getBgColor@CSchemeManager@@QAEXHAAH000@Z,CSchemeManager::getBgColor,HLSDK,cl_dll/vgui_SchemeManager.cpp,,,MATCHED,100,client_1.6a_ghidra_names.csv,
 client,1009D200,43,?getBgMousedownColor@CSchemeManager@@QAEXHAAH000@Z,CSchemeManager::getBgMousedownColor,UNKNOWN,cl_dll/vgui_SchemeManager.cpp,,,MATCHED,100,,
@@ -2434,6 +2612,7 @@ client,1009D370,34,?getSafeScheme@CSchemeManager@@AAEPAVCScheme@1@H@Z,CSchemeMan
 client,1009D3A0,77,?getSchemeHandle@CSchemeManager@@QAEHPBD@Z,CSchemeManager::getSchemeHandle,HLSDK,cl_dll/vgui_SchemeManager.cpp,,,MATCHED,100,client_1.6a_ghidra_names.csv,
 client,1009D3F0,315,??0CLabelHeader@@QAE@XZ,CLabelHeader::CLabelHeader,HLSDK,cl_dll/vgui_ScorePanel.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__vgui_ScorePanel.obj:score8,
 client,1009D530,2102,??0ScorePanel@@QAE@HHHH@Z,ScorePanel::ScorePanel,HLSDK,cl_dll/vgui_ScorePanel.cpp,,,MATCHED,100,client_1.6a_ghidra_names.csv,
+client,1009DD70,56,??1CLabelHeader@@QAE@XZ,CLabelHeader::~CLabelHeader,UNKNOWN,cl_dll/vgui_ScorePanel.cpp,,,MATCHED,100,,found by tools/gaps.py (no Ghidra function before)
 client,1009DDB0,78,?DeathMsg@ScorePanel@@QAEXHH@Z,ScorePanel::DeathMsg,HLSDK,cl_dll/vgui_ScorePanel.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__vgui_ScorePanel.obj:score2,
 client,1009DE20,2189,?FillGrid@ScorePanel@@QAEXXZ,ScorePanel::FillGrid,HLSDK,cl_dll/vgui_ScorePanel.cpp,,,MATCHED,100,client_1.6a_ghidra_names.csv,
 client,1009E6F0,25,?HACK_GetPlayerUniqueID@@YA_NHQAD@Z,HACK_GetPlayerUniqueID,HLSDK,cl_dll/vgui_ScorePanel.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__vgui_ScorePanel.obj:score1,
@@ -2509,6 +2688,7 @@ client,100A2520,311,??0CSubtitle@@QAE@XZ,CSubtitle::CSubtitle,PARANOIA,cl_dll/vg
 client,100A2660,729,?AddMessage@CSubtitle@@QAEXPAUclient_textmessage_s@@@Z,CSubtitle::AddMessage,UNKNOWN,cl_dll/vgui_subtitles.cpp,,,MATCHED,100,,
 client,100A2940,152,?FontFromMessage@@YAPAVFont@vgui@@AAPBD@Z,FontFromMessage,PARANOIA,cl_dll/vgui_subtitles.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__vgui_subtitles.obj:score10,
 client,100A29E0,68,?Initialize@CSubtitle@@QAEXXZ,CSubtitle::Initialize,PARANOIA,cl_dll/vgui_subtitles.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__vgui_subtitles.obj:score0,
+client,100A2A30,3,,,UNKNOWN,,,,TODO,,,found by tools/gaps.py (no Ghidra function before)
 client,100A2A40,119,?SubtitleInit@@YAXXZ,SubtitleInit,PARANOIA,cl_dll/vgui_subtitles.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__vgui_subtitles.obj:score15,
 client,100A2AC0,69,?SubtitleMessageAdd@@YAXPAUclient_textmessage_s@@@Z,SubtitleMessageAdd,PARANOIA,,,,MATCHED,100,similar:0.65,
 client,100A2B10,230,?paint@CSubtitleTextPanel@@UAEXXZ,CSubtitleTextPanel::paint,UNKNOWN,cl_dll/vgui_subtitles.cpp,,,MATCHED,100,,
@@ -2535,6 +2715,7 @@ client,100A3F30,106,??0Surface@vgui@@QAE@$$QAV01@@Z,vgui::Surface::Surface,LIB,,
 client,100A3FA0,106,??0Surface@vgui@@QAE@ABV01@@Z,vgui::Surface::Surface,LIB,,,,TODO,,refbytes:paranoia:cl_dll__vgui_TeamFortressViewport.obj:score2,
 client,100A4010,3077,??0TeamFortressViewport@@QAE@HHHH@Z,TeamFortressViewport::TeamFortressViewport,UNKNOWN,cl_dll/vgui_TeamFortressViewport.cpp,,,MATCHED,100,,"push 0x190 in retail against our push 0xaf0: retail allocates 0x190 bytes for CCoopStats (vtable 10140D4C), guess_CoopStats.h declares 0xAF0"
 client,100A4C20,386,??0ToggleCommandButton@@QAE@PBD0HHHH_N@Z,ToggleCommandButton::ToggleCommandButton,HLSDK,cl_dll/vgui_TeamFortressViewport.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__vgui_TeamFortressViewport.obj:score9,
+client,100A4DB0,5,,,UNKNOWN,,,,TODO,,,found by tools/gaps.py (no Ghidra function before)
 client,100A4DC0,33,??2TeamFortressViewport@@SAPAXI@Z,new,COF,cl_dll/vgui_TeamFortressViewport.cpp,,,MATCHED,100,client_1.6a_ghidra_names.csv,
 client,100A4DF0,152,??4BuildGroup@vgui@@QAEAAV01@$$QAV01@@Z,vgui::BuildGroup::operator=,LIB,,,,TODO,,refbytes:paranoia:cl_dll__vgui_TeamFortressViewport.obj:score0,
 client,100A4E90,152,??4BuildGroup@vgui@@QAEAAV01@ABV01@@Z,vgui::BuildGroup::operator=,LIB,,,,TODO,,refbytes:paranoia:cl_dll__vgui_TeamFortressViewport.obj:score0,
@@ -2551,6 +2732,7 @@ client,100A5320,66,?ClearButtonsOfArmedState@CCommandMenu@@QAEXXZ,CCommandMenu::
 client,100A5370,2923,?CreateCommandMenu@TeamFortressViewport@@QAEHPADHH_NMMH@Z,TeamFortressViewport::CreateCommandMenu,HLSDK,cl_dll/vgui_TeamFortressViewport.cpp,,,EQUIVALENT,99.47,client_1.6a_ghidra_names.csv,"EQUIVALENT: only the catch(CException*) funclet differs (ours mov eax,$LN90; ret); Ghidra leaves the retail catch block out of the function, the try body matches"
 client,100A5F10,8775,?CreateCustomButton@TeamFortressViewport@@QAEPAVCommandButton@@PAD0H@Z,TeamFortressViewport::CreateCustomButton,HLSDK,cl_dll/vgui_TeamFortressViewport.cpp,,,MATCHED,100,client_1.6a_ghidra_names.csv,
 client,100A8160,432,?CreateDisguiseSubmenu@TeamFortressViewport@@QAEPAVCCommandMenu@@PAVCommandButton@@PAV2@PBDHH@Z,TeamFortressViewport::CreateDisguiseSubmenu,UNKNOWN,cl_dll/vgui_TeamFortressViewport.cpp,,,MATCHED,100,,
+client,100A8310,3,,,UNKNOWN,,,,TODO,,,found by tools/gaps.py (no Ghidra function before)
 client,100A8320,146,?guess_CreateNoteDocument@TeamFortressViewport@@QAEXXZ,TeamFortressViewport::guess_CreateNoteDocument,UNKNOWN,cl_dll/vgui_TeamFortressViewport.cpp,,,MATCHED,100,,
 client,100A83C0,294,?CreatePickupMessagePanels@TeamFortressViewport@@QAEXXZ,TeamFortressViewport::CreatePickupMessagePanels,PARANOIA,cl_dll/vgui_TeamFortressViewport.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__vgui_TeamFortressViewport.obj:score11,
 client,100A84F0,149,?guess_CreateRECBInventory@TeamFortressViewport@@QAEXXZ,TeamFortressViewport::guess_CreateRECBInventory,UNKNOWN,cl_dll/vgui_TeamFortressViewport.cpp,,,MATCHED,100,,
@@ -2564,7 +2746,9 @@ client,100A8EC0,66,?FindButtonWithSubmenu@CCommandMenu@@QAEPAVCommandButton@@PAV
 client,100A8F10,101,?guess_FireArmedButton@CCommandMenu@@QAEXXZ,CCommandMenu::guess_FireArmedButton,UNKNOWN,cl_dll/vgui_TeamFortressViewport.cpp,,,MATCHED,100,,
 client,100A8F80,63,?GetAllPlayersInfo@TeamFortressViewport@@QAEXXZ,TeamFortressViewport::GetAllPlayersInfo,HLSDK,cl_dll/vgui_TeamFortressViewport.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__vgui_TeamFortressViewport.obj:score3,
 client,100A8FC0,105,?GetVGUITGAName@@YAPADPBD@Z,GetVGUITGAName,HLSDK,cl_dll/vgui_TeamFortressViewport.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__vgui_TeamFortressViewport.obj:score7,
+client,100A9030,3,,,UNKNOWN,,,,TODO,,,found by tools/gaps.py (no Ghidra function before)
 client,100A9040,107,?HideCommandMenu@TeamFortressViewport@@QAEXXZ,TeamFortressViewport::HideCommandMenu,HLSDK,cl_dll/vgui_TeamFortressViewport.cpp,,,MATCHED,100,client_1.6a_ghidra_names.csv,
+client,100A90B0,3,,,UNKNOWN,,,,TODO,,,found by tools/gaps.py (no Ghidra function before)
 client,100A90C0,30,?guess_HideNoteDocument@TeamFortressViewport@@QAEXXZ,TeamFortressViewport::guess_HideNoteDocument,UNKNOWN,cl_dll/vgui_TeamFortressViewport.cpp,,,MATCHED,100,,
 client,100A90E0,51,?HideScoreBoard@TeamFortressViewport@@QAEXXZ,TeamFortressViewport::HideScoreBoard,HLSDK,cl_dll/vgui_TeamFortressViewport.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__vgui_TeamFortressViewport.obj:score4,
 client,100A9120,52,?HideTopMenu@TeamFortressViewport@@QAEXXZ,TeamFortressViewport::HideTopMenu,HLSDK,cl_dll/vgui_TeamFortressViewport.cpp,,,MATCHED,100,client_1.6a_ghidra_names.csv,
@@ -2617,6 +2801,7 @@ client,100AAA30,30,?SlotInput@TeamFortressViewport@@QAE_NH@Z,TeamFortressViewpor
 client,100AAA50,69,?ToggleServerBrowser@TeamFortressViewport@@QAEXXZ,TeamFortressViewport::ToggleServerBrowser,HLSDK,cl_dll/vgui_TeamFortressViewport.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__vgui_TeamFortressViewport.obj:score2,
 client,100AAAA0,43,?UpdateCommandMenu@TeamFortressViewport@@QAEXH@Z,TeamFortressViewport::UpdateCommandMenu,HLSDK,cl_dll/vgui_TeamFortressViewport.cpp,,,MATCHED,100,client_1.6a_ghidra_names.csv,
 client,100AAAD0,757,?UpdateCursorState@TeamFortressViewport@@QAEXXZ,TeamFortressViewport::UpdateCursorState,HLSDK,cl_dll/vgui_TeamFortressViewport.cpp,,,MATCHED,100,client_1.6a_ghidra_names.csv,
+client,100AADD0,18,?UpdateHighlights@TeamFortressViewport@@QAEXXZ,TeamFortressViewport::UpdateHighlights,UNKNOWN,cl_dll/vgui_TeamFortressViewport.cpp,,,MATCHED,100,,found by tools/gaps.py (no Ghidra function before)
 client,100AADF0,37,?UpdateOnPlayerInfo@TeamFortressViewport@@QAEXXZ,TeamFortressViewport::UpdateOnPlayerInfo,UNKNOWN,guess:cl_dll/vgui_TeamFortressViewport.cpp,,,MATCHED,100,client_manual.csv,
 client,100AAE20,37,?VGuiAddPickupMessage@@YAXPAUclient_textmessage_s@@@Z,VGuiAddPickupMessage,UNKNOWN,cl_dll/vgui_TeamFortressViewport.cpp,,,MATCHED,100,,
 client,100AAE50,44,?actionPerformed@CMenuHandler_ToggleCvar@@UAEXPAVPanel@vgui@@@Z,CMenuHandler_ToggleCvar::actionPerformed,HLSDK,cl_dll/vgui_TeamFortressViewport.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__vgui_TeamFortressViewport.obj:score1,
@@ -2731,11 +2916,13 @@ client,100B2F20,327,?V_Init@@YAXXZ,V_Init,UNKNOWN,cl_dll/view.cpp,,,MATCHED,100,
 client,100B3070,3,?V_PunchAxis@@YAXHM@Z,V_PunchAxis,HLSDK,cl_dll/view.cpp,,,MATCHED,100,reloc:10050250,
 client,100B3080,11,?V_ResetChaseCam@@YAXXZ,V_ResetChaseCam,HLSDK,cl_dll/view.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__view.obj:score1,
 client,100B3090,265,?V_SmoothInterpolateAngles@@YAXPAM00M@Z,V_SmoothInterpolateAngles,HLSDK,cl_dll/view.cpp,,,MATCHED,100,reloc:100B2D80,
+client,100B31A0,3,?V_StartPitchDrift@@YAXXZ,V_StartPitchDrift,UNKNOWN,,,,MATCHED,100,client_manual.csv,found by tools/gaps.py (no Ghidra function before)
 client,100B31B0,33,?V_StopPitchDrift@@YAXXZ,V_StopPitchDrift,HLSDK,cl_dll/view.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__view.obj:score1,
 client,100B31E0,86,?guess_VectorIsValid@@YA_NMMM@Z,guess_VectorIsValid,UNKNOWN,cl_dll/view.cpp,,,MATCHED,100,client_manual.csv,
 client,100B3240,83,?guess_MsgCoopCamAnim@@YAHPBDHPAX@Z,guess_MsgCoopCamAnim,UNKNOWN,cl_dll/view.cpp,,,MATCHED,100,client_manual.csv,
 client,100B32A0,44,?guess_MsgModelAttach@@YAHPBDHPAX@Z,guess_MsgModelAttach,UNKNOWN,cl_dll/view.cpp,,,MATCHED,100,client_manual.csv,
 client,100B32D0,85,?guess_MsgThirdPerson@@YAHPBDHPAX@Z,guess_MsgThirdPerson,UNKNOWN,cl_dll/view.cpp,,,MATCHED,100,client_manual.csv,
+client,100B3330,3,,,UNKNOWN,,,,TODO,,,found by tools/gaps.py (no Ghidra function before)
 client,100B3340,196,_V_CalcRefdef,V_CalcRefdef,HLSDK,cl_dll/view.cpp,,,MATCHED,100,client_1.6a_exports.csv,
 client,100B42A4,14,??2@YAPAXIHPBDH@Z,operator new,LIB,,,,,,crt_bytes_ambiguous,
 client,100B42B2,9,__CRT_INIT@12,_CRT_INIT,LIB,,,,,,crt_bytes_ambiguous,

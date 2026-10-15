@@ -130,18 +130,24 @@ void ParticleSystemManager::UpdateSystems( float frametime, int sky ) //LRC - no
 		{
 			pLast = pSystem;
 			pSystem = pSystem->m_pNextSystem;
+			continue;
 		}
-		else if (ent->curstate.renderfx == 184)
+
+		if (ent->curstate.renderfx == 184)
 		{
 			pLast = pSystem;
 			pSystem = pSystem->m_pNextSystem;
+			continue;
 		}
-		else if (ent->curstate.renderfx == 137)
+
+		if (ent->curstate.renderfx == 137)
 		{
 			pLast = pSystem;
 			pSystem = pSystem->m_pNextSystem;
+			continue;
 		}
-		else if(	pSystem->UpdateSystem(frametime, /*right, up,*/ localPlayer->curstate.messagenum) )
+
+		if(	pSystem->UpdateSystem(frametime, /*right, up,*/ localPlayer->curstate.messagenum) )
 		{
 			pSystem->DrawSystem();
 			pLast = pSystem;

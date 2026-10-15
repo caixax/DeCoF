@@ -12,6 +12,7 @@ public:
 	guess_CCgWater();
 
 	void guess_DrawBlackQuad( void );
+	void guess_EndShaders( void );
 	void guess_Init( void );
 	void guess_PostDraw( void );
 	void guess_PreDraw( void );
