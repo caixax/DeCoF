@@ -1983,6 +1983,35 @@
           "cl_dll/view"
         ]
       }
+    },
+    "hw": {
+      "toolchain": "vc6",
+      "ghidra_folder": "/1.6a",
+      "ghidra_program": "hw.dll",
+      "symbols": "tools/symbols/hw_1.6a.csv",
+      "cflags": [
+        "/nologo",
+        "/c",
+        "/G5",
+        "/W3",
+        "/Od"
+      ],
+      "defines": [
+        "WIN32",
+        "_WINDOWS",
+        "GLQUAKE"
+      ],
+      "includes": [
+        "src/engine_hw",
+        "src/common"
+      ],
+      "units": [
+        {
+          "name": "engine/crc",
+          "source": "src/engine_hw/crc.c",
+          "functions_file": "tools/units/hw_engine_crc.txt"
+        }
+      ]
     }
   }
 }

@@ -2346,6 +2346,14 @@
       "metadata": {
         "source_path": "src/cl_dll/guess_TextureManager.cpp"
       }
+    },
+    {
+      "name": "hw/engine/crc",
+      "target_path": "build/target/hw/engine/crc.obj",
+      "base_path": "build/base/hw/engine/crc.obj",
+      "metadata": {
+        "source_path": "src/engine_hw/crc.c"
+      }
     }
   ]
 }
