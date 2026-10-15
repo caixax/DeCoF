@@ -2348,11 +2348,99 @@
       }
     },
     {
+      "name": "client/cl_dll/lensflare",
+      "target_path": "build/target/client/cl_dll/lensflare.obj",
+      "base_path": "build/base/client/cl_dll/lensflare.obj",
+      "metadata": {
+        "source_path": "src/cl_dll/lensflare.cpp"
+      }
+    },
+    {
+      "name": "client/cl_dll/guess_Blur",
+      "target_path": "build/target/client/cl_dll/guess_Blur.obj",
+      "base_path": "build/base/client/cl_dll/guess_Blur.obj",
+      "metadata": {
+        "source_path": "src/cl_dll/guess_Blur.cpp"
+      }
+    },
+    {
       "name": "hw/engine/crc",
       "target_path": "build/target/hw/engine/crc.obj",
       "base_path": "build/base/hw/engine/crc.obj",
       "metadata": {
         "source_path": "src/engine_hw/crc.c"
+      }
+    },
+    {
+      "name": "hw/engine/cvar",
+      "target_path": "build/target/hw/engine/cvar.obj",
+      "base_path": "build/base/hw/engine/cvar.obj",
+      "metadata": {
+        "source_path": "src/engine_hw/cvar.c"
+      }
+    },
+    {
+      "name": "hw/engine/cmd",
+      "target_path": "build/target/hw/engine/cmd.obj",
+      "base_path": "build/base/hw/engine/cmd.obj",
+      "metadata": {
+        "source_path": "src/engine_hw/cmd.c"
+      }
+    },
+    {
+      "name": "hw/engine/zone",
+      "target_path": "build/target/hw/engine/zone.obj",
+      "base_path": "build/base/hw/engine/zone.obj",
+      "metadata": {
+        "source_path": "src/engine_hw/zone.c"
+      }
+    },
+    {
+      "name": "hw/engine/info",
+      "target_path": "build/target/hw/engine/info.obj",
+      "base_path": "build/base/hw/engine/info.obj",
+      "metadata": {
+        "source_path": "src/engine_hw/info.c"
+      }
+    },
+    {
+      "name": "hw/engine/CONSOLE",
+      "target_path": "build/target/hw/engine/CONSOLE.obj",
+      "base_path": "build/base/hw/engine/CONSOLE.obj",
+      "metadata": {
+        "source_path": "src/engine_hw/CONSOLE.C"
+      }
+    },
+    {
+      "name": "hw/engine/KEYS",
+      "target_path": "build/target/hw/engine/KEYS.obj",
+      "base_path": "build/base/hw/engine/KEYS.obj",
+      "metadata": {
+        "source_path": "src/engine_hw/KEYS.C"
+      }
+    },
+    {
+      "name": "hw/engine/common",
+      "target_path": "build/target/hw/engine/common.obj",
+      "base_path": "build/base/hw/engine/common.obj",
+      "metadata": {
+        "source_path": "src/engine_hw/common.c"
+      }
+    },
+    {
+      "name": "hw/engine/delta",
+      "target_path": "build/target/hw/engine/delta.obj",
+      "base_path": "build/base/hw/engine/delta.obj",
+      "metadata": {
+        "source_path": "src/engine_hw/delta.c"
+      }
+    },
+    {
+      "name": "hw/engine/net_chan",
+      "target_path": "build/target/hw/engine/net_chan.obj",
+      "base_path": "build/base/hw/engine/net_chan.obj",
+      "metadata": {
+        "source_path": "src/engine_hw/net_chan.c"
       }
     }
   ]

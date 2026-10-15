@@ -1,0 +1,13 @@
+_Key_StringToKeynum
+_Key_KeynumToString
+_Key_SetBinding
+_Key_Unbind_f
+_Key_Unbindall_f
+_Key_Escape_f
+_Key_Bind_f
+_Key_CountBindings
+_Key_WriteBindings
+_Key_NameForBinding
+_Key_Init
+_Key_EventStub
+_Key_Event

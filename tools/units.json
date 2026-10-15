@@ -1794,6 +1794,16 @@
           "name": "cl_dll/guess_TextureManager",
           "source": "src/cl_dll/guess_TextureManager.cpp",
           "functions_file": "tools/units/client_cl_dll_guess_TextureManager.txt"
+        },
+        {
+          "name": "cl_dll/lensflare",
+          "source": "src/cl_dll/lensflare.cpp",
+          "functions_file": "tools/units/client_cl_dll_lensflare.txt"
+        },
+        {
+          "name": "cl_dll/guess_Blur",
+          "source": "src/cl_dll/guess_Blur.cpp",
+          "functions_file": "tools/units/client_cl_dll_guess_Blur.txt"
         }
       ],
       "link": {
@@ -1866,6 +1876,7 @@
           "cl_dll/ammohistory",
           "cl_dll/ammo_secondary",
           "cl_dll/battery",
+          "cl_dll/guess_Blur",
           "cl_dll/cdll_int",
           "cl_dll/guess_AmmoInventory",
           "cl_dll/guess_BookMenu",
@@ -1936,6 +1947,7 @@
           "cl_dll/input",
           "cl_dll/inputw32",
           "cl_dll/in_camera",
+          "cl_dll/lensflare",
           "cl_dll/log",
           "cl_dll/menu",
           "cl_dll/message",
@@ -2010,6 +2022,51 @@
           "name": "engine/crc",
           "source": "src/engine_hw/crc.c",
           "functions_file": "tools/units/hw_engine_crc.txt"
+        },
+        {
+          "name": "engine/cvar",
+          "source": "src/engine_hw/cvar.c",
+          "functions_file": "tools/units/hw_engine_cvar.txt"
+        },
+        {
+          "name": "engine/cmd",
+          "source": "src/engine_hw/cmd.c",
+          "functions_file": "tools/units/hw_engine_cmd.txt"
+        },
+        {
+          "name": "engine/zone",
+          "source": "src/engine_hw/zone.c",
+          "functions_file": "tools/units/hw_engine_zone.txt"
+        },
+        {
+          "name": "engine/info",
+          "source": "src/engine_hw/info.c",
+          "functions_file": "tools/units/hw_engine_info.txt"
+        },
+        {
+          "name": "engine/CONSOLE",
+          "source": "src/engine_hw/CONSOLE.C",
+          "functions_file": "tools/units/hw_engine_CONSOLE.txt"
+        },
+        {
+          "name": "engine/KEYS",
+          "source": "src/engine_hw/KEYS.C",
+          "functions_file": "tools/units/hw_engine_KEYS.txt"
+        },
+        {
+          "name": "engine/common",
+          "source": "src/engine_hw/common.c",
+          "functions_file": "tools/units/hw_engine_common.txt"
+        },
+        {
+          "name": "engine/delta",
+          "source": "src/engine_hw/delta.c",
+          "functions_file": "tools/units/hw_engine_delta.txt"
+        },
+        {
+          "name": "engine/net_chan",
+          "source": "src/engine_hw/net_chan.c",
+          "functions_file": "tools/units/hw_engine_net_chan.txt"
         }
       ]
     }
