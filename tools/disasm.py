@@ -32,7 +32,8 @@ import pefile
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 IMAGES = {"hl": "versions/1.6a/cryoffear/cl_dlls/hl.dll", "client": "versions/1.6a/cryoffear/cl_dlls/client.dll",
-          "hw": "versions/1.6a/hw.dll", "opengl32": "versions/1.6a/opengl32.dll"}
+          "hw": "versions/1.6a/hw.dll", "opengl32": "versions/1.6a/opengl32.dll",
+          "gameui": "versions/1.6a/cryoffear/cl_dlls/GameUI.dll", "launcher": "versions/1.6a/cof.exe"}
 OLD_HL = {"1.0": "versions/1.0/CryOfFear/cl_dlls/hl.dll", "1.4": "versions/hl.dll",
           "1.55": "versions/1.55/cl_dlls/hl.dll"}
 

@@ -2163,7 +2163,34 @@
           "source": "src/launcher/SteamAppStartup_guess.cpp",
           "functions_file": "tools/units/launcher_SteamAppStartup_guess.txt"
         }
-      ]
+      ],
+      "link": {
+        "out": "launcher.exe",
+        "retail": "versions/1.6a/cof.exe",
+        "flags": [
+          "/nologo",
+          "/subsystem:windows",
+          "/machine:I386",
+          "/incremental:no",
+          "/debug",
+          "/pdb:build/link/launcher/launcher.pdb",
+          "/base:0x1400000"
+        ],
+        "libs": [
+          "wsock32.lib",
+          "kernel32.lib",
+          "user32.lib",
+          "advapi32.lib"
+        ],
+        "order": [
+          "commandline",
+          "interface",
+          "launcher",
+          "LoadBlob",
+          "registry",
+          "SteamAppStartup_guess"
+        ]
+      }
     }
   }
 }

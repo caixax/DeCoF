@@ -68,12 +68,27 @@ hw.dll is Cry of Fear's own GoldSrc engine build (2013, Visual C++ 6.0). Valve n
 | Record a name | `python tools/add_name.py --dll hw hw/engine/<file> <va> "_<Name>" "<evidence>"` (C functions are `_Name`) |
 
 Rules that hold for this build:
-- Every engine object is built with `/Od` (the Standard Edition has no optimizer): code is literal, so statement order, expression shape and the declaration order of locals decide the bytes. Locals take stack slots by declaration order; write them in the order the DWARF gives.
+- Every engine object is built with `/Od` (the Standard Edition has no optimizer): code is literal, so statement order, expression shape and the names of locals decide the bytes.
+- Stack slots are not given in declaration order but by a hash of each local's name (16 buckets, bucket 0 at the top of the frame, the last declared first inside a bucket; inner block locals after the outer ones). `python tools/vc6_slots.py <locals in declaration order>` predicts the frame. With the DWARF names the layout usually matches by itself; when two locals have the same type, the slot order tells which name is which. A slot the retail frame has but no DWARF local explains is an unused local (name it `_guess`).
+- Global names by address: `tools/symbols/hw_manual.csv` rows from `tools/globals_linux.py` (the Linux relocations paired by the functions that use each global). `python tools/globals_linux.py hw I:/Tools/_downloads/hl_linux_legacy/hw.so --members <global>` prints the Linux member offsets next to the Windows ones, which shows where a Windows struct layout differs.
+- Shapes that matter under `/Od`: `while ( 1 )` gives `mov eax,1; test eax,eax; je`; retail often writes while loops with the step at the end of the body instead of for loops; `if ( x > 0 ) return 1; return 0;`, `return x > 0;` and `return x != 0;` are three different shapes; `if ( !a || !b ) return;` and an empty then-branch are shapes of their own; `float v = expr; return v;` gives `fst` without a reload; literals with an f suffix are dword constants, others qword constants; switch cases are emitted in source order behind a two-level byte table.
+- Some third-party code is stdcall: bzip2 is built WINAPI (no `add esp` after its calls), so its names carry the decoration (`_BZ2_bzBuffToBuffDecompress@24`).
 - The functions of a file appear in source order (no alphabetical sort, unlike the 2020 game DLLs), and functions GCC inlined in the Linux build are separate functions here.
 - The 2013 file is an older version than the Linux one: functions added later are missing, some functions are shorter. Write what the Windows assembly does; the DWARF only names things.
 - Calls through the engine's anti-cheat hook table (`call [0x01ebf980]` with a pointer to an argument) are `g_engdstAddrs.pfnXxx( &arg )` (`build/dwarf_hw/engine/APIProxy.h`, `cl_enginefunc_dst_t`).
 - Headers live in `src/engine_hw/` and are named like the originals (`common.h`, `cvar.h`, ...). Each header belongs to the agent that owns its .c file; any agent may add a missing prototype or extern to any header, but only the owner changes a struct.
 - Retail string literals go into `.data` (VC6 without /GF): the strings at the end of `tools/range.py` output are exact.
+
+## cof.exe units (the VC6 launcher)
+
+cof.exe is Valve's hl.exe launcher (`src/launcher`, Visual C++ 6.0, `/G5 /W3 /O1 /MT /GR`). Names come from the hl_linux DWARF (launcher.cpp, commandline.cpp, interface.cpp) and the hw.so DWARF (LoadBlob.cpp, registry.cpp).
+- `/O1` calls `strlen`, `memset` and `strcpy` instead of inlining them and uses size idioms (`and [mem],0`, `leave`).
+- `while ( 1 ) { ...; if ( !x ) break; }` gives a different loop layout and register assignment than `do {} while ( x )` or `while ( x )`; WinMain and LoadFilesystemModule only matched with it.
+- `/O1` implies `/Gf`: string literals are `??_C@...` sections shared across objects, named the same everywhere; map retail strings by content.
+- A static function comes right after its first caller. Zero-initialised globals inside an object are ordered by a hash of their names, so with the right names the layout matches by itself.
+- `stricmp`/`strnicmp` (OLDNAMES) instead of `_stricmp` change the order the C runtime is linked in; use whichever reproduces the runtime layout and name the retail address with the alias.
+- `winsock2.h` gives `call [__imp__WSAStartup@8]`, `winsock.h` calls through a thunk. A brace-initialised local `char` array is one byte store per character.
+- A function that delinks as `(bad)` has an empty body in Ghidra: disassemble the range, recreate the function and delink again.
 
 ## Facts that hold for the CoF weapons
 

@@ -32782,45 +32782,61 @@ hw,01E8A2CE,46,__wcsdup,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LI
 hw,01E8A2FC,498,,,UNKNOWN,,,,TODO,,,
 hw,01E8A517,48,_wcsncnt,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(w_cmp.obj)"
 hw,01E8A547,248,__wcsnicmp,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(wcsnicmp.obj)"
-launcher,0140100A,10,,,UNKNOWN,,,,TODO,,,
-launcher,01401014,12,,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(fgetchar.obj)"
-launcher,0140102A,13,??0DNameNode@@IAE@XZ,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(undname.obj)"
-launcher,01401037,28,,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(rtti.obj)"
-launcher,01401053,16,,,UNKNOWN,,,,TODO,,,
-launcher,01401063,255,,CCommandLine::CreateCmdLine,ENGINE,,,,TODO,,linux_symbols:string:0.75,
-launcher,01401162,44,,,UNKNOWN,,,,TODO,,,
-launcher,0140118E,195,,,UNKNOWN,,,,TODO,,,
-launcher,01401251,216,,,UNKNOWN,,,,TODO,,,
-launcher,01401329,31,,,UNKNOWN,,,,TODO,,,
-launcher,01401348,50,,,UNKNOWN,,,,TODO,,,
-launcher,0140137E,123,,,UNKNOWN,,,,TODO,,,
-launcher,01401419,67,,CreateInterface,ENGINE,,,,TODO,,ghidra,
-launcher,0140146B,65,,,UNKNOWN,,,,TODO,,,
-launcher,014014AC,18,,,UNKNOWN,,,,TODO,,,
-launcher,014014BE,26,,,UNKNOWN,,,,TODO,,,
-launcher,014014D8,6,,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBC.LIB(mterrno.obj)"
-launcher,01401505,135,,,UNKNOWN,,,,TODO,,,
-launcher,0140158C,186,,,UNKNOWN,,,,TODO,,,
-launcher,01401646,108,,,UNKNOWN,,,,TODO,,,
-launcher,014016B2,30,,,UNKNOWN,,,,TODO,,,
-launcher,014016D0,387,,,UNKNOWN,,,,TODO,,,
-launcher,01401853,1357,,main,ENGINE,,,,TODO,,linux_symbols:string:0.288,
-launcher,01401DA0,75,,,UNKNOWN,,,,TODO,,,
-launcher,01401EA5,172,,,UNKNOWN,,,,TODO,,,
-launcher,01401F51,125,,,UNKNOWN,,,,TODO,,,
-launcher,01402016,28,,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(rtti.obj)"
-launcher,01402032,7,,,UNKNOWN,,,,TODO,,,
-launcher,01402039,69,,,UNKNOWN,,,,TODO,,,
-launcher,0140209F,76,,,UNKNOWN,,,,TODO,,,
-launcher,014020EB,46,,,UNKNOWN,,,,TODO,,,
-launcher,01402119,94,,,UNKNOWN,,,,TODO,,,
-launcher,01402177,6,,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBC.LIB(mterrno.obj)"
-launcher,01402191,27,,,UNKNOWN,,,,TODO,,,
-launcher,014021AC,101,,,UNKNOWN,,,,TODO,,,
-launcher,01402211,647,,,UNKNOWN,,,,TODO,,,
+launcher,01401000,10,,$E1,ENGINE,commandline.cpp,,,TODO,,disassembly,"VC6 dynamic initializer of g_CmdLine ($E1 calls $E2 then $E3); every object names its helpers $E1 to $E4, so the symbol map can not pair them and objdiff does not score them"
+launcher,0140100A,10,,$E2,ENGINE,commandline.cpp,,,TODO,,disassembly,"VC6 dynamic initializer of g_CmdLine ($E2 runs the constructor); every object names its helpers $E1 to $E4, so the symbol map can not pair them and objdiff does not score them"
+launcher,01401014,12,,$E3,ENGINE,commandline.cpp,,,TODO,,disassembly,"VC6 dynamic initializer of g_CmdLine ($E3 registers $E4 with atexit); every object names its helpers $E1 to $E4, so the symbol map can not pair them and objdiff does not score them"
+launcher,01401020,10,,$E4,ENGINE,commandline.cpp,,,TODO,,disassembly,"VC6 dynamic initializer of g_CmdLine ($E4 runs the destructor); every object names its helpers $E1 to $E4, so the symbol map can not pair them and objdiff does not score them"
+launcher,0140102A,13,??0CCommandLine@@QAE@XZ,CCommandLine::CCommandLine,ENGINE,commandline.cpp,,,MATCHED,100,launcher_1.6a.csv,"VC6 static CRT, bytes identical to LIBCMT.LIB(undname.obj)"
+launcher,01401037,28,??_GCCommandLine@@UAEPAXI@Z,CCommandLine::`scalar deleting destructor',ENGINE,commandline.cpp,,,MATCHED,100,launcher_1.6a.csv,"VC6 static CRT, bytes identical to LIBCMT.LIB(rtti.obj)"
+launcher,01401053,16,??1CCommandLine@@UAE@XZ,CCommandLine::~CCommandLine,ENGINE,commandline.cpp,,,MATCHED,100,launcher_1.6a.csv,
+launcher,01401063,255,?CreateCmdLine@CCommandLine@@UAEXPBD@Z,CCommandLine::CreateCmdLine,ENGINE,commandline.cpp,,,MATCHED,100,linux_symbols:string:0.75,
+launcher,01401162,44,?CopyString_guess@@YAPADPBD@Z,CopyString_guess,ENGINE,commandline.cpp,,,MATCHED,100,launcher_1.6a.csv,
+launcher,0140118E,195,?RemoveParm@CCommandLine@@UAEXPBD@Z,CCommandLine::RemoveParm,ENGINE,commandline.cpp,,,MATCHED,100,launcher_1.6a.csv,
+launcher,01401251,216,?AppendParm@CCommandLine@@UAEXPBD0@Z,CCommandLine::AppendParm,ENGINE,commandline.cpp,,,MATCHED,100,launcher_1.6a.csv,
+launcher,01401329,31,?SetParm@CCommandLine@@UAEXPBD0@Z,CCommandLine::SetParm,ENGINE,commandline.cpp,,,MATCHED,100,launcher_1.6a.csv,
+launcher,01401348,50,?SetParm@CCommandLine@@UAEXPBDH@Z,CCommandLine::SetParm,ENGINE,commandline.cpp,,,MATCHED,100,launcher_1.6a.csv,
+launcher,0140137A,4,?GetCmdLine@CCommandLine@@UAEPBDXZ,CCommandLine::GetCmdLine,ENGINE,commandline.cpp,,,MATCHED,100,launcher_1.6a.csv,
+launcher,0140137E,123,?CheckParm@CCommandLine@@UAEPADPBDPAPAD@Z,CCommandLine::CheckParm,ENGINE,commandline.cpp,,,MATCHED,100,launcher_1.6a.csv,
+launcher,014013F9,32,??0InterfaceReg@@QAE@P6APAVIBaseInterface@@XZPBD@Z,InterfaceReg::InterfaceReg,ENGINE,interface.cpp,,,MATCHED,100,launcher_1.6a.csv,
+launcher,01401419,67,_CreateInterface,CreateInterface,ENGINE,interface.cpp,,,MATCHED,100,ghidra,
+launcher,0140145C,15,?Sys_GetProcAddress@@YAPAXPAXPBD@Z,cointerface ?? :: ?? ::Z::APAXPAXPBD volatile ,ENGINE,interface.cpp,,,MATCHED,100,launcher_1.6a.csv,
+launcher,0140146B,65,?Sys_LoadModule@@YAPAVCSysModule@@PBD@Z,Sys_LoadModule,ENGINE,interface.cpp,,,MATCHED,100,launcher_1.6a.csv,
+launcher,014014AC,18,?Sys_UnloadModule@@YAXPAVCSysModule@@@Z,Sys_UnloadModule,ENGINE,interface.cpp,,,MATCHED,100,launcher_1.6a.csv,
+launcher,014014BE,26,?Sys_GetFactory@@YAP6APAVIBaseInterface@@PBDPAH@ZPAVCSysModule@@@Z,Sys_GetFactory,ENGINE,interface.cpp,,,MATCHED,100,launcher_1.6a.csv,
+launcher,014014D8,6,?Sys_GetFactoryThis@@YAP6APAVIBaseInterface@@PBDPAH@ZXZ,Sys_GetFactoryThis,ENGINE,interface.cpp,,,MATCHED,100,launcher_1.6a.csv,"VC6 static CRT, bytes identical to LIBC.LIB(mterrno.obj)"
+launcher,014014DE,17,?Sys_GetFactory@@YAP6APAVIBaseInterface@@PBDPAH@Z0@Z,Sys_GetFactory,ENGINE,interface.cpp,,,MATCHED,100,launcher_1.6a.csv,
+launcher,014014EF,22,?Sys_GetProcAddress@@YAPAXPBD0@Z,cointerface ?? :: ?? ::Z::APAXPBD0 volatile ,ENGINE,interface.cpp,,,MATCHED,100,launcher_1.6a.csv,
+launcher,01401505,135,?UTIL_GetBaseDir@@YAPADXZ,UTIL_GetBaseDir,ENGINE,launcher.cpp,,,MATCHED,100,launcher_1.6a.csv,
+launcher,0140158C,186,?SetEngineDLL@@YAXPAPBD@Z,SetEngineDLL,ENGINE,launcher.cpp,,,MATCHED,100,launcher_1.6a.csv,
+launcher,01401646,108,?OnVideoModeFailed@@YA_NXZ,OnVideoModeFailed,ENGINE,launcher.cpp,,,MATCHED,100,launcher_1.6a.csv,
+launcher,014016B2,30,?Sys_GetExecutableName@@YAHPADH@Z,Sys_GetExecutableName,ENGINE,launcher.cpp,,,MATCHED,100,launcher_1.6a.csv,
+launcher,014016D0,387,?LoadFilesystemModule@@YAPAVCSysModule@@PBD_N@Z,LoadFilesystemModule,ENGINE,launcher.cpp,,,MATCHED,100,launcher_1.6a.csv,
+launcher,01401853,1357,_WinMain@16,main,ENGINE,launcher.cpp,,,MATCHED,100,linux_symbols:string:0.288,
+launcher,01401DA0,75,?FIsBlob@@YADPBD@Z,FIsBlob,ENGINE,LoadBlob.cpp,,,MATCHED,100,launcher_1.6a.csv,
+launcher,01401DEB,186,?NLoadBlobFile@@YAPAXPBDPAUBlobFootprint_s@@PAXD@Z,NLoadBlobFile,ENGINE,LoadBlob.cpp,,,MATCHED,100,launcher_1.6a.csv,
+launcher,01401EA5,172,?LoadBlobFile_guess@@YAPAXPAEPAUBlobFootprint_s@@PAXH@Z,LoadBlobFile_guess,ENGINE,LoadBlob.cpp,,,MATCHED,100,launcher_1.6a.csv,
+launcher,01401F51,125,?ProcessBlobImports_guess@@YAXPAUBlobHeader_s_guess@@@Z,ProcessBlobImports_guess,ENGINE,LoadBlob.cpp,,,EQUIVALENT,96.66,launcher_1.6a.csv,"EQUIVALENT: retail adds the name offset with add eax, ecx / add eax, 2 on the import-by-name path, VC6 /O1 emits lea eax, [eax+ecx+2] (one byte shorter, so everything after it up to the import thunks moves down a byte); expression shapes, IMAGE_IMPORT_BY_NAME->Name, loop forms and other /G and /O flags all give the lea"
+launcher,01401FCE,13,?FreeBlob@@YAXPAUBlobFootprint_s@@@Z,FreeBlob,ENGINE,LoadBlob.cpp,,,MATCHED,100,launcher_1.6a.csv,
+launcher,01401FDB,10,,$E1,ENGINE,registry.cpp,,,TODO,,disassembly,"VC6 dynamic initializer of g_Registry ($E1 calls $E2 then $E3); every object names its helpers $E1 to $E4, so the symbol map can not pair them and objdiff does not score them"
+launcher,01401FE5,10,,$E2,ENGINE,registry.cpp,,,TODO,,disassembly,"VC6 dynamic initializer of g_Registry ($E2 runs the constructor); every object names its helpers $E1 to $E4, so the symbol map can not pair them and objdiff does not score them"
+launcher,01401FEF,12,,$E3,ENGINE,registry.cpp,,,TODO,,disassembly,"VC6 dynamic initializer of g_Registry ($E3 registers $E4 with atexit); every object names its helpers $E1 to $E4, so the symbol map can not pair them and objdiff does not score them"
+launcher,01401FFB,10,,$E4,ENGINE,registry.cpp,,,TODO,,disassembly,"VC6 dynamic initializer of g_Registry ($E4 runs the destructor); every object names its helpers $E1 to $E4, so the symbol map can not pair them and objdiff does not score them"
+launcher,01402005,17,??0CRegistry@@QAE@XZ,CRegistry::CRegistry,ENGINE,registry.cpp,,,MATCHED,100,launcher_1.6a.csv,
+launcher,01402016,28,??_GCRegistry@@UAEPAXI@Z,CRegistry::`scalar deleting destructor',ENGINE,registry.cpp,,,MATCHED,100,launcher_1.6a.csv,"VC6 static CRT, bytes identical to LIBCMT.LIB(rtti.obj)"
+launcher,01402032,7,??1CRegistry@@UAE@XZ,CRegistry::~CRegistry,ENGINE,registry.cpp,,,MATCHED,100,launcher_1.6a.csv,
+launcher,01402039,69,?ReadInt@CRegistry@@UAEHPBDH@Z,CRegistry::ReadInt,ENGINE,registry.cpp,,,MATCHED,100,launcher_1.6a.csv,
+launcher,0140207E,33,?WriteInt@CRegistry@@UAEXPBDH@Z,struct ?? :: ?? ::Z::AEXPBDH volatile ,ENGINE,registry.cpp,,,MATCHED,100,launcher_1.6a.csv,
+launcher,0140209F,76,?ReadString@CRegistry@@UAEPBDPBD0@Z,CRegistry::ReadString,ENGINE,registry.cpp,,,MATCHED,100,launcher_1.6a.csv,
+launcher,014020EB,46,?WriteString@CRegistry@@UAEXPBD0@Z,CRegistry::WriteString,ENGINE,registry.cpp,,,MATCHED,100,launcher_1.6a.csv,
+launcher,01402119,94,?Init@CRegistry@@UAEXXZ,CRegistry::Init,ENGINE,registry.cpp,,,MATCHED,100,launcher_1.6a.csv,
+launcher,01402177,6,?GetGameName_guess@@YAPBDXZ,GetGameName_guess,ENGINE,registry.cpp,,,MATCHED,100,launcher_1.6a.csv,"VC6 static CRT, bytes identical to LIBC.LIB(mterrno.obj)"
+launcher,0140217D,20,?Shutdown@CRegistry@@UAEXXZ,struct ?? ::AEXXZ volatile ,ENGINE,registry.cpp,,,MATCHED,100,launcher_1.6a.csv,
+launcher,01402191,27,?FileExists_guess@@YA_NPBD@Z,FileExists_guess,ENGINE,SteamAppStartup_guess.cpp,,,MATCHED,100,launcher_1.6a.csv,
+launcher,014021AC,101,?ShouldLaunchAppViaSteam_guess@@YA_NPBD00@Z,ShouldLaunchAppViaSteam_guess,ENGINE,SteamAppStartup_guess.cpp,,,MATCHED,100,launcher_1.6a.csv,
+launcher,01402211,647,?LaunchSelfViaSteam_guess@@YAXPBD@Z,LaunchSelfViaSteam_guess,ENGINE,SteamAppStartup_guess.cpp,,,MATCHED,100,launcher_1.6a.csv,
 launcher,01402528,126,__onexit,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(onexit.obj)"
 launcher,014025A6,18,_atexit,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(onexit.obj)"
-launcher,014025E7,41,??1type_info@@UAE@XZ,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(typinfo.obj)"
+launcher,014025E7,41,??1type_info@@UAE@XZ,type_info::~type_info,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(typinfo.obj)"
 launcher,01402610,28,,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(rtti.obj)"
 launcher,01402696,11,,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(atox.obj)"
 launcher,01402774,40,_isspace,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(_ctype.obj)"
@@ -32831,17 +32847,17 @@ launcher,014029C3,49,_fgetc,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCM
 launcher,014029FF,49,,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(fopen.obj)"
 launcher,01402A30,19,,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(fopen.obj)"
 launcher,01402A50,47,__chkstk,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(chkstk.obj)"
-launcher,01402A80,7,,,UNKNOWN,,,,TODO,,,
+launcher,01402A80,7,_strcpy,strcpy,LIB,,,,TODO,,"LIBCMT, at this address in the link map of the rebuilt launcher.exe",
 launcher,01402A90,224,,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(mbscat.obj)"
 launcher,01402B70,14,,operator_new,LIB,,,,,,ghidra,
 launcher,01402B80,123,_strlen,_strlen,LIB,,,,,,ghidra,
 launcher,01402C00,88,_memset,_memset,LIB,,,,,,ghidra,
-launcher,01402C60,664,,,UNKNOWN,,,,TODO,,,
+launcher,01402C60,664,_memcpy,memcpy,LIB,,,,TODO,,"LIBCMT, at this address in the link map of the rebuilt launcher.exe",
 launcher,01402FA0,133,_strstr,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(strstr.obj)"
 launcher,01403020,81,__snprintf,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(snprintf.obj)"
 launcher,01403080,129,,_strcmp,LIB,,,,,,ghidra,
 launcher,01403110,39,_strrchr,_strrchr,LIB,,,,,,ghidra,
-launcher,01403150,188,,,UNKNOWN,,,,TODO,,,
+launcher,01403150,188,_strchr,strchr,LIB,,,,TODO,,"LIBCMT, at this address in the link map of the rebuilt launcher.exe",
 launcher,0140320C,205,__findfirst,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(findfile.obj)"
 launcher,014032D9,200,__findnext,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(findfile.obj)"
 launcher,014033A1,32,__findclose,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(findfile.obj)"
@@ -32870,13 +32886,13 @@ launcher,014047B6,699,__stat,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBC
 launcher,01404A71,112,_IsRootUNCName,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(stat.obj)"
 launcher,01404AE1,23,,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(strtol.obj)"
 launcher,01404AF8,134,__chdir,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(chdir.obj)"
-launcher,01404B7E,253,,entry,ENGINE,,,,TODO,,ghidra,
+launcher,01404B7E,253,_WinMainCRTStartup,WinMainCRTStartup,LIB,,,,TODO,,"LIBCMT, at this address in the link map of the rebuilt launcher.exe",
 launcher,01404C86,34,,__amsg_exit,LIB,,,,,,ghidra,
-launcher,01404CAB,35,,,UNKNOWN,,,,TODO,,,
+launcher,01404CAB,35,_fast_error_exit,fast_error_exit,LIB,,,,TODO,,"LIBCMT, at this address in the link map of the rebuilt launcher.exe",
 launcher,01404CCF,45,__cinit,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(crt0dat.obj)"
 launcher,01404CFC,17,_exit,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(crt0dat.obj)"
 launcher,01404D0D,17,__exit,__exit,LIB,,,,,,ghidra,
-launcher,01404D3C,163,,,UNKNOWN,,,,TODO,,,
+launcher,01404D3C,163,_doexit,doexit,LIB,,,,TODO,,"LIBCMT, at this address in the link map of the rebuilt launcher.exe",
 launcher,01404DE1,9,,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(crt0dat.obj)"
 launcher,01404DEA,9,,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(crt0dat.obj)"
 launcher,01404DF3,26,__initterm,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(crt0dat.obj)"
@@ -32892,7 +32908,7 @@ launcher,01405230,47,,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(
 launcher,0140525F,35,,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(_file.obj)"
 launcher,01405282,141,__stbuf,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(_sftbuf.obj)"
 launcher,0140530F,42,__ftbuf,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(_sftbuf.obj)"
-launcher,01405339,1825,,,UNKNOWN,,,,TODO,,,
+launcher,01405339,1825,__output,output,LIB,,,,TODO,,"LIBCMT, at this address in the link map of the rebuilt launcher.exe",
 launcher,01405A7A,53,_write_char,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(output.obj)"
 launcher,01405AAF,49,_write_multi_char,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(output.obj)"
 launcher,01405AE0,56,_write_string,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(output.obj)"
@@ -32923,7 +32939,7 @@ launcher,0140675C,103,_copy_environ,,LIB,,,,,,,"VC6 static CRT, bytes identical 
 launcher,014067C3,63,__mbsnbicoll,__mbsnbicoll,LIB,,,,,,ghidra,
 launcher,01406802,110,___wtomb_environ,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(wtombenv.obj)"
 launcher,01406870,60,__heap_init,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(heapinit.obj)"
-launcher,01406930,664,,,UNKNOWN,,,,TODO,,,
+launcher,01406930,664,_memmove,memmove,LIB,,,,TODO,,"LIBCMT, at this address in the link map of the rebuilt launcher.exe",
 launcher,01406C8F,27,__callnewh,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(handler.obj)"
 launcher,01406CAA,405,__mbsicmp,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(mbsicmp.obj)"
 launcher,01406E3F,114,__mbsrchr,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(mbsrchr.obj)"
@@ -32953,7 +32969,7 @@ launcher,01407DBA,24,__NLG_Notify,,LIB,,,,,,,"VC6 static CRT, bytes identical to
 launcher,01407E99,27,__seh_longjmp_unwind@4,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(exsup3.obj)"
 launcher,01407EB4,57,__FF_MSGBANNER,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(crt0msg.obj)"
 launcher,01407EED,339,__NMSG_WRITE,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(crt0msg.obj)"
-launcher,01408071,318,,,UNKNOWN,,,,TODO,,,
+launcher,01408071,318,___crtGetStringTypeA,crtGetStringTypeA,LIB,,,,TODO,,"LIBCMT, at this address in the link map of the rebuilt launcher.exe",
 launcher,014081BA,141,_calloc,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(calloc.obj)"
 launcher,014082C8,41,__isatty,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(isatty.obj)"
 launcher,014082F1,89,_wctomb,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(wctomb.obj)"
@@ -32989,7 +33005,7 @@ launcher,014097C5,225,__wcsnicoll,,LIB,,,,,,,"VC6 static CRT, bytes identical to
 launcher,014098A6,46,__wcsdup,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(wcsdup.obj)"
 launcher,014098D4,151,__mbschr,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(mbschr.obj)"
 launcher,0140996B,43,,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(mbsdup.obj)"
-launcher,01409996,597,,,UNKNOWN,,,,TODO,,,
+launcher,01409996,597,___crtCompareStringA,crtCompareStringA,LIB,,,,TODO,,"LIBCMT, at this address in the link map of the rebuilt launcher.exe",
 launcher,01409C13,43,_strncnt,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(a_cmp.obj)"
 launcher,01409C3E,429,__setmbcp,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(mbctype.obj)"
 launcher,01409DEB,74,_getSystemCP,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(mbctype.obj)"
@@ -32997,7 +33013,7 @@ launcher,01409E35,51,_CPtoLCID,,LIB,,,,,,,"VC6 static CRT, bytes identical to LI
 launcher,01409E68,41,_setSBCS,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(mbctype.obj)"
 launcher,01409E91,389,_setSBUpLow,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(mbctype.obj)"
 launcher,0140A026,28,___initmbctable,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(mbctype.obj)"
-launcher,0140A042,511,,,UNKNOWN,,,,TODO,,,
+launcher,0140A042,511,___crtLCMapStringA,crtLCMapStringA,LIB,,,,TODO,,"LIBCMT, at this address in the link map of the rebuilt launcher.exe",
 launcher,0140A266,43,_strncnt,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(a_cmp.obj)"
 launcher,0140A2A0,208,__stricmp,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(stricmp.obj)"
 launcher,0140A370,39,,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(getcwd.obj)"
@@ -33023,7 +33039,7 @@ launcher,0140B245,83,___lc_lctostr,,LIB,,,,,,,"VC6 static CRT, bytes identical t
 launcher,0140B298,89,,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(chsize.obj)"
 launcher,0140B2F1,293,__chsize_lk,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(chsize.obj)"
 launcher,0140B416,139,_atol,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(atox.obj)"
-launcher,0140B566,498,,,UNKNOWN,,,,TODO,,,
+launcher,0140B566,498,___crtCompareStringW,crtCompareStringW,LIB,,,,TODO,,"LIBCMT, at this address in the link map of the rebuilt launcher.exe",
 launcher,0140B781,48,_wcsncnt,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(w_cmp.obj)"
 launcher,0140B7B1,248,__wcsnicmp,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(wcsnicmp.obj)"
 launcher,0140B920,203,,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(tolower.obj)"
@@ -33065,7 +33081,7 @@ launcher,0140D9A4,111,__store_num,,LIB,,,,,,,"VC6 static CRT, bytes identical to
 launcher,0140DA13,73,__store_number,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(strftime.obj)"
 launcher,0140DA5C,719,__store_winword,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(strftime.obj)"
 launcher,0140DD2B,312,___getlocaleinfo,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(inithelp.obj)"
-launcher,0140DE69,423,,,UNKNOWN,,,,TODO,,,
+launcher,0140DE69,423,___crtGetStringTypeW,crtGetStringTypeW,LIB,,,,TODO,,"LIBCMT, at this address in the link map of the rebuilt launcher.exe",
 launcher,0140E02E,45,__itoa,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(xtoa.obj)"
 launcher,0140E05B,92,_xtoa,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(xtoa.obj)"
 launcher,0140E0B7,42,__ltoa,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(xtoa.obj)"
@@ -33073,11 +33089,11 @@ launcher,0140E0FC,49,__i64toa,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIB
 launcher,0140E12D,134,_x64toa@20,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(xtoa.obj)"
 launcher,0140E1B3,27,__ui64toa,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(xtoa.obj)"
 launcher,0140E1D0,257,__strnicmp,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(strnicmp.obj)"
-launcher,0140E2D1,491,,,UNKNOWN,,,,TODO,,,
+launcher,0140E2D1,491,___crtLCMapStringW,crtLCMapStringW,LIB,,,,TODO,,"LIBCMT, at this address in the link map of the rebuilt launcher.exe",
 launcher,0140E4DA,48,_wcsncnt,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(w_cmp.obj)"
 launcher,0140E50A,82,_iswctype,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(iswctype.obj)"
-launcher,0140E56C,264,,,UNKNOWN,,,,TODO,,,
-launcher,0140E67F,275,,,UNKNOWN,,,,TODO,,,
+launcher,0140E56C,264,___crtGetLocaleInfoW,crtGetLocaleInfoW,LIB,,,,TODO,,"LIBCMT, at this address in the link map of the rebuilt launcher.exe",
+launcher,0140E67F,275,___crtGetLocaleInfoA,crtGetLocaleInfoA,LIB,,,,TODO,,"LIBCMT, at this address in the link map of the rebuilt launcher.exe",
 opengl32,10001000,25,?sys_glMultiTexCoord2fARB@@YGXIMM@Z,sys_glMultiTexCoord2fARB,PARANOIA,src/opengl32/opengl32.cpp,2010-prototype,"same file in prototype, 1.0 and 1.6a",MATCHED,100,vc6_link_map,
 opengl32,10001019,17,?sys_glActiveTextureARB@@YGXI@Z,sys_glActiveTextureARB,PARANOIA,src/opengl32/opengl32.cpp,2010-prototype,"same file in prototype, 1.0 and 1.6a",MATCHED,100,vc6_link_map,
 opengl32,1000102A,21,?sys_BindTextureEXT@@YGXII@Z,sys_BindTextureEXT,PARANOIA,src/opengl32/opengl32.cpp,2010-prototype,"same file in prototype, 1.0 and 1.6a",MATCHED,100,vc6_link_map,

@@ -54,6 +54,24 @@ def main():
                 taken += 1
             r = w
         out.append(r)
+    # rows of the working copy that HEAD lacks: a selected one goes in after
+    # the row that precedes it in the working copy
+    have = {(r["dll"], r["va"]) for r in old}
+    prev = None
+    added = []
+    for key, w in work.items():
+        if key not in have:
+            take = w["source_file"] in files or key in vas or w["dll"] in dlls
+            if except_files is not None:
+                take = w["source_file"] not in except_files
+            if take:
+                added.append((prev, w))
+                have.add(key)
+        prev = key
+    for after, w in added:
+        i = next((n for n, r in enumerate(out) if (r["dll"], r["va"]) == after), len(out) - 1)
+        out.insert(i + 1, w)
+        taken += 1
     buf = io.StringIO()
     wr = csv.DictWriter(buf, fieldnames=fields, lineterminator="\n")
     wr.writeheader()
