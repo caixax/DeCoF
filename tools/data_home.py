@@ -2,6 +2,7 @@
 
   python tools/data_home.py <dll> <decorated name> [...]
   python tools/data_home.py <dll> --link-log     (the unresolved data symbols of the last link)
+  --window N   also list the N named globals on each side (any map row, with its object or "-")
 
 The linker places the data of each object together, in link order, so a
 global belongs to the object that defines its retail neighbours. For each
@@ -44,6 +45,11 @@ def defined_symbols(obj):
 def main():
     dll = sys.argv[1]
     names = sys.argv[2:]
+    window = 0
+    if "--window" in names:
+        i = names.index("--window")
+        window = int(names[i + 1])
+        del names[i:i + 2]
     if names == ["--link-log"]:
         log = open(os.path.join(ROOT, "build", "link", dll, dll + ".dll.log"), encoding="latin-1").read()
         names = sorted(set(n for n in re.findall(r"unresolved external symbol \"[^\"]*\" \((\?[^)]*@@3[^)]*)\)", log)))
@@ -59,6 +65,8 @@ def main():
         for n in defined_symbols(obj):
             home.setdefault(n, os.path.relpath(obj, os.path.join(ROOT, "build", "base", dll)).replace("\\", "/")[:-4])
     known = sorted((va, n) for n, va in vas.items() if n in home)
+    every = sorted((va, n) for n, va in vas.items())
+    allkeys = [k[0] for k in every]
     keys = [k[0] for k in known]
     for n in names:
         if n not in vas:
@@ -70,6 +78,10 @@ def main():
         hi = known[i] if i < len(known) else None
         print("%-50s %08X  below: %s %s  above: %s %s" % (n[:50], va,
               lo and "%08X" % lo[0], lo and home[lo[1]], hi and "%08X" % hi[0], hi and home[hi[1]]))
+        if window:
+            j = bisect.bisect_left(allkeys, va)
+            for a, m in every[max(0, j - window):j + window]:
+                print("    %08X %-50s %s" % (a, m[:50], home.get(m, "-")))
 
 
 if __name__ == "__main__":
