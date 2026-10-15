@@ -15,6 +15,22 @@ import sys
 from elftools.elf.elffile import ELFFile
 
 
+def member_offset(loc):
+    """DW_AT_data_member_location: a constant, or an expression
+    DW_OP_plus_uconst <ULEB128> (0x23) as GCC writes it."""
+    if isinstance(loc, int):
+        return loc
+    if isinstance(loc, list) and loc and loc[0] == 0x23:
+        v, shift = 0, 0
+        for b in loc[1:]:
+            v |= (b & 0x7F) << shift
+            shift += 7
+            if not b & 0x80:
+                break
+        return v
+    return None
+
+
 def attr(die, name, default=None):
     a = die.attributes.get(name)
     if a is None:
@@ -123,9 +139,7 @@ def main():
                 print("%s %s  // size %s" % (t.tag.replace("DW_TAG_", ""), key, attr(t, "DW_AT_byte_size")))
                 for c in t.iter_children():
                     if c.tag == "DW_TAG_member":
-                        loc = attr(c, "DW_AT_data_member_location")
-                        if isinstance(loc, list):
-                            loc = loc[-1] if loc else ""
+                        loc = member_offset(attr(c, "DW_AT_data_member_location"))
                         print("  +%s %s %s" % (loc, types.name(c), attr(c, "DW_AT_name")))
                     elif c.tag == "DW_TAG_enumerator":
                         print("  %s = %s" % (attr(c, "DW_AT_name"), attr(c, "DW_AT_const_value")))
