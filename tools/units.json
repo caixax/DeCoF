@@ -2098,6 +2098,11 @@
           "name": "engine/sv_upld",
           "source": "src/engine_hw/sv_upld.c",
           "functions_file": "tools/units/hw_engine_sv_upld.txt"
+        },
+        {
+          "name": "engine/CL_MAIN",
+          "source": "src/engine_hw/CL_MAIN.C",
+          "functions_file": "tools/units/hw_engine_CL_MAIN.txt"
         }
       ]
     },
@@ -2111,7 +2116,9 @@
         "/c",
         "/G5",
         "/W3",
-        "/O2"
+        "/O1",
+        "/MT",
+        "/GR"
       ],
       "defines": [
         "WIN32",
@@ -2120,7 +2127,38 @@
       "includes": [
         "src/launcher"
       ],
-      "units": []
+      "units": [
+        {
+          "name": "commandline",
+          "source": "src/launcher/commandline.cpp",
+          "functions_file": "tools/units/launcher_commandline.txt"
+        },
+        {
+          "name": "interface",
+          "source": "src/launcher/interface.cpp",
+          "functions_file": "tools/units/launcher_interface.txt"
+        },
+        {
+          "name": "launcher",
+          "source": "src/launcher/launcher.cpp",
+          "functions_file": "tools/units/launcher_launcher.txt"
+        },
+        {
+          "name": "LoadBlob",
+          "source": "src/launcher/LoadBlob.cpp",
+          "functions_file": "tools/units/launcher_LoadBlob.txt"
+        },
+        {
+          "name": "registry",
+          "source": "src/launcher/registry.cpp",
+          "functions_file": "tools/units/launcher_registry.txt"
+        },
+        {
+          "name": "SteamAppStartup_guess",
+          "source": "src/launcher/SteamAppStartup_guess.cpp",
+          "functions_file": "tools/units/launcher_SteamAppStartup_guess.txt"
+        }
+      ]
     }
   }
 }

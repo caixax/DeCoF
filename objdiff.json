@@ -2490,6 +2490,62 @@
       "metadata": {
         "source_path": "src/engine_hw/sv_upld.c"
       }
+    },
+    {
+      "name": "hw/engine/CL_MAIN",
+      "target_path": "build/target/hw/engine/CL_MAIN.obj",
+      "base_path": "build/base/hw/engine/CL_MAIN.obj",
+      "metadata": {
+        "source_path": "src/engine_hw/CL_MAIN.C"
+      }
+    },
+    {
+      "name": "launcher/commandline",
+      "target_path": "build/target/launcher/commandline.obj",
+      "base_path": "build/base/launcher/commandline.obj",
+      "metadata": {
+        "source_path": "src/launcher/commandline.cpp"
+      }
+    },
+    {
+      "name": "launcher/interface",
+      "target_path": "build/target/launcher/interface.obj",
+      "base_path": "build/base/launcher/interface.obj",
+      "metadata": {
+        "source_path": "src/launcher/interface.cpp"
+      }
+    },
+    {
+      "name": "launcher/launcher",
+      "target_path": "build/target/launcher/launcher.obj",
+      "base_path": "build/base/launcher/launcher.obj",
+      "metadata": {
+        "source_path": "src/launcher/launcher.cpp"
+      }
+    },
+    {
+      "name": "launcher/LoadBlob",
+      "target_path": "build/target/launcher/LoadBlob.obj",
+      "base_path": "build/base/launcher/LoadBlob.obj",
+      "metadata": {
+        "source_path": "src/launcher/LoadBlob.cpp"
+      }
+    },
+    {
+      "name": "launcher/registry",
+      "target_path": "build/target/launcher/registry.obj",
+      "base_path": "build/base/launcher/registry.obj",
+      "metadata": {
+        "source_path": "src/launcher/registry.cpp"
+      }
+    },
+    {
+      "name": "launcher/SteamAppStartup_guess",
+      "target_path": "build/target/launcher/SteamAppStartup_guess.obj",
+      "base_path": "build/base/launcher/SteamAppStartup_guess.obj",
+      "metadata": {
+        "source_path": "src/launcher/SteamAppStartup_guess.cpp"
+      }
     }
   ]
 }
