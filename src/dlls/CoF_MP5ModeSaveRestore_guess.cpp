@@ -58,7 +58,7 @@ void CMP5ModeSaveRestoreMP5::Use( CBaseEntity *pActivator, CBaseEntity *pCaller,
 
 	CHalfLifeRules *pRules = dynamic_cast<CHalfLifeRules *>( g_pGameRules );
 
-	if ( !pRules || !pRules->guess_m_bUnknownDC )
+	if ( !pRules || !pRules->m_bUnknownDC_guess )
 		return;
 
 	if ( pev->health == 1 )
@@ -74,9 +74,9 @@ void CMP5ModeSaveRestoreMP5::Use( CBaseEntity *pActivator, CBaseEntity *pCaller,
 		if ( !pMp5 )
 			return;
 
-		float flAmmo = pRules->guess_m_flUnknownE4;
+		float flAmmo = pRules->m_flUnknownE4_guess;
 
-		pMp5->m_iClip = pRules->guess_m_flUnknownE0;
+		pMp5->m_iClip = pRules->m_flUnknownE0_guess;
 		pMp5->m_iDefaultAmmo = 0;
 
 		if ( !( flAmmo <= 0 ) )
@@ -102,8 +102,8 @@ void CMP5ModeSaveRestoreMP5::Use( CBaseEntity *pActivator, CBaseEntity *pCaller,
 			int iAmmoIndex = CBasePlayer::GetAmmoIndex( "mp5" );
 			int iAmmo = pPlayer->m_rgAmmo[iAmmoIndex];
 
-			pRules->guess_m_flUnknownE0 = pWeapon->m_iClip;
-			pRules->guess_m_flUnknownE4 = iAmmo;
+			pRules->m_flUnknownE0_guess = pWeapon->m_iClip;
+			pRules->m_flUnknownE4_guess = iAmmo;
 		}
 	}
 }

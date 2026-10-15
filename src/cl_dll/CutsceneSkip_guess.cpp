@@ -6,7 +6,7 @@
 #include "hud.h"
 #include "cl_util.h"
 #include "vgui_TeamFortressViewport.h"
-#include "guess_CutsceneSkip.h"
+#include "CutsceneSkip_guess.h"
 #include "..\game_shared\vgui_loadtga.h"
 
 CCutsceneSkip::CCutsceneSkip() : Panel( 0, 0, ScreenWidth, ScreenHeight )
@@ -15,13 +15,13 @@ CCutsceneSkip::CCutsceneSkip() : Panel( 0, 0, ScreenWidth, ScreenHeight )
 	int x, y;
 	Panel *pPanel;
 
-	guess_m_pDotsImage = vgui_LoadTGA( "gfx/vgui/loading_dots.tga" );
-	if ( guess_m_pDotsImage )
-		guess_m_pDotsImage->setColor( Color( 255, 255, 255, 1 ) );
+	m_pDotsImage_guess = vgui_LoadTGA( "gfx/vgui/loading_dots.tga" );
+	if ( m_pDotsImage_guess )
+		m_pDotsImage_guess->setColor( Color( 255, 255, 255, 1 ) );
 	else
 		gEngfuncs.Con_Printf( "Cannot load gfx/vgui/loading_dots.tga!\n" );
 
-	guess_m_pDotsImage->getSize( wide, tall );
+	m_pDotsImage_guess->getSize( wide, tall );
 	x = ScreenWidth / 2 - wide / 2;
 	y = ScreenHeight / 2 - tall / 2;
 
@@ -53,10 +53,10 @@ CCutsceneSkip::CCutsceneSkip() : Panel( 0, 0, ScreenWidth, ScreenHeight )
 	pPanel->setBgColor( 0, 0, 0, 0 );
 	pPanel->setVisible( true );
 
-	guess_m_pDotsPanel = new ImagePanel( guess_m_pDotsImage );
-	guess_m_pDotsPanel->setParent( this );
-	guess_m_pDotsPanel->setPos( x, y );
-	guess_m_pDotsPanel->setVisible( true );
+	m_pDotsPanel_guess = new ImagePanel( m_pDotsImage_guess );
+	m_pDotsPanel_guess->setParent( this );
+	m_pDotsPanel_guess->setPos( x, y );
+	m_pDotsPanel_guess->setVisible( true );
 
 	setBgColor( 0, 0, 0, 255 );
 

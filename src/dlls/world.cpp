@@ -1043,7 +1043,7 @@ void CWorld :: KeyValue( KeyValueData *pkvd )
 	}
 	else if ( FStrEq(pkvd->szKeyName, "customgloves") )
 	{
-		guess_m_sCustomGloves = ALLOC_STRING(pkvd->szValue);
+		m_sCustomGloves_guess = ALLOC_STRING(pkvd->szValue);
 		pkvd->fHandled = TRUE;
 	}
 	else if ( FStrEq(pkvd->szKeyName, "doctormap") )

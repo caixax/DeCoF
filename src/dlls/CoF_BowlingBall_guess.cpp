@@ -13,7 +13,7 @@
 *
 ****/
 //
-// guess_cof_bowlingball.cpp - bowling ball prop (new in 1.6a; the file name is a guess)
+// cof_bowlingball_guess.cpp - bowling ball prop (new in 1.6a; the file name is a guess)
 //
 
 #include "extdll.h"

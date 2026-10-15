@@ -21,10 +21,10 @@ extern engine_studio_api_t IEngineStudio;
 extern CGameStudioModelRenderer g_StudioRenderer;
 extern cvar_t *cl_smokeparticlelimit;
 extern vec3_t v_angles;
-extern vec3_t guess_vecCameraAngles;
-extern cl_entity_t *guess_pAttachCamEnt;
+extern vec3_t vecCameraAngles_guess;
+extern cl_entity_t *pAttachCamEnt_guess;
 
-int guess_iParticleFadeTime = 3; // seconds a fading system lives on
+int iParticleFadeTime_guess = 3; // seconds a fading system lives on
 
 
 //
@@ -202,17 +202,17 @@ ParticleSystem::ParticleSystem( int iEntIndex, char *szFilename, int iViewModel,
 {
 	int iParticles = 100; // default
 
-	guess_m_iViewModel = iViewModel;
+	m_iViewModel_guess = iViewModel;
 	m_iEntIndex = iEntIndex;
-	guess_m_iAttachment = iAttachment;
+	m_iAttachment_guess = iAttachment;
 	m_pNextSystem = NULL;
 	m_pFirstType = NULL;
-	guess_m_iFadeOut = 0;
-	guess_m_iState = 0;
-	guess_m_flFadeStart = 0;
-	guess_m_flFadeTime = 0;
-	guess_m_iBone = -1;
-	strncpy( guess_m_szModel, szModel, sizeof( guess_m_szModel ) );
+	m_iFadeOut_guess = 0;
+	m_iState_guess = 0;
+	m_flFadeStart_guess = 0;
+	m_flFadeTime_guess = 0;
+	m_iBone_guess = -1;
+	strncpy( m_szModel_guess, szModel, sizeof( m_szModel_guess ) );
 	if (!c_bCosTableInit)
 	{
 		for (int i = 0; i < 360+90; i++)
@@ -244,7 +244,7 @@ ParticleSystem::ParticleSystem( int iEntIndex, char *szFilename, int iViewModel,
 			else if ( !stricmp( szToken, "limited" ) )
 			{
 				szFile = gEngfuncs.COM_ParseFile(szFile,szToken);
-				guess_m_iLimited = atoi(szToken);
+				m_iLimited_guess = atoi(szToken);
 			}
 			else if ( !stricmp( szToken, "maintype" ) )
 			{
@@ -266,12 +266,12 @@ ParticleSystem::ParticleSystem( int iEntIndex, char *szFilename, int iViewModel,
 	int iLimited = 0;
 	for (ParticleSystem *pSys = g_pParticleSystems.m_pFirstSystem; pSys; pSys = pSys->m_pNextSystem)
 	{
-		if (pSys->guess_m_iLimited && pSys->m_pMainParticle && pSys->m_pMainParticle->age_death >= 0 && pSys->m_pMainParticle->age_death > pSys->m_pMainParticle->age)
+		if (pSys->m_iLimited_guess && pSys->m_pMainParticle && pSys->m_pMainParticle->age_death >= 0 && pSys->m_pMainParticle->age_death > pSys->m_pMainParticle->age)
 			iLimited++;
 	}
 
-	if (iLimited > cl_smokeparticlelimit->value && guess_m_iLimited)
-		guess_m_iState = 2;
+	if (iLimited > cl_smokeparticlelimit->value && m_iLimited_guess)
+		m_iState_guess = 2;
 
 	gEngfuncs.COM_FreeFile( szFile );
 
@@ -513,25 +513,25 @@ ParticleType *ParticleSystem::ParseType( char *&szFile )
 		{
 			szFile = gEngfuncs.COM_ParseFile(szFile,szToken);
 			if ( !strcmp( szToken, "weapon" ) )
-				pType->guess_m_iInheritAngle = 1;
+				pType->m_iInheritAngle_guess = 1;
 		}
 		else if ( !stricmp( szToken, "wateronly" ) )
 		{
 			szFile = gEngfuncs.COM_ParseFile(szFile,szToken);
 			if ( !strcmp( szToken, "1" ) )
-				pType->guess_m_iWaterOnly = 1;
+				pType->m_iWaterOnly_guess = 1;
 		}
 		else if ( !stricmp( szToken, "sprayyaw" ) )
 		{
 			szFile = gEngfuncs.COM_ParseFile(szFile,szToken);
 			if ( !strcmp( szToken, "player" ) )
-				pType->guess_m_iSprayYawMode = 1;
+				pType->m_iSprayYawMode_guess = 1;
 			if ( !strcmp( szToken, "player_random_low" ) )
-				pType->guess_m_iSprayYawMode = 2;
+				pType->m_iSprayYawMode_guess = 2;
 			if ( !strcmp( szToken, "player_random_med" ) )
-				pType->guess_m_iSprayYawMode = 3;
+				pType->m_iSprayYawMode_guess = 3;
 			if ( !strcmp( szToken, "player_random_hi" ) )
-				pType->guess_m_iSprayYawMode = 4;
+				pType->m_iSprayYawMode_guess = 4;
 			pType->m_SprayYaw = RandomRange( szToken );
 		}
 		else if ( !stricmp( szToken, "drag" ) )
@@ -660,21 +660,21 @@ bool ParticleSystem::UpdateSystem( float frametime, /*vec3_t &right, vec3_t &up,
 	// the entity emitting this system
 //	cl_entity_t *source = gEngfuncs.GetEntityByIndex( m_iEntIndex );
 	cl_entity_t *source;
-	if ( guess_m_iViewModel )
+	if ( m_iViewModel_guess )
 		source = gEngfuncs.GetViewModel();
 	else
 		source = UTIL_GetClientEntityWithServerIndex( m_iEntIndex ); // buz
 
-	if ( guess_m_iState == 2 )
+	if ( m_iState_guess == 2 )
 		return false;
 
 	// Don't update if the system is outside the player's PVS.
 	if(!source)
 		return true;
-	if(!guess_m_iViewModel && source->curstate.messagenum < messagenum)
+	if(!m_iViewModel_guess && source->curstate.messagenum < messagenum)
 		return true;
 
-	if (guess_m_iViewModel)
+	if (m_iViewModel_guess)
 	{
 		if (m_pMainParticle == NULL)
 		{
@@ -692,40 +692,40 @@ bool ParticleSystem::UpdateSystem( float frametime, /*vec3_t &right, vec3_t &up,
 			cl_entity_t *view = gEngfuncs.GetViewModel();
 			if (view)
 			{
-				if (guess_m_iFadeOut)
+				if (m_iFadeOut_guess)
 				{
-					if (m_pMainParticle && guess_m_iState != 1)
+					if (m_pMainParticle && m_iState_guess != 1)
 					{
-						guess_m_iState = 1;
-						guess_m_flDieTime = gEngfuncs.GetClientTime() + guess_iParticleFadeTime;
-						guess_m_flFadeStart = gEngfuncs.GetClientTime();
-						guess_m_flFadeTime = 1;
+						m_iState_guess = 1;
+						m_flDieTime_guess = gEngfuncs.GetClientTime() + iParticleFadeTime_guess;
+						m_flFadeStart_guess = gEngfuncs.GetClientTime();
+						m_flFadeTime_guess = 1;
 					}
 				}
-				else if (!view->model || strcmp(view->model->name, guess_m_szModel))
+				else if (!view->model || strcmp(view->model->name, m_szModel_guess))
 				{
-					if (m_pMainParticle && guess_m_iState != 1)
+					if (m_pMainParticle && m_iState_guess != 1)
 					{
-						guess_m_iState = 1;
-						guess_m_flDieTime = gEngfuncs.GetClientTime() + guess_iParticleFadeTime;
-						guess_m_flFadeStart = gEngfuncs.GetClientTime();
-						guess_m_flFadeTime = 1;
+						m_iState_guess = 1;
+						m_flDieTime_guess = gEngfuncs.GetClientTime() + iParticleFadeTime_guess;
+						m_flFadeStart_guess = gEngfuncs.GetClientTime();
+						m_flFadeTime_guess = 1;
 					}
 				}
 			}
-			else if (m_pMainParticle && guess_m_iState != 1)
+			else if (m_pMainParticle && m_iState_guess != 1)
 			{
-				guess_m_iState = 1;
-				guess_m_flDieTime = gEngfuncs.GetClientTime() + guess_iParticleFadeTime;
-				guess_m_flFadeStart = gEngfuncs.GetClientTime();
-				guess_m_flFadeTime = 1;
+				m_iState_guess = 1;
+				m_flDieTime_guess = gEngfuncs.GetClientTime() + iParticleFadeTime_guess;
+				m_flFadeStart_guess = gEngfuncs.GetClientTime();
+				m_flFadeTime_guess = 1;
 			}
 		}
 	}
 	else if (m_pMainParticle == NULL)
 	{
 	//	gEngfuncs.Con_Printf("body %d\n", source->curstate.body);
-		if (source->curstate.body || guess_m_iBone >= 0)
+		if (source->curstate.body || m_iBone_guess >= 0)
 		{
 			ParticleType *pType = m_pMainType;//GetMainType();
 			if (pType)
@@ -736,14 +736,14 @@ bool ParticleSystem::UpdateSystem( float frametime, /*vec3_t &right, vec3_t &up,
 				{
 					m_pMainParticle->m_iEntIndex = m_iEntIndex;
 					//m_pMainParticle->origin = source->curstate.origin;
-					if (guess_m_iAttachment < 0)
+					if (m_iAttachment_guess < 0)
 						m_pMainParticle->age_death = -1; // never die
 					//pPart->origin[0] = x; pPart->origin[1] = y; pPart->origin[2] = z;
 				}
 			}
 		}
 	}
-	else if (source->curstate.body == 0 && guess_m_iBone < 0)
+	else if (source->curstate.body == 0 && m_iBone_guess < 0)
 	{
 		m_pMainParticle->age_death = 0; // die now
 		m_pMainParticle = NULL;
@@ -794,15 +794,15 @@ void ParticleSystem::DrawSystem()//vec3_t &right, vec3_t &up)
 {
 	vec3_t normal, forward, right, up;
 
-	if ( guess_IsViewEntityActive() )
+	if ( IsViewEntityActive_guess() )
 	{
-		if ( guess_pAttachCamEnt )
+		if ( pAttachCamEnt_guess )
 		{
-			gEngfuncs.GetViewAngles((float*)guess_vecCameraAngles);
+			gEngfuncs.GetViewAngles((float*)vecCameraAngles_guess);
 		}
-		else if ( gHUD.guess_m_iViewEntity )
+		else if ( gHUD.m_iViewEntity_guess )
 		{
-			cl_entity_t *pView = gEngfuncs.GetEntityByIndex( gHUD.guess_m_iViewEntity );
+			cl_entity_t *pView = gEngfuncs.GetEntityByIndex( gHUD.m_iViewEntity_guess );
 			if ( pView )
 				gEngfuncs.GetViewAngles((float*)pView->angles);
 		}
@@ -856,7 +856,7 @@ bool ParticleSystem::UpdateParticle(particle *part, float frametime)
 	if (frametime == 0)
 		return true;
 
-	if (guess_m_iState == 1 && gEngfuncs.GetClientTime() > guess_m_flDieTime)
+	if (m_iState_guess == 1 && gEngfuncs.GetClientTime() > m_flDieTime_guess)
 		return false;
 
 	part->age += frametime;
@@ -864,49 +864,49 @@ bool ParticleSystem::UpdateParticle(particle *part, float frametime)
 	// is this particle bound to an entity?
 	if (part->m_iEntIndex)
 	{
-		if (guess_m_iViewModel)
+		if (m_iViewModel_guess)
 		{
-			if (part->age_death >= 0 && part->age > part->age_death && guess_m_iState != 1)
+			if (part->age_death >= 0 && part->age > part->age_death && m_iState_guess != 1)
 			{
-				guess_m_iState = 1;
-				guess_m_flDieTime = gEngfuncs.GetClientTime() + guess_iParticleFadeTime;
-				guess_m_flFadeStart = gEngfuncs.GetClientTime();
-				guess_m_flFadeTime = 1;
+				m_iState_guess = 1;
+				m_flDieTime_guess = gEngfuncs.GetClientTime() + iParticleFadeTime_guess;
+				m_flFadeStart_guess = gEngfuncs.GetClientTime();
+				m_flFadeTime_guess = 1;
 			}
 
-			if (guess_m_iState == 1 && gEngfuncs.GetClientTime() > guess_m_flDieTime)
+			if (m_iState_guess == 1 && gEngfuncs.GetClientTime() > m_flDieTime_guess)
 				return false;
 
 			cl_entity_t *view = gEngfuncs.GetViewModel();
 			if (!view)
 				return false;
 
-			vec3_t vecAttachment = view->attachment[guess_m_iAttachment];
+			vec3_t vecAttachment = view->attachment[m_iAttachment_guess];
 			part->velocity = (vecAttachment - part->origin)/frametime;
 			part->origin = vecAttachment;
 		}
 		else
 		{
-			if (part->age_death >= 0 && part->age > part->age_death && guess_m_iAttachment >= 0 && guess_m_iState != 1)
+			if (part->age_death >= 0 && part->age > part->age_death && m_iAttachment_guess >= 0 && m_iState_guess != 1)
 			{
-				guess_m_iState = 1;
-				guess_m_flDieTime = gEngfuncs.GetClientTime() + guess_iParticleFadeTime;
-				guess_m_flFadeStart = gEngfuncs.GetClientTime();
-				guess_m_flFadeTime = 1;
+				m_iState_guess = 1;
+				m_flDieTime_guess = gEngfuncs.GetClientTime() + iParticleFadeTime_guess;
+				m_flFadeStart_guess = gEngfuncs.GetClientTime();
+				m_flFadeTime_guess = 1;
 			}
 
 			cl_entity_t *source = gEngfuncs.GetEntityByIndex( m_iEntIndex );
-			if (!source || (!source->curstate.body && guess_m_iBone < 0))
+			if (!source || (!source->curstate.body && m_iBone_guess < 0))
 			{
 				// entity is switched off, die
 				return false;
 			}
 
-			if (guess_m_iAttachment >= 0)
+			if (m_iAttachment_guess >= 0)
 			{
-				part->origin = source->attachment[guess_m_iAttachment];
+				part->origin = source->attachment[m_iAttachment_guess];
 			}
-			else if (guess_m_iBone >= 0)
+			else if (m_iBone_guess >= 0)
 			{
 				if (source->model)
 				{
@@ -994,9 +994,9 @@ bool ParticleSystem::UpdateParticle(particle *part, float frametime)
 						fSprayYaw = pEnt->curstate.rendermode;
 					}
 
-					if (part->pType->guess_m_iSprayYawMode > 0 && gEngfuncs.GetLocalPlayer())
+					if (part->pType->m_iSprayYawMode_guess > 0 && gEngfuncs.GetLocalPlayer())
 					{
-						switch (part->pType->guess_m_iSprayYawMode)
+						switch (part->pType->m_iSprayYawMode_guess)
 						{
 						case 1:
 							fSprayYaw = v_angles.y * -1;
@@ -1016,11 +1016,11 @@ bool ParticleSystem::UpdateParticle(particle *part, float frametime)
 						}
 					}
 
-					if (part->pType->guess_m_iInheritAngle)
+					if (part->pType->m_iInheritAngle_guess)
 					{
 						cl_entity_t *pLocal = gEngfuncs.GetLocalPlayer();
 						cl_entity_t *pView = gEngfuncs.GetViewModel();
-						switch (part->pType->guess_m_iInheritAngle)
+						switch (part->pType->m_iInheritAngle_guess)
 						{
 						case 1:
 							if (!pView)
@@ -1028,10 +1028,10 @@ bool ParticleSystem::UpdateParticle(particle *part, float frametime)
 
 							part->pType->m_SprayPitch = RandomRange( pView->angles[0] );
 							part->pType->m_SprayYaw = RandomRange( pView->angles[1] );
-							if (part->pType->guess_m_iSprayYawMode > 0 && pLocal)
+							if (part->pType->m_iSprayYawMode_guess > 0 && pLocal)
 							{
 								float flYaw;
-								switch (part->pType->guess_m_iSprayYawMode)
+								switch (part->pType->m_iSprayYawMode_guess)
 								{
 								case 1:
 									part->pType->m_SprayYaw = RandomRange( v_angles.y * -1 );
@@ -1126,7 +1126,7 @@ void ParticleSystem::DrawParticle(particle *part, vec3_t &right, vec3_t &up)
 				continue;
 		}
 
-		if (pDraw->pType->guess_m_iWaterOnly)
+		if (pDraw->pType->m_iWaterOnly_guess)
 		{
 			iContents = gEngfuncs.PM_PointContents(origin, NULL);
 			if (iContents != CONTENTS_WATER)
@@ -1148,11 +1148,11 @@ void ParticleSystem::DrawParticle(particle *part, vec3_t &right, vec3_t &up)
 		// fading out
 		float flFade = 0;
 		float flAlpha = pDraw->m_fAlpha;
-		if (guess_m_iState == 1)
-			flFade = (gEngfuncs.GetClientTime() - guess_m_flFadeStart) / guess_m_flFadeTime;
-		if (flFade > 1 || guess_m_flFadeStart + guess_m_flFadeTime < gEngfuncs.GetClientTime())
+		if (m_iState_guess == 1)
+			flFade = (gEngfuncs.GetClientTime() - m_flFadeStart_guess) / m_flFadeTime_guess;
+		if (flFade > 1 || m_flFadeStart_guess + m_flFadeTime_guess < gEngfuncs.GetClientTime())
 			flFade = 1;
-		if (guess_m_iState == 1)
+		if (m_iState_guess == 1)
 			flAlpha = pDraw->m_fAlpha - flFade * 5;
 
 		gEngfuncs.pTriAPI->RenderMode(pDraw->pType->m_iRenderMode);

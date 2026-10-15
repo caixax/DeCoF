@@ -15,9 +15,9 @@ public:
 	void ActionSignal( int cmd );
 	int KeyInput( int down, int keynum, const char *pszCurrentBinding );
 
-	void guess_PressDigit( int digit );
-	void guess_Clear();
-	void guess_Dial();
+	void PressDigit_guess( int digit );
+	void Clear_guess();
+	void Dial_guess();
 
 	virtual void setVisible( bool state )
 	{
@@ -25,13 +25,13 @@ public:
 	}
 
 public:
-	Image	*guess_m_pPhoneImage;			// 0xbc, gfx/vgui/640_phone.tga
-	ImagePanel	*guess_m_pPhone;			// 0xc0, parent of the buttons and the number label
-	Image	*guess_m_pBackgroundImage;		// 0xc4, gfx/vgui/backgroundtoall.tga
-	ImagePanel	*guess_m_pBackground;		// 0xc8
-	char	guess_m_szNumber[16];			// 0xcc, digits dialed so far, sent with phonenumber
-	int		guess_m_iUnknownDC;				// 0xdc, not used by the client code
-	Label	*guess_m_pNumberLabel;			// 0xe0, shows guess_m_szNumber
+	Image	*m_pPhoneImage_guess;			// 0xbc, gfx/vgui/640_phone.tga
+	ImagePanel	*m_pPhone_guess;			// 0xc0, parent of the buttons and the number label
+	Image	*m_pBackgroundImage_guess;		// 0xc4, gfx/vgui/backgroundtoall.tga
+	ImagePanel	*m_pBackground_guess;		// 0xc8
+	char	m_szNumber_guess[16];			// 0xcc, digits dialed so far, sent with phonenumber
+	int		m_iUnknownDC_guess;				// 0xdc, not used by the client code
+	Label	*m_pNumberLabel_guess;			// 0xe0, shows m_szNumber_guess
 };
 
 class CPhoneHandler_Command : public ActionSignal
@@ -53,6 +53,6 @@ public:
 	}
 };
 
-void guess_PhoneInit();
+void PhoneInit_guess();
 
 #endif // _PHONE_H

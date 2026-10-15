@@ -109,7 +109,7 @@
 ?EntityIndex@CSaveRestoreBuffer@@QAEHPAUentvars_s@@@Z
 ?EntityIndex@CSaveRestoreBuffer@@QAEHPAVCBaseEntity@@@Z
 ?PRECACHE_SOUND@@YAHPAD@Z
-?guess_UTIL_PlayWeaponSound@@YAXPBDH_NVVector@@PAVCBaseEntity@@1@Z
+?UTIL_PlayWeaponSound_guess@@YAXPBDH_NVVector@@PAVCBaseEntity@@1@Z
 ?ReadNamedInt@CRestore@@QAEHPBD@Z
 ?ReadNamedString@CRestore@@QAEPADPBD@Z
 ?ReadShort@CRestore@@QAEFXZ

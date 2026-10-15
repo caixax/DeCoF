@@ -16,4 +16,4 @@
 ??1GLManager@@QAE@XZ
 ?IsExtensionSupported@GLManager@@QAE_NPBD@Z
 ?gluLookAt@GLManager@@QAEXNNNNNNNNN@Z
-?guess_SetSteamAppValue@@YAHPBD0@Z
+?SetSteamAppValue_guess@@YAHPBD0@Z

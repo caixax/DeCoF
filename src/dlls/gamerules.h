@@ -62,7 +62,7 @@ enum
 class CGameRules
 {
 public:
-	bool guess_IsMapperMode( void );	// CoF 1.6a: dynamic_cast to CHalfLifeRules, its byte at +0xDC
+	bool IsMapperMode_guess( void );	// CoF 1.6a: dynamic_cast to CHalfLifeRules, its byte at +0xDC
 
 	virtual void RefreshSkillData( void );// fill skill data struct with proper values
 	virtual void Think( void ) = 0;// GR_Think - runs every server frame, should handle any timer tasks, periodic events, etc.
@@ -272,9 +272,9 @@ public:
 	virtual int PlayerRelationship( CBaseEntity *pPlayer, CBaseEntity *pTarget );
 
 	// CoF 1.6a: the constructor zeroes three more members (new CHalfLifeRules is 0xE8 bytes)
-	bool guess_m_bUnknownDC;
-	float guess_m_flUnknownE0;
-	float guess_m_flUnknownE4;
+	bool m_bUnknownDC_guess;
+	float m_flUnknownE0_guess;
+	float m_flUnknownE4_guess;
 };
 
 //=========================================================

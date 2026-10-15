@@ -899,7 +899,7 @@ void CBasePlayerItem::DefaultTouch( CBaseEntity *pOther )
 
 	if ( pPlayer && !strcmp( STRING( pev->classname ), "weapon_mp5" ) )
 	{
-		if ( !pPlayer->IsDeveloper() && pPlayer->guess_m_iNew16a != 2 && pPlayer->guess_m_iNew16a != 3 && pPlayer->guess_m_iNew16a != 4 && g_pGameRules && !g_pGameRules->guess_IsMapperMode() )
+		if ( !pPlayer->IsDeveloper() && pPlayer->m_iNew16a_guess != 2 && pPlayer->m_iNew16a_guess != 3 && pPlayer->m_iNew16a_guess != 4 && g_pGameRules && !g_pGameRules->IsMapperMode_guess() )
 		{
 			UTIL_ProMessage( pPlayer, "This is for mappers only.", 5, false );
 			return;
@@ -1204,7 +1204,7 @@ void CBasePlayerWeapon::ItemPostFrame( void )
 						if ( g_pGameRules->IsMultiplayer() )
 							STOP_SOUND( ENT( m_pPlayer->pev ), CHAN_WEAPON, STRING( shoot_loop_sound ) );
 						else
-							guess_UTIL_PlayWeaponSound( STRING( shoot_loop_sound ), 2, true, m_pPlayer->EarPosition(), m_pPlayer, true );
+							UTIL_PlayWeaponSound_guess( STRING( shoot_loop_sound ), 2, true, m_pPlayer->EarPosition(), m_pPlayer, true );
 					}
 
 					if ( shoot_loop_sound_end )
@@ -1212,7 +1212,7 @@ void CBasePlayerWeapon::ItemPostFrame( void )
 						if ( g_pGameRules->IsMultiplayer() )
 							EMIT_SOUND_DYN( ENT( m_pPlayer->pev ), CHAN_WEAPON, STRING( shoot_loop_sound_end ), 1, 0.8, 0, 100 );
 						else
-							guess_UTIL_PlayWeaponSound( STRING( shoot_loop_sound_end ), 0, true, m_pPlayer->EarPosition(), m_pPlayer, true );
+							UTIL_PlayWeaponSound_guess( STRING( shoot_loop_sound_end ), 0, true, m_pPlayer->EarPosition(), m_pPlayer, true );
 					}
 				}
 			}
@@ -1231,7 +1231,7 @@ void CBasePlayerWeapon::ItemPostFrame( void )
 					if ( g_pGameRules->IsMultiplayer() )
 						STOP_SOUND( ENT( m_pPlayer->pev ), CHAN_WEAPON, STRING( shoot_loop_sound ) );
 					else
-						guess_UTIL_PlayWeaponSound( STRING( shoot_loop_sound_end ), 2, true, m_pPlayer->EarPosition(), m_pPlayer, true );
+						UTIL_PlayWeaponSound_guess( STRING( shoot_loop_sound_end ), 2, true, m_pPlayer->EarPosition(), m_pPlayer, true );
 				}
 
 				if ( shoot_loop_sound_end )
@@ -1239,7 +1239,7 @@ void CBasePlayerWeapon::ItemPostFrame( void )
 					if ( g_pGameRules->IsMultiplayer() )
 						EMIT_SOUND_DYN( ENT( m_pPlayer->pev ), CHAN_WEAPON, STRING( shoot_loop_sound_end ), 1, 0.8, 0, 100 );
 					else
-						guess_UTIL_PlayWeaponSound( STRING( shoot_loop_sound_end ), 0, true, m_pPlayer->EarPosition(), m_pPlayer, true );
+						UTIL_PlayWeaponSound_guess( STRING( shoot_loop_sound_end ), 0, true, m_pPlayer->EarPosition(), m_pPlayer, true );
 				}
 			}
 		}
@@ -1793,10 +1793,10 @@ BOOL CBasePlayerWeapon :: DefaultDeploy( char *szViewModel, char *szWeaponModel,
 			MESSAGE_END();
 		}
 
-		if ( g_pWorld && g_pWorld->guess_m_sCustomGloves )
+		if ( g_pWorld && g_pWorld->m_sCustomGloves_guess )
 		{
 			MESSAGE_BEGIN( MSG_ONE, gmsgCustomGlv, NULL, m_pPlayer->pev );
-				WRITE_STRING( STRING( g_pWorld->guess_m_sCustomGloves ) );
+				WRITE_STRING( STRING( g_pWorld->m_sCustomGloves_guess ) );
 			MESSAGE_END();
 		}
 	}

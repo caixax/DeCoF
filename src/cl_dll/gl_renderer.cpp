@@ -25,8 +25,8 @@
 
 extern vec3_t	render_origin;
 extern vec3_t	render_angles;
-extern int		guess_g_iDickMode;
-extern vec3_t	guess_vecCameraAttachment;
+extern int		g_iDickMode_guess;
+extern vec3_t	vecCameraAttachment_guess;
 
 
 float	savedMinmaxs[6];
@@ -64,17 +64,17 @@ cvar_t *cv_lambert;
 cvar_t *cv_drawbrushents;
 cvar_t *cv_clipplanes;
 cvar_t *cv_showplane;
-cvar_t *guess_cv_screenblur;
-cvar_t *guess_cv_blurstepsx;
-cvar_t *guess_cv_blurstepsy;
-cvar_t *guess_cv_opacity;
-cvar_t *guess_cv_reducedlightradius;
-cvar_t *guess_cv_reducedlightxangle;
-cvar_t *guess_cv_reducedlightzangle;
-cvar_t *guess_cv_reducedlightcolour1;
-cvar_t *guess_cv_reducedlightcolour2;
-cvar_t *guess_cv_reducedlightcolour3;
-cvar_t *guess_cv_fullbrighttextures;
+cvar_t *cv_screenblur_guess;
+cvar_t *cv_blurstepsx_guess;
+cvar_t *cv_blurstepsy_guess;
+cvar_t *cv_opacity_guess;
+cvar_t *cv_reducedlightradius_guess;
+cvar_t *cv_reducedlightxangle_guess;
+cvar_t *cv_reducedlightzangle_guess;
+cvar_t *cv_reducedlightcolour1_guess;
+cvar_t *cv_reducedlightcolour2_guess;
+cvar_t *cv_reducedlightcolour3_guess;
+cvar_t *cv_fullbrighttextures_guess;
 
 int		norm_cubemap_id = 0;
 int		default_normalmap_id = 0;
@@ -492,7 +492,7 @@ void RecursiveDrawWorld (mnode_t *node)
 	mleaf_t		*pleaf;
 	double		dot;
 
-	if (guess_g_iDickMode)
+	if (g_iDickMode_guess)
 		return;
 
 	if (node->contents == CONTENTS_SOLID)
@@ -748,7 +748,7 @@ void DrawBump()
 }
 
 // "texturetest" command (hud.cpp): clears the texture chains of the world
-void guess_TextureTest( void )
+void TextureTest_guess( void )
 {
 	model_t *world = gEngfuncs.GetEntityByIndex(0)->model;
 
@@ -1089,7 +1089,7 @@ int RendererFilterEntities( int type, struct cl_entity_s *ent, const char *model
 	if (ent->curstate.renderfx == 184)
 	{
 		DynamicLight *dl = MY_AllocDlight(-300);
-		dl->origin = guess_vecCameraAttachment;
+		dl->origin = vecCameraAttachment_guess;
 		dl->radius = 320;
 		dl->color = Vector(0.3, 0.33, 0.34);
 		dl->die = gEngfuncs.GetClientTime() + 0.01;
@@ -1276,17 +1276,17 @@ void RendererInit()
 	cv_drawbrushents = gEngfuncs.pfnRegisterVariable( "gl_brushents","1", 0 );
 	cv_clipplanes = gEngfuncs.pfnRegisterVariable( "gl_clipplanes","0", 0 );
 	cv_showplane = gEngfuncs.pfnRegisterVariable( "gl_showplane","0", 0 );
-	guess_cv_screenblur = gEngfuncs.pfnRegisterVariable( "gl_screenblur","1", FCVAR_ARCHIVE );
-	guess_cv_blurstepsx = gEngfuncs.pfnRegisterVariable( "gl_blurstepsx","32", FCVAR_ARCHIVE );
-	guess_cv_blurstepsy = gEngfuncs.pfnRegisterVariable( "gl_blurstepsy","24", FCVAR_ARCHIVE );
-	guess_cv_opacity = gEngfuncs.pfnRegisterVariable( "gl_opacity","0.5", FCVAR_ARCHIVE );
-	guess_cv_reducedlightradius = gEngfuncs.pfnRegisterVariable( "cof_reducedlightradius","60", 0 );
-	guess_cv_reducedlightxangle = gEngfuncs.pfnRegisterVariable( "cof_reducedlightxangle","50", 0 );
-	guess_cv_reducedlightzangle = gEngfuncs.pfnRegisterVariable( "cof_reducedlightzangle","90", 0 );
-	guess_cv_reducedlightcolour1 = gEngfuncs.pfnRegisterVariable( "cof_reducedlightcolour1","0.23", 0 );
-	guess_cv_reducedlightcolour2 = gEngfuncs.pfnRegisterVariable( "cof_reducedlightcolour2","0.23", 0 );
-	guess_cv_reducedlightcolour3 = gEngfuncs.pfnRegisterVariable( "cof_reducedlightcolour3","0.26", 0 );
-	guess_cv_fullbrighttextures = gEngfuncs.pfnRegisterVariable( "cof_fullbrighttextures","0.5", 0 );
+	cv_screenblur_guess = gEngfuncs.pfnRegisterVariable( "gl_screenblur","1", FCVAR_ARCHIVE );
+	cv_blurstepsx_guess = gEngfuncs.pfnRegisterVariable( "gl_blurstepsx","32", FCVAR_ARCHIVE );
+	cv_blurstepsy_guess = gEngfuncs.pfnRegisterVariable( "gl_blurstepsy","24", FCVAR_ARCHIVE );
+	cv_opacity_guess = gEngfuncs.pfnRegisterVariable( "gl_opacity","0.5", FCVAR_ARCHIVE );
+	cv_reducedlightradius_guess = gEngfuncs.pfnRegisterVariable( "cof_reducedlightradius","60", 0 );
+	cv_reducedlightxangle_guess = gEngfuncs.pfnRegisterVariable( "cof_reducedlightxangle","50", 0 );
+	cv_reducedlightzangle_guess = gEngfuncs.pfnRegisterVariable( "cof_reducedlightzangle","90", 0 );
+	cv_reducedlightcolour1_guess = gEngfuncs.pfnRegisterVariable( "cof_reducedlightcolour1","0.23", 0 );
+	cv_reducedlightcolour2_guess = gEngfuncs.pfnRegisterVariable( "cof_reducedlightcolour2","0.23", 0 );
+	cv_reducedlightcolour3_guess = gEngfuncs.pfnRegisterVariable( "cof_reducedlightcolour3","0.26", 0 );
+	cv_fullbrighttextures_guess = gEngfuncs.pfnRegisterVariable( "cof_fullbrighttextures","0.5", 0 );
 
 	gEngfuncs.pfnAddCommand ("dumptextures", DumpTextures);
 	gEngfuncs.pfnAddCommand ("dumplevel", DumpLevel);

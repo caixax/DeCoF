@@ -27,9 +27,9 @@
 //=========================================================
 // Monster's Anim Events Go Here
 //=========================================================
-#define	guess_STRANGER_AE_FADE_OUT		0x05
-#define	guess_STRANGER_AE_FADE_IN		0x06
-#define	guess_STRANGER_AE_REMOVE		0x07
+#define	STRANGER_AE_FADE_OUT_guess		0x05
+#define	STRANGER_AE_FADE_IN_guess		0x06
+#define	STRANGER_AE_REMOVE_guess		0x07
 
 #define STRANGER_FLINCH_DELAY			2		// at most one flinch every n secs
 
@@ -133,21 +133,21 @@ void CStranger :: HandleAnimEvent( MonsterEvent_t *pEvent )
 {
 	switch( pEvent->event )
 	{
-		case guess_STRANGER_AE_FADE_OUT:
+		case STRANGER_AE_FADE_OUT_guess:
 		{
 			pev->rendermode = kRenderTransAdd;
 			pev->renderamt = 0;
 		}
 		break;
 
-		case guess_STRANGER_AE_FADE_IN:
+		case STRANGER_AE_FADE_IN_guess:
 		{
 			pev->rendermode = kRenderNormal;
 			pev->renderamt = 255;
 		}
 		break;
 
-		case guess_STRANGER_AE_REMOVE:
+		case STRANGER_AE_REMOVE_guess:
 		{
 			UTIL_Remove( this );
 		}
@@ -171,8 +171,8 @@ void CStranger :: Spawn()
 	else
 		SET_MODEL(ENT(pev), "models/stranger.mdl");
 
-	int guess_iScale = CVAR_GET_FLOAT( "cof_monsterhumanscale" );
-	UTIL_SetSize( pev, Vector( -guess_iScale, -guess_iScale, 0 ), Vector( guess_iScale, guess_iScale, 72 ) );
+	int iScale_guess = CVAR_GET_FLOAT( "cof_monsterhumanscale" );
+	UTIL_SetSize( pev, Vector( -iScale_guess, -iScale_guess, 0 ), Vector( iScale_guess, iScale_guess, 72 ) );
 
 	pev->solid			= SOLID_SLIDEBOX;
 	pev->movetype		= MOVETYPE_STEP;

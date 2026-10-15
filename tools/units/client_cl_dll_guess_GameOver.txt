@@ -2,8 +2,8 @@
 ??1CGameOver@@QAE@XZ
 ?ActionSignal@CGameOver@@QAEXH@Z
 ?Initialize@CGameOver@@QAEXXZ
-?guess_MsgCustomDoc@@YAHPBDHPAX@Z
-?guess_CustomDocInit@@YAXXZ
+?MsgCustomDoc_guess@@YAHPBDHPAX@Z
+?CustomDocInit_guess@@YAXXZ
 ?actionPerformed@CGameOverHandler_Command@@UAEXPAVPanel@vgui@@@Z
 ?setVisible@CGameOver@@UAEX_N@Z
 ?solve@CGameOver@@MAEXXZ

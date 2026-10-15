@@ -176,9 +176,9 @@ int g_onladder = 0;
 
 int iClientResetMaterials;
 #ifdef CLIENT_DLL
-int guess_iDucking;			// Cry of Fear: set while the player is ducked, never read
-int guess_iStepPunchRun;		// Cry of Fear: the step that asked for a view punch was a run step
-int guess_iStepPunch;			// Cry of Fear: V_CalcNormalRefdef punches the view for a multiplayer step
+int iDucking_guess;			// Cry of Fear: set while the player is ducked, never read
+int iStepPunchRun_guess;		// Cry of Fear: the step that asked for a view punch was a run step
+int iStepPunch_guess;			// Cry of Fear: V_CalcNormalRefdef punches the view for a multiplayer step
 #endif
 #ifndef CLIENT_DLL
 extern int foot_splash;
@@ -432,12 +432,12 @@ void PM_PlayStepSound( int step, float fvol )
 	// the view punch of a multiplayer step is done by the view code
 	if ( pmove->multiplayer )
 	{
-		guess_iStepPunch = 1;
+		iStepPunch_guess = 1;
 
 		if ( ( pmove->cmd.buttons & IN_RUN ) && ( pmove->flags & (1<<18) ) )
-			guess_iStepPunchRun = 1;
+			iStepPunchRun_guess = 1;
 		else
-			guess_iStepPunchRun = 0;
+			iStepPunchRun_guess = 0;
 	}
 #endif
 
@@ -3624,12 +3624,12 @@ void PM_PlayerMove ( qboolean server )
 #ifdef CLIENT_DLL
 	if ( !pmove->bInDuck && !( pmove->flags & FL_DUCKING ) )
 	{
-		if ( guess_iDucking )
-			guess_iDucking = 0;
+		if ( iDucking_guess )
+			iDucking_guess = 0;
 	}
-	else if ( guess_iDucking != 1 )
+	else if ( iDucking_guess != 1 )
 	{
-		guess_iDucking = 1;
+		iDucking_guess = 1;
 	}
 #endif
 

@@ -1,4 +1,4 @@
 ?Initialize@CScope@@QAEXXZ
-?guess_ScopeInit@@YAXXZ
+?ScopeInit_guess@@YAXXZ
 ??0CScope@@QAE@XZ
-?guess_MsgScope@@YAHPBDHPAX@Z
+?MsgScope_guess@@YAHPBDHPAX@Z

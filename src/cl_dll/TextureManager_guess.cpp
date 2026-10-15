@@ -11,7 +11,7 @@
 #include "studio_util.h"
 #include "r_studioint.h"
 #include "glmanager.h"
-#include "guess_TextureManager.h"
+#include "TextureManager_guess.h"
 #include <io.h>
 
 //=========================================================
@@ -40,7 +40,7 @@ __declspec( dllimport ) ILint __stdcall ilGetInteger( ILenum Mode );
 extern engine_studio_api_t IEngineStudio;
 
 // the image types DevIL loads
-char guess_szImageTypes[][5] =
+char szImageTypes_guess[][5] =
 {
 	"bmp", "cut", "dds", "gif", "ico", "cur", "jpg", "jpe", "jpeg", "lbm",
 	"lif", "lmp", "mdl", "mng", "pcd", "pcx", "pic", "pix", "png", "pbm",
@@ -48,42 +48,42 @@ char guess_szImageTypes[][5] =
 	"tif", "tiff", "wal", "xpm"
 };
 
-guess_CTextureManager guess_g_TextureManager;
+CTextureManager_guess g_TextureManager_guess;
 
-guess_CTextureManager::guess_CTextureManager()
+CTextureManager_guess::CTextureManager_guess()
 {
 }
 
-guess_CTextureManager::~guess_CTextureManager()
+CTextureManager_guess::~CTextureManager_guess()
 {
-	guess_Reset();
+	Reset_guess();
 }
 
-void guess_CTextureManager::guess_CheckMipmapSupport( void )
+void CTextureManager_guess::CheckMipmapSupport_guess( void )
 {
 	const char *extensions = strdup( (const char *)glGetString( GL_EXTENSIONS ) );
 	float version = atof( (const char *)glGetString( GL_VERSION ) );
 
-	if ( guess_IsExtensionSupported( "GL_SGIS_generate_mipmap", extensions ) || guess_IsExtensionSupported( "GL_EXT_generate_mipmap", extensions ) )
+	if ( IsExtensionSupported_guess( "GL_SGIS_generate_mipmap", extensions ) || IsExtensionSupported_guess( "GL_EXT_generate_mipmap", extensions ) )
 	{
-		guess_m_iMipmapMode = 2;
+		m_iMipmapMode_guess = 2;
 	}
 	else if ( version >= 1.4 )
 	{
-		guess_m_iMipmapMode = 1;
+		m_iMipmapMode_guess = 1;
 	}
 	else
 	{
 		gEngfuncs.Con_Printf( "MipMap extension not found\n" );
-		guess_m_iMipmapMode = 0;
+		m_iMipmapMode_guess = 0;
 	}
 }
 
-void guess_CTextureManager::guess_CreateTexture( int width, int height, GLuint *texture, GLenum target, GLenum format )
+void CTextureManager_guess::CreateTexture_guess( int width, int height, GLuint *texture, GLenum target, GLenum format )
 {
 	unsigned char *data = new unsigned char[width * height * 4];
 
-	*texture = guess_m_iNextTexture++;
+	*texture = m_iNextTexture_guess++;
 
 	glBindTexture( target, *texture );
 	glTexParameteri( target, GL_TEXTURE_WRAP_S, GL_REPEAT );
@@ -92,36 +92,36 @@ void guess_CTextureManager::guess_CreateTexture( int width, int height, GLuint *
 	glTexParameteri( target, GL_TEXTURE_MAG_FILTER, GL_LINEAR );
 	glCopyTexImage2D( target, 0, format, 0, 0, width, height, 0 );
 
-	guess_texture_t tex;
-	tex.guess_type = guess_TEXTYPE_IMAGE;
-	tex.guess_name = guess_m_iNextTexture;
-	tex.guess_iFound = 0;
-	tex.guess_iFormat = GL_RGBA;
-	tex.guess_texture = *texture;
-	guess_m_Textures.push_back( tex );
+	texture_t_guess tex;
+	tex.type_guess = TEXTYPE_IMAGE_guess;
+	tex.name_guess = m_iNextTexture_guess;
+	tex.iFound_guess = 0;
+	tex.iFormat_guess = GL_RGBA;
+	tex.texture_guess = *texture;
+	m_Textures_guess.push_back( tex );
 
 	delete[] data;
 }
 
-std::string guess_CTextureManager::guess_GetPath( const std::string &name, int type, int *found )
+std::string CTextureManager_guess::GetPath_guess( const std::string &name, int type, int *found )
 {
 	std::string path;
 
-	if ( type == guess_TEXTYPE_SPRITE )
+	if ( type == TEXTYPE_SPRITE_guess )
 	{
 		path = "sprites/";
 		path += name;
 		path += ".spr";
 	}
-	else if ( guess_IsHardware() )
+	else if ( IsHardware_guess() )
 	{
-		path = guess_FindTexture( name, found );
+		path = FindTexture_guess( name, found );
 	}
 
 	return path;
 }
 
-std::string guess_CTextureManager::guess_FindTexture( const std::string &name, int *found )
+std::string CTextureManager_guess::FindTexture_guess( const std::string &name, int *found )
 {
 	std::string dir;
 	std::string mapname;
@@ -135,7 +135,7 @@ std::string guess_CTextureManager::guess_FindTexture( const std::string &name, i
 	mapname.erase( 0, 5 );
 	mapname.erase( mapname.size() - 4, mapname.size() );
 
-	result = guess_FindNumberedTextures( name, found );
+	result = FindNumberedTextures_guess( name, found );
 
 	if ( *found )
 		return result;
@@ -144,12 +144,12 @@ std::string guess_CTextureManager::guess_FindTexture( const std::string &name, i
 	base.erase( base.size() - 1, base.size() );
 
 	file = dir + "/" + base + "/" + name;
-	result = guess_FindImageFile( file );
+	result = FindImageFile_guess( file );
 
 	if ( result.size() )
 	{
 		(*found)++;
-		guess_m_iNextTexture++;
+		m_iNextTexture_guess++;
 		return result;
 	}
 
@@ -177,12 +177,12 @@ std::string guess_CTextureManager::guess_FindTexture( const std::string &name, i
 		}
 
 		file += name;
-		result = guess_FindImageFile( file );
+		result = FindImageFile_guess( file );
 
 		if ( result.size() )
 		{
 			(*found)++;
-			guess_m_iNextTexture++;
+			m_iNextTexture_guess++;
 			return result;
 		}
 	}
@@ -190,18 +190,18 @@ std::string guess_CTextureManager::guess_FindTexture( const std::string &name, i
 	return "";
 }
 
-guess_texture_t *guess_CTextureManager::guess_GetTexture( const std::string &name )
+texture_t_guess *CTextureManager_guess::GetTexture_guess( const std::string &name )
 {
-	for ( std::list<guess_texture_t>::iterator it = guess_m_Textures.begin(); it != guess_m_Textures.end(); ++it )
+	for ( std::list<texture_t_guess>::iterator it = m_Textures_guess.begin(); it != m_Textures_guess.end(); ++it )
 	{
-		if ( it->guess_name == name )
+		if ( it->name_guess == name )
 			return &*it;
 	}
 
-	return guess_Load( name );
+	return Load_guess( name );
 }
 
-std::string guess_CTextureManager::guess_FindNumberedTextures( const std::string &name, int *count )
+std::string CTextureManager_guess::FindNumberedTextures_guess( const std::string &name, int *count )
 {
 	std::string path;
 	std::string base;
@@ -225,35 +225,35 @@ std::string guess_CTextureManager::guess_FindNumberedTextures( const std::string
 	path = base;
 	sprintf( number, "%i", *count );
 	path += number;
-	path = guess_FindImageFile( path );
+	path = FindImageFile_guess( path );
 
 	while ( path.size() )
 	{
-		guess_texture_t tex;
+		texture_t_guess tex;
 
 		(*count)++;
-		tex.guess_texture = guess_m_iNextTexture++;
-		tex.guess_path = path;
+		tex.texture_guess = m_iNextTexture_guess++;
+		tex.path_guess = path;
 		result = path;
-		guess_UploadImage( &tex );
+		UploadImage_guess( &tex );
 
 		sprintf( number, "%i", *count );
 		path = base;
 		path += number;
-		path = guess_FindImageFile( path );
+		path = FindImageFile_guess( path );
 	}
 
 	return result;
 }
 
-std::string guess_CTextureManager::guess_FindImageFile( const std::string &path )
+std::string CTextureManager_guess::FindImageFile_guess( const std::string &path )
 {
-	ilBindImage( guess_m_iNextTexture );
+	ilBindImage( m_iNextTexture_guess );
 
 	for ( int i = 0; i < 34; i++ )
 	{
 		std::string file = path;
-		file = file + "." + guess_szImageTypes[i];
+		file = file + "." + szImageTypes_guess[i];
 
 		if ( ilLoadImage( file.c_str() ) )
 			return file;
@@ -262,29 +262,29 @@ std::string guess_CTextureManager::guess_FindImageFile( const std::string &path 
 	return "";
 }
 
-bool guess_CTextureManager::guess_IsHardware( void )
+bool CTextureManager_guess::IsHardware_guess( void )
 {
 	return IEngineStudio.IsHardware() == 1;
 }
 
-void guess_CTextureManager::guess_Reset( void )
+void CTextureManager_guess::Reset_guess( void )
 {
-	if ( guess_IsHardware() )
+	if ( IsHardware_guess() )
 	{
 		ilInit();
-		guess_CheckMipmapSupport();
+		CheckMipmapSupport_guess();
 	}
 
-	guess_m_iNextTexture = 2000;
-	guess_m_Textures.clear();
+	m_iNextTexture_guess = 2000;
+	m_Textures_guess.clear();
 }
 
-void guess_CTextureManager::guess_UploadImage( guess_texture_t *tex )
+void CTextureManager_guess::UploadImage_guess( texture_t_guess *tex )
 {
-	ilBindImage( tex->guess_texture );
-	glBindTexture( GL_TEXTURE_2D, tex->guess_texture );
+	ilBindImage( tex->texture_guess );
+	glBindTexture( GL_TEXTURE_2D, tex->texture_guess );
 
-	if ( guess_m_iMipmapMode == 2 || guess_m_iMipmapMode == 1 )
+	if ( m_iMipmapMode_guess == 2 || m_iMipmapMode_guess == 1 )
 	{
 		glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR );
 		glTexParameteri( GL_TEXTURE_2D, GL_GENERATE_MIPMAP, GL_TRUE );
@@ -295,115 +295,115 @@ void guess_CTextureManager::guess_UploadImage( guess_texture_t *tex )
 		glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR );
 	}
 
-	ilLoadImage( tex->guess_path.c_str() );
+	ilLoadImage( tex->path_guess.c_str() );
 	glTexImage2D( GL_TEXTURE_2D, 0, ilGetInteger( IL_IMAGE_BPP ), ilGetInteger( IL_IMAGE_WIDTH ), ilGetInteger( IL_IMAGE_HEIGHT ), 0, ilGetInteger( IL_IMAGE_FORMAT ), GL_UNSIGNED_BYTE, ilGetData() );
 }
 
-guess_texture_t *guess_CTextureManager::guess_GetTexture( const char *name )
+texture_t_guess *CTextureManager_guess::GetTexture_guess( const char *name )
 {
-	return guess_GetTexture( std::string( name ) );
+	return GetTexture_guess( std::string( name ) );
 }
 
-guess_texture_t *guess_CTextureManager::guess_LoadImage( const std::string &name )
+texture_t_guess *CTextureManager_guess::LoadImage_guess( const std::string &name )
 {
 	std::string path;
 	int found = 0;
 
-	path = guess_GetPath( name, guess_TEXTYPE_IMAGE, &found );
+	path = GetPath_guess( name, TEXTYPE_IMAGE_guess, &found );
 
 	if ( path.size() )
 	{
-		guess_texture_t tex;
-		tex.guess_type = guess_TEXTYPE_IMAGE;
-		tex.guess_name = name;
-		tex.guess_path = path;
-		tex.guess_iFound = found;
-		tex.guess_iFormat = 0;
-		tex.guess_texture = guess_m_iNextTexture - found;
-		tex.guess_pModel = NULL;
+		texture_t_guess tex;
+		tex.type_guess = TEXTYPE_IMAGE_guess;
+		tex.name_guess = name;
+		tex.path_guess = path;
+		tex.iFound_guess = found;
+		tex.iFormat_guess = 0;
+		tex.texture_guess = m_iNextTexture_guess - found;
+		tex.pModel_guess = NULL;
 
 		if ( found == 1 )
-			guess_UploadImage( &tex );
+			UploadImage_guess( &tex );
 
-		guess_m_Textures.push_back( tex );
-		return &*--guess_m_Textures.end();
+		m_Textures_guess.push_back( tex );
+		return &*--m_Textures_guess.end();
 	}
 
 	return NULL;
 }
 
-guess_texture_t *guess_CTextureManager::guess_LoadSprite( const std::string &name )
+texture_t_guess *CTextureManager_guess::LoadSprite_guess( const std::string &name )
 {
 	std::string path = "sprites/";
 	path += name;
 	path += ".spr";
 
-	guess_texture_t tex;
-	tex.guess_name = name;
-	tex.guess_path = path;
-	tex.guess_type = guess_TEXTYPE_SPRITE;
-	tex.guess_iFormat = 0;
-	tex.guess_pModel = (struct model_s *)gEngfuncs.GetSpritePointer( gEngfuncs.pfnSPR_Load( path.c_str() ) );
+	texture_t_guess tex;
+	tex.name_guess = name;
+	tex.path_guess = path;
+	tex.type_guess = TEXTYPE_SPRITE_guess;
+	tex.iFormat_guess = 0;
+	tex.pModel_guess = (struct model_s *)gEngfuncs.GetSpritePointer( gEngfuncs.pfnSPR_Load( path.c_str() ) );
 
-	if ( tex.guess_pModel )
+	if ( tex.pModel_guess )
 	{
-		if ( guess_IsHardware() )
+		if ( IsHardware_guess() )
 		{
 			GLint texture;
-			gEngfuncs.pTriAPI->SpriteTexture( tex.guess_pModel, 0 );
+			gEngfuncs.pTriAPI->SpriteTexture( tex.pModel_guess, 0 );
 			glGetIntegerv( GL_TEXTURE_BINDING_2D, &texture );
-			tex.guess_texture = texture;
+			tex.texture_guess = texture;
 		}
 
-		guess_m_Textures.push_back( tex );
-		return &*--guess_m_Textures.end();
+		m_Textures_guess.push_back( tex );
+		return &*--m_Textures_guess.end();
 	}
 
 	return NULL;
 }
 
-guess_texture_t *guess_CTextureManager::guess_Load( const std::string &name )
+texture_t_guess *CTextureManager_guess::Load_guess( const std::string &name )
 {
-	guess_texture_t *tex;
+	texture_t_guess *tex;
 
-	if ( guess_IsHardware() && ( tex = guess_LoadImage( name ) ) != NULL )
+	if ( IsHardware_guess() && ( tex = LoadImage_guess( name ) ) != NULL )
 		return tex;
 
-	return guess_LoadSprite( name );
+	return LoadSprite_guess( name );
 }
 
-bool guess_CTextureManager::guess_LoadTexture( int texture, const char *name, int format, bool check )
+bool CTextureManager_guess::LoadTexture_guess( int texture, const char *name, int format, bool check )
 {
-	std::list<guess_texture_t>::iterator it = guess_m_Textures.begin();
+	std::list<texture_t_guess>::iterator it = m_Textures_guess.begin();
 
 	if ( check )
 	{
-		while ( it != guess_m_Textures.end() )
+		while ( it != m_Textures_guess.end() )
 		{
-			if ( (*it).guess_texture == texture )
+			if ( (*it).texture_guess == texture )
 				return true;
 			it++;
 		}
 	}
 
-	if ( guess_IsHardware() )
+	if ( IsHardware_guess() )
 	{
 		std::string path = name;
 		int found = 0;
 
-		path = guess_GetPath( path, guess_TEXTYPE_IMAGE, &found );
+		path = GetPath_guess( path, TEXTYPE_IMAGE_guess, &found );
 
 		if ( path.size() )
 		{
-			guess_texture_t tex;
-			tex.guess_type = guess_TEXTYPE_IMAGE;
-			tex.guess_name = name;
-			tex.guess_path = path;
-			tex.guess_iFound = found;
-			tex.guess_texture = texture;
-			tex.guess_iFormat = format;
-			guess_UploadImage( &tex );
-			guess_m_Textures.push_back( tex );
+			texture_t_guess tex;
+			tex.type_guess = TEXTYPE_IMAGE_guess;
+			tex.name_guess = name;
+			tex.path_guess = path;
+			tex.iFound_guess = found;
+			tex.texture_guess = texture;
+			tex.iFormat_guess = format;
+			UploadImage_guess( &tex );
+			m_Textures_guess.push_back( tex );
 
 			return true;
 		}
@@ -412,12 +412,12 @@ bool guess_CTextureManager::guess_LoadTexture( int texture, const char *name, in
 	return false;
 }
 
-void guess_CTextureManager::guess_LoadPlayerShadow( void )
+void CTextureManager_guess::LoadPlayerShadow_guess( void )
 {
-	guess_GetTexture( "playershadow" );
+	GetTexture_guess( "playershadow" );
 }
 
-byte guess_IsExtensionSupported( const char *extension, const char *extensions )
+byte IsExtensionSupported_guess( const char *extension, const char *extensions )
 {
 	int len = strlen( extensions ) - 1;
 	int extlen = strlen( extension );

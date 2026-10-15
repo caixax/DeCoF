@@ -29,9 +29,9 @@
 //=========================================================
 // Monster's Anim Events Go Here
 //=========================================================
-#define	guess_TALLER_AE_PUNCH		0x01
-#define	guess_TALLER_AE_STAMP		0x02
-#define	guess_TALLER_AE_STEP		0x03
+#define	TALLER_AE_PUNCH_guess		0x01
+#define	TALLER_AE_STAMP_guess		0x02
+#define	TALLER_AE_STEP_guess		0x03
 
 class CTaller : public CBaseMonster
 {
@@ -174,7 +174,7 @@ void CTaller :: HandleAnimEvent( MonsterEvent_t *pEvent )
 {
 	switch( pEvent->event )
 	{
-		case guess_TALLER_AE_PUNCH:
+		case TALLER_AE_PUNCH_guess:
 		{
 			CBaseEntity *pHurt = CheckTraceHullAttack( 90, gSkillData.tallerDmgPunch, DMG_CLUB, true, 0 );
 			if ( pHurt )
@@ -210,7 +210,7 @@ void CTaller :: HandleAnimEvent( MonsterEvent_t *pEvent )
 		}
 		break;
 
-		case guess_TALLER_AE_STAMP:
+		case TALLER_AE_STAMP_guess:
 		{
 			TraceResult tr;
 			UTIL_MakeAimVectors( pev->angles );
@@ -266,7 +266,7 @@ void CTaller :: HandleAnimEvent( MonsterEvent_t *pEvent )
 		}
 		break;
 
-		case guess_TALLER_AE_STEP:
+		case TALLER_AE_STEP_guess:
 		{
 			EMIT_SOUND( edict(), CHAN_BODY, "taller/taller_step.wav", 1, ATTN_NORM );
 		}
@@ -290,8 +290,8 @@ void CTaller :: Spawn()
 	else
 		SET_MODEL(ENT(pev), "models/taller.mdl");
 
-	int guess_iScale = (int)CVAR_GET_FLOAT( "cof_monsterhumanscale" ) * 2;
-	UTIL_SetSize( pev, Vector( -guess_iScale, -guess_iScale, 0 ), Vector( guess_iScale, guess_iScale, 168 ) );
+	int iScale_guess = (int)CVAR_GET_FLOAT( "cof_monsterhumanscale" ) * 2;
+	UTIL_SetSize( pev, Vector( -iScale_guess, -iScale_guess, 0 ), Vector( iScale_guess, iScale_guess, 168 ) );
 
 	pev->solid			= SOLID_SLIDEBOX;
 	pev->movetype		= MOVETYPE_STEP;

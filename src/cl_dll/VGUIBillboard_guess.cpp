@@ -7,8 +7,8 @@
 #include "cl_util.h"
 #include "parsemsg.h"
 #include "vgui_TeamFortressViewport.h"
-#include "guess_VGUIBillboard.h"
-#include "guess_HUDControl.h"
+#include "VGUIBillboard_guess.h"
+#include "HUDControl_guess.h"
 #include "..\game_shared\vgui_loadtga.h"
 
 CVGUIBillboard::CVGUIBillboard() : Panel( 0, 0, ScreenWidth, ScreenHeight )
@@ -25,20 +25,20 @@ CVGUIBillboard::CVGUIBillboard() : Panel( 0, 0, ScreenWidth, ScreenHeight )
 	pPanel->setBgColor( 0, 0, 0, 0 );
 	pPanel->setVisible( true );
 
-	guess_m_pBackgroundImage = vgui_LoadTGA( "gfx/vgui/backgroundtoall.tga" );
-	if ( guess_m_pBackgroundImage )
-		guess_m_pBackgroundImage->setColor( Color( 255, 255, 255, 1 ) );
+	m_pBackgroundImage_guess = vgui_LoadTGA( "gfx/vgui/backgroundtoall.tga" );
+	if ( m_pBackgroundImage_guess )
+		m_pBackgroundImage_guess->setColor( Color( 255, 255, 255, 1 ) );
 	else
 		gEngfuncs.Con_Printf( "Cannot load gfx/vgui/backgroundtoall.tga!\n" );
 
-	guess_m_pBackgroundImage->getSize( wide, tall );
+	m_pBackgroundImage_guess->getSize( wide, tall );
 	x = ScreenWidth / 2 - wide / 2;
 	y = ScreenHeight / 2 - tall / 2;
 
-	guess_m_pBackground = new ImagePanel( guess_m_pBackgroundImage );
-	guess_m_pBackground->setParent( this );
-	guess_m_pBackground->setPos( x, y );
-	guess_m_pBackground->setVisible( true );
+	m_pBackground_guess = new ImagePanel( m_pBackgroundImage_guess );
+	m_pBackground_guess->setParent( this );
+	m_pBackground_guess->setPos( x, y );
+	m_pBackground_guess->setVisible( true );
 
 	if ( !vgui_LoadTGA( "gfx/vgui/640_gustavdahlwelcome.tga" ) )
 		gEngfuncs.Con_Printf( "Cannot load gfx/vgui/640_gustavdahlwelcome.tga!\n" );
@@ -46,10 +46,10 @@ CVGUIBillboard::CVGUIBillboard() : Panel( 0, 0, ScreenWidth, ScreenHeight )
 	x = ScreenWidth / 2 - 320;
 	y = ScreenHeight / 2 - 240;
 
-	guess_m_pImage = new ImagePanel( vgui_LoadTGA( "gfx/vgui/640_gustavdahlwelcome.tga" ) );
-	guess_m_pImage->setParent( this );
-	guess_m_pImage->setPos( x, y );
-	guess_m_pImage->setVisible( true );
+	m_pImage_guess = new ImagePanel( vgui_LoadTGA( "gfx/vgui/640_gustavdahlwelcome.tga" ) );
+	m_pImage_guess->setParent( this );
+	m_pImage_guess->setPos( x, y );
+	m_pImage_guess->setVisible( true );
 
 	pButton = new CommandButton( "", x, y, 640, 480, true, true );
 	pButton->setParent( this );
@@ -61,15 +61,15 @@ CVGUIBillboard::CVGUIBillboard() : Panel( 0, 0, ScreenWidth, ScreenHeight )
 	SchemeHandle_t hTitleScheme = pSchemes->getSchemeHandle( "credits" );
 	SchemeHandle_t hChapterScheme = pSchemes->getSchemeHandle( "chaptertitle" );
 	SchemeHandle_t hTextScheme = pSchemes->getSchemeHandle( "credits" );
-	guess_m_pFont = pSchemes->getFont( hTitleScheme );
+	m_pFont_guess = pSchemes->getFont( hTitleScheme );
 
-	guess_m_pLabel = new Label( " ", 0, 0, ScreenWidth, 64 );
-	guess_m_pLabel->setParent( this );
-	guess_m_pLabel->setFont( guess_m_pFont );
-	guess_m_pLabel->setFgColor( 0, 0, 0, 0 );
-	guess_m_pLabel->setBgColor( 0, 0, 0, 255 );
-	guess_m_pLabel->setText( " " );
-	guess_m_pLabel->setContentAlignment( Label::a_center );
+	m_pLabel_guess = new Label( " ", 0, 0, ScreenWidth, 64 );
+	m_pLabel_guess->setParent( this );
+	m_pLabel_guess->setFont( m_pFont_guess );
+	m_pLabel_guess->setFgColor( 0, 0, 0, 0 );
+	m_pLabel_guess->setBgColor( 0, 0, 0, 255 );
+	m_pLabel_guess->setText( " " );
+	m_pLabel_guess->setContentAlignment( Label::a_center );
 
 	setBgColor( 0, 0, 0, 255 );
 
@@ -94,7 +94,7 @@ void CVGUIBillboard::ActionSignal( int cmd )
 
 void CVGUIBillboard::Initialize()
 {
-	guess_m_pLabel->setText( "" );
+	m_pLabel_guess->setText( "" );
 	setVisible( false );
 }
 
@@ -106,20 +106,20 @@ int CVGUIBillboard::KeyInput( int down, int keynum, const char *pszCurrentBindin
 	return 0;
 }
 
-int guess_MsgBoard( const char *pszName, int iSize, void *pbuf )
+int MsgBoard_guess( const char *pszName, int iSize, void *pbuf )
 {
 	char szImage[128];
 
 	BEGIN_READ( pbuf, iSize );
 
-	if ( gViewPort->guess_m_pVGUIBillboard )
+	if ( gViewPort->m_pVGUIBillboard_guess )
 	{
 		sprintf( szImage, "%s", READ_STRING() );
 
 		if ( strlen( szImage ) > 1 )
 		{
 			if ( vgui_LoadTGA( szImage ) )
-				gViewPort->guess_m_pVGUIBillboard->guess_m_pImage->setImage( vgui_LoadTGA( szImage ) );
+				gViewPort->m_pVGUIBillboard_guess->m_pImage_guess->setImage( vgui_LoadTGA( szImage ) );
 			else
 				gEngfuncs.Con_Printf( "Cannot load %s!\n", szImage );
 		}
@@ -128,9 +128,9 @@ int guess_MsgBoard( const char *pszName, int iSize, void *pbuf )
 			gEngfuncs.Con_Printf( "No message sent\n" );
 		}
 
-		if ( !gViewPort->guess_m_pVGUIBillboard->isVisible() )
+		if ( !gViewPort->m_pVGUIBillboard_guess->isVisible() )
 		{
-			gViewPort->guess_m_pVGUIBillboard->setVisible( true );
+			gViewPort->m_pVGUIBillboard_guess->setVisible( true );
 			gViewPort->UpdateCursorState();
 		}
 	}
@@ -138,9 +138,9 @@ int guess_MsgBoard( const char *pszName, int iSize, void *pbuf )
 	return 1;
 }
 
-void guess_BoardInit()
+void BoardInit_guess()
 {
-	gEngfuncs.pfnHookUserMsg( "Board", guess_MsgBoard );
+	gEngfuncs.pfnHookUserMsg( "Board", MsgBoard_guess );
 }
 
 void CVGUIBillboard::paint()
@@ -149,19 +149,19 @@ void CVGUIBillboard::paint()
 	int wide, tall;
 	int r, g, b, a;
 
-	if ( gViewPort && gViewPort->guess_m_pHUDControl && gViewPort->guess_m_pHUDControl->guess_m_szMessage[0] )
+	if ( gViewPort && gViewPort->m_pHUDControl_guess && gViewPort->m_pHUDControl_guess->m_szMessage_guess[0] )
 	{
-		if ( strlen( gViewPort->guess_m_pHUDControl->guess_m_szMessage ) > 1 )
+		if ( strlen( gViewPort->m_pHUDControl_guess->m_szMessage_guess ) > 1 )
 		{
-			gViewPort->guess_m_pHUDControl->guess_m_pMessageLabel->getPos( x, y );
-			gViewPort->guess_m_pHUDControl->guess_m_pMessageLabel->getSize( wide, tall );
-			gViewPort->guess_m_pHUDControl->guess_m_pMessageLabel->getFgColor( r, g, b, a );
+			gViewPort->m_pHUDControl_guess->m_pMessageLabel_guess->getPos( x, y );
+			gViewPort->m_pHUDControl_guess->m_pMessageLabel_guess->getSize( wide, tall );
+			gViewPort->m_pHUDControl_guess->m_pMessageLabel_guess->getFgColor( r, g, b, a );
 
-			guess_m_pLabel->setSize( wide, tall );
-			guess_m_pLabel->setText( gViewPort->guess_m_pHUDControl->guess_m_szMessage );
-			guess_m_pLabel->setPos( x, y );
-			guess_m_pLabel->setContentAlignment( Label::a_center );
-			guess_m_pLabel->setFgColor( r, g, b, a );
+			m_pLabel_guess->setSize( wide, tall );
+			m_pLabel_guess->setText( gViewPort->m_pHUDControl_guess->m_szMessage_guess );
+			m_pLabel_guess->setPos( x, y );
+			m_pLabel_guess->setContentAlignment( Label::a_center );
+			m_pLabel_guess->setFgColor( r, g, b, a );
 		}
 	}
 

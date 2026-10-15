@@ -123,47 +123,47 @@ float UTIL_WeaponTimeBase( void )
 extern int gmsgPlaySFX;
 
 // CoF 1.6a (no symbol): sends a weapon sound to the clients (PlaySFX message)
-void guess_UTIL_PlayWeaponSound( const char *sample, int guess_iParam2, bool guess_bParam3, Vector vecOrigin, CBaseEntity *pPlayer, bool guess_bParam6 )
+void UTIL_PlayWeaponSound_guess( const char *sample, int iParam2_guess, bool bParam3_guess, Vector vecOrigin, CBaseEntity *pPlayer, bool bParam6_guess )
 {
-	int guess_iParam3 = guess_bParam3;
+	int iParam3_guess = bParam3_guess;
 
 	if ( g_pGameRules->IsMultiplayer() )
 	{
-		CBasePlayer *guess_pPlayer = GetClassPtr( (CBasePlayer *)pPlayer->pev );
-		vecOrigin = guess_pPlayer->GetGunPosition();
+		CBasePlayer *pPlayer_guess = GetClassPtr( (CBasePlayer *)pPlayer->pev );
+		vecOrigin = pPlayer_guess->GetGunPosition();
 
-		if ( strstr( sample, "weapons" ) && guess_bParam6 )
+		if ( strstr( sample, "weapons" ) && bParam6_guess )
 		{
 			for ( int i = 1; i <= gpGlobals->maxClients; i++ )
 			{
-				CBaseEntity *guess_pEntity = UTIL_PlayerByIndex( i );
-				if ( !guess_pEntity )
+				CBaseEntity *pEntity_guess = UTIL_PlayerByIndex( i );
+				if ( !pEntity_guess )
 					continue;
 
-				MESSAGE_BEGIN( MSG_ONE, gmsgPlaySFX, NULL, guess_pEntity->pev );
+				MESSAGE_BEGIN( MSG_ONE, gmsgPlaySFX, NULL, pEntity_guess->pev );
 					WRITE_STRING( sample );
-					WRITE_BYTE( guess_iParam2 );
-					WRITE_BYTE( guess_iParam3 );
+					WRITE_BYTE( iParam2_guess );
+					WRITE_BYTE( iParam3_guess );
 					WRITE_COORD( vecOrigin.x );
 					WRITE_COORD( vecOrigin.y );
 					WRITE_COORD( vecOrigin.z );
-					if ( guess_pEntity == pPlayer )
+					if ( pEntity_guess == pPlayer )
 						WRITE_BYTE( 0 );
 					else
 						WRITE_BYTE( 1 );
-					WRITE_SHORT( ENTINDEX( guess_pEntity->edict() ) );
+					WRITE_SHORT( ENTINDEX( pEntity_guess->edict() ) );
 				MESSAGE_END();
 			}
 			return;
 		}
 	}
 
-	if ( guess_bParam6 )
+	if ( bParam6_guess )
 	{
 		MESSAGE_BEGIN( MSG_ALL, gmsgPlaySFX );
 		WRITE_STRING( sample );
-		WRITE_BYTE( guess_iParam2 );
-		WRITE_BYTE( guess_iParam3 );
+		WRITE_BYTE( iParam2_guess );
+		WRITE_BYTE( iParam3_guess );
 		WRITE_COORD( vecOrigin.x );
 		WRITE_COORD( vecOrigin.y );
 		WRITE_COORD( vecOrigin.z );
@@ -175,8 +175,8 @@ void guess_UTIL_PlayWeaponSound( const char *sample, int guess_iParam2, bool gue
 	{
 		MESSAGE_BEGIN( MSG_ONE, gmsgPlaySFX, NULL, pPlayer->pev );
 		WRITE_STRING( sample );
-		WRITE_BYTE( guess_iParam2 );
-		WRITE_BYTE( guess_iParam3 );
+		WRITE_BYTE( iParam2_guess );
+		WRITE_BYTE( iParam3_guess );
 		WRITE_COORD( vecOrigin.x );
 		WRITE_COORD( vecOrigin.y );
 		WRITE_COORD( vecOrigin.z );

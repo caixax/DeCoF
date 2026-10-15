@@ -14,10 +14,10 @@ public:
 	void Initialize();
 
 public:
-	int		guess_m_iTVFrame;			// 0xbc
-	int		guess_m_iUnusedC0[8];		// 0xc0, never used in 1.6a (sizeof 0xe0 from the new in the viewport)
+	int		m_iTVFrame_guess;			// 0xbc
+	int		m_iUnusedC0_guess[8];		// 0xc0, never used in 1.6a (sizeof 0xe0 from the new in the viewport)
 };
 
-void guess_TVFrameInit();
+void TVFrameInit_guess();
 
 #endif // _TVFRAME_H

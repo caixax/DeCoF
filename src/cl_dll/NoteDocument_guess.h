@@ -15,14 +15,14 @@ public:
 	void ActionSignal( int cmd );
 	int KeyInput( int down, int keynum, const char *pszCurrentBinding );
 
-	void guess_ClearString( char *str );
-	int guess_CountLines();
-	void guess_NextLine();
-	void guess_NextPage();
-	void guess_PrevLine();
-	void guess_PrevPage();
-	void guess_SetPage( int page );
-	void guess_ReadLine();
+	void ClearString_guess( char *str );
+	int CountLines_guess();
+	void NextLine_guess();
+	void NextPage_guess();
+	void PrevLine_guess();
+	void PrevPage_guess();
+	void SetPage_guess( int page );
+	void ReadLine_guess();
 
 	virtual void setVisible( bool state )
 	{
@@ -38,27 +38,27 @@ protected:
 	virtual void paint();
 
 public:
-	CommandButton	*guess_m_pCloseButton;	// 0xd4, command 3
-	CTransparentPanel	*guess_m_pPanel;	// 0xd8, 640x480 window
-	CImageLabel	*guess_m_pImageLabel;		// 0xdc, picture of the page
-	CImageLabel	*guess_m_pCancelLabel;		// 0xe0, notecancel
-	int		guess_m_iLine;					// 0xe4, line of the text file shown in guess_m_szLine
-	int		guess_m_iPage;					// 0xe8, page (1 to 4), picks the text file
-	char	guess_m_szImage1[16];			// 0xec, picture of page 1, from the NoteDoc message
-	char	guess_m_szImage2[16];			// 0xfc
-	char	guess_m_szImage3[16];			// 0x10c
-	char	guess_m_szImage4[16];			// 0x11c
-	char	guess_m_szSound[48];			// 0x12c, played by guess_SetPage
-	char	guess_m_szText1[16];			// 0x15c, text file of page 1 (under notes/)
-	char	guess_m_szText2[16];			// 0x16c
-	char	guess_m_szText3[16];			// 0x17c
-	char	guess_m_szText4[16];			// 0x18c
-	char	guess_m_szLine[128];			// 0x19c, current line of the text file
-	bool	guess_m_bTitle;					// 0x21c, guess_m_szLine is the first line
-	Label	*guess_m_pLineLabel;			// 0x220, shows guess_m_szLine
-	Image	*guess_m_pBackgroundImage;		// 0x224, gfx/vgui/backgroundtoall.tga
-	ImagePanel	*guess_m_pBackground;		// 0x228
-	Font	*guess_m_pFont;					// 0x22c, "credits" scheme font
+	CommandButton	*m_pCloseButton_guess;	// 0xd4, command 3
+	CTransparentPanel	*m_pPanel_guess;	// 0xd8, 640x480 window
+	CImageLabel	*m_pImageLabel_guess;		// 0xdc, picture of the page
+	CImageLabel	*m_pCancelLabel_guess;		// 0xe0, notecancel
+	int		m_iLine_guess;					// 0xe4, line of the text file shown in m_szLine_guess
+	int		m_iPage_guess;					// 0xe8, page (1 to 4), picks the text file
+	char	m_szImage1_guess[16];			// 0xec, picture of page 1, from the NoteDoc message
+	char	m_szImage2_guess[16];			// 0xfc
+	char	m_szImage3_guess[16];			// 0x10c
+	char	m_szImage4_guess[16];			// 0x11c
+	char	m_szSound_guess[48];			// 0x12c, played by SetPage_guess
+	char	m_szText1_guess[16];			// 0x15c, text file of page 1 (under notes/)
+	char	m_szText2_guess[16];			// 0x16c
+	char	m_szText3_guess[16];			// 0x17c
+	char	m_szText4_guess[16];			// 0x18c
+	char	m_szLine_guess[128];			// 0x19c, current line of the text file
+	bool	m_bTitle_guess;					// 0x21c, m_szLine_guess is the first line
+	Label	*m_pLineLabel_guess;			// 0x220, shows m_szLine_guess
+	Image	*m_pBackgroundImage_guess;		// 0x224, gfx/vgui/backgroundtoall.tga
+	ImagePanel	*m_pBackground_guess;		// 0x228
+	Font	*m_pFont_guess;					// 0x22c, "credits" scheme font
 };
 
 class CNoteDocumentHandler_Command : public ActionSignal
@@ -80,6 +80,6 @@ public:
 	}
 };
 
-void guess_NoteDocInit();
+void NoteDocInit_guess();
 
 #endif // _NOTEDOCUMENT_H

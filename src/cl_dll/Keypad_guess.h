@@ -16,10 +16,10 @@ public:
 	void ActionSignal( int cmd );
 	int KeyInput( int down, int keynum, const char *pszCurrentBinding );
 
-	void guess_Activate();
-	void guess_PressKey( int key );
-	void guess_Submit();
-	void guess_UpdateLayout();
+	void Activate_guess();
+	void PressKey_guess( int key );
+	void Submit_guess();
+	void UpdateLayout_guess();
 
 protected:
 	virtual void paintBackground()
@@ -28,31 +28,31 @@ protected:
 	}
 
 public:
-	Panel	*guess_m_pBackgroundPanel;		// 0xbc
-	Image	*guess_m_pBackgroundImage;		// 0xc0, gfx/vgui/backgroundtoall.tga
-	ImagePanel	*guess_m_pBackground;		// 0xc4
-	int		guess_m_iActivated;				// 0xc8, second byte of the Keypad message, blocks the keys
-	int		guess_m_iType;					// 0xcc, first byte of the Keypad message, 0 to 2 (panel picture)
-	char	guess_m_szCode[8];				// 0xd0, digits typed so far, sent with keypadnumber
-	Font	*guess_m_pFont;					// 0xd8, "credits" scheme font
-	Label	*guess_m_pCodeLabel;			// 0xdc, shows one star per typed digit (type 2)
-	CommandButton	*guess_m_pKey1;			// 0xe0
-	CommandButton	*guess_m_pKey2;			// 0xe4
-	CommandButton	*guess_m_pKey3;			// 0xe8
-	CommandButton	*guess_m_pKey4;			// 0xec
-	CommandButton	*guess_m_pKey5;			// 0xf0
-	CommandButton	*guess_m_pKey6;			// 0xf4
-	CommandButton	*guess_m_pKey7;			// 0xf8
-	CommandButton	*guess_m_pKey8;			// 0xfc
-	CommandButton	*guess_m_pKey9;			// 0x100
-	Image	*guess_m_pPanelBackImage;		// 0x104, gfx/vgui/640_panelback.tga
-	ImagePanel	*guess_m_pPanelBack;		// 0x108, parent of the keys
-	Image	*guess_m_pPanel2BackImage;		// 0x10c, gfx/vgui/640_panel2back.tga
-	ImagePanel	*guess_m_pPanel2Back;		// 0x110
-	Image	*guess_m_pPanelOffImage;		// 0x114, gfx/vgui/640_paneloff.tga
-	ImagePanel	*guess_m_pPanelOff;			// 0x118
-	Image	*guess_m_pPanelOnImage;			// 0x11c, gfx/vgui/640_panelon.tga
-	ImagePanel	*guess_m_pPanelOn;			// 0x120
+	Panel	*m_pBackgroundPanel_guess;		// 0xbc
+	Image	*m_pBackgroundImage_guess;		// 0xc0, gfx/vgui/backgroundtoall.tga
+	ImagePanel	*m_pBackground_guess;		// 0xc4
+	int		m_iActivated_guess;				// 0xc8, second byte of the Keypad message, blocks the keys
+	int		m_iType_guess;					// 0xcc, first byte of the Keypad message, 0 to 2 (panel picture)
+	char	m_szCode_guess[8];				// 0xd0, digits typed so far, sent with keypadnumber
+	Font	*m_pFont_guess;					// 0xd8, "credits" scheme font
+	Label	*m_pCodeLabel_guess;			// 0xdc, shows one star per typed digit (type 2)
+	CommandButton	*m_pKey1_guess;			// 0xe0
+	CommandButton	*m_pKey2_guess;			// 0xe4
+	CommandButton	*m_pKey3_guess;			// 0xe8
+	CommandButton	*m_pKey4_guess;			// 0xec
+	CommandButton	*m_pKey5_guess;			// 0xf0
+	CommandButton	*m_pKey6_guess;			// 0xf4
+	CommandButton	*m_pKey7_guess;			// 0xf8
+	CommandButton	*m_pKey8_guess;			// 0xfc
+	CommandButton	*m_pKey9_guess;			// 0x100
+	Image	*m_pPanelBackImage_guess;		// 0x104, gfx/vgui/640_panelback.tga
+	ImagePanel	*m_pPanelBack_guess;		// 0x108, parent of the keys
+	Image	*m_pPanel2BackImage_guess;		// 0x10c, gfx/vgui/640_panel2back.tga
+	ImagePanel	*m_pPanel2Back_guess;		// 0x110
+	Image	*m_pPanelOffImage_guess;		// 0x114, gfx/vgui/640_paneloff.tga
+	ImagePanel	*m_pPanelOff_guess;			// 0x118
+	Image	*m_pPanelOnImage_guess;			// 0x11c, gfx/vgui/640_panelon.tga
+	ImagePanel	*m_pPanelOn_guess;			// 0x120
 };
 
 class CKeypadHandler_Command : public ActionSignal
@@ -74,6 +74,6 @@ public:
 	}
 };
 
-void guess_KeypadInit();
+void KeypadInit_guess();
 
 #endif // _KEYPAD_H

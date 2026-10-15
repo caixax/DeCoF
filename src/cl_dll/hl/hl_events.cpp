@@ -47,11 +47,11 @@ void EV_FireRPK( struct event_args_s *args );
 void EV_FireAK74( struct event_args_s *args );
 void EV_FireGroza( struct event_args_s *args );
 void EV_SmokePuff( struct event_args_s *args );
-void guess_EV_ViewPunch( struct event_args_s *args );
-void guess_EV_WeaponShoot( struct event_args_s *args );
-void guess_EV_ClientSound( struct event_args_s *args );
-void guess_EV_ServerMuzzleFlash( struct event_args_s *args );
-void guess_EV_RevolverShells( struct event_args_s *args );
+void EV_ViewPunch_guess( struct event_args_s *args );
+void EV_WeaponShoot_guess( struct event_args_s *args );
+void EV_ClientSound_guess( struct event_args_s *args );
+void EV_ServerMuzzleFlash_guess( struct event_args_s *args );
+void EV_RevolverShells_guess( struct event_args_s *args );
 }
 
 /*
@@ -96,9 +96,9 @@ void EV_HookEvents( void )
 	gEngfuncs.pfnHookEvent( "events/ak74.sc",					EV_FireAK74 );
 	gEngfuncs.pfnHookEvent( "events/groza.sc",					EV_FireGroza );
 	gEngfuncs.pfnHookEvent( "events/smokepuff.sc",				EV_SmokePuff );
-	gEngfuncs.pfnHookEvent( "events/viewpunch.sc",				guess_EV_ViewPunch );
-	gEngfuncs.pfnHookEvent( "events/weaponshoot.sc",			guess_EV_WeaponShoot );
-	gEngfuncs.pfnHookEvent( "events/clientsound.sc",			guess_EV_ClientSound );
-	gEngfuncs.pfnHookEvent( "events/muzzleflash.sc",			guess_EV_ServerMuzzleFlash );
-	gEngfuncs.pfnHookEvent( "events/revolvershells.sc",			guess_EV_RevolverShells );
+	gEngfuncs.pfnHookEvent( "events/viewpunch.sc",				EV_ViewPunch_guess );
+	gEngfuncs.pfnHookEvent( "events/weaponshoot.sc",			EV_WeaponShoot_guess );
+	gEngfuncs.pfnHookEvent( "events/clientsound.sc",			EV_ClientSound_guess );
+	gEngfuncs.pfnHookEvent( "events/muzzleflash.sc",			EV_ServerMuzzleFlash_guess );
+	gEngfuncs.pfnHookEvent( "events/revolvershells.sc",			EV_RevolverShells_guess );
 }

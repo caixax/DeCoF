@@ -17,12 +17,12 @@ public:
 	int KeyInput( int down, int keynum, const char *pszCurrentBinding );
 
 public:
-	Panel	*guess_m_pBlackPanel;		// 0xbc
-	Image	*guess_m_pBackgroundImage;	// 0xc0, gfx/vgui/backgroundtoall.tga
-	ImagePanel	*guess_m_pBackground;	// 0xc4
-	int		guess_m_iStatue;			// 0xc8, from the Statue message, sent back in movestatue
-	Image	*guess_m_pButtonsImage;		// 0xcc, gfx/vgui/640_eagle_button.tga
-	ImagePanel	*guess_m_pButtons;		// 0xd0, parent of the buttons
+	Panel	*m_pBlackPanel_guess;		// 0xbc
+	Image	*m_pBackgroundImage_guess;	// 0xc0, gfx/vgui/backgroundtoall.tga
+	ImagePanel	*m_pBackground_guess;	// 0xc4
+	int		m_iStatue_guess;			// 0xc8, from the Statue message, sent back in movestatue
+	Image	*m_pButtonsImage_guess;		// 0xcc, gfx/vgui/640_eagle_button.tga
+	ImagePanel	*m_pButtons_guess;		// 0xd0, parent of the buttons
 };
 
 class CAnimalStatueHandler_Command : public ActionSignal
@@ -44,6 +44,6 @@ public:
 	}
 };
 
-void guess_StatueInit();
+void StatueInit_guess();
 
 #endif // _ANIMALSTATUE_H

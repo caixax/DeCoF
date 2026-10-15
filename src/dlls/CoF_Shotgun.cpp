@@ -282,7 +282,7 @@ void CShotgun::PrimaryAttack( void )
 	else
 		SendWeaponAnim( SHOTGUN_SHOOT1 );
 
-	guess_UTIL_PlayWeaponSound( "weapons_new/shotgun/shoot.wav", 0, true, m_pPlayer->EarPosition(), m_pPlayer, true );
+	UTIL_PlayWeaponSound_guess( "weapons_new/shotgun/shoot.wav", 0, true, m_pPlayer->EarPosition(), m_pPlayer, true );
 
 	m_pPlayer->pev->effects |= EF_MUZZLEFLASH;
 
@@ -570,7 +570,7 @@ void CShotgun::SuicideShot( void )
 		m_pPlayer->pev->health = 0;
 		m_pPlayer->Killed( m_pPlayer->pev, GIB_NEVER );
 
-		guess_UTIL_PlayWeaponSound( "weapons_new/shotgun/shoot.wav", 0, true, m_pPlayer->EarPosition(), m_pPlayer, true );
+		UTIL_PlayWeaponSound_guess( "weapons_new/shotgun/shoot.wav", 0, true, m_pPlayer->EarPosition(), m_pPlayer, true );
 		return;
 	}
 

@@ -313,8 +313,8 @@ void CZombie :: Spawn()
 			SET_MODEL(ENT(pev), "models/slower.mdl");
 	}
 
-	int guess_iScale = CVAR_GET_FLOAT( "cof_monsterhumanscale" );
-	UTIL_SetSize( pev, Vector( -guess_iScale, -guess_iScale, 0 ), Vector( 8, 8, 72 ) );
+	int iScale_guess = CVAR_GET_FLOAT( "cof_monsterhumanscale" );
+	UTIL_SetSize( pev, Vector( -iScale_guess, -iScale_guess, 0 ), Vector( 8, 8, 72 ) );
 
 	pev->solid			= SOLID_SLIDEBOX;
 	pev->movetype		= MOVETYPE_STEP;

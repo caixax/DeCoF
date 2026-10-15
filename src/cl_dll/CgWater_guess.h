@@ -4,47 +4,47 @@
 #ifndef GUESS_CGWATER_H
 #define GUESS_CGWATER_H
 
-#include "guess_CgContext.h"
+#include "CgContext_guess.h"
 
-class guess_CCgWater
+class CCgWater_guess
 {
 public:
-	guess_CCgWater();
+	CCgWater_guess();
 
-	void guess_DrawBlackQuad( void );
-	void guess_EndShaders( void );
-	void guess_Init( void );
-	void guess_PostDraw( void );
-	void guess_PreDraw( void );
-	void guess_Render( void );
-	void guess_RenderQuad( void );
-	void guess_SetBlackShader( void );
-	void guess_UpdateEntities( void );
+	void DrawBlackQuad_guess( void );
+	void EndShaders_guess( void );
+	void Init_guess( void );
+	void PostDraw_guess( void );
+	void PreDraw_guess( void );
+	void Render_guess( void );
+	void RenderQuad_guess( void );
+	void SetBlackShader_guess( void );
+	void UpdateEntities_guess( void );
 
 	PFNGLACTIVETEXTUREARBPROC	glActiveTextureARB;
 	PFNGLMULTITEXCOORD2FARBPROC	glMultiTexCoord2fARB;
-	bool	guess_m_bAllowTextureShader;
-	bool	guess_m_bEnabled;
-	bool	guess_m_bDrawn;
-	float	guess_m_flTexWidth;
-	float	guess_m_flTexHeight;
-	GLuint	guess_m_iMaskTexture;
-	GLuint	guess_m_iDistortTexture;
-	GLuint	guess_m_iNoiseTexture;
-	GLuint	guess_m_iSceneTexture;
-	GLuint	guess_m_iOffsetTexture;
-	guess_cgprogram_t *guess_m_pWaterFP;
-	guess_cgprogram_t *guess_m_pWaterVP;
-	guess_cgprogram_t *guess_m_pBlackFP;
-	guess_cgprogram_t *guess_m_pBlackVP;
-	CGparameter	guess_m_pBlackModelViewProj;
-	CGparameter	guess_m_pModelViewProj;
-	CGparameter	guess_m_pTexOffset;
-	CGparameter	guess_m_pScreen;
-	GLint	guess_m_iSavedTexture1;
-	GLint	guess_m_iSavedTexture2;
+	bool	m_bAllowTextureShader_guess;
+	bool	m_bEnabled_guess;
+	bool	m_bDrawn_guess;
+	float	m_flTexWidth_guess;
+	float	m_flTexHeight_guess;
+	GLuint	m_iMaskTexture_guess;
+	GLuint	m_iDistortTexture_guess;
+	GLuint	m_iNoiseTexture_guess;
+	GLuint	m_iSceneTexture_guess;
+	GLuint	m_iOffsetTexture_guess;
+	cgprogram_t_guess *m_pWaterFP_guess;
+	cgprogram_t_guess *m_pWaterVP_guess;
+	cgprogram_t_guess *m_pBlackFP_guess;
+	cgprogram_t_guess *m_pBlackVP_guess;
+	CGparameter	m_pBlackModelViewProj_guess;
+	CGparameter	m_pModelViewProj_guess;
+	CGparameter	m_pTexOffset_guess;
+	CGparameter	m_pScreen_guess;
+	GLint	m_iSavedTexture1_guess;
+	GLint	m_iSavedTexture2_guess;
 };
 
-extern guess_CCgWater guess_g_CgWater;
+extern CCgWater_guess g_CgWater_guess;
 
 #endif // GUESS_CGWATER_H

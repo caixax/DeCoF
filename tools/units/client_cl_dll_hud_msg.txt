@@ -11,12 +11,12 @@
 ?MsgFunc_ResetHUD@CHud@@QAAHPBDHPAX@Z
 ?MsgFunc_SetSky@CHud@@QAAXPBDHPAX@Z
 ?MsgFunc_SpecTank@CHud@@QAAHPBDHPAX@Z
-?guess_IsInDonatorGroup1@@YAHXZ
+?IsInDonatorGroup1_guess@@YAHXZ
 ?strstrtolower@@YA_NPAD0@Z
 ?COM_Parse@@YAPADPAD@Z
 ?GetCurrentPath@@YAXPAD@Z
 ?CheckItem@CHud@@QAEPADPAD0@Z
-?guess_IsInDonatorGroup2@@YAHXZ
+?IsInDonatorGroup2_guess@@YAHXZ
 ?MsgFunc_AddNote@CHud@@QAAHPBDHPAX@Z
 ?MsgFunc_AttachCam@CHud@@QAAHPBDHPAX@Z
 ?MsgFunc_BigPrick@CHud@@QAAHPBDHPAX@Z

@@ -34,9 +34,9 @@ extern int gmsgMOTD;
 //=========================================================
 CHalfLifeRules::CHalfLifeRules( void )
 {
-	guess_m_bUnknownDC = false;
-	guess_m_flUnknownE4 = 0;
-	guess_m_flUnknownE0 = 0;
+	m_bUnknownDC_guess = false;
+	m_flUnknownE4_guess = 0;
+	m_flUnknownE0_guess = 0;
 
 	CVAR_SET_FLOAT( "sv_coop", 0 );
 
@@ -86,7 +86,7 @@ BOOL CHalfLifeRules::FShouldSwitchWeapon( CBasePlayer *pPlayer, CBasePlayerItem 
 		return FALSE;
 	}
 
-	if ( pWeapon->iFlags() & guess_ITEM_FLAG_NOAUTOSWITCHTO )
+	if ( pWeapon->iFlags() & ITEM_FLAG_NOAUTOSWITCHTO_guess )
 	{
 		return FALSE;
 	}

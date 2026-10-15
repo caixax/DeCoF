@@ -60,15 +60,15 @@ void GLManager::Init()
 	int i;
 
 	for ( i = 0; i <= 11; i++ )
-		guess_m_bArray30[i] = ( i == 2 ) ? 2 : 0;
+		m_bArray30_guess[i] = ( i == 2 ) ? 2 : 0;
 
 	for ( i = 0; i <= 11; i++ )
-		guess_m_bArray3C[i] = ( i == 2 ) ? 10 : 0;
+		m_bArray3C_guess[i] = ( i == 2 ) ? 10 : 0;
 }
 
 
 // Cry of Fear: writes a string value under the game's Steam registry key (the key is never closed)
-int guess_SetSteamAppValue( const char *pszValueName, const char *pszData )
+int SetSteamAppValue_guess( const char *pszValueName, const char *pszData )
 {
 	char szKey[1024];
 	HKEY hKey;
@@ -108,7 +108,7 @@ void GLManager::VidInit()
 	{
 		if ( MessageBox( NULL, "You appear to be running Cry of Fear in software mode\nCry of Fear does not support software mode. Would you like to switch to OpenGL now?", NULL, MB_YESNO ) == IDYES )
 		{
-			if ( guess_SetSteamAppValue( "LaunchOptions", " -num_edicts 2048 -gl" ) )
+			if ( SetSteamAppValue_guess( "LaunchOptions", " -num_edicts 2048 -gl" ) )
 				MessageBox( NULL, "Succesfully set OpenGL mode. Please restart Steam and Cry of Fear", NULL, MB_OK );
 			else
 				MessageBox( NULL, "Unable to set OpenGL mode.", NULL, MB_OK );
@@ -122,7 +122,7 @@ void GLManager::VidInit()
 		{
 			if ( MessageBox( NULL, "You appear to be running Cry of Fear in Direct 3D mode\nCry of Fear does not support Direct3D. Would you like to switch to OpenGL now?", NULL, MB_YESNO ) == IDYES )
 			{
-				if ( guess_SetSteamAppValue( "LaunchOptions", " -num_edicts 2048 -gl" ) )
+				if ( SetSteamAppValue_guess( "LaunchOptions", " -num_edicts 2048 -gl" ) )
 					MessageBox( NULL, "Succesfully set OpenGL mode. Please restart Steam and Cry of Fear", NULL, MB_OK );
 				else
 					MessageBox( NULL, "Unable to set OpenGL mode.", NULL, MB_OK );
@@ -134,7 +134,7 @@ void GLManager::VidInit()
 		{
 			if ( MessageBox( NULL, "You appear to be running Cry of Fear in an unsupported video mode\nCry of Fear only runs in OpenGL. Would you like to switch to OpenGL now?", NULL, MB_YESNO ) == IDYES )
 			{
-				if ( guess_SetSteamAppValue( "LaunchOptions", " -num_edicts 2048 -gl" ) )
+				if ( SetSteamAppValue_guess( "LaunchOptions", " -num_edicts 2048 -gl" ) )
 					MessageBox( NULL, "Succesfully set OpenGL mode. Please restart Cry of Fear", NULL, MB_OK );
 				else
 					MessageBox( NULL, "Unable to set OpenGL mode.", NULL, MB_OK );

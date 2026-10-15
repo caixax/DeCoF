@@ -7,7 +7,7 @@
 #include "cl_util.h"
 #include "parsemsg.h"
 #include "vgui_TeamFortressViewport.h"
-#include "guess_Keypad.h"
+#include "Keypad_guess.h"
 #include "..\game_shared\vgui_loadtga.h"
 
 CKeypad::CKeypad() : Panel( 0, 0, ScreenWidth, ScreenHeight )
@@ -16,123 +16,123 @@ CKeypad::CKeypad() : Panel( 0, 0, ScreenWidth, ScreenHeight )
 	int x, y;
 	CommandButton *pButton;
 
-	guess_m_pBackgroundPanel = new Panel( 0, 0, ScreenWidth, ScreenHeight );
-	guess_m_pBackgroundPanel->setParent( this );
-	guess_m_pBackgroundPanel->setBgColor( 0, 0, 0, 0 );
+	m_pBackgroundPanel_guess = new Panel( 0, 0, ScreenWidth, ScreenHeight );
+	m_pBackgroundPanel_guess->setParent( this );
+	m_pBackgroundPanel_guess->setBgColor( 0, 0, 0, 0 );
 
-	guess_m_pBackgroundImage = vgui_LoadTGA( "gfx/vgui/backgroundtoall.tga" );
-	if ( guess_m_pBackgroundImage )
-		guess_m_pBackgroundImage->setColor( Color( 255, 255, 255, 1 ) );
+	m_pBackgroundImage_guess = vgui_LoadTGA( "gfx/vgui/backgroundtoall.tga" );
+	if ( m_pBackgroundImage_guess )
+		m_pBackgroundImage_guess->setColor( Color( 255, 255, 255, 1 ) );
 	else
 		gEngfuncs.Con_Printf( "Cannot load gfx/vgui/backgroundtoall.tga!\n" );
 
-	guess_m_pBackgroundImage->getSize( wide, tall );
+	m_pBackgroundImage_guess->getSize( wide, tall );
 	x = ScreenWidth / 2 - wide / 2;
 	y = ScreenHeight / 2 - tall / 2;
 
-	guess_m_pBackground = new ImagePanel( guess_m_pBackgroundImage );
-	guess_m_pBackground->setParent( this );
-	guess_m_pBackground->setPos( x, y );
-	guess_m_pBackground->setVisible( true );
+	m_pBackground_guess = new ImagePanel( m_pBackgroundImage_guess );
+	m_pBackground_guess->setParent( this );
+	m_pBackground_guess->setPos( x, y );
+	m_pBackground_guess->setVisible( true );
 
-	guess_m_pPanelBackImage = vgui_LoadTGA( "gfx/vgui/640_panelback.tga" );
-	if ( guess_m_pPanelBackImage )
-		guess_m_pPanelBackImage->setColor( Color( 255, 255, 255, 1 ) );
+	m_pPanelBackImage_guess = vgui_LoadTGA( "gfx/vgui/640_panelback.tga" );
+	if ( m_pPanelBackImage_guess )
+		m_pPanelBackImage_guess->setColor( Color( 255, 255, 255, 1 ) );
 	else
 		gEngfuncs.Con_Printf( "Cannot load gfx/vgui/640_panelback.tga!\n" );
 
-	guess_m_pPanel2BackImage = vgui_LoadTGA( "gfx/vgui/640_panel2back.tga" );
-	if ( guess_m_pPanel2BackImage )
-		guess_m_pPanel2BackImage->setColor( Color( 255, 255, 255, 1 ) );
+	m_pPanel2BackImage_guess = vgui_LoadTGA( "gfx/vgui/640_panel2back.tga" );
+	if ( m_pPanel2BackImage_guess )
+		m_pPanel2BackImage_guess->setColor( Color( 255, 255, 255, 1 ) );
 	else
 		gEngfuncs.Con_Printf( "Cannot load gfx/vgui/640_panel2back.tga!\n" );
 
-	guess_m_pPanelOffImage = vgui_LoadTGA( "gfx/vgui/640_paneloff.tga" );
-	if ( guess_m_pPanelOffImage )
-		guess_m_pPanelOffImage->setColor( Color( 255, 255, 255, 1 ) );
+	m_pPanelOffImage_guess = vgui_LoadTGA( "gfx/vgui/640_paneloff.tga" );
+	if ( m_pPanelOffImage_guess )
+		m_pPanelOffImage_guess->setColor( Color( 255, 255, 255, 1 ) );
 	else
 		gEngfuncs.Con_Printf( "Cannot load gfx/vgui/640_paneloff.tga!\n" );
 
-	guess_m_pPanelOnImage = vgui_LoadTGA( "gfx/vgui/640_panelon.tga" );
-	if ( guess_m_pPanelOnImage )
-		guess_m_pPanelOnImage->setColor( Color( 255, 255, 255, 1 ) );
+	m_pPanelOnImage_guess = vgui_LoadTGA( "gfx/vgui/640_panelon.tga" );
+	if ( m_pPanelOnImage_guess )
+		m_pPanelOnImage_guess->setColor( Color( 255, 255, 255, 1 ) );
 	else
 		gEngfuncs.Con_Printf( "Cannot load gfx/vgui/640_panelon.tga!\n" );
 
 	CSchemeManager *pSchemes = gViewPort->GetSchemeManager();
 	SchemeHandle_t hCreditsScheme = pSchemes->getSchemeHandle( "credits" );
-	guess_m_pFont = pSchemes->getFont( hCreditsScheme );
+	m_pFont_guess = pSchemes->getFont( hCreditsScheme );
 
 	x = ScreenWidth / 2 - 320;
 	y = ScreenHeight / 2 - 240;
 
-	guess_m_pPanelBack = new ImagePanel( guess_m_pPanelBackImage );
-	guess_m_pPanelBack->setParent( this );
-	guess_m_pPanelBack->setPos( x, y );
-	guess_m_pPanelBack->setVisible( true );
+	m_pPanelBack_guess = new ImagePanel( m_pPanelBackImage_guess );
+	m_pPanelBack_guess->setParent( this );
+	m_pPanelBack_guess->setPos( x, y );
+	m_pPanelBack_guess->setVisible( true );
 
-	guess_m_pPanel2Back = new ImagePanel( guess_m_pPanel2BackImage );
-	guess_m_pPanel2Back->setParent( guess_m_pPanelBack );
-	guess_m_pPanel2Back->setPos( 0, 0 );
-	guess_m_pPanel2Back->setVisible( false );
+	m_pPanel2Back_guess = new ImagePanel( m_pPanel2BackImage_guess );
+	m_pPanel2Back_guess->setParent( m_pPanelBack_guess );
+	m_pPanel2Back_guess->setPos( 0, 0 );
+	m_pPanel2Back_guess->setVisible( false );
 
 	pButton = new CommandButton( "", 3, 3, 20, 20, true, true );
-	pButton->setParent( guess_m_pPanelBack );
+	pButton->setParent( m_pPanelBack_guess );
 	pButton->addActionSignal( new CKeypadHandler_Command( this, 1 ) );
 
-	guess_m_pPanelOff = new ImagePanel( guess_m_pPanelOffImage );
-	guess_m_pPanelOff->setParent( guess_m_pPanelBack );
-	guess_m_pPanelOff->setPos( 520, 0 );
-	guess_m_pPanelOff->setVisible( true );
+	m_pPanelOff_guess = new ImagePanel( m_pPanelOffImage_guess );
+	m_pPanelOff_guess->setParent( m_pPanelBack_guess );
+	m_pPanelOff_guess->setPos( 520, 0 );
+	m_pPanelOff_guess->setVisible( true );
 
-	guess_m_pPanelOn = new ImagePanel( guess_m_pPanelOnImage );
-	guess_m_pPanelOn->setParent( guess_m_pPanelBack );
-	guess_m_pPanelOn->setPos( 520, 0 );
-	guess_m_pPanelOn->setVisible( false );
+	m_pPanelOn_guess = new ImagePanel( m_pPanelOnImage_guess );
+	m_pPanelOn_guess->setParent( m_pPanelBack_guess );
+	m_pPanelOn_guess->setPos( 520, 0 );
+	m_pPanelOn_guess->setVisible( false );
 
-	guess_m_pKey1 = new CommandButton( "", 170, 90, 100, 100, true, true );
-	guess_m_pKey1->setParent( guess_m_pPanelBack );
-	guess_m_pKey1->addActionSignal( new CKeypadHandler_Command( this, 2 ) );
+	m_pKey1_guess = new CommandButton( "", 170, 90, 100, 100, true, true );
+	m_pKey1_guess->setParent( m_pPanelBack_guess );
+	m_pKey1_guess->addActionSignal( new CKeypadHandler_Command( this, 2 ) );
 
-	guess_m_pKey2 = new CommandButton( "", 270, 90, 100, 100, true, true );
-	guess_m_pKey2->setParent( guess_m_pPanelBack );
-	guess_m_pKey2->addActionSignal( new CKeypadHandler_Command( this, 3 ) );
+	m_pKey2_guess = new CommandButton( "", 270, 90, 100, 100, true, true );
+	m_pKey2_guess->setParent( m_pPanelBack_guess );
+	m_pKey2_guess->addActionSignal( new CKeypadHandler_Command( this, 3 ) );
 
-	guess_m_pKey3 = new CommandButton( "", 370, 90, 100, 100, true, true );
-	guess_m_pKey3->setParent( guess_m_pPanelBack );
-	guess_m_pKey3->addActionSignal( new CKeypadHandler_Command( this, 4 ) );
+	m_pKey3_guess = new CommandButton( "", 370, 90, 100, 100, true, true );
+	m_pKey3_guess->setParent( m_pPanelBack_guess );
+	m_pKey3_guess->addActionSignal( new CKeypadHandler_Command( this, 4 ) );
 
-	guess_m_pKey4 = new CommandButton( "", 170, 190, 100, 100, true, true );
-	guess_m_pKey4->setParent( guess_m_pPanelBack );
-	guess_m_pKey4->addActionSignal( new CKeypadHandler_Command( this, 5 ) );
+	m_pKey4_guess = new CommandButton( "", 170, 190, 100, 100, true, true );
+	m_pKey4_guess->setParent( m_pPanelBack_guess );
+	m_pKey4_guess->addActionSignal( new CKeypadHandler_Command( this, 5 ) );
 
-	guess_m_pKey5 = new CommandButton( "", 270, 190, 100, 100, true, true );
-	guess_m_pKey5->setParent( guess_m_pPanelBack );
-	guess_m_pKey5->addActionSignal( new CKeypadHandler_Command( this, 6 ) );
+	m_pKey5_guess = new CommandButton( "", 270, 190, 100, 100, true, true );
+	m_pKey5_guess->setParent( m_pPanelBack_guess );
+	m_pKey5_guess->addActionSignal( new CKeypadHandler_Command( this, 6 ) );
 
-	guess_m_pKey6 = new CommandButton( "", 370, 190, 100, 100, true, true );
-	guess_m_pKey6->setParent( guess_m_pPanelBack );
-	guess_m_pKey6->addActionSignal( new CKeypadHandler_Command( this, 7 ) );
+	m_pKey6_guess = new CommandButton( "", 370, 190, 100, 100, true, true );
+	m_pKey6_guess->setParent( m_pPanelBack_guess );
+	m_pKey6_guess->addActionSignal( new CKeypadHandler_Command( this, 7 ) );
 
-	guess_m_pKey7 = new CommandButton( "", 170, 290, 100, 100, true, true );
-	guess_m_pKey7->setParent( guess_m_pPanelBack );
-	guess_m_pKey7->addActionSignal( new CKeypadHandler_Command( this, 8 ) );
+	m_pKey7_guess = new CommandButton( "", 170, 290, 100, 100, true, true );
+	m_pKey7_guess->setParent( m_pPanelBack_guess );
+	m_pKey7_guess->addActionSignal( new CKeypadHandler_Command( this, 8 ) );
 
-	guess_m_pKey8 = new CommandButton( "", 270, 290, 100, 100, true, true );
-	guess_m_pKey8->setParent( guess_m_pPanelBack );
-	guess_m_pKey8->addActionSignal( new CKeypadHandler_Command( this, 9 ) );
+	m_pKey8_guess = new CommandButton( "", 270, 290, 100, 100, true, true );
+	m_pKey8_guess->setParent( m_pPanelBack_guess );
+	m_pKey8_guess->addActionSignal( new CKeypadHandler_Command( this, 9 ) );
 
-	guess_m_pKey9 = new CommandButton( "", 370, 290, 100, 100, true, true );
-	guess_m_pKey9->setParent( guess_m_pPanelBack );
-	guess_m_pKey9->addActionSignal( new CKeypadHandler_Command( this, 10 ) );
+	m_pKey9_guess = new CommandButton( "", 370, 290, 100, 100, true, true );
+	m_pKey9_guess->setParent( m_pPanelBack_guess );
+	m_pKey9_guess->addActionSignal( new CKeypadHandler_Command( this, 10 ) );
 
-	guess_m_pCodeLabel = new Label( "", 247, 39, 149, 32 );
-	guess_m_pCodeLabel->setParent( guess_m_pPanelBack );
-	guess_m_pCodeLabel->setFont( guess_m_pFont );
-	guess_m_pCodeLabel->setFgColor( 0, 0, 0, 1 );
-	guess_m_pCodeLabel->setBgColor( 0, 0, 0, 255 );
-	guess_m_pCodeLabel->setText( "    " );
-	guess_m_pCodeLabel->setContentAlignment( Label::a_center );
+	m_pCodeLabel_guess = new Label( "", 247, 39, 149, 32 );
+	m_pCodeLabel_guess->setParent( m_pPanelBack_guess );
+	m_pCodeLabel_guess->setFont( m_pFont_guess );
+	m_pCodeLabel_guess->setFgColor( 0, 0, 0, 1 );
+	m_pCodeLabel_guess->setBgColor( 0, 0, 0, 255 );
+	m_pCodeLabel_guess->setText( "    " );
+	m_pCodeLabel_guess->setContentAlignment( Label::a_center );
 
 	setBgColor( 0, 0, 0, 255 );
 
@@ -141,9 +141,9 @@ CKeypad::CKeypad() : Panel( 0, 0, ScreenWidth, ScreenHeight )
 
 CKeypad::~CKeypad()
 {
-	delete guess_m_pPanelBackImage;
-	delete guess_m_pPanelOffImage;
-	delete guess_m_pPanelOnImage;
+	delete m_pPanelBackImage_guess;
+	delete m_pPanelOffImage_guess;
+	delete m_pPanelOnImage_guess;
 }
 
 void CKeypad::ActionSignal( int cmd )
@@ -157,31 +157,31 @@ void CKeypad::ActionSignal( int cmd )
 		gViewPort->UpdateCursorState();
 		break;
 	case 2:
-		guess_PressKey( 1 );
+		PressKey_guess( 1 );
 		break;
 	case 3:
-		guess_PressKey( 2 );
+		PressKey_guess( 2 );
 		break;
 	case 4:
-		guess_PressKey( 3 );
+		PressKey_guess( 3 );
 		break;
 	case 5:
-		guess_PressKey( 4 );
+		PressKey_guess( 4 );
 		break;
 	case 6:
-		guess_PressKey( 5 );
+		PressKey_guess( 5 );
 		break;
 	case 7:
-		guess_PressKey( 6 );
+		PressKey_guess( 6 );
 		break;
 	case 8:
-		guess_PressKey( 7 );
+		PressKey_guess( 7 );
 		break;
 	case 9:
-		guess_PressKey( 8 );
+		PressKey_guess( 8 );
 		break;
 	case 10:
-		guess_PressKey( 9 );
+		PressKey_guess( 9 );
 		break;
 	default:
 		gEngfuncs.Con_DPrintf( "Unknown Keypad ActionSignal %i.\n", cmd );
@@ -189,33 +189,33 @@ void CKeypad::ActionSignal( int cmd )
 	}
 }
 
-void CKeypad::guess_Activate()
+void CKeypad::Activate_guess()
 {
 	gEngfuncs.pfnPlaySoundByName( "keypad/keypad_activate.wav", 1 );
 
-	if ( guess_m_iType == 0 )
+	if ( m_iType_guess == 0 )
 	{
-		guess_m_pPanelOn->setVisible( true );
-		guess_m_pPanelOff->setVisible( false );
+		m_pPanelOn_guess->setVisible( true );
+		m_pPanelOff_guess->setVisible( false );
 	}
 }
 
-void CKeypad::guess_PressKey( int key )
+void CKeypad::PressKey_guess( int key )
 {
 	char szDigit[4];
 	char szStars[8];
 
-	if ( guess_m_iActivated )
+	if ( m_iActivated_guess )
 	{
 		gEngfuncs.pfnPlaySoundByName( "keypad/keypad_press.wav", 1 );
 		return;
 	}
 
-	if ( strlen( guess_m_szCode ) == 4 )
+	if ( strlen( m_szCode_guess ) == 4 )
 	{
-		if ( guess_m_iType == 2 )
+		if ( m_iType_guess == 2 )
 		{
-			for ( int i = 1; i <= strlen( guess_m_szCode ); i++ )
+			for ( int i = 1; i <= strlen( m_szCode_guess ); i++ )
 			{
 				if ( i == 1 )
 					strcpy( szStars, "*" );
@@ -223,21 +223,21 @@ void CKeypad::guess_PressKey( int key )
 					strcat( szStars, "*" );
 			}
 
-			guess_m_pCodeLabel->setText( szStars );
-			guess_m_pCodeLabel->setContentAlignment( Label::a_center );
+			m_pCodeLabel_guess->setText( szStars );
+			m_pCodeLabel_guess->setContentAlignment( Label::a_center );
 		}
 
-		guess_Submit();
+		Submit_guess();
 		return;
 	}
 
 	itoa( key, szDigit, 10 );
-	strcat( guess_m_szCode, szDigit );
+	strcat( m_szCode_guess, szDigit );
 	gEngfuncs.pfnPlaySoundByName( "keypad/keypad_press.wav", 1 );
 
-	if ( guess_m_iType == 2 )
+	if ( m_iType_guess == 2 )
 	{
-		for ( int i = 1; i <= strlen( guess_m_szCode ); i++ )
+		for ( int i = 1; i <= strlen( m_szCode_guess ); i++ )
 		{
 			if ( i == 1 )
 				strcpy( szStars, "*" );
@@ -245,34 +245,34 @@ void CKeypad::guess_PressKey( int key )
 				strcat( szStars, "*" );
 		}
 
-		guess_m_pCodeLabel->setText( szStars );
-		guess_m_pCodeLabel->setContentAlignment( Label::a_center );
+		m_pCodeLabel_guess->setText( szStars );
+		m_pCodeLabel_guess->setContentAlignment( Label::a_center );
 	}
 
-	if ( strlen( guess_m_szCode ) == 4 )
-		guess_Submit();
+	if ( strlen( m_szCode_guess ) == 4 )
+		Submit_guess();
 }
 
 void CKeypad::Initialize()
 {
-	strncpy( guess_m_szCode, "", 8 );
+	strncpy( m_szCode_guess, "", 8 );
 	setVisible( false );
 
-	guess_m_iType = 0;
-	guess_m_iActivated = 0;
+	m_iType_guess = 0;
+	m_iActivated_guess = 0;
 
-	guess_m_pPanelBack->setVisible( true );
-	guess_m_pPanel2Back->setVisible( false );
+	m_pPanelBack_guess->setVisible( true );
+	m_pPanel2Back_guess->setVisible( false );
 
-	if ( guess_m_iType == 0 )
+	if ( m_iType_guess == 0 )
 	{
-		guess_m_pPanelOff->setVisible( true );
-		guess_m_pPanelOn->setVisible( false );
+		m_pPanelOff_guess->setVisible( true );
+		m_pPanelOn_guess->setVisible( false );
 	}
 	else
 	{
-		guess_m_pPanelOff->setVisible( false );
-		guess_m_pPanelOn->setVisible( false );
+		m_pPanelOff_guess->setVisible( false );
+		m_pPanelOn_guess->setVisible( false );
 	}
 }
 
@@ -284,43 +284,43 @@ int CKeypad::KeyInput( int down, int keynum, const char *pszCurrentBinding )
 	return 0;
 }
 
-int guess_MsgKeypad( const char *pszName, int iSize, void *pbuf )
+int MsgKeypad_guess( const char *pszName, int iSize, void *pbuf )
 {
 	BEGIN_READ( pbuf, iSize );
 
-	if ( gViewPort->guess_m_pKeypad )
+	if ( gViewPort->m_pKeypad_guess )
 	{
-		gViewPort->guess_m_pKeypad->guess_m_iType = READ_BYTE();
-		gViewPort->guess_m_pKeypad->guess_m_iActivated = READ_BYTE();
-		gViewPort->guess_m_pKeypad->guess_UpdateLayout();
+		gViewPort->m_pKeypad_guess->m_iType_guess = READ_BYTE();
+		gViewPort->m_pKeypad_guess->m_iActivated_guess = READ_BYTE();
+		gViewPort->m_pKeypad_guess->UpdateLayout_guess();
 
 		int iOn = READ_BYTE();
 
-		switch ( gViewPort->guess_m_pKeypad->guess_m_iType )
+		switch ( gViewPort->m_pKeypad_guess->m_iType_guess )
 		{
 		case 0:
-			gViewPort->guess_m_pKeypad->guess_m_pPanelBack->setImage( vgui_LoadTGA( "gfx/vgui/640_panelback.tga" ) );
-			gViewPort->guess_m_pKeypad->guess_m_pPanelOff->setVisible( true );
-			gViewPort->guess_m_pKeypad->guess_m_pPanelOn->setVisible( false );
+			gViewPort->m_pKeypad_guess->m_pPanelBack_guess->setImage( vgui_LoadTGA( "gfx/vgui/640_panelback.tga" ) );
+			gViewPort->m_pKeypad_guess->m_pPanelOff_guess->setVisible( true );
+			gViewPort->m_pKeypad_guess->m_pPanelOn_guess->setVisible( false );
 			break;
 		case 1:
-			gViewPort->guess_m_pKeypad->guess_m_pPanelOff->setVisible( false );
-			gViewPort->guess_m_pKeypad->guess_m_pPanelOn->setVisible( false );
-			gViewPort->guess_m_pKeypad->guess_m_pPanelBack->setImage( vgui_LoadTGA( "gfx/vgui/640_panel2back.tga" ) );
+			gViewPort->m_pKeypad_guess->m_pPanelOff_guess->setVisible( false );
+			gViewPort->m_pKeypad_guess->m_pPanelOn_guess->setVisible( false );
+			gViewPort->m_pKeypad_guess->m_pPanelBack_guess->setImage( vgui_LoadTGA( "gfx/vgui/640_panel2back.tga" ) );
 			break;
 		case 2:
-			gViewPort->guess_m_pKeypad->guess_m_pPanelOff->setVisible( false );
-			gViewPort->guess_m_pKeypad->guess_m_pPanelOn->setVisible( false );
-			gViewPort->guess_m_pKeypad->guess_m_pPanelBack->setImage( vgui_LoadTGA( "gfx/vgui/keypad3.tga" ) );
+			gViewPort->m_pKeypad_guess->m_pPanelOff_guess->setVisible( false );
+			gViewPort->m_pKeypad_guess->m_pPanelOn_guess->setVisible( false );
+			gViewPort->m_pKeypad_guess->m_pPanelBack_guess->setImage( vgui_LoadTGA( "gfx/vgui/keypad3.tga" ) );
 			break;
 		}
 
-		if ( gViewPort->guess_m_pKeypad->guess_m_iActivated )
-			gViewPort->guess_m_pKeypad->guess_Activate();
+		if ( gViewPort->m_pKeypad_guess->m_iActivated_guess )
+			gViewPort->m_pKeypad_guess->Activate_guess();
 
-		if ( !gViewPort->guess_m_pKeypad->isVisible() && iOn )
+		if ( !gViewPort->m_pKeypad_guess->isVisible() && iOn )
 		{
-			gViewPort->guess_m_pKeypad->setVisible( true );
+			gViewPort->m_pKeypad_guess->setVisible( true );
 			gViewPort->UpdateCursorState();
 		}
 	}
@@ -328,50 +328,50 @@ int guess_MsgKeypad( const char *pszName, int iSize, void *pbuf )
 	return 1;
 }
 
-void CKeypad::guess_Submit()
+void CKeypad::Submit_guess()
 {
 	char szCommand[128];
 
-	sprintf( szCommand, "keypadnumber %s", guess_m_szCode );
+	sprintf( szCommand, "keypadnumber %s", m_szCode_guess );
 	gEngfuncs.pfnServerCmd( szCommand );
 
-	strncpy( guess_m_szCode, "", 8 );
+	strncpy( m_szCode_guess, "", 8 );
 }
 
-void CKeypad::guess_UpdateLayout()
+void CKeypad::UpdateLayout_guess()
 {
-	if ( guess_m_iType == 0 || guess_m_iType == 1 )
+	if ( m_iType_guess == 0 || m_iType_guess == 1 )
 	{
-		guess_m_pCodeLabel->setText( "" );
-		guess_m_pCodeLabel->setVisible( false );
+		m_pCodeLabel_guess->setText( "" );
+		m_pCodeLabel_guess->setVisible( false );
 	}
 	else
 	{
-		guess_m_pCodeLabel->setText( "" );
-		guess_m_pCodeLabel->setVisible( true );
+		m_pCodeLabel_guess->setText( "" );
+		m_pCodeLabel_guess->setVisible( true );
 	}
 
-	guess_m_pKey1->setSize( 100, 100 );
-	guess_m_pKey1->setPos( 170, 90 );
-	guess_m_pKey2->setSize( 100, 100 );
-	guess_m_pKey2->setPos( 270, 90 );
-	guess_m_pKey3->setSize( 100, 100 );
-	guess_m_pKey3->setPos( 370, 90 );
-	guess_m_pKey4->setSize( 100, 100 );
-	guess_m_pKey4->setPos( 170, 190 );
-	guess_m_pKey5->setSize( 100, 100 );
-	guess_m_pKey5->setPos( 270, 190 );
-	guess_m_pKey6->setSize( 100, 100 );
-	guess_m_pKey6->setPos( 370, 190 );
-	guess_m_pKey7->setSize( 100, 100 );
-	guess_m_pKey7->setPos( 170, 290 );
-	guess_m_pKey8->setSize( 100, 100 );
-	guess_m_pKey8->setPos( 270, 290 );
-	guess_m_pKey9->setSize( 100, 100 );
-	guess_m_pKey9->setPos( 370, 290 );
+	m_pKey1_guess->setSize( 100, 100 );
+	m_pKey1_guess->setPos( 170, 90 );
+	m_pKey2_guess->setSize( 100, 100 );
+	m_pKey2_guess->setPos( 270, 90 );
+	m_pKey3_guess->setSize( 100, 100 );
+	m_pKey3_guess->setPos( 370, 90 );
+	m_pKey4_guess->setSize( 100, 100 );
+	m_pKey4_guess->setPos( 170, 190 );
+	m_pKey5_guess->setSize( 100, 100 );
+	m_pKey5_guess->setPos( 270, 190 );
+	m_pKey6_guess->setSize( 100, 100 );
+	m_pKey6_guess->setPos( 370, 190 );
+	m_pKey7_guess->setSize( 100, 100 );
+	m_pKey7_guess->setPos( 170, 290 );
+	m_pKey8_guess->setSize( 100, 100 );
+	m_pKey8_guess->setPos( 270, 290 );
+	m_pKey9_guess->setSize( 100, 100 );
+	m_pKey9_guess->setPos( 370, 290 );
 }
 
-void guess_KeypadInit()
+void KeypadInit_guess()
 {
-	gEngfuncs.pfnHookUserMsg( "Keypad", guess_MsgKeypad );
+	gEngfuncs.pfnHookUserMsg( "Keypad", MsgKeypad_guess );
 }

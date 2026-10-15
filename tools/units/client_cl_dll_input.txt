@@ -59,7 +59,7 @@ _KB_Find
 ?IN_MoverightUp@@YAXXZ
 ?IN_ObjectivesDown@@YAXXZ
 ?IN_ObjectivesUp@@YAXXZ
-?guess_IN_XboxFix@@YAXXZ
+?IN_XboxFix_guess@@YAXXZ
 ?IN_ReloadDown@@YAXXZ
 ?IN_ReloadUp@@YAXXZ
 ?IN_ScoreDown@@YAXXZ

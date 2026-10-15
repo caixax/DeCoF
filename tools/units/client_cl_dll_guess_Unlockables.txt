@@ -2,8 +2,8 @@
 ??1CUnlockables@@QAE@XZ
 ?ActionSignal@CUnlockables@@QAEXH@Z
 ?Initialize@CUnlockables@@QAEXXZ
-?guess_KeyInput@CUnlockables@@QAEHHHPBD@Z
-?guess_UnlockablesInit@@YAXXZ
+?KeyInput_guess@CUnlockables@@QAEHHHPBD@Z
+?UnlockablesInit_guess@@YAXXZ
 ?actionPerformed@CUnlockablesHandler_Command@@UAEXPAVPanel@vgui@@@Z
 ?solve@CUnlockables@@MAEXXZ
 ?setVisible@CUnlockables@@UAEX_N@Z

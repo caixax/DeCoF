@@ -1,11 +1,11 @@
-?guess_CountLines@CCredits@@QAEHXZ
+?CountLines_guess@CCredits@@QAEHXZ
 ?Initialize@CCredits@@QAEXXZ
-?guess_va@@YAPADPBDZZ
-?guess_CreditsInit@@YAXXZ
+?va_guess@@YAPADPBDZZ
+?CreditsInit_guess@@YAXXZ
 ??0CCredits@@QAE@XZ
-?guess_MsgCredits@@YAHPBDHPAX@Z
-?guess_SetLine@CCredits@@QAEXHH@Z
-?guess_ShowUnlock@CCredits@@QAEXHPBDHPADH@Z
+?MsgCredits_guess@@YAHPBDHPAX@Z
+?SetLine_guess@CCredits@@QAEXHH@Z
+?ShowUnlock_guess@CCredits@@QAEXHPBDHPADH@Z
 ?solve@CCredits@@MAEXXZ
 ??1?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@QAE@XZ
 ?_Destroy@?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@AAEXPAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@0@Z

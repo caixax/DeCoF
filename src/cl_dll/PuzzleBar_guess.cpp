@@ -7,7 +7,7 @@
 #include "cl_util.h"
 #include "parsemsg.h"
 #include "vgui_TeamFortressViewport.h"
-#include "guess_PuzzleBar.h"
+#include "PuzzleBar_guess.h"
 #include "..\game_shared\vgui_loadtga.h"
 
 CPuzzleBar::CPuzzleBar() : Panel( 0, 0, ScreenWidth, ScreenHeight )
@@ -16,39 +16,39 @@ CPuzzleBar::CPuzzleBar() : Panel( 0, 0, ScreenWidth, ScreenHeight )
 	int x, y;
 	CommandButton *pButton;
 
-	guess_m_pImage = vgui_LoadTGA( "gfx/vgui/640_boilerpuzzle.tga" );
-	if ( guess_m_pImage )
-		guess_m_pImage->setColor( Color( 255, 255, 255, 1 ) );
+	m_pImage_guess = vgui_LoadTGA( "gfx/vgui/640_boilerpuzzle.tga" );
+	if ( m_pImage_guess )
+		m_pImage_guess->setColor( Color( 255, 255, 255, 1 ) );
 	else
 		gEngfuncs.Con_Printf( "Cannot load gfx/vgui/640_boilerpuzzle.tga!\n" );
 
-	guess_m_pImage->getSize( wide, tall );
+	m_pImage_guess->getSize( wide, tall );
 	x = ScreenWidth / 2 - wide / 2;
 	y = ScreenHeight - tall;
 
-	guess_m_pImagePanel = new ImagePanel( guess_m_pImage );
-	guess_m_pImagePanel->setParent( this );
-	guess_m_pImagePanel->setPos( x, y );
-	guess_m_pImagePanel->setVisible( true );
+	m_pImagePanel_guess = new ImagePanel( m_pImage_guess );
+	m_pImagePanel_guess->setParent( this );
+	m_pImagePanel_guess->setPos( x, y );
+	m_pImagePanel_guess->setVisible( true );
 
 	pButton = new CommandButton( "", 0, 0, 20, 20 );
-	pButton->setParent( guess_m_pImagePanel );
+	pButton->setParent( m_pImagePanel_guess );
 	pButton->addActionSignal( new CPuzzleBarHandler_Command( this, 5 ) );
 
 	pButton = new CommandButton( "", 16, 74, 40, 40, true, true );
-	pButton->setParent( guess_m_pImagePanel );
+	pButton->setParent( m_pImagePanel_guess );
 	pButton->addActionSignal( new CPuzzleBarHandler_Command( this, 1 ) );
 
 	pButton = new CommandButton( "", 73, 74, 40, 40, true, true );
-	pButton->setParent( guess_m_pImagePanel );
+	pButton->setParent( m_pImagePanel_guess );
 	pButton->addActionSignal( new CPuzzleBarHandler_Command( this, 2 ) );
 
 	pButton = new CommandButton( "", 128, 74, 40, 40, true, true );
-	pButton->setParent( guess_m_pImagePanel );
+	pButton->setParent( m_pImagePanel_guess );
 	pButton->addActionSignal( new CPuzzleBarHandler_Command( this, 3 ) );
 
 	pButton = new CommandButton( "", 184, 74, 40, 40, true, true );
-	pButton->setParent( guess_m_pImagePanel );
+	pButton->setParent( m_pImagePanel_guess );
 	pButton->addActionSignal( new CPuzzleBarHandler_Command( this, 4 ) );
 
 	setBgColor( 0, 0, 0, 255 );
@@ -93,17 +93,17 @@ int CPuzzleBar::KeyInput( int down, int keynum, const char *pszCurrentBinding )
 	return 0;
 }
 
-int guess_MsgPuzzlebar( const char *pszName, int iSize, void *pbuf )
+int MsgPuzzlebar_guess( const char *pszName, int iSize, void *pbuf )
 {
 	BEGIN_READ( pbuf, iSize );
 	int iOn = READ_BYTE();
 
-	if ( gViewPort->guess_m_pPuzzleBar )
+	if ( gViewPort->m_pPuzzleBar_guess )
 	{
 		if ( iOn )
-			gViewPort->guess_m_pPuzzleBar->setVisible( true );
+			gViewPort->m_pPuzzleBar_guess->setVisible( true );
 		else
-			gViewPort->guess_m_pPuzzleBar->setVisible( false );
+			gViewPort->m_pPuzzleBar_guess->setVisible( false );
 
 		gViewPort->UpdateCursorState();
 	}
@@ -111,9 +111,9 @@ int guess_MsgPuzzlebar( const char *pszName, int iSize, void *pbuf )
 	return 1;
 }
 
-void guess_PuzzlebarInit()
+void PuzzlebarInit_guess()
 {
-	gEngfuncs.pfnHookUserMsg( "Puzzlebar", guess_MsgPuzzlebar );
+	gEngfuncs.pfnHookUserMsg( "Puzzlebar", MsgPuzzlebar_guess );
 }
 
 void CPuzzleBar::setVisible( bool state )

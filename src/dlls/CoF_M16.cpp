@@ -114,7 +114,7 @@ void CM16::SuicideShot( void )
 		m_pPlayer->pev->health = 0;
 		m_pPlayer->Killed( m_pPlayer->pev, GIB_NEVER );
 
-		guess_UTIL_PlayWeaponSound( "weapons_new/m16/m16_fire.wav", 0, true, m_pPlayer->EarPosition(), m_pPlayer, true );
+		UTIL_PlayWeaponSound_guess( "weapons_new/m16/m16_fire.wav", 0, true, m_pPlayer->EarPosition(), m_pPlayer, true );
 		return;
 	}
 
@@ -412,7 +412,7 @@ void CM16::Shoot( void )
 
 	int pitch = 100;
 
-	guess_UTIL_PlayWeaponSound( "weapons_new/m16/m16_fire.wav", 0, true, m_pPlayer->EarPosition(), m_pPlayer, true );
+	UTIL_PlayWeaponSound_guess( "weapons_new/m16/m16_fire.wav", 0, true, m_pPlayer->EarPosition(), m_pPlayer, true );
 
 	m_pPlayer->m_iExtraSoundTypes = bits_SOUND_COMBAT;
 	m_pPlayer->m_flStopExtraSoundTime = gpGlobals->time + 0.2;

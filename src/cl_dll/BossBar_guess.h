@@ -17,19 +17,19 @@ public:
 	virtual void solve();
 
 public:
-	int		guess_m_iState;				// 0xbc, 0 hidden, 1 shown, 2 hidden on the next solve
-	char	guess_m_szEmptyImage[128];	// 0xc0
-	char	guess_m_szFullImage[128];	// 0x140
-	int		guess_m_iHealth;			// 0x1c0
-	int		guess_m_iMaxHealth;			// 0x1c4
-	int		guess_m_iUnused1C8;			// 0x1c8, only cleared in 1.6a
-	Image	*guess_m_pFullImage;		// 0x1cc, gfx/vgui/boss/doctor_health_full.tga
-	Image	*guess_m_pEmptyImage;		// 0x1d0, gfx/vgui/boss/doctor_health_empty.tga
-	ImagePanel	*guess_m_pFull;			// 0x1d4
-	ImagePanel	*guess_m_pEmpty;		// 0x1d8
-	ImagePanel	*guess_m_pBar;			// 0x1dc, cut to the health fraction in solve
+	int		m_iState_guess;				// 0xbc, 0 hidden, 1 shown, 2 hidden on the next solve
+	char	m_szEmptyImage_guess[128];	// 0xc0
+	char	m_szFullImage_guess[128];	// 0x140
+	int		m_iHealth_guess;			// 0x1c0
+	int		m_iMaxHealth_guess;			// 0x1c4
+	int		m_iUnused1C8_guess;			// 0x1c8, only cleared in 1.6a
+	Image	*m_pFullImage_guess;		// 0x1cc, gfx/vgui/boss/doctor_health_full.tga
+	Image	*m_pEmptyImage_guess;		// 0x1d0, gfx/vgui/boss/doctor_health_empty.tga
+	ImagePanel	*m_pFull_guess;			// 0x1d4
+	ImagePanel	*m_pEmpty_guess;		// 0x1d8
+	ImagePanel	*m_pBar_guess;			// 0x1dc, cut to the health fraction in solve
 };
 
-void guess_BossBarInit();
+void BossBarInit_guess();
 
 #endif // _BOSSBAR_H

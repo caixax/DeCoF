@@ -15,11 +15,11 @@ public:
 	void ActionSignal( int cmd );
 
 public:
-	int		guess_m_iActivate;			// 0xbc, sent with yesnoactivate and yesnono
-	Image	*guess_m_pImage;			// 0xc0, gfx/vgui/640_savegame.tga
-	ImagePanel	*guess_m_pImagePanel;	// 0xc4, gets the image of the YesNo message
-	CommandButton	*guess_m_pYesButton;	// 0xc8
-	CommandButton	*guess_m_pNoButton;		// 0xcc
+	int		m_iActivate_guess;			// 0xbc, sent with yesnoactivate and yesnono
+	Image	*m_pImage_guess;			// 0xc0, gfx/vgui/640_savegame.tga
+	ImagePanel	*m_pImagePanel_guess;	// 0xc4, gets the image of the YesNo message
+	CommandButton	*m_pYesButton_guess;	// 0xc8
+	CommandButton	*m_pNoButton_guess;		// 0xcc
 };
 
 class CYesnoHandler_Command : public ActionSignal
@@ -41,6 +41,6 @@ public:
 	}
 };
 
-void guess_YesNoInit();
+void YesNoInit_guess();
 
 #endif // _YESNO_H

@@ -31,31 +31,31 @@
 #include "gl_texloader.h"
 
 extern engine_studio_api_t IEngineStudio;
-extern int guess_g_iUnlockClothes;
-extern int guess_g_iHeadShieldType;
-extern int guess_iDoctorMode;
-extern cl_entity_t *guess_pAttachCamEnt;
-extern int guess_g_iDualLighting;
+extern int g_iUnlockClothes_guess;
+extern int g_iHeadShieldType_guess;
+extern int iDoctorMode_guess;
+extern cl_entity_t *pAttachCamEnt_guess;
+extern int g_iDualLighting_guess;
 extern int g_DrawHeadShied;
-extern int guess_g_iDickMode;
-extern int guess_iBoat;
-extern cl_entity_t *guess_pTelescopeEnt;
-extern int guess_iUnknown1054506C;
-extern vec3_t guess_vecBoatOrigin;
+extern int g_iDickMode_guess;
+extern int iBoat_guess;
+extern cl_entity_t *pTelescopeEnt_guess;
+extern int iUnknown1054506C_guess;
+extern vec3_t vecBoatOrigin_guess;
 extern cvar_t *cl_propdistance;
 extern cvar_t *cl_cameraeffect;
-extern cvar_t *guess_cv_fullbrighttextures;
-extern bool guess_bCustomFingerTexture;
-extern bool guess_bCustomGloveTexture;
-extern int guess_iGoro;
-extern int guess_g_iDualWeapon1;
-extern int guess_g_iDualWeapon2;
-extern float guess_flUnknown105595A0;
-extern float guess_flUnknown105595A4;
-bool guess_IsViewEntityActive( void );
-extern int guess_iDifficulty;
-extern cl_entity_t *guess_g_pHeadShieldEnt;
-extern vec3_t guess_vecDualAttachment0, guess_vecDualAttachment1;
+extern cvar_t *cv_fullbrighttextures_guess;
+extern bool bCustomFingerTexture_guess;
+extern bool bCustomGloveTexture_guess;
+extern int iGoro_guess;
+extern int g_iDualWeapon1_guess;
+extern int g_iDualWeapon2_guess;
+extern float flUnknown105595A0_guess;
+extern float flUnknown105595A4_guess;
+bool IsViewEntityActive_guess( void );
+extern int iDifficulty_guess;
+extern cl_entity_t *g_pHeadShieldEnt_guess;
+extern vec3_t vecDualAttachment0_guess, vecDualAttachment1_guess;
 extern cvar_t *cl_lowflashlight;
 extern vec3_t v_origin, v_angles;
 extern "C" int CL_IsThirdPerson( void );
@@ -91,46 +91,46 @@ float	alpha = 1; // buz: current alpha
 int		useblending = FALSE;
 
 // Cry of Fear: replacement textures for the player and costume models
-int		guess_g_iHoodieTexture;
-int		guess_g_iSleeveTexture;
-int		guess_g_iPageLockedTexture;
-bool	guess_g_bPageLockedLoaded;
-bool	guess_g_bHoodieLoaded;
-bool	guess_g_bSleeveLoaded;
-bool	guess_g_bHandsLoaded;
-int		guess_g_iHandsTexture;
-int		guess_g_iGloveTexture;
-bool	guess_g_bGloveLoaded;
-bool	guess_g_bJeansLoaded;
-bool	guess_g_bFaceLoaded;
-bool	guess_g_bPoliceSleeveLoaded;
-int		guess_g_iJeansTexture;
-int		guess_g_iFaceTexture;
-int		guess_g_iPoliceSleeveTexture;
-int		guess_g_iIntroductionTexture;
-bool	guess_g_bIntroductionLoaded;
-bool	guess_g_bBlurTextureCaptured;
-bool	guess_g_bScreenTextureCaptured;
-int		guess_g_iBlurTexture;
-int		guess_g_iOldTexture;
-int		guess_g_iScreenTexture;
+int		g_iHoodieTexture_guess;
+int		g_iSleeveTexture_guess;
+int		g_iPageLockedTexture_guess;
+bool	g_bPageLockedLoaded_guess;
+bool	g_bHoodieLoaded_guess;
+bool	g_bSleeveLoaded_guess;
+bool	g_bHandsLoaded_guess;
+int		g_iHandsTexture_guess;
+int		g_iGloveTexture_guess;
+bool	g_bGloveLoaded_guess;
+bool	g_bJeansLoaded_guess;
+bool	g_bFaceLoaded_guess;
+bool	g_bPoliceSleeveLoaded_guess;
+int		g_iJeansTexture_guess;
+int		g_iFaceTexture_guess;
+int		g_iPoliceSleeveTexture_guess;
+int		g_iIntroductionTexture_guess;
+bool	g_bIntroductionLoaded_guess;
+bool	g_bBlurTextureCaptured_guess;
+bool	g_bScreenTextureCaptured_guess;
+int		g_iBlurTexture_guess;
+int		g_iOldTexture_guess;
+int		g_iScreenTexture_guess;
 
-void guess_LoadFaceTexture( void )
+void LoadFaceTexture_guess( void )
 {
 	char texture[256];
 
-	if (!gHUD.guess_m_iClothes)
+	if (!gHUD.m_iClothes_guess)
 		return;
 
-	if (!guess_g_iFaceTexture)
-		guess_g_iFaceTexture = current_ext_texture_id++;
+	if (!g_iFaceTexture_guess)
+		g_iFaceTexture_guess = current_ext_texture_id++;
 
-	if (guess_g_bFaceLoaded)
+	if (g_bFaceLoaded_guess)
 		return;
 
-	guess_g_bFaceLoaded = false;
+	g_bFaceLoaded_guess = false;
 
-	switch (gHUD.guess_m_iClothesState)
+	switch (gHUD.m_iClothesState_guess)
 	{
 	case 1:
 	case 2:
@@ -152,44 +152,44 @@ void guess_LoadFaceTexture( void )
 		break;
 	}
 
-	if (CreateTexture(texture, 0, guess_g_iFaceTexture))
-		guess_g_bFaceLoaded = true;
+	if (CreateTexture(texture, 0, g_iFaceTexture_guess))
+		g_bFaceLoaded_guess = true;
 }
 
-void guess_LoadGloveTexture( int iUnused )
+void LoadGloveTexture_guess( int iUnused )
 {
 	int result;
 
-	if (!guess_g_iGloveTexture)
-		guess_g_iGloveTexture = current_ext_texture_id++;
+	if (!g_iGloveTexture_guess)
+		g_iGloveTexture_guess = current_ext_texture_id++;
 
-	if (guess_g_bGloveLoaded)
+	if (g_bGloveLoaded_guess)
 		return;
 
-	guess_g_bGloveLoaded = false;
+	g_bGloveLoaded_guess = false;
 
-	if (strlen(gHUD.guess_m_szGloveTexture) > 2)
-		result = CreateTexture(gHUD.guess_m_szGloveTexture, 0, guess_g_iGloveTexture);
+	if (strlen(gHUD.m_szGloveTexture_guess) > 2)
+		result = CreateTexture(gHUD.m_szGloveTexture_guess, 0, g_iGloveTexture_guess);
 
 	if (result)
-		guess_g_bGloveLoaded = true;
+		g_bGloveLoaded_guess = true;
 }
 
-void guess_LoadHoodieTexture( bool bUnlock )
+void LoadHoodieTexture_guess( bool bUnlock )
 {
 	char texture[256];
 
-	if (!guess_g_iHoodieTexture)
-		guess_g_iHoodieTexture = current_ext_texture_id++;
+	if (!g_iHoodieTexture_guess)
+		g_iHoodieTexture_guess = current_ext_texture_id++;
 
-	if (guess_g_bHoodieLoaded)
+	if (g_bHoodieLoaded_guess)
 		return;
 
-	guess_g_bHoodieLoaded = false;
+	g_bHoodieLoaded_guess = false;
 
-	if (bUnlock && guess_g_iUnlockClothes)
+	if (bUnlock && g_iUnlockClothes_guess)
 	{
-		switch (guess_g_iUnlockClothes)
+		switch (g_iUnlockClothes_guess)
 		{
 		case 1:
 			sprintf(texture, "models/costumes/Leatherhoff/Leatherhoff_Hoodie.tga");
@@ -228,7 +228,7 @@ void guess_LoadHoodieTexture( bool bUnlock )
 	}
 	else
 	{
-		switch (gHUD.guess_m_iClothesState)
+		switch (gHUD.m_iClothesState_guess)
 		{
 		case 1:
 			sprintf(texture, "models/costumes/Leatherhoff/Leatherhoff_Hoodie.tga");
@@ -273,11 +273,11 @@ void guess_LoadHoodieTexture( bool bUnlock )
 		}
 	}
 
-	if (CreateTexture(texture, 0, guess_g_iHoodieTexture))
-		guess_g_bHoodieLoaded = true;
+	if (CreateTexture(texture, 0, g_iHoodieTexture_guess))
+		g_bHoodieLoaded_guess = true;
 }
 
-void guess_LoadIntroductionTexture( int type )
+void LoadIntroductionTexture_guess( int type )
 {
 	int result;
 	int language = CVAR_GET_FLOAT("cof_subtitlelanguage");
@@ -285,73 +285,73 @@ void guess_LoadIntroductionTexture( int type )
 	if (language < 2)
 		return;
 
-	if (!guess_g_iIntroductionTexture)
-		guess_g_iIntroductionTexture = current_ext_texture_id++;
+	if (!g_iIntroductionTexture_guess)
+		g_iIntroductionTexture_guess = current_ext_texture_id++;
 
-	if (guess_g_bIntroductionLoaded)
+	if (g_bIntroductionLoaded_guess)
 		return;
 
-	guess_g_bIntroductionLoaded = false;
+	g_bIntroductionLoaded_guess = false;
 
 	switch (language)
 	{
 	case 2:
 		if (type == 1)
-			result = CreateTexture("gfx/vgui/introductions/dutch/dutch_sp.TGA", 0, guess_g_iIntroductionTexture);
+			result = CreateTexture("gfx/vgui/introductions/dutch/dutch_sp.TGA", 0, g_iIntroductionTexture_guess);
 		else if (type == 2)
-			result = CreateTexture("gfx/vgui/introductions/dutch/dutch_doc.TGA", 0, guess_g_iIntroductionTexture);
+			result = CreateTexture("gfx/vgui/introductions/dutch/dutch_doc.TGA", 0, g_iIntroductionTexture_guess);
 		else if (type == 3)
-			result = CreateTexture("gfx/vgui/introductions/dutch/dutch_coop.TGA", 0, guess_g_iIntroductionTexture);
+			result = CreateTexture("gfx/vgui/introductions/dutch/dutch_coop.TGA", 0, g_iIntroductionTexture_guess);
 		else
 			return;
 		break;
 	case 3:
 		if (type == 1)
-			result = CreateTexture("gfx/vgui/introductions/french/french_sp.TGA", 0, guess_g_iIntroductionTexture);
+			result = CreateTexture("gfx/vgui/introductions/french/french_sp.TGA", 0, g_iIntroductionTexture_guess);
 		else if (type == 2)
-			result = CreateTexture("gfx/vgui/introductions/french/french_doc.TGA", 0, guess_g_iIntroductionTexture);
+			result = CreateTexture("gfx/vgui/introductions/french/french_doc.TGA", 0, g_iIntroductionTexture_guess);
 		else if (type == 3)
-			result = CreateTexture("gfx/vgui/introductions/french/french_coop.TGA", 0, guess_g_iIntroductionTexture);
+			result = CreateTexture("gfx/vgui/introductions/french/french_coop.TGA", 0, g_iIntroductionTexture_guess);
 		else
 			return;
 		break;
 	case 4:
 		if (type == 1)
-			result = CreateTexture("gfx/vgui/introductions/german/german_sp.TGA", 0, guess_g_iIntroductionTexture);
+			result = CreateTexture("gfx/vgui/introductions/german/german_sp.TGA", 0, g_iIntroductionTexture_guess);
 		else if (type == 2)
-			result = CreateTexture("gfx/vgui/introductions/german/german_doc.TGA", 0, guess_g_iIntroductionTexture);
+			result = CreateTexture("gfx/vgui/introductions/german/german_doc.TGA", 0, g_iIntroductionTexture_guess);
 		else if (type == 3)
-			result = CreateTexture("gfx/vgui/introductions/german/german_coop.TGA", 0, guess_g_iIntroductionTexture);
+			result = CreateTexture("gfx/vgui/introductions/german/german_coop.TGA", 0, g_iIntroductionTexture_guess);
 		else
 			return;
 		break;
 	case 5:
 		if (type == 1)
-			result = CreateTexture("gfx/vgui/introductions/norwegian/norwegian_sp.TGA", 0, guess_g_iIntroductionTexture);
+			result = CreateTexture("gfx/vgui/introductions/norwegian/norwegian_sp.TGA", 0, g_iIntroductionTexture_guess);
 		else if (type == 2)
-			result = CreateTexture("gfx/vgui/introductions/norwegian/norwegian_doc.TGA", 0, guess_g_iIntroductionTexture);
+			result = CreateTexture("gfx/vgui/introductions/norwegian/norwegian_doc.TGA", 0, g_iIntroductionTexture_guess);
 		else if (type == 3)
-			result = CreateTexture("gfx/vgui/introductions/norwegian/norwegian_coop.TGA", 0, guess_g_iIntroductionTexture);
+			result = CreateTexture("gfx/vgui/introductions/norwegian/norwegian_coop.TGA", 0, g_iIntroductionTexture_guess);
 		else
 			return;
 		break;
 	case 6:
 		if (type == 1)
-			result = CreateTexture("gfx/vgui/introductions/spanish/spanish_sp.TGA", 0, guess_g_iIntroductionTexture);
+			result = CreateTexture("gfx/vgui/introductions/spanish/spanish_sp.TGA", 0, g_iIntroductionTexture_guess);
 		else if (type == 2)
-			result = CreateTexture("gfx/vgui/introductions/spanish/spanish_doc.TGA", 0, guess_g_iIntroductionTexture);
+			result = CreateTexture("gfx/vgui/introductions/spanish/spanish_doc.TGA", 0, g_iIntroductionTexture_guess);
 		else if (type == 3)
-			result = CreateTexture("gfx/vgui/introductions/spanish/spanish_coop.TGA", 0, guess_g_iIntroductionTexture);
+			result = CreateTexture("gfx/vgui/introductions/spanish/spanish_coop.TGA", 0, g_iIntroductionTexture_guess);
 		else
 			return;
 		break;
 	case 7:
 		if (type == 1)
-			result = CreateTexture("gfx/vgui/introductions/swedish/swedish_sp.TGA", 0, guess_g_iIntroductionTexture);
+			result = CreateTexture("gfx/vgui/introductions/swedish/swedish_sp.TGA", 0, g_iIntroductionTexture_guess);
 		else if (type == 2)
-			result = CreateTexture("gfx/vgui/introductions/swedish/swedish_doc.TGA", 0, guess_g_iIntroductionTexture);
+			result = CreateTexture("gfx/vgui/introductions/swedish/swedish_doc.TGA", 0, g_iIntroductionTexture_guess);
 		else if (type == 3)
-			result = CreateTexture("gfx/vgui/introductions/swedish/swedish_coop.TGA", 0, guess_g_iIntroductionTexture);
+			result = CreateTexture("gfx/vgui/introductions/swedish/swedish_coop.TGA", 0, g_iIntroductionTexture_guess);
 		else
 			return;
 		break;
@@ -360,102 +360,102 @@ void guess_LoadIntroductionTexture( int type )
 	}
 
 	if (result)
-		guess_g_bIntroductionLoaded = true;
+		g_bIntroductionLoaded_guess = true;
 }
 
-void guess_LoadPageLockedTexture( void )
+void LoadPageLockedTexture_guess( void )
 {
-	if (!guess_g_iPageLockedTexture)
-		guess_g_iPageLockedTexture = current_ext_texture_id++;
+	if (!g_iPageLockedTexture_guess)
+		g_iPageLockedTexture_guess = current_ext_texture_id++;
 
-	if (guess_g_bPageLockedLoaded)
+	if (g_bPageLockedLoaded_guess)
 		return;
 
-	guess_g_bPageLockedLoaded = false;
+	g_bPageLockedLoaded_guess = false;
 
-	if (CreateTexture("models/page_locked.tga", 0, guess_g_iPageLockedTexture))
-		guess_g_bPageLockedLoaded = true;
+	if (CreateTexture("models/page_locked.tga", 0, g_iPageLockedTexture_guess))
+		g_bPageLockedLoaded_guess = true;
 }
 
-void guess_LoadHandsTexture( char *modelname )
+void LoadHandsTexture_guess( char *modelname )
 {
 	char texture[256];
 	int result;
 
-	if (!guess_g_iHandsTexture)
-		guess_g_iHandsTexture = current_ext_texture_id++;
+	if (!g_iHandsTexture_guess)
+		g_iHandsTexture_guess = current_ext_texture_id++;
 
-	if (guess_g_bHandsLoaded)
+	if (g_bHandsLoaded_guess)
 		return;
 
-	guess_g_bHandsLoaded = false;
+	g_bHandsLoaded_guess = false;
 
 	if (!modelname)
 		return;
 
 	if (strstr(modelname, "police3"))
-		result = CreateTexture("police/police3_hands.tga", 0, guess_g_iHandsTexture);
+		result = CreateTexture("police/police3_hands.tga", 0, g_iHandsTexture_guess);
 	else
-		result = CreateTexture("police/police_hands.tga", 0, guess_g_iHandsTexture);
+		result = CreateTexture("police/police_hands.tga", 0, g_iHandsTexture_guess);
 
-	if (strlen(gHUD.guess_m_szFingerTexture) > 2)
+	if (strlen(gHUD.m_szFingerTexture_guess) > 2)
 	{
-		strcpy(texture, gHUD.guess_m_szFingerTexture);
+		strcpy(texture, gHUD.m_szFingerTexture_guess);
 
 		if (strstr(modelname, "police3"))
 		{
-			strcpy(texture, gHUD.guess_m_szFingerTexture - 4);
+			strcpy(texture, gHUD.m_szFingerTexture_guess - 4);
 			strcat(texture, "_black.tga");
-			result = CreateTexture(texture, 0, guess_g_iHandsTexture);
+			result = CreateTexture(texture, 0, g_iHandsTexture_guess);
 		}
 		else
-			result = CreateTexture(gHUD.guess_m_szFingerTexture, 0, guess_g_iHandsTexture);
+			result = CreateTexture(gHUD.m_szFingerTexture_guess, 0, g_iHandsTexture_guess);
 	}
 
 	if (result)
-		guess_g_bHandsLoaded = true;
+		g_bHandsLoaded_guess = true;
 }
 
-void guess_LoadPoliceSleeveTexture( int iUnused )
+void LoadPoliceSleeveTexture_guess( int iUnused )
 {
-	if (!guess_g_iPoliceSleeveTexture)
-		guess_g_iPoliceSleeveTexture = current_ext_texture_id++;
+	if (!g_iPoliceSleeveTexture_guess)
+		g_iPoliceSleeveTexture_guess = current_ext_texture_id++;
 
-	if (guess_g_bPoliceSleeveLoaded)
+	if (g_bPoliceSleeveLoaded_guess)
 		return;
 
-	guess_g_bPoliceSleeveLoaded = false;
+	g_bPoliceSleeveLoaded_guess = false;
 
 	int result;
-	if (strlen(gHUD.guess_m_szSleeveTexture) > 2)
-		result = CreateTexture(gHUD.guess_m_szSleeveTexture, 0, guess_g_iPoliceSleeveTexture);
+	if (strlen(gHUD.m_szSleeveTexture_guess) > 2)
+		result = CreateTexture(gHUD.m_szSleeveTexture_guess, 0, g_iPoliceSleeveTexture_guess);
 	else
-		result = CreateTexture("police/police_sleeve.tga", 0, guess_g_iPoliceSleeveTexture);
+		result = CreateTexture("police/police_sleeve.tga", 0, g_iPoliceSleeveTexture_guess);
 
 	if (result)
-		guess_g_bPoliceSleeveLoaded = true;
+		g_bPoliceSleeveLoaded_guess = true;
 }
 
-void guess_CaptureScreenTexture( int width, int height )
+void CaptureScreenTexture_guess( int width, int height )
 {
-	if (!guess_g_iScreenTexture)
+	if (!g_iScreenTexture_guess)
 	{
 		unsigned char *data = new unsigned char[256*256*3];
 		memset(data, 0, 256*256*3);
 
-		gl.glGetIntegerv(GL_TEXTURE_BINDING_2D, &guess_g_iScreenTexture);
+		gl.glGetIntegerv(GL_TEXTURE_BINDING_2D, &g_iScreenTexture_guess);
 		gl.glBindTexture(GL_TEXTURE_2D, current_ext_texture_id);
 		gl.glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
 		gl.glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 		gl.glTexImage2D(GL_TEXTURE_2D, 0, 3, 256, 256, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
-		gl.glBindTexture(GL_TEXTURE_2D, guess_g_iScreenTexture);
+		gl.glBindTexture(GL_TEXTURE_2D, g_iScreenTexture_guess);
 
 		delete[] data;
-		guess_g_iScreenTexture = current_ext_texture_id++;
+		g_iScreenTexture_guess = current_ext_texture_id++;
 	}
 
-	gl.glGetIntegerv(GL_TEXTURE_BINDING_2D, &guess_g_iOldTexture);
-	gl.glBindTexture(GL_TEXTURE_2D, guess_g_iScreenTexture);
+	gl.glGetIntegerv(GL_TEXTURE_BINDING_2D, &g_iOldTexture_guess);
+	gl.glBindTexture(GL_TEXTURE_2D, g_iScreenTexture_guess);
 
 	int x = ScreenWidth / 2;
 	if (width)
@@ -466,29 +466,29 @@ void guess_CaptureScreenTexture( int width, int height )
 		y = ScreenHeight / 2 - height / 2;
 
 	gl.glCopyTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, x, y, width, height, 0);
-	guess_g_bScreenTextureCaptured = true;
+	g_bScreenTextureCaptured_guess = true;
 }
 
-void guess_CaptureBlurTexture( int width, int height, int iUnused1, int iUnused2 )
+void CaptureBlurTexture_guess( int width, int height, int iUnused1, int iUnused2 )
 {
-	if (!guess_g_iBlurTexture)
+	if (!g_iBlurTexture_guess)
 	{
 		unsigned char *data = new unsigned char[256*256*3];
 		memset(data, 0, 256*256*3);
 
-		gl.glGetIntegerv(GL_TEXTURE_BINDING_2D, &guess_g_iBlurTexture);
+		gl.glGetIntegerv(GL_TEXTURE_BINDING_2D, &g_iBlurTexture_guess);
 		gl.glBindTexture(GL_TEXTURE_2D, current_ext_texture_id);
 		gl.glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
 		gl.glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 		gl.glTexImage2D(GL_TEXTURE_2D, 0, 3, 256, 256, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
-		gl.glBindTexture(GL_TEXTURE_2D, guess_g_iBlurTexture);
+		gl.glBindTexture(GL_TEXTURE_2D, g_iBlurTexture_guess);
 
 		delete[] data;
-		guess_g_iBlurTexture = current_ext_texture_id++;
+		g_iBlurTexture_guess = current_ext_texture_id++;
 	}
 
-	gl.glGetIntegerv(GL_TEXTURE_BINDING_2D, &guess_g_iOldTexture);
-	gl.glBindTexture(GL_TEXTURE_2D, guess_g_iBlurTexture);
+	gl.glGetIntegerv(GL_TEXTURE_BINDING_2D, &g_iOldTexture_guess);
+	gl.glBindTexture(GL_TEXTURE_2D, g_iBlurTexture_guess);
 
 	int x = ScreenWidth / 2;
 	if (width)
@@ -499,25 +499,25 @@ void guess_CaptureBlurTexture( int width, int height, int iUnused1, int iUnused2
 		y = ScreenHeight / 2 - height / 2;
 
 	gl.glCopyTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, x, y, width, height, 0);
-	guess_g_bBlurTextureCaptured = true;
+	g_bBlurTextureCaptured_guess = true;
 }
 
-void guess_LoadSleeveTexture( void )
+void LoadSleeveTexture_guess( void )
 {
 	char texture[256];
 
-	if (!gHUD.guess_m_iClothes && strlen(gHUD.guess_m_szFingerTexture) <= 2)
+	if (!gHUD.m_iClothes_guess && strlen(gHUD.m_szFingerTexture_guess) <= 2)
 		return;
 
-	if (!guess_g_iSleeveTexture)
-		guess_g_iSleeveTexture = current_ext_texture_id++;
+	if (!g_iSleeveTexture_guess)
+		g_iSleeveTexture_guess = current_ext_texture_id++;
 
-	if (guess_g_bSleeveLoaded)
+	if (g_bSleeveLoaded_guess)
 		return;
 
-	guess_g_bSleeveLoaded = false;
+	g_bSleeveLoaded_guess = false;
 
-	switch (gHUD.guess_m_iClothesState)
+	switch (gHUD.m_iClothesState_guess)
 	{
 	case 1:
 		sprintf(texture, "models/costumes/leatherhoff/Leatherhoff_Sleeve.tga");
@@ -550,31 +550,31 @@ void guess_LoadSleeveTexture( void )
 		return;
 	}
 
-	if (strlen(gHUD.guess_m_szSleeveTexture) > 2)
-		strcpy(texture, gHUD.guess_m_szSleeveTexture);
+	if (strlen(gHUD.m_szSleeveTexture_guess) > 2)
+		strcpy(texture, gHUD.m_szSleeveTexture_guess);
 
-	if (CreateTexture(texture, 0, guess_g_iSleeveTexture))
-		guess_g_bSleeveLoaded = true;
+	if (CreateTexture(texture, 0, g_iSleeveTexture_guess))
+		g_bSleeveLoaded_guess = true;
 }
 
-void guess_LoadJeansTexture( void )
+void LoadJeansTexture_guess( void )
 {
 	char texture[256];
 
-	if (!gHUD.guess_m_iClothes && !guess_g_iUnlockClothes)
+	if (!gHUD.m_iClothes_guess && !g_iUnlockClothes_guess)
 		return;
 
-	if (!guess_g_iJeansTexture)
-		guess_g_iJeansTexture = current_ext_texture_id++;
+	if (!g_iJeansTexture_guess)
+		g_iJeansTexture_guess = current_ext_texture_id++;
 
-	if (guess_g_bJeansLoaded)
+	if (g_bJeansLoaded_guess)
 		return;
 
-	guess_g_bJeansLoaded = false;
+	g_bJeansLoaded_guess = false;
 
-	int clothes = gHUD.guess_m_iClothesState;
-	if (guess_g_iUnlockClothes)
-		clothes = guess_g_iUnlockClothes;
+	int clothes = gHUD.m_iClothesState_guess;
+	if (g_iUnlockClothes_guess)
+		clothes = g_iUnlockClothes_guess;
 
 	switch (clothes)
 	{
@@ -606,31 +606,31 @@ void guess_LoadJeansTexture( void )
 		break;
 	}
 
-	if (CreateTexture(texture, 0, guess_g_iJeansTexture))
-		guess_g_bJeansLoaded = true;
+	if (CreateTexture(texture, 0, g_iJeansTexture_guess))
+		g_bJeansLoaded_guess = true;
 }
 
-int		guess_g_iWaterLoTexture;
-bool	guess_g_bWaterLoLoaded;
-bool	guess_g_bTakePhoto;				// TakePhoto message, GL_DrawPoints captures the screen into the photo texture
-bool	guess_bUnknown104CE4A3;			// read by V_CalcNormalRefdef with the attach camera
+int		g_iWaterLoTexture_guess;
+bool	g_bWaterLoLoaded_guess;
+bool	g_bTakePhoto_guess;				// TakePhoto message, GL_DrawPoints captures the screen into the photo texture
+bool	bUnknown104CE4A3_guess;			// read by V_CalcNormalRefdef with the attach camera
 
-void guess_LoadWaterLoTexture( void )
+void LoadWaterLoTexture_guess( void )
 {
-	if (!guess_g_iWaterLoTexture)
-		guess_g_iWaterLoTexture = current_ext_texture_id++;
+	if (!g_iWaterLoTexture_guess)
+		g_iWaterLoTexture_guess = current_ext_texture_id++;
 
-	if (guess_g_bWaterLoLoaded)
+	if (g_bWaterLoLoaded_guess)
 		return;
 
-	guess_g_bWaterLoLoaded = false;
+	g_bWaterLoLoaded_guess = false;
 
-	if (CreateTexture("textures/water_lo.tga", 0, guess_g_iWaterLoTexture))
-		guess_g_bWaterLoLoaded = true;
+	if (CreateTexture("textures/water_lo.tga", 0, g_iWaterLoTexture_guess))
+		g_bWaterLoLoaded_guess = true;
 }
 
-// a copy of guess_VectorDistance in rain.cpp (identical bytes at 100855B0)
-float guess_VecDistance( vec3_t a, vec3_t b )
+// a copy of VectorDistance_guess in rain.cpp (identical bytes at 100855B0)
+float VecDistance_guess( vec3_t a, vec3_t b )
 {
 	return Length(b - a);
 }
@@ -639,11 +639,11 @@ float guess_VecDistance( vec3_t a, vec3_t b )
 // Cry of Fear: flashlights of the other players in multiplayer
 // (called from StudioCalcAttachments, the light starts at attachment 3 of the player model)
 //
-void guess_UpdatePlayerFlashlights( void )
+void UpdatePlayerFlashlights_guess( void )
 {
 	cl_entity_t *localplayer = gEngfuncs.GetLocalPlayer();
 
-	if (guess_pAttachCamEnt)
+	if (pAttachCamEnt_guess)
 		return;
 
 	for (int i = 0; i < MAX_PLAYERS + 1; i++)
@@ -876,24 +876,24 @@ void CStudioModelRenderer::GL_SetupRenderer( int rendermode )
 
 	// buz special hack for transparent parts on head shield -
 	// use less alpha
-	if (guess_g_iHeadShieldType == 0)
+	if (g_iHeadShieldType_guess == 0)
 	{
 		if (!strcmp(m_pRenderModel->name, "models/nv_goggles.mdl"))
 			alpha = 0.7;
 	}
-	else if (guess_g_iHeadShieldType == 10)
+	else if (g_iHeadShieldType_guess == 10)
 	{
 		if (!strcmp(m_pRenderModel->name, "models/weapons/v_gasmask.mdl") || !strcmp(m_pRenderModel->name, "models/weapons/v_gasmask_simon.mdl"))
 			alpha = 0.7;
 	}
-	else if (guess_g_iHeadShieldType == 1)
+	else if (g_iHeadShieldType_guess == 1)
 	{
 		if (!strcmp(m_pRenderModel->name, "models/items/tv_frame.mdl"))
 			alpha = 0.7;
 	}
-	else if (guess_g_iHeadShieldType == 2)
+	else if (g_iHeadShieldType_guess == 2)
 	{
-		if (guess_iDoctorMode)
+		if (iDoctorMode_guess)
 		{
 			if (!strcmp(m_pRenderModel->name, "models/weapons/v_death_doctor.mdl"))
 				alpha = 0.7;
@@ -904,14 +904,14 @@ void CStudioModelRenderer::GL_SetupRenderer( int rendermode )
 				alpha = 0.7;
 		}
 	}
-	else if (guess_g_iHeadShieldType == 5)
+	else if (g_iHeadShieldType_guess == 5)
 	{
 		if (!strcmp(m_pRenderModel->name, "models/props/blandat/v_telescope.mdl"))
 			alpha = 0.7;
 	}
-	else if (guess_g_iHeadShieldType == 6 && gHUD.guess_m_pszHeadShieldSound)
+	else if (g_iHeadShieldType_guess == 6 && gHUD.m_pszHeadShieldSound_guess)
 	{
-		if (!strcmp(m_pRenderModel->name, gHUD.guess_m_pszHeadShieldSound))
+		if (!strcmp(m_pRenderModel->name, gHUD.m_pszHeadShieldSound_guess))
 			alpha = 0.7;
 	}
 }
@@ -1064,9 +1064,9 @@ void CStudioModelRenderer::Lighting (vec3_t &lv, int bone, int flags, vec3_t nor
 	// Cry of Fear: attachments of the left hand weapon (DualWield), for its muzzle flash and light
 	cl_entity_t *pSavedEntity = m_pCurrentEntity;
 
-	if (guess_g_iDualLighting && !(gHUD.m_iHideHUDDisplay & HIDEHUD_WEAPONS) && guess_g_pHeadShieldEnt)
+	if (g_iDualLighting_guess && !(gHUD.m_iHideHUDDisplay & HIDEHUD_WEAPONS) && g_pHeadShieldEnt_guess)
 	{
-		m_pCurrentEntity = guess_g_pHeadShieldEnt;
+		m_pCurrentEntity = g_pHeadShieldEnt_guess;
 		StudioCalcAttachments();
 		IEngineStudio.StudioClientEvents();
 
@@ -1076,11 +1076,11 @@ void CStudioModelRenderer::Lighting (vec3_t &lv, int bone, int flags, vec3_t nor
 			memcpy(ent->attachment, m_pCurrentEntity->attachment, sizeof(vec3_t) * 4);
 		}
 
-		if (guess_g_iDualLighting)
+		if (g_iDualLighting_guess)
 		{
-			guess_vecDualAttachment0 = m_pCurrentEntity->attachment[0];
-			guess_vecDualAttachment1 = m_pCurrentEntity->attachment[1];
-			guess_g_iDualLighting = 0;
+			vecDualAttachment0_guess = m_pCurrentEntity->attachment[0];
+			vecDualAttachment1_guess = m_pCurrentEntity->attachment[1];
+			g_iDualLighting_guess = 0;
 		}
 	}
 
@@ -1142,17 +1142,17 @@ void CStudioModelRenderer::GL_SetupLighting ()
 		return;
 
 	// Cry of Fear: every head shield model gets the head shield lighting
-	if (guess_g_iHeadShieldType == 0 && !strcmp(m_pRenderModel->name, "models/nv_goggles.mdl"))
+	if (g_iHeadShieldType_guess == 0 && !strcmp(m_pRenderModel->name, "models/nv_goggles.mdl"))
 		isheadshield = TRUE;
-	else if (guess_g_iHeadShieldType == 7 && !strcmp(m_pRenderModel->name, "models/bookmenu.mdl"))
+	else if (g_iHeadShieldType_guess == 7 && !strcmp(m_pRenderModel->name, "models/bookmenu.mdl"))
 		isheadshield = TRUE;
-	if (guess_g_iHeadShieldType == 10 && (!strcmp(m_pRenderModel->name, "models/weapons/v_gasmask.mdl") || !strcmp(m_pRenderModel->name, "models/weapons/v_gasmask_simon.mdl")))
+	if (g_iHeadShieldType_guess == 10 && (!strcmp(m_pRenderModel->name, "models/weapons/v_gasmask.mdl") || !strcmp(m_pRenderModel->name, "models/weapons/v_gasmask_simon.mdl")))
 		isheadshield = TRUE;
-	if (guess_g_iHeadShieldType == 1 && !strcmp(m_pRenderModel->name, "models/items/tv_frame.mdl"))
+	if (g_iHeadShieldType_guess == 1 && !strcmp(m_pRenderModel->name, "models/items/tv_frame.mdl"))
 		isheadshield = TRUE;
-	if (guess_g_iHeadShieldType == 5 && !strcmp(m_pRenderModel->name, "models/props/blandat/v_telescope.mdl"))
+	if (g_iHeadShieldType_guess == 5 && !strcmp(m_pRenderModel->name, "models/props/blandat/v_telescope.mdl"))
 		isheadshield = TRUE;
-	if (guess_g_iHeadShieldType == 6 && gHUD.guess_m_pszHeadShieldSound && !strcmp(m_pRenderModel->name, gHUD.guess_m_pszHeadShieldSound))
+	if (g_iHeadShieldType_guess == 6 && gHUD.m_pszHeadShieldSound_guess && !strcmp(m_pRenderModel->name, gHUD.m_pszHeadShieldSound_guess))
 		isheadshield = TRUE;
 
 	vec3_t center = (m_pCurrentEntity->curstate.mins + m_pCurrentEntity->curstate.maxs) / 2;
@@ -1180,7 +1180,7 @@ void CStudioModelRenderer::GL_SetupLighting ()
 	if (!strcmp(m_pRenderModel->name, "models/flash1.mdl") || !strcmp(m_pRenderModel->name, "models/flash2.mdl"))
 		light.ambientlight = Vector(0.15, 0.15, 0.15);
 
-	if (g_DrawHeadShied && (guess_g_iHeadShieldType == 6 || guess_g_iHeadShieldType == 7))
+	if (g_DrawHeadShied && (g_iHeadShieldType_guess == 6 || g_iHeadShieldType_guess == 7))
 		light.ambientlight = Vector(0.15, 0.15, 0.15);
 
 	if (m_pCurrentEntity->curstate.renderfx == 100)
@@ -1232,21 +1232,21 @@ void CStudioModelRenderer::GL_SetupLighting ()
 
 	if (m_pCurrentEntity->curstate.renderfx == 99 || m_pCurrentEntity->curstate.renderfx == 123 || m_pCurrentEntity->curstate.renderfx == 245 || m_pCurrentEntity->curstate.renderfx == 165)
 	{
-		static bool guess_bFlicker;
+		static bool bFlicker_guess;
 
-		float dist = guess_VecDistance(v_origin, m_pCurrentEntity->curstate.origin) - 64;
+		float dist = VecDistance_guess(v_origin, m_pCurrentEntity->curstate.origin) - 64;
 		if (dist < 0)
 			dist = 0;
 		if (dist > 255.0)
 			dist = 255;
 
 		float flicker;
-		if (guess_bFlicker)
+		if (bFlicker_guess)
 		{
 			flicker = (float)((int)(gHUD.m_flTime * 10) % 25) / 100;
 			if (flicker <= 0)
 			{
-				guess_bFlicker = false;
+				bFlicker_guess = false;
 				flicker = 0;
 			}
 			else if (flicker >= 0.25)
@@ -1257,52 +1257,52 @@ void CStudioModelRenderer::GL_SetupLighting ()
 			flicker = (float)((int)(gHUD.m_flTime * 10) % 25) / 100;
 			if (flicker <= 0)
 			{
-				guess_bFlicker = true;
+				bFlicker_guess = true;
 				flicker = 0;
 			}
 			else if (flicker >= 0.25)
 				flicker = 0.25;
 		}
 
-		gHUD.guess_m_flUnknown2A84 = flicker * 4;
+		gHUD.m_flUnknown2A84_guess = flicker * 4;
 
-		float add = 0.25 - gHUD.guess_m_flUnknown2A84;
+		float add = 0.25 - gHUD.m_flUnknown2A84_guess;
 		if (add > 0.25)
 			add = 0.25;
 		if (add < 0)
 			add = 0;
 
-		switch (guess_iDifficulty)
+		switch (iDifficulty_guess)
 		{
 		case 0:
 		case 2:
 			if (dist < 96)
 			{
 				light.ambientlight = Vector(0.25, 0.25, 0.25);
-				if (guess_bFlicker)
+				if (bFlicker_guess)
 					light.addlight = Vector(add, 0.0f, 0.0f);
 				else
-					light.addlight = Vector(gHUD.guess_m_flUnknown2A84, 0.0f, 0.0f);
+					light.addlight = Vector(gHUD.m_flUnknown2A84_guess, 0.0f, 0.0f);
 			}
 			break;
 		case 1:
 			if (dist < 96)
 			{
 				light.ambientlight = Vector(0.5, 0.5, 0.5);
-				if (guess_bFlicker)
+				if (bFlicker_guess)
 					light.addlight = Vector(add, 0.0f, 0.0f);
 				else
-					light.addlight = Vector(gHUD.guess_m_flUnknown2A84, 0.0f, 0.0f);
+					light.addlight = Vector(gHUD.m_flUnknown2A84_guess, 0.0f, 0.0f);
 			}
 			break;
 		case 3:
 			if (dist < 96)
 			{
 				light.ambientlight = Vector(0.1, 0.1, 0.1);
-				if (guess_bFlicker)
+				if (bFlicker_guess)
 					light.addlight = Vector(add, 0.0f, 0.0f);
 				else
-					light.addlight = Vector(gHUD.guess_m_flUnknown2A84, 0.0f, 0.0f);
+					light.addlight = Vector(gHUD.m_flUnknown2A84_guess, 0.0f, 0.0f);
 			}
 			break;
 		}
@@ -1331,7 +1331,7 @@ void CStudioModelRenderer::GL_SetupLighting ()
 	int isViewModel = (m_pCurrentEntity == gEngfuncs.GetViewModel()) ? TRUE : FALSE;
 
 	// Cry of Fear: the view model is brighter while the flashlight is on
-	if ((gHUD.guess_m_iFlashFlags & 8) && isViewModel)
+	if ((gHUD.m_iFlashFlags_guess & 8) && isViewModel)
 		light.addlight = Vector(0.2, 0.2, 0.2);
 
 	int numlights;
@@ -1470,7 +1470,7 @@ void CStudioModelRenderer::GL_SetupModel ( int bodypart )
 void CStudioModelRenderer::GL_DrawPoints ( )
 {
 	// Cry of Fear: nothing is drawn in this mode
-	if (guess_g_iDickMode)
+	if (g_iDickMode_guess)
 		return;
 
 	bool bMultiplayer = false;
@@ -1479,14 +1479,14 @@ void CStudioModelRenderer::GL_DrawPoints ( )
 
 	// Cry of Fear: no view model while the view is on the boat, the attach camera or the telescope
 	int isViewModel = (m_pCurrentEntity == gEngfuncs.GetViewModel()) ? TRUE : FALSE;
-	if (isViewModel && (guess_iBoat || guess_pAttachCamEnt || guess_pTelescopeEnt))
+	if (isViewModel && (iBoat_guess || pAttachCamEnt_guess || pTelescopeEnt_guess))
 		return;
 
-	if (isViewModel && guess_iUnknown1054506C >= 3 && gHUD.m_Ammo.m_pWeapon && gHUD.m_Ammo.m_pWeapon->iId != 17)
+	if (isViewModel && iUnknown1054506C_guess >= 3 && gHUD.m_Ammo.m_pWeapon && gHUD.m_Ammo.m_pWeapon->iId != 17)
 		return;
 
 	// Cry of Fear: props with render effects 92 to 94 are not drawn far from the player
-	if (m_pCurrentEntity->curstate.renderfx == 92 && !guess_IsViewEntityActive() && !guess_pAttachCamEnt)
+	if (m_pCurrentEntity->curstate.renderfx == 92 && !IsViewEntityActive_guess() && !pAttachCamEnt_guess)
 	{
 		const char *level = gEngfuncs.pfnGetLevelName();
 		if (cl_propdistance->value || (level && (strstr(level, "college1dark") || strstr(level, "forest1") || strstr(level, "forest2") ||
@@ -1496,13 +1496,13 @@ void CStudioModelRenderer::GL_DrawPoints ( )
 			if (player)
 			{
 				vec3_t dist;
-				if (guess_iBoat)
+				if (iBoat_guess)
 				{
-					VectorSubtract(guess_vecBoatOrigin, m_pCurrentEntity->origin, dist);
+					VectorSubtract(vecBoatOrigin_guess, m_pCurrentEntity->origin, dist);
 				}
-				else if (guess_pTelescopeEnt)
+				else if (pTelescopeEnt_guess)
 				{
-					VectorSubtract(guess_pTelescopeEnt->origin, m_pCurrentEntity->origin, dist);
+					VectorSubtract(pTelescopeEnt_guess->origin, m_pCurrentEntity->origin, dist);
 				}
 				else
 				{
@@ -1522,7 +1522,7 @@ void CStudioModelRenderer::GL_DrawPoints ( )
 		}
 	}
 
-	if (m_pCurrentEntity->curstate.renderfx == 93 && !guess_IsViewEntityActive() && !guess_pAttachCamEnt)
+	if (m_pCurrentEntity->curstate.renderfx == 93 && !IsViewEntityActive_guess() && !pAttachCamEnt_guess)
 	{
 		cl_entity_t *player = gEngfuncs.GetLocalPlayer();
 		if (player)
@@ -1534,7 +1534,7 @@ void CStudioModelRenderer::GL_DrawPoints ( )
 		}
 	}
 
-	if (m_pCurrentEntity->curstate.renderfx == 94 && !guess_IsViewEntityActive() && !guess_pAttachCamEnt)
+	if (m_pCurrentEntity->curstate.renderfx == 94 && !IsViewEntityActive_guess() && !pAttachCamEnt_guess)
 	{
 		cl_entity_t *player = gEngfuncs.GetLocalPlayer();
 		if (player)
@@ -1621,19 +1621,19 @@ void CStudioModelRenderer::GL_DrawPoints ( )
 		// Cry of Fear: replacement textures for the clothes, the hands and the screens
 		if (strstr(ptex->name, "hoodie_grey") || strstr(ptex->name, "hoodie_blood"))
 		{
-			if (gHUD.guess_m_iClothes && !strstr(m_pRenderModel->name, "unfolded_clothes") && !strstr(m_pRenderModel->name, "booksimon"))
+			if (gHUD.m_iClothes_guess && !strstr(m_pRenderModel->name, "unfolded_clothes") && !strstr(m_pRenderModel->name, "booksimon"))
 			{
-				guess_LoadHoodieTexture(false);
-				if (guess_g_bHoodieLoaded)
-					gl.glBindTexture( GL_TEXTURE_2D, guess_g_iHoodieTexture );
+				LoadHoodieTexture_guess(false);
+				if (g_bHoodieLoaded_guess)
+					gl.glBindTexture( GL_TEXTURE_2D, g_iHoodieTexture_guess );
 				else
 					gl.glBindTexture( GL_TEXTURE_2D, (ptex->index & 0xFFFF) );
 			}
-			else if (strstr(m_pRenderModel->name, "unfolded_clothes") && guess_g_iUnlockClothes > 0)
+			else if (strstr(m_pRenderModel->name, "unfolded_clothes") && g_iUnlockClothes_guess > 0)
 			{
-				guess_LoadHoodieTexture(true);
-				if (guess_g_bHoodieLoaded)
-					gl.glBindTexture( GL_TEXTURE_2D, guess_g_iHoodieTexture );
+				LoadHoodieTexture_guess(true);
+				if (g_bHoodieLoaded_guess)
+					gl.glBindTexture( GL_TEXTURE_2D, g_iHoodieTexture_guess );
 				else
 					gl.glBindTexture( GL_TEXTURE_2D, (ptex->index & 0xFFFF) );
 			}
@@ -1642,7 +1642,7 @@ void CStudioModelRenderer::GL_DrawPoints ( )
 		}
 		else if (strstr(ptex->name, "jeans") && !strstr(ptex->name, "jeanss"))
 		{
-			if ((gHUD.guess_m_iClothes || guess_g_iUnlockClothes) &&
+			if ((gHUD.m_iClothes_guess || g_iUnlockClothes_guess) &&
 				!strstr(m_pRenderModel->name, "badkarne1") &&
 				!strstr(m_pRenderModel->name, "sophie.mdl") &&
 				!strstr(m_pRenderModel->name, "tortyrscen") &&
@@ -1654,9 +1654,9 @@ void CStudioModelRenderer::GL_DrawPoints ( )
 				!strstr(m_pRenderModel->name, "booksimon") &&
 				!strstr(m_pRenderModel->name, "sophie_dead"))
 			{
-				guess_LoadJeansTexture();
-				if (guess_g_bJeansLoaded)
-					gl.glBindTexture( GL_TEXTURE_2D, guess_g_iJeansTexture );
+				LoadJeansTexture_guess();
+				if (g_bJeansLoaded_guess)
+					gl.glBindTexture( GL_TEXTURE_2D, g_iJeansTexture_guess );
 				else
 					gl.glBindTexture( GL_TEXTURE_2D, (ptex->index & 0xFFFF) );
 			}
@@ -1665,11 +1665,11 @@ void CStudioModelRenderer::GL_DrawPoints ( )
 		}
 		else if (strstr(ptex->name, "head_face"))
 		{
-			if (gHUD.guess_m_iClothes && !strstr(m_pRenderModel->name, "booksimon"))
+			if (gHUD.m_iClothes_guess && !strstr(m_pRenderModel->name, "booksimon"))
 			{
-				guess_LoadFaceTexture();
-				if (guess_g_bFaceLoaded)
-					gl.glBindTexture( GL_TEXTURE_2D, guess_g_iFaceTexture );
+				LoadFaceTexture_guess();
+				if (g_bFaceLoaded_guess)
+					gl.glBindTexture( GL_TEXTURE_2D, g_iFaceTexture_guess );
 				else
 					gl.glBindTexture( GL_TEXTURE_2D, (ptex->index & 0xFFFF) );
 			}
@@ -1681,15 +1681,15 @@ void CStudioModelRenderer::GL_DrawPoints ( )
 			// pages of the book menu that are not unlocked yet
 			if (g_DrawHeadShied)
 			{
-				if ((strstr(ptex->name, "page1") && !(gHUD.guess_m_iUnlocks & 0x2000000)) ||
-					(strstr(ptex->name, "page2") && !(gHUD.guess_m_iUnlocks & 0x4000000)) ||
-					(strstr(ptex->name, "page3") && !(gHUD.guess_m_iUnlocks & 0x8000000)) ||
-					(strstr(ptex->name, "page4") && !(gHUD.guess_m_iUnlocks & 0x10000000)) ||
-					(strstr(ptex->name, "page5") && !(gHUD.guess_m_iUnlocks & 0x20000000)))
+				if ((strstr(ptex->name, "page1") && !(gHUD.m_iUnlocks_guess & 0x2000000)) ||
+					(strstr(ptex->name, "page2") && !(gHUD.m_iUnlocks_guess & 0x4000000)) ||
+					(strstr(ptex->name, "page3") && !(gHUD.m_iUnlocks_guess & 0x8000000)) ||
+					(strstr(ptex->name, "page4") && !(gHUD.m_iUnlocks_guess & 0x10000000)) ||
+					(strstr(ptex->name, "page5") && !(gHUD.m_iUnlocks_guess & 0x20000000)))
 				{
-					guess_LoadPageLockedTexture();
-					if (guess_g_bPageLockedLoaded)
-						gl.glBindTexture( GL_TEXTURE_2D, guess_g_iPageLockedTexture );
+					LoadPageLockedTexture_guess();
+					if (g_bPageLockedLoaded_guess)
+						gl.glBindTexture( GL_TEXTURE_2D, g_iPageLockedTexture_guess );
 					else
 						gl.glBindTexture( GL_TEXTURE_2D, (ptex->index & 0xFFFF) );
 				}
@@ -1707,24 +1707,24 @@ void CStudioModelRenderer::GL_DrawPoints ( )
 
 			if (bMultiplayer)
 			{
-				if (g_DrawHeadShied || isViewModel || (guess_pAttachCamEnt && m_pCurrentEntity == guess_pAttachCamEnt))
+				if (g_DrawHeadShied || isViewModel || (pAttachCamEnt_guess && m_pCurrentEntity == pAttachCamEnt_guess))
 				{
-					guess_LoadPoliceSleeveTexture(0);
-					if (guess_g_bPoliceSleeveLoaded)
-						gl.glBindTexture( GL_TEXTURE_2D, guess_g_iPoliceSleeveTexture );
+					LoadPoliceSleeveTexture_guess(0);
+					if (g_bPoliceSleeveLoaded_guess)
+						gl.glBindTexture( GL_TEXTURE_2D, g_iPoliceSleeveTexture_guess );
 					else
 						gl.glBindTexture( GL_TEXTURE_2D, (ptex->index & 0xFFFF) );
 				}
 				else
 					gl.glBindTexture( GL_TEXTURE_2D, (ptex->index & 0xFFFF) );
 			}
-			else if (!gHUD.guess_m_iClothes && strlen(gHUD.guess_m_szSleeveTexture) <= 2)
+			else if (!gHUD.m_iClothes_guess && strlen(gHUD.m_szSleeveTexture_guess) <= 2)
 				gl.glBindTexture( GL_TEXTURE_2D, (ptex->index & 0xFFFF) );
 			else
 			{
-				guess_LoadSleeveTexture();
-				if (guess_g_bSleeveLoaded)
-					gl.glBindTexture( GL_TEXTURE_2D, guess_g_iSleeveTexture );
+				LoadSleeveTexture_guess();
+				if (g_bSleeveLoaded_guess)
+					gl.glBindTexture( GL_TEXTURE_2D, g_iSleeveTexture_guess );
 				else
 					gl.glBindTexture( GL_TEXTURE_2D, (ptex->index & 0xFFFF) );
 			}
@@ -1733,9 +1733,9 @@ void CStudioModelRenderer::GL_DrawPoints ( )
 		{
 			int isViewModel = (m_pCurrentEntity == gEngfuncs.GetViewModel()) ? TRUE : FALSE;
 
-			if (!bMultiplayer && !guess_bCustomFingerTexture)
+			if (!bMultiplayer && !bCustomFingerTexture_guess)
 				gl.glBindTexture( GL_TEXTURE_2D, (ptex->index & 0xFFFF) );
-			else if (!g_DrawHeadShied && !isViewModel && (!guess_pAttachCamEnt || m_pCurrentEntity != guess_pAttachCamEnt))
+			else if (!g_DrawHeadShied && !isViewModel && (!pAttachCamEnt_guess || m_pCurrentEntity != pAttachCamEnt_guess))
 				gl.glBindTexture( GL_TEXTURE_2D, (ptex->index & 0xFFFF) );
 			else
 			{
@@ -1748,9 +1748,9 @@ void CStudioModelRenderer::GL_DrawPoints ( )
 
 					if (index >= 0 && index <= gEngfuncs.GetMaxClients() && (model = IEngineStudio.SetupPlayerModel(index)) != NULL)
 					{
-						guess_LoadHandsTexture(model->name);
-						if (guess_g_bHandsLoaded)
-							gl.glBindTexture( GL_TEXTURE_2D, guess_g_iHandsTexture );
+						LoadHandsTexture_guess(model->name);
+						if (g_bHandsLoaded_guess)
+							gl.glBindTexture( GL_TEXTURE_2D, g_iHandsTexture_guess );
 						else
 							gl.glBindTexture( GL_TEXTURE_2D, (ptex->index & 0xFFFF) );
 					}
@@ -1761,11 +1761,11 @@ void CStudioModelRenderer::GL_DrawPoints ( )
 		}
 		else if (strstr(ptex->name, "glove"))
 		{
-			if (m_pCurrentEntity == gEngfuncs.GetViewModel() && guess_bCustomGloveTexture)
+			if (m_pCurrentEntity == gEngfuncs.GetViewModel() && bCustomGloveTexture_guess)
 			{
-				guess_LoadGloveTexture(0);
-				if (guess_g_bGloveLoaded)
-					gl.glBindTexture( GL_TEXTURE_2D, guess_g_iGloveTexture );
+				LoadGloveTexture_guess(0);
+				if (g_bGloveLoaded_guess)
+					gl.glBindTexture( GL_TEXTURE_2D, g_iGloveTexture_guess );
 				else
 					gl.glBindTexture( GL_TEXTURE_2D, (ptex->index & 0xFFFF) );
 			}
@@ -1777,12 +1777,12 @@ void CStudioModelRenderer::GL_DrawPoints ( )
 			// camera viewfinder shows the blurred screen
 			if (cl_cameraeffect->value)
 			{
-				guess_CaptureBlurTexture(ptex->width, ptex->height, 0, 0);
-				if (guess_g_bBlurTextureCaptured)
+				CaptureBlurTexture_guess(ptex->width, ptex->height, 0, 0);
+				if (g_bBlurTextureCaptured_guess)
 				{
 					bBlurTexture = true;
-					gl.glBindTexture( GL_TEXTURE_2D, guess_g_iBlurTexture );
-					guess_g_bBlurTextureCaptured = false;
+					gl.glBindTexture( GL_TEXTURE_2D, g_iBlurTexture_guess );
+					g_bBlurTextureCaptured_guess = false;
 				}
 				else
 					gl.glBindTexture( GL_TEXTURE_2D, (ptex->index & 0xFFFF) );
@@ -1793,14 +1793,14 @@ void CStudioModelRenderer::GL_DrawPoints ( )
 		else if (strstr(ptex->name, "diffusegay"))
 		{
 			// photo taken by the TakePhoto message
-			if (guess_g_bTakePhoto)
+			if (g_bTakePhoto_guess)
 			{
-				guess_CaptureScreenTexture(ptex->width, ptex->height);
-				guess_g_bTakePhoto = false;
+				CaptureScreenTexture_guess(ptex->width, ptex->height);
+				g_bTakePhoto_guess = false;
 			}
 
-			if (guess_g_bScreenTextureCaptured)
-				gl.glBindTexture( GL_TEXTURE_2D, guess_g_iScreenTexture );
+			if (g_bScreenTextureCaptured_guess)
+				gl.glBindTexture( GL_TEXTURE_2D, g_iScreenTexture_guess );
 			else
 				gl.glBindTexture( GL_TEXTURE_2D, (ptex->index & 0xFFFF) );
 		}
@@ -1847,7 +1847,7 @@ void CStudioModelRenderer::GL_DrawPoints ( )
 
 					if (strstr(ptex->name, "fullbright"))
 					{
-						float bright = guess_cv_fullbrighttextures->value;
+						float bright = cv_fullbrighttextures_guess->value;
 						if (strstr(ptex->name, "corona_"))
 							bright += gEngfuncs.pfnRandomFloat(-0.1, 0.1);
 						gl.glColor4f( bright, bright, bright, alpha );
@@ -1881,11 +1881,11 @@ void CStudioModelRenderer::GL_DrawPoints ( )
 				for( ; i > 0; i--, ptricmds += 4)
 				{
 					// Cry of Fear: hide one hand of the view model while the other one holds a second weapon
-					if (gHUD.m_Ammo.m_pWeapon && gHUD.m_Ammo.m_pWeapon->iId == 15 && !guess_iGoro)
+					if (gHUD.m_Ammo.m_pWeapon && gHUD.m_Ammo.m_pWeapon->iId == 15 && !iGoro_guess)
 					{
-						if (guess_g_iHeadShieldType == 3 && g_DrawHeadShied)
+						if (g_iHeadShieldType_guess == 3 && g_DrawHeadShied)
 						{
-							if (guess_g_iDualWeapon1 == 13)
+							if (g_iDualWeapon1_guess == 13)
 							{
 								if (strstr(pbones[pvertbone[ptricmds[0]]].name, "r_"))
 									continue;
@@ -1899,7 +1899,7 @@ void CStudioModelRenderer::GL_DrawPoints ( )
 
 						if (m_pCurrentEntity == gEngfuncs.GetViewModel())
 						{
-							if (guess_g_iDualWeapon2 == 13)
+							if (g_iDualWeapon2_guess == 13)
 							{
 								if (strstr(pbones[pvertbone[ptricmds[0]]].name, "r_"))
 									continue;
@@ -1998,7 +1998,7 @@ void CStudioModelRenderer::GL_DrawPoints ( )
 					// FIX: put these in as integer coords, not floats
 					gl.glTexCoord2f(ptricmds[2]*s, ptricmds[3]*t);
 
-					if (guess_cv_fullbrighttextures->value)
+					if (cv_fullbrighttextures_guess->value)
 					{
 						int isViewModel = (m_pCurrentEntity == gEngfuncs.GetViewModel()) ? TRUE : FALSE;
 
@@ -2006,9 +2006,9 @@ void CStudioModelRenderer::GL_DrawPoints ( )
 						{
 							if (strstr(ptex->name, "fullbright_mess"))
 							{
-								if (!gHUD.guess_m_bPhoneOff)
+								if (!gHUD.m_bPhoneOff_guess)
 								{
-									gl.glColor4f( guess_cv_fullbrighttextures->value, guess_cv_fullbrighttextures->value, guess_cv_fullbrighttextures->value, alpha );
+									gl.glColor4f( cv_fullbrighttextures_guess->value, cv_fullbrighttextures_guess->value, cv_fullbrighttextures_guess->value, alpha );
 								}
 								else
 								{
@@ -2018,7 +2018,7 @@ void CStudioModelRenderer::GL_DrawPoints ( )
 							}
 							else
 							{
-								float bright = guess_cv_fullbrighttextures->value;
+								float bright = cv_fullbrighttextures_guess->value;
 								if (strstr(ptex->name, "corona_"))
 									bright += gEngfuncs.pfnRandomFloat(-0.1, 0.1);
 								gl.glColor4f( bright, bright, bright, alpha );
@@ -2028,9 +2028,9 @@ void CStudioModelRenderer::GL_DrawPoints ( )
 						{
 							// the hands fade in after the view came back
 							float scale;
-							if (guess_flUnknown105595A0 + guess_flUnknown105595A4 > gEngfuncs.GetClientTime())
+							if (flUnknown105595A0_guess + flUnknown105595A4_guess > gEngfuncs.GetClientTime())
 							{
-								float frac = (gEngfuncs.GetClientTime() - guess_flUnknown105595A0) / guess_flUnknown105595A4;
+								float frac = (gEngfuncs.GetClientTime() - flUnknown105595A0_guess) / flUnknown105595A4_guess;
 								if (frac > 1)
 									frac = 1;
 								scale = (1 - frac) + 2;
@@ -2077,7 +2077,7 @@ void CStudioModelRenderer::GL_DrawPoints ( )
 		}
 
 		if (bBlurTexture)
-			gl.glBindTexture( GL_TEXTURE_2D, guess_g_iOldTexture );
+			gl.glBindTexture( GL_TEXTURE_2D, g_iOldTexture_guess );
 	}
 }
 

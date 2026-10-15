@@ -8,7 +8,7 @@
 
 using namespace irrklang;
 
-char *guess_va( const char *format, ... );
+char *va_guess( const char *format, ... );
 
 // static: the wrappers keep g_pMP3_guess in a register across the calls into CMP3
 static CMP3		*g_pMP3_guess;			// 0x105440A4
@@ -125,9 +125,9 @@ int CMP3::Initialize( void )
 	return 0;
 }
 
-void guess_IrrKlangInit( void )
+void IrrKlangInit_guess( void )
 {
-	guess_MP3_Shutdown();
+	MP3_Shutdown_guess();
 
 	g_pMP3_guess = new CMP3;
 	if ( g_pMP3_guess )
@@ -137,7 +137,7 @@ void guess_IrrKlangInit( void )
 	}
 }
 
-void guess_MP3_Shutdown( void )
+void MP3_Shutdown_guess( void )
 {
 	if ( g_pSoundEngine_guess )
 		g_pSoundEngine_guess->drop();
@@ -149,7 +149,7 @@ void guess_MP3_Shutdown( void )
 	}
 }
 
-void guess_IrrKlangFrame( void )
+void IrrKlangFrame_guess( void )
 {
 	if ( g_pMP3_guess )
 	{
@@ -165,26 +165,26 @@ void IrrKlangInitialize_guess( void )
 		g_pMP3_guess->Initialize();
 }
 
-bool guess_IrrKlangIsPaused( void )
+bool IrrKlangIsPaused_guess( void )
 {
 	if ( g_pMP3_guess && g_pMP3_guess->m_iIsPaused_guess )
 		return true;
 	return false;
 }
 
-void guess_IrrKlangPlay( const char *pszFile )
+void IrrKlangPlay_guess( const char *pszFile )
 {
 	if ( g_pMP3_guess )
 		g_pMP3_guess->PlayMP3( pszFile );
 }
 
-void guess_IrrKlangPlaySFX( const char *pszFile, int iType, bool bFlag, vec3_t vecOrigin )
+void IrrKlangPlaySFX_guess( const char *pszFile, int iType, bool bFlag, vec3_t vecOrigin )
 {
 	if ( g_pMP3_guess )
 		g_pMP3_guess->PlaySFX_guess( pszFile, iType, bFlag, vecOrigin );
 }
 
-void guess_IrrKlangSetParams( float flParm1, float flParm2, float flParm3, float flParm4 )
+void IrrKlangSetParams_guess( float flParm1, float flParm2, float flParm3, float flParm4 )
 {
 	if ( g_pMP3_guess )
 	{
@@ -199,25 +199,25 @@ void guess_IrrKlangSetParams( float flParm1, float flParm2, float flParm3, float
 	}
 }
 
-void guess_IrrKlangSetLoop( bool bLoop )
+void IrrKlangSetLoop_guess( bool bLoop )
 {
 	if ( g_pMP3_guess )
 		g_pMP3_guess->m_bLoop_guess = bLoop;
 }
 
-void guess_IrrKlangSetPaused( bool bPaused )
+void IrrKlangSetPaused_guess( bool bPaused )
 {
 	if ( g_pMP3_guess )
 		g_pMP3_guess->SetPaused_guess( bPaused );
 }
 
-void guess_IrrKlangSetStopping( bool bStopping )
+void IrrKlangSetStopping_guess( bool bStopping )
 {
 	if ( g_pMP3_guess )
 		g_pMP3_guess->m_bStopping_guess = bStopping;
 }
 
-void guess_IrrKlangStop( float flFadeTime )
+void IrrKlangStop_guess( float flFadeTime )
 {
 	if ( g_pMP3_guess )
 		g_pMP3_guess->StopMP3( flFadeTime );
@@ -231,7 +231,7 @@ void __stdcall PrintAverage_guess( const unsigned char *pData, unsigned int iSiz
 	for ( unsigned int i = 0; i < iSize; i++ )
 		iTotal += pData[i];
 
-	gEngfuncs.pfnCenterPrint( guess_va( "%.3f\n", (float)iTotal / (float)iSize ) );
+	gEngfuncs.pfnCenterPrint( va_guess( "%.3f\n", (float)iTotal / (float)iSize ) );
 }
 
 int CMP3::PlayMP3( const char *pszSong )

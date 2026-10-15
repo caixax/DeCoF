@@ -21,34 +21,34 @@ protected:
 	virtual void solve();
 
 public:
-	Image	*guess_m_pDonateImage;		// 0xbc, gfx/vgui/menu/donate.tga
-	ImagePanel	*guess_m_pDonate;		// 0xc0
-	Image	*guess_m_pSoundtrack1Image;		// 0xc4, gfx/vgui/menu/soundtrack1.tga
-	ImagePanel	*guess_m_pSoundtrack1;		// 0xc8
-	Image	*guess_m_pSoundtrack2Image;		// 0xcc, gfx/vgui/menu/soundtrack2.tga
-	ImagePanel	*guess_m_pSoundtrack2;		// 0xd0
-	Image	*guess_m_pClothesImage;		// 0xd4, gfx/vgui/menu/clothes.tga
-	ImagePanel	*guess_m_pClothes;		// 0xd8
-	Image	*guess_m_pAoMDCImage;		// 0xdc, gfx/vgui/menu/aomdc.tga
-	ImagePanel	*guess_m_pAoMDC;		// 0xe0
-	Image	*guess_m_pFacebookImage;		// 0xe4, gfx/vgui/menu/facebook.tga
-	ImagePanel	*guess_m_pFacebook;		// 0xe8
-	Image	*guess_m_pCancelImage;		// 0xec, gfx/vgui/menu/cancel.tga
-	ImagePanel	*guess_m_pCancel;		// 0xf0
-	ColorButton	*guess_m_pDonateButton;	// 0xf4
-	ColorButton	*guess_m_pSoundtrack1Button;	// 0xf8
-	ColorButton	*guess_m_pSoundtrack2Button;	// 0xfc
-	ColorButton	*guess_m_pClothesButton;	// 0x100
-	ColorButton	*guess_m_pAoMDCButton;	// 0x104
-	ColorButton	*guess_m_pFacebookButton;	// 0x108
-	ColorButton	*guess_m_pCancelButton;	// 0x10c
-	bool	guess_m_bDonateArmed;		// 0x110, the donate_mo.tga picture is shown
-	bool	guess_m_bSoundtrack1Armed;		// 0x111, the soundtrack1_mo.tga picture is shown
-	bool	guess_m_bSoundtrack2Armed;		// 0x112, the soundtrack2_mo.tga picture is shown
-	bool	guess_m_bClothesArmed;		// 0x113, the clothes_mo.tga picture is shown
-	bool	guess_m_bAoMDCArmed;		// 0x114, the aomdc_mo.tga picture is shown
-	bool	guess_m_bFacebookArmed;		// 0x115, the facebook_mo.tga picture is shown
-	bool	guess_m_bCancelArmed;		// 0x116, the cancel_mo.tga picture is shown
+	Image	*m_pDonateImage_guess;		// 0xbc, gfx/vgui/menu/donate.tga
+	ImagePanel	*m_pDonate_guess;		// 0xc0
+	Image	*m_pSoundtrack1Image_guess;		// 0xc4, gfx/vgui/menu/soundtrack1.tga
+	ImagePanel	*m_pSoundtrack1_guess;		// 0xc8
+	Image	*m_pSoundtrack2Image_guess;		// 0xcc, gfx/vgui/menu/soundtrack2.tga
+	ImagePanel	*m_pSoundtrack2_guess;		// 0xd0
+	Image	*m_pClothesImage_guess;		// 0xd4, gfx/vgui/menu/clothes.tga
+	ImagePanel	*m_pClothes_guess;		// 0xd8
+	Image	*m_pAoMDCImage_guess;		// 0xdc, gfx/vgui/menu/aomdc.tga
+	ImagePanel	*m_pAoMDC_guess;		// 0xe0
+	Image	*m_pFacebookImage_guess;		// 0xe4, gfx/vgui/menu/facebook.tga
+	ImagePanel	*m_pFacebook_guess;		// 0xe8
+	Image	*m_pCancelImage_guess;		// 0xec, gfx/vgui/menu/cancel.tga
+	ImagePanel	*m_pCancel_guess;		// 0xf0
+	ColorButton	*m_pDonateButton_guess;	// 0xf4
+	ColorButton	*m_pSoundtrack1Button_guess;	// 0xf8
+	ColorButton	*m_pSoundtrack2Button_guess;	// 0xfc
+	ColorButton	*m_pClothesButton_guess;	// 0x100
+	ColorButton	*m_pAoMDCButton_guess;	// 0x104
+	ColorButton	*m_pFacebookButton_guess;	// 0x108
+	ColorButton	*m_pCancelButton_guess;	// 0x10c
+	bool	m_bDonateArmed_guess;		// 0x110, the donate_mo.tga picture is shown
+	bool	m_bSoundtrack1Armed_guess;		// 0x111, the soundtrack1_mo.tga picture is shown
+	bool	m_bSoundtrack2Armed_guess;		// 0x112, the soundtrack2_mo.tga picture is shown
+	bool	m_bClothesArmed_guess;		// 0x113, the clothes_mo.tga picture is shown
+	bool	m_bAoMDCArmed_guess;		// 0x114, the aomdc_mo.tga picture is shown
+	bool	m_bFacebookArmed_guess;		// 0x115, the facebook_mo.tga picture is shown
+	bool	m_bCancelArmed_guess;		// 0x116, the cancel_mo.tga picture is shown
 };
 
 class CVGUIExtraMenuHandler_Command : public ActionSignal

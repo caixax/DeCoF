@@ -23,7 +23,7 @@
 #include <stdio.h>
 
 #include "vgui_TeamFortressViewport.h"
-#include "guess_HUDControl.h"
+#include "HUDControl_guess.h"
 
 DECLARE_MESSAGE( m_DeathNotice, DeathMsg );
 
@@ -170,7 +170,7 @@ int CHudDeathNotice :: MsgFunc_DeathMsg( const char *pszName, int iSize, void *p
 	char *victim_name = g_PlayerInfoList[ victim ].name;
 	if ( victim_name && gViewPort )
 	{
-		if ( gViewPort->guess_m_pHUDControl )
+		if ( gViewPort->m_pHUDControl_guess )
 		{
 			char szText[128];
 			int w, h;
@@ -178,12 +178,12 @@ int CHudDeathNotice :: MsgFunc_DeathMsg( const char *pszName, int iSize, void *p
 			strcpy( szText, victim_name );
 			strcat( szText, " died." );
 
-			gViewPort->guess_m_pHUDControl->guess_m_pPagerFont->getTextSize( szText, w, h );
-			gViewPort->guess_m_pHUDControl->guess_m_pDeathLabel->setSize( w, h );
-			gViewPort->guess_m_pHUDControl->guess_m_pDeathLabel->setPos( ScreenWidth - w - 5, 0 );
+			gViewPort->m_pHUDControl_guess->m_pPagerFont_guess->getTextSize( szText, w, h );
+			gViewPort->m_pHUDControl_guess->m_pDeathLabel_guess->setSize( w, h );
+			gViewPort->m_pHUDControl_guess->m_pDeathLabel_guess->setPos( ScreenWidth - w - 5, 0 );
 			ConsolePrint( szText );
-			gViewPort->guess_m_pHUDControl->guess_m_iDeathAlpha = 0;
-			gViewPort->guess_m_pHUDControl->guess_m_pDeathLabel->setText( szText );
+			gViewPort->m_pHUDControl_guess->m_iDeathAlpha_guess = 0;
+			gViewPort->m_pHUDControl_guess->m_pDeathLabel_guess->setText( szText );
 		}
 	}
 

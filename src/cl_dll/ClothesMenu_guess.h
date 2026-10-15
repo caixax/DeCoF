@@ -7,7 +7,7 @@
 #define _CLOTHESMENU_H
 using namespace vgui;
 
-#define guess_MAX_CLOTHES	13	// 12 are used
+#define MAX_CLOTHES_guess	13	// 12 are used
 
 class CClothesMenu : public Panel
 {
@@ -15,14 +15,14 @@ public:
 	CClothesMenu();
 	void Initialize();
 	void ActionSignal( int cmd );
-	int guess_KeyInput( int down, int keynum, const char *pszCurrentBinding );
+	int KeyInput_guess( int down, int keynum, const char *pszCurrentBinding );
 
-	void guess_UpdateButtons();
+	void UpdateButtons_guess();
 
 public:
-	float	guess_m_flNextClick;			// 0xbc, ActionSignal ignores clicks before this time
-	ColorButton	*guess_m_pClothesButton[guess_MAX_CLOTHES];	// 0xc0
-	int		guess_m_iUnlocked;				// 0xf4, bit field of the unlocked clothes, from the Clothes message
+	float	m_flNextClick_guess;			// 0xbc, ActionSignal ignores clicks before this time
+	ColorButton	*m_pClothesButton_guess[MAX_CLOTHES_guess];	// 0xc0
+	int		m_iUnlocked_guess;				// 0xf4, bit field of the unlocked clothes, from the Clothes message
 };
 
 class CClothesMenuHandler_Command : public ActionSignal

@@ -4,7 +4,7 @@
 #ifndef GUESS_CGCONTEXT_H
 #define GUESS_CGCONTEXT_H
 
-#include "guess_TextureManager.h"
+#include "TextureManager_guess.h"
 
 //=========================================================
 // Declarations this file takes from the NVIDIA Cg toolkit
@@ -89,66 +89,66 @@ void __cdecl cgGLSetStateMatrixParameter( CGparameter param, CGGLenum matrix, CG
 }
 
 // program types
-#define guess_CGTYPE_FRAGMENT	1
-#define guess_CGTYPE_VERTEX		2
+#define CGTYPE_FRAGMENT_guess	1
+#define CGTYPE_VERTEX_guess		2
 
-typedef struct guess_cgprogram_s
+typedef struct cgprogram_s_guess
 {
-	char		guess_name[32];
-	int			guess_type;
-	CGprogram	guess_program;
-	struct guess_cgprogram_s *guess_next;
-	struct guess_cgprogram_s *guess_prev;
-} guess_cgprogram_t;
+	char		name_guess[32];
+	int			type_guess;
+	CGprogram	program_guess;
+	struct cgprogram_s_guess *next_guess;
+	struct cgprogram_s_guess *prev_guess;
+} cgprogram_t_guess;
 
-class guess_CCgContext
+class CCgContext_guess
 {
 public:
-	guess_CCgContext();
-	~guess_CCgContext();
+	CCgContext_guess();
+	~CCgContext_guess();
 
-	guess_cgprogram_t *guess_AddProgram( const char *name, int type );
-	guess_cgprogram_t *guess_FindProgram( const char *name );
-	CGprofile guess_GetFragmentProfile( void );
-	bool guess_IsInitialized( void );
-	bool guess_IsProgramValid( const char *path, int type );
-	guess_cgprogram_t *guess_RemoveProgram( guess_cgprogram_t *program );
-	void guess_Shutdown( void );
-	bool guess_Init( void );
+	cgprogram_t_guess *AddProgram_guess( const char *name, int type );
+	cgprogram_t_guess *FindProgram_guess( const char *name );
+	CGprofile GetFragmentProfile_guess( void );
+	bool IsInitialized_guess( void );
+	bool IsProgramValid_guess( const char *path, int type );
+	cgprogram_t_guess *RemoveProgram_guess( cgprogram_t_guess *program );
+	void Shutdown_guess( void );
+	bool Init_guess( void );
 
-	void guess_EnableVertexProfile( void )
+	void EnableVertexProfile_guess( void )
 	{
-		if ( guess_g_TextureManager.guess_IsHardware() )
-			cgGLEnableProfile( guess_m_vertexProfile );
+		if ( g_TextureManager_guess.IsHardware_guess() )
+			cgGLEnableProfile( m_vertexProfile_guess );
 	}
-	void guess_EnableFragmentProfile( void )
+	void EnableFragmentProfile_guess( void )
 	{
-		if ( guess_g_TextureManager.guess_IsHardware() )
-			cgGLEnableProfile( guess_m_fragmentProfile );
+		if ( g_TextureManager_guess.IsHardware_guess() )
+			cgGLEnableProfile( m_fragmentProfile_guess );
 	}
-	void guess_DisableVertexProfile( void )
+	void DisableVertexProfile_guess( void )
 	{
-		if ( guess_g_TextureManager.guess_IsHardware() )
-			cgGLDisableProfile( guess_m_vertexProfile );
+		if ( g_TextureManager_guess.IsHardware_guess() )
+			cgGLDisableProfile( m_vertexProfile_guess );
 	}
-	void guess_DisableFragmentProfile( void )
+	void DisableFragmentProfile_guess( void )
 	{
-		if ( guess_g_TextureManager.guess_IsHardware() )
-			cgGLDisableProfile( guess_m_fragmentProfile );
+		if ( g_TextureManager_guess.IsHardware_guess() )
+			cgGLDisableProfile( m_fragmentProfile_guess );
 	}
-	void guess_BindProgram( guess_cgprogram_t *program )
+	void BindProgram_guess( cgprogram_t_guess *program )
 	{
-		if ( guess_g_TextureManager.guess_IsHardware() )
-			cgGLBindProgram( program->guess_program );
+		if ( g_TextureManager_guess.IsHardware_guess() )
+			cgGLBindProgram( program->program_guess );
 	}
 
-	CGcontext	guess_m_context;
-	CGprofile	guess_m_vertexProfile;
-	CGprofile	guess_m_fragmentProfile;
-	guess_cgprogram_t *guess_m_pPrograms;
-	bool		guess_m_bInitialized;
+	CGcontext	m_context_guess;
+	CGprofile	m_vertexProfile_guess;
+	CGprofile	m_fragmentProfile_guess;
+	cgprogram_t_guess *m_pPrograms_guess;
+	bool		m_bInitialized_guess;
 };
 
-extern guess_CCgContext guess_g_CgContext;
+extern CCgContext_guess g_CgContext_guess;
 
 #endif // GUESS_CGCONTEXT_H

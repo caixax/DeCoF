@@ -27,4 +27,4 @@
 ?RecursiveDrawWorld@@YAXPAUmnode_s@@@Z
 ?RendererTentsUpdate@@YAXXZ
 ?getCubeVector@@YAXHHHAAVVector@@@Z
-?guess_TextureTest@@YAXXZ
+?TextureTest_guess@@YAXXZ

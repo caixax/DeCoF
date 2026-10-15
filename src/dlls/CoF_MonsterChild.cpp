@@ -281,8 +281,8 @@ void CChild :: Spawn()
 	else
 		SET_MODEL(ENT(pev), "models/children.mdl");
 
-	int guess_iScale = CVAR_GET_FLOAT( "cof_monsterhumanscale" );
-	UTIL_SetSize( pev, Vector( -guess_iScale, -guess_iScale, 0 ), Vector( guess_iScale, guess_iScale, 65 ) );
+	int iScale_guess = CVAR_GET_FLOAT( "cof_monsterhumanscale" );
+	UTIL_SetSize( pev, Vector( -iScale_guess, -iScale_guess, 0 ), Vector( iScale_guess, iScale_guess, 65 ) );
 
 	pev->solid			= SOLID_SLIDEBOX;
 	pev->movetype		= MOVETYPE_STEP;

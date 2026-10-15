@@ -12,20 +12,20 @@
 #include "r_studioint.h"
 #include "glmanager.h"
 #include "gl_texloader.h"
-#include "guess_CgWater.h"
+#include "CgWater_guess.h"
 
 extern engine_studio_api_t IEngineStudio;
 extern int current_ext_texture_id;
-extern GLint guess_g_iWaterOldTexture;
+extern GLint g_iWaterOldTexture_guess;
 
-guess_CCgWater guess_g_CgWater;
+CCgWater_guess g_CgWater_guess;
 
-guess_CCgWater::guess_CCgWater()
+CCgWater_guess::CCgWater_guess()
 {
-	guess_m_bEnabled = false;
+	m_bEnabled_guess = false;
 }
 
-void guess_CCgWater::guess_DrawBlackQuad( void )
+void CCgWater_guess::DrawBlackQuad_guess( void )
 {
 	glMatrixMode( GL_MODELVIEW );
 	glPushMatrix();
@@ -59,13 +59,13 @@ void guess_CCgWater::guess_DrawBlackQuad( void )
 	glMatrixMode( GL_MODELVIEW );
 }
 
-void guess_CCgWater::guess_EndShaders( void )
+void CCgWater_guess::EndShaders_guess( void )
 {
-	guess_g_CgContext.guess_DisableFragmentProfile();
-	guess_g_CgContext.guess_DisableVertexProfile();
+	g_CgContext_guess.DisableFragmentProfile_guess();
+	g_CgContext_guess.DisableVertexProfile_guess();
 }
 
-void guess_CCgWater::guess_Init( void )
+void CCgWater_guess::Init_guess( void )
 {
 	if ( IEngineStudio.IsHardware() != 1 )
 		return;
@@ -73,42 +73,42 @@ void guess_CCgWater::guess_Init( void )
 	glActiveTextureARB = (PFNGLACTIVETEXTUREARBPROC)wglGetProcAddress( "glActiveTextureARB" );
 	glMultiTexCoord2fARB = (PFNGLMULTITEXCOORD2FARBPROC)wglGetProcAddress( "glMultiTexCoord2fARB" );
 
-	guess_m_bAllowTextureShader = true;
-	guess_m_bEnabled = true;
-	guess_m_bDrawn = false;
+	m_bAllowTextureShader_guess = true;
+	m_bEnabled_guess = true;
+	m_bDrawn_guess = false;
 
-	if ( !guess_g_TextureManager.guess_IsHardware() )
+	if ( !g_TextureManager_guess.IsHardware_guess() )
 	{
-		guess_m_bEnabled = false;
+		m_bEnabled_guess = false;
 		return;
 	}
 
 	if ( !(int)gEngfuncs.pfnGetCvarFloat( "cg_water" ) )
 	{
 		gEngfuncs.Con_DPrintf( "Disabling CG Effects\n" );
-		guess_m_bEnabled = false;
+		m_bEnabled_guess = false;
 	}
 
 	bool bTextureShader = true;
-	if ( !guess_IsExtensionSupported( "GL_NV_texture_shader", strdup( (const char *)glGetString( GL_EXTENSIONS ) ) ) )
+	if ( !IsExtensionSupported_guess( "GL_NV_texture_shader", strdup( (const char *)glGetString( GL_EXTENSIONS ) ) ) )
 		bTextureShader = false;
 
-	if ( !guess_m_bEnabled )
+	if ( !m_bEnabled_guess )
 		return;
 
-	guess_m_flTexWidth = 2;
-	while ( guess_m_flTexWidth < ScreenWidth )
-		guess_m_flTexWidth *= 2;
+	m_flTexWidth_guess = 2;
+	while ( m_flTexWidth_guess < ScreenWidth )
+		m_flTexWidth_guess *= 2;
 
-	guess_m_flTexHeight = 2;
-	while ( guess_m_flTexHeight < ScreenHeight )
-		guess_m_flTexHeight *= 2;
+	m_flTexHeight_guess = 2;
+	while ( m_flTexHeight_guess < ScreenHeight )
+		m_flTexHeight_guess *= 2;
 
-	guess_m_iSceneTexture = 256;
-	guess_g_TextureManager.guess_CreateTexture( guess_m_flTexWidth, guess_m_flTexHeight, &guess_m_iSceneTexture, GL_TEXTURE_2D, GL_RGB );
-	guess_g_TextureManager.guess_CreateTexture( guess_m_flTexWidth, guess_m_flTexHeight, &guess_m_iMaskTexture, GL_TEXTURE_2D, GL_RGB );
-	guess_g_TextureManager.guess_CreateTexture( 256, 256, &guess_m_iOffsetTexture, GL_TEXTURE_2D, GL_RGB );
-	guess_g_TextureManager.guess_CreateTexture( guess_m_flTexWidth, guess_m_flTexHeight, &guess_m_iDistortTexture, GL_TEXTURE_2D, GL_RGB );
+	m_iSceneTexture_guess = 256;
+	g_TextureManager_guess.CreateTexture_guess( m_flTexWidth_guess, m_flTexHeight_guess, &m_iSceneTexture_guess, GL_TEXTURE_2D, GL_RGB );
+	g_TextureManager_guess.CreateTexture_guess( m_flTexWidth_guess, m_flTexHeight_guess, &m_iMaskTexture_guess, GL_TEXTURE_2D, GL_RGB );
+	g_TextureManager_guess.CreateTexture_guess( 256, 256, &m_iOffsetTexture_guess, GL_TEXTURE_2D, GL_RGB );
+	g_TextureManager_guess.CreateTexture_guess( m_flTexWidth_guess, m_flTexHeight_guess, &m_iDistortTexture_guess, GL_TEXTURE_2D, GL_RGB );
 
 	unsigned char offsets[256][256][2];
 
@@ -121,30 +121,30 @@ void guess_CCgWater::guess_Init( void )
 		}
 	}
 
-	glBindTexture( GL_TEXTURE_2D, guess_m_iOffsetTexture );
+	glBindTexture( GL_TEXTURE_2D, m_iOffsetTexture_guess );
 
 	if ( bTextureShader )
 		glTexImage2D( GL_TEXTURE_2D, 0, GL_DSDT8_NV, 256, 256, 0, GL_DSDT_NV, GL_UNSIGNED_BYTE, offsets );
 	else
 		glTexImage2D( GL_TEXTURE_2D, 0, GL_LUMINANCE, 256, 256, 0, GL_LUMINANCE, GL_UNSIGNED_BYTE, offsets );
 
-	if ( !guess_m_iNoiseTexture )
-		guess_m_iNoiseTexture = current_ext_texture_id++;
-	CreateTexture( "textures/noise.tga", 1, guess_m_iNoiseTexture );
+	if ( !m_iNoiseTexture_guess )
+		m_iNoiseTexture_guess = current_ext_texture_id++;
+	CreateTexture( "textures/noise.tga", 1, m_iNoiseTexture_guess );
 
-	guess_m_pWaterVP = guess_g_CgContext.guess_AddProgram( "water_vp.cg", guess_CGTYPE_VERTEX );
+	m_pWaterVP_guess = g_CgContext_guess.AddProgram_guess( "water_vp.cg", CGTYPE_VERTEX_guess );
 
-	if ( guess_m_pWaterVP )
+	if ( m_pWaterVP_guess )
 	{
-		guess_m_pModelViewProj = cgGetNamedParameter( guess_m_pWaterVP->guess_program, "ModelViewProj" );
-		guess_m_pScreen = cgGetNamedParameter( guess_m_pWaterVP->guess_program, "flScreen" );
+		m_pModelViewProj_guess = cgGetNamedParameter( m_pWaterVP_guess->program_guess, "ModelViewProj" );
+		m_pScreen_guess = cgGetNamedParameter( m_pWaterVP_guess->program_guess, "flScreen" );
 	}
 	else
 		gEngfuncs.Con_Printf( "Error on vertex\n" );
 
 	const char *water, *black;
 
-	if ( guess_g_CgContext.guess_GetFragmentProfile() == CG_PROFILE_FP20 )
+	if ( g_CgContext_guess.GetFragmentProfile_guess() == CG_PROFILE_FP20 )
 	{
 		black = "fp20_black_fp.cg";
 		water = "fp20_water_fp.cg";
@@ -155,34 +155,34 @@ void guess_CCgWater::guess_Init( void )
 		water = "water_fp.cg";
 	}
 
-	guess_m_pWaterFP = guess_g_CgContext.guess_AddProgram( water, guess_CGTYPE_FRAGMENT );
-	guess_m_pBlackFP = guess_g_CgContext.guess_AddProgram( black, guess_CGTYPE_FRAGMENT );
-	guess_m_pBlackVP = guess_g_CgContext.guess_AddProgram( "black_vp.cg", guess_CGTYPE_VERTEX );
-	guess_m_pBlackModelViewProj = cgGetNamedParameter( guess_m_pBlackVP->guess_program, "ModelViewProj" );
+	m_pWaterFP_guess = g_CgContext_guess.AddProgram_guess( water, CGTYPE_FRAGMENT_guess );
+	m_pBlackFP_guess = g_CgContext_guess.AddProgram_guess( black, CGTYPE_FRAGMENT_guess );
+	m_pBlackVP_guess = g_CgContext_guess.AddProgram_guess( "black_vp.cg", CGTYPE_VERTEX_guess );
+	m_pBlackModelViewProj_guess = cgGetNamedParameter( m_pBlackVP_guess->program_guess, "ModelViewProj" );
 
-	if ( !guess_m_pBlackFP )
+	if ( !m_pBlackFP_guess )
 		gEngfuncs.Con_Printf( "Error Loading Black Shader\n" );
 
-	if ( guess_m_pWaterFP )
-		guess_m_pTexOffset = cgGetNamedParameter( guess_m_pWaterFP->guess_program, "TexOffset" );
+	if ( m_pWaterFP_guess )
+		m_pTexOffset_guess = cgGetNamedParameter( m_pWaterFP_guess->program_guess, "TexOffset" );
 	else
 		gEngfuncs.Con_Printf( "Error on fragment\n" );
 
 	glActiveTextureARB( GL_TEXTURE0_ARB );
 }
 
-void guess_CCgWater::guess_PostDraw( void )
+void CCgWater_guess::PostDraw_guess( void )
 {
-	if ( !guess_g_TextureManager.guess_IsHardware() )
+	if ( !g_TextureManager_guess.IsHardware_guess() )
 		return;
 
 	glActiveTextureARB( GL_TEXTURE1_ARB );
 	glDisable( GL_TEXTURE_2D );
-	glBindTexture( GL_TEXTURE_2D, guess_m_iSavedTexture1 );
+	glBindTexture( GL_TEXTURE_2D, m_iSavedTexture1_guess );
 
 	glActiveTextureARB( GL_TEXTURE2_ARB );
 	glDisable( GL_TEXTURE_2D );
-	glBindTexture( GL_TEXTURE_2D, guess_m_iSavedTexture2 );
+	glBindTexture( GL_TEXTURE_2D, m_iSavedTexture2_guess );
 
 	glActiveTextureARB( GL_TEXTURE3_ARB );
 	glDisable( GL_TEXTURE_2D );
@@ -190,47 +190,47 @@ void guess_CCgWater::guess_PostDraw( void )
 	glActiveTextureARB( GL_TEXTURE0_ARB );
 }
 
-void guess_CCgWater::guess_PreDraw( void )
+void CCgWater_guess::PreDraw_guess( void )
 {
-	if ( !guess_g_TextureManager.guess_IsHardware() )
+	if ( !g_TextureManager_guess.IsHardware_guess() )
 		return;
 
-	if ( !guess_m_iSavedTexture1 || !guess_m_iSavedTexture2 )
+	if ( !m_iSavedTexture1_guess || !m_iSavedTexture2_guess )
 		return;
 
 	glActiveTextureARB( GL_TEXTURE1_ARB );
-	glGetIntegerv( GL_TEXTURE_BINDING_2D, &guess_m_iSavedTexture1 );
+	glGetIntegerv( GL_TEXTURE_BINDING_2D, &m_iSavedTexture1_guess );
 
 	glActiveTextureARB( GL_TEXTURE2_ARB );
-	glGetIntegerv( GL_TEXTURE_BINDING_2D, &guess_m_iSavedTexture2 );
+	glGetIntegerv( GL_TEXTURE_BINDING_2D, &m_iSavedTexture2_guess );
 
 	glActiveTextureARB( GL_TEXTURE0_ARB );
 }
 
-void guess_CCgWater::guess_Render( void )
+void CCgWater_guess::Render_guess( void )
 {
-	if ( !guess_m_bEnabled )
-		guess_Init();
+	if ( !m_bEnabled_guess )
+		Init_guess();
 
-	guess_m_bDrawn = true;
+	m_bDrawn_guess = true;
 
-	if ( !guess_m_bEnabled )
+	if ( !m_bEnabled_guess )
 		return;
 
-	glGetIntegerv( GL_TEXTURE_BINDING_2D, &guess_g_iWaterOldTexture );
+	glGetIntegerv( GL_TEXTURE_BINDING_2D, &g_iWaterOldTexture_guess );
 
 	glDisable( GL_BLEND );
 	glEnable( GL_TEXTURE_2D );
 
 	// the scene
-	glBindTexture( GL_TEXTURE_2D, guess_m_iSceneTexture );
+	glBindTexture( GL_TEXTURE_2D, m_iSceneTexture_guess );
 	glCopyTexSubImage2D( GL_TEXTURE_2D, 0, 0, 0, 0, 0, ScreenWidth, ScreenHeight );
-	guess_DrawBlackQuad();
+	DrawBlackQuad_guess();
 
 	// the water surfaces with the scrolling noise texture
 	glDisable( GL_CULL_FACE );
 	glDepthMask( GL_FALSE );
-	glBindTexture( GL_TEXTURE_2D, guess_m_iNoiseTexture );
+	glBindTexture( GL_TEXTURE_2D, m_iNoiseTexture_guess );
 	glColor4f( 1, 1, 1, 1 );
 
 	int i;
@@ -309,9 +309,9 @@ void guess_CCgWater::guess_Render( void )
 	// distorted copy
 	glEnable( GL_CULL_FACE );
 	glDepthMask( GL_TRUE );
-	glBindTexture( GL_TEXTURE_2D, guess_m_iDistortTexture );
+	glBindTexture( GL_TEXTURE_2D, m_iDistortTexture_guess );
 	glCopyTexSubImage2D( GL_TEXTURE_2D, 0, 0, 0, 0, 0, ScreenWidth, ScreenHeight );
-	guess_DrawBlackQuad();
+	DrawBlackQuad_guess();
 
 	// the water mask
 	glDisable( GL_TEXTURE_2D );
@@ -351,42 +351,42 @@ void guess_CCgWater::guess_Render( void )
 
 	glEnable( GL_CULL_FACE );
 	glDepthMask( GL_FALSE );
-	glBindTexture( GL_TEXTURE_2D, guess_m_iMaskTexture );
+	glBindTexture( GL_TEXTURE_2D, m_iMaskTexture_guess );
 	glCopyTexSubImage2D( GL_TEXTURE_2D, 0, 0, 0, 0, 0, ScreenWidth, ScreenHeight );
-	guess_DrawBlackQuad();
+	DrawBlackQuad_guess();
 
 	// put the scene back
-	glBindTexture( GL_TEXTURE_2D, guess_m_iSceneTexture );
-	guess_RenderQuad();
+	glBindTexture( GL_TEXTURE_2D, m_iSceneTexture_guess );
+	RenderQuad_guess();
 
-	guess_g_CgContext.guess_EnableVertexProfile();
-	guess_g_CgContext.guess_EnableFragmentProfile();
+	g_CgContext_guess.EnableVertexProfile_guess();
+	g_CgContext_guess.EnableFragmentProfile_guess();
 
-	if ( guess_m_pWaterVP )
-		guess_g_CgContext.guess_BindProgram( guess_m_pWaterVP );
+	if ( m_pWaterVP_guess )
+		g_CgContext_guess.BindProgram_guess( m_pWaterVP_guess );
 	else
 		gEngfuncs.Con_Printf( "Error on Vertex\n" );
 
-	if ( guess_m_pWaterFP )
-		guess_g_CgContext.guess_BindProgram( guess_m_pWaterFP );
+	if ( m_pWaterFP_guess )
+		g_CgContext_guess.BindProgram_guess( m_pWaterFP_guess );
 	else
 		gEngfuncs.Con_Printf( "Error on fragment\n" );
 
 	glActiveTextureARB( GL_TEXTURE0_ARB );
 	glEnable( GL_TEXTURE_2D );
-	glBindTexture( GL_TEXTURE_2D, guess_m_iDistortTexture );
+	glBindTexture( GL_TEXTURE_2D, m_iDistortTexture_guess );
 
 	glActiveTextureARB( GL_TEXTURE1_ARB );
 	glEnable( GL_TEXTURE_2D );
-	glBindTexture( GL_TEXTURE_2D, guess_m_iOffsetTexture );
+	glBindTexture( GL_TEXTURE_2D, m_iOffsetTexture_guess );
 
 	glActiveTextureARB( GL_TEXTURE2_ARB );
 	glEnable( GL_TEXTURE_2D );
-	glBindTexture( GL_TEXTURE_2D, guess_m_iSceneTexture );
+	glBindTexture( GL_TEXTURE_2D, m_iSceneTexture_guess );
 
 	glActiveTextureARB( GL_TEXTURE3_ARB );
 	glEnable( GL_TEXTURE_2D );
-	glBindTexture( GL_TEXTURE_2D, guess_m_iMaskTexture );
+	glBindTexture( GL_TEXTURE_2D, m_iMaskTexture_guess );
 
 	glEnable( GL_BLEND );
 	glBlendFunc( GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA );
@@ -399,11 +399,11 @@ void guess_CCgWater::guess_Render( void )
 	glLoadIdentity();
 	glOrtho( 0, 1, 1, 0, 0.1f, 4096 );
 
-	cgGLSetStateMatrixParameter( guess_m_pModelViewProj, CG_GL_MODELVIEW_PROJECTION_MATRIX, CG_GL_MATRIX_IDENTITY );
+	cgGLSetStateMatrixParameter( m_pModelViewProj_guess, CG_GL_MODELVIEW_PROJECTION_MATRIX, CG_GL_MATRIX_IDENTITY );
 
 	float offset[4] = { 0, 0.05f, 0, 0.05f };
-	cgGLSetParameter4fv( guess_m_pTexOffset, offset );
-	cgGLSetParameter1f( guess_m_pScreen, 0.965f );
+	cgGLSetParameter4fv( m_pTexOffset_guess, offset );
+	cgGLSetParameter1f( m_pScreen_guess, 0.965f );
 
 	glDisable( GL_DEPTH_TEST );
 	glDisable( GL_CULL_FACE );
@@ -412,11 +412,11 @@ void guess_CCgWater::guess_Render( void )
 	glBegin( GL_QUADS );
 	glTexCoord2f( 0, 0 );
 	glVertex3f( 0, 1, -1 );
-	glTexCoord2f( ScreenWidth / guess_m_flTexWidth, 0 );
+	glTexCoord2f( ScreenWidth / m_flTexWidth_guess, 0 );
 	glVertex3f( 1, 1, -1 );
-	glTexCoord2f( ScreenWidth / guess_m_flTexWidth, ScreenHeight / guess_m_flTexHeight );
+	glTexCoord2f( ScreenWidth / m_flTexWidth_guess, ScreenHeight / m_flTexHeight_guess );
 	glVertex3f( 1, 0, -1 );
-	glTexCoord2f( 0, ScreenHeight / guess_m_flTexHeight );
+	glTexCoord2f( 0, ScreenHeight / m_flTexHeight_guess );
 	glVertex3f( 0, 0, -1 );
 	glEnd();
 
@@ -433,16 +433,16 @@ void guess_CCgWater::guess_Render( void )
 	glDisable( GL_TEXTURE_2D );
 	glActiveTextureARB( GL_TEXTURE0_ARB );
 
-	guess_g_CgContext.guess_DisableFragmentProfile();
-	guess_g_CgContext.guess_DisableVertexProfile();
+	g_CgContext_guess.DisableFragmentProfile_guess();
+	g_CgContext_guess.DisableVertexProfile_guess();
 
 	glEnable( GL_DEPTH_TEST );
 	glEnable( GL_CULL_FACE );
 	glDisable( GL_BLEND );
-	glBindTexture( GL_TEXTURE_2D, guess_g_iWaterOldTexture );
+	glBindTexture( GL_TEXTURE_2D, g_iWaterOldTexture_guess );
 }
 
-void guess_CCgWater::guess_RenderQuad( void )
+void CCgWater_guess::RenderQuad_guess( void )
 {
 	glMatrixMode( GL_MODELVIEW );
 	glPushMatrix();
@@ -460,11 +460,11 @@ void guess_CCgWater::guess_RenderQuad( void )
 	glBegin( GL_QUADS );
 	glTexCoord2f( 0, 0 );
 	glVertex3f( 0, 1, -1 );
-	glTexCoord2f( ScreenWidth / guess_m_flTexWidth, 0 );
+	glTexCoord2f( ScreenWidth / m_flTexWidth_guess, 0 );
 	glVertex3f( 1, 1, -1 );
-	glTexCoord2f( ScreenWidth / guess_m_flTexWidth, ScreenHeight / guess_m_flTexHeight );
+	glTexCoord2f( ScreenWidth / m_flTexWidth_guess, ScreenHeight / m_flTexHeight_guess );
 	glVertex3f( 1, 0, -1 );
-	glTexCoord2f( 0, ScreenHeight / guess_m_flTexHeight );
+	glTexCoord2f( 0, ScreenHeight / m_flTexHeight_guess );
 	glVertex3f( 0, 0, -1 );
 	glEnd();
 
@@ -478,29 +478,29 @@ void guess_CCgWater::guess_RenderQuad( void )
 	glMatrixMode( GL_MODELVIEW );
 }
 
-void guess_CCgWater::guess_SetBlackShader( void )
+void CCgWater_guess::SetBlackShader_guess( void )
 {
-	guess_g_CgContext.guess_EnableFragmentProfile();
-	guess_g_CgContext.guess_EnableVertexProfile();
+	g_CgContext_guess.EnableFragmentProfile_guess();
+	g_CgContext_guess.EnableVertexProfile_guess();
 
-	if ( guess_m_pBlackFP )
-		guess_g_CgContext.guess_BindProgram( guess_m_pBlackFP );
+	if ( m_pBlackFP_guess )
+		g_CgContext_guess.BindProgram_guess( m_pBlackFP_guess );
 
-	if ( guess_m_pBlackVP )
-		guess_g_CgContext.guess_BindProgram( guess_m_pBlackVP );
+	if ( m_pBlackVP_guess )
+		g_CgContext_guess.BindProgram_guess( m_pBlackVP_guess );
 
-	cgGLSetStateMatrixParameter( guess_m_pBlackModelViewProj, CG_GL_MODELVIEW_PROJECTION_MATRIX, CG_GL_MATRIX_IDENTITY );
+	cgGLSetStateMatrixParameter( m_pBlackModelViewProj_guess, CG_GL_MODELVIEW_PROJECTION_MATRIX, CG_GL_MATRIX_IDENTITY );
 }
 
-void guess_CCgWater::guess_UpdateEntities( void )
+void CCgWater_guess::UpdateEntities_guess( void )
 {
 	if ( !(int)gEngfuncs.pfnGetCvarFloat( "cg_water" ) )
 	{
-		guess_m_bEnabled = false;
+		m_bEnabled_guess = false;
 		return;
 	}
 
-	if ( !guess_m_bEnabled )
+	if ( !m_bEnabled_guess )
 		return;
 
 	for ( int i = 0; i < 1024; i++ )

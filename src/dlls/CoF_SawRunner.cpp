@@ -34,7 +34,7 @@
 #define SAWRUNNER_FLINCH_DELAY			2		// at most one flinch every n secs
 
 // CoF: a monster class after CLASS_TERROR (the 1.6a relationship table has 19 classes); no name survives
-#define guess_CLASS_COF_MONSTER			18
+#define CLASS_COF_MONSTER_guess			18
 
 class CSawrunner : public CBaseMonster
 {
@@ -103,7 +103,7 @@ const char *CSawrunner::pPainSounds[] =
 //=========================================================
 int	CSawrunner :: Classify ( void )
 {
-	return m_iClass?m_iClass:guess_CLASS_COF_MONSTER;
+	return m_iClass?m_iClass:CLASS_COF_MONSTER_guess;
 }
 
 //=========================================================
@@ -261,8 +261,8 @@ void CSawrunner :: Spawn()
 	else
 		SET_MODEL(ENT(pev), "models/sawrunner.mdl");
 
-	int guess_iScale = CVAR_GET_FLOAT( "cof_monsterhumanscale" );
-	UTIL_SetSize( pev, Vector( -guess_iScale, -guess_iScale, 0 ), Vector( guess_iScale, guess_iScale, 72 ) );
+	int iScale_guess = CVAR_GET_FLOAT( "cof_monsterhumanscale" );
+	UTIL_SetSize( pev, Vector( -iScale_guess, -iScale_guess, 0 ), Vector( iScale_guess, iScale_guess, 72 ) );
 
 	pev->solid			= SOLID_SLIDEBOX;
 	pev->movetype		= MOVETYPE_STEP;

@@ -14,11 +14,11 @@ public:
 	void Initialize();
 
 public:
-	int		guess_m_iScope;				// 0xbc, Scope message
-	Image	*guess_m_pScopeImage;		// 0xc0, gfx/vgui/telescope_scope.tga
-	ImagePanel	*guess_m_pScopePanel;	// 0xc4
+	int		m_iScope_guess;				// 0xbc, Scope message
+	Image	*m_pScopeImage_guess;		// 0xc0, gfx/vgui/telescope_scope.tga
+	ImagePanel	*m_pScopePanel_guess;	// 0xc4
 };
 
-void guess_ScopeInit();
+void ScopeInit_guess();
 
 #endif // _SCOPE_H

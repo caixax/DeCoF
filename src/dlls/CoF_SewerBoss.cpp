@@ -243,8 +243,8 @@ void CSewerboss :: Spawn()
 		SET_MODEL(ENT(pev), STRING(pev->model));
 	else
 		SET_MODEL(ENT(pev), "models/sewer_boss.mdl");
-	int guess_iScale = (int)CVAR_GET_FLOAT( "cof_monsterhumanscale" ) * 2;
-	UTIL_SetSize( pev, Vector( -guess_iScale, -guess_iScale, 0 ), Vector( guess_iScale, guess_iScale, 100 ) );
+	int iScale_guess = (int)CVAR_GET_FLOAT( "cof_monsterhumanscale" ) * 2;
+	UTIL_SetSize( pev, Vector( -iScale_guess, -iScale_guess, 0 ), Vector( iScale_guess, iScale_guess, 100 ) );
 
 	pev->solid			= SOLID_SLIDEBOX;
 	pev->movetype		= MOVETYPE_STEP;

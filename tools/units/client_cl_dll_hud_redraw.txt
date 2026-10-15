@@ -4,10 +4,10 @@
 ?DrawHudNumberString@CHud@@QAEHHHHHHHH@Z
 ?DrawHudStringReverse@CHud@@QAEHHHHPADHHH@Z
 ?DrawBlurTest@CHud@@QAEXM@Z
-?guess_RedrawFrame@@YAXXZ
-?guess_IsViewEntityActive@@YA_NXZ
+?RedrawFrame_guess@@YAXXZ
+?IsViewEntityActive_guess@@YA_NXZ
 ?Think@CHud@@QAEXXZ
-?guess_AverageFPS@CHud@@QAEHH@Z
-?guess_DrawNewFade@CHud@@QAEXM@Z
+?AverageFPS_guess@CHud@@QAEHH@Z
+?DrawNewFade_guess@CHud@@QAEXM@Z
 ?DrawHudString@CHud@@QAEHHHHPADHHH@Z
 ?DrawHudNumber@CHud@@QAEHHHHHHHH@Z

@@ -51,18 +51,18 @@ public:
 	bool	m_bStopping_guess;
 };
 
-void guess_IrrKlangInit( void );
-void guess_MP3_Shutdown( void );
-void guess_IrrKlangFrame( void );
+void IrrKlangInit_guess( void );
+void MP3_Shutdown_guess( void );
+void IrrKlangFrame_guess( void );
 void IrrKlangInitialize_guess( void );
-bool guess_IrrKlangIsPaused( void );
-void guess_IrrKlangPlay( const char *pszFile );
-void guess_IrrKlangPlaySFX( const char *pszFile, int iType, bool bFlag, vec3_t vecOrigin );
-void guess_IrrKlangSetParams( float flParm1, float flParm2, float flParm3, float flParm4 );
-void guess_IrrKlangSetLoop( bool bLoop );
-void guess_IrrKlangSetPaused( bool bPaused );
-void guess_IrrKlangSetStopping( bool bStopping );
-void guess_IrrKlangStop( float flFadeTime );
+bool IrrKlangIsPaused_guess( void );
+void IrrKlangPlay_guess( const char *pszFile );
+void IrrKlangPlaySFX_guess( const char *pszFile, int iType, bool bFlag, vec3_t vecOrigin );
+void IrrKlangSetParams_guess( float flParm1, float flParm2, float flParm3, float flParm4 );
+void IrrKlangSetLoop_guess( bool bLoop );
+void IrrKlangSetPaused_guess( bool bPaused );
+void IrrKlangSetStopping_guess( bool bStopping );
+void IrrKlangStop_guess( float flFadeTime );
 
 // not in 1.6a: cdll_int.cpp still defines it and hud_redraw.cpp still uses it
 #endif

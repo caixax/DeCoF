@@ -50,7 +50,7 @@ TeamFortressViewport *gViewPort = NULL;
 void InitInput (void);
 void EV_HookEvents( void );
 void IN_Commands( void );
-void guess_IrrKlangFrame( void );
+void IrrKlangFrame_guess( void );
 
 /*
 ========================== 
@@ -266,7 +266,7 @@ void DLLEXPORT HUD_Frame( double time )
 {
 	ServersThink( time );
 
-	guess_IrrKlangFrame();
+	IrrKlangFrame_guess();
 
 	GetClientVoiceMgr()->Frame(time);
 }

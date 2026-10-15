@@ -282,7 +282,7 @@ void CGameRules::RefreshSkillData ( void )
 	gSkillData.DmgP345 = GetSkillCvar( "sk_cof_p345" );
 	gSkillData.DmgRifle = GetSkillCvar( "sk_cof_rifle" );
 	gSkillData.DmgRevolver = GetSkillCvar( "sk_cof_revolver" );
-	gSkillData.guess_DmgG43 = GetSkillCvar( "sk_cof_g43" );
+	gSkillData.DmgG43_guess = GetSkillCvar( "sk_cof_g43" );
 
 	// HEALTH/CHARGE
 	gSkillData.suitchargerCapacity = GetSkillCvar( "sk_suitcharger" );
@@ -358,14 +358,14 @@ CGameRules *InstallGameRules( void )
 //=========================================================
 // CoF 1.6a: set by CHalfLifeRules only (the byte at +0xDC)
 //=========================================================
-bool CGameRules::guess_IsMapperMode( void )
+bool CGameRules::IsMapperMode_guess( void )
 {
 	CHalfLifeRules *pRules = dynamic_cast<CHalfLifeRules *>( this );
 
 	if ( !pRules )
 		return false;
 
-	return pRules->guess_m_bUnknownDC;
+	return pRules->m_bUnknownDC_guess;
 }
 
 //=========================================================

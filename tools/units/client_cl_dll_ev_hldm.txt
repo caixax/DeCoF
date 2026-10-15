@@ -32,10 +32,10 @@ _EV_TripmineFire
 ?EV_TFC_IsAllyTeam@@YAHHH@Z
 _EV_FireGlock1
 __vsnprintf_l
-_guess_EV_ViewPunch
-_guess_EV_WeaponShoot
-_guess_EV_ClientSound
-_guess_EV_ServerMuzzleFlash
-_guess_EV_RevolverShells
+_EV_ViewPunch_guess
+_EV_WeaponShoot_guess
+_EV_ClientSound_guess
+_EV_ServerMuzzleFlash_guess
+_EV_RevolverShells_guess
 _EV_FireGlock2
-?guess_V_ViewPunch@@YAXMMM@Z
+?V_ViewPunch_guess@@YAXMMM@Z

@@ -208,8 +208,8 @@ int CVoiceStatus::Init(
 
 	for( int iPlayer = 1; iPlayer <= MAX_PLAYERS; iPlayer++ )
 	{
-		guess_m_bPlayerWasTalking[iPlayer] = false;
-		guess_m_bPlayerTalking[iPlayer] = false;
+		m_bPlayerWasTalking_guess[iPlayer] = false;
+		m_bPlayerTalking_guess[iPlayer] = false;
 	}
 
 	assert(!g_pInternalVoiceStatus);
@@ -424,20 +424,20 @@ void CVoiceStatus::UpdateSpeakerStatus(int entindex, qboolean bTalking)
 			// Enable voice for them automatically if they try to talk.
 			gEngfuncs.pfnClientCmd( "voice_modenable 1" );
 
-			guess_m_bPlayerTalking[1] = true;
-			if( guess_m_bPlayerWasTalking[1] != guess_m_bPlayerTalking[1] )
+			m_bPlayerTalking_guess[1] = true;
+			if( m_bPlayerWasTalking_guess[1] != m_bPlayerTalking_guess[1] )
 			{
 				gEngfuncs.pfnPlaySoundByName( "weapons/radio/radio_start.wav", 1 );
-				guess_m_bPlayerWasTalking[1] = guess_m_bPlayerTalking[1];
+				m_bPlayerWasTalking_guess[1] = m_bPlayerTalking_guess[1];
 			}
 		}
 		else
 		{
-			guess_m_bPlayerTalking[1] = false;
-			if( guess_m_bPlayerWasTalking[1] != guess_m_bPlayerTalking[1] )
+			m_bPlayerTalking_guess[1] = false;
+			if( m_bPlayerWasTalking_guess[1] != m_bPlayerTalking_guess[1] )
 			{
 				gEngfuncs.pfnPlaySoundByName( "weapons/radio/radio_end.wav", 1 );
-				guess_m_bPlayerWasTalking[1] = guess_m_bPlayerTalking[1];
+				m_bPlayerWasTalking_guess[1] = m_bPlayerTalking_guess[1];
 			}
 		}
 	}
@@ -457,11 +457,11 @@ void CVoiceStatus::UpdateSpeakerStatus(int entindex, qboolean bTalking)
 			m_VoicePlayers[iClient] = true;
 			m_VoiceEnabledPlayers[iClient] = true;
 
-			guess_m_bPlayerTalking[entindex] = true;
-			if( guess_m_bPlayerWasTalking[entindex] != guess_m_bPlayerTalking[entindex] )
+			m_bPlayerTalking_guess[entindex] = true;
+			if( m_bPlayerWasTalking_guess[entindex] != m_bPlayerTalking_guess[entindex] )
 			{
 				gEngfuncs.pfnPlaySoundByName( "weapons/radio/radio_start.wav", 0.5 );
-				guess_m_bPlayerWasTalking[entindex] = guess_m_bPlayerTalking[entindex];
+				m_bPlayerWasTalking_guess[entindex] = m_bPlayerTalking_guess[entindex];
 			}
 
 			// If we don't have a label for this guy yet, then create one.
@@ -502,11 +502,11 @@ void CVoiceStatus::UpdateSpeakerStatus(int entindex, qboolean bTalking)
 		{
 			m_VoicePlayers[iClient] = false;
 
-			guess_m_bPlayerTalking[entindex] = false;
-			if( guess_m_bPlayerWasTalking[entindex] != guess_m_bPlayerTalking[entindex] )
+			m_bPlayerTalking_guess[entindex] = false;
+			if( m_bPlayerWasTalking_guess[entindex] != m_bPlayerTalking_guess[entindex] )
 			{
 				gEngfuncs.pfnPlaySoundByName( "weapons/radio/radio_end.wav", 0.5 );
-				guess_m_bPlayerWasTalking[entindex] = guess_m_bPlayerTalking[entindex];
+				m_bPlayerWasTalking_guess[entindex] = m_bPlayerTalking_guess[entindex];
 			}
 
 			// If we have a label for this guy, kill it.

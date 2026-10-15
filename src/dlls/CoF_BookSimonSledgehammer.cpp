@@ -30,9 +30,9 @@ extern int gmsgParticle;
 //=========================================================
 // Monster's Anim Events Go Here
 //=========================================================
-#define	guess_BOOKSIMON_AE_HIT				0x01
-#define	guess_BOOKSIMON_AE_KILL				0x02
-#define	guess_BOOKSIMON_AE_KILL2			0x03
+#define	BOOKSIMON_AE_HIT_guess				0x01
+#define	BOOKSIMON_AE_KILL_guess				0x02
+#define	BOOKSIMON_AE_KILL2_guess			0x03
 
 class CBookSimonSledgehammer : public CBaseMonster
 {
@@ -178,7 +178,7 @@ void CBookSimonSledgehammer :: HandleAnimEvent( MonsterEvent_t *pEvent )
 {
 	switch( pEvent->event )
 	{
-		case guess_BOOKSIMON_AE_HIT:
+		case BOOKSIMON_AE_HIT_guess:
 		{
 			CBaseEntity *pHurt = CheckTraceHullAttack( 70, 30, DMG_CLUB, false, 0 );
 
@@ -189,7 +189,7 @@ void CBookSimonSledgehammer :: HandleAnimEvent( MonsterEvent_t *pEvent )
 		}
 		break;
 
-		case guess_BOOKSIMON_AE_KILL:
+		case BOOKSIMON_AE_KILL_guess:
 		{
 			CBaseEntity *pHurt = CheckTraceHullAttack( 70, 1, DMG_CLUB, false, 0 );
 
@@ -202,7 +202,7 @@ void CBookSimonSledgehammer :: HandleAnimEvent( MonsterEvent_t *pEvent )
 		}
 		break;
 
-		case guess_BOOKSIMON_AE_KILL2:
+		case BOOKSIMON_AE_KILL2_guess:
 		{
 			CBaseEntity *pHurt = CheckTraceHullAttack( 70, 1, DMG_CLUB, false, 0 );
 

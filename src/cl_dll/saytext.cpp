@@ -26,7 +26,7 @@
 #include <stdio.h>
 
 #include "vgui_TeamFortressViewport.h"
-#include "guess_HUDControl.h"
+#include "HUDControl_guess.h"
 
 extern float *GetClientColor( int clientIndex );
 
@@ -141,10 +141,10 @@ int CHudSayText :: Draw( float flTime )
 
 	// Cry of Fear: the lines are drawn by the labels of the HUD panel (the text, without its
 	// color byte, is passed as the format string)
-	if ( gViewPort && gViewPort->guess_m_pHUDControl )
+	if ( gViewPort && gViewPort->m_pHUDControl_guess )
 	{
 		for ( i = 0; i < MAX_LINES; i++ )
-			gViewPort->guess_m_pHUDControl->guess_m_pSayTextLabel[i]->setText( g_szLineBuffer[i] + 1 );
+			gViewPort->m_pHUDControl_guess->m_pSayTextLabel_guess[i]->setText( g_szLineBuffer[i] + 1 );
 	}
 
 	return 1;

@@ -26,12 +26,16 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import name_unit  # noqa: E402
 
 PAT = re.compile(r"(?<![a-z0-9_])(_?)guess_([A-Za-z0-9_]+)")
+# names built on top of a guessed name: __CmdFunc_guess_X, __MsgFunc_guess_X,
+# and constructors and destructors ??0guess_CFoo / ??1guess_CFoo
+PAT2 = re.compile(r"(__CmdFunc_|__MsgFunc_|\?\?[0-9])guess_([A-Za-z0-9_]+)")
 
 
 def convert(text):
     # guess_X -> X_guess; a C name _guess_X -> _X_guess; inside decorated
     # names a type code letter may come first (...@@3Vguess_CFoo@@A); keep
     # the guess: attribution prefix (no underscore) untouched
+    text = PAT2.sub(lambda m: "%s%s_guess" % (m.group(1), m.group(2)), text)
     return PAT.sub(lambda m: "%s%s_guess" % (m.group(1), m.group(2)), text)
 
 
@@ -59,6 +63,7 @@ def main():
             if new != text:
                 changed += 1
                 names.update(m.group(0) for m in PAT.finditer(text))
+                names.update(m.group(0) for m in PAT2.finditer(text))
                 if write:
                     open(f, "wb").write(new.encode("latin-1"))
     finally:

@@ -6,8 +6,8 @@
 #include "hud.h"
 #include "cl_util.h"
 #include "glmanager.h"
-#include "guess_TextureManager.h"
-#include "guess_PBuffer.h"
+#include "TextureManager_guess.h"
+#include "PBuffer_guess.h"
 
 //=========================================================
 // Declarations this file takes from wglext.h
@@ -55,32 +55,32 @@ PFNWGLBINDTEXIMAGEARBPROC			wglBindTexImageARB = NULL;
 PFNWGLRELEASETEXIMAGEARBPROC		wglReleaseTexImageARB = NULL;
 
 // the string is not stringized: the message prints "#funcname()" (original bug)
-#define guess_INIT_ENTRY_POINT( funcname, type )	\
+#define INIT_ENTRY_POINT_guess( funcname, type )	\
 	funcname = (type)wglGetProcAddress( #funcname );	\
 	if ( !funcname )	\
 		gEngfuncs.Con_Printf( "#funcname() not Initialized!\n" );
 
-guess_CPBuffer guess_g_PBuffer;
+CPBuffer_guess g_PBuffer_guess;
 
-guess_CPBuffer::guess_CPBuffer()
+CPBuffer_guess::CPBuffer_guess()
 {
-	guess_m_bValid = true;
+	m_bValid_guess = true;
 }
 
-guess_CPBuffer::~guess_CPBuffer()
+CPBuffer_guess::~CPBuffer_guess()
 {
 }
 
-void guess_CPBuffer::guess_BindTexture( void )
+void CPBuffer_guess::BindTexture_guess( void )
 {
-	if ( !wglBindTexImageARB( guess_m_hPBuffer, WGL_FRONT_LEFT_ARB ) )
+	if ( !wglBindTexImageARB( m_hPBuffer_guess, WGL_FRONT_LEFT_ARB ) )
 		gEngfuncs.Con_Printf( "Couldnt bind pbuffer to render texture\n" );
 }
 
-void guess_CPBuffer::guess_Create( void )
+void CPBuffer_guess::Create_guess( void )
 {
-	guess_m_hWindowDC = wglGetCurrentDC();
-	guess_m_hWindowRC = wglGetCurrentContext();
+	m_hWindowDC_guess = wglGetCurrentDC();
+	m_hWindowRC_guess = wglGetCurrentContext();
 
 	int attribs[] =
 	{
@@ -98,12 +98,12 @@ void guess_CPBuffer::guess_Create( void )
 	int format;
 	UINT count = 0;
 
-	wglChoosePixelFormatARB( guess_m_hWindowDC, attribs, NULL, 1, &format, &count );
+	wglChoosePixelFormatARB( m_hWindowDC_guess, attribs, NULL, 1, &format, &count );
 
 	if ( !count )
 	{
 		gEngfuncs.Con_Printf( "Problem Finding Pixel Format\n" );
-		guess_m_bValid = false;
+		m_bValid_guess = false;
 	}
 
 	int pbattribs[] =
@@ -113,56 +113,56 @@ void guess_CPBuffer::guess_Create( void )
 		0
 	};
 
-	guess_m_iWidth = 1;
-	while ( guess_m_iWidth < ScreenWidth )
-		guess_m_iWidth *= 2;
-	guess_m_iHeight = guess_m_iWidth;
+	m_iWidth_guess = 1;
+	while ( m_iWidth_guess < ScreenWidth )
+		m_iWidth_guess *= 2;
+	m_iHeight_guess = m_iWidth_guess;
 
-	guess_g_TextureManager.guess_CreateTexture( guess_m_iWidth, guess_m_iHeight, &guess_m_iTexture, GL_TEXTURE_2D, GL_RGBA );
+	g_TextureManager_guess.CreateTexture_guess( m_iWidth_guess, m_iHeight_guess, &m_iTexture_guess, GL_TEXTURE_2D, GL_RGBA );
 
-	guess_m_hPBuffer = wglCreatePbufferARB( guess_m_hWindowDC, format, guess_m_iWidth, guess_m_iHeight, pbattribs );
-	guess_m_hDC = wglGetPbufferDCARB( guess_m_hPBuffer );
-	guess_m_hRC = wglCreateContext( guess_m_hDC );
+	m_hPBuffer_guess = wglCreatePbufferARB( m_hWindowDC_guess, format, m_iWidth_guess, m_iHeight_guess, pbattribs );
+	m_hDC_guess = wglGetPbufferDCARB( m_hPBuffer_guess );
+	m_hRC_guess = wglCreateContext( m_hDC_guess );
 
-	if ( !guess_m_hPBuffer )
+	if ( !m_hPBuffer_guess )
 	{
 		gEngfuncs.Con_Printf( "Problem Creating PBuffer\n" );
-		guess_m_bValid = false;
+		m_bValid_guess = false;
 	}
 
 	int width, height;
-	wglQueryPbufferARB( guess_m_hPBuffer, WGL_PBUFFER_WIDTH_ARB, &width );
-	wglQueryPbufferARB( guess_m_hPBuffer, WGL_PBUFFER_HEIGHT_ARB, &height );
+	wglQueryPbufferARB( m_hPBuffer_guess, WGL_PBUFFER_WIDTH_ARB, &width );
+	wglQueryPbufferARB( m_hPBuffer_guess, WGL_PBUFFER_HEIGHT_ARB, &height );
 
-	if ( height != guess_m_iHeight || width != guess_m_iWidth )
+	if ( height != m_iHeight_guess || width != m_iWidth_guess )
 	{
 		gEngfuncs.Con_Printf( "Pbuffer Size doesnt match\n" );
-		guess_m_bValid = false;
+		m_bValid_guess = false;
 	}
 
-	if ( !wglMakeCurrent( guess_m_hDC, guess_m_hRC ) )
+	if ( !wglMakeCurrent( m_hDC_guess, m_hRC_guess ) )
 	{
 		gEngfuncs.Con_Printf( "Couldnt make Pbuffer Current\n" );
-		guess_m_bValid = false;
+		m_bValid_guess = false;
 	}
 
-	guess_SwitchToWindow();
+	SwitchToWindow_guess();
 }
 
-void guess_CPBuffer::guess_MakeCurrent( void )
+void CPBuffer_guess::MakeCurrent_guess( void )
 {
 	int lost = 0;
 
-	wglQueryPbufferARB( guess_m_hPBuffer, WGL_PBUFFER_LOST_ARB, &lost );
+	wglQueryPbufferARB( m_hPBuffer_guess, WGL_PBUFFER_LOST_ARB, &lost );
 
 	if ( lost )
 		gEngfuncs.Con_Printf( "Pbuffer was Lost\n" );
 
-	if ( !wglMakeCurrent( guess_m_hDC, guess_m_hRC ) )
+	if ( !wglMakeCurrent( m_hDC_guess, m_hRC_guess ) )
 		gEngfuncs.Con_Printf( "Couldnt make Pbuffer Current\n" );
 }
 
-void guess_CPBuffer::guess_Prepare( void )
+void CPBuffer_guess::Prepare_guess( void )
 {
 	wglGetExtensionsStringARB = (PFNWGLGETEXTENSIONSSTRINGARBPROC)wglGetProcAddress( "wglGetExtensionsStringARB" );
 
@@ -171,41 +171,41 @@ void guess_CPBuffer::guess_Prepare( void )
 
 	const char *extensions = wglGetExtensionsStringARB( wglGetCurrentDC() );
 
-	if ( !guess_IsExtensionSupported( "WGL_ARB_pixel_format", extensions ) || !guess_IsExtensionSupported( "WGL_ARB_pbuffer", extensions ) )
+	if ( !IsExtensionSupported_guess( "WGL_ARB_pixel_format", extensions ) || !IsExtensionSupported_guess( "WGL_ARB_pbuffer", extensions ) )
 	{
-		guess_m_bValid = false;
+		m_bValid_guess = false;
 		return;
 	}
 
-	if ( !guess_m_bValid )
+	if ( !m_bValid_guess )
 		return;
 
-	guess_INIT_ENTRY_POINT( wglCreatePbufferARB, PFNWGLCREATEPBUFFERARBPROC );
-	guess_INIT_ENTRY_POINT( wglGetPbufferDCARB, PFNWGLGETPBUFFERDCARBPROC );
-	guess_INIT_ENTRY_POINT( wglReleasePbufferDCARB, PFNWGLRELEASEPBUFFERDCARBPROC );
-	guess_INIT_ENTRY_POINT( wglDestroyPbufferARB, PFNWGLDESTROYPBUFFERARBPROC );
-	guess_INIT_ENTRY_POINT( wglQueryPbufferARB, PFNWGLQUERYPBUFFERARBPROC );
-	guess_INIT_ENTRY_POINT( wglGetPixelFormatAttribivARB, PFNWGLGETPIXELFORMATATTRIBIVARBPROC );
-	guess_INIT_ENTRY_POINT( wglGetPixelFormatAttribfvARB, PFNWGLGETPIXELFORMATATTRIBFVARBPROC );
-	guess_INIT_ENTRY_POINT( wglChoosePixelFormatARB, PFNWGLCHOOSEPIXELFORMATARBPROC );
-	guess_INIT_ENTRY_POINT( wglBindTexImageARB, PFNWGLBINDTEXIMAGEARBPROC );
-	guess_INIT_ENTRY_POINT( wglReleaseTexImageARB, PFNWGLRELEASETEXIMAGEARBPROC );
+	INIT_ENTRY_POINT_guess( wglCreatePbufferARB, PFNWGLCREATEPBUFFERARBPROC );
+	INIT_ENTRY_POINT_guess( wglGetPbufferDCARB, PFNWGLGETPBUFFERDCARBPROC );
+	INIT_ENTRY_POINT_guess( wglReleasePbufferDCARB, PFNWGLRELEASEPBUFFERDCARBPROC );
+	INIT_ENTRY_POINT_guess( wglDestroyPbufferARB, PFNWGLDESTROYPBUFFERARBPROC );
+	INIT_ENTRY_POINT_guess( wglQueryPbufferARB, PFNWGLQUERYPBUFFERARBPROC );
+	INIT_ENTRY_POINT_guess( wglGetPixelFormatAttribivARB, PFNWGLGETPIXELFORMATATTRIBIVARBPROC );
+	INIT_ENTRY_POINT_guess( wglGetPixelFormatAttribfvARB, PFNWGLGETPIXELFORMATATTRIBFVARBPROC );
+	INIT_ENTRY_POINT_guess( wglChoosePixelFormatARB, PFNWGLCHOOSEPIXELFORMATARBPROC );
+	INIT_ENTRY_POINT_guess( wglBindTexImageARB, PFNWGLBINDTEXIMAGEARBPROC );
+	INIT_ENTRY_POINT_guess( wglReleaseTexImageARB, PFNWGLRELEASETEXIMAGEARBPROC );
 
-	guess_Create();
+	Create_guess();
 }
 
-void guess_CPBuffer::guess_ReleaseTexture( void )
+void CPBuffer_guess::ReleaseTexture_guess( void )
 {
-	if ( !wglReleaseTexImageARB( guess_m_hPBuffer, WGL_FRONT_LEFT_ARB ) )
+	if ( !wglReleaseTexImageARB( m_hPBuffer_guess, WGL_FRONT_LEFT_ARB ) )
 		gEngfuncs.Con_Printf( "Couldnt release pbuffer to render texture\n" );
 }
 
-void guess_CPBuffer::guess_Shutdown( void )
+void CPBuffer_guess::Shutdown_guess( void )
 {
 }
 
-void guess_CPBuffer::guess_SwitchToWindow( void )
+void CPBuffer_guess::SwitchToWindow_guess( void )
 {
-	if ( !wglMakeCurrent( guess_m_hWindowDC, guess_m_hWindowRC ) )
+	if ( !wglMakeCurrent( m_hWindowDC_guess, m_hWindowRC_guess ) )
 		gEngfuncs.Con_Printf( "Couldnt Restore Renderer\n" );
 }

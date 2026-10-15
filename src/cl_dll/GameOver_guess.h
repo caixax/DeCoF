@@ -21,18 +21,18 @@ protected:
 	virtual void solve();
 
 public:
-	Image	*guess_m_pImage;			// 0xbc, gfx/vgui/game_over.tga
-	ImagePanel	*guess_m_pPanel;		// 0xc0, parent of the buttons
-	Image	*guess_m_pLoadImage;		// 0xc4, gfx/vgui/game_over_load.tga
-	ImagePanel	*guess_m_pLoad;			// 0xc8
-	Image	*guess_m_pExitImage;		// 0xcc, gfx/vgui/game_over_exit.tga
-	ImagePanel	*guess_m_pExit;			// 0xd0
-	ColorButton	*guess_m_pLoadButton;	// 0xd4
-	ColorButton	*guess_m_pExitButton;	// 0xd8
-	char	guess_m_szCustomDoc[256];	// 0xdc, map of the CustomDoc message, restarted in doctor mode
-	float	guess_m_flAlpha;			// 0x1dc, fades the pictures in
-	bool	guess_m_bLoadArmed;			// 0x1e0
-	bool	guess_m_bExitArmed;			// 0x1e1
+	Image	*m_pImage_guess;			// 0xbc, gfx/vgui/game_over.tga
+	ImagePanel	*m_pPanel_guess;		// 0xc0, parent of the buttons
+	Image	*m_pLoadImage_guess;		// 0xc4, gfx/vgui/game_over_load.tga
+	ImagePanel	*m_pLoad_guess;			// 0xc8
+	Image	*m_pExitImage_guess;		// 0xcc, gfx/vgui/game_over_exit.tga
+	ImagePanel	*m_pExit_guess;			// 0xd0
+	ColorButton	*m_pLoadButton_guess;	// 0xd4
+	ColorButton	*m_pExitButton_guess;	// 0xd8
+	char	m_szCustomDoc_guess[256];	// 0xdc, map of the CustomDoc message, restarted in doctor mode
+	float	m_flAlpha_guess;			// 0x1dc, fades the pictures in
+	bool	m_bLoadArmed_guess;			// 0x1e0
+	bool	m_bExitArmed_guess;			// 0x1e1
 };
 
 class CGameOverHandler_Command : public ActionSignal
@@ -54,6 +54,6 @@ public:
 	}
 };
 
-void guess_CustomDocInit();
+void CustomDocInit_guess();
 
 #endif // _GAMEOVER_H

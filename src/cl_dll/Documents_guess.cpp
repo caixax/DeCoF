@@ -7,7 +7,7 @@
 #include "cl_util.h"
 #include "event_api.h"
 #include "vgui_TeamFortressViewport.h"
-#include "guess_Documents.h"
+#include "Documents_guess.h"
 #include "..\game_shared\vgui_loadtga.h"
 
 CDocuments::CDocuments() : Panel( 0, 0, ScreenWidth, ScreenHeight )
@@ -25,84 +25,84 @@ CDocuments::CDocuments() : Panel( 0, 0, ScreenWidth, ScreenHeight )
 	pPanel->setBgColor( 0, 0, 0, 0 );
 	pPanel->setVisible( true );
 
-	guess_m_pDocumentsImage = vgui_LoadTGA( "gfx/vgui/640_documents.tga" );
-	if ( guess_m_pDocumentsImage )
-		guess_m_pDocumentsImage->setColor( Color( 255, 255, 255, 1 ) );
+	m_pDocumentsImage_guess = vgui_LoadTGA( "gfx/vgui/640_documents.tga" );
+	if ( m_pDocumentsImage_guess )
+		m_pDocumentsImage_guess->setColor( Color( 255, 255, 255, 1 ) );
 	else
 		gEngfuncs.Con_Printf( "Cannot load gfx/vgui/640_documents.tga!\n" );
 
-	guess_m_pBackgroundImage = vgui_LoadTGA( "gfx/vgui/backgroundtoall.tga" );
-	if ( guess_m_pBackgroundImage )
-		guess_m_pBackgroundImage->setColor( Color( 255, 255, 255, 1 ) );
+	m_pBackgroundImage_guess = vgui_LoadTGA( "gfx/vgui/backgroundtoall.tga" );
+	if ( m_pBackgroundImage_guess )
+		m_pBackgroundImage_guess->setColor( Color( 255, 255, 255, 1 ) );
 	else
 		gEngfuncs.Con_Printf( "Cannot load gfx/vgui/backgroundtoall.tga!\n" );
 
-	guess_m_pBackgroundImage->getSize( wide, tall );
+	m_pBackgroundImage_guess->getSize( wide, tall );
 	x = ScreenWidth / 2 - wide / 2;
 	y = ScreenHeight / 2 - tall / 2;
 
-	guess_m_pBackground = new ImagePanel( guess_m_pBackgroundImage );
-	guess_m_pBackground->setParent( this );
-	guess_m_pBackground->setPos( x, y );
-	guess_m_pBackground->setVisible( true );
+	m_pBackground_guess = new ImagePanel( m_pBackgroundImage_guess );
+	m_pBackground_guess->setParent( this );
+	m_pBackground_guess->setPos( x, y );
+	m_pBackground_guess->setVisible( true );
 
-	guess_m_pDocumentsImage->getSize( wide, tall );
+	m_pDocumentsImage_guess->getSize( wide, tall );
 	x = ScreenWidth / 2 - wide / 2;
 	y = ScreenHeight / 2 - tall / 2;
 
-	guess_m_pDocuments = new ImagePanel( guess_m_pDocumentsImage );
-	guess_m_pDocuments->setParent( this );
-	guess_m_pDocuments->setPos( x, y );
-	guess_m_pDocuments->setVisible( true );
+	m_pDocuments_guess = new ImagePanel( m_pDocumentsImage_guess );
+	m_pDocuments_guess->setParent( this );
+	m_pDocuments_guess->setPos( x, y );
+	m_pDocuments_guess->setVisible( true );
 
 	y = 76;
 
-	for ( i = 1; i <= guess_MAX_DOCUMENTS; i++ )
+	for ( i = 1; i <= MAX_DOCUMENTS_guess; i++ )
 	{
-		guess_m_pHiddenNoteImage[i] = vgui_LoadTGA( "gfx/vgui/notes/hiddennote1.tga" );
-		if ( guess_m_pHiddenNoteImage[i] )
-			guess_m_pHiddenNoteImage[i]->setColor( Color( 255, 255, 255, 1 ) );
+		m_pHiddenNoteImage_guess[i] = vgui_LoadTGA( "gfx/vgui/notes/hiddennote1.tga" );
+		if ( m_pHiddenNoteImage_guess[i] )
+			m_pHiddenNoteImage_guess[i]->setColor( Color( 255, 255, 255, 1 ) );
 		else
 			gEngfuncs.Con_Printf( "Cannot load gfx/vgui/notes/hiddennote1.tga!\n" );
 
-		guess_m_pNote[i] = new ImagePanel( guess_m_pHiddenNoteImage[i] );
-		guess_m_pNote[i]->setParent( guess_m_pDocuments );
-		guess_m_pNote[i]->setPos( 230, y );
-		guess_m_pNote[i]->setVisible( false );
+		m_pNote_guess[i] = new ImagePanel( m_pHiddenNoteImage_guess[i] );
+		m_pNote_guess[i]->setParent( m_pDocuments_guess );
+		m_pNote_guess[i]->setPos( 230, y );
+		m_pNote_guess[i]->setVisible( false );
 
-		guess_m_pCodeDigit1[i] = new ImagePanel( NULL );
-		guess_m_pCodeDigit1[i]->setParent( guess_m_pDocuments );
-		guess_m_pCodeDigit1[i]->setPos( 230, y );
-		guess_m_pCodeDigit1[i]->setVisible( false );
+		m_pCodeDigit1_guess[i] = new ImagePanel( NULL );
+		m_pCodeDigit1_guess[i]->setParent( m_pDocuments_guess );
+		m_pCodeDigit1_guess[i]->setPos( 230, y );
+		m_pCodeDigit1_guess[i]->setVisible( false );
 
-		guess_m_pCodeDigit2[i] = new ImagePanel( NULL );
-		guess_m_pCodeDigit2[i]->setParent( guess_m_pDocuments );
-		guess_m_pCodeDigit2[i]->setPos( 230, y );
-		guess_m_pCodeDigit2[i]->setVisible( false );
+		m_pCodeDigit2_guess[i] = new ImagePanel( NULL );
+		m_pCodeDigit2_guess[i]->setParent( m_pDocuments_guess );
+		m_pCodeDigit2_guess[i]->setPos( 230, y );
+		m_pCodeDigit2_guess[i]->setVisible( false );
 
-		guess_m_pCodeDigit3[i] = new ImagePanel( NULL );
-		guess_m_pCodeDigit3[i]->setParent( guess_m_pDocuments );
-		guess_m_pCodeDigit3[i]->setPos( 230, y );
-		guess_m_pCodeDigit3[i]->setVisible( false );
+		m_pCodeDigit3_guess[i] = new ImagePanel( NULL );
+		m_pCodeDigit3_guess[i]->setParent( m_pDocuments_guess );
+		m_pCodeDigit3_guess[i]->setPos( 230, y );
+		m_pCodeDigit3_guess[i]->setVisible( false );
 
-		guess_m_pCodeDigit4[i] = new ImagePanel( NULL );
-		guess_m_pCodeDigit4[i]->setParent( guess_m_pDocuments );
-		guess_m_pCodeDigit4[i]->setPos( 230, y );
-		guess_m_pCodeDigit4[i]->setVisible( false );
+		m_pCodeDigit4_guess[i] = new ImagePanel( NULL );
+		m_pCodeDigit4_guess[i]->setParent( m_pDocuments_guess );
+		m_pCodeDigit4_guess[i]->setPos( 230, y );
+		m_pCodeDigit4_guess[i]->setVisible( false );
 
-		guess_m_pButton[i] = new CommandButton( "", 230, y, 422, 30, true, true );
-		guess_m_pButton[i]->setParent( guess_m_pDocuments );
-		guess_m_pButton[i]->addActionSignal( new CDocumentsHandler_Command( this, i ) );
+		m_pButton_guess[i] = new CommandButton( "", 230, y, 422, 30, true, true );
+		m_pButton_guess[i]->setParent( m_pDocuments_guess );
+		m_pButton_guess[i]->addActionSignal( new CDocumentsHandler_Command( this, i ) );
 
 		y += 30;
 	}
 
 	pButton = new CommandButton( "", 0, 0, 20, 20, true, true );
-	pButton->setParent( guess_m_pDocuments );
+	pButton->setParent( m_pDocuments_guess );
 	pButton->addActionSignal( new CDocumentsHandler_Command( this, 20 ) );
 
 	pButton = new CommandButton( "", 0, 34, 33, 33, true, true );
-	pButton->setParent( guess_m_pDocuments );
+	pButton->setParent( m_pDocuments_guess );
 	pButton->addActionSignal( new CDocumentsHandler_Command( this, 25 ) );
 
 	setBgColor( 0, 0, 0, 255 );
@@ -112,11 +112,11 @@ CDocuments::CDocuments() : Panel( 0, 0, ScreenWidth, ScreenHeight )
 
 CDocuments::~CDocuments()
 {
-	delete guess_m_pDocumentsImage;
-	delete guess_m_pBackgroundImage;
+	delete m_pDocumentsImage_guess;
+	delete m_pBackgroundImage_guess;
 
-	for ( int i = 1; i <= guess_MAX_DOCUMENTS; i++ )
-		delete guess_m_pHiddenNoteImage[i];
+	for ( int i = 1; i <= MAX_DOCUMENTS_guess; i++ )
+		delete m_pHiddenNoteImage_guess[i];
 }
 
 void CDocuments::ActionSignal( int cmd )
@@ -131,9 +131,9 @@ void CDocuments::ActionSignal( int cmd )
 			gViewPort->UpdateCursorState();
 			gViewPort->ShowVGUIMenu( 30 );
 		}
-		else if ( cmd >= 1 && cmd <= guess_MAX_DOCUMENTS )
+		else if ( cmd >= 1 && cmd <= MAX_DOCUMENTS_guess )
 		{
-			if ( strlen( gHUD.guess_m_Notes[cmd].guess_szLine[4] ) > 1 && !guess_m_iHidden[cmd] )
+			if ( strlen( gHUD.m_Notes_guess[cmd].szLine_guess[4] ) > 1 && !m_iHidden_guess[cmd] )
 			{
 				setVisible( false );
 				gViewPort->UpdateCursorState();
@@ -170,12 +170,12 @@ void CDocuments::setVisible( bool state )
 {
 	if ( state )
 	{
-		for ( int i = 1; i <= guess_MAX_DOCUMENTS; i++ )
+		for ( int i = 1; i <= MAX_DOCUMENTS_guess; i++ )
 		{
-			if ( strlen( gHUD.guess_m_Notes[i].guess_szLine[4] ) > 1 )
-				guess_m_pNote[i]->setVisible( true );
+			if ( strlen( gHUD.m_Notes_guess[i].szLine_guess[4] ) > 1 )
+				m_pNote_guess[i]->setVisible( true );
 			else
-				guess_m_pNote[i]->setVisible( false );
+				m_pNote_guess[i]->setVisible( false );
 		}
 
 		cl_entity_t *pPlayer = gEngfuncs.GetLocalPlayer();

@@ -53,7 +53,7 @@ enum mp5_e
 	MP5_LAND,
 	MP5_MELEE,
 	MP5_HOLSTER,
-	guess_MP5_IRONSIGHTS_SHOOT_EMPTY,	// not a sequence of the model (retail sends 20)
+	MP5_IRONSIGHTS_SHOOT_EMPTY_guess,	// not a sequence of the model (retail sends 20)
 };
 
 LINK_ENTITY_TO_CLASS( weapon_mp5, CMp5 );
@@ -89,7 +89,7 @@ void CMp5::SuicideShot( void )
 		m_pPlayer->pev->health = 0;
 		m_pPlayer->Killed( m_pPlayer->pev, GIB_NEVER );
 
-		guess_UTIL_PlayWeaponSound( "weapons_new/mp5/mp5_shoot_end.wav", 0, true, m_pPlayer->EarPosition(), m_pPlayer, true );
+		UTIL_PlayWeaponSound_guess( "weapons_new/mp5/mp5_shoot_end.wav", 0, true, m_pPlayer->EarPosition(), m_pPlayer, true );
 		return;
 	}
 
@@ -119,9 +119,9 @@ void CMp5::SendInitMessage( CBasePlayer *player )
 {
 	if ( player )
 	{
-		bool bNotMapper = player->guess_m_iNew16a != 2 && player->guess_m_iNew16a != 3 && player->guess_m_iNew16a != 4;
+		bool bNotMapper = player->m_iNew16a_guess != 2 && player->m_iNew16a_guess != 3 && player->m_iNew16a_guess != 4;
 
-		if ( ( !g_pGameRules || !g_pGameRules->guess_IsMapperMode() ) && bNotMapper )
+		if ( ( !g_pGameRules || !g_pGameRules->IsMapperMode_guess() ) && bNotMapper )
 			UTIL_Remove( this );
 	}
 }
@@ -284,7 +284,7 @@ void CMp5::PrimaryAttack( void )
 		else if ( gpGlobals->time > m_fEmptyClickTime )
 		{
 			if ( m_bIronSights )
-				SendWeaponAnim( guess_MP5_IRONSIGHTS_SHOOT_EMPTY );
+				SendWeaponAnim( MP5_IRONSIGHTS_SHOOT_EMPTY_guess );
 			else
 				SendWeaponAnim( MP5_SHOOT_EMPTY );
 
@@ -366,7 +366,7 @@ void CMp5::PrimaryAttack( void )
 		if ( g_pGameRules->IsMultiplayer() )
 			EMIT_SOUND( ENT( m_pPlayer->pev ), CHAN_WEAPON, STRING( shoot_loop_sound ), 1, ATTN_NORM );
 		else
-			guess_UTIL_PlayWeaponSound( STRING( shoot_loop_sound ), 1, true, m_pPlayer->EarPosition(), m_pPlayer, true );
+			UTIL_PlayWeaponSound_guess( STRING( shoot_loop_sound ), 1, true, m_pPlayer->EarPosition(), m_pPlayer, true );
 	}
 
 	m_pPlayer->m_iExtraSoundTypes = bits_SOUND_COMBAT;
@@ -668,9 +668,9 @@ class CMP5Ammo : public CBasePlayerAmmo
 	}
 	void SendInitMessage( CBasePlayer *player )
 	{
-		bool bNotMapper = player && player->guess_m_iNew16a != 2 && player->guess_m_iNew16a != 3 && player->guess_m_iNew16a != 4;
+		bool bNotMapper = player && player->m_iNew16a_guess != 2 && player->m_iNew16a_guess != 3 && player->m_iNew16a_guess != 4;
 
-		if ( ( !g_pGameRules || !g_pGameRules->guess_IsMapperMode() ) && bNotMapper )
+		if ( ( !g_pGameRules || !g_pGameRules->IsMapperMode_guess() ) && bNotMapper )
 		{
 			CBaseEntity *pAmmo = CBaseEntity::Create( "ammo_glock", pev->origin, pev->angles, NULL );
 			if ( pAmmo )

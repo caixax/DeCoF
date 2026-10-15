@@ -7,7 +7,7 @@
 #include "cl_util.h"
 #include "parsemsg.h"
 #include "vgui_TeamFortressViewport.h"
-#include "guess_BossBar.h"
+#include "BossBar_guess.h"
 #include "..\game_shared\vgui_loadtga.h"
 
 CBossBar::CBossBar() : Panel( 0, 0, ScreenWidth, ScreenHeight )
@@ -15,107 +15,107 @@ CBossBar::CBossBar() : Panel( 0, 0, ScreenWidth, ScreenHeight )
 	int wide, tall;
 	int x;
 
-	guess_m_pFullImage = vgui_LoadTGA( "gfx/vgui/boss/doctor_health_full.tga" );
-	if ( guess_m_pFullImage )
-		guess_m_pFullImage->setColor( Color( 255, 255, 255, 1 ) );
+	m_pFullImage_guess = vgui_LoadTGA( "gfx/vgui/boss/doctor_health_full.tga" );
+	if ( m_pFullImage_guess )
+		m_pFullImage_guess->setColor( Color( 255, 255, 255, 1 ) );
 	else
 		gEngfuncs.Con_Printf( "Cannot load gfx/vgui/boss/doctor_health_full.tga!\n" );
 
-	guess_m_pEmptyImage = vgui_LoadTGA( "gfx/vgui/boss/doctor_health_empty.tga" );
-	if ( guess_m_pEmptyImage )
-		guess_m_pEmptyImage->setColor( Color( 255, 255, 255, 1 ) );
+	m_pEmptyImage_guess = vgui_LoadTGA( "gfx/vgui/boss/doctor_health_empty.tga" );
+	if ( m_pEmptyImage_guess )
+		m_pEmptyImage_guess->setColor( Color( 255, 255, 255, 1 ) );
 	else
 		gEngfuncs.Con_Printf( "Cannot load gfx/vgui/boss/doctor_health_empty.tga!\n" );
 
-	guess_m_pFull = new ImagePanel( guess_m_pFullImage );
-	guess_m_pFull->setParent( this );
-	wide = guess_m_pFull->getWide();
-	tall = guess_m_pFull->getTall();
+	m_pFull_guess = new ImagePanel( m_pFullImage_guess );
+	m_pFull_guess->setParent( this );
+	wide = m_pFull_guess->getWide();
+	tall = m_pFull_guess->getTall();
 	x = ScreenWidth / 2 - wide / 2;
-	guess_m_pFull->setPos( x, tall );
-	guess_m_pFull->setVisible( true );
+	m_pFull_guess->setPos( x, tall );
+	m_pFull_guess->setVisible( true );
 
-	guess_m_pEmpty = new ImagePanel( guess_m_pEmptyImage );
-	guess_m_pEmpty->setParent( this );
-	guess_m_pEmpty->setPos( x, tall );
-	guess_m_pEmpty->setVisible( true );
+	m_pEmpty_guess = new ImagePanel( m_pEmptyImage_guess );
+	m_pEmpty_guess->setParent( this );
+	m_pEmpty_guess->setPos( x, tall );
+	m_pEmpty_guess->setVisible( true );
 
-	guess_m_pBar = new ImagePanel( guess_m_pFullImage );
-	guess_m_pBar->setParent( this );
-	guess_m_pBar->setPos( x, tall );
-	guess_m_pBar->setVisible( true );
+	m_pBar_guess = new ImagePanel( m_pFullImage_guess );
+	m_pBar_guess->setParent( this );
+	m_pBar_guess->setPos( x, tall );
+	m_pBar_guess->setVisible( true );
 
 	setBgColor( 0, 0, 0, 255 );
-	guess_m_iUnused1C8 = 0;
+	m_iUnused1C8_guess = 0;
 
 	Initialize();
 }
 
 CBossBar::~CBossBar()
 {
-	delete guess_m_pFullImage;
-	delete guess_m_pEmptyImage;
+	delete m_pFullImage_guess;
+	delete m_pEmptyImage_guess;
 }
 
 void CBossBar::Initialize()
 {
-	guess_m_iUnused1C8 = 0;
+	m_iUnused1C8_guess = 0;
 	setVisible( false );
 }
 
-int guess_MsgBossBar( const char *pszName, int iSize, void *pbuf )
+int MsgBossBar_guess( const char *pszName, int iSize, void *pbuf )
 {
 	BEGIN_READ( pbuf, iSize );
 
-	if ( gViewPort->guess_m_pBossBar )
+	if ( gViewPort->m_pBossBar_guess )
 	{
-		gViewPort->guess_m_pBossBar->guess_m_iUnused1C8 = 0;
-		gViewPort->guess_m_pBossBar->guess_m_iState = READ_BYTE();
-		sprintf( gViewPort->guess_m_pBossBar->guess_m_szEmptyImage, "%s", READ_STRING() );
-		sprintf( gViewPort->guess_m_pBossBar->guess_m_szFullImage, "%s", READ_STRING() );
+		gViewPort->m_pBossBar_guess->m_iUnused1C8_guess = 0;
+		gViewPort->m_pBossBar_guess->m_iState_guess = READ_BYTE();
+		sprintf( gViewPort->m_pBossBar_guess->m_szEmptyImage_guess, "%s", READ_STRING() );
+		sprintf( gViewPort->m_pBossBar_guess->m_szFullImage_guess, "%s", READ_STRING() );
 
-		gViewPort->guess_m_pBossBar->guess_m_pFull->setImage( vgui_LoadTGA( gViewPort->guess_m_pBossBar->guess_m_szFullImage ) );
-		gViewPort->guess_m_pBossBar->guess_m_pBar->setImage( vgui_LoadTGA( gViewPort->guess_m_pBossBar->guess_m_szFullImage ) );
-		gViewPort->guess_m_pBossBar->guess_m_pEmpty->setImage( vgui_LoadTGA( gViewPort->guess_m_pBossBar->guess_m_szEmptyImage ) );
+		gViewPort->m_pBossBar_guess->m_pFull_guess->setImage( vgui_LoadTGA( gViewPort->m_pBossBar_guess->m_szFullImage_guess ) );
+		gViewPort->m_pBossBar_guess->m_pBar_guess->setImage( vgui_LoadTGA( gViewPort->m_pBossBar_guess->m_szFullImage_guess ) );
+		gViewPort->m_pBossBar_guess->m_pEmpty_guess->setImage( vgui_LoadTGA( gViewPort->m_pBossBar_guess->m_szEmptyImage_guess ) );
 
 		int iHealth = READ_SHORT();
 		if ( iHealth < 0 )
 			iHealth = 0;
 
-		if ( gViewPort->guess_m_pBossBar->guess_m_iState == 1 )
-			gViewPort->guess_m_pBossBar->guess_m_iHealth = iHealth;
+		if ( gViewPort->m_pBossBar_guess->m_iState_guess == 1 )
+			gViewPort->m_pBossBar_guess->m_iHealth_guess = iHealth;
 		else
-			gViewPort->guess_m_pBossBar->guess_m_iHealth = 0;
+			gViewPort->m_pBossBar_guess->m_iHealth_guess = 0;
 
-		gViewPort->guess_m_pBossBar->guess_m_iMaxHealth = READ_SHORT();
+		gViewPort->m_pBossBar_guess->m_iMaxHealth_guess = READ_SHORT();
 
-		if ( gViewPort->guess_m_pBossBar->guess_m_iState == 1 )
-			gViewPort->guess_m_pBossBar->setVisible( true );
-		else if ( gViewPort->guess_m_pBossBar->guess_m_iState == 0 )
-			gViewPort->guess_m_pBossBar->setVisible( false );
+		if ( gViewPort->m_pBossBar_guess->m_iState_guess == 1 )
+			gViewPort->m_pBossBar_guess->setVisible( true );
+		else if ( gViewPort->m_pBossBar_guess->m_iState_guess == 0 )
+			gViewPort->m_pBossBar_guess->setVisible( false );
 	}
 
 	return 1;
 }
 
-void guess_BossBarInit()
+void BossBarInit_guess()
 {
-	gEngfuncs.pfnHookUserMsg( "BossBar", guess_MsgBossBar );
+	gEngfuncs.pfnHookUserMsg( "BossBar", MsgBossBar_guess );
 }
 
 void CBossBar::solve()
 {
-	int tall = guess_m_pEmpty->getTall();
-	int wide = guess_m_pEmpty->getWide();
+	int tall = m_pEmpty_guess->getTall();
+	int wide = m_pEmpty_guess->getWide();
 
-	if ( guess_m_iState == 2 )
+	if ( m_iState_guess == 2 )
 		setVisible( false );
 
-	int width = (int)( (float)guess_m_iHealth / (float)guess_m_iMaxHealth * (float)wide );
+	int width = (int)( (float)m_iHealth_guess / (float)m_iMaxHealth_guess * (float)wide );
 	if ( width < 1 )
 		width = 0;
 
-	guess_m_pBar->setSize( width, tall );
+	m_pBar_guess->setSize( width, tall );
 
 	Panel::solve();
 }

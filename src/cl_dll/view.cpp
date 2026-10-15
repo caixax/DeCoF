@@ -82,7 +82,7 @@ void VectorAngles( const float *forward, float *angles );
 #include "parsemsg.h"
 #include "com_model.h"
 #include "vgui_TeamFortressViewport.h"
-#include "guess_RECBInventory.h"
+#include "RECBInventory_guess.h"
 
 extern engine_studio_api_t IEngineStudio;
 
@@ -114,11 +114,11 @@ vec3_t	g_CrosshairAngle; // buz
 //extern int g_DontDrawWorld; // buz
 
 vec3_t ev_punchangle;
-vec3_t guess_ev_punchanglevel;
-int guess_iPaused;
+vec3_t ev_punchanglevel_guess;
+int iPaused_guess;
 
-bool guess_IrrKlangIsPaused( void );
-void guess_IrrKlangSetPaused( bool bPaused );
+bool IrrKlangIsPaused_guess( void );
+void IrrKlangSetPaused_guess( bool bPaused );
 
 cvar_t	*scr_ofsx;
 cvar_t	*scr_ofsy;
@@ -411,12 +411,12 @@ void V_CalcGunAngle ( struct ref_params_s *pparams )
 	viewent->angles[1] += pparams->punchangle[1]/2;
 	viewent->angles[2] += pparams->punchangle[2]/2;
 
-	viewent->angles[PITCH] += gHUD.guess_m_vecViewOfs[2];
+	viewent->angles[PITCH] += gHUD.m_vecViewOfs_guess[2];
 
 	if ( viewent->model && gHUD.m_Ammo.m_pWeapon && gHUD.m_Ammo.m_pWeapon->iId == 1 )
 	{
-		viewent->angles[PITCH] -= gHUD.guess_m_flYawOfs;
-		viewent->angles[YAW] -= gHUD.guess_m_flPitchOfs;
+		viewent->angles[PITCH] -= gHUD.m_flYawOfs_guess;
+		viewent->angles[YAW] -= gHUD.m_flPitchOfs_guess;
 	}
 
 	VectorCopy( viewent->angles, viewent->curstate.angles );
@@ -537,51 +537,51 @@ extern int g_DrawHeadShied; // buz
 extern int HeadShieldThink( void ); // buz
 
 // cof
-extern "C" int guess_iStepPunch;		// pm_shared.c
-extern "C" int guess_iStepPunchRun;
+extern "C" int iStepPunch_guess;		// pm_shared.c
+extern "C" int iStepPunchRun_guess;
 
-void guess_V_ViewPunch( float x, float y, float z );
-void guess_MuzzleFlash( cl_entity_t *pEntity, int iAttachment, bool bAlt, float flScale );
-void guess_AddViewmodelBob( struct ref_params_s *pparams, Vector &origin, Vector &angles, float frametime, float curtime, cl_entity_t *view, bool bLeft );
-void guess_CalcViewModelLag( float frametime, Vector &origin, Vector &angles, Vector &original_angles, cl_entity_t *view, bool bLeft );
-void guess_SetupMagliteLight( vec3_t origin, vec3_t angles, float time, float frametime );
-void guess_SetupViewModelLight( vec3_t origin, vec3_t angles, float time, float frametime );
+void V_ViewPunch_guess( float x, float y, float z );
+void MuzzleFlash_guess( cl_entity_t *pEntity, int iAttachment, bool bAlt, float flScale );
+void AddViewmodelBob_guess( struct ref_params_s *pparams, Vector &origin, Vector &angles, float frametime, float curtime, cl_entity_t *view, bool bLeft );
+void CalcViewModelLag_guess( float frametime, Vector &origin, Vector &angles, Vector &original_angles, cl_entity_t *view, bool bLeft );
+void SetupMagliteLight_guess( vec3_t origin, vec3_t angles, float time, float frametime );
+void SetupViewModelLight_guess( vec3_t origin, vec3_t angles, float time, float frametime );
 
-extern int guess_iUnknown1054506C;
-extern int guess_iWheelchair;			// the wheelchair entity (0 when off)
-extern int guess_iBoat;					// the boat entity (0 when off)
-extern vec3_t guess_vecWheelchairOrigin;	// attachment 0 of the wheelchair, set by the studio renderer
-extern vec3_t guess_vecBoatOrigin;		// attachment 0 of the boat, set by the studio renderer
-extern cl_entity_t *guess_pTelescopeEnt;
-extern int guess_iTelescopeFlag;
-extern cl_entity_t *guess_pAttachCamEnt;
-extern int guess_iAttachCamFlag;
-extern int guess_iUnknown10542BC8;
-extern bool guess_bAttachCam;
-extern bool guess_bUnknown104CE4A3;
-extern vec3_t guess_vecCameraAttachment;
-extern vec3_t guess_vecCameraAngles;
-extern vec3_t guess_vecModelAttachOrigin;	// attachment of the ModelAttach entity, set by the studio renderer
-extern vec3_t guess_vecDualAttachment0;		// attachments 0 and 1 of the left hand weapon, set by the studio renderer
-extern vec3_t guess_vecDualAttachment1;
-extern int guess_iModelAttachEnt;
-extern int guess_iModelAttachNum;
-extern int guess_g_iHeadShieldType;
-extern int guess_g_iDualWeapon1;
-extern int guess_g_iDualWeapon2;
+extern int iUnknown1054506C_guess;
+extern int iWheelchair_guess;			// the wheelchair entity (0 when off)
+extern int iBoat_guess;					// the boat entity (0 when off)
+extern vec3_t vecWheelchairOrigin_guess;	// attachment 0 of the wheelchair, set by the studio renderer
+extern vec3_t vecBoatOrigin_guess;		// attachment 0 of the boat, set by the studio renderer
+extern cl_entity_t *pTelescopeEnt_guess;
+extern int iTelescopeFlag_guess;
+extern cl_entity_t *pAttachCamEnt_guess;
+extern int iAttachCamFlag_guess;
+extern int iUnknown10542BC8_guess;
+extern bool bAttachCam_guess;
+extern bool bUnknown104CE4A3_guess;
+extern vec3_t vecCameraAttachment_guess;
+extern vec3_t vecCameraAngles_guess;
+extern vec3_t vecModelAttachOrigin_guess;	// attachment of the ModelAttach entity, set by the studio renderer
+extern vec3_t vecDualAttachment0_guess;		// attachments 0 and 1 of the left hand weapon, set by the studio renderer
+extern vec3_t vecDualAttachment1_guess;
+extern int iModelAttachEnt_guess;
+extern int iModelAttachNum_guess;
+extern int g_iHeadShieldType_guess;
+extern int g_iDualWeapon1_guess;
+extern int g_iDualWeapon2_guess;
 extern cl_entity_t g_HeadShieldEnt;
 
-vec3_t guess_vecWheelchairAngles;		// added to the wheelchair angles (the knock back subtracts from it)
-float guess_flMouseOfs2X;				// second mouse look pair of IN_MouseMove
-float guess_flMouseOfs2Y;
-cl_entity_t *guess_pDualEnt;			// the left hand weapon entity of the dual wield mode
-vec3_t guess_vecWheelchairViewAngles;	// the view angles in the wheelchair
-float guess_flUnknown105595A0;
-float guess_flUnknown105595A4;
-float guess_flUnknown105595A8;
-int guess_iUnknown105595AC;
-bool guess_bUnknown10559514;			// cleared by the AttachCam message
-bool guess_bCanDodge;					// on the ground and not noclipping
+vec3_t vecWheelchairAngles_guess;		// added to the wheelchair angles (the knock back subtracts from it)
+float flMouseOfs2X_guess;				// second mouse look pair of IN_MouseMove
+float flMouseOfs2Y_guess;
+cl_entity_t *pDualEnt_guess;			// the left hand weapon entity of the dual wield mode
+vec3_t vecWheelchairViewAngles_guess;	// the view angles in the wheelchair
+float flUnknown105595A0_guess;
+float flUnknown105595A4_guess;
+float flUnknown105595A8_guess;
+int iUnknown105595AC_guess;
+bool bUnknown10559514_guess;			// cleared by the AttachCam message
+bool bCanDodge_guess;					// on the ground and not noclipping
 
 void V_CalcNormalRefdef ( struct ref_params_s *pparams )
 {
@@ -601,37 +601,37 @@ void V_CalcNormalRefdef ( struct ref_params_s *pparams )
 
 //	CONPRINT("calcrefdef\n");
 
-	guess_iUnknown1054506C = pparams->waterlevel;
+	iUnknown1054506C_guess = pparams->waterlevel;
 
 	// cof: view punch of a multiplayer step
-	if ( guess_iStepPunch )
+	if ( iStepPunch_guess )
 	{
-		guess_iStepPunch = 0;
+		iStepPunch_guess = 0;
 
-		if ( guess_iStepPunchRun )
-			guess_V_ViewPunch( -3, 1, 0 );
+		if ( iStepPunchRun_guess )
+			V_ViewPunch_guess( -3, 1, 0 );
 		else
-			guess_V_ViewPunch( -0.75, 0.5, 0 );
+			V_ViewPunch_guess( -0.75, 0.5, 0 );
 	}
 
 	// cof: wheelchair view
-	if ( guess_iWheelchair && ( guess_vecWheelchairOrigin[0] || guess_vecWheelchairOrigin[1] || guess_vecWheelchairOrigin[2] ) )
+	if ( iWheelchair_guess && ( vecWheelchairOrigin_guess[0] || vecWheelchairOrigin_guess[1] || vecWheelchairOrigin_guess[2] ) )
 	{
 		vec3_t forward, right, up;
 		cl_entity_t *player, *viewmodel;
 
-		guess_vecWheelchairOrigin.z -= 24;
+		vecWheelchairOrigin_guess.z -= 24;
 
-		VectorCopy( guess_vecWheelchairOrigin, pparams->simorg );
-		VectorCopy( guess_vecWheelchairOrigin, pparams->vieworg );
+		VectorCopy( vecWheelchairOrigin_guess, pparams->simorg );
+		VectorCopy( vecWheelchairOrigin_guess, pparams->vieworg );
 
 		viewmodel = gEngfuncs.GetViewModel();
 
-		guess_vecWheelchairViewAngles[0] = ((cl_entity_t *)guess_iWheelchair)->curstate.angles[0] + guess_vecWheelchairAngles[0];
-		guess_vecWheelchairViewAngles[1] = ((cl_entity_t *)guess_iWheelchair)->curstate.angles[1] - guess_vecWheelchairAngles[1];
-		guess_vecWheelchairViewAngles[2] = ((cl_entity_t *)guess_iWheelchair)->curstate.angles[2];
+		vecWheelchairViewAngles_guess[0] = ((cl_entity_t *)iWheelchair_guess)->curstate.angles[0] + vecWheelchairAngles_guess[0];
+		vecWheelchairViewAngles_guess[1] = ((cl_entity_t *)iWheelchair_guess)->curstate.angles[1] - vecWheelchairAngles_guess[1];
+		vecWheelchairViewAngles_guess[2] = ((cl_entity_t *)iWheelchair_guess)->curstate.angles[2];
 
-		VectorCopy( guess_vecWheelchairViewAngles, pparams->viewangles );
+		VectorCopy( vecWheelchairViewAngles_guess, pparams->viewangles );
 		VectorCopy( pparams->viewangles, pparams->cl_viewangles );
 
 		player = gEngfuncs.GetLocalPlayer();
@@ -644,19 +644,19 @@ void V_CalcNormalRefdef ( struct ref_params_s *pparams )
 
 		if ( viewmodel )
 		{
-			viewmodel->curstate.origin = guess_vecWheelchairOrigin;
-			viewmodel->origin = guess_vecWheelchairOrigin;
-			viewmodel->angles = guess_vecWheelchairViewAngles;
+			viewmodel->curstate.origin = vecWheelchairOrigin_guess;
+			viewmodel->origin = vecWheelchairOrigin_guess;
+			viewmodel->angles = vecWheelchairViewAngles_guess;
 		}
 
 		gEngfuncs.pfnAngleVectors( viewmodel->angles, forward, right, up );
 	}
 
 	if ( gEngfuncs.IsNoClipping() || !pparams->onground )
-		guess_bCanDodge = false;
+		bCanDodge_guess = false;
 
-	if ( !gEngfuncs.IsNoClipping() && pparams->onground && !guess_bCanDodge )
-		guess_bCanDodge = true;
+	if ( !gEngfuncs.IsNoClipping() && pparams->onground && !bCanDodge_guess )
+		bCanDodge_guess = true;
 
 	// buz
 	g_DrawHeadShied = 0;
@@ -667,8 +667,8 @@ void V_CalcNormalRefdef ( struct ref_params_s *pparams )
 		g_DrawHeadShied = 1;
 		return;
 	}
-	else if ( ( pparams->nextView == 0 && HeadShieldThink() && guess_g_iHeadShieldType == 6 ) ||
-		( pparams->nextView == 0 && HeadShieldThink() && guess_g_iHeadShieldType == 7 ) ||
+	else if ( ( pparams->nextView == 0 && HeadShieldThink() && g_iHeadShieldType_guess == 6 ) ||
+		( pparams->nextView == 0 && HeadShieldThink() && g_iHeadShieldType_guess == 7 ) ||
 		( pparams->nextView == 0 && HeadShieldThink() && !(pparams->viewentity > pparams->maxclients) ) )
 	{
 		pparams->nextView = 1;
@@ -708,10 +708,10 @@ void V_CalcNormalRefdef ( struct ref_params_s *pparams )
 	// cof: the weapon model is in the water
 	if ( gEngfuncs.PM_PointContents( view->origin, NULL ) == CONTENTS_WATER )
 	{
-		guess_flUnknown105595A0 = gEngfuncs.GetClientTime();
-		guess_flUnknown105595A4 = 10;
-		guess_flUnknown105595A8 = gEngfuncs.GetClientTime();
-		guess_iUnknown105595AC = 0;
+		flUnknown105595A0_guess = gEngfuncs.GetClientTime();
+		flUnknown105595A4_guess = 10;
+		flUnknown105595A8_guess = gEngfuncs.GetClientTime();
+		iUnknown105595AC_guess = 0;
 	}
 
 	// transform the view offset by the model's matrix to get the offset from
@@ -729,11 +729,11 @@ void V_CalcNormalRefdef ( struct ref_params_s *pparams )
 	gEngfuncs.V_ApplyShake( pparams->vieworg, pparams->viewangles, 1.0 );
 
 	// cof: telescope view
-	if ( guess_pTelescopeEnt )
+	if ( pTelescopeEnt_guess )
 	{
-		VectorCopy( guess_pTelescopeEnt->origin, pparams->vieworg );
+		VectorCopy( pTelescopeEnt_guess->origin, pparams->vieworg );
 
-		if ( !guess_iTelescopeFlag )
+		if ( !iTelescopeFlag_guess )
 		{
 			vec3_t vecAngles, forward, right;
 			vec3_t vecStart, vecEnd;
@@ -742,8 +742,8 @@ void V_CalcNormalRefdef ( struct ref_params_s *pparams )
 			VectorCopy( pparams->viewangles, vecAngles );
 			gEngfuncs.pfnAngleVectors( vecAngles, forward, right, NULL );
 
-			vecEnd = guess_pTelescopeEnt->origin + forward * 4096;
-			vecStart = forward * 128 + guess_pTelescopeEnt->origin;
+			vecEnd = pTelescopeEnt_guess->origin + forward * 4096;
+			vecStart = forward * 128 + pTelescopeEnt_guess->origin;
 
 			tr = gEngfuncs.PM_TraceLine( vecStart, vecEnd, PM_TRACELINE_PHYSENTSONLY, 1, -1 );
 
@@ -754,45 +754,45 @@ void V_CalcNormalRefdef ( struct ref_params_s *pparams )
 				if ( pHit && pHit->curstate.solid == SOLID_BSP && pHit->curstate.renderfx == 162 )
 				{
 					gEngfuncs.pfnServerCmd( "telescopefinish" );
-					guess_iTelescopeFlag = 1;
+					iTelescopeFlag_guess = 1;
 				}
 			}
 		}
 	}
 
 	// cof: boat view
-	if ( guess_iBoat && ( guess_vecBoatOrigin[0] || guess_vecBoatOrigin[1] || guess_vecBoatOrigin[2] ) )
+	if ( iBoat_guess && ( vecBoatOrigin_guess[0] || vecBoatOrigin_guess[1] || vecBoatOrigin_guess[2] ) )
 	{
-		VectorCopy( guess_vecBoatOrigin, pparams->vieworg );
-		VectorCopy( ((cl_entity_t *)guess_iBoat)->curstate.angles, pparams->viewangles );
+		VectorCopy( vecBoatOrigin_guess, pparams->vieworg );
+		VectorCopy( ((cl_entity_t *)iBoat_guess)->curstate.angles, pparams->viewangles );
 	}
 
 	// cof: camera attached to an entity
-	if ( guess_pAttachCamEnt && guess_bAttachCam && !guess_bUnknown104CE4A3 )
+	if ( pAttachCamEnt_guess && bAttachCam_guess && !bUnknown104CE4A3_guess )
 	{
-		guess_iUnknown10542BC8 = 0;
+		iUnknown10542BC8_guess = 0;
 
-		VectorCopy( guess_vecCameraAttachment, pparams->vieworg );
-		VectorCopy( guess_vecCameraAngles, pparams->viewangles );
+		VectorCopy( vecCameraAttachment_guess, pparams->vieworg );
+		VectorCopy( vecCameraAngles_guess, pparams->viewangles );
 
-		if ( !guess_bUnknown10559514 )
+		if ( !bUnknown10559514_guess )
 		{
-			guess_bUnknown10559514 = true;
+			bUnknown10559514_guess = true;
 			gEngfuncs.SetViewAngles( pparams->viewangles );
 		}
 	}
-	else if ( guess_bUnknown104CE4A3 )
+	else if ( bUnknown104CE4A3_guess )
 	{
-		VectorAdd( pparams->viewangles, guess_vecCameraAngles, pparams->viewangles );
+		VectorAdd( pparams->viewangles, vecCameraAngles_guess, pparams->viewangles );
 
-		if ( !guess_bUnknown10559514 )
+		if ( !bUnknown10559514_guess )
 		{
-			guess_bUnknown10559514 = true;
+			bUnknown10559514_guess = true;
 			gEngfuncs.SetViewAngles( pparams->viewangles );
 		}
 	}
 
-	guess_iUnknown10542BC8 = 0;
+	iUnknown10542BC8_guess = 0;
 
 	// never let view origin sit exactly on a node line, because a water plane can
 	// dissapear when viewed with the eye exactly on it.
@@ -873,9 +873,9 @@ void V_CalcNormalRefdef ( struct ref_params_s *pparams )
 	AngleVectors ( angles, pparams->forward, pparams->right, pparams->up );
 
 	// cof: the flashlight is set up at the end, from the weapon model
-	gHUD.guess_m_vecSpecTankAngles = pparams->viewangles;
-	gHUD.guess_m_flSpecTankTime = pparams->time;
-	gHUD.guess_m_flSpecTankFrametime = pparams->frametime;
+	gHUD.m_vecSpecTankAngles_guess = pparams->viewangles;
+	gHUD.m_flSpecTankTime_guess = pparams->time;
+	gHUD.m_flSpecTankFrametime_guess = pparams->frametime;
 
 	// buz: spec tank view
 	if (gHUD.m_SpecTank_on)
@@ -1137,7 +1137,7 @@ void V_CalcNormalRefdef ( struct ref_params_s *pparams )
 		if ( viewentity )
 		{
 			// cof: a ModelAttach message puts the view on an attachment of an entity
-			if ( guess_iModelAttachEnt == -1 || guess_iModelAttachNum == -1 )
+			if ( iModelAttachEnt_guess == -1 || iModelAttachNum_guess == -1 )
 			{
 				VectorCopy( viewentity->origin, pparams->vieworg );
 				VectorCopy( viewentity->angles, pparams->viewangles );
@@ -1147,7 +1147,7 @@ void V_CalcNormalRefdef ( struct ref_params_s *pparams )
 			}
 			else
 			{
-				VectorCopy( guess_vecModelAttachOrigin, pparams->vieworg );
+				VectorCopy( vecModelAttachOrigin_guess, pparams->vieworg );
 			}
 		}
 	}
@@ -1172,13 +1172,13 @@ void V_CalcNormalRefdef ( struct ref_params_s *pparams )
 	g_iWaterLevel = pparams->waterlevel;
 
 	// cof: weapon model bob and lag
-	guess_AddViewmodelBob( pparams, view->origin, view->angles, pparams->frametime, gEngfuncs.GetClientTime(), view, false );
-	guess_CalcViewModelLag( pparams->frametime, view->origin, view->angles, v_angles, view, false );
+	AddViewmodelBob_guess( pparams, view->origin, view->angles, pparams->frametime, gEngfuncs.GetClientTime(), view, false );
+	CalcViewModelLag_guess( pparams->frametime, view->origin, view->angles, v_angles, view, false );
 
 	// cof: flashlight in the left hand
-	if ( !guess_iPaused && guess_g_iHeadShieldType == 3 && guess_g_iDualWeapon1 == 10 && !guess_IsViewEntityActive() && !guess_iBoat && !guess_iWheelchair && !guess_pTelescopeEnt )
+	if ( !iPaused_guess && g_iHeadShieldType_guess == 3 && g_iDualWeapon1_guess == 10 && !IsViewEntityActive_guess() && !iBoat_guess && !iWheelchair_guess && !pTelescopeEnt_guess )
 	{
-		pmtrace_t *tr = gEngfuncs.PM_TraceLine( guess_vecDualAttachment0, guess_vecDualAttachment1, PM_TRACELINE_PHYSENTSONLY, 1, -1 );
+		pmtrace_t *tr = gEngfuncs.PM_TraceLine( vecDualAttachment0_guess, vecDualAttachment1_guess, PM_TRACELINE_PHYSENTSONLY, 1, -1 );
 
 		if ( !g_HeadShieldEnt.curstate.rendercolor.r && !g_HeadShieldEnt.curstate.rendercolor.g && !g_HeadShieldEnt.curstate.rendercolor.b &&
 			( g_HeadShieldEnt.curstate.renderamt == 255 || !g_HeadShieldEnt.curstate.renderamt ) )
@@ -1203,14 +1203,14 @@ void V_CalcNormalRefdef ( struct ref_params_s *pparams )
 		}
 	}
 
-	if ( view->model && !guess_iPaused )
+	if ( view->model && !iPaused_guess )
 	{
 		cl_entity_t *player = gEngfuncs.GetLocalPlayer();
 		WEAPON *pWeapon = gHUD.m_Ammo.m_pWeapon;
 
 		// cof: flashlight in the right hand
-		if ( !guess_iBoat && pWeapon && !guess_iWheelchair && !guess_pTelescopeEnt && !guess_IsViewEntityActive() && player &&
-			( pWeapon->iId == 10 || guess_g_iDualWeapon2 == 10 ) )
+		if ( !iBoat_guess && pWeapon && !iWheelchair_guess && !pTelescopeEnt_guess && !IsViewEntityActive_guess() && player &&
+			( pWeapon->iId == 10 || g_iDualWeapon2_guess == 10 ) )
 		{
 			pmtrace_t *tr = gEngfuncs.PM_TraceLine( view->attachment[0], view->attachment[1], PM_TRACELINE_PHYSENTSONLY, 1, -1 );
 
@@ -1238,8 +1238,8 @@ void V_CalcNormalRefdef ( struct ref_params_s *pparams )
 		}
 
 		// cof: muzzle light
-		if ( !guess_iPaused && !guess_iBoat && !guess_iWheelchair && !guess_pTelescopeEnt && !guess_IsViewEntityActive() && player &&
-			( gHUD.guess_m_iFlashFlags & 16 ) && pWeapon && ( pWeapon->iId == 13 || pWeapon->iId == 25 || guess_g_iDualWeapon2 == 13 ) )
+		if ( !iPaused_guess && !iBoat_guess && !iWheelchair_guess && !pTelescopeEnt_guess && !IsViewEntityActive_guess() && player &&
+			( gHUD.m_iFlashFlags_guess & 16 ) && pWeapon && ( pWeapon->iId == 13 || pWeapon->iId == 25 || g_iDualWeapon2_guess == 13 ) )
 		{
 			DynamicLight *dl = MY_AllocDlight( ent->index );
 
@@ -1257,7 +1257,7 @@ void V_CalcNormalRefdef ( struct ref_params_s *pparams )
 			else
 			{
 				dl->color = Vector( flRed + 1.15f, flGreen + 0.2f, flGreen + 0.1f );
-				guess_MuzzleFlash( view, 0, true, 0.3 );
+				MuzzleFlash_guess( view, 0, true, 0.3 );
 			}
 		}
 	}
@@ -1265,11 +1265,11 @@ void V_CalcNormalRefdef ( struct ref_params_s *pparams )
 	// cof: green light around the player
 	cl_entity_t *player = gEngfuncs.GetLocalPlayer();
 	bool bCamera = false;
-	if ( guess_pAttachCamEnt )
-		bCamera = !guess_iAttachCamFlag;
+	if ( pAttachCamEnt_guess )
+		bCamera = !iAttachCamFlag_guess;
 
-	if ( !guess_iPaused && !bCamera && !guess_iBoat && !guess_iWheelchair && !guess_pTelescopeEnt && !guess_IsViewEntityActive() && player &&
-		( gHUD.guess_m_iFlashFlags & 64 ) )
+	if ( !iPaused_guess && !bCamera && !iBoat_guess && !iWheelchair_guess && !pTelescopeEnt_guess && !IsViewEntityActive_guess() && player &&
+		( gHUD.m_iFlashFlags_guess & 64 ) )
 	{
 		DynamicLight *dl = MY_AllocDlight( 0 );
 		dl->origin = player->origin;
@@ -1283,35 +1283,35 @@ void V_CalcNormalRefdef ( struct ref_params_s *pparams )
 	// cof: maglite
 	cl_entity_t *viewmodel = gEngfuncs.GetViewModel();
 
-	if ( viewmodel && gHUD.guess_m_iMaglite && ( ( gHUD.m_Ammo.m_pWeapon && gHUD.m_Ammo.m_pWeapon->iId == 1 ) || guess_g_iDualWeapon2 == 1 ) )
+	if ( viewmodel && gHUD.m_iMaglite_guess && ( ( gHUD.m_Ammo.m_pWeapon && gHUD.m_Ammo.m_pWeapon->iId == 1 ) || g_iDualWeapon2_guess == 1 ) )
 	{
 		cl_entity_t *localplayer = gEngfuncs.GetLocalPlayer();
 		pmtrace_t *tr = gEngfuncs.PM_TraceLine( viewmodel->attachment[0], viewmodel->attachment[1], PM_TRACELINE_PHYSENTSONLY, 1, -1 );
 
-		if ( !guess_iBoat && !guess_iWheelchair && !guess_pTelescopeEnt && !guess_IsViewEntityActive() && localplayer && tr->endpos && gEngfuncs.GetViewModel() )
+		if ( !iBoat_guess && !iWheelchair_guess && !pTelescopeEnt_guess && !IsViewEntityActive_guess() && localplayer && tr->endpos && gEngfuncs.GetViewModel() )
 		{
 			vec3_t dir;
 			VectorSubtract( viewmodel->attachment[1], viewmodel->attachment[0], dir );
 			VectorAngles( dir, dir );
 			dir[0] = -dir[0];
 
-			guess_SetupMagliteLight( tr->endpos, dir, pparams->time, pparams->frametime );
+			SetupMagliteLight_guess( tr->endpos, dir, pparams->time, pparams->frametime );
 		}
 	}
 
 	SetupFlashlight( view->attachment[1], pparams->viewangles, pparams->time, pparams->frametime ); // buz
-	guess_SetupViewModelLight( view->attachment[1], pparams->viewangles, pparams->time, pparams->frametime );
+	SetupViewModelLight_guess( view->attachment[1], pparams->viewangles, pparams->time, pparams->frametime );
 
 	// cof: the left hand weapon follows the weapon model
-	if ( guess_g_iHeadShieldType == 3 )
+	if ( g_iHeadShieldType_guess == 3 )
 	{
 		VectorCopy( view->origin, g_HeadShieldEnt.origin );
 		VectorCopy( view->origin, g_HeadShieldEnt.curstate.origin );
 		VectorCopy( view->angles, g_HeadShieldEnt.angles );
 		VectorCopy( view->angles, g_HeadShieldEnt.curstate.angles );
 
-		guess_AddViewmodelBob( pparams, g_HeadShieldEnt.origin, g_HeadShieldEnt.angles, pparams->frametime, gEngfuncs.GetClientTime(), &g_HeadShieldEnt, true );
-		guess_CalcViewModelLag( pparams->frametime, g_HeadShieldEnt.origin, g_HeadShieldEnt.angles, g_HeadShieldEnt.angles, &g_HeadShieldEnt, true );
+		AddViewmodelBob_guess( pparams, g_HeadShieldEnt.origin, g_HeadShieldEnt.angles, pparams->frametime, gEngfuncs.GetClientTime(), &g_HeadShieldEnt, true );
+		CalcViewModelLag_guess( pparams->frametime, g_HeadShieldEnt.origin, g_HeadShieldEnt.angles, g_HeadShieldEnt.angles, &g_HeadShieldEnt, true );
 	}
 }
 
@@ -2113,18 +2113,18 @@ void DLLEXPORT V_CalcRefdef( struct ref_params_s *pparams )
 
 	if ( pparams->paused )
 	{
-		if ( guess_iPaused != 1 )
-			guess_iPaused = 1;
+		if ( iPaused_guess != 1 )
+			iPaused_guess = 1;
 
-		if ( !guess_IrrKlangIsPaused() )
-			guess_IrrKlangSetPaused( true );
+		if ( !IrrKlangIsPaused_guess() )
+			IrrKlangSetPaused_guess( true );
 	}
 	else
 	{
-		guess_iPaused = 0;
+		iPaused_guess = 0;
 
-		if ( guess_IrrKlangIsPaused() )
-			guess_IrrKlangSetPaused( false );
+		if ( IrrKlangIsPaused_guess() )
+			IrrKlangSetPaused_guess( false );
 	}
 
 	V_CalcNormalRefdef ( pparams );
@@ -2184,22 +2184,22 @@ void V_DropPunchAngle ( float frametime, float *ev_punchangle )
 		return;
 	}
 
-	if ( Length( ev_punchangle ) > 0.001 || Length( guess_ev_punchanglevel ) > 0.001 )
+	if ( Length( ev_punchangle ) > 0.001 || Length( ev_punchanglevel_guess ) > 0.001 )
 	{
-		VectorMA( ev_punchangle, frametime, guess_ev_punchanglevel, ev_punchangle );
+		VectorMA( ev_punchangle, frametime, ev_punchanglevel_guess, ev_punchangle );
 		damping = 1 - (PUNCH_DAMPING * frametime);
 
 		if ( damping < 0 )
 		{
 			damping = 0;
 		}
-		VectorScale( guess_ev_punchanglevel, damping, guess_ev_punchanglevel );
+		VectorScale( ev_punchanglevel_guess, damping, ev_punchanglevel_guess );
 
 		// torsional spring
 		springForceMagnitude = PUNCH_SPRING_CONSTANT * frametime;
 		springForceMagnitude = clamp( springForceMagnitude, 0, 2 );
 
-		VectorMA( guess_ev_punchanglevel, -springForceMagnitude, ev_punchangle, guess_ev_punchanglevel );
+		VectorMA( ev_punchanglevel_guess, -springForceMagnitude, ev_punchangle, ev_punchanglevel_guess );
 
 		// don't wrap around
 		ev_punchangle[0] = clamp( ev_punchangle[0], -89, 89 );
@@ -2227,16 +2227,16 @@ V_Init
 */
 extern void CAM_ToFirstPerson( void );
 extern void CAM_ToThirdPerson( void );
-extern cl_entity_t *guess_pTelescopeEnt;
-extern cl_entity_t *guess_pAttachCamEnt;
-extern cl_entity_t *guess_pCamTargetEnt;
+extern cl_entity_t *pTelescopeEnt_guess;
+extern cl_entity_t *pAttachCamEnt_guess;
+extern cl_entity_t *pCamTargetEnt_guess;
 
-int guess_iModelAttachEnt = -1;
-int guess_iModelAttachNum = -1;
+int iModelAttachEnt_guess = -1;
+int iModelAttachNum_guess = -1;
 
-int guess_MsgModelAttach( const char *pszName, int iSize, void *pbuf );
-int guess_MsgThirdPerson( const char *pszName, int iSize, void *pbuf );
-int guess_MsgCoopCamAnim( const char *pszName, int iSize, void *pbuf );
+int MsgModelAttach_guess( const char *pszName, int iSize, void *pbuf );
+int MsgThirdPerson_guess( const char *pszName, int iSize, void *pbuf );
+int MsgCoopCamAnim_guess( const char *pszName, int iSize, void *pbuf );
 
 void V_Init (void)
 {
@@ -2256,22 +2256,22 @@ void V_Init (void)
 	cl_chasedist		= gEngfuncs.pfnRegisterVariable( "cl_chasedist","112", 0 );
 	cl_forcepause		= gEngfuncs.pfnRegisterVariable( "cl_forcepause","0", 0 ); // buz test
 
-	gEngfuncs.pfnHookUserMsg( "ModelAttach", guess_MsgModelAttach );
-	gEngfuncs.pfnHookUserMsg( "ThirdPerson", guess_MsgThirdPerson );
-	gEngfuncs.pfnHookUserMsg( "CoopCamAnim", guess_MsgCoopCamAnim );
+	gEngfuncs.pfnHookUserMsg( "ModelAttach", MsgModelAttach_guess );
+	gEngfuncs.pfnHookUserMsg( "ThirdPerson", MsgThirdPerson_guess );
+	gEngfuncs.pfnHookUserMsg( "CoopCamAnim", MsgCoopCamAnim_guess );
 }
 
-int guess_MsgModelAttach( const char *pszName, int iSize, void *pbuf )
+int MsgModelAttach_guess( const char *pszName, int iSize, void *pbuf )
 {
 	BEGIN_READ( pbuf, iSize );
 
-	guess_iModelAttachEnt = READ_LONG();
-	guess_iModelAttachNum = READ_BYTE();
+	iModelAttachEnt_guess = READ_LONG();
+	iModelAttachNum_guess = READ_BYTE();
 
 	return 1;
 }
 
-int guess_MsgThirdPerson( const char *pszName, int iSize, void *pbuf )
+int MsgThirdPerson_guess( const char *pszName, int iSize, void *pbuf )
 {
 	BEGIN_READ( pbuf, iSize );
 
@@ -2279,9 +2279,9 @@ int guess_MsgThirdPerson( const char *pszName, int iSize, void *pbuf )
 	int iEntity = READ_SHORT();
 
 	if ( iEntity == 255 )
-		guess_pCamTargetEnt = NULL;
+		pCamTargetEnt_guess = NULL;
 	else
-		guess_pCamTargetEnt = gEngfuncs.GetEntityByIndex( iEntity );
+		pCamTargetEnt_guess = gEngfuncs.GetEntityByIndex( iEntity );
 
 	if ( iThirdPerson )
 		CAM_ToThirdPerson();
@@ -2291,32 +2291,32 @@ int guess_MsgThirdPerson( const char *pszName, int iSize, void *pbuf )
 	return 1;
 }
 
-int guess_MsgCoopCamAnim( const char *pszName, int iSize, void *pbuf )
+int MsgCoopCamAnim_guess( const char *pszName, int iSize, void *pbuf )
 {
 	BEGIN_READ( pbuf, iSize );
 
-	if ( guess_pAttachCamEnt )
+	if ( pAttachCamEnt_guess )
 	{
 		int iSequence = READ_BYTE();
 
 		if ( iSequence >= 0 )
 		{
-			guess_pAttachCamEnt->curstate.animtime = gEngfuncs.GetClientTime();
-			guess_pAttachCamEnt->curstate.sequence = iSequence;
+			pAttachCamEnt_guess->curstate.animtime = gEngfuncs.GetClientTime();
+			pAttachCamEnt_guess->curstate.sequence = iSequence;
 		}
 	}
 
 	return 1;
 }
 
-extern int guess_g_iDualEntIndex;
+extern int g_iDualEntIndex_guess;
 
-cl_entity_t *guess_GetDualEntity( void )
+cl_entity_t *GetDualEntity_guess( void )
 {
-	return gEngfuncs.GetEntityByIndex( guess_g_iDualEntIndex );
+	return gEngfuncs.GetEntityByIndex( g_iDualEntIndex_guess );
 }
 
-void guess_NormalizeAngles360( float pitch, float yaw )
+void NormalizeAngles360_guess( float pitch, float yaw )
 {
 	while ( pitch > 360 )
 		pitch -= 360;
@@ -2329,37 +2329,37 @@ void guess_NormalizeAngles360( float pitch, float yaw )
 		yaw += 360;
 }
 
-inline bool guess_IsFinite( float f )
+inline bool IsFinite_guess( float f )
 {
 	return ( *(unsigned long *)&f & 0x7F800000 ) != 0x7F800000;
 }
 
-bool guess_VectorIsValid( float x, float y, float z )
+bool VectorIsValid_guess( float x, float y, float z )
 {
-	return guess_IsFinite( x ) && guess_IsFinite( y ) && guess_IsFinite( z );
+	return IsFinite_guess( x ) && IsFinite_guess( y ) && IsFinite_guess( z );
 }
 
-void guess_V_DecayPunchAngle( Vector punch, struct ref_params_s *pparams )
+void V_DecayPunchAngle_guess( Vector punch, struct ref_params_s *pparams )
 {
 	float	damping;
 	float	springForceMagnitude;
 
-	if ( Length( punch ) > 0.001 || Length( guess_ev_punchanglevel ) > 0.001 )
+	if ( Length( punch ) > 0.001 || Length( ev_punchanglevel_guess ) > 0.001 )
 	{
-		VectorMA( punch, pparams->frametime, guess_ev_punchanglevel, punch );
+		VectorMA( punch, pparams->frametime, ev_punchanglevel_guess, punch );
 		damping = 1 - (PUNCH_DAMPING * pparams->frametime);
 
 		if ( damping < 0 )
 		{
 			damping = 0;
 		}
-		VectorScale( guess_ev_punchanglevel, damping, guess_ev_punchanglevel );
+		VectorScale( ev_punchanglevel_guess, damping, ev_punchanglevel_guess );
 
 		// torsional spring
 		springForceMagnitude = PUNCH_SPRING_CONSTANT * pparams->frametime;
 		springForceMagnitude = clamp( springForceMagnitude, 0, 2 );
 
-		VectorMA( guess_ev_punchanglevel, -springForceMagnitude, punch, guess_ev_punchanglevel );
+		VectorMA( ev_punchanglevel_guess, -springForceMagnitude, punch, ev_punchanglevel_guess );
 
 		// don't wrap around
 		ev_punchangle[0] = clamp( ev_punchangle[0], -89, 89 );
@@ -2374,39 +2374,39 @@ void guess_V_DecayPunchAngle( Vector punch, struct ref_params_s *pparams )
 #define HL2_BOB_CYCLE_MAX	0.45f
 #define HL2_BOB_UP			0.5f
 
-extern float guess_flWeaponIdleSpeed;
-extern float guess_flWeaponIdleDampener;
-extern float guess_flGunParam1;
-extern float guess_flSprintFlag;
-extern int guess_g_iHeadShieldType;
-extern int guess_iAttachCamFlag;
+extern float flWeaponIdleSpeed_guess;
+extern float flWeaponIdleDampener_guess;
+extern float flGunParam1_guess;
+extern float flSprintFlag_guess;
+extern int g_iHeadShieldType_guess;
+extern int iAttachCamFlag_guess;
 
-float guess_g_fMaxViewModelLag = 1.5f;
-Vector guess_vecLastFacing;
+float g_fMaxViewModelLag_guess = 1.5f;
+Vector vecLastFacing_guess;
 
-float guess_g_verticalBob;
-float guess_g_lateralBob;
-float guess_flWeaponLower;
-float guess_flUnknown1055959C;
+float g_verticalBob_guess;
+float g_lateralBob_guess;
+float flWeaponLower_guess;
+float flUnknown1055959C_guess;
 
-int guess_GetBobMode( struct ref_params_s *pparams )
+int GetBobMode_guess( struct ref_params_s *pparams )
 {
 	cl_entity_t *player = gEngfuncs.GetLocalPlayer();
 
 	return 0;
 }
 
-float guess_CalcViewmodelBob( struct ref_params_s *pparams, float frametime, float curtime )
+float CalcViewmodelBob_guess( struct ref_params_s *pparams, float frametime, float curtime )
 {
 	static	float bobtime;
 	static	float lastbobtime;
 	float	cycle;
 	float	speed;
 
-	if ( guess_flUnknown1055959C > 5 )
-		guess_flUnknown1055959C = 5;
-	else if ( guess_flUnknown1055959C < 0 )
-		guess_flUnknown1055959C = 0;
+	if ( flUnknown1055959C_guess > 5 )
+		flUnknown1055959C_guess = 5;
+	else if ( flUnknown1055959C_guess < 0 )
+		flUnknown1055959C_guess = 0;
 
 	cl_entity_t *player = gEngfuncs.GetLocalPlayer();
 
@@ -2415,50 +2415,50 @@ float guess_CalcViewmodelBob( struct ref_params_s *pparams, float frametime, flo
 		return 0.0f;
 	}
 
-	if ( guess_GetBobMode( pparams ) == 1 || gHUD.guess_m_iLadder || gHUD.guess_m_iFallOver || guess_iAttachCamFlag )
+	if ( GetBobMode_guess( pparams ) == 1 || gHUD.m_iLadder_guess || gHUD.m_iFallOver_guess || iAttachCamFlag_guess )
 	{
-		if ( gHUD.guess_m_iLadder || gHUD.guess_m_iFallOver || guess_iAttachCamFlag )
+		if ( gHUD.m_iLadder_guess || gHUD.m_iFallOver_guess || iAttachCamFlag_guess )
 		{
-			if ( gViewPort && gViewPort->guess_m_pRECBInventory && gViewPort->guess_m_pRECBInventory->isVisible() )
+			if ( gViewPort && gViewPort->m_pRECBInventory_guess && gViewPort->m_pRECBInventory_guess->isVisible() )
 				gViewPort->HideTopMenu();
 		}
 
-		if ( gHUD.guess_m_iLadder || gHUD.guess_m_iFallOver || guess_iAttachCamFlag )
+		if ( gHUD.m_iLadder_guess || gHUD.m_iFallOver_guess || iAttachCamFlag_guess )
 		{
-			if ( guess_flWeaponLower < 20 )
-				guess_flWeaponLower += gHUD.m_flTimeDelta * 100;
-			if ( guess_flWeaponLower > 20 )
-				guess_flWeaponLower = 20;
+			if ( flWeaponLower_guess < 20 )
+				flWeaponLower_guess += gHUD.m_flTimeDelta * 100;
+			if ( flWeaponLower_guess > 20 )
+				flWeaponLower_guess = 20;
 		}
-		else if ( guess_g_iHeadShieldType == 3 )
+		else if ( g_iHeadShieldType_guess == 3 )
 		{
-			if ( guess_flWeaponLower < 20 )
-				guess_flWeaponLower += gHUD.m_flTimeDelta * 100;
-			if ( guess_flWeaponLower > 20 )
-				guess_flWeaponLower = 20;
+			if ( flWeaponLower_guess < 20 )
+				flWeaponLower_guess += gHUD.m_flTimeDelta * 100;
+			if ( flWeaponLower_guess > 20 )
+				flWeaponLower_guess = 20;
 		}
-		else if ( guess_flWeaponLower != 0 )
+		else if ( flWeaponLower_guess != 0 )
 		{
-			guess_flWeaponLower = 0;
+			flWeaponLower_guess = 0;
 		}
 
-		speed = guess_flGunParam1 * 8;
+		speed = flGunParam1_guess * 8;
 		speed = clamp( speed, -400, 400 );
 	}
 	else
 	{
-		if ( guess_flWeaponLower > 0 )
-			guess_flWeaponLower -= gHUD.m_flTimeDelta * 100;
-		if ( guess_flWeaponLower < 0 )
-			guess_flWeaponLower = 0;
+		if ( flWeaponLower_guess > 0 )
+			flWeaponLower_guess -= gHUD.m_flTimeDelta * 100;
+		if ( flWeaponLower_guess < 0 )
+			flWeaponLower_guess = 0;
 
-		if ( guess_flSprintFlag > 0 )
+		if ( flSprintFlag_guess > 0 )
 		{
 			speed = 0;
 		}
 		else
 		{
-			speed = guess_flGunParam1 * 2;
+			speed = flGunParam1_guess * 2;
 			speed = clamp( speed, -320, 320 );
 		}
 	}
@@ -2481,13 +2481,13 @@ float guess_CalcViewmodelBob( struct ref_params_s *pparams, float frametime, flo
 		cycle = M_PI + M_PI*(cycle-HL2_BOB_UP)/(1.0 - HL2_BOB_UP);
 	}
 
-	guess_g_verticalBob = speed*0.005f;
-	guess_g_verticalBob = guess_g_verticalBob*0.3 + guess_g_verticalBob*0.7*sin(cycle);
+	g_verticalBob_guess = speed*0.005f;
+	g_verticalBob_guess = g_verticalBob_guess*0.3 + g_verticalBob_guess*0.7*sin(cycle);
 
-	if ( guess_g_verticalBob > 4.0f )
-		guess_g_verticalBob = 4.0f;
-	else if ( guess_g_verticalBob < -7.0f )
-		guess_g_verticalBob = -7.0f;
+	if ( g_verticalBob_guess > 4.0f )
+		g_verticalBob_guess = 4.0f;
+	else if ( g_verticalBob_guess < -7.0f )
+		g_verticalBob_guess = -7.0f;
 
 	//Calculate the lateral bob
 	cycle = bobtime - (int)(bobtime/HL2_BOB_CYCLE_MAX*2)*HL2_BOB_CYCLE_MAX*2;
@@ -2502,21 +2502,21 @@ float guess_CalcViewmodelBob( struct ref_params_s *pparams, float frametime, flo
 		cycle = M_PI + M_PI*(cycle-HL2_BOB_UP)/(1.0 - HL2_BOB_UP);
 	}
 
-	guess_g_lateralBob = speed*0.005f;
-	guess_g_lateralBob = guess_g_lateralBob*0.3 + guess_g_lateralBob*0.7*sin(cycle);
+	g_lateralBob_guess = speed*0.005f;
+	g_lateralBob_guess = g_lateralBob_guess*0.3 + g_lateralBob_guess*0.7*sin(cycle);
 
-	if ( guess_g_lateralBob > 4.0f )
-		guess_g_lateralBob = 4.0f;
-	else if ( guess_g_lateralBob < -7.0f )
-		guess_g_lateralBob = -7.0f;
+	if ( g_lateralBob_guess > 4.0f )
+		g_lateralBob_guess = 4.0f;
+	else if ( g_lateralBob_guess < -7.0f )
+		g_lateralBob_guess = -7.0f;
 
-	if ( guess_flSprintFlag > 0 )
-		guess_g_lateralBob *= 2;
+	if ( flSprintFlag_guess > 0 )
+		g_lateralBob_guess *= 2;
 
 	return 0.0f;
 }
 
-void guess_AddViewmodelBob( struct ref_params_s *pparams, Vector &origin, Vector &angles, float frametime, float curtime, cl_entity_t *view, bool bLeft )
+void AddViewmodelBob_guess( struct ref_params_s *pparams, Vector &origin, Vector &angles, float frametime, float curtime, cl_entity_t *view, bool bLeft )
 {
 	Vector	forward, right, up;
 	AngleVectors( angles, forward, right, up );
@@ -2524,27 +2524,27 @@ void guess_AddViewmodelBob( struct ref_params_s *pparams, Vector &origin, Vector
 	Vector	vforward, vright, vup;
 	AngleVectors( pparams->cl_viewangles, vforward, vright, vup );
 
-	guess_CalcViewmodelBob( pparams, frametime, curtime );
+	CalcViewmodelBob_guess( pparams, frametime, curtime );
 
-	if ( gHUD.guess_m_bIronSights )
+	if ( gHUD.m_bIronSights_guess )
 	{
-		guess_g_lateralBob = 0;
-		guess_g_verticalBob = 0;
+		g_lateralBob_guess = 0;
+		g_verticalBob_guess = 0;
 	}
 
 	// Apply bob, but scaled down to 40%
-	VectorMA( origin, guess_g_verticalBob * 0.1f, forward, origin );
+	VectorMA( origin, g_verticalBob_guess * 0.1f, forward, origin );
 
 	// Z bob a bit more
-	origin[2] += guess_g_verticalBob * 0.1f;
+	origin[2] += g_verticalBob_guess * 0.1f;
 
 	// bob the angles
-	angles[ ROLL ]	+= guess_g_verticalBob * 0.5f;
-	angles[ PITCH ]	-= guess_g_verticalBob * 0.4f;
+	angles[ ROLL ]	+= g_verticalBob_guess * 0.5f;
+	angles[ PITCH ]	-= g_verticalBob_guess * 0.4f;
 
-	angles[ YAW ]	-= guess_g_lateralBob  * 0.3f;
+	angles[ YAW ]	-= g_lateralBob_guess  * 0.3f;
 
-	VectorMA( origin, guess_g_lateralBob * 0.8f, right, origin );
+	VectorMA( origin, g_lateralBob_guess * 0.8f, right, origin );
 
 	if ( !view )
 		return;
@@ -2552,40 +2552,40 @@ void guess_AddViewmodelBob( struct ref_params_s *pparams, Vector &origin, Vector
 	view->origin = origin;
 	view->angles = angles;
 
-	view->origin = view->origin - vforward * guess_flUnknown1055959C;
+	view->origin = view->origin - vforward * flUnknown1055959C_guess;
 
-	if ( !gHUD.guess_m_iLadder && !gHUD.guess_m_iFallOver && !guess_iAttachCamFlag )
+	if ( !gHUD.m_iLadder_guess && !gHUD.m_iFallOver_guess && !iAttachCamFlag_guess )
 	{
-		view->curstate.angles[0] -= guess_flWeaponLower;
+		view->curstate.angles[0] -= flWeaponLower_guess;
 
 		if ( bLeft )
 		{
-			view->curstate.angles[1] += guess_flWeaponLower * 0.5f;
-			view->curstate.angles[2] += guess_flWeaponLower * 0.5f;
+			view->curstate.angles[1] += flWeaponLower_guess * 0.5f;
+			view->curstate.angles[2] += flWeaponLower_guess * 0.5f;
 		}
 		else
 		{
-			view->curstate.angles[1] -= guess_flWeaponLower * 0.5f;
-			view->curstate.angles[2] -= guess_flWeaponLower * 0.5f;
+			view->curstate.angles[1] -= flWeaponLower_guess * 0.5f;
+			view->curstate.angles[2] -= flWeaponLower_guess * 0.5f;
 		}
 	}
 	else
 	{
-		view->curstate.angles[0] -= guess_flWeaponLower * 2;
+		view->curstate.angles[0] -= flWeaponLower_guess * 2;
 
 		if ( bLeft )
-			view->curstate.angles[1] += guess_flWeaponLower * 0.5f;
+			view->curstate.angles[1] += flWeaponLower_guess * 0.5f;
 		else
-			view->curstate.angles[1] -= guess_flWeaponLower * 0.5f;
+			view->curstate.angles[1] -= flWeaponLower_guess * 0.5f;
 	}
 
-	float flSin = sin( gEngfuncs.GetClientTime() / guess_flWeaponIdleSpeed );
-	float flCos = cos( gEngfuncs.GetClientTime() / guess_flWeaponIdleSpeed );
+	float flSin = sin( gEngfuncs.GetClientTime() / flWeaponIdleSpeed_guess );
+	float flCos = cos( gEngfuncs.GetClientTime() / flWeaponIdleSpeed_guess );
 
-	flSin = flSin / guess_flWeaponIdleDampener;
-	flCos = flCos / guess_flWeaponIdleDampener;
+	flSin = flSin / flWeaponIdleDampener_guess;
+	flCos = flCos / flWeaponIdleDampener_guess;
 
-	if ( gHUD.guess_m_bIronSights )
+	if ( gHUD.m_bIronSights_guess )
 	{
 		flCos = 0;
 		flSin = 0;
@@ -2596,9 +2596,9 @@ void guess_AddViewmodelBob( struct ref_params_s *pparams, Vector &origin, Vector
 	view->origin = view->origin + vup * ( flCos * 0.5f );
 }
 
-void guess_CalcViewModelLag( float frametime, Vector &origin, Vector &angles, Vector &original_angles, cl_entity_t *view, bool bLeft )
+void CalcViewModelLag_guess( float frametime, Vector &origin, Vector &angles, Vector &original_angles, cl_entity_t *view, bool bLeft )
 {
-	if ( gHUD.guess_m_bIronSights )
+	if ( gHUD.m_bIronSights_guess )
 		return;
 
 	Vector vOriginalOrigin = origin;
@@ -2611,7 +2611,7 @@ void guess_CalcViewModelLag( float frametime, Vector &origin, Vector &angles, Ve
 	if ( frametime != 0.0f )
 	{
 		Vector vDifference;
-		VectorSubtract( forward, guess_vecLastFacing, vDifference );
+		VectorSubtract( forward, vecLastFacing_guess, vDifference );
 
 		float flForce = CVAR_GET_FLOAT( "cl_lazyweapon_force" );
 		flForce = clamp( flForce, 0, 10 );
@@ -2621,21 +2621,21 @@ void guess_CalcViewModelLag( float frametime, Vector &origin, Vector &angles, Ve
 		// If we start to lag too far behind, we'll increase the "catch up" speed.  Solves the problem with fast cl_yawspeed, m_yaw or joysticks
 		//  rotating quickly.  The old code would slam lastfacing with origin causing the viewmodel to pop to a new position
 		float flDiff = vDifference.Length();
-		if ( (flDiff > guess_g_fMaxViewModelLag) && (guess_g_fMaxViewModelLag > 0.0f) )
+		if ( (flDiff > g_fMaxViewModelLag_guess) && (g_fMaxViewModelLag_guess > 0.0f) )
 		{
-			float flScale = flDiff / guess_g_fMaxViewModelLag;
+			float flScale = flDiff / g_fMaxViewModelLag_guess;
 			flSpeed *= flScale;
 		}
 
-		VectorMA( guess_vecLastFacing, flSpeed * frametime, vDifference, guess_vecLastFacing );
+		VectorMA( vecLastFacing_guess, flSpeed * frametime, vDifference, vecLastFacing_guess );
 		// Make sure it doesn't grow out of control!!!
-		VectorNormalize( guess_vecLastFacing );
+		VectorNormalize( vecLastFacing_guess );
 		VectorMA( origin, flForce, vDifference * -1.0f, origin );
 	}
 
 	AngleVectors( original_angles, forward, right, up );
 
-	if ( guess_g_fMaxViewModelLag == 0.0f )
+	if ( g_fMaxViewModelLag_guess == 0.0f )
 	{
 		origin = vOriginalOrigin;
 		angles = vOriginalAngles;
@@ -2646,16 +2646,16 @@ void guess_CalcViewModelLag( float frametime, Vector &origin, Vector &angles, Ve
 // cof: lights
 //===============================
 extern cvar_t *cl_lowflashlight;
-extern cl_entity_t *guess_pAttachCamEnt;
-extern int guess_iBoat;
-extern int guess_iWheelchair;
+extern cl_entity_t *pAttachCamEnt_guess;
+extern int iBoat_guess;
+extern int iWheelchair_guess;
 
-void guess_SetupMagliteLight( vec3_t origin, vec3_t angles, float time, float frametime )
+void SetupMagliteLight_guess( vec3_t origin, vec3_t angles, float time, float frametime )
 {
-	if ( !( gHUD.guess_m_iFlashFlags & 8 ) )
+	if ( !( gHUD.m_iFlashFlags_guess & 8 ) )
 		return;
 
-	if ( guess_IsViewEntityActive() || guess_pAttachCamEnt || guess_iBoat || guess_pTelescopeEnt || guess_iWheelchair )
+	if ( IsViewEntityActive_guess() || pAttachCamEnt_guess || iBoat_guess || pTelescopeEnt_guess || iWheelchair_guess )
 		return;
 
 	static float add = 0;
@@ -2695,7 +2695,7 @@ void guess_SetupMagliteLight( vec3_t origin, vec3_t angles, float time, float fr
 	flashlight->color = Vector(1.4, 1.4, 1.4); // make model dymanic lighting happy
 }
 
-void guess_SetupViewModelLight( vec3_t origin, vec3_t angles, float time, float frametime )
+void SetupViewModelLight_guess( vec3_t origin, vec3_t angles, float time, float frametime )
 {
 	cl_entity_t *player = gEngfuncs.GetLocalPlayer();
 	cl_entity_t *view = gEngfuncs.GetViewModel();
@@ -2703,10 +2703,10 @@ void guess_SetupViewModelLight( vec3_t origin, vec3_t angles, float time, float 
 	if ( !player || !view )
 		return;
 
-	if ( !( gHUD.guess_m_iFlashFlags & 4 ) )
+	if ( !( gHUD.m_iFlashFlags_guess & 4 ) )
 		return;
 
-	if ( guess_IsViewEntityActive() || guess_pAttachCamEnt || guess_iBoat || guess_pTelescopeEnt || guess_iWheelchair )
+	if ( IsViewEntityActive_guess() || pAttachCamEnt_guess || iBoat_guess || pTelescopeEnt_guess || iWheelchair_guess )
 		return;
 
 	origin = gEngfuncs.PM_TraceLine( v_origin, view->attachment[1], PM_TRACELINE_PHYSENTSONLY, 1, -1 )->endpos;
@@ -2734,7 +2734,7 @@ void guess_SetupViewModelLight( vec3_t origin, vec3_t angles, float time, float 
 		if (add < addideal) add = addideal;
 	}
 
-	if ( gHUD.guess_m_iFlashFlags & 4 )
+	if ( gHUD.m_iFlashFlags_guess & 4 )
 	{
 		view = gEngfuncs.GetViewModel();
 
@@ -2856,13 +2856,13 @@ void SetupFlashlight(vec3_t origin, vec3_t angles, float time, float frametime)
 	if ( !player )
 		return;
 
-	if ( !( gHUD.guess_m_iFlashFlags & 3 ) )
+	if ( !( gHUD.m_iFlashFlags_guess & 3 ) )
 		return;
 
-	if ( guess_IsViewEntityActive() || guess_pAttachCamEnt || guess_iBoat || guess_pTelescopeEnt || guess_iWheelchair )
+	if ( IsViewEntityActive_guess() || pAttachCamEnt_guess || iBoat_guess || pTelescopeEnt_guess || iWheelchair_guess )
 		return;
 
-	if ( gHUD.guess_m_iFlashFlags & 2 )
+	if ( gHUD.m_iFlashFlags_guess & 2 )
 	{
 		origin = player->curstate.origin;
 		angles[0] = CVAR_GET_FLOAT( "cof_reducedlightxangle" );
@@ -2879,7 +2879,7 @@ void SetupFlashlight(vec3_t origin, vec3_t angles, float time, float frametime)
 	gEngfuncs.pEventAPI->EV_PlayerTrace( origin, fwd, PM_NORMAL, -1, &tr );
 	if (tr.fraction < 1.0)
 	{
-		if ( gHUD.guess_m_iFlashFlags & 2 )
+		if ( gHUD.m_iFlashFlags_guess & 2 )
 			addideal = (1 - tr.fraction)*CVAR_GET_FLOAT( "cof_reducedlightradius" );
 		else
 			addideal = (1 - tr.fraction)*30;
@@ -2897,7 +2897,7 @@ void SetupFlashlight(vec3_t origin, vec3_t angles, float time, float frametime)
 		if (add < addideal) add = addideal;
 	}
 
-	if ( gHUD.guess_m_iFlashFlags & 1 )
+	if ( gHUD.m_iFlashFlags_guess & 1 )
 	{
 		DynamicLight *flashlight = MY_AllocDlight(-1);
 		flashlight->origin = origin;
@@ -2913,7 +2913,7 @@ void SetupFlashlight(vec3_t origin, vec3_t angles, float time, float frametime)
 		flashlight->color = Vector(0.46, 0.46, 0.51);
 	}
 
-	if ( ( gHUD.guess_m_iFlashFlags & 2 ) && !( gHUD.guess_m_iFlashFlags & 4 ) )
+	if ( ( gHUD.m_iFlashFlags_guess & 2 ) && !( gHUD.m_iFlashFlags_guess & 4 ) )
 	{
 		gEngfuncs.PM_TraceLine( origin, origin + Vector( 0, 0, -1024 ), PM_TRACELINE_PHYSENTSONLY, 1, -1 );
 

@@ -2918,7 +2918,7 @@ int CBasePlayer::GetWeaponAnimation( void )
 {
 	int animDesired;
 
-	if ( guess_m_bMuschi2 )
+	if ( m_bMuschi2_guess )
 		return -1;
 
 	switch ( m_pActiveItem->m_iId )
@@ -2984,7 +2984,7 @@ void CBasePlayer::SetAnimation( PLAYER_ANIM playerAnim )
 	if ( m_bHasGotUp == true && m_flGetupTime > gpGlobals->time )
 		return;
 
-	if ( guess_m_bMuschi2 )
+	if ( m_bMuschi2_guess )
 	{
 		pev->gaitsequence = -1;
 		pev->sequence = -1;
@@ -5225,22 +5225,22 @@ void CBasePlayer::PostThink()
 {
 	if ( m_bInPhoneCall )
 	{
-		if ( guess_m_iPhoneNumberState )
-		switch ( guess_m_iPhoneNumberState )
+		if ( m_iPhoneNumberState_guess )
+		switch ( m_iPhoneNumberState_guess )
 		{
 		case 1:
-			if ( gpGlobals->time > guess_m_flPhoneNumberTime )
+			if ( gpGlobals->time > m_flPhoneNumberTime_guess )
 			{
-				guess_m_iPhoneNumberState = 2;
+				m_iPhoneNumberState_guess = 2;
 				EMIT_SOUND( ENT(pev), CHAN_AUTO, "ambience/van_number.wav", 1, ATTN_NORM );
-				guess_m_flPhoneNumberTime = gpGlobals->time + 6.5;
+				m_flPhoneNumberTime_guess = gpGlobals->time + 6.5;
 			}
 			break;
 
 		case 2:
-			if ( gpGlobals->time > guess_m_flPhoneNumberTime )
+			if ( gpGlobals->time > m_flPhoneNumberTime_guess )
 			{
-				guess_m_iPhoneNumberState = 0;
+				m_iPhoneNumberState_guess = 0;
 
 				if ( m_pActiveItem && FClassnameIs( m_pActiveItem->edict(), "weapon_mobile" ) )
 				{
@@ -7894,7 +7894,7 @@ void CBloodSplat::Spray ( void )
 
 //==============================================
 
-void CBasePlayer::GiveNamedItem( const char *pszName, bool deletewhendropped, bool guess_bSkipDonatorCheck )
+void CBasePlayer::GiveNamedItem( const char *pszName, bool deletewhendropped, bool bSkipDonatorCheck_guess )
 {
 	if ( pszName && !strcmp( pszName, "weapon_famas" ) )
 	{
@@ -7910,13 +7910,13 @@ void CBasePlayer::GiveNamedItem( const char *pszName, bool deletewhendropped, bo
 
 	if ( pszName && !strcmp( pszName, "weapon_tmp" ) )
 	{
-		if ( !guess_bSkipDonatorCheck && !IsDonator() && !m_iAllowedToUseTMP )
+		if ( !bSkipDonatorCheck_guess && !IsDonator() && !m_iAllowedToUseTMP )
 			return;
 	}
 
 	if ( pszName && !strcmp( pszName, "weapon_mp5" ) )
 	{
-		if ( !IsDeveloper() && guess_m_iNew16a != 2 && guess_m_iNew16a != 3 && guess_m_iNew16a != 4 && g_pGameRules && !g_pGameRules->guess_IsMapperMode() )
+		if ( !IsDeveloper() && m_iNew16a_guess != 2 && m_iNew16a_guess != 3 && m_iNew16a_guess != 4 && g_pGameRules && !g_pGameRules->IsMapperMode_guess() )
 			return;
 	}
 
@@ -8817,7 +8817,7 @@ int CBasePlayer::RemovePlayerItem( CBasePlayerItem *pItem )
 //
 // Returns the unique ID for the ammo, or -1 if error
 //
-int CBasePlayer :: GiveAmmo( int iCount, char *szName, int iMax, bool guess_bNoMessage )
+int CBasePlayer :: GiveAmmo( int iCount, char *szName, int iMax, bool bNoMessage_guess )
 {
 	if ( !szName )
 	{
@@ -8856,7 +8856,7 @@ int CBasePlayer :: GiveAmmo( int iCount, char *szName, int iMax, bool guess_bNoM
 	if ( iAdd < 1 )
 		return i;
 
-	if ( !guess_bNoMessage )
+	if ( !bNoMessage_guess )
 	{
 		char szMessage[128];
 
@@ -13518,8 +13518,8 @@ void CBasePlayer::PhoneNumber( int number )
 			}
 
 			m_bInPhoneCall = true;
-			guess_m_iPhoneNumberState = 1;
-			guess_m_flPhoneNumberTime = gpGlobals->time + 1;
+			m_iPhoneNumberState_guess = 1;
+			m_flPhoneNumberTime_guess = gpGlobals->time + 1;
 		}
 	}
 }
@@ -14411,12 +14411,12 @@ bool CBasePlayer::CanBeDualWielded( int weaponid )
 	return false;
 }
 
-bool CBasePlayer::guess_CanUseWeapon( int weaponid )
+bool CBasePlayer::CanUseWeapon_guess( int weaponid )
 {
 	// MP5A3: Steam group members and mapper mode only
 	if ( weaponid == 27 )
 	{
-		if ( !guess_IsInSteamGroup( 4632074 ) && !guess_IsInSteamGroup( 764566 ) && !g_pGameRules->guess_IsMapperMode() )
+		if ( !IsInSteamGroup_guess( 4632074 ) && !IsInSteamGroup_guess( 764566 ) && !g_pGameRules->IsMapperMode_guess() )
 			return false;
 	}
 
@@ -15034,7 +15034,7 @@ void CBasePlayer::PlayerAnimation( const char *anim, bool gait )
 
 int CBasePlayer::IsDeveloper( void )
 {
-	if ( guess_m_iNew16a == 4 )
+	if ( m_iNew16a_guess == 4 )
 		return 1;
 
 	if ( !strcmp( GETPLAYERAUTHID( edict() ), "STEAM_0:0:3663311" ) )
@@ -16354,7 +16354,7 @@ int CBasePlayer::IsDonator( void )
 {
 	if ( g_pGameRules && g_pGameRules->IsMultiplayer() )
 	{
-		if ( guess_m_iNew16a != 0 && guess_m_iNew16a != 3 && guess_m_iNew16a != 4 )
+		if ( m_iNew16a_guess != 0 && m_iNew16a_guess != 3 && m_iNew16a_guess != 4 )
 			return 1;
 
 		return 0;
@@ -16379,7 +16379,7 @@ int CBasePlayer::IsDonator( void )
 	return 0;
 }
 
-bool CBasePlayer::guess_IsInSteamGroup( unsigned int iGroupID )
+bool CBasePlayer::IsInSteamGroup_guess( unsigned int iGroupID )
 {
 	if ( SteamFriends() )
 	{

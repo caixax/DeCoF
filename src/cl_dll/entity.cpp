@@ -28,8 +28,8 @@
 #define DLLEXPORT __declspec( dllexport )
 
 // Cry of Fear temp entity flags (not in r_efx.h)
-#define guess_FTENT_GROW		0x00100000	// scale grows by 0.001 every frame
-#define guess_FTENT_FADE		0x00200000	// renderamt drops by 25 every frame
+#define FTENT_GROW_guess		0x00100000	// scale grows by 0.001 every frame
+#define FTENT_FADE_guess		0x00200000	// renderamt drops by 25 every frame
 
 void Game_AddObjects( void );
 
@@ -41,22 +41,22 @@ int g_iAlive = 1;
 int g_flashlight; // buz
 
 // Cry of Fear: local player values the server sends in the vuser fields (client.cpp UpdateClientData)
-extern int guess_iDoctorMode;			// vuser1[0]
-extern float guess_flGunParam1;		// vuser2[1]
-float guess_flSprintFlag;			// vuser2[2]: the server's FL flag 1<<18 (running)
-int guess_iM16BurstMode;				// vuser3[0]
-float guess_flCurrentKick;			// vuser3[1]: the active weapon's m_flCurrentKick
-int guess_iPlayerMode;				// vuser4[0]: the server's pev->fuser3 (0 normal, 5 developer commentary, 10 weapon special)
-float guess_flRevolverRotation;		// vuser4[2]
+extern int iDoctorMode_guess;			// vuser1[0]
+extern float flGunParam1_guess;		// vuser2[1]
+float flSprintFlag_guess;			// vuser2[2]: the server's FL flag 1<<18 (running)
+int iM16BurstMode_guess;				// vuser3[0]
+float flCurrentKick_guess;			// vuser3[1]: the active weapon's m_flCurrentKick
+int iPlayerMode_guess;				// vuser4[0]: the server's pev->fuser3 (0 normal, 5 developer commentary, 10 weapon special)
+float flRevolverRotation_guess;		// vuser4[2]
 
-cl_entity_t guess_muzzleflash;		// flash model drawn by guess_MuzzleFlash
-TEMPENTITY *guess_pGunSmoke;
-int guess_iGunSmoke;
+cl_entity_t muzzleflash_guess;		// flash model drawn by MuzzleFlash_guess
+TEMPENTITY *pGunSmoke_guess;
+int iGunSmoke_guess;
 
 extern cvar_t *cl_cheapweaponsmoke;
-extern int guess_iUnknown1054506C;
+extern int iUnknown1054506C_guess;
 
-void guess_IrrKlangPlaySFX( const char *pszFile, int iType, bool bFlag, vec3_t vecOrigin );
+void IrrKlangPlaySFX_guess( const char *pszFile, int iType, bool bFlag, vec3_t vecOrigin );
 
 int GlowFilterEntities ( int type, struct cl_entity_s *ent, const char *modelname ); // buz
 
@@ -221,13 +221,13 @@ void DLLEXPORT HUD_ProcessPlayerState( struct entity_state_s *dst, const struct 
 
 		// buz
 		g_iGunMode = src->vuser2[0];
-		guess_flGunParam1 = src->vuser2[1];
-		guess_flSprintFlag = src->vuser2[2];
-		guess_iDoctorMode = src->vuser1[0];
-		guess_iPlayerMode = src->vuser4[0];
-		guess_flRevolverRotation = src->vuser4[2];
-		guess_iM16BurstMode = src->vuser3[0];
-		guess_flCurrentKick = src->vuser3[1];
+		flGunParam1_guess = src->vuser2[1];
+		flSprintFlag_guess = src->vuser2[2];
+		iDoctorMode_guess = src->vuser1[0];
+		iPlayerMode_guess = src->vuser4[0];
+		flRevolverRotation_guess = src->vuser4[2];
+		iM16BurstMode_guess = src->vuser3[0];
+		flCurrentKick_guess = src->vuser3[1];
 	}
 	else
 	{
@@ -681,12 +681,12 @@ void DlightFlash(float *origin)
 
 /*
 =========================
-guess_MuzzleFlash
+MuzzleFlash_guess
 
 Cry of Fear: draws the flash model at an attachment of the entity
 =========================
 */
-void guess_MuzzleFlash( cl_entity_t *pEntity, int iAttachment, bool bAlt, float flScale )
+void MuzzleFlash_guess( cl_entity_t *pEntity, int iAttachment, bool bAlt, float flScale )
 {
 	vec3_t vecSmokeVelocity( 0, 0, 10 );
 
@@ -769,30 +769,30 @@ void guess_MuzzleFlash( cl_entity_t *pEntity, int iAttachment, bool bAlt, float 
 
 	flFlashScale += gEngfuncs.pfnRandomFloat( -1, 1 );
 
-	guess_muzzleflash = *pPlayer;
-	guess_muzzleflash.model = pModel;
-	guess_muzzleflash.curstate.modelindex = iModelIndex;
-	guess_muzzleflash.curstate.scale = flFlashScale * flScale;
-	guess_muzzleflash.index = 0;
-	guess_muzzleflash.origin = pEntity->attachment[iAttachment];
-	guess_muzzleflash.angles = pEntity->angles;
-	guess_muzzleflash.angles[2] = gEngfuncs.pfnRandomFloat( 1, 359 );
+	muzzleflash_guess = *pPlayer;
+	muzzleflash_guess.model = pModel;
+	muzzleflash_guess.curstate.modelindex = iModelIndex;
+	muzzleflash_guess.curstate.scale = flFlashScale * flScale;
+	muzzleflash_guess.index = 0;
+	muzzleflash_guess.origin = pEntity->attachment[iAttachment];
+	muzzleflash_guess.angles = pEntity->angles;
+	muzzleflash_guess.angles[2] = gEngfuncs.pfnRandomFloat( 1, 359 );
 
 	if ( bAlt )
-		guess_muzzleflash.angles[1] += 90;
+		muzzleflash_guess.angles[1] += 90;
 
-	guess_muzzleflash.curstate.rendermode = kRenderTransAdd;
-	guess_muzzleflash.curstate.renderamt = 100;
-	guess_muzzleflash.curstate.renderfx = 161;
-	guess_muzzleflash.curstate.sequence = 0;
-	guess_muzzleflash.curstate.animtime = gEngfuncs.GetClientTime();
+	muzzleflash_guess.curstate.rendermode = kRenderTransAdd;
+	muzzleflash_guess.curstate.renderamt = 100;
+	muzzleflash_guess.curstate.renderfx = 161;
+	muzzleflash_guess.curstate.sequence = 0;
+	muzzleflash_guess.curstate.animtime = gEngfuncs.GetClientTime();
 
-	gEngfuncs.CL_CreateVisibleEntity( ET_NORMAL, &guess_muzzleflash );
+	gEngfuncs.CL_CreateVisibleEntity( ET_NORMAL, &muzzleflash_guess );
 
 	if ( cl_cheapweaponsmoke->value )
 	{
-		guess_iGunSmoke = gEngfuncs.pEventAPI->EV_FindModelIndex( "sprites/gunsmoke.spr" );
-		guess_pGunSmoke = gEngfuncs.pEfxAPI->R_TempSprite( (float *)&pEntity->attachment[0], vecSmokeVelocity, 0.05, guess_iGunSmoke, kRenderTransAdd, kRenderFxFadeFast, 255, 1, FTENT_SPRANIMATE | guess_FTENT_GROW | guess_FTENT_FADE );
+		iGunSmoke_guess = gEngfuncs.pEventAPI->EV_FindModelIndex( "sprites/gunsmoke.spr" );
+		pGunSmoke_guess = gEngfuncs.pEfxAPI->R_TempSprite( (float *)&pEntity->attachment[0], vecSmokeVelocity, 0.05, iGunSmoke_guess, kRenderTransAdd, kRenderFxFadeFast, 255, 1, FTENT_SPRANIMATE | FTENT_GROW_guess | FTENT_FADE_guess );
 	}
 
 	if ( !bAlt )
@@ -818,12 +818,12 @@ void guess_MuzzleFlash( cl_entity_t *pEntity, int iAttachment, bool bAlt, float 
 
 /*
 =========================
-guess_MuzzleFlashAt
+MuzzleFlashAt_guess
 
 Cry of Fear: the same flash at a given origin, never called in 1.6a
 =========================
 */
-void guess_MuzzleFlashAt( struct model_s *pModel, int iAttachment, Vector vecOrigin, Vector vecAngles )
+void MuzzleFlashAt_guess( struct model_s *pModel, int iAttachment, Vector vecOrigin, Vector vecAngles )
 {
 	vec3_t vecSmokeVelocity( 0, 0, 10 );
 
@@ -874,23 +874,23 @@ void guess_MuzzleFlashAt( struct model_s *pModel, int iAttachment, Vector vecOri
 
 	flFlashScale += gEngfuncs.pfnRandomFloat( -1, 1 );
 
-	guess_muzzleflash = *pPlayer;
-	guess_muzzleflash.curstate.scale = flFlashScale;
-	guess_muzzleflash.curstate.modelindex = iModelIndex;
-	guess_muzzleflash.index = 0;
-	guess_muzzleflash.model = pFlashModel;
-	guess_muzzleflash.origin = vecOrigin;
-	guess_muzzleflash.angles = vecAngles;
-	guess_muzzleflash.angles[2] = gEngfuncs.pfnRandomFloat( 1, 359 );
-	guess_muzzleflash.curstate.rendermode = kRenderTransAdd;
-	guess_muzzleflash.curstate.renderamt = 100;
+	muzzleflash_guess = *pPlayer;
+	muzzleflash_guess.curstate.scale = flFlashScale;
+	muzzleflash_guess.curstate.modelindex = iModelIndex;
+	muzzleflash_guess.index = 0;
+	muzzleflash_guess.model = pFlashModel;
+	muzzleflash_guess.origin = vecOrigin;
+	muzzleflash_guess.angles = vecAngles;
+	muzzleflash_guess.angles[2] = gEngfuncs.pfnRandomFloat( 1, 359 );
+	muzzleflash_guess.curstate.rendermode = kRenderTransAdd;
+	muzzleflash_guess.curstate.renderamt = 100;
 
-	gEngfuncs.CL_CreateVisibleEntity( ET_NORMAL, &guess_muzzleflash );
+	gEngfuncs.CL_CreateVisibleEntity( ET_NORMAL, &muzzleflash_guess );
 
 	if ( cl_cheapweaponsmoke->value )
 	{
-		guess_iGunSmoke = gEngfuncs.pEventAPI->EV_FindModelIndex( "sprites/gunsmoke.spr" );
-		guess_pGunSmoke = gEngfuncs.pEfxAPI->R_TempSprite( vecOrigin, vecSmokeVelocity, 0.05, guess_iGunSmoke, kRenderTransAdd, kRenderFxFadeFast, 255, 1, FTENT_SPRANIMATE | guess_FTENT_GROW | guess_FTENT_FADE );
+		iGunSmoke_guess = gEngfuncs.pEventAPI->EV_FindModelIndex( "sprites/gunsmoke.spr" );
+		pGunSmoke_guess = gEngfuncs.pEfxAPI->R_TempSprite( vecOrigin, vecSmokeVelocity, 0.05, iGunSmoke_guess, kRenderTransAdd, kRenderFxFadeFast, 255, 1, FTENT_SPRANIMATE | FTENT_GROW_guess | FTENT_FADE_guess );
 	}
 
 	DlightFlash( vecOrigin );
@@ -916,16 +916,16 @@ void DLLEXPORT HUD_StudioEvent( const struct mstudioevent_s *event, const struct
 	switch( event->event )
 	{
 	case 5001:
-		guess_MuzzleFlash( (cl_entity_t *)entity, 0, false, 1.0 );
+		MuzzleFlash_guess( (cl_entity_t *)entity, 0, false, 1.0 );
 		break;
 	case 5011:
-		guess_MuzzleFlash( (cl_entity_t *)entity, 1, false, 1.0 );
+		MuzzleFlash_guess( (cl_entity_t *)entity, 1, false, 1.0 );
 		break;
 	case 5021:
-		guess_MuzzleFlash( (cl_entity_t *)entity, 2, false, 1.0 );
+		MuzzleFlash_guess( (cl_entity_t *)entity, 2, false, 1.0 );
 		break;
 	case 5031:
-		guess_MuzzleFlash( (cl_entity_t *)entity, 3, false, 1.0 );
+		MuzzleFlash_guess( (cl_entity_t *)entity, 3, false, 1.0 );
 		break;
 	case 5060:
 		if ( pPlayer )
@@ -933,7 +933,7 @@ void DLLEXPORT HUD_StudioEvent( const struct mstudioevent_s *event, const struct
 			gEngfuncs.pfnPlaySoundByNameAtLocation( "player/player_swim.wav", 1.0, (float *)&entity->attachment[0] );
 			gEngfuncs.pfnServerCmd( "swimboost" );
 
-			if ( guess_iUnknown1054506C >= 3 )
+			if ( iUnknown1054506C_guess >= 3 )
 			{
 				int iBubble = gEngfuncs.pEventAPI->EV_FindModelIndex( "sprites/bubble.spr" );
 				TEMPENTITY *pBubble[5];
@@ -949,7 +949,7 @@ void DLLEXPORT HUD_StudioEvent( const struct mstudioevent_s *event, const struct
 					vecOrigin.y += y;
 					vecOrigin.z += 5;
 					vec3_t vecVelocity( 0, 0, 15 );
-					pBubble[i] = gEngfuncs.pEfxAPI->R_TempSprite( vecOrigin, vecVelocity, 0.15, iBubble, kRenderTransAlpha, kRenderFxNone, 128, 1, guess_FTENT_FADE );
+					pBubble[i] = gEngfuncs.pEfxAPI->R_TempSprite( vecOrigin, vecVelocity, 0.15, iBubble, kRenderTransAlpha, kRenderFxNone, 128, 1, FTENT_FADE_guess );
 				}
 
 				for ( i = 1; i <= 5; i++ )
@@ -962,7 +962,7 @@ void DLLEXPORT HUD_StudioEvent( const struct mstudioevent_s *event, const struct
 					vecOrigin.y += y;
 					vecOrigin.z += 5;
 					vec3_t vecVelocity( 0, 0, 15 );
-					pBubble[i] = gEngfuncs.pEfxAPI->R_TempSprite( vecOrigin, vecVelocity, 0.15, iBubble, kRenderTransAlpha, kRenderFxNone, 255, 1, guess_FTENT_FADE );
+					pBubble[i] = gEngfuncs.pEfxAPI->R_TempSprite( vecOrigin, vecVelocity, 0.15, iBubble, kRenderTransAlpha, kRenderFxNone, 255, 1, FTENT_FADE_guess );
 				}
 			}
 		}
@@ -1002,7 +1002,7 @@ void DLLEXPORT HUD_StudioEvent( const struct mstudioevent_s *event, const struct
 					szName[j] = 0;
 					strcpy( szSound, "weapons_new/" );
 					strcat( szSound, szName );
-					guess_IrrKlangPlaySFX( szSound, 0, false, vecOrigin );
+					IrrKlangPlaySFX_guess( szSound, 0, false, vecOrigin );
 				}
 				break;
 			}
@@ -1309,10 +1309,10 @@ void DLLEXPORT HUD_TempEntUpdate (
 					pTemp->entity.origin[i] += pTemp->entity.baseline.origin[i] * frametime;
 			}
 
-			if ( pTemp->flags & guess_FTENT_GROW )
+			if ( pTemp->flags & FTENT_GROW_guess )
 				pTemp->entity.curstate.scale += 0.001;
 
-			if ( pTemp->flags & guess_FTENT_FADE )
+			if ( pTemp->flags & FTENT_FADE_guess )
 				pTemp->entity.curstate.renderamt -= 25;
 			
 			if ( pTemp->flags & FTENT_SPRANIMATE )

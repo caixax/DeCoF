@@ -6,12 +6,12 @@
 #include "hud.h"
 #include "cl_util.h"
 #include "vgui_TeamFortressViewport.h"
-#include "guess_Unlockables.h"
-#include "guess_GameMenu.h"
-#include "guess_BookMenu.h"
+#include "Unlockables_guess.h"
+#include "GameMenu_guess.h"
+#include "BookMenu_guess.h"
 #include "..\game_shared\vgui_loadtga.h"
 
-extern int guess_iMenuMode;
+extern int iMenuMode_guess;
 
 CUnlockables::CUnlockables() : Panel( 0, 0, ScreenWidth, ScreenHeight )
 {
@@ -19,240 +19,240 @@ CUnlockables::CUnlockables() : Panel( 0, 0, ScreenWidth, ScreenHeight )
 	int x, y;
 	int i;
 
-	guess_m_pMenuImage = vgui_LoadTGA( "gfx/vgui/unlockables/unlockables_menu.tga" );
-	if ( guess_m_pMenuImage )
-		guess_m_pMenuImage->setColor( Color( 255, 255, 255, 1 ) );
+	m_pMenuImage_guess = vgui_LoadTGA( "gfx/vgui/unlockables/unlockables_menu.tga" );
+	if ( m_pMenuImage_guess )
+		m_pMenuImage_guess->setColor( Color( 255, 255, 255, 1 ) );
 	else
 		gEngfuncs.Con_Printf( "Cannot load gfx/vgui/unlockables/unlockables_menu.tga!\n" );
 
-	guess_m_pMenuImage->getSize( wide, tall );
+	m_pMenuImage_guess->getSize( wide, tall );
 	x = ScreenWidth / 2 - wide / 2;
 	y = ScreenHeight / 2 - tall / 2;
 
-	guess_m_pMenu = new ImagePanel( guess_m_pMenuImage );
-	guess_m_pMenu->setParent( this );
-	guess_m_pMenu->setPos( x, y );
-	guess_m_pMenu->setVisible( true );
+	m_pMenu_guess = new ImagePanel( m_pMenuImage_guess );
+	m_pMenu_guess->setParent( this );
+	m_pMenu_guess->setPos( x, y );
+	m_pMenu_guess->setVisible( true );
 
 	CSchemeManager *pSchemes = gViewPort->GetSchemeManager();
 	SchemeHandle_t hCreditsScheme = pSchemes->getSchemeHandle( "credits" );
 	Font *pFont = pSchemes->getFont( hCreditsScheme );
 
-	guess_m_pTextLabel = new Label( "", 126, 428, 549, 47 );
-	guess_m_pTextLabel->setParent( guess_m_pMenu );
-	guess_m_pTextLabel->setBgColor( 0, 0, 0, 255 );
-	guess_m_pTextLabel->setFgColor( 255, 255, 255, 0 );
-	guess_m_pTextLabel->setFont( pFont );
-	guess_m_pTextLabel->setContentAlignment( Label::a_center );
+	m_pTextLabel_guess = new Label( "", 126, 428, 549, 47 );
+	m_pTextLabel_guess->setParent( m_pMenu_guess );
+	m_pTextLabel_guess->setBgColor( 0, 0, 0, 255 );
+	m_pTextLabel_guess->setFgColor( 255, 255, 255, 0 );
+	m_pTextLabel_guess->setFont( pFont );
+	m_pTextLabel_guess->setContentAlignment( Label::a_center );
 
-	guess_m_pBackButton = new ColorButton( "", 304, 503, 192, 54, false, false );
-	guess_m_pBackButton->setParent( guess_m_pMenu );
-	guess_m_pBackButton->addActionSignal( new CUnlockablesHandler_Command( this, 50 ) );
+	m_pBackButton_guess = new ColorButton( "", 304, 503, 192, 54, false, false );
+	m_pBackButton_guess->setParent( m_pMenu_guess );
+	m_pBackButton_guess->addActionSignal( new CUnlockablesHandler_Command( this, 50 ) );
 
 	for ( i = 0; i < 21; i++ )
 	{
-		guess_m_pLockedImage[i] = vgui_LoadTGA( "gfx/vgui/unlockables/unlockables_locked.tga" );
-		if ( guess_m_pLockedImage[i] )
-			guess_m_pLockedImage[i]->setColor( Color( 255, 255, 255, 1 ) );
+		m_pLockedImage_guess[i] = vgui_LoadTGA( "gfx/vgui/unlockables/unlockables_locked.tga" );
+		if ( m_pLockedImage_guess[i] )
+			m_pLockedImage_guess[i]->setColor( Color( 255, 255, 255, 1 ) );
 		else
 			gEngfuncs.Con_Printf( "Cannot load gfx/vgui/unlockables/unlockables_locked.tga!\n" );
 	}
 
-	guess_m_pLockedPanel[0] = new ImagePanel( guess_m_pLockedImage[0] );
-	guess_m_pLockedPanel[0]->setParent( guess_m_pMenu );
-	guess_m_pLockedPanel[0]->setPos( 85, 139 );
-	guess_m_pLockedPanel[0]->setVisible( true );
+	m_pLockedPanel_guess[0] = new ImagePanel( m_pLockedImage_guess[0] );
+	m_pLockedPanel_guess[0]->setParent( m_pMenu_guess );
+	m_pLockedPanel_guess[0]->setPos( 85, 139 );
+	m_pLockedPanel_guess[0]->setVisible( true );
 
-	guess_m_pItemButton[0] = new ColorButton( "", 85, 139, 90, 90, false, false );
-	guess_m_pItemButton[0]->setParent( guess_m_pMenu );
-	guess_m_pItemButton[0]->addActionSignal( new CUnlockablesHandler_Command( this, 1 ) );
+	m_pItemButton_guess[0] = new ColorButton( "", 85, 139, 90, 90, false, false );
+	m_pItemButton_guess[0]->setParent( m_pMenu_guess );
+	m_pItemButton_guess[0]->addActionSignal( new CUnlockablesHandler_Command( this, 1 ) );
 
-	guess_m_pLockedPanel[1] = new ImagePanel( guess_m_pLockedImage[1] );
-	guess_m_pLockedPanel[1]->setParent( guess_m_pMenu );
-	guess_m_pLockedPanel[1]->setPos( 175, 139 );
-	guess_m_pLockedPanel[1]->setVisible( true );
+	m_pLockedPanel_guess[1] = new ImagePanel( m_pLockedImage_guess[1] );
+	m_pLockedPanel_guess[1]->setParent( m_pMenu_guess );
+	m_pLockedPanel_guess[1]->setPos( 175, 139 );
+	m_pLockedPanel_guess[1]->setVisible( true );
 
-	guess_m_pItemButton[1] = new ColorButton( "", 175, 139, 90, 90, false, false );
-	guess_m_pItemButton[1]->setParent( guess_m_pMenu );
-	guess_m_pItemButton[1]->addActionSignal( new CUnlockablesHandler_Command( this, 2 ) );
+	m_pItemButton_guess[1] = new ColorButton( "", 175, 139, 90, 90, false, false );
+	m_pItemButton_guess[1]->setParent( m_pMenu_guess );
+	m_pItemButton_guess[1]->addActionSignal( new CUnlockablesHandler_Command( this, 2 ) );
 
-	guess_m_pLockedPanel[2] = new ImagePanel( guess_m_pLockedImage[2] );
-	guess_m_pLockedPanel[2]->setParent( guess_m_pMenu );
-	guess_m_pLockedPanel[2]->setPos( 265, 139 );
-	guess_m_pLockedPanel[2]->setVisible( true );
+	m_pLockedPanel_guess[2] = new ImagePanel( m_pLockedImage_guess[2] );
+	m_pLockedPanel_guess[2]->setParent( m_pMenu_guess );
+	m_pLockedPanel_guess[2]->setPos( 265, 139 );
+	m_pLockedPanel_guess[2]->setVisible( true );
 
-	guess_m_pItemButton[2] = new ColorButton( "", 265, 139, 90, 90, false, false );
-	guess_m_pItemButton[2]->setParent( guess_m_pMenu );
-	guess_m_pItemButton[2]->addActionSignal( new CUnlockablesHandler_Command( this, 3 ) );
+	m_pItemButton_guess[2] = new ColorButton( "", 265, 139, 90, 90, false, false );
+	m_pItemButton_guess[2]->setParent( m_pMenu_guess );
+	m_pItemButton_guess[2]->addActionSignal( new CUnlockablesHandler_Command( this, 3 ) );
 
-	guess_m_pLockedPanel[3] = new ImagePanel( guess_m_pLockedImage[3] );
-	guess_m_pLockedPanel[3]->setParent( guess_m_pMenu );
-	guess_m_pLockedPanel[3]->setPos( 355, 139 );
-	guess_m_pLockedPanel[3]->setVisible( true );
+	m_pLockedPanel_guess[3] = new ImagePanel( m_pLockedImage_guess[3] );
+	m_pLockedPanel_guess[3]->setParent( m_pMenu_guess );
+	m_pLockedPanel_guess[3]->setPos( 355, 139 );
+	m_pLockedPanel_guess[3]->setVisible( true );
 
-	guess_m_pItemButton[3] = new ColorButton( "", 355, 139, 90, 90, false, false );
-	guess_m_pItemButton[3]->setParent( guess_m_pMenu );
-	guess_m_pItemButton[3]->addActionSignal( new CUnlockablesHandler_Command( this, 4 ) );
+	m_pItemButton_guess[3] = new ColorButton( "", 355, 139, 90, 90, false, false );
+	m_pItemButton_guess[3]->setParent( m_pMenu_guess );
+	m_pItemButton_guess[3]->addActionSignal( new CUnlockablesHandler_Command( this, 4 ) );
 
-	guess_m_pLockedPanel[4] = new ImagePanel( guess_m_pLockedImage[4] );
-	guess_m_pLockedPanel[4]->setParent( guess_m_pMenu );
-	guess_m_pLockedPanel[4]->setPos( 445, 139 );
-	guess_m_pLockedPanel[4]->setVisible( true );
+	m_pLockedPanel_guess[4] = new ImagePanel( m_pLockedImage_guess[4] );
+	m_pLockedPanel_guess[4]->setParent( m_pMenu_guess );
+	m_pLockedPanel_guess[4]->setPos( 445, 139 );
+	m_pLockedPanel_guess[4]->setVisible( true );
 
-	guess_m_pItemButton[4] = new ColorButton( "", 445, 139, 90, 90, false, false );
-	guess_m_pItemButton[4]->setParent( guess_m_pMenu );
-	guess_m_pItemButton[4]->addActionSignal( new CUnlockablesHandler_Command( this, 5 ) );
+	m_pItemButton_guess[4] = new ColorButton( "", 445, 139, 90, 90, false, false );
+	m_pItemButton_guess[4]->setParent( m_pMenu_guess );
+	m_pItemButton_guess[4]->addActionSignal( new CUnlockablesHandler_Command( this, 5 ) );
 
-	guess_m_pLockedPanel[5] = new ImagePanel( guess_m_pLockedImage[5] );
-	guess_m_pLockedPanel[5]->setParent( guess_m_pMenu );
-	guess_m_pLockedPanel[5]->setPos( 535, 139 );
-	guess_m_pLockedPanel[5]->setVisible( true );
+	m_pLockedPanel_guess[5] = new ImagePanel( m_pLockedImage_guess[5] );
+	m_pLockedPanel_guess[5]->setParent( m_pMenu_guess );
+	m_pLockedPanel_guess[5]->setPos( 535, 139 );
+	m_pLockedPanel_guess[5]->setVisible( true );
 
-	guess_m_pItemButton[5] = new ColorButton( "", 535, 139, 90, 90, false, false );
-	guess_m_pItemButton[5]->setParent( guess_m_pMenu );
-	guess_m_pItemButton[5]->addActionSignal( new CUnlockablesHandler_Command( this, 6 ) );
+	m_pItemButton_guess[5] = new ColorButton( "", 535, 139, 90, 90, false, false );
+	m_pItemButton_guess[5]->setParent( m_pMenu_guess );
+	m_pItemButton_guess[5]->addActionSignal( new CUnlockablesHandler_Command( this, 6 ) );
 
-	guess_m_pLockedPanel[6] = new ImagePanel( guess_m_pLockedImage[6] );
-	guess_m_pLockedPanel[6]->setParent( guess_m_pMenu );
-	guess_m_pLockedPanel[6]->setPos( 625, 139 );
-	guess_m_pLockedPanel[6]->setVisible( true );
+	m_pLockedPanel_guess[6] = new ImagePanel( m_pLockedImage_guess[6] );
+	m_pLockedPanel_guess[6]->setParent( m_pMenu_guess );
+	m_pLockedPanel_guess[6]->setPos( 625, 139 );
+	m_pLockedPanel_guess[6]->setVisible( true );
 
-	guess_m_pItemButton[6] = new ColorButton( "", 625, 139, 90, 90, false, false );
-	guess_m_pItemButton[6]->setParent( guess_m_pMenu );
-	guess_m_pItemButton[6]->addActionSignal( new CUnlockablesHandler_Command( this, 7 ) );
+	m_pItemButton_guess[6] = new ColorButton( "", 625, 139, 90, 90, false, false );
+	m_pItemButton_guess[6]->setParent( m_pMenu_guess );
+	m_pItemButton_guess[6]->addActionSignal( new CUnlockablesHandler_Command( this, 7 ) );
 
-	guess_m_pLockedPanel[7] = new ImagePanel( guess_m_pLockedImage[7] );
-	guess_m_pLockedPanel[7]->setParent( guess_m_pMenu );
-	guess_m_pLockedPanel[7]->setPos( 85, 229 );
-	guess_m_pLockedPanel[7]->setVisible( true );
+	m_pLockedPanel_guess[7] = new ImagePanel( m_pLockedImage_guess[7] );
+	m_pLockedPanel_guess[7]->setParent( m_pMenu_guess );
+	m_pLockedPanel_guess[7]->setPos( 85, 229 );
+	m_pLockedPanel_guess[7]->setVisible( true );
 
-	guess_m_pItemButton[7] = new ColorButton( "", 85, 229, 90, 90, false, false );
-	guess_m_pItemButton[7]->setParent( guess_m_pMenu );
-	guess_m_pItemButton[7]->addActionSignal( new CUnlockablesHandler_Command( this, 8 ) );
+	m_pItemButton_guess[7] = new ColorButton( "", 85, 229, 90, 90, false, false );
+	m_pItemButton_guess[7]->setParent( m_pMenu_guess );
+	m_pItemButton_guess[7]->addActionSignal( new CUnlockablesHandler_Command( this, 8 ) );
 
-	guess_m_pLockedPanel[8] = new ImagePanel( guess_m_pLockedImage[8] );
-	guess_m_pLockedPanel[8]->setParent( guess_m_pMenu );
-	guess_m_pLockedPanel[8]->setPos( 175, 229 );
-	guess_m_pLockedPanel[8]->setVisible( true );
+	m_pLockedPanel_guess[8] = new ImagePanel( m_pLockedImage_guess[8] );
+	m_pLockedPanel_guess[8]->setParent( m_pMenu_guess );
+	m_pLockedPanel_guess[8]->setPos( 175, 229 );
+	m_pLockedPanel_guess[8]->setVisible( true );
 
-	guess_m_pItemButton[8] = new ColorButton( "", 175, 229, 90, 90, false, false );
-	guess_m_pItemButton[8]->setParent( guess_m_pMenu );
-	guess_m_pItemButton[8]->addActionSignal( new CUnlockablesHandler_Command( this, 9 ) );
+	m_pItemButton_guess[8] = new ColorButton( "", 175, 229, 90, 90, false, false );
+	m_pItemButton_guess[8]->setParent( m_pMenu_guess );
+	m_pItemButton_guess[8]->addActionSignal( new CUnlockablesHandler_Command( this, 9 ) );
 
-	guess_m_pLockedPanel[9] = new ImagePanel( guess_m_pLockedImage[9] );
-	guess_m_pLockedPanel[9]->setParent( guess_m_pMenu );
-	guess_m_pLockedPanel[9]->setPos( 265, 229 );
-	guess_m_pLockedPanel[9]->setVisible( true );
+	m_pLockedPanel_guess[9] = new ImagePanel( m_pLockedImage_guess[9] );
+	m_pLockedPanel_guess[9]->setParent( m_pMenu_guess );
+	m_pLockedPanel_guess[9]->setPos( 265, 229 );
+	m_pLockedPanel_guess[9]->setVisible( true );
 
-	guess_m_pItemButton[9] = new ColorButton( "", 265, 229, 90, 90, false, false );
-	guess_m_pItemButton[9]->setParent( guess_m_pMenu );
-	guess_m_pItemButton[9]->addActionSignal( new CUnlockablesHandler_Command( this, 10 ) );
+	m_pItemButton_guess[9] = new ColorButton( "", 265, 229, 90, 90, false, false );
+	m_pItemButton_guess[9]->setParent( m_pMenu_guess );
+	m_pItemButton_guess[9]->addActionSignal( new CUnlockablesHandler_Command( this, 10 ) );
 
-	guess_m_pLockedPanel[10] = new ImagePanel( guess_m_pLockedImage[10] );
-	guess_m_pLockedPanel[10]->setParent( guess_m_pMenu );
-	guess_m_pLockedPanel[10]->setPos( 355, 229 );
-	guess_m_pLockedPanel[10]->setVisible( true );
+	m_pLockedPanel_guess[10] = new ImagePanel( m_pLockedImage_guess[10] );
+	m_pLockedPanel_guess[10]->setParent( m_pMenu_guess );
+	m_pLockedPanel_guess[10]->setPos( 355, 229 );
+	m_pLockedPanel_guess[10]->setVisible( true );
 
-	guess_m_pItemButton[10] = new ColorButton( "", 355, 229, 90, 90, false, false );
-	guess_m_pItemButton[10]->setParent( guess_m_pMenu );
-	guess_m_pItemButton[10]->addActionSignal( new CUnlockablesHandler_Command( this, 11 ) );
+	m_pItemButton_guess[10] = new ColorButton( "", 355, 229, 90, 90, false, false );
+	m_pItemButton_guess[10]->setParent( m_pMenu_guess );
+	m_pItemButton_guess[10]->addActionSignal( new CUnlockablesHandler_Command( this, 11 ) );
 
-	guess_m_pLockedPanel[11] = new ImagePanel( guess_m_pLockedImage[11] );
-	guess_m_pLockedPanel[11]->setParent( guess_m_pMenu );
-	guess_m_pLockedPanel[11]->setPos( 445, 229 );
-	guess_m_pLockedPanel[11]->setVisible( true );
+	m_pLockedPanel_guess[11] = new ImagePanel( m_pLockedImage_guess[11] );
+	m_pLockedPanel_guess[11]->setParent( m_pMenu_guess );
+	m_pLockedPanel_guess[11]->setPos( 445, 229 );
+	m_pLockedPanel_guess[11]->setVisible( true );
 
-	guess_m_pItemButton[11] = new ColorButton( "", 445, 229, 90, 90, false, false );
-	guess_m_pItemButton[11]->setParent( guess_m_pMenu );
-	guess_m_pItemButton[11]->addActionSignal( new CUnlockablesHandler_Command( this, 12 ) );
+	m_pItemButton_guess[11] = new ColorButton( "", 445, 229, 90, 90, false, false );
+	m_pItemButton_guess[11]->setParent( m_pMenu_guess );
+	m_pItemButton_guess[11]->addActionSignal( new CUnlockablesHandler_Command( this, 12 ) );
 
-	guess_m_pLockedPanel[12] = new ImagePanel( guess_m_pLockedImage[12] );
-	guess_m_pLockedPanel[12]->setParent( guess_m_pMenu );
-	guess_m_pLockedPanel[12]->setPos( 535, 229 );
-	guess_m_pLockedPanel[12]->setVisible( true );
+	m_pLockedPanel_guess[12] = new ImagePanel( m_pLockedImage_guess[12] );
+	m_pLockedPanel_guess[12]->setParent( m_pMenu_guess );
+	m_pLockedPanel_guess[12]->setPos( 535, 229 );
+	m_pLockedPanel_guess[12]->setVisible( true );
 
-	guess_m_pItemButton[12] = new ColorButton( "", 535, 229, 90, 90, false, false );
-	guess_m_pItemButton[12]->setParent( guess_m_pMenu );
-	guess_m_pItemButton[12]->addActionSignal( new CUnlockablesHandler_Command( this, 13 ) );
+	m_pItemButton_guess[12] = new ColorButton( "", 535, 229, 90, 90, false, false );
+	m_pItemButton_guess[12]->setParent( m_pMenu_guess );
+	m_pItemButton_guess[12]->addActionSignal( new CUnlockablesHandler_Command( this, 13 ) );
 
-	guess_m_pLockedPanel[13] = new ImagePanel( guess_m_pLockedImage[13] );
-	guess_m_pLockedPanel[13]->setParent( guess_m_pMenu );
-	guess_m_pLockedPanel[13]->setPos( 625, 229 );
-	guess_m_pLockedPanel[13]->setVisible( true );
+	m_pLockedPanel_guess[13] = new ImagePanel( m_pLockedImage_guess[13] );
+	m_pLockedPanel_guess[13]->setParent( m_pMenu_guess );
+	m_pLockedPanel_guess[13]->setPos( 625, 229 );
+	m_pLockedPanel_guess[13]->setVisible( true );
 
-	guess_m_pItemButton[13] = new ColorButton( "", 625, 229, 90, 90, false, false );
-	guess_m_pItemButton[13]->setParent( guess_m_pMenu );
-	guess_m_pItemButton[13]->addActionSignal( new CUnlockablesHandler_Command( this, 14 ) );
+	m_pItemButton_guess[13] = new ColorButton( "", 625, 229, 90, 90, false, false );
+	m_pItemButton_guess[13]->setParent( m_pMenu_guess );
+	m_pItemButton_guess[13]->addActionSignal( new CUnlockablesHandler_Command( this, 14 ) );
 
-	guess_m_pLockedPanel[14] = new ImagePanel( guess_m_pLockedImage[14] );
-	guess_m_pLockedPanel[14]->setParent( guess_m_pMenu );
-	guess_m_pLockedPanel[14]->setPos( 85, 319 );
-	guess_m_pLockedPanel[14]->setVisible( true );
+	m_pLockedPanel_guess[14] = new ImagePanel( m_pLockedImage_guess[14] );
+	m_pLockedPanel_guess[14]->setParent( m_pMenu_guess );
+	m_pLockedPanel_guess[14]->setPos( 85, 319 );
+	m_pLockedPanel_guess[14]->setVisible( true );
 
-	guess_m_pItemButton[14] = new ColorButton( "", 85, 319, 90, 90, false, false );
-	guess_m_pItemButton[14]->setParent( guess_m_pMenu );
-	guess_m_pItemButton[14]->addActionSignal( new CUnlockablesHandler_Command( this, 15 ) );
+	m_pItemButton_guess[14] = new ColorButton( "", 85, 319, 90, 90, false, false );
+	m_pItemButton_guess[14]->setParent( m_pMenu_guess );
+	m_pItemButton_guess[14]->addActionSignal( new CUnlockablesHandler_Command( this, 15 ) );
 
-	guess_m_pLockedPanel[15] = new ImagePanel( guess_m_pLockedImage[15] );
-	guess_m_pLockedPanel[15]->setParent( guess_m_pMenu );
-	guess_m_pLockedPanel[15]->setPos( 175, 319 );
-	guess_m_pLockedPanel[15]->setVisible( true );
+	m_pLockedPanel_guess[15] = new ImagePanel( m_pLockedImage_guess[15] );
+	m_pLockedPanel_guess[15]->setParent( m_pMenu_guess );
+	m_pLockedPanel_guess[15]->setPos( 175, 319 );
+	m_pLockedPanel_guess[15]->setVisible( true );
 
-	guess_m_pItemButton[15] = new ColorButton( "", 175, 319, 90, 90, false, false );
-	guess_m_pItemButton[15]->setParent( guess_m_pMenu );
-	guess_m_pItemButton[15]->addActionSignal( new CUnlockablesHandler_Command( this, 16 ) );
+	m_pItemButton_guess[15] = new ColorButton( "", 175, 319, 90, 90, false, false );
+	m_pItemButton_guess[15]->setParent( m_pMenu_guess );
+	m_pItemButton_guess[15]->addActionSignal( new CUnlockablesHandler_Command( this, 16 ) );
 
-	guess_m_pLockedPanel[16] = new ImagePanel( guess_m_pLockedImage[16] );
-	guess_m_pLockedPanel[16]->setParent( guess_m_pMenu );
-	guess_m_pLockedPanel[16]->setPos( 265, 319 );
-	guess_m_pLockedPanel[16]->setVisible( true );
+	m_pLockedPanel_guess[16] = new ImagePanel( m_pLockedImage_guess[16] );
+	m_pLockedPanel_guess[16]->setParent( m_pMenu_guess );
+	m_pLockedPanel_guess[16]->setPos( 265, 319 );
+	m_pLockedPanel_guess[16]->setVisible( true );
 
-	guess_m_pItemButton[16] = new ColorButton( "", 265, 319, 90, 90, false, false );
-	guess_m_pItemButton[16]->setParent( guess_m_pMenu );
-	guess_m_pItemButton[16]->addActionSignal( new CUnlockablesHandler_Command( this, 17 ) );
+	m_pItemButton_guess[16] = new ColorButton( "", 265, 319, 90, 90, false, false );
+	m_pItemButton_guess[16]->setParent( m_pMenu_guess );
+	m_pItemButton_guess[16]->addActionSignal( new CUnlockablesHandler_Command( this, 17 ) );
 
-	guess_m_pLockedPanel[17] = new ImagePanel( guess_m_pLockedImage[17] );
-	guess_m_pLockedPanel[17]->setParent( guess_m_pMenu );
-	guess_m_pLockedPanel[17]->setPos( 355, 319 );
-	guess_m_pLockedPanel[17]->setVisible( true );
+	m_pLockedPanel_guess[17] = new ImagePanel( m_pLockedImage_guess[17] );
+	m_pLockedPanel_guess[17]->setParent( m_pMenu_guess );
+	m_pLockedPanel_guess[17]->setPos( 355, 319 );
+	m_pLockedPanel_guess[17]->setVisible( true );
 
-	guess_m_pItemButton[17] = new ColorButton( "", 355, 319, 90, 90, false, false );
-	guess_m_pItemButton[17]->setParent( guess_m_pMenu );
-	guess_m_pItemButton[17]->addActionSignal( new CUnlockablesHandler_Command( this, 18 ) );
+	m_pItemButton_guess[17] = new ColorButton( "", 355, 319, 90, 90, false, false );
+	m_pItemButton_guess[17]->setParent( m_pMenu_guess );
+	m_pItemButton_guess[17]->addActionSignal( new CUnlockablesHandler_Command( this, 18 ) );
 
-	guess_m_pLockedPanel[18] = new ImagePanel( guess_m_pLockedImage[18] );
-	guess_m_pLockedPanel[18]->setParent( guess_m_pMenu );
-	guess_m_pLockedPanel[18]->setPos( 445, 319 );
-	guess_m_pLockedPanel[18]->setVisible( true );
+	m_pLockedPanel_guess[18] = new ImagePanel( m_pLockedImage_guess[18] );
+	m_pLockedPanel_guess[18]->setParent( m_pMenu_guess );
+	m_pLockedPanel_guess[18]->setPos( 445, 319 );
+	m_pLockedPanel_guess[18]->setVisible( true );
 
-	guess_m_pItemButton[18] = new ColorButton( "", 445, 319, 90, 90, false, false );
-	guess_m_pItemButton[18]->setParent( guess_m_pMenu );
-	guess_m_pItemButton[18]->addActionSignal( new CUnlockablesHandler_Command( this, 19 ) );
+	m_pItemButton_guess[18] = new ColorButton( "", 445, 319, 90, 90, false, false );
+	m_pItemButton_guess[18]->setParent( m_pMenu_guess );
+	m_pItemButton_guess[18]->addActionSignal( new CUnlockablesHandler_Command( this, 19 ) );
 
-	guess_m_pLockedPanel[19] = new ImagePanel( guess_m_pLockedImage[19] );
-	guess_m_pLockedPanel[19]->setParent( guess_m_pMenu );
-	guess_m_pLockedPanel[19]->setPos( 535, 319 );
-	guess_m_pLockedPanel[19]->setVisible( true );
+	m_pLockedPanel_guess[19] = new ImagePanel( m_pLockedImage_guess[19] );
+	m_pLockedPanel_guess[19]->setParent( m_pMenu_guess );
+	m_pLockedPanel_guess[19]->setPos( 535, 319 );
+	m_pLockedPanel_guess[19]->setVisible( true );
 
-	guess_m_pItemButton[19] = new ColorButton( "", 535, 319, 90, 90, false, false );
-	guess_m_pItemButton[19]->setParent( guess_m_pMenu );
-	guess_m_pItemButton[19]->addActionSignal( new CUnlockablesHandler_Command( this, 20 ) );
+	m_pItemButton_guess[19] = new ColorButton( "", 535, 319, 90, 90, false, false );
+	m_pItemButton_guess[19]->setParent( m_pMenu_guess );
+	m_pItemButton_guess[19]->addActionSignal( new CUnlockablesHandler_Command( this, 20 ) );
 
-	guess_m_pLockedPanel[20] = new ImagePanel( guess_m_pLockedImage[20] );
-	guess_m_pLockedPanel[20]->setParent( guess_m_pMenu );
-	guess_m_pLockedPanel[20]->setPos( 625, 319 );
-	guess_m_pLockedPanel[20]->setVisible( true );
+	m_pLockedPanel_guess[20] = new ImagePanel( m_pLockedImage_guess[20] );
+	m_pLockedPanel_guess[20]->setParent( m_pMenu_guess );
+	m_pLockedPanel_guess[20]->setPos( 625, 319 );
+	m_pLockedPanel_guess[20]->setVisible( true );
 
-	guess_m_pItemButton[20] = new ColorButton( "", 625, 319, 90, 90, false, false );
-	guess_m_pItemButton[20]->setParent( guess_m_pMenu );
-	guess_m_pItemButton[20]->addActionSignal( new CUnlockablesHandler_Command( this, 21 ) );
+	m_pItemButton_guess[20] = new ColorButton( "", 625, 319, 90, 90, false, false );
+	m_pItemButton_guess[20]->setParent( m_pMenu_guess );
+	m_pItemButton_guess[20]->addActionSignal( new CUnlockablesHandler_Command( this, 21 ) );
 
 	for ( i = 0; i < 21; i++ )
 	{
-		guess_m_pItemButton[i]->setUnArmedBorderColor( 0, 0, 0, 255 );
-		guess_m_pItemButton[i]->setArmedBorderColor( 255, 0, 0, 192 );
-		guess_m_pItemButton[i]->setUnArmedColor( 0, 0, 0, 255 );
-		guess_m_pItemButton[i]->setArmedColor( 0, 0, 0, 255 );
+		m_pItemButton_guess[i]->setUnArmedBorderColor( 0, 0, 0, 255 );
+		m_pItemButton_guess[i]->setArmedBorderColor( 255, 0, 0, 192 );
+		m_pItemButton_guess[i]->setUnArmedColor( 0, 0, 0, 255 );
+		m_pItemButton_guess[i]->setArmedColor( 0, 0, 0, 255 );
 	}
 
 	setBgColor( 0, 0, 0, 0 );
@@ -263,32 +263,32 @@ CUnlockables::CUnlockables() : Panel( 0, 0, ScreenWidth, ScreenHeight )
 CUnlockables::~CUnlockables()
 {
 	for ( int i = 0; i < 21; i++ )
-		delete guess_m_pLockedImage[i];
+		delete m_pLockedImage_guess[i];
 
-	delete guess_m_pMenuImage;
+	delete m_pMenuImage_guess;
 }
 
 void CUnlockables::ActionSignal( int cmd )
 {
-	if ( cmd != 50 && gEngfuncs.GetClientTime() < guess_m_flNextClick )
+	if ( cmd != 50 && gEngfuncs.GetClientTime() < m_flNextClick_guess )
 		return;
 
 	switch ( cmd )
 	{
 	case 1:
-		if ( gHUD.guess_m_iUnlocks & 1 || gHUD.guess_m_iUnlocks & 2 || gHUD.guess_m_iUnlocks & 4 || gHUD.guess_m_iUnlocks & 8 || gHUD.guess_m_iUnlocks & 16 )
+		if ( gHUD.m_iUnlocks_guess & 1 || gHUD.m_iUnlocks_guess & 2 || gHUD.m_iUnlocks_guess & 4 || gHUD.m_iUnlocks_guess & 8 || gHUD.m_iUnlocks_guess & 16 )
 		{
-			if ( gViewPort && gViewPort->guess_m_pBookMenu )
+			if ( gViewPort && gViewPort->m_pBookMenu_guess )
 			{
 				setVisible( false );
 				gViewPort->UpdateCursorState();
-				gViewPort->guess_m_pBookMenu->setVisible( true );
+				gViewPort->m_pBookMenu_guess->setVisible( true );
 				gViewPort->UpdateCursorState();
 			}
 		}
 		break;
 	case 4:
-		if ( gHUD.guess_m_iUnlocks & 0x80000000 )
+		if ( gHUD.m_iUnlocks_guess & 0x80000000 )
 		{
 			setVisible( false );
 			gViewPort->UpdateCursorState();
@@ -296,13 +296,13 @@ void CUnlockables::ActionSignal( int cmd )
 		}
 		break;
 	case 50:
-		if ( guess_iMenuMode )
+		if ( iMenuMode_guess )
 		{
-			if ( gViewPort && gViewPort->guess_m_pGameMenu )
+			if ( gViewPort && gViewPort->m_pGameMenu_guess )
 			{
 				setVisible( false );
 				gViewPort->UpdateCursorState();
-				gViewPort->guess_m_pGameMenu->setVisible( true );
+				gViewPort->m_pGameMenu_guess->setVisible( true );
 				gViewPort->UpdateCursorState();
 				gEngfuncs.pfnPlaySoundByName( "ui/3d_click.wav", 1 );
 			}
@@ -317,11 +317,11 @@ void CUnlockables::ActionSignal( int cmd )
 
 void CUnlockables::Initialize()
 {
-	guess_m_iArmed = 0;
+	m_iArmed_guess = 0;
 	setVisible( false );
 }
 
-int CUnlockables::guess_KeyInput( int down, int keynum, const char *pszCurrentBinding )
+int CUnlockables::KeyInput_guess( int down, int keynum, const char *pszCurrentBinding )
 {
 	if ( pszCurrentBinding && !strcmp( pszCurrentBinding, "toggleconsole" ) )
 		return 1;
@@ -329,7 +329,7 @@ int CUnlockables::guess_KeyInput( int down, int keynum, const char *pszCurrentBi
 	return 0;
 }
 
-void guess_UnlockablesInit()
+void UnlockablesInit_guess()
 {
 	return;
 }
@@ -338,90 +338,90 @@ void CUnlockables::setVisible( bool state )
 {
 	if ( state )
 	{
-		if ( gHUD.guess_m_iUnlocks & 1 || gHUD.guess_m_iUnlocks & 2 || gHUD.guess_m_iUnlocks & 4 || gHUD.guess_m_iUnlocks & 8 || gHUD.guess_m_iUnlocks & 16 )
-			guess_m_pLockedPanel[0]->setVisible( false );
+		if ( gHUD.m_iUnlocks_guess & 1 || gHUD.m_iUnlocks_guess & 2 || gHUD.m_iUnlocks_guess & 4 || gHUD.m_iUnlocks_guess & 8 || gHUD.m_iUnlocks_guess & 16 )
+			m_pLockedPanel_guess[0]->setVisible( false );
 		else
-			guess_m_pLockedPanel[0]->setVisible( true );
-		if ( gHUD.guess_m_iUnlocks & 0x20 )
-			guess_m_pLockedPanel[1]->setVisible( false );
+			m_pLockedPanel_guess[0]->setVisible( true );
+		if ( gHUD.m_iUnlocks_guess & 0x20 )
+			m_pLockedPanel_guess[1]->setVisible( false );
 		else
-			guess_m_pLockedPanel[1]->setVisible( true );
-		if ( gHUD.guess_m_iUnlocks & 0x400000 )
-			guess_m_pLockedPanel[2]->setVisible( false );
+			m_pLockedPanel_guess[1]->setVisible( true );
+		if ( gHUD.m_iUnlocks_guess & 0x400000 )
+			m_pLockedPanel_guess[2]->setVisible( false );
 		else
-			guess_m_pLockedPanel[2]->setVisible( true );
-		if ( gHUD.guess_m_iUnlocks & 0x80000000 )
-			guess_m_pLockedPanel[3]->setVisible( false );
+			m_pLockedPanel_guess[2]->setVisible( true );
+		if ( gHUD.m_iUnlocks_guess & 0x80000000 )
+			m_pLockedPanel_guess[3]->setVisible( false );
 		else
-			guess_m_pLockedPanel[3]->setVisible( true );
-		if ( gHUD.guess_m_iUnlocks & 0x1000000 )
-			guess_m_pLockedPanel[4]->setVisible( false );
+			m_pLockedPanel_guess[3]->setVisible( true );
+		if ( gHUD.m_iUnlocks_guess & 0x1000000 )
+			m_pLockedPanel_guess[4]->setVisible( false );
 		else
-			guess_m_pLockedPanel[4]->setVisible( true );
-		if ( gHUD.guess_m_iUnlocks & 0x800000 )
-			guess_m_pLockedPanel[5]->setVisible( false );
+			m_pLockedPanel_guess[4]->setVisible( true );
+		if ( gHUD.m_iUnlocks_guess & 0x800000 )
+			m_pLockedPanel_guess[5]->setVisible( false );
 		else
-			guess_m_pLockedPanel[5]->setVisible( true );
-		if ( gHUD.guess_m_iUnlocks & 0x40 )
-			guess_m_pLockedPanel[6]->setVisible( false );
+			m_pLockedPanel_guess[5]->setVisible( true );
+		if ( gHUD.m_iUnlocks_guess & 0x40 )
+			m_pLockedPanel_guess[6]->setVisible( false );
 		else
-			guess_m_pLockedPanel[6]->setVisible( true );
-		if ( gHUD.guess_m_iUnlocks & 0x80000 )
-			guess_m_pLockedPanel[7]->setVisible( false );
+			m_pLockedPanel_guess[6]->setVisible( true );
+		if ( gHUD.m_iUnlocks_guess & 0x80000 )
+			m_pLockedPanel_guess[7]->setVisible( false );
 		else
-			guess_m_pLockedPanel[7]->setVisible( true );
-		if ( gHUD.guess_m_iUnlocks & 0x100000 )
-			guess_m_pLockedPanel[8]->setVisible( false );
+			m_pLockedPanel_guess[7]->setVisible( true );
+		if ( gHUD.m_iUnlocks_guess & 0x100000 )
+			m_pLockedPanel_guess[8]->setVisible( false );
 		else
-			guess_m_pLockedPanel[8]->setVisible( true );
-		if ( gHUD.guess_m_iUnlocks & 0x200000 )
-			guess_m_pLockedPanel[9]->setVisible( false );
+			m_pLockedPanel_guess[8]->setVisible( true );
+		if ( gHUD.m_iUnlocks_guess & 0x200000 )
+			m_pLockedPanel_guess[9]->setVisible( false );
 		else
-			guess_m_pLockedPanel[9]->setVisible( true );
-		if ( gHUD.guess_m_iUnlocks & 0x80 )
-			guess_m_pLockedPanel[10]->setVisible( false );
+			m_pLockedPanel_guess[9]->setVisible( true );
+		if ( gHUD.m_iUnlocks_guess & 0x80 )
+			m_pLockedPanel_guess[10]->setVisible( false );
 		else
-			guess_m_pLockedPanel[10]->setVisible( true );
-		if ( gHUD.guess_m_iUnlocks & 0x100 )
-			guess_m_pLockedPanel[11]->setVisible( false );
+			m_pLockedPanel_guess[10]->setVisible( true );
+		if ( gHUD.m_iUnlocks_guess & 0x100 )
+			m_pLockedPanel_guess[11]->setVisible( false );
 		else
-			guess_m_pLockedPanel[11]->setVisible( true );
-		if ( gHUD.guess_m_iUnlocks & 0x200 )
-			guess_m_pLockedPanel[12]->setVisible( false );
+			m_pLockedPanel_guess[11]->setVisible( true );
+		if ( gHUD.m_iUnlocks_guess & 0x200 )
+			m_pLockedPanel_guess[12]->setVisible( false );
 		else
-			guess_m_pLockedPanel[12]->setVisible( true );
-		if ( gHUD.guess_m_iUnlocks & 0x400 )
-			guess_m_pLockedPanel[13]->setVisible( false );
+			m_pLockedPanel_guess[12]->setVisible( true );
+		if ( gHUD.m_iUnlocks_guess & 0x400 )
+			m_pLockedPanel_guess[13]->setVisible( false );
 		else
-			guess_m_pLockedPanel[13]->setVisible( true );
-		if ( gHUD.guess_m_iUnlocks & 0x800 )
-			guess_m_pLockedPanel[14]->setVisible( false );
+			m_pLockedPanel_guess[13]->setVisible( true );
+		if ( gHUD.m_iUnlocks_guess & 0x800 )
+			m_pLockedPanel_guess[14]->setVisible( false );
 		else
-			guess_m_pLockedPanel[14]->setVisible( true );
-		if ( gHUD.guess_m_iUnlocks & 0x1000 )
-			guess_m_pLockedPanel[15]->setVisible( false );
+			m_pLockedPanel_guess[14]->setVisible( true );
+		if ( gHUD.m_iUnlocks_guess & 0x1000 )
+			m_pLockedPanel_guess[15]->setVisible( false );
 		else
-			guess_m_pLockedPanel[15]->setVisible( true );
-		if ( gHUD.guess_m_iUnlocks & 0x2000 )
-			guess_m_pLockedPanel[16]->setVisible( false );
+			m_pLockedPanel_guess[15]->setVisible( true );
+		if ( gHUD.m_iUnlocks_guess & 0x2000 )
+			m_pLockedPanel_guess[16]->setVisible( false );
 		else
-			guess_m_pLockedPanel[16]->setVisible( true );
-		if ( gHUD.guess_m_iUnlocks & 0x4000 )
-			guess_m_pLockedPanel[17]->setVisible( false );
+			m_pLockedPanel_guess[16]->setVisible( true );
+		if ( gHUD.m_iUnlocks_guess & 0x4000 )
+			m_pLockedPanel_guess[17]->setVisible( false );
 		else
-			guess_m_pLockedPanel[17]->setVisible( true );
-		if ( gHUD.guess_m_iUnlocks & 0x8000 )
-			guess_m_pLockedPanel[18]->setVisible( false );
+			m_pLockedPanel_guess[17]->setVisible( true );
+		if ( gHUD.m_iUnlocks_guess & 0x8000 )
+			m_pLockedPanel_guess[18]->setVisible( false );
 		else
-			guess_m_pLockedPanel[18]->setVisible( true );
-		if ( gHUD.guess_m_iUnlocks & 0x10000 )
-			guess_m_pLockedPanel[19]->setVisible( false );
+			m_pLockedPanel_guess[18]->setVisible( true );
+		if ( gHUD.m_iUnlocks_guess & 0x10000 )
+			m_pLockedPanel_guess[19]->setVisible( false );
 		else
-			guess_m_pLockedPanel[19]->setVisible( true );
-		if ( gHUD.guess_m_iUnlocks & 0x20000 )
-			guess_m_pLockedPanel[20]->setVisible( false );
+			m_pLockedPanel_guess[19]->setVisible( true );
+		if ( gHUD.m_iUnlocks_guess & 0x20000 )
+			m_pLockedPanel_guess[20]->setVisible( false );
 		else
-			guess_m_pLockedPanel[20]->setVisible( true );
+			m_pLockedPanel_guess[20]->setVisible( true );
 	}
 
 	Panel::setVisible( state );
@@ -435,194 +435,194 @@ void CUnlockables::solve()
 	{
 		for ( int i = 0; i < 21; i++ )
 		{
-			if ( guess_m_pItemButton[i] && guess_m_pTextLabel && guess_m_pItemButton[i]->isArmed() && guess_m_iArmed != i + 1 )
+			if ( m_pItemButton_guess[i] && m_pTextLabel_guess && m_pItemButton_guess[i]->isArmed() && m_iArmed_guess != i + 1 )
 			{
-				guess_m_iArmed = i + 1;
+				m_iArmed_guess = i + 1;
 
 				switch ( i )
 				{
 				case 0:
-					if ( gHUD.guess_m_iUnlocks & 1 || gHUD.guess_m_iUnlocks & 2 || gHUD.guess_m_iUnlocks & 4 || gHUD.guess_m_iUnlocks & 8 || gHUD.guess_m_iUnlocks & 16 )
-						guess_m_pTextLabel->setText( "Click to view all unlocked hint pages." );
+					if ( gHUD.m_iUnlocks_guess & 1 || gHUD.m_iUnlocks_guess & 2 || gHUD.m_iUnlocks_guess & 4 || gHUD.m_iUnlocks_guess & 8 || gHUD.m_iUnlocks_guess & 16 )
+						m_pTextLabel_guess->setText( "Click to view all unlocked hint pages." );
 					else
-						guess_m_pTextLabel->setText( "This item is currently locked." );
+						m_pTextLabel_guess->setText( "This item is currently locked." );
 
-					guess_m_pTextLabel->setContentAlignment( Label::a_center );
+					m_pTextLabel_guess->setContentAlignment( Label::a_center );
 					break;
 				case 1:
-					if ( gHUD.guess_m_iUnlocks & 0x20 )
-						guess_m_pTextLabel->setText( "Nightmare difficulty mode." );
+					if ( gHUD.m_iUnlocks_guess & 0x20 )
+						m_pTextLabel_guess->setText( "Nightmare difficulty mode." );
 					else
-						guess_m_pTextLabel->setText( "This item is currently locked." );
+						m_pTextLabel_guess->setText( "This item is currently locked." );
 
-					guess_m_pTextLabel->setContentAlignment( Label::a_center );
+					m_pTextLabel_guess->setContentAlignment( Label::a_center );
 					break;
 				case 2:
-					if ( gHUD.guess_m_iUnlocks & 0x400000 )
-						guess_m_pTextLabel->setText( "Developer commentary - Enable in difficulty menu." );
+					if ( gHUD.m_iUnlocks_guess & 0x400000 )
+						m_pTextLabel_guess->setText( "Developer commentary - Enable in difficulty menu." );
 					else
-						guess_m_pTextLabel->setText( "This item is currently locked." );
+						m_pTextLabel_guess->setText( "This item is currently locked." );
 
-					guess_m_pTextLabel->setContentAlignment( Label::a_center );
+					m_pTextLabel_guess->setContentAlignment( Label::a_center );
 					break;
 				case 3:
-					if ( gHUD.guess_m_iUnlocks & 0x80000000 )
-						guess_m_pTextLabel->setText( "Doctor\'s Story. Click to play." );
+					if ( gHUD.m_iUnlocks_guess & 0x80000000 )
+						m_pTextLabel_guess->setText( "Doctor\'s Story. Click to play." );
 					else
-						guess_m_pTextLabel->setText( "This item is currently locked." );
+						m_pTextLabel_guess->setText( "This item is currently locked." );
 
-					guess_m_pTextLabel->setContentAlignment( Label::a_center );
+					m_pTextLabel_guess->setContentAlignment( Label::a_center );
 					break;
 				case 4:
-					if ( gHUD.guess_GetKeyForCommand( "flashlight" ) )
-						sprintf( szText, "Nightvision - press %s to enable.", gHUD.guess_GetKeyForCommand( "flashlight" ) );
+					if ( gHUD.GetKeyForCommand_guess( "flashlight" ) )
+						sprintf( szText, "Nightvision - press %s to enable.", gHUD.GetKeyForCommand_guess( "flashlight" ) );
 					else
 						strcpy( szText, "Nightvision - Press flashlight button to enable." );
 
-					if ( gHUD.guess_m_iUnlocks & 0x1000000 )
-						guess_m_pTextLabel->setText( szText );
+					if ( gHUD.m_iUnlocks_guess & 0x1000000 )
+						m_pTextLabel_guess->setText( szText );
 					else
-						guess_m_pTextLabel->setText( "This item is currently locked." );
+						m_pTextLabel_guess->setText( "This item is currently locked." );
 
-					guess_m_pTextLabel->setContentAlignment( Label::a_center );
+					m_pTextLabel_guess->setContentAlignment( Label::a_center );
 					break;
 				case 5:
-					if ( gHUD.guess_m_iUnlocks & 0x800000 )
-						guess_m_pTextLabel->setText( "Hidden package." );
+					if ( gHUD.m_iUnlocks_guess & 0x800000 )
+						m_pTextLabel_guess->setText( "Hidden package." );
 					else
-						guess_m_pTextLabel->setText( "This item is currently locked." );
+						m_pTextLabel_guess->setText( "This item is currently locked." );
 
-					guess_m_pTextLabel->setContentAlignment( Label::a_center );
+					m_pTextLabel_guess->setContentAlignment( Label::a_center );
 					break;
 				case 6:
-					if ( gHUD.guess_m_iUnlocks & 0x40 )
-						guess_m_pTextLabel->setText( "FAMAS assault rifle with infinite ammo." );
+					if ( gHUD.m_iUnlocks_guess & 0x40 )
+						m_pTextLabel_guess->setText( "FAMAS assault rifle with infinite ammo." );
 					else
-						guess_m_pTextLabel->setText( "This item is currently locked." );
+						m_pTextLabel_guess->setText( "This item is currently locked." );
 
-					guess_m_pTextLabel->setContentAlignment( Label::a_center );
+					m_pTextLabel_guess->setContentAlignment( Label::a_center );
 					break;
 				case 7:
-					if ( gHUD.guess_m_iUnlocks & 0x80000 )
-						guess_m_pTextLabel->setText( "AoMDC axe." );
+					if ( gHUD.m_iUnlocks_guess & 0x80000 )
+						m_pTextLabel_guess->setText( "AoMDC axe." );
 					else
-						guess_m_pTextLabel->setText( "This item is currently locked." );
+						m_pTextLabel_guess->setText( "This item is currently locked." );
 
-					guess_m_pTextLabel->setContentAlignment( Label::a_center );
+					m_pTextLabel_guess->setContentAlignment( Label::a_center );
 					break;
 				case 8:
-					if ( gHUD.guess_m_iUnlocks & 0x100000 )
-						guess_m_pTextLabel->setText( "Camera of death." );
+					if ( gHUD.m_iUnlocks_guess & 0x100000 )
+						m_pTextLabel_guess->setText( "Camera of death." );
 					else
-						guess_m_pTextLabel->setText( "This item is currently locked." );
+						m_pTextLabel_guess->setText( "This item is currently locked." );
 
-					guess_m_pTextLabel->setContentAlignment( Label::a_center );
+					m_pTextLabel_guess->setContentAlignment( Label::a_center );
 					break;
 				case 9:
-					if ( gHUD.guess_m_iUnlocks & 0x200000 )
-						guess_m_pTextLabel->setText( "Simon\'s book." );
+					if ( gHUD.m_iUnlocks_guess & 0x200000 )
+						m_pTextLabel_guess->setText( "Simon\'s book." );
 					else
-						guess_m_pTextLabel->setText( "This item is currently locked." );
+						m_pTextLabel_guess->setText( "This item is currently locked." );
 
-					guess_m_pTextLabel->setContentAlignment( Label::a_center );
+					m_pTextLabel_guess->setContentAlignment( Label::a_center );
 					break;
 				case 10:
-					if ( gHUD.guess_m_iUnlocks & 0x80 )
-						guess_m_pTextLabel->setText( "David Leatherhoff suit - Equip in secret room." );
+					if ( gHUD.m_iUnlocks_guess & 0x80 )
+						m_pTextLabel_guess->setText( "David Leatherhoff suit - Equip in secret room." );
 					else
-						guess_m_pTextLabel->setText( "This item is currently locked." );
+						m_pTextLabel_guess->setText( "This item is currently locked." );
 
-					guess_m_pTextLabel->setContentAlignment( Label::a_center );
+					m_pTextLabel_guess->setContentAlignment( Label::a_center );
 					break;
 				case 11:
-					if ( gHUD.guess_m_iUnlocks & 0x100 )
-						guess_m_pTextLabel->setText( "ModDB hoodie - Equip in secret room." );
+					if ( gHUD.m_iUnlocks_guess & 0x100 )
+						m_pTextLabel_guess->setText( "ModDB hoodie - Equip in secret room." );
 					else
-						guess_m_pTextLabel->setText( "This item is currently locked." );
+						m_pTextLabel_guess->setText( "This item is currently locked." );
 
-					guess_m_pTextLabel->setContentAlignment( Label::a_center );
+					m_pTextLabel_guess->setContentAlignment( Label::a_center );
 					break;
 				case 12:
-					if ( gHUD.guess_m_iUnlocks & 0x200 )
-						guess_m_pTextLabel->setText( "Hello Kitty suit - Equip in secret room." );
+					if ( gHUD.m_iUnlocks_guess & 0x200 )
+						m_pTextLabel_guess->setText( "Hello Kitty suit - Equip in secret room." );
 					else
-						guess_m_pTextLabel->setText( "This item is currently locked." );
+						m_pTextLabel_guess->setText( "This item is currently locked." );
 
-					guess_m_pTextLabel->setContentAlignment( Label::a_center );
+					m_pTextLabel_guess->setContentAlignment( Label::a_center );
 					break;
 				case 13:
-					if ( gHUD.guess_m_iUnlocks & 0x400 )
-						guess_m_pTextLabel->setText( "Afraid of Monsters suit - Equip in secret room." );
+					if ( gHUD.m_iUnlocks_guess & 0x400 )
+						m_pTextLabel_guess->setText( "Afraid of Monsters suit - Equip in secret room." );
 					else
-						guess_m_pTextLabel->setText( "This item is currently locked." );
+						m_pTextLabel_guess->setText( "This item is currently locked." );
 
-					guess_m_pTextLabel->setContentAlignment( Label::a_center );
+					m_pTextLabel_guess->setContentAlignment( Label::a_center );
 					break;
 				case 14:
-					if ( gHUD.guess_m_iUnlocks & 0x800 )
-						guess_m_pTextLabel->setText( "Camouflage hoodie - Equip in secret room." );
+					if ( gHUD.m_iUnlocks_guess & 0x800 )
+						m_pTextLabel_guess->setText( "Camouflage hoodie - Equip in secret room." );
 					else
-						guess_m_pTextLabel->setText( "This item is currently locked." );
+						m_pTextLabel_guess->setText( "This item is currently locked." );
 
-					guess_m_pTextLabel->setContentAlignment( Label::a_center );
+					m_pTextLabel_guess->setContentAlignment( Label::a_center );
 					break;
 				case 15:
-					if ( gHUD.guess_m_iUnlocks & 0x1000 )
-						guess_m_pTextLabel->setText( "Half-Life Creations hoodie - Equip in secret room." );
+					if ( gHUD.m_iUnlocks_guess & 0x1000 )
+						m_pTextLabel_guess->setText( "Half-Life Creations hoodie - Equip in secret room." );
 					else
-						guess_m_pTextLabel->setText( "This item is currently locked." );
+						m_pTextLabel_guess->setText( "This item is currently locked." );
 
-					guess_m_pTextLabel->setContentAlignment( Label::a_center );
+					m_pTextLabel_guess->setContentAlignment( Label::a_center );
 					break;
 				case 16:
-					if ( gHUD.guess_m_iUnlocks & 0x2000 )
-						guess_m_pTextLabel->setText( "Black Metal suit - Equip in secret room." );
+					if ( gHUD.m_iUnlocks_guess & 0x2000 )
+						m_pTextLabel_guess->setText( "Black Metal suit - Equip in secret room." );
 					else
-						guess_m_pTextLabel->setText( "This item is currently locked." );
+						m_pTextLabel_guess->setText( "This item is currently locked." );
 
-					guess_m_pTextLabel->setContentAlignment( Label::a_center );
+					m_pTextLabel_guess->setContentAlignment( Label::a_center );
 					break;
 				case 17:
-					if ( gHUD.guess_m_iUnlocks & 0x4000 )
-						guess_m_pTextLabel->setText( "Team Psykskallar hoodie - Equip in secret room." );
+					if ( gHUD.m_iUnlocks_guess & 0x4000 )
+						m_pTextLabel_guess->setText( "Team Psykskallar hoodie - Equip in secret room." );
 					else
-						guess_m_pTextLabel->setText( "This item is currently locked." );
+						m_pTextLabel_guess->setText( "This item is currently locked." );
 
-					guess_m_pTextLabel->setContentAlignment( Label::a_center );
+					m_pTextLabel_guess->setContentAlignment( Label::a_center );
 					break;
 				case 18:
-					if ( gHUD.guess_m_iUnlocks & 0x8000 )
-						guess_m_pTextLabel->setText( "Awesome suit - Equip in secret room." );
+					if ( gHUD.m_iUnlocks_guess & 0x8000 )
+						m_pTextLabel_guess->setText( "Awesome suit - Equip in secret room." );
 					else
-						guess_m_pTextLabel->setText( "This item is currently locked." );
+						m_pTextLabel_guess->setText( "This item is currently locked." );
 
-					guess_m_pTextLabel->setContentAlignment( Label::a_center );
+					m_pTextLabel_guess->setContentAlignment( Label::a_center );
 					break;
 				case 19:
-					if ( gHUD.guess_m_iUnlocks & 0x10000 )
-						guess_m_pTextLabel->setText( "Sick Simon suit - Equip in secret room." );
+					if ( gHUD.m_iUnlocks_guess & 0x10000 )
+						m_pTextLabel_guess->setText( "Sick Simon suit - Equip in secret room." );
 					else
-						guess_m_pTextLabel->setText( "This item is currently locked." );
+						m_pTextLabel_guess->setText( "This item is currently locked." );
 
-					guess_m_pTextLabel->setContentAlignment( Label::a_center );
+					m_pTextLabel_guess->setContentAlignment( Label::a_center );
 					break;
 				case 20:
-					if ( gHUD.guess_m_iUnlocks & 0x20000 )
-						guess_m_pTextLabel->setText( "AoM Twitcher suit - Equip in secret room." );
+					if ( gHUD.m_iUnlocks_guess & 0x20000 )
+						m_pTextLabel_guess->setText( "AoM Twitcher suit - Equip in secret room." );
 					else
-						guess_m_pTextLabel->setText( "This item is currently locked." );
+						m_pTextLabel_guess->setText( "This item is currently locked." );
 
-					guess_m_pTextLabel->setContentAlignment( Label::a_center );
+					m_pTextLabel_guess->setContentAlignment( Label::a_center );
 					break;
 				}
 			}
 		}
 
-		if ( guess_m_pTextLabel && guess_m_iArmed && !guess_m_pItemButton[guess_m_iArmed - 1]->isArmed() )
+		if ( m_pTextLabel_guess && m_iArmed_guess && !m_pItemButton_guess[m_iArmed_guess - 1]->isArmed() )
 		{
-			guess_m_iArmed = 0;
-			guess_m_pTextLabel->setText( "" );
-			guess_m_pTextLabel->setContentAlignment( Label::a_center );
+			m_iArmed_guess = 0;
+			m_pTextLabel_guess->setText( "" );
+			m_pTextLabel_guess->setContentAlignment( Label::a_center );
 		}
 	}
 

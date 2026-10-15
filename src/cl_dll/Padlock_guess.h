@@ -15,8 +15,8 @@ public:
 	void ActionSignal( int cmd );
 
 public:
-	Image	*guess_m_pButtonsImage;		// 0xbc, gfx/vgui/puzzle/padlock_buttons.tga
-	ImagePanel	*guess_m_pButtons;		// 0xc0, parent of the wheel buttons
+	Image	*m_pButtonsImage_guess;		// 0xbc, gfx/vgui/puzzle/padlock_buttons.tga
+	ImagePanel	*m_pButtons_guess;		// 0xc0, parent of the wheel buttons
 };
 
 class CPadlockHandler_Command : public ActionSignal
@@ -38,6 +38,6 @@ public:
 	}
 };
 
-void guess_PadlockInit();
+void PadlockInit_guess();
 
 #endif // _PADLOCK_H

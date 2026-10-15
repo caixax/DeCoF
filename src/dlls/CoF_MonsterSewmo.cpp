@@ -33,18 +33,18 @@ extern void UTIL_SplashCalculation( CBaseEntity *pEntity, int splashtype );
 #define	SEWMO_AE_ATTACK_RIGHT		0x01
 #define	SEWMO_AE_ATTACK_LEFT		0x02
 #define	SEWMO_AE_ATTACK_BOTH		0x03
-#define	guess_SEWMO_AE_BREAK_FREE	0x06
+#define	SEWMO_AE_BREAK_FREE_guess	0x06
 
 #define SEWMO_FLINCH_DELAY			2		// at most one flinch every n secs
 
-#define guess_SF_SEWMO_HIDDEN		32		// wait in the water until a player comes near
+#define SF_SEWMO_HIDDEN_guess		32		// wait in the water until a player comes near
 
 //=========================================================
 // monster-specific schedule types
 //=========================================================
 enum
 {
-	guess_SCHED_SEWMO_BREAK_FREE,
+	SCHED_SEWMO_BREAK_FREE_guess,
 };
 
 //=========================================================
@@ -52,7 +52,7 @@ enum
 //=========================================================
 enum
 {
-	guess_TASK_SEWMO_BREAK_FREE = LAST_COMMON_TASK + 1,
+	TASK_SEWMO_BREAK_FREE_guess = LAST_COMMON_TASK + 1,
 };
 
 class CSewmo : public CBaseMonster
@@ -150,7 +150,7 @@ const char *CSewmo::pPainSounds[] =
 Task_t	tlBreakFree[] =
 {
 	{ TASK_STOP_MOVING,				(float)0		},
-	{ guess_TASK_SEWMO_BREAK_FREE,	(float)0		},
+	{ TASK_SEWMO_BREAK_FREE_guess,	(float)0		},
 };
 
 Schedule_t	slBreakFree[] =
@@ -179,7 +179,7 @@ Schedule_t* CSewmo :: GetScheduleOfType ( int Type )
 {
 	switch	( Type )
 	{
-	case guess_SCHED_SEWMO_BREAK_FREE:
+	case SCHED_SEWMO_BREAK_FREE_guess:
 		{
 			return &slBreakFree[ 0 ];
 		}
@@ -198,7 +198,7 @@ void CSewmo :: StartTask ( Task_t *pTask )
 
 	switch ( pTask->iTask )
 	{
-	case guess_TASK_SEWMO_BREAK_FREE:
+	case TASK_SEWMO_BREAK_FREE_guess:
 		{
 			m_IdealActivity = ACT_SIGNAL1;
 			break;
@@ -217,7 +217,7 @@ void CSewmo :: RunTask ( Task_t *pTask )
 {
 	switch ( pTask->iTask )
 	{
-	case guess_TASK_SEWMO_BREAK_FREE:
+	case TASK_SEWMO_BREAK_FREE_guess:
 		{
 			if ( m_fSequenceFinished )
 			{
@@ -256,7 +256,7 @@ Schedule_t *CSewmo :: GetSchedule( void )
 				if ( !pev->body )
 				{
 					EMIT_SOUND( ENT(pev), CHAN_ITEM, "sewmo/break_free.wav", 1, ATTN_NORM );
-					return GetScheduleOfType( guess_SCHED_SEWMO_BREAK_FREE );
+					return GetScheduleOfType( SCHED_SEWMO_BREAK_FREE_guess );
 				}
 			}
 		}
@@ -342,7 +342,7 @@ void CSewmo :: HandleAnimEvent( MonsterEvent_t *pEvent )
 {
 	switch( pEvent->event )
 	{
-		case guess_SEWMO_AE_BREAK_FREE:
+		case SEWMO_AE_BREAK_FREE_guess:
 		{
 			pev->body = 1;
 		}
@@ -457,8 +457,8 @@ void CSewmo :: Spawn()
 		SET_MODEL(ENT(pev), STRING(pev->model));
 	else
 		SET_MODEL(ENT(pev), "models/sewmo.mdl");
-	int guess_iScale = CVAR_GET_FLOAT( "cof_monsterhumanscale" );
-	UTIL_SetSize( pev, Vector( -guess_iScale, -guess_iScale, 0 ), Vector( guess_iScale, guess_iScale, 72 ) );
+	int iScale_guess = CVAR_GET_FLOAT( "cof_monsterhumanscale" );
+	UTIL_SetSize( pev, Vector( -iScale_guess, -iScale_guess, 0 ), Vector( iScale_guess, iScale_guess, 72 ) );
 
 	pev->solid			= SOLID_SLIDEBOX;
 	pev->movetype		= MOVETYPE_STEP;
@@ -470,7 +470,7 @@ void CSewmo :: Spawn()
 	m_MonsterState		= MONSTERSTATE_NONE;
 	m_afCapability		= bits_CAP_DOORS_GROUP;
 
-	if ( pev->spawnflags & guess_SF_SEWMO_HIDDEN )
+	if ( pev->spawnflags & SF_SEWMO_HIDDEN_guess )
 	{
 		SetSequenceByName( "appearidle" );
 		pev->body = 0;
@@ -627,7 +627,7 @@ void CSewmo :: InactiveThink( void )
 {
 	CBaseEntity *pNear = NULL;
 
-	if ( !m_iActivated && !m_iActivating && pev->spawnflags & guess_SF_SEWMO_HIDDEN )
+	if ( !m_iActivated && !m_iActivating && pev->spawnflags & SF_SEWMO_HIDDEN_guess )
 	{
 		while ( (pNear = UTIL_FindEntityInSphere( pNear, pev->origin, 128 )) != NULL )
 		{

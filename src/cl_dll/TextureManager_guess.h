@@ -8,50 +8,50 @@
 #include <list>
 
 // texture types
-#define guess_TEXTYPE_SPRITE	1
-#define guess_TEXTYPE_IMAGE		2
+#define TEXTYPE_SPRITE_guess	1
+#define TEXTYPE_IMAGE_guess		2
 
-typedef struct guess_texture_s
+typedef struct texture_s_guess
 {
-	int			guess_type;
-	std::string	guess_name;
-	std::string	guess_path;
-	int			guess_texture;		// GL texture name (sprite: the bound texture)
-	struct model_s *guess_pModel;	// sprite model
-	int			guess_iFound;
-	int			guess_iFormat;
-} guess_texture_t;
+	int			type_guess;
+	std::string	name_guess;
+	std::string	path_guess;
+	int			texture_guess;		// GL texture name (sprite: the bound texture)
+	struct model_s *pModel_guess;	// sprite model
+	int			iFound_guess;
+	int			iFormat_guess;
+} texture_t_guess;
 
-class guess_CTextureManager
+class CTextureManager_guess
 {
 public:
-	guess_CTextureManager();
-	~guess_CTextureManager();
+	CTextureManager_guess();
+	~CTextureManager_guess();
 
-	void guess_CheckMipmapSupport( void );
-	void guess_CreateTexture( int width, int height, GLuint *texture, GLenum target, GLenum format );
-	std::string guess_GetPath( const std::string &name, int type, int *found );
-	std::string guess_FindTexture( const std::string &name, int *found );
-	guess_texture_t *guess_GetTexture( const std::string &name );
-	std::string guess_FindNumberedTextures( const std::string &name, int *count );
-	std::string guess_FindImageFile( const std::string &path );
-	bool guess_IsHardware( void );
-	void guess_Reset( void );
-	void guess_UploadImage( guess_texture_t *tex );
-	guess_texture_t *guess_GetTexture( const char *name );
-	guess_texture_t *guess_LoadImage( const std::string &name );
-	guess_texture_t *guess_LoadSprite( const std::string &name );
-	guess_texture_t *guess_Load( const std::string &name );
-	bool guess_LoadTexture( int texture, const char *name, int format, bool check );
-	void guess_LoadPlayerShadow( void );
+	void CheckMipmapSupport_guess( void );
+	void CreateTexture_guess( int width, int height, GLuint *texture, GLenum target, GLenum format );
+	std::string GetPath_guess( const std::string &name, int type, int *found );
+	std::string FindTexture_guess( const std::string &name, int *found );
+	texture_t_guess *GetTexture_guess( const std::string &name );
+	std::string FindNumberedTextures_guess( const std::string &name, int *count );
+	std::string FindImageFile_guess( const std::string &path );
+	bool IsHardware_guess( void );
+	void Reset_guess( void );
+	void UploadImage_guess( texture_t_guess *tex );
+	texture_t_guess *GetTexture_guess( const char *name );
+	texture_t_guess *LoadImage_guess( const std::string &name );
+	texture_t_guess *LoadSprite_guess( const std::string &name );
+	texture_t_guess *Load_guess( const std::string &name );
+	bool LoadTexture_guess( int texture, const char *name, int format, bool check );
+	void LoadPlayerShadow_guess( void );
 
-	int		guess_m_iMipmapMode;
-	int		guess_m_iNextTexture;
-	std::list<guess_texture_t> guess_m_Textures;
+	int		m_iMipmapMode_guess;
+	int		m_iNextTexture_guess;
+	std::list<texture_t_guess> m_Textures_guess;
 };
 
-extern guess_CTextureManager guess_g_TextureManager;
+extern CTextureManager_guess g_TextureManager_guess;
 
-byte guess_IsExtensionSupported( const char *extension, const char *extensions );
+byte IsExtensionSupported_guess( const char *extension, const char *extensions );
 
 #endif // GUESS_TEXTUREMANAGER_H

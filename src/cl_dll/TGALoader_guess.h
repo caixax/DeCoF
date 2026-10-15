@@ -6,42 +6,42 @@
 
 typedef struct
 {
-	GLubyte	*guess_imageData;
-	GLuint	guess_bpp;
-	GLuint	guess_width;
-	GLuint	guess_height;
-	GLuint	guess_texID;
-	GLuint	guess_type;
-} guess_Texture;
+	GLubyte	*imageData_guess;
+	GLuint	bpp_guess;
+	GLuint	width_guess;
+	GLuint	height_guess;
+	GLuint	texID_guess;
+	GLuint	type_guess;
+} Texture_guess;
 
 typedef struct
 {
-	GLubyte	guess_Header[12];
-} guess_TGAHeader;
+	GLubyte	Header_guess[12];
+} TGAHeader_guess;
 
 typedef struct
 {
-	GLubyte	guess_header[6];
-	GLuint	guess_bytesPerPixel;
-	GLuint	guess_imageSize;
-	GLuint	guess_temp;
-	GLuint	guess_type;
-	GLuint	guess_Height;
-	GLuint	guess_Width;
-	GLuint	guess_Bpp;
-} guess_TGA;
+	GLubyte	header_guess[6];
+	GLuint	bytesPerPixel_guess;
+	GLuint	imageSize_guess;
+	GLuint	temp_guess;
+	GLuint	type_guess;
+	GLuint	Height_guess;
+	GLuint	Width_guess;
+	GLuint	Bpp_guess;
+} TGA_guess;
 
-class guess_CTGALoader
+class CTGALoader_guess
 {
 public:
-	bool guess_LoadTGA( guess_Texture *texture, char *filename );
-	bool guess_LoadUncompressedTGA( guess_Texture *texture, char *filename, FILE *fTGA );
-	bool guess_LoadCompressedTGA( guess_Texture *texture, char *filename, FILE *fTGA );
+	bool LoadTGA_guess( Texture_guess *texture, char *filename );
+	bool LoadUncompressedTGA_guess( Texture_guess *texture, char *filename, FILE *fTGA );
+	bool LoadCompressedTGA_guess( Texture_guess *texture, char *filename, FILE *fTGA );
 
-	guess_TGAHeader	guess_tgaheader;
-	guess_TGA		guess_tga;
-	GLubyte			guess_uTGAcompare[12];
-	GLubyte			guess_cTGAcompare[12];
+	TGAHeader_guess	tgaheader_guess;
+	TGA_guess		tga_guess;
+	GLubyte			uTGAcompare_guess[12];
+	GLubyte			cTGAcompare_guess[12];
 };
 
 #endif // GUESS_TGALOADER_H

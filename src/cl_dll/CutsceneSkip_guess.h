@@ -14,8 +14,8 @@ public:
 	void Initialize();
 
 public:
-	Image	*guess_m_pDotsImage;		// 0xbc, gfx/vgui/loading_dots.tga
-	ImagePanel	*guess_m_pDotsPanel;	// 0xc0
+	Image	*m_pDotsImage_guess;		// 0xbc, gfx/vgui/loading_dots.tga
+	ImagePanel	*m_pDotsPanel_guess;	// 0xc0
 };
 
 #endif // _CUTSCENESKIP_H

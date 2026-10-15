@@ -9,7 +9,7 @@
 #include "parsemsg.h"
 #include <time.h>
 
-DECLARE_MESSAGE( guess_m_Lensflare, Lensflare )
+DECLARE_MESSAGE( m_Lensflare_guess, Lensflare )
 
 int CHudLensflare::Init( void )
 {
@@ -37,9 +37,9 @@ int CHudLensflare::MsgFunc_Lensflare( const char *pszName, int iSize, void *pbuf
 {
 	BEGIN_READ( pbuf, iSize );
 
-	guess_m_vecSunPos.x = READ_COORD();
-	guess_m_vecSunPos.y = READ_COORD();
-	guess_m_vecSunPos.z = READ_COORD();
+	m_vecSunPos_guess.x = READ_COORD();
+	m_vecSunPos_guess.y = READ_COORD();
+	m_vecSunPos_guess.z = READ_COORD();
 
 	m_iFlags |= HUD_ACTIVE;
 

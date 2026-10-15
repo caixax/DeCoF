@@ -8,9 +8,9 @@
 ?UseTexture@@YAHAAHPAD@Z
 ?RenderFog@@YAXXZ
 ?OrthoDraw@@YAXHHMMMMHHHH@Z
-?guess_SplashEffect@@YAXPAUcl_drip@@@Z
-?guess_RingEffect@@YAXPAUcl_drip@@@Z
-?guess_OrthoCrosshair@@YAXHH@Z
+?SplashEffect_guess@@YAXPAUcl_drip@@@Z
+?RingEffect_guess@@YAXPAUcl_drip@@@Z
+?OrthoCrosshair_guess@@YAXHH@Z
 ?DrawFXObjects@@YAXXZ
 _HUD_DrawNormalTriangles
 _HUD_DrawTransparentTriangles

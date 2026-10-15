@@ -30,9 +30,9 @@ extern "C"
 #include <ctype.h>
 
 #include "vgui_TeamFortressViewport.h"
-#include "guess_Credits.h"
-#include "guess_HUDControl.h"
-#include "guess_RECBInventory.h"
+#include "Credits_guess.h"
+#include "HUDControl_guess.h"
+#include "RECBInventory_guess.h"
 #include "windows.h"
 
 //=========================================================
@@ -89,34 +89,34 @@ void IN_Shutdown( void );
 void V_Init( void );
 void VectorAngles( const float *forward, float *angles );
 int CL_ButtonBits( int );
-void guess_MP3_Shutdown( void );
+void MP3_Shutdown_guess( void );
 void ParseHintTokens( char *pszName, char *pszFile );
-int guess_IsInDonatorGroup1( void );	// Steam clan 0x29D6CA
-int guess_IsInDonatorGroup2( void );	// Steam clan 0x46AE0A
+int IsInDonatorGroup1_guess( void );	// Steam clan 0x29D6CA
+int IsInDonatorGroup2_guess( void );	// Steam clan 0x46AE0A
 void GetCurrentPath( char *path );
 
-extern cl_entity_t *guess_pTelescopeEnt;
-extern int guess_iWheelchair;
-extern int guess_iBoat;
-extern cl_entity_t *guess_pAttachCamEnt;
-extern int guess_iPlayerMode;
-extern int guess_iFallOverTaps;
-extern int guess_iFallOverTapCount;
-extern bool guess_g_bUnlockShown;
+extern cl_entity_t *pTelescopeEnt_guess;
+extern int iWheelchair_guess;
+extern int iBoat_guess;
+extern cl_entity_t *pAttachCamEnt_guess;
+extern int iPlayerMode_guess;
+extern int iFallOverTaps_guess;
+extern int iFallOverTapCount_guess;
+extern bool g_bUnlockShown_guess;
 extern int g_iVisibleMouse;
-extern int guess_iMenuMode;
-extern bool guess_bCanDodge;
-extern bool guess_bXboxFix;
-extern vec3_t guess_vecIronsightOfs;
-extern vec3_t guess_vecWheelchairViewAngles;
-extern vec3_t guess_vecWheelchairOrigin;
+extern int iMenuMode_guess;
+extern bool bCanDodge_guess;
+extern bool bXboxFix_guess;
+extern vec3_t vecIronsightOfs_guess;
+extern vec3_t vecWheelchairViewAngles_guess;
+extern vec3_t vecWheelchairOrigin_guess;
 
 // xxx need client dll function to get and clear impuse
 extern cvar_t *in_joystick;
 
-int	guess_iDonator;
-bool	guess_bIronsightEdit;
-bool	guess_bSteamInit;
+int	iDonator_guess;
+bool	bIronsightEdit_guess;
+bool	bSteamInit_guess;
 int	in_impulse	= 0;
 int	in_cancel	= 0;
 
@@ -488,31 +488,31 @@ void IN_DownUp(void) {KeyUp(&in_down);}
 
 void IN_ForwardDown(void)
 {
-	if ( gHUD.guess_m_iFallOver )
+	if ( gHUD.m_iFallOver_guess )
 		return;
 
-	if ( guess_iPlayerMode )
+	if ( iPlayerMode_guess )
 		return;
 
-	if ( guess_bIronsightEdit )
+	if ( bIronsightEdit_guess )
 	{
-		guess_vecIronsightOfs[1] += 0.25;
+		vecIronsightOfs_guess[1] += 0.25;
 		return;
 	}
 
 	KeyDown(&in_forward);
 	gHUD.m_Spectator.HandleButtonsDown( IN_FORWARD );
 
-	if ( gHUD.guess_m_flForwardTapTime > gEngfuncs.GetClientTime() && cl_nodoubletapdodge->value == 0 && guess_bCanDodge )
+	if ( gHUD.m_flForwardTapTime_guess > gEngfuncs.GetClientTime() && cl_nodoubletapdodge->value == 0 && bCanDodge_guess )
 		gEngfuncs.pfnServerCmd( "dodgeforward" );
 
-	if ( ( in_dodge.state & 1 ) && guess_bCanDodge )
+	if ( ( in_dodge.state & 1 ) && bCanDodge_guess )
 		gEngfuncs.pfnServerCmd( "dodgeforward" );
 
-	if ( guess_pAttachCamEnt )
+	if ( pAttachCamEnt_guess )
 		gEngfuncs.pfnServerCmd( "forwardpressed" );
 
-	gHUD.guess_m_flForwardTapTime = gEngfuncs.GetClientTime() + 0.18;
+	gHUD.m_flForwardTapTime_guess = gEngfuncs.GetClientTime() + 0.18;
 }
 
 void IN_ForwardUp(void)
@@ -520,37 +520,37 @@ void IN_ForwardUp(void)
 	KeyUp(&in_forward);
 	gHUD.m_Spectator.HandleButtonsUp( IN_FORWARD );
 
-	if ( guess_pAttachCamEnt )
+	if ( pAttachCamEnt_guess )
 		gEngfuncs.pfnServerCmd( "forwardreleased" );
 }
 
 void IN_BackDown(void)
 {
-	if ( gHUD.guess_m_iFallOver )
+	if ( gHUD.m_iFallOver_guess )
 		return;
 
-	if ( guess_iPlayerMode )
+	if ( iPlayerMode_guess )
 		return;
 
-	if ( guess_bIronsightEdit )
+	if ( bIronsightEdit_guess )
 	{
-		guess_vecIronsightOfs[1] -= 0.25;
+		vecIronsightOfs_guess[1] -= 0.25;
 		return;
 	}
 
 	KeyDown(&in_back);
 	gHUD.m_Spectator.HandleButtonsDown( IN_BACK );
 
-	if ( gHUD.guess_m_flBackTapTime > gEngfuncs.GetClientTime() && cl_nodoubletapdodge->value == 0 && guess_bCanDodge )
+	if ( gHUD.m_flBackTapTime_guess > gEngfuncs.GetClientTime() && cl_nodoubletapdodge->value == 0 && bCanDodge_guess )
 		gEngfuncs.pfnServerCmd( "dodgebackward" );
 
-	if ( ( in_dodge.state & 1 ) && guess_bCanDodge )
+	if ( ( in_dodge.state & 1 ) && bCanDodge_guess )
 		gEngfuncs.pfnServerCmd( "dodgebackward" );
 
-	if ( guess_pAttachCamEnt )
+	if ( pAttachCamEnt_guess )
 		gEngfuncs.pfnServerCmd( "backpressed" );
 
-	gHUD.guess_m_flBackTapTime = gEngfuncs.GetClientTime() + 0.18;
+	gHUD.m_flBackTapTime_guess = gEngfuncs.GetClientTime() + 0.18;
 }
 
 void IN_BackUp(void)
@@ -558,7 +558,7 @@ void IN_BackUp(void)
 	KeyUp(&in_back);
 	gHUD.m_Spectator.HandleButtonsUp( IN_BACK );
 
-	if ( guess_pAttachCamEnt )
+	if ( pAttachCamEnt_guess )
 		gEngfuncs.pfnServerCmd( "backreleased" );
 }
 void IN_LookupDown(void) {KeyDown(&in_lookup);}
@@ -567,28 +567,28 @@ void IN_LookdownDown(void) {KeyDown(&in_lookdown);}
 void IN_LookdownUp(void) {KeyUp(&in_lookdown);}
 void IN_MoveleftDown(void)
 {
-	if ( gHUD.guess_m_iFallOver )
+	if ( gHUD.m_iFallOver_guess )
 		return;
 
-	if ( guess_iPlayerMode )
+	if ( iPlayerMode_guess )
 		return;
 
-	if ( guess_bIronsightEdit )
+	if ( bIronsightEdit_guess )
 	{
-		guess_vecIronsightOfs[0] -= 0.25;
+		vecIronsightOfs_guess[0] -= 0.25;
 		return;
 	}
 
 	KeyDown(&in_moveleft);
 	gHUD.m_Spectator.HandleButtonsDown( IN_MOVELEFT );
 
-	if ( gHUD.guess_m_flLeftTapTime > gEngfuncs.GetClientTime() && cl_nodoubletapdodge->value == 0 && guess_bCanDodge )
+	if ( gHUD.m_flLeftTapTime_guess > gEngfuncs.GetClientTime() && cl_nodoubletapdodge->value == 0 && bCanDodge_guess )
 		gEngfuncs.pfnServerCmd( "dodgeleft" );
 
-	if ( ( in_dodge.state & 1 ) && guess_bCanDodge )
+	if ( ( in_dodge.state & 1 ) && bCanDodge_guess )
 		gEngfuncs.pfnServerCmd( "dodgeleft" );
 
-	gHUD.guess_m_flLeftTapTime = gEngfuncs.GetClientTime() + 0.18;
+	gHUD.m_flLeftTapTime_guess = gEngfuncs.GetClientTime() + 0.18;
 }
 
 void IN_MoveleftUp(void)
@@ -599,33 +599,33 @@ void IN_MoveleftUp(void)
 
 void IN_MoverightDown(void)
 {
-	if ( gHUD.guess_m_iFallOver )
+	if ( gHUD.m_iFallOver_guess )
 		return;
 
-	if ( guess_bIronsightEdit )
+	if ( bIronsightEdit_guess )
 	{
-		guess_vecIronsightOfs[0] += 0.25;
+		vecIronsightOfs_guess[0] += 0.25;
 		return;
 	}
 
-	if ( guess_iPlayerMode )
+	if ( iPlayerMode_guess )
 		return;
 
 	KeyDown(&in_moveright);
 	gHUD.m_Spectator.HandleButtonsDown( IN_MOVERIGHT );
 
-	if ( gHUD.guess_m_flRightTapTime > gEngfuncs.GetClientTime() && cl_nodoubletapdodge->value == 0 && guess_bCanDodge )
+	if ( gHUD.m_flRightTapTime_guess > gEngfuncs.GetClientTime() && cl_nodoubletapdodge->value == 0 && bCanDodge_guess )
 		gEngfuncs.pfnServerCmd( "dodgeright" );
 
-	if ( ( in_dodge.state & 1 ) && guess_bCanDodge )
+	if ( ( in_dodge.state & 1 ) && bCanDodge_guess )
 		gEngfuncs.pfnServerCmd( "dodgeright" );
 
-	gHUD.guess_m_flRightTapTime = gEngfuncs.GetClientTime() + 0.18;
+	gHUD.m_flRightTapTime_guess = gEngfuncs.GetClientTime() + 0.18;
 }
 
 void IN_MoverightUp(void)
 {
-	if ( gHUD.guess_m_iFallOver )
+	if ( gHUD.m_iFallOver_guess )
 		return;
 
 	KeyUp(&in_moveright);
@@ -649,26 +649,26 @@ void IN_Attack2Down(void)
 {
 	KeyDown(&in_attack2);
 
-	if ( gViewPort && gViewPort->guess_m_pCredits && gViewPort->guess_m_pCredits->guess_m_bShowStats && !gViewPort->guess_m_pCredits->guess_m_bTextOnly )
+	if ( gViewPort && gViewPort->m_pCredits_guess && gViewPort->m_pCredits_guess->m_bShowStats_guess && !gViewPort->m_pCredits_guess->m_bTextOnly_guess )
 	{
-		guess_g_bUnlockShown = false;
-		gViewPort->guess_m_pCredits->guess_m_bContinue = true;
-		gViewPort->guess_m_pCredits->guess_m_szUnlockText[0] = 0;
-		gViewPort->guess_m_pCredits->guess_m_pUnlockLabel->setFgColor( 255, 255, 255, 255 );
+		g_bUnlockShown_guess = false;
+		gViewPort->m_pCredits_guess->m_bContinue_guess = true;
+		gViewPort->m_pCredits_guess->m_szUnlockText_guess[0] = 0;
+		gViewPort->m_pCredits_guess->m_pUnlockLabel_guess->setFgColor( 255, 255, 255, 255 );
 	}
 
-	if ( guess_bIronsightEdit )
+	if ( bIronsightEdit_guess )
 	{
 		gEngfuncs.pfnServerCmd( "ironsightzoomout" );
 		return;
 	}
 
-	if ( guess_pAttachCamEnt )
+	if ( pAttachCamEnt_guess )
 		gEngfuncs.pfnServerCmd( "attack2pressed" );
 
-	if ( guess_iPlayerMode <= 0 || guess_iPlayerMode > 5 )
+	if ( iPlayerMode_guess <= 0 || iPlayerMode_guess > 5 )
 	{
-		if ( guess_pTelescopeEnt )
+		if ( pTelescopeEnt_guess )
 			gEngfuncs.pfnServerCmd( "telescopecancel" );
 
 		gHUD.m_Spectator.HandleButtonsDown( IN_ATTACK2 );
@@ -679,30 +679,30 @@ void IN_Attack2Up(void)
 {
 	KeyUp(&in_attack2);
 
-	if ( guess_pAttachCamEnt )
+	if ( pAttachCamEnt_guess )
 		gEngfuncs.pfnServerCmd( "attack2released" );
 }
 
 void IN_UseDown (void)
 {
-	if ( gViewPort && gViewPort->guess_m_pCredits && gViewPort->guess_m_pCredits->guess_m_bShowStats && !gViewPort->guess_m_pCredits->guess_m_bTextOnly )
+	if ( gViewPort && gViewPort->m_pCredits_guess && gViewPort->m_pCredits_guess->m_bShowStats_guess && !gViewPort->m_pCredits_guess->m_bTextOnly_guess )
 	{
-		guess_g_bUnlockShown = false;
-		gViewPort->guess_m_pCredits->guess_m_bContinue = true;
-		gViewPort->guess_m_pCredits->guess_m_szUnlockText[0] = 0;
-		gViewPort->guess_m_pCredits->guess_m_pUnlockLabel->setFgColor( 255, 255, 255, 255 );
+		g_bUnlockShown_guess = false;
+		gViewPort->m_pCredits_guess->m_bContinue_guess = true;
+		gViewPort->m_pCredits_guess->m_szUnlockText_guess[0] = 0;
+		gViewPort->m_pCredits_guess->m_pUnlockLabel_guess->setFgColor( 255, 255, 255, 255 );
 	}
 
-	if ( gHUD.guess_m_iFallOver )
+	if ( gHUD.m_iFallOver_guess )
 		return;
 
-	if ( guess_iPlayerMode )
+	if ( iPlayerMode_guess )
 		return;
 
-	if ( guess_iBoat )
+	if ( iBoat_guess )
 		gEngfuncs.pfnServerCmd( "boatdisembark" );
 
-	if ( guess_pTelescopeEnt )
+	if ( pTelescopeEnt_guess )
 		gEngfuncs.pfnServerCmd( "telescopecancel" );
 
 	KeyDown(&in_use);
@@ -711,19 +711,19 @@ void IN_UseDown (void)
 void IN_UseUp (void) {KeyUp(&in_use);}
 void IN_JumpDown (void)
 {
-	if ( gHUD.guess_m_iFallOver )
+	if ( gHUD.m_iFallOver_guess )
 	{
-		if ( ++guess_iFallOverTapCount >= guess_iFallOverTaps )
+		if ( ++iFallOverTapCount_guess >= iFallOverTaps_guess )
 			gEngfuncs.pfnServerCmd( "tapgetup" );
 		return;
 	}
 
-	if ( guess_iPlayerMode )
+	if ( iPlayerMode_guess )
 		return;
 
-	if ( guess_bIronsightEdit )
+	if ( bIronsightEdit_guess )
 	{
-		guess_vecIronsightOfs[2] += 0.25;
+		vecIronsightOfs_guess[2] += 0.25;
 		return;
 	}
 
@@ -733,15 +733,15 @@ void IN_JumpDown (void)
 void IN_JumpUp (void) {KeyUp(&in_jump);}
 void IN_DuckDown(void)
 {
-	if ( gHUD.guess_m_iFallOver )
+	if ( gHUD.m_iFallOver_guess )
 		return;
 
-	if ( guess_iPlayerMode )
+	if ( iPlayerMode_guess )
 		return;
 
-	if ( guess_bIronsightEdit )
+	if ( bIronsightEdit_guess )
 	{
-		guess_vecIronsightOfs[2] -= 0.25;
+		vecIronsightOfs_guess[2] -= 0.25;
 		return;
 	}
 
@@ -751,7 +751,7 @@ void IN_DuckDown(void)
 void IN_DuckUp(void) {KeyUp(&in_duck);}
 void IN_ReloadDown(void)
 {
-	if ( guess_iWheelchair )
+	if ( iWheelchair_guess )
 		gEngfuncs.pfnServerCmd( "wheelchairreload" );
 
 	KeyDown(&in_reload);
@@ -764,7 +764,7 @@ void IN_GraphUp(void) {KeyUp(&in_graph);}
 
 void IN_AttackDown(void)
 {
-	if ( guess_bIronsightEdit )
+	if ( bIronsightEdit_guess )
 	{
 		gEngfuncs.pfnServerCmd( "ironsightzoomin" );
 		return;
@@ -772,47 +772,47 @@ void IN_AttackDown(void)
 
 	if ( gViewPort )
 	{
-		if ( gViewPort->guess_m_pHUDControl && gViewPort->guess_m_pHUDControl->guess_m_bLobby )
+		if ( gViewPort->m_pHUDControl_guess && gViewPort->m_pHUDControl_guess->m_bLobby_guess )
 		{
 			gEngfuncs.pfnServerCmd( "readylobby" );
 			return;
 		}
 
-		if ( gViewPort->guess_m_pCredits && gViewPort->guess_m_pCredits->guess_m_bShowStats && !gViewPort->guess_m_pCredits->guess_m_bTextOnly )
+		if ( gViewPort->m_pCredits_guess && gViewPort->m_pCredits_guess->m_bShowStats_guess && !gViewPort->m_pCredits_guess->m_bTextOnly_guess )
 		{
-			guess_g_bUnlockShown = false;
-			gViewPort->guess_m_pCredits->guess_m_bContinue = true;
-			gViewPort->guess_m_pCredits->guess_m_szUnlockText[0] = 0;
-			gViewPort->guess_m_pCredits->guess_m_pUnlockLabel->setFgColor( 255, 255, 255, 255 );
+			g_bUnlockShown_guess = false;
+			gViewPort->m_pCredits_guess->m_bContinue_guess = true;
+			gViewPort->m_pCredits_guess->m_szUnlockText_guess[0] = 0;
+			gViewPort->m_pCredits_guess->m_pUnlockLabel_guess->setFgColor( 255, 255, 255, 255 );
 		}
 	}
 
-	if ( guess_pAttachCamEnt )
+	if ( pAttachCamEnt_guess )
 		gEngfuncs.pfnServerCmd( "attack1pressed" );
 
-	if ( guess_iPlayerMode <= 0 || guess_iPlayerMode > 5 )
+	if ( iPlayerMode_guess <= 0 || iPlayerMode_guess > 5 )
 	{
-		if ( guess_iWheelchair )
+		if ( iWheelchair_guess )
 		{
 			char szEndVec[64];
 			char szFire[64];
 			vec3_t forward, right;
 			int x, y, z;
 
-			x = guess_vecWheelchairOrigin[0];
-			y = guess_vecWheelchairOrigin[1];
-			z = guess_vecWheelchairOrigin[2];
+			x = vecWheelchairOrigin_guess[0];
+			y = vecWheelchairOrigin_guess[1];
+			z = vecWheelchairOrigin_guess[2];
 
-			gEngfuncs.pfnAngleVectors( guess_vecWheelchairViewAngles, forward, right, NULL );
+			gEngfuncs.pfnAngleVectors( vecWheelchairViewAngles_guess, forward, right, NULL );
 
-			sprintf( szEndVec, "wheelchairendvec %i %i %i", (int)( guess_vecWheelchairOrigin[0] + forward[0] * 4096 ), (int)( guess_vecWheelchairOrigin[1] + forward[1] * 4096 ), (int)( guess_vecWheelchairOrigin[2] + forward[2] * 4096 ) );
+			sprintf( szEndVec, "wheelchairendvec %i %i %i", (int)( vecWheelchairOrigin_guess[0] + forward[0] * 4096 ), (int)( vecWheelchairOrigin_guess[1] + forward[1] * 4096 ), (int)( vecWheelchairOrigin_guess[2] + forward[2] * 4096 ) );
 			gEngfuncs.pfnServerCmd( szEndVec );
 
 			sprintf( szFire, "wheelchairfire1 %i %i %i", x, y, z );
 			gEngfuncs.pfnServerCmd( szFire );
 		}
 
-		if ( guess_pTelescopeEnt )
+		if ( pTelescopeEnt_guess )
 			gEngfuncs.pfnServerCmd( "telescopecancel" );
 
 		KeyDown( &in_attack );
@@ -825,21 +825,21 @@ void IN_AttackUp(void)
 	KeyUp( &in_attack );
 	in_cancel = 0;
 
-	if ( guess_pAttachCamEnt )
+	if ( pAttachCamEnt_guess )
 		gEngfuncs.pfnServerCmd( "attack1released" );
 }
 
 void IN_Attack3Down(void)
 {
-	if ( gViewPort && gViewPort->guess_m_pCredits && gViewPort->guess_m_pCredits->guess_m_bShowStats && !gViewPort->guess_m_pCredits->guess_m_bTextOnly )
+	if ( gViewPort && gViewPort->m_pCredits_guess && gViewPort->m_pCredits_guess->m_bShowStats_guess && !gViewPort->m_pCredits_guess->m_bTextOnly_guess )
 	{
-		guess_g_bUnlockShown = false;
-		gViewPort->guess_m_pCredits->guess_m_bContinue = true;
-		gViewPort->guess_m_pCredits->guess_m_szUnlockText[0] = 0;
-		gViewPort->guess_m_pCredits->guess_m_pUnlockLabel->setFgColor( 255, 255, 255, 255 );
+		g_bUnlockShown_guess = false;
+		gViewPort->m_pCredits_guess->m_bContinue_guess = true;
+		gViewPort->m_pCredits_guess->m_szUnlockText_guess[0] = 0;
+		gViewPort->m_pCredits_guess->m_pUnlockLabel_guess->setFgColor( 255, 255, 255, 255 );
 	}
 
-	if ( !guess_iPlayerMode )
+	if ( !iPlayerMode_guess )
 		KeyDown( &in_attack3 );
 }
 
@@ -851,31 +851,31 @@ void IN_InventoryDown(void)
 {
 	KeyDown( &in_inventory );
 
-	if ( guess_iPlayerMode > 4 )
+	if ( iPlayerMode_guess > 4 )
 		return;
 
 	if ( !strcmp( gEngfuncs.pfnGetLevelName(), "maps/c_nightmare.bsp" ) )
 		return;
 
-	if ( guess_iWheelchair )
+	if ( iWheelchair_guess )
 		return;
 
 	if ( strstr( gEngfuncs.pfnGetLevelName(), "game_menu" ) )
 		return;
 
-	if ( gHUD.guess_m_iLadder )
+	if ( gHUD.m_iLadder_guess )
 		return;
 
-	if ( gHUD.guess_m_iFallOver )
+	if ( gHUD.m_iFallOver_guess )
 		return;
 
-	if ( guess_IsViewEntityActive() )
+	if ( IsViewEntityActive_guess() )
 		return;
 
-	if ( !gViewPort || !gViewPort->guess_m_pRECBInventory )
+	if ( !gViewPort || !gViewPort->m_pRECBInventory_guess )
 		return;
 
-	if ( gViewPort->guess_m_pRECBInventory->isVisible() )
+	if ( gViewPort->m_pRECBInventory_guess->isVisible() )
 	{
 		gViewPort->HideTopMenu();
 		PlaySound( "inventory/inventory_close.wav", 1 );
@@ -897,7 +897,7 @@ void IN_ObjectivesDown(void)
 
 	KeyDown( &in_objectives );
 
-	if ( guess_iPlayerMode > 4 )
+	if ( iPlayerMode_guess > 4 )
 		return;
 
 	if ( !strcmp( gEngfuncs.pfnGetLevelName(), "maps/c_nightmare.bsp" ) )
@@ -906,35 +906,35 @@ void IN_ObjectivesDown(void)
 	if ( strstr( gEngfuncs.pfnGetLevelName(), "game_menu" ) )
 		return;
 
-	if ( guess_IsViewEntityActive() )
+	if ( IsViewEntityActive_guess() )
 		return;
 
-	if ( strlen( gHUD.guess_m_szObjectiveTitle ) > 2 && strlen( gHUD.guess_m_szObjectiveText ) > 2 )
+	if ( strlen( gHUD.m_szObjectiveTitle_guess ) > 2 && strlen( gHUD.m_szObjectiveText_guess ) > 2 )
 	{
-		ParseHintTokens( gHUD.guess_m_szObjectiveTitle, gHUD.guess_m_szObjectiveText );
+		ParseHintTokens( gHUD.m_szObjectiveTitle_guess, gHUD.m_szObjectiveText_guess );
 
-		gViewPort->guess_m_pHUDControl->guess_m_iHintLine = 1;
+		gViewPort->m_pHUDControl_guess->m_iHintLine_guess = 1;
 
-		if ( strlen( gViewPort->guess_m_pHUDControl->guess_m_szHintLine1 ) > 2 )
+		if ( strlen( gViewPort->m_pHUDControl_guess->m_szHintLine1_guess ) > 2 )
 		{
 			int iLen = 0;
-			for ( unsigned int i = 0; i < strlen( gViewPort->guess_m_pHUDControl->guess_m_szHintLine1 ); i++ )
+			for ( unsigned int i = 0; i < strlen( gViewPort->m_pHUDControl_guess->m_szHintLine1_guess ); i++ )
 			{
 				iLen++;
-				if ( gViewPort->guess_m_pHUDControl->guess_m_szHintLine1[i] == '@' )
+				if ( gViewPort->m_pHUDControl_guess->m_szHintLine1_guess[i] == '@' )
 					szText[i] = ' ';
 				else
-					szText[i] = gViewPort->guess_m_pHUDControl->guess_m_szHintLine1[i];
+					szText[i] = gViewPort->m_pHUDControl_guess->m_szHintLine1_guess[i];
 			}
 			szText[iLen] = '\0';
 
 			int w, h;
-			gViewPort->guess_m_pHUDControl->guess_m_pHintLabel->setText( szText );
-			gViewPort->guess_m_pHUDControl->guess_m_pCreditsFont->getTextSize( gViewPort->guess_m_pHUDControl->guess_m_szHintLine1, w, h );
-			gViewPort->guess_m_pHUDControl->guess_m_pHintLabel->setPos( ScreenWidth / 2 - 400, -48 );
-			gViewPort->guess_m_pHUDControl->guess_m_bHint = true;
-			gViewPort->guess_m_pHUDControl->guess_m_iHintAlpha = 255;
-			gViewPort->guess_m_pHUDControl->guess_m_flHintTime = gEngfuncs.GetClientTime() + 5;
+			gViewPort->m_pHUDControl_guess->m_pHintLabel_guess->setText( szText );
+			gViewPort->m_pHUDControl_guess->m_pCreditsFont_guess->getTextSize( gViewPort->m_pHUDControl_guess->m_szHintLine1_guess, w, h );
+			gViewPort->m_pHUDControl_guess->m_pHintLabel_guess->setPos( ScreenWidth / 2 - 400, -48 );
+			gViewPort->m_pHUDControl_guess->m_bHint_guess = true;
+			gViewPort->m_pHUDControl_guess->m_iHintAlpha_guess = 255;
+			gViewPort->m_pHUDControl_guess->m_flHintTime_guess = gEngfuncs.GetClientTime() + 5;
 		}
 	}
 }
@@ -945,35 +945,35 @@ void IN_Documents(void)
 {
 }
 
-void guess_IN_XboxFix(void)
+void IN_XboxFix_guess(void)
 {
-	guess_bXboxFix = false;
-	gHUD.guess_m_bXboxFix[0] = true;
-	gHUD.guess_m_bXboxFix[1] = true;
-	gHUD.guess_m_bXboxFix[2] = true;
-	gHUD.guess_m_bXboxFix[3] = true;
-	gHUD.guess_m_bXboxFix[4] = true;
-	gHUD.guess_m_bXboxFix[5] = true;
-	gHUD.guess_m_bXboxFix[6] = true;
-	gHUD.guess_m_bXboxFix[7] = true;
-	gHUD.guess_m_bXboxFix[8] = true;
-	gHUD.guess_m_bXboxFix[9] = true;
-	gHUD.guess_m_bXboxFix[10] = true;
-	gHUD.guess_m_bXboxFix[11] = true;
-	gHUD.guess_m_bXboxFix[14] = true;
-	gHUD.guess_m_bXboxFix[15] = true;
-	gHUD.guess_m_bXboxFix[16] = true;
-	gHUD.guess_m_bXboxFix[17] = true;
-	gHUD.guess_m_bXboxFix[18] = true;
-	gHUD.guess_m_bXboxFix[19] = true;
-	gHUD.guess_m_bXboxFix[20] = true;
-	gHUD.guess_m_bXboxFix[21] = true;
-	gHUD.guess_m_bXboxFix[22] = true;
-	gHUD.guess_m_bXboxFix[23] = true;
-	gHUD.guess_m_bXboxFix[24] = true;
-	gHUD.guess_m_bXboxFix[25] = true;
-	gHUD.guess_m_bXboxFix[12] = true;
-	gHUD.guess_m_bXboxFix[13] = true;
+	bXboxFix_guess = false;
+	gHUD.m_bXboxFix_guess[0] = true;
+	gHUD.m_bXboxFix_guess[1] = true;
+	gHUD.m_bXboxFix_guess[2] = true;
+	gHUD.m_bXboxFix_guess[3] = true;
+	gHUD.m_bXboxFix_guess[4] = true;
+	gHUD.m_bXboxFix_guess[5] = true;
+	gHUD.m_bXboxFix_guess[6] = true;
+	gHUD.m_bXboxFix_guess[7] = true;
+	gHUD.m_bXboxFix_guess[8] = true;
+	gHUD.m_bXboxFix_guess[9] = true;
+	gHUD.m_bXboxFix_guess[10] = true;
+	gHUD.m_bXboxFix_guess[11] = true;
+	gHUD.m_bXboxFix_guess[14] = true;
+	gHUD.m_bXboxFix_guess[15] = true;
+	gHUD.m_bXboxFix_guess[16] = true;
+	gHUD.m_bXboxFix_guess[17] = true;
+	gHUD.m_bXboxFix_guess[18] = true;
+	gHUD.m_bXboxFix_guess[19] = true;
+	gHUD.m_bXboxFix_guess[20] = true;
+	gHUD.m_bXboxFix_guess[21] = true;
+	gHUD.m_bXboxFix_guess[22] = true;
+	gHUD.m_bXboxFix_guess[23] = true;
+	gHUD.m_bXboxFix_guess[24] = true;
+	gHUD.m_bXboxFix_guess[25] = true;
+	gHUD.m_bXboxFix_guess[12] = true;
+	gHUD.m_bXboxFix_guess[13] = true;
 }
 
 // Special handling
@@ -1139,7 +1139,7 @@ void DLLEXPORT CL_CreateMove ( float frametime, struct usercmd_s *cmd, int activ
 
 		memset (cmd, 0, sizeof(*cmd));
 		
-		if ( !gHUD.guess_m_bViewLock )
+		if ( !gHUD.m_bViewLock_guess )
 			gEngfuncs.SetViewAngles( (float *)viewangles );
 
 		cmd->sidemove += cl_sidespeed->value * CL_KeyState (&in_moveright);
@@ -1154,7 +1154,7 @@ void DLLEXPORT CL_CreateMove ( float frametime, struct usercmd_s *cmd, int activ
 			cmd->forwardmove -= cl_backspeed->value * CL_KeyState (&in_back);
 		}	
 
-		if ( ( in_dodge.state & 1 ) && guess_bCanDodge )
+		if ( ( in_dodge.state & 1 ) && bCanDodge_guess )
 		{
 			if ( in_forward.state & 1 )
 				gEngfuncs.pfnServerCmd( "dodgeforward" );
@@ -1221,13 +1221,13 @@ void DLLEXPORT CL_CreateMove ( float frametime, struct usercmd_s *cmd, int activ
 			viewangles[PITCH] = -gHUD.m_SpecTank_coneVer;
 
 		// всем спасибо, все свободны
-		if ( !gHUD.guess_m_bViewLock )
+		if ( !gHUD.m_bViewLock_guess )
 			gEngfuncs.SetViewAngles( (float *)viewangles );
 	}
 
-	if ( guess_iWheelchair )
+	if ( iWheelchair_guess )
 	{
-		cmd->impact_position = guess_vecWheelchairViewAngles;
+		cmd->impact_position = vecWheelchairViewAngles_guess;
 		cmd->impact_position[2] = 1;
 	}
 	else
@@ -1237,10 +1237,10 @@ void DLLEXPORT CL_CreateMove ( float frametime, struct usercmd_s *cmd, int activ
 	
 	if ( g_iAlive )
 	{
-		if ( guess_iWheelchair )
+		if ( iWheelchair_guess )
 		{
-			VectorCopy( guess_vecWheelchairViewAngles, cmd->viewangles );
-			oldangles = guess_vecWheelchairViewAngles;
+			VectorCopy( vecWheelchairViewAngles_guess, cmd->viewangles );
+			oldangles = vecWheelchairViewAngles_guess;
 		}
 		else
 		{
@@ -1250,9 +1250,9 @@ void DLLEXPORT CL_CreateMove ( float frametime, struct usercmd_s *cmd, int activ
 	}
 	else
 	{
-		if ( guess_iWheelchair )
+		if ( iWheelchair_guess )
 		{
-			VectorCopy( guess_vecWheelchairViewAngles, cmd->viewangles );
+			VectorCopy( vecWheelchairViewAngles_guess, cmd->viewangles );
 		}
 		else
 		{
@@ -1270,7 +1270,7 @@ void DLLEXPORT CL_CreateMove ( float frametime, struct usercmd_s *cmd, int activ
 		cmd->viewangles[ROLL] = 0;
 	}
 
-	cmd->is_donator = guess_iDonator;
+	cmd->is_donator = iDonator_guess;
 }
 
 /*
@@ -1476,7 +1476,7 @@ void InitInput (void)
 	gEngfuncs.pfnAddCommand ("-attack3", IN_Attack3Up);
 	gEngfuncs.pfnAddCommand ("+dodge", IN_DodgeDown);
 	gEngfuncs.pfnAddCommand ("-dodge", IN_DodgeUp);
-	gEngfuncs.pfnAddCommand ("xboxfix", guess_IN_XboxFix);
+	gEngfuncs.pfnAddCommand ("xboxfix", IN_XboxFix_guess);
 	gEngfuncs.pfnAddCommand ("documents", IN_Documents);
 	gEngfuncs.pfnAddCommand ("+inventory", IN_InventoryDown);
 	gEngfuncs.pfnAddCommand ("-inventory", IN_InventoryUp);
@@ -1542,15 +1542,15 @@ void InitInput (void)
 	V_Init();
 
 	if ( SteamAPI_Init() )
-		guess_bSteamInit = true;
+		bSteamInit_guess = true;
 
-	guess_iDonator = 0;
+	iDonator_guess = 0;
 
 	bool bGroup2 = false;
-	if ( guess_IsInDonatorGroup2() )
+	if ( IsInDonatorGroup2_guess() )
 		bGroup2 = true;
 
-	if ( guess_IsInDonatorGroup1() )
+	if ( IsInDonatorGroup1_guess() )
 	{
 		byte *pFile = gEngfuncs.COM_LoadFile( "donatormsg.txt", 5, NULL );
 
@@ -1587,18 +1587,18 @@ void InitInput (void)
 			gEngfuncs.COM_FreeFile( pFile );
 
 		if ( !bGroup2 )
-			guess_iDonator = 1;
+			iDonator_guess = 1;
 		else if ( bGroup2 == true )
-			guess_iDonator = 2;
+			iDonator_guess = 2;
 	}
 	else
 	{
-		guess_iDonator = 0;
+		iDonator_guess = 0;
 
 		if ( !bGroup2 )
-			guess_iDonator = 0;
+			iDonator_guess = 0;
 		else if ( bGroup2 == true )
-			guess_iDonator = 3;
+			iDonator_guess = 3;
 	}
 
 	if ( SteamUser() )
@@ -1606,13 +1606,13 @@ void InitInput (void)
 		CSteamID steamID = SteamUser()->GetSteamID();
 
 		if ( steamID.ConvertToUint64() == 268893370.0 )
-			guess_iDonator = 4;
+			iDonator_guess = 4;
 
 		if ( steamID.ConvertToUint64() == 268992206.0 )
-			guess_iDonator = 4;
+			iDonator_guess = 4;
 	}
 
-	guess_iMenuMode = 1;
+	iMenuMode_guess = 1;
 	gEngfuncs.pfnClientCmd( "map c_game_menu1" );
 }
 
@@ -1630,5 +1630,5 @@ void ShutdownInput (void)
 void DLLEXPORT HUD_Shutdown( void )
 {
 	ShutdownInput();
-	guess_MP3_Shutdown();
+	MP3_Shutdown_guess();
 }

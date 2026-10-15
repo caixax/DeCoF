@@ -123,8 +123,8 @@ public:
 			return false;
 	}
 };
-int guess_iDefaultFOV = 90;
-int guess_iSkipSceneFramerate = 2;	// host_framerate while a scene is skipped (SkipScene message, CHud::Redraw)
+int iDefaultFOV_guess = 90;
+int iSkipSceneFramerate_guess = 2;	// host_framerate while a scene is skipped (SkipScene message, CHud::Redraw)
 static CHLVoiceStatusHelper g_VoiceStatusHelper;
 
 
@@ -132,40 +132,40 @@ extern client_sprite_t *GetSpriteList(client_sprite_t *pList, const char *psz, i
 
 extern cvar_t *sensitivity;
 
-int guess_iMenuMode;			// 1 for the game menu map, 2 after the to3dmenu command
-bool guess_bXboxFix;			// cleared by the xboxfix command
-int guess_iHudActive;			// set by Init and VidInit, cleared by the destructor
+int iMenuMode_guess;			// 1 for the game menu map, 2 after the to3dmenu command
+bool bXboxFix_guess;			// cleared by the xboxfix command
+int iHudActive_guess;			// set by Init and VidInit, cleared by the destructor
 cvar_t *cl_lw = NULL;
-int guess_iGoro;				// "goro" cvar
-float guess_flWeaponIdleSpeed;	// "cl_weapon_idle_speed" cvar
-float guess_flWeaponIdleDampener;	// "cl_weapon_idle_dampener" cvar
+int iGoro_guess;				// "goro" cvar
+float flWeaponIdleSpeed_guess;	// "cl_weapon_idle_speed" cvar
+float flWeaponIdleDampener_guess;	// "cl_weapon_idle_dampener" cvar
 
-extern int guess_iDonator;
-extern cl_entity_t *guess_pAttachCamEnt;	// the entity the view is attached to (AttachCam message)
-extern int guess_iBoat;
-extern int guess_iWheelchair;
-extern bool guess_bWheelchairLock;
-extern cl_entity_t *guess_pTelescopeEnt;
-extern cl_entity_t *guess_pCamTargetEnt;
-extern vec3_t guess_vecIronsightOfs;
-extern bool guess_bCustomFingerTexture;	// CustomFng message
-extern bool guess_bCustomGloveTexture;	// CustomGlv message
-extern int guess_iGreyFade;				// GreyFade message
-extern float guess_flNextSoundCacheTime;	// "ambience/soundcache" in CHud::Redraw
-extern bool guess_bUnknown105431E9;
-extern bool guess_bUnknown10545081;
-extern float guess_flUnknown105595A0;
-extern float guess_flUnknown105595A4;
-extern float guess_flUnknown105595A8;
-extern int guess_iUnknown105595AC;
-extern float guess_flUnknown1055959C;
+extern int iDonator_guess;
+extern cl_entity_t *pAttachCamEnt_guess;	// the entity the view is attached to (AttachCam message)
+extern int iBoat_guess;
+extern int iWheelchair_guess;
+extern bool bWheelchairLock_guess;
+extern cl_entity_t *pTelescopeEnt_guess;
+extern cl_entity_t *pCamTargetEnt_guess;
+extern vec3_t vecIronsightOfs_guess;
+extern bool bCustomFingerTexture_guess;	// CustomFng message
+extern bool bCustomGloveTexture_guess;	// CustomGlv message
+extern int iGreyFade_guess;				// GreyFade message
+extern float flNextSoundCacheTime_guess;	// "ambience/soundcache" in CHud::Redraw
+extern bool bUnknown105431E9_guess;
+extern bool bUnknown10545081_guess;
+extern float flUnknown105595A0_guess;
+extern float flUnknown105595A4_guess;
+extern float flUnknown105595A8_guess;
+extern int iUnknown105595AC_guess;
+extern float flUnknown1055959C_guess;
 
-int guess_IsInDonatorGroup1( void );	// Steam clan 0x29D6CA
-int guess_IsInDonatorGroup2( void );	// Steam clan 0x46AE0A
+int IsInDonatorGroup1_guess( void );	// Steam clan 0x29D6CA
+int IsInDonatorGroup2_guess( void );	// Steam clan 0x46AE0A
 
-void guess_IrrKlangInit( void );
-void guess_IrrKlangSetParams( float flParm1, float flParm2, float flParm3, float flParm4 );
-void guess_IrrKlangStop( float flFadeTime );
+void IrrKlangInit_guess( void );
+void IrrKlangSetParams_guess( float flParm1, float flParm2, float flParm3, float flParm4 );
+void IrrKlangStop_guess( float flFadeTime );
 
 void ShutdownInput (void);
 
@@ -472,32 +472,32 @@ void __CmdFunc_ToggleServerBrowser( void )
 	}
 }
 
-void __CmdFunc_guess_FinishLadder( void )
+void __CmdFunc_FinishLadder_guess( void )
 {
-	guess_pAttachCamEnt = NULL;
+	pAttachCamEnt_guess = NULL;
 }
 
-void __CmdFunc_guess_DonatorCheck( void )
+void __CmdFunc_DonatorCheck_guess( void )
 {
-	guess_iDonator = 0;
+	iDonator_guess = 0;
 
 	bool bGroup2 = false;
-	if ( guess_IsInDonatorGroup2() )
+	if ( IsInDonatorGroup2_guess() )
 		bGroup2 = true;
 
-	if ( !guess_IsInDonatorGroup1() )
+	if ( !IsInDonatorGroup1_guess() )
 	{
 		if ( !bGroup2 )
-			guess_iDonator = 0;
+			iDonator_guess = 0;
 		else if ( bGroup2 == true )
-			guess_iDonator = 3;
+			iDonator_guess = 3;
 	}
 	else
 	{
 		if ( !bGroup2 )
-			guess_iDonator = 1;
+			iDonator_guess = 1;
 		else if ( bGroup2 == true )
-			guess_iDonator = 2;
+			iDonator_guess = 2;
 	}
 
 	if ( SteamUser() )
@@ -505,10 +505,10 @@ void __CmdFunc_guess_DonatorCheck( void )
 		CSteamID steamID = SteamUser()->GetSteamID();
 
 		if ( steamID.ConvertToUint64() == 268893370.0 )
-			guess_iDonator = 4;
+			iDonator_guess = 4;
 
 		if ( steamID.ConvertToUint64() == 268992206.0 )
-			guess_iDonator = 4;
+			iDonator_guess = 4;
 	}
 }
 
@@ -619,15 +619,15 @@ int __MsgFunc_PlayMP3(const char *pszName, int iSize, void *pbuf )
 
 void __CmdFunc_StopMP3( void )
 {
-	guess_IrrKlangStop( 0 );
+	IrrKlangStop_guess( 0 );
 }
 
-void __CmdFunc_guess_BeginSPGame( void )
+void __CmdFunc_BeginSPGame_guess( void )
 {
 	gEngfuncs.pfnClientCmd( "disconnect;maxplayers 1;deathmatch 0;map c_difficulty_settings" );
 }
 
-void __CmdFunc_guess_To3DMenu( void )
+void __CmdFunc_To3DMenu_guess( void )
 {
 	if ( gEngfuncs.GetMaxClients() > 1 )
 	{
@@ -636,19 +636,19 @@ void __CmdFunc_guess_To3DMenu( void )
 	}
 
 	gEngfuncs.pfnClientCmd( "map c_game_menu1" );
-	guess_iMenuMode = 2;
+	iMenuMode_guess = 2;
 }
 
-void __CmdFunc_guess_ReturnMenu( void )
+void __CmdFunc_ReturnMenu_guess( void )
 {
 	gEngfuncs.pfnClientCmd( "disconnect;maxplayers 1;deathmatch 0" );
 }
 
-void __CmdFunc_guess_MP3Player( void )
+void __CmdFunc_MP3Player_guess( void )
 {
 }
 
-void __CmdFunc_guess_ToUnlockables( void )
+void __CmdFunc_ToUnlockables_guess( void )
 {
 	if ( gEngfuncs.GetMaxClients() > 1 )
 	{
@@ -660,13 +660,13 @@ void __CmdFunc_guess_ToUnlockables( void )
 }
 
 // not hooked in 1.6a
-void __CmdFunc_guess_Unlockables( void )
+void __CmdFunc_Unlockables_guess( void )
 {
 	if ( gEngfuncs.pfnGetLevelName() && strstr( gEngfuncs.pfnGetLevelName(), "game_menu" ) )
 	{
 		gEngfuncs.pfnClientCmd( "disconnect;maxplayers 1;deathmatch 0;map c_unlockables" );
 	}
-	else if ( guess_iHudActive )
+	else if ( iHudActive_guess )
 	{
 		PlaySound( "inventory/inventory_no.wav", 1 );
 	}
@@ -676,11 +676,11 @@ void __CmdFunc_guess_Unlockables( void )
 	}
 }
 
-void guess_TextureTest( void );
+void TextureTest_guess( void );
 
-void __CmdFunc_guess_TextureTest( void )
+void __CmdFunc_TextureTest_guess( void )
 {
-	guess_TextureTest();
+	TextureTest_guess();
 }
 
 // buz
@@ -703,67 +703,67 @@ void GammaGraphInit();
 void InitPostEffects();
 
 void CanUseInit( void ); // Wargon: »конка юза.
-void guess_HUDControlInit( void );
-void guess_BoardInit( void );
-void guess_NoteDocInit( void );
-void guess_KeypadInit( void );
-void guess_PhoneInit( void );
-void guess_PuzzlebarInit( void );
-void guess_SaveInit( void );
-void guess_YesNoInit( void );
-void guess_StatueInit( void );
-void guess_ComputerInit( void );
-void guess_UserDocInit( void );
-void guess_PadlockInit( void );
-void guess_SaveLoadInit( void );
-void guess_GameMenuInit( void );
-void guess_ScopeInit( void );
-void guess_TVFrameInit( void );
-void guess_BossBarInit( void );
-void guess_TelephoneInit( void );
-void guess_QSlotInit( void );
-void guess_AmmoInvInit( void );
-void guess_CreditsInit( void );
-void guess_ClothesInit( void );
-void guess_UnlockablesInit( void );
-void guess_CoopStatsInit( void );
-void guess_CustomDocInit( void );
+void HUDControlInit_guess( void );
+void BoardInit_guess( void );
+void NoteDocInit_guess( void );
+void KeypadInit_guess( void );
+void PhoneInit_guess( void );
+void PuzzlebarInit_guess( void );
+void SaveInit_guess( void );
+void YesNoInit_guess( void );
+void StatueInit_guess( void );
+void ComputerInit_guess( void );
+void UserDocInit_guess( void );
+void PadlockInit_guess( void );
+void SaveLoadInit_guess( void );
+void GameMenuInit_guess( void );
+void ScopeInit_guess( void );
+void TVFrameInit_guess( void );
+void BossBarInit_guess( void );
+void TelephoneInit_guess( void );
+void QSlotInit_guess( void );
+void AmmoInvInit_guess( void );
+void CreditsInit_guess( void );
+void ClothesInit_guess( void );
+void UnlockablesInit_guess( void );
+void CoopStatsInit_guess( void );
+void CustomDocInit_guess( void );
 
 // This is called every time the DLL is loaded
 void CHud :: Init( void )
 {
-	if ( !guess_m_pVoiceTweak )
-		guess_m_pVoiceTweak = gEngfuncs.pVoiceTweak;
+	if ( !m_pVoiceTweak_guess )
+		m_pVoiceTweak_guess = gEngfuncs.pVoiceTweak;
 
-	guess_m_szSleeveTexture[0] = 0;
-	guess_m_szFingerTexture[0] = 0;
-	gHUD.guess_m_szGloveTexture[0] = 0;
-	guess_bCustomFingerTexture = false;
-	guess_bCustomGloveTexture = false;
-	guess_m_bSaveHack = false;
-	guess_m_flSaveHackTime = 0;
-	guess_m_iSaveHackSlot = 0;
-	guess_iHudActive = 1;
-	guess_m_flDamageTime = 0;
+	m_szSleeveTexture_guess[0] = 0;
+	m_szFingerTexture_guess[0] = 0;
+	gHUD.m_szGloveTexture_guess[0] = 0;
+	bCustomFingerTexture_guess = false;
+	bCustomGloveTexture_guess = false;
+	m_bSaveHack_guess = false;
+	m_flSaveHackTime_guess = 0;
+	m_iSaveHackSlot_guess = 0;
+	iHudActive_guess = 1;
+	m_flDamageTime_guess = 0;
 
 	Log("Initializing variables\n");
 	gl.Init();
 
-	guess_m_iBlur = 0;
-	guess_flNextSoundCacheTime = 0;
-	guess_m_bMenuClick = false;
-	guess_m_flMenuClickTime = 0;
-	guess_bUnknown10545081 = false;
+	m_iBlur_guess = 0;
+	flNextSoundCacheTime_guess = 0;
+	m_bMenuClick_guess = false;
+	m_flMenuClickTime_guess = 0;
+	bUnknown10545081_guess = false;
 
 	InitGlows();
 	RendererInit();
 	GammaGraphInit();
 	InitPostEffects();
 
-	guess_m_hMuzzleflash = 0;
-	guess_iGreyFade = 0;
-	guess_m_szObjectiveTitle[0] = 0;
-	guess_m_szObjectiveText[0] = 0;
+	m_hMuzzleflash_guess = 0;
+	iGreyFade_guess = 0;
+	m_szObjectiveTitle_guess[0] = 0;
+	m_szObjectiveText_guess[0] = 0;
 
 #ifdef ENGINE_DEBUG
 //	CONPRINT("## CHud::Init\n");
@@ -775,33 +775,33 @@ void CHud :: Init( void )
 	Hud2Init(); // buz
 	SubtitleInit(); // buz
 	TabPanelInit(); // buz
-	guess_HUDControlInit();
-	guess_BoardInit();
-	guess_NoteDocInit();
-	guess_KeypadInit();
-	guess_PhoneInit();
-	guess_PuzzlebarInit();
-	guess_SaveInit();
-	guess_YesNoInit();
-	guess_StatueInit();
-	guess_ComputerInit();
-	guess_UserDocInit();
-	guess_PadlockInit();
-	guess_SaveLoadInit();
-	guess_GameMenuInit();
-	guess_ScopeInit();
-	guess_TVFrameInit();
-	guess_BossBarInit();
-	guess_TelephoneInit();
-	guess_QSlotInit();
-	guess_AmmoInvInit();
-	guess_CreditsInit();
-	guess_ClothesInit();
-	guess_UnlockablesInit();
-	guess_CoopStatsInit();
-	guess_CustomDocInit();
+	HUDControlInit_guess();
+	BoardInit_guess();
+	NoteDocInit_guess();
+	KeypadInit_guess();
+	PhoneInit_guess();
+	PuzzlebarInit_guess();
+	SaveInit_guess();
+	YesNoInit_guess();
+	StatueInit_guess();
+	ComputerInit_guess();
+	UserDocInit_guess();
+	PadlockInit_guess();
+	SaveLoadInit_guess();
+	GameMenuInit_guess();
+	ScopeInit_guess();
+	TVFrameInit_guess();
+	BossBarInit_guess();
+	TelephoneInit_guess();
+	QSlotInit_guess();
+	AmmoInvInit_guess();
+	CreditsInit_guess();
+	ClothesInit_guess();
+	UnlockablesInit_guess();
+	CoopStatsInit_guess();
+	CustomDocInit_guess();
 
-	guess_m_bConcussed = false;
+	m_bConcussed_guess = false;
 
 	CanUseInit(); // Wargon: »конка юза.
 
@@ -860,8 +860,8 @@ void CHud :: Init( void )
 	HOOK_COMMAND( "ForceCloseCommandMenu", ForceCloseCommandMenu );
 	HOOK_COMMAND( "special", InputPlayerSpecial );
 	HOOK_COMMAND( "togglebrowser", ToggleServerBrowser );
-	HOOK_COMMAND( "finishladder", guess_FinishLadder );
-	HOOK_COMMAND( "donatorcheck", guess_DonatorCheck );
+	HOOK_COMMAND( "finishladder", FinishLadder_guess );
+	HOOK_COMMAND( "donatorcheck", DonatorCheck_guess );
 
 	HOOK_MESSAGE( ValClass );
 	HOOK_MESSAGE( TeamNames );
@@ -894,31 +894,31 @@ void CHud :: Init( void )
 	CVAR_CREATE( "skybrightcolourr", "0.0", FCVAR_ARCHIVE | FCVAR_USERINFO );
 	CVAR_CREATE( "skybrightcolourg", "0.0", FCVAR_ARCHIVE | FCVAR_USERINFO );
 	CVAR_CREATE( "skybrightcolourb", "0.0", FCVAR_ARCHIVE | FCVAR_USERINFO );
-	guess_iGoro = CVAR_GET_FLOAT( "goro" );
+	iGoro_guess = CVAR_GET_FLOAT( "goro" );
 
 	HOOK_MESSAGE( PlayMP3 );
 	HOOK_COMMAND( "stopmp3", StopMP3 );
-	guess_IrrKlangSetParams( 0, 0, 0, 0 );
+	IrrKlangSetParams_guess( 0, 0, 0, 0 );
 
-	HOOK_COMMAND( "beginspgame", guess_BeginSPGame );
-	HOOK_COMMAND( "to3dmenu", guess_To3DMenu );
-	HOOK_COMMAND( "returnmenu", guess_ReturnMenu );
-	HOOK_COMMAND( "returnmenu", guess_ReturnMenu );
-	HOOK_COMMAND( "mp3player", guess_MP3Player );
-	HOOK_COMMAND( "unlockablescmd", guess_ToUnlockables );
-	HOOK_COMMAND( "texturetest", guess_TextureTest );
+	HOOK_COMMAND( "beginspgame", BeginSPGame_guess );
+	HOOK_COMMAND( "to3dmenu", To3DMenu_guess );
+	HOOK_COMMAND( "returnmenu", ReturnMenu_guess );
+	HOOK_COMMAND( "returnmenu", ReturnMenu_guess );
+	HOOK_COMMAND( "mp3player", MP3Player_guess );
+	HOOK_COMMAND( "unlockablescmd", ToUnlockables_guess );
+	HOOK_COMMAND( "texturetest", TextureTest_guess );
 
 	m_iLogo = 0;
-	m_iFOV = guess_iDefaultFOV;
+	m_iFOV = iDefaultFOV_guess;
 	m_iHUDColor = 0x00FFFFFF;
 
-	guess_m_iFPSMin = 0;
-	guess_m_iFPSMax = 0;
-	guess_m_iFPSAverage = 0;
-	guess_m_bFPSToggle = false;
-	guess_m_flNextFPSTime = gEngfuncs.GetClientTime();
+	m_iFPSMin_guess = 0;
+	m_iFPSMax_guess = 0;
+	m_iFPSAverage_guess = 0;
+	m_bFPSToggle_guess = false;
+	m_flNextFPSTime_guess = gEngfuncs.GetClientTime();
 	for ( int i = 1; i <= 100; i++ )
-		guess_m_iFPS[i] = 0;
+		m_iFPS_guess[i] = 0;
 
 	CVAR_CREATE( "zoom_sensitivity_ratio", "1.2", 0 );
 	RainInfo = gEngfuncs.pfnRegisterVariable( "cl_raininfo", "0", 0 );	// rain
@@ -962,18 +962,18 @@ void CHud :: Init( void )
 	m_AmmoSecondary.Init();
 	m_TextMessage.Init();
 	m_StatusIcons.Init();
-	guess_m_Lensflare.Init();
+	m_Lensflare_guess.Init();
 	GetClientVoiceMgr()->Init(&g_VoiceStatusHelper, (vgui::Panel**)&gViewPort);
 	m_Particle.Init(); // (LRC) -- 30/08/02 November235: Particles to Order
-	guess_m_Neffect.Init();
-	guess_m_BlackBar.Init();
+	m_Neffect_guess.Init();
+	m_BlackBar_guess.Init();
 
 	m_Menu.Init();
 
 	ServersInit();
 
 	if ( !gEngfuncs.CheckParm( "-nomusic", NULL ) )
-		guess_IrrKlangInit();
+		IrrKlangInit_guess();
 
 	MsgFunc_ResetHUD(0, 0, NULL );
 	Log("END Initializing variables\n");
@@ -989,7 +989,7 @@ CHud :: ~CHud()
 
 //	ResetRain();	// rain
 
-	guess_iHudActive = 0;
+	iHudActive_guess = 0;
 
 	delete [] m_rghSprites;
 	delete [] m_rgrcRects;
@@ -1037,89 +1037,89 @@ void CAM_ToFirstPerson( void );
 
 void CHud :: VidInit( void )
 {
-	guess_iMenuMode = 1;
-	guess_m_flDamageTime = 0;
-	guess_m_bSaveHack = false;
-	guess_m_flSaveHackTime = 0;
-	guess_m_iSaveHackSlot = 0;
-	guess_m_szSleeveTexture[0] = 0;
-	guess_m_szFingerTexture[0] = 0;
-	gHUD.guess_m_szGloveTexture[0] = 0;
-	guess_bCustomFingerTexture = false;
-	guess_bCustomGloveTexture = false;
-	guess_flNextSoundCacheTime = 0;
-	guess_iHudActive = 1;
-	guess_IrrKlangSetParams( 0, 0, 0, 0 );
+	iMenuMode_guess = 1;
+	m_flDamageTime_guess = 0;
+	m_bSaveHack_guess = false;
+	m_flSaveHackTime_guess = 0;
+	m_iSaveHackSlot_guess = 0;
+	m_szSleeveTexture_guess[0] = 0;
+	m_szFingerTexture_guess[0] = 0;
+	gHUD.m_szGloveTexture_guess[0] = 0;
+	bCustomFingerTexture_guess = false;
+	bCustomGloveTexture_guess = false;
+	flNextSoundCacheTime_guess = 0;
+	iHudActive_guess = 1;
+	IrrKlangSetParams_guess( 0, 0, 0, 0 );
 
 	Log("\nInitializing video\n");
 
-	guess_m_szObjectiveTitle[0] = 0;
-	guess_m_szObjectiveText[0] = 0;
-	guess_m_bMenuClick = false;
-	guess_m_flMenuClickTime = 0;
-	guess_bUnknown10545081 = false;
-	guess_iGoro = CVAR_GET_FLOAT( "goro" );
-	guess_m_flGreyFadeEnd = 0;
-	guess_m_flGreyFadeStart = 0;
-	guess_m_flViewLockTime = -1;
-	guess_m_bViewLockWasOn = false;
-	guess_m_flUnknown350 = -1;
-	guess_m_vecUnknown344 = Vector( 0, 0, 0 );
-	guess_iGreyFade = 0;
-	guess_flWeaponIdleSpeed = CVAR_GET_FLOAT( "cl_weapon_idle_speed" );
-	guess_flWeaponIdleDampener = CVAR_GET_FLOAT( "cl_weapon_idle_dampener" );
-	guess_bUnknown105431E9 = false;
-	guess_m_bIronSights = false;
-	guess_vecIronsightOfs.y = guess_vecIronsightOfs.x = guess_vecIronsightOfs.z = 0;
-	guess_m_vecIronSightOfs.x = guess_m_vecIronSightOfs.y = guess_m_vecIronSightOfs.z = 0;
-	guess_m_vecIronSightOfs2.x = guess_m_vecIronSightOfs2.y = guess_m_vecIronSightOfs2.z = 0;
-	guess_flUnknown105595A0 = 0;
-	guess_flUnknown105595A4 = 0;
-	guess_flUnknown105595A8 = 0;
-	guess_iUnknown105595AC = 0;
-	guess_m_iFlashFlags = 0;
-	guess_pTelescopeEnt = NULL;
-	guess_pAttachCamEnt = NULL;
-	guess_iBoat = 0;
-	guess_iWheelchair = 0;
-	guess_m_iCameraZoom = 0;
-	guess_m_flNextSwayTime = m_flTime;
-	guess_pCamTargetEnt = NULL;
-	guess_bWheelchairLock = false;
-	guess_m_iHoldBreath = 0;
-	guess_flUnknown1055959C = 0;
-	guess_bXboxFix = false;
-	guess_m_bCameraZoomOn = false;
-	guess_m_bXboxFix[0] = false;
-	guess_m_bXboxFix[1] = false;
-	guess_m_bXboxFix[2] = false;
-	guess_m_bXboxFix[3] = false;
-	guess_m_bXboxFix[4] = false;
-	guess_m_bXboxFix[5] = false;
-	guess_m_bXboxFix[6] = false;
-	guess_m_bXboxFix[7] = false;
-	guess_m_bXboxFix[8] = false;
-	guess_m_bXboxFix[9] = false;
-	guess_m_bXboxFix[10] = false;
-	guess_m_bXboxFix[11] = false;
-	guess_m_bXboxFix[14] = false;
-	guess_m_bXboxFix[15] = false;
-	guess_m_bXboxFix[16] = false;
-	guess_m_bXboxFix[17] = false;
-	guess_m_bXboxFix[18] = false;
-	guess_m_bXboxFix[19] = false;
-	guess_m_bXboxFix[20] = false;
-	guess_m_bXboxFix[21] = false;
-	guess_m_bXboxFix[22] = false;
-	guess_m_bXboxFix[23] = false;
-	guess_m_bXboxFix[24] = false;
-	guess_m_bXboxFix[25] = false;
-	guess_m_bXboxFix[12] = false;
-	guess_m_bXboxFix[13] = false;
+	m_szObjectiveTitle_guess[0] = 0;
+	m_szObjectiveText_guess[0] = 0;
+	m_bMenuClick_guess = false;
+	m_flMenuClickTime_guess = 0;
+	bUnknown10545081_guess = false;
+	iGoro_guess = CVAR_GET_FLOAT( "goro" );
+	m_flGreyFadeEnd_guess = 0;
+	m_flGreyFadeStart_guess = 0;
+	m_flViewLockTime_guess = -1;
+	m_bViewLockWasOn_guess = false;
+	m_flUnknown350_guess = -1;
+	m_vecUnknown344_guess = Vector( 0, 0, 0 );
+	iGreyFade_guess = 0;
+	flWeaponIdleSpeed_guess = CVAR_GET_FLOAT( "cl_weapon_idle_speed" );
+	flWeaponIdleDampener_guess = CVAR_GET_FLOAT( "cl_weapon_idle_dampener" );
+	bUnknown105431E9_guess = false;
+	m_bIronSights_guess = false;
+	vecIronsightOfs_guess.y = vecIronsightOfs_guess.x = vecIronsightOfs_guess.z = 0;
+	m_vecIronSightOfs_guess.x = m_vecIronSightOfs_guess.y = m_vecIronSightOfs_guess.z = 0;
+	m_vecIronSightOfs2_guess.x = m_vecIronSightOfs2_guess.y = m_vecIronSightOfs2_guess.z = 0;
+	flUnknown105595A0_guess = 0;
+	flUnknown105595A4_guess = 0;
+	flUnknown105595A8_guess = 0;
+	iUnknown105595AC_guess = 0;
+	m_iFlashFlags_guess = 0;
+	pTelescopeEnt_guess = NULL;
+	pAttachCamEnt_guess = NULL;
+	iBoat_guess = 0;
+	iWheelchair_guess = 0;
+	m_iCameraZoom_guess = 0;
+	m_flNextSwayTime_guess = m_flTime;
+	pCamTargetEnt_guess = NULL;
+	bWheelchairLock_guess = false;
+	m_iHoldBreath_guess = 0;
+	flUnknown1055959C_guess = 0;
+	bXboxFix_guess = false;
+	m_bCameraZoomOn_guess = false;
+	m_bXboxFix_guess[0] = false;
+	m_bXboxFix_guess[1] = false;
+	m_bXboxFix_guess[2] = false;
+	m_bXboxFix_guess[3] = false;
+	m_bXboxFix_guess[4] = false;
+	m_bXboxFix_guess[5] = false;
+	m_bXboxFix_guess[6] = false;
+	m_bXboxFix_guess[7] = false;
+	m_bXboxFix_guess[8] = false;
+	m_bXboxFix_guess[9] = false;
+	m_bXboxFix_guess[10] = false;
+	m_bXboxFix_guess[11] = false;
+	m_bXboxFix_guess[14] = false;
+	m_bXboxFix_guess[15] = false;
+	m_bXboxFix_guess[16] = false;
+	m_bXboxFix_guess[17] = false;
+	m_bXboxFix_guess[18] = false;
+	m_bXboxFix_guess[19] = false;
+	m_bXboxFix_guess[20] = false;
+	m_bXboxFix_guess[21] = false;
+	m_bXboxFix_guess[22] = false;
+	m_bXboxFix_guess[23] = false;
+	m_bXboxFix_guess[24] = false;
+	m_bXboxFix_guess[25] = false;
+	m_bXboxFix_guess[12] = false;
+	m_bXboxFix_guess[13] = false;
 
 	gl.VidInit(); // buz
 
-	guess_m_bConcussed = false;
+	m_bConcussed_guess = false;
 
 	ResetRain();	// rain
 
@@ -1127,14 +1127,14 @@ void CHud :: VidInit( void )
 	m_iGasMask = 0; // buz
 	m_SpecTank_on = 0; // buz
 
-	guess_m_flResetTime = gEngfuncs.GetClientTime();
-	guess_m_flUnknown2A84 = 0;
-	guess_m_bUnknown2A88 = false;
-	guess_m_iBlackWhite = 0;
+	m_flResetTime_guess = gEngfuncs.GetClientTime();
+	m_flUnknown2A84_guess = 0;
+	m_bUnknown2A88_guess = false;
+	m_iBlackWhite_guess = 0;
 
 	ResetHeadShield(); // buz
 	m_flFOV = -1; // buz
-	guess_m_flCameraZoomFOV = 0;
+	m_flCameraZoomFOV_guess = 0;
 
 	GrassVidInit();
 
@@ -1144,7 +1144,7 @@ void CHud :: VidInit( void )
 
 	RendererVidInit();
 
-	guess_m_hMuzzleflash = SPR_Load( "sprites/muzzleflash.spr" );
+	m_hMuzzleflash_guess = SPR_Load( "sprites/muzzleflash.spr" );
 
 #ifdef ENGINE_DEBUG
 //	CONPRINT("## CHud::VidInit\n");
@@ -1159,7 +1159,7 @@ void CHud :: VidInit( void )
 
 	m_hsprLogo = 0;
 	m_hsprCursor = 0;
-	m_iFOV = guess_iDefaultFOV;
+	m_iFOV = iDefaultFOV_guess;
 
 	if (ScreenWidth < 640)
 		m_iRes = 320;
@@ -1248,37 +1248,37 @@ void CHud :: VidInit( void )
 	m_Menu.VidInit();
 	m_AmmoSecondary.VidInit();
 	m_TextMessage.VidInit();
-	guess_m_Neffect.VidInit();
-	guess_m_BlackBar.VidInit();
+	m_Neffect_guess.VidInit();
+	m_BlackBar_guess.VidInit();
 	m_StatusIcons.VidInit();
-	guess_m_Lensflare.Init();
+	m_Lensflare_guess.Init();
 	GetClientVoiceMgr()->VidInit();
 	m_Particle.VidInit(); // (LRC) -- 30/08/02 November235: Particles to Order
 
-	guess_m_iMaglite = 0;
-	guess_m_iUnreadSMS = 0;
-	guess_m_flUnreadSMSTime = gEngfuncs.GetClientTime();
+	m_iMaglite_guess = 0;
+	m_iUnreadSMS_guess = 0;
+	m_flUnreadSMSTime_guess = gEngfuncs.GetClientTime();
 
 	if ( gViewPort )
-		gViewPort->guess_m_flKeyInputTime = gEngfuncs.GetClientTime();
+		gViewPort->m_flKeyInputTime_guess = gEngfuncs.GetClientTime();
 
-	guess_m_iViewEntity = 0;
-	guess_m_flForwardTapTime = gEngfuncs.GetClientTime();
-	guess_m_flBackTapTime = gEngfuncs.GetClientTime();
-	guess_m_flLeftTapTime = gEngfuncs.GetClientTime();
-	guess_m_flRightTapTime = gEngfuncs.GetClientTime();
-	guess_m_iUnknown2A90 = 0;
+	m_iViewEntity_guess = 0;
+	m_flForwardTapTime_guess = gEngfuncs.GetClientTime();
+	m_flBackTapTime_guess = gEngfuncs.GetClientTime();
+	m_flLeftTapTime_guess = gEngfuncs.GetClientTime();
+	m_flRightTapTime_guess = gEngfuncs.GetClientTime();
+	m_iUnknown2A90_guess = 0;
 
-	guess_m_iFadeR = 0;
-	guess_m_iFadeG = 0;
-	guess_m_iFadeB = 0;
-	guess_m_iFadeA = 0;
-	guess_m_iFadeAlpha = 0;
-	guess_m_flFadeStart = -1;
-	guess_m_flFadeTime = -1;
-	guess_m_flFadeEnd = -1;
-	guess_m_bFadeOut = false;
-	guess_m_bFadeHold = false;
+	m_iFadeR_guess = 0;
+	m_iFadeG_guess = 0;
+	m_iFadeB_guess = 0;
+	m_iFadeA_guess = 0;
+	m_iFadeAlpha_guess = 0;
+	m_flFadeStart_guess = -1;
+	m_flFadeTime_guess = -1;
+	m_flFadeEnd_guess = -1;
+	m_bFadeOut_guess = false;
+	m_bFadeHold_guess = false;
 
 	Log("End Initializing video\n");
 
@@ -1478,7 +1478,7 @@ float CHud::GetSensitivity( void )
 	return m_flMouseSensitivity;
 }
 
-char *CHud::guess_GetKeyForCommand( char *pszCommand )
+char *CHud::GetKeyForCommand_guess( char *pszCommand )
 {
 	static char szKey[256];
 	szKey[0] = 0;
@@ -1529,33 +1529,33 @@ char *CHud::guess_GetKeyForCommand( char *pszCommand )
 	return NULL;
 }
 
-char *CHud::guess_GetInventoryItem( int iSlot )
+char *CHud::GetInventoryItem_guess( int iSlot )
 {
 	switch ( iSlot )
 	{
 	case 1:
-		return guess_m_szInventoryItem1;
+		return m_szInventoryItem1_guess;
 	case 2:
-		return guess_m_szInventoryItem2;
+		return m_szInventoryItem2_guess;
 	case 3:
-		return guess_m_szInventoryItem3;
+		return m_szInventoryItem3_guess;
 	case 4:
-		return guess_m_szInventoryItem4;
+		return m_szInventoryItem4_guess;
 	case 5:
-		return guess_m_szInventoryItem5;
+		return m_szInventoryItem5_guess;
 	case 6:
-		return guess_m_szInventoryItem6;
+		return m_szInventoryItem6_guess;
 	}
 
 	return "";
 }
 
-int CHud::guess_AddUnknown5590( int iValue )
+int CHud::AddUnknown5590_guess( int iValue )
 {
-	return guess_m_iUnknown5590 + iValue;
+	return m_iUnknown5590_guess + iValue;
 }
 
-int CHud::guess_SubUnknown5590( int iValue )
+int CHud::SubUnknown5590_guess( int iValue )
 {
-	return iValue - guess_AddUnknown5590( 0 );
+	return iValue - AddUnknown5590_guess( 0 );
 }

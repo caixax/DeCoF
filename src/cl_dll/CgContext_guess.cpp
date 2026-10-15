@@ -10,94 +10,94 @@
 #include "studio_util.h"
 #include "r_studioint.h"
 #include "glmanager.h"
-#include "guess_CgContext.h"
+#include "CgContext_guess.h"
 
 extern engine_studio_api_t IEngineStudio;
 
-guess_CCgContext guess_g_CgContext;
+CCgContext_guess g_CgContext_guess;
 
-guess_CCgContext::guess_CCgContext()
+CCgContext_guess::CCgContext_guess()
 {
-	guess_m_pPrograms = NULL;
-	guess_m_context = NULL;
-	guess_m_bInitialized = false;
+	m_pPrograms_guess = NULL;
+	m_context_guess = NULL;
+	m_bInitialized_guess = false;
 }
 
-guess_CCgContext::~guess_CCgContext()
+CCgContext_guess::~CCgContext_guess()
 {
-	guess_Shutdown();
-	guess_m_context = NULL;
-	guess_m_bInitialized = false;
+	Shutdown_guess();
+	m_context_guess = NULL;
+	m_bInitialized_guess = false;
 }
 
-guess_cgprogram_t *guess_CCgContext::guess_AddProgram( const char *name, int type )
+cgprogram_t_guess *CCgContext_guess::AddProgram_guess( const char *name, int type )
 {
 	if ( IEngineStudio.IsHardware() != 1 )
 		return NULL;
 
-	guess_cgprogram_t *program = guess_FindProgram( name );
+	cgprogram_t_guess *program = FindProgram_guess( name );
 
-	if ( !guess_m_context )
-		guess_Init();
+	if ( !m_context_guess )
+		Init_guess();
 
 	if ( !program )
 	{
 		char path[128];
 		sprintf( path, "%s/cgshaders/%s", gEngfuncs.pfnGetGameDirectory(), name );
 
-		if ( guess_IsProgramValid( path, type ) )
+		if ( IsProgramValid_guess( path, type ) )
 		{
-			program = new guess_cgprogram_t;
-			strcpy( program->guess_name, name );
+			program = new cgprogram_t_guess;
+			strcpy( program->name_guess, name );
 
-			if ( type == guess_CGTYPE_FRAGMENT )
-				program->guess_program = cgCreateProgramFromFile( guess_m_context, CG_SOURCE, path, guess_m_fragmentProfile, "main", NULL );
-			else if ( type == guess_CGTYPE_VERTEX )
-				program->guess_program = cgCreateProgramFromFile( guess_m_context, CG_SOURCE, path, guess_m_vertexProfile, "main", NULL );
+			if ( type == CGTYPE_FRAGMENT_guess )
+				program->program_guess = cgCreateProgramFromFile( m_context_guess, CG_SOURCE, path, m_fragmentProfile_guess, "main", NULL );
+			else if ( type == CGTYPE_VERTEX_guess )
+				program->program_guess = cgCreateProgramFromFile( m_context_guess, CG_SOURCE, path, m_vertexProfile_guess, "main", NULL );
 
-			program->guess_type = type;
-			program->guess_prev = NULL;
-			program->guess_next = guess_m_pPrograms;
-			if ( guess_m_pPrograms )
-				guess_m_pPrograms->guess_prev = program;
-			guess_m_pPrograms = program;
+			program->type_guess = type;
+			program->prev_guess = NULL;
+			program->next_guess = m_pPrograms_guess;
+			if ( m_pPrograms_guess )
+				m_pPrograms_guess->prev_guess = program;
+			m_pPrograms_guess = program;
 
-			cgGLLoadProgram( program->guess_program );
+			cgGLLoadProgram( program->program_guess );
 		}
 	}
 
 	return program;
 }
 
-guess_cgprogram_t *guess_CCgContext::guess_FindProgram( const char *name )
+cgprogram_t_guess *CCgContext_guess::FindProgram_guess( const char *name )
 {
-	for ( guess_cgprogram_t *program = guess_m_pPrograms; program; program = program->guess_next )
+	for ( cgprogram_t_guess *program = m_pPrograms_guess; program; program = program->next_guess )
 	{
-		if ( !stricmp( name, program->guess_name ) )
+		if ( !stricmp( name, program->name_guess ) )
 			return program;
 	}
 
 	return NULL;
 }
 
-CGprofile guess_CCgContext::guess_GetFragmentProfile( void )
+CGprofile CCgContext_guess::GetFragmentProfile_guess( void )
 {
-	return guess_m_fragmentProfile;
+	return m_fragmentProfile_guess;
 }
 
-bool guess_CCgContext::guess_IsInitialized( void )
+bool CCgContext_guess::IsInitialized_guess( void )
 {
-	return guess_m_bInitialized;
+	return m_bInitialized_guess;
 }
 
-bool guess_CCgContext::guess_IsProgramValid( const char *path, int type )
+bool CCgContext_guess::IsProgramValid_guess( const char *path, int type )
 {
 	CGprogram program;
 
-	if ( type == guess_CGTYPE_FRAGMENT )
-		program = cgCreateProgramFromFile( guess_m_context, CG_SOURCE, path, guess_m_fragmentProfile, "main", NULL );
-	else if ( type == guess_CGTYPE_VERTEX )
-		program = cgCreateProgramFromFile( guess_m_context, CG_SOURCE, path, guess_m_vertexProfile, "main", NULL );
+	if ( type == CGTYPE_FRAGMENT_guess )
+		program = cgCreateProgramFromFile( m_context_guess, CG_SOURCE, path, m_fragmentProfile_guess, "main", NULL );
+	else if ( type == CGTYPE_VERTEX_guess )
+		program = cgCreateProgramFromFile( m_context_guess, CG_SOURCE, path, m_vertexProfile_guess, "main", NULL );
 
 	if ( !program )
 	{
@@ -108,53 +108,53 @@ bool guess_CCgContext::guess_IsProgramValid( const char *path, int type )
 	return true;
 }
 
-guess_cgprogram_t *guess_CCgContext::guess_RemoveProgram( guess_cgprogram_t *program )
+cgprogram_t_guess *CCgContext_guess::RemoveProgram_guess( cgprogram_t_guess *program )
 {
-	guess_cgprogram_t *next = program->guess_next;
+	cgprogram_t_guess *next = program->next_guess;
 
-	if ( program == guess_m_pPrograms )
-		guess_m_pPrograms = program->guess_next;
+	if ( program == m_pPrograms_guess )
+		m_pPrograms_guess = program->next_guess;
 
-	if ( program->guess_next )
-		program->guess_next->guess_prev = program->guess_prev;
+	if ( program->next_guess )
+		program->next_guess->prev_guess = program->prev_guess;
 
-	if ( program->guess_prev )
-		program->guess_prev->guess_next = program->guess_next;
+	if ( program->prev_guess )
+		program->prev_guess->next_guess = program->next_guess;
 
 	delete program;
 
 	return next;
 }
 
-void guess_CCgContext::guess_Shutdown( void )
+void CCgContext_guess::Shutdown_guess( void )
 {
-	guess_cgprogram_t *program = guess_m_pPrograms;
+	cgprogram_t_guess *program = m_pPrograms_guess;
 
 	while ( program )
-		program = guess_RemoveProgram( program );
+		program = RemoveProgram_guess( program );
 
-	guess_m_pPrograms = NULL;
-	guess_m_bInitialized = false;
+	m_pPrograms_guess = NULL;
+	m_bInitialized_guess = false;
 }
 
-bool guess_CCgContext::guess_Init( void )
+bool CCgContext_guess::Init_guess( void )
 {
 	bool result;
 
-	guess_m_context = cgCreateContext();
+	m_context_guess = cgCreateContext();
 
-	if ( guess_m_context )
+	if ( m_context_guess )
 	{
-		guess_m_vertexProfile = cgGLGetLatestProfile( CG_GL_VERTEX );
+		m_vertexProfile_guess = cgGLGetLatestProfile( CG_GL_VERTEX );
 
-		if ( guess_m_vertexProfile != CG_PROFILE_UNKNOWN )
+		if ( m_vertexProfile_guess != CG_PROFILE_UNKNOWN )
 		{
-			cgGLSetOptimalOptions( guess_m_vertexProfile );
-			guess_m_fragmentProfile = cgGLGetLatestProfile( CG_GL_FRAGMENT );
+			cgGLSetOptimalOptions( m_vertexProfile_guess );
+			m_fragmentProfile_guess = cgGLGetLatestProfile( CG_GL_FRAGMENT );
 
-			if ( guess_m_fragmentProfile != CG_PROFILE_UNKNOWN )
+			if ( m_fragmentProfile_guess != CG_PROFILE_UNKNOWN )
 			{
-				cgGLSetOptimalOptions( guess_m_fragmentProfile );
+				cgGLSetOptimalOptions( m_fragmentProfile_guess );
 				result = true;
 			}
 			else
@@ -166,6 +166,6 @@ bool guess_CCgContext::guess_Init( void )
 	else
 		result = false;
 
-	guess_m_bInitialized = result;
+	m_bInitialized_guess = result;
 	return result;
 }

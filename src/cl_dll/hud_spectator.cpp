@@ -29,7 +29,7 @@
 
 #pragma warning(disable: 4244)
 
-extern int guess_iDefaultFOV;
+extern int iDefaultFOV_guess;
 extern "C" int		iJumpSpectator;
 extern "C" float	vJumpOrigin[3];
 extern "C" float	vJumpAngles[3]; 
@@ -518,7 +518,7 @@ void CHudSpectator::DirectorMessage( int iSize, void *pbuf )
 								vJumpAngles[1] = READ_COORD();
 								vJumpAngles[2] = READ_COORD();
 
-								if ( !gHUD.guess_m_bViewLock )
+								if ( !gHUD.m_bViewLock_guess )
 									gEngfuncs.SetViewAngles( vJumpAngles );
 
 								iJumpSpectator = 1;
@@ -741,7 +741,7 @@ void CHudSpectator::HandleButtonsDown( int ButtonPressed )
 
 			if ( g_iUser1 == OBS_ROAMING )
 			{
-				if ( !gHUD.guess_m_bViewLock )
+				if ( !gHUD.m_bViewLock_guess )
 					gEngfuncs.SetViewAngles( vJumpAngles );
 				iJumpSpectator = 1;
 	
@@ -838,7 +838,7 @@ void CHudSpectator::SetModes(int iNewMainMode, int iNewInsetMode)
 									if ( g_iUser2 )
 									{
 										V_GetChasePos( g_iUser2, v_cl_angles, vJumpOrigin, vJumpAngles );
-										if ( !gHUD.guess_m_bViewLock )
+										if ( !gHUD.m_bViewLock_guess )
 											gEngfuncs.SetViewAngles( vJumpAngles );
 										iJumpSpectator = 1;
 									}
@@ -1622,6 +1622,6 @@ void CHudSpectator::InitHUDData()
 	g_iUser2 = 0; // fake not target until first camera command
 
 	// reset HUD FOV
-	gHUD.m_iFOV = guess_iDefaultFOV;// CVAR_GET_FLOAT("default_fov"); // buz: turn off
+	gHUD.m_iFOV = iDefaultFOV_guess;// CVAR_GET_FLOAT("default_fov"); // buz: turn off
 }
 

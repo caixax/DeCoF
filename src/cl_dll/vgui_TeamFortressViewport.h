@@ -454,7 +454,7 @@ public:
 	CommandButton *FindButtonWithSubmenu( CCommandMenu *pSubMenu );
 
 	void		ClearButtonsOfArmedState( void );
-	void		guess_FireArmedButton( void );	// never called in 1.6a
+	void		FireArmedButton_guess( void );	// never called in 1.6a
 
 
 	bool		KeyInput( int keyNum );
@@ -563,15 +563,15 @@ public:
 	CMenuPanel* CreateTextWindow( int iTextToShow );
 
 	// Cry of Fear menus (CMenuPanel based, opened through ShowVGUIMenu)
-	void guess_CreateRECBInventory( void );
-	void guess_CreateNoteDocument( void );
-	void guess_CreateUserDocument( void );
-	CMenuPanel* guess_ShowDisabledMenu( void );		// menu 38
-	CMenuPanel* guess_ShowNoteDocument( void );		// menu 31
-	CMenuPanel* guess_ShowRECBInventory( void );	// menu 30
-	CMenuPanel* guess_ShowUserDocument( void );		// menu 34
-	void guess_HideNoteDocument( void );			// never called in 1.6a
-	void guess_HideUserDocument( void );			// never called in 1.6a
+	void CreateRECBInventory_guess( void );
+	void CreateNoteDocument_guess( void );
+	void CreateUserDocument_guess( void );
+	CMenuPanel* ShowDisabledMenu_guess( void );		// menu 38
+	CMenuPanel* ShowNoteDocument_guess( void );		// menu 31
+	CMenuPanel* ShowRECBInventory_guess( void );	// menu 30
+	CMenuPanel* ShowUserDocument_guess( void );		// menu 34
+	void HideNoteDocument_guess( void );			// never called in 1.6a
+	void HideUserDocument_guess( void );			// never called in 1.6a
 
 	CCommandMenu *CreateSubMenu( CommandButton *pButton, CCommandMenu *pParentMenu, int iYOffset, int iXOffset = 0 );
 
@@ -635,50 +635,50 @@ public:
 	ScorePanel		*m_pScoreBoard;
 //	SpectatorPanel *		m_pSpectatorPanel;
 	char			m_szServerName[ MAX_SERVERNAME_LENGTH ];
-	CRECBInventory	*guess_m_pRECBInventory;	// 0x1404
+	CRECBInventory	*m_pRECBInventory_guess;	// 0x1404
 
 	// buz
 	CParanoiaTextPanel* m_pParanoiaText;
 	CSubtitle* m_pSubtitle;
 	CRadioIcon* m_pRadio;
 	CHud2* m_pHud2;
-	CBossBar	*guess_m_pBossBar;	// 0x1418
+	CBossBar	*m_pBossBar_guess;	// 0x1418
 	CTabPanel *m_pTabPanel;
 	CTips *m_pTips;
 	CGammaView *m_pGamma;
 	CScreenMessage *m_pScreenMsg;
 
 	// Cry of Fear
-	CHUDControl		*guess_m_pHUDControl;		// 0x142c
-	CVGUIBillboard	*guess_m_pVGUIBillboard;	// 0x1430
-	CNoteDocument	*guess_m_pNoteDocument;		// 0x1434
-	CKeypad			*guess_m_pKeypad;			// 0x1438
-	CPhone			*guess_m_pPhone;			// 0x143c
-	CDifficulty		*guess_m_pDifficulty;		// 0x1440
-	CPuzzleBar		*guess_m_pPuzzleBar;		// 0x1444
-	CSave			*guess_m_pSave;				// 0x1448
-	CYesno			*guess_m_pYesno;			// 0x144c
-	CComputer		*guess_m_pComputer;			// 0x1450
-	CAnimalStatue	*guess_m_pAnimalStatue;		// 0x1454
-	CUserDocument	*guess_m_pUserDocument;		// 0x1458
-	CCutsceneSkip	*guess_m_pCutsceneSkip;		// 0x145c
-	CPadlock		*guess_m_pPadlock;			// 0x1460
-	CSaveLoad		*guess_m_pSaveLoad;			// 0x1464
-	CGameMenu		*guess_m_pGameMenu;			// 0x1468
-	CScope			*guess_m_pScope;			// 0x146c
-	CTVFrame		*guess_m_pTVFrame;			// 0x1470
-	CGameOver		*guess_m_pGameOver;			// 0x1474
-	CLanguage		*guess_m_pLanguage;			// 0x1478
-	CTelephone		*guess_m_pTelephone;		// 0x147c
-	CDocuments		*guess_m_pDocuments;		// 0x1480
-	CAmmoInventory	*guess_m_pAmmoInventory;	// 0x1484, never assigned in 1.6a; type from its message handler (1001E6A0) in the CAmmoInventory code
-	CCredits		*guess_m_pCredits;			// 0x1488
-	CClothesMenu	*guess_m_pClothesMenu;		// 0x148c
-	CUnlockables	*guess_m_pUnlockables;		// 0x1490
-	CBookMenu		*guess_m_pBookMenu;			// 0x1494
-	CCoopStats		*guess_m_pCoopStats;		// 0x1498
-	CVGUIExtraMenu	*guess_m_pVGUIExtraMenu;	// 0x149c
-	float			guess_m_flKeyInputTime;		// 0x14a0, KeyInput and CHud::VidInit
+	CHUDControl		*m_pHUDControl_guess;		// 0x142c
+	CVGUIBillboard	*m_pVGUIBillboard_guess;	// 0x1430
+	CNoteDocument	*m_pNoteDocument_guess;		// 0x1434
+	CKeypad			*m_pKeypad_guess;			// 0x1438
+	CPhone			*m_pPhone_guess;			// 0x143c
+	CDifficulty		*m_pDifficulty_guess;		// 0x1440
+	CPuzzleBar		*m_pPuzzleBar_guess;		// 0x1444
+	CSave			*m_pSave_guess;				// 0x1448
+	CYesno			*m_pYesno_guess;			// 0x144c
+	CComputer		*m_pComputer_guess;			// 0x1450
+	CAnimalStatue	*m_pAnimalStatue_guess;		// 0x1454
+	CUserDocument	*m_pUserDocument_guess;		// 0x1458
+	CCutsceneSkip	*m_pCutsceneSkip_guess;		// 0x145c
+	CPadlock		*m_pPadlock_guess;			// 0x1460
+	CSaveLoad		*m_pSaveLoad_guess;			// 0x1464
+	CGameMenu		*m_pGameMenu_guess;			// 0x1468
+	CScope			*m_pScope_guess;			// 0x146c
+	CTVFrame		*m_pTVFrame_guess;			// 0x1470
+	CGameOver		*m_pGameOver_guess;			// 0x1474
+	CLanguage		*m_pLanguage_guess;			// 0x1478
+	CTelephone		*m_pTelephone_guess;		// 0x147c
+	CDocuments		*m_pDocuments_guess;		// 0x1480
+	CAmmoInventory	*m_pAmmoInventory_guess;	// 0x1484, never assigned in 1.6a; type from its message handler (1001E6A0) in the CAmmoInventory code
+	CCredits		*m_pCredits_guess;			// 0x1488
+	CClothesMenu	*m_pClothesMenu_guess;		// 0x148c
+	CUnlockables	*m_pUnlockables_guess;		// 0x1490
+	CBookMenu		*m_pBookMenu_guess;			// 0x1494
+	CCoopStats		*m_pCoopStats_guess;		// 0x1498
+	CVGUIExtraMenu	*m_pVGUIExtraMenu_guess;	// 0x149c
+	float			m_flKeyInputTime_guess;		// 0x14a0, KeyInput and CHud::VidInit
 
 	// Wargon: Скроллящийся текст.
 	CScrollingMessage *m_pScrollingMsg;	// 0x14a4

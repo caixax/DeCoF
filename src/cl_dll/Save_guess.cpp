@@ -7,7 +7,7 @@
 #include "cl_util.h"
 #include "parsemsg.h"
 #include "vgui_TeamFortressViewport.h"
-#include "guess_Save.h"
+#include "Save_guess.h"
 #include "..\game_shared\vgui_loadtga.h"
 
 CSave::CSave() : Panel( 0, 0, ScreenWidth, ScreenHeight )
@@ -15,26 +15,26 @@ CSave::CSave() : Panel( 0, 0, ScreenWidth, ScreenHeight )
 	int x, y;
 	CommandButton *pButton;
 
-	guess_m_pImage = vgui_LoadTGA( "gfx/vgui/640_savegame.tga" );
-	if ( guess_m_pImage )
-		guess_m_pImage->setColor( Color( 255, 255, 255, 1 ) );
+	m_pImage_guess = vgui_LoadTGA( "gfx/vgui/640_savegame.tga" );
+	if ( m_pImage_guess )
+		m_pImage_guess->setColor( Color( 255, 255, 255, 1 ) );
 	else
 		gEngfuncs.Con_Printf( "Cannot load gfx/vgui/640_panelback.tga!\n" );
 
 	x = ScreenWidth / 2 - 160;
 	y = ScreenHeight / 1.25 - 100;
 
-	guess_m_pImagePanel = new ImagePanel( guess_m_pImage );
-	guess_m_pImagePanel->setParent( this );
-	guess_m_pImagePanel->setPos( x, y );
-	guess_m_pImagePanel->setVisible( true );
+	m_pImagePanel_guess = new ImagePanel( m_pImage_guess );
+	m_pImagePanel_guess->setParent( this );
+	m_pImagePanel_guess->setPos( x, y );
+	m_pImagePanel_guess->setVisible( true );
 
 	pButton = new CommandButton( "", 36, 149, 79, 42, true, true );
-	pButton->setParent( guess_m_pImagePanel );
+	pButton->setParent( m_pImagePanel_guess );
 	pButton->addActionSignal( new CSaveHandler_Command( this, 2 ) );
 
 	pButton = new CommandButton( "", 204, 149, 79, 42, true, true );
-	pButton->setParent( guess_m_pImagePanel );
+	pButton->setParent( m_pImagePanel_guess );
 	pButton->addActionSignal( new CSaveHandler_Command( this, 3 ) );
 
 	setBgColor( 0, 0, 0, 255 );
@@ -76,16 +76,16 @@ void CSave::Initialize()
 	setVisible( false );
 }
 
-int guess_MsgSave( const char *pszName, int iSize, void *pbuf )
+int MsgSave_guess( const char *pszName, int iSize, void *pbuf )
 {
 	BEGIN_READ( pbuf, iSize );
 
-	if ( gViewPort->guess_m_pSave )
+	if ( gViewPort->m_pSave_guess )
 	{
 		if ( READ_BYTE() )
-			gViewPort->guess_m_pSave->setVisible( true );
+			gViewPort->m_pSave_guess->setVisible( true );
 		else
-			gViewPort->guess_m_pSave->setVisible( false );
+			gViewPort->m_pSave_guess->setVisible( false );
 
 		gViewPort->UpdateCursorState();
 	}
@@ -93,7 +93,7 @@ int guess_MsgSave( const char *pszName, int iSize, void *pbuf )
 	return 1;
 }
 
-void guess_SaveInit()
+void SaveInit_guess()
 {
-	gEngfuncs.pfnHookUserMsg( "Save", guess_MsgSave );
+	gEngfuncs.pfnHookUserMsg( "Save", MsgSave_guess );
 }

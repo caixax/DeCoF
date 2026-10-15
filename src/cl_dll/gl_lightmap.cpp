@@ -37,8 +37,8 @@ color24	lightmaps[MAX_LIGHTMAPS*BLOCK_WIDTH*BLOCK_HEIGHT];
 color24 blocklights[BLOCKLIGHTS_SIZE];
 
 // cleared when the lightmaps are not loaded yet, never read
-bool guess_lightmapsResetA;
-bool guess_lightmapsResetB;
+bool lightmapsResetA_guess;
+bool lightmapsResetB_guess;
 
 int lightmapstotal;
 
@@ -389,8 +389,8 @@ int LightmapsNeedsUpdate()
 {
 	if (!lightmaps_initialized)
 	{
-		guess_lightmapsResetA = false;
-		guess_lightmapsResetB = false;
+		lightmapsResetA_guess = false;
+		lightmapsResetB_guess = false;
 		return TRUE;
 	}
 	if (current_gamma != cv_gamma->value) return TRUE;

@@ -19,13 +19,13 @@
 
 cvar_t *v_posteffects;
 cvar_t *v_grayscale;
-int guess_iGreyFade;		// GreyFade message (fade time in seconds, 0: DEAD_GRAYSCALE_TIME)
+int iGreyFade_guess;		// GreyFade message (fade time in seconds, 0: DEAD_GRAYSCALE_TIME)
 extern cvar_t *cv_specular_nocombiners;
-extern cl_entity_t *guess_pAttachCamEnt;
-extern int guess_iAttachCamFlag;
-extern int guess_iBoat;
-extern int guess_g_iHeadShieldType;
-extern int guess_g_iDickMode;
+extern cl_entity_t *pAttachCamEnt_guess;
+extern int iAttachCamFlag_guess;
+extern int iBoat_guess;
+extern int g_iHeadShieldType_guess;
+extern int g_iDickMode_guess;
 
 
 
@@ -35,46 +35,46 @@ float GetGrayscaleFactor()
 	float alpha;
 	bool attachcam = false;
 
-	if (guess_pAttachCamEnt)
-		attachcam = (guess_iAttachCamFlag == 0);
+	if (pAttachCamEnt_guess)
+		attachcam = (iAttachCamFlag_guess == 0);
 
-	if ((gHUD.guess_m_iFlashFlags & 0x40) && !guess_IsViewEntityActive() && !attachcam)
+	if ((gHUD.m_iFlashFlags_guess & 0x40) && !IsViewEntityActive_guess() && !attachcam)
 		grayscale = 0.6;
 
-	if (gHUD.guess_m_iBlackWhite)
+	if (gHUD.m_iBlackWhite_guess)
 	{
-		alpha = gHUD.guess_m_iBlackWhite;
+		alpha = gHUD.m_iBlackWhite_guess;
 		grayscale = alpha / 255;
 	}
 
-	if (guess_g_iHeadShieldType == 1)
+	if (g_iHeadShieldType_guess == 1)
 		grayscale = 0.25;
 
-	if (gHUD.guess_m_flGreyFadeStart)
+	if (gHUD.m_flGreyFadeStart_guess)
 	{
 		float fact;
-		if (guess_iGreyFade)
-			fact = (gEngfuncs.GetClientTime() - gHUD.guess_m_flGreyFadeStart) / guess_iGreyFade;
+		if (iGreyFade_guess)
+			fact = (gEngfuncs.GetClientTime() - gHUD.m_flGreyFadeStart_guess) / iGreyFade_guess;
 		else
-			fact = (gEngfuncs.GetClientTime() - gHUD.guess_m_flGreyFadeStart) / DEAD_GRAYSCALE_TIME;
+			fact = (gEngfuncs.GetClientTime() - gHUD.m_flGreyFadeStart_guess) / DEAD_GRAYSCALE_TIME;
 		if (fact > 1) fact = 1;
 		if (fact > grayscale) grayscale = fact;
 	}
 
-	if (gHUD.guess_m_flGreyFadeEnd)
+	if (gHUD.m_flGreyFadeEnd_guess)
 	{
 		alpha /= 255;
 		float fact;
-		if (guess_iGreyFade)
-			fact = (gEngfuncs.GetClientTime() - gHUD.guess_m_flGreyFadeEnd) / guess_iGreyFade;
+		if (iGreyFade_guess)
+			fact = (gEngfuncs.GetClientTime() - gHUD.m_flGreyFadeEnd_guess) / iGreyFade_guess;
 		else
-			fact = (gEngfuncs.GetClientTime() - gHUD.guess_m_flGreyFadeEnd) / DEAD_GRAYSCALE_TIME;
+			fact = (gEngfuncs.GetClientTime() - gHUD.m_flGreyFadeEnd_guess) / DEAD_GRAYSCALE_TIME;
 		if (fact > 1) fact = 1;
 		grayscale = alpha - fact * alpha;
 		if (grayscale < 0) grayscale = 0;
 	}
 
-	if (guess_iBoat)
+	if (iBoat_guess)
 		grayscale = 0;
 
 	return grayscale;
@@ -83,7 +83,7 @@ float GetGrayscaleFactor()
 
 int g_screen_texture = 0;
 int g_weights_texture = 0; //for cards with no register combiners support
-bool guess_bReinitScreenTexture;
+bool bReinitScreenTexture_guess;
 
 int UseRectangleTextures()
 {
@@ -179,7 +179,7 @@ void DrawQuad(int width, int height, int ofsX = 0, int ofsY = 0)
 
 void ApplyPostEffects()
 {
-	if (guess_g_iDickMode)
+	if (g_iDickMode_guess)
 	{
 		glMatrixMode(GL_MODELVIEW);
 		glPushMatrix();
@@ -212,10 +212,10 @@ void ApplyPostEffects()
 		glMatrixMode(GL_MODELVIEW);
 	}
 
-	if (guess_bReinitScreenTexture)
+	if (bReinitScreenTexture_guess)
 	{
 		InitScreenTexture();
-		guess_bReinitScreenTexture = false;
+		bReinitScreenTexture_guess = false;
 	}
 
 	if (!gl.IsGLAllowed() || !v_posteffects->value)

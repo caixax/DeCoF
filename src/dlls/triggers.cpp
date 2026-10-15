@@ -6899,16 +6899,16 @@ void CTriggerSuicide :: StartSuicide( CBasePlayer *pPlayer )
 				}
 			case 27:
 				{
-					CBasePlayerWeapon *guess_pWeapon = pPlayer->GetPlayerWeapon( weaponid );
+					CBasePlayerWeapon *pWeapon_guess = pPlayer->GetPlayerWeapon( weaponid );
 
-					if ( guess_pWeapon )
+					if ( pWeapon_guess )
 					{
-						if ( !guess_pWeapon->m_bIronSights && guess_pWeapon->m_flNextPrimaryAttack < gpGlobals->time && guess_pWeapon->m_flNextSecondaryAttack < gpGlobals->time && guess_pWeapon->m_flNextTertiaryAttack < gpGlobals->time )
+						if ( !pWeapon_guess->m_bIronSights && pWeapon_guess->m_flNextPrimaryAttack < gpGlobals->time && pWeapon_guess->m_flNextSecondaryAttack < gpGlobals->time && pWeapon_guess->m_flNextTertiaryAttack < gpGlobals->time )
 						{
 							if ( must_be_switched )
 								pPlayer->GetPlayerWeapon( weaponid )->m_iSuicideState = 666;
 							else
-								guess_pWeapon->m_iSuicideState = 1;
+								pWeapon_guess->m_iSuicideState = 1;
 						}
 					}
 				}

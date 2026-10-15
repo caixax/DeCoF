@@ -36,7 +36,7 @@ CGameStudioModelRenderer::`scalar_deleting_destructor'
 ?StudioEstimateGait@CStudioModelRenderer@@UAEXPAUentity_state_s@@@Z
 ?StudioProcessGait@CStudioModelRenderer@@UAEXPAUentity_state_s@@@Z
 ?StudioSetUpTransform@CStudioModelRenderer@@UAEXH@Z
-?guess_RadiansToDegrees@@YANN@Z
+?RadiansToDegrees_guess@@YANN@Z
 ?StudioDrawHeadShield@CStudioModelRenderer@@QAEHXZ
 ?__MsgFunc_DualAnim@@YAHPBDHPAX@Z
 ?__MsgFunc_DualFlash@@YAHPBDHPAX@Z
@@ -44,4 +44,4 @@ CGameStudioModelRenderer::`scalar_deleting_destructor'
 ?ResetHeadShield@@YAXXZ
 ?InitHeadShield@@YAXXZ
 ?__MsgFunc_HeadShield@@YAHPBDHPAX@Z
-?guess_StudioMuzzleFlash@CStudioModelRenderer@@QAEXPADH_NM@Z
+?StudioMuzzleFlash_guess@CStudioModelRenderer@@QAEXPADH_NM@Z

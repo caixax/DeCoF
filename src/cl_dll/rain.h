@@ -49,10 +49,10 @@ typedef struct cl_rainfx
 	float		life;
 	vec3_t		origin;
 	float		alpha;
-	int			guess_type;		// 0 - water ring, 1 - splash, 2 - ripple, 3 - falling drip
-	int			guess_frame;	// splash sprite frame
-	int			guess_scale;	// ripple size
-	vec3_t		guess_start;	// falling drip start point
+	int			type_guess;		// 0 - water ring, 1 - splash, 2 - ripple, 3 - falling drip
+	int			frame_guess;	// splash sprite frame
+	int			scale_guess;	// ripple size
+	vec3_t		start_guess;	// falling drip start point
 	
 //	cl_rainfx*		p_Next;		// next fx in chain
 //	cl_rainfx*		p_Prev;		// previous fx in chain
@@ -63,8 +63,8 @@ void ProcessRain( void );
 void ProcessFXObjects( void );
 void ResetRain( void );
 void InitRain( void );
-void guess_FallingDripEffect( vec3_t origin, float flScale );
-void guess_RippleEffect( vec3_t origin, float flScale );
+void FallingDripEffect_guess( vec3_t origin, float flScale );
+void RippleEffect_guess( vec3_t origin, float flScale );
 
 #endif
 

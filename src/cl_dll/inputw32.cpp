@@ -20,7 +20,7 @@
 #include "../engine/keydefs.h"
 #include "view.h"
 #include "vgui_TeamFortressViewport.h"
-#include "guess_Padlock.h"
+#include "Padlock_guess.h"
 #include "windows.h"
 #include <math.h>
 #undef fabs
@@ -43,16 +43,16 @@ extern cl_enginefunc_t gEngfuncs;
 
 extern int iMouseInUse;
 extern int g_iUser1;
-extern int guess_iPlayerMode;
-extern int guess_iModelAttachEnt;
-extern int guess_iModelAttachNum;
-extern int guess_iDefaultFOV;
-extern cl_entity_t *guess_pTelescopeEnt;
-extern vec3_t guess_vecWheelchairAngles;
-extern int guess_iWheelchair;
-extern bool guess_bWheelchairLock;
-extern float guess_flMouseOfs2X;
-extern float guess_flMouseOfs2Y;
+extern int iPlayerMode_guess;
+extern int iModelAttachEnt_guess;
+extern int iModelAttachNum_guess;
+extern int iDefaultFOV_guess;
+extern cl_entity_t *pTelescopeEnt_guess;
+extern vec3_t vecWheelchairAngles_guess;
+extern int iWheelchair_guess;
+extern bool bWheelchairLock_guess;
+extern float flMouseOfs2X_guess;
+extern float flMouseOfs2Y_guess;
 
 extern kbutton_t	in_strafe;
 extern kbutton_t	in_mlook;
@@ -174,7 +174,7 @@ void Force_CenterView_f (void)
 	{
 		gEngfuncs.GetViewAngles( (float *)viewangles );
 	    viewangles[PITCH] = 0;
-		if ( !gHUD.guess_m_bViewLock )
+		if ( !gHUD.m_bViewLock_guess )
 			gEngfuncs.SetViewAngles( (float *)viewangles );
 	}
 }
@@ -321,10 +321,10 @@ void IN_MouseMove ( float frametime, usercmd_t *cmd)
 	int		mx, my;
 	vec3_t viewangles;
 
-	if ( guess_iModelAttachEnt != -1 && guess_iModelAttachNum != -1 )
+	if ( iModelAttachEnt_guess != -1 && iModelAttachNum_guess != -1 )
 		return;
 
-	if ( guess_iPlayerMode > 0 && guess_iPlayerMode <= 4 )
+	if ( iPlayerMode_guess > 0 && iPlayerMode_guess <= 4 )
 		return;
 
 	gEngfuncs.GetViewAngles( (float *)viewangles );
@@ -372,7 +372,7 @@ void IN_MouseMove ( float frametime, usercmd_t *cmd)
 		}
 		
 		// buz: slower turning when in sniper mode
-		if (gHUD.m_iFOV < guess_iDefaultFOV)
+		if (gHUD.m_iFOV < iDefaultFOV_guess)
 		{
 			mouse_x *= 0.5;
 			mouse_y *= 0.5;
@@ -417,54 +417,54 @@ void IN_MouseMove ( float frametime, usercmd_t *cmd)
 		// if the mouse has moved, force it to the center, so there's room to move
 		if ( mx || my )
 		{
-			if ( gViewPort->guess_m_pPadlock && !gViewPort->guess_m_pPadlock->isVisible() )
+			if ( gViewPort->m_pPadlock_guess && !gViewPort->m_pPadlock_guess->isVisible() )
 				IN_ResetMouse();
 		}
 	}
 
-	if ( !gHUD.guess_m_bViewLock )
+	if ( !gHUD.m_bViewLock_guess )
 	{
-		if ( !guess_pTelescopeEnt )
+		if ( !pTelescopeEnt_guess )
 			gEngfuncs.SetViewAngles( (float *)viewangles );
 	}
 
-	if ( guess_pTelescopeEnt )
+	if ( pTelescopeEnt_guess )
 	{
 				vec3_t angles;
 
-		guess_flMouseOfs2X += mouse_y * m_pitch->value;
-		guess_flMouseOfs2Y += mouse_x * m_yaw->value;
+		flMouseOfs2X_guess += mouse_y * m_pitch->value;
+		flMouseOfs2Y_guess += mouse_x * m_yaw->value;
 
-		if ( guess_flMouseOfs2X > 30 )
-			guess_flMouseOfs2X = 30;
-		else if ( guess_flMouseOfs2X < -60 )
-			guess_flMouseOfs2X = -60;
+		if ( flMouseOfs2X_guess > 30 )
+			flMouseOfs2X_guess = 30;
+		else if ( flMouseOfs2X_guess < -60 )
+			flMouseOfs2X_guess = -60;
 
-		if ( guess_flMouseOfs2Y > 60 )
-			guess_flMouseOfs2Y = 60;
-		if ( guess_flMouseOfs2Y < -60 )
-			guess_flMouseOfs2Y = -60;
+		if ( flMouseOfs2Y_guess > 60 )
+			flMouseOfs2Y_guess = 60;
+		if ( flMouseOfs2Y_guess < -60 )
+			flMouseOfs2Y_guess = -60;
 
-		angles[0] = guess_flMouseOfs2X;
-		angles[1] = guess_flMouseOfs2Y * -1;
+		angles[0] = flMouseOfs2X_guess;
+		angles[1] = flMouseOfs2Y_guess * -1;
 		gEngfuncs.SetViewAngles( (float *)angles );
 	}
 
-	if ( guess_iWheelchair && !guess_bWheelchairLock )
+	if ( iWheelchair_guess && !bWheelchairLock_guess )
 	{
 		
-		guess_vecWheelchairAngles[0] += mouse_y * m_pitch->value;
-		guess_vecWheelchairAngles[1] += mouse_x * m_yaw->value;
+		vecWheelchairAngles_guess[0] += mouse_y * m_pitch->value;
+		vecWheelchairAngles_guess[1] += mouse_x * m_yaw->value;
 
-		if ( guess_vecWheelchairAngles[0] > 30 )
-			guess_vecWheelchairAngles[0] = 30;
-		else if ( guess_vecWheelchairAngles[0] < -60 )
-			guess_vecWheelchairAngles[0] = -60;
+		if ( vecWheelchairAngles_guess[0] > 30 )
+			vecWheelchairAngles_guess[0] = 30;
+		else if ( vecWheelchairAngles_guess[0] < -60 )
+			vecWheelchairAngles_guess[0] = -60;
 
-		if ( guess_vecWheelchairAngles[1] > 60 )
-			guess_vecWheelchairAngles[1] = 60;
-		else if ( guess_vecWheelchairAngles[1] < -60 )
-			guess_vecWheelchairAngles[1] = -60;
+		if ( vecWheelchairAngles_guess[1] > 60 )
+			vecWheelchairAngles_guess[1] = 60;
+		else if ( vecWheelchairAngles_guess[1] < -60 )
+			vecWheelchairAngles_guess[1] = -60;
 	}
 
 /*
@@ -804,7 +804,7 @@ void IN_JoyMove ( float frametime, usercmd_t *cmd )
 
 	gEngfuncs.GetViewAngles( (float *)viewangles );
 
-	if ( guess_iPlayerMode > 0 && guess_iPlayerMode <= 4 )
+	if ( iPlayerMode_guess > 0 && iPlayerMode_guess <= 4 )
 		return;
 
 	// complete initialization if first time in
@@ -974,7 +974,7 @@ void IN_JoyMove ( float frametime, usercmd_t *cmd )
 	if (viewangles[PITCH] < -cl_pitchup->value)
 		viewangles[PITCH] = -cl_pitchup->value;
 
-	if ( !gHUD.guess_m_bViewLock )
+	if ( !gHUD.m_bViewLock_guess )
 		gEngfuncs.SetViewAngles( (float *)viewangles );
 
 }

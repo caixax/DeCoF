@@ -136,8 +136,8 @@ public:
 
 	void LoadMenuSettings( void );
 
-	int guess_GetMags( int iId );							// magazine count of a weapon id
-	void guess_SetMags( int iId, int iDivisor, int iAmount );
+	int GetMags_guess( int iId );							// magazine count of a weapon id
+	void SetMags_guess( int iId, int iDivisor, int iAmount );
 
 	// buz: these variables loaded from file menu_settings.txt
 	int		m_menuSizeX;
@@ -154,23 +154,23 @@ public:
 	int		m_menuNumberSizeX;
 	int		m_menuNumberSizeY;
 
-	int		guess_m_iDualAmmoLeft;		// DualAmmo message
-	int		guess_m_iDualAmmoRight;
+	int		m_iDualAmmoLeft_guess;		// DualAmmo message
+	int		m_iDualAmmoRight_guess;
 
 	// magazine counts per weapon id (3, 19, 4, 7, 26, 27, 8, 9, 14, 11, 13, 20, 21)
-	int		guess_m_iGlockMags;
-	int		guess_m_iVP70Mags;
-	int		guess_m_iShotgunMags;
-	int		guess_m_iP345Mags;
-	int		guess_m_iG43Mags;
-	int		guess_m_iMP5Mags;
-	int		guess_m_iSyringes;
-	int		guess_m_iM16Mags;
-	int		guess_m_iTMPMags;
-	int		guess_m_iRifleMags;
-	int		guess_m_iFlares;
-	int		guess_m_iBrowningMags;
-	int		guess_m_iRevolverAmmo;
+	int		m_iGlockMags_guess;
+	int		m_iVP70Mags_guess;
+	int		m_iShotgunMags_guess;
+	int		m_iP345Mags_guess;
+	int		m_iG43Mags_guess;
+	int		m_iMP5Mags_guess;
+	int		m_iSyringes_guess;
+	int		m_iM16Mags_guess;
+	int		m_iTMPMags_guess;
+	int		m_iRifleMags_guess;
+	int		m_iFlares_guess;
+	int		m_iBrowningMags_guess;
+	int		m_iRevolverAmmo_guess;
 
 //private:
 	float m_fFade;
@@ -181,52 +181,52 @@ public:
 	int m_mach; // buz
 
 	// sprite indexes loaded in VidInit (names from the hud.txt entries)
-	int guess_m_HUD_glock_mag;
-	int guess_m_HUD_revolver_cylinder;
-	int guess_m_HUD_browning_mag;
-	int guess_m_HUD_p345_mag;
-	int guess_m_HUD_g43_mag;
-	int guess_m_HUD_mp5_mag;
-	int guess_m_HUD_m76_mag;
-	int guess_m_HUD_shotgun_box;
-	int guess_m_HUD_glock_mag_icon;
-	int guess_m_HUD_p345_mag_icon;
-	int guess_m_HUD_g43_mag_icon;
-	int guess_m_HUD_mp5_mag_icon;
-	int guess_m_HUD_shotgun_box_icon;
-	int guess_m_HUD_syringe_icon;
-	int guess_m_HUD_m76_mag_icon;
-	int guess_m_HUD_mag_cross;
-	int guess_m_HUD_crosshair;
-	int guess_m_HUD_m16_mag;
-	int guess_m_HUD_m16_mag_icon;
-	int guess_m_HUD_vp70_mag;
-	int guess_m_HUD_vp70_mag_icon;
-	int guess_m_HUD_tmp_mag;
-	int guess_m_HUD_tmp_mag_icon;
-	int guess_m_HUD_flare_icon;
-	int guess_m_HUD_famas_mag;
-	int guess_m_HUD_famas_mag_icon;
-	int guess_m_HUD_gm_inf;
-	int guess_m_HUD_rifle_mag;
-	int guess_m_HUD_rifle_mag_icon;
+	int m_HUD_glock_mag_guess;
+	int m_HUD_revolver_cylinder_guess;
+	int m_HUD_browning_mag_guess;
+	int m_HUD_p345_mag_guess;
+	int m_HUD_g43_mag_guess;
+	int m_HUD_mp5_mag_guess;
+	int m_HUD_m76_mag_guess;
+	int m_HUD_shotgun_box_guess;
+	int m_HUD_glock_mag_icon_guess;
+	int m_HUD_p345_mag_icon_guess;
+	int m_HUD_g43_mag_icon_guess;
+	int m_HUD_mp5_mag_icon_guess;
+	int m_HUD_shotgun_box_icon_guess;
+	int m_HUD_syringe_icon_guess;
+	int m_HUD_m76_mag_icon_guess;
+	int m_HUD_mag_cross_guess;
+	int m_HUD_crosshair_guess;
+	int m_HUD_m16_mag_guess;
+	int m_HUD_m16_mag_icon_guess;
+	int m_HUD_vp70_mag_guess;
+	int m_HUD_vp70_mag_icon_guess;
+	int m_HUD_tmp_mag_guess;
+	int m_HUD_tmp_mag_icon_guess;
+	int m_HUD_flare_icon_guess;
+	int m_HUD_famas_mag_guess;
+	int m_HUD_famas_mag_icon_guess;
+	int m_HUD_gm_inf_guess;
+	int m_HUD_rifle_mag_guess;
+	int m_HUD_rifle_mag_icon_guess;
 
-	int guess_m_iDrawAmmo;
-	float guess_m_flAccuracy;			// Accuracy message
+	int m_iDrawAmmo_guess;
+	float m_flAccuracy_guess;			// Accuracy message
 
 	// &gHUD.GetSpriteRect() of the magazine sprites, set in VidInit
-	wrect_t *guess_m_prcGlockMag;
-	wrect_t *guess_m_prcShotgunBox;
-	wrect_t *guess_m_prcM76Mag;
-	wrect_t *guess_m_prcM16Mag;
-	wrect_t *guess_m_prcP345Mag;
-	wrect_t *guess_m_prcTMPMag;
-	wrect_t *guess_m_prcBrowningMag;
-	wrect_t *guess_m_prcRevolverCylinder;
-	wrect_t *guess_m_prcGmInf;
-	wrect_t *guess_m_prcRifleMag;
-	wrect_t *guess_m_prcG43Mag;
-	wrect_t *guess_m_prcMP5Mag;
+	wrect_t *m_prcGlockMag_guess;
+	wrect_t *m_prcShotgunBox_guess;
+	wrect_t *m_prcM76Mag_guess;
+	wrect_t *m_prcM16Mag_guess;
+	wrect_t *m_prcP345Mag_guess;
+	wrect_t *m_prcTMPMag_guess;
+	wrect_t *m_prcBrowningMag_guess;
+	wrect_t *m_prcRevolverCylinder_guess;
+	wrect_t *m_prcGmInf_guess;
+	wrect_t *m_prcRifleMag_guess;
+	wrect_t *m_prcG43Mag_guess;
+	wrect_t *m_prcMP5Mag_guess;
 };
 
 //
@@ -391,7 +391,7 @@ struct extra_player_info_t
 	short deaths;
 	short playerclass;
 	short teamnumber;
-	short guess_unknown;	// 1.6a: two more bytes, the entries are 0x1A apart (GetPlayerTextColor, MsgFunc_ScoreInfo) and teamname is at +0xA (MsgFunc_TeamInfo)
+	short unknown_guess;	// 1.6a: two more bytes, the entries are 0x1A apart (GetPlayerTextColor, MsgFunc_ScoreInfo) and teamname is at +0xA (MsgFunc_TeamInfo)
 	char teamname[MAX_TEAM_NAME];
 };
 
@@ -549,10 +549,10 @@ public:
 	int Draw( float flTime );
 	int MsgFunc_BlackBars( const char *pszName, int iSize, void *pbuf );
 
-	int guess_m_iOn;			// BlackBars message
-	int guess_m_HUD_blackbar;	// "cof_blackbar"
-	int guess_m_iTop;			// -(sprite height) - 1
-	int guess_m_iBottom;		// ScreenHeight
+	int m_iOn_guess;			// BlackBars message
+	int m_HUD_blackbar_guess;	// "cof_blackbar"
+	int m_iTop_guess;			// -(sprite height) - 1
+	int m_iBottom_guess;		// ScreenHeight
 };
 
 //
@@ -565,9 +565,9 @@ public:
 	int VidInit( void );
 	int Draw( float flTime );
 
-	int guess_m_HUD_snoise;
-	int guess_m_HUD_arghnoise;
-	int guess_m_HUD_tv_scanlines;
+	int m_HUD_snoise_guess;
+	int m_HUD_arghnoise_guess;
+	int m_HUD_tv_scanlines_guess;
 };
 
 //
@@ -582,9 +582,9 @@ public:
 	int MsgFunc_Lensflare( const char *pszName, int iSize, void *pbuf );
 
 	// 0x14-0x1f and 0x2c-0x193 are not referenced by any code of the 1.6a client.dll
-	int guess_m_iUnused[3];
-	Vector guess_m_vecSunPos;		// Lensflare message (three coords)
-	int guess_m_iUnused2[90];
+	int m_iUnused_guess[3];
+	Vector m_vecSunPos_guess;		// Lensflare message (three coords)
+	int m_iUnused2_guess[90];
 };
 
 //
@@ -748,98 +748,98 @@ private:
 public:
 
 	// custom view model textures (CustomSlv, CustomFng and CustomGlv messages)
-	char	guess_m_szSleeveTexture[256];
-	char	guess_m_szFingerTexture[256];
-	char	guess_m_szGloveTexture[256];
+	char	m_szSleeveTexture_guess[256];
+	char	m_szFingerTexture_guess[256];
+	char	m_szGloveTexture_guess[256];
 
 	// "savehack cofsave%i" sent from Redraw once the time has passed
-	bool	guess_m_bSaveHack;
-	float	guess_m_flSaveHackTime;
-	int		guess_m_iSaveHackSlot;
+	bool	m_bSaveHack_guess;
+	float	m_flSaveHackTime_guess;
+	int		m_iSaveHackSlot_guess;
 
-	float	guess_m_flDamageTime;		// written by CHudHealth::MsgFunc_Damage
-	struct IVoiceTweak_s *guess_m_pVoiceTweak;	// gEngfuncs.pVoiceTweak, set in Init
-	char	*guess_m_pszHeadShieldSound;	// HeadShield message
-	int		guess_m_iHeadShieldSoundFlags;
-	int		guess_m_iUnlocks;			// Unlocks message (bit field)
-	bool	guess_m_bMenuClick;
-	float	guess_m_flMenuClickTime;
-	Vector	guess_m_vecUnknown344;		// only cleared by VidInit (Vector(0,0,0): movq + one dword)
-	float	guess_m_flUnknown350;
-	float	guess_m_flViewLockTime;		// ViewLock message, 666 = forever
-	bool	guess_m_bViewLockWasOn;
-	int		guess_m_iFlashFlags;		// FlashFlags message (bit field)
-	HSPRITE	guess_m_hMuzzleflash;		// "sprites/muzzleflash.spr"
+	float	m_flDamageTime_guess;		// written by CHudHealth::MsgFunc_Damage
+	struct IVoiceTweak_s *m_pVoiceTweak_guess;	// gEngfuncs.pVoiceTweak, set in Init
+	char	*m_pszHeadShieldSound_guess;	// HeadShield message
+	int		m_iHeadShieldSoundFlags_guess;
+	int		m_iUnlocks_guess;			// Unlocks message (bit field)
+	bool	m_bMenuClick_guess;
+	float	m_flMenuClickTime_guess;
+	Vector	m_vecUnknown344_guess;		// only cleared by VidInit (Vector(0,0,0): movq + one dword)
+	float	m_flUnknown350_guess;
+	float	m_flViewLockTime_guess;		// ViewLock message, 666 = forever
+	bool	m_bViewLockWasOn_guess;
+	int		m_iFlashFlags_guess;		// FlashFlags message (bit field)
+	HSPRITE	m_hMuzzleflash_guess;		// "sprites/muzzleflash.spr"
 
 	// 0x364-0xf1b (3000 bytes): not referenced by any code of the 1.6a, 1.55 or 1.0 client.dll
-	char	guess_m_szUnused364[3000];
+	char	m_szUnused364_guess[3000];
 
 	// notes (AddNote message); the code uses index 1-16, so note 16 runs over the members that follow (original bug)
 	struct
 	{
-		char	guess_szLine[8][32];
-		char	guess_szText1[48];
-		char	guess_szText2[64];
-		char	guess_szText3[48];
-	} guess_m_Notes[16];
+		char	szLine_guess[8][32];
+		char	szText1_guess[48];
+		char	szText2_guess[64];
+		char	szText3_guess[48];
+	} m_Notes_guess[16];
 
-	Vector	guess_m_vecIronSightOfs;	// IronSights message
-	Vector	guess_m_vecIronSightOfs2;
-	bool	guess_m_bIronSights;
+	Vector	m_vecIronSightOfs_guess;	// IronSights message
+	Vector	m_vecIronSightOfs2_guess;
+	bool	m_bIronSights_guess;
 
 	// NewFade message
-	int		guess_m_iFadeR;
-	int		guess_m_iFadeG;
-	int		guess_m_iFadeB;
-	int		guess_m_iFadeA;
-	int		guess_m_iFadeAlpha;
-	float	guess_m_flFadeStart;
-	float	guess_m_flFadeTime;
-	float	guess_m_flFadeEnd;
-	bool	guess_m_bFadeOut;
-	bool	guess_m_bFadeHold;
+	int		m_iFadeR_guess;
+	int		m_iFadeG_guess;
+	int		m_iFadeB_guess;
+	int		m_iFadeA_guess;
+	int		m_iFadeAlpha_guess;
+	float	m_flFadeStart_guess;
+	float	m_flFadeTime_guess;
+	float	m_flFadeEnd_guess;
+	bool	m_bFadeOut_guess;
+	bool	m_bFadeHold_guess;
 
-	bool	guess_m_bConcussed;			// Concuss message, second byte
-	int		guess_m_iClothes;			// Clothes message
-	int		guess_m_iClothesState;
-	bool	guess_m_bXboxFix[26];		// all set by the xboxfix command
+	bool	m_bConcussed_guess;			// Concuss message, second byte
+	int		m_iClothes_guess;			// Clothes message
+	int		m_iClothesState_guess;
+	bool	m_bXboxFix_guess[26];		// all set by the xboxfix command
 
 	// 0x2980-0x2a7f: not referenced by any code of the 1.6a, 1.55 or 1.0 client.dll
-	int		guess_m_iUnused2980[64];
+	int		m_iUnused2980_guess[64];
 
-	float	guess_m_flResetTime;		// GetClientTime() at ResetHUD, InitHUD and VidInit
-	float	guess_m_flUnknown2A84;
-	bool	guess_m_bUnknown2A88;
-	bool	guess_m_bPhoneOff;			// PhoneOff message
-	int		guess_m_iBlackWhite;		// BlackWhite message
-	int		guess_m_iUnknown2A90;
-	int		guess_m_iLadder;			// Ladder message, 0 lets the inventory open
-	int		guess_m_iFallOver;			// FallOver message, "down" state
-	float	guess_m_flUnknown2A9C;
-	Vector	guess_m_vecViewOfs;
-	float	guess_m_flLadderTime;
-	Vector	guess_m_vecLadder;
+	float	m_flResetTime_guess;		// GetClientTime() at ResetHUD, InitHUD and VidInit
+	float	m_flUnknown2A84_guess;
+	bool	m_bUnknown2A88_guess;
+	bool	m_bPhoneOff_guess;			// PhoneOff message
+	int		m_iBlackWhite_guess;		// BlackWhite message
+	int		m_iUnknown2A90_guess;
+	int		m_iLadder_guess;			// Ladder message, 0 lets the inventory open
+	int		m_iFallOver_guess;			// FallOver message, "down" state
+	float	m_flUnknown2A9C_guess;
+	Vector	m_vecViewOfs_guess;
+	float	m_flLadderTime_guess;
+	Vector	m_vecLadder_guess;
 
 	// FPS statistics of Redraw ("FPS is %i with an average of %i and a max of %i")
-	int		guess_m_iFPSMin;
-	int		guess_m_iFPSMax;
-	int		guess_m_iFPSAverage;
-	bool	guess_m_bFPSToggle;
-	float	guess_m_flNextFPSTime;
-	int		guess_m_iFPS[100];			// the code uses index 1-100, so index 100 is guess_m_iFPSCount (original bug)
-	int		guess_m_iFPSCount;
+	int		m_iFPSMin_guess;
+	int		m_iFPSMax_guess;
+	int		m_iFPSAverage_guess;
+	bool	m_bFPSToggle_guess;
+	float	m_flNextFPSTime_guess;
+	int		m_iFPS_guess[100];			// the code uses index 1-100, so index 100 is m_iFPSCount_guess (original bug)
+	int		m_iFPSCount_guess;
 
 	// inventory (Inventory message)
-	char	guess_m_szInventoryItem1[128];
-	char	guess_m_szInventoryItem2[128];
-	char	guess_m_szInventoryItem3[128];
-	char	guess_m_szInventoryItem4[128];
-	char	guess_m_szInventoryItem5[128];
-	char	guess_m_szInventoryItem6[128];
-	char	guess_m_szInventoryWeapon1[128];
-	char	guess_m_szInventoryWeapon2[128];
-	char	guess_m_szInventoryWeapon3[128];
-	int		guess_m_iUnused30E4;		// not referenced
+	char	m_szInventoryItem1_guess[128];
+	char	m_szInventoryItem2_guess[128];
+	char	m_szInventoryItem3_guess[128];
+	char	m_szInventoryItem4_guess[128];
+	char	m_szInventoryItem5_guess[128];
+	char	m_szInventoryItem6_guess[128];
+	char	m_szInventoryWeapon1_guess[128];
+	char	m_szInventoryWeapon2_guess[128];
+	char	m_szInventoryWeapon3_guess[128];
+	int		m_iUnused30E4_guess;		// not referenced
 
 	HSPRITE						m_hsprCursor;
 	HSPRITE						m_hsprLogo; // buz: make public
@@ -861,11 +861,11 @@ public:
 	cvar_t	*m_pZoomSpeed; // buz
 
 	// CameraZoom and HoldBreath messages
-	bool	guess_m_bCameraZoomOn;
-	float	guess_m_flCameraZoomFOV;
-	int		guess_m_iCameraZoom;
-	int		guess_m_iHoldBreath;
-	float	guess_m_flNextSwayTime;
+	bool	m_bCameraZoomOn_guess;
+	float	m_flCameraZoomFOV_guess;
+	int		m_iCameraZoom_guess;
+	int		m_iHoldBreath_guess;
+	float	m_flNextSwayTime_guess;
 
 	Vector	m_vecSkyPos; //LRC
 	int		m_iSkyMode;  //LRC
@@ -882,30 +882,30 @@ public:
 	float	m_SpecTank_distUp;
 	int		m_SpecTank_Ammo;
 
-	float	guess_m_flPitchOfs;
-	float	guess_m_flYawOfs;
-	Vector	guess_m_vecSpecTankAngles;	// view angles saved by V_CalcRefdef
-	float	guess_m_flSpecTankTime;
-	float	guess_m_flSpecTankFrametime;
-	int		guess_m_iMaglite;			// Maglite message
-	int		guess_m_iBlur;				// Blur message
-	int		guess_m_iUnreadSMS;			// UnreadSMS message
-	float	guess_m_flUnreadSMSTime;
-	bool	guess_m_bViewLock;			// ViewLock message: mouse and joystick input ignored
-	int		guess_m_iViewEntity;		// ViewEntity message
-	float	guess_m_flForwardTapTime;	// double-tap deadlines of +forward, +back, +moveleft, +moveright
-	float	guess_m_flBackTapTime;
-	float	guess_m_flLeftTapTime;
-	float	guess_m_flRightTapTime;
+	float	m_flPitchOfs_guess;
+	float	m_flYawOfs_guess;
+	Vector	m_vecSpecTankAngles_guess;	// view angles saved by V_CalcRefdef
+	float	m_flSpecTankTime_guess;
+	float	m_flSpecTankFrametime_guess;
+	int		m_iMaglite_guess;			// Maglite message
+	int		m_iBlur_guess;				// Blur message
+	int		m_iUnreadSMS_guess;			// UnreadSMS message
+	float	m_flUnreadSMSTime_guess;
+	bool	m_bViewLock_guess;			// ViewLock message: mouse and joystick input ignored
+	int		m_iViewEntity_guess;		// ViewEntity message
+	float	m_flForwardTapTime_guess;	// double-tap deadlines of +forward, +back, +moveleft, +moveright
+	float	m_flBackTapTime_guess;
+	float	m_flLeftTapTime_guess;
+	float	m_flRightTapTime_guess;
 
 	// 0x31d4-0x320b: not referenced by any code of the 1.6a, 1.55 or 1.0 client.dll
-	int		guess_m_iUnused31D4[14];
+	int		m_iUnused31D4_guess[14];
 
 	// buz: die time
 	float	m_flDeadTime;
 
-	float	guess_m_flGreyFadeStart;	// GreyFade message
-	float	guess_m_flGreyFadeEnd;
+	float	m_flGreyFadeStart_guess;	// GreyFade message
+	float	m_flGreyFadeEnd_guess;
 
 	int m_iFontHeight;
 	int DrawHudNumber(int x, int y, int iFlags, int iNumber, int r, int g, int b );
@@ -925,8 +925,8 @@ private:
 
 //	struct cvar_s *default_fov; // buz: turn off
 public:
-	char	guess_m_szObjectiveTitle[256];	// Objectives message
-	char	guess_m_szObjectiveText[256];
+	char	m_szObjectiveTitle_guess[256];	// Objectives message
+	char	m_szObjectiveText_guess[256];
 
 	HSPRITE GetSprite( int index )
 	{
@@ -946,8 +946,8 @@ public:
 	CHudSpectator		m_Spectator;
 	CHudGeiger		m_Geiger;
 	CHudBattery		m_Battery;
-	CBlackBar		guess_m_BlackBar;
-	CNeffect		guess_m_Neffect;
+	CBlackBar		m_BlackBar_guess;
+	CNeffect		m_Neffect_guess;
 	CHudTrain		m_Train;
 	CHudFlashlight	m_Flash;
 	CHudMessage		m_Message;
@@ -958,7 +958,7 @@ public:
 	CHudAmmoSecondary	m_AmmoSecondary;
 	CHudTextMessage m_TextMessage;
 	CHudStatusIcons m_StatusIcons;
-	CHudLensflare	guess_m_Lensflare;
+	CHudLensflare	m_Lensflare_guess;
 	CHudParticle	m_Particle; // (LRC) -- 30/08/02 November235: Particles to Order
 
 	void Init( void );
@@ -1042,18 +1042,18 @@ public:
 
 	float GetSensitivity();
 
-	char *guess_GetKeyForCommand( char *pszCommand );	// the key bound to a command in config.cfg ("Couldn't get key for bind %s!")
-	char *guess_GetInventoryItem( int iSlot );			// guess_m_szInventoryItem1-6, slot 1-6
+	char *GetKeyForCommand_guess( char *pszCommand );	// the key bound to a command in config.cfg ("Couldn't get key for bind %s!")
+	char *GetInventoryItem_guess( int iSlot );			// m_szInventoryItem1_guess-6, slot 1-6
 	char *CheckItem( char *pszName, char *pszFile );	// the value of key pszName in an item script (" * CheckItem parsing error")
-	int guess_AverageFPS( int iFPS );					// adds a sample to guess_m_iFPS, returns the average of the last 50
+	int AverageFPS_guess( int iFPS );					// adds a sample to m_iFPS_guess, returns the average of the last 50
 	void DrawBlurTest( float frametime );				// buz: a free function in Paranoia, the screen blur of Cry of Fear
-	void guess_DrawNewFade( float flTime );				// draws the NewFade fade, never called in 1.6a (the argument is unused)
+	void DrawNewFade_guess( float flTime );				// draws the NewFade fade, never called in 1.6a (the argument is unused)
 
 	// never called in 1.6a
-	int guess_AddUnknown5590( int iValue );
-	int guess_SubUnknown5590( int iValue );
+	int AddUnknown5590_guess( int iValue );
+	int SubUnknown5590_guess( int iValue );
 
-	int		guess_m_iUnknown5590;	// only read by guess_AddUnknown5590; gHUD is 0x5598 bytes (MP3FileInfo object at gHUD+0x5598)
+	int		m_iUnknown5590_guess;	// only read by AddUnknown5590_guess; gHUD is 0x5598 bytes (MP3FileInfo object at gHUD+0x5598)
 };
 
 class TeamFortressViewport;
@@ -1061,7 +1061,7 @@ class TeamFortressViewport;
 extern CHud gHUD;
 extern TeamFortressViewport *gViewPort;
 
-bool guess_IsViewEntityActive( void );	// the view is on another entity than the local player (ViewEntity message)
+bool IsViewEntityActive_guess( void );	// the view is on another entity than the local player (ViewEntity message)
 
 extern int g_iPlayerClass;
 extern int g_iTeamNumber;

@@ -17,8 +17,8 @@
 #include "custom_alloc.h"
 
 void WaterLandingEffect(cl_drip *drip);
-void guess_SplashLandingEffect(cl_drip *drip);
-float guess_VectorDistance(vec3_t a, vec3_t b);
+void SplashLandingEffect_guess(cl_drip *drip);
+float VectorDistance_guess(vec3_t a, vec3_t b);
 
 extern cvar_t *cl_ripples;
 
@@ -108,12 +108,12 @@ void ProcessRain( void )
 		{
 			if (player)
 			{
-				if (guess_VectorDistance(player->origin, curDrip->origin) <= 500)
+				if (VectorDistance_guess(player->origin, curDrip->origin) <= 500)
 				{
 					if (curDrip->landInWater == 1)
 						WaterLandingEffect(curDrip); // create water rings
 					if (curDrip->landInWater == 2)
-						guess_SplashLandingEffect(curDrip);
+						SplashLandingEffect_guess(curDrip);
 				}
 			}
 
@@ -311,8 +311,8 @@ void WaterLandingEffect(cl_drip *drip)
 
 	newFX->birthTime = gEngfuncs.GetClientTime();
 	newFX->life = gEngfuncs.pfnRandomFloat(0.7, 1);
-	newFX->guess_type = 0;
-	newFX->guess_frame = 0;
+	newFX->type_guess = 0;
+	newFX->frame_guess = 0;
 
 	// add to first place in chain
 //	newFX->p_Next = FirstChainFX.p_Next;
@@ -324,12 +324,12 @@ void WaterLandingEffect(cl_drip *drip)
 	fxcounter++;
 }
 
-float guess_VectorDistance(vec3_t a, vec3_t b)
+float VectorDistance_guess(vec3_t a, vec3_t b)
 {
 	return Length(b - a);
 }
 
-void guess_SplashLandingEffect(cl_drip *drip)
+void SplashLandingEffect_guess(cl_drip *drip)
 {
 	if (CVAR_GET_FLOAT("r_weather") < 2)
 		return;
@@ -353,13 +353,13 @@ void guess_SplashLandingEffect(cl_drip *drip)
 
 	newFX->birthTime = gEngfuncs.GetClientTime();
 	newFX->life = gEngfuncs.pfnRandomFloat(0.7, 1);
-	newFX->guess_type = 1;
-	newFX->guess_frame = 0;
+	newFX->type_guess = 1;
+	newFX->frame_guess = 0;
 
 	fxcounter++;
 }
 
-void guess_RippleEffect(vec3_t origin, float flScale)
+void RippleEffect_guess(vec3_t origin, float flScale)
 {
 	if (!cl_ripples->value)
 		return;
@@ -383,14 +383,14 @@ void guess_RippleEffect(vec3_t origin, float flScale)
 
 	newFX->birthTime = gEngfuncs.GetClientTime();
 	newFX->life = gEngfuncs.pfnRandomFloat(0.7, 1);
-	newFX->guess_type = 2;
-	newFX->guess_frame = 0;
-	newFX->guess_scale = flScale;
+	newFX->type_guess = 2;
+	newFX->frame_guess = 0;
+	newFX->scale_guess = flScale;
 
 	fxcounter++;
 }
 
-void guess_FallingDripEffect(vec3_t origin, float flScale)
+void FallingDripEffect_guess(vec3_t origin, float flScale)
 {
 	if (CVAR_GET_FLOAT("r_weather") < 2)
 		return;
@@ -411,12 +411,12 @@ void guess_FallingDripEffect(vec3_t origin, float flScale)
 	newFX->alpha = 1.0;
 	newFX->birthTime = gEngfuncs.GetClientTime();
 	newFX->life = gEngfuncs.pfnRandomFloat(0.7, 1);
-	newFX->guess_type = 3;
-	newFX->guess_frame = 0;
-	newFX->guess_scale = flScale;
+	newFX->type_guess = 3;
+	newFX->frame_guess = 0;
+	newFX->scale_guess = flScale;
 	VectorCopy(origin, newFX->origin);
 	newFX->origin[2] += gEngfuncs.pfnRandomFloat(-1, 1);
-	newFX->guess_start = newFX->origin;
+	newFX->start_guess = newFX->origin;
 
 	fxcounter++;
 }

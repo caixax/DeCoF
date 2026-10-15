@@ -15,8 +15,8 @@ public:
 	void ActionSignal( int cmd );
 
 public:
-	Image	*guess_m_pBackgroundImage;		// 0xbc, gfx/vgui/language_settings.tga
-	ImagePanel	*guess_m_pBackground;		// 0xc0, parent of the language buttons
+	Image	*m_pBackgroundImage_guess;		// 0xbc, gfx/vgui/language_settings.tga
+	ImagePanel	*m_pBackground_guess;		// 0xc0, parent of the language buttons
 };
 
 class CLanguageHandler_Command : public ActionSignal

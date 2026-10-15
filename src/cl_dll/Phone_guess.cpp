@@ -7,7 +7,7 @@
 #include "cl_util.h"
 #include "parsemsg.h"
 #include "vgui_TeamFortressViewport.h"
-#include "guess_Phone.h"
+#include "Phone_guess.h"
 #include "..\game_shared\vgui_loadtga.h"
 
 CPhone::CPhone() : Panel( 0, 0, ScreenWidth, ScreenHeight )
@@ -24,20 +24,20 @@ CPhone::CPhone() : Panel( 0, 0, ScreenWidth, ScreenHeight )
 	pPanel->setBgColor( 0, 0, 0, 0 );
 	pPanel->setVisible( true );
 
-	guess_m_pBackgroundImage = vgui_LoadTGA( "gfx/vgui/backgroundtoall.tga" );
-	if ( guess_m_pBackgroundImage )
-		guess_m_pBackgroundImage->setColor( Color( 255, 255, 255, 1 ) );
+	m_pBackgroundImage_guess = vgui_LoadTGA( "gfx/vgui/backgroundtoall.tga" );
+	if ( m_pBackgroundImage_guess )
+		m_pBackgroundImage_guess->setColor( Color( 255, 255, 255, 1 ) );
 	else
 		gEngfuncs.Con_Printf( "Cannot load gfx/vgui/backgroundtoall.tga!\n" );
 
-	guess_m_pBackgroundImage->getSize( wide, tall );
+	m_pBackgroundImage_guess->getSize( wide, tall );
 	x = ScreenWidth / 2 - wide / 2;
 	y = ScreenHeight / 2 - tall / 2;
 
-	guess_m_pBackground = new ImagePanel( guess_m_pBackgroundImage );
-	guess_m_pBackground->setParent( this );
-	guess_m_pBackground->setPos( x, y );
-	guess_m_pBackground->setVisible( true );
+	m_pBackground_guess = new ImagePanel( m_pBackgroundImage_guess );
+	m_pBackground_guess->setParent( this );
+	m_pBackground_guess->setPos( x, y );
+	m_pBackground_guess->setVisible( true );
 
 	CSchemeManager *pSchemes = gViewPort->GetSchemeManager();
 	SchemeHandle_t hTitleScheme = pSchemes->getSchemeHandle( "Title Font" );
@@ -45,66 +45,66 @@ CPhone::CPhone() : Panel( 0, 0, ScreenWidth, ScreenHeight )
 	x = ScreenWidth / 2 - 131;
 	y = ScreenHeight / 2 - 281;
 
-	guess_m_pPhoneImage = vgui_LoadTGA( "gfx/vgui/640_phone.tga" );
-	if ( guess_m_pPhoneImage )
-		guess_m_pPhoneImage->setColor( Color( 255, 255, 255, 1 ) );
+	m_pPhoneImage_guess = vgui_LoadTGA( "gfx/vgui/640_phone.tga" );
+	if ( m_pPhoneImage_guess )
+		m_pPhoneImage_guess->setColor( Color( 255, 255, 255, 1 ) );
 	else
 		gEngfuncs.Con_Printf( "Cannot load gfx/vgui/640_phone.tga!\n" );
 
-	guess_m_pPhone = new ImagePanel( guess_m_pPhoneImage );
-	guess_m_pPhone->setParent( this );
-	guess_m_pPhone->setPos( x, y );
-	guess_m_pPhone->setVisible( true );
+	m_pPhone_guess = new ImagePanel( m_pPhoneImage_guess );
+	m_pPhone_guess->setParent( this );
+	m_pPhone_guess->setPos( x, y );
+	m_pPhone_guess->setVisible( true );
 
 	pButton = new CommandButton( "", 17, 306, 64, 26, true, true );
-	pButton->setParent( guess_m_pPhone );
+	pButton->setParent( m_pPhone_guess );
 	pButton->addActionSignal( new CPhoneHandler_Command( this, 1 ) );
 
 	pButton = new CommandButton( "", 97, 306, 64, 26, true, true );
-	pButton->setParent( guess_m_pPhone );
+	pButton->setParent( m_pPhone_guess );
 	pButton->addActionSignal( new CPhoneHandler_Command( this, 2 ) );
 
 	pButton = new CommandButton( "", 177, 306, 64, 26, true, true );
-	pButton->setParent( guess_m_pPhone );
+	pButton->setParent( m_pPhone_guess );
 	pButton->addActionSignal( new CPhoneHandler_Command( this, 3 ) );
 
 	pButton = new CommandButton( "", 17, 344, 64, 26, true, true );
-	pButton->setParent( guess_m_pPhone );
+	pButton->setParent( m_pPhone_guess );
 	pButton->addActionSignal( new CPhoneHandler_Command( this, 4 ) );
 
 	pButton = new CommandButton( "", 97, 344, 64, 26, true, true );
-	pButton->setParent( guess_m_pPhone );
+	pButton->setParent( m_pPhone_guess );
 	pButton->addActionSignal( new CPhoneHandler_Command( this, 5 ) );
 
 	pButton = new CommandButton( "", 177, 344, 64, 26, true, true );
-	pButton->setParent( guess_m_pPhone );
+	pButton->setParent( m_pPhone_guess );
 	pButton->addActionSignal( new CPhoneHandler_Command( this, 6 ) );
 
 	pButton = new CommandButton( "", 17, 382, 64, 26, true, true );
-	pButton->setParent( guess_m_pPhone );
+	pButton->setParent( m_pPhone_guess );
 	pButton->addActionSignal( new CPhoneHandler_Command( this, 7 ) );
 
 	pButton = new CommandButton( "", 97, 382, 64, 26, true, true );
-	pButton->setParent( guess_m_pPhone );
+	pButton->setParent( m_pPhone_guess );
 	pButton->addActionSignal( new CPhoneHandler_Command( this, 8 ) );
 
 	pButton = new CommandButton( "", 177, 382, 64, 26, true, true );
-	pButton->setParent( guess_m_pPhone );
+	pButton->setParent( m_pPhone_guess );
 	pButton->addActionSignal( new CPhoneHandler_Command( this, 9 ) );
 
 	pButton = new CommandButton( "", 98, 420, 64, 26, true, true );
-	pButton->setParent( guess_m_pPhone );
+	pButton->setParent( m_pPhone_guess );
 	pButton->addActionSignal( new CPhoneHandler_Command( this, 10 ) );
 
 	pButton = new CommandButton( "", 94, 220, 75, 75, true, true );
-	pButton->setParent( guess_m_pPhone );
+	pButton->setParent( m_pPhone_guess );
 	pButton->addActionSignal( new CPhoneHandler_Command( this, 11 ) );
 
-	guess_m_pNumberLabel = new Label( "", 65, 84, 131, 20 );
-	guess_m_pNumberLabel->setVisible( true );
-	guess_m_pNumberLabel->setParent( guess_m_pPhone );
-	guess_m_pNumberLabel->setFgColor( 255, 255, 255, 0 );
-	guess_m_pNumberLabel->setBgColor( 0, 0, 0, 0 );
+	m_pNumberLabel_guess = new Label( "", 65, 84, 131, 20 );
+	m_pNumberLabel_guess->setVisible( true );
+	m_pNumberLabel_guess->setParent( m_pPhone_guess );
+	m_pNumberLabel_guess->setFgColor( 255, 255, 255, 0 );
+	m_pNumberLabel_guess->setBgColor( 0, 0, 0, 0 );
 
 	setBgColor( 0, 0, 0, 255 );
 
@@ -116,42 +116,42 @@ void CPhone::ActionSignal( int cmd )
 	switch ( cmd )
 	{
 	case 1:
-		guess_PressDigit( 1 );
+		PressDigit_guess( 1 );
 		break;
 	case 2:
-		guess_PressDigit( 2 );
+		PressDigit_guess( 2 );
 		break;
 	case 3:
-		guess_PressDigit( 3 );
+		PressDigit_guess( 3 );
 		break;
 	case 4:
-		guess_PressDigit( 4 );
+		PressDigit_guess( 4 );
 		break;
 	case 5:
-		guess_PressDigit( 5 );
+		PressDigit_guess( 5 );
 		break;
 	case 6:
-		guess_PressDigit( 6 );
+		PressDigit_guess( 6 );
 		break;
 	case 7:
-		guess_PressDigit( 7 );
+		PressDigit_guess( 7 );
 		break;
 	case 8:
-		guess_PressDigit( 8 );
+		PressDigit_guess( 8 );
 		break;
 	case 9:
-		guess_PressDigit( 9 );
+		PressDigit_guess( 9 );
 		break;
 	case 10:
-		guess_PressDigit( 0 );
+		PressDigit_guess( 0 );
 		break;
 	case 11:
-		guess_Dial();
+		Dial_guess();
 		break;
 	}
 }
 
-void CPhone::guess_PressDigit( int digit )
+void CPhone::PressDigit_guess( int digit )
 {
 	char szDigit[4];
 
@@ -191,27 +191,27 @@ void CPhone::guess_PressDigit( int digit )
 		break;
 	}
 
-	strcat( guess_m_szNumber, szDigit );
+	strcat( m_szNumber_guess, szDigit );
 
-	if ( strlen( guess_m_szNumber ) >= 8 )
-		guess_Dial();
+	if ( strlen( m_szNumber_guess ) >= 8 )
+		Dial_guess();
 
-	guess_m_pNumberLabel->setText( guess_m_szNumber, strlen( guess_m_szNumber ) );
-	guess_m_pNumberLabel->setContentAlignment( Label::a_center );
+	m_pNumberLabel_guess->setText( m_szNumber_guess, strlen( m_szNumber_guess ) );
+	m_pNumberLabel_guess->setContentAlignment( Label::a_center );
 }
 
-void CPhone::guess_Clear()
+void CPhone::Clear_guess()
 {
-	strncpy( guess_m_szNumber, "", 16 );
+	strncpy( m_szNumber_guess, "", 16 );
 
-	guess_m_pNumberLabel->setText( guess_m_szNumber, strlen( guess_m_szNumber ) );
-	guess_m_pNumberLabel->setContentAlignment( Label::a_center );
+	m_pNumberLabel_guess->setText( m_szNumber_guess, strlen( m_szNumber_guess ) );
+	m_pNumberLabel_guess->setContentAlignment( Label::a_center );
 }
 
 void CPhone::Initialize()
 {
 	setVisible( false );
-	guess_Clear();
+	Clear_guess();
 }
 
 int CPhone::KeyInput( int down, int keynum, const char *pszCurrentBinding )
@@ -222,17 +222,17 @@ int CPhone::KeyInput( int down, int keynum, const char *pszCurrentBinding )
 	return 0;
 }
 
-int guess_MsgPhone( const char *pszName, int iSize, void *pbuf )
+int MsgPhone_guess( const char *pszName, int iSize, void *pbuf )
 {
 	BEGIN_READ( pbuf, iSize );
 
-	if ( gViewPort->guess_m_pPhone )
+	if ( gViewPort->m_pPhone_guess )
 	{
 		int iOn = READ_BYTE();
 
-		if ( !gViewPort->guess_m_pPhone->isVisible() && iOn )
+		if ( !gViewPort->m_pPhone_guess->isVisible() && iOn )
 		{
-			gViewPort->guess_m_pPhone->setVisible( true );
+			gViewPort->m_pPhone_guess->setVisible( true );
 			gViewPort->UpdateCursorState();
 		}
 	}
@@ -240,15 +240,15 @@ int guess_MsgPhone( const char *pszName, int iSize, void *pbuf )
 	return 1;
 }
 
-void CPhone::guess_Dial()
+void CPhone::Dial_guess()
 {
 	char szCommand[128];
 
-	sprintf( szCommand, "phonenumber %s", guess_m_szNumber );
+	sprintf( szCommand, "phonenumber %s", m_szNumber_guess );
 	gEngfuncs.pfnServerCmd( szCommand );
 
-	guess_Clear();
-	strncpy( guess_m_szNumber, "", 16 );
+	Clear_guess();
+	strncpy( m_szNumber_guess, "", 16 );
 
 	gEngfuncs.pfnPlaySoundByName( "phone/tone_send.wav", 1 );
 
@@ -259,7 +259,7 @@ void CPhone::guess_Dial()
 	}
 }
 
-void guess_PhoneInit()
+void PhoneInit_guess()
 {
-	gEngfuncs.pfnHookUserMsg( "Phone", guess_MsgPhone );
+	gEngfuncs.pfnHookUserMsg( "Phone", MsgPhone_guess );
 }

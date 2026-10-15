@@ -97,7 +97,7 @@ int CHudParticle::MsgFunc_KillWpnPart(const char *pszName, int iSize, void *pbuf
 {
 	BEGIN_READ( pbuf, iSize );
 	bool bNow = READ_BYTE() != 0;
-	g_pParticleSystems.guess_KillViewModelSystems( bNow );
+	g_pParticleSystems.KillViewModelSystems_guess( bNow );
 	return 1;
 }
 

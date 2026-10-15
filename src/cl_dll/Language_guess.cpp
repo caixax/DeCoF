@@ -6,7 +6,7 @@
 #include "hud.h"
 #include "cl_util.h"
 #include "vgui_TeamFortressViewport.h"
-#include "guess_Language.h"
+#include "Language_guess.h"
 #include "..\game_shared\vgui_loadtga.h"
 #include "event_api.h"
 
@@ -15,46 +15,46 @@ CLanguage::CLanguage() : Panel( 0, 0, ScreenWidth, ScreenHeight )
 	int x, y;
 	CommandButton *pButton;
 
-	guess_m_pBackgroundImage = vgui_LoadTGA( "gfx/vgui/language_settings.tga" );
-	if ( guess_m_pBackgroundImage )
-		guess_m_pBackgroundImage->setColor( Color( 255, 255, 255, 1 ) );
+	m_pBackgroundImage_guess = vgui_LoadTGA( "gfx/vgui/language_settings.tga" );
+	if ( m_pBackgroundImage_guess )
+		m_pBackgroundImage_guess->setColor( Color( 255, 255, 255, 1 ) );
 	else
 		gEngfuncs.Con_Printf( "Cannot load gfx/vgui/language_settings.tga!\n" );
 
 	x = ScreenWidth / 2 - 320;
 	y = ScreenHeight / 2 - 240;
 
-	guess_m_pBackground = new ImagePanel( guess_m_pBackgroundImage );
-	guess_m_pBackground->setParent( this );
-	guess_m_pBackground->setPos( x, y );
-	guess_m_pBackground->setVisible( true );
+	m_pBackground_guess = new ImagePanel( m_pBackgroundImage_guess );
+	m_pBackground_guess->setParent( this );
+	m_pBackground_guess->setPos( x, y );
+	m_pBackground_guess->setVisible( true );
 
 	pButton = new CommandButton( "", 83, 64, 158, 117, true, true );
-	pButton->setParent( guess_m_pBackground );
+	pButton->setParent( m_pBackground_guess );
 	pButton->addActionSignal( new CLanguageHandler_Command( this, 1 ) );
 
 	pButton = new CommandButton( "", 241, 64, 158, 117, true, true );
-	pButton->setParent( guess_m_pBackground );
+	pButton->setParent( m_pBackground_guess );
 	pButton->addActionSignal( new CLanguageHandler_Command( this, 7 ) );
 
 	pButton = new CommandButton( "", 399, 64, 158, 117, true, true );
-	pButton->setParent( guess_m_pBackground );
+	pButton->setParent( m_pBackground_guess );
 	pButton->addActionSignal( new CLanguageHandler_Command( this, 5 ) );
 
 	pButton = new CommandButton( "", 83, 181, 158, 117, true, true );
-	pButton->setParent( guess_m_pBackground );
+	pButton->setParent( m_pBackground_guess );
 	pButton->addActionSignal( new CLanguageHandler_Command( this, 2 ) );
 
 	pButton = new CommandButton( "", 241, 181, 158, 117, true, true );
-	pButton->setParent( guess_m_pBackground );
+	pButton->setParent( m_pBackground_guess );
 	pButton->addActionSignal( new CLanguageHandler_Command( this, 3 ) );
 
 	pButton = new CommandButton( "", 399, 181, 158, 117, true, true );
-	pButton->setParent( guess_m_pBackground );
+	pButton->setParent( m_pBackground_guess );
 	pButton->addActionSignal( new CLanguageHandler_Command( this, 4 ) );
 
 	pButton = new CommandButton( "", 83, 298, 158, 117, true, true );
-	pButton->setParent( guess_m_pBackground );
+	pButton->setParent( m_pBackground_guess );
 	pButton->addActionSignal( new CLanguageHandler_Command( this, 6 ) );
 
 	setBgColor( 0, 0, 0, 255 );

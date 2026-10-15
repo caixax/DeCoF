@@ -21,18 +21,18 @@ protected:
 	virtual void solve();
 
 public:
-	float	guess_m_flNextKeyTime;		// 0xbc
-	int		guess_m_iLoggedOn;			// 0xc0, from the Computer message
-	int		guess_m_iUserLength;		// 0xc4, typing sound when the length changes
-	int		guess_m_iPasswordLength;	// 0xc8
-	Image	*guess_m_pBackgroundImage;	// 0xcc, gfx/vgui/backgroundtoall.tga
-	ImagePanel	*guess_m_pBackground;	// 0xd0
-	TextEntry	*guess_m_pUser;			// 0xd4, "Enter a username..."
-	TextEntry	*guess_m_pPassword;		// 0xd8, "Enter a password..."
-	Image	*guess_m_pScreenImage;		// 0xdc, gfx/vgui/puzzle/computer/computer_logon.tga
-	ImagePanel	*guess_m_pScreen;		// 0xe0, parent of the buttons and the text entries
-	TextPanel	*guess_m_pText;			// 0xe4, "Jill - %s! - David"
-	int		guess_m_iUnusedE8[4];		// 0xe8, never used in 1.6a (sizeof 0xf8 from the new in the viewport)
+	float	m_flNextKeyTime_guess;		// 0xbc
+	int		m_iLoggedOn_guess;			// 0xc0, from the Computer message
+	int		m_iUserLength_guess;		// 0xc4, typing sound when the length changes
+	int		m_iPasswordLength_guess;	// 0xc8
+	Image	*m_pBackgroundImage_guess;	// 0xcc, gfx/vgui/backgroundtoall.tga
+	ImagePanel	*m_pBackground_guess;	// 0xd0
+	TextEntry	*m_pUser_guess;			// 0xd4, "Enter a username..."
+	TextEntry	*m_pPassword_guess;		// 0xd8, "Enter a password..."
+	Image	*m_pScreenImage_guess;		// 0xdc, gfx/vgui/puzzle/computer/computer_logon.tga
+	ImagePanel	*m_pScreen_guess;		// 0xe0, parent of the buttons and the text entries
+	TextPanel	*m_pText_guess;			// 0xe4, "Jill - %s! - David"
+	int		m_iUnusedE8_guess[4];		// 0xe8, never used in 1.6a (sizeof 0xf8 from the new in the viewport)
 };
 
 class CComputerHandler_Command : public ActionSignal
@@ -54,6 +54,6 @@ public:
 	}
 };
 
-void guess_ComputerInit();
+void ComputerInit_guess();
 
 #endif // _COMPUTER_H

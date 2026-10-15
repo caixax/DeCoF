@@ -6,31 +6,31 @@
 
 DECLARE_HANDLE( HPBUFFERARB );
 
-class guess_CPBuffer
+class CPBuffer_guess
 {
 public:
-	guess_CPBuffer();
-	~guess_CPBuffer();
+	CPBuffer_guess();
+	~CPBuffer_guess();
 
-	void guess_BindTexture( void );
-	void guess_Create( void );
-	void guess_MakeCurrent( void );
-	void guess_Prepare( void );
-	void guess_ReleaseTexture( void );
-	void guess_Shutdown( void );
-	void guess_SwitchToWindow( void );
+	void BindTexture_guess( void );
+	void Create_guess( void );
+	void MakeCurrent_guess( void );
+	void Prepare_guess( void );
+	void ReleaseTexture_guess( void );
+	void Shutdown_guess( void );
+	void SwitchToWindow_guess( void );
 
-	bool	guess_m_bValid;
-	int		guess_m_iHeight;
-	int		guess_m_iWidth;
-	GLuint	guess_m_iTexture;
-	HDC		guess_m_hWindowDC;
-	HDC		guess_m_hDC;
-	HGLRC	guess_m_hRC;
-	HPBUFFERARB guess_m_hPBuffer;
-	HGLRC	guess_m_hWindowRC;
+	bool	m_bValid_guess;
+	int		m_iHeight_guess;
+	int		m_iWidth_guess;
+	GLuint	m_iTexture_guess;
+	HDC		m_hWindowDC_guess;
+	HDC		m_hDC_guess;
+	HGLRC	m_hRC_guess;
+	HPBUFFERARB m_hPBuffer_guess;
+	HGLRC	m_hWindowRC_guess;
 };
 
-extern guess_CPBuffer guess_g_PBuffer;
+extern CPBuffer_guess g_PBuffer_guess;
 
 #endif // GUESS_PBUFFER_H

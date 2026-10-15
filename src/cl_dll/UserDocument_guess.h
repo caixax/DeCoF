@@ -15,8 +15,8 @@ public:
 	void ActionSignal( int cmd );
 	int KeyInput( int down, int keynum, const char *pszCurrentBinding );
 
-	const char *guess_GetPassword( int index );
-	const char *guess_GetUsername( int index );
+	const char *GetPassword_guess( int index );
+	const char *GetUsername_guess( int index );
 
 	virtual void setVisible( bool state )
 	{
@@ -32,15 +32,15 @@ protected:
 	virtual void paint();
 
 public:
-	CommandButton	*guess_m_pCloseButton;	// 0xd4, command 1
-	CImageLabel	*guess_m_pCancelLabel;		// 0xd8, notecancel
-	Font	*guess_m_pFont;					// 0xdc, "credits" scheme font
-	Image	*guess_m_pDocumentImage;		// 0xe0, gfx/vgui/640_pass1.tga
-	ImagePanel	*guess_m_pDocument;			// 0xe4, gets 640_user%i.tga or 640_pass%i.tga
-	Image	*guess_m_pBackgroundImage;		// 0xe8, gfx/vgui/backgroundtoall.tga
-	ImagePanel	*guess_m_pBackground;		// 0xec
-	int		guess_m_iType;					// 0xf0, first byte of the UserDoc message (1 user name, 2 password)
-	int		guess_m_iIndex;					// 0xf4, second byte of the UserDoc message (1 to 8)
+	CommandButton	*m_pCloseButton_guess;	// 0xd4, command 1
+	CImageLabel	*m_pCancelLabel_guess;		// 0xd8, notecancel
+	Font	*m_pFont_guess;					// 0xdc, "credits" scheme font
+	Image	*m_pDocumentImage_guess;		// 0xe0, gfx/vgui/640_pass1.tga
+	ImagePanel	*m_pDocument_guess;			// 0xe4, gets 640_user%i.tga or 640_pass%i.tga
+	Image	*m_pBackgroundImage_guess;		// 0xe8, gfx/vgui/backgroundtoall.tga
+	ImagePanel	*m_pBackground_guess;		// 0xec
+	int		m_iType_guess;					// 0xf0, first byte of the UserDoc message (1 user name, 2 password)
+	int		m_iIndex_guess;					// 0xf4, second byte of the UserDoc message (1 to 8)
 };
 
 class CUserDocumentHandler_Command : public ActionSignal
@@ -62,6 +62,6 @@ public:
 	}
 };
 
-void guess_UserDocInit();
+void UserDocInit_guess();
 
 #endif // _USERDOCUMENT_H

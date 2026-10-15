@@ -1,11 +1,11 @@
 ?Initialize@CSaveLoad@@QAEXXZ
-?guess_DirectoryExists@@YA_NPBD@Z
-?guess_UpdateSlots@CSaveLoad@@QAEXXZ
-?guess_SaveLoadInit@@YAXXZ
+?DirectoryExists_guess@@YA_NPBD@Z
+?UpdateSlots_guess@CSaveLoad@@QAEXXZ
+?SaveLoadInit_guess@@YAXXZ
 ?actionPerformed@CSaveLoadHandler_Command@@UAEXPAVPanel@vgui@@@Z
 ??0CSaveLoad@@QAE@XZ
 ?ActionSignal@CSaveLoad@@QAEXH@Z
-?guess_MsgSaveLoad@@YAHPBDHPAX@Z
-?guess_ReadSlot@CSaveLoad@@QAEXH@Z
-?guess_WriteSaveInfo@CSaveLoad@@QAEXPBD@Z
+?MsgSaveLoad_guess@@YAHPBDHPAX@Z
+?ReadSlot_guess@CSaveLoad@@QAEXH@Z
+?WriteSaveInfo_guess@CSaveLoad@@QAEXPBD@Z
 ?solve@CSaveLoad@@MAEXXZ

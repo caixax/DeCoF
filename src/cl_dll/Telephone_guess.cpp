@@ -7,7 +7,7 @@
 #include "cl_util.h"
 #include "parsemsg.h"
 #include "vgui_TeamFortressViewport.h"
-#include "guess_Telephone.h"
+#include "Telephone_guess.h"
 #include "..\game_shared\vgui_loadtga.h"
 #include "event_api.h"
 
@@ -25,82 +25,82 @@ CTelephone::CTelephone() : Panel( 0, 0, ScreenWidth, ScreenHeight )
 	pPanel->setBgColor( 0, 0, 0, 0 );
 	pPanel->setVisible( true );
 
-	guess_m_pBackgroundImage = vgui_LoadTGA( "gfx/vgui/backgroundtoall.tga" );
-	if ( guess_m_pBackgroundImage )
-		guess_m_pBackgroundImage->setColor( Color( 255, 255, 255, 1 ) );
+	m_pBackgroundImage_guess = vgui_LoadTGA( "gfx/vgui/backgroundtoall.tga" );
+	if ( m_pBackgroundImage_guess )
+		m_pBackgroundImage_guess->setColor( Color( 255, 255, 255, 1 ) );
 	else
 		gEngfuncs.Con_Printf( "Cannot load gfx/vgui/backgroundtoall.tga!\n" );
 
-	guess_m_pBackgroundImage->getSize( wide, tall );
+	m_pBackgroundImage_guess->getSize( wide, tall );
 	x = ScreenWidth / 2 - wide / 2;
 	y = ScreenHeight / 2 - tall / 2;
 
-	guess_m_pBackground = new ImagePanel( guess_m_pBackgroundImage );
-	guess_m_pBackground->setParent( this );
-	guess_m_pBackground->setPos( x, y );
-	guess_m_pBackground->setVisible( true );
+	m_pBackground_guess = new ImagePanel( m_pBackgroundImage_guess );
+	m_pBackground_guess->setParent( this );
+	m_pBackground_guess->setPos( x, y );
+	m_pBackground_guess->setVisible( true );
 
-	guess_m_pTelephoneImage = vgui_LoadTGA( "gfx/vgui/puzzle/telephone_vgui.tga" );
-	if ( guess_m_pTelephoneImage )
-		guess_m_pTelephoneImage->setColor( Color( 255, 255, 255, 1 ) );
+	m_pTelephoneImage_guess = vgui_LoadTGA( "gfx/vgui/puzzle/telephone_vgui.tga" );
+	if ( m_pTelephoneImage_guess )
+		m_pTelephoneImage_guess->setColor( Color( 255, 255, 255, 1 ) );
 	else
 		gEngfuncs.Con_Printf( "Cannot load gfx/vgui/puzzle/telephone_vgui.tga!\n" );
 
-	guess_m_pTelephoneImage->getSize( wide, tall );
+	m_pTelephoneImage_guess->getSize( wide, tall );
 	x = ScreenWidth / 2 - wide / 2;
 	y = ScreenHeight / 2 - tall / 2;
 
-	guess_m_pTelephone = new ImagePanel( guess_m_pTelephoneImage );
-	guess_m_pTelephone->setParent( this );
-	guess_m_pTelephone->setPos( x, y );
-	guess_m_pTelephone->setVisible( true );
+	m_pTelephone_guess = new ImagePanel( m_pTelephoneImage_guess );
+	m_pTelephone_guess->setParent( this );
+	m_pTelephone_guess->setPos( x, y );
+	m_pTelephone_guess->setVisible( true );
 
 	pButton = new CommandButton( "", 0, 0, 20, 20, true, true );
-	pButton->setParent( guess_m_pTelephone );
+	pButton->setParent( m_pTelephone_guess );
 	pButton->addActionSignal( new CTelephoneHandler_Command( this, 12 ) );
 
 	pButton = new CommandButton( "", 140, 144, 30, 30, true, true );
-	pButton->setParent( guess_m_pTelephone );
+	pButton->setParent( m_pTelephone_guess );
 	pButton->addActionSignal( new CTelephoneHandler_Command( this, 1 ) );
 
 	pButton = new CommandButton( "", 175, 144, 30, 30, true, true );
-	pButton->setParent( guess_m_pTelephone );
+	pButton->setParent( m_pTelephone_guess );
 	pButton->addActionSignal( new CTelephoneHandler_Command( this, 2 ) );
 
 	pButton = new CommandButton( "", 211, 144, 30, 30, true, true );
-	pButton->setParent( guess_m_pTelephone );
+	pButton->setParent( m_pTelephone_guess );
 	pButton->addActionSignal( new CTelephoneHandler_Command( this, 3 ) );
 
 	pButton = new CommandButton( "", 139, 178, 30, 30, true, true );
-	pButton->setParent( guess_m_pTelephone );
+	pButton->setParent( m_pTelephone_guess );
 	pButton->addActionSignal( new CTelephoneHandler_Command( this, 4 ) );
 
 	pButton = new CommandButton( "", 174, 178, 30, 30, true, true );
-	pButton->setParent( guess_m_pTelephone );
+	pButton->setParent( m_pTelephone_guess );
 	pButton->addActionSignal( new CTelephoneHandler_Command( this, 5 ) );
 
 	pButton = new CommandButton( "", 210, 178, 30, 30, true, true );
-	pButton->setParent( guess_m_pTelephone );
+	pButton->setParent( m_pTelephone_guess );
 	pButton->addActionSignal( new CTelephoneHandler_Command( this, 6 ) );
 
 	pButton = new CommandButton( "", 137, 213, 30, 30, true, true );
-	pButton->setParent( guess_m_pTelephone );
+	pButton->setParent( m_pTelephone_guess );
 	pButton->addActionSignal( new CTelephoneHandler_Command( this, 7 ) );
 
 	pButton = new CommandButton( "", 173, 213, 30, 30, true, true );
-	pButton->setParent( guess_m_pTelephone );
+	pButton->setParent( m_pTelephone_guess );
 	pButton->addActionSignal( new CTelephoneHandler_Command( this, 8 ) );
 
 	pButton = new CommandButton( "", 210, 213, 30, 30, true, true );
-	pButton->setParent( guess_m_pTelephone );
+	pButton->setParent( m_pTelephone_guess );
 	pButton->addActionSignal( new CTelephoneHandler_Command( this, 9 ) );
 
 	pButton = new CommandButton( "", 173, 249, 30, 30, true, true );
-	pButton->setParent( guess_m_pTelephone );
+	pButton->setParent( m_pTelephone_guess );
 	pButton->addActionSignal( new CTelephoneHandler_Command( this, 10 ) );
 
 	pButton = new CommandButton( "", 251, 288, 57, 27, true, true );
-	pButton->setParent( guess_m_pTelephone );
+	pButton->setParent( m_pTelephone_guess );
 	pButton->addActionSignal( new CTelephoneHandler_Command( this, 11 ) );
 
 	setBgColor( 0, 0, 0, 0 );
@@ -113,40 +113,40 @@ void CTelephone::ActionSignal( int cmd )
 	switch ( cmd )
 	{
 	case 1:
-		guess_PressDigit( 1 );
+		PressDigit_guess( 1 );
 		break;
 	case 2:
-		guess_PressDigit( 2 );
+		PressDigit_guess( 2 );
 		break;
 	case 3:
-		guess_PressDigit( 3 );
+		PressDigit_guess( 3 );
 		break;
 	case 4:
-		guess_PressDigit( 4 );
+		PressDigit_guess( 4 );
 		break;
 	case 5:
-		guess_PressDigit( 5 );
+		PressDigit_guess( 5 );
 		break;
 	case 6:
-		guess_PressDigit( 6 );
+		PressDigit_guess( 6 );
 		break;
 	case 7:
-		guess_PressDigit( 7 );
+		PressDigit_guess( 7 );
 		break;
 	case 8:
-		guess_PressDigit( 8 );
+		PressDigit_guess( 8 );
 		break;
 	case 9:
-		guess_PressDigit( 9 );
+		PressDigit_guess( 9 );
 		break;
 	case 10:
-		guess_PressDigit( 0 );
+		PressDigit_guess( 0 );
 		break;
 	case 11:
-		guess_Dial();
+		Dial_guess();
 		break;
 	case 12:
-		if ( !guess_m_bLocked )
+		if ( !m_bLocked_guess )
 		{
 			setVisible( false );
 			gViewPort->UpdateCursorState();
@@ -156,32 +156,32 @@ void CTelephone::ActionSignal( int cmd )
 	}
 }
 
-void CTelephone::guess_PressDigit( int digit )
+void CTelephone::PressDigit_guess( int digit )
 {
 	char szDigit[4];
 
-	if ( guess_m_bLocked )
+	if ( m_bLocked_guess )
 		return;
 
-	if ( strlen( guess_m_szDialed ) < 15 )
+	if ( strlen( m_szDialed_guess ) < 15 )
 	{
 		itoa( digit, szDigit, 10 );
-		strcat( guess_m_szDialed, szDigit );
+		strcat( m_szDialed_guess, szDigit );
 		gEngfuncs.pfnPlaySoundByName( "phone/telephone_button_press.wav", 1 );
 	}
 }
 
-void CTelephone::guess_Dial()
+void CTelephone::Dial_guess()
 {
 	cl_entity_t *pPlayer;
 
-	if ( strlen( guess_m_szDialed ) >= 1 && !guess_m_bLocked )
+	if ( strlen( m_szDialed_guess ) >= 1 && !m_bLocked_guess )
 	{
 		pPlayer = gEngfuncs.GetLocalPlayer();
 
 		gEngfuncs.pfnPlaySoundByName( "phone/telephone_button_press.wav", 1 );
 
-		if ( !strcmp( guess_m_szNumber, guess_m_szDialed ) )
+		if ( !strcmp( m_szNumber_guess, m_szDialed_guess ) )
 			gEngfuncs.pfnServerCmd( "telephoneright" );
 		else
 			gEngfuncs.pfnServerCmd( "telephonewrong" );
@@ -189,39 +189,39 @@ void CTelephone::guess_Dial()
 		if ( pPlayer )
 			gEngfuncs.pEventAPI->EV_StopSound( -1, CHAN_ITEM, "phone/telephone_dial_tone.wav" );
 
-		strncpy( guess_m_szDialed, "", 16 );
+		strncpy( m_szDialed_guess, "", 16 );
 	}
 }
 
 void CTelephone::Initialize()
 {
-	strcpy( guess_m_szNumber, "19357185" );
-	strncpy( guess_m_szDialed, "", 16 );
+	strcpy( m_szNumber_guess, "19357185" );
+	strncpy( m_szDialed_guess, "", 16 );
 	setVisible( false );
 }
 
-int guess_MsgTelephone( const char *pszName, int iSize, void *pbuf )
+int MsgTelephone_guess( const char *pszName, int iSize, void *pbuf )
 {
 	BEGIN_READ( pbuf, iSize );
 	int iOn = READ_BYTE();
 
-	if ( gViewPort->guess_m_pTelephone )
+	if ( gViewPort->m_pTelephone_guess )
 	{
-		gViewPort->guess_m_pTelephone->guess_m_bLocked = false;
+		gViewPort->m_pTelephone_guess->m_bLocked_guess = false;
 
 		if ( iOn > 0 )
 		{
 			if ( iOn == 1 )
 			{
-				if ( !gViewPort->guess_m_pTelephone->isVisible() )
+				if ( !gViewPort->m_pTelephone_guess->isVisible() )
 				{
-					gViewPort->guess_m_pTelephone->setVisible( true );
+					gViewPort->m_pTelephone_guess->setVisible( true );
 					gEngfuncs.pfnPlaySoundByName( "phone/telephone_receiver_up.wav", 1 );
-					gViewPort->guess_m_pTelephone->guess_m_flFade = 255;
+					gViewPort->m_pTelephone_guess->m_flFade_guess = 255;
 				}
 
 				gViewPort->UpdateCursorState();
-				strcpy( gViewPort->guess_m_pTelephone->guess_m_szNumber, READ_STRING() );
+				strcpy( gViewPort->m_pTelephone_guess->m_szNumber_guess, READ_STRING() );
 				return 1;
 			}
 			else if ( iOn == 2 )
@@ -237,19 +237,19 @@ int guess_MsgTelephone( const char *pszName, int iSize, void *pbuf )
 			}
 			else if ( iOn == 3 )
 			{
-				gViewPort->guess_m_pTelephone->guess_m_bLocked = true;
+				gViewPort->m_pTelephone_guess->m_bLocked_guess = true;
 			}
 		}
 		else
 		{
-			if ( gViewPort->guess_m_pTelephone->isVisible() == true )
+			if ( gViewPort->m_pTelephone_guess->isVisible() == true )
 			{
-				gViewPort->guess_m_pTelephone->setVisible( false );
+				gViewPort->m_pTelephone_guess->setVisible( false );
 				gEngfuncs.pfnPlaySoundByName( "phone/telephone_receiver_down.wav", 1 );
 			}
 
 			gViewPort->UpdateCursorState();
-			strcpy( gViewPort->guess_m_pTelephone->guess_m_szNumber, READ_STRING() );
+			strcpy( gViewPort->m_pTelephone_guess->m_szNumber_guess, READ_STRING() );
 			return 1;
 		}
 	}
@@ -257,22 +257,22 @@ int guess_MsgTelephone( const char *pszName, int iSize, void *pbuf )
 	return 1;
 }
 
-void guess_TelephoneInit()
+void TelephoneInit_guess()
 {
-	gEngfuncs.pfnHookUserMsg( "Telephone", guess_MsgTelephone );
+	gEngfuncs.pfnHookUserMsg( "Telephone", MsgTelephone_guess );
 }
 
 void CTelephone::paint()
 {
-	if ( guess_m_flFade > 0 )
-		guess_m_flFade -= gHUD.m_flTimeDelta * 700;
+	if ( m_flFade_guess > 0 )
+		m_flFade_guess -= gHUD.m_flTimeDelta * 700;
 
-	if ( guess_m_flFade < 0 )
-		guess_m_flFade = 0;
+	if ( m_flFade_guess < 0 )
+		m_flFade_guess = 0;
 
-	guess_m_pTelephoneImage->setColor( Color( 255, 255, 255, guess_m_flFade ) );
+	m_pTelephoneImage_guess->setColor( Color( 255, 255, 255, m_flFade_guess ) );
 
-	int alpha = guess_m_flFade;
+	int alpha = m_flFade_guess;
 	if ( alpha < 128 )
 		alpha = 128;
 
@@ -283,7 +283,7 @@ void CTelephone::setVisible( bool state )
 {
 	cl_entity_t *pPlayer = gEngfuncs.GetLocalPlayer();
 
-	strncpy( guess_m_szDialed, "", 16 );
+	strncpy( m_szDialed_guess, "", 16 );
 
 	if ( state )
 	{

@@ -22,11 +22,11 @@ protected:
 	virtual void paint();
 
 public:
-	Image	*guess_m_pBackgroundImage;	// 0xbc, gfx/vgui/backgroundtoall.tga
-	ImagePanel	*guess_m_pBackground;	// 0xc0
-	ImagePanel	*guess_m_pImage;		// 0xc4, the picture of the Board message
-	Label	*guess_m_pLabel;			// 0xc8, repeats the message line of the HUD panel
-	Font	*guess_m_pFont;				// 0xcc, scheme "credits"
+	Image	*m_pBackgroundImage_guess;	// 0xbc, gfx/vgui/backgroundtoall.tga
+	ImagePanel	*m_pBackground_guess;	// 0xc0
+	ImagePanel	*m_pImage_guess;		// 0xc4, the picture of the Board message
+	Label	*m_pLabel_guess;			// 0xc8, repeats the message line of the HUD panel
+	Font	*m_pFont_guess;				// 0xcc, scheme "credits"
 };
 
 class CBillboardHandler_Command : public ActionSignal
@@ -48,6 +48,6 @@ public:
 	}
 };
 
-void guess_BoardInit();
+void BoardInit_guess();
 
 #endif // _VGUIBILLBOARD_H

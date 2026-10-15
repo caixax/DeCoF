@@ -13405,7 +13405,7 @@ class CCoFCustomisePlayerModels : public CPointEntity
 	int player4model;
 	int sleevetexture;
 	int fingerstexture;
-	int guess_glovestexture;
+	int glovestexture_guess;
 };
 
 void CCoFCustomisePlayerModels::KeyValue( KeyValueData *pkvd )
@@ -13442,7 +13442,7 @@ void CCoFCustomisePlayerModels::KeyValue( KeyValueData *pkvd )
 	}
 	else if ( FStrEq( pkvd->szKeyName, "gloves" ) )
 	{
-		guess_glovestexture = ALLOC_STRING( pkvd->szValue );
+		glovestexture_guess = ALLOC_STRING( pkvd->szValue );
 		pkvd->fHandled = TRUE;
 	}
 	else
@@ -13479,8 +13479,8 @@ void CCoFCustomisePlayerModels::Use( CBaseEntity *pActivator, CBaseEntity *pCall
 		if ( fingerstexture )
 			g_pWorld->m_sCustomFingers = fingerstexture;
 
-		if ( guess_glovestexture )
-			g_pWorld->guess_m_sCustomGloves = guess_glovestexture;
+		if ( glovestexture_guess )
+			g_pWorld->m_sCustomGloves_guess = glovestexture_guess;
 
 
 		for ( int i = 1; i <= gpGlobals->maxClients; i++ )
@@ -13503,10 +13503,10 @@ void CCoFCustomisePlayerModels::Use( CBaseEntity *pActivator, CBaseEntity *pCall
 					MESSAGE_END();
 				}
 
-				if ( guess_glovestexture )
+				if ( glovestexture_guess )
 				{
 					MESSAGE_BEGIN( MSG_ONE, gmsgCustomGlv, NULL, plr->pev );
-						WRITE_STRING( STRING(g_pWorld->guess_m_sCustomGloves) );
+						WRITE_STRING( STRING(g_pWorld->m_sCustomGloves_guess) );
 					MESSAGE_END();
 				}
 			}

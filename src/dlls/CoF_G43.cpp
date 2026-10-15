@@ -200,7 +200,7 @@ void CG43::SuicideShot( void )
 		m_pPlayer->pev->health = 0;
 		m_pPlayer->Killed( m_pPlayer->pev, GIB_NEVER );
 
-		guess_UTIL_PlayWeaponSound( "weapons_new/g43/g43_fire.wav", 0, true, m_pPlayer->EarPosition(), m_pPlayer, true );
+		UTIL_PlayWeaponSound_guess( "weapons_new/g43/g43_fire.wav", 0, true, m_pPlayer->EarPosition(), m_pPlayer, true );
 		return;
 	}
 
@@ -533,13 +533,13 @@ void CG43::PrimaryAttack( void )
 	m_flCurrentKick += m_flKickPerShot;
 	m_flNextKickReductionTime = gpGlobals->time + 0.95;
 
-	vecDir = m_pPlayer->FireBulletsPlayer( 1, vecShellSrc, vecAiming, m_AccuracyVector, 8192, BULLET_PLAYER_357, 2, gSkillData.guess_DmgG43, m_pPlayer->pev, m_pPlayer->random_seed );
+	vecDir = m_pPlayer->FireBulletsPlayer( 1, vecShellSrc, vecAiming, m_AccuracyVector, 8192, BULLET_PLAYER_357, 2, gSkillData.DmgG43_guess, m_pPlayer->pev, m_pPlayer->random_seed );
 
 	m_flTimeWeaponIdle = gpGlobals->time + 1;
 
 	m_pPlayer->ViewKnock( 6.0 );
 
-	guess_UTIL_PlayWeaponSound( "weapons_new/g43/g43_fire.wav", 0, true, m_pPlayer->EarPosition(), m_pPlayer, true );
+	UTIL_PlayWeaponSound_guess( "weapons_new/g43/g43_fire.wav", 0, true, m_pPlayer->EarPosition(), m_pPlayer, true );
 
 	m_pPlayer->m_iExtraSoundTypes = bits_SOUND_COMBAT;
 	m_pPlayer->m_flStopExtraSoundTime = gpGlobals->time + 0.2;

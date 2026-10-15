@@ -19,9 +19,9 @@ int CNeffect::Init( void )
 
 int CNeffect::VidInit( void )
 {
-	guess_m_HUD_snoise = gHUD.GetSpriteIndex( "snoise" );
-	guess_m_HUD_arghnoise = gHUD.GetSpriteIndex( "arghnoise" );
-	guess_m_HUD_tv_scanlines = gHUD.GetSpriteIndex( "tv_scanlines" );
+	m_HUD_snoise_guess = gHUD.GetSpriteIndex( "snoise" );
+	m_HUD_arghnoise_guess = gHUD.GetSpriteIndex( "arghnoise" );
+	m_HUD_tv_scanlines_guess = gHUD.GetSpriteIndex( "tv_scanlines" );
 
 	return 1;
 }
@@ -35,8 +35,8 @@ int CNeffect::Draw( float flTime )
 	if ( !cl_noiseeffect->value )
 		return 1;
 
-	iWidth = gHUD.GetSpriteRect( guess_m_HUD_snoise ).right - gHUD.GetSpriteRect( guess_m_HUD_snoise ).left;
-	iHeight = gHUD.GetSpriteRect( guess_m_HUD_snoise ).bottom - gHUD.GetSpriteRect( guess_m_HUD_snoise ).top;
+	iWidth = gHUD.GetSpriteRect( m_HUD_snoise_guess ).right - gHUD.GetSpriteRect( m_HUD_snoise_guess ).left;
+	iHeight = gHUD.GetSpriteRect( m_HUD_snoise_guess ).bottom - gHUD.GetSpriteRect( m_HUD_snoise_guess ).top;
 
 	// tiles the noise sprite over the screen (x steps by the height, y by the width)
 	for ( y = 0; y < ScreenHeight; y += iWidth )
@@ -44,8 +44,8 @@ int CNeffect::Draw( float flTime )
 		for ( x = 0; x < ScreenWidth; x += iHeight )
 		{
 			a = cl_noiseamount->value * 255;
-			SPR_Set( gHUD.GetSprite( guess_m_HUD_snoise ), a, a, a );
-			SPR_DrawAdditive( gEngfuncs.pfnRandomLong( 1, 19 ), x, y, &gHUD.GetSpriteRect( guess_m_HUD_snoise ) );
+			SPR_Set( gHUD.GetSprite( m_HUD_snoise_guess ), a, a, a );
+			SPR_DrawAdditive( gEngfuncs.pfnRandomLong( 1, 19 ), x, y, &gHUD.GetSpriteRect( m_HUD_snoise_guess ) );
 		}
 	}
 

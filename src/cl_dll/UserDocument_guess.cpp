@@ -7,7 +7,7 @@
 #include "cl_util.h"
 #include "parsemsg.h"
 #include "vgui_TeamFortressViewport.h"
-#include "guess_UserDocument.h"
+#include "UserDocument_guess.h"
 #include "..\game_shared\vgui_loadtga.h"
 
 CUserDocument::CUserDocument( int iTrans, int iRemoveMe, int x, int y, int wide, int tall ) : CMenuPanel( iTrans, iRemoveMe, x, y, wide, tall )
@@ -16,48 +16,48 @@ CUserDocument::CUserDocument( int iTrans, int iRemoveMe, int x, int y, int wide,
 	int iWide, iTall;
 	int iX, iY;
 
-	guess_m_pBackgroundImage = vgui_LoadTGA( "gfx/vgui/backgroundtoall.tga" );
-	if ( guess_m_pBackgroundImage )
-		guess_m_pBackgroundImage->setColor( Color( 255, 255, 255, 1 ) );
+	m_pBackgroundImage_guess = vgui_LoadTGA( "gfx/vgui/backgroundtoall.tga" );
+	if ( m_pBackgroundImage_guess )
+		m_pBackgroundImage_guess->setColor( Color( 255, 255, 255, 1 ) );
 	else
 		gEngfuncs.Con_Printf( "Cannot load gfx/vgui/backgroundtoall.tga!\n" );
 
-	guess_m_pBackgroundImage->getSize( iWide, iTall );
+	m_pBackgroundImage_guess->getSize( iWide, iTall );
 	iX = ScreenWidth / 2 - iWide / 2;
 	iY = ScreenHeight / 2 - iTall / 2;
 
-	guess_m_pBackground = new ImagePanel( guess_m_pBackgroundImage );
-	guess_m_pBackground->setParent( this );
-	guess_m_pBackground->setPos( iX, iY );
-	guess_m_pBackground->setVisible( true );
+	m_pBackground_guess = new ImagePanel( m_pBackgroundImage_guess );
+	m_pBackground_guess->setParent( this );
+	m_pBackground_guess->setPos( iX, iY );
+	m_pBackground_guess->setVisible( true );
 
 	iXPos = ScreenWidth / 2 - 320;
 	iYPos = ScreenHeight / 2 - 240;
 
 	setBgColor( Color( 0, 0, 0, 0 ) );
 
-	guess_m_pDocumentImage = vgui_LoadTGA( "gfx/vgui/640_pass1.tga" );
-	if ( guess_m_pDocumentImage )
-		guess_m_pDocumentImage->setColor( Color( 255, 255, 255, 1 ) );
+	m_pDocumentImage_guess = vgui_LoadTGA( "gfx/vgui/640_pass1.tga" );
+	if ( m_pDocumentImage_guess )
+		m_pDocumentImage_guess->setColor( Color( 255, 255, 255, 1 ) );
 	else
 		gEngfuncs.Con_Printf( "Cannot load gfx/vgui/640_pass1.tga!\n" );
 
-	guess_m_pDocument = new ImagePanel( guess_m_pDocumentImage );
-	guess_m_pDocument->setParent( this );
-	guess_m_pDocument->setPos( iXPos, iYPos );
-	guess_m_pDocument->setVisible( true );
+	m_pDocument_guess = new ImagePanel( m_pDocumentImage_guess );
+	m_pDocument_guess->setParent( this );
+	m_pDocument_guess->setPos( iXPos, iYPos );
+	m_pDocument_guess->setVisible( true );
 
-	guess_m_pCancelLabel = new CImageLabel( "notecancel", iXPos - 5, iYPos - 5 );
-	guess_m_pCancelLabel->setVisible( true );
-	guess_m_pCancelLabel->setParent( this );
+	m_pCancelLabel_guess = new CImageLabel( "notecancel", iXPos - 5, iYPos - 5 );
+	m_pCancelLabel_guess->setVisible( true );
+	m_pCancelLabel_guess->setParent( this );
 
-	guess_m_pCloseButton = new CommandButton( "", iXPos, iYPos, 20, 20, true, true );
-	guess_m_pCloseButton->setParent( this );
-	guess_m_pCloseButton->addActionSignal( new CUserDocumentHandler_Command( this, 1 ) );
+	m_pCloseButton_guess = new CommandButton( "", iXPos, iYPos, 20, 20, true, true );
+	m_pCloseButton_guess->setParent( this );
+	m_pCloseButton_guess->addActionSignal( new CUserDocumentHandler_Command( this, 1 ) );
 
 	CSchemeManager *pSchemes = gViewPort->GetSchemeManager();
 	SchemeHandle_t hCreditsScheme = pSchemes->getSchemeHandle( "credits" );
-	guess_m_pFont = pSchemes->getFont( hCreditsScheme );
+	m_pFont_guess = pSchemes->getFont( hCreditsScheme );
 }
 
 void CUserDocument::ActionSignal( int cmd )
@@ -76,7 +76,7 @@ void CUserDocument::ActionSignal( int cmd )
 	}
 }
 
-const char *CUserDocument::guess_GetPassword( int index )
+const char *CUserDocument::GetPassword_guess( int index )
 {
 	switch ( index )
 	{
@@ -101,7 +101,7 @@ const char *CUserDocument::guess_GetPassword( int index )
 	return "?";
 }
 
-const char *CUserDocument::guess_GetUsername( int index )
+const char *CUserDocument::GetUsername_guess( int index )
 {
 	switch ( index )
 	{
@@ -128,8 +128,8 @@ const char *CUserDocument::guess_GetUsername( int index )
 
 void CUserDocument::Initialize()
 {
-	guess_m_iType = 0;
-	guess_m_iIndex = 0;
+	m_iType_guess = 0;
+	m_iIndex_guess = 0;
 }
 
 int CUserDocument::KeyInput( int down, int keynum, const char *pszCurrentBinding )
@@ -140,27 +140,27 @@ int CUserDocument::KeyInput( int down, int keynum, const char *pszCurrentBinding
 	return 0;
 }
 
-int guess_MsgUserDoc( const char *pszName, int iSize, void *pbuf )
+int MsgUserDoc_guess( const char *pszName, int iSize, void *pbuf )
 {
 	char szImage[128];
 
 	BEGIN_READ( pbuf, iSize );
 
-	if ( gViewPort && gViewPort->guess_m_pUserDocument )
+	if ( gViewPort && gViewPort->m_pUserDocument_guess )
 	{
-		gViewPort->guess_m_pUserDocument->guess_m_iType = READ_BYTE();
-		gViewPort->guess_m_pUserDocument->guess_m_iIndex = READ_BYTE();
+		gViewPort->m_pUserDocument_guess->m_iType_guess = READ_BYTE();
+		gViewPort->m_pUserDocument_guess->m_iIndex_guess = READ_BYTE();
 
-		if ( gViewPort->guess_m_pUserDocument->guess_m_iType == 1 )
+		if ( gViewPort->m_pUserDocument_guess->m_iType_guess == 1 )
 		{
-			sprintf( szImage, "gfx/vgui/640_user%i.tga", gViewPort->guess_m_pUserDocument->guess_m_iIndex );
-			gViewPort->guess_m_pUserDocument->guess_m_pDocument->setImage( vgui_LoadTGA( szImage ) );
+			sprintf( szImage, "gfx/vgui/640_user%i.tga", gViewPort->m_pUserDocument_guess->m_iIndex_guess );
+			gViewPort->m_pUserDocument_guess->m_pDocument_guess->setImage( vgui_LoadTGA( szImage ) );
 		}
 
-		if ( gViewPort->guess_m_pUserDocument->guess_m_iType == 2 )
+		if ( gViewPort->m_pUserDocument_guess->m_iType_guess == 2 )
 		{
-			sprintf( szImage, "gfx/vgui/640_pass%i.tga", gViewPort->guess_m_pUserDocument->guess_m_iIndex );
-			gViewPort->guess_m_pUserDocument->guess_m_pDocument->setImage( vgui_LoadTGA( szImage ) );
+			sprintf( szImage, "gfx/vgui/640_pass%i.tga", gViewPort->m_pUserDocument_guess->m_iIndex_guess );
+			gViewPort->m_pUserDocument_guess->m_pDocument_guess->setImage( vgui_LoadTGA( szImage ) );
 		}
 
 		gViewPort->ShowVGUIMenu( 34 );
@@ -169,33 +169,33 @@ int guess_MsgUserDoc( const char *pszName, int iSize, void *pbuf )
 	return 1;
 }
 
-void guess_UserDocInit()
+void UserDocInit_guess()
 {
-	gEngfuncs.pfnHookUserMsg( "UserDoc", guess_MsgUserDoc );
+	gEngfuncs.pfnHookUserMsg( "UserDoc", MsgUserDoc_guess );
 }
 
 void CUserDocument::paint()
 {
-	if ( guess_m_iType == 1 && guess_m_iIndex )
+	if ( m_iType_guess == 1 && m_iIndex_guess )
 	{
 		int wide, tall;
-		const char *pszText = guess_GetUsername( guess_m_iIndex );
+		const char *pszText = GetUsername_guess( m_iIndex_guess );
 
-		drawSetTextFont( guess_m_pFont );
+		drawSetTextFont( m_pFont_guess );
 		drawSetTextColor( 200, 200, 200, 1 );
-		guess_m_pFont->getTextSize( pszText, wide, tall );
+		m_pFont_guess->getTextSize( pszText, wide, tall );
 		drawSetTextPos( ScreenWidth / 2 - wide / 2, ScreenHeight - tall * 2 );
 		drawPrintText( pszText, strlen( pszText ) );
 	}
 
-	if ( guess_m_iType == 2 && guess_m_iIndex )
+	if ( m_iType_guess == 2 && m_iIndex_guess )
 	{
 		int wide, tall;
-		const char *pszText = guess_GetPassword( guess_m_iIndex );
+		const char *pszText = GetPassword_guess( m_iIndex_guess );
 
-		drawSetTextFont( guess_m_pFont );
+		drawSetTextFont( m_pFont_guess );
 		drawSetTextColor( 200, 200, 200, 1 );
-		guess_m_pFont->getTextSize( pszText, wide, tall );
+		m_pFont_guess->getTextSize( pszText, wide, tall );
 		drawSetTextPos( ScreenWidth / 2 - wide / 2, ScreenHeight - tall * 2 );
 		drawPrintText( pszText, strlen( pszText ) );
 	}

@@ -11,7 +11,7 @@
 #include "cl_util.h"
 #include "parsemsg.h"
 #include "vgui_TeamFortressViewport.h"
-#include "guess_NoteDocument.h"
+#include "NoteDocument_guess.h"
 #include "..\game_shared\vgui_loadtga.h"
 
 CNoteDocument::CNoteDocument( int iTrans, int iRemoveMe, int x, int y, int wide, int tall ) : CMenuPanel( iTrans, iRemoveMe, x, y, wide, tall )
@@ -22,7 +22,7 @@ CNoteDocument::CNoteDocument( int iTrans, int iRemoveMe, int x, int y, int wide,
 	Panel *pPanel;
 	CommandButton *pButton;
 
-	guess_m_pLineLabel = NULL;
+	m_pLineLabel_guess = NULL;
 	Initialize();
 
 	iXPos = ScreenWidth / 2 - 320;
@@ -30,20 +30,20 @@ CNoteDocument::CNoteDocument( int iTrans, int iRemoveMe, int x, int y, int wide,
 
 	setBgColor( Color( 0, 0, 0, 0 ) );
 
-	guess_m_pBackgroundImage = vgui_LoadTGA( "gfx/vgui/backgroundtoall.tga" );
-	if ( guess_m_pBackgroundImage )
-		guess_m_pBackgroundImage->setColor( Color( 255, 255, 255, 1 ) );
+	m_pBackgroundImage_guess = vgui_LoadTGA( "gfx/vgui/backgroundtoall.tga" );
+	if ( m_pBackgroundImage_guess )
+		m_pBackgroundImage_guess->setColor( Color( 255, 255, 255, 1 ) );
 	else
 		gEngfuncs.Con_Printf( "Cannot load gfx/vgui/backgroundtoall.tga!\n" );
 
-	guess_m_pBackgroundImage->getSize( iWide, iTall );
+	m_pBackgroundImage_guess->getSize( iWide, iTall );
 	iX = ScreenWidth / 2 - iWide / 2;
 	iY = ScreenHeight / 2 - iTall / 2;
 
-	guess_m_pBackground = new ImagePanel( guess_m_pBackgroundImage );
-	guess_m_pBackground->setParent( this );
-	guess_m_pBackground->setPos( iX, iY );
-	guess_m_pBackground->setVisible( true );
+	m_pBackground_guess = new ImagePanel( m_pBackgroundImage_guess );
+	m_pBackground_guess->setParent( this );
+	m_pBackground_guess->setPos( iX, iY );
+	m_pBackground_guess->setVisible( true );
 
 	pPanel = new Panel( 0, 0, 0, 0 );
 	pPanel->setParent( this );
@@ -51,42 +51,42 @@ CNoteDocument::CNoteDocument( int iTrans, int iRemoveMe, int x, int y, int wide,
 	pPanel->setBgColor( 0, 0, 0, 128 );
 	pPanel->setVisible( true );
 
-	guess_m_pPanel = new CTransparentPanel( 0, iXPos, iYPos, 640, 480 );
-	guess_m_pPanel->setParent( this );
-	guess_m_pPanel->setPaintBorderEnabled( false );
-	guess_m_pPanel->setBgColor( Color( 0, 0, 0, 255 ) );
+	m_pPanel_guess = new CTransparentPanel( 0, iXPos, iYPos, 640, 480 );
+	m_pPanel_guess->setParent( this );
+	m_pPanel_guess->setPaintBorderEnabled( false );
+	m_pPanel_guess->setBgColor( Color( 0, 0, 0, 255 ) );
 
-	guess_m_pImageLabel = new CImageLabel( guess_m_szImage1, -5, -5 );
-	guess_m_pImageLabel->setVisible( true );
-	guess_m_pImageLabel->setParent( guess_m_pPanel );
+	m_pImageLabel_guess = new CImageLabel( m_szImage1_guess, -5, -5 );
+	m_pImageLabel_guess->setVisible( true );
+	m_pImageLabel_guess->setParent( m_pPanel_guess );
 
-	guess_m_pCancelLabel = new CImageLabel( "notecancel", -5, -5 );
-	guess_m_pCancelLabel->setVisible( true );
-	guess_m_pCancelLabel->setParent( guess_m_pPanel );
+	m_pCancelLabel_guess = new CImageLabel( "notecancel", -5, -5 );
+	m_pCancelLabel_guess->setVisible( true );
+	m_pCancelLabel_guess->setParent( m_pPanel_guess );
 
-	guess_m_pCloseButton = new CommandButton( "", 0, 0, 20, 20, true, true );
-	guess_m_pCloseButton->setParent( guess_m_pPanel );
-	guess_m_pCloseButton->addActionSignal( new CNoteDocumentHandler_Command( this, 3 ) );
+	m_pCloseButton_guess = new CommandButton( "", 0, 0, 20, 20, true, true );
+	m_pCloseButton_guess->setParent( m_pPanel_guess );
+	m_pCloseButton_guess->addActionSignal( new CNoteDocumentHandler_Command( this, 3 ) );
 
 	pButton = new CommandButton( "", 38, 411, 33, 33, true, true );
-	pButton->setParent( guess_m_pPanel );
+	pButton->setParent( m_pPanel_guess );
 	pButton->addActionSignal( new CNoteDocumentHandler_Command( this, 1 ) );
 
 	pButton = new CommandButton( "", 38, 447, 33, 33, true, true );
-	pButton->setParent( guess_m_pPanel );
+	pButton->setParent( m_pPanel_guess );
 	pButton->addActionSignal( new CNoteDocumentHandler_Command( this, 2 ) );
 
 	CSchemeManager *pSchemes = gViewPort->GetSchemeManager();
 	SchemeHandle_t hCreditsScheme = pSchemes->getSchemeHandle( "credits" );
-	guess_m_pFont = pSchemes->getFont( hCreditsScheme );
+	m_pFont_guess = pSchemes->getFont( hCreditsScheme );
 
-	guess_m_pLineLabel = new Label( "", 0, 0, ScreenWidth, 64 );
-	guess_m_pLineLabel->setParent( this );
-	guess_m_pLineLabel->setFont( guess_m_pFont );
-	guess_m_pLineLabel->setFgColor( 255, 255, 255, 0 );
-	guess_m_pLineLabel->setBgColor( 0, 0, 0, 255 );
-	guess_m_pLineLabel->setText( "" );
-	guess_m_pLineLabel->setContentAlignment( Label::a_center );
+	m_pLineLabel_guess = new Label( "", 0, 0, ScreenWidth, 64 );
+	m_pLineLabel_guess->setParent( this );
+	m_pLineLabel_guess->setFont( m_pFont_guess );
+	m_pLineLabel_guess->setFgColor( 255, 255, 255, 0 );
+	m_pLineLabel_guess->setBgColor( 0, 0, 0, 255 );
+	m_pLineLabel_guess->setText( "" );
+	m_pLineLabel_guess->setContentAlignment( Label::a_center );
 }
 
 void CNoteDocument::ActionSignal( int cmd )
@@ -94,10 +94,10 @@ void CNoteDocument::ActionSignal( int cmd )
 	switch ( cmd )
 	{
 	case 1:
-		guess_PrevLine();
+		PrevLine_guess();
 		break;
 	case 2:
-		guess_NextLine();
+		NextLine_guess();
 		break;
 	case 3:
 		gViewPort->HideTopMenu();
@@ -106,32 +106,32 @@ void CNoteDocument::ActionSignal( int cmd )
 	}
 }
 
-void CNoteDocument::guess_ClearString( char *str )
+void CNoteDocument::ClearString_guess( char *str )
 {
 	for ( int i = 0; i < strlen( str ); i++ )
 		str[i] = 0;
 }
 
-int CNoteDocument::guess_CountLines()
+int CNoteDocument::CountLines_guess()
 {
 	char szPath[256];
 
 	strcpy( szPath, gEngfuncs.pfnGetGameDirectory() );
 	strcat( szPath, "/notes/" );
 
-	switch ( guess_m_iPage )
+	switch ( m_iPage_guess )
 	{
 	case 1:
-		strcat( szPath, guess_m_szText1 );
+		strcat( szPath, m_szText1_guess );
 		break;
 	case 2:
-		strcat( szPath, guess_m_szText2 );
+		strcat( szPath, m_szText2_guess );
 		break;
 	case 3:
-		strcat( szPath, guess_m_szText3 );
+		strcat( szPath, m_szText3_guess );
 		break;
 	case 4:
-		strcat( szPath, guess_m_szText4 );
+		strcat( szPath, m_szText4_guess );
 		break;
 	}
 
@@ -147,24 +147,24 @@ int CNoteDocument::guess_CountLines()
 
 void CNoteDocument::Initialize()
 {
-	if ( guess_m_pLineLabel )
-		guess_m_pLineLabel->setText( "" );
+	if ( m_pLineLabel_guess )
+		m_pLineLabel_guess->setText( "" );
 
-	guess_m_iLine = 0;
-	guess_m_iPage = 0;
+	m_iLine_guess = 0;
+	m_iPage_guess = 0;
 
-	strncpy( guess_m_szImage1, "", 16 );
-	strncpy( guess_m_szImage2, "", 16 );
-	strncpy( guess_m_szImage3, "", 16 );
-	strncpy( guess_m_szImage4, "", 16 );
-	strncpy( guess_m_szSound, "", 48 );
-	strncpy( guess_m_szText1, "", 16 );
-	strncpy( guess_m_szText2, "", 16 );
-	strncpy( guess_m_szText3, "", 16 );
-	strncpy( guess_m_szText4, "", 16 );
-	strncpy( guess_m_szLine, "", 128 );
+	strncpy( m_szImage1_guess, "", 16 );
+	strncpy( m_szImage2_guess, "", 16 );
+	strncpy( m_szImage3_guess, "", 16 );
+	strncpy( m_szImage4_guess, "", 16 );
+	strncpy( m_szSound_guess, "", 48 );
+	strncpy( m_szText1_guess, "", 16 );
+	strncpy( m_szText2_guess, "", 16 );
+	strncpy( m_szText3_guess, "", 16 );
+	strncpy( m_szText4_guess, "", 16 );
+	strncpy( m_szLine_guess, "", 128 );
 
-	guess_m_bTitle = false;
+	m_bTitle_guess = false;
 }
 
 int CNoteDocument::KeyInput( int down, int keynum, const char *pszCurrentBinding )
@@ -175,7 +175,7 @@ int CNoteDocument::KeyInput( int down, int keynum, const char *pszCurrentBinding
 	return 0;
 }
 
-int guess_MsgNoteDoc( const char *pszName, int iSize, void *pbuf )
+int MsgNoteDoc_guess( const char *pszName, int iSize, void *pbuf )
 {
 	char szText1[256];
 	char szText2[256];
@@ -184,24 +184,24 @@ int guess_MsgNoteDoc( const char *pszName, int iSize, void *pbuf )
 
 	BEGIN_READ( pbuf, iSize );
 
-	if ( gViewPort->guess_m_pNoteDocument )
+	if ( gViewPort->m_pNoteDocument_guess )
 	{
-		gViewPort->guess_m_pNoteDocument->guess_ClearString( gViewPort->guess_m_pNoteDocument->guess_m_szImage1 );
-		gViewPort->guess_m_pNoteDocument->guess_ClearString( gViewPort->guess_m_pNoteDocument->guess_m_szImage2 );
-		gViewPort->guess_m_pNoteDocument->guess_ClearString( gViewPort->guess_m_pNoteDocument->guess_m_szImage3 );
-		gViewPort->guess_m_pNoteDocument->guess_ClearString( gViewPort->guess_m_pNoteDocument->guess_m_szImage4 );
-		gViewPort->guess_m_pNoteDocument->guess_ClearString( gViewPort->guess_m_pNoteDocument->guess_m_szText1 );
-		gViewPort->guess_m_pNoteDocument->guess_ClearString( gViewPort->guess_m_pNoteDocument->guess_m_szSound );
+		gViewPort->m_pNoteDocument_guess->ClearString_guess( gViewPort->m_pNoteDocument_guess->m_szImage1_guess );
+		gViewPort->m_pNoteDocument_guess->ClearString_guess( gViewPort->m_pNoteDocument_guess->m_szImage2_guess );
+		gViewPort->m_pNoteDocument_guess->ClearString_guess( gViewPort->m_pNoteDocument_guess->m_szImage3_guess );
+		gViewPort->m_pNoteDocument_guess->ClearString_guess( gViewPort->m_pNoteDocument_guess->m_szImage4_guess );
+		gViewPort->m_pNoteDocument_guess->ClearString_guess( gViewPort->m_pNoteDocument_guess->m_szText1_guess );
+		gViewPort->m_pNoteDocument_guess->ClearString_guess( gViewPort->m_pNoteDocument_guess->m_szSound_guess );
 
-		strcpy( gViewPort->guess_m_pNoteDocument->guess_m_szImage1, READ_STRING() );
-		strcpy( gViewPort->guess_m_pNoteDocument->guess_m_szImage2, READ_STRING() );
-		strcpy( gViewPort->guess_m_pNoteDocument->guess_m_szImage3, READ_STRING() );
-		strcpy( gViewPort->guess_m_pNoteDocument->guess_m_szImage4, READ_STRING() );
+		strcpy( gViewPort->m_pNoteDocument_guess->m_szImage1_guess, READ_STRING() );
+		strcpy( gViewPort->m_pNoteDocument_guess->m_szImage2_guess, READ_STRING() );
+		strcpy( gViewPort->m_pNoteDocument_guess->m_szImage3_guess, READ_STRING() );
+		strcpy( gViewPort->m_pNoteDocument_guess->m_szImage4_guess, READ_STRING() );
 		strcpy( szText1, READ_STRING() );
 		strcpy( szText2, READ_STRING() );
 		strcpy( szText3, READ_STRING() );
 		strcpy( szText4, READ_STRING() );
-		strcpy( gViewPort->guess_m_pNoteDocument->guess_m_szSound, READ_STRING() );
+		strcpy( gViewPort->m_pNoteDocument_guess->m_szSound_guess, READ_STRING() );
 
 		int iLanguage = CVAR_GET_FLOAT( "cof_subtitlelanguage" );
 
@@ -211,31 +211,31 @@ int guess_MsgNoteDoc( const char *pszName, int iSize, void *pbuf )
 			{
 			case 0:
 			case 1:
-				strcpy( gViewPort->guess_m_pNoteDocument->guess_m_szText1, szText1 );
+				strcpy( gViewPort->m_pNoteDocument_guess->m_szText1_guess, szText1 );
 				break;
 			case 2:
-				strcpy( gViewPort->guess_m_pNoteDocument->guess_m_szText1, "languages/dutch/" );
-				strcat( gViewPort->guess_m_pNoteDocument->guess_m_szText1, szText1 );
+				strcpy( gViewPort->m_pNoteDocument_guess->m_szText1_guess, "languages/dutch/" );
+				strcat( gViewPort->m_pNoteDocument_guess->m_szText1_guess, szText1 );
 				break;
 			case 3:
-				strcpy( gViewPort->guess_m_pNoteDocument->guess_m_szText1, "languages/french/" );
-				strcat( gViewPort->guess_m_pNoteDocument->guess_m_szText1, szText1 );
+				strcpy( gViewPort->m_pNoteDocument_guess->m_szText1_guess, "languages/french/" );
+				strcat( gViewPort->m_pNoteDocument_guess->m_szText1_guess, szText1 );
 				break;
 			case 4:
-				strcpy( gViewPort->guess_m_pNoteDocument->guess_m_szText1, "languages/german/" );
-				strcat( gViewPort->guess_m_pNoteDocument->guess_m_szText1, szText1 );
+				strcpy( gViewPort->m_pNoteDocument_guess->m_szText1_guess, "languages/german/" );
+				strcat( gViewPort->m_pNoteDocument_guess->m_szText1_guess, szText1 );
 				break;
 			case 5:
-				strcpy( gViewPort->guess_m_pNoteDocument->guess_m_szText1, "languages/norwegian/" );
-				strcat( gViewPort->guess_m_pNoteDocument->guess_m_szText1, szText1 );
+				strcpy( gViewPort->m_pNoteDocument_guess->m_szText1_guess, "languages/norwegian/" );
+				strcat( gViewPort->m_pNoteDocument_guess->m_szText1_guess, szText1 );
 				break;
 			case 6:
-				strcpy( gViewPort->guess_m_pNoteDocument->guess_m_szText1, "languages/spanish/" );
-				strcat( gViewPort->guess_m_pNoteDocument->guess_m_szText1, szText1 );
+				strcpy( gViewPort->m_pNoteDocument_guess->m_szText1_guess, "languages/spanish/" );
+				strcat( gViewPort->m_pNoteDocument_guess->m_szText1_guess, szText1 );
 				break;
 			case 7:
-				strcpy( gViewPort->guess_m_pNoteDocument->guess_m_szText1, "languages/swedish/" );
-				strcat( gViewPort->guess_m_pNoteDocument->guess_m_szText1, szText1 );
+				strcpy( gViewPort->m_pNoteDocument_guess->m_szText1_guess, "languages/swedish/" );
+				strcat( gViewPort->m_pNoteDocument_guess->m_szText1_guess, szText1 );
 				break;
 			}
 		}
@@ -246,31 +246,31 @@ int guess_MsgNoteDoc( const char *pszName, int iSize, void *pbuf )
 			{
 			case 0:
 			case 1:
-				strcpy( gViewPort->guess_m_pNoteDocument->guess_m_szText2, szText2 );
+				strcpy( gViewPort->m_pNoteDocument_guess->m_szText2_guess, szText2 );
 				break;
 			case 2:
-				strcpy( gViewPort->guess_m_pNoteDocument->guess_m_szText2, "languages/dutch/" );
-				strcat( gViewPort->guess_m_pNoteDocument->guess_m_szText2, szText2 );
+				strcpy( gViewPort->m_pNoteDocument_guess->m_szText2_guess, "languages/dutch/" );
+				strcat( gViewPort->m_pNoteDocument_guess->m_szText2_guess, szText2 );
 				break;
 			case 3:
-				strcpy( gViewPort->guess_m_pNoteDocument->guess_m_szText2, "languages/french/" );
-				strcat( gViewPort->guess_m_pNoteDocument->guess_m_szText2, szText2 );
+				strcpy( gViewPort->m_pNoteDocument_guess->m_szText2_guess, "languages/french/" );
+				strcat( gViewPort->m_pNoteDocument_guess->m_szText2_guess, szText2 );
 				break;
 			case 4:
-				strcpy( gViewPort->guess_m_pNoteDocument->guess_m_szText2, "languages/german/" );
-				strcat( gViewPort->guess_m_pNoteDocument->guess_m_szText2, szText2 );
+				strcpy( gViewPort->m_pNoteDocument_guess->m_szText2_guess, "languages/german/" );
+				strcat( gViewPort->m_pNoteDocument_guess->m_szText2_guess, szText2 );
 				break;
 			case 5:
-				strcpy( gViewPort->guess_m_pNoteDocument->guess_m_szText2, "languages/norwegian/" );
-				strcat( gViewPort->guess_m_pNoteDocument->guess_m_szText2, szText2 );
+				strcpy( gViewPort->m_pNoteDocument_guess->m_szText2_guess, "languages/norwegian/" );
+				strcat( gViewPort->m_pNoteDocument_guess->m_szText2_guess, szText2 );
 				break;
 			case 6:
-				strcpy( gViewPort->guess_m_pNoteDocument->guess_m_szText2, "languages/spanish/" );
-				strcat( gViewPort->guess_m_pNoteDocument->guess_m_szText2, szText2 );
+				strcpy( gViewPort->m_pNoteDocument_guess->m_szText2_guess, "languages/spanish/" );
+				strcat( gViewPort->m_pNoteDocument_guess->m_szText2_guess, szText2 );
 				break;
 			case 7:
-				strcpy( gViewPort->guess_m_pNoteDocument->guess_m_szText2, "languages/swedish/" );
-				strcat( gViewPort->guess_m_pNoteDocument->guess_m_szText2, szText2 );
+				strcpy( gViewPort->m_pNoteDocument_guess->m_szText2_guess, "languages/swedish/" );
+				strcat( gViewPort->m_pNoteDocument_guess->m_szText2_guess, szText2 );
 				break;
 			}
 		}
@@ -281,31 +281,31 @@ int guess_MsgNoteDoc( const char *pszName, int iSize, void *pbuf )
 			{
 			case 0:
 			case 1:
-				strcpy( gViewPort->guess_m_pNoteDocument->guess_m_szText3, szText3 );
+				strcpy( gViewPort->m_pNoteDocument_guess->m_szText3_guess, szText3 );
 				break;
 			case 2:
-				strcpy( gViewPort->guess_m_pNoteDocument->guess_m_szText3, "languages/dutch/" );
-				strcat( gViewPort->guess_m_pNoteDocument->guess_m_szText3, szText3 );
+				strcpy( gViewPort->m_pNoteDocument_guess->m_szText3_guess, "languages/dutch/" );
+				strcat( gViewPort->m_pNoteDocument_guess->m_szText3_guess, szText3 );
 				break;
 			case 3:
-				strcpy( gViewPort->guess_m_pNoteDocument->guess_m_szText3, "languages/french/" );
-				strcat( gViewPort->guess_m_pNoteDocument->guess_m_szText3, szText3 );
+				strcpy( gViewPort->m_pNoteDocument_guess->m_szText3_guess, "languages/french/" );
+				strcat( gViewPort->m_pNoteDocument_guess->m_szText3_guess, szText3 );
 				break;
 			case 4:
-				strcpy( gViewPort->guess_m_pNoteDocument->guess_m_szText3, "languages/german/" );
-				strcat( gViewPort->guess_m_pNoteDocument->guess_m_szText3, szText3 );
+				strcpy( gViewPort->m_pNoteDocument_guess->m_szText3_guess, "languages/german/" );
+				strcat( gViewPort->m_pNoteDocument_guess->m_szText3_guess, szText3 );
 				break;
 			case 5:
-				strcpy( gViewPort->guess_m_pNoteDocument->guess_m_szText3, "languages/norwegian/" );
-				strcat( gViewPort->guess_m_pNoteDocument->guess_m_szText3, szText3 );
+				strcpy( gViewPort->m_pNoteDocument_guess->m_szText3_guess, "languages/norwegian/" );
+				strcat( gViewPort->m_pNoteDocument_guess->m_szText3_guess, szText3 );
 				break;
 			case 6:
-				strcpy( gViewPort->guess_m_pNoteDocument->guess_m_szText3, "languages/spanish/" );
-				strcat( gViewPort->guess_m_pNoteDocument->guess_m_szText3, szText3 );
+				strcpy( gViewPort->m_pNoteDocument_guess->m_szText3_guess, "languages/spanish/" );
+				strcat( gViewPort->m_pNoteDocument_guess->m_szText3_guess, szText3 );
 				break;
 			case 7:
-				strcpy( gViewPort->guess_m_pNoteDocument->guess_m_szText3, "languages/swedish/" );
-				strcat( gViewPort->guess_m_pNoteDocument->guess_m_szText3, szText3 );
+				strcpy( gViewPort->m_pNoteDocument_guess->m_szText3_guess, "languages/swedish/" );
+				strcat( gViewPort->m_pNoteDocument_guess->m_szText3_guess, szText3 );
 				break;
 			}
 		}
@@ -316,345 +316,345 @@ int guess_MsgNoteDoc( const char *pszName, int iSize, void *pbuf )
 			{
 			case 0:
 			case 1:
-				strcpy( gViewPort->guess_m_pNoteDocument->guess_m_szText4, szText4 );
+				strcpy( gViewPort->m_pNoteDocument_guess->m_szText4_guess, szText4 );
 				break;
 			case 2:
-				strcpy( gViewPort->guess_m_pNoteDocument->guess_m_szText4, "languages/dutch/" );
-				strcat( gViewPort->guess_m_pNoteDocument->guess_m_szText4, szText4 );
+				strcpy( gViewPort->m_pNoteDocument_guess->m_szText4_guess, "languages/dutch/" );
+				strcat( gViewPort->m_pNoteDocument_guess->m_szText4_guess, szText4 );
 				break;
 			case 3:
-				strcpy( gViewPort->guess_m_pNoteDocument->guess_m_szText4, "languages/french/" );
-				strcat( gViewPort->guess_m_pNoteDocument->guess_m_szText4, szText4 );
+				strcpy( gViewPort->m_pNoteDocument_guess->m_szText4_guess, "languages/french/" );
+				strcat( gViewPort->m_pNoteDocument_guess->m_szText4_guess, szText4 );
 				break;
 			case 4:
-				strcpy( gViewPort->guess_m_pNoteDocument->guess_m_szText4, "languages/german/" );
-				strcat( gViewPort->guess_m_pNoteDocument->guess_m_szText4, szText4 );
+				strcpy( gViewPort->m_pNoteDocument_guess->m_szText4_guess, "languages/german/" );
+				strcat( gViewPort->m_pNoteDocument_guess->m_szText4_guess, szText4 );
 				break;
 			case 5:
-				strcpy( gViewPort->guess_m_pNoteDocument->guess_m_szText4, "languages/norwegian/" );
-				strcat( gViewPort->guess_m_pNoteDocument->guess_m_szText4, szText4 );
+				strcpy( gViewPort->m_pNoteDocument_guess->m_szText4_guess, "languages/norwegian/" );
+				strcat( gViewPort->m_pNoteDocument_guess->m_szText4_guess, szText4 );
 				break;
 			case 6:
-				strcpy( gViewPort->guess_m_pNoteDocument->guess_m_szText4, "languages/spanish/" );
-				strcat( gViewPort->guess_m_pNoteDocument->guess_m_szText4, szText4 );
+				strcpy( gViewPort->m_pNoteDocument_guess->m_szText4_guess, "languages/spanish/" );
+				strcat( gViewPort->m_pNoteDocument_guess->m_szText4_guess, szText4 );
 				break;
 			case 7:
-				strcpy( gViewPort->guess_m_pNoteDocument->guess_m_szText4, "languages/swedish/" );
-				strcat( gViewPort->guess_m_pNoteDocument->guess_m_szText4, szText4 );
+				strcpy( gViewPort->m_pNoteDocument_guess->m_szText4_guess, "languages/swedish/" );
+				strcat( gViewPort->m_pNoteDocument_guess->m_szText4_guess, szText4 );
 				break;
 			}
 		}
 
-		gViewPort->guess_m_pNoteDocument->guess_m_iPage = 1;
-		gViewPort->guess_m_pNoteDocument->guess_SetPage( 1 );
+		gViewPort->m_pNoteDocument_guess->m_iPage_guess = 1;
+		gViewPort->m_pNoteDocument_guess->SetPage_guess( 1 );
 	}
 
 	gViewPort->ShowVGUIMenu( 31 );
 	return 1;
 }
 
-void CNoteDocument::guess_NextLine()
+void CNoteDocument::NextLine_guess()
 {
 	char szPath[256];
 
 	strcpy( szPath, gEngfuncs.pfnGetGameDirectory() );
 	strcat( szPath, "/notes/" );
 
-	switch ( guess_m_iPage )
+	switch ( m_iPage_guess )
 	{
 	case 1:
-		strcat( szPath, guess_m_szText1 );
+		strcat( szPath, m_szText1_guess );
 		break;
 	case 2:
-		strcat( szPath, guess_m_szText2 );
+		strcat( szPath, m_szText2_guess );
 		break;
 	case 3:
-		strcat( szPath, guess_m_szText3 );
+		strcat( szPath, m_szText3_guess );
 		break;
 	case 4:
-		strcat( szPath, guess_m_szText4 );
+		strcat( szPath, m_szText4_guess );
 		break;
 	}
 
 	std::ifstream file( szPath );
 	std::string line;
-	std::string guess_strUnused;
+	std::string strUnused_guess;
 
-	guess_m_iLine++;
+	m_iLine_guess++;
 
-	if ( guess_m_iLine > guess_CountLines() )
-		guess_m_iLine = 1;
+	if ( m_iLine_guess > CountLines_guess() )
+		m_iLine_guess = 1;
 
-	line = guess_m_iLine;
+	line = m_iLine_guess;
 
 	int i = 1;
 
 	while ( std::getline( file, line ) )
 	{
-		if ( i == guess_m_iLine )
+		if ( i == m_iLine_guess )
 		{
 			char szLine[256];
 			strcpy( szLine, line.c_str() );
 			szLine[line.length()] = 0;
 
-			guess_m_bTitle = ( i == 1 );
-			strcpy( guess_m_szLine, szLine );
+			m_bTitle_guess = ( i == 1 );
+			strcpy( m_szLine_guess, szLine );
 		}
 
 		i++;
 	}
 }
 
-void CNoteDocument::guess_NextPage()
+void CNoteDocument::NextPage_guess()
 {
-	switch ( guess_m_iPage )
+	switch ( m_iPage_guess )
 	{
 	case 1:
-		if ( guess_m_szImage2[1] )
+		if ( m_szImage2_guess[1] )
 		{
-			guess_m_iPage = 2;
-			guess_SetPage( 2 );
+			m_iPage_guess = 2;
+			SetPage_guess( 2 );
 		}
 		break;
 	case 2:
-		if ( guess_m_szImage3[1] )
+		if ( m_szImage3_guess[1] )
 		{
-			guess_m_iPage = 3;
-			guess_SetPage( 3 );
+			m_iPage_guess = 3;
+			SetPage_guess( 3 );
 			return;
 		}
 
-		guess_m_iPage = 1;
-		guess_SetPage( 1 );
+		m_iPage_guess = 1;
+		SetPage_guess( 1 );
 		break;
 	case 3:
-		if ( guess_m_szImage4[1] )
+		if ( m_szImage4_guess[1] )
 		{
-			guess_m_iPage = 4;
-			guess_SetPage( 4 );
+			m_iPage_guess = 4;
+			SetPage_guess( 4 );
 			return;
 		}
 
-		guess_m_iPage = 1;
-		guess_SetPage( 1 );
+		m_iPage_guess = 1;
+		SetPage_guess( 1 );
 		break;
 	case 4:
-		guess_m_iPage = 1;
-		guess_SetPage( 1 );
+		m_iPage_guess = 1;
+		SetPage_guess( 1 );
 		break;
 	}
 }
 
-void guess_NoteDocInit()
+void NoteDocInit_guess()
 {
-	gEngfuncs.pfnHookUserMsg( "NoteDoc", guess_MsgNoteDoc );
+	gEngfuncs.pfnHookUserMsg( "NoteDoc", MsgNoteDoc_guess );
 }
 
-void CNoteDocument::guess_PrevLine()
+void CNoteDocument::PrevLine_guess()
 {
 	char szPath[256];
 
 	strcpy( szPath, gEngfuncs.pfnGetGameDirectory() );
 	strcat( szPath, "/notes/" );
 
-	switch ( guess_m_iPage )
+	switch ( m_iPage_guess )
 	{
 	case 1:
-		strcat( szPath, guess_m_szText1 );
+		strcat( szPath, m_szText1_guess );
 		break;
 	case 2:
-		strcat( szPath, guess_m_szText2 );
+		strcat( szPath, m_szText2_guess );
 		break;
 	case 3:
-		strcat( szPath, guess_m_szText3 );
+		strcat( szPath, m_szText3_guess );
 		break;
 	case 4:
-		strcat( szPath, guess_m_szText4 );
+		strcat( szPath, m_szText4_guess );
 		break;
 	}
 
 	std::ifstream file( szPath );
 	std::string line;
-	std::string guess_strUnused;
+	std::string strUnused_guess;
 
-	guess_m_iLine--;
+	m_iLine_guess--;
 
-	if ( guess_m_iLine <= 0 )
-		guess_m_iLine = guess_CountLines();
+	if ( m_iLine_guess <= 0 )
+		m_iLine_guess = CountLines_guess();
 
-	line = guess_m_iLine;
+	line = m_iLine_guess;
 
 	int i = 1;
 
 	while ( std::getline( file, line ) )
 	{
-		if ( i == guess_m_iLine )
+		if ( i == m_iLine_guess )
 		{
 			char szLine[256];
 			strcpy( szLine, line.c_str() );
 			szLine[line.length()] = 0;
 
-			guess_m_bTitle = ( i == 1 );
-			strcpy( guess_m_szLine, szLine );
+			m_bTitle_guess = ( i == 1 );
+			strcpy( m_szLine_guess, szLine );
 		}
 
 		i++;
 	}
 }
 
-void CNoteDocument::guess_PrevPage()
+void CNoteDocument::PrevPage_guess()
 {
-	switch ( guess_m_iPage )
+	switch ( m_iPage_guess )
 	{
 	case 1:
-		if ( guess_m_szImage4[1] )
+		if ( m_szImage4_guess[1] )
 		{
-			guess_m_iPage = 4;
-			guess_SetPage( 4 );
+			m_iPage_guess = 4;
+			SetPage_guess( 4 );
 			return;
 		}
-		if ( guess_m_szImage3[1] )
+		if ( m_szImage3_guess[1] )
 		{
-			guess_m_iPage = 3;
-			guess_SetPage( 3 );
+			m_iPage_guess = 3;
+			SetPage_guess( 3 );
 			return;
 		}
-		if ( guess_m_szImage2[1] )
+		if ( m_szImage2_guess[1] )
 		{
-			guess_m_iPage = 2;
-			guess_SetPage( 2 );
+			m_iPage_guess = 2;
+			SetPage_guess( 2 );
 			return;
 		}
 	case 2:
-		if ( guess_m_szImage1[1] && guess_m_iPage != 1 )
+		if ( m_szImage1_guess[1] && m_iPage_guess != 1 )
 		{
-			guess_m_iPage = 1;
-			guess_SetPage( 1 );
+			m_iPage_guess = 1;
+			SetPage_guess( 1 );
 			return;
 		}
-		if ( guess_m_szImage4[1] )
+		if ( m_szImage4_guess[1] )
 		{
-			guess_m_iPage = 4;
-			guess_SetPage( 4 );
+			m_iPage_guess = 4;
+			SetPage_guess( 4 );
 			return;
 		}
-		if ( guess_m_szImage3[1] )
+		if ( m_szImage3_guess[1] )
 		{
-			guess_m_iPage = 3;
-			guess_SetPage( 3 );
+			m_iPage_guess = 3;
+			SetPage_guess( 3 );
 			return;
 		}
 	case 3:
-		if ( guess_m_szImage2[1] )
+		if ( m_szImage2_guess[1] )
 		{
-			guess_m_iPage = 2;
-			guess_SetPage( 2 );
+			m_iPage_guess = 2;
+			SetPage_guess( 2 );
 			return;
 		}
-		if ( guess_m_szImage1[1] )
+		if ( m_szImage1_guess[1] )
 		{
-			guess_m_iPage = 1;
-			guess_SetPage( 1 );
+			m_iPage_guess = 1;
+			SetPage_guess( 1 );
 			return;
 		}
-		if ( guess_m_szImage4[1] )
+		if ( m_szImage4_guess[1] )
 		{
-			guess_m_iPage = 4;
-			guess_SetPage( 4 );
+			m_iPage_guess = 4;
+			SetPage_guess( 4 );
 			return;
 		}
 	case 4:
-		if ( guess_m_szImage3[1] )
+		if ( m_szImage3_guess[1] )
 		{
-			guess_m_iPage = 3;
-			guess_SetPage( 3 );
+			m_iPage_guess = 3;
+			SetPage_guess( 3 );
 			return;
 		}
-		if ( guess_m_szImage2[1] )
+		if ( m_szImage2_guess[1] )
 		{
-			guess_m_iPage = 2;
-			guess_SetPage( 2 );
+			m_iPage_guess = 2;
+			SetPage_guess( 2 );
 			return;
 		}
-		if ( guess_m_szImage1[1] )
+		if ( m_szImage1_guess[1] )
 		{
-			guess_m_iPage = 1;
-			guess_SetPage( 1 );
+			m_iPage_guess = 1;
+			SetPage_guess( 1 );
 			return;
 		}
 	}
 }
 
-void CNoteDocument::guess_SetPage( int page )
+void CNoteDocument::SetPage_guess( int page )
 {
 	BitmapTGA *pImage;
 
 	switch ( page )
 	{
 	case 1:
-		pImage = LoadTGAForRes( guess_m_szImage1 );
+		pImage = LoadTGAForRes( m_szImage1_guess );
 		break;
 	case 2:
-		pImage = LoadTGAForRes( guess_m_szImage2 );
+		pImage = LoadTGAForRes( m_szImage2_guess );
 		break;
 	case 3:
-		pImage = LoadTGAForRes( guess_m_szImage3 );
+		pImage = LoadTGAForRes( m_szImage3_guess );
 		break;
 	case 4:
-		pImage = LoadTGAForRes( guess_m_szImage4 );
+		pImage = LoadTGAForRes( m_szImage4_guess );
 		break;
 	}
 
-	if ( guess_m_szSound[1] )
-		gEngfuncs.pfnPlaySoundByName( guess_m_szSound, 1 );
+	if ( m_szSound_guess[1] )
+		gEngfuncs.pfnPlaySoundByName( m_szSound_guess, 1 );
 
-	guess_m_iLine = 1;
-	guess_ReadLine();
+	m_iLine_guess = 1;
+	ReadLine_guess();
 
-	guess_m_pImageLabel->setImage( pImage );
+	m_pImageLabel_guess->setImage( pImage );
 }
 
-void CNoteDocument::guess_ReadLine()
+void CNoteDocument::ReadLine_guess()
 {
 	char szPath[256];
 
 	strcpy( szPath, gEngfuncs.pfnGetGameDirectory() );
 	strcat( szPath, "/notes/" );
 
-	switch ( guess_m_iPage )
+	switch ( m_iPage_guess )
 	{
 	case 1:
-		strcat( szPath, guess_m_szText1 );
+		strcat( szPath, m_szText1_guess );
 		break;
 	case 2:
-		strcat( szPath, guess_m_szText2 );
+		strcat( szPath, m_szText2_guess );
 		break;
 	case 3:
-		strcat( szPath, guess_m_szText3 );
+		strcat( szPath, m_szText3_guess );
 		break;
 	case 4:
-		strcat( szPath, guess_m_szText4 );
+		strcat( szPath, m_szText4_guess );
 		break;
 	}
 
 	std::ifstream file( szPath );
 	std::string line;
-	std::string guess_strUnused;
+	std::string strUnused_guess;
 
-	line = guess_m_iLine;
+	line = m_iLine_guess;
 
 	int i = 1;
 
 	while ( std::getline( file, line ) )
 	{
-		if ( i == guess_m_iLine )
+		if ( i == m_iLine_guess )
 		{
 			char szLine[256];
 			strcpy( szLine, line.c_str() );
 			szLine[line.length()] = 0;
 
-			guess_m_bTitle = ( i == 1 );
-			strcpy( guess_m_szLine, szLine );
+			m_bTitle_guess = ( i == 1 );
+			strcpy( m_szLine_guess, szLine );
 		}
 
 		i++;
@@ -663,24 +663,24 @@ void CNoteDocument::guess_ReadLine()
 
 void CNoteDocument::paint()
 {
-	if ( strlen( guess_m_szLine ) > 1 )
+	if ( strlen( m_szLine_guess ) > 1 )
 	{
 		int wide, tall;
 
-		if ( guess_m_szLine[0] == '*' )
-			guess_m_pLineLabel->setFgColor( 255, 255, 0, 0 );
-		else if ( guess_m_bTitle )
-			guess_m_pLineLabel->setFgColor( 255, 255, 0, 0 );
+		if ( m_szLine_guess[0] == '*' )
+			m_pLineLabel_guess->setFgColor( 255, 255, 0, 0 );
+		else if ( m_bTitle_guess )
+			m_pLineLabel_guess->setFgColor( 255, 255, 0, 0 );
 		else
-			guess_m_pLineLabel->setFgColor( 200, 200, 200, 0 );
+			m_pLineLabel_guess->setFgColor( 200, 200, 200, 0 );
 
-		guess_m_pFont->getTextSize( guess_m_szLine, wide, tall );
+		m_pFont_guess->getTextSize( m_szLine_guess, wide, tall );
 		drawSetTextPos( ScreenWidth / 2 - wide / 2, ScreenHeight - tall * 2 );
 
-		guess_m_pLineLabel->setSize( ScreenWidth, 64 );
-		guess_m_pLineLabel->setText( guess_m_szLine );
-		guess_m_pLineLabel->setPos( 0, ScreenHeight - tall * 3 );
-		guess_m_pLineLabel->setContentAlignment( Label::a_center );
+		m_pLineLabel_guess->setSize( ScreenWidth, 64 );
+		m_pLineLabel_guess->setText( m_szLine_guess );
+		m_pLineLabel_guess->setPos( 0, ScreenHeight - tall * 3 );
+		m_pLineLabel_guess->setContentAlignment( Label::a_center );
 	}
 
 	Panel::paint();

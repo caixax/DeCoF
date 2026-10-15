@@ -15,8 +15,8 @@ public:
 	void ActionSignal( int cmd );
 
 public:
-	Image	*guess_m_pImage;			// 0xbc, gfx/vgui/640_savegame.tga
-	ImagePanel	*guess_m_pImagePanel;	// 0xc0, parent of the yes and no buttons
+	Image	*m_pImage_guess;			// 0xbc, gfx/vgui/640_savegame.tga
+	ImagePanel	*m_pImagePanel_guess;	// 0xc0, parent of the yes and no buttons
 };
 
 class CSaveHandler_Command : public ActionSignal
@@ -38,6 +38,6 @@ public:
 	}
 };
 
-void guess_SaveInit();
+void SaveInit_guess();
 
 #endif // _SAVE_H

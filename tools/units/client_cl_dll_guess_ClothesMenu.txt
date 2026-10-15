@@ -1,9 +1,9 @@
 ?Initialize@CClothesMenu@@QAEXXZ
-?guess_KeyInput@CClothesMenu@@QAEHHHPBD@Z
-?guess_MsgClothes@@YAHPBDHPAX@Z
-?guess_UpdateButtons@CClothesMenu@@QAEXXZ
-?guess_SetCustomHoodie@@YAXXZ
-?guess_ClothesInit@@YAXXZ
+?KeyInput_guess@CClothesMenu@@QAEHHHPBD@Z
+?MsgClothes_guess@@YAHPBDHPAX@Z
+?UpdateButtons_guess@CClothesMenu@@QAEXXZ
+?SetCustomHoodie_guess@@YAXXZ
+?ClothesInit_guess@@YAXXZ
 ?actionPerformed@CClothesMenuHandler_Command@@UAEXPAVPanel@vgui@@@Z
 ??0CClothesMenu@@QAE@XZ
 ?ActionSignal@CClothesMenu@@QAEXH@Z

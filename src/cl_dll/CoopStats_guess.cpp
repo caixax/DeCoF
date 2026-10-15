@@ -10,15 +10,15 @@
 #include "cl_util.h"
 #include "parsemsg.h"
 #include "vgui_TeamFortressViewport.h"
-#include "guess_CoopStats.h"
-#include "guess_Credits.h"
+#include "CoopStats_guess.h"
+#include "Credits_guess.h"
 
-void guess_IrrKlangPlay( const char *pszFile );
-void guess_IrrKlangSetLoop( bool bLoop );
+void IrrKlangPlay_guess( const char *pszFile );
+void IrrKlangSetLoop_guess( bool bLoop );
 
-int guess_g_iCoopStatsTitleTall = 32;
-int guess_g_iCoopStatsWide = 220;
-int guess_g_iCoopStatsTall = 24;
+int g_iCoopStatsTitleTall_guess = 32;
+int g_iCoopStatsWide_guess = 220;
+int g_iCoopStatsTall_guess = 24;
 
 CCoopStats::CCoopStats() : Panel( 0, 0, ScreenWidth, ScreenHeight )
 {
@@ -29,63 +29,63 @@ CCoopStats::CCoopStats() : Panel( 0, 0, ScreenWidth, ScreenHeight )
 
 	CSchemeManager *pSchemes = gViewPort->GetSchemeManager();
 
-	guess_m_pTitleLabel = new Label( "STATS - CAMPAIGN WILL AUTORESTART SOON", 0, guess_g_iCoopStatsTitleTall, ScreenWidth, guess_g_iCoopStatsTitleTall );
-	guess_m_pTitleLabel->setParent( this );
-	guess_m_pTitleLabel->setFont( pSchemes->getFont( pSchemes->getSchemeHandle( "credits" ) ) );
-	guess_m_pTitleLabel->setPaintBackgroundEnabled( false );
-	guess_m_pTitleLabel->setFgColor( 255, 255, 255, 0 );
-	guess_m_pTitleLabel->setText( "STATS - CAMPAIGN WILL AUTORESTART SOON" );
-	guess_m_pTitleLabel->setContentAlignment( Label::a_center );
+	m_pTitleLabel_guess = new Label( "STATS - CAMPAIGN WILL AUTORESTART SOON", 0, g_iCoopStatsTitleTall_guess, ScreenWidth, g_iCoopStatsTitleTall_guess );
+	m_pTitleLabel_guess->setParent( this );
+	m_pTitleLabel_guess->setFont( pSchemes->getFont( pSchemes->getSchemeHandle( "credits" ) ) );
+	m_pTitleLabel_guess->setPaintBackgroundEnabled( false );
+	m_pTitleLabel_guess->setFgColor( 255, 255, 255, 0 );
+	m_pTitleLabel_guess->setText( "STATS - CAMPAIGN WILL AUTORESTART SOON" );
+	m_pTitleLabel_guess->setContentAlignment( Label::a_center );
 
 	for ( i = 1; i <= 9; i++ )
 	{
-		guess_m_pStatLabel[1][i] = new Label( "-", ScreenWidth / 2 - guess_g_iCoopStatsWide, ( i - 10 ) * guess_g_iCoopStatsTall + ScreenHeight / 2, guess_g_iCoopStatsWide, guess_g_iCoopStatsTall );
-		guess_m_pStatLabel[1][i]->setParent( this );
-		guess_m_pStatLabel[1][i]->setFont( pSchemes->getFont( pSchemes->getSchemeHandle( "pager" ) ) );
-		guess_m_pStatLabel[1][i]->setPaintBackgroundEnabled( false );
-		guess_m_pStatLabel[1][i]->setFgColor( 255, 255, 255, 0 );
-		guess_m_pStatLabel[1][i]->setContentAlignment( Label::a_west );
+		m_pStatLabel_guess[1][i] = new Label( "-", ScreenWidth / 2 - g_iCoopStatsWide_guess, ( i - 10 ) * g_iCoopStatsTall_guess + ScreenHeight / 2, g_iCoopStatsWide_guess, g_iCoopStatsTall_guess );
+		m_pStatLabel_guess[1][i]->setParent( this );
+		m_pStatLabel_guess[1][i]->setFont( pSchemes->getFont( pSchemes->getSchemeHandle( "pager" ) ) );
+		m_pStatLabel_guess[1][i]->setPaintBackgroundEnabled( false );
+		m_pStatLabel_guess[1][i]->setFgColor( 255, 255, 255, 0 );
+		m_pStatLabel_guess[1][i]->setContentAlignment( Label::a_west );
 	}
 
 	for ( i = 1; i <= 9; i++ )
 	{
-		guess_m_pStatLabel[2][i] = new Label( "-", ScreenWidth / 2 - guess_g_iCoopStatsWide, ( i - 1 ) * guess_g_iCoopStatsTall + ScreenHeight / 2, guess_g_iCoopStatsWide, guess_g_iCoopStatsTall );
-		guess_m_pStatLabel[2][i]->setParent( this );
-		guess_m_pStatLabel[2][i]->setFont( pSchemes->getFont( pSchemes->getSchemeHandle( "pager" ) ) );
-		guess_m_pStatLabel[2][i]->setPaintBackgroundEnabled( false );
-		guess_m_pStatLabel[2][i]->setFgColor( 255, 255, 255, 0 );
-		guess_m_pStatLabel[2][i]->setContentAlignment( Label::a_west );
+		m_pStatLabel_guess[2][i] = new Label( "-", ScreenWidth / 2 - g_iCoopStatsWide_guess, ( i - 1 ) * g_iCoopStatsTall_guess + ScreenHeight / 2, g_iCoopStatsWide_guess, g_iCoopStatsTall_guess );
+		m_pStatLabel_guess[2][i]->setParent( this );
+		m_pStatLabel_guess[2][i]->setFont( pSchemes->getFont( pSchemes->getSchemeHandle( "pager" ) ) );
+		m_pStatLabel_guess[2][i]->setPaintBackgroundEnabled( false );
+		m_pStatLabel_guess[2][i]->setFgColor( 255, 255, 255, 0 );
+		m_pStatLabel_guess[2][i]->setContentAlignment( Label::a_west );
 	}
 
-	guess_m_pStatLabel[2][9]->getPos( x, y );
-	y += guess_g_iCoopStatsTall;
+	m_pStatLabel_guess[2][9]->getPos( x, y );
+	y += g_iCoopStatsTall_guess;
 
-	guess_m_pGradeLabel = new Label( " ", ScreenWidth / 2 - guess_g_iCoopStatsWide / 2, y, guess_g_iCoopStatsWide, guess_g_iCoopStatsTall );
-	guess_m_pGradeLabel->setParent( this );
-	guess_m_pGradeLabel->setFont( pSchemes->getFont( pSchemes->getSchemeHandle( "pager" ) ) );
-	guess_m_pGradeLabel->setPaintBackgroundEnabled( false );
-	guess_m_pGradeLabel->setFgColor( 255, 255, 255, 0 );
-	guess_m_pGradeLabel->setText( " " );
-	guess_m_pGradeLabel->setContentAlignment( Label::a_center );
+	m_pGradeLabel_guess = new Label( " ", ScreenWidth / 2 - g_iCoopStatsWide_guess / 2, y, g_iCoopStatsWide_guess, g_iCoopStatsTall_guess );
+	m_pGradeLabel_guess->setParent( this );
+	m_pGradeLabel_guess->setFont( pSchemes->getFont( pSchemes->getSchemeHandle( "pager" ) ) );
+	m_pGradeLabel_guess->setPaintBackgroundEnabled( false );
+	m_pGradeLabel_guess->setFgColor( 255, 255, 255, 0 );
+	m_pGradeLabel_guess->setText( " " );
+	m_pGradeLabel_guess->setContentAlignment( Label::a_center );
 
 	for ( i = 1; i <= 9; i++ )
 	{
-		guess_m_pStatLabel[3][i] = new Label( "-", ScreenWidth / 2, ( i - 10 ) * guess_g_iCoopStatsTall + ScreenHeight / 2, guess_g_iCoopStatsWide, guess_g_iCoopStatsTall );
-		guess_m_pStatLabel[3][i]->setParent( this );
-		guess_m_pStatLabel[3][i]->setFont( pSchemes->getFont( pSchemes->getSchemeHandle( "pager" ) ) );
-		guess_m_pStatLabel[3][i]->setPaintBackgroundEnabled( false );
-		guess_m_pStatLabel[3][i]->setFgColor( 255, 255, 255, 0 );
-		guess_m_pStatLabel[3][i]->setContentAlignment( Label::a_east );
+		m_pStatLabel_guess[3][i] = new Label( "-", ScreenWidth / 2, ( i - 10 ) * g_iCoopStatsTall_guess + ScreenHeight / 2, g_iCoopStatsWide_guess, g_iCoopStatsTall_guess );
+		m_pStatLabel_guess[3][i]->setParent( this );
+		m_pStatLabel_guess[3][i]->setFont( pSchemes->getFont( pSchemes->getSchemeHandle( "pager" ) ) );
+		m_pStatLabel_guess[3][i]->setPaintBackgroundEnabled( false );
+		m_pStatLabel_guess[3][i]->setFgColor( 255, 255, 255, 0 );
+		m_pStatLabel_guess[3][i]->setContentAlignment( Label::a_east );
 	}
 
 	for ( i = 1; i <= 9; i++ )
 	{
-		guess_m_pStatLabel[4][i] = new Label( "-", ScreenWidth / 2, ( i - 1 ) * guess_g_iCoopStatsTall + ScreenHeight / 2, guess_g_iCoopStatsWide, guess_g_iCoopStatsTall );
-		guess_m_pStatLabel[4][i]->setParent( this );
-		guess_m_pStatLabel[4][i]->setFont( pSchemes->getFont( pSchemes->getSchemeHandle( "pager" ) ) );
-		guess_m_pStatLabel[4][i]->setPaintBackgroundEnabled( false );
-		guess_m_pStatLabel[4][i]->setFgColor( 255, 255, 255, 0 );
-		guess_m_pStatLabel[4][i]->setContentAlignment( Label::a_east );
+		m_pStatLabel_guess[4][i] = new Label( "-", ScreenWidth / 2, ( i - 1 ) * g_iCoopStatsTall_guess + ScreenHeight / 2, g_iCoopStatsWide_guess, g_iCoopStatsTall_guess );
+		m_pStatLabel_guess[4][i]->setParent( this );
+		m_pStatLabel_guess[4][i]->setFont( pSchemes->getFont( pSchemes->getSchemeHandle( "pager" ) ) );
+		m_pStatLabel_guess[4][i]->setPaintBackgroundEnabled( false );
+		m_pStatLabel_guess[4][i]->setFgColor( 255, 255, 255, 0 );
+		m_pStatLabel_guess[4][i]->setContentAlignment( Label::a_east );
 	}
 
 	Initialize();
@@ -506,20 +506,20 @@ void SetEndingOrUnlockables( int type, bool hasntgot, bool ending6, bool ending7
 void CCoopStats::Initialize()
 {
 	setVisible( false );
-	guess_m_iUnknownBC = 0;
+	m_iUnknownBC_guess = 0;
 }
 
-int guess_MsgBeatCoop( const char *pszName, int iSize, void *pbuf )
+int MsgBeatCoop_guess( const char *pszName, int iSize, void *pbuf )
 {
 	SetEndingOrUnlockables( 0, false, false, true );
 	return 1;
 }
 
-int guess_MsgCoopStats( const char *pszName, int iSize, void *pbuf )
+int MsgCoopStats_guess( const char *pszName, int iSize, void *pbuf )
 {
 	BEGIN_READ( pbuf, iSize );
 
-	if ( !gViewPort->guess_m_pCoopStats )
+	if ( !gViewPort->m_pCoopStats_guess )
 		return 1;
 
 	int iPlayer = READ_BYTE();
@@ -559,108 +559,108 @@ int guess_MsgCoopStats( const char *pszName, int iSize, void *pbuf )
 	else
 		iGrade = ( iScore >= 900 ) ? 6 : 7;
 
-	gViewPort->guess_m_pCoopStats->guess_m_pGradeLabel->setText( "Ending seen: 7" );
+	gViewPort->m_pCoopStats_guess->m_pGradeLabel_guess->setText( "Ending seen: 7" );
 
 	if ( iTimeAttack )
 	{
-		guess_IrrKlangSetLoop( true );
-		guess_IrrKlangPlay( "stats.mp3" );
+		IrrKlangSetLoop_guess( true );
+		IrrKlangPlay_guess( "stats.mp3" );
 
 		switch ( iGrade )
 		{
 		case 1:
-			gViewPort->guess_m_pCoopStats->guess_m_pGradeLabel->setText( "Grade: S" );
+			gViewPort->m_pCoopStats_guess->m_pGradeLabel_guess->setText( "Grade: S" );
 			break;
 		case 2:
-			gViewPort->guess_m_pCoopStats->guess_m_pGradeLabel->setText( "Grade: A" );
+			gViewPort->m_pCoopStats_guess->m_pGradeLabel_guess->setText( "Grade: A" );
 			break;
 		case 3:
-			gViewPort->guess_m_pCoopStats->guess_m_pGradeLabel->setText( "Grade: B" );
+			gViewPort->m_pCoopStats_guess->m_pGradeLabel_guess->setText( "Grade: B" );
 			break;
 		case 4:
-			gViewPort->guess_m_pCoopStats->guess_m_pGradeLabel->setText( "Grade: C" );
+			gViewPort->m_pCoopStats_guess->m_pGradeLabel_guess->setText( "Grade: C" );
 			break;
 		case 5:
-			gViewPort->guess_m_pCoopStats->guess_m_pGradeLabel->setText( "Grade: D" );
+			gViewPort->m_pCoopStats_guess->m_pGradeLabel_guess->setText( "Grade: D" );
 			break;
 		case 6:
-			gViewPort->guess_m_pCoopStats->guess_m_pGradeLabel->setText( "Grade: E" );
+			gViewPort->m_pCoopStats_guess->m_pGradeLabel_guess->setText( "Grade: E" );
 			break;
 		case 7:
-			gViewPort->guess_m_pCoopStats->guess_m_pGradeLabel->setText( "Grade: F" );
+			gViewPort->m_pCoopStats_guess->m_pGradeLabel_guess->setText( "Grade: F" );
 			break;
 		}
 	}
 
 	if ( !iShow )
 	{
-		gViewPort->guess_m_pCoopStats->setVisible( false );
+		gViewPort->m_pCoopStats_guess->setVisible( false );
 		return 0;
 	}
 
 	if ( iShow == 2 )
-		gViewPort->guess_m_pCoopStats->setVisible( true );
+		gViewPort->m_pCoopStats_guess->setVisible( true );
 
 	if ( iVisible )
-		gViewPort->guess_m_pCoopStats->setVisible( true );
+		gViewPort->m_pCoopStats_guess->setVisible( true );
 
 	if ( iPlayer >= 1 && g_PlayerInfoList[iPlayer].name && strlen( g_PlayerInfoList[iPlayer].name ) >= 1 )
 	{
 		if ( iDead )
 		{
-			gViewPort->guess_m_pCoopStats->guess_m_pStatLabel[iPlayer][1]->setFgColor( 117, 0, 0, 0 );
-			gViewPort->guess_m_pCoopStats->guess_m_pStatLabel[iPlayer][2]->setFgColor( 117, 0, 0, 0 );
-			gViewPort->guess_m_pCoopStats->guess_m_pStatLabel[iPlayer][3]->setFgColor( 117, 0, 0, 0 );
-			gViewPort->guess_m_pCoopStats->guess_m_pStatLabel[iPlayer][4]->setFgColor( 117, 0, 0, 0 );
-			gViewPort->guess_m_pCoopStats->guess_m_pStatLabel[iPlayer][5]->setFgColor( 117, 0, 0, 0 );
-			gViewPort->guess_m_pCoopStats->guess_m_pStatLabel[iPlayer][6]->setFgColor( 117, 0, 0, 0 );
-			gViewPort->guess_m_pCoopStats->guess_m_pStatLabel[iPlayer][7]->setFgColor( 117, 0, 0, 0 );
-			gViewPort->guess_m_pCoopStats->guess_m_pStatLabel[iPlayer][8]->setFgColor( 117, 0, 0, 0 );
-			gViewPort->guess_m_pCoopStats->guess_m_pStatLabel[iPlayer][9]->setFgColor( 117, 0, 0, 0 );
+			gViewPort->m_pCoopStats_guess->m_pStatLabel_guess[iPlayer][1]->setFgColor( 117, 0, 0, 0 );
+			gViewPort->m_pCoopStats_guess->m_pStatLabel_guess[iPlayer][2]->setFgColor( 117, 0, 0, 0 );
+			gViewPort->m_pCoopStats_guess->m_pStatLabel_guess[iPlayer][3]->setFgColor( 117, 0, 0, 0 );
+			gViewPort->m_pCoopStats_guess->m_pStatLabel_guess[iPlayer][4]->setFgColor( 117, 0, 0, 0 );
+			gViewPort->m_pCoopStats_guess->m_pStatLabel_guess[iPlayer][5]->setFgColor( 117, 0, 0, 0 );
+			gViewPort->m_pCoopStats_guess->m_pStatLabel_guess[iPlayer][6]->setFgColor( 117, 0, 0, 0 );
+			gViewPort->m_pCoopStats_guess->m_pStatLabel_guess[iPlayer][7]->setFgColor( 117, 0, 0, 0 );
+			gViewPort->m_pCoopStats_guess->m_pStatLabel_guess[iPlayer][8]->setFgColor( 117, 0, 0, 0 );
+			gViewPort->m_pCoopStats_guess->m_pStatLabel_guess[iPlayer][9]->setFgColor( 117, 0, 0, 0 );
 		}
 		else if ( iBest )
 		{
-			gViewPort->guess_m_pCoopStats->guess_m_pStatLabel[iPlayer][1]->setFgColor( 255, 211, 81, 0 );
-			gViewPort->guess_m_pCoopStats->guess_m_pStatLabel[iPlayer][2]->setFgColor( 255, 211, 81, 0 );
-			gViewPort->guess_m_pCoopStats->guess_m_pStatLabel[iPlayer][3]->setFgColor( 255, 211, 81, 0 );
-			gViewPort->guess_m_pCoopStats->guess_m_pStatLabel[iPlayer][4]->setFgColor( 255, 211, 81, 0 );
-			gViewPort->guess_m_pCoopStats->guess_m_pStatLabel[iPlayer][5]->setFgColor( 255, 211, 81, 0 );
-			gViewPort->guess_m_pCoopStats->guess_m_pStatLabel[iPlayer][6]->setFgColor( 255, 211, 81, 0 );
-			gViewPort->guess_m_pCoopStats->guess_m_pStatLabel[iPlayer][7]->setFgColor( 255, 211, 81, 0 );
-			gViewPort->guess_m_pCoopStats->guess_m_pStatLabel[iPlayer][8]->setFgColor( 255, 211, 81, 0 );
-			gViewPort->guess_m_pCoopStats->guess_m_pStatLabel[iPlayer][9]->setFgColor( 255, 211, 81, 0 );
+			gViewPort->m_pCoopStats_guess->m_pStatLabel_guess[iPlayer][1]->setFgColor( 255, 211, 81, 0 );
+			gViewPort->m_pCoopStats_guess->m_pStatLabel_guess[iPlayer][2]->setFgColor( 255, 211, 81, 0 );
+			gViewPort->m_pCoopStats_guess->m_pStatLabel_guess[iPlayer][3]->setFgColor( 255, 211, 81, 0 );
+			gViewPort->m_pCoopStats_guess->m_pStatLabel_guess[iPlayer][4]->setFgColor( 255, 211, 81, 0 );
+			gViewPort->m_pCoopStats_guess->m_pStatLabel_guess[iPlayer][5]->setFgColor( 255, 211, 81, 0 );
+			gViewPort->m_pCoopStats_guess->m_pStatLabel_guess[iPlayer][6]->setFgColor( 255, 211, 81, 0 );
+			gViewPort->m_pCoopStats_guess->m_pStatLabel_guess[iPlayer][7]->setFgColor( 255, 211, 81, 0 );
+			gViewPort->m_pCoopStats_guess->m_pStatLabel_guess[iPlayer][8]->setFgColor( 255, 211, 81, 0 );
+			gViewPort->m_pCoopStats_guess->m_pStatLabel_guess[iPlayer][9]->setFgColor( 255, 211, 81, 0 );
 		}
 		else
 		{
-			gViewPort->guess_m_pCoopStats->guess_m_pStatLabel[iPlayer][1]->setFgColor( 255, 255, 255, 0 );
-			gViewPort->guess_m_pCoopStats->guess_m_pStatLabel[iPlayer][2]->setFgColor( 255, 255, 255, 0 );
-			gViewPort->guess_m_pCoopStats->guess_m_pStatLabel[iPlayer][3]->setFgColor( 255, 255, 255, 0 );
-			gViewPort->guess_m_pCoopStats->guess_m_pStatLabel[iPlayer][4]->setFgColor( 255, 255, 255, 0 );
-			gViewPort->guess_m_pCoopStats->guess_m_pStatLabel[iPlayer][5]->setFgColor( 255, 255, 255, 0 );
-			gViewPort->guess_m_pCoopStats->guess_m_pStatLabel[iPlayer][6]->setFgColor( 255, 255, 255, 0 );
-			gViewPort->guess_m_pCoopStats->guess_m_pStatLabel[iPlayer][7]->setFgColor( 255, 255, 255, 0 );
-			gViewPort->guess_m_pCoopStats->guess_m_pStatLabel[iPlayer][8]->setFgColor( 255, 255, 255, 0 );
-			gViewPort->guess_m_pCoopStats->guess_m_pStatLabel[iPlayer][9]->setFgColor( 255, 255, 255, 0 );
+			gViewPort->m_pCoopStats_guess->m_pStatLabel_guess[iPlayer][1]->setFgColor( 255, 255, 255, 0 );
+			gViewPort->m_pCoopStats_guess->m_pStatLabel_guess[iPlayer][2]->setFgColor( 255, 255, 255, 0 );
+			gViewPort->m_pCoopStats_guess->m_pStatLabel_guess[iPlayer][3]->setFgColor( 255, 255, 255, 0 );
+			gViewPort->m_pCoopStats_guess->m_pStatLabel_guess[iPlayer][4]->setFgColor( 255, 255, 255, 0 );
+			gViewPort->m_pCoopStats_guess->m_pStatLabel_guess[iPlayer][5]->setFgColor( 255, 255, 255, 0 );
+			gViewPort->m_pCoopStats_guess->m_pStatLabel_guess[iPlayer][6]->setFgColor( 255, 255, 255, 0 );
+			gViewPort->m_pCoopStats_guess->m_pStatLabel_guess[iPlayer][7]->setFgColor( 255, 255, 255, 0 );
+			gViewPort->m_pCoopStats_guess->m_pStatLabel_guess[iPlayer][8]->setFgColor( 255, 255, 255, 0 );
+			gViewPort->m_pCoopStats_guess->m_pStatLabel_guess[iPlayer][9]->setFgColor( 255, 255, 255, 0 );
 		}
 
-		gViewPort->guess_m_pCoopStats->guess_m_pStatLabel[iPlayer][1]->setText( guess_va( "%s - Shots fired: %i", g_PlayerInfoList[iPlayer].name, iShotsFired ) );
-		gViewPort->guess_m_pCoopStats->guess_m_pStatLabel[iPlayer][2]->setText( guess_va( "%s - Shots hit: %i", g_PlayerInfoList[iPlayer].name, iShotsHit ) );
-		gViewPort->guess_m_pCoopStats->guess_m_pStatLabel[iPlayer][3]->setText( guess_va( "%s - Shots missed: %i", g_PlayerInfoList[iPlayer].name, iShotsMissed ) );
-		gViewPort->guess_m_pCoopStats->guess_m_pStatLabel[iPlayer][4]->setText( guess_va( "%s - Accuracy: %i", g_PlayerInfoList[iPlayer].name, (int)flAccuracy ) );
-		gViewPort->guess_m_pCoopStats->guess_m_pStatLabel[iPlayer][5]->setText( guess_va( "%s - Damage taken: %i", g_PlayerInfoList[iPlayer].name, iDamageTaken ) );
-		gViewPort->guess_m_pCoopStats->guess_m_pStatLabel[iPlayer][6]->setText( guess_va( "%s - Time taken: %i:%i:%i", g_PlayerInfoList[iPlayer].name, iHours, iMinutes, iSeconds ) );
-		gViewPort->guess_m_pCoopStats->guess_m_pStatLabel[iPlayer][7]->setText( guess_va( "%s - Killed by melee: %i", g_PlayerInfoList[iPlayer].name, iMeleeKills ) );
-		gViewPort->guess_m_pCoopStats->guess_m_pStatLabel[iPlayer][8]->setText( guess_va( "%s - Killed by shooting: %i", g_PlayerInfoList[iPlayer].name, iShootingKills ) );
+		gViewPort->m_pCoopStats_guess->m_pStatLabel_guess[iPlayer][1]->setText( va_guess( "%s - Shots fired: %i", g_PlayerInfoList[iPlayer].name, iShotsFired ) );
+		gViewPort->m_pCoopStats_guess->m_pStatLabel_guess[iPlayer][2]->setText( va_guess( "%s - Shots hit: %i", g_PlayerInfoList[iPlayer].name, iShotsHit ) );
+		gViewPort->m_pCoopStats_guess->m_pStatLabel_guess[iPlayer][3]->setText( va_guess( "%s - Shots missed: %i", g_PlayerInfoList[iPlayer].name, iShotsMissed ) );
+		gViewPort->m_pCoopStats_guess->m_pStatLabel_guess[iPlayer][4]->setText( va_guess( "%s - Accuracy: %i", g_PlayerInfoList[iPlayer].name, (int)flAccuracy ) );
+		gViewPort->m_pCoopStats_guess->m_pStatLabel_guess[iPlayer][5]->setText( va_guess( "%s - Damage taken: %i", g_PlayerInfoList[iPlayer].name, iDamageTaken ) );
+		gViewPort->m_pCoopStats_guess->m_pStatLabel_guess[iPlayer][6]->setText( va_guess( "%s - Time taken: %i:%i:%i", g_PlayerInfoList[iPlayer].name, iHours, iMinutes, iSeconds ) );
+		gViewPort->m_pCoopStats_guess->m_pStatLabel_guess[iPlayer][7]->setText( va_guess( "%s - Killed by melee: %i", g_PlayerInfoList[iPlayer].name, iMeleeKills ) );
+		gViewPort->m_pCoopStats_guess->m_pStatLabel_guess[iPlayer][8]->setText( va_guess( "%s - Killed by shooting: %i", g_PlayerInfoList[iPlayer].name, iShootingKills ) );
 
 		if ( iTimeAttack )
-			gViewPort->guess_m_pCoopStats->guess_m_pStatLabel[iPlayer][9]->setText( guess_va( "%s - Seconds earned: %i", g_PlayerInfoList[iPlayer].name, iSecondsEarned ) );
+			gViewPort->m_pCoopStats_guess->m_pStatLabel_guess[iPlayer][9]->setText( va_guess( "%s - Seconds earned: %i", g_PlayerInfoList[iPlayer].name, iSecondsEarned ) );
 	}
 
 	return 1;
 }
 
-void guess_CoopStatsInit()
+void CoopStatsInit_guess()
 {
-	gEngfuncs.pfnHookUserMsg( "CoopStats", guess_MsgCoopStats );
-	gEngfuncs.pfnHookUserMsg( "BeatCoop", guess_MsgBeatCoop );
+	gEngfuncs.pfnHookUserMsg( "CoopStats", MsgCoopStats_guess );
+	gEngfuncs.pfnHookUserMsg( "BeatCoop", MsgBeatCoop_guess );
 }

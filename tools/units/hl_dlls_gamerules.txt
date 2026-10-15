@@ -5,4 +5,4 @@
 ?RefreshSkillData@CGameRules@@UAEXXZ
 ?StartVoteKick@CGameRules@@UAEXPAVCBasePlayer@@0@Z
 ?VoteKickThink@CGameRules@@UAEXXZ
-?guess_IsMapperMode@CGameRules@@QAE_NXZ
+?IsMapperMode_guess@CGameRules@@QAE_NXZ

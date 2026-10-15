@@ -10,9 +10,9 @@
 
 #include "hud.h"
 #include "cl_util.h"
-#include "guess_TGALoader.h"
+#include "TGALoader_guess.h"
 
-bool guess_CTGALoader::guess_LoadTGA( guess_Texture *texture, char *filename )
+bool CTGALoader_guess::LoadTGA_guess( Texture_guess *texture, char *filename )
 {
 	FILE *fTGA;
 	fTGA = fopen( filename, "rb" );
@@ -23,7 +23,7 @@ bool guess_CTGALoader::guess_LoadTGA( guess_Texture *texture, char *filename )
 		return false;
 	}
 
-	if ( fread( &guess_tgaheader, sizeof( guess_TGAHeader ), 1, fTGA ) == 0 )
+	if ( fread( &tgaheader_guess, sizeof( TGAHeader_guess ), 1, fTGA ) == 0 )
 	{
 		gEngfuncs.Con_Printf( "TGA LOAD: Could not read file header\n" );
 		if ( fTGA != NULL )
@@ -31,13 +31,13 @@ bool guess_CTGALoader::guess_LoadTGA( guess_Texture *texture, char *filename )
 		return false;
 	}
 
-	if ( memcmp( guess_uTGAcompare, &guess_tgaheader, sizeof( guess_tgaheader ) ) == 0 )
+	if ( memcmp( uTGAcompare_guess, &tgaheader_guess, sizeof( tgaheader_guess ) ) == 0 )
 	{
-		guess_LoadUncompressedTGA( texture, filename, fTGA );
+		LoadUncompressedTGA_guess( texture, filename, fTGA );
 	}
-	else if ( memcmp( guess_cTGAcompare, &guess_tgaheader, sizeof( guess_tgaheader ) ) == 0 )
+	else if ( memcmp( cTGAcompare_guess, &tgaheader_guess, sizeof( tgaheader_guess ) ) == 0 )
 	{
-		guess_LoadCompressedTGA( texture, filename, fTGA );
+		LoadCompressedTGA_guess( texture, filename, fTGA );
 	}
 	else
 	{
@@ -49,9 +49,9 @@ bool guess_CTGALoader::guess_LoadTGA( guess_Texture *texture, char *filename )
 	return true;
 }
 
-bool guess_CTGALoader::guess_LoadUncompressedTGA( guess_Texture *texture, char *filename, FILE *fTGA )
+bool CTGALoader_guess::LoadUncompressedTGA_guess( Texture_guess *texture, char *filename, FILE *fTGA )
 {
-	if ( fread( guess_tga.guess_header, sizeof( guess_tga.guess_header ), 1, fTGA ) == 0 )
+	if ( fread( tga_guess.header_guess, sizeof( tga_guess.header_guess ), 1, fTGA ) == 0 )
 	{
 		gEngfuncs.Con_Printf( "TGA LOAD: Could not read info header\n" );
 		if ( fTGA != NULL )
@@ -59,14 +59,14 @@ bool guess_CTGALoader::guess_LoadUncompressedTGA( guess_Texture *texture, char *
 		return false;
 	}
 
-	texture->guess_width	= guess_tga.guess_header[1] * 256 + guess_tga.guess_header[0];
-	texture->guess_height	= guess_tga.guess_header[3] * 256 + guess_tga.guess_header[2];
-	texture->guess_bpp		= guess_tga.guess_header[4];
-	guess_tga.guess_Width	= texture->guess_width;
-	guess_tga.guess_Height	= texture->guess_height;
-	guess_tga.guess_Bpp		= texture->guess_bpp;
+	texture->width_guess	= tga_guess.header_guess[1] * 256 + tga_guess.header_guess[0];
+	texture->height_guess	= tga_guess.header_guess[3] * 256 + tga_guess.header_guess[2];
+	texture->bpp_guess		= tga_guess.header_guess[4];
+	tga_guess.Width_guess	= texture->width_guess;
+	tga_guess.Height_guess	= texture->height_guess;
+	tga_guess.Bpp_guess		= texture->bpp_guess;
 
-	if ( ( texture->guess_width <= 0 ) || ( texture->guess_height <= 0 ) || ( ( texture->guess_bpp != 24 ) && ( texture->guess_bpp != 32 ) ) )
+	if ( ( texture->width_guess <= 0 ) || ( texture->height_guess <= 0 ) || ( ( texture->bpp_guess != 24 ) && ( texture->bpp_guess != 32 ) ) )
 	{
 		gEngfuncs.Con_Printf( "TGA LOAD: Invalid texture information\n" );
 		if ( fTGA != NULL )
@@ -74,44 +74,44 @@ bool guess_CTGALoader::guess_LoadUncompressedTGA( guess_Texture *texture, char *
 		return false;
 	}
 
-	if ( texture->guess_bpp == 24 )
-		texture->guess_type = GL_RGB;
+	if ( texture->bpp_guess == 24 )
+		texture->type_guess = GL_RGB;
 	else
-		texture->guess_type = GL_RGBA;
+		texture->type_guess = GL_RGBA;
 
-	guess_tga.guess_bytesPerPixel	= ( guess_tga.guess_Bpp / 8 );
-	guess_tga.guess_imageSize		= ( guess_tga.guess_bytesPerPixel * guess_tga.guess_Width * guess_tga.guess_Height );
-	texture->guess_imageData		= (GLubyte *)malloc( guess_tga.guess_imageSize );
+	tga_guess.bytesPerPixel_guess	= ( tga_guess.Bpp_guess / 8 );
+	tga_guess.imageSize_guess		= ( tga_guess.bytesPerPixel_guess * tga_guess.Width_guess * tga_guess.Height_guess );
+	texture->imageData_guess		= (GLubyte *)malloc( tga_guess.imageSize_guess );
 
-	if ( texture->guess_imageData == NULL )
+	if ( texture->imageData_guess == NULL )
 	{
 		gEngfuncs.Con_Printf( "TGA LOAD: Could not allocate memory for image\n" );
 		fclose( fTGA );
 		return false;
 	}
 
-	if ( fread( texture->guess_imageData, 1, guess_tga.guess_imageSize, fTGA ) != guess_tga.guess_imageSize )
+	if ( fread( texture->imageData_guess, 1, tga_guess.imageSize_guess, fTGA ) != tga_guess.imageSize_guess )
 	{
 		gEngfuncs.Con_Printf( "TGA LOAD: Could not read image data\n" );
-		if ( texture->guess_imageData != NULL )
-			free( texture->guess_imageData );
+		if ( texture->imageData_guess != NULL )
+			free( texture->imageData_guess );
 		fclose( fTGA );
 		return false;
 	}
 
-	for ( GLuint cswap = 0; cswap < (int)guess_tga.guess_imageSize; cswap += guess_tga.guess_bytesPerPixel )
+	for ( GLuint cswap = 0; cswap < (int)tga_guess.imageSize_guess; cswap += tga_guess.bytesPerPixel_guess )
 	{
-		texture->guess_imageData[cswap] ^= texture->guess_imageData[cswap + 2] ^=
-		texture->guess_imageData[cswap] ^= texture->guess_imageData[cswap + 2];
+		texture->imageData_guess[cswap] ^= texture->imageData_guess[cswap + 2] ^=
+		texture->imageData_guess[cswap] ^= texture->imageData_guess[cswap + 2];
 	}
 
 	fclose( fTGA );
 	return true;
 }
 
-bool guess_CTGALoader::guess_LoadCompressedTGA( guess_Texture *texture, char *filename, FILE *fTGA )
+bool CTGALoader_guess::LoadCompressedTGA_guess( Texture_guess *texture, char *filename, FILE *fTGA )
 {
-	if ( fread( guess_tga.guess_header, sizeof( guess_tga.guess_header ), 1, fTGA ) == 0 )
+	if ( fread( tga_guess.header_guess, sizeof( tga_guess.header_guess ), 1, fTGA ) == 0 )
 	{
 		gEngfuncs.Con_Printf( "TGA LOAD: Could not read info header\n" );
 		if ( fTGA != NULL )
@@ -119,14 +119,14 @@ bool guess_CTGALoader::guess_LoadCompressedTGA( guess_Texture *texture, char *fi
 		return false;
 	}
 
-	texture->guess_width	= guess_tga.guess_header[1] * 256 + guess_tga.guess_header[0];
-	texture->guess_height	= guess_tga.guess_header[3] * 256 + guess_tga.guess_header[2];
-	texture->guess_bpp		= guess_tga.guess_header[4];
-	guess_tga.guess_Width	= texture->guess_width;
-	guess_tga.guess_Height	= texture->guess_height;
-	guess_tga.guess_Bpp		= texture->guess_bpp;
+	texture->width_guess	= tga_guess.header_guess[1] * 256 + tga_guess.header_guess[0];
+	texture->height_guess	= tga_guess.header_guess[3] * 256 + tga_guess.header_guess[2];
+	texture->bpp_guess		= tga_guess.header_guess[4];
+	tga_guess.Width_guess	= texture->width_guess;
+	tga_guess.Height_guess	= texture->height_guess;
+	tga_guess.Bpp_guess		= texture->bpp_guess;
 
-	if ( ( texture->guess_width <= 0 ) || ( texture->guess_height <= 0 ) || ( ( texture->guess_bpp != 24 ) && ( texture->guess_bpp != 32 ) ) )
+	if ( ( texture->width_guess <= 0 ) || ( texture->height_guess <= 0 ) || ( ( texture->bpp_guess != 24 ) && ( texture->bpp_guess != 32 ) ) )
 	{
 		gEngfuncs.Con_Printf( "TGA LOAD: Invalid texture information\n" );
 		if ( fTGA != NULL )
@@ -134,26 +134,26 @@ bool guess_CTGALoader::guess_LoadCompressedTGA( guess_Texture *texture, char *fi
 		return false;
 	}
 
-	if ( texture->guess_bpp == 24 )
-		texture->guess_type = GL_RGB;
+	if ( texture->bpp_guess == 24 )
+		texture->type_guess = GL_RGB;
 	else
-		texture->guess_type = GL_RGBA;
+		texture->type_guess = GL_RGBA;
 
-	guess_tga.guess_bytesPerPixel	= ( guess_tga.guess_Bpp / 8 );
-	guess_tga.guess_imageSize		= ( guess_tga.guess_bytesPerPixel * guess_tga.guess_Width * guess_tga.guess_Height );
-	texture->guess_imageData		= (GLubyte *)malloc( guess_tga.guess_imageSize );
+	tga_guess.bytesPerPixel_guess	= ( tga_guess.Bpp_guess / 8 );
+	tga_guess.imageSize_guess		= ( tga_guess.bytesPerPixel_guess * tga_guess.Width_guess * tga_guess.Height_guess );
+	texture->imageData_guess		= (GLubyte *)malloc( tga_guess.imageSize_guess );
 
-	if ( texture->guess_imageData == NULL )
+	if ( texture->imageData_guess == NULL )
 	{
 		gEngfuncs.Con_Printf( "TGA LOAD: Could not allocate memory for image\n" );
 		fclose( fTGA );
 		return false;
 	}
 
-	GLuint pixelcount		= guess_tga.guess_Height * guess_tga.guess_Width;
+	GLuint pixelcount		= tga_guess.Height_guess * tga_guess.Width_guess;
 	GLuint currentpixel		= 0;
 	GLuint currentbyte		= 0;
-	GLubyte *colorbuffer	= (GLubyte *)malloc( guess_tga.guess_bytesPerPixel );
+	GLubyte *colorbuffer	= (GLubyte *)malloc( tga_guess.bytesPerPixel_guess );
 
 	do
 	{
@@ -164,8 +164,8 @@ bool guess_CTGALoader::guess_LoadCompressedTGA( guess_Texture *texture, char *fi
 			gEngfuncs.Con_Printf( "TGA LOAD: Could not read RLE header\n" );
 			if ( fTGA != NULL )
 				fclose( fTGA );
-			if ( texture->guess_imageData != NULL )
-				free( texture->guess_imageData );
+			if ( texture->imageData_guess != NULL )
+				free( texture->imageData_guess );
 			return false;
 		}
 
@@ -175,26 +175,26 @@ bool guess_CTGALoader::guess_LoadCompressedTGA( guess_Texture *texture, char *fi
 			chunkheader++;
 			for ( counter = 0; counter < chunkheader; counter++ )
 			{
-				if ( fread( colorbuffer, 1, guess_tga.guess_bytesPerPixel, fTGA ) != guess_tga.guess_bytesPerPixel )
+				if ( fread( colorbuffer, 1, tga_guess.bytesPerPixel_guess, fTGA ) != tga_guess.bytesPerPixel_guess )
 				{
 					gEngfuncs.Con_Printf( "TGA LOAD: Could not read image data\n" );
 					if ( fTGA != NULL )
 						fclose( fTGA );
 					if ( colorbuffer != NULL )
 						free( colorbuffer );
-					if ( texture->guess_imageData != NULL )
-						free( texture->guess_imageData );
+					if ( texture->imageData_guess != NULL )
+						free( texture->imageData_guess );
 					return false;
 				}
 
-				texture->guess_imageData[currentbyte] = colorbuffer[2];
-				texture->guess_imageData[currentbyte + 1] = colorbuffer[1];
-				texture->guess_imageData[currentbyte + 2] = colorbuffer[0];
+				texture->imageData_guess[currentbyte] = colorbuffer[2];
+				texture->imageData_guess[currentbyte + 1] = colorbuffer[1];
+				texture->imageData_guess[currentbyte + 2] = colorbuffer[0];
 
-				if ( guess_tga.guess_bytesPerPixel == 4 )
-					texture->guess_imageData[currentbyte + 3] = colorbuffer[3];
+				if ( tga_guess.bytesPerPixel_guess == 4 )
+					texture->imageData_guess[currentbyte + 3] = colorbuffer[3];
 
-				currentbyte += guess_tga.guess_bytesPerPixel;
+				currentbyte += tga_guess.bytesPerPixel_guess;
 				currentpixel++;
 
 				if ( currentpixel > pixelcount )
@@ -204,8 +204,8 @@ bool guess_CTGALoader::guess_LoadCompressedTGA( guess_Texture *texture, char *fi
 						fclose( fTGA );
 					if ( colorbuffer != NULL )
 						free( colorbuffer );
-					if ( texture->guess_imageData != NULL )
-						free( texture->guess_imageData );
+					if ( texture->imageData_guess != NULL )
+						free( texture->imageData_guess );
 					return false;
 				}
 			}
@@ -214,28 +214,28 @@ bool guess_CTGALoader::guess_LoadCompressedTGA( guess_Texture *texture, char *fi
 		{
 			short counter;
 			chunkheader -= 127;
-			if ( fread( colorbuffer, 1, guess_tga.guess_bytesPerPixel, fTGA ) != guess_tga.guess_bytesPerPixel )
+			if ( fread( colorbuffer, 1, tga_guess.bytesPerPixel_guess, fTGA ) != tga_guess.bytesPerPixel_guess )
 			{
 				gEngfuncs.Con_Printf( "TGA LOAD: Could not read from file\n" );
 				if ( fTGA != NULL )
 					fclose( fTGA );
 				if ( colorbuffer != NULL )
 					free( colorbuffer );
-				if ( texture->guess_imageData != NULL )
-					free( texture->guess_imageData );
+				if ( texture->imageData_guess != NULL )
+					free( texture->imageData_guess );
 				return false;
 			}
 
 			for ( counter = 0; counter < chunkheader; counter++ )
 			{
-				texture->guess_imageData[currentbyte] = colorbuffer[2];
-				texture->guess_imageData[currentbyte + 1] = colorbuffer[1];
-				texture->guess_imageData[currentbyte + 2] = colorbuffer[0];
+				texture->imageData_guess[currentbyte] = colorbuffer[2];
+				texture->imageData_guess[currentbyte + 1] = colorbuffer[1];
+				texture->imageData_guess[currentbyte + 2] = colorbuffer[0];
 
-				if ( guess_tga.guess_bytesPerPixel == 4 )
-					texture->guess_imageData[currentbyte + 3] = colorbuffer[3];
+				if ( tga_guess.bytesPerPixel_guess == 4 )
+					texture->imageData_guess[currentbyte + 3] = colorbuffer[3];
 
-				currentbyte += guess_tga.guess_bytesPerPixel;
+				currentbyte += tga_guess.bytesPerPixel_guess;
 				currentpixel++;
 
 				if ( currentpixel > pixelcount )
@@ -245,8 +245,8 @@ bool guess_CTGALoader::guess_LoadCompressedTGA( guess_Texture *texture, char *fi
 						fclose( fTGA );
 					if ( colorbuffer != NULL )
 						free( colorbuffer );
-					if ( texture->guess_imageData != NULL )
-						free( texture->guess_imageData );
+					if ( texture->imageData_guess != NULL )
+						free( texture->imageData_guess );
 					return false;
 				}
 			}

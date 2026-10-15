@@ -309,7 +309,7 @@ public:
 	virtual void	AddPointsToTeam( int score, BOOL bAllowNegativeScore ) {}
 	virtual BOOL	AddPlayerItem( CBasePlayerItem *pItem ) { return 0; }
 	virtual BOOL	RemovePlayerItem( CBasePlayerItem *pItem ) { return 0; }
-	virtual int 	GiveAmmo( int iAmount, char *szName, int iMax, bool guess_bNoMessage ) { return -1; };	// CoF 1.6a: 4th parameter suppresses the pickup message
+	virtual int 	GiveAmmo( int iAmount, char *szName, int iMax, bool bNoMessage_guess ) { return -1; };	// CoF 1.6a: 4th parameter suppresses the pickup message
 	virtual float	GetDelay( void ) { return 0; }
 	virtual int		IsMoving( void ) { return pev->velocity != g_vecZero; }
 	virtual void	OverrideReset( void ) {}
@@ -495,7 +495,7 @@ public:
 	// CoF 1.6a: 4 new bytes at 0xC4 (CBaseEntity is 4 bytes larger than in
 	// 1.55). CBasePlayer::IsDonator compares [this+0xC4] with 0, 3 and 4, and
 	// the "Donator status" alert in ClientCommand prints it. See docs/structs.md.
-	int guess_m_iNew16a;
+	int m_iNew16a_guess;
 
 	//Special stuff for grenades and satchels.
 	float m_flStartThrow;
@@ -1056,7 +1056,7 @@ public:
 	int player4model;
 	string_t m_sCustomSleeve;
 	string_t m_sCustomFingers;
-	string_t guess_m_sCustomGloves;	// CoF 1.6a: KeyValue "customgloves" stores here (+0xF8)
+	string_t m_sCustomGloves_guess;	// CoF 1.6a: KeyValue "customgloves" stores here (+0xF8)
 
 	CBaseAlias *m_pFirstAlias;
 	cutscenesoundarray cutscene_sound_array[64];

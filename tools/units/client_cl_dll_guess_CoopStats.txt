@@ -1,9 +1,9 @@
 ?Initialize@CCoopStats@@QAEXXZ
-?guess_CoopStatsInit@@YAXXZ
+?CoopStatsInit_guess@@YAXXZ
 ??0CCoopStats@@QAE@XZ
 ?SetEndingOrUnlockables@@YAXH_N00@Z
-?guess_MsgBeatCoop@@YAHPBDHPAX@Z
-?guess_MsgCoopStats@@YAHPBDHPAX@Z
+?MsgBeatCoop_guess@@YAHPBDHPAX@Z
+?MsgCoopStats_guess@@YAHPBDHPAX@Z
 ??0_System_error@std@@IAE@Verror_code@1@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@1@@Z
 ??0_System_error@std@@QAE@ABV01@@Z
 ??0bad_array_new_length@std@@QAE@XZ

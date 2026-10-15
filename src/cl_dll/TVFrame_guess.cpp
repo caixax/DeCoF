@@ -7,7 +7,7 @@
 #include "cl_util.h"
 #include "parsemsg.h"
 #include "vgui_TeamFortressViewport.h"
-#include "guess_TVFrame.h"
+#include "TVFrame_guess.h"
 
 CTVFrame::CTVFrame() : Panel( 0, 0, ScreenWidth, ScreenHeight )
 {
@@ -18,22 +18,22 @@ CTVFrame::CTVFrame() : Panel( 0, 0, ScreenWidth, ScreenHeight )
 
 void CTVFrame::Initialize()
 {
-	guess_m_iTVFrame = 0;
+	m_iTVFrame_guess = 0;
 	setVisible( false );
 }
 
-int guess_MsgTVFrame( const char *pszName, int iSize, void *pbuf )
+int MsgTVFrame_guess( const char *pszName, int iSize, void *pbuf )
 {
 	BEGIN_READ( pbuf, iSize );
 
 	// tests the scope panel, not the TV frame
-	if ( gViewPort->guess_m_pScope )
+	if ( gViewPort->m_pScope_guess )
 		READ_BYTE();
 
 	return 1;
 }
 
-void guess_TVFrameInit()
+void TVFrameInit_guess()
 {
-	gEngfuncs.pfnHookUserMsg( "TVFrame", guess_MsgTVFrame );
+	gEngfuncs.pfnHookUserMsg( "TVFrame", MsgTVFrame_guess );
 }

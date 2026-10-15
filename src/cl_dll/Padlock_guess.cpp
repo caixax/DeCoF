@@ -7,7 +7,7 @@
 #include "cl_util.h"
 #include "parsemsg.h"
 #include "vgui_TeamFortressViewport.h"
-#include "guess_Padlock.h"
+#include "Padlock_guess.h"
 #include "..\game_shared\vgui_loadtga.h"
 
 CPadlock::CPadlock() : Panel( 0, 0, ScreenWidth, ScreenHeight )
@@ -16,39 +16,39 @@ CPadlock::CPadlock() : Panel( 0, 0, ScreenWidth, ScreenHeight )
 	int x, y;
 	CommandButton *pButton;
 
-	guess_m_pButtonsImage = vgui_LoadTGA( "gfx/vgui/puzzle/padlock_buttons.tga" );
-	if ( guess_m_pButtonsImage )
-		guess_m_pButtonsImage->setColor( Color( 255, 255, 255, 1 ) );
+	m_pButtonsImage_guess = vgui_LoadTGA( "gfx/vgui/puzzle/padlock_buttons.tga" );
+	if ( m_pButtonsImage_guess )
+		m_pButtonsImage_guess->setColor( Color( 255, 255, 255, 1 ) );
 	else
 		gEngfuncs.Con_Printf( "Cannot load gfx/vgui/puzzle/padlock_buttons.tga!\n" );
 
-	guess_m_pButtonsImage->getSize( wide, tall );
+	m_pButtonsImage_guess->getSize( wide, tall );
 	x = ScreenWidth / 2 - wide / 2;
 	y = ScreenHeight - tall;
 
-	guess_m_pButtons = new ImagePanel( guess_m_pButtonsImage );
-	guess_m_pButtons->setParent( this );
-	guess_m_pButtons->setPos( x, y );
-	guess_m_pButtons->setVisible( true );
+	m_pButtons_guess = new ImagePanel( m_pButtonsImage_guess );
+	m_pButtons_guess->setParent( this );
+	m_pButtons_guess->setPos( x, y );
+	m_pButtons_guess->setVisible( true );
 
 	pButton = new CommandButton( "", 18, 20, 66, 66, true, true );
-	pButton->setParent( guess_m_pButtons );
+	pButton->setParent( m_pButtons_guess );
 	pButton->addActionSignal( new CPadlockHandler_Command( this, 1 ) );
 
 	pButton = new CommandButton( "", 84, 20, 66, 66, true, true );
-	pButton->setParent( guess_m_pButtons );
+	pButton->setParent( m_pButtons_guess );
 	pButton->addActionSignal( new CPadlockHandler_Command( this, 2 ) );
 
 	pButton = new CommandButton( "", 150, 20, 66, 66, true, true );
-	pButton->setParent( guess_m_pButtons );
+	pButton->setParent( m_pButtons_guess );
 	pButton->addActionSignal( new CPadlockHandler_Command( this, 3 ) );
 
 	pButton = new CommandButton( "", 216, 20, 66, 66, true, true );
-	pButton->setParent( guess_m_pButtons );
+	pButton->setParent( m_pButtons_guess );
 	pButton->addActionSignal( new CPadlockHandler_Command( this, 4 ) );
 
 	pButton = new CommandButton( "", 117, 86, 66, 14, true, true );
-	pButton->setParent( guess_m_pButtons );
+	pButton->setParent( m_pButtons_guess );
 	pButton->addActionSignal( new CPadlockHandler_Command( this, 5 ) );
 
 	setBgColor( 0, 0, 0, 255 );
@@ -85,17 +85,17 @@ void CPadlock::Initialize()
 	setVisible( false );
 }
 
-int guess_MsgPadlock( const char *pszName, int iSize, void *pbuf )
+int MsgPadlock_guess( const char *pszName, int iSize, void *pbuf )
 {
 	BEGIN_READ( pbuf, iSize );
 	int iOn = READ_BYTE();
 
-	if ( gViewPort->guess_m_pPadlock )
+	if ( gViewPort->m_pPadlock_guess )
 	{
 		if ( iOn )
-			gViewPort->guess_m_pPadlock->setVisible( true );
+			gViewPort->m_pPadlock_guess->setVisible( true );
 		else
-			gViewPort->guess_m_pPadlock->setVisible( false );
+			gViewPort->m_pPadlock_guess->setVisible( false );
 
 		gViewPort->UpdateCursorState();
 	}
@@ -103,7 +103,7 @@ int guess_MsgPadlock( const char *pszName, int iSize, void *pbuf )
 	return 1;
 }
 
-void guess_PadlockInit()
+void PadlockInit_guess()
 {
-	gEngfuncs.pfnHookUserMsg( "Padlock", guess_MsgPadlock );
+	gEngfuncs.pfnHookUserMsg( "Padlock", MsgPadlock_guess );
 }

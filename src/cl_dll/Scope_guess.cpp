@@ -7,7 +7,7 @@
 #include "cl_util.h"
 #include "parsemsg.h"
 #include "vgui_TeamFortressViewport.h"
-#include "guess_Scope.h"
+#include "Scope_guess.h"
 #include "..\game_shared\vgui_loadtga.h"
 
 CScope::CScope() : Panel( 0, 0, ScreenWidth, ScreenHeight )
@@ -16,13 +16,13 @@ CScope::CScope() : Panel( 0, 0, ScreenWidth, ScreenHeight )
 	int x, y;
 	Panel *pPanel;
 
-	guess_m_pScopeImage = vgui_LoadTGA( "gfx/vgui/telescope_scope.tga" );
-	if ( guess_m_pScopeImage )
-		guess_m_pScopeImage->setColor( Color( 255, 255, 255, 1 ) );
+	m_pScopeImage_guess = vgui_LoadTGA( "gfx/vgui/telescope_scope.tga" );
+	if ( m_pScopeImage_guess )
+		m_pScopeImage_guess->setColor( Color( 255, 255, 255, 1 ) );
 	else
 		gEngfuncs.Con_Printf( "Cannot load gfx/vgui/telescope_scope.tga!\n" );
 
-	guess_m_pScopeImage->getSize( wide, tall );
+	m_pScopeImage_guess->getSize( wide, tall );
 	x = ScreenWidth / 2 - wide / 2;
 	y = ScreenHeight / 2 - tall / 2;
 
@@ -54,10 +54,10 @@ CScope::CScope() : Panel( 0, 0, ScreenWidth, ScreenHeight )
 	pPanel->setBgColor( 0, 0, 0, 0 );
 	pPanel->setVisible( true );
 
-	guess_m_pScopePanel = new ImagePanel( guess_m_pScopeImage );
-	guess_m_pScopePanel->setParent( this );
-	guess_m_pScopePanel->setPos( x, y );
-	guess_m_pScopePanel->setVisible( true );
+	m_pScopePanel_guess = new ImagePanel( m_pScopeImage_guess );
+	m_pScopePanel_guess->setParent( this );
+	m_pScopePanel_guess->setPos( x, y );
+	m_pScopePanel_guess->setVisible( true );
 
 	setBgColor( 0, 0, 0, 255 );
 
@@ -66,48 +66,48 @@ CScope::CScope() : Panel( 0, 0, ScreenWidth, ScreenHeight )
 
 void CScope::Initialize()
 {
-	guess_m_iScope = 0;
+	m_iScope_guess = 0;
 	setVisible( false );
 }
 
-int guess_MsgScope( const char *pszName, int iSize, void *pbuf )
+int MsgScope_guess( const char *pszName, int iSize, void *pbuf )
 {
 	BEGIN_READ( pbuf, iSize );
 
-	if ( gViewPort->guess_m_pScope )
+	if ( gViewPort->m_pScope_guess )
 	{
 		int iScope = READ_BYTE();
-		gViewPort->guess_m_pScope->guess_m_iScope = iScope;
+		gViewPort->m_pScope_guess->m_iScope_guess = iScope;
 
 		if ( iScope )
 		{
 			switch ( iScope )
 			{
 			case 1:
-				gViewPort->guess_m_pScope->guess_m_pScopePanel->setImage( vgui_LoadTGA( "gfx/vgui/telescope_scope.tga" ) );
+				gViewPort->m_pScope_guess->m_pScopePanel_guess->setImage( vgui_LoadTGA( "gfx/vgui/telescope_scope.tga" ) );
 				break;
 			case 2:
-				gViewPort->guess_m_pScope->guess_m_pScopePanel->setImage( vgui_LoadTGA( "gfx/vgui/telescope_scope.tga" ) );
+				gViewPort->m_pScope_guess->m_pScopePanel_guess->setImage( vgui_LoadTGA( "gfx/vgui/telescope_scope.tga" ) );
 				break;
 			default:
-				gViewPort->guess_m_pScope->guess_m_pScopePanel->setImage( vgui_LoadTGA( "gfx/vgui/telescope_scope.tga" ) );
+				gViewPort->m_pScope_guess->m_pScopePanel_guess->setImage( vgui_LoadTGA( "gfx/vgui/telescope_scope.tga" ) );
 				break;
 			}
 
-			if ( !gViewPort->guess_m_pScope->isVisible() )
-				gViewPort->guess_m_pScope->setVisible( true );
+			if ( !gViewPort->m_pScope_guess->isVisible() )
+				gViewPort->m_pScope_guess->setVisible( true );
 		}
 		else
 		{
-			if ( gViewPort->guess_m_pScope->isVisible() )
-				gViewPort->guess_m_pScope->setVisible( false );
+			if ( gViewPort->m_pScope_guess->isVisible() )
+				gViewPort->m_pScope_guess->setVisible( false );
 		}
 	}
 
 	return 1;
 }
 
-void guess_ScopeInit()
+void ScopeInit_guess()
 {
-	gEngfuncs.pfnHookUserMsg( "Scope", guess_MsgScope );
+	gEngfuncs.pfnHookUserMsg( "Scope", MsgScope_guess );
 }

@@ -30,7 +30,7 @@
 //=========================================================
 #define	BABY_AE_ATTACK_RIGHT		0x01
 #define	BABY_AE_ATTACK_LEFT			0x02
-#define	guess_BABY_AE_EXPLODE				0x03
+#define	BABY_AE_EXPLODE_guess				0x03
 
 #define BABY_FLINCH_DELAY			2		// at most one flinch every n secs
 
@@ -191,7 +191,7 @@ void CBaby :: HandleAnimEvent( MonsterEvent_t *pEvent )
 		}
 		break;
 
-		case guess_BABY_AE_EXPLODE:
+		case BABY_AE_EXPLODE_guess:
 		{
 			pev->body = 1;
 			pev->health = 0;
@@ -230,8 +230,8 @@ void CBaby :: Spawn()
 	else
 		SET_MODEL(ENT(pev), "models/baby.mdl");
 
-	int guess_iScale = CVAR_GET_FLOAT( "cof_monsterhumanscale" );
-	UTIL_SetSize( pev, Vector( -guess_iScale, -guess_iScale, 0 ), Vector( guess_iScale, guess_iScale, 72 ) );
+	int iScale_guess = CVAR_GET_FLOAT( "cof_monsterhumanscale" );
+	UTIL_SetSize( pev, Vector( -iScale_guess, -iScale_guess, 0 ), Vector( iScale_guess, iScale_guess, 72 ) );
 
 	pev->solid			= SOLID_SLIDEBOX;
 	pev->movetype		= MOVETYPE_STEP;

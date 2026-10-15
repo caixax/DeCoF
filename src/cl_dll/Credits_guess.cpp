@@ -11,33 +11,33 @@
 #include "cl_util.h"
 #include "parsemsg.h"
 #include "vgui_TeamFortressViewport.h"
-#include "guess_Credits.h"
-#include "guess_CoopStats.h"
+#include "Credits_guess.h"
+#include "CoopStats_guess.h"
 #include <stdarg.h>
 
-extern int guess_iMenuMode;
-extern int guess_g_iHeadShieldType;
+extern int iMenuMode_guess;
+extern int g_iHeadShieldType_guess;
 extern cl_entity_t g_HeadShieldEnt;
 extern int g_HeadShieldState;
 
 #define SHIELD_ON	0
 extern cvar_t *cl_fastcredits;
-extern int guess_iUnknown101902FC;
+extern int iUnknown101902FC_guess;
 
 // the custom costume textures are loaded again when these are cleared (studio renderer)
-extern bool guess_g_bHoodieLoaded;
-extern bool guess_g_bJeansLoaded;
-extern bool guess_g_bFaceLoaded;
+extern bool g_bHoodieLoaded_guess;
+extern bool g_bJeansLoaded_guess;
+extern bool g_bFaceLoaded_guess;
 
-void guess_IrrKlangPlay( const char *pszFile );
-void guess_IrrKlangSetLoop( bool bLoop );
-void guess_IrrKlangStop( float flFadeTime );
+void IrrKlangPlay_guess( const char *pszFile );
+void IrrKlangSetLoop_guess( bool bLoop );
+void IrrKlangStop_guess( float flFadeTime );
 
-bool guess_g_bUnlockShown;			// one unlock is on the screen, cleared by a key press (input.cpp)
-int guess_g_iUnlockClothes;			// clothes drawn on the unfolded clothes model of the unlock
-int guess_g_iCreditsLetterboxHeight;
-int guess_g_iCoopCredits;			// Credits message, the co-op statistics follow
-int guess_iUnknown101B27C8;			// pitch of the unlock model
+bool g_bUnlockShown_guess;			// one unlock is on the screen, cleared by a key press (input.cpp)
+int g_iUnlockClothes_guess;			// clothes drawn on the unfolded clothes model of the unlock
+int g_iCreditsLetterboxHeight_guess;
+int g_iCoopCredits_guess;			// Credits message, the co-op statistics follow
+int iUnknown101B27C8_guess;			// pitch of the unlock model
 
 CCredits::CCredits() : Panel( 0, 0, ScreenWidth, ScreenHeight )
 {
@@ -49,93 +49,93 @@ CCredits::CCredits() : Panel( 0, 0, ScreenWidth, ScreenHeight )
 	CSchemeManager *pSchemes = gViewPort->GetSchemeManager();
 	SchemeHandle_t hCreditsScheme = pSchemes->getSchemeHandle( "credits" );
 	SchemeHandle_t hCreditsTitleScheme = pSchemes->getSchemeHandle( "creditstitle" );
-	guess_m_pCreditsFont = pSchemes->getFont( hCreditsScheme );
-	guess_m_pCreditsTitleFont = pSchemes->getFont( hCreditsTitleScheme );
+	m_pCreditsFont_guess = pSchemes->getFont( hCreditsScheme );
+	m_pCreditsTitleFont_guess = pSchemes->getFont( hCreditsTitleScheme );
 
-	guess_m_bScrollUp = true;
+	m_bScrollUp_guess = true;
 
-	for ( i = 1; i <= guess_MAX_CREDIT_LINES; i++ )
+	for ( i = 1; i <= MAX_CREDIT_LINES_guess; i++ )
 	{
 		y = ScreenHeight;
-		guess_m_pCreditLabel[i] = new Label( " ", 0, y + 64 + i * 32, ScreenWidth, 32 );
-		guess_m_pCreditLabel[i]->setParent( this );
-		guess_m_pCreditLabel[i]->setFont( guess_m_pCreditsFont );
-		guess_m_pCreditLabel[i]->setFgColor( 0, 0, 0, 255 );
-		guess_m_pCreditLabel[i]->setBgColor( 0, 0, 0, 255 );
-		guess_m_pCreditLabel[i]->setText( " " );
-		guess_m_pCreditLabel[i]->setContentAlignment( Label::a_center );
+		m_pCreditLabel_guess[i] = new Label( " ", 0, y + 64 + i * 32, ScreenWidth, 32 );
+		m_pCreditLabel_guess[i]->setParent( this );
+		m_pCreditLabel_guess[i]->setFont( m_pCreditsFont_guess );
+		m_pCreditLabel_guess[i]->setFgColor( 0, 0, 0, 255 );
+		m_pCreditLabel_guess[i]->setBgColor( 0, 0, 0, 255 );
+		m_pCreditLabel_guess[i]->setText( " " );
+		m_pCreditLabel_guess[i]->setContentAlignment( Label::a_center );
 	}
 
 	y = ScreenHeight / 2;
 
 	for ( i = 1; i <= 14; i++ )
 	{
-		guess_m_pStatLabel[i] = new Label( " ", 0, y - 256 + i * 32, ScreenWidth, 32 );
-		guess_m_pStatLabel[i]->setParent( this );
-		guess_m_pStatLabel[i]->setFont( guess_m_pCreditsFont );
-		guess_m_pStatLabel[i]->setFgColor( 0, 0, 0, 255 );
-		guess_m_pStatLabel[i]->setBgColor( 0, 0, 0, 255 );
-		guess_m_pStatLabel[i]->setText( " " );
-		guess_m_pStatLabel[i]->setContentAlignment( Label::a_center );
-		guess_m_pStatLabel[i]->setVisible( false );
+		m_pStatLabel_guess[i] = new Label( " ", 0, y - 256 + i * 32, ScreenWidth, 32 );
+		m_pStatLabel_guess[i]->setParent( this );
+		m_pStatLabel_guess[i]->setFont( m_pCreditsFont_guess );
+		m_pStatLabel_guess[i]->setFgColor( 0, 0, 0, 255 );
+		m_pStatLabel_guess[i]->setBgColor( 0, 0, 0, 255 );
+		m_pStatLabel_guess[i]->setText( " " );
+		m_pStatLabel_guess[i]->setContentAlignment( Label::a_center );
+		m_pStatLabel_guess[i]->setVisible( false );
 	}
 
-	guess_m_pGradeLabel = new Label( " ", 0, y + 256, ScreenWidth, 42 );
-	guess_m_pGradeLabel->setParent( this );
-	guess_m_pGradeLabel->setFont( pSchemes->getFont( pSchemes->getSchemeHandle( "chaptertitle" ) ) );
-	guess_m_pGradeLabel->setFgColor( 0, 0, 0, 255 );
-	guess_m_pGradeLabel->setBgColor( 0, 0, 0, 255 );
-	guess_m_pGradeLabel->setText( " " );
-	guess_m_pGradeLabel->setContentAlignment( Label::a_center );
-	guess_m_pGradeLabel->setVisible( false );
+	m_pGradeLabel_guess = new Label( " ", 0, y + 256, ScreenWidth, 42 );
+	m_pGradeLabel_guess->setParent( this );
+	m_pGradeLabel_guess->setFont( pSchemes->getFont( pSchemes->getSchemeHandle( "chaptertitle" ) ) );
+	m_pGradeLabel_guess->setFgColor( 0, 0, 0, 255 );
+	m_pGradeLabel_guess->setBgColor( 0, 0, 0, 255 );
+	m_pGradeLabel_guess->setText( " " );
+	m_pGradeLabel_guess->setContentAlignment( Label::a_center );
+	m_pGradeLabel_guess->setVisible( false );
 
-	guess_m_pGradeShadowLabel = new Label( " ", 0, y + 256, ScreenWidth, 42 );
-	guess_m_pGradeShadowLabel->setParent( this );
-	guess_m_pGradeShadowLabel->setFont( pSchemes->getFont( pSchemes->getSchemeHandle( "chaptertitle" ) ) );
-	guess_m_pGradeShadowLabel->setFgColor( 0, 0, 0, 255 );
-	guess_m_pGradeShadowLabel->setBgColor( 0, 0, 0, 255 );
-	guess_m_pGradeShadowLabel->setText( " " );
-	guess_m_pGradeShadowLabel->setContentAlignment( Label::a_center );
-	guess_m_pGradeShadowLabel->setVisible( false );
+	m_pGradeShadowLabel_guess = new Label( " ", 0, y + 256, ScreenWidth, 42 );
+	m_pGradeShadowLabel_guess->setParent( this );
+	m_pGradeShadowLabel_guess->setFont( pSchemes->getFont( pSchemes->getSchemeHandle( "chaptertitle" ) ) );
+	m_pGradeShadowLabel_guess->setFgColor( 0, 0, 0, 255 );
+	m_pGradeShadowLabel_guess->setBgColor( 0, 0, 0, 255 );
+	m_pGradeShadowLabel_guess->setText( " " );
+	m_pGradeShadowLabel_guess->setContentAlignment( Label::a_center );
+	m_pGradeShadowLabel_guess->setVisible( false );
 
-	guess_m_pStatsTitleLabel = new Label( "Statistics and grade", 0, y - 266, ScreenWidth, 42 );
-	guess_m_pStatsTitleLabel->setParent( this );
-	guess_m_pStatsTitleLabel->setFont( guess_m_pCreditsTitleFont );
-	guess_m_pStatsTitleLabel->setFgColor( 0, 0, 0, 255 );
-	guess_m_pStatsTitleLabel->setBgColor( 0, 0, 0, 255 );
-	guess_m_pStatsTitleLabel->setText( "Statistics and grade" );
-	guess_m_pStatsTitleLabel->setContentAlignment( Label::a_center );
-	guess_m_pStatsTitleLabel->setVisible( false );
+	m_pStatsTitleLabel_guess = new Label( "Statistics and grade", 0, y - 266, ScreenWidth, 42 );
+	m_pStatsTitleLabel_guess->setParent( this );
+	m_pStatsTitleLabel_guess->setFont( m_pCreditsTitleFont_guess );
+	m_pStatsTitleLabel_guess->setFgColor( 0, 0, 0, 255 );
+	m_pStatsTitleLabel_guess->setBgColor( 0, 0, 0, 255 );
+	m_pStatsTitleLabel_guess->setText( "Statistics and grade" );
+	m_pStatsTitleLabel_guess->setContentAlignment( Label::a_center );
+	m_pStatsTitleLabel_guess->setVisible( false );
 
-	guess_m_pUnlockLabel = new Label( "Unlocks", 0, y - 266, ScreenWidth, 42 );
-	guess_m_pUnlockLabel->setParent( this );
-	guess_m_pUnlockLabel->setFont( guess_m_pCreditsTitleFont );
-	guess_m_pUnlockLabel->setFgColor( 0, 0, 0, 255 );
-	guess_m_pUnlockLabel->setBgColor( 0, 0, 0, 255 );
-	guess_m_pUnlockLabel->setText( "Unlocks" );
-	guess_m_pUnlockLabel->setContentAlignment( Label::a_center );
-	guess_m_pUnlockLabel->setVisible( false );
+	m_pUnlockLabel_guess = new Label( "Unlocks", 0, y - 266, ScreenWidth, 42 );
+	m_pUnlockLabel_guess->setParent( this );
+	m_pUnlockLabel_guess->setFont( m_pCreditsTitleFont_guess );
+	m_pUnlockLabel_guess->setFgColor( 0, 0, 0, 255 );
+	m_pUnlockLabel_guess->setBgColor( 0, 0, 0, 255 );
+	m_pUnlockLabel_guess->setText( "Unlocks" );
+	m_pUnlockLabel_guess->setContentAlignment( Label::a_center );
+	m_pUnlockLabel_guess->setVisible( false );
 
-	guess_g_iCreditsLetterboxHeight = ScreenHeight / 480.0f * 25.0f + 0.5f;
+	g_iCreditsLetterboxHeight_guess = ScreenHeight / 480.0f * 25.0f + 0.5f;
 
-	guess_m_pLetterboxTop = new Panel( 0, 0, ScreenWidth, guess_g_iCreditsLetterboxHeight );
-	guess_m_pLetterboxTop->setParent( this );
-	guess_m_pLetterboxTop->setSize( ScreenWidth, guess_g_iCreditsLetterboxHeight );
-	guess_m_pLetterboxTop->setBgColor( 0, 0, 0, 0 );
-	guess_m_pLetterboxTop->setVisible( true );
+	m_pLetterboxTop_guess = new Panel( 0, 0, ScreenWidth, g_iCreditsLetterboxHeight_guess );
+	m_pLetterboxTop_guess->setParent( this );
+	m_pLetterboxTop_guess->setSize( ScreenWidth, g_iCreditsLetterboxHeight_guess );
+	m_pLetterboxTop_guess->setBgColor( 0, 0, 0, 0 );
+	m_pLetterboxTop_guess->setVisible( true );
 
-	guess_m_pLetterboxBottom = new Panel( 0, ScreenHeight - guess_g_iCreditsLetterboxHeight, ScreenWidth, guess_g_iCreditsLetterboxHeight );
-	guess_m_pLetterboxBottom->setParent( this );
-	guess_m_pLetterboxBottom->setSize( ScreenWidth, guess_g_iCreditsLetterboxHeight );
-	guess_m_pLetterboxBottom->setBgColor( 0, 0, 0, 0 );
-	guess_m_pLetterboxBottom->setVisible( true );
+	m_pLetterboxBottom_guess = new Panel( 0, ScreenHeight - g_iCreditsLetterboxHeight_guess, ScreenWidth, g_iCreditsLetterboxHeight_guess );
+	m_pLetterboxBottom_guess->setParent( this );
+	m_pLetterboxBottom_guess->setSize( ScreenWidth, g_iCreditsLetterboxHeight_guess );
+	m_pLetterboxBottom_guess->setBgColor( 0, 0, 0, 0 );
+	m_pLetterboxBottom_guess->setVisible( true );
 
 	Initialize();
 }
 
-int CCredits::guess_CountLines()
+int CCredits::CountLines_guess()
 {
-	std::ifstream file( guess_m_szFile );
+	std::ifstream file( m_szFile_guess );
 	std::string line;
 	std::vector<std::string> lines;
 
@@ -147,14 +147,14 @@ int CCredits::guess_CountLines()
 
 void CCredits::Initialize()
 {
-	guess_g_iUnlockClothes = 0;
+	g_iUnlockClothes_guess = 0;
 	setVisible( false );
-	guess_m_bShowStats = false;
-	guess_m_bUnlocks = false;
-	guess_m_iUnlocks = 0;
+	m_bShowStats_guess = false;
+	m_bUnlocks_guess = false;
+	m_iUnlocks_guess = 0;
 }
 
-int guess_MsgCredits( const char *pszName, int iSize, void *pbuf )
+int MsgCredits_guess( const char *pszName, int iSize, void *pbuf )
 {
 	char szPath[256];
 	char szFile[256];
@@ -162,17 +162,17 @@ int guess_MsgCredits( const char *pszName, int iSize, void *pbuf )
 
 	BEGIN_READ( pbuf, iSize );
 
-	if ( !gViewPort->guess_m_pCredits )
+	if ( !gViewPort->m_pCredits_guess )
 		return 1;
 
-	gViewPort->guess_m_pCredits->guess_m_szUnlockText[0] = '\0';
-	guess_g_iUnlockClothes = 0;
-	gViewPort->guess_m_pCredits->guess_m_bUnlocks = false;
-	gViewPort->guess_m_pCredits->guess_m_iUnlocks = 0;
-	gViewPort->guess_m_pCredits->guess_m_pStatsTitleLabel->setVisible( false );
-	gViewPort->guess_m_pCredits->guess_m_pGradeLabel->setVisible( false );
-	gViewPort->guess_m_pCredits->guess_m_pGradeShadowLabel->setVisible( false );
-	gViewPort->guess_m_pCredits->setVisible( true );
+	gViewPort->m_pCredits_guess->m_szUnlockText_guess[0] = '\0';
+	g_iUnlockClothes_guess = 0;
+	gViewPort->m_pCredits_guess->m_bUnlocks_guess = false;
+	gViewPort->m_pCredits_guess->m_iUnlocks_guess = 0;
+	gViewPort->m_pCredits_guess->m_pStatsTitleLabel_guess->setVisible( false );
+	gViewPort->m_pCredits_guess->m_pGradeLabel_guess->setVisible( false );
+	gViewPort->m_pCredits_guess->m_pGradeShadowLabel_guess->setVisible( false );
+	gViewPort->m_pCredits_guess->setVisible( true );
 
 	int iTextOnly = READ_BYTE();
 	bool bConclusion = false;
@@ -186,22 +186,22 @@ int guess_MsgCredits( const char *pszName, int iSize, void *pbuf )
 			strstr( szFile, "conclusion3.txt" ) || strstr( szFile, "conclusion4.txt" ) || strstr( szFile, "docconc.txt" ) )
 		{
 			bConclusion = true;
-			strcpy( gViewPort->guess_m_pCredits->guess_m_szFile, szFile );
+			strcpy( gViewPort->m_pCredits_guess->m_szFile_guess, szFile );
 		}
 		else if ( !strstr( szFile, gEngfuncs.pfnGetGameDirectory() ) )
 		{
 			strcpy( szPath, gEngfuncs.pfnGetGameDirectory() );
 			strcat( szPath, szFile );
-			strcpy( gViewPort->guess_m_pCredits->guess_m_szFile, szPath );
+			strcpy( gViewPort->m_pCredits_guess->m_szFile_guess, szPath );
 		}
 		else
 		{
-			strcpy( gViewPort->guess_m_pCredits->guess_m_szFile, szFile );
+			strcpy( gViewPort->m_pCredits_guess->m_szFile_guess, szFile );
 		}
 	}
 	else
 	{
-		strcpy( gViewPort->guess_m_pCredits->guess_m_szFile, READ_STRING() );
+		strcpy( gViewPort->m_pCredits_guess->m_szFile_guess, READ_STRING() );
 	}
 
 	iLanguage = gEngfuncs.pfnGetCvarFloat( "cof_subtitlelanguage" );
@@ -212,332 +212,332 @@ int guess_MsgCredits( const char *pszName, int iSize, void *pbuf )
 		switch ( iLanguage )
 		{
 		case 2:
-			if ( strstr( gViewPort->guess_m_pCredits->guess_m_szFile, "coconc.txt" ) )
+			if ( strstr( gViewPort->m_pCredits_guess->m_szFile_guess, "coconc.txt" ) )
 			{
-				strcpy( gViewPort->guess_m_pCredits->guess_m_szFile, gEngfuncs.pfnGetGameDirectory() );
-				strcat( gViewPort->guess_m_pCredits->guess_m_szFile, "/txtfiles/languages/dutch/docconc.txt" );
+				strcpy( gViewPort->m_pCredits_guess->m_szFile_guess, gEngfuncs.pfnGetGameDirectory() );
+				strcat( gViewPort->m_pCredits_guess->m_szFile_guess, "/txtfiles/languages/dutch/docconc.txt" );
 			}
-			else if ( strstr( gViewPort->guess_m_pCredits->guess_m_szFile, "conclusion1.txt" ) )
+			else if ( strstr( gViewPort->m_pCredits_guess->m_szFile_guess, "conclusion1.txt" ) )
 			{
-				strcpy( gViewPort->guess_m_pCredits->guess_m_szFile, gEngfuncs.pfnGetGameDirectory() );
-				strcat( gViewPort->guess_m_pCredits->guess_m_szFile, "/txtfiles/languages/dutch/conclusion1.txt" );
+				strcpy( gViewPort->m_pCredits_guess->m_szFile_guess, gEngfuncs.pfnGetGameDirectory() );
+				strcat( gViewPort->m_pCredits_guess->m_szFile_guess, "/txtfiles/languages/dutch/conclusion1.txt" );
 			}
-			else if ( strstr( gViewPort->guess_m_pCredits->guess_m_szFile, "conclusion2.txt" ) )
+			else if ( strstr( gViewPort->m_pCredits_guess->m_szFile_guess, "conclusion2.txt" ) )
 			{
-				strcpy( gViewPort->guess_m_pCredits->guess_m_szFile, gEngfuncs.pfnGetGameDirectory() );
-				strcat( gViewPort->guess_m_pCredits->guess_m_szFile, "/txtfiles/languages/dutch/conclusion2.txt" );
+				strcpy( gViewPort->m_pCredits_guess->m_szFile_guess, gEngfuncs.pfnGetGameDirectory() );
+				strcat( gViewPort->m_pCredits_guess->m_szFile_guess, "/txtfiles/languages/dutch/conclusion2.txt" );
 			}
-			else if ( strstr( gViewPort->guess_m_pCredits->guess_m_szFile, "conclusion3.txt" ) )
+			else if ( strstr( gViewPort->m_pCredits_guess->m_szFile_guess, "conclusion3.txt" ) )
 			{
-				strcpy( gViewPort->guess_m_pCredits->guess_m_szFile, gEngfuncs.pfnGetGameDirectory() );
-				strcat( gViewPort->guess_m_pCredits->guess_m_szFile, "/txtfiles/languages/dutch/conclusion3.txt" );
+				strcpy( gViewPort->m_pCredits_guess->m_szFile_guess, gEngfuncs.pfnGetGameDirectory() );
+				strcat( gViewPort->m_pCredits_guess->m_szFile_guess, "/txtfiles/languages/dutch/conclusion3.txt" );
 			}
-			else if ( strstr( gViewPort->guess_m_pCredits->guess_m_szFile, "conclusion4.txt" ) )
+			else if ( strstr( gViewPort->m_pCredits_guess->m_szFile_guess, "conclusion4.txt" ) )
 			{
-				strcpy( gViewPort->guess_m_pCredits->guess_m_szFile, gEngfuncs.pfnGetGameDirectory() );
-				strcat( gViewPort->guess_m_pCredits->guess_m_szFile, "/txtfiles/languages/dutch/conclusion4.txt" );
+				strcpy( gViewPort->m_pCredits_guess->m_szFile_guess, gEngfuncs.pfnGetGameDirectory() );
+				strcat( gViewPort->m_pCredits_guess->m_szFile_guess, "/txtfiles/languages/dutch/conclusion4.txt" );
 			}
-			else if ( strstr( gViewPort->guess_m_pCredits->guess_m_szFile, "docconc.txt" ) )
+			else if ( strstr( gViewPort->m_pCredits_guess->m_szFile_guess, "docconc.txt" ) )
 			{
-				strcpy( gViewPort->guess_m_pCredits->guess_m_szFile, gEngfuncs.pfnGetGameDirectory() );
-				strcat( gViewPort->guess_m_pCredits->guess_m_szFile, "/txtfiles/languages/dutch/docconc.txt" );
+				strcpy( gViewPort->m_pCredits_guess->m_szFile_guess, gEngfuncs.pfnGetGameDirectory() );
+				strcat( gViewPort->m_pCredits_guess->m_szFile_guess, "/txtfiles/languages/dutch/docconc.txt" );
 			}
 			break;
 		case 3:
-			if ( strstr( gViewPort->guess_m_pCredits->guess_m_szFile, "coconc.txt" ) )
+			if ( strstr( gViewPort->m_pCredits_guess->m_szFile_guess, "coconc.txt" ) )
 			{
-				strcpy( gViewPort->guess_m_pCredits->guess_m_szFile, gEngfuncs.pfnGetGameDirectory() );
-				strcat( gViewPort->guess_m_pCredits->guess_m_szFile, "/txtfiles/languages/french/docconc.txt" );
+				strcpy( gViewPort->m_pCredits_guess->m_szFile_guess, gEngfuncs.pfnGetGameDirectory() );
+				strcat( gViewPort->m_pCredits_guess->m_szFile_guess, "/txtfiles/languages/french/docconc.txt" );
 			}
-			else if ( strstr( gViewPort->guess_m_pCredits->guess_m_szFile, "conclusion1.txt" ) )
+			else if ( strstr( gViewPort->m_pCredits_guess->m_szFile_guess, "conclusion1.txt" ) )
 			{
-				strcpy( gViewPort->guess_m_pCredits->guess_m_szFile, gEngfuncs.pfnGetGameDirectory() );
-				strcat( gViewPort->guess_m_pCredits->guess_m_szFile, "/txtfiles/languages/french/conclusion1.txt" );
+				strcpy( gViewPort->m_pCredits_guess->m_szFile_guess, gEngfuncs.pfnGetGameDirectory() );
+				strcat( gViewPort->m_pCredits_guess->m_szFile_guess, "/txtfiles/languages/french/conclusion1.txt" );
 			}
-			else if ( strstr( gViewPort->guess_m_pCredits->guess_m_szFile, "conclusion2.txt" ) )
+			else if ( strstr( gViewPort->m_pCredits_guess->m_szFile_guess, "conclusion2.txt" ) )
 			{
-				strcpy( gViewPort->guess_m_pCredits->guess_m_szFile, gEngfuncs.pfnGetGameDirectory() );
-				strcat( gViewPort->guess_m_pCredits->guess_m_szFile, "/txtfiles/languages/french/conclusion2.txt" );
+				strcpy( gViewPort->m_pCredits_guess->m_szFile_guess, gEngfuncs.pfnGetGameDirectory() );
+				strcat( gViewPort->m_pCredits_guess->m_szFile_guess, "/txtfiles/languages/french/conclusion2.txt" );
 			}
-			else if ( strstr( gViewPort->guess_m_pCredits->guess_m_szFile, "conclusion3.txt" ) )
+			else if ( strstr( gViewPort->m_pCredits_guess->m_szFile_guess, "conclusion3.txt" ) )
 			{
-				strcpy( gViewPort->guess_m_pCredits->guess_m_szFile, gEngfuncs.pfnGetGameDirectory() );
-				strcat( gViewPort->guess_m_pCredits->guess_m_szFile, "/txtfiles/languages/french/conclusion3.txt" );
+				strcpy( gViewPort->m_pCredits_guess->m_szFile_guess, gEngfuncs.pfnGetGameDirectory() );
+				strcat( gViewPort->m_pCredits_guess->m_szFile_guess, "/txtfiles/languages/french/conclusion3.txt" );
 			}
-			else if ( strstr( gViewPort->guess_m_pCredits->guess_m_szFile, "conclusion4.txt" ) )
+			else if ( strstr( gViewPort->m_pCredits_guess->m_szFile_guess, "conclusion4.txt" ) )
 			{
-				strcpy( gViewPort->guess_m_pCredits->guess_m_szFile, gEngfuncs.pfnGetGameDirectory() );
-				strcat( gViewPort->guess_m_pCredits->guess_m_szFile, "/txtfiles/languages/french/conclusion4.txt" );
+				strcpy( gViewPort->m_pCredits_guess->m_szFile_guess, gEngfuncs.pfnGetGameDirectory() );
+				strcat( gViewPort->m_pCredits_guess->m_szFile_guess, "/txtfiles/languages/french/conclusion4.txt" );
 			}
-			else if ( strstr( gViewPort->guess_m_pCredits->guess_m_szFile, "docconc.txt" ) )
+			else if ( strstr( gViewPort->m_pCredits_guess->m_szFile_guess, "docconc.txt" ) )
 			{
-				strcpy( gViewPort->guess_m_pCredits->guess_m_szFile, gEngfuncs.pfnGetGameDirectory() );
-				strcat( gViewPort->guess_m_pCredits->guess_m_szFile, "/txtfiles/languages/french/docconc.txt" );
+				strcpy( gViewPort->m_pCredits_guess->m_szFile_guess, gEngfuncs.pfnGetGameDirectory() );
+				strcat( gViewPort->m_pCredits_guess->m_szFile_guess, "/txtfiles/languages/french/docconc.txt" );
 			}
 			break;
 		case 4:
-			if ( strstr( gViewPort->guess_m_pCredits->guess_m_szFile, "coconc.txt" ) )
+			if ( strstr( gViewPort->m_pCredits_guess->m_szFile_guess, "coconc.txt" ) )
 			{
-				strcpy( gViewPort->guess_m_pCredits->guess_m_szFile, gEngfuncs.pfnGetGameDirectory() );
-				strcat( gViewPort->guess_m_pCredits->guess_m_szFile, "/txtfiles/languages/german/docconc.txt" );
+				strcpy( gViewPort->m_pCredits_guess->m_szFile_guess, gEngfuncs.pfnGetGameDirectory() );
+				strcat( gViewPort->m_pCredits_guess->m_szFile_guess, "/txtfiles/languages/german/docconc.txt" );
 			}
-			else if ( strstr( gViewPort->guess_m_pCredits->guess_m_szFile, "conclusion1.txt" ) )
+			else if ( strstr( gViewPort->m_pCredits_guess->m_szFile_guess, "conclusion1.txt" ) )
 			{
-				strcpy( gViewPort->guess_m_pCredits->guess_m_szFile, gEngfuncs.pfnGetGameDirectory() );
-				strcat( gViewPort->guess_m_pCredits->guess_m_szFile, "/txtfiles/languages/german/conclusion1.txt" );
+				strcpy( gViewPort->m_pCredits_guess->m_szFile_guess, gEngfuncs.pfnGetGameDirectory() );
+				strcat( gViewPort->m_pCredits_guess->m_szFile_guess, "/txtfiles/languages/german/conclusion1.txt" );
 			}
-			else if ( strstr( gViewPort->guess_m_pCredits->guess_m_szFile, "conclusion2.txt" ) )
+			else if ( strstr( gViewPort->m_pCredits_guess->m_szFile_guess, "conclusion2.txt" ) )
 			{
-				strcpy( gViewPort->guess_m_pCredits->guess_m_szFile, gEngfuncs.pfnGetGameDirectory() );
-				strcat( gViewPort->guess_m_pCredits->guess_m_szFile, "/txtfiles/languages/german/conclusion2.txt" );
+				strcpy( gViewPort->m_pCredits_guess->m_szFile_guess, gEngfuncs.pfnGetGameDirectory() );
+				strcat( gViewPort->m_pCredits_guess->m_szFile_guess, "/txtfiles/languages/german/conclusion2.txt" );
 			}
-			else if ( strstr( gViewPort->guess_m_pCredits->guess_m_szFile, "conclusion3.txt" ) )
+			else if ( strstr( gViewPort->m_pCredits_guess->m_szFile_guess, "conclusion3.txt" ) )
 			{
-				strcpy( gViewPort->guess_m_pCredits->guess_m_szFile, gEngfuncs.pfnGetGameDirectory() );
-				strcat( gViewPort->guess_m_pCredits->guess_m_szFile, "/txtfiles/languages/german/conclusion3.txt" );
+				strcpy( gViewPort->m_pCredits_guess->m_szFile_guess, gEngfuncs.pfnGetGameDirectory() );
+				strcat( gViewPort->m_pCredits_guess->m_szFile_guess, "/txtfiles/languages/german/conclusion3.txt" );
 			}
-			else if ( strstr( gViewPort->guess_m_pCredits->guess_m_szFile, "conclusion4.txt" ) )
+			else if ( strstr( gViewPort->m_pCredits_guess->m_szFile_guess, "conclusion4.txt" ) )
 			{
-				strcpy( gViewPort->guess_m_pCredits->guess_m_szFile, gEngfuncs.pfnGetGameDirectory() );
-				strcat( gViewPort->guess_m_pCredits->guess_m_szFile, "/txtfiles/languages/german/conclusion4.txt" );
+				strcpy( gViewPort->m_pCredits_guess->m_szFile_guess, gEngfuncs.pfnGetGameDirectory() );
+				strcat( gViewPort->m_pCredits_guess->m_szFile_guess, "/txtfiles/languages/german/conclusion4.txt" );
 			}
-			else if ( strstr( gViewPort->guess_m_pCredits->guess_m_szFile, "docconc.txt" ) )
+			else if ( strstr( gViewPort->m_pCredits_guess->m_szFile_guess, "docconc.txt" ) )
 			{
-				strcpy( gViewPort->guess_m_pCredits->guess_m_szFile, gEngfuncs.pfnGetGameDirectory() );
-				strcat( gViewPort->guess_m_pCredits->guess_m_szFile, "/txtfiles/languages/german/docconc.txt" );
+				strcpy( gViewPort->m_pCredits_guess->m_szFile_guess, gEngfuncs.pfnGetGameDirectory() );
+				strcat( gViewPort->m_pCredits_guess->m_szFile_guess, "/txtfiles/languages/german/docconc.txt" );
 			}
 			break;
 		case 5:
-			if ( strstr( gViewPort->guess_m_pCredits->guess_m_szFile, "coconc.txt" ) )
+			if ( strstr( gViewPort->m_pCredits_guess->m_szFile_guess, "coconc.txt" ) )
 			{
-				strcpy( gViewPort->guess_m_pCredits->guess_m_szFile, gEngfuncs.pfnGetGameDirectory() );
-				strcat( gViewPort->guess_m_pCredits->guess_m_szFile, "/txtfiles/languages/norwegian/docconc.txt" );
+				strcpy( gViewPort->m_pCredits_guess->m_szFile_guess, gEngfuncs.pfnGetGameDirectory() );
+				strcat( gViewPort->m_pCredits_guess->m_szFile_guess, "/txtfiles/languages/norwegian/docconc.txt" );
 			}
-			else if ( strstr( gViewPort->guess_m_pCredits->guess_m_szFile, "conclusion1.txt" ) )
+			else if ( strstr( gViewPort->m_pCredits_guess->m_szFile_guess, "conclusion1.txt" ) )
 			{
-				strcpy( gViewPort->guess_m_pCredits->guess_m_szFile, gEngfuncs.pfnGetGameDirectory() );
-				strcat( gViewPort->guess_m_pCredits->guess_m_szFile, "/txtfiles/languages/norwegian/conclusion1.txt" );
+				strcpy( gViewPort->m_pCredits_guess->m_szFile_guess, gEngfuncs.pfnGetGameDirectory() );
+				strcat( gViewPort->m_pCredits_guess->m_szFile_guess, "/txtfiles/languages/norwegian/conclusion1.txt" );
 			}
-			else if ( strstr( gViewPort->guess_m_pCredits->guess_m_szFile, "conclusion2.txt" ) )
+			else if ( strstr( gViewPort->m_pCredits_guess->m_szFile_guess, "conclusion2.txt" ) )
 			{
-				strcpy( gViewPort->guess_m_pCredits->guess_m_szFile, gEngfuncs.pfnGetGameDirectory() );
-				strcat( gViewPort->guess_m_pCredits->guess_m_szFile, "/txtfiles/languages/norwegian/conclusion2.txt" );
+				strcpy( gViewPort->m_pCredits_guess->m_szFile_guess, gEngfuncs.pfnGetGameDirectory() );
+				strcat( gViewPort->m_pCredits_guess->m_szFile_guess, "/txtfiles/languages/norwegian/conclusion2.txt" );
 			}
-			else if ( strstr( gViewPort->guess_m_pCredits->guess_m_szFile, "conclusion3.txt" ) )
+			else if ( strstr( gViewPort->m_pCredits_guess->m_szFile_guess, "conclusion3.txt" ) )
 			{
-				strcpy( gViewPort->guess_m_pCredits->guess_m_szFile, gEngfuncs.pfnGetGameDirectory() );
-				strcat( gViewPort->guess_m_pCredits->guess_m_szFile, "/txtfiles/languages/norwegian/conclusion3.txt" );
+				strcpy( gViewPort->m_pCredits_guess->m_szFile_guess, gEngfuncs.pfnGetGameDirectory() );
+				strcat( gViewPort->m_pCredits_guess->m_szFile_guess, "/txtfiles/languages/norwegian/conclusion3.txt" );
 			}
-			else if ( strstr( gViewPort->guess_m_pCredits->guess_m_szFile, "conclusion4.txt" ) )
+			else if ( strstr( gViewPort->m_pCredits_guess->m_szFile_guess, "conclusion4.txt" ) )
 			{
-				strcpy( gViewPort->guess_m_pCredits->guess_m_szFile, gEngfuncs.pfnGetGameDirectory() );
-				strcat( gViewPort->guess_m_pCredits->guess_m_szFile, "/txtfiles/languages/norwegian/conclusion4.txt" );
+				strcpy( gViewPort->m_pCredits_guess->m_szFile_guess, gEngfuncs.pfnGetGameDirectory() );
+				strcat( gViewPort->m_pCredits_guess->m_szFile_guess, "/txtfiles/languages/norwegian/conclusion4.txt" );
 			}
-			else if ( strstr( gViewPort->guess_m_pCredits->guess_m_szFile, "docconc.txt" ) )
+			else if ( strstr( gViewPort->m_pCredits_guess->m_szFile_guess, "docconc.txt" ) )
 			{
-				strcpy( gViewPort->guess_m_pCredits->guess_m_szFile, gEngfuncs.pfnGetGameDirectory() );
-				strcat( gViewPort->guess_m_pCredits->guess_m_szFile, "/txtfiles/languages/norwegian/docconc.txt" );
+				strcpy( gViewPort->m_pCredits_guess->m_szFile_guess, gEngfuncs.pfnGetGameDirectory() );
+				strcat( gViewPort->m_pCredits_guess->m_szFile_guess, "/txtfiles/languages/norwegian/docconc.txt" );
 			}
 			break;
 		case 6:
-			if ( strstr( gViewPort->guess_m_pCredits->guess_m_szFile, "coconc.txt" ) )
+			if ( strstr( gViewPort->m_pCredits_guess->m_szFile_guess, "coconc.txt" ) )
 			{
-				strcpy( gViewPort->guess_m_pCredits->guess_m_szFile, gEngfuncs.pfnGetGameDirectory() );
-				strcat( gViewPort->guess_m_pCredits->guess_m_szFile, "/txtfiles/languages/spanish/docconc.txt" );
+				strcpy( gViewPort->m_pCredits_guess->m_szFile_guess, gEngfuncs.pfnGetGameDirectory() );
+				strcat( gViewPort->m_pCredits_guess->m_szFile_guess, "/txtfiles/languages/spanish/docconc.txt" );
 			}
-			else if ( strstr( gViewPort->guess_m_pCredits->guess_m_szFile, "conclusion1.txt" ) )
+			else if ( strstr( gViewPort->m_pCredits_guess->m_szFile_guess, "conclusion1.txt" ) )
 			{
-				strcpy( gViewPort->guess_m_pCredits->guess_m_szFile, gEngfuncs.pfnGetGameDirectory() );
-				strcat( gViewPort->guess_m_pCredits->guess_m_szFile, "/txtfiles/languages/spanish/conclusion1.txt" );
+				strcpy( gViewPort->m_pCredits_guess->m_szFile_guess, gEngfuncs.pfnGetGameDirectory() );
+				strcat( gViewPort->m_pCredits_guess->m_szFile_guess, "/txtfiles/languages/spanish/conclusion1.txt" );
 			}
-			else if ( strstr( gViewPort->guess_m_pCredits->guess_m_szFile, "conclusion2.txt" ) )
+			else if ( strstr( gViewPort->m_pCredits_guess->m_szFile_guess, "conclusion2.txt" ) )
 			{
-				strcpy( gViewPort->guess_m_pCredits->guess_m_szFile, gEngfuncs.pfnGetGameDirectory() );
-				strcat( gViewPort->guess_m_pCredits->guess_m_szFile, "/txtfiles/languages/spanish/conclusion2.txt" );
+				strcpy( gViewPort->m_pCredits_guess->m_szFile_guess, gEngfuncs.pfnGetGameDirectory() );
+				strcat( gViewPort->m_pCredits_guess->m_szFile_guess, "/txtfiles/languages/spanish/conclusion2.txt" );
 			}
-			else if ( strstr( gViewPort->guess_m_pCredits->guess_m_szFile, "conclusion3.txt" ) )
+			else if ( strstr( gViewPort->m_pCredits_guess->m_szFile_guess, "conclusion3.txt" ) )
 			{
-				strcpy( gViewPort->guess_m_pCredits->guess_m_szFile, gEngfuncs.pfnGetGameDirectory() );
-				strcat( gViewPort->guess_m_pCredits->guess_m_szFile, "/txtfiles/languages/spanish/conclusion3.txt" );
+				strcpy( gViewPort->m_pCredits_guess->m_szFile_guess, gEngfuncs.pfnGetGameDirectory() );
+				strcat( gViewPort->m_pCredits_guess->m_szFile_guess, "/txtfiles/languages/spanish/conclusion3.txt" );
 			}
-			else if ( strstr( gViewPort->guess_m_pCredits->guess_m_szFile, "conclusion4.txt" ) )
+			else if ( strstr( gViewPort->m_pCredits_guess->m_szFile_guess, "conclusion4.txt" ) )
 			{
-				strcpy( gViewPort->guess_m_pCredits->guess_m_szFile, gEngfuncs.pfnGetGameDirectory() );
-				strcat( gViewPort->guess_m_pCredits->guess_m_szFile, "/txtfiles/languages/spanish/conclusion4.txt" );
+				strcpy( gViewPort->m_pCredits_guess->m_szFile_guess, gEngfuncs.pfnGetGameDirectory() );
+				strcat( gViewPort->m_pCredits_guess->m_szFile_guess, "/txtfiles/languages/spanish/conclusion4.txt" );
 			}
-			else if ( strstr( gViewPort->guess_m_pCredits->guess_m_szFile, "docconc.txt" ) )
+			else if ( strstr( gViewPort->m_pCredits_guess->m_szFile_guess, "docconc.txt" ) )
 			{
-				strcpy( gViewPort->guess_m_pCredits->guess_m_szFile, gEngfuncs.pfnGetGameDirectory() );
-				strcat( gViewPort->guess_m_pCredits->guess_m_szFile, "/txtfiles/languages/spanish/docconc.txt" );
+				strcpy( gViewPort->m_pCredits_guess->m_szFile_guess, gEngfuncs.pfnGetGameDirectory() );
+				strcat( gViewPort->m_pCredits_guess->m_szFile_guess, "/txtfiles/languages/spanish/docconc.txt" );
 			}
 			break;
 		case 7:
-			if ( strstr( gViewPort->guess_m_pCredits->guess_m_szFile, "coconc.txt" ) )
+			if ( strstr( gViewPort->m_pCredits_guess->m_szFile_guess, "coconc.txt" ) )
 			{
-				strcpy( gViewPort->guess_m_pCredits->guess_m_szFile, gEngfuncs.pfnGetGameDirectory() );
-				strcat( gViewPort->guess_m_pCredits->guess_m_szFile, "/txtfiles/languages/swedish/docconc.txt" );
+				strcpy( gViewPort->m_pCredits_guess->m_szFile_guess, gEngfuncs.pfnGetGameDirectory() );
+				strcat( gViewPort->m_pCredits_guess->m_szFile_guess, "/txtfiles/languages/swedish/docconc.txt" );
 			}
-			else if ( strstr( gViewPort->guess_m_pCredits->guess_m_szFile, "conclusion1.txt" ) )
+			else if ( strstr( gViewPort->m_pCredits_guess->m_szFile_guess, "conclusion1.txt" ) )
 			{
-				strcpy( gViewPort->guess_m_pCredits->guess_m_szFile, gEngfuncs.pfnGetGameDirectory() );
-				strcat( gViewPort->guess_m_pCredits->guess_m_szFile, "/txtfiles/languages/swedish/conclusion1.txt" );
+				strcpy( gViewPort->m_pCredits_guess->m_szFile_guess, gEngfuncs.pfnGetGameDirectory() );
+				strcat( gViewPort->m_pCredits_guess->m_szFile_guess, "/txtfiles/languages/swedish/conclusion1.txt" );
 			}
-			else if ( strstr( gViewPort->guess_m_pCredits->guess_m_szFile, "conclusion2.txt" ) )
+			else if ( strstr( gViewPort->m_pCredits_guess->m_szFile_guess, "conclusion2.txt" ) )
 			{
-				strcpy( gViewPort->guess_m_pCredits->guess_m_szFile, gEngfuncs.pfnGetGameDirectory() );
-				strcat( gViewPort->guess_m_pCredits->guess_m_szFile, "/txtfiles/languages/swedish/conclusion2.txt" );
+				strcpy( gViewPort->m_pCredits_guess->m_szFile_guess, gEngfuncs.pfnGetGameDirectory() );
+				strcat( gViewPort->m_pCredits_guess->m_szFile_guess, "/txtfiles/languages/swedish/conclusion2.txt" );
 			}
-			else if ( strstr( gViewPort->guess_m_pCredits->guess_m_szFile, "conclusion3.txt" ) )
+			else if ( strstr( gViewPort->m_pCredits_guess->m_szFile_guess, "conclusion3.txt" ) )
 			{
-				strcpy( gViewPort->guess_m_pCredits->guess_m_szFile, gEngfuncs.pfnGetGameDirectory() );
-				strcat( gViewPort->guess_m_pCredits->guess_m_szFile, "/txtfiles/languages/swedish/conclusion3.txt" );
+				strcpy( gViewPort->m_pCredits_guess->m_szFile_guess, gEngfuncs.pfnGetGameDirectory() );
+				strcat( gViewPort->m_pCredits_guess->m_szFile_guess, "/txtfiles/languages/swedish/conclusion3.txt" );
 			}
-			else if ( strstr( gViewPort->guess_m_pCredits->guess_m_szFile, "conclusion4.txt" ) )
+			else if ( strstr( gViewPort->m_pCredits_guess->m_szFile_guess, "conclusion4.txt" ) )
 			{
-				strcpy( gViewPort->guess_m_pCredits->guess_m_szFile, gEngfuncs.pfnGetGameDirectory() );
-				strcat( gViewPort->guess_m_pCredits->guess_m_szFile, "/txtfiles/languages/swedish/conclusion4.txt" );
+				strcpy( gViewPort->m_pCredits_guess->m_szFile_guess, gEngfuncs.pfnGetGameDirectory() );
+				strcat( gViewPort->m_pCredits_guess->m_szFile_guess, "/txtfiles/languages/swedish/conclusion4.txt" );
 			}
-			else if ( strstr( gViewPort->guess_m_pCredits->guess_m_szFile, "docconc.txt" ) )
+			else if ( strstr( gViewPort->m_pCredits_guess->m_szFile_guess, "docconc.txt" ) )
 			{
-				strcpy( gViewPort->guess_m_pCredits->guess_m_szFile, gEngfuncs.pfnGetGameDirectory() );
-				strcat( gViewPort->guess_m_pCredits->guess_m_szFile, "/txtfiles/languages/swedish/docconc.txt" );
+				strcpy( gViewPort->m_pCredits_guess->m_szFile_guess, gEngfuncs.pfnGetGameDirectory() );
+				strcat( gViewPort->m_pCredits_guess->m_szFile_guess, "/txtfiles/languages/swedish/docconc.txt" );
 			}
 			break;
 		}
 	}
 
-	gViewPort->guess_m_pCredits->guess_m_iNumLines = gViewPort->guess_m_pCredits->guess_CountLines();
-	gViewPort->guess_m_pCredits->guess_m_bStarted = true;
+	gViewPort->m_pCredits_guess->m_iNumLines_guess = gViewPort->m_pCredits_guess->CountLines_guess();
+	gViewPort->m_pCredits_guess->m_bStarted_guess = true;
 
 	int iStartY = 0;
-	if ( !gViewPort->guess_m_pCredits->guess_m_bScrollUp )
+	if ( !gViewPort->m_pCredits_guess->m_bScrollUp_guess )
 		iStartY = ScreenHeight;
 
-	gViewPort->guess_m_pCredits->guess_m_iBrightness = 0;
-	gViewPort->guess_m_pCredits->guess_m_bFadeIn = false;
-	gViewPort->guess_m_pCredits->guess_m_bFadeDone = false;
-	gViewPort->guess_m_pCredits->guess_m_bStatsTimer = false;
-	gViewPort->guess_m_pCredits->guess_m_flStatsTime = 0;
+	gViewPort->m_pCredits_guess->m_iBrightness_guess = 0;
+	gViewPort->m_pCredits_guess->m_bFadeIn_guess = false;
+	gViewPort->m_pCredits_guess->m_bFadeDone_guess = false;
+	gViewPort->m_pCredits_guess->m_bStatsTimer_guess = false;
+	gViewPort->m_pCredits_guess->m_flStatsTime_guess = 0;
 
 	int i;
 
-	for ( i = 1; i <= gViewPort->guess_m_pCredits->guess_m_iNumLines; i++ )
+	for ( i = 1; i <= gViewPort->m_pCredits_guess->m_iNumLines_guess; i++ )
 	{
-		gViewPort->guess_m_pCredits->guess_SetLine( i, i );
+		gViewPort->m_pCredits_guess->SetLine_guess( i, i );
 
 		int iOffset = i * 32;
-		if ( gViewPort->guess_m_pCredits->guess_m_bScrollUp )
+		if ( gViewPort->m_pCredits_guess->m_bScrollUp_guess )
 			iOffset = -iOffset;
 
-		gViewPort->guess_m_pCredits->guess_m_pCreditLabel[i]->setPos( 0, iStartY + iOffset );
-		gViewPort->guess_m_pCredits->guess_m_pCreditLabel[i]->setVisible( true );
+		gViewPort->m_pCredits_guess->m_pCreditLabel_guess[i]->setPos( 0, iStartY + iOffset );
+		gViewPort->m_pCredits_guess->m_pCreditLabel_guess[i]->setVisible( true );
 	}
 
-	gViewPort->guess_m_pCredits->guess_m_iShotsFired = READ_SHORT();
-	gViewPort->guess_m_pCredits->guess_m_iShotsHit = READ_SHORT();
-	gViewPort->guess_m_pCredits->guess_m_iSyringesUsed = READ_SHORT();
-	gViewPort->guess_m_pCredits->guess_m_iShotsMissed = READ_SHORT();
-	gViewPort->guess_m_pCredits->guess_m_flAccuracy = READ_COORD();
-	gViewPort->guess_m_pCredits->guess_m_iTimesSaved = READ_SHORT();
-	gViewPort->guess_m_pCredits->guess_m_iWeaponsFound = READ_SHORT();
-	gViewPort->guess_m_pCredits->guess_m_iDamageTaken = READ_SHORT();
-	gViewPort->guess_m_pCredits->guess_m_flDistanceDecimal = READ_SHORT();
-	gViewPort->guess_m_pCredits->guess_m_flDistance = READ_SHORT();
-	gViewPort->guess_m_pCredits->guess_m_iSeconds = READ_SHORT();
-	gViewPort->guess_m_pCredits->guess_m_iMinutes = READ_SHORT();
-	gViewPort->guess_m_pCredits->guess_m_iHours = READ_SHORT();
-	gViewPort->guess_m_pCredits->guess_m_iMeleeKills = READ_SHORT();
-	gViewPort->guess_m_pCredits->guess_m_iFirearmKills = READ_SHORT();
+	gViewPort->m_pCredits_guess->m_iShotsFired_guess = READ_SHORT();
+	gViewPort->m_pCredits_guess->m_iShotsHit_guess = READ_SHORT();
+	gViewPort->m_pCredits_guess->m_iSyringesUsed_guess = READ_SHORT();
+	gViewPort->m_pCredits_guess->m_iShotsMissed_guess = READ_SHORT();
+	gViewPort->m_pCredits_guess->m_flAccuracy_guess = READ_COORD();
+	gViewPort->m_pCredits_guess->m_iTimesSaved_guess = READ_SHORT();
+	gViewPort->m_pCredits_guess->m_iWeaponsFound_guess = READ_SHORT();
+	gViewPort->m_pCredits_guess->m_iDamageTaken_guess = READ_SHORT();
+	gViewPort->m_pCredits_guess->m_flDistanceDecimal_guess = READ_SHORT();
+	gViewPort->m_pCredits_guess->m_flDistance_guess = READ_SHORT();
+	gViewPort->m_pCredits_guess->m_iSeconds_guess = READ_SHORT();
+	gViewPort->m_pCredits_guess->m_iMinutes_guess = READ_SHORT();
+	gViewPort->m_pCredits_guess->m_iHours_guess = READ_SHORT();
+	gViewPort->m_pCredits_guess->m_iMeleeKills_guess = READ_SHORT();
+	gViewPort->m_pCredits_guess->m_iFirearmKills_guess = READ_SHORT();
 	READ_BYTE();
-	gViewPort->guess_m_pCredits->guess_m_iScrollSpeed = READ_BYTE();
+	gViewPort->m_pCredits_guess->m_iScrollSpeed_guess = READ_BYTE();
 	int iHide = READ_BYTE();
-	gViewPort->guess_m_pCredits->guess_m_iDifficulty = READ_BYTE();
-	gViewPort->guess_m_pCredits->guess_m_iUnlocks = READ_LONG();
+	gViewPort->m_pCredits_guess->m_iDifficulty_guess = READ_BYTE();
+	gViewPort->m_pCredits_guess->m_iUnlocks_guess = READ_LONG();
 	int iEnding = READ_BYTE();
 	int iGrade = READ_BYTE();
 	int iCoop = READ_BYTE();
 	int iStatsTimer = READ_BYTE();
-	guess_g_iCoopCredits = READ_BYTE();
+	g_iCoopCredits_guess = READ_BYTE();
 	int iEnding6 = READ_BYTE();
 	int iEnding7 = READ_BYTE();
 	READ_BYTE();
 	READ_BYTE();
 	int iShowGrade = READ_BYTE();
 
-	if ( gViewPort->guess_m_pCredits->guess_m_iDifficulty < 1 || gViewPort->guess_m_pCredits->guess_m_iDifficulty > 4 )
-		gViewPort->guess_m_pCredits->guess_m_iDifficulty = 1;
+	if ( gViewPort->m_pCredits_guess->m_iDifficulty_guess < 1 || gViewPort->m_pCredits_guess->m_iDifficulty_guess > 4 )
+		gViewPort->m_pCredits_guess->m_iDifficulty_guess = 1;
 
 	if ( iHide )
-		gViewPort->guess_m_pCredits->setVisible( false );
+		gViewPort->m_pCredits_guess->setVisible( false );
 
 	if ( iTextOnly )
 	{
-		gViewPort->guess_m_pCredits->guess_m_bTextOnly = true;
-		gViewPort->guess_m_pCredits->guess_m_bScrollUp = false;
+		gViewPort->m_pCredits_guess->m_bTextOnly_guess = true;
+		gViewPort->m_pCredits_guess->m_bScrollUp_guess = false;
 
-		for ( i = 1; i <= guess_MAX_CREDIT_LINES; i++ )
-			gViewPort->guess_m_pCredits->guess_m_pCreditLabel[i]->setPos( 0, ScreenHeight + i * 32 );
+		for ( i = 1; i <= MAX_CREDIT_LINES_guess; i++ )
+			gViewPort->m_pCredits_guess->m_pCreditLabel_guess[i]->setPos( 0, ScreenHeight + i * 32 );
 	}
 	else
 	{
-		gViewPort->guess_m_pCredits->guess_m_bScrollUp = true;
-		gViewPort->guess_m_pCredits->guess_m_bTextOnly = false;
+		gViewPort->m_pCredits_guess->m_bScrollUp_guess = true;
+		gViewPort->m_pCredits_guess->m_bTextOnly_guess = false;
 	}
 
-	gViewPort->guess_m_pCredits->guess_m_bShowStats = false;
-	gViewPort->guess_m_pCredits->guess_m_flStartTime = gEngfuncs.GetClientTime();
+	gViewPort->m_pCredits_guess->m_bShowStats_guess = false;
+	gViewPort->m_pCredits_guess->m_flStartTime_guess = gEngfuncs.GetClientTime();
 
-	gViewPort->guess_m_pCredits->guess_m_pStatLabel[1]->setText( guess_va( "Shots fired: %i", gViewPort->guess_m_pCredits->guess_m_iShotsFired ) );
-	gViewPort->guess_m_pCredits->guess_m_pStatLabel[2]->setText( guess_va( "Shots hit: %i", gViewPort->guess_m_pCredits->guess_m_iShotsHit ) );
-	gViewPort->guess_m_pCredits->guess_m_pStatLabel[3]->setText( guess_va( "Shots missed: %i", gViewPort->guess_m_pCredits->guess_m_iShotsMissed ) );
-	gViewPort->guess_m_pCredits->guess_m_pStatLabel[4]->setText( guess_va( "Overall accuracy: %i percent", (int)gViewPort->guess_m_pCredits->guess_m_flAccuracy ) );
+	gViewPort->m_pCredits_guess->m_pStatLabel_guess[1]->setText( va_guess( "Shots fired: %i", gViewPort->m_pCredits_guess->m_iShotsFired_guess ) );
+	gViewPort->m_pCredits_guess->m_pStatLabel_guess[2]->setText( va_guess( "Shots hit: %i", gViewPort->m_pCredits_guess->m_iShotsHit_guess ) );
+	gViewPort->m_pCredits_guess->m_pStatLabel_guess[3]->setText( va_guess( "Shots missed: %i", gViewPort->m_pCredits_guess->m_iShotsMissed_guess ) );
+	gViewPort->m_pCredits_guess->m_pStatLabel_guess[4]->setText( va_guess( "Overall accuracy: %i percent", (int)gViewPort->m_pCredits_guess->m_flAccuracy_guess ) );
 
 	if ( iCoop )
 	{
-		gViewPort->guess_m_pCredits->guess_m_pStatLabel[5]->setText( guess_va( "Overall damage taken: %i", gViewPort->guess_m_pCredits->guess_m_iDamageTaken ) );
-		gViewPort->guess_m_pCredits->guess_m_pStatLabel[6]->setText( guess_va( "Distance travelled on foot: %i.%i km", (int)gViewPort->guess_m_pCredits->guess_m_flDistance, (int)gViewPort->guess_m_pCredits->guess_m_flDistanceDecimal ) );
-		gViewPort->guess_m_pCredits->guess_m_pStatLabel[7]->setText( guess_va( "Time taken: %i:%i:%i", gViewPort->guess_m_pCredits->guess_m_iHours, gViewPort->guess_m_pCredits->guess_m_iMinutes, gViewPort->guess_m_pCredits->guess_m_iSeconds ) );
-		gViewPort->guess_m_pCredits->guess_m_pStatLabel[8]->setText( guess_va( "Enemies killed by melee: %i", gViewPort->guess_m_pCredits->guess_m_iMeleeKills ) );
-		gViewPort->guess_m_pCredits->guess_m_pStatLabel[9]->setText( guess_va( "Enemies killed by firearms: %i", gViewPort->guess_m_pCredits->guess_m_iFirearmKills ) );
-		gViewPort->guess_m_pCredits->guess_m_pStatLabel[10]->setText( "" );
-		gViewPort->guess_m_pCredits->guess_m_pStatLabel[11]->setText( "" );
-		gViewPort->guess_m_pCredits->guess_m_pStatLabel[12]->setText( "" );
+		gViewPort->m_pCredits_guess->m_pStatLabel_guess[5]->setText( va_guess( "Overall damage taken: %i", gViewPort->m_pCredits_guess->m_iDamageTaken_guess ) );
+		gViewPort->m_pCredits_guess->m_pStatLabel_guess[6]->setText( va_guess( "Distance travelled on foot: %i.%i km", (int)gViewPort->m_pCredits_guess->m_flDistance_guess, (int)gViewPort->m_pCredits_guess->m_flDistanceDecimal_guess ) );
+		gViewPort->m_pCredits_guess->m_pStatLabel_guess[7]->setText( va_guess( "Time taken: %i:%i:%i", gViewPort->m_pCredits_guess->m_iHours_guess, gViewPort->m_pCredits_guess->m_iMinutes_guess, gViewPort->m_pCredits_guess->m_iSeconds_guess ) );
+		gViewPort->m_pCredits_guess->m_pStatLabel_guess[8]->setText( va_guess( "Enemies killed by melee: %i", gViewPort->m_pCredits_guess->m_iMeleeKills_guess ) );
+		gViewPort->m_pCredits_guess->m_pStatLabel_guess[9]->setText( va_guess( "Enemies killed by firearms: %i", gViewPort->m_pCredits_guess->m_iFirearmKills_guess ) );
+		gViewPort->m_pCredits_guess->m_pStatLabel_guess[10]->setText( "" );
+		gViewPort->m_pCredits_guess->m_pStatLabel_guess[11]->setText( "" );
+		gViewPort->m_pCredits_guess->m_pStatLabel_guess[12]->setText( "" );
 	}
 	else
 	{
-		gViewPort->guess_m_pCredits->guess_m_pStatLabel[5]->setText( guess_va( "Syringes used: %i", gViewPort->guess_m_pCredits->guess_m_iSyringesUsed ) );
-		gViewPort->guess_m_pCredits->guess_m_pStatLabel[6]->setText( guess_va( "Times saved: %i", gViewPort->guess_m_pCredits->guess_m_iTimesSaved ) );
-		gViewPort->guess_m_pCredits->guess_m_pStatLabel[7]->setText( guess_va( "Weapons found: %i", gViewPort->guess_m_pCredits->guess_m_iWeaponsFound ) );
-		gViewPort->guess_m_pCredits->guess_m_pStatLabel[8]->setText( guess_va( "Overall damage taken: %i", gViewPort->guess_m_pCredits->guess_m_iDamageTaken ) );
-		gViewPort->guess_m_pCredits->guess_m_pStatLabel[9]->setText( guess_va( "Distance travelled on foot: %i.%i km", (int)gViewPort->guess_m_pCredits->guess_m_flDistance, (int)gViewPort->guess_m_pCredits->guess_m_flDistanceDecimal ) );
-		gViewPort->guess_m_pCredits->guess_m_pStatLabel[10]->setText( guess_va( "Time taken: %i:%i:%i", gViewPort->guess_m_pCredits->guess_m_iHours, gViewPort->guess_m_pCredits->guess_m_iMinutes, gViewPort->guess_m_pCredits->guess_m_iSeconds ) );
-		gViewPort->guess_m_pCredits->guess_m_pStatLabel[11]->setText( guess_va( "Enemies killed by melee: %i", gViewPort->guess_m_pCredits->guess_m_iMeleeKills ) );
-		gViewPort->guess_m_pCredits->guess_m_pStatLabel[12]->setText( guess_va( "Enemies killed by firearms: %i", gViewPort->guess_m_pCredits->guess_m_iFirearmKills ) );
+		gViewPort->m_pCredits_guess->m_pStatLabel_guess[5]->setText( va_guess( "Syringes used: %i", gViewPort->m_pCredits_guess->m_iSyringesUsed_guess ) );
+		gViewPort->m_pCredits_guess->m_pStatLabel_guess[6]->setText( va_guess( "Times saved: %i", gViewPort->m_pCredits_guess->m_iTimesSaved_guess ) );
+		gViewPort->m_pCredits_guess->m_pStatLabel_guess[7]->setText( va_guess( "Weapons found: %i", gViewPort->m_pCredits_guess->m_iWeaponsFound_guess ) );
+		gViewPort->m_pCredits_guess->m_pStatLabel_guess[8]->setText( va_guess( "Overall damage taken: %i", gViewPort->m_pCredits_guess->m_iDamageTaken_guess ) );
+		gViewPort->m_pCredits_guess->m_pStatLabel_guess[9]->setText( va_guess( "Distance travelled on foot: %i.%i km", (int)gViewPort->m_pCredits_guess->m_flDistance_guess, (int)gViewPort->m_pCredits_guess->m_flDistanceDecimal_guess ) );
+		gViewPort->m_pCredits_guess->m_pStatLabel_guess[10]->setText( va_guess( "Time taken: %i:%i:%i", gViewPort->m_pCredits_guess->m_iHours_guess, gViewPort->m_pCredits_guess->m_iMinutes_guess, gViewPort->m_pCredits_guess->m_iSeconds_guess ) );
+		gViewPort->m_pCredits_guess->m_pStatLabel_guess[11]->setText( va_guess( "Enemies killed by melee: %i", gViewPort->m_pCredits_guess->m_iMeleeKills_guess ) );
+		gViewPort->m_pCredits_guess->m_pStatLabel_guess[12]->setText( va_guess( "Enemies killed by firearms: %i", gViewPort->m_pCredits_guess->m_iFirearmKills_guess ) );
 	}
 
-	switch ( gViewPort->guess_m_pCredits->guess_m_iDifficulty )
+	switch ( gViewPort->m_pCredits_guess->m_iDifficulty_guess )
 	{
 	case 1:
-		gViewPort->guess_m_pCredits->guess_m_pStatLabel[13]->setText( guess_va( "Difficulty chosen: Easy" ) );
+		gViewPort->m_pCredits_guess->m_pStatLabel_guess[13]->setText( va_guess( "Difficulty chosen: Easy" ) );
 		break;
 	case 2:
-		gViewPort->guess_m_pCredits->guess_m_pStatLabel[13]->setText( guess_va( "Difficulty chosen: Normal" ) );
+		gViewPort->m_pCredits_guess->m_pStatLabel_guess[13]->setText( va_guess( "Difficulty chosen: Normal" ) );
 		break;
 	case 3:
-		gViewPort->guess_m_pCredits->guess_m_pStatLabel[13]->setText( guess_va( "Difficulty chosen: Hard" ) );
+		gViewPort->m_pCredits_guess->m_pStatLabel_guess[13]->setText( va_guess( "Difficulty chosen: Hard" ) );
 		break;
 	case 4:
-		gViewPort->guess_m_pCredits->guess_m_pStatLabel[13]->setText( guess_va( "Difficulty chosen: Nightmare" ) );
+		gViewPort->m_pCredits_guess->m_pStatLabel_guess[13]->setText( va_guess( "Difficulty chosen: Nightmare" ) );
 		break;
 	default:
-		gViewPort->guess_m_pCredits->guess_m_pStatLabel[13]->setText( guess_va( "Difficulty chosen: Easy" ) );
+		gViewPort->m_pCredits_guess->m_pStatLabel_guess[13]->setText( va_guess( "Difficulty chosen: Easy" ) );
 		break;
 	}
 
 	if ( iEnding6 && iCoop )
 		iEnding = 6;
 
-	if ( iEnding7 && guess_g_iCoopCredits )
+	if ( iEnding7 && g_iCoopCredits_guess )
 	{
 		strcpy( szEnding, "Ending seen: " );
 		strcat( szEnding, "7" );
@@ -572,65 +572,65 @@ int guess_MsgCredits( const char *pszName, int iSize, void *pbuf )
 		}
 	}
 
-	gViewPort->guess_m_pCredits->guess_m_pStatLabel[14]->setText( szEnding );
+	gViewPort->m_pCredits_guess->m_pStatLabel_guess[14]->setText( szEnding );
 
 	for ( i = 1; i <= 14; i++ )
 	{
-		gViewPort->guess_m_pCredits->guess_m_pStatLabel[i]->setContentAlignment( Label::a_center );
-		gViewPort->guess_m_pCredits->guess_m_pStatLabel[i]->setVisible( false );
+		gViewPort->m_pCredits_guess->m_pStatLabel_guess[i]->setContentAlignment( Label::a_center );
+		gViewPort->m_pCredits_guess->m_pStatLabel_guess[i]->setVisible( false );
 	}
 
 	switch ( iGrade )
 	{
 	case 1:
-		gViewPort->guess_m_pCredits->guess_m_pGradeLabel->setText( "S" );
-		gViewPort->guess_m_pCredits->guess_m_pGradeShadowLabel->setText( "S" );
+		gViewPort->m_pCredits_guess->m_pGradeLabel_guess->setText( "S" );
+		gViewPort->m_pCredits_guess->m_pGradeShadowLabel_guess->setText( "S" );
 		break;
 	case 2:
-		gViewPort->guess_m_pCredits->guess_m_pGradeLabel->setText( "A" );
-		gViewPort->guess_m_pCredits->guess_m_pGradeShadowLabel->setText( "A" );
+		gViewPort->m_pCredits_guess->m_pGradeLabel_guess->setText( "A" );
+		gViewPort->m_pCredits_guess->m_pGradeShadowLabel_guess->setText( "A" );
 		break;
 	case 3:
-		gViewPort->guess_m_pCredits->guess_m_pGradeLabel->setText( "B" );
-		gViewPort->guess_m_pCredits->guess_m_pGradeShadowLabel->setText( "B" );
+		gViewPort->m_pCredits_guess->m_pGradeLabel_guess->setText( "B" );
+		gViewPort->m_pCredits_guess->m_pGradeShadowLabel_guess->setText( "B" );
 		break;
 	case 4:
-		gViewPort->guess_m_pCredits->guess_m_pGradeLabel->setText( "C" );
-		gViewPort->guess_m_pCredits->guess_m_pGradeShadowLabel->setText( "C" );
+		gViewPort->m_pCredits_guess->m_pGradeLabel_guess->setText( "C" );
+		gViewPort->m_pCredits_guess->m_pGradeShadowLabel_guess->setText( "C" );
 		break;
 	case 5:
-		gViewPort->guess_m_pCredits->guess_m_pGradeLabel->setText( "D" );
-		gViewPort->guess_m_pCredits->guess_m_pGradeShadowLabel->setText( "D" );
+		gViewPort->m_pCredits_guess->m_pGradeLabel_guess->setText( "D" );
+		gViewPort->m_pCredits_guess->m_pGradeShadowLabel_guess->setText( "D" );
 		break;
 	case 6:
-		gViewPort->guess_m_pCredits->guess_m_pGradeLabel->setText( "E" );
-		gViewPort->guess_m_pCredits->guess_m_pGradeShadowLabel->setText( "E" );
+		gViewPort->m_pCredits_guess->m_pGradeLabel_guess->setText( "E" );
+		gViewPort->m_pCredits_guess->m_pGradeShadowLabel_guess->setText( "E" );
 		break;
 	default:
-		gViewPort->guess_m_pCredits->guess_m_pGradeLabel->setText( "F" );
-		gViewPort->guess_m_pCredits->guess_m_pGradeShadowLabel->setText( "F" );
+		gViewPort->m_pCredits_guess->m_pGradeLabel_guess->setText( "F" );
+		gViewPort->m_pCredits_guess->m_pGradeShadowLabel_guess->setText( "F" );
 		break;
 	}
 
 	if ( !iShowGrade )
 	{
-		gViewPort->guess_m_pCredits->guess_m_pGradeLabel->setText( " " );
-		gViewPort->guess_m_pCredits->guess_m_pGradeShadowLabel->setText( " " );
-		gViewPort->guess_m_pCredits->guess_m_pStatLabel[14]->setText( " " );
+		gViewPort->m_pCredits_guess->m_pGradeLabel_guess->setText( " " );
+		gViewPort->m_pCredits_guess->m_pGradeShadowLabel_guess->setText( " " );
+		gViewPort->m_pCredits_guess->m_pStatLabel_guess[14]->setText( " " );
 	}
 
 	if ( iStatsTimer )
 	{
-		gViewPort->guess_m_pCredits->guess_m_bStatsTimer = true;
-		gViewPort->guess_m_pCredits->guess_m_flStatsTime = gEngfuncs.GetClientTime() + 0.2;
+		gViewPort->m_pCredits_guess->m_bStatsTimer_guess = true;
+		gViewPort->m_pCredits_guess->m_flStatsTime_guess = gEngfuncs.GetClientTime() + 0.2;
 	}
 
 	return 1;
 }
 
-void CCredits::guess_SetLine( int iUnused, int iLine )
+void CCredits::SetLine_guess( int iUnused, int iLine )
 {
-	std::ifstream file( guess_m_szFile );
+	std::ifstream file( m_szFile_guess );
 	std::string line;
 	std::string line2;
 	line = iLine;
@@ -649,79 +649,79 @@ void CCredits::guess_SetLine( int iUnused, int iLine )
 			if ( szLine[0] == '#' )
 			{
 				pszText = &szLine[1];
-				guess_m_pCreditLabel[i]->setFont( guess_m_pCreditsTitleFont );
+				m_pCreditLabel_guess[i]->setFont( m_pCreditsTitleFont_guess );
 			}
 			else
 			{
-				guess_m_pCreditLabel[i]->setFont( guess_m_pCreditsFont );
+				m_pCreditLabel_guess[i]->setFont( m_pCreditsFont_guess );
 			}
 
-			guess_m_pCreditLabel[i]->setText( pszText );
-			guess_m_pCreditLabel[i]->setContentAlignment( Label::a_center );
+			m_pCreditLabel_guess[i]->setText( pszText );
+			m_pCreditLabel_guess[i]->setContentAlignment( Label::a_center );
 		}
 
 		i++;
 	}
 }
 
-void CCredits::guess_ShowUnlock( int iUnlock, const char *pszText, int iDistance, char *pszModel, int iBody )
+void CCredits::ShowUnlock_guess( int iUnlock, const char *pszText, int iDistance, char *pszModel, int iBody )
 {
 	int i;
 
-	guess_iUnknown101902FC = iDistance;
-	guess_m_iUnlocks &= ~iUnlock;
-	guess_m_bContinue = false;
+	iUnknown101902FC_guess = iDistance;
+	m_iUnlocks_guess &= ~iUnlock;
+	m_bContinue_guess = false;
 
 	for ( i = 1; i <= 14; i++ )
 	{
-		if ( guess_m_pStatLabel[i]->isVisible() )
-			guess_m_pStatLabel[i]->setVisible( false );
+		if ( m_pStatLabel_guess[i]->isVisible() )
+			m_pStatLabel_guess[i]->setVisible( false );
 	}
 
-	for ( i = 1; i <= guess_m_iNumLines; i++ )
+	for ( i = 1; i <= m_iNumLines_guess; i++ )
 	{
-		if ( guess_m_pCreditLabel[i]->isVisible() )
-			guess_m_pCreditLabel[i]->setVisible( false );
+		if ( m_pCreditLabel_guess[i]->isVisible() )
+			m_pCreditLabel_guess[i]->setVisible( false );
 	}
 
-	if ( guess_m_pGradeLabel->isVisible() )
-		guess_m_pGradeLabel->setVisible( false );
-	if ( guess_m_pGradeShadowLabel->isVisible() )
-		guess_m_pGradeShadowLabel->setVisible( false );
-	if ( guess_m_pStatsTitleLabel->isVisible() )
-		guess_m_pStatsTitleLabel->setVisible( false );
+	if ( m_pGradeLabel_guess->isVisible() )
+		m_pGradeLabel_guess->setVisible( false );
+	if ( m_pGradeShadowLabel_guess->isVisible() )
+		m_pGradeShadowLabel_guess->setVisible( false );
+	if ( m_pStatsTitleLabel_guess->isVisible() )
+		m_pStatsTitleLabel_guess->setVisible( false );
 
-	strcpy( guess_m_szUnlockText, pszText );
+	strcpy( m_szUnlockText_guess, pszText );
 
-	if ( guess_g_iHeadShieldType != 6 )
-		guess_g_iHeadShieldType = 6;
+	if ( g_iHeadShieldType_guess != 6 )
+		g_iHeadShieldType_guess = 6;
 
-	guess_iUnknown101902FC = 50;
+	iUnknown101902FC_guess = 50;
 
 	if ( !strcmp( pszModel, "models/items/generic_note.mdl" ) || !strcmp( pszModel, "models/weapons/axe/w_axe.mdl" ) ||
 		!strcmp( pszModel, "models/weapons/famas/w_famas.mdl" ) || !strcmp( pszModel, "models/items/package.mdl" ) )
 	{
-		guess_iUnknown101B27C8 = 90;
+		iUnknown101B27C8_guess = 90;
 	}
 	else if ( !strcmp( pszModel, "models/items/cassette_tape.mdl" ) )
 	{
-		guess_iUnknown101902FC = 20;
-		guess_iUnknown101B27C8 = 90;
+		iUnknown101902FC_guess = 20;
+		iUnknown101B27C8_guess = 90;
 	}
 	else
 	{
 		if ( !strcmp( pszModel, "models/doctor_unlock.mdl" ) )
-			guess_iUnknown101902FC = 80;
+			iUnknown101902FC_guess = 80;
 
-		guess_iUnknown101B27C8 = 0;
+		iUnknown101B27C8_guess = 0;
 	}
 
-	gHUD.guess_m_pszHeadShieldSound = pszModel;
-	gHUD.guess_m_iHeadShieldSoundFlags = iBody;
+	gHUD.m_pszHeadShieldSound_guess = pszModel;
+	gHUD.m_iHeadShieldSoundFlags_guess = iBody;
 	g_HeadShieldState = SHIELD_ON;
 }
 
-char *guess_va( const char *format, ... )
+char *va_guess( const char *format, ... )
 {
 	va_list argptr;
 	static char string[1024];
@@ -733,9 +733,9 @@ char *guess_va( const char *format, ... )
 	return string;
 }
 
-void guess_CreditsInit()
+void CreditsInit_guess()
 {
-	gEngfuncs.pfnHookUserMsg( "Credits", guess_MsgCredits );
+	gEngfuncs.pfnHookUserMsg( "Credits", MsgCredits_guess );
 }
 
 void CCredits::solve()
@@ -744,31 +744,31 @@ void CCredits::solve()
 	static bool s_bFadeFrame = true;
 	int i;
 
-	int iSpeed = guess_g_iCreditsLetterboxHeight / 15;
+	int iSpeed = g_iCreditsLetterboxHeight_guess / 15;
 	if ( iSpeed <= 0 )
 		iSpeed = 1;
 
-	if ( gHUD.guess_m_BlackBar.guess_m_iOn )
+	if ( gHUD.m_BlackBar_guess.m_iOn_guess )
 	{
 		s_bLetterboxFrame = !s_bLetterboxFrame;
 		if ( s_bLetterboxFrame )
 		{
 			int x, y, x2, y2;
 
-			guess_m_pLetterboxTop->getPos( x, y );
-			guess_m_pLetterboxBottom->getPos( x2, y2 );
+			m_pLetterboxTop_guess->getPos( x, y );
+			m_pLetterboxBottom_guess->getPos( x2, y2 );
 
 			if ( y < 0 )
 				y += iSpeed;
 			if ( y > 0 )
 				y = 0;
-			if ( y2 > ScreenHeight - guess_g_iCreditsLetterboxHeight )
+			if ( y2 > ScreenHeight - g_iCreditsLetterboxHeight_guess )
 				y2 -= iSpeed;
-			if ( y2 < ScreenHeight - guess_g_iCreditsLetterboxHeight )
-				y2 = ScreenHeight - guess_g_iCreditsLetterboxHeight;
+			if ( y2 < ScreenHeight - g_iCreditsLetterboxHeight_guess )
+				y2 = ScreenHeight - g_iCreditsLetterboxHeight_guess;
 
-			guess_m_pLetterboxTop->setPos( x, y );
-			guess_m_pLetterboxBottom->setPos( x2, y2 );
+			m_pLetterboxTop_guess->setPos( x, y );
+			m_pLetterboxBottom_guess->setPos( x2, y2 );
 		}
 	}
 	else
@@ -778,39 +778,39 @@ void CCredits::solve()
 		{
 			int x, y, x2, y2;
 
-			guess_m_pLetterboxTop->getPos( x, y );
-			guess_m_pLetterboxBottom->getPos( x2, y2 );
+			m_pLetterboxTop_guess->getPos( x, y );
+			m_pLetterboxBottom_guess->getPos( x2, y2 );
 
-			if ( y > -guess_g_iCreditsLetterboxHeight )
+			if ( y > -g_iCreditsLetterboxHeight_guess )
 				y -= iSpeed;
-			if ( y < -guess_g_iCreditsLetterboxHeight )
-				y = -guess_g_iCreditsLetterboxHeight;
+			if ( y < -g_iCreditsLetterboxHeight_guess )
+				y = -g_iCreditsLetterboxHeight_guess;
 			if ( y2 < ScreenHeight )
 				y2 += iSpeed;
 			if ( y2 > ScreenHeight )
 				y2 = ScreenHeight;
 
-			guess_m_pLetterboxTop->setPos( x, y );
-			guess_m_pLetterboxBottom->setPos( x2, y2 );
+			m_pLetterboxTop_guess->setPos( x, y );
+			m_pLetterboxBottom_guess->setPos( x2, y2 );
 		}
 	}
 
-	if ( guess_m_bStatsTimer == true && !guess_m_bTextOnly )
+	if ( m_bStatsTimer_guess == true && !m_bTextOnly_guess )
 	{
 		float flTime = gEngfuncs.GetClientTime();
 
-		if ( flTime > guess_m_flStatsTime && !guess_m_bShowStats )
+		if ( flTime > m_flStatsTime_guess && !m_bShowStats_guess )
 		{
-			guess_IrrKlangSetLoop( true );
-			guess_IrrKlangPlay( "stats.mp3" );
-			guess_m_bShowStats = true;
-			guess_m_pLetterboxBottom->setVisible( false );
-			guess_m_pLetterboxTop->setVisible( false );
+			IrrKlangSetLoop_guess( true );
+			IrrKlangPlay_guess( "stats.mp3" );
+			m_bShowStats_guess = true;
+			m_pLetterboxBottom_guess->setVisible( false );
+			m_pLetterboxTop_guess->setVisible( false );
 
-			if ( guess_g_iCoopCredits && gViewPort->guess_m_pCoopStats )
+			if ( g_iCoopCredits_guess && gViewPort->m_pCoopStats_guess )
 			{
 				setVisible( false );
-				gViewPort->guess_m_pCoopStats->setVisible( true );
+				gViewPort->m_pCoopStats_guess->setVisible( true );
 			}
 		}
 	}
@@ -822,293 +822,293 @@ void CCredits::solve()
 		return;
 	}
 
-	if ( strlen( guess_m_szUnlockText ) > 2 )
+	if ( strlen( m_szUnlockText_guess ) > 2 )
 	{
 		int r, g, b, a;
 
-		guess_m_pUnlockLabel->getFgColor( r, g, b, a );
+		m_pUnlockLabel_guess->getFgColor( r, g, b, a );
 		if ( a > 0 )
 			a -= 15;
 		if ( a < 0 )
 			a = 0;
 
-		guess_m_pUnlockLabel->setText( guess_m_szUnlockText );
-		guess_m_pUnlockLabel->setVisible( true );
-		guess_m_pUnlockLabel->setPos( 0, ScreenWidth / 2 );
-		guess_m_pUnlockLabel->setFgColor( 255, 255, 255, a );
+		m_pUnlockLabel_guess->setText( m_szUnlockText_guess );
+		m_pUnlockLabel_guess->setVisible( true );
+		m_pUnlockLabel_guess->setPos( 0, ScreenWidth / 2 );
+		m_pUnlockLabel_guess->setFgColor( 255, 255, 255, a );
 	}
 
-	if ( guess_m_bUnlocks )
+	if ( m_bUnlocks_guess )
 	{
 		// show the unlocks one by one
-		if ( guess_m_iUnlocks & 0x40 )
+		if ( m_iUnlocks_guess & 0x40 )
 		{
-			if ( !guess_g_bUnlockShown )
+			if ( !g_bUnlockShown_guess )
 			{
-				guess_ShowUnlock( 0x40, "Unlocked: FAMAS with infinite ammo", 50, "models/weapons/famas/w_famas.mdl", 0 );
-				guess_g_bUnlockShown = true;
+				ShowUnlock_guess( 0x40, "Unlocked: FAMAS with infinite ammo", 50, "models/weapons/famas/w_famas.mdl", 0 );
+				g_bUnlockShown_guess = true;
 			}
 		}
-		else if ( guess_m_iUnlocks & 0x80 )
+		else if ( m_iUnlocks_guess & 0x80 )
 		{
-			if ( !guess_g_bUnlockShown )
+			if ( !g_bUnlockShown_guess )
 			{
-				guess_ShowUnlock( 0x80, "Unlocked: David Leatherhoff suit", 50, "models/costumes/unfolded_clothes.mdl", 1 );
-				guess_g_iUnlockClothes = 1;
-				guess_g_bHoodieLoaded = false;
-				guess_g_bJeansLoaded = false;
-				guess_g_bFaceLoaded = false;
-				guess_g_bUnlockShown = true;
+				ShowUnlock_guess( 0x80, "Unlocked: David Leatherhoff suit", 50, "models/costumes/unfolded_clothes.mdl", 1 );
+				g_iUnlockClothes_guess = 1;
+				g_bHoodieLoaded_guess = false;
+				g_bJeansLoaded_guess = false;
+				g_bFaceLoaded_guess = false;
+				g_bUnlockShown_guess = true;
 			}
 		}
-		else if ( guess_m_iUnlocks & 0x100 )
+		else if ( m_iUnlocks_guess & 0x100 )
 		{
-			if ( !guess_g_bUnlockShown )
+			if ( !g_bUnlockShown_guess )
 			{
-				guess_ShowUnlock( 0x100, "Unlocked: ModDB hoodie", 50, "models/costumes/unfolded_clothes.mdl", 0 );
-				guess_g_iUnlockClothes = 2;
-				guess_g_bHoodieLoaded = false;
-				guess_g_bJeansLoaded = false;
-				guess_g_bFaceLoaded = false;
-				guess_g_bUnlockShown = true;
+				ShowUnlock_guess( 0x100, "Unlocked: ModDB hoodie", 50, "models/costumes/unfolded_clothes.mdl", 0 );
+				g_iUnlockClothes_guess = 2;
+				g_bHoodieLoaded_guess = false;
+				g_bJeansLoaded_guess = false;
+				g_bFaceLoaded_guess = false;
+				g_bUnlockShown_guess = true;
 			}
 		}
-		else if ( guess_m_iUnlocks & 0x200 )
+		else if ( m_iUnlocks_guess & 0x200 )
 		{
-			if ( !guess_g_bUnlockShown )
+			if ( !g_bUnlockShown_guess )
 			{
-				guess_ShowUnlock( 0x200, "Unlocked: Hello Kitty suit", 50, "models/costumes/unfolded_clothes.mdl", 1 );
-				guess_g_iUnlockClothes = 3;
-				guess_g_bHoodieLoaded = false;
-				guess_g_bJeansLoaded = false;
-				guess_g_bFaceLoaded = false;
-				guess_g_bUnlockShown = true;
+				ShowUnlock_guess( 0x200, "Unlocked: Hello Kitty suit", 50, "models/costumes/unfolded_clothes.mdl", 1 );
+				g_iUnlockClothes_guess = 3;
+				g_bHoodieLoaded_guess = false;
+				g_bJeansLoaded_guess = false;
+				g_bFaceLoaded_guess = false;
+				g_bUnlockShown_guess = true;
 			}
 		}
-		else if ( guess_m_iUnlocks & 0x400 )
+		else if ( m_iUnlocks_guess & 0x400 )
 		{
-			if ( !guess_g_bUnlockShown )
+			if ( !g_bUnlockShown_guess )
 			{
-				guess_ShowUnlock( 0x400, "Unlocked: Afraid of Monsters suit", 50, "models/costumes/unfolded_clothes.mdl", 1 );
-				guess_g_iUnlockClothes = 4;
-				guess_g_bHoodieLoaded = false;
-				guess_g_bJeansLoaded = false;
-				guess_g_bFaceLoaded = false;
-				guess_g_bUnlockShown = true;
+				ShowUnlock_guess( 0x400, "Unlocked: Afraid of Monsters suit", 50, "models/costumes/unfolded_clothes.mdl", 1 );
+				g_iUnlockClothes_guess = 4;
+				g_bHoodieLoaded_guess = false;
+				g_bJeansLoaded_guess = false;
+				g_bFaceLoaded_guess = false;
+				g_bUnlockShown_guess = true;
 			}
 		}
-		else if ( guess_m_iUnlocks & 0x800 )
+		else if ( m_iUnlocks_guess & 0x800 )
 		{
-			if ( !guess_g_bUnlockShown )
+			if ( !g_bUnlockShown_guess )
 			{
-				guess_ShowUnlock( 0x800, "Unlocked: Camouflage hoodie", 50, "models/costumes/unfolded_clothes.mdl", 0 );
-				guess_g_iUnlockClothes = 5;
-				guess_g_bHoodieLoaded = false;
-				guess_g_bJeansLoaded = false;
-				guess_g_bFaceLoaded = false;
-				guess_g_bUnlockShown = true;
+				ShowUnlock_guess( 0x800, "Unlocked: Camouflage hoodie", 50, "models/costumes/unfolded_clothes.mdl", 0 );
+				g_iUnlockClothes_guess = 5;
+				g_bHoodieLoaded_guess = false;
+				g_bJeansLoaded_guess = false;
+				g_bFaceLoaded_guess = false;
+				g_bUnlockShown_guess = true;
 			}
 		}
-		else if ( guess_m_iUnlocks & 0x1000 )
+		else if ( m_iUnlocks_guess & 0x1000 )
 		{
-			if ( !guess_g_bUnlockShown )
+			if ( !g_bUnlockShown_guess )
 			{
-				guess_ShowUnlock( 0x1000, "Unlocked: Half Life Creations hoodie", 50, "models/costumes/unfolded_clothes.mdl", 0 );
-				guess_g_iUnlockClothes = 6;
-				guess_g_bHoodieLoaded = false;
-				guess_g_bJeansLoaded = false;
-				guess_g_bFaceLoaded = false;
-				guess_g_bUnlockShown = true;
+				ShowUnlock_guess( 0x1000, "Unlocked: Half Life Creations hoodie", 50, "models/costumes/unfolded_clothes.mdl", 0 );
+				g_iUnlockClothes_guess = 6;
+				g_bHoodieLoaded_guess = false;
+				g_bJeansLoaded_guess = false;
+				g_bFaceLoaded_guess = false;
+				g_bUnlockShown_guess = true;
 			}
 		}
-		else if ( guess_m_iUnlocks & 0x2000 )
+		else if ( m_iUnlocks_guess & 0x2000 )
 		{
-			if ( !guess_g_bUnlockShown )
+			if ( !g_bUnlockShown_guess )
 			{
-				guess_ShowUnlock( 0x2000, "Unlocked: Black Metal suit", 50, "models/costumes/unfolded_clothes.mdl", 1 );
-				guess_g_iUnlockClothes = 7;
-				guess_g_bHoodieLoaded = false;
-				guess_g_bJeansLoaded = false;
-				guess_g_bFaceLoaded = false;
-				guess_g_bUnlockShown = true;
+				ShowUnlock_guess( 0x2000, "Unlocked: Black Metal suit", 50, "models/costumes/unfolded_clothes.mdl", 1 );
+				g_iUnlockClothes_guess = 7;
+				g_bHoodieLoaded_guess = false;
+				g_bJeansLoaded_guess = false;
+				g_bFaceLoaded_guess = false;
+				g_bUnlockShown_guess = true;
 			}
 		}
-		else if ( guess_m_iUnlocks & 0x4000 )
+		else if ( m_iUnlocks_guess & 0x4000 )
 		{
-			if ( !guess_g_bUnlockShown )
+			if ( !g_bUnlockShown_guess )
 			{
-				guess_ShowUnlock( 0x4000, "Unlocked: Team Psykskallar hoodie", 50, "models/costumes/unfolded_clothes.mdl", 0 );
-				guess_g_iUnlockClothes = 8;
-				guess_g_bHoodieLoaded = false;
-				guess_g_bJeansLoaded = false;
-				guess_g_bFaceLoaded = false;
-				guess_g_bUnlockShown = true;
+				ShowUnlock_guess( 0x4000, "Unlocked: Team Psykskallar hoodie", 50, "models/costumes/unfolded_clothes.mdl", 0 );
+				g_iUnlockClothes_guess = 8;
+				g_bHoodieLoaded_guess = false;
+				g_bJeansLoaded_guess = false;
+				g_bFaceLoaded_guess = false;
+				g_bUnlockShown_guess = true;
 			}
 		}
-		else if ( guess_m_iUnlocks & 0x8000 )
+		else if ( m_iUnlocks_guess & 0x8000 )
 		{
-			if ( !guess_g_bUnlockShown )
+			if ( !g_bUnlockShown_guess )
 			{
-				guess_ShowUnlock( 0x8000, "Unlocked: Fuck Anime suit", 50, "models/costumes/unfolded_clothes.mdl", 1 );
-				guess_g_iUnlockClothes = 9;
-				guess_g_bHoodieLoaded = false;
-				guess_g_bJeansLoaded = false;
-				guess_g_bFaceLoaded = false;
-				guess_g_bUnlockShown = true;
+				ShowUnlock_guess( 0x8000, "Unlocked: Fuck Anime suit", 50, "models/costumes/unfolded_clothes.mdl", 1 );
+				g_iUnlockClothes_guess = 9;
+				g_bHoodieLoaded_guess = false;
+				g_bJeansLoaded_guess = false;
+				g_bFaceLoaded_guess = false;
+				g_bUnlockShown_guess = true;
 			}
 		}
-		else if ( guess_m_iUnlocks & 0x10000 )
+		else if ( m_iUnlocks_guess & 0x10000 )
 		{
-			if ( !guess_g_bUnlockShown )
+			if ( !g_bUnlockShown_guess )
 			{
-				guess_ShowUnlock( 0x10000, "Unlocked: Sick Simon suit", 50, "models/costumes/unfolded_clothes.mdl", 1 );
-				guess_g_iUnlockClothes = 10;
-				guess_g_bHoodieLoaded = false;
-				guess_g_bJeansLoaded = false;
-				guess_g_bFaceLoaded = false;
-				guess_g_bUnlockShown = true;
+				ShowUnlock_guess( 0x10000, "Unlocked: Sick Simon suit", 50, "models/costumes/unfolded_clothes.mdl", 1 );
+				g_iUnlockClothes_guess = 10;
+				g_bHoodieLoaded_guess = false;
+				g_bJeansLoaded_guess = false;
+				g_bFaceLoaded_guess = false;
+				g_bUnlockShown_guess = true;
 			}
 		}
-		else if ( guess_m_iUnlocks & 0x20000 )
+		else if ( m_iUnlocks_guess & 0x20000 )
 		{
-			if ( !guess_g_bUnlockShown )
+			if ( !g_bUnlockShown_guess )
 			{
-				guess_ShowUnlock( 0x20000, "Unlocked: AoM Twitcher suit", 50, "models/costumes/unfolded_clothes.mdl", 1 );
-				guess_g_iUnlockClothes = 11;
-				guess_g_bHoodieLoaded = false;
-				guess_g_bJeansLoaded = false;
-				guess_g_bFaceLoaded = false;
-				guess_g_bUnlockShown = true;
+				ShowUnlock_guess( 0x20000, "Unlocked: AoM Twitcher suit", 50, "models/costumes/unfolded_clothes.mdl", 1 );
+				g_iUnlockClothes_guess = 11;
+				g_bHoodieLoaded_guess = false;
+				g_bJeansLoaded_guess = false;
+				g_bFaceLoaded_guess = false;
+				g_bUnlockShown_guess = true;
 			}
 		}
-		else if ( guess_m_iUnlocks & 0x40000 )
+		else if ( m_iUnlocks_guess & 0x40000 )
 		{
-			if ( !guess_g_bUnlockShown )
+			if ( !g_bUnlockShown_guess )
 			{
-				guess_ShowUnlock( 0x40000, "Unlocked: Custom hoodies", 50, "models/costumes/unfolded_clothes.mdl", 0 );
-				guess_g_bUnlockShown = true;
+				ShowUnlock_guess( 0x40000, "Unlocked: Custom hoodies", 50, "models/costumes/unfolded_clothes.mdl", 0 );
+				g_bUnlockShown_guess = true;
 			}
 		}
-		else if ( guess_m_iUnlocks & 0x80000 )
+		else if ( m_iUnlocks_guess & 0x80000 )
 		{
-			if ( !guess_g_bUnlockShown )
+			if ( !g_bUnlockShown_guess )
 			{
-				guess_ShowUnlock( 0x80000, "Unlocked: AoMDC axe", 50, "models/weapons/axe/w_axe.mdl", 0 );
-				guess_g_bUnlockShown = true;
+				ShowUnlock_guess( 0x80000, "Unlocked: AoMDC axe", 50, "models/weapons/axe/w_axe.mdl", 0 );
+				g_bUnlockShown_guess = true;
 			}
 		}
-		else if ( guess_m_iUnlocks & 0x100000 )
+		else if ( m_iUnlocks_guess & 0x100000 )
 		{
-			if ( !guess_g_bUnlockShown )
+			if ( !g_bUnlockShown_guess )
 			{
-				guess_ShowUnlock( 0x100000, "Unlocked: Camera of Death", 50, "models/weapons/camera/w_camera.mdl", 0 );
-				guess_g_bUnlockShown = true;
+				ShowUnlock_guess( 0x100000, "Unlocked: Camera of Death", 50, "models/weapons/camera/w_camera.mdl", 0 );
+				g_bUnlockShown_guess = true;
 			}
 		}
-		else if ( guess_m_iUnlocks & 0x200000 )
+		else if ( m_iUnlocks_guess & 0x200000 )
 		{
-			if ( !guess_g_bUnlockShown )
+			if ( !g_bUnlockShown_guess )
 			{
-				guess_ShowUnlock( 0x200000, "Unlocked: Simon\'s Book", 50, "models/weapons/booklaser/w_booklaser.mdl", 0 );
-				guess_g_bUnlockShown = true;
+				ShowUnlock_guess( 0x200000, "Unlocked: Simon\'s Book", 50, "models/weapons/booklaser/w_booklaser.mdl", 0 );
+				g_bUnlockShown_guess = true;
 			}
 		}
-		else if ( guess_m_iUnlocks & 0x400000 )
+		else if ( m_iUnlocks_guess & 0x400000 )
 		{
-			if ( !guess_g_bUnlockShown )
+			if ( !g_bUnlockShown_guess )
 			{
-				guess_ShowUnlock( 0x400000, "Unlocked: Developer commentaries", 50, "models/developer_commentary.mdl", 0 );
-				guess_g_bUnlockShown = true;
+				ShowUnlock_guess( 0x400000, "Unlocked: Developer commentaries", 50, "models/developer_commentary.mdl", 0 );
+				g_bUnlockShown_guess = true;
 			}
 		}
-		else if ( guess_m_iUnlocks & 0x800000 )
+		else if ( m_iUnlocks_guess & 0x800000 )
 		{
-			if ( !guess_g_bUnlockShown )
+			if ( !g_bUnlockShown_guess )
 			{
-				guess_ShowUnlock( 0x800000, "Unlocked: Secret package", 50, "models/items/package.mdl", 0 );
-				guess_g_bUnlockShown = true;
+				ShowUnlock_guess( 0x800000, "Unlocked: Secret package", 50, "models/items/package.mdl", 0 );
+				g_bUnlockShown_guess = true;
 			}
 		}
-		else if ( guess_m_iUnlocks & 0x20 )
+		else if ( m_iUnlocks_guess & 0x20 )
 		{
-			if ( !guess_g_bUnlockShown )
+			if ( !g_bUnlockShown_guess )
 			{
-				guess_ShowUnlock( 0x20, "Unlocked: Nightmare mode", 50, "models/items/cassette_tape.mdl", 0 );
-				guess_g_bUnlockShown = true;
+				ShowUnlock_guess( 0x20, "Unlocked: Nightmare mode", 50, "models/items/cassette_tape.mdl", 0 );
+				g_bUnlockShown_guess = true;
 			}
 		}
-		else if ( guess_m_iUnlocks & 0x1000000 )
+		else if ( m_iUnlocks_guess & 0x1000000 )
 		{
-			if ( !guess_g_bUnlockShown )
+			if ( !g_bUnlockShown_guess )
 			{
-				guess_ShowUnlock( 0x1000000, "Unlocked: Nightvision", 50, "models/items/w_nightvision.mdl", 0 );
-				guess_g_bUnlockShown = true;
+				ShowUnlock_guess( 0x1000000, "Unlocked: Nightvision", 50, "models/items/w_nightvision.mdl", 0 );
+				g_bUnlockShown_guess = true;
 			}
 		}
-		else if ( guess_m_iUnlocks & 0x2000000 )
+		else if ( m_iUnlocks_guess & 0x2000000 )
 		{
-			if ( !guess_g_bUnlockShown )
+			if ( !g_bUnlockShown_guess )
 			{
-				guess_ShowUnlock( 0x2000000, "Unlocked: Book page 1", 50, "models/items/generic_note.mdl", 0 );
-				guess_g_bUnlockShown = true;
+				ShowUnlock_guess( 0x2000000, "Unlocked: Book page 1", 50, "models/items/generic_note.mdl", 0 );
+				g_bUnlockShown_guess = true;
 			}
 		}
-		else if ( guess_m_iUnlocks & 0x4000000 )
+		else if ( m_iUnlocks_guess & 0x4000000 )
 		{
-			if ( !guess_g_bUnlockShown )
+			if ( !g_bUnlockShown_guess )
 			{
-				guess_ShowUnlock( 0x4000000, "Unlocked: Book page 2", 50, "models/items/generic_note.mdl", 0 );
-				guess_g_bUnlockShown = true;
+				ShowUnlock_guess( 0x4000000, "Unlocked: Book page 2", 50, "models/items/generic_note.mdl", 0 );
+				g_bUnlockShown_guess = true;
 			}
 		}
-		else if ( guess_m_iUnlocks & 0x8000000 )
+		else if ( m_iUnlocks_guess & 0x8000000 )
 		{
-			if ( !guess_g_bUnlockShown )
+			if ( !g_bUnlockShown_guess )
 			{
-				guess_ShowUnlock( 0x8000000, "Unlocked: Book page 3", 50, "models/items/generic_note.mdl", 0 );
-				guess_g_bUnlockShown = true;
+				ShowUnlock_guess( 0x8000000, "Unlocked: Book page 3", 50, "models/items/generic_note.mdl", 0 );
+				g_bUnlockShown_guess = true;
 			}
 		}
-		else if ( guess_m_iUnlocks & 0x10000000 )
+		else if ( m_iUnlocks_guess & 0x10000000 )
 		{
-			if ( !guess_g_bUnlockShown )
+			if ( !g_bUnlockShown_guess )
 			{
-				guess_ShowUnlock( 0x10000000, "Unlocked: Book page 4", 50, "models/items/generic_note.mdl", 0 );
-				guess_g_bUnlockShown = true;
+				ShowUnlock_guess( 0x10000000, "Unlocked: Book page 4", 50, "models/items/generic_note.mdl", 0 );
+				g_bUnlockShown_guess = true;
 			}
 		}
-		else if ( guess_m_iUnlocks & 0x20000000 )
+		else if ( m_iUnlocks_guess & 0x20000000 )
 		{
-			if ( !guess_g_bUnlockShown )
+			if ( !g_bUnlockShown_guess )
 			{
-				guess_ShowUnlock( 0x20000000, "Unlocked: Book page 5", 50, "models/items/generic_note.mdl", 0 );
-				guess_g_bUnlockShown = true;
+				ShowUnlock_guess( 0x20000000, "Unlocked: Book page 5", 50, "models/items/generic_note.mdl", 0 );
+				g_bUnlockShown_guess = true;
 			}
 		}
-		else if ( guess_m_iUnlocks & 0x40000000 )
+		else if ( m_iUnlocks_guess & 0x40000000 )
 		{
-			if ( !guess_g_bUnlockShown )
+			if ( !g_bUnlockShown_guess )
 			{
-				guess_ShowUnlock( 0x40000000, "Unlocked: Book page 6", 50, "models/items/generic_note.mdl", 0 );
-				guess_g_bUnlockShown = true;
+				ShowUnlock_guess( 0x40000000, "Unlocked: Book page 6", 50, "models/items/generic_note.mdl", 0 );
+				g_bUnlockShown_guess = true;
 			}
 		}
-		else if ( guess_m_iUnlocks & 0x80000000 )
+		else if ( m_iUnlocks_guess & 0x80000000 )
 		{
-			if ( !guess_g_bUnlockShown )
+			if ( !g_bUnlockShown_guess )
 			{
-				guess_ShowUnlock( 0x80000000, "Unlocked: Doctor mode", 50, "models/doctor_unlock.mdl", 0 );
-				guess_g_bUnlockShown = true;
+				ShowUnlock_guess( 0x80000000, "Unlocked: Doctor mode", 50, "models/doctor_unlock.mdl", 0 );
+				g_bUnlockShown_guess = true;
 			}
 		}
-		else if ( guess_m_bContinue )
+		else if ( m_bContinue_guess )
 		{
-			guess_m_bContinue = false;
+			m_bContinue_guess = false;
 			setVisible( false );
 			gViewPort->UpdateCursorState();
-			guess_g_iUnlockClothes = 0;
+			g_iUnlockClothes_guess = 0;
 
-			if ( guess_iMenuMode )
+			if ( iMenuMode_guess )
 			{
 				gEngfuncs.pfnClientCmd( "map c_game_menu1" );
 				gViewPort->UpdateCursorState();
@@ -1122,51 +1122,51 @@ void CCredits::solve()
 	}
 	else
 	{
-		if ( guess_m_pUnlockLabel->isVisible() )
-			guess_m_pUnlockLabel->setVisible( false );
+		if ( m_pUnlockLabel_guess->isVisible() )
+			m_pUnlockLabel_guess->setVisible( false );
 
-		if ( !guess_m_bShowStats || guess_m_bTextOnly || guess_g_iCoopCredits )
+		if ( !m_bShowStats_guess || m_bTextOnly_guess || g_iCoopCredits_guess )
 		{
 			// scroll the credits
-			if ( guess_m_bFadeIn )
+			if ( m_bFadeIn_guess )
 			{
-				if ( guess_m_iBrightness < 255 )
-					guess_m_iBrightness += 15;
+				if ( m_iBrightness_guess < 255 )
+					m_iBrightness_guess += 15;
 			}
-			else if ( guess_m_iBrightness > 0 )
+			else if ( m_iBrightness_guess > 0 )
 			{
-				guess_m_iBrightness -= 15;
+				m_iBrightness_guess -= 15;
 			}
 
-			if ( guess_m_iBrightness > 255 )
-				guess_m_iBrightness = 255;
-			else if ( guess_m_iBrightness < 0 )
-				guess_m_iBrightness = 0;
+			if ( m_iBrightness_guess > 255 )
+				m_iBrightness_guess = 255;
+			else if ( m_iBrightness_guess < 0 )
+				m_iBrightness_guess = 0;
 
-			if ( guess_m_bTextOnly )
-				guess_m_iBrightness = 255;
+			if ( m_bTextOnly_guess )
+				m_iBrightness_guess = 255;
 
-			for ( i = 1; i <= guess_m_iNumLines; i++ )
+			for ( i = 1; i <= m_iNumLines_guess; i++ )
 			{
 				int x, y;
 				int r, g, b, a;
 
-				guess_m_pCreditLabel[i]->getPos( x, y );
+				m_pCreditLabel_guess[i]->getPos( x, y );
 
-				int iStep = ScreenHeight / guess_m_iScrollSpeed / 20;
+				int iStep = ScreenHeight / m_iScrollSpeed_guess / 20;
 				if ( cl_fastcredits->value )
 					iStep = 20;
 				else if ( iStep <= 0 )
 					iStep = 1;
 
-				if ( guess_m_bScrollUp )
+				if ( m_bScrollUp_guess )
 					y += iStep;
 				else
 					y -= iStep;
 
-				guess_m_pCreditLabel[i]->getFgColor( r, g, b, a );
+				m_pCreditLabel_guess[i]->getFgColor( r, g, b, a );
 
-				bool bScrollUp = guess_m_bScrollUp;
+				bool bScrollUp = m_bScrollUp_guess;
 
 				if ( bScrollUp )
 				{
@@ -1183,8 +1183,8 @@ void CCredits::solve()
 						a += 5;
 				}
 
-				if ( i == guess_m_iNumLines / 2 && y > ScreenHeight / 2 - 16 && !guess_m_bFadeIn && !guess_m_bFadeDone && !guess_m_bTextOnly )
-					guess_m_bFadeIn = true;
+				if ( i == m_iNumLines_guess / 2 && y > ScreenHeight / 2 - 16 && !m_bFadeIn_guess && !m_bFadeDone_guess && !m_bTextOnly_guess )
+					m_bFadeIn_guess = true;
 
 				if ( a < 0 )
 					a = 0;
@@ -1196,35 +1196,35 @@ void CCredits::solve()
 
 				if ( bScrollUp )
 				{
-					if ( i == guess_m_iNumLines && y > ScreenHeight / 2 - 16 && !guess_m_bTextOnly )
+					if ( i == m_iNumLines_guess && y > ScreenHeight / 2 - 16 && !m_bTextOnly_guess )
 					{
-						guess_m_bFadeIn = false;
-						guess_m_bFadeDone = true;
+						m_bFadeIn_guess = false;
+						m_bFadeDone_guess = true;
 						y = ScreenHeight / 2 - 16;
 
-						if ( !guess_m_bStatsTimer )
+						if ( !m_bStatsTimer_guess )
 						{
-							guess_m_bStatsTimer = true;
-							guess_m_flStatsTime = gEngfuncs.GetClientTime() + 3.0;
-							guess_IrrKlangStop( 2.0 );
+							m_bStatsTimer_guess = true;
+							m_flStatsTime_guess = gEngfuncs.GetClientTime() + 3.0;
+							IrrKlangStop_guess( 2.0 );
 						}
 					}
 				}
-				else if ( i == guess_m_iNumLines && y < ScreenHeight / 2 - 16 && !guess_m_bTextOnly )
+				else if ( i == m_iNumLines_guess && y < ScreenHeight / 2 - 16 && !m_bTextOnly_guess )
 				{
-					guess_m_bFadeIn = false;
-					guess_m_bFadeDone = true;
+					m_bFadeIn_guess = false;
+					m_bFadeDone_guess = true;
 					y = ScreenHeight / 2 - 16;
 
-					if ( !guess_m_bStatsTimer )
+					if ( !m_bStatsTimer_guess )
 					{
-						guess_m_bStatsTimer = true;
-						guess_m_flStatsTime = gEngfuncs.GetClientTime() + 3.0;
+						m_bStatsTimer_guess = true;
+						m_flStatsTime_guess = gEngfuncs.GetClientTime() + 3.0;
 					}
 				}
 
-				guess_m_pCreditLabel[i]->setFgColor( guess_m_iBrightness, guess_m_iBrightness, guess_m_iBrightness, a );
-				guess_m_pCreditLabel[i]->setPos( x, y );
+				m_pCreditLabel_guess[i]->setFgColor( m_iBrightness_guess, m_iBrightness_guess, m_iBrightness_guess, a );
+				m_pCreditLabel_guess[i]->setPos( x, y );
 			}
 		}
 		else
@@ -1233,77 +1233,77 @@ void CCredits::solve()
 			int x, y;
 			int r, g, b, a;
 
-			if ( guess_m_bContinue )
+			if ( m_bContinue_guess )
 			{
-				guess_m_bContinue = false;
-				guess_m_bUnlocks = true;
+				m_bContinue_guess = false;
+				m_bUnlocks_guess = true;
 			}
 
 			setBgColor( 255, 255, 255, 255 );
 
-			for ( i = 1; i <= guess_m_iNumLines; i++ )
+			for ( i = 1; i <= m_iNumLines_guess; i++ )
 			{
-				guess_m_pCreditLabel[i]->getFgColor( r, g, b, a );
+				m_pCreditLabel_guess[i]->getFgColor( r, g, b, a );
 				a += 15;
 				if ( a > 255 )
 					a = 255;
-				guess_m_pCreditLabel[i]->setFgColor( guess_m_iBrightness, guess_m_iBrightness, guess_m_iBrightness, a );
+				m_pCreditLabel_guess[i]->setFgColor( m_iBrightness_guess, m_iBrightness_guess, m_iBrightness_guess, a );
 			}
 
-			guess_m_bFadeIn = true;
+			m_bFadeIn_guess = true;
 
-			if ( guess_m_iBrightness < 255 )
-				guess_m_iBrightness += 15;
+			if ( m_iBrightness_guess < 255 )
+				m_iBrightness_guess += 15;
 
-			if ( guess_m_iBrightness > 255 )
-				guess_m_iBrightness = 255;
-			else if ( guess_m_iBrightness < 0 )
-				guess_m_iBrightness = 0;
+			if ( m_iBrightness_guess > 255 )
+				m_iBrightness_guess = 255;
+			else if ( m_iBrightness_guess < 0 )
+				m_iBrightness_guess = 0;
 
-			if ( !guess_m_pGradeLabel->isVisible() )
-				guess_m_pGradeLabel->setVisible( true );
-			guess_m_pGradeLabel->getFgColor( r, g, b, a );
+			if ( !m_pGradeLabel_guess->isVisible() )
+				m_pGradeLabel_guess->setVisible( true );
+			m_pGradeLabel_guess->getFgColor( r, g, b, a );
 			if ( a > 0 )
 				a -= 5;
 			if ( a < 0 )
 				a = 0;
-			guess_m_pGradeLabel->setFgColor( guess_m_iBrightness, guess_m_iBrightness, guess_m_iBrightness, a );
+			m_pGradeLabel_guess->setFgColor( m_iBrightness_guess, m_iBrightness_guess, m_iBrightness_guess, a );
 
-			if ( !guess_m_pGradeShadowLabel->isVisible() )
-				guess_m_pGradeShadowLabel->setVisible( true );
-			guess_m_pGradeLabel->getFgColor( r, g, b, a );
+			if ( !m_pGradeShadowLabel_guess->isVisible() )
+				m_pGradeShadowLabel_guess->setVisible( true );
+			m_pGradeLabel_guess->getFgColor( r, g, b, a );
 			if ( a > 0 )
 				a -= 1;
 			if ( a < 0 )
 				a = 0;
-			guess_m_pGradeShadowLabel->setFgColor( 255, 0, 0, a );
+			m_pGradeShadowLabel_guess->setFgColor( 255, 0, 0, a );
 
-			if ( !guess_m_pStatsTitleLabel->isVisible() )
-				guess_m_pStatsTitleLabel->setVisible( true );
-			guess_m_pStatsTitleLabel->getFgColor( r, g, b, a );
+			if ( !m_pStatsTitleLabel_guess->isVisible() )
+				m_pStatsTitleLabel_guess->setVisible( true );
+			m_pStatsTitleLabel_guess->getFgColor( r, g, b, a );
 			if ( a > 0 )
 				a -= 5;
 			if ( a < 0 )
 				a = 0;
-			guess_m_pStatsTitleLabel->setFgColor( guess_m_iBrightness, guess_m_iBrightness, guess_m_iBrightness, a );
+			m_pStatsTitleLabel_guess->setFgColor( m_iBrightness_guess, m_iBrightness_guess, m_iBrightness_guess, a );
 
 			for ( i = 1; i <= 14; i++ )
 			{
-				if ( !guess_m_pStatLabel[i]->isVisible() )
-					guess_m_pStatLabel[i]->setVisible( true );
-				guess_m_pStatLabel[i]->getFgColor( r, g, b, a );
+				if ( !m_pStatLabel_guess[i]->isVisible() )
+					m_pStatLabel_guess[i]->setVisible( true );
+				m_pStatLabel_guess[i]->getFgColor( r, g, b, a );
 				if ( a > 0 )
 					a -= 5;
 				if ( a < 0 )
 					a = 0;
-				guess_m_pStatLabel[i]->setVisible( true );
-				guess_m_pStatLabel[i]->getPos( x, y );
-				guess_m_pStatLabel[i]->setFgColor( guess_m_iBrightness, guess_m_iBrightness, guess_m_iBrightness, a );
-				guess_m_pStatLabel[i]->setPos( x, y );
+				m_pStatLabel_guess[i]->setVisible( true );
+				m_pStatLabel_guess[i]->getPos( x, y );
+				m_pStatLabel_guess[i]->setFgColor( m_iBrightness_guess, m_iBrightness_guess, m_iBrightness_guess, a );
+				m_pStatLabel_guess[i]->setPos( x, y );
 			}
 		}
 
-		if ( guess_m_bShowStats && !guess_m_bTextOnly && !guess_g_iCoopCredits )
+		if ( m_bShowStats_guess && !m_bTextOnly_guess && !g_iCoopCredits_guess )
 		{
 			int r, g, b, a;
 
@@ -1312,14 +1312,14 @@ void CCredits::solve()
 				a += 5;
 			if ( a > 255 )
 				a = 255;
-			setBgColor( 255 - guess_m_iBrightness, 255 - guess_m_iBrightness, 255 - guess_m_iBrightness, a );
+			setBgColor( 255 - m_iBrightness_guess, 255 - m_iBrightness_guess, 255 - m_iBrightness_guess, a );
 		}
-		else if ( !guess_m_bTextOnly )
+		else if ( !m_bTextOnly_guess )
 		{
-			setBgColor( 255 - guess_m_iBrightness, 255 - guess_m_iBrightness, 255 - guess_m_iBrightness, 0 );
+			setBgColor( 255 - m_iBrightness_guess, 255 - m_iBrightness_guess, 255 - m_iBrightness_guess, 0 );
 		}
 
-		if ( !guess_m_bTextOnly )
+		if ( !m_bTextOnly_guess )
 		{
 			Panel::solve();
 			return;

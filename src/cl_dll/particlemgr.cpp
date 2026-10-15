@@ -213,21 +213,21 @@ void ParticleSystemManager::DeleteSystemWithEntity( int entindex )
 }
 
 // the KillWpnPart message: remove the systems on the view model now, or let them fade out
-void ParticleSystemManager::guess_KillViewModelSystems( bool bNow )
+void ParticleSystemManager::KillViewModelSystems_guess( bool bNow )
 {
 	for (ParticleSystem *pSys = m_pFirstSystem; pSys; pSys = pSys->m_pNextSystem)
 	{
-		if (!pSys->guess_m_iViewModel || !pSys->m_pMainParticle)
+		if (!pSys->m_iViewModel_guess || !pSys->m_pMainParticle)
 			continue;
 
 		if (!bNow)
 		{
-			if (pSys->guess_m_iState != 1)
-				pSys->guess_m_iFadeOut = 1;
+			if (pSys->m_iState_guess != 1)
+				pSys->m_iFadeOut_guess = 1;
 		}
 		else
 		{
-			pSys->guess_m_iState = 2;
+			pSys->m_iState_guess = 2;
 		}
 	}
 }

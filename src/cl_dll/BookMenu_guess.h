@@ -18,10 +18,10 @@ public:
 	virtual void setVisible( bool state );
 
 public:
-	Image	*guess_m_pArrowsImage;		// 0xbc, gfx/vgui/left_right.tga
-	ImagePanel	*guess_m_pArrows;		// 0xc0
-	Image	*guess_m_pCancelImage;		// 0xc4, gfx/vgui/640_notecancel.tga
-	ImagePanel	*guess_m_pCancel;		// 0xc8
+	Image	*m_pArrowsImage_guess;		// 0xbc, gfx/vgui/left_right.tga
+	ImagePanel	*m_pArrows_guess;		// 0xc0
+	Image	*m_pCancelImage_guess;		// 0xc4, gfx/vgui/640_notecancel.tga
+	ImagePanel	*m_pCancel_guess;		// 0xc8
 };
 
 class CBookMenuHandler_Command : public ActionSignal

@@ -15,12 +15,12 @@ public:
 	void ActionSignal( int cmd );
 	int KeyInput( int down, int keynum, const char *pszCurrentBinding );
 
-	void guess_Reset();
-	void guess_DoAction( int slot );
-	bool guess_IsCursorOver( int x, int y, int wide, int tall );
-	void guess_SelectItem( int slot );
-	void guess_SetAction( int action );
-	void guess_Update();
+	void Reset_guess();
+	void DoAction_guess( int slot );
+	bool IsCursorOver_guess( int x, int y, int wide, int tall );
+	void SelectItem_guess( int slot );
+	void SetAction_guess( int action );
+	void Update_guess();
 
 	virtual void setVisible( bool state );
 
@@ -28,39 +28,39 @@ protected:
 	virtual void solve();
 
 public:
-	Image	*guess_m_pBackgroundImage;		// 0xd4, gfx/vgui/backgroundtoall.tga
-	ImagePanel	*guess_m_pBackground;		// 0xd8
-	CImageLabel	*guess_m_pMenuImage;		// 0xdc, inventory_weapons.tga or inventory_items.tga behind the item menu
-	bool	guess_m_bUnknownE0;				// 0xe0, cleared by setVisible
-	int		guess_m_iUnknownE4;				// 0xe4, cleared by setVisible
-	int		guess_m_iDualWield;				// 0xe8, slot picked for inventorydualwield (menu command 53)
-	int		guess_m_iCombine;				// 0xec, slot picked for inventorycombine (menu command 51)
-	int		guess_m_iSelected;				// 0xf0, slot of the item menu (1 to 6)
-	int		guess_m_iSelectionAlpha;		// 0xf4, alpha of the red border of guess_m_pSelection
-	Panel	*guess_m_pSelection;			// 0xf8, red border around the slot picked for combine or dual wield
-	int		guess_m_iUnusedFC;				// 0xfc, not referenced by any code
-	ColorButton	*guess_m_pMenuButtons[7];	// 0x100, item menu, commands 50 to 56
-	int		guess_m_iUnused11C;				// 0x11c, not referenced by any code
-	CImageLabel	*guess_m_pItemImages[10];	// 0x120, pictures of the 6 items, the 3 quick slots ([6], [7], [9]) and the hovered item ([8])
-	Panel	*guess_m_pBackgroundPanel;		// 0x148
-	Image	*guess_m_pInventoryImage;		// 0x14c, gfx/vgui/640_inventory.tga
-	ImagePanel	*guess_m_pInventory;		// 0x150, parent of the buttons and pictures
-	CImageLabel	*guess_m_pPopupImage;		// 0x154
-	int		guess_m_iUnused158;				// 0x158, not referenced by any code
-	ColorButton	*guess_m_pItemButtons[6];	// 0x15c, item slots, commands 1 to 6
-	int		guess_m_iUnused174[3];			// 0x174, not referenced by any code
-	ColorButton	*guess_m_pOptionButtons[5];	// 0x180, commands 7, 8, 10, 15 and 16
-	ColorButton	*guess_m_pQuickSlot1Button;	// 0x194, command 12
-	ColorButton	*guess_m_pQuickSlot2Button;	// 0x198, command 13
-	ColorButton	*guess_m_pQuickSlot3Button;	// 0x19c, command 14
-	Label	*guess_m_pObjectiveLabel;		// 0x1a0, gHUD.guess_m_szObjectiveText
-	int		guess_m_iThree;					// 0x1a4, picks gfx/vgui/640_inventory_three.tga
-	int		guess_m_iUnused1A8[2];			// 0x1a8, not referenced by any code
-	int		guess_m_iAction;				// 0x1b0, set by guess_SetAction, run by guess_DoAction
-	int		guess_m_iUnused1B4;				// 0x1b4, not referenced by any code
-	int		guess_m_iActionItem1;			// 0x1b8, first slot of the combine and dual wield actions
-	int		guess_m_iActionItem2;			// 0x1bc, second slot
-	int		guess_m_iHoverItem;				// 0x1c0, slot shown in guess_m_pItemImages[8] (1 to 6, 7 to 9 quick slots)
+	Image	*m_pBackgroundImage_guess;		// 0xd4, gfx/vgui/backgroundtoall.tga
+	ImagePanel	*m_pBackground_guess;		// 0xd8
+	CImageLabel	*m_pMenuImage_guess;		// 0xdc, inventory_weapons.tga or inventory_items.tga behind the item menu
+	bool	m_bUnknownE0_guess;				// 0xe0, cleared by setVisible
+	int		m_iUnknownE4_guess;				// 0xe4, cleared by setVisible
+	int		m_iDualWield_guess;				// 0xe8, slot picked for inventorydualwield (menu command 53)
+	int		m_iCombine_guess;				// 0xec, slot picked for inventorycombine (menu command 51)
+	int		m_iSelected_guess;				// 0xf0, slot of the item menu (1 to 6)
+	int		m_iSelectionAlpha_guess;		// 0xf4, alpha of the red border of m_pSelection_guess
+	Panel	*m_pSelection_guess;			// 0xf8, red border around the slot picked for combine or dual wield
+	int		m_iUnusedFC_guess;				// 0xfc, not referenced by any code
+	ColorButton	*m_pMenuButtons_guess[7];	// 0x100, item menu, commands 50 to 56
+	int		m_iUnused11C_guess;				// 0x11c, not referenced by any code
+	CImageLabel	*m_pItemImages_guess[10];	// 0x120, pictures of the 6 items, the 3 quick slots ([6], [7], [9]) and the hovered item ([8])
+	Panel	*m_pBackgroundPanel_guess;		// 0x148
+	Image	*m_pInventoryImage_guess;		// 0x14c, gfx/vgui/640_inventory.tga
+	ImagePanel	*m_pInventory_guess;		// 0x150, parent of the buttons and pictures
+	CImageLabel	*m_pPopupImage_guess;		// 0x154
+	int		m_iUnused158_guess;				// 0x158, not referenced by any code
+	ColorButton	*m_pItemButtons_guess[6];	// 0x15c, item slots, commands 1 to 6
+	int		m_iUnused174_guess[3];			// 0x174, not referenced by any code
+	ColorButton	*m_pOptionButtons_guess[5];	// 0x180, commands 7, 8, 10, 15 and 16
+	ColorButton	*m_pQuickSlot1Button_guess;	// 0x194, command 12
+	ColorButton	*m_pQuickSlot2Button_guess;	// 0x198, command 13
+	ColorButton	*m_pQuickSlot3Button_guess;	// 0x19c, command 14
+	Label	*m_pObjectiveLabel_guess;		// 0x1a0, gHUD.m_szObjectiveText_guess
+	int		m_iThree_guess;					// 0x1a4, picks gfx/vgui/640_inventory_three.tga
+	int		m_iUnused1A8_guess[2];			// 0x1a8, not referenced by any code
+	int		m_iAction_guess;				// 0x1b0, set by SetAction_guess, run by DoAction_guess
+	int		m_iUnused1B4_guess;				// 0x1b4, not referenced by any code
+	int		m_iActionItem1_guess;			// 0x1b8, first slot of the combine and dual wield actions
+	int		m_iActionItem2_guess;			// 0x1bc, second slot
+	int		m_iHoverItem_guess;				// 0x1c0, slot shown in m_pItemImages_guess[8] (1 to 6, 7 to 9 quick slots)
 };
 
 class CRECBInventoryHandler_Command : public ActionSignal
@@ -82,6 +82,6 @@ public:
 	}
 };
 
-void guess_QSlotInit();
+void QSlotInit_guess();
 
 #endif // _RECBINVENTORY_H

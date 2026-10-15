@@ -117,9 +117,9 @@ public:
 	RandomRange m_SprayPitch;
 	RandomRange m_SprayYaw;
 	ParticleType *m_pSprayType;
-	int guess_m_iSprayYawMode;	// "sprayyaw": 1 player, 2 player_random_low, 3 player_random_med, 4 player_random_hi
-	int guess_m_iInheritAngle;	// "inheritangle weapon"
-	int guess_m_iWaterOnly;		// "wateronly 1": drawn only in water
+	int m_iSprayYawMode_guess;	// "sprayyaw": 1 player, 2 player_random_low, 3 player_random_med, 4 player_random_hi
+	int m_iInheritAngle_guess;	// "inheritangle weapon"
+	int m_iWaterOnly_guess;		// "wateronly 1": drawn only in water
 
 	RandomRange m_Gravity;
 	RandomRange m_WindStrength;
@@ -183,16 +183,16 @@ public:
 	float			m_fViewerDist;
 	int				m_iEntIndex;
 
-	int				guess_m_iViewModel;		// the system follows the view model (Particle message)
-	int				guess_m_iAttachment;	// attachment of the source entity the particles start at, or -1
-	char			guess_m_szModel[128];	// view model the system was created on (Particle message)
-	int				guess_m_iState;			// 1 fading out, 2 remove now
-	float			guess_m_flDieTime;
-	float			guess_m_flFadeStart;
-	float			guess_m_flFadeTime;
-	int				guess_m_iFadeOut;		// set by the KillWpnPart message
-	int				guess_m_iBone;
-	int				guess_m_iLimited;		// "limited": counts against cl_smokeparticlelimit
+	int				m_iViewModel_guess;		// the system follows the view model (Particle message)
+	int				m_iAttachment_guess;	// attachment of the source entity the particles start at, or -1
+	char			m_szModel_guess[128];	// view model the system was created on (Particle message)
+	int				m_iState_guess;			// 1 fading out, 2 remove now
+	float			m_flDieTime_guess;
+	float			m_flFadeStart_guess;
+	float			m_flFadeTime_guess;
+	int				m_iFadeOut_guess;		// set by the KillWpnPart message
+	int				m_iBone_guess;
+	int				m_iLimited_guess;		// "limited": counts against cl_smokeparticlelimit
 
 //private:
 	// the block of allocated particles

@@ -38,8 +38,8 @@ extern engine_studio_api_t IEngineStudio;
 #include "cl_entity.h"
 #include "event_api.h"
 #include "kbutton.h"
-#include "guess_HUDControl.h"
-#include "guess_CutsceneSkip.h"
+#include "HUDControl_guess.h"
+#include "CutsceneSkip_guess.h"
 #include "rain.h"
 
 #define MAX_LOGO_FRAMES 56
@@ -61,42 +61,42 @@ extern int g_iVisibleMouse;
 
 extern cvar_t *sensitivity;
 extern cvar_t *cv_blurtest;
-extern cvar_t *guess_cv_screenblur;
-extern cvar_t *guess_cv_blurstepsx;
-extern cvar_t *guess_cv_blurstepsy;
-extern cvar_t *guess_cv_opacity;
+extern cvar_t *cv_screenblur_guess;
+extern cvar_t *cv_blurstepsx_guess;
+extern cvar_t *cv_blurstepsy_guess;
+extern cvar_t *cv_opacity_guess;
 
-extern int guess_iDefaultFOV;
-extern int guess_iSkipSceneFramerate;
-extern int guess_iDifficulty;
-extern int guess_g_iDickMode;
-extern int guess_iBoat;
-extern int guess_iWheelchair;
-extern bool guess_bWheelchairLock;
-extern float guess_flMouseOfs2X;
-extern bool guess_bIronsightEdit;
-extern vec3_t guess_vecIronsightOfs;
-extern cl_entity_t *guess_pTelescopeEnt;
-extern int guess_iUnknown1054506C;
-extern float guess_flUnknown105595A0;
-extern float guess_flUnknown105595A4;
-extern float guess_flUnknown105595A8;
-extern int guess_iUnknown105595AC;
+extern int iDefaultFOV_guess;
+extern int iSkipSceneFramerate_guess;
+extern int iDifficulty_guess;
+extern int g_iDickMode_guess;
+extern int iBoat_guess;
+extern int iWheelchair_guess;
+extern bool bWheelchairLock_guess;
+extern float flMouseOfs2X_guess;
+extern bool bIronsightEdit_guess;
+extern vec3_t vecIronsightOfs_guess;
+extern cl_entity_t *pTelescopeEnt_guess;
+extern int iUnknown1054506C_guess;
+extern float flUnknown105595A0_guess;
+extern float flUnknown105595A4_guess;
+extern float flUnknown105595A8_guess;
+extern int iUnknown105595AC_guess;
 extern kbutton_t in_forward;
 extern kbutton_t in_back;
 extern kbutton_t in_moveleft;
 extern kbutton_t in_moveright;
 
-float guess_flNextSoundCacheTime;
-float guess_flGunParam1;	// vuser2[1] of the local player state, set by HUD_ProcessPlayerState
+float flNextSoundCacheTime_guess;
+float flGunParam1_guess;	// vuser2[1] of the local player state, set by HUD_ProcessPlayerState
 
 
 // true while the view is set to another entity than the local player (ViewEntity message)
-bool guess_IsViewEntityActive( void )
+bool IsViewEntityActive_guess( void )
 {
-	if ( gEngfuncs.GetLocalPlayer() && gHUD.guess_m_iViewEntity )
+	if ( gEngfuncs.GetLocalPlayer() && gHUD.m_iViewEntity_guess )
 	{
-		if ( gHUD.guess_m_iViewEntity != gEngfuncs.GetLocalPlayer()->index )
+		if ( gHUD.m_iViewEntity_guess != gEngfuncs.GetLocalPlayer()->index )
 			return true;
 	}
 
@@ -104,26 +104,26 @@ bool guess_IsViewEntityActive( void )
 }
 
 // adds a frame rate sample, returns the average of the last 50
-int CHud :: guess_AverageFPS( int iFPS )
+int CHud :: AverageFPS_guess( int iFPS )
 {
-	if ( guess_m_iFPSCount >= 50 )
+	if ( m_iFPSCount_guess >= 50 )
 	{
 		for ( int i = 1; i <= 50; i++ )
-			guess_m_iFPS[i] = 0;
-		guess_m_iFPSCount = 0;
+			m_iFPS_guess[i] = 0;
+		m_iFPSCount_guess = 0;
 	}
 
-	guess_m_iFPSCount++;
-	guess_m_iFPS[guess_m_iFPSCount] = iFPS;
+	m_iFPSCount_guess++;
+	m_iFPS_guess[m_iFPSCount_guess] = iFPS;
 
 	int iCount = 0;
 	int iTotal = 0;
 
 	for ( int j = 1; j <= 50; j++ )
 	{
-		if ( guess_m_iFPS[j] )
+		if ( m_iFPS_guess[j] )
 		{
-			iTotal += guess_m_iFPS[j];
+			iTotal += m_iFPS_guess[j];
 			iCount++;
 		}
 	}
@@ -134,17 +134,17 @@ int CHud :: guess_AverageFPS( int iFPS )
 // Think
 void CHud::Think(void)
 {
-	if ( guess_flUnknown105595A0 + guess_flUnknown105595A4 > gEngfuncs.GetClientTime() && guess_iUnknown1054506C < 3 && gEngfuncs.GetLocalPlayer() )
+	if ( flUnknown105595A0_guess + flUnknown105595A4_guess > gEngfuncs.GetClientTime() && iUnknown1054506C_guess < 3 && gEngfuncs.GetLocalPlayer() )
 	{
-		if ( gEngfuncs.GetClientTime() > guess_flUnknown105595A8 )
+		if ( gEngfuncs.GetClientTime() > flUnknown105595A8_guess )
 		{
-			guess_iUnknown105595AC++;
-			guess_FallingDripEffect( gEngfuncs.GetLocalPlayer()->origin, 1.0 );
-			guess_flUnknown105595A8 = gEngfuncs.GetClientTime() + guess_iUnknown105595AC * 0.05 + gEngfuncs.pfnRandomFloat( 0.1, 0.25 );
+			iUnknown105595AC_guess++;
+			FallingDripEffect_guess( gEngfuncs.GetLocalPlayer()->origin, 1.0 );
+			flUnknown105595A8_guess = gEngfuncs.GetClientTime() + iUnknown105595AC_guess * 0.05 + gEngfuncs.pfnRandomFloat( 0.1, 0.25 );
 		}
 	}
 
-	if ( guess_iBoat )
+	if ( iBoat_guess )
 	{
 		if ( in_forward.state & 1 )
 			ServerCmd( "boatup" );
@@ -156,7 +156,7 @@ void CHud::Think(void)
 			ServerCmd( "boatright" );
 	}
 
-	if ( guess_iWheelchair )
+	if ( iWheelchair_guess )
 	{
 		if ( in_forward.state & 1 )
 			ServerCmd( "wheelchairup" );
@@ -193,7 +193,7 @@ void CHud::Think(void)
 	if		(g_iGunMode > 3)	targetFOV = g_iGunMode;
 	else if	(g_iGunMode == 3)	targetFOV = 30;
 	else if	(g_iGunMode == 2)	targetFOV = 60;
-	else						targetFOV = guess_iDefaultFOV;
+	else						targetFOV = iDefaultFOV_guess;
 
 	static float lastFixedFov = 0;
 
@@ -212,7 +212,7 @@ void CHud::Think(void)
 		if (g_iGunMode == 3 || lastFixedFov == 30) mod *= 2;
 		mod /= 30;
 
-		if ( g_iGunMode <= 3 || !guess_m_flCameraZoomFOV )
+		if ( g_iGunMode <= 3 || !m_flCameraZoomFOV_guess )
 		{
 			if (m_flFOV < targetFOV) {
 				m_flFOV += (curtime - lasttime) * m_pZoomSpeed->value * mod;
@@ -231,14 +231,14 @@ void CHud::Think(void)
 				}
 			}
 		}
-		else if ( g_iGunMode == 666 || guess_m_flCameraZoomFOV == 666 )
+		else if ( g_iGunMode == 666 || m_flCameraZoomFOV_guess == 666 )
 		{
 			m_flFOV = targetFOV;
 		}
 		else
 		{
 			if (m_flFOV < targetFOV) {
-				m_flFOV += (curtime - lasttime) * guess_m_flCameraZoomFOV * mod;
+				m_flFOV += (curtime - lasttime) * m_flCameraZoomFOV_guess * mod;
 				if (m_flFOV > targetFOV)
 				{
 					m_flFOV = targetFOV;
@@ -246,7 +246,7 @@ void CHud::Think(void)
 				}
 			}
 			else if (m_flFOV > targetFOV) {
-				m_flFOV -= (curtime - lasttime) * guess_m_flCameraZoomFOV * mod;
+				m_flFOV -= (curtime - lasttime) * m_flCameraZoomFOV_guess * mod;
 				if (m_flFOV < targetFOV)
 				{
 					m_flFOV = targetFOV;
@@ -260,7 +260,7 @@ void CHud::Think(void)
 	m_iFOV = m_flFOV;
 
 	// Set a new sensitivity
-	if ( m_iFOV == guess_iDefaultFOV )
+	if ( m_iFOV == iDefaultFOV_guess )
 	{
 		// reset to saved sensitivity
 		m_flMouseSensitivity = 0;
@@ -268,7 +268,7 @@ void CHud::Think(void)
 	else
 	{
 		// set a new sensitivity that is proportional to the change from the FOV default
-		m_flMouseSensitivity = sensitivity->value * (m_flFOV / (float)guess_iDefaultFOV) * CVAR_GET_FLOAT("zoom_sensitivity_ratio");
+		m_flMouseSensitivity = sensitivity->value * (m_flFOV / (float)iDefaultFOV_guess) * CVAR_GET_FLOAT("zoom_sensitivity_ratio");
 	}
 }
 
@@ -288,7 +288,7 @@ extern int g_HeadShieldState; // buz
 
 // called by Redraw between the time update and the blur, disabled in 1.6a: the binary keeps
 // only the return, the old body is unknown (Paranoia called gMP3.Frame() from Redraw)
-void guess_RedrawFrame( void )
+void RedrawFrame_guess( void )
 {
 	return;
 
@@ -305,37 +305,37 @@ int CHud :: Redraw( float flTime, int intermission )
 
 	ApplyPostEffects(); // buz
 
-	if ( guess_m_bSaveHack && guess_m_iSaveHackSlot )
+	if ( m_bSaveHack_guess && m_iSaveHackSlot_guess )
 	{
-		if ( gEngfuncs.GetClientTime() > guess_m_flSaveHackTime )
+		if ( gEngfuncs.GetClientTime() > m_flSaveHackTime_guess )
 		{
-			sprintf( szCmd, "savehack cofsave%i\n", guess_m_iSaveHackSlot );
+			sprintf( szCmd, "savehack cofsave%i\n", m_iSaveHackSlot_guess );
 			ServerCmd( szCmd );
-			guess_m_bSaveHack = false;
-			guess_m_flSaveHackTime = 0;
-			guess_m_iSaveHackSlot = 0;
+			m_bSaveHack_guess = false;
+			m_flSaveHackTime_guess = 0;
+			m_iSaveHackSlot_guess = 0;
 		}
 	}
 
-	if ( guess_g_iDickMode )
+	if ( g_iDickMode_guess )
 	{
-		if ( gEngfuncs.GetClientTime() > guess_flNextSoundCacheTime && gEngfuncs.GetLocalPlayer() )
+		if ( gEngfuncs.GetClientTime() > flNextSoundCacheTime_guess && gEngfuncs.GetLocalPlayer() )
 		{
 			gEngfuncs.pEventAPI->EV_PlaySound( -1, gEngfuncs.GetLocalPlayer()->origin, CHAN_AUTO, "ambience/soundcache", 1.0, ATTN_NORM, 0, PITCH_NORM );
-			guess_flNextSoundCacheTime = gEngfuncs.GetClientTime() + 15.0;
+			flNextSoundCacheTime_guess = gEngfuncs.GetClientTime() + 15.0;
 		}
 	}
 
 	// the wheelchair lock lowers the view
 	static float flNextWheelchairTime = 0;
 
-	if ( guess_bWheelchairLock )
+	if ( bWheelchairLock_guess )
 	{
 		if ( gEngfuncs.GetClientTime() > flNextWheelchairTime )
 		{
-			guess_flMouseOfs2X += 5;
-			if ( guess_flMouseOfs2X > 40 )
-				guess_flMouseOfs2X = 40;
+			flMouseOfs2X_guess += 5;
+			if ( flMouseOfs2X_guess > 40 )
+				flMouseOfs2X_guess = 40;
 			flNextWheelchairTime = gEngfuncs.GetClientTime() + 0.025;
 		}
 	}
@@ -344,20 +344,20 @@ int CHud :: Redraw( float flTime, int intermission )
 		flNextWheelchairTime = 0;
 	}
 
-	if ( guess_m_bViewLock && guess_m_flViewLockTime != 666 )
+	if ( m_bViewLock_guess && m_flViewLockTime_guess != 666 )
 	{
-		if ( gEngfuncs.GetClientTime() > guess_m_flViewLockTime && !guess_m_bViewLockWasOn )
-			guess_m_bViewLock = false;
+		if ( gEngfuncs.GetClientTime() > m_flViewLockTime_guess && !m_bViewLockWasOn_guess )
+			m_bViewLock_guess = false;
 	}
 
-	if ( guess_bIronsightEdit )
+	if ( bIronsightEdit_guess )
 	{
-		sprintf( szText, "Forward: %f - Right: %f - Up: %f Zoom: %i\n", guess_vecIronsightOfs[1], guess_vecIronsightOfs[0], guess_vecIronsightOfs[2], g_iGunMode );
+		sprintf( szText, "Forward: %f - Right: %f - Up: %f Zoom: %i\n", vecIronsightOfs_guess[1], vecIronsightOfs_guess[0], vecIronsightOfs_guess[2], g_iGunMode );
 		gHUD.m_SayText.SayTextPrint( szText, 128, -1 );
 	}
 
 	// camera sway
-	if ( ( guess_m_iCameraZoom || guess_pTelescopeEnt ) && m_flTime > guess_m_flNextSwayTime && !guess_m_iHoldBreath )
+	if ( ( m_iCameraZoom_guess || pTelescopeEnt_guess ) && m_flTime > m_flNextSwayTime_guess && !m_iHoldBreath_guess )
 	{
 		vec3_t angles;
 
@@ -367,29 +367,29 @@ int CHud :: Redraw( float flTime, int intermission )
 		angles[0] -= flPitch;
 		angles[1] -= flYaw;
 
-		if ( !gHUD.guess_m_bViewLock )
+		if ( !gHUD.m_bViewLock_guess )
 			gEngfuncs.SetViewAngles( angles );
 
-		guess_m_flNextSwayTime = m_flTime + 0.05;
+		m_flNextSwayTime_guess = m_flTime + 0.05;
 	}
 
-	if ( guess_iDifficulty <= 0 || guess_iDifficulty > 4 )
-		guess_iDifficulty = CVAR_GET_FLOAT( "difficulty" );
+	if ( iDifficulty_guess <= 0 || iDifficulty_guess > 4 )
+		iDifficulty_guess = CVAR_GET_FLOAT( "difficulty" );
 
-	if ( !guess_IsViewEntityActive() )
+	if ( !IsViewEntityActive_guess() )
 	{
-		if ( CVAR_GET_FLOAT( "host_framerate" ) == guess_iSkipSceneFramerate && strcmp( gEngfuncs.pfnGetLevelName(), "maps/video_stress_test.bsp" ) && !strstr( gEngfuncs.pfnGetLevelName(), "game_menu" ) )
+		if ( CVAR_GET_FLOAT( "host_framerate" ) == iSkipSceneFramerate_guess && strcmp( gEngfuncs.pfnGetLevelName(), "maps/video_stress_test.bsp" ) && !strstr( gEngfuncs.pfnGetLevelName(), "game_menu" ) )
 			gEngfuncs.Cvar_SetValue( "host_framerate", 0 );
 	}
 
-	if ( guess_IsViewEntityActive() && CVAR_GET_FLOAT( "host_framerate" ) == guess_iSkipSceneFramerate )
+	if ( IsViewEntityActive_guess() && CVAR_GET_FLOAT( "host_framerate" ) == iSkipSceneFramerate_guess )
 	{
-		if ( gViewPort->guess_m_pCutsceneSkip && !gViewPort->guess_m_pCutsceneSkip->isVisible() )
-			gViewPort->guess_m_pCutsceneSkip->setVisible( true );
+		if ( gViewPort->m_pCutsceneSkip_guess && !gViewPort->m_pCutsceneSkip_guess->isVisible() )
+			gViewPort->m_pCutsceneSkip_guess->setVisible( true );
 	}
-	else if ( gViewPort && gViewPort->guess_m_pCutsceneSkip && gViewPort->guess_m_pCutsceneSkip->isVisible() )
+	else if ( gViewPort && gViewPort->m_pCutsceneSkip_guess && gViewPort->m_pCutsceneSkip_guess->isVisible() )
 	{
-		gViewPort->guess_m_pCutsceneSkip->setVisible( false );
+		gViewPort->m_pCutsceneSkip_guess->setVisible( false );
 	}
 
 	if ( !strcmp( gEngfuncs.pfnGetLevelName(), "maps/video_stress_test.bsp" ) )
@@ -401,50 +401,50 @@ int CHud :: Redraw( float flTime, int intermission )
 		flLastFPSTime = flCurTime;
 
 		int iFPS = 1 / flFrameTime;
-		guess_m_iFPSAverage = guess_AverageFPS( iFPS );
+		m_iFPSAverage_guess = AverageFPS_guess( iFPS );
 		int iMaxFPS = CVAR_GET_FLOAT( "fps_max" );
 
-		if ( iFPS > 1 && gEngfuncs.GetClientTime() >= guess_m_flNextFPSTime )
+		if ( iFPS > 1 && gEngfuncs.GetClientTime() >= m_flNextFPSTime_guess )
 		{
-			if ( !guess_m_bFPSToggle )
+			if ( !m_bFPSToggle_guess )
 			{
-				guess_m_iFPSMin = iFPS;
-				guess_m_bFPSToggle = true;
+				m_iFPSMin_guess = iFPS;
+				m_bFPSToggle_guess = true;
 			}
 			else
 			{
-				guess_m_iFPSMax = iFPS;
-				guess_m_bFPSToggle = false;
+				m_iFPSMax_guess = iFPS;
+				m_bFPSToggle_guess = false;
 			}
 			gEngfuncs.Cvar_SetValue( "fps_current", iFPS );
-			guess_m_flNextFPSTime = gEngfuncs.GetClientTime() + 1.0;
+			m_flNextFPSTime_guess = gEngfuncs.GetClientTime() + 1.0;
 
-			if ( guess_m_iFPSAverage && guess_m_iFPSMin && guess_m_iFPSMax )
+			if ( m_iFPSAverage_guess && m_iFPSMin_guess && m_iFPSMax_guess )
 			{
-				sprintf( szText, "FPS is %i with an average of %i and a max of %i", iFPS, guess_m_iFPSAverage, iMaxFPS );
+				sprintf( szText, "FPS is %i with an average of %i and a max of %i", iFPS, m_iFPSAverage_guess, iMaxFPS );
 
-				if ( gViewPort && gViewPort->guess_m_pHUDControl )
+				if ( gViewPort && gViewPort->m_pHUDControl_guess )
 				{
 					if ( strlen( szText ) > 30 )
-						gViewPort->guess_m_pHUDControl->guess_m_iMessageTime = gEngfuncs.GetClientTime() + 6;
+						gViewPort->m_pHUDControl_guess->m_iMessageTime_guess = gEngfuncs.GetClientTime() + 6;
 					else
-						gViewPort->guess_m_pHUDControl->guess_m_iMessageTime = gEngfuncs.GetClientTime() + 4;
-					gViewPort->guess_m_pHUDControl->guess_m_szMessage2[0] = 0;
-					strcpy( gViewPort->guess_m_pHUDControl->guess_m_szMessage, szText );
+						gViewPort->m_pHUDControl_guess->m_iMessageTime_guess = gEngfuncs.GetClientTime() + 4;
+					gViewPort->m_pHUDControl_guess->m_szMessage2_guess[0] = 0;
+					strcpy( gViewPort->m_pHUDControl_guess->m_szMessage_guess, szText );
 				}
 			}
 			else
 			{
 				sprintf( szText, "FPS is %i with an average of %i and a max of %i", iFPS, iFPS, iMaxFPS );
 
-				if ( gViewPort && gViewPort->guess_m_pHUDControl )
+				if ( gViewPort && gViewPort->m_pHUDControl_guess )
 				{
 					if ( strlen( szText ) > 30 )
-						gViewPort->guess_m_pHUDControl->guess_m_iMessageTime = gEngfuncs.GetClientTime() + 6;
+						gViewPort->m_pHUDControl_guess->m_iMessageTime_guess = gEngfuncs.GetClientTime() + 6;
 					else
-						gViewPort->guess_m_pHUDControl->guess_m_iMessageTime = gEngfuncs.GetClientTime() + 4;
-					gViewPort->guess_m_pHUDControl->guess_m_szMessage2[0] = 0;
-					strcpy( gViewPort->guess_m_pHUDControl->guess_m_szMessage, szText );
+						gViewPort->m_pHUDControl_guess->m_iMessageTime_guess = gEngfuncs.GetClientTime() + 4;
+					gViewPort->m_pHUDControl_guess->m_szMessage2_guess[0] = 0;
+					strcpy( gViewPort->m_pHUDControl_guess->m_szMessage_guess, szText );
 				}
 			}
 		}
@@ -455,7 +455,7 @@ int CHud :: Redraw( float flTime, int intermission )
 	m_flTimeDelta = (double)m_flTime - m_fOldTime;
 	static float m_flShotTime = 0;
 
-	guess_RedrawFrame();
+	RedrawFrame_guess();
 	DrawBlurTest(m_flTimeDelta);
 
 	//LRC - handle fog fading effects. (is this the right place for it?)
@@ -556,7 +556,7 @@ int CHud :: Redraw( float flTime, int intermission )
 		}
 	}
 
-	if ( guess_g_iDickMode )
+	if ( g_iDickMode_guess )
 	{
 		HSPRITE hSprite = LoadSprite( "sprcache" );
 		int x = gEngfuncs.pfnRandomLong( 0, ScreenWidth - 256 );
@@ -795,24 +795,24 @@ int CHud::GetNumWidth( int iNumber, int iFlags )
 
 }	
 
-extern int guess_g_iBlurTexture;
-void guess_CaptureBlurTexture( int width, int height, int iUnused1, int iUnused2 );
+extern int g_iBlurTexture_guess;
+void CaptureBlurTexture_guess( int width, int height, int iUnused1, int iUnused2 );
 
 // buz
 void CHud :: DrawBlurTest( float frametime )
 {
-	if ( !guess_cv_screenblur->value )
+	if ( !cv_screenblur_guess->value )
 		return;
 
 	bool bDamaged = false;
-	if ( guess_m_flDamageTime > gEngfuncs.GetClientTime() )
+	if ( m_flDamageTime_guess > gEngfuncs.GetClientTime() )
 		bDamaged = true;
 
-	if ( ( cv_blurtest->value || gHUD.guess_m_iBlur || guess_iUnknown1054506C > 2 || bDamaged ) && frametime )
+	if ( ( cv_blurtest->value || gHUD.m_iBlur_guess || iUnknown1054506C_guess > 2 || bDamaged ) && frametime )
 	{
-		guess_CaptureBlurTexture( ScreenWidth, ScreenHeight, 0, 0 );
+		CaptureBlurTexture_guess( ScreenWidth, ScreenHeight, 0, 0 );
 
-		if ( !guess_g_iBlurTexture )
+		if ( !g_iBlurTexture_guess )
 			return;
 
 		glDisable( GL_TEXTURE_GEN_S );
@@ -821,8 +821,8 @@ void CHud :: DrawBlurTest( float frametime )
 		int iWidth = XRES( 32 );
 		int iHeight = YRES( 24 );
 
-		int iStepX = XRES( guess_cv_blurstepsx->value );
-		int iStepY = YRES( guess_cv_blurstepsy->value );
+		int iStepX = XRES( cv_blurstepsx_guess->value );
+		int iStepY = YRES( cv_blurstepsy_guess->value );
 
 		if ( iStepX < 1 )
 			iStepX = 1;
@@ -833,10 +833,10 @@ void CHud :: DrawBlurTest( float frametime )
 
 		for ( int i = 0; i < iSteps; i++ )
 		{
-			gl.glBindTexture( GL_TEXTURE_2D, guess_g_iBlurTexture );
+			gl.glBindTexture( GL_TEXTURE_2D, g_iBlurTexture_guess );
 			gl.glEnable( GL_BLEND );
 			gl.glBlendFunc( GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA );
-			gl.glColor4f( 1, 1, 1, guess_cv_opacity->value );
+			gl.glColor4f( 1, 1, 1, cv_opacity_guess->value );
 
 			iHeight += iStepY;
 			iWidth += iStepX;
@@ -858,15 +858,15 @@ void CHud :: DrawBlurTest( float frametime )
 }
 
 // screen fade of the NewFade message, never called in 1.6a
-void CHud :: guess_DrawNewFade( float flTime )
+void CHud :: DrawNewFade_guess( float flTime )
 {
 	if ( !gl.IsGLAllowed() )
 		return;
 
-	if ( guess_m_flFadeStart + guess_m_flFadeTime > gEngfuncs.GetClientTime() || guess_m_bFadeOut || guess_m_flFadeEnd >= gEngfuncs.GetClientTime() )
+	if ( m_flFadeStart_guess + m_flFadeTime_guess > gEngfuncs.GetClientTime() || m_bFadeOut_guess || m_flFadeEnd_guess >= gEngfuncs.GetClientTime() )
 	{
-		float flMaxAlpha = guess_m_iFadeAlpha / 255.0f;
-		float flAlpha = ( gEngfuncs.GetClientTime() - guess_m_flFadeStart ) / guess_m_flFadeTime;
+		float flMaxAlpha = m_iFadeAlpha_guess / 255.0f;
+		float flAlpha = ( gEngfuncs.GetClientTime() - m_flFadeStart_guess ) / m_flFadeTime_guess;
 
 		if ( flAlpha > 1 )
 			flAlpha = 1;
@@ -876,14 +876,14 @@ void CHud :: guess_DrawNewFade( float flTime )
 			flAlpha = 0;
 
 		float color[3];
-		color[0] = guess_m_iFadeR / 255.0f;
-		color[1] = guess_m_iFadeG / 255.0f;
-		color[2] = guess_m_iFadeB / 255.0f;
+		color[0] = m_iFadeR_guess / 255.0f;
+		color[1] = m_iFadeG_guess / 255.0f;
+		color[2] = m_iFadeB_guess / 255.0f;
 
 		glEnable( GL_BLEND );
 		glDisable( GL_TEXTURE_2D );
 
-		if ( !guess_m_bFadeHold )
+		if ( !m_bFadeHold_guess )
 			glColor4f( color[0], color[1], color[2], flMaxAlpha - flAlpha );
 		else
 			glColor4f( color[0], color[1], color[2], flAlpha );

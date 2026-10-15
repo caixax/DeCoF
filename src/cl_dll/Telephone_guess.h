@@ -14,8 +14,8 @@ public:
 	void Initialize();
 	void ActionSignal( int cmd );
 
-	void guess_PressDigit( int digit );
-	void guess_Dial();
+	void PressDigit_guess( int digit );
+	void Dial_guess();
 
 	virtual void setVisible( bool state );
 
@@ -23,14 +23,14 @@ protected:
 	virtual void paint();
 
 public:
-	Image	*guess_m_pBackgroundImage;		// 0xbc, gfx/vgui/backgroundtoall.tga
-	ImagePanel	*guess_m_pBackground;		// 0xc0
-	bool	guess_m_bLocked;				// 0xc4, set by the Telephone message (3), blocks the buttons
-	float	guess_m_flFade;					// 0xc8, alpha of the telephone picture, 255 when shown
-	char	guess_m_szNumber[16];			// 0xcc, number to dial, from the Telephone message
-	char	guess_m_szDialed[16];			// 0xdc, digits dialed so far
-	Image	*guess_m_pTelephoneImage;		// 0xec, gfx/vgui/puzzle/telephone_vgui.tga
-	ImagePanel	*guess_m_pTelephone;		// 0xf0, parent of the buttons
+	Image	*m_pBackgroundImage_guess;		// 0xbc, gfx/vgui/backgroundtoall.tga
+	ImagePanel	*m_pBackground_guess;		// 0xc0
+	bool	m_bLocked_guess;				// 0xc4, set by the Telephone message (3), blocks the buttons
+	float	m_flFade_guess;					// 0xc8, alpha of the telephone picture, 255 when shown
+	char	m_szNumber_guess[16];			// 0xcc, number to dial, from the Telephone message
+	char	m_szDialed_guess[16];			// 0xdc, digits dialed so far
+	Image	*m_pTelephoneImage_guess;		// 0xec, gfx/vgui/puzzle/telephone_vgui.tga
+	ImagePanel	*m_pTelephone_guess;		// 0xf0, parent of the buttons
 };
 
 class CTelephoneHandler_Command : public ActionSignal

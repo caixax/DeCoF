@@ -79,11 +79,11 @@ void EV_FireRPK( struct event_args_s *args );
 void EV_FireAK74( struct event_args_s *args );
 void EV_FireGroza( struct event_args_s *args );
 void EV_SmokePuff( struct event_args_s *args );
-void guess_EV_ClientSound( struct event_args_s *args );
-void guess_EV_RevolverShells( struct event_args_s *args );
-void guess_EV_ServerMuzzleFlash( struct event_args_s *args );
-void guess_EV_ViewPunch( struct event_args_s *args );
-void guess_EV_WeaponShoot( struct event_args_s *args );
+void EV_ClientSound_guess( struct event_args_s *args );
+void EV_RevolverShells_guess( struct event_args_s *args );
+void EV_ServerMuzzleFlash_guess( struct event_args_s *args );
+void EV_ViewPunch_guess( struct event_args_s *args );
+void EV_WeaponShoot_guess( struct event_args_s *args );
 }
 
 #define VECTOR_CONE_1DEGREES Vector( 0.00873, 0.00873, 0.00873 )
@@ -2236,36 +2236,36 @@ void EV_SmokePuff( struct event_args_s *args )
 	g_objmanager.AddObject(pObj);
 }
 
-void guess_V_ViewPunch( float x, float y, float z );
+void V_ViewPunch_guess( float x, float y, float z );
 
-extern int guess_iWheelchair;
-extern vec3_t guess_vecWheelchairAngles;
-extern cl_entity_t *guess_pAttachCamEnt;
-extern int guess_iAttachCamFlag;
-extern vec3_t guess_ev_punchanglevel;
+extern int iWheelchair_guess;
+extern vec3_t vecWheelchairAngles_guess;
+extern cl_entity_t *pAttachCamEnt_guess;
+extern int iAttachCamFlag_guess;
+extern vec3_t ev_punchanglevel_guess;
 
 // muzzle flash of the weapon models seen by the studio renderer
-int guess_iMuzzleFlash;
-int guess_iMuzzleFlashType;
-int guess_iMuzzleFlashEnt;
-vec3_t guess_vecMuzzleFlashAngles;
+int iMuzzleFlash_guess;
+int iMuzzleFlashType_guess;
+int iMuzzleFlashEnt_guess;
+vec3_t vecMuzzleFlashAngles_guess;
 
-void guess_V_ViewPunch( float x, float y, float z )
+void V_ViewPunch_guess( float x, float y, float z )
 {
-	if ( !guess_pAttachCamEnt || guess_iAttachCamFlag > 0 )
+	if ( !pAttachCamEnt_guess || iAttachCamFlag_guess > 0 )
 	{
-		guess_ev_punchanglevel[0] -= x * 20;
-		guess_ev_punchanglevel[1] += y * 20;
-		guess_ev_punchanglevel[2] += z * 20;
+		ev_punchanglevel_guess[0] -= x * 20;
+		ev_punchanglevel_guess[1] += y * 20;
+		ev_punchanglevel_guess[2] += z * 20;
 	}
 }
 
-void guess_EV_ViewPunch( struct event_args_s *args )
+void EV_ViewPunch_guess( struct event_args_s *args )
 {
-	guess_V_ViewPunch( args->origin[0], args->origin[1], args->origin[2] );
+	V_ViewPunch_guess( args->origin[0], args->origin[1], args->origin[2] );
 }
 
-void guess_EV_RevolverShells( struct event_args_s *args )
+void EV_RevolverShells_guess( struct event_args_s *args )
 {
 	int idx = args->entindex;
 	cl_entity_t *ent = gEngfuncs.GetEntityByIndex( idx );
@@ -2276,7 +2276,7 @@ void guess_EV_RevolverShells( struct event_args_s *args )
 	}
 }
 
-void guess_EV_ServerMuzzleFlash( struct event_args_s *args )
+void EV_ServerMuzzleFlash_guess( struct event_args_s *args )
 {
 	int idx = args->entindex;
 	cl_entity_t *ent = gEngfuncs.GetEntityByIndex( idx );
@@ -2285,15 +2285,15 @@ void guess_EV_ServerMuzzleFlash( struct event_args_s *args )
 	{
 		if ( gEngfuncs.GetEntityByIndex( ent->curstate.weaponmodel ) )
 		{
-			guess_iMuzzleFlash = 1;
-			guess_iMuzzleFlashType = args->iparam1;
-			guess_vecMuzzleFlashAngles = args->angles;
-			guess_iMuzzleFlashEnt = idx;
+			iMuzzleFlash_guess = 1;
+			iMuzzleFlashType_guess = args->iparam1;
+			vecMuzzleFlashAngles_guess = args->angles;
+			iMuzzleFlashEnt_guess = idx;
 		}
 	}
 }
 
-void guess_EV_WeaponShoot( event_args_t *args )
+void EV_WeaponShoot_guess( event_args_t *args )
 {
 	int idx;
 	vec3_t origin;
@@ -2341,14 +2341,14 @@ void guess_EV_WeaponShoot( event_args_t *args )
 
 	gEngfuncs.GetViewAngles( viewangles );
 	viewangles[0] -= 3;
-	if ( !gHUD.guess_m_bViewLock )
+	if ( !gHUD.m_bViewLock_guess )
 		gEngfuncs.SetViewAngles( viewangles );
 
-	if ( guess_iWheelchair )
-		guess_vecWheelchairAngles[0] -= 3;
+	if ( iWheelchair_guess )
+		vecWheelchairAngles_guess[0] -= 3;
 }
 
-void guess_EV_ClientSound( event_args_t *args )
+void EV_ClientSound_guess( event_args_t *args )
 {
 	vec3_t origin;
 

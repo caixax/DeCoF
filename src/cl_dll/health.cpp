@@ -29,7 +29,7 @@
 
 #include "vgui_TeamFortressViewport.h" // buz
 #include "vgui_hud.h" // buz
-#include "guess_HUDControl.h"
+#include "HUDControl_guess.h"
 #include "vgui_loadtga.h"
 
 #undef fabs
@@ -115,8 +115,8 @@ int CHudHealth:: MsgFunc_Health(const char *pszName,  int iSize, void *pbuf )
 	// TODO: update local health data
 	BEGIN_READ( pbuf, iSize );
 	int x = READ_BYTE();
-	int guess_iPlayer = READ_BYTE();
-	int guess_bCoop = READ_BYTE();
+	int iPlayer_guess = READ_BYTE();
+	int bCoop_guess = READ_BYTE();
 
 	cl_entity_t *pLocal = gEngfuncs.GetLocalPlayer();
 	if ( !pLocal )
@@ -124,17 +124,17 @@ int CHudHealth:: MsgFunc_Health(const char *pszName,  int iSize, void *pbuf )
 
 	int iLocalIndex = pLocal->index;
 
-	if ( guess_bCoop )
+	if ( bCoop_guess )
 	{
 		if ( iLocalIndex < 0 || iLocalIndex > gEngfuncs.GetMaxClients() )
 			return 0;
 
-		guess_m_iCoopHealth[guess_iPlayer] = x;
+		m_iCoopHealth_guess[iPlayer_guess] = x;
 	}
 
 	m_iFlags |= HUD_ACTIVE;
 
-	if ( !guess_bCoop || guess_iPlayer == iLocalIndex )
+	if ( !bCoop_guess || iPlayer_guess == iLocalIndex )
 	{
 		// Only update the fade if we've changed health
 		if (x != m_iHealth)
@@ -166,7 +166,7 @@ int CHudHealth:: MsgFunc_Damage(const char *pszName,  int iSize, void *pbuf )
 	UpdateTiles(gHUD.m_flTime, bitsDamage);
 
 	if ( READ_BYTE() )
-		gHUD.guess_m_flDamageTime = gEngfuncs.GetClientTime() + 0.15;
+		gHUD.m_flDamageTime_guess = gEngfuncs.GetClientTime() + 0.15;
 
 	// Actually took damage?
 	if ( damageTaken > 0 || armor > 0 )
@@ -180,9 +180,9 @@ int CHudHealth:: MsgFunc_AdLib(const char *pszName,  int iSize, void *pbuf )
 {
 	BEGIN_READ( pbuf, iSize );
 
-	float guess_flTime = READ_COORD();
-	int guess_iPlayer = READ_BYTE();
-	int guess_iState = READ_BYTE();
+	float flTime_guess = READ_COORD();
+	int iPlayer_guess = READ_BYTE();
+	int iState_guess = READ_BYTE();
 
 	cl_entity_t *pLocal = gEngfuncs.GetLocalPlayer();
 	if ( !pLocal )
@@ -192,22 +192,22 @@ int CHudHealth:: MsgFunc_AdLib(const char *pszName,  int iSize, void *pbuf )
 	if ( iLocalIndex < 0 || iLocalIndex > gEngfuncs.GetMaxClients() )
 		return 0;
 
-	int guess_iIndex = guess_iPlayer - 1;
-	guess_m_flAdLibTime[guess_iPlayer - 1] = gEngfuncs.GetClientTime() + guess_flTime;
-	guess_m_iAdLibState[guess_iPlayer - 1] = guess_iState;
+	int iIndex_guess = iPlayer_guess - 1;
+	m_flAdLibTime_guess[iPlayer_guess - 1] = gEngfuncs.GetClientTime() + flTime_guess;
+	m_iAdLibState_guess[iPlayer_guess - 1] = iState_guess;
 
-	if ( gViewPort && gViewPort->guess_m_pHUDControl && guess_iIndex >= 0 && guess_iIndex <= 3 )
+	if ( gViewPort && gViewPort->m_pHUDControl_guess && iIndex_guess >= 0 && iIndex_guess <= 3 )
 	{
-		switch ( guess_iState )
+		switch ( iState_guess )
 		{
 		case 0:
-			gViewPort->guess_m_pHUDControl->guess_m_pFollowIconPanel[guess_iIndex]->setImage( vgui_LoadTGA( "gfx/vgui/coop_follow_icon.tga" ) );
+			gViewPort->m_pHUDControl_guess->m_pFollowIconPanel_guess[iIndex_guess]->setImage( vgui_LoadTGA( "gfx/vgui/coop_follow_icon.tga" ) );
 			break;
 		case 1:
-			gViewPort->guess_m_pHUDControl->guess_m_pFollowIconPanel[guess_iIndex]->setImage( vgui_LoadTGA( "gfx/vgui/coop_health_icon.tga" ) );
+			gViewPort->m_pHUDControl_guess->m_pFollowIconPanel_guess[iIndex_guess]->setImage( vgui_LoadTGA( "gfx/vgui/coop_health_icon.tga" ) );
 			break;
 		case 2:
-			gViewPort->guess_m_pHUDControl->guess_m_pFollowIconPanel[guess_iIndex]->setImage( vgui_LoadTGA( "gfx/vgui/coop_something_icon.tga" ) );
+			gViewPort->m_pHUDControl_guess->m_pFollowIconPanel_guess[iIndex_guess]->setImage( vgui_LoadTGA( "gfx/vgui/coop_something_icon.tga" ) );
 			break;
 		}
 	}
@@ -220,8 +220,8 @@ int CHudHealth:: MsgFunc_Syringe(const char *pszName,  int iSize, void *pbuf )
 {
 	BEGIN_READ( pbuf, iSize );
 
-	int guess_iPlayer = READ_BYTE();
-	int guess_iState = READ_BYTE();
+	int iPlayer_guess = READ_BYTE();
+	int iState_guess = READ_BYTE();
 
 	cl_entity_t *pLocal = gEngfuncs.GetLocalPlayer();
 	if ( !pLocal )
@@ -231,7 +231,7 @@ int CHudHealth:: MsgFunc_Syringe(const char *pszName,  int iSize, void *pbuf )
 	if ( iLocalIndex < 0 || iLocalIndex > gEngfuncs.GetMaxClients() )
 		return 0;
 
-	guess_m_bSyringe[guess_iPlayer - 1] = guess_iState != 0;
+	m_bSyringe_guess[iPlayer_guess - 1] = iState_guess != 0;
 
 	return 1;
 }

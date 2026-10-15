@@ -14,4 +14,4 @@
 ?NormalizeMipMap@@YAXPAUcolor24@@HH@Z
 ?ParseDetailTextureDataFile@@YAHXZ
 ?SortTexturesByDetailTexID@@YAXXZ
-?guess_CheckTexture@@YAHPBD@Z
+?CheckTexture_guess@@YAHPBD@Z

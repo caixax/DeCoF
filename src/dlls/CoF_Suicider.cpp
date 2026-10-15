@@ -33,7 +33,7 @@ extern int gmsgParticle;
 //=========================================================
 // Monster's Anim Events Go Here
 //=========================================================
-#define	guess_SUICIDER_AE_SUICIDE		0x01
+#define	SUICIDER_AE_SUICIDE_guess		0x01
 
 #define SUICIDER_FLINCH_DELAY			2		// at most one flinch every n secs
 
@@ -256,7 +256,7 @@ void CSuicider :: HandleAnimEvent( MonsterEvent_t *pEvent )
 
 	switch( pEvent->event )
 	{
-		case guess_SUICIDER_AE_SUICIDE:
+		case SUICIDER_AE_SUICIDE_guess:
 		{
 			HeadExplode();
 

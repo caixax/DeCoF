@@ -22,10 +22,10 @@ public:
 	virtual void StateChanged( CCheckButton2 *pButton );
 
 public:
-	Image	*guess_m_pImage;			// 0xc0, gfx/vgui/640_difficulty.tga
-	ImagePanel	*guess_m_pImagePanel;	// 0xc4, parent of the buttons
-	ColorButton	*guess_m_pSkill4Button;	// 0xc8, "skillset 4", shown with unlock 0x20
-	CCheckButton2	guess_m_CommentaryButton;	// 0xcc, "Enable developer commentary"
+	Image	*m_pImage_guess;			// 0xc0, gfx/vgui/640_difficulty.tga
+	ImagePanel	*m_pImagePanel_guess;	// 0xc4, parent of the buttons
+	ColorButton	*m_pSkill4Button_guess;	// 0xc8, "skillset 4", shown with unlock 0x20
+	CCheckButton2	m_CommentaryButton_guess;	// 0xcc, "Enable developer commentary"
 };
 
 class CDifficultyHandler_Command : public ActionSignal

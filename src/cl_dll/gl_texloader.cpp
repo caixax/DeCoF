@@ -612,7 +612,7 @@ void CreateExtDataForTextures( )
 
 // Cry of Fear: the format checks of CreateTexture without the upload
 // (nothing calls it in 1.6a; the file stays loaded when the texture is valid)
-int guess_CheckTexture(const char* filename)
+int CheckTexture_guess(const char* filename)
 {
 	if (!gl.IsGLAllowed())
 		return 0;

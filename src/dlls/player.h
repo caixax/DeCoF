@@ -163,10 +163,10 @@ public:
 	EHANDLE m_pAttachedCamera;
 	EHANDLE m_pWheelchair;
 	// CoF 1.6a: new members (see docs/structs.md, CBasePlayer)
-	bool guess_m_bMuschi2;				// toggled by the "muschi2" client command, set by CRoofBoss
+	bool m_bMuschi2_guess;				// toggled by the "muschi2" client command, set by CRoofBoss
 	bool m_bUsedVanNumber;
-	float guess_m_flPhoneNumberTime;	// set in PhoneNumber, checked in PostThink
-	int guess_m_iPhoneNumberState;		// 0, 1 (PhoneNumber), 2 (PostThink)
+	float m_flPhoneNumberTime_guess;	// set in PhoneNumber, checked in PostThink
+	int m_iPhoneNumberState_guess;		// 0, 1 (PhoneNumber), 2 (PostThink)
 	int m_iCoopDeadYaw;
 	bool m_bKilledLyingDown;
 	bool m_bCustomSleeveApplied;
@@ -225,7 +225,7 @@ public:
 	int m_iGameOverCounter;
 	int IsDeveloper( void );
 	int IsDonator( void );
-	bool guess_IsInSteamGroup( unsigned int iGroupID );	// CoF 1.6a: unreferenced
+	bool IsInSteamGroup_guess( unsigned int iGroupID );	// CoF 1.6a: unreferenced
 	float m_flSequenceOverrideTime;
 	int m_iSequenceOverride;
 	float m_flGetupTime;
@@ -254,7 +254,7 @@ public:
 	EHANDLE m_pClientAttachedCamera;
 	bool EHandlesNotSame( EHANDLE edict1, EHANDLE edict2 );
 	bool CanBeDualWielded( int weaponid );
-	bool guess_CanUseWeapon( int weaponid );	// CoF 1.6a: unreferenced
+	bool CanUseWeapon_guess( int weaponid );	// CoF 1.6a: unreferenced
 	bool IsAFlashlight( int weaponid );
 	bool m_bInWater;
 	int m_iPhoneMessage;
@@ -699,7 +699,7 @@ public:
 	void SelectItem(const char *pstr);
 	void ItemPreFrame( void );
 	void ItemPostFrame( void );
-	void GiveNamedItem( const char *pszName, bool deletewhendropped, bool guess_bSkipDonatorCheck );	// CoF 1.6a: third parameter (weapon_tmp is given without the donator test)
+	void GiveNamedItem( const char *pszName, bool deletewhendropped, bool bSkipDonatorCheck_guess );	// CoF 1.6a: third parameter (weapon_tmp is given without the donator test)
 	void GiveNamedItemAmmo( const char *pszName, int defaultammo );
 	void EnableControl(BOOL fControl);
 	void FallEnableControl( int fControl );
@@ -711,7 +711,7 @@ public:
 	virtual void HandleAnimEvent( MonsterEvent_t *pEvent );
 	float m_flReviveTime;
 
-	int  GiveAmmo( int iAmount, char *szName, int iMax, bool guess_bNoMessage );
+	int  GiveAmmo( int iAmount, char *szName, int iMax, bool bNoMessage_guess );
 	void SendAmmoUpdate(void);
 
 	void WaterMove( void );

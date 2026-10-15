@@ -138,11 +138,11 @@ void CAcidSpit :: Touch ( CBaseEntity *pOther )
 //=========================================================
 // Monster's Anim Events Go Here
 //=========================================================
-#define	guess_FLIER_AE_SPIT			2
-#define	guess_FLIER_AE_SLASH_LEFT		3
-#define	guess_FLIER_AE_SLASH_RIGHT	4
-#define	guess_FLIER_AE_STING			5
-#define	guess_FLIER_AE_STING2			6
+#define	FLIER_AE_SPIT_guess			2
+#define	FLIER_AE_SLASH_LEFT_guess		3
+#define	FLIER_AE_SLASH_RIGHT_guess	4
+#define	FLIER_AE_STING_guess			5
+#define	FLIER_AE_STING2_guess			6
 
 class CFlier : public CSquadMonster
 {
@@ -349,7 +349,7 @@ void CFlier :: HandleAnimEvent( MonsterEvent_t *pEvent )
 {
 	switch( pEvent->event )
 	{
-		case guess_FLIER_AE_SPIT:
+		case FLIER_AE_SPIT_guess:
 		{
 			UTIL_MakeVectors( pev->angles );
 
@@ -373,7 +373,7 @@ void CFlier :: HandleAnimEvent( MonsterEvent_t *pEvent )
 		}
 		break;
 
-		case guess_FLIER_AE_SLASH_LEFT:
+		case FLIER_AE_SLASH_LEFT_guess:
 		{
 			CBaseEntity *pHurt = CheckTraceHullAttack( 55, gSkillData.flygareMelee, DMG_SLASH, false, 0 );
 			if ( pHurt )
@@ -390,7 +390,7 @@ void CFlier :: HandleAnimEvent( MonsterEvent_t *pEvent )
 		}
 		break;
 
-		case guess_FLIER_AE_SLASH_RIGHT:
+		case FLIER_AE_SLASH_RIGHT_guess:
 		{
 			CBaseEntity *pHurt = CheckTraceHullAttack( 55, gSkillData.flygareMelee, DMG_SLASH, false, 0 );
 			if ( pHurt )
@@ -407,8 +407,8 @@ void CFlier :: HandleAnimEvent( MonsterEvent_t *pEvent )
 		}
 		break;
 
-		case guess_FLIER_AE_STING:
-		case guess_FLIER_AE_STING2:
+		case FLIER_AE_STING_guess:
+		case FLIER_AE_STING2_guess:
 		{
 			// sting whatever is right below
 			TraceResult tr;

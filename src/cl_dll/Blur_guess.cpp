@@ -12,46 +12,46 @@
 
 extern cvar_t *cv_blurtest;
 
-class guess_CBlurTexture
+class CBlurTexture_guess
 {
 public:
-	guess_CBlurTexture();
+	CBlurTexture_guess();
 
-	void guess_Init( int width, int height );
-	void guess_BindTexture( int width, int height );
-	void guess_DrawQuad( int width, int height, int of );
-	void guess_Draw( int width, int height );
+	void Init_guess( int width, int height );
+	void BindTexture_guess( int width, int height );
+	void DrawQuad_guess( int width, int height, int of );
+	void Draw_guess( int width, int height );
 
-	unsigned int	guess_m_uiTexture;
-	float			guess_m_flAlpha;
-	float			guess_m_flRed;
-	float			guess_m_flGreen;
-	float			guess_m_flBlue;
+	unsigned int	m_uiTexture_guess;
+	float			m_flAlpha_guess;
+	float			m_flRed_guess;
+	float			m_flGreen_guess;
+	float			m_flBlue_guess;
 };
 
-class guess_CBlur
+class CBlur_guess
 {
 public:
-	void guess_InitScreen( void );
-	void guess_DrawBlur( void );
-	bool guess_AnimateNextFrame( int desiredFrameRate );
+	void InitScreen_guess( void );
+	void DrawBlur_guess( void );
+	bool AnimateNextFrame_guess( int desiredFrameRate );
 
-	int					guess_m_iActive;
-	guess_CBlurTexture	guess_m_Output;
+	int					m_iActive_guess;
+	CBlurTexture_guess	m_Output_guess;
 };
 
-guess_CBlurTexture::guess_CBlurTexture()
+CBlurTexture_guess::CBlurTexture_guess()
 {
 }
 
-void guess_CBlurTexture::guess_Init( int width, int height )
+void CBlurTexture_guess::Init_guess( int width, int height )
 {
 	// a load of blank pixels to create the texture with
 	unsigned char *pBlankTex = new unsigned char[width * height * 3];
 	memset( pBlankTex, 0, width * height * 3 );
 
-	glGenTextures( 1, &guess_m_uiTexture );
-	glBindTexture( GL_TEXTURE_RECTANGLE_NV, guess_m_uiTexture );
+	glGenTextures( 1, &m_uiTexture_guess );
+	glBindTexture( GL_TEXTURE_RECTANGLE_NV, m_uiTexture_guess );
 	glTexParameteri( GL_TEXTURE_RECTANGLE_NV, GL_TEXTURE_MIN_FILTER, GL_LINEAR );
 	glTexParameteri( GL_TEXTURE_RECTANGLE_NV, GL_TEXTURE_MAG_FILTER, GL_LINEAR );
 	glTexImage2D( GL_TEXTURE_RECTANGLE_NV, 0, GL_RGBA8, width, height, 0, GL_RGBA8, GL_UNSIGNED_BYTE, NULL );
@@ -59,13 +59,13 @@ void guess_CBlurTexture::guess_Init( int width, int height )
 	delete[] pBlankTex;
 }
 
-void guess_CBlurTexture::guess_BindTexture( int width, int height )
+void CBlurTexture_guess::BindTexture_guess( int width, int height )
 {
-	glBindTexture( GL_TEXTURE_RECTANGLE_NV, guess_m_uiTexture );
+	glBindTexture( GL_TEXTURE_RECTANGLE_NV, m_uiTexture_guess );
 	glCopyTexImage2D( GL_TEXTURE_RECTANGLE_NV, 0, GL_RGBA8, 0, 0, ScreenWidth, ScreenHeight, 0 );
 }
 
-void guess_CBlurTexture::guess_DrawQuad( int width, int height, int of )
+void CBlurTexture_guess::DrawQuad_guess( int width, int height, int of )
 {
 	glTexCoord2f( -of, -of );
 	glVertex3f( 0, 1, -1 );
@@ -77,7 +77,7 @@ void guess_CBlurTexture::guess_DrawQuad( int width, int height, int of )
 	glVertex3f( 1, 1, -1 );
 }
 
-void guess_CBlurTexture::guess_Draw( int width, int height )
+void CBlurTexture_guess::Draw_guess( int width, int height )
 {
 	glEnable( GL_TEXTURE_RECTANGLE_NV );
 	glColor3f( 1, 1, 1 );
@@ -91,13 +91,13 @@ void guess_CBlurTexture::guess_Draw( int width, int height )
 	glLoadIdentity();
 	glOrtho( 0, 1, 1, 0, 0.1, 100 );
 
-	glBindTexture( GL_TEXTURE_RECTANGLE_NV, guess_m_uiTexture );
-	glColor4f( guess_m_flRed, guess_m_flGreen, guess_m_flBlue, guess_m_flAlpha );
+	glBindTexture( GL_TEXTURE_RECTANGLE_NV, m_uiTexture_guess );
+	glColor4f( m_flRed_guess, m_flGreen_guess, m_flBlue_guess, m_flAlpha_guess );
 
 	if ( cv_blurtest->value )
 	{
 		glBegin( GL_QUADS );
-		guess_DrawQuad( ScreenWidth, ScreenHeight, 0 );
+		DrawQuad_guess( ScreenWidth, ScreenHeight, 0 );
 		glEnd();
 	}
 
@@ -110,34 +110,34 @@ void guess_CBlurTexture::guess_Draw( int width, int height )
 	glEnable( GL_DEPTH_TEST );
 }
 
-void guess_CBlur::guess_InitScreen( void )
+void CBlur_guess::InitScreen_guess( void )
 {
-	guess_m_iActive = 1;
-	guess_m_Output.guess_Init( 320, 240 );
-	guess_m_Output.guess_m_flRed = 1.0;
-	guess_m_Output.guess_m_flGreen = 1.0;
-	guess_m_Output.guess_m_flBlue = 1.0;
+	m_iActive_guess = 1;
+	m_Output_guess.Init_guess( 320, 240 );
+	m_Output_guess.m_flRed_guess = 1.0;
+	m_Output_guess.m_flGreen_guess = 1.0;
+	m_Output_guess.m_flBlue_guess = 1.0;
 }
 
-void guess_CBlur::guess_DrawBlur( void )
+void CBlur_guess::DrawBlur_guess( void )
 {
 	if ( cv_blurtest->value )
 	{
 		glBlendFunc( GL_ONE_MINUS_SRC_ALPHA, GL_SRC_ALPHA );
 		glEnable( GL_BLEND );
 
-		guess_m_Output.guess_m_flAlpha = 0.4;
-		guess_m_Output.guess_m_flRed = 1.0;
-		guess_m_Output.guess_m_flGreen = 1.0;
-		guess_m_Output.guess_m_flBlue = 1.0;
-		guess_m_Output.guess_Draw( ScreenWidth, ScreenHeight );
-		guess_m_Output.guess_BindTexture( ScreenWidth, ScreenHeight );
+		m_Output_guess.m_flAlpha_guess = 0.4;
+		m_Output_guess.m_flRed_guess = 1.0;
+		m_Output_guess.m_flGreen_guess = 1.0;
+		m_Output_guess.m_flBlue_guess = 1.0;
+		m_Output_guess.Draw_guess( ScreenWidth, ScreenHeight );
+		m_Output_guess.BindTexture_guess( ScreenWidth, ScreenHeight );
 
 		glDisable( GL_BLEND );
 	}
 }
 
-bool guess_CBlur::guess_AnimateNextFrame( int desiredFrameRate )
+bool CBlur_guess::AnimateNextFrame_guess( int desiredFrameRate )
 {
 	static float lastTime = 0.0f;
 	float elapsedTime = 0.0;

@@ -30,7 +30,7 @@
 
 #include "triapiobjects.h"
 #include "gl_renderer.h" // buz
-#include "guess_CgWater.h"
+#include "CgWater_guess.h"
 
 #define DLLEXPORT __declspec( dllexport )
 
@@ -408,7 +408,7 @@ DrawRain
 Рисование капель и снежинок.
 =================================
 */
-void guess_OrthoCrosshair( int width, int height )
+void OrthoCrosshair_guess( int width, int height )
 {
 	HSPRITE spr = SPR_Load("sprites/crosshair_new.spr");
 	if (!spr)
@@ -598,32 +598,32 @@ void DrawFXObjects( void )
 		float alpha;
 		float size = 5;
 
-		if (curFX->guess_type == 1)
+		if (curFX->type_guess == 1)
 		{
-			if (curFX->guess_frame < pSplashTexture->numframes - 1)
-				curFX->guess_frame++;
+			if (curFX->frame_guess < pSplashTexture->numframes - 1)
+				curFX->frame_guess++;
 
 			alpha = 0.4;
 			size = 5;
 		}
-		else if (curFX->guess_type == 2)
+		else if (curFX->type_guess == 2)
 		{
 			float frac = (gEngfuncs.GetClientTime() - curFX->birthTime) / curFX->life;
 			frac = min(1, frac);
 
 			alpha = curFX->alpha - curFX->alpha * frac;
-			size = frac * 1.2 * curFX->guess_scale;
+			size = frac * 1.2 * curFX->scale_guess;
 		}
-		else if (curFX->guess_type == 3)
+		else if (curFX->type_guess == 3)
 		{
 			float frac = (gEngfuncs.GetClientTime() - curFX->birthTime) / curFX->life;
 			frac = min(1, frac);
 
-			curFX->guess_start[2] -= (int)(frac * 512);
-			curFX->origin[2] = curFX->guess_start[2];
+			curFX->start_guess[2] -= (int)(frac * 512);
+			curFX->origin[2] = curFX->start_guess[2];
 
 			int contents = gEngfuncs.PM_PointContents( curFX->origin, NULL );
-			if (curFX->origin[2] <= curFX->guess_start[2] - 512 || contents == CONTENTS_SOLID || contents == CONTENTS_WATER)
+			if (curFX->origin[2] <= curFX->start_guess[2] - 512 || contents == CONTENTS_SOLID || contents == CONTENTS_WATER)
 			{
 				gEngfuncs.pfnPlaySoundByNameAtLocation( "ambience/drip.wav", 1.0, curFX->origin );
 				alpha = 0;
@@ -638,11 +638,11 @@ void DrawFXObjects( void )
 			size = (curtime - curFX->birthTime) * MAXRINGHALFSIZE;
 		}
 
-		if (curFX->guess_type == 1)
-			gEngfuncs.pTriAPI->SpriteTexture( (struct model_s *)pSplashTexture, curFX->guess_frame );
-		else if (curFX->guess_type == 2)
+		if (curFX->type_guess == 1)
+			gEngfuncs.pTriAPI->SpriteTexture( (struct model_s *)pSplashTexture, curFX->frame_guess );
+		else if (curFX->type_guess == 2)
 			gEngfuncs.pTriAPI->SpriteTexture( (struct model_s *)pTexture, 0 );
-		else if (curFX->guess_type == 3)
+		else if (curFX->type_guess == 3)
 			gEngfuncs.pTriAPI->SpriteTexture( (struct model_s *)pDripTexture, 0 );
 		else
 			gEngfuncs.pTriAPI->SpriteTexture( (struct model_s *)pTexture, 0 );
@@ -677,7 +677,7 @@ void DrawFXObjects( void )
 
 extern int fxcounter;
 
-void guess_SplashEffect( cl_drip *drip )
+void SplashEffect_guess( cl_drip *drip )
 {
 	if (fxcounter >= MAXFX)
 	{
@@ -698,13 +698,13 @@ void guess_SplashEffect( cl_drip *drip )
 
 	newFX->birthTime = gEngfuncs.GetClientTime();
 	newFX->life = gEngfuncs.pfnRandomFloat(0.7, 1);
-	newFX->guess_type = 1;
-	newFX->guess_frame = 0;
+	newFX->type_guess = 1;
+	newFX->frame_guess = 0;
 
 	fxcounter++;
 }
 
-void guess_RingEffect( cl_drip *drip )
+void RingEffect_guess( cl_drip *drip )
 {
 	if (fxcounter >= MAXFX)
 	{
@@ -725,8 +725,8 @@ void guess_RingEffect( cl_drip *drip )
 
 	newFX->birthTime = gEngfuncs.GetClientTime();
 	newFX->life = gEngfuncs.pfnRandomFloat(0.7, 1);
-	newFX->guess_type = 0;
-	newFX->guess_frame = 0;
+	newFX->type_guess = 0;
+	newFX->frame_guess = 0;
 
 	fxcounter++;
 }
@@ -757,7 +757,7 @@ void DLLEXPORT HUD_DrawNormalTriangles( void )
 
 	RendererDrawNormal(); // buz
 
-	guess_g_CgWater.guess_UpdateEntities();
+	g_CgWater_guess.UpdateEntities_guess();
 
 #if defined( TEST_IT )
 //	Draw_Triangles();
@@ -816,9 +816,9 @@ void DLLEXPORT HUD_DrawTransparentTriangles( void )
 
 	if ( CVAR_GET_FLOAT( "cg_water" ) )
 	{
-		guess_g_CgWater.guess_PreDraw();
-		guess_g_CgWater.guess_Render();
-		guess_g_CgWater.guess_PostDraw();
+		g_CgWater_guess.PreDraw_guess();
+		g_CgWater_guess.Render_guess();
+		g_CgWater_guess.PostDraw_guess();
 	}
 
 /*	HSPRITE spr = SPR_Load("sprites/test0.spr");

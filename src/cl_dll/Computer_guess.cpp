@@ -10,7 +10,7 @@
 #include "parsemsg.h"
 #include "event_api.h"
 #include "vgui_TeamFortressViewport.h"
-#include "guess_Computer.h"
+#include "Computer_guess.h"
 #include "..\game_shared\vgui_loadtga.h"
 
 CComputer::CComputer() : Panel( 0, 0, ScreenWidth, ScreenHeight )
@@ -28,71 +28,71 @@ CComputer::CComputer() : Panel( 0, 0, ScreenWidth, ScreenHeight )
 	pPanel->setBgColor( 0, 0, 0, 0 );
 	pPanel->setVisible( true );
 
-	guess_m_pBackgroundImage = vgui_LoadTGA( "gfx/vgui/backgroundtoall.tga" );
-	if ( guess_m_pBackgroundImage )
-		guess_m_pBackgroundImage->setColor( Color( 255, 255, 255, 1 ) );
+	m_pBackgroundImage_guess = vgui_LoadTGA( "gfx/vgui/backgroundtoall.tga" );
+	if ( m_pBackgroundImage_guess )
+		m_pBackgroundImage_guess->setColor( Color( 255, 255, 255, 1 ) );
 	else
 		gEngfuncs.Con_Printf( "Cannot load gfx/vgui/backgroundtoall.tga!\n" );
 
-	guess_m_pBackgroundImage->getSize( wide, tall );
+	m_pBackgroundImage_guess->getSize( wide, tall );
 	x = ScreenWidth / 2 - wide / 2;
 	y = ScreenHeight / 2 - tall / 2;
 
-	guess_m_pBackground = new ImagePanel( guess_m_pBackgroundImage );
-	guess_m_pBackground->setParent( this );
-	guess_m_pBackground->setPos( x, y );
-	guess_m_pBackground->setVisible( true );
+	m_pBackground_guess = new ImagePanel( m_pBackgroundImage_guess );
+	m_pBackground_guess->setParent( this );
+	m_pBackground_guess->setPos( x, y );
+	m_pBackground_guess->setVisible( true );
 
-	guess_m_pScreenImage = vgui_LoadTGA( "gfx/vgui/puzzle/computer/computer_logon.tga" );
-	if ( guess_m_pScreenImage )
-		guess_m_pScreenImage->setColor( Color( 255, 255, 255, 1 ) );
+	m_pScreenImage_guess = vgui_LoadTGA( "gfx/vgui/puzzle/computer/computer_logon.tga" );
+	if ( m_pScreenImage_guess )
+		m_pScreenImage_guess->setColor( Color( 255, 255, 255, 1 ) );
 	else
 		gEngfuncs.Con_Printf( "Cannot load gfx/vgui/puzzle/computer/computer_logon.tga!\n" );
 
 	x = ScreenWidth / 2 - 277;
 	y = ScreenHeight / 2 - 240;
 
-	guess_m_pScreen = new ImagePanel( guess_m_pScreenImage );
-	guess_m_pScreen->setParent( this );
-	guess_m_pScreen->setPos( x, y );
-	guess_m_pScreen->setVisible( true );
+	m_pScreen_guess = new ImagePanel( m_pScreenImage_guess );
+	m_pScreen_guess->setParent( this );
+	m_pScreen_guess->setPos( x, y );
+	m_pScreen_guess->setVisible( true );
 
 	pButton = new CommandButton( "", 157, 320, 75, 23, true, true );
-	pButton->setParent( guess_m_pScreen );
+	pButton->setParent( m_pScreen_guess );
 	pButton->addActionSignal( new CComputerHandler_Command( this, 1 ) );
 
 	pButton = new CommandButton( "", 238, 320, 75, 23, true, true );
-	pButton->setParent( guess_m_pScreen );
+	pButton->setParent( m_pScreen_guess );
 	pButton->addActionSignal( new CComputerHandler_Command( this, 2 ) );
 
 	pButton = new CommandButton( "", 478, 447, 29, 29, true, true );
-	pButton->setParent( guess_m_pScreen );
+	pButton->setParent( m_pScreen_guess );
 	pButton->addActionSignal( new CComputerHandler_Command( this, 2 ) );
 
 	CSchemeManager *pSchemes = gViewPort->GetSchemeManager();
 	SchemeHandle_t hTitleScheme = pSchemes->getSchemeHandle( "Title Font" );
 
-	guess_m_pUser = new TextEntry( "", 160, 204, 239, 16 );
-	guess_m_pUser->setVisible( true );
-	guess_m_pUser->setParent( guess_m_pScreen );
+	m_pUser_guess = new TextEntry( "", 160, 204, 239, 16 );
+	m_pUser_guess->setVisible( true );
+	m_pUser_guess->setParent( m_pScreen_guess );
 	pSchemes->getFgColor( hTitleScheme, r, g, b, a );
-	guess_m_pUser->setFgColor( r, g, b, a );
-	guess_m_pUser->setFgColor( Scheme::sc_primary1 );
+	m_pUser_guess->setFgColor( r, g, b, a );
+	m_pUser_guess->setFgColor( Scheme::sc_primary1 );
 	pSchemes->getBgColor( hTitleScheme, r, g, b, a );
-	guess_m_pUser->setBgColor( r, g, b, a );
+	m_pUser_guess->setBgColor( r, g, b, a );
 
-	guess_m_pPassword = new TextEntry( "", 160, 231, 239, 16 );
-	guess_m_pPassword->setVisible( true );
-	guess_m_pPassword->setParent( guess_m_pScreen );
+	m_pPassword_guess = new TextEntry( "", 160, 231, 239, 16 );
+	m_pPassword_guess->setVisible( true );
+	m_pPassword_guess->setParent( m_pScreen_guess );
 	pSchemes->getFgColor( hTitleScheme, r, g, b, a );
-	guess_m_pPassword->setFgColor( r, g, b, a );
-	guess_m_pPassword->setFgColor( Scheme::sc_primary1 );
+	m_pPassword_guess->setFgColor( r, g, b, a );
+	m_pPassword_guess->setFgColor( Scheme::sc_primary1 );
 	pSchemes->getBgColor( hTitleScheme, r, g, b, a );
-	guess_m_pPassword->setBgColor( r, g, b, a );
+	m_pPassword_guess->setBgColor( r, g, b, a );
 
-	guess_m_pText = new TextPanel( "", 194, 162, 211, 152 );
-	guess_m_pText->setParent( guess_m_pScreen );
-	guess_m_pText->setVisible( false );
+	m_pText_guess = new TextPanel( "", 194, 162, 211, 152 );
+	m_pText_guess->setParent( m_pScreen_guess );
+	m_pText_guess->setVisible( false );
 
 	setBgColor( 0, 0, 0, 255 );
 
@@ -110,14 +110,14 @@ void CComputer::ActionSignal( int cmd )
 	case 0:
 		break;
 	case 1:
-		if ( guess_m_iLoggedOn )
+		if ( m_iLoggedOn_guess )
 		{
 			setVisible( false );
 			gViewPort->UpdateCursorState();
 			return;
 		}
-		guess_m_pUser->getText( 0, szUser, 256 );
-		guess_m_pPassword->getText( 0, szPassword, 256 );
+		m_pUser_guess->getText( 0, szUser, 256 );
+		m_pPassword_guess->getText( 0, szPassword, 256 );
 		sprintf( szCommand, "computercheck %s %s", szUser, szPassword );
 		gEngfuncs.pfnServerCmd( szCommand );
 		break;
@@ -134,8 +134,8 @@ void CComputer::ActionSignal( int cmd )
 void CComputer::Initialize()
 {
 	setVisible( false );
-	guess_m_iLoggedOn = 0;
-	guess_m_flNextKeyTime = gEngfuncs.GetClientTime();
+	m_iLoggedOn_guess = 0;
+	m_flNextKeyTime_guess = gEngfuncs.GetClientTime();
 }
 
 int CComputer::KeyInput( int down, int keynum, const char *pszCurrentBinding )
@@ -146,59 +146,59 @@ int CComputer::KeyInput( int down, int keynum, const char *pszCurrentBinding )
 	return 0;
 }
 
-int guess_MsgComputer( const char *pszName, int iSize, void *pbuf )
+int MsgComputer_guess( const char *pszName, int iSize, void *pbuf )
 {
 	char szText[512];
 
 	BEGIN_READ( pbuf, iSize );
 
-	if ( gViewPort && gViewPort->guess_m_pComputer )
+	if ( gViewPort && gViewPort->m_pComputer_guess )
 	{
-		if ( !gViewPort->guess_m_pComputer->isVisible() )
+		if ( !gViewPort->m_pComputer_guess->isVisible() )
 		{
-			gViewPort->guess_m_pComputer->setVisible( true );
+			gViewPort->m_pComputer_guess->setVisible( true );
 			gViewPort->UpdateCursorState();
 		}
 
 		gViewPort->UpdateCursorState();
 
-		gViewPort->guess_m_pComputer->guess_m_iLoggedOn = READ_BYTE();
+		gViewPort->m_pComputer_guess->m_iLoggedOn_guess = READ_BYTE();
 		int iWrongUser = READ_BYTE();
 		int iWrongPassword = READ_BYTE();
 		int iSilent = READ_BYTE();
 
 		sprintf( szText, "Jill - %s! - David\n", READ_STRING() );
-		gViewPort->guess_m_pComputer->guess_m_pText->setText( szText );
-		gViewPort->guess_m_pComputer->guess_m_pText->setFgColor( 0, 0, 0, 0 );
+		gViewPort->m_pComputer_guess->m_pText_guess->setText( szText );
+		gViewPort->m_pComputer_guess->m_pText_guess->setFgColor( 0, 0, 0, 0 );
 
-		if ( gViewPort->guess_m_pComputer->guess_m_iLoggedOn )
+		if ( gViewPort->m_pComputer_guess->m_iLoggedOn_guess )
 		{
-			gViewPort->guess_m_pComputer->guess_m_pScreen->setImage( vgui_LoadTGA( "gfx/vgui/puzzle/computer/computer_loggedon.tga" ) );
-			gViewPort->guess_m_pComputer->guess_m_pUser->setVisible( false );
-			gViewPort->guess_m_pComputer->guess_m_pPassword->setVisible( false );
+			gViewPort->m_pComputer_guess->m_pScreen_guess->setImage( vgui_LoadTGA( "gfx/vgui/puzzle/computer/computer_loggedon.tga" ) );
+			gViewPort->m_pComputer_guess->m_pUser_guess->setVisible( false );
+			gViewPort->m_pComputer_guess->m_pPassword_guess->setVisible( false );
 
 			cl_entity_t *pPlayer = gEngfuncs.GetLocalPlayer();
-			gViewPort->guess_m_pComputer->guess_m_pText->setVisible( true );
+			gViewPort->m_pComputer_guess->m_pText_guess->setVisible( true );
 
 			if ( pPlayer && !iSilent )
 				gEngfuncs.pEventAPI->EV_PlaySound( -1, pPlayer->curstate.origin, CHAN_AUTO, "buttons/computer_logon.wav", 0.7, 0.8, 0, PITCH_NORM );
 		}
 		else
 		{
-			gViewPort->guess_m_pComputer->guess_m_pScreen->setImage( vgui_LoadTGA( "gfx/vgui/puzzle/computer/computer_logon.tga" ) );
-			gViewPort->guess_m_pComputer->guess_m_pUser->setVisible( true );
-			gViewPort->guess_m_pComputer->guess_m_pPassword->setVisible( true );
+			gViewPort->m_pComputer_guess->m_pScreen_guess->setImage( vgui_LoadTGA( "gfx/vgui/puzzle/computer/computer_logon.tga" ) );
+			gViewPort->m_pComputer_guess->m_pUser_guess->setVisible( true );
+			gViewPort->m_pComputer_guess->m_pPassword_guess->setVisible( true );
 
 			cl_entity_t *pPlayer = gEngfuncs.GetLocalPlayer();
 			if ( pPlayer && ( iWrongUser || iWrongPassword ) )
 				gEngfuncs.pEventAPI->EV_PlaySound( -1, pPlayer->curstate.origin, CHAN_AUTO, "buttons/computer_deny.wav", 0.7, 0.8, 0, PITCH_NORM );
 
-			gViewPort->guess_m_pComputer->guess_m_pText->setVisible( false );
+			gViewPort->m_pComputer_guess->m_pText_guess->setVisible( false );
 
 			if ( iWrongUser || iWrongPassword )
 			{
-				gViewPort->guess_m_pComputer->guess_m_pUser->setText( "Invalid username or password!", 29 );
-				gViewPort->guess_m_pComputer->guess_m_pPassword->setText( "Invalid password or password!", 29 );
+				gViewPort->m_pComputer_guess->m_pUser_guess->setText( "Invalid username or password!", 29 );
+				gViewPort->m_pComputer_guess->m_pPassword_guess->setText( "Invalid password or password!", 29 );
 			}
 		}
 	}
@@ -206,44 +206,44 @@ int guess_MsgComputer( const char *pszName, int iSize, void *pbuf )
 	return 1;
 }
 
-void guess_ComputerInit()
+void ComputerInit_guess()
 {
-	gEngfuncs.pfnHookUserMsg( "Computer", guess_MsgComputer );
+	gEngfuncs.pfnHookUserMsg( "Computer", MsgComputer_guess );
 }
 
 void CComputer::setVisible( bool state )
 {
 	if ( state )
 	{
-		guess_m_flNextKeyTime = gEngfuncs.GetClientTime();
-		guess_m_pUser->setText( "Enter a username...", 19 );
-		guess_m_pPassword->setText( "Enter a password...", 19 );
+		m_flNextKeyTime_guess = gEngfuncs.GetClientTime();
+		m_pUser_guess->setText( "Enter a username...", 19 );
+		m_pPassword_guess->setText( "Enter a password...", 19 );
 
-		if ( guess_m_iLoggedOn )
+		if ( m_iLoggedOn_guess )
 		{
-			guess_m_pUser->setVisible( false );
-			guess_m_pPassword->setVisible( false );
+			m_pUser_guess->setVisible( false );
+			m_pPassword_guess->setVisible( false );
 		}
 		else
 		{
-			guess_m_pUser->setVisible( true );
-			guess_m_pPassword->setVisible( true );
+			m_pUser_guess->setVisible( true );
+			m_pPassword_guess->setVisible( true );
 		}
 	}
 	else
 	{
-		guess_m_pUser->setText( "Enter a username...", 19 );
-		guess_m_pPassword->setText( "Enter a password...", 19 );
+		m_pUser_guess->setText( "Enter a username...", 19 );
+		m_pPassword_guess->setText( "Enter a password...", 19 );
 
-		if ( guess_m_iLoggedOn )
+		if ( m_iLoggedOn_guess )
 		{
-			guess_m_pUser->setVisible( false );
-			guess_m_pPassword->setVisible( false );
+			m_pUser_guess->setVisible( false );
+			m_pPassword_guess->setVisible( false );
 		}
 		else
 		{
-			guess_m_pUser->setVisible( true );
-			guess_m_pPassword->setVisible( true );
+			m_pUser_guess->setVisible( true );
+			m_pPassword_guess->setVisible( true );
 		}
 
 		gEngfuncs.pfnServerCmd( "stopcomputer" );
@@ -257,65 +257,65 @@ void CComputer::solve()
 	char szUser[256];
 	char szPassword[256];
 
-	if ( isVisible() && guess_m_pUser->isVisible() && guess_m_pPassword->isVisible() && !guess_m_iLoggedOn )
+	if ( isVisible() && m_pUser_guess->isVisible() && m_pPassword_guess->isVisible() && !m_iLoggedOn_guess )
 	{
-		guess_m_pUser->getText( 0, szUser, 256 );
-		guess_m_pPassword->getText( 0, szPassword, 256 );
+		m_pUser_guess->getText( 0, szUser, 256 );
+		m_pPassword_guess->getText( 0, szPassword, 256 );
 
-		if ( ( GetAsyncKeyState( VK_RETURN ) & 0x8000 ) && gEngfuncs.GetClientTime() > guess_m_flNextKeyTime )
+		if ( ( GetAsyncKeyState( VK_RETURN ) & 0x8000 ) && gEngfuncs.GetClientTime() > m_flNextKeyTime_guess )
 		{
 			char szUser2[256];
 			char szPassword2[256];
 			char szCommand[128];
 
-			guess_m_flNextKeyTime = gEngfuncs.GetClientTime() + 1;
-			guess_m_pUser->getText( 0, szUser2, 256 );
-			guess_m_pPassword->getText( 0, szPassword2, 256 );
+			m_flNextKeyTime_guess = gEngfuncs.GetClientTime() + 1;
+			m_pUser_guess->getText( 0, szUser2, 256 );
+			m_pPassword_guess->getText( 0, szPassword2, 256 );
 			sprintf( szCommand, "computercheck %s %s", szUser2, szPassword2 );
 			gEngfuncs.pfnServerCmd( szCommand );
 		}
 
-		if ( guess_m_pUser->hasFocus() )
+		if ( m_pUser_guess->hasFocus() )
 		{
 			if ( !strcmp( szUser, "Enter a username..." ) )
-				guess_m_pUser->setText( "", 0 );
+				m_pUser_guess->setText( "", 0 );
 
-			if ( ( GetAsyncKeyState( VK_TAB ) & 0x8000 ) && gEngfuncs.GetClientTime() > guess_m_flNextKeyTime )
+			if ( ( GetAsyncKeyState( VK_TAB ) & 0x8000 ) && gEngfuncs.GetClientTime() > m_flNextKeyTime_guess )
 			{
-				guess_m_flNextKeyTime = gEngfuncs.GetClientTime() + 1;
-				guess_m_pPassword->requestFocus();
+				m_flNextKeyTime_guess = gEngfuncs.GetClientTime() + 1;
+				m_pPassword_guess->requestFocus();
 			}
 		}
 
-		if ( guess_m_pPassword->hasFocus() )
+		if ( m_pPassword_guess->hasFocus() )
 		{
 			if ( !strcmp( szPassword, "Enter a password..." ) )
-				guess_m_pPassword->setText( "", 0 );
+				m_pPassword_guess->setText( "", 0 );
 
-			if ( ( GetAsyncKeyState( VK_TAB ) & 0x8000 ) && gEngfuncs.GetClientTime() > guess_m_flNextKeyTime )
+			if ( ( GetAsyncKeyState( VK_TAB ) & 0x8000 ) && gEngfuncs.GetClientTime() > m_flNextKeyTime_guess )
 			{
-				guess_m_flNextKeyTime = gEngfuncs.GetClientTime() + 1;
-				guess_m_pUser->requestFocus();
+				m_flNextKeyTime_guess = gEngfuncs.GetClientTime() + 1;
+				m_pUser_guess->requestFocus();
 			}
 		}
 
 		cl_entity_t *pPlayer = gEngfuncs.GetLocalPlayer();
 		int iPitch = PITCH_NORM - gEngfuncs.pfnRandomLong( -2, 2 );
 
-		if ( guess_m_iUserLength != strlen( szUser ) )
+		if ( m_iUserLength_guess != strlen( szUser ) )
 		{
 			if ( pPlayer )
 				gEngfuncs.pEventAPI->EV_PlaySound( -1, pPlayer->curstate.origin, CHAN_BODY, "buttons/keyboard_type.wav", 0.7, 0.8, 0, iPitch );
 
-			guess_m_iUserLength = strlen( szUser );
+			m_iUserLength_guess = strlen( szUser );
 		}
 
-		if ( guess_m_iPasswordLength != strlen( szPassword ) )
+		if ( m_iPasswordLength_guess != strlen( szPassword ) )
 		{
 			if ( pPlayer )
 				gEngfuncs.pEventAPI->EV_PlaySound( -1, pPlayer->curstate.origin, CHAN_BODY, "buttons/keyboard_type.wav", 0.7, 0.8, 0, iPitch );
 
-			guess_m_iPasswordLength = strlen( szPassword );
+			m_iPasswordLength_guess = strlen( szPassword );
 		}
 	}
 

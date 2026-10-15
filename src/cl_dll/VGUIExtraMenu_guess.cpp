@@ -6,8 +6,8 @@
 #include "hud.h"
 #include "cl_util.h"
 #include "vgui_TeamFortressViewport.h"
-#include "guess_VGUIExtraMenu.h"
-#include "guess_GameMenu.h"
+#include "VGUIExtraMenu_guess.h"
+#include "GameMenu_guess.h"
 #include "..\game_shared\vgui_loadtga.h"
 
 //=========================================================
@@ -62,92 +62,92 @@ CVGUIExtraMenu::CVGUIExtraMenu() : Panel( ScreenWidth / 2 - 400, ScreenHeight / 
 	int wide, tall;
 	int cancelWide, cancelTall;
 
-	guess_m_pDonateImage = vgui_LoadTGA( "gfx/vgui/menu/donate.tga" );
-	guess_m_pDonateImage->setColor( Color( 255, 255, 255, 0 ) );
+	m_pDonateImage_guess = vgui_LoadTGA( "gfx/vgui/menu/donate.tga" );
+	m_pDonateImage_guess->setColor( Color( 255, 255, 255, 0 ) );
 
-	guess_m_pSoundtrack1Image = vgui_LoadTGA( "gfx/vgui/menu/soundtrack1.tga" );
-	guess_m_pSoundtrack1Image->setColor( Color( 255, 255, 255, 0 ) );
+	m_pSoundtrack1Image_guess = vgui_LoadTGA( "gfx/vgui/menu/soundtrack1.tga" );
+	m_pSoundtrack1Image_guess->setColor( Color( 255, 255, 255, 0 ) );
 
-	guess_m_pSoundtrack2Image = vgui_LoadTGA( "gfx/vgui/menu/soundtrack2.tga" );
-	guess_m_pSoundtrack2Image->setColor( Color( 255, 255, 255, 0 ) );
+	m_pSoundtrack2Image_guess = vgui_LoadTGA( "gfx/vgui/menu/soundtrack2.tga" );
+	m_pSoundtrack2Image_guess->setColor( Color( 255, 255, 255, 0 ) );
 
-	guess_m_pClothesImage = vgui_LoadTGA( "gfx/vgui/menu/clothes.tga" );
-	guess_m_pClothesImage->setColor( Color( 255, 255, 255, 0 ) );
+	m_pClothesImage_guess = vgui_LoadTGA( "gfx/vgui/menu/clothes.tga" );
+	m_pClothesImage_guess->setColor( Color( 255, 255, 255, 0 ) );
 
-	guess_m_pAoMDCImage = vgui_LoadTGA( "gfx/vgui/menu/aomdc.tga" );
-	guess_m_pAoMDCImage->setColor( Color( 255, 255, 255, 0 ) );
+	m_pAoMDCImage_guess = vgui_LoadTGA( "gfx/vgui/menu/aomdc.tga" );
+	m_pAoMDCImage_guess->setColor( Color( 255, 255, 255, 0 ) );
 
-	guess_m_pFacebookImage = vgui_LoadTGA( "gfx/vgui/menu/facebook.tga" );
-	guess_m_pFacebookImage->setColor( Color( 255, 255, 255, 0 ) );
+	m_pFacebookImage_guess = vgui_LoadTGA( "gfx/vgui/menu/facebook.tga" );
+	m_pFacebookImage_guess->setColor( Color( 255, 255, 255, 0 ) );
 
-	guess_m_pCancelImage = vgui_LoadTGA( "gfx/vgui/menu/cancel.tga" );
-	guess_m_pCancelImage->setColor( Color( 255, 255, 255, 0 ) );
+	m_pCancelImage_guess = vgui_LoadTGA( "gfx/vgui/menu/cancel.tga" );
+	m_pCancelImage_guess->setColor( Color( 255, 255, 255, 0 ) );
 
-	guess_m_pDonateImage->getSize( wide, tall );
-	guess_m_pCancelImage->getSize( cancelWide, cancelTall );
+	m_pDonateImage_guess->getSize( wide, tall );
+	m_pCancelImage_guess->getSize( cancelWide, cancelTall );
 
-	guess_m_pDonate = new ImagePanel( guess_m_pDonateImage );
-	guess_m_pDonate->setParent( this );
-	guess_m_pDonate->setPos( 400 - wide / 2, 0 );
-	guess_m_pDonate->setVisible( true );
+	m_pDonate_guess = new ImagePanel( m_pDonateImage_guess );
+	m_pDonate_guess->setParent( this );
+	m_pDonate_guess->setPos( 400 - wide / 2, 0 );
+	m_pDonate_guess->setVisible( true );
 
-	guess_m_pSoundtrack1 = new ImagePanel( guess_m_pSoundtrack1Image );
-	guess_m_pSoundtrack1->setParent( this );
-	guess_m_pSoundtrack1->setPos( 400 - wide / 2, tall );
-	guess_m_pSoundtrack1->setVisible( true );
+	m_pSoundtrack1_guess = new ImagePanel( m_pSoundtrack1Image_guess );
+	m_pSoundtrack1_guess->setParent( this );
+	m_pSoundtrack1_guess->setPos( 400 - wide / 2, tall );
+	m_pSoundtrack1_guess->setVisible( true );
 
-	guess_m_pSoundtrack2 = new ImagePanel( guess_m_pSoundtrack2Image );
-	guess_m_pSoundtrack2->setParent( this );
-	guess_m_pSoundtrack2->setPos( 400 - wide / 2, tall * 2 );
-	guess_m_pSoundtrack2->setVisible( true );
+	m_pSoundtrack2_guess = new ImagePanel( m_pSoundtrack2Image_guess );
+	m_pSoundtrack2_guess->setParent( this );
+	m_pSoundtrack2_guess->setPos( 400 - wide / 2, tall * 2 );
+	m_pSoundtrack2_guess->setVisible( true );
 
-	guess_m_pClothes = new ImagePanel( guess_m_pClothesImage );
-	guess_m_pClothes->setParent( this );
-	guess_m_pClothes->setPos( 400 - wide / 2, tall * 3 );
-	guess_m_pClothes->setVisible( true );
+	m_pClothes_guess = new ImagePanel( m_pClothesImage_guess );
+	m_pClothes_guess->setParent( this );
+	m_pClothes_guess->setPos( 400 - wide / 2, tall * 3 );
+	m_pClothes_guess->setVisible( true );
 
-	guess_m_pAoMDC = new ImagePanel( guess_m_pAoMDCImage );
-	guess_m_pAoMDC->setParent( this );
-	guess_m_pAoMDC->setPos( 400 - wide / 2, tall * 4 );
-	guess_m_pAoMDC->setVisible( true );
+	m_pAoMDC_guess = new ImagePanel( m_pAoMDCImage_guess );
+	m_pAoMDC_guess->setParent( this );
+	m_pAoMDC_guess->setPos( 400 - wide / 2, tall * 4 );
+	m_pAoMDC_guess->setVisible( true );
 
-	guess_m_pFacebook = new ImagePanel( guess_m_pFacebookImage );
-	guess_m_pFacebook->setParent( this );
-	guess_m_pFacebook->setPos( 400 - wide / 2, tall * 5 );
-	guess_m_pFacebook->setVisible( true );
+	m_pFacebook_guess = new ImagePanel( m_pFacebookImage_guess );
+	m_pFacebook_guess->setParent( this );
+	m_pFacebook_guess->setPos( 400 - wide / 2, tall * 5 );
+	m_pFacebook_guess->setVisible( true );
 
-	guess_m_pCancel = new ImagePanel( guess_m_pCancelImage );
-	guess_m_pCancel->setParent( this );
-	guess_m_pCancel->setPos( 400 - cancelWide / 2, 600 - cancelTall );
-	guess_m_pCancel->setVisible( true );
+	m_pCancel_guess = new ImagePanel( m_pCancelImage_guess );
+	m_pCancel_guess->setParent( this );
+	m_pCancel_guess->setPos( 400 - cancelWide / 2, 600 - cancelTall );
+	m_pCancel_guess->setVisible( true );
 
-	guess_m_pDonateButton = new ColorButton( "", 400 - wide / 2, 0, wide, tall, false, true );
-	guess_m_pDonateButton->setParent( this );
-	guess_m_pDonateButton->addActionSignal( new CVGUIExtraMenuHandler_Command( this, 2 ) );
+	m_pDonateButton_guess = new ColorButton( "", 400 - wide / 2, 0, wide, tall, false, true );
+	m_pDonateButton_guess->setParent( this );
+	m_pDonateButton_guess->addActionSignal( new CVGUIExtraMenuHandler_Command( this, 2 ) );
 
-	guess_m_pSoundtrack1Button = new ColorButton( "", 400 - wide / 2, tall, wide, tall, false, true );
-	guess_m_pSoundtrack1Button->setParent( this );
-	guess_m_pSoundtrack1Button->addActionSignal( new CVGUIExtraMenuHandler_Command( this, 3 ) );
+	m_pSoundtrack1Button_guess = new ColorButton( "", 400 - wide / 2, tall, wide, tall, false, true );
+	m_pSoundtrack1Button_guess->setParent( this );
+	m_pSoundtrack1Button_guess->addActionSignal( new CVGUIExtraMenuHandler_Command( this, 3 ) );
 
-	guess_m_pSoundtrack2Button = new ColorButton( "", 400 - wide / 2, tall * 2, wide, tall, false, true );
-	guess_m_pSoundtrack2Button->setParent( this );
-	guess_m_pSoundtrack2Button->addActionSignal( new CVGUIExtraMenuHandler_Command( this, 4 ) );
+	m_pSoundtrack2Button_guess = new ColorButton( "", 400 - wide / 2, tall * 2, wide, tall, false, true );
+	m_pSoundtrack2Button_guess->setParent( this );
+	m_pSoundtrack2Button_guess->addActionSignal( new CVGUIExtraMenuHandler_Command( this, 4 ) );
 
-	guess_m_pClothesButton = new ColorButton( "", 400 - wide / 2, tall * 3, wide, tall, false, true );
-	guess_m_pClothesButton->setParent( this );
-	guess_m_pClothesButton->addActionSignal( new CVGUIExtraMenuHandler_Command( this, 5 ) );
+	m_pClothesButton_guess = new ColorButton( "", 400 - wide / 2, tall * 3, wide, tall, false, true );
+	m_pClothesButton_guess->setParent( this );
+	m_pClothesButton_guess->addActionSignal( new CVGUIExtraMenuHandler_Command( this, 5 ) );
 
-	guess_m_pAoMDCButton = new ColorButton( "", 400 - wide / 2, tall * 4, wide, tall, false, true );
-	guess_m_pAoMDCButton->setParent( this );
-	guess_m_pAoMDCButton->addActionSignal( new CVGUIExtraMenuHandler_Command( this, 6 ) );
+	m_pAoMDCButton_guess = new ColorButton( "", 400 - wide / 2, tall * 4, wide, tall, false, true );
+	m_pAoMDCButton_guess->setParent( this );
+	m_pAoMDCButton_guess->addActionSignal( new CVGUIExtraMenuHandler_Command( this, 6 ) );
 
-	guess_m_pFacebookButton = new ColorButton( "", 400 - wide / 2, tall * 5, wide, tall, false, true );
-	guess_m_pFacebookButton->setParent( this );
-	guess_m_pFacebookButton->addActionSignal( new CVGUIExtraMenuHandler_Command( this, 7 ) );
+	m_pFacebookButton_guess = new ColorButton( "", 400 - wide / 2, tall * 5, wide, tall, false, true );
+	m_pFacebookButton_guess->setParent( this );
+	m_pFacebookButton_guess->addActionSignal( new CVGUIExtraMenuHandler_Command( this, 7 ) );
 
-	guess_m_pCancelButton = new ColorButton( "", 400 - cancelWide / 2, 600 - cancelTall, cancelWide, cancelTall, false, true );
-	guess_m_pCancelButton->setParent( this );
-	guess_m_pCancelButton->addActionSignal( new CVGUIExtraMenuHandler_Command( this, 1 ) );
+	m_pCancelButton_guess = new ColorButton( "", 400 - cancelWide / 2, 600 - cancelTall, cancelWide, cancelTall, false, true );
+	m_pCancelButton_guess->setParent( this );
+	m_pCancelButton_guess->addActionSignal( new CVGUIExtraMenuHandler_Command( this, 1 ) );
 
 	setBgColor( 0, 0, 0, 255 );
 
@@ -156,13 +156,13 @@ CVGUIExtraMenu::CVGUIExtraMenu() : Panel( ScreenWidth / 2 - 400, ScreenHeight / 
 
 CVGUIExtraMenu::~CVGUIExtraMenu()
 {
-	delete guess_m_pDonateImage;
-	delete guess_m_pSoundtrack1Image;
-	delete guess_m_pSoundtrack2Image;
-	delete guess_m_pClothesImage;
-	delete guess_m_pAoMDCImage;
-	delete guess_m_pFacebookImage;
-	delete guess_m_pCancelImage;
+	delete m_pDonateImage_guess;
+	delete m_pSoundtrack1Image_guess;
+	delete m_pSoundtrack2Image_guess;
+	delete m_pClothesImage_guess;
+	delete m_pAoMDCImage_guess;
+	delete m_pFacebookImage_guess;
+	delete m_pCancelImage_guess;
 }
 
 void CVGUIExtraMenu::ActionSignal( int cmd )
@@ -173,9 +173,9 @@ void CVGUIExtraMenu::ActionSignal( int cmd )
 		setVisible( false );
 		gViewPort->UpdateCursorState();
 
-		if ( gViewPort && gViewPort->guess_m_pGameMenu )
+		if ( gViewPort && gViewPort->m_pGameMenu_guess )
 		{
-			gViewPort->guess_m_pGameMenu->setVisible( true );
+			gViewPort->m_pGameMenu_guess->setVisible( true );
 			gViewPort->UpdateCursorState();
 		}
 		break;
@@ -227,13 +227,13 @@ void CVGUIExtraMenu::setVisible( bool state )
 {
 	if ( state )
 	{
-		guess_m_bDonateArmed = false;
-		guess_m_bSoundtrack1Armed = false;
-		guess_m_bSoundtrack2Armed = false;
-		guess_m_bClothesArmed = false;
-		guess_m_bAoMDCArmed = false;
-		guess_m_bFacebookArmed = false;
-		guess_m_bCancelArmed = false;
+		m_bDonateArmed_guess = false;
+		m_bSoundtrack1Armed_guess = false;
+		m_bSoundtrack2Armed_guess = false;
+		m_bClothesArmed_guess = false;
+		m_bAoMDCArmed_guess = false;
+		m_bFacebookArmed_guess = false;
+		m_bCancelArmed_guess = false;
 	}
 
 	Panel::setVisible( state );
@@ -241,109 +241,109 @@ void CVGUIExtraMenu::setVisible( bool state )
 
 void CVGUIExtraMenu::solve()
 {
-	if ( guess_m_pDonateButton->isArmed() )
+	if ( m_pDonateButton_guess->isArmed() )
 	{
-		if ( !guess_m_bDonateArmed )
+		if ( !m_bDonateArmed_guess )
 		{
-			guess_m_pDonate->setImage( vgui_LoadTGA( "gfx/vgui/menu/donate_mo.tga" ) );
+			m_pDonate_guess->setImage( vgui_LoadTGA( "gfx/vgui/menu/donate_mo.tga" ) );
 			gEngfuncs.pfnPlaySoundByName( "ui/3d_rollover.wav", 1 );
-			guess_m_bDonateArmed = true;
+			m_bDonateArmed_guess = true;
 		}
 	}
-	else if ( guess_m_bDonateArmed )
+	else if ( m_bDonateArmed_guess )
 	{
-		guess_m_pDonate->setImage( vgui_LoadTGA( "gfx/vgui/menu/donate.tga" ) );
-		guess_m_bDonateArmed = false;
+		m_pDonate_guess->setImage( vgui_LoadTGA( "gfx/vgui/menu/donate.tga" ) );
+		m_bDonateArmed_guess = false;
 	}
 
-	if ( guess_m_pSoundtrack1Button->isArmed() )
+	if ( m_pSoundtrack1Button_guess->isArmed() )
 	{
-		if ( !guess_m_bSoundtrack1Armed )
+		if ( !m_bSoundtrack1Armed_guess )
 		{
-			guess_m_pSoundtrack1->setImage( vgui_LoadTGA( "gfx/vgui/menu/soundtrack1_mo.tga" ) );
+			m_pSoundtrack1_guess->setImage( vgui_LoadTGA( "gfx/vgui/menu/soundtrack1_mo.tga" ) );
 			gEngfuncs.pfnPlaySoundByName( "ui/3d_rollover.wav", 1 );
-			guess_m_bSoundtrack1Armed = true;
+			m_bSoundtrack1Armed_guess = true;
 		}
 	}
-	else if ( guess_m_bSoundtrack1Armed )
+	else if ( m_bSoundtrack1Armed_guess )
 	{
-		guess_m_pSoundtrack1->setImage( vgui_LoadTGA( "gfx/vgui/menu/soundtrack1.tga" ) );
-		guess_m_bSoundtrack1Armed = false;
+		m_pSoundtrack1_guess->setImage( vgui_LoadTGA( "gfx/vgui/menu/soundtrack1.tga" ) );
+		m_bSoundtrack1Armed_guess = false;
 	}
 
-	if ( guess_m_pSoundtrack2Button->isArmed() )
+	if ( m_pSoundtrack2Button_guess->isArmed() )
 	{
-		if ( !guess_m_bSoundtrack2Armed )
+		if ( !m_bSoundtrack2Armed_guess )
 		{
-			guess_m_pSoundtrack2->setImage( vgui_LoadTGA( "gfx/vgui/menu/soundtrack2_mo.tga" ) );
+			m_pSoundtrack2_guess->setImage( vgui_LoadTGA( "gfx/vgui/menu/soundtrack2_mo.tga" ) );
 			gEngfuncs.pfnPlaySoundByName( "ui/3d_rollover.wav", 1 );
-			guess_m_bSoundtrack2Armed = true;
+			m_bSoundtrack2Armed_guess = true;
 		}
 	}
-	else if ( guess_m_bSoundtrack2Armed )
+	else if ( m_bSoundtrack2Armed_guess )
 	{
-		guess_m_pSoundtrack2->setImage( vgui_LoadTGA( "gfx/vgui/menu/soundtrack2.tga" ) );
-		guess_m_bSoundtrack2Armed = false;
+		m_pSoundtrack2_guess->setImage( vgui_LoadTGA( "gfx/vgui/menu/soundtrack2.tga" ) );
+		m_bSoundtrack2Armed_guess = false;
 	}
 
-	if ( guess_m_pClothesButton->isArmed() )
+	if ( m_pClothesButton_guess->isArmed() )
 	{
-		if ( !guess_m_bClothesArmed )
+		if ( !m_bClothesArmed_guess )
 		{
-			guess_m_pClothes->setImage( vgui_LoadTGA( "gfx/vgui/menu/clothes_mo.tga" ) );
+			m_pClothes_guess->setImage( vgui_LoadTGA( "gfx/vgui/menu/clothes_mo.tga" ) );
 			gEngfuncs.pfnPlaySoundByName( "ui/3d_rollover.wav", 1 );
-			guess_m_bClothesArmed = true;
+			m_bClothesArmed_guess = true;
 		}
 	}
-	else if ( guess_m_bClothesArmed )
+	else if ( m_bClothesArmed_guess )
 	{
-		guess_m_pClothes->setImage( vgui_LoadTGA( "gfx/vgui/menu/clothes.tga" ) );
-		guess_m_bClothesArmed = false;
+		m_pClothes_guess->setImage( vgui_LoadTGA( "gfx/vgui/menu/clothes.tga" ) );
+		m_bClothesArmed_guess = false;
 	}
 
-	if ( guess_m_pAoMDCButton->isArmed() )
+	if ( m_pAoMDCButton_guess->isArmed() )
 	{
-		if ( !guess_m_bAoMDCArmed )
+		if ( !m_bAoMDCArmed_guess )
 		{
-			guess_m_pAoMDC->setImage( vgui_LoadTGA( "gfx/vgui/menu/aomdc_mo.tga" ) );
+			m_pAoMDC_guess->setImage( vgui_LoadTGA( "gfx/vgui/menu/aomdc_mo.tga" ) );
 			gEngfuncs.pfnPlaySoundByName( "ui/3d_rollover.wav", 1 );
-			guess_m_bAoMDCArmed = true;
+			m_bAoMDCArmed_guess = true;
 		}
 	}
-	else if ( guess_m_bAoMDCArmed )
+	else if ( m_bAoMDCArmed_guess )
 	{
-		guess_m_pAoMDC->setImage( vgui_LoadTGA( "gfx/vgui/menu/aomdc.tga" ) );
-		guess_m_bAoMDCArmed = false;
+		m_pAoMDC_guess->setImage( vgui_LoadTGA( "gfx/vgui/menu/aomdc.tga" ) );
+		m_bAoMDCArmed_guess = false;
 	}
 
-	if ( guess_m_pFacebookButton->isArmed() )
+	if ( m_pFacebookButton_guess->isArmed() )
 	{
-		if ( !guess_m_bFacebookArmed )
+		if ( !m_bFacebookArmed_guess )
 		{
-			guess_m_pFacebook->setImage( vgui_LoadTGA( "gfx/vgui/menu/facebook_mo.tga" ) );
+			m_pFacebook_guess->setImage( vgui_LoadTGA( "gfx/vgui/menu/facebook_mo.tga" ) );
 			gEngfuncs.pfnPlaySoundByName( "ui/3d_rollover.wav", 1 );
-			guess_m_bFacebookArmed = true;
+			m_bFacebookArmed_guess = true;
 		}
 	}
-	else if ( guess_m_bFacebookArmed )
+	else if ( m_bFacebookArmed_guess )
 	{
-		guess_m_pFacebook->setImage( vgui_LoadTGA( "gfx/vgui/menu/facebook.tga" ) );
-		guess_m_bFacebookArmed = false;
+		m_pFacebook_guess->setImage( vgui_LoadTGA( "gfx/vgui/menu/facebook.tga" ) );
+		m_bFacebookArmed_guess = false;
 	}
 
-	if ( guess_m_pCancelButton->isArmed() )
+	if ( m_pCancelButton_guess->isArmed() )
 	{
-		if ( !guess_m_bCancelArmed )
+		if ( !m_bCancelArmed_guess )
 		{
-			guess_m_pCancel->setImage( vgui_LoadTGA( "gfx/vgui/menu/cancel_mo.tga" ) );
+			m_pCancel_guess->setImage( vgui_LoadTGA( "gfx/vgui/menu/cancel_mo.tga" ) );
 			gEngfuncs.pfnPlaySoundByName( "ui/3d_rollover.wav", 1 );
-			guess_m_bCancelArmed = true;
+			m_bCancelArmed_guess = true;
 		}
 	}
-	else if ( guess_m_bCancelArmed )
+	else if ( m_bCancelArmed_guess )
 	{
-		guess_m_pCancel->setImage( vgui_LoadTGA( "gfx/vgui/menu/cancel.tga" ) );
-		guess_m_bCancelArmed = false;
+		m_pCancel_guess->setImage( vgui_LoadTGA( "gfx/vgui/menu/cancel.tga" ) );
+		m_bCancelArmed_guess = false;
 	}
 
 	Panel::solve();

@@ -1,8 +1,8 @@
-??0guess_CBlurTexture@@QAE@XZ
-?guess_AnimateNextFrame@guess_CBlur@@QAE_NH@Z
-?guess_BindTexture@guess_CBlurTexture@@QAEXHH@Z
-?guess_Draw@guess_CBlurTexture@@QAEXHH@Z
-?guess_DrawBlur@guess_CBlur@@QAEXXZ
-?guess_DrawQuad@guess_CBlurTexture@@QAEXHHH@Z
-?guess_Init@guess_CBlurTexture@@QAEXHH@Z
-?guess_InitScreen@guess_CBlur@@QAEXXZ
+??0CBlurTexture_guess@@QAE@XZ
+?AnimateNextFrame_guess@CBlur_guess@@QAE_NH@Z
+?BindTexture_guess@CBlurTexture_guess@@QAEXHH@Z
+?Draw_guess@CBlurTexture_guess@@QAEXHH@Z
+?DrawBlur_guess@CBlur_guess@@QAEXXZ
+?DrawQuad_guess@CBlurTexture_guess@@QAEXHHH@Z
+?Init_guess@CBlurTexture_guess@@QAEXHH@Z
+?InitScreen_guess@CBlur_guess@@QAEXXZ

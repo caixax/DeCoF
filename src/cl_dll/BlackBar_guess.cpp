@@ -7,12 +7,12 @@
 #include "cl_util.h"
 #include "parsemsg.h"
 #include "vgui_TeamFortressViewport.h"
-#include "guess_HUDControl.h"
-#include "guess_Credits.h"
+#include "HUDControl_guess.h"
+#include "Credits_guess.h"
 
-extern int guess_g_iLetterboxHeight;
+extern int g_iLetterboxHeight_guess;
 
-DECLARE_MESSAGE( guess_m_BlackBar, BlackBars )
+DECLARE_MESSAGE( m_BlackBar_guess, BlackBars )
 
 int CBlackBar::Init( void )
 {
@@ -26,10 +26,10 @@ int CBlackBar::Init( void )
 
 int CBlackBar::VidInit( void )
 {
-	guess_m_HUD_blackbar = gHUD.GetSpriteIndex( "cof_blackbar" );
-	int iHeight = gHUD.GetSpriteRect( guess_m_HUD_blackbar ).bottom - gHUD.GetSpriteRect( guess_m_HUD_blackbar ).top;
-	guess_m_iBottom = ScreenHeight;
-	guess_m_iTop = -iHeight - 1;
+	m_HUD_blackbar_guess = gHUD.GetSpriteIndex( "cof_blackbar" );
+	int iHeight = gHUD.GetSpriteRect( m_HUD_blackbar_guess ).bottom - gHUD.GetSpriteRect( m_HUD_blackbar_guess ).top;
+	m_iBottom_guess = ScreenHeight;
+	m_iTop_guess = -iHeight - 1;
 
 	return 1;
 }
@@ -42,34 +42,34 @@ int CBlackBar::Draw( float flTime )
 int CBlackBar::MsgFunc_BlackBars( const char *pszName, int iSize, void *pbuf )
 {
 	BEGIN_READ( pbuf, iSize );
-	guess_m_iOn = READ_BYTE();
+	m_iOn_guess = READ_BYTE();
 
-	if ( guess_m_iOn )
+	if ( m_iOn_guess )
 	{
-		int iHeight = gHUD.GetSpriteRect( guess_m_HUD_blackbar ).bottom - gHUD.GetSpriteRect( guess_m_HUD_blackbar ).top;
-		guess_m_iBottom = ScreenHeight;
-		guess_m_iTop = -iHeight - 1;
+		int iHeight = gHUD.GetSpriteRect( m_HUD_blackbar_guess ).bottom - gHUD.GetSpriteRect( m_HUD_blackbar_guess ).top;
+		m_iBottom_guess = ScreenHeight;
+		m_iTop_guess = -iHeight - 1;
 
 		if ( gViewPort )
 		{
-			if ( gViewPort->guess_m_pHUDControl )
+			if ( gViewPort->m_pHUDControl_guess )
 			{
 				int x, y, x2, y2;
 
-				gViewPort->guess_m_pHUDControl->guess_m_pLetterboxTop->getPos( x, y );
-				gViewPort->guess_m_pHUDControl->guess_m_pLetterboxBottom->getPos( x2, y2 );
-				gViewPort->guess_m_pHUDControl->guess_m_pLetterboxTop->setPos( x, -guess_g_iLetterboxHeight );
-				gViewPort->guess_m_pHUDControl->guess_m_pLetterboxBottom->setPos( x2, ScreenHeight );
+				gViewPort->m_pHUDControl_guess->m_pLetterboxTop_guess->getPos( x, y );
+				gViewPort->m_pHUDControl_guess->m_pLetterboxBottom_guess->getPos( x2, y2 );
+				gViewPort->m_pHUDControl_guess->m_pLetterboxTop_guess->setPos( x, -g_iLetterboxHeight_guess );
+				gViewPort->m_pHUDControl_guess->m_pLetterboxBottom_guess->setPos( x2, ScreenHeight );
 			}
 
-			if ( gViewPort && gViewPort->guess_m_pCredits && gViewPort->guess_m_pCredits->isVisible() )
+			if ( gViewPort && gViewPort->m_pCredits_guess && gViewPort->m_pCredits_guess->isVisible() )
 			{
 				int x, y, x2, y2;
 
-				gViewPort->guess_m_pCredits->guess_m_pLetterboxTop->getPos( x, y );
-				gViewPort->guess_m_pCredits->guess_m_pLetterboxBottom->getPos( x2, y2 );
-				gViewPort->guess_m_pCredits->guess_m_pLetterboxTop->setPos( x, -guess_g_iLetterboxHeight );
-				gViewPort->guess_m_pCredits->guess_m_pLetterboxBottom->setPos( x2, ScreenHeight );
+				gViewPort->m_pCredits_guess->m_pLetterboxTop_guess->getPos( x, y );
+				gViewPort->m_pCredits_guess->m_pLetterboxBottom_guess->getPos( x2, y2 );
+				gViewPort->m_pCredits_guess->m_pLetterboxTop_guess->setPos( x, -g_iLetterboxHeight_guess );
+				gViewPort->m_pCredits_guess->m_pLetterboxBottom_guess->setPos( x2, ScreenHeight );
 			}
 		}
 	}

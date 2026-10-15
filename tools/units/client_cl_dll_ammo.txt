@@ -54,10 +54,10 @@
 ?__MsgFunc_ItemPickup@@YAHPBDHPAX@Z
 ?__MsgFunc_WeapPickup@@YAHPBDHPAX@Z
 ?__MsgFunc_WeaponList@@YAHPBDHPAX@Z
-?guess_GetMags@CHudAmmo@@QAEHH@Z
+?GetMags_guess@CHudAmmo@@QAEHH@Z
 ?MsgFunc_WpnDeploy@CHudAmmo@@QAEHPBDHPAX@Z
 ?MsgFunc_WpnInfo@CHudAmmo@@QAEHPBDHPAX@Z
-?guess_SetMags@CHudAmmo@@QAEXHHH@Z
+?SetMags_guess@CHudAmmo@@QAEXHHH@Z
 ?__CmdFunc_Close@@YAXXZ
 ?__CmdFunc_NextWeapon@@YAXXZ
 ?__CmdFunc_PrevWeapon@@YAXXZ

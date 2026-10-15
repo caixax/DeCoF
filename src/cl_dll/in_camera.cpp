@@ -31,13 +31,13 @@ extern "C"
 
 extern cl_enginefunc_t gEngfuncs;
 extern vec3_t v_origin;
-extern cl_entity_t *guess_pCamTargetEnt;
-extern int guess_iPlayerMode;
+extern cl_entity_t *pCamTargetEnt_guess;
+extern int iPlayerMode_guess;
 
-cl_entity_t *guess_pTelescopeEnt;
-float guess_flTelescopeX, guess_flTelescopeY, guess_flTelescopeZ;
-float guess_flTelescopeLeft, guess_flTelescopeTop, guess_flTelescopeRight, guess_flTelescopeBottom;
-int guess_iTelescopeFlag;
+cl_entity_t *pTelescopeEnt_guess;
+float flTelescopeX_guess, flTelescopeY_guess, flTelescopeZ_guess;
+float flTelescopeLeft_guess, flTelescopeTop_guess, flTelescopeRight_guess, flTelescopeBottom_guess;
+int iTelescopeFlag_guess;
 
 //-------------------------------------------------- Constants
 
@@ -77,7 +77,7 @@ cvar_t	*c_mindistance;
 
 // pitch, yaw, dist
 vec3_t cam_ofs;
-vec3_t guess_cam_old;
+vec3_t cam_old_guess;
 
 
 // In third person
@@ -164,26 +164,26 @@ int __MsgFunc_Telescope( const char *pszName, int iSize, void *pbuf )
 
 	int index = READ_SHORT();
 
-	guess_flTelescopeX = READ_SHORT();
-	guess_flTelescopeY = READ_SHORT();
-	guess_flTelescopeZ = READ_SHORT();
+	flTelescopeX_guess = READ_SHORT();
+	flTelescopeY_guess = READ_SHORT();
+	flTelescopeZ_guess = READ_SHORT();
 
-	guess_flTelescopeLeft = guess_flTelescopeX - 20;
-	guess_flTelescopeRight = guess_flTelescopeX + 20;
-	guess_flTelescopeTop = guess_flTelescopeY - 20;
-	guess_flTelescopeBottom = guess_flTelescopeY + 20;
+	flTelescopeLeft_guess = flTelescopeX_guess - 20;
+	flTelescopeRight_guess = flTelescopeX_guess + 20;
+	flTelescopeTop_guess = flTelescopeY_guess - 20;
+	flTelescopeBottom_guess = flTelescopeY_guess + 20;
 
 	if ( index == -1 )
 	{
-		guess_pTelescopeEnt = NULL;
+		pTelescopeEnt_guess = NULL;
 	}
 	else
 	{
-		guess_iTelescopeFlag = 0;
-		guess_pTelescopeEnt = gEngfuncs.GetEntityByIndex( index );
+		iTelescopeFlag_guess = 0;
+		pTelescopeEnt_guess = gEngfuncs.GetEntityByIndex( index );
 	}
 
-	gHUD.guess_m_flNextSwayTime = gHUD.m_flTime;
+	gHUD.m_flNextSwayTime_guess = gHUD.m_flTime;
 
 	return 1;
 }
@@ -219,12 +219,12 @@ void DLLEXPORT CAM_Think( void )
 	if( !cam_thirdperson )
 		return;
 
-	if ( guess_iPlayerMode >= 1 && guess_iPlayerMode <= 5 && guess_pCamTargetEnt )
+	if ( iPlayerMode_guess >= 1 && iPlayerMode_guess <= 5 && pCamTargetEnt_guess )
 	{
 		vec3_t dir;
 		vec3_t target;
 
-		VectorCopy( guess_pCamTargetEnt->origin, target );
+		VectorCopy( pCamTargetEnt_guess->origin, target );
 		target[2] -= 36.0f;
 		VectorSubtract( target, v_origin, dir );
 		VectorAngles( dir, dir );
@@ -247,7 +247,7 @@ void DLLEXPORT CAM_Think( void )
 	//
 	//movement of the camera with the mouse
 	//
-	if (cam_mousemove && guess_iPlayerMode <= 0)
+	if (cam_mousemove && iPlayerMode_guess <= 0)
 	{
 	    //get windows cursor position
 		GetCursorPos (&cam_mouse);
@@ -461,9 +461,9 @@ void DLLEXPORT CAM_Think( void )
 	cam_ofs[ 0 ] = camAngles[ 0 ];
 	cam_ofs[ 1 ] = camAngles[ 1 ];
 	cam_ofs[ 2 ] = dist;
-	guess_cam_old[ 0 ] = camAngles[ 0 ];
-	guess_cam_old[ 1 ] = camAngles[ 1 ];
-	guess_cam_old[ 2 ] = camAngles[ 2 ];
+	cam_old_guess[ 0 ] = camAngles[ 0 ];
+	cam_old_guess[ 1 ] = camAngles[ 1 ];
+	cam_old_guess[ 2 ] = camAngles[ 2 ];
 }
 
 extern void KeyDown (kbutton_t *b);	// HACK

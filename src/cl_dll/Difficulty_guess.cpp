@@ -7,13 +7,13 @@
 #include "cl_util.h"
 #include "vgui_TeamFortressViewport.h"
 #include "..\game_shared\vgui_checkbutton2.h"
-#include "guess_Difficulty.h"
-#include "guess_GameMenu.h"
+#include "Difficulty_guess.h"
+#include "GameMenu_guess.h"
 #include "..\game_shared\vgui_loadtga.h"
 
-extern int guess_iMenuMode;
+extern int iMenuMode_guess;
 
-void guess_IrrKlangStop( float flFadeTime );
+void IrrKlangStop_guess( float flFadeTime );
 
 CDifficulty::CDifficulty() : Panel( 0, 0, ScreenWidth, ScreenHeight )
 {
@@ -27,28 +27,28 @@ CDifficulty::CDifficulty() : Panel( 0, 0, ScreenWidth, ScreenHeight )
 	x = ScreenWidth / 2 - 320;
 	y = ScreenHeight / 2 - 240;
 
-	guess_m_pImage = vgui_LoadTGA( "gfx/vgui/640_difficulty.tga" );
-	if ( guess_m_pImage )
-		guess_m_pImage->setColor( Color( 255, 255, 255, 1 ) );
+	m_pImage_guess = vgui_LoadTGA( "gfx/vgui/640_difficulty.tga" );
+	if ( m_pImage_guess )
+		m_pImage_guess->setColor( Color( 255, 255, 255, 1 ) );
 	else
 		gEngfuncs.Con_Printf( "Cannot load gfx/vgui/640_difficulty.tga!\n" );
 
-	guess_m_pImagePanel = new ImagePanel( guess_m_pImage );
-	guess_m_pImagePanel->setParent( this );
-	guess_m_pImagePanel->setPos( x, y );
-	guess_m_pImagePanel->setVisible( true );
+	m_pImagePanel_guess = new ImagePanel( m_pImage_guess );
+	m_pImagePanel_guess->setParent( this );
+	m_pImagePanel_guess->setPos( x, y );
+	m_pImagePanel_guess->setVisible( true );
 
-	guess_m_CommentaryButton.setParent( this );
-	guess_m_CommentaryButton.SetImages( "gfx/vgui/checked.tga", "gfx/vgui/unchecked.tga" );
-	guess_m_CommentaryButton.SetText( "Enable developer commentary" );
-	guess_m_CommentaryButton.SetCheckboxLeft( true );
-	guess_m_CommentaryButton.SetChecked( gEngfuncs.pfnGetCvarFloat( "dev_commentary" ) != 0 );
-	guess_m_CommentaryButton.SetHandler( this );
-	guess_m_CommentaryButton.getSize( wide, tall );
-	guess_m_CommentaryButton.setPos( ScreenWidth / 2 - wide / 2, y + 490 );
+	m_CommentaryButton_guess.setParent( this );
+	m_CommentaryButton_guess.SetImages( "gfx/vgui/checked.tga", "gfx/vgui/unchecked.tga" );
+	m_CommentaryButton_guess.SetText( "Enable developer commentary" );
+	m_CommentaryButton_guess.SetCheckboxLeft( true );
+	m_CommentaryButton_guess.SetChecked( gEngfuncs.pfnGetCvarFloat( "dev_commentary" ) != 0 );
+	m_CommentaryButton_guess.SetHandler( this );
+	m_CommentaryButton_guess.getSize( wide, tall );
+	m_CommentaryButton_guess.setPos( ScreenWidth / 2 - wide / 2, y + 490 );
 
 	pButton = new ColorButton( "", 120, 90, 400, 75, false, false );
-	pButton->setParent( guess_m_pImagePanel );
+	pButton->setParent( m_pImagePanel_guess );
 	pButton->addActionSignal( new CDifficultyHandler_Command( this, 1 ) );
 	pButton->setUnArmedBorderColor( 0, 0, 0, 255 );
 	pButton->setArmedBorderColor( 255, 255, 255, 192 );
@@ -56,7 +56,7 @@ CDifficulty::CDifficulty() : Panel( 0, 0, ScreenWidth, ScreenHeight )
 	pButton->setArmedColor( 0, 0, 0, 255 );
 
 	pButton = new ColorButton( "", 120, 165, 400, 75, false, false );
-	pButton->setParent( guess_m_pImagePanel );
+	pButton->setParent( m_pImagePanel_guess );
 	pButton->addActionSignal( new CDifficultyHandler_Command( this, 2 ) );
 	pButton->setUnArmedBorderColor( 0, 0, 0, 255 );
 	pButton->setArmedBorderColor( 255, 255, 255, 192 );
@@ -64,23 +64,23 @@ CDifficulty::CDifficulty() : Panel( 0, 0, ScreenWidth, ScreenHeight )
 	pButton->setArmedColor( 0, 0, 0, 255 );
 
 	pButton = new ColorButton( "", 120, 240, 400, 75, false, false );
-	pButton->setParent( guess_m_pImagePanel );
+	pButton->setParent( m_pImagePanel_guess );
 	pButton->addActionSignal( new CDifficultyHandler_Command( this, 3 ) );
 	pButton->setUnArmedBorderColor( 0, 0, 0, 255 );
 	pButton->setArmedBorderColor( 255, 255, 255, 192 );
 	pButton->setUnArmedColor( 0, 0, 0, 255 );
 	pButton->setArmedColor( 0, 0, 0, 255 );
 
-	guess_m_pSkill4Button = new ColorButton( "", 120, 315, 400, 75, false, false );
-	guess_m_pSkill4Button->setParent( guess_m_pImagePanel );
-	guess_m_pSkill4Button->addActionSignal( new CDifficultyHandler_Command( this, 4 ) );
-	guess_m_pSkill4Button->setUnArmedBorderColor( 0, 0, 0, 255 );
-	guess_m_pSkill4Button->setArmedBorderColor( 255, 255, 255, 192 );
-	guess_m_pSkill4Button->setUnArmedColor( 0, 0, 0, 255 );
-	guess_m_pSkill4Button->setArmedColor( 0, 0, 0, 255 );
+	m_pSkill4Button_guess = new ColorButton( "", 120, 315, 400, 75, false, false );
+	m_pSkill4Button_guess->setParent( m_pImagePanel_guess );
+	m_pSkill4Button_guess->addActionSignal( new CDifficultyHandler_Command( this, 4 ) );
+	m_pSkill4Button_guess->setUnArmedBorderColor( 0, 0, 0, 255 );
+	m_pSkill4Button_guess->setArmedBorderColor( 255, 255, 255, 192 );
+	m_pSkill4Button_guess->setUnArmedColor( 0, 0, 0, 255 );
+	m_pSkill4Button_guess->setArmedColor( 0, 0, 0, 255 );
 
 	pButton = new ColorButton( "", 95, 409, 450, 47, false, false );
-	pButton->setParent( guess_m_pImagePanel );
+	pButton->setParent( m_pImagePanel_guess );
 	pButton->addActionSignal( new CDifficultyHandler_Command( this, 5 ) );
 	pButton->setUnArmedBorderColor( 0, 0, 0, 255 );
 	pButton->setArmedBorderColor( 255, 255, 255, 192 );
@@ -94,7 +94,7 @@ CDifficulty::CDifficulty() : Panel( 0, 0, ScreenWidth, ScreenHeight )
 
 CDifficulty::~CDifficulty()
 {
-	delete guess_m_pImage;
+	delete m_pImage_guess;
 }
 
 void CDifficulty::ActionSignal( int cmd )
@@ -104,61 +104,61 @@ void CDifficulty::ActionSignal( int cmd )
 	switch ( cmd )
 	{
 	case 1:
-		if ( gViewPort && gViewPort->guess_m_pGameMenu && gViewPort->guess_m_pGameMenu->guess_m_pszCampaign )
+		if ( gViewPort && gViewPort->m_pGameMenu_guess && gViewPort->m_pGameMenu_guess->m_pszCampaign_guess )
 		{
-			sprintf( szCommand, "campaign %s", gViewPort->guess_m_pGameMenu->guess_m_pszCampaign );
+			sprintf( szCommand, "campaign %s", gViewPort->m_pGameMenu_guess->m_pszCampaign_guess );
 			gEngfuncs.pfnServerCmd( szCommand );
 		}
 		gEngfuncs.pfnServerCmd( "skillset 1" );
 		setVisible( false );
 		if ( strstr( gEngfuncs.pfnGetLevelName(), "game_menu" ) )
-			guess_IrrKlangStop( 1 );
+			IrrKlangStop_guess( 1 );
 		break;
 	case 2:
-		if ( gViewPort && gViewPort->guess_m_pGameMenu && gViewPort->guess_m_pGameMenu->guess_m_pszCampaign )
+		if ( gViewPort && gViewPort->m_pGameMenu_guess && gViewPort->m_pGameMenu_guess->m_pszCampaign_guess )
 		{
-			sprintf( szCommand, "campaign %s", gViewPort->guess_m_pGameMenu->guess_m_pszCampaign );
+			sprintf( szCommand, "campaign %s", gViewPort->m_pGameMenu_guess->m_pszCampaign_guess );
 			gEngfuncs.pfnServerCmd( szCommand );
 		}
 		gEngfuncs.pfnServerCmd( "skillset 2" );
 		setVisible( false );
 		if ( strstr( gEngfuncs.pfnGetLevelName(), "game_menu" ) )
-			guess_IrrKlangStop( 1 );
+			IrrKlangStop_guess( 1 );
 		break;
 	case 3:
-		if ( gViewPort && gViewPort->guess_m_pGameMenu && gViewPort->guess_m_pGameMenu->guess_m_pszCampaign )
+		if ( gViewPort && gViewPort->m_pGameMenu_guess && gViewPort->m_pGameMenu_guess->m_pszCampaign_guess )
 		{
-			sprintf( szCommand, "campaign %s", gViewPort->guess_m_pGameMenu->guess_m_pszCampaign );
+			sprintf( szCommand, "campaign %s", gViewPort->m_pGameMenu_guess->m_pszCampaign_guess );
 			gEngfuncs.pfnServerCmd( szCommand );
 		}
 		gEngfuncs.pfnServerCmd( "skillset 3" );
 		setVisible( false );
 		if ( strstr( gEngfuncs.pfnGetLevelName(), "game_menu" ) )
-			guess_IrrKlangStop( 1 );
+			IrrKlangStop_guess( 1 );
 		break;
 	case 4:
-		if ( gHUD.guess_m_iUnlocks & 32 )
+		if ( gHUD.m_iUnlocks_guess & 32 )
 		{
-			if ( gViewPort && gViewPort->guess_m_pGameMenu && gViewPort->guess_m_pGameMenu->guess_m_pszCampaign )
+			if ( gViewPort && gViewPort->m_pGameMenu_guess && gViewPort->m_pGameMenu_guess->m_pszCampaign_guess )
 			{
-				sprintf( szCommand, "campaign %s", gViewPort->guess_m_pGameMenu->guess_m_pszCampaign );
+				sprintf( szCommand, "campaign %s", gViewPort->m_pGameMenu_guess->m_pszCampaign_guess );
 				gEngfuncs.pfnServerCmd( szCommand );
 			}
 			gEngfuncs.pfnServerCmd( "skillset 4" );
 			setVisible( false );
 			if ( strstr( gEngfuncs.pfnGetLevelName(), "game_menu" ) )
-				guess_IrrKlangStop( 1 );
+				IrrKlangStop_guess( 1 );
 		}
 		break;
 	case 5:
-		if ( guess_iMenuMode )
+		if ( iMenuMode_guess )
 		{
 			setVisible( false );
 			gViewPort->UpdateCursorState();
 
-			if ( gViewPort && gViewPort->guess_m_pGameMenu )
+			if ( gViewPort && gViewPort->m_pGameMenu_guess )
 			{
-				gViewPort->guess_m_pGameMenu->setVisible( true );
+				gViewPort->m_pGameMenu_guess->setVisible( true );
 				gViewPort->UpdateCursorState();
 			}
 		}
@@ -187,7 +187,7 @@ int CDifficulty::KeyInput( int down, int keynum, const char *pszCurrentBinding )
 
 void CDifficulty::StateChanged( CCheckButton2 *pButton )
 {
-	if ( pButton == &guess_m_CommentaryButton )
+	if ( pButton == &m_CommentaryButton_guess )
 	{
 		if ( pButton->IsChecked() )
 			gEngfuncs.pfnClientCmd( "dev_commentary 1" );
@@ -203,20 +203,20 @@ void CDifficulty::setVisible( bool state )
 
 	if ( state )
 	{
-		if ( gHUD.guess_m_iUnlocks & 0x400000 )
-			guess_m_CommentaryButton.setVisible( true );
+		if ( gHUD.m_iUnlocks_guess & 0x400000 )
+			m_CommentaryButton_guess.setVisible( true );
 		else
-			guess_m_CommentaryButton.setVisible( false );
+			m_CommentaryButton_guess.setVisible( false );
 
-		if ( gHUD.guess_m_iUnlocks & 32 )
+		if ( gHUD.m_iUnlocks_guess & 32 )
 		{
-			guess_m_pSkill4Button->setVisible( true );
-			guess_m_pImagePanel->setImage( vgui_LoadTGA( "gfx/vgui/640_difficulty.tga" ) );
+			m_pSkill4Button_guess->setVisible( true );
+			m_pImagePanel_guess->setImage( vgui_LoadTGA( "gfx/vgui/640_difficulty.tga" ) );
 		}
 		else
 		{
-			guess_m_pSkill4Button->setVisible( false );
-			guess_m_pImagePanel->setImage( vgui_LoadTGA( "gfx/vgui/640_difficultylocked.tga" ) );
+			m_pSkill4Button_guess->setVisible( false );
+			m_pImagePanel_guess->setImage( vgui_LoadTGA( "gfx/vgui/640_difficultylocked.tga" ) );
 		}
 	}
 }

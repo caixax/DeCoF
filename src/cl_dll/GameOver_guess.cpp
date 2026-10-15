@@ -7,15 +7,15 @@
 #include "cl_util.h"
 #include "parsemsg.h"
 #include "vgui_TeamFortressViewport.h"
-#include "guess_GameOver.h"
-#include "guess_SaveLoad.h"
+#include "GameOver_guess.h"
+#include "SaveLoad_guess.h"
 #include "..\game_shared\vgui_loadtga.h"
 
-extern int guess_iMenuMode;
-extern int guess_iDoctorMode;
-extern int guess_iVGUIMenuNoMusic;
+extern int iMenuMode_guess;
+extern int iDoctorMode_guess;
+extern int iVGUIMenuNoMusic_guess;
 
-void guess_IrrKlangPlay( const char *pszFile );
+void IrrKlangPlay_guess( const char *pszFile );
 
 CGameOver::CGameOver() : Panel( 0, 0, ScreenWidth, ScreenHeight )
 {
@@ -30,30 +30,30 @@ CGameOver::CGameOver() : Panel( 0, 0, ScreenWidth, ScreenHeight )
 	CSchemeManager *pSchemes = gViewPort->GetSchemeManager();
 	SchemeHandle_t hTitleScheme = pSchemes->getSchemeHandle( "Title Font" );
 
-	guess_m_pImage = vgui_LoadTGA( "gfx/vgui/game_over.tga" );
-	if ( guess_m_pImage )
-		guess_m_pImage->setColor( Color( 255, 255, 255, 1 ) );
+	m_pImage_guess = vgui_LoadTGA( "gfx/vgui/game_over.tga" );
+	if ( m_pImage_guess )
+		m_pImage_guess->setColor( Color( 255, 255, 255, 1 ) );
 	else
 		gEngfuncs.Con_Printf( "Cannot load gfx/vgui/game_over.tga!\n" );
 
-	guess_m_pLoadImage = vgui_LoadTGA( "gfx/vgui/game_over_load.tga" );
-	if ( guess_m_pLoadImage )
-		guess_m_pLoadImage->setColor( Color( 255, 255, 255, 1 ) );
+	m_pLoadImage_guess = vgui_LoadTGA( "gfx/vgui/game_over_load.tga" );
+	if ( m_pLoadImage_guess )
+		m_pLoadImage_guess->setColor( Color( 255, 255, 255, 1 ) );
 	else
 		gEngfuncs.Con_Printf( "Cannot load gfx/vgui/game_over_load.tga!\n" );
 
-	guess_m_pExitImage = vgui_LoadTGA( "gfx/vgui/game_over_exit.tga" );
-	if ( guess_m_pExitImage )
-		guess_m_pExitImage->setColor( Color( 255, 255, 255, 1 ) );
+	m_pExitImage_guess = vgui_LoadTGA( "gfx/vgui/game_over_exit.tga" );
+	if ( m_pExitImage_guess )
+		m_pExitImage_guess->setColor( Color( 255, 255, 255, 1 ) );
 	else
 		gEngfuncs.Con_Printf( "Cannot load gfx/vgui/game_over_exit.tga!\n" );
 
-	guess_m_pImage->getSize( wide, tall );
+	m_pImage_guess->getSize( wide, tall );
 	x = ScreenWidth / 2 - wide / 2;
 	y = ScreenHeight / 2 - tall / 2;
 
-	guess_m_pLoadImage->getSize( loadWide, loadTall );
-	guess_m_pExitImage->getSize( exitWide, exitTall );
+	m_pLoadImage_guess->getSize( loadWide, loadTall );
+	m_pExitImage_guess->getSize( exitWide, exitTall );
 
 	loadX = wide / 2 - loadWide / 2;
 	loadY = tall / 2 + loadTall;
@@ -61,32 +61,32 @@ CGameOver::CGameOver() : Panel( 0, 0, ScreenWidth, ScreenHeight )
 	exitY = loadY + exitTall;
 	exitButtonX = wide / 2 - 51;
 
-	guess_m_pPanel = new ImagePanel( guess_m_pImage );
-	guess_m_pPanel->setParent( this );
-	guess_m_pPanel->setPos( x, y );
-	guess_m_pPanel->setVisible( true );
+	m_pPanel_guess = new ImagePanel( m_pImage_guess );
+	m_pPanel_guess->setParent( this );
+	m_pPanel_guess->setPos( x, y );
+	m_pPanel_guess->setVisible( true );
 
-	guess_m_pLoad = new ImagePanel( guess_m_pLoadImage );
-	guess_m_pLoad->setParent( guess_m_pPanel );
-	guess_m_pLoad->setPos( loadX, loadY );
-	guess_m_pLoad->setVisible( true );
+	m_pLoad_guess = new ImagePanel( m_pLoadImage_guess );
+	m_pLoad_guess->setParent( m_pPanel_guess );
+	m_pLoad_guess->setPos( loadX, loadY );
+	m_pLoad_guess->setVisible( true );
 
-	guess_m_pExit = new ImagePanel( guess_m_pExitImage );
-	guess_m_pExit->setParent( guess_m_pPanel );
-	guess_m_pExit->setPos( exitX, exitY );
-	guess_m_pExit->setVisible( true );
+	m_pExit_guess = new ImagePanel( m_pExitImage_guess );
+	m_pExit_guess->setParent( m_pPanel_guess );
+	m_pExit_guess->setPos( exitX, exitY );
+	m_pExit_guess->setVisible( true );
 
-	guess_m_pLoadButton = new ColorButton( "", loadX, loadY, 288, 36, false, true );
-	guess_m_pLoadButton->setParent( guess_m_pPanel );
-	guess_m_pLoadButton->addActionSignal( new CGameOverHandler_Command( this, 1 ) );
-	guess_m_pLoadButton->setPos( loadX, loadY );
+	m_pLoadButton_guess = new ColorButton( "", loadX, loadY, 288, 36, false, true );
+	m_pLoadButton_guess->setParent( m_pPanel_guess );
+	m_pLoadButton_guess->addActionSignal( new CGameOverHandler_Command( this, 1 ) );
+	m_pLoadButton_guess->setPos( loadX, loadY );
 
-	guess_m_pExitButton = new ColorButton( "", exitButtonX, exitY, 105, 37, false, true );
-	guess_m_pExitButton->setParent( guess_m_pPanel );
-	guess_m_pExitButton->addActionSignal( new CGameOverHandler_Command( this, 2 ) );
-	guess_m_pExitButton->setPos( exitButtonX, exitY );
+	m_pExitButton_guess = new ColorButton( "", exitButtonX, exitY, 105, 37, false, true );
+	m_pExitButton_guess->setParent( m_pPanel_guess );
+	m_pExitButton_guess->addActionSignal( new CGameOverHandler_Command( this, 2 ) );
+	m_pExitButton_guess->setPos( exitButtonX, exitY );
 
-	guess_m_flAlpha = 255;
+	m_flAlpha_guess = 255;
 
 	setBgColor( 0, 0, 0, 255 );
 
@@ -95,9 +95,9 @@ CGameOver::CGameOver() : Panel( 0, 0, ScreenWidth, ScreenHeight )
 
 CGameOver::~CGameOver()
 {
-	delete guess_m_pImage;
-	delete guess_m_pLoadImage;
-	delete guess_m_pExitImage;
+	delete m_pImage_guess;
+	delete m_pLoadImage_guess;
+	delete m_pExitImage_guess;
 }
 
 void CGameOver::ActionSignal( int cmd )
@@ -107,12 +107,12 @@ void CGameOver::ActionSignal( int cmd )
 	switch ( cmd )
 	{
 	case 1:
-		if ( guess_iDoctorMode )
+		if ( iDoctorMode_guess )
 		{
-			if ( strlen( guess_m_szCustomDoc ) > 2 )
+			if ( strlen( m_szCustomDoc_guess ) > 2 )
 			{
 				strcpy( szCommand, "map " );
-				strcat( szCommand, guess_m_szCustomDoc );
+				strcat( szCommand, m_szCustomDoc_guess );
 				gEngfuncs.pfnClientCmd( szCommand );
 			}
 			else
@@ -120,24 +120,24 @@ void CGameOver::ActionSignal( int cmd )
 				gEngfuncs.pfnClientCmd( "map c_doc_city" );
 			}
 		}
-		else if ( gViewPort->guess_m_pSaveLoad )
+		else if ( gViewPort->m_pSaveLoad_guess )
 		{
 			setVisible( false );
 
-			gViewPort->guess_m_pSaveLoad->guess_m_pSlot1Button->cursorExited();
-			gViewPort->guess_m_pSaveLoad->guess_m_pSlot2Button->cursorExited();
-			gViewPort->guess_m_pSaveLoad->guess_m_pSlot3Button->cursorExited();
-			gViewPort->guess_m_pSaveLoad->guess_m_pSlot4Button->cursorExited();
-			gViewPort->guess_m_pSaveLoad->guess_m_pSlot5Button->cursorExited();
+			gViewPort->m_pSaveLoad_guess->m_pSlot1Button_guess->cursorExited();
+			gViewPort->m_pSaveLoad_guess->m_pSlot2Button_guess->cursorExited();
+			gViewPort->m_pSaveLoad_guess->m_pSlot3Button_guess->cursorExited();
+			gViewPort->m_pSaveLoad_guess->m_pSlot4Button_guess->cursorExited();
+			gViewPort->m_pSaveLoad_guess->m_pSlot5Button_guess->cursorExited();
 
-			gViewPort->guess_m_pSaveLoad->guess_m_flSlot1ClickTime = 0;
-			gViewPort->guess_m_pSaveLoad->guess_m_flSlot2ClickTime = 0;
-			gViewPort->guess_m_pSaveLoad->guess_m_flSlot3ClickTime = 0;
-			gViewPort->guess_m_pSaveLoad->guess_m_flSlot4ClickTime = 0;
-			gViewPort->guess_m_pSaveLoad->guess_m_flSlot5ClickTime = 0;
-			gViewPort->guess_m_pSaveLoad->guess_m_iMode = 1;
-			gViewPort->guess_m_pSaveLoad->guess_UpdateSlots();
-			gViewPort->guess_m_pSaveLoad->setVisible( true );
+			gViewPort->m_pSaveLoad_guess->m_flSlot1ClickTime_guess = 0;
+			gViewPort->m_pSaveLoad_guess->m_flSlot2ClickTime_guess = 0;
+			gViewPort->m_pSaveLoad_guess->m_flSlot3ClickTime_guess = 0;
+			gViewPort->m_pSaveLoad_guess->m_flSlot4ClickTime_guess = 0;
+			gViewPort->m_pSaveLoad_guess->m_flSlot5ClickTime_guess = 0;
+			gViewPort->m_pSaveLoad_guess->m_iMode_guess = 1;
+			gViewPort->m_pSaveLoad_guess->UpdateSlots_guess();
+			gViewPort->m_pSaveLoad_guess->setVisible( true );
 			gViewPort->UpdateCursorState();
 
 			gEngfuncs.pfnServerCmd( "freeze 1024" );
@@ -147,7 +147,7 @@ void CGameOver::ActionSignal( int cmd )
 	case 2:
 		setVisible( false );
 
-		if ( guess_iMenuMode )
+		if ( iMenuMode_guess )
 		{
 			gEngfuncs.pfnClientCmd( "map c_game_menu1" );
 			gViewPort->UpdateCursorState();
@@ -163,42 +163,42 @@ void CGameOver::ActionSignal( int cmd )
 
 void CGameOver::Initialize()
 {
-	guess_m_szCustomDoc[0] = 0;
+	m_szCustomDoc_guess[0] = 0;
 	setVisible( false );
 }
 
-int guess_MsgCustomDoc( const char *pszName, int iSize, void *pbuf )
+int MsgCustomDoc_guess( const char *pszName, int iSize, void *pbuf )
 {
 	BEGIN_READ( pbuf, iSize );
 
-	if ( gViewPort->guess_m_pGameOver )
-		strcpy( gViewPort->guess_m_pGameOver->guess_m_szCustomDoc, READ_STRING() );
+	if ( gViewPort->m_pGameOver_guess )
+		strcpy( gViewPort->m_pGameOver_guess->m_szCustomDoc_guess, READ_STRING() );
 
 	return 1;
 }
 
-void guess_CustomDocInit()
+void CustomDocInit_guess()
 {
-	gEngfuncs.pfnHookUserMsg( "CustomDoc", guess_MsgCustomDoc );
+	gEngfuncs.pfnHookUserMsg( "CustomDoc", MsgCustomDoc_guess );
 }
 
 void CGameOver::setVisible( bool state )
 {
 	if ( state )
 	{
-		if ( !guess_iVGUIMenuNoMusic )
-			guess_IrrKlangPlay( "game_over.mp3" );
+		if ( !iVGUIMenuNoMusic_guess )
+			IrrKlangPlay_guess( "game_over.mp3" );
 
-		guess_m_bLoadArmed = false;
-		guess_m_bExitArmed = false;
-		guess_m_flAlpha = 255;
+		m_bLoadArmed_guess = false;
+		m_bExitArmed_guess = false;
+		m_flAlpha_guess = 255;
 
-		if ( guess_iDoctorMode )
-			guess_m_pLoad->setImage( vgui_LoadTGA( "gfx/vgui/game_over_restart.tga" ) );
+		if ( iDoctorMode_guess )
+			m_pLoad_guess->setImage( vgui_LoadTGA( "gfx/vgui/game_over_restart.tga" ) );
 		else
-			guess_m_pLoad->setImage( vgui_LoadTGA( "gfx/vgui/game_over_load.tga" ) );
+			m_pLoad_guess->setImage( vgui_LoadTGA( "gfx/vgui/game_over_load.tga" ) );
 
-		guess_m_pExit->setImage( vgui_LoadTGA( "gfx/vgui/game_over_exit.tga" ) );
+		m_pExit_guess->setImage( vgui_LoadTGA( "gfx/vgui/game_over_exit.tga" ) );
 	}
 
 	Panel::setVisible( state );
@@ -207,55 +207,55 @@ void CGameOver::setVisible( bool state )
 
 void CGameOver::solve()
 {
-	if ( guess_m_flAlpha > 0 )
-		guess_m_flAlpha -= gHUD.m_flTimeDelta * 500;
+	if ( m_flAlpha_guess > 0 )
+		m_flAlpha_guess -= gHUD.m_flTimeDelta * 500;
 
-	if ( guess_m_flAlpha < 0 )
-		guess_m_flAlpha = 0;
+	if ( m_flAlpha_guess < 0 )
+		m_flAlpha_guess = 0;
 
-	guess_m_pImage->setColor( Color( 255, 255, 255, guess_m_flAlpha ) );
-	guess_m_pLoadImage->setColor( Color( 255, 255, 255, guess_m_flAlpha ) );
-	guess_m_pExitImage->setColor( Color( 255, 255, 255, guess_m_flAlpha ) );
+	m_pImage_guess->setColor( Color( 255, 255, 255, m_flAlpha_guess ) );
+	m_pLoadImage_guess->setColor( Color( 255, 255, 255, m_flAlpha_guess ) );
+	m_pExitImage_guess->setColor( Color( 255, 255, 255, m_flAlpha_guess ) );
 
 	if ( !gEngfuncs.GetLocalPlayer() )
 		return;
 
-	if ( guess_m_pLoadButton->isArmed() )
+	if ( m_pLoadButton_guess->isArmed() )
 	{
-		if ( !guess_m_bLoadArmed )
+		if ( !m_bLoadArmed_guess )
 		{
-			if ( guess_iDoctorMode )
-				guess_m_pLoad->setImage( vgui_LoadTGA( "gfx/vgui/game_over_restart2.tga" ) );
+			if ( iDoctorMode_guess )
+				m_pLoad_guess->setImage( vgui_LoadTGA( "gfx/vgui/game_over_restart2.tga" ) );
 			else
-				guess_m_pLoad->setImage( vgui_LoadTGA( "gfx/vgui/game_over_load2.tga" ) );
+				m_pLoad_guess->setImage( vgui_LoadTGA( "gfx/vgui/game_over_load2.tga" ) );
 
 			gEngfuncs.pfnPlaySoundByName( "ui/3d_rollover.wav", 1 );
-			guess_m_bLoadArmed = true;
+			m_bLoadArmed_guess = true;
 		}
 	}
-	else if ( guess_m_bLoadArmed )
+	else if ( m_bLoadArmed_guess )
 	{
-		if ( guess_iDoctorMode )
-			guess_m_pLoad->setImage( vgui_LoadTGA( "gfx/vgui/game_over_restart.tga" ) );
+		if ( iDoctorMode_guess )
+			m_pLoad_guess->setImage( vgui_LoadTGA( "gfx/vgui/game_over_restart.tga" ) );
 		else
-			guess_m_pLoad->setImage( vgui_LoadTGA( "gfx/vgui/game_over_load.tga" ) );
+			m_pLoad_guess->setImage( vgui_LoadTGA( "gfx/vgui/game_over_load.tga" ) );
 
-		guess_m_bLoadArmed = false;
+		m_bLoadArmed_guess = false;
 	}
 
-	if ( guess_m_pExitButton->isArmed() )
+	if ( m_pExitButton_guess->isArmed() )
 	{
-		if ( !guess_m_bExitArmed )
+		if ( !m_bExitArmed_guess )
 		{
-			guess_m_pExit->setImage( vgui_LoadTGA( "gfx/vgui/game_over_exit2.tga" ) );
+			m_pExit_guess->setImage( vgui_LoadTGA( "gfx/vgui/game_over_exit2.tga" ) );
 			gEngfuncs.pfnPlaySoundByName( "ui/3d_rollover.wav", 1 );
-			guess_m_bExitArmed = true;
+			m_bExitArmed_guess = true;
 		}
 	}
-	else if ( guess_m_bExitArmed )
+	else if ( m_bExitArmed_guess )
 	{
-		guess_m_pExit->setImage( vgui_LoadTGA( "gfx/vgui/game_over_exit.tga" ) );
-		guess_m_bExitArmed = false;
+		m_pExit_guess->setImage( vgui_LoadTGA( "gfx/vgui/game_over_exit.tga" ) );
+		m_bExitArmed_guess = false;
 	}
 
 	Panel::solve();

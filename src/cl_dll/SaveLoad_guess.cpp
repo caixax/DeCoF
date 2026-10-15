@@ -12,17 +12,17 @@
 #include "parsemsg.h"
 #include "com_weapons.h"
 #include "vgui_TeamFortressViewport.h"
-#include "guess_SaveLoad.h"
-#include "guess_GameMenu.h"
-#include "guess_GameOver.h"
+#include "SaveLoad_guess.h"
+#include "GameMenu_guess.h"
+#include "GameOver_guess.h"
 #include "..\game_shared\vgui_loadtga.h"
 #include "event_api.h"
 #include <windows.h>
 #include <time.h>
 
-extern int guess_iMenuMode;
+extern int iMenuMode_guess;
 
-void guess_IrrKlangStop( float flFadeTime );
+void IrrKlangStop_guess( float flFadeTime );
 void GetCurrentPath( char *path );
 
 CSaveLoad::CSaveLoad() : Panel( 0, 0, ScreenWidth, ScreenHeight )
@@ -32,69 +32,69 @@ CSaveLoad::CSaveLoad() : Panel( 0, 0, ScreenWidth, ScreenHeight )
 	Panel *pPanel;
 	CommandButton *pButton;
 
-	guess_m_pBackgroundImage = vgui_LoadTGA( "gfx/vgui/save_load.tga" );
-	if ( guess_m_pBackgroundImage )
-		guess_m_pBackgroundImage->setColor( Color( 255, 255, 255, 1 ) );
+	m_pBackgroundImage_guess = vgui_LoadTGA( "gfx/vgui/save_load.tga" );
+	if ( m_pBackgroundImage_guess )
+		m_pBackgroundImage_guess->setColor( Color( 255, 255, 255, 1 ) );
 	else
 		gEngfuncs.Con_Printf( "Cannot load gfx/vgui/save_load.tga!\n" );
 
-	guess_m_pBackgroundImage->getSize( wide, tall );
+	m_pBackgroundImage_guess->getSize( wide, tall );
 	x = ScreenWidth / 2 - wide / 2;
 	y = ScreenHeight / 2 - tall / 2;
 
-	guess_m_pBackground = new ImagePanel( guess_m_pBackgroundImage );
-	guess_m_pBackground->setParent( this );
-	guess_m_pBackground->setPos( x, y );
-	guess_m_pBackground->setVisible( true );
+	m_pBackground_guess = new ImagePanel( m_pBackgroundImage_guess );
+	m_pBackground_guess->setParent( this );
+	m_pBackground_guess->setPos( x, y );
+	m_pBackground_guess->setVisible( true );
 
 	pButton = new CommandButton( "", 260, 398, 119, 43, true, true );
-	pButton->setParent( guess_m_pBackground );
+	pButton->setParent( m_pBackground_guess );
 	pButton->addActionSignal( new CSaveLoadHandler_Command( this, 1 ) );
 
-	guess_m_pSlot1Label = new Label( "", 93, 154, 455, 29 );
-	guess_m_pSlot1Label->setParent( guess_m_pBackground );
-	guess_m_pSlot1Label->setBgColor( 0, 0, 0, 1 );
-	guess_m_pSlot1Label->setFgColor( 255, 255, 255, 1 );
+	m_pSlot1Label_guess = new Label( "", 93, 154, 455, 29 );
+	m_pSlot1Label_guess->setParent( m_pBackground_guess );
+	m_pSlot1Label_guess->setBgColor( 0, 0, 0, 1 );
+	m_pSlot1Label_guess->setFgColor( 255, 255, 255, 1 );
 
-	guess_m_pSlot2Label = new Label( "", 93, 190, 455, 29 );
-	guess_m_pSlot2Label->setParent( guess_m_pBackground );
-	guess_m_pSlot2Label->setBgColor( 0, 0, 0, 1 );
-	guess_m_pSlot2Label->setFgColor( 255, 255, 255, 1 );
+	m_pSlot2Label_guess = new Label( "", 93, 190, 455, 29 );
+	m_pSlot2Label_guess->setParent( m_pBackground_guess );
+	m_pSlot2Label_guess->setBgColor( 0, 0, 0, 1 );
+	m_pSlot2Label_guess->setFgColor( 255, 255, 255, 1 );
 
-	guess_m_pSlot3Label = new Label( "", 93, 226, 455, 29 );
-	guess_m_pSlot3Label->setParent( guess_m_pBackground );
-	guess_m_pSlot3Label->setBgColor( 0, 0, 0, 1 );
-	guess_m_pSlot3Label->setFgColor( 255, 255, 255, 1 );
+	m_pSlot3Label_guess = new Label( "", 93, 226, 455, 29 );
+	m_pSlot3Label_guess->setParent( m_pBackground_guess );
+	m_pSlot3Label_guess->setBgColor( 0, 0, 0, 1 );
+	m_pSlot3Label_guess->setFgColor( 255, 255, 255, 1 );
 
-	guess_m_pSlot4Label = new Label( "", 93, 262, 455, 29 );
-	guess_m_pSlot4Label->setParent( guess_m_pBackground );
-	guess_m_pSlot4Label->setBgColor( 0, 0, 0, 1 );
-	guess_m_pSlot4Label->setFgColor( 255, 255, 255, 1 );
+	m_pSlot4Label_guess = new Label( "", 93, 262, 455, 29 );
+	m_pSlot4Label_guess->setParent( m_pBackground_guess );
+	m_pSlot4Label_guess->setBgColor( 0, 0, 0, 1 );
+	m_pSlot4Label_guess->setFgColor( 255, 255, 255, 1 );
 
-	guess_m_pSlot5Label = new Label( "", 93, 296, 455, 29 );
-	guess_m_pSlot5Label->setParent( guess_m_pBackground );
-	guess_m_pSlot5Label->setBgColor( 0, 0, 0, 1 );
-	guess_m_pSlot5Label->setFgColor( 255, 255, 255, 1 );
+	m_pSlot5Label_guess = new Label( "", 93, 296, 455, 29 );
+	m_pSlot5Label_guess->setParent( m_pBackground_guess );
+	m_pSlot5Label_guess->setBgColor( 0, 0, 0, 1 );
+	m_pSlot5Label_guess->setFgColor( 255, 255, 255, 1 );
 
-	guess_m_pSlot1Button = new ColorButton( "", 93, 154, 455, 29, false, false );
-	guess_m_pSlot1Button->setParent( guess_m_pBackground );
-	guess_m_pSlot1Button->addActionSignal( new CSaveLoadHandler_Command( this, 2 ) );
+	m_pSlot1Button_guess = new ColorButton( "", 93, 154, 455, 29, false, false );
+	m_pSlot1Button_guess->setParent( m_pBackground_guess );
+	m_pSlot1Button_guess->addActionSignal( new CSaveLoadHandler_Command( this, 2 ) );
 
-	guess_m_pSlot2Button = new ColorButton( "", 93, 190, 455, 29, true, true );
-	guess_m_pSlot2Button->setParent( guess_m_pBackground );
-	guess_m_pSlot2Button->addActionSignal( new CSaveLoadHandler_Command( this, 3 ) );
+	m_pSlot2Button_guess = new ColorButton( "", 93, 190, 455, 29, true, true );
+	m_pSlot2Button_guess->setParent( m_pBackground_guess );
+	m_pSlot2Button_guess->addActionSignal( new CSaveLoadHandler_Command( this, 3 ) );
 
-	guess_m_pSlot3Button = new ColorButton( "", 93, 226, 455, 29, true, true );
-	guess_m_pSlot3Button->setParent( guess_m_pBackground );
-	guess_m_pSlot3Button->addActionSignal( new CSaveLoadHandler_Command( this, 4 ) );
+	m_pSlot3Button_guess = new ColorButton( "", 93, 226, 455, 29, true, true );
+	m_pSlot3Button_guess->setParent( m_pBackground_guess );
+	m_pSlot3Button_guess->addActionSignal( new CSaveLoadHandler_Command( this, 4 ) );
 
-	guess_m_pSlot4Button = new ColorButton( "", 93, 262, 455, 29, true, true );
-	guess_m_pSlot4Button->setParent( guess_m_pBackground );
-	guess_m_pSlot4Button->addActionSignal( new CSaveLoadHandler_Command( this, 5 ) );
+	m_pSlot4Button_guess = new ColorButton( "", 93, 262, 455, 29, true, true );
+	m_pSlot4Button_guess->setParent( m_pBackground_guess );
+	m_pSlot4Button_guess->addActionSignal( new CSaveLoadHandler_Command( this, 5 ) );
 
-	guess_m_pSlot5Button = new ColorButton( "", 93, 296, 455, 29, true, true );
-	guess_m_pSlot5Button->setParent( guess_m_pBackground );
-	guess_m_pSlot5Button->addActionSignal( new CSaveLoadHandler_Command( this, 6 ) );
+	m_pSlot5Button_guess = new ColorButton( "", 93, 296, 455, 29, true, true );
+	m_pSlot5Button_guess->setParent( m_pBackground_guess );
+	m_pSlot5Button_guess->addActionSignal( new CSaveLoadHandler_Command( this, 6 ) );
 
 	// black out the screen around the picture
 	pPanel = new Panel( 0, 0, 0, 0 );
@@ -150,15 +150,15 @@ void CSaveLoad::ActionSignal( int cmd )
 			setVisible( false );
 			gViewPort->UpdateCursorState();
 
-			if ( gViewPort && gViewPort->guess_m_pGameMenu )
+			if ( gViewPort && gViewPort->m_pGameMenu_guess )
 			{
-				gViewPort->guess_m_pGameMenu->setVisible( true );
+				gViewPort->m_pGameMenu_guess->setVisible( true );
 				gViewPort->UpdateCursorState();
 			}
 		}
 		else if ( strstr( gEngfuncs.pfnGetLevelName(), "difficulty_" ) || strstr( gEngfuncs.pfnGetLevelName(), "server_" ) || strstr( gEngfuncs.pfnGetLevelName(), "unlockables" ) )
 		{
-			if ( guess_iMenuMode )
+			if ( iMenuMode_guess )
 			{
 				setVisible( false );
 				gViewPort->UpdateCursorState();
@@ -176,9 +176,9 @@ void CSaveLoad::ActionSignal( int cmd )
 			setVisible( false );
 			gViewPort->UpdateCursorState();
 
-			if ( gViewPort && gViewPort->guess_m_pGameOver )
+			if ( gViewPort && gViewPort->m_pGameOver_guess )
 			{
-				gViewPort->guess_m_pGameOver->setVisible( true );
+				gViewPort->m_pGameOver_guess->setVisible( true );
 				gViewPort->UpdateCursorState();
 			}
 		}
@@ -193,9 +193,9 @@ void CSaveLoad::ActionSignal( int cmd )
 		}
 		break;
 	case 2:
-		if ( gEngfuncs.GetClientTime() < guess_m_flSlot1ClickTime )
+		if ( gEngfuncs.GetClientTime() < m_flSlot1ClickTime_guess )
 		{
-			if ( guess_m_iMode )
+			if ( m_iMode_guess )
 			{
 				byte *pFile = gEngfuncs.COM_LoadFile( "SAVE/saveinfo1.cof", 5, NULL );
 
@@ -206,7 +206,7 @@ void CSaveLoad::ActionSignal( int cmd )
 					gEngfuncs.pfnServerCmd( "unfreeze 1024" );
 
 					if ( strstr( gEngfuncs.pfnGetLevelName(), "game_menu" ) )
-						guess_IrrKlangStop( 0 );
+						IrrKlangStop_guess( 0 );
 
 					gEngfuncs.COM_FreeFile( pFile );
 					gEngfuncs.pfnServerCmd( "cofload 1" );
@@ -218,20 +218,20 @@ void CSaveLoad::ActionSignal( int cmd )
 				gViewPort->UpdateCursorState();
 				gEngfuncs.pfnServerCmd( "unfreezesave 1024 1" );
 
-				gHUD.guess_m_flSaveHackTime = gEngfuncs.GetClientTime() + 3.25;
-				gHUD.guess_m_iSaveHackSlot = 1;
-				gHUD.guess_m_bSaveHack = true;
+				gHUD.m_flSaveHackTime_guess = gEngfuncs.GetClientTime() + 3.25;
+				gHUD.m_iSaveHackSlot_guess = 1;
+				gHUD.m_bSaveHack_guess = true;
 
-				guess_WriteSaveInfo( "saveinfo1.cof" );
+				WriteSaveInfo_guess( "saveinfo1.cof" );
 			}
 		}
 
-		guess_m_flSlot1ClickTime = gEngfuncs.GetClientTime() + 0.5;
+		m_flSlot1ClickTime_guess = gEngfuncs.GetClientTime() + 0.5;
 		break;
 	case 3:
-		if ( gEngfuncs.GetClientTime() < guess_m_flSlot2ClickTime )
+		if ( gEngfuncs.GetClientTime() < m_flSlot2ClickTime_guess )
 		{
-			if ( guess_m_iMode )
+			if ( m_iMode_guess )
 			{
 				byte *pFile = gEngfuncs.COM_LoadFile( "SAVE/saveinfo2.cof", 5, NULL );
 
@@ -242,7 +242,7 @@ void CSaveLoad::ActionSignal( int cmd )
 					gEngfuncs.pfnServerCmd( "unfreeze 1024" );
 
 					if ( strstr( gEngfuncs.pfnGetLevelName(), "game_menu" ) )
-						guess_IrrKlangStop( 0 );
+						IrrKlangStop_guess( 0 );
 
 					gEngfuncs.COM_FreeFile( pFile );
 					gEngfuncs.pfnServerCmd( "cofload 2" );
@@ -254,20 +254,20 @@ void CSaveLoad::ActionSignal( int cmd )
 				gViewPort->UpdateCursorState();
 				gEngfuncs.pfnServerCmd( "unfreezesave 1024 2" );
 
-				gHUD.guess_m_flSaveHackTime = gEngfuncs.GetClientTime() + 3.25;
-				gHUD.guess_m_iSaveHackSlot = 2;
-				gHUD.guess_m_bSaveHack = true;
+				gHUD.m_flSaveHackTime_guess = gEngfuncs.GetClientTime() + 3.25;
+				gHUD.m_iSaveHackSlot_guess = 2;
+				gHUD.m_bSaveHack_guess = true;
 
-				guess_WriteSaveInfo( "saveinfo2.cof" );
+				WriteSaveInfo_guess( "saveinfo2.cof" );
 			}
 		}
 
-		guess_m_flSlot2ClickTime = gEngfuncs.GetClientTime() + 0.5;
+		m_flSlot2ClickTime_guess = gEngfuncs.GetClientTime() + 0.5;
 		break;
 	case 4:
-		if ( gEngfuncs.GetClientTime() < guess_m_flSlot3ClickTime )
+		if ( gEngfuncs.GetClientTime() < m_flSlot3ClickTime_guess )
 		{
-			if ( guess_m_iMode )
+			if ( m_iMode_guess )
 			{
 				byte *pFile = gEngfuncs.COM_LoadFile( "SAVE/saveinfo3.cof", 5, NULL );
 
@@ -278,7 +278,7 @@ void CSaveLoad::ActionSignal( int cmd )
 					gEngfuncs.pfnServerCmd( "unfreeze 1024" );
 
 					if ( strstr( gEngfuncs.pfnGetLevelName(), "game_menu" ) )
-						guess_IrrKlangStop( 0 );
+						IrrKlangStop_guess( 0 );
 
 					gEngfuncs.COM_FreeFile( pFile );
 					gEngfuncs.pfnServerCmd( "cofload 3" );
@@ -290,20 +290,20 @@ void CSaveLoad::ActionSignal( int cmd )
 				gViewPort->UpdateCursorState();
 				gEngfuncs.pfnServerCmd( "unfreezesave 1024 3" );
 
-				gHUD.guess_m_flSaveHackTime = gEngfuncs.GetClientTime() + 3.25;
-				gHUD.guess_m_iSaveHackSlot = 3;
-				gHUD.guess_m_bSaveHack = true;
+				gHUD.m_flSaveHackTime_guess = gEngfuncs.GetClientTime() + 3.25;
+				gHUD.m_iSaveHackSlot_guess = 3;
+				gHUD.m_bSaveHack_guess = true;
 
-				guess_WriteSaveInfo( "saveinfo3.cof" );
+				WriteSaveInfo_guess( "saveinfo3.cof" );
 			}
 		}
 
-		guess_m_flSlot3ClickTime = gEngfuncs.GetClientTime() + 0.5;
+		m_flSlot3ClickTime_guess = gEngfuncs.GetClientTime() + 0.5;
 		break;
 	case 5:
-		if ( gEngfuncs.GetClientTime() < guess_m_flSlot4ClickTime )
+		if ( gEngfuncs.GetClientTime() < m_flSlot4ClickTime_guess )
 		{
-			if ( guess_m_iMode )
+			if ( m_iMode_guess )
 			{
 				byte *pFile = gEngfuncs.COM_LoadFile( "SAVE/saveinfo4.cof", 5, NULL );
 
@@ -314,7 +314,7 @@ void CSaveLoad::ActionSignal( int cmd )
 					gEngfuncs.pfnServerCmd( "unfreeze 1024" );
 
 					if ( strstr( gEngfuncs.pfnGetLevelName(), "game_menu" ) )
-						guess_IrrKlangStop( 0 );
+						IrrKlangStop_guess( 0 );
 
 					gEngfuncs.COM_FreeFile( pFile );
 					gEngfuncs.pfnServerCmd( "cofload 4" );
@@ -326,20 +326,20 @@ void CSaveLoad::ActionSignal( int cmd )
 				gViewPort->UpdateCursorState();
 				gEngfuncs.pfnServerCmd( "unfreezesave 1024 4" );
 
-				gHUD.guess_m_flSaveHackTime = gEngfuncs.GetClientTime() + 3.25;
-				gHUD.guess_m_iSaveHackSlot = 4;
-				gHUD.guess_m_bSaveHack = true;
+				gHUD.m_flSaveHackTime_guess = gEngfuncs.GetClientTime() + 3.25;
+				gHUD.m_iSaveHackSlot_guess = 4;
+				gHUD.m_bSaveHack_guess = true;
 
-				guess_WriteSaveInfo( "saveinfo4.cof" );
+				WriteSaveInfo_guess( "saveinfo4.cof" );
 			}
 		}
 
-		guess_m_flSlot4ClickTime = gEngfuncs.GetClientTime() + 0.5;
+		m_flSlot4ClickTime_guess = gEngfuncs.GetClientTime() + 0.5;
 		break;
 	case 6:
-		if ( gEngfuncs.GetClientTime() < guess_m_flSlot5ClickTime )
+		if ( gEngfuncs.GetClientTime() < m_flSlot5ClickTime_guess )
 		{
-			if ( guess_m_iMode )
+			if ( m_iMode_guess )
 			{
 				byte *pFile = gEngfuncs.COM_LoadFile( "SAVE/saveinfo5.cof", 5, NULL );
 
@@ -350,7 +350,7 @@ void CSaveLoad::ActionSignal( int cmd )
 					gEngfuncs.pfnServerCmd( "unfreeze 1024" );
 
 					if ( strstr( gEngfuncs.pfnGetLevelName(), "game_menu" ) )
-						guess_IrrKlangStop( 0 );
+						IrrKlangStop_guess( 0 );
 
 					gEngfuncs.COM_FreeFile( pFile );
 					gEngfuncs.pfnServerCmd( "cofload 5" );
@@ -362,15 +362,15 @@ void CSaveLoad::ActionSignal( int cmd )
 				gViewPort->UpdateCursorState();
 				gEngfuncs.pfnServerCmd( "unfreezesave 1024 5" );
 
-				gHUD.guess_m_flSaveHackTime = gEngfuncs.GetClientTime() + 3.25;
-				gHUD.guess_m_iSaveHackSlot = 5;
-				gHUD.guess_m_bSaveHack = true;
+				gHUD.m_flSaveHackTime_guess = gEngfuncs.GetClientTime() + 3.25;
+				gHUD.m_iSaveHackSlot_guess = 5;
+				gHUD.m_bSaveHack_guess = true;
 
-				guess_WriteSaveInfo( "saveinfo5.cof" );
+				WriteSaveInfo_guess( "saveinfo5.cof" );
 			}
 		}
 
-		guess_m_flSlot5ClickTime = gEngfuncs.GetClientTime() + 0.5;
+		m_flSlot5ClickTime_guess = gEngfuncs.GetClientTime() + 0.5;
 		break;
 	}
 }
@@ -380,31 +380,31 @@ void CSaveLoad::Initialize()
 	setVisible( false );
 }
 
-int guess_MsgSaveLoad( const char *pszName, int iSize, void *pbuf )
+int MsgSaveLoad_guess( const char *pszName, int iSize, void *pbuf )
 {
 	BEGIN_READ( pbuf, iSize );
 
-	if ( gViewPort->guess_m_pSaveLoad )
+	if ( gViewPort->m_pSaveLoad_guess )
 	{
-		gViewPort->guess_m_pSaveLoad->guess_m_pSlot1Button->cursorExited();
-		gViewPort->guess_m_pSaveLoad->guess_m_pSlot2Button->cursorExited();
-		gViewPort->guess_m_pSaveLoad->guess_m_pSlot3Button->cursorExited();
-		gViewPort->guess_m_pSaveLoad->guess_m_pSlot4Button->cursorExited();
-		gViewPort->guess_m_pSaveLoad->guess_m_pSlot5Button->cursorExited();
+		gViewPort->m_pSaveLoad_guess->m_pSlot1Button_guess->cursorExited();
+		gViewPort->m_pSaveLoad_guess->m_pSlot2Button_guess->cursorExited();
+		gViewPort->m_pSaveLoad_guess->m_pSlot3Button_guess->cursorExited();
+		gViewPort->m_pSaveLoad_guess->m_pSlot4Button_guess->cursorExited();
+		gViewPort->m_pSaveLoad_guess->m_pSlot5Button_guess->cursorExited();
 
-		gViewPort->guess_m_pSaveLoad->guess_m_flSlot1ClickTime = 0;
-		gViewPort->guess_m_pSaveLoad->guess_m_flSlot2ClickTime = 0;
-		gViewPort->guess_m_pSaveLoad->guess_m_flSlot3ClickTime = 0;
-		gViewPort->guess_m_pSaveLoad->guess_m_flSlot4ClickTime = 0;
-		gViewPort->guess_m_pSaveLoad->guess_m_flSlot5ClickTime = 0;
+		gViewPort->m_pSaveLoad_guess->m_flSlot1ClickTime_guess = 0;
+		gViewPort->m_pSaveLoad_guess->m_flSlot2ClickTime_guess = 0;
+		gViewPort->m_pSaveLoad_guess->m_flSlot3ClickTime_guess = 0;
+		gViewPort->m_pSaveLoad_guess->m_flSlot4ClickTime_guess = 0;
+		gViewPort->m_pSaveLoad_guess->m_flSlot5ClickTime_guess = 0;
 
-		gViewPort->guess_m_pSaveLoad->guess_m_iMode = READ_BYTE();
+		gViewPort->m_pSaveLoad_guess->m_iMode_guess = READ_BYTE();
 
-		if ( !gViewPort->guess_m_pSaveLoad->guess_m_iMode )
-			strcpy( gViewPort->guess_m_pSaveLoad->guess_m_szSaveName, READ_STRING() );
+		if ( !gViewPort->m_pSaveLoad_guess->m_iMode_guess )
+			strcpy( gViewPort->m_pSaveLoad_guess->m_szSaveName_guess, READ_STRING() );
 
-		gViewPort->guess_m_pSaveLoad->guess_UpdateSlots();
-		gViewPort->guess_m_pSaveLoad->setVisible( true );
+		gViewPort->m_pSaveLoad_guess->UpdateSlots_guess();
+		gViewPort->m_pSaveLoad_guess->setVisible( true );
 		gViewPort->UpdateCursorState();
 		gEngfuncs.pfnServerCmd( "freeze 1024" );
 
@@ -417,27 +417,27 @@ int guess_MsgSaveLoad( const char *pszName, int iSize, void *pbuf )
 	return 1;
 }
 
-bool guess_DirectoryExists( const char *pszPath )
+bool DirectoryExists_guess( const char *pszPath )
 {
 	return GetFileAttributes( pszPath ) != INVALID_FILE_ATTRIBUTES;
 }
 
-void CSaveLoad::guess_UpdateSlots()
+void CSaveLoad::UpdateSlots_guess()
 {
-	guess_m_pSlot1Label->setText( "" );
-	guess_m_pSlot2Label->setText( "" );
-	guess_m_pSlot3Label->setText( "" );
-	guess_m_pSlot4Label->setText( "" );
-	guess_m_pSlot5Label->setText( "" );
+	m_pSlot1Label_guess->setText( "" );
+	m_pSlot2Label_guess->setText( "" );
+	m_pSlot3Label_guess->setText( "" );
+	m_pSlot4Label_guess->setText( "" );
+	m_pSlot5Label_guess->setText( "" );
 
-	guess_ReadSlot( 1 );
-	guess_ReadSlot( 2 );
-	guess_ReadSlot( 3 );
-	guess_ReadSlot( 4 );
-	guess_ReadSlot( 5 );
+	ReadSlot_guess( 1 );
+	ReadSlot_guess( 2 );
+	ReadSlot_guess( 3 );
+	ReadSlot_guess( 4 );
+	ReadSlot_guess( 5 );
 }
 
-void CSaveLoad::guess_ReadSlot( int slot )
+void CSaveLoad::ReadSlot_guess( int slot )
 {
 	char szPath[256];
 
@@ -457,35 +457,35 @@ void CSaveLoad::guess_ReadSlot( int slot )
 		switch ( slot )
 		{
 		case 1:
-			guess_m_pSlot1Label->setText( line.c_str() );
-			guess_m_pSlot1Label->setContentAlignment( Label::a_center );
+			m_pSlot1Label_guess->setText( line.c_str() );
+			m_pSlot1Label_guess->setContentAlignment( Label::a_center );
 			break;
 		case 2:
-			guess_m_pSlot2Label->setText( line.c_str() );
-			guess_m_pSlot2Label->setContentAlignment( Label::a_center );
+			m_pSlot2Label_guess->setText( line.c_str() );
+			m_pSlot2Label_guess->setContentAlignment( Label::a_center );
 			break;
 		case 3:
-			guess_m_pSlot3Label->setText( line.c_str() );
-			guess_m_pSlot3Label->setContentAlignment( Label::a_center );
+			m_pSlot3Label_guess->setText( line.c_str() );
+			m_pSlot3Label_guess->setContentAlignment( Label::a_center );
 			break;
 		case 4:
-			guess_m_pSlot4Label->setText( line.c_str() );
-			guess_m_pSlot4Label->setContentAlignment( Label::a_center );
+			m_pSlot4Label_guess->setText( line.c_str() );
+			m_pSlot4Label_guess->setContentAlignment( Label::a_center );
 			break;
 		case 5:
-			guess_m_pSlot5Label->setText( line.c_str() );
-			guess_m_pSlot5Label->setContentAlignment( Label::a_center );
+			m_pSlot5Label_guess->setText( line.c_str() );
+			m_pSlot5Label_guess->setContentAlignment( Label::a_center );
 			break;
 		}
 	}
 }
 
-void guess_SaveLoadInit()
+void SaveLoadInit_guess()
 {
-	gEngfuncs.pfnHookUserMsg( "SaveLoad", guess_MsgSaveLoad );
+	gEngfuncs.pfnHookUserMsg( "SaveLoad", MsgSaveLoad_guess );
 }
 
-void CSaveLoad::guess_WriteSaveInfo( const char *pszFile )
+void CSaveLoad::WriteSaveInfo_guess( const char *pszFile )
 {
 	char szDir[MAX_PATH];
 	char szPath[256];
@@ -502,7 +502,7 @@ void CSaveLoad::guess_WriteSaveInfo( const char *pszFile )
 			szDir[i] = '\\';
 	}
 
-	if ( !guess_DirectoryExists( szDir ) )
+	if ( !DirectoryExists_guess( szDir ) )
 	{
 		gEngfuncs.Con_Printf( "Creating save directory %s\n", szDir );
 
@@ -526,7 +526,7 @@ void CSaveLoad::guess_WriteSaveInfo( const char *pszFile )
 		if ( szTime[strlen( szTime ) - 1] == '\n' )
 			szTime[strlen( szTime ) - 1] = 0;
 
-		file << guess_m_szSaveName << " - " << szTime;
+		file << m_szSaveName_guess << " - " << szTime;
 		file.close();
 	}
 }

@@ -1503,7 +1503,7 @@ void ClientCommand( edict_t *pEntity )
 		CBasePlayer *pPlayer = GetClassPtr((CBasePlayer *)pev);
 
 		if ( pPlayer && pPlayer->IsDeveloper() )
-			pPlayer->guess_m_bMuschi2 = !pPlayer->guess_m_bMuschi2;
+			pPlayer->m_bMuschi2_guess = !pPlayer->m_bMuschi2_guess;
 	}
 	else if ( FStrEq( pcmd, "knockout" ) )
 	{
@@ -1622,7 +1622,7 @@ void ClientCommand( edict_t *pEntity )
 				CBaseEntity *plr = UTIL_PlayerByIndex( i );
 
 				if ( plr )
-					ALERT( at_console, "Donator status: %s | %i \n", STRING( plr->pev->netname ), plr->guess_m_iNew16a );
+					ALERT( at_console, "Donator status: %s | %i \n", STRING( plr->pev->netname ), plr->m_iNew16a_guess );
 			}
 		}
 	}
@@ -3732,7 +3732,7 @@ void UpdateClientData ( const struct edict_s *ent, int sendweapons, struct clien
 	if ( pl )
 	{
 		cd->vuser1 = pl->pev->vuser1;
-		cd->isdonator = pl->guess_m_iNew16a;
+		cd->isdonator = pl->m_iNew16a_guess;
 	}
 }
 
@@ -3754,7 +3754,7 @@ void CmdStart( const edict_t *player, const struct usercmd_s *cmd, unsigned int 
 	if( !pl )
 		return;
 
-	pl->guess_m_iNew16a = cmd->is_donator;
+	pl->m_iNew16a_guess = cmd->is_donator;
 
 	if ( cmd->viewangles[2] > 0 )
 		pl->m_iUsingMic = 1;

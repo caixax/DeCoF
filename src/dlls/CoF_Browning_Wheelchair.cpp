@@ -276,7 +276,7 @@ void CBrowningWheelchair::PrimaryAttack( void )
 
 	m_pPlayer->ViewKnock( 3.0 );
 
-	guess_UTIL_PlayWeaponSound( "weapons_new/browning/browning_fire.wav", 0, true, m_pPlayer->EarPosition(), m_pPlayer, true );
+	UTIL_PlayWeaponSound_guess( "weapons_new/browning/browning_fire.wav", 0, true, m_pPlayer->EarPosition(), m_pPlayer, true );
 
 	m_pPlayer->m_iExtraSoundTypes = bits_SOUND_COMBAT;
 	m_pPlayer->m_flStopExtraSoundTime = gpGlobals->time + 0.2;

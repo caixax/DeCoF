@@ -27,11 +27,11 @@
 #include "rain.h"
 #include "event_api.h"
 #include "vgui_TeamFortressViewport.h"
-#include "guess_HUDControl.h"
-#include "guess_RECBInventory.h"
-#include "guess_Documents.h"
+#include "HUDControl_guess.h"
+#include "RECBInventory_guess.h"
+#include "Documents_guess.h"
 #include "glmanager.h"
-#include "guess_CgWater.h"
+#include "CgWater_guess.h"
 #include "..\game_shared\vgui_loadtga.h"
 #include <direct.h>
 
@@ -43,28 +43,28 @@ float g_fEndDist;
 int g_iFinalEndDist;   //for fading
 float g_fFadeDuration; //negative = fading out
 
-int guess_iDifficulty;				// "difficulty" cvar, read at InitHUD
-int guess_iGetUpTaps;				// FallOver message, +jump presses needed to send "tapgetup"
-int guess_iGetUpTapCount;			// +jump presses since the FallOver message
-bool guess_bCustomFingerTexture;	// CustomFng message
-bool guess_bCustomGloveTexture;		// CustomGlv message
-bool guess_bWheelchairLock;			// Wheelchair message
-bool guess_bAttachCam;		// cleared by AttachCam
-int guess_g_iDickMode;
-int guess_iWheelchair;				// Wheelchair message, the entity (0 when off)
-int guess_iBoat;					// Boat message, the entity (0 when off)
-cl_entity_t *guess_pAttachCamEnt;	// AttachCam message, the entity the view is attached to
-int guess_iAttachCamFlag;			// AttachCam message
-int guess_iUnknown10542BC8;			// AttachCam message
-float guess_flUnknown10542BCC;		// AttachCam message
-float guess_flUnknown10542BD0;		// AttachCam message
-float guess_flUnknown10542BD4;		// AttachCam message
+int iDifficulty_guess;				// "difficulty" cvar, read at InitHUD
+int iGetUpTaps_guess;				// FallOver message, +jump presses needed to send "tapgetup"
+int iGetUpTapCount_guess;			// +jump presses since the FallOver message
+bool bCustomFingerTexture_guess;	// CustomFng message
+bool bCustomGloveTexture_guess;		// CustomGlv message
+bool bWheelchairLock_guess;			// Wheelchair message
+bool bAttachCam_guess;		// cleared by AttachCam
+int g_iDickMode_guess;
+int iWheelchair_guess;				// Wheelchair message, the entity (0 when off)
+int iBoat_guess;					// Boat message, the entity (0 when off)
+cl_entity_t *pAttachCamEnt_guess;	// AttachCam message, the entity the view is attached to
+int iAttachCamFlag_guess;			// AttachCam message
+int iUnknown10542BC8_guess;			// AttachCam message
+float flUnknown10542BCC_guess;		// AttachCam message
+float flUnknown10542BD0_guess;		// AttachCam message
+float flUnknown10542BD4_guess;		// AttachCam message
 
 char com_token[ 1500 ];
 
-vec3_t guess_vecUnknown105431B4;	// AttachCam message
-vec3_t guess_vecUnknown105431C0;	// AttachCam message, the view angles
-vec3_t guess_vecUnknown105431CC;	// AttachCam message, render_origin
+vec3_t vecUnknown105431B4_guess;	// AttachCam message
+vec3_t vecUnknown105431C0_guess;	// AttachCam message, the view angles
+vec3_t vecUnknown105431CC_guess;	// AttachCam message, render_origin
 
 #define MAX_CLIENTS 32
 
@@ -73,21 +73,21 @@ extern BEAM *pBeam2;
 
 extern "C" int iClientResetMaterials;
 
-extern cl_entity_t *guess_pCamTargetEnt;
-extern vec3_t guess_vecWheelchairAngles;
-extern vec3_t guess_vecCameraAttachment;
+extern cl_entity_t *pCamTargetEnt_guess;
+extern vec3_t vecWheelchairAngles_guess;
+extern vec3_t vecCameraAttachment_guess;
 extern vec3_t render_origin;
-extern int guess_iSkipSceneFramerate;
-extern int guess_iGreyFade;					// GreyFade message
-extern int guess_iUnknown104CC468;			// cleared by the Concuss message, never read
-extern bool guess_bUnknown10559514;			// cleared by the AttachCam message
-extern bool guess_g_bTakePhoto;				// TakePhoto message, the next frame is captured
-extern bool guess_g_bHandsLoaded;
-extern bool guess_g_bSleeveLoaded;
-extern bool guess_g_bGloveLoaded;
-extern bool guess_g_bPoliceSleeveLoaded;
+extern int iSkipSceneFramerate_guess;
+extern int iGreyFade_guess;					// GreyFade message
+extern int iUnknown104CC468_guess;			// cleared by the Concuss message, never read
+extern bool bUnknown10559514_guess;			// cleared by the AttachCam message
+extern bool g_bTakePhoto_guess;				// TakePhoto message, the next frame is captured
+extern bool g_bHandsLoaded_guess;
+extern bool g_bSleeveLoaded_guess;
+extern bool g_bGloveLoaded_guess;
+extern bool g_bPoliceSleeveLoaded_guess;
 
-void guess_MuzzleFlash( cl_entity_t *pEntity, int iAttachment, bool bAlt, float flScale );
+void MuzzleFlash_guess( cl_entity_t *pEntity, int iAttachment, bool bAlt, float flScale );
 
 //=========================================================
 // Declarations this file takes from the Steamworks SDK
@@ -169,12 +169,12 @@ public:
 extern "C" __declspec( dllimport ) ISteamFriends * __cdecl SteamFriends();
 //=========================================================
 
-void guess_IrrKlangPlay( const char *pszFile );
-void guess_IrrKlangPlaySFX( const char *pszFile, int iType, bool bFlag, vec3_t vecOrigin );
-void guess_IrrKlangSetParams( float flParm1, float flParm2, float flParm3, float flParm4 );
-void guess_IrrKlangSetLoop( bool bLoop );
-void guess_IrrKlangSetStopping( bool bStopping );
-void guess_IrrKlangStop( float flFadeTime );
+void IrrKlangPlay_guess( const char *pszFile );
+void IrrKlangPlaySFX_guess( const char *pszFile, int iType, bool bFlag, vec3_t vecOrigin );
+void IrrKlangSetParams_guess( float flParm1, float flParm2, float flParm3, float flParm4 );
+void IrrKlangSetLoop_guess( bool bLoop );
+void IrrKlangSetStopping_guess( bool bStopping );
+void IrrKlangStop_guess( float flFadeTime );
 
 //
 // COM_Parse, the same code as in multiplay_gamerules.cpp of the server
@@ -312,7 +312,7 @@ char *CHud::CheckItem( char *pszName, char *pszFile )
 }
 
 // Steam clan 0x29D6CA
-int guess_IsInDonatorGroup1( void )
+int IsInDonatorGroup1_guess( void )
 {
 	if ( SteamFriends() )
 	{
@@ -334,7 +334,7 @@ int guess_IsInDonatorGroup1( void )
 }
 
 // Steam clan 0x46AE0A
-int guess_IsInDonatorGroup2( void )
+int IsInDonatorGroup2_guess( void )
 {
 	if ( SteamFriends() )
 	{
@@ -371,7 +371,7 @@ int CHud :: MsgFunc_ResetHUD(const char *pszName, int iSize, void *pbuf )
 		pList = pList->pNext;
 	}
 
-	guess_pCamTargetEnt = NULL;
+	pCamTargetEnt_guess = NULL;
 
 	// reset sensitivity
 	m_flMouseSensitivity = 0;
@@ -379,50 +379,50 @@ int CHud :: MsgFunc_ResetHUD(const char *pszName, int iSize, void *pbuf )
 	// reset concussion effect
 	m_iConcussionEffect = 0;
 
-	guess_m_flResetTime = gEngfuncs.GetClientTime();
-	guess_m_flUnknown2A84 = 0;
-	guess_m_bUnknown2A88 = false;
+	m_flResetTime_guess = gEngfuncs.GetClientTime();
+	m_flUnknown2A84_guess = 0;
+	m_bUnknown2A88_guess = false;
 
-	guess_m_iFPSMin = 0;
-	guess_m_iFPSMax = 0;
-	guess_m_iFPSAverage = 0;
-	guess_m_bFPSToggle = false;
-	guess_m_flNextFPSTime = gEngfuncs.GetClientTime();
+	m_iFPSMin_guess = 0;
+	m_iFPSMax_guess = 0;
+	m_iFPSAverage_guess = 0;
+	m_bFPSToggle_guess = false;
+	m_flNextFPSTime_guess = gEngfuncs.GetClientTime();
 
 	for ( int i = 1; i <= 100; i++ )
-		guess_m_iFPS[i] = 0;
+		m_iFPS_guess[i] = 0;
 
-	guess_m_iLadder = 0;
-	guess_m_flUnknown2A9C = 0;
-	guess_m_vecViewOfs.x = guess_m_vecViewOfs.y = guess_m_vecViewOfs.z = 0;
-	guess_m_flLadderTime = gEngfuncs.GetClientTime();
+	m_iLadder_guess = 0;
+	m_flUnknown2A9C_guess = 0;
+	m_vecViewOfs_guess.x = m_vecViewOfs_guess.y = m_vecViewOfs_guess.z = 0;
+	m_flLadderTime_guess = gEngfuncs.GetClientTime();
 
 	//LRC - reset fog
 	g_fStartDist = 0;
 	g_fEndDist = 0;
 
-	guess_m_iFallOver = 0;
-	guess_m_iMaglite = 0;
-	guess_m_iUnreadSMS = 0;
-	guess_m_flUnreadSMSTime = gEngfuncs.GetClientTime();
+	m_iFallOver_guess = 0;
+	m_iMaglite_guess = 0;
+	m_iUnreadSMS_guess = 0;
+	m_flUnreadSMSTime_guess = gEngfuncs.GetClientTime();
 
 	if ( gViewPort )
-		gViewPort->guess_m_flKeyInputTime = gEngfuncs.GetClientTime();
+		gViewPort->m_flKeyInputTime_guess = gEngfuncs.GetClientTime();
 
-	guess_m_iViewEntity = 0;
-	guess_m_flForwardTapTime = gEngfuncs.GetClientTime();
-	guess_m_flBackTapTime = gEngfuncs.GetClientTime();
-	guess_m_flLeftTapTime = gEngfuncs.GetClientTime();
-	guess_m_flRightTapTime = gEngfuncs.GetClientTime();
-	guess_m_BlackBar.guess_m_iOn = 0;
-	guess_m_bViewLock = false;
+	m_iViewEntity_guess = 0;
+	m_flForwardTapTime_guess = gEngfuncs.GetClientTime();
+	m_flBackTapTime_guess = gEngfuncs.GetClientTime();
+	m_flLeftTapTime_guess = gEngfuncs.GetClientTime();
+	m_flRightTapTime_guess = gEngfuncs.GetClientTime();
+	m_BlackBar_guess.m_iOn_guess = 0;
+	m_bViewLock_guess = false;
 
-	if ( gViewPort && gViewPort->guess_m_pRECBInventory )
+	if ( gViewPort && gViewPort->m_pRECBInventory_guess )
 	{
 		for ( int i = 1; i <= 6; i++ )
-			guess_GetInventoryItem( i )[0] = 0;
+			GetInventoryItem_guess( i )[0] = 0;
 
-		gViewPort->guess_m_pRECBInventory->guess_Reset();
+		gViewPort->m_pRECBInventory_guess->Reset_guess();
 	}
 
 	if ( !strcmp( gEngfuncs.pfnGetLevelName(), "maps/video_stress_test.bsp" ) )
@@ -450,22 +450,22 @@ void CHud :: MsgFunc_InitHUD( const char *pszName, int iSize, void *pbuf )
 	g_fStartDist = 0;
 	g_fEndDist = 0;
 
-	guess_m_iMaglite = 0;
-	guess_m_iUnreadSMS = 0;
-	guess_m_flUnreadSMSTime = gEngfuncs.GetClientTime();
-	gViewPort->guess_m_flKeyInputTime = gEngfuncs.GetClientTime();
-	guess_m_iViewEntity = 0;
-	guess_m_flForwardTapTime = gEngfuncs.GetClientTime();
-	guess_m_flBackTapTime = gEngfuncs.GetClientTime();
-	guess_m_flLeftTapTime = gEngfuncs.GetClientTime();
-	guess_m_flRightTapTime = gEngfuncs.GetClientTime();
+	m_iMaglite_guess = 0;
+	m_iUnreadSMS_guess = 0;
+	m_flUnreadSMSTime_guess = gEngfuncs.GetClientTime();
+	gViewPort->m_flKeyInputTime_guess = gEngfuncs.GetClientTime();
+	m_iViewEntity_guess = 0;
+	m_flForwardTapTime_guess = gEngfuncs.GetClientTime();
+	m_flBackTapTime_guess = gEngfuncs.GetClientTime();
+	m_flLeftTapTime_guess = gEngfuncs.GetClientTime();
+	m_flRightTapTime_guess = gEngfuncs.GetClientTime();
 
-	guess_iDifficulty = gEngfuncs.pfnGetCvarFloat( "difficulty" );
+	iDifficulty_guess = gEngfuncs.pfnGetCvarFloat( "difficulty" );
 
-	guess_m_flResetTime = gEngfuncs.GetClientTime();
-	guess_m_flUnknown2A84 = 0;
-	guess_m_bUnknown2A88 = false;
-	guess_m_bViewLock = false;
+	m_flResetTime_guess = gEngfuncs.GetClientTime();
+	m_flUnknown2A84_guess = 0;
+	m_bUnknown2A88_guess = false;
+	m_bViewLock_guess = false;
 
 	m_iSkyMode = SKY_OFF; //LRC
 
@@ -482,13 +482,13 @@ void CHud :: MsgFunc_InitHUD( const char *pszName, int iSize, void *pbuf )
 	//Probably not a good place to put this.
 	pBeam = pBeam2 = NULL;
 
-	if ( guess_g_TextureManager.guess_IsHardware() )
+	if ( g_TextureManager_guess.IsHardware_guess() )
 	{
-		guess_g_TextureManager.guess_Reset();
-		guess_g_TextureManager.guess_LoadPlayerShadow();
-		guess_g_CgContext.guess_Shutdown();
-		guess_g_CgContext.guess_Init();
-		guess_g_CgWater.guess_Init();
+		g_TextureManager_guess.Reset_guess();
+		g_TextureManager_guess.LoadPlayerShadow_guess();
+		g_CgContext_guess.Shutdown_guess();
+		g_CgContext_guess.Init_guess();
+		g_CgWater_guess.Init_guess();
 	}
 }
 
@@ -617,12 +617,12 @@ int CHud :: MsgFunc_Concuss( const char *pszName, int iSize, void *pbuf )
 
 	if ( READ_BYTE() )
 	{
-		guess_m_bConcussed = true;
+		m_bConcussed_guess = true;
 	}
 	else
 	{
-		guess_m_bConcussed = false;
-		guess_iUnknown104CC468 = 0;
+		m_bConcussed_guess = false;
+		iUnknown104CC468_guess = 0;
 	}
 
 	return 1;
@@ -684,20 +684,20 @@ int CHud :: MsgFunc_PlayMP3( const char *pszName, int iSize, void *pbuf ) //AJH 
 	if ( iPlay )
 	{
 		if ( flFadeTime != 0 )
-			guess_IrrKlangSetParams( -1, -1, gEngfuncs.GetClientTime(), flFadeTime );
+			IrrKlangSetParams_guess( -1, -1, gEngfuncs.GetClientTime(), flFadeTime );
 
 		if ( iLoop )
-			guess_IrrKlangSetLoop( true );
+			IrrKlangSetLoop_guess( true );
 		else
-			guess_IrrKlangSetLoop( false );
+			IrrKlangSetLoop_guess( false );
 
-		guess_IrrKlangSetStopping( false );
-		guess_IrrKlangPlay( szFile );
+		IrrKlangSetStopping_guess( false );
+		IrrKlangPlay_guess( szFile );
 	}
 	else
 	{
-		guess_IrrKlangSetStopping( true );
-		guess_IrrKlangStop( flFadeTime );
+		IrrKlangSetStopping_guess( true );
+		IrrKlangStop_guess( flFadeTime );
 	}
 
 	return 1;
@@ -734,22 +734,22 @@ int CHud :: MsgFunc_ProFont( const char *pszName, int iSize, void *pbuf )
 
 	if ( strstr( szText, "DEADNOTIFY" ) )
 	{
-		if ( gHUD.guess_GetKeyForCommand( "+jump" ) )
-			sprintf( szRespawn, "Press %s to respawn (lose weapons) or wait to be revived", gHUD.guess_GetKeyForCommand( "+jump" ) );
+		if ( gHUD.GetKeyForCommand_guess( "+jump" ) )
+			sprintf( szRespawn, "Press %s to respawn (lose weapons) or wait to be revived", gHUD.GetKeyForCommand_guess( "+jump" ) );
 		else
 			strcpy( szRespawn, "Press jump to respawn (lose weapons) or wait to be revived" );
 
 		strncpy( szText, szRespawn, 256 );
 	}
 
-	if ( gViewPort && gViewPort->guess_m_pHUDControl )
+	if ( gViewPort && gViewPort->m_pHUDControl_guess )
 	{
-		strcpy( gViewPort->guess_m_pHUDControl->guess_m_szMessage, szText );
-		gViewPort->guess_m_pHUDControl->guess_m_flMessageAlpha = 255;
-		gViewPort->guess_m_pHUDControl->guess_m_bMessageFadeOut = false;
-		gViewPort->guess_m_pHUDControl->guess_m_bMessageHold = false;
-		gViewPort->guess_m_pHUDControl->guess_m_flMessageHoldTime = 0;
-		gViewPort->guess_m_pHUDControl->guess_m_iMessageType = iType;
+		strcpy( gViewPort->m_pHUDControl_guess->m_szMessage_guess, szText );
+		gViewPort->m_pHUDControl_guess->m_flMessageAlpha_guess = 255;
+		gViewPort->m_pHUDControl_guess->m_bMessageFadeOut_guess = false;
+		gViewPort->m_pHUDControl_guess->m_bMessageHold_guess = false;
+		gViewPort->m_pHUDControl_guess->m_flMessageHoldTime_guess = 0;
+		gViewPort->m_pHUDControl_guess->m_iMessageType_guess = iType;
 	}
 
 	return 1;
@@ -758,14 +758,14 @@ int CHud :: MsgFunc_ProFont( const char *pszName, int iSize, void *pbuf )
 int CHud :: MsgFunc_Maglite( const char *pszName, int iSize, void *pbuf )
 {
 	BEGIN_READ( pbuf, iSize );
-	guess_m_iMaglite = READ_BYTE();
+	m_iMaglite_guess = READ_BYTE();
 	return 1;
 }
 
 int CHud :: MsgFunc_Blur( const char *pszName, int iSize, void *pbuf )
 {
 	BEGIN_READ( pbuf, iSize );
-	guess_m_iBlur = READ_BYTE();
+	m_iBlur_guess = READ_BYTE();
 	return 1;
 }
 
@@ -773,22 +773,22 @@ int CHud :: MsgFunc_UnreadSMS( const char *pszName, int iSize, void *pbuf )
 {
 	BEGIN_READ( pbuf, iSize );
 
-	guess_m_iUnreadSMS = READ_BYTE();
+	m_iUnreadSMS_guess = READ_BYTE();
 	int iBatteryLow = READ_BYTE();
 
-	if ( gViewPort && gViewPort->guess_m_pHUDControl )
+	if ( gViewPort && gViewPort->m_pHUDControl_guess )
 	{
-		if ( !gHUD.guess_m_iUnreadSMS )
-			gViewPort->guess_m_pHUDControl->guess_ShowSMSIcon( false );
+		if ( !gHUD.m_iUnreadSMS_guess )
+			gViewPort->m_pHUDControl_guess->ShowSMSIcon_guess( false );
 
-		if ( gHUD.guess_m_iUnreadSMS )
+		if ( gHUD.m_iUnreadSMS_guess )
 		{
 			if ( iBatteryLow )
-				gViewPort->guess_m_pHUDControl->guess_m_pSMSIcon->setImage( vgui_LoadTGA( "gfx/vgui/phone_battery_low.tga" ) );
+				gViewPort->m_pHUDControl_guess->m_pSMSIcon_guess->setImage( vgui_LoadTGA( "gfx/vgui/phone_battery_low.tga" ) );
 			else
-				gViewPort->guess_m_pHUDControl->guess_m_pSMSIcon->setImage( vgui_LoadTGA( "gfx/vgui/640_hudelem_smsicon.tga" ) );
+				gViewPort->m_pHUDControl_guess->m_pSMSIcon_guess->setImage( vgui_LoadTGA( "gfx/vgui/640_hudelem_smsicon.tga" ) );
 
-			gViewPort->guess_m_pHUDControl->guess_ShowSMSIcon( true );
+			gViewPort->m_pHUDControl_guess->ShowSMSIcon_guess( true );
 		}
 	}
 
@@ -805,11 +805,11 @@ int CHud :: MsgFunc_ViewKnock( const char *pszName, int iSize, void *pbuf )
 	float flKnock = READ_BYTE();
 	angles[0] -= flKnock;
 
-	if ( !gHUD.guess_m_bViewLock )
+	if ( !gHUD.m_bViewLock_guess )
 		gEngfuncs.SetViewAngles( angles );
 
-	if ( guess_iWheelchair )
-		guess_vecWheelchairAngles[0] -= flKnock;
+	if ( iWheelchair_guess )
+		vecWheelchairAngles_guess[0] -= flKnock;
 
 	return 1;
 }
@@ -829,7 +829,7 @@ int CHud :: MsgFunc_CoFWeapon( const char *pszName, int iSize, void *pbuf )
 int CHud :: MsgFunc_ViewEntity( const char *pszName, int iSize, void *pbuf )
 {
 	BEGIN_READ( pbuf, iSize );
-	guess_m_iViewEntity = READ_SHORT();
+	m_iViewEntity_guess = READ_SHORT();
 	return 1;
 }
 
@@ -840,16 +840,16 @@ int CHud :: MsgFunc_ViewLock( const char *pszName, int iSize, void *pbuf )
 	int iLock = READ_BYTE();
 
 	if ( READ_COORD() == 666 )
-		guess_m_flViewLockTime = 666;
+		m_flViewLockTime_guess = 666;
 	else
-		guess_m_flViewLockTime = gEngfuncs.GetClientTime() + READ_COORD();
+		m_flViewLockTime_guess = gEngfuncs.GetClientTime() + READ_COORD();
 
-	if ( guess_m_flViewLockTime > 0 )
-		guess_m_bViewLockWasOn = ( guess_m_bViewLock != 0 );
+	if ( m_flViewLockTime_guess > 0 )
+		m_bViewLockWasOn_guess = ( m_bViewLock_guess != 0 );
 	else
-		guess_m_bViewLockWasOn = false;
+		m_bViewLockWasOn_guess = false;
 
-	guess_m_bViewLock = ( iLock != 0 );
+	m_bViewLock_guess = ( iLock != 0 );
 
 	return 1;
 }
@@ -858,11 +858,11 @@ int CHud :: MsgFunc_Ladder( const char *pszName, int iSize, void *pbuf )
 {
 	BEGIN_READ( pbuf, iSize );
 
-	guess_m_iLadder = READ_BYTE();
-	guess_m_vecLadder.x = READ_COORD();
-	guess_m_vecLadder.y = READ_COORD();
-	guess_m_vecLadder.z = READ_COORD();
-	guess_m_flLadderTime = gEngfuncs.GetClientTime();
+	m_iLadder_guess = READ_BYTE();
+	m_vecLadder_guess.x = READ_COORD();
+	m_vecLadder_guess.y = READ_COORD();
+	m_vecLadder_guess.z = READ_COORD();
+	m_flLadderTime_guess = gEngfuncs.GetClientTime();
 
 	return 1;
 }
@@ -871,10 +871,10 @@ int CHud :: MsgFunc_FallOver( const char *pszName, int iSize, void *pbuf )
 {
 	BEGIN_READ( pbuf, iSize );
 
-	guess_m_iFallOver = READ_BYTE();
-	guess_iGetUpTaps = READ_BYTE();
-	guess_iGetUpTapCount = 0;
-	guess_m_flLadderTime = gEngfuncs.GetClientTime();
+	m_iFallOver_guess = READ_BYTE();
+	iGetUpTaps_guess = READ_BYTE();
+	iGetUpTapCount_guess = 0;
+	m_flLadderTime_guess = gEngfuncs.GetClientTime();
 
 	return 1;
 }
@@ -882,7 +882,7 @@ int CHud :: MsgFunc_FallOver( const char *pszName, int iSize, void *pbuf )
 int CHud :: MsgFunc_BlackWhite( const char *pszName, int iSize, void *pbuf )
 {
 	BEGIN_READ( pbuf, iSize );
-	guess_m_iBlackWhite = READ_BYTE();
+	m_iBlackWhite_guess = READ_BYTE();
 	return 1;
 }
 
@@ -903,9 +903,9 @@ int CHud :: MsgFunc_PhoneOff( const char *pszName, int iSize, void *pbuf )
 {
 	BEGIN_READ( pbuf, iSize );
 	if ( READ_BYTE() )
-		guess_m_bPhoneOff = true;
+		m_bPhoneOff_guess = true;
 	else
-		guess_m_bPhoneOff = false;
+		m_bPhoneOff_guess = false;
 	return 1;
 }
 
@@ -918,7 +918,7 @@ int CHud :: MsgFunc_Muzzleflash( const char *pszName, int iSize, void *pbuf )
 	cl_entity_t *pEntity = gEngfuncs.GetEntityByIndex( iEntity );
 
 	if ( pEntity )
-		guess_MuzzleFlash( pEntity, iAttachment, false, 1.0 );
+		MuzzleFlash_guess( pEntity, iAttachment, false, 1.0 );
 
 	return 1;
 }
@@ -926,7 +926,7 @@ int CHud :: MsgFunc_Muzzleflash( const char *pszName, int iSize, void *pbuf )
 int CHud :: MsgFunc_FlashFlags( const char *pszName, int iSize, void *pbuf )
 {
 	BEGIN_READ( pbuf, iSize );
-	guess_m_iFlashFlags = READ_SHORT();
+	m_iFlashFlags_guess = READ_SHORT();
 	return 1;
 }
 
@@ -937,9 +937,9 @@ int CHud :: MsgFunc_Boat( const char *pszName, int iSize, void *pbuf )
 	int iEntity = READ_SHORT();
 
 	if ( iEntity <= 0 )
-		guess_iBoat = 0;
+		iBoat_guess = 0;
 	else
-		guess_iBoat = (int)gEngfuncs.GetEntityByIndex( iEntity );
+		iBoat_guess = (int)gEngfuncs.GetEntityByIndex( iEntity );
 
 	return 1;
 }
@@ -954,7 +954,7 @@ int CHud :: MsgFunc_Ripple( const char *pszName, int iSize, void *pbuf )
 	origin.y = READ_COORD();
 	origin.z = READ_COORD();
 
-	guess_RippleEffect( origin, READ_SHORT() );
+	RippleEffect_guess( origin, READ_SHORT() );
 
 	return 1;
 }
@@ -978,43 +978,43 @@ int CHud :: MsgFunc_AddNote( const char *pszName, int iSize, void *pbuf )
 	if ( iNote < 1 || iNote > 16 )
 		return 1;
 
-	if ( iHidden && gViewPort && gViewPort->guess_m_pDocuments )
-		gViewPort->guess_m_pDocuments->guess_m_iHidden[iNote] = 1;
+	if ( iHidden && gViewPort && gViewPort->m_pDocuments_guess )
+		gViewPort->m_pDocuments_guess->m_iHidden_guess[iNote] = 1;
 	else
-		gViewPort->guess_m_pDocuments->guess_m_iHidden[iNote] = 0;
+		gViewPort->m_pDocuments_guess->m_iHidden_guess[iNote] = 0;
 
-	strcpy( guess_m_Notes[iNote].guess_szLine[4], READ_STRING() );
-	strcpy( guess_m_Notes[iNote].guess_szLine[5], READ_STRING() );
-	strcpy( guess_m_Notes[iNote].guess_szLine[6], READ_STRING() );
-	strcpy( guess_m_Notes[iNote].guess_szLine[7], READ_STRING() );
-	strcpy( guess_m_Notes[iNote].guess_szLine[0], READ_STRING() );
-	strcpy( guess_m_Notes[iNote].guess_szLine[1], READ_STRING() );
-	strcpy( guess_m_Notes[iNote].guess_szLine[2], READ_STRING() );
-	strcpy( guess_m_Notes[iNote].guess_szLine[3], READ_STRING() );
-	strcpy( guess_m_Notes[iNote].guess_szText1, READ_STRING() );
-	strcpy( guess_m_Notes[iNote].guess_szText2, READ_STRING() );
-	strcpy( guess_m_Notes[iNote].guess_szText3, READ_STRING() );
+	strcpy( m_Notes_guess[iNote].szLine_guess[4], READ_STRING() );
+	strcpy( m_Notes_guess[iNote].szLine_guess[5], READ_STRING() );
+	strcpy( m_Notes_guess[iNote].szLine_guess[6], READ_STRING() );
+	strcpy( m_Notes_guess[iNote].szLine_guess[7], READ_STRING() );
+	strcpy( m_Notes_guess[iNote].szLine_guess[0], READ_STRING() );
+	strcpy( m_Notes_guess[iNote].szLine_guess[1], READ_STRING() );
+	strcpy( m_Notes_guess[iNote].szLine_guess[2], READ_STRING() );
+	strcpy( m_Notes_guess[iNote].szLine_guess[3], READ_STRING() );
+	strcpy( m_Notes_guess[iNote].szText1_guess, READ_STRING() );
+	strcpy( m_Notes_guess[iNote].szText2_guess, READ_STRING() );
+	strcpy( m_Notes_guess[iNote].szText3_guess, READ_STRING() );
 
 	if ( iCode && iCodeSource )
 	{
 		if ( !gViewPort )
 			return 1;
 
-		if ( gViewPort->guess_m_pDocuments )
+		if ( gViewPort->m_pDocuments_guess )
 		{
 			switch ( iCodeSource )
 			{
 			case 1:
-				gViewPort->guess_m_pDocuments->guess_m_pNote[iNote]->setImage( vgui_LoadTGA( "gfx/vgui/notes/codefrompc.tga" ) );
+				gViewPort->m_pDocuments_guess->m_pNote_guess[iNote]->setImage( vgui_LoadTGA( "gfx/vgui/notes/codefrompc.tga" ) );
 				break;
 			case 2:
-				gViewPort->guess_m_pDocuments->guess_m_pNote[iNote]->setImage( vgui_LoadTGA( "gfx/vgui/notes/codefromvideotape.tga" ) );
+				gViewPort->m_pDocuments_guess->m_pNote_guess[iNote]->setImage( vgui_LoadTGA( "gfx/vgui/notes/codefromvideotape.tga" ) );
 				break;
 			case 3:
-				gViewPort->guess_m_pDocuments->guess_m_pNote[iNote]->setImage( vgui_LoadTGA( "gfx/vgui/notes/codefromwindow.tga" ) );
+				gViewPort->m_pDocuments_guess->m_pNote_guess[iNote]->setImage( vgui_LoadTGA( "gfx/vgui/notes/codefromwindow.tga" ) );
 				break;
 			case 4:
-				gViewPort->guess_m_pDocuments->guess_m_pNote[iNote]->setImage( vgui_LoadTGA( "gfx/vgui/notes/phonecode.tga" ) );
+				gViewPort->m_pDocuments_guess->m_pNote_guess[iNote]->setImage( vgui_LoadTGA( "gfx/vgui/notes/phonecode.tga" ) );
 				break;
 			}
 
@@ -1043,34 +1043,34 @@ int CHud :: MsgFunc_AddNote( const char *pszName, int iSize, void *pbuf )
 			else
 				strcpy( szDigit4, "gfx/vgui/notes/code_1.tga" );
 
-			gViewPort->guess_m_pDocuments->guess_m_pCodeDigit1[iNote]->setImage( vgui_LoadTGA( szDigit1 ) );
-			gViewPort->guess_m_pDocuments->guess_m_pCodeDigit2[iNote]->setImage( vgui_LoadTGA( szDigit2 ) );
-			gViewPort->guess_m_pDocuments->guess_m_pCodeDigit3[iNote]->setImage( vgui_LoadTGA( szDigit3 ) );
-			gViewPort->guess_m_pDocuments->guess_m_pCodeDigit4[iNote]->setImage( vgui_LoadTGA( szDigit4 ) );
+			gViewPort->m_pDocuments_guess->m_pCodeDigit1_guess[iNote]->setImage( vgui_LoadTGA( szDigit1 ) );
+			gViewPort->m_pDocuments_guess->m_pCodeDigit2_guess[iNote]->setImage( vgui_LoadTGA( szDigit2 ) );
+			gViewPort->m_pDocuments_guess->m_pCodeDigit3_guess[iNote]->setImage( vgui_LoadTGA( szDigit3 ) );
+			gViewPort->m_pDocuments_guess->m_pCodeDigit4_guess[iNote]->setImage( vgui_LoadTGA( szDigit4 ) );
 
 			int x, y;
 			int noteWide, noteTall;
 			int digitWide, digitTall;
-			gViewPort->guess_m_pDocuments->guess_m_pCodeDigit1[iNote]->getPos( x, y );
-			gViewPort->guess_m_pDocuments->guess_m_pNote[iNote]->getSize( noteWide, noteTall );
-			gViewPort->guess_m_pDocuments->guess_m_pCodeDigit1[iNote]->getSize( digitWide, digitTall );
+			gViewPort->m_pDocuments_guess->m_pCodeDigit1_guess[iNote]->getPos( x, y );
+			gViewPort->m_pDocuments_guess->m_pNote_guess[iNote]->getSize( noteWide, noteTall );
+			gViewPort->m_pDocuments_guess->m_pCodeDigit1_guess[iNote]->getSize( digitWide, digitTall );
 
-			gViewPort->guess_m_pDocuments->guess_m_pCodeDigit1[iNote]->setPos( x + noteWide, y );
-			gViewPort->guess_m_pDocuments->guess_m_pCodeDigit2[iNote]->setPos( x + noteWide + digitWide, y );
-			gViewPort->guess_m_pDocuments->guess_m_pCodeDigit3[iNote]->setPos( x + noteWide + digitWide * 2, y );
-			gViewPort->guess_m_pDocuments->guess_m_pCodeDigit4[iNote]->setPos( x + noteWide + digitWide * 3, y );
+			gViewPort->m_pDocuments_guess->m_pCodeDigit1_guess[iNote]->setPos( x + noteWide, y );
+			gViewPort->m_pDocuments_guess->m_pCodeDigit2_guess[iNote]->setPos( x + noteWide + digitWide, y );
+			gViewPort->m_pDocuments_guess->m_pCodeDigit3_guess[iNote]->setPos( x + noteWide + digitWide * 2, y );
+			gViewPort->m_pDocuments_guess->m_pCodeDigit4_guess[iNote]->setPos( x + noteWide + digitWide * 3, y );
 
-			gViewPort->guess_m_pDocuments->guess_m_pCodeDigit1[iNote]->setVisible( true );
-			gViewPort->guess_m_pDocuments->guess_m_pCodeDigit2[iNote]->setVisible( true );
-			gViewPort->guess_m_pDocuments->guess_m_pCodeDigit3[iNote]->setVisible( true );
-			gViewPort->guess_m_pDocuments->guess_m_pCodeDigit4[iNote]->setVisible( true );
+			gViewPort->m_pDocuments_guess->m_pCodeDigit1_guess[iNote]->setVisible( true );
+			gViewPort->m_pDocuments_guess->m_pCodeDigit2_guess[iNote]->setVisible( true );
+			gViewPort->m_pDocuments_guess->m_pCodeDigit3_guess[iNote]->setVisible( true );
+			gViewPort->m_pDocuments_guess->m_pCodeDigit4_guess[iNote]->setVisible( true );
 		}
 	}
 
-	if ( gViewPort && gViewPort->guess_m_pDocuments && !iHidden )
+	if ( gViewPort && gViewPort->m_pDocuments_guess && !iHidden )
 	{
-		gViewPort->guess_m_pDocuments->guess_m_pNote[iNote]->setImage( vgui_LoadTGA( guess_m_Notes[iNote].guess_szText3 ) );
-		gViewPort->guess_m_pDocuments->guess_m_pNote[iNote]->setVisible( true );
+		gViewPort->m_pDocuments_guess->m_pNote_guess[iNote]->setImage( vgui_LoadTGA( m_Notes_guess[iNote].szText3_guess ) );
+		gViewPort->m_pDocuments_guess->m_pNote_guess[iNote]->setVisible( true );
 	}
 
 	return 1;
@@ -1081,36 +1081,36 @@ int CHud :: MsgFunc_AttachCam( const char *pszName, int iSize, void *pbuf )
 	BEGIN_READ( pbuf, iSize );
 
 	int iEntity = READ_SHORT();
-	guess_iAttachCamFlag = READ_BYTE();
-	guess_iUnknown10542BC8 = READ_BYTE();
-	guess_vecUnknown105431B4.x = READ_LONG();
-	guess_vecUnknown105431B4.y = READ_LONG();
-	guess_vecUnknown105431B4.z = READ_LONG();
+	iAttachCamFlag_guess = READ_BYTE();
+	iUnknown10542BC8_guess = READ_BYTE();
+	vecUnknown105431B4_guess.x = READ_LONG();
+	vecUnknown105431B4_guess.y = READ_LONG();
+	vecUnknown105431B4_guess.z = READ_LONG();
 
-	guess_iUnknown10542BC8 = 1;
-	guess_vecUnknown105431B4 = render_origin;
-	guess_flUnknown10542BCC = 2;
-	guess_flUnknown10542BD4 = 2;
-	guess_flUnknown10542BD0 = 8.5;
-	guess_bAttachCam = false;
-	guess_bUnknown10559514 = false;
+	iUnknown10542BC8_guess = 1;
+	vecUnknown105431B4_guess = render_origin;
+	flUnknown10542BCC_guess = 2;
+	flUnknown10542BD4_guess = 2;
+	flUnknown10542BD0_guess = 8.5;
+	bAttachCam_guess = false;
+	bUnknown10559514_guess = false;
 
 	if ( iEntity <= 0 )
 	{
-		if ( guess_pAttachCamEnt )
+		if ( pAttachCamEnt_guess )
 		{
-			guess_iUnknown10542BC8 = 2;
-			guess_vecUnknown105431B4 = guess_vecCameraAttachment;
-			guess_flUnknown10542BCC = 2.5;
+			iUnknown10542BC8_guess = 2;
+			vecUnknown105431B4_guess = vecCameraAttachment_guess;
+			flUnknown10542BCC_guess = 2.5;
 		}
 
-		guess_pAttachCamEnt = NULL;
+		pAttachCamEnt_guess = NULL;
 	}
 	else
 	{
-		guess_pAttachCamEnt = gEngfuncs.GetEntityByIndex( iEntity );
-		guess_vecUnknown105431CC = render_origin;
-		gEngfuncs.GetViewAngles( guess_vecUnknown105431C0 );
+		pAttachCamEnt_guess = gEngfuncs.GetEntityByIndex( iEntity );
+		vecUnknown105431CC_guess = render_origin;
+		gEngfuncs.GetViewAngles( vecUnknown105431C0_guess );
 	}
 
 	return 1;
@@ -1127,39 +1127,39 @@ int CHud :: MsgFunc_NewFade( const char *pszName, int iSize, void *pbuf )
 {
 	BEGIN_READ( pbuf, iSize );
 
-	guess_m_iFadeR = READ_BYTE();
-	guess_m_iFadeG = READ_BYTE();
-	guess_m_iFadeB = READ_BYTE();
-	guess_m_iFadeAlpha = READ_BYTE();
-	guess_m_flFadeStart = gEngfuncs.GetClientTime();
-	guess_m_flFadeTime = READ_COORD();
+	m_iFadeR_guess = READ_BYTE();
+	m_iFadeG_guess = READ_BYTE();
+	m_iFadeB_guess = READ_BYTE();
+	m_iFadeAlpha_guess = READ_BYTE();
+	m_flFadeStart_guess = gEngfuncs.GetClientTime();
+	m_flFadeTime_guess = READ_COORD();
 
 	int iFadeOut = READ_BYTE();
 	int iHold = READ_BYTE();
 
-	guess_m_flFadeEnd = gEngfuncs.GetClientTime() + READ_COORD();
+	m_flFadeEnd_guess = gEngfuncs.GetClientTime() + READ_COORD();
 	if ( iFadeOut )
-		guess_m_bFadeOut = true;
+		m_bFadeOut_guess = true;
 	else
-		guess_m_bFadeOut = false;
+		m_bFadeOut_guess = false;
 	if ( iHold )
-		guess_m_bFadeHold = true;
+		m_bFadeHold_guess = true;
 	else
-		guess_m_bFadeHold = false;
+		m_bFadeHold_guess = false;
 
 	return 1;
 }
 
 int CHud :: MsgFunc_SkipScene( const char *pszName, int iSize, void *pbuf )
 {
-	if ( guess_IsViewEntityActive() )
+	if ( IsViewEntityActive_guess() )
 	{
 		if ( gEngfuncs.pfnGetCvarFloat( "host_framerate" ) == 0 )
 		{
 			if ( strcmp( gEngfuncs.pfnGetLevelName(), "maps/video_stress_test.bsp" ) )
 			{
 				if ( !strstr( gEngfuncs.pfnGetLevelName(), "game_menu" ) )
-					gEngfuncs.Cvar_SetValue( "host_framerate", guess_iSkipSceneFramerate );
+					gEngfuncs.Cvar_SetValue( "host_framerate", iSkipSceneFramerate_guess );
 			}
 		}
 	}
@@ -1171,21 +1171,21 @@ int CHud :: MsgFunc_IronSights( const char *pszName, int iSize, void *pbuf )
 {
 	BEGIN_READ( pbuf, iSize );
 
-	guess_m_vecIronSightOfs.x = READ_COORD();
-	guess_m_vecIronSightOfs.y = READ_COORD();
-	guess_m_vecIronSightOfs.z = READ_COORD();
+	m_vecIronSightOfs_guess.x = READ_COORD();
+	m_vecIronSightOfs_guess.y = READ_COORD();
+	m_vecIronSightOfs_guess.z = READ_COORD();
 	READ_BYTE();
 
 	if ( READ_BYTE() )
 	{
-		guess_m_bIronSights = true;
+		m_bIronSights_guess = true;
 	}
 	else
 	{
-		guess_m_vecIronSightOfs.x = 0;
-		guess_m_vecIronSightOfs.y = 0;
-		guess_m_vecIronSightOfs.z = 0;
-		guess_m_bIronSights = false;
+		m_vecIronSightOfs_guess.x = 0;
+		m_vecIronSightOfs_guess.y = 0;
+		m_vecIronSightOfs_guess.z = 0;
+		m_bIronSights_guess = false;
 	}
 
 	return 1;
@@ -1199,13 +1199,13 @@ int CHud :: MsgFunc_Wheelchair( const char *pszName, int iSize, void *pbuf )
 
 	if ( READ_BYTE() )
 	{
-		guess_bWheelchairLock = true;
+		bWheelchairLock_guess = true;
 		return 1;
 	}
 
-	guess_iWheelchair = ( iEntity <= 0 ) ? 0 : (int)gEngfuncs.GetEntityByIndex( iEntity );
-	guess_vecWheelchairAngles[1] = 0;
-	guess_vecWheelchairAngles[0] = 0;
+	iWheelchair_guess = ( iEntity <= 0 ) ? 0 : (int)gEngfuncs.GetEntityByIndex( iEntity );
+	vecWheelchairAngles_guess[1] = 0;
+	vecWheelchairAngles_guess[0] = 0;
 
 	return 1;
 }
@@ -1215,21 +1215,21 @@ int CHud :: MsgFunc_GreyFade( const char *pszName, int iSize, void *pbuf )
 	BEGIN_READ( pbuf, iSize );
 
 	int iFadeIn = READ_BYTE();
-	guess_iGreyFade = READ_BYTE();
-	guess_m_flGreyFadeStart = 0;
-	guess_m_flGreyFadeEnd = 0;
+	iGreyFade_guess = READ_BYTE();
+	m_flGreyFadeStart_guess = 0;
+	m_flGreyFadeEnd_guess = 0;
 
 	if ( iFadeIn )
-		guess_m_flGreyFadeEnd = gEngfuncs.GetClientTime();
+		m_flGreyFadeEnd_guess = gEngfuncs.GetClientTime();
 	else
-		guess_m_flGreyFadeStart = gEngfuncs.GetClientTime();
+		m_flGreyFadeStart_guess = gEngfuncs.GetClientTime();
 
 	return 1;
 }
 
 int CHud :: MsgFunc_TakePhoto( const char *pszName, int iSize, void *pbuf )
 {
-	guess_g_bTakePhoto = true;
+	g_bTakePhoto_guess = true;
 	return 1;
 }
 
@@ -1239,35 +1239,35 @@ int CHud :: MsgFunc_Objectives( const char *pszName, int iSize, void *pbuf )
 
 	BEGIN_READ( pbuf, iSize );
 
-	strcpy( gHUD.guess_m_szObjectiveTitle, READ_STRING() );
-	strcpy( gHUD.guess_m_szObjectiveText, READ_STRING() );
+	strcpy( gHUD.m_szObjectiveTitle_guess, READ_STRING() );
+	strcpy( gHUD.m_szObjectiveText_guess, READ_STRING() );
 
-	if ( READ_BYTE() && strlen( gHUD.guess_m_szObjectiveTitle ) > 2 && strlen( gHUD.guess_m_szObjectiveText ) > 2 )
+	if ( READ_BYTE() && strlen( gHUD.m_szObjectiveTitle_guess ) > 2 && strlen( gHUD.m_szObjectiveText_guess ) > 2 )
 	{
-		ParseHintTokens( gHUD.guess_m_szObjectiveTitle, gHUD.guess_m_szObjectiveText );
+		ParseHintTokens( gHUD.m_szObjectiveTitle_guess, gHUD.m_szObjectiveText_guess );
 
-		gViewPort->guess_m_pHUDControl->guess_m_iHintLine = 1;
+		gViewPort->m_pHUDControl_guess->m_iHintLine_guess = 1;
 
-		if ( strlen( gViewPort->guess_m_pHUDControl->guess_m_szHintLine1 ) > 2 )
+		if ( strlen( gViewPort->m_pHUDControl_guess->m_szHintLine1_guess ) > 2 )
 		{
 			int iLen = 0;
-			for ( unsigned int i = 0; i < strlen( gViewPort->guess_m_pHUDControl->guess_m_szHintLine1 ); i++ )
+			for ( unsigned int i = 0; i < strlen( gViewPort->m_pHUDControl_guess->m_szHintLine1_guess ); i++ )
 			{
 				iLen++;
-				if ( gViewPort->guess_m_pHUDControl->guess_m_szHintLine1[i] == '@' )
+				if ( gViewPort->m_pHUDControl_guess->m_szHintLine1_guess[i] == '@' )
 					szText[i] = ' ';
 				else
-					szText[i] = gViewPort->guess_m_pHUDControl->guess_m_szHintLine1[i];
+					szText[i] = gViewPort->m_pHUDControl_guess->m_szHintLine1_guess[i];
 			}
 			szText[iLen] = '\0';
 
 			int w, h;
-			gViewPort->guess_m_pHUDControl->guess_m_pHintLabel->setText( szText );
-			gViewPort->guess_m_pHUDControl->guess_m_pCreditsFont->getTextSize( gViewPort->guess_m_pHUDControl->guess_m_szHintLine1, w, h );
-			gViewPort->guess_m_pHUDControl->guess_m_pHintLabel->setPos( ScreenWidth / 2 - 400, -48 );
-			gViewPort->guess_m_pHUDControl->guess_m_bHint = true;
-			gViewPort->guess_m_pHUDControl->guess_m_iHintAlpha = 255;
-			gViewPort->guess_m_pHUDControl->guess_m_flHintTime = gEngfuncs.GetClientTime() + 5;
+			gViewPort->m_pHUDControl_guess->m_pHintLabel_guess->setText( szText );
+			gViewPort->m_pHUDControl_guess->m_pCreditsFont_guess->getTextSize( gViewPort->m_pHUDControl_guess->m_szHintLine1_guess, w, h );
+			gViewPort->m_pHUDControl_guess->m_pHintLabel_guess->setPos( ScreenWidth / 2 - 400, -48 );
+			gViewPort->m_pHUDControl_guess->m_bHint_guess = true;
+			gViewPort->m_pHUDControl_guess->m_iHintAlpha_guess = 255;
+			gViewPort->m_pHUDControl_guess->m_flHintTime_guess = gEngfuncs.GetClientTime() + 5;
 		}
 	}
 
@@ -1277,7 +1277,7 @@ int CHud :: MsgFunc_Objectives( const char *pszName, int iSize, void *pbuf )
 int CHud :: MsgFunc_Unlocks( const char *pszName, int iSize, void *pbuf )
 {
 	BEGIN_READ( pbuf, iSize );
-	guess_m_iUnlocks = READ_LONG();
+	m_iUnlocks_guess = READ_LONG();
 	return 1;
 }
 
@@ -1285,13 +1285,13 @@ int CHud :: MsgFunc_CustomSlv( const char *pszName, int iSize, void *pbuf )
 {
 	BEGIN_READ( pbuf, iSize );
 
-	strncpy( guess_m_szSleeveTexture, READ_STRING(), 256 );
+	strncpy( m_szSleeveTexture_guess, READ_STRING(), 256 );
 
-	if ( strlen( guess_m_szSleeveTexture ) <= 2 )
-		guess_m_szSleeveTexture[0] = 0;
+	if ( strlen( m_szSleeveTexture_guess ) <= 2 )
+		m_szSleeveTexture_guess[0] = 0;
 
-	guess_g_bSleeveLoaded = false;
-	guess_g_bPoliceSleeveLoaded = false;
+	g_bSleeveLoaded_guess = false;
+	g_bPoliceSleeveLoaded_guess = false;
 
 	return 1;
 }
@@ -1300,16 +1300,16 @@ int CHud :: MsgFunc_CustomFng( const char *pszName, int iSize, void *pbuf )
 {
 	BEGIN_READ( pbuf, iSize );
 
-	strncpy( guess_m_szFingerTexture, READ_STRING(), 256 );
-	guess_bCustomFingerTexture = true;
+	strncpy( m_szFingerTexture_guess, READ_STRING(), 256 );
+	bCustomFingerTexture_guess = true;
 
-	if ( strlen( guess_m_szFingerTexture ) <= 2 )
+	if ( strlen( m_szFingerTexture_guess ) <= 2 )
 	{
-		guess_bCustomFingerTexture = false;
-		guess_m_szFingerTexture[0] = 0;
+		bCustomFingerTexture_guess = false;
+		m_szFingerTexture_guess[0] = 0;
 	}
 
-	guess_g_bHandsLoaded = false;
+	g_bHandsLoaded_guess = false;
 
 	return 1;
 }
@@ -1318,16 +1318,16 @@ int CHud :: MsgFunc_CustomGlv( const char *pszName, int iSize, void *pbuf )
 {
 	BEGIN_READ( pbuf, iSize );
 
-	strncpy( guess_m_szGloveTexture, READ_STRING(), 256 );
-	guess_bCustomGloveTexture = true;
+	strncpy( m_szGloveTexture_guess, READ_STRING(), 256 );
+	bCustomGloveTexture_guess = true;
 
-	if ( strlen( guess_m_szGloveTexture ) <= 2 )
+	if ( strlen( m_szGloveTexture_guess ) <= 2 )
 	{
-		guess_bCustomGloveTexture = false;
-		guess_m_szGloveTexture[0] = 0;
+		bCustomGloveTexture_guess = false;
+		m_szGloveTexture_guess[0] = 0;
 	}
 
-	guess_g_bGloveLoaded = false;
+	g_bGloveLoaded_guess = false;
 
 	return 1;
 }
@@ -1386,7 +1386,7 @@ int CHud :: MsgFunc_PlaySFX( const char *pszName, int iSize, void *pbuf )
 		bool bFlag = false;
 		if ( iFlag )
 			bFlag = true;
-		guess_IrrKlangPlaySFX( pszSound, iType, bFlag, origin );
+		IrrKlangPlaySFX_guess( pszSound, iType, bFlag, origin );
 
 		return 1;
 	}
@@ -1406,50 +1406,50 @@ int CHud :: MsgFunc_Inventory( const char *pszName, int iSize, void *pbuf )
 	int iSilent = READ_BYTE();
 	int iTactical = READ_BYTE();
 
-	strcpy( guess_GetInventoryItem( iSlot ), szItem );
+	strcpy( GetInventoryItem_guess( iSlot ), szItem );
 
-	if ( !gViewPort || !gViewPort->guess_m_pRECBInventory )
+	if ( !gViewPort || !gViewPort->m_pRECBInventory_guess )
 		return 1;
 
 	if ( iThree )
 	{
-		if ( gViewPort->guess_m_pRECBInventory->guess_m_pItemButtons[3]->isVisible() )
-			gViewPort->guess_m_pRECBInventory->guess_m_pItemButtons[3]->setVisible( false );
-		if ( gViewPort->guess_m_pRECBInventory->guess_m_pItemButtons[4]->isVisible() )
-			gViewPort->guess_m_pRECBInventory->guess_m_pItemButtons[4]->setVisible( false );
-		if ( gViewPort->guess_m_pRECBInventory->guess_m_pItemButtons[5]->isVisible() )
-			gViewPort->guess_m_pRECBInventory->guess_m_pItemButtons[5]->setVisible( false );
+		if ( gViewPort->m_pRECBInventory_guess->m_pItemButtons_guess[3]->isVisible() )
+			gViewPort->m_pRECBInventory_guess->m_pItemButtons_guess[3]->setVisible( false );
+		if ( gViewPort->m_pRECBInventory_guess->m_pItemButtons_guess[4]->isVisible() )
+			gViewPort->m_pRECBInventory_guess->m_pItemButtons_guess[4]->setVisible( false );
+		if ( gViewPort->m_pRECBInventory_guess->m_pItemButtons_guess[5]->isVisible() )
+			gViewPort->m_pRECBInventory_guess->m_pItemButtons_guess[5]->setVisible( false );
 
-		if ( gViewPort->guess_m_pRECBInventory->guess_m_iThree == 0 )
+		if ( gViewPort->m_pRECBInventory_guess->m_iThree_guess == 0 )
 		{
-			gViewPort->guess_m_pRECBInventory->guess_m_pInventory->setImage( vgui_LoadTGA( "gfx/vgui/640_inventory_three.tga" ) );
-			gViewPort->guess_m_pRECBInventory->guess_m_iThree = 1;
+			gViewPort->m_pRECBInventory_guess->m_pInventory_guess->setImage( vgui_LoadTGA( "gfx/vgui/640_inventory_three.tga" ) );
+			gViewPort->m_pRECBInventory_guess->m_iThree_guess = 1;
 		}
 	}
 	else
 	{
-		if ( !gViewPort->guess_m_pRECBInventory->guess_m_pItemButtons[3]->isVisible() )
-			gViewPort->guess_m_pRECBInventory->guess_m_pItemButtons[3]->setVisible( true );
-		if ( !gViewPort->guess_m_pRECBInventory->guess_m_pItemButtons[4]->isVisible() )
-			gViewPort->guess_m_pRECBInventory->guess_m_pItemButtons[4]->setVisible( true );
-		if ( !gViewPort->guess_m_pRECBInventory->guess_m_pItemButtons[5]->isVisible() )
-			gViewPort->guess_m_pRECBInventory->guess_m_pItemButtons[5]->setVisible( true );
+		if ( !gViewPort->m_pRECBInventory_guess->m_pItemButtons_guess[3]->isVisible() )
+			gViewPort->m_pRECBInventory_guess->m_pItemButtons_guess[3]->setVisible( true );
+		if ( !gViewPort->m_pRECBInventory_guess->m_pItemButtons_guess[4]->isVisible() )
+			gViewPort->m_pRECBInventory_guess->m_pItemButtons_guess[4]->setVisible( true );
+		if ( !gViewPort->m_pRECBInventory_guess->m_pItemButtons_guess[5]->isVisible() )
+			gViewPort->m_pRECBInventory_guess->m_pItemButtons_guess[5]->setVisible( true );
 
-		if ( gViewPort->guess_m_pRECBInventory->guess_m_iThree == 1 )
+		if ( gViewPort->m_pRECBInventory_guess->m_iThree_guess == 1 )
 		{
-			gViewPort->guess_m_pRECBInventory->guess_m_pInventory->setImage( vgui_LoadTGA( "gfx/vgui/640_inventory.tga" ) );
-			gViewPort->guess_m_pRECBInventory->guess_m_iThree = 0;
+			gViewPort->m_pRECBInventory_guess->m_pInventory_guess->setImage( vgui_LoadTGA( "gfx/vgui/640_inventory.tga" ) );
+			gViewPort->m_pRECBInventory_guess->m_iThree_guess = 0;
 		}
 	}
 
 	if ( iReset )
-		gViewPort->guess_m_pRECBInventory->guess_Reset();
+		gViewPort->m_pRECBInventory_guess->Reset_guess();
 
 	if ( iSlot )
 	{
-		if ( strlen( gHUD.guess_GetInventoryItem( iSlot ) ) > 1 )
+		if ( strlen( gHUD.GetInventoryItem_guess( iSlot ) ) > 1 )
 		{
-			gViewPort->guess_m_pRECBInventory->guess_m_pItemImages[iSlot - 1]->setImage( vgui_LoadTGA( CheckItem( "inventory_picture", guess_GetInventoryItem( iSlot ) ) ) );
+			gViewPort->m_pRECBInventory_guess->m_pItemImages_guess[iSlot - 1]->setImage( vgui_LoadTGA( CheckItem( "inventory_picture", GetInventoryItem_guess( iSlot ) ) ) );
 
 			char *pszNiceName = CheckItem( "nice_name", szItem );
 			if ( pszNiceName )
@@ -1457,25 +1457,25 @@ int CHud :: MsgFunc_Inventory( const char *pszName, int iSize, void *pbuf )
 				int iNotBook = strcmp( pszNiceName, "Simon's Book" );
 				sprintf( szText, iNotBook ? "You got the %s" : "You got %s", CheckItem( "nice_name", szItem ) );
 
-				if ( gViewPort && gViewPort->guess_m_pHUDControl )
+				if ( gViewPort && gViewPort->m_pHUDControl_guess )
 				{
-					gViewPort->guess_m_pHUDControl->guess_m_iMessageTime = gEngfuncs.GetClientTime() + 4;
+					gViewPort->m_pHUDControl_guess->m_iMessageTime_guess = gEngfuncs.GetClientTime() + 4;
 
 					if ( !iSilent )
 					{
-						strcpy( gViewPort->guess_m_pHUDControl->guess_m_szMessage, szText );
-						gViewPort->guess_m_pHUDControl->guess_m_flMessageAlpha = 255;
-						gViewPort->guess_m_pHUDControl->guess_m_bMessageFadeOut = false;
-						gViewPort->guess_m_pHUDControl->guess_m_bMessageHold = false;
-						gViewPort->guess_m_pHUDControl->guess_m_flMessageHoldTime = 0;
-						gViewPort->guess_m_pHUDControl->guess_m_iMessageType = 5;
+						strcpy( gViewPort->m_pHUDControl_guess->m_szMessage_guess, szText );
+						gViewPort->m_pHUDControl_guess->m_flMessageAlpha_guess = 255;
+						gViewPort->m_pHUDControl_guess->m_bMessageFadeOut_guess = false;
+						gViewPort->m_pHUDControl_guess->m_bMessageHold_guess = false;
+						gViewPort->m_pHUDControl_guess->m_flMessageHoldTime_guess = 0;
+						gViewPort->m_pHUDControl_guess->m_iMessageType_guess = 5;
 					}
 				}
 			}
 		}
 		else
 		{
-			gViewPort->guess_m_pRECBInventory->guess_m_pItemImages[iSlot - 1]->setImage( NULL );
+			gViewPort->m_pRECBInventory_guess->m_pItemImages_guess[iSlot - 1]->setImage( NULL );
 		}
 	}
 
@@ -1483,59 +1483,59 @@ int CHud :: MsgFunc_Inventory( const char *pszName, int iSize, void *pbuf )
 	{
 		for ( int i = 1; i <= 6; i++ )
 		{
-			if ( !strcmp( "inventoryitems/weapons/weapon_glock.txt", guess_GetInventoryItem( i ) ) )
+			if ( !strcmp( "inventoryitems/weapons/weapon_glock.txt", GetInventoryItem_guess( i ) ) )
 			{
-				strcpy( guess_GetInventoryItem( i ), "inventoryitems/weapons/weapon_glocktac.txt" );
-				gViewPort->guess_m_pRECBInventory->guess_m_pItemImages[i - 1]->setImage( vgui_LoadTGA( CheckItem( "inventory_picture", guess_GetInventoryItem( i ) ) ) );
+				strcpy( GetInventoryItem_guess( i ), "inventoryitems/weapons/weapon_glocktac.txt" );
+				gViewPort->m_pRECBInventory_guess->m_pItemImages_guess[i - 1]->setImage( vgui_LoadTGA( CheckItem( "inventory_picture", GetInventoryItem_guess( i ) ) ) );
 			}
 		}
 
-		if ( !strcmp( "inventoryitems/weapons/weapon_glock.txt", gHUD.guess_m_szInventoryWeapon1 ) )
+		if ( !strcmp( "inventoryitems/weapons/weapon_glock.txt", gHUD.m_szInventoryWeapon1_guess ) )
 		{
-			strcpy( gHUD.guess_m_szInventoryWeapon1, "inventoryitems/weapons/weapon_glocktac.txt" );
-			gViewPort->guess_m_pRECBInventory->guess_m_pItemImages[6]->setImage( vgui_LoadTGA( CheckItem( "inventory_picture", gHUD.guess_m_szInventoryWeapon1 ) ) );
+			strcpy( gHUD.m_szInventoryWeapon1_guess, "inventoryitems/weapons/weapon_glocktac.txt" );
+			gViewPort->m_pRECBInventory_guess->m_pItemImages_guess[6]->setImage( vgui_LoadTGA( CheckItem( "inventory_picture", gHUD.m_szInventoryWeapon1_guess ) ) );
 		}
 
-		if ( !strcmp( "inventoryitems/weapons/weapon_glock.txt", gHUD.guess_m_szInventoryWeapon2 ) )
+		if ( !strcmp( "inventoryitems/weapons/weapon_glock.txt", gHUD.m_szInventoryWeapon2_guess ) )
 		{
-			strcpy( gHUD.guess_m_szInventoryWeapon2, "inventoryitems/weapons/weapon_glocktac.txt" );
-			gViewPort->guess_m_pRECBInventory->guess_m_pItemImages[7]->setImage( vgui_LoadTGA( CheckItem( "inventory_picture", gHUD.guess_m_szInventoryWeapon2 ) ) );
+			strcpy( gHUD.m_szInventoryWeapon2_guess, "inventoryitems/weapons/weapon_glocktac.txt" );
+			gViewPort->m_pRECBInventory_guess->m_pItemImages_guess[7]->setImage( vgui_LoadTGA( CheckItem( "inventory_picture", gHUD.m_szInventoryWeapon2_guess ) ) );
 		}
 
-		if ( !strcmp( "inventoryitems/weapons/weapon_glock.txt", gHUD.guess_m_szInventoryWeapon3 ) )
+		if ( !strcmp( "inventoryitems/weapons/weapon_glock.txt", gHUD.m_szInventoryWeapon3_guess ) )
 		{
-			strcpy( gHUD.guess_m_szInventoryWeapon3, "inventoryitems/weapons/weapon_glocktac.txt" );
-			gViewPort->guess_m_pRECBInventory->guess_m_pItemImages[9]->setImage( vgui_LoadTGA( CheckItem( "inventory_picture", gHUD.guess_m_szInventoryWeapon3 ) ) );
+			strcpy( gHUD.m_szInventoryWeapon3_guess, "inventoryitems/weapons/weapon_glocktac.txt" );
+			gViewPort->m_pRECBInventory_guess->m_pItemImages_guess[9]->setImage( vgui_LoadTGA( CheckItem( "inventory_picture", gHUD.m_szInventoryWeapon3_guess ) ) );
 		}
 	}
 	else
 	{
 		for ( int i = 1; i <= 6; i++ )
 		{
-			if ( !strcmp( "inventoryitems/weapons/weapon_glocktac.txt", guess_GetInventoryItem( i ) ) )
+			if ( !strcmp( "inventoryitems/weapons/weapon_glocktac.txt", GetInventoryItem_guess( i ) ) )
 			{
-				strcpy( guess_GetInventoryItem( i ), "inventoryitems/weapons/weapon_glock.txt" );
-				gViewPort->guess_m_pRECBInventory->guess_m_pItemImages[i - 1]->setImage( vgui_LoadTGA( CheckItem( "inventory_picture", guess_GetInventoryItem( i ) ) ) );
+				strcpy( GetInventoryItem_guess( i ), "inventoryitems/weapons/weapon_glock.txt" );
+				gViewPort->m_pRECBInventory_guess->m_pItemImages_guess[i - 1]->setImage( vgui_LoadTGA( CheckItem( "inventory_picture", GetInventoryItem_guess( i ) ) ) );
 			}
 		}
 
-		if ( !strcmp( "inventoryitems/weapons/weapon_glocktac.txt", gHUD.guess_m_szInventoryWeapon1 ) )
+		if ( !strcmp( "inventoryitems/weapons/weapon_glocktac.txt", gHUD.m_szInventoryWeapon1_guess ) )
 		{
-			strcpy( gHUD.guess_m_szInventoryWeapon1, "inventoryitems/weapons/weapon_glock.txt" );
-			gViewPort->guess_m_pRECBInventory->guess_m_pItemImages[6]->setImage( vgui_LoadTGA( CheckItem( "inventory_picture", gHUD.guess_m_szInventoryWeapon1 ) ) );
+			strcpy( gHUD.m_szInventoryWeapon1_guess, "inventoryitems/weapons/weapon_glock.txt" );
+			gViewPort->m_pRECBInventory_guess->m_pItemImages_guess[6]->setImage( vgui_LoadTGA( CheckItem( "inventory_picture", gHUD.m_szInventoryWeapon1_guess ) ) );
 		}
 
-		if ( !strcmp( "inventoryitems/weapons/weapon_glocktac.txt", gHUD.guess_m_szInventoryWeapon2 ) )
+		if ( !strcmp( "inventoryitems/weapons/weapon_glocktac.txt", gHUD.m_szInventoryWeapon2_guess ) )
 		{
-			strcpy( gHUD.guess_m_szInventoryWeapon2, "inventoryitems/weapons/weapon_glock.txt" );
-			gViewPort->guess_m_pRECBInventory->guess_m_pItemImages[7]->setImage( vgui_LoadTGA( CheckItem( "inventory_picture", gHUD.guess_m_szInventoryWeapon2 ) ) );
+			strcpy( gHUD.m_szInventoryWeapon2_guess, "inventoryitems/weapons/weapon_glock.txt" );
+			gViewPort->m_pRECBInventory_guess->m_pItemImages_guess[7]->setImage( vgui_LoadTGA( CheckItem( "inventory_picture", gHUD.m_szInventoryWeapon2_guess ) ) );
 		}
 
 		// original bug: tests the second quick slot again
-		if ( !strcmp( "inventoryitems/weapons/weapon_glocktac.txt", gHUD.guess_m_szInventoryWeapon2 ) )
+		if ( !strcmp( "inventoryitems/weapons/weapon_glocktac.txt", gHUD.m_szInventoryWeapon2_guess ) )
 		{
-			strcpy( gHUD.guess_m_szInventoryWeapon3, "inventoryitems/weapons/weapon_glock.txt" );
-			gViewPort->guess_m_pRECBInventory->guess_m_pItemImages[9]->setImage( vgui_LoadTGA( CheckItem( "inventory_picture", gHUD.guess_m_szInventoryWeapon3 ) ) );
+			strcpy( gHUD.m_szInventoryWeapon3_guess, "inventoryitems/weapons/weapon_glock.txt" );
+			gViewPort->m_pRECBInventory_guess->m_pItemImages_guess[9]->setImage( vgui_LoadTGA( CheckItem( "inventory_picture", gHUD.m_szInventoryWeapon3_guess ) ) );
 		}
 	}
 

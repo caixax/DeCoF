@@ -121,7 +121,7 @@ public:
 
 	int StudioDrawHeadShield(); // buz test
 	int StudioDrawCustomEntity(cl_entity_t *ent, int amb = -1, int shade = -1); // buz
-	void guess_StudioMuzzleFlash( char *modelname, int iAttachment, bool bAlt, float flScale ); // Cry of Fear: weapon model of other players
+	void StudioMuzzleFlash_guess( char *modelname, int iAttachment, bool bAlt, float flScale ); // Cry of Fear: weapon model of other players
 
 public:
 
