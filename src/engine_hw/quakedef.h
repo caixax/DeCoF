@@ -23,4 +23,24 @@ typedef void *			FileHandle_t;
 #include "console.h"
 #include "sys.h"
 
+#ifndef __cplusplus
+#define false	0
+#define true	1
+#endif
+
+#define MAX_EDICTS	2048	// max number of edicts in a level (COM_EntsForPlayerSlots)
+
+extern	qboolean	host_initialized;	// true if into command execution
+
+extern	qboolean	g_fUseDInput;		// keys come from DirectInput instead of window messages
+
+#define ARRAYSIZE( p )	( sizeof( p ) / sizeof( p[0] ) )
+
+// from common/const.h, which the engine does not include here (its qboolean
+// is an enum and would clash with the int above)
+typedef struct
+{
+	byte	r, g, b;
+} color24;
+
 #endif // QUAKEDEF_H

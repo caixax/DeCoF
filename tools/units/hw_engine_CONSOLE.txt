@@ -18,3 +18,5 @@ _Con_DrawNotify
 _Con_DrawDebugArea
 _Con_DrawDebugAreas
 _Con_NPrintf
+_Con_NXPrintf
+_Con_IsVisible

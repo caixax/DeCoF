@@ -33,3 +33,6 @@ _Cache_Alloc
 _Memory_Init
 _Cache_Print_Models_And_Totals
 _Cache_Print_Sounds_And_Totals
+_Z_ClearZone
+_CacheSystemCompare
+_ComparePath1

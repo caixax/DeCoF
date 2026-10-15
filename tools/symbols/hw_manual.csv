@@ -12,3 +12,193 @@ va,name,kind,evidence
 01D4BC6A,_MD5Transform,func,"engine/crc.c of the Linux hw.so DWARF in source order between the matched COM_BlockSequenceCRCByte, CRC_MapFile, MD5Init and MD5Transform"
 01D4CB8D,_MD5_Hash_File,func,"engine/crc.c of the Linux hw.so DWARF in source order between the matched COM_BlockSequenceCRCByte, CRC_MapFile, MD5Init and MD5Transform"
 01D4CD2C,_MD5_Print,func,"engine/crc.c of the Linux hw.so DWARF in source order between the matched COM_BlockSequenceCRCByte, CRC_MapFile, MD5Init and MD5Transform"
+01D86DC0,_Info_ValueForKey,func,"engine/info.c DWARF source order (first function, 16-aligned object start after Sbar_Draw); rotates 4 static 128-byte value buffers, Q_strcmp of key (added by an agent)"
+01D86F5A,_Info_RemoveKey,func,"engine/info.c DWARF source order after Info_ValueForKey; string 'Can't use a key with a \', Q_strncmp of key then Q_strcpy over the pair (added by an agent)"
+01D87137,_Info_RemovePrefixedKeys,func,engine/info.c DWARF source order after Info_RemoveKey; calls Info_RemoveKey when pkey[0] equals the char argument (added by an agent)
+01D872DD,_Info_IsKeyImportant,func,"engine/info.c DWARF source order; returns 1 for keys starting with * and for name, model, rate, topcolor, bottomcolor, cl_updaterate, cl_lw, cl_lc (added by an agent)"
+01D87420,_Info_FindLargestKey,func,"engine/info.c DWARF source order; static 128-byte key buffer, sums key and value lengths, skips Info_IsKeyImportant keys; called by Info_SetValueForStarKey (added by an agent)"
+01D87A92,_Info_IsValid,func,"engine/info.c DWARF source order (last function, after Info_Print); returns 0 on a key or value of 127 chars or more, a missing or empty value (added by an agent)"
+01D4CDC0,_Cvar_Init,func,"engine/cvar.c DWARF source order (first function, 16-aligned object start after MD5_Print); empty body as in the Linux build (added by an agent)"
+01D4CDC5,_Cvar_Shutdown,func,"engine/cvar.c DWARF source order (second function, before Cvar_FindVar); clears the cvar list head that Cvar_FindVar walks (added by an agent)"
+01D4D5D2,_Cvar_RemoveHudCvars,func,engine/cvar.c DWARF source order after Cvar_RegisterVariable; Z_Frees every cvar with FCVAR_CLIENTDLL (0x10) and relinks the rest in order (added by an agent)
+01D4D677,_Cvar_IsMultipleTokens,func,"engine/cvar.c DWARF source order; COM_Parse loop counting tokens into a static 516-byte firstToken, returns it unless exactly one token (added by an agent)"
+01D4D70E,_Cvar_Command,func,"engine/cvar.c DWARF source order before Cvar_WriteVariables; calls Cvar_IsMultipleTokens(Cmd_Argv(0)), strings is and Can't set %s in multiplayer (2013 version without Cvar_CommandWithPrivilegeCheck) (added by an agent)"
+01D4766E,_MSG_WriteBitString,func,"loop writes each char with MSG_WriteBits(c,8) then a 0 terminator; source order WriteBitString before WriteBitData (Linux DWARF lines 1089/1103); the Linux-order name was swapped (added by an agent)"
+01D476AE,_MSG_WriteBitData,func,"loop of length calls MSG_WriteBits(*p,8) with no terminator; follows MSG_WriteBitString in source order (Linux DWARF line 1103); the Linux-order name was swapped
+ (added by an agent)"
+01D46480,_Info_Serverinfo,func,"returns the address of the 256 byte serverinfo buffer; called by COM_SetupDirectories for Info_SetValueForStarKey(Info_Serverinfo(), ""*gamedir"", ...); first function of common.c (DWARF line 80)
+ (added by an agent)"
+01D4648A,_Q_memset,func,"Quake Q_memset: aligned dword fill with fill|fill<<8|fill<<16|fill<<24 else byte loop; DWARF common.c order after Info_Serverinfo
+ (added by an agent)"
+01D46517,_Q_memcpy,func,"Quake Q_memcpy: aligned dword copy else byte copy; DWARF common.c order after Q_memset
+ (added by an agent)"
+01D46596,_Q_memcmp,func,"dword compare loop then byte compare loop returning -1/0; DWARF locals byteLoops numLoops i; order after Q_memcpy
+ (added by an agent)"
+01D46622,_Q_strcpy,func,"copies while dest && src && *src then terminates; called by Q_strcat; DWARF order after Q_memcmp
+ (added by an agent)"
+01D4666A,_Q_strncpy,func,"copies while src && *src && count-- then terminates if count > 0; called by COM_ExplainDisconnection and COM_FileBase; DWARF order after Q_strcpy
+ (added by an agent)"
+01D466C2,_Q_strlen,func,"returns 0 for NULL else counts chars; called by MSG_WriteString and SZ_Print; DWARF order after Q_strncpy
+ (added by an agent)"
+01D466F6,_Q_strrchr,func,"Q_strlen then scans backward for char c; DWARF order after Q_strlen
+ (added by an agent)"
+01D46746,_Q_strcat,func,"dest += Q_strlen(dest); Q_strcpy(dest, src); DWARF order after Q_strrchr
+ (added by an agent)"
+01D4676F,_Q_strcmp,func,"Quake Q_strcmp returning -1/0; called by COM_CheckParm and COM_InitArgv(""-safe""); DWARF order after Q_strcat
+ (added by an agent)"
+01D467B7,_Q_strncmp,func,"Quake Q_strncmp with count; DWARF order after Q_strcmp
+ (added by an agent)"
+01D46813,_Q_strncasecmp,func,"Quake Q_strncasecmp folding a-z; called by Q_strcasecmp with 99999 and by Q_strnicmp; DWARF order after Q_strncmp
+ (added by an agent)"
+01D46A42,_Q_atof,func,"Quake Q_atof: sign, hex, character and decimal with '.' handling in doubles; DWARF order after Q_atoi
+ (added by an agent)"
+01D46C1A,_Q_strlwr,func,"tolower over each char; DWARF order after Q_atof
+ (added by an agent)"
+01D46C54,_Q_FileNameCmp,func,"compares with tolower treating '/' and '\\' as equal; DWARF order after Q_strlwr
+ (added by an agent)"
+01D46CEE,_Q_strstr,func,"returns strstr(s1, search); DWARF order after Q_FileNameCmp
+ (added by an agent)"
+01D46D03,_COM_Nibble,func,"hex digit to 0-15, '0' otherwise; called twice by COM_HexConvert; DWARF order after Q_strstr (Q_strtoull and Q_striprefix are later additions)
+ (added by an agent)"
+01D46D5B,_COM_HexConvert,func,"writes COM_Nibble(hi)<<4|COM_Nibble(lo) per two input chars; DWARF order after COM_Nibble
+ (added by an agent)"
+01D46DCF,_COM_BinPrintf,func,"""%02x"" per byte strncat into a 4096 byte static buffer; DWARF order after COM_HexConvert
+ (added by an agent)"
+01D475E5,_MSG_WriteSBits,func,"clamps to (1<<(numbits-1))-1, MSG_WriteOneBit(sign), MSG_WriteBits(abs(data),numbits-1); DWARF order after MSG_WriteBits
+ (added by an agent)"
+01D47768,_MSG_ReadBitAngle,func,"MSG_ReadBits(numbits) scaled by 360/(1<<numbits); DWARF order after MSG_WriteBitAngle
+ (added by an agent)"
+01D477B2,_MSG_CurrentBit,func,"bfread.nCurInputBit + 8*nBytesRead, or 8*msg_readcount when not bit reading; DWARF order after MSG_ReadBitAngle
+ (added by an agent)"
+01D477E1,_MSG_IsBitReading,func,"returns bfread.pbuf != NULL; called by MSG_ReadVec3Coord; DWARF order after MSG_CurrentBit
+ (added by an agent)"
+01D477F2,_MSG_StartBitReading,func,"initialises bfread from msg_readcount, sets msg_badread past cursize; called by MSG_ReadUsercmd with net_message; DWARF order after MSG_IsBitReading
+ (added by an agent)"
+01D47862,_MSG_EndBitReading,func,"msg_readcount = bfread.nMsgReadCount and clears bfread; called by MSG_ReadUsercmd; DWARF order after MSG_StartBitReading
+ (added by an agent)"
+01D478BD,_MSG_ReadOneBit,func,"reads one BITTABLE bit from bfread.pInByte; DWARF order after MSG_EndBitReading
+ (added by an agent)"
+01D47969,_MSG_ReadBits,func,"reads numbits through ROWBITTABLE from bfread; DWARF order after MSG_ReadOneBit
+ (added by an agent)"
+01D47AF6,_MSG_PeekBits,func,"saves bfread (24 bytes), MSG_ReadBits, restores; DWARF order after MSG_ReadBits
+ (added by an agent)"
+01D47B34,_MSG_ReadSBits,func,"MSG_ReadOneBit sign then MSG_ReadBits(numbits-1), negated; DWARF order after MSG_PeekBits
+ (added by an agent)"
+01D47B69,_MSG_ReadBitString,func,"MSG_ReadBits(8) into an 8192 byte static buffer until 0; DWARF order after MSG_ReadSBits
+ (added by an agent)"
+01D47BB4,_MSG_ReadBitData,func,"length times MSG_ReadBits(8), returns length; DWARF order after MSG_ReadBitString
+ (added by an agent)"
+01D47C02,_MSG_ReadBitCoord,func,"two flag bits, sign bit, 12 integer bits, 3 fraction bits; DWARF order after MSG_ReadBitData
+ (added by an agent)"
+01D47C94,_MSG_WriteBitCoord,func,"writes the MSG_ReadBitCoord layout with MSG_WriteOneBit and MSG_WriteBits(,12)/(,3); DWARF order after MSG_ReadBitCoord
+ (added by an agent)"
+01D47D4A,_MSG_ReadBitVec3Coord,func,"three MSG_ReadOneBit flags then MSG_ReadBitCoord per set flag; DWARF order after MSG_WriteBitCoord
+ (added by an agent)"
+01D47D9E,_MSG_WriteBitVec3Coord,func,"flags for components beyond +-0.125, MSG_WriteBitCoord per set flag; DWARF order after MSG_ReadBitVec3Coord
+ (added by an agent)"
+01D47EBC,_MSG_ReadCoord,func,"MSG_ReadShort() * (1.0/8); DWARF order after MSG_WriteBitVec3Coord
+ (added by an agent)"
+01D47EDA,_MSG_WriteCoord,func,"MSG_WriteShort(sb, (int)(f*8.0)); DWARF order after MSG_ReadCoord
+ (added by an agent)"
+01D47EFA,_MSG_ReadVec3Coord,func,"MSG_ReadBitVec3Coord inside MSG_Start/EndBitReading unless already bit reading; DWARF order after MSG_WriteCoord
+ (added by an agent)"
+01D47F3A,_MSG_WriteVec3Coord,func,"MSG_WriteBitVec3Coord inside MSG_Start/EndBitWriting unless already bit writing; DWARF order after MSG_ReadVec3Coord
+ (added by an agent)"
+01D47F7A,_MSG_BeginReading,func,"msg_readcount = 0; msg_badread = 0; DWARF order after MSG_WriteVec3Coord
+ (added by an agent)"
+01D47F93,_MSG_ReadChar,func,"signed byte of net_message at msg_readcount or -1 with msg_badread; called by MSG_ReadString; DWARF order after MSG_BeginReading
+ (added by an agent)"
+01D47FDC,_MSG_ReadByte,func,"unsigned byte of net_message at msg_readcount or -1; DWARF order after MSG_ReadChar
+ (added by an agent)"
+01D48026,_MSG_ReadShort,func,"signed little endian short of net_message; called by MSG_ReadCoord; DWARF order after MSG_ReadByte
+ (added by an agent)"
+01D48088,_MSG_ReadWord,func,"unsigned little endian short of net_message; DWARF order after MSG_ReadShort
+ (added by an agent)"
+01D480E9,_MSG_ReadLong,func,"little endian long of net_message; DWARF order after MSG_ReadWord
+ (added by an agent)"
+01D48174,_MSG_ReadFloat,func,"four bytes of net_message through LittleLong; DWARF order after MSG_ReadLong
+ (added by an agent)"
+01D481E3,_MSG_ReadBuf,func,"Q_memcpy iSize bytes of net_message, -1 with msg_badread past cursize; DWARF order after MSG_ReadFloat
+ (added by an agent)"
+01D48238,_MSG_ReadString,func,"MSG_ReadChar into an 8192 byte static buffer until -1 or 0; DWARF order after MSG_ReadBuf
+ (added by an agent)"
+01D4828C,_MSG_ReadStringLine,func,"MSG_ReadChar into a 2048 byte static buffer until -1, 0 or newline; DWARF order after MSG_ReadString
+ (added by an agent)"
+01D482E6,_MSG_ReadAngle,func,"MSG_ReadChar() * (360.0/256); DWARF order after MSG_ReadStringLine (MSG_SkipString is a later addition)
+ (added by an agent)"
+01D48304,_MSG_ReadHiresAngle,func,"MSG_ReadShort() * (360.0/65536); DWARF order after MSG_ReadAngle
+ (added by an agent)"
+01D48377,_SZ_Alloc,func,"buffername, Hunk_AllocName(max(startsize,256), name), maxsize, cursize 0, flags 0; DWARF order after MSG_ReadUsercmd
+ (added by an agent)"
+01D483C6,_SZ_Clear,func,"cursize = 0 and clears FSB_OVERFLOWED; called by SZ_GetSpace; DWARF order after SZ_Alloc
+ (added by an agent)"
+01D48598,_SZ_Print,func,"Q_strlen, SZ_GetSpace over a trailing 0, Q_memcpy; DWARF order after SZ_Write
+ (added by an agent)"
+01D4861E,_SZ_Unused_guess,func,"returns 0, no callers and no references; sits between SZ_Print and COM_SkipPath with no Linux DWARF counterpart
+ (added by an agent)"
+01D48625,_COM_SkipPath,func,"returns the char after the last '/' or '\\'; DWARF order after SZ_Print
+ (added by an agent)"
+01D4866A,_COM_StripExtension,func,"copies in to out backward dropping the last extension; DWARF order after COM_SkipPath
+ (added by an agent)"
+01D48706,_COM_FileExtension,func,"copies up to 7 chars after the first '.' into an 8 byte static buffer, """" without one; DWARF order after COM_StripExtension
+ (added by an agent)"
+01D48792,_COM_FileBase,func,"copies the name between the last path separator and the last '.' with Q_strncpy; called by COM_LoadFile and COM_LoadFileLimit; DWARF order after COM_FileExtension
+ (added by an agent)"
+01D49AC9,_COM_CheckPrintMap,func,"prints ""%s\n"" for version 30 headers or ""OUTDATED:  %s\n"" depending on the third argument; called only by COM_ListMaps; name from ReHLDS
+ (added by an agent)"
+01D49CF0,_COM_NormalizeAngles,func,"wraps each of three angles into -180..180; called by MSG_ReadUsercmd on to->viewangles; DWARF order after COM_EntsForPlayerSlots
+ (added by an agent)"
+01D49D70,_COM_Munge,func,"xor ~seq, LongSwap, xor with mungify_table (0x7A 0x64 0x05 0xF1 ...), xor seq; DWARF order after COM_NormalizeAngles
+ (added by an agent)"
+01D49E4B,_COM_UnMunge,func,"inverse of COM_Munge with the same table; DWARF order after COM_Munge
+ (added by an agent)"
+01D49F26,_COM_Munge2,func,"COM_Munge with mungify_table2 (0x05 0x61 0x7A 0xED ...); DWARF order after COM_UnMunge
+ (added by an agent)"
+01D4A001,_COM_UnMunge2,func,"inverse of COM_Munge2; DWARF order after COM_Munge2
+ (added by an agent)"
+01D4A0DC,_COM_Munge3,func,"COM_Munge with mungify_table3 (0x20 0x07 0x13 0x61 ...); DWARF order after COM_UnMunge2
+ (added by an agent)"
+01D4A1B7,_COM_UnMunge3,func,"inverse of COM_Munge3; DWARF order after COM_Munge3
+ (added by an agent)"
+01D4A292,_COM_GetApproxWavePlayLength,func,"reads a 128 byte header, checks ""RIFF"", ""WAVE"", ""fmt "" and divides by the average bytes per second; last function of common.c (DWARF line 3422)
+ (added by an agent)"
+01D440C0,_Cmd_Wait_f,func,"engine/cmd.c DWARF source order; first function of the object (16-aligned), sets the cmd_wait flag Cbuf_Execute clears; registered as wait by Cmd_Init (added by an agent)"
+01D440CF,_Cbuf_Init,func,engine/cmd.c DWARF source order; SZ_Alloc of string cmd_text with 0x4000 bytes (added by an agent)
+01D440EB,_Cbuf_AddText,func,"engine/cmd.c DWARF source order; string Cbuf_AddText: overflow, SZ_Write to cmd_text (added by an agent)"
+01D44140,_Cbuf_InsertText,func,"string Cbuf_InsertText: overflow; the 2013 build has no Cbuf_InsertTextToBuffer (no filtered buffer), this is the Quake Cbuf_InsertText with an overflow check (added by an agent)"
+01D441F3,_Cbuf_InsertTextLines,func,"engine/cmd.c DWARF source order; string Cbuf_InsertTextLines: overflow, adds newline, text, newline (added by an agent)"
+01D442C6,_Cbuf_Execute,func,"engine/cmd.c DWARF source order; splits cmd_text at ; and newline outside quotes, Cmd_ExecuteString(line, src_command), stops on cmd_wait (added by an agent)"
+01D44CB7,_Cmd_Shutdown,func,"engine/cmd.c DWARF source order; after Cmd_Init; clears cmd_functions, cmd_argc, memset of the 80-entry cmd_argv, cmd_args (added by an agent)"
+01D44CEE,_Cmd_Argc,func,engine/cmd.c DWARF source order; g_engdstAddrs.Cmd_Argc hook (+0x98) then returns cmd_argc (added by an agent)
+01D44CFE,_Cmd_Argv,func,"engine/cmd.c DWARF source order; g_engdstAddrs.Cmd_Argv hook (+0x9c), unsigned bound check against cmd_argc, cmd_argv[arg] (added by an agent)"
+01D44D2C,_Cmd_Args,func,"engine/cmd.c DWARF source order; returns cmd_args, which Cmd_TokenizeString sets (added by an agent)"
+01D44D36,_Cmd_TokenizeString,func,"engine/cmd.c DWARF source order; frees cmd_argv, COM_Parse loop copying com_token into Z_Malloc'd cmd_argv entries (added by an agent)"
+01D44E7D,_Cmd_FindCmd,func,engine/cmd.c DWARF source order; walks cmd_functions with Q_strcmp of the name (added by an agent)
+01D44EBD,_Cmd_FindCmdPrev,func,engine/cmd.c DWARF source order; returns the entry before the named command; used by Cmd_CompleteCommand (added by an agent)
+01D45059,_Cmd_AddMallocCommand,func,"engine/cmd.c DWARF source order; after Cmd_AddCommand, Mem_ZeroMalloc'd cmd_function_t with a flags argument, strings Cmd_AddCommand: %s already defined (added by an agent)"
+01D4511B,_Cmd_AddHUDCommand,func,"engine/cmd.c DWARF source order; Cmd_AddMallocCommand(name, function, FCMD_HUD_COMMAND 1) (added by an agent)"
+01D45132,_Cmd_AddWrapperCommand,func,"engine/cmd.c DWARF source order; Cmd_AddMallocCommand(name, function, FCMD_WRAPPER_COMMAND 4) (added by an agent)"
+01D45149,_Cmd_AddGameCommand,func,"engine/cmd.c DWARF source order; Cmd_AddMallocCommand(name, function, FCMD_GAME_COMMAND 2) (added by an agent)"
+01D45160,_Cmd_RemoveMallocedCmds,func,engine/cmd.c DWARF source order; Mem_Frees the commands whose flags match the argument (added by an agent)
+01D451C1,_Cmd_RemoveHudCmds,func,engine/cmd.c DWARF source order; Cmd_RemoveMallocedCmds(FCMD_HUD_COMMAND 1) (added by an agent)
+01D451D0,_Cmd_RemoveGameCmds,func,engine/cmd.c DWARF source order; Cmd_RemoveMallocedCmds(FCMD_GAME_COMMAND 2) (added by an agent)
+01D451DF,_Cmd_RemoveWrapperCmds,func,engine/cmd.c DWARF source order; Cmd_RemoveMallocedCmds(FCMD_WRAPPER_COMMAND 4) (added by an agent)
+01D451EE,_Cmd_Exists,func,engine/cmd.c DWARF source order; returns 1 when cmd_functions holds the name; called by Cvar_RegisterVariable (added by an agent)
+01D45230,_Cmd_CompleteCommand,func,"engine/cmd.c DWARF source order; same shape as Cvar_CompleteVariable over cmd_functions, calls Cmd_FindCmd and Cmd_FindCmdPrev (added by an agent)"
+01D4542C,_Cmd_ExecuteString,func,"engine/cmd.c DWARF source order; Cmd_TokenizeString, runs the matching command, then aliases (Cbuf_InsertText), then Cvar_Command, else Cmd_ForwardToServer (added by an agent)"
+01E11AD0,_Z_ClearZone,func,"engine/zone.c DWARF source order (first function, 16-aligned object start); sets up blocklist and one free block with ZONEID 0x1d4a11, called by Memory_Init with mainzone (added by an agent)"
+01E12A76,_CacheSystemCompare,func,"engine/zone.c DWARF static function; qsort comparator passed by Cache_Print and Cache_Print_Models_And_Totals, _stricmp of the two cache_system_t names (+8) (added by an agent)"
+01E12AA6,_ComparePath1,func,"engine/zone.c DWARF source order between Cache_Print and CommatizeNumber; compares two paths up to the first slash, called by Cache_Print_Sounds_And_Totals (added by an agent)"
+01D4B0B5,_Con_NXPrintf,func,"engine/CONSOLE.C DWARF source order after Con_NPrintf; g_engdstAddrs.Con_NXPrintf hook (+0xac), takes a con_nprint_s (index, time_to_live, color) and fills the 32 debug notify areas (added by an agent)"
+01D4B181,_Con_IsVisible,func,engine/CONSOLE.C DWARF source order (last function); g_engdstAddrs.Con_IsVisible hook (+0x118) then (int)scr_con_current (added by an agent)
+01D89600,_CheckForCommand,func,"engine/KEYS.C DWARF source order; first function of the object (16-aligned); copies key_lines[edit_line]+1 up to a space, Cmd_CompleteCommand then Cvar_CompleteVariable with shift_down ? -1 : 1, Q_strcmp against the copy (added by an agent)"
+01D89715,_CompleteCommand,func,"engine/KEYS.C DWARF source order; skips a leading backslash or slash, completes with Cmd_CompleteCommand or Cvar_CompleteVariable and writes /cmd and a space into key_lines[edit_line] (added by an agent)"
+01D8981F,_Key_UpLine,func,engine/KEYS.C DWARF source order; steps history_line back over empty key_lines entries and copies that line into key_lines[edit_line] (added by an agent)
+01D898C3,_Key_Console,func,engine/KEYS.C DWARF source order; starts with a jump to its own epilogue; the unreachable remainder (to 01D89A1F) holds the console history up and down code (added by an agent)
+01D89A1F,_Cbuf_ReplaceSemiColons,func,engine/KEYS.C DWARF source order; replaces every ; in chat_buffer with a comma; called by Key_Message before the say command is queued (added by an agent)
+01D89A63,_Key_Message,func,"engine/KEYS.C DWARF source order; ENTER queues message_type, chat_buffer in quotes and a newline with Cbuf_AddText, ESCAPE leaves key_message, BACKSPACE and printable keys edit chat_buffer (added by an agent)"
+01D8A8F4,_Key_ClearStates,func,"engine/KEYS.C DWARF source order; after Key_Event; clears keydown, keyGameUIdown and key_repeats for all 256 keys (added by an agent)"
+01D8A943,_Key_BindingForKey,func,"engine/KEYS.C DWARF source order; bounds check 0..255, returns keybindings[keynum] or NULL (added by an agent)"
+01D8A976,_Key_Shutdown,func,engine/KEYS.C DWARF source order; last function of the object; clears all 256 keybindings entries (added by an agent)
+01D4FA00,_DELTA_FindField,func,"prints DELTA_FindField:  Warning, couldn't find %s; Q_strcasecmp over pFields->pdd; called by DELTA_SetField and DELTA_UnsetField (added by an agent)"
+01D52300,_DELTA_Shutdown,func,"calls DELTA_ClearEncoders, DELTA_ClearDefinitions, DELTA_ClearRegistrations; last function of delta.c after DELTA_Init (added by an agent)"

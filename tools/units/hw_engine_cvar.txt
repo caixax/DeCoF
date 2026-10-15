@@ -14,3 +14,8 @@ _Cmd_CvarList_f
 _Cvar_CountServerVariables
 _Cvar_UnlinkExternals
 _Cvar_CmdInit
+_Cvar_Init
+_Cvar_Shutdown
+_Cvar_RemoveHudCvars
+_Cvar_IsMultipleTokens
+_Cvar_Command
