@@ -1837,6 +1837,11 @@
           "/Zc:inline"
         ],
         "libs": [
+          "winmm.lib",
+          "refs/halflife/utils/vgui/lib/win32_vc6/vgui.lib",
+          "wsock32.lib",
+          "opengl32.lib",
+          "@steam_api.lib",
           "kernel32.lib",
           "user32.lib",
           "gdi32.lib",
@@ -1849,11 +1854,11 @@
           "uuid.lib",
           "odbc32.lib",
           "odbccp32.lib",
-          "winmm.lib",
-          "wsock32.lib",
-          "opengl32.lib",
-          "refs/halflife/utils/vgui/lib/win32_vc6/vgui.lib",
-          "refs/irrklang-1.6.0/lib/Win32-visualStudio/irrKlang.lib"
+          "@id3lib.lib",
+          "@cg.lib",
+          "@cgGL.lib",
+          "refs/irrklang-1.6.0/lib/Win32-visualStudio/irrKlang.lib",
+          "@DevIL.lib"
         ],
         "implibs": {
           "versions/1.6a/steam_api.dll": "steam_api.lib",

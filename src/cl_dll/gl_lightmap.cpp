@@ -40,6 +40,8 @@ color24 blocklights[BLOCKLIGHTS_SIZE];
 bool lightmapsResetA_guess;
 bool lightmapsResetB_guess;
 
+int iUnknown104CC468_guess;	// cleared by the Concuss message, never read
+
 int lightmapstotal;
 
 static model_t *world;

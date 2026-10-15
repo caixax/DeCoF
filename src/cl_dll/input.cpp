@@ -100,8 +100,8 @@ extern int iWheelchair_guess;
 extern int iBoat_guess;
 extern cl_entity_t *pAttachCamEnt_guess;
 extern int iPlayerMode_guess;
-extern int iFallOverTaps_guess;
-extern int iFallOverTapCount_guess;
+extern int iGetUpTaps_guess;
+extern int iGetUpTapCount_guess;
 extern bool g_bUnlockShown_guess;
 extern int g_iVisibleMouse;
 extern int iMenuMode_guess;
@@ -713,7 +713,7 @@ void IN_JumpDown (void)
 {
 	if ( gHUD.m_iFallOver_guess )
 	{
-		if ( ++iFallOverTapCount_guess >= iFallOverTaps_guess )
+		if ( ++iGetUpTapCount_guess >= iGetUpTaps_guess )
 			gEngfuncs.pfnServerCmd( "tapgetup" );
 		return;
 	}

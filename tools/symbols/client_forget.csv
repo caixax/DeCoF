@@ -10,3 +10,4 @@ va,name,evidence
 10064A40,?LoadPoliceSleeveTexture_guess@@YAXXZ,"old signature or name, renamed by the studio renderer work (unused int parameter, rain.cpp owns VectorDistance_guess)"
 100642B0,?LoadGloveTexture_guess@@YAXXZ,"old signature or name, renamed by the studio renderer work (unused int parameter, rain.cpp owns VectorDistance_guess)"
 10065210,?VectorDistance_guess@@YAMVVector@@0@Z,"old signature or name, renamed by the studio renderer work (unused int parameter, rain.cpp owns VectorDistance_guess)"
+10545081,?bUnknown10545081_guess@@3_NA,"member, not a global: the CCgWater_guess constructor clears [this+9], so CHud::Init and CHud::VidInit clear g_CgWater_guess.m_bEnabled_guess"

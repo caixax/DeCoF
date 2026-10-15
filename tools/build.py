@@ -314,18 +314,27 @@ def link(dll):
     tc = toolchain(cfg)
     tmp = os.path.join(ROOT, "build", "link", dll)
     os.makedirs(tmp, exist_ok=True)
-    # "implibs": import libraries made from retail third-party DLLs
-    libs = []
+    # "implibs": import libraries made from retail third-party DLLs. "libs" can
+    # place one with "@<name>.lib" (the import table follows the library
+    # order); the others go after "libs".
+    made = {}
     for src, lib in lk.get("implibs", {}).items():
-        lib = os.path.join(tmp, lib)
+        path = os.path.join(tmp, lib)
         if subprocess.call([sys.executable, os.path.join(ROOT, "tools", "implib.py"),
-                            os.path.join(ROOT, src), lib, os.path.join(ROOT, "build", kind, dll)],
+                            os.path.join(ROOT, src), path, os.path.join(ROOT, "build", kind, dll)],
                            stdout=subprocess.DEVNULL) != 0:
             sys.exit("import library for %s failed" % src)
-        libs.append(lib)
+        made[lib] = path
+    libs = []
+    for lib in lk["libs"]:
+        if lib.startswith("@"):
+            libs.append(made.pop(lib[1:]))
+        else:
+            libs.append(lib)
+    libs += list(made.values())
     out = os.path.join(tmp, lk["out"])
     cmd = [tc.link_path()] + lk["flags"] + ["/out:" + out, "/map:" + out + ".map"]
-    cmd += [obj_path(kind, full) for _d, _c, _u, full in units] + lk["libs"] + libs
+    cmd += [obj_path(kind, full) for _d, _c, _u, full in units] + libs
     res = subprocess.run(cmd, env=tc.env(), cwd=ROOT, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
     log = res.stdout.decode("latin-1").splitlines()
     with open(out + ".log", "w") as f:

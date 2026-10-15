@@ -19,6 +19,7 @@
 
 cvar_t *v_posteffects;
 cvar_t *v_grayscale;
+int g_iWaterOldTexture_guess;	// texture binding saved and restored by CCgWater_guess::Render_guess
 int iGreyFade_guess;		// GreyFade message (fade time in seconds, 0: DEAD_GRAYSCALE_TIME)
 extern cvar_t *cv_specular_nocombiners;
 extern cl_entity_t *pAttachCamEnt_guess;

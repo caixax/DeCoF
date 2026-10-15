@@ -47,6 +47,7 @@ extern engine_studio_api_t IEngineStudio;
 // buz: spread value
 vec3_t g_vSpread;
 int g_iGunMode;
+int iDoctorMode_guess;	// vuser1[0] of the local player state
 
 int grgLogoFrame[MAX_LOGO_FRAMES] = 
 {
@@ -89,6 +90,7 @@ extern kbutton_t in_moveright;
 
 float flNextSoundCacheTime_guess;
 float flGunParam1_guess;	// vuser2[1] of the local player state, set by HUD_ProcessPlayerState
+bool bUnknown105431E9_guess;
 
 
 // true while the view is set to another entity than the local player (ViewEntity message)

@@ -48,6 +48,7 @@
 
 #include "glmanager.h" // buz
 #include "gl_renderer.h" // buz
+#include "CgWater_guess.h"
 #include "exception.h" // buz
 #include "log.h"
 
@@ -153,7 +154,6 @@ extern bool bCustomGloveTexture_guess;	// CustomGlv message
 extern int iGreyFade_guess;				// GreyFade message
 extern float flNextSoundCacheTime_guess;	// "ambience/soundcache" in CHud::Redraw
 extern bool bUnknown105431E9_guess;
-extern bool bUnknown10545081_guess;
 extern float flUnknown105595A0_guess;
 extern float flUnknown105595A4_guess;
 extern float flUnknown105595A8_guess;
@@ -753,7 +753,7 @@ void CHud :: Init( void )
 	flNextSoundCacheTime_guess = 0;
 	m_bMenuClick_guess = false;
 	m_flMenuClickTime_guess = 0;
-	bUnknown10545081_guess = false;
+	g_CgWater_guess.m_bEnabled_guess = false;
 
 	InitGlows();
 	RendererInit();
@@ -1057,7 +1057,7 @@ void CHud :: VidInit( void )
 	m_szObjectiveText_guess[0] = 0;
 	m_bMenuClick_guess = false;
 	m_flMenuClickTime_guess = 0;
-	bUnknown10545081_guess = false;
+	g_CgWater_guess.m_bEnabled_guess = false;
 	iGoro_guess = CVAR_GET_FLOAT( "goro" );
 	m_flGreyFadeEnd_guess = 0;
 	m_flGreyFadeStart_guess = 0;

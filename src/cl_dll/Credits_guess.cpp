@@ -22,7 +22,7 @@ extern int g_HeadShieldState;
 
 #define SHIELD_ON	0
 extern cvar_t *cl_fastcredits;
-extern int iUnknown101902FC_guess;
+int iUnknown101902FC_guess = 50;	// distance of the unlocked item model in front of the view (StudioModelRenderer)
 
 // the custom costume textures are loaded again when these are cleared (studio renderer)
 extern bool g_bHoodieLoaded_guess;

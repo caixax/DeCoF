@@ -18,6 +18,7 @@ extern engine_studio_api_t IEngineStudio;
 extern int current_ext_texture_id;
 extern GLint g_iWaterOldTexture_guess;
 
+int iUnknown1054506C_guess;	// V_CalcNormalRefdef stores pparams->waterlevel here, 3 is under water
 CCgWater_guess g_CgWater_guess;
 
 CCgWater_guess::CCgWater_guess()

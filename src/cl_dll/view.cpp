@@ -571,9 +571,11 @@ extern int g_iDualWeapon1_guess;
 extern int g_iDualWeapon2_guess;
 extern cl_entity_t g_HeadShieldEnt;
 
+vec3_t vecIronsightOfs_guess;
 vec3_t vecWheelchairAngles_guess;		// added to the wheelchair angles (the knock back subtracts from it)
 float flMouseOfs2X_guess;				// second mouse look pair of IN_MouseMove
 float flMouseOfs2Y_guess;
+cl_entity_t *pCamTargetEnt_guess;
 cl_entity_t *pDualEnt_guess;			// the left hand weapon entity of the dual wield mode
 vec3_t vecWheelchairViewAngles_guess;	// the view angles in the wheelchair
 float flUnknown105595A0_guess;
@@ -2229,7 +2231,6 @@ extern void CAM_ToFirstPerson( void );
 extern void CAM_ToThirdPerson( void );
 extern cl_entity_t *pTelescopeEnt_guess;
 extern cl_entity_t *pAttachCamEnt_guess;
-extern cl_entity_t *pCamTargetEnt_guess;
 
 int iModelAttachEnt_guess = -1;
 int iModelAttachNum_guess = -1;

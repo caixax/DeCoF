@@ -817,7 +817,6 @@ va,name,kind,evidence
 10545048,?dripcounter@@3HA,data,address from 5 paired references in functions of identical size (our global plus addend against the retail address)
 1054504C,?fxcounter@@3HA,data,address from 15 paired references in functions of identical size (our global plus addend against the retail address)
 1054506C,?iUnknown1054506C_guess@@3HA,data,address from 2 paired references in functions of identical size (our global plus addend against the retail address)
-10545081,?bUnknown10545081_guess@@3_NA,data,address from 2 paired references in functions of identical size (our global plus addend against the retail address)
 10545128,?g_szLineBuffer@@3PAY0BAA@DA,data,address from 18 paired references in functions of identical size (our global plus addend against the retail address)
 10545728,?g_pflNameColors@@3PAPAMA,data,address from 6 paired references in functions of identical size (our global plus addend against the retail address)
 10545740,?g_iNameLengths@@3PAHA,data,address from 6 paired references in functions of identical size (our global plus addend against the retail address)
@@ -1038,7 +1037,7 @@ va,name,kind,evidence
 1013B108,??_C@_00CNPNBAHC@@,data,"the empty string literal """"; Ghidra labels it PTR_1013b108, which objdiff does not treat as a string; 260 paired references"
 10190600,___security_cookie,data,the /GS cookie every protected function xors with ebp in its prologue (261 paired references)
 10545050,?g_CgContext_guess@@3VCCgContext_guess@@A,data,CHud::MsgFunc_InitHUD calls its Shutdown_guess (hud_msg agent); 2 paired references; extent up to iUnknown1054506C_guess
-10545078,?g_CgWater_guess@@3VCCgWater_guess@@A,data,"CHud::MsgFunc_InitHUD resets it (hud_msg agent); extent up to bUnknown10545081_guess, which may be one of its members"
+10545078,?g_CgWater_guess@@3VCCgWater_guess@@A,data,CHud::MsgFunc_InitHUD resets it (hud_msg agent); CHud::Init and CHud::VidInit clear its m_bEnabled_guess (the byte at +9 the constructor clears)
 10545118,?g_TextureManager_guess@@3VCTextureManager_guess@@A,data,"CHud::MsgFunc_InitHUD calls IsHardware_guess, Reset_guess and LoadPlayerShadow_guess on it (hud_msg agent); extent up to the next named symbol"
 10543338,?in_fov@@3MA,data,"CHud::UpdateClientData stores cdata->fov here before Think, as in_fov in HLSDK hud_update.cpp"
 105433B0,?cl_fovmultiplier@@3PAUcvar_s@@A,data,"InitInput stores the ""cl_fovmultiplier"" cvar here; CHud::UpdateClientData multiplies m_flFOV by its value"
@@ -1245,3 +1244,8 @@ va,name,kind,evidence
 1018F658,?gMP3Info_guess@@3VMP3FileInfo@@A,data,"MP3FileInfo object right after gHUD (1018A0C0 + 0x5598) in cdll_int.obj, its destructor ??1MP3FileInfo is in cdll_int.obj"
 1001D290,??_GMP3FileInfo@@UAEPAXI@Z,func,"slot 0 of the MP3FileInfo vtable, in cdll_int.obj (mp3 agent)"
 1001D3C0,??1MP3FileInfo@@UAE@XZ,func,"MP3FileInfo destructor (calls Free), in cdll_int.obj (mp3 agent)"
+104CD4F4,?g_iWaterOldTexture_guess@@3HA,data,CCgWater_guess::Render_guess saves GL_TEXTURE_BINDING_2D here and binds it back; inside the gl_postprocess.obj bss between v_grayscale and iGreyFade_guess
+104CC468,?iUnknown104CC468_guess@@3HA,data,"CHud::MsgFunc_Concuss clears it, nothing reads it; inside the gl_lightmap.obj bss between lightmapsResetA_guess and world"
+10542BA4,?iDifficulty_guess@@3HA,data,"CHud::MsgFunc_InitHUD stores the difficulty cvar here, read by GL_SetupLighting and CHud::Redraw; between g_fFadeDuration and the FallOver counters of hud_msg.obj"
+10542BA8,?iGetUpTaps_guess@@3HA,data,"CHud::MsgFunc_FallOver stores its byte here, IN_JumpDown compares the press count with it"
+10542BAC,?iGetUpTapCount_guess@@3HA,data,"CHud::MsgFunc_FallOver clears it, IN_JumpDown counts +jump presses in it"

@@ -473,7 +473,6 @@ _grgchTextureType,512,"our object, capped at the next retail symbol"
 ?dripcounter@@3HA,4,"our object, capped at the next retail symbol"
 ?fxcounter@@3HA,4,"our object, capped at the next retail symbol"
 ?iUnknown1054506C_guess@@3HA,4,type size
-?bUnknown10545081_guess@@3_NA,1,type size
 ?g_szLineBuffer@@3PAY0BAA@DA,1536,"our object, capped at the next retail symbol"
 ?g_pflNameColors@@3PAPAMA,24,"our object, capped at the next retail symbol"
 ?g_iNameLengths@@3PAHA,24,"our object, capped at the next retail symbol"
