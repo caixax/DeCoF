@@ -8298,23 +8298,23 @@ gameui,100248A4,734,,,UNKNOWN,,,,TODO,,,
 gameui,10024B82,299,,,UNKNOWN,,,,TODO,,,
 gameui,10024CAD,33,,,UNKNOWN,,,,TODO,,,
 gameui,10024CD0,46,,,UNKNOWN,,,,TODO,,,
-gameui,10024D00,64,,MD5Init,ENGINE,,,,TODO,,linux_symbols:consts:1.0,
-gameui,10024D40,301,,,UNKNOWN,,,,TODO,,,
-gameui,10024E6D,226,,,UNKNOWN,,,,TODO,,,
-gameui,10024F4F,3875,,MD5Transform,ENGINE,,,,TODO,,linux_symbols:consts:0.92,
+gameui,10024D00,64,,MD5Init,ENGINE,public/checksum_md5.cpp,,,TODO,,linux_symbols:consts:1.0,linux: _Z7MD5InitP12MD5Context_t
+gameui,10024D40,301,,,UNKNOWN,public/checksum_md5.cpp,,,TODO,,,linux: _Z9MD5UpdateP12MD5Context_tPKhj
+gameui,10024E6D,226,,,UNKNOWN,public/checksum_md5.cpp,,,TODO,,,linux: _Z8MD5FinalPhP12MD5Context_t
+gameui,10024F4F,3875,,MD5Transform,ENGINE,public/checksum_md5.cpp,,,TODO,,linux_symbols:consts:0.92,linux: _Z12MD5TransformPjPKj
 gameui,10025E72,112,,,UNKNOWN,,,,TODO,,,
 gameui,10025EF0,50,,,UNKNOWN,,,,TODO,,,
 gameui,10025F22,403,,,UNKNOWN,,,,TODO,,,
-gameui,100260B5,66,,COM_TimeString,ENGINE,,,,TODO,,linux_symbols:string:0.375,
-gameui,100260F7,69,,,UNKNOWN,,,,TODO,,,
-gameui,1002613C,277,,,UNKNOWN,,,,TODO,,,
-gameui,10026251,12,,,UNKNOWN,,,,TODO,,,
-gameui,1002625D,432,,,UNKNOWN,,,,TODO,,,
-gameui,1002640D,52,,,UNKNOWN,,,,TODO,,,
-gameui,10026441,88,,,UNKNOWN,,,,TODO,,,
-gameui,10026499,116,,,UNKNOWN,,,,TODO,,,
-gameui,1002650D,144,,,UNKNOWN,,,,TODO,,,
-gameui,1002659D,178,,COM_FormatTime,ENGINE,,,,TODO,,linux_symbols:string:0.531,
+gameui,100260B5,66,,COM_TimeString,ENGINE,HLTV/common/common.cpp,,,TODO,,linux_symbols:string:0.375,linux: _Z14COM_TimeStringv
+gameui,100260F7,69,,,UNKNOWN,HLTV/common/common.cpp,,,TODO,,,linux: _Z12COM_SkipPathPc
+gameui,1002613C,277,,,UNKNOWN,HLTV/common/common.cpp,,,TODO,,,linux: _Z12COM_FileBasePcS_
+gameui,10026251,12,,,UNKNOWN,HLTV/common/common.cpp,,,TODO,,,linux: _Z14COM_UngetTokenv
+gameui,1002625D,432,,,UNKNOWN,HLTV/common/common.cpp,,,TODO,,,linux: _Z9COM_ParsePc
+gameui,1002640D,52,,,UNKNOWN,HLTV/common/common.cpp,,,TODO,,,linux: _Z11COM_VarArgsPcz
+gameui,10026441,88,,,UNKNOWN,HLTV/common/common.cpp,,,TODO,,,linux: COM_Nibble
+gameui,10026499,116,,,UNKNOWN,HLTV/common/common.cpp,,,TODO,,,linux: _Z14COM_HexConvertPKciPh
+gameui,1002650D,144,,,UNKNOWN,HLTV/common/common.cpp,,,TODO,,,linux: _Z13COM_BinPrintfPhi
+gameui,1002659D,178,,COM_FormatTime,ENGINE,HLTV/common/common.cpp,,,TODO,,linux_symbols:string:0.531,linux: _Z14COM_FormatTimef
 gameui,1002664F,93,,,UNKNOWN,,,,TODO,,,
 gameui,100266AC,154,,,UNKNOWN,,,,TODO,,,
 gameui,10026746,43,,,UNKNOWN,,,,TODO,,,
@@ -8688,18 +8688,18 @@ gameui,1003638E,15,,,UNKNOWN,,,,TODO,,,
 gameui,1003639D,68,,,UNKNOWN,,,,TODO,,,
 gameui,100363E1,11,,,UNKNOWN,,,,TODO,,,
 gameui,100363EC,43,,,UNKNOWN,,,,TODO,,,
-gameui,10036417,36,,CModInfo::GetStartMap,ENGINE,,,,TODO,,linux_symbols:string:0.75,
-gameui,1003643B,36,,CModInfo::GetTrainMap,ENGINE,,,,TODO,,linux_symbols:string:0.75,
-gameui,1003645F,55,,CModInfo::IsMultiplayerOnly,ENGINE,,,,TODO,,linux_symbols:string:0.75,
+gameui,10036417,36,,CModInfo::GetStartMap,ENGINE,GameUI/ModInfo.cpp,,,TODO,,linux_symbols:string:0.75,linux: _ZN8CModInfo11GetStartMapEv
+gameui,1003643B,36,,CModInfo::GetTrainMap,ENGINE,GameUI/ModInfo.cpp,,,TODO,,linux_symbols:string:0.75,linux: _ZN8CModInfo11GetTrainMapEv
+gameui,1003645F,55,,CModInfo::IsMultiplayerOnly,ENGINE,GameUI/ModInfo.cpp,,,TODO,,linux_symbols:string:0.75,linux: _ZN8CModInfo17IsMultiplayerOnlyEv
 gameui,10036496,55,,,UNKNOWN,,,,TODO,,,
-gameui,100364CD,55,,CModInfo::NoModels,ENGINE,,,,TODO,,linux_symbols:string:0.75,
-gameui,10036504,55,,CModInfo::NoHiModel,ENGINE,,,,TODO,,linux_symbols:string:0.75,
-gameui,1003653B,36,,CModInfo::GetFallbackDir,ENGINE,,,,TODO,,linux_symbols:string:0.75,
-gameui,1003655F,55,,CModInfo::UseFallbackDirMaps,ENGINE,,,,TODO,,linux_symbols:string:0.75,
-gameui,10036596,55,,CModInfo::GetDetailedTexture,ENGINE,,,,TODO,,linux_symbols:string:0.75,
-gameui,100365CD,36,,,UNKNOWN,,,,TODO,,,
-gameui,100365F1,36,,CModInfo::GetMPFilter,ENGINE,,,,TODO,,linux_symbols:string:0.75,
-gameui,10036615,199,,CModInfo::LoadCurrentGameInfo,ENGINE,,,,TODO,,linux_symbols:string:0.833,
+gameui,100364CD,55,,CModInfo::NoModels,ENGINE,GameUI/ModInfo.cpp,,,TODO,,linux_symbols:string:0.75,linux: _ZN8CModInfo8NoModelsEv
+gameui,10036504,55,,CModInfo::NoHiModel,ENGINE,GameUI/ModInfo.cpp,,,TODO,,linux_symbols:string:0.75,linux: _ZN8CModInfo9NoHiModelEv
+gameui,1003653B,36,,CModInfo::GetFallbackDir,ENGINE,GameUI/ModInfo.cpp,,,TODO,,linux_symbols:string:0.75,linux: _ZN8CModInfo14GetFallbackDirEv
+gameui,1003655F,55,,CModInfo::UseFallbackDirMaps,ENGINE,GameUI/ModInfo.cpp,,,TODO,,linux_symbols:string:0.75,linux: _ZN8CModInfo18UseFallbackDirMapsEv
+gameui,10036596,55,,CModInfo::GetDetailedTexture,ENGINE,GameUI/ModInfo.cpp,,,TODO,,linux_symbols:string:0.75,linux: _ZN8CModInfo18GetDetailedTextureEv
+gameui,100365CD,36,,,UNKNOWN,GameUI/ModInfo.cpp,,,TODO,,,linux: _ZN8CModInfo18GetGameDescriptionEv
+gameui,100365F1,36,,CModInfo::GetMPFilter,ENGINE,GameUI/ModInfo.cpp,,,TODO,,linux_symbols:string:0.75,linux: _ZN8CModInfo11GetMPFilterEv
+gameui,10036615,199,,CModInfo::LoadCurrentGameInfo,ENGINE,GameUI/ModInfo.cpp,,,TODO,,linux_symbols:string:0.833,linux: _ZN8CModInfo19LoadCurrentGameInfoEv
 gameui,100366DC,227,,,UNKNOWN,,,,TODO,,,
 gameui,100367C0,109,,,UNKNOWN,,,,TODO,,,
 gameui,1003682D,20,,,UNKNOWN,,,,TODO,,,

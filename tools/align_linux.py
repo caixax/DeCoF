@@ -80,9 +80,23 @@ def main():
             if f in lfuncs and n in lfuncs[f]:
                 anchor[r["va"]] = (f, n)
     proposals = []
+    cpp = []  # C++ rows: only the source file (and the Linux symbol as a hint)
     skipped = collections.Counter()
     for f, names in lfuncs.items():
         if not f.lower().endswith(".c"):
+            order = sorted(names, key=lambda n: (names[n], n))
+            lpos = {n: i for i, n in enumerate(order)}
+            pairs = [(widx[va], lpos[n]) for va, (af, n) in anchor.items() if af == f and va in widx and n in lpos]
+            chain = lis(pairs)
+            for (wa, la), (wb, lb) in zip(chain, chain[1:]):
+                ws = list(range(wa, wb + 1))
+                ls = order[la:lb + 1]
+                if len(ws) != len(ls):
+                    skipped["count differs (C++)"] += 1
+                    continue
+                for wi, n in zip(ws, ls):
+                    if rows[wi]["class"] != "LIB":
+                        cpp.append((rows[wi]["va"], f, n))
             continue
         order = sorted(names, key=lambda n: (names[n], n))
         lpos = {n: i for i, n in enumerate(order)}
@@ -103,11 +117,12 @@ def main():
                     continue
                 proposals.append((r["va"], "_" + n, f, rows[wa]["name"] or anchor.get(rows[wa]["va"], ("", "?"))[1],
                                   rows[wb]["name"] or anchor.get(rows[wb]["va"], ("", "?"))[1]))
-    print("%d names proposed from source order; skipped: %s" % (len(proposals), dict(skipped)))
+    print("%d names proposed from source order, %d C++ rows given a file; skipped: %s"
+          % (len(proposals), len(cpp), dict(skipped)))
     show = sys.argv[sys.argv.index("--show") + 1] if "--show" in sys.argv else None
     for p in [p for p in proposals if show is None or show in p[2]][:60 if show else 15]:
         print("  %s %-34s %s" % (p[0], p[1], p[2]))
-    if not write or not proposals:
+    if not write or not (proposals or cpp):
         return
     name_unit.lock()
     try:
@@ -127,12 +142,20 @@ def main():
         fields = rd.fieldnames
         allrows = list(rd)
         prop = {va: (n, f) for va, n, f, a, b in proposals}
+        cprop = {va: (f, n) for va, f, n in cpp}
         for r in allrows:
-            if r["dll"] == dll and r["va"] in prop:
+            if r["dll"] != dll:
+                continue
+            if r["va"] in prop:
                 n, f = prop[r["va"]]
                 r["name"], r["demangled"], r["source_file"] = n, n[1:], f
-                if r["class"] == "UNKNOWN":
+                if r["class"] == "UNKNOWN" and dll == "hw":
                     r["class"] = "ENGINE"
+            elif r["va"] in cprop and (not r["source_file"] or r["source_file"].startswith("guess:")):
+                f, n = cprop[r["va"]]
+                r["source_file"] = f
+                if not r["notes"]:
+                    r["notes"] = "linux: %s" % n
         with open(p, "w", newline="", encoding="utf-8") as fh:
             w = csv.DictWriter(fh, fieldnames=fields, lineterminator="\n")
             w.writeheader()
