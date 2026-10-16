@@ -34,13 +34,16 @@ import sys
 import pefile
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-IMAGES = {"hl": "versions/1.6a/cryoffear/cl_dlls/hl.dll", "client": "versions/1.6a/cryoffear/cl_dlls/client.dll"}
+IMAGES = {"hl": "versions/1.6a/cryoffear/cl_dlls/hl.dll", "client": "versions/1.6a/cryoffear/cl_dlls/client.dll",
+          "hw": "versions/1.6a/hw.dll", "gameui": "versions/1.6a/cryoffear/cl_dlls/GameUI.dll"}
 DEFAULT = ("FUN_", "LAB_", "thunk_", "SUB_")
 
 
 def coff_functions(path):
     """{name: (bytes, set of masked offsets)} for the function symbols of a
-    COFF object compiled with /Gy (one COMDAT section per function)."""
+    COFF object: one COMDAT section per function (/Gy), or several
+    functions in one section (VC6 without /Gy), each running to the next
+    function symbol of its section or to the section end."""
     data = open(path, "rb").read()
     _m, nsec, _ts, symptr, nsym, opt, _ch = struct.unpack_from("<HHIIIHH", data, 0)
     secs = []
@@ -54,7 +57,7 @@ def coff_functions(path):
             masked.update(range(va, va + 4))
         secs.append((raw, masked, chars))
     strtab = symptr + 18 * nsym
-    out = {}
+    funcs = {}  # section -> [(value, name)]
     i = 0
     while i < nsym:
         o = symptr + 18 * i
@@ -65,11 +68,18 @@ def coff_functions(path):
         else:
             name = raw.rstrip(b"\0").decode("latin-1")
         value, secnum, typ, cls, naux = struct.unpack_from("<IhHBB", data, o + 8)
-        if secnum > 0 and typ == 0x20 and cls == 2 and value == 0:
-            code, masked, chars = secs[secnum - 1]
-            if chars & 0x20:  # IMAGE_SCN_CNT_CODE
-                out[name] = (code, masked)
+        if secnum > 0 and typ == 0x20 and cls in (2, 3) and secs[secnum - 1][2] & 0x20:
+            funcs.setdefault(secnum, []).append((value, name))
         i += 1 + naux
+    out = {}
+    for secnum, lst in funcs.items():
+        code, masked, _chars = secs[secnum - 1]
+        lst.sort()
+        for k, (value, name) in enumerate(lst):
+            if len(lst) == 1 and value != 0:
+                continue
+            end = lst[k + 1][0] if k + 1 < len(lst) else len(code)
+            out.setdefault(name, (code[value:end], {m - value for m in masked if value <= m < end}))
     return out
 
 
