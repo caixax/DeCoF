@@ -818,6 +818,84 @@ void MuzzleFlash_guess( cl_entity_t *pEntity, int iAttachment, bool bAlt, float 
 
 /*
 =========================
+MuzzleFlash_guess
+
+Cry of Fear: the flash model at a given origin; nothing calls this variant
+=========================
+*/
+void MuzzleFlash_guess( const char *pszModel, int iUnused_guess, Vector vecOrigin, Vector vecAngles )
+{
+	vec3_t vecSmokeVelocity( 0, 0, 10 );
+
+	bool bCS = false;
+	if ( strstr( pszModel, "models/cs/" ) )
+		bCS = true;
+
+	cl_entity_t *pPlayer = gEngfuncs.GetLocalPlayer();
+
+	if ( !pPlayer )
+		return;
+
+	int iModelIndex;
+	struct model_s *pModel = gEngfuncs.CL_LoadModel( "models/flash1.mdl", &iModelIndex );
+	WEAPON *pWeapon = gHUD.m_Ammo.m_pWeapon;
+	float flFlashScale = 4;
+
+	if ( pWeapon )
+	{
+		if ( pWeapon->iId == 4 )
+			flFlashScale = 6;
+		else
+		{
+			if ( pWeapon->iId == 9 )
+			{
+				pModel = gEngfuncs.CL_LoadModel( "models/flash2.mdl", &iModelIndex );
+				flFlashScale = 6;
+			}
+
+			if ( pWeapon->iId == 11 )
+			{
+				pModel = gEngfuncs.CL_LoadModel( "models/flash2.mdl", &iModelIndex );
+				flFlashScale = 6;
+			}
+
+			if ( pWeapon->iId == 14 )
+			{
+				pModel = gEngfuncs.CL_LoadModel( "models/flash2.mdl", &iModelIndex );
+				flFlashScale = 2;
+			}
+		}
+	}
+
+	if ( bCS )
+		flFlashScale = 2;
+
+	flFlashScale += gEngfuncs.pfnRandomFloat( -1, 1 );
+
+	muzzleflash_guess = *pPlayer;
+	muzzleflash_guess.curstate.scale = flFlashScale;
+	muzzleflash_guess.curstate.modelindex = iModelIndex;
+	muzzleflash_guess.index = 0;
+	muzzleflash_guess.model = pModel;
+	muzzleflash_guess.origin = vecOrigin;
+	muzzleflash_guess.angles = vecAngles;
+	muzzleflash_guess.angles[2] = gEngfuncs.pfnRandomFloat( 1, 359 );
+	muzzleflash_guess.curstate.rendermode = kRenderTransAdd;
+	muzzleflash_guess.curstate.renderamt = 100;
+
+	gEngfuncs.CL_CreateVisibleEntity( ET_NORMAL, &muzzleflash_guess );
+
+	if ( cl_cheapweaponsmoke->value )
+	{
+		iGunSmoke_guess = gEngfuncs.pEventAPI->EV_FindModelIndex( "sprites/gunsmoke.spr" );
+		pGunSmoke_guess = gEngfuncs.pEfxAPI->R_TempSprite( vecOrigin, vecSmokeVelocity, 0.05, iGunSmoke_guess, kRenderTransAdd, kRenderFxFadeFast, 255, 1, FTENT_SPRANIMATE | FTENT_GROW_guess | FTENT_FADE_guess );
+	}
+
+	DlightFlash( vecOrigin );
+}
+
+/*
+=========================
 MuzzleFlashAt_guess
 
 Cry of Fear: the same flash at a given origin, never called in 1.6a
