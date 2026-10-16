@@ -34,3 +34,5 @@
 ??1CVoiceStatus@@UAE@XZ
 ?Init@CVoiceStatus@@UAEHPAVIVoiceStatusHelper@@PAPAVPanel@vgui@@@Z
 ?ShowBannedCallback@@YAXXZ
+??__Eg_VoiceStatus@@YAXXZ
+??__Fg_VoiceStatus@@YAXXZ

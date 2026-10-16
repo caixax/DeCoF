@@ -7,3 +7,5 @@
 ??1ParticleSystemManager@@QAE@XZ
 ?ClearSystems@ParticleSystemManager@@QAEXXZ
 ?DeleteSystemWithEntity@ParticleSystemManager@@QAEXH@Z
+??__Eg_pParticleSystems@@YAXXZ
+??__Fg_pParticleSystems@@YAXXZ

@@ -8,3 +8,4 @@
 ?Render_guess@CCgWater_guess@@QAEXXZ
 ??0CCgWater_guess@@QAE@XZ
 ?EndShaders_guess@CCgWater_guess@@QAEXXZ
+??__Eg_CgWater_guess@@YAXXZ

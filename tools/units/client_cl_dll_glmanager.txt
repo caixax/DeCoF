@@ -17,3 +17,5 @@
 ?IsExtensionSupported@GLManager@@QAE_NPBD@Z
 ?gluLookAt@GLManager@@QAEXNNNNNNNNN@Z
 ?SetSteamAppValue_guess@@YAHPBD0@Z
+??__Egl@@YAXXZ
+??__Fgl@@YAXXZ

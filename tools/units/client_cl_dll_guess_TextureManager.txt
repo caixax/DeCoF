@@ -28,3 +28,5 @@
 ??$_Construct_in_place@PAU?$_List_node@Utexture_s_guess@@PAX@std@@AAPAU12@@std@@YAXAAPAU?$_List_node@Utexture_s_guess@@PAX@0@0@Z
 ??$_Construct_in_place@PAU?$_List_node@Utexture_s_guess@@PAX@std@@ABQAU12@@std@@YAXAAPAU?$_List_node@Utexture_s_guess@@PAX@0@ABQAU10@@Z
 ?_Xran@?$_String_val@U?$_Simple_types@D@std@@@std@@SAXXZ
+??__Eg_TextureManager_guess@@YAXXZ
+??__Fg_TextureManager_guess@@YAXXZ

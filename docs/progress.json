@@ -1,5 +1,5 @@
 {
-  "commit": "7e16ff3",
+  "commit": "c6bf0f2",
   "counting": "LIB rows excluded; bytes weighted by function size",
   "date": "2026-10-17",
   "dlls": {
@@ -80,9 +80,9 @@
     "client.dll": {
       "bytes": {
         "EQUIVALENT": 37561,
-        "MATCHED": 565414,
-        "TODO": 46351,
-        "total": 649326
+        "MATCHED": 565793,
+        "TODO": 46282,
+        "total": 649636
       },
       "categories": {
         "COF": {
@@ -144,23 +144,23 @@
         "UNKNOWN": {
           "bytes": {
             "EQUIVALENT": 1982,
-            "MATCHED": 157414,
-            "TODO": 33341,
-            "total": 192737
+            "MATCHED": 157793,
+            "TODO": 33272,
+            "total": 193047
           },
           "functions": {
             "EQUIVALENT": 4,
-            "MATCHED": 881,
-            "TODO": 72,
-            "total": 957
+            "MATCHED": 906,
+            "TODO": 65,
+            "total": 975
           }
         }
       },
       "functions": {
         "EQUIVALENT": 21,
-        "MATCHED": 2136,
-        "TODO": 77,
-        "total": 2234
+        "MATCHED": 2161,
+        "TODO": 70,
+        "total": 2252
       }
     },
     "cof.exe": {
@@ -357,30 +357,30 @@
   "shown_total": {
     "bytes": {
       "EQUIVALENT": 94943,
-      "MATCHED": 1643677,
-      "TODO": 46351,
-      "total": 1784971
+      "MATCHED": 1644056,
+      "TODO": 46282,
+      "total": 1785281
     },
     "functions": {
       "EQUIVALENT": 34,
-      "MATCHED": 7869,
-      "TODO": 77,
-      "total": 7980
+      "MATCHED": 7894,
+      "TODO": 70,
+      "total": 7998
     }
   },
   "target_version": "1.6a",
   "total": {
     "bytes": {
       "EQUIVALENT": 95068,
-      "MATCHED": 1761228,
-      "TODO": 2080180,
-      "total": 3936476
+      "MATCHED": 1761607,
+      "TODO": 2080111,
+      "total": 3936786
     },
     "functions": {
       "EQUIVALENT": 35,
-      "MATCHED": 8377,
-      "TODO": 13910,
-      "total": 22322
+      "MATCHED": 8402,
+      "TODO": 13903,
+      "total": 22340
     }
   }
 }

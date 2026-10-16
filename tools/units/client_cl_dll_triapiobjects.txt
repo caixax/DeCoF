@@ -8,3 +8,5 @@
 ?Reset@CObjectsManager@@QAEXXZ
 ??0CSmokePuff@@QAE@VVector@@0MMMMMMMMMM@Z
 ??1CObjectsManager@@QAE@XZ
+??__Eg_objmanager@@YAXXZ
+??__Fg_objmanager@@YAXXZ

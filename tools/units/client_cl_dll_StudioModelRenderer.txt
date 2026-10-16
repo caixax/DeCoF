@@ -45,3 +45,5 @@ CGameStudioModelRenderer::`scalar_deleting_destructor'
 ?InitHeadShield@@YAXXZ
 ?__MsgFunc_HeadShield@@YAHPBDHPAX@Z
 ?StudioMuzzleFlash_guess@CStudioModelRenderer@@QAEXPADH_NM@Z
+??__Eg_StudioModelRenderer_guess@@YAXXZ
+??__Fg_StudioModelRenderer_guess@@YAXXZ

@@ -2252,6 +2252,7 @@ vec3_t vecCameraAngles_guess;
 vec3_t vecBoatOrigin_guess;				// attachment 0 of the boat, read by V_CalcNormalRefdef
 vec3_t vecWheelchairOrigin_guess;		// attachment 0 of the wheelchair, read by V_CalcNormalRefdef and CL_CreateMove
 vec3_t vecModelAttachOrigin_guess;		// attachment of the ModelAttach entity, read by V_CalcNormalRefdef
+CStudioModelRenderer g_StudioModelRenderer_guess;	// constructed at startup and destroyed at exit, never used
 extern int iUnknown1054506C_guess;
 extern int iUnknown101902FC_guess;
 extern int iUnknown101B27C8_guess;

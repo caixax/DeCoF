@@ -484,8 +484,8 @@ void CHudSpectator::DirectorMessage( int iSize, void *pbuf )
 							break;
 
 		case DRC_CMD_EVENT	:
-							m_lastPrimaryObject		=	READ_SHORT();
-							m_lastSecondaryObject	=	READ_SHORT();
+							m_lastPrimaryObject		=	READ_WORD();
+							m_lastSecondaryObject	=	READ_WORD();
 							m_iObserverFlags		=	READ_LONG();
 														
 							if ( m_autoDirector->value )
@@ -578,7 +578,7 @@ void CHudSpectator::DirectorMessage( int iSize, void *pbuf )
 		case DRC_CMD_STATUS:
 							READ_LONG(); // total number of spectator slots
 							m_iSpectatorNumber = READ_LONG(); // total number of spectator
-							READ_SHORT(); // total number of relay proxies
+							READ_WORD(); // total number of relay proxies
 
 //							gViewPort->UpdateSpectatorPanel();
 							break;

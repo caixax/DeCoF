@@ -89,3 +89,4 @@
 ?__MsgFunc_AddShine@@YAHPBDHPAX@Z
 ?__MsgFunc_AttachCam@@YAHPBDHPAX@Z
 ??1CBlackBar@@UAE@XZ
+??__Fg_VoiceStatusHelper@@YAXXZ

@@ -7,3 +7,5 @@
 ??1CPBuffer_guess@@QAE@XZ
 ?BindTexture_guess@CPBuffer_guess@@QAEXXZ
 ?ReleaseTexture_guess@CPBuffer_guess@@QAEXXZ
+??__Eg_PBuffer_guess@@YAXXZ
+??__Fg_PBuffer_guess@@YAXXZ

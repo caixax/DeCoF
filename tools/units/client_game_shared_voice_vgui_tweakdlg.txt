@@ -17,3 +17,5 @@
 ?paintBackground@CVoiceVGUITweakDlg@@UAEXXZ
 ?GetVoiceTweakDlg@@YAPAVCMenuPanel@@XZ
 ?IsTweakDlgOpen@@YA_NXZ
+??__Eg_VoiceTweakDlg@@YAXXZ
+??__Fg_VoiceTweakDlg@@YAXXZ

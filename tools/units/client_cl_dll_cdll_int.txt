@@ -28,3 +28,7 @@ _HUD_ConnectionlessPacket
 ??_GCBlackBar@@UAEPAXI@Z
 ??_GCHudParticle@@UAEPAXI@Z
 ??_GCHudTextMessage@@UAEPAXI@Z
+??__EgHUD@@YAXXZ
+??__EgMP3Info_guess@@YAXXZ
+??__FgHUD@@YAXXZ
+??__FgMP3Info_guess@@YAXXZ

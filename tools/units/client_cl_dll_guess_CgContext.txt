@@ -8,3 +8,5 @@
 ??1CCgContext_guess@@QAE@XZ
 ?AddProgram_guess@CCgContext_guess@@QAEPAUcgprogram_s_guess@@PBDH@Z
 ?IsInitialized_guess@CCgContext_guess@@QAE_NXZ
+??__Eg_CgContext_guess@@YAXXZ
+??__Fg_CgContext_guess@@YAXXZ

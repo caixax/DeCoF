@@ -1,17 +1,17 @@
 dll,va,size,name,demangled,class,source_file,first_version,changed,status,match_percent,evidence,notes
 client,100010D0,165,??__Eg_dripsArray@@YAXXZ,'g_dripsArray'',UNKNOWN,,,,MATCHED,100,client_manual.csv,
 client,10001180,165,??__Eg_fxArray@@YAXXZ,'g_fxArray'',UNKNOWN,,,,MATCHED,100,client_manual.csv,
-client,10001230,22,,,UNKNOWN,,,,TODO,,,found by tools/gaps.py (no Ghidra function before)
-client,10001250,10,,,UNKNOWN,,,,TODO,,,found by tools/gaps.py (no Ghidra function before)
-client,10001260,22,,,UNKNOWN,,,,TODO,,,found by tools/gaps.py (no Ghidra function before)
-client,10001280,22,,,UNKNOWN,,,,TODO,,,found by tools/gaps.py (no Ghidra function before)
-client,100012A0,22,,,UNKNOWN,,,,TODO,,,found by tools/gaps.py (no Ghidra function before)
-client,100012C0,22,,,UNKNOWN,,,,TODO,,,found by tools/gaps.py (no Ghidra function before)
-client,100012D6,22,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
-client,100012EC,12,,,UNKNOWN,,,,TODO,,,found by tools/gaps.py (no Ghidra function before)
-client,100012F8,12,,,UNKNOWN,,,,TODO,,,found by tools/gaps.py (no Ghidra function before)
-client,10001304,22,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
-client,1000131A,12,,,UNKNOWN,,,,TODO,,,found by tools/gaps.py (no Ghidra function before)
+client,10001230,22,??__Eg_CgContext_guess@@YAXXZ,`dynamic initializer for 'g_CgContext_guess'',UNKNOWN,cl_dll/CgContext_guess.cpp,,,MATCHED,100,,found by tools/gaps.py (no Ghidra function before)
+client,10001250,10,??__Eg_CgWater_guess@@YAXXZ,`dynamic initializer for 'g_CgWater_guess'',UNKNOWN,cl_dll/CgWater_guess.cpp,,,MATCHED,100,,found by tools/gaps.py (no Ghidra function before)
+client,10001260,22,??__Eg_PBuffer_guess@@YAXXZ,`dynamic initializer for 'g_PBuffer_guess'',UNKNOWN,cl_dll/PBuffer_guess.cpp,,,MATCHED,100,,found by tools/gaps.py (no Ghidra function before)
+client,10001280,22,??__Eg_TextureManager_guess@@YAXXZ,`dynamic initializer for 'g_TextureManager_guess'',UNKNOWN,cl_dll/TextureManager_guess.cpp,,,MATCHED,100,,found by tools/gaps.py (no Ghidra function before)
+client,100012A0,22,??__Eg_StudioModelRenderer_guess@@YAXXZ,`dynamic initializer for 'g_StudioModelRenderer_guess'',UNKNOWN,cl_dll/StudioModelRenderer.cpp,,,MATCHED,100,,found by tools/gaps.py (no Ghidra function before)
+client,100012C0,22,??__Eg_objmanager@@YAXXZ,`dynamic initializer for 'g_objmanager'',UNKNOWN,cl_dll/triapiobjects.cpp,,,MATCHED,100,,found by tools/gaps.py (no Ghidra function before)
+client,100012D6,22,,,LIB,,,,TODO,,dynamic initializer of a static std::_Init_locks object from the toolchain headers (atexit of its destructor),"STL, iostream or CRT code from the toolchain (not decompiled)"
+client,100012EC,12,,,LIB,,,,TODO,,dynamic initializer of a static std::locale object from the toolchain headers (atexit of its destructor),found by tools/gaps.py (no Ghidra function before)
+client,100012F8,12,,,LIB,,,,TODO,,dynamic initializer of a static std::_Fac_tidy_reg_t object from the toolchain headers (atexit of its destructor),found by tools/gaps.py (no Ghidra function before)
+client,10001304,22,,,LIB,,,,TODO,,dynamic initializer of a static std::_Init_locks object from the toolchain headers (atexit of its destructor),"STL, iostream or CRT code from the toolchain (not decompiled)"
+client,1000131A,12,,,LIB,,,,TODO,,dynamic initializer of a static _Init_atexit object from the toolchain headers (atexit of its destructor),found by tools/gaps.py (no Ghidra function before)
 client,10001330,34,??0InterfaceReg@@QAE@P6APAVIBaseInterface@@XZPBD@Z,InterfaceReg::InterfaceReg,COF,common/interface.cpp,,,MATCHED,100,refbytes:paranoia:common__interface.obj:score0,
 client,10001360,19,?Sys_FreeModule@@YAXPAUHInterfaceModule_t@@@Z,Sys_FreeModule,UNKNOWN,common/interface.cpp,,,MATCHED,100,,
 client,10001380,26,?Sys_GetFactory@@YAP6APAVIBaseInterface@@PBDPAH@ZPAUHInterfaceModule_t@@@Z,Sys_GetFactory,HLSDK,common/interface.cpp,,,MATCHED,100,refbytes:paranoia:common__interface.obj:score1,
@@ -7324,18 +7324,19 @@ client,101313B3,164,_wcsrchr,wcsrchr,LIB,,,,,,crt_bytes,
 client,10131460,311,_strrchr,strrchr,LIB,,,,,,crt_bytes,
 client,10131597,199,_wcschr,wcschr,LIB,,,,,,crt_bytes,
 client,1013165E,120,__filter_x86_sse2_floating_point_exception_default,_filter_x86_sse2_floating_point_exception_default,LIB,,,,,,crt_bytes,
-client,10139290,10,??__Finitlocks@std@@YAXXZ,std::`dynamic atexit destructor for 'initlocks'',LIB,,,,,,crt_bytes_ambiguous,
-client,101392A0,10,??__Finitlocks@std@@YAXXZ,std::`dynamic atexit destructor for 'initlocks'',LIB,,,,,,crt_bytes_ambiguous,
-client,101392B0,76,,,LIB,,,,,,,
-client,10139310,10,??__Finitlocks@std@@YAXXZ,std::`dynamic atexit destructor for 'initlocks'',LIB,,,,,,crt_bytes_ambiguous,
-client,10139320,10,??__Finitlocks@std@@YAXXZ,std::`dynamic atexit destructor for 'initlocks'',LIB,,,,,,crt_bytes_ambiguous,
-client,10139330,11,,,LIB,,,,,,,
-client,10139340,10,??__Finitlocks@std@@YAXXZ,std::`dynamic atexit destructor for 'initlocks'',LIB,,,,,,crt_bytes_ambiguous,
-client,10139390,10,??__Finitlocks@std@@YAXXZ,std::`dynamic atexit destructor for 'initlocks'',LIB,,,,,,crt_bytes_ambiguous,
-client,101393A0,13,??__Finitlocks@std@@YAXXZ,std::`dynamic atexit destructor for 'initlocks'',LIB,,,,,,crt_bytes_ambiguous,
-client,101393B0,10,??__Finitlocks@std@@YAXXZ,std::`dynamic atexit destructor for 'initlocks'',LIB,,,,,,crt_bytes_ambiguous,
-client,101393C0,10,??__Finitlocks@std@@YAXXZ,std::`dynamic atexit destructor for 'initlocks'',LIB,,,,,,crt_bytes_ambiguous,
-client,101393D0,10,??__Finitlocks@std@@YAXXZ,std::`dynamic atexit destructor for 'initlocks'',LIB,,,,,,crt_bytes_ambiguous,
+client,10139280,10,??__Fg_VoiceStatus@@YAXXZ,`dynamic atexit destructor for 'g_VoiceStatus'',UNKNOWN,game_shared/voice_status.cpp,,,MATCHED,100,tools/dyninit.py,
+client,10139290,10,??__Fg_VoiceTweakDlg@@YAXXZ,`dynamic atexit destructor for 'g_VoiceTweakDlg'',UNKNOWN,game_shared/voice_vgui_tweakdlg.cpp,,,MATCHED,100,crt_bytes_ambiguous,
+client,101392A0,10,??__FgHUD@@YAXXZ,`dynamic atexit destructor for 'gHUD'',UNKNOWN,cl_dll/cdll_int.cpp,,,MATCHED,100,crt_bytes_ambiguous,
+client,101392B0,76,??__FgMP3Info_guess@@YAXXZ,`dynamic atexit destructor for 'gMP3Info_guess'',UNKNOWN,cl_dll/cdll_int.cpp,,,,76.19,,
+client,10139310,10,??__Fg_StudioRenderer@@YAXXZ,`dynamic atexit destructor for 'g_StudioRenderer'',UNKNOWN,cl_dll/GameStudioModelRenderer.cpp,,,MATCHED,100,crt_bytes_ambiguous,
+client,10139320,10,??__Fgl@@YAXXZ,`dynamic atexit destructor for 'gl'',UNKNOWN,cl_dll/glmanager.cpp,,,MATCHED,100,crt_bytes_ambiguous,
+client,10139330,11,,`dynamic atexit destructor for 'g_VoiceStatusHelper'',UNKNOWN,cl_dll/hud.cpp,,,TODO,0.00,,"the second static ??__Fg_VoiceStatusHelper@@YAXXZ of hud.obj (MSVC names the registration and the thunk alike); the symbol map can hold the name once, so objdiff can not pair this one"
+client,10139340,10,??__Fg_pParticleSystems@@YAXXZ,`dynamic atexit destructor for 'g_pParticleSystems'',UNKNOWN,cl_dll/particlemgr.cpp,,,MATCHED,100,crt_bytes_ambiguous,
+client,10139390,10,??__Fg_CgContext_guess@@YAXXZ,`dynamic atexit destructor for 'g_CgContext_guess'',UNKNOWN,cl_dll/CgContext_guess.cpp,,,MATCHED,100,crt_bytes_ambiguous,
+client,101393A0,13,??__Fg_PBuffer_guess@@YAXXZ,`dynamic atexit destructor for 'g_PBuffer_guess'',UNKNOWN,cl_dll/PBuffer_guess.cpp,,,MATCHED,100,crt_bytes_ambiguous,
+client,101393B0,10,??__Fg_TextureManager_guess@@YAXXZ,`dynamic atexit destructor for 'g_TextureManager_guess'',UNKNOWN,cl_dll/TextureManager_guess.cpp,,,MATCHED,100,crt_bytes_ambiguous,
+client,101393C0,10,??__Fg_StudioModelRenderer_guess@@YAXXZ,`dynamic atexit destructor for 'g_StudioModelRenderer_guess'',UNKNOWN,cl_dll/StudioModelRenderer.cpp,,,MATCHED,100,crt_bytes_ambiguous,
+client,101393D0,10,??__Fg_objmanager@@YAXXZ,`dynamic atexit destructor for 'g_objmanager'',UNKNOWN,cl_dll/triapiobjects.cpp,,,MATCHED,100,crt_bytes_ambiguous,
 client,101393DA,10,??__Finitlocks@std@@YAXXZ,std::`dynamic atexit destructor for 'initlocks'',LIB,,,,,,crt_bytes_ambiguous,
 client,101393E4,10,??__Finitlocks@std@@YAXXZ,std::`dynamic atexit destructor for 'initlocks'',LIB,,,,,,crt_bytes_ambiguous,
 client,101393EE,10,??__Finitlocks@std@@YAXXZ,std::`dynamic atexit destructor for 'initlocks'',LIB,,,,,,crt_bytes_ambiguous,
@@ -33464,3 +33465,11 @@ opengl32,10003295,6,?sys_wglUseFontBitmapsW@@YGXXZ,sys_wglUseFontBitmapsW,PARANO
 opengl32,1000329B,6,?sys_wglUseFontOutlinesA@@YGXXZ,sys_wglUseFontOutlinesA,PARANOIA,src/opengl32/OtherOGL.cpp,2010-prototype,"same file in prototype, 1.0 and 1.6a",MATCHED,100,vc6_link_map,
 opengl32,100032A1,6,?sys_wglUseFontOutlinesW@@YGXXZ,sys_wglUseFontOutlinesW,PARANOIA,src/opengl32/OtherOGL.cpp,2010-prototype,"same file in prototype, 1.0 and 1.6a",MATCHED,100,vc6_link_map,
 opengl32,100032A7,14066,?Init@@YGHXZ,Init,PARANOIA,src/opengl32/OtherOGL.cpp,2010-prototype,"same file in prototype, 1.0 and 1.6a",MATCHED,100,vc6_link_map,
+client,10001000,22,??__Eg_VoiceStatus@@YAXXZ,`dynamic initializer for 'g_VoiceStatus'',UNKNOWN,game_shared/voice_status.cpp,,,MATCHED,100,tools/dyninit.py,
+client,10001020,22,??__Eg_VoiceTweakDlg@@YAXXZ,`dynamic initializer for 'g_VoiceTweakDlg'',UNKNOWN,game_shared/voice_vgui_tweakdlg.cpp,,,MATCHED,100,tools/dyninit.py,
+client,10001040,12,??__EgHUD@@YAXXZ,`dynamic initializer for 'gHUD'',UNKNOWN,cl_dll/cdll_int.cpp,,,MATCHED,100,tools/dyninit.py,
+client,10001050,12,??__EgMP3Info_guess@@YAXXZ,`dynamic initializer for 'gMP3Info_guess'',UNKNOWN,cl_dll/cdll_int.cpp,,,MATCHED,100,tools/dyninit.py,
+client,10001060,22,??__Eg_StudioRenderer@@YAXXZ,`dynamic initializer for 'g_StudioRenderer'',UNKNOWN,cl_dll/GameStudioModelRenderer.cpp,,,MATCHED,100,tools/dyninit.py,
+client,10001080,22,??__Egl@@YAXXZ,`dynamic initializer for 'gl'',UNKNOWN,cl_dll/glmanager.cpp,,,MATCHED,100,tools/dyninit.py,
+client,100010A0,12,??__Fg_VoiceStatusHelper@@YAXXZ,`dynamic atexit destructor for 'g_VoiceStatusHelper'' (the registration),UNKNOWN,cl_dll/hud.cpp,,,MATCHED,100,tools/dyninit.py,
+client,100010B0,22,??__Eg_pParticleSystems@@YAXXZ,`dynamic initializer for 'g_pParticleSystems'',UNKNOWN,cl_dll/particlemgr.cpp,,,MATCHED,100,tools/dyninit.py,
