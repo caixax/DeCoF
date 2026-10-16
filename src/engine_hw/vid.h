@@ -5,6 +5,11 @@
 
 typedef byte pixel_t;
 
+typedef struct rect_s
+{
+	int				left, right, top, bottom;
+} wrect_t;
+
 typedef struct vrect_s
 {
 	int				x,y,width,height;

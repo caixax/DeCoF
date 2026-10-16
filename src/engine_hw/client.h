@@ -42,6 +42,38 @@
 
 #define	SIGNONS				2		// signon messages to receive before connected
 
+//
+// stats are integers communicated to the client by the server
+//
+#define	STAT_HEALTH			0
+#define	STAT_FRAGS			1
+#define	STAT_WEAPON			2
+#define	STAT_AMMO			3
+#define	STAT_ARMOR			4
+#define	STAT_WEAPONFRAME	5
+#define	STAT_SHELLS			6
+#define	STAT_NAILS			7
+#define	STAT_ROCKETS		8
+#define	STAT_CELLS			9
+#define	STAT_ACTIVEWEAPON	10
+#define	STAT_TOTALSECRETS	11
+#define	STAT_TOTALMONSTERS	12
+#define	STAT_SECRETS		13		// bumped on client side by svc_foundsecret
+#define	STAT_MONSTERS		14		// bumped by svc_killedmonster
+
+#ifndef PITCH
+// up / down
+#define	PITCH	0
+// left / right
+#define	YAW		1
+// fall over
+#define	ROLL	2
+#endif
+
+#ifndef ON_EPSILON
+#define	ON_EPSILON		0.1			// point on plane side epsilon
+#endif
+
 typedef struct cmd_s
 {
 	usercmd_t	cmd;
@@ -419,6 +451,8 @@ extern	cvar_t	cl_idealpitchscale;
 extern	cvar_t	cl_himodels;
 extern	cvar_t	cl_gaitestimation;
 extern	cvar_t	cl_showevents;
+extern	cvar_t	cl_clockreset;
+extern	cvar_t	cl_fixtimerate;
 extern	cvar_t	cl_updaterate;
 extern	cvar_t	cl_cmdrate;
 extern	cvar_t	fs_lazy_precache;
@@ -507,30 +541,140 @@ extern	int			msg_buckets[64];
 extern	int			total_data[64];
 extern	qboolean	g_bUpdatingSecurityModules;
 
-void	CL_ParseServerMessage( qboolean normal_message );
+cl_entity_t	*CL_EntityNum( int num );
+void	AddNewUserMsg( void );
+void	DispatchUserMsg( int iMsg );
+int		DispatchDirectUserMsg( const char *pszName, int iSize, void *pBuf );
+void	CL_ShutDownUsrMessages( void );
+void	CL_Parse_Sound( void );
+void	CL_UpdateUserinfo( void );
+qboolean	CL_CheckFile( sizebuf_t *msg, char *filename );
+void	CL_ClearResourceList( resource_t *pList );
+void	CL_ClearResourceLists( void );
+qboolean	CL_CheckCRCs( char *pszMap );
+void	CL_PrecacheBSPModels( char *pfilename );
+void	CL_SendConsistencyInfo( sizebuf_t *msg );
+void	CL_RegisterResources( sizebuf_t *msg );
 void	CL_AddToResourceList( resource_t *pResource, resource_t *pList );
 void	CL_RemoveFromResourceList( resource_t *pResource );
-void	CL_ClearResourceLists( void );
-void	CL_RegisterResources( sizebuf_t *msg );
+int		CL_EstimateNeededResources( void );
+void	CL_BatchResourceRequest( void );
+void	CL_StartResourceDownloading( char *pszMessage, qboolean bCustom );
+void	CL_ParseConsistencyInfo( void );
+void	CL_ParseResourceList( void );
+void	CL_ParseResourceLocation( void );
+customization_t	*CL_PlayerHasCustomization( int nPlayerNum, resourcetype_t type );
+void	CL_RemoveCustomization( int nPlayerNum, customization_t *pRemove );
+void	CL_ParseCustomization( void );
+qboolean	CL_RequestMissingResources( void );
 void	CL_DeallocateDynamicData( void );
+void	CL_ReallocateDynamicData( int nMaxClients );
+void	CL_CreateCustomizationList( void );
 qboolean	CL_CheckGameDirectory( char *gamedir );
-int		DispatchDirectUserMsg( const char *pszName, int iSize, void *pBuf );
+int		CL_BuildMapCycleListHints( char **hints, char *mapCycleMsg, char *firstMap );
+void	CL_ParseServerInfo( void );
+void	CL_ParseListen( void );
+void	CL_ParseBaseline( void );
+void	CL_ParseStatic( void );
+void	CL_ParseStaticSound( void );
+void	CL_ParseMovevars( void );
+void	CL_ParseSoundFade( void );
+void	CL_Parse_DeltaDescription( void );
+void	CL_Restore( const char *fileName );
 void	CL_DumpMessageLoad_f( void );
+void	CL_TransferMessageData( void );
+void	CL_ResetFrame( frame_t *frame );
+char	*CL_MsgInfo( int cmd );
+void	CL_WriteErrorMessage( int starting_count, int current_count, sizebuf_t *msg );
+void	CL_WriteMessageHistory( int starting_count, int cmd );
+void	CL_ParseServerMessage( qboolean normal_message );
+void	CL_ParseHLTV( void );
 
 //
 // cl_parsefn.c
 //
+typedef struct event_hook_s
+{
+	struct event_hook_s	*next;
+	char				*name;
+	void				( *pfnEvent )( struct event_args_s *args );
+} event_hook_t;
+
+void	CL_AdjustClock( void );
+void	CL_ResetEvent( event_info_t *ei );
+void	CL_CalcPlayerVelocity( int idx, vec_t *velocity );
+void	CL_DescribeEvent( int slot, char *eventname );
+void	CL_FireEvents( void );
+event_info_t	*CL_FindEmptyEvent( void );
+event_info_t	*CL_FindUnreliableEvent( void );
+void	CL_ClientQueueEvent( int flags, int index, int client_index, float delay, struct event_args_s *pargs );
+void	CL_QueueEvent( int flags, int index, float delay, struct event_args_s *pargs );
+void	CL_ParseEvent( void );
+event_hook_t	*CL_FindEventHook( char *name );
+void	CL_HookEvent( char *name, void ( *pfnEvent )( struct event_args_s *args ) );
+void	CL_InitEventSystem( void );
 void	CL_FlushEventSystem( void );
+void	CL_ParseFileTxferFailed( void );
 
 //
-// cl_ents.c, cl_pred.c
+// cl_ents.c
 //
+qboolean	CL_ParametricMove( cl_entity_t *ent );
+void	CL_ProcessEntityUpdate( cl_entity_t *ent );
+int		CL_ParseDeltaHeader( qboolean *remove, qboolean *custom, int *numbase, qboolean *newbl, int *newblindex, qboolean full, int *offset );
+void	CL_FlushEntityPacket( qboolean needbitencodingframe );
+void	CL_ClearPacket( packet_entities_t *pPacket );
+int		CL_InterpolateModel( cl_entity_t *e );
+void	CL_ResetLatchedState( int pnum, packet_entities_t *pack, cl_entity_t *ent );
+void	CL_ProcessPlayerState( int playerindex, entity_state_t *state );
+void	CL_ProcessPacket( frame_t *frame );
+qboolean	CL_IsPlayerIndex( int index );
+void	CL_SetPacketFlag( packet_entities_t *pack, int index, int flag );
+void	CL_ResetFrameStats( frame_t *frame );
+void	CL_ParseClientdata( void );
+void	CL_ParsePacketEntities( qboolean delta, int *playerbits );
+void	CL_PrintEntity( cl_entity_t *ent );
+void	CL_Particle( vec_t *origin, int color, float life, int zpos, int zvel );
+void	CL_TouchLight( dlight_t *dl );
+void	CL_PlayerFlashlight( void );
+void	CL_AddModelEffects( int keynum, cl_entity_t *ent, struct model_s *model );
+void	CL_LinkCustomEntity( cl_entity_t *ent, entity_state_t *state );
+void	CL_LinkPacketEntities( void );
+void	CL_LinkPlayers( void );
+void	CL_AddStateToEntlist( struct physent_s *pe, entity_state_t *state );
 void	CL_SetSolidEntities( void );
+void	CL_SetUpPlayerPrediction( qboolean dopred, qboolean bIncludeLocalClient );
 void	CL_SetSolidPlayers( int playernum );
+void	CL_MoveAiments( void );
+float	CL_LerpPoint( void );
+void	CL_EmitEntities( void );
+
+//
+// cl_pred.c
+//
+extern	cvar_t	cl_showerror;
+extern	cvar_t	cl_nosmooth;
+extern	cvar_t	cl_smoothtime;
+extern	int		g_i;
+
+void	CL_CheckPredictionError( void );
+void	CL_RunUsercmd( local_state_t *from, local_state_t *to, usercmd_t *u, qboolean runfuncs, double *pfElapsed, unsigned int random_seed );
+void	CL_SetIdealPitch( void );
+void	CL_InterpolateVector( float frac, vec_t *src, vec_t *dest, vec_t *output );
+void	CL_GetTargetTime( float *target );
+void	CL_PredictMove( qboolean repredicting );
 void	CL_PushPMStates( void );
 void	CL_PopPMStates( void );
-void	CL_PredictMove( qboolean repredicting );
+void	CL_SetLastUpdate( void );
+void	CL_RedoPrediction( void );
 void	CL_InitPrediction( void );
+
+//
+// cl_pmove.c
+//
+void	PM_CL_PlaybackEventFull( int flags, int clientindex, unsigned short eventindex, float delay, float *origin, float *angles, float fparam1, float fparam2, int iparam1, int iparam2, int bparam1, int bparam2 );
+const char	*PM_CL_TraceTexture( int ground, float *vstart, float *vend );
+void	PM_CL_PlaySound( int channel, const char *sample, float volume, float attenuation, int fFlags, int pitch );
 
 //
 // cl_tent.c, cl_extrap.c, cl_spectator.c
@@ -540,6 +684,7 @@ extern	cvar_t	dev_overview;
 
 void	CL_TempEntInit( void );
 void	CL_InitTEnts( void );
+void	CL_ParseTEnt( void );
 void	CL_InitExtrap( void );
 
 //
@@ -547,5 +692,10 @@ void	CL_InitExtrap( void );
 //
 void	CL_HTTPStop_f( void );
 qboolean	Voice_GetLoopback( void );
+qboolean	Voice_Init( const char *pCodecName, int quality );
+void	Voice_LocalPlayerTalkingAck( int );	// this build passes an argument the function never reads
+int		Voice_AssignChannel( int nEntity );
+int		Voice_GetChannel( int nEntity );
+int		Voice_AddIncomingData( int nChannel, const char *pchData, int nCount, int iSequenceNumber );
 
 #endif // CLIENT_H

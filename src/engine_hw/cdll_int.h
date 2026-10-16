@@ -16,6 +16,13 @@ void	ClientDLL_CreateMove( float frametime, struct usercmd_s *cmd, int active );
 int		ClientDLL_ConnectionlessPacket( const struct netadr_s *net_from, const char *args, char *response_buffer, int *response_buffer_size );
 int		ClientDLL_GetHullBounds( int hullnumber, float *mins, float *maxs );
 
+struct local_state_s;
+struct playermove_s;
+
+void	ClientDLL_PostRunCmd( struct local_state_s *from, struct local_state_s *to, struct usercmd_s *cmd, int runfuncs, double time, unsigned int random_seed );
+void	ClientDLL_MoveClient( struct playermove_s *ppmove );
+void	ClientDLL_DirectorMessage( int iSize, void *pbuf );
+
 // module.cpp
 typedef struct module_s
 {

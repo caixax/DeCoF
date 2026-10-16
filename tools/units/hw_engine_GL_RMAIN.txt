@@ -21,3 +21,8 @@ _R_LoadMapSprite
 _R_RenderScene
 _R_SetStackBase
 _R_RenderView
+_ProjectPointOnPlane
+_PerpendicularVector
+_RotatePointAroundVector
+_R_CullBox
+_R_RotateForEntity

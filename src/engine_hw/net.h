@@ -38,6 +38,15 @@ typedef enum
 // Size of fragmentation buffer internal buffers
 #define FRAGMENT_SIZE			1400
 
+// Fragment sizes the server sends to a client (SV_GetFragmentSize)
+#define FRAGMENT_S2C_MIN_SIZE	256
+#define FRAGMENT_S2C_MAX_SIZE	1024
+
+// MAX_CHALLENGES is made large to prevent a denial
+//  of service attack that could cycle all of them
+//  out before legitimate users connected
+#define MAX_CHALLENGES			1024
+
 // Max size of udp packet payload
 #define MAX_UDP_PACKET			4010
 
@@ -64,12 +73,18 @@ typedef enum
 #define FRAG_GETCOUNT( fragid )		( fragid & 0xffff )
 
 extern	netadr_t	net_local_adr;
+extern	netadr_t	net_local_ipx_adr;
 extern	netadr_t	net_from;		// address of who sent the packet
 extern	sizebuf_t	net_message;
 
 void		NET_SendPacket( netsrc_t sock, int length, void *data, netadr_t to );
 char		*NET_AdrToString( netadr_t a );
 qboolean	NET_CompareAdr( netadr_t a, netadr_t b );
+qboolean	NET_CompareClassBAdr( netadr_t a, netadr_t b );
+qboolean	NET_IsReservedAdr( netadr_t a );
+qboolean	NET_CompareBaseAdr( netadr_t a, netadr_t b );
+qboolean	NET_IsLocalAddress( netadr_t adr );
+char		*NET_BaseAdrToString( netadr_t a );
 
 // Message data
 typedef struct flowstats_s
@@ -274,6 +289,37 @@ void		Net_APIShutDown( void );
 // Print to client console
 #define	A2A_PRINT		'l'		// print a message on client
 
+// Response details about server
+#define	S2A_INFO		'C'		// + Address, hostname, map, gamedir, gamedescription, active players, maxplayers, protocol
+#define	S2A_INFO_DETAILED	'm'	// New Query protocol, returns dedicated or not, + other performance info.
+
+// Response to player info requests
+#define	S2A_PLAYER		'D'		// + Playernum, name, frags, /*deaths*/, time on server
+
+// Response to rule info requests
+#define	S2A_RULES		'E'		// + number of rules + string key and string value pairs
+
+// Generic Ping Request
+#define	A2A_PING		'i'		// respond with an A2A_ACK
+
+// Generic Ack
+#define	A2A_ACK			'j'		// general acknowledgement without info
+
+// Challenge response from master
+#define	M2A_CHALLENGE	's'		// + challenge value
+
+// Server and master queries that the 2013 server ignores
+#define	A2A_GETCHALLENGE	'W'	// Request challenge # from another machine
+#define	A2S_INFO		'T'
+#define	A2S_PLAYER		'U'
+#define	A2S_RULES		'V'
+#define	S2A_LOGSTRING	'R'		// send a log string
+#define	M2S_REQUESTRESTART	'O'	// HLMaster rejected a server's connection because the server needs to be updated
+
+// The connection was refused
+#define	S2C_ERROR		'9'		// + error string
+#define	S2C_BADPASSWORD	'8'		// special code: password required
+
 //
 // client to server
 //
@@ -287,6 +333,8 @@ void		Net_APIShutDown( void );
 #define	clc_fileconsistency	7
 #define	clc_voicedata		8
 #define	clc_hltv			9
+#define	clc_cvarvalue		10
+#define	clc_cvarvalue2		11
 
 // server to master/log listener: a log line with the secret key
 #define	S2A_LOGKEY		'S'

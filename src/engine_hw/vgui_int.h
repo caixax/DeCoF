@@ -11,6 +11,8 @@ void	VGuiWrap2_ConPrintf( const char *msg );
 void	VGuiWrap2_ConDPrintf( const char *msg );
 int		VGuiWrap2_IsInCareerMatch( void );
 void	VGuiWrap2_HideGameUI( void );
+void	ValidateCDKey( int force, int inConnect );
+void	VGUI2_OnDisconnectFromServer( int eLoginFailure );
 
 int		VGui_GameUIKeyPressed( void );
 

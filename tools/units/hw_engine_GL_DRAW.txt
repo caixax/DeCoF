@@ -6,7 +6,6 @@ _Draw_StringLen
 _Draw_MessageFontInfo
 _Draw_MessageCharacterAdd
 _Draw_CharToConback
-_gl_texturemode_hook_callback
 _Draw_Init
 _Draw_ResetTextColor
 _Draw_SetTextColor
@@ -57,7 +56,6 @@ _GL_PaletteTag
 _GL_PaletteEqual
 _GL_PaletteClearSky
 _GL_PaletteAdd
-_GL_SelectTexture
 _GL_GenTexture
 _GL_LoadTexture2
 _GL_LoadTexture
@@ -65,3 +63,8 @@ _GL_LoadPicTexture
 _LoadTransBMP
 _LoadTransPic
 _Draw_MiptexTexture
+_IsPowerOfTwo
+_GL_Bind
+_Draw_TextureMode_f_guess
+_GL_PaletteSelect
+_GL_LoadFilterTexture

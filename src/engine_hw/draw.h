@@ -4,6 +4,34 @@
 #ifndef DRAW_H
 #define DRAW_H
 
+extern	struct qpic_s	*draw_disc;	// also used on sbar
+
+typedef struct
+{
+	char			name[64];
+	cache_user_t	cache;
+} cacheentry_t;
+
+typedef struct cachewad_s cachewad_t;
+
+typedef void (*PFNCACHE)( cachewad_t *, byte * );
+
+struct cachewad_s
+{
+	char			*name;
+	cacheentry_t	*cache;
+	int				cacheCount;
+	int				cacheMax;
+	struct lumpinfo_s	*lumps;
+	int				lumpCount;
+	int				cacheExtra;
+	PFNCACHE		pfnCacheBuild;
+	int				numpaths;
+	char			**basedirs;
+	int				*lumppathindices;
+	int				tempWad;
+};
+
 int		Draw_Character( int x, int y, int num, unsigned int font );
 int		Draw_String( int x, int y, char *str );
 int		Draw_StringLen( const char *psz, unsigned int font );

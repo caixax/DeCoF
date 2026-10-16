@@ -11,3 +11,8 @@ _R_LoadSkys
 _DrawSkyPolygon
 _ClipSkyPolygon
 _R_DrawSkyChain
+_BoundPoly
+_R_ClearSkyBox
+_MakeSkyVec
+_R_DrawSkyBox
+_R_InitSky
