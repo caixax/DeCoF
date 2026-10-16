@@ -370,3 +370,7 @@ void ClothesInit_guess()
 	gHUD.m_iClothesState_guess = 0;
 	gEngfuncs.pfnHookUserMsg( "Clothes", MsgClothes_guess );
 }
+
+CClothesMenu::~CClothesMenu( void )
+{
+}

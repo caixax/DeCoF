@@ -37,3 +37,7 @@ void TVFrameInit_guess()
 {
 	gEngfuncs.pfnHookUserMsg( "TVFrame", MsgTVFrame_guess );
 }
+
+CTVFrame::~CTVFrame( void )
+{
+}

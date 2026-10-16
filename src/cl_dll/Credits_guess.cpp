@@ -1329,3 +1329,7 @@ void CCredits::solve()
 	setBgColor( 255, 255, 255, 255 );
 	Panel::solve();
 }
+
+CCredits::~CCredits( void )
+{
+}

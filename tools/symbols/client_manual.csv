@@ -1278,3 +1278,20 @@ va,name,kind,evidence
 101393C0,??__Fg_StudioModelRenderer_guess@@YAXXZ,func,"atexit destructor thunk: same global, constructor or destructor and thunk as ours (tools/dyninit.py)"
 105458E8,?g_StudioModelRenderer_guess@@3VCStudioModelRenderer@@A,data,the CStudioModelRenderer its dynamic initializer (100012A0) constructs and its thunk (101393C0) destroys; nothing else uses it; inside the StudioModelRenderer.obj bss after vecBoatOrigin_guess
 100010A0,??__Fg_VoiceStatusHelper@@YAXXZ,func,"the atexit registration of g_VoiceStatusHelper (pushes the thunk at 10139330); for this file-static global MSVC names the registration ??__F too, and objdiff pairs the first of the two same-named functions of hud.obj, which is the registration"
+1001E400,??1CAmmoInventory@@QAE@XZ,func,stores the CAmmoInventory vftable (RTTI) and deletes m_pInventoryImage_guess (sized delete of the 0x24-byte Image); non-virtual destructor (VGUI1 Panel has none)
+1001F9C0,??1CClothesMenu@@QAE@XZ,func,stores the CClothesMenu vftable (RTTI) and nothing else; non-virtual destructor (VGUI1 Panel has none)
+10021D30,??1CCoopStats@@QAE@XZ,func,stores the CCoopStats vftable (RTTI) and nothing else; non-virtual destructor (VGUI1 Panel has none)
+10026CC0,??1CCredits@@QAE@XZ,func,stores the CCredits vftable (RTTI) and nothing else; non-virtual destructor (VGUI1 Panel has none)
+1002A8A0,??1CCutsceneSkip@@QAE@XZ,func,stores the CCutsceneSkip vftable (RTTI) and deletes m_pDotsImage_guess (sized delete of the 0x24-byte Image); non-virtual destructor (VGUI1 Panel has none)
+1002D8B0,??1CGameMenu@@QAE@XZ,func,stores the CGameMenu vftable (RTTI) and deletes m_pLogoImage_guess (sized delete of the 0x24-byte Image); non-virtual destructor (VGUI1 Panel has none)
+1002FDA0,??1CLanguage@@QAE@XZ,func,stores the CLanguage vftable (RTTI) and deletes m_pBackgroundImage_guess (sized delete of the 0x24-byte Image); non-virtual destructor (VGUI1 Panel has none)
+10030890,??1CPadlock@@QAE@XZ,func,stores the CPadlock vftable (RTTI) and deletes m_pButtonsImage_guess (sized delete of the 0x24-byte Image); non-virtual destructor (VGUI1 Panel has none)
+10031480,??1CSaveLoad@@QAE@XZ,func,stores the CSaveLoad vftable (RTTI) and deletes m_pBackgroundImage_guess (sized delete of the 0x24-byte Image); non-virtual destructor (VGUI1 Panel has none)
+10032BB0,??1CScope@@QAE@XZ,func,stores the CScope vftable (RTTI) and deletes m_pScopeImage_guess (sized delete of the 0x24-byte Image); non-virtual destructor (VGUI1 Panel has none)
+100335D0,??1CTelephone@@QAE@XZ,func,stores the CTelephone vftable (RTTI) and deletes m_pTelephoneImage_guess (sized delete of the 0x24-byte Image); non-virtual destructor (VGUI1 Panel has none)
+10033C40,??1CTVFrame@@QAE@XZ,func,stores the CTVFrame vftable (RTTI) and nothing else; non-virtual destructor (VGUI1 Panel has none)
+1003DFD0,??1CVGUIBillboard@@QAE@XZ,func,stores the CVGUIBillboard vftable (RTTI) and deletes m_pBackgroundImage_guess (sized delete of the 0x24-byte Image); non-virtual destructor (VGUI1 Panel has none)
+1003EED0,??1CComputer@@QAE@XZ,func,stores the CComputer vftable (RTTI) and deletes m_pScreenImage_guess (sized delete of the 0x24-byte Image); non-virtual destructor (VGUI1 Panel has none)
+10049930,??1CPhone@@QAE@XZ,func,stores the CPhone vftable (RTTI) and deletes m_pPhoneImage_guess (sized delete of the 0x24-byte Image); non-virtual destructor (VGUI1 Panel has none)
+1004A5C0,??1CSave@@QAE@XZ,func,stores the CSave vftable (RTTI) and deletes m_pImage_guess (sized delete of the 0x24-byte Image); non-virtual destructor (VGUI1 Panel has none)
+1004B1F0,??1CYesno@@QAE@XZ,func,stores the CYesno vftable (RTTI) and deletes m_pImage_guess (sized delete of the 0x24-byte Image); non-virtual destructor (VGUI1 Panel has none)

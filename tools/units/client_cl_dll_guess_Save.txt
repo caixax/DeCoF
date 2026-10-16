@@ -4,3 +4,4 @@
 ?SaveInit_guess@@YAXXZ
 ?actionPerformed@CSaveHandler_Command@@UAEXPAVPanel@vgui@@@Z
 ?ActionSignal@CSave@@QAEXH@Z
+??1CSave@@QAE@XZ

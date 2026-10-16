@@ -11,6 +11,7 @@ class CVGUIBillboard : public Panel
 {
 public:
 	CVGUIBillboard();
+	~CVGUIBillboard( void );
 	void Initialize();
 	void ActionSignal( int cmd );
 	int KeyInput( int down, int keynum, const char *pszCurrentBinding );

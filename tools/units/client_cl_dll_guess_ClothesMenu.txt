@@ -7,3 +7,4 @@
 ?actionPerformed@CClothesMenuHandler_Command@@UAEXPAVPanel@vgui@@@Z
 ??0CClothesMenu@@QAE@XZ
 ?ActionSignal@CClothesMenu@@QAEXH@Z
+??1CClothesMenu@@QAE@XZ

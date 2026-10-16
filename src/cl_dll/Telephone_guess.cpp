@@ -300,3 +300,8 @@ void CTelephone::setVisible( bool state )
 
 	Panel::setVisible( state );
 }
+
+CTelephone::~CTelephone( void )
+{
+	delete m_pTelephoneImage_guess;
+}

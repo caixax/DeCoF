@@ -530,3 +530,8 @@ void CSaveLoad::WriteSaveInfo_guess( const char *pszFile )
 		file.close();
 	}
 }
+
+CSaveLoad::~CSaveLoad( void )
+{
+	delete m_pBackgroundImage_guess;
+}

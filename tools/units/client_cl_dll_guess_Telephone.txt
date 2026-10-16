@@ -8,3 +8,4 @@
 ?Dial_guess@CTelephone@@QAEXXZ
 ?MsgTelephone_guess@@YAHPBDHPAX@Z
 ?setVisible@CTelephone@@UAEX_N@Z
+??1CTelephone@@QAE@XZ

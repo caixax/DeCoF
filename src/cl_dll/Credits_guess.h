@@ -13,6 +13,7 @@ class CCredits : public Panel
 {
 public:
 	CCredits();
+	~CCredits( void );
 	void Initialize();
 
 	int CountLines_guess();

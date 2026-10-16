@@ -11,6 +11,7 @@ class CTelephone : public Panel
 {
 public:
 	CTelephone();
+	~CTelephone( void );
 	void Initialize();
 	void ActionSignal( int cmd );
 

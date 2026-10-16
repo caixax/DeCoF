@@ -7,3 +7,4 @@
 ?ActionSignal@CComputer@@QAEXH@Z
 ?MsgComputer_guess@@YAHPBDHPAX@Z
 ?solve@CComputer@@MAEXXZ
+??1CComputer@@QAE@XZ

@@ -128,3 +128,8 @@ void YesNoInit_guess()
 {
 	gEngfuncs.pfnHookUserMsg( "YesNo", MsgYesNo_guess );
 }
+
+CYesno::~CYesno( void )
+{
+	delete m_pImage_guess;
+}

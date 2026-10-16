@@ -111,3 +111,8 @@ void ScopeInit_guess()
 {
 	gEngfuncs.pfnHookUserMsg( "Scope", MsgScope_guess );
 }
+
+CScope::~CScope( void )
+{
+	delete m_pScopeImage_guess;
+}

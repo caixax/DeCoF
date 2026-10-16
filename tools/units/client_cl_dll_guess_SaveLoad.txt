@@ -9,3 +9,4 @@
 ?ReadSlot_guess@CSaveLoad@@QAEXH@Z
 ?WriteSaveInfo_guess@CSaveLoad@@QAEXPBD@Z
 ?solve@CSaveLoad@@MAEXXZ
+??1CSaveLoad@@QAE@XZ

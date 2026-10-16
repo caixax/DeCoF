@@ -11,6 +11,7 @@ class CSaveLoad : public Panel
 {
 public:
 	CSaveLoad();
+	~CSaveLoad( void );
 	void Initialize();
 	void ActionSignal( int cmd );
 

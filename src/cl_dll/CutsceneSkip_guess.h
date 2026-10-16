@@ -11,6 +11,7 @@ class CCutsceneSkip : public Panel
 {
 public:
 	CCutsceneSkip();
+	~CCutsceneSkip( void );
 	void Initialize();
 
 public:

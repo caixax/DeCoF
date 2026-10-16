@@ -132,3 +132,8 @@ void CLanguage::Initialize()
 {
 	setVisible( false );
 }
+
+CLanguage::~CLanguage( void )
+{
+	delete m_pBackgroundImage_guess;
+}

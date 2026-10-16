@@ -10,3 +10,4 @@
 ?paint@ColorButton@@UAEXXZ
 ?paintBackground@ColorButton@@UAEXXZ
 ?IsNotValid@CommandButton@@UAEHXZ
+??1CAmmoInventory@@QAE@XZ

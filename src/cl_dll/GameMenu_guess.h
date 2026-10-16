@@ -32,6 +32,7 @@ class CGameMenu : public Panel
 {
 public:
 	CGameMenu();
+	~CGameMenu( void );
 	void Initialize();
 	void ActionSignal( int cmd );
 

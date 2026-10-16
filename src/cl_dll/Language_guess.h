@@ -11,6 +11,7 @@ class CLanguage : public Panel
 {
 public:
 	CLanguage();
+	~CLanguage( void );
 	void Initialize();
 	void ActionSignal( int cmd );
 

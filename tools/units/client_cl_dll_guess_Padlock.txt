@@ -4,3 +4,4 @@
 ?MsgPadlock_guess@@YAHPBDHPAX@Z
 ?PadlockInit_guess@@YAXXZ
 ?actionPerformed@CPadlockHandler_Command@@UAEXPAVPanel@vgui@@@Z
+??1CPadlock@@QAE@XZ

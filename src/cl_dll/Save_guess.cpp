@@ -97,3 +97,8 @@ void SaveInit_guess()
 {
 	gEngfuncs.pfnHookUserMsg( "Save", MsgSave_guess );
 }
+
+CSave::~CSave( void )
+{
+	delete m_pImage_guess;
+}

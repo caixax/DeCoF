@@ -664,3 +664,7 @@ void CoopStatsInit_guess()
 	gEngfuncs.pfnHookUserMsg( "CoopStats", MsgCoopStats_guess );
 	gEngfuncs.pfnHookUserMsg( "BeatCoop", MsgBeatCoop_guess );
 }
+
+CCoopStats::~CCoopStats( void )
+{
+}

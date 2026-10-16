@@ -941,3 +941,8 @@ void CGameMenu::solve()
 
 	Panel::solve();
 }
+
+CGameMenu::~CGameMenu( void )
+{
+	delete m_pLogoImage_guess;
+}

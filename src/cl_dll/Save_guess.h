@@ -11,6 +11,7 @@ class CSave : public Panel
 {
 public:
 	CSave();
+	~CSave( void );
 	void Initialize();
 	void ActionSignal( int cmd );
 

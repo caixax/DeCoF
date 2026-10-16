@@ -11,6 +11,7 @@ class CScope : public Panel
 {
 public:
 	CScope();
+	~CScope( void );
 	void Initialize();
 
 public:

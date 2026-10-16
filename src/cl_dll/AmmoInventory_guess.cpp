@@ -442,3 +442,8 @@ void CAmmoInventory::solve()
 
 	Panel::solve();
 }
+
+CAmmoInventory::~CAmmoInventory( void )
+{
+	delete m_pInventoryImage_guess;
+}

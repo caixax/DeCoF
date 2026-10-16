@@ -107,3 +107,8 @@ void PadlockInit_guess()
 {
 	gEngfuncs.pfnHookUserMsg( "Padlock", MsgPadlock_guess );
 }
+
+CPadlock::~CPadlock( void )
+{
+	delete m_pButtonsImage_guess;
+}

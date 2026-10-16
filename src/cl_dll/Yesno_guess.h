@@ -11,6 +11,7 @@ class CYesno : public Panel
 {
 public:
 	CYesno();
+	~CYesno( void );
 	void Initialize();
 	void ActionSignal( int cmd );
 

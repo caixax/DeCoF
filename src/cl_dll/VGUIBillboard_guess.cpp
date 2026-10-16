@@ -177,3 +177,8 @@ void CVGUIBillboard::setVisible( bool state )
 {
 	Panel::setVisible( state );
 }
+
+CVGUIBillboard::~CVGUIBillboard( void )
+{
+	delete m_pBackgroundImage_guess;
+}

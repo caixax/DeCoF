@@ -9,3 +9,4 @@
 ?actionPerformed@CPhoneHandler_Command@@UAEXPAVPanel@vgui@@@Z
 ?setVisible@CPhone@@UAEX_N@Z
 ?PressDigit_guess@CPhone@@QAEXH@Z
+??1CPhone@@QAE@XZ

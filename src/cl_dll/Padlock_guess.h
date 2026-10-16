@@ -11,6 +11,7 @@ class CPadlock : public Panel
 {
 public:
 	CPadlock();
+	~CPadlock( void );
 	void Initialize();
 	void ActionSignal( int cmd );
 

@@ -67,3 +67,8 @@ void CCutsceneSkip::Initialize()
 {
 	setVisible( false );
 }
+
+CCutsceneSkip::~CCutsceneSkip( void )
+{
+	delete m_pDotsImage_guess;
+}

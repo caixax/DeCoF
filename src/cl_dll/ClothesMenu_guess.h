@@ -13,6 +13,7 @@ class CClothesMenu : public Panel
 {
 public:
 	CClothesMenu();
+	~CClothesMenu( void );
 	void Initialize();
 	void ActionSignal( int cmd );
 	int KeyInput_guess( int down, int keynum, const char *pszCurrentBinding );

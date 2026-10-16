@@ -13,6 +13,7 @@ class CCoopStats : public Panel
 {
 public:
 	CCoopStats();
+	~CCoopStats( void );
 	void Initialize();
 
 public:

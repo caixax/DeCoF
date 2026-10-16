@@ -263,3 +263,8 @@ void PhoneInit_guess()
 {
 	gEngfuncs.pfnHookUserMsg( "Phone", MsgPhone_guess );
 }
+
+CPhone::~CPhone( void )
+{
+	delete m_pPhoneImage_guess;
+}

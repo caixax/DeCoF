@@ -4,3 +4,4 @@
 ?YesNoInit_guess@@YAXXZ
 ?actionPerformed@CYesnoHandler_Command@@UAEXPAVPanel@vgui@@@Z
 ?ActionSignal@CYesno@@QAEXH@Z
+??1CYesno@@QAE@XZ

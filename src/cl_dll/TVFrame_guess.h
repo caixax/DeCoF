@@ -11,6 +11,7 @@ class CTVFrame : public Panel
 {
 public:
 	CTVFrame();
+	~CTVFrame( void );
 	void Initialize();
 
 public:

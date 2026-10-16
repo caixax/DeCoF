@@ -321,3 +321,8 @@ void CComputer::solve()
 
 	Panel::solve();
 }
+
+CComputer::~CComputer( void )
+{
+	delete m_pScreenImage_guess;
+}
