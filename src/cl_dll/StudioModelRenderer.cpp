@@ -1886,7 +1886,7 @@ Cry of Fear: flash model and light at an attachment of the weapon model of
 another player (called by StudioDrawPlayer after the weapon is drawn)
 ====================
 */
-cl_entity_t tpmuzzleflash_guess;
+cl_entity_t tpmuzzleflash_guess[9];	// only [0] is used (retail bss holds 9 entities)
 
 void CStudioModelRenderer::StudioMuzzleFlash_guess( char *modelname, int iAttachment, bool bAlt, float flScale )
 {
@@ -1949,22 +1949,22 @@ void CStudioModelRenderer::StudioMuzzleFlash_guess( char *modelname, int iAttach
 
 	flFlashScale += gEngfuncs.pfnRandomFloat( -1, 1 );
 
-	tpmuzzleflash_guess = *pPlayer;
-	tpmuzzleflash_guess.model = pModel;
-	tpmuzzleflash_guess.curstate.modelindex = iModelIndex;
-	tpmuzzleflash_guess.curstate.scale = flFlashScale * flScale;
-	tpmuzzleflash_guess.player = 0;
-	tpmuzzleflash_guess.origin = attachment[iAttachment];
-	tpmuzzleflash_guess.angles = Vector( pPlayer->angles );
-	tpmuzzleflash_guess.angles[2] = gEngfuncs.pfnRandomFloat( 1, 359 );
+	tpmuzzleflash_guess[0] = *pPlayer;
+	tpmuzzleflash_guess[0].model = pModel;
+	tpmuzzleflash_guess[0].curstate.modelindex = iModelIndex;
+	tpmuzzleflash_guess[0].curstate.scale = flFlashScale * flScale;
+	tpmuzzleflash_guess[0].player = 0;
+	tpmuzzleflash_guess[0].origin = attachment[iAttachment];
+	tpmuzzleflash_guess[0].angles = Vector( pPlayer->angles );
+	tpmuzzleflash_guess[0].angles[2] = gEngfuncs.pfnRandomFloat( 1, 359 );
 
 	if ( bAlt == true )
-		tpmuzzleflash_guess.angles[1] += 90;
+		tpmuzzleflash_guess[0].angles[1] += 90;
 
-	tpmuzzleflash_guess.curstate.rendermode = kRenderTransAdd;
-	tpmuzzleflash_guess.curstate.renderamt = 100;
+	tpmuzzleflash_guess[0].curstate.rendermode = kRenderTransAdd;
+	tpmuzzleflash_guess[0].curstate.renderamt = 100;
 
-	gEngfuncs.CL_CreateVisibleEntity( ET_NORMAL, &tpmuzzleflash_guess );
+	gEngfuncs.CL_CreateVisibleEntity( ET_NORMAL, &tpmuzzleflash_guess[0] );
 
 	if ( !bAlt )
 	{

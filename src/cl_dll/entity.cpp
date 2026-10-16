@@ -49,7 +49,7 @@ float flCurrentKick_guess;			// vuser3[1]: the active weapon's m_flCurrentKick
 int iPlayerMode_guess;				// vuser4[0]: the server's pev->fuser3 (0 normal, 5 developer commentary, 10 weapon special)
 float flRevolverRotation_guess;		// vuser4[2]
 
-cl_entity_t muzzleflash_guess;		// flash model drawn by MuzzleFlash_guess
+cl_entity_t muzzleflash_guess[9];	// flash model drawn by MuzzleFlash_guess; only [0] is used (retail bss holds 9 entities)
 TEMPENTITY *pGunSmoke_guess;
 int iGunSmoke_guess;
 
@@ -769,25 +769,25 @@ void MuzzleFlash_guess( cl_entity_t *pEntity, int iAttachment, bool bAlt, float 
 
 	flFlashScale += gEngfuncs.pfnRandomFloat( -1, 1 );
 
-	muzzleflash_guess = *pPlayer;
-	muzzleflash_guess.model = pModel;
-	muzzleflash_guess.curstate.modelindex = iModelIndex;
-	muzzleflash_guess.curstate.scale = flFlashScale * flScale;
-	muzzleflash_guess.index = 0;
-	muzzleflash_guess.origin = pEntity->attachment[iAttachment];
-	muzzleflash_guess.angles = pEntity->angles;
-	muzzleflash_guess.angles[2] = gEngfuncs.pfnRandomFloat( 1, 359 );
+	muzzleflash_guess[0] = *pPlayer;
+	muzzleflash_guess[0].model = pModel;
+	muzzleflash_guess[0].curstate.modelindex = iModelIndex;
+	muzzleflash_guess[0].curstate.scale = flFlashScale * flScale;
+	muzzleflash_guess[0].index = 0;
+	muzzleflash_guess[0].origin = pEntity->attachment[iAttachment];
+	muzzleflash_guess[0].angles = pEntity->angles;
+	muzzleflash_guess[0].angles[2] = gEngfuncs.pfnRandomFloat( 1, 359 );
 
 	if ( bAlt )
-		muzzleflash_guess.angles[1] += 90;
+		muzzleflash_guess[0].angles[1] += 90;
 
-	muzzleflash_guess.curstate.rendermode = kRenderTransAdd;
-	muzzleflash_guess.curstate.renderamt = 100;
-	muzzleflash_guess.curstate.renderfx = 161;
-	muzzleflash_guess.curstate.sequence = 0;
-	muzzleflash_guess.curstate.animtime = gEngfuncs.GetClientTime();
+	muzzleflash_guess[0].curstate.rendermode = kRenderTransAdd;
+	muzzleflash_guess[0].curstate.renderamt = 100;
+	muzzleflash_guess[0].curstate.renderfx = 161;
+	muzzleflash_guess[0].curstate.sequence = 0;
+	muzzleflash_guess[0].curstate.animtime = gEngfuncs.GetClientTime();
 
-	gEngfuncs.CL_CreateVisibleEntity( ET_NORMAL, &muzzleflash_guess );
+	gEngfuncs.CL_CreateVisibleEntity( ET_NORMAL, &muzzleflash_guess[0] );
 
 	if ( cl_cheapweaponsmoke->value )
 	{
@@ -872,18 +872,18 @@ void MuzzleFlash_guess( const char *pszModel, int iUnused_guess, Vector vecOrigi
 
 	flFlashScale += gEngfuncs.pfnRandomFloat( -1, 1 );
 
-	muzzleflash_guess = *pPlayer;
-	muzzleflash_guess.curstate.scale = flFlashScale;
-	muzzleflash_guess.curstate.modelindex = iModelIndex;
-	muzzleflash_guess.index = 0;
-	muzzleflash_guess.model = pModel;
-	muzzleflash_guess.origin = vecOrigin;
-	muzzleflash_guess.angles = vecAngles;
-	muzzleflash_guess.angles[2] = gEngfuncs.pfnRandomFloat( 1, 359 );
-	muzzleflash_guess.curstate.rendermode = kRenderTransAdd;
-	muzzleflash_guess.curstate.renderamt = 100;
+	muzzleflash_guess[0] = *pPlayer;
+	muzzleflash_guess[0].curstate.scale = flFlashScale;
+	muzzleflash_guess[0].curstate.modelindex = iModelIndex;
+	muzzleflash_guess[0].index = 0;
+	muzzleflash_guess[0].model = pModel;
+	muzzleflash_guess[0].origin = vecOrigin;
+	muzzleflash_guess[0].angles = vecAngles;
+	muzzleflash_guess[0].angles[2] = gEngfuncs.pfnRandomFloat( 1, 359 );
+	muzzleflash_guess[0].curstate.rendermode = kRenderTransAdd;
+	muzzleflash_guess[0].curstate.renderamt = 100;
 
-	gEngfuncs.CL_CreateVisibleEntity( ET_NORMAL, &muzzleflash_guess );
+	gEngfuncs.CL_CreateVisibleEntity( ET_NORMAL, &muzzleflash_guess[0] );
 
 	if ( cl_cheapweaponsmoke->value )
 	{
@@ -952,18 +952,18 @@ void MuzzleFlashAt_guess( struct model_s *pModel, int iAttachment, Vector vecOri
 
 	flFlashScale += gEngfuncs.pfnRandomFloat( -1, 1 );
 
-	muzzleflash_guess = *pPlayer;
-	muzzleflash_guess.curstate.scale = flFlashScale;
-	muzzleflash_guess.curstate.modelindex = iModelIndex;
-	muzzleflash_guess.index = 0;
-	muzzleflash_guess.model = pFlashModel;
-	muzzleflash_guess.origin = vecOrigin;
-	muzzleflash_guess.angles = vecAngles;
-	muzzleflash_guess.angles[2] = gEngfuncs.pfnRandomFloat( 1, 359 );
-	muzzleflash_guess.curstate.rendermode = kRenderTransAdd;
-	muzzleflash_guess.curstate.renderamt = 100;
+	muzzleflash_guess[0] = *pPlayer;
+	muzzleflash_guess[0].curstate.scale = flFlashScale;
+	muzzleflash_guess[0].curstate.modelindex = iModelIndex;
+	muzzleflash_guess[0].index = 0;
+	muzzleflash_guess[0].model = pFlashModel;
+	muzzleflash_guess[0].origin = vecOrigin;
+	muzzleflash_guess[0].angles = vecAngles;
+	muzzleflash_guess[0].angles[2] = gEngfuncs.pfnRandomFloat( 1, 359 );
+	muzzleflash_guess[0].curstate.rendermode = kRenderTransAdd;
+	muzzleflash_guess[0].curstate.renderamt = 100;
 
-	gEngfuncs.CL_CreateVisibleEntity( ET_NORMAL, &muzzleflash_guess );
+	gEngfuncs.CL_CreateVisibleEntity( ET_NORMAL, &muzzleflash_guess[0] );
 
 	if ( cl_cheapweaponsmoke->value )
 	{

@@ -2356,7 +2356,7 @@ client,1008F150,183,?StudioSaveBones@CStudioModelRenderer@@UAEXXZ,CStudioModelRe
 client,1008F210,1610,?StudioSetUpTransform@CStudioModelRenderer@@UAEXH@Z,CStudioModelRenderer::StudioSetUpTransform,UNKNOWN,cl_dll/StudioModelRenderer.cpp,,,MATCHED,100,,
 client,1008F860,1863,?StudioSetupBones@CStudioModelRenderer@@UAEXXZ,CStudioModelRenderer::StudioSetupBones,HLSDK,cl_dll/StudioModelRenderer.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__StudioModelRenderer.obj:score20,
 client,1008FFB0,370,?StudioSlerpBones@CStudioModelRenderer@@UAEXQAY03MQAY02M01M@Z,CStudioModelRenderer::StudioSlerpBones,HLSDK,cl_dll/StudioModelRenderer.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__StudioModelRenderer.obj:score5,
-client,10090130,1209,?StudioMuzzleFlash_guess@CStudioModelRenderer@@QAEXPADH_NM@Z,CStudioModelRenderer::StudioMuzzleFlash_guess,UNKNOWN,,,,TODO,86.90,client_manual.csv,
+client,10090130,1209,?StudioMuzzleFlash_guess@CStudioModelRenderer@@QAEXPADH_NM@Z,CStudioModelRenderer::StudioMuzzleFlash_guess,UNKNOWN,,,,TODO,84.84,client_manual.csv,
 client,100905F0,128,,,UNKNOWN,,,,TODO,,,
 client,10090670,201,?__MsgFunc_DualAnim@@YAHPBDHPAX@Z,__MsgFunc_DualAnim,UNKNOWN,cl_dll/StudioModelRenderer.cpp,,,MATCHED,100,,
 client,10090740,53,?__MsgFunc_DualFlash@@YAHPBDHPAX@Z,__MsgFunc_DualFlash,UNKNOWN,cl_dll/StudioModelRenderer.cpp,,,MATCHED,100,,
