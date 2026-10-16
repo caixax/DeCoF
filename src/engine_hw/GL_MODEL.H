@@ -10,6 +10,7 @@
 
 #include "bspfile.h"
 #include "modelgen.h"
+#include "spritegn.h"
 #include "zone.h"
 
 /*
@@ -189,6 +190,103 @@ typedef struct hull_s
 	vec3_t		clip_maxs;
 } hull_t;
 
+/*
+==============================================================================
+
+SPRITE MODELS
+
+==============================================================================
+*/
+
+
+// FIXME: shorten these?
+typedef struct mspriteframe_s
+{
+	int		width;
+	int		height;
+	float	up, down, left, right;
+	int		gl_texturenum;
+} mspriteframe_t;
+
+typedef struct
+{
+	int				numframes;
+	float			*intervals;
+	mspriteframe_t	*frames[1];
+} mspritegroup_t;
+
+typedef struct
+{
+	spriteframetype_t	type;
+	mspriteframe_t		*frameptr;
+} mspriteframedesc_t;
+
+typedef struct msprite_s
+{
+	short				type;
+	short				texFormat;
+	int					maxwidth;
+	int					maxheight;
+	int					numframes;
+	int					paloffset;
+	float				beamlength;		// remove?
+	void				*cachespot;		// remove?
+	mspriteframedesc_t	frames[1];
+} msprite_t;
+
+
+/*
+==============================================================================
+
+ALIAS MODELS
+
+Alias models are position independent, so the cache manager can move them.
+==============================================================================
+*/
+
+typedef struct
+{
+	int					firstpose;
+	int					numposes;
+	float				interval;
+	trivertx_t			bboxmin;
+	trivertx_t			bboxmax;
+	int					frame;
+	char				name[16];
+} maliasframedesc_t;
+
+typedef struct mtriangle_s {
+	int					facesfront;
+	int					vertindex[3];
+} mtriangle_t;
+
+
+#define	MAX_SKINS	32
+typedef struct {
+	int			ident;
+	int			version;
+	vec3_t		scale;
+	vec3_t		scale_origin;
+	float		boundingradius;
+	vec3_t		eyeposition;
+	int			numskins;
+	int			skinwidth;
+	int			skinheight;
+	int			numverts;
+	int			numtris;
+	int			numframes;
+	synctype_t	synctype;
+	int			flags;
+	float		size;
+
+	int					numposes;
+	int					poseverts;
+	int					posedata;	// numposes*poseverts trivert_t
+	int					commands;	// gl command list with embedded s/t
+	int					gl_texturenum[MAX_SKINS];
+	maliasframedesc_t	frames[1];	// variable sized
+} aliashdr_t;
+
 //===================================================================
 
 //
@@ -269,5 +367,9 @@ typedef struct model_s
 	cache_user_t	cache;		// only access through Mod_Extradata
 
 } model_t;
+
+model_t	*Mod_ForName( const char *name, qboolean crash, qboolean trackCRC );
+model_t	*Mod_FindName( qboolean trackCRC, const char *name );
+model_t	*Mod_LoadModel( model_t *mod, qboolean crash, qboolean trackCRC );
 
 #endif // GL_MODEL_H

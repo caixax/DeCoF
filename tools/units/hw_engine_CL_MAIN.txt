@@ -4,7 +4,6 @@ _CL_CheckClientState
 _CL_UpdateSoundFade
 _CL_PingServers_f
 _CL_Slist_f
-_CL_PrintCachedServer.part.6
 _CL_PrintCachedServer
 _CL_AddToServerCache
 _CL_ListCachedServers_f
@@ -27,7 +26,6 @@ _CL_PrecacheResources
 _CL_MoveToOnHandList
 _CL_CleanFileName
 _CL_RegisterCustomization
-_CL_ProcessFile.constprop.16
 _CL_ProcessFile
 _CL_GetMessage
 _CL_ReadPackets
@@ -74,3 +72,11 @@ _CL_Init
 _CL_SendKeepaliveToServer
 _CL_KeepConnectionActive
 _CL_GetModelByIndex
+_AddStartupTiming
+_CL_ParseStatusMessage_guess
+_CL_LoadSecurityModules
+_CL_WaitForResources_guess
+_CL_WaitForResourcesDone_guess
+_CL_CheckWaitForResources_guess
+_CL_GetWorldModel
+_CL_GetServerCount

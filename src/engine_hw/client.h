@@ -170,7 +170,8 @@ typedef struct
 // userinfo 0x02DD30E4, demoplayback 0x02DD33F4, dl.nCurStat 0x02DD3598,
 // packet_loss 0x02DD35C0, soundfade 0x02DD35D8, md5_clientdll 0x02DD36F8,
 // connect_stream 0x02DD371C, passive 0x02DD3730, spectator 0x02DD3734,
-// GameServerSteamID 0x02DD3748, build_num 0x02DD3750). Between dl and
+// GameServerSteamID 0x02DD3748; this build has no build_num, the int at
+// 0x02DD3750 is the global cl_playerindex). Between dl and
 // packet_loss this build has 16 bytes the Linux build lacks: the state of
 // the Steam resource wait of CL_MAIN.C (CL_WaitForResources_guess starts it
 // with the file system's WaitForResources, CL_CheckWaitForResources_guess
@@ -268,8 +269,6 @@ typedef struct client_static_s
 	qboolean			isVAC2Secure;
 
 	unsigned __int64	GameServerSteamID;
-
-	int					build_num;
 } client_static_t;
 
 extern	client_static_t	cls;
@@ -412,14 +411,141 @@ extern	dlight_t		cl_elights[MAX_ELIGHTS];
 extern	int				cl_numvisedicts;
 extern	cl_entity_t		*cl_visedicts[MAX_VISEDICTS];
 
+extern	cvar_t	cl_name;
+extern	cvar_t	cl_shownet;
+extern	cvar_t	cl_timeout;
+extern	cvar_t	cl_nodelta;
+extern	cvar_t	cl_idealpitchscale;
+extern	cvar_t	cl_himodels;
+extern	cvar_t	cl_gaitestimation;
+extern	cvar_t	cl_showevents;
+extern	cvar_t	cl_updaterate;
+extern	cvar_t	cl_cmdrate;
+extern	cvar_t	fs_lazy_precache;
+extern	cvar_t	fs_precache_timings;
+extern	cvar_t	fs_perf_warnings;
+extern	cvar_t	fs_startup_timings;
+
+extern	int			cl_playerindex;
+extern	qboolean	cl_inmovie;
+extern	float		g_LastScreenUpdateTime;
+
+typedef enum
+{
+	CAREER_NONE = 0,
+	CAREER_LOADING,
+	CAREER_PLAYING,
+} CareerStateType;
+
+extern	CareerStateType	g_careerState;	// host_cmd.c
+
 //
 // cl_main.c
 //
+void	AddStartupTiming( const char *name );
+void	SetupStartupTimings( void );
+void	PrintStartupTimings( void );
+void	CL_Init( void );
+void	CL_Shutdown( void );
+void	CL_CheckClientState( void );
+void	CL_UpdateSoundFade( void );
+void	CL_ConnectionlessPacket( void );
+qboolean	CL_PrecacheResources( void );
+void	CL_MoveToOnHandList( resource_t *pResource );
+void	CL_RegisterCustomization( resource_t *resource );
+void	CL_ProcessFile( qboolean successfully_received, const char *filename );
+void	CL_ReadPackets( void );
+resource_t	*CL_AddResource( resourcetype_t type, char *name, int size, qboolean bFatalIfMissing, int index );
+void	CL_ClearClientState( void );
+void	CL_ClearState( qboolean bQuiet );
+void	CL_Disconnect( void );
 void	CL_Disconnect_f( void );
+void	CL_ShutDownClientStatic( void );
+void	CL_SendConnectPacket( void );
+void	CL_CheckForResend( void );
+void	CL_SignonReply( void );
+void	CL_WaitForResources_guess( void );
+void	CL_CheckWaitForResources_guess( void );
+dlight_t	*CL_AllocDlight( int key );
+dlight_t	*CL_AllocElight( int key );
+void	CL_DecayLights( void );
+qboolean	UserIsConnectedOnLoopback( void );
+void	CL_Move( void );
+void	CL_SendResourceListBlock( void );
+void	CL_HudMessage( const char *pMessage );
+void	CL_GetPlayerHulls( void );
+void	CL_KeepConnectionActive( void );
+struct model_s	*CL_GetModelByIndex( int index );
+struct model_s	*CL_GetWorldModel( void );
+int		CL_GetServerCount( void );
 
 //
 // cl_demo.c
 //
+extern	cvar_t	cl_gamegauge;
+
 void	CL_RecordHUDCommand( char *cmdname );
+qboolean	CL_ReadDemoMessage( void );
+void	CL_StopPlayback( void );
+void	CL_Stop_f( void );
+void	CL_Record_f( void );
+void	CL_PlayDemo_f( void );
+void	CL_ViewDemo_f( void );
+void	CL_TimeDemo_f( void );
+void	CL_GameGauge_f( void );
+void	CL_ListDemo_f( void );
+void	CL_AppendDemo_f( void );
+void	CL_RemoveDemo_f( void );
+void	CL_SwapDemo_f( void );
+void	CL_SetDemoInfo_f( void );
+void	CL_WavePlayLen_f( void );
+
+//
+// cl_parse.c
+//
+extern	int			msg_buckets[64];
+extern	int			total_data[64];
+extern	qboolean	g_bUpdatingSecurityModules;
+
+void	CL_ParseServerMessage( qboolean normal_message );
+void	CL_AddToResourceList( resource_t *pResource, resource_t *pList );
+void	CL_RemoveFromResourceList( resource_t *pResource );
+void	CL_ClearResourceLists( void );
+void	CL_RegisterResources( sizebuf_t *msg );
+void	CL_DeallocateDynamicData( void );
+qboolean	CL_CheckGameDirectory( char *gamedir );
+int		DispatchDirectUserMsg( const char *pszName, int iSize, void *pBuf );
+void	CL_DumpMessageLoad_f( void );
+
+//
+// cl_parsefn.c
+//
+void	CL_FlushEventSystem( void );
+
+//
+// cl_ents.c, cl_pred.c
+//
+void	CL_SetSolidEntities( void );
+void	CL_SetSolidPlayers( int playernum );
+void	CL_PushPMStates( void );
+void	CL_PopPMStates( void );
+void	CL_PredictMove( qboolean repredicting );
+void	CL_InitPrediction( void );
+
+//
+// cl_tent.c, cl_extrap.c, cl_spectator.c
+//
+extern	cvar_t	ex_interp;
+extern	cvar_t	dev_overview;
+
+void	CL_TempEntInit( void );
+void	CL_InitTEnts( void );
+void	CL_InitExtrap( void );
+
+//
+// download.cpp, voice.cpp
+//
+void	CL_HTTPStop_f( void );
+qboolean	Voice_GetLoopback( void );
 
 #endif // CLIENT_H

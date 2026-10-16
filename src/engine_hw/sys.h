@@ -19,4 +19,7 @@ extern	int		giActive;
 extern	int		giStateInfo;
 extern	int		giSubState;
 
+// sys_dll2.cpp
+const char	*GetCurrentSteamAppName( void );
+
 #endif // SYS_H

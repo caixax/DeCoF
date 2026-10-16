@@ -45,4 +45,7 @@ typedef struct viddef_s
 
 extern	viddef_t	vid;				// global video state
 
+void	VID_TakeSnapshot( const char *pFilename );
+void	VID_WriteBuffer( const char *pFilename );
+
 #endif // VID_H

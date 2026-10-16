@@ -302,6 +302,237 @@ void	SV_BroadcastCommand( char *fmt, ... );
 
 extern	int		num_servers;
 extern	qboolean	allow_cheats;
+extern	cvar_t	rcon_password;
+
+#define	MAX_PACKET_ENTITIES	256		// doesn't count nails
+
+// SV_Multicast destinations
+#define	MSG_FL_NONE			0		// No flags
+#define	MSG_FL_BROADCAST	(1<<0)	// Broadcast?
+#define	MSG_FL_PVS			(1<<1)	// Send to PVS
+#define	MSG_FL_PAS			(1<<2)	// Send to PAS
+#define	MSG_FL_ONE			(1<<7)	// Send to single client
+
+typedef enum
+{
+	sv_packet_nodelta,
+	sv_packet_delta
+} sv_delta_t;
+
+// cmodel.c
+byte	*CM_LeafPVS( int leafnum );
+byte	*CM_LeafPAS( int leafnum );
+
+// sv_phys.c
+extern	edict_t	**g_moved_edict;
+extern	vec3_t	*g_moved_from;
+
+// sv_main.c
+extern	cvar_t	sv_maxupdaterate;
+extern	cvar_t	sv_minupdaterate;
+extern	cvar_t	sv_filterban;
+extern	cvar_t	sv_minrate;
+extern	cvar_t	sv_maxrate;
+extern	cvar_t	sv_timeout;
+extern	cvar_t	sv_password;
+extern	cvar_t	sv_proxies;
+extern	cvar_t	sv_cheats;
+extern	cvar_t	sv_aim;
+extern	cvar_t	sv_clienttrace;
+extern	cvar_t	sv_allow_download;
+extern	cvar_t	sv_send_resources;
+extern	cvar_t	sv_send_logos;
+extern	cvar_t	sv_instancedbaseline;
+extern	cvar_t	sv_contact;
+extern	cvar_t	sv_visiblemaxplayers;
+extern	cvar_t	sv_downloadurl;
+extern	cvar_t	sv_allow_dlfile;
+extern	cvar_t	mapcyclefile;
+extern	cvar_t	motdfile;
+extern	cvar_t	servercfgfile;
+extern	cvar_t	lservercfgfile;
+extern	cvar_t	mapchangecfgfile;
+extern	cvar_t	logsdir;
+extern	cvar_t	bannedcfgfile;
+extern	cvar_t	hpk_maxsize;
+extern	cvar_t	violence_hblood;
+extern	cvar_t	violence_ablood;
+extern	cvar_t	violence_hgibs;
+extern	cvar_t	violence_agibs;
+extern	cvar_t	sv_skycolor_r;
+extern	cvar_t	sv_skycolor_g;
+extern	cvar_t	sv_skycolor_b;
+extern	cvar_t	sv_skyvec_x;
+extern	cvar_t	sv_skyvec_y;
+extern	cvar_t	sv_skyvec_z;
+
+extern	int		sv_playermodel;
+extern	int		g_userid;
+extern	char	localinfo[];
+extern	struct delta_s	*g_peventdelta;
+
+void	SV_DownloadingModules( void );
+void	SV_GatherStatistics( void );
+void	SV_DeallocateDynamicData( void );
+void	SV_ReallocateDynamicData( void );
+void	SV_AllocClientFrames( void );
+qboolean	SV_IsPlayerIndex( int index );
+void	SV_ClearPacketEntities( client_frame_t *frame );
+void	SV_AllocPacketEntities( client_frame_t *frame, int numents );
+void	SV_ClearFrames( client_frame_t **frames );
+void	SV_Serverinfo_f( void );
+void	SV_Localinfo_f( void );
+void	SV_User_f( void );
+void	SV_Users_f( void );
+void	SV_CountPlayers( int *clients );
+void	SV_CountProxies( int *proxies );
+void	SV_FindModelNumbers( void );
+void	SV_StartParticle( const vec_t *org, const vec_t *dir, int color, int count );
+void	SV_StartSound( int recipients, edict_t *entity, int channel, const char *sample, int volume, float attenuation, int fFlags, int pitch );
+qboolean	SV_BuildSoundMsg( edict_t *entity, int channel, const char *sample, int volume, float attenuation, int fFlags, int pitch, const float *origin, sizebuf_t *buffer );
+int		SV_HashString( const char *string, int iBounds );
+int		SV_LookupSoundIndex( const char *sample );
+void	SV_BuildHashedSoundLookupTable( void );
+void	SV_AddSampleToHashedLookupTable( const char *pszSample, int iSampleIndex );
+qboolean	SV_ValidClientMulticast( client_t *client, int soundLeaf, int to );
+void	SV_Multicast( edict_t *ent, vec_t *origin, int to, qboolean reliable );
+void	SV_WriteMovevarsToClient( sizebuf_t *message );
+void	SV_WriteDeltaDescriptionsToClient( sizebuf_t *msg );
+void	SV_SetMoveVars( void );
+void	SV_QueryMovevarsChanged( void );
+void	SV_SendServerinfo( sizebuf_t *msg, client_t *client );
+void	SV_SendResources( sizebuf_t *msg );
+void	SV_WriteClientdataToMessage( client_t *client, sizebuf_t *msg );
+void	SV_WriteSpawn( sizebuf_t *msg );
+void	SV_SendUserReg( sizebuf_t *msg );
+void	SV_New_f( void );
+void	SV_SendRes_f( void );
+void	SV_Spawn_f( void );
+void	SV_CheckVoiceChanges( void );
+void	SV_CheckUpdateRate( double *rate );
+void	SV_RejectConnection( netadr_t *adr, char *fmt, ... );
+void	SV_RejectConnectionForPassword( netadr_t *adr );
+int		SV_GetFragmentSize( void *state );
+qboolean	SV_FilterUser( USERID_t *userid );
+int		SV_CheckProtocol( netadr_t *adr, int nProtocol );
+int		SV_CheckChallenge( netadr_t *adr, int nChallengeValue );
+int		SV_CheckIPRestrictions( netadr_t *adr, int nAuthProtocol );
+int		SV_CheckIPConnectionReuse( netadr_t *adr );
+int		SV_FinishCertificateCheck( netadr_t *adr, int nAuthProtocol, char *szRawCertificate, char *userinfo );
+int		SV_CheckKeyInfo( netadr_t *adr, char *protinfo, unsigned short *port, int *pAuthProtocol, char *pszRaw, int nRawSize, char *cdkey );
+int		SV_CheckForDuplicateSteamID( client_t *client );
+int		SV_CheckForDuplicateNames( char *userinfo, qboolean bIsReconnecting, int nExcludeSlot );
+int		SV_CheckUserInfo( netadr_t *adr, char *userinfo, qboolean bIsReconnecting, int nReconnectSlot, char *name );
+int		SV_FindEmptySlot( netadr_t *adr, int *pslot, client_t **ppClient );
+void	SV_ConnectClient( void );
+void	SVC_Ping( void );
+void	SVC_GetChallenge( void );
+void	SVC_ServiceChallenge( void );
+void	SV_ResetModInfo( void );
+int		SV_GetFakeClientCount( void );
+qboolean	SV_GetModInfo( char *pszInfo, char *pszDL, int *version, int *size, qboolean *svonly, qboolean *cldll, char *pszHLVersion );
+qboolean	RequireValidChallenge( netadr_t *adr );
+qboolean	ValidInfoChallenge( netadr_t *adr, const char *nugget );
+int		GetChallengeNr( netadr_t *adr );
+qboolean	CheckChallengeNr( netadr_t *adr, int nChallengeValue );
+void	ReplyServerChallenge( netadr_t *adr );
+qboolean	ValidChallenge( netadr_t *adr, int challengeNr );
+void	SVC_InfoString( void );
+void	SVC_Info( qboolean bDetailed );
+void	SVC_PlayerInfo( void );
+void	SVC_RuleInfo( void );
+int		SVC_GameDllQuery( const char *s );
+void	SV_BeginRedirect( redirect_t rd, netadr_t *addr );
+void	SV_EndRedirect( void );
+void	SV_ResetRcon_f( void );
+void	SV_AddFailedRcon( netadr_t *adr );
+qboolean	SV_CheckRconFailure( netadr_t *adr );
+int		SV_Rcon_Validate( void );
+void	SV_Rcon( netadr_t *net_from );
+void	SV_ConnectionlessPacket( void );
+void	SV_CheckRate( client_t *cl );
+void	SV_ProcessFile( client_t *cl, char *filename );
+qboolean	SV_FilterPacket( void );
+void	SV_SendBan( void );
+void	SV_ReadPackets( void );
+void	SV_CheckTimeouts( void );
+int		SV_CalcPing( client_t *cl );
+void	SV_FullClientUpdate( client_t *cl, sizebuf_t *sb );
+void	SV_EmitEvents( client_t *cl, packet_entities_t *pack, sizebuf_t *msg );
+void	SV_AddToFatPVS( vec_t *org, struct mnode_s *node );
+byte	*SV_FatPVS( float *org );
+void	SV_AddToFatPAS( vec_t *org, struct mnode_s *node );
+byte	*SV_FatPAS( float *org );
+int		SV_PointLeafnum( vec_t *p );
+void	TRACE_DELTA( char *fmt );
+void	SV_SetCallback( int num, qboolean remove, qboolean custom, int *numbase, qboolean full, int offset );
+void	SV_SetNewInfo( int newblindex );
+void	SV_WriteDeltaHeader( int num, qboolean remove, qboolean custom, int *numbase, qboolean newbl, int newblindex, qboolean full, int offset );
+void	SV_InvokeCallback( void );
+int		SV_FindBestBaseline( int index, struct entity_state_s **baseline, struct entity_state_s *to, int num, qboolean custom );
+int		SV_CreatePacketEntities( sv_delta_t type, client_t *client, packet_entities_t *to, sizebuf_t *msg );
+void	SV_EmitPacketEntities( client_t *client, packet_entities_t *to, sizebuf_t *msg );
+qboolean	SV_ShouldUpdatePing( client_t *client );
+qboolean	SV_HasEventsInQueue( client_t *client );
+void	SV_GetNetInfo( client_t *client, int *ping, int *packet_loss );
+int		SV_CheckVisibility( edict_t *entity, unsigned char *pset );
+void	SV_EmitPings( client_t *client, sizebuf_t *msg );
+void	SV_WriteEntitiesToClient( client_t *client, sizebuf_t *msg );
+void	SV_CleanupEnts( void );
+qboolean	SV_SendClientDatagram( client_t *client );
+void	SV_UpdateToReliableMessages( void );
+void	SV_SkipUpdates( void );
+void	SV_SendClientMessages( void );
+void	SV_ExtractFromUserinfo( client_t *cl );
+int		SV_ModelIndex( const char *name );
+void	SV_AddResource( resourcetype_t type, char *name, int size, unsigned char flags, int index );
+void	SV_CreateGenericResources( void );
+void	SV_CreateResourceList( void );
+void	SV_ClearCaches( void );
+void	SV_WriteVoiceCodec( sizebuf_t *pBuf );
+void	SV_CreateBaseline( void );
+void	SV_BuildReconnect( sizebuf_t *msg );
+void	SV_ReconnectAllClients( void );
+void	SV_ActivateServer( int runPhysics );
+void	SV_ServerShutdown( void );
+int		SV_SpawnServer( qboolean bIsDemo, char *server, char *startspot );
+void	SV_LoadEntities( void );
+void	SV_ClearEntities( void );
+int		RegUserMsg( const char *pszName, int iSize );
+USERID_t	*SV_StringToUserID( const char *str );
+void	SV_BanId_f( void );
+void	Host_Kick_f( void );
+void	SV_RemoveId_f( void );
+void	SV_WriteId_f( void );
+void	SV_ListId_f( void );
+void	SV_AddIP_f( void );
+void	SV_RemoveIP_f( void );
+void	SV_ListIP_f( void );
+void	SV_WriteIP_f( void );
+void	SV_KickPlayer( int nPlayerSlot, int nReason );
+void	SV_InactivateClients( void );
+void	SV_FailDownload( char *filename );
+const char	*Q_stristr( const char *pStr, const char *pSearch );
+qboolean	IsSafeFileToDownload( const char *filename );
+void	SV_BeginFileDownload_f( void );
+void	SV_SetMaxclients( void );
+void	SV_HandleRconPacket( void );
+void	SV_CheckCmdTimes( void );
+void	SV_CheckForRcon( void );
+qboolean	SV_IsSimulating( void );
+void	SV_CheckMapDifferences( void );
+void	SV_Frame( void );
+void	SV_Drop_f( void );
+void	SV_RegisterDelta( char *name, char *loadfile );
+void	SV_InitDeltas( void );
+void	SV_InitEncoders( void );
+void	SV_Init( void );
+void	SV_Shutdown( void );
+qboolean	SV_CompareUserID( USERID_t *id1, USERID_t *id2 );
+char	*SV_GetIDString( USERID_t *id );
+char	*SV_GetClientIDString( client_t *client );
+int		GetGameAppID( void );
+qboolean	IsGameSubscribed( const char *game );
 
 // sv_steam3.cpp
 const char	*Steam_GetCommunityName( void );

@@ -1,3 +1,12 @@
 name,size,source
 _player_mins,48,float player_mins[4][3] (pmovetst.c)
 _player_maxs,48,float player_maxs[4][3] (pmovetst.c)
+_sv,379160,server_t sv (sv_main.c; sizeof server_t 0x5C918 with VC6)
+_svs,136,server_static_t svs (sv_main.c; sizeof 0x88 with VC6)
+_movevars,132,movevars_t movevars (sizeof movevars_s 0x84)
+_net_message,20,sizebuf_t net_message (net_ws.c)
+_net_from,20,netadr_t net_from (net_ws.c)
+_net_local_adr,20,netadr_t net_local_adr (net_ws.c)
+_gGlobalVariables,172,globalvars_t gGlobalVariables (sv_main.c; sizeof 0xAC with VC6)
+_cl,1839736,client_state_t (client.h, 0x1C1278)
+_cls,17616,client_static_t (client.h, 0x44D0)

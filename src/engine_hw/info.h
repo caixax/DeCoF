@@ -18,5 +18,6 @@ int			Info_IsValid( const char *s );
 
 #define MAX_INFO_STRING		256		// serverinfo (common.c)
 #define MAX_SERVERINFO_STRING	512	// limit COM_SetupDirectories passes for serverinfo
+#define MAX_LOCALINFO		( MAX_INFO_STRING * 128 )
 
 #endif // INFO_H

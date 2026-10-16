@@ -30,4 +30,13 @@ int				FileSystem_AddFallbackGameDir( const char *pGameDir );
 
 void			FS_Rename( const char *originalName, const char *newName );
 
+void			FS_LogLevelLoadStarted( const char *name );
+void			FS_LogLevelLoadFinished( const char *name );
+
+// wrappers around IFileSystem::WaitForResources, GetWaitForResourcesProgress
+// and CancelWaitForResources (0x01D5D7FA, 0x01D5D817, 0x01D5D862; names unproven)
+int				FS_WaitForResources_guess( const char *resourcelist );
+qboolean		FS_GetWaitForResourcesProgress_guess( int handle, float *progress, qboolean *complete );
+void			FS_CancelWaitForResources_guess( int handle );
+
 #endif // FILESYSTEM__H

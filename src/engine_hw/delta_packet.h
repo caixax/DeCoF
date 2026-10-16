@@ -12,4 +12,9 @@ typedef struct packet_entities_s
 	struct entity_state_s	*entities;
 } packet_entities_t;
 
+extern	int		SV_UPDATE_BACKUP;
+extern	int		SV_UPDATE_MASK;
+extern	int		CL_UPDATE_BACKUP;
+extern	int		CL_UPDATE_MASK;
+
 #endif // DELTA_PACKET_H
