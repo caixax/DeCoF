@@ -141,3 +141,7 @@ Debug information: `hw.so` and `gameui.so` of the steam_legacy build carry full 
 ## M. MP3FileInfo (CodeProject, compiled into client.dll)
 
 client.dll contains the class "MP3FileInfo 1.0" by Christian Richardt (CodeProject, 2003, "MP3FileInfo - Extract Header and ID3 Tags of an MP3 File"; default CodeProject licence CPOL, not checked), built on id3lib, with Cry of Fear changes (printf replaced by gEngfuncs.Con_Printf with a "MP3 INFO" prefix, GetTitle_guess added). src/cl_dll/MP3FileInfo.cpp is rebuilt from the binary (11 of 11 functions identical); copies of the original class were consulted to name members, not copied. Not in refs/.
+
+## refs/Quake (id-Software/Quake, GPL-2.0)
+
+id Software's Quake source (WinQuake, QW). GoldSrc's engine descends from it, and its Windows-only files have no counterpart in the Linux hw.so DWARF: in_win.c, snd_win.c, vid_win.c, gl_vidnt.c, sys_win.c, cd_win.c, net_wins.c and conproc.c give the function names, order and structure of the matching hw.dll code (docs/hw_regions.md). Consultation only, like the other engine references: write hw.dll from its assembly and verify every name in the binary.
