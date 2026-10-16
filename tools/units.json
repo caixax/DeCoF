@@ -2311,6 +2311,59 @@
           "SteamAppStartup_guess"
         ]
       }
+    },
+    "gameui": {
+      "toolchain": "vc6",
+      "ghidra_folder": "/1.6a",
+      "ghidra_program": "GameUI.dll",
+      "symbols": "tools/symbols/gameui_1.6a.csv",
+      "cflags": [
+        "/nologo",
+        "/c",
+        "/G5",
+        "/W3",
+        "/Od",
+        "/MT",
+        "/GR"
+      ],
+      "defines": [
+        "WIN32",
+        "_WINDOWS"
+      ],
+      "includes": [
+        "src/gameui",
+        "src/public",
+        "src/common",
+        "src/engine",
+        "src/pm_shared"
+      ],
+      "units": [
+        {
+          "name": "public/interface",
+          "source": "src/public/interface.cpp",
+          "functions_file": "tools/units/gameui_public_interface.txt"
+        },
+        {
+          "name": "GameUI/Sys_Utils",
+          "source": "src/gameui/Sys_Utils.cpp",
+          "functions_file": "tools/units/gameui_GameUI_Sys_Utils.txt"
+        },
+        {
+          "name": "GameUI/GameUI_Interface",
+          "source": "src/gameui/GameUI_Interface.cpp",
+          "functions_file": "tools/units/gameui_GameUI_GameUI_Interface.txt"
+        },
+        {
+          "name": "vgui2/controls/controls",
+          "source": "src/vgui2/controls/controls.cpp",
+          "functions_file": "tools/units/gameui_vgui2_controls_controls.txt"
+        },
+        {
+          "name": "public/KeyValues",
+          "source": "src/public/KeyValues.cpp",
+          "functions_file": "tools/units/gameui_public_KeyValues.txt"
+        }
+      ]
     }
   }
 }

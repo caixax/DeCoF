@@ -101,6 +101,16 @@ cof.exe is Valve's hl.exe launcher (`src/launcher`, Visual C++ 6.0, `/G5 /W3 /O1
 - `winsock2.h` gives `call [__imp__WSAStartup@8]`, `winsock.h` calls through a thunk. A brace-initialised local `char` array is one byte store per character.
 - A function that delinks as `(bad)` has an empty body in Ghidra: disassemble the range, recreate the function and delink again.
 
+## GameUI.dll units (VC6, the VGUI2 menu DLL)
+
+GameUI.dll is built with Visual C++ 6.0 Standard Edition objects (`/G5 /W3 /Od /MT /GR`, no `/GX`), so the hw.dll rules hold (literal code, stack slots by name hash: tools/vc6_slots.py). Names, prototypes, classes, vtable slots and member offsets come from the Linux gameui.so DWARF (`tools/dwarf_file.py`, build/dwarf_gameui); `python tools/rtti.py gameui` and `tools/vtable_linux.py` pair the MSVC vtables. GameUI's own files go in src/gameui; Valve library code that hw.dll shares (vgui2 controls, KeyValues, interface) goes in src/vgui2 and src/public.
+- Overloaded virtuals: VC6 puts all same-name virtuals together at the slot of the first declaration, in reverse declaration order, even when they are not adjacent, so Linux slot arithmetic is off after such a group; keep the DWARF declaration order (KeyValues FindKey, Panel PostMessage and SetParent).
+- `""` and `L""` literals go to `.bss`. Global `.bss` order: constructed or uninitialized globals first, then `= NULL` globals in declaration order.
+- A static function's code and literals come after its first caller; a `static inline` function has its literals at the definition and its code after the first caller (KeyValues WriteIndents). Dynamic-initializer literals come before the literals of functions defined earlier in the file.
+- Shapes: `if (a && b ...) return true; return false;` differs from the negated form; two `if (...) break;` differ from one `||`; `int len = strlen(s) + 1;` differs from adding 1 at each use; `if (c != '/') {...} else {...}` and the reversed test give different branch orders. Case bodies are laid out in source order, the byte index table by case value.
+- VGUI2 message maps under VC6 need `(MessageFunc_t)(void (ThisClass::*)(void))&ThisClass::name`. The DWARF class/struct keyword changes the mangling (IBaseSystem and cl_enginefuncs_s are struct). An inline function whose first user is an earlier object (PHandle constructor, IBaseInterface, CUtlBuffer::TellPut) belongs to that object.
+- Retail GetPanelBaseClassName returns "vgui::EditablePanel": the GameUI sources wrote `vgui::` aliased to `vgui2`. The 2013 ISurface has 93 slots (from the hw.dll vtable); VC6's std::vector is 16 bytes.
+
 ## Facts that hold for the CoF weapons
 
 - Globals: `gpGlobals->v_forward` is +0x28, `v_up` +0x34, `v_right` +0x40. Shell eject: `vecShellVelocity = gpGlobals->v_right * 220 + gpGlobals->v_up * 200 + gpGlobals->v_forward * 40`, `vecShellOrigin = pev->origin + pev->view_ofs + gpGlobals->v_forward * 80 + gpGlobals->v_right * 20`, `EjectBrass( vecShellOrigin, vecShellVelocity, pev->angles.y, m_iShell, TE_BOUNCE_SHELL )`.

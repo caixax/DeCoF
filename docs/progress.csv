@@ -7430,7 +7430,7 @@ gameui,10002E90,34,,,UNKNOWN,,,,TODO,,,
 gameui,10002EC0,16,,,UNKNOWN,,,,TODO,,,
 gameui,10002ED0,45,,,UNKNOWN,,,,TODO,,,
 gameui,10002F00,30,,,UNKNOWN,,,,TODO,,,
-gameui,10002F20,40,,ATL::COleDateTimeSpan::COleDateTimeSpan,ENGINE,,,,TODO,,ghidra,
+gameui,10002F20,40,??0Color@@QAE@HHHH@Z,Color::Color,ENGINE,,,,TODO,,gameui_manual.csv,
 gameui,10002F50,48,,,UNKNOWN,,,,TODO,,,
 gameui,10002F80,64,,,UNKNOWN,,,,TODO,,,
 gameui,10002FC0,25,,,UNKNOWN,,,,TODO,,,
@@ -7865,10 +7865,10 @@ gameui,1000F4FF,15,,,UNKNOWN,,,,TODO,,,
 gameui,1000F50E,18,,,UNKNOWN,,,,TODO,,,
 gameui,1000F520,15,,,UNKNOWN,,,,TODO,,,
 gameui,1000F52F,10,,,UNKNOWN,,,,TODO,,,
-gameui,1000F539,25,,_GLOBAL__sub_I_TheCareerGame,ENGINE,,,,TODO,,linux_symbols:string:0.75,
+gameui,1000F539,25,__GLOBAL__sub_I_TheCareerGame,_GLOBAL__sub_I_TheCareerGame,ENGINE,,,,TODO,,linux_symbols:string:0.75,
 gameui,1000F552,10,,,UNKNOWN,,,,TODO,,,
 gameui,1000F55C,5,,,UNKNOWN,,,,TODO,,,
-gameui,1000F561,743,,__MsgFunc_CZCareer,ENGINE,GameUI/CareerGame.cpp,,,TODO,,linux_symbols:string:0.69,linux: _Z18__MsgFunc_CZCareerPKciPv
+gameui,1000F561,743,___MsgFunc_CZCareer,__MsgFunc_CZCareer,ENGINE,GameUI/CareerGame.cpp,,,TODO,,linux_symbols:string:0.69,linux: _Z18__MsgFunc_CZCareerPKciPv
 gameui,1000F848,20,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,linux: _ZN11CCareerGame18GetRoundTimeLengthEv
 gameui,1000F85C,24,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,linux: _ZN16CCareerCharacterC2EPK10BotProfile
 gameui,1000F874,125,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,linux: _ZN16CCareerCharacter5PrintEv
@@ -8058,7 +8058,7 @@ gameui,10014E60,20,,,UNKNOWN,GameUI/CareerGameTasks.cpp,,,TODO,,,linux: _ZNK13CC
 gameui,10014E80,20,,,UNKNOWN,GameUI/CareerGameTasks.cpp,,,TODO,,,linux: _ZNK13CCareerUITask10GetPartialEv
 gameui,10014EA0,25,,,UNKNOWN,GameUI/CareerGameTasks.cpp,,,TODO,,,linux: _ZN13CCareerUITask10SetPartialEi
 gameui,10014EC0,20,,,UNKNOWN,GameUI/CareerGameTasks.cpp,,,TODO,,,linux: _ZNK13CCareerUITask14IsMaxRoundTimeEv
-gameui,10014EE0,1273,,ShowCareerMapDescription,ENGINE,,,,TODO,,linux_symbols:string:0.754,
+gameui,10014EE0,1273,_ShowCareerMapDescription,ShowCareerMapDescription,ENGINE,,,,TODO,,linux_symbols:string:0.754,
 gameui,100153D9,915,,CMapButton::CMapButton,ENGINE,,,,TODO,,linux_symbols:string:0.806,
 gameui,1001576C,103,,,UNKNOWN,,,,TODO,,,
 gameui,100157D3,246,,CMapButton::ApplySchemeSettings,ENGINE,GameUI/CareerMapFrame.cpp,,,TODO,,linux_symbols:string:0.767,linux: _ZN10CMapButton19ApplySchemeSettingsEPN5vgui27ISchemeE
@@ -8540,14 +8540,14 @@ gameui,100248A4,734,,,UNKNOWN,,,,TODO,,,
 gameui,10024B82,299,,,UNKNOWN,,,,TODO,,,
 gameui,10024CAD,33,,,UNKNOWN,,,,TODO,,,
 gameui,10024CD0,46,,,UNKNOWN,,,,TODO,,,
-gameui,10024D00,64,,MD5Init,ENGINE,public/checksum_md5.cpp,,,TODO,,linux_symbols:consts:1.0,linux: _Z7MD5InitP12MD5Context_t
+gameui,10024D00,64,_MD5Init,MD5Init,ENGINE,public/checksum_md5.cpp,,,TODO,,linux_symbols:consts:1.0,linux: _Z7MD5InitP12MD5Context_t
 gameui,10024D40,301,,,UNKNOWN,public/checksum_md5.cpp,,,TODO,,,linux: _Z9MD5UpdateP12MD5Context_tPKhj
 gameui,10024E6D,226,,,UNKNOWN,public/checksum_md5.cpp,,,TODO,,,linux: _Z8MD5FinalPhP12MD5Context_t
-gameui,10024F4F,3875,,MD5Transform,ENGINE,public/checksum_md5.cpp,,,TODO,,linux_symbols:consts:0.92,linux: _Z12MD5TransformPjPKj
+gameui,10024F4F,3875,_MD5Transform,MD5Transform,ENGINE,public/checksum_md5.cpp,,,TODO,,linux_symbols:consts:0.92,linux: _Z12MD5TransformPjPKj
 gameui,10025E72,112,,,UNKNOWN,,,,TODO,,,
 gameui,10025EF0,50,,,UNKNOWN,,,,TODO,,,
 gameui,10025F22,403,,,UNKNOWN,,,,TODO,,,
-gameui,100260B5,66,,COM_TimeString,ENGINE,HLTV/common/common.cpp,,,TODO,,linux_symbols:string:0.375,linux: _Z14COM_TimeStringv
+gameui,100260B5,66,_COM_TimeString,COM_TimeString,ENGINE,HLTV/common/common.cpp,,,TODO,,linux_symbols:string:0.375,linux: _Z14COM_TimeStringv
 gameui,100260F7,69,,,UNKNOWN,HLTV/common/common.cpp,,,TODO,,,linux: _Z12COM_SkipPathPc
 gameui,1002613C,277,,,UNKNOWN,HLTV/common/common.cpp,,,TODO,,,linux: _Z12COM_FileBasePcS_
 gameui,10026251,12,,,UNKNOWN,HLTV/common/common.cpp,,,TODO,,,linux: _Z14COM_UngetTokenv
@@ -8556,7 +8556,7 @@ gameui,1002640D,52,,,UNKNOWN,HLTV/common/common.cpp,,,TODO,,,linux: _Z11COM_VarA
 gameui,10026441,88,,,UNKNOWN,HLTV/common/common.cpp,,,TODO,,,linux: COM_Nibble
 gameui,10026499,116,,,UNKNOWN,HLTV/common/common.cpp,,,TODO,,,linux: _Z14COM_HexConvertPKciPh
 gameui,1002650D,144,,,UNKNOWN,HLTV/common/common.cpp,,,TODO,,,linux: _Z13COM_BinPrintfPhi
-gameui,1002659D,178,,COM_FormatTime,ENGINE,HLTV/common/common.cpp,,,TODO,,linux_symbols:string:0.531,linux: _Z14COM_FormatTimef
+gameui,1002659D,178,_COM_FormatTime,COM_FormatTime,ENGINE,HLTV/common/common.cpp,,,TODO,,linux_symbols:string:0.531,linux: _Z14COM_FormatTimef
 gameui,1002664F,93,,,UNKNOWN,,,,TODO,,,
 gameui,100266AC,154,,,UNKNOWN,,,,TODO,,,
 gameui,10026746,43,,,UNKNOWN,,,,TODO,,,
@@ -8770,70 +8770,70 @@ gameui,10030943,105,,,UNKNOWN,GameUI/GameConsole.cpp,,,TODO,,,linux: _ZN12CGameC
 gameui,100309AC,51,,,UNKNOWN,GameUI/GameConsole.cpp,,,TODO,,,linux: _ZN12CGameConsole9SetParentEi
 gameui,100309DF,16,,CGameConsole::OnCmdCondump,ENGINE,GameUI/GameConsole.cpp,,,TODO,,linux_symbols:caller:1.0,linux: _ZN12CGameConsole12OnCmdCondumpEv
 gameui,100309EF,10,,,UNKNOWN,,,,TODO,,,
-gameui,100309F9,25,,_GLOBAL__sub_I_g_GameConsole,ENGINE,,,,TODO,,linux_symbols:string:0.75,
+gameui,100309F9,25,__GLOBAL__sub_I_g_GameConsole,_GLOBAL__sub_I_g_GameConsole,ENGINE,,,,TODO,,linux_symbols:string:0.75,
 gameui,10030A12,10,,,UNKNOWN,,,,TODO,,,
 gameui,10030A20,46,,,UNKNOWN,,,,TODO,,,
 gameui,10030A50,31,,,UNKNOWN,,,,TODO,,,
 gameui,10030A70,46,,,UNKNOWN,,,,TODO,,,
 gameui,10030AA0,19,,,UNKNOWN,,,,TODO,,,
 gameui,10030AC0,16,,,UNKNOWN,,,,TODO,,,
-gameui,10030AD0,24,,,UNKNOWN,,,,TODO,,,
+gameui,10030AD0,24,?DebugMessage_guess@@YAXPBD@Z,DebugMessage_guess,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
 gameui,10030AE8,10,,,UNKNOWN,,,,TODO,,,
 gameui,10030AF2,15,,,UNKNOWN,,,,TODO,,,
 gameui,10030B01,15,,,UNKNOWN,,,,TODO,,,
 gameui,10030B10,15,,,UNKNOWN,,,,TODO,,,
 gameui,10030B1F,18,,,UNKNOWN,,,,TODO,,,
 gameui,10030B31,15,,,UNKNOWN,,,,TODO,,,
-gameui,10030B40,10,,,UNKNOWN,,,,TODO,,,
-gameui,10030B4A,10,,,UNKNOWN,,,,TODO,,,
-gameui,10030B54,10,,,UNKNOWN,,,,TODO,,,
+gameui,10030B40,10,?GameClientExports@@YAPAVIGameClientExports@@XZ,GameClientExports,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10030B4A,10,?GameUI@@YAAAVCGameUI@@XZ,GameUI,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10030B54,10,?EngineVGUI@@YAAAVIEngineVGui@@XZ,EngineVGUI,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
 gameui,10030B5E,10,,,UNKNOWN,,,,TODO,,,
-gameui,10030B68,25,,_GLOBAL__sub_I_g_szEXEName,ENGINE,,,,TODO,,linux_symbols:string:0.75,
-gameui,10030B81,10,,,UNKNOWN,,,,TODO,,,
-gameui,10030B8B,137,,,UNKNOWN,,,,TODO,,,
-gameui,10030C14,38,,,UNKNOWN,,,,TODO,,,
-gameui,10030C3A,543,,CGameUI::Initialize,ENGINE,,,,TODO,,linux_symbols:string:0.823,
-gameui,10030E59,42,,,UNKNOWN,,,,TODO,,,
-gameui,10030E83,40,,,UNKNOWN,,,,TODO,,,
-gameui,10030EAB,118,,CGameUI::RunVguiTestScript,ENGINE,GameUI/GameUI_Interface.cpp,,,TODO,,linux_symbols:caller:0.389,linux: _ZN7CGameUI17RunVguiTestScriptEPKc
-gameui,10030F21,1078,,CGameUI::Start,ENGINE,GameUI/GameUI_Interface.cpp,,,TODO,,linux_symbols:string:0.318,linux: _ZN7CGameUI5StartEP16cl_enginefuncs_siP11IBaseSystem
-gameui,10031357,36,,,UNKNOWN,GameUI/GameUI_Interface.cpp,,,TODO,,,linux: _ZN7CGameUI21FindPlatformDirectoryEPci
-gameui,1003137B,13,,,UNKNOWN,GameUI/GameUI_Interface.cpp,,,TODO,,,linux: _ZN7CGameUI13ValidateCDKeyEbb
-gameui,10031388,82,,,UNKNOWN,,,,TODO,,,
-gameui,100313DA,90,,,UNKNOWN,GameUI/GameUI_Interface.cpp,,,TODO,,,linux: _ZN7CGameUI8ShutdownEv
-gameui,10031434,47,,,UNKNOWN,GameUI/GameUI_Interface.cpp,,,TODO,,,linux: _ZN7CGameUI14IsGameUIActiveEv
-gameui,10031463,126,,CGameUI::ActivateGameUI,ENGINE,GameUI/GameUI_Interface.cpp,,,TODO,,linux_symbols:string:0.833,linux: _ZN7CGameUI14ActivateGameUIEv
-gameui,100314E1,40,,,UNKNOWN,GameUI/GameUI_Interface.cpp,,,TODO,,,linux: _ZN7CGameUI14ActivateDemoUIEv
-gameui,10031509,170,,CGameUI::HideGameUI,ENGINE,GameUI/GameUI_Interface.cpp,,,TODO,,linux_symbols:string:0.8,linux: _ZN7CGameUI10HideGameUIEv
-gameui,100315B3,27,,,UNKNOWN,GameUI/GameUI_Interface.cpp,,,TODO,,,linux: _ZN7CGameUI17HasExclusiveInputEv
-gameui,100315CE,855,,CGameUI::RunFrame,ENGINE,GameUI/GameUI_Interface.cpp,,,TODO,,linux_symbols:string:0.804,linux: _ZN7CGameUI8RunFrameEv
-gameui,10031925,74,,CGameUI::FinishCareerLoad,ENGINE,GameUI/GameUI_Interface.cpp,,,TODO,,linux_symbols:string:0.75,linux: _ZN7CGameUI16FinishCareerLoadEv
-gameui,1003196F,363,,CGameUI::ConnectToServer,ENGINE,GameUI/GameUI_Interface.cpp,,,TODO,,linux_symbols:string:0.854,linux: _ZN7CGameUI15ConnectToServerEPKcii
-gameui,10031ADA,108,,CGameUI::DisconnectFromServer,ENGINE,GameUI/GameUI_Interface.cpp,,,TODO,,linux_symbols:string:0.821,linux: _ZN7CGameUI20DisconnectFromServerEv
-gameui,10031B46,180,,CGameUI::OnDisconnectFromServer,ENGINE,GameUI/GameUI_Interface.cpp,,,TODO,,linux_symbols:caller:0.833,linux: _ZN7CGameUI22OnDisconnectFromServerEiPKc
-gameui,10031BFA,140,,CGameUI::LoadingStarted,ENGINE,GameUI/GameUI_Interface.cpp,,,TODO,,linux_symbols:string:0.75,linux: _ZN7CGameUI14LoadingStartedEPKcS1_
-gameui,10031C86,120,,CGameUI::LoadingFinished,ENGINE,GameUI/GameUI_Interface.cpp,,,TODO,,linux_symbols:string:0.75,linux: _ZN7CGameUI15LoadingFinishedEPKcS1_
-gameui,10031CFE,307,,CGameUI::StartProgressBar,ENGINE,GameUI/GameUI_Interface.cpp,,,TODO,,linux_symbols:string:0.792,linux: _ZN7CGameUI16StartProgressBarEPKci
-gameui,10031E31,57,,,UNKNOWN,GameUI/GameUI_Interface.cpp,,,TODO,,,linux: _ZN7CGameUI19ContinueProgressBarEif
-gameui,10031E6A,211,,CGameUI::StopProgressBar,ENGINE,GameUI/GameUI_Interface.cpp,,,TODO,,linux_symbols:caller:0.667,linux: _ZN7CGameUI15StopProgressBarEbPKcS1_
-gameui,10031F3D,57,,,UNKNOWN,GameUI/GameUI_Interface.cpp,,,TODO,,,linux: _ZN7CGameUI24SetProgressBarStatusTextEPKc
-gameui,10031F76,50,,CGameUI::SetSecondaryProgressBar,ENGINE,GameUI/GameUI_Interface.cpp,,,TODO,,linux_symbols:caller:0.667,linux: _ZN7CGameUI23SetSecondaryProgressBarEf
-gameui,10031FA8,50,,CGameUI::SetSecondaryProgressBarText,ENGINE,GameUI/GameUI_Interface.cpp,,,TODO,,linux_symbols:caller:0.667,linux: _ZN7CGameUI27SetSecondaryProgressBarTextEPKc
-gameui,10031FE0,22,,,UNKNOWN,,,,TODO,,,
-gameui,10032000,46,,,UNKNOWN,,,,TODO,,,
-gameui,10032030,31,,,UNKNOWN,,,,TODO,,,
-gameui,10032050,22,,,UNKNOWN,,,,TODO,,,
-gameui,10032070,22,,,UNKNOWN,,,,TODO,,,
-gameui,10032090,46,,,UNKNOWN,,,,TODO,,,
-gameui,100320C0,19,,,UNKNOWN,,,,TODO,,,
-gameui,100320E0,19,,,UNKNOWN,,,,TODO,,,
-gameui,10032100,19,,,UNKNOWN,,,,TODO,,,
-gameui,10032120,25,,,UNKNOWN,,,,TODO,,,
-gameui,10032140,19,,,UNKNOWN,,,,TODO,,,
-gameui,10032160,19,,,UNKNOWN,,,,TODO,,,
-gameui,10032180,25,,,UNKNOWN,,,,TODO,,,
-gameui,100321A0,25,,,UNKNOWN,,,,TODO,,,
-gameui,100321C0,20,,,UNKNOWN,,,,TODO,,,
+gameui,10030B68,25,__GLOBAL__sub_I_g_szEXEName,_GLOBAL__sub_I_g_szEXEName,ENGINE,,,,TODO,,linux_symbols:string:0.75,
+gameui,10030B81,10,?__CreateCGameUIIGameUI_interface@@YAPAVIBaseInterface@@XZ,__CreateCGameUIIGameUI_interface,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10030B8B,137,??0CGameUI@@QAE@XZ,CGameUI::CGameUI,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10030C14,38,??1CGameUI@@UAE@XZ,CGameUI::~CGameUI,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10030C3A,543,?Initialize@CGameUI@@UAEXPAP6APAVIBaseInterface@@PBDPAH@ZH@Z,CGameUI::Initialize,ENGINE,,,,MATCHED,100,gameui_manual.csv,
+gameui,10030E59,42,?SendShutdownMsgFunc_guess@@YGHHH@Z,SendShutdownMsgFunc_guess,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10030E83,40,?RunVguiTestScript@@YAXXZ,RunVguiTestScript,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10030EAB,118,?RunVguiTestScript@CGameUI@@QAEXPBD@Z,CGameUI::RunVguiTestScript,ENGINE,GameUI/GameUI_Interface.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN7CGameUI17RunVguiTestScriptEPKc
+gameui,10030F21,1078,?Start@CGameUI@@UAEXPAUcl_enginefuncs_s@@HPAUIBaseSystem@@@Z,CGameUI::Start,ENGINE,GameUI/GameUI_Interface.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN7CGameUI5StartEP16cl_enginefuncs_siP11IBaseSystem
+gameui,10031357,36,?FindPlatformDirectory@CGameUI@@AAE_NPADH@Z,CGameUI::FindPlatformDirectory,UNKNOWN,GameUI/GameUI_Interface.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN7CGameUI21FindPlatformDirectoryEPci
+gameui,1003137B,13,?ValidateCDKey@CGameUI@@UAEX_N0@Z,CGameUI::ValidateCDKey,UNKNOWN,GameUI/GameUI_Interface.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN7CGameUI13ValidateCDKeyEbb
+gameui,10031388,82,?OpenDialog_guess@CGameUI@@UAEXH@Z,CGameUI::OpenDialog_guess,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,100313DA,90,?Shutdown@CGameUI@@UAEXXZ,CGameUI::Shutdown,UNKNOWN,GameUI/GameUI_Interface.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN7CGameUI8ShutdownEv
+gameui,10031434,47,?IsGameUIActive@CGameUI@@UAE_NXZ,CGameUI::IsGameUIActive,UNKNOWN,GameUI/GameUI_Interface.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN7CGameUI14IsGameUIActiveEv
+gameui,10031463,126,?ActivateGameUI@CGameUI@@UAEHXZ,CGameUI::ActivateGameUI,ENGINE,GameUI/GameUI_Interface.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100314E1,40,?ActivateDemoUI@CGameUI@@UAEHXZ,CGameUI::ActivateDemoUI,UNKNOWN,GameUI/GameUI_Interface.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN7CGameUI14ActivateDemoUIEv
+gameui,10031509,170,?HideGameUI@CGameUI@@UAEXXZ,CGameUI::HideGameUI,ENGINE,GameUI/GameUI_Interface.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN7CGameUI10HideGameUIEv
+gameui,100315B3,27,?HasExclusiveInput@CGameUI@@UAEHXZ,CGameUI::HasExclusiveInput,UNKNOWN,GameUI/GameUI_Interface.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN7CGameUI17HasExclusiveInputEv
+gameui,100315CE,855,?RunFrame@CGameUI@@UAEXXZ,CGameUI::RunFrame,ENGINE,GameUI/GameUI_Interface.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN7CGameUI8RunFrameEv
+gameui,10031925,74,?FinishCareerLoad@CGameUI@@QAEXXZ,CGameUI::FinishCareerLoad,ENGINE,GameUI/GameUI_Interface.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN7CGameUI16FinishCareerLoadEv
+gameui,1003196F,363,?ConnectToServer@CGameUI@@UAEXPBDHH@Z,CGameUI::ConnectToServer,ENGINE,GameUI/GameUI_Interface.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN7CGameUI15ConnectToServerEPKcii
+gameui,10031ADA,108,?DisconnectFromServer@CGameUI@@UAEXXZ,CGameUI::DisconnectFromServer,ENGINE,GameUI/GameUI_Interface.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN7CGameUI20DisconnectFromServerEv
+gameui,10031B46,180,?OnDisconnectFromServer@CGameUI@@UAEXHPBD@Z,CGameUI::OnDisconnectFromServer,ENGINE,GameUI/GameUI_Interface.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN7CGameUI22OnDisconnectFromServerEiPKc
+gameui,10031BFA,140,?LoadingStarted@CGameUI@@UAEXPBD0@Z,CGameUI::LoadingStarted,ENGINE,GameUI/GameUI_Interface.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN7CGameUI14LoadingStartedEPKcS1_
+gameui,10031C86,120,?LoadingFinished@CGameUI@@UAEXPBD0@Z,CGameUI::LoadingFinished,ENGINE,GameUI/GameUI_Interface.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN7CGameUI15LoadingFinishedEPKcS1_
+gameui,10031CFE,307,?StartProgressBar@CGameUI@@UAEXPBDH@Z,CGameUI::StartProgressBar,ENGINE,GameUI/GameUI_Interface.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN7CGameUI16StartProgressBarEPKci
+gameui,10031E31,57,?ContinueProgressBar@CGameUI@@UAEHHM@Z,CGameUI::ContinueProgressBar,UNKNOWN,GameUI/GameUI_Interface.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN7CGameUI19ContinueProgressBarEif
+gameui,10031E6A,211,?StopProgressBar@CGameUI@@UAEX_NPBD1@Z,CGameUI::StopProgressBar,ENGINE,GameUI/GameUI_Interface.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN7CGameUI15StopProgressBarEbPKcS1_
+gameui,10031F3D,57,?SetProgressBarStatusText@CGameUI@@UAEHPBD@Z,CGameUI::SetProgressBarStatusText,UNKNOWN,GameUI/GameUI_Interface.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN7CGameUI24SetProgressBarStatusTextEPKc
+gameui,10031F76,50,?SetSecondaryProgressBar@CGameUI@@UAEXM@Z,CGameUI::SetSecondaryProgressBar,ENGINE,GameUI/GameUI_Interface.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN7CGameUI23SetSecondaryProgressBarEf
+gameui,10031FA8,50,?SetSecondaryProgressBarText@CGameUI@@UAEXPBD@Z,CGameUI::SetSecondaryProgressBarText,ENGINE,GameUI/GameUI_Interface.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN7CGameUI27SetSecondaryProgressBarTextEPKc
+gameui,10031FE0,22,??0?$DHANDLE@VCLoadingDialog@@@vgui2@@QAE@XZ,CLoadingDialog>,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10032000,46,??_GCGameUI@@UAEPAXI@Z,destructor',UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10032030,31,??0IGameUI@@QAE@XZ,IGameUI::IGameUI,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10032050,22,??0?$DHANDLE@VFrame@vgui2@@@vgui2@@QAE@XZ,vgui2::Frame>,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10032070,22,??0?$DHANDLE@VTestScriptController@vgui2@@@vgui2@@QAE@XZ,vgui2::TestScriptController>,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10032090,46,??_GIGameUI@@UAEPAXI@Z,destructor',UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,100320C0,19,??1IGameUI@@UAE@XZ,IGameUI::~IGameUI,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,100320E0,19,?Get@?$DHANDLE@VTestScriptController@vgui2@@@vgui2@@QAEPAVTestScriptController@2@XZ,vgui2::TestScriptController>::Get,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10032100,19,??C?$DHANDLE@VTestScriptController@vgui2@@@vgui2@@QAEPAVTestScriptController@1@XZ,vgui2::TestScriptController>::operator->,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10032120,25,??4?$DHANDLE@VTestScriptController@vgui2@@@vgui2@@QAEPAVTestScriptController@1@PAV21@@Z,vgui2::TestScriptController>::operator=,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10032140,19,?Get@?$DHANDLE@VCLoadingDialog@@@vgui2@@QAEPAVCLoadingDialog@@XZ,CLoadingDialog>::Get,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10032160,19,??C?$DHANDLE@VCLoadingDialog@@@vgui2@@QAEPAVCLoadingDialog@@XZ,CLoadingDialog>::operator->,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10032180,25,??4?$DHANDLE@VCLoadingDialog@@@vgui2@@QAEPAVCLoadingDialog@@PAV2@@Z,CLoadingDialog>::operator=,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,100321A0,25,??B?$DHANDLE@VCLoadingDialog@@@vgui2@@QAE_NXZ,bool,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,100321C0,20,?CanUnpause@CCareerGame@@QBE_NXZ,CCareerGame::CanUnpause,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
 gameui,100321E0,104,,,UNKNOWN,,,,TODO,,,
 gameui,10032248,451,,,UNKNOWN,GameUI/ImageButton.cpp,,,TODO,,,linux: _ZN12CImageButton15PaintBackgroundEv
 gameui,1003240B,43,,,UNKNOWN,GameUI/ImageButton.cpp,,,TODO,,,linux: _ZN12CImageButton15SetImagePaddingEi
@@ -8843,15 +8843,15 @@ gameui,1003248C,80,,,UNKNOWN,GameUI/ImageButton.cpp,,,TODO,,,linux: _ZN12CImageB
 gameui,100324DC,112,,,UNKNOWN,GameUI/ImageButton.cpp,,,TODO,,,linux: _ZN12CImageButton11ForceUploadEv
 gameui,1003254C,73,,,UNKNOWN,GameUI/ImageButton.cpp,,,TODO,,,linux: _ZN12CImageButton11ForceReloadEv
 gameui,100325A0,46,,,UNKNOWN,,,,TODO,,,
-gameui,100325D0,53,,,UNKNOWN,,,,TODO,,,
-gameui,10032605,97,,CreateInterface,ENGINE,,,,TODO,,ghidra,
-gameui,10032666,19,,,UNKNOWN,,,,TODO,,,
-gameui,10032679,80,,,UNKNOWN,,,,TODO,,,
-gameui,100326C9,32,,,UNKNOWN,,,,TODO,,,
-gameui,100326E9,39,,,UNKNOWN,,,,TODO,,,
-gameui,10032710,10,,,UNKNOWN,,,,TODO,,,
-gameui,1003271A,22,,,UNKNOWN,,,,TODO,,,
-gameui,10032730,26,,,UNKNOWN,,,,TODO,,,
+gameui,100325D0,53,??0InterfaceReg@@QAE@P6APAVIBaseInterface@@XZPBD@Z,InterfaceReg::InterfaceReg,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10032605,97,_CreateInterface,CreateInterface,ENGINE,,,,MATCHED,100,gameui_manual.csv,
+gameui,10032666,19,?Sys_GetProcAddress@@YAPAXPAXPBD@Z,Sys_GetProcAddress,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10032679,80,?Sys_LoadModule@@YAPAVCSysModule@@PBD@Z,Sys_LoadModule,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,100326C9,32,?Sys_UnloadModule@@YAXPAVCSysModule@@@Z,Sys_UnloadModule,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,100326E9,39,?Sys_GetFactory@@YAP6APAVIBaseInterface@@PBDPAH@ZPAVCSysModule@@@Z,,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10032710,10,?Sys_GetFactoryThis@@YAP6APAVIBaseInterface@@PBDPAH@ZXZ,,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,1003271A,22,?Sys_GetFactory@@YAP6APAVIBaseInterface@@PBDPAH@Z0@Z,,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10032730,26,?Sys_GetProcAddress@@YAPAXPBD0@Z,Sys_GetProcAddress,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
 gameui,10032750,145,,,UNKNOWN,,,,TODO,,,
 gameui,100327E1,28,,,UNKNOWN,,,,TODO,,,
 gameui,100327FD,39,,,UNKNOWN,GameUI/labelslidercombo.cpp,,,TODO,,,linux: _ZN16LabelSliderCombo13OnCursorMovedEii
@@ -8978,9 +8978,9 @@ gameui,10036E6F,15,,,UNKNOWN,,,,TODO,,,
 gameui,10036E7E,18,,,UNKNOWN,,,,TODO,,,
 gameui,10036E90,15,,,UNKNOWN,,,,TODO,,,
 gameui,10036E9F,10,,,UNKNOWN,,,,TODO,,,
-gameui,10036EA9,25,,_GLOBAL__sub_I_TheMusicManager,ENGINE,,,,TODO,,linux_symbols:string:0.75,
+gameui,10036EA9,25,__GLOBAL__sub_I_TheMusicManager,_GLOBAL__sub_I_TheMusicManager,ENGINE,,,,TODO,,linux_symbols:string:0.75,
 gameui,10036EC2,10,,,UNKNOWN,,,,TODO,,,
-gameui,10036ECC,26,,CreateMusicManager,ENGINE,,,,TODO,,linux_symbols:caller:0.667,
+gameui,10036ECC,26,_CreateMusicManager,CreateMusicManager,ENGINE,,,,TODO,,linux_symbols:caller:0.667,
 gameui,10036EE6,15,,,UNKNOWN,,,,TODO,,,
 gameui,10036EF5,116,,,UNKNOWN,,,,TODO,,,
 gameui,10036F69,28,,,UNKNOWN,,,,TODO,,,
@@ -9179,19 +9179,19 @@ gameui,1003CAC0,63,,,UNKNOWN,,,,TODO,,,
 gameui,1003CB00,17,,,UNKNOWN,,,,TODO,,,
 gameui,1003CB20,205,,,UNKNOWN,,,,TODO,,,
 gameui,1003CBF0,25,,,UNKNOWN,,,,TODO,,,
-gameui,1003CC10,15,,,UNKNOWN,,,,TODO,,,
-gameui,1003CC1F,11,,,UNKNOWN,,,,TODO,,,
-gameui,1003CC2A,19,,,UNKNOWN,,,,TODO,,,
-gameui,1003CC3D,15,,,UNKNOWN,,,,TODO,,,
-gameui,1003CC4C,19,,,UNKNOWN,,,,TODO,,,
-gameui,1003CC5F,15,,,UNKNOWN,,,,TODO,,,
-gameui,1003CC6E,19,,,UNKNOWN,,,,TODO,,,
-gameui,1003CC81,19,,,UNKNOWN,,,,TODO,,,
-gameui,1003CC94,26,,,UNKNOWN,,,,TODO,,,
-gameui,1003CCAE,27,,,UNKNOWN,,,,TODO,,,
-gameui,1003CCC9,19,,,UNKNOWN,,,,TODO,,,
-gameui,1003CCDC,10,,,UNKNOWN,,,,TODO,,,
-gameui,1003CCE6,5,,,UNKNOWN,,,,TODO,,,
+gameui,1003CC10,15,?Sys_SetLastError@@YAXK@Z,Sys_SetLastError,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,1003CC1F,11,?Sys_GetLastError@@YAKXZ,Sys_GetLastError,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,1003CC2A,19,?Sys_CreateMutex@@YAHPBD@Z,Sys_CreateMutex,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,1003CC3D,15,?Sys_ReleaseMutex@@YAXH@Z,Sys_ReleaseMutex,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,1003CC4C,19,?Sys_WaitForSingleObject@@YAIHH@Z,Sys_WaitForSingleObject,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,1003CC5F,15,?Sys_RegisterWindowMessage@@YAIPBD@Z,Sys_RegisterWindowMessage,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,1003CC6E,19,?Sys_FindWindow@@YAHPBD0@Z,Sys_FindWindow,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,1003CC81,19,?Sys_EnumWindows@@YAXPAXH@Z,Sys_EnumWindows,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,1003CC94,26,?Sys_GetWindowText@@YAXHPADH@Z,Sys_GetWindowText,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,1003CCAE,27,?Sys_PostMessage@@YAXHIII@Z,Sys_PostMessage,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,1003CCC9,19,?Sys_SetCursorPos@@YAXHH@Z,Sys_SetCursorPos,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,1003CCDC,10,?Sys_CreateWindowEx@@YAHPBD@Z,Sys_CreateWindowEx,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,1003CCE6,5,?Sys_DestroyWindow@@YAXH@Z,Sys_DestroyWindow,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
 gameui,1003CCF0,45,,,UNKNOWN,,,,TODO,,,
 gameui,1003CD1D,139,,,UNKNOWN,,,,TODO,,,
 gameui,1003CDA8,632,,CTaskbar::CTaskbar,ENGINE,,,,TODO,,linux_symbols:string:0.396,
@@ -9208,7 +9208,7 @@ gameui,1003DB27,275,,CTaskbar::ApplySchemeSettings,ENGINE,GameUI/Taskbar.cpp,,,T
 gameui,1003DC3A,15,,,UNKNOWN,GameUI/Taskbar.cpp,,,TODO,,,linux: _ZN8CTaskbar7AddTaskEj
 gameui,1003DC49,108,,,UNKNOWN,GameUI/Taskbar.cpp,,,TODO,,,linux: _ZN8CTaskbar8FindTaskEj
 gameui,1003DCB5,27,,,UNKNOWN,GameUI/Taskbar.cpp,,,TODO,,,linux: _ZN8CTaskbar16OnActivateModuleEi
-gameui,1003DCD0,63,,COleIPFrameWnd::OnIdleUpdateCmdUI,ENGINE,GameUI/Taskbar.cpp,,,TODO,,ghidra,linux: _ZN8CTaskbar17OnGameUIActivatedEv
+gameui,1003DCD0,63,?OnGameUIActivated@CTaskbar@@QAEXXZ,CTaskbar::OnGameUIActivated,ENGINE,GameUI/Taskbar.cpp,,,TODO,,gameui_manual.csv,linux: _ZN8CTaskbar17OnGameUIActivatedEv
 gameui,1003DD0F,2276,,CTaskbar::OnCommand,ENGINE,GameUI/Taskbar.cpp,,,TODO,,linux_symbols:string:0.578,linux: _ZN8CTaskbar9OnCommandEPKc
 gameui,1003E5F3,293,,CTaskbar::OnOpenQuitConfirmationDialog,ENGINE,GameUI/Taskbar.cpp,,,TODO,,linux_symbols:string:0.668,linux: _ZN8CTaskbar28OnOpenQuitConfirmationDialogEv
 gameui,1003E718,150,,CTaskbar::OnOpenNewGameDialog,ENGINE,GameUI/Taskbar.cpp,,,TODO,,linux_symbols:caller:0.708,linux: _ZN8CTaskbar19OnOpenNewGameDialogEv
@@ -9426,7 +9426,7 @@ gameui,100432EF,15,,,UNKNOWN,,,,TODO,,,
 gameui,100432FE,18,,,UNKNOWN,,,,TODO,,,
 gameui,10043310,15,,,UNKNOWN,,,,TODO,,,
 gameui,1004331F,10,,,UNKNOWN,,,,TODO,,,
-gameui,10043329,25,,_GLOBAL__sub_I_g_VModuleLoader,ENGINE,,,,TODO,,linux_symbols:string:0.75,
+gameui,10043329,25,__GLOBAL__sub_I_g_VModuleLoader,_GLOBAL__sub_I_g_VModuleLoader,ENGINE,,,,TODO,,linux_symbols:string:0.75,
 gameui,10043342,10,,,UNKNOWN,,,,TODO,,,
 gameui,1004334C,70,,,UNKNOWN,,,,TODO,,,
 gameui,10043392,39,,,UNKNOWN,,,,TODO,,,
@@ -9844,7 +9844,7 @@ gameui,1004ED56,28,,,UNKNOWN,,,,TODO,,,
 gameui,1004ED72,271,,CSaveGameDialog::OnCommand,ENGINE,GameUI/SaveGameDialog.cpp,,,TODO,,linux_symbols:string:0.763,linux: _ZN15CSaveGameDialog9OnCommandEPKc
 gameui,1004EE81,33,,,UNKNOWN,GameUI/SaveGameDialog.cpp,,,TODO,,,linux: _ZN15CSaveGameDialog7OnCloseEv
 gameui,1004EEA2,311,,,UNKNOWN,GameUI/SaveGameDialog.cpp,,,TODO,,,linux: _ZN15CSaveGameDialog20CreateSavedGamesListEv
-gameui,1004EFD9,770,,SaveReadNameAndComment,ENGINE,GameUI/SaveGameDialog.cpp,,,TODO,,linux_symbols:string:0.76,linux: _Z22SaveReadNameAndCommentPvPcS0_
+gameui,1004EFD9,770,_SaveReadNameAndComment,SaveReadNameAndComment,ENGINE,GameUI/SaveGameDialog.cpp,,,TODO,,linux_symbols:string:0.76,linux: _Z22SaveReadNameAndCommentPvPcS0_
 gameui,1004F2DB,80,,,UNKNOWN,GameUI/SaveGameDialog.cpp,,,TODO,,,linux: _Z17TimeStampSortFuncPN5vgui29ListPanelERKNS_13ListPanelItemES4_
 gameui,1004F32B,824,,CSaveGameDialog::ParseSaveData,ENGINE,GameUI/SaveGameDialog.cpp,,,TODO,,linux_symbols:string:0.833,linux: _ZN15CSaveGameDialog13ParseSaveDataEPKcS1_P9KeyValues
 gameui,1004F663,822,,CSaveGameDialog::ScanSavedGames,ENGINE,GameUI/SaveGameDialog.cpp,,,TODO,,linux_symbols:string:0.622,linux: _ZN15CSaveGameDialog14ScanSavedGamesEv
@@ -10071,19 +10071,19 @@ gameui,10058A00,19,,,UNKNOWN,,,,TODO,,,
 gameui,10058A20,110,,,UNKNOWN,,,,TODO,,,
 gameui,10058A90,19,,,UNKNOWN,,,,TODO,,,
 gameui,10058AB0,107,,,UNKNOWN,,,,TODO,,,
-gameui,10058C70,10,,,UNKNOWN,,,,TODO,,,
-gameui,10058C7A,10,,,UNKNOWN,,,,TODO,,,
-gameui,10058C84,10,,,UNKNOWN,,,,TODO,,,
-gameui,10058C8E,10,,,UNKNOWN,,,,TODO,,,
-gameui,10058C98,10,,,UNKNOWN,,,,TODO,,,
-gameui,10058CA2,10,,,UNKNOWN,,,,TODO,,,
-gameui,10058CAC,10,,,UNKNOWN,,,,TODO,,,
-gameui,10058CB6,10,,,UNKNOWN,,,,TODO,,,
-gameui,10058CC0,10,,,UNKNOWN,,,,TODO,,,
-gameui,10058CCA,482,,vgui2::VGuiControls_Init,ENGINE,,,,TODO,,linux_symbols:string:0.696,
-gameui,10058EAC,86,,,UNKNOWN,,,,TODO,,,
-gameui,10058F02,5,,,UNKNOWN,,,,TODO,,,
-gameui,10058F07,10,,,UNKNOWN,,,,TODO,,,
+gameui,10058C70,10,?keyvalues@@YAPAVIKeyValues@@XZ,keyvalues,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10058C7A,10,?input@vgui2@@YAPAVIInput@1@XZ,vgui2::input,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10058C84,10,?scheme@vgui2@@YAPAVISchemeManager@1@XZ,vgui2::scheme,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10058C8E,10,?surface@vgui2@@YAPAVISurface@1@XZ,vgui2::surface,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10058C98,10,?system@vgui2@@YAPAVISystem@1@XZ,vgui2::system,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10058CA2,10,?ivgui@vgui2@@YAPAVIVGui@1@XZ,vgui2::ivgui,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10058CAC,10,?ipanel@vgui2@@YAPAVIPanel@1@XZ,vgui2::ipanel,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10058CB6,10,?filesystem@vgui2@@YAPAVIFileSystem@@XZ,vgui2::filesystem,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10058CC0,10,?localize@vgui2@@YAPAVILocalize@1@XZ,vgui2::localize,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10058CCA,482,?VGuiControls_Init@vgui2@@YA_NPBDPAP6APAVIBaseInterface@@0PAH@ZH@Z,vgui2::VGuiControls_Init,ENGINE,,,,MATCHED,100,gameui_manual.csv,
+gameui,10058EAC,86,?InitializeInterface_guess@vgui2@@YAPAXPBDPAP6APAVIBaseInterface@@0PAH@ZH@Z,vgui2::InitializeInterface_guess,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10058F02,5,?VGuiControls_Shutdown@vgui2@@YAXXZ,vgui2::VGuiControls_Shutdown,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10058F07,10,?GetControlsModuleName@vgui2@@YAPBDXZ,vgui2::GetControlsModuleName,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
 gameui,10058F20,15,,,UNKNOWN,,,,TODO,,,
 gameui,10058F2F,21,,,UNKNOWN,,,,TODO,,,
 gameui,10058F44,18,,,UNKNOWN,,,,TODO,,,
@@ -10260,7 +10260,7 @@ gameui,1005E0AB,53,,,UNKNOWN,,,,TODO,,,
 gameui,1005E0E0,53,,,UNKNOWN,,,,TODO,,,
 gameui,1005E115,53,,,UNKNOWN,,,,TODO,,,
 gameui,1005E14A,53,,,UNKNOWN,,,,TODO,,,
-gameui,1005E17F,45,,CSliderCtrl::SetRange,ENGINE,,,,TODO,,ghidra,
+gameui,1005E17F,45,?SetBounds@Panel@vgui2@@QAEXHHHH@Z,vgui2::Panel::SetBounds,ENGINE,,,,TODO,,gameui_manual.csv,
 gameui,1005E1AC,45,,CSliderCtrl::SetRange,ENGINE,,,,TODO,,ghidra,
 gameui,1005E1D9,43,,,UNKNOWN,,,,TODO,,,
 gameui,1005E204,94,,,UNKNOWN,,,,TODO,,,
@@ -10922,60 +10922,60 @@ gameui,100722C0,45,,,UNKNOWN,,,,TODO,,,
 gameui,100722F0,68,,,UNKNOWN,,,,TODO,,,
 gameui,10072340,70,,,UNKNOWN,,,,TODO,,,
 gameui,10072390,221,,,UNKNOWN,,,,TODO,,,
-gameui,10072470,37,,,UNKNOWN,,,,TODO,,,
-gameui,10072495,53,,,UNKNOWN,,,,TODO,,,
-gameui,100724CA,53,,,UNKNOWN,,,,TODO,,,
-gameui,100724FF,53,,,UNKNOWN,,,,TODO,,,
-gameui,10072534,69,,,UNKNOWN,,,,TODO,,,
-gameui,10072579,69,,,UNKNOWN,,,,TODO,,,
-gameui,100725BE,102,,,UNKNOWN,,,,TODO,,,
-gameui,10072624,111,,,UNKNOWN,,,,TODO,,,
-gameui,10072693,39,,,UNKNOWN,public/KeyValues.cpp,,,TODO,,,linux: _ZNK9KeyValues7GetNameEv
-gameui,100726BA,17,,,UNKNOWN,public/KeyValues.cpp,,,TODO,,,linux: _ZNK9KeyValues13GetNameSymbolEv
-gameui,100726CB,177,,,UNKNOWN,,,,TODO,,,
-gameui,1007277C,130,,,UNKNOWN,,,,TODO,,,
-gameui,100727FE,569,,,UNKNOWN,,,,TODO,,,
-gameui,10072A9E,269,,,UNKNOWN,,,,TODO,,,
-gameui,10072BAB,420,,,UNKNOWN,,,,TODO,,,
-gameui,10072D4F,210,,,UNKNOWN,,,,TODO,,,
-gameui,10072E21,989,,,UNKNOWN,,,,TODO,,,
-gameui,10073212,51,,,UNKNOWN,,,,TODO,,,
-gameui,10073245,61,,,UNKNOWN,,,,TODO,,,
-gameui,10073282,486,,,UNKNOWN,,,,TODO,,,
-gameui,10073468,127,,,UNKNOWN,public/KeyValues.cpp,,,TODO,,,linux: _ZN9KeyValues12CreateNewKeyEv
-gameui,100734E7,87,,,UNKNOWN,public/KeyValues.cpp,,,TODO,,,linux: _ZN9KeyValues9AddSubKeyEPS_
-gameui,1007353E,22,,,UNKNOWN,public/KeyValues.cpp,,,TODO,,,linux: _ZN9KeyValues10SetNextKeyEPS_
-gameui,10073554,112,,,UNKNOWN,public/KeyValues.cpp,,,TODO,,,linux: _ZN9KeyValues12RemoveSubKeyEPS_
-gameui,100735C4,17,,,UNKNOWN,public/KeyValues.cpp,,,TODO,,,linux: _ZN9KeyValues14GetFirstSubKeyEv
-gameui,100735D5,17,,,UNKNOWN,public/KeyValues.cpp,,,TODO,,,linux: _ZN9KeyValues10GetNextKeyEv
-gameui,100735E6,140,,,UNKNOWN,public/KeyValues.cpp,,,TODO,,,linux: _ZN9KeyValues6GetIntEPKci
-gameui,1007368E,156,,,UNKNOWN,public/KeyValues.cpp,,,TODO,,,linux: _ZN9KeyValues9GetUint64EPKcy
-gameui,10073746,76,,,UNKNOWN,public/KeyValues.cpp,,,TODO,,,linux: _ZN9KeyValues6GetPtrEPKcPv
-gameui,10073792,143,,,UNKNOWN,public/KeyValues.cpp,,,TODO,,,linux: _ZN9KeyValues8GetFloatEPKcf
-gameui,1007383D,380,,,UNKNOWN,public/KeyValues.cpp,,,TODO,,,linux: _ZN9KeyValues9GetStringEPKcS1_
-gameui,100739D5,408,,,UNKNOWN,public/KeyValues.cpp,,,TODO,,,linux: _ZN9KeyValues10GetWStringEPKcPKw
-gameui,10073B89,416,,KeyValues::GetColor,ENGINE,public/KeyValues.cpp,,,TODO,,linux_symbols:string:0.75,linux: _ZN9KeyValues8GetColorEPKc
-gameui,10073D29,130,,,UNKNOWN,public/KeyValues.cpp,,,TODO,,,linux: _ZN9KeyValues8SetColorEPKc5Color
-gameui,10073DAB,124,,,UNKNOWN,public/KeyValues.cpp,,,TODO,,,linux: _ZN9KeyValues9SetStringEPKcS1_
-gameui,10073E27,125,,,UNKNOWN,public/KeyValues.cpp,,,TODO,,,linux: _ZN9KeyValues10SetWStringEPKcPKw
-gameui,10073EA4,67,,,UNKNOWN,public/KeyValues.cpp,,,TODO,,,linux: _ZN9KeyValues6SetIntEPKci
-gameui,10073EE7,85,,,UNKNOWN,public/KeyValues.cpp,,,TODO,,,linux: _ZN9KeyValues9SetUint64EPKcy
-gameui,10073F3C,67,,,UNKNOWN,public/KeyValues.cpp,,,TODO,,,linux: _ZN9KeyValues8SetFloatEPKcf
-gameui,10073F7F,67,,,UNKNOWN,public/KeyValues.cpp,,,TODO,,,linux: _ZN9KeyValues6SetPtrEPKcPv
-gameui,10073FC2,87,,,UNKNOWN,public/KeyValues.cpp,,,TODO,,,linux: _ZN9KeyValues18AllocateValueBlockEi
-gameui,10074019,94,,,UNKNOWN,public/KeyValues.cpp,,,TODO,,,linux: _ZN9KeyValues18FreeAllocatedValueEv
-gameui,10074077,488,,,UNKNOWN,public/KeyValues.cpp,,,TODO,,,linux: _ZNK9KeyValues8MakeCopyEv
-gameui,1007427B,73,,,UNKNOWN,public/KeyValues.cpp,,,TODO,,,linux: _ZN9KeyValues7IsEmptyEPKc
-gameui,100742C4,121,,,UNKNOWN,public/KeyValues.cpp,,,TODO,,,linux: _ZN9KeyValues5ClearEv
-gameui,1007433D,56,,,UNKNOWN,public/KeyValues.cpp,,,TODO,,,linux: _ZN9KeyValues11GetDataTypeEPKc
-gameui,10074375,53,,Concurrency::details::SchedulerProxy::DeleteThis,ENGINE,public/KeyValues.cpp,,,TODO,,ghidra,linux: _ZN9KeyValues10deleteThisEv
-gameui,100743AA,31,,,UNKNOWN,,,,TODO,,,
-gameui,100743C9,31,,,UNKNOWN,,,,TODO,,,
-gameui,100743E8,31,,,UNKNOWN,,,,TODO,,,
-gameui,10074407,31,,,UNKNOWN,,,,TODO,,,
-gameui,10074430,46,,,UNKNOWN,,,,TODO,,,
-gameui,10074460,103,,,UNKNOWN,,,,TODO,,,
-gameui,100744D0,31,,,UNKNOWN,,,,TODO,,,
+gameui,10072470,37,??0KeyValues@@QAE@PBD@Z,KeyValues::KeyValues,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10072495,53,??0KeyValues@@QAE@PBD00@Z,KeyValues::KeyValues,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,100724CA,53,??0KeyValues@@QAE@PBD0PBG@Z,KeyValues::KeyValues,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,100724FF,53,??0KeyValues@@QAE@PBD0H@Z,KeyValues::KeyValues,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10072534,69,??0KeyValues@@QAE@PBD0000@Z,KeyValues::KeyValues,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10072579,69,??0KeyValues@@QAE@PBD0H0H@Z,KeyValues::KeyValues,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,100725BE,102,?Init@KeyValues@@AAEXPBD@Z,KeyValues::Init,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10072624,111,??1KeyValues@@AAE@XZ,KeyValues::~KeyValues,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10072693,39,?GetName@KeyValues@@UBEPBDXZ,KeyValues::GetName,UNKNOWN,public/KeyValues.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZNK9KeyValues7GetNameEv
+gameui,100726BA,17,?GetNameSymbol@KeyValues@@UBEHXZ,KeyValues::GetNameSymbol,UNKNOWN,public/KeyValues.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZNK9KeyValues13GetNameSymbolEv
+gameui,100726CB,177,?LoadFromFile@KeyValues@@UAE_NPAVIFileSystem@@PBD1@Z,KeyValues::LoadFromFile,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,1007277C,130,?LoadFromBuffer@KeyValues@@QAEXPBD@Z,KeyValues::LoadFromBuffer,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,100727FE,569,?ReadToken@@YAPADPAPAD@Z,ReadToken,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10072A9E,269,?RecursiveLoadFromBuffer@KeyValues@@AAEXPAPAD@Z,KeyValues::RecursiveLoadFromBuffer,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10072BAB,420,?SaveToFile@KeyValues@@UAE_NPAVIFileSystem@@PBD1@Z,KeyValues::SaveToFile,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10072D4F,210,?WriteConvertedString@KeyValues@@AAEXAAVCUtlBuffer@@PBD@Z,KeyValues::WriteConvertedString,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10072E21,989,?RecursiveSaveToFile@KeyValues@@AAEXPAVIFileSystem@@AAVCUtlBuffer@@H@Z,KeyValues::RecursiveSaveToFile,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10073212,51,?WriteIndents@@YAXAAVCUtlBuffer@@H@Z,WriteIndents,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10073245,61,?FindKey@KeyValues@@UBEPAV1@H@Z,KeyValues::FindKey,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10073282,486,?FindKey@KeyValues@@UAEPAV1@PBD_N@Z,KeyValues::FindKey,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10073468,127,?CreateNewKey@KeyValues@@UAEPAV1@XZ,KeyValues::CreateNewKey,UNKNOWN,public/KeyValues.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN9KeyValues12CreateNewKeyEv
+gameui,100734E7,87,?AddSubKey@KeyValues@@QAEXPAV1@@Z,KeyValues::AddSubKey,UNKNOWN,public/KeyValues.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN9KeyValues9AddSubKeyEPS_
+gameui,1007353E,22,?SetNextKey@KeyValues@@QAEXPAV1@@Z,KeyValues::SetNextKey,UNKNOWN,public/KeyValues.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN9KeyValues10SetNextKeyEPS_
+gameui,10073554,112,?RemoveSubKey@KeyValues@@UAEXPAV1@@Z,KeyValues::RemoveSubKey,UNKNOWN,public/KeyValues.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN9KeyValues12RemoveSubKeyEPS_
+gameui,100735C4,17,?GetFirstSubKey@KeyValues@@UAEPAV1@XZ,KeyValues::GetFirstSubKey,UNKNOWN,public/KeyValues.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN9KeyValues14GetFirstSubKeyEv
+gameui,100735D5,17,?GetNextKey@KeyValues@@UAEPAV1@XZ,KeyValues::GetNextKey,UNKNOWN,public/KeyValues.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN9KeyValues10GetNextKeyEv
+gameui,100735E6,140,?GetInt@KeyValues@@UAEHPBDH@Z,KeyValues::GetInt,UNKNOWN,public/KeyValues.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN9KeyValues6GetIntEPKci
+gameui,1007368E,156,?GetUint64@KeyValues@@QAE_KPBD_K@Z,KeyValues::GetUint64,UNKNOWN,public/KeyValues.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN9KeyValues9GetUint64EPKcy
+gameui,10073746,76,?GetPtr@KeyValues@@UAEPAXPBDPAX@Z,KeyValues::GetPtr,UNKNOWN,public/KeyValues.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN9KeyValues6GetPtrEPKcPv
+gameui,10073792,143,?GetFloat@KeyValues@@UAEMPBDM@Z,KeyValues::GetFloat,UNKNOWN,public/KeyValues.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN9KeyValues8GetFloatEPKcf
+gameui,1007383D,380,?GetString@KeyValues@@UAEPBDPBD0@Z,KeyValues::GetString,UNKNOWN,public/KeyValues.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN9KeyValues9GetStringEPKcS1_
+gameui,100739D5,408,?GetWString@KeyValues@@UAEPBGPBDPBG@Z,KeyValues::GetWString,UNKNOWN,public/KeyValues.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN9KeyValues10GetWStringEPKcPKw
+gameui,10073B89,416,?GetColor@KeyValues@@QAE?AVColor@@PBD@Z,KeyValues::GetColor,ENGINE,public/KeyValues.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN9KeyValues8GetColorEPKc
+gameui,10073D29,130,?SetColor@KeyValues@@QAEXPBDVColor@@@Z,KeyValues::SetColor,UNKNOWN,public/KeyValues.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN9KeyValues8SetColorEPKc5Color
+gameui,10073DAB,124,?SetString@KeyValues@@UAEXPBD0@Z,KeyValues::SetString,UNKNOWN,public/KeyValues.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN9KeyValues9SetStringEPKcS1_
+gameui,10073E27,125,?SetWString@KeyValues@@UAEXPBDPBG@Z,KeyValues::SetWString,UNKNOWN,public/KeyValues.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN9KeyValues10SetWStringEPKcPKw
+gameui,10073EA4,67,?SetInt@KeyValues@@UAEXPBDH@Z,KeyValues::SetInt,UNKNOWN,public/KeyValues.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN9KeyValues6SetIntEPKci
+gameui,10073EE7,85,?SetUint64@KeyValues@@QAEXPBD_K@Z,KeyValues::SetUint64,UNKNOWN,public/KeyValues.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN9KeyValues9SetUint64EPKcy
+gameui,10073F3C,67,?SetFloat@KeyValues@@UAEXPBDM@Z,KeyValues::SetFloat,UNKNOWN,public/KeyValues.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN9KeyValues8SetFloatEPKcf
+gameui,10073F7F,67,?SetPtr@KeyValues@@UAEXPBDPAX@Z,KeyValues::SetPtr,UNKNOWN,public/KeyValues.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN9KeyValues6SetPtrEPKcPv
+gameui,10073FC2,87,?AllocateValueBlock@KeyValues@@AAEXH@Z,KeyValues::AllocateValueBlock,UNKNOWN,public/KeyValues.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN9KeyValues18AllocateValueBlockEi
+gameui,10074019,94,?FreeAllocatedValue@KeyValues@@AAEXXZ,KeyValues::FreeAllocatedValue,UNKNOWN,public/KeyValues.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN9KeyValues18FreeAllocatedValueEv
+gameui,10074077,488,?MakeCopy@KeyValues@@UBEPAV1@XZ,KeyValues::MakeCopy,UNKNOWN,public/KeyValues.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZNK9KeyValues8MakeCopyEv
+gameui,1007427B,73,?IsEmpty@KeyValues@@UAE_NPBD@Z,KeyValues::IsEmpty,UNKNOWN,public/KeyValues.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN9KeyValues7IsEmptyEPKc
+gameui,100742C4,121,?Clear@KeyValues@@UAEXXZ,KeyValues::Clear,UNKNOWN,public/KeyValues.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN9KeyValues5ClearEv
+gameui,1007433D,56,?GetDataType@KeyValues@@UAE?AW4types_t@1@PBD@Z,KeyValues::GetDataType,UNKNOWN,public/KeyValues.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN9KeyValues11GetDataTypeEPKc
+gameui,10074375,53,?deleteThis@KeyValues@@UAEXXZ,KeyValues::deleteThis,ENGINE,public/KeyValues.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN9KeyValues10deleteThisEv
+gameui,100743AA,31,??2KeyValues@@SAPAXI@Z,new,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,100743C9,31,??2KeyValues@@SAPAXIHPBDH@Z,new,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,100743E8,31,??3KeyValues@@SAXPAX@Z,delete,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10074407,31,??3KeyValues@@SAXPAXHPBDH@Z,delete,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10074430,46,??_GKeyValues@@AAEPAXI@Z,destructor',UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10074460,103,?PutChar@CUtlBuffer@@QAEXD@Z,CUtlBuffer::PutChar,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,100744D0,31,?PeekPut@CUtlBuffer@@QAEPAXH@Z,CUtlBuffer::PeekPut,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
 gameui,100744F0,812,,,UNKNOWN,,,,TODO,,,
 gameui,1007481C,156,,,UNKNOWN,,,,TODO,,,
 gameui,100748B8,318,,,UNKNOWN,,,,TODO,,,
