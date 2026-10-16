@@ -2133,6 +2133,11 @@
           "name": "engine/GL_WARP",
           "source": "src/engine_hw/GL_WARP.C",
           "functions_file": "tools/units/hw_engine_GL_WARP.txt"
+        },
+        {
+          "name": "engine/sv_main",
+          "source": "src/engine_hw/sv_main.c",
+          "functions_file": "tools/units/hw_engine_sv_main.txt"
         }
       ]
     },
