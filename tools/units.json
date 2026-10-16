@@ -2158,6 +2158,76 @@
           "name": "engine/cl_parsefn",
           "source": "src/engine_hw/cl_parsefn.c",
           "functions_file": "tools/units/hw_engine_cl_parsefn.txt"
+        },
+        {
+          "name": "engine/host",
+          "source": "src/engine_hw/host.c",
+          "functions_file": "tools/units/hw_engine_host.txt"
+        },
+        {
+          "name": "engine/host_cmd",
+          "source": "src/engine_hw/host_cmd.c",
+          "functions_file": "tools/units/hw_engine_host_cmd.txt"
+        },
+        {
+          "name": "engine/sv_phys",
+          "source": "src/engine_hw/sv_phys.c",
+          "functions_file": "tools/units/hw_engine_sv_phys.txt"
+        },
+        {
+          "name": "engine/sv_user",
+          "source": "src/engine_hw/sv_user.c",
+          "functions_file": "tools/units/hw_engine_sv_user.txt"
+        },
+        {
+          "name": "engine/pr_cmds",
+          "source": "src/engine_hw/pr_cmds.c",
+          "functions_file": "tools/units/hw_engine_pr_cmds.txt"
+        },
+        {
+          "name": "engine/r_studio",
+          "source": "src/engine_hw/r_studio.c",
+          "functions_file": "tools/units/hw_engine_r_studio.txt"
+        },
+        {
+          "name": "engine/CL_TENT",
+          "source": "src/engine_hw/CL_TENT.C",
+          "functions_file": "tools/units/hw_engine_CL_TENT.txt"
+        },
+        {
+          "name": "engine/R_PART",
+          "source": "src/engine_hw/R_PART.C",
+          "functions_file": "tools/units/hw_engine_R_PART.txt"
+        },
+        {
+          "name": "engine/SND_DMA",
+          "source": "src/engine_hw/SND_DMA.C",
+          "functions_file": "tools/units/hw_engine_SND_DMA.txt"
+        },
+        {
+          "name": "engine/SND_MIX",
+          "source": "src/engine_hw/SND_MIX.C",
+          "functions_file": "tools/units/hw_engine_SND_MIX.txt"
+        },
+        {
+          "name": "engine/SND_MEM",
+          "source": "src/engine_hw/SND_MEM.C",
+          "functions_file": "tools/units/hw_engine_SND_MEM.txt"
+        },
+        {
+          "name": "engine/net_ws",
+          "source": "src/engine_hw/net_ws.c",
+          "functions_file": "tools/units/hw_engine_net_ws.txt"
+        },
+        {
+          "name": "engine/Sequence",
+          "source": "src/engine_hw/Sequence.c",
+          "functions_file": "tools/units/hw_engine_Sequence.txt"
+        },
+        {
+          "name": "engine/CL_DEMO",
+          "source": "src/engine_hw/CL_DEMO.C",
+          "functions_file": "tools/units/hw_engine_CL_DEMO.txt"
         }
       ]
     },
