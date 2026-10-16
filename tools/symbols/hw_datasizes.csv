@@ -1,0 +1,3 @@
+name,size,source
+_player_mins,48,float player_mins[4][3] (pmovetst.c)
+_player_maxs,48,float player_maxs[4][3] (pmovetst.c)

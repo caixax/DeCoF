@@ -14,6 +14,10 @@
 #include "host.h"
 #include "vgui_int.h"
 #include "cdll_int.h"
+#include "mathlib.h"
+#include "client.h"
+#include "delta.h"
+#include "server.h"
 
 #include <io.h>
 #include <fcntl.h>
@@ -346,6 +350,91 @@ void Con_DebugLog( char *file, char *fmt, ... )
 	fd = _open( file, _O_WRONLY | _O_CREAT | _O_APPEND, 0666 );
 	_write( fd, data, Q_strlen( data ) );
 	_close( fd );
+}
+
+#define	MAXPRINTMSG	4096
+
+/*
+================
+Con_Printf
+
+Handles cursor positioning, line wrapping, etc
+================
+*/
+void Con_Printf( char *fmt, ... )
+{
+	va_list		argptr;
+	char		msg[MAXPRINTMSG];
+
+	va_start( argptr, fmt );
+	_vsnprintf( msg, sizeof( msg ), fmt, argptr );
+	va_end( argptr );
+
+	// also echo to debugging console
+	Sys_Printf( "%s", msg );
+
+	if ( sv_redirected )
+	{
+		// rcon redirect
+		if ( Q_strlen( msg ) + Q_strlen( outputbuf ) > sizeof( outputbuf ) - 1 )
+		{
+			SV_FlushRedirect();
+		}
+
+		strncat( outputbuf, msg, sizeof( outputbuf ) - 1 );
+		return;
+	}
+
+	// log all messages to file
+	if ( con_debuglog )
+	{
+		Con_DebugLog( "qconsole.log", "%s", msg );
+	}
+
+	if ( !host_initialized )
+		return;
+
+	if ( !con_initialized )
+		return;
+
+	if ( cls.state == ca_dedicated )
+		return;		// no graphics mode
+
+	if ( developer.value )
+	{
+		strncpy( g_szNotifyAreaString, msg, sizeof( g_szNotifyAreaString ) );
+		g_szNotifyAreaString[sizeof( g_szNotifyAreaString ) - 1] = 0;
+		*con_times = realtime;
+	}
+
+	VGuiWrap2_ConPrintf( msg );
+}
+
+/*
+================
+Con_DPrintf
+
+A Con_Printf that only shows up if the "developer" cvar is set
+================
+*/
+void Con_DPrintf( char *fmt, ... )
+{
+	va_list		argptr;
+	char		msg[MAXPRINTMSG];
+
+	if ( !developer.value )
+		return;			// don't confuse non-developers with techie stuff...
+
+	if ( scr_con_current && cls.state == ca_active )
+		return;
+
+	va_start( argptr, fmt );
+	_vsnprintf( msg, sizeof( msg ), fmt, argptr );
+	va_end( argptr );
+
+	OutputDebugString( msg );
+
+	VGuiWrap2_ConDPrintf( msg );
 }
 
 qboolean	flIsDebugPrint;

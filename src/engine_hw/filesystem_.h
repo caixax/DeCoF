@@ -23,8 +23,11 @@ void			FS_AddSearchPath( const char *pPath, const char *pathID );
 int				FS_GetFileTime( const char *pFileName );
 void			FS_Flush( FileHandle_t file );
 char			*FS_GetLocalPath( const char *pFileName, char *pLocalPath, int localPathBufferSize );
+void			*FS_LoadLibrary( const char *dllName );
 
 int				FileSystem_SetGameDirectory( const char *pDefaultDir, const char *pGameDir );
 int				FileSystem_AddFallbackGameDir( const char *pGameDir );
+
+void			FS_Rename( const char *originalName, const char *newName );
 
 #endif // FILESYSTEM__H

@@ -74,4 +74,10 @@ typedef struct customization_s
 #define FCUST_WIPEDATA		( 1 << 1 )
 #define FCUST_IGNOREINIT	( 1 << 2 )
 
+
+// com_custom.c
+void		COM_ClearCustomizationList( customization_t *pHead, qboolean bCleanDecals );
+qboolean	COM_CreateCustomization( customization_t *pListHead, resource_t *pResource, int playernumber, int flags, customization_t **pCustomization, int *nLumps );
+int			COM_SizeofResourceList( resource_t *pList, resourceinfo_t *ri );
+
 #endif // CUSTOM_H

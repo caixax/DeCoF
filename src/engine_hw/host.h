@@ -8,4 +8,6 @@ extern	double	realtime;			// not bounded in any way, changed at
 
 extern	cvar_t	developer;
 
+extern	double	host_frametime;		// time of the current frame
+
 #endif // HOST_H

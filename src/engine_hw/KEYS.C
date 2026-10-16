@@ -7,6 +7,9 @@
 #include "APIProxy.h"
 #include "keys.h"
 #include "vgui_int.h"
+#include "mathlib.h"
+#include "client.h"
+#include "cdll_int.h"
 
 /*
 
@@ -795,6 +798,174 @@ void Key_EventStub( int key, qboolean down )
 {
 	if ( !g_fUseDInput )
 		Key_Event( key, down );
+}
+
+/*
+===================
+Key_Event
+
+Called by the system between frames for both key up and key down events
+Should NOT be called during an interrupt!
+===================
+*/
+void Key_Event( int key, qboolean down )
+{
+	char	*kb;
+	char	cmd[1024];
+
+	g_engdstAddrs.Key_Event( &key, &down );
+
+	keydown[key] = down;
+
+	// handle ctrl-alt-del
+	if ( keydown[K_CTRL] && keydown[K_ALT] && keydown[K_DEL] )
+	{
+		Sys_Error( "ctrl-alt-del pressed" );
+	}
+
+	// let the client dll see the key first
+	if ( key_dest == key_game )
+	{
+		if ( ( !down && keyGameUIdown[key] ) || down )
+		{
+			if ( !ClientDLL_Key_Event( down ? 1 : 0, key, keybindings[key] ) )
+			{
+				if ( !key_repeats[key] )
+				{
+					if ( down )
+						keyGameUIdown[key] = TRUE;
+					else
+						keyGameUIdown[key] = FALSE;
+				}
+
+				if ( !down )
+				{
+					key_repeats[key] = 0;
+					keyGameUIdown[key] = FALSE;
+				}
+				return;
+			}
+		}
+	}
+
+	if ( !down )
+	{
+		key_repeats[key] = 0;
+		keyGameUIdown[key] = FALSE;
+	}
+
+	// update auto-repeat status
+	if ( down )
+	{
+		key_repeats[key]++;
+
+		if ( key != K_BACKSPACE &&
+			key != K_PAUSE &&
+			key != K_PGUP &&
+			key != K_KP_PGUP &&
+			key != K_PGDN &&
+			key != K_KP_PGDN &&
+			key_repeats[key] > 1 )
+		{
+			return;	// ignore most autorepeats
+		}
+
+		if ( key >= 200 && !keybindings[key] )
+		{
+			Con_Printf( "%s is unbound.\n", Key_KeynumToString( key ) );
+		}
+	}
+
+	if ( key == K_SHIFT )
+	{
+		shift_down = down;
+	}
+
+	//
+	// key up events only generate commands if the game key binding is
+	// a button command (leading + sign).  These will occur even in console mode,
+	// to keep the character from continuing an action started before a console
+	// switch.  Button commands include the kenum as a parameter, so multiple
+	// downs can be matched with ups
+	//
+	if ( !down )
+	{
+		kb = keybindings[key];
+		if ( kb && kb[0] == '+' )
+		{
+			_snprintf( cmd, sizeof( cmd ), "-%s %i\n", kb + 1, key );
+			Cbuf_AddText( cmd );
+		}
+
+		if ( keyshift[key] != key )
+		{
+			kb = keybindings[keyshift[key]];
+			if ( kb && kb[0] == '+' )
+			{
+				_snprintf( cmd, sizeof( cmd ), "-%s %i\n", kb + 1, key );
+				Cbuf_AddText( cmd );
+			}
+		}
+		return;
+	}
+
+	if ( ( giSubState & 0x10 ) && key != K_ESCAPE )
+		return;
+
+	if ( key_dest == key_game && key == K_ESCAPE && VGui_GameUIKeyPressed() )
+		return;
+
+	//
+	// during demo playback, most keys bring up the main menu
+	//
+	if ( cls.demoplayback && !cls.spectator && down && consolekeys[key] && key_dest == key_game )
+	{
+		Con_ToggleConsole_f();
+		return;
+	}
+
+	//
+	// if not a consolekey, send to the interpreter no matter what mode is
+	//
+	if ( ( key_dest == key_menu && menubound[key] ) ||
+		( key_dest == key_game && ( !con_forcedup || !consolekeys[key] ) ) )
+	{
+		kb = keybindings[key];
+		if ( kb )
+		{
+			if ( kb[0] == '+' )
+			{	// button commands add keynum as a parm
+				_snprintf( cmd, sizeof( cmd ), "%s %i\n", kb, key );
+				Cbuf_AddText( cmd );
+			}
+			else
+			{
+				Cbuf_AddText( kb );
+				Cbuf_AddText( "\n" );
+			}
+		}
+		return;
+	}
+
+	if ( !down )
+		return;		// other systems only care about key down events
+
+	if ( shift_down )
+	{
+		key = keyshift[key];
+	}
+
+	switch ( key_dest )
+	{
+	case key_message:
+		Key_Message( key );
+		break;
+	case key_game:
+		Key_Console( key );
+		break;
+	default:
+		Sys_Error( "Bad key_dest" );
+	}
 }
 
 /*

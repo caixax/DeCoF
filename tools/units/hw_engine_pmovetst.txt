@@ -14,3 +14,8 @@ _PM_PlayerTraceEx
 _PM_TraceLine
 _PM_TraceLineEx
 _PM_RecursiveHullCheck
+_PM_TraceModel
+_PM_GetModelBounds
+_PM_GetModelType
+_PM_InitBoxHull
+_PM_HullForBox

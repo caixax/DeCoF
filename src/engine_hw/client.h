@@ -417,4 +417,9 @@ extern	cl_entity_t		*cl_visedicts[MAX_VISEDICTS];
 //
 void	CL_Disconnect_f( void );
 
+//
+// cl_demo.c
+//
+void	CL_RecordHUDCommand( char *cmdname );
+
 #endif // CLIENT_H

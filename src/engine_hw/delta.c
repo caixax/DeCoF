@@ -820,14 +820,13 @@ DELTA_WriteDelta
 */
 int DELTA_WriteDelta( unsigned char *from, unsigned char *to, qboolean force, delta_t *pFields, void ( *callback )( void ) )
 {
-	int		sendfields;
+	int		sendfields = 0;
 
 	DELTA_ClearFlags( pFields );
 	DELTA_MarkSendFields( from, to, pFields );
 	sendfields = DELTA_CountSendFields( pFields );
 
-	_DELTA_WriteDelta( from, to, force, pFields, callback, sendfields );
-	return sendfields;
+	return _DELTA_WriteDelta( from, to, force, pFields, callback, sendfields );
 }
 
 /*

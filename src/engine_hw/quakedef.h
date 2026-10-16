@@ -58,4 +58,6 @@ typedef unsigned int	uint32;
 // buildnum.c
 int		build_number( void );
 
+typedef unsigned __int64	uint64;
+
 #endif // QUAKEDEF_H

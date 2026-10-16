@@ -22,7 +22,9 @@ import java.io.File;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import ghidra.app.cmd.function.CreateFunctionCmd;
 import ghidra.app.plugin.core.analysis.AutoAnalysisManager;
@@ -295,6 +297,22 @@ public class DelinkUnits extends GhidraScript {
 		SymbolTable symtab = currentProgram.getSymbolTable();
 		int tx = currentProgram.startTransaction("Apply CoF symbol map");
 		int applied = 0;
+		// the primary name the map gives each address: C names lose their
+		// leading "_" ("__PM_PlayerTrace" is the C function _PM_PlayerTrace,
+		// whose primary name "_PM_PlayerTrace" is also how "_PM_PlayerTrace"
+		// the decorated C name PM_PlayerTrace is spelled), so a stale-copy
+		// cleanup must not clear a name the map puts at that other address
+		Map<Address, String> mapPrimary = new HashMap<>();
+		Map<Address, String> mapFull = new HashMap<>();
+		for (String raw : Files.readAllLines(Paths.get(csv))) {
+			String[] f = raw.strip().split(",", -1);
+			if (f.length < 2 || f[0].isEmpty() || f[0].startsWith("va") || f[0].startsWith("#")) {
+				continue;
+			}
+			mapFull.put(toAddr(Long.parseUnsignedLong(f[0], 16)), f[1]);
+			mapPrimary.put(toAddr(Long.parseUnsignedLong(f[0], 16)),
+				f[1].startsWith("_") ? f[1].substring(1) : f[1]);
+		}
 		try {
 			for (String raw : Files.readAllLines(Paths.get(csv))) {
 				String line = raw.strip();
@@ -323,7 +341,9 @@ public class DelinkUnits extends GhidraScript {
 					List<Symbol> stale = new ArrayList<>();
 					symtab.getSymbols(spelling).forEach(stale::add);
 					for (Symbol other : stale) {
-						if (other.getAddress().equals(addr) || other.getSource() == SourceType.DEFAULT) {
+						if (other.getAddress().equals(addr) || other.getSource() == SourceType.DEFAULT
+								|| spelling.equals(mapPrimary.get(other.getAddress()))
+								|| spelling.equals(mapFull.get(other.getAddress()))) {
 							continue;
 						}
 						Function ofn = getFunctionAt(other.getAddress());
@@ -416,10 +436,17 @@ public class DelinkUnits extends GhidraScript {
 		for (Data d : listing.getDefinedData(range, true)) {
 			boolean undefinedType = Undefined.isUndefined(d.getDataType()) || d.getDataType() instanceof ArrayDataType
 					&& Undefined.isUndefined(((ArrayDataType) d.getDataType()).getDataType());
-			if (!d.getMinAddress().equals(addr) && !undefinedType && !zeroFilled) {
+			// a typed item without references (a float of an initialized
+			// table such as player_maxs) has nothing to keep either
+			boolean noRefs = !currentProgram.getReferenceManager()
+					.getReferenceSourceIterator(new AddressSet(d.getMinAddress(), d.getMaxAddress()), true)
+					.hasNext();
+			if (!d.getMinAddress().equals(addr) && !undefinedType && !zeroFilled && !noRefs) {
 				return;
 			}
-			if (d.getMaxAddress().compareTo(end) > 0) {
+			// an item running past the end: only one without references can
+			// go (a "string" Ghidra found from the last byte of a float table)
+			if (d.getMaxAddress().compareTo(end) > 0 && !noRefs) {
 				return;
 			}
 		}

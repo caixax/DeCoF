@@ -250,6 +250,44 @@ qboolean	Netchan_DecompressPacket( sizebuf_t *chan );
 
 qboolean	NET_StringToAdr( char *s, netadr_t *a );
 
+extern	qboolean	noip;
+extern	qboolean	noipx;
+
+unsigned short	Q_ntohs( unsigned short netshort );
+void		NET_Config( qboolean multiplayer );
+void		NET_ClearLagData( qboolean bClient, qboolean bServer );
+void		NET_FlushSocket( netsrc_t sock );
+qboolean	NET_GetPacket( netsrc_t sock );
+qboolean	NET_JoinGroup( netsrc_t sock, netadr_t addr );
+qboolean	NET_LeaveGroup( netsrc_t sock, netadr_t addr );
+
+// net_api.c
+int			Net_StringToAdr( char *s, netadr_t *a );
+void		Net_APIInit( void );
+void		Net_APIShutDown( void );
+
+// Client connection is initiated by requesting a challenge value
+//  the server sends this value back
+#define	S2C_CHALLENGE	'A'		// + challenge value
+// Send a userid, client remote address, is this server secure and engine build number
+#define	S2C_CONNECTION	'B'
+// Print to client console
+#define	A2A_PRINT		'l'		// print a message on client
+
+//
+// client to server
+//
+#define	clc_bad				0
+#define	clc_nop				1
+#define	clc_move			2		// [usercmd_t]
+#define	clc_stringcmd		3		// [string] message
+#define	clc_delta			4		// [byte] sequence number, requests delta compression of message
+#define	clc_resourcelist	5
+#define	clc_tmove			6
+#define	clc_fileconsistency	7
+#define	clc_voicedata		8
+#define	clc_hltv			9
+
 // server to master/log listener: a log line with the secret key
 #define	S2A_LOGKEY		'S'
 

@@ -365,4 +365,16 @@ typedef struct
 #define RAD_TO_STUDIO		(32768.0/M_PI)
 #define STUDIO_TO_RAD		(M_PI/32768.0)
 
+#define STUDIO_TRACE_HITBOX	0x0200	// always use hitbox trace instead of bbox
+
+// r_studio.c
+struct model_s;
+struct hull_s;
+struct edict_s;
+
+struct hull_s	*R_StudioHull( struct model_s *pModel, float frame, int sequence, const vec_t *angles, const vec_t *origin, const vec_t *size, const unsigned char *pcontroller, const unsigned char *pblending, int *pNumHulls, const struct edict_s *pEdict, int bSkipShield );
+int				SV_HitgroupForStudioHull( int index );
+struct hull_s	*SV_HullForStudioModel( const struct edict_s *pEdict, const vec_t *mins, const vec_t *maxs, vec_t *offset, int *pNumHulls );
+qboolean		SV_CheckSphereIntersection( struct edict_s *ent, const vec_t *start, const vec_t *end );
+
 #endif

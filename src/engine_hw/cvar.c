@@ -5,6 +5,11 @@
 #include "cmd.h"
 #include "zone.h"
 #include "APIProxy.h"
+#include "mathlib.h"
+#include "client.h"
+#include "delta.h"
+#include "server.h"
+#include "sv_log.h"
 
 #include <math.h>
 
@@ -186,6 +191,120 @@ char *Cvar_CompleteVariable( char *search, int forward )
 
 /*
 ============
+Cvar_DirectSet
+============
+*/
+void Cvar_DirectSet( struct cvar_s *var, char *value )
+{
+	qboolean	changed;
+	char		*pszValue = value;
+	char		szNew[1024];
+
+	if ( !var || !value )
+		return;
+
+	if ( var->flags & FCVAR_PRINTABLEONLY )
+	{
+		char	*pS_guess;
+		char	*pD_guess;
+
+		// Clear out new string
+		szNew[0] = 0;
+
+		pS_guess = pszValue;
+		pD_guess = szNew;
+
+		// Step through the string, only copying back in characters that are printable
+		while ( *pS_guess )
+		{
+			if ( *pS_guess < 32 || *pS_guess > 126 )
+			{
+				pS_guess++;
+				continue;
+			}
+
+			*pD_guess++ = *pS_guess++;
+		}
+
+		// Terminate the new string
+		*pD_guess = 0;
+
+		// If it's empty, then insert a marker string
+		if ( !Q_strlen( szNew ) )
+		{
+			Q_strcpy( szNew, "empty" );
+		}
+
+		// Point the value here.
+		pszValue = szNew;
+	}
+
+	changed = Q_strcmp( var->string, pszValue );
+
+	if ( var->flags & FCVAR_USERINFO )
+	{
+		if ( cls.state == ca_dedicated )
+		{
+			Info_SetValueForKey( Info_Serverinfo(), var->name, pszValue, MAX_SERVERINFO_STRING );
+			SV_BroadcastCommand( "fullserverinfo \"%s\"\n", Info_Serverinfo() );
+		}
+
+		if ( cls.state != ca_dedicated )
+		{
+			Info_SetValueForKey( cls.userinfo, var->name, pszValue, MAX_INFO_STRING );
+
+			if ( changed && cls.state >= ca_connected )
+			{
+				MSG_WriteByte( &cls.netchan.message, clc_stringcmd );
+				SZ_Print( &cls.netchan.message, va( "setinfo \"%s\" \"%s\"\n", var->name, pszValue ) );
+			}
+		}
+	}
+
+	if ( ( var->flags & FCVAR_SERVER ) && changed )
+	{
+		if ( !( var->flags & FCVAR_UNLOGGED ) )
+		{
+			if ( var->flags & FCVAR_PROTECTED )
+			{
+				Log_Printf( "Server cvar \"%s\" = \"%s\"\n", var->name, "***PROTECTED***" );
+				SV_BroadcastPrintf( "\"%s\" changed to \"%s\"\n", var->name, "***PROTECTED***" );
+			}
+			else
+			{
+				Log_Printf( "Server cvar \"%s\" = \"%s\"\n", var->name, pszValue );
+				SV_BroadcastPrintf( "\"%s\" changed to \"%s\"\n", var->name, pszValue );
+			}
+		}
+
+		{
+			char	*szVal;
+
+			if ( var->flags & FCVAR_PROTECTED )
+			{
+				if ( Q_strlen( pszValue ) > 0 && Q_stricmp( pszValue, "none" ) )
+					szVal = "1";
+				else
+					szVal = "0";
+			}
+			else
+			{
+				szVal = pszValue;
+			}
+
+			Steam_SetCVar( var->name, szVal );
+		}
+	}
+
+	Z_Free( var->string );	// free the old value string
+
+	var->string = (char *)Z_Malloc( Q_strlen( pszValue ) + 1 );
+	Q_strcpy( var->string, pszValue );
+	var->value = Q_atof( var->string );
+}
+
+/*
+============
 Cvar_Set
 ============
 */
@@ -361,6 +480,51 @@ const char *Cvar_IsMultipleTokens( const char *varname )
 	bret = ( tokens != 1 );
 
 	return bret ? firstToken : NULL;
+}
+
+/*
+============
+Cvar_Command
+
+Handles variable inspection and changing from the console
+============
+*/
+qboolean Cvar_Command( void )
+{
+	cvar_t		*v;
+	const char	*firstToken = NULL;
+
+	firstToken = Cvar_IsMultipleTokens( Cmd_Argv( 0 ) );
+	if ( firstToken )
+	{
+		v = Cvar_FindVar( firstToken );
+		if ( !v )
+			return false;
+
+		Con_Printf( "\"%s\" is \"%s\"\n", v->name, v->string );
+		return true;
+	}
+
+	// check variables
+	v = Cvar_FindVar( Cmd_Argv( 0 ) );
+	if ( !v )
+		return false;
+
+	// perform a variable print or set
+	if ( Cmd_Argc() == 1 )
+	{
+		Con_Printf( "\"%s\" is \"%s\"\n", v->name, v->string );
+		return true;
+	}
+
+	if ( ( v->flags & FCVAR_SPONLY ) && cls.state != ca_dedicated && cls.state != ca_disconnected && cl.maxclients > 1 )
+	{
+		Con_Printf( "Can't set %s in multiplayer\n", v->name );
+		return true;
+	}
+
+	Cvar_Set( v->name, Cmd_Argv( 1 ) );
+	return true;
 }
 
 /*

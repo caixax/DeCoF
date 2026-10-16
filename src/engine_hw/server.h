@@ -3,10 +3,18 @@
 #ifndef SERVER_H
 #define SERVER_H
 
+#include "mathlib.h"
+#include "const.h"
+#include "progs.h"
+#include "usercmd.h"
+#include "delta_packet.h"
 #include "custom.h"
 #include "net.h"
 #include "consistency.h"
 #include "event.h"
+#include "userid.h"
+#include "info.h"
+#include "cvar.h"
 
 delta_t	*SV_LookupDelta( char *name );
 
@@ -160,6 +168,114 @@ typedef struct server_static_s
 	qboolean		isSecure;			// Is this a secure server?
 } server_static_t;
 
+// client_t, checked against the Windows binary (svs.clients stride 0x5018):
+// netchan at +0x20, fakeclient +0x2548, edict +0x4B9C, name +0x4D08,
+// resourcesonhand +0x4D34, resourcesneeded +0x4DBC, customdata +0x4E4C.
+// usercmd_t is 4 bytes longer than in the Linux build and doubles are 8
+// byte aligned, so the members sit further than the Linux offsets.
+typedef struct
+{
+	double			senttime;
+	float			ping_time;
+	clientdata_t	clientdata;
+	weapon_data_t	weapondata[64];
+	packet_entities_t	entities;
+} client_frame_t;
+
+typedef struct client_s
+{
+	qboolean		active;				// false = client is free
+	qboolean		spawned;			// false = don't send datagrams
+	qboolean		fully_connected;	// true = client has fully connected, set after sendents command is received
+	qboolean		connected;			// On server, but not spawned.
+	qboolean		uploading;			// true = client uploading custom resources
+	qboolean		hasusrmsgs;			// Whether this client has received the list of user messages
+	qboolean		has_force_unmodified;	// true = mp_consistency is set and at least one file is forced to be consistent
+
+	netchan_t		netchan;			// The client's net connection.
+
+	int				chokecount;			// amount of choke since last client message
+	int				delta_sequence;		// -1 = no compression.  This is where the server is creating the
+										// compressed info from.
+
+	qboolean		fakeclient;			// Bot
+	qboolean		proxy;				// HLTV proxy
+
+	usercmd_t		lastcmd;			// for filling in big drops and partial predictions
+
+	double			connecttime;		// Time client connected
+	double			cmdtime;			// Time we received last command
+	double			ignorecmdtime;		// Time we should start accepting commands again
+
+	float			latency;			// Average latency
+	float			packet_loss;		// Average packet loss
+
+	double			localtime;			// of last message
+	double			nextping;			// next time to recalculate ping
+	double			svtimebase;			// Server time base for this client
+
+	// the datagram is written to after every frame, but only cleared
+	// when it is sent out to the client.  overflow is tolerated.
+	sizebuf_t		datagram;
+	byte			datagram_buf[MAX_DATAGRAM];
+
+	double			connection_started;	// Or time of disconnect for zombies
+	double			next_messagetime;	// Time when we should send next world state update
+	double			next_messageinterval;	// Default time to wait for next message
+
+	qboolean		send_message;		// false - only send messages if the client has sent one
+										//  and the bandwidth is not choked
+	qboolean		skip_message;		// Defer message sending for one frame
+
+	client_frame_t	*frames;			// updates can be deltad from here
+
+	event_state_t	events;				// Per edict events
+
+	edict_t			*edict;				// EDICT_NUM(clientnum+1)
+	const edict_t	*pViewEntity;		// View Entity (camera or the client itself)
+
+	int				userid;				// identifying number
+	USERID_t		network_userid;
+
+	char			userinfo[MAX_INFO_STRING];	// infostring
+	qboolean		sendinfo;			// at end of frame, send info to all
+										// this prevents malicious multiple broadcasts
+	float			sendinfo_time;		// Time when userinfo was sent
+
+	char			hashedcdkey[64];	// MD5 hash is 32 hex #'s, plus trailing 0
+	char			name[32];			// for printing to other people
+										// extracted from userinfo
+	int				topcolor;
+	int				bottomcolor;
+
+	int				entityId;
+
+	resource_t		resourcesonhand;	// Downloaded
+	resource_t		resourcesneeded;	// Need to download
+	FileHandle_t	upload;				// Handle for file upload
+	qboolean		uploaddoneregistering;	// If client files have finished uploading
+	customization_t	customdata;			// Head of custom (client) data list
+
+	int				crcValue;			// For consistency checking
+
+	int				lw;					// If user is predicting weapons locally
+	int				lc;					//  If user is lag compensating
+
+	char			physinfo[MAX_PHYSINFO_STRING];	// Physics info string
+
+	qboolean		m_bLoopback;		// Does this client want to hear his own voice?
+	uint32			m_VoiceStreams[2];	// Which other clients does this guy's voice stream go to?
+
+	double			m_lastvoicetime;
+
+	int				m_sendrescount;		// Count of times we've sent the resources to the client
+	qboolean		m_bSentNewResponse;
+} client_t;
+
+// sv_main.c
+extern	cvar_t	sv_allow_upload;
+extern	cvar_t	sv_max_upload;
+
 extern	server_static_t	svs;			// persistant server info
 extern	server_t		sv;				// local server
 
@@ -178,5 +294,19 @@ extern	cvar_t	sv_lan;
 extern	cvar_t	sv_lan_rate;
 
 void	SV_DropClient( struct client_s *cl, qboolean crash, char *fmt, ... );
+
+// sv_main.c
+void	SV_PropagateCustomizations( void );
+void	SV_BroadcastPrintf( char *fmt, ... );
+void	SV_BroadcastCommand( char *fmt, ... );
+
+extern	int		num_servers;
+extern	qboolean	allow_cheats;
+
+// sv_steam3.cpp
+const char	*Steam_GetCommunityName( void );
+int		Steam_GSInitiateGameConnection( void *pData, int cbMaxData, unsigned __int64 steamID, unsigned int unIPServer, unsigned short usPortServer, qboolean bSecure );
+void	Steam_GSTerminateGameConnection( unsigned int unIPServer, unsigned short usPortServer );
+void	Steam_SetCVar( const char *pchKey, const char *pchValue );
 
 #endif // SERVER_H

@@ -5,6 +5,12 @@
 
 typedef byte pixel_t;
 
+typedef struct vrect_s
+{
+	int				x,y,width,height;
+	struct vrect_s	*pnext;
+} vrect_t;
+
 typedef enum
 {
 	VT_None = 0,

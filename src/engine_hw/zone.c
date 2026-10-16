@@ -5,6 +5,9 @@
 #include "cmd.h"
 #include "zone.h"
 #include "mathlib.h"
+#include "client.h"
+#include "delta.h"
+#include "server.h"
 #include "studio.h"
 
 #define	DYNAMIC_SIZE	0x200000
@@ -730,6 +733,25 @@ void Cache_Force_Flush( void )
 }
 
 static int CacheSystemCompare( const void *ppcs1, const void *ppcs2 );
+
+/*
+============
+Cache_Flush
+
+Throw everything out, so new data will be demand cached
+============
+*/
+void Cache_Flush( void )
+{
+	if ( cl.maxclients <= 1 || allow_cheats )
+	{
+		Cache_Force_Flush();
+	}
+	else
+	{
+		Con_Printf( "Server must enable sv_cheats to activate the flush command in multiplayer games.\n" );
+	}
+}
 
 /*
 ============

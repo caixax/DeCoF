@@ -8,6 +8,8 @@
 #include "APIProxy.h"
 #include "delta.h"
 #include "server.h"
+#include "client.h"
+#include "sys.h"
 
 #define	MAX_ARGS		80
 #define	MAX_CMD_LINE	1024
@@ -941,6 +943,148 @@ char *Cmd_CompleteCommand( char *search, int forward )
 	}
 
 	return pPartial;
+}
+
+/*
+============
+Cmd_ExecuteString
+
+A complete command line has been parsed, so try to execute it
+FIXME: lookupnoadd the token to speed search?
+============
+*/
+void Cmd_ExecuteString( char *text, cmd_source_t src )
+{
+	cmd_function_t	*cmd;
+	cmdalias_t		*a;
+
+	cmd_source = src;
+	Cmd_TokenizeString( text );
+
+	// execute the command line
+	if ( !Cmd_Argc() )
+		return;		// no tokens
+
+	// check functions
+	for ( cmd = cmd_functions; cmd; cmd = cmd->next )
+	{
+		if ( !Q_strcasecmp( cmd_argv[0], cmd->name ) )
+		{
+			cmd->function();
+
+			if ( cls.demorecording && ( cmd->flags & FCMD_HUD_COMMAND ) && !cls.spectator )
+			{
+				CL_RecordHUDCommand( cmd->name );
+			}
+			return;
+		}
+	}
+
+	// check alias
+	for ( a = cmd_alias; a; a = a->next )
+	{
+		if ( !Q_strcasecmp( cmd_argv[0], a->name ) )
+		{
+			Cbuf_InsertText( a->value );
+			return;
+		}
+	}
+
+	// check cvars
+	if ( Cvar_Command() )
+		return;
+
+	if ( cls.state == ca_active || cls.state == ca_connected || cls.state == ca_uninitialized )
+	{
+		Cmd_ForwardToServer();
+	}
+}
+
+/*
+===================
+Cmd_ForwardToServerInternal
+
+Sends the entire command line over to the server
+===================
+*/
+int Cmd_ForwardToServerInternal( sizebuf_t *pBuf )
+{
+	sizebuf_t	tempBuf;
+	char		tempData[4096];
+
+	tempBuf.buffername = "Cmd_ForwardToServerInternal::tempBuf";
+	tempBuf.flags = FSB_ALLOWOVERFLOW;
+	tempBuf.data = (byte *)tempData;
+	tempBuf.maxsize = sizeof( tempData );
+	tempBuf.cursize = 0;
+
+	if ( cls.state != ca_connected && cls.state != ca_uninitialized && cls.state != ca_active )
+	{
+		if ( Q_stricmp( Cmd_Argv( 0 ), "setinfo" ) )
+		{
+			Con_Printf( "Can't \"%s\", not connected\n", Cmd_Argv( 0 ) );
+		}
+		return 0;
+	}
+
+	if ( cls.demoplayback )
+		return 0;		// not really connected
+
+	if ( g_bIsDedicatedServer )
+		return 0;
+
+	MSG_WriteByte( &tempBuf, clc_stringcmd );
+
+	if ( Q_strcasecmp( Cmd_Argv( 0 ), "cmd" ) )
+	{
+		SZ_Print( &tempBuf, Cmd_Argv( 0 ) );
+		SZ_Print( &tempBuf, " " );
+	}
+
+	if ( Cmd_Argc() > 1 )
+	{
+		SZ_Print( &tempBuf, Cmd_Args() );
+	}
+	else
+	{
+		SZ_Print( &tempBuf, "\n" );
+	}
+
+	if ( tempBuf.flags & FSB_OVERFLOWED )
+		return 0;
+
+	if ( pBuf->cursize + tempBuf.cursize > pBuf->maxsize )
+		return 0;
+
+	SZ_Write( pBuf, tempBuf.data, tempBuf.cursize );
+
+	return 1;
+}
+
+/*
+===================
+Cmd_ForwardToServer
+
+===================
+*/
+void Cmd_ForwardToServer( void )
+{
+	// "cmd dlfile" is not forwarded
+	if ( !Q_strcasecmp( Cmd_Argv( 0 ), "cmd" ) && !Q_strcasecmp( Cmd_Argv( 1 ), "dlfile" ) )
+		return;
+
+	Cmd_ForwardToServerInternal( &cls.netchan.message );
+}
+
+/*
+===================
+Cmd_ForwardToServerUnreliable
+
+===================
+*/
+int Cmd_ForwardToServerUnreliable( void )
+{
+	return Cmd_ForwardToServerInternal( &cls.datagram );
 }
 
 /*

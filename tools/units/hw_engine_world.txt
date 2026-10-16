@@ -17,3 +17,10 @@ _SV_ClipToWorldbrush
 _SV_MoveBounds
 _SV_MoveNoEnts
 _SV_Move
+_ClearLink
+_RemoveLink
+_InsertLinkBefore
+_InsertLinkAfter
+_SV_InitBoxHull
+_SV_HullForBox
+_SV_HullForBeam
