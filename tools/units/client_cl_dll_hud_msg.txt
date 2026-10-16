@@ -51,3 +51,4 @@
 ?MsgFunc_ViewLock@CHud@@QAAHPBDHPAX@Z
 ?MsgFunc_WeaponBody@CHud@@QAAHPBDHPAX@Z
 ?MsgFunc_Wheelchair@CHud@@QAAHPBDHPAX@Z
+?MsgFunc_ViewMode@CHud@@QAAXPBDHPAX@Z

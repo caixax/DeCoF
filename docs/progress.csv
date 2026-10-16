@@ -1883,7 +1883,7 @@ client,10071A30,177,?MsgFunc_UnreadSMS@CHud@@QAAHPBDHPAX@Z,CHud::MsgFunc_UnreadS
 client,10071AF0,38,?MsgFunc_ViewEntity@CHud@@QAAHPBDHPAX@Z,CHud::MsgFunc_ViewEntity,UNKNOWN,cl_dll/hud_msg.cpp,,,MATCHED,100,client_manual.csv,
 client,10071B20,126,?MsgFunc_ViewKnock@CHud@@QAAHPBDHPAX@Z,CHud::MsgFunc_ViewKnock,UNKNOWN,cl_dll/hud_msg.cpp,,,MATCHED,100,client_manual.csv,
 client,10071BA0,159,?MsgFunc_ViewLock@CHud@@QAAHPBDHPAX@Z,CHud::MsgFunc_ViewLock,UNKNOWN,cl_dll/hud_msg.cpp,,,MATCHED,100,client_manual.csv,
-client,10071C40,5,?MsgFunc_ViewMode@CHud@@QAAXPBDHPAX@Z,CHud::MsgFunc_ViewMode,UNKNOWN,,,,TODO,,client_manual.csv,found by tools/gaps.py (no Ghidra function before)
+client,10071C40,5,?MsgFunc_ViewMode@CHud@@QAAXPBDHPAX@Z,CHud::MsgFunc_ViewMode,UNKNOWN,,,,MATCHED,100,client_manual.csv,found by tools/gaps.py (no Ghidra function before)
 client,10071C50,49,?MsgFunc_WeaponBody@CHud@@QAAHPBDHPAX@Z,CHud::MsgFunc_WeaponBody,UNKNOWN,cl_dll/hud_msg.cpp,,,MATCHED,100,client_manual.csv,
 client,10071C90,100,?MsgFunc_Wheelchair@CHud@@QAAHPBDHPAX@Z,CHud::MsgFunc_Wheelchair,UNKNOWN,cl_dll/hud_msg.cpp,,,MATCHED,100,client_manual.csv,
 client,10071D00,124,?strstrtolower@@YA_NPAD0@Z,strstrtolower,UNKNOWN,cl_dll/hud_msg.cpp,,,MATCHED,100,client_manual.csv,
