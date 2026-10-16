@@ -123,10 +123,16 @@ void VGui_Startup()
 	// TEST*/
 }
 
+extern bool bSteamInit_guess;
+extern "C" __declspec( dllimport ) void __cdecl SteamAPI_Shutdown();
+
 void VGui_Shutdown()
 {
 	delete gViewPort;
 	gViewPort = NULL;
+
+	if ( bSteamInit_guess )
+		SteamAPI_Shutdown();
 }
 
 

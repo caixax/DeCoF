@@ -1295,3 +1295,6 @@ va,name,kind,evidence
 10049930,??1CPhone@@QAE@XZ,func,stores the CPhone vftable (RTTI) and deletes m_pPhoneImage_guess (sized delete of the 0x24-byte Image); non-virtual destructor (VGUI1 Panel has none)
 1004A5C0,??1CSave@@QAE@XZ,func,stores the CSave vftable (RTTI) and deletes m_pImage_guess (sized delete of the 0x24-byte Image); non-virtual destructor (VGUI1 Panel has none)
 1004B1F0,??1CYesno@@QAE@XZ,func,stores the CYesno vftable (RTTI) and deletes m_pImage_guess (sized delete of the 0x24-byte Image); non-virtual destructor (VGUI1 Panel has none)
+100988F0,_VGui_Shutdown,func,"deletes gViewPort (TeamFortressViewport destructor inlined: CSchemeManager member) and clears it, then SteamAPI_Shutdown when bSteamInit_guess"
+10543341,?bSteamInit_guess@@3_NA,data,"InitInput stores the SteamAPI_Init result here, VGui_Shutdown calls SteamAPI_Shutdown when it is set"
+100B42A4,??3@YAXPAXI@Z,func,"sized operator delete: every deleting destructor and delete of a fixed-size object calls it with (pointer, size); our objects reference ??3@YAXPAXI@Z at the same places (the CRT byte match had guessed operator new)"

@@ -32,3 +32,5 @@ _HUD_ConnectionlessPacket
 ??__EgMP3Info_guess@@YAXXZ
 ??__FgHUD@@YAXXZ
 ??__FgMP3Info_guess@@YAXXZ
+??1MP3FileInfo@@UAE@XZ
+??_GMP3FileInfo@@UAEPAXI@Z

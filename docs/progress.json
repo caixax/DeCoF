@@ -1,5 +1,5 @@
 {
-  "commit": "2906b5b",
+  "commit": "ee2002e",
   "counting": "LIB rows excluded; bytes weighted by function size",
   "date": "2026-10-17",
   "dlls": {
@@ -79,9 +79,9 @@
     },
     "client.dll": {
       "bytes": {
-        "EQUIVALENT": 37561,
-        "MATCHED": 566120,
-        "TODO": 45955,
+        "EQUIVALENT": 37637,
+        "MATCHED": 566243,
+        "TODO": 45756,
         "total": 649636
       },
       "categories": {
@@ -143,23 +143,23 @@
         },
         "UNKNOWN": {
           "bytes": {
-            "EQUIVALENT": 1982,
-            "MATCHED": 158120,
-            "TODO": 32945,
+            "EQUIVALENT": 2058,
+            "MATCHED": 158243,
+            "TODO": 32746,
             "total": 193047
           },
           "functions": {
-            "EQUIVALENT": 4,
-            "MATCHED": 923,
-            "TODO": 48,
+            "EQUIVALENT": 5,
+            "MATCHED": 925,
+            "TODO": 45,
             "total": 975
           }
         }
       },
       "functions": {
-        "EQUIVALENT": 21,
-        "MATCHED": 2178,
-        "TODO": 53,
+        "EQUIVALENT": 22,
+        "MATCHED": 2180,
+        "TODO": 50,
         "total": 2252
       }
     },
@@ -356,30 +356,30 @@
   },
   "shown_total": {
     "bytes": {
-      "EQUIVALENT": 94943,
-      "MATCHED": 1644383,
-      "TODO": 45955,
+      "EQUIVALENT": 95019,
+      "MATCHED": 1644506,
+      "TODO": 45756,
       "total": 1785281
     },
     "functions": {
-      "EQUIVALENT": 34,
-      "MATCHED": 7911,
-      "TODO": 53,
+      "EQUIVALENT": 35,
+      "MATCHED": 7913,
+      "TODO": 50,
       "total": 7998
     }
   },
   "target_version": "1.6a",
   "total": {
     "bytes": {
-      "EQUIVALENT": 95068,
-      "MATCHED": 1785554,
-      "TODO": 2056164,
+      "EQUIVALENT": 95144,
+      "MATCHED": 1785677,
+      "TODO": 2055965,
       "total": 3936786
     },
     "functions": {
-      "EQUIVALENT": 35,
-      "MATCHED": 8500,
-      "TODO": 13805,
+      "EQUIVALENT": 36,
+      "MATCHED": 8502,
+      "TODO": 13802,
       "total": 22340
     }
   }
