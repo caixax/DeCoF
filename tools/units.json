@@ -2138,6 +2138,26 @@
           "name": "engine/sv_main",
           "source": "src/engine_hw/sv_main.c",
           "functions_file": "tools/units/hw_engine_sv_main.txt"
+        },
+        {
+          "name": "engine/CL_PARSE",
+          "source": "src/engine_hw/CL_PARSE.C",
+          "functions_file": "tools/units/hw_engine_CL_PARSE.txt"
+        },
+        {
+          "name": "engine/cl_ents",
+          "source": "src/engine_hw/cl_ents.c",
+          "functions_file": "tools/units/hw_engine_cl_ents.txt"
+        },
+        {
+          "name": "engine/cl_pred",
+          "source": "src/engine_hw/cl_pred.c",
+          "functions_file": "tools/units/hw_engine_cl_pred.txt"
+        },
+        {
+          "name": "engine/cl_parsefn",
+          "source": "src/engine_hw/cl_parsefn.c",
+          "functions_file": "tools/units/hw_engine_cl_parsefn.txt"
         }
       ]
     },
