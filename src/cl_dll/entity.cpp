@@ -598,7 +598,7 @@ void DLLEXPORT HUD_CreateEntities( void )
 	// buz:
 	// эта клиентская энтитя используется для проверки уровня освещенности
 	int modelindex;
-	struct model_s *mod = gEngfuncs.CL_LoadModel( "models/can.mdl", &modelindex );
+	struct model_s *mod = gEngfuncs.CL_LoadModel( "models/null.mdl", &modelindex );
 	if (!mod || !modelindex)
 	{
 		gEngfuncs.Con_Printf("Cant load model for light testing entity\n");

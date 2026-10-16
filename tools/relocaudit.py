@@ -204,6 +204,53 @@ def real_differences(unit):
     return out
 
 
+_DATA = {}
+
+
+def our_data(unit, name, n):
+    """n bytes of one of our data symbols (a VC6 $SG string literal) in the
+    unit's base object, or None."""
+    if unit not in _DATA:
+        import struct
+        cfg = json.load(open(os.path.join(ROOT, "objdiff.json")))
+        path = next((os.path.join(ROOT, u["base_path"]) for u in cfg["units"] if u["name"] == unit), None)
+        syms = {}
+        if path and os.path.exists(path):
+            data = open(path, "rb").read()
+            _m, nsec, _ts, symptr, nsym, opt, _ch = struct.unpack_from("<HHIIIHH", data, 0)
+            secs = []
+            for i in range(nsec):
+                size, praw = struct.unpack_from("<II", data, 20 + opt + 40 * i + 16)
+                secs.append(data[praw:praw + size] if praw else b"\0" * size)
+            strtab = symptr + 18 * nsym
+            i = 0
+            while i < nsym:
+                o = symptr + 18 * i
+                raw = data[o:o + 8]
+                if raw[:4] == b"\0\0\0\0":
+                    off = struct.unpack_from("<I", raw, 4)[0]
+                    sname = data[strtab + off:data.index(b"\0", strtab + off)].decode("latin-1")
+                else:
+                    sname = raw.rstrip(b"\0").decode("latin-1")
+                value, secnum, _typ, _cls, naux = struct.unpack_from("<IhHBB", data, o + 8)
+                if sname.startswith("$SG") and secnum > 0:
+                    syms[sname] = (secs[secnum - 1], value)
+                i += 1 + naux
+        _DATA[unit] = syms
+    s = _DATA[unit].get(name)
+    return s[0][s[1]:s[1] + n] if s else None
+
+
+def literal_differs(unit, va, name):
+    """Our VC6 string literal ($SGnnn, no /GF) against the retail bytes at
+    va: compare up to and including our terminating NUL."""
+    ours = our_data(unit, name, 4096)
+    if ours is None or b"\0" not in ours:
+        return False
+    ours = ours[:ours.index(b"\0") + 1]
+    return objdiff_tool.retail_bytes(unit.split("/")[0], va, len(ours)) != ours
+
+
 def differences(unit, fn):
     d = objdiff_tool.diff_json(unit, fn)
     _l, _r, li, ri = objdiff_tool.rows(d, fn)
@@ -211,6 +258,20 @@ def differences(unit, fn):
     for a, b in zip(li, ri):
         na = objdiff_tool.reloc_name(d["left"], a)
         nb = objdiff_tool.reloc_name(d["right"], b)
+        # a string literal or float constant of ours against an unnamed
+        # retail address: the name encodes the value, check it against the
+        # retail bytes (the plain report ignores what a relocation points at)
+        m = objdiff_tool.UNNAMED.match(na or "")
+        if m and nb and nb.startswith(("??_C@_0", "__real@", "__xmm@")):
+            va = int(m.group(1), 16) + objdiff_tool.reloc_addend(a) - objdiff_tool.reloc_addend(b)
+            if not objdiff_tool.constant_ok(unit.split("/")[0], va, nb):
+                found.append((na, nb))
+            continue
+        if m and nb and nb.startswith("$SG"):
+            va = int(m.group(1), 16) + objdiff_tool.reloc_addend(a) - objdiff_tool.reloc_addend(b)
+            if literal_differs(unit, va, nb):
+                found.append((na, nb))
+            continue
         if not na or not nb or DEFAULT_NAME.search(na) or DEFAULT_NAME.search(nb):
             continue
         # two STL instantiations, or a CRT internal (common_strtime) against

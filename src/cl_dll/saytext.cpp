@@ -216,7 +216,7 @@ void CHudSayText :: SayTextPrint( const char *pszBuf, int iBufSize, int clientIn
 	}
 
 	m_iFlags |= HUD_ACTIVE;
-	PlaySound( "misc/talk.wav", 1 );
+	PlaySound( "player/police/police_pager.wav", 1 );
 
 	if ( ScreenHeight >= 480 )
 		Y_START = ScreenHeight - 60;

@@ -351,7 +351,7 @@ void CMp5::PrimaryAttack( void )
 	float damage = gSkillData.DmgGlock;
 
 	m_flCurrentKick += m_flKickPerShot;
-	m_flNextKickReductionTime = gpGlobals->time + 0.25;
+	m_flNextKickReductionTime = gpGlobals->time + 0.35;
 
 	vecDir = m_pPlayer->FireBulletsPlayer( 1, vecShellSrc, vecAiming, m_AccuracyVector, 8192, BULLET_PLAYER_357, 2, damage, m_pPlayer->pev, m_pPlayer->random_seed );
 
@@ -372,7 +372,7 @@ void CMp5::PrimaryAttack( void )
 	m_pPlayer->m_iExtraSoundTypes = bits_SOUND_COMBAT;
 	m_pPlayer->m_flStopExtraSoundTime = gpGlobals->time + 0.2;
 
-	m_flNextPrimaryAttack = gpGlobals->time + 0.07;
+	m_flNextPrimaryAttack = gpGlobals->time + 0.06;
 	m_flNextSecondaryAttack = gpGlobals->time + 1;
 
 	if ( m_iClip <= 0 )

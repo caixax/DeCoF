@@ -164,7 +164,7 @@ void CGlock::Spawn( )
 	}
 	else
 	{
-		if ( pev->frags == -1 )
+		if ( pev->frags == -2 )
 			m_iClip = -666;
 		m_iDefaultAmmo = GLOCK_MAX_CLIP;
 	}
@@ -363,7 +363,7 @@ void CGlock::WeaponToggle( void )
 	SetNextThink( 0.3 );
 	SetThink( &CGlock::ToggleSwitch );
 
-	m_flNextPrimaryAttack = m_flNextSecondaryAttack = m_flTimeWeaponIdle = gpGlobals->time + 0.6;
+	m_flNextPrimaryAttack = m_flNextSecondaryAttack = m_flTimeWeaponIdle = gpGlobals->time + 0.66;
 }
 
 void CGlock::SecondaryAttack( void )
@@ -829,9 +829,9 @@ void CGlock::ItemPostFrame( void )
 	{
 		if ( m_iSprintState && m_iNextSprintAnim < gpGlobals->time )
 		{
-			m_flNextPrimaryAttack = gpGlobals->time + 0.7;
-			m_flTimeWeaponIdle = gpGlobals->time + 0.3;
-			m_iNextSprintAnim = gpGlobals->time + 0.7;
+			m_flNextPrimaryAttack = gpGlobals->time + 0.33;
+			m_flTimeWeaponIdle = gpGlobals->time + 0.35;
+			m_iNextSprintAnim = gpGlobals->time + 0.33;
 			m_iSprintState = 0;
 
 			if ( m_iClip )
@@ -918,8 +918,8 @@ void CGlock::ItemPostFrame( void )
 				SendWeaponAnim( GLOCK_SPRINT_FROM_NOSHOT );
 
 			time = GetSequenceTime( GET_MODEL_PTR( ENT( pev ) ), m_pPlayer->pev->weaponanim );
-			m_flNextPrimaryAttack = gpGlobals->time + 0.7;
-			m_flTimeWeaponIdle = gpGlobals->time + 0.3;
+			m_flNextPrimaryAttack = gpGlobals->time + 0.33;
+			m_flTimeWeaponIdle = gpGlobals->time + 0.35;
 			m_iSprintState = 0;
 		}
 	}

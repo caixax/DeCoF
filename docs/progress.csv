@@ -2131,11 +2131,13 @@ client,1007F4D0,419,?m_parseHeader@MP3FileInfo@@IAEXXZ,,COF,cl_dll/MP3FileInfo.c
 client,1007F6A0,6,___local_stdio_scanf_options,__local_stdio_scanf_options,LIB,,,,,,reloc:1007F6B0,
 client,1007F6B0,37,_sscanf,sscanf,LIB,,,,TODO,,refbytes:paranoia:cl_dll__vgui_ControlConfigPanel.obj:score0,
 client,1007F6E0,66,??0CMP3@@QAE@XZ,CMP3::CMP3,UNKNOWN,guess:cl_dll/mp3.cpp,,,MATCHED,100,client_manual.csv,
+client,1007F730,3,?Disabled_guess@CMP3@@QAEXXZ,CMP3::Disabled_guess,UNKNOWN,,,,MATCHED,100,client_manual.csv,found by tools/gaps.py (no Ghidra function before)
 client,1007F740,509,?Frame@CMP3@@QAEXXZ,CMP3::Frame,UNKNOWN,guess:cl_dll/mp3.cpp,,,MATCHED,100,client_manual.csv,
 client,1007F940,152,?Initialize@CMP3@@QAEHXZ,CMP3::Initialize,UNKNOWN,guess:cl_dll/mp3.cpp,,,MATCHED,100,client_manual.csv,
 client,1007F9E0,91,?IrrKlangInit_guess@@YAXXZ,IrrKlangInit_guess,UNKNOWN,guess:cl_dll/mp3.cpp,,,MATCHED,100,client_manual.csv,
 client,1007FA40,67,?MP3_Shutdown_guess@@YAXXZ,MP3_Shutdown_guess,UNKNOWN,guess:cl_dll/mp3.cpp,,,MATCHED,100,client_manual.csv,
 client,1007FA90,33,?IrrKlangFrame_guess@@YAXXZ,IrrKlangFrame_guess,UNKNOWN,guess:cl_dll/mp3.cpp,,,MATCHED,100,client_manual.csv,
+client,1007FAC0,15,?IrrKlangInitialize_guess@@YAXXZ,IrrKlangInitialize_guess,UNKNOWN,,,,MATCHED,100,client_manual.csv,found by tools/gaps.py (no Ghidra function before)
 client,1007FAD0,24,?IrrKlangIsPaused_guess@@YA_NXZ,IrrKlangIsPaused_guess,UNKNOWN,guess:cl_dll/mp3.cpp,,,MATCHED,100,client_manual.csv,
 client,1007FAF0,23,?IrrKlangPlay_guess@@YAXPBD@Z,IrrKlangPlay_guess,UNKNOWN,guess:cl_dll/mp3.cpp,,,MATCHED,100,client_manual.csv,
 client,1007FB10,63,?IrrKlangPlaySFX_guess@@YAXPBDH_NVVector@@@Z,IrrKlangPlaySFX_guess,UNKNOWN,guess:cl_dll/mp3.cpp,,,MATCHED,100,client_manual.csv,
@@ -2149,6 +2151,7 @@ client,1007FD50,1448,?PlayMP3@CMP3@@QAEHPBD@Z,CMP3::PlayMP3,UNKNOWN,guess:cl_dll
 client,10080300,269,?PlayMP3Path_guess@CMP3@@QAEHPBD@Z,CMP3::PlayMP3Path_guess,UNKNOWN,guess:cl_dll/mp3.cpp,,,MATCHED,100,client_manual.csv,
 client,10080410,752,?PlaySFX_guess@CMP3@@QAEXPBDH_NVVector@@@Z,CMP3::PlaySFX_guess,UNKNOWN,guess:cl_dll/mp3.cpp,,,TODO,95.16,client_manual.csv,
 client,10080710,84,?SetPaused_guess@CMP3@@QAEH_N@Z,CMP3::SetPaused_guess,UNKNOWN,guess:cl_dll/mp3.cpp,,,MATCHED,100,client_manual.csv,
+client,10080770,6,?Shutdown@CMP3@@QAEHXZ,CMP3::Shutdown,UNKNOWN,,,,MATCHED,100,client_manual.csv,found by tools/gaps.py (no Ghidra function before)
 client,10080780,194,?StopMP3@CMP3@@QAEHM@Z,CMP3::StopMP3,UNKNOWN,guess:cl_dll/mp3.cpp,,,MATCHED,100,client_manual.csv,
 client,10080850,41,?BEGIN_READ@@YAXPAXH@Z,BEGIN_READ,HLSDK,cl_dll/parsemsg.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__parsemsg.obj:score0,
 client,10080880,41,?READ_ANGLE@@YAMXZ,READ_ANGLE,UNKNOWN,cl_dll/parsemsg.cpp,,,MATCHED,100,,

@@ -113,7 +113,8 @@ def retail_bytes(dll, va, n):
     """Bytes of the retail 1.6a image at va (for validating constant names)."""
     import pefile
     paths = {"hl": "versions/1.6a/cryoffear/cl_dlls/hl.dll", "client": "versions/1.6a/cryoffear/cl_dlls/client.dll",
-             "opengl32": "versions/1.6a/opengl32.dll", "hw": "versions/1.6a/hw.dll"}
+             "opengl32": "versions/1.6a/opengl32.dll", "hw": "versions/1.6a/hw.dll",
+             "gameui": "versions/1.6a/cryoffear/cl_dlls/GameUI.dll", "launcher": "versions/1.6a/cof.exe"}
     if dll not in _IMAGE:
         pe = pefile.PE(os.path.join(ROOT, paths[dll]), fast_load=True)
         _IMAGE[dll] = (pe.OPTIONAL_HEADER.ImageBase, pe.get_memory_mapped_image())
@@ -158,10 +159,17 @@ def constant_ok(dll, va, name):
     value: check it against the retail bytes."""
     m = re.match(r"^\?\?_C@_0(.*)$", name)
     if m:
+        # ??_C@_0<length>@<hash>@<first 32 characters>@: the hash is the
+        # JamCRC (CRC-32 without the final inversion) of the whole string
+        # with its terminating NUL, so it checks the characters the visible
+        # prefix leaves out
+        import zlib
         length, rest = msvc_number(m.group(1))
-        prefix = string_prefix(rest[rest.index("@") + 1:])
+        crc, rest = msvc_number(rest)
+        prefix = string_prefix(rest)
         data = retail_bytes(dll, va, length)
-        return data.startswith(prefix[:length - 1]) and data[length - 1:length] == b"\0"
+        return (data.startswith(prefix[:length - 1]) and data[length - 1:length] == b"\0"
+                and b"\0" not in data[:length - 1] and (~zlib.crc32(data) & 0xFFFFFFFF) == crc)
     m = re.match(r"^__(?:real|xmm)@([0-9a-f]+)$", name)
     if not m:
         return True

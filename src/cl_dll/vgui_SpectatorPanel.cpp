@@ -68,7 +68,7 @@ void SpectatorPanel::ActionSignal(int cmd)
 												break;
 		
 
-		default : 	gEngfuncs.Con_DPrintf("Unknown SpectatorPanel ActionSingal %i.\n",cmd); break;
+		default : 	gEngfuncs.Con_DPrintf("Unknown SpectatorPanel ActionSignal %i.\n",cmd); break;
 	}
 
 }

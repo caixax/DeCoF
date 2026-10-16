@@ -184,10 +184,10 @@ int CSmokePuff::Draw(float time, float frametime)
 	if (frac > 1)
 		return 1; // delete object
 
-	HSPRITE spr = SPR_Load("sprites/smokeball.spr");
+	HSPRITE spr = SPR_Load("sprites/stmbal1.spr");
 	if (!spr)
 	{
-		gEngfuncs.Con_Printf("error: cant load sprite sprites/smokeball.spr\n");
+		gEngfuncs.Con_Printf("error: cant load sprite sprites/stmbal1.spr\n");
 		return 1;
 	}
 

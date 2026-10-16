@@ -17,7 +17,7 @@
 //=========================================================
 
 //LRC // buz :)
-#define GAME_NAME "Half-Life: Paranoia"
+#define GAME_NAME "Cry of Fear"
 
 //#include "weapons.h"
 //#include "items.h"

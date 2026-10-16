@@ -270,7 +270,7 @@ void CP345::Spawn( )
 	}
 	else
 	{
-		if ( pev->frags == -1 )
+		if ( pev->frags == -2 )
 			m_iClip = -666;
 		m_iDefaultAmmo = 8;
 	}
@@ -499,7 +499,7 @@ void CP345::PrimaryAttack( void )
 	if ( m_pPlayer->pev->flags & FL_DUCKING )
 		UTIL_ScreenShake( m_pPlayer->pev->origin, 4.0, 0.2, 0.15, 2.0 );
 	else
-		UTIL_ScreenShake( m_pPlayer->pev->origin, 5.0, 0.25, 0.15, 2.0 );
+		UTIL_ScreenShake( m_pPlayer->pev->origin, 5.0, 0.35, 0.15, 2.0 );
 
 	if ( m_bIronSights )
 	{
@@ -682,9 +682,9 @@ void CP345::ItemPostFrame( void )
 	{
 		if ( m_iSprintState && m_iNextSprintAnim < gpGlobals->time )
 		{
-			m_flNextPrimaryAttack = gpGlobals->time + 0.7;
-			m_flTimeWeaponIdle = gpGlobals->time + 0.3;
-			m_iNextSprintAnim = gpGlobals->time + 0.7;
+			m_flNextPrimaryAttack = gpGlobals->time + 0.33;
+			m_flTimeWeaponIdle = gpGlobals->time + 0.35;
+			m_iNextSprintAnim = gpGlobals->time + 0.33;
 			m_iSprintState = 0;
 
 			if ( m_iClip )

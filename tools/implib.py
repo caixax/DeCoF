@@ -50,7 +50,31 @@ def main():
                           "/out:" + out], env=msvc.env(), stdout=subprocess.DEVNULL)
     if rc != 0:
         sys.exit("lib.exe failed (%d)" % rc)
-    print("%s: %d exports -> %s" % (name, len(lines) - 2, out))
+    fixed = undecorate(out) if stdcall else 0
+    print("%s: %d exports -> %s%s" % (name, len(lines) - 2, out,
+                                      ", %d stdcall imports by undecorated name" % fixed if fixed else ""))
+
+
+def undecorate(lib):
+    """lib.exe gives a .def entry name@n the import name type NAME_NOPREFIX,
+    so the importer asks the DLL for "name@n". The DLL exports "name": set
+    the short import records of decorated names to NAME_UNDECORATE, which
+    makes the loader look up the name without the underscore and the @n."""
+    data = bytearray(open(lib, "rb").read())
+    pos, fixed = 8, 0  # after "!<arch>\n"
+    while pos + 60 <= len(data):
+        size = int(data[pos + 48:pos + 58].decode().strip())
+        body = pos + 60
+        if data[body:body + 4] == b"\0\0\xff\xff":
+            sym = data[body + 20:data.index(b"\0", body + 20)]
+            word = int.from_bytes(data[body + 18:body + 20], "little")
+            if re.match(rb"_[A-Za-z_][A-Za-z0-9_]*@[0-9]+$", bytes(sym)) and (word >> 2) & 7 != 3:
+                word = (word & ~(7 << 2)) | (3 << 2)
+                data[body + 18:body + 20] = word.to_bytes(2, "little")
+                fixed += 1
+        pos = body + size + (size & 1)
+    open(lib, "wb").write(bytes(data))
+    return fixed
 
 
 if __name__ == "__main__":

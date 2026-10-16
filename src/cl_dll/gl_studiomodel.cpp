@@ -528,17 +528,17 @@ void LoadSleeveTexture_guess( void )
 	case 3:
 		sprintf(texture, "models/costumes/hello_kitty/Hello_Kitty_Sleeve.tga");
 		break;
-	case 4:
-	case 7:
-	case 8:
-	case 9:
-		sprintf(texture, "models/costumes/awesome/Awesome_Sleeve.tga");
-		break;
 	case 5:
 		sprintf(texture, "models/costumes/camo/Camo_Sleeve.tga");
 		break;
 	case 6:
 		sprintf(texture, "models/costumes/hlc/HLC_Sleeve.tga");
+		break;
+	case 4:
+	case 7:
+	case 8:
+	case 9:
+		sprintf(texture, "models/costumes/awesome/Awesome_Sleeve.tga");
 		break;
 	case 10:
 		sprintf(texture, "models/costumes/sick_simon/Sick_Simon_Sleeve.tga");
