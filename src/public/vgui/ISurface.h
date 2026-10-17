@@ -90,7 +90,7 @@ public:
 	virtual void FlashWindow(VPANEL panel, bool state) = 0;
 	virtual void SetTitle(VPANEL panel, const wchar_t *title) = 0;
 	virtual void SetAsToolBar(VPANEL panel, bool state) = 0;
-	virtual void CreatePopup(VPANEL panel, bool minimised, bool showTaskbarIcon, bool disabled, bool mouseInput, bool kbInput) = 0;
+	virtual void CreatePopup(VPANEL panel, bool minimised, bool showTaskbarIcon = true, bool disabled = false, bool mouseInput = true , bool kbInput = true) = 0;
 	virtual void SwapBuffers(VPANEL panel) = 0;
 	virtual void Invalidate(VPANEL panel) = 0;
 	virtual void SetCursor(HCursor cursor) = 0;

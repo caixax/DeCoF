@@ -23,6 +23,7 @@ namespace vgui2
 
 // direct references to localized strings
 typedef unsigned long StringIndex_t;
+const unsigned long INVALID_STRING_INDEX = (unsigned long) -1;
 
 //-----------------------------------------------------------------------------
 // Purpose: Handles localization of text

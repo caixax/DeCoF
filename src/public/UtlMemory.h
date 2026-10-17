@@ -13,6 +13,16 @@
 #endif
 
 #include <stdlib.h>
+#include <new.h>
+
+//-----------------------------------------------------------------------------
+// Methods to invoke the constructor, copy constructor, and destructor
+//-----------------------------------------------------------------------------
+template <class T>
+inline void Construct( T* pMemory )
+{
+	new( pMemory ) T;
+}
 
 //-----------------------------------------------------------------------------
 // The CUtlMemory class:

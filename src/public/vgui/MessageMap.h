@@ -212,6 +212,35 @@ struct PanelMap_t
 	static vgui2::MessageMapItem_t m_MessageMap[]; \
 	virtual vgui2::PanelMap_t *GetPanelMap( void );
 
+#ifndef ARRAYSIZE
+#define ARRAYSIZE(p)		(sizeof(p)/sizeof(p[0]))
+#endif
+
+// could embed typeid() into here as well?
+#define IMPLEMENT_PANELMAP( derivedClass, baseClass ) \
+	vgui2::PanelMap_t derivedClass::m_PanelMap = { derivedClass::m_MessageMap, ARRAYSIZE(derivedClass::m_MessageMap), #derivedClass, &baseClass::m_PanelMap }; \
+	vgui2::PanelMap_t *derivedClass::GetPanelMap( void ) { return &m_PanelMap; }
+
+// no parameter
+#define MAP_MESSAGE( type, name, func )						{ name, (vgui2::MessageFunc_t)(&type::func), 0 }
+
+// one parameter
+#define MAP_MESSAGE_PARAMS( type, name, func )				{ name, (vgui2::MessageFunc_t)(&type::func), 1, vgui2::DATATYPE_KEYVALUES, NULL }
+#define MAP_MESSAGE_PTR( type, name, func, param1 )			{ name, (vgui2::MessageFunc_t)(&type::func), 1, vgui2::DATATYPE_PTR, param1 }
+#define MAP_MESSAGE_INT( type, name, func, param1 )			{ name, (vgui2::MessageFunc_t)(&type::func), 1, vgui2::DATATYPE_INT, param1 }
+#define MAP_MESSAGE_BOOL( type, name, func, param1 )		{ name, (vgui2::MessageFunc_t)(&type::func), 1, vgui2::DATATYPE_BOOL, param1 }
+#define MAP_MESSAGE_FLOAT( type, name, func, param1 )		{ name, (vgui2::MessageFunc_t)(&type::func), 1, vgui2::DATATYPE_FLOAT, param1 }
+#define MAP_MESSAGE_CONSTCHARPTR( type, name, func, param1)	{ name, (vgui2::MessageFunc_t)(&type::func), 1, vgui2::DATATYPE_CONSTCHARPTR, param1 }
+#define MAP_MESSAGE_CONSTWCHARPTR( type, name, func, param1)	{ name, (vgui2::MessageFunc_t)(&type::func), 1, vgui2::DATATYPE_CONSTWCHARPTR, param1 }
+
+// two parameters
+#define MAP_MESSAGE_INT_INT( type, name, func, param1, param2 ) { name, (vgui2::MessageFunc_t)&type::func, 2, vgui2::DATATYPE_INT, param1, vgui2::DATATYPE_INT, param2 }
+#define MAP_MESSAGE_PTR_INT( type, name, func, param1, param2 ) { name, (vgui2::MessageFunc_t)&type::func, 2, vgui2::DATATYPE_PTR, param1, vgui2::DATATYPE_INT, param2 }
+#define MAP_MESSAGE_INT_CONSTCHARPTR( type, name, func, param1, param2 ) { name, (vgui2::MessageFunc_t)&type::func, 2, vgui2::DATATYPE_INT, param1, vgui2::DATATYPE_CONSTCHARPTR, param2 }
+#define MAP_MESSAGE_PTR_CONSTCHARPTR( type, name, func, param1, param2 ) { name, (vgui2::MessageFunc_t)&type::func, 2, vgui2::DATATYPE_PTR, param1, vgui2::DATATYPE_CONSTCHARPTR, param2 }
+#define MAP_MESSAGE_PTR_CONSTWCHARPTR( type, name, func, param1, param2 ) { name, (vgui2::MessageFunc_t)&type::func, 2, vgui2::DATATYPE_PTR, param1, vgui2::DATATYPE_CONSTWCHARPTR, param2 }
+#define MAP_MESSAGE_CONSTCHARPTR_CONSTCHARPTR( type, name, func, param1, param2 ) { name, (vgui2::MessageFunc_t)&type::func, 2, vgui2::DATATYPE_CONSTCHARPTR, param1, vgui2::DATATYPE_CONSTCHARPTR, param2 }
+
 } // namespace vgui2
 
 #endif // MESSAGEMAP_H

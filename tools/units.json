@@ -2512,6 +2512,26 @@
           "name": "public/KeyValues",
           "source": "src/public/KeyValues.cpp",
           "functions_file": "tools/units/gameui_public_KeyValues.txt"
+        },
+        {
+          "name": "vgui2/controls/Panel",
+          "source": "src/vgui2/controls/Panel.cpp",
+          "functions_file": "tools/units/gameui_vgui2_controls_Panel.txt"
+        },
+        {
+          "name": "vgui2/controls/Label",
+          "source": "src/vgui2/controls/Label.cpp",
+          "functions_file": "tools/units/gameui_vgui2_controls_Label.txt"
+        },
+        {
+          "name": "vgui2/controls/Button",
+          "source": "src/vgui2/controls/Button.cpp",
+          "functions_file": "tools/units/gameui_vgui2_controls_Button.txt"
+        },
+        {
+          "name": "vgui2/controls/EditablePanel",
+          "source": "src/vgui2/controls/EditablePanel.cpp",
+          "functions_file": "tools/units/gameui_vgui2_controls_EditablePanel.txt"
         }
       ]
     }

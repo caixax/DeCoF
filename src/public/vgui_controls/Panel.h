@@ -147,11 +147,11 @@ public:
 	virtual Color GetFgColor();
 	virtual void SetCursor( HCursor cursor );
 	virtual HCursor GetCursor();
-	virtual void RequestFocus( int direction );
+	virtual void RequestFocus( int direction = 0 );
 	virtual bool HasFocus();
 	virtual void InvalidateLayout( bool layoutNow = false, bool reloadScheme = false );
-	virtual bool RequestFocusPrev( VPANEL panel );
-	virtual bool RequestFocusNext( VPANEL panel );
+	virtual bool RequestFocusPrev( VPANEL panel = NULL );
+	virtual bool RequestFocusNext( VPANEL panel = NULL );
 	virtual void SetTabPosition( int position );
 	virtual int GetTabPosition();
 	virtual void SetBorder( IBorder *border );
@@ -246,7 +246,7 @@ private:
 	MESSAGE_FUNC( InternalInvalidateLayout, "Invalidate" );
 	MESSAGE_FUNC( InternalMove, "Move" );
 	virtual void InternalFocusChanged( bool lost );
-	virtual void PaintTraverse( bool repaint, bool allowForce );
+	virtual void PaintTraverse( bool repaint, bool allowForce = true );
 	void Init( int x, int y, int wide, int tall );
 	void PreparePanelMap( PanelMap_t *panelMap );
 	void OnOldMessage( KeyValues *params, VPANEL ifromPanel );
