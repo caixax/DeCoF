@@ -2354,6 +2354,18 @@
           "includes": [
             "refs/bzip2-1.0.2-dl/bzip2-1.0.2"
           ]
+        },
+        {
+          "name": "public/KeyValues",
+          "source": "src/public/KeyValues.cpp",
+          "functions_file": "tools/units/hw_public_KeyValues.txt",
+          "includes": [
+            "src/gameui",
+            "src/public",
+            "src/common",
+            "src/engine",
+            "src/pm_shared"
+          ]
         }
       ]
     },

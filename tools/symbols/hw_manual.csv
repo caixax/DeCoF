@@ -1306,3 +1306,4 @@ va,name,kind,evidence
 01D346B0,_CL_PlayerDropped,func,"COM_ClearCustomizationList(&cl.players[n].customdata, true); called by CL_UpdateUserinfo when the userinfo or name is empty; hw.so DWARF CL_PlayerDropped (CL_PARSE.C line 181) right before CL_EntityNum (added by an agent)"
 02D7F580,_msg_buckets,data,int msg_buckets[64]: CL_DumpMessageLoad_f loops 02D7F580 + i*4 for i < 63 and reads 02D7F67C (element 63) as the user-message bucket
 02D7F6A0,_total_data,data,int total_data[64] after msg_buckets (CL_DumpMessageLoad_f)
+01D02130,??0Color@@QAE@HHHH@Z,func,"Color::Color(int,int,int,int) called by KeyValues::GetColor (the same code as GameUI 10002F20); Ghidra had an ATL COleDateTimeSpan signature name"
