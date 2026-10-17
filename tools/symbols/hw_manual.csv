@@ -1418,20 +1418,20 @@ va,name,kind,evidence
 01E08CF0,??A?$Dar@PAVRepaintSignal@vgui@@@vgui@@QAEPAVRepaintSignal@1@H@Z,func,export ??A?$Dar@PAVRepaintSignal@vgui@@@vgui@@QAEPAVRepaintSignal@1@H@Z
 01E055B0,??A?$Dar@PAVSurfaceBase@vgui@@@vgui@@QAEPAVSurfaceBase@1@H@Z,func,export ??A?$Dar@PAVSurfaceBase@vgui@@@vgui@@QAEPAVSurfaceBase@1@H@Z
 01E06F30,??A?$Dar@PAVTickSignal@vgui@@@vgui@@QAEPAVTickSignal@1@H@Z,func,export ??A?$Dar@PAVTickSignal@vgui@@@vgui@@QAEPAVTickSignal@1@H@Z
-01E8E168,??_7App@vgui@@6B@,func,export ??_7App@vgui@@6B@
-01E8E4F4,??_7Bitmap@vgui@@6B@,func,export ??_7Bitmap@vgui@@6B@
-01E8E55C,??_7BitmapTGA@vgui@@6B@,func,export ??_7BitmapTGA@vgui@@6B@
-01E8DF38,??_7Color@vgui@@6B@,func,export ??_7Color@vgui@@6B@
-01E8DF54,??_7Cursor@vgui@@6B@,func,export ??_7Cursor@vgui@@6B@
-01E8E46C,??_7FileInputStream@vgui@@6B@,func,export ??_7FileInputStream@vgui@@6B@
-01E8DF00,??_7Font@vgui@@6B@,func,export ??_7Font@vgui@@6B@
-01E8E678,??_7Frame@vgui@@6B@,func,export ??_7Frame@vgui@@6B@
-01E8E490,??_7Image@vgui@@6B@,func,export ??_7Image@vgui@@6B@
-01E8E248,??_7ImagePanel@vgui@@6B@,func,export ??_7ImagePanel@vgui@@6B@
-01E8E44C,??_7InputStream@vgui@@6B@,func,export ??_7InputStream@vgui@@6B@
-01E8DF68,??_7Panel@vgui@@6B@,func,export ??_7Panel@vgui@@6B@
-01E8DF1C,??_7Scheme@vgui@@6B@,func,export ??_7Scheme@vgui@@6B@
-01E8DE74,??_7SurfaceBase@vgui@@6B@,func,export ??_7SurfaceBase@vgui@@6B@
+01E8E168,??_7App@vgui@@6B@,data,export ??_7App@vgui@@6B@
+01E8E4F4,??_7Bitmap@vgui@@6B@,data,export ??_7Bitmap@vgui@@6B@
+01E8E55C,??_7BitmapTGA@vgui@@6B@,data,export ??_7BitmapTGA@vgui@@6B@
+01E8DF38,??_7Color@vgui@@6B@,data,export ??_7Color@vgui@@6B@
+01E8DF54,??_7Cursor@vgui@@6B@,data,export ??_7Cursor@vgui@@6B@
+01E8E46C,??_7FileInputStream@vgui@@6B@,data,export ??_7FileInputStream@vgui@@6B@
+01E8DF00,??_7Font@vgui@@6B@,data,export ??_7Font@vgui@@6B@
+01E8E678,??_7Frame@vgui@@6B@,data,export ??_7Frame@vgui@@6B@
+01E8E490,??_7Image@vgui@@6B@,data,export ??_7Image@vgui@@6B@
+01E8E248,??_7ImagePanel@vgui@@6B@,data,export ??_7ImagePanel@vgui@@6B@
+01E8E44C,??_7InputStream@vgui@@6B@,data,export ??_7InputStream@vgui@@6B@
+01E8DF68,??_7Panel@vgui@@6B@,data,export ??_7Panel@vgui@@6B@
+01E8DF1C,??_7Scheme@vgui@@6B@,data,export ??_7Scheme@vgui@@6B@
+01E8DE74,??_7SurfaceBase@vgui@@6B@,data,export ??_7SurfaceBase@vgui@@6B@
 01E04240,?addElement@?$Dar@D@vgui@@QAEXD@Z,func,export ?addElement@?$Dar@D@vgui@@QAEXD@Z
 01E04AC0,?addElement@?$Dar@H@vgui@@QAEXH@Z,func,export ?addElement@?$Dar@H@vgui@@QAEXH@Z
 01E04680,?addElement@?$Dar@PAD@vgui@@QAEXPAD@Z,func,export ?addElement@?$Dar@PAD@vgui@@QAEXPAD@Z
@@ -1987,13 +1987,13 @@ va,name,kind,evidence
 01D97396,_wglUseFontBitmapsW@16,func,export _wglUseFontBitmapsW@16
 01D973AA,_wglUseFontOutlinesA@32,func,export _wglUseFontOutlinesA@32
 01D973BE,_wglUseFontOutlinesW@32,func,export _wglUseFontOutlinesW@32
-027D6580,_qwglChoosePixelFormat,func,export qwglChoosePixelFormat
-027D64B4,_qwglCreateContext,func,export qwglCreateContext
-027D6ACC,_qwglDeleteContext,func,export qwglDeleteContext
-027D6440,_qwglGetCurrentContext,func,export qwglGetCurrentContext
-027D6924,_qwglGetCurrentDC,func,export qwglGetCurrentDC
-027D6BE4,_qwglMakeCurrent,func,export qwglMakeCurrent
-027D6574,_qwglSetPixelFormat,func,export qwglSetPixelFormat
+027D6580,_qwglChoosePixelFormat,data,export qwglChoosePixelFormat
+027D64B4,_qwglCreateContext,data,export qwglCreateContext
+027D6ACC,_qwglDeleteContext,data,export qwglDeleteContext
+027D6440,_qwglGetCurrentContext,data,export qwglGetCurrentContext
+027D6924,_qwglGetCurrentDC,data,export qwglGetCurrentDC
+027D6BE4,_qwglMakeCurrent,data,export qwglMakeCurrent
+027D6574,_qwglSetPixelFormat,data,export qwglSetPixelFormat
 01D7FFA0,_SV_GetPlayerHulls,func,"engine/host_cmd.c of the Linux hw.so DWARF (line 192), first function of the Windows object; called by Host_InitializeGameDLL before SV_CheckBlendingInterface, loops 4 hulls through gEntityInterface.pfnGetHullBounds into player_mins/player_maxs (added by an agent)"
 01D84BB4,_FileSize,func,"engine/host_cmd.c of the Linux hw.so DWARF (line 3213) in source order after LoadAdjacentEntities; returns 0 for a null handle, else FS_Size; called by DirectoryCopy (added by an agent)"
 01D84BCF,_FileCopy,func,engine/host_cmd.c of the Linux hw.so DWARF (line 3223): copies fileSize bytes in 1024 byte blocks with FS_Read and FS_Write; called by DirectoryCopy and DirectoryExtract (added by an agent)
@@ -2014,3 +2014,9 @@ va,name,kind,evidence
 01E70750,_strcpy,func,"C runtime, paired call site in matched sv_main.c functions"
 01E721E0,_strchr,func,"C runtime, paired call site in matched sv_main.c functions"
 01E71670,__chkstk,func,"C runtime stack probe, paired call site in matched sv_main.c functions"
+01E35C9D,?GetText@Tooltip@vgui2@@QAEPBDXZ,func,Ghidra signature name ~<>; every use in 100% functions pairs with our ?GetText@Tooltip@vgui2@@QAEPBDXZ (tools/fid_fix.py)
+01E28197,?GetControlsModuleName@vgui2@@YAPBDXZ,func,"returns the bss buffer at 024FC6BC (g_szControlsModuleName), so it is GetControlsModuleName, not Panel::GetPanelClassName (bytematch could not tell the two apart: same bytes with the relocation masked)"
+01E2EF30,??1?$CUtlDict@UPanelMessageMapDictionaryEntry@CPanelMessageMapDictionary@@H@@QAE@XZ,func,Ghidra signature name ??1CAtlBaseModule@ATL@@QAE@XZ; every use in 100% functions pairs with our ??1?$CUtlDict@UPanelMessageMapDictionaryEntry@CPanelMessageMapDictionary@@H@@QAE@XZ (tools/fid_fix.py)
+01E28BEC,?GetBounds@Panel@vgui2@@QAEXAAH000@Z,func,Ghidra signature name CSliderCtrl::FUN_01e28bec; every use in 100% functions pairs with our ?GetBounds@Panel@vgui2@@QAEXAAH000@Z (tools/fid_fix.py)
+01E28BBF,?SetBounds@Panel@vgui2@@QAEXHHHH@Z,func,Ghidra signature name CSliderCtrl::FUN_01e28bbf; every use in 100% functions pairs with our ?SetBounds@Panel@vgui2@@QAEXHHHH@Z (tools/fid_fix.py)
+01D4404B,_CL_AllocCustomTempEntity,func,"engine/cl_tent.c of the Linux hw.so DWARF, last function of the file after R_Explosion; sets FTENT_CLIENTCUSTOM (0x80000) and the callback, calls efx.CL_TempEntAllocHigh or efx.CL_TempEntAlloc by the high flag (added by an agent)"

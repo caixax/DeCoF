@@ -183,7 +183,10 @@ def main():
         u = paths.get(unit)
         if not u or not os.path.exists(os.path.join(ROOT, u["base_path"])):
             continue
-        ours_all[unit] = coff_functions(os.path.join(ROOT, u["base_path"]))
+        # VC6 names every object's dynamic initializers _$E1, _$E2...: the
+        # same name in many objects, which a symbol map can not hold
+        ours_all[unit] = {n: f for n, f in coff_functions(os.path.join(ROOT, u["base_path"])).items()
+                          if not n.lstrip("_").startswith("$E")}
         relocs_all[unit] = coff_relocs(os.path.join(ROOT, u["base_path"]))
     defined = set()
     for funcs in ours_all.values():

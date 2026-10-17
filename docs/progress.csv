@@ -29976,76 +29976,76 @@ hw,01E27F32,10,,,UNKNOWN,,,,TODO,,,
 hw,01E27F3C,10,,,UNKNOWN,,,,TODO,,,
 hw,01E27F46,10,,,UNKNOWN,,,,TODO,,,
 hw,01E27F50,10,,,UNKNOWN,,,,TODO,,,
-hw,01E27F5A,482,,vgui2::VGuiControls_Init,ENGINE,vgui2/controls/controls.cpp,,,TODO,,linux_symbols:string:0.685,
-hw,01E2813C,86,,,UNKNOWN,,,,TODO,,,
-hw,01E28192,5,,,UNKNOWN,,,,TODO,,,
-hw,01E28197,10,,,UNKNOWN,,,,TODO,,,
-hw,01E281B0,366,,,UNKNOWN,,,,TODO,,,
-hw,01E2831E,380,,,UNKNOWN,,,,TODO,,,
-hw,01E2849A,402,,,UNKNOWN,,,,TODO,,,
-hw,01E2862C,414,,,UNKNOWN,,,,TODO,,,
-hw,01E287CA,276,,,UNKNOWN,,,,TODO,,,
-hw,01E288DE,266,,,UNKNOWN,,,,TODO,,,
-hw,01E289E8,48,,,UNKNOWN,,,,TODO,,,
-hw,01E28A18,116,,,UNKNOWN,,,,TODO,,,
-hw,01E28A8C,33,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel7GetNameEv
-hw,01E28AAD,16,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel13GetModuleNameEv
-hw,01E28ABD,46,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel12GetClassNameEv
-hw,01E28AEB,53,,,UNKNOWN,,,,TODO,,,
-hw,01E28B20,53,,,UNKNOWN,,,,TODO,,,
-hw,01E28B55,53,,,UNKNOWN,,,,TODO,,,
-hw,01E28B8A,53,,,UNKNOWN,,,,TODO,,,
-hw,01E28BBF,45,,CSliderCtrl::SetRange,ENGINE,,,,TODO,,ghidra,
-hw,01E28BEC,45,,CSliderCtrl::SetRange,ENGINE,,,,TODO,,ghidra,
-hw,01E28C19,43,,,UNKNOWN,,,,TODO,,,
-hw,01E28C44,94,,,UNKNOWN,,,,TODO,,,
-hw,01E28CA2,141,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel10SetVisibleEb
-hw,01E28D2F,43,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel9IsVisibleEv
-hw,01E28D5A,134,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel10SetEnabledEb
-hw,01E28DE0,46,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel9IsEnabledEv
-hw,01E28E0E,43,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel7IsPopupEv
-hw,01E28E39,53,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel7RepaintEv
-hw,01E28E6E,85,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel5ThinkEv
-hw,01E28EC3,1123,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel13PaintTraverseEbb
-hw,01E29326,39,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel11PaintBorderEv
-hw,01E2934D,106,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel15PaintBackgroundEv
+hw,01E27F5A,482,?VGuiControls_Init@vgui2@@YA_NPBDPAP6APAVIBaseInterface@@0PAH@ZH@Z,vgui2::VGuiControls_Init,ENGINE,vgui2/controls/controls.cpp,,,MATCHED,100,linux_symbols:string:0.685,
+hw,01E2813C,86,?InitializeInterface_guess@vgui2@@YAPAXPBDPAP6APAVIBaseInterface@@0PAH@ZH@Z,vgui2::InitializeInterface_guess,UNKNOWN,vgui2/controls/controls.cpp,,,MATCHED,100,,
+hw,01E28192,5,?VGuiControls_Shutdown@vgui2@@YAXXZ,vgui2::VGuiControls_Shutdown,UNKNOWN,vgui2/controls/controls.cpp,,,MATCHED,100,,
+hw,01E28197,10,?GetControlsModuleName@vgui2@@YAPBDXZ,vgui2::GetControlsModuleName,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E281B0,366,??0Panel@vgui2@@QAE@XZ,vgui2::Panel::Panel,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,
+hw,01E2831E,380,??0Panel@vgui2@@QAE@PAV01@@Z,vgui2::Panel::Panel,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,
+hw,01E2849A,402,??0Panel@vgui2@@QAE@PAV01@PBD@Z,vgui2::Panel::Panel,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,
+hw,01E2862C,414,??0Panel@vgui2@@QAE@PAV01@PBDK@Z,vgui2::Panel::Panel,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,
+hw,01E287CA,276,?Init@Panel@vgui2@@AAEXHHHH@Z,vgui2::Panel::Init,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,
+hw,01E288DE,266,??1Panel@vgui2@@UAE@XZ,vgui2::Panel::~Panel,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,
+hw,01E289E8,48,?MakeReadyForUse@Panel@vgui2@@QAEXXZ,vgui2::Panel::MakeReadyForUse,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,
+hw,01E28A18,116,?SetName@Panel@vgui2@@QAEXPBD@Z,vgui2::Panel::SetName,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,
+hw,01E28A8C,33,?GetName@Panel@vgui2@@UAEPBDXZ,vgui2::Panel::GetName,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel7GetNameEv
+hw,01E28AAD,16,?GetModuleName@Panel@vgui2@@UAEPBDXZ,vgui2::Panel::GetModuleName,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,
+hw,01E28ABD,46,?GetClassName@Panel@vgui2@@UAEPBDXZ,vgui2::Panel::GetClassName,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel12GetClassNameEv
+hw,01E28AEB,53,?SetPos@Panel@vgui2@@QAEXHH@Z,vgui2::Panel::SetPos,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,
+hw,01E28B20,53,?GetPos@Panel@vgui2@@QAEXAAH0@Z,vgui2::Panel::GetPos,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,
+hw,01E28B55,53,?SetSize@Panel@vgui2@@QAEXHH@Z,vgui2::Panel::SetSize,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,
+hw,01E28B8A,53,?GetSize@Panel@vgui2@@QAEXAAH0@Z,vgui2::Panel::GetSize,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,
+hw,01E28BBF,45,?SetBounds@Panel@vgui2@@QAEXHHHH@Z,vgui2::Panel::SetBounds,ENGINE,,,,TODO,,hw_manual.csv,
+hw,01E28BEC,45,?GetBounds@Panel@vgui2@@QAEXAAH000@Z,vgui2::Panel::GetBounds,ENGINE,,,,TODO,,hw_manual.csv,
+hw,01E28C19,43,?GetVParent@Panel@vgui2@@UAEIXZ,vgui2::Panel::GetVParent,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,
+hw,01E28C44,94,?GetParent@Panel@vgui2@@UAEPAV12@XZ,vgui2::Panel::GetParent,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,
+hw,01E28CA2,141,?SetVisible@Panel@vgui2@@UAEX_N@Z,vgui2::Panel::SetVisible,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,
+hw,01E28D2F,43,?IsVisible@Panel@vgui2@@UAE_NXZ,vgui2::Panel::IsVisible,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel9IsVisibleEv
+hw,01E28D5A,134,?SetEnabled@Panel@vgui2@@UAEX_N@Z,vgui2::Panel::SetEnabled,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel10SetEnabledEb
+hw,01E28DE0,46,?IsEnabled@Panel@vgui2@@UAE_NXZ,vgui2::Panel::IsEnabled,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel9IsEnabledEv
+hw,01E28E0E,43,?IsPopup@Panel@vgui2@@UAE_NXZ,vgui2::Panel::IsPopup,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel7IsPopupEv
+hw,01E28E39,53,?Repaint@Panel@vgui2@@UAEXXZ,vgui2::Panel::Repaint,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel7RepaintEv
+hw,01E28E6E,85,?Think@Panel@vgui2@@EAEXXZ,vgui2::Panel::Think,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel5ThinkEv
+hw,01E28EC3,1123,?PaintTraverse@Panel@vgui2@@EAEX_N0@Z,vgui2::Panel::PaintTraverse,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel13PaintTraverseEbb
+hw,01E29326,39,?PaintBorder@Panel@vgui2@@UAEXXZ,vgui2::Panel::PaintBorder,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel11PaintBorderEv
+hw,01E2934D,106,?PaintBackground@Panel@vgui2@@UAEXXZ,vgui2::Panel::PaintBackground,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel15PaintBackgroundEv
 hw,01E293B7,11,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel5PaintEv
 hw,01E293C2,11,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel14PostChildPaintEv
-hw,01E293CD,195,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel17PaintBuildOverlayEv
-hw,01E29490,74,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel8IsOpaqueEv
-hw,01E294DA,62,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel9SetParentEPS0_
-hw,01E29518,429,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel9SetParentEj
+hw,01E293CD,195,?PaintBuildOverlay@Panel@vgui2@@UAEXXZ,vgui2::Panel::PaintBuildOverlay,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel17PaintBuildOverlayEv
+hw,01E29490,74,?IsOpaque@Panel@vgui2@@UAE_NXZ,vgui2::Panel::IsOpaque,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel8IsOpaqueEv
+hw,01E294DA,62,?SetParent@Panel@vgui2@@UAEXPAV12@@Z,vgui2::Panel::SetParent,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel9SetParentEPS0_
+hw,01E29518,429,?SetParent@Panel@vgui2@@UAEXI@Z,vgui2::Panel::SetParent,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel9SetParentEj
 hw,01E296C5,13,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel12OnChildAddedEj
-hw,01E296D2,31,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel13OnSizeChangedEii
-hw,01E296F1,49,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel7SetZPosEi
-hw,01E29722,101,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel11MoveToFrontEv
-hw,01E29787,59,,,UNKNOWN,,,,TODO,,,
-hw,01E297C2,164,,,UNKNOWN,,,,TODO,,,
-hw,01E29866,191,,,UNKNOWN,,,,TODO,,,
-hw,01E29925,102,,,UNKNOWN,,,,TODO,,,
-hw,01E2998B,22,,,UNKNOWN,,,,TODO,,,
-hw,01E299A1,17,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel15IsAutoDeleteSetEv
+hw,01E296D2,31,?OnSizeChanged@Panel@vgui2@@UAEXHH@Z,vgui2::Panel::OnSizeChanged,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel13OnSizeChangedEii
+hw,01E296F1,49,?SetZPos@Panel@vgui2@@QAEXH@Z,vgui2::Panel::SetZPos,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel7SetZPosEi
+hw,01E29722,101,?MoveToFront@Panel@vgui2@@UAEXXZ,vgui2::Panel::MoveToFront,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel11MoveToFrontEv
+hw,01E29787,59,?HasParent@Panel@vgui2@@UAE_NI@Z,vgui2::Panel::HasParent,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,
+hw,01E297C2,164,?FindChildByName@Panel@vgui2@@QAEPAV12@PBD_N@Z,vgui2::Panel::FindChildByName,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,
+hw,01E29866,191,?FindSiblingByName@Panel@vgui2@@QAEPAV12@PBD@Z,vgui2::Panel::FindSiblingByName,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,
+hw,01E29925,102,?CallParentFunction@Panel@vgui2@@QAEXPAVKeyValues@@@Z,vgui2::Panel::CallParentFunction,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,
+hw,01E2998B,22,?SetAutoDelete@Panel@vgui2@@UAEX_N@Z,vgui2::Panel::SetAutoDelete,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,
+hw,01E299A1,17,?IsAutoDeleteSet@Panel@vgui2@@UAE_NXZ,vgui2::Panel::IsAutoDeleteSet,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel15IsAutoDeleteSetEv
 hw,01E299B2,56,,PostNcDestroy,ENGINE,vgui2/controls/Panel.cpp,,,TODO,,ghidra,linux: _ZN5vgui25Panel11DeletePanelEv
-hw,01E299EA,103,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel9GetSchemeEv
-hw,01E29A51,96,,,UNKNOWN,,,,TODO,,,
-hw,01E29AB1,33,,,UNKNOWN,,,,TODO,,,
-hw,01E29AD2,15,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel9HasHotkeyEw
-hw,01E29AE1,177,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel19InternalCursorMovedEii
-hw,01E29B92,133,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel21InternalCursorEnteredEv
-hw,01E29C17,118,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel20InternalCursorExitedEv
-hw,01E29C8D,129,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel20InternalMousePressedEi
-hw,01E29D0E,129,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel26InternalMouseDoublePressedEi
-hw,01E29D8F,129,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel21InternalMouseReleasedEi
-hw,01E29E10,79,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel20InternalMouseWheeledEi
-hw,01E29E5F,123,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel22InternalKeyCodePressedEi
-hw,01E29EDA,173,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel20InternalKeyCodeTypedEi
-hw,01E29F87,149,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel16InternalKeyTypedEi
-hw,01E2A01C,123,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel23InternalKeyCodeReleasedEi
-hw,01E2A097,50,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel22InternalKeyFocusTickedEv
-hw,01E2A0C9,99,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel24InternalMouseFocusTickedEv
-hw,01E2A12C,289,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel17InternalSetCursorEv
+hw,01E299EA,103,?GetScheme@Panel@vgui2@@UAEKXZ,vgui2::Panel::GetScheme,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel9GetSchemeEv
+hw,01E29A51,96,?SetScheme@Panel@vgui2@@UAEXPBD@Z,vgui2::Panel::SetScheme,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,
+hw,01E29AB1,33,?SetScheme@Panel@vgui2@@UAEXK@Z,vgui2::Panel::SetScheme,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,
+hw,01E29AD2,15,?HasHotkey@Panel@vgui2@@UAEPAV12@G@Z,vgui2::Panel::HasHotkey,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel9HasHotkeyEw
+hw,01E29AE1,177,?InternalCursorMoved@Panel@vgui2@@EAEXHH@Z,vgui2::Panel::InternalCursorMoved,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel19InternalCursorMovedEii
+hw,01E29B92,133,?InternalCursorEntered@Panel@vgui2@@EAEXXZ,vgui2::Panel::InternalCursorEntered,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel21InternalCursorEnteredEv
+hw,01E29C17,118,?InternalCursorExited@Panel@vgui2@@EAEXXZ,vgui2::Panel::InternalCursorExited,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel20InternalCursorExitedEv
+hw,01E29C8D,129,?InternalMousePressed@Panel@vgui2@@EAEXH@Z,vgui2::Panel::InternalMousePressed,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel20InternalMousePressedEi
+hw,01E29D0E,129,?InternalMouseDoublePressed@Panel@vgui2@@EAEXH@Z,vgui2::Panel::InternalMouseDoublePressed,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel26InternalMouseDoublePressedEi
+hw,01E29D8F,129,?InternalMouseReleased@Panel@vgui2@@EAEXH@Z,vgui2::Panel::InternalMouseReleased,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel21InternalMouseReleasedEi
+hw,01E29E10,79,?InternalMouseWheeled@Panel@vgui2@@EAEXH@Z,vgui2::Panel::InternalMouseWheeled,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel20InternalMouseWheeledEi
+hw,01E29E5F,123,?InternalKeyCodePressed@Panel@vgui2@@EAEXH@Z,vgui2::Panel::InternalKeyCodePressed,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel22InternalKeyCodePressedEi
+hw,01E29EDA,173,?InternalKeyCodeTyped@Panel@vgui2@@EAEXH@Z,vgui2::Panel::InternalKeyCodeTyped,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel20InternalKeyCodeTypedEi
+hw,01E29F87,149,?InternalKeyTyped@Panel@vgui2@@EAEXH@Z,vgui2::Panel::InternalKeyTyped,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel16InternalKeyTypedEi
+hw,01E2A01C,123,?InternalKeyCodeReleased@Panel@vgui2@@EAEXH@Z,vgui2::Panel::InternalKeyCodeReleased,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel23InternalKeyCodeReleasedEi
+hw,01E2A097,50,?InternalKeyFocusTicked@Panel@vgui2@@EAEXXZ,vgui2::Panel::InternalKeyFocusTicked,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel22InternalKeyFocusTickedEv
+hw,01E2A0C9,99,?InternalMouseFocusTicked@Panel@vgui2@@EAEXXZ,vgui2::Panel::InternalMouseFocusTicked,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel24InternalMouseFocusTickedEv
+hw,01E2A12C,289,?InternalSetCursor@Panel@vgui2@@AAEXXZ,vgui2::Panel::InternalSetCursor,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel17InternalSetCursorEv
 hw,01E2A24D,11,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel7OnThinkEv
-hw,01E2A258,13,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel13OnCursorMovedEii
+hw,01E2A258,13,?OnCursorMoved@Panel@vgui2@@UAEXHH@Z,vgui2::Panel::OnCursorMoved,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel13OnCursorMovedEii
 hw,01E2A265,11,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel15OnCursorEnteredEv
 hw,01E2A270,11,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel14OnCursorExitedEv
 hw,01E2A27B,13,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel14OnMousePressedENS_9MouseCodeE
@@ -30053,131 +30053,131 @@ hw,01E2A288,13,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Pane
 hw,01E2A295,13,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel15OnMouseReleasedENS_9MouseCodeE
 hw,01E2A2A2,80,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel14OnMouseWheeledEi
 hw,01E2A2F2,80,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel16OnKeyCodePressedENS_7KeyCodeE
-hw,01E2A342,176,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel14OnKeyCodeTypedENS_7KeyCodeE
-hw,01E2A3F2,85,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel10OnKeyTypedEw
+hw,01E2A342,176,?OnKeyCodeTyped@Panel@vgui2@@UAEXW4KeyCode@2@@Z,vgui2::Panel::OnKeyCodeTyped,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel14OnKeyCodeTypedENS_7KeyCodeE
+hw,01E2A3F2,85,?OnKeyTyped@Panel@vgui2@@UAEXG@Z,vgui2::Panel::OnKeyTyped,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel10OnKeyTypedEw
 hw,01E2A447,80,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel17OnKeyCodeReleasedENS_7KeyCodeE
 hw,01E2A497,69,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel16OnKeyFocusTickedEv
 hw,01E2A4DC,69,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel18OnMouseFocusTickedEv
-hw,01E2A521,111,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel8IsWithinEii
-hw,01E2A590,640,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel16IsWithinTraverseEiib
-hw,01E2A810,79,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel13LocalToScreenERiS1_
-hw,01E2A85F,79,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel13ScreenToLocalERiS1_
-hw,01E2A8AE,83,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel19ParentLocalToScreenERiS1_
-hw,01E2A901,62,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel9MakePopupEbb
-hw,01E2A93F,22,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel9SetCursorEm
-hw,01E2A955,17,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel9GetCursorEv
-hw,01E2A966,53,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel14SetMinimumSizeEii
-hw,01E2A99B,53,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel14GetMinimumSizeERiS1_
-hw,01E2A9D0,13,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel19IsBuildModeEditableEv
-hw,01E2A9DD,57,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel20SetBuildModeEditableEb
-hw,01E2AA16,30,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel20IsBuildModeDeletableEv
-hw,01E2AA34,57,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel21SetBuildModeDeletableEb
-hw,01E2AA6D,51,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel17IsBuildModeActiveEv
-hw,01E2AAA0,61,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel11GetClipRectERiS1_S1_S1_
-hw,01E2AADD,43,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel13GetChildCountEv
-hw,01E2AB08,78,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel8GetChildEi
-hw,01E2AB56,85,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel16RequestFocusPrevEj
-hw,01E2ABAB,85,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel16RequestFocusNextEj
-hw,01E2AC00,40,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel12RequestFocusEi
-hw,01E2AC28,89,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel14OnRequestFocusEjj
-hw,01E2AC81,13,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel18GetCurrentKeyFocusEv
-hw,01E2AC8E,56,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel8HasFocusEv
-hw,01E2ACC6,22,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel14SetTabPositionEi
-hw,01E2ACDC,17,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel14GetTabPositionEv
+hw,01E2A521,111,?IsWithin@Panel@vgui2@@QAE_NHH@Z,vgui2::Panel::IsWithin,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel8IsWithinEii
+hw,01E2A590,640,?IsWithinTraverse@Panel@vgui2@@UAEIHH_N@Z,vgui2::Panel::IsWithinTraverse,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel16IsWithinTraverseEiib
+hw,01E2A810,79,?LocalToScreen@Panel@vgui2@@QAEXAAH0@Z,vgui2::Panel::LocalToScreen,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel13LocalToScreenERiS1_
+hw,01E2A85F,79,?ScreenToLocal@Panel@vgui2@@QAEXAAH0@Z,vgui2::Panel::ScreenToLocal,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel13ScreenToLocalERiS1_
+hw,01E2A8AE,83,?ParentLocalToScreen@Panel@vgui2@@QAEXAAH0@Z,vgui2::Panel::ParentLocalToScreen,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel19ParentLocalToScreenERiS1_
+hw,01E2A901,62,?MakePopup@Panel@vgui2@@QAEX_N0@Z,vgui2::Panel::MakePopup,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel9MakePopupEbb
+hw,01E2A93F,22,?SetCursor@Panel@vgui2@@UAEXK@Z,vgui2::Panel::SetCursor,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel9SetCursorEm
+hw,01E2A955,17,?GetCursor@Panel@vgui2@@UAEKXZ,vgui2::Panel::GetCursor,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel9GetCursorEv
+hw,01E2A966,53,?SetMinimumSize@Panel@vgui2@@QAEXHH@Z,vgui2::Panel::SetMinimumSize,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel14SetMinimumSizeEii
+hw,01E2A99B,53,?GetMinimumSize@Panel@vgui2@@QAEXAAH0@Z,vgui2::Panel::GetMinimumSize,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel14GetMinimumSizeERiS1_
+hw,01E2A9D0,13,?IsBuildModeEditable@Panel@vgui2@@QAE_NXZ,vgui2::Panel::IsBuildModeEditable,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel19IsBuildModeEditableEv
+hw,01E2A9DD,57,?SetBuildModeEditable@Panel@vgui2@@QAEX_N@Z,vgui2::Panel::SetBuildModeEditable,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel20SetBuildModeEditableEb
+hw,01E2AA16,30,?IsBuildModeDeletable@Panel@vgui2@@QAE_NXZ,vgui2::Panel::IsBuildModeDeletable,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel20IsBuildModeDeletableEv
+hw,01E2AA34,57,?SetBuildModeDeletable@Panel@vgui2@@QAEX_N@Z,vgui2::Panel::SetBuildModeDeletable,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel21SetBuildModeDeletableEb
+hw,01E2AA6D,51,?IsBuildModeActive@Panel@vgui2@@QAE_NXZ,vgui2::Panel::IsBuildModeActive,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel17IsBuildModeActiveEv
+hw,01E2AAA0,61,?GetClipRect@Panel@vgui2@@UAEXAAH000@Z,vgui2::Panel::GetClipRect,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel11GetClipRectERiS1_S1_S1_
+hw,01E2AADD,43,?GetChildCount@Panel@vgui2@@QAEHXZ,vgui2::Panel::GetChildCount,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel13GetChildCountEv
+hw,01E2AB08,78,?GetChild@Panel@vgui2@@QAEPAV12@H@Z,vgui2::Panel::GetChild,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,
+hw,01E2AB56,85,?RequestFocusPrev@Panel@vgui2@@UAE_NI@Z,vgui2::Panel::RequestFocusPrev,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel16RequestFocusPrevEj
+hw,01E2ABAB,85,?RequestFocusNext@Panel@vgui2@@UAE_NI@Z,vgui2::Panel::RequestFocusNext,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel16RequestFocusNextEj
+hw,01E2AC00,40,?RequestFocus@Panel@vgui2@@UAEXH@Z,vgui2::Panel::RequestFocus,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel12RequestFocusEi
+hw,01E2AC28,89,?OnRequestFocus@Panel@vgui2@@MAEXII@Z,vgui2::Panel::OnRequestFocus,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel14OnRequestFocusEjj
+hw,01E2AC81,13,?GetCurrentKeyFocus@Panel@vgui2@@UAEIXZ,vgui2::Panel::GetCurrentKeyFocus,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel18GetCurrentKeyFocusEv
+hw,01E2AC8E,56,?HasFocus@Panel@vgui2@@UAE_NXZ,vgui2::Panel::HasFocus,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel8HasFocusEv
+hw,01E2ACC6,22,?SetTabPosition@Panel@vgui2@@UAEXH@Z,vgui2::Panel::SetTabPosition,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel14SetTabPositionEi
+hw,01E2ACDC,17,?GetTabPosition@Panel@vgui2@@UAEHXZ,vgui2::Panel::GetTabPosition,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel14GetTabPositionEv
 hw,01E2ACED,13,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel20InternalFocusChangedEb
-hw,01E2ACFA,31,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel18OnMouseCaptureLostEv
-hw,01E2AD19,87,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel21AddActionSignalTargetEPS0_
-hw,01E2AD70,80,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel21AddActionSignalTargetEj
-hw,01E2ADC0,57,,,UNKNOWN,,,,TODO,,,
-hw,01E2ADF9,266,,,UNKNOWN,,,,TODO,,,
-hw,01E2AF03,143,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel9SetBorderEPNS_7IBorderE
-hw,01E2AF92,17,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel9GetBorderEv
-hw,01E2AFA3,22,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel21SetPaintBorderEnabledEb
-hw,01E2AFB9,22,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel25SetPaintBackgroundEnabledEb
-hw,01E2AFCF,22,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel15SetPaintEnabledEb
-hw,01E2AFE5,22,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel24SetPostChildPaintEnabledEb
-hw,01E2AFFB,61,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel8GetInsetERiS1_S1_S1_
-hw,01E2B038,109,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel12GetPaintSizeERiS1_
-hw,01E2B0A5,54,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel7GetWideEv
-hw,01E2B0DB,58,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel7SetWideEi
-hw,01E2B115,54,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel7GetTallEv
-hw,01E2B14B,58,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel7SetTallEi
-hw,01E2B185,43,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel13SetBuildGroupEPNS_10BuildGroupE
-hw,01E2B1B0,41,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel19IsBuildGroupEnabledEv
-hw,01E2B1D9,22,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel10SetBgColorE5Color
-hw,01E2B1EF,22,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel10SetFgColorE5Color
-hw,01E2B205,27,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel10GetBgColorEv
-hw,01E2B220,27,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel10GetFgColorEv
-hw,01E2B23B,46,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel21InternalPerformLayoutEv
+hw,01E2ACFA,31,?OnMouseCaptureLost@Panel@vgui2@@UAEXXZ,vgui2::Panel::OnMouseCaptureLost,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel18OnMouseCaptureLostEv
+hw,01E2AD19,87,?AddActionSignalTarget@Panel@vgui2@@UAEXPAV12@@Z,vgui2::Panel::AddActionSignalTarget,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel21AddActionSignalTargetEPS0_
+hw,01E2AD70,80,?AddActionSignalTarget@Panel@vgui2@@UAEXI@Z,vgui2::Panel::AddActionSignalTarget,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel21AddActionSignalTargetEj
+hw,01E2ADC0,57,?RemoveActionSignalTarget@Panel@vgui2@@UAEXPAV12@@Z,vgui2::Panel::RemoveActionSignalTarget,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,
+hw,01E2ADF9,266,?PostActionSignal@Panel@vgui2@@UAEXPAVKeyValues@@@Z,vgui2::Panel::PostActionSignal,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,
+hw,01E2AF03,143,?SetBorder@Panel@vgui2@@UAEXPAVIBorder@2@@Z,vgui2::Panel::SetBorder,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel9SetBorderEPNS_7IBorderE
+hw,01E2AF92,17,?GetBorder@Panel@vgui2@@UAEPAVIBorder@2@XZ,vgui2::Panel::GetBorder,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel9GetBorderEv
+hw,01E2AFA3,22,?SetPaintBorderEnabled@Panel@vgui2@@UAEX_N@Z,vgui2::Panel::SetPaintBorderEnabled,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel21SetPaintBorderEnabledEb
+hw,01E2AFB9,22,?SetPaintBackgroundEnabled@Panel@vgui2@@UAEX_N@Z,vgui2::Panel::SetPaintBackgroundEnabled,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel25SetPaintBackgroundEnabledEb
+hw,01E2AFCF,22,?SetPaintEnabled@Panel@vgui2@@UAEX_N@Z,vgui2::Panel::SetPaintEnabled,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel15SetPaintEnabledEb
+hw,01E2AFE5,22,?SetPostChildPaintEnabled@Panel@vgui2@@UAEX_N@Z,vgui2::Panel::SetPostChildPaintEnabled,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel24SetPostChildPaintEnabledEb
+hw,01E2AFFB,61,?GetInset@Panel@vgui2@@UAEXAAH000@Z,vgui2::Panel::GetInset,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel8GetInsetERiS1_S1_S1_
+hw,01E2B038,109,?GetPaintSize@Panel@vgui2@@UAEXAAH0@Z,vgui2::Panel::GetPaintSize,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel12GetPaintSizeERiS1_
+hw,01E2B0A5,54,?GetWide@Panel@vgui2@@QAEHXZ,vgui2::Panel::GetWide,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel7GetWideEv
+hw,01E2B0DB,58,?SetWide@Panel@vgui2@@QAEXH@Z,vgui2::Panel::SetWide,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel7SetWideEi
+hw,01E2B115,54,?GetTall@Panel@vgui2@@QAEHXZ,vgui2::Panel::GetTall,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel7GetTallEv
+hw,01E2B14B,58,?SetTall@Panel@vgui2@@QAEXH@Z,vgui2::Panel::SetTall,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel7SetTallEi
+hw,01E2B185,43,?SetBuildGroup@Panel@vgui2@@UAEXPAVBuildGroup@2@@Z,vgui2::Panel::SetBuildGroup,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel13SetBuildGroupEPNS_10BuildGroupE
+hw,01E2B1B0,41,?IsBuildGroupEnabled@Panel@vgui2@@UAE_NXZ,vgui2::Panel::IsBuildGroupEnabled,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel19IsBuildGroupEnabledEv
+hw,01E2B1D9,22,?SetBgColor@Panel@vgui2@@UAEXVColor@@@Z,vgui2::Panel::SetBgColor,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel10SetBgColorE5Color
+hw,01E2B1EF,22,?SetFgColor@Panel@vgui2@@UAEXVColor@@@Z,vgui2::Panel::SetFgColor,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel10SetFgColorE5Color
+hw,01E2B205,27,?GetBgColor@Panel@vgui2@@UAE?AVColor@@XZ,vgui2::Panel::GetBgColor,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel10GetBgColorEv
+hw,01E2B220,27,?GetFgColor@Panel@vgui2@@UAE?AVColor@@XZ,vgui2::Panel::GetFgColor,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel10GetFgColorEv
+hw,01E2B23B,46,?InternalPerformLayout@Panel@vgui2@@AAEXXZ,vgui2::Panel::InternalPerformLayout,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel21InternalPerformLayoutEv
 hw,01E2B269,11,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel13PerformLayoutEv
-hw,01E2B274,173,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel16InvalidateLayoutEbb
-hw,01E2B321,42,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel12IsCursorNoneEv
-hw,01E2B34B,56,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel12IsCursorOverEv
+hw,01E2B274,173,?InvalidateLayout@Panel@vgui2@@UAEX_N0@Z,vgui2::Panel::InvalidateLayout,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel16InvalidateLayoutEbb
+hw,01E2B321,42,?IsCursorNone@Panel@vgui2@@UAE_NXZ,vgui2::Panel::IsCursorNone,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel12IsCursorNoneEv
+hw,01E2B34B,56,?IsCursorOver@Panel@vgui2@@UAE_NXZ,vgui2::Panel::IsCursorOver,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel12IsCursorOverEv
 hw,01E2B383,13,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel9OnCommandEPKc
 hw,01E2B390,22,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel10OnSetFocusEv
 hw,01E2B3A6,22,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel11OnKillFocusEv
-hw,01E2B3BC,144,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel15MarkForDeletionEv
-hw,01E2B44C,17,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel15IsLayoutInvalidEv
-hw,01E2B45D,22,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel12SetPinCornerENS0_11PinCorner_eE
-hw,01E2B473,17,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel12GetPinCornerEv
-hw,01E2B484,22,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel13SetAutoResizeENS0_12AutoResize_eE
-hw,01E2B49A,17,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel13GetAutoResizeEv
-hw,01E2B4AB,154,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel19ApplySchemeSettingsEPNS_7ISchemeE
-hw,01E2B545,83,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel26PerformApplySchemeSettingsEv
-hw,01E2B598,1190,,vgui2::Panel::ApplySettings,ENGINE,vgui2/controls/Panel.cpp,,,TODO,,linux_symbols:string:0.6,
-hw,01E2BA3E,1069,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel11GetSettingsEP9KeyValues
-hw,01E2BE6B,75,,,UNKNOWN,guess:vgui2/controls/Panel.cpp,,,TODO,,,
-hw,01E2BEB6,48,,,UNKNOWN,guess:vgui2/controls/Panel.cpp,,,TODO,,,
-hw,01E2BEE6,16,,vgui2::Panel::GetDescription,ENGINE,vgui2/controls/Panel.cpp,,,TODO,,linux_symbols:string:0.75,
+hw,01E2B3BC,144,?MarkForDeletion@Panel@vgui2@@UAEXXZ,vgui2::Panel::MarkForDeletion,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel15MarkForDeletionEv
+hw,01E2B44C,17,?IsLayoutInvalid@Panel@vgui2@@UAE_NXZ,vgui2::Panel::IsLayoutInvalid,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel15IsLayoutInvalidEv
+hw,01E2B45D,22,?SetPinCorner@Panel@vgui2@@QAEXW4PinCorner_e@12@@Z,vgui2::Panel::SetPinCorner,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel12SetPinCornerENS0_11PinCorner_eE
+hw,01E2B473,17,?GetPinCorner@Panel@vgui2@@QAE?AW4PinCorner_e@12@XZ,vgui2::Panel::GetPinCorner,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel12GetPinCornerEv
+hw,01E2B484,22,?SetAutoResize@Panel@vgui2@@QAEXW4AutoResize_e@12@@Z,vgui2::Panel::SetAutoResize,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel13SetAutoResizeENS0_12AutoResize_eE
+hw,01E2B49A,17,?GetAutoResize@Panel@vgui2@@QAE?AW4AutoResize_e@12@XZ,vgui2::Panel::GetAutoResize,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel13GetAutoResizeEv
+hw,01E2B4AB,154,?ApplySchemeSettings@Panel@vgui2@@UAEXPAVIScheme@2@@Z,vgui2::Panel::ApplySchemeSettings,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel19ApplySchemeSettingsEPNS_7ISchemeE
+hw,01E2B545,83,?PerformApplySchemeSettings@Panel@vgui2@@EAEXXZ,vgui2::Panel::PerformApplySchemeSettings,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel26PerformApplySchemeSettingsEv
+hw,01E2B598,1190,?ApplySettings@Panel@vgui2@@UAEXPAVKeyValues@@@Z,vgui2::Panel::ApplySettings,ENGINE,vgui2/controls/Panel.cpp,,,MATCHED,100,linux_symbols:string:0.6,
+hw,01E2BA3E,1069,?GetSettings@Panel@vgui2@@UAEXPAVKeyValues@@@Z,vgui2::Panel::GetSettings,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,
+hw,01E2BE6B,75,?GetSchemeColor@Panel@vgui2@@UAE?AVColor@@PBDPAVIScheme@2@@Z,vgui2::Panel::GetSchemeColor,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,
+hw,01E2BEB6,48,?GetSchemeColor@Panel@vgui2@@UAE?AVColor@@PBDV3@PAVIScheme@2@@Z,vgui2::Panel::GetSchemeColor,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,
+hw,01E2BEE6,16,?GetDescription@Panel@vgui2@@UAEPBDXZ,vgui2::Panel::GetDescription,ENGINE,vgui2/controls/Panel.cpp,,,MATCHED,100,linux_symbols:string:0.75,
 hw,01E2BEF6,13,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel23ApplyUserConfigSettingsEP9KeyValues
 hw,01E2BF03,13,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel21GetUserConfigSettingsEP9KeyValues
-hw,01E2BF10,13,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel21HasUserConfigSettingsEv
-hw,01E2BF1D,29,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel24InternalInvalidateLayoutEv
+hw,01E2BF10,13,?HasUserConfigSettings@Panel@vgui2@@UAE_NXZ,vgui2::Panel::HasUserConfigSettings,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel21HasUserConfigSettingsEv
+hw,01E2BF1D,29,?InternalInvalidateLayout@Panel@vgui2@@EAEXXZ,vgui2::Panel::InternalInvalidateLayout,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel24InternalInvalidateLayoutEv
 hw,01E2BF3A,11,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel6OnMoveEv
-hw,01E2BF45,89,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel12InternalMoveEv
+hw,01E2BF45,89,?InternalMove@Panel@vgui2@@EAEXXZ,vgui2::Panel::InternalMove,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel12InternalMoveEv
 hw,01E2BF9E,11,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel6OnTickEv
-hw,01E2BFA9,26,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel14QueryInterfaceENS_12EInterfaceIDE
+hw,01E2BFA9,26,?QueryInterface@Panel@vgui2@@MAEPAXW4EInterfaceID@2@@Z,vgui2::Panel::QueryInterface,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel14QueryInterfaceENS_12EInterfaceIDE
 hw,01E2BFC3,10,,,UNKNOWN,guess:vgui2/controls/Panel.cpp,,,TODO,,,
 hw,01E2BFCD,134,,,UNKNOWN,guess:vgui2/controls/Panel.cpp,,,TODO,,,
-hw,01E2C053,16,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel11GetPanelMapEv
-hw,01E2C063,269,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _Z22PreparePanelMessageMapPN5vgui215PanelMessageMapE
-hw,01E2C170,1874,,vgui2::Panel::OnMessage,ENGINE,vgui2/controls/Panel.cpp,,,TODO,,linux_symbols:caller:0.833,
-hw,01E2C8E2,2404,,vgui2::Panel::OnOldMessage,ENGINE,vgui2/controls/Panel.cpp,,,TODO,,linux_symbols:string:0.753,
-hw,01E2D266,57,,,UNKNOWN,guess:vgui2/controls/Panel.cpp,,,TODO,,,
-hw,01E2D29F,64,,,UNKNOWN,guess:vgui2/controls/Panel.cpp,,,TODO,,,
-hw,01E2D2DF,57,,,UNKNOWN,guess:vgui2/controls/Panel.cpp,,,TODO,,,
-hw,01E2D318,98,,,UNKNOWN,guess:vgui2/controls/Panel.cpp,,,TODO,,,
-hw,01E2D37A,78,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel11RequestInfoEP9KeyValues
-hw,01E2D3C8,15,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel7SetInfoEP9KeyValues
-hw,01E2D3D7,292,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel15PreparePanelMapEPNS_10PanelMap_tE
+hw,01E2C053,16,?GetPanelMap@Panel@vgui2@@UAEPAUPanelMap_t@2@XZ,vgui2::Panel::GetPanelMap,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel11GetPanelMapEv
+hw,01E2C063,269,?PreparePanelMessageMap@@YAXPAUPanelMessageMap@vgui2@@@Z,PreparePanelMessageMap,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _Z22PreparePanelMessageMapPN5vgui215PanelMessageMapE
+hw,01E2C170,1874,?OnMessage@Panel@vgui2@@UAEXPBVKeyValues@@I@Z,vgui2::Panel::OnMessage,ENGINE,vgui2/controls/Panel.cpp,,,MATCHED,100,linux_symbols:caller:0.833,
+hw,01E2C8E2,2404,?OnOldMessage@Panel@vgui2@@AAEXPAVKeyValues@@I@Z,vgui2::Panel::OnOldMessage,ENGINE,vgui2/controls/Panel.cpp,,,MATCHED,100,linux_symbols:string:0.753,
+hw,01E2D266,57,?RequestInfoFromChild@Panel@vgui2@@UAE_NPBDPAVKeyValues@@@Z,vgui2::Panel::RequestInfoFromChild,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,
+hw,01E2D29F,64,?PostMessage@Panel@vgui2@@UAEXPAV12@PAVKeyValues@@M@Z,vgui2::Panel::PostMessage,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,
+hw,01E2D2DF,57,?PostMessage@Panel@vgui2@@UAEXIPAVKeyValues@@M@Z,vgui2::Panel::PostMessage,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,
+hw,01E2D318,98,?PostMessageToChild@Panel@vgui2@@UAEXPBDPAVKeyValues@@@Z,vgui2::Panel::PostMessageToChild,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,
+hw,01E2D37A,78,?RequestInfo@Panel@vgui2@@UAE_NPAVKeyValues@@@Z,vgui2::Panel::RequestInfo,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel11RequestInfoEP9KeyValues
+hw,01E2D3C8,15,?SetInfo@Panel@vgui2@@UAE_NPAVKeyValues@@@Z,vgui2::Panel::SetInfo,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel7SetInfoEP9KeyValues
+hw,01E2D3D7,292,?PreparePanelMap@Panel@vgui2@@AAEXPAUPanelMap_t@2@@Z,vgui2::Panel::PreparePanelMap,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel15PreparePanelMapEPNS_10PanelMap_tE
 hw,01E2D4FB,56,,PostNcDestroy,ENGINE,vgui2/controls/Panel.cpp,,,TODO,,ghidra,linux: _ZN5vgui25Panel8OnDeleteEv
-hw,01E2D533,97,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui27PHandle3GetEv
-hw,01E2D594,70,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui27PHandle3SetEPNS_5PanelE
-hw,01E2D5DA,50,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui212VPanelHandle3GetEv
-hw,01E2D60C,63,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui212VPanelHandle3SetEj
-hw,01E2D64B,82,,vgui2::Panel::GetTooltip,ENGINE,vgui2/controls/Panel.cpp,,,TODO,,linux_symbols:caller:0.667,
-hw,01E2D69D,136,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel15SetProportionalEb
-hw,01E2D725,115,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel23SetKeyBoardInputEnabledEb
-hw,01E2D798,74,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel20SetMouseInputEnabledEb
-hw,01E2D7E2,46,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel22IsKeyBoardInputEnabledEv
-hw,01E2D810,46,,,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,linux: _ZN5vgui25Panel19IsMouseInputEnabledEv
-hw,01E2D83E,47,,,UNKNOWN,,,,TODO,,,
-hw,01E2D86D,67,,,UNKNOWN,,,,TODO,,,
-hw,01E2D8B0,115,,,UNKNOWN,,,,TODO,,,
-hw,01E2D923,62,,,UNKNOWN,,,,TODO,,,
+hw,01E2D533,97,?Get@PHandle@vgui2@@QAEPAVPanel@2@XZ,vgui2::PHandle::Get,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,
+hw,01E2D594,70,?Set@PHandle@vgui2@@QAEPAVPanel@2@PAV32@@Z,vgui2::PHandle::Set,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui27PHandle3SetEPNS_5PanelE
+hw,01E2D5DA,50,?Get@VPanelHandle@vgui2@@QAEIXZ,vgui2::VPanelHandle::Get,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui212VPanelHandle3GetEv
+hw,01E2D60C,63,?Set@VPanelHandle@vgui2@@QAEII@Z,vgui2::VPanelHandle::Set,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui212VPanelHandle3SetEj
+hw,01E2D64B,82,?GetTooltip@Panel@vgui2@@QAEPAVTooltip@2@XZ,vgui2::Panel::GetTooltip,ENGINE,vgui2/controls/Panel.cpp,,,MATCHED,100,linux_symbols:caller:0.667,
+hw,01E2D69D,136,?SetProportional@Panel@vgui2@@UAEX_N@Z,vgui2::Panel::SetProportional,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel15SetProportionalEb
+hw,01E2D725,115,?SetKeyBoardInputEnabled@Panel@vgui2@@UAEX_N@Z,vgui2::Panel::SetKeyBoardInputEnabled,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel23SetKeyBoardInputEnabledEb
+hw,01E2D798,74,?SetMouseInputEnabled@Panel@vgui2@@UAEX_N@Z,vgui2::Panel::SetMouseInputEnabled,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel20SetMouseInputEnabledEb
+hw,01E2D7E2,46,?IsKeyBoardInputEnabled@Panel@vgui2@@UAE_NXZ,vgui2::Panel::IsKeyBoardInputEnabled,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel22IsKeyBoardInputEnabledEv
+hw,01E2D810,46,?IsMouseInputEnabled@Panel@vgui2@@UAE_NXZ,vgui2::Panel::IsMouseInputEnabled,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel19IsMouseInputEnabledEv
+hw,01E2D83E,47,?StripNamespace@CPanelMessageMapDictionary@@AAEPBDPBD@Z,CPanelMessageMapDictionary::StripNamespace,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,
+hw,01E2D86D,67,?FindPanelMessageMap@CPanelMessageMapDictionary@@QAEPAUPanelMessageMap@vgui2@@PBD@Z,CPanelMessageMapDictionary::FindPanelMessageMap,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,
+hw,01E2D8B0,115,?FindOrAddPanelMessageMap@CPanelMessageMapDictionary@@QAEPAUPanelMessageMap@vgui2@@PBD@Z,CPanelMessageMapDictionary::FindOrAddPanelMessageMap,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,
+hw,01E2D923,62,?GetPanelMessageMapDictionary@@YAAAVCPanelMessageMapDictionary@@XZ,GetPanelMessageMapDictionary,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,
 hw,01E2D961,15,,,UNKNOWN,,,,TODO,,,
 hw,01E2D970,21,,,UNKNOWN,,,,TODO,,,
 hw,01E2D985,21,,,UNKNOWN,,,,TODO,,,
-hw,01E2D9A0,46,,,UNKNOWN,,,,TODO,,,
-hw,01E2D9D0,23,,,UNKNOWN,,,,TODO,,,
+hw,01E2D9A0,46,??_GPanel@vgui2@@UAEPAXI@Z,destructor',UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,
+hw,01E2D9D0,23,??0IClientPanel@vgui2@@QAE@XZ,vgui2::IClientPanel::IClientPanel,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,
 hw,01E2D9F0,19,,,UNKNOWN,,,,TODO,,,
-hw,01E2DA10,102,,,UNKNOWN,,,,TODO,,,
-hw,01E2DA80,7,,,UNKNOWN,,,,TODO,,,
+hw,01E2DA10,102,?ChainToMap@Panel@vgui2@@SAXXZ,vgui2::Panel::ChainToMap,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,
+hw,01E2DA80,7,?GetPanelBaseClassName@Panel@vgui2@@SAPBDXZ,vgui2::Panel::GetPanelBaseClassName,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,
 hw,01E2DA90,19,,,UNKNOWN,,,,TODO,,,
 hw,01E2DAB0,107,,,UNKNOWN,,,,TODO,,,
-hw,01E2DB20,120,,,UNKNOWN,,,,TODO,,,
+hw,01E2DB20,120,?AddToMap@Panel@vgui2@@SAXPBDP812@AEXXZHH0H0@Z,vgui2::Panel::AddToMap,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,
 hw,01E2DBA0,19,,,UNKNOWN,,,,TODO,,,
-hw,01E2DBC0,110,,,UNKNOWN,,,,TODO,,,
+hw,01E2DBC0,110,?InitVar@PanelMessageFunc_OnCommand@Panel@vgui2@@SAXXZ,vgui2::Panel::PanelMessageFunc_OnCommand::InitVar,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,
 hw,01E2DC30,19,,,UNKNOWN,,,,TODO,,,
 hw,01E2DC50,107,,,UNKNOWN,,,,TODO,,,
 hw,01E2DCC0,19,,,UNKNOWN,,,,TODO,,,
@@ -30224,8 +30224,8 @@ hw,01E2E830,19,,,UNKNOWN,,,,TODO,,,
 hw,01E2E850,107,,,UNKNOWN,,,,TODO,,,
 hw,01E2E8C0,19,,,UNKNOWN,,,,TODO,,,
 hw,01E2E8E0,107,,,UNKNOWN,,,,TODO,,,
-hw,01E2EAE0,51,,,UNKNOWN,,,,TODO,,,
-hw,01E2EB20,30,,ATL::CAtlBaseModule::~CAtlBaseModule,ENGINE,,,,TODO,,ghidra,
+hw,01E2EAE0,51,??0CPanelMessageMapDictionary@@QAE@XZ,CPanelMessageMapDictionary::CPanelMessageMapDictionary,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,
+hw,01E2EB20,30,??1CPanelMessageMapDictionary@@QAE@XZ,CPanelMessageMapDictionary::~CPanelMessageMapDictionary,ENGINE,vgui2/controls/Panel.cpp,,,MATCHED,100,ghidra,
 hw,01E2EB40,43,,,UNKNOWN,,,,TODO,,,
 hw,01E2EB70,34,,,UNKNOWN,,,,TODO,,,
 hw,01E2EBA0,16,,,UNKNOWN,,,,TODO,,,
@@ -30242,15 +30242,15 @@ hw,01E2EE90,32,,,UNKNOWN,,,,TODO,,,
 hw,01E2EEB0,25,,,UNKNOWN,,,,TODO,,,
 hw,01E2EED0,17,,,UNKNOWN,,,,TODO,,,
 hw,01E2EEF0,60,,,UNKNOWN,,,,TODO,,,
-hw,01E2EF30,30,,ATL::CAtlBaseModule::~CAtlBaseModule,ENGINE,,,,TODO,,ghidra,
+hw,01E2EF30,30,??1?$CUtlDict@UPanelMessageMapDictionaryEntry@CPanelMessageMapDictionary@@H@@QAE@XZ,"CPanelMessageMapDictionary::PanelMessageMapDictionaryEntry,int>",ENGINE,,,,TODO,,hw_manual.csv,
 hw,01E2EF50,25,,,UNKNOWN,,,,TODO,,,
 hw,01E2EF70,10,,,UNKNOWN,,,,TODO,,,
 hw,01E2EF80,91,,,UNKNOWN,,,,TODO,,,
 hw,01E2EFE0,28,,,UNKNOWN,,,,TODO,,,
 hw,01E2F000,63,,,UNKNOWN,,,,TODO,,,
 hw,01E2F040,19,,,UNKNOWN,,,,TODO,,,
-hw,01E2F060,53,,,UNKNOWN,,,,TODO,,,
-hw,01E2F0A0,53,,,UNKNOWN,,,,TODO,,,
+hw,01E2F060,53,?Construct@@YAXPAUPanelMessageMap@vgui2@@@Z,Construct,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,
+hw,01E2F0A0,53,??0PanelMessageMap@vgui2@@QAE@XZ,vgui2::PanelMessageMap::PanelMessageMap,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,
 hw,01E2F0E0,50,,,UNKNOWN,,,,TODO,,,
 hw,01E2F120,22,,,UNKNOWN,,,,TODO,,,
 hw,01E2F140,22,,,UNKNOWN,,,,TODO,,,
@@ -30312,57 +30312,57 @@ hw,01E301F0,17,,,UNKNOWN,,,,TODO,,,
 hw,01E30210,199,,,UNKNOWN,,,,TODO,,,
 hw,01E302E0,53,,__ExceptionPtrCreate,LIB,,,,,,ghidra,
 hw,01E30320,31,,,UNKNOWN,,,,TODO,,,
-hw,01E30350,227,,,UNKNOWN,,,,TODO,,,
-hw,01E30433,231,,,UNKNOWN,,,,TODO,,,
-hw,01E3051A,143,,,UNKNOWN,,,,TODO,,,
-hw,01E305A9,113,,,UNKNOWN,vgui2/controls/EditablePanel.cpp,,,TODO,,,linux: _ZN5vgui213EditablePanel12OnChildAddedEj
-hw,01E3061A,229,,,UNKNOWN,vgui2/controls/EditablePanel.cpp,,,TODO,,,linux: _ZN5vgui213EditablePanel14OnKeyCodeTypedENS_7KeyCodeE
-hw,01E306FF,445,,,UNKNOWN,vgui2/controls/EditablePanel.cpp,,,TODO,,,linux: _ZN5vgui213EditablePanel13OnSizeChangedEii
-hw,01E308BC,166,,,UNKNOWN,vgui2/controls/EditablePanel.cpp,,,TODO,,,linux: _ZN5vgui213EditablePanel25OnCurrentDefaultButtonSetEPNS_5PanelE
-hw,01E30962,32,,,UNKNOWN,vgui2/controls/EditablePanel.cpp,,,TODO,,,linux: _ZN5vgui213EditablePanel18OnDefaultButtonSetEPNS_5PanelE
-hw,01E30982,164,,,UNKNOWN,vgui2/controls/EditablePanel.cpp,,,TODO,,,linux: _ZN5vgui213EditablePanel19OnFindDefaultButtonEv
-hw,01E30A26,1554,,,UNKNOWN,,,,TODO,,,
+hw,01E30350,227,??0EditablePanel@vgui2@@QAE@PAVPanel@1@PBD@Z,vgui2::EditablePanel::EditablePanel,UNKNOWN,vgui2/controls/EditablePanel.cpp,,,MATCHED,100,,
+hw,01E30433,231,??0EditablePanel@vgui2@@QAE@PAVPanel@1@PBDK@Z,vgui2::EditablePanel::EditablePanel,UNKNOWN,vgui2/controls/EditablePanel.cpp,,,MATCHED,100,,
+hw,01E3051A,143,??1EditablePanel@vgui2@@UAE@XZ,vgui2::EditablePanel::~EditablePanel,UNKNOWN,vgui2/controls/EditablePanel.cpp,,,MATCHED,100,,
+hw,01E305A9,113,?OnChildAdded@EditablePanel@vgui2@@MAEXI@Z,vgui2::EditablePanel::OnChildAdded,UNKNOWN,vgui2/controls/EditablePanel.cpp,,,MATCHED,100,,linux: _ZN5vgui213EditablePanel12OnChildAddedEj
+hw,01E3061A,229,?OnKeyCodeTyped@EditablePanel@vgui2@@UAEXW4KeyCode@2@@Z,vgui2::EditablePanel::OnKeyCodeTyped,UNKNOWN,vgui2/controls/EditablePanel.cpp,,,MATCHED,100,,linux: _ZN5vgui213EditablePanel14OnKeyCodeTypedENS_7KeyCodeE
+hw,01E306FF,445,?OnSizeChanged@EditablePanel@vgui2@@MAEXHH@Z,vgui2::EditablePanel::OnSizeChanged,UNKNOWN,vgui2/controls/EditablePanel.cpp,,,MATCHED,100,,
+hw,01E308BC,166,?OnCurrentDefaultButtonSet@EditablePanel@vgui2@@MAEXPAVPanel@2@@Z,vgui2::EditablePanel::OnCurrentDefaultButtonSet,UNKNOWN,vgui2/controls/EditablePanel.cpp,,,MATCHED,100,,linux: _ZN5vgui213EditablePanel25OnCurrentDefaultButtonSetEPNS_5PanelE
+hw,01E30962,32,?OnDefaultButtonSet@EditablePanel@vgui2@@MAEXPAVPanel@2@@Z,vgui2::EditablePanel::OnDefaultButtonSet,UNKNOWN,vgui2/controls/EditablePanel.cpp,,,MATCHED,100,,linux: _ZN5vgui213EditablePanel18OnDefaultButtonSetEPNS_5PanelE
+hw,01E30982,164,?OnFindDefaultButton@EditablePanel@vgui2@@MAEXXZ,vgui2::EditablePanel::OnFindDefaultButton,UNKNOWN,vgui2/controls/EditablePanel.cpp,,,MATCHED,100,,linux: _ZN5vgui213EditablePanel19OnFindDefaultButtonEv
+hw,01E30A26,1554,?AddSolidToTree@@YAXPAUleaf_t@@HHHH@Z,AddSolidToTree,UNKNOWN,vgui2/controls/EditablePanel.cpp,,,MATCHED,100,,
 hw,01E31038,19,,,UNKNOWN,vgui2/controls/EditablePanel.cpp,,,TODO,,,linux: _ZN5vgui213EditablePanel15PaintBackgroundEv
-hw,01E3104B,29,,,UNKNOWN,vgui2/controls/EditablePanel.cpp,,,TODO,,,linux: _ZN5vgui213EditablePanel17ActivateBuildModeEv
-hw,01E31068,64,,,UNKNOWN,vgui2/controls/EditablePanel.cpp,,,TODO,,,linux: _ZN5vgui213EditablePanel19LoadControlSettingsEPKcS2_
-hw,01E310A8,32,,,UNKNOWN,vgui2/controls/EditablePanel.cpp,,,TODO,,,linux: _ZN5vgui213EditablePanel27RegisterControlSettingsFileEPKcS2_
-hw,01E310C8,166,,,UNKNOWN,vgui2/controls/EditablePanel.cpp,,,TODO,,,linux: _ZN5vgui213EditablePanel14LoadUserConfigEPKci
-hw,01E3116E,91,,,UNKNOWN,vgui2/controls/EditablePanel.cpp,,,TODO,,,linux: _ZN5vgui213EditablePanel14SaveUserConfigEv
-hw,01E311C9,55,,,UNKNOWN,vgui2/controls/EditablePanel.cpp,,,TODO,,,linux: _ZN5vgui213EditablePanel32LoadControlSettingsAndUserConfigEPKci
-hw,01E31200,148,,,UNKNOWN,vgui2/controls/EditablePanel.cpp,,,TODO,,,linux: _ZN5vgui213EditablePanel23ApplyUserConfigSettingsEP9KeyValues
-hw,01E31294,148,,,UNKNOWN,vgui2/controls/EditablePanel.cpp,,,TODO,,,linux: _ZN5vgui213EditablePanel21GetUserConfigSettingsEP9KeyValues
-hw,01E31328,25,,,UNKNOWN,vgui2/controls/EditablePanel.cpp,,,TODO,,,linux: _ZN5vgui213EditablePanel7OnCloseEv
-hw,01E31341,237,,vgui2::EditablePanel::RequestInfo,ENGINE,vgui2/controls/EditablePanel.cpp,,,TODO,,linux_symbols:caller:0.842,
-hw,01E3142E,17,,,UNKNOWN,vgui2/controls/EditablePanel.cpp,,,TODO,,,linux: _ZN5vgui213EditablePanel13GetBuildGroupEv
-hw,01E3143F,17,,,UNKNOWN,vgui2/controls/EditablePanel.cpp,,,TODO,,,linux: _ZN5vgui213EditablePanel16GetFocusNavGroupEv
-hw,01E31450,32,,,UNKNOWN,vgui2/controls/EditablePanel.cpp,,,TODO,,,linux: _ZN5vgui213EditablePanel16RequestFocusNextEj
-hw,01E31470,32,,,UNKNOWN,vgui2/controls/EditablePanel.cpp,,,TODO,,,linux: _ZN5vgui213EditablePanel16RequestFocusPrevEj
-hw,01E31490,65,,,UNKNOWN,vgui2/controls/EditablePanel.cpp,,,TODO,,,linux: _ZN5vgui213EditablePanel12RequestFocusEi
-hw,01E314D1,118,,,UNKNOWN,vgui2/controls/EditablePanel.cpp,,,TODO,,,linux: _ZN5vgui213EditablePanel10OnSetFocusEv
-hw,01E31547,74,,,UNKNOWN,vgui2/controls/EditablePanel.cpp,,,TODO,,,linux: _ZN5vgui213EditablePanel13ApplySettingsEP9KeyValues
-hw,01E31591,96,,,UNKNOWN,vgui2/controls/EditablePanel.cpp,,,TODO,,,linux: _ZN5vgui213EditablePanel14OnRequestFocusEjj
-hw,01E315F1,127,,,UNKNOWN,vgui2/controls/EditablePanel.cpp,,,TODO,,,linux: _ZN5vgui213EditablePanel18GetCurrentKeyFocusEv
-hw,01E31670,188,,,UNKNOWN,vgui2/controls/EditablePanel.cpp,,,TODO,,,linux: _ZN5vgui213EditablePanel9HasHotkeyEw
-hw,01E3172C,56,,,UNKNOWN,vgui2/controls/EditablePanel.cpp,,,TODO,,,linux: _ZN5vgui213EditablePanel17SetControlEnabledEPKcb
-hw,01E31764,53,,,UNKNOWN,vgui2/controls/EditablePanel.cpp,,,TODO,,,linux: _ZN5vgui213EditablePanel17SetControlVisibleEPKcb
+hw,01E3104B,29,?ActivateBuildMode@EditablePanel@vgui2@@UAEXXZ,vgui2::EditablePanel::ActivateBuildMode,UNKNOWN,vgui2/controls/EditablePanel.cpp,,,MATCHED,100,,linux: _ZN5vgui213EditablePanel17ActivateBuildModeEv
+hw,01E31068,64,?LoadControlSettings@EditablePanel@vgui2@@UAEXPBD0@Z,vgui2::EditablePanel::LoadControlSettings,UNKNOWN,vgui2/controls/EditablePanel.cpp,,,MATCHED,100,,linux: _ZN5vgui213EditablePanel19LoadControlSettingsEPKcS2_
+hw,01E310A8,32,?RegisterControlSettingsFile@EditablePanel@vgui2@@UAEXPBD0@Z,vgui2::EditablePanel::RegisterControlSettingsFile,UNKNOWN,vgui2/controls/EditablePanel.cpp,,,MATCHED,100,,linux: _ZN5vgui213EditablePanel27RegisterControlSettingsFileEPKcS2_
+hw,01E310C8,166,?LoadUserConfig@EditablePanel@vgui2@@UAEXPBDH@Z,vgui2::EditablePanel::LoadUserConfig,UNKNOWN,vgui2/controls/EditablePanel.cpp,,,MATCHED,100,,linux: _ZN5vgui213EditablePanel14LoadUserConfigEPKci
+hw,01E3116E,91,?SaveUserConfig@EditablePanel@vgui2@@UAEXXZ,vgui2::EditablePanel::SaveUserConfig,UNKNOWN,vgui2/controls/EditablePanel.cpp,,,MATCHED,100,,linux: _ZN5vgui213EditablePanel14SaveUserConfigEv
+hw,01E311C9,55,?LoadControlSettingsAndUserConfig@EditablePanel@vgui2@@UAEXPBDH@Z,vgui2::EditablePanel::LoadControlSettingsAndUserConfig,UNKNOWN,vgui2/controls/EditablePanel.cpp,,,MATCHED,100,,linux: _ZN5vgui213EditablePanel32LoadControlSettingsAndUserConfigEPKci
+hw,01E31200,148,?ApplyUserConfigSettings@EditablePanel@vgui2@@MAEXPAVKeyValues@@@Z,vgui2::EditablePanel::ApplyUserConfigSettings,UNKNOWN,vgui2/controls/EditablePanel.cpp,,,MATCHED,100,,linux: _ZN5vgui213EditablePanel23ApplyUserConfigSettingsEP9KeyValues
+hw,01E31294,148,?GetUserConfigSettings@EditablePanel@vgui2@@MAEXPAVKeyValues@@@Z,vgui2::EditablePanel::GetUserConfigSettings,UNKNOWN,vgui2/controls/EditablePanel.cpp,,,MATCHED,100,,linux: _ZN5vgui213EditablePanel21GetUserConfigSettingsEP9KeyValues
+hw,01E31328,25,?OnClose@EditablePanel@vgui2@@MAEXXZ,vgui2::EditablePanel::OnClose,UNKNOWN,vgui2/controls/EditablePanel.cpp,,,MATCHED,100,,linux: _ZN5vgui213EditablePanel7OnCloseEv
+hw,01E31341,237,?RequestInfo@EditablePanel@vgui2@@UAE_NPAVKeyValues@@@Z,vgui2::EditablePanel::RequestInfo,ENGINE,vgui2/controls/EditablePanel.cpp,,,MATCHED,100,linux_symbols:caller:0.842,
+hw,01E3142E,17,?GetBuildGroup@EditablePanel@vgui2@@UAEPAVBuildGroup@2@XZ,vgui2::EditablePanel::GetBuildGroup,UNKNOWN,vgui2/controls/EditablePanel.cpp,,,MATCHED,100,,linux: _ZN5vgui213EditablePanel13GetBuildGroupEv
+hw,01E3143F,17,?GetFocusNavGroup@EditablePanel@vgui2@@MAEAAVFocusNavGroup@2@XZ,vgui2::EditablePanel::GetFocusNavGroup,UNKNOWN,vgui2/controls/EditablePanel.cpp,,,MATCHED,100,,linux: _ZN5vgui213EditablePanel16GetFocusNavGroupEv
+hw,01E31450,32,?RequestFocusNext@EditablePanel@vgui2@@UAE_NI@Z,vgui2::EditablePanel::RequestFocusNext,UNKNOWN,vgui2/controls/EditablePanel.cpp,,,MATCHED,100,,linux: _ZN5vgui213EditablePanel16RequestFocusNextEj
+hw,01E31470,32,?RequestFocusPrev@EditablePanel@vgui2@@UAE_NI@Z,vgui2::EditablePanel::RequestFocusPrev,UNKNOWN,vgui2/controls/EditablePanel.cpp,,,MATCHED,100,,linux: _ZN5vgui213EditablePanel16RequestFocusPrevEj
+hw,01E31490,65,?RequestFocus@EditablePanel@vgui2@@UAEXH@Z,vgui2::EditablePanel::RequestFocus,UNKNOWN,vgui2/controls/EditablePanel.cpp,,,MATCHED,100,,linux: _ZN5vgui213EditablePanel12RequestFocusEi
+hw,01E314D1,118,?OnSetFocus@EditablePanel@vgui2@@UAEXXZ,vgui2::EditablePanel::OnSetFocus,UNKNOWN,vgui2/controls/EditablePanel.cpp,,,MATCHED,100,,linux: _ZN5vgui213EditablePanel10OnSetFocusEv
+hw,01E31547,74,?ApplySettings@EditablePanel@vgui2@@MAEXPAVKeyValues@@@Z,vgui2::EditablePanel::ApplySettings,UNKNOWN,vgui2/controls/EditablePanel.cpp,,,MATCHED,100,,linux: _ZN5vgui213EditablePanel13ApplySettingsEP9KeyValues
+hw,01E31591,96,?OnRequestFocus@EditablePanel@vgui2@@UAEXII@Z,vgui2::EditablePanel::OnRequestFocus,UNKNOWN,vgui2/controls/EditablePanel.cpp,,,MATCHED,100,,linux: _ZN5vgui213EditablePanel14OnRequestFocusEjj
+hw,01E315F1,127,?GetCurrentKeyFocus@EditablePanel@vgui2@@UAEIXZ,vgui2::EditablePanel::GetCurrentKeyFocus,UNKNOWN,vgui2/controls/EditablePanel.cpp,,,MATCHED,100,,linux: _ZN5vgui213EditablePanel18GetCurrentKeyFocusEv
+hw,01E31670,188,?HasHotkey@EditablePanel@vgui2@@UAEPAVPanel@2@G@Z,vgui2::EditablePanel::HasHotkey,UNKNOWN,vgui2/controls/EditablePanel.cpp,,,MATCHED,100,,linux: _ZN5vgui213EditablePanel9HasHotkeyEw
+hw,01E3172C,56,?SetControlEnabled@EditablePanel@vgui2@@UAEXPBD_N@Z,vgui2::EditablePanel::SetControlEnabled,UNKNOWN,vgui2/controls/EditablePanel.cpp,,,MATCHED,100,,linux: _ZN5vgui213EditablePanel17SetControlEnabledEPKcb
+hw,01E31764,53,?SetControlVisible@EditablePanel@vgui2@@UAEXPBD_N@Z,vgui2::EditablePanel::SetControlVisible,UNKNOWN,vgui2/controls/EditablePanel.cpp,,,MATCHED,100,,linux: _ZN5vgui213EditablePanel17SetControlVisibleEPKcb
 hw,01E31799,112,,,UNKNOWN,vgui2/controls/EditablePanel.cpp,,,TODO,,,linux: _ZN5vgui213EditablePanel16SetControlStringEPKcS2_
 hw,01E31809,112,,,UNKNOWN,vgui2/controls/EditablePanel.cpp,,,TODO,,,linux: _ZN5vgui213EditablePanel13SetControlIntEPKci
-hw,01E31879,154,,,UNKNOWN,vgui2/controls/EditablePanel.cpp,,,TODO,,,linux: _ZN5vgui213EditablePanel13GetControlIntEPKci
-hw,01E31913,50,,,UNKNOWN,guess:vgui2/controls/EditablePanel.cpp,,,TODO,,,
-hw,01E31945,198,,,UNKNOWN,guess:vgui2/controls/EditablePanel.cpp,,,TODO,,,
-hw,01E31A0B,53,,,UNKNOWN,guess:vgui2/controls/EditablePanel.cpp,,,TODO,,,
-hw,01E31A40,53,,,UNKNOWN,guess:vgui2/controls/EditablePanel.cpp,,,TODO,,,
-hw,01E31A75,53,,,UNKNOWN,guess:vgui2/controls/EditablePanel.cpp,,,TODO,,,
-hw,01E31AAA,53,,,UNKNOWN,guess:vgui2/controls/EditablePanel.cpp,,,TODO,,,
-hw,01E31ADF,216,,,UNKNOWN,guess:vgui2/controls/EditablePanel.cpp,,,TODO,,,
-hw,01E31BB7,101,,,UNKNOWN,guess:vgui2/controls/EditablePanel.cpp,,,TODO,,,
+hw,01E31879,154,?GetControlInt@EditablePanel@vgui2@@UAEHPBDH@Z,vgui2::EditablePanel::GetControlInt,UNKNOWN,vgui2/controls/EditablePanel.cpp,,,MATCHED,100,,linux: _ZN5vgui213EditablePanel13GetControlIntEPKci
+hw,01E31913,50,?GetControlString@EditablePanel@vgui2@@UAEPBDPBD0@Z,vgui2::EditablePanel::GetControlString,UNKNOWN,vgui2/controls/EditablePanel.cpp,,,MATCHED,100,,
+hw,01E31945,198,?GetControlString@EditablePanel@vgui2@@UAEXPBDPADH0@Z,vgui2::EditablePanel::GetControlString,UNKNOWN,vgui2/controls/EditablePanel.cpp,,,MATCHED,100,,
+hw,01E31A0B,53,?SetDialogVariable@EditablePanel@vgui2@@UAEXPBD0@Z,vgui2::EditablePanel::SetDialogVariable,UNKNOWN,vgui2/controls/EditablePanel.cpp,,,MATCHED,100,,
+hw,01E31A40,53,?SetDialogVariable@EditablePanel@vgui2@@UAEXPBDPBG@Z,vgui2::EditablePanel::SetDialogVariable,UNKNOWN,vgui2/controls/EditablePanel.cpp,,,MATCHED,100,,
+hw,01E31A75,53,?SetDialogVariable@EditablePanel@vgui2@@UAEXPBDH@Z,vgui2::EditablePanel::SetDialogVariable,UNKNOWN,vgui2/controls/EditablePanel.cpp,,,MATCHED,100,,
+hw,01E31AAA,53,?SetDialogVariable@EditablePanel@vgui2@@UAEXPBDM@Z,vgui2::EditablePanel::SetDialogVariable,UNKNOWN,vgui2/controls/EditablePanel.cpp,,,MATCHED,100,,
+hw,01E31ADF,216,?ForceSubPanelsToUpdateWithNewDialogVariables@EditablePanel@vgui2@@AAEXXZ,vgui2::EditablePanel::ForceSubPanelsToUpdateWithNewDialogVariables,UNKNOWN,vgui2/controls/EditablePanel.cpp,,,MATCHED,100,,
+hw,01E31BB7,101,?GetDialogVariables@EditablePanel@vgui2@@QAEPAVKeyValues@@XZ,vgui2::EditablePanel::GetDialogVariables,UNKNOWN,vgui2/controls/EditablePanel.cpp,,,MATCHED,100,,
 hw,01E31C1C,1660,,vgui2::EditablePanel::CreateControlByName,ENGINE,vgui2/controls/EditablePanel.cpp,,,TODO,,linux_symbols:string:0.482,
 hw,01E322A0,46,,,UNKNOWN,,,,TODO,,,
 hw,01E322D0,46,,,UNKNOWN,,,,TODO,,,
-hw,01E32300,33,,,UNKNOWN,,,,TODO,,,
+hw,01E32300,33,?AllocLeaf@@YAPAUleaf_t@@XZ,AllocLeaf,UNKNOWN,vgui2/controls/EditablePanel.cpp,,,MATCHED,100,,
 hw,01E32330,19,,,UNKNOWN,,,,TODO,,,
 hw,01E32350,102,,,UNKNOWN,,,,TODO,,,
-hw,01E323C0,10,,,UNKNOWN,,,,TODO,,,
+hw,01E323C0,10,?GetPanelBaseClassName@EditablePanel@vgui2@@SAPBDXZ,vgui2::EditablePanel::GetPanelBaseClassName,UNKNOWN,vgui2/controls/EditablePanel.cpp,,,MATCHED,100,,
 hw,01E323D0,19,,,UNKNOWN,,,,TODO,,,
 hw,01E323F0,110,,,UNKNOWN,,,,TODO,,,
 hw,01E32460,120,,,UNKNOWN,,,,TODO,,,
@@ -31511,7 +31511,7 @@ hw,01E564E0,19,,,UNKNOWN,,,,TODO,,,
 hw,01E56500,46,,,UNKNOWN,,,,TODO,,,
 hw,01E56530,19,,,UNKNOWN,,,,TODO,,,
 hw,01E56550,102,,,UNKNOWN,,,,TODO,,,
-hw,01E565C0,64,,,UNKNOWN,,,,TODO,,,
+hw,01E565C0,64,?GetMessageMap@Button@vgui2@@UAEPAUPanelMessageMap@2@XZ,vgui2::Button::GetMessageMap,UNKNOWN,vgui2/controls/Button.cpp,,,MATCHED,100,,
 hw,01E56600,10,,,UNKNOWN,,,,TODO,,,
 hw,01E56610,10,,,UNKNOWN,,,,TODO,,,
 hw,01E56620,19,,,UNKNOWN,,,,TODO,,,
@@ -31523,59 +31523,59 @@ hw,01E56754,18,,,UNKNOWN,,,,TODO,,,
 hw,01E56766,15,,,UNKNOWN,,,,TODO,,,
 hw,01E56775,235,,,UNKNOWN,,,,TODO,,,
 hw,01E56860,235,,,UNKNOWN,,,,TODO,,,
-hw,01E5694B,276,,,UNKNOWN,,,,TODO,,,
-hw,01E56A5F,63,,,UNKNOWN,,,,TODO,,,
-hw,01E56A9E,25,,,UNKNOWN,vgui2/controls/Button.cpp,,,TODO,,,linux: _ZN5vgui26Button23SetButtonActivationTypeENS0_16ActivationType_tE
-hw,01E56AB7,66,,,UNKNOWN,vgui2/controls/Button.cpp,,,TODO,,,linux: _ZN5vgui26Button22SetButtonBorderEnabledEb
-hw,01E56AF9,81,,,UNKNOWN,vgui2/controls/Button.cpp,,,TODO,,,linux: _ZN5vgui26Button11SetSelectedEb
-hw,01E56B4A,81,,,UNKNOWN,vgui2/controls/Button.cpp,,,TODO,,,linux: _ZN5vgui26Button14ForceDepressedEb
-hw,01E56B9B,136,,,UNKNOWN,vgui2/controls/Button.cpp,,,TODO,,,linux: _ZN5vgui26Button25RecalculateDepressedStateEv
-hw,01E56C23,25,,,UNKNOWN,vgui2/controls/Button.cpp,,,TODO,,,linux: _ZN5vgui26Button18SetUseCaptureMouseEb
-hw,01E56C3C,20,,,UNKNOWN,vgui2/controls/Button.cpp,,,TODO,,,linux: _ZN5vgui26Button24IsUseCaptureMouseEnabledEv
-hw,01E56C50,173,,,UNKNOWN,vgui2/controls/Button.cpp,,,TODO,,,linux: _ZN5vgui26Button8SetArmedEb
-hw,01E56CFD,20,,,UNKNOWN,vgui2/controls/Button.cpp,,,TODO,,,linux: _ZN5vgui26Button7IsArmedEv
-hw,01E56D11,131,,,UNKNOWN,vgui2/controls/Button.cpp,,,TODO,,,linux: _ZN5vgui26Button7DoClickEv
-hw,01E56D94,20,,,UNKNOWN,vgui2/controls/Button.cpp,,,TODO,,,linux: _ZN5vgui26Button10IsSelectedEv
-hw,01E56DA8,20,,,UNKNOWN,vgui2/controls/Button.cpp,,,TODO,,,linux: _ZN5vgui26Button11IsDepressedEv
-hw,01E56DBC,145,,,UNKNOWN,vgui2/controls/Button.cpp,,,TODO,,,linux: _ZN5vgui26Button5PaintEv
-hw,01E56E4D,165,,,UNKNOWN,vgui2/controls/Button.cpp,,,TODO,,,linux: _ZN5vgui26Button13PerformLayoutEv
-hw,01E56EF2,98,,,UNKNOWN,vgui2/controls/Button.cpp,,,TODO,,,linux: _ZN5vgui26Button16GetButtonFgColorEv
-hw,01E56F54,98,,,UNKNOWN,vgui2/controls/Button.cpp,,,TODO,,,linux: _ZN5vgui26Button16GetButtonBgColorEv
+hw,01E5694B,276,?Init@Button@vgui2@@AAEXXZ,vgui2::Button::Init,UNKNOWN,vgui2/controls/Button.cpp,,,MATCHED,100,,
+hw,01E56A5F,63,??1Button@vgui2@@UAE@XZ,vgui2::Button::~Button,UNKNOWN,vgui2/controls/Button.cpp,,,MATCHED,100,,
+hw,01E56A9E,25,?SetButtonActivationType@Button@vgui2@@UAEXW4ActivationType_t@12@@Z,vgui2::Button::SetButtonActivationType,UNKNOWN,vgui2/controls/Button.cpp,,,MATCHED,100,,linux: _ZN5vgui26Button23SetButtonActivationTypeENS0_16ActivationType_tE
+hw,01E56AB7,66,?SetButtonBorderEnabled@Button@vgui2@@UAEX_N@Z,vgui2::Button::SetButtonBorderEnabled,UNKNOWN,vgui2/controls/Button.cpp,,,MATCHED,100,,linux: _ZN5vgui26Button22SetButtonBorderEnabledEb
+hw,01E56AF9,81,?SetSelected@Button@vgui2@@UAEX_N@Z,vgui2::Button::SetSelected,UNKNOWN,vgui2/controls/Button.cpp,,,MATCHED,100,,linux: _ZN5vgui26Button11SetSelectedEb
+hw,01E56B4A,81,?ForceDepressed@Button@vgui2@@UAEX_N@Z,vgui2::Button::ForceDepressed,UNKNOWN,vgui2/controls/Button.cpp,,,MATCHED,100,,linux: _ZN5vgui26Button14ForceDepressedEb
+hw,01E56B9B,136,?RecalculateDepressedState@Button@vgui2@@UAEXXZ,vgui2::Button::RecalculateDepressedState,UNKNOWN,vgui2/controls/Button.cpp,,,MATCHED,100,,linux: _ZN5vgui26Button25RecalculateDepressedStateEv
+hw,01E56C23,25,?SetUseCaptureMouse@Button@vgui2@@UAEX_N@Z,vgui2::Button::SetUseCaptureMouse,UNKNOWN,vgui2/controls/Button.cpp,,,MATCHED,100,,linux: _ZN5vgui26Button18SetUseCaptureMouseEb
+hw,01E56C3C,20,?IsUseCaptureMouseEnabled@Button@vgui2@@UAE_NXZ,vgui2::Button::IsUseCaptureMouseEnabled,UNKNOWN,vgui2/controls/Button.cpp,,,MATCHED,100,,linux: _ZN5vgui26Button24IsUseCaptureMouseEnabledEv
+hw,01E56C50,173,?SetArmed@Button@vgui2@@UAEX_N@Z,vgui2::Button::SetArmed,UNKNOWN,vgui2/controls/Button.cpp,,,MATCHED,100,,linux: _ZN5vgui26Button8SetArmedEb
+hw,01E56CFD,20,?IsArmed@Button@vgui2@@UAE_NXZ,vgui2::Button::IsArmed,UNKNOWN,vgui2/controls/Button.cpp,,,MATCHED,100,,linux: _ZN5vgui26Button7IsArmedEv
+hw,01E56D11,131,?DoClick@Button@vgui2@@UAEXXZ,vgui2::Button::DoClick,UNKNOWN,vgui2/controls/Button.cpp,,,MATCHED,100,,linux: _ZN5vgui26Button7DoClickEv
+hw,01E56D94,20,?IsSelected@Button@vgui2@@UAE_NXZ,vgui2::Button::IsSelected,UNKNOWN,vgui2/controls/Button.cpp,,,MATCHED,100,,linux: _ZN5vgui26Button10IsSelectedEv
+hw,01E56DA8,20,?IsDepressed@Button@vgui2@@UAE_NXZ,vgui2::Button::IsDepressed,UNKNOWN,vgui2/controls/Button.cpp,,,MATCHED,100,,linux: _ZN5vgui26Button11IsDepressedEv
+hw,01E56DBC,145,?Paint@Button@vgui2@@MAEXXZ,vgui2::Button::Paint,UNKNOWN,vgui2/controls/Button.cpp,,,MATCHED,100,,linux: _ZN5vgui26Button5PaintEv
+hw,01E56E4D,165,?PerformLayout@Button@vgui2@@UAEXXZ,vgui2::Button::PerformLayout,UNKNOWN,vgui2/controls/Button.cpp,,,MATCHED,100,,linux: _ZN5vgui26Button13PerformLayoutEv
+hw,01E56EF2,98,?GetButtonFgColor@Button@vgui2@@UAE?AVColor@@XZ,vgui2::Button::GetButtonFgColor,UNKNOWN,vgui2/controls/Button.cpp,,,MATCHED,100,,linux: _ZN5vgui26Button16GetButtonFgColorEv
+hw,01E56F54,98,?GetButtonBgColor@Button@vgui2@@UAE?AVColor@@XZ,vgui2::Button::GetButtonBgColor,UNKNOWN,vgui2/controls/Button.cpp,,,MATCHED,100,,linux: _ZN5vgui26Button16GetButtonBgColorEv
 hw,01E56FB6,37,,,UNKNOWN,vgui2/controls/Button.cpp,,,TODO,,,linux: _ZN5vgui26Button10OnSetFocusEv
 hw,01E56FDB,37,,,UNKNOWN,vgui2/controls/Button.cpp,,,TODO,,,linux: _ZN5vgui26Button11OnKillFocusEv
-hw,01E57000,490,,vgui2::Button::ApplySchemeSettings,ENGINE,vgui2/controls/Button.cpp,,,TODO,,linux_symbols:string:0.633,
-hw,01E571EA,109,,,UNKNOWN,vgui2/controls/Button.cpp,,,TODO,,,linux: _ZN5vgui26Button15SetDefaultColorE5ColorS1_
-hw,01E57257,109,,,UNKNOWN,vgui2/controls/Button.cpp,,,TODO,,,linux: _ZN5vgui26Button13SetArmedColorE5ColorS1_
-hw,01E572C4,109,,,UNKNOWN,vgui2/controls/Button.cpp,,,TODO,,,linux: _ZN5vgui26Button17SetDepressedColorE5ColorS1_
-hw,01E57331,43,,,UNKNOWN,vgui2/controls/Button.cpp,,,TODO,,,linux: _ZN5vgui26Button16SetDefaultBorderEPNS_7IBorderE
-hw,01E5735C,43,,,UNKNOWN,vgui2/controls/Button.cpp,,,TODO,,,linux: _ZN5vgui26Button18SetDepressedBorderEPNS_7IBorderE
-hw,01E57387,43,,,UNKNOWN,vgui2/controls/Button.cpp,,,TODO,,,linux: _ZN5vgui26Button17SetKeyFocusBorderEPNS_7IBorderE
-hw,01E573B2,195,,,UNKNOWN,vgui2/controls/Button.cpp,,,TODO,,,linux: _ZN5vgui26Button9GetBorderEbbbb
+hw,01E57000,490,?ApplySchemeSettings@Button@vgui2@@MAEXPAVIScheme@2@@Z,vgui2::Button::ApplySchemeSettings,ENGINE,vgui2/controls/Button.cpp,,,MATCHED,100,linux_symbols:string:0.633,
+hw,01E571EA,109,?SetDefaultColor@Button@vgui2@@UAEXVColor@@0@Z,vgui2::Button::SetDefaultColor,UNKNOWN,vgui2/controls/Button.cpp,,,MATCHED,100,,linux: _ZN5vgui26Button15SetDefaultColorE5ColorS1_
+hw,01E57257,109,?SetArmedColor@Button@vgui2@@UAEXVColor@@0@Z,vgui2::Button::SetArmedColor,UNKNOWN,vgui2/controls/Button.cpp,,,MATCHED,100,,linux: _ZN5vgui26Button13SetArmedColorE5ColorS1_
+hw,01E572C4,109,?SetDepressedColor@Button@vgui2@@UAEXVColor@@0@Z,vgui2::Button::SetDepressedColor,UNKNOWN,vgui2/controls/Button.cpp,,,MATCHED,100,,linux: _ZN5vgui26Button17SetDepressedColorE5ColorS1_
+hw,01E57331,43,?SetDefaultBorder@Button@vgui2@@UAEXPAVIBorder@2@@Z,vgui2::Button::SetDefaultBorder,UNKNOWN,vgui2/controls/Button.cpp,,,MATCHED,100,,linux: _ZN5vgui26Button16SetDefaultBorderEPNS_7IBorderE
+hw,01E5735C,43,?SetDepressedBorder@Button@vgui2@@UAEXPAVIBorder@2@@Z,vgui2::Button::SetDepressedBorder,UNKNOWN,vgui2/controls/Button.cpp,,,MATCHED,100,,linux: _ZN5vgui26Button18SetDepressedBorderEPNS_7IBorderE
+hw,01E57387,43,?SetKeyFocusBorder@Button@vgui2@@UAEXPAVIBorder@2@@Z,vgui2::Button::SetKeyFocusBorder,UNKNOWN,vgui2/controls/Button.cpp,,,MATCHED,100,,linux: _ZN5vgui26Button17SetKeyFocusBorderEPNS_7IBorderE
+hw,01E573B2,195,?GetBorder@Button@vgui2@@MAEPAVIBorder@2@_N000@Z,vgui2::Button::GetBorder,UNKNOWN,vgui2/controls/Button.cpp,,,MATCHED,100,,linux: _ZN5vgui26Button9GetBorderEbbbb
 hw,01E57475,245,,,UNKNOWN,vgui2/controls/Button.cpp,,,TODO,,,linux: _ZN5vgui26Button25SetAsCurrentDefaultButtonEi
 hw,01E5756A,245,,,UNKNOWN,vgui2/controls/Button.cpp,,,TODO,,,linux: _ZN5vgui26Button18SetAsDefaultButtonEi
-hw,01E5765F,70,,,UNKNOWN,vgui2/controls/Button.cpp,,,TODO,,,linux: _ZN5vgui26Button13SetArmedSoundEPKc
-hw,01E576A5,70,,,UNKNOWN,vgui2/controls/Button.cpp,,,TODO,,,linux: _ZN5vgui26Button17SetDepressedSoundEPKc
-hw,01E576EB,70,,,UNKNOWN,vgui2/controls/Button.cpp,,,TODO,,,linux: _ZN5vgui26Button16SetReleasedSoundEPKc
-hw,01E57731,95,,,UNKNOWN,vgui2/controls/Button.cpp,,,TODO,,,linux: _ZN5vgui26Button20SetMouseClickEnabledENS_9MouseCodeEb
-hw,01E57790,47,,,UNKNOWN,vgui2/controls/Button.cpp,,,TODO,,,linux: _ZN5vgui26Button19IsMouseClickEnabledENS_9MouseCodeE
-hw,01E577BF,86,,,UNKNOWN,guess:vgui2/controls/Button.cpp,,,TODO,,,
-hw,01E57815,60,,,UNKNOWN,guess:vgui2/controls/Button.cpp,,,TODO,,,
-hw,01E57851,288,,,UNKNOWN,vgui2/controls/Button.cpp,,,TODO,,,linux: _ZN5vgui26Button16FireActionSignalEv
-hw,01E57971,290,,vgui2::Button::RequestInfo,ENGINE,vgui2/controls/Button.cpp,,,TODO,,linux_symbols:string:0.625,
-hw,01E57A93,13,,,UNKNOWN,vgui2/controls/Button.cpp,,,TODO,,,linux: _ZN5vgui26Button18CanBeDefaultButtonEv
-hw,01E57AA0,115,,,UNKNOWN,vgui2/controls/Button.cpp,,,TODO,,,linux: _ZN5vgui26Button11GetSettingsEP9KeyValues
-hw,01E57B13,161,,,UNKNOWN,vgui2/controls/Button.cpp,,,TODO,,,linux: _ZN5vgui26Button13ApplySettingsEP9KeyValues
-hw,01E57BB4,48,,vgui2::Button::GetDescription,ENGINE,vgui2/controls/Button.cpp,,,TODO,,linux_symbols:string:0.611,
-hw,01E57BE4,48,,,UNKNOWN,vgui2/controls/Button.cpp,,,TODO,,,linux: _ZN5vgui26Button10OnSetStateEi
-hw,01E57C14,50,,,UNKNOWN,vgui2/controls/Button.cpp,,,TODO,,,linux: _ZN5vgui26Button15OnCursorEnteredEv
-hw,01E57C46,42,,,UNKNOWN,vgui2/controls/Button.cpp,,,TODO,,,linux: _ZN5vgui26Button14OnCursorExitedEv
-hw,01E57C70,283,,,UNKNOWN,vgui2/controls/Button.cpp,,,TODO,,,linux: _ZN5vgui26Button14OnMousePressedENS_9MouseCodeE
-hw,01E57D8B,31,,,UNKNOWN,vgui2/controls/Button.cpp,,,TODO,,,linux: _ZN5vgui26Button20OnMouseDoublePressedENS_9MouseCodeE
-hw,01E57DAA,263,,,UNKNOWN,vgui2/controls/Button.cpp,,,TODO,,,linux: _ZN5vgui26Button15OnMouseReleasedENS_9MouseCodeE
-hw,01E57EB1,137,,,UNKNOWN,vgui2/controls/Button.cpp,,,TODO,,,linux: _ZN5vgui26Button16OnKeyCodePressedENS_7KeyCodeE
-hw,01E57F3A,112,,,UNKNOWN,vgui2/controls/Button.cpp,,,TODO,,,linux: _ZN5vgui26Button17OnKeyCodeReleasedENS_7KeyCodeE
-hw,01E57FAA,192,,,UNKNOWN,vgui2/controls/Button.cpp,,,TODO,,,linux: _ZN5vgui26Button15DrawFocusBorderEiiii
-hw,01E5806A,57,,,UNKNOWN,vgui2/controls/Button.cpp,,,TODO,,,linux: _ZN5vgui26Button14SizeToContentsEv
+hw,01E5765F,70,?SetArmedSound@Button@vgui2@@QAEXPBD@Z,vgui2::Button::SetArmedSound,UNKNOWN,vgui2/controls/Button.cpp,,,MATCHED,100,,linux: _ZN5vgui26Button13SetArmedSoundEPKc
+hw,01E576A5,70,?SetDepressedSound@Button@vgui2@@QAEXPBD@Z,vgui2::Button::SetDepressedSound,UNKNOWN,vgui2/controls/Button.cpp,,,MATCHED,100,,linux: _ZN5vgui26Button17SetDepressedSoundEPKc
+hw,01E576EB,70,?SetReleasedSound@Button@vgui2@@QAEXPBD@Z,vgui2::Button::SetReleasedSound,UNKNOWN,vgui2/controls/Button.cpp,,,MATCHED,100,,linux: _ZN5vgui26Button16SetReleasedSoundEPKc
+hw,01E57731,95,?SetMouseClickEnabled@Button@vgui2@@UAEXW4MouseCode@2@_N@Z,vgui2::Button::SetMouseClickEnabled,UNKNOWN,vgui2/controls/Button.cpp,,,MATCHED,100,,linux: _ZN5vgui26Button20SetMouseClickEnabledENS_9MouseCodeEb
+hw,01E57790,47,?IsMouseClickEnabled@Button@vgui2@@UAE_NW4MouseCode@2@@Z,vgui2::Button::IsMouseClickEnabled,UNKNOWN,vgui2/controls/Button.cpp,,,MATCHED,100,,linux: _ZN5vgui26Button19IsMouseClickEnabledENS_9MouseCodeE
+hw,01E577BF,86,?SetCommand@Button@vgui2@@UAEXPBD@Z,vgui2::Button::SetCommand,UNKNOWN,vgui2/controls/Button.cpp,,,MATCHED,100,,
+hw,01E57815,60,?SetCommand@Button@vgui2@@UAEXPAVKeyValues@@@Z,vgui2::Button::SetCommand,UNKNOWN,vgui2/controls/Button.cpp,,,MATCHED,100,,
+hw,01E57851,288,?FireActionSignal@Button@vgui2@@UAEXXZ,vgui2::Button::FireActionSignal,UNKNOWN,vgui2/controls/Button.cpp,,,MATCHED,100,,linux: _ZN5vgui26Button16FireActionSignalEv
+hw,01E57971,290,?RequestInfo@Button@vgui2@@UAE_NPAVKeyValues@@@Z,vgui2::Button::RequestInfo,ENGINE,vgui2/controls/Button.cpp,,,MATCHED,100,linux_symbols:string:0.625,
+hw,01E57A93,13,?CanBeDefaultButton@Button@vgui2@@UAE_NXZ,vgui2::Button::CanBeDefaultButton,UNKNOWN,vgui2/controls/Button.cpp,,,MATCHED,100,,linux: _ZN5vgui26Button18CanBeDefaultButtonEv
+hw,01E57AA0,115,?GetSettings@Button@vgui2@@MAEXPAVKeyValues@@@Z,vgui2::Button::GetSettings,UNKNOWN,vgui2/controls/Button.cpp,,,MATCHED,100,,linux: _ZN5vgui26Button11GetSettingsEP9KeyValues
+hw,01E57B13,161,?ApplySettings@Button@vgui2@@MAEXPAVKeyValues@@@Z,vgui2::Button::ApplySettings,UNKNOWN,vgui2/controls/Button.cpp,,,MATCHED,100,,linux: _ZN5vgui26Button13ApplySettingsEP9KeyValues
+hw,01E57BB4,48,?GetDescription@Button@vgui2@@MAEPBDXZ,vgui2::Button::GetDescription,ENGINE,vgui2/controls/Button.cpp,,,MATCHED,100,linux_symbols:string:0.611,
+hw,01E57BE4,48,?OnSetState@Button@vgui2@@MAEXH@Z,vgui2::Button::OnSetState,UNKNOWN,vgui2/controls/Button.cpp,,,MATCHED,100,,linux: _ZN5vgui26Button10OnSetStateEi
+hw,01E57C14,50,?OnCursorEntered@Button@vgui2@@UAEXXZ,vgui2::Button::OnCursorEntered,UNKNOWN,vgui2/controls/Button.cpp,,,MATCHED,100,,linux: _ZN5vgui26Button15OnCursorEnteredEv
+hw,01E57C46,42,?OnCursorExited@Button@vgui2@@UAEXXZ,vgui2::Button::OnCursorExited,UNKNOWN,vgui2/controls/Button.cpp,,,MATCHED,100,,linux: _ZN5vgui26Button14OnCursorExitedEv
+hw,01E57C70,283,?OnMousePressed@Button@vgui2@@MAEXW4MouseCode@2@@Z,vgui2::Button::OnMousePressed,UNKNOWN,vgui2/controls/Button.cpp,,,MATCHED,100,,linux: _ZN5vgui26Button14OnMousePressedENS_9MouseCodeE
+hw,01E57D8B,31,?OnMouseDoublePressed@Button@vgui2@@MAEXW4MouseCode@2@@Z,vgui2::Button::OnMouseDoublePressed,UNKNOWN,vgui2/controls/Button.cpp,,,MATCHED,100,,linux: _ZN5vgui26Button20OnMouseDoublePressedENS_9MouseCodeE
+hw,01E57DAA,263,?OnMouseReleased@Button@vgui2@@MAEXW4MouseCode@2@@Z,vgui2::Button::OnMouseReleased,UNKNOWN,vgui2/controls/Button.cpp,,,MATCHED,100,,linux: _ZN5vgui26Button15OnMouseReleasedENS_9MouseCodeE
+hw,01E57EB1,137,?OnKeyCodePressed@Button@vgui2@@MAEXW4KeyCode@2@@Z,vgui2::Button::OnKeyCodePressed,UNKNOWN,vgui2/controls/Button.cpp,,,MATCHED,100,,linux: _ZN5vgui26Button16OnKeyCodePressedENS_7KeyCodeE
+hw,01E57F3A,112,?OnKeyCodeReleased@Button@vgui2@@MAEXW4KeyCode@2@@Z,vgui2::Button::OnKeyCodeReleased,UNKNOWN,vgui2/controls/Button.cpp,,,MATCHED,100,,linux: _ZN5vgui26Button17OnKeyCodeReleasedENS_7KeyCodeE
+hw,01E57FAA,192,?DrawFocusBorder@Button@vgui2@@MAEXHHHH@Z,vgui2::Button::DrawFocusBorder,UNKNOWN,vgui2/controls/Button.cpp,,,MATCHED,100,,linux: _ZN5vgui26Button15DrawFocusBorderEiiii
+hw,01E5806A,57,?SizeToContents@Button@vgui2@@UAEXXZ,vgui2::Button::SizeToContents,UNKNOWN,vgui2/controls/Button.cpp,,,MATCHED,100,,linux: _ZN5vgui26Button14SizeToContentsEv
 hw,01E580B0,46,,,UNKNOWN,,,,TODO,,,
 hw,01E580E0,19,,,UNKNOWN,,,,TODO,,,
 hw,01E58100,102,,,UNKNOWN,,,,TODO,,,
@@ -31593,61 +31593,61 @@ hw,01E58440,19,,,UNKNOWN,,,,TODO,,,
 hw,01E58460,110,,,UNKNOWN,,,,TODO,,,
 hw,01E58500,278,,,UNKNOWN,,,,TODO,,,
 hw,01E58616,278,,,UNKNOWN,,,,TODO,,,
-hw,01E5872C,194,,,UNKNOWN,,,,TODO,,,
-hw,01E587EE,121,,,UNKNOWN,,,,TODO,,,
-hw,01E58867,57,,,UNKNOWN,vgui2/controls/Label.cpp,,,TODO,,,linux: _ZN5vgui25Label17SetTextColorStateENS0_11EColorStateE
-hw,01E588A0,329,,,UNKNOWN,vgui2/controls/Label.cpp,,,TODO,,,linux: _ZN5vgui25Label14GetContentSizeERiS1_
-hw,01E589E9,128,,,UNKNOWN,,,,TODO,,,
-hw,01E58A69,142,,,UNKNOWN,,,,TODO,,,
-hw,01E58AF7,45,,,UNKNOWN,vgui2/controls/Label.cpp,,,TODO,,,linux: _ZN5vgui25Label9HasHotkeyEw
-hw,01E58B24,27,,,UNKNOWN,vgui2/controls/Label.cpp,,,TODO,,,linux: _ZN5vgui25Label9SetHotkeyEw
-hw,01E58B3F,65,,,UNKNOWN,vgui2/controls/Label.cpp,,,TODO,,,linux: _ZN5vgui25Label15OnHotkeyPressedEv
-hw,01E58B80,67,,,UNKNOWN,vgui2/controls/Label.cpp,,,TODO,,,linux: _ZN5vgui25Label14OnMousePressedENS_9MouseCodeE
-hw,01E58BC3,38,,,UNKNOWN,,,,TODO,,,
-hw,01E58BE9,38,,,UNKNOWN,vgui2/controls/Label.cpp,,,TODO,,,linux: _ZN5vgui25Label7GetTextEPci
-hw,01E58C0F,177,,,UNKNOWN,vgui2/controls/Label.cpp,,,TODO,,,linux: _ZN5vgui25Label7GetTextEPwi
-hw,01E58CC0,96,,,UNKNOWN,vgui2/controls/Label.cpp,,,TODO,,,linux: _ZN5vgui25Label7SetTextEPKc
-hw,01E58D20,128,,,UNKNOWN,vgui2/controls/Label.cpp,,,TODO,,,linux: _ZN5vgui25Label24OnDialogVariablesChangedEP9KeyValues
-hw,01E58DA0,79,,,UNKNOWN,vgui2/controls/Label.cpp,,,TODO,,,linux: _ZN5vgui25Label12SetTextInsetEii
-hw,01E58DEF,25,,,UNKNOWN,vgui2/controls/Label.cpp,,,TODO,,,linux: _ZN5vgui25Label10SetEnabledEb
-hw,01E58E08,410,,,UNKNOWN,vgui2/controls/Label.cpp,,,TODO,,,linux: _ZN5vgui25Label16ComputeAlignmentERiS1_S1_S1_
-hw,01E58FDB,925,,,UNKNOWN,vgui2/controls/Label.cpp,,,TODO,,,linux: _ZN5vgui25Label5PaintEv
-hw,01E59378,296,,,UNKNOWN,vgui2/controls/Label.cpp,,,TODO,,,linux: _ZN5vgui25Label14DrawDashedLineEiiiiii
-hw,01E594A0,33,,,UNKNOWN,vgui2/controls/Label.cpp,,,TODO,,,linux: _ZN5vgui25Label19SetContentAlignmentENS0_9AlignmentE
-hw,01E594C1,51,,,UNKNOWN,vgui2/controls/Label.cpp,,,TODO,,,linux: _ZN5vgui25Label14SizeToContentsEv
-hw,01E594F4,48,,,UNKNOWN,vgui2/controls/Label.cpp,,,TODO,,,linux: _ZN5vgui25Label7SetFontEm
-hw,01E59524,47,,,UNKNOWN,vgui2/controls/Label.cpp,,,TODO,,,linux: _ZN5vgui25Label13OnSizeChangedEii
-hw,01E59553,31,,,UNKNOWN,vgui2/controls/Label.cpp,,,TODO,,,linux: _ZN5vgui25Label7GetFontEv
-hw,01E59572,97,,,UNKNOWN,vgui2/controls/Label.cpp,,,TODO,,,linux: _ZN5vgui25Label10SetFgColorE5Color
-hw,01E595D3,43,,,UNKNOWN,vgui2/controls/Label.cpp,,,TODO,,,linux: _ZN5vgui25Label10GetFgColorEv
-hw,01E595FE,25,,,UNKNOWN,vgui2/controls/Label.cpp,,,TODO,,,linux: _ZN5vgui25Label19SetDisabledFgColor1E5Color
-hw,01E59617,25,,,UNKNOWN,vgui2/controls/Label.cpp,,,TODO,,,linux: _ZN5vgui25Label19SetDisabledFgColor2E5Color
-hw,01E59630,30,,,UNKNOWN,vgui2/controls/Label.cpp,,,TODO,,,linux: _ZN5vgui25Label19GetDisabledFgColor1Ev
-hw,01E5964E,30,,,UNKNOWN,vgui2/controls/Label.cpp,,,TODO,,,linux: _ZN5vgui25Label19GetDisabledFgColor2Ev
-hw,01E5966C,17,,,UNKNOWN,vgui2/controls/Label.cpp,,,TODO,,,linux: _ZN5vgui25Label12GetTextImageEv
-hw,01E5967D,126,,,UNKNOWN,vgui2/controls/Label.cpp,,,TODO,,,linux: _ZN5vgui25Label11RequestInfoEP9KeyValues
-hw,01E596FB,148,,,UNKNOWN,vgui2/controls/Label.cpp,,,TODO,,,linux: _ZN5vgui25Label9OnSetTextEP9KeyValues
-hw,01E5978F,135,,,UNKNOWN,vgui2/controls/Label.cpp,,,TODO,,,linux: _ZN5vgui25Label8AddImageEPNS_6IImageEi
-hw,01E59816,35,,,UNKNOWN,vgui2/controls/Label.cpp,,,TODO,,,linux: _ZN5vgui25Label11ClearImagesEv
-hw,01E59839,138,,,UNKNOWN,vgui2/controls/Label.cpp,,,TODO,,,linux: _ZN5vgui25Label15SetImageAtIndexEiPNS_6IImageEi
-hw,01E598C3,30,,,UNKNOWN,vgui2/controls/Label.cpp,,,TODO,,,linux: _ZN5vgui25Label15GetImageAtIndexEi
-hw,01E598E1,22,,,UNKNOWN,vgui2/controls/Label.cpp,,,TODO,,,linux: _ZN5vgui25Label13GetImageCountEv
-hw,01E598F7,141,,,UNKNOWN,vgui2/controls/Label.cpp,,,TODO,,,linux: _ZN5vgui25Label17SetTextImageIndexEi
-hw,01E59984,49,,,UNKNOWN,vgui2/controls/Label.cpp,,,TODO,,,linux: _ZN5vgui25Label19EnsureImageCapacityEi
-hw,01E599B5,102,,,UNKNOWN,vgui2/controls/Label.cpp,,,TODO,,,linux: _ZN5vgui25Label17SetImagePreOffsetEii
-hw,01E59A1B,59,,,UNKNOWN,vgui2/controls/Label.cpp,,,TODO,,,linux: _ZN5vgui25Label14SetImageBoundsEiii
-hw,01E59A56,48,,,UNKNOWN,vgui2/controls/Label.cpp,,,TODO,,,linux: _ZN5vgui25Label20SetAssociatedControlEPNS_5PanelE
-hw,01E59A86,100,,,UNKNOWN,vgui2/controls/Label.cpp,,,TODO,,,linux: _ZN5vgui25Label14OnRequestFocusEjj
-hw,01E59AEA,773,,vgui2::Label::ApplySchemeSettings,ENGINE,vgui2/controls/Label.cpp,,,TODO,,linux_symbols:string:0.675,
-hw,01E59DEF,533,,,UNKNOWN,vgui2/controls/Label.cpp,,,TODO,,,linux: _ZN5vgui25Label11GetSettingsEP9KeyValues
-hw,01E5A028,1292,,vgui2::Label::ApplySettings,ENGINE,vgui2/controls/Label.cpp,,,TODO,,linux_symbols:string:0.76,
-hw,01E5A534,48,,vgui2::Label::GetDescription,ENGINE,vgui2/controls/Label.cpp,,,TODO,,linux_symbols:string:0.417,
-hw,01E5A564,442,,,UNKNOWN,vgui2/controls/Label.cpp,,,TODO,,,linux: _ZN5vgui25Label13PerformLayoutEv
-hw,01E5A71E,46,,,UNKNOWN,,,,TODO,,,
+hw,01E5872C,194,??1Label@vgui2@@UAE@XZ,vgui2::Label::~Label,UNKNOWN,vgui2/controls/Label.cpp,,,MATCHED,100,,
+hw,01E587EE,121,?Init@Label@vgui2@@AAEXXZ,vgui2::Label::Init,UNKNOWN,vgui2/controls/Label.cpp,,,MATCHED,100,,
+hw,01E58867,57,?SetTextColorState@Label@vgui2@@UAEXW4EColorState@12@@Z,vgui2::Label::SetTextColorState,UNKNOWN,vgui2/controls/Label.cpp,,,MATCHED,100,,linux: _ZN5vgui25Label17SetTextColorStateENS0_11EColorStateE
+hw,01E588A0,329,?GetContentSize@Label@vgui2@@UAEXAAH0@Z,vgui2::Label::GetContentSize,UNKNOWN,vgui2/controls/Label.cpp,,,MATCHED,100,,linux: _ZN5vgui25Label14GetContentSizeERiS1_
+hw,01E589E9,128,?CalculateHotkey@Label@vgui2@@MAEGPBD@Z,vgui2::Label::CalculateHotkey,UNKNOWN,vgui2/controls/Label.cpp,,,MATCHED,100,,
+hw,01E58A69,142,?CalculateHotkey@Label@vgui2@@MAEGPBG@Z,vgui2::Label::CalculateHotkey,UNKNOWN,vgui2/controls/Label.cpp,,,MATCHED,100,,
+hw,01E58AF7,45,?HasHotkey@Label@vgui2@@UAEPAVPanel@2@G@Z,vgui2::Label::HasHotkey,UNKNOWN,vgui2/controls/Label.cpp,,,MATCHED,100,,linux: _ZN5vgui25Label9HasHotkeyEw
+hw,01E58B24,27,?SetHotkey@Label@vgui2@@UAEXG@Z,vgui2::Label::SetHotkey,UNKNOWN,vgui2/controls/Label.cpp,,,MATCHED,100,,linux: _ZN5vgui25Label9SetHotkeyEw
+hw,01E58B3F,65,?OnHotkeyPressed@Label@vgui2@@MAEXXZ,vgui2::Label::OnHotkeyPressed,UNKNOWN,vgui2/controls/Label.cpp,,,MATCHED,100,,linux: _ZN5vgui25Label15OnHotkeyPressedEv
+hw,01E58B80,67,?OnMousePressed@Label@vgui2@@MAEXW4MouseCode@2@@Z,vgui2::Label::OnMousePressed,UNKNOWN,vgui2/controls/Label.cpp,,,MATCHED,100,,linux: _ZN5vgui25Label14OnMousePressedENS_9MouseCodeE
+hw,01E58BC3,38,?GetText@Label@vgui2@@UAEXPADH@Z,vgui2::Label::GetText,UNKNOWN,vgui2/controls/Label.cpp,,,MATCHED,100,,
+hw,01E58BE9,38,?GetText@Label@vgui2@@UAEXPAGH@Z,vgui2::Label::GetText,UNKNOWN,vgui2/controls/Label.cpp,,,MATCHED,100,,linux: _ZN5vgui25Label7GetTextEPci
+hw,01E58C0F,177,?SetText@Label@vgui2@@UAEXPBD@Z,vgui2::Label::SetText,UNKNOWN,vgui2/controls/Label.cpp,,,MATCHED,100,,linux: _ZN5vgui25Label7GetTextEPwi
+hw,01E58CC0,96,?SetText@Label@vgui2@@UAEXPBG@Z,vgui2::Label::SetText,UNKNOWN,vgui2/controls/Label.cpp,,,MATCHED,100,,linux: _ZN5vgui25Label7SetTextEPKc
+hw,01E58D20,128,?OnDialogVariablesChanged@Label@vgui2@@MAEXPAVKeyValues@@@Z,vgui2::Label::OnDialogVariablesChanged,UNKNOWN,vgui2/controls/Label.cpp,,,MATCHED,100,,linux: _ZN5vgui25Label24OnDialogVariablesChangedEP9KeyValues
+hw,01E58DA0,79,?SetTextInset@Label@vgui2@@UAEXHH@Z,vgui2::Label::SetTextInset,UNKNOWN,vgui2/controls/Label.cpp,,,MATCHED,100,,linux: _ZN5vgui25Label12SetTextInsetEii
+hw,01E58DEF,25,?SetEnabled@Label@vgui2@@UAEX_N@Z,vgui2::Label::SetEnabled,UNKNOWN,vgui2/controls/Label.cpp,,,MATCHED,100,,linux: _ZN5vgui25Label10SetEnabledEb
+hw,01E58E08,410,?ComputeAlignment@Label@vgui2@@MAEXAAH000@Z,vgui2::Label::ComputeAlignment,UNKNOWN,vgui2/controls/Label.cpp,,,MATCHED,100,,linux: _ZN5vgui25Label16ComputeAlignmentERiS1_S1_S1_
+hw,01E58FDB,925,?Paint@Label@vgui2@@MAEXXZ,vgui2::Label::Paint,UNKNOWN,vgui2/controls/Label.cpp,,,MATCHED,100,,linux: _ZN5vgui25Label5PaintEv
+hw,01E59378,296,?DrawDashedLine@Label@vgui2@@MAEXHHHHHH@Z,vgui2::Label::DrawDashedLine,UNKNOWN,vgui2/controls/Label.cpp,,,MATCHED,100,,linux: _ZN5vgui25Label14DrawDashedLineEiiiiii
+hw,01E594A0,33,?SetContentAlignment@Label@vgui2@@UAEXW4Alignment@12@@Z,vgui2::Label::SetContentAlignment,UNKNOWN,vgui2/controls/Label.cpp,,,MATCHED,100,,linux: _ZN5vgui25Label19SetContentAlignmentENS0_9AlignmentE
+hw,01E594C1,51,?SizeToContents@Label@vgui2@@UAEXXZ,vgui2::Label::SizeToContents,UNKNOWN,vgui2/controls/Label.cpp,,,MATCHED,100,,linux: _ZN5vgui25Label14SizeToContentsEv
+hw,01E594F4,48,?SetFont@Label@vgui2@@UAEXK@Z,vgui2::Label::SetFont,UNKNOWN,vgui2/controls/Label.cpp,,,MATCHED,100,,linux: _ZN5vgui25Label7SetFontEm
+hw,01E59524,47,?OnSizeChanged@Label@vgui2@@MAEXHH@Z,vgui2::Label::OnSizeChanged,UNKNOWN,vgui2/controls/Label.cpp,,,MATCHED,100,,linux: _ZN5vgui25Label13OnSizeChangedEii
+hw,01E59553,31,?GetFont@Label@vgui2@@UAEKXZ,vgui2::Label::GetFont,UNKNOWN,vgui2/controls/Label.cpp,,,MATCHED,100,,linux: _ZN5vgui25Label7GetFontEv
+hw,01E59572,97,?SetFgColor@Label@vgui2@@UAEXVColor@@@Z,vgui2::Label::SetFgColor,UNKNOWN,vgui2/controls/Label.cpp,,,MATCHED,100,,linux: _ZN5vgui25Label10SetFgColorE5Color
+hw,01E595D3,43,?GetFgColor@Label@vgui2@@UAE?AVColor@@XZ,vgui2::Label::GetFgColor,UNKNOWN,vgui2/controls/Label.cpp,,,MATCHED,100,,linux: _ZN5vgui25Label10GetFgColorEv
+hw,01E595FE,25,?SetDisabledFgColor1@Label@vgui2@@UAEXVColor@@@Z,vgui2::Label::SetDisabledFgColor1,UNKNOWN,vgui2/controls/Label.cpp,,,MATCHED,100,,linux: _ZN5vgui25Label19SetDisabledFgColor1E5Color
+hw,01E59617,25,?SetDisabledFgColor2@Label@vgui2@@UAEXVColor@@@Z,vgui2::Label::SetDisabledFgColor2,UNKNOWN,vgui2/controls/Label.cpp,,,MATCHED,100,,linux: _ZN5vgui25Label19SetDisabledFgColor2E5Color
+hw,01E59630,30,?GetDisabledFgColor1@Label@vgui2@@UAE?AVColor@@XZ,vgui2::Label::GetDisabledFgColor1,UNKNOWN,vgui2/controls/Label.cpp,,,MATCHED,100,,linux: _ZN5vgui25Label19GetDisabledFgColor1Ev
+hw,01E5964E,30,?GetDisabledFgColor2@Label@vgui2@@UAE?AVColor@@XZ,vgui2::Label::GetDisabledFgColor2,UNKNOWN,vgui2/controls/Label.cpp,,,MATCHED,100,,linux: _ZN5vgui25Label19GetDisabledFgColor2Ev
+hw,01E5966C,17,?GetTextImage@Label@vgui2@@UAEPAVTextImage@2@XZ,vgui2::Label::GetTextImage,UNKNOWN,vgui2/controls/Label.cpp,,,MATCHED,100,,linux: _ZN5vgui25Label12GetTextImageEv
+hw,01E5967D,126,?RequestInfo@Label@vgui2@@UAE_NPAVKeyValues@@@Z,vgui2::Label::RequestInfo,UNKNOWN,vgui2/controls/Label.cpp,,,MATCHED,100,,linux: _ZN5vgui25Label11RequestInfoEP9KeyValues
+hw,01E596FB,148,?OnSetText@Label@vgui2@@MAEXPAVKeyValues@@@Z,vgui2::Label::OnSetText,UNKNOWN,vgui2/controls/Label.cpp,,,MATCHED,100,,linux: _ZN5vgui25Label9OnSetTextEP9KeyValues
+hw,01E5978F,135,?AddImage@Label@vgui2@@UAEHPAVIImage@2@H@Z,vgui2::Label::AddImage,UNKNOWN,vgui2/controls/Label.cpp,,,MATCHED,100,,linux: _ZN5vgui25Label8AddImageEPNS_6IImageEi
+hw,01E59816,35,?ClearImages@Label@vgui2@@UAEXXZ,vgui2::Label::ClearImages,UNKNOWN,vgui2/controls/Label.cpp,,,MATCHED,100,,linux: _ZN5vgui25Label11ClearImagesEv
+hw,01E59839,138,?SetImageAtIndex@Label@vgui2@@UAEXHPAVIImage@2@H@Z,vgui2::Label::SetImageAtIndex,UNKNOWN,vgui2/controls/Label.cpp,,,MATCHED,100,,linux: _ZN5vgui25Label15SetImageAtIndexEiPNS_6IImageEi
+hw,01E598C3,30,?GetImageAtIndex@Label@vgui2@@UAEPAVIImage@2@H@Z,vgui2::Label::GetImageAtIndex,UNKNOWN,vgui2/controls/Label.cpp,,,MATCHED,100,,linux: _ZN5vgui25Label15GetImageAtIndexEi
+hw,01E598E1,22,?GetImageCount@Label@vgui2@@UAEHXZ,vgui2::Label::GetImageCount,UNKNOWN,vgui2/controls/Label.cpp,,,MATCHED,100,,linux: _ZN5vgui25Label13GetImageCountEv
+hw,01E598F7,141,?SetTextImageIndex@Label@vgui2@@UAEHH@Z,vgui2::Label::SetTextImageIndex,UNKNOWN,vgui2/controls/Label.cpp,,,MATCHED,100,,linux: _ZN5vgui25Label17SetTextImageIndexEi
+hw,01E59984,49,?EnsureImageCapacity@Label@vgui2@@MAEXH@Z,vgui2::Label::EnsureImageCapacity,UNKNOWN,vgui2/controls/Label.cpp,,,MATCHED,100,,linux: _ZN5vgui25Label19EnsureImageCapacityEi
+hw,01E599B5,102,?SetImagePreOffset@Label@vgui2@@UAEXHH@Z,vgui2::Label::SetImagePreOffset,UNKNOWN,vgui2/controls/Label.cpp,,,MATCHED,100,,linux: _ZN5vgui25Label17SetImagePreOffsetEii
+hw,01E59A1B,59,?SetImageBounds@Label@vgui2@@UAEXHHH@Z,vgui2::Label::SetImageBounds,UNKNOWN,vgui2/controls/Label.cpp,,,MATCHED,100,,linux: _ZN5vgui25Label14SetImageBoundsEiii
+hw,01E59A56,48,?SetAssociatedControl@Label@vgui2@@UAEXPAVPanel@2@@Z,vgui2::Label::SetAssociatedControl,UNKNOWN,vgui2/controls/Label.cpp,,,MATCHED,100,,linux: _ZN5vgui25Label20SetAssociatedControlEPNS_5PanelE
+hw,01E59A86,100,?OnRequestFocus@Label@vgui2@@MAEXII@Z,vgui2::Label::OnRequestFocus,UNKNOWN,vgui2/controls/Label.cpp,,,MATCHED,100,,linux: _ZN5vgui25Label14OnRequestFocusEjj
+hw,01E59AEA,773,?ApplySchemeSettings@Label@vgui2@@MAEXPAVIScheme@2@@Z,vgui2::Label::ApplySchemeSettings,ENGINE,vgui2/controls/Label.cpp,,,MATCHED,100,linux_symbols:string:0.675,
+hw,01E59DEF,533,?GetSettings@Label@vgui2@@MAEXPAVKeyValues@@@Z,vgui2::Label::GetSettings,UNKNOWN,vgui2/controls/Label.cpp,,,MATCHED,100,,linux: _ZN5vgui25Label11GetSettingsEP9KeyValues
+hw,01E5A028,1292,?ApplySettings@Label@vgui2@@MAEXPAVKeyValues@@@Z,vgui2::Label::ApplySettings,ENGINE,vgui2/controls/Label.cpp,,,MATCHED,100,linux_symbols:string:0.76,
+hw,01E5A534,48,?GetDescription@Label@vgui2@@MAEPBDXZ,vgui2::Label::GetDescription,ENGINE,vgui2/controls/Label.cpp,,,MATCHED,100,linux_symbols:string:0.417,
+hw,01E5A564,442,?PerformLayout@Label@vgui2@@MAEXXZ,vgui2::Label::PerformLayout,UNKNOWN,vgui2/controls/Label.cpp,,,MATCHED,100,,linux: _ZN5vgui25Label13PerformLayoutEv
+hw,01E5A71E,46,?SetWrap@Label@vgui2@@QAEX_N@Z,vgui2::Label::SetWrap,UNKNOWN,vgui2/controls/Label.cpp,,,MATCHED,100,,
 hw,01E5A750,46,,,UNKNOWN,,,,TODO,,,
 hw,01E5A780,19,,,UNKNOWN,,,,TODO,,,
 hw,01E5A7A0,102,,,UNKNOWN,,,,TODO,,,
-hw,01E5A810,64,,,UNKNOWN,,,,TODO,,,
+hw,01E5A810,64,?GetMessageMap@Label@vgui2@@UAEPAUPanelMessageMap@2@XZ,vgui2::Label::GetMessageMap,UNKNOWN,vgui2/controls/Label.cpp,,,MATCHED,100,,
 hw,01E5A850,10,,,UNKNOWN,,,,TODO,,,
 hw,01E5A860,10,,,UNKNOWN,,,,TODO,,,
 hw,01E5A870,19,,,UNKNOWN,,,,TODO,,,

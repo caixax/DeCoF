@@ -268,7 +268,9 @@ public class DelinkUnits extends GhidraScript {
 					here.add(s);
 				}
 				for (Symbol s : here) {
-					if (!s.getName().equals(name) && !s.getName().equals(plain)) {
+					// a namespaced label (CSliderCtrl::SetRange, a Ghidra signature
+					// name) is written with its full path
+					if (!s.getName().equals(name) && !s.getName().equals(plain) && !s.getName(true).equals(name)) {
 						continue;
 					}
 					Function fn = getFunctionAt(addr);
@@ -381,6 +383,21 @@ public class DelinkUnits extends GhidraScript {
 				// the delinker prefers a "?" label: drop C++ names left at this
 				// address by earlier, wrong naming passes
 				Function cur = getFunctionAt(addr);
+				// a function still named with an older, wrong C++ name takes the map's
+				if (cur != null && name.startsWith("?") && cur.getName().startsWith("?") && !cur.getName().equals(name)) {
+					try {
+						for (Symbol s : symtab.getSymbols(addr)) {
+							if (s.getName().equals(name) && !s.equals(cur.getSymbol())) {
+								s.delete();
+								break;
+							}
+						}
+						cur.setName(name, SourceType.USER_DEFINED);
+					}
+					catch (Exception e) {
+						printerr("could not rename " + cur.getName() + " to " + name);
+					}
+				}
 				List<Symbol> here = new ArrayList<>();
 				for (Symbol s : symtab.getSymbols(addr)) {
 					here.add(s);

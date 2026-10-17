@@ -1,0 +1,4 @@
+?VGuiControls_Init@vgui2@@YA_NPBDPAP6APAVIBaseInterface@@0PAH@ZH@Z
+?InitializeInterface_guess@vgui2@@YAPAXPBDPAP6APAVIBaseInterface@@0PAH@ZH@Z
+?VGuiControls_Shutdown@vgui2@@YAXXZ
+?GetControlsModuleName@vgui2@@YAPBDXZ

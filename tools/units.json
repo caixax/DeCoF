@@ -2378,6 +2378,66 @@
             "src/engine",
             "src/pm_shared"
           ]
+        },
+        {
+          "name": "vgui2/controls/Panel",
+          "source": "src/vgui2/controls/Panel.cpp",
+          "functions_file": "tools/units/hw_vgui2_controls_Panel.txt",
+          "includes": [
+            "src/gameui",
+            "src/public",
+            "src/common",
+            "src/engine",
+            "src/pm_shared"
+          ]
+        },
+        {
+          "name": "vgui2/controls/Label",
+          "source": "src/vgui2/controls/Label.cpp",
+          "functions_file": "tools/units/hw_vgui2_controls_Label.txt",
+          "includes": [
+            "src/gameui",
+            "src/public",
+            "src/common",
+            "src/engine",
+            "src/pm_shared"
+          ]
+        },
+        {
+          "name": "vgui2/controls/Button",
+          "source": "src/vgui2/controls/Button.cpp",
+          "functions_file": "tools/units/hw_vgui2_controls_Button.txt",
+          "includes": [
+            "src/gameui",
+            "src/public",
+            "src/common",
+            "src/engine",
+            "src/pm_shared"
+          ]
+        },
+        {
+          "name": "vgui2/controls/EditablePanel",
+          "source": "src/vgui2/controls/EditablePanel.cpp",
+          "functions_file": "tools/units/hw_vgui2_controls_EditablePanel.txt",
+          "includes": [
+            "src/gameui",
+            "src/public",
+            "src/common",
+            "src/engine",
+            "src/pm_shared"
+          ]
+        },
+        {
+          "name": "vgui2/controls/controls",
+          "source": "src/vgui2/controls/controls.cpp",
+          "functions_file": "tools/units/hw_vgui2_controls_controls.txt",
+          "includes": [
+            "src/gameui",
+            "src/public",
+            "src/common",
+            "src/engine",
+            "src/pm_shared"
+          ]
         }
       ]
     },

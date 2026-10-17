@@ -65,6 +65,10 @@ def same_symbol(a, b):
     m = re.match(r"^(\w+)::RTTI_Type_Descriptor$", a)
     if m and b == "??_R0?AV%s@@@8" % m.group(1):
         return True
+    # in a namespace: vgui2::HTML::RTTI_Type_Descriptor, ??_R0?AVHTML@vgui2@@@8
+    m = re.match(r"^((?:\w+::)+)(\w+)::RTTI_Type_Descriptor$", a)
+    if m and b == "??_R0?AV%s@%s@@@8" % (m.group(2), "@".join(reversed(m.group(1).rstrip(":").split("::")))):
+        return True
     m = re.match(r"^(\w+)::vftable$", a)
     if m and b == "??_7%s@@6B@" % m.group(1):
         return True
