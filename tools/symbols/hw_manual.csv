@@ -2005,3 +2005,12 @@ va,name,kind,evidence
 01D84F75,_Host_ClearGameState,func,"engine/host_cmd.c of the Linux hw.so DWARF (line 3367): S_StopAllSounds(1), Host_ClearSaveDirectory, gEntityInterface.pfnResetGlobalState; called by Host_Map, Host_Restart_f, Host_Reload_f and Host_Load (added by an agent)"
 01D867E8,_SV_CheckBlendingInterface,func,engine/host_cmd.c of the Linux hw.so DWARF (line 4545): GetProcAddress of Server_GetBlendingInterface in every g_rgextdll entry; called by Host_InitializeGameDLL (added by an agent)
 01D86874,_SV_CheckSaveGameCommentInterface,func,"engine/host_cmd.c of the Linux hw.so DWARF (line 4588): GetProcAddress of SV_SaveGameComment in every g_rgextdll entry, stored in g_pSaveGameCommentFunc; called by Host_InitializeGameDLL (added by an agent)"
+01DF1F28,_SV_FullUpdate_f,func,"console handler: starts with the cmd_source / Cmd_ForwardToServer check; SV_Init registers it for ""fullupdate""; Linux DWARF order SV_SendEnts_f, SV_FullUpdate_f, SV_FullUpdate_Internal"
+01DF1EE5,_SV_SendEnts_f,func,console handler before SV_FullUpdate_f (Linux DWARF order)
+01DA0109,_PM_Init,func,called by SV_Init where our matched SV_Init calls PM_Init (relocation pairing)
+01D8CFF8,_Mem_Free,func,paired call site in matched sv_main.c functions
+01D8CFE7,_Mem_Strdup,func,paired call site in matched sv_main.c functions
+01DEC6C0,_Steam_Steam3IDtoSteam2,func,paired call site in matched sv_main.c functions
+01E70750,_strcpy,func,"C runtime, paired call site in matched sv_main.c functions"
+01E721E0,_strchr,func,"C runtime, paired call site in matched sv_main.c functions"
+01E71670,__chkstk,func,"C runtime stack probe, paired call site in matched sv_main.c functions"

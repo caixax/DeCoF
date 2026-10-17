@@ -158,3 +158,11 @@ _SV_Shutdown
 _SV_CompareUserID
 _SV_GetIDString
 _SV_GetClientIDString
+_SV_DownloadingModules
+_SV_GatherStatistics
+_SV_DeallocateDynamicData
+_SV_CheckVoiceChanges
+_SV_FailDownload
+_Q_stristr
+_GetGameAppID
+_IsGameSubscribed

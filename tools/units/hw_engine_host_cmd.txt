@@ -87,3 +87,14 @@ _Host_SetVideoMode_f
 _Host_SetGameDir_f
 _Host_Crash_f
 _Host_InitCommands
+_SV_GetPlayerHulls
+_FileSize
+_FileCopy
+_DirectoryCopy
+_DirectoryExtract
+_DirectoryCount
+_Host_RemoveSaveFiles_guess
+_Host_ClearSaveDirectory
+_Host_ClearGameState
+_SV_CheckBlendingInterface
+_SV_CheckSaveGameCommentInterface

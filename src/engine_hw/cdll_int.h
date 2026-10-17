@@ -29,6 +29,8 @@ struct weapon_data_s;
 struct cl_entity_s;
 int		ClientDLL_AddEntity( int type, struct cl_entity_s *ent );
 void	ClientDLL_CreateEntities( void );
+struct tempent_s;
+void	ClientDLL_TempEntUpdate( double ft, double ct, double grav, struct tempent_s **ppFreeTE, struct tempent_s **ppActiveTE, int ( *addTEntity )( struct cl_entity_s *pEntity ), void ( *playTESound )( struct tempent_s *pTemp, float damp ) );
 int		ClientDLL_IsThirdPerson( void );
 void	ClientDLL_TxferLocalOverrides( struct entity_state_s *state, const struct clientdata_s *client );
 void	ClientDLL_ProcessPlayerState( struct entity_state_s *dst, const struct entity_state_s *src );

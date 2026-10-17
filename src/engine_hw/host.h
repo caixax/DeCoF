@@ -90,6 +90,10 @@ void	Host_Shutdown( void );
 extern	int		current_skill;
 extern	int		gHostSpawnCount;
 extern	qboolean	noclip_anglehack;
+extern	qboolean	g_bMajorMapChange;
+extern	qboolean	g_bSaveAllowed_guess;	// 0x023C9F1C, set by the "savehack" commands of cd.cpp, read by Host_ValidSave
+extern	int		g_iQuitCommandIssued;
+extern	char	*g_pPostRestartCmdLineArgs;
 
 void	Host_InitializeGameDLL( void );
 int		Host_GetStartTime( void );

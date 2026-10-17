@@ -19,6 +19,7 @@ extern	playermove_t	g_svmove;
 float		PM_TraceModel( physent_t *pEnt, vec_t *start, vec_t *end, trace_t *trace );
 void		PM_GetModelBounds( struct model_s *mod, vec_t *mins, vec_t *maxs );
 int			PM_GetModelType( struct model_s *mod );
+void		PM_Init( playermove_t *ppm );
 void		PM_InitBoxHull( void );
 hull_t		*PM_HullForBox( vec_t *mins, vec_t *maxs );
 int			PM_HullPointContents( hull_t *hull, int num, vec_t *p );

@@ -283,6 +283,7 @@ extern	server_t		sv;				// local server
 int32	RandomLong( int32 lLow, int32 lHigh );
 void	AlertMessage( int atype, char *szFmt, ... );
 int		PF_precache_generic_I( char *s );
+int		PF_IsDedicatedServer( void );
 
 extern	int		g_groupmask;
 extern	int		g_groupop;
@@ -349,6 +350,8 @@ extern	cvar_t	sv_gravity;
 extern	cvar_t	sv_maxvelocity;
 extern	cvar_t	sv_stepsize;
 extern	cvar_t	sv_bounce;
+extern	cvar_t	sv_clipmode;
+extern	cvar_t	sv_airmove;
 extern	cvar_t	sv_spectatormaxspeed;
 extern	cvar_t	sv_airaccelerate;
 extern	cvar_t	sv_wateraccelerate;
@@ -370,6 +373,15 @@ extern	cvar_t	sv_voicecodec;
 extern	cvar_t	sv_voicequality;
 extern	cvar_t	sv_voiceenable;
 extern	cvar_t	clockwindow;
+extern	cvar_t	mp_consistency;
+extern	cvar_t	sv_unlag;
+extern	cvar_t	sv_maxunlag;
+extern	cvar_t	sv_unlagpush;
+extern	cvar_t	sv_unlagsamples;
+
+void	SV_ShowServerinfo_f( void );
+void	SV_SendEnts_f( void );
+void	SV_FullUpdate_f( void );
 
 void	SV_SendConsistencyList( sizebuf_t *msg );
 int		SV_TransferConsistencyInfo( void );
@@ -599,6 +611,26 @@ int		GetGameAppID( void );
 qboolean	IsGameSubscribed( const char *game );
 
 // sv_steam3.cpp
+typedef unsigned short		SteamInstanceID_t;
+typedef unsigned __int64	SteamLocalUserID_t;
+
+typedef struct
+{
+	unsigned int	Low32bits;
+	unsigned int	High32bits;
+} TSteamSplitLocalUserID;
+
+typedef struct TSteamGlobalUserID
+{
+	SteamInstanceID_t	m_SteamInstanceID;
+
+	union
+	{
+		SteamLocalUserID_t		As64bits;
+		TSteamSplitLocalUserID	Split;
+	} m_SteamLocalUserID;
+} TSteamGlobalUserID;
+
 const char	*Steam_GetCommunityName( void );
 int		Steam_GSInitiateGameConnection( void *pData, int cbMaxData, unsigned __int64 steamID, unsigned int unIPServer, unsigned short usPortServer, qboolean bSecure );
 void	Steam_GSTerminateGameConnection( unsigned int unIPServer, unsigned short usPortServer );
@@ -615,6 +647,7 @@ qboolean	Steam_GSBSecure( void );
 qboolean	Steam_GSBLoggedOn( void );
 qboolean	Steam_GSBSecurePreference( void );
 uint64	Steam_StringToSteamID( const char *pStr );
+TSteamGlobalUserID	Steam_Steam3IDtoSteam2( uint64 unSteamID );
 const char	*Steam_GetGSUniverse( void );
 void	Steam_HandleIncomingPacket( byte *data, int len, int fromip, unsigned short port );
 
@@ -631,7 +664,7 @@ qboolean	CheckIP( netadr_t adr );
 
 // steam_api flat interface
 __declspec( dllimport ) int	ISteamMasterServerUpdater_HandleIncomingPacket( const void *pData, int cbData, unsigned int srcIP, unsigned short srcPort );
-__declspec( dllimport ) int	ISteamApps_BIsSubscribedApp( unsigned int appID );
+__declspec( dllimport ) char	ISteamApps_BIsSubscribedApp( unsigned int appID );
 __declspec( dllimport ) int	ISteamGameServer_BUpdateUserData( uint64 steamIDUser, const char *pchPlayerName, unsigned int uScore );
 
 // master.c
