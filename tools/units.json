@@ -2366,6 +2366,18 @@
             "src/engine",
             "src/pm_shared"
           ]
+        },
+        {
+          "name": "public/interface",
+          "source": "src/public/interface.cpp",
+          "functions_file": "tools/units/hw_public_interface.txt",
+          "includes": [
+            "src/gameui",
+            "src/public",
+            "src/common",
+            "src/engine",
+            "src/pm_shared"
+          ]
         }
       ]
     },
