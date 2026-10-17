@@ -168,8 +168,13 @@ def constant_ok(dll, va, name):
         crc, rest = msvc_number(rest)
         prefix = string_prefix(rest)
         data = retail_bytes(dll, va, length)
-        return (data.startswith(prefix[:length - 1]) and data[length - 1:length] == b"\0"
-                and b"\0" not in data[:length - 1] and (~zlib.crc32(data) & 0xFFFFFFFF) == crc)
+        ok = (data.startswith(prefix[:length - 1]) and data[length - 1:length] == b"\0"
+              and b"\0" not in data[:length - 1])
+        # VC6 (/Gf string pooling) hashes literal names another way; there
+        # the length and the visible prefix are all the name tells
+        if dll in ("hw", "gameui", "launcher", "opengl32"):
+            return ok
+        return ok and (~zlib.crc32(data) & 0xFFFFFFFF) == crc
     m = re.match(r"^__(?:real|xmm)@([0-9a-f]+)$", name)
     if not m:
         return True

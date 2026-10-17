@@ -2228,6 +2228,132 @@
           "name": "engine/CL_DEMO",
           "source": "src/engine_hw/CL_DEMO.C",
           "functions_file": "tools/units/hw_engine_CL_DEMO.txt"
+        },
+        {
+          "name": "bzip2/blocksort",
+          "source": "refs/bzip2-1.0.2-dl/bzip2-1.0.2/blocksort.c",
+          "functions_file": "tools/units/hw_bzip2_blocksort.txt",
+          "cflags": [
+            "/nologo",
+            "/c",
+            "/W3",
+            "/O2"
+          ],
+          "defines": [
+            "WIN32",
+            "BZ_EXPORT"
+          ],
+          "includes": [
+            "refs/bzip2-1.0.2-dl/bzip2-1.0.2"
+          ]
+        },
+        {
+          "name": "bzip2/huffman",
+          "source": "refs/bzip2-1.0.2-dl/bzip2-1.0.2/huffman.c",
+          "functions_file": "tools/units/hw_bzip2_huffman.txt",
+          "cflags": [
+            "/nologo",
+            "/c",
+            "/W3",
+            "/O2"
+          ],
+          "defines": [
+            "WIN32",
+            "BZ_EXPORT"
+          ],
+          "includes": [
+            "refs/bzip2-1.0.2-dl/bzip2-1.0.2"
+          ]
+        },
+        {
+          "name": "bzip2/crctable",
+          "source": "refs/bzip2-1.0.2-dl/bzip2-1.0.2/crctable.c",
+          "functions_file": "tools/units/hw_bzip2_crctable.txt",
+          "cflags": [
+            "/nologo",
+            "/c",
+            "/W3",
+            "/O2"
+          ],
+          "defines": [
+            "WIN32",
+            "BZ_EXPORT"
+          ],
+          "includes": [
+            "refs/bzip2-1.0.2-dl/bzip2-1.0.2"
+          ]
+        },
+        {
+          "name": "bzip2/randtable",
+          "source": "refs/bzip2-1.0.2-dl/bzip2-1.0.2/randtable.c",
+          "functions_file": "tools/units/hw_bzip2_randtable.txt",
+          "cflags": [
+            "/nologo",
+            "/c",
+            "/W3",
+            "/O2"
+          ],
+          "defines": [
+            "WIN32",
+            "BZ_EXPORT"
+          ],
+          "includes": [
+            "refs/bzip2-1.0.2-dl/bzip2-1.0.2"
+          ]
+        },
+        {
+          "name": "bzip2/compress",
+          "source": "refs/bzip2-1.0.2-dl/bzip2-1.0.2/compress.c",
+          "functions_file": "tools/units/hw_bzip2_compress.txt",
+          "cflags": [
+            "/nologo",
+            "/c",
+            "/W3",
+            "/O2"
+          ],
+          "defines": [
+            "WIN32",
+            "BZ_EXPORT"
+          ],
+          "includes": [
+            "refs/bzip2-1.0.2-dl/bzip2-1.0.2"
+          ]
+        },
+        {
+          "name": "bzip2/decompress",
+          "source": "refs/bzip2-1.0.2-dl/bzip2-1.0.2/decompress.c",
+          "functions_file": "tools/units/hw_bzip2_decompress.txt",
+          "cflags": [
+            "/nologo",
+            "/c",
+            "/W3",
+            "/O2"
+          ],
+          "defines": [
+            "WIN32",
+            "BZ_EXPORT"
+          ],
+          "includes": [
+            "refs/bzip2-1.0.2-dl/bzip2-1.0.2"
+          ]
+        },
+        {
+          "name": "bzip2/bzlib",
+          "source": "refs/bzip2-1.0.2-dl/bzip2-1.0.2/bzlib.c",
+          "functions_file": "tools/units/hw_bzip2_bzlib.txt",
+          "cflags": [
+            "/nologo",
+            "/c",
+            "/W3",
+            "/O2"
+          ],
+          "defines": [
+            "WIN32",
+            "BZ_EXPORT"
+          ],
+          "includes": [
+            "refs/bzip2-1.0.2-dl/bzip2-1.0.2"
+          ]
         }
       ]
     },

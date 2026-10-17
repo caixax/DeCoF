@@ -74,9 +74,11 @@ def build_base(units, kind="base", extra=()):
         tc.check()
         out = obj_path(kind, full)
         os.makedirs(os.path.dirname(out), exist_ok=True)
-        cmd = [tc.cl_path()] + d["cflags"] + list(extra)
-        cmd += ["/D" + x for x in d["defines"]]
-        cmd += ["/I" + os.path.join(ROOT, x) for x in d["includes"]]
+        # a unit may replace the dll's flags, defines or include paths
+        # (third-party code built its own way, such as bzip2 in hw.dll)
+        cmd = [tc.cl_path()] + u.get("cflags", d["cflags"]) + list(extra)
+        cmd += ["/D" + x for x in u.get("defines", d["defines"])]
+        cmd += ["/I" + os.path.join(ROOT, x) for x in u.get("includes", d["includes"])]
         cmd += ["/Fo" + out, os.path.join(ROOT, u["source"])]
         res = subprocess.run(cmd, env=tc.env(), cwd=ROOT, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
         rc = res.returncode

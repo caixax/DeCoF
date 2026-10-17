@@ -25359,8 +25359,8 @@ hw,01D4EBDF,860,_Decal_MergeInDecals,Decal_MergeInDecals,ENGINE,engine/decals.c,
 hw,01D4EF3B,471,_Decal_Init,Decal_Init,ENGINE,engine/decals.c,,,TODO,,linux_symbols:string:0.719,
 hw,01D4F112,130,,,UNKNOWN,guess:engine/decals.c,,,TODO,,,
 hw,01D4F194,121,,,UNKNOWN,guess:engine/decals.c,,,TODO,,,
-hw,01D4F20D,304,_Draw_CustomCacheGet,Draw_CustomCacheGet,ENGINE,engine/decals.c,,,TODO,,linux_symbols:callseq:0.5,
-hw,01D4F33D,199,_Draw_CacheGet,Draw_CacheGet,ENGINE,engine/decals.c,,,TODO,,linux_symbols:callseq:0.5,
+hw,01D4F20D,304,_Draw_CacheGet,Draw_CustomCacheGet,ENGINE,engine/decals.c,,,TODO,,hw_manual.csv,
+hw,01D4F33D,199,_Draw_CustomCacheGet,Draw_CacheGet,ENGINE,engine/decals.c,,,TODO,,hw_manual.csv,
 hw,01D4F404,350,,,UNKNOWN,guess:engine/decals.c,,,TODO,,,
 hw,01D4F562,556,_Draw_ValidateCustomLogo,Draw_ValidateCustomLogo,ENGINE,engine/decals.c,,,TODO,,linux_symbols:string:0.383,
 hw,01D4F78E,351,_Draw_CacheLoadFromCustom,Draw_CacheLoadFromCustom,ENGINE,engine/decals.c,,,TODO,,linux_symbols:caller:0.583,
@@ -32046,55 +32046,55 @@ hw,01E66AF0,4,,,UNKNOWN,,,,TODO,,,
 hw,01E66B30,4,,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(undname.obj)"
 hw,01E66B40,19,,,UNKNOWN,,,,TODO,,,
 hw,01E66B60,106,,,UNKNOWN,,,,TODO,,,
-hw,01E66BD0,64,_BZ2_bz__AssertH__fail,BZ2_bz__AssertH__fail,ENGINE,,,,TODO,,linux_symbols:string:0.781,
-hw,01E66C10,459,,,UNKNOWN,,,,TODO,,,
-hw,01E66DE0,6,,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBC.LIB(mterrno.obj)"
-hw,01E66DF0,19,,,UNKNOWN,,,,TODO,,,
-hw,01E66E10,16,,,UNKNOWN,,,,TODO,,,
-hw,01E66E20,51,,,UNKNOWN,,,,TODO,,,
-hw,01E66E60,19,,,UNKNOWN,,,,TODO,,,
-hw,01E66E80,358,,,UNKNOWN,,,,TODO,,,
-hw,01E67000,26,,,UNKNOWN,,,,TODO,,,
-hw,01E67020,271,,,UNKNOWN,,,,TODO,,,
-hw,01E67130,34,,,UNKNOWN,,,,TODO,,,
-hw,01E67160,259,,,UNKNOWN,,,,TODO,,,
-hw,01E67270,475,,,UNKNOWN,,,,TODO,,,
-hw,01E67450,93,,,UNKNOWN,,,,TODO,,,
-hw,01E674B0,133,,,UNKNOWN,,,,TODO,,,
-hw,01E67540,218,_BZ2_bzDecompressInit,BZ2_bzDecompressInit,ENGINE,,,,TODO,,linux_symbols:callee:0.583,
-hw,01E67620,45,,,UNKNOWN,,,,TODO,,,
-hw,01E67650,383,_BZ2_bzDecompress,BZ2_bzDecompress,ENGINE,,,,TODO,,linux_symbols:string:0.841,
-hw,01E677D0,1312,,,UNKNOWN,,,,TODO,,,
-hw,01E67CF0,1682,,,UNKNOWN,,,,TODO,,,
-hw,01E68390,142,_BZ2_bzDecompressEnd,BZ2_bzDecompressEnd,ENGINE,,,,TODO,,linux_symbols:consts:1.0,
+hw,01E66BD0,64,_BZ2_bz__AssertH__fail,BZ2_bz__AssertH__fail,ENGINE,bzip2/bzlib.c,,,MATCHED,100,linux_symbols:string:0.781,
+hw,01E66C10,459,_BZ2_bzCompressInit@16,,UNKNOWN,bzip2/bzlib.c,,,MATCHED,100,hw_manual.csv,
+hw,01E66DE0,6,_bz_config_ok,,UNKNOWN,bzip2/bzlib.c,,,MATCHED,100,bzip2 1.0.2 bzlib.c (emission order of the official source),
+hw,01E66DF0,19,_default_bzalloc,,UNKNOWN,bzip2/bzlib.c,,,MATCHED,100,hw_manual.csv,
+hw,01E66E10,16,_default_bzfree,,UNKNOWN,bzip2/bzlib.c,,,MATCHED,100,hw_manual.csv,
+hw,01E66E20,51,_prepare_new_block,,UNKNOWN,bzip2/bzlib.c,,,MATCHED,100,hw_manual.csv,
+hw,01E66E60,19,_init_RL,,UNKNOWN,bzip2/bzlib.c,,,MATCHED,100,hw_manual.csv,
+hw,01E66E80,358,_BZ2_bzCompress@8,,UNKNOWN,bzip2/bzlib.c,,,EQUIVALENT,98.86,hw_manual.csv,"EQUIVALENT: the unmodified official bzip2 1.0.2 source; retail was compiled with VC6 and the Processor Pack (cl 12.00.9044, Utc12_2_C), ours with VC6 RTM (12.00.8168), which allocates registers and reduces loops differently"
+hw,01E67000,26,_isempty_RL,,UNKNOWN,bzip2/bzlib.c,,,MATCHED,100,hw_manual.csv,
+hw,01E67020,271,_handle_compress,,UNKNOWN,bzip2/bzlib.c,,,EQUIVALENT,80.80,hw_manual.csv,"EQUIVALENT: the unmodified official bzip2 1.0.2 source; retail was compiled with VC6 and the Processor Pack (cl 12.00.9044, Utc12_2_C), ours with VC6 RTM (12.00.8168), which allocates registers and reduces loops differently"
+hw,01E67130,34,_flush_RL,,UNKNOWN,bzip2/bzlib.c,,,MATCHED,100,hw_manual.csv,
+hw,01E67160,259,_add_pair_to_block,,UNKNOWN,bzip2/bzlib.c,,,EQUIVALENT,93.57,hw_manual.csv,"EQUIVALENT: the unmodified official bzip2 1.0.2 source; retail was compiled with VC6 and the Processor Pack (cl 12.00.9044, Utc12_2_C), ours with VC6 RTM (12.00.8168), which allocates registers and reduces loops differently"
+hw,01E67270,475,_copy_input_until_stop,,UNKNOWN,bzip2/bzlib.c,,,EQUIVALENT,83.09,hw_manual.csv,"EQUIVALENT: the unmodified official bzip2 1.0.2 source; retail was compiled with VC6 and the Processor Pack (cl 12.00.9044, Utc12_2_C), ours with VC6 RTM (12.00.8168), which allocates registers and reduces loops differently"
+hw,01E67450,93,_copy_output_until_stop,,UNKNOWN,bzip2/bzlib.c,,,EQUIVALENT,95.11,hw_manual.csv,"EQUIVALENT: the unmodified official bzip2 1.0.2 source; retail was compiled with VC6 and the Processor Pack (cl 12.00.9044, Utc12_2_C), ours with VC6 RTM (12.00.8168), which allocates registers and reduces loops differently"
+hw,01E674B0,133,_BZ2_bzCompressEnd@4,,UNKNOWN,bzip2/bzlib.c,,,MATCHED,100,hw_manual.csv,
+hw,01E67540,218,_BZ2_bzDecompressInit@12,BZ2_bzDecompressInit,ENGINE,bzip2/bzlib.c,,,MATCHED,100,hw_manual.csv,
+hw,01E67620,45,_BZ2_indexIntoF,,UNKNOWN,bzip2/bzlib.c,,,MATCHED,100,hw_manual.csv,
+hw,01E67650,383,_BZ2_bzDecompress@4,BZ2_bzDecompress,ENGINE,bzip2/bzlib.c,,,EQUIVALENT,91.12,hw_manual.csv,"EQUIVALENT: the unmodified official bzip2 1.0.2 source; retail was compiled with VC6 and the Processor Pack (cl 12.00.9044, Utc12_2_C), ours with VC6 RTM (12.00.8168), which allocates registers and reduces loops differently"
+hw,01E677D0,1312,_unRLE_obuf_to_output_FAST,,UNKNOWN,bzip2/bzlib.c,,,EQUIVALENT,54.58,hw_manual.csv,"EQUIVALENT: the unmodified official bzip2 1.0.2 source; retail was compiled with VC6 and the Processor Pack (cl 12.00.9044, Utc12_2_C), ours with VC6 RTM (12.00.8168), which allocates registers and reduces loops differently"
+hw,01E67CF0,1682,_unRLE_obuf_to_output_SMALL,,UNKNOWN,bzip2/bzlib.c,,,EQUIVALENT,67.68,hw_manual.csv,"EQUIVALENT: the unmodified official bzip2 1.0.2 source; retail was compiled with VC6 and the Processor Pack (cl 12.00.9044, Utc12_2_C), ours with VC6 RTM (12.00.8168), which allocates registers and reduces loops differently"
+hw,01E68390,142,_BZ2_bzDecompressEnd@4,BZ2_bzDecompressEnd,ENGINE,bzip2/bzlib.c,,,MATCHED,100,hw_manual.csv,
 hw,01E68570,368,,,UNKNOWN,,,,TODO,,,
 hw,01E68710,455,,,UNKNOWN,,,,TODO,,,
-hw,01E68D80,293,,,UNKNOWN,,,,TODO,,,
-hw,01E68EB0,289,_BZ2_bzBuffToBuffDecompress,BZ2_bzBuffToBuffDecompress,ENGINE,,,,TODO,,linux_symbols:callseq:1.0,
-hw,01E68FE0,6,,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBC.LIB(mterrno.obj)"
-hw,01E69330,19,,,UNKNOWN,,,,TODO,,,
-hw,01E69350,414,,,UNKNOWN,,,,TODO,,,
-hw,01E694F0,81,,,UNKNOWN,,,,TODO,,,
-hw,01E69550,130,,,UNKNOWN,,,,TODO,,,
-hw,01E695E0,73,,,UNKNOWN,,,,TODO,,,
-hw,01E69630,26,,,UNKNOWN,,,,TODO,,,
-hw,01E69650,454,,,UNKNOWN,,,,TODO,,,
-hw,01E69820,48,,,UNKNOWN,,,,TODO,,,
-hw,01E69850,7552,_BZ2_compressBlock,BZ2_compressBlock,ENGINE,,,,TODO,,linux_symbols:string:0.762,
-hw,01E6B5D0,9687,_BZ2_decompress,BZ2_decompress,ENGINE,,,,TODO,,linux_symbols:string:0.952,
-hw,01E6DC50,63,,,UNKNOWN,,,,TODO,,,
-hw,01E6DC90,340,_BZ2_blockSort,BZ2_blockSort,ENGINE,,,,TODO,,linux_symbols:string:0.87,
-hw,01E6DDF0,1064,_fallbackSort,fallbackSort,ENGINE,,,,TODO,,linux_symbols:string:0.849,
-hw,01E6E220,572,,,UNKNOWN,,,,TODO,,,
-hw,01E6E460,160,,,UNKNOWN,,,,TODO,,,
-hw,01E6E500,1725,_mainSort,mainSort,ENGINE,,,,TODO,,linux_symbols:string:0.871,
-hw,01E6EBC0,963,,,UNKNOWN,,,,TODO,,,
-hw,01E6EF90,688,,,UNKNOWN,,,,TODO,,,
-hw,01E6F240,615,,,UNKNOWN,,,,TODO,,,
-hw,01E6F4B0,36,,,UNKNOWN,,,,TODO,,,
-hw,01E6F4E0,731,,,UNKNOWN,,,,TODO,,,
-hw,01E6F7C0,70,,,UNKNOWN,,,,TODO,,,
-hw,01E6F810,236,,,UNKNOWN,,,,TODO,,,
+hw,01E68D80,293,_BZ2_bzBuffToBuffCompress@28,,UNKNOWN,bzip2/bzlib.c,,,MATCHED,100,hw_manual.csv,
+hw,01E68EB0,289,_BZ2_bzBuffToBuffDecompress@24,BZ2_bzBuffToBuffDecompress,ENGINE,bzip2/bzlib.c,,,MATCHED,100,hw_manual.csv,
+hw,01E68FE0,6,_BZ2_bzlibVersion@0,,UNKNOWN,bzip2/bzlib.c,,,MATCHED,100,bzip2 1.0.2 bzlib.c (emission order of the official source),
+hw,01E69330,19,_BZ2_bsInitWrite,,UNKNOWN,bzip2/compress.c,,,MATCHED,100,hw_manual.csv,
+hw,01E69350,414,_BZ2_compressBlock,,UNKNOWN,bzip2/compress.c,,,MATCHED,100,hw_manual.csv,
+hw,01E694F0,81,_bsFinishWrite,,UNKNOWN,bzip2/compress.c,,,EQUIVALENT,86.42,hw_manual.csv,"EQUIVALENT: the unmodified official bzip2 1.0.2 source; retail was compiled with VC6 and the Processor Pack (cl 12.00.9044, Utc12_2_C), ours with VC6 RTM (12.00.8168), which allocates registers and reduces loops differently"
+hw,01E69550,130,_bsW,,UNKNOWN,bzip2/compress.c,,,EQUIVALENT,83.07,hw_manual.csv,"EQUIVALENT: the unmodified official bzip2 1.0.2 source; retail was compiled with VC6 and the Processor Pack (cl 12.00.9044, Utc12_2_C), ours with VC6 RTM (12.00.8168), which allocates registers and reduces loops differently"
+hw,01E695E0,73,_bsPutUInt32,,UNKNOWN,bzip2/compress.c,,,MATCHED,100,hw_manual.csv,
+hw,01E69630,26,_bsPutUChar,,UNKNOWN,bzip2/compress.c,,,MATCHED,100,hw_manual.csv,
+hw,01E69650,454,_generateMTFValues,,UNKNOWN,bzip2/compress.c,,,EQUIVALENT,86.96,hw_manual.csv,"EQUIVALENT: the unmodified official bzip2 1.0.2 source; retail was compiled with VC6 and the Processor Pack (cl 12.00.9044, Utc12_2_C), ours with VC6 RTM (12.00.8168), which allocates registers and reduces loops differently"
+hw,01E69820,48,_makeMaps_e,,UNKNOWN,bzip2/compress.c,,,MATCHED,100,hw_manual.csv,
+hw,01E69850,7552,_sendMTFValues,BZ2_compressBlock,ENGINE,bzip2/compress.c,,,EQUIVALENT,90.58,hw_manual.csv,"EQUIVALENT: the unmodified official bzip2 1.0.2 source; retail was compiled with VC6 and the Processor Pack (cl 12.00.9044, Utc12_2_C), ours with VC6 RTM (12.00.8168), which allocates registers and reduces loops differently"
+hw,01E6B5D0,9687,_BZ2_decompress,BZ2_decompress,ENGINE,bzip2/decompress.c,,,EQUIVALENT,71.10,linux_symbols:string:0.952,"EQUIVALENT: the unmodified official bzip2 1.0.2 source; retail was compiled with VC6 and the Processor Pack (cl 12.00.9044, Utc12_2_C), ours with VC6 RTM (12.00.8168), which allocates registers and reduces loops differently"
+hw,01E6DC50,63,_makeMaps_d,,UNKNOWN,bzip2/decompress.c,,,MATCHED,100,hw_manual.csv,
+hw,01E6DC90,340,_BZ2_blockSort,BZ2_blockSort,ENGINE,bzip2/blocksort.c,,,EQUIVALENT,96.95,linux_symbols:string:0.87,"EQUIVALENT: the unmodified official bzip2 1.0.2 source; retail was compiled with VC6 and the Processor Pack (cl 12.00.9044, Utc12_2_C), ours with VC6 RTM (12.00.8168), which allocates registers and reduces loops differently"
+hw,01E6DDF0,1064,_fallbackSort,fallbackSort,ENGINE,bzip2/blocksort.c,,,EQUIVALENT,86.17,linux_symbols:string:0.849,"EQUIVALENT: the unmodified official bzip2 1.0.2 source; retail was compiled with VC6 and the Processor Pack (cl 12.00.9044, Utc12_2_C), ours with VC6 RTM (12.00.8168), which allocates registers and reduces loops differently"
+hw,01E6E220,572,_fallbackQSort3,,UNKNOWN,bzip2/blocksort.c,,,EQUIVALENT,45.29,hw_manual.csv,"EQUIVALENT: the unmodified official bzip2 1.0.2 source; retail was compiled with VC6 and the Processor Pack (cl 12.00.9044, Utc12_2_C), ours with VC6 RTM (12.00.8168), which allocates registers and reduces loops differently"
+hw,01E6E460,160,_fallbackSimpleSort,,UNKNOWN,bzip2/blocksort.c,,,EQUIVALENT,43.03,hw_manual.csv,"EQUIVALENT: the unmodified official bzip2 1.0.2 source; retail was compiled with VC6 and the Processor Pack (cl 12.00.9044, Utc12_2_C), ours with VC6 RTM (12.00.8168), which allocates registers and reduces loops differently"
+hw,01E6E500,1725,_mainSort,mainSort,ENGINE,bzip2/blocksort.c,,,EQUIVALENT,74.17,linux_symbols:string:0.871,"EQUIVALENT: the unmodified official bzip2 1.0.2 source; retail was compiled with VC6 and the Processor Pack (cl 12.00.9044, Utc12_2_C), ours with VC6 RTM (12.00.8168), which allocates registers and reduces loops differently"
+hw,01E6EBC0,963,_mainQSort3,,UNKNOWN,bzip2/blocksort.c,,,EQUIVALENT,33.59,hw_manual.csv,"EQUIVALENT: the unmodified official bzip2 1.0.2 source; retail was compiled with VC6 and the Processor Pack (cl 12.00.9044, Utc12_2_C), ours with VC6 RTM (12.00.8168), which allocates registers and reduces loops differently"
+hw,01E6EF90,688,_mainSimpleSort,,UNKNOWN,bzip2/blocksort.c,,,EQUIVALENT,56.52,hw_manual.csv,"EQUIVALENT: the unmodified official bzip2 1.0.2 source; retail was compiled with VC6 and the Processor Pack (cl 12.00.9044, Utc12_2_C), ours with VC6 RTM (12.00.8168), which allocates registers and reduces loops differently"
+hw,01E6F240,615,_mainGtU,,UNKNOWN,bzip2/blocksort.c,,,EQUIVALENT,76.74,hw_manual.csv,"EQUIVALENT: the unmodified official bzip2 1.0.2 source; retail was compiled with VC6 and the Processor Pack (cl 12.00.9044, Utc12_2_C), ours with VC6 RTM (12.00.8168), which allocates registers and reduces loops differently"
+hw,01E6F4B0,36,_mmed3,,UNKNOWN,bzip2/blocksort.c,,,MATCHED,100,hw_manual.csv,
+hw,01E6F4E0,731,_BZ2_hbMakeCodeLengths,,UNKNOWN,bzip2/huffman.c,,,EQUIVALENT,71.35,hw_manual.csv,"EQUIVALENT: the unmodified official bzip2 1.0.2 source; retail was compiled with VC6 and the Processor Pack (cl 12.00.9044, Utc12_2_C), ours with VC6 RTM (12.00.8168), which allocates registers and reduces loops differently"
+hw,01E6F7C0,70,_BZ2_hbAssignCodes,,UNKNOWN,bzip2/huffman.c,,,EQUIVALENT,80.20,hw_manual.csv,"EQUIVALENT: the unmodified official bzip2 1.0.2 source; retail was compiled with VC6 and the Processor Pack (cl 12.00.9044, Utc12_2_C), ours with VC6 RTM (12.00.8168), which allocates registers and reduces loops differently"
+hw,01E6F810,236,_BZ2_hbCreateDecodeTables,,UNKNOWN,bzip2/huffman.c,,,EQUIVALENT,67.50,hw_manual.csv,"EQUIVALENT: the unmodified official bzip2 1.0.2 source; retail was compiled with VC6 and the Processor Pack (cl 12.00.9044, Utc12_2_C), ours with VC6 RTM (12.00.8168), which allocates registers and reduces loops differently"
 hw,01E6F9FC,11,,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(atox.obj)"
 hw,01E6FA07,126,,,UNKNOWN,,,,TODO,,,
 hw,01E6FAA3,21,,,UNKNOWN,,,,TODO,,,
