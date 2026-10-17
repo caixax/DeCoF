@@ -16,6 +16,7 @@ Ranges of hw.dll code that tools/align_linux.py could not attribute (no Linux co
 | 01DF759A-01DF9267 | 6 KB | video mode and registry settings (sys_dll2, vid) | "EngineDLL", "EngineD3D", "ScreenWindowed", "ScreenBPP" |
 | 01DFD212-01DFF007 | 7 KB | vgui2 engine surface | "EngineSurface007" |
 | 01E0BD4E-01E0E52B | 9 KB | voice recording through waveIn and DirectSoundCapture | "VoiceRecord_WaveIn::Init", "DirectSoundCaptureCreate" |
+| 01E14E50-01E18431 | 8 KB | Valve's A3D renderer (CA3DRenderer, CA3DSource2D, CA3DSource3D, A3D_SetGlobals, A3D_FeedBuffer) written against the Aureal A3D COM interfaces; the SDK's ia3dutil helper library is not linked in (neither the source compiled with VC6 nor the prebuilt ia3dutil.lib matches). Interfaces: refs/a3d-sdk (ia3dapi.h) | "CA3DRenderer::SetMainVolume - not yet implemented in API.", "Software\\Aureal\\A3D" |
 | 01E2D83E-01E305A9, 01E322A0-01E33D43, 01E43E40-01E4580D and more | | vgui2 controls library (Panel, Button, RichText, ...), also in GameUI.dll | "vgui::", "DefaultButtonSet", "DoCutSelected" |
 
 ## Third-party code linked into hw.dll (no Valve source)
@@ -23,8 +24,7 @@ Ranges of hw.dll code that tools/align_linux.py could not attribute (no Linux co
 | Range | Size | What | Evidence |
 |---|---|---|---|
 | 01D0EE19-01D1E6BE, 01E1A0C0-01E1FBF5, 01E20060-01E27F5A | 110 KB | IGA / Radial in-game advertising SDK | "RAD_IMPRESSION_SENT", "Software\\IGA", "radial.cdb", "FINAL 2.0.0.0" |
-| 01E14E50-01E18431 | 8 KB | Aureal A3D SDK | "Software\\Aureal\\A3D", "CA3DRenderer::SetMainVolume" |
 | 01E634F8-01E6FD98 | 47 KB | bzip2 1.0.2 (official source; built with the VC6 processor pack, docs/toolchains.md) | "1.0.2, 30-Dec-2001" |
 | 01E83AC5-01E899EF | 22 KB | DirectX manager (ddraw enumeration, COM registration) | "__DXMgrUsageCount__", "DirectDrawEnumerateExA" |
 
-How to treat the third-party code (rebuild from a source where one exists, as with bzip2, or link the retail bytes as a binary object) is a scope decision that is still open.
+The IGA/Radial SDK and the DirectX manager have no public source (marcinlos/iga-ads is an unrelated isogeometric analysis framework, microsoft/directxtk a modern DirectX 11 library): they will be linked from the retail bytes as binary objects. bzip2 is rebuilt from its official source.

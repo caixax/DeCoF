@@ -145,3 +145,7 @@ client.dll contains the class "MP3FileInfo 1.0" by Christian Richardt (CodeProje
 ## refs/Quake (id-Software/Quake, GPL-2.0)
 
 id Software's Quake source (WinQuake, QW). GoldSrc's engine descends from it, and its Windows-only files have no counterpart in the Linux hw.so DWARF: in_win.c, snd_win.c, vid_win.c, gl_vidnt.c, sys_win.c, cd_win.c, net_wins.c and conproc.c give the function names, order and structure of the matching hw.dll code (docs/hw_regions.md). Consultation only, like the other engine references: write hw.dll from its assembly and verify every name in the binary.
+
+## refs/a3d-sdk (sigmaco/a3d-sdk, no licence stated)
+
+The Aureal A3D SDK 1.2, 2.0 and 3.0: headers (Ia3d.h, ia3dapi.h, Ia3dutil.h), the ia3dutil helper library source and prebuilt libraries, samples. hw.dll's A3D renderer (CA3DRenderer and the CA3DSource classes) is Valve code written against these COM interfaces; the helper library itself is not in hw.dll. Consultation only: the interface declarations give the vtable slots and GUIDs the engine calls.
