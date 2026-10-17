@@ -23,6 +23,8 @@
 
 #define MAX_CLIENTS			32
 
+#define	MAX_EDICT_BITS		11		// # of bits needed to represent max edicts
+
 #define MAX_MODELS			768		// this engine build: cl.model_precache has 768 entries
 #define MAX_SOUNDS			768		// and so has cl.sound_precache
 #define MAX_RESOURCE_LIST	1792	// MAX_MODELS + MAX_SOUNDS + MAX_EVENTS
@@ -452,6 +454,12 @@ extern	cvar_t	cl_himodels;
 extern	cvar_t	cl_gaitestimation;
 extern	cvar_t	cl_showevents;
 extern	cvar_t	cl_clockreset;
+extern	cvar_t	cl_needinstanced;
+extern	cvar_t	cl_solid_players;
+extern	cvar_t	cl_showmessages;
+extern	cvar_t	cl_weaponlistfix;
+extern	cvar_t	cl_allow_download;
+extern	cvar_t	cl_download_ingame;
 extern	cvar_t	cl_fixtimerate;
 extern	cvar_t	cl_updaterate;
 extern	cvar_t	cl_cmdrate;
@@ -461,6 +469,7 @@ extern	cvar_t	fs_perf_warnings;
 extern	cvar_t	fs_startup_timings;
 
 extern	int			cl_playerindex;
+extern	qboolean	g_bRedirectedToProxy;
 extern	qboolean	cl_inmovie;
 extern	float		g_LastScreenUpdateTime;
 
@@ -532,12 +541,17 @@ void	CL_AppendDemo_f( void );
 void	CL_RemoveDemo_f( void );
 void	CL_SwapDemo_f( void );
 void	CL_SetDemoInfo_f( void );
+void	CL_BeginDemoStartup( void );
+void	CL_WriteDemoStartup( int start, sizebuf_t *msg );
+void	CL_WriteDemoMessage( int start, sizebuf_t *msg );
 void	CL_WavePlayLen_f( void );
 
 //
 // cl_parse.c
 //
 extern	int			msg_buckets[64];
+extern	double		parsecounttime;
+extern	int			last_data[64];
 extern	int			total_data[64];
 extern	qboolean	g_bUpdatingSecurityModules;
 
@@ -601,6 +615,51 @@ typedef struct event_hook_s
 } event_hook_t;
 
 void	CL_AdjustClock( void );
+void	CL_Parse_Time( void );
+void	CL_Parse_ClientData( void );
+void	CL_Parse_Disconnect( void );
+void	CL_Parse_Version( void );
+void	CL_Set_ServerExtraInfo( void );
+void	CL_Parse_SetView( void );
+void	CL_Parse_Print( void );
+void	CL_Parse_CenterPrint( void );
+qboolean	ValidStuffText( const char *cmd );
+void	CL_Parse_StuffText( void );
+void	CL_Parse_ServerInfo( void );
+void	CL_Parse_SetAngle( void );
+void	CL_Parse_AddAngle( void );
+void	CL_Parse_CrosshairAngle( void );
+void	CL_Parse_LightStyle( void );
+void	CL_Parse_StopSound( void );
+void	CL_Parse_Particle( void );
+void	CL_Parse_SpawnBaseline( void );
+void	CL_Parse_SpawnStatic( void );
+void	CL_Parse_TempEntity( void );
+void	CL_Parse_SetPause( void );
+void	CL_Parse_SignonNum( void );
+void	CL_Parse_SpawnStaticSound( void );
+void	CL_Parse_CDTrack( void );
+void	CL_Parse_Restore( void );
+void	CL_Parse_WeaponAnim( void );
+void	CL_Parse_DecalName( void );
+void	CL_Parse_RoomType( void );
+void	CL_Parse_NewUserMsg( void );
+void	CL_Parse_UpdateUserInfo( void );
+void	CL_Parse_Damage( void );
+void	CL_Parse_KilledMonster( void );
+void	CL_Parse_FoundSecret( void );
+void	CL_Parse_Intermission( void );
+void	CL_Parse_Finale( void );
+void	CL_Parse_CutScene( void );
+void	CL_Parse_PacketEntities( void );
+void	CL_Parse_DeltaPacketEntities( void );
+void	CL_Parse_Choke( void );
+void	CL_Parse_ResourceList( void );
+void	CL_Parse_ResourceLocation( void );
+void	CL_Parse_NewMoveVars( void );
+void	CL_Parse_ResourceRequest( void );
+void	CL_Parse_Customization( void );
+void	CL_Parse_SoundFade( void );
 void	CL_ResetEvent( event_info_t *ei );
 void	CL_CalcPlayerVelocity( int idx, vec_t *velocity );
 void	CL_DescribeEvent( int slot, char *eventname );
@@ -610,11 +669,20 @@ event_info_t	*CL_FindUnreliableEvent( void );
 void	CL_ClientQueueEvent( int flags, int index, int client_index, float delay, struct event_args_s *pargs );
 void	CL_QueueEvent( int flags, int index, float delay, struct event_args_s *pargs );
 void	CL_ParseEvent( void );
+void	CL_Parse_ReliableEvent( void );
+void	CL_Parse_Pings( void );
+void	CL_Parse_HLTV( void );
+void	CL_Parse_Director( void );
+void	CL_Parse_Timescale( void );
+void	CL_Parse_VoiceInit( void );
+void	CL_Parse_VoiceData( void );
 event_hook_t	*CL_FindEventHook( char *name );
 void	CL_HookEvent( char *name, void ( *pfnEvent )( struct event_args_s *args ) );
 void	CL_InitEventSystem( void );
 void	CL_FlushEventSystem( void );
 void	CL_ParseFileTxferFailed( void );
+void	CL_Send_CvarValue( void );
+void	CL_Send_CvarValue2( void );
 
 //
 // cl_ents.c
@@ -681,16 +749,28 @@ void	PM_CL_PlaySound( int channel, const char *sample, float volume, float atten
 //
 extern	cvar_t	ex_interp;
 extern	cvar_t	dev_overview;
+extern	local_state_t	spectatorState;
+
+void	CL_InitSpectator( void );
 
 void	CL_TempEntInit( void );
 void	CL_InitTEnts( void );
 void	CL_ParseTEnt( void );
 void	CL_InitExtrap( void );
+qboolean	CL_FindInterpolationUpdates( cl_entity_t *ent, float targettime, position_history_t **ph0, position_history_t **ph1, int *ph0Index );
+void	CL_UpdatePositions( cl_entity_t *ent );
+void	CL_ResetPositions( cl_entity_t *ent );
+void	CL_ComputePlayerOrigin( cl_entity_t *ent );
+void	CL_TempEntUpdate( void );
 
 //
 // download.cpp, voice.cpp
 //
 void	CL_HTTPStop_f( void );
+void	CL_QueueHTTPDownload( const char *filename );
+int		CL_CanUseHTTPDownload( void );
+int		CL_GetDownloadQueueSize( void );
+void	CL_MarkMapAsUsingHTTPDownload( void );
 qboolean	Voice_GetLoopback( void );
 qboolean	Voice_Init( const char *pCodecName, int quality );
 void	Voice_LocalPlayerTalkingAck( int );	// this build passes an argument the function never reads

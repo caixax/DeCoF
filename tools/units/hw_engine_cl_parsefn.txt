@@ -59,3 +59,11 @@ _CL_HookEvent
 _CL_InitEventSystem
 _CL_FlushEventSystem
 _CL_ParseFileTxferFailed
+_CL_Set_ServerExtraInfo
+_CL_Parse_SetView
+_CL_Parse_Print
+_CL_Parse_CenterPrint
+_ValidStuffText
+_CL_Parse_StuffText
+_CL_Send_CvarValue
+_CL_Send_CvarValue2

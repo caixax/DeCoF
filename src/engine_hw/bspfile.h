@@ -6,6 +6,8 @@
 #define Q1BSP_VERSION		29		// quake1 regular version (beta is 28)
 #define HLBSP_VERSION		30		// half-life regular version
 
+#define MAX_MAP_LEAFS		8192
+
 #define LUMP_ENTITIES		0
 #define LUMP_PLANES			1
 #define LUMP_TEXTURES		2

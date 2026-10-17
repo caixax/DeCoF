@@ -16,6 +16,7 @@ int				FS_Read( void *pOutput, int size, int count, FileHandle_t file );
 int				FS_Write( const void *pInput, int size, int count, FileHandle_t file );
 int				FS_FPrintf( FileHandle_t file, char *pFormat, ... );
 int				FS_FileExists( const char *pFileName );
+int				FS_FileSize( const char *pFileName );
 void			FS_Unlink( const char *filename );
 void			FS_RemoveFile( const char *pRelativePath, const char *pathID );
 void			FS_CreateDirHierarchy( const char *path, const char *pathID );
@@ -32,6 +33,8 @@ void			FS_Rename( const char *originalName, const char *newName );
 
 void			FS_LogLevelLoadStarted( const char *name );
 void			FS_LogLevelLoadFinished( const char *name );
+int				FS_HintResourceNeed( const char *hintlist, int forgetEverything );
+int				FS_SetVBuf( FileHandle_t stream, char *buffer, int mode, long size );
 
 // wrappers around IFileSystem::WaitForResources, GetWaitForResourcesProgress
 // and CancelWaitForResources (0x01D5D7FA, 0x01D5D817, 0x01D5D862; names unproven)

@@ -6,4 +6,6 @@
 
 #include "../common/mathlib.h"
 
+void	VectorAngles( const vec3_t forward, vec3_t angles );
+
 #endif // MATHLIB_H

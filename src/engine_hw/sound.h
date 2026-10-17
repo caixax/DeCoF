@@ -3,7 +3,13 @@
 #ifndef SOUND_H
 #define SOUND_H
 
-struct sfx_s;
+// needs zone.h (cache_user_t)
+typedef struct sfx_s
+{
+	char			name[64];
+	cache_user_t	cache;
+	int				servercount;
+} sfx_t;
 
 // sound flags of svc_sound
 #define SND_VOLUME			(1<<0)		// a byte
@@ -23,6 +29,11 @@ struct sfx_s;
 #define CVOXFILESENTENCEMAX	1536		// max number of sentences in game. NOTE: this must match CVOXFILESENTENCEMAX in dlls\util.h!!!
 
 void	S_StopAllSounds( qboolean clear );
+void	S_StopSound( int entnum, int entchannel );
+void	S_StartDynamicSound( int entnum, int entchannel, sfx_t *sfx, vec_t *origin, float fvol, float attenuation, int flags, int pitch );
+void	S_StartStaticSound( int entnum, int entchannel, sfx_t *sfxin, vec_t *origin, float fvol, float attenuation, int flags, int pitch );
+
+extern	char	*rgpszrawsentence[CVOXFILESENTENCEMAX];
 void	S_BeginPrecaching( void );
 void	S_EndPrecaching( void );
 struct sfx_s	*S_PrecacheSound( char *name );

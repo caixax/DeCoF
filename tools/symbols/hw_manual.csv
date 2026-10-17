@@ -857,7 +857,6 @@ va,name,kind,evidence
 02D7DB00,_gDevOverview,data,Linux hw.so: 3 of its 3 paired functions reference this address (Jaccard 1.00) (tools/globals_linux.py)
 02D7DB20,_spectatorState,data,Linux hw.so: 3 of its 3 paired functions reference this address (Jaccard 1.00) (tools/globals_linux.py)
 02D7F460,_last_data,data,Linux hw.so: 2 of its 2 paired functions reference this address (Jaccard 1.00) (tools/globals_linux.py)
-02D7F67C,_msg_buckets,data,Linux hw.so: 2 of its 2 paired functions reference this address (Jaccard 1.00) (tools/globals_linux.py)
 02D7F7A0,_g_clmove,data,Linux hw.so: 4 of its 5 paired functions reference this address (Jaccard 0.80) (tools/globals_linux.py)
 02DCED80,_cl_dlights,data,Linux hw.so: 9 of its 11 paired functions reference this address (Jaccard 0.75) (tools/globals_linux.py)
 02DCF280,_cls,data,Linux hw.so: 80 of its 90 paired functions reference this address (Jaccard 0.82) (tools/globals_linux.py)
@@ -1302,3 +1301,8 @@ va,name,kind,evidence
 01E6F810,_BZ2_hbCreateDecodeTables,func,"bzip2 1.0.2 huffman.c: retail follows the emission order of the official source compiled with VC6 /O2 /DBZ_EXPORT, sizes agree after 16-byte alignment"
 01ED86E0,__iob,data,"the C runtime FILE table: bzip2's fprintf( stderr, ... ) pushes __iob+0x40 (VC6 LIBC _iob[20])"
 01E73B31,_fprintf,func,the C runtime fprintf bzip2 calls with stderr
+01D299D0,_CL_EntityTeleported,func,"curstate.origin minus prevstate.origin, true when a component exceeds 128; called by CL_LinkPacketEntities and CL_LinkPlayers before CL_ResetPositions; hw.so DWARF CL_EntityTeleported (cl_ents.c line 78), first function of the file (added by an agent)"
+01D29A50,_CL_CompareTimestamps,func,"two floats times 1000 to int, abs difference <= 1; called by CL_ProcessEntityUpdate with curstate/prevstate animtime; hw.so DWARF CL_CompareTimestamps (cl_ents.c line 101) between CL_EntityTeleported and CL_ParametricMove (added by an agent)"
+01D346B0,_CL_PlayerDropped,func,"COM_ClearCustomizationList(&cl.players[n].customdata, true); called by CL_UpdateUserinfo when the userinfo or name is empty; hw.so DWARF CL_PlayerDropped (CL_PARSE.C line 181) right before CL_EntityNum (added by an agent)"
+02D7F580,_msg_buckets,data,int msg_buckets[64]: CL_DumpMessageLoad_f loops 02D7F580 + i*4 for i < 63 and reads 02D7F67C (element 63) as the user-message bucket
+02D7F6A0,_total_data,data,int total_data[64] after msg_buckets (CL_DumpMessageLoad_f)

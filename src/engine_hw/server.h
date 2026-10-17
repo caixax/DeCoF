@@ -280,6 +280,10 @@ extern	server_static_t	svs;			// persistant server info
 extern	server_t		sv;				// local server
 
 // pr_cmds.c
+int32	RandomLong( int32 lLow, int32 lHigh );
+void	AlertMessage( int atype, char *szFmt, ... );
+int		PF_precache_generic_I( char *s );
+
 extern	int		g_groupmask;
 extern	int		g_groupop;
 
@@ -322,10 +326,70 @@ typedef enum
 // cmodel.c
 byte	*CM_LeafPVS( int leafnum );
 byte	*CM_LeafPAS( int leafnum );
+void	CM_CalcPAS( struct model_s *pModel );
+qboolean	CM_HeadnodeVisible( struct mnode_s *node, byte *visbits, int *first_visible_leafnum );
+byte	*Mod_LeafPVS( struct mleaf_s *leaf, struct model_s *model );
+
+// model.c
+struct mleaf_s	*Mod_PointInLeaf( vec3_t p, struct model_s *model );
+struct model_s	*Mod_ForName( const char *name, qboolean crash, qboolean trackCRC );
+
+// r_misc.c
+void	R_ForceCVars( qboolean mp );
 
 // sv_phys.c
+void	SV_Physics( void );
+
 extern	edict_t	**g_moved_edict;
 extern	vec3_t	*g_moved_from;
+
+extern	cvar_t	sv_friction;
+extern	cvar_t	sv_stopspeed;
+extern	cvar_t	sv_gravity;
+extern	cvar_t	sv_maxvelocity;
+extern	cvar_t	sv_stepsize;
+extern	cvar_t	sv_bounce;
+extern	cvar_t	sv_spectatormaxspeed;
+extern	cvar_t	sv_airaccelerate;
+extern	cvar_t	sv_wateraccelerate;
+extern	cvar_t	sv_waterfriction;
+extern	cvar_t	sv_zmax;
+extern	cvar_t	sv_wateramp;
+extern	cvar_t	sv_skyname;
+
+// sv_user.c
+extern	edict_t	*sv_player;
+
+extern	cvar_t	sv_footsteps;
+extern	cvar_t	sv_edgefriction;
+extern	cvar_t	sv_maxspeed;
+extern	cvar_t	sv_accelerate;
+extern	cvar_t	sv_rollspeed;
+extern	cvar_t	sv_rollangle;
+extern	cvar_t	sv_voicecodec;
+extern	cvar_t	sv_voicequality;
+extern	cvar_t	sv_voiceenable;
+extern	cvar_t	clockwindow;
+
+void	SV_SendConsistencyList( sizebuf_t *msg );
+int		SV_TransferConsistencyInfo( void );
+
+// host.c
+extern	cvar_t	skill;
+extern	cvar_t	deathmatch;
+extern	cvar_t	coop;
+
+// host_cmd.c
+char	*Host_SaveGameDirectory( void );
+extern	int		current_skill;
+extern	int		gHostSpawnCount;
+
+// pr_edict.c
+void	ReleaseEntityDLLFields( edict_t *pEdict );
+void	InitEntityDLLFields( edict_t *pEdict );
+
+// sys_dll.c
+void	NotifyDedicatedServerUI( const char *message );
 
 // sv_main.c
 extern	cvar_t	sv_maxupdaterate;
@@ -419,7 +483,7 @@ int		SV_CheckChallenge( netadr_t *adr, int nChallengeValue );
 int		SV_CheckIPRestrictions( netadr_t *adr, int nAuthProtocol );
 int		SV_CheckIPConnectionReuse( netadr_t *adr );
 int		SV_FinishCertificateCheck( netadr_t *adr, int nAuthProtocol, char *szRawCertificate, char *userinfo );
-int		SV_CheckKeyInfo( netadr_t *adr, char *protinfo, unsigned short *port, int *pAuthProtocol, char *pszRaw, int nRawSize, char *cdkey );
+int		SV_CheckKeyInfo( netadr_t *adr, char *protinfo, unsigned short *port, int *pAuthProtocol, char *pszRaw, char *cdkey );
 int		SV_CheckForDuplicateSteamID( client_t *client );
 int		SV_CheckForDuplicateNames( char *userinfo, qboolean bIsReconnecting, int nExcludeSlot );
 int		SV_CheckUserInfo( netadr_t *adr, char *userinfo, qboolean bIsReconnecting, int nReconnectSlot, char *name );
@@ -464,7 +528,7 @@ byte	*SV_FatPVS( float *org );
 void	SV_AddToFatPAS( vec_t *org, struct mnode_s *node );
 byte	*SV_FatPAS( float *org );
 int		SV_PointLeafnum( vec_t *p );
-void	TRACE_DELTA( char *fmt );
+void	TRACE_DELTA( char *fmt, ... );
 void	SV_SetCallback( int num, qboolean remove, qboolean custom, int *numbase, qboolean full, int offset );
 void	SV_SetNewInfo( int newblindex );
 void	SV_WriteDeltaHeader( int num, qboolean remove, qboolean custom, int *numbase, qboolean newbl, int newblindex, qboolean full, int offset );
@@ -539,5 +603,38 @@ const char	*Steam_GetCommunityName( void );
 int		Steam_GSInitiateGameConnection( void *pData, int cbMaxData, unsigned __int64 steamID, unsigned int unIPServer, unsigned short usPortServer, qboolean bSecure );
 void	Steam_GSTerminateGameConnection( unsigned int unIPServer, unsigned short usPortServer );
 void	Steam_SetCVar( const char *pchKey, const char *pchValue );
+qboolean	Steam_NotifyClientConnect( client_t *cl, const void *pvSteam2Key, unsigned int ucbSteam2Key );
+qboolean	Steam_NotifyBotConnect( client_t *cl );
+void	Steam_NotifyClientDisconnect( client_t *cl );
+void	Steam_NotifyOfLevelChange( void );
+void	Steam_Shutdown( void );
+void	Steam_Activate( void );
+void	Steam_RunFrame( void );
+uint64	Steam_GSGetSteamID( void );
+qboolean	Steam_GSBSecure( void );
+qboolean	Steam_GSBLoggedOn( void );
+qboolean	Steam_GSBSecurePreference( void );
+uint64	Steam_StringToSteamID( const char *pStr );
+const char	*Steam_GetGSUniverse( void );
+void	Steam_HandleIncomingPacket( byte *data, int len, int fromip, unsigned short port );
+
+// sv_upld.c
+void	SV_ClearResourceLists( client_t *cl );
+void	SV_MoveToOnHandList( resource_t *pResource );
+void	SV_RequestMissingResourcesFromClients( void );
+
+// sv_user.c
+void	SV_ExecuteClientMessage( client_t *cl );
+
+// ipratelimit.cpp
+qboolean	CheckIP( netadr_t adr );
+
+// steam_api flat interface
+__declspec( dllimport ) int	ISteamMasterServerUpdater_HandleIncomingPacket( const void *pData, int cbData, unsigned int srcIP, unsigned short srcPort );
+__declspec( dllimport ) int	ISteamApps_BIsSubscribedApp( unsigned int appID );
+__declspec( dllimport ) int	ISteamGameServer_BUpdateUserData( uint64 steamIDUser, const char *pchPlayerName, unsigned int uScore );
+
+// master.c
+qboolean	Master_IsLanGame( void );
 
 #endif // SERVER_H

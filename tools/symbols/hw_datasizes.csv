@@ -11,3 +11,6 @@ _gGlobalVariables,172,globalvars_t gGlobalVariables (sv_main.c; sizeof 0xAC with
 _cl,1839736,client_state_t (client.h, 0x1C1278)
 _cls,17616,client_static_t (client.h, 0x44D0)
 __iob,640,FILE _iob[20] (VC6 C runtime)
+_spectatorState,6452,local_state_t spectatorState (cl_spectator.c; sizeof local_state_t 0x1934 with VC6)
+_msg_buckets,256,int msg_buckets[64] (CL_PARSE.C)
+_total_data,256,int total_data[64] (CL_PARSE.C)

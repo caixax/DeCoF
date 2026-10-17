@@ -21,6 +21,7 @@ int		VGUI2_GetFontTall( unsigned int font );
 
 void	VGuiWrap2_NotifyOfServerConnect( const char *game, int IP, int port );
 void	VGuiWrap2_NotifyOfServerDisconnect( void );
+void	VGuiWrap2_LoadingStarted( const char *resourceType, const char *resourceName );
 void	VGuiWrap2_LoadingFinished( const char *resourceType, const char *resourceName );
 void	StartLoadingProgressBar( const char *loadingType, int numProgressPoints );
 void	ContinueLoadingProgressBar( const char *loadingType, int progressPoint, float progressFraction );

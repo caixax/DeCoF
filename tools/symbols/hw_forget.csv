@@ -5,3 +5,4 @@ va,name,evidence
 01E67650,_BZ2_bzDecompress,"undecorated or misplaced label: the bzip2 API is stdcall (BZ_EXPORT), and 01E69850 is sendMTFValues"
 01E68390,_BZ2_bzDecompressEnd,"undecorated or misplaced label: the bzip2 API is stdcall (BZ_EXPORT), and 01E69850 is sendMTFValues"
 01E68EB0,_BZ2_bzBuffToBuffDecompress,"undecorated or misplaced label: the bzip2 API is stdcall (BZ_EXPORT), and 01E69850 is sendMTFValues"
+02D7F67C,_msg_buckets,"element 63 of msg_buckets, which starts at 02D7F580"

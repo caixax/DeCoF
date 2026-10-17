@@ -47,3 +47,4 @@ _CL_WriteErrorMessage
 _CL_WriteMessageHistory
 _CL_ParseServerMessage
 _CL_ParseHLTV
+_CL_PlayerDropped

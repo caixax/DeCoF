@@ -27,3 +27,5 @@ _CL_SetSolidPlayers
 _CL_MoveAiments
 _CL_LerpPoint
 _CL_EmitEntities
+_CL_EntityTeleported
+_CL_CompareTimestamps
