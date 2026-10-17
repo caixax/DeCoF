@@ -23303,7 +23303,7 @@ hw,01D02030,20,,,UNKNOWN,,,,TODO,,,
 hw,01D02050,46,,,UNKNOWN,,,,TODO,,,
 hw,01D02080,23,,,UNKNOWN,,,,TODO,,,
 hw,01D020A0,139,,,UNKNOWN,,,,TODO,,,
-hw,01D02130,40,,ATL::COleDateTimeSpan::COleDateTimeSpan,ENGINE,,,,TODO,,ghidra,
+hw,01D02130,40,??0Color@@QAE@HHHH@Z,Color::Color,ENGINE,,,,TODO,,hw_manual.csv,
 hw,01D02160,48,,,UNKNOWN,,,,TODO,,,
 hw,01D02190,19,,,UNKNOWN,,,,TODO,,,
 hw,01D021B0,17,,,UNKNOWN,,,,TODO,,,
@@ -30406,16 +30406,16 @@ hw,01E32E70,33,,,UNKNOWN,,,,TODO,,,
 hw,01E32EA0,34,,,UNKNOWN,,,,TODO,,,
 hw,01E32ED0,170,,,UNKNOWN,,,,TODO,,,
 hw,01E32F80,75,,,UNKNOWN,,,,TODO,,,
-hw,01E32FD0,19,,,UNKNOWN,,,,TODO,,,
+hw,01E32FD0,19,??1?$CUtlMemory@E@@QAE@XZ,char>,UNKNOWN,public/KeyValues.cpp,,,MATCHED,100,,
 hw,01E32FF0,58,,,UNKNOWN,,,,TODO,,,
 hw,01E33030,5,,,UNKNOWN,,,,TODO,,,
-hw,01E33040,21,,,UNKNOWN,,,,TODO,,,
+hw,01E33040,21,??A?$CUtlMemory@E@@QAEAAEH@Z,char>::operator[],UNKNOWN,public/KeyValues.cpp,,,MATCHED,100,,
 hw,01E33060,33,,,UNKNOWN,,,,TODO,,,
 hw,01E33090,153,,,UNKNOWN,,,,TODO,,,
 hw,01E33130,216,,,UNKNOWN,,,,TODO,,,
 hw,01E33210,26,,,UNKNOWN,,,,TODO,,,
 hw,01E33230,26,,,UNKNOWN,,,,TODO,,,
-hw,01E33250,69,,,UNKNOWN,,,,TODO,,,
+hw,01E33250,69,?Purge@?$CUtlMemory@E@@QAEXXZ,char>::Purge,UNKNOWN,public/KeyValues.cpp,,,MATCHED,100,,
 hw,01E332A0,176,,,UNKNOWN,,,,TODO,,,
 hw,01E33350,587,,,UNKNOWN,,,,TODO,,,
 hw,01E335A0,25,,,UNKNOWN,,,,TODO,,,
@@ -30432,53 +30432,53 @@ hw,01E339E0,17,,,UNKNOWN,,,,TODO,,,
 hw,01E33A00,199,,,UNKNOWN,,,,TODO,,,
 hw,01E33AD0,25,,,UNKNOWN,,,,TODO,,,
 hw,01E33AF0,34,,,UNKNOWN,,,,TODO,,,
-hw,01E33B20,37,,,UNKNOWN,,,,TODO,,,
+hw,01E33B20,37,??0KeyValues@@QAE@PBD@Z,KeyValues::KeyValues,UNKNOWN,public/KeyValues.cpp,,,MATCHED,100,,
 hw,01E33B45,53,,,UNKNOWN,,,,TODO,,,
 hw,01E33B7A,53,,,UNKNOWN,,,,TODO,,,
 hw,01E33BAF,53,,,UNKNOWN,,,,TODO,,,
 hw,01E33BE4,69,,,UNKNOWN,,,,TODO,,,
 hw,01E33C29,69,,,UNKNOWN,,,,TODO,,,
-hw,01E33C6E,102,,,UNKNOWN,,,,TODO,,,
-hw,01E33CD4,111,,,UNKNOWN,,,,TODO,,,
-hw,01E33D43,39,,,UNKNOWN,public/KeyValues.cpp,,,TODO,,,linux: _ZNK9KeyValues7GetNameEv
+hw,01E33C6E,102,?Init@KeyValues@@AAEXPBD@Z,KeyValues::Init,UNKNOWN,public/KeyValues.cpp,,,MATCHED,100,,
+hw,01E33CD4,111,??1KeyValues@@AAE@XZ,KeyValues::~KeyValues,UNKNOWN,public/KeyValues.cpp,,,MATCHED,100,,
+hw,01E33D43,39,?GetName@KeyValues@@UBEPBDXZ,KeyValues::GetName,UNKNOWN,public/KeyValues.cpp,,,MATCHED,100,,linux: _ZNK9KeyValues7GetNameEv
 hw,01E33D6A,17,,,UNKNOWN,public/KeyValues.cpp,,,TODO,,,linux: _ZNK9KeyValues13GetNameSymbolEv
-hw,01E33D7B,177,,,UNKNOWN,,,,TODO,,,
-hw,01E33E2C,130,,,UNKNOWN,,,,TODO,,,
-hw,01E33EAE,569,,,UNKNOWN,,,,TODO,,,
-hw,01E3414E,269,,,UNKNOWN,,,,TODO,,,
-hw,01E3425B,420,,,UNKNOWN,,,,TODO,,,
-hw,01E343FF,210,,,UNKNOWN,,,,TODO,,,
-hw,01E344D1,989,,,UNKNOWN,,,,TODO,,,
-hw,01E348C2,51,,,UNKNOWN,,,,TODO,,,
-hw,01E348F5,61,,,UNKNOWN,,,,TODO,,,
-hw,01E34932,486,,,UNKNOWN,,,,TODO,,,
-hw,01E34B18,127,,,UNKNOWN,public/KeyValues.cpp,,,TODO,,,linux: _ZN9KeyValues12CreateNewKeyEv
-hw,01E34B97,87,,,UNKNOWN,public/KeyValues.cpp,,,TODO,,,linux: _ZN9KeyValues9AddSubKeyEPS_
-hw,01E34BEE,22,,,UNKNOWN,public/KeyValues.cpp,,,TODO,,,linux: _ZN9KeyValues10SetNextKeyEPS_
-hw,01E34C04,112,,,UNKNOWN,public/KeyValues.cpp,,,TODO,,,linux: _ZN9KeyValues12RemoveSubKeyEPS_
-hw,01E34C74,17,,,UNKNOWN,public/KeyValues.cpp,,,TODO,,,linux: _ZN9KeyValues14GetFirstSubKeyEv
-hw,01E34C85,17,,,UNKNOWN,public/KeyValues.cpp,,,TODO,,,linux: _ZN9KeyValues10GetNextKeyEv
-hw,01E34C96,140,,,UNKNOWN,public/KeyValues.cpp,,,TODO,,,linux: _ZN9KeyValues6GetIntEPKci
-hw,01E34D3E,156,,,UNKNOWN,public/KeyValues.cpp,,,TODO,,,linux: _ZN9KeyValues9GetUint64EPKcy
-hw,01E34DF6,76,,,UNKNOWN,public/KeyValues.cpp,,,TODO,,,linux: _ZN9KeyValues6GetPtrEPKcPv
-hw,01E34E42,143,,,UNKNOWN,public/KeyValues.cpp,,,TODO,,,linux: _ZN9KeyValues8GetFloatEPKcf
-hw,01E34EED,380,,,UNKNOWN,public/KeyValues.cpp,,,TODO,,,linux: _ZN9KeyValues9GetStringEPKcS1_
-hw,01E35085,408,,,UNKNOWN,public/KeyValues.cpp,,,TODO,,,linux: _ZN9KeyValues10GetWStringEPKcPKw
-hw,01E35239,416,,KeyValues::GetColor,ENGINE,public/KeyValues.cpp,,,TODO,,linux_symbols:string:0.75,
-hw,01E353D9,130,,,UNKNOWN,public/KeyValues.cpp,,,TODO,,,linux: _ZN9KeyValues8SetColorEPKc5Color
-hw,01E3545B,124,,,UNKNOWN,public/KeyValues.cpp,,,TODO,,,linux: _ZN9KeyValues9SetStringEPKcS1_
-hw,01E354D7,125,,,UNKNOWN,public/KeyValues.cpp,,,TODO,,,linux: _ZN9KeyValues10SetWStringEPKcPKw
-hw,01E35554,67,,,UNKNOWN,public/KeyValues.cpp,,,TODO,,,linux: _ZN9KeyValues6SetIntEPKci
-hw,01E35597,85,,,UNKNOWN,public/KeyValues.cpp,,,TODO,,,linux: _ZN9KeyValues9SetUint64EPKcy
-hw,01E355EC,67,,,UNKNOWN,public/KeyValues.cpp,,,TODO,,,linux: _ZN9KeyValues8SetFloatEPKcf
-hw,01E3562F,67,,,UNKNOWN,public/KeyValues.cpp,,,TODO,,,linux: _ZN9KeyValues6SetPtrEPKcPv
-hw,01E35672,87,,,UNKNOWN,public/KeyValues.cpp,,,TODO,,,linux: _ZN9KeyValues18AllocateValueBlockEi
-hw,01E356C9,94,,,UNKNOWN,public/KeyValues.cpp,,,TODO,,,linux: _ZN9KeyValues18FreeAllocatedValueEv
-hw,01E35727,488,,,UNKNOWN,public/KeyValues.cpp,,,TODO,,,linux: _ZNK9KeyValues8MakeCopyEv
-hw,01E3592B,73,,,UNKNOWN,public/KeyValues.cpp,,,TODO,,,linux: _ZN9KeyValues7IsEmptyEPKc
-hw,01E35974,121,,,UNKNOWN,public/KeyValues.cpp,,,TODO,,,linux: _ZN9KeyValues5ClearEv
-hw,01E359ED,56,,,UNKNOWN,public/KeyValues.cpp,,,TODO,,,linux: _ZN9KeyValues11GetDataTypeEPKc
-hw,01E35A25,53,,Concurrency::details::SchedulerProxy::DeleteThis,ENGINE,public/KeyValues.cpp,,,TODO,,ghidra,linux: _ZN9KeyValues10deleteThisEv
+hw,01E33D7B,177,?LoadFromFile@KeyValues@@UAE_NPAVIFileSystem@@PBD1@Z,KeyValues::LoadFromFile,UNKNOWN,public/KeyValues.cpp,,,MATCHED,100,,
+hw,01E33E2C,130,?LoadFromBuffer@KeyValues@@QAEXPBD@Z,KeyValues::LoadFromBuffer,UNKNOWN,public/KeyValues.cpp,,,MATCHED,100,,
+hw,01E33EAE,569,?ReadToken@@YAPADPAPAD@Z,ReadToken,UNKNOWN,public/KeyValues.cpp,,,MATCHED,100,,
+hw,01E3414E,269,?RecursiveLoadFromBuffer@KeyValues@@AAEXPAPAD@Z,KeyValues::RecursiveLoadFromBuffer,UNKNOWN,public/KeyValues.cpp,,,MATCHED,100,,
+hw,01E3425B,420,?SaveToFile@KeyValues@@UAE_NPAVIFileSystem@@PBD1@Z,KeyValues::SaveToFile,UNKNOWN,public/KeyValues.cpp,,,MATCHED,100,,
+hw,01E343FF,210,?WriteConvertedString@KeyValues@@AAEXAAVCUtlBuffer@@PBD@Z,KeyValues::WriteConvertedString,UNKNOWN,public/KeyValues.cpp,,,MATCHED,100,,
+hw,01E344D1,989,?RecursiveSaveToFile@KeyValues@@AAEXPAVIFileSystem@@AAVCUtlBuffer@@H@Z,KeyValues::RecursiveSaveToFile,UNKNOWN,public/KeyValues.cpp,,,MATCHED,100,,
+hw,01E348C2,51,?WriteIndents@@YAXAAVCUtlBuffer@@H@Z,WriteIndents,UNKNOWN,public/KeyValues.cpp,,,MATCHED,100,,
+hw,01E348F5,61,?FindKey@KeyValues@@UBEPAV1@H@Z,KeyValues::FindKey,UNKNOWN,public/KeyValues.cpp,,,MATCHED,100,,
+hw,01E34932,486,?FindKey@KeyValues@@UAEPAV1@PBD_N@Z,KeyValues::FindKey,UNKNOWN,public/KeyValues.cpp,,,MATCHED,100,,
+hw,01E34B18,127,?CreateNewKey@KeyValues@@UAEPAV1@XZ,KeyValues::CreateNewKey,UNKNOWN,public/KeyValues.cpp,,,MATCHED,100,,linux: _ZN9KeyValues12CreateNewKeyEv
+hw,01E34B97,87,?AddSubKey@KeyValues@@QAEXPAV1@@Z,KeyValues::AddSubKey,UNKNOWN,public/KeyValues.cpp,,,MATCHED,100,,linux: _ZN9KeyValues9AddSubKeyEPS_
+hw,01E34BEE,22,?SetNextKey@KeyValues@@QAEXPAV1@@Z,KeyValues::SetNextKey,UNKNOWN,public/KeyValues.cpp,,,MATCHED,100,,linux: _ZN9KeyValues10SetNextKeyEPS_
+hw,01E34C04,112,?RemoveSubKey@KeyValues@@UAEXPAV1@@Z,KeyValues::RemoveSubKey,UNKNOWN,public/KeyValues.cpp,,,MATCHED,100,,linux: _ZN9KeyValues12RemoveSubKeyEPS_
+hw,01E34C74,17,?GetFirstSubKey@KeyValues@@UAEPAV1@XZ,KeyValues::GetFirstSubKey,UNKNOWN,public/KeyValues.cpp,,,MATCHED,100,,linux: _ZN9KeyValues14GetFirstSubKeyEv
+hw,01E34C85,17,?GetNextKey@KeyValues@@UAEPAV1@XZ,KeyValues::GetNextKey,UNKNOWN,public/KeyValues.cpp,,,MATCHED,100,,linux: _ZN9KeyValues10GetNextKeyEv
+hw,01E34C96,140,?GetInt@KeyValues@@UAEHPBDH@Z,KeyValues::GetInt,UNKNOWN,public/KeyValues.cpp,,,MATCHED,100,,linux: _ZN9KeyValues6GetIntEPKci
+hw,01E34D3E,156,?GetUint64@KeyValues@@QAE_KPBD_K@Z,KeyValues::GetUint64,UNKNOWN,public/KeyValues.cpp,,,MATCHED,100,,linux: _ZN9KeyValues9GetUint64EPKcy
+hw,01E34DF6,76,?GetPtr@KeyValues@@UAEPAXPBDPAX@Z,KeyValues::GetPtr,UNKNOWN,public/KeyValues.cpp,,,MATCHED,100,,linux: _ZN9KeyValues6GetPtrEPKcPv
+hw,01E34E42,143,?GetFloat@KeyValues@@UAEMPBDM@Z,KeyValues::GetFloat,UNKNOWN,public/KeyValues.cpp,,,MATCHED,100,,linux: _ZN9KeyValues8GetFloatEPKcf
+hw,01E34EED,380,?GetString@KeyValues@@UAEPBDPBD0@Z,KeyValues::GetString,UNKNOWN,public/KeyValues.cpp,,,MATCHED,100,,linux: _ZN9KeyValues9GetStringEPKcS1_
+hw,01E35085,408,?GetWString@KeyValues@@UAEPBGPBDPBG@Z,KeyValues::GetWString,UNKNOWN,public/KeyValues.cpp,,,MATCHED,100,,linux: _ZN9KeyValues10GetWStringEPKcPKw
+hw,01E35239,416,?GetColor@KeyValues@@QAE?AVColor@@PBD@Z,KeyValues::GetColor,ENGINE,public/KeyValues.cpp,,,MATCHED,100,linux_symbols:string:0.75,
+hw,01E353D9,130,?SetColor@KeyValues@@QAEXPBDVColor@@@Z,KeyValues::SetColor,UNKNOWN,public/KeyValues.cpp,,,MATCHED,100,,linux: _ZN9KeyValues8SetColorEPKc5Color
+hw,01E3545B,124,?SetString@KeyValues@@UAEXPBD0@Z,KeyValues::SetString,UNKNOWN,public/KeyValues.cpp,,,MATCHED,100,,linux: _ZN9KeyValues9SetStringEPKcS1_
+hw,01E354D7,125,?SetWString@KeyValues@@UAEXPBDPBG@Z,KeyValues::SetWString,UNKNOWN,public/KeyValues.cpp,,,MATCHED,100,,linux: _ZN9KeyValues10SetWStringEPKcPKw
+hw,01E35554,67,?SetInt@KeyValues@@UAEXPBDH@Z,KeyValues::SetInt,UNKNOWN,public/KeyValues.cpp,,,MATCHED,100,,linux: _ZN9KeyValues6SetIntEPKci
+hw,01E35597,85,?SetUint64@KeyValues@@QAEXPBD_K@Z,KeyValues::SetUint64,UNKNOWN,public/KeyValues.cpp,,,MATCHED,100,,linux: _ZN9KeyValues9SetUint64EPKcy
+hw,01E355EC,67,?SetFloat@KeyValues@@UAEXPBDM@Z,KeyValues::SetFloat,UNKNOWN,public/KeyValues.cpp,,,MATCHED,100,,linux: _ZN9KeyValues8SetFloatEPKcf
+hw,01E3562F,67,?SetPtr@KeyValues@@UAEXPBDPAX@Z,KeyValues::SetPtr,UNKNOWN,public/KeyValues.cpp,,,MATCHED,100,,linux: _ZN9KeyValues6SetPtrEPKcPv
+hw,01E35672,87,?AllocateValueBlock@KeyValues@@AAEXH@Z,KeyValues::AllocateValueBlock,UNKNOWN,public/KeyValues.cpp,,,MATCHED,100,,linux: _ZN9KeyValues18AllocateValueBlockEi
+hw,01E356C9,94,?FreeAllocatedValue@KeyValues@@AAEXXZ,KeyValues::FreeAllocatedValue,UNKNOWN,public/KeyValues.cpp,,,MATCHED,100,,linux: _ZN9KeyValues18FreeAllocatedValueEv
+hw,01E35727,488,?MakeCopy@KeyValues@@UBEPAV1@XZ,KeyValues::MakeCopy,UNKNOWN,public/KeyValues.cpp,,,MATCHED,100,,linux: _ZNK9KeyValues8MakeCopyEv
+hw,01E3592B,73,?IsEmpty@KeyValues@@UAE_NPBD@Z,KeyValues::IsEmpty,UNKNOWN,public/KeyValues.cpp,,,MATCHED,100,,linux: _ZN9KeyValues7IsEmptyEPKc
+hw,01E35974,121,?Clear@KeyValues@@UAEXXZ,KeyValues::Clear,UNKNOWN,public/KeyValues.cpp,,,MATCHED,100,,linux: _ZN9KeyValues5ClearEv
+hw,01E359ED,56,?GetDataType@KeyValues@@UAE?AW4types_t@1@PBD@Z,KeyValues::GetDataType,UNKNOWN,public/KeyValues.cpp,,,MATCHED,100,,linux: _ZN9KeyValues11GetDataTypeEPKc
+hw,01E35A25,53,?deleteThis@KeyValues@@UAEXXZ,KeyValues::deleteThis,ENGINE,public/KeyValues.cpp,,,MATCHED,100,ghidra,linux: _ZN9KeyValues10deleteThisEv
 hw,01E35A5A,31,,,UNKNOWN,,,,TODO,,,
 hw,01E35A79,31,,,UNKNOWN,,,,TODO,,,
 hw,01E35A98,31,,,UNKNOWN,,,,TODO,,,
