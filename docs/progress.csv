@@ -25451,8 +25451,8 @@ hw,01D52D40,255,,,UNKNOWN,guess:engine/DetailTexture.cpp,,,TODO,,,
 hw,01D52E3F,917,_DT_LoadDetailTexture,DT_LoadDetailTexture,ENGINE,engine/DetailTexture.cpp,,,TODO,,linux_symbols:string:0.845,
 hw,01D531D4,198,,,UNKNOWN,guess:engine/DetailTexture.cpp,,,TODO,,,
 hw,01D5329A,591,_DT_SetRenderState,DT_SetRenderState,ENGINE,engine/DetailTexture.cpp,,,TODO,,linux_symbols:string:0.906,
-hw,01D534E9,26,,,UNKNOWN,,,,TODO,,,
-hw,01D53503,41,,,UNKNOWN,,,,TODO,,,
+hw,01D534E9,26,_DT_SetTextureCoordinates,,UNKNOWN,,,,TODO,,hw_manual.csv,
+hw,01D53503,41,_DT_ClearRenderState,,UNKNOWN,,,,TODO,,hw_manual.csv,
 hw,01D5352C,15,,,UNKNOWN,,,,TODO,,,
 hw,01D5353B,18,,,UNKNOWN,,,,TODO,,,
 hw,01D53550,19,,,UNKNOWN,,,,TODO,,,
@@ -26032,7 +26032,7 @@ hw,01D6B95B,509,_R_NewMap,R_NewMap,ENGINE,engine/GL_RMISC.C,,,MATCHED,100,linux_
 hw,01D6BB58,163,_R_TimeRefresh_f,R_TimeRefresh_f,ENGINE,engine/GL_RMISC.C,,,MATCHED,100,linux_symbols:string:0.533,
 hw,01D6BBFB,5,_D_FlushCaches,,UNKNOWN,,,,MATCHED,100,hw_manual.csv,
 hw,01D6BC00,196,_R_CheckVariables,,UNKNOWN,,,,TODO,,,
-hw,01D6BCD0,860,_R_AddDynamicLights,,UNKNOWN,,,,TODO,,hw_manual.csv,
+hw,01D6BCD0,860,_R_AddDynamicLights,,UNKNOWN,,,,MATCHED,100,hw_manual.csv,
 hw,01D6C02C,1412,_R_BuildLightMap,R_BuildLightMap,ENGINE,engine/GL_RSURF.C,,,MATCHED,100,linux_symbols:string:0.904,
 hw,01D6C5B0,536,_R_TextureAnimation,R_TextureAnimation,ENGINE,engine/GL_RSURF.C,,,MATCHED,100,linux_symbols:string:0.853,
 hw,01D6C7C8,49,_GL_DisableMultitexture,GL_DisableMultitexture,ENGINE,engine/GL_RSURF.C,,,MATCHED,100,,
@@ -26091,7 +26091,7 @@ hw,01D71808,140,_R_DecalVertsNoclip,R_DecalVertsNoclip,ENGINE,engine/GL_RSURF.C,
 hw,01D71894,134,_R_DecalPoly,R_DecalPoly,ENGINE,engine/GL_RSURF.C,,,MATCHED,100,,
 hw,01D7191A,207,_R_DecalMPoly,R_DecalMPoly,ENGINE,engine/GL_RSURF.C,,,MATCHED,100,,
 hw,01D719E9,544,_R_DrawDecals,R_DrawDecals,ENGINE,engine/GL_RSURF.C,,,MATCHED,100,linux_symbols:callseq:0.863,
-hw,01D71C09,5,,,UNKNOWN,,,,TODO,,,
+hw,01D71C09,5,_R_InvalidateSurface,,UNKNOWN,,,,MATCHED,100,hw_manual.csv,
 hw,01D71C10,113,_SCR_CenterPrint,SCR_CenterPrint,ENGINE,engine/gl_screen.c,,,TODO,,linux_symbols:data1:0.389,
 hw,01D71C81,410,_SCR_DrawCenterString,SCR_DrawCenterString,ENGINE,engine/gl_screen.c,,,TODO,,linux_symbols:data1:0.35,
 hw,01D71E1B,98,_SCR_CheckDrawCenterString,SCR_CheckDrawCenterString,ENGINE,engine/gl_screen.c,,,TODO,,linux_symbols:caller:1.0,
@@ -27248,7 +27248,7 @@ hw,01DA786C,143,_QueryClientCvarValue,QueryClientCvarValue,ENGINE,engine/pr_cmds
 hw,01DA78FB,169,_QueryClientCvarValue2,QueryClientCvarValue2,ENGINE,engine/pr_cmds.c,,,MATCHED,100,linux_symbols:data:0.875,
 hw,01DA79A4,96,_hudCheckParm,,UNKNOWN,,,,MATCHED,100,hw_manual.csv,
 hw,01DA7A04,21,_EngCheckParm,,UNKNOWN,,,,MATCHED,100,hw_manual.csv,
-hw,01DA7A20,62,,,UNKNOWN,,,,TODO,,,
+hw,01DA7A20,62,_ED_ClearEdict,,UNKNOWN,,,,TODO,,hw_manual.csv,
 hw,01DA7A5E,229,_ED_Alloc,ED_Alloc,ENGINE,engine/pr_edict.c,,,TODO,,linux_symbols:string:0.375,
 hw,01DA7B43,309,_ED_Free,SV_Physics_Noclip,ENGINE,engine/sv_phys.c,,,TODO,,linux_symbols:callseq:0.415,
 hw,01DA7C78,254,_ED_Count,ED_Count,ENGINE,engine/pr_edict.c,,,TODO,,linux_symbols:string:0.786,
@@ -27268,19 +27268,19 @@ hw,01DA85BB,64,_FreeAllEntPrivateData,FreeAllEntPrivateData,ENGINE,engine/pr_edi
 hw,01DA85FB,13,_PEntityOfEntOffset,PEntityOfEntOffset,ENGINE,engine/pr_edict.c,,,TODO,,,
 hw,01DA8608,14,_EntOffsetOfPEntity,EntOffsetOfPEntity,ENGINE,engine/pr_edict.c,,,TODO,,,
 hw,01DA8616,71,_IndexOfEdict,IndexOfEdict,ENGINE,engine/pr_edict.c,,,TODO,,linux_symbols:string:0.75,
-hw,01DA865D,94,,,UNKNOWN,,,,TODO,,,
-hw,01DA86BB,13,,,UNKNOWN,,,,TODO,,,
-hw,01DA86C8,13,,,UNKNOWN,,,,TODO,,,
-hw,01DA86D5,81,,,UNKNOWN,,,,TODO,,,
-hw,01DA8726,17,,,UNKNOWN,,,,TODO,,,
-hw,01DA8737,17,,,UNKNOWN,,,,TODO,,,
-hw,01DA8748,17,,,UNKNOWN,,,,TODO,,,
-hw,01DA8759,21,,,UNKNOWN,,,,TODO,,,
-hw,01DA876E,21,,,UNKNOWN,,,,TODO,,,
-hw,01DA8783,38,,,UNKNOWN,,,,TODO,,,
-hw,01DA87A9,23,,,UNKNOWN,,,,TODO,,,
-hw,01DA87C0,77,,,UNKNOWN,,,,TODO,,,
-hw,01DA880D,40,,,UNKNOWN,,,,TODO,,,
+hw,01DA865D,94,_PEntityOfEntIndex,,UNKNOWN,,,,TODO,,hw_manual.csv,
+hw,01DA86BB,13,_SzFromIndex,,UNKNOWN,,,,TODO,,hw_manual.csv,
+hw,01DA86C8,13,_GetVarsOfEnt,,UNKNOWN,,,,TODO,,hw_manual.csv,
+hw,01DA86D5,81,_FindEntityByVars,,UNKNOWN,,,,TODO,,hw_manual.csv,
+hw,01DA8726,17,_CVarGetFloat,,UNKNOWN,,,,TODO,,hw_manual.csv,
+hw,01DA8737,17,_CVarGetString,,UNKNOWN,,,,TODO,,hw_manual.csv,
+hw,01DA8748,17,_CVarGetPointer,,UNKNOWN,,,,TODO,,hw_manual.csv,
+hw,01DA8759,21,_CVarSetFloat,,UNKNOWN,,,,TODO,,hw_manual.csv,
+hw,01DA876E,21,_CVarSetString,,UNKNOWN,,,,TODO,,hw_manual.csv,
+hw,01DA8783,38,_CVarRegister,,UNKNOWN,,,,TODO,,hw_manual.csv,
+hw,01DA87A9,23,_AllocEngineString,,UNKNOWN,,,,TODO,,hw_manual.csv,
+hw,01DA87C0,77,_SaveSpawnParms,,UNKNOWN,,,,TODO,,hw_manual.csv,
+hw,01DA880D,40,_GetModelPtr,,UNKNOWN,,,,TODO,,hw_manual.csv,
 hw,01DA8840,10,,,UNKNOWN,,,,TODO,,,
 hw,01DA8850,3646,_QGL_Shutdown,,UNKNOWN,,,,MATCHED,100,hw_manual.csv,
 hw,01DA968E,12282,_QGL_Init,QGL_Init,ENGINE,engine/qgl.c,,,MATCHED,100,linux_symbols:string:0.668,
@@ -27913,8 +27913,8 @@ hw,01DC7A09,10,,,UNKNOWN,,,,TODO,,,
 hw,01DC7A13,13,,,UNKNOWN,,,,TODO,,,
 hw,01DC7A20,406,,,UNKNOWN,,,,TODO,,,
 hw,01DC7BB6,90,,,UNKNOWN,,,,TODO,,,
-hw,01DC7C10,15,,,UNKNOWN,,,,TODO,,,
-hw,01DC7C1F,15,,,UNKNOWN,,,,TODO,,,
+hw,01DC7C10,15,_S_AmbientOff,,UNKNOWN,,,,TODO,,hw_manual.csv,
+hw,01DC7C1F,15,_S_AmbientOn,,UNKNOWN,,,,TODO,,hw_manual.csv,
 hw,01DC7C2E,222,_S_SoundInfo_f,S_SoundInfo_f,ENGINE,engine/SND_DMA.C,,,TODO,,linux_symbols:string:0.75,
 hw,01DC7D0C,77,_S_Startup,S_Startup,ENGINE,engine/SND_DMA.C,,,TODO,,linux_symbols:string:0.75,
 hw,01DC7D59,299,_S_QuerySoundSetting,S_QuerySoundSetting,ENGINE,engine/SND_DMA.C,,,TODO,,,
@@ -27947,7 +27947,7 @@ hw,01DCA7CA,219,_S_SoundList,S_SoundList,ENGINE,engine/SND_DMA.C,,,TODO,,linux_s
 hw,01DCA8A5,119,_S_LocalSound,S_LocalSound,ENGINE,engine/SND_DMA.C,,,TODO,,linux_symbols:string:0.5,
 hw,01DCA91C,914,_S_Say,S_Say,ENGINE,engine/SND_DMA.C,,,TODO,,linux_symbols:string:0.628,
 hw,01DCACAE,432,_S_Say_Reliable,S_Say_Reliable,ENGINE,engine/SND_DMA.C,,,TODO,,linux_symbols:string:0.843,
-hw,01DCAE5E,5,,,UNKNOWN,,,,TODO,,,
+hw,01DCAE5E,5,_S_ClearPrecache,,UNKNOWN,,,,TODO,,hw_manual.csv,
 hw,01DCAE63,15,_S_BeginPrecaching,,UNKNOWN,,,,TODO,,,
 hw,01DCAE72,15,_S_EndPrecaching,,UNKNOWN,,,,TODO,,,
 hw,01DCAE90,544,_ResampleSfx,ResampleSfx,ENGINE,engine/SND_MEM.C,,,TODO,,linux_symbols:string:0.583,
@@ -29423,10 +29423,10 @@ hw,01E09940,31,,,UNKNOWN,,,,TODO,,,
 hw,01E09960,13,,,UNKNOWN,engine/vgui_intwrap.cpp,,,TODO,,,linux: _ZN9CDummyApp4mainEiPPc
 hw,01E09970,11,,,UNKNOWN,engine/vgui_intwrap.cpp,,,TODO,,,linux: _ZN9CDummyApp8platTickEv
 hw,01E09980,46,,,UNKNOWN,,,,TODO,,,
-hw,01E099B0,1010,,,UNKNOWN,,,,TODO,,,
-hw,01E09DA2,165,,,UNKNOWN,,,,TODO,,,
+hw,01E099B0,1010,_BuildGammaTable,,UNKNOWN,,,,TODO,,hw_manual.csv,
+hw,01E09DA2,165,_V_CheckGamma,,UNKNOWN,,,,TODO,,hw_manual.csv,
 hw,01E09E47,149,_V_CalcBlend,,UNKNOWN,,,,TODO,,,
-hw,01E09EDC,310,,,UNKNOWN,,,,TODO,,,
+hw,01E09EDC,310,_V_UpdatePalette,,UNKNOWN,,,,TODO,,hw_manual.csv,
 hw,01E0A012,791,_V_SetRefParams,V_SetRefParams,ENGINE,engine/VIEW.C,,,TODO,,linux_symbols:data:0.667,
 hw,01E0A329,489,_V_GetRefParams,V_GetRefParams,ENGINE,engine/VIEW.C,,,TODO,,,
 hw,01E0A512,1155,_V_RenderView,V_RenderView,ENGINE,engine/VIEW.C,,,TODO,,linux_symbols:data:0.805,
@@ -30805,86 +30805,86 @@ hw,01E401D0,102,,,UNKNOWN,,,,TODO,,,
 hw,01E40240,64,,,UNKNOWN,,,,TODO,,,
 hw,01E40280,10,,,UNKNOWN,,,,TODO,,,
 hw,01E40290,10,,,UNKNOWN,,,,TODO,,,
-hw,01E402A0,812,,,UNKNOWN,,,,TODO,,,
-hw,01E405CC,156,,,UNKNOWN,,,,TODO,,,
-hw,01E40668,318,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText19ApplySchemeSettingsEPNS_7ISchemeE
-hw,01E407A6,107,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText10SetFgColorE5Color
-hw,01E40811,317,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText11OnKillFocusEv
-hw,01E4094E,65,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText13OnSizeChangedEii
-hw,01E4098F,174,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText7SetTextEPKc
-hw,01E40A3D,234,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText7SetTextEPKw
-hw,01E40B27,313,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText18CursorToPixelSpaceEiRiS1_
-hw,01E40C60,538,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText18PixelToCursorSpaceEii
-hw,01E40E7A,354,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText8DrawCharEwRNS0_12TRenderStateEmi
-hw,01E40FDC,137,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText12FinishingURLEii
-hw,01E41065,952,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText15PaintBackgroundEv
-hw,01E4141D,95,,,UNKNOWN,,,,TODO,,,
-hw,01E4147C,136,,,UNKNOWN,,,,TODO,,,
-hw,01E41504,266,,,UNKNOWN,,,,TODO,,,
-hw,01E4160E,136,,,UNKNOWN,,,,TODO,,,
-hw,01E41696,120,,,UNKNOWN,,,,TODO,,,
-hw,01E4170E,67,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText7OnThinkEv
-hw,01E41751,30,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText13PerformLayoutEv
-hw,01E4176F,166,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText17InsertColorChangeE5Color
-hw,01E41815,188,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText18InsertIndentChangeEi
-hw,01E418D1,180,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText24InsertClickableTextStartEPKc
-hw,01E41985,152,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText22InsertClickableTextEndEv
-hw,01E41A1D,91,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText14AddAnotherLineERiS1_
-hw,01E41A78,1299,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText21RecalculateLineBreaksEv
-hw,01E41F8B,712,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText29LayoutVerticalScrollBarSliderEv
-hw,01E42253,99,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText20SetVerticalScrollbarEb
-hw,01E422B6,307,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText14CreateEditMenuEv
-hw,01E423E9,44,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText18OnMouseFocusTickedEv
-hw,01E42415,21,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText15OnCursorEnteredEv
-hw,01E4242A,36,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText14OnCursorExitedEv
-hw,01E4244E,147,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText13OnCursorMovedEii
-hw,01E424E1,237,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText14OnMousePressedENS_9MouseCodeE
-hw,01E425CE,94,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText15OnMouseReleasedENS_9MouseCodeE
-hw,01E4262C,228,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText20OnMouseDoublePressedENS_9MouseCodeE
-hw,01E42710,21,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText18OnMouseCaptureLostEv
-hw,01E42725,879,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText14OnKeyCodeTypedENS_7KeyCodeE
+hw,01E402A0,812,??0RichText@vgui2@@QAE@PAVPanel@1@PBD_N@Z,vgui2::RichText::RichText,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,,
+hw,01E405CC,156,??1RichText@vgui2@@UAE@XZ,vgui2::RichText::~RichText,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,,
+hw,01E40668,318,?ApplySchemeSettings@RichText@vgui2@@MAEXPAVIScheme@2@@Z,vgui2::RichText::ApplySchemeSettings,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,,linux: _ZN5vgui28RichText19ApplySchemeSettingsEPNS_7ISchemeE
+hw,01E407A6,107,?SetFgColor@RichText@vgui2@@UAEXVColor@@@Z,vgui2::RichText::SetFgColor,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,,linux: _ZN5vgui28RichText10SetFgColorE5Color
+hw,01E40811,317,?OnKillFocus@RichText@vgui2@@MAEXXZ,vgui2::RichText::OnKillFocus,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,,linux: _ZN5vgui28RichText11OnKillFocusEv
+hw,01E4094E,65,?OnSizeChanged@RichText@vgui2@@MAEXHH@Z,vgui2::RichText::OnSizeChanged,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,,linux: _ZN5vgui28RichText13OnSizeChangedEii
+hw,01E4098F,174,?SetText@RichText@vgui2@@QAEXPBD@Z,vgui2::RichText::SetText,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,,linux: _ZN5vgui28RichText7SetTextEPKc
+hw,01E40A3D,234,?SetText@RichText@vgui2@@QAEXPBG@Z,vgui2::RichText::SetText,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,,linux: _ZN5vgui28RichText7SetTextEPKw
+hw,01E40B27,313,?CursorToPixelSpace@RichText@vgui2@@AAEXHAAH0@Z,vgui2::RichText::CursorToPixelSpace,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,,linux: _ZN5vgui28RichText18CursorToPixelSpaceEiRiS1_
+hw,01E40C60,538,?PixelToCursorSpace@RichText@vgui2@@AAEHHH@Z,vgui2::RichText::PixelToCursorSpace,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,,linux: _ZN5vgui28RichText18PixelToCursorSpaceEii
+hw,01E40E7A,354,?DrawChar@RichText@vgui2@@AAEHGAAUTRenderState@12@KH@Z,vgui2::RichText::DrawChar,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,,linux: _ZN5vgui28RichText8DrawCharEwRNS0_12TRenderStateEmi
+hw,01E40FDC,137,?FinishingURL@RichText@vgui2@@AAEXHH@Z,vgui2::RichText::FinishingURL,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,,linux: _ZN5vgui28RichText12FinishingURLEii
+hw,01E41065,952,?PaintBackground@RichText@vgui2@@MAEXXZ,vgui2::RichText::PaintBackground,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,,linux: _ZN5vgui28RichText15PaintBackgroundEv
+hw,01E4141D,95,?GetClickableTextIndexStart@RichText@vgui2@@AAEHH@Z,vgui2::RichText::GetClickableTextIndexStart,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,,
+hw,01E4147C,136,?RecalculateDefaultState@RichText@vgui2@@AAEXH@Z,vgui2::RichText::RecalculateDefaultState,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,,
+hw,01E41504,266,?UpdateRenderState@RichText@vgui2@@AAE_NHAAUTRenderState@12@@Z,vgui2::RichText::UpdateRenderState,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,,
+hw,01E4160E,136,?FindFormatStreamIndexForTextStreamPos@RichText@vgui2@@AAEHH@Z,vgui2::RichText::FindFormatStreamIndexForTextStreamPos,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,,
+hw,01E41696,120,?GenerateRenderStateForTextStreamIndex@RichText@vgui2@@AAEXHAAUTRenderState@12@@Z,vgui2::RichText::GenerateRenderStateForTextStreamIndex,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,,
+hw,01E4170E,67,?OnThink@RichText@vgui2@@MAEXXZ,vgui2::RichText::OnThink,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,,linux: _ZN5vgui28RichText7OnThinkEv
+hw,01E41751,30,?PerformLayout@RichText@vgui2@@MAEXXZ,vgui2::RichText::PerformLayout,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,,linux: _ZN5vgui28RichText13PerformLayoutEv
+hw,01E4176F,166,?InsertColorChange@RichText@vgui2@@QAEXVColor@@@Z,vgui2::RichText::InsertColorChange,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,,linux: _ZN5vgui28RichText17InsertColorChangeE5Color
+hw,01E41815,188,?InsertIndentChange@RichText@vgui2@@QAEXH@Z,vgui2::RichText::InsertIndentChange,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,,linux: _ZN5vgui28RichText18InsertIndentChangeEi
+hw,01E418D1,180,?InsertClickableTextStart@RichText@vgui2@@QAEXPBD@Z,vgui2::RichText::InsertClickableTextStart,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,,linux: _ZN5vgui28RichText24InsertClickableTextStartEPKc
+hw,01E41985,152,?InsertClickableTextEnd@RichText@vgui2@@QAEXXZ,vgui2::RichText::InsertClickableTextEnd,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,,linux: _ZN5vgui28RichText22InsertClickableTextEndEv
+hw,01E41A1D,91,?AddAnotherLine@RichText@vgui2@@AAEXAAH0@Z,vgui2::RichText::AddAnotherLine,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,,linux: _ZN5vgui28RichText14AddAnotherLineERiS1_
+hw,01E41A78,1299,?RecalculateLineBreaks@RichText@vgui2@@AAEXXZ,vgui2::RichText::RecalculateLineBreaks,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,,linux: _ZN5vgui28RichText21RecalculateLineBreaksEv
+hw,01E41F8B,712,?LayoutVerticalScrollBarSlider@RichText@vgui2@@AAEXXZ,vgui2::RichText::LayoutVerticalScrollBarSlider,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,,linux: _ZN5vgui28RichText29LayoutVerticalScrollBarSliderEv
+hw,01E42253,99,?SetVerticalScrollbar@RichText@vgui2@@QAEX_N@Z,vgui2::RichText::SetVerticalScrollbar,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,,linux: _ZN5vgui28RichText20SetVerticalScrollbarEb
+hw,01E422B6,307,?CreateEditMenu@RichText@vgui2@@AAEXXZ,vgui2::RichText::CreateEditMenu,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,,linux: _ZN5vgui28RichText14CreateEditMenuEv
+hw,01E423E9,44,?OnMouseFocusTicked@RichText@vgui2@@MAEXXZ,vgui2::RichText::OnMouseFocusTicked,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,,linux: _ZN5vgui28RichText18OnMouseFocusTickedEv
+hw,01E42415,21,?OnCursorEntered@RichText@vgui2@@MAEXXZ,vgui2::RichText::OnCursorEntered,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,,linux: _ZN5vgui28RichText15OnCursorEnteredEv
+hw,01E4242A,36,?OnCursorExited@RichText@vgui2@@MAEXXZ,vgui2::RichText::OnCursorExited,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,,linux: _ZN5vgui28RichText14OnCursorExitedEv
+hw,01E4244E,147,?OnCursorMoved@RichText@vgui2@@MAEXHH@Z,vgui2::RichText::OnCursorMoved,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,,linux: _ZN5vgui28RichText13OnCursorMovedEii
+hw,01E424E1,237,?OnMousePressed@RichText@vgui2@@MAEXW4MouseCode@2@@Z,vgui2::RichText::OnMousePressed,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,,linux: _ZN5vgui28RichText14OnMousePressedENS_9MouseCodeE
+hw,01E425CE,94,?OnMouseReleased@RichText@vgui2@@MAEXW4MouseCode@2@@Z,vgui2::RichText::OnMouseReleased,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,,linux: _ZN5vgui28RichText15OnMouseReleasedENS_9MouseCodeE
+hw,01E4262C,228,?OnMouseDoublePressed@RichText@vgui2@@MAEXW4MouseCode@2@@Z,vgui2::RichText::OnMouseDoublePressed,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,,linux: _ZN5vgui28RichText20OnMouseDoublePressedENS_9MouseCodeE
+hw,01E42710,21,?OnMouseCaptureLost@RichText@vgui2@@MAEXXZ,vgui2::RichText::OnMouseCaptureLost,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,,linux: _ZN5vgui28RichText18OnMouseCaptureLostEv
+hw,01E42725,879,?OnKeyCodeTyped@RichText@vgui2@@MAEXW4KeyCode@2@@Z,vgui2::RichText::OnKeyCodeTyped,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,,linux: _ZN5vgui28RichText14OnKeyCodeTypedENS_7KeyCodeE
 hw,01E42B12,25,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText14OnMouseWheeledEi
-hw,01E42B2B,130,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText13MoveScrollBarEi
-hw,01E42BAD,25,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText19SetMaximumCharCountEi
-hw,01E42BC6,53,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText13GetCursorLineEv
-hw,01E42BFB,232,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText13GotoWordRightEv
-hw,01E42CE3,208,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText12GotoWordLeftEv
-hw,01E42DB3,73,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText13GotoTextStartEv
-hw,01E42DFC,118,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText11GotoTextEndEv
-hw,01E42E72,300,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText18TruncateTextStreamEv
-hw,01E42F9E,118,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText10InsertCharEw
-hw,01E43014,163,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText12InsertStringEPKc
-hw,01E430B7,100,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText12InsertStringEPKw
-hw,01E4311B,35,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText10SelectNoneEv
-hw,01E4313E,99,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText16GetSelectedRangeERiS1_
-hw,01E431A1,495,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText12OpenEditMenuEv
-hw,01E43390,38,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText11CutSelectedEv
-hw,01E433B6,222,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText12CopySelectedEv
-hw,01E43494,152,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText17GetStartDrawIndexERi
-hw,01E4352C,142,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText7GetTextEiPwi
-hw,01E435BA,95,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText7GetTextEiPci
-hw,01E43619,64,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText7SetFontEm
-hw,01E43659,32,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText13OnSliderMovedEv
-hw,01E43679,116,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText11RequestInfoEP9KeyValues
+hw,01E42B2B,130,?MoveScrollBar@RichText@vgui2@@AAEXH@Z,vgui2::RichText::MoveScrollBar,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,,linux: _ZN5vgui28RichText13MoveScrollBarEi
+hw,01E42BAD,25,?SetMaximumCharCount@RichText@vgui2@@QAEXH@Z,vgui2::RichText::SetMaximumCharCount,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,,linux: _ZN5vgui28RichText19SetMaximumCharCountEi
+hw,01E42BC6,53,?GetCursorLine@RichText@vgui2@@AAEHXZ,vgui2::RichText::GetCursorLine,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,,linux: _ZN5vgui28RichText13GetCursorLineEv
+hw,01E42BFB,232,?GotoWordRight@RichText@vgui2@@AAEXXZ,vgui2::RichText::GotoWordRight,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,,linux: _ZN5vgui28RichText13GotoWordRightEv
+hw,01E42CE3,208,?GotoWordLeft@RichText@vgui2@@AAEXXZ,vgui2::RichText::GotoWordLeft,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,,linux: _ZN5vgui28RichText12GotoWordLeftEv
+hw,01E42DB3,73,?GotoTextStart@RichText@vgui2@@QAEXXZ,vgui2::RichText::GotoTextStart,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,,linux: _ZN5vgui28RichText13GotoTextStartEv
+hw,01E42DFC,118,?GotoTextEnd@RichText@vgui2@@QAEXXZ,vgui2::RichText::GotoTextEnd,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,,linux: _ZN5vgui28RichText11GotoTextEndEv
+hw,01E42E72,300,?TruncateTextStream@RichText@vgui2@@AAEXXZ,vgui2::RichText::TruncateTextStream,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,,linux: _ZN5vgui28RichText18TruncateTextStreamEv
+hw,01E42F9E,118,?InsertChar@RichText@vgui2@@QAEXG@Z,vgui2::RichText::InsertChar,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,,linux: _ZN5vgui28RichText10InsertCharEw
+hw,01E43014,163,?InsertString@RichText@vgui2@@QAEXPBD@Z,vgui2::RichText::InsertString,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,,linux: _ZN5vgui28RichText12InsertStringEPKc
+hw,01E430B7,100,?InsertString@RichText@vgui2@@QAEXPBG@Z,vgui2::RichText::InsertString,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,,linux: _ZN5vgui28RichText12InsertStringEPKw
+hw,01E4311B,35,?SelectNone@RichText@vgui2@@QAEXXZ,vgui2::RichText::SelectNone,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,,linux: _ZN5vgui28RichText10SelectNoneEv
+hw,01E4313E,99,?GetSelectedRange@RichText@vgui2@@AAE_NAAH0@Z,vgui2::RichText::GetSelectedRange,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,,linux: _ZN5vgui28RichText16GetSelectedRangeERiS1_
+hw,01E431A1,495,?OpenEditMenu@RichText@vgui2@@AAEXXZ,vgui2::RichText::OpenEditMenu,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,,linux: _ZN5vgui28RichText12OpenEditMenuEv
+hw,01E43390,38,?CutSelected@RichText@vgui2@@UAEXXZ,vgui2::RichText::CutSelected,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,,linux: _ZN5vgui28RichText11CutSelectedEv
+hw,01E433B6,222,?CopySelected@RichText@vgui2@@UAEXXZ,vgui2::RichText::CopySelected,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,,linux: _ZN5vgui28RichText12CopySelectedEv
+hw,01E43494,152,?GetStartDrawIndex@RichText@vgui2@@AAEHAAH@Z,vgui2::RichText::GetStartDrawIndex,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,,linux: _ZN5vgui28RichText17GetStartDrawIndexERi
+hw,01E4352C,142,?GetText@RichText@vgui2@@QAEXHPAGH@Z,vgui2::RichText::GetText,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,,linux: _ZN5vgui28RichText7GetTextEiPwi
+hw,01E435BA,95,?GetText@RichText@vgui2@@QAEXHPADH@Z,vgui2::RichText::GetText,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,,linux: _ZN5vgui28RichText7GetTextEiPci
+hw,01E43619,64,?SetFont@RichText@vgui2@@QAEXK@Z,vgui2::RichText::SetFont,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,,linux: _ZN5vgui28RichText7SetFontEm
+hw,01E43659,32,?OnSliderMoved@RichText@vgui2@@MAEXXZ,vgui2::RichText::OnSliderMoved,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,,linux: _ZN5vgui28RichText13OnSliderMovedEv
+hw,01E43679,116,?RequestInfo@RichText@vgui2@@UAE_NPAVKeyValues@@@Z,vgui2::RichText::RequestInfo,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,,linux: _ZN5vgui28RichText11RequestInfoEP9KeyValues
 hw,01E436ED,25,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText9OnSetTextEPKw
-hw,01E43706,364,,vgui2::RichText::OnClickPanel,ENGINE,vgui2/controls/RichText.cpp,,,TODO,,linux_symbols:string:0.75,
-hw,01E43872,185,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText13ApplySettingsEP9KeyValues
-hw,01E4392B,89,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText11GetSettingsEP9KeyValues
-hw,01E43984,48,,vgui2::RichText::GetDescription,ENGINE,vgui2/controls/RichText.cpp,,,TODO,,linux_symbols:string:0.611,
-hw,01E439B4,25,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText11GetNumLinesEv
-hw,01E439CD,145,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText15SetToFullHeightEv
-hw,01E43A5E,57,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText13SelectAllTextEv
-hw,01E43A97,37,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText12SelectNoTextEv
+hw,01E43706,364,?OnClickPanel@RichText@vgui2@@MAEXH@Z,vgui2::RichText::OnClickPanel,ENGINE,vgui2/controls/RichText.cpp,,,MATCHED,100,linux_symbols:string:0.75,
+hw,01E43872,185,?ApplySettings@RichText@vgui2@@MAEXPAVKeyValues@@@Z,vgui2::RichText::ApplySettings,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,,linux: _ZN5vgui28RichText13ApplySettingsEP9KeyValues
+hw,01E4392B,89,?GetSettings@RichText@vgui2@@MAEXPAVKeyValues@@@Z,vgui2::RichText::GetSettings,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,,linux: _ZN5vgui28RichText11GetSettingsEP9KeyValues
+hw,01E43984,48,?GetDescription@RichText@vgui2@@MAEPBDXZ,vgui2::RichText::GetDescription,ENGINE,vgui2/controls/RichText.cpp,,,MATCHED,100,linux_symbols:string:0.611,
+hw,01E439B4,25,?GetNumLines@RichText@vgui2@@QAEHXZ,vgui2::RichText::GetNumLines,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,,linux: _ZN5vgui28RichText11GetNumLinesEv
+hw,01E439CD,145,?SetToFullHeight@RichText@vgui2@@QAEXXZ,vgui2::RichText::SetToFullHeight,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,,linux: _ZN5vgui28RichText15SetToFullHeightEv
+hw,01E43A5E,57,?SelectAllText@RichText@vgui2@@QAEXXZ,vgui2::RichText::SelectAllText,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,,linux: _ZN5vgui28RichText13SelectAllTextEv
+hw,01E43A97,37,?SelectNoText@RichText@vgui2@@QAEXXZ,vgui2::RichText::SelectNoText,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,,linux: _ZN5vgui28RichText12SelectNoTextEv
 hw,01E43ABC,19,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText10OnSetFocusEv
-hw,01E43ACF,75,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText25InvalidateLineBreakStreamEv
-hw,01E43B1A,197,,vgui2::RichText::InsertPossibleURLString,ENGINE,vgui2/controls/RichText.cpp,,,TODO,,linux_symbols:caller:0.714,
-hw,01E43BDF,503,,vgui2::RichText::ParseTextStringForUrls,ENGINE,vgui2/controls/RichText.cpp,,,TODO,,linux_symbols:string:0.513,
-hw,01E43DD6,105,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText13OnTextClickedEPKw
+hw,01E43ACF,75,?InvalidateLineBreakStream@RichText@vgui2@@AAEXXZ,vgui2::RichText::InvalidateLineBreakStream,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,,linux: _ZN5vgui28RichText25InvalidateLineBreakStreamEv
+hw,01E43B1A,197,?InsertPossibleURLString@RichText@vgui2@@QAEXPBDVColor@@1@Z,vgui2::RichText::InsertPossibleURLString,ENGINE,vgui2/controls/RichText.cpp,,,MATCHED,100,linux_symbols:caller:0.714,
+hw,01E43BDF,503,?ParseTextStringForUrls@RichText@vgui2@@IAEHPBDHPADHAA_N@Z,vgui2::RichText::ParseTextStringForUrls,ENGINE,vgui2/controls/RichText.cpp,,,MATCHED,100,linux_symbols:string:0.513,
+hw,01E43DD6,105,?OnTextClicked@RichText@vgui2@@MAEXPBG@Z,vgui2::RichText::OnTextClicked,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,,linux: _ZN5vgui28RichText13OnTextClickedEPKw
 hw,01E43E40,46,,,UNKNOWN,,,,TODO,,,
-hw,01E43E70,25,,,UNKNOWN,,,,TODO,,,
-hw,01E43E90,22,,,UNKNOWN,,,,TODO,,,
+hw,01E43E70,25,??0TRenderState@RichText@vgui2@@QAE@XZ,vgui2::RichText::TRenderState::TRenderState,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,,
+hw,01E43E90,22,??0TFormatStream@RichText@vgui2@@QAE@XZ,vgui2::RichText::TFormatStream::TFormatStream,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,,
 hw,01E43EB0,28,??8Color@@QBE_NABV0@@Z,Color::operator==,UNKNOWN,,,,TODO,,,
-hw,01E43ED0,17,,,UNKNOWN,,,,TODO,,,
+hw,01E43ED0,17,?GetTextIndex_guess@ClickPanel@vgui2@@QAEHXZ,vgui2::ClickPanel::GetTextIndex_guess,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,,
 hw,01E43EF0,19,,,UNKNOWN,,,,TODO,,,
 hw,01E43F10,102,,,UNKNOWN,,,,TODO,,,
 hw,01E43F80,64,,,UNKNOWN,,,,TODO,,,
@@ -30892,196 +30892,196 @@ hw,01E43FC0,10,,,UNKNOWN,,,,TODO,,,
 hw,01E43FD0,10,,,UNKNOWN,,,,TODO,,,
 hw,01E43FE0,19,,,UNKNOWN,,,,TODO,,,
 hw,01E44000,107,,,UNKNOWN,,,,TODO,,,
-hw,01E44070,120,,,UNKNOWN,,,,TODO,,,
+hw,01E44070,120,?AddToMap@RichText@vgui2@@SAXPBDP8Panel@2@AEXXZHH0H0@Z,vgui2::RichText::AddToMap,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,,
 hw,01E440F0,19,,,UNKNOWN,,,,TODO,,,
 hw,01E44110,107,,,UNKNOWN,,,,TODO,,,
 hw,01E44180,19,,,UNKNOWN,,,,TODO,,,
-hw,01E441A0,110,,,UNKNOWN,,,,TODO,,,
+hw,01E441A0,110,?InitVar@PanelMessageFunc_OnSetText@RichText@vgui2@@SAXXZ,vgui2::RichText::PanelMessageFunc_OnSetText::InitVar,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,,
 hw,01E44210,19,,,UNKNOWN,,,,TODO,,,
 hw,01E44230,107,,,UNKNOWN,,,,TODO,,,
 hw,01E442A0,19,,,UNKNOWN,,,,TODO,,,
-hw,01E442C0,110,,,UNKNOWN,,,,TODO,,,
-hw,01E44330,118,,,UNKNOWN,,,,TODO,,,
+hw,01E442C0,110,?InitVar@PanelMessageFunc_OnClickPanel@RichText@vgui2@@SAXXZ,vgui2::RichText::PanelMessageFunc_OnClickPanel::InitVar,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,,
+hw,01E44330,118,??0ClickPanel@vgui2@@QAE@PAVPanel@1@@Z,vgui2::ClickPanel::ClickPanel,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,,
 hw,01E443B0,19,,,UNKNOWN,,,,TODO,,,
 hw,01E443D0,102,,,UNKNOWN,,,,TODO,,,
 hw,01E44440,64,,,UNKNOWN,,,,TODO,,,
 hw,01E44480,10,,,UNKNOWN,,,,TODO,,,
 hw,01E44490,10,,,UNKNOWN,,,,TODO,,,
-hw,01E444A0,22,,,UNKNOWN,,,,TODO,,,
-hw,01E444C0,95,,,UNKNOWN,,,,TODO,,,
+hw,01E444A0,22,?SetTextIndex_guess@ClickPanel@vgui2@@QAEXH@Z,vgui2::ClickPanel::SetTextIndex_guess,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,,
+hw,01E444C0,95,?OnMousePressed@ClickPanel@vgui2@@UAEXW4MouseCode@2@@Z,vgui2::ClickPanel::OnMousePressed,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,,
 hw,01E44520,46,,,UNKNOWN,,,,TODO,,,
 hw,01E44550,19,,,UNKNOWN,,,,TODO,,,
-hw,01E445C0,43,,,UNKNOWN,,,,TODO,,,
-hw,01E445F0,34,,,UNKNOWN,,,,TODO,,,
+hw,01E445C0,43,??0?$Dar@PAUClickPanel@vgui2@@@vgui2@@QAE@XZ,*>,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,,
+hw,01E445F0,34,??1?$Dar@PAUClickPanel@vgui2@@@vgui2@@QAE@XZ,*>,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,,
 hw,01E44620,16,,,UNKNOWN,,,,TODO,,,
-hw,01E44630,68,,,UNKNOWN,,,,TODO,,,
-hw,01E44680,45,,,UNKNOWN,,,,TODO,,,
-hw,01E446B0,221,,,UNKNOWN,,,,TODO,,,
+hw,01E44630,68,?AddElement@?$Dar@PAUClickPanel@vgui2@@@vgui2@@QAEHPAUClickPanel@2@@Z,*>::AddElement,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,,
+hw,01E44680,45,??A?$Dar@PAUClickPanel@vgui2@@@vgui2@@QAEPAUClickPanel@1@H@Z,*>::operator[],UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,,
+hw,01E446B0,221,?EnsureCapacity@?$Dar@PAUClickPanel@vgui2@@@vgui2@@QAEXH@Z,*>::EnsureCapacity,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,,
 hw,01E44790,50,,,UNKNOWN,,,,TODO,,,
 hw,01E447D0,27,,,UNKNOWN,,,,TODO,,,
 hw,01E447F0,25,,,UNKNOWN,,,,TODO,,,
 hw,01E44810,19,,,UNKNOWN,,,,TODO,,,
 hw,01E44830,17,,,UNKNOWN,,,,TODO,,,
 hw,01E44850,32,,,UNKNOWN,,,,TODO,,,
-hw,01E44870,33,,,UNKNOWN,,,,TODO,,,
+hw,01E44870,33,?EnsureCapacity@?$CUtlVector@G@@QAEXH@Z,short>::EnsureCapacity,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,,
 hw,01E448A0,95,,,UNKNOWN,,,,TODO,,,
 hw,01E44900,70,,,UNKNOWN,,,,TODO,,,
 hw,01E44950,17,,,UNKNOWN,,,,TODO,,,
-hw,01E44970,63,,,UNKNOWN,,,,TODO,,,
+hw,01E44970,63,?Remove@?$CUtlVector@H@@QAEXH@Z,CUtlVector<int>::Remove,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,,
 hw,01E449B0,50,,,UNKNOWN,,,,TODO,,,
 hw,01E449F0,27,,,UNKNOWN,,,,TODO,,,
 hw,01E44A10,25,,,UNKNOWN,,,,TODO,,,
 hw,01E44A30,17,,,UNKNOWN,,,,TODO,,,
 hw,01E44A50,17,,,UNKNOWN,,,,TODO,,,
-hw,01E44A70,51,,,UNKNOWN,,,,TODO,,,
+hw,01E44A70,51,?IsValidIndex@?$CUtlVector@UTFormatStream@RichText@vgui2@@@@QBE_NH@Z,vgui2::RichText::TFormatStream>::IsValidIndex,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,,
 hw,01E44AB0,32,,,UNKNOWN,,,,TODO,,,
 hw,01E44AD0,95,,,UNKNOWN,,,,TODO,,,
 hw,01E44B30,70,,,UNKNOWN,,,,TODO,,,
 hw,01E44B80,25,,,UNKNOWN,,,,TODO,,,
 hw,01E44BA0,65,,,UNKNOWN,,,,TODO,,,
 hw,01E44BF0,35,,,UNKNOWN,,,,TODO,,,
-hw,01E44C20,85,,,UNKNOWN,,,,TODO,,,
+hw,01E44C20,85,?ShiftElementsLeft@?$CUtlVector@G@@IAEXHH@Z,short>::ShiftElementsLeft,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,,
 hw,01E44C80,11,,,UNKNOWN,,,,TODO,,,
-hw,01E44C90,74,,,UNKNOWN,,,,TODO,,,
+hw,01E44C90,74,??0?$CUtlMemory@G@@QAE@HH@Z,short>,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,,
 hw,01E44CE0,19,,,UNKNOWN,,,,TODO,,,
-hw,01E44D00,24,,,UNKNOWN,,,,TODO,,,
+hw,01E44D00,24,??A?$CUtlMemory@G@@QAEAAGH@Z,short>::operator[],UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,,
 hw,01E44D20,16,,,UNKNOWN,,,,TODO,,,
-hw,01E44D30,42,,,UNKNOWN,,,,TODO,,,
+hw,01E44D30,42,?EnsureCapacity@?$CUtlMemory@G@@QAEXH@Z,short>::EnsureCapacity,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,,
 hw,01E44D60,5,,,UNKNOWN,,,,TODO,,,
-hw,01E44D70,86,,,UNKNOWN,,,,TODO,,,
+hw,01E44D70,86,?ShiftElementsLeft@?$CUtlVector@H@@IAEXHH@Z,CUtlVector<int>::ShiftElementsLeft,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,,
 hw,01E44DD0,25,,,UNKNOWN,,,,TODO,,,
 hw,01E44DF0,65,,,UNKNOWN,,,,TODO,,,
 hw,01E44E40,35,,,UNKNOWN,,,,TODO,,,
-hw,01E44E70,86,,,UNKNOWN,,,,TODO,,,
+hw,01E44E70,86,?ShiftElementsLeft@?$CUtlVector@UTFormatStream@RichText@vgui2@@@@IAEXHH@Z,vgui2::RichText::TFormatStream>::ShiftElementsLeft,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,,
 hw,01E44ED0,11,,,UNKNOWN,,,,TODO,,,
-hw,01E44EE0,75,,,UNKNOWN,,,,TODO,,,
+hw,01E44EE0,75,??0?$CUtlMemory@UTFormatStream@RichText@vgui2@@@@QAE@HH@Z,vgui2::RichText::TFormatStream>,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,,
 hw,01E44F30,19,,,UNKNOWN,,,,TODO,,,
-hw,01E44F50,26,,,UNKNOWN,,,,TODO,,,
+hw,01E44F50,26,??A?$CUtlMemory@UTFormatStream@RichText@vgui2@@@@QAEAAUTFormatStream@RichText@vgui2@@H@Z,vgui2::RichText::TFormatStream>::operator[],UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,,
 hw,01E44F70,5,,,UNKNOWN,,,,TODO,,,
 hw,01E44F80,87,,,UNKNOWN,,,,TODO,,,
-hw,01E44FE0,85,,,UNKNOWN,,,,TODO,,,
-hw,01E45040,197,,,UNKNOWN,,,,TODO,,,
+hw,01E44FE0,85,?ShiftElementsRight@?$CUtlVector@G@@IAEXHH@Z,short>::ShiftElementsRight,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,,
+hw,01E45040,197,?Grow@?$CUtlMemory@G@@QAEXH@Z,short>::Grow,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,,
 hw,01E45110,69,,,UNKNOWN,,,,TODO,,,
-hw,01E45160,60,,,UNKNOWN,,,,TODO,,,
+hw,01E45160,60,?CopyConstruct@@YAXPAGABG@Z,CopyConstruct,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,,
 hw,01E451A0,87,,,UNKNOWN,,,,TODO,,,
-hw,01E45200,86,,,UNKNOWN,,,,TODO,,,
+hw,01E45200,86,?ShiftElementsRight@?$CUtlVector@UTFormatStream@RichText@vgui2@@@@IAEXHH@Z,vgui2::RichText::TFormatStream>::ShiftElementsRight,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,,
 hw,01E45260,69,,,UNKNOWN,,,,TODO,,,
-hw,01E452B0,76,,,UNKNOWN,,,,TODO,,,
+hw,01E452B0,76,?CopyConstruct@@YAXPAUTFormatStream@RichText@vgui2@@ABU123@@Z,CopyConstruct,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,,
 hw,01E45300,17,,,UNKNOWN,,,,TODO,,,
 hw,01E45320,25,,,UNKNOWN,,,,TODO,,,
 hw,01E45340,17,,,UNKNOWN,,,,TODO,,,
-hw,01E45360,199,,,UNKNOWN,,,,TODO,,,
+hw,01E45360,199,?Grow@?$CUtlMemory@UTFormatStream@RichText@vgui2@@@@QAEXH@Z,vgui2::RichText::TFormatStream>::Grow,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,,
 hw,01E45430,25,,,UNKNOWN,,,,TODO,,,
-hw,01E45450,839,,,UNKNOWN,,,,TODO,,,
-hw,01E45797,118,,,UNKNOWN,,,,TODO,,,
-hw,01E4580D,513,,vgui2::TextEntry::ApplySchemeSettings,ENGINE,vgui2/controls/TextEntry.cpp,,,TODO,,linux_symbols:string:0.711,
-hw,01E45A0E,25,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry18SetDisabledBgColorE5Color
-hw,01E45A27,261,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry11OnKillFocusEv
-hw,01E45B2C,135,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry13OnSizeChangedEii
-hw,01E45BB3,192,,,UNKNOWN,guess:vgui2/controls/TextEntry.cpp,,,TODO,,,
-hw,01E45C73,293,,,UNKNOWN,guess:vgui2/controls/TextEntry.cpp,,,TODO,,,
-hw,01E45D98,180,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry9SetCharAtEwi
-hw,01E45E4C,60,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry16ResetCursorBlinkEv
-hw,01E45E88,36,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry13SetTextHiddenEb
-hw,01E45EAC,88,,,UNKNOWN,guess:vgui2/controls/TextEntry.cpp,,,TODO,,,
-hw,01E45F04,318,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry18CursorToPixelSpaceEiRiS1_
-hw,01E46042,511,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry18PixelToCursorSpaceEii
-hw,01E46241,431,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry8DrawCharEwmiii
-hw,01E463F0,177,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry10DrawCursorEii
-hw,01E464A1,134,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry13NeedsEllipsesEmPi
-hw,01E46527,1413,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry15PaintBackgroundEv
-hw,01E46AAC,73,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry13PerformLayoutEv
-hw,01E46AF5,78,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry14AddAnotherLineERiS1_
-hw,01E46B43,803,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry21RecalculateLineBreaksEv
-hw,01E46E66,691,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry29LayoutVerticalScrollBarSliderEv
-hw,01E47119,36,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry10SetEnabledEb
-hw,01E4713D,25,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry12SetMultilineEb
-hw,01E47156,25,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry16SetCatchEnterKeyEb
-hw,01E4716F,235,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry20SetVerticalScrollbarEb
-hw,01E4725A,25,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry11SetEditableEb
-hw,01E47273,537,,vgui2::TextEntry::CreateEditMenu,ENGINE,vgui2/controls/TextEntry.cpp,,,TODO,,linux_symbols:string:0.759,
-hw,01E4748C,70,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry10IsEditableEv
-hw,01E474D2,44,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry18OnMouseFocusTickedEv
-hw,01E474FE,21,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry15OnCursorEnteredEv
-hw,01E47513,36,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry14OnCursorExitedEv
-hw,01E47537,258,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry13OnCursorMovedEii
-hw,01E47639,309,,vgui2::TextEntry::OnMousePressed,ENGINE,vgui2/controls/TextEntry.cpp,,,TODO,,linux_symbols:caller:0.667,
-hw,01E4776E,100,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry15OnMouseReleasedENS_9MouseCodeE
-hw,01E477D2,211,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry20OnMouseDoublePressedENS_9MouseCodeE
-hw,01E478A5,21,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry18OnMouseCaptureLostEv
-hw,01E478BA,2111,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry14OnKeyCodeTypedENS_7KeyCodeE
-hw,01E481D4,275,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry10OnKeyTypedEw
-hw,01E482E7,51,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry14OnMouseWheeledEi
-hw,01E4831A,100,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry13MoveScrollBarEi
-hw,01E4837E,106,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry16OnKeyFocusTickedEv
-hw,01E483E8,141,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry11SelectCheckEv
-hw,01E48475,25,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry19SetMaximumCharCountEi
-hw,01E4848E,20,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry19GetMaximumCharCountEv
-hw,01E484A2,44,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry33SetAutoProgressOnHittingCharLimitEb
-hw,01E484CE,25,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry7SetWrapEb
-hw,01E484E7,25,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry11SendNewLineEb
-hw,01E48500,85,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry11IsLineBreakEi
-hw,01E48555,158,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry8GotoLeftEv
-hw,01E485F3,252,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry9GotoRightEv
-hw,01E486EF,134,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry13GetCursorLineEv
-hw,01E48775,152,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry6GotoUpEv
-hw,01E4880D,257,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry8GotoDownEv
-hw,01E4890E,97,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry9GetYStartEv
-hw,01E4896F,435,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry10MoveCursorEii
-hw,01E48B22,25,,,UNKNOWN,guess:vgui2/controls/TextEntry.cpp,,,TODO,,,
-hw,01E48B3B,122,,,UNKNOWN,guess:vgui2/controls/TextEntry.cpp,,,TODO,,,
-hw,01E48BB5,177,,,UNKNOWN,guess:vgui2/controls/TextEntry.cpp,,,TODO,,,
-hw,01E48C66,115,,,UNKNOWN,guess:vgui2/controls/TextEntry.cpp,,,TODO,,,
-hw,01E48CD9,78,,,UNKNOWN,guess:vgui2/controls/TextEntry.cpp,,,TODO,,,
-hw,01E48D27,50,,,UNKNOWN,guess:vgui2/controls/TextEntry.cpp,,,TODO,,,
-hw,01E48D59,282,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry13GotoWordRightEv
-hw,01E48E73,258,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry12GotoWordLeftEv
-hw,01E48F75,100,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry13GotoTextStartEv
-hw,01E48FD9,102,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry11GotoTextEndEv
-hw,01E4903F,109,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry15GotoFirstOfLineEv
-hw,01E490AC,332,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry19GetCurrentLineStartEv
-hw,01E491F8,99,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry13GotoEndOfLineEv
-hw,01E4925B,313,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry17GetCurrentLineEndEv
-hw,01E49394,1249,,vgui2::TextEntry::InsertChar,ENGINE,vgui2/controls/TextEntry.cpp,,,TODO,,linux_symbols:string:0.821,
-hw,01E49875,155,,,UNKNOWN,guess:vgui2/controls/TextEntry.cpp,,,TODO,,,
-hw,01E49910,110,,,UNKNOWN,guess:vgui2/controls/TextEntry.cpp,,,TODO,,,
-hw,01E4997E,179,,,UNKNOWN,guess:vgui2/controls/TextEntry.cpp,,,TODO,,,
-hw,01E49A31,349,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry9BackspaceEv
-hw,01E49B8E,287,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry14DeleteSelectedEv
-hw,01E49CAD,330,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry6DeleteEv
-hw,01E49DF7,35,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry10SelectNoneEv
-hw,01E49E1A,99,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry16GetSelectedRangeERiS1_
-hw,01E49E7D,501,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry12OpenEditMenuEv
-hw,01E4A072,81,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry11CutSelectedEv
-hw,01E4A0C3,277,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry12CopySelectedEv
-hw,01E4A1D8,785,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry5PasteEv
-hw,01E4A4E9,113,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry4UndoEv
-hw,01E4A55A,67,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry13SaveUndoStateEv
-hw,01E4A59D,718,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry17GetStartDrawIndexERi
-hw,01E4A86B,116,,,UNKNOWN,guess:vgui2/controls/TextEntry.cpp,,,TODO,,,
-hw,01E4A8DF,128,,,UNKNOWN,guess:vgui2/controls/TextEntry.cpp,,,TODO,,,
-hw,01E4A95F,103,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry16FireActionSignalEv
-hw,01E4A9C6,54,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry7SetFontEm
-hw,01E4A9FC,22,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry13OnSliderMovedEv
-hw,01E4AA12,219,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry11RequestInfoEP9KeyValues
-hw,01E4AAED,31,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry9OnSetTextEPKw
-hw,01E4AB0C,56,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry10OnSetStateEi
-hw,01E4AB44,202,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry13ApplySettingsEP9KeyValues
-hw,01E4AC0E,196,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry11GetSettingsEP9KeyValues
-hw,01E4ACD2,48,,vgui2::TextEntry::GetDescription,ENGINE,vgui2/controls/TextEntry.cpp,,,TODO,,linux_symbols:string:0.611,
-hw,01E4AD02,25,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry11GetNumLinesEv
-hw,01E4AD1B,129,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry15SetToFullHeightEv
-hw,01E4AD9C,101,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry13SelectAllTextEb
-hw,01E4AE01,37,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry12SelectNoTextEv
-hw,01E4AE26,203,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry14SetToFullWidthEv
-hw,01E4AEF1,41,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry21SelectAllOnFirstFocusEb
-hw,01E4AF1A,204,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry10OnSetFocusEv
-hw,01E4AFE6,25,,,UNKNOWN,,,,TODO,,,
-hw,01E4AFFF,20,,,UNKNOWN,,,,TODO,,,
-hw,01E4B013,44,,,UNKNOWN,,,,TODO,,,
-hw,01E4B03F,44,,,UNKNOWN,,,,TODO,,,
-hw,01E4B06B,56,,,UNKNOWN,,,,TODO,,,
-hw,01E4B0A3,22,,,UNKNOWN,,,,TODO,,,
+hw,01E45450,839,??0TextEntry@vgui2@@QAE@PAVPanel@1@PBD@Z,vgui2::TextEntry::TextEntry,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,
+hw,01E45797,118,??1TextEntry@vgui2@@UAE@XZ,vgui2::TextEntry::~TextEntry,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,
+hw,01E4580D,513,?ApplySchemeSettings@TextEntry@vgui2@@MAEXPAVIScheme@2@@Z,vgui2::TextEntry::ApplySchemeSettings,ENGINE,vgui2/controls/TextEntry.cpp,,,MATCHED,100,linux_symbols:string:0.711,
+hw,01E45A0E,25,?SetDisabledBgColor@TextEntry@vgui2@@UAEXVColor@@@Z,vgui2::TextEntry::SetDisabledBgColor,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,linux: _ZN5vgui29TextEntry18SetDisabledBgColorE5Color
+hw,01E45A27,261,?OnKillFocus@TextEntry@vgui2@@MAEXXZ,vgui2::TextEntry::OnKillFocus,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,linux: _ZN5vgui29TextEntry11OnKillFocusEv
+hw,01E45B2C,135,?OnSizeChanged@TextEntry@vgui2@@MAEXHH@Z,vgui2::TextEntry::OnSizeChanged,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,linux: _ZN5vgui29TextEntry13OnSizeChangedEii
+hw,01E45BB3,192,?SetText@TextEntry@vgui2@@UAEXPBD@Z,vgui2::TextEntry::SetText,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,
+hw,01E45C73,293,?SetText@TextEntry@vgui2@@UAEXPBG@Z,vgui2::TextEntry::SetText,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,
+hw,01E45D98,180,?SetCharAt@TextEntry@vgui2@@MAEXGH@Z,vgui2::TextEntry::SetCharAt,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,linux: _ZN5vgui29TextEntry9SetCharAtEwi
+hw,01E45E4C,60,?ResetCursorBlink@TextEntry@vgui2@@MAEXXZ,vgui2::TextEntry::ResetCursorBlink,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,linux: _ZN5vgui29TextEntry16ResetCursorBlinkEv
+hw,01E45E88,36,?SetTextHidden@TextEntry@vgui2@@UAEX_N@Z,vgui2::TextEntry::SetTextHidden,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,linux: _ZN5vgui29TextEntry13SetTextHiddenEb
+hw,01E45EAC,88,?getCharWidth@@YAHKG@Z,getCharWidth,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,
+hw,01E45F04,318,?CursorToPixelSpace@TextEntry@vgui2@@MAEXHAAH0@Z,vgui2::TextEntry::CursorToPixelSpace,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,linux: _ZN5vgui29TextEntry18CursorToPixelSpaceEiRiS1_
+hw,01E46042,511,?PixelToCursorSpace@TextEntry@vgui2@@MAEHHH@Z,vgui2::TextEntry::PixelToCursorSpace,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,linux: _ZN5vgui29TextEntry18PixelToCursorSpaceEii
+hw,01E46241,431,?DrawChar@TextEntry@vgui2@@MAEHGKHHH@Z,vgui2::TextEntry::DrawChar,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,linux: _ZN5vgui29TextEntry8DrawCharEwmiii
+hw,01E463F0,177,?DrawCursor@TextEntry@vgui2@@MAE_NHH@Z,vgui2::TextEntry::DrawCursor,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,linux: _ZN5vgui29TextEntry10DrawCursorEii
+hw,01E464A1,134,?NeedsEllipses@TextEntry@vgui2@@AAE_NKPAH@Z,vgui2::TextEntry::NeedsEllipses,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,linux: _ZN5vgui29TextEntry13NeedsEllipsesEmPi
+hw,01E46527,1413,?PaintBackground@TextEntry@vgui2@@MAEXXZ,vgui2::TextEntry::PaintBackground,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,linux: _ZN5vgui29TextEntry15PaintBackgroundEv
+hw,01E46AAC,73,?PerformLayout@TextEntry@vgui2@@MAEXXZ,vgui2::TextEntry::PerformLayout,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,linux: _ZN5vgui29TextEntry13PerformLayoutEv
+hw,01E46AF5,78,?AddAnotherLine@TextEntry@vgui2@@MAEXAAH0@Z,vgui2::TextEntry::AddAnotherLine,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,linux: _ZN5vgui29TextEntry14AddAnotherLineERiS1_
+hw,01E46B43,803,?RecalculateLineBreaks@TextEntry@vgui2@@UAEXXZ,vgui2::TextEntry::RecalculateLineBreaks,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,linux: _ZN5vgui29TextEntry21RecalculateLineBreaksEv
+hw,01E46E66,691,?LayoutVerticalScrollBarSlider@TextEntry@vgui2@@UAEXXZ,vgui2::TextEntry::LayoutVerticalScrollBarSlider,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,linux: _ZN5vgui29TextEntry29LayoutVerticalScrollBarSliderEv
+hw,01E47119,36,?SetEnabled@TextEntry@vgui2@@UAEX_N@Z,vgui2::TextEntry::SetEnabled,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,linux: _ZN5vgui29TextEntry10SetEnabledEb
+hw,01E4713D,25,?SetMultiline@TextEntry@vgui2@@UAEX_N@Z,vgui2::TextEntry::SetMultiline,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,linux: _ZN5vgui29TextEntry12SetMultilineEb
+hw,01E47156,25,?SetCatchEnterKey@TextEntry@vgui2@@UAEX_N@Z,vgui2::TextEntry::SetCatchEnterKey,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,linux: _ZN5vgui29TextEntry16SetCatchEnterKeyEb
+hw,01E4716F,235,?SetVerticalScrollbar@TextEntry@vgui2@@UAEX_N@Z,vgui2::TextEntry::SetVerticalScrollbar,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,linux: _ZN5vgui29TextEntry20SetVerticalScrollbarEb
+hw,01E4725A,25,?SetEditable@TextEntry@vgui2@@UAEX_N@Z,vgui2::TextEntry::SetEditable,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,linux: _ZN5vgui29TextEntry11SetEditableEb
+hw,01E47273,537,?CreateEditMenu@TextEntry@vgui2@@AAEXXZ,vgui2::TextEntry::CreateEditMenu,ENGINE,vgui2/controls/TextEntry.cpp,,,MATCHED,100,linux_symbols:string:0.759,
+hw,01E4748C,70,?IsEditable@TextEntry@vgui2@@UAE_NXZ,vgui2::TextEntry::IsEditable,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,linux: _ZN5vgui29TextEntry10IsEditableEv
+hw,01E474D2,44,?OnMouseFocusTicked@TextEntry@vgui2@@MAEXXZ,vgui2::TextEntry::OnMouseFocusTicked,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,linux: _ZN5vgui29TextEntry18OnMouseFocusTickedEv
+hw,01E474FE,21,?OnCursorEntered@TextEntry@vgui2@@MAEXXZ,vgui2::TextEntry::OnCursorEntered,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,linux: _ZN5vgui29TextEntry15OnCursorEnteredEv
+hw,01E47513,36,?OnCursorExited@TextEntry@vgui2@@MAEXXZ,vgui2::TextEntry::OnCursorExited,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,linux: _ZN5vgui29TextEntry14OnCursorExitedEv
+hw,01E47537,258,?OnCursorMoved@TextEntry@vgui2@@MAEXHH@Z,vgui2::TextEntry::OnCursorMoved,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,linux: _ZN5vgui29TextEntry13OnCursorMovedEii
+hw,01E47639,309,?OnMousePressed@TextEntry@vgui2@@MAEXW4MouseCode@2@@Z,vgui2::TextEntry::OnMousePressed,ENGINE,vgui2/controls/TextEntry.cpp,,,MATCHED,100,linux_symbols:caller:0.667,
+hw,01E4776E,100,?OnMouseReleased@TextEntry@vgui2@@MAEXW4MouseCode@2@@Z,vgui2::TextEntry::OnMouseReleased,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,linux: _ZN5vgui29TextEntry15OnMouseReleasedENS_9MouseCodeE
+hw,01E477D2,211,?OnMouseDoublePressed@TextEntry@vgui2@@MAEXW4MouseCode@2@@Z,vgui2::TextEntry::OnMouseDoublePressed,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,linux: _ZN5vgui29TextEntry20OnMouseDoublePressedENS_9MouseCodeE
+hw,01E478A5,21,?OnMouseCaptureLost@TextEntry@vgui2@@MAEXXZ,vgui2::TextEntry::OnMouseCaptureLost,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,linux: _ZN5vgui29TextEntry18OnMouseCaptureLostEv
+hw,01E478BA,2111,?OnKeyCodeTyped@TextEntry@vgui2@@MAEXW4KeyCode@2@@Z,vgui2::TextEntry::OnKeyCodeTyped,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,linux: _ZN5vgui29TextEntry14OnKeyCodeTypedENS_7KeyCodeE
+hw,01E481D4,275,?OnKeyTyped@TextEntry@vgui2@@MAEXG@Z,vgui2::TextEntry::OnKeyTyped,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,linux: _ZN5vgui29TextEntry10OnKeyTypedEw
+hw,01E482E7,51,?OnMouseWheeled@TextEntry@vgui2@@MAEXH@Z,vgui2::TextEntry::OnMouseWheeled,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,linux: _ZN5vgui29TextEntry14OnMouseWheeledEi
+hw,01E4831A,100,?MoveScrollBar@TextEntry@vgui2@@AAEXH@Z,vgui2::TextEntry::MoveScrollBar,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,linux: _ZN5vgui29TextEntry13MoveScrollBarEi
+hw,01E4837E,106,?OnKeyFocusTicked@TextEntry@vgui2@@MAEXXZ,vgui2::TextEntry::OnKeyFocusTicked,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,linux: _ZN5vgui29TextEntry16OnKeyFocusTickedEv
+hw,01E483E8,141,?SelectCheck@TextEntry@vgui2@@MAEXXZ,vgui2::TextEntry::SelectCheck,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,linux: _ZN5vgui29TextEntry11SelectCheckEv
+hw,01E48475,25,?SetMaximumCharCount@TextEntry@vgui2@@UAEXH@Z,vgui2::TextEntry::SetMaximumCharCount,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,linux: _ZN5vgui29TextEntry19SetMaximumCharCountEi
+hw,01E4848E,20,?GetMaximumCharCount@TextEntry@vgui2@@UAEHXZ,vgui2::TextEntry::GetMaximumCharCount,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,linux: _ZN5vgui29TextEntry19GetMaximumCharCountEv
+hw,01E484A2,44,?SetAutoProgressOnHittingCharLimit@TextEntry@vgui2@@UAEX_N@Z,vgui2::TextEntry::SetAutoProgressOnHittingCharLimit,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,linux: _ZN5vgui29TextEntry33SetAutoProgressOnHittingCharLimitEb
+hw,01E484CE,25,?SetWrap@TextEntry@vgui2@@UAEX_N@Z,vgui2::TextEntry::SetWrap,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,linux: _ZN5vgui29TextEntry7SetWrapEb
+hw,01E484E7,25,?SendNewLine@TextEntry@vgui2@@UAEX_N@Z,vgui2::TextEntry::SendNewLine,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,linux: _ZN5vgui29TextEntry11SendNewLineEb
+hw,01E48500,85,?IsLineBreak@TextEntry@vgui2@@AAE_NH@Z,vgui2::TextEntry::IsLineBreak,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,linux: _ZN5vgui29TextEntry11IsLineBreakEi
+hw,01E48555,158,?GotoLeft@TextEntry@vgui2@@UAEXXZ,vgui2::TextEntry::GotoLeft,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,linux: _ZN5vgui29TextEntry8GotoLeftEv
+hw,01E485F3,252,?GotoRight@TextEntry@vgui2@@UAEXXZ,vgui2::TextEntry::GotoRight,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,linux: _ZN5vgui29TextEntry9GotoRightEv
+hw,01E486EF,134,?GetCursorLine@TextEntry@vgui2@@AAEHXZ,vgui2::TextEntry::GetCursorLine,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,linux: _ZN5vgui29TextEntry13GetCursorLineEv
+hw,01E48775,152,?GotoUp@TextEntry@vgui2@@UAEXXZ,vgui2::TextEntry::GotoUp,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,linux: _ZN5vgui29TextEntry6GotoUpEv
+hw,01E4880D,257,?GotoDown@TextEntry@vgui2@@UAEXXZ,vgui2::TextEntry::GotoDown,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,linux: _ZN5vgui29TextEntry8GotoDownEv
+hw,01E4890E,97,?GetYStart@TextEntry@vgui2@@MAEHXZ,vgui2::TextEntry::GetYStart,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,linux: _ZN5vgui29TextEntry9GetYStartEv
+hw,01E4896F,435,?MoveCursor@TextEntry@vgui2@@UAEXHH@Z,vgui2::TextEntry::MoveCursor,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,linux: _ZN5vgui29TextEntry10MoveCursorEii
+hw,01E48B22,25,?SetHorizontalScrolling@TextEntry@vgui2@@QAEX_N@Z,vgui2::TextEntry::SetHorizontalScrolling,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,
+hw,01E48B3B,122,?ScrollLeft@TextEntry@vgui2@@AAEXXZ,vgui2::TextEntry::ScrollLeft,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,
+hw,01E48BB5,177,?ScrollLeftForResize@TextEntry@vgui2@@AAEXXZ,vgui2::TextEntry::ScrollLeftForResize,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,
+hw,01E48C66,115,?ScrollRight@TextEntry@vgui2@@AAEXXZ,vgui2::TextEntry::ScrollRight,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,
+hw,01E48CD9,78,?IsCursorOffRightSideOfWindow@TextEntry@vgui2@@AAE_NH@Z,vgui2::TextEntry::IsCursorOffRightSideOfWindow,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,
+hw,01E48D27,50,?IsCursorOffLeftSideOfWindow@TextEntry@vgui2@@AAE_NH@Z,vgui2::TextEntry::IsCursorOffLeftSideOfWindow,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,
+hw,01E48D59,282,?GotoWordRight@TextEntry@vgui2@@UAEXXZ,vgui2::TextEntry::GotoWordRight,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,linux: _ZN5vgui29TextEntry13GotoWordRightEv
+hw,01E48E73,258,?GotoWordLeft@TextEntry@vgui2@@UAEXXZ,vgui2::TextEntry::GotoWordLeft,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,linux: _ZN5vgui29TextEntry12GotoWordLeftEv
+hw,01E48F75,100,?GotoTextStart@TextEntry@vgui2@@UAEXXZ,vgui2::TextEntry::GotoTextStart,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,linux: _ZN5vgui29TextEntry13GotoTextStartEv
+hw,01E48FD9,102,?GotoTextEnd@TextEntry@vgui2@@UAEXXZ,vgui2::TextEntry::GotoTextEnd,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,linux: _ZN5vgui29TextEntry11GotoTextEndEv
+hw,01E4903F,109,?GotoFirstOfLine@TextEntry@vgui2@@UAEXXZ,vgui2::TextEntry::GotoFirstOfLine,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,linux: _ZN5vgui29TextEntry15GotoFirstOfLineEv
+hw,01E490AC,332,?GetCurrentLineStart@TextEntry@vgui2@@AAEHXZ,vgui2::TextEntry::GetCurrentLineStart,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,linux: _ZN5vgui29TextEntry19GetCurrentLineStartEv
+hw,01E491F8,99,?GotoEndOfLine@TextEntry@vgui2@@UAEXXZ,vgui2::TextEntry::GotoEndOfLine,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,linux: _ZN5vgui29TextEntry13GotoEndOfLineEv
+hw,01E4925B,313,?GetCurrentLineEnd@TextEntry@vgui2@@AAEHXZ,vgui2::TextEntry::GetCurrentLineEnd,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,linux: _ZN5vgui29TextEntry17GetCurrentLineEndEv
+hw,01E49394,1249,?InsertChar@TextEntry@vgui2@@UAEXG@Z,vgui2::TextEntry::InsertChar,ENGINE,vgui2/controls/TextEntry.cpp,,,MATCHED,100,linux_symbols:string:0.821,
+hw,01E49875,155,?CalcBreakIndex@TextEntry@vgui2@@AAEXXZ,vgui2::TextEntry::CalcBreakIndex,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,
+hw,01E49910,110,?InsertString@TextEntry@vgui2@@UAEXPAG@Z,vgui2::TextEntry::InsertString,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,
+hw,01E4997E,179,?InsertString@TextEntry@vgui2@@UAEXPBD@Z,vgui2::TextEntry::InsertString,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,
+hw,01E49A31,349,?Backspace@TextEntry@vgui2@@UAEXXZ,vgui2::TextEntry::Backspace,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,linux: _ZN5vgui29TextEntry9BackspaceEv
+hw,01E49B8E,287,?DeleteSelected@TextEntry@vgui2@@UAEXXZ,vgui2::TextEntry::DeleteSelected,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,linux: _ZN5vgui29TextEntry14DeleteSelectedEv
+hw,01E49CAD,330,?Delete@TextEntry@vgui2@@UAEXXZ,vgui2::TextEntry::Delete,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,linux: _ZN5vgui29TextEntry6DeleteEv
+hw,01E49DF7,35,?SelectNone@TextEntry@vgui2@@UAEXXZ,vgui2::TextEntry::SelectNone,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,linux: _ZN5vgui29TextEntry10SelectNoneEv
+hw,01E49E1A,99,?GetSelectedRange@TextEntry@vgui2@@MAE_NAAH0@Z,vgui2::TextEntry::GetSelectedRange,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,linux: _ZN5vgui29TextEntry16GetSelectedRangeERiS1_
+hw,01E49E7D,501,?OpenEditMenu@TextEntry@vgui2@@UAEXXZ,vgui2::TextEntry::OpenEditMenu,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,linux: _ZN5vgui29TextEntry12OpenEditMenuEv
+hw,01E4A072,81,?CutSelected@TextEntry@vgui2@@UAEXXZ,vgui2::TextEntry::CutSelected,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,linux: _ZN5vgui29TextEntry11CutSelectedEv
+hw,01E4A0C3,277,?CopySelected@TextEntry@vgui2@@UAEXXZ,vgui2::TextEntry::CopySelected,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,linux: _ZN5vgui29TextEntry12CopySelectedEv
+hw,01E4A1D8,785,?Paste@TextEntry@vgui2@@UAEXXZ,vgui2::TextEntry::Paste,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,linux: _ZN5vgui29TextEntry5PasteEv
+hw,01E4A4E9,113,?Undo@TextEntry@vgui2@@UAEXXZ,vgui2::TextEntry::Undo,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,linux: _ZN5vgui29TextEntry4UndoEv
+hw,01E4A55A,67,?SaveUndoState@TextEntry@vgui2@@UAEXXZ,vgui2::TextEntry::SaveUndoState,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,linux: _ZN5vgui29TextEntry13SaveUndoStateEv
+hw,01E4A59D,718,?GetStartDrawIndex@TextEntry@vgui2@@MAEHAAH@Z,vgui2::TextEntry::GetStartDrawIndex,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,linux: _ZN5vgui29TextEntry17GetStartDrawIndexERi
+hw,01E4A86B,116,?GetText@TextEntry@vgui2@@UAEXPADH@Z,vgui2::TextEntry::GetText,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,
+hw,01E4A8DF,128,?GetText@TextEntry@vgui2@@UAEXPAGH@Z,vgui2::TextEntry::GetText,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,
+hw,01E4A95F,103,?FireActionSignal@TextEntry@vgui2@@MAEXXZ,vgui2::TextEntry::FireActionSignal,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,linux: _ZN5vgui29TextEntry16FireActionSignalEv
+hw,01E4A9C6,54,?SetFont@TextEntry@vgui2@@UAEXK@Z,vgui2::TextEntry::SetFont,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,linux: _ZN5vgui29TextEntry7SetFontEm
+hw,01E4A9FC,22,?OnSliderMoved@TextEntry@vgui2@@MAEXXZ,vgui2::TextEntry::OnSliderMoved,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,linux: _ZN5vgui29TextEntry13OnSliderMovedEv
+hw,01E4AA12,219,?RequestInfo@TextEntry@vgui2@@UAE_NPAVKeyValues@@@Z,vgui2::TextEntry::RequestInfo,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,linux: _ZN5vgui29TextEntry11RequestInfoEP9KeyValues
+hw,01E4AAED,31,?OnSetText@TextEntry@vgui2@@MAEXPBG@Z,vgui2::TextEntry::OnSetText,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,linux: _ZN5vgui29TextEntry9OnSetTextEPKw
+hw,01E4AB0C,56,?OnSetState@TextEntry@vgui2@@EAEXH@Z,vgui2::TextEntry::OnSetState,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,linux: _ZN5vgui29TextEntry10OnSetStateEi
+hw,01E4AB44,202,?ApplySettings@TextEntry@vgui2@@MAEXPAVKeyValues@@@Z,vgui2::TextEntry::ApplySettings,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,linux: _ZN5vgui29TextEntry13ApplySettingsEP9KeyValues
+hw,01E4AC0E,196,?GetSettings@TextEntry@vgui2@@MAEXPAVKeyValues@@@Z,vgui2::TextEntry::GetSettings,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,linux: _ZN5vgui29TextEntry11GetSettingsEP9KeyValues
+hw,01E4ACD2,48,?GetDescription@TextEntry@vgui2@@MAEPBDXZ,vgui2::TextEntry::GetDescription,ENGINE,vgui2/controls/TextEntry.cpp,,,MATCHED,100,linux_symbols:string:0.611,
+hw,01E4AD02,25,?GetNumLines@TextEntry@vgui2@@QAEHXZ,vgui2::TextEntry::GetNumLines,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,linux: _ZN5vgui29TextEntry11GetNumLinesEv
+hw,01E4AD1B,129,?SetToFullHeight@TextEntry@vgui2@@QAEXXZ,vgui2::TextEntry::SetToFullHeight,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,linux: _ZN5vgui29TextEntry15SetToFullHeightEv
+hw,01E4AD9C,101,?SelectAllText@TextEntry@vgui2@@QAEX_N@Z,vgui2::TextEntry::SelectAllText,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,linux: _ZN5vgui29TextEntry13SelectAllTextEb
+hw,01E4AE01,37,?SelectNoText@TextEntry@vgui2@@QAEXXZ,vgui2::TextEntry::SelectNoText,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,linux: _ZN5vgui29TextEntry12SelectNoTextEv
+hw,01E4AE26,203,?SetToFullWidth@TextEntry@vgui2@@QAEXXZ,vgui2::TextEntry::SetToFullWidth,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,linux: _ZN5vgui29TextEntry14SetToFullWidthEv
+hw,01E4AEF1,41,?SelectAllOnFirstFocus@TextEntry@vgui2@@QAEX_N@Z,vgui2::TextEntry::SelectAllOnFirstFocus,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,linux: _ZN5vgui29TextEntry21SelectAllOnFirstFocusEb
+hw,01E4AF1A,204,?OnSetFocus@TextEntry@vgui2@@EAEXXZ,vgui2::TextEntry::OnSetFocus,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,linux: _ZN5vgui29TextEntry10OnSetFocusEv
+hw,01E4AFE6,25,?SetDrawWidth@TextEntry@vgui2@@QAEXH@Z,vgui2::TextEntry::SetDrawWidth,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,
+hw,01E4AFFF,20,?GetDrawWidth@TextEntry@vgui2@@QAEHXZ,vgui2::TextEntry::GetDrawWidth,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,
+hw,01E4B013,44,?SetAllowNonAsciiCharacters@TextEntry@vgui2@@QAEX_N@Z,vgui2::TextEntry::SetAllowNonAsciiCharacters,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,
+hw,01E4B03F,44,?SetAllowNumericInputOnly@TextEntry@vgui2@@QAEX_N@Z,vgui2::TextEntry::SetAllowNumericInputOnly,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,
+hw,01E4B06B,56,?SetUseFallbackFont@TextEntry@vgui2@@QAEX_NK@Z,vgui2::TextEntry::SetUseFallbackFont,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,
+hw,01E4B0A3,22,?GetTextLength@TextEntry@vgui2@@QBEHXZ,vgui2::TextEntry::GetTextLength,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,
 hw,01E4B0C0,46,,,UNKNOWN,,,,TODO,,,
 hw,01E4B0F0,19,,,UNKNOWN,,,,TODO,,,
 hw,01E4B110,102,,,UNKNOWN,,,,TODO,,,
@@ -31102,12 +31102,12 @@ hw,01E4B4C0,107,,,UNKNOWN,,,,TODO,,,
 hw,01E4B530,19,,,UNKNOWN,,,,TODO,,,
 hw,01E4B550,110,,,UNKNOWN,,,,TODO,,,
 hw,01E4B5F0,32,,,UNKNOWN,,,,TODO,,,
-hw,01E4B610,80,,,UNKNOWN,,,,TODO,,,
-hw,01E4B660,100,,,UNKNOWN,,,,TODO,,,
+hw,01E4B610,80,?CopyArray@?$CUtlVector@G@@QAEXPBGH@Z,short>::CopyArray,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,
+hw,01E4B660,100,?FastRemove@?$CUtlVector@G@@QAEXH@Z,short>::FastRemove,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,
 hw,01E4B6D0,63,,,UNKNOWN,,,,TODO,,,
-hw,01E4B710,109,,,UNKNOWN,,,,TODO,,,
-hw,01E4B780,33,,,UNKNOWN,,,,TODO,,,
-hw,01E4B7B0,25,,,UNKNOWN,,,,TODO,,,
+hw,01E4B710,109,?InsertMultipleBefore@?$CUtlVector@G@@QAEHHH@Z,short>::InsertMultipleBefore,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,
+hw,01E4B780,33,?SetSize@?$CUtlVector@G@@QAEXH@Z,short>::SetSize,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,
+hw,01E4B7B0,25,?Construct@@YAXPAG@Z,Construct,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,,
 hw,01E4B7D0,664,,,UNKNOWN,,,,TODO,,,
 hw,01E4BA68,71,,vgui2::ScrollBar::ApplySchemeSettings,ENGINE,vgui2/controls/ScrollBar.cpp,,,TODO,,linux_symbols:string:0.8,
 hw,01E4BAAF,46,,,UNKNOWN,vgui2/controls/ScrollBar.cpp,,,TODO,,,linux: _ZN5vgui29ScrollBar21SetPaintBorderEnabledEb
@@ -31285,96 +31285,96 @@ hw,01E4FD50,19,,,UNKNOWN,,,,TODO,,,
 hw,01E4FD70,107,,,UNKNOWN,,,,TODO,,,
 hw,01E4FDE0,19,,,UNKNOWN,,,,TODO,,,
 hw,01E4FE00,107,,,UNKNOWN,,,,TODO,,,
-hw,01E4FE70,651,,,UNKNOWN,,,,TODO,,,
-hw,01E500FB,107,,,UNKNOWN,,,,TODO,,,
-hw,01E50166,148,,,UNKNOWN,,,,TODO,,,
-hw,01E501FA,253,,,UNKNOWN,,,,TODO,,,
-hw,01E502F7,79,,,UNKNOWN,,,,TODO,,,
-hw,01E50346,79,,,UNKNOWN,,,,TODO,,,
+hw,01E4FE70,651,??0Menu@vgui2@@QAE@PAVPanel@1@PBD@Z,vgui2::Menu::Menu,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,
+hw,01E500FB,107,??1Menu@vgui2@@UAE@XZ,vgui2::Menu::~Menu,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,
+hw,01E50166,148,?DeleteAllItems@Menu@vgui2@@UAEXXZ,vgui2::Menu::DeleteAllItems,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,
+hw,01E501FA,253,?AddMenuItem@Menu@vgui2@@UAEHPAVMenuItem@2@@Z,vgui2::Menu::AddMenuItem,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,
+hw,01E502F7,79,?AddMenuItemCharCommand@Menu@vgui2@@IAEHPAVMenuItem@2@PBDPAVPanel@2@PBVKeyValues@@@Z,vgui2::Menu::AddMenuItemCharCommand,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,
+hw,01E50346,79,?AddMenuItemKeyValuesCommand@Menu@vgui2@@IAEHPAVMenuItem@2@PAVKeyValues@@PAVPanel@2@PBV4@@Z,vgui2::Menu::AddMenuItemKeyValuesCommand,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,
 hw,01E50395,103,,,UNKNOWN,,,,TODO,,,
 hw,01E503FC,103,,,UNKNOWN,,,,TODO,,,
-hw,01E50463,47,,,UNKNOWN,,,,TODO,,,
+hw,01E50463,47,?AddMenuItem@Menu@vgui2@@UAEHPBD0PAVPanel@2@PBVKeyValues@@@Z,vgui2::Menu::AddMenuItem,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,
 hw,01E50492,103,,,UNKNOWN,,,,TODO,,,
 hw,01E504F9,103,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu11AddMenuItemEPKcS2_PNS_5PanelEPK9KeyValues
-hw,01E50560,47,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu11AddMenuItemEPKcS2_P9KeyValuesPNS_5PanelEPKS3_
-hw,01E5058F,43,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu11AddMenuItemEPKcPKwP9KeyValuesPNS_5PanelEPKS5_
+hw,01E50560,47,?AddMenuItem@Menu@vgui2@@UAEHPBDPAVKeyValues@@PAVPanel@2@PBV3@@Z,vgui2::Menu::AddMenuItem,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,linux: _ZN5vgui24Menu11AddMenuItemEPKcS2_P9KeyValuesPNS_5PanelEPKS3_
+hw,01E5058F,43,?AddMenuItem@Menu@vgui2@@UAEHPBDPAVPanel@2@PBVKeyValues@@@Z,vgui2::Menu::AddMenuItem,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,linux: _ZN5vgui24Menu11AddMenuItemEPKcPKwP9KeyValuesPNS_5PanelEPKS5_
 hw,01E505BA,103,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu11AddMenuItemEPKcP9KeyValuesPNS_5PanelEPKS3_
 hw,01E50621,103,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu11AddMenuItemEPKcPNS_5PanelEPK9KeyValues
-hw,01E50688,47,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu20AddCheckableMenuItemEPKcS2_S2_PNS_5PanelEPK9KeyValues
+hw,01E50688,47,?AddCheckableMenuItem@Menu@vgui2@@UAEHPBD0PAVPanel@2@PBVKeyValues@@@Z,vgui2::Menu::AddCheckableMenuItem,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,linux: _ZN5vgui24Menu20AddCheckableMenuItemEPKcS2_S2_PNS_5PanelEPK9KeyValues
 hw,01E506B7,103,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu20AddCheckableMenuItemEPKcPKwS2_PNS_5PanelEPK9KeyValues
 hw,01E5071E,103,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu20AddCheckableMenuItemEPKcS2_PNS_5PanelEPK9KeyValues
-hw,01E50785,47,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu20AddCheckableMenuItemEPKcS2_P9KeyValuesPNS_5PanelEPKS3_
-hw,01E507B4,43,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu20AddCheckableMenuItemEPKcPKwP9KeyValuesPNS_5PanelEPKS5_
+hw,01E50785,47,?AddCheckableMenuItem@Menu@vgui2@@UAEHPBDPAVKeyValues@@PAVPanel@2@PBV3@@Z,vgui2::Menu::AddCheckableMenuItem,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,linux: _ZN5vgui24Menu20AddCheckableMenuItemEPKcS2_P9KeyValuesPNS_5PanelEPKS3_
+hw,01E507B4,43,?AddCheckableMenuItem@Menu@vgui2@@UAEHPBDPAVPanel@2@PBVKeyValues@@@Z,vgui2::Menu::AddCheckableMenuItem,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,linux: _ZN5vgui24Menu20AddCheckableMenuItemEPKcPKwP9KeyValuesPNS_5PanelEPKS5_
 hw,01E507DF,105,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu20AddCheckableMenuItemEPKcP9KeyValuesPNS_5PanelEPKS3_
 hw,01E50848,105,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu20AddCheckableMenuItemEPKcPNS_5PanelEPK9KeyValues
-hw,01E508B1,51,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu20AddCascadingMenuItemEPKcS2_S2_PNS_5PanelEPS0_PK9KeyValues
+hw,01E508B1,51,?AddCascadingMenuItem@Menu@vgui2@@UAEHPBD0PAVPanel@2@PAV12@PBVKeyValues@@@Z,vgui2::Menu::AddCascadingMenuItem,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,linux: _ZN5vgui24Menu20AddCascadingMenuItemEPKcS2_S2_PNS_5PanelEPS0_PK9KeyValues
 hw,01E508E4,105,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu20AddCascadingMenuItemEPKcPKwS2_PNS_5PanelEPS0_PK9KeyValues
 hw,01E5094D,105,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu20AddCascadingMenuItemEPKcS2_PNS_5PanelEPS0_PK9KeyValues
-hw,01E509B6,51,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu20AddCascadingMenuItemEPKcS2_P9KeyValuesPNS_5PanelEPS0_PKS3_
-hw,01E509E9,47,,,UNKNOWN,,,,TODO,,,
-hw,01E50A18,148,,,UNKNOWN,,,,TODO,,,
-hw,01E50AAC,148,,,UNKNOWN,,,,TODO,,,
-hw,01E50B40,40,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu13SetFixedWidthEi
-hw,01E50B68,22,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu17SetMenuItemHeightEi
-hw,01E50B7E,741,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu13PerformLayoutEv
-hw,01E50E63,54,,,UNKNOWN,,,,TODO,,,
-hw,01E50E99,257,,,UNKNOWN,,,,TODO,,,
-hw,01E50F9A,263,,,UNKNOWN,,,,TODO,,,
-hw,01E510A1,296,,,UNKNOWN,,,,TODO,,,
-hw,01E511C9,152,,,UNKNOWN,,,,TODO,,,
-hw,01E51261,380,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu29MakeItemsVisibleInScrollRangeEv
-hw,01E513DD,90,,vgui2::Menu::LayoutMenuBorder,ENGINE,vgui2/controls/Menu.cpp,,,TODO,,linux_symbols:string:0.75,
-hw,01E51437,224,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu5PaintEv
-hw,01E51517,43,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu23SetNumberOfVisibleItemsEi
-hw,01E51542,64,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu11GetMenuItemEi
-hw,01E51582,31,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu13IsValidMenuIDEi
-hw,01E515A1,16,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu16GetInvalidMenuIDEv
-hw,01E515B1,119,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu15CloseOtherMenusEPNS_8MenuItemE
-hw,01E51628,98,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu9OnCommandEPKc
-hw,01E5168A,604,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu14OnKeyCodeTypedENS_7KeyCodeE
-hw,01E5191E,305,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu10OnKeyTypedEw
-hw,01E51A4F,135,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu14OnMouseWheeledEi
-hw,01E51AD6,311,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu11OnKillFocusEv
-hw,01E51C0D,241,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu10SetVisibleEb
-hw,01E51CFE,388,,vgui2::Menu::ApplySchemeSettings,ENGINE,vgui2/controls/Menu.cpp,,,TODO,,linux_symbols:string:0.765,
-hw,01E51E82,159,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu10SetBgColorE5Color
-hw,01E51F21,159,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu10SetFgColorE5Color
+hw,01E509B6,51,?AddCascadingMenuItem@Menu@vgui2@@UAEHPBDPAVKeyValues@@PAVPanel@2@PAV12@PBV3@@Z,vgui2::Menu::AddCascadingMenuItem,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,linux: _ZN5vgui24Menu20AddCascadingMenuItemEPKcS2_P9KeyValuesPNS_5PanelEPS0_PKS3_
+hw,01E509E9,47,?AddCascadingMenuItem@Menu@vgui2@@UAEHPBDPAVPanel@2@PAV12@PBVKeyValues@@@Z,vgui2::Menu::AddCascadingMenuItem,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,
+hw,01E50A18,148,?UpdateMenuItem@Menu@vgui2@@UAEXHPBDPAVKeyValues@@PBV3@@Z,vgui2::Menu::UpdateMenuItem,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,
+hw,01E50AAC,148,?UpdateMenuItem@Menu@vgui2@@UAEXHPBGPAVKeyValues@@PBV3@@Z,vgui2::Menu::UpdateMenuItem,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,
+hw,01E50B40,40,?SetFixedWidth@Menu@vgui2@@UAEXH@Z,vgui2::Menu::SetFixedWidth,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,linux: _ZN5vgui24Menu13SetFixedWidthEi
+hw,01E50B68,22,?SetMenuItemHeight@Menu@vgui2@@UAEXH@Z,vgui2::Menu::SetMenuItemHeight,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,linux: _ZN5vgui24Menu17SetMenuItemHeightEi
+hw,01E50B7E,741,?PerformLayout@Menu@vgui2@@UAEXXZ,vgui2::Menu::PerformLayout,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,linux: _ZN5vgui24Menu13PerformLayoutEv
+hw,01E50E63,54,?ForceCalculateWidth@Menu@vgui2@@IAEXXZ,vgui2::Menu::ForceCalculateWidth,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,
+hw,01E50E99,257,?CalculateWidth@Menu@vgui2@@IAEXXZ,vgui2::Menu::CalculateWidth,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,
+hw,01E50F9A,263,?LayoutScrollBar@Menu@vgui2@@IAEXXZ,vgui2::Menu::LayoutScrollBar,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,
+hw,01E510A1,296,?PositionCascadingMenu@Menu@vgui2@@IAEXXZ,vgui2::Menu::PositionCascadingMenu,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,
+hw,01E511C9,152,?SizeMenuItems@Menu@vgui2@@IAEXXZ,vgui2::Menu::SizeMenuItems,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,
+hw,01E51261,380,?MakeItemsVisibleInScrollRange@Menu@vgui2@@MAEXXZ,vgui2::Menu::MakeItemsVisibleInScrollRange,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,linux: _ZN5vgui24Menu29MakeItemsVisibleInScrollRangeEv
+hw,01E513DD,90,?LayoutMenuBorder@Menu@vgui2@@MAEXXZ,vgui2::Menu::LayoutMenuBorder,ENGINE,vgui2/controls/Menu.cpp,,,MATCHED,100,linux_symbols:string:0.75,
+hw,01E51437,224,?Paint@Menu@vgui2@@MAEXXZ,vgui2::Menu::Paint,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,linux: _ZN5vgui24Menu5PaintEv
+hw,01E51517,43,?SetNumberOfVisibleItems@Menu@vgui2@@UAEXH@Z,vgui2::Menu::SetNumberOfVisibleItems,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,linux: _ZN5vgui24Menu23SetNumberOfVisibleItemsEi
+hw,01E51542,64,?GetMenuItem@Menu@vgui2@@QAEPAVMenuItem@2@H@Z,vgui2::Menu::GetMenuItem,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,linux: _ZN5vgui24Menu11GetMenuItemEi
+hw,01E51582,31,?IsValidMenuID@Menu@vgui2@@UAE_NH@Z,vgui2::Menu::IsValidMenuID,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,linux: _ZN5vgui24Menu13IsValidMenuIDEi
+hw,01E515A1,16,?GetInvalidMenuID@Menu@vgui2@@UAEHXZ,vgui2::Menu::GetInvalidMenuID,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,linux: _ZN5vgui24Menu16GetInvalidMenuIDEv
+hw,01E515B1,119,?CloseOtherMenus@Menu@vgui2@@QAEXPAVMenuItem@2@@Z,vgui2::Menu::CloseOtherMenus,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,linux: _ZN5vgui24Menu15CloseOtherMenusEPNS_8MenuItemE
+hw,01E51628,98,?OnCommand@Menu@vgui2@@MAEXPBD@Z,vgui2::Menu::OnCommand,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,linux: _ZN5vgui24Menu9OnCommandEPKc
+hw,01E5168A,604,?OnKeyCodeTyped@Menu@vgui2@@UAEXW4KeyCode@2@@Z,vgui2::Menu::OnKeyCodeTyped,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,linux: _ZN5vgui24Menu14OnKeyCodeTypedENS_7KeyCodeE
+hw,01E5191E,305,?OnKeyTyped@Menu@vgui2@@UAEXG@Z,vgui2::Menu::OnKeyTyped,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,linux: _ZN5vgui24Menu10OnKeyTypedEw
+hw,01E51A4F,135,?OnMouseWheeled@Menu@vgui2@@MAEXH@Z,vgui2::Menu::OnMouseWheeled,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,linux: _ZN5vgui24Menu14OnMouseWheeledEi
+hw,01E51AD6,311,?OnKillFocus@Menu@vgui2@@UAEXXZ,vgui2::Menu::OnKillFocus,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,linux: _ZN5vgui24Menu11OnKillFocusEv
+hw,01E51C0D,241,?SetVisible@Menu@vgui2@@UAEX_N@Z,vgui2::Menu::SetVisible,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,linux: _ZN5vgui24Menu10SetVisibleEb
+hw,01E51CFE,388,?ApplySchemeSettings@Menu@vgui2@@UAEXPAVIScheme@2@@Z,vgui2::Menu::ApplySchemeSettings,ENGINE,vgui2/controls/Menu.cpp,,,MATCHED,100,linux_symbols:string:0.765,
+hw,01E51E82,159,?SetBgColor@Menu@vgui2@@UAEXVColor@@@Z,vgui2::Menu::SetBgColor,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,linux: _ZN5vgui24Menu10SetBgColorE5Color
+hw,01E51F21,159,?SetFgColor@Menu@vgui2@@UAEXVColor@@@Z,vgui2::Menu::SetFgColor,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,linux: _ZN5vgui24Menu10SetFgColorE5Color
 hw,01E51FC0,25,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu9SetBorderEPNS_7IBorderE
-hw,01E51FD9,48,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu17GetParentMenuItemEv
-hw,01E52009,536,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu18OnMenuItemSelectedEPNS_5PanelE
-hw,01E52221,20,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu13GetActiveItemEv
-hw,01E52235,129,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu15GetItemUserDataEi
-hw,01E522B6,143,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu12ActivateItemEi
-hw,01E52345,75,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu17ActivateItemByRowEi
-hw,01E52390,25,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu12GetItemCountEv
-hw,01E523A9,67,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu9GetMenuIDEi
-hw,01E523EC,61,,,UNKNOWN,guess:vgui2/controls/Menu.cpp,,,TODO,,,
-hw,01E52429,185,,,UNKNOWN,guess:vgui2/controls/Menu.cpp,,,TODO,,,
-hw,01E524E2,108,,,UNKNOWN,guess:vgui2/controls/Menu.cpp,,,TODO,,,
-hw,01E5254E,57,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu12AddScrollBarEv
-hw,01E52587,57,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu15RemoveScrollBarEv
-hw,01E525C0,50,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu13OnSliderMovedEv
-hw,01E525F2,133,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu13OnCursorMovedEii
-hw,01E52677,141,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu16OnKeyCodePressedENS_7KeyCodeE
-hw,01E52704,125,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu24SetCurrentlySelectedItemEPNS_8MenuItemE
-hw,01E52781,103,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu29ClearCurrentlyHighlightedItemEv
-hw,01E527E8,193,,vgui2::Menu::SetCurrentlySelectedItem,ENGINE,vgui2/controls/Menu.cpp,,,TODO,,linux_symbols:string:0.75,
-hw,01E528A9,354,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu27SetCurrentlyHighlightedItemEi
-hw,01E52A0B,20,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu27GetCurrentlyHighlightedItemEv
-hw,01E52A1F,108,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu23OnCursorEnteredMenuItemEi
-hw,01E52A8B,88,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu22OnCursorExitedMenuItemEi
-hw,01E52AE3,981,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu21MoveAlongMenuItemListEii
-hw,01E52EB8,20,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu11GetMenuModeEv
-hw,01E52ECC,24,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu12OnKeyModeSetEv
-hw,01E52EE4,42,,,UNKNOWN,,,,TODO,,,
-hw,01E52F0E,38,,,UNKNOWN,,,,TODO,,,
-hw,01E52F34,25,,,UNKNOWN,,,,TODO,,,
-hw,01E52F4D,20,,,UNKNOWN,,,,TODO,,,
-hw,01E52F61,156,,,UNKNOWN,,,,TODO,,,
-hw,01E52FFD,82,,,UNKNOWN,,,,TODO,,,
-hw,01E5304F,308,,,UNKNOWN,,,,TODO,,,
-hw,01E53183,86,,,UNKNOWN,,,,TODO,,,
-hw,01E531D9,56,,,UNKNOWN,,,,TODO,,,
+hw,01E51FD9,48,?GetParentMenuItem@Menu@vgui2@@AAEPAVMenuItem@2@XZ,vgui2::Menu::GetParentMenuItem,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,linux: _ZN5vgui24Menu17GetParentMenuItemEv
+hw,01E52009,536,?OnMenuItemSelected@Menu@vgui2@@MAEXPAVPanel@2@@Z,vgui2::Menu::OnMenuItemSelected,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,linux: _ZN5vgui24Menu18OnMenuItemSelectedEPNS_5PanelE
+hw,01E52221,20,?GetActiveItem@Menu@vgui2@@UAEHXZ,vgui2::Menu::GetActiveItem,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,linux: _ZN5vgui24Menu13GetActiveItemEv
+hw,01E52235,129,?GetItemUserData@Menu@vgui2@@UAEPAVKeyValues@@H@Z,vgui2::Menu::GetItemUserData,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,linux: _ZN5vgui24Menu15GetItemUserDataEi
+hw,01E522B6,143,?ActivateItem@Menu@vgui2@@UAEXH@Z,vgui2::Menu::ActivateItem,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,linux: _ZN5vgui24Menu12ActivateItemEi
+hw,01E52345,75,?ActivateItemByRow@Menu@vgui2@@UAEXH@Z,vgui2::Menu::ActivateItemByRow,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,linux: _ZN5vgui24Menu17ActivateItemByRowEi
+hw,01E52390,25,?GetItemCount@Menu@vgui2@@UAEHXZ,vgui2::Menu::GetItemCount,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,linux: _ZN5vgui24Menu12GetItemCountEv
+hw,01E523A9,67,?GetMenuID@Menu@vgui2@@UAEHH@Z,vgui2::Menu::GetMenuID,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,linux: _ZN5vgui24Menu9GetMenuIDEi
+hw,01E523EC,61,?GetCurrentlyVisibleItemsCount@Menu@vgui2@@QAEHXZ,vgui2::Menu::GetCurrentlyVisibleItemsCount,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,
+hw,01E52429,185,?SetItemEnabled@Menu@vgui2@@UAEXPBD_N@Z,vgui2::Menu::SetItemEnabled,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,
+hw,01E524E2,108,?SetItemEnabled@Menu@vgui2@@UAEXH_N@Z,vgui2::Menu::SetItemEnabled,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,
+hw,01E5254E,57,?AddScrollBar@Menu@vgui2@@MAEXXZ,vgui2::Menu::AddScrollBar,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,linux: _ZN5vgui24Menu12AddScrollBarEv
+hw,01E52587,57,?RemoveScrollBar@Menu@vgui2@@MAEXXZ,vgui2::Menu::RemoveScrollBar,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,linux: _ZN5vgui24Menu15RemoveScrollBarEv
+hw,01E525C0,50,?OnSliderMoved@Menu@vgui2@@MAEXXZ,vgui2::Menu::OnSliderMoved,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,linux: _ZN5vgui24Menu13OnSliderMovedEv
+hw,01E525F2,133,?OnCursorMoved@Menu@vgui2@@MAEXHH@Z,vgui2::Menu::OnCursorMoved,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,linux: _ZN5vgui24Menu13OnCursorMovedEii
+hw,01E52677,141,?OnKeyCodePressed@Menu@vgui2@@MAEXW4KeyCode@2@@Z,vgui2::Menu::OnKeyCodePressed,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,linux: _ZN5vgui24Menu16OnKeyCodePressedENS_7KeyCodeE
+hw,01E52704,125,?SetCurrentlySelectedItem@Menu@vgui2@@IAEXPAVMenuItem@2@@Z,vgui2::Menu::SetCurrentlySelectedItem,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,linux: _ZN5vgui24Menu24SetCurrentlySelectedItemEPNS_8MenuItemE
+hw,01E52781,103,?ClearCurrentlyHighlightedItem@Menu@vgui2@@QAEXXZ,vgui2::Menu::ClearCurrentlyHighlightedItem,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,linux: _ZN5vgui24Menu29ClearCurrentlyHighlightedItemEv
+hw,01E527E8,193,?SetCurrentlySelectedItem@Menu@vgui2@@IAEXH@Z,vgui2::Menu::SetCurrentlySelectedItem,ENGINE,vgui2/controls/Menu.cpp,,,MATCHED,100,linux_symbols:string:0.75,
+hw,01E528A9,354,?SetCurrentlyHighlightedItem@Menu@vgui2@@QAEXH@Z,vgui2::Menu::SetCurrentlyHighlightedItem,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,linux: _ZN5vgui24Menu27SetCurrentlyHighlightedItemEi
+hw,01E52A0B,20,?GetCurrentlyHighlightedItem@Menu@vgui2@@QAEHXZ,vgui2::Menu::GetCurrentlyHighlightedItem,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,linux: _ZN5vgui24Menu27GetCurrentlyHighlightedItemEv
+hw,01E52A1F,108,?OnCursorEnteredMenuItem@Menu@vgui2@@MAEXH@Z,vgui2::Menu::OnCursorEnteredMenuItem,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,linux: _ZN5vgui24Menu23OnCursorEnteredMenuItemEi
+hw,01E52A8B,88,?OnCursorExitedMenuItem@Menu@vgui2@@MAEXH@Z,vgui2::Menu::OnCursorExitedMenuItem,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,linux: _ZN5vgui24Menu22OnCursorExitedMenuItemEi
+hw,01E52AE3,981,?MoveAlongMenuItemList@Menu@vgui2@@IAEXHH@Z,vgui2::Menu::MoveAlongMenuItemList,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,linux: _ZN5vgui24Menu21MoveAlongMenuItemListEii
+hw,01E52EB8,20,?GetMenuMode@Menu@vgui2@@QAEHXZ,vgui2::Menu::GetMenuMode,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,linux: _ZN5vgui24Menu11GetMenuModeEv
+hw,01E52ECC,24,?OnKeyModeSet@Menu@vgui2@@MAEXXZ,vgui2::Menu::OnKeyModeSet,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,linux: _ZN5vgui24Menu12OnKeyModeSetEv
+hw,01E52EE4,42,?SetMenuItemChecked@Menu@vgui2@@QAEXH_N@Z,vgui2::Menu::SetMenuItemChecked,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,
+hw,01E52F0E,38,?IsChecked@Menu@vgui2@@QAE_NH@Z,vgui2::Menu::IsChecked,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,
+hw,01E52F34,25,?SetMinimumWidth@Menu@vgui2@@QAEXH@Z,vgui2::Menu::SetMinimumWidth,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,
+hw,01E52F4D,20,?GetMinimumWidth@Menu@vgui2@@QAEHXZ,vgui2::Menu::GetMinimumWidth,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,
+hw,01E52F61,156,?SetItemVisible@Menu@vgui2@@UAEXPBD_N@Z,vgui2::Menu::SetItemVisible,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,
+hw,01E52FFD,82,?SetItemVisible@Menu@vgui2@@UAEXH_N@Z,vgui2::Menu::SetItemVisible,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,
+hw,01E5304F,308,?PlaceContextMenu@Menu@vgui2@@SAXPAVPanel@2@PAV12@@Z,vgui2::Menu::PlaceContextMenu,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,
+hw,01E53183,86,?SetFont@Menu@vgui2@@UAEXK@Z,vgui2::Menu::SetFont,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,
+hw,01E531D9,56,?SetUseFallbackFont@Menu@vgui2@@QAEX_NK@Z,vgui2::Menu::SetUseFallbackFont,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,
 hw,01E53220,46,,,UNKNOWN,,,,TODO,,,
 hw,01E53250,19,,,UNKNOWN,,,,TODO,,,
 hw,01E53270,102,,,UNKNOWN,,,,TODO,,,
@@ -31382,7 +31382,7 @@ hw,01E532E0,64,,,UNKNOWN,,,,TODO,,,
 hw,01E53320,10,,,UNKNOWN,,,,TODO,,,
 hw,01E53330,10,,,UNKNOWN,,,,TODO,,,
 hw,01E53340,19,,,UNKNOWN,,,,TODO,,,
-hw,01E53360,110,,,UNKNOWN,,,,TODO,,,
+hw,01E53360,110,?InitVar@PanelMessageFunc_OnMenuItemSelected@Menu@vgui2@@SAXXZ,vgui2::Menu::PanelMessageFunc_OnMenuItemSelected::InitVar,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,
 hw,01E533D0,120,,,UNKNOWN,,,,TODO,,,
 hw,01E53450,19,,,UNKNOWN,,,,TODO,,,
 hw,01E53470,107,,,UNKNOWN,,,,TODO,,,
@@ -31392,42 +31392,42 @@ hw,01E53570,19,,,UNKNOWN,,,,TODO,,,
 hw,01E53590,110,,,UNKNOWN,,,,TODO,,,
 hw,01E53600,19,,,UNKNOWN,,,,TODO,,,
 hw,01E53620,110,,,UNKNOWN,,,,TODO,,,
-hw,01E536E0,8,,,UNKNOWN,,,,TODO,,,
-hw,01E536F0,48,,,UNKNOWN,,,,TODO,,,
-hw,01E53720,27,,,UNKNOWN,,,,TODO,,,
+hw,01E536E0,8,?InvalidIndex@?$CUtlLinkedList@PAVMenuItem@vgui2@@H@@SAHXZ,"*,int>::InvalidIndex",UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,
+hw,01E536F0,48,??0?$CUtlLinkedList@PAVMenuItem@vgui2@@H@@QAE@HH@Z,"*,int>",UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,
+hw,01E53720,27,??1?$CUtlLinkedList@PAVMenuItem@vgui2@@H@@QAE@XZ,"*,int>",UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,
 hw,01E53740,25,,,UNKNOWN,,,,TODO,,,
-hw,01E53760,31,,,UNKNOWN,,,,TODO,,,
-hw,01E53780,187,,,UNKNOWN,,,,TODO,,,
-hw,01E53840,17,,,UNKNOWN,,,,TODO,,,
+hw,01E53760,31,?AddToTail@?$CUtlLinkedList@PAVMenuItem@vgui2@@H@@QAEHABQAVMenuItem@vgui2@@@Z,"*,int>::AddToTail",UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,
+hw,01E53780,187,?RemoveAll@?$CUtlLinkedList@PAVMenuItem@vgui2@@H@@QAEXXZ,"*,int>::RemoveAll",UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,
+hw,01E53840,17,?Count@?$CUtlLinkedList@PAVMenuItem@vgui2@@H@@QBEHXZ,"*,int>::Count",UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,
 hw,01E53860,17,,,UNKNOWN,,,,TODO,,,
-hw,01E53880,28,,,UNKNOWN,,,,TODO,,,
-hw,01E538A0,91,,,UNKNOWN,,,,TODO,,,
-hw,01E53900,51,,,UNKNOWN,,,,TODO,,,
-hw,01E53940,77,,,UNKNOWN,,,,TODO,,,
+hw,01E53880,28,?Next@?$CUtlLinkedList@PAVMenuItem@vgui2@@H@@QBEHH@Z,"*,int>::Next",UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,
+hw,01E538A0,91,?IsValidIndex@?$CUtlLinkedList@PAVMenuItem@vgui2@@H@@QBE_NH@Z,"*,int>::IsValidIndex",UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,
+hw,01E53900,51,?IsValidIndex@?$CUtlVector@H@@QBE_NH@Z,CUtlVector<int>::IsValidIndex,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,
+hw,01E53940,77,?Find@?$CUtlVector@H@@QBEHABH@Z,CUtlVector<int>::Find,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,
 hw,01E53990,25,,,UNKNOWN,,,,TODO,,,
 hw,01E539B0,25,,,UNKNOWN,,,,TODO,,,
-hw,01E539D0,25,,,UNKNOWN,,,,TODO,,,
+hw,01E539D0,25,?ResetDbgInfo@?$CUtlLinkedList@PAVMenuItem@vgui2@@H@@IAEXXZ,"*,int>::ResetDbgInfo",UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,
 hw,01E539F0,25,,,UNKNOWN,,,,TODO,,,
-hw,01E53A10,72,,,UNKNOWN,,,,TODO,,,
-hw,01E53A60,64,,,UNKNOWN,,,,TODO,,,
-hw,01E53AA0,75,,,UNKNOWN,,,,TODO,,,
+hw,01E53A10,72,?InsertBefore@?$CUtlLinkedList@PAVMenuItem@vgui2@@H@@QAEHHABQAVMenuItem@vgui2@@@Z,"*,int>::InsertBefore",UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,
+hw,01E53A60,64,?ConstructList@?$CUtlLinkedList@PAVMenuItem@vgui2@@H@@IAEXXZ,"*,int>::ConstructList",UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,
+hw,01E53AA0,75,??0?$CUtlMemory@UListElem_t@?$CUtlLinkedList@PAVMenuItem@vgui2@@H@@@@QAE@HH@Z,"*,int>::ListElem_t>",UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,
 hw,01E53AF0,19,,,UNKNOWN,,,,TODO,,,
 hw,01E53B10,26,,,UNKNOWN,,,,TODO,,,
 hw,01E53B30,26,,,UNKNOWN,,,,TODO,,,
-hw,01E53B50,16,,,UNKNOWN,,,,TODO,,,
-hw,01E53B60,5,,,UNKNOWN,,,,TODO,,,
+hw,01E53B50,16,?Base@?$CUtlMemory@UListElem_t@?$CUtlLinkedList@PAVMenuItem@vgui2@@H@@@@QAEPAUListElem_t@?$CUtlLinkedList@PAVMenuItem@vgui2@@H@@XZ,"*,int>::ListElem_t>::Base",UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,
+hw,01E53B60,5,?Destruct@@YAXPAH@Z,Destruct,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,
 hw,01E53B70,17,,,UNKNOWN,,,,TODO,,,
-hw,01E53B90,247,,,UNKNOWN,,,,TODO,,,
-hw,01E53C90,180,,,UNKNOWN,,,,TODO,,,
-hw,01E53D50,69,,,UNKNOWN,,,,TODO,,,
-hw,01E53DA0,58,,,UNKNOWN,,,,TODO,,,
-hw,01E53DE0,190,,,UNKNOWN,,,,TODO,,,
-hw,01E53EA0,17,,,UNKNOWN,,,,TODO,,,
-hw,01E53EC0,199,,,UNKNOWN,,,,TODO,,,
-hw,01E53F90,25,,,UNKNOWN,,,,TODO,,,
-hw,01E53FB0,25,,,UNKNOWN,,,,TODO,,,
-hw,01E53FD0,68,,,UNKNOWN,,,,TODO,,,
-hw,01E54020,28,,,UNKNOWN,,,,TODO,,,
+hw,01E53B90,247,?Alloc@?$CUtlLinkedList@PAVMenuItem@vgui2@@H@@QAEH_N@Z,"*,int>::Alloc",UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,
+hw,01E53C90,180,?LinkBefore@?$CUtlLinkedList@PAVMenuItem@vgui2@@H@@QAEXHH@Z,"*,int>::LinkBefore",UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,
+hw,01E53D50,69,?Purge@?$CUtlMemory@H@@QAEXXZ,CUtlMemory<int>::Purge,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,
+hw,01E53DA0,58,?CopyConstruct@@YAXPAHABH@Z,CopyConstruct,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,
+hw,01E53DE0,190,?Unlink@?$CUtlLinkedList@PAVMenuItem@vgui2@@H@@QAEXH@Z,"*,int>::Unlink",UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,
+hw,01E53EA0,17,?NumAllocated@?$CUtlMemory@H@@QBEHXZ,CUtlMemory<int>::NumAllocated,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,
+hw,01E53EC0,199,?Grow@?$CUtlMemory@UListElem_t@?$CUtlLinkedList@PAVMenuItem@vgui2@@H@@@@QAEXH@Z,"*,int>::ListElem_t>::Grow",UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,
+hw,01E53F90,25,?IsExternallyAllocated@?$CUtlMemory@H@@QBE_NXZ,CUtlMemory<int>::IsExternallyAllocated,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,
+hw,01E53FB0,25,?Construct@@YAXPAPAVMenuItem@vgui2@@@Z,Construct,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,
+hw,01E53FD0,68,?IsInList@?$CUtlLinkedList@PAVMenuItem@vgui2@@H@@QBE_NH@Z,"*,int>::IsInList",UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,
+hw,01E54020,28,?Previous@?$CUtlLinkedList@PAVMenuItem@vgui2@@H@@QBEHH@Z,"*,int>::Previous",UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,
 hw,01E54040,69,,,UNKNOWN,,,,TODO,,,
 hw,01E54085,395,,vgui2::ComboBoxButton::ApplySchemeSettings,ENGINE,vgui2/controls/ComboBox.cpp,,,TODO,,linux_symbols:string:0.764,
 hw,01E54210,15,,,UNKNOWN,vgui2/controls/ComboBox.cpp,,,TODO,,,linux: _ZN5vgui214ComboBoxButton9GetBorderEbbbb
@@ -31673,106 +31673,106 @@ hw,01E5ACE0,75,,,UNKNOWN,,,,TODO,,,
 hw,01E5AD30,19,,,UNKNOWN,,,,TODO,,,
 hw,01E5AD50,26,,,UNKNOWN,,,,TODO,,,
 hw,01E5AD70,5,,,UNKNOWN,,,,TODO,,,
-hw,01E5AD80,87,,,UNKNOWN,,,,TODO,,,
+hw,01E5AD80,87,?GrowVector@?$CUtlVector@UMessageMapItem_t@vgui2@@@@IAEXH@Z,vgui2::MessageMapItem_t>::GrowVector,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,
 hw,01E5ADE0,86,,,UNKNOWN,,,,TODO,,,
 hw,01E5AE40,69,,,UNKNOWN,,,,TODO,,,
 hw,01E5AE90,25,,,UNKNOWN,,,,TODO,,,
-hw,01E5AEB0,17,,,UNKNOWN,,,,TODO,,,
+hw,01E5AEB0,17,?NumAllocated@?$CUtlMemory@UMessageMapItem_t@vgui2@@@@QBEHXZ,vgui2::MessageMapItem_t>::NumAllocated,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,
 hw,01E5AED0,199,,,UNKNOWN,,,,TODO,,,
-hw,01E5AFA0,25,,,UNKNOWN,,,,TODO,,,
-hw,01E5AFC0,1792,,vgui2::Frame::Frame,ENGINE,vgui2/controls/Frame.cpp,,,TODO,,linux_symbols:string:0.451,
-hw,01E5B6C0,785,,,UNKNOWN,guess:vgui2/controls/Frame.cpp,,,TODO,,,
-hw,01E5B9D1,603,,,UNKNOWN,guess:vgui2/controls/Frame.cpp,,,TODO,,,
-hw,01E5BC2C,104,,,UNKNOWN,vgui2/controls/Frame.cpp,,,TODO,,,linux: _ZN5vgui25Frame8ActivateEv
-hw,01E5BC94,180,,,UNKNOWN,vgui2/controls/Frame.cpp,,,TODO,,,linux: _ZN5vgui25Frame17ActivateMinimizedEv
-hw,01E5BD48,46,,,UNKNOWN,vgui2/controls/Frame.cpp,,,TODO,,,linux: _ZN5vgui25Frame11IsMinimizedEv
-hw,01E5BD76,101,,,UNKNOWN,vgui2/controls/Frame.cpp,,,TODO,,,linux: _ZN5vgui25Frame20MoveToCenterOfScreenEv
-hw,01E5BDDB,221,,,UNKNOWN,vgui2/controls/Frame.cpp,,,TODO,,,linux: _ZN5vgui25Frame18LayoutProportionalEPNS_11FrameButtonE
-hw,01E5BEB8,1149,,,UNKNOWN,vgui2/controls/Frame.cpp,,,TODO,,,linux: _ZN5vgui25Frame13PerformLayoutEv
-hw,01E5C335,420,,,UNKNOWN,guess:vgui2/controls/Frame.cpp,,,TODO,,,
-hw,01E5C4D9,170,,,UNKNOWN,guess:vgui2/controls/Frame.cpp,,,TODO,,,
-hw,01E5C583,33,,,UNKNOWN,vgui2/controls/Frame.cpp,,,TODO,,,linux: _ZN5vgui25Frame16InternalSetTitleEPKc
-hw,01E5C5A4,25,,,UNKNOWN,vgui2/controls/Frame.cpp,,,TODO,,,linux: _ZN5vgui25Frame11SetMoveableEb
-hw,01E5C5BD,33,,,UNKNOWN,vgui2/controls/Frame.cpp,,,TODO,,,linux: _ZN5vgui25Frame11SetSizeableEb
-hw,01E5C5DE,20,,,UNKNOWN,vgui2/controls/Frame.cpp,,,TODO,,,linux: _ZN5vgui25Frame10IsMoveableEv
-hw,01E5C5F2,20,,,UNKNOWN,vgui2/controls/Frame.cpp,,,TODO,,,linux: _ZN5vgui25Frame10IsSizeableEv
-hw,01E5C606,154,,,UNKNOWN,vgui2/controls/Frame.cpp,,,TODO,,,linux: _ZN5vgui25Frame13GetClientAreaERiS1_S1_S1_
-hw,01E5C6A0,465,,,UNKNOWN,vgui2/controls/Frame.cpp,,,TODO,,,linux: _ZN5vgui25Frame23ApplyUserConfigSettingsEP9KeyValues
-hw,01E5C871,169,,,UNKNOWN,vgui2/controls/Frame.cpp,,,TODO,,,linux: _ZN5vgui25Frame21GetUserConfigSettingsEP9KeyValues
-hw,01E5C91A,13,,,UNKNOWN,vgui2/controls/Frame.cpp,,,TODO,,,linux: _ZN5vgui25Frame21HasUserConfigSettingsEv
-hw,01E5C927,15,,,UNKNOWN,vgui2/controls/Frame.cpp,,,TODO,,,linux: _ZN5vgui25Frame24GetDefaultScreenPositionERiS1_S1_S1_
-hw,01E5C936,1032,,vgui2::Frame::PaintBackground,ENGINE,vgui2/controls/Frame.cpp,,,TODO,,linux_symbols:string:0.766,
-hw,01E5CD3E,399,,vgui2::Frame::ApplySchemeSettings,ENGINE,vgui2/controls/Frame.cpp,,,TODO,,linux_symbols:string:0.638,
-hw,01E5CECD,143,,,UNKNOWN,vgui2/controls/Frame.cpp,,,TODO,,,linux: _ZN5vgui25Frame13ApplySettingsEP9KeyValues
-hw,01E5CF5C,157,,,UNKNOWN,vgui2/controls/Frame.cpp,,,TODO,,,linux: _ZN5vgui25Frame11GetSettingsEP9KeyValues
-hw,01E5CFF9,48,,vgui2::Frame::GetDescription,ENGINE,vgui2/controls/Frame.cpp,,,TODO,,linux_symbols:string:0.611,
-hw,01E5D029,173,,,UNKNOWN,vgui2/controls/Frame.cpp,,,TODO,,,linux: _ZN5vgui25Frame7OnCloseEv
-hw,01E5D0D6,30,,,UNKNOWN,vgui2/controls/Frame.cpp,,,TODO,,,linux: _ZN5vgui25Frame25OnCloseFrameButtonPressedEv
-hw,01E5D0F4,173,,,UNKNOWN,vgui2/controls/Frame.cpp,,,TODO,,,linux: _ZN5vgui25Frame9OnCommandEPKc
-hw,01E5D1A1,498,,vgui2::Frame::GetSysMenu,ENGINE,vgui2/controls/Frame.cpp,,,TODO,,linux_symbols:string:0.385,
-hw,01E5D393,103,,,UNKNOWN,vgui2/controls/Frame.cpp,,,TODO,,,linux: _ZN5vgui25Frame10SetSysMenuEPNS_4MenuE
-hw,01E5D3FA,25,,,UNKNOWN,vgui2/controls/Frame.cpp,,,TODO,,,linux: _ZN5vgui25Frame5CloseEv
-hw,01E5D413,48,,,UNKNOWN,vgui2/controls/Frame.cpp,,,TODO,,,linux: _ZN5vgui25Frame10OnMinimizeEv
+hw,01E5AFA0,25,?IsExternallyAllocated@?$CUtlMemory@UMessageMapItem_t@vgui2@@@@QBE_NXZ,vgui2::MessageMapItem_t>::IsExternallyAllocated,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,
+hw,01E5AFC0,1792,??0Frame@vgui2@@QAE@PAVPanel@1@PBD_N@Z,vgui2::Frame::Frame,ENGINE,vgui2/controls/Frame.cpp,,,MATCHED,100,linux_symbols:string:0.451,
+hw,01E5B6C0,785,??1Frame@vgui2@@UAE@XZ,vgui2::Frame::~Frame,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,
+hw,01E5B9D1,603,?SetupResizeCursors@Frame@vgui2@@AAEXXZ,vgui2::Frame::SetupResizeCursors,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,
+hw,01E5BC2C,104,?Activate@Frame@vgui2@@UAEXXZ,vgui2::Frame::Activate,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,linux: _ZN5vgui25Frame8ActivateEv
+hw,01E5BC94,180,?ActivateMinimized@Frame@vgui2@@UAEXXZ,vgui2::Frame::ActivateMinimized,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,linux: _ZN5vgui25Frame17ActivateMinimizedEv
+hw,01E5BD48,46,?IsMinimized@Frame@vgui2@@UAE_NXZ,vgui2::Frame::IsMinimized,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,linux: _ZN5vgui25Frame11IsMinimizedEv
+hw,01E5BD76,101,?MoveToCenterOfScreen@Frame@vgui2@@UAEXXZ,vgui2::Frame::MoveToCenterOfScreen,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,linux: _ZN5vgui25Frame20MoveToCenterOfScreenEv
+hw,01E5BDDB,221,?LayoutProportional@Frame@vgui2@@AAEXPAVFrameButton@2@@Z,vgui2::Frame::LayoutProportional,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,linux: _ZN5vgui25Frame18LayoutProportionalEPNS_11FrameButtonE
+hw,01E5BEB8,1149,?PerformLayout@Frame@vgui2@@MAEXXZ,vgui2::Frame::PerformLayout,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,linux: _ZN5vgui25Frame13PerformLayoutEv
+hw,01E5C335,420,?SetTitle@Frame@vgui2@@UAEXPBD_N@Z,vgui2::Frame::SetTitle,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,
+hw,01E5C4D9,170,?SetTitle@Frame@vgui2@@UAEXPBG_N@Z,vgui2::Frame::SetTitle,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,
+hw,01E5C583,33,?InternalSetTitle@Frame@vgui2@@EAEXPBD@Z,vgui2::Frame::InternalSetTitle,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,linux: _ZN5vgui25Frame16InternalSetTitleEPKc
+hw,01E5C5A4,25,?SetMoveable@Frame@vgui2@@UAEX_N@Z,vgui2::Frame::SetMoveable,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,linux: _ZN5vgui25Frame11SetMoveableEb
+hw,01E5C5BD,33,?SetSizeable@Frame@vgui2@@UAEX_N@Z,vgui2::Frame::SetSizeable,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,linux: _ZN5vgui25Frame11SetSizeableEb
+hw,01E5C5DE,20,?IsMoveable@Frame@vgui2@@UAE_NXZ,vgui2::Frame::IsMoveable,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,linux: _ZN5vgui25Frame10IsMoveableEv
+hw,01E5C5F2,20,?IsSizeable@Frame@vgui2@@UAE_NXZ,vgui2::Frame::IsSizeable,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,linux: _ZN5vgui25Frame10IsSizeableEv
+hw,01E5C606,154,?GetClientArea@Frame@vgui2@@MAEXAAH000@Z,vgui2::Frame::GetClientArea,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,linux: _ZN5vgui25Frame13GetClientAreaERiS1_S1_S1_
+hw,01E5C6A0,465,?ApplyUserConfigSettings@Frame@vgui2@@MAEXPAVKeyValues@@@Z,vgui2::Frame::ApplyUserConfigSettings,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,linux: _ZN5vgui25Frame23ApplyUserConfigSettingsEP9KeyValues
+hw,01E5C871,169,?GetUserConfigSettings@Frame@vgui2@@MAEXPAVKeyValues@@@Z,vgui2::Frame::GetUserConfigSettings,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,linux: _ZN5vgui25Frame21GetUserConfigSettingsEP9KeyValues
+hw,01E5C91A,13,?HasUserConfigSettings@Frame@vgui2@@MAE_NXZ,vgui2::Frame::HasUserConfigSettings,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,linux: _ZN5vgui25Frame21HasUserConfigSettingsEv
+hw,01E5C927,15,?GetDefaultScreenPosition@Frame@vgui2@@MAE_NAAH000@Z,vgui2::Frame::GetDefaultScreenPosition,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,linux: _ZN5vgui25Frame24GetDefaultScreenPositionERiS1_S1_S1_
+hw,01E5C936,1032,?PaintBackground@Frame@vgui2@@MAEXXZ,vgui2::Frame::PaintBackground,ENGINE,vgui2/controls/Frame.cpp,,,MATCHED,100,linux_symbols:string:0.766,
+hw,01E5CD3E,399,?ApplySchemeSettings@Frame@vgui2@@MAEXPAVIScheme@2@@Z,vgui2::Frame::ApplySchemeSettings,ENGINE,vgui2/controls/Frame.cpp,,,MATCHED,100,linux_symbols:string:0.638,
+hw,01E5CECD,143,?ApplySettings@Frame@vgui2@@MAEXPAVKeyValues@@@Z,vgui2::Frame::ApplySettings,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,linux: _ZN5vgui25Frame13ApplySettingsEP9KeyValues
+hw,01E5CF5C,157,?GetSettings@Frame@vgui2@@MAEXPAVKeyValues@@@Z,vgui2::Frame::GetSettings,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,linux: _ZN5vgui25Frame11GetSettingsEP9KeyValues
+hw,01E5CFF9,48,?GetDescription@Frame@vgui2@@MAEPBDXZ,vgui2::Frame::GetDescription,ENGINE,vgui2/controls/Frame.cpp,,,MATCHED,100,linux_symbols:string:0.611,
+hw,01E5D029,173,?OnClose@Frame@vgui2@@MAEXXZ,vgui2::Frame::OnClose,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,linux: _ZN5vgui25Frame7OnCloseEv
+hw,01E5D0D6,30,?OnCloseFrameButtonPressed@Frame@vgui2@@MAEXXZ,vgui2::Frame::OnCloseFrameButtonPressed,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,linux: _ZN5vgui25Frame25OnCloseFrameButtonPressedEv
+hw,01E5D0F4,173,?OnCommand@Frame@vgui2@@UAEXPBD@Z,vgui2::Frame::OnCommand,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,linux: _ZN5vgui25Frame9OnCommandEPKc
+hw,01E5D1A1,498,?GetSysMenu@Frame@vgui2@@UAEPAVMenu@2@XZ,vgui2::Frame::GetSysMenu,ENGINE,vgui2/controls/Frame.cpp,,,MATCHED,100,linux_symbols:string:0.385,
+hw,01E5D393,103,?SetSysMenu@Frame@vgui2@@UAEXPAVMenu@2@@Z,vgui2::Frame::SetSysMenu,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,linux: _ZN5vgui25Frame10SetSysMenuEPNS_4MenuE
+hw,01E5D3FA,25,?Close@Frame@vgui2@@UAEXXZ,vgui2::Frame::Close,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,linux: _ZN5vgui25Frame5CloseEv
+hw,01E5D413,48,?OnMinimize@Frame@vgui2@@MAEXXZ,vgui2::Frame::OnMinimize,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,linux: _ZN5vgui25Frame10OnMinimizeEv
 hw,01E5D443,11,,,UNKNOWN,vgui2/controls/Frame.cpp,,,TODO,,,linux: _ZN5vgui25Frame19OnMinimizeToSysTrayEv
-hw,01E5D44E,134,,,UNKNOWN,vgui2/controls/Frame.cpp,,,TODO,,,linux: _ZN5vgui25Frame14OnMousePressedENS_9MouseCodeE
-hw,01E5D4D4,40,,,UNKNOWN,vgui2/controls/Frame.cpp,,,TODO,,,linux: _ZN5vgui25Frame20SetMenuButtonVisibleEb
-hw,01E5D4FC,31,,,UNKNOWN,vgui2/controls/Frame.cpp,,,TODO,,,linux: _ZN5vgui25Frame23SetMenuButtonResponsiveEb
-hw,01E5D51B,40,,,UNKNOWN,vgui2/controls/Frame.cpp,,,TODO,,,linux: _ZN5vgui25Frame24SetMinimizeButtonVisibleEb
-hw,01E5D543,40,,,UNKNOWN,vgui2/controls/Frame.cpp,,,TODO,,,linux: _ZN5vgui25Frame24SetMaximizeButtonVisibleEb
-hw,01E5D56B,40,,,UNKNOWN,vgui2/controls/Frame.cpp,,,TODO,,,linux: _ZN5vgui25Frame33SetMinimizeToSysTrayButtonVisibleEb
-hw,01E5D593,40,,,UNKNOWN,vgui2/controls/Frame.cpp,,,TODO,,,linux: _ZN5vgui25Frame21SetCloseButtonVisibleEb
-hw,01E5D5BB,129,,,UNKNOWN,vgui2/controls/Frame.cpp,,,TODO,,,linux: _ZN5vgui25Frame16OnKeyCodePressedENS_7KeyCodeE
+hw,01E5D44E,134,?OnMousePressed@Frame@vgui2@@MAEXW4MouseCode@2@@Z,vgui2::Frame::OnMousePressed,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,linux: _ZN5vgui25Frame14OnMousePressedENS_9MouseCodeE
+hw,01E5D4D4,40,?SetMenuButtonVisible@Frame@vgui2@@UAEX_N@Z,vgui2::Frame::SetMenuButtonVisible,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,linux: _ZN5vgui25Frame20SetMenuButtonVisibleEb
+hw,01E5D4FC,31,?SetMenuButtonResponsive@Frame@vgui2@@QAEX_N@Z,vgui2::Frame::SetMenuButtonResponsive,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,linux: _ZN5vgui25Frame23SetMenuButtonResponsiveEb
+hw,01E5D51B,40,?SetMinimizeButtonVisible@Frame@vgui2@@UAEX_N@Z,vgui2::Frame::SetMinimizeButtonVisible,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,linux: _ZN5vgui25Frame24SetMinimizeButtonVisibleEb
+hw,01E5D543,40,?SetMaximizeButtonVisible@Frame@vgui2@@UAEX_N@Z,vgui2::Frame::SetMaximizeButtonVisible,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,linux: _ZN5vgui25Frame24SetMaximizeButtonVisibleEb
+hw,01E5D56B,40,?SetMinimizeToSysTrayButtonVisible@Frame@vgui2@@UAEX_N@Z,vgui2::Frame::SetMinimizeToSysTrayButtonVisible,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,linux: _ZN5vgui25Frame33SetMinimizeToSysTrayButtonVisibleEb
+hw,01E5D593,40,?SetCloseButtonVisible@Frame@vgui2@@UAEX_N@Z,vgui2::Frame::SetCloseButtonVisible,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,linux: _ZN5vgui25Frame21SetCloseButtonVisibleEb
+hw,01E5D5BB,129,?OnKeyCodePressed@Frame@vgui2@@MAEXW4KeyCode@2@@Z,vgui2::Frame::OnKeyCodePressed,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,linux: _ZN5vgui25Frame16OnKeyCodePressedENS_7KeyCodeE
 hw,01E5D63C,13,,,UNKNOWN,vgui2/controls/Frame.cpp,,,TODO,,,linux: _ZN5vgui25Frame17OnKeyCodeReleasedENS_7KeyCodeE
 hw,01E5D649,11,,,UNKNOWN,vgui2/controls/Frame.cpp,,,TODO,,,linux: _ZN5vgui25Frame16OnKeyFocusTickedEv
-hw,01E5D654,178,,,UNKNOWN,vgui2/controls/Frame.cpp,,,TODO,,,linux: _ZN5vgui25Frame19InternalFlashWindowEv
+hw,01E5D654,178,?InternalFlashWindow@Frame@vgui2@@EAEXXZ,vgui2::Frame::InternalFlashWindow,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,linux: _ZN5vgui25Frame19InternalFlashWindowEv
 hw,01E5D706,25,,,UNKNOWN,vgui2/controls/Frame.cpp,,,TODO,,,linux: _ZN5vgui25Frame12OnChildAddedEj
-hw,01E5D71F,45,,,UNKNOWN,vgui2/controls/Frame.cpp,,,TODO,,,linux: _ZN5vgui25Frame11FlashWindowEv
-hw,01E5D74C,58,,,UNKNOWN,vgui2/controls/Frame.cpp,,,TODO,,,linux: _ZN5vgui25Frame15FlashWindowStopEv
-hw,01E5D786,80,,,UNKNOWN,vgui2/controls/Frame.cpp,,,TODO,,,linux: _ZN5vgui25Frame19LoadControlSettingsEPKcS2_
-hw,01E5D7D6,867,,,UNKNOWN,vgui2/controls/Frame.cpp,,,TODO,,,linux: _ZN5vgui25Frame14OnKeyCodeTypedENS_7KeyCodeE
-hw,01E5DB39,122,,,UNKNOWN,vgui2/controls/Frame.cpp,,,TODO,,,linux: _ZN5vgui25Frame10OnKeyTypedEw
-hw,01E5DBB3,97,,,UNKNOWN,vgui2/controls/Frame.cpp,,,TODO,,,linux: _ZN5vgui25Frame18SetTitleBarVisibleEb
-hw,01E5DC14,25,,,UNKNOWN,vgui2/controls/Frame.cpp,,,TODO,,,linux: _ZN5vgui25Frame20SetDeleteSelfOnCloseEb
-hw,01E5DC2D,136,,,UNKNOWN,vgui2/controls/Frame.cpp,,,TODO,,,linux: _ZN5vgui25Frame24OnDialogVariablesChangedEP9KeyValues
-hw,01E5DCB5,117,,,UNKNOWN,vgui2/controls/Frame.cpp,,,TODO,,,linux: _ZN5vgui25Frame7DoModalEv
-hw,01E5DD2A,151,,,UNKNOWN,vgui2/controls/Frame.cpp,,,TODO,,,linux: _ZN5vgui25Frame10CloseModalEv
-hw,01E5DDD0,137,,,UNKNOWN,guess:vgui2/controls/Frame.cpp,,,TODO,,,
-hw,01E5DE60,313,,,UNKNOWN,guess:vgui2/controls/Frame.cpp,,,TODO,,,
-hw,01E5DFA0,164,,,UNKNOWN,guess:vgui2/controls/Frame.cpp,,,TODO,,,
-hw,01E5E050,288,,,UNKNOWN,guess:vgui2/controls/Frame.cpp,,,TODO,,,
-hw,01E5E170,126,,,UNKNOWN,guess:vgui2/controls/Frame.cpp,,,TODO,,,
-hw,01E5E1F0,126,,,UNKNOWN,guess:vgui2/controls/Frame.cpp,,,TODO,,,
-hw,01E5E270,43,,,UNKNOWN,guess:vgui2/controls/Frame.cpp,,,TODO,,,
-hw,01E5E2A0,26,,,UNKNOWN,guess:vgui2/controls/Frame.cpp,,,TODO,,,
-hw,01E5E2C0,152,,anon_unknown.dwarf_30150d::GripPanel::ApplySchemeSettings,ENGINE,vgui2/controls/Frame.cpp,,,TODO,,linux_symbols:string:0.528,
+hw,01E5D71F,45,?FlashWindow@Frame@vgui2@@UAEXXZ,vgui2::Frame::FlashWindow,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,linux: _ZN5vgui25Frame11FlashWindowEv
+hw,01E5D74C,58,?FlashWindowStop@Frame@vgui2@@UAEXXZ,vgui2::Frame::FlashWindowStop,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,linux: _ZN5vgui25Frame15FlashWindowStopEv
+hw,01E5D786,80,?LoadControlSettings@Frame@vgui2@@MAEXPBD0@Z,vgui2::Frame::LoadControlSettings,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,linux: _ZN5vgui25Frame19LoadControlSettingsEPKcS2_
+hw,01E5D7D6,867,?OnKeyCodeTyped@Frame@vgui2@@MAEXW4KeyCode@2@@Z,vgui2::Frame::OnKeyCodeTyped,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,linux: _ZN5vgui25Frame14OnKeyCodeTypedENS_7KeyCodeE
+hw,01E5DB39,122,?OnKeyTyped@Frame@vgui2@@MAEXG@Z,vgui2::Frame::OnKeyTyped,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,linux: _ZN5vgui25Frame10OnKeyTypedEw
+hw,01E5DBB3,97,?SetTitleBarVisible@Frame@vgui2@@UAEX_N@Z,vgui2::Frame::SetTitleBarVisible,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,linux: _ZN5vgui25Frame18SetTitleBarVisibleEb
+hw,01E5DC14,25,?SetDeleteSelfOnClose@Frame@vgui2@@UAEX_N@Z,vgui2::Frame::SetDeleteSelfOnClose,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,linux: _ZN5vgui25Frame20SetDeleteSelfOnCloseEb
+hw,01E5DC2D,136,?OnDialogVariablesChanged@Frame@vgui2@@EAEXPAVKeyValues@@@Z,vgui2::Frame::OnDialogVariablesChanged,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,linux: _ZN5vgui25Frame24OnDialogVariablesChangedEP9KeyValues
+hw,01E5DCB5,117,?DoModal@Frame@vgui2@@UAEXXZ,vgui2::Frame::DoModal,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,linux: _ZN5vgui25Frame7DoModalEv
+hw,01E5DD2A,151,?CloseModal@Frame@vgui2@@UAEXXZ,vgui2::Frame::CloseModal,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,linux: _ZN5vgui25Frame10CloseModalEv
+hw,01E5DDD0,137,??0GripPanel@?%Frame.cpp20302634@@QAE@PAVFrame@vgui2@@PBDHH@Z,??0GripPanel@?%Frame.cpp20302634@@QAE@PAVFrame@vgui2@@PBDHH@Z,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,
+hw,01E5DE60,313,?moved@GripPanel@?%Frame.cpp20302634@@UAEXHH@Z,?moved@GripPanel@?%Frame.cpp20302634@@UAEXHH@Z,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,
+hw,01E5DFA0,164,?OnCursorMoved@GripPanel@?%Frame.cpp20302634@@UAEXHH@Z,?OnCursorMoved@GripPanel@?%Frame.cpp20302634@@UAEXHH@Z,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,
+hw,01E5E050,288,?OnMousePressed@GripPanel@?%Frame.cpp20302634@@UAEXW4MouseCode@vgui2@@@Z,?OnMousePressed@GripPanel@?%Frame.cpp20302634@@UAEXW4MouseCode@vgui2@@@Z,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,
+hw,01E5E170,126,?Paint@GripPanel@?%Frame.cpp20302634@@UAEXXZ,?Paint@GripPanel@?%Frame.cpp20302634@@UAEXXZ,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,
+hw,01E5E1F0,126,?PaintBackground@GripPanel@?%Frame.cpp20302634@@UAEXXZ,?PaintBackground@GripPanel@?%Frame.cpp20302634@@UAEXXZ,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,
+hw,01E5E270,43,?OnMouseReleased@GripPanel@?%Frame.cpp20302634@@UAEXW4MouseCode@vgui2@@@Z,?OnMouseReleased@GripPanel@?%Frame.cpp20302634@@UAEXW4MouseCode@vgui2@@@Z,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,
+hw,01E5E2A0,26,?OnMouseCaptureLost@GripPanel@?%Frame.cpp20302634@@UAEXXZ,?OnMouseCaptureLost@GripPanel@?%Frame.cpp20302634@@UAEXXZ,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,
+hw,01E5E2C0,152,?ApplySchemeSettings@GripPanel@?%Frame.cpp20302634@@UAEXPAVIScheme@vgui2@@@Z,?ApplySchemeSettings@GripPanel@?%Frame.cpp20302634@@UAEXPAVIScheme@vgui2@@@Z,ENGINE,vgui2/controls/Frame.cpp,,,MATCHED,100,linux_symbols:string:0.528,
 hw,01E5E360,46,,,UNKNOWN,guess:vgui2/controls/Frame.cpp,,,TODO,,,
 hw,01E5E390,19,,,UNKNOWN,guess:vgui2/controls/Frame.cpp,,,TODO,,,
-hw,01E5E3B0,45,,,UNKNOWN,guess:vgui2/controls/Frame.cpp,,,TODO,,,
-hw,01E5E3E0,288,,,UNKNOWN,guess:vgui2/controls/Frame.cpp,,,TODO,,,
-hw,01E5E500,318,,,UNKNOWN,guess:vgui2/controls/Frame.cpp,,,TODO,,,
-hw,01E5E640,209,,,UNKNOWN,guess:vgui2/controls/Frame.cpp,,,TODO,,,
-hw,01E5E720,508,,,UNKNOWN,guess:vgui2/controls/Frame.cpp,,,TODO,,,
+hw,01E5E3B0,45,??0CaptionGripPanel@?%Frame.cpp20302634@@QAE@PAVFrame@vgui2@@PBD@Z,??0CaptionGripPanel@?%Frame.cpp20302634@@QAE@PAVFrame@vgui2@@PBD@Z,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,
+hw,01E5E3E0,288,?moved@CaptionGripPanel@?%Frame.cpp20302634@@UAEXHH@Z,?moved@CaptionGripPanel@?%Frame.cpp20302634@@UAEXHH@Z,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,
+hw,01E5E500,318,?tryToDock@CaptionGripPanel@?%Frame.cpp20302634@@QAEXIAAH0@Z,?tryToDock@CaptionGripPanel@?%Frame.cpp20302634@@QAEXIAAH0@Z,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,
+hw,01E5E640,209,?getInsideSnapPosition@CaptionGripPanel@?%Frame.cpp20302634@@QAE_NHHHHAAH0@Z,?getInsideSnapPosition@CaptionGripPanel@?%Frame.cpp20302634@@QAE_NHHHHAAH0@Z,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,
+hw,01E5E720,508,?getOutsideSnapPosition@CaptionGripPanel@?%Frame.cpp20302634@@QAE_NHHHHAAH0@Z,?getOutsideSnapPosition@CaptionGripPanel@?%Frame.cpp20302634@@QAE_NHHHHAAH0@Z,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,
 hw,01E5E920,46,,,UNKNOWN,guess:vgui2/controls/Frame.cpp,,,TODO,,,
 hw,01E5E950,19,,,UNKNOWN,guess:vgui2/controls/Frame.cpp,,,TODO,,,
-hw,01E5E970,184,,,UNKNOWN,guess:vgui2/controls/Frame.cpp,,,TODO,,,
-hw,01E5EA30,278,,vgui2::FrameButton::ApplySchemeSettings,ENGINE,vgui2/controls/Frame.cpp,,,TODO,,linux_symbols:string:0.88,
-hw,01E5EB50,71,,,UNKNOWN,guess:vgui2/controls/Frame.cpp,,,TODO,,,
-hw,01E5EBA0,246,,,UNKNOWN,guess:vgui2/controls/Frame.cpp,,,TODO,,,
-hw,01E5ECA0,30,,,UNKNOWN,guess:vgui2/controls/Frame.cpp,,,TODO,,,
-hw,01E5ECC0,149,,,UNKNOWN,guess:vgui2/controls/Frame.cpp,,,TODO,,,
+hw,01E5E970,184,??0FrameButton@vgui2@@QAE@PAVPanel@1@PBD1@Z,vgui2::FrameButton::FrameButton,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,
+hw,01E5EA30,278,?ApplySchemeSettings@FrameButton@vgui2@@UAEXPAVIScheme@2@@Z,vgui2::FrameButton::ApplySchemeSettings,ENGINE,vgui2/controls/Frame.cpp,,,MATCHED,100,linux_symbols:string:0.88,
+hw,01E5EB50,71,?GetBorder@FrameButton@vgui2@@UAEPAVIBorder@2@_N000@Z,vgui2::FrameButton::GetBorder,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,
+hw,01E5EBA0,246,?SetDisabledLook@FrameButton@vgui2@@UAEX_N@Z,vgui2::FrameButton::SetDisabledLook,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,
+hw,01E5ECA0,30,?PerformLayout@FrameButton@vgui2@@UAEXXZ,vgui2::FrameButton::PerformLayout,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,
+hw,01E5ECC0,149,?OnMousePressed@FrameButton@vgui2@@UAEXW4MouseCode@2@@Z,vgui2::FrameButton::OnMousePressed,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,
 hw,01E5ED60,46,,,UNKNOWN,guess:vgui2/controls/Frame.cpp,,,TODO,,,
 hw,01E5ED90,19,,,UNKNOWN,guess:vgui2/controls/Frame.cpp,,,TODO,,,
-hw,01E5EDB0,146,,,UNKNOWN,guess:vgui2/controls/Frame.cpp,,,TODO,,,
+hw,01E5EDB0,146,??0FrameSystemButton@vgui2@@QAE@PAVPanel@1@PBD@Z,vgui2::FrameSystemButton::FrameSystemButton,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,
 hw,01E5EE50,19,,,UNKNOWN,guess:vgui2/controls/Frame.cpp,,,TODO,,,
 hw,01E5EE70,102,,,UNKNOWN,guess:vgui2/controls/Frame.cpp,,,TODO,,,
 hw,01E5EEE0,64,,,UNKNOWN,guess:vgui2/controls/Frame.cpp,,,TODO,,,
 hw,01E5EF20,10,,,UNKNOWN,guess:vgui2/controls/Frame.cpp,,,TODO,,,
 hw,01E5EF30,10,,,UNKNOWN,guess:vgui2/controls/Frame.cpp,,,TODO,,,
-hw,01E5EF40,244,,vgui2::FrameSystemButton::ApplySchemeSettings,ENGINE,vgui2/controls/Frame.cpp,,,TODO,,linux_symbols:string:0.875,
-hw,01E5F040,15,,,UNKNOWN,,,,TODO,,,
-hw,01E5F050,389,,,UNKNOWN,,,,TODO,,,
-hw,01E5F1E0,42,,,UNKNOWN,,,,TODO,,,
-hw,01E5F210,117,,,UNKNOWN,,,,TODO,,,
+hw,01E5EF40,244,?ApplySchemeSettings@FrameSystemButton@vgui2@@UAEXPAVIScheme@2@@Z,vgui2::FrameSystemButton::ApplySchemeSettings,ENGINE,vgui2/controls/Frame.cpp,,,MATCHED,100,linux_symbols:string:0.875,
+hw,01E5F040,15,?GetBorder@FrameSystemButton@vgui2@@UAEPAVIBorder@2@_N000@Z,vgui2::FrameSystemButton::GetBorder,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,
+hw,01E5F050,389,?SetEnabled@FrameSystemButton@vgui2@@UAEX_N@Z,vgui2::FrameSystemButton::SetEnabled,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,
+hw,01E5F1E0,42,?OnMousePressed@FrameSystemButton@vgui2@@UAEXW4MouseCode@2@@Z,vgui2::FrameSystemButton::OnMousePressed,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,
+hw,01E5F210,117,?OnMouseDoublePressed@FrameSystemButton@vgui2@@UAEXW4MouseCode@2@@Z,vgui2::FrameSystemButton::OnMouseDoublePressed,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,
 hw,01E5F290,46,,,UNKNOWN,,,,TODO,,,
 hw,01E5F2C0,19,,,UNKNOWN,,,,TODO,,,
 hw,01E5F2E0,46,,,UNKNOWN,,,,TODO,,,
@@ -31791,14 +31791,14 @@ hw,01E5F5C0,107,,,UNKNOWN,,,,TODO,,,
 hw,01E5F630,19,,,UNKNOWN,,,,TODO,,,
 hw,01E5F650,107,,,UNKNOWN,,,,TODO,,,
 hw,01E5F6C0,19,,,UNKNOWN,,,,TODO,,,
-hw,01E5F6E0,110,,,UNKNOWN,,,,TODO,,,
+hw,01E5F6E0,110,?InitVar@PanelMessageFunc_InternalSetTitle@Frame@vgui2@@SAXXZ,vgui2::Frame::PanelMessageFunc_InternalSetTitle::InitVar,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,
 hw,01E5F750,19,,,UNKNOWN,,,,TODO,,,
 hw,01E5F770,107,,,UNKNOWN,,,,TODO,,,
 hw,01E5F7E0,19,,,UNKNOWN,,,,TODO,,,
 hw,01E5F800,107,,,UNKNOWN,,,,TODO,,,
 hw,01E5F870,13,,,UNKNOWN,,,,TODO,,,
 hw,01E5F880,13,,,UNKNOWN,,,,TODO,,,
-hw,01E5F8B0,25,,,UNKNOWN,,,,TODO,,,
+hw,01E5F8B0,25,?SetResponsive@FrameSystemButton@vgui2@@QAEX_N@Z,vgui2::FrameSystemButton::SetResponsive,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,
 hw,01E5F8D0,119,,,UNKNOWN,,,,TODO,,,
 hw,01E5F947,28,,,UNKNOWN,,,,TODO,,,
 hw,01E5F963,116,,,UNKNOWN,vgui2/controls/MenuButton.cpp,,,TODO,,,linux: _ZN5vgui210MenuButton7SetMenuEPNS_4MenuE

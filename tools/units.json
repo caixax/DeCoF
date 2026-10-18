@@ -2458,6 +2458,99 @@
           "name": "engine/GL_MODEL",
           "source": "src/engine_hw/GL_MODEL.C",
           "functions_file": "tools/units/hw_engine_GL_MODEL.txt"
+        },
+        {
+          "name": "engine/decals",
+          "source": "src/engine_hw/decals.c",
+          "functions_file": "tools/units/hw_engine_decals.txt"
+        },
+        {
+          "name": "engine/gl_screen",
+          "source": "src/engine_hw/gl_screen.c",
+          "functions_file": "tools/units/hw_engine_gl_screen.txt"
+        },
+        {
+          "name": "engine/VIEW",
+          "source": "src/engine_hw/VIEW.C",
+          "functions_file": "tools/units/hw_engine_VIEW.txt"
+        },
+        {
+          "name": "engine/pr_edict",
+          "source": "src/engine_hw/pr_edict.c",
+          "functions_file": "tools/units/hw_engine_pr_edict.txt"
+        },
+        {
+          "name": "engine/cdll_int",
+          "source": "src/engine_hw/cdll_int.c",
+          "functions_file": "tools/units/hw_engine_cdll_int.txt"
+        },
+        {
+          "name": "engine/sys_dll",
+          "source": "src/engine_hw/sys_dll.c",
+          "functions_file": "tools/units/hw_engine_sys_dll.txt"
+        },
+        {
+          "name": "engine/sys_dll2",
+          "source": "src/engine_hw/sys_dll2.cpp",
+          "functions_file": "tools/units/hw_engine_sys_dll2.txt"
+        },
+        {
+          "name": "engine/sys_getmodes",
+          "source": "src/engine_hw/sys_getmodes.cpp",
+          "functions_file": "tools/units/hw_engine_sys_getmodes.txt"
+        },
+        {
+          "name": "engine/GL_VIDNT",
+          "source": "src/engine_hw/GL_VIDNT.C",
+          "functions_file": "tools/units/hw_engine_GL_VIDNT.txt"
+        },
+        {
+          "name": "vgui2/controls/Frame",
+          "source": "src/vgui2/controls/Frame.cpp",
+          "functions_file": "tools/units/hw_vgui2_controls_Frame.txt",
+          "includes": [
+            "src/gameui",
+            "src/public",
+            "src/common",
+            "src/engine",
+            "src/pm_shared"
+          ]
+        },
+        {
+          "name": "vgui2/controls/TextEntry",
+          "source": "src/vgui2/controls/TextEntry.cpp",
+          "functions_file": "tools/units/hw_vgui2_controls_TextEntry.txt",
+          "includes": [
+            "src/gameui",
+            "src/public",
+            "src/common",
+            "src/engine",
+            "src/pm_shared"
+          ]
+        },
+        {
+          "name": "vgui2/controls/RichText",
+          "source": "src/vgui2/controls/RichText.cpp",
+          "functions_file": "tools/units/hw_vgui2_controls_RichText.txt",
+          "includes": [
+            "src/gameui",
+            "src/public",
+            "src/common",
+            "src/engine",
+            "src/pm_shared"
+          ]
+        },
+        {
+          "name": "vgui2/controls/Menu",
+          "source": "src/vgui2/controls/Menu.cpp",
+          "functions_file": "tools/units/hw_vgui2_controls_Menu.txt",
+          "includes": [
+            "src/gameui",
+            "src/public",
+            "src/common",
+            "src/engine",
+            "src/pm_shared"
+          ]
         }
       ]
     },
