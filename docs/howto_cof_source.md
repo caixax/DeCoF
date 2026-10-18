@@ -99,6 +99,12 @@ Rules that hold for this build:
 - Calls through the engine's anti-cheat hook table (`call [0x01ebf980]` with a pointer to an argument) are `g_engdstAddrs.pfnXxx( &arg )` (`build/dwarf_hw/engine/APIProxy.h`, `cl_enginefunc_dst_t`).
 - Headers live in `src/engine_hw/` and are named like the originals (`common.h`, `cvar.h`, ...). Each header belongs to the agent that owns its .c file; any agent may add a missing prototype or extern to any header, but only the owner changes a struct.
 - Retail string literals go into `.data` (VC6 without /GF): the strings at the end of `tools/range.py` output are exact.
+- `f( n++ )` as an argument costs a hidden 4-byte temporary per use at `/Od`; retail's frame without them means `p = Cmd_Argv( n ); n++;`. A frame 0x14 bytes too big pointed at five such post-increments.
+- `x >= 1` gives `cmp x,1; jl`, `x > 0` gives `cmp x,0; jle`: the literal survives. A size argument like 0xFB is `sizeof( name ) - 5` (room for ".dem" before COM_DefaultExtension).
+- When two same-type DWARF locals sit in each other's slots, check the order the source assigns them before renaming: in CL_DemoParseSound the slots exposed a swapped volume and attenuation (docs/original_bugs.md). `idx = n; n++; p = &arr[ idx ];` and `p = &arr[ n ]; n++;` address differently.
+- A float product inside `fabs( )` whose global operand is indexed (`studio_planes[j].normal[0] * size[0]`, the SV_HullForBeam and R_StudioHull pattern) loads the global before the pointer only with a double operand: `fabs( (double)studio_planes[j].normal[0] * size[0] )`; which side carries the cast follows retail's load order.
+- Function statics of C files are named `_?name@?1??Function@@9@9` in the object (pmovetst's `tr`, r_studio's `pos` and `q`); the retail map needs that spelling for relocaudit.
+- `tools/objdiff_tool.py harvest <units> --matched` also takes names from functions at 100%: their relocations still point at unnamed retail globals (vpn, r_refdef, frustum), which a delink then names.
 
 ## cof.exe units (the VC6 launcher)
 

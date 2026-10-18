@@ -2,8 +2,8 @@
 
   python tools/objdiff_tool.py show <unit> <symbol>
       side by side instructions of one function, differing rows marked
-  python tools/objdiff_tool.py harvest <unit> [<unit> ...] [--write]
-      for every function below 100%: where both sides have a relocation on
+  python tools/objdiff_tool.py harvest <unit> [<unit> ...] [--matched] [--write]
+      for every function below 100% (--matched: and at 100%): where both sides have a relocation on
       the same aligned instruction and the retail side points at an unnamed
       symbol (DAT_/FUN_/LAB_ + address), take the name of our side as the
       name of that retail address. String literals and float constants are
@@ -99,11 +99,21 @@ def show(unit, symbol, full=False, context=3):
 
 
 def report_functions(units):
-    rep = json.load(open(os.path.join(ROOT, "build", "report.json")))
-    for u in rep.get("units", []):
-        if u["name"] in units:
-            for fn in u.get("functions", []):
-                yield u["name"], fn["name"], fn.get("fuzzy_match_percent", 0.0)
+    # the report of the last `build.py check <unit>` is newer than the
+    # project report, which only a full check rewrites
+    whole = None
+    for unit in units:
+        own = os.path.join(ROOT, "build", "check_project", unit.replace("/", "_"), "report.json")
+        if os.path.exists(own):
+            rep = json.load(open(own))
+        else:
+            if whole is None:
+                whole = json.load(open(os.path.join(ROOT, "build", "report.json")))
+            rep = whole
+        for u in rep.get("units", []):
+            if u["name"] == unit:
+                for fn in u.get("functions", []):
+                    yield u["name"], fn["name"], fn.get("fuzzy_match_percent", 0.0)
 
 
 _IMAGE = {}
@@ -190,11 +200,13 @@ def mnemonic(ins):
     return None
 
 
-def harvest(units, write, min_pct=80.0, strict_pct=95.0):
+def harvest(units, write, min_pct=80.0, strict_pct=95.0, matched=False):
     found = {}
     conflicts = set()
     for unit, symbol, pct in report_functions(units):
-        if pct >= 100.0 or pct < min_pct:
+        # the report ignores relocation names, so a function at 100% can
+        # still point at unnamed retail symbols: --matched takes those too
+        if (pct >= 100.0 and not matched) or pct < min_pct:
             continue
         d = diff_json(unit, symbol)
         l, r, li, ri = rows(d, symbol)
@@ -277,7 +289,7 @@ def main():
         show(sys.argv[2], sys.argv[3], full="--full" in sys.argv)
     elif sys.argv[1] == "harvest":
         args = [a for a in sys.argv[2:] if not a.startswith("--")]
-        harvest(args, "--write" in sys.argv)
+        harvest(args, "--write" in sys.argv, matched="--matched" in sys.argv)
     else:
         sys.exit(__doc__)
 

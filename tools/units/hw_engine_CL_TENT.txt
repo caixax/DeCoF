@@ -50,3 +50,4 @@ _R_GetSpriteAxes
 _R_SpriteColor
 _R_GetAttachmentPoint
 _R_Explosion
+_CL_AllocCustomTempEntity

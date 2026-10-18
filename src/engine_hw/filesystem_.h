@@ -4,6 +4,8 @@
 #define FILESYSTEM__H
 
 #define FILESYSTEM_SEEK_HEAD	0
+#define FILESYSTEM_SEEK_CURRENT	1
+#define FILESYSTEM_SEEK_TAIL	2
 
 FileHandle_t	FS_Open( const char *pFileName, const char *pOptions );
 void			FS_Close( FileHandle_t file );
@@ -35,6 +37,8 @@ void			FS_LogLevelLoadStarted( const char *name );
 void			FS_LogLevelLoadFinished( const char *name );
 int				FS_HintResourceNeed( const char *hintlist, int forgetEverything );
 int				FS_SetVBuf( FileHandle_t stream, char *buffer, int mode, long size );
+void			*FS_GetReadBuffer( FileHandle_t file, int *outBufSize );
+void			FS_ReleaseReadBuffer( FileHandle_t file, void *buffer );
 
 // wrappers around IFileSystem::WaitForResources, GetWaitForResourcesProgress
 // and CancelWaitForResources (0x01D5D7FA, 0x01D5D817, 0x01D5D862; names unproven)

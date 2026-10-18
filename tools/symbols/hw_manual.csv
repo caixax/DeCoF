@@ -2006,7 +2006,6 @@ va,name,kind,evidence
 01D867E8,_SV_CheckBlendingInterface,func,engine/host_cmd.c of the Linux hw.so DWARF (line 4545): GetProcAddress of Server_GetBlendingInterface in every g_rgextdll entry; called by Host_InitializeGameDLL (added by an agent)
 01D86874,_SV_CheckSaveGameCommentInterface,func,"engine/host_cmd.c of the Linux hw.so DWARF (line 4588): GetProcAddress of SV_SaveGameComment in every g_rgextdll entry, stored in g_pSaveGameCommentFunc; called by Host_InitializeGameDLL (added by an agent)"
 01DF1F28,_SV_FullUpdate_f,func,"console handler: starts with the cmd_source / Cmd_ForwardToServer check; SV_Init registers it for ""fullupdate""; Linux DWARF order SV_SendEnts_f, SV_FullUpdate_f, SV_FullUpdate_Internal"
-01DF1EE5,_SV_SendEnts_f,func,console handler before SV_FullUpdate_f (Linux DWARF order)
 01DA0109,_PM_Init,func,called by SV_Init where our matched SV_Init calls PM_Init (relocation pairing)
 01D8CFF8,_Mem_Free,func,paired call site in matched sv_main.c functions
 01D8CFE7,_Mem_Strdup,func,paired call site in matched sv_main.c functions
@@ -2040,6 +2039,9 @@ va,name,kind,evidence
 01DC3EFD,_legacy_Mod_ForName,func,"Linux hw.so DWARF r_studio.c line order; calls Mod_ForName( model, crash, 0 )"
 01DC3F14,_R_ResetStudio,func,Linux hw.so DWARF r_studio.c line order; pStudioAPI = &studio api table
 01DC3F23,_R_ResetSvBlending,func,Linux hw.so DWARF r_studio.c line order; g_pSvBlendingAPI = &server blending table
+01DB1C10,_R_BeamInit,func,"engine/r_part.c of the Linux hw.so DWARF (R_BeamInit, line 83, first function of the file); Hunk_AllocName( 128 * sizeof( BEAM ), ""lightning"" ) stored into the beam pool, called from R_InitParticles (added by an agent)"
+01DB1C2C,_R_BeamClear,func,"engine/r_part.c of the Linux hw.so DWARF (R_BeamClear, line 88, after R_BeamInit); links the 128 beams of the pool into the free list, called from R_ClearParticles (added by an agent)"
+01DB7A6C,_R_BeamDraw,func,"engine/r_part.c of the Linux hw.so DWARF (R_BeamDraw, line 2990, between R_BeamCull and R_BeamDrawList); called by R_BeamDrawList and R_DrawBeamEntList with a BEAM and the frame time, switches on the beam type to R_DrawTorus/Disk/Cylinder/Segs/BeamFollow/Ring (added by an agent)"
 01DB84C4,_R_LookupColor,func,"engine/r_part.c of the Linux hw.so DWARF (R_LookupColor, line 3372, last function of the file after R_GetPackedColor); nearest host_basepal entry to r, g, b, called by R_ParticleLine and R_ParticleBox of cl_tent.c and stored in efx (added by an agent)"
 01D8B0C0,_anglemod,func,Linux hw.so DWARF mathlib.c line order (first function); (360.0/65536) * ((int)(a * (65536/360.0)) & 65535)
 01D8B0EA,_BOPS_Error,func,"Linux hw.so DWARF mathlib.c line order; Sys_Error string ""BoxOnPlaneSide:  Bad signbits"""
@@ -2072,3 +2074,22 @@ va,name,kind,evidence
 01D8CF91,_Mem_ZeroMalloc,func,Linux hw.so DWARF mem.c line order
 01D8CFBD,_Mem_Realloc,func,Linux hw.so DWARF mem.c line order
 01D8CFD2,_Mem_Calloc,func,"Linux hw.so DWARF mem.c line order, before Mem_Strdup"
+01DC51E0,_Sequence_FreeDataPointer,func,"engine/Sequence.c DWARF source order before Sequence_GetCommandEnumForName: if (!data) return; Mem_Free(data); called before every Mem_Strdup of speakerName/listenerName in Sequence_ResetDefaults, WriteDefaults and BakeDefaults; our object matches it (added by an agent)"
+01DC744E,_Sequence_Init,func,"engine/Sequence.c DWARF source order after Sequence_ParseFile: Sequence_ParseFile(""global"", 1); our object matches it (added by an agent)"
+01DC7462,_SequenceGet,func,"engine/Sequence.c DWARF source order after Sequence_Init: g_engdstAddrs.pfnSequenceGet hook (+0x1a0) on &fileName, &entryName, then walks g_sequenceList comparing entryName with Q_stricmp; our object matches it (added by an agent)"
+01DC74B5,_Sequence_FreeCommand,func,"engine/Sequence.c DWARF source order after SequenceGet: Sequence_FreeDataPointer on fireTargetNames, speakerName, listenerName, soundFileName, sentenceName, pName, pMessage of a sequenceCommandLine_s; our object matches it (added by an agent)"
+01DC7523,_Sequence_FreeEntry,func,"engine/Sequence.c DWARF source order after Sequence_FreeCommand: frees entryName and fileName, calls Sequence_FreeCommand (01DC74B5) on each command of firstCommand, frees the entry; our object matches it (added by an agent)"
+01DC7583,_Sequence_FreeSentence,func,engine/Sequence.c DWARF source order after Sequence_FreeEntry: Sequence_FreeDataPointer on sentenceEntry->data then on the entry; called from Sequence_FreeSentenceGroupEntries; our object matches it (added by an agent)
+01DC75A2,_Sequence_FreeSentenceGroup,func,engine/Sequence.c DWARF source order after Sequence_FreeSentence: Sequence_FreeDataPointer on groupName then on the group; called from Sequence_PurgeEntries; our object matches it (added by an agent)
+01DC75C1,_Sequence_FreeSentenceGroupEntries,func,"engine/Sequence.c DWARF source order after Sequence_FreeSentenceGroup: walks firstSentence keeping isGlobal sentences unless purgeGlobals, decrements numSentences and g_nonGlobalSentences, calls Sequence_FreeSentence; our object matches it (added by an agent)"
+01DC7668,_Sequence_PurgeEntries,func,engine/Sequence.c DWARF source order after Sequence_FreeSentenceGroupEntries: unlinks and frees the non-global entries of g_sequenceList (Sequence_FreeEntry) and the empty groups of g_sentenceGroupList; our object matches it (added by an agent)
+01DC776E,_Sequence_OnLevelLoad,func,"engine/Sequence.c DWARF source order, last function: Sequence_PurgeEntries(0) then Sequence_ParseFile(mapName, 0); our object matches it (added by an agent)"
+01D244E0,_CL_DemoOutTime,func,"engine/cl_demo.c of the Linux hw.so DWARF (CL_DemoOutTime, line 166, first function of the file); returns realtime as float, called by the demo writers (CL_Record_f, CL_WriteDemoMessage) before subtracting cls.demostarttime (added by an agent)"
+01D244F1,_CL_DemoInTime,func,"engine/cl_demo.c of the Linux hw.so DWARF (CL_DemoInTime, line 171, after CL_DemoOutTime); returns g_demotimescale (1.0 in .data, set by CL_PlayDemo_f) times realtime, used by the playback readers (added by an agent)"
+01D24508,_CL_FixPointers,func,"engine/cl_demo.c of the Linux hw.so DWARF (CL_FixPointers, line 181); sets info->rp.cmd = &info->cmd and info->rp.movevars = &info->movevars of a demo_info_t (+0xcc = +0xec, +0xd0 = +0x124) (added by an agent)"
+01D24530,_CL_DemoCopyFileChunk,func,"engine/cl_demo.c of the Linux hw.so DWARF (CL_DemoCopyFileChunk, line 191); 1024 byte copy loop FS_Read/FS_Write then FS_Flush of both handles, called by the demo editing commands (added by an agent)"
+01D245EA,_CL_SetDemoViewInfo,func,"engine/cl_demo.c of the Linux hw.so DWARF (CL_SetDemoViewInfo, line 210); copies ref_params_t, usercmd, movevars, view and viewmodel into g_rp and calls CL_FixPointers (added by an agent)"
+01D24664,_CL_GetDemoViewInfo_OLD,func,"engine/cl_demo.c of the Linux hw.so DWARF (CL_GetDemoViewInfo_OLD, line 224); interpolates dem_frames for the view (COM_NormalizeAngles, VectorMA), called by CL_GetDemoViewInfo when the demo player is not active (added by an agent)"
+01D24A7D,_CL_GetDemoViewInfo,func,"engine/cl_demo.c of the Linux hw.so DWARF (CL_GetDemoViewInfo, line 329, last before CL_AppendDemo_f); DemoPlayer_IsActive then DemoPlayer_GetDemoViewInfo or CL_GetDemoViewInfo_OLD with the same three arguments (added by an agent)"
+01DF1EE5,_SV_SendEnts_f,func,console handler between SV_ShowServerinfo_f and SV_FullUpdate_f (Linux DWARF line order 2265/2282/2307); sets host_client->fully_connected after the cmd_source check; SV_Init registers it for sendents (added by an agent)
+01DE9324,_SV_Trace_Toss,func,"last function of sv_phys.c after SV_Physics (Linux DWARF line 2068); saves host_frametime, sets it to 0.05, copies the edict with Q_memcpy 0x32c and loops SV_CheckVelocity/SV_AddGravity/SV_Move until trace.ent is set and differs from ignore (added by an agent)"

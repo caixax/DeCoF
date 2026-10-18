@@ -41,3 +41,10 @@ _CL_DemoAPIPlayback
 _CL_DemoAPITimedemo
 _CL_ReadDemoMessage_OLD
 _CL_ReadDemoMessage
+_CL_DemoOutTime
+_CL_DemoInTime
+_CL_FixPointers
+_CL_DemoCopyFileChunk
+_CL_SetDemoViewInfo
+_CL_GetDemoViewInfo_OLD
+_CL_GetDemoViewInfo
