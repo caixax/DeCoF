@@ -2612,6 +2612,26 @@
           "name": "vgui2/controls/EditablePanel",
           "source": "src/vgui2/controls/EditablePanel.cpp",
           "functions_file": "tools/units/gameui_vgui2_controls_EditablePanel.txt"
+        },
+        {
+          "name": "vgui2/controls/Frame",
+          "source": "src/vgui2/controls/Frame.cpp",
+          "functions_file": "tools/units/gameui_vgui2_controls_Frame.txt"
+        },
+        {
+          "name": "vgui2/controls/TextEntry",
+          "source": "src/vgui2/controls/TextEntry.cpp",
+          "functions_file": "tools/units/gameui_vgui2_controls_TextEntry.txt"
+        },
+        {
+          "name": "vgui2/controls/RichText",
+          "source": "src/vgui2/controls/RichText.cpp",
+          "functions_file": "tools/units/gameui_vgui2_controls_RichText.txt"
+        },
+        {
+          "name": "vgui2/controls/Menu",
+          "source": "src/vgui2/controls/Menu.cpp",
+          "functions_file": "tools/units/gameui_vgui2_controls_Menu.txt"
         }
       ]
     }

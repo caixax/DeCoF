@@ -241,5 +241,15 @@
 ?InitVar@PanelMessageFunc_InternalMove@Panel@vgui2@@SAXXZ
 ??0CPanelMessageMapDictionary@@QAE@XZ
 ??1CPanelMessageMapDictionary@@QAE@XZ
+??0?$Dar@K@vgui2@@QAE@XZ
+??1?$Dar@K@vgui2@@QAE@XZ
+?GetCount@?$Dar@K@vgui2@@QAEHXZ
+?AddElement@?$Dar@K@vgui2@@QAEHK@Z
+?HasElement@?$Dar@K@vgui2@@QAE_NK@Z
+?RemoveElement@?$Dar@K@vgui2@@QAEXK@Z
+??A?$Dar@K@vgui2@@QAEKH@Z
+?EnsureCapacity@?$Dar@K@vgui2@@QAEXH@Z
+?FindElement@?$Dar@K@vgui2@@QAEHK@Z
+?RemoveElementAt@?$Dar@K@vgui2@@QAEXH@Z
 ?Construct@@YAXPAUPanelMessageMap@vgui2@@@Z
 ??0PanelMessageMap@vgui2@@QAE@XZ

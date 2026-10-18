@@ -83,6 +83,11 @@ def build_base(units, kind="base", extra=()):
         cmd += ["/Fo" + out, os.path.join(ROOT, u["source"])]
         res = subprocess.run(cmd, env=tc.env(), cwd=ROOT, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
         rc = res.returncode
+        if rc == 0 and d.get("toolchain") == "vc6":
+            # VC6 numbers anonymous namespaces at random on each compile:
+            # give them the names the retail RTTI records
+            import vc6_anon
+            vc6_anon.fix(out)
         print("%-6s %-30s %s" % (kind[:6], full, "ok" if rc == 0 else "FAILED (%d)" % rc))
         if rc:
             # cl prints its diagnostics on stdout: show the errors

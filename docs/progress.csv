@@ -10491,16 +10491,16 @@ gameui,10063E80,19,??0PanelMessageFunc_InternalMove@Panel@vgui2@@QAE@XZ,vgui2::P
 gameui,10063EA0,107,?InitVar@PanelMessageFunc_InternalMove@Panel@vgui2@@SAXXZ,vgui2::Panel::PanelMessageFunc_InternalMove::InitVar,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,100640A0,51,??0CPanelMessageMapDictionary@@QAE@XZ,CPanelMessageMapDictionary::CPanelMessageMapDictionary,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,100640E0,30,??1CPanelMessageMapDictionary@@QAE@XZ,CPanelMessageMapDictionary::~CPanelMessageMapDictionary,ENGINE,vgui2/controls/Panel.cpp,,,MATCHED,100,gameui_manual.csv,
-gameui,10064100,43,??0?$Dar@K@vgui2@@QAE@XZ,long>,UNKNOWN,,,,TODO,,gameui_manual.csv,
-gameui,10064130,34,??1?$Dar@K@vgui2@@QAE@XZ,long>,UNKNOWN,,,,TODO,,gameui_manual.csv,
-gameui,10064160,16,?GetCount@?$Dar@K@vgui2@@QAEHXZ,long>::GetCount,UNKNOWN,,,,TODO,,gameui_manual.csv,
-gameui,10064170,68,?AddElement@?$Dar@K@vgui2@@QAEHK@Z,long>::AddElement,UNKNOWN,,,,TODO,,gameui_manual.csv,
-gameui,100641C0,35,?HasElement@?$Dar@K@vgui2@@QAE_NK@Z,long>::HasElement,UNKNOWN,,,,TODO,,gameui_manual.csv,
-gameui,100641F0,76,?RemoveElement@?$Dar@K@vgui2@@QAEXK@Z,long>::RemoveElement,UNKNOWN,,,,TODO,,gameui_manual.csv,
-gameui,10064240,45,??A?$Dar@K@vgui2@@QAEKH@Z,long>::operator[],UNKNOWN,,,,TODO,,gameui_manual.csv,
-gameui,10064270,221,,,UNKNOWN,,,,TODO,,,
-gameui,10064350,70,,,UNKNOWN,,,,TODO,,,
-gameui,100643A0,105,,,UNKNOWN,,,,TODO,,,
+gameui,10064100,43,??0?$Dar@K@vgui2@@QAE@XZ,long>,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10064130,34,??1?$Dar@K@vgui2@@QAE@XZ,long>,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10064160,16,?GetCount@?$Dar@K@vgui2@@QAEHXZ,long>::GetCount,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10064170,68,?AddElement@?$Dar@K@vgui2@@QAEHK@Z,long>::AddElement,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,100641C0,35,?HasElement@?$Dar@K@vgui2@@QAE_NK@Z,long>::HasElement,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,100641F0,76,?RemoveElement@?$Dar@K@vgui2@@QAEXK@Z,long>::RemoveElement,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10064240,45,??A?$Dar@K@vgui2@@QAEKH@Z,long>::operator[],UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10064270,221,?EnsureCapacity@?$Dar@K@vgui2@@QAEXH@Z,long>::EnsureCapacity,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10064350,70,?FindElement@?$Dar@K@vgui2@@QAEHK@Z,long>::FindElement,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,100643A0,105,?RemoveElementAt@?$Dar@K@vgui2@@QAEXH@Z,long>::RemoveElementAt,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
 gameui,10064410,25,??A?$CUtlVector@UMessageMapItem_t@vgui2@@@@QAEAAUMessageMapItem_t@vgui2@@H@Z,vgui2::MessageMapItem_t>::operator[],UNKNOWN,,,,TODO,,gameui_manual.csv,
 gameui,10064430,17,?Count@?$CUtlVector@UMessageMapItem_t@vgui2@@@@QBEHXZ,vgui2::MessageMapItem_t>::Count,UNKNOWN,,,,TODO,,gameui_manual.csv,
 gameui,10064450,60,??0?$CUtlDict@UPanelMessageMapDictionaryEntry@CPanelMessageMapDictionary@@H@@QAE@_NHH@Z,"CPanelMessageMapDictionary::PanelMessageMapDictionaryEntry,int>",UNKNOWN,,,,TODO,,gameui_manual.csv,
@@ -10620,123 +10620,123 @@ gameui,10067471,82,,,UNKNOWN,vgui2/controls/BitmapImagePanel.cpp,,,TODO,,,linux:
 gameui,100674C3,48,,vgui2::CBitmapImagePanel::GetDescription,ENGINE,vgui2/controls/BitmapImagePanel.cpp,,,TODO,,linux_symbols:string:0.438,linux: _ZN5vgui217CBitmapImagePanel14GetDescriptionEv
 gameui,10067500,46,,,UNKNOWN,,,,TODO,,,
 gameui,10067530,19,,,UNKNOWN,,,,TODO,,,
-gameui,10067550,1792,,vgui2::Frame::Frame,ENGINE,,,,TODO,,linux_symbols:caller:0.46,
-gameui,10067C50,785,,,UNKNOWN,,,,TODO,,,
-gameui,10067F61,603,,,UNKNOWN,,,,TODO,,,
-gameui,100681BC,104,,,UNKNOWN,vgui2/controls/Frame.cpp,,,TODO,,,linux: _ZN5vgui25Frame8ActivateEv
-gameui,10068224,180,,,UNKNOWN,vgui2/controls/Frame.cpp,,,TODO,,,linux: _ZN5vgui25Frame17ActivateMinimizedEv
-gameui,100682D8,46,,,UNKNOWN,vgui2/controls/Frame.cpp,,,TODO,,,linux: _ZN5vgui25Frame11IsMinimizedEv
-gameui,10068306,101,,,UNKNOWN,vgui2/controls/Frame.cpp,,,TODO,,,linux: _ZN5vgui25Frame20MoveToCenterOfScreenEv
-gameui,1006836B,221,,,UNKNOWN,vgui2/controls/Frame.cpp,,,TODO,,,linux: _ZN5vgui25Frame18LayoutProportionalEPNS_11FrameButtonE
-gameui,10068448,1149,,,UNKNOWN,vgui2/controls/Frame.cpp,,,TODO,,,linux: _ZN5vgui25Frame13PerformLayoutEv
-gameui,100688C5,420,,,UNKNOWN,,,,TODO,,,
-gameui,10068A69,170,,,UNKNOWN,,,,TODO,,,
-gameui,10068B13,33,,,UNKNOWN,vgui2/controls/Frame.cpp,,,TODO,,,linux: _ZN5vgui25Frame16InternalSetTitleEPKc
-gameui,10068B34,25,,,UNKNOWN,vgui2/controls/Frame.cpp,,,TODO,,,linux: _ZN5vgui25Frame11SetMoveableEb
-gameui,10068B4D,33,,,UNKNOWN,vgui2/controls/Frame.cpp,,,TODO,,,linux: _ZN5vgui25Frame11SetSizeableEb
-gameui,10068B6E,20,,,UNKNOWN,vgui2/controls/Frame.cpp,,,TODO,,,linux: _ZN5vgui25Frame10IsMoveableEv
-gameui,10068B82,20,,,UNKNOWN,vgui2/controls/Frame.cpp,,,TODO,,,linux: _ZN5vgui25Frame10IsSizeableEv
-gameui,10068B96,154,,,UNKNOWN,vgui2/controls/Frame.cpp,,,TODO,,,linux: _ZN5vgui25Frame13GetClientAreaERiS1_S1_S1_
-gameui,10068C30,465,,,UNKNOWN,vgui2/controls/Frame.cpp,,,TODO,,,linux: _ZN5vgui25Frame23ApplyUserConfigSettingsEP9KeyValues
-gameui,10068E01,169,,,UNKNOWN,vgui2/controls/Frame.cpp,,,TODO,,,linux: _ZN5vgui25Frame21GetUserConfigSettingsEP9KeyValues
-gameui,10068EAA,13,,,UNKNOWN,vgui2/controls/Frame.cpp,,,TODO,,,linux: _ZN5vgui25Frame21HasUserConfigSettingsEv
-gameui,10068EB7,15,,,UNKNOWN,vgui2/controls/Frame.cpp,,,TODO,,,linux: _ZN5vgui25Frame24GetDefaultScreenPositionERiS1_S1_S1_
-gameui,10068EC6,1032,,vgui2::Frame::PaintBackground,ENGINE,vgui2/controls/Frame.cpp,,,TODO,,linux_symbols:string:0.766,linux: _ZN5vgui25Frame15PaintBackgroundEv
-gameui,100692CE,399,,vgui2::Frame::ApplySchemeSettings,ENGINE,vgui2/controls/Frame.cpp,,,TODO,,linux_symbols:string:0.644,linux: _ZN5vgui25Frame19ApplySchemeSettingsEPNS_7ISchemeE
-gameui,1006945D,143,,,UNKNOWN,vgui2/controls/Frame.cpp,,,TODO,,,linux: _ZN5vgui25Frame13ApplySettingsEP9KeyValues
-gameui,100694EC,157,,,UNKNOWN,vgui2/controls/Frame.cpp,,,TODO,,,linux: _ZN5vgui25Frame11GetSettingsEP9KeyValues
-gameui,10069589,48,,vgui2::Frame::GetDescription,ENGINE,vgui2/controls/Frame.cpp,,,TODO,,linux_symbols:string:0.438,linux: _ZN5vgui25Frame14GetDescriptionEv
-gameui,100695B9,173,,,UNKNOWN,vgui2/controls/Frame.cpp,,,TODO,,,linux: _ZN5vgui25Frame7OnCloseEv
-gameui,10069666,30,,,UNKNOWN,vgui2/controls/Frame.cpp,,,TODO,,,linux: _ZN5vgui25Frame25OnCloseFrameButtonPressedEv
-gameui,10069684,173,,,UNKNOWN,vgui2/controls/Frame.cpp,,,TODO,,,linux: _ZN5vgui25Frame9OnCommandEPKc
-gameui,10069731,498,,vgui2::Frame::GetSysMenu,ENGINE,vgui2/controls/Frame.cpp,,,TODO,,linux_symbols:string:0.394,linux: _ZN5vgui25Frame10GetSysMenuEv
-gameui,10069923,103,,,UNKNOWN,vgui2/controls/Frame.cpp,,,TODO,,,linux: _ZN5vgui25Frame10SetSysMenuEPNS_4MenuE
-gameui,1006998A,25,,,UNKNOWN,vgui2/controls/Frame.cpp,,,TODO,,,linux: _ZN5vgui25Frame5CloseEv
-gameui,100699A3,48,,,UNKNOWN,vgui2/controls/Frame.cpp,,,TODO,,,linux: _ZN5vgui25Frame10OnMinimizeEv
-gameui,100699D3,11,,,UNKNOWN,vgui2/controls/Frame.cpp,,,TODO,,,linux: _ZN5vgui25Frame19OnMinimizeToSysTrayEv
-gameui,100699DE,134,,,UNKNOWN,vgui2/controls/Frame.cpp,,,TODO,,,linux: _ZN5vgui25Frame14OnMousePressedENS_9MouseCodeE
-gameui,10069A64,40,,,UNKNOWN,vgui2/controls/Frame.cpp,,,TODO,,,linux: _ZN5vgui25Frame20SetMenuButtonVisibleEb
-gameui,10069A8C,31,,,UNKNOWN,vgui2/controls/Frame.cpp,,,TODO,,,linux: _ZN5vgui25Frame23SetMenuButtonResponsiveEb
-gameui,10069AAB,40,,,UNKNOWN,vgui2/controls/Frame.cpp,,,TODO,,,linux: _ZN5vgui25Frame24SetMinimizeButtonVisibleEb
-gameui,10069AD3,40,,,UNKNOWN,vgui2/controls/Frame.cpp,,,TODO,,,linux: _ZN5vgui25Frame24SetMaximizeButtonVisibleEb
-gameui,10069AFB,40,,,UNKNOWN,vgui2/controls/Frame.cpp,,,TODO,,,linux: _ZN5vgui25Frame33SetMinimizeToSysTrayButtonVisibleEb
-gameui,10069B23,40,,,UNKNOWN,vgui2/controls/Frame.cpp,,,TODO,,,linux: _ZN5vgui25Frame21SetCloseButtonVisibleEb
-gameui,10069B4B,129,,,UNKNOWN,vgui2/controls/Frame.cpp,,,TODO,,,linux: _ZN5vgui25Frame16OnKeyCodePressedENS_7KeyCodeE
-gameui,10069BCC,13,,,UNKNOWN,vgui2/controls/Frame.cpp,,,TODO,,,linux: _ZN5vgui25Frame17OnKeyCodeReleasedENS_7KeyCodeE
-gameui,10069BD9,11,,,UNKNOWN,vgui2/controls/Frame.cpp,,,TODO,,,linux: _ZN5vgui25Frame16OnKeyFocusTickedEv
-gameui,10069BE4,178,,,UNKNOWN,vgui2/controls/Frame.cpp,,,TODO,,,linux: _ZN5vgui25Frame19InternalFlashWindowEv
-gameui,10069C96,25,,,UNKNOWN,vgui2/controls/Frame.cpp,,,TODO,,,linux: _ZN5vgui25Frame12OnChildAddedEj
-gameui,10069CAF,45,,,UNKNOWN,vgui2/controls/Frame.cpp,,,TODO,,,linux: _ZN5vgui25Frame11FlashWindowEv
-gameui,10069CDC,58,,,UNKNOWN,vgui2/controls/Frame.cpp,,,TODO,,,linux: _ZN5vgui25Frame15FlashWindowStopEv
-gameui,10069D16,80,,,UNKNOWN,vgui2/controls/Frame.cpp,,,TODO,,,linux: _ZN5vgui25Frame19LoadControlSettingsEPKcS2_
-gameui,10069D66,867,,,UNKNOWN,vgui2/controls/Frame.cpp,,,TODO,,,linux: _ZN5vgui25Frame14OnKeyCodeTypedENS_7KeyCodeE
-gameui,1006A0C9,122,,,UNKNOWN,vgui2/controls/Frame.cpp,,,TODO,,,linux: _ZN5vgui25Frame10OnKeyTypedEw
-gameui,1006A143,97,,,UNKNOWN,vgui2/controls/Frame.cpp,,,TODO,,,linux: _ZN5vgui25Frame18SetTitleBarVisibleEb
-gameui,1006A1A4,25,,,UNKNOWN,vgui2/controls/Frame.cpp,,,TODO,,,linux: _ZN5vgui25Frame20SetDeleteSelfOnCloseEb
-gameui,1006A1BD,136,,,UNKNOWN,vgui2/controls/Frame.cpp,,,TODO,,,linux: _ZN5vgui25Frame24OnDialogVariablesChangedEP9KeyValues
-gameui,1006A245,117,,,UNKNOWN,vgui2/controls/Frame.cpp,,,TODO,,,linux: _ZN5vgui25Frame7DoModalEv
-gameui,1006A2BA,151,,,UNKNOWN,vgui2/controls/Frame.cpp,,,TODO,,,linux: _ZN5vgui25Frame10CloseModalEv
-gameui,1006A360,137,,,UNKNOWN,,,,TODO,,,
-gameui,1006A3F0,313,,,UNKNOWN,,,,TODO,,,
-gameui,1006A530,164,,,UNKNOWN,,,,TODO,,,
-gameui,1006A5E0,288,,,UNKNOWN,,,,TODO,,,
-gameui,1006A700,126,,,UNKNOWN,,,,TODO,,,
-gameui,1006A780,126,,,UNKNOWN,,,,TODO,,,
-gameui,1006A800,43,,,UNKNOWN,,,,TODO,,,
-gameui,1006A830,26,,,UNKNOWN,,,,TODO,,,
-gameui,1006A850,152,,,UNKNOWN,,,,TODO,,,
-gameui,1006A8F0,46,,,UNKNOWN,,,,TODO,,,
-gameui,1006A920,19,,,UNKNOWN,,,,TODO,,,
-gameui,1006A940,45,,,UNKNOWN,,,,TODO,,,
-gameui,1006A970,288,,,UNKNOWN,,,,TODO,,,
-gameui,1006AA90,318,,,UNKNOWN,,,,TODO,,,
-gameui,1006ABD0,209,,,UNKNOWN,,,,TODO,,,
-gameui,1006ACB0,508,,,UNKNOWN,,,,TODO,,,
-gameui,1006AEB0,46,,,UNKNOWN,,,,TODO,,,
-gameui,1006AEE0,19,,,UNKNOWN,,,,TODO,,,
-gameui,1006AF00,184,,,UNKNOWN,,,,TODO,,,
-gameui,1006AFC0,278,,vgui2::FrameButton::ApplySchemeSettings,ENGINE,,,,TODO,,linux_symbols:string:0.893,
-gameui,1006B0E0,71,,,UNKNOWN,,,,TODO,,,
-gameui,1006B130,246,,,UNKNOWN,,,,TODO,,,
-gameui,1006B230,30,,,UNKNOWN,,,,TODO,,,
-gameui,1006B250,149,,,UNKNOWN,,,,TODO,,,
-gameui,1006B2F0,46,,,UNKNOWN,,,,TODO,,,
-gameui,1006B320,19,,,UNKNOWN,,,,TODO,,,
-gameui,1006B340,146,,,UNKNOWN,,,,TODO,,,
-gameui,1006B3E0,19,,,UNKNOWN,,,,TODO,,,
-gameui,1006B400,102,,,UNKNOWN,,,,TODO,,,
-gameui,1006B470,64,,,UNKNOWN,,,,TODO,,,
-gameui,1006B4B0,10,,,UNKNOWN,,,,TODO,,,
-gameui,1006B4C0,10,,,UNKNOWN,,,,TODO,,,
-gameui,1006B4D0,244,,vgui2::FrameSystemButton::ApplySchemeSettings,ENGINE,,,,TODO,,linux_symbols:string:0.885,
-gameui,1006B5D0,15,,,UNKNOWN,,,,TODO,,,
-gameui,1006B5E0,389,,,UNKNOWN,,,,TODO,,,
-gameui,1006B770,42,,,UNKNOWN,,,,TODO,,,
-gameui,1006B7A0,117,,,UNKNOWN,,,,TODO,,,
-gameui,1006B820,46,,,UNKNOWN,,,,TODO,,,
-gameui,1006B850,19,,,UNKNOWN,,,,TODO,,,
-gameui,1006B870,46,,,UNKNOWN,,,,TODO,,,
-gameui,1006B8A0,19,,,UNKNOWN,,,,TODO,,,
-gameui,1006B8C0,102,,,UNKNOWN,,,,TODO,,,
-gameui,1006B930,10,,,UNKNOWN,,,,TODO,,,
-gameui,1006B940,19,,,UNKNOWN,,,,TODO,,,
-gameui,1006B960,107,,,UNKNOWN,,,,TODO,,,
-gameui,1006B9D0,120,,,UNKNOWN,,,,TODO,,,
-gameui,1006BA50,19,,,UNKNOWN,,,,TODO,,,
-gameui,1006BA70,107,,,UNKNOWN,,,,TODO,,,
-gameui,1006BAE0,19,,,UNKNOWN,,,,TODO,,,
-gameui,1006BB00,107,,,UNKNOWN,,,,TODO,,,
-gameui,1006BB70,19,,,UNKNOWN,,,,TODO,,,
-gameui,1006BB90,107,,,UNKNOWN,,,,TODO,,,
-gameui,1006BC00,19,,,UNKNOWN,,,,TODO,,,
-gameui,1006BC20,110,,,UNKNOWN,,,,TODO,,,
-gameui,1006BC90,19,,,UNKNOWN,,,,TODO,,,
-gameui,1006BCB0,107,,,UNKNOWN,,,,TODO,,,
-gameui,1006BD20,19,,,UNKNOWN,,,,TODO,,,
-gameui,1006BD40,107,,,UNKNOWN,,,,TODO,,,
-gameui,1006BDB0,13,,,UNKNOWN,,,,TODO,,,
-gameui,1006BDC0,13,,,UNKNOWN,,,,TODO,,,
-gameui,1006BE20,25,,,UNKNOWN,,,,TODO,,,
+gameui,10067550,1792,??0Frame@vgui2@@QAE@PAVPanel@1@PBD_N@Z,vgui2::Frame::Frame,ENGINE,,,,MATCHED,100,gameui_manual.csv,
+gameui,10067C50,785,??1Frame@vgui2@@UAE@XZ,vgui2::Frame::~Frame,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10067F61,603,?SetupResizeCursors@Frame@vgui2@@AAEXXZ,vgui2::Frame::SetupResizeCursors,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,100681BC,104,?Activate@Frame@vgui2@@UAEXXZ,vgui2::Frame::Activate,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui25Frame8ActivateEv
+gameui,10068224,180,?ActivateMinimized@Frame@vgui2@@UAEXXZ,vgui2::Frame::ActivateMinimized,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui25Frame17ActivateMinimizedEv
+gameui,100682D8,46,?IsMinimized@Frame@vgui2@@UAE_NXZ,vgui2::Frame::IsMinimized,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui25Frame11IsMinimizedEv
+gameui,10068306,101,?MoveToCenterOfScreen@Frame@vgui2@@UAEXXZ,vgui2::Frame::MoveToCenterOfScreen,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui25Frame20MoveToCenterOfScreenEv
+gameui,1006836B,221,?LayoutProportional@Frame@vgui2@@AAEXPAVFrameButton@2@@Z,vgui2::Frame::LayoutProportional,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui25Frame18LayoutProportionalEPNS_11FrameButtonE
+gameui,10068448,1149,?PerformLayout@Frame@vgui2@@MAEXXZ,vgui2::Frame::PerformLayout,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui25Frame13PerformLayoutEv
+gameui,100688C5,420,?SetTitle@Frame@vgui2@@UAEXPBD_N@Z,vgui2::Frame::SetTitle,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10068A69,170,?SetTitle@Frame@vgui2@@UAEXPBG_N@Z,vgui2::Frame::SetTitle,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10068B13,33,?InternalSetTitle@Frame@vgui2@@EAEXPBD@Z,vgui2::Frame::InternalSetTitle,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui25Frame16InternalSetTitleEPKc
+gameui,10068B34,25,?SetMoveable@Frame@vgui2@@UAEX_N@Z,vgui2::Frame::SetMoveable,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui25Frame11SetMoveableEb
+gameui,10068B4D,33,?SetSizeable@Frame@vgui2@@UAEX_N@Z,vgui2::Frame::SetSizeable,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui25Frame11SetSizeableEb
+gameui,10068B6E,20,?IsMoveable@Frame@vgui2@@UAE_NXZ,vgui2::Frame::IsMoveable,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui25Frame10IsMoveableEv
+gameui,10068B82,20,?IsSizeable@Frame@vgui2@@UAE_NXZ,vgui2::Frame::IsSizeable,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui25Frame10IsSizeableEv
+gameui,10068B96,154,?GetClientArea@Frame@vgui2@@MAEXAAH000@Z,vgui2::Frame::GetClientArea,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui25Frame13GetClientAreaERiS1_S1_S1_
+gameui,10068C30,465,?ApplyUserConfigSettings@Frame@vgui2@@MAEXPAVKeyValues@@@Z,vgui2::Frame::ApplyUserConfigSettings,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui25Frame23ApplyUserConfigSettingsEP9KeyValues
+gameui,10068E01,169,?GetUserConfigSettings@Frame@vgui2@@MAEXPAVKeyValues@@@Z,vgui2::Frame::GetUserConfigSettings,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui25Frame21GetUserConfigSettingsEP9KeyValues
+gameui,10068EAA,13,?HasUserConfigSettings@Frame@vgui2@@MAE_NXZ,vgui2::Frame::HasUserConfigSettings,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui25Frame21HasUserConfigSettingsEv
+gameui,10068EB7,15,?GetDefaultScreenPosition@Frame@vgui2@@MAE_NAAH000@Z,vgui2::Frame::GetDefaultScreenPosition,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui25Frame24GetDefaultScreenPositionERiS1_S1_S1_
+gameui,10068EC6,1032,?PaintBackground@Frame@vgui2@@MAEXXZ,vgui2::Frame::PaintBackground,ENGINE,vgui2/controls/Frame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui25Frame15PaintBackgroundEv
+gameui,100692CE,399,?ApplySchemeSettings@Frame@vgui2@@MAEXPAVIScheme@2@@Z,vgui2::Frame::ApplySchemeSettings,ENGINE,vgui2/controls/Frame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui25Frame19ApplySchemeSettingsEPNS_7ISchemeE
+gameui,1006945D,143,?ApplySettings@Frame@vgui2@@MAEXPAVKeyValues@@@Z,vgui2::Frame::ApplySettings,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui25Frame13ApplySettingsEP9KeyValues
+gameui,100694EC,157,?GetSettings@Frame@vgui2@@MAEXPAVKeyValues@@@Z,vgui2::Frame::GetSettings,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui25Frame11GetSettingsEP9KeyValues
+gameui,10069589,48,?GetDescription@Frame@vgui2@@MAEPBDXZ,vgui2::Frame::GetDescription,ENGINE,vgui2/controls/Frame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui25Frame14GetDescriptionEv
+gameui,100695B9,173,?OnClose@Frame@vgui2@@MAEXXZ,vgui2::Frame::OnClose,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui25Frame7OnCloseEv
+gameui,10069666,30,?OnCloseFrameButtonPressed@Frame@vgui2@@MAEXXZ,vgui2::Frame::OnCloseFrameButtonPressed,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui25Frame25OnCloseFrameButtonPressedEv
+gameui,10069684,173,?OnCommand@Frame@vgui2@@UAEXPBD@Z,vgui2::Frame::OnCommand,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui25Frame9OnCommandEPKc
+gameui,10069731,498,?GetSysMenu@Frame@vgui2@@UAEPAVMenu@2@XZ,vgui2::Frame::GetSysMenu,ENGINE,vgui2/controls/Frame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui25Frame10GetSysMenuEv
+gameui,10069923,103,?SetSysMenu@Frame@vgui2@@UAEXPAVMenu@2@@Z,vgui2::Frame::SetSysMenu,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui25Frame10SetSysMenuEPNS_4MenuE
+gameui,1006998A,25,?Close@Frame@vgui2@@UAEXXZ,vgui2::Frame::Close,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui25Frame5CloseEv
+gameui,100699A3,48,?OnMinimize@Frame@vgui2@@MAEXXZ,vgui2::Frame::OnMinimize,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui25Frame10OnMinimizeEv
+gameui,100699D3,11,?OnMinimizeToSysTray@Frame@vgui2@@MAEXXZ,vgui2::Frame::OnMinimizeToSysTray,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui25Frame19OnMinimizeToSysTrayEv
+gameui,100699DE,134,?OnMousePressed@Frame@vgui2@@MAEXW4MouseCode@2@@Z,vgui2::Frame::OnMousePressed,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui25Frame14OnMousePressedENS_9MouseCodeE
+gameui,10069A64,40,?SetMenuButtonVisible@Frame@vgui2@@UAEX_N@Z,vgui2::Frame::SetMenuButtonVisible,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui25Frame20SetMenuButtonVisibleEb
+gameui,10069A8C,31,?SetMenuButtonResponsive@Frame@vgui2@@QAEX_N@Z,vgui2::Frame::SetMenuButtonResponsive,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui25Frame23SetMenuButtonResponsiveEb
+gameui,10069AAB,40,?SetMinimizeButtonVisible@Frame@vgui2@@UAEX_N@Z,vgui2::Frame::SetMinimizeButtonVisible,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui25Frame24SetMinimizeButtonVisibleEb
+gameui,10069AD3,40,?SetMaximizeButtonVisible@Frame@vgui2@@UAEX_N@Z,vgui2::Frame::SetMaximizeButtonVisible,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui25Frame24SetMaximizeButtonVisibleEb
+gameui,10069AFB,40,?SetMinimizeToSysTrayButtonVisible@Frame@vgui2@@UAEX_N@Z,vgui2::Frame::SetMinimizeToSysTrayButtonVisible,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui25Frame33SetMinimizeToSysTrayButtonVisibleEb
+gameui,10069B23,40,?SetCloseButtonVisible@Frame@vgui2@@UAEX_N@Z,vgui2::Frame::SetCloseButtonVisible,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui25Frame21SetCloseButtonVisibleEb
+gameui,10069B4B,129,?OnKeyCodePressed@Frame@vgui2@@MAEXW4KeyCode@2@@Z,vgui2::Frame::OnKeyCodePressed,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui25Frame16OnKeyCodePressedENS_7KeyCodeE
+gameui,10069BCC,13,?OnKeyCodeReleased@Frame@vgui2@@MAEXW4KeyCode@2@@Z,vgui2::Frame::OnKeyCodeReleased,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui25Frame17OnKeyCodeReleasedENS_7KeyCodeE
+gameui,10069BD9,11,?OnKeyFocusTicked@Frame@vgui2@@MAEXXZ,vgui2::Frame::OnKeyFocusTicked,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui25Frame16OnKeyFocusTickedEv
+gameui,10069BE4,178,?InternalFlashWindow@Frame@vgui2@@EAEXXZ,vgui2::Frame::InternalFlashWindow,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui25Frame19InternalFlashWindowEv
+gameui,10069C96,25,?OnChildAdded@Frame@vgui2@@MAEXI@Z,vgui2::Frame::OnChildAdded,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui25Frame12OnChildAddedEj
+gameui,10069CAF,45,?FlashWindow@Frame@vgui2@@UAEXXZ,vgui2::Frame::FlashWindow,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui25Frame11FlashWindowEv
+gameui,10069CDC,58,?FlashWindowStop@Frame@vgui2@@UAEXXZ,vgui2::Frame::FlashWindowStop,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui25Frame15FlashWindowStopEv
+gameui,10069D16,80,?LoadControlSettings@Frame@vgui2@@MAEXPBD0@Z,vgui2::Frame::LoadControlSettings,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui25Frame19LoadControlSettingsEPKcS2_
+gameui,10069D66,867,?OnKeyCodeTyped@Frame@vgui2@@MAEXW4KeyCode@2@@Z,vgui2::Frame::OnKeyCodeTyped,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui25Frame14OnKeyCodeTypedENS_7KeyCodeE
+gameui,1006A0C9,122,?OnKeyTyped@Frame@vgui2@@MAEXG@Z,vgui2::Frame::OnKeyTyped,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui25Frame10OnKeyTypedEw
+gameui,1006A143,97,?SetTitleBarVisible@Frame@vgui2@@UAEX_N@Z,vgui2::Frame::SetTitleBarVisible,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui25Frame18SetTitleBarVisibleEb
+gameui,1006A1A4,25,?SetDeleteSelfOnClose@Frame@vgui2@@UAEX_N@Z,vgui2::Frame::SetDeleteSelfOnClose,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui25Frame20SetDeleteSelfOnCloseEb
+gameui,1006A1BD,136,?OnDialogVariablesChanged@Frame@vgui2@@EAEXPAVKeyValues@@@Z,vgui2::Frame::OnDialogVariablesChanged,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui25Frame24OnDialogVariablesChangedEP9KeyValues
+gameui,1006A245,117,?DoModal@Frame@vgui2@@UAEXXZ,vgui2::Frame::DoModal,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui25Frame7DoModalEv
+gameui,1006A2BA,151,?CloseModal@Frame@vgui2@@UAEXXZ,vgui2::Frame::CloseModal,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui25Frame10CloseModalEv
+gameui,1006A360,137,??0GripPanel@?%Frame.cpp20302634@@QAE@PAVFrame@vgui2@@PBDHH@Z,??0GripPanel@?%Frame.cpp20302634@@QAE@PAVFrame@vgui2@@PBDHH@Z,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,1006A3F0,313,?moved@GripPanel@?%Frame.cpp20302634@@UAEXHH@Z,?moved@GripPanel@?%Frame.cpp20302634@@UAEXHH@Z,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,1006A530,164,?OnCursorMoved@GripPanel@?%Frame.cpp20302634@@UAEXHH@Z,?OnCursorMoved@GripPanel@?%Frame.cpp20302634@@UAEXHH@Z,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,1006A5E0,288,?OnMousePressed@GripPanel@?%Frame.cpp20302634@@UAEXW4MouseCode@vgui2@@@Z,?OnMousePressed@GripPanel@?%Frame.cpp20302634@@UAEXW4MouseCode@vgui2@@@Z,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,1006A700,126,?Paint@GripPanel@?%Frame.cpp20302634@@UAEXXZ,?Paint@GripPanel@?%Frame.cpp20302634@@UAEXXZ,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,1006A780,126,?PaintBackground@GripPanel@?%Frame.cpp20302634@@UAEXXZ,?PaintBackground@GripPanel@?%Frame.cpp20302634@@UAEXXZ,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,1006A800,43,?OnMouseReleased@GripPanel@?%Frame.cpp20302634@@UAEXW4MouseCode@vgui2@@@Z,?OnMouseReleased@GripPanel@?%Frame.cpp20302634@@UAEXW4MouseCode@vgui2@@@Z,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,1006A830,26,?OnMouseCaptureLost@GripPanel@?%Frame.cpp20302634@@UAEXXZ,?OnMouseCaptureLost@GripPanel@?%Frame.cpp20302634@@UAEXXZ,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,1006A850,152,?ApplySchemeSettings@GripPanel@?%Frame.cpp20302634@@UAEXPAVIScheme@vgui2@@@Z,?ApplySchemeSettings@GripPanel@?%Frame.cpp20302634@@UAEXPAVIScheme@vgui2@@@Z,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,1006A8F0,46,??_GGripPanel@?%Frame.cpp20302634@@UAEPAXI@Z,??_GGripPanel@?%Frame.cpp20302634@@UAEPAXI@Z,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,1006A920,19,??1GripPanel@?%Frame.cpp20302634@@UAE@XZ,??1GripPanel@?%Frame.cpp20302634@@UAE@XZ,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,1006A940,45,??0CaptionGripPanel@?%Frame.cpp20302634@@QAE@PAVFrame@vgui2@@PBD@Z,??0CaptionGripPanel@?%Frame.cpp20302634@@QAE@PAVFrame@vgui2@@PBD@Z,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,1006A970,288,?moved@CaptionGripPanel@?%Frame.cpp20302634@@UAEXHH@Z,?moved@CaptionGripPanel@?%Frame.cpp20302634@@UAEXHH@Z,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,1006AA90,318,?tryToDock@CaptionGripPanel@?%Frame.cpp20302634@@QAEXIAAH0@Z,?tryToDock@CaptionGripPanel@?%Frame.cpp20302634@@QAEXIAAH0@Z,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,1006ABD0,209,?getInsideSnapPosition@CaptionGripPanel@?%Frame.cpp20302634@@QAE_NHHHHAAH0@Z,?getInsideSnapPosition@CaptionGripPanel@?%Frame.cpp20302634@@QAE_NHHHHAAH0@Z,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,1006ACB0,508,?getOutsideSnapPosition@CaptionGripPanel@?%Frame.cpp20302634@@QAE_NHHHHAAH0@Z,?getOutsideSnapPosition@CaptionGripPanel@?%Frame.cpp20302634@@QAE_NHHHHAAH0@Z,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,1006AEB0,46,??_GCaptionGripPanel@?%Frame.cpp20302634@@UAEPAXI@Z,??_GCaptionGripPanel@?%Frame.cpp20302634@@UAEPAXI@Z,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,1006AEE0,19,??1CaptionGripPanel@?%Frame.cpp20302634@@UAE@XZ,??1CaptionGripPanel@?%Frame.cpp20302634@@UAE@XZ,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,1006AF00,184,??0FrameButton@vgui2@@QAE@PAVPanel@1@PBD1@Z,vgui2::FrameButton::FrameButton,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,1006AFC0,278,?ApplySchemeSettings@FrameButton@vgui2@@UAEXPAVIScheme@2@@Z,vgui2::FrameButton::ApplySchemeSettings,ENGINE,,,,MATCHED,100,gameui_manual.csv,
+gameui,1006B0E0,71,?GetBorder@FrameButton@vgui2@@UAEPAVIBorder@2@_N000@Z,vgui2::FrameButton::GetBorder,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,1006B130,246,?SetDisabledLook@FrameButton@vgui2@@UAEX_N@Z,vgui2::FrameButton::SetDisabledLook,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,1006B230,30,?PerformLayout@FrameButton@vgui2@@UAEXXZ,vgui2::FrameButton::PerformLayout,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,1006B250,149,?OnMousePressed@FrameButton@vgui2@@UAEXW4MouseCode@2@@Z,vgui2::FrameButton::OnMousePressed,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,1006B2F0,46,??_GFrameButton@vgui2@@UAEPAXI@Z,destructor',UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,1006B320,19,??1FrameButton@vgui2@@UAE@XZ,vgui2::FrameButton::~FrameButton,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,1006B340,146,??0FrameSystemButton@vgui2@@QAE@PAVPanel@1@PBD@Z,vgui2::FrameSystemButton::FrameSystemButton,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,1006B3E0,19,??0FrameSystemButton_RegisterMap@FrameSystemButton@vgui2@@QAE@XZ,vgui2::FrameSystemButton::FrameSystemButton_RegisterMap::FrameSystemButton_RegisterMap,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,1006B400,102,?ChainToMap@FrameSystemButton@vgui2@@SAXXZ,vgui2::FrameSystemButton::ChainToMap,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,1006B470,64,?GetMessageMap@FrameSystemButton@vgui2@@UAEPAUPanelMessageMap@2@XZ,vgui2::FrameSystemButton::GetMessageMap,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,1006B4B0,10,?GetPanelClassName@FrameSystemButton@vgui2@@SAPBDXZ,vgui2::FrameSystemButton::GetPanelClassName,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,1006B4C0,10,?GetPanelBaseClassName@FrameSystemButton@vgui2@@SAPBDXZ,vgui2::FrameSystemButton::GetPanelBaseClassName,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,1006B4D0,244,?ApplySchemeSettings@FrameSystemButton@vgui2@@UAEXPAVIScheme@2@@Z,vgui2::FrameSystemButton::ApplySchemeSettings,ENGINE,,,,MATCHED,100,gameui_manual.csv,
+gameui,1006B5D0,15,?GetBorder@FrameSystemButton@vgui2@@UAEPAVIBorder@2@_N000@Z,vgui2::FrameSystemButton::GetBorder,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,1006B5E0,389,?SetEnabled@FrameSystemButton@vgui2@@UAEX_N@Z,vgui2::FrameSystemButton::SetEnabled,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,1006B770,42,?OnMousePressed@FrameSystemButton@vgui2@@UAEXW4MouseCode@2@@Z,vgui2::FrameSystemButton::OnMousePressed,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,1006B7A0,117,?OnMouseDoublePressed@FrameSystemButton@vgui2@@UAEXW4MouseCode@2@@Z,vgui2::FrameSystemButton::OnMouseDoublePressed,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,1006B820,46,??_GFrameSystemButton@vgui2@@UAEPAXI@Z,destructor',UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,1006B850,19,??1FrameSystemButton@vgui2@@UAE@XZ,vgui2::FrameSystemButton::~FrameSystemButton,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,1006B870,46,??_GFrame@vgui2@@UAEPAXI@Z,destructor',UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,1006B8A0,19,??0Frame_RegisterMap@Frame@vgui2@@QAE@XZ,vgui2::Frame::Frame_RegisterMap::Frame_RegisterMap,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,1006B8C0,102,?ChainToMap@Frame@vgui2@@SAXXZ,vgui2::Frame::ChainToMap,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,1006B930,10,?GetPanelBaseClassName@Frame@vgui2@@SAPBDXZ,vgui2::Frame::GetPanelBaseClassName,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,1006B940,19,??0PanelMessageFunc_Close@Frame@vgui2@@QAE@XZ,vgui2::Frame::PanelMessageFunc_Close::PanelMessageFunc_Close,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,1006B960,107,?InitVar@PanelMessageFunc_Close@Frame@vgui2@@SAXXZ,vgui2::Frame::PanelMessageFunc_Close::InitVar,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,1006B9D0,120,?AddToMap@Frame@vgui2@@SAXPBDP8Panel@2@AEXXZHH0H0@Z,vgui2::Frame::AddToMap,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,1006BA50,19,??0PanelMessageFunc_CloseModal@Frame@vgui2@@QAE@XZ,vgui2::Frame::PanelMessageFunc_CloseModal::PanelMessageFunc_CloseModal,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,1006BA70,107,?InitVar@PanelMessageFunc_CloseModal@Frame@vgui2@@SAXXZ,vgui2::Frame::PanelMessageFunc_CloseModal::InitVar,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,1006BAE0,19,??0PanelMessageFunc_OnMinimize@Frame@vgui2@@QAE@XZ,vgui2::Frame::PanelMessageFunc_OnMinimize::PanelMessageFunc_OnMinimize,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,1006BB00,107,?InitVar@PanelMessageFunc_OnMinimize@Frame@vgui2@@SAXXZ,vgui2::Frame::PanelMessageFunc_OnMinimize::InitVar,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,1006BB70,19,??0PanelMessageFunc_OnCloseFrameButtonPressed@Frame@vgui2@@QAE@XZ,vgui2::Frame::PanelMessageFunc_OnCloseFrameButtonPressed::PanelMessageFunc_OnCloseFrameButtonPressed,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,1006BB90,107,?InitVar@PanelMessageFunc_OnCloseFrameButtonPressed@Frame@vgui2@@SAXXZ,vgui2::Frame::PanelMessageFunc_OnCloseFrameButtonPressed::InitVar,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,1006BC00,19,??0PanelMessageFunc_InternalSetTitle@Frame@vgui2@@QAE@XZ,vgui2::Frame::PanelMessageFunc_InternalSetTitle::PanelMessageFunc_InternalSetTitle,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,1006BC20,110,?InitVar@PanelMessageFunc_InternalSetTitle@Frame@vgui2@@SAXXZ,vgui2::Frame::PanelMessageFunc_InternalSetTitle::InitVar,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,1006BC90,19,??0PanelMessageFunc_InternalFlashWindow@Frame@vgui2@@QAE@XZ,vgui2::Frame::PanelMessageFunc_InternalFlashWindow::PanelMessageFunc_InternalFlashWindow,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,1006BCB0,107,?InitVar@PanelMessageFunc_InternalFlashWindow@Frame@vgui2@@SAXXZ,vgui2::Frame::PanelMessageFunc_InternalFlashWindow::InitVar,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,1006BD20,19,??0PanelMessageFunc_OnDialogVariablesChanged@Frame@vgui2@@QAE@XZ,vgui2::Frame::PanelMessageFunc_OnDialogVariablesChanged::PanelMessageFunc_OnDialogVariablesChanged,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,1006BD40,107,?InitVar@PanelMessageFunc_OnDialogVariablesChanged@Frame@vgui2@@SAXXZ,vgui2::Frame::PanelMessageFunc_OnDialogVariablesChanged::InitVar,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,1006BDB0,13,?OnShowMenu@MenuButton@vgui2@@UAEXPAVMenu@2@@Z,vgui2::MenuButton::OnShowMenu,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,1006BDC0,13,?OnHideMenu@MenuButton@vgui2@@UAEXPAVMenu@2@@Z,vgui2::MenuButton::OnHideMenu,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,1006BE20,25,?SetResponsive@FrameSystemButton@vgui2@@QAEX_N@Z,vgui2::FrameSystemButton::SetResponsive,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
 gameui,1006BE40,227,??0EditablePanel@vgui2@@QAE@PAVPanel@1@PBD@Z,vgui2::EditablePanel::EditablePanel,UNKNOWN,vgui2/controls/EditablePanel.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,1006BF23,231,??0EditablePanel@vgui2@@QAE@PAVPanel@1@PBDK@Z,vgui2::EditablePanel::EditablePanel,UNKNOWN,vgui2/controls/EditablePanel.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,1006C00A,143,??1EditablePanel@vgui2@@UAE@XZ,vgui2::EditablePanel::~EditablePanel,UNKNOWN,vgui2/controls/EditablePanel.cpp,,,MATCHED,100,gameui_manual.csv,
@@ -10976,170 +10976,170 @@ gameui,10074407,31,??3KeyValues@@SAXPAXHPBDH@Z,delete,UNKNOWN,public/KeyValues.c
 gameui,10074430,46,??_GKeyValues@@AAEPAXI@Z,destructor',UNKNOWN,public/KeyValues.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,10074460,103,?PutChar@CUtlBuffer@@QAEXD@Z,CUtlBuffer::PutChar,UNKNOWN,public/KeyValues.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,100744D0,31,?PeekPut@CUtlBuffer@@QAEPAXH@Z,CUtlBuffer::PeekPut,UNKNOWN,public/KeyValues.cpp,,,MATCHED,100,gameui_manual.csv,
-gameui,100744F0,812,,,UNKNOWN,,,,TODO,,,
-gameui,1007481C,156,,,UNKNOWN,,,,TODO,,,
-gameui,100748B8,318,,,UNKNOWN,,,,TODO,,,
-gameui,100749F6,107,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText10SetFgColorE5Color
-gameui,10074A61,317,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText11OnKillFocusEv
-gameui,10074B9E,65,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText13OnSizeChangedEii
-gameui,10074BDF,174,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText7SetTextEPKc
-gameui,10074C8D,234,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText7SetTextEPKw
-gameui,10074D77,313,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText18CursorToPixelSpaceEiRiS1_
-gameui,10074EB0,538,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText18PixelToCursorSpaceEii
-gameui,100750CA,354,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText8DrawCharEwRNS0_12TRenderStateEmi
-gameui,1007522C,137,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText12FinishingURLEii
-gameui,100752B5,952,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText15PaintBackgroundEv
-gameui,1007566D,95,,,UNKNOWN,,,,TODO,,,
-gameui,100756CC,136,,,UNKNOWN,,,,TODO,,,
-gameui,10075754,266,,,UNKNOWN,,,,TODO,,,
-gameui,1007585E,136,,,UNKNOWN,,,,TODO,,,
-gameui,100758E6,120,,,UNKNOWN,,,,TODO,,,
-gameui,1007595E,67,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText7OnThinkEv
-gameui,100759A1,30,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText13PerformLayoutEv
-gameui,100759BF,166,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText17InsertColorChangeE5Color
-gameui,10075A65,188,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText18InsertIndentChangeEi
-gameui,10075B21,180,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText24InsertClickableTextStartEPKc
-gameui,10075BD5,152,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText22InsertClickableTextEndEv
-gameui,10075C6D,91,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText14AddAnotherLineERiS1_
-gameui,10075CC8,1299,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText21RecalculateLineBreaksEv
-gameui,100761DB,712,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText29LayoutVerticalScrollBarSliderEv
-gameui,100764A3,99,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText20SetVerticalScrollbarEb
-gameui,10076506,307,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText14CreateEditMenuEv
-gameui,10076639,44,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText18OnMouseFocusTickedEv
-gameui,10076665,21,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText15OnCursorEnteredEv
-gameui,1007667A,36,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText14OnCursorExitedEv
-gameui,1007669E,147,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText13OnCursorMovedEii
-gameui,10076731,237,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText14OnMousePressedENS_9MouseCodeE
-gameui,1007681E,94,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText15OnMouseReleasedENS_9MouseCodeE
-gameui,1007687C,228,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText20OnMouseDoublePressedENS_9MouseCodeE
-gameui,10076960,21,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText18OnMouseCaptureLostEv
-gameui,10076975,879,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText14OnKeyCodeTypedENS_7KeyCodeE
-gameui,10076D62,25,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText14OnMouseWheeledEi
-gameui,10076D7B,130,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText13MoveScrollBarEi
-gameui,10076DFD,25,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText19SetMaximumCharCountEi
-gameui,10076E16,53,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText13GetCursorLineEv
-gameui,10076E4B,232,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText13GotoWordRightEv
-gameui,10076F33,208,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText12GotoWordLeftEv
-gameui,10077003,73,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText13GotoTextStartEv
-gameui,1007704C,118,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText11GotoTextEndEv
-gameui,100770C2,300,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText18TruncateTextStreamEv
-gameui,100771EE,118,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText10InsertCharEw
-gameui,10077264,163,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText12InsertStringEPKc
-gameui,10077307,100,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText12InsertStringEPKw
-gameui,1007736B,35,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText10SelectNoneEv
-gameui,1007738E,99,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText16GetSelectedRangeERiS1_
-gameui,100773F1,495,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText12OpenEditMenuEv
-gameui,100775E0,38,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText11CutSelectedEv
-gameui,10077606,222,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText12CopySelectedEv
-gameui,100776E4,152,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText17GetStartDrawIndexERi
-gameui,1007777C,142,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText7GetTextEiPwi
-gameui,1007780A,95,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText7GetTextEiPci
-gameui,10077869,64,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText7SetFontEm
-gameui,100778A9,32,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText13OnSliderMovedEv
-gameui,100778C9,116,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText11RequestInfoEP9KeyValues
-gameui,1007793D,25,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText9OnSetTextEPKw
-gameui,10077956,364,,vgui2::RichText::OnClickPanel,ENGINE,vgui2/controls/RichText.cpp,,,TODO,,linux_symbols:string:0.75,linux: _ZN5vgui28RichText12OnClickPanelEi
-gameui,10077AC2,185,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText13ApplySettingsEP9KeyValues
-gameui,10077B7B,89,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText11GetSettingsEP9KeyValues
-gameui,10077BD4,48,,vgui2::RichText::GetDescription,ENGINE,vgui2/controls/RichText.cpp,,,TODO,,linux_symbols:string:0.625,linux: _ZN5vgui28RichText14GetDescriptionEv
-gameui,10077C04,25,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText11GetNumLinesEv
-gameui,10077C1D,145,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText15SetToFullHeightEv
-gameui,10077CAE,57,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText13SelectAllTextEv
-gameui,10077CE7,37,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText12SelectNoTextEv
-gameui,10077D0C,19,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText10OnSetFocusEv
-gameui,10077D1F,75,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText25InvalidateLineBreakStreamEv
-gameui,10077D6A,197,,vgui2::RichText::InsertPossibleURLString,ENGINE,vgui2/controls/RichText.cpp,,,TODO,,linux_symbols:caller:0.714,linux: _ZN5vgui28RichText23InsertPossibleURLStringEPKc5ColorS3_
-gameui,10077E2F,503,,vgui2::RichText::ParseTextStringForUrls,ENGINE,vgui2/controls/RichText.cpp,,,TODO,,linux_symbols:string:0.518,linux: _ZN5vgui28RichText22ParseTextStringForUrlsEPKciPciRb
-gameui,10078026,105,,,UNKNOWN,vgui2/controls/RichText.cpp,,,TODO,,,linux: _ZN5vgui28RichText13OnTextClickedEPKw
-gameui,10078090,46,,,UNKNOWN,,,,TODO,,,
-gameui,100780C0,25,,,UNKNOWN,,,,TODO,,,
-gameui,100780E0,22,,,UNKNOWN,,,,TODO,,,
-gameui,10078100,17,,,UNKNOWN,,,,TODO,,,
-gameui,10078120,19,,,UNKNOWN,,,,TODO,,,
-gameui,10078140,102,,,UNKNOWN,,,,TODO,,,
-gameui,100781B0,10,,,UNKNOWN,,,,TODO,,,
-gameui,100781C0,19,,,UNKNOWN,,,,TODO,,,
-gameui,100781E0,107,,,UNKNOWN,,,,TODO,,,
-gameui,10078250,120,,,UNKNOWN,,,,TODO,,,
-gameui,100782D0,19,,,UNKNOWN,,,,TODO,,,
-gameui,100782F0,107,,,UNKNOWN,,,,TODO,,,
-gameui,10078360,19,,,UNKNOWN,,,,TODO,,,
-gameui,10078380,110,,,UNKNOWN,,,,TODO,,,
-gameui,100783F0,19,,,UNKNOWN,,,,TODO,,,
-gameui,10078410,107,,,UNKNOWN,,,,TODO,,,
-gameui,10078480,19,,,UNKNOWN,,,,TODO,,,
-gameui,100784A0,110,,,UNKNOWN,,,,TODO,,,
-gameui,10078510,118,,,UNKNOWN,,,,TODO,,,
-gameui,10078590,19,,,UNKNOWN,,,,TODO,,,
-gameui,100785B0,102,,,UNKNOWN,,,,TODO,,,
-gameui,10078620,64,,,UNKNOWN,,,,TODO,,,
-gameui,10078660,10,,,UNKNOWN,,,,TODO,,,
-gameui,10078670,10,,,UNKNOWN,,,,TODO,,,
-gameui,10078680,22,,,UNKNOWN,,,,TODO,,,
-gameui,100786A0,95,,,UNKNOWN,,,,TODO,,,
-gameui,10078700,46,,,UNKNOWN,,,,TODO,,,
-gameui,10078730,19,,,UNKNOWN,,,,TODO,,,
-gameui,100787A0,43,,,UNKNOWN,,,,TODO,,,
-gameui,100787D0,34,,,UNKNOWN,,,,TODO,,,
-gameui,10078800,16,,,UNKNOWN,,,,TODO,,,
-gameui,10078810,68,,,UNKNOWN,,,,TODO,,,
-gameui,10078860,45,,,UNKNOWN,,,,TODO,,,
-gameui,10078890,221,,,UNKNOWN,,,,TODO,,,
-gameui,10078970,50,,,UNKNOWN,,,,TODO,,,
-gameui,100789B0,27,,,UNKNOWN,,,,TODO,,,
-gameui,100789D0,25,,,UNKNOWN,,,,TODO,,,
-gameui,100789F0,19,,,UNKNOWN,,,,TODO,,,
-gameui,10078A10,17,,,UNKNOWN,,,,TODO,,,
-gameui,10078A30,32,,,UNKNOWN,,,,TODO,,,
-gameui,10078A50,33,,,UNKNOWN,,,,TODO,,,
-gameui,10078A80,95,,,UNKNOWN,,,,TODO,,,
-gameui,10078AE0,70,,,UNKNOWN,,,,TODO,,,
-gameui,10078B30,17,,,UNKNOWN,,,,TODO,,,
-gameui,10078B50,63,,,UNKNOWN,,,,TODO,,,
-gameui,10078B90,50,,,UNKNOWN,,,,TODO,,,
-gameui,10078BD0,27,,,UNKNOWN,,,,TODO,,,
-gameui,10078BF0,25,,,UNKNOWN,,,,TODO,,,
-gameui,10078C10,17,,,UNKNOWN,,,,TODO,,,
-gameui,10078C30,17,,,UNKNOWN,,,,TODO,,,
-gameui,10078C50,51,,,UNKNOWN,,,,TODO,,,
-gameui,10078C90,32,,,UNKNOWN,,,,TODO,,,
-gameui,10078CB0,95,,,UNKNOWN,,,,TODO,,,
-gameui,10078D10,70,,,UNKNOWN,,,,TODO,,,
-gameui,10078D60,25,,,UNKNOWN,,,,TODO,,,
-gameui,10078D80,65,,,UNKNOWN,,,,TODO,,,
-gameui,10078DD0,35,,,UNKNOWN,,,,TODO,,,
-gameui,10078E00,85,,,UNKNOWN,,,,TODO,,,
-gameui,10078E60,11,,,UNKNOWN,,,,TODO,,,
-gameui,10078E70,74,,,UNKNOWN,,,,TODO,,,
-gameui,10078EC0,19,,,UNKNOWN,,,,TODO,,,
-gameui,10078EE0,24,,,UNKNOWN,,,,TODO,,,
-gameui,10078F00,16,,,UNKNOWN,,,,TODO,,,
-gameui,10078F10,42,,,UNKNOWN,,,,TODO,,,
-gameui,10078F40,5,,,UNKNOWN,,,,TODO,,,
-gameui,10078F50,86,,,UNKNOWN,,,,TODO,,,
-gameui,10078FB0,25,,,UNKNOWN,,,,TODO,,,
-gameui,10078FD0,65,,,UNKNOWN,,,,TODO,,,
-gameui,10079020,35,,,UNKNOWN,,,,TODO,,,
-gameui,10079050,86,,,UNKNOWN,,,,TODO,,,
-gameui,100790B0,11,,,UNKNOWN,,,,TODO,,,
-gameui,100790C0,75,,,UNKNOWN,,,,TODO,,,
-gameui,10079110,19,,,UNKNOWN,,,,TODO,,,
-gameui,10079130,26,,,UNKNOWN,,,,TODO,,,
-gameui,10079150,5,,,UNKNOWN,,,,TODO,,,
-gameui,10079160,87,,,UNKNOWN,,,,TODO,,,
-gameui,100791C0,85,,,UNKNOWN,,,,TODO,,,
-gameui,10079220,197,,,UNKNOWN,,,,TODO,,,
-gameui,100792F0,69,,,UNKNOWN,,,,TODO,,,
-gameui,10079340,60,,,UNKNOWN,,,,TODO,,,
-gameui,10079380,87,,,UNKNOWN,,,,TODO,,,
-gameui,100793E0,86,,,UNKNOWN,,,,TODO,,,
-gameui,10079440,69,,,UNKNOWN,,,,TODO,,,
-gameui,10079490,76,,,UNKNOWN,,,,TODO,,,
-gameui,100794E0,17,,,UNKNOWN,,,,TODO,,,
-gameui,10079500,25,,,UNKNOWN,,,,TODO,,,
-gameui,10079520,17,,,UNKNOWN,,,,TODO,,,
-gameui,10079540,199,,,UNKNOWN,,,,TODO,,,
-gameui,10079610,25,,,UNKNOWN,,,,TODO,,,
+gameui,100744F0,812,??0RichText@vgui2@@QAE@PAVPanel@1@PBD_N@Z,vgui2::RichText::RichText,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,1007481C,156,??1RichText@vgui2@@UAE@XZ,vgui2::RichText::~RichText,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,100748B8,318,?ApplySchemeSettings@RichText@vgui2@@MAEXPAVIScheme@2@@Z,vgui2::RichText::ApplySchemeSettings,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,100749F6,107,?SetFgColor@RichText@vgui2@@UAEXVColor@@@Z,vgui2::RichText::SetFgColor,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui28RichText10SetFgColorE5Color
+gameui,10074A61,317,?OnKillFocus@RichText@vgui2@@MAEXXZ,vgui2::RichText::OnKillFocus,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui28RichText11OnKillFocusEv
+gameui,10074B9E,65,?OnSizeChanged@RichText@vgui2@@MAEXHH@Z,vgui2::RichText::OnSizeChanged,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui28RichText13OnSizeChangedEii
+gameui,10074BDF,174,?SetText@RichText@vgui2@@QAEXPBD@Z,vgui2::RichText::SetText,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui28RichText7SetTextEPKc
+gameui,10074C8D,234,?SetText@RichText@vgui2@@QAEXPBG@Z,vgui2::RichText::SetText,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui28RichText7SetTextEPKw
+gameui,10074D77,313,?CursorToPixelSpace@RichText@vgui2@@AAEXHAAH0@Z,vgui2::RichText::CursorToPixelSpace,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui28RichText18CursorToPixelSpaceEiRiS1_
+gameui,10074EB0,538,?PixelToCursorSpace@RichText@vgui2@@AAEHHH@Z,vgui2::RichText::PixelToCursorSpace,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui28RichText18PixelToCursorSpaceEii
+gameui,100750CA,354,?DrawChar@RichText@vgui2@@AAEHGAAUTRenderState@12@KH@Z,vgui2::RichText::DrawChar,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui28RichText8DrawCharEwRNS0_12TRenderStateEmi
+gameui,1007522C,137,?FinishingURL@RichText@vgui2@@AAEXHH@Z,vgui2::RichText::FinishingURL,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui28RichText12FinishingURLEii
+gameui,100752B5,952,?PaintBackground@RichText@vgui2@@MAEXXZ,vgui2::RichText::PaintBackground,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui28RichText15PaintBackgroundEv
+gameui,1007566D,95,?GetClickableTextIndexStart@RichText@vgui2@@AAEHH@Z,vgui2::RichText::GetClickableTextIndexStart,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,100756CC,136,?RecalculateDefaultState@RichText@vgui2@@AAEXH@Z,vgui2::RichText::RecalculateDefaultState,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10075754,266,?UpdateRenderState@RichText@vgui2@@AAE_NHAAUTRenderState@12@@Z,vgui2::RichText::UpdateRenderState,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,1007585E,136,?FindFormatStreamIndexForTextStreamPos@RichText@vgui2@@AAEHH@Z,vgui2::RichText::FindFormatStreamIndexForTextStreamPos,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,100758E6,120,?GenerateRenderStateForTextStreamIndex@RichText@vgui2@@AAEXHAAUTRenderState@12@@Z,vgui2::RichText::GenerateRenderStateForTextStreamIndex,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,1007595E,67,?OnThink@RichText@vgui2@@MAEXXZ,vgui2::RichText::OnThink,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui28RichText7OnThinkEv
+gameui,100759A1,30,?PerformLayout@RichText@vgui2@@MAEXXZ,vgui2::RichText::PerformLayout,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui28RichText13PerformLayoutEv
+gameui,100759BF,166,?InsertColorChange@RichText@vgui2@@QAEXVColor@@@Z,vgui2::RichText::InsertColorChange,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui28RichText17InsertColorChangeE5Color
+gameui,10075A65,188,?InsertIndentChange@RichText@vgui2@@QAEXH@Z,vgui2::RichText::InsertIndentChange,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui28RichText18InsertIndentChangeEi
+gameui,10075B21,180,?InsertClickableTextStart@RichText@vgui2@@QAEXPBD@Z,vgui2::RichText::InsertClickableTextStart,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui28RichText24InsertClickableTextStartEPKc
+gameui,10075BD5,152,?InsertClickableTextEnd@RichText@vgui2@@QAEXXZ,vgui2::RichText::InsertClickableTextEnd,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui28RichText22InsertClickableTextEndEv
+gameui,10075C6D,91,?AddAnotherLine@RichText@vgui2@@AAEXAAH0@Z,vgui2::RichText::AddAnotherLine,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui28RichText14AddAnotherLineERiS1_
+gameui,10075CC8,1299,?RecalculateLineBreaks@RichText@vgui2@@AAEXXZ,vgui2::RichText::RecalculateLineBreaks,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui28RichText21RecalculateLineBreaksEv
+gameui,100761DB,712,?LayoutVerticalScrollBarSlider@RichText@vgui2@@AAEXXZ,vgui2::RichText::LayoutVerticalScrollBarSlider,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui28RichText29LayoutVerticalScrollBarSliderEv
+gameui,100764A3,99,?SetVerticalScrollbar@RichText@vgui2@@QAEX_N@Z,vgui2::RichText::SetVerticalScrollbar,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui28RichText20SetVerticalScrollbarEb
+gameui,10076506,307,?CreateEditMenu@RichText@vgui2@@AAEXXZ,vgui2::RichText::CreateEditMenu,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui28RichText14CreateEditMenuEv
+gameui,10076639,44,?OnMouseFocusTicked@RichText@vgui2@@MAEXXZ,vgui2::RichText::OnMouseFocusTicked,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui28RichText18OnMouseFocusTickedEv
+gameui,10076665,21,?OnCursorEntered@RichText@vgui2@@MAEXXZ,vgui2::RichText::OnCursorEntered,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui28RichText15OnCursorEnteredEv
+gameui,1007667A,36,?OnCursorExited@RichText@vgui2@@MAEXXZ,vgui2::RichText::OnCursorExited,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui28RichText14OnCursorExitedEv
+gameui,1007669E,147,?OnCursorMoved@RichText@vgui2@@MAEXHH@Z,vgui2::RichText::OnCursorMoved,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui28RichText13OnCursorMovedEii
+gameui,10076731,237,?OnMousePressed@RichText@vgui2@@MAEXW4MouseCode@2@@Z,vgui2::RichText::OnMousePressed,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui28RichText14OnMousePressedENS_9MouseCodeE
+gameui,1007681E,94,?OnMouseReleased@RichText@vgui2@@MAEXW4MouseCode@2@@Z,vgui2::RichText::OnMouseReleased,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui28RichText15OnMouseReleasedENS_9MouseCodeE
+gameui,1007687C,228,?OnMouseDoublePressed@RichText@vgui2@@MAEXW4MouseCode@2@@Z,vgui2::RichText::OnMouseDoublePressed,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui28RichText20OnMouseDoublePressedENS_9MouseCodeE
+gameui,10076960,21,?OnMouseCaptureLost@RichText@vgui2@@MAEXXZ,vgui2::RichText::OnMouseCaptureLost,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui28RichText18OnMouseCaptureLostEv
+gameui,10076975,879,?OnKeyCodeTyped@RichText@vgui2@@MAEXW4KeyCode@2@@Z,vgui2::RichText::OnKeyCodeTyped,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui28RichText14OnKeyCodeTypedENS_7KeyCodeE
+gameui,10076D62,25,?OnMouseWheeled@RichText@vgui2@@MAEXH@Z,vgui2::RichText::OnMouseWheeled,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui28RichText14OnMouseWheeledEi
+gameui,10076D7B,130,?MoveScrollBar@RichText@vgui2@@AAEXH@Z,vgui2::RichText::MoveScrollBar,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui28RichText13MoveScrollBarEi
+gameui,10076DFD,25,?SetMaximumCharCount@RichText@vgui2@@QAEXH@Z,vgui2::RichText::SetMaximumCharCount,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui28RichText19SetMaximumCharCountEi
+gameui,10076E16,53,?GetCursorLine@RichText@vgui2@@AAEHXZ,vgui2::RichText::GetCursorLine,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui28RichText13GetCursorLineEv
+gameui,10076E4B,232,?GotoWordRight@RichText@vgui2@@AAEXXZ,vgui2::RichText::GotoWordRight,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui28RichText13GotoWordRightEv
+gameui,10076F33,208,?GotoWordLeft@RichText@vgui2@@AAEXXZ,vgui2::RichText::GotoWordLeft,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui28RichText12GotoWordLeftEv
+gameui,10077003,73,?GotoTextStart@RichText@vgui2@@QAEXXZ,vgui2::RichText::GotoTextStart,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui28RichText13GotoTextStartEv
+gameui,1007704C,118,?GotoTextEnd@RichText@vgui2@@QAEXXZ,vgui2::RichText::GotoTextEnd,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui28RichText11GotoTextEndEv
+gameui,100770C2,300,?TruncateTextStream@RichText@vgui2@@AAEXXZ,vgui2::RichText::TruncateTextStream,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui28RichText18TruncateTextStreamEv
+gameui,100771EE,118,?InsertChar@RichText@vgui2@@QAEXG@Z,vgui2::RichText::InsertChar,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui28RichText10InsertCharEw
+gameui,10077264,163,?InsertString@RichText@vgui2@@QAEXPBD@Z,vgui2::RichText::InsertString,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui28RichText12InsertStringEPKc
+gameui,10077307,100,?InsertString@RichText@vgui2@@QAEXPBG@Z,vgui2::RichText::InsertString,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui28RichText12InsertStringEPKw
+gameui,1007736B,35,?SelectNone@RichText@vgui2@@QAEXXZ,vgui2::RichText::SelectNone,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui28RichText10SelectNoneEv
+gameui,1007738E,99,?GetSelectedRange@RichText@vgui2@@AAE_NAAH0@Z,vgui2::RichText::GetSelectedRange,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui28RichText16GetSelectedRangeERiS1_
+gameui,100773F1,495,?OpenEditMenu@RichText@vgui2@@AAEXXZ,vgui2::RichText::OpenEditMenu,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui28RichText12OpenEditMenuEv
+gameui,100775E0,38,?CutSelected@RichText@vgui2@@UAEXXZ,vgui2::RichText::CutSelected,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui28RichText11CutSelectedEv
+gameui,10077606,222,?CopySelected@RichText@vgui2@@UAEXXZ,vgui2::RichText::CopySelected,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui28RichText12CopySelectedEv
+gameui,100776E4,152,?GetStartDrawIndex@RichText@vgui2@@AAEHAAH@Z,vgui2::RichText::GetStartDrawIndex,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui28RichText17GetStartDrawIndexERi
+gameui,1007777C,142,?GetText@RichText@vgui2@@QAEXHPAGH@Z,vgui2::RichText::GetText,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui28RichText7GetTextEiPwi
+gameui,1007780A,95,?GetText@RichText@vgui2@@QAEXHPADH@Z,vgui2::RichText::GetText,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui28RichText7GetTextEiPci
+gameui,10077869,64,?SetFont@RichText@vgui2@@QAEXK@Z,vgui2::RichText::SetFont,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui28RichText7SetFontEm
+gameui,100778A9,32,?OnSliderMoved@RichText@vgui2@@MAEXXZ,vgui2::RichText::OnSliderMoved,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui28RichText13OnSliderMovedEv
+gameui,100778C9,116,?RequestInfo@RichText@vgui2@@UAE_NPAVKeyValues@@@Z,vgui2::RichText::RequestInfo,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui28RichText11RequestInfoEP9KeyValues
+gameui,1007793D,25,?OnSetText@RichText@vgui2@@MAEXPBG@Z,vgui2::RichText::OnSetText,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui28RichText9OnSetTextEPKw
+gameui,10077956,364,?OnClickPanel@RichText@vgui2@@MAEXH@Z,vgui2::RichText::OnClickPanel,ENGINE,vgui2/controls/RichText.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui28RichText12OnClickPanelEi
+gameui,10077AC2,185,?ApplySettings@RichText@vgui2@@MAEXPAVKeyValues@@@Z,vgui2::RichText::ApplySettings,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui28RichText13ApplySettingsEP9KeyValues
+gameui,10077B7B,89,?GetSettings@RichText@vgui2@@MAEXPAVKeyValues@@@Z,vgui2::RichText::GetSettings,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui28RichText11GetSettingsEP9KeyValues
+gameui,10077BD4,48,?GetDescription@RichText@vgui2@@MAEPBDXZ,vgui2::RichText::GetDescription,ENGINE,vgui2/controls/RichText.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui28RichText14GetDescriptionEv
+gameui,10077C04,25,?GetNumLines@RichText@vgui2@@QAEHXZ,vgui2::RichText::GetNumLines,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui28RichText11GetNumLinesEv
+gameui,10077C1D,145,?SetToFullHeight@RichText@vgui2@@QAEXXZ,vgui2::RichText::SetToFullHeight,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui28RichText15SetToFullHeightEv
+gameui,10077CAE,57,?SelectAllText@RichText@vgui2@@QAEXXZ,vgui2::RichText::SelectAllText,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui28RichText13SelectAllTextEv
+gameui,10077CE7,37,?SelectNoText@RichText@vgui2@@QAEXXZ,vgui2::RichText::SelectNoText,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui28RichText12SelectNoTextEv
+gameui,10077D0C,19,?OnSetFocus@RichText@vgui2@@MAEXXZ,vgui2::RichText::OnSetFocus,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui28RichText10OnSetFocusEv
+gameui,10077D1F,75,?InvalidateLineBreakStream@RichText@vgui2@@AAEXXZ,vgui2::RichText::InvalidateLineBreakStream,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui28RichText25InvalidateLineBreakStreamEv
+gameui,10077D6A,197,?InsertPossibleURLString@RichText@vgui2@@QAEXPBDVColor@@1@Z,vgui2::RichText::InsertPossibleURLString,ENGINE,vgui2/controls/RichText.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui28RichText23InsertPossibleURLStringEPKc5ColorS3_
+gameui,10077E2F,503,?ParseTextStringForUrls@RichText@vgui2@@IAEHPBDHPADHAA_N@Z,vgui2::RichText::ParseTextStringForUrls,ENGINE,vgui2/controls/RichText.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui28RichText22ParseTextStringForUrlsEPKciPciRb
+gameui,10078026,105,?OnTextClicked@RichText@vgui2@@MAEXPBG@Z,vgui2::RichText::OnTextClicked,UNKNOWN,vgui2/controls/RichText.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui28RichText13OnTextClickedEPKw
+gameui,10078090,46,??_GRichText@vgui2@@UAEPAXI@Z,destructor',UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,100780C0,25,??0TRenderState@RichText@vgui2@@QAE@XZ,vgui2::RichText::TRenderState::TRenderState,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,100780E0,22,??0TFormatStream@RichText@vgui2@@QAE@XZ,vgui2::RichText::TFormatStream::TFormatStream,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10078100,17,?GetTextIndex_guess@ClickPanel@vgui2@@QAEHXZ,vgui2::ClickPanel::GetTextIndex_guess,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10078120,19,??0RichText_RegisterMap@RichText@vgui2@@QAE@XZ,vgui2::RichText::RichText_RegisterMap::RichText_RegisterMap,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10078140,102,?ChainToMap@RichText@vgui2@@SAXXZ,vgui2::RichText::ChainToMap,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,100781B0,10,?GetPanelBaseClassName@RichText@vgui2@@SAPBDXZ,vgui2::RichText::GetPanelBaseClassName,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,100781C0,19,??0PanelMessageFunc_CutSelected@RichText@vgui2@@QAE@XZ,vgui2::RichText::PanelMessageFunc_CutSelected::PanelMessageFunc_CutSelected,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,100781E0,107,?InitVar@PanelMessageFunc_CutSelected@RichText@vgui2@@SAXXZ,vgui2::RichText::PanelMessageFunc_CutSelected::InitVar,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10078250,120,?AddToMap@RichText@vgui2@@SAXPBDP8Panel@2@AEXXZHH0H0@Z,vgui2::RichText::AddToMap,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,100782D0,19,??0PanelMessageFunc_CopySelected@RichText@vgui2@@QAE@XZ,vgui2::RichText::PanelMessageFunc_CopySelected::PanelMessageFunc_CopySelected,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,100782F0,107,?InitVar@PanelMessageFunc_CopySelected@RichText@vgui2@@SAXXZ,vgui2::RichText::PanelMessageFunc_CopySelected::InitVar,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10078360,19,??0PanelMessageFunc_OnSetText@RichText@vgui2@@QAE@XZ,vgui2::RichText::PanelMessageFunc_OnSetText::PanelMessageFunc_OnSetText,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10078380,110,?InitVar@PanelMessageFunc_OnSetText@RichText@vgui2@@SAXXZ,vgui2::RichText::PanelMessageFunc_OnSetText::InitVar,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,100783F0,19,??0PanelMessageFunc_OnSliderMoved@RichText@vgui2@@QAE@XZ,vgui2::RichText::PanelMessageFunc_OnSliderMoved::PanelMessageFunc_OnSliderMoved,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10078410,107,?InitVar@PanelMessageFunc_OnSliderMoved@RichText@vgui2@@SAXXZ,vgui2::RichText::PanelMessageFunc_OnSliderMoved::InitVar,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10078480,19,??0PanelMessageFunc_OnClickPanel@RichText@vgui2@@QAE@XZ,vgui2::RichText::PanelMessageFunc_OnClickPanel::PanelMessageFunc_OnClickPanel,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,100784A0,110,?InitVar@PanelMessageFunc_OnClickPanel@RichText@vgui2@@SAXXZ,vgui2::RichText::PanelMessageFunc_OnClickPanel::InitVar,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10078510,118,??0ClickPanel@vgui2@@QAE@PAVPanel@1@@Z,vgui2::ClickPanel::ClickPanel,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10078590,19,??0ClickPanel_RegisterMap@ClickPanel@vgui2@@QAE@XZ,vgui2::ClickPanel::ClickPanel_RegisterMap::ClickPanel_RegisterMap,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,100785B0,102,?ChainToMap@ClickPanel@vgui2@@SAXXZ,vgui2::ClickPanel::ChainToMap,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10078620,64,?GetMessageMap@ClickPanel@vgui2@@UAEPAUPanelMessageMap@2@XZ,vgui2::ClickPanel::GetMessageMap,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10078660,10,?GetPanelClassName@ClickPanel@vgui2@@SAPBDXZ,vgui2::ClickPanel::GetPanelClassName,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10078670,10,?GetPanelBaseClassName@ClickPanel@vgui2@@SAPBDXZ,vgui2::ClickPanel::GetPanelBaseClassName,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10078680,22,?SetTextIndex_guess@ClickPanel@vgui2@@QAEXH@Z,vgui2::ClickPanel::SetTextIndex_guess,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,100786A0,95,?OnMousePressed@ClickPanel@vgui2@@UAEXW4MouseCode@2@@Z,vgui2::ClickPanel::OnMousePressed,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10078700,46,??_GClickPanel@vgui2@@UAEPAXI@Z,destructor',UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10078730,19,??1ClickPanel@vgui2@@UAE@XZ,vgui2::ClickPanel::~ClickPanel,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,100787A0,43,??0?$Dar@PAUClickPanel@vgui2@@@vgui2@@QAE@XZ,*>,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,100787D0,34,??1?$Dar@PAUClickPanel@vgui2@@@vgui2@@QAE@XZ,*>,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10078800,16,?GetCount@?$Dar@PAUClickPanel@vgui2@@@vgui2@@QAEHXZ,*>::GetCount,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10078810,68,?AddElement@?$Dar@PAUClickPanel@vgui2@@@vgui2@@QAEHPAUClickPanel@2@@Z,*>::AddElement,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10078860,45,??A?$Dar@PAUClickPanel@vgui2@@@vgui2@@QAEPAUClickPanel@1@H@Z,*>::operator[],UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10078890,221,?EnsureCapacity@?$Dar@PAUClickPanel@vgui2@@@vgui2@@QAEXH@Z,*>::EnsureCapacity,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10078970,50,??0?$CUtlVector@G@@QAE@HH@Z,short>,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,100789B0,27,??1?$CUtlVector@G@@QAE@XZ,short>,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,100789D0,25,??A?$CUtlVector@G@@QAEAAGH@Z,short>::operator[],UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,100789F0,19,?Base@?$CUtlVector@G@@QAEPAGXZ,short>::Base,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10078A10,17,?Count@?$CUtlVector@G@@QBEHXZ,short>::Count,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10078A30,32,?AddToTail@?$CUtlVector@G@@QAEHABG@Z,short>::AddToTail,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10078A50,33,?EnsureCapacity@?$CUtlVector@G@@QAEXH@Z,short>::EnsureCapacity,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10078A80,95,?RemoveMultiple@?$CUtlVector@G@@QAEXHH@Z,short>::RemoveMultiple,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10078AE0,70,?RemoveAll@?$CUtlVector@G@@QAEXXZ,short>::RemoveAll,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10078B30,17,?Count@?$CUtlVector@H@@QBEHXZ,CUtlVector<int>::Count,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10078B50,63,?Remove@?$CUtlVector@H@@QAEXH@Z,CUtlVector<int>::Remove,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10078B90,50,??0?$CUtlVector@UTFormatStream@RichText@vgui2@@@@QAE@HH@Z,vgui2::RichText::TFormatStream>,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10078BD0,27,??1?$CUtlVector@UTFormatStream@RichText@vgui2@@@@QAE@XZ,vgui2::RichText::TFormatStream>,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10078BF0,25,??A?$CUtlVector@UTFormatStream@RichText@vgui2@@@@QAEAAUTFormatStream@RichText@vgui2@@H@Z,vgui2::RichText::TFormatStream>::operator[],UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10078C10,17,?Count@?$CUtlVector@UTFormatStream@RichText@vgui2@@@@QBEHXZ,vgui2::RichText::TFormatStream>::Count,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10078C30,17,?Size@?$CUtlVector@UTFormatStream@RichText@vgui2@@@@QBEHXZ,vgui2::RichText::TFormatStream>::Size,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10078C50,51,?IsValidIndex@?$CUtlVector@UTFormatStream@RichText@vgui2@@@@QBE_NH@Z,vgui2::RichText::TFormatStream>::IsValidIndex,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10078C90,32,?AddToTail@?$CUtlVector@UTFormatStream@RichText@vgui2@@@@QAEHABUTFormatStream@RichText@vgui2@@@Z,vgui2::RichText::TFormatStream>::AddToTail,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10078CB0,95,?RemoveMultiple@?$CUtlVector@UTFormatStream@RichText@vgui2@@@@QAEXHH@Z,vgui2::RichText::TFormatStream>::RemoveMultiple,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10078D10,70,?RemoveAll@?$CUtlVector@UTFormatStream@RichText@vgui2@@@@QAEXXZ,vgui2::RichText::TFormatStream>::RemoveAll,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10078D60,25,?Element@?$CUtlVector@G@@QAEAAGH@Z,short>::Element,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10078D80,65,?InsertBefore@?$CUtlVector@G@@QAEHHABG@Z,short>::InsertBefore,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10078DD0,35,?Purge@?$CUtlVector@G@@QAEXXZ,short>::Purge,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10078E00,85,?ShiftElementsLeft@?$CUtlVector@G@@IAEXHH@Z,short>::ShiftElementsLeft,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10078E60,11,?ResetDbgInfo@?$CUtlVector@G@@IAEXXZ,short>::ResetDbgInfo,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10078E70,74,??0?$CUtlMemory@G@@QAE@HH@Z,short>,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10078EC0,19,??1?$CUtlMemory@G@@QAE@XZ,short>,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10078EE0,24,??A?$CUtlMemory@G@@QAEAAGH@Z,short>::operator[],UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10078F00,16,?Base@?$CUtlMemory@G@@QAEPAGXZ,short>::Base,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10078F10,42,?EnsureCapacity@?$CUtlMemory@G@@QAEXH@Z,short>::EnsureCapacity,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10078F40,5,?Destruct@@YAXPAG@Z,Destruct,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10078F50,86,?ShiftElementsLeft@?$CUtlVector@H@@IAEXHH@Z,CUtlVector<int>::ShiftElementsLeft,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10078FB0,25,?Element@?$CUtlVector@UTFormatStream@RichText@vgui2@@@@QAEAAUTFormatStream@RichText@vgui2@@H@Z,vgui2::RichText::TFormatStream>::Element,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10078FD0,65,?InsertBefore@?$CUtlVector@UTFormatStream@RichText@vgui2@@@@QAEHHABUTFormatStream@RichText@vgui2@@@Z,vgui2::RichText::TFormatStream>::InsertBefore,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10079020,35,?Purge@?$CUtlVector@UTFormatStream@RichText@vgui2@@@@QAEXXZ,vgui2::RichText::TFormatStream>::Purge,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10079050,86,?ShiftElementsLeft@?$CUtlVector@UTFormatStream@RichText@vgui2@@@@IAEXHH@Z,vgui2::RichText::TFormatStream>::ShiftElementsLeft,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,100790B0,11,?ResetDbgInfo@?$CUtlVector@UTFormatStream@RichText@vgui2@@@@IAEXXZ,vgui2::RichText::TFormatStream>::ResetDbgInfo,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,100790C0,75,??0?$CUtlMemory@UTFormatStream@RichText@vgui2@@@@QAE@HH@Z,vgui2::RichText::TFormatStream>,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10079110,19,??1?$CUtlMemory@UTFormatStream@RichText@vgui2@@@@QAE@XZ,vgui2::RichText::TFormatStream>,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10079130,26,??A?$CUtlMemory@UTFormatStream@RichText@vgui2@@@@QAEAAUTFormatStream@RichText@vgui2@@H@Z,vgui2::RichText::TFormatStream>::operator[],UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10079150,5,?Destruct@@YAXPAUTFormatStream@RichText@vgui2@@@Z,Destruct,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10079160,87,?GrowVector@?$CUtlVector@G@@IAEXH@Z,short>::GrowVector,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,100791C0,85,?ShiftElementsRight@?$CUtlVector@G@@IAEXHH@Z,short>::ShiftElementsRight,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10079220,197,?Grow@?$CUtlMemory@G@@QAEXH@Z,short>::Grow,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,100792F0,69,?Purge@?$CUtlMemory@G@@QAEXXZ,short>::Purge,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10079340,60,?CopyConstruct@@YAXPAGABG@Z,CopyConstruct,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10079380,87,?GrowVector@?$CUtlVector@UTFormatStream@RichText@vgui2@@@@IAEXH@Z,vgui2::RichText::TFormatStream>::GrowVector,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,100793E0,86,?ShiftElementsRight@?$CUtlVector@UTFormatStream@RichText@vgui2@@@@IAEXHH@Z,vgui2::RichText::TFormatStream>::ShiftElementsRight,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10079440,69,?Purge@?$CUtlMemory@UTFormatStream@RichText@vgui2@@@@QAEXXZ,vgui2::RichText::TFormatStream>::Purge,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10079490,76,?CopyConstruct@@YAXPAUTFormatStream@RichText@vgui2@@ABU123@@Z,CopyConstruct,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,100794E0,17,?NumAllocated@?$CUtlMemory@G@@QBEHXZ,short>::NumAllocated,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10079500,25,?IsExternallyAllocated@?$CUtlMemory@G@@QBE_NXZ,short>::IsExternallyAllocated,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10079520,17,?NumAllocated@?$CUtlMemory@UTFormatStream@RichText@vgui2@@@@QBEHXZ,vgui2::RichText::TFormatStream>::NumAllocated,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10079540,199,?Grow@?$CUtlMemory@UTFormatStream@RichText@vgui2@@@@QAEXH@Z,vgui2::RichText::TFormatStream>::Grow,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10079610,25,?IsExternallyAllocated@?$CUtlMemory@UTFormatStream@RichText@vgui2@@@@QBE_NXZ,vgui2::RichText::TFormatStream>::IsExternallyAllocated,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
 gameui,10079630,664,,,UNKNOWN,,,,TODO,,,
 gameui,100798C8,71,,vgui2::ScrollBar::ApplySchemeSettings,ENGINE,vgui2/controls/ScrollBar.cpp,,,TODO,,linux_symbols:string:0.812,linux: _ZN5vgui29ScrollBar19ApplySchemeSettingsEPNS_7ISchemeE
 gameui,1007990F,46,,,UNKNOWN,vgui2/controls/ScrollBar.cpp,,,TODO,,,linux: _ZN5vgui29ScrollBar21SetPaintBorderEnabledEb
@@ -11280,140 +11280,140 @@ gameui,1007D200,102,,,UNKNOWN,,,,TODO,,,
 gameui,1007D270,64,,,UNKNOWN,,,,TODO,,,
 gameui,1007D2B0,10,,,UNKNOWN,,,,TODO,,,
 gameui,1007D2C0,10,,,UNKNOWN,,,,TODO,,,
-gameui,1007D2D0,839,,,UNKNOWN,,,,TODO,,,
-gameui,1007D617,118,,,UNKNOWN,,,,TODO,,,
-gameui,1007D68D,513,,vgui2::TextEntry::ApplySchemeSettings,ENGINE,vgui2/controls/TextEntry.cpp,,,TODO,,linux_symbols:string:0.653,linux: _ZN5vgui29TextEntry19ApplySchemeSettingsEPNS_7ISchemeE
-gameui,1007D88E,25,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry18SetDisabledBgColorE5Color
-gameui,1007D8A7,261,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry11OnKillFocusEv
-gameui,1007D9AC,135,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry13OnSizeChangedEii
-gameui,1007DA33,192,,,UNKNOWN,,,,TODO,,,
-gameui,1007DAF3,293,,,UNKNOWN,,,,TODO,,,
-gameui,1007DC18,180,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry9SetCharAtEwi
-gameui,1007DCCC,60,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry16ResetCursorBlinkEv
-gameui,1007DD08,36,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry13SetTextHiddenEb
-gameui,1007DD2C,88,,,UNKNOWN,,,,TODO,,,
-gameui,1007DD84,318,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry18CursorToPixelSpaceEiRiS1_
-gameui,1007DEC2,511,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry18PixelToCursorSpaceEii
-gameui,1007E0C1,431,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry8DrawCharEwmiii
-gameui,1007E270,177,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry10DrawCursorEii
-gameui,1007E321,134,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry13NeedsEllipsesEmPi
-gameui,1007E3A7,1413,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry15PaintBackgroundEv
-gameui,1007E92C,73,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry13PerformLayoutEv
-gameui,1007E975,78,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry14AddAnotherLineERiS1_
-gameui,1007E9C3,803,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry21RecalculateLineBreaksEv
-gameui,1007ECE6,691,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry29LayoutVerticalScrollBarSliderEv
-gameui,1007EF99,36,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry10SetEnabledEb
-gameui,1007EFBD,25,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry12SetMultilineEb
-gameui,1007EFD6,25,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry16SetCatchEnterKeyEb
-gameui,1007EFEF,235,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry20SetVerticalScrollbarEb
-gameui,1007F0DA,25,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry11SetEditableEb
-gameui,1007F0F3,537,,vgui2::TextEntry::CreateEditMenu,ENGINE,vgui2/controls/TextEntry.cpp,,,TODO,,linux_symbols:string:0.761,linux: _ZN5vgui29TextEntry14CreateEditMenuEv
-gameui,1007F30C,70,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry10IsEditableEv
-gameui,1007F352,44,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry18OnMouseFocusTickedEv
-gameui,1007F37E,21,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry15OnCursorEnteredEv
-gameui,1007F393,36,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry14OnCursorExitedEv
-gameui,1007F3B7,258,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry13OnCursorMovedEii
-gameui,1007F4B9,309,,vgui2::TextEntry::OnMousePressed,ENGINE,vgui2/controls/TextEntry.cpp,,,TODO,,linux_symbols:caller:0.667,linux: _ZN5vgui29TextEntry14OnMousePressedENS_9MouseCodeE
-gameui,1007F5EE,100,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry15OnMouseReleasedENS_9MouseCodeE
-gameui,1007F652,211,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry20OnMouseDoublePressedENS_9MouseCodeE
-gameui,1007F725,21,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry18OnMouseCaptureLostEv
-gameui,1007F73A,2111,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry14OnKeyCodeTypedENS_7KeyCodeE
-gameui,10080054,275,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry10OnKeyTypedEw
-gameui,10080167,51,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry14OnMouseWheeledEi
-gameui,1008019A,100,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry13MoveScrollBarEi
-gameui,100801FE,106,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry16OnKeyFocusTickedEv
-gameui,10080268,141,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry11SelectCheckEv
-gameui,100802F5,25,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry19SetMaximumCharCountEi
-gameui,1008030E,20,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry19GetMaximumCharCountEv
-gameui,10080322,44,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry33SetAutoProgressOnHittingCharLimitEb
-gameui,1008034E,25,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry7SetWrapEb
-gameui,10080367,25,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry11SendNewLineEb
-gameui,10080380,85,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry11IsLineBreakEi
-gameui,100803D5,158,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry8GotoLeftEv
-gameui,10080473,252,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry9GotoRightEv
-gameui,1008056F,134,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry13GetCursorLineEv
-gameui,100805F5,152,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry6GotoUpEv
-gameui,1008068D,257,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry8GotoDownEv
-gameui,1008078E,97,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry9GetYStartEv
-gameui,100807EF,435,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry10MoveCursorEii
-gameui,100809A2,25,,,UNKNOWN,,,,TODO,,,
-gameui,100809BB,122,,,UNKNOWN,,,,TODO,,,
-gameui,10080A35,177,,,UNKNOWN,,,,TODO,,,
-gameui,10080AE6,115,,,UNKNOWN,,,,TODO,,,
-gameui,10080B59,78,,,UNKNOWN,,,,TODO,,,
-gameui,10080BA7,50,,,UNKNOWN,,,,TODO,,,
-gameui,10080BD9,282,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry13GotoWordRightEv
-gameui,10080CF3,258,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry12GotoWordLeftEv
-gameui,10080DF5,100,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry13GotoTextStartEv
-gameui,10080E59,102,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry11GotoTextEndEv
-gameui,10080EBF,109,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry15GotoFirstOfLineEv
-gameui,10080F2C,332,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry19GetCurrentLineStartEv
-gameui,10081078,99,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry13GotoEndOfLineEv
-gameui,100810DB,313,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry17GetCurrentLineEndEv
-gameui,10081214,1249,,vgui2::TextEntry::InsertChar,ENGINE,vgui2/controls/TextEntry.cpp,,,TODO,,linux_symbols:string:0.829,linux: _ZN5vgui29TextEntry10InsertCharEw
-gameui,100816F5,155,,,UNKNOWN,,,,TODO,,,
-gameui,10081790,110,,,UNKNOWN,,,,TODO,,,
-gameui,100817FE,179,,,UNKNOWN,,,,TODO,,,
-gameui,100818B1,349,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry9BackspaceEv
-gameui,10081A0E,287,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry14DeleteSelectedEv
-gameui,10081B2D,330,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry6DeleteEv
-gameui,10081C77,35,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry10SelectNoneEv
-gameui,10081C9A,99,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry16GetSelectedRangeERiS1_
-gameui,10081CFD,501,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry12OpenEditMenuEv
-gameui,10081EF2,81,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry11CutSelectedEv
-gameui,10081F43,277,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry12CopySelectedEv
-gameui,10082058,785,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry5PasteEv
-gameui,10082369,113,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry4UndoEv
-gameui,100823DA,67,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry13SaveUndoStateEv
-gameui,1008241D,718,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry17GetStartDrawIndexERi
-gameui,100826EB,116,,,UNKNOWN,,,,TODO,,,
-gameui,1008275F,128,,,UNKNOWN,,,,TODO,,,
-gameui,100827DF,103,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry16FireActionSignalEv
-gameui,10082846,54,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry7SetFontEm
-gameui,1008287C,22,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry13OnSliderMovedEv
-gameui,10082892,219,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry11RequestInfoEP9KeyValues
-gameui,1008296D,31,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry9OnSetTextEPKw
-gameui,1008298C,56,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry10OnSetStateEi
-gameui,100829C4,202,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry13ApplySettingsEP9KeyValues
-gameui,10082A8E,196,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry11GetSettingsEP9KeyValues
-gameui,10082B52,48,,vgui2::TextEntry::GetDescription,ENGINE,vgui2/controls/TextEntry.cpp,,,TODO,,linux_symbols:string:0.625,linux: _ZN5vgui29TextEntry14GetDescriptionEv
-gameui,10082B82,25,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry11GetNumLinesEv
-gameui,10082B9B,129,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry15SetToFullHeightEv
-gameui,10082C1C,101,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry13SelectAllTextEb
-gameui,10082C81,37,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry12SelectNoTextEv
-gameui,10082CA6,203,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry14SetToFullWidthEv
-gameui,10082D71,41,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry21SelectAllOnFirstFocusEb
-gameui,10082D9A,204,,,UNKNOWN,vgui2/controls/TextEntry.cpp,,,TODO,,,linux: _ZN5vgui29TextEntry10OnSetFocusEv
-gameui,10082E66,25,,,UNKNOWN,,,,TODO,,,
-gameui,10082E7F,20,,,UNKNOWN,,,,TODO,,,
-gameui,10082E93,44,,,UNKNOWN,,,,TODO,,,
-gameui,10082EBF,44,,,UNKNOWN,,,,TODO,,,
-gameui,10082EEB,56,,,UNKNOWN,,,,TODO,,,
-gameui,10082F23,22,,,UNKNOWN,,,,TODO,,,
-gameui,10082F40,46,,,UNKNOWN,,,,TODO,,,
-gameui,10082F70,19,,,UNKNOWN,,,,TODO,,,
-gameui,10082F90,102,,,UNKNOWN,,,,TODO,,,
-gameui,10083000,10,,,UNKNOWN,,,,TODO,,,
-gameui,10083010,19,,,UNKNOWN,,,,TODO,,,
-gameui,10083030,107,,,UNKNOWN,,,,TODO,,,
-gameui,100830A0,120,,,UNKNOWN,,,,TODO,,,
-gameui,10083120,19,,,UNKNOWN,,,,TODO,,,
-gameui,10083140,107,,,UNKNOWN,,,,TODO,,,
-gameui,100831B0,19,,,UNKNOWN,,,,TODO,,,
-gameui,100831D0,107,,,UNKNOWN,,,,TODO,,,
-gameui,10083240,19,,,UNKNOWN,,,,TODO,,,
-gameui,10083260,110,,,UNKNOWN,,,,TODO,,,
-gameui,100832D0,19,,,UNKNOWN,,,,TODO,,,
-gameui,100832F0,107,,,UNKNOWN,,,,TODO,,,
-gameui,10083360,19,,,UNKNOWN,,,,TODO,,,
-gameui,10083380,110,,,UNKNOWN,,,,TODO,,,
-gameui,10083400,32,,,UNKNOWN,,,,TODO,,,
-gameui,10083420,80,,,UNKNOWN,,,,TODO,,,
-gameui,10083470,100,,,UNKNOWN,,,,TODO,,,
-gameui,100834E0,63,,,UNKNOWN,,,,TODO,,,
-gameui,10083520,109,,,UNKNOWN,,,,TODO,,,
-gameui,10083590,33,,,UNKNOWN,,,,TODO,,,
-gameui,100835C0,25,,,UNKNOWN,,,,TODO,,,
+gameui,1007D2D0,839,??0TextEntry@vgui2@@QAE@PAVPanel@1@PBD@Z,vgui2::TextEntry::TextEntry,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,1007D617,118,??1TextEntry@vgui2@@UAE@XZ,vgui2::TextEntry::~TextEntry,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,1007D68D,513,?ApplySchemeSettings@TextEntry@vgui2@@MAEXPAVIScheme@2@@Z,vgui2::TextEntry::ApplySchemeSettings,ENGINE,vgui2/controls/TextEntry.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29TextEntry19ApplySchemeSettingsEPNS_7ISchemeE
+gameui,1007D88E,25,?SetDisabledBgColor@TextEntry@vgui2@@UAEXVColor@@@Z,vgui2::TextEntry::SetDisabledBgColor,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29TextEntry18SetDisabledBgColorE5Color
+gameui,1007D8A7,261,?OnKillFocus@TextEntry@vgui2@@MAEXXZ,vgui2::TextEntry::OnKillFocus,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29TextEntry11OnKillFocusEv
+gameui,1007D9AC,135,?OnSizeChanged@TextEntry@vgui2@@MAEXHH@Z,vgui2::TextEntry::OnSizeChanged,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29TextEntry13OnSizeChangedEii
+gameui,1007DA33,192,?SetText@TextEntry@vgui2@@UAEXPBD@Z,vgui2::TextEntry::SetText,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,1007DAF3,293,?SetText@TextEntry@vgui2@@UAEXPBG@Z,vgui2::TextEntry::SetText,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,1007DC18,180,?SetCharAt@TextEntry@vgui2@@MAEXGH@Z,vgui2::TextEntry::SetCharAt,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29TextEntry9SetCharAtEwi
+gameui,1007DCCC,60,?ResetCursorBlink@TextEntry@vgui2@@MAEXXZ,vgui2::TextEntry::ResetCursorBlink,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29TextEntry16ResetCursorBlinkEv
+gameui,1007DD08,36,?SetTextHidden@TextEntry@vgui2@@UAEX_N@Z,vgui2::TextEntry::SetTextHidden,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29TextEntry13SetTextHiddenEb
+gameui,1007DD2C,88,?getCharWidth@@YAHKG@Z,getCharWidth,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,1007DD84,318,?CursorToPixelSpace@TextEntry@vgui2@@MAEXHAAH0@Z,vgui2::TextEntry::CursorToPixelSpace,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29TextEntry18CursorToPixelSpaceEiRiS1_
+gameui,1007DEC2,511,?PixelToCursorSpace@TextEntry@vgui2@@MAEHHH@Z,vgui2::TextEntry::PixelToCursorSpace,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29TextEntry18PixelToCursorSpaceEii
+gameui,1007E0C1,431,?DrawChar@TextEntry@vgui2@@MAEHGKHHH@Z,vgui2::TextEntry::DrawChar,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29TextEntry8DrawCharEwmiii
+gameui,1007E270,177,?DrawCursor@TextEntry@vgui2@@MAE_NHH@Z,vgui2::TextEntry::DrawCursor,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29TextEntry10DrawCursorEii
+gameui,1007E321,134,?NeedsEllipses@TextEntry@vgui2@@AAE_NKPAH@Z,vgui2::TextEntry::NeedsEllipses,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29TextEntry13NeedsEllipsesEmPi
+gameui,1007E3A7,1413,?PaintBackground@TextEntry@vgui2@@MAEXXZ,vgui2::TextEntry::PaintBackground,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29TextEntry15PaintBackgroundEv
+gameui,1007E92C,73,?PerformLayout@TextEntry@vgui2@@MAEXXZ,vgui2::TextEntry::PerformLayout,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29TextEntry13PerformLayoutEv
+gameui,1007E975,78,?AddAnotherLine@TextEntry@vgui2@@MAEXAAH0@Z,vgui2::TextEntry::AddAnotherLine,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29TextEntry14AddAnotherLineERiS1_
+gameui,1007E9C3,803,?RecalculateLineBreaks@TextEntry@vgui2@@UAEXXZ,vgui2::TextEntry::RecalculateLineBreaks,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29TextEntry21RecalculateLineBreaksEv
+gameui,1007ECE6,691,?LayoutVerticalScrollBarSlider@TextEntry@vgui2@@UAEXXZ,vgui2::TextEntry::LayoutVerticalScrollBarSlider,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29TextEntry29LayoutVerticalScrollBarSliderEv
+gameui,1007EF99,36,?SetEnabled@TextEntry@vgui2@@UAEX_N@Z,vgui2::TextEntry::SetEnabled,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29TextEntry10SetEnabledEb
+gameui,1007EFBD,25,?SetMultiline@TextEntry@vgui2@@UAEX_N@Z,vgui2::TextEntry::SetMultiline,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29TextEntry12SetMultilineEb
+gameui,1007EFD6,25,?SetCatchEnterKey@TextEntry@vgui2@@UAEX_N@Z,vgui2::TextEntry::SetCatchEnterKey,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29TextEntry16SetCatchEnterKeyEb
+gameui,1007EFEF,235,?SetVerticalScrollbar@TextEntry@vgui2@@UAEX_N@Z,vgui2::TextEntry::SetVerticalScrollbar,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29TextEntry20SetVerticalScrollbarEb
+gameui,1007F0DA,25,?SetEditable@TextEntry@vgui2@@UAEX_N@Z,vgui2::TextEntry::SetEditable,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29TextEntry11SetEditableEb
+gameui,1007F0F3,537,?CreateEditMenu@TextEntry@vgui2@@AAEXXZ,vgui2::TextEntry::CreateEditMenu,ENGINE,vgui2/controls/TextEntry.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29TextEntry14CreateEditMenuEv
+gameui,1007F30C,70,?IsEditable@TextEntry@vgui2@@UAE_NXZ,vgui2::TextEntry::IsEditable,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29TextEntry10IsEditableEv
+gameui,1007F352,44,?OnMouseFocusTicked@TextEntry@vgui2@@MAEXXZ,vgui2::TextEntry::OnMouseFocusTicked,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29TextEntry18OnMouseFocusTickedEv
+gameui,1007F37E,21,?OnCursorEntered@TextEntry@vgui2@@MAEXXZ,vgui2::TextEntry::OnCursorEntered,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29TextEntry15OnCursorEnteredEv
+gameui,1007F393,36,?OnCursorExited@TextEntry@vgui2@@MAEXXZ,vgui2::TextEntry::OnCursorExited,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29TextEntry14OnCursorExitedEv
+gameui,1007F3B7,258,?OnCursorMoved@TextEntry@vgui2@@MAEXHH@Z,vgui2::TextEntry::OnCursorMoved,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29TextEntry13OnCursorMovedEii
+gameui,1007F4B9,309,?OnMousePressed@TextEntry@vgui2@@MAEXW4MouseCode@2@@Z,vgui2::TextEntry::OnMousePressed,ENGINE,vgui2/controls/TextEntry.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29TextEntry14OnMousePressedENS_9MouseCodeE
+gameui,1007F5EE,100,?OnMouseReleased@TextEntry@vgui2@@MAEXW4MouseCode@2@@Z,vgui2::TextEntry::OnMouseReleased,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29TextEntry15OnMouseReleasedENS_9MouseCodeE
+gameui,1007F652,211,?OnMouseDoublePressed@TextEntry@vgui2@@MAEXW4MouseCode@2@@Z,vgui2::TextEntry::OnMouseDoublePressed,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29TextEntry20OnMouseDoublePressedENS_9MouseCodeE
+gameui,1007F725,21,?OnMouseCaptureLost@TextEntry@vgui2@@MAEXXZ,vgui2::TextEntry::OnMouseCaptureLost,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29TextEntry18OnMouseCaptureLostEv
+gameui,1007F73A,2111,?OnKeyCodeTyped@TextEntry@vgui2@@MAEXW4KeyCode@2@@Z,vgui2::TextEntry::OnKeyCodeTyped,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29TextEntry14OnKeyCodeTypedENS_7KeyCodeE
+gameui,10080054,275,?OnKeyTyped@TextEntry@vgui2@@MAEXG@Z,vgui2::TextEntry::OnKeyTyped,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29TextEntry10OnKeyTypedEw
+gameui,10080167,51,?OnMouseWheeled@TextEntry@vgui2@@MAEXH@Z,vgui2::TextEntry::OnMouseWheeled,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29TextEntry14OnMouseWheeledEi
+gameui,1008019A,100,?MoveScrollBar@TextEntry@vgui2@@AAEXH@Z,vgui2::TextEntry::MoveScrollBar,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29TextEntry13MoveScrollBarEi
+gameui,100801FE,106,?OnKeyFocusTicked@TextEntry@vgui2@@MAEXXZ,vgui2::TextEntry::OnKeyFocusTicked,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29TextEntry16OnKeyFocusTickedEv
+gameui,10080268,141,?SelectCheck@TextEntry@vgui2@@MAEXXZ,vgui2::TextEntry::SelectCheck,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29TextEntry11SelectCheckEv
+gameui,100802F5,25,?SetMaximumCharCount@TextEntry@vgui2@@UAEXH@Z,vgui2::TextEntry::SetMaximumCharCount,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29TextEntry19SetMaximumCharCountEi
+gameui,1008030E,20,?GetMaximumCharCount@TextEntry@vgui2@@UAEHXZ,vgui2::TextEntry::GetMaximumCharCount,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29TextEntry19GetMaximumCharCountEv
+gameui,10080322,44,?SetAutoProgressOnHittingCharLimit@TextEntry@vgui2@@UAEX_N@Z,vgui2::TextEntry::SetAutoProgressOnHittingCharLimit,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29TextEntry33SetAutoProgressOnHittingCharLimitEb
+gameui,1008034E,25,?SetWrap@TextEntry@vgui2@@UAEX_N@Z,vgui2::TextEntry::SetWrap,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29TextEntry7SetWrapEb
+gameui,10080367,25,?SendNewLine@TextEntry@vgui2@@UAEX_N@Z,vgui2::TextEntry::SendNewLine,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29TextEntry11SendNewLineEb
+gameui,10080380,85,?IsLineBreak@TextEntry@vgui2@@AAE_NH@Z,vgui2::TextEntry::IsLineBreak,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29TextEntry11IsLineBreakEi
+gameui,100803D5,158,?GotoLeft@TextEntry@vgui2@@UAEXXZ,vgui2::TextEntry::GotoLeft,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29TextEntry8GotoLeftEv
+gameui,10080473,252,?GotoRight@TextEntry@vgui2@@UAEXXZ,vgui2::TextEntry::GotoRight,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29TextEntry9GotoRightEv
+gameui,1008056F,134,?GetCursorLine@TextEntry@vgui2@@AAEHXZ,vgui2::TextEntry::GetCursorLine,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29TextEntry13GetCursorLineEv
+gameui,100805F5,152,?GotoUp@TextEntry@vgui2@@UAEXXZ,vgui2::TextEntry::GotoUp,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29TextEntry6GotoUpEv
+gameui,1008068D,257,?GotoDown@TextEntry@vgui2@@UAEXXZ,vgui2::TextEntry::GotoDown,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29TextEntry8GotoDownEv
+gameui,1008078E,97,?GetYStart@TextEntry@vgui2@@MAEHXZ,vgui2::TextEntry::GetYStart,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29TextEntry9GetYStartEv
+gameui,100807EF,435,?MoveCursor@TextEntry@vgui2@@UAEXHH@Z,vgui2::TextEntry::MoveCursor,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29TextEntry10MoveCursorEii
+gameui,100809A2,25,?SetHorizontalScrolling@TextEntry@vgui2@@QAEX_N@Z,vgui2::TextEntry::SetHorizontalScrolling,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,100809BB,122,?ScrollLeft@TextEntry@vgui2@@AAEXXZ,vgui2::TextEntry::ScrollLeft,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10080A35,177,?ScrollLeftForResize@TextEntry@vgui2@@AAEXXZ,vgui2::TextEntry::ScrollLeftForResize,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10080AE6,115,?ScrollRight@TextEntry@vgui2@@AAEXXZ,vgui2::TextEntry::ScrollRight,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10080B59,78,?IsCursorOffRightSideOfWindow@TextEntry@vgui2@@AAE_NH@Z,vgui2::TextEntry::IsCursorOffRightSideOfWindow,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10080BA7,50,?IsCursorOffLeftSideOfWindow@TextEntry@vgui2@@AAE_NH@Z,vgui2::TextEntry::IsCursorOffLeftSideOfWindow,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10080BD9,282,?GotoWordRight@TextEntry@vgui2@@UAEXXZ,vgui2::TextEntry::GotoWordRight,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29TextEntry13GotoWordRightEv
+gameui,10080CF3,258,?GotoWordLeft@TextEntry@vgui2@@UAEXXZ,vgui2::TextEntry::GotoWordLeft,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29TextEntry12GotoWordLeftEv
+gameui,10080DF5,100,?GotoTextStart@TextEntry@vgui2@@UAEXXZ,vgui2::TextEntry::GotoTextStart,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29TextEntry13GotoTextStartEv
+gameui,10080E59,102,?GotoTextEnd@TextEntry@vgui2@@UAEXXZ,vgui2::TextEntry::GotoTextEnd,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29TextEntry11GotoTextEndEv
+gameui,10080EBF,109,?GotoFirstOfLine@TextEntry@vgui2@@UAEXXZ,vgui2::TextEntry::GotoFirstOfLine,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29TextEntry15GotoFirstOfLineEv
+gameui,10080F2C,332,?GetCurrentLineStart@TextEntry@vgui2@@AAEHXZ,vgui2::TextEntry::GetCurrentLineStart,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29TextEntry19GetCurrentLineStartEv
+gameui,10081078,99,?GotoEndOfLine@TextEntry@vgui2@@UAEXXZ,vgui2::TextEntry::GotoEndOfLine,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29TextEntry13GotoEndOfLineEv
+gameui,100810DB,313,?GetCurrentLineEnd@TextEntry@vgui2@@AAEHXZ,vgui2::TextEntry::GetCurrentLineEnd,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29TextEntry17GetCurrentLineEndEv
+gameui,10081214,1249,?InsertChar@TextEntry@vgui2@@UAEXG@Z,vgui2::TextEntry::InsertChar,ENGINE,vgui2/controls/TextEntry.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29TextEntry10InsertCharEw
+gameui,100816F5,155,?CalcBreakIndex@TextEntry@vgui2@@AAEXXZ,vgui2::TextEntry::CalcBreakIndex,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10081790,110,?InsertString@TextEntry@vgui2@@UAEXPAG@Z,vgui2::TextEntry::InsertString,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,100817FE,179,?InsertString@TextEntry@vgui2@@UAEXPBD@Z,vgui2::TextEntry::InsertString,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,100818B1,349,?Backspace@TextEntry@vgui2@@UAEXXZ,vgui2::TextEntry::Backspace,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29TextEntry9BackspaceEv
+gameui,10081A0E,287,?DeleteSelected@TextEntry@vgui2@@UAEXXZ,vgui2::TextEntry::DeleteSelected,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29TextEntry14DeleteSelectedEv
+gameui,10081B2D,330,?Delete@TextEntry@vgui2@@UAEXXZ,vgui2::TextEntry::Delete,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29TextEntry6DeleteEv
+gameui,10081C77,35,?SelectNone@TextEntry@vgui2@@UAEXXZ,vgui2::TextEntry::SelectNone,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29TextEntry10SelectNoneEv
+gameui,10081C9A,99,?GetSelectedRange@TextEntry@vgui2@@MAE_NAAH0@Z,vgui2::TextEntry::GetSelectedRange,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29TextEntry16GetSelectedRangeERiS1_
+gameui,10081CFD,501,?OpenEditMenu@TextEntry@vgui2@@UAEXXZ,vgui2::TextEntry::OpenEditMenu,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29TextEntry12OpenEditMenuEv
+gameui,10081EF2,81,?CutSelected@TextEntry@vgui2@@UAEXXZ,vgui2::TextEntry::CutSelected,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29TextEntry11CutSelectedEv
+gameui,10081F43,277,?CopySelected@TextEntry@vgui2@@UAEXXZ,vgui2::TextEntry::CopySelected,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29TextEntry12CopySelectedEv
+gameui,10082058,785,?Paste@TextEntry@vgui2@@UAEXXZ,vgui2::TextEntry::Paste,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29TextEntry5PasteEv
+gameui,10082369,113,?Undo@TextEntry@vgui2@@UAEXXZ,vgui2::TextEntry::Undo,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29TextEntry4UndoEv
+gameui,100823DA,67,?SaveUndoState@TextEntry@vgui2@@UAEXXZ,vgui2::TextEntry::SaveUndoState,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29TextEntry13SaveUndoStateEv
+gameui,1008241D,718,?GetStartDrawIndex@TextEntry@vgui2@@MAEHAAH@Z,vgui2::TextEntry::GetStartDrawIndex,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29TextEntry17GetStartDrawIndexERi
+gameui,100826EB,116,?GetText@TextEntry@vgui2@@UAEXPADH@Z,vgui2::TextEntry::GetText,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,1008275F,128,?GetText@TextEntry@vgui2@@UAEXPAGH@Z,vgui2::TextEntry::GetText,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,100827DF,103,?FireActionSignal@TextEntry@vgui2@@MAEXXZ,vgui2::TextEntry::FireActionSignal,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29TextEntry16FireActionSignalEv
+gameui,10082846,54,?SetFont@TextEntry@vgui2@@UAEXK@Z,vgui2::TextEntry::SetFont,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29TextEntry7SetFontEm
+gameui,1008287C,22,?OnSliderMoved@TextEntry@vgui2@@MAEXXZ,vgui2::TextEntry::OnSliderMoved,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29TextEntry13OnSliderMovedEv
+gameui,10082892,219,?RequestInfo@TextEntry@vgui2@@UAE_NPAVKeyValues@@@Z,vgui2::TextEntry::RequestInfo,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29TextEntry11RequestInfoEP9KeyValues
+gameui,1008296D,31,?OnSetText@TextEntry@vgui2@@MAEXPBG@Z,vgui2::TextEntry::OnSetText,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29TextEntry9OnSetTextEPKw
+gameui,1008298C,56,?OnSetState@TextEntry@vgui2@@EAEXH@Z,vgui2::TextEntry::OnSetState,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29TextEntry10OnSetStateEi
+gameui,100829C4,202,?ApplySettings@TextEntry@vgui2@@MAEXPAVKeyValues@@@Z,vgui2::TextEntry::ApplySettings,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29TextEntry13ApplySettingsEP9KeyValues
+gameui,10082A8E,196,?GetSettings@TextEntry@vgui2@@MAEXPAVKeyValues@@@Z,vgui2::TextEntry::GetSettings,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29TextEntry11GetSettingsEP9KeyValues
+gameui,10082B52,48,?GetDescription@TextEntry@vgui2@@MAEPBDXZ,vgui2::TextEntry::GetDescription,ENGINE,vgui2/controls/TextEntry.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29TextEntry14GetDescriptionEv
+gameui,10082B82,25,?GetNumLines@TextEntry@vgui2@@QAEHXZ,vgui2::TextEntry::GetNumLines,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29TextEntry11GetNumLinesEv
+gameui,10082B9B,129,?SetToFullHeight@TextEntry@vgui2@@QAEXXZ,vgui2::TextEntry::SetToFullHeight,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29TextEntry15SetToFullHeightEv
+gameui,10082C1C,101,?SelectAllText@TextEntry@vgui2@@QAEX_N@Z,vgui2::TextEntry::SelectAllText,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29TextEntry13SelectAllTextEb
+gameui,10082C81,37,?SelectNoText@TextEntry@vgui2@@QAEXXZ,vgui2::TextEntry::SelectNoText,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29TextEntry12SelectNoTextEv
+gameui,10082CA6,203,?SetToFullWidth@TextEntry@vgui2@@QAEXXZ,vgui2::TextEntry::SetToFullWidth,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29TextEntry14SetToFullWidthEv
+gameui,10082D71,41,?SelectAllOnFirstFocus@TextEntry@vgui2@@QAEX_N@Z,vgui2::TextEntry::SelectAllOnFirstFocus,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29TextEntry21SelectAllOnFirstFocusEb
+gameui,10082D9A,204,?OnSetFocus@TextEntry@vgui2@@EAEXXZ,vgui2::TextEntry::OnSetFocus,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29TextEntry10OnSetFocusEv
+gameui,10082E66,25,?SetDrawWidth@TextEntry@vgui2@@QAEXH@Z,vgui2::TextEntry::SetDrawWidth,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10082E7F,20,?GetDrawWidth@TextEntry@vgui2@@QAEHXZ,vgui2::TextEntry::GetDrawWidth,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10082E93,44,?SetAllowNonAsciiCharacters@TextEntry@vgui2@@QAEX_N@Z,vgui2::TextEntry::SetAllowNonAsciiCharacters,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10082EBF,44,?SetAllowNumericInputOnly@TextEntry@vgui2@@QAEX_N@Z,vgui2::TextEntry::SetAllowNumericInputOnly,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10082EEB,56,?SetUseFallbackFont@TextEntry@vgui2@@QAEX_NK@Z,vgui2::TextEntry::SetUseFallbackFont,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10082F23,22,?GetTextLength@TextEntry@vgui2@@QBEHXZ,vgui2::TextEntry::GetTextLength,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10082F40,46,??_GTextEntry@vgui2@@UAEPAXI@Z,destructor',UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10082F70,19,??0TextEntry_RegisterMap@TextEntry@vgui2@@QAE@XZ,vgui2::TextEntry::TextEntry_RegisterMap::TextEntry_RegisterMap,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10082F90,102,?ChainToMap@TextEntry@vgui2@@SAXXZ,vgui2::TextEntry::ChainToMap,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10083000,10,?GetPanelBaseClassName@TextEntry@vgui2@@SAPBDXZ,vgui2::TextEntry::GetPanelBaseClassName,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10083010,19,??0PanelMessageFunc_CutSelected@TextEntry@vgui2@@QAE@XZ,vgui2::TextEntry::PanelMessageFunc_CutSelected::PanelMessageFunc_CutSelected,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10083030,107,?InitVar@PanelMessageFunc_CutSelected@TextEntry@vgui2@@SAXXZ,vgui2::TextEntry::PanelMessageFunc_CutSelected::InitVar,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,100830A0,120,?AddToMap@TextEntry@vgui2@@SAXPBDP8Panel@2@AEXXZHH0H0@Z,vgui2::TextEntry::AddToMap,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10083120,19,??0PanelMessageFunc_CopySelected@TextEntry@vgui2@@QAE@XZ,vgui2::TextEntry::PanelMessageFunc_CopySelected::PanelMessageFunc_CopySelected,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10083140,107,?InitVar@PanelMessageFunc_CopySelected@TextEntry@vgui2@@SAXXZ,vgui2::TextEntry::PanelMessageFunc_CopySelected::InitVar,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,100831B0,19,??0PanelMessageFunc_Paste@TextEntry@vgui2@@QAE@XZ,vgui2::TextEntry::PanelMessageFunc_Paste::PanelMessageFunc_Paste,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,100831D0,107,?InitVar@PanelMessageFunc_Paste@TextEntry@vgui2@@SAXXZ,vgui2::TextEntry::PanelMessageFunc_Paste::InitVar,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10083240,19,??0PanelMessageFunc_OnSetText@TextEntry@vgui2@@QAE@XZ,vgui2::TextEntry::PanelMessageFunc_OnSetText::PanelMessageFunc_OnSetText,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10083260,110,?InitVar@PanelMessageFunc_OnSetText@TextEntry@vgui2@@SAXXZ,vgui2::TextEntry::PanelMessageFunc_OnSetText::InitVar,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,100832D0,19,??0PanelMessageFunc_OnSliderMoved@TextEntry@vgui2@@QAE@XZ,vgui2::TextEntry::PanelMessageFunc_OnSliderMoved::PanelMessageFunc_OnSliderMoved,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,100832F0,107,?InitVar@PanelMessageFunc_OnSliderMoved@TextEntry@vgui2@@SAXXZ,vgui2::TextEntry::PanelMessageFunc_OnSliderMoved::InitVar,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10083360,19,??0PanelMessageFunc_OnSetState@TextEntry@vgui2@@QAE@XZ,vgui2::TextEntry::PanelMessageFunc_OnSetState::PanelMessageFunc_OnSetState,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10083380,110,?InitVar@PanelMessageFunc_OnSetState@TextEntry@vgui2@@SAXXZ,vgui2::TextEntry::PanelMessageFunc_OnSetState::InitVar,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10083400,32,?AddMultipleToTail@?$CUtlVector@G@@QAEHH@Z,short>::AddMultipleToTail,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10083420,80,?CopyArray@?$CUtlVector@G@@QAEXPBGH@Z,short>::CopyArray,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10083470,100,?FastRemove@?$CUtlVector@G@@QAEXH@Z,short>::FastRemove,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,100834E0,63,?Remove@?$CUtlVector@G@@QAEXH@Z,short>::Remove,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10083520,109,?InsertMultipleBefore@?$CUtlVector@G@@QAEHHH@Z,short>::InsertMultipleBefore,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10083590,33,?SetSize@?$CUtlVector@G@@QAEXH@Z,short>::SetSize,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,100835C0,25,?Construct@@YAXPAG@Z,Construct,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
 gameui,100835E0,139,,,UNKNOWN,,,,TODO,,,
 gameui,1008366B,1017,,vgui2::ListPanel::ListPanel,ENGINE,,,,TODO,,linux_symbols:string:0.279,
 gameui,10083A64,517,,,UNKNOWN,,,,TODO,,,
@@ -12028,144 +12028,144 @@ gameui,10095150,46,,,UNKNOWN,,,,TODO,,,
 gameui,10095180,19,,,UNKNOWN,,,,TODO,,,
 gameui,100951A0,102,,,UNKNOWN,,,,TODO,,,
 gameui,10095210,10,,,UNKNOWN,,,,TODO,,,
-gameui,10095220,651,,,UNKNOWN,,,,TODO,,,
-gameui,100954AB,107,,,UNKNOWN,,,,TODO,,,
-gameui,10095516,148,,,UNKNOWN,,,,TODO,,,
-gameui,100955AA,253,,,UNKNOWN,,,,TODO,,,
-gameui,100956A7,79,,,UNKNOWN,,,,TODO,,,
-gameui,100956F6,79,,,UNKNOWN,,,,TODO,,,
-gameui,10095745,103,,,UNKNOWN,,,,TODO,,,
-gameui,100957AC,103,,,UNKNOWN,,,,TODO,,,
-gameui,10095813,47,,,UNKNOWN,,,,TODO,,,
-gameui,10095842,103,,,UNKNOWN,,,,TODO,,,
-gameui,100958A9,103,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu11AddMenuItemEPKcS2_PNS_5PanelEPK9KeyValues
-gameui,10095910,47,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu11AddMenuItemEPKcS2_P9KeyValuesPNS_5PanelEPKS3_
-gameui,1009593F,43,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu11AddMenuItemEPKcPKwP9KeyValuesPNS_5PanelEPKS5_
-gameui,1009596A,103,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu11AddMenuItemEPKcP9KeyValuesPNS_5PanelEPKS3_
-gameui,100959D1,103,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu11AddMenuItemEPKcPNS_5PanelEPK9KeyValues
-gameui,10095A38,47,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu20AddCheckableMenuItemEPKcS2_S2_PNS_5PanelEPK9KeyValues
-gameui,10095A67,103,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu20AddCheckableMenuItemEPKcPKwS2_PNS_5PanelEPK9KeyValues
-gameui,10095ACE,103,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu20AddCheckableMenuItemEPKcS2_PNS_5PanelEPK9KeyValues
-gameui,10095B35,47,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu20AddCheckableMenuItemEPKcS2_P9KeyValuesPNS_5PanelEPKS3_
-gameui,10095B64,43,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu20AddCheckableMenuItemEPKcPKwP9KeyValuesPNS_5PanelEPKS5_
-gameui,10095B8F,105,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu20AddCheckableMenuItemEPKcP9KeyValuesPNS_5PanelEPKS3_
-gameui,10095BF8,105,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu20AddCheckableMenuItemEPKcPNS_5PanelEPK9KeyValues
-gameui,10095C61,51,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu20AddCascadingMenuItemEPKcS2_S2_PNS_5PanelEPS0_PK9KeyValues
-gameui,10095C94,105,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu20AddCascadingMenuItemEPKcPKwS2_PNS_5PanelEPS0_PK9KeyValues
-gameui,10095CFD,105,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu20AddCascadingMenuItemEPKcS2_PNS_5PanelEPS0_PK9KeyValues
-gameui,10095D66,51,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu20AddCascadingMenuItemEPKcS2_P9KeyValuesPNS_5PanelEPS0_PKS3_
-gameui,10095D99,47,,,UNKNOWN,,,,TODO,,,
-gameui,10095DC8,148,,,UNKNOWN,,,,TODO,,,
-gameui,10095E5C,148,,,UNKNOWN,,,,TODO,,,
-gameui,10095EF0,40,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu13SetFixedWidthEi
-gameui,10095F18,22,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu17SetMenuItemHeightEi
-gameui,10095F2E,741,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu13PerformLayoutEv
-gameui,10096213,54,,,UNKNOWN,,,,TODO,,,
-gameui,10096249,257,,,UNKNOWN,,,,TODO,,,
-gameui,1009634A,263,,,UNKNOWN,,,,TODO,,,
-gameui,10096451,296,,,UNKNOWN,,,,TODO,,,
-gameui,10096579,152,,,UNKNOWN,,,,TODO,,,
-gameui,10096611,380,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu29MakeItemsVisibleInScrollRangeEv
-gameui,1009678D,90,,vgui2::Menu::LayoutMenuBorder,ENGINE,vgui2/controls/Menu.cpp,,,TODO,,linux_symbols:string:0.75,linux: _ZN5vgui24Menu16LayoutMenuBorderEv
-gameui,100967E7,224,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu5PaintEv
-gameui,100968C7,43,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu23SetNumberOfVisibleItemsEi
-gameui,100968F2,64,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu11GetMenuItemEi
-gameui,10096932,31,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu13IsValidMenuIDEi
-gameui,10096951,16,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu16GetInvalidMenuIDEv
-gameui,10096961,119,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu15CloseOtherMenusEPNS_8MenuItemE
-gameui,100969D8,98,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu9OnCommandEPKc
-gameui,10096A3A,604,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu14OnKeyCodeTypedENS_7KeyCodeE
-gameui,10096CCE,305,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu10OnKeyTypedEw
-gameui,10096DFF,135,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu14OnMouseWheeledEi
-gameui,10096E86,311,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu11OnKillFocusEv
-gameui,10096FBD,241,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu10SetVisibleEb
-gameui,100970AE,388,,vgui2::Menu::ApplySchemeSettings,ENGINE,vgui2/controls/Menu.cpp,,,TODO,,linux_symbols:string:0.768,linux: _ZN5vgui24Menu19ApplySchemeSettingsEPNS_7ISchemeE
-gameui,10097232,159,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu10SetBgColorE5Color
-gameui,100972D1,159,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu10SetFgColorE5Color
-gameui,10097370,25,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu9SetBorderEPNS_7IBorderE
-gameui,10097389,48,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu17GetParentMenuItemEv
-gameui,100973B9,536,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu18OnMenuItemSelectedEPNS_5PanelE
-gameui,100975D1,20,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu13GetActiveItemEv
-gameui,100975E5,129,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu15GetItemUserDataEi
-gameui,10097666,143,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu12ActivateItemEi
-gameui,100976F5,75,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu17ActivateItemByRowEi
-gameui,10097740,25,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu12GetItemCountEv
-gameui,10097759,67,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu9GetMenuIDEi
-gameui,1009779C,61,,,UNKNOWN,,,,TODO,,,
-gameui,100977D9,185,,,UNKNOWN,,,,TODO,,,
-gameui,10097892,108,,,UNKNOWN,,,,TODO,,,
-gameui,100978FE,57,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu12AddScrollBarEv
-gameui,10097937,57,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu15RemoveScrollBarEv
-gameui,10097970,50,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu13OnSliderMovedEv
-gameui,100979A2,133,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu13OnCursorMovedEii
-gameui,10097A27,141,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu16OnKeyCodePressedENS_7KeyCodeE
-gameui,10097AB4,125,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu24SetCurrentlySelectedItemEPNS_8MenuItemE
-gameui,10097B31,103,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu29ClearCurrentlyHighlightedItemEv
-gameui,10097B98,193,,vgui2::Menu::SetCurrentlySelectedItem,ENGINE,vgui2/controls/Menu.cpp,,,TODO,,linux_symbols:string:0.75,linux: _ZN5vgui24Menu24SetCurrentlySelectedItemEi
-gameui,10097C59,354,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu27SetCurrentlyHighlightedItemEi
-gameui,10097DBB,20,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu27GetCurrentlyHighlightedItemEv
-gameui,10097DCF,108,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu23OnCursorEnteredMenuItemEi
-gameui,10097E3B,88,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu22OnCursorExitedMenuItemEi
-gameui,10097E93,981,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu21MoveAlongMenuItemListEii
-gameui,10098268,20,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu11GetMenuModeEv
-gameui,1009827C,24,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu12OnKeyModeSetEv
-gameui,10098294,42,,,UNKNOWN,,,,TODO,,,
-gameui,100982BE,38,,,UNKNOWN,,,,TODO,,,
-gameui,100982E4,25,,,UNKNOWN,,,,TODO,,,
-gameui,100982FD,20,,,UNKNOWN,,,,TODO,,,
-gameui,10098311,156,,,UNKNOWN,,,,TODO,,,
-gameui,100983AD,82,,,UNKNOWN,,,,TODO,,,
-gameui,100983FF,308,,,UNKNOWN,,,,TODO,,,
-gameui,10098533,86,,,UNKNOWN,,,,TODO,,,
-gameui,10098589,56,,,UNKNOWN,,,,TODO,,,
-gameui,100985D0,46,,,UNKNOWN,,,,TODO,,,
-gameui,10098600,19,,,UNKNOWN,,,,TODO,,,
-gameui,10098620,102,,,UNKNOWN,,,,TODO,,,
-gameui,10098690,10,,,UNKNOWN,,,,TODO,,,
-gameui,100986A0,19,,,UNKNOWN,,,,TODO,,,
-gameui,100986C0,110,,,UNKNOWN,,,,TODO,,,
-gameui,10098730,120,,,UNKNOWN,,,,TODO,,,
-gameui,100987B0,19,,,UNKNOWN,,,,TODO,,,
-gameui,100987D0,107,,,UNKNOWN,,,,TODO,,,
-gameui,10098840,19,,,UNKNOWN,,,,TODO,,,
-gameui,10098860,107,,,UNKNOWN,,,,TODO,,,
-gameui,100988D0,19,,,UNKNOWN,,,,TODO,,,
-gameui,100988F0,110,,,UNKNOWN,,,,TODO,,,
-gameui,10098960,19,,,UNKNOWN,,,,TODO,,,
-gameui,10098980,110,,,UNKNOWN,,,,TODO,,,
-gameui,10098A20,8,,,UNKNOWN,,,,TODO,,,
-gameui,10098A30,48,,,UNKNOWN,,,,TODO,,,
-gameui,10098A60,27,,,UNKNOWN,,,,TODO,,,
-gameui,10098A80,25,,,UNKNOWN,,,,TODO,,,
-gameui,10098AA0,31,,,UNKNOWN,,,,TODO,,,
-gameui,10098AC0,187,,,UNKNOWN,,,,TODO,,,
-gameui,10098B80,17,,,UNKNOWN,,,,TODO,,,
-gameui,10098BA0,17,,,UNKNOWN,,,,TODO,,,
-gameui,10098BC0,28,,,UNKNOWN,,,,TODO,,,
-gameui,10098BE0,91,,,UNKNOWN,,,,TODO,,,
-gameui,10098C40,25,,,UNKNOWN,,,,TODO,,,
-gameui,10098C60,25,,,UNKNOWN,,,,TODO,,,
-gameui,10098C80,25,,,UNKNOWN,,,,TODO,,,
-gameui,10098CA0,25,,,UNKNOWN,,,,TODO,,,
-gameui,10098CC0,72,,,UNKNOWN,,,,TODO,,,
-gameui,10098D10,64,,,UNKNOWN,,,,TODO,,,
-gameui,10098D50,75,,,UNKNOWN,,,,TODO,,,
-gameui,10098DA0,19,,,UNKNOWN,,,,TODO,,,
-gameui,10098DC0,26,,,UNKNOWN,,,,TODO,,,
-gameui,10098DE0,26,,,UNKNOWN,,,,TODO,,,
-gameui,10098E00,16,,,UNKNOWN,,,,TODO,,,
-gameui,10098E10,5,,,UNKNOWN,,,,TODO,,,
-gameui,10098E20,247,,,UNKNOWN,,,,TODO,,,
-gameui,10098F20,180,,,UNKNOWN,,,,TODO,,,
-gameui,10098FE0,69,,,UNKNOWN,,,,TODO,,,
-gameui,10099030,58,,,UNKNOWN,,,,TODO,,,
-gameui,10099070,190,,,UNKNOWN,,,,TODO,,,
-gameui,10099130,17,,,UNKNOWN,,,,TODO,,,
-gameui,10099150,199,,,UNKNOWN,,,,TODO,,,
-gameui,10099220,25,,,UNKNOWN,,,,TODO,,,
-gameui,10099240,25,,,UNKNOWN,,,,TODO,,,
-gameui,10099260,68,,,UNKNOWN,,,,TODO,,,
-gameui,100992B0,28,,,UNKNOWN,,,,TODO,,,
+gameui,10095220,651,??0Menu@vgui2@@QAE@PAVPanel@1@PBD@Z,vgui2::Menu::Menu,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,100954AB,107,??1Menu@vgui2@@UAE@XZ,vgui2::Menu::~Menu,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10095516,148,?DeleteAllItems@Menu@vgui2@@UAEXXZ,vgui2::Menu::DeleteAllItems,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,100955AA,253,?AddMenuItem@Menu@vgui2@@UAEHPAVMenuItem@2@@Z,vgui2::Menu::AddMenuItem,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,100956A7,79,?AddMenuItemCharCommand@Menu@vgui2@@IAEHPAVMenuItem@2@PBDPAVPanel@2@PBVKeyValues@@@Z,vgui2::Menu::AddMenuItemCharCommand,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,100956F6,79,?AddMenuItemKeyValuesCommand@Menu@vgui2@@IAEHPAVMenuItem@2@PAVKeyValues@@PAVPanel@2@PBV4@@Z,vgui2::Menu::AddMenuItemKeyValuesCommand,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10095745,103,?AddMenuItem@Menu@vgui2@@UAEHPBD00PAVPanel@2@PBVKeyValues@@@Z,vgui2::Menu::AddMenuItem,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,100957AC,103,?AddMenuItem@Menu@vgui2@@UAEHPBDPBG0PAVPanel@2@PBVKeyValues@@@Z,vgui2::Menu::AddMenuItem,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10095813,47,?AddMenuItem@Menu@vgui2@@UAEHPBD0PAVPanel@2@PBVKeyValues@@@Z,vgui2::Menu::AddMenuItem,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10095842,103,?AddMenuItem@Menu@vgui2@@UAEHPBD0PAVKeyValues@@PAVPanel@2@PBV3@@Z,vgui2::Menu::AddMenuItem,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,100958A9,103,?AddMenuItem@Menu@vgui2@@UAEHPBDPBGPAVKeyValues@@PAVPanel@2@PBV3@@Z,vgui2::Menu::AddMenuItem,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui24Menu11AddMenuItemEPKcS2_PNS_5PanelEPK9KeyValues
+gameui,10095910,47,?AddMenuItem@Menu@vgui2@@UAEHPBDPAVKeyValues@@PAVPanel@2@PBV3@@Z,vgui2::Menu::AddMenuItem,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui24Menu11AddMenuItemEPKcS2_P9KeyValuesPNS_5PanelEPKS3_
+gameui,1009593F,43,?AddMenuItem@Menu@vgui2@@UAEHPBDPAVPanel@2@PBVKeyValues@@@Z,vgui2::Menu::AddMenuItem,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui24Menu11AddMenuItemEPKcPKwP9KeyValuesPNS_5PanelEPKS5_
+gameui,1009596A,103,?AddCheckableMenuItem@Menu@vgui2@@UAEHPBD00PAVPanel@2@PBVKeyValues@@@Z,vgui2::Menu::AddCheckableMenuItem,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui24Menu11AddMenuItemEPKcP9KeyValuesPNS_5PanelEPKS3_
+gameui,100959D1,103,?AddCheckableMenuItem@Menu@vgui2@@UAEHPBDPBG0PAVPanel@2@PBVKeyValues@@@Z,vgui2::Menu::AddCheckableMenuItem,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui24Menu11AddMenuItemEPKcPNS_5PanelEPK9KeyValues
+gameui,10095A38,47,?AddCheckableMenuItem@Menu@vgui2@@UAEHPBD0PAVPanel@2@PBVKeyValues@@@Z,vgui2::Menu::AddCheckableMenuItem,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui24Menu20AddCheckableMenuItemEPKcS2_S2_PNS_5PanelEPK9KeyValues
+gameui,10095A67,103,?AddCheckableMenuItem@Menu@vgui2@@UAEHPBD0PAVKeyValues@@PAVPanel@2@PBV3@@Z,vgui2::Menu::AddCheckableMenuItem,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui24Menu20AddCheckableMenuItemEPKcPKwS2_PNS_5PanelEPK9KeyValues
+gameui,10095ACE,103,?AddCheckableMenuItem@Menu@vgui2@@UAEHPBDPBGPAVKeyValues@@PAVPanel@2@PBV3@@Z,vgui2::Menu::AddCheckableMenuItem,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui24Menu20AddCheckableMenuItemEPKcS2_PNS_5PanelEPK9KeyValues
+gameui,10095B35,47,?AddCheckableMenuItem@Menu@vgui2@@UAEHPBDPAVKeyValues@@PAVPanel@2@PBV3@@Z,vgui2::Menu::AddCheckableMenuItem,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui24Menu20AddCheckableMenuItemEPKcS2_P9KeyValuesPNS_5PanelEPKS3_
+gameui,10095B64,43,?AddCheckableMenuItem@Menu@vgui2@@UAEHPBDPAVPanel@2@PBVKeyValues@@@Z,vgui2::Menu::AddCheckableMenuItem,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui24Menu20AddCheckableMenuItemEPKcPKwP9KeyValuesPNS_5PanelEPKS5_
+gameui,10095B8F,105,?AddCascadingMenuItem@Menu@vgui2@@UAEHPBD00PAVPanel@2@PAV12@PBVKeyValues@@@Z,vgui2::Menu::AddCascadingMenuItem,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui24Menu20AddCheckableMenuItemEPKcP9KeyValuesPNS_5PanelEPKS3_
+gameui,10095BF8,105,?AddCascadingMenuItem@Menu@vgui2@@UAEHPBDPBG0PAVPanel@2@PAV12@PBVKeyValues@@@Z,vgui2::Menu::AddCascadingMenuItem,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui24Menu20AddCheckableMenuItemEPKcPNS_5PanelEPK9KeyValues
+gameui,10095C61,51,?AddCascadingMenuItem@Menu@vgui2@@UAEHPBD0PAVPanel@2@PAV12@PBVKeyValues@@@Z,vgui2::Menu::AddCascadingMenuItem,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui24Menu20AddCascadingMenuItemEPKcS2_S2_PNS_5PanelEPS0_PK9KeyValues
+gameui,10095C94,105,?AddCascadingMenuItem@Menu@vgui2@@UAEHPBD0PAVKeyValues@@PAVPanel@2@PAV12@PBV3@@Z,vgui2::Menu::AddCascadingMenuItem,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui24Menu20AddCascadingMenuItemEPKcPKwS2_PNS_5PanelEPS0_PK9KeyValues
+gameui,10095CFD,105,?AddCascadingMenuItem@Menu@vgui2@@UAEHPBDPBGPAVKeyValues@@PAVPanel@2@PAV12@PBV3@@Z,vgui2::Menu::AddCascadingMenuItem,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui24Menu20AddCascadingMenuItemEPKcS2_PNS_5PanelEPS0_PK9KeyValues
+gameui,10095D66,51,?AddCascadingMenuItem@Menu@vgui2@@UAEHPBDPAVKeyValues@@PAVPanel@2@PAV12@PBV3@@Z,vgui2::Menu::AddCascadingMenuItem,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui24Menu20AddCascadingMenuItemEPKcS2_P9KeyValuesPNS_5PanelEPS0_PKS3_
+gameui,10095D99,47,?AddCascadingMenuItem@Menu@vgui2@@UAEHPBDPAVPanel@2@PAV12@PBVKeyValues@@@Z,vgui2::Menu::AddCascadingMenuItem,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10095DC8,148,?UpdateMenuItem@Menu@vgui2@@UAEXHPBDPAVKeyValues@@PBV3@@Z,vgui2::Menu::UpdateMenuItem,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10095E5C,148,?UpdateMenuItem@Menu@vgui2@@UAEXHPBGPAVKeyValues@@PBV3@@Z,vgui2::Menu::UpdateMenuItem,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10095EF0,40,?SetFixedWidth@Menu@vgui2@@UAEXH@Z,vgui2::Menu::SetFixedWidth,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui24Menu13SetFixedWidthEi
+gameui,10095F18,22,?SetMenuItemHeight@Menu@vgui2@@UAEXH@Z,vgui2::Menu::SetMenuItemHeight,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui24Menu17SetMenuItemHeightEi
+gameui,10095F2E,741,?PerformLayout@Menu@vgui2@@UAEXXZ,vgui2::Menu::PerformLayout,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui24Menu13PerformLayoutEv
+gameui,10096213,54,?ForceCalculateWidth@Menu@vgui2@@IAEXXZ,vgui2::Menu::ForceCalculateWidth,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10096249,257,?CalculateWidth@Menu@vgui2@@IAEXXZ,vgui2::Menu::CalculateWidth,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,1009634A,263,?LayoutScrollBar@Menu@vgui2@@IAEXXZ,vgui2::Menu::LayoutScrollBar,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10096451,296,?PositionCascadingMenu@Menu@vgui2@@IAEXXZ,vgui2::Menu::PositionCascadingMenu,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10096579,152,?SizeMenuItems@Menu@vgui2@@IAEXXZ,vgui2::Menu::SizeMenuItems,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10096611,380,?MakeItemsVisibleInScrollRange@Menu@vgui2@@MAEXXZ,vgui2::Menu::MakeItemsVisibleInScrollRange,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui24Menu29MakeItemsVisibleInScrollRangeEv
+gameui,1009678D,90,?LayoutMenuBorder@Menu@vgui2@@MAEXXZ,vgui2::Menu::LayoutMenuBorder,ENGINE,vgui2/controls/Menu.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui24Menu16LayoutMenuBorderEv
+gameui,100967E7,224,?Paint@Menu@vgui2@@MAEXXZ,vgui2::Menu::Paint,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui24Menu5PaintEv
+gameui,100968C7,43,?SetNumberOfVisibleItems@Menu@vgui2@@UAEXH@Z,vgui2::Menu::SetNumberOfVisibleItems,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui24Menu23SetNumberOfVisibleItemsEi
+gameui,100968F2,64,?GetMenuItem@Menu@vgui2@@QAEPAVMenuItem@2@H@Z,vgui2::Menu::GetMenuItem,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui24Menu11GetMenuItemEi
+gameui,10096932,31,?IsValidMenuID@Menu@vgui2@@UAE_NH@Z,vgui2::Menu::IsValidMenuID,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui24Menu13IsValidMenuIDEi
+gameui,10096951,16,?GetInvalidMenuID@Menu@vgui2@@UAEHXZ,vgui2::Menu::GetInvalidMenuID,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui24Menu16GetInvalidMenuIDEv
+gameui,10096961,119,?CloseOtherMenus@Menu@vgui2@@QAEXPAVMenuItem@2@@Z,vgui2::Menu::CloseOtherMenus,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui24Menu15CloseOtherMenusEPNS_8MenuItemE
+gameui,100969D8,98,?OnCommand@Menu@vgui2@@MAEXPBD@Z,vgui2::Menu::OnCommand,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui24Menu9OnCommandEPKc
+gameui,10096A3A,604,?OnKeyCodeTyped@Menu@vgui2@@UAEXW4KeyCode@2@@Z,vgui2::Menu::OnKeyCodeTyped,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui24Menu14OnKeyCodeTypedENS_7KeyCodeE
+gameui,10096CCE,305,?OnKeyTyped@Menu@vgui2@@UAEXG@Z,vgui2::Menu::OnKeyTyped,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui24Menu10OnKeyTypedEw
+gameui,10096DFF,135,?OnMouseWheeled@Menu@vgui2@@MAEXH@Z,vgui2::Menu::OnMouseWheeled,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui24Menu14OnMouseWheeledEi
+gameui,10096E86,311,?OnKillFocus@Menu@vgui2@@UAEXXZ,vgui2::Menu::OnKillFocus,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui24Menu11OnKillFocusEv
+gameui,10096FBD,241,?SetVisible@Menu@vgui2@@UAEX_N@Z,vgui2::Menu::SetVisible,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui24Menu10SetVisibleEb
+gameui,100970AE,388,?ApplySchemeSettings@Menu@vgui2@@UAEXPAVIScheme@2@@Z,vgui2::Menu::ApplySchemeSettings,ENGINE,vgui2/controls/Menu.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui24Menu19ApplySchemeSettingsEPNS_7ISchemeE
+gameui,10097232,159,?SetBgColor@Menu@vgui2@@UAEXVColor@@@Z,vgui2::Menu::SetBgColor,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui24Menu10SetBgColorE5Color
+gameui,100972D1,159,?SetFgColor@Menu@vgui2@@UAEXVColor@@@Z,vgui2::Menu::SetFgColor,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui24Menu10SetFgColorE5Color
+gameui,10097370,25,?SetBorder@Menu@vgui2@@UAEXPAVIBorder@2@@Z,vgui2::Menu::SetBorder,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui24Menu9SetBorderEPNS_7IBorderE
+gameui,10097389,48,?GetParentMenuItem@Menu@vgui2@@AAEPAVMenuItem@2@XZ,vgui2::Menu::GetParentMenuItem,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui24Menu17GetParentMenuItemEv
+gameui,100973B9,536,?OnMenuItemSelected@Menu@vgui2@@MAEXPAVPanel@2@@Z,vgui2::Menu::OnMenuItemSelected,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui24Menu18OnMenuItemSelectedEPNS_5PanelE
+gameui,100975D1,20,?GetActiveItem@Menu@vgui2@@UAEHXZ,vgui2::Menu::GetActiveItem,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui24Menu13GetActiveItemEv
+gameui,100975E5,129,?GetItemUserData@Menu@vgui2@@UAEPAVKeyValues@@H@Z,vgui2::Menu::GetItemUserData,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui24Menu15GetItemUserDataEi
+gameui,10097666,143,?ActivateItem@Menu@vgui2@@UAEXH@Z,vgui2::Menu::ActivateItem,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui24Menu12ActivateItemEi
+gameui,100976F5,75,?ActivateItemByRow@Menu@vgui2@@UAEXH@Z,vgui2::Menu::ActivateItemByRow,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui24Menu17ActivateItemByRowEi
+gameui,10097740,25,?GetItemCount@Menu@vgui2@@UAEHXZ,vgui2::Menu::GetItemCount,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui24Menu12GetItemCountEv
+gameui,10097759,67,?GetMenuID@Menu@vgui2@@UAEHH@Z,vgui2::Menu::GetMenuID,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui24Menu9GetMenuIDEi
+gameui,1009779C,61,?GetCurrentlyVisibleItemsCount@Menu@vgui2@@QAEHXZ,vgui2::Menu::GetCurrentlyVisibleItemsCount,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,100977D9,185,?SetItemEnabled@Menu@vgui2@@UAEXPBD_N@Z,vgui2::Menu::SetItemEnabled,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10097892,108,?SetItemEnabled@Menu@vgui2@@UAEXH_N@Z,vgui2::Menu::SetItemEnabled,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,100978FE,57,?AddScrollBar@Menu@vgui2@@MAEXXZ,vgui2::Menu::AddScrollBar,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui24Menu12AddScrollBarEv
+gameui,10097937,57,?RemoveScrollBar@Menu@vgui2@@MAEXXZ,vgui2::Menu::RemoveScrollBar,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui24Menu15RemoveScrollBarEv
+gameui,10097970,50,?OnSliderMoved@Menu@vgui2@@MAEXXZ,vgui2::Menu::OnSliderMoved,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui24Menu13OnSliderMovedEv
+gameui,100979A2,133,?OnCursorMoved@Menu@vgui2@@MAEXHH@Z,vgui2::Menu::OnCursorMoved,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui24Menu13OnCursorMovedEii
+gameui,10097A27,141,?OnKeyCodePressed@Menu@vgui2@@MAEXW4KeyCode@2@@Z,vgui2::Menu::OnKeyCodePressed,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui24Menu16OnKeyCodePressedENS_7KeyCodeE
+gameui,10097AB4,125,?SetCurrentlySelectedItem@Menu@vgui2@@IAEXPAVMenuItem@2@@Z,vgui2::Menu::SetCurrentlySelectedItem,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui24Menu24SetCurrentlySelectedItemEPNS_8MenuItemE
+gameui,10097B31,103,?ClearCurrentlyHighlightedItem@Menu@vgui2@@QAEXXZ,vgui2::Menu::ClearCurrentlyHighlightedItem,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui24Menu29ClearCurrentlyHighlightedItemEv
+gameui,10097B98,193,?SetCurrentlySelectedItem@Menu@vgui2@@IAEXH@Z,vgui2::Menu::SetCurrentlySelectedItem,ENGINE,vgui2/controls/Menu.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui24Menu24SetCurrentlySelectedItemEi
+gameui,10097C59,354,?SetCurrentlyHighlightedItem@Menu@vgui2@@QAEXH@Z,vgui2::Menu::SetCurrentlyHighlightedItem,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui24Menu27SetCurrentlyHighlightedItemEi
+gameui,10097DBB,20,?GetCurrentlyHighlightedItem@Menu@vgui2@@QAEHXZ,vgui2::Menu::GetCurrentlyHighlightedItem,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui24Menu27GetCurrentlyHighlightedItemEv
+gameui,10097DCF,108,?OnCursorEnteredMenuItem@Menu@vgui2@@MAEXH@Z,vgui2::Menu::OnCursorEnteredMenuItem,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui24Menu23OnCursorEnteredMenuItemEi
+gameui,10097E3B,88,?OnCursorExitedMenuItem@Menu@vgui2@@MAEXH@Z,vgui2::Menu::OnCursorExitedMenuItem,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui24Menu22OnCursorExitedMenuItemEi
+gameui,10097E93,981,?MoveAlongMenuItemList@Menu@vgui2@@IAEXHH@Z,vgui2::Menu::MoveAlongMenuItemList,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui24Menu21MoveAlongMenuItemListEii
+gameui,10098268,20,?GetMenuMode@Menu@vgui2@@QAEHXZ,vgui2::Menu::GetMenuMode,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui24Menu11GetMenuModeEv
+gameui,1009827C,24,?OnKeyModeSet@Menu@vgui2@@MAEXXZ,vgui2::Menu::OnKeyModeSet,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui24Menu12OnKeyModeSetEv
+gameui,10098294,42,?SetMenuItemChecked@Menu@vgui2@@QAEXH_N@Z,vgui2::Menu::SetMenuItemChecked,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,100982BE,38,?IsChecked@Menu@vgui2@@QAE_NH@Z,vgui2::Menu::IsChecked,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,100982E4,25,?SetMinimumWidth@Menu@vgui2@@QAEXH@Z,vgui2::Menu::SetMinimumWidth,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,100982FD,20,?GetMinimumWidth@Menu@vgui2@@QAEHXZ,vgui2::Menu::GetMinimumWidth,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10098311,156,?SetItemVisible@Menu@vgui2@@UAEXPBD_N@Z,vgui2::Menu::SetItemVisible,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,100983AD,82,?SetItemVisible@Menu@vgui2@@UAEXH_N@Z,vgui2::Menu::SetItemVisible,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,100983FF,308,?PlaceContextMenu@Menu@vgui2@@SAXPAVPanel@2@PAV12@@Z,vgui2::Menu::PlaceContextMenu,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10098533,86,?SetFont@Menu@vgui2@@UAEXK@Z,vgui2::Menu::SetFont,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10098589,56,?SetUseFallbackFont@Menu@vgui2@@QAEX_NK@Z,vgui2::Menu::SetUseFallbackFont,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,100985D0,46,??_GMenu@vgui2@@UAEPAXI@Z,destructor',UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10098600,19,??0Menu_RegisterMap@Menu@vgui2@@QAE@XZ,vgui2::Menu::Menu_RegisterMap::Menu_RegisterMap,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10098620,102,?ChainToMap@Menu@vgui2@@SAXXZ,vgui2::Menu::ChainToMap,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10098690,10,?GetPanelBaseClassName@Menu@vgui2@@SAPBDXZ,vgui2::Menu::GetPanelBaseClassName,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,100986A0,19,??0PanelMessageFunc_OnMenuItemSelected@Menu@vgui2@@QAE@XZ,vgui2::Menu::PanelMessageFunc_OnMenuItemSelected::PanelMessageFunc_OnMenuItemSelected,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,100986C0,110,?InitVar@PanelMessageFunc_OnMenuItemSelected@Menu@vgui2@@SAXXZ,vgui2::Menu::PanelMessageFunc_OnMenuItemSelected::InitVar,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10098730,120,?AddToMap@Menu@vgui2@@SAXPBDP8Panel@2@AEXXZHH0H0@Z,vgui2::Menu::AddToMap,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,100987B0,19,??0PanelMessageFunc_OnSliderMoved@Menu@vgui2@@QAE@XZ,vgui2::Menu::PanelMessageFunc_OnSliderMoved::PanelMessageFunc_OnSliderMoved,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,100987D0,107,?InitVar@PanelMessageFunc_OnSliderMoved@Menu@vgui2@@SAXXZ,vgui2::Menu::PanelMessageFunc_OnSliderMoved::InitVar,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10098840,19,??0PanelMessageFunc_OnKeyModeSet@Menu@vgui2@@QAE@XZ,vgui2::Menu::PanelMessageFunc_OnKeyModeSet::PanelMessageFunc_OnKeyModeSet,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10098860,107,?InitVar@PanelMessageFunc_OnKeyModeSet@Menu@vgui2@@SAXXZ,vgui2::Menu::PanelMessageFunc_OnKeyModeSet::InitVar,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,100988D0,19,??0PanelMessageFunc_OnCursorEnteredMenuItem@Menu@vgui2@@QAE@XZ,vgui2::Menu::PanelMessageFunc_OnCursorEnteredMenuItem::PanelMessageFunc_OnCursorEnteredMenuItem,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,100988F0,110,?InitVar@PanelMessageFunc_OnCursorEnteredMenuItem@Menu@vgui2@@SAXXZ,vgui2::Menu::PanelMessageFunc_OnCursorEnteredMenuItem::InitVar,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10098960,19,??0PanelMessageFunc_OnCursorExitedMenuItem@Menu@vgui2@@QAE@XZ,vgui2::Menu::PanelMessageFunc_OnCursorExitedMenuItem::PanelMessageFunc_OnCursorExitedMenuItem,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10098980,110,?InitVar@PanelMessageFunc_OnCursorExitedMenuItem@Menu@vgui2@@SAXXZ,vgui2::Menu::PanelMessageFunc_OnCursorExitedMenuItem::InitVar,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10098A20,8,?InvalidIndex@?$CUtlLinkedList@PAVMenuItem@vgui2@@H@@SAHXZ,"*,int>::InvalidIndex",UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10098A30,48,??0?$CUtlLinkedList@PAVMenuItem@vgui2@@H@@QAE@HH@Z,"*,int>",UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10098A60,27,??1?$CUtlLinkedList@PAVMenuItem@vgui2@@H@@QAE@XZ,"*,int>",UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10098A80,25,??A?$CUtlLinkedList@PAVMenuItem@vgui2@@H@@QAEAAPAVMenuItem@vgui2@@H@Z,"*,int>::operator[]",UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10098AA0,31,?AddToTail@?$CUtlLinkedList@PAVMenuItem@vgui2@@H@@QAEHABQAVMenuItem@vgui2@@@Z,"*,int>::AddToTail",UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10098AC0,187,?RemoveAll@?$CUtlLinkedList@PAVMenuItem@vgui2@@H@@QAEXXZ,"*,int>::RemoveAll",UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10098B80,17,?Count@?$CUtlLinkedList@PAVMenuItem@vgui2@@H@@QBEHXZ,"*,int>::Count",UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10098BA0,17,?Head@?$CUtlLinkedList@PAVMenuItem@vgui2@@H@@QBEHXZ,"*,int>::Head",UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10098BC0,28,?Next@?$CUtlLinkedList@PAVMenuItem@vgui2@@H@@QBEHH@Z,"*,int>::Next",UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10098BE0,91,?IsValidIndex@?$CUtlLinkedList@PAVMenuItem@vgui2@@H@@QBE_NH@Z,"*,int>::IsValidIndex",UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10098C40,25,?InternalElement@?$CUtlLinkedList@PAVMenuItem@vgui2@@H@@IAEAAUListElem_t@1@H@Z,"*,int>::InternalElement",UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10098C60,25,?InternalElement@?$CUtlLinkedList@PAVMenuItem@vgui2@@H@@IBEABUListElem_t@1@H@Z,"*,int>::InternalElement",UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10098C80,25,?ResetDbgInfo@?$CUtlLinkedList@PAVMenuItem@vgui2@@H@@IAEXXZ,"*,int>::ResetDbgInfo",UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10098CA0,25,?Element@?$CUtlLinkedList@PAVMenuItem@vgui2@@H@@QAEAAPAVMenuItem@vgui2@@H@Z,"*,int>::Element",UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10098CC0,72,?InsertBefore@?$CUtlLinkedList@PAVMenuItem@vgui2@@H@@QAEHHABQAVMenuItem@vgui2@@@Z,"*,int>::InsertBefore",UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10098D10,64,?ConstructList@?$CUtlLinkedList@PAVMenuItem@vgui2@@H@@IAEXXZ,"*,int>::ConstructList",UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10098D50,75,??0?$CUtlMemory@UListElem_t@?$CUtlLinkedList@PAVMenuItem@vgui2@@H@@@@QAE@HH@Z,"*,int>::ListElem_t>",UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10098DA0,19,??1?$CUtlMemory@UListElem_t@?$CUtlLinkedList@PAVMenuItem@vgui2@@H@@@@QAE@XZ,"*,int>::ListElem_t>",UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10098DC0,26,??A?$CUtlMemory@UListElem_t@?$CUtlLinkedList@PAVMenuItem@vgui2@@H@@@@QBEABUListElem_t@?$CUtlLinkedList@PAVMenuItem@vgui2@@H@@H@Z,"*,int>::ListElem_t>::operator[]",UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10098DE0,26,??A?$CUtlMemory@UListElem_t@?$CUtlLinkedList@PAVMenuItem@vgui2@@H@@@@QAEAAUListElem_t@?$CUtlLinkedList@PAVMenuItem@vgui2@@H@@H@Z,"*,int>::ListElem_t>::operator[]",UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10098E00,16,?Base@?$CUtlMemory@UListElem_t@?$CUtlLinkedList@PAVMenuItem@vgui2@@H@@@@QAEPAUListElem_t@?$CUtlLinkedList@PAVMenuItem@vgui2@@H@@XZ,"*,int>::ListElem_t>::Base",UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10098E10,5,?Destruct@@YAXPAPAVMenuItem@vgui2@@@Z,Destruct,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10098E20,247,?Alloc@?$CUtlLinkedList@PAVMenuItem@vgui2@@H@@QAEH_N@Z,"*,int>::Alloc",UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10098F20,180,?LinkBefore@?$CUtlLinkedList@PAVMenuItem@vgui2@@H@@QAEXHH@Z,"*,int>::LinkBefore",UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10098FE0,69,?Purge@?$CUtlMemory@UListElem_t@?$CUtlLinkedList@PAVMenuItem@vgui2@@H@@@@QAEXXZ,"*,int>::ListElem_t>::Purge",UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10099030,58,?CopyConstruct@@YAXPAPAVMenuItem@vgui2@@ABQAV12@@Z,CopyConstruct,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10099070,190,?Unlink@?$CUtlLinkedList@PAVMenuItem@vgui2@@H@@QAEXH@Z,"*,int>::Unlink",UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10099130,17,?NumAllocated@?$CUtlMemory@UListElem_t@?$CUtlLinkedList@PAVMenuItem@vgui2@@H@@@@QBEHXZ,"*,int>::ListElem_t>::NumAllocated",UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10099150,199,?Grow@?$CUtlMemory@UListElem_t@?$CUtlLinkedList@PAVMenuItem@vgui2@@H@@@@QAEXH@Z,"*,int>::ListElem_t>::Grow",UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10099220,25,?IsExternallyAllocated@?$CUtlMemory@UListElem_t@?$CUtlLinkedList@PAVMenuItem@vgui2@@H@@@@QBE_NXZ,"*,int>::ListElem_t>::IsExternallyAllocated",UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10099240,25,?Construct@@YAXPAPAVMenuItem@vgui2@@@Z,Construct,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,10099260,68,?IsInList@?$CUtlLinkedList@PAVMenuItem@vgui2@@H@@QBE_NH@Z,"*,int>::IsInList",UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
+gameui,100992B0,28,?Previous@?$CUtlLinkedList@PAVMenuItem@vgui2@@H@@QBEHH@Z,"*,int>::Previous",UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
 gameui,100992D0,170,,,UNKNOWN,,,,TODO,,,
 gameui,1009937A,170,,,UNKNOWN,,,,TODO,,,
 gameui,10099424,212,,,UNKNOWN,,,,TODO,,,
