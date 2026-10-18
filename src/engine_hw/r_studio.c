@@ -31,6 +31,11 @@
 
 #define MAXSTUDIOHULLS		128
 
+#define MAX_KNOWN_MODELS	1536
+
+#define STUDIO_RENDER		1
+#define STUDIO_EVENTS		2
+
 typedef struct
 {
 	float		frame;
@@ -45,6 +50,27 @@ typedef struct
 	int			nStartPlane;
 	int			numhulls;
 } r_studiocache_t;
+
+typedef struct
+{
+	char		name[260];
+	char		modelname[260];
+	model_t		*model;
+} player_model_t;
+
+typedef struct
+{
+	int			keynum;
+	int			topcolor;
+	int			bottomcolor;
+	model_t		*model;
+	char		name[260];
+	int			index;
+	int			source;
+	int			width;
+	int			height;
+	int			gl_index;
+} skin_t;
 
 cvar_t			*cl_righthand;
 
@@ -116,6 +142,16 @@ float			r_shadelight;
 int				r_amodels_drawn;
 int				r_smodels_total;
 
+static int		r_topcolor;
+static int		r_bottomcolor;
+
+player_model_t	DM_PlayerState[MAX_CLIENTS];
+skin_t			DM_RemapSkin[64][11];
+static skin_t	*pDM_RemapSkin[2528][11];
+int				r_remapindex;
+
+cache_user_t	model_texture_cache[MAX_KNOWN_MODELS][32];
+
 void R_FlushStudioCache( void );
 void *Mod_Extradata( model_t *mod );
 
@@ -129,6 +165,22 @@ extern float	v_lambert1;
 extern int		lightgammatable[1024];
 extern int		lineargammatable[1024];
 extern int		screengammatable[1024];
+extern cvar_t	gl_dither;
+extern model_t	mod_known[];
+extern cvar_t	developer;
+extern cvar_t	cl_himodels;
+extern cvar_t	cl_gaitestimation;
+
+int		R_StudioDrawPlayer( int flags, entity_state_t *pplayer );
+void	R_StudioCalcAttachments( void );
+void	R_StudioClientEvents( void );
+void	R_StudioRenderModel( void );
+void	R_StudioDynamicLight( cl_entity_t *ent, alight_t *plight );
+void	R_StudioEntityLight( alight_t *plight );
+
+void	GL_Bind( int texnum );
+void	GL_UnloadTexture( char *identifier );
+int		GL_LoadTexture( char *identifier, GL_TEXTURETYPE textureType, int width, int height, byte *data, int mipmap, int iType, byte *pPal );
 
 int		SignbitsForPlane( mplane_t *out );
 qboolean	R_CullBox( vec3_t mins, vec3_t maxs );
@@ -2414,4 +2466,858 @@ void R_StudioChrome( int *pchrome, int bone, vec_t *normal )
 	// calc t coord
 	n = DotProduct( normal, r_chromeup[bone] );
 	pchrome[1] = ( n + 1.0 ) * 32 * 1024;
+}
+
+/*
+================
+R_LoadTextures
+================
+*/
+studiohdr_t *R_LoadTextures( model_t *psubmodel )
+{
+	model_t		*texmodel;
+
+	if ( pstudiohdr->textureindex )
+		return pstudiohdr;
+
+	texmodel = (model_t *)psubmodel->texinfo;
+
+	if ( !texmodel || !Cache_Check( &texmodel->cache ) )
+	{
+		studiohdr_t	*ptexturehdr;
+		char		modelname[MAX_PATH];
+
+		Q_strncpy( modelname, psubmodel->name, sizeof( modelname ) - 2 );
+		modelname[sizeof( modelname ) - 2] = 0;
+		Q_strcpy( &modelname[Q_strlen( modelname ) - 4], "T.mdl" );
+
+		texmodel = Mod_ForName( modelname, TRUE, FALSE );
+		psubmodel->texinfo = (mtexinfo_t *)texmodel;
+
+		ptexturehdr = (studiohdr_t *)texmodel->cache.data;
+		Q_strncpy( ptexturehdr->name, modelname, sizeof( ptexturehdr->name ) - 1 );
+		ptexturehdr->name[sizeof( ptexturehdr->name ) - 1] = 0;
+	}
+
+	return (studiohdr_t *)texmodel->cache.data;
+}
+
+/*
+================
+PaletteHueReplace
+================
+*/
+void PaletteHueReplace( byte *palette, int newHue, int start, int end )
+{
+	int		i;
+	float	r, b, g;
+	float	maxcol, mincol;
+	float	hue, val, sat;
+
+	hue = (float)( newHue * ( 360.0 / 255 ) );
+
+	for ( i = start; i <= end; i++ )
+	{
+		r = palette[i * 3 + 0];
+		g = palette[i * 3 + 1];
+		b = palette[i * 3 + 2];
+
+		maxcol = max( max( r, g ), b ) / 255.0;
+		mincol = min( min( r, g ), b ) / 255.0;
+
+		val = maxcol;
+		sat = ( maxcol - mincol ) / maxcol;
+
+		mincol = val * ( 1.0 - sat );
+
+		if ( hue <= 120 )
+		{
+			b = mincol;
+			if ( hue < 60 )
+			{
+				r = val;
+				g = mincol + hue * ( val - mincol ) / ( 120 - hue );
+			}
+			else
+			{
+				g = val;
+				r = mincol + ( 120 - hue ) * ( val - mincol ) / hue;
+			}
+		}
+		else if ( hue <= 240 )
+		{
+			r = mincol;
+			if ( hue < 180 )
+			{
+				g = val;
+				b = mincol + ( hue - 120 ) * ( val - mincol ) / ( 240 - hue );
+			}
+			else
+			{
+				b = val;
+				g = mincol + ( 240 - hue ) * ( val - mincol ) / ( hue - 120 );
+			}
+		}
+		else
+		{
+			g = mincol;
+			if ( hue < 300 )
+			{
+				b = val;
+				r = mincol + ( hue - 240 ) * ( val - mincol ) / ( 360 - hue );
+			}
+			else
+			{
+				r = val;
+				b = mincol + ( 360 - hue ) * ( val - mincol ) / ( hue - 240 );
+			}
+		}
+
+		palette[i * 3 + 0] = r * 255;
+		palette[i * 3 + 1] = g * 255;
+		palette[i * 3 + 2] = b * 255;
+	}
+}
+
+/*
+================
+R_StudioFlushSkins
+================
+*/
+void R_StudioFlushSkins( int keynum )
+{
+	int		index;
+
+	for ( index = 0; index < 11; index++ )
+	{
+		if ( pDM_RemapSkin[keynum][index] )
+			pDM_RemapSkin[keynum][index]->model = NULL;
+	}
+}
+
+/*
+================
+R_StudioGetSkin
+================
+*/
+skin_t *R_StudioGetSkin( int keynum, int index )
+{
+	skin_t	*pskin;
+
+	if ( index >= 11 )
+		index = 0;
+
+	pskin = pDM_RemapSkin[keynum][index];
+
+	if ( !pskin || pskin->keynum != keynum )
+	{
+		pskin = &DM_RemapSkin[r_remapindex][index];
+		r_remapindex = ( r_remapindex + 1 ) % 64;
+		pDM_RemapSkin[keynum][index] = pskin;
+		pskin->keynum = keynum;
+		pskin->topcolor = -1;
+		pskin->bottomcolor = -1;
+	}
+
+	return pskin;
+}
+
+/*
+================
+R_IsRemapSkin
+================
+*/
+int R_IsRemapSkin( const char *texture, int *low, int *mid, int *high )
+{
+	char	sz[32];
+	char	*p;
+	int		len;
+	char	ch;
+
+	// skin name must begin with "Remap"
+	if ( Q_strnicmp( (char *)texture, "Remap", 5 ) )
+		return 0;
+
+	len = Q_strlen( (char *)texture );
+	if ( len != 22 && len != 18 )
+		return 0;
+
+	ch = texture[5];
+	if ( len == 18 && ch != 'C' && ch != 'c' )
+		return 0;
+
+	Q_memset( sz, 0, sizeof( sz ) );
+
+	p = (char *)texture + 7;
+	Q_strncpy( sz, p, 3 );
+	*low = Q_atoi( sz );
+
+	p += 4;
+	Q_strncpy( sz, p, 3 );
+	*mid = Q_atoi( sz );
+
+	if ( len == 22 )
+	{
+		p += 4;
+		Q_strncpy( sz, p, 3 );
+		*high = Q_atoi( sz );
+	}
+	else
+	{
+		*high = 0;
+	}
+
+	return 1;
+}
+
+/*
+================
+R_StudioReloadSkin
+================
+*/
+byte *R_StudioReloadSkin( model_t *pModel, int index, skin_t *pskin )
+{
+	int					modelindex;
+	cache_user_t		*pCache;
+	int					*pData;
+	mstudiotexture_t	*ptexture;
+	byte				*pbase;
+	int					size;
+
+	modelindex = pModel - mod_known;
+	if ( modelindex < 0 || modelindex >= MAX_KNOWN_MODELS )
+		return NULL;
+
+	pCache = &model_texture_cache[modelindex][index];
+
+	if ( !Cache_Check( pCache ) )
+	{
+		pbase = COM_LoadFileForMe( pModel->name, NULL );
+		ptexture = (mstudiotexture_t *)( pbase + ( (studiohdr_t *)pbase )->textureindex ) + index;
+		size = ptexture->width * ptexture->height + 768 + 8;
+
+		Cache_Alloc( pCache, size, pskin->name );
+
+		pData = (int *)pCache->data;
+		pData[0] = ptexture->width;
+		pData[1] = ptexture->height;
+		Q_memcpy( &pData[2], pbase + ptexture->index, size - 8 );
+
+		Mem_Free( pbase );
+	}
+	else
+	{
+		pData = (int *)pCache->data;
+	}
+
+	pskin->index = index;
+	pskin->width = pData[0];
+	pskin->height = pData[1];
+
+	return (byte *)&pData[2];
+}
+
+/*
+================
+R_StudioSetupSkin
+================
+*/
+void R_StudioSetupSkin( studiohdr_t *ptexturehdr, int index )
+{
+	mstudiotexture_t	*ptexture;
+	float				temp = 0;
+
+	if ( g_ForcedFaceFlags & STUDIO_NF_CHROME )
+		return;
+
+	ptexture = (mstudiotexture_t *)( (byte *)ptexturehdr + ptexturehdr->textureindex ) + index;
+
+	if ( currententity->index > 0 )
+	{
+		int		l, m, h;
+
+		l = 160;
+		m = 191;
+		h = 223;
+
+		if ( !Q_stricmp( ptexture->name, "DM_Base.bmp" ) || R_IsRemapSkin( ptexture->name, &l, &m, &h ) )
+		{
+			skin_t	*pskin;
+
+			pskin = R_StudioGetSkin( currententity->index, index );
+
+			if ( pskin->model != r_model || pskin->topcolor != r_topcolor || pskin->bottomcolor != r_bottomcolor )
+			{
+				static byte	tmp_palette[768];
+				byte		*orig_palette;
+				char		name[256];
+				byte		*pData;
+
+				if ( pskin->model )
+					R_StudioFlushSkins( currententity->index );
+
+				pData = R_StudioReloadSkin( r_model, index, pskin );
+				if ( !pData )
+					return;
+
+				_snprintf( name, sizeof( name ), "%s%d", ptexture->name, currententity->index );
+
+				orig_palette = pData + ptexture->width * ptexture->height;
+				Q_memcpy( tmp_palette, orig_palette, sizeof( tmp_palette ) );
+
+				pskin->model = r_model;
+				pskin->topcolor = r_topcolor;
+				pskin->bottomcolor = r_bottomcolor;
+
+				PaletteHueReplace( tmp_palette, pskin->topcolor, l, m );
+				if ( h )
+					PaletteHueReplace( tmp_palette, pskin->bottomcolor, m + 1, h );
+
+				GL_UnloadTexture( name );
+
+				temp = gl_dither.value;
+				gl_dither.value = 0;
+				pskin->gl_index = GL_LoadTexture( name, GLT_STUDIO, pskin->width, pskin->height, pData, FALSE, 0, tmp_palette );
+				gl_dither.value = temp;
+			}
+
+			if ( pskin->gl_index )
+			{
+				GL_Bind( pskin->gl_index );
+				return;
+			}
+		}
+	}
+
+	GL_Bind( ptexture->index );
+}
+
+/*
+================
+R_StudioSetupLighting
+================
+*/
+void R_StudioSetupLighting( alight_t *plighting )
+{
+	int		i;
+
+	r_ambientlight = plighting->ambientlight;
+	r_shadelight = plighting->shadelight;
+	VectorCopy( plighting->plightvec, r_plightvec );
+
+	for ( i = 0; i < pstudiohdr->numbones; i++ )
+	{
+		VectorIRotate( r_plightvec, lighttransform[i], r_blightvec[i] );
+	}
+
+	r_icolormix.r = (int)( plighting->color[0] * 49407 ) & 0xFF00;
+	r_icolormix.g = (int)( plighting->color[1] * 49407 ) & 0xFF00;
+	r_icolormix.b = (int)( plighting->color[2] * 49407 ) & 0xFF00;
+
+	VectorCopy( plighting->color, r_colormix );
+}
+
+/*
+================
+R_StudioSetupModel
+================
+*/
+void R_StudioSetupModel( int bodypart )
+{
+	int		index;
+
+	if ( bodypart > pstudiohdr->numbodyparts )
+	{
+		Con_DPrintf( "R_StudioSetupModel: no such bodypart %d\n", bodypart );
+		bodypart = 0;
+	}
+
+	pbodypart = (mstudiobodyparts_t *)( (byte *)pstudiohdr + pstudiohdr->bodypartindex ) + bodypart;
+
+	index = currententity->curstate.body / pbodypart->base;
+	index = index % pbodypart->nummodels;
+
+	psubmodel = (mstudiomodel_t *)( (byte *)pstudiohdr + pbodypart->modelindex ) + index;
+}
+
+/*
+================
+R_StudioDrawModel
+================
+*/
+int R_StudioDrawModel( int flags )
+{
+	alight_t	lighting;
+	vec3_t		dir;
+
+	if ( currententity->curstate.renderfx == kRenderFxDeadPlayer )
+	{
+		entity_state_t	deadplayer;
+
+		int		result;
+		int		save_interp;
+
+		if ( currententity->curstate.renderamt <= 0 || currententity->curstate.renderamt > cl.maxclients )
+			return 0;
+
+		// get copy of player
+		deadplayer = cl.frames[cl.parsecount & CL_UPDATE_MASK].playerstate[currententity->curstate.renderamt - 1];
+
+		// clear weapon, movement state
+		deadplayer.number = currententity->curstate.renderamt;
+		deadplayer.weaponmodel = 0;
+		deadplayer.gaitsequence = 0;
+
+		deadplayer.movetype = MOVETYPE_NONE;
+		VectorCopy( currententity->curstate.angles, deadplayer.angles );
+		VectorCopy( currententity->curstate.origin, deadplayer.origin );
+
+		save_interp = r_dointerp;
+		r_dointerp = 0;
+
+		// draw as though it were a player
+		result = R_StudioDrawPlayer( flags, &deadplayer );
+
+		r_dointerp = save_interp;
+		return result;
+	}
+
+	r_model = currententity->model;
+	pstudiohdr = (studiohdr_t *)Mod_Extradata( r_model );
+
+	R_StudioSetUpTransform( 0 );
+
+	if ( flags & STUDIO_RENDER )
+	{
+		// see if the bounding box lets us trivially reject, also sets
+		if ( !R_StudioCheckBBox() )
+			return 0;
+
+		r_amodels_drawn++;
+		r_smodels_total++; // render data cache cookie
+
+		if ( pstudiohdr->numbodyparts == 0 )
+			return 1;
+	}
+
+	if ( currententity->curstate.movetype == MOVETYPE_FOLLOW )
+	{
+		R_StudioMergeBones( r_model );
+	}
+	else
+	{
+		R_StudioSetupBones();
+	}
+	R_StudioSaveBones();
+
+	if ( flags & STUDIO_EVENTS )
+	{
+		R_StudioCalcAttachments();
+		R_StudioClientEvents();
+
+		// copy attachments into global entity array
+		if ( currententity->index > 0 )
+		{
+			Q_memcpy( cl_entities[currententity->index].attachment, currententity->attachment, sizeof( vec3_t ) * 4 );
+		}
+	}
+
+	if ( flags & STUDIO_RENDER )
+	{
+		lighting.plightvec = dir;
+		R_StudioDynamicLight( currententity, &lighting );
+
+		R_StudioEntityLight( &lighting );
+
+		// model and frame independant
+		R_StudioSetupLighting( &lighting );
+
+		// get remap colors
+		r_topcolor = currententity->curstate.colormap & 0xFF;
+		r_bottomcolor = ( currententity->curstate.colormap & 0xFF00 ) >> 8;
+
+		R_StudioRenderModel();
+	}
+
+	return 1;
+}
+
+/*
+================
+R_StudioEstimateGait
+================
+*/
+void R_StudioEstimateGait( entity_state_t *pplayer )
+{
+	float	dt;
+	vec3_t	est_velocity;
+
+	dt = ( cl.time - cl.oldtime );
+	if ( dt < 0 )
+		dt = 0;
+	else if ( dt > 1.0 )
+		dt = 1;
+
+	if ( dt == 0 || r_playerinfo->renderframe == r_framecount )
+	{
+		r_gaitmovement = 0;
+		return;
+	}
+
+	if ( cl_gaitestimation.value )
+	{
+		VectorSubtract( currententity->origin, r_playerinfo->prevgaitorigin, est_velocity );
+		VectorCopy( currententity->origin, r_playerinfo->prevgaitorigin );
+		r_gaitmovement = Length( est_velocity );
+		if ( dt <= 0 || r_gaitmovement / dt < 5 )
+		{
+			r_gaitmovement = 0;
+			est_velocity[0] = 0;
+			est_velocity[1] = 0;
+		}
+	}
+	else
+	{
+		VectorCopy( pplayer->velocity, est_velocity );
+		r_gaitmovement = Length( est_velocity ) * dt;
+	}
+
+	if ( est_velocity[1] == 0 && est_velocity[0] == 0 )
+	{
+		float	flYawDiff;
+
+		flYawDiff = currententity->angles[YAW] - r_playerinfo->gaityaw;
+		flYawDiff = flYawDiff - (int)( flYawDiff / 360 ) * 360;
+		if ( flYawDiff > 180 )
+			flYawDiff -= 360;
+		if ( flYawDiff < -180 )
+			flYawDiff += 360;
+
+		if ( dt < 0.25 )
+			flYawDiff *= dt * 4;
+		else
+			flYawDiff *= dt;
+
+		r_playerinfo->gaityaw += flYawDiff;
+		r_playerinfo->gaityaw = r_playerinfo->gaityaw - (int)( r_playerinfo->gaityaw / 360 ) * 360;
+
+		r_gaitmovement = 0;
+	}
+	else
+	{
+		r_playerinfo->gaityaw = ( atan2( est_velocity[1], est_velocity[0] ) * 180 / M_PI );
+		if ( r_playerinfo->gaityaw > 180 )
+			r_playerinfo->gaityaw = 180;
+		if ( r_playerinfo->gaityaw < -180 )
+			r_playerinfo->gaityaw = -180;
+	}
+}
+
+/*
+================
+R_StudioProcessGait
+================
+*/
+void R_StudioProcessGait( entity_state_t *pplayer )
+{
+	mstudioseqdesc_t	*pseqdesc;
+	float				dt;
+	int					iBlend;
+	float				flYaw;	 // view direction relative to movement
+
+	if ( currententity->curstate.sequence >= pstudiohdr->numseq )
+	{
+		currententity->curstate.sequence = 0;
+	}
+
+	pseqdesc = (mstudioseqdesc_t *)( (byte *)pstudiohdr + pstudiohdr->seqindex ) + currententity->curstate.sequence;
+
+	R_StudioPlayerBlend( pseqdesc, &iBlend, &currententity->angles[PITCH] );
+
+	currententity->latched.prevangles[PITCH] = currententity->angles[PITCH];
+	currententity->curstate.blending[0] = iBlend;
+	currententity->latched.prevblending[0] = currententity->curstate.blending[0];
+	currententity->latched.prevseqblending[0] = currententity->curstate.blending[0];
+
+	dt = ( cl.time - cl.oldtime );
+	if ( dt < 0 )
+		dt = 0;
+	else if ( dt > 1.0 )
+		dt = 1;
+
+	R_StudioEstimateGait( pplayer );
+
+	// calc side to side turning
+	flYaw = currententity->angles[YAW] - r_playerinfo->gaityaw;
+	flYaw = flYaw - (int)( flYaw / 360 ) * 360;
+	if ( flYaw < -180 )
+		flYaw = flYaw + 360;
+	if ( flYaw > 180 )
+		flYaw = flYaw - 360;
+
+	if ( flYaw > 120 )
+	{
+		r_playerinfo->gaityaw = r_playerinfo->gaityaw - 180;
+		r_gaitmovement = -r_gaitmovement;
+		flYaw = flYaw - 180;
+	}
+	else if ( flYaw < -120 )
+	{
+		r_playerinfo->gaityaw = r_playerinfo->gaityaw + 180;
+		r_gaitmovement = -r_gaitmovement;
+		flYaw = flYaw + 180;
+	}
+
+	// adjust torso
+	currententity->curstate.controller[0] = ( ( flYaw / 4.0 ) + 30 ) / ( 60.0 / 255.0 );
+	currententity->curstate.controller[1] = ( ( flYaw / 4.0 ) + 30 ) / ( 60.0 / 255.0 );
+	currententity->curstate.controller[2] = ( ( flYaw / 4.0 ) + 30 ) / ( 60.0 / 255.0 );
+	currententity->curstate.controller[3] = ( ( flYaw / 4.0 ) + 30 ) / ( 60.0 / 255.0 );
+	currententity->latched.prevcontroller[0] = currententity->curstate.controller[0];
+	currententity->latched.prevcontroller[1] = currententity->curstate.controller[1];
+	currententity->latched.prevcontroller[2] = currententity->curstate.controller[2];
+	currententity->latched.prevcontroller[3] = currententity->curstate.controller[3];
+
+	currententity->angles[YAW] = r_playerinfo->gaityaw;
+	if ( currententity->angles[YAW] < -0 )
+		currententity->angles[YAW] += 360;
+	currententity->latched.prevangles[YAW] = currententity->angles[YAW];
+
+	pseqdesc = (mstudioseqdesc_t *)( (byte *)pstudiohdr + pstudiohdr->seqindex ) + pplayer->gaitsequence;
+
+	// calc gait frame
+	if ( pseqdesc->linearmovement[0] > 0 )
+	{
+		r_playerinfo->gaitframe += ( r_gaitmovement / pseqdesc->linearmovement[0] ) * pseqdesc->numframes;
+	}
+	else
+	{
+		r_playerinfo->gaitframe += pseqdesc->fps * dt;
+	}
+
+	// do modulo
+	r_playerinfo->gaitframe = r_playerinfo->gaitframe - (int)( r_playerinfo->gaitframe / pseqdesc->numframes ) * pseqdesc->numframes;
+	if ( r_playerinfo->gaitframe < 0 )
+		r_playerinfo->gaitframe += pseqdesc->numframes;
+}
+
+/*
+================
+R_StudioChangePlayerModel
+================
+*/
+void R_StudioChangePlayerModel( void )
+{
+	int		i;
+	skin_t	*pskin;
+
+	for ( i = 0; i < 11; i++ )
+	{
+		pskin = R_StudioGetSkin( currententity->index, i );
+		pskin->topcolor = -1;
+		pskin->bottomcolor = -1;
+	}
+}
+
+/*
+================
+WeaponHasAttachments
+================
+*/
+BOOL WeaponHasAttachments( entity_state_t *pplayer )
+{
+	studiohdr_t	*modelheader = NULL;
+
+	if ( !pplayer )
+		return FALSE;
+
+	modelheader = (studiohdr_t *)Mod_Extradata( CL_GetModelByIndex( pplayer->weaponmodel ) );
+	return modelheader->numattachments != 0;
+}
+
+/*
+================
+R_StudioDrawPlayer
+================
+*/
+int R_StudioDrawPlayer( int flags, entity_state_t *pplayer )
+{
+	alight_t	lighting;
+	vec3_t		dir;
+
+	r_playerindex = pplayer->number - 1;
+
+	if ( r_playerindex < 0 || r_playerindex >= cl.maxclients )
+		return 0;
+
+	if ( ( developer.value == 0 && Host_IsSinglePlayerGame() ) || !cl.players[r_playerindex].model[0] )
+	{
+		DM_PlayerState[r_playerindex].name[0] = 0;
+		if ( DM_PlayerState[r_playerindex].model != currententity->model )
+		{
+			DM_PlayerState[r_playerindex].model = currententity->model;
+			R_StudioChangePlayerModel();
+		}
+	}
+	else
+	{
+		if ( Q_strcmp( DM_PlayerState[r_playerindex].name, cl.players[r_playerindex].model ) )
+		{
+			Q_strncpy( DM_PlayerState[r_playerindex].name, cl.players[r_playerindex].model, sizeof( DM_PlayerState[r_playerindex].name ) - 1 );
+			DM_PlayerState[r_playerindex].name[sizeof( DM_PlayerState[r_playerindex].name ) - 1] = 0;
+
+			_snprintf( DM_PlayerState[r_playerindex].modelname, sizeof( DM_PlayerState[r_playerindex].modelname ), "models/player/%s/%s.mdl", cl.players[r_playerindex].model, cl.players[r_playerindex].model );
+
+			DM_PlayerState[r_playerindex].model = Mod_ForName( DM_PlayerState[r_playerindex].modelname, FALSE, TRUE );
+			if ( !DM_PlayerState[r_playerindex].model )
+				DM_PlayerState[r_playerindex].model = currententity->model;
+
+			R_StudioChangePlayerModel();
+		}
+	}
+
+	r_model = DM_PlayerState[r_playerindex].model;
+
+	if ( r_model == NULL )
+		return 0;
+
+	pstudiohdr = (studiohdr_t *)Mod_Extradata( r_model );
+
+	if ( pplayer->gaitsequence )
+	{
+		vec3_t	orig_angles;
+
+		r_playerinfo = &cl.players[r_playerindex];
+
+		VectorCopy( currententity->angles, orig_angles );
+
+		R_StudioProcessGait( pplayer );
+
+		r_playerinfo->gaitsequence = pplayer->gaitsequence;
+		r_playerinfo = NULL;
+
+		R_StudioSetUpTransform( 0 );
+		VectorCopy( orig_angles, currententity->angles );
+	}
+	else
+	{
+		currententity->curstate.controller[0] = 127;
+		currententity->curstate.controller[1] = 127;
+		currententity->curstate.controller[2] = 127;
+		currententity->curstate.controller[3] = 127;
+		currententity->latched.prevcontroller[0] = currententity->curstate.controller[0];
+		currententity->latched.prevcontroller[1] = currententity->curstate.controller[1];
+		currententity->latched.prevcontroller[2] = currententity->curstate.controller[2];
+		currententity->latched.prevcontroller[3] = currententity->curstate.controller[3];
+
+		cl.players[r_playerindex].gaitsequence = 0;
+
+		R_StudioSetUpTransform( 0 );
+	}
+
+	if ( flags & STUDIO_RENDER )
+	{
+		// see if the bounding box lets us trivially reject, also sets
+		if ( !R_StudioCheckBBox() )
+			return 0;
+
+		r_amodels_drawn++;
+		r_smodels_total++; // render data cache cookie
+
+		if ( pstudiohdr->numbodyparts == 0 )
+			return 1;
+	}
+
+	r_playerinfo = &cl.players[r_playerindex];
+	R_StudioSetupBones();
+	R_StudioSaveBones();
+	r_playerinfo->renderframe = r_framecount;
+
+	r_playerinfo = NULL;
+
+	if ( ( flags & STUDIO_EVENTS ) && ( !( flags & STUDIO_RENDER ) || !pplayer->weaponmodel || !WeaponHasAttachments( pplayer ) ) )
+	{
+		R_StudioCalcAttachments();
+		R_StudioClientEvents();
+
+		// copy attachments into global entity array
+		if ( currententity->index > 0 )
+		{
+			Q_memcpy( cl_entities[currententity->index].attachment, currententity->attachment, sizeof( vec3_t ) * 4 );
+		}
+	}
+
+	if ( flags & STUDIO_RENDER )
+	{
+		if ( cl_himodels.value && DM_PlayerState[r_playerindex].model != currententity->model )
+		{
+			// show highest resolution multiplayer model
+			currententity->curstate.body = 255;
+		}
+
+		if ( !( developer.value == 0 && Host_IsSinglePlayerGame() ) && DM_PlayerState[r_playerindex].name[0] && DM_PlayerState[r_playerindex].model == currententity->model )
+		{
+			currententity->curstate.body = 1; // force helmet
+		}
+
+		lighting.plightvec = dir;
+		R_StudioDynamicLight( currententity, &lighting );
+
+		R_StudioEntityLight( &lighting );
+
+		// model and frame independant
+		R_StudioSetupLighting( &lighting );
+
+		r_playerinfo = &cl.players[r_playerindex];
+
+		// get remap colors
+		r_topcolor = r_playerinfo->topcolor;
+		if ( r_topcolor < 0 )
+			r_topcolor = 0;
+		if ( r_topcolor > 360 )
+			r_topcolor = 360;
+
+		r_bottomcolor = r_playerinfo->bottomcolor;
+		if ( r_bottomcolor < 0 )
+			r_bottomcolor = 0;
+		if ( r_bottomcolor > 360 )
+			r_bottomcolor = 360;
+
+		R_StudioRenderModel();
+		r_playerinfo = NULL;
+
+		if ( pplayer->weaponmodel )
+		{
+			studiohdr_t	*saveheader;
+			cl_entity_t	saveent;
+			model_t		*pweaponmodel;
+
+			saveheader = pstudiohdr;
+			saveent = *currententity;
+
+			pweaponmodel = CL_GetModelByIndex( pplayer->weaponmodel );
+			pstudiohdr = (studiohdr_t *)Mod_Extradata( pweaponmodel );
+
+			R_StudioMergeBones( pweaponmodel );
+
+			R_StudioSetupLighting( &lighting );
+
+			R_StudioRenderModel();
+
+			R_StudioCalcAttachments();
+
+			if ( currententity->index > 0 )
+			{
+				Q_memcpy( saveent.attachment, currententity->attachment, pstudiohdr->numattachments * sizeof( vec3_t ) );
+			}
+
+			*currententity = saveent;
+			pstudiohdr = saveheader;
+
+			if ( flags & STUDIO_EVENTS )
+				R_StudioClientEvents();
+		}
+	}
+
+	return 1;
 }
