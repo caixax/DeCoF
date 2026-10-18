@@ -50,6 +50,10 @@ cvar_t			*cl_righthand;
 
 static studiohdr_t	*pstudiohdr;
 
+vec3_t			r_colormix;
+colorVec		r_icolormix;
+vec3_t			r_blightvec[MAXSTUDIOBONES];
+
 float			rotationmatrix[3][4];
 float			bonetransform[MAXSTUDIOBONES][3][4];
 float			lighttransform[MAXSTUDIOBONES][3][4];
@@ -88,6 +92,7 @@ static model_t	*r_model;
 static float	r_gaitmovement;
 static int		g_ForcedFaceFlags;
 static vec3_t	g_ChromeOrigin;
+static int		r_flatshade_guess;
 
 static int		chrome[MAXSTUDIOVERTS][2];
 static int		g_NormalIndex[MAXSTUDIOVERTS];
@@ -118,11 +123,18 @@ extern sv_blending_interface_t	*g_pSvBlendingAPI;
 extern int		g_bIsTerrorStrike;
 extern cvar_t	r_glowshellfreq;
 extern triangleapi_t	tri;
+extern model_t	*cl_sprite_white;
+extern vec3_t	r_plightvec;
+extern float	v_lambert1;
+extern int		lightgammatable[1024];
+extern int		lineargammatable[1024];
+extern int		screengammatable[1024];
 
 int		SignbitsForPlane( mplane_t *out );
 qboolean	R_CullBox( vec3_t mins, vec3_t maxs );
 void	R_StudioTransformVector( vec_t *in, vec_t *out );
 void	R_StudioTransformAuxVert( auxvert_t *av, int bone, vec_t *vert );
+void	R_StudioLighting( float *lv, int bone, int flags, vec_t *normal );
 
 /*
 ================
@@ -1355,6 +1367,8 @@ qboolean IsFlippedViewModel( void )
 	return FALSE;
 }
 
+float	h_scale = 1.5;
+
 /*
 ================
 R_StudioSetUpTransform
@@ -1919,4 +1933,485 @@ void R_StudioMergeBones( model_t *psubmodel )
 			}
 		}
 	}
+}
+
+int		boxpnt[6][4] =
+{
+	{ 0, 4, 6, 2 },	// +X
+	{ 0, 1, 5, 4 },	// +Y
+	{ 0, 2, 3, 1 },	// +Z
+	{ 7, 5, 1, 3 },	// -X
+	{ 7, 3, 2, 6 },	// -Y
+	{ 7, 6, 4, 5 },	// -Z
+};
+
+vec3_t	hullcolor[8] =
+{
+	{ 1.0, 1.0, 1.0 },
+	{ 1.0, 0.5, 0.5 },
+	{ 0.5, 1.0, 0.5 },
+	{ 1.0, 1.0, 0.5 },
+	{ 0.5, 0.5, 1.0 },
+	{ 1.0, 0.5, 1.0 },
+	{ 0.5, 1.0, 1.0 },
+	{ 1.0, 1.0, 1.0 },
+};
+
+/*
+================
+R_StudioDrawHulls
+================
+*/
+void R_StudioDrawHulls( void )
+{
+	int				i, j;
+	float			lv;
+	vec3_t			tmp;
+	vec3_t			p[8];
+	mstudiobbox_t	*pbbox;
+
+	pbbox = (mstudiobbox_t *)( (byte *)pstudiohdr + pstudiohdr->hitboxindex );
+
+	tri.SpriteTexture( cl_sprite_white, 0 );
+
+	for ( i = 0; i < pstudiohdr->numhitboxes; i++ )
+	{
+		for ( j = 0; j < 8; j++ )
+		{
+			tmp[0] = ( j & 1 ) ? pbbox[i].bbmin[0] : pbbox[i].bbmax[0];
+			tmp[1] = ( j & 2 ) ? pbbox[i].bbmin[1] : pbbox[i].bbmax[1];
+			tmp[2] = ( j & 4 ) ? pbbox[i].bbmin[2] : pbbox[i].bbmax[2];
+
+			VectorTransform( tmp, lighttransform[pbbox[i].bone], p[j] );
+		}
+
+		tri.Begin( TRI_QUADS );
+
+		j = ( pbbox[i].group % 8 );
+		tri.Color4f( hullcolor[j][0], hullcolor[j][1], hullcolor[j][2], 1.0 );
+		tri.TexCoord2f( 0, 0 );
+
+		for ( j = 0; j < 6; j++ )
+		{
+			tmp[0] = tmp[1] = tmp[2] = 0;
+			tmp[j % 3] = ( j < 3 ) ? 1.0 : -1.0;
+
+			R_StudioLighting( &lv, pbbox[i].bone, 0, tmp );
+			tri.Brightness( lv );
+
+			tri.Vertex3fv( p[boxpnt[j][0]] );
+			tri.Vertex3fv( p[boxpnt[j][1]] );
+			tri.Vertex3fv( p[boxpnt[j][2]] );
+			tri.Vertex3fv( p[boxpnt[j][3]] );
+		}
+
+		tri.End();
+	}
+}
+
+/*
+================
+R_StudioAbsBB
+================
+*/
+void R_StudioAbsBB( void )
+{
+	int					j;
+	float				lv;
+	vec3_t				tmp;
+	vec3_t				p[8];
+	mstudiobone_t		*pbones;
+	mstudioseqdesc_t	*pseqdesc;
+
+	pbones = (mstudiobone_t *)( (byte *)pstudiohdr + pstudiohdr->boneindex );
+
+	// get the sequence bounding box
+	pseqdesc = (mstudioseqdesc_t *)( (byte *)pstudiohdr + pstudiohdr->seqindex ) + currententity->curstate.sequence;
+
+	tri.RenderMode( kRenderTransAdd );
+	tri.SpriteTexture( cl_sprite_white, 0 );
+
+	for ( j = 0; j < 8; j++ )
+	{
+		p[j][0] = ( j & 1 ) ? pseqdesc->bbmin[0] : pseqdesc->bbmax[0];
+		p[j][1] = ( j & 2 ) ? pseqdesc->bbmin[1] : pseqdesc->bbmax[1];
+		p[j][2] = ( j & 4 ) ? pseqdesc->bbmin[2] : pseqdesc->bbmax[2];
+
+		VectorAdd( p[j], currententity->origin, p[j] );
+	}
+
+	tri.Begin( TRI_QUADS );
+	tri.Color4f( 0.5, 0.5, 1, 1 );
+
+	for ( j = 0; j < 6; j++ )
+	{
+		tmp[0] = tmp[1] = tmp[2] = 0;
+		tmp[j % 3] = ( j < 3 ) ? 1.0 : -1.0;
+
+		R_StudioLighting( &lv, -1, 0, tmp );
+		tri.Brightness( lv );
+
+		tri.Vertex3fv( p[boxpnt[j][0]] );
+		tri.Vertex3fv( p[boxpnt[j][1]] );
+		tri.Vertex3fv( p[boxpnt[j][2]] );
+		tri.Vertex3fv( p[boxpnt[j][3]] );
+	}
+
+	tri.End();
+	tri.RenderMode( kRenderNormal );
+}
+
+/*
+================
+R_StudioDrawBones
+================
+*/
+void R_StudioDrawBones( void )
+{
+	int				i, j, k;
+	float			lv;
+	vec3_t			tmp;
+	vec3_t			p[8];
+	vec3_t			up, right, forward;
+	vec3_t			a1;
+	mstudiobone_t	*pbones;
+
+	pbones = (mstudiobone_t *)( (byte *)pstudiohdr + pstudiohdr->boneindex );
+
+	tri.SpriteTexture( cl_sprite_white, 0 );
+
+	for ( i = 0; i < pstudiohdr->numbones; i++ )
+	{
+		if ( pbones[i].parent == -1 )
+			continue;
+
+		k = pbones[i].parent;
+
+		a1[0] = a1[1] = a1[2] = 1.0;
+
+		up[0] = lighttransform[i][0][3] - lighttransform[k][0][3];
+		up[1] = lighttransform[i][1][3] - lighttransform[k][1][3];
+		up[2] = lighttransform[i][2][3] - lighttransform[k][2][3];
+
+		if ( up[0] > up[1] )
+		{
+			if ( up[0] > up[2] )
+				a1[0] = 0;
+			else
+				a1[2] = 0;
+		}
+		else
+		{
+			if ( up[1] > up[2] )
+				a1[1] = 0;
+			else
+				a1[2] = 0;
+		}
+
+		CrossProduct( up, a1, right );
+		VectorNormalize( right );
+		CrossProduct( up, right, forward );
+		VectorNormalize( forward );
+		VectorScale( right, 2, right );
+		VectorScale( forward, 2, forward );
+
+		for ( j = 0; j < 8; j++ )
+		{
+			p[j][0] = lighttransform[k][0][3];
+			p[j][1] = lighttransform[k][1][3];
+			p[j][2] = lighttransform[k][2][3];
+
+			if ( j & 1 )
+			{
+				VectorSubtract( p[j], right, p[j] );
+			}
+			else
+			{
+				VectorAdd( p[j], right, p[j] );
+			}
+
+			if ( j & 2 )
+			{
+				VectorSubtract( p[j], forward, p[j] );
+			}
+			else
+			{
+				VectorAdd( p[j], forward, p[j] );
+			}
+
+			if ( j & 4 )
+			{
+			}
+			else
+			{
+				VectorAdd( p[j], up, p[j] );
+			}
+		}
+
+		VectorNormalize( up );
+		VectorNormalize( right );
+		VectorNormalize( forward );
+
+		tri.Begin( TRI_QUADS );
+		tri.Color4f( 1, 1, 1, 1 );
+		tri.TexCoord2f( 0, 0 );
+
+		for ( j = 0; j < 6; j++ )
+		{
+			switch ( j )
+			{
+			case 0:
+				VectorCopy( right, tmp );
+				break;
+			case 1:
+				VectorCopy( forward, tmp );
+				break;
+			case 2:
+				VectorCopy( up, tmp );
+				break;
+			case 3:
+				VectorScale( right, -1, tmp );
+				break;
+			case 4:
+				VectorScale( forward, -1, tmp );
+				break;
+			case 5:
+				VectorScale( up, -1, tmp );
+				break;
+			}
+
+			R_StudioLighting( &lv, -1, 0, tmp );
+			tri.Brightness( lv );
+
+			tri.Vertex3fv( p[boxpnt[j][0]] );
+			tri.Vertex3fv( p[boxpnt[j][1]] );
+			tri.Vertex3fv( p[boxpnt[j][2]] );
+			tri.Vertex3fv( p[boxpnt[j][3]] );
+		}
+
+		tri.End();
+	}
+}
+
+/*
+================
+R_StudioTransformAuxVert
+================
+*/
+void R_StudioTransformAuxVert( auxvert_t *av, int bone, vec_t *vert )
+{
+	av->fv[0] = DotProduct( vert, bonetransform[bone][0] ) + bonetransform[bone][0][3];
+	av->fv[1] = DotProduct( vert, bonetransform[bone][1] ) + bonetransform[bone][1][3];
+	av->fv[2] = DotProduct( vert, bonetransform[bone][2] ) + bonetransform[bone][2][3];
+}
+
+/*
+================
+R_StudioLighting
+================
+*/
+void R_StudioLighting( float *lv, int bone, int flags, vec_t *normal )
+{
+	float	illum;
+	float	lightcos;
+
+	illum = r_ambientlight;
+
+	if ( ( flags & STUDIO_NF_FLATSHADE ) && r_flatshade_guess != 1 )
+	{
+		illum += r_shadelight * 0.8;
+	}
+	else
+	{
+		float	r;
+
+		if ( bone != -1 )
+			lightcos = DotProduct( normal, r_blightvec[bone] );	// -1 colinear, 1 opposite
+		else
+			lightcos = DotProduct( normal, r_plightvec );
+
+		if ( lightcos > 1.0 )
+			lightcos = 1;
+
+		r = v_lambert1;
+
+		if ( r >= 1.0 )
+		{
+			illum += r_shadelight;
+
+			lightcos = ( lightcos + ( r - 1.0 ) ) / r;	// do modified hemispherical lighting
+			if ( lightcos > 0.0 )
+			{
+				illum -= r_shadelight * lightcos;
+			}
+		}
+		else
+		{
+			lightcos = ( -lightcos + r ) / ( r + 1.0f );
+			if ( lightcos > 0.0f )
+			{
+				illum += r_shadelight * lightcos;
+			}
+		}
+
+		if ( illum <= 0 )
+			illum = 0;
+	}
+
+	if ( illum > 255 )
+		illum = 255;
+
+	illum = lightgammatable[(int)( illum * 4 )];
+	*lv = illum * ( 1.0 / 1023.0 );	// Light from 0 to 1.0
+}
+
+/*
+================
+R_LightStrength
+================
+*/
+void R_LightStrength( int bone, float *vert, float (*light)[4] )
+{
+	int		i;
+
+	if ( lightage[bone] != r_smodels_total )
+	{
+		for ( i = 0; i < numlights; i++ )
+		{
+			vec3_t	lpos;
+
+			lpos[0] = locallight[i]->origin[0] - lighttransform[bone][0][3];
+			lpos[1] = locallight[i]->origin[1] - lighttransform[bone][1][3];
+			lpos[2] = locallight[i]->origin[2] - lighttransform[bone][2][3];
+
+			VectorIRotate( lpos, lighttransform[bone], lightbonepos[bone][i] );
+		}
+
+		lightage[bone] = r_smodels_total;
+	}
+
+	for ( i = 0; i < numlights; i++ )
+	{
+		VectorSubtract( vert, lightbonepos[bone][i], light[i] );
+		light[i][3] = 0;
+	}
+}
+
+/*
+================
+R_LightLambert
+================
+*/
+void R_LightLambert( float (*light)[4], float *normal, float *src, float *lambert )
+{
+	int		i;
+	float	adjr, adjg, adjb;
+	float	c;
+
+	if ( !numlights )
+	{
+		VectorCopy( src, lambert );
+		return;
+	}
+
+	adjr = adjg = adjb = 0;
+
+	for ( i = 0; i < numlights; i++ )
+	{
+		c = -DotProduct( normal, light[i] );
+
+		if ( c > 0 )
+		{
+			if ( light[i][3] == 0.0 )
+			{
+				float	lengthsq_guess;
+				float	length_guess;
+
+				lengthsq_guess = DotProduct( light[i], light[i] );
+				if ( lengthsq_guess > 0.0 )
+				{
+					length_guess = sqrt( lengthsq_guess );
+					light[i][3] = locallightR2[i] / ( lengthsq_guess * length_guess );
+				}
+				else
+				{
+					light[i][3] = 1.0;
+				}
+			}
+
+			c *= light[i][3];
+
+			adjr += locallinearlight[i][0] * c;
+			adjg += locallinearlight[i][1] * c;
+			adjb += locallinearlight[i][2] * c;
+		}
+	}
+
+	if ( adjr != 0 || adjg != 0 || adjb != 0 )
+	{
+		int		value_guess;
+
+		value_guess = lineargammatable[(int)( src[0] * 1023 )] + adjr;
+		if ( value_guess > 1023 )
+			lambert[0] = 1.0;
+		else
+			lambert[0] = screengammatable[value_guess] / 1023.0;
+
+		value_guess = lineargammatable[(int)( src[1] * 1023 )] + adjg;
+		if ( value_guess > 1023 )
+			lambert[1] = 1.0;
+		else
+			lambert[1] = screengammatable[value_guess] / 1023.0;
+
+		value_guess = lineargammatable[(int)( src[2] * 1023 )] + adjb;
+		if ( value_guess > 1023 )
+			lambert[2] = 1.0;
+		else
+			lambert[2] = screengammatable[value_guess] / 1023.0;
+	}
+	else
+	{
+		VectorCopy( src, lambert );
+	}
+}
+
+/*
+================
+R_StudioChrome
+================
+*/
+void R_StudioChrome( int *pchrome, int bone, vec_t *normal )
+{
+	float	n;
+
+	if ( chromeage[bone] != r_smodels_total )
+	{
+		// calculate vectors from the viewer to the bone. This roughly adjusts for position
+		vec3_t	chromeupvec;		// chrome t vector in world reference frame
+		vec3_t	chromerightvec;		// chrome s vector in world reference frame
+		vec3_t	tmp;				// vector pointing at bone in world reference frame
+
+		VectorScale( g_ChromeOrigin, -1, tmp );
+		tmp[0] += lighttransform[bone][0][3];
+		tmp[1] += lighttransform[bone][1][3];
+		tmp[2] += lighttransform[bone][2][3];
+		VectorNormalize( tmp );
+		CrossProduct( tmp, vright, chromeupvec );
+		VectorNormalize( chromeupvec );
+		CrossProduct( chromeupvec, tmp, chromerightvec );
+		VectorNormalize( chromerightvec );
+
+		VectorIRotate( chromeupvec, lighttransform[bone], r_chromeup[bone] );
+		VectorIRotate( chromerightvec, lighttransform[bone], r_chromeright[bone] );
+
+		chromeage[bone] = r_smodels_total;
+	}
+
+	// calc s coord
+	n = DotProduct( normal, r_chromeright[bone] );
+	pchrome[0] = ( n + 1.0 ) * 32 * 1024;
+
+	// calc t coord
+	n = DotProduct( normal, r_chromeup[bone] );
+	pchrome[1] = ( n + 1.0 ) * 32 * 1024;
 }
