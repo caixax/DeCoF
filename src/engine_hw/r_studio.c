@@ -23,6 +23,7 @@
 #include "qgl.h"
 #include "mem.h"
 #include "triangleapi.h"
+#include "../pm_shared/pm_movevars.h"
 
 #include <math.h>
 
@@ -136,6 +137,11 @@ static int		lightage[MAXSTUDIOBONES];
 
 auxvert_t		*pauxverts;
 
+static auxvert_t	auxverts[MAXSTUDIOVERTS];
+static vec3_t	lightvalues[MAXSTUDIOVERTS];
+static vec3_t	*pvlightvalues;
+static int		pvlightvalues_size;
+
 int				r_ambientlight;
 float			r_shadelight;
 
@@ -170,6 +176,30 @@ extern model_t	mod_known[];
 extern cvar_t	developer;
 extern cvar_t	cl_himodels;
 extern cvar_t	cl_gaitestimation;
+extern cvar_t	r_fullbright;
+extern cvar_t	v_direct;
+extern movevars_t	movevars;
+extern qboolean	filterMode;
+extern float	filterColorRed;
+extern float	filterColorGreen;
+extern float	filterColorBlue;
+extern float	filterBrightness;
+extern cvar_t	gl_affinemodels;
+extern cvar_t	r_drawentities;
+extern cvar_t	r_shadows;
+extern cvar_t	gl_ztrick;
+extern float	gldepthmin;
+extern model_t	*cl_sprite_shell;
+extern float	r_blend;
+extern vec3_t	shadevector;
+
+void	R_StudioRenderFinal( void );
+void	R_StudioDrawPoints( void );
+void	GLR_StudioDrawShadow( void );
+void	GL_DisableMultitexture( void );
+
+msurface_t	*SurfaceAtPoint( model_t *pModel, mnode_t *node, vec_t *start, vec_t *end );
+colorVec	R_LightVec( vec_t *start, vec_t *end );
 
 int		R_StudioDrawPlayer( int flags, entity_state_t *pplayer );
 void	R_StudioCalcAttachments( void );
@@ -3320,4 +3350,590 @@ int R_StudioDrawPlayer( int flags, entity_state_t *pplayer )
 	}
 
 	return 1;
+}
+
+/*
+================
+R_StudioDynamicLight
+================
+*/
+void R_StudioDynamicLight( cl_entity_t *ent, alight_t *plight )
+{
+	int			lnum;
+	vec3_t		dist;
+	colorVec	down;
+	vec3_t		light;
+	float		total, r;
+	float		add;
+
+	vec3_t		uporigin, upend;
+	float		floor;
+	vec3_t		color;
+
+	if ( filterMode )
+	{
+		plight->shadelight = 0;
+		plight->ambientlight = 192 * filterBrightness;
+
+		plight->plightvec[0] = 0;
+		plight->plightvec[1] = 0;
+		plight->plightvec[2] = -1;
+
+		plight->color[0] = filterColorRed * filterBrightness;
+		plight->color[1] = filterColorGreen * filterBrightness;
+		plight->color[2] = filterColorBlue * filterBrightness;
+		return;
+	}
+
+	if ( r_fullbright.value == 1 )
+	{
+		plight->shadelight = 0;
+		plight->ambientlight = 192;
+
+		plight->plightvec[0] = 0;
+		plight->plightvec[1] = 0;
+		plight->plightvec[2] = -1;
+
+		plight->color[0] = 1.0;
+		plight->color[1] = 1.0;
+		plight->color[2] = 1.0;
+		return;
+	}
+
+	// determine plane to get lightvalues from: ceil or floor
+	if ( ent->curstate.effects & EF_INVLIGHT )
+	{
+		light[0] = 0;
+		light[1] = 0;
+		light[2] = 1;
+	}
+	else
+	{
+		light[0] = 0;
+		light[1] = 0;
+		light[2] = -1;
+	}
+
+	uporigin[0] = ent->origin[0] - light[0] * 8;
+	uporigin[1] = ent->origin[1] - light[1] * 8;
+	uporigin[2] = ent->origin[2] - light[2] * 8;
+
+	down.r = down.g = down.b = 0;
+
+	if ( movevars.skycolor_r + movevars.skycolor_g + movevars.skycolor_b != 0 )
+	{
+		vec3_t		end;
+		msurface_t	*psurf = NULL;
+
+		end[0] = ent->origin[0] - movevars.skyvec_x * 8192;
+		end[1] = ent->origin[1] - movevars.skyvec_y * 8192;
+		end[2] = ent->origin[2] - movevars.skyvec_z * 8192;
+
+		psurf = SurfaceAtPoint( cl.worldmodel, cl.worldmodel->nodes, uporigin, end );
+
+		if ( ( ent->model->flags & STUDIO_FORCE_SKYLIGHT ) || ( psurf && ( psurf->flags & SURF_DRAWSKY ) ) )
+		{
+			down.r = movevars.skycolor_r;
+			down.g = movevars.skycolor_g;
+			down.b = movevars.skycolor_b;
+
+			light[0] = movevars.skyvec_x;
+			light[1] = movevars.skyvec_y;
+			light[2] = movevars.skyvec_z;
+		}
+	}
+
+	if ( down.r + down.g + down.b == 0 )
+	{
+		colorVec	gcolor;
+		float		grad[4];
+
+		VectorScale( light, 2048, upend );
+		VectorAdd( uporigin, upend, upend );
+
+		down = R_LightVec( uporigin, upend );
+
+		uporigin[0] -= 16;
+		uporigin[1] -= 16;
+		upend[0] -= 16;
+		upend[1] -= 16;
+
+		gcolor = R_LightVec( uporigin, upend );
+		grad[0] = ( gcolor.r + gcolor.g + gcolor.b ) / 768.0;
+
+		uporigin[0] += 32;
+		upend[0] += 32;
+
+		gcolor = R_LightVec( uporigin, upend );
+		grad[1] = ( gcolor.r + gcolor.g + gcolor.b ) / 768.0;
+
+		uporigin[1] += 32;
+		upend[1] += 32;
+
+		gcolor = R_LightVec( uporigin, upend );
+		grad[2] = ( gcolor.r + gcolor.g + gcolor.b ) / 768.0;
+
+		uporigin[0] -= 32;
+		upend[0] -= 32;
+
+		gcolor = R_LightVec( uporigin, upend );
+		grad[3] = ( gcolor.r + gcolor.g + gcolor.b ) / 768.0;
+
+		light[0] = grad[0] - grad[1] - grad[2] + grad[3];
+		light[1] = grad[0] + grad[1] - grad[2] - grad[3];
+		VectorNormalize( light );
+	}
+
+	if ( currententity->curstate.renderfx == kRenderFxLightMultiplier && currententity->curstate.iuser4 != 10 )
+	{
+		down.r = down.r * ( currententity->curstate.iuser4 / 10.0f );
+		down.g = down.g * ( currententity->curstate.iuser4 / 10.0f );
+		down.b = down.b * ( currententity->curstate.iuser4 / 10.0f );
+	}
+
+	currententity->cvFloorColor = down;
+
+	color[0] = down.r;
+	color[1] = down.g;
+	color[2] = down.b;
+
+	floor = max( down.r, down.g );
+	floor = max( floor, down.b );
+
+	if ( floor == 0 )
+		floor = 1.0;
+
+	VectorScale( light, floor, light );
+	total = floor;
+
+	for ( lnum = 0; lnum < MAX_DLIGHTS; lnum++ )
+	{
+		if ( cl_dlights[lnum].die >= cl.time )
+		{
+			VectorSubtract( ent->origin, cl_dlights[lnum].origin, dist );
+
+			r = Length( dist );
+			add = cl_dlights[lnum].radius - r;
+
+			if ( add > 0 )
+			{
+				if ( r <= 1.0 )
+					r = add;
+				else
+					r = add / r;
+
+				total += add;
+
+				VectorScale( dist, r, dist );
+				VectorAdd( light, dist, light );
+
+				color[0] += cl_dlights[lnum].color.r * add / 256.0;
+				color[1] += cl_dlights[lnum].color.g * add / 256.0;
+				color[2] += cl_dlights[lnum].color.b * add / 256.0;
+			}
+		}
+	}
+
+	if ( ent->model->flags & STUDIO_DYNAMIC_LIGHT )
+	{
+		r = 0.6;
+	}
+	else
+	{
+		r = v_direct.value;
+		r = ( r > 1.0 ) ? 1.0 : r;
+		r = ( r < 0.75 ) ? 0.75 : r;
+	}
+
+	VectorScale( light, r, light );
+
+	plight->shadelight = Length( light );
+	plight->ambientlight = total - plight->shadelight;
+
+	floor = max( color[0], color[1] );
+	floor = max( floor, color[2] );
+
+	if ( floor == 0 )
+	{
+		plight->color[0] = 1.0;
+		plight->color[1] = 1.0;
+		plight->color[2] = 1.0;
+	}
+	else
+	{
+		r = 1.0 / floor;
+		plight->color[0] = color[0] * r;
+		plight->color[1] = color[1] * r;
+		plight->color[2] = color[2] * r;
+	}
+
+	if ( plight->ambientlight > 128 )
+		plight->ambientlight = 128;
+
+	if ( plight->ambientlight + plight->shadelight > 255 )
+		plight->shadelight = 255 - plight->ambientlight;
+
+	VectorNormalize( light );
+	VectorCopy( light, plight->plightvec );
+}
+
+/*
+================
+R_StudioEntityLight
+================
+*/
+void R_StudioEntityLight( alight_t *plight )
+{
+	int			i, j, k;
+	dlight_t	*el;
+	vec3_t		mid, pos;
+	float		dist2, f;
+	float		lstrength[3];
+	float		minstrength;
+
+	VectorCopy( currententity->origin, mid );
+
+	for ( j = 0; j < 3; j++ )
+		lstrength[j] = 0;
+
+	minstrength = 1000000;
+	numlights = 0;
+
+	el = cl_elights;
+	for ( i = 0; i < MAX_ELIGHTS; i++, el++ )
+	{
+		if ( el->die > cl.time && el->radius > 0 )
+		{
+			if ( ( el->key & 0xFFF ) == currententity->index )
+			{
+				int		att;
+
+				att = ( el->key >> 12 ) & 0xF;
+				if ( !att )
+				{
+					VectorCopy( currententity->origin, el->origin );
+				}
+				else
+				{
+					VectorCopy( currententity->attachment[att - 1], el->origin );
+				}
+			}
+
+			VectorSubtract( mid, el->origin, pos );
+			dist2 = DotProduct( pos, pos );
+
+			if ( dist2 > el->radius * el->radius )
+				f = el->radius * el->radius / dist2;
+			else
+				f = 1.0;
+
+			if ( f > 0.004 )
+			{
+				if ( numlights < 3 )
+				{
+					k = numlights;
+				}
+				else
+				{
+					k = -1;
+					for ( j = 0; j < numlights; j++ )
+					{
+						if ( lstrength[j] < minstrength && lstrength[j] < f )
+						{
+							k = j;
+							minstrength = lstrength[j];
+						}
+					}
+				}
+
+				if ( k != -1 )
+				{
+					lstrength[k] = f;
+					locallight[k] = el;
+					locallightR2[k] = el->radius * el->radius;
+					locallinearlight[k][0] = lineargammatable[el->color.r * 4];
+					locallinearlight[k][1] = lineargammatable[el->color.g * 4];
+					locallinearlight[k][2] = lineargammatable[el->color.b * 4];
+
+					if ( k >= numlights )
+						numlights = k + 1;
+				}
+			}
+		}
+	}
+}
+
+/*
+================
+CL_LookupSound
+================
+*/
+struct sfx_s *CL_LookupSound( const char *pName )
+{
+	int		i;
+	sfx_t	*pSound;
+
+	for ( i = 0; i < MAX_SOUNDS; i++ )
+	{
+		pSound = cl.sound_precache[i];
+		if ( pSound && !Q_strcmp( (char *)pName, pSound->name ) )
+			return pSound;
+	}
+
+	return S_PrecacheSound( (char *)pName );
+}
+
+/*
+================
+R_StudioCalcAttachments
+================
+*/
+void R_StudioCalcAttachments( void )
+{
+	int					i;
+	mstudioattachment_t	*pattachment;
+
+	if ( pstudiohdr->numattachments > 4 )
+	{
+		Sys_Error( "Too many attachments on %s\n", currententity->model->name );
+	}
+
+	// calculate attachment points
+	pattachment = (mstudioattachment_t *)( (byte *)pstudiohdr + pstudiohdr->attachmentindex );
+	for ( i = 0; i < pstudiohdr->numattachments; i++ )
+	{
+		VectorTransform( pattachment[i].org, lighttransform[pattachment[i].bone], currententity->attachment[i] );
+	}
+}
+
+/*
+================
+R_StudioClientEvents
+================
+*/
+void R_StudioClientEvents( void )
+{
+	int					i;
+	mstudioevent_t		*pevent;
+	mstudioseqdesc_t	*pseqdesc;
+	float				flStart, flEnd;
+
+	pseqdesc = (mstudioseqdesc_t *)( (byte *)pstudiohdr + pstudiohdr->seqindex ) + currententity->curstate.sequence;
+
+	// no time passed, so no events
+	if ( cl.time == cl.oldtime )
+		return;
+
+	if ( currententity->curstate.effects & EF_MUZZLEFLASH )
+	{
+		if ( g_bIsTerrorStrike )
+		{
+			dlight_t	*el;
+
+			el = CL_AllocDlight( 0 );
+			VectorCopy( currententity->attachment[0], el->origin );
+			el->radius = 300;
+			el->die = cl.time + 0.05;
+			el->color.r = 255;
+			el->color.g = 192;
+			el->color.b = 128;
+		}
+		else
+		{
+			dlight_t	*el;
+
+			el = CL_AllocElight( 0 );
+			VectorCopy( currententity->attachment[0], el->origin );
+			el->radius = 16;
+			el->decay = el->radius / 0.05;
+			el->die = cl.time + 0.05;
+			el->color.r = 255;
+			el->color.g = 192;
+			el->color.b = 64;
+		}
+
+		currententity->curstate.effects &= ~EF_MUZZLEFLASH;
+	}
+
+	if ( pseqdesc->numevents == 0 )
+		return;
+
+	pevent = (mstudioevent_t *)( (byte *)pstudiohdr + pseqdesc->eventindex );
+
+	flEnd = CL_StudioEstimateFrame( pseqdesc );
+	flStart = flEnd - currententity->curstate.framerate * host_frametime * pseqdesc->fps;
+
+	if ( currententity->latched.sequencetime == currententity->curstate.animtime && !( pseqdesc->flags & STUDIO_LOOPING ) )
+		flStart = -0.01;
+
+	for ( i = 0; i < pseqdesc->numevents; i++ )
+	{
+		// client side events only
+		if ( pevent[i].event < 5000 )
+			continue;
+
+		if ( pevent[i].frame > flStart && pevent[i].frame <= flEnd )
+			ClientDLL_StudioEvent( &pevent[i], currententity );
+	}
+}
+
+/*
+================
+R_StudioRenderModel
+================
+*/
+void R_StudioRenderModel( void )
+{
+	VectorCopy( r_origin, g_ChromeOrigin );
+
+	g_ForcedFaceFlags = 0;
+
+	if ( currententity->curstate.renderfx == kRenderFxGlowShell )
+	{
+		currententity->curstate.renderfx = kRenderFxNone;
+		R_StudioRenderFinal();
+
+		g_ForcedFaceFlags = STUDIO_NF_CHROME;
+
+		tri.SpriteTexture( cl_sprite_shell, 0 );
+		currententity->curstate.renderfx = kRenderFxGlowShell;
+
+		R_StudioRenderFinal();
+	}
+	else
+	{
+		R_StudioRenderFinal();
+	}
+}
+
+/*
+================
+R_StudioRenderFinal
+================
+*/
+void R_StudioRenderFinal( void )
+{
+	int		i;
+	float	an;
+	int		rendermode;
+
+	pauxverts = auxverts;
+	pvlightvalues = lightvalues;
+
+	an = 0;
+	shadevector[0] = cos( -an );
+	shadevector[1] = sin( -an );
+	shadevector[2] = 1;
+	VectorNormalize( shadevector );
+
+	GL_DisableMultitexture();
+	qglPushMatrix();
+	qglShadeModel( GL_SMOOTH );
+	qglTexEnvf( GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE );
+
+	if ( gl_affinemodels.value )
+		qglHint( GL_PERSPECTIVE_CORRECTION_HINT, GL_FASTEST );
+
+	if ( g_ForcedFaceFlags )
+		rendermode = kRenderTransAdd;
+	else
+		rendermode = currententity->curstate.rendermode;
+
+	if ( r_drawentities.value == 2 )
+	{
+		R_StudioDrawBones();
+	}
+	else if ( r_drawentities.value == 3 )
+	{
+		R_StudioDrawHulls();
+	}
+	else
+	{
+		for ( i = 0; i < pstudiohdr->numbodyparts; i++ )
+		{
+			R_StudioSetupModel( i );
+
+			if ( r_dointerp )
+			{
+				// interpolation messes up bounding boxes.
+				currententity->trivial_accept = 0;
+			}
+
+			if ( rendermode != kRenderNormal )
+			{
+				if ( rendermode == kRenderTransColor )
+				{
+					qglBlendFunc( GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA );
+					qglTexEnvi( GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_ALPHA );
+				}
+				else if ( rendermode == kRenderTransAdd )
+				{
+					qglTexEnvf( GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE );
+					qglBlendFunc( GL_ONE, GL_ONE );
+					qglColor4f( r_blend, r_blend, r_blend, 1.0 );
+					qglDepthMask( GL_FALSE );
+				}
+				else
+				{
+					qglTexEnvf( GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE );
+					qglBlendFunc( GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA );
+					qglColor4f( 1.0, 1.0, 1.0, r_blend );
+					qglDepthMask( GL_TRUE );
+				}
+
+				qglEnable( GL_BLEND );
+			}
+
+			R_StudioDrawPoints();
+
+			qglDepthMask( GL_TRUE );
+
+			if ( r_shadows.value && rendermode != kRenderTransAdd && !( r_model->flags & STUDIO_DYNAMIC_LIGHT ) )
+			{
+				float	color;
+
+				color = 1.0 - ( r_blend * 0.5 );
+
+				qglDisable( GL_TEXTURE_2D );
+				qglBlendFunc( GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA );
+				qglEnable( GL_BLEND );
+				qglColor4f( 0, 0, 0, 1 - color );
+
+				if ( gl_ztrick.value == 0 || gldepthmin < 0.5 )
+					qglDepthFunc( GL_LESS );
+				else
+					qglDepthFunc( GL_GREATER );
+
+				GLR_StudioDrawShadow();
+
+				if ( gl_ztrick.value == 0 || gldepthmin < 0.5 )
+					qglDepthFunc( GL_LEQUAL );
+				else
+					qglDepthFunc( GL_GEQUAL );
+
+				qglEnable( GL_TEXTURE_2D );
+				qglDisable( GL_BLEND );
+				qglColor4f( 1, 1, 1, 1 );
+				qglShadeModel( GL_SMOOTH );
+			}
+		}
+	}
+
+	if ( r_drawentities.value == 4 )
+	{
+		tri.RenderMode( kRenderTransAdd );
+		R_StudioDrawHulls();
+		tri.RenderMode( kRenderNormal );
+	}
+
+	if ( rendermode != kRenderNormal )
+		qglDisable( GL_BLEND );
+
+	qglTexEnvf( GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_REPLACE );
+	qglShadeModel( GL_FLAT );
+
+	if ( gl_affinemodels.value )
+		qglHint( GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST );
+
+	qglPopMatrix();
 }

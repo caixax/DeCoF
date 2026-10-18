@@ -365,7 +365,9 @@ typedef struct
 #define RAD_TO_STUDIO		(32768.0/M_PI)
 #define STUDIO_TO_RAD		(M_PI/32768.0)
 
+#define STUDIO_DYNAMIC_LIGHT	0x0100	// dynamically get lighting from floor or ceil (flying monsters)
 #define STUDIO_TRACE_HITBOX	0x0200	// always use hitbox trace instead of bbox
+#define STUDIO_FORCE_SKYLIGHT	0x0400	// always grab lightvalues from the sky settings (even if sky is invisible)
 
 // r_studio.c
 struct model_s;
