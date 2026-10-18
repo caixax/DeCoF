@@ -2438,6 +2438,16 @@
             "src/engine",
             "src/pm_shared"
           ]
+        },
+        {
+          "name": "engine/mathlib",
+          "source": "src/engine_hw/mathlib.c",
+          "functions_file": "tools/units/hw_engine_mathlib.txt"
+        },
+        {
+          "name": "engine/mem",
+          "source": "src/engine_hw/mem.c",
+          "functions_file": "tools/units/hw_engine_mem.txt"
         }
       ]
     },

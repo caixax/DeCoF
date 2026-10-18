@@ -1,3 +1,14 @@
+_SV_InitStudioHull
+_R_CheckStudioCache
+_R_AddToStudioCache
+_AngleQuaternion
+_QuaternionSlerp
+_QuaternionMatrix
+_R_StudioCalcBoneAdj
+_R_StudioCalcBoneQuaterion
+_R_StudioCalcBonePosition
+_R_StudioSlerpBones
+_R_GetAnim
 _SV_StudioSetupBones
 _SV_SetStudioHullPlane
 _R_StudioHull
@@ -58,6 +69,11 @@ _R_StudioCalcAttachments
 _R_StudioClientEvents
 _R_StudioRenderModel
 _R_StudioRenderFinal
+_R_GLStudioDrawPoints
+_IsATISmoothing
+_GenerateNormals
+_R_GLStudioDrawPointsATI_guess
+_R_StudioDrawPoints
 _GLR_StudioDrawShadow
 _R_UpdateLatchedVars
 _R_ResetLatched
@@ -96,3 +112,7 @@ _studioapi_SetRenderModel
 _IsHardware
 _studioapi_GL_SetRenderMode
 _studioapi_GL_StudioDrawShadow
+_studioapi_RenderShadow
+_legacy_Mod_ForName
+_R_ResetStudio
+_R_ResetSvBlending

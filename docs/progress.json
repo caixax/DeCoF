@@ -1,7 +1,7 @@
 {
-  "commit": "c95146d",
+  "commit": "5196807",
   "counting": "LIB rows excluded; bytes weighted by function size",
-  "date": "2026-10-17",
+  "date": "2026-10-18",
   "dlls": {
     "CoFLaunchApp.exe": {
       "bytes": {
@@ -282,44 +282,44 @@
     "hw.dll": {
       "bytes": {
         "EQUIVALENT": 30099,
-        "MATCHED": 414933,
-        "TODO": 1011827,
+        "MATCHED": 422927,
+        "TODO": 1003833,
         "total": 1456859
       },
       "categories": {
         "ENGINE": {
           "bytes": {
             "EQUIVALENT": 20949,
-            "MATCHED": 342834,
-            "TODO": 405221,
-            "total": 769004
+            "MATCHED": 350828,
+            "TODO": 404979,
+            "total": 776756
           },
           "functions": {
             "EQUIVALENT": 7,
-            "MATCHED": 1312,
-            "TODO": 1480,
-            "total": 2799
+            "MATCHED": 1346,
+            "TODO": 1479,
+            "total": 2832
           }
         },
         "UNKNOWN": {
           "bytes": {
             "EQUIVALENT": 9150,
             "MATCHED": 72099,
-            "TODO": 606606,
-            "total": 687855
+            "TODO": 598854,
+            "total": 680103
           },
           "functions": {
             "EQUIVALENT": 18,
             "MATCHED": 553,
-            "TODO": 5373,
-            "total": 5944
+            "TODO": 5340,
+            "total": 5911
           }
         }
       },
       "functions": {
         "EQUIVALENT": 25,
-        "MATCHED": 1865,
-        "TODO": 6853,
+        "MATCHED": 1899,
+        "TODO": 6819,
         "total": 8743
       }
     },
@@ -372,14 +372,14 @@
   "total": {
     "bytes": {
       "EQUIVALENT": 125829,
-      "MATCHED": 2129334,
-      "TODO": 1681635,
+      "MATCHED": 2137328,
+      "TODO": 1673641,
       "total": 3936798
     },
     "functions": {
       "EQUIVALENT": 62,
-      "MATCHED": 10398,
-      "TODO": 11882,
+      "MATCHED": 10432,
+      "TODO": 11848,
       "total": 22342
     }
   }

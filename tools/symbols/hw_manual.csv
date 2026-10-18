@@ -2020,3 +2020,55 @@ va,name,kind,evidence
 01E28BEC,?GetBounds@Panel@vgui2@@QAEXAAH000@Z,func,Ghidra signature name CSliderCtrl::FUN_01e28bec; every use in 100% functions pairs with our ?GetBounds@Panel@vgui2@@QAEXAAH000@Z (tools/fid_fix.py)
 01E28BBF,?SetBounds@Panel@vgui2@@QAEXHHHH@Z,func,Ghidra signature name CSliderCtrl::FUN_01e28bbf; every use in 100% functions pairs with our ?SetBounds@Panel@vgui2@@QAEXHHHH@Z (tools/fid_fix.py)
 01D4404B,_CL_AllocCustomTempEntity,func,"engine/cl_tent.c of the Linux hw.so DWARF, last function of the file after R_Explosion; sets FTENT_CLIENTCUSTOM (0x80000) and the callback, calls efx.CL_TempEntAllocHigh or efx.CL_TempEntAlloc by the high flag (added by an agent)"
+01DB8620,_SV_InitStudioHull,func,Linux hw.so DWARF r_studio.c line order (first function); sets up 6 clipnodes and 128 studio hulls
+01DB8718,_R_CheckStudioCache,func,"Linux hw.so DWARF r_studio.c line order; returns a cache entry for model, frame, sequence, angles, origin, size, controller"
+01DB8815,_R_AddToStudioCache,func,"Linux hw.so DWARF r_studio.c line order, after R_CheckStudioCache"
+01DB89AE,_AngleQuaternion,func,Linux hw.so DWARF r_studio.c line order; angles to quaternion
+01DB8ABA,_QuaternionSlerp,func,"Linux hw.so DWARF r_studio.c line order; p, q, t, qt"
+01DB8D7C,_QuaternionMatrix,func,Linux hw.so DWARF r_studio.c line order; quaternion to 3x4 matrix
+01DB8ECC,_R_StudioCalcBoneAdj,func,"Linux hw.so DWARF r_studio.c line order; dadt, adj, controllers, mouthopen"
+01DB919C,_R_StudioCalcBoneQuaterion,func,"Linux hw.so DWARF r_studio.c line order; frame, s, pbone, panim, adj, q"
+01DB9452,_R_StudioCalcBonePosition,func,"Linux hw.so DWARF r_studio.c line order; frame, s, pbone, panim, adj, pos"
+01DB9699,_R_StudioSlerpBones,func,"Linux hw.so DWARF r_studio.c line order; q1, pos1, q2, pos2, s"
+01DB97FC,_R_GetAnim,func,"Linux hw.so DWARF r_studio.c line order; psubmodel, pseqdesc, the last function before SV_StudioSetupBones"
+01DC11E0,_R_GLStudioDrawPoints,func,"Linux hw.so DWARF r_studio.c line order, after R_StudioRenderFinal; called by R_StudioDrawPoints"
+01DC1B93,_IsATISmoothing,func,"Linux hw.so DWARF r_studio.c line order, after R_GLStudioDrawPoints; returns a flag from the ATI smoothing cvar"
+01DC1BBD,_GenerateNormals,func,Linux hw.so DWARF r_studio.c line order; takes the auxvert array
+01DC213C,_R_GLStudioDrawPointsATI_guess,func,"Not in the Linux build: the ATI PN triangles (GL_PN_TRIANGLES_ATI 0x87F0) variant of R_GLStudioDrawPoints, called by R_StudioDrawPoints when IsATISmoothing"
+01DC2C02,_R_StudioDrawPoints,func,"Linux hw.so DWARF r_studio.c line order, before GLR_StudioDrawShadow; chooses between the two GL draw functions"
+01DC3DE4,_studioapi_RenderShadow,func,"Linux hw.so DWARF r_studio.c line order, after studioapi_GL_StudioDrawShadow; iSprite and four corner points"
+01DC3EFD,_legacy_Mod_ForName,func,"Linux hw.so DWARF r_studio.c line order; calls Mod_ForName( model, crash, 0 )"
+01DC3F14,_R_ResetStudio,func,Linux hw.so DWARF r_studio.c line order; pStudioAPI = &studio api table
+01DC3F23,_R_ResetSvBlending,func,Linux hw.so DWARF r_studio.c line order; g_pSvBlendingAPI = &server blending table
+01DB84C4,_R_LookupColor,func,"engine/r_part.c of the Linux hw.so DWARF (R_LookupColor, line 3372, last function of the file after R_GetPackedColor); nearest host_basepal entry to r, g, b, called by R_ParticleLine and R_ParticleBox of cl_tent.c and stored in efx (added by an agent)"
+01D8B0C0,_anglemod,func,Linux hw.so DWARF mathlib.c line order (first function); (360.0/65536) * ((int)(a * (65536/360.0)) & 65535)
+01D8B0EA,_BOPS_Error,func,"Linux hw.so DWARF mathlib.c line order; Sys_Error string ""BoxOnPlaneSide:  Bad signbits"""
+01D8B0FC,_InvertMatrix,func,"Linux hw.so DWARF mathlib.c line order (BoxOnPlaneSide is assembly under id386); 4x8 augmented matrix with row pointers, const float *m, float *out"
+01D8BDE0,_AngleVectors,func,"Linux hw.so DWARF mathlib.c line order, before AngleVectorsTranspose"
+01D8BF6E,_AngleVectorsTranspose,func,Linux hw.so DWARF mathlib.c line order
+01D8C0C3,_AngleMatrix,func,Linux hw.so DWARF mathlib.c line order
+01D8C226,_AngleIMatrix,func,Linux hw.so DWARF mathlib.c line order
+01D8C389,_NormalizeAngles,func,Linux hw.so DWARF mathlib.c line order
+01D8C409,_InterpolateAngles,func,Linux hw.so DWARF mathlib.c line order
+01D8C4BB,_VectorTransform,func,Linux hw.so DWARF mathlib.c line order
+01D8C557,_VectorCompare,func,Linux hw.so DWARF mathlib.c line order; compares three floats
+01D8C59D,_VectorMA,func,Linux hw.so DWARF mathlib.c line order
+01D8C5DE,__DotProduct,func,Linux hw.so DWARF mathlib.c line order
+01D8C609,__VectorSubtract,func,Linux hw.so DWARF mathlib.c line order
+01D8C641,__VectorAdd,func,Linux hw.so DWARF mathlib.c line order
+01D8C679,__VectorCopy,func,Linux hw.so DWARF mathlib.c line order
+01D8C6A0,_CrossProduct,func,Linux hw.so DWARF mathlib.c line order
+01D8C700,_Length,func,Linux hw.so DWARF mathlib.c line order
+01D8C759,_VectorNormalize,func,Linux hw.so DWARF mathlib.c line order
+01D8C7E4,_VectorInverse,func,Linux hw.so DWARF mathlib.c line order
+01D8C811,_VectorScale,func,Linux hw.so DWARF mathlib.c line order
+01D8C841,_Q_log2,func,Linux hw.so DWARF mathlib.c line order
+01D8C86C,_VectorMatrix,func,Linux hw.so DWARF mathlib.c line order
+01D8C934,_VectorAngles,func,Linux hw.so DWARF mathlib.c line order
+01D8CA5F,_R_ConcatRotations,func,Linux hw.so DWARF mathlib.c line order
+01D8CBFB,_R_ConcatTransforms,func,Linux hw.so DWARF mathlib.c line order
+01D8CF24,_GreatestCommonDivisor,func,"Linux hw.so DWARF mathlib.c line order, after FloorDivMod (Invert24To16 is assembly under id386)"
+01D8CF80,_Mem_Malloc,func,"Linux hw.so DWARF mem.c line order (first function, before Mem_ZeroMalloc)"
+01D8CF91,_Mem_ZeroMalloc,func,Linux hw.so DWARF mem.c line order
+01D8CFBD,_Mem_Realloc,func,Linux hw.so DWARF mem.c line order
+01D8CFD2,_Mem_Calloc,func,"Linux hw.so DWARF mem.c line order, before Mem_Strdup"
