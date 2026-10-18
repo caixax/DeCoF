@@ -1,6 +1,6 @@
 """Write objdiff results back into docs/progress.csv.
 
-Usage: python tools/update_status.py [--report build/report.json] [<unit> ...]
+Usage: python tools/update_status.py [--report build/report.json] (<unit> ... | --all)
 
 For every function in the objdiff report: 100% -> status MATCHED and
 match_percent 100 (an "EQUIVALENT: ..." note is cleared); below 100 ->
@@ -30,8 +30,14 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--report")
     ap.add_argument("--no-relocs", action="store_true")
+    ap.add_argument("--all", action="store_true")
     ap.add_argument("units", nargs="*")
     args = ap.parse_args()
+    # a whole-project report holds stale or missing objects of other DLLs
+    # (one such run set 1880 hl.dll rows to TODO 0%): write back every unit
+    # only when asked
+    if not args.units and not args.all:
+        ap.error("name the units to write back, or pass --all for every unit of the report")
     if not args.report:
         if args.units:
             # same directory name as tools/build.py check
