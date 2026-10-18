@@ -37,6 +37,11 @@ int		Draw_String( int x, int y, char *str );
 int		Draw_StringLen( const char *psz, unsigned int font );
 void	Draw_SetTextColor( float r, float g, float b );
 void	Draw_ResetTextColor( void );
+void	Draw_GetDefaultColor( void );
+void	Draw_Pic( int x, int y, struct qpic_s *pic );
+void	Draw_TileClear( int x, int y, int w, int h );
+void	Draw_BeginDisc( void );
+struct qpic_s	*Draw_PicFromWad( char *name );
 
 // decals.c
 void	Draw_DecalSetName( int decal, char *name );

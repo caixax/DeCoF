@@ -18,6 +18,7 @@ void	VGUI2_OnDisconnectFromServer( int eLoginFailure );
 int		VGui_GameUIKeyPressed( void );
 
 unsigned int	VGUI2_GetConsoleFont( void );
+void	VGui_Paint( void );
 int		VGUI2_GetFontTall( unsigned int font );
 
 void	VGuiWrap2_NotifyOfServerConnect( const char *game, int IP, int port );
@@ -34,5 +35,7 @@ void	SetSecondaryProgressBarText( const char *statusText );
 // C wrappers around the object at 0x01EDF808 (names unproven)
 void	LevelLoaded_guess( struct model_s *worldmodel );	// 0x01D10DBF, CL_SignonReply
 void	ResetLevelState_guess( void );						// 0x01D10E09, CL_Disconnect and CL_ParseServerInfo
+struct ref_params_s;
+void	AdsRenderView_guess( struct model_s *worldmodel, struct ref_params_s *pparams, float *viewangles );	// 0x01D10DD2, V_RenderView
 
 #endif // VGUI_INT_H

@@ -9,6 +9,11 @@
 
 void GL_BeginRendering( int *x, int *y, int *width, int *height );
 void GL_EndRendering( void );
+void GL_Bind( int texnum );
+
+// glhud.c
+void GLBeginHud( void );
+void GLFinishHud( void );
 
 extern	int		texture_mode;
 
@@ -29,7 +34,7 @@ extern	int		glx, gly, glwidth, glheight;
 #define BACKFACE_EPSILON	0.01
 
 void R_TimeRefresh_f( void );
-texture_t *R_TextureAnimation( texture_t *base );
+texture_t *R_TextureAnimation( msurface_t *s );
 
 typedef struct alight_s
 {

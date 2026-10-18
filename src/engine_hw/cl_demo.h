@@ -49,4 +49,7 @@ extern	int				nCurEntryIndex;
 extern	demodirectory_t	demodir;
 extern	demoheader_t	demoheader;
 
+void	CL_SetDemoViewInfo( ref_params_t *rp, vec_t *view, int viewmodel );
+void	CL_GetDemoViewInfo( ref_params_t *rp, float *view, int *viewmodel );
+
 #endif // CL_DEMO_H

@@ -57,3 +57,4 @@ _R_DecalPoly
 _R_DecalMPoly
 _R_DrawDecals
 _R_AddDynamicLights
+_R_InvalidateSurface

@@ -2037,7 +2037,6 @@ va,name,kind,evidence
 01DC2C02,_R_StudioDrawPoints,func,"Linux hw.so DWARF r_studio.c line order, before GLR_StudioDrawShadow; chooses between the two GL draw functions"
 01DC3DE4,_studioapi_RenderShadow,func,"Linux hw.so DWARF r_studio.c line order, after studioapi_GL_StudioDrawShadow; iSprite and four corner points"
 01DC3EFD,_legacy_Mod_ForName,func,"Linux hw.so DWARF r_studio.c line order; calls Mod_ForName( model, crash, 0 )"
-01DC3F14,_R_ResetStudio,func,Linux hw.so DWARF r_studio.c line order; pStudioAPI = &studio api table
 01DC3F23,_R_ResetSvBlending,func,Linux hw.so DWARF r_studio.c line order; g_pSvBlendingAPI = &server blending table
 01DB1C10,_R_BeamInit,func,"engine/r_part.c of the Linux hw.so DWARF (R_BeamInit, line 83, first function of the file); Hunk_AllocName( 128 * sizeof( BEAM ), ""lightning"" ) stored into the beam pool, called from R_InitParticles (added by an agent)"
 01DB1C2C,_R_BeamClear,func,"engine/r_part.c of the Linux hw.so DWARF (R_BeamClear, line 88, after R_BeamInit); links the 128 beams of the pool into the free list, called from R_ClearParticles (added by an agent)"
@@ -2153,3 +2152,19 @@ va,name,kind,evidence
 01ECD2C4,_?current_table@?7??SV_CheckWater@@9@9,data,"accessed at this address by the matching function of sv_phys.c, sv_user.c or pr_cmds.c (agent report); spelling from our object"
 01EC1A38,_gHullMins,data,"accessed at this address by the matching function of sv_phys.c, sv_user.c or pr_cmds.c (agent report); spelling from our object"
 01EC1A68,_gHullMaxs,data,"accessed at this address by the matching function of sv_phys.c, sv_user.c or pr_cmds.c (agent report); spelling from our object"
+01DC7C10,_S_AmbientOff,func,"engine/SND_DMA.C DWARF source order, first function (line 179): snd_ambient = 0; snd_ambient (0x01EC6A40, initialized to 1) is tested by S_UpdateAmbientSounds (added by an agent)"
+01DC7C1F,_S_AmbientOn,func,engine/SND_DMA.C DWARF source order after S_AmbientOff (line 185): snd_ambient = 1 (added by an agent)
+01DCAE5E,_S_ClearPrecache,func,engine/SND_DMA.C DWARF source order after S_Say_Reliable (line 2458): empty function (added by an agent)
+01DCAE63,_S_BeginPrecaching,func,"engine/SND_DMA.C DWARF source order after S_ClearPrecache (line 2463): cl.fPrecaching = 1, the flag S_LoadStreamSound tests (added by an agent)"
+01DCAE72,_S_EndPrecaching,func,"engine/SND_DMA.C DWARF source order, last function (line 2469): cl.fPrecaching = 0 (added by an agent)"
+01D71C09,_R_InvalidateSurface,func,"R_InvalidateSurface is the last subprogram of engine/GL_RSURF.C in the Linux DWARF (line 3276, after R_DrawDecals at 3198; inlined there); the 5-byte empty function directly follows R_DrawDecals in the same object (no alignment gap) and its only caller is R_DecalCreate, which passes the surface as the Linux inline does (added by an agent)"
+01E099B0,_BuildGammaTable,func,"engine/VIEW.C of the Linux hw.so DWARF in source order before V_CheckGamma; builds texgammatable, lightgammatable and the linear and screen gamma tables, clamps gamma with Cvar_SetValue(""gamma"") (added by an agent)"
+01E09DA2,_V_CheckGamma,func,"engine/VIEW.C of the Linux hw.so DWARF between BuildGammaTable and V_CalcBlend; compares the gamma cvars with statics, calls BuildGammaTable and D_FlushCaches (added by an agent)"
+01E09EDC,_V_UpdatePalette,func,engine/VIEW.C of the Linux hw.so DWARF between V_CalcBlend and V_SetRefParams; calls V_CheckGamma and V_CalcBlend and fills ramps from texgammatable (added by an agent)
+01E09E47,_V_CalcBlend,func,"engine/VIEW.C of the Linux hw.so DWARF; already named by objdiff alignment from R_SetupFrame, added to the VIEW unit (added by an agent)"
+01E0AFE9,_V_InitLevel,func,"engine/VIEW.C of the Linux hw.so DWARF after V_Init; already named by objdiff alignment from R_NewMap, added to the VIEW unit (added by an agent)"
+01D534E9,_DT_SetTextureCoordinates,func,"called with two floats inside the vertex loops of R_DrawSequentialPoly, which the Linux build shows calling DT_SetTextureCoordinates (agent report)"
+01D53503,_DT_ClearRenderState,func,"called with no arguments after qglEnd in R_DrawSequentialPoly, as in the Linux build (agent report)"
+023C7D90,_?rtable@?1??R_TextureAnimation@@9@9,data,function static rtable of R_TextureAnimation; spelling from our object (agent report)
+023ABC50,_?filename@?1??Mod_AdInit@@9@9,data,function static filename of Mod_AdInit; spelling from our object (agent report)
+01DC3F14,_R_ResetStudio,func,Linux hw.so DWARF r_studio.c line order; pStudioAPI = &studio api table

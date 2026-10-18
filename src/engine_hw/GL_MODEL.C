@@ -48,8 +48,8 @@ qboolean	IsCZPlayerModel( CRC32_t crc, const char *filename );
 int		GL_LoadTexture( char *identifier, GL_TEXTURETYPE textureType, int width, int height, byte *data, int mipmap, int iType, byte *pPal );
 void	GL_UnloadTexture( char *identifier );
 void	GL_MakeAliasModelDisplayLists( model_t *m, aliashdr_t *hdr );
-void	DT_LoadDetailTexture( char *texname, int texnum );
-void	TEX_InitFromWad( char *path );
+void	DT_LoadDetailTexture( char *diffuseName, int diffuseId );
+qboolean	TEX_InitFromWad( char *path );
 void	TEX_AddAnimatingTextures( void );
 int		TEX_LoadLump( char *name, unsigned char *dest );
 void	TEX_CleanupWadInfo( void );
@@ -67,10 +67,10 @@ extern	int		g_bCS_CZ_Flags_Initialized;
 model_t	*loadmodel;
 char	loadname[32];	// for hunk tags
 
-char	*wadpath;
+char	*wadpath = NULL;
 
 model_t	mod_known[MAX_KNOWN_MODELS];
-int		mod_numknown;
+int		mod_numknown = 0;
 
 static int	gSpriteTextureFormat;
 

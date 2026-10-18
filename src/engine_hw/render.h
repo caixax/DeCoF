@@ -44,4 +44,9 @@ extern	struct texture_s	*r_notexture_mip;
 extern	int		r_dlightchanged;	// which ones changed
 extern	int		r_dlightactive;		// which ones are active
 
+void	R_PushDlights( void );
+void	R_RenderView( void );
+void	R_PolyBlend( void );
+void	D_FlushCaches( void );
+
 #endif // RENDER_H

@@ -29,6 +29,8 @@ struct clientdata_s;
 struct weapon_data_s;
 struct cl_entity_s;
 int		ClientDLL_AddEntity( int type, struct cl_entity_s *ent );
+struct ref_params_s;
+void	ClientDLL_CalcRefdef( struct ref_params_s *pparams );
 void	ClientDLL_CreateEntities( void );
 struct tempent_s;
 void	ClientDLL_TempEntUpdate( double ft, double ct, double grav, struct tempent_s **ppFreeTE, struct tempent_s **ppActiveTE, int ( *addTEntity )( struct cl_entity_s *pEntity ), void ( *playTESound )( struct tempent_s *pTemp, float damp ) );
