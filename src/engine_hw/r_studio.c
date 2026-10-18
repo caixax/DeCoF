@@ -39,6 +39,14 @@
 
 #define IDSTUDIOHEADER		( ( 'T' << 24 ) + ( 'S' << 16 ) + ( 'D' << 8 ) + 'I' )	// little-endian "IDST"
 
+// GL_ATI_pn_triangles
+#define GL_PN_TRIANGLES_ATI						0x87F0
+#define GL_PN_TRIANGLES_POINT_MODE_ATI			0x87F2
+#define GL_PN_TRIANGLES_NORMAL_MODE_ATI			0x87F3
+#define GL_PN_TRIANGLES_TESSELATION_LEVEL_ATI	0x87F4
+#define GL_PN_TRIANGLES_POINT_MODE_CUBIC_ATI		0x87F6
+#define GL_PN_TRIANGLES_NORMAL_MODE_QUADRATIC_ATI	0x87F7
+
 typedef struct
 {
 	float		frame;
@@ -208,6 +216,13 @@ void	CL_FxTransform( cl_entity_t *ent, float transform[3][4] );
 extern vec3_t	lightspot;
 extern int		c_alias_polys;
 extern qboolean	gD3DMode;
+extern int		atismoothing;
+extern cvar_t	ati_npatch;
+extern cvar_t	ati_subdiv;
+extern void	( APIENTRY * qglPNTrianglesiATI )( GLenum pname, GLint param );
+
+void	R_GLStudioDrawPoints( void );
+void	R_GLStudioDrawPointsATI_guess( void );
 
 msurface_t	*SurfaceAtPoint( model_t *pModel, mnode_t *node, vec_t *start, vec_t *end );
 colorVec	R_LightVec( vec_t *start, vec_t *end );
@@ -1352,7 +1367,7 @@ qboolean R_StudioCheckBBox( void )
 	else
 	{
 		VectorCopy( vpn, plane.normal );
-		plane.dist = DotProduct( r_origin, plane.normal );
+		plane.dist = DotProduct( r_origin, vpn );
 		plane.type = 5;
 		plane.signbits = SignbitsForPlane( &plane );
 
@@ -3947,6 +3962,715 @@ void R_StudioRenderFinal( void )
 		qglHint( GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST );
 
 	qglPopMatrix();
+}
+
+
+/*
+================
+R_GLStudioDrawPoints
+================
+*/
+void R_GLStudioDrawPoints( void )
+{
+	int					i, j;
+	byte				*pvertbone;
+	byte				*pnormbone;
+	vec3_t				*pstudioverts;
+	vec3_t				*pstudionorms;
+	studiohdr_t			*ptexturehdr;
+	mstudiotexture_t	*ptexture;
+	mstudiomesh_t		*pmesh;
+	auxvert_t			*av;
+	float				*lv;
+	vec3_t				fl;
+	float				lv_tmp;
+	short				*pskinref;
+	int					flags;
+	int					iFlippedVModel = 0;
+
+	pvertbone = ( (byte *)pstudiohdr + psubmodel->vertinfoindex );
+	pnormbone = ( (byte *)pstudiohdr + psubmodel->norminfoindex );
+
+	ptexturehdr = R_LoadTextures( r_model );
+	ptexture = (mstudiotexture_t *)( (byte *)ptexturehdr + ptexturehdr->textureindex );
+
+	pmesh = (mstudiomesh_t *)( (byte *)pstudiohdr + psubmodel->meshindex );
+
+	pstudioverts = (vec3_t *)( (byte *)pstudiohdr + psubmodel->vertindex );
+	pstudionorms = (vec3_t *)( (byte *)pstudiohdr + psubmodel->normindex );
+
+	pskinref = (short *)( (byte *)ptexturehdr + ptexturehdr->skinindex );
+	if ( currententity->curstate.skin != 0 && currententity->curstate.skin < ptexturehdr->numskinfamilies )
+		pskinref += ( currententity->curstate.skin * ptexturehdr->numskinref );
+
+	if ( currententity->curstate.renderfx == kRenderFxGlowShell )
+	{
+		BuildNormalIndexTable();
+		BuildGlowShellVerts( pstudioverts, pauxverts );
+	}
+	else
+	{
+		for ( av = pauxverts, i = 0; i < psubmodel->numverts; i++, av++, pstudioverts++ )
+		{
+			R_StudioTransformAuxVert( av, pvertbone[i], pstudioverts[0] );
+		}
+	}
+
+	pvertbone = ( (byte *)pstudiohdr + psubmodel->vertinfoindex );
+	pstudioverts = (vec3_t *)( (byte *)pstudiohdr + psubmodel->vertindex );
+
+	for ( i = 0; i < psubmodel->numverts; i++, pvertbone++, pstudioverts++ )
+	{
+		R_LightStrength( *pvertbone, pstudioverts[0], lightpos[i] );
+	}
+
+	lv = (float *)pvlightvalues;
+	for ( j = 0; j < psubmodel->nummesh; j++ )
+	{
+		flags = ptexture[pskinref[pmesh[j].skinref]].flags | g_ForcedFaceFlags;
+
+		if ( r_fullbright.value >= 2 )
+			flags &= ~( STUDIO_NF_FLATSHADE | STUDIO_NF_CHROME );
+
+		if ( currententity->curstate.rendermode == kRenderTransAdd )
+		{
+			for ( i = 0; i < pmesh[j].numnorms; i++, lv += 3 )
+			{
+				lv[0] = lv[1] = lv[2] = r_blend;
+
+				if ( flags & STUDIO_NF_CHROME )
+					R_StudioChrome( chrome[(vec3_t *)lv - pvlightvalues], *pnormbone, (float *)pstudionorms );
+			}
+		}
+		else
+		{
+			for ( i = 0; i < pmesh[j].numnorms; i++, lv += 3, pstudionorms++, pnormbone++ )
+			{
+				int		idx;
+
+				idx = (vec3_t *)lv - pvlightvalues;
+
+				R_StudioLighting( &lv_tmp, *pnormbone, flags, (float *)pstudionorms );
+
+				// FIX: move this check out of the inner loop
+				if ( flags & STUDIO_NF_CHROME )
+					R_StudioChrome( chrome[(vec3_t *)lv - pvlightvalues], *pnormbone, (float *)pstudionorms );
+
+				lv[0] = lv_tmp * r_colormix[0];
+				lv[1] = lv_tmp * r_colormix[1];
+				lv[2] = lv_tmp * r_colormix[2];
+			}
+		}
+	}
+
+	qglCullFace( GL_FRONT );
+
+	if ( IsFlippedViewModel() == TRUE )
+	{
+		qglDisable( GL_CULL_FACE );
+		iFlippedVModel = 1;
+	}
+
+	pstudionorms = (vec3_t *)( (byte *)pstudiohdr + psubmodel->normindex );
+
+	for ( j = 0; j < psubmodel->nummesh; j++ )
+	{
+		float	s, t;
+		short	*ptricmds;
+
+		pmesh = (mstudiomesh_t *)( (byte *)pstudiohdr + psubmodel->meshindex ) + j;
+		ptricmds = (short *)( (byte *)pstudiohdr + pmesh->triindex );
+
+		c_alias_polys += pmesh->numtris;
+
+		flags = ptexture[pskinref[pmesh->skinref]].flags | g_ForcedFaceFlags;
+
+		if ( r_fullbright.value >= 2 )
+			flags &= ~( STUDIO_NF_FLATSHADE | STUDIO_NF_CHROME );
+
+		if ( flags & STUDIO_NF_MASKED )
+		{
+			qglEnable( GL_ALPHA_TEST );
+			qglAlphaFunc( GL_GREATER, 0.5 );
+			qglDepthMask( GL_TRUE );
+		}
+
+		if ( ( flags & STUDIO_NF_ADDITIVE ) && currententity->curstate.rendermode == kRenderNormal )
+		{
+			qglBlendFunc( GL_ONE, GL_ONE );
+			qglEnable( GL_BLEND );
+			qglDepthMask( GL_FALSE );
+			qglShadeModel( GL_SMOOTH );
+		}
+
+		if ( r_fullbright.value < 2 )
+		{
+			s = 1.0 / ptexture[pskinref[pmesh->skinref]].width;
+			t = 1.0 / ptexture[pskinref[pmesh->skinref]].height;
+
+			R_StudioSetupSkin( ptexturehdr, pskinref[pmesh->skinref] );
+		}
+		else
+		{
+			tri.SpriteTexture( cl_sprite_white, 0 );
+			s = 1.0 / 256;
+			t = 1.0 / 256;
+		}
+
+		if ( flags & STUDIO_NF_CHROME )
+		{
+			s *= 1.0 / 1024;
+			t *= 1.0 / 1024;
+
+			if ( g_ForcedFaceFlags & STUDIO_NF_CHROME )
+			{
+				while ( i = *( ptricmds++ ) )
+				{
+					if ( i < 0 )
+					{
+						qglBegin( GL_TRIANGLE_FAN );
+						i = -i;
+					}
+					else
+					{
+						qglBegin( GL_TRIANGLE_STRIP );
+					}
+
+					for ( ; i > 0; i--, ptricmds += 4 )
+					{
+						int		normalIndex;
+
+						normalIndex = g_NormalIndex[ptricmds[0]];
+						qglTexCoord2f( chrome[normalIndex][0] * s, chrome[normalIndex][1] * t );
+
+						av = &pauxverts[ptricmds[0]];
+						qglVertex3f( av->fv[0], av->fv[1], av->fv[2] );
+					}
+
+					qglEnd();
+				}
+			}
+			else
+			{
+				while ( i = *( ptricmds++ ) )
+				{
+					if ( i < 0 )
+					{
+						qglBegin( GL_TRIANGLE_FAN );
+						i = -i;
+					}
+					else
+					{
+						qglBegin( GL_TRIANGLE_STRIP );
+					}
+
+					for ( ; i > 0; i--, ptricmds += 4 )
+					{
+						qglTexCoord2f( chrome[ptricmds[1]][0] * s, chrome[ptricmds[1]][1] * t );
+
+						lv = pvlightvalues[ptricmds[1]];
+						R_LightLambert( lightpos[ptricmds[0]], pstudionorms[ptricmds[1]], lv, fl );
+						qglColor4f( fl[0], fl[1], fl[2], r_blend );
+
+						av = &pauxverts[ptricmds[0]];
+						qglVertex3f( av->fv[0], av->fv[1], av->fv[2] );
+					}
+
+					qglEnd();
+				}
+			}
+		}
+		else
+		{
+			while ( i = *( ptricmds++ ) )
+			{
+				if ( i < 0 )
+				{
+					qglBegin( GL_TRIANGLE_FAN );
+					i = -i;
+				}
+				else
+				{
+					qglBegin( GL_TRIANGLE_STRIP );
+				}
+
+				for ( ; i > 0; i--, ptricmds += 4 )
+				{
+					qglTexCoord2f( ptricmds[2] * s, ptricmds[3] * t );
+
+					lv = pvlightvalues[ptricmds[1]];
+
+					if ( iFlippedVModel == 1 )
+					{
+						vec3_t	vNormal;
+
+						vNormal[0] = (double)pstudionorms[ptricmds[1]][0];
+						vNormal[1] = -pstudionorms[ptricmds[1]][1];
+						vNormal[2] = (double)pstudionorms[ptricmds[1]][2];
+
+						R_LightLambert( lightpos[ptricmds[0]], vNormal, lv, fl );
+					}
+					else
+					{
+						R_LightLambert( lightpos[ptricmds[0]], pstudionorms[ptricmds[1]], lv, fl );
+					}
+
+					qglColor4f( fl[0], fl[1], fl[2], r_blend );
+
+					av = &pauxverts[ptricmds[0]];
+					qglVertex3f( av->fv[0], av->fv[1], av->fv[2] );
+				}
+
+				qglEnd();
+			}
+		}
+
+		if ( flags & STUDIO_NF_MASKED )
+		{
+			qglAlphaFunc( GL_NOTEQUAL, 0 );
+			qglDisable( GL_ALPHA_TEST );
+		}
+
+		if ( ( flags & STUDIO_NF_ADDITIVE ) && currententity->curstate.rendermode == kRenderNormal )
+		{
+			qglDisable( GL_BLEND );
+			qglDepthMask( GL_TRUE );
+			qglShadeModel( GL_FLAT );
+		}
+	}
+
+	qglEnable( GL_CULL_FACE );
+}
+
+/*
+================
+IsATISmoothing
+================
+*/
+qboolean IsATISmoothing( void )
+{
+	if ( atismoothing && ati_npatch.value )
+		return TRUE;
+
+	return FALSE;
+}
+
+/*
+================
+GenerateNormals
+================
+*/
+void GenerateNormals( auxvert_t *pts )
+{
+	int				ii, jj;
+	mstudiomesh_t	*pmesh;
+	int				v0, v1, v2;
+	vec3_t			e0, e1, norm;
+
+	for ( ii = 0; ii < psubmodel->numverts; ii++ )
+	{
+		g_txformednormal[ii][0] = 0;
+		g_txformednormal[ii][1] = 0;
+		g_txformednormal[ii][2] = 0;
+	}
+
+	for ( jj = 0; jj < psubmodel->nummesh; jj++ )
+	{
+		short	*ptricmds;
+
+		pmesh = (mstudiomesh_t *)( (byte *)pstudiohdr + psubmodel->meshindex ) + jj;
+		ptricmds = (short *)( (byte *)pstudiohdr + pmesh->triindex );
+
+		while ( ii = *( ptricmds++ ) )
+		{
+			if ( ii < 0 )
+			{
+				ii = -ii;
+
+				v0 = ptricmds[0];
+				ii--;
+				ptricmds += 4;
+
+				v2 = ptricmds[0];
+				ii--;
+				ptricmds += 4;
+
+				for ( ; ii > 0; ii--, ptricmds += 4 )
+				{
+					v1 = v2;
+					v2 = ptricmds[0];
+
+					VectorSubtract( pts[v1].fv, pts[v0].fv, e0 );
+					VectorSubtract( pts[v2].fv, pts[v0].fv, e1 );
+					CrossProduct( e1, e0, norm );
+
+					VectorAdd( norm, g_txformednormal[v0], g_txformednormal[v0] );
+					VectorAdd( norm, g_txformednormal[v1], g_txformednormal[v1] );
+					VectorAdd( norm, g_txformednormal[v2], g_txformednormal[v2] );
+				}
+			}
+			else
+			{
+				qboolean	odd = FALSE;
+
+				v0 = ptricmds[0];
+				ii--;
+				ptricmds += 4;
+
+				v1 = ptricmds[0];
+				ii--;
+				ptricmds += 4;
+
+				for ( ; ii > 0; ii--, ptricmds += 4 )
+				{
+					v2 = ptricmds[0];
+
+					VectorSubtract( pts[v1].fv, pts[v0].fv, e0 );
+					VectorSubtract( pts[v2].fv, pts[v0].fv, e1 );
+					CrossProduct( e1, e0, norm );
+
+					VectorAdd( norm, g_txformednormal[v0], g_txformednormal[v0] );
+					VectorAdd( norm, g_txformednormal[v1], g_txformednormal[v1] );
+					VectorAdd( norm, g_txformednormal[v2], g_txformednormal[v2] );
+
+					if ( !odd )
+					{
+						v0 = v2;
+						odd = !odd;
+					}
+					else
+					{
+						v1 = v2;
+						odd = !odd;
+					}
+				}
+			}
+		}
+	}
+
+	for ( ii = 0; ii < psubmodel->numverts; ii++ )
+	{
+		VectorNormalize( g_txformednormal[ii] );
+	}
+}
+/*
+================
+R_GLStudioDrawPointsATI_guess
+================
+*/
+void R_GLStudioDrawPointsATI_guess( void )
+{
+	int					i, j;
+	byte				*pvertbone;
+	byte				*pnormbone;
+	vec3_t				*pstudioverts;
+	vec3_t				*pstudionorms;
+	studiohdr_t			*ptexturehdr;
+	mstudiotexture_t	*ptexture;
+	mstudiomesh_t		*pmesh;
+	auxvert_t			*av;
+	float				*lv;
+	vec3_t				fl;
+	float				lv_tmp;
+	short				*pskinref;
+	int					flags;
+	int					iFlippedVModel = 0;
+
+	qglEnable( GL_PN_TRIANGLES_ATI );
+	qglPNTrianglesiATI( GL_PN_TRIANGLES_POINT_MODE_ATI, GL_PN_TRIANGLES_POINT_MODE_CUBIC_ATI );
+	qglPNTrianglesiATI( GL_PN_TRIANGLES_NORMAL_MODE_ATI, GL_PN_TRIANGLES_NORMAL_MODE_QUADRATIC_ATI );
+	qglPNTrianglesiATI( GL_PN_TRIANGLES_TESSELATION_LEVEL_ATI, (int)ati_subdiv.value );
+
+	pvertbone = ( (byte *)pstudiohdr + psubmodel->vertinfoindex );
+	pnormbone = ( (byte *)pstudiohdr + psubmodel->norminfoindex );
+
+	ptexturehdr = R_LoadTextures( r_model );
+	ptexture = (mstudiotexture_t *)( (byte *)ptexturehdr + ptexturehdr->textureindex );
+
+	pmesh = (mstudiomesh_t *)( (byte *)pstudiohdr + psubmodel->meshindex );
+
+	pstudioverts = (vec3_t *)( (byte *)pstudiohdr + psubmodel->vertindex );
+	pstudionorms = (vec3_t *)( (byte *)pstudiohdr + psubmodel->normindex );
+
+	pskinref = (short *)( (byte *)ptexturehdr + ptexturehdr->skinindex );
+	if ( currententity->curstate.skin != 0 && currententity->curstate.skin < ptexturehdr->numskinfamilies )
+		pskinref += ( currententity->curstate.skin * ptexturehdr->numskinref );
+
+	if ( currententity->curstate.renderfx == kRenderFxGlowShell )
+	{
+		BuildNormalIndexTable();
+		BuildGlowShellVerts( pstudioverts, pauxverts );
+	}
+	else
+	{
+		for ( av = pauxverts, i = 0; i < psubmodel->numverts; i++, av++, pstudioverts++ )
+		{
+			R_StudioTransformAuxVert( av, pvertbone[i], pstudioverts[0] );
+		}
+	}
+
+	GenerateNormals( pauxverts );
+
+	pvertbone = ( (byte *)pstudiohdr + psubmodel->vertinfoindex );
+	pstudioverts = (vec3_t *)( (byte *)pstudiohdr + psubmodel->vertindex );
+
+	for ( i = 0; i < psubmodel->numverts; i++, pvertbone++, pstudioverts++ )
+	{
+		R_LightStrength( *pvertbone, pstudioverts[0], lightpos[i] );
+	}
+
+	lv = (float *)pvlightvalues;
+	for ( j = 0; j < psubmodel->nummesh; j++ )
+	{
+		flags = ptexture[pskinref[pmesh[j].skinref]].flags | g_ForcedFaceFlags;
+
+		if ( r_fullbright.value >= 2 )
+			flags &= ~( STUDIO_NF_FLATSHADE | STUDIO_NF_CHROME );
+
+		if ( flags & STUDIO_NF_MASKED )
+		{
+			qglEnable( GL_ALPHA_TEST );
+			qglAlphaFunc( GL_GREATER, 0.5 );
+			qglDepthMask( GL_TRUE );
+		}
+
+		if ( ( flags & STUDIO_NF_ADDITIVE ) && currententity->curstate.rendermode == kRenderNormal )
+		{
+			qglBlendFunc( GL_ONE, GL_ONE );
+			qglEnable( GL_BLEND );
+			qglDepthMask( GL_FALSE );
+			qglShadeModel( GL_SMOOTH );
+		}
+
+		if ( currententity->curstate.rendermode == kRenderTransAdd )
+		{
+			for ( i = 0; i < pmesh[j].numnorms; i++, lv += 3 )
+			{
+				lv[0] = lv[1] = lv[2] = r_blend;
+
+				if ( flags & STUDIO_NF_CHROME )
+					R_StudioChrome( chrome[(vec3_t *)lv - pvlightvalues], *pnormbone, (float *)pstudionorms );
+			}
+		}
+		else
+		{
+			for ( i = 0; i < pmesh[j].numnorms; i++, lv += 3, pstudionorms++, pnormbone++ )
+			{
+				int		idx;
+
+				idx = (vec3_t *)lv - pvlightvalues;
+
+				R_StudioLighting( &lv_tmp, *pnormbone, flags, (float *)pstudionorms );
+
+				// FIX: move this check out of the inner loop
+				if ( flags & STUDIO_NF_CHROME )
+					R_StudioChrome( chrome[(vec3_t *)lv - pvlightvalues], *pnormbone, (float *)pstudionorms );
+
+				lv[0] = lv_tmp * r_colormix[0];
+				lv[1] = lv_tmp * r_colormix[1];
+				lv[2] = lv_tmp * r_colormix[2];
+			}
+		}
+	}
+
+	qglCullFace( GL_FRONT );
+
+	if ( IsFlippedViewModel() == TRUE )
+	{
+		qglDisable( GL_CULL_FACE );
+		iFlippedVModel = 1;
+	}
+
+	pstudionorms = (vec3_t *)( (byte *)pstudiohdr + psubmodel->normindex );
+
+	for ( j = 0; j < psubmodel->nummesh; j++ )
+	{
+		float	s, t;
+		short	*ptricmds;
+
+		pmesh = (mstudiomesh_t *)( (byte *)pstudiohdr + psubmodel->meshindex ) + j;
+		ptricmds = (short *)( (byte *)pstudiohdr + pmesh->triindex );
+
+		c_alias_polys += pmesh->numtris;
+
+		flags = ptexture[pskinref[pmesh->skinref]].flags | g_ForcedFaceFlags;
+
+		if ( r_fullbright.value >= 2 )
+			flags &= ~( STUDIO_NF_FLATSHADE | STUDIO_NF_CHROME );
+
+		if ( flags & STUDIO_NF_MASKED )
+		{
+			qglEnable( GL_ALPHA_TEST );
+			qglAlphaFunc( GL_GREATER, 0.5 );
+			qglDepthMask( GL_TRUE );
+		}
+
+		if ( ( flags & STUDIO_NF_ADDITIVE ) && currententity->curstate.rendermode == kRenderNormal )
+		{
+			qglBlendFunc( GL_ONE, GL_ONE );
+			qglEnable( GL_BLEND );
+			qglDepthMask( GL_FALSE );
+			qglShadeModel( GL_SMOOTH );
+		}
+
+		if ( r_fullbright.value < 2 )
+		{
+			s = 1.0 / ptexture[pskinref[pmesh->skinref]].width;
+			t = 1.0 / ptexture[pskinref[pmesh->skinref]].height;
+
+			R_StudioSetupSkin( ptexturehdr, pskinref[pmesh->skinref] );
+		}
+		else
+		{
+			tri.SpriteTexture( cl_sprite_white, 0 );
+			s = 1.0 / 256;
+			t = 1.0 / 256;
+		}
+
+		if ( flags & STUDIO_NF_CHROME )
+		{
+			s *= 1.0 / 1024;
+			t *= 1.0 / 1024;
+
+			if ( g_ForcedFaceFlags & STUDIO_NF_CHROME )
+			{
+				while ( i = *( ptricmds++ ) )
+				{
+					if ( i < 0 )
+					{
+						qglBegin( GL_TRIANGLE_FAN );
+						i = -i;
+					}
+					else
+					{
+						qglBegin( GL_TRIANGLE_STRIP );
+					}
+
+					for ( ; i > 0; i--, ptricmds += 4 )
+					{
+						int		normalIndex;
+
+						normalIndex = g_NormalIndex[ptricmds[0]];
+						qglTexCoord2f( chrome[normalIndex][0] * s, chrome[normalIndex][1] * t );
+
+						qglNormal3fv( g_txformednormal[ptricmds[0]] );
+
+						av = &pauxverts[ptricmds[0]];
+						qglVertex3f( av->fv[0], av->fv[1], av->fv[2] );
+					}
+
+					qglEnd();
+				}
+			}
+			else
+			{
+				while ( i = *( ptricmds++ ) )
+				{
+					if ( i < 0 )
+					{
+						qglBegin( GL_TRIANGLE_FAN );
+						i = -i;
+					}
+					else
+					{
+						qglBegin( GL_TRIANGLE_STRIP );
+					}
+
+					for ( ; i > 0; i--, ptricmds += 4 )
+					{
+						qglTexCoord2f( chrome[ptricmds[1]][0] * s, chrome[ptricmds[1]][1] * t );
+
+						lv = pvlightvalues[ptricmds[1]];
+						R_LightLambert( lightpos[ptricmds[0]], pstudionorms[ptricmds[1]], lv, fl );
+						qglColor4f( fl[0], fl[1], fl[2], r_blend );
+
+						qglNormal3fv( g_txformednormal[ptricmds[0]] );
+
+						av = &pauxverts[ptricmds[0]];
+						qglVertex3f( av->fv[0], av->fv[1], av->fv[2] );
+					}
+
+					qglEnd();
+				}
+			}
+		}
+		else
+		{
+			while ( i = *( ptricmds++ ) )
+			{
+				if ( i < 0 )
+				{
+					qglBegin( GL_TRIANGLE_FAN );
+					i = -i;
+				}
+				else
+				{
+					qglBegin( GL_TRIANGLE_STRIP );
+				}
+
+				for ( ; i > 0; i--, ptricmds += 4 )
+				{
+					qglTexCoord2f( ptricmds[2] * s, ptricmds[3] * t );
+
+					lv = pvlightvalues[ptricmds[1]];
+
+					if ( iFlippedVModel == 1 )
+					{
+						vec3_t	vNormal;
+
+						vNormal[0] = (double)pstudionorms[ptricmds[1]][0];
+						vNormal[1] = -pstudionorms[ptricmds[1]][1];
+						vNormal[2] = (double)pstudionorms[ptricmds[1]][2];
+
+						R_LightLambert( lightpos[ptricmds[0]], vNormal, lv, fl );
+					}
+					else
+					{
+						R_LightLambert( lightpos[ptricmds[0]], pstudionorms[ptricmds[1]], lv, fl );
+					}
+
+					qglColor4f( fl[0], fl[1], fl[2], r_blend );
+
+					qglNormal3fv( g_txformednormal[ptricmds[0]] );
+
+					av = &pauxverts[ptricmds[0]];
+					qglVertex3f( av->fv[0], av->fv[1], av->fv[2] );
+				}
+
+				qglEnd();
+			}
+		}
+
+		if ( flags & STUDIO_NF_MASKED )
+		{
+			qglAlphaFunc( GL_NOTEQUAL, 0 );
+			qglDisable( GL_ALPHA_TEST );
+		}
+
+		if ( ( flags & STUDIO_NF_ADDITIVE ) && currententity->curstate.rendermode == kRenderNormal )
+		{
+			qglDisable( GL_BLEND );
+			qglDepthMask( GL_TRUE );
+			qglShadeModel( GL_FLAT );
+		}
+	}
+
+	qglDisable( GL_PN_TRIANGLES_ATI );
+	qglEnable( GL_CULL_FACE );
+}
+
+
+/*
+================
+R_StudioDrawPoints
+================
+*/
+void R_StudioDrawPoints( void )
+{
+	if ( IsATISmoothing() && currententity && !currententity->player )
+		R_GLStudioDrawPointsATI_guess();
+	else
+		R_GLStudioDrawPoints();
 }
 
 /*
