@@ -2168,3 +2168,20 @@ va,name,kind,evidence
 023C7D90,_?rtable@?1??R_TextureAnimation@@9@9,data,function static rtable of R_TextureAnimation; spelling from our object (agent report)
 023ABC50,_?filename@?1??Mod_AdInit@@9@9,data,function static filename of Mod_AdInit; spelling from our object (agent report)
 01DC3F14,_R_ResetStudio,func,Linux hw.so DWARF r_studio.c line order; pStudioAPI = &studio api table
+01DA7A20,_ED_ClearEdict,func,"engine/pr_edict.c of the Linux hw.so DWARF in source order (inline there) before ED_Alloc; memsets ent->v (0x2AC), clears free, calls ReleaseEntityDLLFields and InitEntityDLLFields; ED_Alloc calls it (added by an agent)"
+01DA7B43,_ED_Free,func,"engine/pr_edict.c of the Linux hw.so DWARF in source order between ED_Alloc and ED_Count; already named by objdiff alignment, added to the pr_edict unit (the old sv_phys source guess is wrong) (added by an agent)"
+01DA865D,_PEntityOfEntIndex,func,"engine/pr_edict.c of the Linux hw.so DWARF in source order after IndexOfEdict; bounds check against sv.max_edicts, EDICT_NUM, free and pvPrivateData tests; enginefuncs table slot 0x01ECEE38 (added by an agent)"
+01DA86BB,_SzFromIndex,func,engine/pr_edict.c of the Linux hw.so DWARF in source order after PEntityOfEntIndex; returns pr_strings + iString (added by an agent)
+01DA86C8,_GetVarsOfEnt,func,engine/pr_edict.c of the Linux hw.so DWARF in source order after SzFromIndex; returns &pEdict->v (+0x80) (added by an agent)
+01DA86D5,_FindEntityByVars,func,engine/pr_edict.c of the Linux hw.so DWARF in source order after GetVarsOfEnt; walks sv.edicts comparing &pEdict->v with the argument (added by an agent)
+01DA8726,_CVarGetFloat,func,engine/pr_edict.c of the Linux hw.so DWARF in source order after FindEntityByVars; returns Cvar_VariableValue(szVarName) (added by an agent)
+01DA8737,_CVarGetString,func,engine/pr_edict.c of the Linux hw.so DWARF in source order after CVarGetFloat; returns Cvar_VariableString(szVarName) (added by an agent)
+01DA8748,_CVarGetPointer,func,engine/pr_edict.c of the Linux hw.so DWARF in source order after CVarGetString; returns Cvar_FindVar(szVarName) (added by an agent)
+01DA8759,_CVarSetFloat,func,"engine/pr_edict.c of the Linux hw.so DWARF in source order after CVarGetPointer; calls Cvar_SetValue(szVarName, flValue) (added by an agent)"
+01DA876E,_CVarSetString,func,"engine/pr_edict.c of the Linux hw.so DWARF in source order after CVarSetFloat; calls Cvar_Set(szVarName, szValue) (added by an agent)"
+01DA8783,_CVarRegister,func,engine/pr_edict.c of the Linux hw.so DWARF in source order after CVarSetString; sets FCVAR_EXTDLL (8) and calls Cvar_RegisterVariable (added by an agent)
+01DA87A9,_AllocEngineString,func,engine/pr_edict.c of the Linux hw.so DWARF in source order after CVarRegister; returns ED_NewString(szValue) - pr_strings (added by an agent)
+01DA87C0,_SaveSpawnParms,func,engine/pr_edict.c of the Linux hw.so DWARF in source order after AllocEngineString; NUM_FOR_EDICT bounds check with the string Entity is not a client; enginefuncs table slot 0x01ECED38 (added by an agent)
+01DA880D,_GetModelPtr,func,engine/pr_edict.c of the Linux hw.so DWARF in source order last function; Mod_Extradata(sv.models[pEdict->v.modelindex]); enginefuncs table slot 0x01ECEE40 (added by an agent)
+01E1339C,_BoxOnPlaneSide,func,"called by R_StudioCheckBBox with mins, maxs and a plane, returning 2 for back side; the Quake id386 assembly version (no C BoxOnPlaneSide in mathlib.c)"
+01D6762B,_R_LightVec,func,"Linux hw.so DWARF gl_rlight.c R_LightVec( start, end ) returning colorVec; called five times by R_StudioDynamicLight"

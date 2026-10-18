@@ -166,6 +166,7 @@ void R_FlushStudioCache( void );
 void *Mod_Extradata( model_t *mod );
 
 extern sv_blending_interface_t	*g_pSvBlendingAPI;
+extern r_studio_interface_t	*pStudioAPI;
 extern int		g_bIsTerrorStrike;
 extern cvar_t	r_glowshellfreq;
 extern triangleapi_t	tri;
@@ -4721,4 +4722,147 @@ void studioapi_GL_StudioDrawShadow( void )
 		qglColor4f( 1, 1, 1, 1 );
 		qglShadeModel( GL_SMOOTH );
 	}
+}
+
+/*
+================
+studioapi_RenderShadow
+================
+*/
+void studioapi_RenderShadow( int iSprite, float *p1, float *p2, float *p3, float *p4 )
+{
+	model_t			*sprite;
+	static float	color[4] = { 0, 0, 0, 1.0 };
+
+	if ( !iSprite )
+		return;
+
+	if ( iSprite < 0 || iSprite >= cl.model_precache_count )
+		return;
+
+	sprite = CL_GetModelByIndex( iSprite );
+	if ( !sprite )
+		return;
+
+	if ( !tri.SpriteTexture( sprite, 0 ) )
+		return;
+
+	tri.RenderMode( kRenderTransAlpha );
+	tri.Color4f( color[0], color[1], color[2], color[3] );
+	tri.Begin( TRI_QUADS );
+	tri.TexCoord2f( 0, 0 );
+	tri.Vertex3fv( p1 );
+	tri.TexCoord2f( 0, 1 );
+	tri.Vertex3fv( p2 );
+	tri.TexCoord2f( 1, 1 );
+	tri.Vertex3fv( p3 );
+	tri.TexCoord2f( 1, 0 );
+	tri.Vertex3fv( p4 );
+	tri.End();
+	tri.RenderMode( kRenderNormal );
+}
+
+/*
+================
+legacy_Mod_ForName
+================
+*/
+struct model_s *legacy_Mod_ForName( const char *model, int crash )
+{
+	return Mod_ForName( model, crash, FALSE );
+}
+
+engine_studio_api_t engine_studio_api =
+{
+	Mem_Calloc,
+	Cache_Check,
+	COM_LoadCacheFile,
+	legacy_Mod_ForName,
+	Mod_Extradata,
+	studioapi_GetModelByIndex,
+	studioapi_GetCurrentEntity,
+	studioapi_PlayerInfo,
+	studioapi_GetPlayerState,
+	studioapi_GetViewEntity,
+	studioapi_GetTimes,
+	studioapi_GetCvar,
+	studioapi_GetViewInfo,
+	studioapi_GetChromeSprite,
+	studioapi_GetModelCounters,
+	studioapi_GetAliasScale,
+	studioapi_StudioGetBoneTransform,
+	studioapi_StudioGetLightTransform,
+	studioapi_StudioGetAliasTransform,
+	studioapi_StudioGetRotationMatrix,
+	studioapi_SetupModel,
+	R_StudioCheckBBox,
+	R_StudioDynamicLight,
+	R_StudioEntityLight,
+	R_StudioSetupLighting,
+	R_StudioDrawPoints,
+	R_StudioDrawHulls,
+	R_StudioAbsBB,
+	R_StudioDrawBones,
+	R_StudioSetupSkin,
+	studioapi_StudioSetRemapColors,
+	studioapi_SetupPlayerModel,
+	R_StudioClientEvents,
+	studioapi_GetForceFaceFlags,
+	studioapi_SetForceFaceFlags,
+	studioapi_StudioSetHeader,
+	studioapi_SetRenderModel,
+	studioapi_SetupRenderer,
+	studioapi_RestoreRenderer,
+	studioapi_SetChromeOrigin,
+	IsHardware,
+	studioapi_GL_StudioDrawShadow,
+	studioapi_GL_SetRenderMode,
+	studioapi_StudioSetRenderamt,
+	studioapi_SetBackFaceCull,
+	studioapi_RenderShadow,
+};
+
+r_studio_interface_t studio =
+{
+	STUDIO_INTERFACE_VERSION,
+	R_StudioDrawModel,
+	R_StudioDrawPlayer,
+};
+
+r_studio_interface_t	*pStudioAPI = &studio;
+
+/*
+================
+R_ResetStudio
+================
+*/
+void R_ResetStudio( void )
+{
+	pStudioAPI = &studio;
+}
+
+server_studio_api_t server_studio_api =
+{
+	Mem_Calloc,
+	Cache_Check,
+	COM_LoadCacheFile,
+	Mod_Extradata,
+};
+
+sv_blending_interface_t svBlending =
+{
+	SV_BLENDING_INTERFACE_VERSION,
+	SV_StudioSetupBones,
+};
+
+sv_blending_interface_t	*g_pSvBlendingAPI = &svBlending;
+
+/*
+================
+R_ResetSvBlending
+================
+*/
+void R_ResetSvBlending( void )
+{
+	g_pSvBlendingAPI = &svBlending;
 }
