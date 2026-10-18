@@ -32,4 +32,4 @@ _SV_ParseCvarValue2
 _SV_ExecuteClientMessage
 _SV_SetPlayer
 _SV_ShowServerinfo_f
-_SV_FullUpdate_Internal
+_SV_SendEnts_f

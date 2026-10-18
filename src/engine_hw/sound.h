@@ -143,6 +143,33 @@ extern	qboolean	snd_initialized;
 
 extern	int			snd_blocked;
 
+#define CHAR_STREAM		'*'		// as one of 1st 2 chars in name, indicates streaming wav data
+#define CHAR_SENTENCE	'!'		// as one of 1st 2 chars in name, indicates sentence wav
+
+extern	int			soundtime;
+extern	vec_t		sound_nominal_clip_dist;
+extern	cvar_t		nosound;
+
+extern	cvar_t		ambient_level;
+extern	cvar_t		ambient_fade;
+extern	cvar_t		snd_noextraupdate;
+extern	cvar_t		snd_show;
+extern	cvar_t		_snd_mixahead;
+
+extern	qboolean	fakedma;
+extern	int			sound_started;
+
+// snd_dma.c
+void	S_Init( void );
+void	S_Startup( void );
+void	S_Shutdown( void );
+void	S_Update( vec_t *origin, vec_t *forward, vec_t *right, vec_t *up );
+void	S_Update_( void );
+void	S_ExtraUpdate( void );
+void	S_ClearBuffer( void );
+sfx_t	*S_FindName( char *name, int *pfInCache );
+void	SND_Spatialize( channel_t *ch );
+
 // snd_mem.c
 sfxcache_t	*S_LoadSound( sfx_t *s, channel_t *ch );
 sfxcache_t	*S_LoadStreamSound( sfx_t *s, channel_t *ch );
@@ -154,6 +181,24 @@ extern	wavstream_t	wavstreams[CWAVSTREAMS];
 
 // snd_mix.c
 void	SetCareerAudioState( int paused );
+void	S_FreeChannel( channel_t *ch );
+void	S_PaintChannels( int endtime );
+void	SND_InitScaletable( void );
+void	SX_Init( void );
+void	SX_RoomFX( int count, int fFilter, int fTimefx );
+qboolean	Wavstream_Init( void );
+void	Wavstream_Close( int i );
+void	SND_InitMouth( int entnum, int entchannel );
+void	SND_CloseMouth( channel_t *ch );
+void	VOX_Init( void );
+void	VOX_Shutdown( void );
+void	VOX_SetChanVol( channel_t *ch );
+void	VOX_MakeSingleWordSentence( channel_t *ch, int pitch );
+sfxcache_t	*VOX_LoadSound( channel_t *pchan, char *pszin );
+void	VOX_TrimStartEndTimes( channel_t *ch, sfxcache_t *sc );
+
+extern	portable_samplepair_t	paintbuffer[];
+extern	int		cszrawsentences;
 
 extern	char	*rgpszrawsentence[CVOXFILESENTENCEMAX];
 

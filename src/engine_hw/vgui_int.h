@@ -4,6 +4,7 @@
 #define VGUI_INT_H
 
 int		VGuiWrap2_IsConsoleVisible( void );
+int		VGuiWrap2_IsGameUIVisible( void );
 void	VGuiWrap2_ShowConsole( void );
 void	VGuiWrap2_HideConsole( void );
 void	VGuiWrap2_ClearConsole( void );

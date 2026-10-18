@@ -13,6 +13,7 @@ struct usercmd_s;
 
 void	ClientDLL_HudInit( void );
 void	ClientDLL_HudVidInit( void );
+void	ClientDLL_IN_Accumulate( void );
 void	ClientDLL_CreateMove( float frametime, struct usercmd_s *cmd, int active );
 int		ClientDLL_ConnectionlessPacket( const struct netadr_s *net_from, const char *args, char *response_buffer, int *response_buffer_size );
 int		ClientDLL_GetHullBounds( int hullnumber, float *mins, float *maxs );

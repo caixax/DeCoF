@@ -103,3 +103,16 @@ _QueryClientCvarValueCmd
 _QueryClientCvarValueCmd2
 _QueryClientCvarValue
 _QueryClientCvarValue2
+_PF_makevectors_I
+_PF_Time
+_PF_setorigin_I
+_SetMinMaxSize
+_PF_setsize_I
+_PF_setmodel_I
+_PF_modelindex
+_PF_Remove_I
+_PF_find_Shared
+_hudCheckParm
+_EngCheckParm
+_SzFromIndex_guess
+_IndexFromSz_guess
