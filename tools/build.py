@@ -18,6 +18,7 @@ build/target/<dll>/<path>.obj (retail, delinked).
 import csv
 import json
 import os
+import shutil
 import subprocess
 import sys
 import urllib.parse
@@ -115,11 +116,12 @@ def mcp_call(path, body=None, query=None, timeout=120):
         return json.loads(r.read().decode())
 
 
-def merged_symbols(d, dll):
+def merged_symbols(d, dll, tag=""):
     """tools/symbols/<dll>_1.6a.csv, then _decorated.csv (decorated forms of
     its undecorated C++ names), _auto.csv (harvested), then the
     curated _usermsgs.csv, _vtable.csv and _manual.csv (later files
-    override earlier ones), written to build/jobs/."""
+    override earlier ones), written to build/jobs/. A tag gives the job its
+    own copies, so concurrent delinks do not overwrite each other's files."""
     rows = {}
     curated = set()
     base = os.path.join(ROOT, d["symbols"])
@@ -169,7 +171,7 @@ def merged_symbols(d, dll):
             if rows.get(va, ("",))[0] == r["name"]:
                 rows.pop(va)
             forget.append((va, r["name"]))
-    with open(os.path.join(ROOT, "build", "jobs", "forget_%s.csv" % dll), "w", newline="") as f:
+    with open(os.path.join(ROOT, "build", "jobs", "forget_%s%s.csv" % (dll, tag)), "w", newline="") as f:
         w = csv.writer(f, lineterminator="\n")
         w.writerow(["va", "name"])
         w.writerows(forget)
@@ -179,7 +181,7 @@ def merged_symbols(d, dll):
     sp = base.replace("_1.6a.csv", "_datasizes.csv")
     if os.path.exists(sp):
         sizes = {r["name"]: r["size"] for r in csv.DictReader(open(sp))}
-    out = os.path.join(ROOT, "build", "jobs", "symbols_%s.csv" % dll)
+    out = os.path.join(ROOT, "build", "jobs", "symbols_%s%s.csv" % (dll, tag))
     os.makedirs(os.path.dirname(out), exist_ok=True)
     with open(out, "w", newline="") as f:
         w = csv.writer(f, lineterminator="\n")
@@ -187,14 +189,19 @@ def merged_symbols(d, dll):
         for va in sorted(rows):
             name, kind = rows[va]
             w.writerow([va, name, kind, sizes.get(name, "") if kind == "data" else ""])
+    if tag:
+        # other tools read the shared merged map: refresh it in one step
+        shared = os.path.join(ROOT, "build", "jobs", "symbols_%s.csv" % dll)
+        shutil.copyfile(out, shared + tag)
+        os.replace(shared + tag, shared)
     return out
 
 
-def write_job(d, items, job, dll):
+def write_job(d, items, job, dll, tag=""):
     os.makedirs(os.path.dirname(job), exist_ok=True)
     with open(job, "w") as f:
-        f.write("symbols %s\n" % merged_symbols(d, dll))
-        f.write("forget %s\n" % os.path.join(ROOT, "build", "jobs", "forget_%s.csv" % dll))
+        f.write("symbols %s\n" % merged_symbols(d, dll, tag))
+        f.write("forget %s\n" % os.path.join(ROOT, "build", "jobs", "forget_%s%s.csv" % (dll, tag)))
         for u, full in items:
             f.write("unit %s\n" % obj_path("target", full))
             for name in unit_functions(u) + u.get("data", []):
@@ -214,8 +221,10 @@ def build_target(units):
     use_mcp = mcp_up()
     ok = True
     for dll, (d, items) in by_dll.items():
-        job = os.path.join(ROOT, "build", "jobs", "delink_%s.txt" % dll)
-        write_job(d, items, job, dll)
+        # one set of job files per process: agents delink concurrently
+        tag = "_%d" % os.getpid()
+        job = os.path.join(ROOT, "build", "jobs", "delink_%s%s.txt" % (dll, tag))
+        write_job(d, items, job, dll, tag)
         for u, full in items:
             if os.path.exists(obj_path("target", full)):
                 os.remove(obj_path("target", full))
@@ -241,6 +250,10 @@ def build_target(units):
             print("target %-30s %s" % (full, "ok" if rc == 0 and exists else
                                        "FAILED (%s)" % log))
             ok &= rc == 0 and exists
+        for path in (job, os.path.join(ROOT, "build", "jobs", "symbols_%s%s.csv" % (dll, tag)),
+                     os.path.join(ROOT, "build", "jobs", "forget_%s%s.csv" % (dll, tag))):
+            if os.path.exists(path):
+                os.remove(path)
     return ok
 
 
