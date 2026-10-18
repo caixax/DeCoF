@@ -226,6 +226,7 @@ typedef struct netchan_s
 	flow_t				flow[MAX_FLOWS];
 } netchan_t;
 
+extern	struct cvar_s	net_showpackets;
 extern	int		net_drop;			// packets dropped before this one
 
 extern	char	gDownloadFile[256];

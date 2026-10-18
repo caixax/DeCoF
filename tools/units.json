@@ -2448,6 +2448,16 @@
           "name": "engine/mem",
           "source": "src/engine_hw/mem.c",
           "functions_file": "tools/units/hw_engine_mem.txt"
+        },
+        {
+          "name": "engine/GL_RSURF",
+          "source": "src/engine_hw/GL_RSURF.C",
+          "functions_file": "tools/units/hw_engine_GL_RSURF.txt"
+        },
+        {
+          "name": "engine/GL_MODEL",
+          "source": "src/engine_hw/GL_MODEL.C",
+          "functions_file": "tools/units/hw_engine_GL_MODEL.txt"
         }
       ]
     },

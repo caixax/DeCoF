@@ -6334,7 +6334,7 @@ int SV_SpawnServer( qboolean bIsDemo, char *server, char *startspot )
 	}
 
 	pr_strings = gNullString;
-	gGlobalVariables.pStringBase = gNullString;
+	gGlobalVariables.pStringBase = pr_strings;
 
 	if ( svs.maxclients == 1 )
 		Cvar_SetValue( "sv_clienttrace", 1 );

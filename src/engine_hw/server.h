@@ -280,7 +280,25 @@ extern	server_static_t	svs;			// persistant server info
 extern	server_t		sv;				// local server
 
 // pr_cmds.c
+#define	SVC_LASTMSG			58		// last engine message (svc_sendcvarvalue2), user messages follow
+#define	MAX_USER_MSG_DATA	192		// largest variable length user message
+
+#ifndef WALKMOVE_NORMAL
+#define WALKMOVE_NORMAL		0		// normal walkmove
+#define WALKMOVE_WORLDONLY	1		// doesn't hit ANY entities, no matter what the solid type
+#define WALKMOVE_CHECKONLY	2		// move, but don't touch triggers
+#endif
+
 int32	RandomLong( int32 lLow, int32 lHigh );
+float	RandomFloat( float flLow, float flHigh );
+int32	ran1( void );
+float	fran1( void );
+void	SeedRandomNumberGenerator( void );
+void	SetMinMaxSize( edict_t *e, const float *min, const float *max, qboolean rotate );
+void	PF_MessageBegin_I( int msg_dest, int msg_type, const float *pOrigin, edict_t *ed );
+void	PF_MessageEnd_I( void );
+void	QueryClientCvarValue( const edict_t *player, const char *cvarName );
+void	QueryClientCvarValue2( const edict_t *player, const char *cvarName, int requestID );
 void	AlertMessage( int atype, char *szFmt, ... );
 int		PF_precache_generic_I( char *s );
 int		PF_IsDedicatedServer( void );
@@ -340,6 +358,35 @@ void	R_ForceCVars( qboolean mp );
 
 // sv_phys.c
 void	SV_Physics( void );
+void	SV_CheckAllEnts( void );
+void	SV_CheckVelocity( edict_t *ent );
+qboolean	SV_RunThink( edict_t *ent );
+void	SV_Impact( edict_t *e1, edict_t *e2, trace_t *ptrace );
+int		ClipVelocity( vec_t *in, vec_t *normal, vec_t *out, float overbounce );
+int		SV_FlyMove( edict_t *ent, float time, trace_t *steptrace );
+void	SV_AddGravity( edict_t *ent );
+void	SV_AddCorrectGravity( edict_t *ent );
+void	SV_FixupGravityVelocity( edict_t *ent );
+trace_t	SV_PushEntity( edict_t *ent, vec_t *push );
+void	SV_PushMove( edict_t *pusher, float movetime );
+int		SV_PushRotate( edict_t *pusher, float movetime );
+void	SV_Physics_Pusher( edict_t *ent );
+qboolean	SV_CheckWater( edict_t *ent );
+float	SV_RecursiveWaterLevel( vec_t *center, float out, float in, int count );
+float	SV_Submerged( edict_t *ent );
+void	SV_Physics_None( edict_t *ent );
+void	SV_Physics_Follow( edict_t *ent );
+void	SV_Physics_Noclip( edict_t *ent );
+void	SV_CheckWaterTransition( edict_t *ent );
+void	SV_Physics_Toss( edict_t *ent );
+void	PF_WaterMove( edict_t *pSelf );
+void	SV_Physics_Step( edict_t *ent );
+trace_t	SV_Trace_Toss( edict_t *ent, edict_t *ignore );
+
+// sv_move.c
+qboolean	SV_CheckBottom( edict_t *ent );
+qboolean	SV_movetest( edict_t *ent, vec_t *move, qboolean relink );
+qboolean	SV_movestep( edict_t *ent, vec_t *move, qboolean relink );
 
 extern	edict_t	**g_moved_edict;
 extern	vec3_t	*g_moved_from;
@@ -386,6 +433,62 @@ void	SV_FullUpdate_f( void );
 void	SV_SendConsistencyList( sizebuf_t *msg );
 int		SV_TransferConsistencyInfo( void );
 
+#define	CMD_MAXBACKUP	30	// cmds[] of SV_ParseMove in this build
+
+struct areanode_s;
+struct pmtrace_s;
+struct physent_s;
+struct entity_state_s;
+struct usercmd_s;
+
+extern	qboolean	nofind;
+extern	int			giSkip;
+
+void	SV_ParseConsistencyResponse( client_t *pSenderClient );
+qboolean	SV_FileInConsistencyList( const char *filename, consistency_t **ppconsist );
+void	SV_PreRunCmd( void );
+void	SV_CopyEdictToPhysent( struct physent_s *pe, int e, edict_t *check );
+void	SV_AddLinksToPM_( struct areanode_s *node, float *pmove_mins, float *pmove_maxs );
+void	SV_AddLinksToPM( struct areanode_s *node, vec_t *origin );
+void	SV_PlayerRunPreThink( edict_t *player, float time );
+qboolean	SV_PlayerRunThink( edict_t *ent, float frametime, double clienttimebase );
+void	SV_CheckMovingGround( edict_t *player, float frametime );
+void	SV_ConvertPMTrace( trace_t *dest, struct pmtrace_s *src, edict_t *ent );
+void	SV_ForceFullClientsUpdate( void );
+void	SV_RunCmd( struct usercmd_s *ucmd, int random_seed );
+int		SV_ValidateClientCommand( char *pszCommand );
+float	SV_CalcClientTime( client_t *cl );
+void	SV_ComputeLatency( client_t *cl );
+int		SV_UnlagCheckTeleport( vec_t *v1, vec_t *v2 );
+void	SV_GetTrueOrigin( int player, vec_t *origin );
+void	SV_GetTrueMinMax( int player, float **fmin, float **fmax );
+struct entity_state_s	*SV_FindEntInPack( int index, packet_entities_t *pack );
+void	SV_SetupMove( client_t *host_client );
+void	SV_RestoreMove( client_t *host_client );
+void	SV_ParseStringCommand( client_t *pSenderClient );
+void	SV_ParseDelta( client_t *pSenderClient );
+void	SV_EstablishTimeBase( client_t *cl, struct usercmd_s *cmds, int dropped, int numbackup, int numcmds );
+void	SV_ParseMove( client_t *pSenderClient );
+void	SV_ParseVoiceData( client_t *cl );
+void	SV_IgnoreHLTV( client_t *cl );
+void	SV_ParseCvarValue( client_t *cl );
+void	SV_ParseCvarValue2( client_t *cl );
+qboolean	SV_SetPlayer( int idnum );
+
+// sv_pmove.c
+void	PM_SV_PlaybackEventFull( int flags, int clientindex, unsigned short eventindex, float delay, float *origin, float *angles, float fparam1, float fparam2, int iparam1, int iparam2, int bparam1, int bparam2 );
+void	PM_SV_PlaySound( int channel, const char *sample, float volume, float attenuation, int fFlags, int pitch );
+const char	*PM_SV_TraceTexture( int ground, float *vstart, float *vend );
+
+// r_studio.c
+int		R_GetStudioBounds( const char *filename, float *mins, float *maxs );
+int		ModelFrameCount( struct model_s *model );
+
+// gl_rmain.c, gl_rsurf.c
+extern	int		r_visframecount;
+extern	struct mleaf_s	*r_oldviewleaf;
+void	R_MarkLeaves( void );
+
 // host.c
 extern	cvar_t	skill;
 extern	cvar_t	deathmatch;
@@ -397,6 +500,7 @@ extern	int		current_skill;
 extern	int		gHostSpawnCount;
 
 // pr_edict.c
+int		IndexOfEdict( const edict_t *pEdict );
 void	ReleaseEntityDLLFields( edict_t *pEdict );
 void	InitEntityDLLFields( edict_t *pEdict );
 
@@ -652,6 +756,7 @@ const char	*Steam_GetGSUniverse( void );
 void	Steam_HandleIncomingPacket( byte *data, int len, int fromip, unsigned short port );
 
 // sv_upld.c
+void	SV_ParseResourceList( client_t *pSenderClient );
 void	SV_ClearResourceLists( client_t *cl );
 void	SV_MoveToOnHandList( resource_t *pResource );
 void	SV_RequestMissingResourcesFromClients( void );
@@ -665,6 +770,7 @@ qboolean	CheckIP( netadr_t adr );
 // steam_api flat interface
 __declspec( dllimport ) int	ISteamMasterServerUpdater_HandleIncomingPacket( const void *pData, int cbData, unsigned int srcIP, unsigned short srcPort );
 __declspec( dllimport ) char	ISteamApps_BIsSubscribedApp( unsigned int appID );
+__declspec( dllimport ) uint64	ISteamGameServer_CreateUnauthenticatedUserConnection( void );
 __declspec( dllimport ) int	ISteamGameServer_BUpdateUserData( uint64 steamIDUser, const char *pchPlayerName, unsigned int uScore );
 
 // master.c

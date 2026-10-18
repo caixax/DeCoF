@@ -2093,3 +2093,43 @@ va,name,kind,evidence
 01D24A7D,_CL_GetDemoViewInfo,func,"engine/cl_demo.c of the Linux hw.so DWARF (CL_GetDemoViewInfo, line 329, last before CL_AppendDemo_f); DemoPlayer_IsActive then DemoPlayer_GetDemoViewInfo or CL_GetDemoViewInfo_OLD with the same three arguments (added by an agent)"
 01DF1EE5,_SV_SendEnts_f,func,console handler between SV_ShowServerinfo_f and SV_FullUpdate_f (Linux DWARF line order 2265/2282/2307); sets host_client->fully_connected after the cmd_source check; SV_Init registers it for sendents (added by an agent)
 01DE9324,_SV_Trace_Toss,func,"last function of sv_phys.c after SV_Physics (Linux DWARF line 2068); saves host_frametime, sets it to 0.05, copies the edict with Q_memcpy 0x32c and loops SV_CheckVelocity/SV_AddGravity/SV_Move until trace.ent is set and differs from ignore (added by an agent)"
+01D937FB,_NET_ThreadMain_guess,func,"net_ws.c thread procedure passed to CreateThread by NET_StartThread: loops NET_Sleep, NET_QueuePacket on the 3 sockets and appends to messages[]; no Linux counterpart, name unproven (added by an agent)"
+01D9367F,_NET_Sleep,func,same body as Linux NET_Sleep (select over ip_sockets with a 20 ms timeval or NULL when net_sleepforever); the Linux NET_Sleep_Timeout is the sys_ticrate based dedicated sleep that this build lacks (added by an agent)
+01D91D20,_NET_ThreadLock,func,"engine/net_ws.c DWARF source order, first function: EnterCriticalSection(&net_cs) when use_thread and net_thread_initialized (added by an agent)"
+01D91D42,_NET_ThreadUnlock,func,engine/net_ws.c DWARF source order after NET_ThreadLock: LeaveCriticalSection(&net_cs) under the same test (added by an agent)
+01D91D64,_Q_ntohs,func,engine/net_ws.c DWARF source order after NET_ThreadUnlock: returns ntohs(netshort) (added by an agent)
+01D91D73,_NetadrToSockadr,func,"engine/net_ws.c DWARF source order after Q_ntohs: fills a sockaddr from a netadr_t for NA_BROADCAST, NA_IP, NA_IPX and NA_BROADCAST_IPX; called by NET_SendPacket (added by an agent)"
+01D91E7B,_SockadrToNetadr,func,"engine/net_ws.c DWARF source order after NetadrToSockadr: AF_INET to NA_IP, AF_IPX to NA_IPX; called by NET_StringToAdr and NET_QueuePacket (added by an agent)"
+01D91F06,_NET_HostToNetShort,func,engine/net_ws.c DWARF source order after SockadrToNetadr: returns htons(us_in) (added by an agent)
+01D91F15,_NET_CompareAdr,func,"engine/net_ws.c DWARF source order after NET_HostToNetShort: compares type, ip bytes and port, Q_memcmp of 10 ipx bytes for NA_IPX (added by an agent)"
+01D91FF4,_NET_CompareClassBAdr,func,engine/net_ws.c DWARF source order after NET_CompareAdr: compares type and the first two ip bytes (added by an agent)
+01D9205D,_NET_IsReservedAdr,func,"engine/net_ws.c DWARF source order after NET_CompareClassBAdr: true for loopback, 10.x, 127.x, 172.16-31.x, 192.168.x and IPX (added by an agent)"
+01D920F9,_NET_CompareBaseAdr,func,engine/net_ws.c DWARF source order after NET_IsReservedAdr: NET_CompareAdr without the port (added by an agent)
+01D921AD,_NET_AdrToString,func,engine/net_ws.c DWARF source order after NET_CompareBaseAdr: strings loopback and %i.%i.%i.%i:%i into a static 64 byte buffer (added by an agent)
+01D922C1,_NET_BaseAdrToString,func,engine/net_ws.c DWARF source order after NET_AdrToString: strings loopback and %i.%i.%i.%i without the port (added by an agent)
+01D923B2,_NET_StringToSockaddr,func,"engine/net_ws.c DWARF source order after NET_BaseAdrToString, called by NET_StringToAdr and NET_IPSocket: IPX address parse with %x and %u, else inet_addr and gethostbyname (added by an agent)"
+01D94525,_NET_IPXSocket_guess,func,"net_ws.c between NET_OpenIP and NET_GetLocalAddress: socket(PF_IPX, SOCK_DGRAM, NSPROTO_IPX), FIONBIO, SO_BROADCAST, SO_REUSEADDR, bind; strings WARNING: IPX_Socket; no Linux counterpart, name unproven (added by an agent)"
+01D946C5,_NET_OpenIPX_guess,func,net_ws.c after the IPX socket function: opens ipx_sockets[NS_SERVER] from ipx_hostport/hostport/port and ipx_sockets[NS_CLIENT] from ipx_clientport/clientport; called by NET_Config unless noipx; name unproven (added by an agent)
+01D94DEA,_NET_ClearLagData,func,"engine/net_ws.c DWARF: NET_ClearLagData(bClient, bServer) clears g_pLagData client and multicast lists, then the server list; called as (1, 1) by NET_LagPacket (added by an agent)"
+01D94E2C,_NET_Shutdown,func,"engine/net_ws.c DWARF source order after NET_ClearLagData: clears the lag lists, NET_Config(0), NET_FlushQueues (added by an agent)"
+01D95BB1,_NET_GraphValue,func,engine/net_ws.c DWARF source order after NET_DrawTextFields: (int)net_graph.value or 2 while the in_graph key (ClientDLL_FindKey) is down (added by an agent)
+01D95C06,_NET_GraphGetXY,func,"engine/net_ws.c DWARF source order after NET_GraphValue: x from net_graphpos (1 right, 2 centre), y = rect->y + rect->height - 29 (added by an agent)"
+01D95C82,_NET_DrawHatches,func,"engine/net_ws.c DWARF source order after NET_GraphGetXY: hatch marks every 10 / net_scale pixels, colors {0,200,0} and {63,63,0} (added by an agent)"
+01D95D89,_NET_DrawUpdateRate,func,engine/net_ws.c DWARF source order after NET_DrawHatches: NET_DrawString of %i/s with cl_updaterate (added by an agent)
+01D95DC0,_NET_DrawDataSegment,func,"engine/net_ws.c DWARF source order after NET_DrawUpdateRate: bytes / net_scale, returns 0 when rcFill->y drops below 2, else NET_FillRect (added by an agent)"
+01D95E2C,_SCR_NetGraph,func,"engine/net_ws.c DWARF source order after NET_DrawDataSegment: NET_GraphValue, NET_GetFrameData, NET_GetCommandInfo, NET_GraphGetXY, NET_DrawTimes, NET_DrawTextFields (added by an agent)"
+01D964DD,_SCR_DrawFPS,func,"engine/net_ws.c DWARF, last function: NET_DrawString(2, 2, ...) of %i fps from host_frametime when cl_showfps is set (added by an agent)"
+01D6BCD0,_R_AddDynamicLights,func,"static R_AddDynamicLights, first function of engine/GL_RSURF.C in the Linux DWARF (line 81, before R_BuildLightMap at line 162); its only caller is R_BuildLightMap (call at 01D6C3A6); it walks cl_dlights against currententity and writes blocklights (added by an agent)"
+01DA23E0,_PF_makevectors_I,func,"first function of pr_cmds.c (Linux DWARF line 53, before PF_Time); AngleVectors into gGlobalVariables.v_forward/v_right/v_up (added by an agent)"
+01DA2400,_PF_Time,func,Linux DWARF line 58 after PF_makevectors_I; returns Sys_FloatTime() as float (added by an agent)
+01DA2410,_PF_setorigin_I,func,"Linux DWARF line 74; copies org into e->v.origin and calls SV_LinkEdict(e, FALSE) (added by an agent)"
+01DA244F,_SetMinMaxSize,func,"Linux DWARF line 84; string backwards mins/maxs, sin/cos of angles[1] rotation, writes v.mins/maxs/size and SV_LinkEdict (added by an agent)"
+01DA2750,_PF_setsize_I,func,"Linux DWARF line 169; calls SetMinMaxSize(e, min, max, 0) (added by an agent)"
+01DA2796,_PF_setmodel_I,func,"Linux DWARF line 184; strings Warning! No precache on model and models/error.mdl, walks sv.model_precache, calls SetMinMaxSize with mod->mins/maxs (added by an agent)"
+01DA287D,_PF_modelindex,func,Linux DWARF line 210 before ModelFrames; returns SV_ModelIndex(pstr) (added by an agent)
+01DA4258,_PF_Remove_I,func,Linux DWARF line 1258 between CreateNamedEntity and iGetIndex; calls ED_Free(ed) (the map names that callee _SV_Physics_Noclip); referenced from the engine function table at 0x1eced70 (added by an agent)
+01DA44F5,_PF_find_Shared,func,"only callee of FindEntityByString (start index, iGetIndex field, value); loops sv.edicts comparing pr_strings + field with Q_strcmp, returns sv.edicts; Linux DWARF inline subprogram PF_find_Shared of pr_cmds.c (added by an agent)"
+01DA79A4,_hudCheckParm,func,Linux DWARF line 3514 after QueryClientCvarValue2; calls g_engdstAddrs.CheckParm then COM_CheckParm and returns com_argv[i + 1] in ppnext (added by an agent)
+01DA7A04,_EngCheckParm,func,"Linux DWARF line 3537, last function of pr_cmds.c; forwards to hudCheckParm (added by an agent)"
+01DA276B,_SzFromIndex_guess,func,"unreferenced function between PF_setsize_I and PF_setmodel_I, not in the Linux build; returns the bss empty string literal plus iString; only caller is 01DA2780 (added by an agent)"
+01DA2780,_IndexFromSz_guess,func,"unreferenced function between PF_setsize_I and PF_setmodel_I, not in the Linux build; returns psz minus SzFromIndex_guess(0) (added by an agent)"

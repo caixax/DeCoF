@@ -74,7 +74,7 @@ extern	cvar_t	r_cachestudio;
 extern	cvar_t	r_cullsequencebox;
 extern	cvar_t	vid_d3d;
 
-extern	int		g_bIsCZero;
+extern	int		g_bIsCZeroRitual;
 
 extern	int		texture_extension_number_guess;
 
@@ -404,9 +404,9 @@ void R_NewMap( void )
 		if ( !cl.worldmodel->textures[i] )
 			continue;
 
-		IsCzeroAndIsSkyCullAndIsD3D = g_bIsCZero && !Q_strcmp( cl.worldmodel->textures[i]->name, "skycull" ) && vid_d3d.value;
+		IsCzeroAndIsSkyCullAndIsD3D = g_bIsCZeroRitual && !Q_strcmp( cl.worldmodel->textures[i]->name, "skycull" ) && vid_d3d.value;
 
-		if ( !Q_strncmp( cl.worldmodel->textures[i]->name, "sky", 3 ) && ( !g_bIsCZero || !IsCzeroAndIsSkyCullAndIsD3D ) )
+		if ( !Q_strncmp( cl.worldmodel->textures[i]->name, "sky", 3 ) && ( !g_bIsCZeroRitual || !IsCzeroAndIsSkyCullAndIsD3D ) )
 			skytexturenum = i;
 		if ( !Q_strncmp( cl.worldmodel->textures[i]->name, "window02_1", 10 ) )
 			mirrortexturenum = i;

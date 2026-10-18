@@ -462,6 +462,7 @@ extern	cvar_t	cl_allow_download;
 extern	cvar_t	cl_download_ingame;
 extern	cvar_t	cl_fixtimerate;
 extern	cvar_t	cl_updaterate;
+extern	cvar_t	cl_showfps;
 extern	cvar_t	cl_cmdrate;
 extern	cvar_t	fs_lazy_precache;
 extern	cvar_t	fs_precache_timings;

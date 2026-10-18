@@ -1893,7 +1893,7 @@ void Netchan_UpdateProgress( netchan_t *chan )
 	int			i;
 	float		bestpercent = 0.0;
 
-	scr_downloading = -1.0;
+	scr_downloading.value = -1.0;
 	gDownloadFile[0] = 0;
 
 	if ( net_drawslider.value != 1.0 )
@@ -1973,7 +1973,7 @@ void Netchan_UpdateProgress( netchan_t *chan )
 		}
 	}
 
-	scr_downloading = bestpercent;
+	scr_downloading.value = bestpercent;
 }
 
 /*

@@ -47,15 +47,6 @@ void	R_DecalShoot( int textureIndex, int entity, int modelIndex, vec_t *position
 int		Draw_DecalIndex( int id );
 int		Draw_DecalIndexFromName( char *name );
 
-// a decal of a saved game
-typedef struct
-{
-	char	*name;
-	short	entityIndex;
-	byte	depth;
-	byte	flags;
-	vec3_t	position;
-} DECALLIST;
 
 // r_trans.c
 void	R_AllocObjects( int nMax );
@@ -1220,7 +1211,7 @@ void CL_BatchResourceRequest( void )
 	{
 		char	tmpUrl[128];
 
-		strncpy( tmpUrl, cl.downloadUrl, sizeof( tmpUrl ) );
+		memcpy( tmpUrl, cl.downloadUrl, sizeof( tmpUrl ) );
 
 		CL_MarkMapAsUsingHTTPDownload();
 		CL_Disconnect();

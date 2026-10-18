@@ -81,16 +81,6 @@ typedef struct
 typedef void (*SV_SAVEGAMECOMMENT_FUNC)( char *, int );
 typedef int (*SV_BLENDING_INTERFACE_FUNC)( int, struct sv_blending_interface_s **, struct server_studio_api_s *, float *, float * );
 
-// gl_model.h
-typedef struct
-{
-	char	*name;
-	short	entityIndex;
-	byte	depth;
-	byte	flags;
-	vec3_t	position;
-} DECALLIST;
-
 // gl_rsurf.c
 int		DecalListCreate( DECALLIST *pList );
 

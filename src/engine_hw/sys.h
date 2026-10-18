@@ -22,4 +22,7 @@ extern	int		giSubState;
 // sys_dll2.cpp
 const char	*GetCurrentSteamAppName( void );
 
+// sys_dll.c
+void	Sys_Sleep( int msec );
+
 #endif // SYS_H

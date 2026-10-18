@@ -44,4 +44,7 @@ void	Draw_DecalSetName( int decal, char *name );
 // cl_draw.c
 void	SPR_Shutdown_NoModelFree( void );
 
+// gl_draw.c
+void	Draw_FillRGBA( int x, int y, int w, int h, int r, int g, int b, int a );
+
 #endif // DRAW_H

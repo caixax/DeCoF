@@ -82,6 +82,14 @@ typedef struct
 	int			flags;			// sky or slime, no lightmap or 256 subdivision
 } mtexinfo_t;
 
+#define	SURF_PLANEBACK		2
+#define	SURF_DRAWSKY		4
+#define SURF_DRAWSPRITE		8
+#define SURF_DRAWTURB		0x10
+#define SURF_DRAWTILED		0x20
+#define SURF_DRAWBACKGROUND	0x40
+#define SURF_UNDERWATER		0x80
+
 #define	VERTEXSIZE	7
 
 typedef struct glpoly_s
@@ -295,6 +303,12 @@ typedef struct {
 
 typedef enum {mod_brush, mod_sprite, mod_alias, mod_studio} modtype_t;
 
+// values of model_t needload
+#define	NL_PRESENT		0
+#define	NL_NEEDS_LOADED	1
+#define	NL_UNREFERENCED	2
+#define	NL_CLIENT		3
+
 typedef struct model_s
 {
 	char		name[MAX_QPATH];
@@ -368,6 +382,17 @@ typedef struct model_s
 
 } model_t;
 
+typedef struct
+{
+	char		*name;
+	short		entityIndex;
+	byte		depth;
+	byte		flags;
+	vec3_t		position;
+} DECALLIST;
+
+void	*Mod_Extradata( model_t *mod );
+mleaf_t	*Mod_PointInLeaf( vec3_t p, model_t *model );
 model_t	*Mod_ForName( const char *name, qboolean crash, qboolean trackCRC );
 model_t	*Mod_FindName( qboolean trackCRC, const char *name );
 model_t	*Mod_LoadModel( model_t *mod, qboolean crash, qboolean trackCRC );
