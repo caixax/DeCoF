@@ -2551,6 +2551,11 @@
             "src/engine",
             "src/pm_shared"
           ]
+        },
+        {
+          "name": "engine/net_api",
+          "source": "src/engine_hw/net_api.c",
+          "functions_file": "tools/units/hw_engine_net_api.txt"
         }
       ]
     },
