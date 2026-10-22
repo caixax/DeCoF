@@ -26417,59 +26417,59 @@ hw,01D87D19,39,?Sys_GetFactory@@YAP6APAVIBaseInterface@@PBDPAH@ZPAVCSysModule@@@
 hw,01D87D40,10,?Sys_GetFactoryThis@@YAP6APAVIBaseInterface@@PBDPAH@ZXZ,,UNKNOWN,public/interface.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01D87D4A,22,?Sys_GetFactory@@YAP6APAVIBaseInterface@@PBDPAH@Z0@Z,,UNKNOWN,public/interface.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01D87D60,26,?Sys_GetProcAddress@@YAPAXPBD0@Z,Sys_GetProcAddress,UNKNOWN,public/interface.cpp,,,MATCHED,100,hw_manual.csv,
-hw,01D87D80,54,,,UNKNOWN,engine/ipratelimit.cpp,,,TODO,,,linux: _ZN12CIPRateLimitC1Ev
-hw,01D87DB6,19,,,UNKNOWN,engine/ipratelimit.cpp,,,TODO,,,linux: _ZN12CIPRateLimitD1Ev
-hw,01D87DC9,20,,,UNKNOWN,engine/ipratelimit.cpp,,,TODO,,,linux: _ZN12CIPRateLimit6LessIPERKNS_8iprate_sES2_
-hw,01D87DDD,591,,CIPRateLimit::CheckIP,ENGINE,engine/ipratelimit.cpp,,,TODO,,linux_symbols:data:0.727,linux: _ZN12CIPRateLimit7CheckIPE8netadr_s
-hw,01D88030,93,,,UNKNOWN,engine/ipratelimit.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D88090,22,,~<>,ENGINE,engine/ipratelimit.cpp,,,TODO,,ghidra,inline or template function (COMDAT) emitted after the object
-hw,01D880B0,25,,,UNKNOWN,engine/ipratelimit.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D880D0,17,,,UNKNOWN,engine/ipratelimit.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D880F0,17,,,UNKNOWN,engine/ipratelimit.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D88110,35,,,UNKNOWN,engine/ipratelimit.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D88140,58,,,UNKNOWN,engine/ipratelimit.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D88180,143,,,UNKNOWN,engine/ipratelimit.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D88210,718,,,UNKNOWN,engine/ipratelimit.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D884E0,174,,,UNKNOWN,engine/ipratelimit.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D88590,67,,,UNKNOWN,engine/ipratelimit.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D885E0,11,,,UNKNOWN,engine/ipratelimit.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D885F0,31,,,UNKNOWN,engine/ipratelimit.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D88610,31,,,UNKNOWN,engine/ipratelimit.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D88630,28,,,UNKNOWN,engine/ipratelimit.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D88650,27,,,UNKNOWN,engine/ipratelimit.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D88670,28,,,UNKNOWN,engine/ipratelimit.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D88690,44,,,UNKNOWN,engine/ipratelimit.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D886C0,29,,,UNKNOWN,engine/ipratelimit.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D886E0,8,,,UNKNOWN,engine/ipratelimit.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D886F0,78,,,UNKNOWN,engine/ipratelimit.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D88740,31,,,UNKNOWN,engine/ipratelimit.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D88760,30,,SetAt,ENGINE,engine/ipratelimit.cpp,,,TODO,,ghidra,inline or template function (COMDAT) emitted after the object
-hw,01D88780,31,,,UNKNOWN,engine/ipratelimit.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D887A0,28,,,UNKNOWN,engine/ipratelimit.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D887C0,31,,,UNKNOWN,engine/ipratelimit.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D887E0,901,,,UNKNOWN,engine/ipratelimit.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D88B70,144,,,UNKNOWN,engine/ipratelimit.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D88C00,75,,,UNKNOWN,engine/ipratelimit.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D88C50,19,,,UNKNOWN,engine/ipratelimit.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D88C70,70,,,UNKNOWN,engine/ipratelimit.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D88CC0,28,,,UNKNOWN,engine/ipratelimit.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D88CE0,130,,,UNKNOWN,engine/ipratelimit.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D88D70,36,,,UNKNOWN,engine/ipratelimit.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D88DA0,36,,,UNKNOWN,engine/ipratelimit.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D88DD0,287,,,UNKNOWN,engine/ipratelimit.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D88EF0,287,,,UNKNOWN,engine/ipratelimit.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D89010,182,,,UNKNOWN,engine/ipratelimit.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D890D0,26,,,UNKNOWN,engine/ipratelimit.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D890F0,26,,,UNKNOWN,engine/ipratelimit.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D89110,69,,,UNKNOWN,engine/ipratelimit.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D89160,5,,,UNKNOWN,engine/ipratelimit.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D89170,44,,,UNKNOWN,engine/ipratelimit.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D891A0,146,,,UNKNOWN,engine/ipratelimit.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D89240,541,,,UNKNOWN,engine/ipratelimit.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D89460,25,,,UNKNOWN,engine/ipratelimit.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D89480,17,,,UNKNOWN,engine/ipratelimit.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D894A0,199,,,UNKNOWN,engine/ipratelimit.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D89570,25,,,UNKNOWN,engine/ipratelimit.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D87D80,54,??0CIPRateLimit@@QAE@XZ,,UNKNOWN,engine/ipratelimit.cpp,,,MATCHED,100,,linux: _ZN12CIPRateLimitC1Ev
+hw,01D87DB6,19,??1CIPRateLimit@@QAE@XZ,,UNKNOWN,engine/ipratelimit.cpp,,,MATCHED,100,,linux: _ZN12CIPRateLimitD1Ev
+hw,01D87DC9,20,?LessIP@CIPRateLimit@@CA_NABUiprate_s@1@0@Z,,UNKNOWN,engine/ipratelimit.cpp,,,MATCHED,100,,linux: _ZN12CIPRateLimit6LessIPERKNS_8iprate_sES2_
+hw,01D87DDD,591,?CheckIP@CIPRateLimit@@QAE_NUnetadr_s@@@Z,,ENGINE,engine/ipratelimit.cpp,,,MATCHED,100,linux_symbols:data:0.727,linux: _ZN12CIPRateLimit7CheckIPE8netadr_s
+hw,01D88030,93,??0?$CUtlRBTree@Uiprate_s@CIPRateLimit@@H@@QAE@HHP6A_NABUiprate_s@CIPRateLimit@@0@Z@Z,,UNKNOWN,engine/ipratelimit.cpp,,,MATCHED,100,,inline or template function (COMDAT) emitted after the object
+hw,01D88090,22,??1?$CUtlRBTree@Uiprate_s@CIPRateLimit@@H@@QAE@XZ,,ENGINE,engine/ipratelimit.cpp,,,MATCHED,100,ghidra,inline or template function (COMDAT) emitted after the object
+hw,01D880B0,25,??A?$CUtlRBTree@Uiprate_s@CIPRateLimit@@H@@QAEAAUiprate_s@CIPRateLimit@@H@Z,,UNKNOWN,engine/ipratelimit.cpp,,,MATCHED,100,,inline or template function (COMDAT) emitted after the object
+hw,01D880D0,17,?Count@?$CUtlRBTree@Uiprate_s@CIPRateLimit@@H@@QBEIXZ,,UNKNOWN,engine/ipratelimit.cpp,,,MATCHED,100,,inline or template function (COMDAT) emitted after the object
+hw,01D880F0,17,?MaxElement@?$CUtlRBTree@Uiprate_s@CIPRateLimit@@H@@QBEHXZ,,UNKNOWN,engine/ipratelimit.cpp,,,MATCHED,100,,inline or template function (COMDAT) emitted after the object
+hw,01D88110,35,?IsValidIndex@?$CUtlRBTree@Uiprate_s@CIPRateLimit@@H@@QBE_NH@Z,,UNKNOWN,engine/ipratelimit.cpp,,,MATCHED,100,,inline or template function (COMDAT) emitted after the object
+hw,01D88140,58,?Insert@?$CUtlRBTree@Uiprate_s@CIPRateLimit@@H@@QAEHABUiprate_s@CIPRateLimit@@@Z,,UNKNOWN,engine/ipratelimit.cpp,,,MATCHED,100,,inline or template function (COMDAT) emitted after the object
+hw,01D88180,143,?Find@?$CUtlRBTree@Uiprate_s@CIPRateLimit@@H@@QBEHABUiprate_s@CIPRateLimit@@@Z,,UNKNOWN,engine/ipratelimit.cpp,,,MATCHED,100,,inline or template function (COMDAT) emitted after the object
+hw,01D88210,718,?RemoveAt@?$CUtlRBTree@Uiprate_s@CIPRateLimit@@H@@QAEXH@Z,,UNKNOWN,engine/ipratelimit.cpp,,,MATCHED,100,,inline or template function (COMDAT) emitted after the object
+hw,01D884E0,174,?PrevInorder@?$CUtlRBTree@Uiprate_s@CIPRateLimit@@H@@QBEHH@Z,,UNKNOWN,engine/ipratelimit.cpp,,,MATCHED,100,,inline or template function (COMDAT) emitted after the object
+hw,01D88590,67,?LastInorder@?$CUtlRBTree@Uiprate_s@CIPRateLimit@@H@@QBEHXZ,,UNKNOWN,engine/ipratelimit.cpp,,,MATCHED,100,,inline or template function (COMDAT) emitted after the object
+hw,01D885E0,11,?ResetDbgInfo@?$CUtlRBTree@Uiprate_s@CIPRateLimit@@H@@IAEXXZ,,UNKNOWN,engine/ipratelimit.cpp,,,MATCHED,100,,inline or template function (COMDAT) emitted after the object
+hw,01D885F0,31,?Element@?$CUtlRBTree@Uiprate_s@CIPRateLimit@@H@@QBEABUiprate_s@CIPRateLimit@@H@Z,,UNKNOWN,engine/ipratelimit.cpp,,,MATCHED,100,,inline or template function (COMDAT) emitted after the object
+hw,01D88610,31,?Element@?$CUtlRBTree@Uiprate_s@CIPRateLimit@@H@@QAEAAUiprate_s@CIPRateLimit@@H@Z,,UNKNOWN,engine/ipratelimit.cpp,,,MATCHED,100,,inline or template function (COMDAT) emitted after the object
+hw,01D88630,28,?Parent@?$CUtlRBTree@Uiprate_s@CIPRateLimit@@H@@QBEHH@Z,,UNKNOWN,engine/ipratelimit.cpp,,,MATCHED,100,,inline or template function (COMDAT) emitted after the object
+hw,01D88650,27,?LeftChild@?$CUtlRBTree@Uiprate_s@CIPRateLimit@@H@@QBEHH@Z,,UNKNOWN,engine/ipratelimit.cpp,,,MATCHED,100,,inline or template function (COMDAT) emitted after the object
+hw,01D88670,28,?RightChild@?$CUtlRBTree@Uiprate_s@CIPRateLimit@@H@@QBEHH@Z,,UNKNOWN,engine/ipratelimit.cpp,,,MATCHED,100,,inline or template function (COMDAT) emitted after the object
+hw,01D88690,44,?IsLeftChild@?$CUtlRBTree@Uiprate_s@CIPRateLimit@@H@@QBE_NH@Z,,UNKNOWN,engine/ipratelimit.cpp,,,MATCHED,100,,inline or template function (COMDAT) emitted after the object
+hw,01D886C0,29,?IsRoot@?$CUtlRBTree@Uiprate_s@CIPRateLimit@@H@@QBE_NH@Z,,UNKNOWN,engine/ipratelimit.cpp,,,MATCHED,100,,inline or template function (COMDAT) emitted after the object
+hw,01D886E0,8,?InvalidIndex@?$CUtlRBTree@Uiprate_s@CIPRateLimit@@H@@SAHXZ,,UNKNOWN,engine/ipratelimit.cpp,,,MATCHED,100,,inline or template function (COMDAT) emitted after the object
+hw,01D886F0,78,?FreeNode@?$CUtlRBTree@Uiprate_s@CIPRateLimit@@H@@QAEXH@Z,,UNKNOWN,engine/ipratelimit.cpp,,,MATCHED,100,,inline or template function (COMDAT) emitted after the object
+hw,01D88740,31,?SetParent@?$CUtlRBTree@Uiprate_s@CIPRateLimit@@H@@IAEXHH@Z,,UNKNOWN,engine/ipratelimit.cpp,,,MATCHED,100,,inline or template function (COMDAT) emitted after the object
+hw,01D88760,30,?SetLeftChild@?$CUtlRBTree@Uiprate_s@CIPRateLimit@@H@@IAEXHH@Z,,ENGINE,engine/ipratelimit.cpp,,,MATCHED,100,ghidra,inline or template function (COMDAT) emitted after the object
+hw,01D88780,31,?SetRightChild@?$CUtlRBTree@Uiprate_s@CIPRateLimit@@H@@IAEXHH@Z,,UNKNOWN,engine/ipratelimit.cpp,,,MATCHED,100,,inline or template function (COMDAT) emitted after the object
+hw,01D887A0,28,?Color@?$CUtlRBTree@Uiprate_s@CIPRateLimit@@H@@IBE?AW4NodeColor_t@1@H@Z,,UNKNOWN,engine/ipratelimit.cpp,,,MATCHED,100,,inline or template function (COMDAT) emitted after the object
+hw,01D887C0,31,?SetColor@?$CUtlRBTree@Uiprate_s@CIPRateLimit@@H@@IAEXHW4NodeColor_t@1@@Z,,UNKNOWN,engine/ipratelimit.cpp,,,MATCHED,100,,inline or template function (COMDAT) emitted after the object
+hw,01D887E0,901,?RemoveRebalance@?$CUtlRBTree@Uiprate_s@CIPRateLimit@@H@@IAEXH@Z,,UNKNOWN,engine/ipratelimit.cpp,,,MATCHED,100,,inline or template function (COMDAT) emitted after the object
+hw,01D88B70,144,?CreateInsertedNode@?$CUtlRBTree@Uiprate_s@CIPRateLimit@@H@@IAEHABUiprate_s@CIPRateLimit@@@Z,,UNKNOWN,engine/ipratelimit.cpp,,,MATCHED,100,,inline or template function (COMDAT) emitted after the object
+hw,01D88C00,75,??0?$CUtlMemory@UNode_t@?$CUtlRBTree@Uiprate_s@CIPRateLimit@@H@@@@QAE@HH@Z,,UNKNOWN,engine/ipratelimit.cpp,,,MATCHED,100,,inline or template function (COMDAT) emitted after the object
+hw,01D88C50,19,??1?$CUtlMemory@UNode_t@?$CUtlRBTree@Uiprate_s@CIPRateLimit@@H@@@@QAE@XZ,,UNKNOWN,engine/ipratelimit.cpp,,,MATCHED,100,,inline or template function (COMDAT) emitted after the object
+hw,01D88C70,70,?CopyConstruct@@YAXPAUiprate_s@CIPRateLimit@@ABU12@@Z,,UNKNOWN,engine/ipratelimit.cpp,,,MATCHED,100,,inline or template function (COMDAT) emitted after the object
+hw,01D88CC0,28,?Links@?$CUtlRBTree@Uiprate_s@CIPRateLimit@@H@@IAEAAULinks_t@1@H@Z,,UNKNOWN,engine/ipratelimit.cpp,,,MATCHED,100,,inline or template function (COMDAT) emitted after the object
+hw,01D88CE0,130,?Links@?$CUtlRBTree@Uiprate_s@CIPRateLimit@@H@@IBEABULinks_t@1@H@Z,,UNKNOWN,engine/ipratelimit.cpp,,,MATCHED,100,,inline or template function (COMDAT) emitted after the object
+hw,01D88D70,36,?IsRed@?$CUtlRBTree@Uiprate_s@CIPRateLimit@@H@@IBE_NH@Z,,UNKNOWN,engine/ipratelimit.cpp,,,MATCHED,100,,inline or template function (COMDAT) emitted after the object
+hw,01D88DA0,36,?IsBlack@?$CUtlRBTree@Uiprate_s@CIPRateLimit@@H@@IBE_NH@Z,,UNKNOWN,engine/ipratelimit.cpp,,,MATCHED,100,,inline or template function (COMDAT) emitted after the object
+hw,01D88DD0,287,?RotateLeft@?$CUtlRBTree@Uiprate_s@CIPRateLimit@@H@@IAEXH@Z,,UNKNOWN,engine/ipratelimit.cpp,,,MATCHED,100,,inline or template function (COMDAT) emitted after the object
+hw,01D88EF0,287,?RotateRight@?$CUtlRBTree@Uiprate_s@CIPRateLimit@@H@@IAEXH@Z,,UNKNOWN,engine/ipratelimit.cpp,,,MATCHED,100,,inline or template function (COMDAT) emitted after the object
+hw,01D89010,182,?InsertAt@?$CUtlRBTree@Uiprate_s@CIPRateLimit@@H@@IAEHH_N@Z,,UNKNOWN,engine/ipratelimit.cpp,,,MATCHED,100,,inline or template function (COMDAT) emitted after the object
+hw,01D890D0,26,??A?$CUtlMemory@UNode_t@?$CUtlRBTree@Uiprate_s@CIPRateLimit@@H@@@@QBEABUNode_t@?$CUtlRBTree@Uiprate_s@CIPRateLimit@@H@@H@Z,,UNKNOWN,engine/ipratelimit.cpp,,,MATCHED,100,,inline or template function (COMDAT) emitted after the object
+hw,01D890F0,26,??A?$CUtlMemory@UNode_t@?$CUtlRBTree@Uiprate_s@CIPRateLimit@@H@@@@QAEAAUNode_t@?$CUtlRBTree@Uiprate_s@CIPRateLimit@@H@@H@Z,,UNKNOWN,engine/ipratelimit.cpp,,,MATCHED,100,,inline or template function (COMDAT) emitted after the object
+hw,01D89110,69,?Purge@?$CUtlMemory@UNode_t@?$CUtlRBTree@Uiprate_s@CIPRateLimit@@H@@@@QAEXXZ,,UNKNOWN,engine/ipratelimit.cpp,,,MATCHED,100,,inline or template function (COMDAT) emitted after the object
+hw,01D89160,5,?Destruct@@YAXPAUiprate_s@CIPRateLimit@@@Z,,UNKNOWN,engine/ipratelimit.cpp,,,MATCHED,100,,inline or template function (COMDAT) emitted after the object
+hw,01D89170,44,?IsRightChild@?$CUtlRBTree@Uiprate_s@CIPRateLimit@@H@@QBE_NH@Z,,UNKNOWN,engine/ipratelimit.cpp,,,MATCHED,100,,inline or template function (COMDAT) emitted after the object
+hw,01D891A0,146,?NewNode@?$CUtlRBTree@Uiprate_s@CIPRateLimit@@H@@QAEHXZ,,UNKNOWN,engine/ipratelimit.cpp,,,MATCHED,100,,inline or template function (COMDAT) emitted after the object
+hw,01D89240,541,?InsertRebalance@?$CUtlRBTree@Uiprate_s@CIPRateLimit@@H@@IAEXH@Z,,UNKNOWN,engine/ipratelimit.cpp,,,MATCHED,100,,inline or template function (COMDAT) emitted after the object
+hw,01D89460,25,?IsExternallyAllocated@?$CUtlMemory@UNode_t@?$CUtlRBTree@Uiprate_s@CIPRateLimit@@H@@@@QBE_NXZ,,UNKNOWN,engine/ipratelimit.cpp,,,MATCHED,100,,inline or template function (COMDAT) emitted after the object
+hw,01D89480,17,?NumAllocated@?$CUtlMemory@UNode_t@?$CUtlRBTree@Uiprate_s@CIPRateLimit@@H@@@@QBEHXZ,,UNKNOWN,engine/ipratelimit.cpp,,,MATCHED,100,,inline or template function (COMDAT) emitted after the object
+hw,01D894A0,199,?Grow@?$CUtlMemory@UNode_t@?$CUtlRBTree@Uiprate_s@CIPRateLimit@@H@@@@QAEXH@Z,,UNKNOWN,engine/ipratelimit.cpp,,,MATCHED,100,,inline or template function (COMDAT) emitted after the object
+hw,01D89570,25,?Construct@@YAXPAUiprate_s@CIPRateLimit@@@Z,,UNKNOWN,engine/ipratelimit.cpp,,,MATCHED,100,,inline or template function (COMDAT) emitted after the object
 hw,01D89590,15,,,UNKNOWN,engine/ipratelimitWrapper.cpp,,,TODO,,,"VC6 dynamic initializer ($E) of the static CIPRateLimit (constructor 01D87D80, atexit destructor 01D87DB6)"
 hw,01D8959F,15,,,UNKNOWN,engine/ipratelimitWrapper.cpp,,,TODO,,,"VC6 dynamic initializer ($E) of the static CIPRateLimit (constructor 01D87D80, atexit destructor 01D87DB6)"
 hw,01D895AE,18,,,UNKNOWN,engine/ipratelimitWrapper.cpp,,,TODO,,,"VC6 dynamic initializer ($E) of the static CIPRateLimit (constructor 01D87D80, atexit destructor 01D87DB6)"

@@ -2864,6 +2864,16 @@
           "functions_file": "tools/units/hw_engine_module.txt"
         },
         {
+          "name": "engine/ipratelimit",
+          "source": "src/engine_hw/ipratelimit.cpp",
+          "functions_file": "tools/units/hw_engine_ipratelimit.txt",
+          "includes": [
+            "src/engine_hw",
+            "src/common",
+            "src/public"
+          ]
+        },
+        {
           "name": "engine/ipratelimitWrapper",
           "source": "src/engine_hw/ipratelimitWrapper.cpp",
           "functions_file": "tools/units/hw_engine_ipratelimitWrapper.txt"

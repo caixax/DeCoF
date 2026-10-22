@@ -92,7 +92,7 @@ public class DelinkUnits extends GhidraScript {
 					break;
 				case "include":
 					try {
-						set.add(findSymbol(arg));
+						set.add(findSymbol(arg, set));
 					}
 					catch (IllegalArgumentException e) {
 						printerr("DelinkUnits: skipping " + arg + " (" + e.getMessage() + ")");
@@ -334,9 +334,10 @@ public class DelinkUnits extends GhidraScript {
 				// a name lives at one address: drop stale copies elsewhere (the
 				// exporter refuses duplicate names), for the decorated name and
 				// for the plain primary name of C symbols
-				// ($LN jump table labels are local to their object: the same
-				// name may label several addresses)
-				String[] spellings = name.startsWith("$") ? new String[0]
+				// ($LN jump table labels and the VC6 dynamic initializers _$E1,
+				// _$E2, ... are local to their object: the same name may label
+				// several addresses)
+				String[] spellings = name.startsWith("$") || name.startsWith("_$E") ? new String[0]
 						: name.startsWith("_") ? new String[] { name, name.substring(1) }
 						: new String[] { name };
 				for (String spelling : spellings) {
@@ -531,7 +532,7 @@ public class DelinkUnits extends GhidraScript {
 		return false;
 	}
 
-	private AddressSet findSymbol(String name) {
+	private AddressSet findSymbol(String name, AddressSet unit) {
 		// C names are stored without their leading underscore as primary,
 		// and with it as a secondary label; either spelling resolves.
 		AddressSet set = new AddressSet();
@@ -540,6 +541,22 @@ public class DelinkUnits extends GhidraScript {
 		symtab.getSymbols(name).forEach(found::add);
 		if (found.isEmpty()) {
 			throw new IllegalArgumentException("symbol not found: " + name);
+		}
+		// a name local to its object (_$E2) labels one address per object:
+		// take the one next to what the unit already holds
+		if (found.size() > 1 && (name.startsWith("$") || name.startsWith("_$E")) && !unit.isEmpty()) {
+			Symbol best = null;
+			long bestDist = Long.MAX_VALUE;
+			for (Symbol s : found) {
+				long d = Math.min(Math.abs(s.getAddress().subtract(unit.getMinAddress())),
+					Math.abs(s.getAddress().subtract(unit.getMaxAddress())));
+				if (d < bestDist) {
+					bestDist = d;
+					best = s;
+				}
+			}
+			found.clear();
+			found.add(best);
 		}
 		for (Symbol s : found) {
 			Function fn = getFunctionAt(s.getAddress());

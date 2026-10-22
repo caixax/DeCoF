@@ -147,7 +147,10 @@ def merged_symbols(d, dll, tag=""):
                     curated.add(va)
     # a name may live at one address only (the COFF exporter refuses
     # duplicates): curated entries win, then the strongest evidence in
-    # docs/progress.csv; the losers are forgotten in Ghidra
+    # docs/progress.csv; the losers are forgotten in Ghidra. Names local to
+    # their object ($LN jump tables, the VC6 dynamic initializers _$E1,
+    # _$E2, ... that every C++ object with constructed globals numbers from
+    # 1) may label one address per unit
     rank = {}
     for r in csv.DictReader(open(os.path.join(ROOT, "docs", "progress.csv"))):
         if r["dll"] == dll:
@@ -159,7 +162,7 @@ def merged_symbols(d, dll, tag=""):
         by_name.setdefault(name, []).append(va)
     forget = []
     for name, vas in by_name.items():
-        if len(vas) > 1 and not name.startswith("$"):
+        if len(vas) > 1 and not name.startswith(("$", "_$E")):
             keep = [va for va in vas if va in curated]
             if len(keep) != 1:
                 best = sorted(vas, key=lambda va: (rank.get(va, 9), va))
@@ -252,6 +255,10 @@ def build_target(units):
                                  stderr=subprocess.STDOUT)
         for u, full in items:
             exists = os.path.exists(obj_path("target", full))
+            if exists and d.get("toolchain") == "vc6":
+                # the same object-local spellings as our compiled objects
+                import vc6_anon
+                vc6_anon.fix(obj_path("target", full))
             print("target %-30s %s" % (full, "ok" if rc == 0 and exists else
                                        "FAILED (%s)" % log))
             ok &= rc == 0 and exists

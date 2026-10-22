@@ -86,9 +86,21 @@ def update(rep, args, path):
             sp = os.path.join(ROOT, "build", "jobs", "symbols_%s.csv" % dll)
             if not os.path.exists(sp):
                 sp = os.path.join(ROOT, "tools", "symbols", "%s_1.6a.csv" % dll)
-            symbols[dll] = {r["name"]: r["va"] for r in csv.DictReader(open(sp))} if os.path.exists(sp) else {}
+            symbols[dll] = {}
+            if os.path.exists(sp):
+                for r in csv.DictReader(open(sp)):
+                    symbols[dll].setdefault(r["name"], []).append(r["va"])
+        # a name local to its object (the VC6 dynamic initializers _$E1, ...)
+        # labels one address per unit: take the row of this unit's file
+        stem = unit["name"].split("/", 1)[1] + "."
         for fn in unit.get("functions", []):
-            va = symbols[dll].get(fn["name"])
+            # the objects spell the VC6 dynamic initializers _E$1 (tools/vc6_anon.py)
+            name = "_$E" + fn["name"][3:] if fn["name"].startswith("_E$") else fn["name"]
+            vas = symbols[dll].get(name, [])
+            if len(vas) > 1:
+                own = [v for v in vas if index.get((dll, v), {}).get("source_file", "").replace("guess:", "").startswith(stem)]
+                vas = own or vas
+            va = vas[0] if vas else None
             row = index.get((dll, va)) if va else None
             if row is None:
                 continue

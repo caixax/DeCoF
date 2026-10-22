@@ -27,6 +27,7 @@ RETAIL = {
 }
 
 ANON = re.compile(rb"\?%([^@]*?)([^\\/@]+\.cpp)(\d+)@@")
+DYNINIT = re.compile(rb"_\$E(\d+)$")
 
 
 def fix_name(name):
@@ -35,7 +36,16 @@ def fix_name(name):
         if key not in RETAIL:
             return m.group(0)
         return b"?%" + RETAIL[key].encode("latin1") + b"@@"
-    return ANON.sub(rep, name)
+    name = ANON.sub(rep, name)
+    # the dynamic initializers of an object (_$E1, _$E2, ...): objdiff pairs
+    # names that start with "$" by their code instead of their name, and the
+    # initializers of several EXPOSE_SINGLE_INTERFACE objects look alike, so
+    # both objects spell them _E$1, _E$2, ... (the symbol map, the unit lists
+    # and docs/progress.csv keep the compiler spelling _$E1)
+    m = DYNINIT.match(name)
+    if m:
+        name = b"_E$" + m.group(1)
+    return name
 
 
 def fix(path):
