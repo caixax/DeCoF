@@ -2725,6 +2725,11 @@
           "name": "vgui2/controls/Menu",
           "source": "src/vgui2/controls/Menu.cpp",
           "functions_file": "tools/units/gameui_vgui2_controls_Menu.txt"
+        },
+        {
+          "name": "vgui2/controls/ListPanel",
+          "source": "src/vgui2/controls/ListPanel.cpp",
+          "functions_file": "tools/units/gameui_vgui2_controls_ListPanel.txt"
         }
       ]
     }

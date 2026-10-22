@@ -133,8 +133,8 @@ void CheckMultiTextureExtensions( void )
 		TEXTURE1_SGIS = GL_TEXTURE1_ARB;
 		TEXTURE2_SGIS_guess = GL_TEXTURE2_ARB;
 
-		oldtarget = GL_TEXTURE0_ARB;
-		GL_SelectTexture( GL_TEXTURE0_ARB );
+		oldtarget = TEXTURE0_SGIS;
+		GL_SelectTexture( TEXTURE0_SGIS );
 		gl_mtexable = 2;
 
 		if ( Q_strstr( gl_extensions, "GL_ARB_texture_env_combine " ) || Q_strstr( gl_extensions, "GL_EXT_texture_env_combine " ) )
@@ -160,9 +160,9 @@ void CheckMultiTextureExtensions( void )
 		TEXTURE1_SGIS = GL_TEXTURE1_SGIS;
 		TEXTURE2_SGIS_guess = GL_TEXTURE2_SGIS;
 
-		oldtarget = GL_TEXTURE0_SGIS;
+		oldtarget = TEXTURE0_SGIS;
 		gl_mtexable = 2;
-		GL_SelectTexture( GL_TEXTURE0_SGIS );
+		GL_SelectTexture( TEXTURE0_SGIS );
 	}
 	else
 	{
