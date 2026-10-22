@@ -75,7 +75,7 @@ public:
 
 protected:
 	// truncate the _text string to fit into the draw width
-	void DrawTruncatedText( HFont font, wchar_t *text, int textLen );
+	static void DrawTruncatedText( HFont font, wchar_t *pwchText, int iMaxX );
 	void SizeText(wchar_t *tempText, int stringLength);
 	// gets the size of a specified piece of text
 	virtual void GetTextSize(int &wide, int &tall);

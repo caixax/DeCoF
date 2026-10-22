@@ -2345,3 +2345,49 @@ va,name,kind,evidence
 01E01640,?SetParent@?$CUtlRBTree@VTexture@?%vgui_EngineSurfaceHW.cpp0@@H@@IAEXHH@Z,func,"CUtlRBTree<Texture, int> template member instantiated by vgui_EngineSurfaceHW.cpp (g_VGuiSurfaceTextures); COMDAT after the object code in the order and with the size of our object (added by an agent)"
 01E01660,?SetLeftChild@?$CUtlRBTree@VTexture@?%vgui_EngineSurfaceHW.cpp0@@H@@IAEXHH@Z,func,"CUtlRBTree<Texture, int> template member instantiated by vgui_EngineSurfaceHW.cpp (g_VGuiSurfaceTextures); COMDAT after the object code in the order and with the size of our object (added by an agent)"
 01E01680,?SetRightChild@?$CUtlRBTree@VTexture@?%vgui_EngineSurfaceHW.cpp0@@H@@IAEXHH@Z,func,"CUtlRBTree<Texture, int> template member instantiated by vgui_EngineSurfaceHW.cpp (g_VGuiSurfaceTextures); COMDAT after the object code in the order and with the size of our object (added by an agent)"
+01E62B10,??0TextImage@vgui2@@QAE@PBD@Z,func,vgui2/controls/TextImage.cpp in the source order of the Linux hw.so DWARF; same size as the compiled function
+01E62BDB,??0TextImage@vgui2@@QAE@PBG@Z,func,vgui2/controls/TextImage.cpp in the source order of the Linux hw.so DWARF; same size as the compiled function
+01E62C9C,??1TextImage@vgui2@@UAE@XZ,func,vgui2/controls/TextImage.cpp in the source order of the Linux hw.so DWARF; same size as the compiled function
+01E62CE3,?SetText@TextImage@vgui2@@UAEXPBD@Z,func,vgui2/controls/TextImage.cpp in the source order of the Linux hw.so DWARF; same size as the compiled function
+01E62DD2,?SetDrawWidth@TextImage@vgui2@@QAEXH@Z,func,vgui2/controls/TextImage.cpp in the source order of the Linux hw.so DWARF; same size as the compiled function
+01E62DF6,?GetDrawWidth@TextImage@vgui2@@QAEXAAH@Z,func,vgui2/controls/TextImage.cpp in the source order of the Linux hw.so DWARF; same size as the compiled function
+01E62E0E,?SetText@TextImage@vgui2@@UAEXPBG@Z,func,vgui2/controls/TextImage.cpp in the source order of the Linux hw.so DWARF; same size as the compiled function
+01E62EE3,?GetText@TextImage@vgui2@@UAEXPADH@Z,func,vgui2/controls/TextImage.cpp in the source order of the Linux hw.so DWARF; same size as the compiled function
+01E62F14,?GetText@TextImage@vgui2@@UAEXPAGH@Z,func,vgui2/controls/TextImage.cpp in the source order of the Linux hw.so DWARF; same size as the compiled function
+01E62F38,?GetUnlocalizedText@TextImage@vgui2@@UAEXPADH@Z,func,vgui2/controls/TextImage.cpp in the source order of the Linux hw.so DWARF; same size as the compiled function
+01E62FAC,?GetUnlocalizedTextSymbol@TextImage@vgui2@@UAEKXZ,func,vgui2/controls/TextImage.cpp in the source order of the Linux hw.so DWARF; same size as the compiled function
+01E62FBD,?SetFont@TextImage@vgui2@@UAEXK@Z,func,vgui2/controls/TextImage.cpp in the source order of the Linux hw.so DWARF; same size as the compiled function
+01E62FE1,?GetFont@TextImage@vgui2@@UAEKXZ,func,vgui2/controls/TextImage.cpp in the source order of the Linux hw.so DWARF; same size as the compiled function
+01E63010,?SetSize@TextImage@vgui2@@UAEXHH@Z,func,vgui2/controls/TextImage.cpp in the source order of the Linux hw.so DWARF; same size as the compiled function
+01E63045,?Paint@TextImage@vgui2@@UAEXXZ,func,vgui2/controls/TextImage.cpp in the source order of the Linux hw.so DWARF; same size as the compiled function
+01E632D4,?GetTextSize@TextImage@vgui2@@MAEXAAH0@Z,func,vgui2/controls/TextImage.cpp in the source order of the Linux hw.so DWARF; same size as the compiled function
+01E634D5,?GetContentSize@TextImage@vgui2@@UAEXAAH0@Z,func,vgui2/controls/TextImage.cpp in the source order of the Linux hw.so DWARF; same size as the compiled function
+01E634F8,?ResizeImageToContent@TextImage@vgui2@@QAEXXZ,func,vgui2/controls/TextImage.cpp in the source order of the Linux hw.so DWARF; same size as the compiled function
+01E6352B,?RecalculateNewLinePositions@TextImage@vgui2@@QAEXXZ,func,vgui2/controls/TextImage.cpp in the source order of the Linux hw.so DWARF; same size as the compiled function
+01E63704,?RecalculateEllipsesPosition@TextImage@vgui2@@AAEXXZ,func,vgui2/controls/TextImage.cpp in the source order of the Linux hw.so DWARF; same size as the compiled function
+01E6396F,?SetWrap@TextImage@vgui2@@QAEX_N@Z,func,vgui2/controls/TextImage.cpp in the source order of the Linux hw.so DWARF; same size as the compiled function
+01E63994,?SetUseFallbackFont@TextImage@vgui2@@QAEX_NK@Z,func,vgui2/controls/TextImage.cpp in the source order of the Linux hw.so DWARF; same size as the compiled function
+01E639C3,?ResizeImageToContentMaxWidth@TextImage@vgui2@@QAEXH@Z,func,vgui2/controls/TextImage.cpp in the source order of the Linux hw.so DWARF; same size as the compiled function
+01E63A09,?DrawTruncatedText@TextImage@vgui2@@KAXKPAGH@Z,func,vgui2/controls/TextImage.cpp in the source order of the Linux hw.so DWARF; same size as the compiled function
+01E63B40,??_GTextImage@vgui2@@UAEPAXI@Z,func,"COMDAT after the TextImage functions, in the order and with the size of the compiled object (m_LineBreaks CUtlVector<wchar_t *>)"
+01E63B70,??0?$CUtlVector@PAG@@QAE@HH@Z,func,"COMDAT after the TextImage functions, in the order and with the size of the compiled object (m_LineBreaks CUtlVector<wchar_t *>)"
+01E63BB0,??1?$CUtlVector@PAG@@QAE@XZ,func,"COMDAT after the TextImage functions, in the order and with the size of the compiled object (m_LineBreaks CUtlVector<wchar_t *>)"
+01E63BD0,??A?$CUtlVector@PAG@@QAEAAPAGH@Z,func,"COMDAT after the TextImage functions, in the order and with the size of the compiled object (m_LineBreaks CUtlVector<wchar_t *>)"
+01E63BF0,?Count@?$CUtlVector@PAG@@QBEHXZ,func,"COMDAT after the TextImage functions, in the order and with the size of the compiled object (m_LineBreaks CUtlVector<wchar_t *>)"
+01E63C10,?AddToTail@?$CUtlVector@PAG@@QAEHABQAG@Z,func,"COMDAT after the TextImage functions, in the order and with the size of the compiled object (m_LineBreaks CUtlVector<wchar_t *>)"
+01E63C30,?RemoveAll@?$CUtlVector@PAG@@QAEXXZ,func,"COMDAT after the TextImage functions, in the order and with the size of the compiled object (m_LineBreaks CUtlVector<wchar_t *>)"
+01E63C80,?Element@?$CUtlVector@PAG@@QAEAAPAGH@Z,func,"COMDAT after the TextImage functions, in the order and with the size of the compiled object (m_LineBreaks CUtlVector<wchar_t *>)"
+01E63CA0,?InsertBefore@?$CUtlVector@PAG@@QAEHHABQAG@Z,func,"COMDAT after the TextImage functions, in the order and with the size of the compiled object (m_LineBreaks CUtlVector<wchar_t *>)"
+01E63CF0,?Purge@?$CUtlVector@PAG@@QAEXXZ,func,"COMDAT after the TextImage functions, in the order and with the size of the compiled object (m_LineBreaks CUtlVector<wchar_t *>)"
+01E63D20,?ResetDbgInfo@?$CUtlVector@PAG@@IAEXXZ,func,"COMDAT after the TextImage functions, in the order and with the size of the compiled object (m_LineBreaks CUtlVector<wchar_t *>)"
+01E63D30,??0?$CUtlMemory@PAG@@QAE@HH@Z,func,"COMDAT after the TextImage functions, in the order and with the size of the compiled object (m_LineBreaks CUtlVector<wchar_t *>)"
+01E63D80,??1?$CUtlMemory@PAG@@QAE@XZ,func,"COMDAT after the TextImage functions, in the order and with the size of the compiled object (m_LineBreaks CUtlVector<wchar_t *>)"
+01E63DA0,??A?$CUtlMemory@PAG@@QAEAAPAGH@Z,func,"COMDAT after the TextImage functions, in the order and with the size of the compiled object (m_LineBreaks CUtlVector<wchar_t *>)"
+01E63DC0,?Destruct@@YAXPAPAG@Z,func,"COMDAT after the TextImage functions, in the order and with the size of the compiled object (m_LineBreaks CUtlVector<wchar_t *>)"
+01E63DD0,?GrowVector@?$CUtlVector@PAG@@IAEXH@Z,func,"COMDAT after the TextImage functions, in the order and with the size of the compiled object (m_LineBreaks CUtlVector<wchar_t *>)"
+01E63E30,?ShiftElementsRight@?$CUtlVector@PAG@@IAEXHH@Z,func,"COMDAT after the TextImage functions, in the order and with the size of the compiled object (m_LineBreaks CUtlVector<wchar_t *>)"
+01E63E90,?Purge@?$CUtlMemory@PAG@@QAEXXZ,func,"COMDAT after the TextImage functions, in the order and with the size of the compiled object (m_LineBreaks CUtlVector<wchar_t *>)"
+01E63EE0,?CopyConstruct@@YAXPAPAGABQAG@Z,func,"COMDAT after the TextImage functions, in the order and with the size of the compiled object (m_LineBreaks CUtlVector<wchar_t *>)"
+01E63F20,?NumAllocated@?$CUtlMemory@PAG@@QBEHXZ,func,"COMDAT after the TextImage functions, in the order and with the size of the compiled object (m_LineBreaks CUtlVector<wchar_t *>)"
+01E63F40,?Grow@?$CUtlMemory@PAG@@QAEXH@Z,func,"COMDAT after the TextImage functions, in the order and with the size of the compiled object (m_LineBreaks CUtlVector<wchar_t *>)"
+01E64010,?IsExternallyAllocated@?$CUtlMemory@PAG@@QBE_NXZ,func,"COMDAT after the TextImage functions, in the order and with the size of the compiled object (m_LineBreaks CUtlVector<wchar_t *>)"
