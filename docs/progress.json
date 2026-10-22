@@ -1,5 +1,5 @@
 {
-  "commit": "02c794a",
+  "commit": "99b7437",
   "counting": "LIB rows excluded; bytes weighted by function size",
   "date": "2026-10-23",
   "dlls": {
@@ -282,45 +282,45 @@
     "hw.dll": {
       "bytes": {
         "EQUIVALENT": 30099,
-        "MATCHED": 919647,
-        "TODO": 422115,
-        "total": 1371861
+        "MATCHED": 923705,
+        "TODO": 396991,
+        "total": 1350795
       },
       "categories": {
         "ENGINE": {
           "bytes": {
             "EQUIVALENT": 20949,
-            "MATCHED": 718741,
-            "TODO": 209146,
-            "total": 948836
+            "MATCHED": 722799,
+            "TODO": 206390,
+            "total": 950138
           },
           "functions": {
             "EQUIVALENT": 7,
-            "MATCHED": 2723,
-            "TODO": 1941,
-            "total": 4671
+            "MATCHED": 2768,
+            "TODO": 1934,
+            "total": 4709
           }
         },
         "UNKNOWN": {
           "bytes": {
             "EQUIVALENT": 9150,
             "MATCHED": 200906,
-            "TODO": 212969,
-            "total": 423025
+            "TODO": 190601,
+            "total": 400657
           },
           "functions": {
             "EQUIVALENT": 18,
             "MATCHED": 1515,
-            "TODO": 2119,
-            "total": 3652
+            "TODO": 1862,
+            "total": 3395
           }
         }
       },
       "functions": {
         "EQUIVALENT": 25,
-        "MATCHED": 4238,
-        "TODO": 4060,
-        "total": 8323
+        "MATCHED": 4283,
+        "TODO": 3796,
+        "total": 8104
       }
     },
     "opengl32.dll": {
@@ -372,15 +372,15 @@
   "total": {
     "bytes": {
       "EQUIVALENT": 125829,
-      "MATCHED": 2747295,
-      "TODO": 978729,
-      "total": 3851853
+      "MATCHED": 2751353,
+      "TODO": 953605,
+      "total": 3830787
     },
     "functions": {
       "EQUIVALENT": 62,
-      "MATCHED": 13685,
-      "TODO": 8176,
-      "total": 21923
+      "MATCHED": 13730,
+      "TODO": 7912,
+      "total": 21704
     }
   }
 }

@@ -315,6 +315,7 @@ The 1.55 hl.dll is an unoptimized debug build of nearly the same source. `disasm
 - `IMPLEMENT_SAVERESTORE( CClass, CBaseEntity )` is common in Cry of Fear classes that derive from CBaseToggle or CBaseMonster: the retail Save/Restore call CBaseEntity::Save/Restore. The relocation check shows it.
 - A local declared at function scope and one in a nested block cannot share stack space: when retail has a smaller frame, move the declaration into its block (`char szMessage[128];` in GiveAmmo).
 - `-(float)sin( yaw )` (the cast before the negation) when retail negates a float (16-byte `xorps` mask).
+- VC6 STL objects (DetailTexture.cpp: `std::string`, `std::map`, `std::vector`) are built without /GX but with /MT (unit cflags): only `_MT` makes `std::_Lockit` a real call. The whole COMDAT tail then comes out in retail order; the linker folded identical COMDATs (`string::size` into `string::length`, placement new), so skip those when pairing by position. Ghidra splits a function with a try/catch (VC6 `basic_string::_Copy`) at its catch funclet: remove the `Catch@` and continuation functions, extend the body and turn the jump it marked as a call back into a jump before delinking. File statics with an explicit `= false` lie in retail .bss after the uninitialized ones in definition order; `once`, `defaultID` and the lexer tables that the DWARF gives as const values or const arrays are plain initialized statics in 2013 (.data).
 
 ## What not to do
 
