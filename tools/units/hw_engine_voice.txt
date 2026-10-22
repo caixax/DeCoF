@@ -1,0 +1,2 @@
+_Voice_GetLoopback
+_Voice_LocalPlayerTalkingAck

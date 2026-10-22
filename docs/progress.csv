@@ -29449,8 +29449,8 @@ hw,01E0B790,97,,,UNKNOWN,engine/voice.cpp,,,TODO,,,linux: Voice_EndChannel
 hw,01E0B7F1,19,,,UNKNOWN,engine/voice.cpp,,,TODO,,,linux: _Z23Voice_NotifyFreeChanneli
 hw,01E0B804,48,,,UNKNOWN,engine/voice.cpp,,,TODO,,,linux: Voice_EndAllChannels
 hw,01E0B834,308,_Voice_Deinit,,UNKNOWN,engine/voice.cpp,,,TODO,,,linux: Voice_Deinit
-hw,01E0B968,46,_Voice_GetLoopback,Voice_GetLoopback,ENGINE,engine/voice.cpp,,,TODO,,linux_symbols:data1:0.667,
-hw,01E0B996,46,_Voice_LocalPlayerTalkingAck,,UNKNOWN,engine/voice.cpp,,,TODO,,,linux: Voice_LocalPlayerTalkingAck
+hw,01E0B968,46,_Voice_GetLoopback,Voice_GetLoopback,ENGINE,engine/voice.cpp,,,MATCHED,100,linux_symbols:data1:0.667,
+hw,01E0B996,46,_Voice_LocalPlayerTalkingAck,,UNKNOWN,engine/voice.cpp,,,MATCHED,100,,linux: Voice_LocalPlayerTalkingAck
 hw,01E0B9C4,99,,,UNKNOWN,engine/voice.cpp,,,TODO,,,linux: _Z26Voice_UpdateVoiceTweakModev
 hw,01E0BA27,807,_Voice_Idle,Voice_Idle,ENGINE,engine/voice.cpp,,,TODO,,linux_symbols:string:0.841,
 hw,01E0BD4E,47,_Voice_IsRecording,,UNKNOWN,,,,TODO,,,
