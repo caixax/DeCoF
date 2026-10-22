@@ -1,5 +1,5 @@
 {
-  "commit": "bd65324",
+  "commit": "ad84898",
   "counting": "LIB rows excluded; bytes weighted by function size",
   "date": "2026-10-22",
   "dlls": {
@@ -36,8 +36,8 @@
     "GameUI.dll": {
       "bytes": {
         "EQUIVALENT": 0,
-        "MATCHED": 159936,
-        "TODO": 529450,
+        "MATCHED": 162223,
+        "TODO": 527163,
         "total": 689386
       },
       "categories": {
@@ -58,22 +58,22 @@
         "UNKNOWN": {
           "bytes": {
             "EQUIVALENT": 0,
-            "MATCHED": 134893,
-            "TODO": 365896,
+            "MATCHED": 137180,
+            "TODO": 363609,
             "total": 500789
           },
           "functions": {
             "EQUIVALENT": 0,
-            "MATCHED": 1223,
-            "TODO": 3926,
+            "MATCHED": 1245,
+            "TODO": 3904,
             "total": 5149
           }
         }
       },
       "functions": {
         "EQUIVALENT": 0,
-        "MATCHED": 1287,
-        "TODO": 4262,
+        "MATCHED": 1309,
+        "TODO": 4240,
         "total": 5549
       }
     },
@@ -282,44 +282,44 @@
     "hw.dll": {
       "bytes": {
         "EQUIVALENT": 30099,
-        "MATCHED": 849148,
-        "TODO": 577612,
+        "MATCHED": 851461,
+        "TODO": 575299,
         "total": 1456859
       },
       "categories": {
         "ENGINE": {
           "bytes": {
             "EQUIVALENT": 20949,
-            "MATCHED": 665813,
-            "TODO": 184535,
-            "total": 871297
+            "MATCHED": 666623,
+            "TODO": 184395,
+            "total": 871967
           },
           "functions": {
             "EQUIVALENT": 7,
-            "MATCHED": 2363,
-            "TODO": 1282,
-            "total": 3652
+            "MATCHED": 2377,
+            "TODO": 1281,
+            "total": 3665
           }
         },
         "UNKNOWN": {
           "bytes": {
             "EQUIVALENT": 9150,
-            "MATCHED": 183335,
-            "TODO": 393077,
-            "total": 585562
+            "MATCHED": 184838,
+            "TODO": 390904,
+            "total": 584892
           },
           "functions": {
             "EQUIVALENT": 18,
-            "MATCHED": 1342,
-            "TODO": 3731,
-            "total": 5091
+            "MATCHED": 1352,
+            "TODO": 3708,
+            "total": 5078
           }
         }
       },
       "functions": {
         "EQUIVALENT": 25,
-        "MATCHED": 3705,
-        "TODO": 5013,
+        "MATCHED": 3729,
+        "TODO": 4989,
         "total": 8743
       }
     },
@@ -372,14 +372,14 @@
   "total": {
     "bytes": {
       "EQUIVALENT": 125829,
-      "MATCHED": 2658658,
-      "TODO": 1152311,
+      "MATCHED": 2663258,
+      "TODO": 1147711,
       "total": 3936798
     },
     "functions": {
       "EQUIVALENT": 62,
-      "MATCHED": 12949,
-      "TODO": 9331,
+      "MATCHED": 12995,
+      "TODO": 9285,
       "total": 22342
     }
   }

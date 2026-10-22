@@ -2721,3 +2721,27 @@ va,name,kind,evidence
 01E13660,_Snd_WriteLinearBlastStereo16,func,"Quake snd_mixa.s (refs/Quake/WinQuake), second function; called by S_TransferStereo16"
 01E137C4,_MaskExceptions,func,"Quake sys_wina.s (refs/Quake/WinQuake): fnstenv, or 0x3F, fldenv; called by Sys_Init"
 01E137FA,_Sys_SetFPCW,func,"Quake sys_wina.s (refs/Quake/WinQuake): fnstcw, builds the full/single/ceil control words; called by Sys_Init"
+01E5F8D0,??0MenuButton@vgui2@@QAE@PAVPanel@1@PBD1@Z,func,vgui2/controls/MenuButton.cpp in the source order of the Linux hw.so DWARF; same size as the compiled function
+01E5F947,??1MenuButton@vgui2@@UAE@XZ,func,vgui2/controls/MenuButton.cpp in the source order of the Linux hw.so DWARF; same size as the compiled function
+01E5F963,?SetMenu@MenuButton@vgui2@@UAEXPAVMenu@2@@Z,func,vgui2/controls/MenuButton.cpp in the source order of the Linux hw.so DWARF; same size as the compiled function
+01E5F9D7,?DrawFocusBorder@MenuButton@vgui2@@UAEXHHHH@Z,func,vgui2/controls/MenuButton.cpp in the source order of the Linux hw.so DWARF; same size as the compiled function
+01E5F9E4,?SetOpenDirection@MenuButton@vgui2@@UAEXW4MenuDirection_e@12@@Z,func,vgui2/controls/MenuButton.cpp in the source order of the Linux hw.so DWARF; same size as the compiled function
+01E5F9FD,?HideMenu@MenuButton@vgui2@@UAEXXZ,func,vgui2/controls/MenuButton.cpp in the source order of the Linux hw.so DWARF; same size as the compiled function
+01E5FA5C,?OnKillFocus@MenuButton@vgui2@@UAEXXZ,func,vgui2/controls/MenuButton.cpp in the source order of the Linux hw.so DWARF; same size as the compiled function
+01E5FAA0,?OnMenuClose@MenuButton@vgui2@@UAEXXZ,func,vgui2/controls/MenuButton.cpp in the source order of the Linux hw.so DWARF; same size as the compiled function
+01E5FAF9,?SetOpenOffsetY@MenuButton@vgui2@@UAEXH@Z,func,vgui2/controls/MenuButton.cpp in the source order of the Linux hw.so DWARF; same size as the compiled function
+01E5FB12,?CanBeDefaultButton@MenuButton@vgui2@@UAE_NXZ,func,vgui2/controls/MenuButton.cpp in the source order of the Linux hw.so DWARF; same size as the compiled function
+01E5FB1F,?DoClick@MenuButton@vgui2@@UAEXXZ,func,vgui2/controls/MenuButton.cpp in the source order of the Linux hw.so DWARF; same size as the compiled function
+01E5FDEF,?OnKeyCodeTyped@MenuButton@vgui2@@UAEXW4KeyCode@2@@Z,func,vgui2/controls/MenuButton.cpp in the source order of the Linux hw.so DWARF; same size as the compiled function
+01E5FF42,?OnCursorEntered@MenuButton@vgui2@@UAEXXZ,func,vgui2/controls/MenuButton.cpp in the source order of the Linux hw.so DWARF; same size as the compiled function
+01E5FFD0,??_GMenuButton@vgui2@@UAEPAXI@Z,func,"MenuButton COMDAT (vtable slots 27, 28, 200, 201 of the RTTI MenuButton vtable, message map of OnMenuClose ""MenuClose"")"
+01E60000,??0MenuButton_RegisterMap@MenuButton@vgui2@@QAE@XZ,func,"MenuButton COMDAT (vtable slots 27, 28, 200, 201 of the RTTI MenuButton vtable, message map of OnMenuClose ""MenuClose"")"
+01E60020,?ChainToMap@MenuButton@vgui2@@SAXXZ,func,"MenuButton COMDAT (vtable slots 27, 28, 200, 201 of the RTTI MenuButton vtable, message map of OnMenuClose ""MenuClose"")"
+01E60090,?GetMessageMap@MenuButton@vgui2@@UAEPAUPanelMessageMap@2@XZ,func,"MenuButton COMDAT (vtable slots 27, 28, 200, 201 of the RTTI MenuButton vtable, message map of OnMenuClose ""MenuClose"")"
+01E600D0,?GetPanelClassName@MenuButton@vgui2@@SAPBDXZ,func,"MenuButton COMDAT (vtable slots 27, 28, 200, 201 of the RTTI MenuButton vtable, message map of OnMenuClose ""MenuClose"")"
+01E600E0,?GetPanelBaseClassName@MenuButton@vgui2@@SAPBDXZ,func,"MenuButton COMDAT (vtable slots 27, 28, 200, 201 of the RTTI MenuButton vtable, message map of OnMenuClose ""MenuClose"")"
+01E600F0,??0PanelMessageFunc_OnMenuClose@MenuButton@vgui2@@QAE@XZ,func,"MenuButton COMDAT (vtable slots 27, 28, 200, 201 of the RTTI MenuButton vtable, message map of OnMenuClose ""MenuClose"")"
+01E60110,?InitVar@PanelMessageFunc_OnMenuClose@MenuButton@vgui2@@SAXXZ,func,"MenuButton COMDAT (vtable slots 27, 28, 200, 201 of the RTTI MenuButton vtable, message map of OnMenuClose ""MenuClose"")"
+01E60180,?AddToMap@MenuButton@vgui2@@SAXPBDP8Panel@2@AEXXZHH0H0@Z,func,"MenuButton COMDAT (vtable slots 27, 28, 200, 201 of the RTTI MenuButton vtable, message map of OnMenuClose ""MenuClose"")"
+01E5F870,?OnShowMenu@MenuButton@vgui2@@UAEXPAVMenu@2@@Z,func,"MenuButton COMDAT (vtable slots 27, 28, 200, 201 of the RTTI MenuButton vtable, message map of OnMenuClose ""MenuClose"")"
+01E5F880,?OnHideMenu@MenuButton@vgui2@@UAEXPAVMenu@2@@Z,func,"MenuButton COMDAT (vtable slots 27, 28, 200, 201 of the RTTI MenuButton vtable, message map of OnMenuClose ""MenuClose"")"

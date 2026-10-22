@@ -2601,6 +2601,18 @@
           ]
         },
         {
+          "name": "vgui2/controls/MenuButton",
+          "source": "src/vgui2/controls/MenuButton.cpp",
+          "functions_file": "tools/units/hw_vgui2_controls_MenuButton.txt",
+          "includes": [
+            "src/gameui",
+            "src/public",
+            "src/common",
+            "src/engine",
+            "src/pm_shared"
+          ]
+        },
+        {
           "name": "engine/net_api",
           "source": "src/engine_hw/net_api.c",
           "functions_file": "tools/units/hw_engine_net_api.txt"
@@ -3065,6 +3077,11 @@
           "name": "vgui2/controls/FocusNavGroup",
           "source": "src/vgui2/controls/FocusNavGroup.cpp",
           "functions_file": "tools/units/gameui_vgui2_controls_FocusNavGroup.txt"
+        },
+        {
+          "name": "vgui2/controls/MenuButton",
+          "source": "src/vgui2/controls/MenuButton.cpp",
+          "functions_file": "tools/units/gameui_vgui2_controls_MenuButton.txt"
         }
       ]
     }
