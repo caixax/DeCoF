@@ -1398,3 +1398,34 @@ va,name,kind,evidence
 10092970,?AddToMap@ProgressBar@vgui2@@SAXPBDP8Panel@2@AEXXZHH0H0@Z,func,same object layout as hw.dll 01E4DF70 (called by both ProgressBar InitVar functions)
 100929F0,??0PanelMessageFunc_OnDialogVariablesChanged@ProgressBar@vgui2@@QAE@XZ,func,same object layout as hw.dll 01E4DFF0 (called by the ProgressBar constructor on this+0x72)
 10092A10,?InitVar@PanelMessageFunc_OnDialogVariablesChanged@ProgressBar@vgui2@@SAXXZ,func,"same object layout as hw.dll 01E4E010 (registers ""DialogVariables"")"
+100A0B20,??0RadioButton@vgui2@@QAE@PAVPanel@1@PBD1@Z,func,"same object layout as hw.dll 01E4C810 (vgui2/controls/RadioButton.cpp in the source order of the Linux hw.so DWARF; stores the RadioButton vtable, calls the ToggleButton constructor, new RadioImage (0x30))"
+100A0BFE,??1RadioButton@vgui2@@UAE@XZ,func,"same object layout as hw.dll 01E4C8EE (vgui2/controls/RadioButton.cpp in the source order of the Linux hw.so DWARF; stores the RadioButton vtable, deletes _radioBoxImage, calls ~ToggleButton)"
+100A0C4D,?ApplySchemeSettings@RadioButton@vgui2@@MAEXPAVIScheme@2@@Z,func,"same object layout as hw.dll 01E4C93D (vgui2/controls/RadioButton.cpp in the source order of the Linux hw.so DWARF; RadioButton vtable (RTTI) slot 79, ""FgColor"", ""BrightControlText"")"
+100A0D3B,?GetBorder@RadioButton@vgui2@@MAEPAVIBorder@2@_N000@Z,func,"same object layout as hw.dll 01E4CA2B (vgui2/controls/RadioButton.cpp in the source order of the Linux hw.so DWARF; RadioButton vtable (RTTI) slot 198 (Button::GetBorder), returns NULL)"
+100A0D4A,?GetSubTabPosition@RadioButton@vgui2@@UAEHXZ,func,same object layout as hw.dll 01E4CA3A (vgui2/controls/RadioButton.cpp in the source order of the Linux hw.so DWARF; RadioButton vtable (RTTI) slot 200)
+100A0D5E,?SetSubTabPosition@RadioButton@vgui2@@UAEXH@Z,func,same object layout as hw.dll 01E4CA4E (vgui2/controls/RadioButton.cpp in the source order of the Linux hw.so DWARF; RadioButton vtable (RTTI) slot 201)
+100A0D77,?GetRadioTabPosition@RadioButton@vgui2@@UAEHXZ,func,same object layout as hw.dll 01E4CA67 (vgui2/controls/RadioButton.cpp in the source order of the Linux hw.so DWARF; RadioButton vtable (RTTI) slot 202)
+100A0D8B,?SetSelected@RadioButton@vgui2@@UAEX_N@Z,func,"same object layout as hw.dll 01E4CA7B (vgui2/controls/RadioButton.cpp in the source order of the Linux hw.so DWARF; RadioButton vtable (RTTI) slot 173 (Button::SetSelected), sends ""RadioButtonChecked"")"
+100A0F67,?PerformLayout@RadioButton@vgui2@@MAEXXZ,func,same object layout as hw.dll 01E4CC57 (vgui2/controls/RadioButton.cpp in the source order of the Linux hw.so DWARF; RadioButton vtable (RTTI) slot 111 (Button::PerformLayout))
+100A0FD0,?ApplySettings@RadioButton@vgui2@@MAEXPAVKeyValues@@@Z,func,"same object layout as hw.dll 01E4CCC0 (vgui2/controls/RadioButton.cpp in the source order of the Linux hw.so DWARF; RadioButton vtable (RTTI) slot 80, reads ""SubTabPosition"")"
+100A1044,?GetSettings@RadioButton@vgui2@@MAEXPAVKeyValues@@@Z,func,"same object layout as hw.dll 01E4CD34 (vgui2/controls/RadioButton.cpp in the source order of the Linux hw.so DWARF; RadioButton vtable (RTTI) slot 81, writes ""SubTabPosition"" and ""TabPosition"")"
+100A1096,?GetDescription@RadioButton@vgui2@@MAEPBDXZ,func,"same object layout as hw.dll 01E4CD86 (vgui2/controls/RadioButton.cpp in the source order of the Linux hw.so DWARF; RadioButton vtable (RTTI) slot 82, ""%s, int SubTabPosition"")"
+100A10C6,?OnRadioButtonChecked@RadioButton@vgui2@@MAEXH@Z,func,same object layout as hw.dll 01E4CDB6 (vgui2/controls/RadioButton.cpp in the source order of the Linux hw.so DWARF; RadioButton vtable (RTTI) slot 203)
+100A10F3,?Paint@RadioButton@vgui2@@MAEXXZ,func,same object layout as hw.dll 01E4CDE3 (vgui2/controls/RadioButton.cpp in the source order of the Linux hw.so DWARF; RadioButton vtable (RTTI) slot 107 (Button::Paint))
+100A1106,?DoClick@RadioButton@vgui2@@MAEXXZ,func,same object layout as hw.dll 01E4CDF6 (vgui2/controls/RadioButton.cpp in the source order of the Linux hw.so DWARF; RadioButton vtable (RTTI) slot 177 (ToggleButton::DoClick))
+100A1121,?OnKeyCodeTyped@RadioButton@vgui2@@MAEXW4KeyCode@2@@Z,func,same object layout as hw.dll 01E4CE11 (vgui2/controls/RadioButton.cpp in the source order of the Linux hw.so DWARF; RadioButton vtable (RTTI) slot 101 (Panel::OnKeyCodeTyped))
+100A1224,?FindBestRadioButton@RadioButton@vgui2@@IAEPAV12@H@Z,func,"same object layout as hw.dll 01E4CF14 (vgui2/controls/RadioButton.cpp in the source order of the Linux hw.so DWARF; called by OnKeyCodeTyped, dynamic_cast to RadioButton)"
+100A1390,??0RadioImage@@QAE@PAVRadioButton@vgui2@@@Z,func,same object layout as hw.dll 01E4D080 (stores the RadioImage vtable (RTTI .?AVRadioImage@@); called by the RadioButton constructor)
+100A1400,?ApplySchemeSettings@RadioImage@@UAEXPAVIScheme@vgui2@@_N@Z,func,"same object layout as hw.dll 01E4D0F0 (RadioImage vtable slot 26, ""CheckBgColor"", ""Marlett"")"
+100A1530,?Paint@RadioImage@@UAEXXZ,func,same object layout as hw.dll 01E4D220 (RadioImage vtable slot 0 (IImage::Paint))
+100A1640,??_GRadioImage@@UAEPAXI@Z,func,same object layout as hw.dll 01E4D330 (RadioImage vtable slot 6 (scalar deleting destructor))
+100A1670,??1RadioImage@@UAE@XZ,func,"same object layout as hw.dll 01E4D360 (called by the RadioImage scalar deleting destructor, calls ~Image)"
+100A1690,??_GRadioButton@vgui2@@UAEPAXI@Z,func,"same object layout as hw.dll 01E4D380 (RadioButton vtable (RTTI) slot 28 (scalar deleting destructor), calls ~RadioButton)"
+100A16C0,??0RadioButton_RegisterMap@RadioButton@vgui2@@QAE@XZ,func,same object layout as hw.dll 01E4D3D0 (called by the RadioButton constructor on this+0x110 (m_RegisterClass))
+100A16E0,?ChainToMap@RadioButton@vgui2@@SAXXZ,func,same object layout as hw.dll 01E4D3F0 (called by the RadioButton_RegisterMap constructor)
+100A1750,?GetMessageMap@RadioButton@vgui2@@UAEPAUPanelMessageMap@2@XZ,func,same object layout as hw.dll 01E4D460 (RadioButton vtable (RTTI) slot 27)
+100A1790,?GetPanelClassName@RadioButton@vgui2@@SAPBDXZ,func,"same object layout as hw.dll 01E4D4A0 (returns ""RadioButton"", called by ChainToMap)"
+100A17A0,?GetPanelBaseClassName@RadioButton@vgui2@@SAPBDXZ,func,"same object layout as hw.dll 01E4D4B0 (returns ""ToggleButton"", called by ChainToMap)"
+100A17B0,??0PanelMessageFunc_OnRadioButtonChecked@RadioButton@vgui2@@QAE@XZ,func,same object layout as hw.dll 01E4D4C0 (called by the RadioButton constructor on this+0x111)
+100A17D0,?InitVar@PanelMessageFunc_OnRadioButtonChecked@RadioButton@vgui2@@SAXXZ,func,"same object layout as hw.dll 01E4D4E0 (registers ""RadioButtonChecked"")"
+100A1840,?AddToMap@RadioButton@vgui2@@SAXPBDP8Panel@2@AEXXZHH0H0@Z,func,same object layout as hw.dll 01E4D550 (called by the RadioButton InitVar)

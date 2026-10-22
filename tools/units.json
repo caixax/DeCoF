@@ -2565,6 +2565,18 @@
           ]
         },
         {
+          "name": "vgui2/controls/RadioButton",
+          "source": "src/vgui2/controls/RadioButton.cpp",
+          "functions_file": "tools/units/hw_vgui2_controls_RadioButton.txt",
+          "includes": [
+            "src/gameui",
+            "src/public",
+            "src/common",
+            "src/engine",
+            "src/pm_shared"
+          ]
+        },
+        {
           "name": "engine/net_api",
           "source": "src/engine_hw/net_api.c",
           "functions_file": "tools/units/hw_engine_net_api.txt"
@@ -2787,6 +2799,11 @@
           "name": "vgui2/controls/ProgressBar",
           "source": "src/vgui2/controls/ProgressBar.cpp",
           "functions_file": "tools/units/gameui_vgui2_controls_ProgressBar.txt"
+        },
+        {
+          "name": "vgui2/controls/RadioButton",
+          "source": "src/vgui2/controls/RadioButton.cpp",
+          "functions_file": "tools/units/gameui_vgui2_controls_RadioButton.txt"
         }
       ]
     }

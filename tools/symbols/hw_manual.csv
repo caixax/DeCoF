@@ -2240,3 +2240,35 @@ va,name,kind,evidence
 01DFD212,_TextMessageDrawCharacter,func,"engine/tmessage.c of the Linux hw.so DWARF (last function, line 534) after TextMessageGet; g_engdstAddrs.pfnDrawCharacter then Draw_MessageCharacterAdd (added by an agent)"
 01D0EE32,_VGUI2_GetCreditsFont,func,"Linux hw.so symbol order VGUI2_ResetCurrentTexture, VGUI2_GetConsoleFont, VGUI2_GetCreditsFont matches 01D0EE19, 01D0EE28, 01D0EE32; returns the font that TextMessageDrawCharacter passes to Draw_MessageCharacterAdd (added by an agent)"
 01D670E7,_RecursiveLightPoint,func,"engine/gl_rlight.c of the Linux hw.so DWARF in source order between R_PushDlights and R_LightVec; recursive (calls itself), writes lightspot and lightplane, called by R_LightVec with cl.worldmodel->nodes (added by an agent)"
+01E4C810,??0RadioButton@vgui2@@QAE@PAVPanel@1@PBD1@Z,func,"vgui2/controls/RadioButton.cpp in the source order of the Linux hw.so DWARF; stores the RadioButton vtable, calls the ToggleButton constructor, new RadioImage (0x30)"
+01E4C8EE,??1RadioButton@vgui2@@UAE@XZ,func,"vgui2/controls/RadioButton.cpp in the source order of the Linux hw.so DWARF; stores the RadioButton vtable, deletes _radioBoxImage, calls ~ToggleButton"
+01E4C93D,?ApplySchemeSettings@RadioButton@vgui2@@MAEXPAVIScheme@2@@Z,func,"vgui2/controls/RadioButton.cpp in the source order of the Linux hw.so DWARF; RadioButton vtable (RTTI) slot 79, ""FgColor"", ""BrightControlText"""
+01E4CA2B,?GetBorder@RadioButton@vgui2@@MAEPAVIBorder@2@_N000@Z,func,"vgui2/controls/RadioButton.cpp in the source order of the Linux hw.so DWARF; RadioButton vtable (RTTI) slot 198 (Button::GetBorder), returns NULL"
+01E4CA3A,?GetSubTabPosition@RadioButton@vgui2@@UAEHXZ,func,vgui2/controls/RadioButton.cpp in the source order of the Linux hw.so DWARF; RadioButton vtable (RTTI) slot 200
+01E4CA4E,?SetSubTabPosition@RadioButton@vgui2@@UAEXH@Z,func,vgui2/controls/RadioButton.cpp in the source order of the Linux hw.so DWARF; RadioButton vtable (RTTI) slot 201
+01E4CA67,?GetRadioTabPosition@RadioButton@vgui2@@UAEHXZ,func,vgui2/controls/RadioButton.cpp in the source order of the Linux hw.so DWARF; RadioButton vtable (RTTI) slot 202
+01E4CA7B,?SetSelected@RadioButton@vgui2@@UAEX_N@Z,func,"vgui2/controls/RadioButton.cpp in the source order of the Linux hw.so DWARF; RadioButton vtable (RTTI) slot 173 (Button::SetSelected), sends ""RadioButtonChecked"""
+01E4CC57,?PerformLayout@RadioButton@vgui2@@MAEXXZ,func,vgui2/controls/RadioButton.cpp in the source order of the Linux hw.so DWARF; RadioButton vtable (RTTI) slot 111 (Button::PerformLayout)
+01E4CCC0,?ApplySettings@RadioButton@vgui2@@MAEXPAVKeyValues@@@Z,func,"vgui2/controls/RadioButton.cpp in the source order of the Linux hw.so DWARF; RadioButton vtable (RTTI) slot 80, reads ""SubTabPosition"""
+01E4CD34,?GetSettings@RadioButton@vgui2@@MAEXPAVKeyValues@@@Z,func,"vgui2/controls/RadioButton.cpp in the source order of the Linux hw.so DWARF; RadioButton vtable (RTTI) slot 81, writes ""SubTabPosition"" and ""TabPosition"""
+01E4CD86,?GetDescription@RadioButton@vgui2@@MAEPBDXZ,func,"vgui2/controls/RadioButton.cpp in the source order of the Linux hw.so DWARF; RadioButton vtable (RTTI) slot 82, ""%s, int SubTabPosition"""
+01E4CDB6,?OnRadioButtonChecked@RadioButton@vgui2@@MAEXH@Z,func,vgui2/controls/RadioButton.cpp in the source order of the Linux hw.so DWARF; RadioButton vtable (RTTI) slot 203
+01E4CDE3,?Paint@RadioButton@vgui2@@MAEXXZ,func,vgui2/controls/RadioButton.cpp in the source order of the Linux hw.so DWARF; RadioButton vtable (RTTI) slot 107 (Button::Paint)
+01E4CDF6,?DoClick@RadioButton@vgui2@@MAEXXZ,func,vgui2/controls/RadioButton.cpp in the source order of the Linux hw.so DWARF; RadioButton vtable (RTTI) slot 177 (ToggleButton::DoClick)
+01E4CE11,?OnKeyCodeTyped@RadioButton@vgui2@@MAEXW4KeyCode@2@@Z,func,vgui2/controls/RadioButton.cpp in the source order of the Linux hw.so DWARF; RadioButton vtable (RTTI) slot 101 (Panel::OnKeyCodeTyped)
+01E4CF14,?FindBestRadioButton@RadioButton@vgui2@@IAEPAV12@H@Z,func,"vgui2/controls/RadioButton.cpp in the source order of the Linux hw.so DWARF; called by OnKeyCodeTyped, dynamic_cast to RadioButton"
+01E4D080,??0RadioImage@@QAE@PAVRadioButton@vgui2@@@Z,func,stores the RadioImage vtable (RTTI .?AVRadioImage@@); called by the RadioButton constructor
+01E4D0F0,?ApplySchemeSettings@RadioImage@@UAEXPAVIScheme@vgui2@@_N@Z,func,"RadioImage vtable slot 26, ""CheckBgColor"", ""Marlett"""
+01E4D220,?Paint@RadioImage@@UAEXXZ,func,RadioImage vtable slot 0 (IImage::Paint)
+01E4D330,??_GRadioImage@@UAEPAXI@Z,func,RadioImage vtable slot 6 (scalar deleting destructor)
+01E4D360,??1RadioImage@@UAE@XZ,func,"called by the RadioImage scalar deleting destructor, calls ~Image"
+01E4D380,??_GRadioButton@vgui2@@UAEPAXI@Z,func,"RadioButton vtable (RTTI) slot 28 (scalar deleting destructor), calls ~RadioButton"
+01E4D3B0,?SetBkColor@Image@vgui2@@UAEXVColor@@@Z,func,"Image vtable slot 8 (inline in Image.h), calls DrawSetColor(Color)"
+01E4D3D0,??0RadioButton_RegisterMap@RadioButton@vgui2@@QAE@XZ,func,called by the RadioButton constructor on this+0x110 (m_RegisterClass)
+01E4D3F0,?ChainToMap@RadioButton@vgui2@@SAXXZ,func,called by the RadioButton_RegisterMap constructor
+01E4D460,?GetMessageMap@RadioButton@vgui2@@UAEPAUPanelMessageMap@2@XZ,func,RadioButton vtable (RTTI) slot 27
+01E4D4A0,?GetPanelClassName@RadioButton@vgui2@@SAPBDXZ,func,"returns ""RadioButton"", called by ChainToMap"
+01E4D4B0,?GetPanelBaseClassName@RadioButton@vgui2@@SAPBDXZ,func,"returns ""ToggleButton"", called by ChainToMap"
+01E4D4C0,??0PanelMessageFunc_OnRadioButtonChecked@RadioButton@vgui2@@QAE@XZ,func,called by the RadioButton constructor on this+0x111
+01E4D4E0,?InitVar@PanelMessageFunc_OnRadioButtonChecked@RadioButton@vgui2@@SAXXZ,func,"registers ""RadioButtonChecked"""
+01E4D550,?AddToMap@RadioButton@vgui2@@SAXPBDP8Panel@2@AEXXZHH0H0@Z,func,called by the RadioButton InitVar

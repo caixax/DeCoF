@@ -12486,37 +12486,37 @@ gameui,100A0A50,78,,,UNKNOWN,,,,TODO,,,
 gameui,100A0AA0,69,,,UNKNOWN,,,,TODO,,,
 gameui,100A0AF0,25,,,UNKNOWN,,,,TODO,,,
 gameui,100A0B10,5,,,UNKNOWN,,,,TODO,,,
-gameui,100A0B20,222,,,UNKNOWN,,,,TODO,,,
-gameui,100A0BFE,79,,,UNKNOWN,,,,TODO,,,
-gameui,100A0C4D,238,,,UNKNOWN,vgui2/controls/RadioButton.cpp,,,TODO,,,linux: _ZN5vgui211RadioButton19ApplySchemeSettingsEPNS_7ISchemeE
-gameui,100A0D3B,15,,,UNKNOWN,vgui2/controls/RadioButton.cpp,,,TODO,,,linux: _ZN5vgui211RadioButton9GetBorderEbbbb
-gameui,100A0D4A,20,,,UNKNOWN,vgui2/controls/RadioButton.cpp,,,TODO,,,linux: _ZN5vgui211RadioButton17GetSubTabPositionEv
-gameui,100A0D5E,25,,,UNKNOWN,vgui2/controls/RadioButton.cpp,,,TODO,,,linux: _ZN5vgui211RadioButton17SetSubTabPositionEi
-gameui,100A0D77,20,,,UNKNOWN,vgui2/controls/RadioButton.cpp,,,TODO,,,linux: _ZN5vgui211RadioButton19GetRadioTabPositionEv
-gameui,100A0D8B,476,,,UNKNOWN,vgui2/controls/RadioButton.cpp,,,TODO,,,linux: _ZN5vgui211RadioButton11SetSelectedEb
-gameui,100A0F67,105,,,UNKNOWN,vgui2/controls/RadioButton.cpp,,,TODO,,,linux: _ZN5vgui211RadioButton13PerformLayoutEv
-gameui,100A0FD0,116,,,UNKNOWN,vgui2/controls/RadioButton.cpp,,,TODO,,,linux: _ZN5vgui211RadioButton13ApplySettingsEP9KeyValues
-gameui,100A1044,82,,,UNKNOWN,vgui2/controls/RadioButton.cpp,,,TODO,,,linux: _ZN5vgui211RadioButton11GetSettingsEP9KeyValues
-gameui,100A1096,48,,vgui2::RadioButton::GetDescription,ENGINE,vgui2/controls/RadioButton.cpp,,,TODO,,linux_symbols:string:0.625,linux: _ZN5vgui211RadioButton14GetDescriptionEv
-gameui,100A10C6,45,,,UNKNOWN,vgui2/controls/RadioButton.cpp,,,TODO,,,linux: _ZN5vgui211RadioButton20OnRadioButtonCheckedEi
-gameui,100A10F3,19,,,UNKNOWN,vgui2/controls/RadioButton.cpp,,,TODO,,,linux: _ZN5vgui211RadioButton5PaintEv
-gameui,100A1106,27,,,UNKNOWN,vgui2/controls/RadioButton.cpp,,,TODO,,,linux: _ZN5vgui211RadioButton7DoClickEv
-gameui,100A1121,211,,,UNKNOWN,vgui2/controls/RadioButton.cpp,,,TODO,,,linux: _ZN5vgui211RadioButton14OnKeyCodeTypedENS_7KeyCodeE
-gameui,100A1224,362,,,UNKNOWN,,,,TODO,,,
-gameui,100A1390,108,,,UNKNOWN,,,,TODO,,,
-gameui,100A1400,290,,,UNKNOWN,,,,TODO,,,
-gameui,100A1530,269,,,UNKNOWN,,,,TODO,,,
-gameui,100A1640,46,,,UNKNOWN,,,,TODO,,,
-gameui,100A1670,19,,,UNKNOWN,,,,TODO,,,
-gameui,100A1690,46,,,UNKNOWN,,,,TODO,,,
-gameui,100A16C0,19,,,UNKNOWN,,,,TODO,,,
-gameui,100A16E0,102,,,UNKNOWN,,,,TODO,,,
-gameui,100A1750,64,,,UNKNOWN,,,,TODO,,,
-gameui,100A1790,10,,,UNKNOWN,,,,TODO,,,
-gameui,100A17A0,10,,,UNKNOWN,,,,TODO,,,
-gameui,100A17B0,19,,,UNKNOWN,,,,TODO,,,
-gameui,100A17D0,110,,,UNKNOWN,,,,TODO,,,
-gameui,100A1840,120,,,UNKNOWN,,,,TODO,,,
+gameui,100A0B20,222,??0RadioButton@vgui2@@QAE@PAVPanel@1@PBD1@Z,vgui2::RadioButton::RadioButton,UNKNOWN,vgui2/controls/RadioButton.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A0BFE,79,??1RadioButton@vgui2@@UAE@XZ,vgui2::RadioButton::~RadioButton,UNKNOWN,vgui2/controls/RadioButton.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A0C4D,238,?ApplySchemeSettings@RadioButton@vgui2@@MAEXPAVIScheme@2@@Z,vgui2::RadioButton::ApplySchemeSettings,UNKNOWN,vgui2/controls/RadioButton.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui211RadioButton19ApplySchemeSettingsEPNS_7ISchemeE
+gameui,100A0D3B,15,?GetBorder@RadioButton@vgui2@@MAEPAVIBorder@2@_N000@Z,vgui2::RadioButton::GetBorder,UNKNOWN,vgui2/controls/RadioButton.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui211RadioButton9GetBorderEbbbb
+gameui,100A0D4A,20,?GetSubTabPosition@RadioButton@vgui2@@UAEHXZ,vgui2::RadioButton::GetSubTabPosition,UNKNOWN,vgui2/controls/RadioButton.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui211RadioButton17GetSubTabPositionEv
+gameui,100A0D5E,25,?SetSubTabPosition@RadioButton@vgui2@@UAEXH@Z,vgui2::RadioButton::SetSubTabPosition,UNKNOWN,vgui2/controls/RadioButton.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui211RadioButton17SetSubTabPositionEi
+gameui,100A0D77,20,?GetRadioTabPosition@RadioButton@vgui2@@UAEHXZ,vgui2::RadioButton::GetRadioTabPosition,UNKNOWN,vgui2/controls/RadioButton.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui211RadioButton19GetRadioTabPositionEv
+gameui,100A0D8B,476,?SetSelected@RadioButton@vgui2@@UAEX_N@Z,vgui2::RadioButton::SetSelected,UNKNOWN,vgui2/controls/RadioButton.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui211RadioButton11SetSelectedEb
+gameui,100A0F67,105,?PerformLayout@RadioButton@vgui2@@MAEXXZ,vgui2::RadioButton::PerformLayout,UNKNOWN,vgui2/controls/RadioButton.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui211RadioButton13PerformLayoutEv
+gameui,100A0FD0,116,?ApplySettings@RadioButton@vgui2@@MAEXPAVKeyValues@@@Z,vgui2::RadioButton::ApplySettings,UNKNOWN,vgui2/controls/RadioButton.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui211RadioButton13ApplySettingsEP9KeyValues
+gameui,100A1044,82,?GetSettings@RadioButton@vgui2@@MAEXPAVKeyValues@@@Z,vgui2::RadioButton::GetSettings,UNKNOWN,vgui2/controls/RadioButton.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui211RadioButton11GetSettingsEP9KeyValues
+gameui,100A1096,48,?GetDescription@RadioButton@vgui2@@MAEPBDXZ,vgui2::RadioButton::GetDescription,ENGINE,vgui2/controls/RadioButton.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui211RadioButton14GetDescriptionEv
+gameui,100A10C6,45,?OnRadioButtonChecked@RadioButton@vgui2@@MAEXH@Z,vgui2::RadioButton::OnRadioButtonChecked,UNKNOWN,vgui2/controls/RadioButton.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui211RadioButton20OnRadioButtonCheckedEi
+gameui,100A10F3,19,?Paint@RadioButton@vgui2@@MAEXXZ,vgui2::RadioButton::Paint,UNKNOWN,vgui2/controls/RadioButton.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui211RadioButton5PaintEv
+gameui,100A1106,27,?DoClick@RadioButton@vgui2@@MAEXXZ,vgui2::RadioButton::DoClick,UNKNOWN,vgui2/controls/RadioButton.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui211RadioButton7DoClickEv
+gameui,100A1121,211,?OnKeyCodeTyped@RadioButton@vgui2@@MAEXW4KeyCode@2@@Z,vgui2::RadioButton::OnKeyCodeTyped,UNKNOWN,vgui2/controls/RadioButton.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui211RadioButton14OnKeyCodeTypedENS_7KeyCodeE
+gameui,100A1224,362,?FindBestRadioButton@RadioButton@vgui2@@IAEPAV12@H@Z,vgui2::RadioButton::FindBestRadioButton,UNKNOWN,vgui2/controls/RadioButton.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A1390,108,??0RadioImage@@QAE@PAVRadioButton@vgui2@@@Z,RadioImage::RadioImage,UNKNOWN,vgui2/controls/RadioButton.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A1400,290,?ApplySchemeSettings@RadioImage@@UAEXPAVIScheme@vgui2@@_N@Z,RadioImage::ApplySchemeSettings,UNKNOWN,vgui2/controls/RadioButton.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A1530,269,?Paint@RadioImage@@UAEXXZ,RadioImage::Paint,UNKNOWN,vgui2/controls/RadioButton.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A1640,46,??_GRadioImage@@UAEPAXI@Z,destructor',UNKNOWN,vgui2/controls/RadioButton.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A1670,19,??1RadioImage@@UAE@XZ,RadioImage::~RadioImage,UNKNOWN,vgui2/controls/RadioButton.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A1690,46,??_GRadioButton@vgui2@@UAEPAXI@Z,destructor',UNKNOWN,vgui2/controls/RadioButton.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A16C0,19,??0RadioButton_RegisterMap@RadioButton@vgui2@@QAE@XZ,vgui2::RadioButton::RadioButton_RegisterMap::RadioButton_RegisterMap,UNKNOWN,vgui2/controls/RadioButton.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A16E0,102,?ChainToMap@RadioButton@vgui2@@SAXXZ,vgui2::RadioButton::ChainToMap,UNKNOWN,vgui2/controls/RadioButton.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A1750,64,?GetMessageMap@RadioButton@vgui2@@UAEPAUPanelMessageMap@2@XZ,vgui2::RadioButton::GetMessageMap,UNKNOWN,vgui2/controls/RadioButton.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A1790,10,?GetPanelClassName@RadioButton@vgui2@@SAPBDXZ,vgui2::RadioButton::GetPanelClassName,UNKNOWN,vgui2/controls/RadioButton.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A17A0,10,?GetPanelBaseClassName@RadioButton@vgui2@@SAPBDXZ,vgui2::RadioButton::GetPanelBaseClassName,UNKNOWN,vgui2/controls/RadioButton.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A17B0,19,??0PanelMessageFunc_OnRadioButtonChecked@RadioButton@vgui2@@QAE@XZ,vgui2::RadioButton::PanelMessageFunc_OnRadioButtonChecked::PanelMessageFunc_OnRadioButtonChecked,UNKNOWN,vgui2/controls/RadioButton.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A17D0,110,?InitVar@PanelMessageFunc_OnRadioButtonChecked@RadioButton@vgui2@@SAXXZ,vgui2::RadioButton::PanelMessageFunc_OnRadioButtonChecked::InitVar,UNKNOWN,vgui2/controls/RadioButton.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A1840,120,?AddToMap@RadioButton@vgui2@@SAXPBDP8Panel@2@AEXXZHH0H0@Z,vgui2::RadioButton::AddToMap,UNKNOWN,vgui2/controls/RadioButton.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,100A18D0,150,,,UNKNOWN,,,,TODO,,,
 gameui,100A1966,72,,,UNKNOWN,,,,TODO,,,
 gameui,100A19AE,78,,,UNKNOWN,vgui2/controls/ImagePanel.cpp,,,TODO,,,linux: _ZN5vgui210ImagePanel13OnSizeChangedEii
@@ -31152,38 +31152,38 @@ hw,01E4C6C0,110,,,UNKNOWN,,,,TODO,,,
 hw,01E4C730,120,,,UNKNOWN,,,,TODO,,,
 hw,01E4C7B0,64,,,UNKNOWN,,,,TODO,,,
 hw,01E4C7F0,10,,,UNKNOWN,,,,TODO,,,
-hw,01E4C810,222,,,UNKNOWN,,,,TODO,,,
-hw,01E4C8EE,79,,,UNKNOWN,,,,TODO,,,
-hw,01E4C93D,238,,,UNKNOWN,vgui2/controls/RadioButton.cpp,,,TODO,,,linux: _ZN5vgui211RadioButton19ApplySchemeSettingsEPNS_7ISchemeE
-hw,01E4CA2B,15,,,UNKNOWN,vgui2/controls/RadioButton.cpp,,,TODO,,,linux: _ZN5vgui211RadioButton9GetBorderEbbbb
-hw,01E4CA3A,20,,,UNKNOWN,vgui2/controls/RadioButton.cpp,,,TODO,,,linux: _ZN5vgui211RadioButton17GetSubTabPositionEv
-hw,01E4CA4E,25,,,UNKNOWN,vgui2/controls/RadioButton.cpp,,,TODO,,,linux: _ZN5vgui211RadioButton17SetSubTabPositionEi
-hw,01E4CA67,20,,,UNKNOWN,vgui2/controls/RadioButton.cpp,,,TODO,,,linux: _ZN5vgui211RadioButton19GetRadioTabPositionEv
-hw,01E4CA7B,476,,,UNKNOWN,vgui2/controls/RadioButton.cpp,,,TODO,,,linux: _ZN5vgui211RadioButton11SetSelectedEb
-hw,01E4CC57,105,,,UNKNOWN,vgui2/controls/RadioButton.cpp,,,TODO,,,linux: _ZN5vgui211RadioButton13PerformLayoutEv
-hw,01E4CCC0,116,,,UNKNOWN,vgui2/controls/RadioButton.cpp,,,TODO,,,linux: _ZN5vgui211RadioButton13ApplySettingsEP9KeyValues
-hw,01E4CD34,82,,,UNKNOWN,vgui2/controls/RadioButton.cpp,,,TODO,,,linux: _ZN5vgui211RadioButton11GetSettingsEP9KeyValues
-hw,01E4CD86,48,,vgui2::RadioButton::GetDescription,ENGINE,vgui2/controls/RadioButton.cpp,,,TODO,,linux_symbols:string:0.417,
-hw,01E4CDB6,45,,,UNKNOWN,vgui2/controls/RadioButton.cpp,,,TODO,,,linux: _ZN5vgui211RadioButton20OnRadioButtonCheckedEi
-hw,01E4CDE3,19,,,UNKNOWN,vgui2/controls/RadioButton.cpp,,,TODO,,,linux: _ZN5vgui211RadioButton5PaintEv
-hw,01E4CDF6,27,,,UNKNOWN,vgui2/controls/RadioButton.cpp,,,TODO,,,linux: _ZN5vgui211RadioButton7DoClickEv
-hw,01E4CE11,211,,,UNKNOWN,vgui2/controls/RadioButton.cpp,,,TODO,,,linux: _ZN5vgui211RadioButton14OnKeyCodeTypedENS_7KeyCodeE
-hw,01E4CF14,362,,,UNKNOWN,,,,TODO,,,
-hw,01E4D080,108,,,UNKNOWN,,,,TODO,,,
-hw,01E4D0F0,290,,,UNKNOWN,,,,TODO,,,
-hw,01E4D220,269,,,UNKNOWN,,,,TODO,,,
-hw,01E4D330,46,,,UNKNOWN,,,,TODO,,,
-hw,01E4D360,19,,,UNKNOWN,,,,TODO,,,
-hw,01E4D380,46,,,UNKNOWN,,,,TODO,,,
-hw,01E4D3B0,28,,,UNKNOWN,,,,TODO,,,
-hw,01E4D3D0,19,,,UNKNOWN,,,,TODO,,,
-hw,01E4D3F0,102,,,UNKNOWN,,,,TODO,,,
-hw,01E4D460,64,,,UNKNOWN,,,,TODO,,,
-hw,01E4D4A0,10,,,UNKNOWN,,,,TODO,,,
-hw,01E4D4B0,10,,,UNKNOWN,,,,TODO,,,
-hw,01E4D4C0,19,,,UNKNOWN,,,,TODO,,,
-hw,01E4D4E0,110,,,UNKNOWN,,,,TODO,,,
-hw,01E4D550,120,,,UNKNOWN,,,,TODO,,,
+hw,01E4C810,222,??0RadioButton@vgui2@@QAE@PAVPanel@1@PBD1@Z,vgui2::RadioButton::RadioButton,UNKNOWN,vgui2/controls/RadioButton.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E4C8EE,79,??1RadioButton@vgui2@@UAE@XZ,vgui2::RadioButton::~RadioButton,UNKNOWN,vgui2/controls/RadioButton.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E4C93D,238,?ApplySchemeSettings@RadioButton@vgui2@@MAEXPAVIScheme@2@@Z,vgui2::RadioButton::ApplySchemeSettings,UNKNOWN,vgui2/controls/RadioButton.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui211RadioButton19ApplySchemeSettingsEPNS_7ISchemeE
+hw,01E4CA2B,15,?GetBorder@RadioButton@vgui2@@MAEPAVIBorder@2@_N000@Z,vgui2::RadioButton::GetBorder,UNKNOWN,vgui2/controls/RadioButton.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui211RadioButton9GetBorderEbbbb
+hw,01E4CA3A,20,?GetSubTabPosition@RadioButton@vgui2@@UAEHXZ,vgui2::RadioButton::GetSubTabPosition,UNKNOWN,vgui2/controls/RadioButton.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui211RadioButton17GetSubTabPositionEv
+hw,01E4CA4E,25,?SetSubTabPosition@RadioButton@vgui2@@UAEXH@Z,vgui2::RadioButton::SetSubTabPosition,UNKNOWN,vgui2/controls/RadioButton.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui211RadioButton17SetSubTabPositionEi
+hw,01E4CA67,20,?GetRadioTabPosition@RadioButton@vgui2@@UAEHXZ,vgui2::RadioButton::GetRadioTabPosition,UNKNOWN,vgui2/controls/RadioButton.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui211RadioButton19GetRadioTabPositionEv
+hw,01E4CA7B,476,?SetSelected@RadioButton@vgui2@@UAEX_N@Z,vgui2::RadioButton::SetSelected,UNKNOWN,vgui2/controls/RadioButton.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui211RadioButton11SetSelectedEb
+hw,01E4CC57,105,?PerformLayout@RadioButton@vgui2@@MAEXXZ,vgui2::RadioButton::PerformLayout,UNKNOWN,vgui2/controls/RadioButton.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui211RadioButton13PerformLayoutEv
+hw,01E4CCC0,116,?ApplySettings@RadioButton@vgui2@@MAEXPAVKeyValues@@@Z,vgui2::RadioButton::ApplySettings,UNKNOWN,vgui2/controls/RadioButton.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui211RadioButton13ApplySettingsEP9KeyValues
+hw,01E4CD34,82,?GetSettings@RadioButton@vgui2@@MAEXPAVKeyValues@@@Z,vgui2::RadioButton::GetSettings,UNKNOWN,vgui2/controls/RadioButton.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui211RadioButton11GetSettingsEP9KeyValues
+hw,01E4CD86,48,?GetDescription@RadioButton@vgui2@@MAEPBDXZ,vgui2::RadioButton::GetDescription,ENGINE,vgui2/controls/RadioButton.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E4CDB6,45,?OnRadioButtonChecked@RadioButton@vgui2@@MAEXH@Z,vgui2::RadioButton::OnRadioButtonChecked,UNKNOWN,vgui2/controls/RadioButton.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui211RadioButton20OnRadioButtonCheckedEi
+hw,01E4CDE3,19,?Paint@RadioButton@vgui2@@MAEXXZ,vgui2::RadioButton::Paint,UNKNOWN,vgui2/controls/RadioButton.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui211RadioButton5PaintEv
+hw,01E4CDF6,27,?DoClick@RadioButton@vgui2@@MAEXXZ,vgui2::RadioButton::DoClick,UNKNOWN,vgui2/controls/RadioButton.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui211RadioButton7DoClickEv
+hw,01E4CE11,211,?OnKeyCodeTyped@RadioButton@vgui2@@MAEXW4KeyCode@2@@Z,vgui2::RadioButton::OnKeyCodeTyped,UNKNOWN,vgui2/controls/RadioButton.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui211RadioButton14OnKeyCodeTypedENS_7KeyCodeE
+hw,01E4CF14,362,?FindBestRadioButton@RadioButton@vgui2@@IAEPAV12@H@Z,vgui2::RadioButton::FindBestRadioButton,UNKNOWN,vgui2/controls/RadioButton.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E4D080,108,??0RadioImage@@QAE@PAVRadioButton@vgui2@@@Z,RadioImage::RadioImage,UNKNOWN,vgui2/controls/RadioButton.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E4D0F0,290,?ApplySchemeSettings@RadioImage@@UAEXPAVIScheme@vgui2@@_N@Z,RadioImage::ApplySchemeSettings,UNKNOWN,vgui2/controls/RadioButton.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E4D220,269,?Paint@RadioImage@@UAEXXZ,RadioImage::Paint,UNKNOWN,vgui2/controls/RadioButton.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E4D330,46,??_GRadioImage@@UAEPAXI@Z,destructor',UNKNOWN,vgui2/controls/RadioButton.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E4D360,19,??1RadioImage@@UAE@XZ,RadioImage::~RadioImage,UNKNOWN,vgui2/controls/RadioButton.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E4D380,46,??_GRadioButton@vgui2@@UAEPAXI@Z,destructor',UNKNOWN,vgui2/controls/RadioButton.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E4D3B0,28,?SetBkColor@Image@vgui2@@UAEXVColor@@@Z,vgui2::Image::SetBkColor,UNKNOWN,vgui2/controls/RadioButton.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E4D3D0,19,??0RadioButton_RegisterMap@RadioButton@vgui2@@QAE@XZ,vgui2::RadioButton::RadioButton_RegisterMap::RadioButton_RegisterMap,UNKNOWN,vgui2/controls/RadioButton.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E4D3F0,102,?ChainToMap@RadioButton@vgui2@@SAXXZ,vgui2::RadioButton::ChainToMap,UNKNOWN,vgui2/controls/RadioButton.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E4D460,64,?GetMessageMap@RadioButton@vgui2@@UAEPAUPanelMessageMap@2@XZ,vgui2::RadioButton::GetMessageMap,UNKNOWN,vgui2/controls/RadioButton.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E4D4A0,10,?GetPanelClassName@RadioButton@vgui2@@SAPBDXZ,vgui2::RadioButton::GetPanelClassName,UNKNOWN,vgui2/controls/RadioButton.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E4D4B0,10,?GetPanelBaseClassName@RadioButton@vgui2@@SAPBDXZ,vgui2::RadioButton::GetPanelBaseClassName,UNKNOWN,vgui2/controls/RadioButton.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E4D4C0,19,??0PanelMessageFunc_OnRadioButtonChecked@RadioButton@vgui2@@QAE@XZ,vgui2::RadioButton::PanelMessageFunc_OnRadioButtonChecked::PanelMessageFunc_OnRadioButtonChecked,UNKNOWN,vgui2/controls/RadioButton.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E4D4E0,110,?InitVar@PanelMessageFunc_OnRadioButtonChecked@RadioButton@vgui2@@SAXXZ,vgui2::RadioButton::PanelMessageFunc_OnRadioButtonChecked::InitVar,UNKNOWN,vgui2/controls/RadioButton.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E4D550,120,?AddToMap@RadioButton@vgui2@@SAXPBDP8Panel@2@AEXXZHH0H0@Z,vgui2::RadioButton::AddToMap,UNKNOWN,vgui2/controls/RadioButton.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01E4D5D0,151,??0ProgressBar@vgui2@@QAE@PAVPanel@1@PBD@Z,vgui2::ProgressBar::ProgressBar,UNKNOWN,vgui2/controls/ProgressBar.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01E4D667,54,??1ProgressBar@vgui2@@UAE@XZ,vgui2::ProgressBar::~ProgressBar,UNKNOWN,vgui2/controls/ProgressBar.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01E4D69D,34,?SetSegmentInfo@ProgressBar@vgui2@@UAEXHH@Z,vgui2::ProgressBar::SetSegmentInfo,UNKNOWN,vgui2/controls/ProgressBar.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui211ProgressBar14SetSegmentInfoEii
