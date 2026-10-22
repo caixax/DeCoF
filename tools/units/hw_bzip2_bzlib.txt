@@ -19,6 +19,8 @@ _BZ2_bzDecompress@4
 _unRLE_obuf_to_output_FAST
 _unRLE_obuf_to_output_SMALL
 _BZ2_bzDecompressEnd@4
+_BZ2_bzWrite@16
+_BZ2_bzWriteClose64@28
 _BZ2_bzBuffToBuffCompress@28
 _BZ2_bzBuffToBuffDecompress@24
 _BZ2_bzlibVersion@0

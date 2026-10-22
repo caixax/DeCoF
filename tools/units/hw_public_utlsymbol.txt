@@ -1,0 +1,4 @@
+?AddString@CUtlSymbolTable@@QAE?AVCUtlSymbol@@PBD@Z
+?String@CUtlSymbolTable@@QBEPBDVCUtlSymbol@@@Z
+??0CUtlSymbol@@QAE@G@Z
+?IsExternallyAllocated@?$CUtlMemory@E@@QBE_NXZ

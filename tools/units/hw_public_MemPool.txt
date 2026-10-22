@@ -1,0 +1,3 @@
+??0CMemoryPool@@QAE@HH@Z
+??1CMemoryPool@@QAE@XZ
+?Alloc@CMemoryPool@@QAEPAXI@Z

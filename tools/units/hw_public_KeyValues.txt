@@ -2,6 +2,11 @@
 ??A?$CUtlMemory@E@@QAEAAEH@Z
 ?Purge@?$CUtlMemory@E@@QAEXXZ
 ??0KeyValues@@QAE@PBD@Z
+??0KeyValues@@QAE@PBD00@Z
+??0KeyValues@@QAE@PBD0PBG@Z
+??0KeyValues@@QAE@PBD0H@Z
+??0KeyValues@@QAE@PBD0000@Z
+??0KeyValues@@QAE@PBD0H0H@Z
 ?Init@KeyValues@@AAEXPBD@Z
 ??1KeyValues@@AAE@XZ
 ?GetName@KeyValues@@UBEPBDXZ
@@ -42,3 +47,6 @@
 ?Clear@KeyValues@@UAEXXZ
 ?GetDataType@KeyValues@@UAE?AW4types_t@1@PBD@Z
 ?deleteThis@KeyValues@@UAEXXZ
+??2KeyValues@@SAPAXI@Z
+??2KeyValues@@SAPAXIHPBDH@Z
+??_GKeyValues@@AAEPAXI@Z

@@ -39,5 +39,14 @@
 ?SetDialogVariable@EditablePanel@vgui2@@UAEXPBDM@Z
 ?ForceSubPanelsToUpdateWithNewDialogVariables@EditablePanel@vgui2@@AAEXXZ
 ?GetDialogVariables@EditablePanel@vgui2@@QAEPAVKeyValues@@XZ
+??_GEditablePanel@vgui2@@UAEPAXI@Z
+??_GBuildGroup@vgui2@@QAEPAXI@Z
 ?AllocLeaf@@YAPAUleaf_t@@XZ
+??0EditablePanel_RegisterMap@EditablePanel@vgui2@@QAE@XZ
+?ChainToMap@EditablePanel@vgui2@@SAXXZ
 ?GetPanelBaseClassName@EditablePanel@vgui2@@SAPBDXZ
+??0PanelMessageFunc_OnDefaultButtonSet@EditablePanel@vgui2@@QAE@XZ
+?AddToMap@EditablePanel@vgui2@@SAXPBDP8Panel@2@AEXXZHH0H0@Z
+??0PanelMessageFunc_OnCurrentDefaultButtonSet@EditablePanel@vgui2@@QAE@XZ
+??0PanelMessageFunc_OnFindDefaultButton@EditablePanel@vgui2@@QAE@XZ
+?InitVar@PanelMessageFunc_OnFindDefaultButton@EditablePanel@vgui2@@SAXXZ

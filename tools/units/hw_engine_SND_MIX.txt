@@ -1,3 +1,9 @@
+_SetCareerAudioState
+_CareerAudio_Command_f
+_S_TransferStereo16
+_S_EAXTransferStereo16
+_S_TransferPaintBuffer
+_S_FreeChannel
 _S_CheckWavEnd
 _S_MixChannelsToPaintbuffer
 _S_PaintChannels
@@ -37,3 +43,6 @@ _VOX_MakeSingleWordSentence
 _VOX_LoadSound
 _VOX_FPaintPitchChannelFrom8Offs
 _VOX_ReadSentenceFile
+_VOX_Shutdown
+_VOX_LookupString
+_VOX_TrimStartEndTimes

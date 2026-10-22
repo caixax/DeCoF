@@ -108,8 +108,16 @@
 ?SetAllowNumericInputOnly@TextEntry@vgui2@@QAEX_N@Z
 ?SetUseFallbackFont@TextEntry@vgui2@@QAEX_NK@Z
 ?GetTextLength@TextEntry@vgui2@@QBEHXZ
+??_GTextEntry@vgui2@@UAEPAXI@Z
+?ChainToMap@TextEntry@vgui2@@SAXXZ
+?GetMessageMap@TextEntry@vgui2@@UAEPAUPanelMessageMap@2@XZ
+?AddToMap@TextEntry@vgui2@@SAXPBDP8Panel@2@AEXXZHH0H0@Z
+?InitVar@PanelMessageFunc_OnSetText@TextEntry@vgui2@@SAXXZ
+?InitVar@PanelMessageFunc_OnSetState@TextEntry@vgui2@@SAXXZ
+?AddMultipleToTail@?$CUtlVector@G@@QAEHH@Z
 ?CopyArray@?$CUtlVector@G@@QAEXPBGH@Z
 ?FastRemove@?$CUtlVector@G@@QAEXH@Z
+?Remove@?$CUtlVector@G@@QAEXH@Z
 ?InsertMultipleBefore@?$CUtlVector@G@@QAEHHH@Z
 ?SetSize@?$CUtlVector@G@@QAEXH@Z
 ?Construct@@YAXPAG@Z

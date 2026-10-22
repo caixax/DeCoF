@@ -33,3 +33,5 @@ _triangles,32768,mtriangle_t triangles[2048] (GL_MODEL.C)
 _vec3_origin,12,vec3_t vec3_origin (mathlib.c)
 _decal_names,8192,char decal_names[512][16] (decals.c)
 _cl_funcs,172,cldll_func_t cl_funcs (cdll_int.c)
+_eaxpre_guess,464,EAX_REVERBPROPERTIES eaxpre_guess[29] (SND_MIX.C); the string label Ghidra put at 01EC82ED covers its last bytes
+_voxperiod,8,char voxperiod[] = "_period" (SND_MIX.C)

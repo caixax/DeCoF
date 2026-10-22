@@ -182,8 +182,40 @@ wavinfo_t	GetWavinfo( char *name, byte *wav, int wavlength );
 
 extern	wavstream_t	wavstreams[CWAVSTREAMS];
 
+#define CVOXWORDMAX		32		// max number of words in a sentence
+
+typedef struct voxword
+{
+	int		volume;			// increase percent, ie: 125 = 125% increase
+	int		pitch;			// pitch shift up percent
+	int		start;			// offset start of wave percent
+	int		end;			// offset end of wave percent
+	int		cbtrim;			// end of wave after being trimmed to 'end'
+	int		fKeepCached;	// 1 if this word was already in cache before sentence referenced it
+	int		samplefrac;		// if pitch shifting, this is position into wav * 256
+	int		timecompress;	// % of wave to skip during playback (causes no pitch shift)
+	sfx_t	*sfx;			// name and cache pointer
+} voxword_t;
+
+extern	char		*rgpparseword[CVOXWORDMAX];
+extern	voxword_t	rgrgvoxword[16][CVOXWORDMAX];
+
+// snd_win.c: plays a channel on its A3D hardware voice, true when A3D took it (0x01DD0E91)
+int		hwPaintChannel_guess( int ch_idx, channel_t *ch, sfxcache_t *sc, int unused1, int unused2, float pitch );
+// snd_win.c: restarts the hardware voice of a stream channel that ended (0x01DD15D3)
+void	hwStopChannel_guess( int ch_idx );
+
+// snd_mixa.s
+void	Snd_WriteLinearBlastStereo16( void );
+// the 8 bit mixers of snd_mixa.s: into paintbuffer (0x01E13578) and into the A3D reverb buffer (0x01E136DC)
+void	SND_PaintChannelFrom8Asm_guess( channel_t *ch, sfxcache_t *sc, int count );
+void	SND_PaintChannelFrom8A3D_guess( channel_t *ch, sfxcache_t *sc, int count );
+
 // snd_mix.c
 void	SetCareerAudioState( int paused );
+void	CareerAudio_Command_f( void );
+void	S_TransferStereo16( int end );
+void	S_TransferPaintBuffer( int endtime );
 void	S_FreeChannel( channel_t *ch );
 void	S_PaintChannels( int endtime );
 void	SND_InitScaletable( void );
@@ -199,6 +231,8 @@ void	VOX_SetChanVol( channel_t *ch );
 void	VOX_MakeSingleWordSentence( channel_t *ch, int pitch );
 sfxcache_t	*VOX_LoadSound( channel_t *pchan, char *pszin );
 void	VOX_TrimStartEndTimes( channel_t *ch, sfxcache_t *sc );
+char	*VOX_LookupString( char *pszin, int *psentencenum );
+void	VOX_ReadSentenceFile( void );
 
 extern	portable_samplepair_t	paintbuffer[];
 extern	int		cszrawsentences;

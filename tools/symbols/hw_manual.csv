@@ -2745,3 +2745,6 @@ va,name,kind,evidence
 01E60180,?AddToMap@MenuButton@vgui2@@SAXPBDP8Panel@2@AEXXZHH0H0@Z,func,"MenuButton COMDAT (vtable slots 27, 28, 200, 201 of the RTTI MenuButton vtable, message map of OnMenuClose ""MenuClose"")"
 01E5F870,?OnShowMenu@MenuButton@vgui2@@UAEXPAVMenu@2@@Z,func,"MenuButton COMDAT (vtable slots 27, 28, 200, 201 of the RTTI MenuButton vtable, message map of OnMenuClose ""MenuClose"")"
 01E5F880,?OnHideMenu@MenuButton@vgui2@@UAEXPAVMenu@2@@Z,func,"MenuButton COMDAT (vtable slots 27, 28, 200, 201 of the RTTI MenuButton vtable, message map of OnMenuClose ""MenuClose"")"
+01EC82F0,_voxperiod,data,"engine/SND_MIX.C: char voxperiod[] = ""_period"", stored into rgpparseword by VOX_ParseString (Linux hw.so DWARF name); the string label Ghidra put at 01EC82ED hides it"
+01EC82F8,_voxcomma,data,"engine/SND_MIX.C: char voxcomma[] = ""_comma"", stored into rgpparseword by VOX_ParseString (Linux hw.so DWARF name)"
+01EC8300,_szsentences,data,"engine/SND_MIX.C: char szsentences[] = ""sound/sentences.txt"", loaded by VOX_ReadSentenceFile (Linux hw.so DWARF name)"

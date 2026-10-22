@@ -2873,6 +2873,21 @@
           "name": "engine/wad",
           "source": "src/engine_hw/wad.c",
           "functions_file": "tools/units/hw_engine_wad.txt"
+        },
+        {
+          "name": "public/utlsymbol",
+          "source": "src/public/utlsymbol.cpp",
+          "functions_file": "tools/units/hw_public_utlsymbol.txt"
+        },
+        {
+          "name": "public/MemPool",
+          "source": "src/public/MemPool.cpp",
+          "functions_file": "tools/units/hw_public_MemPool.txt"
+        },
+        {
+          "name": "a3d/A3DRenderer_guess",
+          "source": "src/a3d/A3DRenderer_guess.cpp",
+          "functions_file": "tools/units/hw_a3d_A3DRenderer_guess.txt"
         }
       ]
     },
