@@ -14,6 +14,7 @@
 #include "APIProxy.h"
 #include "r_studioint.h"
 #include "entity_types.h"
+#include "triangleapi.h"
 
 typedef struct client_data_s
 {
@@ -139,6 +140,7 @@ extern	float				scr_fov_value;
 extern	int					cl_numbeamentities;
 extern	cl_entity_t			*cl_beamentities[MAX_BEAMENTS];
 extern	engine_studio_api_t	engine_studio_api;
+extern	triangleapi_t		tri;
 
 int		CL_IsSpectateOnly_guess( void );
 void	SPR_Init_guess( void );
@@ -193,7 +195,7 @@ void ClientDLL_DrawNormalTriangles( void )
 	if ( cl_funcs.pDrawNormalTriangles )
 		cl_funcs.pDrawNormalTriangles();
 
-	tri_GL_RenderMode( kRenderNormal );
+	tri.RenderMode( kRenderNormal );
 }
 
 /*
@@ -207,7 +209,7 @@ void ClientDLL_DrawTransparentTriangles( void )
 	if ( cl_funcs.pDrawTransparentTriangles )
 		cl_funcs.pDrawTransparentTriangles();
 
-	tri_GL_RenderMode( kRenderNormal );
+	tri.RenderMode( kRenderNormal );
 }
 
 /*
@@ -230,7 +232,7 @@ ClientDLL_AddEntity
 */
 int ClientDLL_AddEntity( int type, struct cl_entity_s *ent )
 {
-	vec3_t	mins, maxs;
+	vec3_t	emins, emaxs;
 	int		i;
 
 	if ( !cl_funcs.pAddEntity )
@@ -243,29 +245,39 @@ int ClientDLL_AddEntity( int type, struct cl_entity_s *ent )
 	{
 		for ( i = 0; i < 3; i++ )
 		{
-			mins[i] = ent->origin[i] + ent->model->mins[i];
-			maxs[i] = ent->origin[i] + ent->model->maxs[i];
+			emins[i] = ent->origin[i] + ent->model->mins[i];
+			emaxs[i] = ent->origin[i] + ent->model->maxs[i];
 		}
 
-		if ( !PVSNode( cl.worldmodel->nodes, mins, maxs ) )
+		if ( !PVSNode( cl.worldmodel->nodes, emins, emaxs ) )
 			return 0;
 	}
 
-	if ( type == ET_BEAM )
+	switch ( type )
 	{
-		if ( cl_numbeamentities >= MAX_BEAMENTS )
+	case ET_BEAM:
+		if ( cl_numbeamentities < MAX_BEAMENTS )
+		{
+			cl_beamentities[cl_numbeamentities] = ent;
+			cl_numbeamentities++;
+		}
+		else
+		{
 			return 0;
+		}
+		break;
 
-		cl_beamentities[cl_numbeamentities] = ent;
-		cl_numbeamentities++;
-	}
-	else
-	{
-		if ( cl_numvisedicts >= MAX_VISEDICTS )
+	default:
+		if ( cl_numvisedicts < MAX_VISEDICTS )
+		{
+			cl_visedicts[cl_numvisedicts] = ent;
+			cl_numvisedicts++;
+		}
+		else
+		{
 			return 0;
-
-		cl_visedicts[cl_numvisedicts] = ent;
-		cl_numvisedicts++;
+		}
+		break;
 	}
 
 	return 1;
@@ -568,7 +580,10 @@ void ClientDLL_UpdateClientData( void )
 	client_data_t	oldcdat;
 	client_data_t	cdat;
 
-	if ( cls.state != ca_active || cls.demoplayback )
+	if ( cls.state != ca_active )
+		return;
+
+	if ( cls.demoplayback )
 		return;
 
 	Q_memset( &cdat, 0, sizeof( cdat ) );
@@ -599,13 +614,13 @@ ClientDLL_DemoUpdateClientData
 */
 void ClientDLL_DemoUpdateClientData( client_data_t *cdat )
 {
-	if ( !cl_funcs.pHudUpdateClientDataFunc )
-		return;
-
-	if ( cl_funcs.pHudUpdateClientDataFunc( cdat, (float)cl.time ) && !cls.spectator )
+	if ( cl_funcs.pHudUpdateClientDataFunc )
 	{
-		VectorCopy( cdat->viewangles, cl.viewangles );
-		scr_fov_value = cdat->fov;
+		if ( cl_funcs.pHudUpdateClientDataFunc( cdat, (float)cl.time ) && !cls.spectator )
+		{
+			VectorCopy( cdat->viewangles, cl.viewangles );
+			scr_fov_value = cdat->fov;
+		}
 	}
 }
 

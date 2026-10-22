@@ -63,3 +63,132 @@ void ListPanel::AddColumnHeader(int index, const char *columnName, const char *c
 		AddColumnHeader(index, columnName, columnText, width, 20, 10000, columnFlags);
 	}
 }
+
+//-----------------------------------------------------------------------------
+// Purpose: returns the number of VISIBLE items
+//-----------------------------------------------------------------------------
+int ListPanel::GetItemCount()
+{
+	return m_VisibleItems.Count();
+}
+
+//-----------------------------------------------------------------------------
+// Purpose: returns -1 if invalid index or item not visible
+//-----------------------------------------------------------------------------
+int ListPanel::GetItemCurrentRow(int itemID)
+{
+	return m_VisibleItems.Find(itemID);
+}
+
+//-----------------------------------------------------------------------------
+// Purpose:
+//-----------------------------------------------------------------------------
+int ListPanel::InvalidItemID() const
+{
+	return m_DataItems.InvalidIndex();
+}
+
+//-----------------------------------------------------------------------------
+// Purpose:
+//-----------------------------------------------------------------------------
+bool ListPanel::IsValidItemID(int itemID)
+{
+	return m_DataItems.IsValidIndex(itemID);
+}
+
+//-----------------------------------------------------------------------------
+// Purpose: returns the number of selected items
+//-----------------------------------------------------------------------------
+int ListPanel::GetSelectedItemsCount()
+{
+	return m_SelectedItems.Count();
+}
+
+//-----------------------------------------------------------------------------
+// Purpose:
+//-----------------------------------------------------------------------------
+int ListPanel::GetSelectedColumn()
+{
+	return m_iSelectedColumn;
+}
+
+//-----------------------------------------------------------------------------
+// Purpose: sets no item as selected
+//-----------------------------------------------------------------------------
+void ListPanel::ClearSelectedItems()
+{
+	m_SelectedItems.RemoveAll();
+}
+
+//-----------------------------------------------------------------------------
+// Purpose: sets this single item as the only selected item
+//-----------------------------------------------------------------------------
+void ListPanel::SetSingleSelectedItem( int itemID )
+{
+	ClearSelectedItems();
+	AddSelectedItem(itemID);
+}
+
+//-----------------------------------------------------------------------------
+// Purpose:
+//-----------------------------------------------------------------------------
+void ListPanel::PaintBackground()
+{
+	BaseClass::PaintBackground();
+}
+
+//-----------------------------------------------------------------------------
+// Purpose:
+//-----------------------------------------------------------------------------
+void ListPanel::SetSortColumn(int column)
+{
+	m_iSortColumn = column;
+}
+
+//-----------------------------------------------------------------------------
+// Purpose:
+//-----------------------------------------------------------------------------
+void ListPanel::SetSelectIndividualCells(bool state)
+{
+	m_bCanSelectIndividualCells = state;
+}
+
+//-----------------------------------------------------------------------------
+// Purpose: returns true if this panel should save its settings
+//-----------------------------------------------------------------------------
+bool ListPanel::HasUserConfigSettings()
+{
+	return true;
+}
+
+//-----------------------------------------------------------------------------
+// Purpose: data accessor
+//-----------------------------------------------------------------------------
+void ListPanel::SetAllowUserModificationOfColumns(bool allowed)
+{
+	m_bAllowUserAddDeleteColumns = allowed;
+}
+
+//-----------------------------------------------------------------------------
+// Purpose: iteration. Use these until they return InvalidItemID to iterate all the items.
+//-----------------------------------------------------------------------------
+int ListPanel::FirstItem() const
+{
+	return m_DataItems.Head();
+}
+
+//-----------------------------------------------------------------------------
+// Purpose:
+//-----------------------------------------------------------------------------
+int ListPanel::NextItem( int iItem ) const
+{
+	return m_DataItems.Next( iItem );
+}
+
+//-----------------------------------------------------------------------------
+// Purpose:
+//-----------------------------------------------------------------------------
+int ListPanel::GetNumColumnHeaders() const
+{
+	return m_CurrentColumns.Count();
+}
