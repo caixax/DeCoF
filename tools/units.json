@@ -2578,6 +2578,21 @@
           "name": "engine/r_trans",
           "source": "src/engine_hw/r_trans.c",
           "functions_file": "tools/units/hw_engine_r_trans.txt"
+        },
+        {
+          "name": "engine/vgui_EngineSurfaceHW",
+          "source": "src/engine_hw/vgui_EngineSurfaceHW.cpp",
+          "functions_file": "tools/units/hw_engine_vgui_EngineSurfaceHW.txt",
+          "includes": [
+            "src/engine_hw",
+            "src/common",
+            "src/public"
+          ]
+        },
+        {
+          "name": "engine/tmessage",
+          "source": "src/engine_hw/tmessage.c",
+          "functions_file": "tools/units/hw_engine_tmessage.txt"
         }
       ]
     },

@@ -2228,3 +2228,14 @@ va,name,kind,evidence
 01E4DF70,?AddToMap@ProgressBar@vgui2@@SAXPBDP8Panel@2@AEXXZHH0H0@Z,func,called by both ProgressBar InitVar functions
 01E4DFF0,??0PanelMessageFunc_OnDialogVariablesChanged@ProgressBar@vgui2@@QAE@XZ,func,called by the ProgressBar constructor on this+0x72
 01E4E010,?InitVar@PanelMessageFunc_OnDialogVariablesChanged@ProgressBar@vgui2@@SAXXZ,func,"registers ""DialogVariables"""
+01DFC5C0,_memfgets,func,"engine/tmessage.c of the Linux hw.so DWARF (first function, line 47); the HLSDK memfgets of dlls/sound.cpp with a pointer for filePos; called by TextMessageParse with a 512 byte buffer (added by an agent)"
+01DFC69B,_IsComment,func,engine/tmessage.c of the Linux hw.so DWARF in source order between memfgets (01DFC5C0) and ParseDirective; returns 1 for text starting with // or empty text (added by an agent)
+01DFC6EB,_IsStartOfText,func,engine/tmessage.c of the Linux hw.so DWARF in source order between memfgets (01DFC5C0) and ParseDirective; returns 1 when the text starts with { (added by an agent)
+01DFC70A,_IsEndOfText,func,engine/tmessage.c of the Linux hw.so DWARF in source order between memfgets (01DFC5C0) and ParseDirective; returns 1 when the text starts with } (added by an agent)
+01DFC729,_IsWhiteSpace,func,"engine/tmessage.c of the Linux hw.so DWARF in source order between memfgets (01DFC5C0) and ParseDirective; tests a char for space, tab, CR and LF (added by an agent)"
+01DFC75B,_SkipSpace,func,engine/tmessage.c of the Linux hw.so DWARF in source order between memfgets (01DFC5C0) and ParseDirective; advances over the chars IsWhiteSpace accepts (added by an agent)
+01DFC7A7,_SkipText,func,engine/tmessage.c of the Linux hw.so DWARF in source order between memfgets (01DFC5C0) and ParseDirective; advances over the chars IsWhiteSpace rejects (added by an agent)
+01DFC7F3,_ParseFloats,func,"engine/tmessage.c of the Linux hw.so DWARF in source order between memfgets (01DFC5C0) and ParseDirective; SkipText, SkipSpace and Q_atof into a float array, called by ParseDirective (added by an agent)"
+01DFC92F,_IsToken,func,"engine/tmessage.c of the Linux hw.so DWARF in source order between memfgets (01DFC5C0) and ParseDirective; Q_strnicmp of the text after the first char against a token name, called by ParseDirective with position, effect, color (added by an agent)"
+01DFD212,_TextMessageDrawCharacter,func,"engine/tmessage.c of the Linux hw.so DWARF (last function, line 534) after TextMessageGet; g_engdstAddrs.pfnDrawCharacter then Draw_MessageCharacterAdd (added by an agent)"
+01D0EE32,_VGUI2_GetCreditsFont,func,"Linux hw.so symbol order VGUI2_ResetCurrentTexture, VGUI2_GetConsoleFont, VGUI2_GetCreditsFont matches 01D0EE19, 01D0EE28, 01D0EE32; returns the font that TextMessageDrawCharacter passes to Draw_MessageCharacterAdd (added by an agent)"

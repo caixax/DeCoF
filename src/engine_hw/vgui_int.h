@@ -18,6 +18,7 @@ void	VGUI2_OnDisconnectFromServer( int eLoginFailure );
 int		VGui_GameUIKeyPressed( void );
 
 unsigned int	VGUI2_GetConsoleFont( void );
+unsigned int	VGUI2_GetCreditsFont( void );
 void	VGui_Paint( void );
 int		VGUI2_GetFontTall( unsigned int font );
 
