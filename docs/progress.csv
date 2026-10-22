@@ -12728,36 +12728,36 @@ gameui,100A8170,102,,,UNKNOWN,,,,TODO,,,
 gameui,100A81E0,64,,,UNKNOWN,,,,TODO,,,
 gameui,100A8220,10,,,UNKNOWN,,,,TODO,,,
 gameui,100A8230,10,,,UNKNOWN,,,,TODO,,,
-gameui,100A8240,154,,,UNKNOWN,,,,TODO,,,
-gameui,100A82DA,43,,,UNKNOWN,vgui2/controls/ScrollBarSlider.cpp,,,TODO,,,linux: _ZN5vgui215ScrollBarSlider7SetSizeEii
-gameui,100A8305,17,,,UNKNOWN,vgui2/controls/ScrollBarSlider.cpp,,,TODO,,,linux: _ZN5vgui215ScrollBarSlider10IsVerticalEv
-gameui,100A8316,151,,,UNKNOWN,vgui2/controls/ScrollBarSlider.cpp,,,TODO,,,linux: _ZN5vgui215ScrollBarSlider8SetValueEi
-gameui,100A83AD,20,,,UNKNOWN,vgui2/controls/ScrollBarSlider.cpp,,,TODO,,,linux: _ZN5vgui215ScrollBarSlider8GetValueEv
-gameui,100A83C1,33,,,UNKNOWN,vgui2/controls/ScrollBarSlider.cpp,,,TODO,,,linux: _ZN5vgui215ScrollBarSlider13PerformLayoutEv
-gameui,100A83E2,350,,,UNKNOWN,vgui2/controls/ScrollBarSlider.cpp,,,TODO,,,linux: _ZN5vgui215ScrollBarSlider24RecomputeNobPosFromValueEv
-gameui,100A8540,446,,,UNKNOWN,vgui2/controls/ScrollBarSlider.cpp,,,TODO,,,linux: _ZN5vgui215ScrollBarSlider24RecomputeValueFromNobPosEv
-gameui,100A86FE,124,,,UNKNOWN,vgui2/controls/ScrollBarSlider.cpp,,,TODO,,,linux: _ZN5vgui215ScrollBarSlider12HasFullRangeEv
-gameui,100A877A,90,,,UNKNOWN,vgui2/controls/ScrollBarSlider.cpp,,,TODO,,,linux: _ZN5vgui215ScrollBarSlider31SendScrollBarSliderMovedMessageEv
-gameui,100A87D4,140,,vgui2::ScrollBarSlider::ApplySchemeSettings,ENGINE,vgui2/controls/ScrollBarSlider.cpp,,,TODO,,linux_symbols:string:0.536,linux: _ZN5vgui215ScrollBarSlider19ApplySchemeSettingsEPNS_7ISchemeE
-gameui,100A8860,343,,,UNKNOWN,vgui2/controls/ScrollBarSlider.cpp,,,TODO,,,linux: _ZN5vgui215ScrollBarSlider5PaintEv
-gameui,100A89B7,112,,,UNKNOWN,vgui2/controls/ScrollBarSlider.cpp,,,TODO,,,linux: _ZN5vgui215ScrollBarSlider15PaintBackgroundEv
-gameui,100A8A27,83,,,UNKNOWN,vgui2/controls/ScrollBarSlider.cpp,,,TODO,,,linux: _ZN5vgui215ScrollBarSlider8SetRangeEii
-gameui,100A8A7A,41,,CMFCVisualManagerOfficeXP::GetSmartDockingBaseGuideColors,ENGINE,vgui2/controls/ScrollBarSlider.cpp,,,TODO,,ghidra,linux: _ZN5vgui215ScrollBarSlider8GetRangeERiS1_
-gameui,100A8AA3,15,,,UNKNOWN,vgui2/controls/ScrollBarSlider.cpp,,,TODO,,,linux: _ZN5vgui215ScrollBarSlider13OnCursorMovedEii
-gameui,100A8AB2,551,,,UNKNOWN,vgui2/controls/ScrollBarSlider.cpp,,,TODO,,,linux: _ZN5vgui215ScrollBarSlider14OnMousePressedENS_9MouseCodeE
-gameui,100A8CD9,31,,,UNKNOWN,vgui2/controls/ScrollBarSlider.cpp,,,TODO,,,linux: _ZN5vgui215ScrollBarSlider20OnMouseDoublePressedENS_9MouseCodeE
-gameui,100A8CF8,43,,,UNKNOWN,vgui2/controls/ScrollBarSlider.cpp,,,TODO,,,linux: _ZN5vgui215ScrollBarSlider15OnMouseReleasedENS_9MouseCodeE
-gameui,100A8D23,35,,,UNKNOWN,vgui2/controls/ScrollBarSlider.cpp,,,TODO,,,linux: _ZN5vgui215ScrollBarSlider9GetNobPosERiS1_
-gameui,100A8D46,25,,,UNKNOWN,vgui2/controls/ScrollBarSlider.cpp,,,TODO,,,linux: _ZN5vgui215ScrollBarSlider14SetRangeWindowEi
-gameui,100A8D5F,20,,,UNKNOWN,vgui2/controls/ScrollBarSlider.cpp,,,TODO,,,linux: _ZN5vgui215ScrollBarSlider14GetRangeWindowEv
-gameui,100A8D73,25,,,UNKNOWN,vgui2/controls/ScrollBarSlider.cpp,,,TODO,,,linux: _ZN5vgui215ScrollBarSlider15SetButtonOffsetEi
-gameui,100A8D90,46,,,UNKNOWN,,,,TODO,,,
-gameui,100A8DC0,19,,,UNKNOWN,,,,TODO,,,
-gameui,100A8DE0,19,,,UNKNOWN,,,,TODO,,,
-gameui,100A8E00,102,,,UNKNOWN,,,,TODO,,,
-gameui,100A8E70,64,,,UNKNOWN,,,,TODO,,,
-gameui,100A8EB0,10,,,UNKNOWN,,,,TODO,,,
-gameui,100A8EC0,10,,,UNKNOWN,,,,TODO,,,
+gameui,100A8240,154,??0ScrollBarSlider@vgui2@@QAE@PAVPanel@1@PBD_N@Z,vgui2::ScrollBarSlider::ScrollBarSlider,UNKNOWN,vgui2/controls/ScrollBarSlider.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A82DA,43,?SetSize@ScrollBarSlider@vgui2@@UAEXHH@Z,vgui2::ScrollBarSlider::SetSize,UNKNOWN,vgui2/controls/ScrollBarSlider.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui215ScrollBarSlider7SetSizeEii
+gameui,100A8305,17,?IsVertical@ScrollBarSlider@vgui2@@UAE_NXZ,vgui2::ScrollBarSlider::IsVertical,UNKNOWN,vgui2/controls/ScrollBarSlider.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui215ScrollBarSlider10IsVerticalEv
+gameui,100A8316,151,?SetValue@ScrollBarSlider@vgui2@@UAEXH@Z,vgui2::ScrollBarSlider::SetValue,UNKNOWN,vgui2/controls/ScrollBarSlider.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui215ScrollBarSlider8SetValueEi
+gameui,100A83AD,20,?GetValue@ScrollBarSlider@vgui2@@UAEHXZ,vgui2::ScrollBarSlider::GetValue,UNKNOWN,vgui2/controls/ScrollBarSlider.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui215ScrollBarSlider8GetValueEv
+gameui,100A83C1,33,?PerformLayout@ScrollBarSlider@vgui2@@MAEXXZ,vgui2::ScrollBarSlider::PerformLayout,UNKNOWN,vgui2/controls/ScrollBarSlider.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui215ScrollBarSlider13PerformLayoutEv
+gameui,100A83E2,350,?RecomputeNobPosFromValue@ScrollBarSlider@vgui2@@EAEXXZ,vgui2::ScrollBarSlider::RecomputeNobPosFromValue,UNKNOWN,vgui2/controls/ScrollBarSlider.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui215ScrollBarSlider24RecomputeNobPosFromValueEv
+gameui,100A8540,446,?RecomputeValueFromNobPos@ScrollBarSlider@vgui2@@EAEXXZ,vgui2::ScrollBarSlider::RecomputeValueFromNobPos,UNKNOWN,vgui2/controls/ScrollBarSlider.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui215ScrollBarSlider24RecomputeValueFromNobPosEv
+gameui,100A86FE,124,?HasFullRange@ScrollBarSlider@vgui2@@UAE_NXZ,vgui2::ScrollBarSlider::HasFullRange,UNKNOWN,vgui2/controls/ScrollBarSlider.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui215ScrollBarSlider12HasFullRangeEv
+gameui,100A877A,90,?SendScrollBarSliderMovedMessage@ScrollBarSlider@vgui2@@EAEXXZ,vgui2::ScrollBarSlider::SendScrollBarSliderMovedMessage,UNKNOWN,vgui2/controls/ScrollBarSlider.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui215ScrollBarSlider31SendScrollBarSliderMovedMessageEv
+gameui,100A87D4,140,?ApplySchemeSettings@ScrollBarSlider@vgui2@@MAEXPAVIScheme@2@@Z,vgui2::ScrollBarSlider::ApplySchemeSettings,ENGINE,vgui2/controls/ScrollBarSlider.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui215ScrollBarSlider19ApplySchemeSettingsEPNS_7ISchemeE
+gameui,100A8860,343,?Paint@ScrollBarSlider@vgui2@@MAEXXZ,vgui2::ScrollBarSlider::Paint,UNKNOWN,vgui2/controls/ScrollBarSlider.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui215ScrollBarSlider5PaintEv
+gameui,100A89B7,112,?PaintBackground@ScrollBarSlider@vgui2@@MAEXXZ,vgui2::ScrollBarSlider::PaintBackground,UNKNOWN,vgui2/controls/ScrollBarSlider.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui215ScrollBarSlider15PaintBackgroundEv
+gameui,100A8A27,83,?SetRange@ScrollBarSlider@vgui2@@UAEXHH@Z,vgui2::ScrollBarSlider::SetRange,UNKNOWN,vgui2/controls/ScrollBarSlider.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui215ScrollBarSlider8SetRangeEii
+gameui,100A8A7A,41,?GetRange@ScrollBarSlider@vgui2@@UAEXAAH0@Z,vgui2::ScrollBarSlider::GetRange,ENGINE,vgui2/controls/ScrollBarSlider.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui215ScrollBarSlider8GetRangeERiS1_
+gameui,100A8AA3,15,?OnCursorMoved@ScrollBarSlider@vgui2@@UAEXHH@Z,vgui2::ScrollBarSlider::OnCursorMoved,UNKNOWN,vgui2/controls/ScrollBarSlider.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui215ScrollBarSlider13OnCursorMovedEii
+gameui,100A8AB2,551,?OnMousePressed@ScrollBarSlider@vgui2@@UAEXW4MouseCode@2@@Z,vgui2::ScrollBarSlider::OnMousePressed,UNKNOWN,vgui2/controls/ScrollBarSlider.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui215ScrollBarSlider14OnMousePressedENS_9MouseCodeE
+gameui,100A8CD9,31,?OnMouseDoublePressed@ScrollBarSlider@vgui2@@UAEXW4MouseCode@2@@Z,vgui2::ScrollBarSlider::OnMouseDoublePressed,UNKNOWN,vgui2/controls/ScrollBarSlider.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui215ScrollBarSlider20OnMouseDoublePressedENS_9MouseCodeE
+gameui,100A8CF8,43,?OnMouseReleased@ScrollBarSlider@vgui2@@UAEXW4MouseCode@2@@Z,vgui2::ScrollBarSlider::OnMouseReleased,UNKNOWN,vgui2/controls/ScrollBarSlider.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui215ScrollBarSlider15OnMouseReleasedENS_9MouseCodeE
+gameui,100A8D23,35,?GetNobPos@ScrollBarSlider@vgui2@@UAEXAAH0@Z,vgui2::ScrollBarSlider::GetNobPos,UNKNOWN,vgui2/controls/ScrollBarSlider.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui215ScrollBarSlider9GetNobPosERiS1_
+gameui,100A8D46,25,?SetRangeWindow@ScrollBarSlider@vgui2@@UAEXH@Z,vgui2::ScrollBarSlider::SetRangeWindow,UNKNOWN,vgui2/controls/ScrollBarSlider.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui215ScrollBarSlider14SetRangeWindowEi
+gameui,100A8D5F,20,?GetRangeWindow@ScrollBarSlider@vgui2@@UAEHXZ,vgui2::ScrollBarSlider::GetRangeWindow,UNKNOWN,vgui2/controls/ScrollBarSlider.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui215ScrollBarSlider14GetRangeWindowEv
+gameui,100A8D73,25,?SetButtonOffset@ScrollBarSlider@vgui2@@UAEXH@Z,vgui2::ScrollBarSlider::SetButtonOffset,UNKNOWN,vgui2/controls/ScrollBarSlider.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui215ScrollBarSlider15SetButtonOffsetEi
+gameui,100A8D90,46,??_GScrollBarSlider@vgui2@@UAEPAXI@Z,destructor',UNKNOWN,vgui2/controls/ScrollBarSlider.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A8DC0,19,??1ScrollBarSlider@vgui2@@UAE@XZ,vgui2::ScrollBarSlider::~ScrollBarSlider,UNKNOWN,vgui2/controls/ScrollBarSlider.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A8DE0,19,??0ScrollBarSlider_RegisterMap@ScrollBarSlider@vgui2@@QAE@XZ,vgui2::ScrollBarSlider::ScrollBarSlider_RegisterMap::ScrollBarSlider_RegisterMap,UNKNOWN,vgui2/controls/ScrollBarSlider.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A8E00,102,?ChainToMap@ScrollBarSlider@vgui2@@SAXXZ,vgui2::ScrollBarSlider::ChainToMap,UNKNOWN,vgui2/controls/ScrollBarSlider.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A8E70,64,?GetMessageMap@ScrollBarSlider@vgui2@@UAEPAUPanelMessageMap@2@XZ,vgui2::ScrollBarSlider::GetMessageMap,UNKNOWN,vgui2/controls/ScrollBarSlider.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A8EB0,10,?GetPanelClassName@ScrollBarSlider@vgui2@@SAPBDXZ,vgui2::ScrollBarSlider::GetPanelClassName,UNKNOWN,vgui2/controls/ScrollBarSlider.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A8EC0,10,?GetPanelBaseClassName@ScrollBarSlider@vgui2@@SAPBDXZ,vgui2::ScrollBarSlider::GetPanelBaseClassName,UNKNOWN,vgui2/controls/ScrollBarSlider.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,100A8ED0,90,,,UNKNOWN,,,,TODO,,,
 gameui,100A8F2A,120,,,UNKNOWN,,,,TODO,,,
 gameui,100A8FA2,25,,,UNKNOWN,,,,TODO,,,
@@ -31885,36 +31885,36 @@ hw,01E61720,10,,,ENGINE,vgui2/controls/PanelListPanel.cpp,,,TODO,,,
 hw,01E61730,19,,,ENGINE,vgui2/controls/PanelListPanel.cpp,,,TODO,,,
 hw,01E61750,110,,,ENGINE,vgui2/controls/PanelListPanel.cpp,,,TODO,,,
 hw,01E617C0,120,,,ENGINE,vgui2/controls/PanelListPanel.cpp,,,TODO,,,
-hw,01E61850,154,,,ENGINE,vgui2/controls/ScrollBarSlider.cpp,,,TODO,,,
-hw,01E618EA,43,,,UNKNOWN,vgui2/controls/ScrollBarSlider.cpp,,,TODO,,,linux: _ZN5vgui215ScrollBarSlider7SetSizeEii
-hw,01E61915,17,,,UNKNOWN,vgui2/controls/ScrollBarSlider.cpp,,,TODO,,,linux: _ZN5vgui215ScrollBarSlider10IsVerticalEv
-hw,01E61926,151,,,UNKNOWN,vgui2/controls/ScrollBarSlider.cpp,,,TODO,,,linux: _ZN5vgui215ScrollBarSlider8SetValueEi
-hw,01E619BD,20,,,UNKNOWN,vgui2/controls/ScrollBarSlider.cpp,,,TODO,,,linux: _ZN5vgui215ScrollBarSlider8GetValueEv
-hw,01E619D1,33,,,UNKNOWN,vgui2/controls/ScrollBarSlider.cpp,,,TODO,,,linux: _ZN5vgui215ScrollBarSlider13PerformLayoutEv
-hw,01E619F2,350,,,UNKNOWN,vgui2/controls/ScrollBarSlider.cpp,,,TODO,,,linux: _ZN5vgui215ScrollBarSlider24RecomputeNobPosFromValueEv
-hw,01E61B50,446,,,UNKNOWN,vgui2/controls/ScrollBarSlider.cpp,,,TODO,,,linux: _ZN5vgui215ScrollBarSlider24RecomputeValueFromNobPosEv
-hw,01E61D0E,124,,,UNKNOWN,vgui2/controls/ScrollBarSlider.cpp,,,TODO,,,linux: _ZN5vgui215ScrollBarSlider12HasFullRangeEv
-hw,01E61D8A,90,,,UNKNOWN,vgui2/controls/ScrollBarSlider.cpp,,,TODO,,,linux: _ZN5vgui215ScrollBarSlider31SendScrollBarSliderMovedMessageEv
-hw,01E61DE4,140,,vgui2::ScrollBarSlider::ApplySchemeSettings,ENGINE,vgui2/controls/ScrollBarSlider.cpp,,,TODO,,linux_symbols:string:0.525,
-hw,01E61E70,343,,,UNKNOWN,vgui2/controls/ScrollBarSlider.cpp,,,TODO,,,linux: _ZN5vgui215ScrollBarSlider5PaintEv
-hw,01E61FC7,112,,,UNKNOWN,vgui2/controls/ScrollBarSlider.cpp,,,TODO,,,linux: _ZN5vgui215ScrollBarSlider15PaintBackgroundEv
-hw,01E62037,83,,,UNKNOWN,vgui2/controls/ScrollBarSlider.cpp,,,TODO,,,linux: _ZN5vgui215ScrollBarSlider8SetRangeEii
-hw,01E6208A,41,,CMFCVisualManagerOfficeXP::GetSmartDockingBaseGuideColors,ENGINE,vgui2/controls/ScrollBarSlider.cpp,,,TODO,,ghidra,linux: _ZN5vgui215ScrollBarSlider8GetRangeERiS1_
-hw,01E620B3,15,,,UNKNOWN,vgui2/controls/ScrollBarSlider.cpp,,,TODO,,,linux: _ZN5vgui215ScrollBarSlider13OnCursorMovedEii
-hw,01E620C2,551,,,UNKNOWN,vgui2/controls/ScrollBarSlider.cpp,,,TODO,,,linux: _ZN5vgui215ScrollBarSlider14OnMousePressedENS_9MouseCodeE
-hw,01E622E9,31,,,UNKNOWN,vgui2/controls/ScrollBarSlider.cpp,,,TODO,,,linux: _ZN5vgui215ScrollBarSlider20OnMouseDoublePressedENS_9MouseCodeE
-hw,01E62308,43,,,UNKNOWN,vgui2/controls/ScrollBarSlider.cpp,,,TODO,,,linux: _ZN5vgui215ScrollBarSlider15OnMouseReleasedENS_9MouseCodeE
-hw,01E62333,35,,,UNKNOWN,vgui2/controls/ScrollBarSlider.cpp,,,TODO,,,linux: _ZN5vgui215ScrollBarSlider9GetNobPosERiS1_
-hw,01E62356,25,,,UNKNOWN,vgui2/controls/ScrollBarSlider.cpp,,,TODO,,,linux: _ZN5vgui215ScrollBarSlider14SetRangeWindowEi
-hw,01E6236F,20,,,UNKNOWN,vgui2/controls/ScrollBarSlider.cpp,,,TODO,,,linux: _ZN5vgui215ScrollBarSlider14GetRangeWindowEv
-hw,01E62383,25,,,UNKNOWN,vgui2/controls/ScrollBarSlider.cpp,,,TODO,,,linux: _ZN5vgui215ScrollBarSlider15SetButtonOffsetEi
-hw,01E623A0,46,,,ENGINE,vgui2/controls/ScrollBarSlider.cpp,,,TODO,,,
-hw,01E623D0,19,,,ENGINE,vgui2/controls/ScrollBarSlider.cpp,,,TODO,,,
-hw,01E623F0,19,,,ENGINE,vgui2/controls/ScrollBarSlider.cpp,,,TODO,,,
-hw,01E62410,102,,,ENGINE,vgui2/controls/ScrollBarSlider.cpp,,,TODO,,,
-hw,01E62480,64,,,ENGINE,vgui2/controls/ScrollBarSlider.cpp,,,TODO,,,
-hw,01E624C0,10,,,ENGINE,vgui2/controls/ScrollBarSlider.cpp,,,TODO,,,
-hw,01E624D0,10,,,ENGINE,vgui2/controls/ScrollBarSlider.cpp,,,TODO,,,
+hw,01E61850,154,??0ScrollBarSlider@vgui2@@QAE@PAVPanel@1@PBD_N@Z,vgui2::ScrollBarSlider::ScrollBarSlider,ENGINE,vgui2/controls/ScrollBarSlider.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E618EA,43,?SetSize@ScrollBarSlider@vgui2@@UAEXHH@Z,vgui2::ScrollBarSlider::SetSize,UNKNOWN,vgui2/controls/ScrollBarSlider.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui215ScrollBarSlider7SetSizeEii
+hw,01E61915,17,?IsVertical@ScrollBarSlider@vgui2@@UAE_NXZ,vgui2::ScrollBarSlider::IsVertical,UNKNOWN,vgui2/controls/ScrollBarSlider.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui215ScrollBarSlider10IsVerticalEv
+hw,01E61926,151,?SetValue@ScrollBarSlider@vgui2@@UAEXH@Z,vgui2::ScrollBarSlider::SetValue,UNKNOWN,vgui2/controls/ScrollBarSlider.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui215ScrollBarSlider8SetValueEi
+hw,01E619BD,20,?GetValue@ScrollBarSlider@vgui2@@UAEHXZ,vgui2::ScrollBarSlider::GetValue,UNKNOWN,vgui2/controls/ScrollBarSlider.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui215ScrollBarSlider8GetValueEv
+hw,01E619D1,33,?PerformLayout@ScrollBarSlider@vgui2@@MAEXXZ,vgui2::ScrollBarSlider::PerformLayout,UNKNOWN,vgui2/controls/ScrollBarSlider.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui215ScrollBarSlider13PerformLayoutEv
+hw,01E619F2,350,?RecomputeNobPosFromValue@ScrollBarSlider@vgui2@@EAEXXZ,vgui2::ScrollBarSlider::RecomputeNobPosFromValue,UNKNOWN,vgui2/controls/ScrollBarSlider.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui215ScrollBarSlider24RecomputeNobPosFromValueEv
+hw,01E61B50,446,?RecomputeValueFromNobPos@ScrollBarSlider@vgui2@@EAEXXZ,vgui2::ScrollBarSlider::RecomputeValueFromNobPos,UNKNOWN,vgui2/controls/ScrollBarSlider.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui215ScrollBarSlider24RecomputeValueFromNobPosEv
+hw,01E61D0E,124,?HasFullRange@ScrollBarSlider@vgui2@@UAE_NXZ,vgui2::ScrollBarSlider::HasFullRange,UNKNOWN,vgui2/controls/ScrollBarSlider.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui215ScrollBarSlider12HasFullRangeEv
+hw,01E61D8A,90,?SendScrollBarSliderMovedMessage@ScrollBarSlider@vgui2@@EAEXXZ,vgui2::ScrollBarSlider::SendScrollBarSliderMovedMessage,UNKNOWN,vgui2/controls/ScrollBarSlider.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui215ScrollBarSlider31SendScrollBarSliderMovedMessageEv
+hw,01E61DE4,140,?ApplySchemeSettings@ScrollBarSlider@vgui2@@MAEXPAVIScheme@2@@Z,vgui2::ScrollBarSlider::ApplySchemeSettings,ENGINE,vgui2/controls/ScrollBarSlider.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E61E70,343,?Paint@ScrollBarSlider@vgui2@@MAEXXZ,vgui2::ScrollBarSlider::Paint,UNKNOWN,vgui2/controls/ScrollBarSlider.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui215ScrollBarSlider5PaintEv
+hw,01E61FC7,112,?PaintBackground@ScrollBarSlider@vgui2@@MAEXXZ,vgui2::ScrollBarSlider::PaintBackground,UNKNOWN,vgui2/controls/ScrollBarSlider.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui215ScrollBarSlider15PaintBackgroundEv
+hw,01E62037,83,?SetRange@ScrollBarSlider@vgui2@@UAEXHH@Z,vgui2::ScrollBarSlider::SetRange,UNKNOWN,vgui2/controls/ScrollBarSlider.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui215ScrollBarSlider8SetRangeEii
+hw,01E6208A,41,?GetRange@ScrollBarSlider@vgui2@@UAEXAAH0@Z,vgui2::ScrollBarSlider::GetRange,ENGINE,vgui2/controls/ScrollBarSlider.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui215ScrollBarSlider8GetRangeERiS1_
+hw,01E620B3,15,?OnCursorMoved@ScrollBarSlider@vgui2@@UAEXHH@Z,vgui2::ScrollBarSlider::OnCursorMoved,UNKNOWN,vgui2/controls/ScrollBarSlider.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui215ScrollBarSlider13OnCursorMovedEii
+hw,01E620C2,551,?OnMousePressed@ScrollBarSlider@vgui2@@UAEXW4MouseCode@2@@Z,vgui2::ScrollBarSlider::OnMousePressed,UNKNOWN,vgui2/controls/ScrollBarSlider.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui215ScrollBarSlider14OnMousePressedENS_9MouseCodeE
+hw,01E622E9,31,?OnMouseDoublePressed@ScrollBarSlider@vgui2@@UAEXW4MouseCode@2@@Z,vgui2::ScrollBarSlider::OnMouseDoublePressed,UNKNOWN,vgui2/controls/ScrollBarSlider.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui215ScrollBarSlider20OnMouseDoublePressedENS_9MouseCodeE
+hw,01E62308,43,?OnMouseReleased@ScrollBarSlider@vgui2@@UAEXW4MouseCode@2@@Z,vgui2::ScrollBarSlider::OnMouseReleased,UNKNOWN,vgui2/controls/ScrollBarSlider.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui215ScrollBarSlider15OnMouseReleasedENS_9MouseCodeE
+hw,01E62333,35,?GetNobPos@ScrollBarSlider@vgui2@@UAEXAAH0@Z,vgui2::ScrollBarSlider::GetNobPos,UNKNOWN,vgui2/controls/ScrollBarSlider.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui215ScrollBarSlider9GetNobPosERiS1_
+hw,01E62356,25,?SetRangeWindow@ScrollBarSlider@vgui2@@UAEXH@Z,vgui2::ScrollBarSlider::SetRangeWindow,UNKNOWN,vgui2/controls/ScrollBarSlider.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui215ScrollBarSlider14SetRangeWindowEi
+hw,01E6236F,20,?GetRangeWindow@ScrollBarSlider@vgui2@@UAEHXZ,vgui2::ScrollBarSlider::GetRangeWindow,UNKNOWN,vgui2/controls/ScrollBarSlider.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui215ScrollBarSlider14GetRangeWindowEv
+hw,01E62383,25,?SetButtonOffset@ScrollBarSlider@vgui2@@UAEXH@Z,vgui2::ScrollBarSlider::SetButtonOffset,UNKNOWN,vgui2/controls/ScrollBarSlider.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui215ScrollBarSlider15SetButtonOffsetEi
+hw,01E623A0,46,??_GScrollBarSlider@vgui2@@UAEPAXI@Z,destructor',ENGINE,vgui2/controls/ScrollBarSlider.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E623D0,19,??1ScrollBarSlider@vgui2@@UAE@XZ,vgui2::ScrollBarSlider::~ScrollBarSlider,ENGINE,vgui2/controls/ScrollBarSlider.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E623F0,19,??0ScrollBarSlider_RegisterMap@ScrollBarSlider@vgui2@@QAE@XZ,vgui2::ScrollBarSlider::ScrollBarSlider_RegisterMap::ScrollBarSlider_RegisterMap,ENGINE,vgui2/controls/ScrollBarSlider.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E62410,102,?ChainToMap@ScrollBarSlider@vgui2@@SAXXZ,vgui2::ScrollBarSlider::ChainToMap,ENGINE,vgui2/controls/ScrollBarSlider.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E62480,64,?GetMessageMap@ScrollBarSlider@vgui2@@UAEPAUPanelMessageMap@2@XZ,vgui2::ScrollBarSlider::GetMessageMap,ENGINE,vgui2/controls/ScrollBarSlider.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E624C0,10,?GetPanelClassName@ScrollBarSlider@vgui2@@SAPBDXZ,vgui2::ScrollBarSlider::GetPanelClassName,ENGINE,vgui2/controls/ScrollBarSlider.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E624D0,10,?GetPanelBaseClassName@ScrollBarSlider@vgui2@@SAPBDXZ,vgui2::ScrollBarSlider::GetPanelBaseClassName,ENGINE,vgui2/controls/ScrollBarSlider.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01E624E0,107,,,ENGINE,vgui2/controls/Image.cpp,,,TODO,,,
 hw,01E6254B,28,,,ENGINE,vgui2/controls/Image.cpp,,,TODO,,,
 hw,01E62567,31,,,UNKNOWN,vgui2/controls/Image.cpp,,,TODO,,,linux: _ZN5vgui25Image6SetPosEii
