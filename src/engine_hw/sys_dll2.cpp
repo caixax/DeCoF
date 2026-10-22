@@ -15,6 +15,7 @@ extern "C"
 #include "cvardef.h"
 #include "sys.h"
 #include "host.h"
+#include "vgui_int.h"
 }
 
 #define VENGINE_LAUNCHER_API_VERSION	"VENGINE_LAUNCHER_API_VERSION002"
@@ -23,6 +24,10 @@ class IEngineAPI;
 
 extern "C"
 {
+
+extern qboolean	g_bPrintingKeepAliveDots;
+
+double		g_flLastSteamProgressUpdateTime;
 
 const char *GetCurrentSteamAppName( void )
 {
@@ -164,6 +169,58 @@ void Sys_InitAuthentication( void )
 
 void Sys_ShutdownAuthentication( void )
 {
+}
+
+void Sys_ShowProgressTicks( char *specialProgressMsg )
+{
+	static bool recursionGuard = false;
+	static int numTics = 0;
+	double currentTime;
+	int numTicsToPrint;
+	int i;
+	char msg[128];
+
+	if ( recursionGuard )
+		return;
+
+	recursionGuard = true;
+
+	if ( !COM_CheckParm( "-steam" ) )
+	{
+		recursionGuard = false;
+		return;
+	}
+
+	currentTime = Sys_FloatTime();
+	if ( g_flLastSteamProgressUpdateTime + 2.0 > currentTime )
+	{
+		recursionGuard = false;
+		return;
+	}
+
+	g_flLastSteamProgressUpdateTime = currentTime;
+	numTics++;
+
+	if ( g_bIsDedicatedServer )
+	{
+		if ( g_bMajorMapChange )
+		{
+			g_bPrintingKeepAliveDots = true;
+			Sys_Printf( "." );
+		}
+	}
+	else
+	{
+		strcpy( msg, "Updating game resources" );
+
+		numTicsToPrint = numTics % 5 + 1;
+		for ( i = 0; i < numTicsToPrint; i++ )
+			strcat( msg, "." );
+
+		SetLoadingProgressBarStatusText( msg );
+	}
+
+	recursionGuard = false;
 }
 
 }

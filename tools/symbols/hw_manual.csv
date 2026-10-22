@@ -2194,3 +2194,7 @@ va,name,kind,evidence
 01D4E130,_Draw_Shutdown,func,"engine/decals.c of the Linux hw.so DWARF in source order first function; already named, added to the decals unit (added by an agent)"
 01D4E17A,_Draw_DecalShutdown,func,"engine/decals.c of the Linux hw.so DWARF in source order after Draw_Shutdown; already named, added to the decals unit (added by an agent)"
 01D4F8ED,_Draw_CacheIndex,func,"engine/decals.c of the Linux hw.so DWARF in source order before Draw_CacheFindIndex; already named, added to the decals unit (added by an agent)"
+02FB9BE0,_cl_funcs,data,"cleared with Q_memset( &cl_funcs, 0, 0xAC ) in ClientDLL_Shutdown; cldll_func_t (172 bytes, hw.so DWARF APIProxy.h); extern cldll_func_t cl_funcs in the hw.so DWARF cdll_int.h"
+02FB9C8C,_g_blobfootprintClient_guess,data,"passed to FreeBlob in ClientDLL_Shutdown when cls.fSecureClient is set"
+01EC5B38,_engine_studio_api,data,"third argument of cl_funcs.pStudioInterface( STUDIO_INTERFACE_VERSION, &pStudioAPI, &engine_studio_api ) in ClientDLL_CheckStudioInterface; table starts with Mem_Calloc"
+01EAC810,_cl_lw,data,"cvar whose value ClientDLL_PostRunCmd tests before Cvar_SetValue( ""cl_lw"", 0 )"
