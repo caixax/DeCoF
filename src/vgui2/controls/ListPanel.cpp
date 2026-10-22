@@ -65,6 +65,17 @@ void ListPanel::AddColumnHeader(int index, const char *columnName, const char *c
 }
 
 //-----------------------------------------------------------------------------
+// Purpose:
+//-----------------------------------------------------------------------------
+void ListPanel::SetUserData( int itemID, unsigned int userData )
+{
+	if ( !m_DataItems.IsValidIndex(itemID) )
+		return;
+
+	m_DataItems[itemID]->userData = userData;
+}
+
+//-----------------------------------------------------------------------------
 // Purpose: returns the number of VISIBLE items
 //-----------------------------------------------------------------------------
 int ListPanel::GetItemCount()
@@ -78,6 +89,17 @@ int ListPanel::GetItemCount()
 int ListPanel::GetItemCurrentRow(int itemID)
 {
 	return m_VisibleItems.Find(itemID);
+}
+
+//-----------------------------------------------------------------------------
+// Purpose: gets the item ID of an item by row (0 based)
+//-----------------------------------------------------------------------------
+int ListPanel::GetItemIDFromRow(int currentRow)
+{
+	if (!m_VisibleItems.IsValidIndex(currentRow))
+		return -1;
+
+	return m_VisibleItems[currentRow];
 }
 
 //-----------------------------------------------------------------------------
@@ -97,11 +119,63 @@ bool ListPanel::IsValidItemID(int itemID)
 }
 
 //-----------------------------------------------------------------------------
+// Purpose:
+//-----------------------------------------------------------------------------
+ListPanelItem *ListPanel::GetItemData( int itemID )
+{
+	if ( !m_DataItems.IsValidIndex( itemID ) )
+		return NULL;
+
+	return m_DataItems[ itemID ];
+}
+
+//-----------------------------------------------------------------------------
+// Purpose: returns user data for itemID
+//-----------------------------------------------------------------------------
+unsigned int ListPanel::GetItemUserData(int itemID)
+{
+	if ( !m_DataItems.IsValidIndex( itemID ) )
+		return 0;
+
+	return m_DataItems[itemID]->userData;
+}
+
+//-----------------------------------------------------------------------------
+// Purpose: updates the view with any changes to the data
+//-----------------------------------------------------------------------------
+void ListPanel::ApplyItemChanges(int itemID)
+{
+	// reindex the item and then redraw
+	IndexItem(itemID);
+	InvalidateLayout();
+}
+
+//-----------------------------------------------------------------------------
+// Purpose:
+//-----------------------------------------------------------------------------
+void ListPanel::RereadAllItems()
+{
+	//!! need to make this more efficient
+	InvalidateLayout();
+}
+
+//-----------------------------------------------------------------------------
 // Purpose: returns the number of selected items
 //-----------------------------------------------------------------------------
 int ListPanel::GetSelectedItemsCount()
 {
 	return m_SelectedItems.Count();
+}
+
+//-----------------------------------------------------------------------------
+// Purpose:
+//-----------------------------------------------------------------------------
+int ListPanel::GetSelectedItem(int selectionIndex)
+{
+	if ( m_SelectedItems.IsValidIndex(selectionIndex))
+		return m_SelectedItems[selectionIndex];
+
+	return -1;
 }
 
 //-----------------------------------------------------------------------------
@@ -127,6 +201,16 @@ void ListPanel::SetSingleSelectedItem( int itemID )
 {
 	ClearSelectedItems();
 	AddSelectedItem(itemID);
+}
+
+//-----------------------------------------------------------------------------
+// Purpose:
+//-----------------------------------------------------------------------------
+void ListPanel::OnSizeChanged(int wide, int tall)
+{
+	BaseClass::OnSizeChanged(wide, tall);
+	InvalidateLayout();
+	Repaint();
 }
 
 //-----------------------------------------------------------------------------

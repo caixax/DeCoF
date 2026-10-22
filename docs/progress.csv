@@ -11433,25 +11433,25 @@ gameui,100845A2,221,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,linux: _ZN5v
 gameui,1008467F,313,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,linux: _ZN5vgui29ListPanel12RemoveColumnEi
 gameui,100847B8,127,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,linux: _ZN5vgui29ListPanel10FindColumnEPKc
 gameui,10084837,238,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,linux: _ZN5vgui29ListPanel7AddItemEPK9KeyValuesjbb
-gameui,10084925,68,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,linux: _ZN5vgui29ListPanel11SetUserDataEij
+gameui,10084925,68,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,,linux: _ZN5vgui29ListPanel11SetUserDataEij
 gameui,10084969,114,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,linux: _ZN5vgui29ListPanel21GetItemIDFromUserDataEj
 gameui,100849DB,25,?GetItemCount@ListPanel@vgui2@@UAEHXZ,vgui2::ListPanel::GetItemCount,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29ListPanel12GetItemCountEv
 gameui,100849F4,127,,,UNKNOWN,,,,TODO,,,
 gameui,10084A73,66,,,UNKNOWN,,,,TODO,,,
 gameui,10084AB5,31,?GetItemCurrentRow@ListPanel@vgui2@@UAEHH@Z,vgui2::ListPanel::GetItemCurrentRow,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29ListPanel17GetItemCurrentRowEi
-gameui,10084AD4,65,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,linux: _ZN5vgui29ListPanel16GetItemIDFromRowEi
+gameui,10084AD4,65,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,,linux: _ZN5vgui29ListPanel16GetItemIDFromRowEi
 gameui,10084B15,16,?InvalidItemID@ListPanel@vgui2@@UBEHXZ,vgui2::ListPanel::InvalidItemID,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZNK5vgui29ListPanel13InvalidItemIDEv
 gameui,10084B25,31,?IsValidItemID@ListPanel@vgui2@@UAE_NH@Z,vgui2::ListPanel::IsValidItemID,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29ListPanel13IsValidItemIDEi
-gameui,10084B44,64,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,linux: _ZN5vgui29ListPanel11GetItemDataEi
-gameui,10084B84,67,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,linux: _ZN5vgui29ListPanel15GetItemUserDataEi
-gameui,10084BC7,43,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,linux: _ZN5vgui29ListPanel16ApplyItemChangesEi
+gameui,10084B44,64,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,,linux: _ZN5vgui29ListPanel11GetItemDataEi
+gameui,10084B84,67,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,,linux: _ZN5vgui29ListPanel15GetItemUserDataEi
+gameui,10084BC7,43,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,,linux: _ZN5vgui29ListPanel16ApplyItemChangesEi
 gameui,10084BF2,509,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,linux: _ZN5vgui29ListPanel9IndexItemEi
-gameui,10084DEF,29,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,linux: _ZN5vgui29ListPanel14RereadAllItemsEv
+gameui,10084DEF,29,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,,linux: _ZN5vgui29ListPanel14RereadAllItemsEv
 gameui,10084E0C,332,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,linux: _ZN5vgui29ListPanel10RemoveItemEi
 gameui,10084F58,328,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,linux: _ZN5vgui29ListPanel14DeleteAllItemsEv
 gameui,100850A0,182,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,linux: _ZN5vgui29ListPanel14ResetScrollBarEv
 gameui,10085156,25,?GetSelectedItemsCount@ListPanel@vgui2@@UAEHXZ,vgui2::ListPanel::GetSelectedItemsCount,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29ListPanel21GetSelectedItemsCountEv
-gameui,1008516F,65,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,linux: _ZN5vgui29ListPanel15GetSelectedItemEi
+gameui,1008516F,65,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,,linux: _ZN5vgui29ListPanel15GetSelectedItemEi
 gameui,100851B0,20,?GetSelectedColumn@ListPanel@vgui2@@UAEHXZ,vgui2::ListPanel::GetSelectedColumn,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29ListPanel17GetSelectedColumnEv
 gameui,100851C4,25,?ClearSelectedItems@ListPanel@vgui2@@UAEXXZ,vgui2::ListPanel::ClearSelectedItems,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29ListPanel18ClearSelectedItemsEv
 gameui,100851DD,135,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,linux: _ZN5vgui29ListPanel15AddSelectedItemEi
@@ -11461,7 +11461,7 @@ gameui,10085344,280,,,UNKNOWN,,,,TODO,,,
 gameui,1008545C,243,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,linux: _ZN5vgui29ListPanel12GetCellImageEii
 gameui,1008554F,1391,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,linux: _ZN5vgui29ListPanel15GetCellRendererEii
 gameui,10085ABE,1838,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,linux: _ZN5vgui29ListPanel13PerformLayoutEv
-gameui,100861EC,58,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,linux: _ZN5vgui29ListPanel13OnSizeChangedEii
+gameui,100861EC,58,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,,linux: _ZN5vgui29ListPanel13OnSizeChangedEii
 gameui,10086226,951,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,linux: _ZN5vgui29ListPanel5PaintEv
 gameui,100865DD,19,?PaintBackground@ListPanel@vgui2@@MAEXXZ,vgui2::ListPanel::PaintBackground,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29ListPanel15PaintBackgroundEv
 gameui,100865F0,1390,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,linux: _ZN5vgui29ListPanel14OnMousePressedENS_9MouseCodeE
