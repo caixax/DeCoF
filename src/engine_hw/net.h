@@ -306,6 +306,10 @@ void		Net_APIShutDown( void );
 // Generic Ack
 #define	A2A_ACK			'j'		// general acknowledgement without info
 
+// Batch of server addresses from the master
+#define	A2M_GET_SERVERS_BATCH	'e'	// + unique id of the batch to start from
+#define	M2A_SERVER_BATCH	'f'		// + unique id + list of ip:port
+
 // Challenge response from master
 #define	M2A_CHALLENGE	's'		// + challenge value
 
