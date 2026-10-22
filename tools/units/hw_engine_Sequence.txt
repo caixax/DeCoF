@@ -47,3 +47,13 @@ _Sequence_FlattenEntry
 _Sequence_FlattenAllEntries
 _Sequence_ParseBuffer
 _Sequence_ParseFile
+_Sequence_FreeDataPointer
+_Sequence_Init
+_SequenceGet
+_Sequence_FreeCommand
+_Sequence_FreeEntry
+_Sequence_FreeSentence
+_Sequence_FreeSentenceGroup
+_Sequence_FreeSentenceGroupEntries
+_Sequence_PurgeEntries
+_Sequence_OnLevelLoad

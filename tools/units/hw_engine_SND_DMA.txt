@@ -30,3 +30,8 @@ _S_SoundList
 _S_LocalSound
 _S_Say
 _S_Say_Reliable
+_S_AmbientOff
+_S_AmbientOn
+_S_ClearPrecache
+_S_BeginPrecaching
+_S_EndPrecaching

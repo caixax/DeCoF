@@ -77,6 +77,28 @@ void		ED_LoadFromFile (char *data);
 edict_t		*EDICT_NUM(int n);
 int			NUM_FOR_EDICT(const edict_t *e);
 
+#define	SF_NOTINDEATHMATCH	0x0800	// Do not spawn when deathmatch and loading entities from a file
+
+void		ED_ClearEdict( edict_t *e );
+void		ED_Count( void );
+char		*ED_NewString( const char *string );
+char		*ED_ParseEdict( char *data, edict_t *ent );
+void		PR_Init( void );
+void		SuckOutClassname( char *szInputStream, edict_t *pEdict );
+void		FreeEntPrivateData( edict_t *pEdict );
+void		FreeAllEntPrivateData( void );
+void		*PvAllocEntPrivateData( edict_t *pEdict, int cb );
+void		*PvEntPrivateData( edict_t *pEdict );
+edict_t		*PEntityOfEntOffset( int iEntOffset );
+int			EntOffsetOfPEntity( const edict_t *pEdict );
+edict_t		*PEntityOfEntIndex( int iEntIndex );
+const char	*SzFromIndex( int iString );
+entvars_t	*GetVarsOfEnt( edict_t *pEdict );
+edict_t		*FindEntityByVars( entvars_t *pvars );
+int			AllocEngineString( const char *szValue );
+void		SaveSpawnParms( edict_t *pEdict );
+void		*GetModelPtr( edict_t *pEdict );
+
 #define PROG_TO_EDICT(e) ((edict_t *)((byte *)sv.edicts + e))
 
 #endif // PROGS_H

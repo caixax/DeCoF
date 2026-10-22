@@ -35,6 +35,8 @@ void	SetSecondaryProgressBarText( const char *statusText );
 // C wrappers around the object at 0x01EDF808 (names unproven)
 void	LevelLoaded_guess( struct model_s *worldmodel );	// 0x01D10DBF, CL_SignonReply
 void	ResetLevelState_guess( void );						// 0x01D10E09, CL_Disconnect and CL_ParseServerInfo
+struct texture_s;
+struct texture_s	*AdsDecalTexture_guess( int index );	// 0x01D10E18, Draw_DecalTexture (decal indices with 0x4000 set)
 struct ref_params_s;
 void	AdsRenderView_guess( struct model_s *worldmodel, struct ref_params_s *pparams, float *viewangles );	// 0x01D10DD2, V_RenderView
 

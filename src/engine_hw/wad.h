@@ -42,5 +42,6 @@ typedef struct lumpinfo_s
 } lumpinfo_t;
 
 void	*W_GetLumpName( int wad, char *name );
+void	W_CleanupName( char *in, char *out );
 
 #endif // WAD_H

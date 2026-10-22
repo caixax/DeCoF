@@ -8,6 +8,7 @@
 #define FILESYSTEM_SEEK_TAIL	2
 
 FileHandle_t	FS_Open( const char *pFileName, const char *pOptions );
+FileHandle_t	FS_OpenPathID( const char *pFileName, const char *pOptions, const char *pathID );
 void			FS_Close( FileHandle_t file );
 void			FS_Seek( FileHandle_t file, int pos, int seekType );
 unsigned int	FS_Tell( FileHandle_t file );
@@ -27,6 +28,12 @@ int				FS_GetFileTime( const char *pFileName );
 void			FS_Flush( FileHandle_t file );
 char			*FS_GetLocalPath( const char *pFileName, char *pLocalPath, int localPathBufferSize );
 void			*FS_LoadLibrary( const char *dllName );
+
+typedef int FileFindHandle_t;
+
+const char		*FS_FindFirst( const char *pWildCard, FileFindHandle_t *pHandle, const char *pathID );
+const char		*FS_FindNext( FileFindHandle_t handle );
+void			FS_FindClose( FileFindHandle_t handle );
 
 int				FileSystem_SetGameDirectory( const char *pDefaultDir, const char *pGameDir );
 int				FileSystem_AddFallbackGameDir( const char *pGameDir );

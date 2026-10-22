@@ -2185,3 +2185,12 @@ va,name,kind,evidence
 01DA880D,_GetModelPtr,func,engine/pr_edict.c of the Linux hw.so DWARF in source order last function; Mod_Extradata(sv.models[pEdict->v.modelindex]); enginefuncs table slot 0x01ECEE40 (added by an agent)
 01E1339C,_BoxOnPlaneSide,func,"called by R_StudioCheckBBox with mins, maxs and a plane, returning 2 for back side; the Quake id386 assembly version (no C BoxOnPlaneSide in mathlib.c)"
 01D6762B,_R_LightVec,func,"Linux hw.so DWARF gl_rlight.c R_LightVec( start, end ) returning colorVec; called five times by R_StudioDynamicLight"
+01D4E1AF,_Draw_AllocateCacheSpace,func,"engine/decals.c of the Linux hw.so DWARF in source order after Draw_DecalShutdown; Mem_Malloc(cacheMax * 0x44) into wad->cache, memset, stores tempWad (added by an agent)"
+01D4E1F0,_Draw_CacheWadInitFromFile,func,engine/decals.c of the Linux hw.so DWARF in source order before Draw_CacheWadInit (its only caller with Decal_Init); string Wad file %s doesn't have WAD3 id (added by an agent)
+01D4F112,_CustomDecal_Validate,func,"engine/decals.c of the Linux hw.so DWARF in source order after Decal_Init; Mem_ZeroMalloc(0x30) fake wad, CustomDecal_Init(.., -2) then Draw_CustomCacheGet (added by an agent)"
+01D4F194,_CustomDecal_Init,func,"engine/decals.c of the Linux hw.so DWARF in source order after CustomDecal_Validate; Draw_CustomCacheWadInit(16, ..), Draw_CacheWadHandler(Draw_MiptexTexture, 32), Draw_CacheByIndex per lump (added by an agent)"
+01D4F404,_Draw_CacheReload,func,"engine/decals.c of the Linux hw.so DWARF in source order after Draw_CustomCacheGet; called by Draw_CacheGet with (wad, i, pLump, pic, clean, path); string Draw_CacheGet: not enough space for %s in %s (added by an agent)"
+01D4F99C,_Draw_CacheFindIndex,func,engine/decals.c of the Linux hw.so DWARF in source order last function after Draw_CacheIndex; returns the cache index whose name matches path or -1 (added by an agent)
+01D4E130,_Draw_Shutdown,func,"engine/decals.c of the Linux hw.so DWARF in source order first function; already named, added to the decals unit (added by an agent)"
+01D4E17A,_Draw_DecalShutdown,func,"engine/decals.c of the Linux hw.so DWARF in source order after Draw_Shutdown; already named, added to the decals unit (added by an agent)"
+01D4F8ED,_Draw_CacheIndex,func,"engine/decals.c of the Linux hw.so DWARF in source order before Draw_CacheFindIndex; already named, added to the decals unit (added by an agent)"

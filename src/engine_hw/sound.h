@@ -155,6 +155,8 @@ extern	cvar_t		ambient_fade;
 extern	cvar_t		snd_noextraupdate;
 extern	cvar_t		snd_show;
 extern	cvar_t		_snd_mixahead;
+extern	cvar_t		s_distance;
+extern	cvar_t		s_verbwet;
 
 extern	qboolean	fakedma;
 extern	int			sound_started;
@@ -171,6 +173,7 @@ sfx_t	*S_FindName( char *name, int *pfInCache );
 void	SND_Spatialize( channel_t *ch );
 
 // snd_mem.c
+void	ResampleSfx( sfx_t *sfx, int inrate, int inwidth, byte *data );
 sfxcache_t	*S_LoadSound( sfx_t *s, channel_t *ch );
 sfxcache_t	*S_LoadStreamSound( sfx_t *s, channel_t *ch );
 wavinfo_t	GetWavinfo( char *name, byte *wav, int wavlength );
@@ -204,6 +207,7 @@ extern	char	*rgpszrawsentence[CVOXFILESENTENCEMAX];
 
 // voice_sound_engine_interface.cpp
 sfxcache_t	*VoiceSE_GetSFXCache( sfx_t *pSFX );
+void	VoiceSE_NotifyFreeChannel( int iChannel );
 
 // sequence.cpp
 void	Sequence_Init( void );
