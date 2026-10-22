@@ -2613,6 +2613,18 @@
           ]
         },
         {
+          "name": "vgui2/controls/ScrollBar",
+          "source": "src/vgui2/controls/ScrollBar.cpp",
+          "functions_file": "tools/units/hw_vgui2_controls_ScrollBar.txt",
+          "includes": [
+            "src/gameui",
+            "src/public",
+            "src/common",
+            "src/engine",
+            "src/pm_shared"
+          ]
+        },
+        {
           "name": "engine/net_api",
           "source": "src/engine_hw/net_api.c",
           "functions_file": "tools/units/hw_engine_net_api.txt"
@@ -3117,6 +3129,11 @@
           "name": "vgui2/controls/MenuButton",
           "source": "src/vgui2/controls/MenuButton.cpp",
           "functions_file": "tools/units/gameui_vgui2_controls_MenuButton.txt"
+        },
+        {
+          "name": "vgui2/controls/ScrollBar",
+          "source": "src/vgui2/controls/ScrollBar.cpp",
+          "functions_file": "tools/units/gameui_vgui2_controls_ScrollBar.txt"
         }
       ]
     }
