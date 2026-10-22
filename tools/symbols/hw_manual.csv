@@ -2913,3 +2913,4 @@ va,name,kind,evidence
 01E4FD70,?InitVar@PanelMessageFunc_DisarmItem@MenuItem@vgui2@@SAXXZ,func,"MenuItem.cpp COMDAT (MenuItemCheckImage of the RTTI, MenuItem message map), order and size of the compiled object"
 01E4FDE0,??0PanelMessageFunc_OnKeyModeSet@MenuItem@vgui2@@QAE@XZ,func,"MenuItem.cpp COMDAT (MenuItemCheckImage of the RTTI, MenuItem message map), order and size of the compiled object"
 01E4FE00,?InitVar@PanelMessageFunc_OnKeyModeSet@MenuItem@vgui2@@SAXXZ,func,"MenuItem.cpp COMDAT (MenuItemCheckImage of the RTTI, MenuItem message map), order and size of the compiled object"
+01DE4ADC,_SV_SetMonsterSize_guess,func,"engine/sv_move.c between SV_movetest and SV_movestep, no Linux counterpart and no callers; sets mins/maxs[0..1] to -size/size when FL_MONSTER and maxs[0] <= 4; name is a guess (added by an agent)"

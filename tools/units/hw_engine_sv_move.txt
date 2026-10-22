@@ -9,3 +9,4 @@ _SV_CloseEnough
 _SV_ReachedGoal
 _SV_NewChaseDir2
 _SV_MoveToOrigin_I
+_SV_SetMonsterSize_guess
