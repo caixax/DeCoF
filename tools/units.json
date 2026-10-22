@@ -2721,6 +2721,61 @@
           "name": "engine/cl_spectator",
           "source": "src/engine_hw/cl_spectator.c",
           "functions_file": "tools/units/hw_engine_cl_spectator.txt"
+        },
+        {
+          "name": "engine/DemoPlayerWrapper",
+          "source": "src/engine_hw/DemoPlayerWrapper.cpp",
+          "functions_file": "tools/units/hw_engine_DemoPlayerWrapper.txt"
+        },
+        {
+          "name": "engine/download",
+          "source": "src/engine_hw/download.cpp",
+          "functions_file": "tools/units/hw_engine_download.txt"
+        },
+        {
+          "name": "engine/eventapi",
+          "source": "src/engine_hw/eventapi.c",
+          "functions_file": "tools/units/hw_engine_eventapi.txt"
+        },
+        {
+          "name": "engine/filesystem_internal",
+          "source": "src/engine_hw/filesystem_internal.cpp",
+          "functions_file": "tools/units/hw_engine_filesystem_internal.txt"
+        },
+        {
+          "name": "engine/filesystem",
+          "source": "src/engine_hw/filesystem.cpp",
+          "functions_file": "tools/units/hw_engine_filesystem.txt"
+        },
+        {
+          "name": "engine/glHud",
+          "source": "src/engine_hw/glHud.c",
+          "functions_file": "tools/units/hw_engine_glHud.txt"
+        },
+        {
+          "name": "engine/gl_refrag",
+          "source": "src/engine_hw/gl_refrag.c",
+          "functions_file": "tools/units/hw_engine_gl_refrag.txt"
+        },
+        {
+          "name": "engine/HUD",
+          "source": "src/engine_hw/HUD.c",
+          "functions_file": "tools/units/hw_engine_HUD.txt"
+        },
+        {
+          "name": "engine/module",
+          "source": "src/engine_hw/module.cpp",
+          "functions_file": "tools/units/hw_engine_module.txt"
+        },
+        {
+          "name": "engine/ipratelimitWrapper",
+          "source": "src/engine_hw/ipratelimitWrapper.cpp",
+          "functions_file": "tools/units/hw_engine_ipratelimitWrapper.txt"
+        },
+        {
+          "name": "engine/dinput_guess",
+          "source": "src/engine_hw/dinput_guess.c",
+          "functions_file": "tools/units/hw_engine_dinput_guess.txt"
         }
       ]
     },

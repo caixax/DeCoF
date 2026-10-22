@@ -49,6 +49,6 @@ typedef struct module_s
 extern	module_t	g_module;
 
 void	CloseSecurityModule( void );
-void	Module_ProcessExpired_guess( void );	// 0x01D8DBA4: frees the timed out entries of the list at 0x023CA308
+void	Net_APICheckTimeouts( void );
 
 #endif // CDLL_INT_H

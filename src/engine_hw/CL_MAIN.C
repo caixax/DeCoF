@@ -1770,7 +1770,7 @@ void CL_ReadPackets( void )
 		SetLoadingProgressBarStatusText( "#GameUI_VerifyingAndDownloading" );
 	}
 
-	Module_ProcessExpired_guess();
+	Net_APICheckTimeouts();
 }
 
 /*

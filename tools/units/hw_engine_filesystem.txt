@@ -1,0 +1,3 @@
+_CheckLiblistForFallbackDir
+_FileSystem_SetGameDirectory
+_FileSystem_AddFallbackGameDir

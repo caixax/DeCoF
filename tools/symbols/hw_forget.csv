@@ -11,3 +11,4 @@ va,name,evidence
 01E2EF30,"??1CAtlBaseModule@ATL@@QAE@XZ","Ghidra signature name; the address is ??1?$CUtlDict@UPanelMessageMapDictionaryEntry@CPanelMessageMapDictionary@@H@@QAE@XZ (tools/fid_fix.py)"
 01E28BEC,"CSliderCtrl::FUN_01e28bec","Ghidra signature name; the address is ?GetBounds@Panel@vgui2@@QAEXAAH000@Z (tools/fid_fix.py)"
 01E28BBF,"CSliderCtrl::FUN_01e28bbf","Ghidra signature name; the address is ?SetBounds@Panel@vgui2@@QAEXHHHH@Z (tools/fid_fix.py)"
+01D8DBA4,_Module_ProcessExpired_guess,"harvested placeholder name; engine/net_api.c Linux DWARF source order puts Net_APICheckTimeouts here (hw_manual.csv)"

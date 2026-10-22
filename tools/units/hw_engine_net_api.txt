@@ -1,5 +1,13 @@
+_Net_APIClearQueries
+_Net_KillServerList
 _Net_APIInit
 _Net_APIShutDown
+_Net_APIFind
+_Net_APIFindContext
+_Net_APIFailed
+_Net_APIKill
+_Net_APICheckTimeouts
+_Net_GetBatchServerList
 _Net_SendRequest
 _NET_ParsePlayersResponse
 _NET_ParseRulesResponse
@@ -12,3 +20,5 @@ _Net_InitNetworking
 _Net_CompareAdr
 _Net_GetPacketLoss
 _Net_Status
+_Net_CancelRequest
+_Net_CancelAllRequests

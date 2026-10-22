@@ -1,0 +1,6 @@
+_CL_HTTPUpdate
+_CL_HTTPStop_f
+_CL_QueueHTTPDownload
+_CL_GetDownloadQueueSize
+_CL_CanUseHTTPDownload
+_CL_MarkMapAsUsingHTTPDownload
