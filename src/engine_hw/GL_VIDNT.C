@@ -15,6 +15,7 @@
 #include "qgl.h"
 #include "mem.h"
 #include "filesystem_.h"
+#include "winquake.h"
 
 extern int		gD3DMode;
 extern int		atismoothing;
@@ -45,6 +46,7 @@ int			gGLHardwareType = 0;
 
 qboolean	gfMiniDriver_guess;
 RECT		WindowRect;
+int			window_center_x, window_center_y;
 
 const char	*gl_vendor;
 const char	*gl_renderer;
@@ -731,4 +733,26 @@ void VID_TakeSnapshotRect( const char *pFilename, int x, int y, int w, int h )
 
 	Mem_Free( hp );
 	FS_Close( file );
+}
+
+void VID_UpdateWindowVars( RECT *prc, int x, int y )
+{
+	WindowRect = *prc;
+
+	if ( pmainwindow )
+	{
+		GetWindowRect( *pmainwindow, prc );
+		window_center_x = ( prc->left + prc->right ) / 2;
+		window_center_y = ( prc->top + prc->bottom ) / 2;
+	}
+	else
+	{
+		window_center_x = x;
+		window_center_y = y;
+	}
+}
+
+int VID_AllocBuffers( void )
+{
+	return 1;
 }
