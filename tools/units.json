@@ -3230,6 +3230,11 @@
           "name": "vgui2/controls/MenuItem",
           "source": "src/vgui2/controls/MenuItem.cpp",
           "functions_file": "tools/units/gameui_vgui2_controls_MenuItem.txt"
+        },
+        {
+          "name": "public/utlsymbol",
+          "source": "src/public/utlsymbol.cpp",
+          "functions_file": "tools/units/gameui_public_utlsymbol.txt"
         }
       ]
     }

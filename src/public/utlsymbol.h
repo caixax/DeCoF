@@ -94,6 +94,11 @@ public:
 	void  RemoveAll();
 
 protected:
+	// Less function, for sorting strings
+	static bool SymLess( unsigned int const& i1, unsigned int const& i2 );
+	// case insensitive less function
+	static bool SymLessi( unsigned int const& i1, unsigned int const& i2 );
+
 	CUtlRBTree< unsigned int, unsigned short > m_Lookup;
 	CUtlVector< char > m_Strings;
 };

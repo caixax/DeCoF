@@ -3301,3 +3301,55 @@ va,name,kind,evidence
 01E53DA0,?CopyConstruct@@YAXPAPAVMenuItem@vgui2@@ABQAV12@@Z,func,"vgui2/controls/Menu.cpp: called by CUtlLinkedList<MenuItem *>::InsertBefore 01E53A10; CopyConstruct<int> is 01E396A0 in BuildGroup.cpp, linked first"
 01E53EA0,?NumAllocated@?$CUtlMemory@UListElem_t@?$CUtlLinkedList@PAVMenuItem@vgui2@@H@@@@QBEHXZ,func,"vgui2/controls/Menu.cpp: called by CUtlLinkedList<MenuItem *>::Alloc 01E53B90; the CUtlMemory<int> copy is 01E397F0 in BuildGroup.cpp, linked first"
 01E53F90,?IsExternallyAllocated@?$CUtlMemory@UListElem_t@?$CUtlLinkedList@PAVMenuItem@vgui2@@H@@@@QBE_NXZ,func,"vgui2/controls/Menu.cpp: called by CUtlMemory<ListElem_t>::Purge 01E53D50 and Grow 01E53EC0; the CUtlMemory<int> copy is 01E398E0 in BuildGroup.cpp, linked first"
+01E32630,?Initialize@CUtlSymbol@@KAXXZ,func,"public/utlsymbol.cpp of the Linux DWARF (line 31, _ZN10CUtlSymbol10InitializeEv): bytes identical to our object (relocated fields masked), one-to-one"
+01E32682,?CurrTable@CUtlSymbol@@KAPAVCUtlSymbolTable@@XZ,func,"public/utlsymbol.cpp of the Linux DWARF (line 42, _ZN10CUtlSymbol9CurrTableEv): bytes identical to our object, one-to-one"
+01E32691,??0CUtlSymbol@@QAE@PBD@Z,func,"public/utlsymbol.cpp of the Linux DWARF (line 53, _ZN10CUtlSymbolC2EPKc): bytes identical to our object, one-to-one"
+01E326C4,?String@CUtlSymbol@@QBEPBDXZ,func,"public/utlsymbol.cpp of the Linux DWARF (line 58): bytes identical to our object, one-to-one"
+01E326EC,??8CUtlSymbol@@QBE_NPBD@Z,func,"public/utlsymbol.cpp of the Linux DWARF (line 67, operator== with a string): bytes identical to our object, one-to-one"
+01E32740,?SymLess@CUtlSymbolTable@@KA_NABI0@Z,func,"public/utlsymbol.cpp of the Linux DWARF (line 91, _ZN15CUtlSymbolTable7SymLessERKjS1_): strcmp of the g_LessCtx strings, passed by the CUtlSymbolTable constructor when caseInsensitive is false"
+01E327C2,?SymLessi@CUtlSymbolTable@@KA_NABI0@Z,func,"public/utlsymbol.cpp of the Linux DWARF (line 102, _ZN15CUtlSymbolTable8SymLessiERKjS1_): _stricmp of the g_LessCtx strings, passed by the CUtlSymbolTable constructor when caseInsensitive is true"
+01E328B6,?Find@CUtlSymbolTable@@QAE?AVCUtlSymbol@@PBD@Z,func,"public/utlsymbol.cpp of the Linux DWARF (line 130): bytes identical to our object, one-to-one; called first by AddString"
+01E32A47,?RemoveAll@CUtlSymbolTable@@QAEXXZ,func,"public/utlsymbol.cpp of the Linux DWARF (line 187): bytes identical to our object, one-to-one"
+01E32A70,??0LessCtx_t@@QAE@XZ,func,"public/utlsymbol.cpp (struct LessCtx_t of the Linux DWARF): zeroes both members, called by $E2 on g_LessCtx; bytes identical to our object"
+01E32AC0,?IsValid@CUtlSymbol@@QBE_NXZ,func,"public/utlsymbol.cpp COMDAT tail: bytes identical to our object, one-to-one"
+01E32AE0,??0?$CUtlRBTree@IG@@QAE@HHP6A_NABI0@Z@Z,func,"public/utlsymbol.cpp COMDAT tail: bytes identical to our object, one-to-one; called by the CUtlSymbolTable constructor"
+01E32B40,??1?$CUtlRBTree@IG@@QAE@XZ,func,"public/utlsymbol.cpp COMDAT tail: bytes identical to our object, one-to-one; called by the CUtlSymbolTable destructor"
+01E32B60,??A?$CUtlRBTree@IG@@QBEABIG@Z,func,"public/utlsymbol.cpp COMDAT tail: bytes identical to our object, one-to-one"
+01E32B80,?Insert@?$CUtlRBTree@IG@@QAEGABI@Z,func,"public/utlsymbol.cpp COMDAT tail: bytes identical to our object, one-to-one"
+01E32BC0,?Find@?$CUtlRBTree@IG@@QBEGABI@Z,func,"public/utlsymbol.cpp COMDAT tail: bytes identical to our object, one-to-one"
+01E32C70,?RemoveAll@?$CUtlRBTree@IG@@QAEXXZ,func,"public/utlsymbol.cpp COMDAT tail: bytes identical to our object, one-to-one"
+01E32D50,??A?$CUtlVector@D@@QBEABDH@Z,func,"public/utlsymbol.cpp COMDAT tail: bytes identical to the CUtlVector<char> operator[] pair (folded by /OPT:ICF); the const one, called by the const CUtlSymbolTable::String, while the non-const one at 01D0FF60 belongs to an earlier object"
+01E32D70,?ResetDbgInfo@?$CUtlRBTree@IG@@IAEXXZ,func,"public/utlsymbol.cpp COMDAT tail: called by the CUtlRBTree constructor at 01E32AE0; folded by /OPT:ICF with the CUtlVector<char> one, position in the object"
+01E32D80,?Element@?$CUtlRBTree@IG@@QBEABIG@Z,func,public/utlsymbol.cpp COMDAT tail: called by the const CUtlRBTree operator[] at 01E32B60 (the const Element comes first in the object)
+01E32DB0,?Element@?$CUtlRBTree@IG@@QAEAAIG@Z,func,public/utlsymbol.cpp COMDAT tail: called by CUtlRBTree::Insert at 01E32B80 to copy the inserted data
+01E32DE0,?LeftChild@?$CUtlRBTree@IG@@QBEGG@Z,func,"public/utlsymbol.cpp COMDAT tail: bytes identical to our object, one-to-one"
+01E32E00,?RightChild@?$CUtlRBTree@IG@@QBEGG@Z,func,"public/utlsymbol.cpp COMDAT tail: bytes identical to our object, one-to-one"
+01E32E20,?IsValidIndex@?$CUtlRBTree@IG@@QBE_NG@Z,func,"public/utlsymbol.cpp COMDAT tail: bytes identical to our object, one-to-one"
+01E32E60,?InvalidIndex@?$CUtlRBTree@IG@@SAGXZ,func,"public/utlsymbol.cpp COMDAT tail: bytes identical to our object, one-to-one"
+01E32E70,?SetLeftChild@?$CUtlRBTree@IG@@IAEXGG@Z,func,"public/utlsymbol.cpp COMDAT tail: bytes identical to our object, one-to-one"
+01E32EA0,?SetRightChild@?$CUtlRBTree@IG@@IAEXGG@Z,func,"public/utlsymbol.cpp COMDAT tail: bytes identical to our object, one-to-one"
+01E32ED0,?CreateInsertedNode@?$CUtlRBTree@IG@@IAEGABI@Z,func,"public/utlsymbol.cpp COMDAT tail: bytes identical to our object, one-to-one"
+01E32F80,??0?$CUtlMemory@UNode_t@?$CUtlRBTree@IG@@@@QAE@HH@Z,func,"public/utlsymbol.cpp COMDAT tail: bytes identical to our object, one-to-one"
+01E32FF0,?CopyConstruct@@YAXPAIABI@Z,func,"public/utlsymbol.cpp COMDAT tail: bytes identical to our object, one-to-one"
+01E33030,?Destruct@@YAXPAI@Z,func,public/utlsymbol.cpp COMDAT tail: empty Destruct folded by /OPT:ICF; the unsigned int one sits at this position of the object (after CopyConstruct)
+01E33060,?Links@?$CUtlRBTree@IG@@IAEAAULinks_t@1@G@Z,func,"public/utlsymbol.cpp COMDAT tail: bytes identical to our object, one-to-one"
+01E33090,?Links@?$CUtlRBTree@IG@@IBEABULinks_t@1@G@Z,func,"public/utlsymbol.cpp COMDAT tail: bytes identical to our object, one-to-one"
+01E33130,?InsertAt@?$CUtlRBTree@IG@@IAEGG_N@Z,func,"public/utlsymbol.cpp COMDAT tail: bytes identical to our object, one-to-one"
+01E33210,??A?$CUtlMemory@UNode_t@?$CUtlRBTree@IG@@@@QBEABUNode_t@?$CUtlRBTree@IG@@H@Z,func,public/utlsymbol.cpp COMDAT tail: called by the const Links at 01E33090
+01E33230,??A?$CUtlMemory@UNode_t@?$CUtlRBTree@IG@@@@QAEAAUNode_t@?$CUtlRBTree@IG@@H@Z,func,public/utlsymbol.cpp COMDAT tail: called by the non-const Links at 01E33060
+01E332A0,?NewNode@?$CUtlRBTree@IG@@QAEGXZ,func,"public/utlsymbol.cpp COMDAT tail: bytes identical to our object, one-to-one"
+01E33350,?InsertRebalance@?$CUtlRBTree@IG@@IAEXG@Z,func,"public/utlsymbol.cpp of the Linux DWARF (line 555): bytes identical to our object, one-to-one"
+01E335A0,?IsExternallyAllocated@?$CUtlMemory@UNode_t@?$CUtlRBTree@IG@@@@QBE_NXZ,func,public/utlsymbol.cpp COMDAT tail: folded by /OPT:ICF with the CUtlMemory<char> and <unsigned char> copies; the Node_t one sits at this position of the object (after InsertRebalance)
+01E335C0,?Parent@?$CUtlRBTree@IG@@QBEGG@Z,func,"public/utlsymbol.cpp COMDAT tail: bytes identical to our object, one-to-one"
+01E335E0,?IsLeftChild@?$CUtlRBTree@IG@@QBE_NG@Z,func,public/utlsymbol.cpp COMDAT tail: compares with LeftChild (01E32DE0) of the Parent
+01E33620,?IsRightChild@?$CUtlRBTree@IG@@QBE_NG@Z,func,public/utlsymbol.cpp COMDAT tail: compares with RightChild (01E32E00) of the Parent
+01E33660,?IsRoot@?$CUtlRBTree@IG@@QBE_NG@Z,func,"public/utlsymbol.cpp COMDAT tail: bytes identical to our object, one-to-one"
+01E33690,?IsRed@?$CUtlRBTree@IG@@IBE_NG@Z,func,"public/utlsymbol.cpp COMDAT tail: bytes identical to our object, one-to-one"
+01E336C0,?Color@?$CUtlRBTree@IG@@IBE?AW4NodeColor_t@1@G@Z,func,"public/utlsymbol.cpp COMDAT tail: bytes identical to our object, one-to-one"
+01E336F0,?SetColor@?$CUtlRBTree@IG@@IAEXGW4NodeColor_t@1@@Z,func,"public/utlsymbol.cpp COMDAT tail: bytes identical to our object, one-to-one"
+01E33720,?RotateLeft@?$CUtlRBTree@IG@@IAEXG@Z,func,public/utlsymbol.cpp of the Linux DWARF (line 495): InsertRebalance rotates the parent left after IsRightChild in its IsLeftChild branch
+01E33880,?RotateRight@?$CUtlRBTree@IG@@IAEXG@Z,func,public/utlsymbol.cpp of the Linux DWARF (line 525): InsertRebalance rotates the grandparent right in its IsLeftChild branch
+01E339E0,?NumAllocated@?$CUtlMemory@UNode_t@?$CUtlRBTree@IG@@@@QBEHXZ,func,public/utlsymbol.cpp COMDAT tail: folded by /OPT:ICF with the CUtlMemory<char> copy; the Node_t one sits at this position of the object (before the Node_t Grow)
+01E33A00,?Grow@?$CUtlMemory@UNode_t@?$CUtlRBTree@IG@@@@QAEXH@Z,func,"public/utlsymbol.cpp COMDAT tail: bytes identical to our object, one-to-one"
+01E33AD0,?Construct@@YAXPAI@Z,func,"public/utlsymbol.cpp COMDAT tail: bytes identical to our object, one-to-one"
+01E33AF0,?SetParent@?$CUtlRBTree@IG@@IAEXGG@Z,func,"public/utlsymbol.cpp COMDAT tail: bytes identical to our object, one-to-one"
