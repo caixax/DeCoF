@@ -13,6 +13,50 @@ extern	double	g_flLatency;
 
 /*
 =================
+NET_ParseRulesResponse
+
+=================
+*/
+void NET_ParseRulesResponse( char *info )
+{
+	char	*val;
+	char	value[1024];
+	char	*s;
+	int	i;
+	char	key[64];
+	int	c;
+
+	info[0] = 0;
+
+	MSG_BeginReading();
+	MSG_ReadLong();
+	MSG_ReadByte();
+	c = MSG_ReadShort();
+
+	Info_SetValueForKey( info, "rules", va( "%i", c ), 2048 );
+
+	for ( i = 0; i < c; i++ )
+	{
+		s = MSG_ReadString();
+		if ( !s || !s[0] )
+			break;
+
+		Q_strncpy( key, s, sizeof( key ) - 1 );
+		key[sizeof( key ) - 1] = 0;
+
+		val = MSG_ReadString();
+		if ( !val )
+			break;
+
+		Q_strncpy( value, val, sizeof( value ) - 1 );
+		value[sizeof( value ) - 1] = 0;
+
+		Info_SetValueForKey( info, key, value, 2048 );
+	}
+}
+
+/*
+=================
 Net_AdrToString
 
 =================
