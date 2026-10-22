@@ -9281,8 +9281,8 @@ gameui,10040240,25,,,UNKNOWN,,,,TODO,,,
 gameui,10040260,66,,,UNKNOWN,,,,TODO,,,
 gameui,100402B0,64,,,UNKNOWN,,,,TODO,,,
 gameui,100402F0,10,,,UNKNOWN,,,,TODO,,,
-gameui,10040300,64,,,UNKNOWN,,,,TODO,,,
-gameui,10040340,10,,,UNKNOWN,,,,TODO,,,
+gameui,10040300,64,?GetMessageMap@MenuItem@vgui2@@UAEPAUPanelMessageMap@2@XZ,vgui2::MenuItem::GetMessageMap,UNKNOWN,vgui2/controls/MenuItem.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10040340,10,?GetPanelClassName@MenuItem@vgui2@@SAPBDXZ,vgui2::MenuItem::GetPanelClassName,UNKNOWN,vgui2/controls/MenuItem.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,10040350,64,,,UNKNOWN,,,,TODO,,,
 gameui,10040390,10,,,UNKNOWN,,,,TODO,,,
 gameui,100403C0,176,,,UNKNOWN,,,,TODO,,,
@@ -12166,55 +12166,55 @@ gameui,10099220,25,?IsExternallyAllocated@?$CUtlMemory@UListElem_t@?$CUtlLinkedL
 gameui,10099240,25,?Construct@@YAXPAPAVMenuItem@vgui2@@@Z,Construct,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
 gameui,10099260,68,?IsInList@?$CUtlLinkedList@PAVMenuItem@vgui2@@H@@QBE_NH@Z,"*,int>::IsInList",UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
 gameui,100992B0,28,?Previous@?$CUtlLinkedList@PAVMenuItem@vgui2@@H@@QBEHH@Z,"*,int>::Previous",UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
-gameui,100992D0,170,,,UNKNOWN,,,,TODO,,,
-gameui,1009937A,170,,,UNKNOWN,,,,TODO,,,
-gameui,10099424,212,,,UNKNOWN,,,,TODO,,,
-gameui,100994F8,357,,,UNKNOWN,vgui2/controls/MenuItem.cpp,,,TODO,,,linux: _ZN5vgui28MenuItem4InitEv
-gameui,1009965D,25,,,UNKNOWN,vgui2/controls/MenuItem.cpp,,,TODO,,,linux: _ZN5vgui28MenuItem13GetParentMenuEv
-gameui,10099676,77,,,UNKNOWN,vgui2/controls/MenuItem.cpp,,,TODO,,,linux: _ZN5vgui28MenuItem13PerformLayoutEv
-gameui,100996C3,96,,,UNKNOWN,vgui2/controls/MenuItem.cpp,,,TODO,,,linux: _ZN5vgui28MenuItem16CloseCascadeMenuEv
-gameui,10099723,123,,,UNKNOWN,vgui2/controls/MenuItem.cpp,,,TODO,,,linux: _ZN5vgui28MenuItem13OnCursorMovedEii
-gameui,1009979E,132,,,UNKNOWN,vgui2/controls/MenuItem.cpp,,,TODO,,,linux: _ZN5vgui28MenuItem15OnCursorEnteredEv
-gameui,10099822,132,,,UNKNOWN,vgui2/controls/MenuItem.cpp,,,TODO,,,linux: _ZN5vgui28MenuItem14OnCursorExitedEv
-gameui,100998A6,59,,,UNKNOWN,vgui2/controls/MenuItem.cpp,,,TODO,,,linux: _ZN5vgui28MenuItem17OnKeyCodeReleasedENS_7KeyCodeE
-gameui,100998E1,78,,,UNKNOWN,vgui2/controls/MenuItem.cpp,,,TODO,,,linux: _ZN5vgui28MenuItem7ArmItemEv
-gameui,1009992F,69,,,UNKNOWN,vgui2/controls/MenuItem.cpp,,,TODO,,,linux: _ZN5vgui28MenuItem10DisarmItemEv
-gameui,10099974,19,,,UNKNOWN,vgui2/controls/MenuItem.cpp,,,TODO,,,linux: _ZN5vgui28MenuItem11IsItemArmedEv
-gameui,10099987,38,,CMDIChildWnd::GetMessageBar,ENGINE,vgui2/controls/MenuItem.cpp,,,TODO,,ghidra,linux: _ZN5vgui28MenuItem11OnKillFocusEv
-gameui,100999AD,228,,vgui2::MenuItem::FireActionSignal,ENGINE,vgui2/controls/MenuItem.cpp,,,TODO,,linux_symbols:caller:0.845,linux: _ZN5vgui28MenuItem16FireActionSignalEv
-gameui,10099A91,88,,,UNKNOWN,vgui2/controls/MenuItem.cpp,,,TODO,,,linux: _ZN5vgui28MenuItem15OpenCascadeMenuEv
-gameui,10099AE9,28,,,UNKNOWN,vgui2/controls/MenuItem.cpp,,,TODO,,,linux: _ZN5vgui28MenuItem7HasMenuEv
-gameui,10099B05,663,,vgui2::MenuItem::ApplySchemeSettings,ENGINE,vgui2/controls/MenuItem.cpp,,,TODO,,linux_symbols:string:0.857,linux: _ZN5vgui28MenuItem19ApplySchemeSettingsEPNS_7ISchemeE
-gameui,10099D9C,51,,,UNKNOWN,vgui2/controls/MenuItem.cpp,,,TODO,,,linux: _ZN5vgui28MenuItem16GetTextImageSizeERiS1_
-gameui,10099DCF,51,,,UNKNOWN,vgui2/controls/MenuItem.cpp,,,TODO,,,linux: _ZN5vgui28MenuItem16SetTextImageSizeEii
-gameui,10099E02,74,,,UNKNOWN,vgui2/controls/MenuItem.cpp,,,TODO,,,linux: _ZN5vgui28MenuItem17GetArrowImageSizeERiS1_
-gameui,10099E4C,101,,,UNKNOWN,vgui2/controls/MenuItem.cpp,,,TODO,,,linux: _ZN5vgui28MenuItem17GetCheckImageSizeERiS1_
-gameui,10099EB1,20,,,UNKNOWN,vgui2/controls/MenuItem.cpp,,,TODO,,,linux: _ZN5vgui28MenuItem7GetMenuEv
-gameui,10099EC5,15,,,UNKNOWN,vgui2/controls/MenuItem.cpp,,,TODO,,,linux: _ZN5vgui28MenuItem9GetBorderEbbbb
-gameui,10099ED4,108,,,UNKNOWN,vgui2/controls/MenuItem.cpp,,,TODO,,,linux: _ZN5vgui28MenuItem12OnKeyModeSetEv
-gameui,10099F40,20,,,UNKNOWN,vgui2/controls/MenuItem.cpp,,,TODO,,,linux: _ZN5vgui28MenuItem11IsCheckableEv
-gameui,10099F54,20,,,UNKNOWN,vgui2/controls/MenuItem.cpp,,,TODO,,,linux: _ZN5vgui28MenuItem9IsCheckedEv
-gameui,10099F68,40,,,UNKNOWN,vgui2/controls/MenuItem.cpp,,,TODO,,,linux: _ZN5vgui28MenuItem10SetCheckedEb
-gameui,10099F90,13,,,UNKNOWN,vgui2/controls/MenuItem.cpp,,,TODO,,,linux: _ZN5vgui28MenuItem18CanBeDefaultButtonEv
-gameui,10099F9D,92,,,UNKNOWN,,,,TODO,,,
-gameui,10099FF9,74,,,UNKNOWN,,,,TODO,,,
-gameui,1009A050,46,,,UNKNOWN,,,,TODO,,,
-gameui,1009A080,59,,,UNKNOWN,,,,TODO,,,
-gameui,1009A0C0,346,,,UNKNOWN,,,,TODO,,,
-gameui,1009A220,46,,,UNKNOWN,,,,TODO,,,
-gameui,1009A250,19,,,UNKNOWN,,,,TODO,,,
-gameui,1009A270,19,,,UNKNOWN,,,,TODO,,,
-gameui,1009A290,102,,,UNKNOWN,,,,TODO,,,
-gameui,1009A300,10,,,UNKNOWN,,,,TODO,,,
-gameui,1009A310,19,,,UNKNOWN,,,,TODO,,,
-gameui,1009A330,107,,,UNKNOWN,,,,TODO,,,
-gameui,1009A3A0,120,,,UNKNOWN,,,,TODO,,,
-gameui,1009A420,19,,,UNKNOWN,,,,TODO,,,
-gameui,1009A440,107,,,UNKNOWN,,,,TODO,,,
-gameui,1009A4B0,19,,,UNKNOWN,,,,TODO,,,
-gameui,1009A4D0,107,,,UNKNOWN,,,,TODO,,,
-gameui,1009A540,19,,,UNKNOWN,,,,TODO,,,
-gameui,1009A560,107,,,UNKNOWN,,,,TODO,,,
+gameui,100992D0,170,??0MenuItem@vgui2@@QAE@PAVMenu@1@PBD10_N@Z,vgui2::MenuItem::MenuItem,UNKNOWN,vgui2/controls/MenuItem.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1009937A,170,??0MenuItem@vgui2@@QAE@PAVMenu@1@PBDPBG0_N@Z,vgui2::MenuItem::MenuItem,UNKNOWN,vgui2/controls/MenuItem.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10099424,212,??1MenuItem@vgui2@@UAE@XZ,vgui2::MenuItem::~MenuItem,UNKNOWN,vgui2/controls/MenuItem.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100994F8,357,?Init@MenuItem@vgui2@@MAEXXZ,vgui2::MenuItem::Init,UNKNOWN,vgui2/controls/MenuItem.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui28MenuItem4InitEv
+gameui,1009965D,25,?GetParentMenu@MenuItem@vgui2@@QAEPAVMenu@2@XZ,vgui2::MenuItem::GetParentMenu,UNKNOWN,vgui2/controls/MenuItem.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui28MenuItem13GetParentMenuEv
+gameui,10099676,77,?PerformLayout@MenuItem@vgui2@@UAEXXZ,vgui2::MenuItem::PerformLayout,UNKNOWN,vgui2/controls/MenuItem.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui28MenuItem13PerformLayoutEv
+gameui,100996C3,96,?CloseCascadeMenu@MenuItem@vgui2@@QAEXXZ,vgui2::MenuItem::CloseCascadeMenu,UNKNOWN,vgui2/controls/MenuItem.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui28MenuItem16CloseCascadeMenuEv
+gameui,10099723,123,?OnCursorMoved@MenuItem@vgui2@@UAEXHH@Z,vgui2::MenuItem::OnCursorMoved,UNKNOWN,vgui2/controls/MenuItem.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui28MenuItem13OnCursorMovedEii
+gameui,1009979E,132,?OnCursorEntered@MenuItem@vgui2@@UAEXXZ,vgui2::MenuItem::OnCursorEntered,UNKNOWN,vgui2/controls/MenuItem.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui28MenuItem15OnCursorEnteredEv
+gameui,10099822,132,?OnCursorExited@MenuItem@vgui2@@UAEXXZ,vgui2::MenuItem::OnCursorExited,UNKNOWN,vgui2/controls/MenuItem.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui28MenuItem14OnCursorExitedEv
+gameui,100998A6,59,?OnKeyCodeReleased@MenuItem@vgui2@@MAEXW4KeyCode@2@@Z,vgui2::MenuItem::OnKeyCodeReleased,UNKNOWN,vgui2/controls/MenuItem.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui28MenuItem17OnKeyCodeReleasedENS_7KeyCodeE
+gameui,100998E1,78,?ArmItem@MenuItem@vgui2@@UAEXXZ,vgui2::MenuItem::ArmItem,UNKNOWN,vgui2/controls/MenuItem.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui28MenuItem7ArmItemEv
+gameui,1009992F,69,?DisarmItem@MenuItem@vgui2@@UAEXXZ,vgui2::MenuItem::DisarmItem,UNKNOWN,vgui2/controls/MenuItem.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui28MenuItem10DisarmItemEv
+gameui,10099974,19,?IsItemArmed@MenuItem@vgui2@@QAE_NXZ,vgui2::MenuItem::IsItemArmed,UNKNOWN,vgui2/controls/MenuItem.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui28MenuItem11IsItemArmedEv
+gameui,10099987,38,?OnKillFocus@MenuItem@vgui2@@UAEXXZ,vgui2::MenuItem::OnKillFocus,ENGINE,vgui2/controls/MenuItem.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui28MenuItem11OnKillFocusEv
+gameui,100999AD,228,?FireActionSignal@MenuItem@vgui2@@UAEXXZ,vgui2::MenuItem::FireActionSignal,ENGINE,vgui2/controls/MenuItem.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui28MenuItem16FireActionSignalEv
+gameui,10099A91,88,?OpenCascadeMenu@MenuItem@vgui2@@QAEXXZ,vgui2::MenuItem::OpenCascadeMenu,UNKNOWN,vgui2/controls/MenuItem.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui28MenuItem15OpenCascadeMenuEv
+gameui,10099AE9,28,?HasMenu@MenuItem@vgui2@@QAE_NXZ,vgui2::MenuItem::HasMenu,UNKNOWN,vgui2/controls/MenuItem.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui28MenuItem7HasMenuEv
+gameui,10099B05,663,?ApplySchemeSettings@MenuItem@vgui2@@MAEXPAVIScheme@2@@Z,vgui2::MenuItem::ApplySchemeSettings,ENGINE,vgui2/controls/MenuItem.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui28MenuItem19ApplySchemeSettingsEPNS_7ISchemeE
+gameui,10099D9C,51,?GetTextImageSize@MenuItem@vgui2@@QAEXAAH0@Z,vgui2::MenuItem::GetTextImageSize,UNKNOWN,vgui2/controls/MenuItem.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui28MenuItem16GetTextImageSizeERiS1_
+gameui,10099DCF,51,?SetTextImageSize@MenuItem@vgui2@@QAEXHH@Z,vgui2::MenuItem::SetTextImageSize,UNKNOWN,vgui2/controls/MenuItem.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui28MenuItem16SetTextImageSizeEii
+gameui,10099E02,74,?GetArrowImageSize@MenuItem@vgui2@@QAEXAAH0@Z,vgui2::MenuItem::GetArrowImageSize,UNKNOWN,vgui2/controls/MenuItem.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui28MenuItem17GetArrowImageSizeERiS1_
+gameui,10099E4C,101,?GetCheckImageSize@MenuItem@vgui2@@QAEXAAH0@Z,vgui2::MenuItem::GetCheckImageSize,UNKNOWN,vgui2/controls/MenuItem.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui28MenuItem17GetCheckImageSizeERiS1_
+gameui,10099EB1,20,?GetMenu@MenuItem@vgui2@@QAEPAVMenu@2@XZ,vgui2::MenuItem::GetMenu,UNKNOWN,vgui2/controls/MenuItem.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui28MenuItem7GetMenuEv
+gameui,10099EC5,15,?GetBorder@MenuItem@vgui2@@MAEPAVIBorder@2@_N000@Z,vgui2::MenuItem::GetBorder,UNKNOWN,vgui2/controls/MenuItem.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui28MenuItem9GetBorderEbbbb
+gameui,10099ED4,108,?OnKeyModeSet@MenuItem@vgui2@@MAEXXZ,vgui2::MenuItem::OnKeyModeSet,UNKNOWN,vgui2/controls/MenuItem.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui28MenuItem12OnKeyModeSetEv
+gameui,10099F40,20,?IsCheckable@MenuItem@vgui2@@QAE_NXZ,vgui2::MenuItem::IsCheckable,UNKNOWN,vgui2/controls/MenuItem.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui28MenuItem11IsCheckableEv
+gameui,10099F54,20,?IsChecked@MenuItem@vgui2@@QAE_NXZ,vgui2::MenuItem::IsChecked,UNKNOWN,vgui2/controls/MenuItem.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui28MenuItem9IsCheckedEv
+gameui,10099F68,40,?SetChecked@MenuItem@vgui2@@QAEX_N@Z,vgui2::MenuItem::SetChecked,UNKNOWN,vgui2/controls/MenuItem.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui28MenuItem10SetCheckedEb
+gameui,10099F90,13,?CanBeDefaultButton@MenuItem@vgui2@@UAE_NXZ,vgui2::MenuItem::CanBeDefaultButton,UNKNOWN,vgui2/controls/MenuItem.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui28MenuItem18CanBeDefaultButtonEv
+gameui,10099F9D,92,?GetUserData@MenuItem@vgui2@@QAEPAVKeyValues@@XZ,vgui2::MenuItem::GetUserData,UNKNOWN,vgui2/controls/MenuItem.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10099FF9,74,?SetUserData@MenuItem@vgui2@@QAEXPBVKeyValues@@@Z,vgui2::MenuItem::SetUserData,UNKNOWN,vgui2/controls/MenuItem.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1009A050,46,??_GMenuItem@vgui2@@UAEPAXI@Z,destructor',UNKNOWN,vgui2/controls/MenuItem.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1009A080,59,??0MenuItemCheckImage@@QAE@PAVMenuItem@vgui2@@@Z,MenuItemCheckImage::MenuItemCheckImage,UNKNOWN,vgui2/controls/MenuItem.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1009A0C0,346,?Paint@MenuItemCheckImage@@UAEXXZ,MenuItemCheckImage::Paint,UNKNOWN,vgui2/controls/MenuItem.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1009A220,46,??_GMenuItemCheckImage@@UAEPAXI@Z,destructor',UNKNOWN,vgui2/controls/MenuItem.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1009A250,19,??1MenuItemCheckImage@@UAE@XZ,MenuItemCheckImage::~MenuItemCheckImage,UNKNOWN,vgui2/controls/MenuItem.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1009A270,19,??0MenuItem_RegisterMap@MenuItem@vgui2@@QAE@XZ,vgui2::MenuItem::MenuItem_RegisterMap::MenuItem_RegisterMap,UNKNOWN,vgui2/controls/MenuItem.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1009A290,102,?ChainToMap@MenuItem@vgui2@@SAXXZ,vgui2::MenuItem::ChainToMap,UNKNOWN,vgui2/controls/MenuItem.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1009A300,10,?GetPanelBaseClassName@MenuItem@vgui2@@SAPBDXZ,vgui2::MenuItem::GetPanelBaseClassName,UNKNOWN,vgui2/controls/MenuItem.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1009A310,19,??0PanelMessageFunc_OnKillFocus@MenuItem@vgui2@@QAE@XZ,vgui2::MenuItem::PanelMessageFunc_OnKillFocus::PanelMessageFunc_OnKillFocus,UNKNOWN,vgui2/controls/MenuItem.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1009A330,107,?InitVar@PanelMessageFunc_OnKillFocus@MenuItem@vgui2@@SAXXZ,vgui2::MenuItem::PanelMessageFunc_OnKillFocus::InitVar,UNKNOWN,vgui2/controls/MenuItem.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1009A3A0,120,?AddToMap@MenuItem@vgui2@@SAXPBDP8Panel@2@AEXXZHH0H0@Z,vgui2::MenuItem::AddToMap,UNKNOWN,vgui2/controls/MenuItem.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1009A420,19,??0PanelMessageFunc_ArmItem@MenuItem@vgui2@@QAE@XZ,vgui2::MenuItem::PanelMessageFunc_ArmItem::PanelMessageFunc_ArmItem,UNKNOWN,vgui2/controls/MenuItem.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1009A440,107,?InitVar@PanelMessageFunc_ArmItem@MenuItem@vgui2@@SAXXZ,vgui2::MenuItem::PanelMessageFunc_ArmItem::InitVar,UNKNOWN,vgui2/controls/MenuItem.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1009A4B0,19,??0PanelMessageFunc_DisarmItem@MenuItem@vgui2@@QAE@XZ,vgui2::MenuItem::PanelMessageFunc_DisarmItem::PanelMessageFunc_DisarmItem,UNKNOWN,vgui2/controls/MenuItem.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1009A4D0,107,?InitVar@PanelMessageFunc_DisarmItem@MenuItem@vgui2@@SAXXZ,vgui2::MenuItem::PanelMessageFunc_DisarmItem::InitVar,UNKNOWN,vgui2/controls/MenuItem.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1009A540,19,??0PanelMessageFunc_OnKeyModeSet@MenuItem@vgui2@@QAE@XZ,vgui2::MenuItem::PanelMessageFunc_OnKeyModeSet::PanelMessageFunc_OnKeyModeSet,UNKNOWN,vgui2/controls/MenuItem.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1009A560,107,?InitVar@PanelMessageFunc_OnKeyModeSet@MenuItem@vgui2@@SAXXZ,vgui2::MenuItem::PanelMessageFunc_OnKeyModeSet::InitVar,UNKNOWN,vgui2/controls/MenuItem.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,1009A5E0,107,,,UNKNOWN,,,,TODO,,,
 gameui,1009A64B,28,,,UNKNOWN,,,,TODO,,,
 gameui,1009A667,31,,,UNKNOWN,vgui2/controls/Image.cpp,,,TODO,,,linux: _ZN5vgui25Image6SetPosEii
@@ -31234,57 +31234,57 @@ hw,01E4EA00,10,,,ENGINE,vgui2/controls/MessageBox.cpp,,,TODO,,,
 hw,01E4EA10,19,,,ENGINE,vgui2/controls/MessageBox.cpp,,,TODO,,,
 hw,01E4EA30,107,,,ENGINE,vgui2/controls/MessageBox.cpp,,,TODO,,,
 hw,01E4EAA0,120,,,ENGINE,vgui2/controls/MessageBox.cpp,,,TODO,,,
-hw,01E4EB20,170,,,ENGINE,vgui2/controls/MenuItem.cpp,,,TODO,,,
-hw,01E4EBCA,170,,,ENGINE,vgui2/controls/MenuItem.cpp,,,TODO,,,
-hw,01E4EC74,212,,,ENGINE,vgui2/controls/MenuItem.cpp,,,TODO,,,
-hw,01E4ED48,357,,,UNKNOWN,vgui2/controls/MenuItem.cpp,,,TODO,,,linux: _ZN5vgui28MenuItem4InitEv
-hw,01E4EEAD,25,,,UNKNOWN,vgui2/controls/MenuItem.cpp,,,TODO,,,linux: _ZN5vgui28MenuItem13GetParentMenuEv
-hw,01E4EEC6,77,,,UNKNOWN,vgui2/controls/MenuItem.cpp,,,TODO,,,linux: _ZN5vgui28MenuItem13PerformLayoutEv
-hw,01E4EF13,96,,,UNKNOWN,vgui2/controls/MenuItem.cpp,,,TODO,,,linux: _ZN5vgui28MenuItem16CloseCascadeMenuEv
-hw,01E4EF73,123,,,UNKNOWN,vgui2/controls/MenuItem.cpp,,,TODO,,,linux: _ZN5vgui28MenuItem13OnCursorMovedEii
-hw,01E4EFEE,132,,,UNKNOWN,vgui2/controls/MenuItem.cpp,,,TODO,,,linux: _ZN5vgui28MenuItem15OnCursorEnteredEv
-hw,01E4F072,132,,,UNKNOWN,vgui2/controls/MenuItem.cpp,,,TODO,,,linux: _ZN5vgui28MenuItem14OnCursorExitedEv
-hw,01E4F0F6,59,,,UNKNOWN,vgui2/controls/MenuItem.cpp,,,TODO,,,linux: _ZN5vgui28MenuItem17OnKeyCodeReleasedENS_7KeyCodeE
-hw,01E4F131,78,,,UNKNOWN,vgui2/controls/MenuItem.cpp,,,TODO,,,linux: _ZN5vgui28MenuItem7ArmItemEv
-hw,01E4F17F,69,,,UNKNOWN,vgui2/controls/MenuItem.cpp,,,TODO,,,linux: _ZN5vgui28MenuItem10DisarmItemEv
-hw,01E4F1C4,19,,,UNKNOWN,vgui2/controls/MenuItem.cpp,,,TODO,,,linux: _ZN5vgui28MenuItem11IsItemArmedEv
-hw,01E4F1D7,38,,CMDIChildWnd::GetMessageBar,ENGINE,vgui2/controls/MenuItem.cpp,,,TODO,,ghidra,linux: _ZN5vgui28MenuItem11OnKillFocusEv
-hw,01E4F1FD,228,,,UNKNOWN,vgui2/controls/MenuItem.cpp,,,TODO,,,linux: _ZN5vgui28MenuItem16FireActionSignalEv
-hw,01E4F2E1,88,,,UNKNOWN,vgui2/controls/MenuItem.cpp,,,TODO,,,linux: _ZN5vgui28MenuItem15OpenCascadeMenuEv
-hw,01E4F339,28,,,UNKNOWN,vgui2/controls/MenuItem.cpp,,,TODO,,,linux: _ZN5vgui28MenuItem7HasMenuEv
-hw,01E4F355,663,,vgui2::MenuItem::ApplySchemeSettings,ENGINE,vgui2/controls/MenuItem.cpp,,,TODO,,linux_symbols:string:0.653,
-hw,01E4F5EC,51,,,UNKNOWN,vgui2/controls/MenuItem.cpp,,,TODO,,,linux: _ZN5vgui28MenuItem16GetTextImageSizeERiS1_
-hw,01E4F61F,51,,,UNKNOWN,vgui2/controls/MenuItem.cpp,,,TODO,,,linux: _ZN5vgui28MenuItem16SetTextImageSizeEii
-hw,01E4F652,74,,,UNKNOWN,vgui2/controls/MenuItem.cpp,,,TODO,,,linux: _ZN5vgui28MenuItem17GetArrowImageSizeERiS1_
-hw,01E4F69C,101,,,UNKNOWN,vgui2/controls/MenuItem.cpp,,,TODO,,,linux: _ZN5vgui28MenuItem17GetCheckImageSizeERiS1_
-hw,01E4F701,20,,,UNKNOWN,vgui2/controls/MenuItem.cpp,,,TODO,,,linux: _ZN5vgui28MenuItem7GetMenuEv
-hw,01E4F715,15,,,UNKNOWN,vgui2/controls/MenuItem.cpp,,,TODO,,,linux: _ZN5vgui28MenuItem9GetBorderEbbbb
-hw,01E4F724,108,,,UNKNOWN,vgui2/controls/MenuItem.cpp,,,TODO,,,linux: _ZN5vgui28MenuItem12OnKeyModeSetEv
-hw,01E4F790,20,,,UNKNOWN,vgui2/controls/MenuItem.cpp,,,TODO,,,linux: _ZN5vgui28MenuItem11IsCheckableEv
-hw,01E4F7A4,20,,,UNKNOWN,vgui2/controls/MenuItem.cpp,,,TODO,,,linux: _ZN5vgui28MenuItem9IsCheckedEv
-hw,01E4F7B8,40,,,UNKNOWN,vgui2/controls/MenuItem.cpp,,,TODO,,,linux: _ZN5vgui28MenuItem10SetCheckedEb
-hw,01E4F7E0,13,,,UNKNOWN,vgui2/controls/MenuItem.cpp,,,TODO,,,linux: _ZN5vgui28MenuItem18CanBeDefaultButtonEv
-hw,01E4F7ED,92,,,ENGINE,vgui2/controls/MenuItem.cpp,,,TODO,,,
-hw,01E4F849,74,,,ENGINE,vgui2/controls/MenuItem.cpp,,,TODO,,,
-hw,01E4F8A0,46,,,ENGINE,vgui2/controls/MenuItem.cpp,,,TODO,,,
-hw,01E4F8D0,59,,,ENGINE,vgui2/controls/MenuItem.cpp,,,TODO,,,
-hw,01E4F910,346,,,ENGINE,vgui2/controls/MenuItem.cpp,,,TODO,,,
-hw,01E4FA70,46,,,ENGINE,vgui2/controls/MenuItem.cpp,,,TODO,,,
-hw,01E4FAA0,19,,,ENGINE,vgui2/controls/MenuItem.cpp,,,TODO,,,
-hw,01E4FAC0,19,,,ENGINE,vgui2/controls/MenuItem.cpp,,,TODO,,,
-hw,01E4FAE0,102,,,ENGINE,vgui2/controls/MenuItem.cpp,,,TODO,,,
-hw,01E4FB50,64,,,ENGINE,vgui2/controls/MenuItem.cpp,,,TODO,,,
-hw,01E4FB90,10,,,ENGINE,vgui2/controls/MenuItem.cpp,,,TODO,,,
-hw,01E4FBA0,10,,,ENGINE,vgui2/controls/MenuItem.cpp,,,TODO,,,
-hw,01E4FBB0,19,,,ENGINE,vgui2/controls/MenuItem.cpp,,,TODO,,,
-hw,01E4FBD0,107,,,ENGINE,vgui2/controls/MenuItem.cpp,,,TODO,,,
-hw,01E4FC40,120,,,ENGINE,vgui2/controls/MenuItem.cpp,,,TODO,,,
-hw,01E4FCC0,19,,,ENGINE,vgui2/controls/MenuItem.cpp,,,TODO,,,
-hw,01E4FCE0,107,,,ENGINE,vgui2/controls/MenuItem.cpp,,,TODO,,,
-hw,01E4FD50,19,,,ENGINE,vgui2/controls/MenuItem.cpp,,,TODO,,,
-hw,01E4FD70,107,,,ENGINE,vgui2/controls/MenuItem.cpp,,,TODO,,,
-hw,01E4FDE0,19,,,ENGINE,vgui2/controls/MenuItem.cpp,,,TODO,,,
-hw,01E4FE00,107,,,ENGINE,vgui2/controls/MenuItem.cpp,,,TODO,,,
+hw,01E4EB20,170,??0MenuItem@vgui2@@QAE@PAVMenu@1@PBD10_N@Z,vgui2::MenuItem::MenuItem,ENGINE,vgui2/controls/MenuItem.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E4EBCA,170,??0MenuItem@vgui2@@QAE@PAVMenu@1@PBDPBG0_N@Z,vgui2::MenuItem::MenuItem,ENGINE,vgui2/controls/MenuItem.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E4EC74,212,??1MenuItem@vgui2@@UAE@XZ,vgui2::MenuItem::~MenuItem,ENGINE,vgui2/controls/MenuItem.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E4ED48,357,?Init@MenuItem@vgui2@@MAEXXZ,vgui2::MenuItem::Init,UNKNOWN,vgui2/controls/MenuItem.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui28MenuItem4InitEv
+hw,01E4EEAD,25,?GetParentMenu@MenuItem@vgui2@@QAEPAVMenu@2@XZ,vgui2::MenuItem::GetParentMenu,UNKNOWN,vgui2/controls/MenuItem.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui28MenuItem13GetParentMenuEv
+hw,01E4EEC6,77,?PerformLayout@MenuItem@vgui2@@UAEXXZ,vgui2::MenuItem::PerformLayout,UNKNOWN,vgui2/controls/MenuItem.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui28MenuItem13PerformLayoutEv
+hw,01E4EF13,96,?CloseCascadeMenu@MenuItem@vgui2@@QAEXXZ,vgui2::MenuItem::CloseCascadeMenu,UNKNOWN,vgui2/controls/MenuItem.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui28MenuItem16CloseCascadeMenuEv
+hw,01E4EF73,123,?OnCursorMoved@MenuItem@vgui2@@UAEXHH@Z,vgui2::MenuItem::OnCursorMoved,UNKNOWN,vgui2/controls/MenuItem.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui28MenuItem13OnCursorMovedEii
+hw,01E4EFEE,132,?OnCursorEntered@MenuItem@vgui2@@UAEXXZ,vgui2::MenuItem::OnCursorEntered,UNKNOWN,vgui2/controls/MenuItem.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui28MenuItem15OnCursorEnteredEv
+hw,01E4F072,132,?OnCursorExited@MenuItem@vgui2@@UAEXXZ,vgui2::MenuItem::OnCursorExited,UNKNOWN,vgui2/controls/MenuItem.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui28MenuItem14OnCursorExitedEv
+hw,01E4F0F6,59,?OnKeyCodeReleased@MenuItem@vgui2@@MAEXW4KeyCode@2@@Z,vgui2::MenuItem::OnKeyCodeReleased,UNKNOWN,vgui2/controls/MenuItem.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui28MenuItem17OnKeyCodeReleasedENS_7KeyCodeE
+hw,01E4F131,78,?ArmItem@MenuItem@vgui2@@UAEXXZ,vgui2::MenuItem::ArmItem,UNKNOWN,vgui2/controls/MenuItem.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui28MenuItem7ArmItemEv
+hw,01E4F17F,69,?DisarmItem@MenuItem@vgui2@@UAEXXZ,vgui2::MenuItem::DisarmItem,UNKNOWN,vgui2/controls/MenuItem.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui28MenuItem10DisarmItemEv
+hw,01E4F1C4,19,?IsItemArmed@MenuItem@vgui2@@QAE_NXZ,vgui2::MenuItem::IsItemArmed,UNKNOWN,vgui2/controls/MenuItem.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui28MenuItem11IsItemArmedEv
+hw,01E4F1D7,38,?OnKillFocus@MenuItem@vgui2@@UAEXXZ,vgui2::MenuItem::OnKillFocus,ENGINE,vgui2/controls/MenuItem.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui28MenuItem11OnKillFocusEv
+hw,01E4F1FD,228,?FireActionSignal@MenuItem@vgui2@@UAEXXZ,vgui2::MenuItem::FireActionSignal,UNKNOWN,vgui2/controls/MenuItem.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui28MenuItem16FireActionSignalEv
+hw,01E4F2E1,88,?OpenCascadeMenu@MenuItem@vgui2@@QAEXXZ,vgui2::MenuItem::OpenCascadeMenu,UNKNOWN,vgui2/controls/MenuItem.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui28MenuItem15OpenCascadeMenuEv
+hw,01E4F339,28,?HasMenu@MenuItem@vgui2@@QAE_NXZ,vgui2::MenuItem::HasMenu,UNKNOWN,vgui2/controls/MenuItem.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui28MenuItem7HasMenuEv
+hw,01E4F355,663,?ApplySchemeSettings@MenuItem@vgui2@@MAEXPAVIScheme@2@@Z,vgui2::MenuItem::ApplySchemeSettings,ENGINE,vgui2/controls/MenuItem.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E4F5EC,51,?GetTextImageSize@MenuItem@vgui2@@QAEXAAH0@Z,vgui2::MenuItem::GetTextImageSize,UNKNOWN,vgui2/controls/MenuItem.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui28MenuItem16GetTextImageSizeERiS1_
+hw,01E4F61F,51,?SetTextImageSize@MenuItem@vgui2@@QAEXHH@Z,vgui2::MenuItem::SetTextImageSize,UNKNOWN,vgui2/controls/MenuItem.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui28MenuItem16SetTextImageSizeEii
+hw,01E4F652,74,?GetArrowImageSize@MenuItem@vgui2@@QAEXAAH0@Z,vgui2::MenuItem::GetArrowImageSize,UNKNOWN,vgui2/controls/MenuItem.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui28MenuItem17GetArrowImageSizeERiS1_
+hw,01E4F69C,101,?GetCheckImageSize@MenuItem@vgui2@@QAEXAAH0@Z,vgui2::MenuItem::GetCheckImageSize,UNKNOWN,vgui2/controls/MenuItem.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui28MenuItem17GetCheckImageSizeERiS1_
+hw,01E4F701,20,?GetMenu@MenuItem@vgui2@@QAEPAVMenu@2@XZ,vgui2::MenuItem::GetMenu,UNKNOWN,vgui2/controls/MenuItem.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui28MenuItem7GetMenuEv
+hw,01E4F715,15,?GetBorder@MenuItem@vgui2@@MAEPAVIBorder@2@_N000@Z,vgui2::MenuItem::GetBorder,UNKNOWN,vgui2/controls/MenuItem.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui28MenuItem9GetBorderEbbbb
+hw,01E4F724,108,?OnKeyModeSet@MenuItem@vgui2@@MAEXXZ,vgui2::MenuItem::OnKeyModeSet,UNKNOWN,vgui2/controls/MenuItem.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui28MenuItem12OnKeyModeSetEv
+hw,01E4F790,20,?IsCheckable@MenuItem@vgui2@@QAE_NXZ,vgui2::MenuItem::IsCheckable,UNKNOWN,vgui2/controls/MenuItem.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui28MenuItem11IsCheckableEv
+hw,01E4F7A4,20,?IsChecked@MenuItem@vgui2@@QAE_NXZ,vgui2::MenuItem::IsChecked,UNKNOWN,vgui2/controls/MenuItem.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui28MenuItem9IsCheckedEv
+hw,01E4F7B8,40,?SetChecked@MenuItem@vgui2@@QAEX_N@Z,vgui2::MenuItem::SetChecked,UNKNOWN,vgui2/controls/MenuItem.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui28MenuItem10SetCheckedEb
+hw,01E4F7E0,13,?CanBeDefaultButton@MenuItem@vgui2@@UAE_NXZ,vgui2::MenuItem::CanBeDefaultButton,UNKNOWN,vgui2/controls/MenuItem.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui28MenuItem18CanBeDefaultButtonEv
+hw,01E4F7ED,92,?GetUserData@MenuItem@vgui2@@QAEPAVKeyValues@@XZ,vgui2::MenuItem::GetUserData,ENGINE,vgui2/controls/MenuItem.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E4F849,74,?SetUserData@MenuItem@vgui2@@QAEXPBVKeyValues@@@Z,vgui2::MenuItem::SetUserData,ENGINE,vgui2/controls/MenuItem.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E4F8A0,46,??_GMenuItem@vgui2@@UAEPAXI@Z,destructor',ENGINE,vgui2/controls/MenuItem.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E4F8D0,59,??0MenuItemCheckImage@@QAE@PAVMenuItem@vgui2@@@Z,MenuItemCheckImage::MenuItemCheckImage,ENGINE,vgui2/controls/MenuItem.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E4F910,346,?Paint@MenuItemCheckImage@@UAEXXZ,MenuItemCheckImage::Paint,ENGINE,vgui2/controls/MenuItem.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E4FA70,46,??_GMenuItemCheckImage@@UAEPAXI@Z,destructor',ENGINE,vgui2/controls/MenuItem.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E4FAA0,19,??1MenuItemCheckImage@@UAE@XZ,MenuItemCheckImage::~MenuItemCheckImage,ENGINE,vgui2/controls/MenuItem.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E4FAC0,19,??0MenuItem_RegisterMap@MenuItem@vgui2@@QAE@XZ,vgui2::MenuItem::MenuItem_RegisterMap::MenuItem_RegisterMap,ENGINE,vgui2/controls/MenuItem.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E4FAE0,102,?ChainToMap@MenuItem@vgui2@@SAXXZ,vgui2::MenuItem::ChainToMap,ENGINE,vgui2/controls/MenuItem.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E4FB50,64,?GetMessageMap@MenuItem@vgui2@@UAEPAUPanelMessageMap@2@XZ,vgui2::MenuItem::GetMessageMap,ENGINE,vgui2/controls/MenuItem.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E4FB90,10,?GetPanelClassName@MenuItem@vgui2@@SAPBDXZ,vgui2::MenuItem::GetPanelClassName,ENGINE,vgui2/controls/MenuItem.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E4FBA0,10,?GetPanelBaseClassName@MenuItem@vgui2@@SAPBDXZ,vgui2::MenuItem::GetPanelBaseClassName,ENGINE,vgui2/controls/MenuItem.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E4FBB0,19,??0PanelMessageFunc_OnKillFocus@MenuItem@vgui2@@QAE@XZ,vgui2::MenuItem::PanelMessageFunc_OnKillFocus::PanelMessageFunc_OnKillFocus,ENGINE,vgui2/controls/MenuItem.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E4FBD0,107,?InitVar@PanelMessageFunc_OnKillFocus@MenuItem@vgui2@@SAXXZ,vgui2::MenuItem::PanelMessageFunc_OnKillFocus::InitVar,ENGINE,vgui2/controls/MenuItem.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E4FC40,120,?AddToMap@MenuItem@vgui2@@SAXPBDP8Panel@2@AEXXZHH0H0@Z,vgui2::MenuItem::AddToMap,ENGINE,vgui2/controls/MenuItem.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E4FCC0,19,??0PanelMessageFunc_ArmItem@MenuItem@vgui2@@QAE@XZ,vgui2::MenuItem::PanelMessageFunc_ArmItem::PanelMessageFunc_ArmItem,ENGINE,vgui2/controls/MenuItem.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E4FCE0,107,?InitVar@PanelMessageFunc_ArmItem@MenuItem@vgui2@@SAXXZ,vgui2::MenuItem::PanelMessageFunc_ArmItem::InitVar,ENGINE,vgui2/controls/MenuItem.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E4FD50,19,??0PanelMessageFunc_DisarmItem@MenuItem@vgui2@@QAE@XZ,vgui2::MenuItem::PanelMessageFunc_DisarmItem::PanelMessageFunc_DisarmItem,ENGINE,vgui2/controls/MenuItem.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E4FD70,107,?InitVar@PanelMessageFunc_DisarmItem@MenuItem@vgui2@@SAXXZ,vgui2::MenuItem::PanelMessageFunc_DisarmItem::InitVar,ENGINE,vgui2/controls/MenuItem.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E4FDE0,19,??0PanelMessageFunc_OnKeyModeSet@MenuItem@vgui2@@QAE@XZ,vgui2::MenuItem::PanelMessageFunc_OnKeyModeSet::PanelMessageFunc_OnKeyModeSet,ENGINE,vgui2/controls/MenuItem.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E4FE00,107,?InitVar@PanelMessageFunc_OnKeyModeSet@MenuItem@vgui2@@SAXXZ,vgui2::MenuItem::PanelMessageFunc_OnKeyModeSet::InitVar,ENGINE,vgui2/controls/MenuItem.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01E4FE70,651,??0Menu@vgui2@@QAE@PAVPanel@1@PBD@Z,vgui2::Menu::Menu,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,
 hw,01E500FB,107,??1Menu@vgui2@@UAE@XZ,vgui2::Menu::~Menu,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,
 hw,01E50166,148,?DeleteAllItems@Menu@vgui2@@UAEXXZ,vgui2::Menu::DeleteAllItems,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,
