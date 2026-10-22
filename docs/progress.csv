@@ -23346,173 +23346,173 @@ hw,01D026BC,18,,,UNKNOWN,,,,TODO,,,
 hw,01D026CE,15,,,UNKNOWN,,,,TODO,,,
 hw,01D026DD,10,,,UNKNOWN,,,,TODO,,,
 hw,01D026E7,25,,,UNKNOWN,,,,TODO,,,
-hw,01D02700,10,,,UNKNOWN,,,,TODO,,,
-hw,01D0270A,10,,,UNKNOWN,,,,TODO,,,
-hw,01D02714,97,,,UNKNOWN,,,,TODO,,,
-hw,01D02775,1464,,,UNKNOWN,,,,TODO,,,
-hw,01D02D2D,67,,,UNKNOWN,,,,TODO,,,
-hw,01D02D70,92,,,UNKNOWN,,,,TODO,,,
-hw,01D02DCC,22,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,linux: _ZN13BaseUISurface16SetEmbeddedPanelEj
-hw,01D02DE2,184,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,linux: _ZN13BaseUISurface8ShutdownEv
-hw,01D02E9A,53,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,linux: _ZN13BaseUISurface15GetTopmostPopupEv
-hw,01D02ECF,17,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,linux: _ZN13BaseUISurface16GetEmbeddedPanelEv
-hw,01D02EE0,11,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,linux: _ZN13BaseUISurface8RunFrameEv
-hw,01D02EEB,49,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,linux: _ZN13BaseUISurface15SetScreenBoundsEiiii
-hw,01D02F1C,57,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,linux: _ZN13BaseUISurface23GetAbsoluteWindowBoundsERiS0_S0_S0_
-hw,01D02F55,69,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,linux: _ZN13BaseUISurface13GetScreenSizeERiS0_
-hw,01D02F9A,1011,,,UNKNOWN,,,,TODO,,,
-hw,01D035DB,485,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,linux: _ZN13BaseUISurface21CalculateMouseVisibleEv
-hw,01D037C0,17,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,linux: _ZN13BaseUISurface11NeedKBInputEv
-hw,01D037D1,25,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,linux: _ZN13BaseUISurface15IsCursorVisibleEv
-hw,01D037EA,176,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,linux: _ZN13BaseUISurface9SetCursorEm
-hw,01D038B0,13,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,linux: _ZN13BaseUISurface10InvalidateEj
-hw,01D038BD,22,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,linux: _ZN13BaseUISurface15DrawSetTextFontEm
-hw,01D038D3,368,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,linux: _ZN13BaseUISurface15DrawUnicodeCharEw
-hw,01D03A43,300,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,linux: _ZN13BaseUISurface18DrawUnicodeCharAddEw
-hw,01D03B6F,28,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,linux: _ZN13BaseUISurface13DrawFlushTextEv
-hw,01D03B8B,152,,,UNKNOWN,,,,TODO,,,
-hw,01D03C23,108,,,UNKNOWN,,,,TODO,,,
-hw,01D03C8F,158,,,UNKNOWN,,,,TODO,,,
-hw,01D03D2D,73,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,linux: _ZN13BaseUISurface13DrawPrintTextEPKwi
-hw,01D03D76,173,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,linux: _ZN13BaseUISurface11CreatePopupEjbbbbb
-hw,01D03E23,18,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,linux: _ZN13BaseUISurface10LockCursorEv
-hw,01D03E35,58,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,linux: _ZN13BaseUISurface12UnlockCursorEv
-hw,01D03E6F,13,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,linux: _ZN13BaseUISurface8SetTitleEjPKw
-hw,01D03E7C,22,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,linux: _ZN13BaseUISurface17setFullscreenModeEiii
-hw,01D03E92,18,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,linux: _ZN13BaseUISurface15setWindowedModeEv
-hw,01D03EA4,13,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,linux: _ZN13BaseUISurface12SetAsTopMostEb
-hw,01D03EB1,13,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,linux: _ZN13BaseUISurface12SetAsToolBarEb
-hw,01D03EBE,84,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,linux: _ZN13BaseUISurface15SupportsFeatureEN5vgui28ISurface16SurfaceFeature_eE
-hw,01D03F12,13,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,linux: _ZN13BaseUISurface8HasFocusEv
-hw,01D03F1F,101,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,linux: _ZN13BaseUISurface16SetTopLevelFocusEj
-hw,01D03F84,15,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,linux: _ZN13BaseUISurface8IsWithinEii
-hw,01D03F93,255,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,linux: _ZN13BaseUISurface15PushMakeCurrentEjb
-hw,01D04092,30,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,linux: _ZN13BaseUISurface14PopMakeCurrentEj
-hw,01D040B0,13,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,linux: _ZN13BaseUISurface18EnableMouseCaptureEb
-hw,01D040BD,13,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,linux: _ZN13BaseUISurface11SwapBuffersEj
-hw,01D040CA,11,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,linux: _ZN13BaseUISurface12ApplyChangesEv
-hw,01D040D5,46,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,linux: _ZN13BaseUISurface14DrawFilledRectEiiii
-hw,01D04103,46,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,linux: _ZN13BaseUISurface16DrawOutlinedRectEiiii
-hw,01D04131,46,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,linux: _ZN13BaseUISurface8DrawLineEiiii
-hw,01D0415F,42,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,linux: _ZN13BaseUISurface12DrawPolyLineEPiS0_i
-hw,01D04189,38,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,linux: _ZN13BaseUISurface19DrawTexturedPolygonEPN5vgui210VGuiVertexEi
-hw,01D041AF,54,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,linux: _ZN13BaseUISurface21DrawSetSubTextureRGBAEiiiPKhii
-hw,01D041E5,54,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,linux: _ZN13BaseUISurface14DrawSetTextureEi
-hw,01D0421B,46,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,linux: _ZN13BaseUISurface16DrawTexturedRectEiiii
-hw,01D04249,30,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,linux: _ZN13BaseUISurface18CreateNewTextureIDEb
-hw,01D04267,51,,,UNKNOWN,,,,TODO,,,
-hw,01D0429A,84,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,linux: _ZN13BaseUISurface12DrawSetColorEiiii
-hw,01D042EE,51,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,linux: _ZN13BaseUISurface12DrawSetColorE5Color
-hw,01D04321,84,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,linux: _ZN13BaseUISurface16DrawSetTextColorEiiii
-hw,01D04375,38,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,linux: _ZN13BaseUISurface14DrawSetTextPosEii
-hw,01D0439B,38,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,linux: _ZN13BaseUISurface14DrawGetTextPosERiS0_
-hw,01D043C1,62,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,linux: _ZN13BaseUISurface13DrawPrintCharEiiiiffff
-hw,01D043FF,75,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,linux: _ZN13BaseUISurface8AddPanelEj
-hw,01D0444A,48,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,linux: _ZN13BaseUISurface12ReleasePanelEj
-hw,01D0447A,27,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,linux: _ZN13BaseUISurface16MovePopupToFrontEj
-hw,01D04495,43,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,linux: _ZN13BaseUISurface15MovePopupToBackEj
-hw,01D044C0,13,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,linux: _ZN13BaseUISurface15SetPanelVisibleEjb
-hw,01D044CD,177,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,linux: _ZN13BaseUISurface21ShouldPaintChildPanelEj
-hw,01D0457E,13,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,linux: _ZN13BaseUISurface17PanelRequestFocusEj
-hw,01D0458B,46,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,linux: _ZN13BaseUISurface18DrawSetTextureFileEiPKcib
-hw,01D045B9,52,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,linux: _ZN13BaseUISurface18DrawSetTextureRGBAEiPKhiiib
-hw,01D045ED,52,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,linux: _ZN13BaseUISurface34DrawSetTextureRGBAWithAlphaChannelEiPKhiiib
-hw,01D04621,42,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,linux: _ZN13BaseUISurface18DrawGetTextureSizeEiRiS0_
-hw,01D0464B,40,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,linux: _ZN13BaseUISurface16IsTextureIDValidEi
-hw,01D04673,13,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,linux: _ZN13BaseUISurface18EnableMouseCaptureEjb
-hw,01D04680,31,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,linux: _ZN13BaseUISurface9PlaySoundEPKc
-hw,01D0469F,13,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,linux: _ZN13BaseUISurface13SetNotifyIconEPN5vgui25ImageEjPKc
-hw,01D046AC,49,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,linux: _ZN13BaseUISurface11IsMinimizedEj
-hw,01D046DD,110,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,linux: _ZN13BaseUISurface12SetMinimizedEjb
-hw,01D0474B,13,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,linux: _ZN13BaseUISurface11FlashWindowEjb
-hw,01D04758,84,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,linux: _ZN13BaseUISurface12BringToFrontEj
-hw,01D047AC,31,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,linux: _ZN13BaseUISurface19SetForegroundWindowEj
-hw,01D047CB,13,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,linux: _ZN13BaseUISurface13SetModalPanelEj
-hw,01D047D8,17,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,linux: _ZN13BaseUISurface13GetModalPanelEv
-hw,01D047E9,15,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,linux: _ZN13BaseUISurface22SetWatchForComputerUseEb
-hw,01D047F8,17,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,linux: _ZN13BaseUISurface19GetTimeSinceLastUseEv
-hw,01D04809,21,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,linux: _ZN13BaseUISurface13GetPopupCountEv
-hw,01D0481E,27,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,linux: _ZN13BaseUISurface8GetPopupEi
-hw,01D04839,163,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,linux: _ZN13BaseUISurface21InternalSolveTraverseEj
-hw,01D048DC,163,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,linux: _ZN13BaseUISurface21InternalThinkTraverseEj
-hw,01D0497F,182,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,linux: _ZN13BaseUISurface30InternalSchemeSettingsTraverseEjb
-hw,01D04A35,53,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,linux: _ZN13BaseUISurface13SolveTraverseEjb
-hw,01D04A6A,47,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,linux: _ZN13BaseUISurface26RestrictPaintToSinglePanelEj
-hw,01D04A99,444,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,linux: _ZN13BaseUISurface13PaintTraverseEj
-hw,01D04C55,23,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,linux: _ZN13BaseUISurface10CreateFontEv
-hw,01D04C6C,53,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,linux: _ZN13BaseUISurface17AddGlyphSetToFontEmPKciiiiiii
-hw,01D04CA1,29,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,linux: _ZN13BaseUISurface11GetFontTallEm
-hw,01D04CBE,34,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,linux: _ZN13BaseUISurface13GetFontAscentEmw
-hw,01D04CE0,45,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,linux: _ZN13BaseUISurface14GetCharABCwideEmiRiS0_S0_
-hw,01D04D0D,33,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,linux: _ZN13BaseUISurface17GetCharacterWidthEmi
-hw,01D04D2E,41,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,linux: _ZN13BaseUISurface11GetTextSizeEmPKwRiS2_
-hw,01D04D57,126,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,linux: _ZN13BaseUISurface17AddCustomFontFileEPKc
-hw,01D04DD5,67,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,linux: _ZN13BaseUISurface18GetWorkspaceBoundsERiS0_S0_S0_
-hw,01D04E20,13,,,UNKNOWN,,,,TODO,,,
-hw,01D04E30,13,,,UNKNOWN,,,,TODO,,,
-hw,01D04E40,13,,,UNKNOWN,,,,TODO,,,
-hw,01D04E50,13,,,UNKNOWN,,,,TODO,,,
-hw,01D04E60,15,,,UNKNOWN,,,,TODO,,,
-hw,01D04E70,21,,,UNKNOWN,,,,TODO,,,
-hw,01D04E90,31,,,UNKNOWN,,,,TODO,,,
-hw,01D04EB0,13,,,UNKNOWN,,,,TODO,,,
-hw,01D04EC0,13,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,linux: _ZN13BaseUISurface19SurfaceGetCursorPosERiS0_
-hw,01D04ED0,13,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,linux: _ZN13BaseUISurface19SurfaceSetCursorPosEii
-hw,01D04EE0,17,,,UNKNOWN,,,,TODO,,,
-hw,01D04F00,22,,,UNKNOWN,,,,TODO,,,
-hw,01D04F20,22,,,UNKNOWN,,,,TODO,,,
-hw,01D04F40,62,,,UNKNOWN,,,,TODO,,,
-hw,01D04F80,17,,,UNKNOWN,,,,TODO,,,
-hw,01D04FA0,46,,,UNKNOWN,,,,TODO,,,
-hw,01D04FD0,31,,,UNKNOWN,,,,TODO,,,
-hw,01D04FF0,23,,,UNKNOWN,,,,TODO,,,
-hw,01D05010,46,,,UNKNOWN,,,,TODO,,,
-hw,01D05040,19,,,UNKNOWN,,,,TODO,,,
-hw,01D05060,22,,,UNKNOWN,,,,TODO,,,
-hw,01D05080,28,,,UNKNOWN,,,,TODO,,,
-hw,01D050A0,43,,,UNKNOWN,,,,TODO,,,
-hw,01D050D0,34,,,UNKNOWN,,,,TODO,,,
-hw,01D05100,16,,,UNKNOWN,,,,TODO,,,
-hw,01D05110,68,,,UNKNOWN,,,,TODO,,,
-hw,01D05160,76,,,UNKNOWN,,,,TODO,,,
-hw,01D051B0,45,,,UNKNOWN,,,,TODO,,,
-hw,01D051E0,43,,,UNKNOWN,,,,TODO,,,
-hw,01D05210,34,,,UNKNOWN,,,,TODO,,,
-hw,01D05240,16,,,UNKNOWN,,,,TODO,,,
-hw,01D05250,156,,,UNKNOWN,,,,TODO,,,
-hw,01D052F0,70,,,UNKNOWN,,,,TODO,,,
-hw,01D05340,53,,,UNKNOWN,,,,TODO,,,
-hw,01D05380,151,,,UNKNOWN,,,,TODO,,,
-hw,01D05420,76,,,UNKNOWN,,,,TODO,,,
-hw,01D05470,45,,,UNKNOWN,,,,TODO,,,
-hw,01D054A0,221,,,UNKNOWN,,,,TODO,,,
-hw,01D05580,105,,,UNKNOWN,,,,TODO,,,
-hw,01D055F0,68,,,UNKNOWN,,,,TODO,,,
-hw,01D05640,105,,,UNKNOWN,,,,TODO,,,
-hw,01D056B0,221,,,UNKNOWN,,,,TODO,,,
-hw,01D05790,50,,,UNKNOWN,,,,TODO,,,
-hw,01D057D0,27,,,UNKNOWN,,,,TODO,,,
-hw,01D057F0,25,,,UNKNOWN,,,,TODO,,,
-hw,01D05810,17,,,UNKNOWN,,,,TODO,,,
-hw,01D05830,32,,,UNKNOWN,,,,TODO,,,
-hw,01D05850,70,,,UNKNOWN,,,,TODO,,,
-hw,01D058A0,25,,,UNKNOWN,,,,TODO,,,
-hw,01D058C0,65,,,UNKNOWN,,,,TODO,,,
-hw,01D05910,35,,,UNKNOWN,,,,TODO,,,
-hw,01D05940,11,,,UNKNOWN,,,,TODO,,,
-hw,01D05950,74,,,UNKNOWN,,,,TODO,,,
-hw,01D059A0,19,,,UNKNOWN,,,,TODO,,,
-hw,01D059C0,24,,,UNKNOWN,,,,TODO,,,
-hw,01D059E0,5,,,UNKNOWN,,,,TODO,,,
-hw,01D059F0,87,,,UNKNOWN,,,,TODO,,,
-hw,01D05A50,85,,,UNKNOWN,,,,TODO,,,
-hw,01D05AB0,69,,,UNKNOWN,,,,TODO,,,
-hw,01D05B00,57,,,UNKNOWN,,,,TODO,,,
+hw,01D02700,10,?__CreateBaseUISurfaceISurface_interface@@YAPAVIBaseInterface@@XZ,__CreateBaseUISurfaceISurface_interface,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01D0270A,10,?inputinternal@@YAPAVIInputInternal@vgui2@@XZ,inputinternal,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01D02714,97,?GetVGUI2KeyCodeForBind@@YA?AW4KeyCode@vgui2@@PBD@Z,GetVGUI2KeyCodeForBind,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01D02775,1464,??0BaseUISurface@@QAE@XZ,BaseUISurface::BaseUISurface,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,97.42,hw_manual.csv,
+hw,01D02D2D,67,??1BaseUISurface@@UAE@XZ,BaseUISurface::~BaseUISurface,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01D02D70,92,?Init@BaseUISurface@@QAEXIPAVIEngineSurface@@@Z,BaseUISurface::Init,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01D02DCC,22,?SetEmbeddedPanel@BaseUISurface@@UAEXI@Z,BaseUISurface::SetEmbeddedPanel,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13BaseUISurface16SetEmbeddedPanelEj
+hw,01D02DE2,184,?Shutdown@BaseUISurface@@UAEXXZ,BaseUISurface::Shutdown,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13BaseUISurface8ShutdownEv
+hw,01D02E9A,53,?GetTopmostPopup@BaseUISurface@@UAEIXZ,BaseUISurface::GetTopmostPopup,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13BaseUISurface15GetTopmostPopupEv
+hw,01D02ECF,17,?GetEmbeddedPanel@BaseUISurface@@UAEIXZ,BaseUISurface::GetEmbeddedPanel,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13BaseUISurface16GetEmbeddedPanelEv
+hw,01D02EE0,11,?RunFrame@BaseUISurface@@UAEXXZ,BaseUISurface::RunFrame,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13BaseUISurface8RunFrameEv
+hw,01D02EEB,49,?SetScreenBounds@BaseUISurface@@QAEXHHHH@Z,BaseUISurface::SetScreenBounds,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13BaseUISurface15SetScreenBoundsEiiii
+hw,01D02F1C,57,?GetAbsoluteWindowBounds@BaseUISurface@@UAEXAAH000@Z,BaseUISurface::GetAbsoluteWindowBounds,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13BaseUISurface23GetAbsoluteWindowBoundsERiS0_S0_S0_
+hw,01D02F55,69,?GetScreenSize@BaseUISurface@@UAEXAAH0@Z,BaseUISurface::GetScreenSize,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13BaseUISurface13GetScreenSizeERiS0_
+hw,01D02F9A,1011,?AppHandler@BaseUISurface@@QAEXPAUHWND__@@IIJ@Z,BaseUISurface::AppHandler,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01D035DB,485,?CalculateMouseVisible@BaseUISurface@@UAEXXZ,BaseUISurface::CalculateMouseVisible,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13BaseUISurface21CalculateMouseVisibleEv
+hw,01D037C0,17,?NeedKBInput@BaseUISurface@@UAE_NXZ,BaseUISurface::NeedKBInput,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13BaseUISurface11NeedKBInputEv
+hw,01D037D1,25,?IsCursorVisible@BaseUISurface@@UAE_NXZ,BaseUISurface::IsCursorVisible,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13BaseUISurface15IsCursorVisibleEv
+hw,01D037EA,176,?SetCursor@BaseUISurface@@UAEXK@Z,BaseUISurface::SetCursor,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13BaseUISurface9SetCursorEm
+hw,01D038B0,13,?Invalidate@BaseUISurface@@UAEXI@Z,BaseUISurface::Invalidate,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13BaseUISurface10InvalidateEj
+hw,01D038BD,22,?DrawSetTextFont@BaseUISurface@@UAEXK@Z,BaseUISurface::DrawSetTextFont,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13BaseUISurface15DrawSetTextFontEm
+hw,01D038D3,368,?DrawUnicodeChar@BaseUISurface@@UAEXG@Z,BaseUISurface::DrawUnicodeChar,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13BaseUISurface15DrawUnicodeCharEw
+hw,01D03A43,300,?DrawUnicodeCharAdd@BaseUISurface@@UAEXG@Z,BaseUISurface::DrawUnicodeCharAdd,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13BaseUISurface18DrawUnicodeCharAddEw
+hw,01D03B6F,28,?DrawFlushText@BaseUISurface@@UAEXXZ,BaseUISurface::DrawFlushText,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13BaseUISurface13DrawFlushTextEv
+hw,01D03B8B,152,?CreateHTMLWindow@BaseUISurface@@UAEPAVIHTML@vgui2@@PAVIHTMLEvents@3@I@Z,BaseUISurface::CreateHTMLWindow,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01D03C23,108,?DeleteHTMLWindow@BaseUISurface@@UAEXPAVIHTML@vgui2@@@Z,BaseUISurface::DeleteHTMLWindow,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01D03C8F,158,?PaintHTMLWindow@BaseUISurface@@UAEXPAVIHTML@vgui2@@@Z,BaseUISurface::PaintHTMLWindow,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,81.11,hw_manual.csv,
+hw,01D03D2D,73,?DrawPrintText@BaseUISurface@@UAEXPBGH@Z,BaseUISurface::DrawPrintText,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13BaseUISurface13DrawPrintTextEPKwi
+hw,01D03D76,173,?CreatePopup@BaseUISurface@@UAEXI_N0000@Z,BaseUISurface::CreatePopup,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13BaseUISurface11CreatePopupEjbbbbb
+hw,01D03E23,18,?LockCursor@BaseUISurface@@UAEXXZ,BaseUISurface::LockCursor,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13BaseUISurface10LockCursorEv
+hw,01D03E35,58,?UnlockCursor@BaseUISurface@@UAEXXZ,BaseUISurface::UnlockCursor,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13BaseUISurface12UnlockCursorEv
+hw,01D03E6F,13,?SetTitle@BaseUISurface@@UAEXIPBG@Z,BaseUISurface::SetTitle,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13BaseUISurface8SetTitleEjPKw
+hw,01D03E7C,22,?setFullscreenMode@BaseUISurface@@UAE_NHHH@Z,BaseUISurface::setFullscreenMode,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13BaseUISurface17setFullscreenModeEiii
+hw,01D03E92,18,?setWindowedMode@BaseUISurface@@UAEXXZ,BaseUISurface::setWindowedMode,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13BaseUISurface15setWindowedModeEv
+hw,01D03EA4,13,?SetAsTopMost@BaseUISurface@@UAEX_N@Z,BaseUISurface::SetAsTopMost,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13BaseUISurface12SetAsTopMostEb
+hw,01D03EB1,13,?SetAsToolBar@BaseUISurface@@UAEX_N@Z,BaseUISurface::SetAsToolBar,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13BaseUISurface12SetAsToolBarEb
+hw,01D03EBE,84,?SupportsFeature@BaseUISurface@@UAE_NW4SurfaceFeature_e@ISurface@vgui2@@@Z,BaseUISurface::SupportsFeature,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13BaseUISurface15SupportsFeatureEN5vgui28ISurface16SurfaceFeature_eE
+hw,01D03F12,13,?HasFocus@BaseUISurface@@UAE_NXZ,BaseUISurface::HasFocus,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13BaseUISurface8HasFocusEv
+hw,01D03F1F,101,?SetTopLevelFocus@BaseUISurface@@UAEXI@Z,BaseUISurface::SetTopLevelFocus,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13BaseUISurface16SetTopLevelFocusEj
+hw,01D03F84,15,?IsWithin@BaseUISurface@@UAE_NHH@Z,BaseUISurface::IsWithin,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13BaseUISurface8IsWithinEii
+hw,01D03F93,255,?PushMakeCurrent@BaseUISurface@@UAEXI_N@Z,BaseUISurface::PushMakeCurrent,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13BaseUISurface15PushMakeCurrentEjb
+hw,01D04092,30,?PopMakeCurrent@BaseUISurface@@UAEXI@Z,BaseUISurface::PopMakeCurrent,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13BaseUISurface14PopMakeCurrentEj
+hw,01D040B0,13,?EnableMouseCapture@BaseUISurface@@UAEX_N@Z,BaseUISurface::EnableMouseCapture,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13BaseUISurface18EnableMouseCaptureEb
+hw,01D040BD,13,?SwapBuffers@BaseUISurface@@UAEXI@Z,BaseUISurface::SwapBuffers,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13BaseUISurface11SwapBuffersEj
+hw,01D040CA,11,?ApplyChanges@BaseUISurface@@UAEXXZ,BaseUISurface::ApplyChanges,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13BaseUISurface12ApplyChangesEv
+hw,01D040D5,46,?DrawFilledRect@BaseUISurface@@UAEXHHHH@Z,BaseUISurface::DrawFilledRect,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13BaseUISurface14DrawFilledRectEiiii
+hw,01D04103,46,?DrawOutlinedRect@BaseUISurface@@UAEXHHHH@Z,BaseUISurface::DrawOutlinedRect,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13BaseUISurface16DrawOutlinedRectEiiii
+hw,01D04131,46,?DrawLine@BaseUISurface@@UAEXHHHH@Z,BaseUISurface::DrawLine,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13BaseUISurface8DrawLineEiiii
+hw,01D0415F,42,?DrawPolyLine@BaseUISurface@@UAEXPAH0H@Z,BaseUISurface::DrawPolyLine,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13BaseUISurface12DrawPolyLineEPiS0_i
+hw,01D04189,38,?DrawTexturedPolygon@BaseUISurface@@UAEXPAVVGuiVertex@vgui2@@H@Z,BaseUISurface::DrawTexturedPolygon,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13BaseUISurface19DrawTexturedPolygonEPN5vgui210VGuiVertexEi
+hw,01D041AF,54,?DrawSetSubTextureRGBA@BaseUISurface@@QAEXHHHPBEHH@Z,BaseUISurface::DrawSetSubTextureRGBA,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13BaseUISurface21DrawSetSubTextureRGBAEiiiPKhii
+hw,01D041E5,54,?DrawSetTexture@BaseUISurface@@UAEXH@Z,BaseUISurface::DrawSetTexture,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13BaseUISurface14DrawSetTextureEi
+hw,01D0421B,46,?DrawTexturedRect@BaseUISurface@@UAEXHHHH@Z,BaseUISurface::DrawTexturedRect,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13BaseUISurface16DrawTexturedRectEiiii
+hw,01D04249,30,?CreateNewTextureID@BaseUISurface@@UAEH_N@Z,BaseUISurface::CreateNewTextureID,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13BaseUISurface18CreateNewTextureIDEb
+hw,01D04267,51,?DrawSetColor@BaseUISurface@@UAEXHHHH@Z,BaseUISurface::DrawSetColor,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01D0429A,84,?DrawSetColor@BaseUISurface@@UAEXVColor@@@Z,BaseUISurface::DrawSetColor,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13BaseUISurface12DrawSetColorEiiii
+hw,01D042EE,51,?DrawSetTextColor@BaseUISurface@@UAEXHHHH@Z,BaseUISurface::DrawSetTextColor,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13BaseUISurface12DrawSetColorE5Color
+hw,01D04321,84,?DrawSetTextColor@BaseUISurface@@UAEXVColor@@@Z,BaseUISurface::DrawSetTextColor,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13BaseUISurface16DrawSetTextColorEiiii
+hw,01D04375,38,?DrawSetTextPos@BaseUISurface@@UAEXHH@Z,BaseUISurface::DrawSetTextPos,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13BaseUISurface14DrawSetTextPosEii
+hw,01D0439B,38,?DrawGetTextPos@BaseUISurface@@UAEXAAH0@Z,BaseUISurface::DrawGetTextPos,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13BaseUISurface14DrawGetTextPosERiS0_
+hw,01D043C1,62,?DrawPrintChar@BaseUISurface@@UAEXHHHHMMMM@Z,BaseUISurface::DrawPrintChar,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13BaseUISurface13DrawPrintCharEiiiiffff
+hw,01D043FF,75,?AddPanel@BaseUISurface@@UAEXI@Z,BaseUISurface::AddPanel,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13BaseUISurface8AddPanelEj
+hw,01D0444A,48,?ReleasePanel@BaseUISurface@@UAEXI@Z,BaseUISurface::ReleasePanel,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13BaseUISurface12ReleasePanelEj
+hw,01D0447A,27,?MovePopupToFront@BaseUISurface@@UAEXI@Z,BaseUISurface::MovePopupToFront,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13BaseUISurface16MovePopupToFrontEj
+hw,01D04495,43,?MovePopupToBack@BaseUISurface@@UAEXI@Z,BaseUISurface::MovePopupToBack,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13BaseUISurface15MovePopupToBackEj
+hw,01D044C0,13,?SetPanelVisible@BaseUISurface@@UAEXI_N@Z,BaseUISurface::SetPanelVisible,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13BaseUISurface15SetPanelVisibleEjb
+hw,01D044CD,177,?ShouldPaintChildPanel@BaseUISurface@@UAE_NI@Z,BaseUISurface::ShouldPaintChildPanel,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13BaseUISurface21ShouldPaintChildPanelEj
+hw,01D0457E,13,?PanelRequestFocus@BaseUISurface@@UAEXI@Z,BaseUISurface::PanelRequestFocus,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13BaseUISurface17PanelRequestFocusEj
+hw,01D0458B,46,?DrawSetTextureFile@BaseUISurface@@UAEXHPBDH_N@Z,BaseUISurface::DrawSetTextureFile,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13BaseUISurface18DrawSetTextureFileEiPKcib
+hw,01D045B9,52,?DrawSetTextureRGBA@BaseUISurface@@UAEXHPBEHHH_N@Z,BaseUISurface::DrawSetTextureRGBA,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13BaseUISurface18DrawSetTextureRGBAEiPKhiiib
+hw,01D045ED,52,?DrawSetTextureRGBAWithAlphaChannel@BaseUISurface@@QAEXHPBEHHH_N@Z,BaseUISurface::DrawSetTextureRGBAWithAlphaChannel,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13BaseUISurface34DrawSetTextureRGBAWithAlphaChannelEiPKhiiib
+hw,01D04621,42,?DrawGetTextureSize@BaseUISurface@@UAEXHAAH0@Z,BaseUISurface::DrawGetTextureSize,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13BaseUISurface18DrawGetTextureSizeEiRiS0_
+hw,01D0464B,40,?IsTextureIDValid@BaseUISurface@@UAE_NH@Z,BaseUISurface::IsTextureIDValid,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13BaseUISurface16IsTextureIDValidEi
+hw,01D04673,13,?EnableMouseCapture@BaseUISurface@@UAEXI_N@Z,BaseUISurface::EnableMouseCapture,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13BaseUISurface18EnableMouseCaptureEjb
+hw,01D04680,31,?PlaySound@BaseUISurface@@UAEXPBD@Z,BaseUISurface::PlaySound,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13BaseUISurface9PlaySoundEPKc
+hw,01D0469F,13,?SetNotifyIcon@BaseUISurface@@UAEXPAVImage@vgui2@@IPBD@Z,BaseUISurface::SetNotifyIcon,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13BaseUISurface13SetNotifyIconEPN5vgui25ImageEjPKc
+hw,01D046AC,49,?IsMinimized@BaseUISurface@@UAE_NI@Z,BaseUISurface::IsMinimized,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13BaseUISurface11IsMinimizedEj
+hw,01D046DD,110,?SetMinimized@BaseUISurface@@UAEXI_N@Z,BaseUISurface::SetMinimized,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13BaseUISurface12SetMinimizedEjb
+hw,01D0474B,13,?FlashWindow@BaseUISurface@@UAEXI_N@Z,BaseUISurface::FlashWindow,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13BaseUISurface11FlashWindowEjb
+hw,01D04758,84,?BringToFront@BaseUISurface@@UAEXI@Z,BaseUISurface::BringToFront,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13BaseUISurface12BringToFrontEj
+hw,01D047AC,31,?SetForegroundWindow@BaseUISurface@@UAEXI@Z,BaseUISurface::SetForegroundWindow,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13BaseUISurface19SetForegroundWindowEj
+hw,01D047CB,13,?SetModalPanel@BaseUISurface@@UAEXI@Z,BaseUISurface::SetModalPanel,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13BaseUISurface13SetModalPanelEj
+hw,01D047D8,17,?GetModalPanel@BaseUISurface@@UAEIXZ,BaseUISurface::GetModalPanel,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13BaseUISurface13GetModalPanelEv
+hw,01D047E9,15,?SetWatchForComputerUse@BaseUISurface@@UAE_N_N@Z,BaseUISurface::SetWatchForComputerUse,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13BaseUISurface22SetWatchForComputerUseEb
+hw,01D047F8,17,?GetTimeSinceLastUse@BaseUISurface@@UAENXZ,BaseUISurface::GetTimeSinceLastUse,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13BaseUISurface19GetTimeSinceLastUseEv
+hw,01D04809,21,?GetPopupCount@BaseUISurface@@UAEHXZ,BaseUISurface::GetPopupCount,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13BaseUISurface13GetPopupCountEv
+hw,01D0481E,27,?GetPopup@BaseUISurface@@UAEIH@Z,BaseUISurface::GetPopup,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13BaseUISurface8GetPopupEi
+hw,01D04839,163,?InternalSolveTraverse@BaseUISurface@@AAEXI@Z,BaseUISurface::InternalSolveTraverse,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13BaseUISurface21InternalSolveTraverseEj
+hw,01D048DC,163,?InternalThinkTraverse@BaseUISurface@@AAEXI@Z,BaseUISurface::InternalThinkTraverse,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13BaseUISurface21InternalThinkTraverseEj
+hw,01D0497F,182,?InternalSchemeSettingsTraverse@BaseUISurface@@AAEXI_N@Z,BaseUISurface::InternalSchemeSettingsTraverse,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13BaseUISurface30InternalSchemeSettingsTraverseEjb
+hw,01D04A35,53,?SolveTraverse@BaseUISurface@@UAEXI_N@Z,BaseUISurface::SolveTraverse,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13BaseUISurface13SolveTraverseEjb
+hw,01D04A6A,47,?RestrictPaintToSinglePanel@BaseUISurface@@UAEXI@Z,BaseUISurface::RestrictPaintToSinglePanel,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13BaseUISurface26RestrictPaintToSinglePanelEj
+hw,01D04A99,444,?PaintTraverse@BaseUISurface@@UAEXI@Z,BaseUISurface::PaintTraverse,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13BaseUISurface13PaintTraverseEj
+hw,01D04C55,23,?CreateFont@BaseUISurface@@UAEKXZ,BaseUISurface::CreateFont,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13BaseUISurface10CreateFontEv
+hw,01D04C6C,53,?AddGlyphSetToFont@BaseUISurface@@UAE_NKPBDHHHHHHH@Z,BaseUISurface::AddGlyphSetToFont,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13BaseUISurface17AddGlyphSetToFontEmPKciiiiiii
+hw,01D04CA1,29,?GetFontTall@BaseUISurface@@UAEHK@Z,BaseUISurface::GetFontTall,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13BaseUISurface11GetFontTallEm
+hw,01D04CBE,34,?GetFontAscent@BaseUISurface@@UAEHKG@Z,BaseUISurface::GetFontAscent,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13BaseUISurface13GetFontAscentEmw
+hw,01D04CE0,45,?GetCharABCwide@BaseUISurface@@UAEXKHAAH00@Z,BaseUISurface::GetCharABCwide,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13BaseUISurface14GetCharABCwideEmiRiS0_S0_
+hw,01D04D0D,33,?GetCharacterWidth@BaseUISurface@@UAEHKH@Z,BaseUISurface::GetCharacterWidth,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13BaseUISurface17GetCharacterWidthEmi
+hw,01D04D2E,41,?GetTextSize@BaseUISurface@@UAEXKPBGAAH1@Z,BaseUISurface::GetTextSize,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13BaseUISurface11GetTextSizeEmPKwRiS2_
+hw,01D04D57,126,?AddCustomFontFile@BaseUISurface@@UAE_NPBD@Z,BaseUISurface::AddCustomFontFile,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13BaseUISurface17AddCustomFontFileEPKc
+hw,01D04DD5,67,?GetWorkspaceBounds@BaseUISurface@@UAEXAAH000@Z,BaseUISurface::GetWorkspaceBounds,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13BaseUISurface18GetWorkspaceBoundsERiS0_S0_S0_
+hw,01D04E20,13,?SetAsTopMost@BaseUISurface@@UAEXI_N@Z,BaseUISurface::SetAsTopMost,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01D04E30,13,?SetAsToolBar@BaseUISurface@@UAEXI_N@Z,BaseUISurface::SetAsToolBar,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01D04E40,13,?GetNotifyPanel@BaseUISurface@@UAEIXZ,BaseUISurface::GetNotifyPanel,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01D04E50,13,?SetNotifyIcon@BaseUISurface@@UAEXIKIPBD@Z,BaseUISurface::SetNotifyIcon,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01D04E60,15,?RecreateContext@BaseUISurface@@UAE_NI@Z,BaseUISurface::RecreateContext,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01D04E70,21,?SetTranslateExtendedKeys@BaseUISurface@@UAEX_N@Z,BaseUISurface::SetTranslateExtendedKeys,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01D04E90,31,?GetProportionalBase@BaseUISurface@@UAEXAAH0@Z,BaseUISurface::GetProportionalBase,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01D04EB0,13,?HasCursorPosFunctions@BaseUISurface@@UAE_NXZ,BaseUISurface::HasCursorPosFunctions,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01D04EC0,13,?SurfaceGetCursorPos@BaseUISurface@@UAEXAAH0@Z,BaseUISurface::SurfaceGetCursorPos,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13BaseUISurface19SurfaceGetCursorPosERiS0_
+hw,01D04ED0,13,?SurfaceSetCursorPos@BaseUISurface@@UAEXHH@Z,BaseUISurface::SurfaceSetCursorPos,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13BaseUISurface19SurfaceSetCursorPosEii
+hw,01D04EE0,17,?VGUI2MouseControl@BaseUISurface@@UAE_NXZ,BaseUISurface::VGUI2MouseControl,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01D04F00,22,?SetVGUI2MouseControl@BaseUISurface@@UAEX_N@Z,BaseUISurface::SetVGUI2MouseControl,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01D04F20,22,?SetAllowHTMLJavaScript@BaseUISurface@@UAEX_N@Z,BaseUISurface::SetAllowHTMLJavaScript,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01D04F40,62,?SetLanguage@BaseUISurface@@UAEXPBD@Z,BaseUISurface::SetLanguage,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01D04F80,17,?GetLanguage@BaseUISurface@@UAEPBDXZ,BaseUISurface::GetLanguage,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01D04FA0,46,??_GBaseUISurface@@UAEPAXI@Z,destructor',UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01D04FD0,31,??0ISurface@vgui2@@QAE@XZ,vgui2::ISurface::ISurface,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01D04FF0,23,??0IMouseControl@@QAE@XZ,IMouseControl::IMouseControl,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01D05010,46,??_GISurface@vgui2@@UAEPAXI@Z,destructor',UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01D05040,19,??1ISurface@vgui2@@UAE@XZ,vgui2::ISurface::~ISurface,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01D05060,22,?GetHTMLWindowCount_guess@BaseUISurface@@QAEHXZ,BaseUISurface::GetHTMLWindowCount_guess,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01D05080,28,?GetHTMLWindow_guess@BaseUISurface@@QAEPAVHtmlWindow@@H@Z,BaseUISurface::GetHTMLWindow_guess,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01D050A0,43,??0?$Dar@PAVHtmlWindow@@@vgui2@@QAE@XZ,*>,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01D050D0,34,??1?$Dar@PAVHtmlWindow@@@vgui2@@QAE@XZ,*>,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01D05100,16,?GetCount@?$Dar@PAVHtmlWindow@@@vgui2@@QAEHXZ,*>::GetCount,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01D05110,68,?AddElement@?$Dar@PAVHtmlWindow@@@vgui2@@QAEHPAVHtmlWindow@@@Z,*>::AddElement,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01D05160,76,?RemoveElement@?$Dar@PAVHtmlWindow@@@vgui2@@QAEXPAVHtmlWindow@@@Z,*>::RemoveElement,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01D051B0,45,??A?$Dar@PAVHtmlWindow@@@vgui2@@QAEPAVHtmlWindow@@H@Z,*>::operator[],UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01D051E0,43,??0?$Dar@I@vgui2@@QAE@XZ,int>,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01D05210,34,??1?$Dar@I@vgui2@@QAE@XZ,int>,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01D05240,16,?GetCount@?$Dar@I@vgui2@@QAEHXZ,int>::GetCount,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01D05250,156,?MoveElementToEnd@?$Dar@I@vgui2@@QAEXI@Z,int>::MoveElementToEnd,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,38.62,hw_manual.csv,
+hw,01D052F0,70,?FindElement@?$Dar@I@vgui2@@QAEHI@Z,int>::FindElement,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01D05340,53,?PutElement@?$Dar@I@vgui2@@QAEHI@Z,int>::PutElement,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01D05380,151,?InsertElementAt@?$Dar@I@vgui2@@QAEXIH@Z,int>::InsertElementAt,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01D05420,76,?RemoveElement@?$Dar@I@vgui2@@QAEXI@Z,int>::RemoveElement,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01D05470,45,??A?$Dar@I@vgui2@@QAEIH@Z,int>::operator[],UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01D054A0,221,?EnsureCapacity@?$Dar@PAVHtmlWindow@@@vgui2@@QAEXH@Z,*>::EnsureCapacity,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01D05580,105,?RemoveElementAt@?$Dar@PAVHtmlWindow@@@vgui2@@QAEXH@Z,*>::RemoveElementAt,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01D055F0,68,?AddElement@?$Dar@I@vgui2@@QAEHI@Z,int>::AddElement,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01D05640,105,?RemoveElementAt@?$Dar@I@vgui2@@QAEXH@Z,int>::RemoveElementAt,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01D056B0,221,?EnsureCapacity@?$Dar@I@vgui2@@QAEXH@Z,int>::EnsureCapacity,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01D05790,50,??0?$CUtlVector@VCUtlSymbol@@@@QAE@HH@Z,CUtlSymbol>,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01D057D0,27,??1?$CUtlVector@VCUtlSymbol@@@@QAE@XZ,CUtlSymbol>,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01D057F0,25,??A?$CUtlVector@VCUtlSymbol@@@@QAEAAVCUtlSymbol@@H@Z,CUtlSymbol>::operator[],UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01D05810,17,?Count@?$CUtlVector@VCUtlSymbol@@@@QBEHXZ,CUtlSymbol>::Count,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01D05830,32,?AddToTail@?$CUtlVector@VCUtlSymbol@@@@QAEHABVCUtlSymbol@@@Z,CUtlSymbol>::AddToTail,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01D05850,70,?RemoveAll@?$CUtlVector@VCUtlSymbol@@@@QAEXXZ,CUtlSymbol>::RemoveAll,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01D058A0,25,?Element@?$CUtlVector@VCUtlSymbol@@@@QAEAAVCUtlSymbol@@H@Z,CUtlSymbol>::Element,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01D058C0,65,?InsertBefore@?$CUtlVector@VCUtlSymbol@@@@QAEHHABVCUtlSymbol@@@Z,CUtlSymbol>::InsertBefore,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01D05910,35,?Purge@?$CUtlVector@VCUtlSymbol@@@@QAEXXZ,CUtlSymbol>::Purge,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01D05940,11,?ResetDbgInfo@?$CUtlVector@VCUtlSymbol@@@@IAEXXZ,CUtlSymbol>::ResetDbgInfo,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01D05950,74,??0?$CUtlMemory@VCUtlSymbol@@@@QAE@HH@Z,CUtlSymbol>,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01D059A0,19,??1?$CUtlMemory@VCUtlSymbol@@@@QAE@XZ,CUtlSymbol>,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01D059C0,24,??A?$CUtlMemory@VCUtlSymbol@@@@QAEAAVCUtlSymbol@@H@Z,CUtlSymbol>::operator[],UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01D059E0,5,?Destruct@@YAXPAVCUtlSymbol@@@Z,Destruct,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01D059F0,87,?GrowVector@?$CUtlVector@VCUtlSymbol@@@@IAEXH@Z,CUtlSymbol>::GrowVector,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01D05A50,85,?ShiftElementsRight@?$CUtlVector@VCUtlSymbol@@@@IAEXHH@Z,CUtlSymbol>::ShiftElementsRight,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01D05AB0,69,?Purge@?$CUtlMemory@VCUtlSymbol@@@@QAEXXZ,CUtlSymbol>::Purge,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01D05B00,57,?CopyConstruct@@YAXPAVCUtlSymbol@@ABV1@@Z,CopyConstruct,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01D05B40,8,??2@YAPAXIPAX@Z,new,UNKNOWN,,,,TODO,,,
-hw,01D05B50,28,,,UNKNOWN,,,,TODO,,,
-hw,01D05B70,17,,,UNKNOWN,,,,TODO,,,
-hw,01D05B90,197,,,UNKNOWN,,,,TODO,,,
-hw,01D05C60,25,,,UNKNOWN,,,,TODO,,,
+hw,01D05B50,28,??0CUtlSymbol@@QAE@ABV0@@Z,CUtlSymbol::CUtlSymbol,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01D05B70,17,?NumAllocated@?$CUtlMemory@VCUtlSymbol@@@@QBEHXZ,CUtlSymbol>::NumAllocated,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01D05B90,197,?Grow@?$CUtlMemory@VCUtlSymbol@@@@QAEXH@Z,CUtlSymbol>::Grow,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01D05C60,25,?IsExternallyAllocated@?$CUtlMemory@VCUtlSymbol@@@@QBE_NXZ,CUtlSymbol>::IsExternallyAllocated,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01D05C80,226,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,linux: _ZN10EngineFont11GetTextSizeEPKcRiS2_
 hw,01D05D62,17,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,linux: _ZN10EngineFont5getIdEv
 hw,01D05D73,17,,,UNKNOWN,,,,TODO,,,
@@ -28327,79 +28327,79 @@ hw,01DEAD10,25,,,UNKNOWN,,,,TODO,,,
 hw,01DEAD30,25,,,UNKNOWN,,,,TODO,,,
 hw,01DEAD50,127,,,UNKNOWN,,,,TODO,,,
 hw,01DEADCF,127,,,UNKNOWN,,,,TODO,,,
-hw,01DEAE50,58,,CSteam3Server::OnGSPolicyResponse,ENGINE,engine/sv_steam3.cpp,,,TODO,,linux_symbols:string:0.75,
-hw,01DEAE8A,125,,CSteam3Server::OnLogonSuccess,ENGINE,engine/sv_steam3.cpp,,,TODO,,linux_symbols:string:0.75,
-hw,01DEAF07,61,,,UNKNOWN,engine/sv_steam3.cpp,,,TODO,,,linux: _ZN13CSteam3Server10GetSteamIDEv
-hw,01DEAF44,117,,CSteam3Server::OnLogonFailure,ENGINE,engine/sv_steam3.cpp,,,TODO,,linux_symbols:string:0.75,
-hw,01DEAFB9,64,,,UNKNOWN,engine/sv_steam3.cpp,,,TODO,,,linux: _ZN13CSteam3Server14OnGSClientDenyEP14GSClientDeny_t
-hw,01DEAFF9,471,,CSteam3Server::OnGSClientDenyHelper,ENGINE,engine/sv_steam3.cpp,,,TODO,,linux_symbols:string:0.833,
-hw,01DEB208,57,,,UNKNOWN,engine/sv_steam3.cpp,,,TODO,,,linux: _ZN13CSteam3Server14OnGSClientKickEP14GSClientKick_t
-hw,01DEB241,342,,CSteam3Server::OnGSClientApprove,ENGINE,engine/sv_steam3.cpp,,,TODO,,linux_symbols:string:0.839,
-hw,01DEB397,164,,,UNKNOWN,engine/sv_steam3.cpp,,,TODO,,,linux: _ZN13CSteam3Server21ClientFindFromSteamIDER8CSteamID
-hw,01DEB43B,95,,,UNKNOWN,engine/sv_steam3.cpp,,,TODO,,,linux: _ZN13CSteam3ServerC1Ev
-hw,01DEB49A,1178,,CSteam3Server::Activate,ENGINE,engine/sv_steam3.cpp,,,TODO,,linux_symbols:string:0.798,
-hw,01DEB934,44,,,UNKNOWN,engine/sv_steam3.cpp,,,TODO,,,linux: _ZN13CSteam3Server8ShutdownEv
-hw,01DEB960,38,,,UNKNOWN,engine/sv_steam3.cpp,,,TODO,,,linux: _ZN13CSteam3Client8ShutdownEv
-hw,01DEB986,90,,,UNKNOWN,guess:engine/sv_steam3.cpp,,,TODO,,,
-hw,01DEB9E0,71,,,UNKNOWN,guess:engine/sv_steam3.cpp,,,TODO,,,
-hw,01DEBA27,85,,,UNKNOWN,guess:engine/sv_steam3.cpp,,,TODO,,,
-hw,01DEBA7C,308,,CSteam3Server::NotifyOfLevelChange,ENGINE,engine/sv_steam3.cpp,,,TODO,,linux_symbols:caller:0.514,
-hw,01DEBBB0,1124,,CSteam3Server::RunFrame,ENGINE,engine/sv_steam3.cpp,,,TODO,,linux_symbols:string:0.604,
-hw,01DEC097,246,,CSteam3Server::SendUpdatedServerDetails,ENGINE,engine/sv_steam3.cpp,,,TODO,,linux_symbols:data:0.833,
-hw,01DEC18D,41,_Steam_GetCommunityName,,UNKNOWN,guess:engine/sv_steam3.cpp,,,TODO,,,
-hw,01DEC1B6,182,,,UNKNOWN,guess:engine/sv_steam3.cpp,,,TODO,,,
-hw,01DEC26C,63,,,UNKNOWN,guess:engine/sv_steam3.cpp,,,TODO,,,
-hw,01DEC2AB,43,,,UNKNOWN,guess:engine/sv_steam3.cpp,,,TODO,,,
-hw,01DEC2D6,81,,,UNKNOWN,guess:engine/sv_steam3.cpp,,,TODO,,,
-hw,01DEC327,33,,CSteam3Client::OnClientGameServerDeny,ENGINE,engine/sv_steam3.cpp,,,TODO,,linux_symbols:string:0.75,
-hw,01DEC348,76,,CSteam3Client::OnGameServerChangeRequested,ENGINE,engine/sv_steam3.cpp,,,TODO,,linux_symbols:string:0.875,
-hw,01DEC394,61,,,UNKNOWN,engine/sv_steam3.cpp,,,TODO,,,linux: _ZN13CSteam3Client22OnGameOverlayActivatedEP22GameOverlayActivated_t
-hw,01DEC3D1,148,,,UNKNOWN,engine/sv_steam3.cpp,,,TODO,,,linux: _ZN13CSteam3Client8RunFrameEv
-hw,01DEC465,47,_Steam_NotifyClientConnect,,UNKNOWN,engine/sv_steam3.cpp,,,TODO,,,linux: Steam_NotifyClientConnect
-hw,01DEC494,39,_Steam_NotifyBotConnect,,UNKNOWN,engine/sv_steam3.cpp,,,TODO,,,linux: Steam_NotifyBotConnect
-hw,01DEC4BB,32,_Steam_NotifyClientDisconnect,,UNKNOWN,engine/sv_steam3.cpp,,,TODO,,,linux: Steam_NotifyClientDisconnect
-hw,01DEC4DB,30,_Steam_NotifyOfLevelChange,Steam_NotifyOfLevelChange,ENGINE,engine/sv_steam3.cpp,,,TODO,,linux_symbols:callee:1.0,
-hw,01DEC4F9,94,_Steam_Shutdown,,UNKNOWN,engine/sv_steam3.cpp,,,TODO,,,linux: Steam_Shutdown
-hw,01DEC557,78,_Steam_Activate,Steam_Activate,ENGINE,engine/sv_steam3.cpp,,,TODO,,linux_symbols:caller:0.667,
-hw,01DEC5A5,28,_Steam_RunFrame,Steam_RunFrame,ENGINE,engine/sv_steam3.cpp,,,TODO,,linux_symbols:caller:1.0,
-hw,01DEC5C1,33,_Steam_SetCVar,,UNKNOWN,guess:engine/sv_steam3.cpp,,,TODO,,,
-hw,01DEC5E2,17,_Steam_ClientRunFrame,,UNKNOWN,guess:engine/sv_steam3.cpp,,,TODO,,,
-hw,01DEC5F3,17,,,UNKNOWN,guess:engine/sv_steam3.cpp,,,TODO,,,
-hw,01DEC604,52,_Steam_GSInitiateGameConnection,,UNKNOWN,guess:engine/sv_steam3.cpp,,,TODO,,,
-hw,01DEC638,26,_Steam_GSTerminateGameConnection,,UNKNOWN,guess:engine/sv_steam3.cpp,,,TODO,,,
-hw,01DEC652,27,,,UNKNOWN,guess:engine/sv_steam3.cpp,,,TODO,,,
-hw,01DEC66D,17,_Steam_GSGetSteamID,,UNKNOWN,guess:engine/sv_steam3.cpp,,,TODO,,,
-hw,01DEC67E,22,_Steam_GSBSecure,,UNKNOWN,guess:engine/sv_steam3.cpp,,,TODO,,,
-hw,01DEC694,22,_Steam_GSBLoggedOn,,UNKNOWN,guess:engine/sv_steam3.cpp,,,TODO,,,
-hw,01DEC6AA,22,_Steam_GSBSecurePreference,,UNKNOWN,guess:engine/sv_steam3.cpp,,,TODO,,,
-hw,01DEC6C0,67,_Steam_Steam3IDtoSteam2,,UNKNOWN,guess:engine/sv_steam3.cpp,,,TODO,,hw_manual.csv,
-hw,01DEC703,93,_Steam_StringToSteamID,,UNKNOWN,guess:engine/sv_steam3.cpp,,,TODO,,,
-hw,01DEC760,101,_Steam_GetGSUniverse,,UNKNOWN,guess:engine/sv_steam3.cpp,,,TODO,,,
-hw,01DEC7D9,10,,,UNKNOWN,guess:engine/sv_steam3.cpp,,,TODO,,,
-hw,01DEC7E3,15,,,UNKNOWN,guess:engine/sv_steam3.cpp,,,TODO,,,
-hw,01DEC7F2,15,,,UNKNOWN,guess:engine/sv_steam3.cpp,,,TODO,,,
-hw,01DEC801,18,,,UNKNOWN,guess:engine/sv_steam3.cpp,,,TODO,,,
-hw,01DEC813,15,,,UNKNOWN,guess:engine/sv_steam3.cpp,,,TODO,,,
-hw,01DEC822,10,,,UNKNOWN,guess:engine/sv_steam3.cpp,,,TODO,,,
-hw,01DEC82C,855,_Master_SetMaster_f,Master_SetMaster_f,ENGINE,engine/sv_steam3.cpp,,,TODO,,linux_symbols:string:0.274,
-hw,01DECB90,17,,,UNKNOWN,,,,TODO,,,
-hw,01DECBB0,40,,ATL::COleDateTimeSpan::COleDateTimeSpan,ENGINE,,,,TODO,,ghidra,
-hw,01DECBE0,19,,,UNKNOWN,,,,TODO,,,
-hw,01DECC00,81,,,UNKNOWN,,,,TODO,,,
-hw,01DECC60,47,,,UNKNOWN,,,,TODO,,,
-hw,01DECC90,46,,,UNKNOWN,,,,TODO,,,
-hw,01DECCC0,20,,,UNKNOWN,,,,TODO,,,
-hw,01DECCE0,46,,,UNKNOWN,,,,TODO,,,
-hw,01DECD10,19,,,UNKNOWN,,,,TODO,,,
-hw,01DECD30,31,,,UNKNOWN,,,,TODO,,,
-hw,01DECD50,16,,,UNKNOWN,,,,TODO,,,
-hw,01DECD60,59,,,UNKNOWN,,,,TODO,,,
-hw,01DECDA0,17,,,UNKNOWN,,,,TODO,,,
-hw,01DECDC0,54,,,UNKNOWN,,,,TODO,,,
-hw,01DECE00,23,,,UNKNOWN,,,,TODO,,,
-hw,01DECE20,31,,,UNKNOWN,,,,TODO,,,
-hw,01DECE40,46,,,UNKNOWN,,,,TODO,,,
-hw,01DECE70,19,,,UNKNOWN,,,,TODO,,,
+hw,01DEAE50,58,?OnGSPolicyResponse@CSteam3Server@@QAEXPAUGSPolicyResponse_t@@@Z,CSteam3Server::OnGSPolicyResponse,ENGINE,engine/sv_steam3.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DEAE8A,125,?OnLogonSuccess@CSteam3Server@@QAEXPAUSteamServersConnected_t@@@Z,CSteam3Server::OnLogonSuccess,ENGINE,engine/sv_steam3.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DEAF07,61,?GetSteamID@CSteam3Server@@QAE_KXZ,CSteam3Server::GetSteamID,ENGINE,engine/sv_steam3.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13CSteam3Server10GetSteamIDEv
+hw,01DEAF44,117,?OnLogonFailure@CSteam3Server@@QAEXPAUSteamServerConnectFailure_t@@@Z,CSteam3Server::OnLogonFailure,ENGINE,engine/sv_steam3.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DEAFB9,64,?OnGSClientDeny@CSteam3Server@@QAEXPAUGSClientDeny_t@@@Z,CSteam3Server::OnGSClientDeny,ENGINE,engine/sv_steam3.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13CSteam3Server14OnGSClientDenyEP14GSClientDeny_t
+hw,01DEAFF9,471,?OnGSClientDenyHelper@CSteam3Server@@QAEXPAUclient_s@@W4EDenyReason@@PBD@Z,CSteam3Server::OnGSClientDenyHelper,ENGINE,engine/sv_steam3.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DEB208,57,?OnGSClientKick@CSteam3Server@@QAEXPAUGSClientKick_t@@@Z,CSteam3Server::OnGSClientKick,ENGINE,engine/sv_steam3.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13CSteam3Server14OnGSClientKickEP14GSClientKick_t
+hw,01DEB241,342,?OnGSClientApprove@CSteam3Server@@QAEXPAUGSClientApprove_t@@@Z,CSteam3Server::OnGSClientApprove,ENGINE,engine/sv_steam3.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DEB397,164,?ClientFindFromSteamID@CSteam3Server@@QAEPAUclient_s@@AAVCSteamID@@@Z,CSteam3Server::ClientFindFromSteamID,ENGINE,engine/sv_steam3.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13CSteam3Server21ClientFindFromSteamIDER8CSteamID
+hw,01DEB43B,95,??0CSteam3Server@@QAE@XZ,CSteam3Server::CSteam3Server,ENGINE,engine/sv_steam3.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13CSteam3ServerC1Ev
+hw,01DEB49A,1178,?Activate@CSteam3Server@@QAEXXZ,CSteam3Server::Activate,ENGINE,engine/sv_steam3.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DEB934,44,?Shutdown@CSteam3Server@@UAEXXZ,CSteam3Server::Shutdown,ENGINE,engine/sv_steam3.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13CSteam3Server8ShutdownEv
+hw,01DEB960,38,?Shutdown@CSteam3Client@@UAEXXZ,CSteam3Client::Shutdown,ENGINE,engine/sv_steam3.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13CSteam3Client8ShutdownEv
+hw,01DEB986,90,?NotifyClientConnect@CSteam3Server@@QAE_NPAUclient_s@@PBXI@Z,CSteam3Server::NotifyClientConnect,ENGINE,engine/sv_steam3.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DEB9E0,71,?NotifyBotConnect@CSteam3Server@@QAE_NPAUclient_s@@@Z,CSteam3Server::NotifyBotConnect,ENGINE,engine/sv_steam3.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DEBA27,85,?NotifyClientDisconnect@CSteam3Server@@QAEXPAUclient_s@@@Z,CSteam3Server::NotifyClientDisconnect,ENGINE,engine/sv_steam3.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DEBA7C,308,?NotifyOfLevelChange@CSteam3Server@@QAEX_N@Z,CSteam3Server::NotifyOfLevelChange,ENGINE,engine/sv_steam3.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DEBBB0,1124,?RunFrame@CSteam3Server@@QAEXXZ,CSteam3Server::RunFrame,ENGINE,engine/sv_steam3.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DEC097,246,?SendUpdatedServerDetails@CSteam3Server@@QAEXXZ,CSteam3Server::SendUpdatedServerDetails,ENGINE,engine/sv_steam3.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DEC18D,41,_Steam_GetCommunityName,Steam_GetCommunityName,ENGINE,engine/sv_steam3.cpp,,,MATCHED,100,,
+hw,01DEC1B6,182,_Steam_GetClanMembership_guess,Steam_GetClanMembership_guess,ENGINE,engine/sv_steam3.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DEC26C,63,?InitiateGameConnection@CSteam3Client@@QAEHPAXH_KIG_N@Z,CSteam3Client::InitiateGameConnection,ENGINE,engine/sv_steam3.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DEC2AB,43,?TerminateConnection@CSteam3Client@@QAEXIG@Z,CSteam3Client::TerminateConnection,ENGINE,engine/sv_steam3.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DEC2D6,81,?InitClient@CSteam3Client@@QAEXXZ,CSteam3Client::InitClient,ENGINE,engine/sv_steam3.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DEC327,33,?OnClientGameServerDeny@CSteam3Client@@QAEXPAUClientGameServerDeny_t@@@Z,CSteam3Client::OnClientGameServerDeny,ENGINE,engine/sv_steam3.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DEC348,76,?OnGameServerChangeRequested@CSteam3Client@@QAEXPAUGameServerChangeRequested_t@@@Z,CSteam3Client::OnGameServerChangeRequested,ENGINE,engine/sv_steam3.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DEC394,61,?OnGameOverlayActivated@CSteam3Client@@QAEXPAUGameOverlayActivated_t@@@Z,CSteam3Client::OnGameOverlayActivated,ENGINE,engine/sv_steam3.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13CSteam3Client22OnGameOverlayActivatedEP22GameOverlayActivated_t
+hw,01DEC3D1,148,?RunFrame@CSteam3Client@@QAEXXZ,CSteam3Client::RunFrame,ENGINE,engine/sv_steam3.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13CSteam3Client8RunFrameEv
+hw,01DEC465,47,_Steam_NotifyClientConnect,Steam_NotifyClientConnect,ENGINE,engine/sv_steam3.cpp,,,MATCHED,100,,linux: Steam_NotifyClientConnect
+hw,01DEC494,39,_Steam_NotifyBotConnect,Steam_NotifyBotConnect,ENGINE,engine/sv_steam3.cpp,,,MATCHED,100,,linux: Steam_NotifyBotConnect
+hw,01DEC4BB,32,_Steam_NotifyClientDisconnect,Steam_NotifyClientDisconnect,ENGINE,engine/sv_steam3.cpp,,,MATCHED,100,,linux: Steam_NotifyClientDisconnect
+hw,01DEC4DB,30,_Steam_NotifyOfLevelChange,Steam_NotifyOfLevelChange,ENGINE,engine/sv_steam3.cpp,,,MATCHED,100,linux_symbols:callee:1.0,
+hw,01DEC4F9,94,_Steam_Shutdown,Steam_Shutdown,ENGINE,engine/sv_steam3.cpp,,,MATCHED,100,,linux: Steam_Shutdown
+hw,01DEC557,78,_Steam_Activate,Steam_Activate,ENGINE,engine/sv_steam3.cpp,,,MATCHED,100,linux_symbols:caller:0.667,
+hw,01DEC5A5,28,_Steam_RunFrame,Steam_RunFrame,ENGINE,engine/sv_steam3.cpp,,,MATCHED,100,linux_symbols:caller:1.0,
+hw,01DEC5C1,33,_Steam_SetCVar,Steam_SetCVar,ENGINE,engine/sv_steam3.cpp,,,MATCHED,100,,
+hw,01DEC5E2,17,_Steam_ClientRunFrame,Steam_ClientRunFrame,ENGINE,engine/sv_steam3.cpp,,,MATCHED,100,,
+hw,01DEC5F3,17,_Steam_InitClient,Steam_InitClient,ENGINE,engine/sv_steam3.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DEC604,52,_Steam_GSInitiateGameConnection,Steam_GSInitiateGameConnection,ENGINE,engine/sv_steam3.cpp,,,MATCHED,100,,
+hw,01DEC638,26,_Steam_GSTerminateGameConnection,Steam_GSTerminateGameConnection,ENGINE,engine/sv_steam3.cpp,,,MATCHED,100,,
+hw,01DEC652,27,_Steam_ShutdownClient,Steam_ShutdownClient,ENGINE,engine/sv_steam3.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DEC66D,17,_Steam_GSGetSteamID,Steam_GSGetSteamID,ENGINE,engine/sv_steam3.cpp,,,MATCHED,100,,
+hw,01DEC67E,22,_Steam_GSBSecure,Steam_GSBSecure,ENGINE,engine/sv_steam3.cpp,,,MATCHED,100,,
+hw,01DEC694,22,_Steam_GSBLoggedOn,Steam_GSBLoggedOn,ENGINE,engine/sv_steam3.cpp,,,MATCHED,100,,
+hw,01DEC6AA,22,_Steam_GSBSecurePreference,Steam_GSBSecurePreference,ENGINE,engine/sv_steam3.cpp,,,MATCHED,100,,
+hw,01DEC6C0,67,_Steam_Steam3IDtoSteam2,Steam_Steam3IDtoSteam2,ENGINE,engine/sv_steam3.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DEC703,93,_Steam_StringToSteamID,Steam_StringToSteamID,ENGINE,engine/sv_steam3.cpp,,,MATCHED,100,,
+hw,01DEC760,101,_Steam_GetGSUniverse,Steam_GetGSUniverse,ENGINE,engine/sv_steam3.cpp,,,MATCHED,100,,
+hw,01DEC7D9,10,?Steam3Server@@YAPAVCSteam3Server@@XZ,Steam3Server,ENGINE,engine/sv_steam3.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DEC7E3,15,_$E4,,ENGINE,engine/sv_steam3.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DEC7F2,15,_$E1,,ENGINE,engine/sv_steam3.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DEC801,18,_$E3,,ENGINE,engine/sv_steam3.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DEC813,15,_$E2,,ENGINE,engine/sv_steam3.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DEC822,10,?Steam3Client@@YAAAVCSteam3Client@@XZ,Steam3Client,ENGINE,engine/sv_steam3.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DEC82C,855,_Master_SetMaster_f,Master_SetMaster_f,ENGINE,engine/sv_steam3.cpp,,,MATCHED,100,linux_symbols:string:0.274,
+hw,01DECB90,17,?BSecure@CSteam3Server@@QBE_NXZ,CSteam3Server::BSecure,ENGINE,engine/sv_steam3.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DECBB0,40,??0CSteamID@@QAE@IIW4EUniverse@@W4EAccountType@@@Z,CSteamID::CSteamID,ENGINE,engine/sv_steam3.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DECBE0,19,?ConvertToUint64@CSteamID@@QBE_KXZ,CSteamID::ConvertToUint64,ENGINE,engine/sv_steam3.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DECC00,81,??0CSteamID@@QAE@XZ,CSteamID::CSteamID,ENGINE,engine/sv_steam3.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DECC60,47,??0CSteam3@@QAE@XZ,CSteam3::CSteam3,ENGINE,engine/sv_steam3.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DECC90,46,??_GCSteam3@@UAEPAXI@Z,destructor',ENGINE,engine/sv_steam3.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DECCC0,20,??1CSteam3@@UAE@XZ,CSteam3::~CSteam3,ENGINE,engine/sv_steam3.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DECCE0,46,??_GCSteam3Server@@UAEPAXI@Z,destructor',ENGINE,engine/sv_steam3.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DECD10,19,??1CSteam3Server@@UAE@XZ,CSteam3Server::~CSteam3Server,ENGINE,engine/sv_steam3.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DECD30,31,?BClanAccount@CSteamID@@QBE_NXZ,CSteamID::BClanAccount,ENGINE,engine/sv_steam3.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DECD50,16,?GetAccountID@CSteamID@@QBEIXZ,CSteamID::GetAccountID,ENGINE,engine/sv_steam3.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DECD60,59,?BLoggedOn@CSteam3Server@@QBE_NXZ,CSteam3Server::BLoggedOn,ENGINE,engine/sv_steam3.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DECDA0,17,?BWantsSecure@CSteam3Server@@QBE_NXZ,CSteam3Server::BWantsSecure,ENGINE,engine/sv_steam3.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DECDC0,54,?ConvertToSteam2@CSteamID@@QBEXPAUTSteamGlobalUserID@@@Z,CSteamID::ConvertToSteam2,ENGINE,engine/sv_steam3.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DECE00,23,?GetEUniverse@CSteamID@@QBE?AW4EUniverse@@XZ,CSteamID::GetEUniverse,ENGINE,engine/sv_steam3.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DECE20,31,??0CSteam3Client@@QAE@XZ,CSteam3Client::CSteam3Client,ENGINE,engine/sv_steam3.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DECE40,46,??_GCSteam3Client@@UAEPAXI@Z,destructor',ENGINE,engine/sv_steam3.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DECE70,19,??1CSteam3Client@@UAE@XZ,CSteam3Client::~CSteam3Client,ENGINE,engine/sv_steam3.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01DECE90,212,_SV_CheckFile,SV_CheckFile,ENGINE,engine/sv_upld.c,,,MATCHED,100,linux_symbols:string:0.875,
 hw,01DECF64,59,_SV_ClearResourceLists,SV_ClearResourceLists,ENGINE,engine/sv_upld.c,,,MATCHED,100,linux_symbols:string:0.833,
 hw,01DECF9F,333,_SV_CreateCustomizationList,SV_CreateCustomizationList,ENGINE,engine/sv_upld.c,,,MATCHED,100,linux_symbols:string:0.833,

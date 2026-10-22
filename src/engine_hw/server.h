@@ -746,6 +746,9 @@ void	Steam_NotifyOfLevelChange( void );
 void	Steam_Shutdown( void );
 void	Steam_Activate( void );
 void	Steam_RunFrame( void );
+void	Steam_ClientRunFrame( void );
+void	Steam_InitClient( void );
+void	Steam_ShutdownClient( void );
 uint64	Steam_GSGetSteamID( void );
 qboolean	Steam_GSBSecure( void );
 qboolean	Steam_GSBLoggedOn( void );
@@ -754,6 +757,7 @@ uint64	Steam_StringToSteamID( const char *pStr );
 TSteamGlobalUserID	Steam_Steam3IDtoSteam2( uint64 unSteamID );
 const char	*Steam_GetGSUniverse( void );
 void	Steam_HandleIncomingPacket( byte *data, int len, int fromip, unsigned short port );
+void	Master_SetMaster_f( void );
 
 // sv_upld.c
 void	SV_ParseResourceList( client_t *pSenderClient );

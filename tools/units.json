@@ -2691,9 +2691,31 @@
           "functions_file": "tools/units/hw_engine_buildnum.txt"
         },
         {
+          "name": "engine/GL_MESH",
+          "source": "src/engine_hw/GL_MESH.C",
+          "functions_file": "tools/units/hw_engine_GL_MESH.txt"
+        },
+        {
           "name": "engine/textures",
           "source": "src/engine_hw/textures.c",
           "functions_file": "tools/units/hw_engine_textures.txt"
+        },
+        {
+          "name": "engine/sv_steam3",
+          "source": "src/engine_hw/sv_steam3.cpp",
+          "functions_file": "tools/units/hw_engine_sv_steam3.txt"
+        },
+        {
+          "name": "engine/vgui2/BaseUISurface",
+          "source": "src/engine_hw/vgui2/BaseUISurface.cpp",
+          "functions_file": "tools/units/hw_engine_vgui2_BaseUISurface.txt",
+          "includes": [
+            "src/public",
+            "src/engine",
+            "src/common",
+            "src/engine_hw",
+            "src/cl_dll"
+          ]
         },
         {
           "name": "engine/cl_spectator",
