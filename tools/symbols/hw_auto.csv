@@ -860,7 +860,7 @@ va,name,kind,evidence
 01EBA850,_gl_d3dflip,data,aligned reference:objdiff:hw/engine/GL_VIDNT:_VID_Init (100.0%)
 01EBA868,_vid_d3d,data,aligned reference:objdiff:hw/engine/vgui_EngineSurfaceHW:?drawTexturedRect@EngineSurface@@UAEXHHHH@Z (100.0%)
 01EBA880,_texture_extension_number_guess,data,aligned reference:objdiff:hw/engine/GL_RMISC:_R_Init (100.0%)
-01EBA88C,_TEXTURE2_SGIS_guess,data,aligned reference:objdiff:hw/engine/GL_VIDNT:_CheckMultiTextureExtensions (100.0%)
+01EBA88C,_TEXTURE2_SGIS,data,aligned reference:objdiff:hw/engine/GL_VIDNT:_CheckMultiTextureExtensions (100.0%)
 01EBA890,_?pfd@?1??FreeFBOObjects@@9@9,data,aligned reference:objdiff:hw/engine/GL_VIDNT:_FreeFBOObjects (100.0%)
 01EBB170,_turbsin,data,aligned reference:objdiff:hw/engine/GL_WARP:_EmitWaterPolys (100.0%)
 01EBB570,_suf,data,aligned reference:objdiff:hw/engine/GL_WARP:_R_LoadSkys (100.0%)

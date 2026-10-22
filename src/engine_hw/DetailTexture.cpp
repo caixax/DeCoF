@@ -18,7 +18,7 @@ extern "C"
 #include "client.h"
 #include "GLQUAKE.H"
 
-extern int		TEXTURE2_SGIS_guess;
+extern int		TEXTURE2_SGIS;
 
 int		GL_LoadTexture2( char *identifier, GL_TEXTURETYPE textureType, int width, int height, byte *data, qboolean mipmap, int iType, byte *pPal, int filter );
 
@@ -138,7 +138,7 @@ void DT_Initialize( void )
 	Cvar_RegisterVariable( &r_detailtextures );
 	Cvar_RegisterVariable( &r_detailtexturessupported );
 
-	qglSelectTextureSGIS( TEXTURE2_SGIS_guess );
+	qglSelectTextureSGIS( TEXTURE2_SGIS );
 	qglEnable( GL_TEXTURE_2D );
 	qglTexEnvf( GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_COMBINE_ARB );
 	qglTexEnvf( GL_TEXTURE_ENV, GL_COMBINE_RGB_ARB, GL_MODULATE );
@@ -562,7 +562,7 @@ int DT_SetRenderState( int diffuseId )
 		return 0;
 	}
 
-	qglSelectTextureSGIS( TEXTURE2_SGIS_guess );
+	qglSelectTextureSGIS( TEXTURE2_SGIS );
 	qglEnable( GL_TEXTURE_2D );
 
 	bool bind = true;
@@ -608,7 +608,7 @@ DT_SetTextureCoordinates
 */
 void DT_SetTextureCoordinates( float u, float v )
 {
-	qglMTexCoord2fSGIS( TEXTURE2_SGIS_guess, u, v );
+	qglMTexCoord2fSGIS( TEXTURE2_SGIS, u, v );
 }
 
 /*
@@ -618,7 +618,7 @@ DT_ClearRenderState
 */
 void DT_ClearRenderState( void )
 {
-	qglSelectTextureSGIS( TEXTURE2_SGIS_guess );
+	qglSelectTextureSGIS( TEXTURE2_SGIS );
 	qglDisable( GL_TEXTURE_2D );
 	qglSelectTextureSGIS( TEXTURE1_SGIS );
 }

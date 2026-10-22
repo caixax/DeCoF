@@ -24,7 +24,7 @@ extern void		( *VID_FlipScreen_guess )( void );
 
 extern int		TEXTURE0_SGIS;
 extern int		TEXTURE1_SGIS;
-extern int		TEXTURE2_SGIS_guess;
+extern int		TEXTURE2_SGIS;
 extern GLenum	oldtarget;
 extern int		gl_mtexable;
 
@@ -45,7 +45,7 @@ int		ReadPixels3Dfx_guess( int x, int y, int width, int height, byte *buffer );
 int			gGLHardwareType = 0;
 
 qboolean	gfMiniDriver_guess;
-RECT		WindowRect;
+RECT		window_rect;
 int			window_center_x, window_center_y;
 
 const char	*gl_vendor;
@@ -140,7 +140,7 @@ void CheckMultiTextureExtensions( void )
 
 		TEXTURE0_SGIS = GL_TEXTURE0_ARB;
 		TEXTURE1_SGIS = GL_TEXTURE1_ARB;
-		TEXTURE2_SGIS_guess = GL_TEXTURE2_ARB;
+		TEXTURE2_SGIS = GL_TEXTURE2_ARB;
 
 		oldtarget = TEXTURE0_SGIS;
 		GL_SelectTexture( TEXTURE0_SGIS );
@@ -167,7 +167,7 @@ void CheckMultiTextureExtensions( void )
 
 		TEXTURE0_SGIS = GL_TEXTURE0_SGIS;
 		TEXTURE1_SGIS = GL_TEXTURE1_SGIS;
-		TEXTURE2_SGIS_guess = GL_TEXTURE2_SGIS;
+		TEXTURE2_SGIS = GL_TEXTURE2_SGIS;
 
 		oldtarget = TEXTURE0_SGIS;
 		gl_mtexable = 2;
@@ -345,8 +345,8 @@ GL_BeginRendering
 void GL_BeginRendering( int *x, int *y, int *width, int *height )
 {
 	*x = *y = 0;
-	*width = WindowRect.right - WindowRect.left;
-	*height = WindowRect.bottom - WindowRect.top;
+	*width = window_rect.right - window_rect.left;
+	*height = window_rect.bottom - window_rect.top;
 
 	vid.width = vid.conwidth = *width;
 	vid.height = vid.conheight = *height;
@@ -737,7 +737,7 @@ void VID_TakeSnapshotRect( const char *pFilename, int x, int y, int w, int h )
 
 void VID_UpdateWindowVars( RECT *prc, int x, int y )
 {
-	WindowRect = *prc;
+	window_rect = *prc;
 
 	if ( pmainwindow )
 	{
