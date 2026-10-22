@@ -12,7 +12,9 @@ extern "C"
 {
 #include "quakedef.h"
 #include "common.h"
+#include "cvardef.h"
 #include "sys.h"
+#include "host.h"
 }
 
 #define VENGINE_LAUNCHER_API_VERSION	"VENGINE_LAUNCHER_API_VERSION002"
@@ -99,9 +101,69 @@ void Sys_GetCDKey( char *pszCDKey, int *nLength, int *bDedicated )
 		*bDedicated = 0;
 }
 
+void Sys_InitMemory( void )
+{
+	int i;
+	bool bDidDefault;
+
+	i = COM_CheckParm( "-heapsize" );
+	if ( i && i < com_argc - 1 )
+		host_parms.memsize = atoi( com_argv[ i + 1 ] ) * 1024;
+
+	bDidDefault = false;
+
+	if ( host_parms.memsize < 0xE00000 )
+	{
+		MEMORYSTATUS lpBuffer;
+
+		lpBuffer.dwLength = sizeof( MEMORYSTATUS );
+		GlobalMemoryStatus( &lpBuffer );
+
+		bDidDefault = true;
+
+		if ( lpBuffer.dwTotalPhys > 0 && lpBuffer.dwTotalPhys < 0xF00000 )
+			Sys_Error( "Available memory less than 15MB!!! %i\n", host_parms.memsize );
+
+		if ( lpBuffer.dwTotalPhys <= 0 )
+			host_parms.memsize = 0x8000000;
+		else
+			host_parms.memsize = lpBuffer.dwTotalPhys >> 1;
+	}
+
+	if ( host_parms.memsize < 0xE00000 )
+		host_parms.memsize = 0xE00000;
+
+	if ( !g_bIsDedicatedServer && host_parms.memsize > 0x8000000 )
+		host_parms.memsize = 0x8000000;
+
+	if ( g_bIsDedicatedServer && bDidDefault )
+		host_parms.memsize = 0x2800000;
+
+	if ( g_bIsDedicatedServer && host_parms.memsize > 0x8000000 )
+		host_parms.memsize = 0x8000000;
+
+	if ( COM_CheckParm( "-minmemory" ) )
+		host_parms.memsize = 0xE00000;
+
+	host_parms.membase = GlobalAlloc( GMEM_FIXED, host_parms.memsize );
+	if ( !host_parms.membase )
+		Sys_Error( "Unable to allocate %.2f MB\n", host_parms.memsize / ( 1024.0 * 1024.0 ) );
+}
+
+void Sys_ShutdownMemory( void )
+{
+	GlobalFree( host_parms.membase );
+	host_parms.membase = NULL;
+	host_parms.memsize = 0;
+}
+
 void Sys_InitAuthentication( void )
 {
 	Sys_Printf( "STEAM Auth Server\r\n" );
+}
+
+void Sys_ShutdownAuthentication( void )
+{
 }
 
 }
