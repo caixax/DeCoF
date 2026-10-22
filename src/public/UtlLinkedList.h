@@ -342,11 +342,10 @@ template <class T, class I>
 void  CUtlLinkedList<T,I>::Free( I elem )
 {
 	Assert( IsValidIndex(elem) );
-	Unlink(elem);
-
-	ListElem_t &internalElem = InternalElement(elem);
-	Destruct( &internalElem.m_Element );
-	internalElem.m_Next = m_FirstFree;
+	Destruct( &Element(elem) );
+	if ( IsInList(elem) )
+		Unlink(elem);
+	InternalElement(elem).m_Next = m_FirstFree;
 	m_FirstFree = elem;
 }
 
