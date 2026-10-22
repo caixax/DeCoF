@@ -23513,67 +23513,67 @@ hw,01D05B50,28,??0CUtlSymbol@@QAE@ABV0@@Z,CUtlSymbol::CUtlSymbol,UNKNOWN,engine/
 hw,01D05B70,17,?NumAllocated@?$CUtlMemory@VCUtlSymbol@@@@QBEHXZ,CUtlSymbol>::NumAllocated,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01D05B90,197,?Grow@?$CUtlMemory@VCUtlSymbol@@@@QAEXH@Z,CUtlSymbol>::Grow,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01D05C60,25,?IsExternallyAllocated@?$CUtlMemory@VCUtlSymbol@@@@QBE_NXZ,CUtlSymbol>::IsExternallyAllocated,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,
-hw,01D05C80,226,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,linux: _ZN10EngineFont11GetTextSizeEPKcRiS2_
-hw,01D05D62,17,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,linux: _ZN10EngineFont5getIdEv
-hw,01D05D73,17,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,
+hw,01D05C80,226,?GetTextSize@EngineFont@@UAEXPBDAAH1@Z,EngineFont::GetTextSize,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN10EngineFont11GetTextSizeEPKcRiS2_
+hw,01D05D62,17,?getId@EngineFont@@UAEHXZ,EngineFont::getId,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN10EngineFont5getIdEv
+hw,01D05D73,17,?getPlat@EngineFont@@QAEPAVBaseFontPlat@@XZ,EngineFont::getPlat,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01D05D84,15,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,
 hw,01D05D93,15,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,
 hw,01D05DA2,18,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,
 hw,01D05DB4,15,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,
-hw,01D05DC3,53,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,
-hw,01D05DF8,49,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,
+hw,01D05DC3,53,??0VFontData@@QAE@XZ,VFontData::VFontData,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01D05DF8,49,??1VFontData@@QAE@XZ,VFontData::~VFontData,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01D05E29,17,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,
-hw,01D05E3A,474,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,
+hw,01D05E3A,474,?LoadVFontDataFrom32BitTGA@@YA_NPAVFileImageStream@@PAVVFontData@@@Z,LoadVFontDataFrom32BitTGA,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01D06014,17,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,
-hw,01D06025,68,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,
-hw,01D06069,119,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,linux: _ZN22FileImageStream_Memory4ReadEPvi
-hw,01D060E0,32,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,linux: _ZN22FileImageStream_Memory11ErrorStatusEv
-hw,01D06100,494,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,
-hw,01D062EE,290,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,
-hw,01D06410,86,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,
-hw,01D06466,736,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,
-hw,01D06746,107,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,
-hw,01D067B1,246,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,linux: _ZN8FontPlat6equalsEPKciifibbbb
-hw,01D068A7,668,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,linux: _ZN8FontPlat11getCharRGBAEiiiiiPh
-hw,01D06B43,67,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,linux: _ZN8FontPlat14GetCharABCwideEiRiS0_S0_
-hw,01D06B86,17,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,linux: _ZN8FontPlat7GetTallEv
-hw,01D06B97,20,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,linux: _ZN8FontPlat5getIdEv
-hw,01D06BAB,13,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,linux: _ZN8FontPlat15DrawSetTextFontEP11SurfacePlat
-hw,01D06BB8,55,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,
-hw,01D06BEF,77,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,
-hw,01D06C3C,282,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,
-hw,01D06D56,40,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,linux: _ZN15FontPlat_Bitmap6equalsEPKciifibbbb
-hw,01D06D7E,299,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,linux: _ZN15FontPlat_Bitmap11getCharRGBAEiiiiiPh
-hw,01D06EA9,80,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,linux: _ZN15FontPlat_Bitmap14GetCharABCwideEiRiS0_S0_
-hw,01D06EF9,20,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,linux: _ZN15FontPlat_Bitmap7GetTallEv
-hw,01D06F0D,20,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,linux: _ZN15FontPlat_Bitmap5getIdEv
-hw,01D06F21,13,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,linux: _ZN15FontPlat_Bitmap15DrawSetTextFontEP11SurfacePlat
-hw,01D06F2E,90,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,
-hw,01D06F88,72,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,
-hw,01D06FD0,504,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,linux: _ZN10EngineFont4InitEPKcPviiifibbbb
-hw,01D071C8,54,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,linux: _ZN10EngineFont11getCharRGBAEiiiiiPh
-hw,01D071FE,46,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,linux: _ZN10EngineFont14GetCharABCwideEiRiS0_S0_
-hw,01D0722C,28,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,linux: _ZN10EngineFont7GetTallEv
-hw,01D07248,110,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,
-hw,01D072C0,22,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D072E0,19,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D07300,51,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D07340,40,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D07370,23,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D07390,46,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D073C0,23,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D073E0,46,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D07410,20,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D07430,46,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D07460,23,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D07480,46,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D074B0,43,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D074E0,34,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D07510,40,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D07540,16,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D07550,68,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D075A0,45,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D075D0,221,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D06025,68,??0FileImageStream_Memory@@QAE@PAXH@Z,FileImageStream_Memory::FileImageStream_Memory,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01D06069,119,?Read@FileImageStream_Memory@@UAEXPAXH@Z,FileImageStream_Memory::Read,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN22FileImageStream_Memory4ReadEPvi
+hw,01D060E0,32,?ErrorStatus@FileImageStream_Memory@@UAE_NXZ,FileImageStream_Memory::ErrorStatus,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN22FileImageStream_Memory11ErrorStatusEv
+hw,01D06100,494,?Load32BitTGA@@YA_NPAVFileImageStream@@PAVFileImage@@@Z,Load32BitTGA,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01D062EE,290,?Save32BitTGA@@YAXPAXPAVFileImage@@@Z,Save32BitTGA,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01D06410,86,?WriteRun@@YAXPAEPAXH@Z,WriteRun,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01D06466,736,??0FontPlat@@QAE@PBDHHMH_N111H@Z,FontPlat::FontPlat,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01D06746,107,??1FontPlat@@UAE@XZ,FontPlat::~FontPlat,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01D067B1,246,?equals@FontPlat@@UAE_NPBDHHMH_N111@Z,FontPlat::equals,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN8FontPlat6equalsEPKciifibbbb
+hw,01D068A7,668,?getCharRGBA@FontPlat@@UAEXHHHHHPAE@Z,FontPlat::getCharRGBA,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN8FontPlat11getCharRGBAEiiiiiPh
+hw,01D06B43,67,?GetCharABCwide@FontPlat@@UAEXHAAH00@Z,FontPlat::GetCharABCwide,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN8FontPlat14GetCharABCwideEiRiS0_S0_
+hw,01D06B86,17,?GetTall@FontPlat@@UAEHXZ,FontPlat::GetTall,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN8FontPlat7GetTallEv
+hw,01D06B97,20,?getId@FontPlat@@UAEHXZ,FontPlat::getId,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN8FontPlat5getIdEv
+hw,01D06BAB,13,?DrawSetTextFont@FontPlat@@UAEXPAUSurfacePlat@@@Z,FontPlat::DrawSetTextFont,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN8FontPlat15DrawSetTextFontEP11SurfacePlat
+hw,01D06BB8,55,??0FontPlat_Bitmap@@AAE@XZ,FontPlat_Bitmap::FontPlat_Bitmap,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01D06BEF,77,??1FontPlat_Bitmap@@UAE@XZ,FontPlat_Bitmap::~FontPlat_Bitmap,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01D06C3C,282,?Create@FontPlat_Bitmap@@SAPAV1@PBDPAVFileImageStream@@H@Z,FontPlat_Bitmap::Create,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01D06D56,40,?equals@FontPlat_Bitmap@@UAE_NPBDHHMH_N111@Z,FontPlat_Bitmap::equals,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN15FontPlat_Bitmap6equalsEPKciifibbbb
+hw,01D06D7E,299,?getCharRGBA@FontPlat_Bitmap@@UAEXHHHHHPAE@Z,FontPlat_Bitmap::getCharRGBA,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN15FontPlat_Bitmap11getCharRGBAEiiiiiPh
+hw,01D06EA9,80,?GetCharABCwide@FontPlat_Bitmap@@UAEXHAAH00@Z,FontPlat_Bitmap::GetCharABCwide,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN15FontPlat_Bitmap14GetCharABCwideEiRiS0_S0_
+hw,01D06EF9,20,?GetTall@FontPlat_Bitmap@@UAEHXZ,FontPlat_Bitmap::GetTall,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN15FontPlat_Bitmap7GetTallEv
+hw,01D06F0D,20,?getId@FontPlat_Bitmap@@UAEHXZ,FontPlat_Bitmap::getId,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN15FontPlat_Bitmap5getIdEv
+hw,01D06F21,13,?DrawSetTextFont@FontPlat_Bitmap@@UAEXPAUSurfacePlat@@@Z,FontPlat_Bitmap::DrawSetTextFont,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN15FontPlat_Bitmap15DrawSetTextFontEP11SurfacePlat
+hw,01D06F2E,90,??0EngineFont@@QAE@PBDPAXHHHMH_N222@Z,EngineFont::EngineFont,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01D06F88,72,??1EngineFont@@UAE@XZ,EngineFont::~EngineFont,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01D06FD0,504,?Init@EngineFont@@EAEXPBDPAXHHHMH_N222@Z,EngineFont::Init,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN10EngineFont4InitEPKcPviiifibbbb
+hw,01D071C8,54,?getCharRGBA@EngineFont@@UAEXHHHHHPAE@Z,EngineFont::getCharRGBA,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN10EngineFont11getCharRGBAEiiiiiPh
+hw,01D071FE,46,?GetCharABCwide@EngineFont@@UAEXHAAH00@Z,EngineFont::GetCharABCwide,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN10EngineFont14GetCharABCwideEiRiS0_S0_
+hw,01D0722C,28,?GetTall@EngineFont@@UAEHXZ,EngineFont::GetTall,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN10EngineFont7GetTallEv
+hw,01D07248,110,?Font_Reset@@YAXXZ,Font_Reset,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01D072C0,22,??0FileImage@@QAE@XZ,FileImage::FileImage,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D072E0,19,??1FileImage@@QAE@XZ,FileImage::~FileImage,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D07300,51,?Term@FileImage@@QAEXXZ,FileImage::Term,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D07340,40,?Clear@FileImage@@QAEXXZ,FileImage::Clear,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D07370,23,??0FileImageStream@@QAE@XZ,FileImageStream::FileImageStream,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D07390,46,??_GFontPlat@@UAEPAXI@Z,destructor',UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D073C0,23,??0BaseFontPlat@@QAE@XZ,BaseFontPlat::BaseFontPlat,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D073E0,46,??_GBaseFontPlat@@UAEPAXI@Z,destructor',UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D07410,20,??1BaseFontPlat@@UAE@XZ,BaseFontPlat::~BaseFontPlat,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D07430,46,??_GFontPlat_Bitmap@@UAEPAXI@Z,destructor',UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D07460,23,?GetLineWidth@VFontData@@QAEHXZ,VFontData::GetLineWidth,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D07480,46,??_GEngineFont@@UAEPAXI@Z,destructor',UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D074B0,43,??0?$Dar@PAVBaseFontPlat@@@vgui2@@QAE@XZ,*>,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D074E0,34,??1?$Dar@PAVBaseFontPlat@@@vgui2@@QAE@XZ,*>,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D07510,40,?SetCount@?$Dar@PAVBaseFontPlat@@@vgui2@@QAEXH@Z,*>::SetCount,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D07540,16,?GetCount@?$Dar@PAVBaseFontPlat@@@vgui2@@QAEHXZ,*>::GetCount,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D07550,68,?AddElement@?$Dar@PAVBaseFontPlat@@@vgui2@@QAEHPAVBaseFontPlat@@@Z,*>::AddElement,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D075A0,45,??A?$Dar@PAVBaseFontPlat@@@vgui2@@QAEPAVBaseFontPlat@@H@Z,*>::operator[],UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D075D0,221,?EnsureCapacity@?$Dar@PAVBaseFontPlat@@@vgui2@@QAEXH@Z,*>::EnsureCapacity,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
 hw,01D076B0,158,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,linux: _ZN17CFontTextureCacheC1Ev
 hw,01D0774E,30,,ATL::CAtlBaseModule::~CAtlBaseModule,ENGINE,engine/vgui2/FontTextureCache.cpp,,,TODO,,ghidra,linux: _ZN17CFontTextureCacheD1Ev
 hw,01D0776C,64,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,linux: _ZN17CFontTextureCache18CacheEntryLessFuncERKNS_12cacheentry_tES2_

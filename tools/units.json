@@ -2944,6 +2944,18 @@
           "name": "engine/pe_win32_guess",
           "source": "src/engine_hw/pe_win32_guess.c",
           "functions_file": "tools/units/hw_engine_pe_win32_guess.txt"
+        },
+        {
+          "name": "engine/vgui2/BaseUISurface_Font",
+          "source": "src/engine_hw/vgui2/BaseUISurface_Font.cpp",
+          "functions_file": "tools/units/hw_engine_vgui2_BaseUISurface_Font.txt",
+          "includes": [
+            "src/public",
+            "src/engine",
+            "src/common",
+            "src/engine_hw",
+            "src/cl_dll"
+          ]
         }
       ]
     },
