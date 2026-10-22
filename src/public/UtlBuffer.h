@@ -135,6 +135,42 @@ private:
 };
 
 //-----------------------------------------------------------------------------
+// Where am I reading?
+//-----------------------------------------------------------------------------
+inline void const* CUtlBuffer::PeekGet( int offset ) const
+{
+	return &m_Memory[m_Get + offset];
+}
+
+//-----------------------------------------------------------------------------
+// Unserialization
+//-----------------------------------------------------------------------------
+#define GET_TYPE( _type, _val, _fmt )	\
+	if (!IsText())						\
+	{									\
+		if (CheckGet( sizeof(_type) ))	\
+		{								\
+			_val = *(_type *)PeekGet();	\
+			m_Get += sizeof(_type);		\
+		}								\
+		else							\
+		{								\
+			_val = 0;					\
+		}								\
+	}									\
+	else								\
+	{									\
+		Scanf( _fmt, &_val );			\
+	}
+
+inline int CUtlBuffer::GetInt( )
+{
+	int i;
+	GET_TYPE( int, i, "%d" );
+	return i;
+}
+
+//-----------------------------------------------------------------------------
 // Where am I writing?
 //-----------------------------------------------------------------------------
 inline void* CUtlBuffer::PeekPut( int offset )
@@ -183,6 +219,28 @@ inline void CUtlBuffer::PutChar( char c )
 	{
 		Printf( "%c", c );
 	}
+}
+
+//-----------------------------------------------------------------------------
+// Serialization
+//-----------------------------------------------------------------------------
+#define PUT_TYPE( _type, _val, _fmt )	\
+	if (!IsText())						\
+	{									\
+		if (CheckPut( sizeof(_type) ))	\
+		{								\
+			*(_type *)PeekPut() = _val;	\
+			m_Put += sizeof(_type);		\
+		}								\
+	}									\
+	else								\
+	{									\
+		Printf( _fmt, _val );			\
+	}
+
+inline void CUtlBuffer::PutInt( int i )
+{
+	PUT_TYPE( int, i, "%d" );
 }
 
 #endif // UTLBUFFER_H

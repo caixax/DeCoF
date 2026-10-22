@@ -35,3 +35,5 @@ _decal_names,8192,char decal_names[512][16] (decals.c)
 _cl_funcs,172,cldll_func_t cl_funcs (cdll_int.c)
 _eaxpre_guess,464,EAX_REVERBPROPERTIES eaxpre_guess[29] (SND_MIX.C); the string label Ghidra put at 01EC82ED covers its last bytes
 _voxperiod,8,char voxperiod[] = "_period" (SND_MIX.C)
+_userfilters,1048576,userfilter_t userfilters[MAX_USERFILTERS] (filter.h; 32768 entries of 32 bytes)
+_ipfilters,524288,ipfilter_t ipfilters[MAX_IPFILTERS] (filter.h; 32768 entries of 16 bytes)

@@ -2916,7 +2916,12 @@
         {
           "name": "engine/sv_remoteaccess",
           "source": "src/engine_hw/sv_remoteaccess.cpp",
-          "functions_file": "tools/units/hw_engine_sv_remoteaccess.txt"
+          "functions_file": "tools/units/hw_engine_sv_remoteaccess.txt",
+          "includes": [
+            "src/engine_hw",
+            "src/common",
+            "src/public"
+          ]
         },
         {
           "name": "engine/sv_secure",
