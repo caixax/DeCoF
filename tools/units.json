@@ -2561,6 +2561,11 @@
           "name": "engine/voice",
           "source": "src/engine_hw/voice.cpp",
           "functions_file": "tools/units/hw_engine_voice.txt"
+        },
+        {
+          "name": "engine/r_trans",
+          "source": "src/engine_hw/r_trans.c",
+          "functions_file": "tools/units/hw_engine_r_trans.txt"
         }
       ]
     },
