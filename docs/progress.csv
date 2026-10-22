@@ -27940,7 +27940,7 @@ hw,01DC9FBF,490,_S_Update,S_Update,ENGINE,engine/SND_DMA.C,,,MATCHED,100,linux_s
 hw,01DCA1A9,164,_GetSoundtime,GetSoundtime,ENGINE,engine/SND_DMA.C,,,MATCHED,100,,
 hw,01DCA24D,176,_S_PrintStats,S_PrintStats,ENGINE,engine/SND_DMA.C,,,MATCHED,100,linux_symbols:string:0.875,
 hw,01DCA2FD,45,_S_ExtraUpdate,S_ExtraUpdate,ENGINE,engine/SND_DMA.C,,,MATCHED,100,linux_symbols:data1:0.667,
-hw,01DCA32A,713,_S_Update_,S_Update_,ENGINE,engine/SND_DMA.C,,,TODO,96.29,,
+hw,01DCA32A,713,_S_Update_,S_Update_,ENGINE,engine/SND_DMA.C,,,MATCHED,100,,
 hw,01DCA5F3,222,_S_Play,S_Play,ENGINE,engine/SND_DMA.C,,,MATCHED,100,,
 hw,01DCA6D1,249,_S_PlayVol,S_PlayVol,ENGINE,engine/SND_DMA.C,,,MATCHED,100,,
 hw,01DCA7CA,219,_S_SoundList,S_SoundList,ENGINE,engine/SND_DMA.C,,,MATCHED,100,linux_symbols:string:0.75,

@@ -1685,6 +1685,13 @@ void S_Update_( void )
 	// Updates DMA time
 	GetSoundtime();
 
+	// check to make sure that we haven't overshot
+	if ( paintedtime < soundtime )
+	{
+		//Con_Printf( "S_Update_ : overflow\n" );
+		//paintedtime = soundtime;
+	}
+
 	if ( shm )
 	{
 		// mix ahead of current position
