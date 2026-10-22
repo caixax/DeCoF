@@ -19,6 +19,24 @@ extern int		atismoothing;
 
 extern void		( *VID_FlipScreen_guess )( void );
 
+extern int		TEXTURE0_SGIS;
+extern int		TEXTURE1_SGIS;
+extern int		TEXTURE2_SGIS_guess;
+extern GLenum	oldtarget;
+extern int		gl_mtexable;
+
+void	GL_SelectTexture( GLenum target );
+void	DT_Initialize( void );
+void	GL_Config( void );
+
+#define GL_TEXTURE0_SGIS			0x835E
+#define GL_TEXTURE1_SGIS			0x835F
+#define GL_TEXTURE2_SGIS			0x8360
+#define GL_TEXTURE0_ARB				0x84C0
+#define GL_TEXTURE1_ARB				0x84C1
+#define GL_TEXTURE2_ARB				0x84C2
+#define GL_MAX_TEXTURE_UNITS_ARB	0x84E2
+
 RECT		WindowRect;
 
 const char	*gl_vendor;
@@ -94,6 +112,66 @@ void CheckArrayExtensions( void )
 
 /*
 ================
+CheckMultiTextureExtensions
+================
+*/
+void CheckMultiTextureExtensions( void )
+{
+	int		num_guess;
+
+	if ( vid_d3d.value )
+		return;
+
+	if ( Q_strstr( gl_extensions, "GL_ARB_multitexture " ) )
+	{
+		Con_Printf( "ARB Multitexture extensions found.\n" );
+
+		qglMTexCoord2fSGIS = (void *)qwglGetProcAddress( "glMultiTexCoord2fARB" );
+		qglSelectTextureSGIS = (void *)qwglGetProcAddress( "glActiveTextureARB" );
+
+		TEXTURE0_SGIS = GL_TEXTURE0_ARB;
+		TEXTURE1_SGIS = GL_TEXTURE1_ARB;
+		TEXTURE2_SGIS_guess = GL_TEXTURE2_ARB;
+
+		oldtarget = GL_TEXTURE0_ARB;
+		GL_SelectTexture( GL_TEXTURE0_ARB );
+		gl_mtexable = 2;
+
+		if ( Q_strstr( gl_extensions, "GL_ARB_texture_env_combine " ) || Q_strstr( gl_extensions, "GL_EXT_texture_env_combine " ) )
+		{
+			qglGetIntegerv( GL_MAX_TEXTURE_UNITS_ARB, &num_guess );
+
+			if ( num_guess > 2 )
+			{
+				Con_Printf( "%d texture units.  Detail texture supported.\n", num_guess );
+				gl_mtexable = num_guess;
+				DT_Initialize();
+			}
+		}
+	}
+	else if ( Q_strstr( gl_extensions, "GL_SGIS_multitexture " ) )
+	{
+		Con_Printf( "Multitexture extensions found.\n" );
+
+		qglMTexCoord2fSGIS = (void *)qwglGetProcAddress( "glMTexCoord2fSGIS" );
+		qglSelectTextureSGIS = (void *)qwglGetProcAddress( "glSelectTextureSGIS" );
+
+		TEXTURE0_SGIS = GL_TEXTURE0_SGIS;
+		TEXTURE1_SGIS = GL_TEXTURE1_SGIS;
+		TEXTURE2_SGIS_guess = GL_TEXTURE2_SGIS;
+
+		oldtarget = GL_TEXTURE0_SGIS;
+		gl_mtexable = 2;
+		GL_SelectTexture( GL_TEXTURE0_SGIS );
+	}
+	else
+	{
+		Con_Printf( "NO Multitexture extensions found.\n" );
+	}
+}
+
+/*
+================
 CheckATINPatchExtensions
 ================
 */
@@ -111,6 +189,47 @@ void CheckATINPatchExtensions( void )
 	{
 		atismoothing = FALSE;
 	}
+}
+
+/*
+===============
+GL_Init
+===============
+*/
+void GL_Init( void )
+{
+	gl_vendor = (const char *)qglGetString( GL_VENDOR );
+	Con_DPrintf( "GL_VENDOR: %s\n", gl_vendor );
+	gl_renderer = (const char *)qglGetString( GL_RENDERER );
+	Con_DPrintf( "GL_RENDERER: %s\n", gl_renderer );
+	gl_version = (const char *)qglGetString( GL_VERSION );
+	Con_DPrintf( "GL_VERSION: %s\n", gl_version );
+	gl_extensions = (const char *)qglGetString( GL_EXTENSIONS );
+
+	CheckTextureExtensions();
+	CheckMultiTextureExtensions();
+	CheckATINPatchExtensions();
+
+	qglClearColor( 1, 0, 0, 0 );
+	qglCullFace( GL_FRONT );
+	qglEnable( GL_TEXTURE_2D );
+
+	qglEnable( GL_ALPHA_TEST );
+	qglAlphaFunc( GL_NOTEQUAL, 0 );
+
+	qglPolygonMode( GL_FRONT_AND_BACK, GL_FILL );
+	qglShadeModel( GL_FLAT );
+
+	qglTexParameterf( GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST );
+	qglTexParameterf( GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST );
+	qglTexParameterf( GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT );
+	qglTexParameterf( GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT );
+
+	qglBlendFunc( GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA );
+
+	qglTexEnvf( GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_REPLACE );
+
+	GL_Config();
 }
 
 /*
