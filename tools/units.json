@@ -2593,6 +2593,11 @@
           "name": "engine/tmessage",
           "source": "src/engine_hw/tmessage.c",
           "functions_file": "tools/units/hw_engine_tmessage.txt"
+        },
+        {
+          "name": "engine/gl_rlight",
+          "source": "src/engine_hw/gl_rlight.c",
+          "functions_file": "tools/units/hw_engine_gl_rlight.txt"
         }
       ]
     },
