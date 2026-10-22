@@ -26126,7 +26126,7 @@ hw,01D73713,346,_FreeFBOObjects,FreeFBOObjects,ENGINE,engine/GL_VIDNT.C,,,MATCHE
 hw,01D7386D,374,_GL_SetMode,GL_SetMode,ENGINE,engine/GL_VIDNT.C,,,MATCHED,100,,
 hw,01D739E3,45,_GL_Shutdown,GL_Shutdown,ENGINE,engine/GL_VIDNT.C,,,MATCHED,100,,
 hw,01D73A10,119,_VID_Init,VID_Init,ENGINE,engine/GL_VIDNT.C,,,MATCHED,100,linux_symbols:string:0.5,
-hw,01D73A87,560,_VID_TakeSnapshot,VID_TakeSnapshot,ENGINE,engine/GL_VIDNT.C,,,TODO,99.62,,
+hw,01D73A87,560,_VID_TakeSnapshot,VID_TakeSnapshot,ENGINE,engine/GL_VIDNT.C,,,MATCHED,100,,
 hw,01D73CB7,511,_VID_TakeSnapshotRect,VID_TakeSnapshotRect,ENGINE,engine/GL_VIDNT.C,,,MATCHED,100,,
 hw,01D73EB6,126,_VID_WriteBuffer,VID_WriteBuffer,ENGINE,engine/GL_VIDNT.C,,,MATCHED,100,linux_symbols:string:0.4,
 hw,01D73F34,133,,,UNKNOWN,,,,TODO,,,

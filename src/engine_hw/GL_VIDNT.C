@@ -643,7 +643,7 @@ void VID_TakeSnapshot( const char *pFilename )
 	// swap rgb to bgr
 	pb = hp;
 	p = pb + 2;
-	for ( i = 0; i < vid.width * vid.height; i++ )
+	for ( i = 0; i < (int)( vid.width * vid.height ); i++ )
 	{
 		b = *pb;
 		*pb = *p;
