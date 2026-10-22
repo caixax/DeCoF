@@ -1,5 +1,5 @@
 {
-  "commit": "6f24af4",
+  "commit": "3f4391f",
   "counting": "LIB rows excluded; bytes weighted by function size",
   "date": "2026-10-22",
   "dlls": {
@@ -291,28 +291,28 @@
           "bytes": {
             "EQUIVALENT": 20949,
             "MATCHED": 687370,
-            "TODO": 236484,
-            "total": 944803
+            "TODO": 240517,
+            "total": 948836
           },
           "functions": {
             "EQUIVALENT": 7,
             "MATCHED": 2425,
-            "TODO": 2187,
-            "total": 4619
+            "TODO": 2239,
+            "total": 4671
           }
         },
         "UNKNOWN": {
           "bytes": {
             "EQUIVALENT": 9150,
             "MATCHED": 184838,
-            "TODO": 233070,
-            "total": 427058
+            "TODO": 229037,
+            "total": 423025
           },
           "functions": {
             "EQUIVALENT": 18,
             "MATCHED": 1352,
-            "TODO": 2334,
-            "total": 3704
+            "TODO": 2282,
+            "total": 3652
           }
         }
       },

@@ -23574,378 +23574,378 @@ hw,01D07540,16,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,inline or 
 hw,01D07550,68,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
 hw,01D075A0,45,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
 hw,01D075D0,221,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D076B0,158,,,UNKNOWN,,,,TODO,,,
-hw,01D0774E,30,,ATL::CAtlBaseModule::~CAtlBaseModule,ENGINE,,,,TODO,,ghidra,
-hw,01D0776C,64,,,UNKNOWN,,,,TODO,,,
-hw,01D077AC,630,,,UNKNOWN,,,,TODO,,,
-hw,01D07A22,934,,,UNKNOWN,,,,TODO,,,
-hw,01D07DD0,17,,,UNKNOWN,,,,TODO,,,
-hw,01D07DF0,93,,,UNKNOWN,,,,TODO,,,
-hw,01D07E50,22,,ATL::_ATL_BASE_MODULE70::~_ATL_BASE_MODULE70,ENGINE,,,,TODO,,ghidra,
-hw,01D07E70,26,,,UNKNOWN,,,,TODO,,,
-hw,01D07E90,49,,,UNKNOWN,,,,TODO,,,
-hw,01D07ED0,61,,,UNKNOWN,,,,TODO,,,
-hw,01D07F10,170,,,UNKNOWN,,,,TODO,,,
-hw,01D07FC0,50,,,UNKNOWN,,,,TODO,,,
-hw,01D08000,27,,,UNKNOWN,,,,TODO,,,
-hw,01D08020,25,,,UNKNOWN,,,,TODO,,,
-hw,01D08040,17,,,UNKNOWN,,,,TODO,,,
-hw,01D08060,26,,,UNKNOWN,,,,TODO,,,
-hw,01D08080,11,,,UNKNOWN,,,,TODO,,,
-hw,01D08090,36,,,UNKNOWN,,,,TODO,,,
-hw,01D080C0,36,,,UNKNOWN,,,,TODO,,,
-hw,01D080F0,29,,,UNKNOWN,,,,TODO,,,
-hw,01D08110,30,,,UNKNOWN,,,,TODO,,,
-hw,01D08130,9,,,UNKNOWN,,,,TODO,,,
-hw,01D08140,170,,,UNKNOWN,,,,TODO,,,
-hw,01D081F0,75,,,UNKNOWN,,,,TODO,,,
-hw,01D08240,19,,,UNKNOWN,,,,TODO,,,
-hw,01D08260,65,,,UNKNOWN,,,,TODO,,,
-hw,01D082B0,61,,,UNKNOWN,,,,TODO,,,
-hw,01D082F0,35,,,UNKNOWN,,,,TODO,,,
-hw,01D08320,11,,,UNKNOWN,,,,TODO,,,
-hw,01D08330,75,,,UNKNOWN,,,,TODO,,,
-hw,01D08380,19,,,UNKNOWN,,,,TODO,,,
-hw,01D083A0,26,,,UNKNOWN,,,,TODO,,,
-hw,01D083C0,153,,,UNKNOWN,,,,TODO,,,
-hw,01D08460,216,,,UNKNOWN,,,,TODO,,,
-hw,01D08540,26,,,UNKNOWN,,,,TODO,,,
-hw,01D08560,26,,,UNKNOWN,,,,TODO,,,
-hw,01D08580,69,,,UNKNOWN,,,,TODO,,,
-hw,01D085D0,25,,,UNKNOWN,,,,TODO,,,
-hw,01D085F0,70,,,UNKNOWN,,,,TODO,,,
-hw,01D08640,87,,,UNKNOWN,,,,TODO,,,
-hw,01D086A0,86,,,UNKNOWN,,,,TODO,,,
-hw,01D08700,25,,,UNKNOWN,,,,TODO,,,
-hw,01D08720,69,,,UNKNOWN,,,,TODO,,,
-hw,01D08770,176,,,UNKNOWN,,,,TODO,,,
-hw,01D08820,33,,,UNKNOWN,,,,TODO,,,
-hw,01D08850,587,,,UNKNOWN,,,,TODO,,,
-hw,01D08AA0,25,,,UNKNOWN,,,,TODO,,,
-hw,01D08AC0,17,,,UNKNOWN,,,,TODO,,,
-hw,01D08AE0,199,,,UNKNOWN,,,,TODO,,,
-hw,01D08BB0,25,,,UNKNOWN,,,,TODO,,,
-hw,01D08BD0,5,,,UNKNOWN,,,,TODO,,,
-hw,01D08BE0,30,,,UNKNOWN,,,,TODO,,,
-hw,01D08C00,58,,,UNKNOWN,,,,TODO,,,
-hw,01D08C40,58,,,UNKNOWN,,,,TODO,,,
-hw,01D08C80,39,,,UNKNOWN,,,,TODO,,,
-hw,01D08CB0,39,,,UNKNOWN,,,,TODO,,,
-hw,01D08CE0,34,,,UNKNOWN,,,,TODO,,,
-hw,01D08D10,34,,,UNKNOWN,,,,TODO,,,
-hw,01D08D40,346,,,UNKNOWN,,,,TODO,,,
-hw,01D08EA0,346,,,UNKNOWN,,,,TODO,,,
-hw,01D09000,17,,,UNKNOWN,,,,TODO,,,
-hw,01D09020,199,,,UNKNOWN,,,,TODO,,,
-hw,01D090F0,25,,,UNKNOWN,,,,TODO,,,
-hw,01D09110,34,,,UNKNOWN,,,,TODO,,,
-hw,01D09140,33,,,UNKNOWN,,,,TODO,,,
-hw,01D09170,34,,,UNKNOWN,,,,TODO,,,
-hw,01D091A0,28,,,UNKNOWN,,,,TODO,,,
-hw,01D091BC,1035,,,UNKNOWN,,,,TODO,,,
-hw,01D095C7,15,,,UNKNOWN,,,,TODO,,,
-hw,01D095D6,19,,,UNKNOWN,,,,TODO,,,
-hw,01D095E9,18,,,UNKNOWN,,,,TODO,,,
-hw,01D095FB,15,,,UNKNOWN,,,,TODO,,,
-hw,01D0960A,213,,,UNKNOWN,,,,TODO,,,
-hw,01D096DF,206,,,UNKNOWN,,,,TODO,,,
-hw,01D097AD,400,,,UNKNOWN,,,,TODO,,,
-hw,01D0993D,602,,,UNKNOWN,,,,TODO,,,
-hw,01D09B97,1047,,,UNKNOWN,,,,TODO,,,
-hw,01D09FAE,543,,,UNKNOWN,,,,TODO,,,
-hw,01D0A1CD,250,,,UNKNOWN,,,,TODO,,,
-hw,01D0A2C7,60,,,UNKNOWN,,,,TODO,,,
-hw,01D0A303,219,,,UNKNOWN,,,,TODO,,,
-hw,01D0A3DE,52,,,UNKNOWN,,,,TODO,,,
-hw,01D0A412,30,,,UNKNOWN,,,,TODO,,,
-hw,01D0A430,360,,,UNKNOWN,,,,TODO,,,
-hw,01D0A598,1042,,,UNKNOWN,,,,TODO,,,
-hw,01D0A9AA,332,,,UNKNOWN,,,,TODO,,,
-hw,01D0AAF6,115,,,UNKNOWN,,,,TODO,,,
-hw,01D0AB69,280,,,UNKNOWN,,,,TODO,,,
-hw,01D0AC81,115,,,UNKNOWN,,,,TODO,,,
-hw,01D0ACF4,117,,,UNKNOWN,,,,TODO,,,
-hw,01D0AD69,183,,,UNKNOWN,,,,TODO,,,
-hw,01D0AE20,56,,,UNKNOWN,,,,TODO,,,
-hw,01D0AE58,52,,,UNKNOWN,,,,TODO,,,
-hw,01D0AE8C,312,,,UNKNOWN,,,,TODO,,,
-hw,01D0AFC4,46,,,UNKNOWN,,,,TODO,,,
-hw,01D0AFF2,46,,,UNKNOWN,,,,TODO,,,
-hw,01D0B020,118,,,UNKNOWN,,,,TODO,,,
-hw,01D0B096,183,,,UNKNOWN,,,,TODO,,,
-hw,01D0B14D,229,,,UNKNOWN,,,,TODO,,,
-hw,01D0B232,390,,,UNKNOWN,,,,TODO,,,
-hw,01D0B3B8,41,,,UNKNOWN,,,,TODO,,,
-hw,01D0B3E1,762,,,UNKNOWN,,,,TODO,,,
-hw,01D0B6DB,154,,,UNKNOWN,,,,TODO,,,
-hw,01D0B775,821,,,UNKNOWN,,,,TODO,,,
-hw,01D0BAAA,571,,,UNKNOWN,,,,TODO,,,
-hw,01D0BCE5,672,,,UNKNOWN,,,,TODO,,,
-hw,01D0BF85,28,,,UNKNOWN,,,,TODO,,,
-hw,01D0BFA1,86,,,UNKNOWN,,,,TODO,,,
-hw,01D0BFF7,12,,,UNKNOWN,,,,TODO,,,
-hw,01D0C003,12,,,UNKNOWN,,,,TODO,,,
-hw,01D0C00F,12,,,UNKNOWN,,,,TODO,,,
-hw,01D0C01B,1183,,,UNKNOWN,,,,TODO,,,
-hw,01D0C4BA,36,,,UNKNOWN,,,,TODO,,,
-hw,01D0C4DE,9,,,UNKNOWN,,,,TODO,,,
-hw,01D0C4E7,25,,,UNKNOWN,,,,TODO,,,
-hw,01D0C500,25,,,UNKNOWN,,,,TODO,,,
-hw,01D0C519,9,,,UNKNOWN,,,,TODO,,,
-hw,01D0C522,9,,,UNKNOWN,,,,TODO,,,
-hw,01D0C52B,9,,,UNKNOWN,,,,TODO,,,
-hw,01D0C534,9,,,UNKNOWN,,,,TODO,,,
-hw,01D0C53D,9,,,UNKNOWN,,,,TODO,,,
-hw,01D0C546,111,,,UNKNOWN,,,,TODO,,,
-hw,01D0C5B5,9,,,UNKNOWN,,,,TODO,,,
-hw,01D0C5BE,12,,,UNKNOWN,,,,TODO,,,
-hw,01D0C5CA,9,,,UNKNOWN,,,,TODO,,,
-hw,01D0C5D3,19,,,UNKNOWN,,,,TODO,,,
-hw,01D0C5E6,19,,,UNKNOWN,,,,TODO,,,
-hw,01D0C5F9,281,,,UNKNOWN,,,,TODO,,,
-hw,01D0C712,9,,,UNKNOWN,,,,TODO,,,
-hw,01D0C71B,19,,,UNKNOWN,,,,TODO,,,
-hw,01D0C72E,19,,,UNKNOWN,,,,TODO,,,
-hw,01D0C741,9,,,UNKNOWN,,,,TODO,,,
-hw,01D0C74A,9,,,UNKNOWN,,,,TODO,,,
-hw,01D0C753,9,,,UNKNOWN,,,,TODO,,,
-hw,01D0C75C,24,,,UNKNOWN,,,,TODO,,,
-hw,01D0C774,9,,,UNKNOWN,,,,TODO,,,
-hw,01D0C77D,9,,,UNKNOWN,,,,TODO,,,
-hw,01D0C786,25,,,UNKNOWN,,,,TODO,,,
-hw,01D0C79F,12,,,UNKNOWN,,,,TODO,,,
-hw,01D0C7AB,12,,,UNKNOWN,,,,TODO,,,
-hw,01D0C7B7,9,,,UNKNOWN,,,,TODO,,,
-hw,01D0C7C0,9,,,UNKNOWN,,,,TODO,,,
-hw,01D0C7C9,72,,,UNKNOWN,,,,TODO,,,
-hw,01D0C811,12,,,UNKNOWN,,,,TODO,,,
-hw,01D0C81D,157,,,UNKNOWN,,,,TODO,,,
-hw,01D0C8BA,12,,,UNKNOWN,,,,TODO,,,
-hw,01D0C8C6,12,,,UNKNOWN,,,,TODO,,,
-hw,01D0C8D2,12,,,UNKNOWN,,,,TODO,,,
-hw,01D0C8DE,12,,,UNKNOWN,,,,TODO,,,
-hw,01D0C8EA,9,,,UNKNOWN,,,,TODO,,,
-hw,01D0C8F3,12,,,UNKNOWN,,,,TODO,,,
-hw,01D0C8FF,42,,,UNKNOWN,,,,TODO,,,
-hw,01D0C929,9,,,UNKNOWN,,,,TODO,,,
-hw,01D0C932,9,,,UNKNOWN,,,,TODO,,,
-hw,01D0C93B,12,,,UNKNOWN,,,,TODO,,,
-hw,01D0C947,12,,,UNKNOWN,,,,TODO,,,
-hw,01D0C953,12,,,UNKNOWN,,,,TODO,,,
-hw,01D0C95F,9,,,UNKNOWN,,,,TODO,,,
-hw,01D0C968,47,,,UNKNOWN,,,,TODO,,,
-hw,01D0C997,47,,,UNKNOWN,,,,TODO,,,
-hw,01D0C9C6,25,,,UNKNOWN,,,,TODO,,,
-hw,01D0C9DF,9,,,UNKNOWN,,,,TODO,,,
-hw,01D0C9E8,25,,,UNKNOWN,,,,TODO,,,
-hw,01D0CA01,12,,,UNKNOWN,,,,TODO,,,
-hw,01D0CA0D,383,,,UNKNOWN,,,,TODO,,,
-hw,01D0CB8C,12,,,UNKNOWN,,,,TODO,,,
-hw,01D0CB98,9,,,UNKNOWN,,,,TODO,,,
-hw,01D0CBA1,9,,,UNKNOWN,,,,TODO,,,
-hw,01D0CBAA,12,,,UNKNOWN,,,,TODO,,,
-hw,01D0CBB6,93,,,UNKNOWN,,,,TODO,,,
-hw,01D0CC13,38,,,UNKNOWN,,,,TODO,,,
-hw,01D0CC39,7,,,UNKNOWN,,,,TODO,,,
-hw,01D0CC40,35,,,UNKNOWN,,,,TODO,,,
-hw,01D0CC63,7,,,UNKNOWN,,,,TODO,,,
-hw,01D0CC6A,7,,,UNKNOWN,,,,TODO,,,
-hw,01D0CC71,7,,,UNKNOWN,,,,TODO,,,
-hw,01D0CC78,7,,,UNKNOWN,,,,TODO,,,
-hw,01D0CC7F,7,,,UNKNOWN,,,,TODO,,,
-hw,01D0CC90,20,,,UNKNOWN,,,,TODO,,,
-hw,01D0CCB0,20,,,UNKNOWN,,,,TODO,,,
-hw,01D0CCD0,20,,,UNKNOWN,,,,TODO,,,
-hw,01D0CCF0,20,,,UNKNOWN,,,,TODO,,,
-hw,01D0CD10,20,,,UNKNOWN,,,,TODO,,,
-hw,01D0CD30,20,,,UNKNOWN,,,,TODO,,,
-hw,01D0CD50,41,,CMFCVisualManagerOfficeXP::GetSmartDockingBaseGuideColors,ENGINE,,,,TODO,,ghidra,
-hw,01D0CD80,17,,,UNKNOWN,,,,TODO,,,
-hw,01D0CDA0,46,,,UNKNOWN,,,,TODO,,,
-hw,01D0CDD0,23,,,UNKNOWN,,,,TODO,,,
-hw,01D0CDF0,23,,,UNKNOWN,,,,TODO,,,
-hw,01D0CE10,46,,,UNKNOWN,,,,TODO,,,
-hw,01D0CE40,87,,,UNKNOWN,,,,TODO,,,
-hw,01D0CEA0,19,,,UNKNOWN,,,,TODO,,,
-hw,01D0CEC0,46,,,UNKNOWN,,,,TODO,,,
-hw,01D0CEF0,38,,Clear,ENGINE,,,,TODO,,ghidra,
-hw,01D0CF20,75,,,UNKNOWN,,,,TODO,,,
-hw,01D0CF70,80,,,UNKNOWN,,,,TODO,,,
-hw,01D0CFC0,46,,,UNKNOWN,,,,TODO,,,
-hw,01D0CFF0,70,,,UNKNOWN,,,,TODO,,,
-hw,01D0D040,19,,,UNKNOWN,,,,TODO,,,
-hw,01D0D060,63,,,UNKNOWN,,,,TODO,,,
-hw,01D0D0A0,87,,,UNKNOWN,,,,TODO,,,
-hw,01D0D100,46,,,UNKNOWN,,,,TODO,,,
-hw,01D0D130,74,,,UNKNOWN,,,,TODO,,,
-hw,01D0D180,16,,,UNKNOWN,,,,TODO,,,
-hw,01D0D190,42,,CArchiveStream::CArchiveStream,ENGINE,,,,TODO,,ghidra,
-hw,01D0D1C0,32,,,UNKNOWN,,,,TODO,,,
-hw,01D0D1E0,25,,,UNKNOWN,,,,TODO,,,
-hw,01D0D200,25,,,UNKNOWN,,,,TODO,,,
-hw,01D0D220,22,,,UNKNOWN,,,,TODO,,,
-hw,01D0D240,22,,,UNKNOWN,,,,TODO,,,
-hw,01D0D260,22,,,UNKNOWN,,,,TODO,,,
-hw,01D0D280,14,,IUnknown::IUnknown,ENGINE,,,,TODO,,ghidra,
-hw,01D0D290,42,,CArchiveStream::CArchiveStream,ENGINE,,,,TODO,,ghidra,
-hw,01D0D2C0,32,,,UNKNOWN,,,,TODO,,,
-hw,01D0D2E0,25,,,UNKNOWN,,,,TODO,,,
-hw,01D0D300,25,,,UNKNOWN,,,,TODO,,,
-hw,01D0D320,35,,,UNKNOWN,,,,TODO,,,
-hw,01D0D350,35,,,UNKNOWN,,,,TODO,,,
-hw,01D0D380,22,,,UNKNOWN,,,,TODO,,,
-hw,01D0D3A0,22,,,UNKNOWN,,,,TODO,,,
-hw,01D0D3C0,22,,,UNKNOWN,,,,TODO,,,
-hw,01D0D3E0,42,,CArchiveStream::CArchiveStream,ENGINE,,,,TODO,,ghidra,
-hw,01D0D410,32,,,UNKNOWN,,,,TODO,,,
-hw,01D0D430,25,,,UNKNOWN,,,,TODO,,,
-hw,01D0D450,25,,,UNKNOWN,,,,TODO,,,
-hw,01D0D470,22,,,UNKNOWN,,,,TODO,,,
-hw,01D0D490,42,,CArchiveStream::CArchiveStream,ENGINE,,,,TODO,,ghidra,
-hw,01D0D4C0,32,,,UNKNOWN,,,,TODO,,,
-hw,01D0D4E0,25,,,UNKNOWN,,,,TODO,,,
-hw,01D0D500,25,,,UNKNOWN,,,,TODO,,,
-hw,01D0D520,22,,,UNKNOWN,,,,TODO,,,
-hw,01D0D540,42,,CArchiveStream::CArchiveStream,ENGINE,,,,TODO,,ghidra,
-hw,01D0D570,32,,,UNKNOWN,,,,TODO,,,
-hw,01D0D590,25,,,UNKNOWN,,,,TODO,,,
-hw,01D0D5B0,25,,,UNKNOWN,,,,TODO,,,
-hw,01D0D5D0,22,,,UNKNOWN,,,,TODO,,,
-hw,01D0D5F0,42,,CArchiveStream::CArchiveStream,ENGINE,,,,TODO,,ghidra,
-hw,01D0D620,32,,,UNKNOWN,,,,TODO,,,
-hw,01D0D640,25,,,UNKNOWN,,,,TODO,,,
-hw,01D0D660,25,,,UNKNOWN,,,,TODO,,,
-hw,01D0D680,22,,,UNKNOWN,,,,TODO,,,
-hw,01D0D6A0,22,,,UNKNOWN,,,,TODO,,,
-hw,01D0D6C0,22,,,UNKNOWN,,,,TODO,,,
-hw,01D0D6E0,66,,,UNKNOWN,,,,TODO,,,
-hw,01D0D730,32,,,UNKNOWN,,,,TODO,,,
-hw,01D0D750,25,,,UNKNOWN,,,,TODO,,,
-hw,01D0D770,25,,,UNKNOWN,,,,TODO,,,
-hw,01D0D790,22,,,UNKNOWN,,,,TODO,,,
-hw,01D0D7B0,22,,,UNKNOWN,,,,TODO,,,
-hw,01D0D7D0,42,,Concurrency::details::SchedulerResourceManagement::SchedulerResourceManagement,ENGINE,,,,TODO,,ghidra,
-hw,01D0D800,32,,,UNKNOWN,,,,TODO,,,
-hw,01D0D820,25,,,UNKNOWN,,,,TODO,,,
-hw,01D0D840,25,,,UNKNOWN,,,,TODO,,,
-hw,01D0D860,51,,,UNKNOWN,,,,TODO,,,
-hw,01D0D8A0,43,,,UNKNOWN,,,,TODO,,,
-hw,01D0D8D0,35,,,UNKNOWN,,,,TODO,,,
-hw,01D0D900,64,,,UNKNOWN,,,,TODO,,,
-hw,01D0D940,31,,,UNKNOWN,,,,TODO,,,
-hw,01D0D960,42,,Concurrency::details::SchedulerResourceManagement::SchedulerResourceManagement,ENGINE,,,,TODO,,ghidra,
-hw,01D0D990,32,,,UNKNOWN,,,,TODO,,,
-hw,01D0D9B0,25,,,UNKNOWN,,,,TODO,,,
-hw,01D0D9D0,25,,,UNKNOWN,,,,TODO,,,
-hw,01D0D9F0,51,,,UNKNOWN,,,,TODO,,,
-hw,01D0DA30,43,,,UNKNOWN,,,,TODO,,,
-hw,01D0DA60,35,,,UNKNOWN,,,,TODO,,,
-hw,01D0DA90,64,,,UNKNOWN,,,,TODO,,,
-hw,01D0DAD0,31,,,UNKNOWN,,,,TODO,,,
-hw,01D0DAF0,42,,CArchiveStream::CArchiveStream,ENGINE,,,,TODO,,ghidra,
-hw,01D0DB20,32,,,UNKNOWN,,,,TODO,,,
-hw,01D0DB40,25,,,UNKNOWN,,,,TODO,,,
-hw,01D0DB60,25,,,UNKNOWN,,,,TODO,,,
-hw,01D0DB80,22,,,UNKNOWN,,,,TODO,,,
-hw,01D0DBA0,22,,,UNKNOWN,,,,TODO,,,
-hw,01D0DBC0,42,,CArchiveStream::CArchiveStream,ENGINE,,,,TODO,,ghidra,
-hw,01D0DBF0,32,,,UNKNOWN,,,,TODO,,,
-hw,01D0DC10,25,,,UNKNOWN,,,,TODO,,,
-hw,01D0DC30,25,,,UNKNOWN,,,,TODO,,,
-hw,01D0DC50,39,,,UNKNOWN,,,,TODO,,,
-hw,01D0DC80,39,,,UNKNOWN,,,,TODO,,,
-hw,01D0DCB0,35,,,UNKNOWN,,,,TODO,,,
-hw,01D0DCE0,31,,,UNKNOWN,,,,TODO,,,
-hw,01D0DD00,31,,,UNKNOWN,,,,TODO,,,
-hw,01D0DD20,22,,,UNKNOWN,,,,TODO,,,
-hw,01D0DD40,42,,Concurrency::details::SchedulerResourceManagement::SchedulerResourceManagement,ENGINE,,,,TODO,,ghidra,
-hw,01D0DD70,32,,,UNKNOWN,,,,TODO,,,
-hw,01D0DD90,25,,,UNKNOWN,,,,TODO,,,
-hw,01D0DDB0,25,,,UNKNOWN,,,,TODO,,,
-hw,01D0DDD0,12,,,UNKNOWN,,,,TODO,,,
-hw,01D0DDE0,12,,,UNKNOWN,,,,TODO,,,
-hw,01D0DDF0,9,,,UNKNOWN,,,,TODO,,,
-hw,01D0DE00,9,,,UNKNOWN,,,,TODO,,,
-hw,01D0DE10,9,,,UNKNOWN,,,,TODO,,,
-hw,01D0DE20,9,,,UNKNOWN,,,,TODO,,,
-hw,01D0DE30,9,,,UNKNOWN,,,,TODO,,,
-hw,01D0DE40,9,,,UNKNOWN,,,,TODO,,,
-hw,01D0DE50,12,,,UNKNOWN,,,,TODO,,,
-hw,01D0DE60,12,,,UNKNOWN,,,,TODO,,,
-hw,01D0DE70,12,,,UNKNOWN,,,,TODO,,,
-hw,01D0DE80,19,,,UNKNOWN,,,,TODO,,,
-hw,01D0DEA0,19,,,UNKNOWN,,,,TODO,,,
-hw,01D0DEC0,19,,,UNKNOWN,,,,TODO,,,
-hw,01D0DEE0,31,,,UNKNOWN,,,,TODO,,,
-hw,01D0DF00,46,,,UNKNOWN,,,,TODO,,,
-hw,01D0DF30,20,,,UNKNOWN,,,,TODO,,,
-hw,01D0DF50,46,,,UNKNOWN,,,,TODO,,,
-hw,01D0DF80,20,,,UNKNOWN,,,,TODO,,,
-hw,01D0DFA0,46,,,UNKNOWN,,,,TODO,,,
-hw,01D0DFD0,20,,,UNKNOWN,,,,TODO,,,
-hw,01D0DFF0,46,,,UNKNOWN,,,,TODO,,,
-hw,01D0E020,20,,,UNKNOWN,,,,TODO,,,
-hw,01D0E040,46,,,UNKNOWN,,,,TODO,,,
-hw,01D0E070,20,,,UNKNOWN,,,,TODO,,,
-hw,01D0E090,46,,,UNKNOWN,,,,TODO,,,
-hw,01D0E0C0,20,,,UNKNOWN,,,,TODO,,,
-hw,01D0E0E0,46,,,UNKNOWN,,,,TODO,,,
-hw,01D0E110,20,,,UNKNOWN,,,,TODO,,,
-hw,01D0E130,46,,,UNKNOWN,,,,TODO,,,
-hw,01D0E160,20,,,UNKNOWN,,,,TODO,,,
-hw,01D0E180,46,,,UNKNOWN,,,,TODO,,,
-hw,01D0E1B0,20,,,UNKNOWN,,,,TODO,,,
-hw,01D0E1D0,46,,,UNKNOWN,,,,TODO,,,
-hw,01D0E200,20,,,UNKNOWN,,,,TODO,,,
-hw,01D0E220,46,,,UNKNOWN,,,,TODO,,,
-hw,01D0E250,20,,,UNKNOWN,,,,TODO,,,
-hw,01D0E270,46,,,UNKNOWN,,,,TODO,,,
-hw,01D0E2A0,20,,,UNKNOWN,,,,TODO,,,
+hw,01D076B0,158,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,linux: _ZN17CFontTextureCacheC1Ev
+hw,01D0774E,30,,ATL::CAtlBaseModule::~CAtlBaseModule,ENGINE,engine/vgui2/FontTextureCache.cpp,,,TODO,,ghidra,linux: _ZN17CFontTextureCacheD1Ev
+hw,01D0776C,64,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,linux: _ZN17CFontTextureCache18CacheEntryLessFuncERKNS_12cacheentry_tES2_
+hw,01D077AC,630,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,linux: _ZN17CFontTextureCache17GetTextureForCharEmwPiPf
+hw,01D07A22,934,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,linux: _ZN17CFontTextureCache19AllocatePageForCharEiiRiS0_S0_S0_S0_
+hw,01D07DD0,17,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D07DF0,93,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D07E50,22,,ATL::_ATL_BASE_MODULE70::~_ATL_BASE_MODULE70,ENGINE,engine/vgui2/FontTextureCache.cpp,,,TODO,,ghidra,inline or template function (COMDAT) emitted after the object
+hw,01D07E70,26,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D07E90,49,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D07ED0,61,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D07F10,170,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D07FC0,50,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D08000,27,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D08020,25,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D08040,17,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D08060,26,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D08080,11,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D08090,36,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D080C0,36,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D080F0,29,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D08110,30,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D08130,9,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D08140,170,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D081F0,75,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D08240,19,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D08260,65,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D082B0,61,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D082F0,35,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D08320,11,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D08330,75,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D08380,19,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D083A0,26,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D083C0,153,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D08460,216,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D08540,26,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D08560,26,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D08580,69,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D085D0,25,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D085F0,70,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D08640,87,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D086A0,86,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D08700,25,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D08720,69,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D08770,176,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D08820,33,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D08850,587,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D08AA0,25,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D08AC0,17,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D08AE0,199,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D08BB0,25,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D08BD0,5,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D08BE0,30,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D08C00,58,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D08C40,58,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D08C80,39,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D08CB0,39,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D08CE0,34,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D08D10,34,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D08D40,346,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D08EA0,346,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D09000,17,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D09020,199,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D090F0,25,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D09110,34,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D09140,33,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D09170,34,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D091A0,28,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D091BC,1035,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D095C7,15,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D095D6,19,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D095E9,18,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D095FB,15,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D0960A,213,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D096DF,206,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D097AD,400,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D0993D,602,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D09B97,1047,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D09FAE,543,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D0A1CD,250,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D0A2C7,60,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D0A303,219,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D0A3DE,52,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D0A412,30,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D0A430,360,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D0A598,1042,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D0A9AA,332,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D0AAF6,115,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D0AB69,280,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D0AC81,115,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D0ACF4,117,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D0AD69,183,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D0AE20,56,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D0AE58,52,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D0AE8C,312,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D0AFC4,46,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D0AFF2,46,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D0B020,118,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D0B096,183,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D0B14D,229,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D0B232,390,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D0B3B8,41,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D0B3E1,762,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D0B6DB,154,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D0B775,821,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D0BAAA,571,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D0BCE5,672,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D0BF85,28,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D0BFA1,86,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D0BFF7,12,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D0C003,12,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D0C00F,12,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D0C01B,1183,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D0C4BA,36,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D0C4DE,9,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D0C4E7,25,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D0C500,25,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D0C519,9,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D0C522,9,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D0C52B,9,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D0C534,9,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D0C53D,9,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D0C546,111,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D0C5B5,9,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D0C5BE,12,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D0C5CA,9,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D0C5D3,19,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D0C5E6,19,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D0C5F9,281,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D0C712,9,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D0C71B,19,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D0C72E,19,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D0C741,9,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D0C74A,9,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D0C753,9,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D0C75C,24,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D0C774,9,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D0C77D,9,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D0C786,25,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D0C79F,12,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D0C7AB,12,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D0C7B7,9,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D0C7C0,9,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D0C7C9,72,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D0C811,12,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D0C81D,157,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D0C8BA,12,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D0C8C6,12,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D0C8D2,12,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D0C8DE,12,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D0C8EA,9,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D0C8F3,12,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D0C8FF,42,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D0C929,9,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D0C932,9,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D0C93B,12,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D0C947,12,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D0C953,12,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D0C95F,9,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D0C968,47,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D0C997,47,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D0C9C6,25,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D0C9DF,9,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D0C9E8,25,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D0CA01,12,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D0CA0D,383,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D0CB8C,12,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D0CB98,9,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D0CBA1,9,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D0CBAA,12,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D0CBB6,93,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D0CC13,38,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D0CC39,7,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D0CC40,35,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D0CC63,7,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D0CC6A,7,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D0CC71,7,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D0CC78,7,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D0CC7F,7,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
+hw,01D0CC90,20,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0CCB0,20,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0CCD0,20,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0CCF0,20,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0CD10,20,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0CD30,20,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0CD50,41,,CMFCVisualManagerOfficeXP::GetSmartDockingBaseGuideColors,ENGINE,engine/vgui2/HtmlWindow.cpp,,,TODO,,ghidra,inline or template function (COMDAT) emitted after the object
+hw,01D0CD80,17,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0CDA0,46,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0CDD0,23,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0CDF0,23,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0CE10,46,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0CE40,87,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0CEA0,19,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0CEC0,46,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0CEF0,38,,Clear,ENGINE,engine/vgui2/HtmlWindow.cpp,,,TODO,,ghidra,inline or template function (COMDAT) emitted after the object
+hw,01D0CF20,75,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0CF70,80,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0CFC0,46,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0CFF0,70,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0D040,19,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0D060,63,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0D0A0,87,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0D100,46,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0D130,74,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0D180,16,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0D190,42,,CArchiveStream::CArchiveStream,ENGINE,engine/vgui2/HtmlWindow.cpp,,,TODO,,ghidra,inline or template function (COMDAT) emitted after the object
+hw,01D0D1C0,32,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0D1E0,25,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0D200,25,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0D220,22,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0D240,22,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0D260,22,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0D280,14,,IUnknown::IUnknown,ENGINE,engine/vgui2/HtmlWindow.cpp,,,TODO,,ghidra,inline or template function (COMDAT) emitted after the object
+hw,01D0D290,42,,CArchiveStream::CArchiveStream,ENGINE,engine/vgui2/HtmlWindow.cpp,,,TODO,,ghidra,inline or template function (COMDAT) emitted after the object
+hw,01D0D2C0,32,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0D2E0,25,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0D300,25,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0D320,35,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0D350,35,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0D380,22,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0D3A0,22,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0D3C0,22,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0D3E0,42,,CArchiveStream::CArchiveStream,ENGINE,engine/vgui2/HtmlWindow.cpp,,,TODO,,ghidra,inline or template function (COMDAT) emitted after the object
+hw,01D0D410,32,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0D430,25,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0D450,25,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0D470,22,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0D490,42,,CArchiveStream::CArchiveStream,ENGINE,engine/vgui2/HtmlWindow.cpp,,,TODO,,ghidra,inline or template function (COMDAT) emitted after the object
+hw,01D0D4C0,32,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0D4E0,25,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0D500,25,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0D520,22,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0D540,42,,CArchiveStream::CArchiveStream,ENGINE,engine/vgui2/HtmlWindow.cpp,,,TODO,,ghidra,inline or template function (COMDAT) emitted after the object
+hw,01D0D570,32,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0D590,25,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0D5B0,25,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0D5D0,22,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0D5F0,42,,CArchiveStream::CArchiveStream,ENGINE,engine/vgui2/HtmlWindow.cpp,,,TODO,,ghidra,inline or template function (COMDAT) emitted after the object
+hw,01D0D620,32,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0D640,25,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0D660,25,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0D680,22,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0D6A0,22,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0D6C0,22,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0D6E0,66,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0D730,32,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0D750,25,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0D770,25,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0D790,22,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0D7B0,22,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0D7D0,42,,Concurrency::details::SchedulerResourceManagement::SchedulerResourceManagement,ENGINE,engine/vgui2/HtmlWindow.cpp,,,TODO,,ghidra,inline or template function (COMDAT) emitted after the object
+hw,01D0D800,32,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0D820,25,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0D840,25,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0D860,51,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0D8A0,43,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0D8D0,35,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0D900,64,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0D940,31,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0D960,42,,Concurrency::details::SchedulerResourceManagement::SchedulerResourceManagement,ENGINE,engine/vgui2/HtmlWindow.cpp,,,TODO,,ghidra,inline or template function (COMDAT) emitted after the object
+hw,01D0D990,32,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0D9B0,25,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0D9D0,25,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0D9F0,51,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0DA30,43,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0DA60,35,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0DA90,64,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0DAD0,31,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0DAF0,42,,CArchiveStream::CArchiveStream,ENGINE,engine/vgui2/HtmlWindow.cpp,,,TODO,,ghidra,inline or template function (COMDAT) emitted after the object
+hw,01D0DB20,32,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0DB40,25,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0DB60,25,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0DB80,22,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0DBA0,22,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0DBC0,42,,CArchiveStream::CArchiveStream,ENGINE,engine/vgui2/HtmlWindow.cpp,,,TODO,,ghidra,inline or template function (COMDAT) emitted after the object
+hw,01D0DBF0,32,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0DC10,25,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0DC30,25,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0DC50,39,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0DC80,39,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0DCB0,35,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0DCE0,31,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0DD00,31,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0DD20,22,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0DD40,42,,Concurrency::details::SchedulerResourceManagement::SchedulerResourceManagement,ENGINE,engine/vgui2/HtmlWindow.cpp,,,TODO,,ghidra,inline or template function (COMDAT) emitted after the object
+hw,01D0DD70,32,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0DD90,25,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0DDB0,25,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0DDD0,12,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0DDE0,12,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0DDF0,9,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0DE00,9,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0DE10,9,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0DE20,9,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0DE30,9,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0DE40,9,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0DE50,12,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0DE60,12,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0DE70,12,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0DE80,19,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0DEA0,19,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0DEC0,19,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0DEE0,31,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0DF00,46,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0DF30,20,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0DF50,46,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0DF80,20,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0DFA0,46,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0DFD0,20,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0DFF0,46,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0E020,20,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0E040,46,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0E070,20,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0E090,46,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0E0C0,20,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0E0E0,46,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0E110,20,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0E130,46,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0E160,20,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0E180,46,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0E1B0,20,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0E1D0,46,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0E200,20,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0E220,46,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0E250,20,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0E270,46,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0E2A0,20,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
 hw,01D0E2C0,28,,_IsEqualGUID,LIB,,,,,,ghidra,
-hw,01D0E2E0,20,,,UNKNOWN,,,,TODO,,,
-hw,01D0E300,41,,CMFCVisualManagerOfficeXP::GetSmartDockingBaseGuideColors,ENGINE,,,,TODO,,ghidra,
-hw,01D0E330,50,,,UNKNOWN,,,,TODO,,,
-hw,01D0E370,27,,,UNKNOWN,,,,TODO,,,
-hw,01D0E390,25,,,UNKNOWN,,,,TODO,,,
-hw,01D0E3B0,17,,,UNKNOWN,,,,TODO,,,
-hw,01D0E3D0,32,,,UNKNOWN,,,,TODO,,,
-hw,01D0E3F0,48,,,UNKNOWN,,,,TODO,,,
-hw,01D0E420,65,,,UNKNOWN,,,,TODO,,,
-hw,01D0E470,77,,,UNKNOWN,,,,TODO,,,
-hw,01D0E4C0,63,,,UNKNOWN,,,,TODO,,,
-hw,01D0E500,35,,,UNKNOWN,,,,TODO,,,
-hw,01D0E530,11,,,UNKNOWN,,,,TODO,,,
-hw,01D0E540,75,,,UNKNOWN,,,,TODO,,,
-hw,01D0E590,19,,,UNKNOWN,,,,TODO,,,
-hw,01D0E5B0,24,,,UNKNOWN,,,,TODO,,,
-hw,01D0E5D0,25,,,UNKNOWN,,,,TODO,,,
-hw,01D0E5F0,17,,,UNKNOWN,,,,TODO,,,
-hw,01D0E610,70,,,UNKNOWN,,,,TODO,,,
-hw,01D0E660,87,,,UNKNOWN,,,,TODO,,,
-hw,01D0E6C0,86,,,UNKNOWN,,,,TODO,,,
-hw,01D0E720,86,,,UNKNOWN,,,,TODO,,,
-hw,01D0E780,58,,,UNKNOWN,,,,TODO,,,
-hw,01D0E7C0,5,,,UNKNOWN,,,,TODO,,,
-hw,01D0E7D0,69,,,UNKNOWN,,,,TODO,,,
-hw,01D0E820,17,,,UNKNOWN,,,,TODO,,,
-hw,01D0E840,199,,,UNKNOWN,,,,TODO,,,
-hw,01D0E910,25,,,UNKNOWN,,,,TODO,,,
-hw,01D0E930,173,,,UNKNOWN,,,,TODO,,,
-hw,01D0E9DD,28,,,UNKNOWN,,,,TODO,,,
-hw,01D0E9F9,77,,,UNKNOWN,,,,TODO,,,
-hw,01D0EA46,32,,,UNKNOWN,,,,TODO,,,
-hw,01D0EA66,13,,,UNKNOWN,,,,TODO,,,
-hw,01D0EA73,31,,,UNKNOWN,,,,TODO,,,
-hw,01D0EA92,22,,,UNKNOWN,,,,TODO,,,
-hw,01D0EAA8,16,,,UNKNOWN,,,,TODO,,,
-hw,01D0EAB8,284,,,UNKNOWN,,,,TODO,,,
-hw,01D0EBD4,196,,,UNKNOWN,,,,TODO,,,
-hw,01D0EC98,17,,,UNKNOWN,,,,TODO,,,
-hw,01D0ECB0,30,??0Color@@QAE@XZ,Color::Color,UNKNOWN,,,,TODO,,,
-hw,01D0ECD0,46,,,UNKNOWN,,,,TODO,,,
-hw,01D0ED00,23,,,UNKNOWN,,,,TODO,,,
-hw,01D0ED20,46,,,UNKNOWN,,,,TODO,,,
-hw,01D0ED50,20,,,UNKNOWN,,,,TODO,,,
+hw,01D0E2E0,20,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0E300,41,,CMFCVisualManagerOfficeXP::GetSmartDockingBaseGuideColors,ENGINE,engine/vgui2/HtmlWindow.cpp,,,TODO,,ghidra,inline or template function (COMDAT) emitted after the object
+hw,01D0E330,50,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0E370,27,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0E390,25,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0E3B0,17,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0E3D0,32,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0E3F0,48,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0E420,65,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0E470,77,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0E4C0,63,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0E500,35,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0E530,11,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0E540,75,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0E590,19,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0E5B0,24,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0E5D0,25,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0E5F0,17,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0E610,70,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0E660,87,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0E6C0,86,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0E720,86,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0E780,58,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0E7C0,5,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0E7D0,69,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0E820,17,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0E840,199,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0E910,25,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0E930,173,,,UNKNOWN,engine/vgui2/MemoryBitmap.cpp,,,TODO,,,"file from the RTTI class vgui2::MemoryBitmap (GetName returns ""MemoryBitmap""); folder from the link position between engine/vgui2 files"
+hw,01D0E9DD,28,,,UNKNOWN,engine/vgui2/MemoryBitmap.cpp,,,TODO,,,"file from the RTTI class vgui2::MemoryBitmap (GetName returns ""MemoryBitmap""); folder from the link position between engine/vgui2 files"
+hw,01D0E9F9,77,,,UNKNOWN,engine/vgui2/MemoryBitmap.cpp,,,TODO,,,"file from the RTTI class vgui2::MemoryBitmap (GetName returns ""MemoryBitmap""); folder from the link position between engine/vgui2 files"
+hw,01D0EA46,32,,,UNKNOWN,engine/vgui2/MemoryBitmap.cpp,,,TODO,,,"file from the RTTI class vgui2::MemoryBitmap (GetName returns ""MemoryBitmap""); folder from the link position between engine/vgui2 files"
+hw,01D0EA66,13,,,UNKNOWN,engine/vgui2/MemoryBitmap.cpp,,,TODO,,,"file from the RTTI class vgui2::MemoryBitmap (GetName returns ""MemoryBitmap""); folder from the link position between engine/vgui2 files"
+hw,01D0EA73,31,,,UNKNOWN,engine/vgui2/MemoryBitmap.cpp,,,TODO,,,"file from the RTTI class vgui2::MemoryBitmap (GetName returns ""MemoryBitmap""); folder from the link position between engine/vgui2 files"
+hw,01D0EA92,22,,,UNKNOWN,engine/vgui2/MemoryBitmap.cpp,,,TODO,,,"file from the RTTI class vgui2::MemoryBitmap (GetName returns ""MemoryBitmap""); folder from the link position between engine/vgui2 files"
+hw,01D0EAA8,16,,,UNKNOWN,engine/vgui2/MemoryBitmap.cpp,,,TODO,,,"file from the RTTI class vgui2::MemoryBitmap (GetName returns ""MemoryBitmap""); folder from the link position between engine/vgui2 files"
+hw,01D0EAB8,284,,,UNKNOWN,engine/vgui2/MemoryBitmap.cpp,,,TODO,,,"file from the RTTI class vgui2::MemoryBitmap (GetName returns ""MemoryBitmap""); folder from the link position between engine/vgui2 files"
+hw,01D0EBD4,196,,,UNKNOWN,engine/vgui2/MemoryBitmap.cpp,,,TODO,,,"file from the RTTI class vgui2::MemoryBitmap (GetName returns ""MemoryBitmap""); folder from the link position between engine/vgui2 files"
+hw,01D0EC98,17,,,UNKNOWN,engine/vgui2/MemoryBitmap.cpp,,,TODO,,,"file from the RTTI class vgui2::MemoryBitmap (GetName returns ""MemoryBitmap""); folder from the link position between engine/vgui2 files"
+hw,01D0ECB0,30,??0Color@@QAE@XZ,Color::Color,UNKNOWN,engine/vgui2/MemoryBitmap.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0ECD0,46,,,UNKNOWN,engine/vgui2/MemoryBitmap.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0ED00,23,,,UNKNOWN,engine/vgui2/MemoryBitmap.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0ED20,46,,,UNKNOWN,engine/vgui2/MemoryBitmap.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D0ED50,20,,,UNKNOWN,engine/vgui2/MemoryBitmap.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
 hw,01D0ED70,10,,,UNKNOWN,engine/vgui2/text_draw.cpp,,,TODO,,,"VC6 dynamic initializer ($E) of a global Color (Color::Color(int,int,int,int))"
 hw,01D0ED7A,43,,,UNKNOWN,engine/vgui2/text_draw.cpp,,,TODO,,,"VC6 dynamic initializer ($E) of a global Color (Color::Color(int,int,int,int))"
 hw,01D0EDA5,116,_VGUI2_Draw_Init,VGUI2_Draw_Init,ENGINE,engine/vgui2/text_draw.cpp,,,TODO,,linux_symbols:string:0.75,
@@ -25413,36 +25413,36 @@ hw,01D52320,132,_DemoPlayer_Init,DemoPlayer_Init,ENGINE,engine/DemoPlayerWrapper
 hw,01D523A4,13,_DemoPlayer_SetActive,,UNKNOWN,engine/DemoPlayerWrapper.cpp,,,TODO,,,
 hw,01D523B1,45,_DemoPlayer_IsActive,,UNKNOWN,engine/DemoPlayerWrapper.cpp,,,TODO,,,
 hw,01D523DE,54,_DemoPlayer_LoadGame,,UNKNOWN,engine/DemoPlayerWrapper.cpp,,,TODO,,,
-hw,01D52414,43,,,UNKNOWN,,,,TODO,,,
+hw,01D52414,43,_DemoPlayer_SetEditMode,DemoPlayer_SetEditMode,ENGINE,engine/DemoPlayerWrapper.cpp,,,TODO,,hw_position.csv,
 hw,01D5243F,43,_DemoPlayer_ReadDemoMessage,,UNKNOWN,engine/DemoPlayerWrapper.cpp,,,TODO,,,
 hw,01D5246A,44,_DemoPlayer_GetDemoViewInfo,,UNKNOWN,engine/DemoPlayerWrapper.cpp,,,TODO,,,
 hw,01D52496,32,_DemoPlayer_Stop,,UNKNOWN,engine/DemoPlayerWrapper.cpp,,,TODO,,,
 hw,01D524B6,21,_DemoPlayer_ShowGUI,,UNKNOWN,engine/DemoPlayerWrapper.cpp,,,TODO,,,
 hw,01D524CB,61,_DemoPlayer_ReadNetchanState,,UNKNOWN,engine/DemoPlayerWrapper.cpp,,,TODO,,,
-hw,01D52510,15,,,UNKNOWN,,,,TODO,,,
-hw,01D5251F,22,,,UNKNOWN,,,,TODO,,,
-hw,01D52535,18,,,UNKNOWN,,,,TODO,,,
-hw,01D52547,15,,,UNKNOWN,,,,TODO,,,
-hw,01D52556,15,,,UNKNOWN,,,,TODO,,,
-hw,01D52565,28,,,UNKNOWN,,,,TODO,,,
-hw,01D52581,18,,,UNKNOWN,,,,TODO,,,
-hw,01D52593,15,,,UNKNOWN,,,,TODO,,,
-hw,01D525A2,15,,,UNKNOWN,,,,TODO,,,
-hw,01D525B1,28,,,UNKNOWN,,,,TODO,,,
-hw,01D525CD,18,,,UNKNOWN,,,,TODO,,,
-hw,01D525DF,15,,,UNKNOWN,,,,TODO,,,
-hw,01D525EE,15,,,UNKNOWN,,,,TODO,,,
-hw,01D525FD,28,,,UNKNOWN,,,,TODO,,,
-hw,01D52619,18,,,UNKNOWN,,,,TODO,,,
-hw,01D5262B,15,,,UNKNOWN,,,,TODO,,,
-hw,01D5263A,15,,,UNKNOWN,,,,TODO,,,
-hw,01D52649,22,,,UNKNOWN,,,,TODO,,,
-hw,01D5265F,18,,,UNKNOWN,,,,TODO,,,
-hw,01D52671,15,,,UNKNOWN,,,,TODO,,,
-hw,01D52680,15,,,UNKNOWN,,,,TODO,,,
-hw,01D5268F,22,,,UNKNOWN,,,,TODO,,,
-hw,01D526A5,18,,,UNKNOWN,,,,TODO,,,
-hw,01D526B7,15,,,UNKNOWN,,,,TODO,,,
+hw,01D52510,15,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,VC6 dynamic initializers ($E) of the file statics (constructor and atexit destructor pairs)
+hw,01D5251F,22,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,VC6 dynamic initializers ($E) of the file statics (constructor and atexit destructor pairs)
+hw,01D52535,18,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,VC6 dynamic initializers ($E) of the file statics (constructor and atexit destructor pairs)
+hw,01D52547,15,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,VC6 dynamic initializers ($E) of the file statics (constructor and atexit destructor pairs)
+hw,01D52556,15,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,VC6 dynamic initializers ($E) of the file statics (constructor and atexit destructor pairs)
+hw,01D52565,28,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,VC6 dynamic initializers ($E) of the file statics (constructor and atexit destructor pairs)
+hw,01D52581,18,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,VC6 dynamic initializers ($E) of the file statics (constructor and atexit destructor pairs)
+hw,01D52593,15,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,VC6 dynamic initializers ($E) of the file statics (constructor and atexit destructor pairs)
+hw,01D525A2,15,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,VC6 dynamic initializers ($E) of the file statics (constructor and atexit destructor pairs)
+hw,01D525B1,28,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,VC6 dynamic initializers ($E) of the file statics (constructor and atexit destructor pairs)
+hw,01D525CD,18,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,VC6 dynamic initializers ($E) of the file statics (constructor and atexit destructor pairs)
+hw,01D525DF,15,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,VC6 dynamic initializers ($E) of the file statics (constructor and atexit destructor pairs)
+hw,01D525EE,15,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,VC6 dynamic initializers ($E) of the file statics (constructor and atexit destructor pairs)
+hw,01D525FD,28,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,VC6 dynamic initializers ($E) of the file statics (constructor and atexit destructor pairs)
+hw,01D52619,18,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,VC6 dynamic initializers ($E) of the file statics (constructor and atexit destructor pairs)
+hw,01D5262B,15,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,VC6 dynamic initializers ($E) of the file statics (constructor and atexit destructor pairs)
+hw,01D5263A,15,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,VC6 dynamic initializers ($E) of the file statics (constructor and atexit destructor pairs)
+hw,01D52649,22,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,VC6 dynamic initializers ($E) of the file statics (constructor and atexit destructor pairs)
+hw,01D5265F,18,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,VC6 dynamic initializers ($E) of the file statics (constructor and atexit destructor pairs)
+hw,01D52671,15,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,VC6 dynamic initializers ($E) of the file statics (constructor and atexit destructor pairs)
+hw,01D52680,15,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,VC6 dynamic initializers ($E) of the file statics (constructor and atexit destructor pairs)
+hw,01D5268F,22,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,VC6 dynamic initializers ($E) of the file statics (constructor and atexit destructor pairs)
+hw,01D526A5,18,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,VC6 dynamic initializers ($E) of the file statics (constructor and atexit destructor pairs)
+hw,01D526B7,15,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,VC6 dynamic initializers ($E) of the file statics (constructor and atexit destructor pairs)
 hw,01D526C6,148,_DT_Initialize,DT_Initialize,ENGINE,engine/DetailTexture.cpp,,,TODO,,linux_symbols:data:0.911,
 hw,01D5275A,438,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,linux: _Z11DT_GetTokenRPcR10ParseStateRSs
 hw,01D52920,452,_DT_Parse,DT_Parse,ENGINE,engine/DetailTexture.cpp,,,TODO,,linux_symbols:string:0.772,
@@ -25691,177 +25691,177 @@ hw,01D58FA0,25,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template fu
 hw,01D58FC0,35,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
 hw,01D58FF0,34,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
 hw,01D59020,5,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D59030,163,,,UNKNOWN,,,,TODO,,,
-hw,01D590D3,429,,,UNKNOWN,,,,TODO,,,
-hw,01D59280,298,,,UNKNOWN,,,,TODO,,,
-hw,01D593AA,85,,,UNKNOWN,,,,TODO,,,
-hw,01D593FF,227,,,UNKNOWN,,,,TODO,,,
-hw,01D594E2,124,,,UNKNOWN,,,,TODO,,,
-hw,01D5955E,521,,,UNKNOWN,,,,TODO,,,
-hw,01D5979C,67,,,UNKNOWN,,,,TODO,,,
-hw,01D597DF,69,,,UNKNOWN,,,,TODO,,,
-hw,01D59824,415,,,UNKNOWN,,,,TODO,,,
-hw,01D599C3,127,,,UNKNOWN,,,,TODO,,,
-hw,01D59A42,156,,,UNKNOWN,,,,TODO,,,
-hw,01D59ADE,40,_IN_UpdateMouse_guess,,UNKNOWN,,,,TODO,,,
-hw,01D59B06,92,,,UNKNOWN,,,,TODO,,,
-hw,01D59B70,23,,,UNKNOWN,,,,TODO,,,
-hw,01D59B87,11,,,UNKNOWN,,,,TODO,,,
-hw,01D59B92,191,,,UNKNOWN,,,,TODO,,,
-hw,01D59C51,134,,,UNKNOWN,,,,TODO,,,
-hw,01D59CD7,360,,,UNKNOWN,,,,TODO,,,
-hw,01D59E3F,486,,,UNKNOWN,,,,TODO,,,
-hw,01D5A025,213,,,UNKNOWN,,,,TODO,,,
-hw,01D5A0FA,143,,,UNKNOWN,,,,TODO,,,
-hw,01D5A189,361,,,UNKNOWN,,,,TODO,,,
-hw,01D5A2F2,15,,,UNKNOWN,,,,TODO,,,
-hw,01D5A301,15,,,UNKNOWN,,,,TODO,,,
-hw,01D5A310,18,,,UNKNOWN,,,,TODO,,,
-hw,01D5A322,15,,,UNKNOWN,,,,TODO,,,
-hw,01D5A331,86,,,UNKNOWN,,,,TODO,,,
-hw,01D5A387,130,,,UNKNOWN,,,,TODO,,,
-hw,01D5A409,113,,,UNKNOWN,,,,TODO,,,
-hw,01D5A47A,76,,,UNKNOWN,,,,TODO,,,
-hw,01D5A4C6,315,,,UNKNOWN,,,,TODO,,,
-hw,01D5A601,290,,DownloadManager::Reset,ENGINE,engine/download.cpp,,,TODO,,linux_symbols:string:0.75,
-hw,01D5A723,193,,,UNKNOWN,,,,TODO,,,
-hw,01D5A7E4,413,,,UNKNOWN,,,,TODO,,,
-hw,01D5A981,234,,,UNKNOWN,,,,TODO,,,
-hw,01D5AA6B,35,,,UNKNOWN,,,,TODO,,,
-hw,01D5AA8E,15,_CL_HTTPUpdate,,UNKNOWN,engine/download.cpp,,,TODO,,,
-hw,01D5AA9D,15,_CL_HTTPStop_f,,UNKNOWN,engine/download.cpp,,,TODO,,,
-hw,01D5AAAC,24,_CL_QueueHTTPDownload,,UNKNOWN,engine/download.cpp,,,TODO,,,
-hw,01D5AAC4,15,_CL_GetDownloadQueueSize,,UNKNOWN,engine/download.cpp,,,TODO,,,
-hw,01D5AAD3,73,_CL_CanUseHTTPDownload,,UNKNOWN,engine/download.cpp,,,TODO,,,
-hw,01D5AB1C,48,_CL_MarkMapAsUsingHTTPDownload,,UNKNOWN,engine/download.cpp,,,TODO,,,
-hw,01D5AB50,98,,,UNKNOWN,,,,TODO,,,
-hw,01D5ABC0,46,,,UNKNOWN,,,,TODO,,,
-hw,01D5ABF0,19,,,UNKNOWN,,,,TODO,,,
-hw,01D5AC10,19,,,UNKNOWN,,,,TODO,,,
-hw,01D5AC30,50,,,UNKNOWN,,,,TODO,,,
-hw,01D5AC70,27,,,UNKNOWN,,,,TODO,,,
-hw,01D5AC90,25,,,UNKNOWN,,,,TODO,,,
-hw,01D5ACB0,17,,,UNKNOWN,,,,TODO,,,
-hw,01D5ACD0,32,,,UNKNOWN,,,,TODO,,,
-hw,01D5ACF0,63,,,UNKNOWN,,,,TODO,,,
-hw,01D5AD30,70,,,UNKNOWN,,,,TODO,,,
-hw,01D5AD80,50,,,UNKNOWN,,,,TODO,,,
-hw,01D5ADC0,27,,,UNKNOWN,,,,TODO,,,
-hw,01D5ADE0,32,,,UNKNOWN,,,,TODO,,,
-hw,01D5AE00,25,,,UNKNOWN,,,,TODO,,,
-hw,01D5AE20,65,,,UNKNOWN,,,,TODO,,,
-hw,01D5AE70,35,,,UNKNOWN,,,,TODO,,,
-hw,01D5AEA0,86,,,UNKNOWN,,,,TODO,,,
-hw,01D5AF00,11,,,UNKNOWN,,,,TODO,,,
-hw,01D5AF10,75,,,UNKNOWN,,,,TODO,,,
-hw,01D5AF60,19,,,UNKNOWN,,,,TODO,,,
-hw,01D5AF80,24,,,UNKNOWN,,,,TODO,,,
-hw,01D5AFA0,5,,,UNKNOWN,,,,TODO,,,
-hw,01D5AFB0,65,,,UNKNOWN,,,,TODO,,,
-hw,01D5B000,35,,,UNKNOWN,,,,TODO,,,
-hw,01D5B030,11,,,UNKNOWN,,,,TODO,,,
-hw,01D5B040,75,,,UNKNOWN,,,,TODO,,,
-hw,01D5B090,19,,,UNKNOWN,,,,TODO,,,
-hw,01D5B0B0,87,,,UNKNOWN,,,,TODO,,,
-hw,01D5B110,86,,,UNKNOWN,,,,TODO,,,
-hw,01D5B170,69,,,UNKNOWN,,,,TODO,,,
-hw,01D5B1C0,58,,,UNKNOWN,,,,TODO,,,
-hw,01D5B200,87,,,UNKNOWN,,,,TODO,,,
-hw,01D5B260,86,,,UNKNOWN,,,,TODO,,,
-hw,01D5B2C0,69,,,UNKNOWN,,,,TODO,,,
-hw,01D5B310,58,,,UNKNOWN,,,,TODO,,,
-hw,01D5B350,17,,,UNKNOWN,,,,TODO,,,
-hw,01D5B370,199,,,UNKNOWN,,,,TODO,,,
-hw,01D5B440,25,,,UNKNOWN,,,,TODO,,,
-hw,01D5B460,17,,,UNKNOWN,,,,TODO,,,
-hw,01D5B480,199,,,UNKNOWN,,,,TODO,,,
-hw,01D5B550,25,,,UNKNOWN,,,,TODO,,,
-hw,01D5B570,5,,,UNKNOWN,,,,TODO,,,
-hw,01D5B575,72,,,UNKNOWN,,,,TODO,,,
-hw,01D5B620,402,,,UNKNOWN,,,,TODO,,,
-hw,01D5B7B2,254,,,UNKNOWN,,,,TODO,,,
-hw,01D5B8B0,5,,,UNKNOWN,,,,TODO,,,
-hw,01D5B8B5,1442,,,UNKNOWN,,,,TODO,,,
-hw,01D5BE60,171,,,UNKNOWN,,,,TODO,,,
-hw,01D5BF0B,38,,,UNKNOWN,,,,TODO,,,
-hw,01D5BF31,88,,,UNKNOWN,,,,TODO,,,
-hw,01D5BF89,17,,,UNKNOWN,,,,TODO,,,
-hw,01D5BF9A,39,,,UNKNOWN,,,,TODO,,,
-hw,01D5BFC1,123,,,UNKNOWN,,,,TODO,,,
-hw,01D5C03C,40,,,UNKNOWN,,,,TODO,,,
-hw,01D5C064,52,,,UNKNOWN,,,,TODO,,,
-hw,01D5C098,21,,,UNKNOWN,,,,TODO,,,
-hw,01D5C0AD,19,,,UNKNOWN,,,,TODO,,,
-hw,01D5C0C0,54,,,UNKNOWN,,,,TODO,,,
-hw,01D5C0F6,21,,,UNKNOWN,,,,TODO,,,
-hw,01D5C10B,32,,,UNKNOWN,,,,TODO,,,
-hw,01D5C12B,92,,,UNKNOWN,,,,TODO,,,
-hw,01D5C187,165,,,UNKNOWN,,,,TODO,,,
-hw,01D5C22C,132,,,UNKNOWN,,,,TODO,,,
-hw,01D5C2B0,15,,,UNKNOWN,,,,TODO,,,
-hw,01D5C2BF,19,,,UNKNOWN,,,,TODO,,,
-hw,01D5C2D2,18,,,UNKNOWN,,,,TODO,,,
-hw,01D5C2E4,15,,,UNKNOWN,,,,TODO,,,
-hw,01D5C2F3,10,,,UNKNOWN,,,,TODO,,,
-hw,01D5C2FD,10,,,UNKNOWN,,,,TODO,,,
+hw,01D59030,163,,,UNKNOWN,engine/dinput_guess.c,,,TODO,,,"Windows mouse input (DirectInput through g_fUseDInput, -noforcemparms, GetCursorPos/SetCursorPos, Key_Event, ClientDLL_MouseEvent), the counterpart of Quake in_win.c; no Linux file and no string names the file: the _guess stem only sorts into the link position between DetailTexture.cpp and download.cpp"
+hw,01D590D3,429,,,UNKNOWN,engine/dinput_guess.c,,,TODO,,,"Windows mouse input (DirectInput through g_fUseDInput, -noforcemparms, GetCursorPos/SetCursorPos, Key_Event, ClientDLL_MouseEvent), the counterpart of Quake in_win.c; no Linux file and no string names the file: the _guess stem only sorts into the link position between DetailTexture.cpp and download.cpp"
+hw,01D59280,298,,,UNKNOWN,engine/dinput_guess.c,,,TODO,,,"Windows mouse input (DirectInput through g_fUseDInput, -noforcemparms, GetCursorPos/SetCursorPos, Key_Event, ClientDLL_MouseEvent), the counterpart of Quake in_win.c; no Linux file and no string names the file: the _guess stem only sorts into the link position between DetailTexture.cpp and download.cpp"
+hw,01D593AA,85,,,UNKNOWN,engine/dinput_guess.c,,,TODO,,,"Windows mouse input (DirectInput through g_fUseDInput, -noforcemparms, GetCursorPos/SetCursorPos, Key_Event, ClientDLL_MouseEvent), the counterpart of Quake in_win.c; no Linux file and no string names the file: the _guess stem only sorts into the link position between DetailTexture.cpp and download.cpp"
+hw,01D593FF,227,,,UNKNOWN,engine/dinput_guess.c,,,TODO,,,"Windows mouse input (DirectInput through g_fUseDInput, -noforcemparms, GetCursorPos/SetCursorPos, Key_Event, ClientDLL_MouseEvent), the counterpart of Quake in_win.c; no Linux file and no string names the file: the _guess stem only sorts into the link position between DetailTexture.cpp and download.cpp"
+hw,01D594E2,124,,,UNKNOWN,engine/dinput_guess.c,,,TODO,,,"Windows mouse input (DirectInput through g_fUseDInput, -noforcemparms, GetCursorPos/SetCursorPos, Key_Event, ClientDLL_MouseEvent), the counterpart of Quake in_win.c; no Linux file and no string names the file: the _guess stem only sorts into the link position between DetailTexture.cpp and download.cpp"
+hw,01D5955E,521,,,UNKNOWN,engine/dinput_guess.c,,,TODO,,,"Windows mouse input (DirectInput through g_fUseDInput, -noforcemparms, GetCursorPos/SetCursorPos, Key_Event, ClientDLL_MouseEvent), the counterpart of Quake in_win.c; no Linux file and no string names the file: the _guess stem only sorts into the link position between DetailTexture.cpp and download.cpp"
+hw,01D5979C,67,,,UNKNOWN,engine/dinput_guess.c,,,TODO,,,"Windows mouse input (DirectInput through g_fUseDInput, -noforcemparms, GetCursorPos/SetCursorPos, Key_Event, ClientDLL_MouseEvent), the counterpart of Quake in_win.c; no Linux file and no string names the file: the _guess stem only sorts into the link position between DetailTexture.cpp and download.cpp"
+hw,01D597DF,69,,,UNKNOWN,engine/dinput_guess.c,,,TODO,,,"Windows mouse input (DirectInput through g_fUseDInput, -noforcemparms, GetCursorPos/SetCursorPos, Key_Event, ClientDLL_MouseEvent), the counterpart of Quake in_win.c; no Linux file and no string names the file: the _guess stem only sorts into the link position between DetailTexture.cpp and download.cpp"
+hw,01D59824,415,,,UNKNOWN,engine/dinput_guess.c,,,TODO,,,"Windows mouse input (DirectInput through g_fUseDInput, -noforcemparms, GetCursorPos/SetCursorPos, Key_Event, ClientDLL_MouseEvent), the counterpart of Quake in_win.c; no Linux file and no string names the file: the _guess stem only sorts into the link position between DetailTexture.cpp and download.cpp"
+hw,01D599C3,127,,,UNKNOWN,engine/dinput_guess.c,,,TODO,,,"Windows mouse input (DirectInput through g_fUseDInput, -noforcemparms, GetCursorPos/SetCursorPos, Key_Event, ClientDLL_MouseEvent), the counterpart of Quake in_win.c; no Linux file and no string names the file: the _guess stem only sorts into the link position between DetailTexture.cpp and download.cpp"
+hw,01D59A42,156,,,UNKNOWN,engine/dinput_guess.c,,,TODO,,,"Windows mouse input (DirectInput through g_fUseDInput, -noforcemparms, GetCursorPos/SetCursorPos, Key_Event, ClientDLL_MouseEvent), the counterpart of Quake in_win.c; no Linux file and no string names the file: the _guess stem only sorts into the link position between DetailTexture.cpp and download.cpp"
+hw,01D59ADE,40,_IN_UpdateMouse_guess,,UNKNOWN,engine/dinput_guess.c,,,TODO,,,"Windows mouse input (DirectInput through g_fUseDInput, -noforcemparms, GetCursorPos/SetCursorPos, Key_Event, ClientDLL_MouseEvent), the counterpart of Quake in_win.c; no Linux file and no string names the file: the _guess stem only sorts into the link position between DetailTexture.cpp and download.cpp"
+hw,01D59B06,92,,,UNKNOWN,engine/dinput_guess.c,,,TODO,,,"Windows mouse input (DirectInput through g_fUseDInput, -noforcemparms, GetCursorPos/SetCursorPos, Key_Event, ClientDLL_MouseEvent), the counterpart of Quake in_win.c; no Linux file and no string names the file: the _guess stem only sorts into the link position between DetailTexture.cpp and download.cpp"
+hw,01D59B70,23,,,UNKNOWN,engine/download.cpp,,,TODO,,,"2013 version (DownloadCache in cache/DownloadCache.db, WinINet worker thread); the Linux file is the later Steam HTTP version, so no position names"
+hw,01D59B87,11,,,UNKNOWN,engine/download.cpp,,,TODO,,,"2013 version (DownloadCache in cache/DownloadCache.db, WinINet worker thread); the Linux file is the later Steam HTTP version, so no position names"
+hw,01D59B92,191,,,UNKNOWN,engine/download.cpp,,,TODO,,,"2013 version (DownloadCache in cache/DownloadCache.db, WinINet worker thread); the Linux file is the later Steam HTTP version, so no position names"
+hw,01D59C51,134,,,UNKNOWN,engine/download.cpp,,,TODO,,,"2013 version (DownloadCache in cache/DownloadCache.db, WinINet worker thread); the Linux file is the later Steam HTTP version, so no position names"
+hw,01D59CD7,360,,,UNKNOWN,engine/download.cpp,,,TODO,,,"2013 version (DownloadCache in cache/DownloadCache.db, WinINet worker thread); the Linux file is the later Steam HTTP version, so no position names"
+hw,01D59E3F,486,,,UNKNOWN,engine/download.cpp,,,TODO,,,"2013 version (DownloadCache in cache/DownloadCache.db, WinINet worker thread); the Linux file is the later Steam HTTP version, so no position names"
+hw,01D5A025,213,,,UNKNOWN,engine/download.cpp,,,TODO,,,"2013 version (DownloadCache in cache/DownloadCache.db, WinINet worker thread); the Linux file is the later Steam HTTP version, so no position names"
+hw,01D5A0FA,143,,,UNKNOWN,engine/download.cpp,,,TODO,,,"2013 version (DownloadCache in cache/DownloadCache.db, WinINet worker thread); the Linux file is the later Steam HTTP version, so no position names"
+hw,01D5A189,361,,,UNKNOWN,engine/download.cpp,,,TODO,,,"2013 version (DownloadCache in cache/DownloadCache.db, WinINet worker thread); the Linux file is the later Steam HTTP version, so no position names"
+hw,01D5A2F2,15,,,UNKNOWN,engine/download.cpp,,,TODO,,,"2013 version (DownloadCache in cache/DownloadCache.db, WinINet worker thread); the Linux file is the later Steam HTTP version, so no position names"
+hw,01D5A301,15,,,UNKNOWN,engine/download.cpp,,,TODO,,,"2013 version (DownloadCache in cache/DownloadCache.db, WinINet worker thread); the Linux file is the later Steam HTTP version, so no position names"
+hw,01D5A310,18,,,UNKNOWN,engine/download.cpp,,,TODO,,,"2013 version (DownloadCache in cache/DownloadCache.db, WinINet worker thread); the Linux file is the later Steam HTTP version, so no position names"
+hw,01D5A322,15,,,UNKNOWN,engine/download.cpp,,,TODO,,,"2013 version (DownloadCache in cache/DownloadCache.db, WinINet worker thread); the Linux file is the later Steam HTTP version, so no position names"
+hw,01D5A331,86,,,UNKNOWN,engine/download.cpp,,,TODO,,,"2013 version (DownloadCache in cache/DownloadCache.db, WinINet worker thread); the Linux file is the later Steam HTTP version, so no position names"
+hw,01D5A387,130,,,UNKNOWN,engine/download.cpp,,,TODO,,,"2013 version (DownloadCache in cache/DownloadCache.db, WinINet worker thread); the Linux file is the later Steam HTTP version, so no position names"
+hw,01D5A409,113,,,UNKNOWN,engine/download.cpp,,,TODO,,,"2013 version (DownloadCache in cache/DownloadCache.db, WinINet worker thread); the Linux file is the later Steam HTTP version, so no position names"
+hw,01D5A47A,76,,,UNKNOWN,engine/download.cpp,,,TODO,,,"2013 version (DownloadCache in cache/DownloadCache.db, WinINet worker thread); the Linux file is the later Steam HTTP version, so no position names"
+hw,01D5A4C6,315,,,UNKNOWN,engine/download.cpp,,,TODO,,,"2013 version (DownloadCache in cache/DownloadCache.db, WinINet worker thread); the Linux file is the later Steam HTTP version, so no position names"
+hw,01D5A601,290,,DownloadManager::Reset,ENGINE,engine/download.cpp,,,TODO,,linux_symbols:string:0.75,"2013 version (DownloadCache in cache/DownloadCache.db, WinINet worker thread); the Linux file is the later Steam HTTP version, so no position names"
+hw,01D5A723,193,,,UNKNOWN,engine/download.cpp,,,TODO,,,"2013 version (DownloadCache in cache/DownloadCache.db, WinINet worker thread); the Linux file is the later Steam HTTP version, so no position names"
+hw,01D5A7E4,413,,,UNKNOWN,engine/download.cpp,,,TODO,,,"2013 version (DownloadCache in cache/DownloadCache.db, WinINet worker thread); the Linux file is the later Steam HTTP version, so no position names"
+hw,01D5A981,234,,,UNKNOWN,engine/download.cpp,,,TODO,,,"2013 version (DownloadCache in cache/DownloadCache.db, WinINet worker thread); the Linux file is the later Steam HTTP version, so no position names"
+hw,01D5AA6B,35,,,UNKNOWN,engine/download.cpp,,,TODO,,,"2013 version (DownloadCache in cache/DownloadCache.db, WinINet worker thread); the Linux file is the later Steam HTTP version, so no position names"
+hw,01D5AA8E,15,_CL_HTTPUpdate,,UNKNOWN,engine/download.cpp,,,TODO,,,"2013 version (DownloadCache in cache/DownloadCache.db, WinINet worker thread); the Linux file is the later Steam HTTP version, so no position names"
+hw,01D5AA9D,15,_CL_HTTPStop_f,,UNKNOWN,engine/download.cpp,,,TODO,,,"2013 version (DownloadCache in cache/DownloadCache.db, WinINet worker thread); the Linux file is the later Steam HTTP version, so no position names"
+hw,01D5AAAC,24,_CL_QueueHTTPDownload,,UNKNOWN,engine/download.cpp,,,TODO,,,"2013 version (DownloadCache in cache/DownloadCache.db, WinINet worker thread); the Linux file is the later Steam HTTP version, so no position names"
+hw,01D5AAC4,15,_CL_GetDownloadQueueSize,,UNKNOWN,engine/download.cpp,,,TODO,,,"2013 version (DownloadCache in cache/DownloadCache.db, WinINet worker thread); the Linux file is the later Steam HTTP version, so no position names"
+hw,01D5AAD3,73,_CL_CanUseHTTPDownload,,UNKNOWN,engine/download.cpp,,,TODO,,,"2013 version (DownloadCache in cache/DownloadCache.db, WinINet worker thread); the Linux file is the later Steam HTTP version, so no position names"
+hw,01D5AB1C,48,_CL_MarkMapAsUsingHTTPDownload,,UNKNOWN,engine/download.cpp,,,TODO,,,"2013 version (DownloadCache in cache/DownloadCache.db, WinINet worker thread); the Linux file is the later Steam HTTP version, so no position names"
+hw,01D5AB50,98,,,UNKNOWN,engine/download.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D5ABC0,46,,,UNKNOWN,engine/download.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D5ABF0,19,,,UNKNOWN,engine/download.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D5AC10,19,,,UNKNOWN,engine/download.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D5AC30,50,,,UNKNOWN,engine/download.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D5AC70,27,,,UNKNOWN,engine/download.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D5AC90,25,,,UNKNOWN,engine/download.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D5ACB0,17,,,UNKNOWN,engine/download.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D5ACD0,32,,,UNKNOWN,engine/download.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D5ACF0,63,,,UNKNOWN,engine/download.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D5AD30,70,,,UNKNOWN,engine/download.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D5AD80,50,,,UNKNOWN,engine/download.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D5ADC0,27,,,UNKNOWN,engine/download.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D5ADE0,32,,,UNKNOWN,engine/download.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D5AE00,25,,,UNKNOWN,engine/download.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D5AE20,65,,,UNKNOWN,engine/download.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D5AE70,35,,,UNKNOWN,engine/download.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D5AEA0,86,,,UNKNOWN,engine/download.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D5AF00,11,,,UNKNOWN,engine/download.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D5AF10,75,,,UNKNOWN,engine/download.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D5AF60,19,,,UNKNOWN,engine/download.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D5AF80,24,,,UNKNOWN,engine/download.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D5AFA0,5,,,UNKNOWN,engine/download.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D5AFB0,65,,,UNKNOWN,engine/download.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D5B000,35,,,UNKNOWN,engine/download.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D5B030,11,,,UNKNOWN,engine/download.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D5B040,75,,,UNKNOWN,engine/download.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D5B090,19,,,UNKNOWN,engine/download.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D5B0B0,87,,,UNKNOWN,engine/download.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D5B110,86,,,UNKNOWN,engine/download.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D5B170,69,,,UNKNOWN,engine/download.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D5B1C0,58,,,UNKNOWN,engine/download.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D5B200,87,,,UNKNOWN,engine/download.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D5B260,86,,,UNKNOWN,engine/download.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D5B2C0,69,,,UNKNOWN,engine/download.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D5B310,58,,,UNKNOWN,engine/download.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D5B350,17,,,UNKNOWN,engine/download.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D5B370,199,,,UNKNOWN,engine/download.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D5B440,25,,,UNKNOWN,engine/download.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D5B460,17,,,UNKNOWN,engine/download.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D5B480,199,,,UNKNOWN,engine/download.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D5B550,25,,,UNKNOWN,engine/download.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D5B570,5,,,UNKNOWN,engine/downloadthread.cpp,,,TODO,,,"WinINet HTTP download worker (InternetOpenUrlA with 'Referer: hl1://%s', If-Range/Range resume); Source's engine/downloadthread.cpp has the same code with hl2://; no Linux file; name from the Source counterpart and the link position between download.cpp and eventapi.c"
+hw,01D5B575,72,,,UNKNOWN,engine/downloadthread.cpp,,,TODO,,,"WinINet HTTP download worker (InternetOpenUrlA with 'Referer: hl1://%s', If-Range/Range resume); Source's engine/downloadthread.cpp has the same code with hl2://; no Linux file; name from the Source counterpart and the link position between download.cpp and eventapi.c"
+hw,01D5B620,402,,,UNKNOWN,engine/downloadthread.cpp,,,TODO,,,"WinINet HTTP download worker (InternetOpenUrlA with 'Referer: hl1://%s', If-Range/Range resume); Source's engine/downloadthread.cpp has the same code with hl2://; no Linux file; name from the Source counterpart and the link position between download.cpp and eventapi.c"
+hw,01D5B7B2,254,,,UNKNOWN,engine/downloadthread.cpp,,,TODO,,,"WinINet HTTP download worker (InternetOpenUrlA with 'Referer: hl1://%s', If-Range/Range resume); Source's engine/downloadthread.cpp has the same code with hl2://; no Linux file; name from the Source counterpart and the link position between download.cpp and eventapi.c"
+hw,01D5B8B0,5,,,UNKNOWN,engine/downloadthread.cpp,,,TODO,,,"WinINet HTTP download worker (InternetOpenUrlA with 'Referer: hl1://%s', If-Range/Range resume); Source's engine/downloadthread.cpp has the same code with hl2://; no Linux file; name from the Source counterpart and the link position between download.cpp and eventapi.c"
+hw,01D5B8B5,1442,,,UNKNOWN,engine/downloadthread.cpp,,,TODO,,,"WinINet HTTP download worker (InternetOpenUrlA with 'Referer: hl1://%s', If-Range/Range resume); Source's engine/downloadthread.cpp has the same code with hl2://; no Linux file; name from the Source counterpart and the link position between download.cpp and eventapi.c"
+hw,01D5BE60,171,_EV_PlaySound,EV_PlaySound,ENGINE,engine/eventapi.c,,,TODO,,hw_position.csv,
+hw,01D5BF0B,38,_EV_StopSound,EV_StopSound,ENGINE,engine/eventapi.c,,,TODO,,hw_position.csv,
+hw,01D5BF31,88,_EV_FindModelIndex,EV_FindModelIndex,ENGINE,engine/eventapi.c,,,TODO,,hw_position.csv,
+hw,01D5BF89,17,_EV_LocalPlayerDucking,EV_LocalPlayerDucking,ENGINE,engine/eventapi.c,,,TODO,,hw_position.csv,
+hw,01D5BF9A,39,_EV_LocalPlayerViewheight,EV_LocalPlayerViewheight,ENGINE,engine/eventapi.c,,,TODO,,hw_position.csv,
+hw,01D5BFC1,123,_EV_LocalPlayerBounds,EV_LocalPlayerBounds,ENGINE,engine/eventapi.c,,,TODO,,hw_position.csv,
+hw,01D5C03C,40,_EV_IndexFromTrace,EV_IndexFromTrace,ENGINE,engine/eventapi.c,,,TODO,,hw_position.csv,
+hw,01D5C064,52,_EV_GetPhysent,EV_GetPhysent,ENGINE,engine/eventapi.c,,,TODO,,hw_position.csv,
+hw,01D5C098,21,_EV_SetUpPlayerPrediction,EV_SetUpPlayerPrediction,ENGINE,engine/eventapi.c,,,TODO,,hw_position.csv,
+hw,01D5C0AD,19,_EV_SetTraceHull,EV_SetTraceHull,ENGINE,engine/eventapi.c,,,TODO,,hw_position.csv,
+hw,01D5C0C0,54,_EV_PlayerTrace,EV_PlayerTrace,ENGINE,engine/eventapi.c,,,TODO,,hw_position.csv,
+hw,01D5C0F6,21,_EV_IsLocal,EV_IsLocal,ENGINE,engine/eventapi.c,,,TODO,,hw_position.csv,
+hw,01D5C10B,32,_EV_WeaponAnimation,EV_WeaponAnimation,ENGINE,engine/eventapi.c,,,TODO,,hw_position.csv,
+hw,01D5C12B,92,_EV_PrecacheEvent,EV_PrecacheEvent,ENGINE,engine/eventapi.c,,,TODO,,hw_position.csv,
+hw,01D5C187,165,_EV_PlaybackEvent,EV_PlaybackEvent,ENGINE,engine/eventapi.c,,,TODO,,hw_position.csv,
+hw,01D5C22C,132,_EV_KillEvents,EV_KillEvents,ENGINE,engine/eventapi.c,,,TODO,,hw_position.csv,
+hw,01D5C2B0,15,,,UNKNOWN,engine/filesystem.cpp,,,TODO,,,
+hw,01D5C2BF,19,,,UNKNOWN,engine/filesystem.cpp,,,TODO,,,
+hw,01D5C2D2,18,,,UNKNOWN,engine/filesystem.cpp,,,TODO,,,
+hw,01D5C2E4,15,,,UNKNOWN,engine/filesystem.cpp,,,TODO,,,
+hw,01D5C2F3,10,,,UNKNOWN,engine/filesystem.cpp,,,TODO,,,
+hw,01D5C2FD,10,,,UNKNOWN,engine/filesystem.cpp,,,TODO,,,
 hw,01D5C307,1206,_CheckLiblistForFallbackDir,CheckLiblistForFallbackDir,ENGINE,engine/filesystem.cpp,,,TODO,,linux_symbols:string:0.378,
 hw,01D5C7BD,1953,_FileSystem_SetGameDirectory,FileSystem_SetGameDirectory,ENGINE,engine/filesystem.cpp,,,TODO,,linux_symbols:string:0.523,
 hw,01D5CF5E,225,_FileSystem_AddFallbackGameDir,,UNKNOWN,engine/filesystem.cpp,,,TODO,,,
-hw,01D5D03F,84,,,UNKNOWN,,,,TODO,,,
-hw,01D5D093,161,,,UNKNOWN,,,,TODO,,,
-hw,01D5D134,26,,,UNKNOWN,,,,TODO,,,
-hw,01D5D14E,40,,,UNKNOWN,,,,TODO,,,
-hw,01D5D180,21,,,UNKNOWN,,,,TODO,,,
-hw,01D5D195,30,_FS_AddSearchPath,,UNKNOWN,,,,TODO,,,
-hw,01D5D1B3,31,,,UNKNOWN,,,,TODO,,,
-hw,01D5D1D2,30,_FS_RemoveFile,,UNKNOWN,,,,TODO,,,
-hw,01D5D1F0,30,_FS_CreateDirHierarchy,,UNKNOWN,,,,TODO,,,
-hw,01D5D20E,31,_FS_FileExists,,UNKNOWN,,,,TODO,,,
-hw,01D5D22D,31,,,UNKNOWN,,,,TODO,,,
-hw,01D5D24C,32,_FS_Open,,UNKNOWN,,,,TODO,,,
-hw,01D5D26C,33,,,UNKNOWN,,,,TODO,,,
-hw,01D5D28D,26,_FS_Close,,UNKNOWN,,,,TODO,,,
-hw,01D5D2A7,33,_FS_Seek,,UNKNOWN,,,,TODO,,,
-hw,01D5D2C8,26,_FS_Tell,,UNKNOWN,,,,TODO,,,
-hw,01D5D2E2,26,_FS_Size,,UNKNOWN,,,,TODO,,,
-hw,01D5D2FC,26,_FS_FileSize,,UNKNOWN,,,,TODO,,,
-hw,01D5D316,26,_FS_GetFileTime,,UNKNOWN,,,,TODO,,,
-hw,01D5D330,33,,,UNKNOWN,,,,TODO,,,
-hw,01D5D351,31,_FS_IsOk,,UNKNOWN,,,,TODO,,,
-hw,01D5D370,26,_FS_Flush,,UNKNOWN,,,,TODO,,,
-hw,01D5D38A,31,_FS_EndOfFile,,UNKNOWN,,,,TODO,,,
-hw,01D5D3A9,33,_FS_Read,,UNKNOWN,,,,TODO,,,
-hw,01D5D3CA,33,_FS_Write,,UNKNOWN,,,,TODO,,,
-hw,01D5D3EB,33,,,UNKNOWN,,,,TODO,,,
-hw,01D5D40C,98,_FS_FPrintf,,UNKNOWN,,,,TODO,,,
-hw,01D5D46E,33,,,UNKNOWN,,,,TODO,,,
-hw,01D5D48F,26,,,UNKNOWN,,,,TODO,,,
-hw,01D5D4A9,31,,,UNKNOWN,,,,TODO,,,
-hw,01D5D4C8,26,,,UNKNOWN,,,,TODO,,,
-hw,01D5D4E2,26,,,UNKNOWN,,,,TODO,,,
-hw,01D5D4FC,36,_FS_GetLocalPath,,UNKNOWN,,,,TODO,,,
-hw,01D5D520,72,,,UNKNOWN,,,,TODO,,,
-hw,01D5D568,38,,,UNKNOWN,,,,TODO,,,
-hw,01D5D58E,38,,,UNKNOWN,,,,TODO,,,
-hw,01D5D5B4,24,,,UNKNOWN,,,,TODO,,,
-hw,01D5D5CC,29,,,UNKNOWN,,,,TODO,,,
-hw,01D5D5E9,29,,,UNKNOWN,,,,TODO,,,
-hw,01D5D606,31,,,UNKNOWN,,,,TODO,,,
-hw,01D5D625,29,_FS_LogLevelLoadStarted,,UNKNOWN,,,,TODO,,,
-hw,01D5D642,29,_FS_LogLevelLoadFinished,,UNKNOWN,,,,TODO,,,
-hw,01D5D65F,33,_FS_HintResourceNeed,,UNKNOWN,,,,TODO,,,
-hw,01D5D680,24,,,UNKNOWN,,,,TODO,,,
-hw,01D5D698,24,,,UNKNOWN,,,,TODO,,,
-hw,01D5D6B0,41,_FS_SetVBuf,,UNKNOWN,,,,TODO,,,
-hw,01D5D6D9,33,_FS_GetInterfaceVersion,,UNKNOWN,,,,TODO,,,
-hw,01D5D6FA,32,,,UNKNOWN,,,,TODO,,,
-hw,01D5D71A,30,,,UNKNOWN,,,,TODO,,,
-hw,01D5D738,55,_FS_Unlink,,UNKNOWN,,,,TODO,,,
-hw,01D5D76F,139,_FS_Rename,,UNKNOWN,,,,TODO,,,
-hw,01D5D7FA,29,_FS_WaitForResources_guess,,UNKNOWN,,,,TODO,,,
-hw,01D5D817,75,_FS_GetWaitForResourcesProgress_guess,,UNKNOWN,,,,TODO,,,
-hw,01D5D862,29,_FS_CancelWaitForResources_guess,,UNKNOWN,,,,TODO,,,
-hw,01D5D87F,37,_FS_LoadLibrary,,UNKNOWN,,,,TODO,,,
+hw,01D5D03F,84,,,UNKNOWN,engine/filesystem.cpp,,,TODO,,,
+hw,01D5D093,161,,,UNKNOWN,engine/filesystem.cpp,,,TODO,,,
+hw,01D5D134,26,,,UNKNOWN,engine/filesystem.cpp,,,TODO,,,
+hw,01D5D14E,40,,,UNKNOWN,engine/filesystem.cpp,,,TODO,,,
+hw,01D5D180,21,_FS_RemoveAllSearchPaths,FS_RemoveAllSearchPaths,ENGINE,engine/filesystem_internal.cpp,,,TODO,,hw_position.csv,
+hw,01D5D195,30,_FS_AddSearchPath,,UNKNOWN,engine/filesystem_internal.cpp,,,TODO,,,
+hw,01D5D1B3,31,_FS_RemoveSearchPath,FS_RemoveSearchPath,ENGINE,engine/filesystem_internal.cpp,,,TODO,,hw_position.csv,
+hw,01D5D1D2,30,_FS_RemoveFile,,UNKNOWN,engine/filesystem_internal.cpp,,,TODO,,,
+hw,01D5D1F0,30,_FS_CreateDirHierarchy,,UNKNOWN,engine/filesystem_internal.cpp,,,TODO,,,
+hw,01D5D20E,31,_FS_FileExists,,UNKNOWN,engine/filesystem_internal.cpp,,,TODO,,,
+hw,01D5D22D,31,_FS_IsDirectory,FS_IsDirectory,ENGINE,engine/filesystem_internal.cpp,,,TODO,,hw_position.csv,
+hw,01D5D24C,32,_FS_Open,,UNKNOWN,engine/filesystem_internal.cpp,,,TODO,,,
+hw,01D5D26C,33,_FS_OpenPathID,,UNKNOWN,engine/filesystem_internal.cpp,,,TODO,,,
+hw,01D5D28D,26,_FS_Close,,UNKNOWN,engine/filesystem_internal.cpp,,,TODO,,,
+hw,01D5D2A7,33,_FS_Seek,,UNKNOWN,engine/filesystem_internal.cpp,,,TODO,,,
+hw,01D5D2C8,26,_FS_Tell,,UNKNOWN,engine/filesystem_internal.cpp,,,TODO,,,
+hw,01D5D2E2,26,_FS_Size,,UNKNOWN,engine/filesystem_internal.cpp,,,TODO,,,
+hw,01D5D2FC,26,_FS_FileSize,,UNKNOWN,engine/filesystem_internal.cpp,,,TODO,,,
+hw,01D5D316,26,_FS_GetFileTime,,UNKNOWN,engine/filesystem_internal.cpp,,,TODO,,,
+hw,01D5D330,33,_FS_FileTimeToString,FS_FileTimeToString,ENGINE,engine/filesystem_internal.cpp,,,TODO,,hw_position.csv,
+hw,01D5D351,31,_FS_IsOk,,UNKNOWN,engine/filesystem_internal.cpp,,,TODO,,,
+hw,01D5D370,26,_FS_Flush,,UNKNOWN,engine/filesystem_internal.cpp,,,TODO,,,
+hw,01D5D38A,31,_FS_EndOfFile,,UNKNOWN,engine/filesystem_internal.cpp,,,TODO,,,
+hw,01D5D3A9,33,_FS_Read,,UNKNOWN,engine/filesystem_internal.cpp,,,TODO,,,
+hw,01D5D3CA,33,_FS_Write,,UNKNOWN,engine/filesystem_internal.cpp,,,TODO,,,
+hw,01D5D3EB,33,_FS_ReadLine,FS_ReadLine,ENGINE,engine/filesystem_internal.cpp,,,TODO,,hw_position.csv,
+hw,01D5D40C,98,_FS_FPrintf,,UNKNOWN,engine/filesystem_internal.cpp,,,TODO,,,
+hw,01D5D46E,33,_FS_FindFirst,FS_FindFirst,ENGINE,engine/filesystem_internal.cpp,,,TODO,,hw_position.csv,
+hw,01D5D48F,26,_FS_FindNext,FS_FindNext,ENGINE,engine/filesystem_internal.cpp,,,TODO,,hw_position.csv,
+hw,01D5D4A9,31,_FS_FindIsDirectory,FS_FindIsDirectory,ENGINE,engine/filesystem_internal.cpp,,,TODO,,hw_position.csv,
+hw,01D5D4C8,26,_FS_FindClose,FS_FindClose,ENGINE,engine/filesystem_internal.cpp,,,TODO,,hw_position.csv,
+hw,01D5D4E2,26,_FS_GetLocalCopy,FS_GetLocalCopy,ENGINE,engine/filesystem_internal.cpp,,,TODO,,hw_position.csv,
+hw,01D5D4FC,36,_FS_GetLocalPath,,UNKNOWN,engine/filesystem_internal.cpp,,,TODO,,,
+hw,01D5D520,72,_FS_ParseFile,FS_ParseFile,ENGINE,engine/filesystem_internal.cpp,,,TODO,,hw_position.csv,
+hw,01D5D568,38,_FS_FullPathToRelativePath,FS_FullPathToRelativePath,ENGINE,engine/filesystem_internal.cpp,,,TODO,,hw_position.csv,
+hw,01D5D58E,38,_FS_GetCurrentDirectory,FS_GetCurrentDirectory,ENGINE,engine/filesystem_internal.cpp,,,TODO,,hw_position.csv,
+hw,01D5D5B4,24,_FS_PrintOpenedFiles,FS_PrintOpenedFiles,ENGINE,engine/filesystem_internal.cpp,,,TODO,,hw_position.csv,
+hw,01D5D5CC,29,_FS_SetWarningFunc,FS_SetWarningFunc,ENGINE,engine/filesystem_internal.cpp,,,TODO,,hw_position.csv,
+hw,01D5D5E9,29,_FS_SetWarningLevel,FS_SetWarningLevel,ENGINE,engine/filesystem_internal.cpp,,,TODO,,hw_position.csv,
+hw,01D5D606,31,_FS_GetCharacter,FS_GetCharacter,ENGINE,engine/filesystem_internal.cpp,,,TODO,,hw_position.csv,
+hw,01D5D625,29,_FS_LogLevelLoadStarted,,UNKNOWN,engine/filesystem_internal.cpp,,,TODO,,,
+hw,01D5D642,29,_FS_LogLevelLoadFinished,,UNKNOWN,engine/filesystem_internal.cpp,,,TODO,,,
+hw,01D5D65F,33,_FS_HintResourceNeed,,UNKNOWN,engine/filesystem_internal.cpp,,,TODO,,,
+hw,01D5D680,24,,,UNKNOWN,engine/filesystem_internal.cpp,,,TODO,,,
+hw,01D5D698,24,,,UNKNOWN,engine/filesystem_internal.cpp,,,TODO,,,
+hw,01D5D6B0,41,_FS_SetVBuf,,UNKNOWN,engine/filesystem_internal.cpp,,,TODO,,,
+hw,01D5D6D9,33,_FS_GetInterfaceVersion,,UNKNOWN,engine/filesystem_internal.cpp,,,TODO,,,
+hw,01D5D6FA,32,_FS_GetReadBuffer,,UNKNOWN,engine/filesystem_internal.cpp,,,TODO,,,
+hw,01D5D71A,30,_FS_ReleaseReadBuffer,,UNKNOWN,engine/filesystem_internal.cpp,,,TODO,,,
+hw,01D5D738,55,_FS_Unlink,,UNKNOWN,engine/filesystem_internal.cpp,,,TODO,,,
+hw,01D5D76F,139,_FS_Rename,,UNKNOWN,engine/filesystem_internal.cpp,,,TODO,,,
+hw,01D5D7FA,29,_FS_WaitForResources_guess,,UNKNOWN,engine/filesystem_internal.cpp,,,TODO,,,
+hw,01D5D817,75,_FS_GetWaitForResourcesProgress_guess,,UNKNOWN,engine/filesystem_internal.cpp,,,TODO,,,
+hw,01D5D862,29,_FS_CancelWaitForResources_guess,,UNKNOWN,engine/filesystem_internal.cpp,,,TODO,,,
+hw,01D5D87F,37,_FS_LoadLibrary,,UNKNOWN,engine/filesystem_internal.cpp,,,TODO,,,
 hw,01D5D8B0,58,_IsPowerOfTwo,,UNKNOWN,engine/GL_DRAW.C,,,MATCHED,100,hw_manual.csv,
 hw,01D5D8EA,86,_GL_Bind,,UNKNOWN,engine/GL_DRAW.C,,,MATCHED,100,hw_manual.csv,
 hw,01D5D940,24,_GL_Texels_f,GL_Texels_f,ENGINE,engine/GL_DRAW.C,,,MATCHED,100,linux_symbols:string:0.75,
@@ -25980,7 +25980,7 @@ hw,01D661AB,123,_Mod_UnloadSpriteTextures,Mod_UnloadSpriteTextures,ENGINE,engine
 hw,01D66226,288,_Mod_LoadSpriteGroup,Mod_LoadSpriteGroup,ENGINE,engine/GL_MODEL.C,,,MATCHED,100,linux_symbols:string:0.583,
 hw,01D66346,676,_Mod_LoadSpriteModel,Mod_LoadSpriteModel,ENGINE,engine/GL_MODEL.C,,,MATCHED,100,linux_symbols:string:0.683,
 hw,01D665EA,100,_Mod_Print,Mod_Print,ENGINE,engine/GL_MODEL.C,,,MATCHED,100,linux_symbols:string:0.344,
-hw,01D66650,147,,,UNKNOWN,,,,TODO,,,
+hw,01D66650,147,_R_RemoveEfrags,R_RemoveEfrags,ENGINE,engine/gl_refrag.c,,,TODO,,hw_position.csv,
 hw,01D666E3,406,_R_SplitEntityOnNode,R_SplitEntityOnNode,ENGINE,engine/gl_refrag.c,,,TODO,,linux_symbols:string:0.768,
 hw,01D66879,203,_R_AddEfrags,R_AddEfrags,ENGINE,engine/gl_refrag.c,,,TODO,,linux_symbols:caller:0.8,
 hw,01D66944,179,_R_StoreEfrags,R_StoreEfrags,ENGINE,engine/gl_refrag.c,,,TODO,,linux_symbols:string:0.867,
@@ -26129,8 +26129,8 @@ hw,01D73A10,119,_VID_Init,VID_Init,ENGINE,engine/GL_VIDNT.C,,,MATCHED,100,linux_
 hw,01D73A87,560,_VID_TakeSnapshot,VID_TakeSnapshot,ENGINE,engine/GL_VIDNT.C,,,MATCHED,100,,
 hw,01D73CB7,511,_VID_TakeSnapshotRect,VID_TakeSnapshotRect,ENGINE,engine/GL_VIDNT.C,,,MATCHED,100,,
 hw,01D73EB6,126,_VID_WriteBuffer,VID_WriteBuffer,ENGINE,engine/GL_VIDNT.C,,,MATCHED,100,linux_symbols:string:0.4,
-hw,01D73F34,133,,,UNKNOWN,,,,TODO,,,
-hw,01D73FB9,10,,,UNKNOWN,,,,TODO,,,
+hw,01D73F34,133,_VID_UpdateWindowVars,VID_UpdateWindowVars,ENGINE,engine/GL_VIDNT.C,,,TODO,,hw_position.csv,
+hw,01D73FB9,10,_VID_AllocBuffers,VID_AllocBuffers,ENGINE,engine/GL_VIDNT.C,,,TODO,,hw_position.csv,
 hw,01D73FD0,207,_BoundPoly,,UNKNOWN,engine/GL_WARP.C,,,MATCHED,100,hw_manual.csv,
 hw,01D7409F,1982,_SubdividePolygon,SubdividePolygon,ENGINE,engine/GL_WARP.C,,,MATCHED,100,linux_symbols:string:0.847,
 hw,01D7485D,319,_GL_SubdivideSurface,GL_SubdivideSurface,ENGINE,engine/GL_WARP.C,,,MATCHED,100,,
@@ -26149,12 +26149,12 @@ hw,01D764BF,90,_R_ClearSkyBox,,UNKNOWN,engine/GL_WARP.C,,,MATCHED,100,hw_manual.
 hw,01D76519,422,_MakeSkyVec,,UNKNOWN,engine/GL_WARP.C,,,MATCHED,100,hw_manual.csv,
 hw,01D766BF,605,_R_DrawSkyBox,,UNKNOWN,engine/GL_WARP.C,,,MATCHED,100,hw_manual.csv,
 hw,01D76938,15,_R_InitSky,,UNKNOWN,engine/GL_WARP.C,,,MATCHED,100,hw_manual.csv,
-hw,01D76950,210,,,UNKNOWN,,,,TODO,,,
-hw,01D76A22,218,,,UNKNOWN,,,,TODO,,,
-hw,01D76AFC,72,,,UNKNOWN,,,,TODO,,,
-hw,01D76B50,30,,,UNKNOWN,,,,TODO,,,
-hw,01D76B6E,195,,,UNKNOWN,,,,TODO,,,
-hw,01D76C31,458,,,UNKNOWN,,,,TODO,,,
+hw,01D76950,210,_GLBeginHud,,UNKNOWN,engine/glHud.c,,,TODO,,,
+hw,01D76A22,218,_DrawWedge,DrawWedge,ENGINE,engine/glHud.c,,,TODO,,hw_position.csv,
+hw,01D76AFC,72,_GLFinishHud,,UNKNOWN,engine/glHud.c,,,TODO,,,
+hw,01D76B50,30,,,UNKNOWN,engine/glide_guess.c,,,TODO,,,"3dfx Glide helpers (GetModuleHandle glide2x, GetProcAddress of grSstPerfStats, grSstResetPerfStats, grSstIdle, grTriStats, grResetTriStats, grLfbReadRegion); no Linux file and no string names the file: the _guess stem only sorts into the link position between glHud.c and hashpak.c"
+hw,01D76B6E,195,,,UNKNOWN,engine/glide_guess.c,,,TODO,,,"3dfx Glide helpers (GetModuleHandle glide2x, GetProcAddress of grSstPerfStats, grSstResetPerfStats, grSstIdle, grTriStats, grResetTriStats, grLfbReadRegion); no Linux file and no string names the file: the _guess stem only sorts into the link position between glHud.c and hashpak.c"
+hw,01D76C31,458,,,UNKNOWN,engine/glide_guess.c,,,TODO,,,"3dfx Glide helpers (GetModuleHandle glide2x, GetProcAddress of grSstPerfStats, grSstResetPerfStats, grSstIdle, grTriStats, grResetTriStats, grLfbReadRegion); no Linux file and no string names the file: the _guess stem only sorts into the link position between glHud.c and hashpak.c"
 hw,01D76E00,1116,_HPAK_GetDataPointer,HPAK_GetDataPointer,ENGINE,engine/hashpak.c,,,MATCHED,100,linux_symbols:string:0.761,
 hw,01D7725C,122,_HPAK_FindResource,HPAK_FindResource,ENGINE,engine/hashpak.c,,,MATCHED,100,,
 hw,01D772D6,299,_HPAK_AddToQueue,HPAK_AddToQueue,ENGINE,engine/hashpak.c,,,MATCHED,100,linux_symbols:string:0.75,
@@ -26397,7 +26397,7 @@ hw,01D867E8,140,_SV_CheckBlendingInterface,,UNKNOWN,engine/host_cmd.c,,,MATCHED,
 hw,01D86874,105,_SV_CheckSaveGameCommentInterface,,UNKNOWN,engine/host_cmd.c,,,MATCHED,100,hw_manual.csv,
 hw,01D868E0,53,_HudSizeUp,,UNKNOWN,engine/HUD.c,,,TODO,,,
 hw,01D86915,53,_HudSizeDown,,UNKNOWN,engine/HUD.c,,,TODO,,,
-hw,01D8694A,791,,,UNKNOWN,,,,TODO,,,
+hw,01D8694A,791,_Sbar_Geiger,Sbar_Geiger,ENGINE,engine/HUD.c,,,TODO,,hw_position.csv,
 hw,01D86C61,345,_Sbar_Draw,Sbar_Draw,ENGINE,engine/HUD.c,,,TODO,,linux_symbols:data1:0.667,
 hw,01D86DC0,410,_Info_ValueForKey,,UNKNOWN,engine/info.c,,,MATCHED,100,hw_manual.csv,
 hw,01D86F5A,477,_Info_RemoveKey,,UNKNOWN,engine/info.c,,,MATCHED,100,hw_manual.csv,
@@ -26417,63 +26417,63 @@ hw,01D87D19,39,?Sys_GetFactory@@YAP6APAVIBaseInterface@@PBDPAH@ZPAVCSysModule@@@
 hw,01D87D40,10,?Sys_GetFactoryThis@@YAP6APAVIBaseInterface@@PBDPAH@ZXZ,,UNKNOWN,public/interface.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01D87D4A,22,?Sys_GetFactory@@YAP6APAVIBaseInterface@@PBDPAH@Z0@Z,,UNKNOWN,public/interface.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01D87D60,26,?Sys_GetProcAddress@@YAPAXPBD0@Z,Sys_GetProcAddress,UNKNOWN,public/interface.cpp,,,MATCHED,100,hw_manual.csv,
-hw,01D87D80,54,,,UNKNOWN,,,,TODO,,,
-hw,01D87DB6,19,,,UNKNOWN,,,,TODO,,,
-hw,01D87DC9,20,,,UNKNOWN,,,,TODO,,,
-hw,01D87DDD,591,,CIPRateLimit::CheckIP,ENGINE,engine/ipratelimit.cpp,,,TODO,,linux_symbols:data:0.727,
-hw,01D88030,93,,,UNKNOWN,,,,TODO,,,
-hw,01D88090,22,,~<>,ENGINE,,,,TODO,,ghidra,
-hw,01D880B0,25,,,UNKNOWN,,,,TODO,,,
-hw,01D880D0,17,,,UNKNOWN,,,,TODO,,,
-hw,01D880F0,17,,,UNKNOWN,,,,TODO,,,
-hw,01D88110,35,,,UNKNOWN,,,,TODO,,,
-hw,01D88140,58,,,UNKNOWN,,,,TODO,,,
-hw,01D88180,143,,,UNKNOWN,,,,TODO,,,
-hw,01D88210,718,,,UNKNOWN,,,,TODO,,,
-hw,01D884E0,174,,,UNKNOWN,,,,TODO,,,
-hw,01D88590,67,,,UNKNOWN,,,,TODO,,,
-hw,01D885E0,11,,,UNKNOWN,,,,TODO,,,
-hw,01D885F0,31,,,UNKNOWN,,,,TODO,,,
-hw,01D88610,31,,,UNKNOWN,,,,TODO,,,
-hw,01D88630,28,,,UNKNOWN,,,,TODO,,,
-hw,01D88650,27,,,UNKNOWN,,,,TODO,,,
-hw,01D88670,28,,,UNKNOWN,,,,TODO,,,
-hw,01D88690,44,,,UNKNOWN,,,,TODO,,,
-hw,01D886C0,29,,,UNKNOWN,,,,TODO,,,
-hw,01D886E0,8,,,UNKNOWN,,,,TODO,,,
-hw,01D886F0,78,,,UNKNOWN,,,,TODO,,,
-hw,01D88740,31,,,UNKNOWN,,,,TODO,,,
-hw,01D88760,30,,SetAt,ENGINE,,,,TODO,,ghidra,
-hw,01D88780,31,,,UNKNOWN,,,,TODO,,,
-hw,01D887A0,28,,,UNKNOWN,,,,TODO,,,
-hw,01D887C0,31,,,UNKNOWN,,,,TODO,,,
-hw,01D887E0,901,,,UNKNOWN,,,,TODO,,,
-hw,01D88B70,144,,,UNKNOWN,,,,TODO,,,
-hw,01D88C00,75,,,UNKNOWN,,,,TODO,,,
-hw,01D88C50,19,,,UNKNOWN,,,,TODO,,,
-hw,01D88C70,70,,,UNKNOWN,,,,TODO,,,
-hw,01D88CC0,28,,,UNKNOWN,,,,TODO,,,
-hw,01D88CE0,130,,,UNKNOWN,,,,TODO,,,
-hw,01D88D70,36,,,UNKNOWN,,,,TODO,,,
-hw,01D88DA0,36,,,UNKNOWN,,,,TODO,,,
-hw,01D88DD0,287,,,UNKNOWN,,,,TODO,,,
-hw,01D88EF0,287,,,UNKNOWN,,,,TODO,,,
-hw,01D89010,182,,,UNKNOWN,,,,TODO,,,
-hw,01D890D0,26,,,UNKNOWN,,,,TODO,,,
-hw,01D890F0,26,,,UNKNOWN,,,,TODO,,,
-hw,01D89110,69,,,UNKNOWN,,,,TODO,,,
-hw,01D89160,5,,,UNKNOWN,,,,TODO,,,
-hw,01D89170,44,,,UNKNOWN,,,,TODO,,,
-hw,01D891A0,146,,,UNKNOWN,,,,TODO,,,
-hw,01D89240,541,,,UNKNOWN,,,,TODO,,,
-hw,01D89460,25,,,UNKNOWN,,,,TODO,,,
-hw,01D89480,17,,,UNKNOWN,,,,TODO,,,
-hw,01D894A0,199,,,UNKNOWN,,,,TODO,,,
-hw,01D89570,25,,,UNKNOWN,,,,TODO,,,
-hw,01D89590,15,,,UNKNOWN,,,,TODO,,,
-hw,01D8959F,15,,,UNKNOWN,,,,TODO,,,
-hw,01D895AE,18,,,UNKNOWN,,,,TODO,,,
-hw,01D895C0,15,,,UNKNOWN,,,,TODO,,,
+hw,01D87D80,54,,,UNKNOWN,engine/ipratelimit.cpp,,,TODO,,,linux: _ZN12CIPRateLimitC1Ev
+hw,01D87DB6,19,,,UNKNOWN,engine/ipratelimit.cpp,,,TODO,,,linux: _ZN12CIPRateLimitD1Ev
+hw,01D87DC9,20,,,UNKNOWN,engine/ipratelimit.cpp,,,TODO,,,linux: _ZN12CIPRateLimit6LessIPERKNS_8iprate_sES2_
+hw,01D87DDD,591,,CIPRateLimit::CheckIP,ENGINE,engine/ipratelimit.cpp,,,TODO,,linux_symbols:data:0.727,linux: _ZN12CIPRateLimit7CheckIPE8netadr_s
+hw,01D88030,93,,,UNKNOWN,engine/ipratelimit.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D88090,22,,~<>,ENGINE,engine/ipratelimit.cpp,,,TODO,,ghidra,inline or template function (COMDAT) emitted after the object
+hw,01D880B0,25,,,UNKNOWN,engine/ipratelimit.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D880D0,17,,,UNKNOWN,engine/ipratelimit.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D880F0,17,,,UNKNOWN,engine/ipratelimit.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D88110,35,,,UNKNOWN,engine/ipratelimit.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D88140,58,,,UNKNOWN,engine/ipratelimit.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D88180,143,,,UNKNOWN,engine/ipratelimit.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D88210,718,,,UNKNOWN,engine/ipratelimit.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D884E0,174,,,UNKNOWN,engine/ipratelimit.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D88590,67,,,UNKNOWN,engine/ipratelimit.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D885E0,11,,,UNKNOWN,engine/ipratelimit.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D885F0,31,,,UNKNOWN,engine/ipratelimit.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D88610,31,,,UNKNOWN,engine/ipratelimit.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D88630,28,,,UNKNOWN,engine/ipratelimit.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D88650,27,,,UNKNOWN,engine/ipratelimit.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D88670,28,,,UNKNOWN,engine/ipratelimit.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D88690,44,,,UNKNOWN,engine/ipratelimit.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D886C0,29,,,UNKNOWN,engine/ipratelimit.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D886E0,8,,,UNKNOWN,engine/ipratelimit.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D886F0,78,,,UNKNOWN,engine/ipratelimit.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D88740,31,,,UNKNOWN,engine/ipratelimit.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D88760,30,,SetAt,ENGINE,engine/ipratelimit.cpp,,,TODO,,ghidra,inline or template function (COMDAT) emitted after the object
+hw,01D88780,31,,,UNKNOWN,engine/ipratelimit.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D887A0,28,,,UNKNOWN,engine/ipratelimit.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D887C0,31,,,UNKNOWN,engine/ipratelimit.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D887E0,901,,,UNKNOWN,engine/ipratelimit.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D88B70,144,,,UNKNOWN,engine/ipratelimit.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D88C00,75,,,UNKNOWN,engine/ipratelimit.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D88C50,19,,,UNKNOWN,engine/ipratelimit.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D88C70,70,,,UNKNOWN,engine/ipratelimit.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D88CC0,28,,,UNKNOWN,engine/ipratelimit.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D88CE0,130,,,UNKNOWN,engine/ipratelimit.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D88D70,36,,,UNKNOWN,engine/ipratelimit.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D88DA0,36,,,UNKNOWN,engine/ipratelimit.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D88DD0,287,,,UNKNOWN,engine/ipratelimit.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D88EF0,287,,,UNKNOWN,engine/ipratelimit.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D89010,182,,,UNKNOWN,engine/ipratelimit.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D890D0,26,,,UNKNOWN,engine/ipratelimit.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D890F0,26,,,UNKNOWN,engine/ipratelimit.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D89110,69,,,UNKNOWN,engine/ipratelimit.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D89160,5,,,UNKNOWN,engine/ipratelimit.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D89170,44,,,UNKNOWN,engine/ipratelimit.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D891A0,146,,,UNKNOWN,engine/ipratelimit.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D89240,541,,,UNKNOWN,engine/ipratelimit.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D89460,25,,,UNKNOWN,engine/ipratelimit.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D89480,17,,,UNKNOWN,engine/ipratelimit.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D894A0,199,,,UNKNOWN,engine/ipratelimit.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D89570,25,,,UNKNOWN,engine/ipratelimit.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D89590,15,,,UNKNOWN,engine/ipratelimitWrapper.cpp,,,TODO,,,"VC6 dynamic initializer ($E) of the static CIPRateLimit (constructor 01D87D80, atexit destructor 01D87DB6)"
+hw,01D8959F,15,,,UNKNOWN,engine/ipratelimitWrapper.cpp,,,TODO,,,"VC6 dynamic initializer ($E) of the static CIPRateLimit (constructor 01D87D80, atexit destructor 01D87DB6)"
+hw,01D895AE,18,,,UNKNOWN,engine/ipratelimitWrapper.cpp,,,TODO,,,"VC6 dynamic initializer ($E) of the static CIPRateLimit (constructor 01D87D80, atexit destructor 01D87DB6)"
+hw,01D895C0,15,,,UNKNOWN,engine/ipratelimitWrapper.cpp,,,TODO,,,"VC6 dynamic initializer ($E) of the static CIPRateLimit (constructor 01D87D80, atexit destructor 01D87DB6)"
 hw,01D895CF,39,_CheckIP,CheckIP,ENGINE,engine/ipratelimitWrapper.cpp,,,TODO,,linux_symbols:caller:0.667,
 hw,01D89600,277,_CheckForCommand,,UNKNOWN,engine/KEYS.C,,,MATCHED,100,hw_manual.csv,
 hw,01D89715,266,_CompleteCommand,,UNKNOWN,engine/KEYS.C,,,MATCHED,100,hw_manual.csv,
@@ -26498,11 +26498,11 @@ hw,01D8A8F4,79,_Key_ClearStates,,UNKNOWN,engine/KEYS.C,,,MATCHED,100,hw_manual.c
 hw,01D8A943,51,_Key_BindingForKey,,UNKNOWN,engine/KEYS.C,,,MATCHED,100,hw_manual.csv,
 hw,01D8A976,51,_Key_Shutdown,,UNKNOWN,engine/KEYS.C,,,MATCHED,100,hw_manual.csv,
 hw,01D8A9B0,656,_Mod_LoadStudioModel,Mod_LoadStudioModel,ENGINE,engine/l_studio.c,,,TODO,,linux_symbols:string:0.775,
-hw,01D8AC40,107,,,UNKNOWN,,,,TODO,,,
-hw,01D8ACAB,493,,,UNKNOWN,,,,TODO,,,
-hw,01D8AE98,311,,,UNKNOWN,,,,TODO,,,
-hw,01D8AFCF,217,,,UNKNOWN,,,,TODO,,,
-hw,01D8B0A8,17,,,UNKNOWN,,,,TODO,,,
+hw,01D8AC40,107,,,UNKNOWN,engine/LoadBlob.cpp,,,TODO,,,"linux: FIsBlob (cof.exe LoadBlob.cpp ?FIsBlob@@YADPBD@Z has the same code: open rb, read 0x44 bytes, compare 0x12345678)"
+hw,01D8ACAB,493,,,UNKNOWN,engine/LoadBlob.cpp,,,TODO,,,linux: NLoadBlobFile (cof.exe ?NLoadBlobFile@@YAPAXPBDPAUBlobFootprint_s@@PAXD@Z)
+hw,01D8AE98,311,,,UNKNOWN,engine/LoadBlob.cpp,,,TODO,,,no Linux counterpart; cof.exe LoadBlob.cpp has the same function as ?LoadBlobFile_guess@@YAPAXPAEPAUBlobFootprint_s@@PAXH@Z
+hw,01D8AFCF,217,,,UNKNOWN,engine/LoadBlob.cpp,,,TODO,,,no Linux counterpart; cof.exe LoadBlob.cpp has the same function as ?ProcessBlobImports_guess@@YAXPAUBlobHeader_s_guess@@@Z (LoadLibraryA and GetProcAddress)
+hw,01D8B0A8,17,,,UNKNOWN,engine/LoadBlob.cpp,,,TODO,,,linux: FreeBlob (cof.exe ?FreeBlob@@YAXPAUBlobFootprint_s@@@Z; here it also calls FreeLibrary)
 hw,01D8B0C0,42,_anglemod,anglemod,ENGINE,engine/mathlib.c,,,MATCHED,100,,
 hw,01D8B0EA,18,_BOPS_Error,BOPS_Error,ENGINE,engine/mathlib.c,,,MATCHED,100,,
 hw,01D8B0FC,3300,_InvertMatrix,InvertMatrix,ENGINE,engine/mathlib.c,,,MATCHED,100,,
@@ -26537,21 +26537,21 @@ hw,01D8CFBD,21,_Mem_Realloc,Mem_Realloc,ENGINE,engine/mem.c,,,MATCHED,100,,
 hw,01D8CFD2,21,_Mem_Calloc,Mem_Calloc,ENGINE,engine/mem.c,,,MATCHED,100,,
 hw,01D8CFE7,17,_Mem_Strdup,,ENGINE,engine/mem.c,,,MATCHED,100,hw_manual.csv,
 hw,01D8CFF8,17,_Mem_Free,,ENGINE,engine/mem.c,,,MATCHED,100,hw_manual.csv,
-hw,01D8D010,5,,,UNKNOWN,,,,TODO,,,
-hw,01D8D015,366,,,UNKNOWN,,,,TODO,,,
-hw,01D8D183,210,,,UNKNOWN,,,,TODO,,,
-hw,01D8D255,73,,,UNKNOWN,,,,TODO,,,
-hw,01D8D29E,1726,_CloseSecurityModule,,UNKNOWN,,,,TODO,,,
-hw,01D8D960,62,,,UNKNOWN,,,,TODO,,,
-hw,01D8D99E,62,,,UNKNOWN,,,,TODO,,,
+hw,01D8D010,5,_NullDst,NullDst,ENGINE,engine/module.cpp,,,TODO,,hw_position.csv,
+hw,01D8D015,366,,,UNKNOWN,engine/module.cpp,,,TODO,,,"linux: _Z24CommonLoadSecurityModulePv (fills the security module export table: SZ_GetSpace, SV_DropClient, Netchan_Transmit, NET_SendPacket, Cvar_FindVar)"
+hw,01D8D183,210,_LoadSecurityModuleFromDisk,LoadSecurityModuleFromDisk,ENGINE,engine/module.cpp,,,TODO,,hw_position.csv,
+hw,01D8D255,73,_LoadSecurityModuleFromMemory,LoadSecurityModuleFromMemory,ENGINE,engine/module.cpp,,,TODO,,hw_manual.csv,
+hw,01D8D29E,1726,_CloseSecurityModule,,UNKNOWN,engine/module.cpp,,,TODO,,,
+hw,01D8D960,62,_Net_APIClearQueries,Net_APIClearQueries,ENGINE,engine/net_api.c,,,TODO,,hw_position.csv,
+hw,01D8D99E,62,_Net_KillServerList,Net_KillServerList,ENGINE,engine/net_api.c,,,TODO,,hw_position.csv,
 hw,01D8D9DC,25,_Net_APIInit,,UNKNOWN,engine/net_api.c,,,TODO,,,
 hw,01D8D9F5,15,_Net_APIShutDown,,UNKNOWN,engine/net_api.c,,,TODO,,,
-hw,01D8DA04,166,,,UNKNOWN,,,,TODO,,,
-hw,01D8DAAA,50,,,UNKNOWN,,,,TODO,,,
-hw,01D8DADC,101,,,UNKNOWN,,,,TODO,,,
-hw,01D8DB41,99,,,UNKNOWN,,,,TODO,,,
-hw,01D8DBA4,121,_Module_ProcessExpired_guess,,UNKNOWN,,,,TODO,,,
-hw,01D8DC1D,35,,,UNKNOWN,,,,TODO,,,
+hw,01D8DA04,166,_Net_APIFind,Net_APIFind,ENGINE,engine/net_api.c,,,TODO,,hw_position.csv,
+hw,01D8DAAA,50,_Net_APIFindContext,Net_APIFindContext,ENGINE,engine/net_api.c,,,TODO,,hw_position.csv,
+hw,01D8DADC,101,_Net_APIFailed,Net_APIFailed,ENGINE,engine/net_api.c,,,TODO,,hw_position.csv,
+hw,01D8DB41,99,_Net_APIKill,Net_APIKill,ENGINE,engine/net_api.c,,,TODO,,hw_position.csv,
+hw,01D8DBA4,121,_Net_APICheckTimeouts,Net_APICheckTimeouts,ENGINE,engine/net_api.c,,,TODO,,hw_manual.csv,
+hw,01D8DC1D,35,_Net_GetBatchServerList,Net_GetBatchServerList,ENGINE,engine/net_api.c,,,TODO,,hw_position.csv,
 hw,01D8DC40,486,_Net_SendRequest,Net_SendRequest,ENGINE,engine/net_api.c,,,TODO,0.00,linux_symbols:string:0.838,
 hw,01D8DE3A,390,_NET_ParsePlayersResponse,NET_ParsePlayersResponse,ENGINE,engine/net_api.c,,,TODO,0.00,linux_symbols:string:0.721,
 hw,01D8DFC0,279,_NET_ParseRulesResponse,NET_ParseRulesResponse,ENGINE,engine/net_api.c,,,TODO,99.84,linux_symbols:string:0.85,
@@ -26564,8 +26564,8 @@ hw,01D8EAA2,15,_Net_InitNetworking,Net_InitNetworking,ENGINE,engine/net_api.c,,,
 hw,01D8EAB1,47,_Net_CompareAdr,Net_CompareAdr,ENGINE,engine/net_api.c,,,MATCHED,100,,
 hw,01D8EAE0,86,_Net_GetPacketLoss,Net_GetPacketLoss,ENGINE,engine/net_api.c,,,MATCHED,100,,
 hw,01D8EB36,234,_Net_Status,Net_Status,ENGINE,engine/net_api.c,,,MATCHED,100,linux_symbols:data:0.667,
-hw,01D8EC20,41,,,UNKNOWN,,,,TODO,,,
-hw,01D8EC49,10,,,UNKNOWN,,,,TODO,,,
+hw,01D8EC20,41,_Net_CancelRequest,Net_CancelRequest,ENGINE,engine/net_api.c,,,TODO,,hw_position.csv,
+hw,01D8EC49,10,_Net_CancelAllRequests,Net_CancelAllRequests,ENGINE,engine/net_api.c,,,TODO,,hw_position.csv,
 hw,01D8EC60,136,_Netchan_UnlinkFragment,Netchan_UnlinkFragment,ENGINE,engine/net_chan.c,,,MATCHED,100,linux_symbols:string:0.75,
 hw,01D8ECE8,158,_Netchan_OutOfBand,Netchan_OutOfBand,ENGINE,engine/net_chan.c,,,MATCHED,100,,
 hw,01D8ED86,100,_Netchan_OutOfBandPrint,Netchan_OutOfBandPrint,ENGINE,engine/net_chan.c,,,MATCHED,100,,
@@ -26668,12 +26668,12 @@ hw,01D95D89,55,_NET_DrawUpdateRate,,UNKNOWN,engine/net_ws.c,,,MATCHED,100,hw_man
 hw,01D95DC0,108,_NET_DrawDataSegment,,UNKNOWN,engine/net_ws.c,,,MATCHED,100,hw_manual.csv,
 hw,01D95E2C,1713,_SCR_NetGraph,,UNKNOWN,engine/net_ws.c,,,MATCHED,100,hw_manual.csv,
 hw,01D964DD,97,_SCR_DrawFPS,,UNKNOWN,engine/net_ws.c,,,MATCHED,100,hw_manual.csv,
-hw,01D96540,71,,,UNKNOWN,,,,TODO,,,
-hw,01D96587,38,,,UNKNOWN,,,,TODO,,,
-hw,01D965AD,126,,,UNKNOWN,,,,TODO,,,
-hw,01D9662B,136,,,UNKNOWN,,,,TODO,,,
-hw,01D966B3,126,,,UNKNOWN,,,,TODO,,,
-hw,01D96731,136,,,UNKNOWN,,,,TODO,,,
+hw,01D96540,71,,,UNKNOWN,common/ObjectList.cpp,,,TODO,,,linux: _ZN10ObjectListC1Ev
+hw,01D96587,38,,,UNKNOWN,common/ObjectList.cpp,,,TODO,,,linux: _ZN10ObjectListD1Ev
+hw,01D965AD,126,,,UNKNOWN,common/ObjectList.cpp,,,TODO,,,linux: _ZN10ObjectList7AddHeadEPv
+hw,01D9662B,136,,,UNKNOWN,common/ObjectList.cpp,,,TODO,,,linux: _ZN10ObjectList10RemoveHeadEv
+hw,01D966B3,126,,,UNKNOWN,common/ObjectList.cpp,,,TODO,,,linux: _ZN10ObjectList7AddTailEPv
+hw,01D96731,136,,,UNKNOWN,common/ObjectList.cpp,,,TODO,,,linux: _ZN10ObjectList10RemoveTailEv
 hw,01D967B9,25,,,UNKNOWN,common/ObjectList.cpp,,,TODO,,,linux: _ZN10ObjectList7IsEmptyEv
 hw,01D967D2,17,,,UNKNOWN,common/ObjectList.cpp,,,TODO,,,linux: _ZN10ObjectList13CountElementsEv
 hw,01D967E3,73,,,UNKNOWN,common/ObjectList.cpp,,,TODO,,,linux: _ZN10ObjectList8ContainsEPv
@@ -26683,10 +26683,10 @@ hw,01D96986,51,,Concurrency::details::ContextBase::ClearCancel,ENGINE,common/Obj
 hw,01D969B9,58,,,UNKNOWN,common/ObjectList.cpp,,,TODO,,,linux: _ZN10ObjectList8GetFirstEv
 hw,01D969F3,59,,,UNKNOWN,common/ObjectList.cpp,,,TODO,,,linux: _ZN10ObjectList7GetNextEv
 hw,01D96A2E,25,,,UNKNOWN,common/ObjectList.cpp,,,TODO,,,linux: _ZN10ObjectList3AddEPv
-hw,01D96A50,46,,,UNKNOWN,,,,TODO,,,
-hw,01D96A80,23,,,UNKNOWN,,,,TODO,,,
-hw,01D96AA0,46,,,UNKNOWN,,,,TODO,,,
-hw,01D96AD0,20,,,UNKNOWN,,,,TODO,,,
+hw,01D96A50,46,,,UNKNOWN,common/ObjectList.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D96A80,23,,,UNKNOWN,common/ObjectList.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D96AA0,46,,,UNKNOWN,common/ObjectList.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D96AD0,20,,,UNKNOWN,common/ObjectList.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
 hw,01D96AF0,26,,,UNKNOWN,,,,TODO,,,
 hw,01D96B0A,7,_glAccum@8,glAccum,ENGINE,,,,TODO,,hw_manual.csv,
 hw,01D96B11,17,_glAreTexturesResident@12,glAreTexturesResident,ENGINE,,,,TODO,,hw_manual.csv,
