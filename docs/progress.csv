@@ -23263,16 +23263,16 @@ hl,101A0E44,10,??__Finitlocks@std@@YAXXZ,std::`dynamic atexit destructor for 'in
 hl,101A0E4E,10,??__Finitlocks@std@@YAXXZ,std::`dynamic atexit destructor for 'initlocks'',LIB,,,,,,crt_bytes_ambiguous,
 hl,101A0E58,10,??__Finitlocks@std@@YAXXZ,std::`dynamic atexit destructor for 'initlocks'',LIB,,,,,,crt_bytes_ambiguous,
 hl,101A0E62,10,??__Finitlocks@std@@YAXXZ,std::`dynamic atexit destructor for 'initlocks'',LIB,,,,,,crt_bytes_ambiguous,
-hw,01D01000,15,,,UNKNOWN,,,,TODO,,,
-hw,01D0100F,15,,,UNKNOWN,,,,TODO,,,
-hw,01D0101E,18,,,UNKNOWN,,,,TODO,,,
-hw,01D01030,15,,,UNKNOWN,,,,TODO,,,
-hw,01D0103F,10,,,UNKNOWN,,,,TODO,,,
-hw,01D01049,10,,,UNKNOWN,,,,TODO,,,
-hw,01D01053,25,,,UNKNOWN,,,,TODO,,,
-hw,01D0106C,10,,,UNKNOWN,,,,TODO,,,
-hw,01D01076,74,,,UNKNOWN,,,,TODO,,,
-hw,01D010C0,38,,,UNKNOWN,,,,TODO,,,
+hw,01D01000,15,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
+hw,01D0100F,15,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
+hw,01D0101E,18,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
+hw,01D01030,15,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
+hw,01D0103F,10,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
+hw,01D01049,10,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
+hw,01D01053,25,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
+hw,01D0106C,10,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
+hw,01D01076,74,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
+hw,01D010C0,38,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
 hw,01D010E6,590,,CBaseUI::Initialize,ENGINE,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,linux_symbols:string:0.454,
 hw,01D01334,1652,,CBaseUI::Start,ENGINE,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,linux_symbols:string:0.617,
 hw,01D019A8,255,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,linux: _ZN7CBaseUI8ShutdownEv
@@ -23294,60 +23294,60 @@ hw,01D01F40,18,,,UNKNOWN,guess:engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,
 hw,01D01F52,15,,,UNKNOWN,guess:engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,
 hw,01D01F61,10,,,UNKNOWN,guess:engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,
 hw,01D01F6B,25,__GLOBAL__sub_I__ZN5vgui210g_pSurfaceE,_GLOBAL__sub_I__ZN5vgui210g_pSurfaceE,ENGINE,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,linux_symbols:string:0.375,
-hw,01D01F84,10,,,UNKNOWN,,,,TODO,,,
-hw,01D01F90,46,,,UNKNOWN,,,,TODO,,,
-hw,01D01FC0,31,,,UNKNOWN,,,,TODO,,,
-hw,01D01FE0,46,,,UNKNOWN,,,,TODO,,,
-hw,01D02010,19,,,UNKNOWN,,,,TODO,,,
-hw,01D02030,20,,,UNKNOWN,,,,TODO,,,
-hw,01D02050,46,,,UNKNOWN,,,,TODO,,,
-hw,01D02080,23,,,UNKNOWN,,,,TODO,,,
-hw,01D020A0,139,,,UNKNOWN,,,,TODO,,,
-hw,01D02130,40,??0Color@@QAE@HHHH@Z,Color::Color,ENGINE,,,,TODO,,hw_manual.csv,
-hw,01D02160,48,,,UNKNOWN,,,,TODO,,,
-hw,01D02190,19,??AColor@@QAEAAEH@Z,Color::operator[],UNKNOWN,,,,TODO,,,
-hw,01D021B0,17,?GetVPanel@Panel@vgui2@@UAEIXZ,vgui2::Panel::GetVPanel,UNKNOWN,,,,TODO,,,
-hw,01D021D0,17,,,UNKNOWN,,,,TODO,,,
-hw,01D021F0,14,,,UNKNOWN,,,,TODO,,,
-hw,01D02200,64,,,UNKNOWN,,,,TODO,,,
-hw,01D02240,10,,,UNKNOWN,,,,TODO,,,
-hw,01D02250,79,,,UNKNOWN,,,,TODO,,,
-hw,01D022A0,46,,,UNKNOWN,,,,TODO,,,
-hw,01D022D0,19,,,UNKNOWN,,,,TODO,,,
-hw,01D022F0,139,,,UNKNOWN,,,,TODO,,,
-hw,01D02380,64,,,UNKNOWN,,,,TODO,,,
+hw,01D01F84,10,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,"VC6 interface factory helper ($E) of VEngineVGui001, registered by 01D01F6B"
+hw,01D01F90,46,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D01FC0,31,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D01FE0,46,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D02010,19,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D02030,20,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D02050,46,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D02080,23,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D020A0,139,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D02130,40,??0Color@@QAE@HHHH@Z,Color::Color,ENGINE,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D02160,48,?SetColor@Color@@QAEXHHHH@Z,Color::SetColor,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D02190,19,??AColor@@QAEAAEH@Z,Color::operator[],UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D021B0,17,?GetVPanel@Panel@vgui2@@UAEIXZ,vgui2::Panel::GetVPanel,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D021D0,17,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D021F0,14,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D02200,64,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D02240,10,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D02250,79,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D022A0,46,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D022D0,19,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D022F0,139,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D02380,64,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
 hw,01D023C0,10,?GetPanelClassName@Panel@vgui2@@SAPBDXZ,vgui2::Panel::GetPanelClassName,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,
-hw,01D023D0,27,,,UNKNOWN,,,,TODO,,,
-hw,01D023F0,60,,,UNKNOWN,,,,TODO,,,
-hw,01D02430,46,,,UNKNOWN,,,,TODO,,,
-hw,01D02460,19,,,UNKNOWN,,,,TODO,,,
-hw,01D02480,46,,,UNKNOWN,,,,TODO,,,
-hw,01D024B0,31,,,UNKNOWN,,,,TODO,,,
-hw,01D024D0,46,,,UNKNOWN,,,,TODO,,,
-hw,01D02500,28,,,UNKNOWN,,,,TODO,,,
-hw,01D02520,19,,,UNKNOWN,,,,TODO,,,
-hw,01D02540,25,,,UNKNOWN,,,,TODO,,,
-hw,01D02560,17,,,UNKNOWN,,,,TODO,,,
-hw,01D02580,70,,,UNKNOWN,,,,TODO,,,
-hw,01D025D0,25,,,UNKNOWN,,,,TODO,,,
-hw,01D025F0,24,,,UNKNOWN,,,,TODO,,,
-hw,01D02610,5,,,UNKNOWN,,,,TODO,,,
-hw,01D02620,15,,,UNKNOWN,,,,TODO,,,
-hw,01D0262F,15,,,UNKNOWN,,,,TODO,,,
-hw,01D0263E,18,,,UNKNOWN,,,,TODO,,,
-hw,01D02650,15,,,UNKNOWN,,,,TODO,,,
-hw,01D0265F,15,,,UNKNOWN,,,,TODO,,,
-hw,01D0266E,15,,,UNKNOWN,,,,TODO,,,
-hw,01D0267D,18,,,UNKNOWN,,,,TODO,,,
-hw,01D0268F,15,,,UNKNOWN,,,,TODO,,,
-hw,01D0269E,15,,,UNKNOWN,,,,TODO,,,
-hw,01D026AD,15,,,UNKNOWN,,,,TODO,,,
-hw,01D026BC,18,,,UNKNOWN,,,,TODO,,,
-hw,01D026CE,15,,,UNKNOWN,,,,TODO,,,
-hw,01D026DD,10,,,UNKNOWN,,,,TODO,,,
-hw,01D026E7,25,,,UNKNOWN,,,,TODO,,,
-hw,01D02700,10,?__CreateBaseUISurfaceISurface_interface@@YAPAVIBaseInterface@@XZ,__CreateBaseUISurfaceISurface_interface,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,
-hw,01D0270A,10,?inputinternal@@YAPAVIInputInternal@vgui2@@XZ,inputinternal,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01D023D0,27,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D023F0,60,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D02430,46,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D02460,19,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D02480,46,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D024B0,31,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D024D0,46,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D02500,28,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D02520,19,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D02540,25,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D02560,17,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D02580,70,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D025D0,25,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D025F0,24,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D02610,5,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D02620,15,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
+hw,01D0262F,15,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
+hw,01D0263E,18,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
+hw,01D02650,15,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
+hw,01D0265F,15,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
+hw,01D0266E,15,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
+hw,01D0267D,18,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
+hw,01D0268F,15,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
+hw,01D0269E,15,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
+hw,01D026AD,15,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
+hw,01D026BC,18,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
+hw,01D026CE,15,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
+hw,01D026DD,10,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
+hw,01D026E7,25,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
+hw,01D02700,10,?__CreateBaseUISurfaceISurface_interface@@YAPAVIBaseInterface@@XZ,__CreateBaseUISurfaceISurface_interface,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
+hw,01D0270A,10,?inputinternal@@YAPAVIInputInternal@vgui2@@XZ,inputinternal,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
 hw,01D02714,97,?GetVGUI2KeyCodeForBind@@YA?AW4KeyCode@vgui2@@PBD@Z,GetVGUI2KeyCodeForBind,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01D02775,1464,??0BaseUISurface@@QAE@XZ,BaseUISurface::BaseUISurface,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,97.42,hw_manual.csv,
 hw,01D02D2D,67,??1BaseUISurface@@UAE@XZ,BaseUISurface::~BaseUISurface,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,
@@ -23508,72 +23508,72 @@ hw,01D059F0,87,?GrowVector@?$CUtlVector@VCUtlSymbol@@@@IAEXH@Z,CUtlSymbol>::Grow
 hw,01D05A50,85,?ShiftElementsRight@?$CUtlVector@VCUtlSymbol@@@@IAEXHH@Z,CUtlSymbol>::ShiftElementsRight,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01D05AB0,69,?Purge@?$CUtlMemory@VCUtlSymbol@@@@QAEXXZ,CUtlSymbol>::Purge,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01D05B00,57,?CopyConstruct@@YAXPAVCUtlSymbol@@ABV1@@Z,CopyConstruct,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,
-hw,01D05B40,8,??2@YAPAXIPAX@Z,new,UNKNOWN,,,,TODO,,,
+hw,01D05B40,8,??2@YAPAXIPAX@Z,new,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
 hw,01D05B50,28,??0CUtlSymbol@@QAE@ABV0@@Z,CUtlSymbol::CUtlSymbol,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01D05B70,17,?NumAllocated@?$CUtlMemory@VCUtlSymbol@@@@QBEHXZ,CUtlSymbol>::NumAllocated,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01D05B90,197,?Grow@?$CUtlMemory@VCUtlSymbol@@@@QAEXH@Z,CUtlSymbol>::Grow,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01D05C60,25,?IsExternallyAllocated@?$CUtlMemory@VCUtlSymbol@@@@QBE_NXZ,CUtlSymbol>::IsExternallyAllocated,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01D05C80,226,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,linux: _ZN10EngineFont11GetTextSizeEPKcRiS2_
 hw,01D05D62,17,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,linux: _ZN10EngineFont5getIdEv
-hw,01D05D73,17,,,UNKNOWN,,,,TODO,,,
-hw,01D05D84,15,,,UNKNOWN,,,,TODO,,,
-hw,01D05D93,15,,,UNKNOWN,,,,TODO,,,
-hw,01D05DA2,18,,,UNKNOWN,,,,TODO,,,
-hw,01D05DB4,15,,,UNKNOWN,,,,TODO,,,
-hw,01D05DC3,53,,,UNKNOWN,,,,TODO,,,
-hw,01D05DF8,49,,,UNKNOWN,,,,TODO,,,
-hw,01D05E29,17,,,UNKNOWN,,,,TODO,,,
-hw,01D05E3A,474,,,UNKNOWN,,,,TODO,,,
-hw,01D06014,17,,,UNKNOWN,,,,TODO,,,
-hw,01D06025,68,,,UNKNOWN,,,,TODO,,,
+hw,01D05D73,17,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,
+hw,01D05D84,15,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,
+hw,01D05D93,15,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,
+hw,01D05DA2,18,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,
+hw,01D05DB4,15,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,
+hw,01D05DC3,53,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,
+hw,01D05DF8,49,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,
+hw,01D05E29,17,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,
+hw,01D05E3A,474,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,
+hw,01D06014,17,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,
+hw,01D06025,68,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,
 hw,01D06069,119,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,linux: _ZN22FileImageStream_Memory4ReadEPvi
 hw,01D060E0,32,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,linux: _ZN22FileImageStream_Memory11ErrorStatusEv
-hw,01D06100,494,,,UNKNOWN,,,,TODO,,,
-hw,01D062EE,290,,,UNKNOWN,,,,TODO,,,
-hw,01D06410,86,,,UNKNOWN,,,,TODO,,,
-hw,01D06466,736,,,UNKNOWN,,,,TODO,,,
-hw,01D06746,107,,,UNKNOWN,,,,TODO,,,
+hw,01D06100,494,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,
+hw,01D062EE,290,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,
+hw,01D06410,86,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,
+hw,01D06466,736,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,
+hw,01D06746,107,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,
 hw,01D067B1,246,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,linux: _ZN8FontPlat6equalsEPKciifibbbb
 hw,01D068A7,668,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,linux: _ZN8FontPlat11getCharRGBAEiiiiiPh
 hw,01D06B43,67,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,linux: _ZN8FontPlat14GetCharABCwideEiRiS0_S0_
 hw,01D06B86,17,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,linux: _ZN8FontPlat7GetTallEv
 hw,01D06B97,20,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,linux: _ZN8FontPlat5getIdEv
 hw,01D06BAB,13,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,linux: _ZN8FontPlat15DrawSetTextFontEP11SurfacePlat
-hw,01D06BB8,55,,,UNKNOWN,,,,TODO,,,
-hw,01D06BEF,77,,,UNKNOWN,,,,TODO,,,
-hw,01D06C3C,282,,,UNKNOWN,,,,TODO,,,
+hw,01D06BB8,55,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,
+hw,01D06BEF,77,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,
+hw,01D06C3C,282,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,
 hw,01D06D56,40,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,linux: _ZN15FontPlat_Bitmap6equalsEPKciifibbbb
 hw,01D06D7E,299,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,linux: _ZN15FontPlat_Bitmap11getCharRGBAEiiiiiPh
 hw,01D06EA9,80,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,linux: _ZN15FontPlat_Bitmap14GetCharABCwideEiRiS0_S0_
 hw,01D06EF9,20,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,linux: _ZN15FontPlat_Bitmap7GetTallEv
 hw,01D06F0D,20,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,linux: _ZN15FontPlat_Bitmap5getIdEv
 hw,01D06F21,13,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,linux: _ZN15FontPlat_Bitmap15DrawSetTextFontEP11SurfacePlat
-hw,01D06F2E,90,,,UNKNOWN,,,,TODO,,,
-hw,01D06F88,72,,,UNKNOWN,,,,TODO,,,
+hw,01D06F2E,90,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,
+hw,01D06F88,72,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,
 hw,01D06FD0,504,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,linux: _ZN10EngineFont4InitEPKcPviiifibbbb
 hw,01D071C8,54,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,linux: _ZN10EngineFont11getCharRGBAEiiiiiPh
 hw,01D071FE,46,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,linux: _ZN10EngineFont14GetCharABCwideEiRiS0_S0_
 hw,01D0722C,28,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,linux: _ZN10EngineFont7GetTallEv
-hw,01D07248,110,,,UNKNOWN,,,,TODO,,,
-hw,01D072C0,22,,,UNKNOWN,,,,TODO,,,
-hw,01D072E0,19,,,UNKNOWN,,,,TODO,,,
-hw,01D07300,51,,,UNKNOWN,,,,TODO,,,
-hw,01D07340,40,,,UNKNOWN,,,,TODO,,,
-hw,01D07370,23,,,UNKNOWN,,,,TODO,,,
-hw,01D07390,46,,,UNKNOWN,,,,TODO,,,
-hw,01D073C0,23,,,UNKNOWN,,,,TODO,,,
-hw,01D073E0,46,,,UNKNOWN,,,,TODO,,,
-hw,01D07410,20,,,UNKNOWN,,,,TODO,,,
-hw,01D07430,46,,,UNKNOWN,,,,TODO,,,
-hw,01D07460,23,,,UNKNOWN,,,,TODO,,,
-hw,01D07480,46,,,UNKNOWN,,,,TODO,,,
-hw,01D074B0,43,,,UNKNOWN,,,,TODO,,,
-hw,01D074E0,34,,,UNKNOWN,,,,TODO,,,
-hw,01D07510,40,,,UNKNOWN,,,,TODO,,,
-hw,01D07540,16,,,UNKNOWN,,,,TODO,,,
-hw,01D07550,68,,,UNKNOWN,,,,TODO,,,
-hw,01D075A0,45,,,UNKNOWN,,,,TODO,,,
-hw,01D075D0,221,,,UNKNOWN,,,,TODO,,,
+hw,01D07248,110,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,
+hw,01D072C0,22,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D072E0,19,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D07300,51,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D07340,40,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D07370,23,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D07390,46,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D073C0,23,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D073E0,46,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D07410,20,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D07430,46,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D07460,23,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D07480,46,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D074B0,43,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D074E0,34,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D07510,40,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D07540,16,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D07550,68,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D075A0,45,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D075D0,221,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
 hw,01D076B0,158,,,UNKNOWN,,,,TODO,,,
 hw,01D0774E,30,,ATL::CAtlBaseModule::~CAtlBaseModule,ENGINE,,,,TODO,,ghidra,
 hw,01D0776C,64,,,UNKNOWN,,,,TODO,,,
@@ -25453,244 +25453,244 @@ hw,01D531D4,198,,,UNKNOWN,guess:engine/DetailTexture.cpp,,,TODO,,,
 hw,01D5329A,591,_DT_SetRenderState,DT_SetRenderState,ENGINE,engine/DetailTexture.cpp,,,TODO,,linux_symbols:string:0.906,
 hw,01D534E9,26,_DT_SetTextureCoordinates,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,hw_manual.csv,
 hw,01D53503,41,_DT_ClearRenderState,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,hw_manual.csv,
-hw,01D5352C,15,,,UNKNOWN,,,,TODO,,,
-hw,01D5353B,18,,,UNKNOWN,,,,TODO,,,
-hw,01D53550,19,,,UNKNOWN,,,,TODO,,,
-hw,01D53570,19,,,UNKNOWN,,,,TODO,,,
-hw,01D53590,60,,,UNKNOWN,,,,TODO,,,
-hw,01D535D0,19,,,UNKNOWN,,,,TODO,,,
-hw,01D535F0,138,,,UNKNOWN,,,,TODO,,,
-hw,01D53680,79,,,UNKNOWN,,,,TODO,,,
-hw,01D536D0,46,,,UNKNOWN,,,,TODO,,,
-hw,01D53700,30,,,UNKNOWN,,,,TODO,,,
-hw,01D53720,28,,,UNKNOWN,,,,TODO,,,
-hw,01D53740,31,,,UNKNOWN,,,,TODO,,,
-hw,01D53760,22,,,UNKNOWN,,,,TODO,,,
-hw,01D53780,22,,,UNKNOWN,,,,TODO,,,
-hw,01D537A0,19,,,UNKNOWN,,,,TODO,,,
-hw,01D537C0,19,,,UNKNOWN,,,,TODO,,,
-hw,01D537E0,17,,,UNKNOWN,,,,TODO,,,
-hw,01D53800,17,,,UNKNOWN,,,,TODO,,,
-hw,01D53820,17,,,UNKNOWN,,,,TODO,,,
-hw,01D53840,17,,,UNKNOWN,,,,TODO,,,
-hw,01D53860,40,,,UNKNOWN,,,,TODO,,,
-hw,01D53890,36,,,UNKNOWN,,,,TODO,,,
-hw,01D538C0,56,,,UNKNOWN,,,,TODO,,,
-hw,01D53900,52,,,UNKNOWN,,,,TODO,,,
-hw,01D53940,48,,,UNKNOWN,,,,TODO,,,
-hw,01D53970,21,,,UNKNOWN,,,,TODO,,,
-hw,01D53990,25,,,UNKNOWN,,,,TODO,,,
+hw,01D5352C,15,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,
+hw,01D5353B,18,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,
+hw,01D53550,19,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D53570,19,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D53590,60,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D535D0,19,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D535F0,138,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D53680,79,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D536D0,46,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D53700,30,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D53720,28,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D53740,31,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D53760,22,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D53780,22,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D537A0,19,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D537C0,19,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D537E0,17,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D53800,17,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D53820,17,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D53840,17,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D53860,40,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D53890,36,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D538C0,56,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D53900,52,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D53940,48,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D53970,21,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D53990,25,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
 hw,01D539B0,25,,"std::basic_string<char,std::char_traits<char>,std::allocator<char>_>::operator=",LIB,,,,,,ghidra,
-hw,01D539D0,25,,,UNKNOWN,,,,TODO,,,
-hw,01D539F0,44,,,UNKNOWN,,,,TODO,,,
-hw,01D53A20,17,,,UNKNOWN,,,,TODO,,,
-hw,01D53A40,56,,,UNKNOWN,,,,TODO,,,
-hw,01D53A80,94,,,UNKNOWN,,,,TODO,,,
-hw,01D53AE0,52,,,UNKNOWN,,,,TODO,,,
-hw,01D53B20,27,,,UNKNOWN,,,,TODO,,,
-hw,01D53B40,34,,,UNKNOWN,,,,TODO,,,
-hw,01D53B70,37,,,UNKNOWN,,,,TODO,,,
-hw,01D53BA0,34,,,UNKNOWN,,,,TODO,,,
-hw,01D53BD0,37,,,UNKNOWN,,,,TODO,,,
-hw,01D53C00,74,,,UNKNOWN,,,,TODO,,,
-hw,01D53C50,19,,,UNKNOWN,,,,TODO,,,
-hw,01D53C70,41,,,UNKNOWN,,,,TODO,,,
-hw,01D53CA0,153,,,UNKNOWN,,,,TODO,,,
-hw,01D53D40,19,,,UNKNOWN,,,,TODO,,,
-hw,01D53D60,35,,,UNKNOWN,,,,TODO,,,
-hw,01D53D90,34,,,UNKNOWN,,,,TODO,,,
-hw,01D53DC0,37,,,UNKNOWN,,,,TODO,,,
-hw,01D53DF0,74,,,UNKNOWN,,,,TODO,,,
-hw,01D53E40,19,,,UNKNOWN,,,,TODO,,,
-hw,01D53E60,41,,,UNKNOWN,,,,TODO,,,
-hw,01D53E90,153,,,UNKNOWN,,,,TODO,,,
-hw,01D53F30,22,,,UNKNOWN,,,,TODO,,,
-hw,01D53F50,19,,,UNKNOWN,,,,TODO,,,
-hw,01D53F70,28,,,UNKNOWN,,,,TODO,,,
-hw,01D53F90,35,,,UNKNOWN,,,,TODO,,,
-hw,01D53FC0,56,,,UNKNOWN,,,,TODO,,,
-hw,01D54000,99,,,UNKNOWN,,,,TODO,,,
-hw,01D54070,57,,,UNKNOWN,,,,TODO,,,
-hw,01D540B0,29,,,UNKNOWN,,,,TODO,,,
-hw,01D540D0,34,,,UNKNOWN,,,,TODO,,,
-hw,01D54100,37,,,UNKNOWN,,,,TODO,,,
-hw,01D54130,39,,,UNKNOWN,,,,TODO,,,
-hw,01D54160,37,,,UNKNOWN,,,,TODO,,,
-hw,01D54190,33,,,UNKNOWN,,,,TODO,,,
-hw,01D541C0,33,,,UNKNOWN,,,,TODO,,,
-hw,01D541F0,344,,,UNKNOWN,,,,TODO,,,
-hw,01D54350,25,,,UNKNOWN,,,,TODO,,,
-hw,01D54370,74,,,UNKNOWN,,,,TODO,,,
+hw,01D539D0,25,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D539F0,44,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D53A20,17,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D53A40,56,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D53A80,94,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D53AE0,52,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D53B20,27,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D53B40,34,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D53B70,37,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D53BA0,34,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D53BD0,37,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D53C00,74,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D53C50,19,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D53C70,41,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D53CA0,153,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,"inline or template function (COMDAT) emitted after the object; takes std::_Lockit (01E6FA07): a std::map (_Tree) instantiation, LIB candidate"
+hw,01D53D40,19,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D53D60,35,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D53D90,34,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D53DC0,37,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D53DF0,74,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D53E40,19,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D53E60,41,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D53E90,153,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,"inline or template function (COMDAT) emitted after the object; takes std::_Lockit (01E6FA07): a std::map (_Tree) instantiation, LIB candidate"
+hw,01D53F30,22,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D53F50,19,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D53F70,28,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D53F90,35,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D53FC0,56,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D54000,99,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D54070,57,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D540B0,29,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D540D0,34,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D54100,37,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D54130,39,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D54160,37,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D54190,33,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D541C0,33,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D541F0,344,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D54350,25,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D54370,74,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
 hw,01D543C0,38,,"std::basic_string<char,std::char_traits<char>,std::allocator<char>_>::assign",LIB,,,,,,ghidra,
-hw,01D543F0,17,,length,ENGINE,,,,TODO,,ghidra,
-hw,01D54410,10,,,UNKNOWN,,,,TODO,,,
-hw,01D54420,178,,,UNKNOWN,,,,TODO,,,
-hw,01D544E0,17,,,UNKNOWN,,,,TODO,,,
-hw,01D54500,17,,,UNKNOWN,,,,TODO,,,
-hw,01D54520,66,,,UNKNOWN,,,,TODO,,,
-hw,01D54570,76,,,UNKNOWN,,,,TODO,,,
-hw,01D545C0,46,,,UNKNOWN,,,,TODO,,,
-hw,01D545F0,25,,,UNKNOWN,,,,TODO,,,
-hw,01D54610,54,,,UNKNOWN,,,,TODO,,,
-hw,01D54650,44,,,UNKNOWN,,,,TODO,,,
-hw,01D54680,40,,,UNKNOWN,,,,TODO,,,
-hw,01D546B0,523,,,UNKNOWN,,,,TODO,,,
-hw,01D548C0,267,,,UNKNOWN,,,,TODO,,,
-hw,01D549D0,55,,,UNKNOWN,,,,TODO,,,
-hw,01D54A10,150,,,UNKNOWN,,,,TODO,,,
-hw,01D54AB0,27,,,UNKNOWN,,,,TODO,,,
-hw,01D54AD0,25,,,UNKNOWN,,,,TODO,,,
-hw,01D54AF0,28,,,UNKNOWN,,,,TODO,,,
-hw,01D54B10,54,,,UNKNOWN,,,,TODO,,,
-hw,01D54B50,44,,,UNKNOWN,,,,TODO,,,
-hw,01D54B80,40,,,UNKNOWN,,,,TODO,,,
-hw,01D54BB0,523,,,UNKNOWN,,,,TODO,,,
-hw,01D54DC0,267,,,UNKNOWN,,,,TODO,,,
-hw,01D54ED0,55,,,UNKNOWN,,,,TODO,,,
-hw,01D54F10,150,,,UNKNOWN,,,,TODO,,,
-hw,01D54FB0,27,,,UNKNOWN,,,,TODO,,,
-hw,01D54FD0,14,,,UNKNOWN,,,,TODO,,,
-hw,01D54FE0,25,,,UNKNOWN,,,,TODO,,,
-hw,01D55000,17,,,UNKNOWN,,,,TODO,,,
-hw,01D55020,17,,,UNKNOWN,,,,TODO,,,
-hw,01D55040,75,,,UNKNOWN,,,,TODO,,,
-hw,01D55090,76,,,UNKNOWN,,,,TODO,,,
-hw,01D550E0,46,,,UNKNOWN,,,,TODO,,,
-hw,01D55110,25,,,UNKNOWN,,,,TODO,,,
-hw,01D55130,37,,,UNKNOWN,,,,TODO,,,
-hw,01D55160,37,,,UNKNOWN,,,,TODO,,,
-hw,01D55190,175,,,UNKNOWN,,,,TODO,,,
-hw,01D55240,165,,,UNKNOWN,,,,TODO,,,
-hw,01D552F0,25,,,UNKNOWN,,,,TODO,,,
-hw,01D55310,17,,,UNKNOWN,,,,TODO,,,
-hw,01D55330,50,,,UNKNOWN,,,,TODO,,,
-hw,01D55370,15,,,UNKNOWN,,,,TODO,,,
-hw,01D55380,313,,,UNKNOWN,,,,TODO,,,
-hw,01D554C0,19,,,UNKNOWN,,,,TODO,,,
-hw,01D554E0,25,,,UNKNOWN,,,,TODO,,,
-hw,01D55500,532,,,UNKNOWN,,,,TODO,,,
+hw,01D543F0,17,,length,ENGINE,engine/DetailTexture.cpp,,,TODO,,ghidra,inline or template function (COMDAT) emitted after the object
+hw,01D54410,10,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D54420,178,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D544E0,17,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D54500,17,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D54520,66,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D54570,76,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D545C0,46,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D545F0,25,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D54610,54,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D54650,44,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D54680,40,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D546B0,523,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,"inline or template function (COMDAT) emitted after the object; takes std::_Lockit (01E6FA07): a std::map (_Tree) instantiation, LIB candidate"
+hw,01D548C0,267,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,"inline or template function (COMDAT) emitted after the object; takes std::_Lockit (01E6FA07): a std::map (_Tree) instantiation, LIB candidate"
+hw,01D549D0,55,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D54A10,150,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D54AB0,27,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D54AD0,25,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D54AF0,28,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D54B10,54,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D54B50,44,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D54B80,40,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D54BB0,523,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,"inline or template function (COMDAT) emitted after the object; takes std::_Lockit (01E6FA07): a std::map (_Tree) instantiation, LIB candidate"
+hw,01D54DC0,267,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,"inline or template function (COMDAT) emitted after the object; takes std::_Lockit (01E6FA07): a std::map (_Tree) instantiation, LIB candidate"
+hw,01D54ED0,55,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D54F10,150,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D54FB0,27,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D54FD0,14,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D54FE0,25,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D55000,17,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D55020,17,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D55040,75,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D55090,76,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D550E0,46,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D55110,25,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D55130,37,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D55160,37,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D55190,175,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D55240,165,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D552F0,25,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D55310,17,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D55330,50,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D55370,15,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D55380,313,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D554C0,19,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D554E0,25,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D55500,532,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
 hw,01D55720,25,,std::allocator<std::_Container_proxy>::destroy,LIB,,,,,,ghidra,
-hw,01D55740,16,,,UNKNOWN,,,,TODO,,,
-hw,01D55750,28,,,UNKNOWN,,,,TODO,,,
-hw,01D55770,29,,,UNKNOWN,,,,TODO,,,
-hw,01D55790,8,,,UNKNOWN,,,,TODO,,,
-hw,01D557A0,11,,,UNKNOWN,,,,TODO,,,
-hw,01D557B0,11,,,UNKNOWN,,,,TODO,,,
-hw,01D557C0,17,,,UNKNOWN,,,,TODO,,,
-hw,01D557E0,2076,,,UNKNOWN,,,,TODO,,,
-hw,01D56000,46,,,UNKNOWN,,,,TODO,,,
-hw,01D56030,131,,,UNKNOWN,,,,TODO,,,
-hw,01D560C0,175,,,UNKNOWN,,,,TODO,,,
-hw,01D56170,1177,,,UNKNOWN,,,,TODO,,,
-hw,01D56610,26,,,UNKNOWN,,,,TODO,,,
-hw,01D56630,26,,,UNKNOWN,,,,TODO,,,
-hw,01D56650,26,,,UNKNOWN,,,,TODO,,,
-hw,01D56670,16,,,UNKNOWN,,,,TODO,,,
-hw,01D56680,28,,,UNKNOWN,,,,TODO,,,
-hw,01D566A0,42,,,UNKNOWN,,,,TODO,,,
-hw,01D566D0,22,,,UNKNOWN,,,,TODO,,,
-hw,01D566F0,16,,,UNKNOWN,,,,TODO,,,
-hw,01D56700,29,,,UNKNOWN,,,,TODO,,,
-hw,01D56720,25,,,UNKNOWN,,,,TODO,,,
-hw,01D56740,29,,,UNKNOWN,,,,TODO,,,
-hw,01D56760,8,,,UNKNOWN,,,,TODO,,,
-hw,01D56770,11,,,UNKNOWN,,,,TODO,,,
-hw,01D56780,11,,,UNKNOWN,,,,TODO,,,
-hw,01D56790,17,,,UNKNOWN,,,,TODO,,,
-hw,01D567B0,2076,,,UNKNOWN,,,,TODO,,,
-hw,01D56FD0,46,,,UNKNOWN,,,,TODO,,,
-hw,01D57000,131,,,UNKNOWN,,,,TODO,,,
-hw,01D57090,175,,,UNKNOWN,,,,TODO,,,
-hw,01D57140,1177,,,UNKNOWN,,,,TODO,,,
-hw,01D575E0,26,,,UNKNOWN,,,,TODO,,,
-hw,01D57600,26,,,UNKNOWN,,,,TODO,,,
-hw,01D57620,26,,,UNKNOWN,,,,TODO,,,
-hw,01D57640,16,,,UNKNOWN,,,,TODO,,,
-hw,01D57650,28,,,UNKNOWN,,,,TODO,,,
-hw,01D57670,42,,,UNKNOWN,,,,TODO,,,
-hw,01D576A0,22,,,UNKNOWN,,,,TODO,,,
-hw,01D576C0,570,,,UNKNOWN,,,,TODO,,,
-hw,01D57900,25,,,UNKNOWN,,,,TODO,,,
-hw,01D57920,51,,FID_conflict:max_size,ENGINE,,,,TODO,,ghidra,
-hw,01D57960,93,,,UNKNOWN,,,,TODO,,,
-hw,01D579DD,181,,,UNKNOWN,,,,TODO,,,
-hw,01D57AA0,103,,,UNKNOWN,,,,TODO,,,
-hw,01D57B10,62,,,UNKNOWN,,,,TODO,,,
-hw,01D57B50,57,,,UNKNOWN,,,,TODO,,,
-hw,01D57B90,27,,,UNKNOWN,,,,TODO,,,
-hw,01D57BB0,11,,,UNKNOWN,,,,TODO,,,
-hw,01D57BC0,11,,,UNKNOWN,,,,TODO,,,
-hw,01D57BD0,154,,,UNKNOWN,,,,TODO,,,
-hw,01D57C70,312,,,UNKNOWN,,,,TODO,,,
-hw,01D57DB0,76,,,UNKNOWN,,,,TODO,,,
-hw,01D57E00,76,,,UNKNOWN,,,,TODO,,,
-hw,01D57E50,312,,,UNKNOWN,,,,TODO,,,
-hw,01D57F90,65,,,UNKNOWN,,,,TODO,,,
-hw,01D57FE0,29,,,UNKNOWN,,,,TODO,,,
+hw,01D55740,16,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D55750,28,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D55770,29,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D55790,8,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D557A0,11,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D557B0,11,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D557C0,17,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D557E0,2076,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,"inline or template function (COMDAT) emitted after the object; takes std::_Lockit (01E6FA07): a std::map (_Tree) instantiation, LIB candidate"
+hw,01D56000,46,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D56030,131,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,"inline or template function (COMDAT) emitted after the object; takes std::_Lockit (01E6FA07): a std::map (_Tree) instantiation, LIB candidate"
+hw,01D560C0,175,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,"inline or template function (COMDAT) emitted after the object; takes std::_Lockit (01E6FA07): a std::map (_Tree) instantiation, LIB candidate"
+hw,01D56170,1177,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,"inline or template function (COMDAT) emitted after the object; takes std::_Lockit (01E6FA07): a std::map (_Tree) instantiation, LIB candidate"
+hw,01D56610,26,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D56630,26,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D56650,26,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D56670,16,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D56680,28,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D566A0,42,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D566D0,22,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D566F0,16,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D56700,29,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D56720,25,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D56740,29,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D56760,8,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D56770,11,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D56780,11,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D56790,17,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D567B0,2076,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,"inline or template function (COMDAT) emitted after the object; takes std::_Lockit (01E6FA07): a std::map (_Tree) instantiation, LIB candidate"
+hw,01D56FD0,46,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D57000,131,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,"inline or template function (COMDAT) emitted after the object; takes std::_Lockit (01E6FA07): a std::map (_Tree) instantiation, LIB candidate"
+hw,01D57090,175,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,"inline or template function (COMDAT) emitted after the object; takes std::_Lockit (01E6FA07): a std::map (_Tree) instantiation, LIB candidate"
+hw,01D57140,1177,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,"inline or template function (COMDAT) emitted after the object; takes std::_Lockit (01E6FA07): a std::map (_Tree) instantiation, LIB candidate"
+hw,01D575E0,26,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D57600,26,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D57620,26,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D57640,16,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D57650,28,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D57670,42,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D576A0,22,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D576C0,570,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D57900,25,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D57920,51,,FID_conflict:max_size,ENGINE,engine/DetailTexture.cpp,,,TODO,,ghidra,inline or template function (COMDAT) emitted after the object
+hw,01D57960,93,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D579DD,181,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D57AA0,103,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D57B10,62,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D57B50,57,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D57B90,27,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D57BB0,11,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D57BC0,11,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D57BD0,154,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,"inline or template function (COMDAT) emitted after the object; takes std::_Lockit (01E6FA07): a std::map (_Tree) instantiation, LIB candidate"
+hw,01D57C70,312,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,"inline or template function (COMDAT) emitted after the object; takes std::_Lockit (01E6FA07): a std::map (_Tree) instantiation, LIB candidate"
+hw,01D57DB0,76,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,"inline or template function (COMDAT) emitted after the object; takes std::_Lockit (01E6FA07): a std::map (_Tree) instantiation, LIB candidate"
+hw,01D57E00,76,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,"inline or template function (COMDAT) emitted after the object; takes std::_Lockit (01E6FA07): a std::map (_Tree) instantiation, LIB candidate"
+hw,01D57E50,312,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,"inline or template function (COMDAT) emitted after the object; takes std::_Lockit (01E6FA07): a std::map (_Tree) instantiation, LIB candidate"
+hw,01D57F90,65,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D57FE0,29,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
 hw,01D58000,25,,std::allocator<std::_Container_proxy>::destroy,LIB,,,,,,ghidra,
-hw,01D58020,24,,,UNKNOWN,,,,TODO,,,
-hw,01D58040,219,,,UNKNOWN,,,,TODO,,,
-hw,01D58120,22,,,UNKNOWN,,,,TODO,,,
-hw,01D58140,11,,,UNKNOWN,,,,TODO,,,
-hw,01D58150,11,,,UNKNOWN,,,,TODO,,,
-hw,01D58160,154,,,UNKNOWN,,,,TODO,,,
-hw,01D58200,312,,,UNKNOWN,,,,TODO,,,
-hw,01D58340,76,,,UNKNOWN,,,,TODO,,,
-hw,01D58390,76,,,UNKNOWN,,,,TODO,,,
-hw,01D583E0,312,,,UNKNOWN,,,,TODO,,,
-hw,01D58520,65,,,UNKNOWN,,,,TODO,,,
-hw,01D58570,29,,,UNKNOWN,,,,TODO,,,
-hw,01D58590,25,,,UNKNOWN,,,,TODO,,,
-hw,01D585B0,24,,,UNKNOWN,,,,TODO,,,
-hw,01D585D0,219,,,UNKNOWN,,,,TODO,,,
-hw,01D586B0,22,,,UNKNOWN,,,,TODO,,,
-hw,01D586D0,62,,,UNKNOWN,,,,TODO,,,
-hw,01D58710,57,,,UNKNOWN,,,,TODO,,,
-hw,01D58750,27,,,UNKNOWN,,,,TODO,,,
-hw,01D58770,27,,,UNKNOWN,,,,TODO,,,
+hw,01D58020,24,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D58040,219,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,"inline or template function (COMDAT) emitted after the object; takes std::_Lockit (01E6FA07): a std::map (_Tree) instantiation, LIB candidate"
+hw,01D58120,22,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D58140,11,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D58150,11,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D58160,154,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,"inline or template function (COMDAT) emitted after the object; takes std::_Lockit (01E6FA07): a std::map (_Tree) instantiation, LIB candidate"
+hw,01D58200,312,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,"inline or template function (COMDAT) emitted after the object; takes std::_Lockit (01E6FA07): a std::map (_Tree) instantiation, LIB candidate"
+hw,01D58340,76,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,"inline or template function (COMDAT) emitted after the object; takes std::_Lockit (01E6FA07): a std::map (_Tree) instantiation, LIB candidate"
+hw,01D58390,76,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,"inline or template function (COMDAT) emitted after the object; takes std::_Lockit (01E6FA07): a std::map (_Tree) instantiation, LIB candidate"
+hw,01D583E0,312,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,"inline or template function (COMDAT) emitted after the object; takes std::_Lockit (01E6FA07): a std::map (_Tree) instantiation, LIB candidate"
+hw,01D58520,65,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D58570,29,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D58590,25,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D585B0,24,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D585D0,219,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,"inline or template function (COMDAT) emitted after the object; takes std::_Lockit (01E6FA07): a std::map (_Tree) instantiation, LIB candidate"
+hw,01D586B0,22,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D586D0,62,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D58710,57,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D58750,27,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D58770,27,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
 hw,01D58790,44,,std::allocator<char>::max_size,LIB,,,,,,ghidra,
-hw,01D587C0,27,,,UNKNOWN,,,,TODO,,,
-hw,01D587E0,29,,,UNKNOWN,,,,TODO,,,
-hw,01D58800,26,,,UNKNOWN,,,,TODO,,,
-hw,01D58820,164,,,UNKNOWN,,,,TODO,,,
-hw,01D588D0,27,,,UNKNOWN,,,,TODO,,,
-hw,01D588F0,26,,,UNKNOWN,,,,TODO,,,
-hw,01D58910,164,,,UNKNOWN,,,,TODO,,,
-hw,01D589C0,29,,,UNKNOWN,,,,TODO,,,
-hw,01D589E0,53,,,UNKNOWN,,,,TODO,,,
-hw,01D58A20,38,,,UNKNOWN,,,,TODO,,,
-hw,01D58A50,40,,,UNKNOWN,,,,TODO,,,
-hw,01D58A80,7,,,UNKNOWN,,,,TODO,,,
-hw,01D58A90,48,,,UNKNOWN,,,,TODO,,,
-hw,01D58AC0,50,,,UNKNOWN,,,,TODO,,,
-hw,01D58B00,36,,,UNKNOWN,,,,TODO,,,
-hw,01D58B30,46,,,UNKNOWN,,,,TODO,,,
-hw,01D58B60,5,,,UNKNOWN,,,,TODO,,,
-hw,01D58B70,34,,,UNKNOWN,,,,TODO,,,
-hw,01D58BA0,26,,,UNKNOWN,,,,TODO,,,
-hw,01D58BC0,34,,,UNKNOWN,,,,TODO,,,
+hw,01D587C0,27,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D587E0,29,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D58800,26,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D58820,164,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,"inline or template function (COMDAT) emitted after the object; takes std::_Lockit (01E6FA07): a std::map (_Tree) instantiation, LIB candidate"
+hw,01D588D0,27,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D588F0,26,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D58910,164,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,"inline or template function (COMDAT) emitted after the object; takes std::_Lockit (01E6FA07): a std::map (_Tree) instantiation, LIB candidate"
+hw,01D589C0,29,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D589E0,53,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D58A20,38,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D58A50,40,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D58A80,7,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D58A90,48,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D58AC0,50,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D58B00,36,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D58B30,46,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D58B60,5,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D58B70,34,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D58BA0,26,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D58BC0,34,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
 hw,01D58BF0,38,,_Destroy_range<>,LIB,,,,,,ghidra,
-hw,01D58C20,48,,,UNKNOWN,,,,TODO,,,
-hw,01D58C50,15,,,UNKNOWN,,,,TODO,,,
-hw,01D58C60,33,,,UNKNOWN,,,,TODO,,,
-hw,01D58C90,64,,,UNKNOWN,,,,TODO,,,
-hw,01D58CD0,5,,,UNKNOWN,,,,TODO,,,
-hw,01D58CE0,57,,,UNKNOWN,,,,TODO,,,
-hw,01D58D20,15,,,UNKNOWN,,,,TODO,,,
-hw,01D58D30,33,,,UNKNOWN,,,,TODO,,,
-hw,01D58D60,30,,,UNKNOWN,,,,TODO,,,
-hw,01D58D80,58,,,UNKNOWN,,,,TODO,,,
-hw,01D58DC0,57,,,UNKNOWN,,,,TODO,,,
-hw,01D58E00,40,,,UNKNOWN,,,,TODO,,,
-hw,01D58E30,46,,,UNKNOWN,,,,TODO,,,
-hw,01D58E60,40,,,UNKNOWN,,,,TODO,,,
-hw,01D58E90,46,,,UNKNOWN,,,,TODO,,,
+hw,01D58C20,48,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D58C50,15,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D58C60,33,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D58C90,64,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D58CD0,5,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D58CE0,57,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D58D20,15,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D58D30,33,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D58D60,30,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D58D80,58,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D58DC0,57,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D58E00,40,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D58E30,46,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D58E60,40,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D58E90,46,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
 hw,01D58EC0,48,,"std::basic_string<char,std::char_traits<char>,std::allocator<char>_>::compare",LIB,,,,,,ghidra,
-hw,01D58EF0,172,,,UNKNOWN,,,,TODO,,,
-hw,01D58FA0,25,,,UNKNOWN,,,,TODO,,,
-hw,01D58FC0,35,,,UNKNOWN,,,,TODO,,,
-hw,01D58FF0,34,,,UNKNOWN,,,,TODO,,,
-hw,01D59020,5,,,UNKNOWN,,,,TODO,,,
+hw,01D58EF0,172,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D58FA0,25,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D58FC0,35,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D58FF0,34,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D59020,5,,,UNKNOWN,engine/DetailTexture.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
 hw,01D59030,163,,,UNKNOWN,,,,TODO,,,
 hw,01D590D3,429,,,UNKNOWN,,,,TODO,,,
 hw,01D59280,298,,,UNKNOWN,,,,TODO,,,
