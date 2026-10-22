@@ -1,0 +1,12 @@
+_GetCurrentSteamAppName
+_F
+_Sys_GetSurfaceCacheSize
+_Sys_GetCDKey
+_Sys_InitMemory
+_Sys_InitAuthentication
+_Sys_ShowProgressTicks
+_Sys_InitGame
+_Sys_ShutdownGame
+_RunListenServer
+_BuildMapCycleListHints
+__GLOBAL__sub_I_D_SurfaceCacheForRes
