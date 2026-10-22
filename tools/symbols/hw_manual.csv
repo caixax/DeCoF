@@ -2391,3 +2391,21 @@ va,name,kind,evidence
 01E63F20,?NumAllocated@?$CUtlMemory@PAG@@QBEHXZ,func,"COMDAT after the TextImage functions, in the order and with the size of the compiled object (m_LineBreaks CUtlVector<wchar_t *>)"
 01E63F40,?Grow@?$CUtlMemory@PAG@@QAEXH@Z,func,"COMDAT after the TextImage functions, in the order and with the size of the compiled object (m_LineBreaks CUtlVector<wchar_t *>)"
 01E64010,?IsExternallyAllocated@?$CUtlMemory@PAG@@QBE_NXZ,func,"COMDAT after the TextImage functions, in the order and with the size of the compiled object (m_LineBreaks CUtlVector<wchar_t *>)"
+01E39900,??0FocusNavGroup@vgui2@@QAE@PAVPanel@1@@Z,func,vgui2/controls/FocusNavGroup.cpp in the source order of the Linux hw.so DWARF; already named
+01E39971,??1FocusNavGroup@vgui2@@QAE@XZ,func,vgui2/controls/FocusNavGroup.cpp in the source order of the Linux hw.so DWARF; already named
+01E39985,?RequestFocusPrev@FocusNavGroup@vgui2@@UAE_NI@Z,func,vgui2/controls/FocusNavGroup.cpp in the source order of the Linux hw.so DWARF; FocusNavGroup vtable (RTTI) slot 5
+01E39CD9,?RequestFocusNext@FocusNavGroup@vgui2@@UAE_NI@Z,func,vgui2/controls/FocusNavGroup.cpp in the source order of the Linux hw.so DWARF; FocusNavGroup vtable (RTTI) slot 6
+01E3A030,?SetFocusTopLevel@FocusNavGroup@vgui2@@UAEX_N@Z,func,vgui2/controls/FocusNavGroup.cpp in the source order of the Linux hw.so DWARF; FocusNavGroup vtable (RTTI) slot 9
+01E3A046,?SetDefaultButton@FocusNavGroup@vgui2@@UAEXPAVPanel@2@@Z,func,vgui2/controls/FocusNavGroup.cpp in the source order of the Linux hw.so DWARF; FocusNavGroup vtable (RTTI) slot 1
+01E3A0B6,?SetCurrentDefaultButton@FocusNavGroup@vgui2@@UAEXI_N@Z,func,vgui2/controls/FocusNavGroup.cpp in the source order of the Linux hw.so DWARF; FocusNavGroup vtable (RTTI) slot 10
+01E3A1D4,?GetCurrentDefaultButton@FocusNavGroup@vgui2@@UAEIXZ,func,vgui2/controls/FocusNavGroup.cpp in the source order of the Linux hw.so DWARF; FocusNavGroup vtable (RTTI) slot 3
+01E3A1EA,?GetDefaultButton@FocusNavGroup@vgui2@@UAEIXZ,func,vgui2/controls/FocusNavGroup.cpp in the source order of the Linux hw.so DWARF; FocusNavGroup vtable (RTTI) slot 2
+01E3A200,?FindPanelByHotkey@FocusNavGroup@vgui2@@UAEPAVPanel@2@G@Z,func,vgui2/controls/FocusNavGroup.cpp in the source order of the Linux hw.so DWARF; FocusNavGroup vtable (RTTI) slot 4
+01E3A29E,?GetDefaultPanel@FocusNavGroup@vgui2@@UAEPAVPanel@2@XZ,func,vgui2/controls/FocusNavGroup.cpp in the source order of the Linux hw.so DWARF; FocusNavGroup vtable (RTTI) slot 0
+01E3A300,?GetCurrentFocus@FocusNavGroup@vgui2@@UAEPAVPanel@2@XZ,func,vgui2/controls/FocusNavGroup.cpp in the source order of the Linux hw.so DWARF; FocusNavGroup vtable (RTTI) slot 7
+01E3A358,?SetCurrentFocus@FocusNavGroup@vgui2@@UAEIII@Z,func,vgui2/controls/FocusNavGroup.cpp in the source order of the Linux hw.so DWARF; FocusNavGroup vtable (RTTI) slot 8
+01E3A3CD,?CanButtonBeDefault@FocusNavGroup@vgui2@@AAE_NI@Z,func,"vgui2/controls/FocusNavGroup.cpp in the source order of the Linux hw.so DWARF; called by SetCurrentFocus and both RequestFocus functions, ""CanBeDefaultButton"""
+01E3A470,??0VPanelHandle@vgui2@@QAE@XZ,func,"VPanelHandle constructor, called three times by the FocusNavGroup constructor"
+01E3A4B0,??4VPanelHandle@vgui2@@QAEII@Z,func,"VPanelHandle::operator=, called by the FocusNavGroup functions (COMDAT order of the compiled object)"
+01E3A490,??BVPanelHandle@vgui2@@QAEIXZ,func,"VPanelHandle::operator VPANEL, called by GetDefaultButton"
+01E3A4D0,??BVPanelHandle@vgui2@@QAE_NXZ,func,"VPanelHandle::operator bool, called by GetCurrentFocus"

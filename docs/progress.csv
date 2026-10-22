@@ -12579,24 +12579,24 @@ gameui,100A32A0,10,,,UNKNOWN,,,,TODO,,,
 gameui,100A32B0,19,,,UNKNOWN,,,,TODO,,,
 gameui,100A32D0,107,,,UNKNOWN,,,,TODO,,,
 gameui,100A3340,120,,,UNKNOWN,,,,TODO,,,
-gameui,100A33D0,113,??0FocusNavGroup@vgui2@@QAE@PAVPanel@1@@Z,vgui2::FocusNavGroup::FocusNavGroup,UNKNOWN,,,,TODO,,gameui_manual.csv,
-gameui,100A3441,20,??1FocusNavGroup@vgui2@@QAE@XZ,vgui2::FocusNavGroup::~FocusNavGroup,UNKNOWN,,,,TODO,,gameui_manual.csv,
-gameui,100A3455,852,,,UNKNOWN,vgui2/controls/FocusNavGroup.cpp,,,TODO,,,linux: _ZN5vgui213FocusNavGroup16RequestFocusPrevEj
-gameui,100A37A9,855,,,UNKNOWN,vgui2/controls/FocusNavGroup.cpp,,,TODO,,,linux: _ZN5vgui213FocusNavGroup16RequestFocusNextEj
-gameui,100A3B00,22,,,UNKNOWN,vgui2/controls/FocusNavGroup.cpp,,,TODO,,,linux: _ZN5vgui213FocusNavGroup16SetFocusTopLevelEb
-gameui,100A3B16,112,,,UNKNOWN,vgui2/controls/FocusNavGroup.cpp,,,TODO,,,linux: _ZN5vgui213FocusNavGroup16SetDefaultButtonEPNS_5PanelE
-gameui,100A3B86,286,,,UNKNOWN,vgui2/controls/FocusNavGroup.cpp,,,TODO,,,linux: _ZN5vgui213FocusNavGroup23SetCurrentDefaultButtonEjb
-gameui,100A3CA4,22,,CDHtmlElementEventSink::~CDHtmlElementEventSink,ENGINE,vgui2/controls/FocusNavGroup.cpp,,,TODO,,ghidra,linux: _ZN5vgui213FocusNavGroup23GetCurrentDefaultButtonEv
-gameui,100A3CBA,22,,~<>,ENGINE,vgui2/controls/FocusNavGroup.cpp,,,TODO,,ghidra,linux: _ZN5vgui213FocusNavGroup16GetDefaultButtonEv
-gameui,100A3CD0,158,,,UNKNOWN,vgui2/controls/FocusNavGroup.cpp,,,TODO,,,linux: _ZN5vgui213FocusNavGroup17FindPanelByHotkeyEw
-gameui,100A3D6E,98,,,UNKNOWN,vgui2/controls/FocusNavGroup.cpp,,,TODO,,,linux: _ZN5vgui213FocusNavGroup15GetDefaultPanelEv
-gameui,100A3DD0,88,,,UNKNOWN,vgui2/controls/FocusNavGroup.cpp,,,TODO,,,linux: _ZN5vgui213FocusNavGroup15GetCurrentFocusEv
-gameui,100A3E28,117,,,UNKNOWN,vgui2/controls/FocusNavGroup.cpp,,,TODO,,,linux: _ZN5vgui213FocusNavGroup15SetCurrentFocusEjj
-gameui,100A3E9D,151,,,UNKNOWN,,,,TODO,,,
-gameui,100A3F40,23,,,UNKNOWN,,,,TODO,,,
-gameui,100A3F60,19,,,UNKNOWN,,,,TODO,,,
-gameui,100A3F80,25,,,UNKNOWN,,,,TODO,,,
-gameui,100A3FA0,25,,,UNKNOWN,,,,TODO,,,
+gameui,100A33D0,113,??0FocusNavGroup@vgui2@@QAE@PAVPanel@1@@Z,vgui2::FocusNavGroup::FocusNavGroup,UNKNOWN,vgui2/controls/FocusNavGroup.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A3441,20,??1FocusNavGroup@vgui2@@QAE@XZ,vgui2::FocusNavGroup::~FocusNavGroup,UNKNOWN,vgui2/controls/FocusNavGroup.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A3455,852,?RequestFocusPrev@FocusNavGroup@vgui2@@UAE_NI@Z,vgui2::FocusNavGroup::RequestFocusPrev,UNKNOWN,vgui2/controls/FocusNavGroup.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui213FocusNavGroup16RequestFocusPrevEj
+gameui,100A37A9,855,?RequestFocusNext@FocusNavGroup@vgui2@@UAE_NI@Z,vgui2::FocusNavGroup::RequestFocusNext,UNKNOWN,vgui2/controls/FocusNavGroup.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui213FocusNavGroup16RequestFocusNextEj
+gameui,100A3B00,22,?SetFocusTopLevel@FocusNavGroup@vgui2@@UAEX_N@Z,vgui2::FocusNavGroup::SetFocusTopLevel,UNKNOWN,vgui2/controls/FocusNavGroup.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui213FocusNavGroup16SetFocusTopLevelEb
+gameui,100A3B16,112,?SetDefaultButton@FocusNavGroup@vgui2@@UAEXPAVPanel@2@@Z,vgui2::FocusNavGroup::SetDefaultButton,UNKNOWN,vgui2/controls/FocusNavGroup.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui213FocusNavGroup16SetDefaultButtonEPNS_5PanelE
+gameui,100A3B86,286,?SetCurrentDefaultButton@FocusNavGroup@vgui2@@UAEXI_N@Z,vgui2::FocusNavGroup::SetCurrentDefaultButton,UNKNOWN,vgui2/controls/FocusNavGroup.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui213FocusNavGroup23SetCurrentDefaultButtonEjb
+gameui,100A3CA4,22,?GetCurrentDefaultButton@FocusNavGroup@vgui2@@UAEIXZ,vgui2::FocusNavGroup::GetCurrentDefaultButton,ENGINE,vgui2/controls/FocusNavGroup.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui213FocusNavGroup23GetCurrentDefaultButtonEv
+gameui,100A3CBA,22,?GetDefaultButton@FocusNavGroup@vgui2@@UAEIXZ,vgui2::FocusNavGroup::GetDefaultButton,ENGINE,vgui2/controls/FocusNavGroup.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui213FocusNavGroup16GetDefaultButtonEv
+gameui,100A3CD0,158,?FindPanelByHotkey@FocusNavGroup@vgui2@@UAEPAVPanel@2@G@Z,vgui2::FocusNavGroup::FindPanelByHotkey,UNKNOWN,vgui2/controls/FocusNavGroup.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui213FocusNavGroup17FindPanelByHotkeyEw
+gameui,100A3D6E,98,?GetDefaultPanel@FocusNavGroup@vgui2@@UAEPAVPanel@2@XZ,vgui2::FocusNavGroup::GetDefaultPanel,UNKNOWN,vgui2/controls/FocusNavGroup.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui213FocusNavGroup15GetDefaultPanelEv
+gameui,100A3DD0,88,?GetCurrentFocus@FocusNavGroup@vgui2@@UAEPAVPanel@2@XZ,vgui2::FocusNavGroup::GetCurrentFocus,UNKNOWN,vgui2/controls/FocusNavGroup.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui213FocusNavGroup15GetCurrentFocusEv
+gameui,100A3E28,117,?SetCurrentFocus@FocusNavGroup@vgui2@@UAEIII@Z,vgui2::FocusNavGroup::SetCurrentFocus,UNKNOWN,vgui2/controls/FocusNavGroup.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui213FocusNavGroup15SetCurrentFocusEjj
+gameui,100A3E9D,151,?CanButtonBeDefault@FocusNavGroup@vgui2@@AAE_NI@Z,vgui2::FocusNavGroup::CanButtonBeDefault,UNKNOWN,vgui2/controls/FocusNavGroup.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A3F40,23,??0VPanelHandle@vgui2@@QAE@XZ,vgui2::VPanelHandle::VPanelHandle,UNKNOWN,vgui2/controls/FocusNavGroup.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A3F60,19,??BVPanelHandle@vgui2@@QAEIXZ,int,UNKNOWN,vgui2/controls/FocusNavGroup.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A3F80,25,??4VPanelHandle@vgui2@@QAEII@Z,vgui2::VPanelHandle::operator=,UNKNOWN,vgui2/controls/FocusNavGroup.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A3FA0,25,??BVPanelHandle@vgui2@@QAE_NXZ,bool,UNKNOWN,vgui2/controls/FocusNavGroup.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,100A3FC0,370,??0BuildModeDialog@vgui2@@QAE@PAVBuildGroup@1@@Z,vgui2::BuildModeDialog::BuildModeDialog,ENGINE,,,,TODO,,gameui_manual.csv,
 gameui,100A4132,159,,,UNKNOWN,,,,TODO,,,
 gameui,100A41D1,91,,,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,TODO,,,linux: _ZN5vgui215BuildModeDialog7OnCloseEv
@@ -30596,24 +30596,24 @@ hw,01E397D0,25,,,UNKNOWN,,,,TODO,,,
 hw,01E397F0,17,,,UNKNOWN,,,,TODO,,,
 hw,01E39810,199,,,UNKNOWN,,,,TODO,,,
 hw,01E398E0,25,,,UNKNOWN,,,,TODO,,,
-hw,01E39900,113,??0FocusNavGroup@vgui2@@QAE@PAVPanel@1@@Z,vgui2::FocusNavGroup::FocusNavGroup,UNKNOWN,,,,TODO,,,
-hw,01E39971,20,??1FocusNavGroup@vgui2@@QAE@XZ,vgui2::FocusNavGroup::~FocusNavGroup,UNKNOWN,,,,TODO,,,
-hw,01E39985,852,,,UNKNOWN,vgui2/controls/FocusNavGroup.cpp,,,TODO,,,linux: _ZN5vgui213FocusNavGroup16RequestFocusPrevEj
-hw,01E39CD9,855,,,UNKNOWN,vgui2/controls/FocusNavGroup.cpp,,,TODO,,,linux: _ZN5vgui213FocusNavGroup16RequestFocusNextEj
-hw,01E3A030,22,,,UNKNOWN,vgui2/controls/FocusNavGroup.cpp,,,TODO,,,linux: _ZN5vgui213FocusNavGroup16SetFocusTopLevelEb
-hw,01E3A046,112,,,UNKNOWN,vgui2/controls/FocusNavGroup.cpp,,,TODO,,,linux: _ZN5vgui213FocusNavGroup16SetDefaultButtonEPNS_5PanelE
-hw,01E3A0B6,286,,,UNKNOWN,vgui2/controls/FocusNavGroup.cpp,,,TODO,,,linux: _ZN5vgui213FocusNavGroup23SetCurrentDefaultButtonEjb
-hw,01E3A1D4,22,,CDHtmlElementEventSink::~CDHtmlElementEventSink,ENGINE,vgui2/controls/FocusNavGroup.cpp,,,TODO,,ghidra,linux: _ZN5vgui213FocusNavGroup23GetCurrentDefaultButtonEv
-hw,01E3A1EA,22,,~<>,ENGINE,vgui2/controls/FocusNavGroup.cpp,,,TODO,,ghidra,linux: _ZN5vgui213FocusNavGroup16GetDefaultButtonEv
-hw,01E3A200,158,,,UNKNOWN,vgui2/controls/FocusNavGroup.cpp,,,TODO,,,linux: _ZN5vgui213FocusNavGroup17FindPanelByHotkeyEw
-hw,01E3A29E,98,,,UNKNOWN,vgui2/controls/FocusNavGroup.cpp,,,TODO,,,linux: _ZN5vgui213FocusNavGroup15GetDefaultPanelEv
-hw,01E3A300,88,,,UNKNOWN,vgui2/controls/FocusNavGroup.cpp,,,TODO,,,linux: _ZN5vgui213FocusNavGroup15GetCurrentFocusEv
-hw,01E3A358,117,,,UNKNOWN,vgui2/controls/FocusNavGroup.cpp,,,TODO,,,linux: _ZN5vgui213FocusNavGroup15SetCurrentFocusEjj
-hw,01E3A3CD,151,,,UNKNOWN,,,,TODO,,,
-hw,01E3A470,23,,,UNKNOWN,,,,TODO,,,
-hw,01E3A490,19,,,UNKNOWN,,,,TODO,,,
-hw,01E3A4B0,25,,,UNKNOWN,,,,TODO,,,
-hw,01E3A4D0,25,,,UNKNOWN,,,,TODO,,,
+hw,01E39900,113,??0FocusNavGroup@vgui2@@QAE@PAVPanel@1@@Z,vgui2::FocusNavGroup::FocusNavGroup,UNKNOWN,vgui2/controls/FocusNavGroup.cpp,,,MATCHED,100,,
+hw,01E39971,20,??1FocusNavGroup@vgui2@@QAE@XZ,vgui2::FocusNavGroup::~FocusNavGroup,UNKNOWN,vgui2/controls/FocusNavGroup.cpp,,,MATCHED,100,,
+hw,01E39985,852,?RequestFocusPrev@FocusNavGroup@vgui2@@UAE_NI@Z,vgui2::FocusNavGroup::RequestFocusPrev,UNKNOWN,vgui2/controls/FocusNavGroup.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui213FocusNavGroup16RequestFocusPrevEj
+hw,01E39CD9,855,?RequestFocusNext@FocusNavGroup@vgui2@@UAE_NI@Z,vgui2::FocusNavGroup::RequestFocusNext,UNKNOWN,vgui2/controls/FocusNavGroup.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui213FocusNavGroup16RequestFocusNextEj
+hw,01E3A030,22,?SetFocusTopLevel@FocusNavGroup@vgui2@@UAEX_N@Z,vgui2::FocusNavGroup::SetFocusTopLevel,UNKNOWN,vgui2/controls/FocusNavGroup.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui213FocusNavGroup16SetFocusTopLevelEb
+hw,01E3A046,112,?SetDefaultButton@FocusNavGroup@vgui2@@UAEXPAVPanel@2@@Z,vgui2::FocusNavGroup::SetDefaultButton,UNKNOWN,vgui2/controls/FocusNavGroup.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui213FocusNavGroup16SetDefaultButtonEPNS_5PanelE
+hw,01E3A0B6,286,?SetCurrentDefaultButton@FocusNavGroup@vgui2@@UAEXI_N@Z,vgui2::FocusNavGroup::SetCurrentDefaultButton,UNKNOWN,vgui2/controls/FocusNavGroup.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui213FocusNavGroup23SetCurrentDefaultButtonEjb
+hw,01E3A1D4,22,?GetCurrentDefaultButton@FocusNavGroup@vgui2@@UAEIXZ,vgui2::FocusNavGroup::GetCurrentDefaultButton,ENGINE,vgui2/controls/FocusNavGroup.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui213FocusNavGroup23GetCurrentDefaultButtonEv
+hw,01E3A1EA,22,?GetDefaultButton@FocusNavGroup@vgui2@@UAEIXZ,vgui2::FocusNavGroup::GetDefaultButton,ENGINE,vgui2/controls/FocusNavGroup.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui213FocusNavGroup16GetDefaultButtonEv
+hw,01E3A200,158,?FindPanelByHotkey@FocusNavGroup@vgui2@@UAEPAVPanel@2@G@Z,vgui2::FocusNavGroup::FindPanelByHotkey,UNKNOWN,vgui2/controls/FocusNavGroup.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui213FocusNavGroup17FindPanelByHotkeyEw
+hw,01E3A29E,98,?GetDefaultPanel@FocusNavGroup@vgui2@@UAEPAVPanel@2@XZ,vgui2::FocusNavGroup::GetDefaultPanel,UNKNOWN,vgui2/controls/FocusNavGroup.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui213FocusNavGroup15GetDefaultPanelEv
+hw,01E3A300,88,?GetCurrentFocus@FocusNavGroup@vgui2@@UAEPAVPanel@2@XZ,vgui2::FocusNavGroup::GetCurrentFocus,UNKNOWN,vgui2/controls/FocusNavGroup.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui213FocusNavGroup15GetCurrentFocusEv
+hw,01E3A358,117,?SetCurrentFocus@FocusNavGroup@vgui2@@UAEIII@Z,vgui2::FocusNavGroup::SetCurrentFocus,UNKNOWN,vgui2/controls/FocusNavGroup.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui213FocusNavGroup15SetCurrentFocusEjj
+hw,01E3A3CD,151,?CanButtonBeDefault@FocusNavGroup@vgui2@@AAE_NI@Z,vgui2::FocusNavGroup::CanButtonBeDefault,UNKNOWN,vgui2/controls/FocusNavGroup.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3A470,23,??0VPanelHandle@vgui2@@QAE@XZ,vgui2::VPanelHandle::VPanelHandle,UNKNOWN,vgui2/controls/FocusNavGroup.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3A490,19,??BVPanelHandle@vgui2@@QAEIXZ,int,UNKNOWN,vgui2/controls/FocusNavGroup.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3A4B0,25,??4VPanelHandle@vgui2@@QAEII@Z,vgui2::VPanelHandle::operator=,UNKNOWN,vgui2/controls/FocusNavGroup.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3A4D0,25,??BVPanelHandle@vgui2@@QAE_NXZ,bool,UNKNOWN,vgui2/controls/FocusNavGroup.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01E3A4F0,370,??0BuildModeDialog@vgui2@@QAE@PAVBuildGroup@1@@Z,vgui2::BuildModeDialog::BuildModeDialog,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,TODO,,linux_symbols:string:0.432,
 hw,01E3A662,159,,,UNKNOWN,guess:vgui2/controls/BuildModeDialog.cpp,,,TODO,,,
 hw,01E3A701,91,,,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,TODO,,,linux: _ZN5vgui215BuildModeDialog7OnCloseEv
