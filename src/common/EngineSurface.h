@@ -47,4 +47,6 @@ public:
 	virtual void resetViewPort( void ) = 0;
 };
 
+#define ENGINESURFACE_INTERFACE_VERSION "EngineSurface007"
+
 #endif // ENGINESURFACE_H

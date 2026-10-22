@@ -23267,71 +23267,71 @@ hw,01D01000,15,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,"VC6 dynamic
 hw,01D0100F,15,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
 hw,01D0101E,18,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
 hw,01D01030,15,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
-hw,01D0103F,10,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
+hw,01D0103F,10,?BaseUI@@YAAAVCBaseUI@@XZ,BaseUI,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,MATCHED,100,hw_manual.csv,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
 hw,01D01049,10,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
 hw,01D01053,25,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
-hw,01D0106C,10,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
-hw,01D01076,74,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
-hw,01D010C0,38,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
-hw,01D010E6,590,,CBaseUI::Initialize,ENGINE,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,linux_symbols:string:0.454,
-hw,01D01334,1652,,CBaseUI::Start,ENGINE,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,linux_symbols:string:0.617,
-hw,01D019A8,255,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,linux: _ZN7CBaseUI8ShutdownEv
-hw,01D01AA7,49,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,linux: _ZN7CBaseUI27CallEngineSurfaceAppHandlerEPvS0_
-hw,01D01AD8,212,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,linux: _ZN7CBaseUI10HideGameUIEv
-hw,01D01BAC,153,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,linux: _ZN7CBaseUI14ActivateGameUIEv
-hw,01D01C45,34,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,linux: _ZN7CBaseUI11HideConsoleEv
-hw,01D01C67,34,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,linux: _ZN7CBaseUI11ShowConsoleEv
-hw,01D01C89,208,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,linux: _ZN7CBaseUI9Key_EventEiiPKc
-hw,01D01D59,238,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,linux: _ZN7CBaseUI5PaintEiiii
+hw,01D0106C,10,?__CreateCBaseUIIBaseUI_interface@@YAPAVIBaseInterface@@XZ,__CreateCBaseUIIBaseUI_interface,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,MATCHED,100,hw_manual.csv,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
+hw,01D01076,74,??0CBaseUI@@QAE@XZ,CBaseUI::CBaseUI,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,MATCHED,100,hw_manual.csv,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
+hw,01D010C0,38,??1CBaseUI@@UAE@XZ,CBaseUI::~CBaseUI,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,MATCHED,100,hw_manual.csv,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
+hw,01D010E6,590,?Initialize@CBaseUI@@UAEXPAP6APAVIBaseInterface@@PBDPAH@ZH@Z,CBaseUI::Initialize,ENGINE,engine/vgui2/BaseUI_Interface.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01D01334,1652,?Start@CBaseUI@@UAEXPAUcl_enginefuncs_s@@H@Z,CBaseUI::Start,ENGINE,engine/vgui2/BaseUI_Interface.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01D019A8,255,?Shutdown@CBaseUI@@UAEXXZ,CBaseUI::Shutdown,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN7CBaseUI8ShutdownEv
+hw,01D01AA7,49,?CallEngineSurfaceAppHandler@CBaseUI@@UAEXPAXIIJ@Z,CBaseUI::CallEngineSurfaceAppHandler,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN7CBaseUI27CallEngineSurfaceAppHandlerEPvS0_
+hw,01D01AD8,212,?HideGameUI@CBaseUI@@UAEXXZ,CBaseUI::HideGameUI,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN7CBaseUI10HideGameUIEv
+hw,01D01BAC,153,?ActivateGameUI@CBaseUI@@UAEXXZ,CBaseUI::ActivateGameUI,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN7CBaseUI14ActivateGameUIEv
+hw,01D01C45,34,?HideConsole@CBaseUI@@UAEXXZ,CBaseUI::HideConsole,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN7CBaseUI11HideConsoleEv
+hw,01D01C67,34,?ShowConsole@CBaseUI@@UAEXXZ,CBaseUI::ShowConsole,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN7CBaseUI11ShowConsoleEv
+hw,01D01C89,208,?Key_Event@CBaseUI@@UAEHHHPBD@Z,CBaseUI::Key_Event,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN7CBaseUI9Key_EventEiiPKc
+hw,01D01D59,238,?Paint@CBaseUI@@UAEXHHHH@Z,CBaseUI::Paint,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN7CBaseUI5PaintEiiii
 hw,01D01E47,48,,,UNKNOWN,guess:engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,
-hw,01D01E77,15,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,linux: _ZN11CEngineVGui17SteamRefreshLoginEPKcb
-hw,01D01E86,15,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,linux: _ZN11CEngineVGui16SteamProcessCallEPbP14TSteamProgressP11TSteamError
-hw,01D01E95,58,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,linux: _ZN11CEngineVGui16SetEngineVisibleEb
-hw,01D01ECF,83,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,linux: _ZN11CEngineVGui8GetPanelE9VGUIPANEL
-hw,01D01F22,15,,,UNKNOWN,guess:engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,
-hw,01D01F31,15,,,UNKNOWN,guess:engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,
-hw,01D01F40,18,,,UNKNOWN,guess:engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,
-hw,01D01F52,15,,,UNKNOWN,guess:engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,
-hw,01D01F61,10,,,UNKNOWN,guess:engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,
-hw,01D01F6B,25,__GLOBAL__sub_I__ZN5vgui210g_pSurfaceE,_GLOBAL__sub_I__ZN5vgui210g_pSurfaceE,ENGINE,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,linux_symbols:string:0.375,
-hw,01D01F84,10,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,"VC6 interface factory helper ($E) of VEngineVGui001, registered by 01D01F6B"
-hw,01D01F90,46,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D01FC0,31,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D01FE0,46,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D02010,19,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D02030,20,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D02050,46,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D02080,23,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D020A0,139,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D02130,40,??0Color@@QAE@HHHH@Z,Color::Color,ENGINE,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,hw_manual.csv,inline or template function (COMDAT) emitted after the object
-hw,01D02160,48,?SetColor@Color@@QAEXHHHH@Z,Color::SetColor,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,hw_manual.csv,inline or template function (COMDAT) emitted after the object
-hw,01D02190,19,??AColor@@QAEAAEH@Z,Color::operator[],UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D021B0,17,?GetVPanel@Panel@vgui2@@UAEIXZ,vgui2::Panel::GetVPanel,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D021D0,17,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D021F0,14,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D02200,64,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D02240,10,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D02250,79,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D022A0,46,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D022D0,19,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D022F0,139,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D02380,64,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D01E77,15,?SteamRefreshLogin@CEngineVGui@@UAE_NPBD_N@Z,CEngineVGui::SteamRefreshLogin,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN11CEngineVGui17SteamRefreshLoginEPKcb
+hw,01D01E86,15,?SteamProcessCall@CEngineVGui@@UAE_NPA_NPAUTSteamProgress@@PAUTSteamError@@@Z,CEngineVGui::SteamProcessCall,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN11CEngineVGui16SteamProcessCallEPbP14TSteamProgressP11TSteamError
+hw,01D01E95,58,?SetEngineVisible@CEngineVGui@@QAEX_N@Z,CEngineVGui::SetEngineVisible,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN11CEngineVGui16SetEngineVisibleEb
+hw,01D01ECF,83,?GetPanel@CEngineVGui@@UAEIW4VGUIPANEL@@@Z,CEngineVGui::GetPanel,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN11CEngineVGui8GetPanelE9VGUIPANEL
+hw,01D01F22,15,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
+hw,01D01F31,15,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
+hw,01D01F40,18,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
+hw,01D01F52,15,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
+hw,01D01F61,10,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
+hw,01D01F6B,25,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
+hw,01D01F84,10,?__CreateCEngineVGuiIEngineVGui_interface@@YAPAVIBaseInterface@@XZ,__CreateCEngineVGuiIEngineVGui_interface,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,MATCHED,100,hw_manual.csv,"VC6 interface factory helper ($E) of VEngineVGui001, registered by 01D01F6B"
+hw,01D01F90,46,??_GCBaseUI@@UAEPAXI@Z,destructor',UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D01FC0,31,??0IBaseUI@@QAE@XZ,IBaseUI::IBaseUI,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D01FE0,46,??_GIBaseUI@@UAEPAXI@Z,destructor',UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D02010,19,??1IBaseUI@@UAE@XZ,IBaseUI::~IBaseUI,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D02030,20,??1IBaseInterface@@UAE@XZ,IBaseInterface::~IBaseInterface,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D02050,46,??_GIBaseInterface@@UAEPAXI@Z,destructor',UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D02080,23,??0IBaseInterface@@QAE@XZ,IBaseInterface::IBaseInterface,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D020A0,139,??0CEnginePanel@@QAE@PAVPanel@vgui2@@PBD@Z,CEnginePanel::CEnginePanel,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D02130,40,??0Color@@QAE@HHHH@Z,Color::Color,ENGINE,engine/vgui2/BaseUI_Interface.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D02160,48,?SetColor@Color@@QAEXHHHH@Z,Color::SetColor,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D02190,19,??AColor@@QAEAAEH@Z,Color::operator[],UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,MATCHED,100,,inline or template function (COMDAT) emitted after the object
+hw,01D021B0,17,?GetVPanel@Panel@vgui2@@UAEIXZ,vgui2::Panel::GetVPanel,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,MATCHED,100,,inline or template function (COMDAT) emitted after the object
+hw,01D021D0,17,?IsProportional@Panel@vgui2@@UAE_NXZ,vgui2::Panel::IsProportional,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D021F0,14,?GetPanel@Panel@vgui2@@EAEPAV12@XZ,vgui2::Panel::GetPanel,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D02200,64,?GetMessageMap@EditablePanel@vgui2@@UAEPAUPanelMessageMap@2@XZ,vgui2::EditablePanel::GetMessageMap,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D02240,10,?GetPanelClassName@EditablePanel@vgui2@@SAPBDXZ,vgui2::EditablePanel::GetPanelClassName,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D02250,79,?IsWithinTraverse@CEnginePanel@@UAEIHH_N@Z,CEnginePanel::IsWithinTraverse,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D022A0,46,??_GCEnginePanel@@UAEPAXI@Z,destructor',UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D022D0,19,??1CEnginePanel@@UAE@XZ,CEnginePanel::~CEnginePanel,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D022F0,139,??0CStaticPanel@@QAE@PAVPanel@vgui2@@PBD@Z,CStaticPanel::CStaticPanel,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D02380,64,?GetMessageMap@Panel@vgui2@@UAEPAUPanelMessageMap@2@XZ,vgui2::Panel::GetMessageMap,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
 hw,01D023C0,10,?GetPanelClassName@Panel@vgui2@@SAPBDXZ,vgui2::Panel::GetPanelClassName,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,
-hw,01D023D0,27,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D023F0,60,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D02430,46,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D02460,19,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D02480,46,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D024B0,31,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D024D0,46,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D02500,28,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D02520,19,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D02540,25,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D02560,17,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D02580,70,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D025D0,25,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D025F0,24,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D02610,5,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D023D0,27,?GetCurrentKeyFocus@CStaticPanel@@UAEIXZ,CStaticPanel::GetCurrentKeyFocus,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D023F0,60,?IsWithinTraverse@CStaticPanel@@UAEIHH_N@Z,CStaticPanel::IsWithinTraverse,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D02430,46,??_GCStaticPanel@@UAEPAXI@Z,destructor',UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D02460,19,??1CStaticPanel@@UAE@XZ,CStaticPanel::~CStaticPanel,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D02480,46,??_GCEngineVGui@@UAEPAXI@Z,destructor',UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D024B0,31,??0IEngineVGui@@QAE@XZ,IEngineVGui::IEngineVGui,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D024D0,46,??_GIEngineVGui@@UAEPAXI@Z,destructor',UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D02500,28,??1IEngineVGui@@UAE@XZ,IEngineVGui::~IEngineVGui,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D02520,19,??1CEngineVGui@@UAE@XZ,CEngineVGui::~CEngineVGui,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D02540,25,??A?$CUtlVector@PAD@@QAEAAPADH@Z,*>::operator[],UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D02560,17,?Count@?$CUtlVector@PAD@@QBEHXZ,*>::Count,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D02580,70,?RemoveAll@?$CUtlVector@PAD@@QAEXXZ,*>::RemoveAll,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D025D0,25,?Element@?$CUtlVector@PAD@@QAEAAPADH@Z,*>::Element,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D025F0,24,??A?$CUtlMemory@PAD@@QAEAAPADH@Z,*>::operator[],UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D02610,5,?Destruct@@YAXPAPAD@Z,Destruct,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
 hw,01D02620,15,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
 hw,01D0262F,15,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
 hw,01D0263E,18,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"

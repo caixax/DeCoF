@@ -76,7 +76,7 @@ public:
 	Panel( Panel *parent, const char *panelName );
 	Panel( Panel *parent, const char *panelName, HScheme scheme );
 	virtual ~Panel();
-	virtual VPANEL GetVPanel();
+	virtual VPANEL GetVPanel() { return _vpanel; }
 	void SetName( const char *panelName );
 	virtual const char *GetName();
 	virtual const char *GetClassName();
@@ -215,7 +215,7 @@ public:
 	DECLARE_PANELMAP();
 	virtual VPANEL GetCurrentKeyFocus();
 	Tooltip *GetTooltip();
-	virtual bool IsProportional();
+	virtual bool IsProportional() { return m_bProportional; }
 	virtual void SetProportional( bool state );
 	virtual void SetMouseInputEnabled( bool state );
 	virtual void SetKeyBoardInputEnabled( bool state );
@@ -225,7 +225,7 @@ protected:
 	MESSAGE_FUNC_HANDLE_HANDLE( OnRequestFocus, "OnRequestFocus", subFocus, defaultPanel );
 	virtual void *QueryInterface( EInterfaceID id );
 private:
-	virtual Panel *GetPanel();
+	virtual Panel *GetPanel() { return this; }
 	virtual void Think();
 	virtual void PerformApplySchemeSettings();
 	void InternalPerformLayout();

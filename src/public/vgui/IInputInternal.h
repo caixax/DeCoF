@@ -42,4 +42,6 @@ public:
 
 } // namespace vgui2
 
+#define VGUI_INPUTINTERNAL_INTERFACE_VERSION "VGUI_InputInternal001"
+
 #endif // IINPUTINTERNAL_H

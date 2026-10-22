@@ -2754,6 +2754,19 @@
           "functions_file": "tools/units/hw_engine_sv_steam3.txt"
         },
         {
+          "name": "engine/vgui2/BaseUI_Interface",
+          "source": "src/engine_hw/vgui2/BaseUI_Interface.cpp",
+          "functions_file": "tools/units/hw_engine_vgui2_BaseUI_Interface.txt",
+          "includes": [
+            "src/public",
+            "src/gameui",
+            "src/engine",
+            "src/common",
+            "src/engine_hw",
+            "src/cl_dll"
+          ]
+        },
+        {
           "name": "engine/vgui2/BaseUISurface",
           "source": "src/engine_hw/vgui2/BaseUISurface.cpp",
           "functions_file": "tools/units/hw_engine_vgui2_BaseUISurface.txt",
