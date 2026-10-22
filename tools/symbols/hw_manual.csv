@@ -3585,3 +3585,80 @@ va,name,kind,evidence
 01D89480,?NumAllocated@?$CUtlMemory@UNode_t@?$CUtlRBTree@Uiprate_s@CIPRateLimit@@H@@@@QBEHXZ,func,"engine/ipratelimit.cpp: COMDAT tail: same size (17) and position as in our compiled object, whose function order the whole range follows"
 01D894A0,?Grow@?$CUtlMemory@UNode_t@?$CUtlRBTree@Uiprate_s@CIPRateLimit@@H@@@@QAEXH@Z,func,"engine/ipratelimit.cpp: COMDAT tail: same size (199) and position as in our compiled object, whose function order the whole range follows"
 01D89570,?Construct@@YAXPAUiprate_s@CIPRateLimit@@@Z,func,"engine/ipratelimit.cpp: COMDAT tail: same size (25) and position as in our compiled object, whose function order the whole range follows"
+01DF3E91,_SetRateRegistrySetting,func,"engine/sys_dll2.cpp of the Linux hw.so DWARF after GetCurrentSteamAppName; registry->WriteString( ""rate"", pchRate )"
+01DF3EB0,_GetRateRegistrySetting,func,"engine/sys_dll2.cpp of the Linux hw.so DWARF before F; registry->ReadString( ""rate"", pchDef )"
+01DF3EEA,_Sys_VID_FlipScreen,func,"engine/sys_dll2.cpp of the Linux hw.so DWARF after F; qwglSwapBuffers( maindc ), stored in VID_FlipScreen by Sys_SetupLegacyAPIs"
+01DF4069,_Legacy_ErrorMessage,func,engine/sys_dll2.cpp of the Linux hw.so DWARF; empty function after Sys_GetCDKey
+01DF406E,_Legacy_Sys_Printf,func,"engine/sys_dll2.cpp of the Linux hw.so DWARF; _vsnprintf into 1024 bytes then dedicated->Sys_Printf, stored in Launcher_ConsolePrintf by Sys_SetupLegacyAPIs"
+01DF40CE,_Legacy_MP3subsys_Suspend_Audio,func,engine/sys_dll2.cpp of the Linux hw.so DWARF; empty function after Legacy_Sys_Printf
+01DF40D3,_Legacy_MP3subsys_Resume_Audio,func,engine/sys_dll2.cpp of the Linux hw.so DWARF; empty function before Sys_SetupLegacyAPIs
+01DF40D8,_Sys_SetupLegacyAPIs,func,"engine/sys_dll2.cpp of the Linux hw.so DWARF; stores Sys_VID_FlipScreen, Sys_GetSurfaceCacheSize and Legacy_Sys_Printf"
+01DF40FB,_Sys_IsWin95,func,"engine/sys_dll2.cpp of the Linux hw.so DWARF; returns g_bIsWin95, set by Sys_CheckOSVersion"
+01DF4105,_Sys_IsWin98,func,"engine/sys_dll2.cpp of the Linux hw.so DWARF; returns g_bIsWin98, set by Sys_CheckOSVersion"
+01DF410F,_Sys_CheckOSVersion,func,"engine/sys_dll2.cpp of the Linux hw.so DWARF; GetVersionEx, string Couldn't get OS info"
+01DF41CE,?Sys_Init@@YAXXZ,func,"engine/sys_dll2.cpp of the Linux hw.so DWARF (C++ linkage, sys_dll.c has its own C Sys_Init); called by Sys_InitGame after TraceInit( ""Sys_Init()"" )"
+01DF42FC,_Sys_InitArgv,func,"engine/sys_dll2.cpp of the Linux hw.so DWARF; called after TraceInit( ""Sys_InitArgv( OrigCmd )"" ), Quake WinMain argument parser"
+01DF4403,_Sys_ShutdownArgv,func,"engine/sys_dll2.cpp of the Linux hw.so DWARF; empty function called after TraceShutdown( ""Sys_ShutdownArgv()"" )"
+01DF45A7,_Sys_InitLauncherInterface,func,"engine/sys_dll2.cpp of the Linux hw.so DWARF; called by Sys_InitGame after TraceInit( ""Sys_InitLauncherInterface()"" )"
+01DF4935,_ClearIOStates,func,"engine/sys_dll2.cpp of the Linux hw.so DWARF; Key_Event for 256 keys, Key_ClearStates, ClientDLL_ClearStates"
+01DF4972,_Sys_PlayStartupVideos_guess,func,"calls game->PlayStartupVideos() (IGame slot 12), between ClearIOStates and RunListenServer; no Linux counterpart"
+01DF4BF2,_MiniDumpFunction_guess,func,"the structured exception translator that CEngineAPI::Run passes to _set_se_translator (SteamAPI_SetMiniDumpComment, SteamAPI_WriteMiniDump)"
+01DF4C44,?Run@CEngineAPI@@UAEHPAXPAD11P6APAVIBaseInterface@@PBDPAH@Z4@Z,func,RTTI CEngineAPI vtable slot 1; calls RunListenServer inside try/catch
+01DF4D17,_$E5,func,"dynamic initializer of __g_CEngineAPI_singleton (construct, then atexit); spelling from the compiled object"
+01DF4D26,_$E2,func,constructs __g_CEngineAPI_singleton; spelling from the compiled object
+01DF4D35,_$E4,func,atexit of the __g_CEngineAPI_singleton destructor thunk; spelling from the compiled object
+01DF4D47,_$E3,func,destroys __g_CEngineAPI_singleton; spelling from the compiled object
+01DF4D56,_$E8,func,dynamic initializer of __g_CreateCEngineAPIIEngineAPI_reg; spelling from the compiled object
+01DF4D60,_$E7,func,constructs the InterfaceReg of VENGINE_LAUNCHER_API_VERSION002; spelling from the compiled object
+01DF4D79,?__CreateCEngineAPIIEngineAPI_interface@@YAPAVIBaseInterface@@XZ,func,EXPOSE_SINGLE_INTERFACE create function passed to the InterfaceReg of VENGINE_LAUNCHER_API_VERSION002
+01DF5099,?Init@CDedicatedServerAPI@@UAE_NPAD0P6APAVIBaseInterface@@PBDPAH@Z3@Z,func,RTTI CDedicatedServerAPI vtable slot 1; string Sys_InitArgv( m_OrigCmd )
+01DF527F,?Shutdown@CDedicatedServerAPI@@UAEHXZ,func,RTTI CDedicatedServerAPI vtable slot 2
+01DF52F1,?RunFrame@CDedicatedServerAPI@@UAE_NXZ,func,RTTI CDedicatedServerAPI vtable slot 3
+01DF5326,?AddConsoleText@CDedicatedServerAPI@@UAEXPAD@Z,func,RTTI CDedicatedServerAPI vtable slot 4
+01DF533F,?UpdateStatus@CDedicatedServerAPI@@UAEXPAMPAH1PAD@Z,func,RTTI CDedicatedServerAPI vtable slot 5
+01DF5366,_$E13,func,"dynamic initializer of __g_CDedicatedServerAPI_singleton (construct, then atexit); spelling from the compiled object"
+01DF5375,_$E10,func,constructs __g_CDedicatedServerAPI_singleton; spelling from the compiled object
+01DF5384,_$E12,func,atexit of the __g_CDedicatedServerAPI_singleton destructor thunk; spelling from the compiled object
+01DF5396,_$E11,func,destroys __g_CDedicatedServerAPI_singleton; spelling from the compiled object
+01DF53A5,_$E16,func,dynamic initializer of __g_CreateCDedicatedServerAPIIDedicatedServerAPI_reg; spelling from the compiled object
+01DF53AF,_$E15,func,constructs the InterfaceReg of VENGINE_HLDS_API_VERSION002; spelling from the compiled object
+01DF53C8,?__CreateCDedicatedServerAPIIDedicatedServerAPI_interface@@YAPAVIBaseInterface@@XZ,func,EXPOSE_SINGLE_INTERFACE create function passed to the InterfaceReg of VENGINE_HLDS_API_VERSION002
+01DF53D2,_$E21,func,"dynamic initializer of __g_CGameUIFuncs_singleton (construct, then atexit); spelling from the compiled object"
+01DF53E1,_$E18,func,constructs __g_CGameUIFuncs_singleton; spelling from the compiled object
+01DF53F0,_$E20,func,atexit of the __g_CGameUIFuncs_singleton destructor thunk; spelling from the compiled object
+01DF5402,_$E19,func,destroys __g_CGameUIFuncs_singleton; spelling from the compiled object
+01DF5411,_$E24,func,dynamic initializer of __g_CreateCGameUIFuncsIGameUIFuncs_reg; spelling from the compiled object
+01DF541B,_$E23,func,constructs the InterfaceReg of VENGINE_GAMEUIFUNCS_VERSION001 (not the Linux _GLOBAL__sub_I_D_SurfaceCacheForRes); spelling from the compiled object
+01DF5434,?__CreateCGameUIFuncsIGameUIFuncs_interface@@YAPAVIBaseInterface@@XZ,func,EXPOSE_SINGLE_INTERFACE create function passed to the InterfaceReg of VENGINE_GAMEUIFUNCS_VERSION001
+01DF5440,??1CEngineAPI@@UAE@XZ,func,"COMDAT after sys_dll2.cpp: called by the CEngineAPI singleton destructor thunk, calls ??1IEngineAPI"
+01DF5460,??0CEngineAPI@@QAE@XZ,func,COMDAT after sys_dll2.cpp: stores the CEngineAPI vtable
+01DF5480,??1IEngineAPI@@UAE@XZ,func,COMDAT after sys_dll2.cpp: calls ??1IBaseInterface
+01DF54A0,??_GCEngineAPI@@UAEPAXI@Z,func,RTTI CEngineAPI vtable slot 0
+01DF54D0,??0IEngineAPI@@QAE@XZ,func,COMDAT after sys_dll2.cpp: stores the IEngineAPI vtable
+01DF54F0,??_GIEngineAPI@@UAEPAXI@Z,func,COMDAT after sys_dll2.cpp: scalar deleting destructor calling ??1IEngineAPI
+01DF5520,??1CDedicatedServerAPI@@UAE@XZ,func,"COMDAT after sys_dll2.cpp: called by the CDedicatedServerAPI singleton destructor thunk, calls ??1IDedicatedServerAPI"
+01DF5540,??0CDedicatedServerAPI@@QAE@XZ,func,COMDAT after sys_dll2.cpp: stores the CDedicatedServerAPI vtable
+01DF5560,??1IDedicatedServerAPI@@UAE@XZ,func,COMDAT after sys_dll2.cpp: calls ??1IBaseInterface
+01DF5580,??_GCDedicatedServerAPI@@UAEPAXI@Z,func,RTTI CDedicatedServerAPI vtable slot 0
+01DF55B0,??0IDedicatedServerAPI@@QAE@XZ,func,COMDAT after sys_dll2.cpp: stores the IDedicatedServerAPI vtable
+01DF55D0,??_GIDedicatedServerAPI@@UAEPAXI@Z,func,COMDAT after sys_dll2.cpp: scalar deleting destructor calling ??1IDedicatedServerAPI
+01DF5600,??1CGameUIFuncs@@UAE@XZ,func,"COMDAT after sys_dll2.cpp: called by the CGameUIFuncs singleton destructor thunk, calls ??1IGameUIFuncs"
+01DF5620,??0CGameUIFuncs@@QAE@XZ,func,COMDAT after sys_dll2.cpp: stores the CGameUIFuncs vtable
+01DF5640,?IsKeyDown@CGameUIFuncs@@UAE_NPBDAA_N@Z,func,RTTI CGameUIFuncs vtable slot 1; ClientDLL_FindKey
+01DF5680,?Key_NameForKey@CGameUIFuncs@@UAEPBDH@Z,func,RTTI CGameUIFuncs vtable slot 2; Key_KeynumToString
+01DF56A0,?Key_BindingForKey@CGameUIFuncs@@UAEPBDH@Z,func,RTTI CGameUIFuncs vtable slot 3; Key_BindingForKey
+01DF56C0,?GetVGUI2KeyCodeForBind@CGameUIFuncs@@UAE?AW4KeyCode@vgui2@@PBD@Z,func,RTTI CGameUIFuncs vtable slot 4; GetVGUI2KeyCodeForBind
+01DF56E0,?GetVideoModes@CGameUIFuncs@@UAEXPAPAUvmode_s@@PAH@Z,func,RTTI CGameUIFuncs vtable slot 5; VideoMode_GetVideoModes
+01DF5700,?GetCurrentVideoMode@CGameUIFuncs@@UAEXPAH00@Z,func,RTTI CGameUIFuncs vtable slot 6; VideoMode_GetCurrentVideoMode
+01DF5730,?GetCurrentRenderer@CGameUIFuncs@@UAEXPADHPAH@Z,func,RTTI CGameUIFuncs vtable slot 7; VideoMode_GetCurrentRenderer (three parameters in 2013)
+01DF5760,?IsConnectedToVACSecureServer@CGameUIFuncs@@UAE_NXZ,func,RTTI CGameUIFuncs vtable slot 8; cls.state and cls.isVAC2Secure
+01DF5790,??1IGameUIFuncs@@UAE@XZ,func,COMDAT after sys_dll2.cpp: calls ??1IBaseInterface
+01DF57B0,??_GCGameUIFuncs@@UAEPAXI@Z,func,RTTI CGameUIFuncs vtable slot 0
+01DF57E0,??0IGameUIFuncs@@QAE@XZ,func,COMDAT after sys_dll2.cpp: stores the IGameUIFuncs vtable
+01DF5800,??_GIGameUIFuncs@@UAEPAXI@Z,func,COMDAT after sys_dll2.cpp: scalar deleting destructor calling ??1IGameUIFuncs
+01D5D03F,_FileSystem_Init,func,"string FileSystem_Init(basedir, (void *)filesystemFactory) of the TraceInit before the calls in RunListenServer and CDedicatedServerAPI::Init; Linux filesystem.cpp"
+01D5D134,_FileSystem_Shutdown,func,string FileSystem_Shutdown() of the TraceShutdown before the calls in RunListenServer and CDedicatedServerAPI::Shutdown; Linux filesystem.cpp
+01DF9D85,?PROC_IsMMX@@YAHXZ,func,the CPUID and EMMS tests under __try of PROC_IsMMX in refs/halflife utils/procinfo/procinfo.cpp; result stored in gHasMMXTechnology by Sys_InitLauncherInterface
+01E1382C,_Sys_InitFPU_guess,func,empty routine of sys_wina.s after Sys_SetFPCW; called by the sys_dll2.cpp Sys_Init after Sys_CheckOSVersion
+01DF763D,_VideoMode_GetVideoModes,func,"engine/sys_getmodes.cpp of the Linux hw.so DWARF; videomode->GetModeCount and GetMode( 0 ), called by CGameUIFuncs::GetVideoModes"
+01DF76C4,_VideoMode_GetCurrentRenderer,func,"engine/sys_getmodes.cpp of the Linux hw.so DWARF; strncpy of videomode->GetName and IsWindowedMode, called by CGameUIFuncs::GetCurrentRenderer"

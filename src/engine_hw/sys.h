@@ -26,7 +26,6 @@ const char	*GetCurrentSteamAppName( void );
 void	Sys_Sleep( int msec );
 void	Sys_Warning( char *pszWarning, ... );
 void	Sys_Quit( void );
-void	Sys_Init( void );
 void	Sys_InitFloatTime( void );
 void	Sys_ShutdownFloatTime( void );
 void	Sys_GetRegKeyValue( char *pszSubKey, char *pszElement, char *pszReturnString, int nReturnLength, char *pszDefaultValue );

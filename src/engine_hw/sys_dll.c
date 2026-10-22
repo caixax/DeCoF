@@ -203,9 +203,12 @@ volatile int	sys_checksum;
 
 static FileFindHandle_t	g_hfind = -1;
 
-// set once the performance counter lock exists (Sys_Init)
-static qboolean			g_PerfCounterInitialized_guess;
-static CRITICAL_SECTION	g_PerfCounterMutex_guess;
+// set once the performance counter lock exists (Sys_Init; sys_dll2.cpp
+// deletes the lock in Sys_Shutdown)
+qboolean			g_PerfCounterInitialized_guess;
+CRITICAL_SECTION	g_PerfCounterMutex_guess;
+
+qboolean	WinNT;
 
 int			lowshift;
 double		pfreq;

@@ -180,6 +180,12 @@ __declspec( dllimport ) ISteamFriends	*SteamFriends( void );
 __declspec( dllimport ) bool		Steam_BGetCallback( HSteamPipe hSteamPipe, CallbackMsg_t *pCallbackMsg, HSteamCall *phSteamCall );
 __declspec( dllimport ) void		Steam_FreeLastCallback( HSteamPipe hSteamPipe );
 
+// crash dumps (sys_dll2.cpp)
+typedef void ( *PFNPreMinidumpCallback )( void *context );
+__declspec( dllimport ) void		SteamAPI_WriteMiniDump( uint32 uStructuredExceptionCode, void *pvExceptionInfo, uint32 uBuildID );
+__declspec( dllimport ) void		SteamAPI_SetMiniDumpComment( const char *pchMsg );
+__declspec( dllimport ) void		SteamAPI_UseBreakpadCrashHandler( char const *pchVersion, char const *pchDate, char const *pchTime, bool bFullMemoryDumps, void *pvContext, PFNPreMinidumpCallback m_pfnPreMinidumpCallback );
+
 // steam_gameserver
 __declspec( dllimport ) bool		SteamGameServer_Init( uint32 unIP, uint16 usPort, uint16 usGamePort, uint16 usSpectatorPort, uint16 usQueryPort, EServerMode eServerMode, const char *pchGameDir, const char *pchVersionString );
 __declspec( dllimport ) void		SteamGameServer_Shutdown( void );

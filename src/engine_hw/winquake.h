@@ -54,6 +54,9 @@ void		hwSetListenerPosition_guess( vec_t *origin );
 void		hwSetListenerOrientation_guess( vec_t *forward, vec_t *up );
 void		hwSetChannelDistance_guess( int ch_idx, float dist );
 
+// set by Sys_CheckOSVersion (sys_dll2.cpp) on Windows NT 4.0 and later (0x0250D784)
+extern qboolean	WinNT;
+
 // the game window (0x024E0754)
 extern HWND		*pmainwindow;
 
