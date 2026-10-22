@@ -15,6 +15,5 @@ extern	overviewInfo_t	gDevOverview;
 extern	cvar_t			dev_overview;
 
 int		CL_IsDevOverviewMode( void );
-void	CL_SetDevOverView( void *overview );
 
 #endif // CL_SPECTATOR_H

@@ -33,6 +33,7 @@ float	*R_GetAttachmentPoint( int entity, int attachment );
 int		ClientDLL_IsThirdPerson( void );
 colorVec	R_LightPoint( vec3_t p );
 int		V_FadeAlpha( void );
+void	CL_SetDevOverView( refdef_t *refdef );
 
 #define STUDIO_RENDER	1
 #define STUDIO_EVENTS	2

@@ -2682,6 +2682,11 @@
           "name": "engine/textures",
           "source": "src/engine_hw/textures.c",
           "functions_file": "tools/units/hw_engine_textures.txt"
+        },
+        {
+          "name": "engine/cl_spectator",
+          "source": "src/engine_hw/cl_spectator.c",
+          "functions_file": "tools/units/hw_engine_cl_spectator.txt"
         }
       ]
     },
