@@ -13,6 +13,8 @@
 #include "GLQUAKE.H"
 #include "gl_cvars.h"
 #include "qgl.h"
+#include "mem.h"
+#include "filesystem_.h"
 
 extern int		gD3DMode;
 extern int		atismoothing;
@@ -29,6 +31,7 @@ void	GL_SelectTexture( GLenum target );
 void	DT_Initialize( void );
 void	GL_Config( void );
 HINSTANCE	QGL_D3DInit( int unused_guess );
+int		ReadPixels3Dfx_guess( int x, int y, int width, int height, byte *buffer );
 
 #define GL_TEXTURE0_SGIS			0x835E
 #define GL_TEXTURE1_SGIS			0x835F
@@ -581,4 +584,151 @@ void VID_WriteBuffer( const char *pFilename )
 
 	VID_TakeSnapshot( szFileName );
 	filenumber_guess++;
+}
+
+/*
+=================
+VID_TakeSnapshot
+=================
+*/
+void VID_TakeSnapshot( const char *pFilename )
+{
+	FileHandle_t		file;
+	BITMAPFILEHEADER	hdr;
+	BITMAPINFOHEADER	bi;
+	byte				*pb;
+	int					i;
+	byte				*p;
+	byte				*hp;
+	byte				b;
+	int					imageSize;
+
+	imageSize = vid.width * vid.height * 3;
+
+	file = FS_Open( pFilename, "wb" );
+	if ( !file )
+		Sys_Error( "Couldn't create file for snapshot.\n" );
+
+	hdr.bfType = 0x4D42;	// 'BM'
+	hdr.bfSize = imageSize + sizeof( hdr ) + sizeof( bi );
+	hdr.bfReserved1 = 0;
+	hdr.bfReserved2 = 0;
+	hdr.bfOffBits = sizeof( hdr ) + sizeof( bi );
+
+	if ( FS_Write( &hdr, sizeof( hdr ), 1, file ) != sizeof( hdr ) )
+		Sys_Error( "Couldn't write file header to snapshot.\n" );
+
+	bi.biSize = sizeof( bi );
+	bi.biWidth = vid.width;
+	bi.biHeight = vid.height;
+	bi.biPlanes = 1;
+	bi.biBitCount = 24;
+	bi.biCompression = BI_RGB;
+	bi.biSizeImage = 0;
+	bi.biXPelsPerMeter = 0;
+	bi.biYPelsPerMeter = 0;
+	bi.biClrUsed = 0;
+	bi.biClrImportant = 0;
+
+	if ( FS_Write( &bi, sizeof( bi ), 1, file ) != sizeof( bi ) )
+		Sys_Error( "Couldn't write bitmap header to snapshot.\n" );
+
+	hp = (byte *)Mem_Malloc( vid.width * 3 * vid.height );
+	if ( !hp )
+		Sys_Error( "Couldn't allocate bitmap header to snapshot.\n" );
+
+	if ( gGLHardwareType != 1 || !ReadPixels3Dfx_guess( 0, 0, vid.width, vid.height, hp ) )
+		qglReadPixels( 0, 0, vid.width, vid.height, GL_RGB, GL_UNSIGNED_BYTE, hp );
+
+	// swap rgb to bgr
+	pb = hp;
+	p = pb + 2;
+	for ( i = 0; i < vid.width * vid.height; i++ )
+	{
+		b = *pb;
+		*pb = *p;
+		*p = b;
+		p += 3;
+		pb += 3;
+	}
+
+	i = vid.width * 3 * vid.height;
+	if ( i != FS_Write( hp, i, 1, file ) )
+		Sys_Error( "Couldn't write bitmap data snapshot.\n" );
+
+	Mem_Free( hp );
+	FS_Close( file );
+}
+
+/*
+=================
+VID_TakeSnapshotRect
+=================
+*/
+void VID_TakeSnapshotRect( const char *pFilename, int x, int y, int w, int h )
+{
+	FileHandle_t		file;
+	BITMAPFILEHEADER	hdr;
+	BITMAPINFOHEADER	bi;
+	byte				*pb;
+	int					i;
+	byte				*p;
+	byte				*hp;
+	byte				b;
+	int					imageSize;
+
+	imageSize = w * h * 3;
+
+	file = FS_Open( pFilename, "wb" );
+	if ( !file )
+		Sys_Error( "Couldn't create file for snapshot.\n" );
+
+	hdr.bfType = 0x4D42;	// 'BM'
+	hdr.bfSize = imageSize + sizeof( hdr ) + sizeof( bi );
+	hdr.bfReserved1 = 0;
+	hdr.bfReserved2 = 0;
+	hdr.bfOffBits = sizeof( hdr ) + sizeof( bi );
+
+	if ( FS_Write( &hdr, sizeof( hdr ), 1, file ) != sizeof( hdr ) )
+		Sys_Error( "Couldn't write file header to snapshot.\n" );
+
+	bi.biSize = sizeof( bi );
+	bi.biWidth = w;
+	bi.biHeight = h;
+	bi.biPlanes = 1;
+	bi.biBitCount = 24;
+	bi.biCompression = BI_RGB;
+	bi.biSizeImage = 0;
+	bi.biXPelsPerMeter = 0;
+	bi.biYPelsPerMeter = 0;
+	bi.biClrUsed = 0;
+	bi.biClrImportant = 0;
+
+	if ( FS_Write( &bi, sizeof( bi ), 1, file ) != sizeof( bi ) )
+		Sys_Error( "Couldn't write bitmap header to snapshot.\n" );
+
+	hp = (byte *)Mem_Malloc( imageSize );
+	if ( !hp )
+		Sys_Error( "Couldn't allocate bitmap header to snapshot.\n" );
+
+	if ( gGLHardwareType != 1 || !ReadPixels3Dfx_guess( x, y, w, h, hp ) )
+		qglReadPixels( x, y, w, h, GL_RGB, GL_UNSIGNED_BYTE, hp );
+
+	// swap rgb to bgr
+	pb = hp;
+	p = pb + 2;
+	for ( i = 0; i < w * h; i++ )
+	{
+		b = *pb;
+		*pb = *p;
+		*p = b;
+		p += 3;
+		pb += 3;
+	}
+
+	if ( imageSize != FS_Write( hp, 1, imageSize, file ) )
+		Sys_Error( "Couldn't write bitmap data snapshot.\n" );
+
+	Mem_Free( hp );
+	FS_Close( file );
 }
