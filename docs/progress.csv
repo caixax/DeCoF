@@ -10819,7 +10819,7 @@ gameui,1006FB00,175,,,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,TODO,,,linux: _ZN5
 gameui,1006FBAF,17,,,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,TODO,,,linux: _ZN5vgui210BuildGroup15GetCurrentPanelEv
 gameui,1006FBC0,50,,,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,TODO,,,linux: _ZN5vgui210BuildGroup10PanelAddedEPNS_5PanelE
 gameui,1006FBF2,402,,,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,TODO,,,linux: _ZN5vgui210BuildGroup19LoadControlSettingsEPKcS2_
-gameui,1006FD84,87,?RegisterControlSettingsFile@BuildGroup@vgui2@@QAEXPBD0@Z,vgui2::BuildGroup::RegisterControlSettingsFile,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,TODO,,gameui_manual.csv,linux: _ZN5vgui210BuildGroup27RegisterControlSettingsFileEPKcS2_
+gameui,1006FD84,87,?RegisterControlSettingsFile@BuildGroup@vgui2@@QAEXPBD0@Z,vgui2::BuildGroup::RegisterControlSettingsFile,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui210BuildGroup27RegisterControlSettingsFileEPKcS2_
 gameui,1006FDDB,25,,,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,TODO,,,linux: _ZN5vgui210BuildGroup37GetRegisteredControlSettingsFileCountEv
 gameui,1006FDF4,38,,,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,TODO,,,linux: _ZN5vgui210BuildGroup39GetRegisteredControlSettingsFileByIndexEi
 gameui,1006FE1A,417,,,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,TODO,,,linux: _ZN5vgui210BuildGroup21ReloadControlSettingsEv
