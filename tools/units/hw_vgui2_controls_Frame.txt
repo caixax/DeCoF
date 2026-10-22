@@ -1,6 +1,3 @@
-?GrowVector@?$CUtlVector@UMessageMapItem_t@vgui2@@@@IAEXH@Z
-?NumAllocated@?$CUtlMemory@UMessageMapItem_t@vgui2@@@@QBEHXZ
-?IsExternallyAllocated@?$CUtlMemory@UMessageMapItem_t@vgui2@@@@QBE_NXZ
 ??0Frame@vgui2@@QAE@PAVPanel@1@PBD_N@Z
 ??1Frame@vgui2@@UAE@XZ
 ?SetupResizeCursors@Frame@vgui2@@AAEXXZ
