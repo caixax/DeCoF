@@ -2203,3 +2203,28 @@ va,name,kind,evidence
 01DF4582,_Sys_ShutdownMemory,func,"engine/sys_dll2.cpp of the Linux hw.so DWARF; frees host_parms.membase allocated by the matched Sys_InitMemory"
 01DF42B1,_Sys_Shutdown,func,"engine/sys_dll2.cpp of the Linux hw.so DWARF (line 447); calls Sys_ShutdownFloatTime and GL_Shutdown"
 01DFE170,_TraceShutdown,func,"called from Sys_ShutdownGame in the order of the Linux hw.so source"
+01E4D5D0,??0ProgressBar@vgui2@@QAE@PAVPanel@1@PBD@Z,func,"vgui2/controls/ProgressBar.cpp in the source order of the Linux hw.so DWARF; stores the ProgressBar vtable, calls Panel's constructor"
+01E4D667,??1ProgressBar@vgui2@@UAE@XZ,func,"vgui2/controls/ProgressBar.cpp in the source order of the Linux hw.so DWARF; stores the ProgressBar vtable, frees m_pszDialogVar (+0x88), calls ~Panel"
+01E4D69D,?SetSegmentInfo@ProgressBar@vgui2@@UAEXHH@Z,func,"vgui2/controls/ProgressBar.cpp in the source order of the Linux hw.so DWARF; ProgressBar vtable (RTTI) slot 135, called by the constructor with 4, 8"
+01E4D6BF,?PaintBackground@ProgressBar@vgui2@@MAEXXZ,func,vgui2/controls/ProgressBar.cpp in the source order of the Linux hw.so DWARF; ProgressBar vtable (RTTI) slot 106 (Panel::PaintBackground)
+01E4D83C,?SetProgress@ProgressBar@vgui2@@UAEXM@Z,func,"vgui2/controls/ProgressBar.cpp in the source order of the Linux hw.so DWARF; ProgressBar vtable (RTTI) slot 134, clamps to 0..1 and stores +0x78"
+01E4D89D,?GetProgress@ProgressBar@vgui2@@QAEMXZ,func,vgui2/controls/ProgressBar.cpp in the source order of the Linux hw.so DWARF; returns _progress (+0x78)
+01E4D8AE,?ApplySchemeSettings@ProgressBar@vgui2@@MAEXPAVIScheme@2@@Z,func,vgui2/controls/ProgressBar.cpp in the source order of the Linux hw.so DWARF; ProgressBar vtable (RTTI) slot 79 (Panel::ApplySchemeSettings)
+01E4D940,?ConstructTimeRemainingString@ProgressBar@vgui2@@SA_NPAGHMMMM_N@Z,func,"vgui2/controls/ProgressBar.cpp in the source order of the Linux hw.so DWARF; uses ""#vgui_TimeLeftMinutesSeconds"""
+01E4DC15,?SetBarInset@ProgressBar@vgui2@@QAEXH@Z,func,vgui2/controls/ProgressBar.cpp in the source order of the Linux hw.so DWARF; called by the constructor with 4
+01E4DC2E,?GetBarInset@ProgressBar@vgui2@@QAEHXZ,func,vgui2/controls/ProgressBar.cpp in the source order of the Linux hw.so DWARF; returns m_iBarInset (+0x84)
+01E4DC42,?ApplySettings@ProgressBar@vgui2@@UAEXPAVKeyValues@@@Z,func,"vgui2/controls/ProgressBar.cpp in the source order of the Linux hw.so DWARF; ProgressBar vtable (RTTI) slot 80 (Panel::ApplySettings), reads ""progress"" and ""variable"""
+01E4DCDA,?GetSettings@ProgressBar@vgui2@@UAEXPAVKeyValues@@@Z,func,vgui2/controls/ProgressBar.cpp in the source order of the Linux hw.so DWARF; ProgressBar vtable (RTTI) slot 81 (Panel::GetSettings)
+01E4DD30,?GetDescription@ProgressBar@vgui2@@UAEPBDXZ,func,"vgui2/controls/ProgressBar.cpp in the source order of the Linux hw.so DWARF; ProgressBar vtable (RTTI) slot 82, ""%s, string progress, string variable"""
+01E4DD60,?OnDialogVariablesChanged@ProgressBar@vgui2@@MAEXPAVKeyValues@@@Z,func,"vgui2/controls/ProgressBar.cpp in the source order of the Linux hw.so DWARF; ProgressBar vtable (RTTI) slot 136, calls SetProgress"
+01E4DDC0,??_GProgressBar@vgui2@@UAEPAXI@Z,func,"ProgressBar vtable (RTTI) slot 28 (scalar deleting destructor), calls ~ProgressBar"
+01E4DDF0,??0ProgressBar_RegisterMap@ProgressBar@vgui2@@QAE@XZ,func,called by the ProgressBar constructor on this+0x70 (m_RegisterClass)
+01E4DE10,?ChainToMap@ProgressBar@vgui2@@SAXXZ,func,called by the ProgressBar_RegisterMap constructor
+01E4DE80,?GetMessageMap@ProgressBar@vgui2@@UAEPAUPanelMessageMap@2@XZ,func,ProgressBar vtable (RTTI) slot 27
+01E4DEC0,?GetPanelClassName@ProgressBar@vgui2@@SAPBDXZ,func,"returns ""ProgressBar"", called by ChainToMap"
+01E4DED0,?GetPanelBaseClassName@ProgressBar@vgui2@@SAPBDXZ,func,"returns ""Panel"", called by ChainToMap"
+01E4DEE0,??0PanelMessageFunc_SetProgress@ProgressBar@vgui2@@QAE@XZ,func,called by the ProgressBar constructor on this+0x71
+01E4DF00,?InitVar@PanelMessageFunc_SetProgress@ProgressBar@vgui2@@SAXXZ,func,"called by PanelMessageFunc_SetProgress; registers ""SetProgress"""
+01E4DF70,?AddToMap@ProgressBar@vgui2@@SAXPBDP8Panel@2@AEXXZHH0H0@Z,func,called by both ProgressBar InitVar functions
+01E4DFF0,??0PanelMessageFunc_OnDialogVariablesChanged@ProgressBar@vgui2@@QAE@XZ,func,called by the ProgressBar constructor on this+0x72
+01E4E010,?InitVar@PanelMessageFunc_OnDialogVariablesChanged@ProgressBar@vgui2@@SAXXZ,func,"registers ""DialogVariables"""

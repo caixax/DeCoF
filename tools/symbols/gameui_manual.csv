@@ -1373,3 +1373,28 @@ va,name,kind,evidence
 10084DEF,?RereadAllItems@ListPanel@vgui2@@UAEXXZ,func,"gameui.so ListPanel::RereadAllItems, same body as our object (InvalidateLayout) (added by an agent)"
 1008516F,?GetSelectedItem@ListPanel@vgui2@@UAEHH@Z,func,"gameui.so ListPanel::GetSelectedItem, same body as our object (m_SelectedItems at +0x130) (added by an agent)"
 100861EC,?OnSizeChanged@ListPanel@vgui2@@MAEXHH@Z,func,"gameui.so ListPanel::OnSizeChanged, same body as our object (base, InvalidateLayout, Repaint) (added by an agent)"
+10091FD0,??0ProgressBar@vgui2@@QAE@PAVPanel@1@PBD@Z,func,"same object layout as hw.dll 01E4D5D0 (vgui2/controls/ProgressBar.cpp in the source order of the Linux hw.so DWARF; stores the ProgressBar vtable, calls Panel's constructor)"
+10092067,??1ProgressBar@vgui2@@UAE@XZ,func,"same object layout as hw.dll 01E4D667 (vgui2/controls/ProgressBar.cpp in the source order of the Linux hw.so DWARF; stores the ProgressBar vtable, frees m_pszDialogVar (+0x88), calls ~Panel)"
+1009209D,?SetSegmentInfo@ProgressBar@vgui2@@UAEXHH@Z,func,"same object layout as hw.dll 01E4D69D (vgui2/controls/ProgressBar.cpp in the source order of the Linux hw.so DWARF; ProgressBar vtable (RTTI) slot 135, called by the constructor with 4, 8)"
+100920BF,?PaintBackground@ProgressBar@vgui2@@MAEXXZ,func,same object layout as hw.dll 01E4D6BF (vgui2/controls/ProgressBar.cpp in the source order of the Linux hw.so DWARF; ProgressBar vtable (RTTI) slot 106 (Panel::PaintBackground))
+1009223C,?SetProgress@ProgressBar@vgui2@@UAEXM@Z,func,"same object layout as hw.dll 01E4D83C (vgui2/controls/ProgressBar.cpp in the source order of the Linux hw.so DWARF; ProgressBar vtable (RTTI) slot 134, clamps to 0..1 and stores +0x78)"
+1009229D,?GetProgress@ProgressBar@vgui2@@QAEMXZ,func,same object layout as hw.dll 01E4D89D (vgui2/controls/ProgressBar.cpp in the source order of the Linux hw.so DWARF; returns _progress (+0x78))
+100922AE,?ApplySchemeSettings@ProgressBar@vgui2@@MAEXPAVIScheme@2@@Z,func,same object layout as hw.dll 01E4D8AE (vgui2/controls/ProgressBar.cpp in the source order of the Linux hw.so DWARF; ProgressBar vtable (RTTI) slot 79 (Panel::ApplySchemeSettings))
+10092340,?ConstructTimeRemainingString@ProgressBar@vgui2@@SA_NPAGHMMMM_N@Z,func,"same object layout as hw.dll 01E4D940 (vgui2/controls/ProgressBar.cpp in the source order of the Linux hw.so DWARF; uses ""#vgui_TimeLeftMinutesSeconds"")"
+10092615,?SetBarInset@ProgressBar@vgui2@@QAEXH@Z,func,same object layout as hw.dll 01E4DC15 (vgui2/controls/ProgressBar.cpp in the source order of the Linux hw.so DWARF; called by the constructor with 4)
+1009262E,?GetBarInset@ProgressBar@vgui2@@QAEHXZ,func,same object layout as hw.dll 01E4DC2E (vgui2/controls/ProgressBar.cpp in the source order of the Linux hw.so DWARF; returns m_iBarInset (+0x84))
+10092642,?ApplySettings@ProgressBar@vgui2@@UAEXPAVKeyValues@@@Z,func,"same object layout as hw.dll 01E4DC42 (vgui2/controls/ProgressBar.cpp in the source order of the Linux hw.so DWARF; ProgressBar vtable (RTTI) slot 80 (Panel::ApplySettings), reads ""progress"" and ""variable"")"
+100926DA,?GetSettings@ProgressBar@vgui2@@UAEXPAVKeyValues@@@Z,func,same object layout as hw.dll 01E4DCDA (vgui2/controls/ProgressBar.cpp in the source order of the Linux hw.so DWARF; ProgressBar vtable (RTTI) slot 81 (Panel::GetSettings))
+10092730,?GetDescription@ProgressBar@vgui2@@UAEPBDXZ,func,"same object layout as hw.dll 01E4DD30 (vgui2/controls/ProgressBar.cpp in the source order of the Linux hw.so DWARF; ProgressBar vtable (RTTI) slot 82, ""%s, string progress, string variable"")"
+10092760,?OnDialogVariablesChanged@ProgressBar@vgui2@@MAEXPAVKeyValues@@@Z,func,"same object layout as hw.dll 01E4DD60 (vgui2/controls/ProgressBar.cpp in the source order of the Linux hw.so DWARF; ProgressBar vtable (RTTI) slot 136, calls SetProgress)"
+100927C0,??_GProgressBar@vgui2@@UAEPAXI@Z,func,"same object layout as hw.dll 01E4DDC0 (ProgressBar vtable (RTTI) slot 28 (scalar deleting destructor), calls ~ProgressBar)"
+100927F0,??0ProgressBar_RegisterMap@ProgressBar@vgui2@@QAE@XZ,func,same object layout as hw.dll 01E4DDF0 (called by the ProgressBar constructor on this+0x70 (m_RegisterClass))
+10092810,?ChainToMap@ProgressBar@vgui2@@SAXXZ,func,same object layout as hw.dll 01E4DE10 (called by the ProgressBar_RegisterMap constructor)
+10092880,?GetMessageMap@ProgressBar@vgui2@@UAEPAUPanelMessageMap@2@XZ,func,same object layout as hw.dll 01E4DE80 (ProgressBar vtable (RTTI) slot 27)
+100928C0,?GetPanelClassName@ProgressBar@vgui2@@SAPBDXZ,func,"same object layout as hw.dll 01E4DEC0 (returns ""ProgressBar"", called by ChainToMap)"
+100928D0,?GetPanelBaseClassName@ProgressBar@vgui2@@SAPBDXZ,func,"same object layout as hw.dll 01E4DED0 (returns ""Panel"", called by ChainToMap)"
+100928E0,??0PanelMessageFunc_SetProgress@ProgressBar@vgui2@@QAE@XZ,func,same object layout as hw.dll 01E4DEE0 (called by the ProgressBar constructor on this+0x71)
+10092900,?InitVar@PanelMessageFunc_SetProgress@ProgressBar@vgui2@@SAXXZ,func,"same object layout as hw.dll 01E4DF00 (called by PanelMessageFunc_SetProgress; registers ""SetProgress"")"
+10092970,?AddToMap@ProgressBar@vgui2@@SAXPBDP8Panel@2@AEXXZHH0H0@Z,func,same object layout as hw.dll 01E4DF70 (called by both ProgressBar InitVar functions)
+100929F0,??0PanelMessageFunc_OnDialogVariablesChanged@ProgressBar@vgui2@@QAE@XZ,func,same object layout as hw.dll 01E4DFF0 (called by the ProgressBar constructor on this+0x72)
+10092A10,?InitVar@PanelMessageFunc_OnDialogVariablesChanged@ProgressBar@vgui2@@SAXXZ,func,"same object layout as hw.dll 01E4E010 (registers ""DialogVariables"")"

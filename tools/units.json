@@ -2553,6 +2553,18 @@
           ]
         },
         {
+          "name": "vgui2/controls/ProgressBar",
+          "source": "src/vgui2/controls/ProgressBar.cpp",
+          "functions_file": "tools/units/hw_vgui2_controls_ProgressBar.txt",
+          "includes": [
+            "src/gameui",
+            "src/public",
+            "src/common",
+            "src/engine",
+            "src/pm_shared"
+          ]
+        },
+        {
           "name": "engine/net_api",
           "source": "src/engine_hw/net_api.c",
           "functions_file": "tools/units/hw_engine_net_api.txt"
@@ -2750,6 +2762,11 @@
           "name": "vgui2/controls/ListPanel",
           "source": "src/vgui2/controls/ListPanel.cpp",
           "functions_file": "tools/units/gameui_vgui2_controls_ListPanel.txt"
+        },
+        {
+          "name": "vgui2/controls/ProgressBar",
+          "source": "src/vgui2/controls/ProgressBar.cpp",
+          "functions_file": "tools/units/gameui_vgui2_controls_ProgressBar.txt"
         }
       ]
     }
