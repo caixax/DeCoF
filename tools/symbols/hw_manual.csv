@@ -2648,3 +2648,76 @@ va,name,kind,evidence
 01D05C60,?IsExternallyAllocated@?$CUtlMemory@VCUtlSymbol@@@@QBE_NXZ,func,"engine/vgui2/BaseUISurface.cpp: COMDAT of the object (inline member emitted after its code), same order and size as in our compiled object"
 01D8DBA4,_Net_APICheckTimeouts,func,"engine/net_api.c Linux DWARF source order between Net_APIKill and Net_GetBatchServerList (object 01D8D960-01D8EC73, 24 rows against 24 functions); calls Net_APIFailed on timed out entries; called at the end of CL_ReadPackets; replaces the harvested name Module_ProcessExpired_guess"
 01D8D255,_LoadSecurityModuleFromMemory,func,"no Linux counterpart; between LoadSecurityModuleFromDisk and CloseSecurityModule it loads a blob from memory (LoadBlobFile, then CommonLoadSecurityModule); ReHLDS cdll_int.h declares LoadSecurityModuleFromMemory( unsigned char *pCode, int nSize ) right after LoadSecurityModuleFromDisk"
+01D02160,?SetColor@Color@@QAEXHHHH@Z,func,bytes identical (relocations masked) to ?SetColor@Color@@QAEXHHHH@Z in our hw/vgui2/controls/Panel object (tools/bytematch.py)
+01D9FFC0,_PM_AddToTouched,func,"engine/pmove.c of the Linux hw.so DWARF, first function; prints ""Too many entities were touched!"""
+01DA00A5,_PM_StuckTouch,func,engine/pmove.c of the Linux hw.so DWARF between PM_AddToTouched and PM_Init; calls PM_AddToTouched
+01DA03FD,_PM_DrawRectangle,func,"engine/pmovedbg.c of the Linux hw.so DWARF between PM_ParticleLine and PM_DrawBBox; calls PM_ParticleLine, called by PM_DrawBBox"
+01DC49B0,_R_FogParams,func,engine/r_triangle.c of the Linux hw.so DWARF after R_RenderFinalFog; FogParams slot of the triangleapi_t table at 01EC5DF0
+01DC4E12,_tri_GetMatrix,func,engine/r_triangle.c of the Linux hw.so DWARF after R_TriangleSpriteTexture; GetMatrix slot of the triangleapi_t table at 01EC5DF0
+01DC4E25,_tri_ScreenTransform,func,"engine/r_triangle.c of the Linux hw.so DWARF after tri_GetMatrix; WorldToScreen slot of triangleapi_t, calls ScreenTransform"
+01DC4E3A,_tri_WorldTransform,func,"engine/r_triangle.c of the Linux hw.so DWARF after tri_ScreenTransform; ScreenToWorld slot of triangleapi_t, calls WorldTransform"
+01DC4E4F,_tri_BoxinPVS,func,"engine/r_triangle.c of the Linux hw.so DWARF after tri_WorldTransform; BoxInPVS slot of triangleapi_t, calls PVSNode"
+01DC4E7E,_tri_LightAtPoint,func,"engine/r_triangle.c of the Linux hw.so DWARF, last function; LightAtPoint slot of triangleapi_t, calls R_LightPoint"
+01DC7790,?SharedWVarArgs@@YAPAGPAGZZ,func,"refs/halflife game_shared/shared_util.cpp in source order (SharedFindString is CLIENT_DLL only); 4 rotating 1024 wchar buffers, _vsnwprintf"
+01DC7800,?SharedVarArgs@@YAPADPADZZ,func,"refs/halflife game_shared/shared_util.cpp in source order; 4 rotating 1024 char buffers, _vsnprintf"
+01DC7870,?BufPrintf@@YAPADPADAAHPBDZZ,func,refs/halflife game_shared/shared_util.cpp in source order; _vsnprintf then len -= strlen
+01DC78D4,?BufWPrintf@@YAPAGPAGAAHPBGZZ,func,refs/halflife game_shared/shared_util.cpp in source order; _vsnwprintf then len -= wcslen
+01DC7939,?NumAsWString@@YAPBGH@Z,func,"refs/halflife game_shared/shared_util.cpp in source order; BufWPrintf with L""%d"""
+01DC79A1,?NumAsString@@YAPBDH@Z,func,"refs/halflife game_shared/shared_util.cpp in source order; BufPrintf with ""%d"""
+01DC7A09,?SharedGetToken@@YAPADXZ,func,refs/halflife game_shared/shared_util.cpp in source order; returns the token buffer
+01DC7A13,?SharedSetQuoteChar@@YAXD@Z,func,refs/halflife game_shared/shared_util.cpp in source order; stores a char global
+01DC7A20,?SharedParse@@YAPBDPBD@Z,func,refs/halflife game_shared/shared_util.cpp in source order; token parser with // comments
+01DC7BB6,?SharedTokenWaiting@@YA_NPBD@Z,func,refs/halflife game_shared/shared_util.cpp in source order; isspace/isalnum scan to the end of the line
+01DD16A7,_S_GetDSPointer,func,"prints ""error in S_GetDSPointer - shouldn't be called with A3D.""; returns gSndBufSize and pDSBuf"
+01DD16D5,_S_BlockSound,func,"Quake snd_win.c (refs/Quake/WinQuake) in source order; snd_blocked++ and waveOutReset, stops the DirectSound buffers; called by the main window procedure"
+01DD17F0,_S_UnblockSound,func,"Quake snd_win.c (refs/Quake/WinQuake) in source order; snd_blocked--, restarts the DirectSound buffers; called by the main window procedure"
+01DD1916,_FreeSound,func,"Quake snd_win.c (refs/Quake/WinQuake) in source order; waveOutReset, waveOutUnprepareHeader, waveOutClose, GlobalFree, FreeLibrary"
+01DD1B7E,_SNDDMA_InitDirect,func,"Quake snd_win.c (refs/Quake/WinQuake) in source order; loads dsound.dll, DirectSoundCreate, ""Set primary sound buffer format"""
+01DD2E3C,_SNDDMA_InitWav,func,"Quake snd_win.c (refs/Quake/WinQuake) in source order; waveOutOpen, ""Sound: failed to prepare wave headers"""
+01DE44D0,_SV_CheckBottom,func,"engine/sv_move.c of the Linux hw.so DWARF, first function; called by PF_checkbottom_I"
+01DE4824,_SV_movetest,func,"engine/sv_move.c of the Linux hw.so DWARF after SV_CheckBottom; SV_MoveNoEnts, called by PF_walkmove_I"
+01DE4B4C,_SV_movestep,func,engine/sv_move.c of the Linux hw.so DWARF after SV_movetest; called by PF_walkmove_I and SV_StepDirection
+01DE4FD5,_SV_StepDirection,func,engine/sv_move.c of the Linux hw.so DWARF after SV_movestep; cos/sin then SV_movestep
+01DE5084,_SV_FlyDirection,func,engine/sv_move.c of the Linux hw.so DWARF after SV_StepDirection; calls SV_movestep
+01DE50ED,_SV_FixCheckBottom,func,engine/sv_move.c of the Linux hw.so DWARF after SV_FlyDirection
+01DE5107,_SV_NewChaseDir,func,"engine/sv_move.c of the Linux hw.so DWARF after SV_FixCheckBottom; anglemod, RandomLong, SV_StepDirection"
+01DE5452,_SV_CloseEnough,func,engine/sv_move.c of the Linux hw.so DWARF after SV_NewChaseDir
+01DE54C9,_SV_ReachedGoal,func,engine/sv_move.c of the Linux hw.so DWARF after SV_CloseEnough
+01DE5538,_SV_NewChaseDir2,func,engine/sv_move.c of the Linux hw.so DWARF after SV_ReachedGoal
+01DE587C,_SV_MoveToOrigin_I,func,"engine/sv_move.c of the Linux hw.so DWARF, last function; calls SV_NewChaseDir2 and SV_FlyDirection"
+01DEAD50,_SV_GetFileNameModuleS,func,"engine/sv_secure.c of the Linux hw.so DWARF, first of its two functions; COM_FileBase and ""%s/%s"""
+01DEADCF,_SV_GetFileNameModuleC,func,"engine/sv_secure.c of the Linux hw.so DWARF, second of its two functions; COM_FileBase and ""%s/%s"""
+01DF2040,_Sys_PageIn,func,bytes identical (relocations masked) to _Sys_PageIn in our hw/engine/sys_dll object (tools/bytematch.py)
+01DF2176,_glob_match,func,bytes identical (relocations masked) to _glob_match in our hw/engine/sys_dll object (tools/bytematch.py)
+01DF2455,_glob_match_after_star,func,bytes identical (relocations masked) to _glob_match_after_star in our hw/engine/sys_dll object (tools/bytematch.py)
+01DF2532,_Sys_MakeCodeWriteable,func,bytes identical (relocations masked) to _Sys_MakeCodeWriteable in our hw/engine/sys_dll object (tools/bytematch.py)
+01DF255F,_Sys_Init,func,bytes identical (relocations masked) to _Sys_Init in our hw/engine/sys_dll object (tools/bytematch.py)
+01DF2647,_Sys_DebugOutStraight,func,bytes identical (relocations masked) to _Sys_DebugOutStraight in our hw/engine/sys_dll object (tools/bytematch.py)
+01DF2DD1,_Voice_GetClientListening,func,bytes identical (relocations masked) to _Voice_GetClientListening in our hw/engine/sys_dll object (tools/bytematch.py)
+01DF2E45,_Voice_SetClientListening,func,bytes identical (relocations masked) to _Voice_SetClientListening in our hw/engine/sys_dll object (tools/bytematch.py)
+01DF3C43,_IN_DeactivateMouse,func,engine/sys_dll.c of the Linux hw.so DWARF after AlertMessage and our sys_dll.c; calls ClientDLL_DeactivateMouse
+01DF3C4D,_IN_ActivateMouse,func,engine/sys_dll.c of the Linux hw.so DWARF after IN_DeactivateMouse and our sys_dll.c; calls ClientDLL_ActivateMouse
+01DF3C57,_IN_MouseEvent,func,bytes identical (relocations masked) to _IN_MouseEvent in our hw/engine/sys_dll object (tools/bytematch.py)
+01DF3C78,_IN_ClearStates,func,engine/sys_dll.c of the Linux hw.so DWARF after IN_MouseEvent and our sys_dll.c; calls ClientDLL_ClearStates
+01DF3C82,_Sys_GetClipboardData_guess,func,bytes identical (relocations masked) to _Sys_GetClipboardData_guess in our hw/engine/sys_dll object (tools/bytematch.py)
+01DF3D13,_Sys_FreeClipboardData_guess,func,bytes identical (relocations masked) to _Sys_FreeClipboardData_guess in our hw/engine/sys_dll object (tools/bytematch.py)
+01DF3D41,_Sys_IsCtrlDown_guess,func,"position in our sys_dll.c (GetKeyState( VK_CONTROL )), between Sys_FreeClipboardData_guess and Sys_SplitPath"
+01DFE155,_TraceInit,func,"engine/traceinit.cpp of the Linux hw.so DWARF before TraceShutdown; calls CInitTracker::Init, called by Sys_InitGame (same linkage as _TraceShutdown in hw_manual.csv)"
+01E08F13,_VGui_CallEngineSurfaceAppHandler,func,engine/vgui_int.cpp of the Linux hw.so DWARF in source order (11 = 11 functions); calls VGuiWrap_CallEngineSurfaceAppHandler
+01E08F4C,_VGui_GetPanel,func,engine/vgui_int.cpp of the Linux hw.so DWARF in source order; calls VGuiWrap_GetPanel
+01E08F56,_VGui_ReleaseMouse,func,engine/vgui_int.cpp of the Linux hw.so DWARF in source order; calls VGuiWrap_ReleaseMouse
+01E08F65,_VGui_GetMouse,func,engine/vgui_int.cpp of the Linux hw.so DWARF in source order; calls VGuiWrap_GetMouse
+01E08F74,_VGui_SetVisible,func,engine/vgui_int.cpp of the Linux hw.so DWARF in source order; calls VGuiWrap_SetVisible
+01E08FCD,_VGui_Key_Event,func,engine/vgui_int.cpp of the Linux hw.so DWARF in source order; called by ClientDLL_Key_Event
+01E08FF3,_VGui_LoadBMP,func,"engine/vgui_int.cpp of the Linux hw.so DWARF, last function; reads a file into a GlobalAlloc block"
+01E09582,_VGuiWrap_Startup,func,"engine/vgui_intwrap.cpp of the Linux hw.so DWARF in source order; called by VGui_Startup, registers vgui_emulatemouse"
+01E096D3,_VGuiWrap_Shutdown,func,engine/vgui_intwrap.cpp of the Linux hw.so DWARF in source order; called by VGui_Shutdown
+01E09730,_VGuiWrap_CallEngineSurfaceAppHandler,func,engine/vgui_intwrap.cpp of the Linux hw.so DWARF in source order; called by VGui_CallEngineSurfaceAppHandler
+01E09768,_VGuiWrap_GetPanel,func,engine/vgui_intwrap.cpp of the Linux hw.so DWARF in source order; called by VGui_GetPanel
+01E09778,_VGuiWrap_ReleaseMouse,func,engine/vgui_intwrap.cpp of the Linux hw.so DWARF in source order; called by VGui_ReleaseMouse
+01E0981C,_VGuiWrap_GetMouse,func,engine/vgui_intwrap.cpp of the Linux hw.so DWARF in source order; called by VGui_GetMouse
+01E09855,_VGuiWrap_SetVisible,func,engine/vgui_intwrap.cpp of the Linux hw.so DWARF in source order; called by VGui_SetVisible
+01E0F004,_SwapPic,func,"engine/wad.c of the Linux hw.so DWARF, last function after W_Shutdown"
+01E13660,_Snd_WriteLinearBlastStereo16,func,"Quake snd_mixa.s (refs/Quake/WinQuake), second function; called by S_TransferStereo16"
+01E137C4,_MaskExceptions,func,"Quake sys_wina.s (refs/Quake/WinQuake): fnstenv, or 0x3F, fldenv; called by Sys_Init"
+01E137FA,_Sys_SetFPCW,func,"Quake sys_wina.s (refs/Quake/WinQuake): fnstcw, builds the full/single/ceil control words; called by Sys_Init"

@@ -1,0 +1,4 @@
+?SetFromSteam2String@CSteamID@@QAE_NPBDW4EUniverse@@@Z
+?InstancedSet@CSteamID@@QAEXIIW4EUniverse@@W4EAccountType@@@Z
+??0CSteamID@@QAE@_K@Z
+?SetFromUint64@CSteamID@@QAEX_K@Z

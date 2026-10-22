@@ -1,0 +1,8 @@
+_VGuiWrap_Startup
+_VGuiWrap_Shutdown
+_VGuiWrap_CallEngineSurfaceAppHandler
+_VGuiWrap_GetPanel
+_VGuiWrap_ReleaseMouse
+_VGuiWrap_GetMouse
+_VGuiWrap_SetVisible
+_VGuiWrap_Paint

@@ -1,1 +1,5 @@
 _VideoMode_Create
+_Sys_SetRenderer_guess
+_Sys_SetVideoMode_guess
+_VideoMode_GetCurrentVideoMode
+_VideoMode_IsWindowed

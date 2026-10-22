@@ -1,2 +1,9 @@
 _Voice_GetLoopback
 _Voice_LocalPlayerTalkingAck
+_Voice_IsRecording
+_Voice_RecordStart
+_Voice_RecordStop
+_Voice_GetCompressedData
+_Voice_AssignChannel
+_Voice_GetChannel
+_Voice_AddIncomingData

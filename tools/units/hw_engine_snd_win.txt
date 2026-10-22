@@ -1,0 +1,13 @@
+_S_GetDSPointer
+_S_BlockSound
+_S_UnblockSound
+_FreeSound
+_SNDDMA_InitDirect
+_SNDDMA_InitWav
+_SNDDMA_Init
+_SNDDMA_GetDMAPos
+_SNDDMA_UpdateA3D_guess
+_SNDDMA_Submit
+_SNDDMA_Shutdown
+_S_DisableA3D_guess
+_S_EnableA3D_guess

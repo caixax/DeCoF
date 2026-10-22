@@ -2776,6 +2776,91 @@
           "name": "engine/dinput_guess",
           "source": "src/engine_hw/dinput_guess.c",
           "functions_file": "tools/units/hw_engine_dinput_guess.txt"
+        },
+        {
+          "name": "engine/pmove",
+          "source": "src/engine_hw/pmove.c",
+          "functions_file": "tools/units/hw_engine_pmove.txt"
+        },
+        {
+          "name": "engine/pmovedbg",
+          "source": "src/engine_hw/pmovedbg.c",
+          "functions_file": "tools/units/hw_engine_pmovedbg.txt"
+        },
+        {
+          "name": "engine/r_triangle",
+          "source": "src/engine_hw/r_triangle.c",
+          "functions_file": "tools/units/hw_engine_r_triangle.txt"
+        },
+        {
+          "name": "game_shared/shared_util",
+          "source": "src/game_shared/shared_util.cpp",
+          "functions_file": "tools/units/hw_game_shared_shared_util.txt"
+        },
+        {
+          "name": "engine/snd_win",
+          "source": "src/engine_hw/snd_win.c",
+          "functions_file": "tools/units/hw_engine_snd_win.txt"
+        },
+        {
+          "name": "common/steamid",
+          "source": "src/common/steamid.cpp",
+          "functions_file": "tools/units/hw_common_steamid.txt"
+        },
+        {
+          "name": "engine/sv_move",
+          "source": "src/engine_hw/sv_move.c",
+          "functions_file": "tools/units/hw_engine_sv_move.txt"
+        },
+        {
+          "name": "engine/sv_pmove",
+          "source": "src/engine_hw/sv_pmove.c",
+          "functions_file": "tools/units/hw_engine_sv_pmove.txt"
+        },
+        {
+          "name": "engine/sv_remoteaccess",
+          "source": "src/engine_hw/sv_remoteaccess.cpp",
+          "functions_file": "tools/units/hw_engine_sv_remoteaccess.txt"
+        },
+        {
+          "name": "engine/sv_secure",
+          "source": "src/engine_hw/sv_secure.c",
+          "functions_file": "tools/units/hw_engine_sv_secure.txt"
+        },
+        {
+          "name": "engine/SystemWrapper",
+          "source": "src/engine_hw/SystemWrapper.cpp",
+          "functions_file": "tools/units/hw_engine_SystemWrapper.txt"
+        },
+        {
+          "name": "engine/traceinit",
+          "source": "src/engine_hw/traceinit.cpp",
+          "functions_file": "tools/units/hw_engine_traceinit.txt"
+        },
+        {
+          "name": "public/UtlBuffer",
+          "source": "src/public/UtlBuffer.cpp",
+          "functions_file": "tools/units/hw_public_UtlBuffer.txt"
+        },
+        {
+          "name": "engine/vgui_int",
+          "source": "src/engine_hw/vgui_int.cpp",
+          "functions_file": "tools/units/hw_engine_vgui_int.txt"
+        },
+        {
+          "name": "engine/vgui_intwrap",
+          "source": "src/engine_hw/vgui_intwrap.cpp",
+          "functions_file": "tools/units/hw_engine_vgui_intwrap.txt"
+        },
+        {
+          "name": "engine/voice_sound_engine_interface",
+          "source": "src/engine_hw/voice_sound_engine_interface.cpp",
+          "functions_file": "tools/units/hw_engine_voice_sound_engine_interface.txt"
+        },
+        {
+          "name": "engine/wad",
+          "source": "src/engine_hw/wad.c",
+          "functions_file": "tools/units/hw_engine_wad.txt"
         }
       ]
     },
