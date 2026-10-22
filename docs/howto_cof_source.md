@@ -321,3 +321,7 @@ The 1.55 hl.dll is an unoptimized debug build of nearly the same source. `disasm
 
 - Do not edit shared headers (`cbase.h`, `weapons.h`, `player.h`, `util.h`, ...) without coordinating: several files depend on them.
 - Do not rename retail symbols to make a function match. Retail names come from evidence (older builds, strings, vtables, exports) and are committed separately with the evidence (`tools/symbols/hl_manual.csv`).
+- An empty then-branch with an else, `if ( !x ) {} else { ... }`, gives `jne` plus `jmp` instead of a single `je` (seen in BaseUI_Interface Initialize and FontTextureCache AllocatePageForChar).
+- VGUI1 functions are `VGUIAPI` (dllexport), so calls into vgui.dll go through import thunks; declare them with the same attribute or the call form differs.
+- The CoF `cl_enginefunc_t` is 0x21C bytes; only src/gameui/cdll_int.h declares it at that size, so units that need the full table include that header.
+- VC6 orders a file's static .bss variables by a hash of their names, like stack slots: when a static table must land at a fixed offset, its name is part of the match (VGUI_EngineSurfaceWrap staticKeyTable_guess).
