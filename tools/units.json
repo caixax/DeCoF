@@ -2665,6 +2665,11 @@
           "name": "engine/buildnum",
           "source": "src/engine_hw/buildnum.c",
           "functions_file": "tools/units/hw_engine_buildnum.txt"
+        },
+        {
+          "name": "engine/textures",
+          "source": "src/engine_hw/textures.c",
+          "functions_file": "tools/units/hw_engine_textures.txt"
         }
       ]
     },

@@ -2274,3 +2274,7 @@ va,name,kind,evidence
 01E4D550,?AddToMap@RadioButton@vgui2@@SAXPBDP8Panel@2@AEXXZHH0H0@Z,func,called by the RadioButton InitVar
 01D61850,_StripLength,func,"engine/GL_MESH.C of the Linux hw.so DWARF (first function, line 44) before FanLength and BuildTris; the Quake gl_mesh.c StripLength, called by BuildTris when type == 1 (added by an agent)"
 01D61A88,_FanLength,func,"engine/GL_MESH.C of the Linux hw.so DWARF (line 113) between StripLength and BuildTris; the Quake gl_mesh.c FanLength, called by BuildTris when type == 0 (added by an agent)"
+01DFBA20,_SafeRead,func,"engine/textures.c of the Linux hw.so DWARF in source order before TEX_InitFromWad (line 35); FS_Read with a File read failure Sys_Error, called by TEX_InitFromWad and TEX_LoadLump (added by an agent)"
+01DFBA4D,_CleanupName,func,"engine/textures.c of the Linux hw.so DWARF in source order before TEX_InitFromWad (line 41); copies 16 chars through toupper and zero fills, the HLSDK qcsg textures.c CleanupName (added by an agent)"
+01DFBAB4,_lump_sorter,func,"engine/textures.c of the Linux hw.so DWARF in source order before TEX_InitFromWad (line 64); strcmp of the names at +0x10, passed to qsort by TEX_InitFromWad and to bsearch by TEX_LoadLump (added by an agent)"
+01DFBAE0,_ForwardSlashes,func,"engine/textures.c of the Linux hw.so DWARF in source order before TEX_InitFromWad (line 72); replaces backslashes with slashes, called by TEX_InitFromWad on each wad name (added by an agent)"
