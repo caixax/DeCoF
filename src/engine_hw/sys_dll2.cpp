@@ -162,6 +162,10 @@ void Sys_ShutdownMemory( void )
 	host_parms.memsize = 0;
 }
 
+void Sys_ShutdownLauncherInterface( void )
+{
+}
+
 void Sys_InitAuthentication( void )
 {
 	Sys_Printf( "STEAM Auth Server\r\n" );
