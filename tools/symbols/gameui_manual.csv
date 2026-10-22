@@ -1346,3 +1346,6 @@ va,name,kind,evidence
 10064270,?EnsureCapacity@?$Dar@K@vgui2@@QAEXH@Z,func,"Panel.cpp: COMDAT of the object (Dar<VPANEL> member emitted with Panel.obj, after the seven named Dar members in the same order and with the same size as our compiled function) (added by an agent)"
 10064350,?FindElement@?$Dar@K@vgui2@@QAEHK@Z,func,"Panel.cpp: COMDAT of the object (Dar<VPANEL> member emitted with Panel.obj, after the seven named Dar members in the same order and with the same size as our compiled function) (added by an agent)"
 100643A0,?RemoveElementAt@?$Dar@K@vgui2@@QAEXH@Z,func,"Panel.cpp: COMDAT of the object (Dar<VPANEL> member emitted with Panel.obj, after the seven named Dar members in the same order and with the same size as our compiled function) (added by an agent)"
+10083C69,?SetImageList@ListPanel@vgui2@@UAEXPAVImageList@2@_N@Z,func,"deletes the ImageList at +0x15c when the flag at +0x159 is set, then stores both arguments (gameui.so ListPanel::SetImageList) (added by an agent)"
+10083CD9,?SetColumnHeaderHeight@ListPanel@vgui2@@UAEXH@Z,func,"stores its argument in m_iHeaderHeight (+0x128), next to SetImageList as in gameui.so (added by an agent)"
+10083CF2,?AddColumnHeader@ListPanel@vgui2@@UAEXHPBD0HH@Z,func,forwards to the 7-argument AddColumnHeader with 20/10000 or width/width (COLUMN_FIXEDSIZE without COLUMN_RESIZEWITHWINDOW) (added by an agent)

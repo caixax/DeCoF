@@ -11417,9 +11417,9 @@ gameui,100835C0,25,?Construct@@YAXPAG@Z,Construct,UNKNOWN,,,,MATCHED,100,gameui_
 gameui,100835E0,139,,,UNKNOWN,,,,TODO,,,
 gameui,1008366B,1017,,vgui2::ListPanel::ListPanel,ENGINE,,,,TODO,,linux_symbols:string:0.279,
 gameui,10083A64,517,,,UNKNOWN,,,,TODO,,,
-gameui,10083C69,112,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,linux: _ZN5vgui29ListPanel12SetImageListEPNS_9ImageListEb
-gameui,10083CD9,25,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,linux: _ZN5vgui29ListPanel21SetColumnHeaderHeightEi
-gameui,10083CF2,118,,,UNKNOWN,,,,TODO,,,
+gameui,10083C69,112,?SetImageList@ListPanel@vgui2@@UAEXPAVImageList@2@_N@Z,vgui2::ListPanel::SetImageList,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29ListPanel12SetImageListEPNS_9ImageListEb
+gameui,10083CD9,25,?SetColumnHeaderHeight@ListPanel@vgui2@@UAEXH@Z,vgui2::ListPanel::SetColumnHeaderHeight,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29ListPanel21SetColumnHeaderHeightEi
+gameui,10083CF2,118,?AddColumnHeader@ListPanel@vgui2@@UAEXHPBD0HH@Z,vgui2::ListPanel::AddColumnHeader,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,10083D68,587,,,UNKNOWN,,,,TODO,,,
 gameui,10083FB3,375,,,UNKNOWN,,,,TODO,,,
 gameui,1008412A,352,,,UNKNOWN,,,,TODO,,,
