@@ -2888,6 +2888,26 @@
           "name": "a3d/A3DRenderer_guess",
           "source": "src/a3d/A3DRenderer_guess.cpp",
           "functions_file": "tools/units/hw_a3d_A3DRenderer_guess.txt"
+        },
+        {
+          "name": "iga/IGA_Engine_guess",
+          "source": "src/iga/IGA_Engine_guess.cpp",
+          "functions_file": "tools/units/hw_iga_IGA_Engine_guess.txt"
+        },
+        {
+          "name": "engine/hla3d_guess",
+          "source": "src/engine_hw/hla3d_guess.cpp",
+          "functions_file": "tools/units/hw_engine_hla3d_guess.txt"
+        },
+        {
+          "name": "engine/opengl2d3d_guess",
+          "source": "src/engine_hw/opengl2d3d_guess.cpp",
+          "functions_file": "tools/units/hw_engine_opengl2d3d_guess.txt"
+        },
+        {
+          "name": "engine/pe_win32_guess",
+          "source": "src/engine_hw/pe_win32_guess.c",
+          "functions_file": "tools/units/hw_engine_pe_win32_guess.txt"
         }
       ]
     },

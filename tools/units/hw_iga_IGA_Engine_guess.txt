@@ -1,0 +1,10 @@
+_AdsStartup_guess
+_AdsShutdown_guess
+_AdsFrame_guess
+_LevelLoaded_guess
+_AdsRenderView_guess
+_ResetLevelState_guess
+_AdsDecalTexture_guess
+?TellPut@CUtlBuffer@@QBEHXZ
+?Base@CUtlBuffer@@QAEPAXXZ
+??1CUtlBuffer@@QAE@XZ

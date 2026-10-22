@@ -1,0 +1,7 @@
+_hwAllocChannel_guess
+_hwGetChannelState_guess
+_hwSetChannelState_guess
+_hwSetChannelDistance_guess
+_hwGetNumChannels_guess
+_hwStopAllSounds_guess
+_hwUpdateListener_guess

@@ -150,25 +150,23 @@ int Dar<ELEMTYPE>::AddElement(ELEMTYPE elem)
 template<class ELEMTYPE>
 void Dar<ELEMTYPE>::MoveElementToEnd( ELEMTYPE elem )
 {
-	if (_count == 0)
-	{
-		return;
-	}
-
 	// quick check to see if it's already at the end
 	if (_data[_count - 1] == elem)
 	{
 		return;
 	}
 
-	int idx = FindElement(elem);
-	if (idx == -1)
+	// search back from the end
+	for (int i = _count - 2; i >= 0; i--)
 	{
-		return;
+		if (_data[i] == elem)
+		{
+			// shift the rest down and put the element at the end
+			memmove(&_data[i], &_data[i + 1], (_count - (i + 1)) * sizeof(ELEMTYPE));
+			_data[_count - 1] = elem;
+			return;
+		}
 	}
-
-	RemoveElementAt(idx);
-	AddElement(elem);
 }
 
 template<class ELEMTYPE>

@@ -199,6 +199,7 @@ BaseUISurface::BaseUISurface()
 	s_pVirtualKeyToVGUI[VK_MULTIPLY] = KEY_PAD_MULTIPLY;
 	s_pVirtualKeyToVGUI[VK_SUBTRACT] = KEY_PAD_MINUS;
 	s_pVirtualKeyToVGUI[VK_ADD] = KEY_PAD_PLUS;
+	s_pVirtualKeyToVGUI[VK_RETURN] = KEY_PAD_ENTER;
 	s_pVirtualKeyToVGUI[VK_DECIMAL] = KEY_PAD_DECIMAL;
 	s_pVirtualKeyToVGUI[0xdb] = KEY_LBRACKET;
 	s_pVirtualKeyToVGUI[0xdd] = KEY_RBRACKET;
@@ -226,8 +227,11 @@ BaseUISurface::BaseUISurface()
 	s_pVirtualKeyToVGUI[VK_PRIOR] = KEY_PAGEUP;
 	s_pVirtualKeyToVGUI[VK_NEXT] = KEY_PAGEDOWN;
 	s_pVirtualKeyToVGUI[VK_PAUSE] = KEY_BREAK;
+	s_pVirtualKeyToVGUI[VK_SHIFT] = KEY_LSHIFT;
 	s_pVirtualKeyToVGUI[VK_SHIFT] = KEY_RSHIFT;
+	s_pVirtualKeyToVGUI[VK_MENU] = KEY_LALT;
 	s_pVirtualKeyToVGUI[VK_MENU] = KEY_RALT;
+	s_pVirtualKeyToVGUI[VK_CONTROL] = KEY_LCONTROL;
 	s_pVirtualKeyToVGUI[VK_CONTROL] = KEY_RCONTROL;
 	s_pVirtualKeyToVGUI[VK_LWIN] = KEY_LWIN;
 	s_pVirtualKeyToVGUI[VK_RWIN] = KEY_RWIN;
@@ -770,7 +774,11 @@ void BaseUISurface::DeleteHTMLWindow( IHTML *htmlwin )
 void BaseUISurface::PaintHTMLWindow( IHTML *htmlwin )
 {
 	HtmlWindow *IE = dynamic_cast<HtmlWindow *>( htmlwin );
-	double t = system()->GetCurrentTime();
+	double time_guess = system()->GetCurrentTime();
+	POINT ptOrigin_guess = { 0, 0 };
+	RECT rcClip_guess = { 0, 0, 0, 0 };
+	POINT ptDest_guess = { 0, 0 };
+
 	if ( IE )
 	{
 		HDC hdc = ::GetDC( thisWindow );

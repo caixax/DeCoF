@@ -23349,7 +23349,7 @@ hw,01D026E7,25,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,"VC6 dynamic in
 hw,01D02700,10,?__CreateBaseUISurfaceISurface_interface@@YAPAVIBaseInterface@@XZ,__CreateBaseUISurfaceISurface_interface,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
 hw,01D0270A,10,?inputinternal@@YAPAVIInputInternal@vgui2@@XZ,inputinternal,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
 hw,01D02714,97,?GetVGUI2KeyCodeForBind@@YA?AW4KeyCode@vgui2@@PBD@Z,GetVGUI2KeyCodeForBind,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,
-hw,01D02775,1464,??0BaseUISurface@@QAE@XZ,BaseUISurface::BaseUISurface,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,97.42,hw_manual.csv,
+hw,01D02775,1464,??0BaseUISurface@@QAE@XZ,BaseUISurface::BaseUISurface,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01D02D2D,67,??1BaseUISurface@@UAE@XZ,BaseUISurface::~BaseUISurface,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01D02D70,92,?Init@BaseUISurface@@QAEXIPAVIEngineSurface@@@Z,BaseUISurface::Init,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01D02DCC,22,?SetEmbeddedPanel@BaseUISurface@@UAEXI@Z,BaseUISurface::SetEmbeddedPanel,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13BaseUISurface16SetEmbeddedPanelEj
@@ -23372,7 +23372,7 @@ hw,01D03A43,300,?DrawUnicodeCharAdd@BaseUISurface@@UAEXG@Z,BaseUISurface::DrawUn
 hw,01D03B6F,28,?DrawFlushText@BaseUISurface@@UAEXXZ,BaseUISurface::DrawFlushText,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13BaseUISurface13DrawFlushTextEv
 hw,01D03B8B,152,?CreateHTMLWindow@BaseUISurface@@UAEPAVIHTML@vgui2@@PAVIHTMLEvents@3@I@Z,BaseUISurface::CreateHTMLWindow,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01D03C23,108,?DeleteHTMLWindow@BaseUISurface@@UAEXPAVIHTML@vgui2@@@Z,BaseUISurface::DeleteHTMLWindow,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,
-hw,01D03C8F,158,?PaintHTMLWindow@BaseUISurface@@UAEXPAVIHTML@vgui2@@@Z,BaseUISurface::PaintHTMLWindow,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,81.11,hw_manual.csv,
+hw,01D03C8F,158,?PaintHTMLWindow@BaseUISurface@@UAEXPAVIHTML@vgui2@@@Z,BaseUISurface::PaintHTMLWindow,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01D03D2D,73,?DrawPrintText@BaseUISurface@@UAEXPBGH@Z,BaseUISurface::DrawPrintText,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13BaseUISurface13DrawPrintTextEPKwi
 hw,01D03D76,173,?CreatePopup@BaseUISurface@@UAEXI_N0000@Z,BaseUISurface::CreatePopup,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13BaseUISurface11CreatePopupEjbbbbb
 hw,01D03E23,18,?LockCursor@BaseUISurface@@UAEXXZ,BaseUISurface::LockCursor,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13BaseUISurface10LockCursorEv
@@ -23479,7 +23479,7 @@ hw,01D051B0,45,??A?$Dar@PAVHtmlWindow@@@vgui2@@QAEPAVHtmlWindow@@H@Z,*>::operato
 hw,01D051E0,43,??0?$Dar@I@vgui2@@QAE@XZ,int>,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01D05210,34,??1?$Dar@I@vgui2@@QAE@XZ,int>,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01D05240,16,?GetCount@?$Dar@I@vgui2@@QAEHXZ,int>::GetCount,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,
-hw,01D05250,156,?MoveElementToEnd@?$Dar@I@vgui2@@QAEXI@Z,int>::MoveElementToEnd,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,38.62,hw_manual.csv,
+hw,01D05250,156,?MoveElementToEnd@?$Dar@I@vgui2@@QAEXI@Z,int>::MoveElementToEnd,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01D052F0,70,?FindElement@?$Dar@I@vgui2@@QAEHI@Z,int>::FindElement,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01D05340,53,?PutElement@?$Dar@I@vgui2@@QAEHI@Z,int>::PutElement,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01D05380,151,?InsertElementAt@?$Dar@I@vgui2@@QAEXIH@Z,int>::InsertElementAt,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,
