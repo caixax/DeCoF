@@ -1,4 +1,5 @@
 _GetAliasesList
+_ClientDLL_TamperTrap_guess
 _ClientDLL_Init
 _LoadSecureClient
 _LoadInsecureClient
