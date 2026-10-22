@@ -311,3 +311,9 @@ Committed the work the stopped agents had left on disk, after checking each unit
 Open: SND_DMA.C S_Update_ at 96.29%. The code is the same instruction for instruction, but the scratch registers rotate one step later in retail (retail's first `mov reg, [shm]` after GetSoundtime uses ecx, ours eax), which also makes one moffs load a byte shorter. A GetSoundtime that returns int changes nothing.
 
 Still not written: cdll_int, GL_VIDNT (must define `qglPNTrianglesiATI` at 023C940C, used by r_studio.c), sys_dll2, sys_getmodes (unit lists exist in tools/units, untracked). The GameUI controls agent left only headers (src/public/UtlRBTree.h changes, vgui_controls ListPanel.h, ImageList.h, ImagePanel.h, and the BuildGroup unit in units.json), no .cpp yet: not committed.
+
+## 2026-10-22 (later)
+
+hw GL_VIDNT.C started: 11 of 16 at 100% (CheckTextureExtensions, CheckArrayExtensions, CheckMultiTextureExtensions, CheckATINPatchExtensions, GL_Init, GL_BeginRendering, GL_EndRendering, VID_ShiftPalette, GL_Shutdown, VID_Init, VID_WriteBuffer). It defines `qglPNTrianglesiATI`, used by r_studio.c. Left: GL_Config (01D730D7), FreeFBOObjects, GL_SetMode, VID_TakeSnapshot, VID_TakeSnapshotRect (pseudo C: `python tools/range.py hw 01D72D80 01D73F34 <out>`). Names to confirm: WindowRect (027FC330, Quake name), VID_FlipScreen_guess (function pointer 0250D990 called by GL_EndRendering), TEXTURE2_SGIS_guess (01EBA88C).
+
+Four agents were started near the end of the weekly usage on sys_dll2.cpp, cdll_int, GameUI ListPanel.cpp, and sys_getmodes.cpp plus SND_DMA S_Update_. They commit their own results; check `git log` and `git status` for what landed and what is left on disk.
