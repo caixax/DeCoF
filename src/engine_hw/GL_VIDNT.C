@@ -28,6 +28,7 @@ extern int		gl_mtexable;
 void	GL_SelectTexture( GLenum target );
 void	DT_Initialize( void );
 void	GL_Config( void );
+HINSTANCE	QGL_D3DInit( int unused_guess );
 
 #define GL_TEXTURE0_SGIS			0x835E
 #define GL_TEXTURE1_SGIS			0x835F
@@ -37,6 +38,9 @@ void	GL_Config( void );
 #define GL_TEXTURE2_ARB				0x84C2
 #define GL_MAX_TEXTURE_UNITS_ARB	0x84E2
 
+int			gGLHardwareType = 0;
+
+qboolean	gfMiniDriver_guess;
 RECT		WindowRect;
 
 const char	*gl_vendor;
@@ -193,6 +197,101 @@ void CheckATINPatchExtensions( void )
 
 /*
 ===============
+GL_Config
+===============
+*/
+void GL_Config( void )
+{
+	char	renderer[256];
+
+	if ( vid_d3d.value == 0.0 )
+		Cbuf_InsertText( "exec hw/opengl.cfg\n" );
+	else
+		Cbuf_InsertText( "exec hw/d3d.cfg\n" );
+
+	Q_strncpy( renderer, gl_renderer, sizeof( renderer ) - 1 );
+	renderer[sizeof( renderer ) - 1] = 0;
+	_strlwr( renderer );
+
+	if ( Q_strstr( gl_vendor, "3Dfx" ) )
+	{
+		gGLHardwareType = 1;
+
+		if ( Q_strstr( gl_renderer, "Voodoo(tm)" ) )
+			Cbuf_InsertText( "exec hw/3DfxVoodoo1.cfg\n" );
+		else if ( Q_strstr( gl_renderer, "Voodoo^2" ) )
+			Cbuf_InsertText( "exec hw/3DfxVoodoo2.cfg\n" );
+		else
+			Cbuf_InsertText( "exec hw/3Dfx.cfg\n" );
+	}
+	else if ( Q_strstr( gl_vendor, "NVIDIA" ) )
+	{
+		if ( Q_strstr( gl_renderer, "RIVA 128" ) )
+		{
+			gGLHardwareType = 2;
+			Cbuf_InsertText( "exec hw/riva128.cfg\n" );
+		}
+		else if ( Q_strstr( gl_renderer, "TNT" ) )
+		{
+			gGLHardwareType = 10;
+			Cbuf_InsertText( "exec hw/rivaTNT.cfg\n" );
+		}
+		else if ( strstr( gl_renderer, "Quadro" ) || strstr( gl_renderer, "GeForce" ) )
+		{
+			gGLHardwareType = 11;
+			Cbuf_InsertText( "exec hw/geforce.cfg\n" );
+		}
+	}
+	else if ( Q_strstr( renderer, "riva tnt" ) || Q_strstr( renderer, "velocity 4400" ) )
+	{
+		gGLHardwareType = 10;
+		Cbuf_InsertText( "exec hw/rivaTNT.cfg\n" );
+	}
+	else if ( Q_strstr( gl_vendor, "PCX2" ) )
+	{
+		Cbuf_InsertText( "exec hw/PowerVRPCX2.cfg\n" );
+		gGLHardwareType = 3;
+	}
+	else if ( Q_strstr( gl_vendor, "PowerVR" ) )
+	{
+		Cbuf_InsertText( "exec hw/PowerVRSG.cfg\n" );
+		gGLHardwareType = 4;
+	}
+	else if ( Q_strstr( gl_vendor, "V2200" ) )
+	{
+		Cbuf_InsertText( "exec hw/V2200.cfg\n" );
+		gGLHardwareType = 5;
+	}
+	else if ( Q_strstr( gl_vendor, "3Dlabs" ) )
+	{
+		Cbuf_InsertText( "exec hw/3Dlabs.cfg\n" );
+		gGLHardwareType = 6;
+	}
+	else if ( Q_strstr( gl_vendor, "Matrox" ) )
+	{
+		gGLHardwareType = 0;
+		Cbuf_InsertText( "exec hw/matrox.cfg\n" );
+	}
+	else if ( Q_strstr( gl_vendor, "ATI" ) && ( Q_strstr( gl_renderer, "Rage" ) || Q_strstr( gl_renderer, "RAGE" ) ) && Q_strstr( gl_renderer, "128" ) )
+	{
+		gGLHardwareType = 0;
+		Cbuf_InsertText( "exec hw/ATIRage128.cfg\n" );
+	}
+	else
+	{
+		gGLHardwareType = 0;
+
+		if ( Q_strstr( gl_renderer, "Matrox" ) && Q_strstr( gl_renderer, "G200" ) )
+			Cbuf_InsertText( "exec hw/G200d3d.cfg\n" );
+		else if ( Q_strstr( gl_renderer, "ATI" ) && ( Q_strstr( gl_renderer, "Rage" ) || Q_strstr( gl_renderer, "RAGE" ) ) && Q_strstr( gl_renderer, "128" ) )
+			Cbuf_InsertText( "exec hw/ATIRage128d3d.cfg\n" );
+		else if ( Q_strstr( gl_vendor, "NVIDIA" ) )
+			Cbuf_InsertText( "exec hw/nvidiad3d.cfg\n" );
+	}
+}
+
+/*
+===============
 GL_Init
 ===============
 */
@@ -262,6 +361,162 @@ void GL_EndRendering( void )
 
 void VID_ShiftPalette( unsigned char *palette )
 {
+}
+
+/*
+=================
+FreeFBOObjects
+=================
+*/
+BOOL FreeFBOObjects( HDC hDC )
+{
+	static qboolean	bSetup_guess;
+	static PIXELFORMATDESCRIPTOR pfd =
+	{
+		sizeof( PIXELFORMATDESCRIPTOR ),	// size of this pfd
+		1,							// version number
+		PFD_DRAW_TO_WINDOW			// support window
+		| PFD_SUPPORT_OPENGL		// support OpenGL
+		| PFD_DOUBLEBUFFER,			// double buffered
+		PFD_TYPE_RGBA,				// RGBA type
+		32,							// 32-bit color depth
+		0, 0, 0, 0, 0, 0,			// color bits ignored
+		0,							// no alpha buffer
+		0,							// shift bit ignored
+		0,							// no accumulation buffer
+		0, 0, 0, 0,					// accum bits ignored
+		32,							// 32-bit z-buffer
+		0,							// no stencil buffer
+		0,							// no auxiliary buffer
+		PFD_MAIN_PLANE,				// main layer
+		0,							// reserved
+		0, 0, 0						// layer masks ignored
+	};
+	int		pixelformat;
+
+	if ( bSetup_guess )
+		return TRUE;
+
+	bSetup_guess = TRUE;
+
+	if ( gfMiniDriver_guess || vid_d3d.value != 0.0 )
+	{
+		if ( ( pixelformat = qwglChoosePixelFormat( hDC, &pfd ) ) == 0 )
+		{
+			MessageBox( NULL, "ChoosePixelFormat failed", "Error", MB_OK );
+			return FALSE;
+		}
+
+		if ( qwglSetPixelFormat( hDC, pixelformat, &pfd ) == FALSE )
+		{
+			MessageBox( NULL, "SetPixelFormat failed", "Error", MB_OK );
+			return FALSE;
+		}
+
+		qwglDescribePixelFormat( hDC, pixelformat, sizeof( pfd ), &pfd );
+	}
+	else
+	{
+		if ( ( pixelformat = ChoosePixelFormat( hDC, &pfd ) ) == 0 )
+		{
+			MessageBox( NULL, "ChoosePixelFormat failed", "Error", MB_OK );
+			return FALSE;
+		}
+
+		if ( SetPixelFormat( hDC, pixelformat, &pfd ) == FALSE )
+		{
+			MessageBox( NULL, "SetPixelFormat failed", "Error", MB_OK );
+			return FALSE;
+		}
+
+		DescribePixelFormat( hDC, pixelformat, sizeof( pfd ), &pfd );
+
+		if ( ( pfd.dwFlags & PFD_GENERIC_FORMAT ) && !( pfd.dwFlags & PFD_GENERIC_ACCELERATED ) )
+			return FALSE;
+	}
+
+	return TRUE;
+}
+
+/*
+=================
+GL_SetMode
+=================
+*/
+int GL_SetMode( HWND mainwindow, HDC *pmaindc, HGLRC *pbaseRC, int fD3D, const char *pszDriver, const char *pszCmdLine )
+{
+	HINSTANCE	hInst;
+
+	gfMiniDriver_guess = FALSE;
+
+	if ( fD3D )
+	{
+		gD3DMode = TRUE;
+		vid_d3d.value = 1;
+	}
+
+	if ( pmaindc )
+		*pmaindc = NULL;
+
+	if ( pbaseRC )
+		*pbaseRC = NULL;
+
+	if ( fD3D )
+	{
+		hInst = QGL_D3DInit( 0 );
+	}
+	else
+	{
+		if ( pszDriver )
+		{
+			if ( Q_strstr( pszDriver, "opengl32" ) )
+				gfMiniDriver_guess = FALSE;
+			else
+				gfMiniDriver_guess = TRUE;
+		}
+
+		hInst = QGL_Init( pszDriver, pszCmdLine );
+	}
+
+	if ( !hInst )
+	{
+		if ( !pszDriver )
+			Sys_Error( "Error initializing gl driver, check that the GL driver file opengl32.dll exists" );
+		else
+			Sys_Error( "Error initializing gl driver, check that the file '%s' exists", pszDriver );
+
+		goto fail;
+	}
+
+	*pmaindc = GetDC( mainwindow );
+
+	if ( !FreeFBOObjects( *pmaindc ) )
+		goto fail;
+
+	*pbaseRC = qwglCreateContext( *pmaindc );
+	if ( !*pbaseRC )
+		goto fail;
+
+	if ( !qwglMakeCurrent( *pmaindc, *pbaseRC ) )
+		goto fail;
+
+	return 1;
+
+fail:
+	if ( hInst )
+	{
+		qwglMakeCurrent( NULL, NULL );
+
+		if ( *pbaseRC )
+			qwglDeleteContext( *pbaseRC );
+
+		if ( *pmaindc )
+			ReleaseDC( mainwindow, *pmaindc );
+
+		FreeLibrary( hInst );
+	}
+
+	return 0;
 }
 
 /*
