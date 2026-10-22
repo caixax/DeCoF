@@ -204,7 +204,7 @@ void GL_Config( void )
 {
 	char	renderer[256];
 
-	if ( vid_d3d.value == 0.0 )
+	if ( !vid_d3d.value )
 		Cbuf_InsertText( "exec hw/opengl.cfg\n" );
 	else
 		Cbuf_InsertText( "exec hw/d3d.cfg\n" );
@@ -399,7 +399,7 @@ BOOL FreeFBOObjects( HDC hDC )
 
 	bSetup_guess = TRUE;
 
-	if ( gfMiniDriver_guess || vid_d3d.value != 0.0 )
+	if ( gfMiniDriver_guess || vid_d3d.value )
 	{
 		if ( ( pixelformat = qwglChoosePixelFormat( hDC, &pfd ) ) == 0 )
 		{
