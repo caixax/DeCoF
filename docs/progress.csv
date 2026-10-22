@@ -10797,95 +10797,95 @@ gameui,1006E020,19,??0PanelMessageFunc_OnCurrentDefaultButtonSet@EditablePanel@v
 gameui,1006E040,110,?InitVar@PanelMessageFunc_OnCurrentDefaultButtonSet@EditablePanel@vgui2@@SAXXZ,vgui2::EditablePanel::PanelMessageFunc_OnCurrentDefaultButtonSet::InitVar,UNKNOWN,vgui2/controls/EditablePanel.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,1006E0B0,19,??0PanelMessageFunc_OnFindDefaultButton@EditablePanel@vgui2@@QAE@XZ,vgui2::EditablePanel::PanelMessageFunc_OnFindDefaultButton::PanelMessageFunc_OnFindDefaultButton,UNKNOWN,vgui2/controls/EditablePanel.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,1006E0D0,107,?InitVar@PanelMessageFunc_OnFindDefaultButton@EditablePanel@vgui2@@SAXXZ,vgui2::EditablePanel::PanelMessageFunc_OnFindDefaultButton::InitVar,UNKNOWN,vgui2/controls/EditablePanel.cpp,,,MATCHED,100,gameui_manual.csv,
-gameui,1006E170,432,??0BuildGroup@vgui2@@QAE@PAVPanel@1@0@Z,vgui2::BuildGroup::BuildGroup,UNKNOWN,,,,TODO,,gameui_manual.csv,
-gameui,1006E320,321,,,UNKNOWN,,,,TODO,,,
-gameui,1006E461,149,,,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,TODO,,,linux: _ZN5vgui210BuildGroup10SetEnabledEb
-gameui,1006E4F6,17,,,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,TODO,,,linux: _ZN5vgui210BuildGroup9IsEnabledEv
-gameui,1006E507,17,,,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,TODO,,,linux: _ZN5vgui210BuildGroup15GetControlGroupEv
-gameui,1006E518,20,,,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,TODO,,,linux: _ZN5vgui210BuildGroup11HasRulersOnEv
-gameui,1006E52C,364,,,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,TODO,,,linux: _ZN5vgui210BuildGroup18ToggleRulerDisplayEv
-gameui,1006E698,121,,,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,TODO,,,linux: _ZN5vgui210BuildGroup21SetRulerLabelsVisibleEb
-gameui,1006E711,24,,,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,TODO,,,linux: _ZN5vgui210BuildGroup19ApplySchemeSettingsEPNS_7ISchemeE
-gameui,1006E729,1252,,,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,TODO,,,linux: _ZN5vgui210BuildGroup10DrawRulersEv
-gameui,1006EC0D,592,,,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,TODO,,,linux: _ZN5vgui210BuildGroup11CursorMovedEiiPNS_5PanelE
-gameui,1006EE5D,1288,,vgui2::BuildGroup::MousePressed,ENGINE,vgui2/controls/BuildGroup.cpp,,,TODO,,linux_symbols:string:0.75,linux: _ZN5vgui210BuildGroup12MousePressedENS_9MouseCodeEPNS_5PanelE
-gameui,1006F365,43,,,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,TODO,,,linux: _ZN5vgui210BuildGroup13MouseReleasedENS_9MouseCodeEPNS_5PanelE
-gameui,1006F390,13,,,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,TODO,,,linux: _ZN5vgui210BuildGroup18MouseDoublePressedENS_9MouseCodeEPNS_5PanelE
-gameui,1006F39D,1315,,,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,TODO,,,linux: _ZN5vgui210BuildGroup12KeyCodeTypedENS_7KeyCodeEPNS_5PanelE
-gameui,1006F8EB,169,,,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,TODO,,,linux: _ZN5vgui210BuildGroup17CreateBuildDialogEv
-gameui,1006F994,237,,,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,TODO,,,linux: _ZN5vgui210BuildGroup19ActivateBuildDialogEv
-gameui,1006FA81,127,,,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,TODO,,,linux: _ZN5vgui210BuildGroup9GetCursorEPNS_5PanelE
-gameui,1006FB00,175,,,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,TODO,,,linux: _ZN5vgui210BuildGroup9ApplySnapEPNS_5PanelE
-gameui,1006FBAF,17,,,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,TODO,,,linux: _ZN5vgui210BuildGroup15GetCurrentPanelEv
-gameui,1006FBC0,50,,,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,TODO,,,linux: _ZN5vgui210BuildGroup10PanelAddedEPNS_5PanelE
-gameui,1006FBF2,402,,,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,TODO,,,linux: _ZN5vgui210BuildGroup19LoadControlSettingsEPKcS2_
+gameui,1006E170,432,??0BuildGroup@vgui2@@QAE@PAVPanel@1@0@Z,vgui2::BuildGroup::BuildGroup,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1006E320,321,??1BuildGroup@vgui2@@QAE@XZ,vgui2::BuildGroup::~BuildGroup,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1006E461,149,?SetEnabled@BuildGroup@vgui2@@UAEX_N@Z,vgui2::BuildGroup::SetEnabled,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui210BuildGroup10SetEnabledEb
+gameui,1006E4F6,17,?IsEnabled@BuildGroup@vgui2@@UAE_NXZ,vgui2::BuildGroup::IsEnabled,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui210BuildGroup9IsEnabledEv
+gameui,1006E507,17,?GetControlGroup@BuildGroup@vgui2@@UAEPAV?$CUtlVector@VPHandle@vgui2@@@@XZ,vgui2::BuildGroup::GetControlGroup,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui210BuildGroup15GetControlGroupEv
+gameui,1006E518,20,?HasRulersOn@BuildGroup@vgui2@@UAE_NXZ,vgui2::BuildGroup::HasRulersOn,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui210BuildGroup11HasRulersOnEv
+gameui,1006E52C,364,?ToggleRulerDisplay@BuildGroup@vgui2@@UAEXXZ,vgui2::BuildGroup::ToggleRulerDisplay,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui210BuildGroup18ToggleRulerDisplayEv
+gameui,1006E698,121,?SetRulerLabelsVisible@BuildGroup@vgui2@@UAEX_N@Z,vgui2::BuildGroup::SetRulerLabelsVisible,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui210BuildGroup21SetRulerLabelsVisibleEb
+gameui,1006E711,24,?ApplySchemeSettings@BuildGroup@vgui2@@MAEXPAVIScheme@2@@Z,vgui2::BuildGroup::ApplySchemeSettings,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui210BuildGroup19ApplySchemeSettingsEPNS_7ISchemeE
+gameui,1006E729,1252,?DrawRulers@BuildGroup@vgui2@@UAEXXZ,vgui2::BuildGroup::DrawRulers,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui210BuildGroup10DrawRulersEv
+gameui,1006EC0D,592,?CursorMoved@BuildGroup@vgui2@@MAEXHHPAVPanel@2@@Z,vgui2::BuildGroup::CursorMoved,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui210BuildGroup11CursorMovedEiiPNS_5PanelE
+gameui,1006EE5D,1288,?MousePressed@BuildGroup@vgui2@@UAEXW4MouseCode@2@PAVPanel@2@@Z,vgui2::BuildGroup::MousePressed,ENGINE,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui210BuildGroup12MousePressedENS_9MouseCodeEPNS_5PanelE
+gameui,1006F365,43,?MouseReleased@BuildGroup@vgui2@@UAEXW4MouseCode@2@PAVPanel@2@@Z,vgui2::BuildGroup::MouseReleased,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui210BuildGroup13MouseReleasedENS_9MouseCodeEPNS_5PanelE
+gameui,1006F390,13,?MouseDoublePressed@BuildGroup@vgui2@@MAEXW4MouseCode@2@PAVPanel@2@@Z,vgui2::BuildGroup::MouseDoublePressed,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui210BuildGroup18MouseDoublePressedENS_9MouseCodeEPNS_5PanelE
+gameui,1006F39D,1315,?KeyCodeTyped@BuildGroup@vgui2@@MAEXW4KeyCode@2@PAVPanel@2@@Z,vgui2::BuildGroup::KeyCodeTyped,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui210BuildGroup12KeyCodeTypedENS_7KeyCodeEPNS_5PanelE
+gameui,1006F8EB,169,?CreateBuildDialog@BuildGroup@vgui2@@AAEPAVPanel@2@XZ,vgui2::BuildGroup::CreateBuildDialog,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui210BuildGroup17CreateBuildDialogEv
+gameui,1006F994,237,?ActivateBuildDialog@BuildGroup@vgui2@@AAEXXZ,vgui2::BuildGroup::ActivateBuildDialog,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui210BuildGroup19ActivateBuildDialogEv
+gameui,1006FA81,127,?GetCursor@BuildGroup@vgui2@@MAEKPAVPanel@2@@Z,vgui2::BuildGroup::GetCursor,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui210BuildGroup9GetCursorEPNS_5PanelE
+gameui,1006FB00,175,?ApplySnap@BuildGroup@vgui2@@AAEXPAVPanel@2@@Z,vgui2::BuildGroup::ApplySnap,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui210BuildGroup9ApplySnapEPNS_5PanelE
+gameui,1006FBAF,17,?GetCurrentPanel@BuildGroup@vgui2@@UAEPAVPanel@2@XZ,vgui2::BuildGroup::GetCurrentPanel,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui210BuildGroup15GetCurrentPanelEv
+gameui,1006FBC0,50,?PanelAdded@BuildGroup@vgui2@@UAEXPAVPanel@2@@Z,vgui2::BuildGroup::PanelAdded,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui210BuildGroup10PanelAddedEPNS_5PanelE
+gameui,1006FBF2,402,?LoadControlSettings@BuildGroup@vgui2@@UAEXPBD0@Z,vgui2::BuildGroup::LoadControlSettings,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui210BuildGroup19LoadControlSettingsEPKcS2_
 gameui,1006FD84,87,?RegisterControlSettingsFile@BuildGroup@vgui2@@QAEXPBD0@Z,vgui2::BuildGroup::RegisterControlSettingsFile,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui210BuildGroup27RegisterControlSettingsFileEPKcS2_
-gameui,1006FDDB,25,,,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,TODO,,,linux: _ZN5vgui210BuildGroup37GetRegisteredControlSettingsFileCountEv
-gameui,1006FDF4,38,,,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,TODO,,,linux: _ZN5vgui210BuildGroup39GetRegisteredControlSettingsFileByIndexEi
-gameui,1006FE1A,417,,,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,TODO,,,linux: _ZN5vgui210BuildGroup21ReloadControlSettingsEv
-gameui,1006FFBB,255,,,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,TODO,,,linux: _ZN5vgui210BuildGroup25ChangeControlSettingsFileEPKc
-gameui,100700BA,234,,vgui2::BuildGroup::SaveControlSettings,ENGINE,vgui2/controls/BuildGroup.cpp,,,TODO,,linux_symbols:string:0.769,linux: _ZN5vgui210BuildGroup19SaveControlSettingsEv
-gameui,100701A4,285,,,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,TODO,,,linux: _ZN5vgui210BuildGroup45DeleteAllControlsCreatedByControlSettingsFileEv
-gameui,100702C1,285,,,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,TODO,,,linux: _ZN5vgui210BuildGroup13ApplySettingsEP9KeyValues
-gameui,100703DE,232,,,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,TODO,,,linux: _ZN5vgui210BuildGroup10NewControlEPKcii
-gameui,100704C6,333,,,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,TODO,,,linux: _ZN5vgui210BuildGroup10NewControlEP9KeyValuesii
-gameui,10070613,166,,,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,TODO,,,linux: _ZN5vgui210BuildGroup15GetNewFieldNameEPcPNS_5PanelE
-gameui,100706B9,132,,,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,TODO,,,linux: _ZN5vgui210BuildGroup14FieldNameTakenEPKc
-gameui,1007073D,295,,,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,TODO,,,linux: _ZN5vgui210BuildGroup11GetSettingsEP9KeyValues
-gameui,10070864,319,,,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,TODO,,,linux: _ZN5vgui210BuildGroup14RemoveSettingsEv
-gameui,100709A3,22,,,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,TODO,,,linux: _ZN5vgui210BuildGroup15SetContextPanelEPNS_5PanelE
-gameui,100709B9,17,,,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,TODO,,,linux: _ZN5vgui210BuildGroup15GetContextPanelEv
-gameui,100709CA,17,,,UNKNOWN,,,,TODO,,,
-gameui,100709DB,63,,,UNKNOWN,,,,TODO,,,
-gameui,10070A20,25,,,UNKNOWN,,,,TODO,,,
-gameui,10070A40,25,,,UNKNOWN,,,,TODO,,,
-gameui,10070A60,17,,,UNKNOWN,,,,TODO,,,
-gameui,10070A80,19,,,UNKNOWN,,,,TODO,,,
-gameui,10070AA0,50,,,UNKNOWN,,,,TODO,,,
-gameui,10070AE0,27,,,UNKNOWN,,,,TODO,,,
-gameui,10070B00,17,,,UNKNOWN,,,,TODO,,,
-gameui,10070B20,32,,,UNKNOWN,,,,TODO,,,
-gameui,10070B40,63,,,UNKNOWN,,,,TODO,,,
-gameui,10070B80,70,,,UNKNOWN,,,,TODO,,,
-gameui,10070BD0,50,,,UNKNOWN,,,,TODO,,,
-gameui,10070C10,27,,,UNKNOWN,,,,TODO,,,
-gameui,10070C30,25,,,UNKNOWN,,,,TODO,,,
-gameui,10070C50,32,,,UNKNOWN,,,,TODO,,,
-gameui,10070C70,70,,,UNKNOWN,,,,TODO,,,
-gameui,10070CC0,51,,,UNKNOWN,,,,TODO,,,
-gameui,10070D00,88,,,UNKNOWN,,,,TODO,,,
-gameui,10070D60,38,,,UNKNOWN,,,,TODO,,,
-gameui,10070D90,25,,,UNKNOWN,,,,TODO,,,
-gameui,10070DB0,65,,,UNKNOWN,,,,TODO,,,
-gameui,10070E00,35,,,UNKNOWN,,,,TODO,,,
-gameui,10070E30,86,,,UNKNOWN,,,,TODO,,,
-gameui,10070E90,11,,,UNKNOWN,,,,TODO,,,
-gameui,10070EA0,75,,,UNKNOWN,,,,TODO,,,
-gameui,10070EF0,19,,,UNKNOWN,,,,TODO,,,
-gameui,10070F10,5,,,UNKNOWN,,,,TODO,,,
-gameui,10070F20,25,,,UNKNOWN,,,,TODO,,,
-gameui,10070F40,65,,,UNKNOWN,,,,TODO,,,
-gameui,10070F90,35,,,UNKNOWN,,,,TODO,,,
-gameui,10070FC0,11,,,UNKNOWN,,,,TODO,,,
-gameui,10070FD0,75,,,UNKNOWN,,,,TODO,,,
-gameui,10071020,19,,,UNKNOWN,,,,TODO,,,
-gameui,10071040,24,,,UNKNOWN,,,,TODO,,,
-gameui,10071060,5,,,UNKNOWN,,,,TODO,,,
-gameui,10071070,17,,,UNKNOWN,,,,TODO,,,
-gameui,10071090,87,,,UNKNOWN,,,,TODO,,,
-gameui,100710F0,86,,,UNKNOWN,,,,TODO,,,
-gameui,10071150,69,,,UNKNOWN,,,,TODO,,,
-gameui,100711A0,58,,,UNKNOWN,,,,TODO,,,
-gameui,100711E0,87,,,UNKNOWN,,,,TODO,,,
-gameui,10071240,86,,,UNKNOWN,,,,TODO,,,
-gameui,100712A0,69,,,UNKNOWN,,,,TODO,,,
-gameui,100712F0,58,,,UNKNOWN,,,,TODO,,,
-gameui,10071330,17,,,UNKNOWN,,,,TODO,,,
-gameui,10071350,199,,,UNKNOWN,,,,TODO,,,
-gameui,10071420,25,,,UNKNOWN,,,,TODO,,,
-gameui,10071440,17,,,UNKNOWN,,,,TODO,,,
-gameui,10071460,199,,,UNKNOWN,,,,TODO,,,
-gameui,10071530,25,,,UNKNOWN,,,,TODO,,,
+gameui,1006FDDB,25,?GetRegisteredControlSettingsFileCount@BuildGroup@vgui2@@QAEHXZ,vgui2::BuildGroup::GetRegisteredControlSettingsFileCount,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui210BuildGroup37GetRegisteredControlSettingsFileCountEv
+gameui,1006FDF4,38,?GetRegisteredControlSettingsFileByIndex@BuildGroup@vgui2@@QAEPBDH@Z,vgui2::BuildGroup::GetRegisteredControlSettingsFileByIndex,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui210BuildGroup39GetRegisteredControlSettingsFileByIndexEi
+gameui,1006FE1A,417,?ReloadControlSettings@BuildGroup@vgui2@@QAEXXZ,vgui2::BuildGroup::ReloadControlSettings,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui210BuildGroup21ReloadControlSettingsEv
+gameui,1006FFBB,255,?ChangeControlSettingsFile@BuildGroup@vgui2@@QAEXPBD@Z,vgui2::BuildGroup::ChangeControlSettingsFile,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui210BuildGroup25ChangeControlSettingsFileEPKc
+gameui,100700BA,234,?SaveControlSettings@BuildGroup@vgui2@@UAE_NXZ,vgui2::BuildGroup::SaveControlSettings,ENGINE,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui210BuildGroup19SaveControlSettingsEv
+gameui,100701A4,285,?DeleteAllControlsCreatedByControlSettingsFile@BuildGroup@vgui2@@AAEXXZ,vgui2::BuildGroup::DeleteAllControlsCreatedByControlSettingsFile,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui210BuildGroup45DeleteAllControlsCreatedByControlSettingsFileEv
+gameui,100702C1,285,?ApplySettings@BuildGroup@vgui2@@UAEXPAVKeyValues@@@Z,vgui2::BuildGroup::ApplySettings,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui210BuildGroup13ApplySettingsEP9KeyValues
+gameui,100703DE,232,?NewControl@BuildGroup@vgui2@@QAEPAVPanel@2@PBDHH@Z,vgui2::BuildGroup::NewControl,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui210BuildGroup10NewControlEPKcii
+gameui,100704C6,333,?NewControl@BuildGroup@vgui2@@QAEPAVPanel@2@PAVKeyValues@@HH@Z,vgui2::BuildGroup::NewControl,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui210BuildGroup10NewControlEP9KeyValuesii
+gameui,10070613,166,?GetNewFieldName@BuildGroup@vgui2@@QAEXPADPAVPanel@2@@Z,vgui2::BuildGroup::GetNewFieldName,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui210BuildGroup15GetNewFieldNameEPcPNS_5PanelE
+gameui,100706B9,132,?FieldNameTaken@BuildGroup@vgui2@@QAEPAVPanel@2@PBD@Z,vgui2::BuildGroup::FieldNameTaken,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui210BuildGroup14FieldNameTakenEPKc
+gameui,1007073D,295,?GetSettings@BuildGroup@vgui2@@UAEXPAVKeyValues@@@Z,vgui2::BuildGroup::GetSettings,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui210BuildGroup11GetSettingsEP9KeyValues
+gameui,10070864,319,?RemoveSettings@BuildGroup@vgui2@@UAEXXZ,vgui2::BuildGroup::RemoveSettings,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui210BuildGroup14RemoveSettingsEv
+gameui,100709A3,22,?SetContextPanel@BuildGroup@vgui2@@UAEXPAVPanel@2@@Z,vgui2::BuildGroup::SetContextPanel,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui210BuildGroup15SetContextPanelEPNS_5PanelE
+gameui,100709B9,17,?GetContextPanel@BuildGroup@vgui2@@UAEPAVPanel@2@XZ,vgui2::BuildGroup::GetContextPanel,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui210BuildGroup15GetContextPanelEv
+gameui,100709CA,17,?GetPanelList@BuildGroup@vgui2@@QAEPAV?$CUtlVector@VPHandle@vgui2@@@@XZ,vgui2::BuildGroup::GetPanelList,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100709DB,63,?GetDialogVariables@BuildGroup@vgui2@@QAEPAVKeyValues@@XZ,vgui2::BuildGroup::GetDialogVariables,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10070A20,25,??4PHandle@vgui2@@QAEPAVPanel@1@PAV21@@Z,vgui2::PHandle::operator=,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10070A40,25,??BPHandle@vgui2@@QAE_NXZ,bool,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10070A60,17,?GetResourceName@BuildGroup@vgui2@@UAEPBDXZ,vgui2::BuildGroup::GetResourceName,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10070A80,19,??BPHandle@vgui2@@QAEPAVPanel@1@XZ,*,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10070AA0,50,??0?$CUtlVector@VPHandle@vgui2@@@@QAE@HH@Z,vgui2::PHandle>,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10070AE0,27,??1?$CUtlVector@VPHandle@vgui2@@@@QAE@XZ,vgui2::PHandle>,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10070B00,17,?Size@?$CUtlVector@VPHandle@vgui2@@@@QBEHXZ,vgui2::PHandle>::Size,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10070B20,32,?AddToTail@?$CUtlVector@VPHandle@vgui2@@@@QAEHABVPHandle@vgui2@@@Z,vgui2::PHandle>::AddToTail,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10070B40,63,?Remove@?$CUtlVector@VPHandle@vgui2@@@@QAEXH@Z,vgui2::PHandle>::Remove,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10070B80,70,?RemoveAll@?$CUtlVector@VPHandle@vgui2@@@@QAEXXZ,vgui2::PHandle>::RemoveAll,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10070BD0,50,??0?$CUtlVector@H@@QAE@HH@Z,CUtlVector<int>::CUtlVector<int>,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10070C10,27,??1?$CUtlVector@H@@QAE@XZ,CUtlVector<int>::~CUtlVector<int>,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10070C30,25,??A?$CUtlVector@H@@QAEAAHH@Z,CUtlVector<int>::operator[],UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10070C50,32,?AddToTail@?$CUtlVector@H@@QAEHABH@Z,CUtlVector<int>::AddToTail,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10070C70,70,?RemoveAll@?$CUtlVector@H@@QAEXXZ,CUtlVector<int>::RemoveAll,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10070CC0,51,?IsValidIndex@?$CUtlVector@VCUtlSymbol@@@@QBE_NH@Z,CUtlSymbol>::IsValidIndex,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10070D00,88,?Find@?$CUtlVector@VCUtlSymbol@@@@QAEHABVCUtlSymbol@@@Z,CUtlSymbol>::Find,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10070D60,38,??8CUtlSymbol@@QBE_NABV0@@Z,CUtlSymbol::operator==,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10070D90,25,?Element@?$CUtlVector@VPHandle@vgui2@@@@QAEAAVPHandle@vgui2@@H@Z,vgui2::PHandle>::Element,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10070DB0,65,?InsertBefore@?$CUtlVector@VPHandle@vgui2@@@@QAEHHABVPHandle@vgui2@@@Z,vgui2::PHandle>::InsertBefore,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10070E00,35,?Purge@?$CUtlVector@VPHandle@vgui2@@@@QAEXXZ,vgui2::PHandle>::Purge,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10070E30,86,?ShiftElementsLeft@?$CUtlVector@VPHandle@vgui2@@@@IAEXHH@Z,vgui2::PHandle>::ShiftElementsLeft,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10070E90,11,?ResetDbgInfo@?$CUtlVector@VPHandle@vgui2@@@@IAEXXZ,vgui2::PHandle>::ResetDbgInfo,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10070EA0,75,??0?$CUtlMemory@VPHandle@vgui2@@@@QAE@HH@Z,vgui2::PHandle>,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10070EF0,19,??1?$CUtlMemory@VPHandle@vgui2@@@@QAE@XZ,vgui2::PHandle>,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10070F10,5,?Destruct@@YAXPAVPHandle@vgui2@@@Z,Destruct,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10070F20,25,?Element@?$CUtlVector@H@@QAEAAHH@Z,CUtlVector<int>::Element,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10070F40,65,?InsertBefore@?$CUtlVector@H@@QAEHHABH@Z,CUtlVector<int>::InsertBefore,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10070F90,35,?Purge@?$CUtlVector@H@@QAEXXZ,CUtlVector<int>::Purge,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10070FC0,11,?ResetDbgInfo@?$CUtlVector@H@@IAEXXZ,CUtlVector<int>::ResetDbgInfo,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10070FD0,75,??0?$CUtlMemory@H@@QAE@HH@Z,CUtlMemory<int>::CUtlMemory<int>,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10071020,19,??1?$CUtlMemory@H@@QAE@XZ,CUtlMemory<int>::~CUtlMemory<int>,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10071040,24,??A?$CUtlMemory@H@@QAEAAHH@Z,CUtlMemory<int>::operator[],UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10071060,5,?Destruct@@YAXPAH@Z,Destruct,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10071070,17,?Size@?$CUtlVector@VCUtlSymbol@@@@QBEHXZ,CUtlSymbol>::Size,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10071090,87,?GrowVector@?$CUtlVector@VPHandle@vgui2@@@@IAEXH@Z,vgui2::PHandle>::GrowVector,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100710F0,86,?ShiftElementsRight@?$CUtlVector@VPHandle@vgui2@@@@IAEXHH@Z,vgui2::PHandle>::ShiftElementsRight,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10071150,69,?Purge@?$CUtlMemory@VPHandle@vgui2@@@@QAEXXZ,vgui2::PHandle>::Purge,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100711A0,58,?CopyConstruct@@YAXPAVPHandle@vgui2@@ABV12@@Z,CopyConstruct,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100711E0,87,?GrowVector@?$CUtlVector@H@@IAEXH@Z,CUtlVector<int>::GrowVector,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10071240,86,?ShiftElementsRight@?$CUtlVector@H@@IAEXHH@Z,CUtlVector<int>::ShiftElementsRight,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100712A0,69,?Purge@?$CUtlMemory@H@@QAEXXZ,CUtlMemory<int>::Purge,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100712F0,58,?CopyConstruct@@YAXPAHABH@Z,CopyConstruct,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10071330,17,?NumAllocated@?$CUtlMemory@VPHandle@vgui2@@@@QBEHXZ,vgui2::PHandle>::NumAllocated,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10071350,199,?Grow@?$CUtlMemory@VPHandle@vgui2@@@@QAEXH@Z,vgui2::PHandle>::Grow,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10071420,25,?IsExternallyAllocated@?$CUtlMemory@VPHandle@vgui2@@@@QBE_NXZ,vgui2::PHandle>::IsExternallyAllocated,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10071440,17,?NumAllocated@?$CUtlMemory@H@@QBEHXZ,CUtlMemory<int>::NumAllocated,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10071460,199,?Grow@?$CUtlMemory@H@@QAEXH@Z,CUtlMemory<int>::Grow,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10071530,25,?IsExternallyAllocated@?$CUtlMemory@H@@QBE_NXZ,CUtlMemory<int>::IsExternallyAllocated,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,10071550,45,,,UNKNOWN,,,,TODO,,,
 gameui,1007157D,437,,,UNKNOWN,vgui2/controls/PanelHorizListPanel.cpp,,,TODO,,,linux: _ZN24ScrollBarReversedButtons19ApplySchemeSettingsEPN5vgui27ISchemeE
 gameui,10071732,345,,vgui2::PanelHorizListPanel::PanelHorizListPanel,ENGINE,vgui2/controls/PanelHorizListPanel.cpp,,,TODO,,linux_symbols:string:0.75,linux: _ZN5vgui219PanelHorizListPanelC1EPNS_5PanelEPKc
@@ -30505,97 +30505,97 @@ hw,01E362C1,63,??1CMemoryPool@@QAE@XZ,CMemoryPool::~CMemoryPool,ENGINE,public/Me
 hw,01E36300,266,,,ENGINE,public/MemPool.cpp,,,TODO,,,linux: _ZN11CMemoryPool10AddNewBlobEv
 hw,01E3640A,151,?Alloc@CMemoryPool@@QAEPAXI@Z,CMemoryPool::Alloc,ENGINE,public/MemPool.cpp,,,TODO,,,
 hw,01E364A1,56,,,ENGINE,public/MemPool.cpp,,,TODO,,,linux: _ZN11CMemoryPool4FreeEPv
-hw,01E364E0,432,??0BuildGroup@vgui2@@QAE@PAVPanel@1@0@Z,vgui2::BuildGroup::BuildGroup,ENGINE,vgui2/controls/BuildGroup.cpp,,,TODO,,,
-hw,01E36690,321,,,ENGINE,vgui2/controls/BuildGroup.cpp,,,TODO,,,
-hw,01E367D1,149,,,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,TODO,,,linux: _ZN5vgui210BuildGroup10SetEnabledEb
-hw,01E36866,17,,,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,TODO,,,linux: _ZN5vgui210BuildGroup9IsEnabledEv
-hw,01E36877,17,,,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,TODO,,,linux: _ZN5vgui210BuildGroup15GetControlGroupEv
-hw,01E36888,20,,,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,TODO,,,linux: _ZN5vgui210BuildGroup11HasRulersOnEv
-hw,01E3689C,364,,,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,TODO,,,linux: _ZN5vgui210BuildGroup18ToggleRulerDisplayEv
-hw,01E36A08,121,,,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,TODO,,,linux: _ZN5vgui210BuildGroup21SetRulerLabelsVisibleEb
-hw,01E36A81,24,,,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,TODO,,,linux: _ZN5vgui210BuildGroup19ApplySchemeSettingsEPNS_7ISchemeE
-hw,01E36A99,1252,,,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,TODO,,,linux: _ZN5vgui210BuildGroup10DrawRulersEv
-hw,01E36F7D,592,,,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,TODO,,,linux: _ZN5vgui210BuildGroup11CursorMovedEiiPNS_5PanelE
-hw,01E371CD,1288,,vgui2::BuildGroup::MousePressed,ENGINE,vgui2/controls/BuildGroup.cpp,,,TODO,,linux_symbols:string:0.75,
-hw,01E376D5,43,,,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,TODO,,,linux: _ZN5vgui210BuildGroup13MouseReleasedENS_9MouseCodeEPNS_5PanelE
-hw,01E37700,13,,,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,TODO,,,linux: _ZN5vgui210BuildGroup18MouseDoublePressedENS_9MouseCodeEPNS_5PanelE
-hw,01E3770D,1315,,,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,TODO,,,linux: _ZN5vgui210BuildGroup12KeyCodeTypedENS_7KeyCodeEPNS_5PanelE
-hw,01E37C5B,169,,,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,TODO,,,linux: _ZN5vgui210BuildGroup17CreateBuildDialogEv
-hw,01E37D04,237,,,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,TODO,,,linux: _ZN5vgui210BuildGroup19ActivateBuildDialogEv
-hw,01E37DF1,127,,,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,TODO,,,linux: _ZN5vgui210BuildGroup9GetCursorEPNS_5PanelE
-hw,01E37E70,175,,,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,TODO,,,linux: _ZN5vgui210BuildGroup9ApplySnapEPNS_5PanelE
-hw,01E37F1F,17,,,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,TODO,,,linux: _ZN5vgui210BuildGroup15GetCurrentPanelEv
-hw,01E37F30,50,,,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,TODO,,,linux: _ZN5vgui210BuildGroup10PanelAddedEPNS_5PanelE
-hw,01E37F62,402,,,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,TODO,,,linux: _ZN5vgui210BuildGroup19LoadControlSettingsEPKcS2_
-hw,01E380F4,87,?RegisterControlSettingsFile@BuildGroup@vgui2@@QAEXPBD0@Z,vgui2::BuildGroup::RegisterControlSettingsFile,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,TODO,,,linux: _ZN5vgui210BuildGroup27RegisterControlSettingsFileEPKcS2_
-hw,01E3814B,25,,,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,TODO,,,linux: _ZN5vgui210BuildGroup37GetRegisteredControlSettingsFileCountEv
-hw,01E38164,38,,,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,TODO,,,linux: _ZN5vgui210BuildGroup39GetRegisteredControlSettingsFileByIndexEi
-hw,01E3818A,417,,,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,TODO,,,linux: _ZN5vgui210BuildGroup21ReloadControlSettingsEv
-hw,01E3832B,255,,,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,TODO,,,linux: _ZN5vgui210BuildGroup25ChangeControlSettingsFileEPKc
-hw,01E3842A,234,,vgui2::BuildGroup::SaveControlSettings,ENGINE,vgui2/controls/BuildGroup.cpp,,,TODO,,linux_symbols:string:0.767,
-hw,01E38514,285,,,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,TODO,,,linux: _ZN5vgui210BuildGroup45DeleteAllControlsCreatedByControlSettingsFileEv
-hw,01E38631,285,,,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,TODO,,,linux: _ZN5vgui210BuildGroup13ApplySettingsEP9KeyValues
-hw,01E3874E,232,,,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,TODO,,,linux: _ZN5vgui210BuildGroup10NewControlEPKcii
-hw,01E38836,333,,,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,TODO,,,linux: _ZN5vgui210BuildGroup10NewControlEP9KeyValuesii
-hw,01E38983,166,,,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,TODO,,,linux: _ZN5vgui210BuildGroup15GetNewFieldNameEPcPNS_5PanelE
-hw,01E38A29,132,,,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,TODO,,,linux: _ZN5vgui210BuildGroup14FieldNameTakenEPKc
-hw,01E38AAD,295,,,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,TODO,,,linux: _ZN5vgui210BuildGroup11GetSettingsEP9KeyValues
-hw,01E38BD4,319,,,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,TODO,,,linux: _ZN5vgui210BuildGroup14RemoveSettingsEv
-hw,01E38D13,22,,,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,TODO,,,linux: _ZN5vgui210BuildGroup15SetContextPanelEPNS_5PanelE
-hw,01E38D29,17,,,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,TODO,,,linux: _ZN5vgui210BuildGroup15GetContextPanelEv
-hw,01E38D3A,17,,,ENGINE,vgui2/controls/BuildGroup.cpp,,,TODO,,,
-hw,01E38D4B,63,,,ENGINE,vgui2/controls/BuildGroup.cpp,,,TODO,,,
-hw,01E38D90,23,,,ENGINE,vgui2/controls/BuildGroup.cpp,,,TODO,,,
-hw,01E38DB0,19,,,ENGINE,vgui2/controls/BuildGroup.cpp,,,TODO,,,
-hw,01E38DD0,25,,,ENGINE,vgui2/controls/BuildGroup.cpp,,,TODO,,,
-hw,01E38DF0,25,,,ENGINE,vgui2/controls/BuildGroup.cpp,,,TODO,,,
-hw,01E38E10,17,,,ENGINE,vgui2/controls/BuildGroup.cpp,,,TODO,,,
-hw,01E38E30,19,,,ENGINE,vgui2/controls/BuildGroup.cpp,,,TODO,,,
-hw,01E38E50,50,,,ENGINE,vgui2/controls/BuildGroup.cpp,,,TODO,,,
-hw,01E38E90,27,,,ENGINE,vgui2/controls/BuildGroup.cpp,,,TODO,,,
-hw,01E38EB0,17,,,ENGINE,vgui2/controls/BuildGroup.cpp,,,TODO,,,
-hw,01E38ED0,32,,,ENGINE,vgui2/controls/BuildGroup.cpp,,,TODO,,,
-hw,01E38EF0,63,,,ENGINE,vgui2/controls/BuildGroup.cpp,,,TODO,,,
-hw,01E38F30,70,,,ENGINE,vgui2/controls/BuildGroup.cpp,,,TODO,,,
-hw,01E38F80,50,,,ENGINE,vgui2/controls/BuildGroup.cpp,,,TODO,,,
-hw,01E38FC0,27,,,ENGINE,vgui2/controls/BuildGroup.cpp,,,TODO,,,
-hw,01E38FE0,25,,,ENGINE,vgui2/controls/BuildGroup.cpp,,,TODO,,,
-hw,01E39000,32,,,ENGINE,vgui2/controls/BuildGroup.cpp,,,TODO,,,
-hw,01E39020,70,,,ENGINE,vgui2/controls/BuildGroup.cpp,,,TODO,,,
-hw,01E39070,51,,,ENGINE,vgui2/controls/BuildGroup.cpp,,,TODO,,,
-hw,01E390B0,88,,,ENGINE,vgui2/controls/BuildGroup.cpp,,,TODO,,,
-hw,01E39110,38,,,ENGINE,vgui2/controls/BuildGroup.cpp,,,TODO,,,
-hw,01E39140,25,,,ENGINE,vgui2/controls/BuildGroup.cpp,,,TODO,,,
-hw,01E39160,65,,,ENGINE,vgui2/controls/BuildGroup.cpp,,,TODO,,,
-hw,01E391B0,35,,,ENGINE,vgui2/controls/BuildGroup.cpp,,,TODO,,,
-hw,01E391E0,86,,,ENGINE,vgui2/controls/BuildGroup.cpp,,,TODO,,,
-hw,01E39240,11,,,ENGINE,vgui2/controls/BuildGroup.cpp,,,TODO,,,
-hw,01E39250,75,,,ENGINE,vgui2/controls/BuildGroup.cpp,,,TODO,,,
-hw,01E392A0,19,,,ENGINE,vgui2/controls/BuildGroup.cpp,,,TODO,,,
-hw,01E392C0,5,,,ENGINE,vgui2/controls/BuildGroup.cpp,,,TODO,,,
-hw,01E392D0,25,,,ENGINE,vgui2/controls/BuildGroup.cpp,,,TODO,,,
-hw,01E392F0,65,,,ENGINE,vgui2/controls/BuildGroup.cpp,,,TODO,,,
-hw,01E39340,35,,,ENGINE,vgui2/controls/BuildGroup.cpp,,,TODO,,,
-hw,01E39370,11,,,ENGINE,vgui2/controls/BuildGroup.cpp,,,TODO,,,
-hw,01E39380,75,,,ENGINE,vgui2/controls/BuildGroup.cpp,,,TODO,,,
-hw,01E393D0,19,,,ENGINE,vgui2/controls/BuildGroup.cpp,,,TODO,,,
-hw,01E393F0,24,,,ENGINE,vgui2/controls/BuildGroup.cpp,,,TODO,,,
-hw,01E39410,5,,,ENGINE,vgui2/controls/BuildGroup.cpp,,,TODO,,,
-hw,01E39420,17,,,ENGINE,vgui2/controls/BuildGroup.cpp,,,TODO,,,
-hw,01E39440,87,,,ENGINE,vgui2/controls/BuildGroup.cpp,,,TODO,,,
-hw,01E394A0,86,,,ENGINE,vgui2/controls/BuildGroup.cpp,,,TODO,,,
-hw,01E39500,69,,,ENGINE,vgui2/controls/BuildGroup.cpp,,,TODO,,,
-hw,01E39550,58,,,ENGINE,vgui2/controls/BuildGroup.cpp,,,TODO,,,
-hw,01E39590,87,,,ENGINE,vgui2/controls/BuildGroup.cpp,,,TODO,,,
-hw,01E395F0,86,,,ENGINE,vgui2/controls/BuildGroup.cpp,,,TODO,,,
-hw,01E39650,69,,,ENGINE,vgui2/controls/BuildGroup.cpp,,,TODO,,,
-hw,01E396A0,58,,,ENGINE,vgui2/controls/BuildGroup.cpp,,,TODO,,,
-hw,01E396E0,17,,,ENGINE,vgui2/controls/BuildGroup.cpp,,,TODO,,,
-hw,01E39700,199,,,ENGINE,vgui2/controls/BuildGroup.cpp,,,TODO,,,
-hw,01E397D0,25,,,ENGINE,vgui2/controls/BuildGroup.cpp,,,TODO,,,
-hw,01E397F0,17,,,ENGINE,vgui2/controls/BuildGroup.cpp,,,TODO,,,
-hw,01E39810,199,,,ENGINE,vgui2/controls/BuildGroup.cpp,,,TODO,,,
-hw,01E398E0,25,,,ENGINE,vgui2/controls/BuildGroup.cpp,,,TODO,,,
+hw,01E364E0,432,??0BuildGroup@vgui2@@QAE@PAVPanel@1@0@Z,vgui2::BuildGroup::BuildGroup,ENGINE,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,,
+hw,01E36690,321,??1BuildGroup@vgui2@@QAE@XZ,vgui2::BuildGroup::~BuildGroup,ENGINE,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E367D1,149,?SetEnabled@BuildGroup@vgui2@@UAEX_N@Z,vgui2::BuildGroup::SetEnabled,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui210BuildGroup10SetEnabledEb
+hw,01E36866,17,?IsEnabled@BuildGroup@vgui2@@UAE_NXZ,vgui2::BuildGroup::IsEnabled,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui210BuildGroup9IsEnabledEv
+hw,01E36877,17,?GetControlGroup@BuildGroup@vgui2@@UAEPAV?$CUtlVector@VPHandle@vgui2@@@@XZ,vgui2::BuildGroup::GetControlGroup,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui210BuildGroup15GetControlGroupEv
+hw,01E36888,20,?HasRulersOn@BuildGroup@vgui2@@UAE_NXZ,vgui2::BuildGroup::HasRulersOn,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui210BuildGroup11HasRulersOnEv
+hw,01E3689C,364,?ToggleRulerDisplay@BuildGroup@vgui2@@UAEXXZ,vgui2::BuildGroup::ToggleRulerDisplay,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui210BuildGroup18ToggleRulerDisplayEv
+hw,01E36A08,121,?SetRulerLabelsVisible@BuildGroup@vgui2@@UAEX_N@Z,vgui2::BuildGroup::SetRulerLabelsVisible,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui210BuildGroup21SetRulerLabelsVisibleEb
+hw,01E36A81,24,?ApplySchemeSettings@BuildGroup@vgui2@@MAEXPAVIScheme@2@@Z,vgui2::BuildGroup::ApplySchemeSettings,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui210BuildGroup19ApplySchemeSettingsEPNS_7ISchemeE
+hw,01E36A99,1252,?DrawRulers@BuildGroup@vgui2@@UAEXXZ,vgui2::BuildGroup::DrawRulers,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui210BuildGroup10DrawRulersEv
+hw,01E36F7D,592,?CursorMoved@BuildGroup@vgui2@@MAEXHHPAVPanel@2@@Z,vgui2::BuildGroup::CursorMoved,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui210BuildGroup11CursorMovedEiiPNS_5PanelE
+hw,01E371CD,1288,?MousePressed@BuildGroup@vgui2@@UAEXW4MouseCode@2@PAVPanel@2@@Z,vgui2::BuildGroup::MousePressed,ENGINE,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E376D5,43,?MouseReleased@BuildGroup@vgui2@@UAEXW4MouseCode@2@PAVPanel@2@@Z,vgui2::BuildGroup::MouseReleased,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui210BuildGroup13MouseReleasedENS_9MouseCodeEPNS_5PanelE
+hw,01E37700,13,?MouseDoublePressed@BuildGroup@vgui2@@MAEXW4MouseCode@2@PAVPanel@2@@Z,vgui2::BuildGroup::MouseDoublePressed,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui210BuildGroup18MouseDoublePressedENS_9MouseCodeEPNS_5PanelE
+hw,01E3770D,1315,?KeyCodeTyped@BuildGroup@vgui2@@MAEXW4KeyCode@2@PAVPanel@2@@Z,vgui2::BuildGroup::KeyCodeTyped,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui210BuildGroup12KeyCodeTypedENS_7KeyCodeEPNS_5PanelE
+hw,01E37C5B,169,?CreateBuildDialog@BuildGroup@vgui2@@AAEPAVPanel@2@XZ,vgui2::BuildGroup::CreateBuildDialog,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui210BuildGroup17CreateBuildDialogEv
+hw,01E37D04,237,?ActivateBuildDialog@BuildGroup@vgui2@@AAEXXZ,vgui2::BuildGroup::ActivateBuildDialog,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui210BuildGroup19ActivateBuildDialogEv
+hw,01E37DF1,127,?GetCursor@BuildGroup@vgui2@@MAEKPAVPanel@2@@Z,vgui2::BuildGroup::GetCursor,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui210BuildGroup9GetCursorEPNS_5PanelE
+hw,01E37E70,175,?ApplySnap@BuildGroup@vgui2@@AAEXPAVPanel@2@@Z,vgui2::BuildGroup::ApplySnap,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui210BuildGroup9ApplySnapEPNS_5PanelE
+hw,01E37F1F,17,?GetCurrentPanel@BuildGroup@vgui2@@UAEPAVPanel@2@XZ,vgui2::BuildGroup::GetCurrentPanel,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui210BuildGroup15GetCurrentPanelEv
+hw,01E37F30,50,?PanelAdded@BuildGroup@vgui2@@UAEXPAVPanel@2@@Z,vgui2::BuildGroup::PanelAdded,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui210BuildGroup10PanelAddedEPNS_5PanelE
+hw,01E37F62,402,?LoadControlSettings@BuildGroup@vgui2@@UAEXPBD0@Z,vgui2::BuildGroup::LoadControlSettings,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui210BuildGroup19LoadControlSettingsEPKcS2_
+hw,01E380F4,87,?RegisterControlSettingsFile@BuildGroup@vgui2@@QAEXPBD0@Z,vgui2::BuildGroup::RegisterControlSettingsFile,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,,linux: _ZN5vgui210BuildGroup27RegisterControlSettingsFileEPKcS2_
+hw,01E3814B,25,?GetRegisteredControlSettingsFileCount@BuildGroup@vgui2@@QAEHXZ,vgui2::BuildGroup::GetRegisteredControlSettingsFileCount,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui210BuildGroup37GetRegisteredControlSettingsFileCountEv
+hw,01E38164,38,?GetRegisteredControlSettingsFileByIndex@BuildGroup@vgui2@@QAEPBDH@Z,vgui2::BuildGroup::GetRegisteredControlSettingsFileByIndex,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui210BuildGroup39GetRegisteredControlSettingsFileByIndexEi
+hw,01E3818A,417,?ReloadControlSettings@BuildGroup@vgui2@@QAEXXZ,vgui2::BuildGroup::ReloadControlSettings,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui210BuildGroup21ReloadControlSettingsEv
+hw,01E3832B,255,?ChangeControlSettingsFile@BuildGroup@vgui2@@QAEXPBD@Z,vgui2::BuildGroup::ChangeControlSettingsFile,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui210BuildGroup25ChangeControlSettingsFileEPKc
+hw,01E3842A,234,?SaveControlSettings@BuildGroup@vgui2@@UAE_NXZ,vgui2::BuildGroup::SaveControlSettings,ENGINE,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E38514,285,?DeleteAllControlsCreatedByControlSettingsFile@BuildGroup@vgui2@@AAEXXZ,vgui2::BuildGroup::DeleteAllControlsCreatedByControlSettingsFile,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui210BuildGroup45DeleteAllControlsCreatedByControlSettingsFileEv
+hw,01E38631,285,?ApplySettings@BuildGroup@vgui2@@UAEXPAVKeyValues@@@Z,vgui2::BuildGroup::ApplySettings,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui210BuildGroup13ApplySettingsEP9KeyValues
+hw,01E3874E,232,?NewControl@BuildGroup@vgui2@@QAEPAVPanel@2@PBDHH@Z,vgui2::BuildGroup::NewControl,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui210BuildGroup10NewControlEPKcii
+hw,01E38836,333,?NewControl@BuildGroup@vgui2@@QAEPAVPanel@2@PAVKeyValues@@HH@Z,vgui2::BuildGroup::NewControl,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui210BuildGroup10NewControlEP9KeyValuesii
+hw,01E38983,166,?GetNewFieldName@BuildGroup@vgui2@@QAEXPADPAVPanel@2@@Z,vgui2::BuildGroup::GetNewFieldName,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui210BuildGroup15GetNewFieldNameEPcPNS_5PanelE
+hw,01E38A29,132,?FieldNameTaken@BuildGroup@vgui2@@QAEPAVPanel@2@PBD@Z,vgui2::BuildGroup::FieldNameTaken,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui210BuildGroup14FieldNameTakenEPKc
+hw,01E38AAD,295,?GetSettings@BuildGroup@vgui2@@UAEXPAVKeyValues@@@Z,vgui2::BuildGroup::GetSettings,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui210BuildGroup11GetSettingsEP9KeyValues
+hw,01E38BD4,319,?RemoveSettings@BuildGroup@vgui2@@UAEXXZ,vgui2::BuildGroup::RemoveSettings,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui210BuildGroup14RemoveSettingsEv
+hw,01E38D13,22,?SetContextPanel@BuildGroup@vgui2@@UAEXPAVPanel@2@@Z,vgui2::BuildGroup::SetContextPanel,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui210BuildGroup15SetContextPanelEPNS_5PanelE
+hw,01E38D29,17,?GetContextPanel@BuildGroup@vgui2@@UAEPAVPanel@2@XZ,vgui2::BuildGroup::GetContextPanel,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui210BuildGroup15GetContextPanelEv
+hw,01E38D3A,17,?GetPanelList@BuildGroup@vgui2@@QAEPAV?$CUtlVector@VPHandle@vgui2@@@@XZ,vgui2::BuildGroup::GetPanelList,ENGINE,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E38D4B,63,?GetDialogVariables@BuildGroup@vgui2@@QAEPAVKeyValues@@XZ,vgui2::BuildGroup::GetDialogVariables,ENGINE,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E38D90,23,??0PHandle@vgui2@@QAE@XZ,vgui2::PHandle::PHandle,ENGINE,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E38DB0,19,??CPHandle@vgui2@@QAEPAVPanel@1@XZ,vgui2::PHandle::operator->,ENGINE,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E38DD0,25,??4PHandle@vgui2@@QAEPAVPanel@1@PAV21@@Z,vgui2::PHandle::operator=,ENGINE,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E38DF0,25,??BPHandle@vgui2@@QAE_NXZ,bool,ENGINE,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E38E10,17,?GetResourceName@BuildGroup@vgui2@@UAEPBDXZ,vgui2::BuildGroup::GetResourceName,ENGINE,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E38E30,19,??BPHandle@vgui2@@QAEPAVPanel@1@XZ,*,ENGINE,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E38E50,50,??0?$CUtlVector@VPHandle@vgui2@@@@QAE@HH@Z,vgui2::PHandle>,ENGINE,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E38E90,27,??1?$CUtlVector@VPHandle@vgui2@@@@QAE@XZ,vgui2::PHandle>,ENGINE,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E38EB0,17,?Size@?$CUtlVector@VPHandle@vgui2@@@@QBEHXZ,vgui2::PHandle>::Size,ENGINE,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E38ED0,32,?AddToTail@?$CUtlVector@VPHandle@vgui2@@@@QAEHABVPHandle@vgui2@@@Z,vgui2::PHandle>::AddToTail,ENGINE,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E38EF0,63,?Remove@?$CUtlVector@VPHandle@vgui2@@@@QAEXH@Z,vgui2::PHandle>::Remove,ENGINE,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E38F30,70,?RemoveAll@?$CUtlVector@VPHandle@vgui2@@@@QAEXXZ,vgui2::PHandle>::RemoveAll,ENGINE,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E38F80,50,??0?$CUtlVector@H@@QAE@HH@Z,CUtlVector<int>::CUtlVector<int>,ENGINE,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E38FC0,27,??1?$CUtlVector@H@@QAE@XZ,CUtlVector<int>::~CUtlVector<int>,ENGINE,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E38FE0,25,??A?$CUtlVector@H@@QAEAAHH@Z,CUtlVector<int>::operator[],ENGINE,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E39000,32,?AddToTail@?$CUtlVector@H@@QAEHABH@Z,CUtlVector<int>::AddToTail,ENGINE,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E39020,70,?RemoveAll@?$CUtlVector@H@@QAEXXZ,CUtlVector<int>::RemoveAll,ENGINE,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E39070,51,?IsValidIndex@?$CUtlVector@VCUtlSymbol@@@@QBE_NH@Z,CUtlSymbol>::IsValidIndex,ENGINE,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E390B0,88,?Find@?$CUtlVector@VCUtlSymbol@@@@QAEHABVCUtlSymbol@@@Z,CUtlSymbol>::Find,ENGINE,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E39110,38,??8CUtlSymbol@@QBE_NABV0@@Z,CUtlSymbol::operator==,ENGINE,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E39140,25,?Element@?$CUtlVector@VPHandle@vgui2@@@@QAEAAVPHandle@vgui2@@H@Z,vgui2::PHandle>::Element,ENGINE,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E39160,65,?InsertBefore@?$CUtlVector@VPHandle@vgui2@@@@QAEHHABVPHandle@vgui2@@@Z,vgui2::PHandle>::InsertBefore,ENGINE,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E391B0,35,?Purge@?$CUtlVector@VPHandle@vgui2@@@@QAEXXZ,vgui2::PHandle>::Purge,ENGINE,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E391E0,86,?ShiftElementsLeft@?$CUtlVector@VPHandle@vgui2@@@@IAEXHH@Z,vgui2::PHandle>::ShiftElementsLeft,ENGINE,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E39240,11,?ResetDbgInfo@?$CUtlVector@VPHandle@vgui2@@@@IAEXXZ,vgui2::PHandle>::ResetDbgInfo,ENGINE,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E39250,75,??0?$CUtlMemory@VPHandle@vgui2@@@@QAE@HH@Z,vgui2::PHandle>,ENGINE,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E392A0,19,??1?$CUtlMemory@VPHandle@vgui2@@@@QAE@XZ,vgui2::PHandle>,ENGINE,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E392C0,5,?Destruct@@YAXPAVPHandle@vgui2@@@Z,Destruct,ENGINE,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E392D0,25,?Element@?$CUtlVector@H@@QAEAAHH@Z,CUtlVector<int>::Element,ENGINE,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E392F0,65,?InsertBefore@?$CUtlVector@H@@QAEHHABH@Z,CUtlVector<int>::InsertBefore,ENGINE,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E39340,35,?Purge@?$CUtlVector@H@@QAEXXZ,CUtlVector<int>::Purge,ENGINE,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E39370,11,?ResetDbgInfo@?$CUtlVector@H@@IAEXXZ,CUtlVector<int>::ResetDbgInfo,ENGINE,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E39380,75,??0?$CUtlMemory@H@@QAE@HH@Z,CUtlMemory<int>::CUtlMemory<int>,ENGINE,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E393D0,19,??1?$CUtlMemory@H@@QAE@XZ,CUtlMemory<int>::~CUtlMemory<int>,ENGINE,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E393F0,24,??A?$CUtlMemory@H@@QAEAAHH@Z,CUtlMemory<int>::operator[],ENGINE,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E39410,5,?Destruct@@YAXPAH@Z,Destruct,ENGINE,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E39420,17,?Size@?$CUtlVector@VCUtlSymbol@@@@QBEHXZ,CUtlSymbol>::Size,ENGINE,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E39440,87,?GrowVector@?$CUtlVector@VPHandle@vgui2@@@@IAEXH@Z,vgui2::PHandle>::GrowVector,ENGINE,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E394A0,86,?ShiftElementsRight@?$CUtlVector@VPHandle@vgui2@@@@IAEXHH@Z,vgui2::PHandle>::ShiftElementsRight,ENGINE,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E39500,69,?Purge@?$CUtlMemory@VPHandle@vgui2@@@@QAEXXZ,vgui2::PHandle>::Purge,ENGINE,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E39550,58,?CopyConstruct@@YAXPAVPHandle@vgui2@@ABV12@@Z,CopyConstruct,ENGINE,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E39590,87,?GrowVector@?$CUtlVector@H@@IAEXH@Z,CUtlVector<int>::GrowVector,ENGINE,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E395F0,86,?ShiftElementsRight@?$CUtlVector@H@@IAEXHH@Z,CUtlVector<int>::ShiftElementsRight,ENGINE,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E39650,69,?Purge@?$CUtlMemory@H@@QAEXXZ,CUtlMemory<int>::Purge,ENGINE,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E396A0,58,?CopyConstruct@@YAXPAHABH@Z,CopyConstruct,ENGINE,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E396E0,17,?NumAllocated@?$CUtlMemory@VPHandle@vgui2@@@@QBEHXZ,vgui2::PHandle>::NumAllocated,ENGINE,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E39700,199,?Grow@?$CUtlMemory@VPHandle@vgui2@@@@QAEXH@Z,vgui2::PHandle>::Grow,ENGINE,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E397D0,25,?IsExternallyAllocated@?$CUtlMemory@VPHandle@vgui2@@@@QBE_NXZ,vgui2::PHandle>::IsExternallyAllocated,ENGINE,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E397F0,17,?NumAllocated@?$CUtlMemory@H@@QBEHXZ,CUtlMemory<int>::NumAllocated,ENGINE,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E39810,199,?Grow@?$CUtlMemory@H@@QAEXH@Z,CUtlMemory<int>::Grow,ENGINE,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E398E0,25,?IsExternallyAllocated@?$CUtlMemory@H@@QBE_NXZ,CUtlMemory<int>::IsExternallyAllocated,ENGINE,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01E39900,113,??0FocusNavGroup@vgui2@@QAE@PAVPanel@1@@Z,vgui2::FocusNavGroup::FocusNavGroup,UNKNOWN,vgui2/controls/FocusNavGroup.cpp,,,MATCHED,100,,
 hw,01E39971,20,??1FocusNavGroup@vgui2@@QAE@XZ,vgui2::FocusNavGroup::~FocusNavGroup,UNKNOWN,vgui2/controls/FocusNavGroup.cpp,,,MATCHED,100,,
 hw,01E39985,852,?RequestFocusPrev@FocusNavGroup@vgui2@@UAE_NI@Z,vgui2::FocusNavGroup::RequestFocusPrev,UNKNOWN,vgui2/controls/FocusNavGroup.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui213FocusNavGroup16RequestFocusPrevEj
@@ -31403,7 +31403,7 @@ hw,01E53860,17,,,ENGINE,vgui2/controls/Menu.cpp,,,TODO,,,
 hw,01E53880,28,?Next@?$CUtlLinkedList@PAVMenuItem@vgui2@@H@@QBEHH@Z,"*,int>::Next",UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,
 hw,01E538A0,91,?IsValidIndex@?$CUtlLinkedList@PAVMenuItem@vgui2@@H@@QBE_NH@Z,"*,int>::IsValidIndex",UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,
 hw,01E53900,51,?IsValidIndex@?$CUtlVector@H@@QBE_NH@Z,CUtlVector<int>::IsValidIndex,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,
-hw,01E53940,77,?Find@?$CUtlVector@H@@QBEHABH@Z,CUtlVector<int>::Find,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,
+hw,01E53940,77,?Find@?$CUtlVector@H@@QAEHABH@Z,CUtlVector<int>::Find,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01E53990,25,,,ENGINE,vgui2/controls/Menu.cpp,,,TODO,,,
 hw,01E539B0,25,,,ENGINE,vgui2/controls/Menu.cpp,,,TODO,,,
 hw,01E539D0,25,?ResetDbgInfo@?$CUtlLinkedList@PAVMenuItem@vgui2@@H@@IAEXXZ,"*,int>::ResetDbgInfo",UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,
@@ -31415,16 +31415,16 @@ hw,01E53AF0,19,,,ENGINE,vgui2/controls/Menu.cpp,,,TODO,,,
 hw,01E53B10,26,,,ENGINE,vgui2/controls/Menu.cpp,,,TODO,,,
 hw,01E53B30,26,,,ENGINE,vgui2/controls/Menu.cpp,,,TODO,,,
 hw,01E53B50,16,?Base@?$CUtlMemory@UListElem_t@?$CUtlLinkedList@PAVMenuItem@vgui2@@H@@@@QAEPAUListElem_t@?$CUtlLinkedList@PAVMenuItem@vgui2@@H@@XZ,"*,int>::ListElem_t>::Base",UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,
-hw,01E53B60,5,?Destruct@@YAXPAH@Z,Destruct,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,
-hw,01E53B70,17,,,ENGINE,vgui2/controls/Menu.cpp,,,TODO,,,
+hw,01E53B60,5,?Destruct@@YAXPAPAVMenuItem@vgui2@@@Z,Destruct,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E53B70,17,?Size@?$CUtlVector@H@@QBEHXZ,CUtlVector<int>::Size,ENGINE,vgui2/controls/Menu.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01E53B90,247,?Alloc@?$CUtlLinkedList@PAVMenuItem@vgui2@@H@@QAEH_N@Z,"*,int>::Alloc",UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,
 hw,01E53C90,180,?LinkBefore@?$CUtlLinkedList@PAVMenuItem@vgui2@@H@@QAEXHH@Z,"*,int>::LinkBefore",UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,
-hw,01E53D50,69,?Purge@?$CUtlMemory@H@@QAEXXZ,CUtlMemory<int>::Purge,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,
-hw,01E53DA0,58,?CopyConstruct@@YAXPAHABH@Z,CopyConstruct,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,
+hw,01E53D50,69,?Purge@?$CUtlMemory@UListElem_t@?$CUtlLinkedList@PAVMenuItem@vgui2@@H@@@@QAEXXZ,"*,int>::ListElem_t>::Purge",UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E53DA0,58,?CopyConstruct@@YAXPAPAVMenuItem@vgui2@@ABQAV12@@Z,CopyConstruct,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01E53DE0,190,?Unlink@?$CUtlLinkedList@PAVMenuItem@vgui2@@H@@QAEXH@Z,"*,int>::Unlink",UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,
-hw,01E53EA0,17,?NumAllocated@?$CUtlMemory@H@@QBEHXZ,CUtlMemory<int>::NumAllocated,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,
+hw,01E53EA0,17,?NumAllocated@?$CUtlMemory@UListElem_t@?$CUtlLinkedList@PAVMenuItem@vgui2@@H@@@@QBEHXZ,"*,int>::ListElem_t>::NumAllocated",UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01E53EC0,199,?Grow@?$CUtlMemory@UListElem_t@?$CUtlLinkedList@PAVMenuItem@vgui2@@H@@@@QAEXH@Z,"*,int>::ListElem_t>::Grow",UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,
-hw,01E53F90,25,?IsExternallyAllocated@?$CUtlMemory@H@@QBE_NXZ,CUtlMemory<int>::IsExternallyAllocated,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,
+hw,01E53F90,25,?IsExternallyAllocated@?$CUtlMemory@UListElem_t@?$CUtlLinkedList@PAVMenuItem@vgui2@@H@@@@QBE_NXZ,"*,int>::ListElem_t>::IsExternallyAllocated",UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01E53FB0,25,?Construct@@YAXPAPAVMenuItem@vgui2@@@Z,Construct,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,
 hw,01E53FD0,68,?IsInList@?$CUtlLinkedList@PAVMenuItem@vgui2@@H@@QBE_NH@Z,"*,int>::IsInList",UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,
 hw,01E54020,28,?Previous@?$CUtlLinkedList@PAVMenuItem@vgui2@@H@@QBEHH@Z,"*,int>::Previous",UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,

@@ -83,7 +83,7 @@ public:
 	int AddVectorToTail( CUtlVector<T> const &src );
 
 	// Finds an element (element needs operator== defined)
-	int Find( T const& src ) const;
+	int Find( T const& src );
 
 	bool HasElement( T const& src );
 
@@ -354,9 +354,9 @@ int CUtlVector<T>::AddVectorToTail( CUtlVector<T> const &src )
 // Finds an element (element needs operator== defined)
 //-----------------------------------------------------------------------------
 template< class T >
-int CUtlVector<T>::Find( T const& src ) const
+int CUtlVector<T>::Find( T const& src )
 {
-	for ( int i = 0; i < Count(); ++i )
+	for ( int i = 0; i < Size(); ++i )
 	{
 		if (Element(i) == src)
 			return i;

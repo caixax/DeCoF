@@ -2649,6 +2649,18 @@
           ]
         },
         {
+          "name": "vgui2/controls/BuildGroup",
+          "source": "src/vgui2/controls/BuildGroup.cpp",
+          "functions_file": "tools/units/hw_vgui2_controls_BuildGroup.txt",
+          "includes": [
+            "src/gameui",
+            "src/public",
+            "src/common",
+            "src/engine",
+            "src/pm_shared"
+          ]
+        },
+        {
           "name": "engine/net_api",
           "source": "src/engine_hw/net_api.c",
           "functions_file": "tools/units/hw_engine_net_api.txt"
