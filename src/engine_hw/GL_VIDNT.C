@@ -33,6 +33,67 @@ cvar_t	gl_d3dflip = { "gl_d3dflip", "0" };
 
 /*
 ================
+CheckTextureExtensions
+================
+*/
+void CheckTextureExtensions( void )
+{
+	qboolean	texture_ext = FALSE;
+
+	if ( vid_d3d.value )
+		return;
+
+	if ( Q_strstr( gl_extensions, "GL_EXT_paletted_texture" ) && Q_strstr( gl_extensions, "GL_EXT_shared_texture_palette" ) )
+	{
+		qglColorTableEXT = (void *)qwglGetProcAddress( "glColorTableEXT" );
+		Con_Printf( "Found paletted texture extension.\n" );
+	}
+	else
+	{
+		qglColorTableEXT = NULL;
+	}
+
+	if ( Q_strstr( gl_extensions, "GL_EXT_texture_object " ) )
+		texture_ext = TRUE;
+
+	if ( !texture_ext || COM_CheckParm( "-gl11" ) )
+		return;
+
+	qglBindTexture = (void *)qwglGetProcAddress( "glBindTextureEXT" );
+	if ( !qglBindTexture )
+		Sys_Error( "GetProcAddress for BindTextureEXT failed" );
+}
+
+/*
+================
+CheckArrayExtensions
+================
+*/
+void CheckArrayExtensions( void )
+{
+	char	*tmp;
+
+	// check for texture extension
+	tmp = (char *)qglGetString( GL_EXTENSIONS );
+	while ( *tmp )
+	{
+		if ( Q_strncmp( tmp, "GL_EXT_vertex_array", Q_strlen( "GL_EXT_vertex_array" ) ) == 0 )
+		{
+			if ( 0 )
+			{
+				Sys_Error( "GetProcAddress for vertex extension failed" );
+				return;
+			}
+			return;
+		}
+		tmp++;
+	}
+
+	Sys_Error( "Vertex array extension not present" );
+}
+
+/*
+================
 CheckATINPatchExtensions
 ================
 */
