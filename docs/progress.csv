@@ -26117,7 +26117,7 @@ hw,01D72D80,221,_CheckTextureExtensions,CheckTextureExtensions,ENGINE,engine/GL_
 hw,01D72E5D,114,_CheckArrayExtensions,CheckArrayExtensions,ENGINE,engine/GL_VIDNT.C,,,MATCHED,100,linux_symbols:string:0.688,
 hw,01D72ECF,424,_CheckMultiTextureExtensions,CheckMultiTextureExtensions,ENGINE,engine/GL_VIDNT.C,,,MATCHED,100,linux_symbols:string:0.495,
 hw,01D73077,96,_CheckATINPatchExtensions,CheckATINPatchExtensions,ENGINE,engine/GL_VIDNT.C,,,MATCHED,100,,
-hw,01D730D7,1113,_GL_Config,GL_Config,ENGINE,engine/GL_VIDNT.C,,,TODO,99.79,linux_symbols:string:0.466,
+hw,01D730D7,1113,_GL_Config,GL_Config,ENGINE,engine/GL_VIDNT.C,,,MATCHED,100,linux_symbols:string:0.466,
 hw,01D73530,359,_GL_Init,GL_Init,ENGINE,engine/GL_VIDNT.C,,,MATCHED,100,linux_symbols:string:0.453,
 hw,01D73697,108,_GL_BeginRendering,GL_BeginRendering,ENGINE,engine/GL_VIDNT.C,,,MATCHED,100,linux_symbols:caller:0.4,
 hw,01D73703,11,_GL_EndRendering,GL_EndRendering,ENGINE,engine/GL_VIDNT.C,,,MATCHED,100,,

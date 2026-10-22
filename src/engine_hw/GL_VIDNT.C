@@ -204,10 +204,10 @@ void GL_Config( void )
 {
 	char	renderer[256];
 
-	if ( !vid_d3d.value )
-		Cbuf_InsertText( "exec hw/opengl.cfg\n" );
-	else
+	if ( vid_d3d.value )
 		Cbuf_InsertText( "exec hw/d3d.cfg\n" );
+	else
+		Cbuf_InsertText( "exec hw/opengl.cfg\n" );
 
 	Q_strncpy( renderer, gl_renderer, sizeof( renderer ) - 1 );
 	renderer[sizeof( renderer ) - 1] = 0;
