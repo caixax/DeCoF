@@ -2688,6 +2688,17 @@
           "functions_file": "tools/units/hw_engine_r_trans.txt"
         },
         {
+          "name": "engine/VGUI_EngineSurfaceWrap",
+          "source": "src/engine_hw/VGUI_EngineSurfaceWrap.cpp",
+          "functions_file": "tools/units/hw_engine_VGUI_EngineSurfaceWrap.txt",
+          "includes": [
+            "src/engine_hw",
+            "src/public",
+            "src/common",
+            "src/utils/vgui/include"
+          ]
+        },
+        {
           "name": "engine/vgui_EngineSurfaceHW",
           "source": "src/engine_hw/vgui_EngineSurfaceHW.cpp",
           "functions_file": "tools/units/hw_engine_vgui_EngineSurfaceHW.txt",

@@ -29098,45 +29098,45 @@ hw,01E02AA0,73,,vgui::Bitmap::Bitmap,LIB,,,,,,ghidra,
 hw,01E02AF0,64,,vgui::Bitmap::operator=,LIB,,,,,,ghidra,
 hw,01E02B30,37,,vgui::BitmapTGA::BitmapTGA,LIB,,,,,,ghidra,
 hw,01E02B60,28,,vgui::BitmapTGA::operator=,LIB,,,,,,ghidra,
-hw,01E02B80,10,,,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,TODO,,,
-hw,01E02B8A,15,,,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,TODO,,,
-hw,01E02B99,1505,,,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,TODO,,,
-hw,01E0317A,51,,,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,TODO,,,
-hw,01E031AD,697,,,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,TODO,,,
-hw,01E03590,251,,,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,TODO,,,
-hw,01E0368B,13,,,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,TODO,,,
-hw,01E03698,961,,,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,TODO,,,
-hw,01E03A59,409,,,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,TODO,,,
-hw,01E03BF2,13,,,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,TODO,,,
-hw,01E03BFF,18,,,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,TODO,,,
-hw,01E03C11,36,,,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,TODO,,,
-hw,01E03C35,13,,,UNKNOWN,engine/VGUI_EngineSurfaceWrap.cpp,,,TODO,,,linux: _ZN17EngineSurfaceWrap8setTitleEPKc
-hw,01E03C42,15,,,UNKNOWN,engine/VGUI_EngineSurfaceWrap.cpp,,,TODO,,,linux: _ZN17EngineSurfaceWrap17setFullscreenModeEiii
-hw,01E03C51,11,,,UNKNOWN,engine/VGUI_EngineSurfaceWrap.cpp,,,TODO,,,linux: _ZN17EngineSurfaceWrap15setWindowedModeEv
-hw,01E03C5C,13,,,UNKNOWN,engine/VGUI_EngineSurfaceWrap.cpp,,,TODO,,,linux: _ZN17EngineSurfaceWrap12setAsTopMostEb
-hw,01E03C69,13,,,UNKNOWN,engine/VGUI_EngineSurfaceWrap.cpp,,,TODO,,,linux: _ZN17EngineSurfaceWrap8hasFocusEv
-hw,01E03C76,15,,,UNKNOWN,engine/VGUI_EngineSurfaceWrap.cpp,,,TODO,,,linux: _ZN17EngineSurfaceWrap8isWithinEii
-hw,01E03C85,170,,,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,TODO,,,
-hw,01E03D2F,30,,,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,TODO,,,
-hw,01E03D4D,13,,,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,TODO,,,
-hw,01E03D5A,11,,,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,TODO,,,
-hw,01E03D65,11,,,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,TODO,,,
-hw,01E03D70,46,,,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,TODO,,,
-hw,01E03D9E,46,,,UNKNOWN,engine/VGUI_EngineSurfaceWrap.cpp,,,TODO,,,linux: _ZN17EngineSurfaceWrap14drawFilledRectEiiii
-hw,01E03DCC,42,,,UNKNOWN,engine/VGUI_EngineSurfaceWrap.cpp,,,TODO,,,linux: _ZN17EngineSurfaceWrap16drawOutlinedRectEiiii
-hw,01E03DF6,38,,,UNKNOWN,engine/VGUI_EngineSurfaceWrap.cpp,,,TODO,,,linux: _ZN17EngineSurfaceWrap12drawPolyLineEPiS0_i
-hw,01E03E1C,46,,,UNKNOWN,engine/VGUI_EngineSurfaceWrap.cpp,,,TODO,,,linux: _ZN17EngineSurfaceWrap19drawTexturedPolygonEPN4vgui10VGuiVertexEi
-hw,01E03E4A,50,,,UNKNOWN,engine/VGUI_EngineSurfaceWrap.cpp,,,TODO,,,linux: _ZN17EngineSurfaceWrap8drawLineEiiii
-hw,01E03E7C,34,,,UNKNOWN,engine/VGUI_EngineSurfaceWrap.cpp,,,TODO,,,linux: _ZN17EngineSurfaceWrap18drawSetTextureRGBAEiPKcii
-hw,01E03E9E,46,,,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,TODO,,,
-hw,01E03ECC,28,,,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,TODO,,,
-hw,01E03EE8,46,,,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,TODO,,,
-hw,01E03F16,46,,,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,TODO,,,
-hw,01E03F44,38,,,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,TODO,,,
-hw,01E03F6A,38,,,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,TODO,,,
-hw,01E03F90,62,,,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,TODO,,,
-hw,01E03FCE,62,,,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,TODO,,,
-hw,01E04010,143,,,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,TODO,,,
+hw,01E02B80,10,,,UNKNOWN,engine/VGUI_EngineSurfaceWrap.cpp,,,TODO,,,VC6 dynamic initializer ($E) of a file static (the staticFontInfoVGUIDar constructor)
+hw,01E02B8A,15,,,UNKNOWN,engine/VGUI_EngineSurfaceWrap.cpp,,,TODO,,,VC6 dynamic initializer ($E) of a file static (the staticFontInfoVGUIDar constructor)
+hw,01E02B99,1505,??0EngineSurfaceWrap@@QAE@PAVPanel@vgui@@PAVIEngineSurface@@@Z,EngineSurfaceWrap::EngineSurfaceWrap,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E0317A,51,??1EngineSurfaceWrap@@QAE@XZ,EngineSurfaceWrap::~EngineSurfaceWrap,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E031AD,697,?AppHandler@EngineSurfaceWrap@@UAEXPAXIIJ@Z,EngineSurfaceWrap::AppHandler,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E03590,251,?setCursor@EngineSurfaceWrap@@UAEXPAVCursor@vgui@@@Z,EngineSurfaceWrap::setCursor,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E0368B,13,?invalidate@EngineSurfaceWrap@@UAEXPAVPanel@vgui@@@Z,EngineSurfaceWrap::invalidate,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E03698,961,?drawSetTextFont@EngineSurfaceWrap@@UAEXPAVFont@vgui@@@Z,EngineSurfaceWrap::drawSetTextFont,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E03A59,409,?drawPrintText@EngineSurfaceWrap@@UAEXPBDH@Z,EngineSurfaceWrap::drawPrintText,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E03BF2,13,?createPopup@EngineSurfaceWrap@@UAEXPAVPanel@vgui@@@Z,EngineSurfaceWrap::createPopup,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E03BFF,18,?lockCursor@EngineSurfaceWrap@@UAEXXZ,EngineSurfaceWrap::lockCursor,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E03C11,36,?unlockCursor@EngineSurfaceWrap@@UAEXXZ,EngineSurfaceWrap::unlockCursor,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E03C35,13,?setTitle@EngineSurfaceWrap@@UAEXPBD@Z,EngineSurfaceWrap::setTitle,UNKNOWN,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN17EngineSurfaceWrap8setTitleEPKc
+hw,01E03C42,15,?setFullscreenMode@EngineSurfaceWrap@@UAE_NHHH@Z,EngineSurfaceWrap::setFullscreenMode,UNKNOWN,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN17EngineSurfaceWrap17setFullscreenModeEiii
+hw,01E03C51,11,?setWindowedMode@EngineSurfaceWrap@@UAEXXZ,EngineSurfaceWrap::setWindowedMode,UNKNOWN,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN17EngineSurfaceWrap15setWindowedModeEv
+hw,01E03C5C,13,?setAsTopMost@EngineSurfaceWrap@@UAEX_N@Z,EngineSurfaceWrap::setAsTopMost,UNKNOWN,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN17EngineSurfaceWrap12setAsTopMostEb
+hw,01E03C69,13,?hasFocus@EngineSurfaceWrap@@UAE_NXZ,EngineSurfaceWrap::hasFocus,UNKNOWN,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN17EngineSurfaceWrap8hasFocusEv
+hw,01E03C76,15,?isWithin@EngineSurfaceWrap@@UAE_NHH@Z,EngineSurfaceWrap::isWithin,UNKNOWN,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN17EngineSurfaceWrap8isWithinEii
+hw,01E03C85,170,?pushMakeCurrent@EngineSurfaceWrap@@UAEXPAVPanel@vgui@@_N@Z,EngineSurfaceWrap::pushMakeCurrent,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E03D2F,30,?popMakeCurrent@EngineSurfaceWrap@@UAEXPAVPanel@vgui@@@Z,EngineSurfaceWrap::popMakeCurrent,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E03D4D,13,?enableMouseCapture@EngineSurfaceWrap@@UAEX_N@Z,EngineSurfaceWrap::enableMouseCapture,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E03D5A,11,?swapBuffers@EngineSurfaceWrap@@UAEXXZ,EngineSurfaceWrap::swapBuffers,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E03D65,11,?applyChanges@EngineSurfaceWrap@@UAEXXZ,EngineSurfaceWrap::applyChanges,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E03D70,46,?drawFilledRect@EngineSurfaceWrap@@UAEXHHHH@Z,EngineSurfaceWrap::drawFilledRect,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E03D9E,46,?drawOutlinedRect@EngineSurfaceWrap@@UAEXHHHH@Z,EngineSurfaceWrap::drawOutlinedRect,UNKNOWN,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN17EngineSurfaceWrap14drawFilledRectEiiii
+hw,01E03DCC,42,?drawPolyLine@EngineSurfaceWrap@@UAEXPAH0H@Z,EngineSurfaceWrap::drawPolyLine,UNKNOWN,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN17EngineSurfaceWrap16drawOutlinedRectEiiii
+hw,01E03DF6,38,?drawTexturedPolygon@EngineSurfaceWrap@@UAEXPAVVGuiVertex@vgui2@@H@Z,EngineSurfaceWrap::drawTexturedPolygon,UNKNOWN,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN17EngineSurfaceWrap12drawPolyLineEPiS0_i
+hw,01E03E1C,46,?drawLine@EngineSurfaceWrap@@UAEXHHHH@Z,EngineSurfaceWrap::drawLine,UNKNOWN,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN17EngineSurfaceWrap19drawTexturedPolygonEPN4vgui10VGuiVertexEi
+hw,01E03E4A,50,?drawSetTextureRGBA@EngineSurfaceWrap@@UAEXHPBDHH@Z,EngineSurfaceWrap::drawSetTextureRGBA,UNKNOWN,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN17EngineSurfaceWrap8drawLineEiiii
+hw,01E03E7C,34,?drawSetTexture@EngineSurfaceWrap@@UAEXH@Z,EngineSurfaceWrap::drawSetTexture,UNKNOWN,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN17EngineSurfaceWrap18drawSetTextureRGBAEiPKcii
+hw,01E03E9E,46,?drawTexturedRect@EngineSurfaceWrap@@UAEXHHHH@Z,EngineSurfaceWrap::drawTexturedRect,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E03ECC,28,?createNewTextureID@EngineSurfaceWrap@@UAEHXZ,EngineSurfaceWrap::createNewTextureID,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E03EE8,46,?drawSetColor@EngineSurfaceWrap@@UAEXHHHH@Z,EngineSurfaceWrap::drawSetColor,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E03F16,46,?drawSetTextColor@EngineSurfaceWrap@@UAEXHHHH@Z,EngineSurfaceWrap::drawSetTextColor,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E03F44,38,?drawSetTextPos@EngineSurfaceWrap@@UAEXHH@Z,EngineSurfaceWrap::drawSetTextPos,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E03F6A,38,?drawGetTextPos@EngineSurfaceWrap@@UAEXAAH0@Z,EngineSurfaceWrap::drawGetTextPos,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E03F90,62,?drawPrintChar@EngineSurfaceWrap@@UAEXHHHHMMMM@Z,EngineSurfaceWrap::drawPrintChar,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E03FCE,62,?drawPrintCharAdd@EngineSurfaceWrap@@UAEXHHHHMMMM@Z,EngineSurfaceWrap::drawPrintCharAdd,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E04010,143,??0FontInfoVGUI@@QAE@XZ,FontInfoVGUI::FontInfoVGUI,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01E040A0,53,,vgui::Dar<char>::Dar<char>,LIB,,,,,,ghidra,
 hw,01E040E0,57,,vgui::Dar<char>::Dar<char>,LIB,,,,,,ghidra,
 hw,01E04120,212,,vgui::Dar<char>::ensureCapacity,LIB,,,,,,ghidra,
@@ -29389,12 +29389,12 @@ hw,01E08C10,105,,vgui::Dar<vgui::RepaintSignal*>::removeElementAt,LIB,,,,,,ghidr
 hw,01E08C80,76,,vgui::Dar<vgui::RepaintSignal*>::removeElement,LIB,,,,,,ghidra,
 hw,01E08CD0,20,,vgui::Dar<vgui::RepaintSignal*>::removeAll,LIB,,,,,,ghidra,
 hw,01E08CF0,45,,vgui::Dar<vgui::RepaintSignal*>::operator[],LIB,,,,,,ghidra,
-hw,01E08D20,53,,,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,TODO,,,
-hw,01E08D60,40,,,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,TODO,,,
-hw,01E08D90,16,,,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,TODO,,,
-hw,01E08DA0,60,,,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,TODO,,,
-hw,01E08DE0,45,,,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,TODO,,,
-hw,01E08E10,221,,,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,TODO,,,
+hw,01E08D20,53,??0?$Dar@PAVFontInfoVGUI@@@vgui@@QAE@XZ,*>,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E08D60,40,?setCount@?$Dar@PAVFontInfoVGUI@@@vgui@@QAEXH@Z,*>::setCount,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E08D90,16,?getCount@?$Dar@PAVFontInfoVGUI@@@vgui@@QAEHXZ,*>::getCount,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E08DA0,60,?addElement@?$Dar@PAVFontInfoVGUI@@@vgui@@QAEXPAVFontInfoVGUI@@@Z,*>::addElement,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E08DE0,45,??A?$Dar@PAVFontInfoVGUI@@@vgui@@QAEPAVFontInfoVGUI@@H@Z,*>::operator[],ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E08E10,221,?ensureCapacity@?$Dar@PAVFontInfoVGUI@@@vgui@@QAEXH@Z,*>::ensureCapacity,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01E08EF0,15,_VGui_Startup,,ENGINE,engine/vgui_int.cpp,,,TODO,,,
 hw,01E08EFF,20,_VGui_Shutdown,,ENGINE,engine/vgui_int.cpp,,,TODO,,,
 hw,01E08F13,57,_VGui_CallEngineSurfaceAppHandler,VGui_CallEngineSurfaceAppHandler,ENGINE,engine/vgui_int.cpp,,,TODO,,,
