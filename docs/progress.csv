@@ -28977,78 +28977,78 @@ hw,01DFF0C1,35,,,UNKNOWN,engine/vgui_EngineSurface.cpp,,,TODO,,,linux: _ZN13Engi
 hw,01DFF0E4,31,,,UNKNOWN,engine/vgui_EngineSurface.cpp,,,TODO,,,linux: _ZN13EngineSurface18createNewTextureIDEv
 hw,01DFF110,46,,,UNKNOWN,,,,TODO,,,
 hw,01DFF140,19,,,UNKNOWN,,,,TODO,,,
-hw,01DFF160,20,,,UNKNOWN,,,,TODO,,,
+hw,01DFF160,20,?VguiSurfaceTexturesLessFunc@@YA_NABVTexture@?%vgui_EngineSurfaceHW.cpp0@@0@Z,?VguiSurfaceTexturesLessFunc@@YA_NABVTexture@?%vgui_EngineSurfaceHW.cpp0@@0@Z,UNKNOWN,engine/vgui_EngineSurfaceHW.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01DFF174,15,,,UNKNOWN,,,,TODO,,,
 hw,01DFF183,27,,,UNKNOWN,,,,TODO,,,
 hw,01DFF19E,18,,,UNKNOWN,,,,TODO,,,
 hw,01DFF1B0,15,,,UNKNOWN,,,,TODO,,,
-hw,01DFF1BF,49,,,UNKNOWN,,,,TODO,,,
-hw,01DFF1F0,307,,,UNKNOWN,,,,TODO,,,
-hw,01DFF323,43,,,UNKNOWN,,,,TODO,,,
-hw,01DFF34E,11,,,UNKNOWN,,,,TODO,,,
-hw,01DFF359,11,,,UNKNOWN,,,,TODO,,,
-hw,01DFF364,229,,,UNKNOWN,engine/vgui_EngineSurfaceHW.cpp,,,TODO,,,linux: _ZN13EngineSurface14drawFilledRectEiiii
-hw,01DFF449,288,,,UNKNOWN,engine/vgui_EngineSurfaceHW.cpp,,,TODO,,,linux: _ZN13EngineSurface12drawPolyLineEPiS0_i
-hw,01DFF569,190,,,UNKNOWN,engine/vgui_EngineSurfaceHW.cpp,,,TODO,,,linux: _ZN13EngineSurface19drawTexturedPolygonEPN4vgui10VGuiVertexEi
-hw,01DFF627,205,,,UNKNOWN,engine/vgui_EngineSurfaceHW.cpp,,,TODO,,,linux: _ZN13EngineSurface8drawLineEiiii
-hw,01DFF6F4,212,,,UNKNOWN,engine/vgui_EngineSurfaceHW.cpp,,,TODO,,,linux: _ZN13EngineSurface16drawOutlinedRectEiiii
-hw,01DFF7C8,680,,,UNKNOWN,engine/vgui_EngineSurfaceHW.cpp,,,TODO,,,linux: _ZN13EngineSurface13drawPrintCharEiiiiffff
-hw,01DFFA70,367,,,UNKNOWN,engine/vgui_EngineSurfaceHW.cpp,,,TODO,,,linux: _ZN13EngineSurface16drawPrintCharAddEiiiiffff
-hw,01DFFBDF,759,,,UNKNOWN,engine/vgui_EngineSurfaceHW.cpp,,,TODO,,,linux: _ZN13EngineSurface18drawSetTextureRGBAEiPKciiii
-hw,01DFFED6,88,,,UNKNOWN,engine/vgui_EngineSurfaceHW.cpp,,,TODO,,,linux: _ZN13EngineSurface18drawSetTextureBGRAEiPKciiii
-hw,01DFFF2E,61,,,UNKNOWN,engine/vgui_EngineSurfaceHW.cpp,,,TODO,,,linux: _ZN13EngineSurface27drawUpdateRegionTextureBGRAEiiiPKhii
-hw,01DFFF6B,75,,,UNKNOWN,engine/vgui_EngineSurfaceHW.cpp,,,TODO,,,linux: _ZN13EngineSurface14drawSetTextureEi
-hw,01DFFFB6,223,,,UNKNOWN,engine/vgui_EngineSurfaceHW.cpp,,,TODO,,,linux: _ZN13EngineSurface13drawFlushTextEv
-hw,01E00095,452,,,UNKNOWN,engine/vgui_EngineSurfaceHW.cpp,,,TODO,,,linux: _ZN13EngineSurface16drawTexturedRectEiiii
-hw,01E00259,621,,,UNKNOWN,engine/vgui_EngineSurfaceHW.cpp,,,TODO,,,linux: _ZN13EngineSurface15pushMakeCurrentEPiS0_S0_b
-hw,01E004C6,79,,,UNKNOWN,engine/vgui_EngineSurfaceHW.cpp,,,TODO,,,linux: _ZN13EngineSurface14popMakeCurrentEv
-hw,01E00515,470,,EngineSurface::drawSetTextureFile,ENGINE,engine/vgui_EngineSurfaceHW.cpp,,,TODO,,linux_symbols:string:0.594,
-hw,01E006EB,56,,,UNKNOWN,engine/vgui_EngineSurfaceHW.cpp,,,TODO,,,linux: _ZN13EngineSurface21drawSetSubTextureRGBAEiiiPKhii
-hw,01E00723,78,,,UNKNOWN,engine/vgui_EngineSurfaceHW.cpp,,,TODO,,,linux: _ZN13EngineSurface18drawGetTextureSizeEiRiS0_
-hw,01E00771,31,,,UNKNOWN,engine/vgui_EngineSurfaceHW.cpp,,,TODO,,,linux: _ZN13EngineSurface16isTextureIdValidEi
-hw,01E00790,11,,,UNKNOWN,engine/vgui_EngineSurfaceHW.cpp,,,TODO,,,linux: _ZN13EngineSurface13resetViewPortEv
-hw,01E0079B,396,_VGui_ViewportPaintBackground,VGui_ViewportPaintBackground,ENGINE,engine/vgui_EngineSurfaceHW.cpp,,,TODO,,linux_symbols:caller:0.667,
-hw,01E00930,56,,,UNKNOWN,,,,TODO,,,
-hw,01E00970,93,,,UNKNOWN,,,,TODO,,,
-hw,01E009D0,22,,~<>,ENGINE,,,,TODO,,ghidra,
-hw,01E009F0,25,,,UNKNOWN,,,,TODO,,,
-hw,01E00A10,35,,,UNKNOWN,,,,TODO,,,
-hw,01E00A40,58,,,UNKNOWN,,,,TODO,,,
-hw,01E00A80,143,,,UNKNOWN,,,,TODO,,,
-hw,01E00B10,11,,,UNKNOWN,,,,TODO,,,
-hw,01E00B20,31,,,UNKNOWN,,,,TODO,,,
-hw,01E00B40,31,,,UNKNOWN,,,,TODO,,,
-hw,01E00B60,27,,,UNKNOWN,,,,TODO,,,
-hw,01E00B80,28,,,UNKNOWN,,,,TODO,,,
-hw,01E00BA0,8,,,UNKNOWN,,,,TODO,,,
-hw,01E00BB0,144,,,UNKNOWN,,,,TODO,,,
-hw,01E00C40,75,,,UNKNOWN,,,,TODO,,,
-hw,01E00C90,19,,,UNKNOWN,,,,TODO,,,
-hw,01E00CB0,65,,,UNKNOWN,,,,TODO,,,
-hw,01E00D00,130,,,UNKNOWN,,,,TODO,,,
-hw,01E00D90,182,,,UNKNOWN,,,,TODO,,,
-hw,01E00E50,26,,,UNKNOWN,,,,TODO,,,
-hw,01E00E70,26,,,UNKNOWN,,,,TODO,,,
-hw,01E00E90,69,,,UNKNOWN,,,,TODO,,,
-hw,01E00EE0,146,,,UNKNOWN,,,,TODO,,,
-hw,01E00F80,28,,,UNKNOWN,,,,TODO,,,
-hw,01E00FA0,541,,,UNKNOWN,,,,TODO,,,
-hw,01E011C0,25,,,UNKNOWN,,,,TODO,,,
-hw,01E011E0,28,,,UNKNOWN,,,,TODO,,,
-hw,01E01200,44,,,UNKNOWN,,,,TODO,,,
-hw,01E01230,44,,,UNKNOWN,,,,TODO,,,
-hw,01E01260,29,,,UNKNOWN,,,,TODO,,,
-hw,01E01280,36,,,UNKNOWN,,,,TODO,,,
-hw,01E012B0,28,,,UNKNOWN,,,,TODO,,,
-hw,01E012D0,31,,,UNKNOWN,,,,TODO,,,
-hw,01E012F0,287,,,UNKNOWN,,,,TODO,,,
-hw,01E01410,287,,,UNKNOWN,,,,TODO,,,
-hw,01E01530,17,,,UNKNOWN,,,,TODO,,,
-hw,01E01550,199,,,UNKNOWN,,,,TODO,,,
-hw,01E01620,25,,,UNKNOWN,,,,TODO,,,
-hw,01E01640,31,,,UNKNOWN,,,,TODO,,,
-hw,01E01660,30,,SetAt,ENGINE,,,,TODO,,ghidra,
-hw,01E01680,31,,,UNKNOWN,,,,TODO,,,
+hw,01DFF1BF,49,?InterpTCoord@@YAMHHHMM@Z,InterpTCoord,UNKNOWN,engine/vgui_EngineSurfaceHW.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DFF1F0,307,?ScissorRect_TCoords@@YA_NHHHHMMMMPAUtagRECT@@PAVTCoordRect@@@Z,ScissorRect_TCoords,UNKNOWN,engine/vgui_EngineSurfaceHW.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DFF323,43,?ScissorRect@@YA_NHHHHPAUtagRECT@@@Z,ScissorRect,UNKNOWN,engine/vgui_EngineSurfaceHW.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DFF34E,11,?createRenderPlat@EngineSurface@@AAEXXZ,EngineSurface::createRenderPlat,UNKNOWN,engine/vgui_EngineSurfaceHW.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DFF359,11,?deleteRenderPlat@EngineSurface@@AAEXXZ,EngineSurface::deleteRenderPlat,UNKNOWN,engine/vgui_EngineSurfaceHW.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DFF364,229,?drawFilledRect@EngineSurface@@UAEXHHHH@Z,EngineSurface::drawFilledRect,UNKNOWN,engine/vgui_EngineSurfaceHW.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13EngineSurface14drawFilledRectEiiii
+hw,01DFF449,288,?drawPolyLine@EngineSurface@@UAEXPAH0H@Z,EngineSurface::drawPolyLine,UNKNOWN,engine/vgui_EngineSurfaceHW.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13EngineSurface12drawPolyLineEPiS0_i
+hw,01DFF569,190,?drawTexturedPolygon@EngineSurface@@UAEXPAVVGuiVertex@vgui2@@H@Z,EngineSurface::drawTexturedPolygon,UNKNOWN,engine/vgui_EngineSurfaceHW.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13EngineSurface19drawTexturedPolygonEPN4vgui10VGuiVertexEi
+hw,01DFF627,205,?drawLine@EngineSurface@@UAEXHHHH@Z,EngineSurface::drawLine,UNKNOWN,engine/vgui_EngineSurfaceHW.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13EngineSurface8drawLineEiiii
+hw,01DFF6F4,212,?drawOutlinedRect@EngineSurface@@UAEXHHHH@Z,EngineSurface::drawOutlinedRect,UNKNOWN,engine/vgui_EngineSurfaceHW.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13EngineSurface16drawOutlinedRectEiiii
+hw,01DFF7C8,680,?drawPrintChar@EngineSurface@@UAEXHHHHMMMM@Z,EngineSurface::drawPrintChar,UNKNOWN,engine/vgui_EngineSurfaceHW.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13EngineSurface13drawPrintCharEiiiiffff
+hw,01DFFA70,367,?drawPrintCharAdd@EngineSurface@@UAEXHHHHMMMM@Z,EngineSurface::drawPrintCharAdd,UNKNOWN,engine/vgui_EngineSurfaceHW.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13EngineSurface16drawPrintCharAddEiiiiffff
+hw,01DFFBDF,759,?drawSetTextureRGBA@EngineSurface@@UAEXHPBDHHHH@Z,EngineSurface::drawSetTextureRGBA,UNKNOWN,engine/vgui_EngineSurfaceHW.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13EngineSurface18drawSetTextureRGBAEiPKciiii
+hw,01DFFED6,88,?staticGetTextureById@@YAPAVTexture@?%vgui_EngineSurfaceHW.cpp0@@H@Z,?staticGetTextureById@@YAPAVTexture@?%vgui_EngineSurfaceHW.cpp0@@H@Z,UNKNOWN,engine/vgui_EngineSurfaceHW.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DFFF2E,61,?staticAllocTextureForId@@YAPAVTexture@?%vgui_EngineSurfaceHW.cpp0@@H@Z,?staticAllocTextureForId@@YAPAVTexture@?%vgui_EngineSurfaceHW.cpp0@@H@Z,UNKNOWN,engine/vgui_EngineSurfaceHW.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DFFF6B,75,?drawSetTexture@EngineSurface@@UAEXH@Z,EngineSurface::drawSetTexture,UNKNOWN,engine/vgui_EngineSurfaceHW.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13EngineSurface14drawSetTextureEi
+hw,01DFFFB6,223,?drawFlushText@EngineSurface@@UAEXXZ,EngineSurface::drawFlushText,UNKNOWN,engine/vgui_EngineSurfaceHW.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13EngineSurface13drawFlushTextEv
+hw,01E00095,452,?drawTexturedRect@EngineSurface@@UAEXHHHH@Z,EngineSurface::drawTexturedRect,UNKNOWN,engine/vgui_EngineSurfaceHW.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13EngineSurface16drawTexturedRectEiiii
+hw,01E00259,621,?pushMakeCurrent@EngineSurface@@UAEXPAH00_N@Z,EngineSurface::pushMakeCurrent,UNKNOWN,engine/vgui_EngineSurfaceHW.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13EngineSurface15pushMakeCurrentEPiS0_S0_b
+hw,01E004C6,79,?popMakeCurrent@EngineSurface@@UAEXXZ,EngineSurface::popMakeCurrent,UNKNOWN,engine/vgui_EngineSurfaceHW.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13EngineSurface14popMakeCurrentEv
+hw,01E00515,470,?drawSetTextureFile@EngineSurface@@UAEXHPBDH_N@Z,EngineSurface::drawSetTextureFile,ENGINE,engine/vgui_EngineSurfaceHW.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E006EB,56,?drawSetSubTextureRGBA@EngineSurface@@UAEXHHHPBEHH@Z,EngineSurface::drawSetSubTextureRGBA,UNKNOWN,engine/vgui_EngineSurfaceHW.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13EngineSurface21drawSetSubTextureRGBAEiiiPKhii
+hw,01E00723,78,?drawGetTextureSize@EngineSurface@@UAEXHAAH0@Z,EngineSurface::drawGetTextureSize,UNKNOWN,engine/vgui_EngineSurfaceHW.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13EngineSurface18drawGetTextureSizeEiRiS0_
+hw,01E00771,31,?isTextureIdValid@EngineSurface@@UAEHH@Z,EngineSurface::isTextureIdValid,UNKNOWN,engine/vgui_EngineSurfaceHW.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13EngineSurface16isTextureIdValidEi
+hw,01E00790,11,?resetViewPort@EngineSurface@@UAEXXZ,EngineSurface::resetViewPort,UNKNOWN,engine/vgui_EngineSurfaceHW.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13EngineSurface13resetViewPortEv
+hw,01E0079B,396,_VGui_ViewportPaintBackground,VGui_ViewportPaintBackground,ENGINE,engine/vgui_EngineSurfaceHW.cpp,,,MATCHED,100,linux_symbols:caller:0.667,
+hw,01E00930,56,?GetVertex@VGuiVertex@vgui2@@QAEXAAH0AAM1@Z,vgui2::VGuiVertex::GetVertex,UNKNOWN,engine/vgui_EngineSurfaceHW.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E00970,93,??0?$CUtlRBTree@VTexture@?%vgui_EngineSurfaceHW.cpp0@@H@@QAE@HHP6A_NABVTexture@?%vgui_EngineSurfaceHW.cpp0@@0@Z@Z,??0?$CUtlRBTree@VTexture@?%vgui_EngineSurfaceHW.cpp0@@H@@QAE@HHP6A_NABVTexture@?%vgui_EngineSurfaceHW.cpp0@@0@Z@Z,UNKNOWN,engine/vgui_EngineSurfaceHW.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E009D0,22,??1?$CUtlRBTree@VTexture@?%vgui_EngineSurfaceHW.cpp0@@H@@QAE@XZ,??1?$CUtlRBTree@VTexture@?%vgui_EngineSurfaceHW.cpp0@@H@@QAE@XZ,ENGINE,engine/vgui_EngineSurfaceHW.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E009F0,25,??A?$CUtlRBTree@VTexture@?%vgui_EngineSurfaceHW.cpp0@@H@@QAEAAVTexture@?%vgui_EngineSurfaceHW.cpp0@@H@Z,??A?$CUtlRBTree@VTexture@?%vgui_EngineSurfaceHW.cpp0@@H@@QAEAAVTexture@?%vgui_EngineSurfaceHW.cpp0@@H@Z,UNKNOWN,engine/vgui_EngineSurfaceHW.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E00A10,35,?IsValidIndex@?$CUtlRBTree@VTexture@?%vgui_EngineSurfaceHW.cpp0@@H@@QBE_NH@Z,?IsValidIndex@?$CUtlRBTree@VTexture@?%vgui_EngineSurfaceHW.cpp0@@H@@QBE_NH@Z,UNKNOWN,engine/vgui_EngineSurfaceHW.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E00A40,58,?Insert@?$CUtlRBTree@VTexture@?%vgui_EngineSurfaceHW.cpp0@@H@@QAEHABVTexture@?%vgui_EngineSurfaceHW.cpp0@@@Z,?Insert@?$CUtlRBTree@VTexture@?%vgui_EngineSurfaceHW.cpp0@@H@@QAEHABVTexture@?%vgui_EngineSurfaceHW.cpp0@@@Z,UNKNOWN,engine/vgui_EngineSurfaceHW.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E00A80,143,?Find@?$CUtlRBTree@VTexture@?%vgui_EngineSurfaceHW.cpp0@@H@@QBEHABVTexture@?%vgui_EngineSurfaceHW.cpp0@@@Z,?Find@?$CUtlRBTree@VTexture@?%vgui_EngineSurfaceHW.cpp0@@H@@QBEHABVTexture@?%vgui_EngineSurfaceHW.cpp0@@@Z,UNKNOWN,engine/vgui_EngineSurfaceHW.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E00B10,11,?ResetDbgInfo@?$CUtlRBTree@VTexture@?%vgui_EngineSurfaceHW.cpp0@@H@@IAEXXZ,?ResetDbgInfo@?$CUtlRBTree@VTexture@?%vgui_EngineSurfaceHW.cpp0@@H@@IAEXXZ,UNKNOWN,engine/vgui_EngineSurfaceHW.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E00B20,31,?Element@?$CUtlRBTree@VTexture@?%vgui_EngineSurfaceHW.cpp0@@H@@QBEABVTexture@?%vgui_EngineSurfaceHW.cpp0@@H@Z,?Element@?$CUtlRBTree@VTexture@?%vgui_EngineSurfaceHW.cpp0@@H@@QBEABVTexture@?%vgui_EngineSurfaceHW.cpp0@@H@Z,UNKNOWN,engine/vgui_EngineSurfaceHW.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E00B40,31,?Element@?$CUtlRBTree@VTexture@?%vgui_EngineSurfaceHW.cpp0@@H@@QAEAAVTexture@?%vgui_EngineSurfaceHW.cpp0@@H@Z,?Element@?$CUtlRBTree@VTexture@?%vgui_EngineSurfaceHW.cpp0@@H@@QAEAAVTexture@?%vgui_EngineSurfaceHW.cpp0@@H@Z,UNKNOWN,engine/vgui_EngineSurfaceHW.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E00B60,27,?LeftChild@?$CUtlRBTree@VTexture@?%vgui_EngineSurfaceHW.cpp0@@H@@QBEHH@Z,?LeftChild@?$CUtlRBTree@VTexture@?%vgui_EngineSurfaceHW.cpp0@@H@@QBEHH@Z,UNKNOWN,engine/vgui_EngineSurfaceHW.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E00B80,28,?RightChild@?$CUtlRBTree@VTexture@?%vgui_EngineSurfaceHW.cpp0@@H@@QBEHH@Z,?RightChild@?$CUtlRBTree@VTexture@?%vgui_EngineSurfaceHW.cpp0@@H@@QBEHH@Z,UNKNOWN,engine/vgui_EngineSurfaceHW.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E00BA0,8,?InvalidIndex@?$CUtlRBTree@VTexture@?%vgui_EngineSurfaceHW.cpp0@@H@@SAHXZ,?InvalidIndex@?$CUtlRBTree@VTexture@?%vgui_EngineSurfaceHW.cpp0@@H@@SAHXZ,UNKNOWN,engine/vgui_EngineSurfaceHW.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E00BB0,144,?CreateInsertedNode@?$CUtlRBTree@VTexture@?%vgui_EngineSurfaceHW.cpp0@@H@@IAEHABVTexture@?%vgui_EngineSurfaceHW.cpp0@@@Z,?CreateInsertedNode@?$CUtlRBTree@VTexture@?%vgui_EngineSurfaceHW.cpp0@@H@@IAEHABVTexture@?%vgui_EngineSurfaceHW.cpp0@@@Z,UNKNOWN,engine/vgui_EngineSurfaceHW.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E00C40,75,??0?$CUtlMemory@UNode_t@?$CUtlRBTree@VTexture@?%vgui_EngineSurfaceHW.cpp0@@H@@@@QAE@HH@Z,??0?$CUtlMemory@UNode_t@?$CUtlRBTree@VTexture@?%vgui_EngineSurfaceHW.cpp0@@H@@@@QAE@HH@Z,UNKNOWN,engine/vgui_EngineSurfaceHW.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E00C90,19,??1?$CUtlMemory@UNode_t@?$CUtlRBTree@VTexture@?%vgui_EngineSurfaceHW.cpp0@@H@@@@QAE@XZ,??1?$CUtlMemory@UNode_t@?$CUtlRBTree@VTexture@?%vgui_EngineSurfaceHW.cpp0@@H@@@@QAE@XZ,UNKNOWN,engine/vgui_EngineSurfaceHW.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E00CB0,65,?CopyConstruct@@YAXPAVTexture@?%vgui_EngineSurfaceHW.cpp0@@ABV12@@Z,?CopyConstruct@@YAXPAVTexture@?%vgui_EngineSurfaceHW.cpp0@@ABV12@@Z,UNKNOWN,engine/vgui_EngineSurfaceHW.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E00D00,130,?Links@?$CUtlRBTree@VTexture@?%vgui_EngineSurfaceHW.cpp0@@H@@IBEABULinks_t@1@H@Z,?Links@?$CUtlRBTree@VTexture@?%vgui_EngineSurfaceHW.cpp0@@H@@IBEABULinks_t@1@H@Z,UNKNOWN,engine/vgui_EngineSurfaceHW.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E00D90,182,?InsertAt@?$CUtlRBTree@VTexture@?%vgui_EngineSurfaceHW.cpp0@@H@@IAEHH_N@Z,?InsertAt@?$CUtlRBTree@VTexture@?%vgui_EngineSurfaceHW.cpp0@@H@@IAEHH_N@Z,UNKNOWN,engine/vgui_EngineSurfaceHW.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E00E50,26,??A?$CUtlMemory@UNode_t@?$CUtlRBTree@VTexture@?%vgui_EngineSurfaceHW.cpp0@@H@@@@QBEABUNode_t@?$CUtlRBTree@VTexture@?%vgui_EngineSurfaceHW.cpp0@@H@@H@Z,??A?$CUtlMemory@UNode_t@?$CUtlRBTree@VTexture@?%vgui_EngineSurfaceHW.cpp0@@H@@@@QBEABUNode_t@?$CUtlRBTree@VTexture@?%vgui_EngineSurfaceHW.cpp0@@H@@H@Z,UNKNOWN,engine/vgui_EngineSurfaceHW.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E00E70,26,??A?$CUtlMemory@UNode_t@?$CUtlRBTree@VTexture@?%vgui_EngineSurfaceHW.cpp0@@H@@@@QAEAAUNode_t@?$CUtlRBTree@VTexture@?%vgui_EngineSurfaceHW.cpp0@@H@@H@Z,??A?$CUtlMemory@UNode_t@?$CUtlRBTree@VTexture@?%vgui_EngineSurfaceHW.cpp0@@H@@@@QAEAAUNode_t@?$CUtlRBTree@VTexture@?%vgui_EngineSurfaceHW.cpp0@@H@@H@Z,UNKNOWN,engine/vgui_EngineSurfaceHW.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E00E90,69,?Purge@?$CUtlMemory@UNode_t@?$CUtlRBTree@VTexture@?%vgui_EngineSurfaceHW.cpp0@@H@@@@QAEXXZ,?Purge@?$CUtlMemory@UNode_t@?$CUtlRBTree@VTexture@?%vgui_EngineSurfaceHW.cpp0@@H@@@@QAEXXZ,UNKNOWN,engine/vgui_EngineSurfaceHW.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E00EE0,146,?NewNode@?$CUtlRBTree@VTexture@?%vgui_EngineSurfaceHW.cpp0@@H@@QAEHXZ,?NewNode@?$CUtlRBTree@VTexture@?%vgui_EngineSurfaceHW.cpp0@@H@@QAEHXZ,UNKNOWN,engine/vgui_EngineSurfaceHW.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E00F80,28,?Links@?$CUtlRBTree@VTexture@?%vgui_EngineSurfaceHW.cpp0@@H@@IAEAAULinks_t@1@H@Z,?Links@?$CUtlRBTree@VTexture@?%vgui_EngineSurfaceHW.cpp0@@H@@IAEAAULinks_t@1@H@Z,UNKNOWN,engine/vgui_EngineSurfaceHW.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E00FA0,541,?InsertRebalance@?$CUtlRBTree@VTexture@?%vgui_EngineSurfaceHW.cpp0@@H@@IAEXH@Z,?InsertRebalance@?$CUtlRBTree@VTexture@?%vgui_EngineSurfaceHW.cpp0@@H@@IAEXH@Z,UNKNOWN,engine/vgui_EngineSurfaceHW.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E011C0,25,?IsExternallyAllocated@?$CUtlMemory@UNode_t@?$CUtlRBTree@VTexture@?%vgui_EngineSurfaceHW.cpp0@@H@@@@QBE_NXZ,?IsExternallyAllocated@?$CUtlMemory@UNode_t@?$CUtlRBTree@VTexture@?%vgui_EngineSurfaceHW.cpp0@@H@@@@QBE_NXZ,UNKNOWN,engine/vgui_EngineSurfaceHW.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E011E0,28,?Parent@?$CUtlRBTree@VTexture@?%vgui_EngineSurfaceHW.cpp0@@H@@QBEHH@Z,?Parent@?$CUtlRBTree@VTexture@?%vgui_EngineSurfaceHW.cpp0@@H@@QBEHH@Z,UNKNOWN,engine/vgui_EngineSurfaceHW.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E01200,44,?IsLeftChild@?$CUtlRBTree@VTexture@?%vgui_EngineSurfaceHW.cpp0@@H@@QBE_NH@Z,?IsLeftChild@?$CUtlRBTree@VTexture@?%vgui_EngineSurfaceHW.cpp0@@H@@QBE_NH@Z,UNKNOWN,engine/vgui_EngineSurfaceHW.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E01230,44,?IsRightChild@?$CUtlRBTree@VTexture@?%vgui_EngineSurfaceHW.cpp0@@H@@QBE_NH@Z,?IsRightChild@?$CUtlRBTree@VTexture@?%vgui_EngineSurfaceHW.cpp0@@H@@QBE_NH@Z,UNKNOWN,engine/vgui_EngineSurfaceHW.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E01260,29,?IsRoot@?$CUtlRBTree@VTexture@?%vgui_EngineSurfaceHW.cpp0@@H@@QBE_NH@Z,?IsRoot@?$CUtlRBTree@VTexture@?%vgui_EngineSurfaceHW.cpp0@@H@@QBE_NH@Z,UNKNOWN,engine/vgui_EngineSurfaceHW.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E01280,36,?IsRed@?$CUtlRBTree@VTexture@?%vgui_EngineSurfaceHW.cpp0@@H@@IBE_NH@Z,?IsRed@?$CUtlRBTree@VTexture@?%vgui_EngineSurfaceHW.cpp0@@H@@IBE_NH@Z,UNKNOWN,engine/vgui_EngineSurfaceHW.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E012B0,28,?Color@?$CUtlRBTree@VTexture@?%vgui_EngineSurfaceHW.cpp0@@H@@IBE?AW4NodeColor_t@1@H@Z,,UNKNOWN,engine/vgui_EngineSurfaceHW.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E012D0,31,?SetColor@?$CUtlRBTree@VTexture@?%vgui_EngineSurfaceHW.cpp0@@H@@IAEXHW4NodeColor_t@1@@Z,?SetColor@?$CUtlRBTree@VTexture@?%vgui_EngineSurfaceHW.cpp0@@H@@IAEXHW4NodeColor_t@1@@Z,UNKNOWN,engine/vgui_EngineSurfaceHW.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E012F0,287,?RotateLeft@?$CUtlRBTree@VTexture@?%vgui_EngineSurfaceHW.cpp0@@H@@IAEXH@Z,?RotateLeft@?$CUtlRBTree@VTexture@?%vgui_EngineSurfaceHW.cpp0@@H@@IAEXH@Z,UNKNOWN,engine/vgui_EngineSurfaceHW.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E01410,287,?RotateRight@?$CUtlRBTree@VTexture@?%vgui_EngineSurfaceHW.cpp0@@H@@IAEXH@Z,?RotateRight@?$CUtlRBTree@VTexture@?%vgui_EngineSurfaceHW.cpp0@@H@@IAEXH@Z,UNKNOWN,engine/vgui_EngineSurfaceHW.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E01530,17,?NumAllocated@?$CUtlMemory@UNode_t@?$CUtlRBTree@VTexture@?%vgui_EngineSurfaceHW.cpp0@@H@@@@QBEHXZ,?NumAllocated@?$CUtlMemory@UNode_t@?$CUtlRBTree@VTexture@?%vgui_EngineSurfaceHW.cpp0@@H@@@@QBEHXZ,UNKNOWN,engine/vgui_EngineSurfaceHW.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E01550,199,?Grow@?$CUtlMemory@UNode_t@?$CUtlRBTree@VTexture@?%vgui_EngineSurfaceHW.cpp0@@H@@@@QAEXH@Z,?Grow@?$CUtlMemory@UNode_t@?$CUtlRBTree@VTexture@?%vgui_EngineSurfaceHW.cpp0@@H@@@@QAEXH@Z,UNKNOWN,engine/vgui_EngineSurfaceHW.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E01620,25,?Construct@@YAXPAVTexture@?%vgui_EngineSurfaceHW.cpp0@@@Z,?Construct@@YAXPAVTexture@?%vgui_EngineSurfaceHW.cpp0@@@Z,UNKNOWN,engine/vgui_EngineSurfaceHW.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E01640,31,?SetParent@?$CUtlRBTree@VTexture@?%vgui_EngineSurfaceHW.cpp0@@H@@IAEXHH@Z,?SetParent@?$CUtlRBTree@VTexture@?%vgui_EngineSurfaceHW.cpp0@@H@@IAEXHH@Z,UNKNOWN,engine/vgui_EngineSurfaceHW.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E01660,30,?SetLeftChild@?$CUtlRBTree@VTexture@?%vgui_EngineSurfaceHW.cpp0@@H@@IAEXHH@Z,?SetLeftChild@?$CUtlRBTree@VTexture@?%vgui_EngineSurfaceHW.cpp0@@H@@IAEXHH@Z,ENGINE,engine/vgui_EngineSurfaceHW.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E01680,31,?SetRightChild@?$CUtlRBTree@VTexture@?%vgui_EngineSurfaceHW.cpp0@@H@@IAEXHH@Z,?SetRightChild@?$CUtlRBTree@VTexture@?%vgui_EngineSurfaceHW.cpp0@@H@@IAEXHH@Z,UNKNOWN,engine/vgui_EngineSurfaceHW.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01E016A0,49,,,UNKNOWN,,,,TODO,,,
 hw,01E016E0,31,,,UNKNOWN,,,,TODO,,,
 hw,01E01700,46,,,UNKNOWN,,,,TODO,,,

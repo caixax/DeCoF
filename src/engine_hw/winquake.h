@@ -54,4 +54,7 @@ void		hwSetListenerPosition_guess( vec_t *origin );
 void		hwSetListenerOrientation_guess( vec_t *forward, vec_t *up );
 void		hwSetChannelDistance_guess( int ch_idx, float dist );
 
+// the game window (0x024E0754)
+extern HWND		*pmainwindow;
+
 #endif // WINQUAKE_H

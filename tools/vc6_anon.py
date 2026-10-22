@@ -21,6 +21,9 @@ import sys
 RETAIL = {
     "frame.cpp": "Frame.cpp20302634",
     "scrollbar.cpp": "ScrollBar.cpp989430212",
+    # no RTTI names this namespace in hw.dll (Texture is not polymorphic):
+    # a fixed number keeps the template names stable between builds
+    "vgui_enginesurfacehw.cpp": "vgui_EngineSurfaceHW.cpp0",
 }
 
 ANON = re.compile(rb"\?%([^@]*?)([^\\/@]+\.cpp)(\d+)@@")
