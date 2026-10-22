@@ -21,6 +21,8 @@
 
 using vgui2::HFont;
 
+class CWin32Font;
+
 //-----------------------------------------------------------------------------
 // Purpose: Creates and maintains a set of fonts (only the methods the engine
 //			calls are declared here; the library is not part of this build)
@@ -35,6 +37,7 @@ public:
 	int GetFontAscent(HFont font, wchar_t wch);
 	int GetCharacterWidth(HFont font, int ch);
 	bool GetFontUnderlined(HFont font);
+	CWin32Font *GetFontForChar(HFont font, wchar_t wch);
 	void GetTextSize(HFont font, const wchar_t *text, int &wide, int &tall);
 };
 

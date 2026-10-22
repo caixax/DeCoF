@@ -23574,73 +23574,73 @@ hw,01D07540,16,?GetCount@?$Dar@PAVBaseFontPlat@@@vgui2@@QAEHXZ,*>::GetCount,UNKN
 hw,01D07550,68,?AddElement@?$Dar@PAVBaseFontPlat@@@vgui2@@QAEHPAVBaseFontPlat@@@Z,*>::AddElement,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
 hw,01D075A0,45,??A?$Dar@PAVBaseFontPlat@@@vgui2@@QAEPAVBaseFontPlat@@H@Z,*>::operator[],UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
 hw,01D075D0,221,?EnsureCapacity@?$Dar@PAVBaseFontPlat@@@vgui2@@QAEXH@Z,*>::EnsureCapacity,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
-hw,01D076B0,158,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,linux: _ZN17CFontTextureCacheC1Ev
-hw,01D0774E,30,,ATL::CAtlBaseModule::~CAtlBaseModule,ENGINE,engine/vgui2/FontTextureCache.cpp,,,TODO,,ghidra,linux: _ZN17CFontTextureCacheD1Ev
-hw,01D0776C,64,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,linux: _ZN17CFontTextureCache18CacheEntryLessFuncERKNS_12cacheentry_tES2_
-hw,01D077AC,630,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,linux: _ZN17CFontTextureCache17GetTextureForCharEmwPiPf
-hw,01D07A22,934,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,linux: _ZN17CFontTextureCache19AllocatePageForCharEiiRiS0_S0_S0_S0_
-hw,01D07DD0,17,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D07DF0,93,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D07E50,22,,ATL::_ATL_BASE_MODULE70::~_ATL_BASE_MODULE70,ENGINE,engine/vgui2/FontTextureCache.cpp,,,TODO,,ghidra,inline or template function (COMDAT) emitted after the object
-hw,01D07E70,26,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D07E90,49,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D07ED0,61,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D07F10,170,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D07FC0,50,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D08000,27,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D08020,25,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D08040,17,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D08060,26,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D08080,11,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D08090,36,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D080C0,36,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D080F0,29,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D08110,30,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D08130,9,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D08140,170,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D081F0,75,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D08240,19,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D08260,65,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D082B0,61,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D082F0,35,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D08320,11,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D08330,75,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D08380,19,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D083A0,26,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D083C0,153,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D08460,216,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D08540,26,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D08560,26,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D08580,69,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D085D0,25,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D085F0,70,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D08640,87,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D086A0,86,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D08700,25,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D08720,69,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D08770,176,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D08820,33,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D08850,587,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D08AA0,25,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D08AC0,17,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D08AE0,199,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D08BB0,25,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D08BD0,5,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D08BE0,30,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D08C00,58,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D08C40,58,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D08C80,39,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D08CB0,39,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D08CE0,34,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D08D10,34,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D08D40,346,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D08EA0,346,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D09000,17,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D09020,199,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D090F0,25,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D09110,34,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D09140,33,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D09170,34,,,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D076B0,158,??0CFontTextureCache@@QAE@XZ,CFontTextureCache::CFontTextureCache,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN17CFontTextureCacheC1Ev
+hw,01D0774E,30,??1CFontTextureCache@@QAE@XZ,CFontTextureCache::~CFontTextureCache,ENGINE,engine/vgui2/FontTextureCache.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN17CFontTextureCacheD1Ev
+hw,01D0776C,64,?CacheEntryLessFunc@CFontTextureCache@@CA_NABUcacheentry_t@1@0@Z,CFontTextureCache::CacheEntryLessFunc,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN17CFontTextureCache18CacheEntryLessFuncERKNS_12cacheentry_tES2_
+hw,01D077AC,630,?GetTextureForChar@CFontTextureCache@@QAE_NKGPAHPAM@Z,CFontTextureCache::GetTextureForChar,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN17CFontTextureCache17GetTextureForCharEmwPiPf
+hw,01D07A22,934,?AllocatePageForChar@CFontTextureCache@@AAE_NHHAAH0000@Z,CFontTextureCache::AllocatePageForChar,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN17CFontTextureCache19AllocatePageForCharEiiRiS0_S0_S0_S0_
+hw,01D07DD0,17,?GetUnderlined@CWin32Font@@QAE_NXZ,CWin32Font::GetUnderlined,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D07DF0,93,??0?$CUtlRBTree@Ucacheentry_t@CFontTextureCache@@G@@QAE@HHP6A_NABUcacheentry_t@CFontTextureCache@@0@Z@Z,short>,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D07E50,22,??1?$CUtlRBTree@Ucacheentry_t@CFontTextureCache@@G@@QAE@XZ,short>,ENGINE,engine/vgui2/FontTextureCache.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D07E70,26,??A?$CUtlRBTree@Ucacheentry_t@CFontTextureCache@@G@@QAEAAUcacheentry_t@CFontTextureCache@@G@Z,short>::operator[],UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D07E90,49,?IsValidIndex@?$CUtlRBTree@Ucacheentry_t@CFontTextureCache@@G@@QBE_NG@Z,short>::IsValidIndex,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D07ED0,61,?Insert@?$CUtlRBTree@Ucacheentry_t@CFontTextureCache@@G@@QAEGABUcacheentry_t@CFontTextureCache@@@Z,short>::Insert,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D07F10,170,?Find@?$CUtlRBTree@Ucacheentry_t@CFontTextureCache@@G@@QBEGABUcacheentry_t@CFontTextureCache@@@Z,short>::Find,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D07FC0,50,??0?$CUtlVector@Upage_t@CFontTextureCache@@@@QAE@HH@Z,CFontTextureCache::page_t>,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D08000,27,??1?$CUtlVector@Upage_t@CFontTextureCache@@@@QAE@XZ,CFontTextureCache::page_t>,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D08020,25,??A?$CUtlVector@Upage_t@CFontTextureCache@@@@QAEAAUpage_t@CFontTextureCache@@H@Z,CFontTextureCache::page_t>::operator[],UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D08040,17,?Count@?$CUtlVector@Upage_t@CFontTextureCache@@@@QBEHXZ,CFontTextureCache::page_t>::Count,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D08060,26,?AddToTail@?$CUtlVector@Upage_t@CFontTextureCache@@@@QAEHXZ,CFontTextureCache::page_t>::AddToTail,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D08080,11,?ResetDbgInfo@?$CUtlRBTree@Ucacheentry_t@CFontTextureCache@@G@@IAEXXZ,short>::ResetDbgInfo,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D08090,36,?Element@?$CUtlRBTree@Ucacheentry_t@CFontTextureCache@@G@@QBEABUcacheentry_t@CFontTextureCache@@G@Z,short>::Element,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D080C0,36,?Element@?$CUtlRBTree@Ucacheentry_t@CFontTextureCache@@G@@QAEAAUcacheentry_t@CFontTextureCache@@G@Z,short>::Element,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D080F0,29,?LeftChild@?$CUtlRBTree@Ucacheentry_t@CFontTextureCache@@G@@QBEGG@Z,short>::LeftChild,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D08110,30,?RightChild@?$CUtlRBTree@Ucacheentry_t@CFontTextureCache@@G@@QBEGG@Z,short>::RightChild,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D08130,9,?InvalidIndex@?$CUtlRBTree@Ucacheentry_t@CFontTextureCache@@G@@SAGXZ,short>::InvalidIndex,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D08140,170,?CreateInsertedNode@?$CUtlRBTree@Ucacheentry_t@CFontTextureCache@@G@@IAEGABUcacheentry_t@CFontTextureCache@@@Z,short>::CreateInsertedNode,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D081F0,75,??0?$CUtlMemory@UNode_t@?$CUtlRBTree@Ucacheentry_t@CFontTextureCache@@G@@@@QAE@HH@Z,short>::Node_t>,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D08240,19,??1?$CUtlMemory@UNode_t@?$CUtlRBTree@Ucacheentry_t@CFontTextureCache@@G@@@@QAE@XZ,short>::Node_t>,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D08260,65,?CopyConstruct@@YAXPAUcacheentry_t@CFontTextureCache@@ABU12@@Z,CopyConstruct,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D082B0,61,?InsertBefore@?$CUtlVector@Upage_t@CFontTextureCache@@@@QAEHH@Z,CFontTextureCache::page_t>::InsertBefore,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D082F0,35,?Purge@?$CUtlVector@Upage_t@CFontTextureCache@@@@QAEXXZ,CFontTextureCache::page_t>::Purge,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D08320,11,?ResetDbgInfo@?$CUtlVector@Upage_t@CFontTextureCache@@@@IAEXXZ,CFontTextureCache::page_t>::ResetDbgInfo,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D08330,75,??0?$CUtlMemory@Upage_t@CFontTextureCache@@@@QAE@HH@Z,CFontTextureCache::page_t>,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D08380,19,??1?$CUtlMemory@Upage_t@CFontTextureCache@@@@QAE@XZ,CFontTextureCache::page_t>,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D083A0,26,??A?$CUtlMemory@Upage_t@CFontTextureCache@@@@QAEAAUpage_t@CFontTextureCache@@H@Z,CFontTextureCache::page_t>::operator[],UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D083C0,153,?Links@?$CUtlRBTree@Ucacheentry_t@CFontTextureCache@@G@@IBEABULinks_t@1@G@Z,short>::Links,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D08460,216,?InsertAt@?$CUtlRBTree@Ucacheentry_t@CFontTextureCache@@G@@IAEGG_N@Z,short>::InsertAt,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D08540,26,??A?$CUtlMemory@UNode_t@?$CUtlRBTree@Ucacheentry_t@CFontTextureCache@@G@@@@QBEABUNode_t@?$CUtlRBTree@Ucacheentry_t@CFontTextureCache@@G@@H@Z,short>::Node_t>::operator[],UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D08560,26,??A?$CUtlMemory@UNode_t@?$CUtlRBTree@Ucacheentry_t@CFontTextureCache@@G@@@@QAEAAUNode_t@?$CUtlRBTree@Ucacheentry_t@CFontTextureCache@@G@@H@Z,short>::Node_t>::operator[],UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D08580,69,?Purge@?$CUtlMemory@UNode_t@?$CUtlRBTree@Ucacheentry_t@CFontTextureCache@@G@@@@QAEXXZ,short>::Node_t>::Purge,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D085D0,25,?Element@?$CUtlVector@Upage_t@CFontTextureCache@@@@QAEAAUpage_t@CFontTextureCache@@H@Z,CFontTextureCache::page_t>::Element,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D085F0,70,?RemoveAll@?$CUtlVector@Upage_t@CFontTextureCache@@@@QAEXXZ,CFontTextureCache::page_t>::RemoveAll,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D08640,87,?GrowVector@?$CUtlVector@Upage_t@CFontTextureCache@@@@IAEXH@Z,CFontTextureCache::page_t>::GrowVector,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D086A0,86,?ShiftElementsRight@?$CUtlVector@Upage_t@CFontTextureCache@@@@IAEXHH@Z,CFontTextureCache::page_t>::ShiftElementsRight,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D08700,25,?Construct@@YAXPAUpage_t@CFontTextureCache@@@Z,Construct,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D08720,69,?Purge@?$CUtlMemory@Upage_t@CFontTextureCache@@@@QAEXXZ,CFontTextureCache::page_t>::Purge,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D08770,176,?NewNode@?$CUtlRBTree@Ucacheentry_t@CFontTextureCache@@G@@QAEGXZ,short>::NewNode,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D08820,33,?Links@?$CUtlRBTree@Ucacheentry_t@CFontTextureCache@@G@@IAEAAULinks_t@1@G@Z,short>::Links,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D08850,587,?InsertRebalance@?$CUtlRBTree@Ucacheentry_t@CFontTextureCache@@G@@IAEXG@Z,short>::InsertRebalance,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D08AA0,25,?IsExternallyAllocated@?$CUtlMemory@UNode_t@?$CUtlRBTree@Ucacheentry_t@CFontTextureCache@@G@@@@QBE_NXZ,short>::Node_t>::IsExternallyAllocated,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D08AC0,17,?NumAllocated@?$CUtlMemory@Upage_t@CFontTextureCache@@@@QBEHXZ,CFontTextureCache::page_t>::NumAllocated,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D08AE0,199,?Grow@?$CUtlMemory@Upage_t@CFontTextureCache@@@@QAEXH@Z,CFontTextureCache::page_t>::Grow,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D08BB0,25,?IsExternallyAllocated@?$CUtlMemory@Upage_t@CFontTextureCache@@@@QBE_NXZ,CFontTextureCache::page_t>::IsExternallyAllocated,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D08BD0,5,?Destruct@@YAXPAUpage_t@CFontTextureCache@@@Z,Destruct,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D08BE0,30,?Parent@?$CUtlRBTree@Ucacheentry_t@CFontTextureCache@@G@@QBEGG@Z,short>::Parent,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D08C00,58,?IsLeftChild@?$CUtlRBTree@Ucacheentry_t@CFontTextureCache@@G@@QBE_NG@Z,short>::IsLeftChild,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D08C40,58,?IsRightChild@?$CUtlRBTree@Ucacheentry_t@CFontTextureCache@@G@@QBE_NG@Z,short>::IsRightChild,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D08C80,39,?IsRoot@?$CUtlRBTree@Ucacheentry_t@CFontTextureCache@@G@@QBE_NG@Z,short>::IsRoot,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D08CB0,39,?IsRed@?$CUtlRBTree@Ucacheentry_t@CFontTextureCache@@G@@IBE_NG@Z,short>::IsRed,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D08CE0,34,?Color@?$CUtlRBTree@Ucacheentry_t@CFontTextureCache@@G@@IBE?AW4NodeColor_t@1@G@Z,short>::Color,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D08D10,34,?SetColor@?$CUtlRBTree@Ucacheentry_t@CFontTextureCache@@G@@IAEXGW4NodeColor_t@1@@Z,short>::SetColor,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D08D40,346,?RotateLeft@?$CUtlRBTree@Ucacheentry_t@CFontTextureCache@@G@@IAEXG@Z,short>::RotateLeft,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D08EA0,346,?RotateRight@?$CUtlRBTree@Ucacheentry_t@CFontTextureCache@@G@@IAEXG@Z,short>::RotateRight,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D09000,17,?NumAllocated@?$CUtlMemory@UNode_t@?$CUtlRBTree@Ucacheentry_t@CFontTextureCache@@G@@@@QBEHXZ,short>::Node_t>::NumAllocated,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D09020,199,?Grow@?$CUtlMemory@UNode_t@?$CUtlRBTree@Ucacheentry_t@CFontTextureCache@@G@@@@QAEXH@Z,short>::Node_t>::Grow,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D090F0,25,?Construct@@YAXPAUcacheentry_t@CFontTextureCache@@@Z,Construct,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D09110,34,?SetParent@?$CUtlRBTree@Ucacheentry_t@CFontTextureCache@@G@@IAEXGG@Z,short>::SetParent,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D09140,33,?SetLeftChild@?$CUtlRBTree@Ucacheentry_t@CFontTextureCache@@G@@IAEXGG@Z,short>::SetLeftChild,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D09170,34,?SetRightChild@?$CUtlRBTree@Ucacheentry_t@CFontTextureCache@@G@@IAEXGG@Z,short>::SetRightChild,UNKNOWN,engine/vgui2/FontTextureCache.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
 hw,01D091A0,28,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
 hw,01D091BC,1035,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"
 hw,01D095C7,15,,,UNKNOWN,engine/vgui2/HtmlWindow.cpp,,,TODO,,,"file from the RTTI classes HtmlWindow, FrameSite and FS_* (IE host) and the VGUI_HTML window class; folder from the link position between engine/vgui2 files"

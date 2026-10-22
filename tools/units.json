@@ -2971,6 +2971,18 @@
           ]
         },
         {
+          "name": "engine/vgui2/FontTextureCache",
+          "source": "src/engine_hw/vgui2/FontTextureCache.cpp",
+          "functions_file": "tools/units/hw_engine_vgui2_FontTextureCache.txt",
+          "includes": [
+            "src/public",
+            "src/engine",
+            "src/common",
+            "src/engine_hw",
+            "src/cl_dll"
+          ]
+        },
+        {
           "name": "engine/DetailTexture",
           "source": "src/engine_hw/DetailTexture.cpp",
           "functions_file": "tools/units/hw_engine_DetailTexture.txt",

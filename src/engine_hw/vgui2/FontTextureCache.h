@@ -32,9 +32,6 @@ public:
 	bool GetTextureForChar(HFont font, wchar_t wch, int *textureID, float *texCoords);
 
 private:
-	// NOTE: the page layout (FontTextureCache.cpp) is not written yet
-	struct page_t;
-
 	typedef unsigned short HCacheEntry;
 
 	// a single character in the cache
@@ -47,6 +44,15 @@ private:
 
 		HCacheEntry nextEntry;	// doubly-linked list for use in the LRU
 		HCacheEntry prevEntry;
+	};
+
+	// a single texture page
+	struct page_t
+	{
+		short textureID;
+		short fontHeight;
+		short wide, tall;	// total size of the page
+		short nextX, nextY;	// position to draw any new character positions
 	};
 
 	// allocates a new page for a given character
