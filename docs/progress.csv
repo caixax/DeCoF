@@ -26031,7 +26031,7 @@ hw,01D6B956,5,_R_TranslatePlayerSkin,R_TranslatePlayerSkin,ENGINE,engine/GL_RMIS
 hw,01D6B95B,509,_R_NewMap,R_NewMap,ENGINE,engine/GL_RMISC.C,,,MATCHED,100,linux_symbols:string:0.639,
 hw,01D6BB58,163,_R_TimeRefresh_f,R_TimeRefresh_f,ENGINE,engine/GL_RMISC.C,,,MATCHED,100,linux_symbols:string:0.533,
 hw,01D6BBFB,5,_D_FlushCaches,,UNKNOWN,engine/GL_RMISC.C,,,MATCHED,100,hw_manual.csv,
-hw,01D6BC00,196,_R_CheckVariables,,UNKNOWN,engine/GL_RMISC.C,,,TODO,,,
+hw,01D6BC00,196,_R_CheckVariables,,UNKNOWN,engine/GL_RMISC.C,,,MATCHED,100,,
 hw,01D6BCD0,860,_R_AddDynamicLights,,UNKNOWN,engine/GL_RSURF.C,,,MATCHED,100,hw_manual.csv,
 hw,01D6C02C,1412,_R_BuildLightMap,R_BuildLightMap,ENGINE,engine/GL_RSURF.C,,,MATCHED,100,linux_symbols:string:0.904,
 hw,01D6C5B0,536,_R_TextureAnimation,R_TextureAnimation,ENGINE,engine/GL_RSURF.C,,,MATCHED,100,linux_symbols:string:0.853,

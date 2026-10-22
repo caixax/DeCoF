@@ -454,3 +454,23 @@ void R_TimeRefresh_f( void )
 void D_FlushCaches( void )
 {
 }
+
+void GL_LoadFilterTexture( float r, float g, float b, float brightness );
+
+void R_CheckVariables( void )
+{
+	static float oldFilterMode, oldFilterColorRed, oldFilterColorGreen, oldFilterColorBlue, oldFilterBrightness;
+
+	if ( filterMode != oldFilterMode || filterColorRed != oldFilterColorRed || filterColorGreen != oldFilterColorGreen ||
+		filterColorBlue != oldFilterColorBlue || filterBrightness != oldFilterBrightness )
+	{
+		oldFilterMode = filterMode;
+		oldFilterColorRed = filterColorRed;
+		oldFilterColorGreen = filterColorGreen;
+		oldFilterColorBlue = filterColorBlue;
+		oldFilterBrightness = filterBrightness;
+
+		GL_LoadFilterTexture( filterColorRed, filterColorGreen, filterColorBlue, filterBrightness );
+		D_FlushCaches();
+	}
+}
