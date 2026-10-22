@@ -317,3 +317,15 @@ Still not written: cdll_int, GL_VIDNT (must define `qglPNTrianglesiATI` at 023C9
 hw GL_VIDNT.C started: 11 of 16 at 100% (CheckTextureExtensions, CheckArrayExtensions, CheckMultiTextureExtensions, CheckATINPatchExtensions, GL_Init, GL_BeginRendering, GL_EndRendering, VID_ShiftPalette, GL_Shutdown, VID_Init, VID_WriteBuffer). It defines `qglPNTrianglesiATI`, used by r_studio.c. Left: GL_Config (01D730D7), FreeFBOObjects, GL_SetMode, VID_TakeSnapshot, VID_TakeSnapshotRect (pseudo C: `python tools/range.py hw 01D72D80 01D73F34 <out>`). Names to confirm: WindowRect (027FC330, Quake name), VID_FlipScreen_guess (function pointer 0250D990 called by GL_EndRendering), TEXTURE2_SGIS_guess (01EBA88C).
 
 Four agents were started near the end of the weekly usage on sys_dll2.cpp, cdll_int, GameUI ListPanel.cpp, and sys_getmodes.cpp plus SND_DMA S_Update_. They commit their own results; check `git log` and `git status` for what landed and what is left on disk.
+
+## 2026-10-22 (end)
+
+Agent results, all committed: hw GL_VIDNT.C 16/16, cdll_int.c 33/33, SND_DMA.C 37/37 (S_Update_ needed Quake's empty `if ( paintedtime < soundtime ) {}` block, which moves the register rotation), sys_getmodes.cpp 1/1, sys_dll2.cpp 6 of 12 (+ Sys_InitMemory EQUIVALENT 99.98%, only unnamed data labels), net_api.c 6 of 12; GameUI BuildGroup.cpp 1/1 and ListPanel.cpp 19 named functions at 100% (ColumnButton, Dragger, constructor, destructor and larger methods still unnamed). client.dll near-matches: no change (remaining differences are register or stack-slot choice, or a folded vtable symbol).
+
+Commit messages: several agents' files were swept into each other's commits (shared index). Content is complete, but a17476c, 1c71f6c, f001fff and 8b0ff29 carry files of other units than their message says. History was not rewritten.
+
+Open items:
+- sys_dll2 Sys_ShutdownGame needs names for 01DFE170 TraceShutdown (other unit), 01DF45CB Sys_ShutdownLauncherInterface, 01DF45E2 Sys_ShutdownAuthentication, 01DF4582 Sys_ShutdownMemory, 01DF42B1 Sys_Shutdown. tools/add_name.py appends to the end of the unit list, so insert these by hand in address order.
+- GL_VIDNT snapshot locals (pb, p, hp, b, i, imageSize, hdr, bi, file) are unproven names kept without `_guess` because the suffix moves their stack slots; rename candidates need the same hash bucket (tools/vc6_slots.py).
+- cdll_int callees CL_IsSpectateOnly_guess (01D3BC50), SPR_Init_guess (01D29567), SPR_Shutdown_guess (01D29391) are not in the symbol map yet.
+- Uncommitted, unused: src/public/UtlRBTree.h changes and src/public/vgui_controls/ImagePanel.h from the first GameUI agent.
