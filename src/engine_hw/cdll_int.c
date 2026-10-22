@@ -142,9 +142,9 @@ extern	cl_entity_t			*cl_beamentities[MAX_BEAMENTS];
 extern	engine_studio_api_t	engine_studio_api;
 extern	triangleapi_t		tri;
 
-int		CL_IsSpectateOnly_guess( void );
-void	SPR_Init_guess( void );
-void	SPR_Shutdown_guess( void );
+int		CL_IsSpectateOnly( void );
+void	SPR_Init( void );
+void	SPR_Shutdown( void );
 void	R_ResetStudio( void );
 mnode_t	*PVSNode( mnode_t *node, vec3_t emins, vec3_t emaxs );
 void	CL_WriteDLLUpdate( client_data_t *cdat );
@@ -241,7 +241,7 @@ int ClientDLL_AddEntity( int type, struct cl_entity_s *ent )
 	if ( !cl_funcs.pAddEntity( type, ent, ent->model ? ent->model->name : "" ) )
 		return 0;
 
-	if ( CL_IsSpectateOnly_guess() && !CL_IsDevOverviewMode() && type != ET_TEMPENTITY && type != ET_BEAM && ent->curstate.movetype != MOVETYPE_FOLLOW )
+	if ( CL_IsSpectateOnly() && !CL_IsDevOverviewMode() && type != ET_TEMPENTITY && type != ET_BEAM && ent->curstate.movetype != MOVETYPE_FOLLOW )
 	{
 		for ( i = 0; i < 3; i++ )
 		{
@@ -479,7 +479,7 @@ ClientDLL_Shutdown
 void ClientDLL_Shutdown( void )
 {
 	Net_APIShutDown();
-	SPR_Shutdown_guess();
+	SPR_Shutdown();
 
 	if ( cl_funcs.pShutdown )
 		cl_funcs.pShutdown();
@@ -517,7 +517,7 @@ void ClientDLL_HudVidInit( void )
 	if ( !cl_funcs.pHudVidInitFunc )
 		Sys_Error( "C:\\Documents and Settings\\XPMUser\\Desktop\\GoldSource\\engine\\cdll_int.c, line %d: could not link client DLL for HUD Vid initialization", 1074 );
 
-	SPR_Init_guess();
+	SPR_Init();
 
 	cl_funcs.pHudVidInitFunc();
 }

@@ -1,3 +1,5 @@
+_Net_APIInit
+_Net_APIShutDown
 _Net_SendRequest
 _NET_ParsePlayersResponse
 _NET_ParseRulesResponse

@@ -1,0 +1,11 @@
+_CD_Command_f
+_MP3_GetTrack
+_MP3_Command_f
+_PrimeMusicStream
+_CDAudio_Init
+_CDAudio_Shutdown
+_CDAudio_Play
+_CDAudio_Pause
+_CDAudio_Resume
+_MP3_Resume_Audio
+_MP3_Suspend_Audio

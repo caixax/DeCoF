@@ -2610,6 +2610,61 @@
           "name": "engine/gl_rlight",
           "source": "src/engine_hw/gl_rlight.c",
           "functions_file": "tools/units/hw_engine_gl_rlight.txt"
+        },
+        {
+          "name": "engine/cd",
+          "source": "src/engine_hw/cd.cpp",
+          "functions_file": "tools/units/hw_engine_cd.txt"
+        },
+        {
+          "name": "engine/cdll_exp",
+          "source": "src/engine_hw/cdll_exp.c",
+          "functions_file": "tools/units/hw_engine_cdll_exp.txt"
+        },
+        {
+          "name": "engine/cl_draw",
+          "source": "src/engine_hw/cl_draw.c",
+          "functions_file": "tools/units/hw_engine_cl_draw.txt"
+        },
+        {
+          "name": "engine/cl_extrap",
+          "source": "src/engine_hw/cl_extrap.c",
+          "functions_file": "tools/units/hw_engine_cl_extrap.txt"
+        },
+        {
+          "name": "engine/cl_pmove",
+          "source": "src/engine_hw/cl_pmove.c",
+          "functions_file": "tools/units/hw_engine_cl_pmove.txt"
+        },
+        {
+          "name": "engine/cmodel",
+          "source": "src/engine_hw/cmodel.c",
+          "functions_file": "tools/units/hw_engine_cmodel.txt"
+        },
+        {
+          "name": "engine/com_custom",
+          "source": "src/engine_hw/com_custom.c",
+          "functions_file": "tools/units/hw_engine_com_custom.txt"
+        },
+        {
+          "name": "engine/vgui2/text_draw",
+          "source": "src/engine_hw/vgui2/text_draw.cpp",
+          "functions_file": "tools/units/hw_engine_vgui2_text_draw.txt"
+        },
+        {
+          "name": "engine/vgui_intwrap2",
+          "source": "src/engine_hw/vgui_intwrap2.cpp",
+          "functions_file": "tools/units/hw_engine_vgui_intwrap2.txt"
+        },
+        {
+          "name": "engine/chase",
+          "source": "src/engine_hw/chase.c",
+          "functions_file": "tools/units/hw_engine_chase.txt"
+        },
+        {
+          "name": "engine/buildnum",
+          "source": "src/engine_hw/buildnum.c",
+          "functions_file": "tools/units/hw_engine_buildnum.txt"
         }
       ]
     },

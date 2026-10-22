@@ -2272,3 +2272,5 @@ va,name,kind,evidence
 01E4D4C0,??0PanelMessageFunc_OnRadioButtonChecked@RadioButton@vgui2@@QAE@XZ,func,called by the RadioButton constructor on this+0x111
 01E4D4E0,?InitVar@PanelMessageFunc_OnRadioButtonChecked@RadioButton@vgui2@@SAXXZ,func,"registers ""RadioButtonChecked"""
 01E4D550,?AddToMap@RadioButton@vgui2@@SAXPBDP8Panel@2@AEXXZHH0H0@Z,func,called by the RadioButton InitVar
+01D61850,_StripLength,func,"engine/GL_MESH.C of the Linux hw.so DWARF (first function, line 44) before FanLength and BuildTris; the Quake gl_mesh.c StripLength, called by BuildTris when type == 1 (added by an agent)"
+01D61A88,_FanLength,func,"engine/GL_MESH.C of the Linux hw.so DWARF (line 113) between StripLength and BuildTris; the Quake gl_mesh.c FanLength, called by BuildTris when type == 0 (added by an agent)"
