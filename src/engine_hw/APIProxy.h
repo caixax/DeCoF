@@ -136,7 +136,7 @@ typedef void	(*pfnEngDst_pfnFillRGBABlend_t )				( int *, int *, int *, int *, i
 typedef void	(*pfnEngDst_pfnGetAppID_t )				( void );
 typedef void	(*pfnEngDst_pfnGetAliases_t )				( void );
 typedef void	(*pfnEngDst_pfnVguiWrap2_GetMouseDelta_t) ( int *x, int *y );
-typedef void	(*pfnEngDst_pfnFilteredClientCmd_t )	( char ** );
+typedef void	(*pfnEngDst_pfnFilteredClientCmd_t )	( void );	// no argument in this build (cdll_exp.c hudFilteredClientCmd)
 
 
 // Pointers to the engine destination functions
