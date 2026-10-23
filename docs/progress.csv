@@ -12597,88 +12597,88 @@ gameui,100A3F40,23,??0VPanelHandle@vgui2@@QAE@XZ,vgui2::VPanelHandle::VPanelHand
 gameui,100A3F60,19,??BVPanelHandle@vgui2@@QAEIXZ,int,UNKNOWN,vgui2/controls/FocusNavGroup.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,100A3F80,25,??4VPanelHandle@vgui2@@QAEII@Z,vgui2::VPanelHandle::operator=,UNKNOWN,vgui2/controls/FocusNavGroup.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,100A3FA0,25,??BVPanelHandle@vgui2@@QAE_NXZ,bool,UNKNOWN,vgui2/controls/FocusNavGroup.cpp,,,MATCHED,100,gameui_manual.csv,
-gameui,100A3FC0,370,??0BuildModeDialog@vgui2@@QAE@PAVBuildGroup@1@@Z,vgui2::BuildModeDialog::BuildModeDialog,ENGINE,,,,TODO,,gameui_manual.csv,
-gameui,100A4132,159,,,UNKNOWN,,,,TODO,,,
-gameui,100A41D1,91,,,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,TODO,,,linux: _ZN5vgui215BuildModeDialog7OnCloseEv
-gameui,100A422C,2333,,vgui2::BuildModeDialog::CreateControls,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,TODO,,linux_symbols:string:0.5,linux: _ZN5vgui215BuildModeDialog14CreateControlsEv
-gameui,100A4B49,735,,,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,TODO,,,linux: _ZN5vgui215BuildModeDialog13PerformLayoutEv
-gameui,100A4E28,25,,,UNKNOWN,,,,TODO,,,
-gameui,100A4E41,148,,,UNKNOWN,,,,TODO,,,
-gameui,100A4ED5,1858,,vgui2::BuildModeDialog::SetActiveControl,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,TODO,,linux_symbols:string:0.755,linux: _ZN5vgui215BuildModeDialog16SetActiveControlEPNS_5PanelE
-gameui,100A5617,369,,vgui2::BuildModeDialog::UpdateControlData,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,TODO,,linux_symbols:string:0.816,linux: _ZN5vgui215BuildModeDialog17UpdateControlDataEPNS_5PanelE
-gameui,100A5788,200,,,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,TODO,,,linux: _ZN5vgui215BuildModeDialog17UpdateEditControlER11PanelItem_tPKc
-gameui,100A5850,295,,vgui2::BuildModeDialog::OnCommand,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,TODO,,linux_symbols:string:0.734,linux: _ZN5vgui215BuildModeDialog9OnCommandEPKc
-gameui,100A5977,161,,,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,TODO,,,linux: _ZN5vgui215BuildModeDialog13OnDeletePanelEv
-gameui,100A5A18,1111,,vgui2::BuildModeDialog::ApplyDataToControls,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,TODO,,linux_symbols:string:0.809,linux: _ZN5vgui215BuildModeDialog19ApplyDataToControlsEv
-gameui,100A5E6F,155,,,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,TODO,,,linux: _ZN5vgui215BuildModeDialog17StoreUndoSettingsEv
-gameui,100A5F0A,147,,,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,TODO,,,linux: _ZN5vgui215BuildModeDialog6DoUndoEv
-gameui,100A5F9D,124,,,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,TODO,,,linux: _ZN5vgui215BuildModeDialog6DoCopyEv
-gameui,100A6019,226,,,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,TODO,,,linux: _ZN5vgui215BuildModeDialog7DoPasteEv
-gameui,100A60FB,458,,,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,TODO,,,linux: _ZN5vgui215BuildModeDialog13StoreSettingsEv
-gameui,100A62C5,47,,,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,TODO,,,linux: _ZN5vgui215BuildModeDialog14OnKeyCodeTypedENS_7KeyCodeE
-gameui,100A62F4,437,,,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,TODO,,,linux: _ZN5vgui215BuildModeDialog13OnTextChangedEPNS_5PanelE
-gameui,100A64A9,90,,,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,TODO,,,linux: _ZN5vgui215BuildModeDialog13ExitBuildModeEv
-gameui,100A6503,139,,,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,TODO,,,linux: _ZN5vgui215BuildModeDialog12OnNewControlEPKcii
-gameui,100A658E,39,,,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,TODO,,,linux: _ZN5vgui215BuildModeDialog16EnableSaveButtonEv
-gameui,100A65B5,62,,,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,TODO,,,linux: _ZN5vgui215BuildModeDialog13RevertToSavedEv
-gameui,100A65F3,178,,vgui2::BuildModeDialog::ShowHelp,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,TODO,,linux_symbols:string:0.765,linux: _ZN5vgui215BuildModeDialog8ShowHelpEv
-gameui,100A66A5,35,,,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,TODO,,,linux: _ZN5vgui215BuildModeDialog17ShutdownBuildModeEv
-gameui,100A66C8,39,,,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,TODO,,,linux: _ZN5vgui215BuildModeDialog12OnPanelMovedEv
-gameui,100A66EF,51,,,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,TODO,,,linux: _ZN5vgui215BuildModeDialog18OnSetClipboardTextEPKc
-gameui,100A6730,46,,,UNKNOWN,,,,TODO,,,
-gameui,100A6760,26,,,UNKNOWN,,,,TODO,,,
-gameui,100A6780,224,,,UNKNOWN,,,,TODO,,,
-gameui,100A6860,87,,,UNKNOWN,,,,TODO,,,
-gameui,100A68C0,23,,,UNKNOWN,,,,TODO,,,
-gameui,100A68E0,19,,,UNKNOWN,,,,TODO,,,
-gameui,100A6900,102,,,UNKNOWN,,,,TODO,,,
-gameui,100A6970,64,,,UNKNOWN,,,,TODO,,,
-gameui,100A69B0,10,,,UNKNOWN,,,,TODO,,,
-gameui,100A69C0,10,,,UNKNOWN,,,,TODO,,,
-gameui,100A69D0,19,,,UNKNOWN,,,,TODO,,,
-gameui,100A69F0,110,,,UNKNOWN,,,,TODO,,,
-gameui,100A6A60,120,,,UNKNOWN,,,,TODO,,,
-gameui,100A6AE0,19,,,UNKNOWN,,,,TODO,,,
-gameui,100A6B00,110,,,UNKNOWN,,,,TODO,,,
-gameui,100A6B70,19,,,UNKNOWN,,,,TODO,,,
-gameui,100A6B90,107,,,UNKNOWN,,,,TODO,,,
-gameui,100A6C00,19,,,UNKNOWN,,,,TODO,,,
-gameui,100A6C20,107,,,UNKNOWN,,,,TODO,,,
-gameui,100A6C90,19,,,UNKNOWN,,,,TODO,,,
-gameui,100A6CB0,110,,,UNKNOWN,,,,TODO,,,
-gameui,100A6D20,19,,,UNKNOWN,,,,TODO,,,
-gameui,100A6D40,107,,,UNKNOWN,,,,TODO,,,
-gameui,100A6DB0,19,,,UNKNOWN,,,,TODO,,,
-gameui,100A6DD0,107,,,UNKNOWN,,,,TODO,,,
-gameui,100A6E40,19,,,UNKNOWN,,,,TODO,,,
-gameui,100A6E60,107,,,UNKNOWN,,,,TODO,,,
-gameui,100A6ED0,19,,,UNKNOWN,,,,TODO,,,
-gameui,100A6EF0,107,,,UNKNOWN,,,,TODO,,,
-gameui,100A6F60,19,,,UNKNOWN,,,,TODO,,,
-gameui,100A6F80,107,,,UNKNOWN,,,,TODO,,,
-gameui,100A6FF0,19,,,UNKNOWN,,,,TODO,,,
-gameui,100A7010,107,,,UNKNOWN,,,,TODO,,,
-gameui,100A7080,19,,,UNKNOWN,,,,TODO,,,
-gameui,100A70A0,107,,,UNKNOWN,,,,TODO,,,
-gameui,100A7110,19,,,UNKNOWN,,,,TODO,,,
-gameui,100A7130,110,,,UNKNOWN,,,,TODO,,,
-gameui,100A71A0,50,,,UNKNOWN,,,,TODO,,,
-gameui,100A71E0,25,,,UNKNOWN,,,,TODO,,,
-gameui,100A7200,17,,,UNKNOWN,,,,TODO,,,
-gameui,100A7220,32,,,UNKNOWN,,,,TODO,,,
-gameui,100A7240,70,,,UNKNOWN,,,,TODO,,,
-gameui,100A7290,25,,,UNKNOWN,,,,TODO,,,
-gameui,100A72B0,65,,,UNKNOWN,,,,TODO,,,
-gameui,100A7300,11,,,UNKNOWN,,,,TODO,,,
-gameui,100A7310,75,,,UNKNOWN,,,,TODO,,,
-gameui,100A7360,26,,,UNKNOWN,,,,TODO,,,
-gameui,100A7380,5,,,UNKNOWN,,,,TODO,,,
-gameui,100A7390,87,,,UNKNOWN,,,,TODO,,,
-gameui,100A73F0,86,,,UNKNOWN,,,,TODO,,,
-gameui,100A7450,65,,,UNKNOWN,,,,TODO,,,
-gameui,100A74A0,17,,,UNKNOWN,,,,TODO,,,
-gameui,100A74C0,199,,,UNKNOWN,,,,TODO,,,
-gameui,100A7590,25,,,UNKNOWN,,,,TODO,,,
+gameui,100A3FC0,370,??0BuildModeDialog@vgui2@@QAE@PAVBuildGroup@1@@Z,vgui2::BuildModeDialog::BuildModeDialog,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A4132,159,??1BuildModeDialog@vgui2@@UAE@XZ,vgui2::BuildModeDialog::~BuildModeDialog,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A41D1,91,?OnClose@BuildModeDialog@vgui2@@MAEXXZ,vgui2::BuildModeDialog::OnClose,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui215BuildModeDialog7OnCloseEv
+gameui,100A422C,2333,?CreateControls@BuildModeDialog@vgui2@@IAEXXZ,vgui2::BuildModeDialog::CreateControls,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui215BuildModeDialog14CreateControlsEv
+gameui,100A4B49,735,?PerformLayout@BuildModeDialog@vgui2@@MAEXXZ,vgui2::BuildModeDialog::PerformLayout,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui215BuildModeDialog13PerformLayoutEv
+gameui,100A4E28,25,?RemoveAllControls@BuildModeDialog@vgui2@@AAEXXZ,vgui2::BuildModeDialog::RemoveAllControls,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A4E41,148,?ParseTokenFromString@@YAPBDPAPBD@Z,ParseTokenFromString,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A4ED5,1858,?SetActiveControl@BuildModeDialog@vgui2@@UAEXPAVPanel@2@@Z,vgui2::BuildModeDialog::SetActiveControl,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui215BuildModeDialog16SetActiveControlEPNS_5PanelE
+gameui,100A5617,369,?UpdateControlData@BuildModeDialog@vgui2@@UAEXPAVPanel@2@@Z,vgui2::BuildModeDialog::UpdateControlData,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui215BuildModeDialog17UpdateControlDataEPNS_5PanelE
+gameui,100A5788,200,?UpdateEditControl@BuildModeDialog@vgui2@@AAEXAAUPanelItem_t@@PBD@Z,vgui2::BuildModeDialog::UpdateEditControl,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui215BuildModeDialog17UpdateEditControlER11PanelItem_tPKc
+gameui,100A5850,295,?OnCommand@BuildModeDialog@vgui2@@MAEXPBD@Z,vgui2::BuildModeDialog::OnCommand,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui215BuildModeDialog9OnCommandEPKc
+gameui,100A5977,161,?OnDeletePanel@BuildModeDialog@vgui2@@MAEXXZ,vgui2::BuildModeDialog::OnDeletePanel,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui215BuildModeDialog13OnDeletePanelEv
+gameui,100A5A18,1111,?ApplyDataToControls@BuildModeDialog@vgui2@@MAEXXZ,vgui2::BuildModeDialog::ApplyDataToControls,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui215BuildModeDialog19ApplyDataToControlsEv
+gameui,100A5E6F,155,?StoreUndoSettings@BuildModeDialog@vgui2@@UAEXXZ,vgui2::BuildModeDialog::StoreUndoSettings,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui215BuildModeDialog17StoreUndoSettingsEv
+gameui,100A5F0A,147,?DoUndo@BuildModeDialog@vgui2@@MAEXXZ,vgui2::BuildModeDialog::DoUndo,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui215BuildModeDialog6DoUndoEv
+gameui,100A5F9D,124,?DoCopy@BuildModeDialog@vgui2@@MAEXXZ,vgui2::BuildModeDialog::DoCopy,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui215BuildModeDialog6DoCopyEv
+gameui,100A6019,226,?DoPaste@BuildModeDialog@vgui2@@MAEXXZ,vgui2::BuildModeDialog::DoPaste,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui215BuildModeDialog7DoPasteEv
+gameui,100A60FB,458,?StoreSettings@BuildModeDialog@vgui2@@UAEPAVKeyValues@@XZ,vgui2::BuildModeDialog::StoreSettings,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui215BuildModeDialog13StoreSettingsEv
+gameui,100A62C5,47,?OnKeyCodeTyped@BuildModeDialog@vgui2@@MAEXW4KeyCode@2@@Z,vgui2::BuildModeDialog::OnKeyCodeTyped,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui215BuildModeDialog14OnKeyCodeTypedENS_7KeyCodeE
+gameui,100A62F4,437,?OnTextChanged@BuildModeDialog@vgui2@@MAEXPAVPanel@2@@Z,vgui2::BuildModeDialog::OnTextChanged,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui215BuildModeDialog13OnTextChangedEPNS_5PanelE
+gameui,100A64A9,90,?ExitBuildMode@BuildModeDialog@vgui2@@IAEXXZ,vgui2::BuildModeDialog::ExitBuildMode,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui215BuildModeDialog13ExitBuildModeEv
+gameui,100A6503,139,?OnNewControl@BuildModeDialog@vgui2@@IAEPAVPanel@2@PBDHH@Z,vgui2::BuildModeDialog::OnNewControl,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui215BuildModeDialog12OnNewControlEPKcii
+gameui,100A658E,39,?EnableSaveButton@BuildModeDialog@vgui2@@MAEXXZ,vgui2::BuildModeDialog::EnableSaveButton,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui215BuildModeDialog16EnableSaveButtonEv
+gameui,100A65B5,62,?RevertToSaved@BuildModeDialog@vgui2@@IAEXXZ,vgui2::BuildModeDialog::RevertToSaved,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui215BuildModeDialog13RevertToSavedEv
+gameui,100A65F3,178,?ShowHelp@BuildModeDialog@vgui2@@IAEXXZ,vgui2::BuildModeDialog::ShowHelp,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui215BuildModeDialog8ShowHelpEv
+gameui,100A66A5,35,?ShutdownBuildMode@BuildModeDialog@vgui2@@MAEXXZ,vgui2::BuildModeDialog::ShutdownBuildMode,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui215BuildModeDialog17ShutdownBuildModeEv
+gameui,100A66C8,39,?OnPanelMoved@BuildModeDialog@vgui2@@MAEXXZ,vgui2::BuildModeDialog::OnPanelMoved,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui215BuildModeDialog12OnPanelMovedEv
+gameui,100A66EF,51,?OnSetClipboardText@BuildModeDialog@vgui2@@MAEXPBD@Z,vgui2::BuildModeDialog::OnSetClipboardText,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui215BuildModeDialog18OnSetClipboardTextEPKc
+gameui,100A6730,46,??_GBuildModeDialog@vgui2@@UAEPAXI@Z,destructor',UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A6760,26,??0PanelList@BuildModeDialog@vgui2@@QAE@XZ,vgui2::BuildModeDialog::PanelList::PanelList,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A6780,224,?RemoveAll@PanelList@BuildModeDialog@vgui2@@QAEXXZ,vgui2::BuildModeDialog::PanelList::RemoveAll,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A6860,87,?AddItem@PanelList@BuildModeDialog@vgui2@@QAEXPAVPanel@3@PAVTextEntry@3@PAVComboBox@3@PAVButton@3@PBDH@Z,vgui2::BuildModeDialog::PanelList::AddItem,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A68C0,23,??0PanelItem_t@@QAE@XZ,PanelItem_t::PanelItem_t,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A68E0,19,??0BuildModeDialog_RegisterMap@BuildModeDialog@vgui2@@QAE@XZ,vgui2::BuildModeDialog::BuildModeDialog_RegisterMap::BuildModeDialog_RegisterMap,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A6900,102,?ChainToMap@BuildModeDialog@vgui2@@SAXXZ,vgui2::BuildModeDialog::ChainToMap,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A6970,64,?GetMessageMap@BuildModeDialog@vgui2@@UAEPAUPanelMessageMap@2@XZ,vgui2::BuildModeDialog::GetMessageMap,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A69B0,10,?GetPanelClassName@BuildModeDialog@vgui2@@SAPBDXZ,vgui2::BuildModeDialog::GetPanelClassName,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A69C0,10,?GetPanelBaseClassName@BuildModeDialog@vgui2@@SAPBDXZ,vgui2::BuildModeDialog::GetPanelBaseClassName,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A69D0,19,??0PanelMessageFunc_SetActiveControl@BuildModeDialog@vgui2@@QAE@XZ,vgui2::BuildModeDialog::PanelMessageFunc_SetActiveControl::PanelMessageFunc_SetActiveControl,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A69F0,110,?InitVar@PanelMessageFunc_SetActiveControl@BuildModeDialog@vgui2@@SAXXZ,vgui2::BuildModeDialog::PanelMessageFunc_SetActiveControl::InitVar,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A6A60,120,?AddToMap@BuildModeDialog@vgui2@@SAXPBDP8Panel@2@AEXXZHH0H0@Z,vgui2::BuildModeDialog::AddToMap,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A6AE0,19,??0PanelMessageFunc_UpdateControlData@BuildModeDialog@vgui2@@QAE@XZ,vgui2::BuildModeDialog::PanelMessageFunc_UpdateControlData::PanelMessageFunc_UpdateControlData,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A6B00,110,?InitVar@PanelMessageFunc_UpdateControlData@BuildModeDialog@vgui2@@SAXXZ,vgui2::BuildModeDialog::PanelMessageFunc_UpdateControlData::InitVar,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A6B70,19,??0PanelMessageFunc_StoreUndoSettings@BuildModeDialog@vgui2@@QAE@XZ,vgui2::BuildModeDialog::PanelMessageFunc_StoreUndoSettings::PanelMessageFunc_StoreUndoSettings,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A6B90,107,?InitVar@PanelMessageFunc_StoreUndoSettings@BuildModeDialog@vgui2@@SAXXZ,vgui2::BuildModeDialog::PanelMessageFunc_StoreUndoSettings::InitVar,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A6C00,19,??0PanelMessageFunc_ApplyDataToControls@BuildModeDialog@vgui2@@QAE@XZ,vgui2::BuildModeDialog::PanelMessageFunc_ApplyDataToControls::PanelMessageFunc_ApplyDataToControls,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A6C20,107,?InitVar@PanelMessageFunc_ApplyDataToControls@BuildModeDialog@vgui2@@SAXXZ,vgui2::BuildModeDialog::PanelMessageFunc_ApplyDataToControls::InitVar,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A6C90,19,??0PanelMessageFunc_OnTextChanged@BuildModeDialog@vgui2@@QAE@XZ,vgui2::BuildModeDialog::PanelMessageFunc_OnTextChanged::PanelMessageFunc_OnTextChanged,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A6CB0,110,?InitVar@PanelMessageFunc_OnTextChanged@BuildModeDialog@vgui2@@SAXXZ,vgui2::BuildModeDialog::PanelMessageFunc_OnTextChanged::InitVar,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A6D20,19,??0PanelMessageFunc_OnDeletePanel@BuildModeDialog@vgui2@@QAE@XZ,vgui2::BuildModeDialog::PanelMessageFunc_OnDeletePanel::PanelMessageFunc_OnDeletePanel,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A6D40,107,?InitVar@PanelMessageFunc_OnDeletePanel@BuildModeDialog@vgui2@@SAXXZ,vgui2::BuildModeDialog::PanelMessageFunc_OnDeletePanel::InitVar,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A6DB0,19,??0PanelMessageFunc_DoUndo@BuildModeDialog@vgui2@@QAE@XZ,vgui2::BuildModeDialog::PanelMessageFunc_DoUndo::PanelMessageFunc_DoUndo,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A6DD0,107,?InitVar@PanelMessageFunc_DoUndo@BuildModeDialog@vgui2@@SAXXZ,vgui2::BuildModeDialog::PanelMessageFunc_DoUndo::InitVar,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A6E40,19,??0PanelMessageFunc_DoCopy@BuildModeDialog@vgui2@@QAE@XZ,vgui2::BuildModeDialog::PanelMessageFunc_DoCopy::PanelMessageFunc_DoCopy,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A6E60,107,?InitVar@PanelMessageFunc_DoCopy@BuildModeDialog@vgui2@@SAXXZ,vgui2::BuildModeDialog::PanelMessageFunc_DoCopy::InitVar,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A6ED0,19,??0PanelMessageFunc_DoPaste@BuildModeDialog@vgui2@@QAE@XZ,vgui2::BuildModeDialog::PanelMessageFunc_DoPaste::PanelMessageFunc_DoPaste,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A6EF0,107,?InitVar@PanelMessageFunc_DoPaste@BuildModeDialog@vgui2@@SAXXZ,vgui2::BuildModeDialog::PanelMessageFunc_DoPaste::InitVar,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A6F60,19,??0PanelMessageFunc_EnableSaveButton@BuildModeDialog@vgui2@@QAE@XZ,vgui2::BuildModeDialog::PanelMessageFunc_EnableSaveButton::PanelMessageFunc_EnableSaveButton,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A6F80,107,?InitVar@PanelMessageFunc_EnableSaveButton@BuildModeDialog@vgui2@@SAXXZ,vgui2::BuildModeDialog::PanelMessageFunc_EnableSaveButton::InitVar,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A6FF0,19,??0PanelMessageFunc_ShutdownBuildMode@BuildModeDialog@vgui2@@QAE@XZ,vgui2::BuildModeDialog::PanelMessageFunc_ShutdownBuildMode::PanelMessageFunc_ShutdownBuildMode,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A7010,107,?InitVar@PanelMessageFunc_ShutdownBuildMode@BuildModeDialog@vgui2@@SAXXZ,vgui2::BuildModeDialog::PanelMessageFunc_ShutdownBuildMode::InitVar,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A7080,19,??0PanelMessageFunc_OnPanelMoved@BuildModeDialog@vgui2@@QAE@XZ,vgui2::BuildModeDialog::PanelMessageFunc_OnPanelMoved::PanelMessageFunc_OnPanelMoved,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A70A0,107,?InitVar@PanelMessageFunc_OnPanelMoved@BuildModeDialog@vgui2@@SAXXZ,vgui2::BuildModeDialog::PanelMessageFunc_OnPanelMoved::InitVar,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A7110,19,??0PanelMessageFunc_OnSetClipboardText@BuildModeDialog@vgui2@@QAE@XZ,vgui2::BuildModeDialog::PanelMessageFunc_OnSetClipboardText::PanelMessageFunc_OnSetClipboardText,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A7130,110,?InitVar@PanelMessageFunc_OnSetClipboardText@BuildModeDialog@vgui2@@SAXXZ,vgui2::BuildModeDialog::PanelMessageFunc_OnSetClipboardText::InitVar,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A71A0,50,??0?$CUtlVector@UPanelItem_t@@@@QAE@HH@Z,PanelItem_t>,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A71E0,25,??A?$CUtlVector@UPanelItem_t@@@@QAEAAUPanelItem_t@@H@Z,PanelItem_t>::operator[],UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A7200,17,?Size@?$CUtlVector@UPanelItem_t@@@@QBEHXZ,PanelItem_t>::Size,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A7220,32,?AddToTail@?$CUtlVector@UPanelItem_t@@@@QAEHABUPanelItem_t@@@Z,PanelItem_t>::AddToTail,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A7240,70,?RemoveAll@?$CUtlVector@UPanelItem_t@@@@QAEXXZ,PanelItem_t>::RemoveAll,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A7290,25,?Element@?$CUtlVector@UPanelItem_t@@@@QAEAAUPanelItem_t@@H@Z,PanelItem_t>::Element,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A72B0,65,?InsertBefore@?$CUtlVector@UPanelItem_t@@@@QAEHHABUPanelItem_t@@@Z,PanelItem_t>::InsertBefore,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A7300,11,?ResetDbgInfo@?$CUtlVector@UPanelItem_t@@@@IAEXXZ,PanelItem_t>::ResetDbgInfo,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A7310,75,??0?$CUtlMemory@UPanelItem_t@@@@QAE@HH@Z,PanelItem_t>,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A7360,26,??A?$CUtlMemory@UPanelItem_t@@@@QAEAAUPanelItem_t@@H@Z,PanelItem_t>::operator[],UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A7380,5,?Destruct@@YAXPAUPanelItem_t@@@Z,Destruct,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A7390,87,?GrowVector@?$CUtlVector@UPanelItem_t@@@@IAEXH@Z,PanelItem_t>::GrowVector,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A73F0,86,?ShiftElementsRight@?$CUtlVector@UPanelItem_t@@@@IAEXHH@Z,PanelItem_t>::ShiftElementsRight,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A7450,65,?CopyConstruct@@YAXPAUPanelItem_t@@ABU1@@Z,CopyConstruct,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A74A0,17,?NumAllocated@?$CUtlMemory@UPanelItem_t@@@@QBEHXZ,PanelItem_t>::NumAllocated,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A74C0,199,?Grow@?$CUtlMemory@UPanelItem_t@@@@QAEXH@Z,PanelItem_t>::Grow,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A7590,25,?IsExternallyAllocated@?$CUtlMemory@UPanelItem_t@@@@QBE_NXZ,PanelItem_t>::IsExternallyAllocated,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,100A75E0,67,,,UNKNOWN,,,,TODO,,,
 gameui,100A7623,28,,,UNKNOWN,,,,TODO,,,
 gameui,100A763F,56,,,UNKNOWN,,,,TODO,,,
@@ -30614,88 +30614,88 @@ hw,01E3A470,23,??0VPanelHandle@vgui2@@QAE@XZ,vgui2::VPanelHandle::VPanelHandle,U
 hw,01E3A490,19,??BVPanelHandle@vgui2@@QAEIXZ,int,UNKNOWN,vgui2/controls/FocusNavGroup.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01E3A4B0,25,??4VPanelHandle@vgui2@@QAEII@Z,vgui2::VPanelHandle::operator=,UNKNOWN,vgui2/controls/FocusNavGroup.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01E3A4D0,25,??BVPanelHandle@vgui2@@QAE_NXZ,bool,UNKNOWN,vgui2/controls/FocusNavGroup.cpp,,,MATCHED,100,hw_manual.csv,
-hw,01E3A4F0,370,??0BuildModeDialog@vgui2@@QAE@PAVBuildGroup@1@@Z,vgui2::BuildModeDialog::BuildModeDialog,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,TODO,,linux_symbols:string:0.432,
-hw,01E3A662,159,,,UNKNOWN,guess:vgui2/controls/BuildModeDialog.cpp,,,TODO,,,
-hw,01E3A701,91,,,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,TODO,,,linux: _ZN5vgui215BuildModeDialog7OnCloseEv
-hw,01E3A75C,2333,,vgui2::BuildModeDialog::CreateControls,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,TODO,,linux_symbols:string:0.586,
-hw,01E3B079,735,,,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,TODO,,,linux: _ZN5vgui215BuildModeDialog13PerformLayoutEv
-hw,01E3B358,25,,,UNKNOWN,guess:vgui2/controls/BuildModeDialog.cpp,,,TODO,,,
-hw,01E3B371,148,,,UNKNOWN,guess:vgui2/controls/BuildModeDialog.cpp,,,TODO,,,
-hw,01E3B405,1858,,vgui2::BuildModeDialog::SetActiveControl,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,TODO,,linux_symbols:string:0.746,
-hw,01E3BB47,369,,vgui2::BuildModeDialog::UpdateControlData,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,TODO,,linux_symbols:string:0.81,
-hw,01E3BCB8,200,,,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,TODO,,,linux: _ZN5vgui215BuildModeDialog17UpdateEditControlER11PanelItem_tPKc
-hw,01E3BD80,295,,vgui2::BuildModeDialog::OnCommand,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,TODO,,linux_symbols:string:0.726,
-hw,01E3BEA7,161,,,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,TODO,,,linux: _ZN5vgui215BuildModeDialog13OnDeletePanelEv
-hw,01E3BF48,1111,,vgui2::BuildModeDialog::ApplyDataToControls,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,TODO,,linux_symbols:string:0.806,
-hw,01E3C39F,155,,,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,TODO,,,linux: _ZN5vgui215BuildModeDialog17StoreUndoSettingsEv
-hw,01E3C43A,147,,,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,TODO,,,linux: _ZN5vgui215BuildModeDialog6DoUndoEv
-hw,01E3C4CD,124,,,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,TODO,,,linux: _ZN5vgui215BuildModeDialog6DoCopyEv
-hw,01E3C549,226,,,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,TODO,,,linux: _ZN5vgui215BuildModeDialog7DoPasteEv
-hw,01E3C62B,458,,,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,TODO,,,linux: _ZN5vgui215BuildModeDialog13StoreSettingsEv
-hw,01E3C7F5,47,,,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,TODO,,,linux: _ZN5vgui215BuildModeDialog14OnKeyCodeTypedENS_7KeyCodeE
-hw,01E3C824,437,,,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,TODO,,,linux: _ZN5vgui215BuildModeDialog13OnTextChangedEPNS_5PanelE
-hw,01E3C9D9,90,,,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,TODO,,,linux: _ZN5vgui215BuildModeDialog13ExitBuildModeEv
-hw,01E3CA33,139,,,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,TODO,,,linux: _ZN5vgui215BuildModeDialog12OnNewControlEPKcii
-hw,01E3CABE,39,,,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,TODO,,,linux: _ZN5vgui215BuildModeDialog16EnableSaveButtonEv
-hw,01E3CAE5,62,,,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,TODO,,,linux: _ZN5vgui215BuildModeDialog13RevertToSavedEv
-hw,01E3CB23,178,,vgui2::BuildModeDialog::ShowHelp,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,TODO,,linux_symbols:string:0.763,
-hw,01E3CBD5,35,,,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,TODO,,,linux: _ZN5vgui215BuildModeDialog17ShutdownBuildModeEv
-hw,01E3CBF8,39,,,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,TODO,,,linux: _ZN5vgui215BuildModeDialog12OnPanelMovedEv
-hw,01E3CC1F,51,,,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,TODO,,,linux: _ZN5vgui215BuildModeDialog18OnSetClipboardTextEPKc
-hw,01E3CC60,46,,,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,TODO,,,
-hw,01E3CC90,26,,,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,TODO,,,
-hw,01E3CCB0,224,,,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,TODO,,,
-hw,01E3CD90,87,,,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,TODO,,,
-hw,01E3CDF0,23,,,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,TODO,,,
-hw,01E3CE10,19,,,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,TODO,,,
-hw,01E3CE30,102,,,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,TODO,,,
-hw,01E3CEA0,64,,,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,TODO,,,
-hw,01E3CEE0,10,,,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,TODO,,,
-hw,01E3CEF0,10,,,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,TODO,,,
-hw,01E3CF00,19,,,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,TODO,,,
-hw,01E3CF20,110,,,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,TODO,,,
-hw,01E3CF90,120,,,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,TODO,,,
-hw,01E3D010,19,,,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,TODO,,,
-hw,01E3D030,110,,,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,TODO,,,
-hw,01E3D0A0,19,,,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,TODO,,,
-hw,01E3D0C0,107,,,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,TODO,,,
-hw,01E3D130,19,,,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,TODO,,,
-hw,01E3D150,107,,,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,TODO,,,
-hw,01E3D1C0,19,,,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,TODO,,,
-hw,01E3D1E0,110,,,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,TODO,,,
-hw,01E3D250,19,,,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,TODO,,,
-hw,01E3D270,107,,,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,TODO,,,
-hw,01E3D2E0,19,,,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,TODO,,,
-hw,01E3D300,107,,,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,TODO,,,
-hw,01E3D370,19,,,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,TODO,,,
-hw,01E3D390,107,,,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,TODO,,,
-hw,01E3D400,19,,,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,TODO,,,
-hw,01E3D420,107,,,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,TODO,,,
-hw,01E3D490,19,,,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,TODO,,,
-hw,01E3D4B0,107,,,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,TODO,,,
-hw,01E3D520,19,,,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,TODO,,,
-hw,01E3D540,107,,,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,TODO,,,
-hw,01E3D5B0,19,,,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,TODO,,,
-hw,01E3D5D0,107,,,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,TODO,,,
-hw,01E3D640,19,,,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,TODO,,,
-hw,01E3D660,110,,,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,TODO,,,
-hw,01E3D6D0,50,,,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,TODO,,,
-hw,01E3D710,25,,,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,TODO,,,
-hw,01E3D730,17,,,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,TODO,,,
-hw,01E3D750,32,,,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,TODO,,,
-hw,01E3D770,70,,,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,TODO,,,
-hw,01E3D7C0,25,,,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,TODO,,,
-hw,01E3D7E0,65,,,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,TODO,,,
-hw,01E3D830,11,,,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,TODO,,,
-hw,01E3D840,75,,,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,TODO,,,
-hw,01E3D890,26,,,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,TODO,,,
-hw,01E3D8B0,5,,,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,TODO,,,
-hw,01E3D8C0,87,,,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,TODO,,,
-hw,01E3D920,86,,,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,TODO,,,
-hw,01E3D980,65,,,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,TODO,,,
-hw,01E3D9D0,17,,,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,TODO,,,
-hw,01E3D9F0,199,,,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,TODO,,,
-hw,01E3DAC0,25,,,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,TODO,,,
+hw,01E3A4F0,370,??0BuildModeDialog@vgui2@@QAE@PAVBuildGroup@1@@Z,vgui2::BuildModeDialog::BuildModeDialog,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,linux_symbols:string:0.432,
+hw,01E3A662,159,??1BuildModeDialog@vgui2@@UAE@XZ,vgui2::BuildModeDialog::~BuildModeDialog,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3A701,91,?OnClose@BuildModeDialog@vgui2@@MAEXXZ,vgui2::BuildModeDialog::OnClose,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui215BuildModeDialog7OnCloseEv
+hw,01E3A75C,2333,?CreateControls@BuildModeDialog@vgui2@@IAEXXZ,vgui2::BuildModeDialog::CreateControls,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3B079,735,?PerformLayout@BuildModeDialog@vgui2@@MAEXXZ,vgui2::BuildModeDialog::PerformLayout,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui215BuildModeDialog13PerformLayoutEv
+hw,01E3B358,25,?RemoveAllControls@BuildModeDialog@vgui2@@AAEXXZ,vgui2::BuildModeDialog::RemoveAllControls,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3B371,148,?ParseTokenFromString@@YAPBDPAPBD@Z,ParseTokenFromString,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3B405,1858,?SetActiveControl@BuildModeDialog@vgui2@@UAEXPAVPanel@2@@Z,vgui2::BuildModeDialog::SetActiveControl,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3BB47,369,?UpdateControlData@BuildModeDialog@vgui2@@UAEXPAVPanel@2@@Z,vgui2::BuildModeDialog::UpdateControlData,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3BCB8,200,?UpdateEditControl@BuildModeDialog@vgui2@@AAEXAAUPanelItem_t@@PBD@Z,vgui2::BuildModeDialog::UpdateEditControl,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui215BuildModeDialog17UpdateEditControlER11PanelItem_tPKc
+hw,01E3BD80,295,?OnCommand@BuildModeDialog@vgui2@@MAEXPBD@Z,vgui2::BuildModeDialog::OnCommand,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3BEA7,161,?OnDeletePanel@BuildModeDialog@vgui2@@MAEXXZ,vgui2::BuildModeDialog::OnDeletePanel,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui215BuildModeDialog13OnDeletePanelEv
+hw,01E3BF48,1111,?ApplyDataToControls@BuildModeDialog@vgui2@@MAEXXZ,vgui2::BuildModeDialog::ApplyDataToControls,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3C39F,155,?StoreUndoSettings@BuildModeDialog@vgui2@@UAEXXZ,vgui2::BuildModeDialog::StoreUndoSettings,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui215BuildModeDialog17StoreUndoSettingsEv
+hw,01E3C43A,147,?DoUndo@BuildModeDialog@vgui2@@MAEXXZ,vgui2::BuildModeDialog::DoUndo,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui215BuildModeDialog6DoUndoEv
+hw,01E3C4CD,124,?DoCopy@BuildModeDialog@vgui2@@MAEXXZ,vgui2::BuildModeDialog::DoCopy,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui215BuildModeDialog6DoCopyEv
+hw,01E3C549,226,?DoPaste@BuildModeDialog@vgui2@@MAEXXZ,vgui2::BuildModeDialog::DoPaste,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui215BuildModeDialog7DoPasteEv
+hw,01E3C62B,458,?StoreSettings@BuildModeDialog@vgui2@@UAEPAVKeyValues@@XZ,vgui2::BuildModeDialog::StoreSettings,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui215BuildModeDialog13StoreSettingsEv
+hw,01E3C7F5,47,?OnKeyCodeTyped@BuildModeDialog@vgui2@@MAEXW4KeyCode@2@@Z,vgui2::BuildModeDialog::OnKeyCodeTyped,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui215BuildModeDialog14OnKeyCodeTypedENS_7KeyCodeE
+hw,01E3C824,437,?OnTextChanged@BuildModeDialog@vgui2@@MAEXPAVPanel@2@@Z,vgui2::BuildModeDialog::OnTextChanged,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui215BuildModeDialog13OnTextChangedEPNS_5PanelE
+hw,01E3C9D9,90,?ExitBuildMode@BuildModeDialog@vgui2@@IAEXXZ,vgui2::BuildModeDialog::ExitBuildMode,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui215BuildModeDialog13ExitBuildModeEv
+hw,01E3CA33,139,?OnNewControl@BuildModeDialog@vgui2@@IAEPAVPanel@2@PBDHH@Z,vgui2::BuildModeDialog::OnNewControl,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui215BuildModeDialog12OnNewControlEPKcii
+hw,01E3CABE,39,?EnableSaveButton@BuildModeDialog@vgui2@@MAEXXZ,vgui2::BuildModeDialog::EnableSaveButton,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui215BuildModeDialog16EnableSaveButtonEv
+hw,01E3CAE5,62,?RevertToSaved@BuildModeDialog@vgui2@@IAEXXZ,vgui2::BuildModeDialog::RevertToSaved,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui215BuildModeDialog13RevertToSavedEv
+hw,01E3CB23,178,?ShowHelp@BuildModeDialog@vgui2@@IAEXXZ,vgui2::BuildModeDialog::ShowHelp,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3CBD5,35,?ShutdownBuildMode@BuildModeDialog@vgui2@@MAEXXZ,vgui2::BuildModeDialog::ShutdownBuildMode,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui215BuildModeDialog17ShutdownBuildModeEv
+hw,01E3CBF8,39,?OnPanelMoved@BuildModeDialog@vgui2@@MAEXXZ,vgui2::BuildModeDialog::OnPanelMoved,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui215BuildModeDialog12OnPanelMovedEv
+hw,01E3CC1F,51,?OnSetClipboardText@BuildModeDialog@vgui2@@MAEXPBD@Z,vgui2::BuildModeDialog::OnSetClipboardText,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui215BuildModeDialog18OnSetClipboardTextEPKc
+hw,01E3CC60,46,??_GBuildModeDialog@vgui2@@UAEPAXI@Z,destructor',ENGINE,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3CC90,26,??0PanelList@BuildModeDialog@vgui2@@QAE@XZ,vgui2::BuildModeDialog::PanelList::PanelList,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3CCB0,224,?RemoveAll@PanelList@BuildModeDialog@vgui2@@QAEXXZ,vgui2::BuildModeDialog::PanelList::RemoveAll,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3CD90,87,?AddItem@PanelList@BuildModeDialog@vgui2@@QAEXPAVPanel@3@PAVTextEntry@3@PAVComboBox@3@PAVButton@3@PBDH@Z,vgui2::BuildModeDialog::PanelList::AddItem,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3CDF0,23,??0PanelItem_t@@QAE@XZ,PanelItem_t::PanelItem_t,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3CE10,19,??0BuildModeDialog_RegisterMap@BuildModeDialog@vgui2@@QAE@XZ,vgui2::BuildModeDialog::BuildModeDialog_RegisterMap::BuildModeDialog_RegisterMap,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3CE30,102,?ChainToMap@BuildModeDialog@vgui2@@SAXXZ,vgui2::BuildModeDialog::ChainToMap,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3CEA0,64,?GetMessageMap@BuildModeDialog@vgui2@@UAEPAUPanelMessageMap@2@XZ,vgui2::BuildModeDialog::GetMessageMap,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3CEE0,10,?GetPanelClassName@BuildModeDialog@vgui2@@SAPBDXZ,vgui2::BuildModeDialog::GetPanelClassName,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3CEF0,10,?GetPanelBaseClassName@BuildModeDialog@vgui2@@SAPBDXZ,vgui2::BuildModeDialog::GetPanelBaseClassName,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3CF00,19,??0PanelMessageFunc_SetActiveControl@BuildModeDialog@vgui2@@QAE@XZ,vgui2::BuildModeDialog::PanelMessageFunc_SetActiveControl::PanelMessageFunc_SetActiveControl,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3CF20,110,?InitVar@PanelMessageFunc_SetActiveControl@BuildModeDialog@vgui2@@SAXXZ,vgui2::BuildModeDialog::PanelMessageFunc_SetActiveControl::InitVar,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3CF90,120,?AddToMap@BuildModeDialog@vgui2@@SAXPBDP8Panel@2@AEXXZHH0H0@Z,vgui2::BuildModeDialog::AddToMap,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3D010,19,??0PanelMessageFunc_UpdateControlData@BuildModeDialog@vgui2@@QAE@XZ,vgui2::BuildModeDialog::PanelMessageFunc_UpdateControlData::PanelMessageFunc_UpdateControlData,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3D030,110,?InitVar@PanelMessageFunc_UpdateControlData@BuildModeDialog@vgui2@@SAXXZ,vgui2::BuildModeDialog::PanelMessageFunc_UpdateControlData::InitVar,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3D0A0,19,??0PanelMessageFunc_StoreUndoSettings@BuildModeDialog@vgui2@@QAE@XZ,vgui2::BuildModeDialog::PanelMessageFunc_StoreUndoSettings::PanelMessageFunc_StoreUndoSettings,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3D0C0,107,?InitVar@PanelMessageFunc_StoreUndoSettings@BuildModeDialog@vgui2@@SAXXZ,vgui2::BuildModeDialog::PanelMessageFunc_StoreUndoSettings::InitVar,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3D130,19,??0PanelMessageFunc_ApplyDataToControls@BuildModeDialog@vgui2@@QAE@XZ,vgui2::BuildModeDialog::PanelMessageFunc_ApplyDataToControls::PanelMessageFunc_ApplyDataToControls,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3D150,107,?InitVar@PanelMessageFunc_ApplyDataToControls@BuildModeDialog@vgui2@@SAXXZ,vgui2::BuildModeDialog::PanelMessageFunc_ApplyDataToControls::InitVar,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3D1C0,19,??0PanelMessageFunc_OnTextChanged@BuildModeDialog@vgui2@@QAE@XZ,vgui2::BuildModeDialog::PanelMessageFunc_OnTextChanged::PanelMessageFunc_OnTextChanged,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3D1E0,110,?InitVar@PanelMessageFunc_OnTextChanged@BuildModeDialog@vgui2@@SAXXZ,vgui2::BuildModeDialog::PanelMessageFunc_OnTextChanged::InitVar,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3D250,19,??0PanelMessageFunc_OnDeletePanel@BuildModeDialog@vgui2@@QAE@XZ,vgui2::BuildModeDialog::PanelMessageFunc_OnDeletePanel::PanelMessageFunc_OnDeletePanel,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3D270,107,?InitVar@PanelMessageFunc_OnDeletePanel@BuildModeDialog@vgui2@@SAXXZ,vgui2::BuildModeDialog::PanelMessageFunc_OnDeletePanel::InitVar,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3D2E0,19,??0PanelMessageFunc_DoUndo@BuildModeDialog@vgui2@@QAE@XZ,vgui2::BuildModeDialog::PanelMessageFunc_DoUndo::PanelMessageFunc_DoUndo,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3D300,107,?InitVar@PanelMessageFunc_DoUndo@BuildModeDialog@vgui2@@SAXXZ,vgui2::BuildModeDialog::PanelMessageFunc_DoUndo::InitVar,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3D370,19,??0PanelMessageFunc_DoCopy@BuildModeDialog@vgui2@@QAE@XZ,vgui2::BuildModeDialog::PanelMessageFunc_DoCopy::PanelMessageFunc_DoCopy,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3D390,107,?InitVar@PanelMessageFunc_DoCopy@BuildModeDialog@vgui2@@SAXXZ,vgui2::BuildModeDialog::PanelMessageFunc_DoCopy::InitVar,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3D400,19,??0PanelMessageFunc_DoPaste@BuildModeDialog@vgui2@@QAE@XZ,vgui2::BuildModeDialog::PanelMessageFunc_DoPaste::PanelMessageFunc_DoPaste,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3D420,107,?InitVar@PanelMessageFunc_DoPaste@BuildModeDialog@vgui2@@SAXXZ,vgui2::BuildModeDialog::PanelMessageFunc_DoPaste::InitVar,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3D490,19,??0PanelMessageFunc_EnableSaveButton@BuildModeDialog@vgui2@@QAE@XZ,vgui2::BuildModeDialog::PanelMessageFunc_EnableSaveButton::PanelMessageFunc_EnableSaveButton,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3D4B0,107,?InitVar@PanelMessageFunc_EnableSaveButton@BuildModeDialog@vgui2@@SAXXZ,vgui2::BuildModeDialog::PanelMessageFunc_EnableSaveButton::InitVar,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3D520,19,??0PanelMessageFunc_ShutdownBuildMode@BuildModeDialog@vgui2@@QAE@XZ,vgui2::BuildModeDialog::PanelMessageFunc_ShutdownBuildMode::PanelMessageFunc_ShutdownBuildMode,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3D540,107,?InitVar@PanelMessageFunc_ShutdownBuildMode@BuildModeDialog@vgui2@@SAXXZ,vgui2::BuildModeDialog::PanelMessageFunc_ShutdownBuildMode::InitVar,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3D5B0,19,??0PanelMessageFunc_OnPanelMoved@BuildModeDialog@vgui2@@QAE@XZ,vgui2::BuildModeDialog::PanelMessageFunc_OnPanelMoved::PanelMessageFunc_OnPanelMoved,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3D5D0,107,?InitVar@PanelMessageFunc_OnPanelMoved@BuildModeDialog@vgui2@@SAXXZ,vgui2::BuildModeDialog::PanelMessageFunc_OnPanelMoved::InitVar,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3D640,19,??0PanelMessageFunc_OnSetClipboardText@BuildModeDialog@vgui2@@QAE@XZ,vgui2::BuildModeDialog::PanelMessageFunc_OnSetClipboardText::PanelMessageFunc_OnSetClipboardText,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3D660,110,?InitVar@PanelMessageFunc_OnSetClipboardText@BuildModeDialog@vgui2@@SAXXZ,vgui2::BuildModeDialog::PanelMessageFunc_OnSetClipboardText::InitVar,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3D6D0,50,??0?$CUtlVector@UPanelItem_t@@@@QAE@HH@Z,PanelItem_t>,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3D710,25,??A?$CUtlVector@UPanelItem_t@@@@QAEAAUPanelItem_t@@H@Z,PanelItem_t>::operator[],ENGINE,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3D730,17,?Size@?$CUtlVector@UPanelItem_t@@@@QBEHXZ,PanelItem_t>::Size,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3D750,32,?AddToTail@?$CUtlVector@UPanelItem_t@@@@QAEHABUPanelItem_t@@@Z,PanelItem_t>::AddToTail,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3D770,70,?RemoveAll@?$CUtlVector@UPanelItem_t@@@@QAEXXZ,PanelItem_t>::RemoveAll,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3D7C0,25,?Element@?$CUtlVector@UPanelItem_t@@@@QAEAAUPanelItem_t@@H@Z,PanelItem_t>::Element,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3D7E0,65,?InsertBefore@?$CUtlVector@UPanelItem_t@@@@QAEHHABUPanelItem_t@@@Z,PanelItem_t>::InsertBefore,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3D830,11,?ResetDbgInfo@?$CUtlVector@UPanelItem_t@@@@IAEXXZ,PanelItem_t>::ResetDbgInfo,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3D840,75,??0?$CUtlMemory@UPanelItem_t@@@@QAE@HH@Z,PanelItem_t>,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3D890,26,??A?$CUtlMemory@UPanelItem_t@@@@QAEAAUPanelItem_t@@H@Z,PanelItem_t>::operator[],ENGINE,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3D8B0,5,?Destruct@@YAXPAUPanelItem_t@@@Z,Destruct,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3D8C0,87,?GrowVector@?$CUtlVector@UPanelItem_t@@@@IAEXH@Z,PanelItem_t>::GrowVector,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3D920,86,?ShiftElementsRight@?$CUtlVector@UPanelItem_t@@@@IAEXHH@Z,PanelItem_t>::ShiftElementsRight,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3D980,65,?CopyConstruct@@YAXPAUPanelItem_t@@ABU1@@Z,CopyConstruct,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3D9D0,17,?NumAllocated@?$CUtlMemory@UPanelItem_t@@@@QBEHXZ,PanelItem_t>::NumAllocated,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3D9F0,199,?Grow@?$CUtlMemory@UPanelItem_t@@@@QAEXH@Z,PanelItem_t>::Grow,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3DAC0,25,?IsExternallyAllocated@?$CUtlMemory@UPanelItem_t@@@@QBE_NXZ,PanelItem_t>::IsExternallyAllocated,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01E3DBB0,234,,,ENGINE,vgui2/controls/BitmapImagePanel.cpp,,,TODO,,,
 hw,01E3DC9A,62,,,ENGINE,vgui2/controls/BitmapImagePanel.cpp,,,TODO,,,
 hw,01E3DCD8,638,,,UNKNOWN,vgui2/controls/BitmapImagePanel.cpp,,,TODO,,,linux: _ZN5vgui217CBitmapImagePanel20ComputeImagePositionERiS1_S1_S1_

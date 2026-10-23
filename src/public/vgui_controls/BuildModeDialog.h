@@ -14,6 +14,8 @@
 
 #include <vgui_controls/Frame.h>
 
+struct PanelItem_t;
+
 namespace vgui2
 {
 
@@ -23,7 +25,6 @@ class ComboBox;
 class Divider;
 class Label;
 class MenuButton;
-struct PanelItem_t;
 
 //-----------------------------------------------------------------------------
 // Purpose: Dialog for use in build mode editing
@@ -37,7 +38,7 @@ public:
 	~BuildModeDialog();
 
 	// Set the current control to edit
-	MESSAGE_FUNC_PTR( SetActiveControl, "SetActiveControl", PanelPtr );
+	MESSAGE_FUNC_PTR( SetActiveControl, "SetActiveControl", panelPtr );
 
 	// Update the current control with the current resource settings.
 	MESSAGE_FUNC_PTR( UpdateControlData, "UpdateControlData", panel );
@@ -50,7 +51,7 @@ public:
 
 	/* CUSTOM MESSAGE HANDLING
 		"SetActiveControl"
-			input:	"PanelPtr"	- panel to set active control to edit to
+			input:	"panelPtr"	- panel to set active control to edit to
 	*/
 
 protected:
