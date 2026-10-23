@@ -3050,8 +3050,13 @@
         },
         {
           "name": "engine/dinput_guess",
-          "source": "src/engine_hw/dinput_guess.c",
-          "functions_file": "tools/units/hw_engine_dinput_guess.txt"
+          "source": "src/engine_hw/dinput_guess.cpp",
+          "functions_file": "tools/units/hw_engine_dinput_guess.txt",
+          "includes": [
+            "src/engine_hw",
+            "src/common",
+            "refs/dxheaders"
+          ]
         },
         {
           "name": "engine/pmove",
