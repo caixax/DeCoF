@@ -2733,6 +2733,18 @@
           ]
         },
         {
+          "name": "vgui2/controls/ToggleButton",
+          "source": "src/vgui2/controls/ToggleButton.cpp",
+          "functions_file": "tools/units/hw_vgui2_controls_ToggleButton.txt",
+          "includes": [
+            "src/gameui",
+            "src/public",
+            "src/common",
+            "src/engine",
+            "src/pm_shared"
+          ]
+        },
+        {
           "name": "engine/net_api",
           "source": "src/engine_hw/net_api.c",
           "functions_file": "tools/units/hw_engine_net_api.txt"
@@ -3391,6 +3403,11 @@
           "name": "vgui2/controls/MenuItem",
           "source": "src/vgui2/controls/MenuItem.cpp",
           "functions_file": "tools/units/gameui_vgui2_controls_MenuItem.txt"
+        },
+        {
+          "name": "vgui2/controls/ToggleButton",
+          "source": "src/vgui2/controls/ToggleButton.cpp",
+          "functions_file": "tools/units/gameui_vgui2_controls_ToggleButton.txt"
         },
         {
           "name": "public/utlsymbol",
