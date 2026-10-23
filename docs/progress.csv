@@ -11414,284 +11414,284 @@ gameui,100834E0,63,?Remove@?$CUtlVector@G@@QAEXH@Z,short>::Remove,UNKNOWN,vgui2/
 gameui,10083520,109,?InsertMultipleBefore@?$CUtlVector@G@@QAEHHH@Z,short>::InsertMultipleBefore,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,10083590,33,?SetSize@?$CUtlVector@G@@QAEXH@Z,short>::SetSize,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,100835C0,25,?Construct@@YAXPAG@Z,Construct,UNKNOWN,vgui2/controls/TextEntry.cpp,,,MATCHED,100,gameui_manual.csv,
-gameui,100835E0,139,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,1008366B,1017,,vgui2::ListPanel::ListPanel,ENGINE,vgui2/controls/ListPanel.cpp,,,TODO,,linux_symbols:string:0.279,
-gameui,10083A64,517,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
+gameui,100835E0,139,?RBTreeLessFunc@ListPanel@vgui2@@CA_NAAUIndexItem_t@12@0@Z,vgui2::ListPanel::RBTreeLessFunc,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008366B,1017,??0ListPanel@vgui2@@QAE@PAVPanel@1@PBD@Z,vgui2::ListPanel::ListPanel,ENGINE,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10083A64,517,??1ListPanel@vgui2@@UAE@XZ,vgui2::ListPanel::~ListPanel,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,10083C69,112,?SetImageList@ListPanel@vgui2@@UAEXPAVImageList@2@_N@Z,vgui2::ListPanel::SetImageList,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29ListPanel12SetImageListEPNS_9ImageListEb
 gameui,10083CD9,25,?SetColumnHeaderHeight@ListPanel@vgui2@@UAEXH@Z,vgui2::ListPanel::SetColumnHeaderHeight,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29ListPanel21SetColumnHeaderHeightEi
 gameui,10083CF2,118,?AddColumnHeader@ListPanel@vgui2@@UAEXHPBD0HH@Z,vgui2::ListPanel::AddColumnHeader,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
-gameui,10083D68,587,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,10083FB3,375,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,1008412A,352,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,1008428A,163,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,1008432D,70,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,10084373,70,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,100843B9,142,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,linux: _ZN5vgui29ListPanel20SetColumnHeaderImageEii
-gameui,10084447,157,,vgui2::ListPanel::SetColumnHeaderTooltip,ENGINE,vgui2/controls/ListPanel.cpp,,,TODO,,linux_symbols:caller:0.667,linux: _ZN5vgui29ListPanel22SetColumnHeaderTooltipEiPKc
-gameui,100844E4,190,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,linux: _ZN5vgui29ListPanel17SetColumnSortableEib
-gameui,100845A2,221,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,linux: _ZN5vgui29ListPanel16SetColumnVisibleEib
-gameui,1008467F,313,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,linux: _ZN5vgui29ListPanel12RemoveColumnEi
-gameui,100847B8,127,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,linux: _ZN5vgui29ListPanel10FindColumnEPKc
-gameui,10084837,238,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,linux: _ZN5vgui29ListPanel7AddItemEPK9KeyValuesjbb
-gameui,10084925,68,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,,linux: _ZN5vgui29ListPanel11SetUserDataEij
-gameui,10084969,114,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,linux: _ZN5vgui29ListPanel21GetItemIDFromUserDataEj
+gameui,10083D68,587,?AddColumnHeader@ListPanel@vgui2@@UAEXHPBD0HHHH@Z,vgui2::ListPanel::AddColumnHeader,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10083FB3,375,?ResortColumnRBTree@ListPanel@vgui2@@AAEXH@Z,vgui2::ListPanel::ResortColumnRBTree,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008412A,352,?DefaultSortFunc@@YAHPAVListPanel@vgui2@@ABVListPanelItem@2@1@Z,DefaultSortFunc,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008428A,163,?ResetColumnHeaderCommands@ListPanel@vgui2@@AAEXXZ,vgui2::ListPanel::ResetColumnHeaderCommands,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008432D,70,?SetColumnHeaderText@ListPanel@vgui2@@UAEXHPBD@Z,vgui2::ListPanel::SetColumnHeaderText,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10084373,70,?SetColumnHeaderText@ListPanel@vgui2@@UAEXHPAG@Z,vgui2::ListPanel::SetColumnHeaderText,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100843B9,142,?SetColumnHeaderImage@ListPanel@vgui2@@UAEXHH@Z,vgui2::ListPanel::SetColumnHeaderImage,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29ListPanel20SetColumnHeaderImageEii
+gameui,10084447,157,?SetColumnHeaderTooltip@ListPanel@vgui2@@UAEXHPBD@Z,vgui2::ListPanel::SetColumnHeaderTooltip,ENGINE,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29ListPanel22SetColumnHeaderTooltipEiPKc
+gameui,100844E4,190,?SetColumnSortable@ListPanel@vgui2@@UAEXH_N@Z,vgui2::ListPanel::SetColumnSortable,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29ListPanel17SetColumnSortableEib
+gameui,100845A2,221,?SetColumnVisible@ListPanel@vgui2@@UAEXH_N@Z,vgui2::ListPanel::SetColumnVisible,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29ListPanel16SetColumnVisibleEib
+gameui,1008467F,313,?RemoveColumn@ListPanel@vgui2@@UAEXH@Z,vgui2::ListPanel::RemoveColumn,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29ListPanel12RemoveColumnEi
+gameui,100847B8,127,?FindColumn@ListPanel@vgui2@@UAEHPBD@Z,vgui2::ListPanel::FindColumn,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29ListPanel10FindColumnEPKc
+gameui,10084837,238,?AddItem@ListPanel@vgui2@@UAEHPBVKeyValues@@I_N1@Z,vgui2::ListPanel::AddItem,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29ListPanel7AddItemEPK9KeyValuesjbb
+gameui,10084925,68,?SetUserData@ListPanel@vgui2@@UAEXHI@Z,vgui2::ListPanel::SetUserData,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29ListPanel11SetUserDataEij
+gameui,10084969,114,?GetItemIDFromUserData@ListPanel@vgui2@@UAEHI@Z,vgui2::ListPanel::GetItemIDFromUserData,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29ListPanel21GetItemIDFromUserDataEj
 gameui,100849DB,25,?GetItemCount@ListPanel@vgui2@@UAEHXZ,vgui2::ListPanel::GetItemCount,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29ListPanel12GetItemCountEv
-gameui,100849F4,127,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,10084A73,66,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
+gameui,100849F4,127,?GetItem@ListPanel@vgui2@@UAEHPBD@Z,vgui2::ListPanel::GetItem,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10084A73,66,?GetItem@ListPanel@vgui2@@UAEPAVKeyValues@@H@Z,vgui2::ListPanel::GetItem,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,10084AB5,31,?GetItemCurrentRow@ListPanel@vgui2@@UAEHH@Z,vgui2::ListPanel::GetItemCurrentRow,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29ListPanel17GetItemCurrentRowEi
-gameui,10084AD4,65,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,,linux: _ZN5vgui29ListPanel16GetItemIDFromRowEi
+gameui,10084AD4,65,?GetItemIDFromRow@ListPanel@vgui2@@UAEHH@Z,vgui2::ListPanel::GetItemIDFromRow,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29ListPanel16GetItemIDFromRowEi
 gameui,10084B15,16,?InvalidItemID@ListPanel@vgui2@@UBEHXZ,vgui2::ListPanel::InvalidItemID,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZNK5vgui29ListPanel13InvalidItemIDEv
 gameui,10084B25,31,?IsValidItemID@ListPanel@vgui2@@UAE_NH@Z,vgui2::ListPanel::IsValidItemID,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29ListPanel13IsValidItemIDEi
-gameui,10084B44,64,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,,linux: _ZN5vgui29ListPanel11GetItemDataEi
-gameui,10084B84,67,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,,linux: _ZN5vgui29ListPanel15GetItemUserDataEi
-gameui,10084BC7,43,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,,linux: _ZN5vgui29ListPanel16ApplyItemChangesEi
-gameui,10084BF2,509,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,linux: _ZN5vgui29ListPanel9IndexItemEi
-gameui,10084DEF,29,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,,linux: _ZN5vgui29ListPanel14RereadAllItemsEv
-gameui,10084E0C,332,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,linux: _ZN5vgui29ListPanel10RemoveItemEi
-gameui,10084F58,328,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,linux: _ZN5vgui29ListPanel14DeleteAllItemsEv
-gameui,100850A0,182,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,linux: _ZN5vgui29ListPanel14ResetScrollBarEv
+gameui,10084B44,64,?GetItemData@ListPanel@vgui2@@UAEPAVListPanelItem@2@H@Z,vgui2::ListPanel::GetItemData,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29ListPanel11GetItemDataEi
+gameui,10084B84,67,?GetItemUserData@ListPanel@vgui2@@UAEIH@Z,vgui2::ListPanel::GetItemUserData,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29ListPanel15GetItemUserDataEi
+gameui,10084BC7,43,?ApplyItemChanges@ListPanel@vgui2@@UAEXH@Z,vgui2::ListPanel::ApplyItemChanges,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29ListPanel16ApplyItemChangesEi
+gameui,10084BF2,509,?IndexItem@ListPanel@vgui2@@AAEXH@Z,vgui2::ListPanel::IndexItem,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29ListPanel9IndexItemEi
+gameui,10084DEF,29,?RereadAllItems@ListPanel@vgui2@@UAEXXZ,vgui2::ListPanel::RereadAllItems,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29ListPanel14RereadAllItemsEv
+gameui,10084E0C,332,?RemoveItem@ListPanel@vgui2@@UAEXH@Z,vgui2::ListPanel::RemoveItem,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29ListPanel10RemoveItemEi
+gameui,10084F58,328,?DeleteAllItems@ListPanel@vgui2@@UAEXXZ,vgui2::ListPanel::DeleteAllItems,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29ListPanel14DeleteAllItemsEv
+gameui,100850A0,182,?ResetScrollBar@ListPanel@vgui2@@QAEXXZ,vgui2::ListPanel::ResetScrollBar,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29ListPanel14ResetScrollBarEv
 gameui,10085156,25,?GetSelectedItemsCount@ListPanel@vgui2@@UAEHXZ,vgui2::ListPanel::GetSelectedItemsCount,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29ListPanel21GetSelectedItemsCountEv
-gameui,1008516F,65,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,,linux: _ZN5vgui29ListPanel15GetSelectedItemEi
+gameui,1008516F,65,?GetSelectedItem@ListPanel@vgui2@@UAEHH@Z,vgui2::ListPanel::GetSelectedItem,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29ListPanel15GetSelectedItemEi
 gameui,100851B0,20,?GetSelectedColumn@ListPanel@vgui2@@UAEHXZ,vgui2::ListPanel::GetSelectedColumn,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29ListPanel17GetSelectedColumnEv
 gameui,100851C4,25,?ClearSelectedItems@ListPanel@vgui2@@UAEXXZ,vgui2::ListPanel::ClearSelectedItems,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29ListPanel18ClearSelectedItemsEv
-gameui,100851DD,135,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,linux: _ZN5vgui29ListPanel15AddSelectedItemEi
+gameui,100851DD,135,?AddSelectedItem@ListPanel@vgui2@@UAEXH@Z,vgui2::ListPanel::AddSelectedItem,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29ListPanel15AddSelectedItemEi
 gameui,10085264,45,?SetSingleSelectedItem@ListPanel@vgui2@@UAEXH@Z,vgui2::ListPanel::SetSingleSelectedItem,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29ListPanel21SetSingleSelectedItemEi
-gameui,10085291,179,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,linux: _ZN5vgui29ListPanel15SetSelectedCellEii
-gameui,10085344,280,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,1008545C,243,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,linux: _ZN5vgui29ListPanel12GetCellImageEii
-gameui,1008554F,1391,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,linux: _ZN5vgui29ListPanel15GetCellRendererEii
-gameui,10085ABE,1838,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,linux: _ZN5vgui29ListPanel13PerformLayoutEv
-gameui,100861EC,58,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,,linux: _ZN5vgui29ListPanel13OnSizeChangedEii
-gameui,10086226,951,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,linux: _ZN5vgui29ListPanel5PaintEv
+gameui,10085291,179,?SetSelectedCell@ListPanel@vgui2@@UAEXHH@Z,vgui2::ListPanel::SetSelectedCell,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29ListPanel15SetSelectedCellEii
+gameui,10085344,280,?GetCellText@ListPanel@vgui2@@QAE_NHHPAGH@Z,vgui2::ListPanel::GetCellText,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008545C,243,?GetCellImage@ListPanel@vgui2@@UAEPAVIImage@2@HH@Z,vgui2::ListPanel::GetCellImage,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29ListPanel12GetCellImageEii
+gameui,1008554F,1391,?GetCellRenderer@ListPanel@vgui2@@UAEPAVPanel@2@HH@Z,vgui2::ListPanel::GetCellRenderer,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29ListPanel15GetCellRendererEii
+gameui,10085ABE,1838,?PerformLayout@ListPanel@vgui2@@MAEXXZ,vgui2::ListPanel::PerformLayout,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29ListPanel13PerformLayoutEv
+gameui,100861EC,58,?OnSizeChanged@ListPanel@vgui2@@MAEXHH@Z,vgui2::ListPanel::OnSizeChanged,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29ListPanel13OnSizeChangedEii
+gameui,10086226,951,?Paint@ListPanel@vgui2@@MAEXXZ,vgui2::ListPanel::Paint,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29ListPanel5PaintEv
 gameui,100865DD,19,?PaintBackground@ListPanel@vgui2@@MAEXXZ,vgui2::ListPanel::PaintBackground,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29ListPanel15PaintBackgroundEv
-gameui,100865F0,1390,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,linux: _ZN5vgui29ListPanel14OnMousePressedENS_9MouseCodeE
-gameui,10086B5E,88,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,linux: _ZN5vgui29ListPanel14OnMouseWheeledEi
-gameui,10086BB6,71,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,linux: _ZN5vgui29ListPanel20OnMouseDoublePressedENS_9MouseCodeE
-gameui,10086BFD,869,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,linux: _ZN5vgui29ListPanel14OnKeyCodeTypedENS_7KeyCodeE
-gameui,10086F98,343,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,linux: _ZN5vgui29ListPanel13GetCellBoundsEiiRiS1_S1_S1_
-gameui,100870EF,351,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,linux: _ZN5vgui29ListPanel12GetCellAtPosEiiRiS1_
-gameui,1008724E,499,,vgui2::ListPanel::ApplySchemeSettings,ENGINE,vgui2/controls/ListPanel.cpp,,,TODO,,linux_symbols:string:0.631,linux: _ZN5vgui29ListPanel19ApplySchemeSettingsEPNS_7ISchemeE
-gameui,10087441,139,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,linux: _ZN5vgui29ListPanel11SetSortFuncEiPFiPS0_RKNS_13ListPanelItemES4_E
+gameui,100865F0,1390,?OnMousePressed@ListPanel@vgui2@@MAEXW4MouseCode@2@@Z,vgui2::ListPanel::OnMousePressed,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29ListPanel14OnMousePressedENS_9MouseCodeE
+gameui,10086B5E,88,?OnMouseWheeled@ListPanel@vgui2@@MAEXH@Z,vgui2::ListPanel::OnMouseWheeled,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29ListPanel14OnMouseWheeledEi
+gameui,10086BB6,71,?OnMouseDoublePressed@ListPanel@vgui2@@MAEXW4MouseCode@2@@Z,vgui2::ListPanel::OnMouseDoublePressed,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29ListPanel20OnMouseDoublePressedENS_9MouseCodeE
+gameui,10086BFD,869,?OnKeyCodeTyped@ListPanel@vgui2@@MAEXW4KeyCode@2@@Z,vgui2::ListPanel::OnKeyCodeTyped,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29ListPanel14OnKeyCodeTypedENS_7KeyCodeE
+gameui,10086F98,343,?GetCellBounds@ListPanel@vgui2@@UAE_NHHAAH000@Z,vgui2::ListPanel::GetCellBounds,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29ListPanel13GetCellBoundsEiiRiS1_S1_S1_
+gameui,100870EF,351,?GetCellAtPos@ListPanel@vgui2@@UAE_NHHAAH0@Z,vgui2::ListPanel::GetCellAtPos,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29ListPanel12GetCellAtPosEiiRiS1_
+gameui,1008724E,499,?ApplySchemeSettings@ListPanel@vgui2@@MAEXPAVIScheme@2@@Z,vgui2::ListPanel::ApplySchemeSettings,ENGINE,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29ListPanel19ApplySchemeSettingsEPNS_7ISchemeE
+gameui,10087441,139,?SetSortFunc@ListPanel@vgui2@@UAEXHP6AHPAV12@ABVListPanelItem@2@1@Z@Z,vgui2::ListPanel::SetSortFunc,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29ListPanel11SetSortFuncEiPFiPS0_RKNS_13ListPanelItemES4_E
 gameui,100874CC,25,?SetSortColumn@ListPanel@vgui2@@UAEXH@Z,vgui2::ListPanel::SetSortColumn,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29ListPanel13SetSortColumnEi
-gameui,100874E5,902,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,linux: _ZN5vgui29ListPanel8SortListEv
-gameui,1008786B,213,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,10087940,116,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,100879B4,91,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,linux: _ZN5vgui29ListPanel7SetFontEm
-gameui,10087A0F,40,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,linux: _ZN5vgui29ListPanel13OnSliderMovedEv
-gameui,10087A37,357,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,linux: _ZN5vgui29ListPanel15OnColumnResizedEii
-gameui,10087B9C,122,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,linux: _ZN5vgui29ListPanel15OnSetSortColumnEi
-gameui,10087C16,228,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,linux: _ZN5vgui29ListPanel14SetItemVisibleEib
-gameui,10087CFA,48,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,linux: _ZN5vgui29ListPanel14GetRowsPerPageEv
-gameui,10087D2A,90,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,linux: _ZN5vgui29ListPanel12GetStartItemEv
+gameui,100874E5,902,?SortList@ListPanel@vgui2@@UAEXXZ,vgui2::ListPanel::SortList,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29ListPanel8SortListEv
+gameui,1008786B,213,?AscendingSortFunc@@YAHPBX0@Z,AscendingSortFunc,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10087940,116,?FastSortFunc@@YAHPAVListPanel@vgui2@@ABVListPanelItem@2@1@Z,FastSortFunc,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100879B4,91,?SetFont@ListPanel@vgui2@@UAEXK@Z,vgui2::ListPanel::SetFont,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29ListPanel7SetFontEm
+gameui,10087A0F,40,?OnSliderMoved@ListPanel@vgui2@@MAEXXZ,vgui2::ListPanel::OnSliderMoved,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29ListPanel13OnSliderMovedEv
+gameui,10087A37,357,?OnColumnResized@ListPanel@vgui2@@MAEXHH@Z,vgui2::ListPanel::OnColumnResized,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29ListPanel15OnColumnResizedEii
+gameui,10087B9C,122,?OnSetSortColumn@ListPanel@vgui2@@MAEXH@Z,vgui2::ListPanel::OnSetSortColumn,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29ListPanel15OnSetSortColumnEi
+gameui,10087C16,228,?SetItemVisible@ListPanel@vgui2@@UAEXH_N@Z,vgui2::ListPanel::SetItemVisible,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29ListPanel14SetItemVisibleEib
+gameui,10087CFA,48,?GetRowsPerPage@ListPanel@vgui2@@MAEMXZ,vgui2::ListPanel::GetRowsPerPage,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29ListPanel14GetRowsPerPageEv
+gameui,10087D2A,90,?GetStartItem@ListPanel@vgui2@@MAEHXZ,vgui2::ListPanel::GetStartItem,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29ListPanel12GetStartItemEv
 gameui,10087D84,25,?SetSelectIndividualCells@ListPanel@vgui2@@UAEX_N@Z,vgui2::ListPanel::SetSelectIndividualCells,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29ListPanel24SetSelectIndividualCellsEb
-gameui,10087D9D,51,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,10087DD0,51,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,10087E03,493,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,linux: _ZN5vgui29ListPanel20OpenColumnChoiceMenuEv
-gameui,10087FF0,403,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,linux: _ZN5vgui29ListPanel22ResizeColumnToContentsEi
-gameui,10088183,104,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,linux: _ZN5vgui29ListPanel21OnToggleColumnVisibleEi
-gameui,100881EB,151,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,linux: _ZN5vgui29ListPanel23ApplyUserConfigSettingsEP9KeyValues
-gameui,10088282,142,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,linux: _ZN5vgui29ListPanel21GetUserConfigSettingsEP9KeyValues
+gameui,10087D9D,51,?SetEmptyListText@ListPanel@vgui2@@UAEXPBD@Z,vgui2::ListPanel::SetEmptyListText,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10087DD0,51,?SetEmptyListText@ListPanel@vgui2@@UAEXPBG@Z,vgui2::ListPanel::SetEmptyListText,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10087E03,493,?OpenColumnChoiceMenu@ListPanel@vgui2@@MAEXXZ,vgui2::ListPanel::OpenColumnChoiceMenu,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29ListPanel20OpenColumnChoiceMenuEv
+gameui,10087FF0,403,?ResizeColumnToContents@ListPanel@vgui2@@MAEXH@Z,vgui2::ListPanel::ResizeColumnToContents,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29ListPanel22ResizeColumnToContentsEi
+gameui,10088183,104,?OnToggleColumnVisible@ListPanel@vgui2@@MAEXH@Z,vgui2::ListPanel::OnToggleColumnVisible,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29ListPanel21OnToggleColumnVisibleEi
+gameui,100881EB,151,?ApplyUserConfigSettings@ListPanel@vgui2@@MAEXPAVKeyValues@@@Z,vgui2::ListPanel::ApplyUserConfigSettings,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29ListPanel23ApplyUserConfigSettingsEP9KeyValues
+gameui,10088282,142,?GetUserConfigSettings@ListPanel@vgui2@@MAEXPAVKeyValues@@@Z,vgui2::ListPanel::GetUserConfigSettings,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29ListPanel21GetUserConfigSettingsEP9KeyValues
 gameui,10088310,13,?HasUserConfigSettings@ListPanel@vgui2@@MAE_NXZ,vgui2::ListPanel::HasUserConfigSettings,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29ListPanel21HasUserConfigSettingsEv
 gameui,1008831D,25,?SetAllowUserModificationOfColumns@ListPanel@vgui2@@UAEX_N@Z,vgui2::ListPanel::SetAllowUserModificationOfColumns,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29ListPanel33SetAllowUserModificationOfColumnsEb
 gameui,10088336,25,?FirstItem@ListPanel@vgui2@@UBEHXZ,vgui2::ListPanel::FirstItem,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZNK5vgui29ListPanel9FirstItemEv
 gameui,1008834F,31,?NextItem@ListPanel@vgui2@@UBEHH@Z,vgui2::ListPanel::NextItem,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZNK5vgui29ListPanel8NextItemEi
 gameui,1008836E,25,?GetNumColumnHeaders@ListPanel@vgui2@@UBEHXZ,vgui2::ListPanel::GetNumColumnHeaders,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZNK5vgui29ListPanel19GetNumColumnHeadersEv
-gameui,10088387,99,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,linux: _ZN5vgui29ListPanel19GetColumnHeaderTextEiPci
-gameui,100883EA,95,,vgui2::ListPanel::SetItemDisabled,ENGINE,vgui2/controls/ListPanel.cpp,,,TODO,,linux_symbols:string:0.75,linux: _ZN5vgui29ListPanel15SetItemDisabledEib
-gameui,10088449,13,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,10088456,11,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,10088461,11,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,1008846C,34,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,1008848E,13,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,1008849B,93,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,10088500,46,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,10088530,46,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,10088560,45,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,10088590,84,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,100885F0,165,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,100886A0,69,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,100886F0,46,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,10088720,19,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,10088740,106,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,100887B0,100,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,10088820,115,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,100888A0,55,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,100888E0,235,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,100889D0,89,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,10088A30,46,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,10088A60,19,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,10088A80,29,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,10088AA0,19,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,10088AC0,102,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,10088B30,64,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,10088B70,10,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,10088B80,10,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,10088B90,25,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,10088BB0,19,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,10088BD0,107,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,10088C40,120,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,10088CC0,19,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,10088CE0,113,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,10088D60,19,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,10088D80,110,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,10088DF0,19,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,10088E10,110,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,10088E80,19,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,10088EA0,107,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,10088F10,46,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,10088F40,22,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,10088F60,19,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,10088F80,110,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,10089000,7,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,10089010,8,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,10089020,25,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,10089040,29,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,10089060,58,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,100890A0,718,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,10089370,189,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,10089430,67,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,10089480,174,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,10089530,67,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,10089580,48,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,100895B0,27,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,100895D0,30,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,100895F0,25,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,10089610,25,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,10089630,186,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,100896F0,17,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,10089710,28,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,10089730,50,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,10089770,27,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,10089790,25,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,100897B0,17,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,100897D0,51,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,10089810,32,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,10089830,65,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,10089880,83,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,100898E0,63,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,10089920,48,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,10089950,27,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,10089970,25,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,10089990,31,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,100899B0,25,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,100899D0,187,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,10089A90,17,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,10089AB0,28,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,10089AD0,91,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,10089B30,19,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,10089B50,51,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,10089B90,26,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,10089BB0,32,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,10089BD0,77,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,10089C20,34,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,10089C50,48,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,10089C80,16,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,10089C90,30,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,10089CB0,30,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,10089CD0,25,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,10089CF0,25,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,10089D10,25,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,10089D30,25,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,10089D50,31,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,10089D70,28,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,10089D90,27,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,10089DB0,28,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,10089DD0,44,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,10089E00,44,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,10089E30,29,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,10089E50,35,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,10089E80,8,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,10089E90,78,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,10089EE0,31,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,10089F00,30,,SetAt,ENGINE,vgui2/controls/ListPanel.cpp,,,TODO,,ghidra,
-gameui,10089F20,31,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,10089F40,28,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,10089F60,31,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,10089F80,901,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,1008A310,144,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,1008A3A0,64,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,1008A3E0,5,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,1008A3F0,30,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,1008A410,68,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,1008A460,97,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,1008A4D0,136,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,1008A560,58,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,1008A5A0,75,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,1008A5F0,19,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,1008A610,26,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,1008A630,26,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,1008A650,16,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,1008A660,15,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,1008A670,25,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,1008A690,17,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,1008A6B0,35,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,1008A6E0,87,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,1008A740,83,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,1008A7A0,83,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,1008A800,11,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,1008A810,58,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,1008A850,5,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,1008A860,25,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,1008A880,72,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,1008A8D0,97,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,1008A940,64,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,1008A980,75,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,1008A9D0,19,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,1008A9F0,26,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,1008AA10,26,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,1008AA30,16,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,1008AA40,5,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,1008AA50,17,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,1008AA70,61,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,1008AAB0,109,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,1008AB20,16,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,1008AB30,46,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,1008AB60,22,,~input_processor<>,ENGINE,vgui2/controls/ListPanel.cpp,,,TODO,,ghidra,
-gameui,1008AB80,22,,__crt_stdio_input::format_string_parser<wchar_t>::~format_string_parser<wchar_t>,LIB,,,,,,ghidra,
-gameui,1008ABA0,28,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,1008ABC0,130,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,1008AC50,36,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,1008AC80,36,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,1008ACB0,287,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,1008ADD0,287,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,1008AEF0,182,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,1008AFB0,26,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,1008AFD0,266,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,1008B0E0,205,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,1008B1B0,214,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,1008B290,96,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,1008B2F0,69,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,1008B340,53,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,1008B380,70,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,1008B3D0,247,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,1008B4D0,180,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,1008B590,190,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,1008B650,68,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,1008B6A0,69,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,1008B6F0,58,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,1008B730,25,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,1008B750,31,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,1008B770,93,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,1008B7D0,146,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,1008B870,541,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,1008BA90,19,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,1008BAB0,26,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,1008BAD0,28,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,1008BAF0,17,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,1008BB10,199,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,1008BBE0,25,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,1008BC00,28,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,1008BC20,17,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,1008BC40,199,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,1008BD10,25,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,1008BD30,25,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,1008BD50,11,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,1008BD60,75,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,1008BDB0,17,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,1008BDD0,199,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,1008BEA0,69,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,1008BEF0,25,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
-gameui,1008BF10,25,,,UNKNOWN,vgui2/controls/ListPanel.cpp,,,TODO,,,
+gameui,10088387,99,?GetColumnHeaderText@ListPanel@vgui2@@UAE_NHPADH@Z,vgui2::ListPanel::GetColumnHeaderText,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29ListPanel19GetColumnHeaderTextEiPci
+gameui,100883EA,95,?SetItemDisabled@ListPanel@vgui2@@UAEXH_N@Z,vgui2::ListPanel::SetItemDisabled,ENGINE,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29ListPanel15SetItemDisabledEib
+gameui,10088449,13,?SetMultiSelectEnabled@ListPanel@vgui2@@QAEX_N@Z,vgui2::ListPanel::SetMultiSelectEnabled,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10088456,11,?SaveSelectionState@ListPanel@vgui2@@QAEXXZ,vgui2::ListPanel::SaveSelectionState,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10088461,11,?RestoreSelectionState@ListPanel@vgui2@@QAEXXZ,vgui2::ListPanel::RestoreSelectionState,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008846C,34,?IsScrollbarVisible@ListPanel@vgui2@@QAE_NXZ,vgui2::ListPanel::IsScrollbarVisible,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008848E,13,?SetIgnoreDoubleClick@ListPanel@vgui2@@QAEX_N@Z,vgui2::ListPanel::SetIgnoreDoubleClick,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008849B,93,?ScrollToItem@ListPanel@vgui2@@QAEXH@Z,vgui2::ListPanel::ScrollToItem,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10088500,46,??_GListPanel@vgui2@@UAEPAXI@Z,destructor',UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10088530,46,??_GImageList@vgui2@@QAEPAXI@Z,destructor',UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10088560,45,??0ColumnButton@@QAE@PAVPanel@vgui2@@PBD1@Z,ColumnButton::ColumnButton,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10088590,84,?ApplySchemeSettings@ColumnButton@@UAEXPAVIScheme@vgui2@@@Z,ColumnButton::ApplySchemeSettings,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100885F0,165,?OnMousePressed@ColumnButton@@UAEXW4MouseCode@vgui2@@@Z,ColumnButton::OnMousePressed,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100886A0,69,?OpenColumnChoiceMenu@ColumnButton@@QAEXXZ,ColumnButton::OpenColumnChoiceMenu,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100886F0,46,??_GColumnButton@@UAEPAXI@Z,destructor',UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10088720,19,??1ColumnButton@@UAE@XZ,ColumnButton::~ColumnButton,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10088740,106,??0Dragger@@QAE@H@Z,Dragger::Dragger,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100887B0,100,?OnMousePressed@Dragger@@UAEXW4MouseCode@vgui2@@@Z,Dragger::OnMousePressed,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10088820,115,?OnMouseDoublePressed@Dragger@@UAEXW4MouseCode@vgui2@@@Z,Dragger::OnMouseDoublePressed,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100888A0,55,?OnMouseReleased@Dragger@@UAEXW4MouseCode@vgui2@@@Z,Dragger::OnMouseReleased,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100888E0,235,?OnCursorMoved@Dragger@@UAEXHH@Z,Dragger::OnCursorMoved,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100889D0,89,?SetMovable@Dragger@@UAEX_N@Z,Dragger::SetMovable,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10088A30,46,??_GDragger@@UAEPAXI@Z,destructor',UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10088A60,19,??1Dragger@@UAE@XZ,Dragger::~Dragger,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10088A80,29,??0FastSortListPanelItem@vgui2@@QAE@XZ,vgui2::FastSortListPanelItem::FastSortListPanelItem,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10088AA0,19,??0ListPanel_RegisterMap@ListPanel@vgui2@@QAE@XZ,vgui2::ListPanel::ListPanel_RegisterMap::ListPanel_RegisterMap,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10088AC0,102,?ChainToMap@ListPanel@vgui2@@SAXXZ,vgui2::ListPanel::ChainToMap,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10088B30,64,?GetMessageMap@ListPanel@vgui2@@UAEPAUPanelMessageMap@2@XZ,vgui2::ListPanel::GetMessageMap,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10088B70,10,?GetPanelClassName@ListPanel@vgui2@@SAPBDXZ,vgui2::ListPanel::GetPanelClassName,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10088B80,10,?GetPanelBaseClassName@ListPanel@vgui2@@SAPBDXZ,vgui2::ListPanel::GetPanelBaseClassName,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10088B90,25,?RemoveAll@ListPanel@vgui2@@UAEXXZ,vgui2::ListPanel::RemoveAll,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10088BB0,19,??0PanelMessageFunc_OnSliderMoved@ListPanel@vgui2@@QAE@XZ,vgui2::ListPanel::PanelMessageFunc_OnSliderMoved::PanelMessageFunc_OnSliderMoved,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10088BD0,107,?InitVar@PanelMessageFunc_OnSliderMoved@ListPanel@vgui2@@SAXXZ,vgui2::ListPanel::PanelMessageFunc_OnSliderMoved::InitVar,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10088C40,120,?AddToMap@ListPanel@vgui2@@SAXPBDP8Panel@2@AEXXZHH0H0@Z,vgui2::ListPanel::AddToMap,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10088CC0,19,??0PanelMessageFunc_OnColumnResized@ListPanel@vgui2@@QAE@XZ,vgui2::ListPanel::PanelMessageFunc_OnColumnResized::PanelMessageFunc_OnColumnResized,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10088CE0,113,?InitVar@PanelMessageFunc_OnColumnResized@ListPanel@vgui2@@SAXXZ,vgui2::ListPanel::PanelMessageFunc_OnColumnResized::InitVar,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10088D60,19,??0PanelMessageFunc_OnSetSortColumn@ListPanel@vgui2@@QAE@XZ,vgui2::ListPanel::PanelMessageFunc_OnSetSortColumn::PanelMessageFunc_OnSetSortColumn,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10088D80,110,?InitVar@PanelMessageFunc_OnSetSortColumn@ListPanel@vgui2@@SAXXZ,vgui2::ListPanel::PanelMessageFunc_OnSetSortColumn::InitVar,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10088DF0,19,??0PanelMessageFunc_ResizeColumnToContents@ListPanel@vgui2@@QAE@XZ,vgui2::ListPanel::PanelMessageFunc_ResizeColumnToContents::PanelMessageFunc_ResizeColumnToContents,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10088E10,110,?InitVar@PanelMessageFunc_ResizeColumnToContents@ListPanel@vgui2@@SAXXZ,vgui2::ListPanel::PanelMessageFunc_ResizeColumnToContents::InitVar,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10088E80,19,??0PanelMessageFunc_OpenColumnChoiceMenu@ListPanel@vgui2@@QAE@XZ,vgui2::ListPanel::PanelMessageFunc_OpenColumnChoiceMenu::PanelMessageFunc_OpenColumnChoiceMenu,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10088EA0,107,?InitVar@PanelMessageFunc_OpenColumnChoiceMenu@ListPanel@vgui2@@SAXXZ,vgui2::ListPanel::PanelMessageFunc_OpenColumnChoiceMenu::InitVar,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10088F10,46,??_GFastSortListPanelItem@vgui2@@QAEPAXI@Z,destructor',UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10088F40,22,??1FastSortListPanelItem@vgui2@@QAE@XZ,vgui2::FastSortListPanelItem::~FastSortListPanelItem,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10088F60,19,??0PanelMessageFunc_OnToggleColumnVisible@ListPanel@vgui2@@QAE@XZ,vgui2::ListPanel::PanelMessageFunc_OnToggleColumnVisible::PanelMessageFunc_OnToggleColumnVisible,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10088F80,110,?InitVar@PanelMessageFunc_OnToggleColumnVisible@ListPanel@vgui2@@SAXXZ,vgui2::ListPanel::PanelMessageFunc_OnToggleColumnVisible::InitVar,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10089000,7,?InvalidIndex@?$CUtlLinkedList@Ucolumn_t@ListPanel@vgui2@@E@@SAEXZ,char>::InvalidIndex,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10089010,8,?InvalidIndex@?$CUtlLinkedList@PAVListPanelItem@vgui2@@H@@SAHXZ,"*,int>::InvalidIndex",UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10089020,25,??A?$CUtlRBTree@UIndexItem_t@ListPanel@vgui2@@H@@QAEAAUIndexItem_t@ListPanel@vgui2@@H@Z,"vgui2::ListPanel::IndexItem_t,int>::operator[]",UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10089040,29,?SetLessFunc@?$CUtlRBTree@UIndexItem_t@ListPanel@vgui2@@H@@QAEXP6A_NABUIndexItem_t@ListPanel@vgui2@@0@Z@Z,"vgui2::ListPanel::IndexItem_t,int>::SetLessFunc",UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10089060,58,?Insert@?$CUtlRBTree@UIndexItem_t@ListPanel@vgui2@@H@@QAEHABUIndexItem_t@ListPanel@vgui2@@@Z,"vgui2::ListPanel::IndexItem_t,int>::Insert",UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100890A0,718,?RemoveAt@?$CUtlRBTree@UIndexItem_t@ListPanel@vgui2@@H@@QAEXH@Z,"vgui2::ListPanel::IndexItem_t,int>::RemoveAt",UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10089370,189,?RemoveAll@?$CUtlRBTree@UIndexItem_t@ListPanel@vgui2@@H@@QAEXXZ,"vgui2::ListPanel::IndexItem_t,int>::RemoveAll",UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10089430,67,?FirstInorder@?$CUtlRBTree@UIndexItem_t@ListPanel@vgui2@@H@@QBEHXZ,"vgui2::ListPanel::IndexItem_t,int>::FirstInorder",UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10089480,174,?NextInorder@?$CUtlRBTree@UIndexItem_t@ListPanel@vgui2@@H@@QBEHH@Z,"vgui2::ListPanel::IndexItem_t,int>::NextInorder",UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10089530,67,?LastInorder@?$CUtlRBTree@UIndexItem_t@ListPanel@vgui2@@H@@QBEHXZ,"vgui2::ListPanel::IndexItem_t,int>::LastInorder",UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10089580,48,??0?$CUtlLinkedList@Ucolumn_t@ListPanel@vgui2@@E@@QAE@HH@Z,char>,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100895B0,27,??1?$CUtlLinkedList@Ucolumn_t@ListPanel@vgui2@@E@@QAE@XZ,char>,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100895D0,30,??A?$CUtlLinkedList@Ucolumn_t@ListPanel@vgui2@@E@@QAEAAUcolumn_t@ListPanel@vgui2@@E@Z,char>::operator[],UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100895F0,25,?AddToTail@?$CUtlLinkedList@Ucolumn_t@ListPanel@vgui2@@E@@QAEEXZ,char>::AddToTail,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10089610,25,?Remove@?$CUtlLinkedList@Ucolumn_t@ListPanel@vgui2@@E@@QAEXE@Z,char>::Remove,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10089630,186,?RemoveAll@?$CUtlLinkedList@Ucolumn_t@ListPanel@vgui2@@E@@QAEXXZ,char>::RemoveAll,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100896F0,17,?Head@?$CUtlLinkedList@Ucolumn_t@ListPanel@vgui2@@E@@QBEEXZ,char>::Head,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10089710,28,?Next@?$CUtlLinkedList@Ucolumn_t@ListPanel@vgui2@@E@@QBEEE@Z,char>::Next,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10089730,50,??0?$CUtlVector@E@@QAE@HH@Z,char>,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10089770,27,??1?$CUtlVector@E@@QAE@XZ,char>,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10089790,25,??A?$CUtlVector@E@@QAEAAEH@Z,char>::operator[],UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100897B0,17,?Count@?$CUtlVector@E@@QBEHXZ,char>::Count,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100897D0,51,?IsValidIndex@?$CUtlVector@E@@QBE_NH@Z,char>::IsValidIndex,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10089810,32,?AddToTail@?$CUtlVector@E@@QAEHABE@Z,char>::AddToTail,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10089830,65,?InsertBefore@?$CUtlVector@E@@QAEHHABE@Z,char>::InsertBefore,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10089880,83,?Find@?$CUtlVector@E@@QAEHABE@Z,char>::Find,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100898E0,63,?Remove@?$CUtlVector@E@@QAEXH@Z,char>::Remove,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10089920,48,??0?$CUtlLinkedList@PAVListPanelItem@vgui2@@H@@QAE@HH@Z,"*,int>",UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10089950,27,??1?$CUtlLinkedList@PAVListPanelItem@vgui2@@H@@QAE@XZ,"*,int>",UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10089970,25,??A?$CUtlLinkedList@PAVListPanelItem@vgui2@@H@@QAEAAPAVListPanelItem@vgui2@@H@Z,"*,int>::operator[]",UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10089990,31,?AddToTail@?$CUtlLinkedList@PAVListPanelItem@vgui2@@H@@QAEHABQAVListPanelItem@vgui2@@@Z,"*,int>::AddToTail",UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100899B0,25,?Remove@?$CUtlLinkedList@PAVListPanelItem@vgui2@@H@@QAEXH@Z,"*,int>::Remove",UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100899D0,187,?RemoveAll@?$CUtlLinkedList@PAVListPanelItem@vgui2@@H@@QAEXXZ,"*,int>::RemoveAll",UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10089A90,17,?Head@?$CUtlLinkedList@PAVListPanelItem@vgui2@@H@@QBEHXZ,"*,int>::Head",UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10089AB0,28,?Next@?$CUtlLinkedList@PAVListPanelItem@vgui2@@H@@QBEHH@Z,"*,int>::Next",UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10089AD0,91,?IsValidIndex@?$CUtlLinkedList@PAVListPanelItem@vgui2@@H@@QBE_NH@Z,"*,int>::IsValidIndex",UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10089B30,19,?Base@?$CUtlVector@H@@QAEPAHXZ,CUtlVector<int>::Base,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10089B50,51,?IsValidIndex@?$CUtlVector@H@@QBE_NH@Z,CUtlVector<int>::IsValidIndex,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10089B90,26,?AddToTail@?$CUtlVector@H@@QAEHXZ,CUtlVector<int>::AddToTail,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10089BB0,32,?AddMultipleToTail@?$CUtlVector@H@@QAEHH@Z,CUtlVector<int>::AddMultipleToTail,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10089BD0,77,?Find@?$CUtlVector@H@@QAEHABH@Z,CUtlVector<int>::Find,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10089C20,34,?HasElement@?$CUtlVector@H@@QAE_NABH@Z,CUtlVector<int>::HasElement,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10089C50,48,?FindAndRemove@?$CUtlVector@H@@QAEXABH@Z,CUtlVector<int>::FindAndRemove,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10089C80,16,?SETUP_PANEL@vgui2@@YAPAVColumnButton@@PAV2@@Z,vgui2::SETUP_PANEL,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10089C90,30,?InternalElement@?$CUtlLinkedList@Ucolumn_t@ListPanel@vgui2@@E@@IAEAAUListElem_t@1@E@Z,char>::InternalElement,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10089CB0,30,?InternalElement@?$CUtlLinkedList@Ucolumn_t@ListPanel@vgui2@@E@@IBEABUListElem_t@1@E@Z,char>::InternalElement,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10089CD0,25,?ResetDbgInfo@?$CUtlLinkedList@Ucolumn_t@ListPanel@vgui2@@E@@IAEXXZ,char>::ResetDbgInfo,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10089CF0,25,?InternalElement@?$CUtlLinkedList@PAVListPanelItem@vgui2@@H@@IAEAAUListElem_t@1@H@Z,"*,int>::InternalElement",UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10089D10,25,?InternalElement@?$CUtlLinkedList@PAVListPanelItem@vgui2@@H@@IBEABUListElem_t@1@H@Z,"*,int>::InternalElement",UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10089D30,25,?ResetDbgInfo@?$CUtlLinkedList@PAVListPanelItem@vgui2@@H@@IAEXXZ,"*,int>::ResetDbgInfo",UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10089D50,31,?Element@?$CUtlRBTree@UIndexItem_t@ListPanel@vgui2@@H@@QAEAAUIndexItem_t@ListPanel@vgui2@@H@Z,"vgui2::ListPanel::IndexItem_t,int>::Element",UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10089D70,28,?Parent@?$CUtlRBTree@UIndexItem_t@ListPanel@vgui2@@H@@QBEHH@Z,"vgui2::ListPanel::IndexItem_t,int>::Parent",UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10089D90,27,?LeftChild@?$CUtlRBTree@UIndexItem_t@ListPanel@vgui2@@H@@QBEHH@Z,"vgui2::ListPanel::IndexItem_t,int>::LeftChild",UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10089DB0,28,?RightChild@?$CUtlRBTree@UIndexItem_t@ListPanel@vgui2@@H@@QBEHH@Z,"vgui2::ListPanel::IndexItem_t,int>::RightChild",UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10089DD0,44,?IsLeftChild@?$CUtlRBTree@UIndexItem_t@ListPanel@vgui2@@H@@QBE_NH@Z,"vgui2::ListPanel::IndexItem_t,int>::IsLeftChild",UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10089E00,44,?IsRightChild@?$CUtlRBTree@UIndexItem_t@ListPanel@vgui2@@H@@QBE_NH@Z,"vgui2::ListPanel::IndexItem_t,int>::IsRightChild",UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10089E30,29,?IsRoot@?$CUtlRBTree@UIndexItem_t@ListPanel@vgui2@@H@@QBE_NH@Z,"vgui2::ListPanel::IndexItem_t,int>::IsRoot",UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10089E50,35,?IsValidIndex@?$CUtlRBTree@UIndexItem_t@ListPanel@vgui2@@H@@QBE_NH@Z,"vgui2::ListPanel::IndexItem_t,int>::IsValidIndex",UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10089E80,8,?InvalidIndex@?$CUtlRBTree@UIndexItem_t@ListPanel@vgui2@@H@@SAHXZ,"vgui2::ListPanel::IndexItem_t,int>::InvalidIndex",UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10089E90,78,?FreeNode@?$CUtlRBTree@UIndexItem_t@ListPanel@vgui2@@H@@QAEXH@Z,"vgui2::ListPanel::IndexItem_t,int>::FreeNode",UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10089EE0,31,?SetParent@?$CUtlRBTree@UIndexItem_t@ListPanel@vgui2@@H@@IAEXHH@Z,"vgui2::ListPanel::IndexItem_t,int>::SetParent",UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10089F00,30,?SetLeftChild@?$CUtlRBTree@UIndexItem_t@ListPanel@vgui2@@H@@IAEXHH@Z,"vgui2::ListPanel::IndexItem_t,int>::SetLeftChild",ENGINE,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10089F20,31,?SetRightChild@?$CUtlRBTree@UIndexItem_t@ListPanel@vgui2@@H@@IAEXHH@Z,"vgui2::ListPanel::IndexItem_t,int>::SetRightChild",UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10089F40,28,?Color@?$CUtlRBTree@UIndexItem_t@ListPanel@vgui2@@H@@IBE?AW4NodeColor_t@1@H@Z,"vgui2::ListPanel::IndexItem_t,int>::Color",UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10089F60,31,?SetColor@?$CUtlRBTree@UIndexItem_t@ListPanel@vgui2@@H@@IAEXHW4NodeColor_t@1@@Z,"vgui2::ListPanel::IndexItem_t,int>::SetColor",UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10089F80,901,?RemoveRebalance@?$CUtlRBTree@UIndexItem_t@ListPanel@vgui2@@H@@IAEXH@Z,"vgui2::ListPanel::IndexItem_t,int>::RemoveRebalance",UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008A310,144,?CreateInsertedNode@?$CUtlRBTree@UIndexItem_t@ListPanel@vgui2@@H@@IAEHABUIndexItem_t@ListPanel@vgui2@@@Z,"vgui2::ListPanel::IndexItem_t,int>::CreateInsertedNode",UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008A3A0,64,?CopyConstruct@@YAXPAUIndexItem_t@ListPanel@vgui2@@ABU123@@Z,CopyConstruct,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008A3E0,5,?Destruct@@YAXPAUIndexItem_t@ListPanel@vgui2@@@Z,Destruct,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008A3F0,30,?Element@?$CUtlLinkedList@Ucolumn_t@ListPanel@vgui2@@E@@QAEAAUcolumn_t@ListPanel@vgui2@@E@Z,char>::Element,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008A410,68,?InsertBefore@?$CUtlLinkedList@Ucolumn_t@ListPanel@vgui2@@E@@QAEEE@Z,char>::InsertBefore,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008A460,97,?Free@?$CUtlLinkedList@Ucolumn_t@ListPanel@vgui2@@E@@QAEXE@Z,char>::Free,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008A4D0,136,?IsValidIndex@?$CUtlLinkedList@Ucolumn_t@ListPanel@vgui2@@E@@QBE_NE@Z,char>::IsValidIndex,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008A560,58,?ConstructList@?$CUtlLinkedList@Ucolumn_t@ListPanel@vgui2@@E@@IAEXXZ,char>::ConstructList,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008A5A0,75,??0?$CUtlMemory@UListElem_t@?$CUtlLinkedList@Ucolumn_t@ListPanel@vgui2@@E@@@@QAE@HH@Z,char>::ListElem_t>,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008A5F0,19,??1?$CUtlMemory@UListElem_t@?$CUtlLinkedList@Ucolumn_t@ListPanel@vgui2@@E@@@@QAE@XZ,char>::ListElem_t>,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008A610,26,??A?$CUtlMemory@UListElem_t@?$CUtlLinkedList@Ucolumn_t@ListPanel@vgui2@@E@@@@QBEABUListElem_t@?$CUtlLinkedList@Ucolumn_t@ListPanel@vgui2@@E@@H@Z,char>::ListElem_t>::operator[],UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008A630,26,??A?$CUtlMemory@UListElem_t@?$CUtlLinkedList@Ucolumn_t@ListPanel@vgui2@@E@@@@QAEAAUListElem_t@?$CUtlLinkedList@Ucolumn_t@ListPanel@vgui2@@E@@H@Z,char>::ListElem_t>::operator[],UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008A650,16,?Base@?$CUtlMemory@UListElem_t@?$CUtlLinkedList@Ucolumn_t@ListPanel@vgui2@@E@@@@QAEPAUListElem_t@?$CUtlLinkedList@Ucolumn_t@ListPanel@vgui2@@E@@XZ,char>::ListElem_t>::Base,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008A660,15,?Destruct@@YAXPAUcolumn_t@ListPanel@vgui2@@@Z,Destruct,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008A670,25,?Element@?$CUtlVector@E@@QAEAAEH@Z,char>::Element,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008A690,17,?Size@?$CUtlVector@E@@QBEHXZ,char>::Size,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008A6B0,35,?Purge@?$CUtlVector@E@@QAEXXZ,char>::Purge,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008A6E0,87,?GrowVector@?$CUtlVector@E@@IAEXH@Z,char>::GrowVector,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008A740,83,?ShiftElementsRight@?$CUtlVector@E@@IAEXHH@Z,char>::ShiftElementsRight,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008A7A0,83,?ShiftElementsLeft@?$CUtlVector@E@@IAEXHH@Z,char>::ShiftElementsLeft,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008A800,11,?ResetDbgInfo@?$CUtlVector@E@@IAEXXZ,char>::ResetDbgInfo,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008A810,58,?CopyConstruct@@YAXPAEABE@Z,CopyConstruct,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008A850,5,?Destruct@@YAXPAE@Z,Destruct,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008A860,25,?Element@?$CUtlLinkedList@PAVListPanelItem@vgui2@@H@@QAEAAPAVListPanelItem@vgui2@@H@Z,"*,int>::Element",UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008A880,72,?InsertBefore@?$CUtlLinkedList@PAVListPanelItem@vgui2@@H@@QAEHHABQAVListPanelItem@vgui2@@@Z,"*,int>::InsertBefore",UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008A8D0,97,?Free@?$CUtlLinkedList@PAVListPanelItem@vgui2@@H@@QAEXH@Z,"*,int>::Free",UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008A940,64,?ConstructList@?$CUtlLinkedList@PAVListPanelItem@vgui2@@H@@IAEXXZ,"*,int>::ConstructList",UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008A980,75,??0?$CUtlMemory@UListElem_t@?$CUtlLinkedList@PAVListPanelItem@vgui2@@H@@@@QAE@HH@Z,"*,int>::ListElem_t>",UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008A9D0,19,??1?$CUtlMemory@UListElem_t@?$CUtlLinkedList@PAVListPanelItem@vgui2@@H@@@@QAE@XZ,"*,int>::ListElem_t>",UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008A9F0,26,??A?$CUtlMemory@UListElem_t@?$CUtlLinkedList@PAVListPanelItem@vgui2@@H@@@@QBEABUListElem_t@?$CUtlLinkedList@PAVListPanelItem@vgui2@@H@@H@Z,"*,int>::ListElem_t>::operator[]",UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008AA10,26,??A?$CUtlMemory@UListElem_t@?$CUtlLinkedList@PAVListPanelItem@vgui2@@H@@@@QAEAAUListElem_t@?$CUtlLinkedList@PAVListPanelItem@vgui2@@H@@H@Z,"*,int>::ListElem_t>::operator[]",UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008AA30,16,?Base@?$CUtlMemory@UListElem_t@?$CUtlLinkedList@PAVListPanelItem@vgui2@@H@@@@QAEPAUListElem_t@?$CUtlLinkedList@PAVListPanelItem@vgui2@@H@@XZ,"*,int>::ListElem_t>::Base",UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008AA40,5,?Destruct@@YAXPAPAVListPanelItem@vgui2@@@Z,Destruct,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008AA50,17,?Size@?$CUtlVector@H@@QBEHXZ,CUtlVector<int>::Size,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008AA70,61,?InsertBefore@?$CUtlVector@H@@QAEHH@Z,CUtlVector<int>::InsertBefore,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008AAB0,109,?InsertMultipleBefore@?$CUtlVector@H@@QAEHHH@Z,CUtlVector<int>::InsertMultipleBefore,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008AB20,16,?Base@?$CUtlMemory@H@@QAEPAHXZ,CUtlMemory<int>::Base,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008AB30,46,??_Gcolumn_t@ListPanel@vgui2@@QAEPAXI@Z,destructor',UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008AB60,22,??1column_t@ListPanel@vgui2@@QAE@XZ,vgui2::ListPanel::column_t::~column_t,ENGINE,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008AB80,22,??1?$CUtlRBTree@UIndexItem_t@ListPanel@vgui2@@H@@QAE@XZ,"CUtlRBTree<vgui2::ListPanel::IndexItem_t,int>::~CUtlRBTree<vgui2::ListPanel::IndexItem_t,int>",UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008ABA0,28,?Links@?$CUtlRBTree@UIndexItem_t@ListPanel@vgui2@@H@@IAEAAULinks_t@1@H@Z,"vgui2::ListPanel::IndexItem_t,int>::Links",UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008ABC0,130,?Links@?$CUtlRBTree@UIndexItem_t@ListPanel@vgui2@@H@@IBEABULinks_t@1@H@Z,"vgui2::ListPanel::IndexItem_t,int>::Links",UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008AC50,36,?IsRed@?$CUtlRBTree@UIndexItem_t@ListPanel@vgui2@@H@@IBE_NH@Z,"vgui2::ListPanel::IndexItem_t,int>::IsRed",UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008AC80,36,?IsBlack@?$CUtlRBTree@UIndexItem_t@ListPanel@vgui2@@H@@IBE_NH@Z,"vgui2::ListPanel::IndexItem_t,int>::IsBlack",UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008ACB0,287,?RotateLeft@?$CUtlRBTree@UIndexItem_t@ListPanel@vgui2@@H@@IAEXH@Z,"vgui2::ListPanel::IndexItem_t,int>::RotateLeft",UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008ADD0,287,?RotateRight@?$CUtlRBTree@UIndexItem_t@ListPanel@vgui2@@H@@IAEXH@Z,"vgui2::ListPanel::IndexItem_t,int>::RotateRight",UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008AEF0,182,?InsertAt@?$CUtlRBTree@UIndexItem_t@ListPanel@vgui2@@H@@IAEHH_N@Z,"vgui2::ListPanel::IndexItem_t,int>::InsertAt",UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008AFB0,26,??A?$CUtlMemory@UNode_t@?$CUtlRBTree@UIndexItem_t@ListPanel@vgui2@@H@@@@QAEAAUNode_t@?$CUtlRBTree@UIndexItem_t@ListPanel@vgui2@@H@@H@Z,"vgui2::ListPanel::IndexItem_t,int>::Node_t>::operator[]",UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008AFD0,266,?Alloc@?$CUtlLinkedList@Ucolumn_t@ListPanel@vgui2@@E@@QAEE_N@Z,char>::Alloc,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008B0E0,205,?LinkBefore@?$CUtlLinkedList@Ucolumn_t@ListPanel@vgui2@@E@@QAEXEE@Z,char>::LinkBefore,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008B1B0,214,?Unlink@?$CUtlLinkedList@Ucolumn_t@ListPanel@vgui2@@E@@QAEXE@Z,char>::Unlink,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008B290,96,?IsInList@?$CUtlLinkedList@Ucolumn_t@ListPanel@vgui2@@E@@QBE_NE@Z,char>::IsInList,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008B2F0,69,?Purge@?$CUtlMemory@UListElem_t@?$CUtlLinkedList@Ucolumn_t@ListPanel@vgui2@@E@@@@QAEXXZ,char>::ListElem_t>::Purge,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008B340,53,?Construct@@YAXPAUcolumn_t@ListPanel@vgui2@@@Z,Construct,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008B380,70,?RemoveAll@?$CUtlVector@E@@QAEXXZ,char>::RemoveAll,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008B3D0,247,?Alloc@?$CUtlLinkedList@PAVListPanelItem@vgui2@@H@@QAEH_N@Z,"*,int>::Alloc",UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008B4D0,180,?LinkBefore@?$CUtlLinkedList@PAVListPanelItem@vgui2@@H@@QAEXHH@Z,"*,int>::LinkBefore",UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008B590,190,?Unlink@?$CUtlLinkedList@PAVListPanelItem@vgui2@@H@@QAEXH@Z,"*,int>::Unlink",UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008B650,68,?IsInList@?$CUtlLinkedList@PAVListPanelItem@vgui2@@H@@QBE_NH@Z,"*,int>::IsInList",UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008B6A0,69,?Purge@?$CUtlMemory@UListElem_t@?$CUtlLinkedList@PAVListPanelItem@vgui2@@H@@@@QAEXXZ,"*,int>::ListElem_t>::Purge",UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008B6F0,58,?CopyConstruct@@YAXPAPAVListPanelItem@vgui2@@ABQAV12@@Z,CopyConstruct,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008B730,25,?Construct@@YAXPAH@Z,Construct,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008B750,31,??0column_t@ListPanel@vgui2@@QAE@XZ,vgui2::ListPanel::column_t::column_t,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008B770,93,??0?$CUtlRBTree@UIndexItem_t@ListPanel@vgui2@@H@@QAE@HHP6A_NABUIndexItem_t@ListPanel@vgui2@@0@Z@Z,"vgui2::ListPanel::IndexItem_t,int>",UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008B7D0,146,?NewNode@?$CUtlRBTree@UIndexItem_t@ListPanel@vgui2@@H@@QAEHXZ,"vgui2::ListPanel::IndexItem_t,int>::NewNode",UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008B870,541,?InsertRebalance@?$CUtlRBTree@UIndexItem_t@ListPanel@vgui2@@H@@IAEXH@Z,"vgui2::ListPanel::IndexItem_t,int>::InsertRebalance",UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008BA90,19,??1?$CUtlMemory@UNode_t@?$CUtlRBTree@UIndexItem_t@ListPanel@vgui2@@H@@@@QAE@XZ,"vgui2::ListPanel::IndexItem_t,int>::Node_t>",UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008BAB0,26,??A?$CUtlMemory@UNode_t@?$CUtlRBTree@UIndexItem_t@ListPanel@vgui2@@H@@@@QBEABUNode_t@?$CUtlRBTree@UIndexItem_t@ListPanel@vgui2@@H@@H@Z,"vgui2::ListPanel::IndexItem_t,int>::Node_t>::operator[]",UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008BAD0,28,?Previous@?$CUtlLinkedList@Ucolumn_t@ListPanel@vgui2@@E@@QBEEE@Z,char>::Previous,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008BAF0,17,?NumAllocated@?$CUtlMemory@UListElem_t@?$CUtlLinkedList@Ucolumn_t@ListPanel@vgui2@@E@@@@QBEHXZ,char>::ListElem_t>::NumAllocated,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008BB10,199,?Grow@?$CUtlMemory@UListElem_t@?$CUtlLinkedList@Ucolumn_t@ListPanel@vgui2@@E@@@@QAEXH@Z,char>::ListElem_t>::Grow,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008BBE0,25,?IsExternallyAllocated@?$CUtlMemory@UListElem_t@?$CUtlLinkedList@Ucolumn_t@ListPanel@vgui2@@E@@@@QBE_NXZ,char>::ListElem_t>::IsExternallyAllocated,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008BC00,28,?Previous@?$CUtlLinkedList@PAVListPanelItem@vgui2@@H@@QBEHH@Z,"*,int>::Previous",UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008BC20,17,?NumAllocated@?$CUtlMemory@UListElem_t@?$CUtlLinkedList@PAVListPanelItem@vgui2@@H@@@@QBEHXZ,"*,int>::ListElem_t>::NumAllocated",UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008BC40,199,?Grow@?$CUtlMemory@UListElem_t@?$CUtlLinkedList@PAVListPanelItem@vgui2@@H@@@@QAEXH@Z,"*,int>::ListElem_t>::Grow",UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008BD10,25,?IsExternallyAllocated@?$CUtlMemory@UListElem_t@?$CUtlLinkedList@PAVListPanelItem@vgui2@@H@@@@QBE_NXZ,"*,int>::ListElem_t>::IsExternallyAllocated",UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008BD30,25,?Construct@@YAXPAPAVListPanelItem@vgui2@@@Z,Construct,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008BD50,11,?ResetDbgInfo@?$CUtlRBTree@UIndexItem_t@ListPanel@vgui2@@H@@IAEXXZ,"vgui2::ListPanel::IndexItem_t,int>::ResetDbgInfo",UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008BD60,75,??0?$CUtlMemory@UNode_t@?$CUtlRBTree@UIndexItem_t@ListPanel@vgui2@@H@@@@QAE@HH@Z,"vgui2::ListPanel::IndexItem_t,int>::Node_t>",UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008BDB0,17,?NumAllocated@?$CUtlMemory@UNode_t@?$CUtlRBTree@UIndexItem_t@ListPanel@vgui2@@H@@@@QBEHXZ,"vgui2::ListPanel::IndexItem_t,int>::Node_t>::NumAllocated",UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008BDD0,199,?Grow@?$CUtlMemory@UNode_t@?$CUtlRBTree@UIndexItem_t@ListPanel@vgui2@@H@@@@QAEXH@Z,"vgui2::ListPanel::IndexItem_t,int>::Node_t>::Grow",UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008BEA0,69,?Purge@?$CUtlMemory@UNode_t@?$CUtlRBTree@UIndexItem_t@ListPanel@vgui2@@H@@@@QAEXXZ,"vgui2::ListPanel::IndexItem_t,int>::Node_t>::Purge",UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008BEF0,25,?Construct@@YAXPAUIndexItem_t@ListPanel@vgui2@@@Z,Construct,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008BF10,25,?IsExternallyAllocated@?$CUtlMemory@UNode_t@?$CUtlRBTree@UIndexItem_t@ListPanel@vgui2@@H@@@@QBE_NXZ,"vgui2::ListPanel::IndexItem_t,int>::Node_t>::IsExternallyAllocated",UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,1008BF30,151,,,UNKNOWN,vgui2/controls/PropertyPage.cpp,,,TODO,,,
 gameui,1008BFC7,28,,,UNKNOWN,vgui2/controls/PropertyPage.cpp,,,TODO,,,
 gameui,1008BFE3,11,,,UNKNOWN,vgui2/controls/PropertyPage.cpp,,,TODO,,,linux: _ZN5vgui212PropertyPage11OnResetDataEv
