@@ -28586,32 +28586,32 @@ hw,01DF5790,19,??1IGameUIFuncs@@UAE@XZ,IGameUIFuncs::~IGameUIFuncs,ENGINE,engine
 hw,01DF57B0,46,??_GCGameUIFuncs@@UAEPAXI@Z,destructor',ENGINE,engine/sys_dll2.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01DF57E0,31,??0IGameUIFuncs@@QAE@XZ,IGameUIFuncs::IGameUIFuncs,ENGINE,engine/sys_dll2.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01DF5800,46,??_GIGameUIFuncs@@UAEPAXI@Z,destructor',ENGINE,engine/sys_dll2.cpp,,,MATCHED,100,hw_manual.csv,
-hw,01DF5830,15,,,ENGINE,engine/sys_engine.cpp,,,TODO,,,
-hw,01DF583F,15,,,ENGINE,engine/sys_engine.cpp,,,TODO,,,
-hw,01DF584E,18,,,ENGINE,engine/sys_engine.cpp,,,TODO,,,
-hw,01DF5860,15,,,ENGINE,engine/sys_engine.cpp,,,TODO,,,
-hw,01DF586F,129,,,ENGINE,engine/sys_engine.cpp,,,TODO,,,
-hw,01DF58F0,28,,,ENGINE,engine/sys_engine.cpp,,,TODO,,,
-hw,01DF590C,26,,CEngine::Unload,ENGINE,engine/sys_engine.cpp,,,TODO,,linux_symbols:caller:0.667,
-hw,01DF5926,165,,,UNKNOWN,engine/sys_engine.cpp,,,TODO,,,linux: _ZN7CEngine4LoadEbPcS0_
-hw,01DF59CB,301,,CEngine::Frame,ENGINE,engine/sys_engine.cpp,,,TODO,,linux_symbols:caller:0.667,
-hw,01DF5AF8,31,,,UNKNOWN,engine/sys_engine.cpp,,,TODO,,,linux: _ZN7CEngine11SetSubStateEi
-hw,01DF5B17,34,,,UNKNOWN,engine/sys_engine.cpp,,,TODO,,,linux: _ZN7CEngine8SetStateEi
-hw,01DF5B39,17,,,UNKNOWN,engine/sys_engine.cpp,,,TODO,,,linux: _ZN7CEngine8GetStateEv
-hw,01DF5B4A,17,,,UNKNOWN,engine/sys_engine.cpp,,,TODO,,,linux: _ZN7CEngine11GetSubStateEv
-hw,01DF5B5B,17,,,UNKNOWN,engine/sys_engine.cpp,,,TODO,,,linux: _ZN7CEngine12GetFrameTimeEv
-hw,01DF5B6C,17,,,UNKNOWN,engine/sys_engine.cpp,,,TODO,,,linux: _ZN7CEngine10GetCurTimeEv
-hw,01DF5B7D,101,,,UNKNOWN,engine/sys_engine.cpp,,,TODO,,,linux: _ZN7CEngine13TrapKey_EventEib
-hw,01DF5BE2,91,,,UNKNOWN,engine/sys_engine.cpp,,,TODO,,,linux: _ZN7CEngine15TrapMouse_EventEib
-hw,01DF5C3D,39,,,UNKNOWN,engine/sys_engine.cpp,,,TODO,,,linux: _ZN7CEngine13StartTrapModeEv
-hw,01DF5C64,17,,,UNKNOWN,engine/sys_engine.cpp,,,TODO,,,linux: _ZN7CEngine10IsTrappingEv
-hw,01DF5C75,76,,,UNKNOWN,engine/sys_engine.cpp,,,TODO,,,linux: _ZN7CEngine17CheckDoneTrappingERiS0_
-hw,01DF5CC1,22,,,UNKNOWN,engine/sys_engine.cpp,,,TODO,,,linux: _ZN7CEngine11SetQuittingEi
-hw,01DF5CD7,17,,,UNKNOWN,engine/sys_engine.cpp,,,TODO,,,linux: _ZN7CEngine11GetQuittingEv
-hw,01DF5CF0,46,,,ENGINE,engine/sys_engine.cpp,,,TODO,,,
-hw,01DF5D20,23,,,ENGINE,engine/sys_engine.cpp,,,TODO,,,
-hw,01DF5D40,46,,,ENGINE,engine/sys_engine.cpp,,,TODO,,,
-hw,01DF5D70,20,,,ENGINE,engine/sys_engine.cpp,,,TODO,,,
+hw,01DF5830,15,_$E4,,ENGINE,engine/sys_engine.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DF583F,15,_$E1,,ENGINE,engine/sys_engine.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DF584E,18,_$E3,,ENGINE,engine/sys_engine.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DF5860,15,_$E2,,ENGINE,engine/sys_engine.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DF586F,129,??0CEngine@@QAE@XZ,CEngine::CEngine,ENGINE,engine/sys_engine.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DF58F0,28,??1CEngine@@UAE@XZ,CEngine::~CEngine,ENGINE,engine/sys_engine.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DF590C,26,?Unload@CEngine@@UAEXXZ,CEngine::Unload,ENGINE,engine/sys_engine.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DF5926,165,?Load@CEngine@@UAE_N_NPAD1@Z,CEngine::Load,UNKNOWN,engine/sys_engine.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN7CEngine4LoadEbPcS0_
+hw,01DF59CB,301,?Frame@CEngine@@UAEHXZ,CEngine::Frame,ENGINE,engine/sys_engine.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DF5AF8,31,?SetSubState@CEngine@@UAEXH@Z,CEngine::SetSubState,UNKNOWN,engine/sys_engine.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN7CEngine11SetSubStateEi
+hw,01DF5B17,34,?SetState@CEngine@@UAEXH@Z,CEngine::SetState,UNKNOWN,engine/sys_engine.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN7CEngine8SetStateEi
+hw,01DF5B39,17,?GetState@CEngine@@UAEHXZ,CEngine::GetState,UNKNOWN,engine/sys_engine.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN7CEngine8GetStateEv
+hw,01DF5B4A,17,?GetSubState@CEngine@@UAEHXZ,CEngine::GetSubState,UNKNOWN,engine/sys_engine.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN7CEngine11GetSubStateEv
+hw,01DF5B5B,17,?GetFrameTime@CEngine@@UAENXZ,CEngine::GetFrameTime,UNKNOWN,engine/sys_engine.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN7CEngine12GetFrameTimeEv
+hw,01DF5B6C,17,?GetCurTime@CEngine@@UAENXZ,CEngine::GetCurTime,UNKNOWN,engine/sys_engine.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN7CEngine10GetCurTimeEv
+hw,01DF5B7D,101,?TrapKey_Event@CEngine@@UAEXH_N@Z,CEngine::TrapKey_Event,UNKNOWN,engine/sys_engine.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN7CEngine13TrapKey_EventEib
+hw,01DF5BE2,91,?TrapMouse_Event@CEngine@@UAEXH_N@Z,CEngine::TrapMouse_Event,UNKNOWN,engine/sys_engine.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN7CEngine15TrapMouse_EventEib
+hw,01DF5C3D,39,?StartTrapMode@CEngine@@UAEXXZ,CEngine::StartTrapMode,UNKNOWN,engine/sys_engine.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN7CEngine13StartTrapModeEv
+hw,01DF5C64,17,?IsTrapping@CEngine@@UAE_NXZ,CEngine::IsTrapping,UNKNOWN,engine/sys_engine.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN7CEngine10IsTrappingEv
+hw,01DF5C75,76,?CheckDoneTrapping@CEngine@@UAE_NAAH0@Z,CEngine::CheckDoneTrapping,UNKNOWN,engine/sys_engine.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN7CEngine17CheckDoneTrappingERiS0_
+hw,01DF5CC1,22,?SetQuitting@CEngine@@UAEXH@Z,CEngine::SetQuitting,UNKNOWN,engine/sys_engine.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN7CEngine11SetQuittingEi
+hw,01DF5CD7,17,?GetQuitting@CEngine@@UAEHXZ,CEngine::GetQuitting,UNKNOWN,engine/sys_engine.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN7CEngine11GetQuittingEv
+hw,01DF5CF0,46,??_GCEngine@@UAEPAXI@Z,destructor',ENGINE,engine/sys_engine.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DF5D20,23,??0IEngine@@QAE@XZ,IEngine::IEngine,ENGINE,engine/sys_engine.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DF5D40,46,??_GIEngine@@UAEPAXI@Z,destructor',ENGINE,engine/sys_engine.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DF5D70,20,??1IEngine@@UAE@XZ,IEngine::~IEngine,ENGINE,engine/sys_engine.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01DF5D90,134,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
 hw,01DF5E16,34,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
 hw,01DF5E38,20,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,linux: _ZNK17CVideoMode_Common14GetInitializedEv

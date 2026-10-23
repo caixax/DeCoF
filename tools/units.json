@@ -3134,6 +3134,11 @@
           "functions_file": "tools/units/hw_common_TokenLine.txt"
         },
         {
+          "name": "engine/sys_engine",
+          "source": "src/engine_hw/sys_engine.cpp",
+          "functions_file": "tools/units/hw_engine_sys_engine.txt"
+        },
+        {
           "name": "engine/traceinit",
           "source": "src/engine_hw/traceinit.cpp",
           "functions_file": "tools/units/hw_engine_traceinit.txt",
