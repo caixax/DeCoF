@@ -7656,59 +7656,59 @@ gameui,10009C40,5,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
 gameui,10009C50,17,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
 gameui,10009C70,199,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
 gameui,10009D40,25,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10009D60,843,,CCareerBaseBox::CCareerBaseBox,ENGINE,GameUI/CareerBox.cpp,,,TODO,,linux_symbols:string:0.744,linux: _ZN14CCareerBaseBoxC1EPN5vgui25PanelEPKcb
-gameui,1000A0AB,21,,,UNKNOWN,GameUI/CareerBox.cpp,,,TODO,,,linux: _ZN14CCareerBaseBox24SetCancelButtonAsDefaultEv
-gameui,1000A0C0,43,,,UNKNOWN,GameUI/CareerBox.cpp,,,TODO,,,linux: _ZN14CCareerBaseBox12SetLabelTextEPKw
-gameui,1000A0EB,374,,CCareerBaseBox::ApplySchemeSettings,ENGINE,GameUI/CareerBox.cpp,,,TODO,,linux_symbols:string:0.82,linux: _ZN14CCareerBaseBox19ApplySchemeSettingsEPN5vgui27ISchemeE
-gameui,1000A261,289,,,UNKNOWN,GameUI/CareerBox.cpp,,,TODO,,,linux: _ZN14CCareerBaseBox13PerformLayoutEv
-gameui,1000A382,411,,,UNKNOWN,GameUI/CareerBox.cpp,,,TODO,,,linux: _ZN14CCareerBaseBox15PaintBackgroundEv
-gameui,1000A51D,218,,,UNKNOWN,GameUI/CareerBox.cpp,,,TODO,,,linux: _ZN14CCareerBaseBox10ShowWindowEv
-gameui,1000A5F7,57,,,UNKNOWN,GameUI/CareerBox.cpp,,,TODO,,,linux: _ZN14CCareerBaseBox7DoModalEv
-gameui,1000A630,70,,,UNKNOWN,GameUI/CareerBox.cpp,,,TODO,,,linux: _ZN14CCareerBaseBox14OnKeyCodeTypedEN5vgui27KeyCodeE
-gameui,1000A676,150,,,UNKNOWN,GameUI/CareerBox.cpp,,,TODO,,,linux: _ZN14CCareerBaseBox9OnCommandEPKc
-gameui,1000A70C,31,,,UNKNOWN,GameUI/CareerBox.cpp,,,TODO,,,
-gameui,1000A72B,43,,moneypunct<>,ENGINE,GameUI/CareerBox.cpp,,,TODO,,ghidra,
-gameui,1000A756,43,,moneypunct<>,ENGINE,GameUI/CareerBox.cpp,,,TODO,,ghidra,
-gameui,1000A781,28,,,UNKNOWN,GameUI/CareerBox.cpp,,,TODO,,,
-gameui,1000A79D,1138,,CCareerDifficultyBox::CCareerDifficultyBox,ENGINE,GameUI/CareerBox.cpp,,,TODO,,linux_symbols:string:0.751,linux: _ZN20CCareerDifficultyBoxC2EPKcPN5vgui25PanelE
-gameui,1000AC0F,60,,CCareerDifficultyBox::OnCommand,ENGINE,GameUI/CareerBox.cpp,,,TODO,,linux_symbols:string:0.411,linux: _ZN20CCareerDifficultyBox9OnCommandEPKc
-gameui,1000AC4B,28,,,UNKNOWN,GameUI/CareerBox.cpp,,,TODO,,,
-gameui,1000AC67,97,,,UNKNOWN,GameUI/CareerBox.cpp,,,TODO,,,linux: _ZN20CCareerDifficultyBox10ShowWindowEv
-gameui,1000ACC8,171,,CCareerNewProfileBox::CCareerNewProfileBox,ENGINE,GameUI/CareerBox.cpp,,,TODO,,linux_symbols:string:0.864,linux: _ZN20CCareerNewProfileBoxC1EPKcPN5vgui25PanelE
-gameui,1000AD73,28,,,UNKNOWN,GameUI/CareerBox.cpp,,,TODO,,,
-gameui,1000AD8F,62,,,UNKNOWN,GameUI/CareerBox.cpp,,,TODO,,,linux: _ZN20CCareerNewProfileBox10ShowWindowEv
-gameui,1000ADCD,77,,,UNKNOWN,GameUI/CareerBox.cpp,,,TODO,,,linux: _ZN20CCareerNewProfileBox9OnCommandEPKc
-gameui,1000AE1A,79,,,UNKNOWN,GameUI/CareerBox.cpp,,,TODO,,,linux: _ZN20CCareerNewProfileBox14OnKeyCodeTypedEN5vgui27KeyCodeE
-gameui,1000AE69,15,,,UNKNOWN,GameUI/CareerBox.cpp,,,TODO,,,
-gameui,1000AE78,18,,,UNKNOWN,GameUI/CareerBox.cpp,,,TODO,,,
-gameui,1000AE90,46,,,UNKNOWN,GameUI/CareerBox.cpp,,,TODO,,,
-gameui,1000AEC0,33,,,UNKNOWN,GameUI/CareerBox.cpp,,,TODO,,,
-gameui,1000AEF0,46,,,UNKNOWN,GameUI/CareerBox.cpp,,,TODO,,,
-gameui,1000AF20,46,,,UNKNOWN,GameUI/CareerBox.cpp,,,TODO,,,
-gameui,1000AF50,46,,,UNKNOWN,GameUI/CareerBox.cpp,,,TODO,,,
-gameui,1000AF80,43,,,UNKNOWN,GameUI/CareerBox.cpp,,,TODO,,,
-gameui,1000AFB0,44,,,UNKNOWN,GameUI/CareerBox.cpp,,,TODO,,,
-gameui,1000AFE0,54,,,UNKNOWN,GameUI/CareerBox.cpp,,,TODO,,,
-gameui,1000B020,46,,,UNKNOWN,GameUI/CareerBox.cpp,,,TODO,,,
-gameui,1000B050,21,,,UNKNOWN,GameUI/CareerBox.cpp,,,TODO,,,
-gameui,1000B070,94,,,UNKNOWN,GameUI/CareerBox.cpp,,,TODO,,,
-gameui,1000B0D0,99,,,UNKNOWN,GameUI/CareerBox.cpp,,,TODO,,,
-gameui,1000B140,178,,,UNKNOWN,GameUI/CareerBox.cpp,,,TODO,,,
-gameui,1000B200,46,,,UNKNOWN,GameUI/CareerBox.cpp,,,TODO,,,
-gameui,1000B230,25,,,UNKNOWN,GameUI/CareerBox.cpp,,,TODO,,,
-gameui,1000B250,46,,,UNKNOWN,GameUI/CareerBox.cpp,,,TODO,,,
-gameui,1000B280,25,,,UNKNOWN,GameUI/CareerBox.cpp,,,TODO,,,
-gameui,1000B2A0,19,,,UNKNOWN,GameUI/CareerBox.cpp,,,TODO,,,
-gameui,1000B2C0,25,,,UNKNOWN,GameUI/CareerBox.cpp,,,TODO,,,
-gameui,1000B2E0,25,,,UNKNOWN,GameUI/CareerBox.cpp,,,TODO,,,
-gameui,1000B300,25,,,UNKNOWN,GameUI/CareerBox.cpp,,,TODO,,,
-gameui,1000B320,15,,,UNKNOWN,GameUI/CareerBox.cpp,,,TODO,,,
-gameui,1000B330,15,,,UNKNOWN,GameUI/CareerBox.cpp,,,TODO,,,
-gameui,1000B340,46,,,UNKNOWN,GameUI/CareerBox.cpp,,,TODO,,,
-gameui,1000B370,46,,,UNKNOWN,GameUI/CareerBox.cpp,,,TODO,,,
-gameui,1000B3A0,19,,,UNKNOWN,GameUI/CareerBox.cpp,,,TODO,,,
-gameui,1000B3C0,34,,,UNKNOWN,GameUI/CareerBox.cpp,,,TODO,,,
-gameui,1000B3F0,5,,,UNKNOWN,GameUI/CareerBox.cpp,,,TODO,,,
+gameui,10009D60,843,??0CCareerBaseBox@@QAE@PAVPanel@vgui2@@PBD_N@Z,CCareerBaseBox::CCareerBaseBox,ENGINE,GameUI/CareerBox.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN14CCareerBaseBoxC1EPN5vgui25PanelEPKcb
+gameui,1000A0AB,21,?SetCancelButtonAsDefault@CCareerBaseBox@@QAEXXZ,CCareerBaseBox::SetCancelButtonAsDefault,UNKNOWN,GameUI/CareerBox.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN14CCareerBaseBox24SetCancelButtonAsDefaultEv
+gameui,1000A0C0,43,?SetLabelText@CCareerBaseBox@@QAEXPBG@Z,CCareerBaseBox::SetLabelText,UNKNOWN,GameUI/CareerBox.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN14CCareerBaseBox12SetLabelTextEPKw
+gameui,1000A0EB,374,?ApplySchemeSettings@CCareerBaseBox@@UAEXPAVIScheme@vgui2@@@Z,CCareerBaseBox::ApplySchemeSettings,ENGINE,GameUI/CareerBox.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN14CCareerBaseBox19ApplySchemeSettingsEPN5vgui27ISchemeE
+gameui,1000A261,289,?PerformLayout@CCareerBaseBox@@UAEXXZ,CCareerBaseBox::PerformLayout,UNKNOWN,GameUI/CareerBox.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN14CCareerBaseBox13PerformLayoutEv
+gameui,1000A382,411,?PaintBackground@CCareerBaseBox@@UAEXXZ,CCareerBaseBox::PaintBackground,UNKNOWN,GameUI/CareerBox.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN14CCareerBaseBox15PaintBackgroundEv
+gameui,1000A51D,218,?ShowWindow@CCareerBaseBox@@UAEXXZ,CCareerBaseBox::ShowWindow,UNKNOWN,GameUI/CareerBox.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN14CCareerBaseBox10ShowWindowEv
+gameui,1000A5F7,57,?DoModal@CCareerBaseBox@@UAEXXZ,CCareerBaseBox::DoModal,UNKNOWN,GameUI/CareerBox.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN14CCareerBaseBox7DoModalEv
+gameui,1000A630,70,?OnKeyCodeTyped@CCareerBaseBox@@MAEXW4KeyCode@vgui2@@@Z,CCareerBaseBox::OnKeyCodeTyped,UNKNOWN,GameUI/CareerBox.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN14CCareerBaseBox14OnKeyCodeTypedEN5vgui27KeyCodeE
+gameui,1000A676,150,?OnCommand@CCareerBaseBox@@MAEXPBD@Z,CCareerBaseBox::OnCommand,UNKNOWN,GameUI/CareerBox.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN14CCareerBaseBox9OnCommandEPKc
+gameui,1000A70C,31,?AddButton@CCareerBaseBox@@IAEXPAVButton@vgui2@@@Z,CCareerBaseBox::AddButton,UNKNOWN,GameUI/CareerBox.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1000A72B,43,??0CCareerQueryBox@@QAE@PBD00PAVPanel@vgui2@@@Z,CCareerQueryBox::CCareerQueryBox,ENGINE,GameUI/CareerBox.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1000A756,43,??0CCareerQueryBox@@QAE@PBG0PBDPAVPanel@vgui2@@@Z,CCareerQueryBox::CCareerQueryBox,ENGINE,GameUI/CareerBox.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1000A781,28,??1CCareerQueryBox@@UAE@XZ,CCareerQueryBox::~CCareerQueryBox,UNKNOWN,GameUI/CareerBox.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1000A79D,1138,??0CCareerDifficultyBox@@QAE@PBDPAVPanel@vgui2@@@Z,CCareerDifficultyBox::CCareerDifficultyBox,ENGINE,GameUI/CareerBox.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN20CCareerDifficultyBoxC2EPKcPN5vgui25PanelE
+gameui,1000AC0F,60,?OnCommand@CCareerDifficultyBox@@UAEXPBD@Z,CCareerDifficultyBox::OnCommand,ENGINE,GameUI/CareerBox.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN20CCareerDifficultyBox9OnCommandEPKc
+gameui,1000AC4B,28,??1CCareerDifficultyBox@@UAE@XZ,CCareerDifficultyBox::~CCareerDifficultyBox,UNKNOWN,GameUI/CareerBox.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1000AC67,97,?ShowWindow@CCareerDifficultyBox@@UAEXXZ,CCareerDifficultyBox::ShowWindow,UNKNOWN,GameUI/CareerBox.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN20CCareerDifficultyBox10ShowWindowEv
+gameui,1000ACC8,171,??0CCareerNewProfileBox@@QAE@PBDPAVPanel@vgui2@@@Z,CCareerNewProfileBox::CCareerNewProfileBox,ENGINE,GameUI/CareerBox.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN20CCareerNewProfileBoxC1EPKcPN5vgui25PanelE
+gameui,1000AD73,28,??1CCareerNewProfileBox@@UAE@XZ,CCareerNewProfileBox::~CCareerNewProfileBox,UNKNOWN,GameUI/CareerBox.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1000AD8F,62,?ShowWindow@CCareerNewProfileBox@@UAEXXZ,CCareerNewProfileBox::ShowWindow,UNKNOWN,GameUI/CareerBox.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN20CCareerNewProfileBox10ShowWindowEv
+gameui,1000ADCD,77,?OnCommand@CCareerNewProfileBox@@MAEXPBD@Z,CCareerNewProfileBox::OnCommand,UNKNOWN,GameUI/CareerBox.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN20CCareerNewProfileBox9OnCommandEPKc
+gameui,1000AE1A,79,?OnKeyCodeTyped@CCareerNewProfileBox@@MAEXW4KeyCode@vgui2@@@Z,CCareerNewProfileBox::OnKeyCodeTyped,UNKNOWN,GameUI/CareerBox.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN20CCareerNewProfileBox14OnKeyCodeTypedEN5vgui27KeyCodeE
+gameui,1000AE69,15,_$E24,,UNKNOWN,GameUI/CareerBox.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1000AE78,18,_$E23,,UNKNOWN,GameUI/CareerBox.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1000AE90,46,??_GCCareerBaseBox@@UAEPAXI@Z,destructor',UNKNOWN,GameUI/CareerBox.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1000AEC0,33,??1CCareerBaseBox@@UAE@XZ,CCareerBaseBox::~CCareerBaseBox,UNKNOWN,GameUI/CareerBox.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1000AEF0,46,??_GCCareerQueryBox@@UAEPAXI@Z,destructor',UNKNOWN,GameUI/CareerBox.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1000AF20,46,??_GCCareerDifficultyBox@@UAEPAXI@Z,destructor',UNKNOWN,GameUI/CareerBox.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1000AF50,46,??_GCCareerProfileData@@QAEPAXI@Z,destructor',UNKNOWN,GameUI/CareerBox.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1000AF80,43,??1CCareerProfileData@@QAE@XZ,CCareerProfileData::~CCareerProfileData,UNKNOWN,GameUI/CareerBox.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1000AFB0,44,??1CCareerProfileDifficultyData@@QAE@XZ,CCareerProfileDifficultyData::~CCareerProfileDifficultyData,UNKNOWN,GameUI/CareerBox.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1000AFE0,54,??_I@YGXPAXIHP6EX0@Z@Z,iterator',UNKNOWN,GameUI/CareerBox.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1000B020,46,??_GCCareerNewProfileBox@@UAEPAXI@Z,destructor',UNKNOWN,GameUI/CareerBox.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1000B050,21,??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ,>,LIB,GameUI/CareerBox.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1000B070,94,??1?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@QAE@XZ,>,LIB,GameUI/CareerBox.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1000B0D0,99,??1?$vector@VSavedMap@@V?$allocator@VSavedMap@@@std@@@std@@QAE@XZ,>,LIB,GameUI/CareerBox.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1000B140,178,?_Tidy@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AAEX_N@Z,>::_Tidy,LIB,GameUI/CareerBox.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1000B200,46,?_Destroy@?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@IAEXPAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@0@Z,>::_Destroy,LIB,GameUI/CareerBox.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1000B230,25,?deallocate@?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@QAEXPAXI@Z,>::deallocate,LIB,GameUI/CareerBox.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1000B250,46,?_Destroy@?$vector@VSavedMap@@V?$allocator@VSavedMap@@@std@@@std@@IAEXPAVSavedMap@@0@Z,>::_Destroy,LIB,GameUI/CareerBox.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1000B280,25,?deallocate@?$allocator@VSavedMap@@@std@@QAEXPAXI@Z,SavedMap>::deallocate,LIB,GameUI/CareerBox.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1000B2A0,19,?_Refcnt@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AAEAAEPBD@Z,>::_Refcnt,LIB,GameUI/CareerBox.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1000B2C0,25,?deallocate@?$allocator@D@std@@QAEXPAXI@Z,std::allocator<char>::deallocate,LIB,GameUI/CareerBox.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1000B2E0,25,?destroy@?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@QAEXPAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@@Z,>::destroy,LIB,GameUI/CareerBox.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1000B300,25,?destroy@?$allocator@VSavedMap@@@std@@QAEXPAVSavedMap@@@Z,SavedMap>::destroy,LIB,GameUI/CareerBox.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1000B320,15,?_Destroy@std@@YAXPAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@1@@Z,std::_Destroy,LIB,GameUI/CareerBox.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1000B330,15,?_Destroy@std@@YAXPAVSavedMap@@@Z,std::_Destroy,LIB,GameUI/CareerBox.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1000B340,46,??_G?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEPAXI@Z,destructor',LIB,GameUI/CareerBox.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1000B370,46,??_GSavedMap@@QAEPAXI@Z,destructor',UNKNOWN,GameUI/CareerBox.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1000B3A0,19,??1SavedMap@@QAE@XZ,SavedMap::~SavedMap,UNKNOWN,GameUI/CareerBox.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1000B3C0,34,?id@?$ctype@G@std@@$D,helper',LIB,GameUI/CareerBox.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1000B3F0,5,?id@?$ctype@G@std@@$E,helper',LIB,GameUI/CareerBox.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,1000B400,91,,,UNKNOWN,GameUI/CareerDefinitions.cpp,,,TODO,,,linux: _ZL23ParseProfilesFromStringP17BotProfileManagerPKc
 gameui,1000B45B,52,,,UNKNOWN,GameUI/CareerDefinitions.cpp,,,TODO,,,linux: _ZN26CareerDifficultyDefinitionC2Ev
 gameui,1000B48F,449,,,UNKNOWN,GameUI/CareerDefinitions.cpp,,,TODO,,,linux: _ZN26CareerDifficultyDefinitionD1Ev
