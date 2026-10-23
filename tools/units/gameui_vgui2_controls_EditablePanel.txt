@@ -42,6 +42,7 @@
 ?SetDialogVariable@EditablePanel@vgui2@@UAEXPBDM@Z
 ?ForceSubPanelsToUpdateWithNewDialogVariables@EditablePanel@vgui2@@AAEXXZ
 ?GetDialogVariables@EditablePanel@vgui2@@QAEPAVKeyValues@@XZ
+?CreateControlByName@EditablePanel@vgui2@@UAEPAVPanel@2@PBD@Z
 ??_GEditablePanel@vgui2@@UAEPAXI@Z
 ??_GBuildGroup@vgui2@@QAEPAXI@Z
 ?AllocLeaf@@YAPAUleaf_t@@XZ

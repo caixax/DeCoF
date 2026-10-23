@@ -10781,7 +10781,7 @@ gameui,1006D565,53,?SetDialogVariable@EditablePanel@vgui2@@UAEXPBDH@Z,vgui2::Edi
 gameui,1006D59A,53,?SetDialogVariable@EditablePanel@vgui2@@UAEXPBDM@Z,vgui2::EditablePanel::SetDialogVariable,UNKNOWN,vgui2/controls/EditablePanel.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,1006D5CF,216,?ForceSubPanelsToUpdateWithNewDialogVariables@EditablePanel@vgui2@@AAEXXZ,vgui2::EditablePanel::ForceSubPanelsToUpdateWithNewDialogVariables,UNKNOWN,vgui2/controls/EditablePanel.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,1006D6A7,101,?GetDialogVariables@EditablePanel@vgui2@@QAEPAVKeyValues@@XZ,vgui2::EditablePanel::GetDialogVariables,UNKNOWN,vgui2/controls/EditablePanel.cpp,,,MATCHED,100,gameui_manual.csv,
-gameui,1006D70C,1660,?CreateControlByName@EditablePanel@vgui2@@UAEPAVPanel@2@PBD@Z,vgui2::EditablePanel::CreateControlByName,ENGINE,,,,TODO,,gameui_manual.csv,
+gameui,1006D70C,1660,?CreateControlByName@EditablePanel@vgui2@@UAEPAVPanel@2@PBD@Z,vgui2::EditablePanel::CreateControlByName,ENGINE,vgui2/controls/EditablePanel.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,1006DD90,46,??_GEditablePanel@vgui2@@UAEPAXI@Z,destructor',UNKNOWN,vgui2/controls/EditablePanel.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,1006DDC0,46,??_GBuildGroup@vgui2@@QAEPAXI@Z,destructor',UNKNOWN,vgui2/controls/EditablePanel.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,1006DDF0,33,?AllocLeaf@@YAPAUleaf_t@@XZ,AllocLeaf,UNKNOWN,vgui2/controls/EditablePanel.cpp,,,MATCHED,100,gameui_manual.csv,
@@ -30322,7 +30322,7 @@ hw,01E308BC,166,?OnCurrentDefaultButtonSet@EditablePanel@vgui2@@MAEXPAVPanel@2@@
 hw,01E30962,32,?OnDefaultButtonSet@EditablePanel@vgui2@@MAEXPAVPanel@2@@Z,vgui2::EditablePanel::OnDefaultButtonSet,UNKNOWN,vgui2/controls/EditablePanel.cpp,,,MATCHED,100,,linux: _ZN5vgui213EditablePanel18OnDefaultButtonSetEPNS_5PanelE
 hw,01E30982,164,?OnFindDefaultButton@EditablePanel@vgui2@@MAEXXZ,vgui2::EditablePanel::OnFindDefaultButton,UNKNOWN,vgui2/controls/EditablePanel.cpp,,,MATCHED,100,,linux: _ZN5vgui213EditablePanel19OnFindDefaultButtonEv
 hw,01E30A26,1554,?AddSolidToTree@@YAXPAUleaf_t@@HHHH@Z,AddSolidToTree,UNKNOWN,vgui2/controls/EditablePanel.cpp,,,MATCHED,100,,
-hw,01E31038,19,,,UNKNOWN,vgui2/controls/EditablePanel.cpp,,,TODO,,,linux: _ZN5vgui213EditablePanel15PaintBackgroundEv
+hw,01E31038,19,?PaintBackground@EditablePanel@vgui2@@MAEXXZ,vgui2::EditablePanel::PaintBackground,UNKNOWN,vgui2/controls/EditablePanel.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui213EditablePanel15PaintBackgroundEv
 hw,01E3104B,29,?ActivateBuildMode@EditablePanel@vgui2@@UAEXXZ,vgui2::EditablePanel::ActivateBuildMode,UNKNOWN,vgui2/controls/EditablePanel.cpp,,,MATCHED,100,,linux: _ZN5vgui213EditablePanel17ActivateBuildModeEv
 hw,01E31068,64,?LoadControlSettings@EditablePanel@vgui2@@UAEXPBD0@Z,vgui2::EditablePanel::LoadControlSettings,UNKNOWN,vgui2/controls/EditablePanel.cpp,,,MATCHED,100,,linux: _ZN5vgui213EditablePanel19LoadControlSettingsEPKcS2_
 hw,01E310A8,32,?RegisterControlSettingsFile@EditablePanel@vgui2@@UAEXPBD0@Z,vgui2::EditablePanel::RegisterControlSettingsFile,UNKNOWN,vgui2/controls/EditablePanel.cpp,,,MATCHED,100,,linux: _ZN5vgui213EditablePanel27RegisterControlSettingsFileEPKcS2_
@@ -30345,8 +30345,8 @@ hw,01E315F1,127,?GetCurrentKeyFocus@EditablePanel@vgui2@@UAEIXZ,vgui2::EditableP
 hw,01E31670,188,?HasHotkey@EditablePanel@vgui2@@UAEPAVPanel@2@G@Z,vgui2::EditablePanel::HasHotkey,UNKNOWN,vgui2/controls/EditablePanel.cpp,,,MATCHED,100,,linux: _ZN5vgui213EditablePanel9HasHotkeyEw
 hw,01E3172C,56,?SetControlEnabled@EditablePanel@vgui2@@UAEXPBD_N@Z,vgui2::EditablePanel::SetControlEnabled,UNKNOWN,vgui2/controls/EditablePanel.cpp,,,MATCHED,100,,linux: _ZN5vgui213EditablePanel17SetControlEnabledEPKcb
 hw,01E31764,53,?SetControlVisible@EditablePanel@vgui2@@UAEXPBD_N@Z,vgui2::EditablePanel::SetControlVisible,UNKNOWN,vgui2/controls/EditablePanel.cpp,,,MATCHED,100,,linux: _ZN5vgui213EditablePanel17SetControlVisibleEPKcb
-hw,01E31799,112,,,UNKNOWN,vgui2/controls/EditablePanel.cpp,,,TODO,,,linux: _ZN5vgui213EditablePanel16SetControlStringEPKcS2_
-hw,01E31809,112,,,UNKNOWN,vgui2/controls/EditablePanel.cpp,,,TODO,,,linux: _ZN5vgui213EditablePanel13SetControlIntEPKci
+hw,01E31799,112,?SetControlString@EditablePanel@vgui2@@UAEXPBD0@Z,vgui2::EditablePanel::SetControlString,UNKNOWN,vgui2/controls/EditablePanel.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui213EditablePanel16SetControlStringEPKcS2_
+hw,01E31809,112,?SetControlInt@EditablePanel@vgui2@@UAEXPBDH@Z,vgui2::EditablePanel::SetControlInt,UNKNOWN,vgui2/controls/EditablePanel.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui213EditablePanel13SetControlIntEPKci
 hw,01E31879,154,?GetControlInt@EditablePanel@vgui2@@UAEHPBDH@Z,vgui2::EditablePanel::GetControlInt,UNKNOWN,vgui2/controls/EditablePanel.cpp,,,MATCHED,100,,linux: _ZN5vgui213EditablePanel13GetControlIntEPKci
 hw,01E31913,50,?GetControlString@EditablePanel@vgui2@@UAEPBDPBD0@Z,vgui2::EditablePanel::GetControlString,UNKNOWN,vgui2/controls/EditablePanel.cpp,,,MATCHED,100,,
 hw,01E31945,198,?GetControlString@EditablePanel@vgui2@@UAEXPBDPADH0@Z,vgui2::EditablePanel::GetControlString,UNKNOWN,vgui2/controls/EditablePanel.cpp,,,MATCHED,100,,
@@ -30356,20 +30356,20 @@ hw,01E31A75,53,?SetDialogVariable@EditablePanel@vgui2@@UAEXPBDH@Z,vgui2::Editabl
 hw,01E31AAA,53,?SetDialogVariable@EditablePanel@vgui2@@UAEXPBDM@Z,vgui2::EditablePanel::SetDialogVariable,UNKNOWN,vgui2/controls/EditablePanel.cpp,,,MATCHED,100,,
 hw,01E31ADF,216,?ForceSubPanelsToUpdateWithNewDialogVariables@EditablePanel@vgui2@@AAEXXZ,vgui2::EditablePanel::ForceSubPanelsToUpdateWithNewDialogVariables,UNKNOWN,vgui2/controls/EditablePanel.cpp,,,MATCHED,100,,
 hw,01E31BB7,101,?GetDialogVariables@EditablePanel@vgui2@@QAEPAVKeyValues@@XZ,vgui2::EditablePanel::GetDialogVariables,UNKNOWN,vgui2/controls/EditablePanel.cpp,,,MATCHED,100,,
-hw,01E31C1C,1660,,vgui2::EditablePanel::CreateControlByName,ENGINE,vgui2/controls/EditablePanel.cpp,,,TODO,,linux_symbols:string:0.482,
-hw,01E322A0,46,??_GEditablePanel@vgui2@@UAEPAXI@Z,public: virtual void * __thiscall vgui2::EditablePanel::`scalar deleting destructor'(unsigned int),ENGINE,vgui2/controls/EditablePanel.cpp,,,TODO,,,
-hw,01E322D0,46,??_GBuildGroup@vgui2@@QAEPAXI@Z,destructor',ENGINE,vgui2/controls/EditablePanel.cpp,,,TODO,,,
+hw,01E31C1C,1660,?CreateControlByName@EditablePanel@vgui2@@UAEPAVPanel@2@PBD@Z,vgui2::EditablePanel::CreateControlByName,ENGINE,vgui2/controls/EditablePanel.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E322A0,46,??_GEditablePanel@vgui2@@UAEPAXI@Z,public: virtual void * __thiscall vgui2::EditablePanel::`scalar deleting destructor'(unsigned int),ENGINE,vgui2/controls/EditablePanel.cpp,,,MATCHED,100,,
+hw,01E322D0,46,??_GBuildGroup@vgui2@@QAEPAXI@Z,destructor',ENGINE,vgui2/controls/EditablePanel.cpp,,,MATCHED,100,,
 hw,01E32300,33,?AllocLeaf@@YAPAUleaf_t@@XZ,AllocLeaf,UNKNOWN,vgui2/controls/EditablePanel.cpp,,,MATCHED,100,,
-hw,01E32330,19,??0EditablePanel_RegisterMap@EditablePanel@vgui2@@QAE@XZ,vgui2::EditablePanel::EditablePanel_RegisterMap::EditablePanel_RegisterMap,ENGINE,vgui2/controls/EditablePanel.cpp,,,TODO,,,
-hw,01E32350,102,?ChainToMap@EditablePanel@vgui2@@SAXXZ,public: static void __cdecl vgui2::EditablePanel::ChainToMap(void),ENGINE,vgui2/controls/EditablePanel.cpp,,,TODO,,,
+hw,01E32330,19,??0EditablePanel_RegisterMap@EditablePanel@vgui2@@QAE@XZ,vgui2::EditablePanel::EditablePanel_RegisterMap::EditablePanel_RegisterMap,ENGINE,vgui2/controls/EditablePanel.cpp,,,MATCHED,100,,
+hw,01E32350,102,?ChainToMap@EditablePanel@vgui2@@SAXXZ,public: static void __cdecl vgui2::EditablePanel::ChainToMap(void),ENGINE,vgui2/controls/EditablePanel.cpp,,,MATCHED,100,,
 hw,01E323C0,10,?GetPanelBaseClassName@EditablePanel@vgui2@@SAPBDXZ,vgui2::EditablePanel::GetPanelBaseClassName,UNKNOWN,vgui2/controls/EditablePanel.cpp,,,MATCHED,100,,
-hw,01E323D0,19,??0PanelMessageFunc_OnDefaultButtonSet@EditablePanel@vgui2@@QAE@XZ,vgui2::EditablePanel::PanelMessageFunc_OnDefaultButtonSet::PanelMessageFunc_OnDefaultButtonSet,ENGINE,vgui2/controls/EditablePanel.cpp,,,TODO,,,
-hw,01E323F0,110,,,ENGINE,vgui2/controls/EditablePanel.cpp,,,TODO,,,
-hw,01E32460,120,?AddToMap@EditablePanel@vgui2@@SAXPBDP8Panel@2@AEXXZHH0H0@Z,"public: static void __cdecl vgui2::EditablePanel::AddToMap(char const *,void (__thiscall vgui2::Panel::*)(void),int,int,char const *,int,char const *)",ENGINE,vgui2/controls/EditablePanel.cpp,,,TODO,,,
-hw,01E324E0,19,??0PanelMessageFunc_OnCurrentDefaultButtonSet@EditablePanel@vgui2@@QAE@XZ,vgui2::EditablePanel::PanelMessageFunc_OnCurrentDefaultButtonSet::PanelMessageFunc_OnCurrentDefaultButtonSet,ENGINE,vgui2/controls/EditablePanel.cpp,,,TODO,,,
-hw,01E32500,110,,,ENGINE,vgui2/controls/EditablePanel.cpp,,,TODO,,,
-hw,01E32570,19,??0PanelMessageFunc_OnFindDefaultButton@EditablePanel@vgui2@@QAE@XZ,vgui2::EditablePanel::PanelMessageFunc_OnFindDefaultButton::PanelMessageFunc_OnFindDefaultButton,ENGINE,vgui2/controls/EditablePanel.cpp,,,TODO,,,
-hw,01E32590,107,?InitVar@PanelMessageFunc_OnFindDefaultButton@EditablePanel@vgui2@@SAXXZ,public: static void __cdecl vgui2::EditablePanel::PanelMessageFunc_OnFindDefaultButton::InitVar(void),ENGINE,vgui2/controls/EditablePanel.cpp,,,TODO,,,
+hw,01E323D0,19,??0PanelMessageFunc_OnDefaultButtonSet@EditablePanel@vgui2@@QAE@XZ,vgui2::EditablePanel::PanelMessageFunc_OnDefaultButtonSet::PanelMessageFunc_OnDefaultButtonSet,ENGINE,vgui2/controls/EditablePanel.cpp,,,MATCHED,100,,
+hw,01E323F0,110,?InitVar@PanelMessageFunc_OnDefaultButtonSet@EditablePanel@vgui2@@SAXXZ,vgui2::EditablePanel::PanelMessageFunc_OnDefaultButtonSet::InitVar,ENGINE,vgui2/controls/EditablePanel.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E32460,120,?AddToMap@EditablePanel@vgui2@@SAXPBDP8Panel@2@AEXXZHH0H0@Z,"public: static void __cdecl vgui2::EditablePanel::AddToMap(char const *,void (__thiscall vgui2::Panel::*)(void),int,int,char const *,int,char const *)",ENGINE,vgui2/controls/EditablePanel.cpp,,,MATCHED,100,,
+hw,01E324E0,19,??0PanelMessageFunc_OnCurrentDefaultButtonSet@EditablePanel@vgui2@@QAE@XZ,vgui2::EditablePanel::PanelMessageFunc_OnCurrentDefaultButtonSet::PanelMessageFunc_OnCurrentDefaultButtonSet,ENGINE,vgui2/controls/EditablePanel.cpp,,,MATCHED,100,,
+hw,01E32500,110,?InitVar@PanelMessageFunc_OnCurrentDefaultButtonSet@EditablePanel@vgui2@@SAXXZ,vgui2::EditablePanel::PanelMessageFunc_OnCurrentDefaultButtonSet::InitVar,ENGINE,vgui2/controls/EditablePanel.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E32570,19,??0PanelMessageFunc_OnFindDefaultButton@EditablePanel@vgui2@@QAE@XZ,vgui2::EditablePanel::PanelMessageFunc_OnFindDefaultButton::PanelMessageFunc_OnFindDefaultButton,ENGINE,vgui2/controls/EditablePanel.cpp,,,MATCHED,100,,
+hw,01E32590,107,?InitVar@PanelMessageFunc_OnFindDefaultButton@EditablePanel@vgui2@@SAXXZ,public: static void __cdecl vgui2::EditablePanel::PanelMessageFunc_OnFindDefaultButton::InitVar(void),ENGINE,vgui2/controls/EditablePanel.cpp,,,MATCHED,100,,
 hw,01E32630,82,?Initialize@CUtlSymbol@@KAXXZ,CUtlSymbol::Initialize,ENGINE,public/utlsymbol.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01E32682,15,?CurrTable@CUtlSymbol@@KAPAVCUtlSymbolTable@@XZ,CUtlSymbol::CurrTable,ENGINE,public/utlsymbol.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01E32691,51,??0CUtlSymbol@@QAE@PBD@Z,CUtlSymbol::CUtlSymbol,ENGINE,public/utlsymbol.cpp,,,MATCHED,100,hw_manual.csv,

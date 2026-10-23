@@ -61,6 +61,7 @@ private:
 	int _segmentWide;
 	int m_iBarInset;
 	char *m_pszDialogVar;
+	int m_iUnused_guess[6];	// never touched by ProgressBar.cpp, but every new ProgressBar in hw.dll and GameUI.dll allocates 0xa4 bytes
 };
 
 } // namespace vgui2

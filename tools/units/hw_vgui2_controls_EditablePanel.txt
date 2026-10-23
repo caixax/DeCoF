@@ -8,6 +8,7 @@
 ?OnDefaultButtonSet@EditablePanel@vgui2@@MAEXPAVPanel@2@@Z
 ?OnFindDefaultButton@EditablePanel@vgui2@@MAEXXZ
 ?AddSolidToTree@@YAXPAUleaf_t@@HHHH@Z
+?PaintBackground@EditablePanel@vgui2@@MAEXXZ
 ?ActivateBuildMode@EditablePanel@vgui2@@UAEXXZ
 ?LoadControlSettings@EditablePanel@vgui2@@UAEXPBD0@Z
 ?RegisterControlSettingsFile@EditablePanel@vgui2@@UAEXPBD0@Z
@@ -30,6 +31,8 @@
 ?HasHotkey@EditablePanel@vgui2@@UAEPAVPanel@2@G@Z
 ?SetControlEnabled@EditablePanel@vgui2@@UAEXPBD_N@Z
 ?SetControlVisible@EditablePanel@vgui2@@UAEXPBD_N@Z
+?SetControlString@EditablePanel@vgui2@@UAEXPBD0@Z
+?SetControlInt@EditablePanel@vgui2@@UAEXPBDH@Z
 ?GetControlInt@EditablePanel@vgui2@@UAEHPBDH@Z
 ?GetControlString@EditablePanel@vgui2@@UAEPBDPBD0@Z
 ?GetControlString@EditablePanel@vgui2@@UAEXPBDPADH0@Z
@@ -39,6 +42,7 @@
 ?SetDialogVariable@EditablePanel@vgui2@@UAEXPBDM@Z
 ?ForceSubPanelsToUpdateWithNewDialogVariables@EditablePanel@vgui2@@AAEXXZ
 ?GetDialogVariables@EditablePanel@vgui2@@QAEPAVKeyValues@@XZ
+?CreateControlByName@EditablePanel@vgui2@@UAEPAVPanel@2@PBD@Z
 ??_GEditablePanel@vgui2@@UAEPAXI@Z
 ??_GBuildGroup@vgui2@@QAEPAXI@Z
 ?AllocLeaf@@YAPAUleaf_t@@XZ
@@ -46,7 +50,9 @@
 ?ChainToMap@EditablePanel@vgui2@@SAXXZ
 ?GetPanelBaseClassName@EditablePanel@vgui2@@SAPBDXZ
 ??0PanelMessageFunc_OnDefaultButtonSet@EditablePanel@vgui2@@QAE@XZ
+?InitVar@PanelMessageFunc_OnDefaultButtonSet@EditablePanel@vgui2@@SAXXZ
 ?AddToMap@EditablePanel@vgui2@@SAXPBDP8Panel@2@AEXXZHH0H0@Z
 ??0PanelMessageFunc_OnCurrentDefaultButtonSet@EditablePanel@vgui2@@QAE@XZ
+?InitVar@PanelMessageFunc_OnCurrentDefaultButtonSet@EditablePanel@vgui2@@SAXXZ
 ??0PanelMessageFunc_OnFindDefaultButton@EditablePanel@vgui2@@QAE@XZ
 ?InitVar@PanelMessageFunc_OnFindDefaultButton@EditablePanel@vgui2@@SAXXZ

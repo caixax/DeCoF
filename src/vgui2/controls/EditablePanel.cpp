@@ -17,9 +17,27 @@
 #include <vgui/KeyCode.h>
 #include <vgui/KeyValues.h>
 
+#include <vgui_controls/AnimatingImagePanel.h>
+#include <vgui_controls/BitmapImagePanel.h>
 #include <vgui_controls/BuildGroup.h>
 #include <vgui_controls/BuildModeDialog.h>
+#include <vgui_controls/Button.h>
+#include <vgui_controls/CheckButton.h>
+#include <vgui_controls/ComboBox.h>
+#include <vgui_controls/Divider.h>
 #include <vgui_controls/EditablePanel.h>
+#include <vgui_controls/ImagePanel.h>
+#include <vgui_controls/Label.h>
+#include <vgui_controls/Menu.h>
+#include <vgui_controls/MenuItem.h>
+#include <vgui_controls/MessageBox.h>
+#include <vgui_controls/ProgressBar.h>
+#include <vgui_controls/RadioButton.h>
+#include <vgui_controls/RichText.h>
+#include <vgui_controls/ScrollBar.h>
+#include <vgui_controls/TextEntry.h>
+#include <vgui_controls/ToggleButton.h>
+#include <vgui_controls/URLLabel.h>
 
 using namespace vgui2;
 
@@ -868,4 +886,93 @@ KeyValues *EditablePanel::GetDialogVariables()
 
 	m_pDialogVariables = new KeyValues("DialogVariables");
 	return m_pDialogVariables;
+}
+
+//-----------------------------------------------------------------------------
+// Purpose: Creates a new control by name
+//-----------------------------------------------------------------------------
+Panel *EditablePanel::CreateControlByName(const char *controlName)
+{
+	if (!_stricmp(controlName, "Label"))
+	{
+		return new Label(NULL, NULL, "Label");
+	}
+	else if (!_stricmp(controlName, "Button"))
+	{
+		return new Button(NULL, NULL, "Button");
+	}
+	else if (!_stricmp(controlName, "CheckButton"))
+	{
+		return new CheckButton(NULL, NULL, "CheckButton");
+	}
+	else if (!_stricmp(controlName, "ComboBox"))
+	{
+		return new ComboBox(NULL, NULL, 5, true);
+	}
+	else if (!_stricmp(controlName, "Menu"))
+	{
+		return new Menu(NULL, "Menu");
+	}
+	else if (!_stricmp(controlName, "MenuItem"))
+	{
+		return new MenuItem(NULL, NULL, "MenuItem");
+	}
+	else if (!_stricmp(controlName, "MessageBox"))
+	{
+		return new MessageBox("MessageBox", "MessageBoxText");
+	}
+	else if (!_stricmp(controlName, "ProgressBar"))
+	{
+		return new ProgressBar(NULL, NULL);
+	}
+	else if (!_stricmp(controlName, "RadioButton"))
+	{
+		return new RadioButton(NULL, NULL, "RadioButton");
+	}
+	else if (!_stricmp(controlName, "ScrollBar"))
+	{
+		return new ScrollBar(NULL, NULL, false);
+	}
+	else if (!_stricmp(controlName, "TextEntry"))
+	{
+		return new TextEntry(NULL, NULL);
+	}
+	else if (!_stricmp(controlName, "RichText"))
+	{
+		return new RichText(NULL, NULL, true);
+	}
+	else if (!_stricmp(controlName, "ToggleButton"))
+	{
+		return new ToggleButton(NULL, NULL, "ToggleButton");
+	}
+	else if (!_stricmp(controlName, "ImagePanel"))
+	{
+		return new ImagePanel(NULL, "ResourceImagePanel");
+	}
+	else if (!_stricmp(controlName, "AnimatingImagePanel"))
+	{
+		return new AnimatingImagePanel(NULL, NULL);
+	}
+	else if (!_stricmp(controlName, "Panel"))
+	{
+		return new Panel(NULL, NULL);
+	}
+	else if (!_stricmp(controlName, "Divider"))
+	{
+		return new Divider(NULL, "Divider");
+	}
+	else if (!_stricmp(controlName, "URLLabel"))
+	{
+		return new URLLabel(NULL, NULL, "URLLabel", NULL);
+	}
+	else if (!_stricmp(controlName, "EditablePanel"))
+	{
+		return new EditablePanel(NULL, NULL);
+	}
+	else if (!_stricmp(controlName, "BitmapImagePanel"))
+	{
+		return new CBitmapImagePanel(NULL, "BitmapImagePanel");
+	}
+
+	return NULL;
 }
