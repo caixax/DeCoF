@@ -341,3 +341,13 @@ The 1.55 hl.dll is an unoptimized debug build of nearly the same source. `disasm
 - Local names without a source get `_guess` names picked by hash bucket (tools/vc6_slots.py); when two locals share a bucket, declare them at the top of the function in reverse slot order (CreateBrowser_guess).
 - A chained assignment `qglX = dllX = glX;` stores right to left through one register; separate statements reload (opengl2d3d QGL_D3DInit).
 - DirectDraw surface caps come from a `DDSURFACEDESC2` member (`ddsd.ddsCaps.dwCaps`), not a separate DDSCAPS2 local: the member offset is part of the match (opengl2d3d glTexImage2D).
+
+## Patterns from the hw input, voice capture and helper objects
+
+- A COM call that loads the vtable before pushing the object (`mov eax,[p]; mov ecx,[eax]; mov edx,[p]; push edx; call [ecx+X]`) is C++ `p->Method()`; the C macro form `p->lpVtbl->Method( p )` pushes `p` first. dinput_guess.cpp is therefore C++ with every function in `extern "C"` (its names are C, host.c and the cl_enginefuncs table use them).
+- DirectInput 7 needs a newer dinput.h than VC6's DX5 one: refs/dxheaders/dinput.h (git-ignored) is the Windows Kits 10 copy, used with `#define DIRECTINPUT_VERSION 0x0700` and the unit include `refs/dxheaders`. `SPI_GETMOUSESPEED` is missing from the VC6 headers (112).
+- VC6 spells file statics `_name` in C++ objects too (`_s_DemoPlayer`, `_g_LauncherDirectDraw_guess`); dxguid and dinput.lib data (`_GUID_SysMouse`, `_c_dfDIMouse2`, `_IID_IDirectSoundNotify`) and import thunks (`_DirectInputCreateA@16`) need rows in hw_manual.csv before the relocations match.
+- `x ? true : false` passed to a bool parameter gave `test; setne`, `x != 0` gave neg/sbb/neg (DemoPlayer_Init); for a bool call result returned as int it was the other way round (DemoPlayer_LoadGame).
+- A method retail calls directly although the class has virtuals is non-virtual (VoiceRecord_WaveIn::Init); `xor eax, eax` / `mov eax, 1` returns of a method mean BOOL, not bool.
+- utils/procinfo/procinfo.cpp (refs/halflife) is linked into hw.dll: HasCpuid, HasTsc, GetRDTSC and PROC_GetSpeed byte for byte, PROC_IsMMX in a later `_asm pushad` + `__try` form, plus a 3DNow test after it. The `__try` bodies needed SetBodyRange.java before delinking.
+- pe_win32_guess.c holds the stdcall helpers of the PEFILE.C sample (ImageFileType, NumOfSections, ImageDirectoryOffset, GetSectionNames, GetSectionHdrByName, IsDebugInfoStripped, `ret 4/8/12`); its local names (psh, nSections, ped, pNames, pCnt, nCnt) fit the VC6 slot hash unchanged.
