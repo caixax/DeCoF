@@ -5092,3 +5092,5 @@ va,name,kind,evidence
 01DFC550,??0IThread@@QAE@XZ,func,"engine/thread.cpp: Linux hw.so DWARF names (thread.cpp, source order; the static ThreadFunc follows its first caller Init); same order and count of functions in our compiled object"
 01DFC570,??_GIThread@@UAEPAXI@Z,func,"engine/thread.cpp: Linux hw.so DWARF names (thread.cpp, source order; the static ThreadFunc follows its first caller Init); same order and count of functions in our compiled object"
 01DFC5A0,??1IThread@@UAE@XZ,func,"engine/thread.cpp: Linux hw.so DWARF names (thread.cpp, source order; the static ThreadFunc follows its first caller Init); same order and count of functions in our compiled object"
+01E36300,?AddNewBlob@CMemoryPool@@AAEXXZ,func,"public/MemPool.cpp: Linux hw.so DWARF names (public/MemPool.cpp, source order); offset and size in our compiled object equal the retail ones"
+01E364A1,?Free@CMemoryPool@@QAEXPAX@Z,func,"public/MemPool.cpp: Linux hw.so DWARF names (public/MemPool.cpp, source order); offset and size in our compiled object equal the retail ones"

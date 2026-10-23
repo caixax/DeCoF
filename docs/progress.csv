@@ -30500,11 +30500,11 @@ hw,01E36207,18,?SetTooltipFormatToSingleLine@Tooltip@vgui2@@QAEXXZ,vgui2::Toolti
 hw,01E36219,18,?SetTooltipFormatToMultiLine@Tooltip@vgui2@@QAEXXZ,vgui2::Tooltip::SetTooltipFormatToMultiLine,ENGINE,vgui2/controls/Tooltip.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01E3622B,36,?HideTooltip@Tooltip@vgui2@@QAEXXZ,vgui2::Tooltip::HideTooltip,ENGINE,vgui2/controls/Tooltip.cpp,,,MATCHED,100,,
 hw,01E36250,17,?Size@?$CUtlVector@D@@QBEHXZ,CUtlVector<char>::Size,ENGINE,vgui2/controls/Tooltip.cpp,,,MATCHED,100,hw_manual.csv,
-hw,01E36270,81,??0CMemoryPool@@QAE@HH@Z,CMemoryPool::CMemoryPool,ENGINE,public/MemPool.cpp,,,TODO,,,
-hw,01E362C1,63,??1CMemoryPool@@QAE@XZ,CMemoryPool::~CMemoryPool,ENGINE,public/MemPool.cpp,,,TODO,,,
-hw,01E36300,266,,,ENGINE,public/MemPool.cpp,,,TODO,,,linux: _ZN11CMemoryPool10AddNewBlobEv
-hw,01E3640A,151,?Alloc@CMemoryPool@@QAEPAXI@Z,CMemoryPool::Alloc,ENGINE,public/MemPool.cpp,,,TODO,,,
-hw,01E364A1,56,,,ENGINE,public/MemPool.cpp,,,TODO,,,linux: _ZN11CMemoryPool4FreeEPv
+hw,01E36270,81,??0CMemoryPool@@QAE@HH@Z,CMemoryPool::CMemoryPool,ENGINE,public/MemPool.cpp,,,MATCHED,100,,
+hw,01E362C1,63,??1CMemoryPool@@QAE@XZ,CMemoryPool::~CMemoryPool,ENGINE,public/MemPool.cpp,,,MATCHED,100,,
+hw,01E36300,266,?AddNewBlob@CMemoryPool@@AAEXXZ,CMemoryPool::AddNewBlob,ENGINE,public/MemPool.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN11CMemoryPool10AddNewBlobEv
+hw,01E3640A,151,?Alloc@CMemoryPool@@QAEPAXI@Z,CMemoryPool::Alloc,ENGINE,public/MemPool.cpp,,,MATCHED,100,,
+hw,01E364A1,56,?Free@CMemoryPool@@QAEXPAX@Z,CMemoryPool::Free,ENGINE,public/MemPool.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN11CMemoryPool4FreeEPv
 hw,01E364E0,432,??0BuildGroup@vgui2@@QAE@PAVPanel@1@0@Z,vgui2::BuildGroup::BuildGroup,ENGINE,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,,
 hw,01E36690,321,??1BuildGroup@vgui2@@QAE@XZ,vgui2::BuildGroup::~BuildGroup,ENGINE,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01E367D1,149,?SetEnabled@BuildGroup@vgui2@@UAEX_N@Z,vgui2::BuildGroup::SetEnabled,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui210BuildGroup10SetEnabledEb
