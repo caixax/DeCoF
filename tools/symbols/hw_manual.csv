@@ -4736,3 +4736,5 @@ va,name,kind,evidence
 01D24228,?GetSize@CCircularBuffer@@QAEHXZ,func,engine/CircularBuffer.cpp in the source order of the Linux hw.so DWARF (_ZN15CCircularBuffer7GetSizeEv); access from our CircularBuffer.h
 01D24259,?Peek@CCircularBuffer@@QAEHPADH@Z,func,engine/CircularBuffer.cpp in the source order of the Linux hw.so DWARF (_ZN15CCircularBuffer4PeekEPci); access from our CircularBuffer.h
 01D24329,?Advance@CCircularBuffer@@QAEHH@Z,func,engine/CircularBuffer.cpp in the source order of the Linux hw.so DWARF (_ZN15CCircularBuffer7AdvanceEi); access from our CircularBuffer.h
+01DF2CA9,_Sys_RegKeyValueExists_guess,func,"between Sys_GetRegKeyValue and Sys_SetRegKeyValue; opens HKCU or HKEY_LOCAL_MACHINE (the HKEY_LOCAL_MACHINE prefix string) and returns whether RegQueryValueEx finds the value; no caller, no string names it (added by an agent)"
+01DF3D5E,_Sys_SplitPath,func,Linux hw.so DWARF sys_dll.c has Sys_SplitPath (line 2217) after IN_ClearStates; the function only forwards its five arguments to the CRT _splitpath at 01E73CCD (the auto name __splitpath came from the zone.c call) (added by an agent)
