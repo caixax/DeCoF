@@ -25335,7 +25335,7 @@ hw,01D4D9A9,978,_Cmd_CvarList_f,Cmd_CvarList_f,ENGINE,engine/cvar.c,,,MATCHED,10
 hw,01D4DD7B,69,_Cvar_CountServerVariables,Cvar_CountServerVariables,ENGINE,engine/cvar.c,,,MATCHED,100,,
 hw,01D4DDC0,79,_Cvar_UnlinkExternals,Cvar_UnlinkExternals,ENGINE,engine/cvar.c,,,MATCHED,100,,
 hw,01D4DE0F,23,_Cvar_CmdInit,Cvar_CmdInit,ENGINE,engine/cvar.c,,,MATCHED,100,linux_symbols:string:0.75,
-hw,01D4DE30,756,_IsCZPlayerModel,IsCZPlayerModel,ENGINE,engine/czmodelcheck.cpp,,,TODO,,linux_symbols:string:0.815,
+hw,01D4DE30,756,_IsCZPlayerModel,IsCZPlayerModel,ENGINE,engine/czmodelcheck.cpp,,,MATCHED,100,linux_symbols:string:0.815,
 hw,01D4E130,74,_Draw_Shutdown,,UNKNOWN,engine/decals.c,,,MATCHED,100,,
 hw,01D4E17A,53,_Draw_DecalShutdown,,UNKNOWN,engine/decals.c,,,MATCHED,100,,
 hw,01D4E1AF,65,_Draw_AllocateCacheSpace,,UNKNOWN,engine/decals.c,,,MATCHED,100,hw_manual.csv,
