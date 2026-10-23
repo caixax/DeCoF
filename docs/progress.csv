@@ -12679,15 +12679,15 @@ gameui,100A7450,65,?CopyConstruct@@YAXPAUPanelItem_t@@ABU1@@Z,CopyConstruct,UNKN
 gameui,100A74A0,17,?NumAllocated@?$CUtlMemory@UPanelItem_t@@@@QBEHXZ,PanelItem_t>::NumAllocated,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,100A74C0,199,?Grow@?$CUtlMemory@UPanelItem_t@@@@QAEXH@Z,PanelItem_t>::Grow,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,100A7590,25,?IsExternallyAllocated@?$CUtlMemory@UPanelItem_t@@@@QBE_NXZ,PanelItem_t>::IsExternallyAllocated,UNKNOWN,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,gameui_manual.csv,
-gameui,100A75E0,67,,,UNKNOWN,,,,TODO,,,
-gameui,100A7623,28,,,UNKNOWN,,,,TODO,,,
-gameui,100A763F,56,,,UNKNOWN,,,,TODO,,,
-gameui,100A7680,46,,,UNKNOWN,,,,TODO,,,
-gameui,100A76B0,19,,,UNKNOWN,,,,TODO,,,
-gameui,100A76D0,102,,,UNKNOWN,,,,TODO,,,
-gameui,100A7740,64,,,UNKNOWN,,,,TODO,,,
-gameui,100A7780,10,,,UNKNOWN,,,,TODO,,,
-gameui,100A7790,10,,,UNKNOWN,,,,TODO,,,
+gameui,100A75E0,67,??0Divider@vgui2@@QAE@PAVPanel@1@PBD@Z,vgui2::Divider::Divider,UNKNOWN,vgui2/controls/Divider.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A7623,28,??1Divider@vgui2@@UAE@XZ,vgui2::Divider::~Divider,UNKNOWN,vgui2/controls/Divider.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A763F,56,?ApplySchemeSettings@Divider@vgui2@@UAEXPAVIScheme@2@@Z,vgui2::Divider::ApplySchemeSettings,UNKNOWN,vgui2/controls/Divider.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A7680,46,??_GDivider@vgui2@@UAEPAXI@Z,destructor',UNKNOWN,vgui2/controls/Divider.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A76B0,19,??0Divider_RegisterMap@Divider@vgui2@@QAE@XZ,vgui2::Divider::Divider_RegisterMap::Divider_RegisterMap,UNKNOWN,vgui2/controls/Divider.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A76D0,102,?ChainToMap@Divider@vgui2@@SAXXZ,vgui2::Divider::ChainToMap,UNKNOWN,vgui2/controls/Divider.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A7740,64,?GetMessageMap@Divider@vgui2@@UAEPAUPanelMessageMap@2@XZ,vgui2::Divider::GetMessageMap,UNKNOWN,vgui2/controls/Divider.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A7780,10,?GetPanelClassName@Divider@vgui2@@SAPBDXZ,vgui2::Divider::GetPanelClassName,UNKNOWN,vgui2/controls/Divider.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A7790,10,?GetPanelBaseClassName@Divider@vgui2@@SAPBDXZ,vgui2::Divider::GetPanelBaseClassName,UNKNOWN,vgui2/controls/Divider.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,100A77A0,155,??0AnimatingImagePanel@vgui2@@QAE@PAVPanel@1@PBD@Z,vgui2::AnimatingImagePanel::AnimatingImagePanel,UNKNOWN,vgui2/controls/AnimatingImagePanel.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,100A783B,30,?PerformLayout@AnimatingImagePanel@vgui2@@MAEXXZ,vgui2::AnimatingImagePanel::PerformLayout,UNKNOWN,vgui2/controls/AnimatingImagePanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui219AnimatingImagePanel13PerformLayoutEv
 gameui,100A7859,74,?AddImage@AnimatingImagePanel@vgui2@@UAEXPAVIImage@2@@Z,vgui2::AnimatingImagePanel::AddImage,UNKNOWN,vgui2/controls/AnimatingImagePanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui219AnimatingImagePanel8AddImageEPNS_6IImageE
@@ -30725,15 +30725,15 @@ hw,01E3EA70,102,,,ENGINE,vgui2/controls/URLLabel.cpp,,,TODO,,,
 hw,01E3EAE0,64,,,ENGINE,vgui2/controls/URLLabel.cpp,,,TODO,,,
 hw,01E3EB20,10,,,ENGINE,vgui2/controls/URLLabel.cpp,,,TODO,,,
 hw,01E3EB30,10,,,ENGINE,vgui2/controls/URLLabel.cpp,,,TODO,,,
-hw,01E3EB40,67,,,ENGINE,vgui2/controls/Divider.cpp,,,TODO,,,linux: _ZN5vgui27DividerC2EPNS_5PanelEPKc
-hw,01E3EB83,28,,,ENGINE,vgui2/controls/Divider.cpp,,,TODO,,,linux: _ZN5vgui27DividerD1Ev
-hw,01E3EB9F,56,,,ENGINE,vgui2/controls/Divider.cpp,,,TODO,,,linux: _ZN5vgui27Divider19ApplySchemeSettingsEPNS_7ISchemeE
-hw,01E3EBE0,46,,,ENGINE,vgui2/controls/Divider.cpp,,,TODO,,,
-hw,01E3EC10,19,,,ENGINE,vgui2/controls/Divider.cpp,,,TODO,,,
-hw,01E3EC30,102,,,ENGINE,vgui2/controls/Divider.cpp,,,TODO,,,
-hw,01E3ECA0,64,,,ENGINE,vgui2/controls/Divider.cpp,,,TODO,,,
-hw,01E3ECE0,10,,,ENGINE,vgui2/controls/Divider.cpp,,,TODO,,,
-hw,01E3ECF0,10,,,ENGINE,vgui2/controls/Divider.cpp,,,TODO,,,
+hw,01E3EB40,67,??0Divider@vgui2@@QAE@PAVPanel@1@PBD@Z,vgui2::Divider::Divider,ENGINE,vgui2/controls/Divider.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui27DividerC2EPNS_5PanelEPKc
+hw,01E3EB83,28,??1Divider@vgui2@@UAE@XZ,vgui2::Divider::~Divider,ENGINE,vgui2/controls/Divider.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui27DividerD1Ev
+hw,01E3EB9F,56,?ApplySchemeSettings@Divider@vgui2@@UAEXPAVIScheme@2@@Z,vgui2::Divider::ApplySchemeSettings,ENGINE,vgui2/controls/Divider.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui27Divider19ApplySchemeSettingsEPNS_7ISchemeE
+hw,01E3EBE0,46,??_GDivider@vgui2@@UAEPAXI@Z,destructor',ENGINE,vgui2/controls/Divider.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3EC10,19,??0Divider_RegisterMap@Divider@vgui2@@QAE@XZ,vgui2::Divider::Divider_RegisterMap::Divider_RegisterMap,ENGINE,vgui2/controls/Divider.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3EC30,102,?ChainToMap@Divider@vgui2@@SAXXZ,vgui2::Divider::ChainToMap,ENGINE,vgui2/controls/Divider.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3ECA0,64,?GetMessageMap@Divider@vgui2@@UAEPAUPanelMessageMap@2@XZ,vgui2::Divider::GetMessageMap,ENGINE,vgui2/controls/Divider.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3ECE0,10,?GetPanelClassName@Divider@vgui2@@SAPBDXZ,vgui2::Divider::GetPanelClassName,ENGINE,vgui2/controls/Divider.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3ECF0,10,?GetPanelBaseClassName@Divider@vgui2@@SAPBDXZ,vgui2::Divider::GetPanelBaseClassName,ENGINE,vgui2/controls/Divider.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01E3ED00,155,??0AnimatingImagePanel@vgui2@@QAE@PAVPanel@1@PBD@Z,vgui2::AnimatingImagePanel::AnimatingImagePanel,ENGINE,vgui2/controls/AnimatingImagePanel.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01E3ED9B,30,?PerformLayout@AnimatingImagePanel@vgui2@@MAEXXZ,vgui2::AnimatingImagePanel::PerformLayout,UNKNOWN,vgui2/controls/AnimatingImagePanel.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui219AnimatingImagePanel13PerformLayoutEv
 hw,01E3EDB9,74,?AddImage@AnimatingImagePanel@vgui2@@UAEXPAVIImage@2@@Z,vgui2::AnimatingImagePanel::AddImage,UNKNOWN,vgui2/controls/AnimatingImagePanel.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui219AnimatingImagePanel8AddImageEPNS_6IImageE
