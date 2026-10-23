@@ -31713,7 +31713,7 @@ hw,01E5D1A1,498,?GetSysMenu@Frame@vgui2@@UAEPAVMenu@2@XZ,vgui2::Frame::GetSysMen
 hw,01E5D393,103,?SetSysMenu@Frame@vgui2@@UAEXPAVMenu@2@@Z,vgui2::Frame::SetSysMenu,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,linux: _ZN5vgui25Frame10SetSysMenuEPNS_4MenuE
 hw,01E5D3FA,25,?Close@Frame@vgui2@@UAEXXZ,vgui2::Frame::Close,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,linux: _ZN5vgui25Frame5CloseEv
 hw,01E5D413,48,?OnMinimize@Frame@vgui2@@MAEXXZ,vgui2::Frame::OnMinimize,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,linux: _ZN5vgui25Frame10OnMinimizeEv
-hw,01E5D443,11,,,UNKNOWN,vgui2/controls/Frame.cpp,,,TODO,,,linux: _ZN5vgui25Frame19OnMinimizeToSysTrayEv
+hw,01E5D443,11,?OnMinimizeToSysTray@Frame@vgui2@@MAEXXZ,vgui2::Frame::OnMinimizeToSysTray,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui25Frame19OnMinimizeToSysTrayEv
 hw,01E5D44E,134,?OnMousePressed@Frame@vgui2@@MAEXW4MouseCode@2@@Z,vgui2::Frame::OnMousePressed,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,linux: _ZN5vgui25Frame14OnMousePressedENS_9MouseCodeE
 hw,01E5D4D4,40,?SetMenuButtonVisible@Frame@vgui2@@UAEX_N@Z,vgui2::Frame::SetMenuButtonVisible,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,linux: _ZN5vgui25Frame20SetMenuButtonVisibleEb
 hw,01E5D4FC,31,?SetMenuButtonResponsive@Frame@vgui2@@QAEX_N@Z,vgui2::Frame::SetMenuButtonResponsive,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,linux: _ZN5vgui25Frame23SetMenuButtonResponsiveEb
@@ -31722,10 +31722,10 @@ hw,01E5D543,40,?SetMaximizeButtonVisible@Frame@vgui2@@UAEX_N@Z,vgui2::Frame::Set
 hw,01E5D56B,40,?SetMinimizeToSysTrayButtonVisible@Frame@vgui2@@UAEX_N@Z,vgui2::Frame::SetMinimizeToSysTrayButtonVisible,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,linux: _ZN5vgui25Frame33SetMinimizeToSysTrayButtonVisibleEb
 hw,01E5D593,40,?SetCloseButtonVisible@Frame@vgui2@@UAEX_N@Z,vgui2::Frame::SetCloseButtonVisible,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,linux: _ZN5vgui25Frame21SetCloseButtonVisibleEb
 hw,01E5D5BB,129,?OnKeyCodePressed@Frame@vgui2@@MAEXW4KeyCode@2@@Z,vgui2::Frame::OnKeyCodePressed,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,linux: _ZN5vgui25Frame16OnKeyCodePressedENS_7KeyCodeE
-hw,01E5D63C,13,,,UNKNOWN,vgui2/controls/Frame.cpp,,,TODO,,,linux: _ZN5vgui25Frame17OnKeyCodeReleasedENS_7KeyCodeE
-hw,01E5D649,11,,,UNKNOWN,vgui2/controls/Frame.cpp,,,TODO,,,linux: _ZN5vgui25Frame16OnKeyFocusTickedEv
+hw,01E5D63C,13,?OnKeyCodeReleased@Frame@vgui2@@MAEXW4KeyCode@2@@Z,vgui2::Frame::OnKeyCodeReleased,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui25Frame17OnKeyCodeReleasedENS_7KeyCodeE
+hw,01E5D649,11,?OnKeyFocusTicked@Frame@vgui2@@MAEXXZ,vgui2::Frame::OnKeyFocusTicked,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui25Frame16OnKeyFocusTickedEv
 hw,01E5D654,178,?InternalFlashWindow@Frame@vgui2@@EAEXXZ,vgui2::Frame::InternalFlashWindow,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,linux: _ZN5vgui25Frame19InternalFlashWindowEv
-hw,01E5D706,25,,,UNKNOWN,vgui2/controls/Frame.cpp,,,TODO,,,linux: _ZN5vgui25Frame12OnChildAddedEj
+hw,01E5D706,25,?OnChildAdded@Frame@vgui2@@MAEXI@Z,vgui2::Frame::OnChildAdded,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui25Frame12OnChildAddedEj
 hw,01E5D71F,45,?FlashWindow@Frame@vgui2@@UAEXXZ,vgui2::Frame::FlashWindow,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,linux: _ZN5vgui25Frame11FlashWindowEv
 hw,01E5D74C,58,?FlashWindowStop@Frame@vgui2@@UAEXXZ,vgui2::Frame::FlashWindowStop,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,linux: _ZN5vgui25Frame15FlashWindowStopEv
 hw,01E5D786,80,?LoadControlSettings@Frame@vgui2@@MAEXPBD0@Z,vgui2::Frame::LoadControlSettings,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,linux: _ZN5vgui25Frame19LoadControlSettingsEPKcS2_
@@ -31745,57 +31745,57 @@ hw,01E5E1F0,126,?PaintBackground@GripPanel@?%Frame.cpp20302634@@UAEXXZ,?PaintBac
 hw,01E5E270,43,?OnMouseReleased@GripPanel@?%Frame.cpp20302634@@UAEXW4MouseCode@vgui2@@@Z,?OnMouseReleased@GripPanel@?%Frame.cpp20302634@@UAEXW4MouseCode@vgui2@@@Z,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,
 hw,01E5E2A0,26,?OnMouseCaptureLost@GripPanel@?%Frame.cpp20302634@@UAEXXZ,?OnMouseCaptureLost@GripPanel@?%Frame.cpp20302634@@UAEXXZ,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,
 hw,01E5E2C0,152,?ApplySchemeSettings@GripPanel@?%Frame.cpp20302634@@UAEXPAVIScheme@vgui2@@@Z,?ApplySchemeSettings@GripPanel@?%Frame.cpp20302634@@UAEXPAVIScheme@vgui2@@@Z,ENGINE,vgui2/controls/Frame.cpp,,,MATCHED,100,linux_symbols:string:0.528,
-hw,01E5E360,46,,,UNKNOWN,guess:vgui2/controls/Frame.cpp,,,TODO,,,
-hw,01E5E390,19,,,UNKNOWN,guess:vgui2/controls/Frame.cpp,,,TODO,,,
+hw,01E5E360,46,??_GGripPanel@?%Frame.cpp20302634@@UAEPAXI@Z,??_GGripPanel@?%Frame.cpp20302634@@UAEPAXI@Z,UNKNOWN,guess:vgui2/controls/Frame.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E5E390,19,??1GripPanel@?%Frame.cpp20302634@@UAE@XZ,??1GripPanel@?%Frame.cpp20302634@@UAE@XZ,UNKNOWN,guess:vgui2/controls/Frame.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01E5E3B0,45,??0CaptionGripPanel@?%Frame.cpp20302634@@QAE@PAVFrame@vgui2@@PBD@Z,??0CaptionGripPanel@?%Frame.cpp20302634@@QAE@PAVFrame@vgui2@@PBD@Z,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,
 hw,01E5E3E0,288,?moved@CaptionGripPanel@?%Frame.cpp20302634@@UAEXHH@Z,?moved@CaptionGripPanel@?%Frame.cpp20302634@@UAEXHH@Z,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,
 hw,01E5E500,318,?tryToDock@CaptionGripPanel@?%Frame.cpp20302634@@QAEXIAAH0@Z,?tryToDock@CaptionGripPanel@?%Frame.cpp20302634@@QAEXIAAH0@Z,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,
 hw,01E5E640,209,?getInsideSnapPosition@CaptionGripPanel@?%Frame.cpp20302634@@QAE_NHHHHAAH0@Z,?getInsideSnapPosition@CaptionGripPanel@?%Frame.cpp20302634@@QAE_NHHHHAAH0@Z,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,
 hw,01E5E720,508,?getOutsideSnapPosition@CaptionGripPanel@?%Frame.cpp20302634@@QAE_NHHHHAAH0@Z,?getOutsideSnapPosition@CaptionGripPanel@?%Frame.cpp20302634@@QAE_NHHHHAAH0@Z,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,
-hw,01E5E920,46,,,UNKNOWN,guess:vgui2/controls/Frame.cpp,,,TODO,,,
-hw,01E5E950,19,,,UNKNOWN,guess:vgui2/controls/Frame.cpp,,,TODO,,,
+hw,01E5E920,46,??_GCaptionGripPanel@?%Frame.cpp20302634@@UAEPAXI@Z,??_GCaptionGripPanel@?%Frame.cpp20302634@@UAEPAXI@Z,UNKNOWN,guess:vgui2/controls/Frame.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E5E950,19,??1CaptionGripPanel@?%Frame.cpp20302634@@UAE@XZ,??1CaptionGripPanel@?%Frame.cpp20302634@@UAE@XZ,UNKNOWN,guess:vgui2/controls/Frame.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01E5E970,184,??0FrameButton@vgui2@@QAE@PAVPanel@1@PBD1@Z,vgui2::FrameButton::FrameButton,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,
 hw,01E5EA30,278,?ApplySchemeSettings@FrameButton@vgui2@@UAEXPAVIScheme@2@@Z,vgui2::FrameButton::ApplySchemeSettings,ENGINE,vgui2/controls/Frame.cpp,,,MATCHED,100,linux_symbols:string:0.88,
 hw,01E5EB50,71,?GetBorder@FrameButton@vgui2@@UAEPAVIBorder@2@_N000@Z,vgui2::FrameButton::GetBorder,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,
 hw,01E5EBA0,246,?SetDisabledLook@FrameButton@vgui2@@UAEX_N@Z,vgui2::FrameButton::SetDisabledLook,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,
 hw,01E5ECA0,30,?PerformLayout@FrameButton@vgui2@@UAEXXZ,vgui2::FrameButton::PerformLayout,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,
 hw,01E5ECC0,149,?OnMousePressed@FrameButton@vgui2@@UAEXW4MouseCode@2@@Z,vgui2::FrameButton::OnMousePressed,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,
-hw,01E5ED60,46,,,UNKNOWN,guess:vgui2/controls/Frame.cpp,,,TODO,,,
-hw,01E5ED90,19,,,UNKNOWN,guess:vgui2/controls/Frame.cpp,,,TODO,,,
+hw,01E5ED60,46,??_GFrameButton@vgui2@@UAEPAXI@Z,destructor',UNKNOWN,guess:vgui2/controls/Frame.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E5ED90,19,??1FrameButton@vgui2@@UAE@XZ,vgui2::FrameButton::~FrameButton,UNKNOWN,guess:vgui2/controls/Frame.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01E5EDB0,146,??0FrameSystemButton@vgui2@@QAE@PAVPanel@1@PBD@Z,vgui2::FrameSystemButton::FrameSystemButton,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,
-hw,01E5EE50,19,,,UNKNOWN,guess:vgui2/controls/Frame.cpp,,,TODO,,,
-hw,01E5EE70,102,,,UNKNOWN,guess:vgui2/controls/Frame.cpp,,,TODO,,,
-hw,01E5EEE0,64,,,UNKNOWN,guess:vgui2/controls/Frame.cpp,,,TODO,,,
-hw,01E5EF20,10,,,UNKNOWN,guess:vgui2/controls/Frame.cpp,,,TODO,,,
-hw,01E5EF30,10,,,UNKNOWN,guess:vgui2/controls/Frame.cpp,,,TODO,,,
+hw,01E5EE50,19,??0FrameSystemButton_RegisterMap@FrameSystemButton@vgui2@@QAE@XZ,vgui2::FrameSystemButton::FrameSystemButton_RegisterMap::FrameSystemButton_RegisterMap,UNKNOWN,guess:vgui2/controls/Frame.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E5EE70,102,?ChainToMap@FrameSystemButton@vgui2@@SAXXZ,vgui2::FrameSystemButton::ChainToMap,UNKNOWN,guess:vgui2/controls/Frame.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E5EEE0,64,?GetMessageMap@FrameSystemButton@vgui2@@UAEPAUPanelMessageMap@2@XZ,vgui2::FrameSystemButton::GetMessageMap,UNKNOWN,guess:vgui2/controls/Frame.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E5EF20,10,?GetPanelClassName@FrameSystemButton@vgui2@@SAPBDXZ,vgui2::FrameSystemButton::GetPanelClassName,UNKNOWN,guess:vgui2/controls/Frame.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E5EF30,10,?GetPanelBaseClassName@FrameSystemButton@vgui2@@SAPBDXZ,vgui2::FrameSystemButton::GetPanelBaseClassName,UNKNOWN,guess:vgui2/controls/Frame.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01E5EF40,244,?ApplySchemeSettings@FrameSystemButton@vgui2@@UAEXPAVIScheme@2@@Z,vgui2::FrameSystemButton::ApplySchemeSettings,ENGINE,vgui2/controls/Frame.cpp,,,MATCHED,100,linux_symbols:string:0.875,
 hw,01E5F040,15,?GetBorder@FrameSystemButton@vgui2@@UAEPAVIBorder@2@_N000@Z,vgui2::FrameSystemButton::GetBorder,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,
 hw,01E5F050,389,?SetEnabled@FrameSystemButton@vgui2@@UAEX_N@Z,vgui2::FrameSystemButton::SetEnabled,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,
 hw,01E5F1E0,42,?OnMousePressed@FrameSystemButton@vgui2@@UAEXW4MouseCode@2@@Z,vgui2::FrameSystemButton::OnMousePressed,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,
 hw,01E5F210,117,?OnMouseDoublePressed@FrameSystemButton@vgui2@@UAEXW4MouseCode@2@@Z,vgui2::FrameSystemButton::OnMouseDoublePressed,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,
-hw,01E5F290,46,,,ENGINE,vgui2/controls/Frame.cpp,,,TODO,,,
-hw,01E5F2C0,19,,,ENGINE,vgui2/controls/Frame.cpp,,,TODO,,,
-hw,01E5F2E0,46,,,ENGINE,vgui2/controls/Frame.cpp,,,TODO,,,
-hw,01E5F310,19,,,ENGINE,vgui2/controls/Frame.cpp,,,TODO,,,
-hw,01E5F330,102,,,ENGINE,vgui2/controls/Frame.cpp,,,TODO,,,
-hw,01E5F3A0,64,,,ENGINE,vgui2/controls/Frame.cpp,,,TODO,,,
-hw,01E5F3E0,10,,,ENGINE,vgui2/controls/Frame.cpp,,,TODO,,,
-hw,01E5F3F0,10,,,ENGINE,vgui2/controls/Frame.cpp,,,TODO,,,
-hw,01E5F400,19,,,ENGINE,vgui2/controls/Frame.cpp,,,TODO,,,
-hw,01E5F420,107,,,ENGINE,vgui2/controls/Frame.cpp,,,TODO,,,
-hw,01E5F490,120,,,ENGINE,vgui2/controls/Frame.cpp,,,TODO,,,
-hw,01E5F510,19,,,ENGINE,vgui2/controls/Frame.cpp,,,TODO,,,
-hw,01E5F530,107,,,ENGINE,vgui2/controls/Frame.cpp,,,TODO,,,
-hw,01E5F5A0,19,,,ENGINE,vgui2/controls/Frame.cpp,,,TODO,,,
-hw,01E5F5C0,107,,,ENGINE,vgui2/controls/Frame.cpp,,,TODO,,,
-hw,01E5F630,19,,,ENGINE,vgui2/controls/Frame.cpp,,,TODO,,,
-hw,01E5F650,107,,,ENGINE,vgui2/controls/Frame.cpp,,,TODO,,,
-hw,01E5F6C0,19,,,ENGINE,vgui2/controls/Frame.cpp,,,TODO,,,
+hw,01E5F290,46,??_GFrameSystemButton@vgui2@@UAEPAXI@Z,destructor',ENGINE,vgui2/controls/Frame.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E5F2C0,19,??1FrameSystemButton@vgui2@@UAE@XZ,vgui2::FrameSystemButton::~FrameSystemButton,ENGINE,vgui2/controls/Frame.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E5F2E0,46,??_GFrame@vgui2@@UAEPAXI@Z,destructor',ENGINE,vgui2/controls/Frame.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E5F310,19,??0Frame_RegisterMap@Frame@vgui2@@QAE@XZ,vgui2::Frame::Frame_RegisterMap::Frame_RegisterMap,ENGINE,vgui2/controls/Frame.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E5F330,102,?ChainToMap@Frame@vgui2@@SAXXZ,vgui2::Frame::ChainToMap,ENGINE,vgui2/controls/Frame.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E5F3A0,64,?GetMessageMap@Frame@vgui2@@UAEPAUPanelMessageMap@2@XZ,vgui2::Frame::GetMessageMap,ENGINE,vgui2/controls/Frame.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E5F3E0,10,?GetPanelClassName@Frame@vgui2@@SAPBDXZ,vgui2::Frame::GetPanelClassName,ENGINE,vgui2/controls/Frame.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E5F3F0,10,?GetPanelBaseClassName@Frame@vgui2@@SAPBDXZ,vgui2::Frame::GetPanelBaseClassName,ENGINE,vgui2/controls/Frame.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E5F400,19,??0PanelMessageFunc_Close@Frame@vgui2@@QAE@XZ,vgui2::Frame::PanelMessageFunc_Close::PanelMessageFunc_Close,ENGINE,vgui2/controls/Frame.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E5F420,107,?InitVar@PanelMessageFunc_Close@Frame@vgui2@@SAXXZ,vgui2::Frame::PanelMessageFunc_Close::InitVar,ENGINE,vgui2/controls/Frame.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E5F490,120,?AddToMap@Frame@vgui2@@SAXPBDP8Panel@2@AEXXZHH0H0@Z,vgui2::Frame::AddToMap,ENGINE,vgui2/controls/Frame.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E5F510,19,??0PanelMessageFunc_CloseModal@Frame@vgui2@@QAE@XZ,vgui2::Frame::PanelMessageFunc_CloseModal::PanelMessageFunc_CloseModal,ENGINE,vgui2/controls/Frame.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E5F530,107,?InitVar@PanelMessageFunc_CloseModal@Frame@vgui2@@SAXXZ,vgui2::Frame::PanelMessageFunc_CloseModal::InitVar,ENGINE,vgui2/controls/Frame.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E5F5A0,19,??0PanelMessageFunc_OnMinimize@Frame@vgui2@@QAE@XZ,vgui2::Frame::PanelMessageFunc_OnMinimize::PanelMessageFunc_OnMinimize,ENGINE,vgui2/controls/Frame.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E5F5C0,107,?InitVar@PanelMessageFunc_OnMinimize@Frame@vgui2@@SAXXZ,vgui2::Frame::PanelMessageFunc_OnMinimize::InitVar,ENGINE,vgui2/controls/Frame.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E5F630,19,??0PanelMessageFunc_OnCloseFrameButtonPressed@Frame@vgui2@@QAE@XZ,vgui2::Frame::PanelMessageFunc_OnCloseFrameButtonPressed::PanelMessageFunc_OnCloseFrameButtonPressed,ENGINE,vgui2/controls/Frame.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E5F650,107,?InitVar@PanelMessageFunc_OnCloseFrameButtonPressed@Frame@vgui2@@SAXXZ,vgui2::Frame::PanelMessageFunc_OnCloseFrameButtonPressed::InitVar,ENGINE,vgui2/controls/Frame.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E5F6C0,19,??0PanelMessageFunc_InternalSetTitle@Frame@vgui2@@QAE@XZ,vgui2::Frame::PanelMessageFunc_InternalSetTitle::PanelMessageFunc_InternalSetTitle,ENGINE,vgui2/controls/Frame.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01E5F6E0,110,?InitVar@PanelMessageFunc_InternalSetTitle@Frame@vgui2@@SAXXZ,vgui2::Frame::PanelMessageFunc_InternalSetTitle::InitVar,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,
-hw,01E5F750,19,,,ENGINE,vgui2/controls/Frame.cpp,,,TODO,,,
-hw,01E5F770,107,,,ENGINE,vgui2/controls/Frame.cpp,,,TODO,,,
-hw,01E5F7E0,19,,,ENGINE,vgui2/controls/Frame.cpp,,,TODO,,,
-hw,01E5F800,107,,,ENGINE,vgui2/controls/Frame.cpp,,,TODO,,,
+hw,01E5F750,19,??0PanelMessageFunc_InternalFlashWindow@Frame@vgui2@@QAE@XZ,vgui2::Frame::PanelMessageFunc_InternalFlashWindow::PanelMessageFunc_InternalFlashWindow,ENGINE,vgui2/controls/Frame.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E5F770,107,?InitVar@PanelMessageFunc_InternalFlashWindow@Frame@vgui2@@SAXXZ,vgui2::Frame::PanelMessageFunc_InternalFlashWindow::InitVar,ENGINE,vgui2/controls/Frame.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E5F7E0,19,??0PanelMessageFunc_OnDialogVariablesChanged@Frame@vgui2@@QAE@XZ,vgui2::Frame::PanelMessageFunc_OnDialogVariablesChanged::PanelMessageFunc_OnDialogVariablesChanged,ENGINE,vgui2/controls/Frame.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E5F800,107,?InitVar@PanelMessageFunc_OnDialogVariablesChanged@Frame@vgui2@@SAXXZ,vgui2::Frame::PanelMessageFunc_OnDialogVariablesChanged::InitVar,ENGINE,vgui2/controls/Frame.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01E5F870,13,?OnShowMenu@MenuButton@vgui2@@UAEXPAVMenu@2@@Z,vgui2::MenuButton::OnShowMenu,ENGINE,vgui2/controls/MenuButton.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01E5F880,13,?OnHideMenu@MenuButton@vgui2@@UAEXPAVMenu@2@@Z,vgui2::MenuButton::OnHideMenu,ENGINE,vgui2/controls/MenuButton.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01E5F8B0,25,?SetResponsive@FrameSystemButton@vgui2@@QAEX_N@Z,vgui2::FrameSystemButton::SetResponsive,UNKNOWN,vgui2/controls/Frame.cpp,,,MATCHED,100,,
