@@ -15,7 +15,7 @@ import re
 import struct
 import sys
 
-ROOT = r"I:\Projects\cof-decompiled"
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DEF = re.compile(r"^(?:DAT|PTR|BYTE|WORD|DWORD|s|u|OFF)_([0-9a-fA-F]{8})")
 
 

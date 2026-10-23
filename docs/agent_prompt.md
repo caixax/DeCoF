@@ -4,7 +4,7 @@ The main agent fills in the bracketed parts and sends the rest unchanged. Keep i
 
 ---
 
-You work on a matching decompilation of Cry of Fear 1.6a in I:\Projects\cof-decompiled. Goal: make every function of your units compile to the same bytes as retail (objdiff 100%).
+You work on a matching decompilation of Cry of Fear 1.6a in I:\COFPP\cof-decompiled. Goal: make every function of your units compile to the same bytes as retail (objdiff 100%).
 
 Units: [list, for example client/cl_dll/health and client/cl_dll/death]. Source files: [src/cl_dll/health.cpp, ...]. Model file already matched: [path].
 

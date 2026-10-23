@@ -28,7 +28,7 @@ Why a separate compiler directory: the retail Rich header says build 29112. The 
 
 1. Start the headless server (keeps running, holds the project lock):
    ```
-   tools\ghidra_mcp_server.bat --project I:\Projects\cof-decompiled\re\CoF.gpr --program /1.6a/hl.dll
+   tools\ghidra_mcp_server.bat --project I:\COFPP\cof-decompiled\re\CoF.gpr --program /1.6a/hl.dll
    ```
    It listens on 127.0.0.1:8089 only, with script execution enabled.
 2. `.mcp.json` in the repo root registers the stdio bridge as the `ghidra` MCP server, with `GHIDRA_MCP_REQUIRE_PROGRAM_SELECTORS=1`: every tool call must name its program (for example `/1.6a/hl.dll` or `/1.55/hl.dll`), so a rename can not land in the wrong version.

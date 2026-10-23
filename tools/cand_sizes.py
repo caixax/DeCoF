@@ -5,7 +5,7 @@ import json
 import os
 import sys
 
-ROOT = r"I:\Projects\cof-decompiled"
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, "tools"))
 from align_names import coff_order  # noqa: E402
 
