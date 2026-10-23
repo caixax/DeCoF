@@ -3119,6 +3119,16 @@
           ]
         },
         {
+          "name": "engine/Tokenize_guess",
+          "source": "src/engine_hw/Tokenize_guess.cpp",
+          "functions_file": "tools/units/hw_engine_Tokenize_guess.txt",
+          "includes": [
+            "src/engine_hw",
+            "src/public",
+            "src/common"
+          ]
+        },
+        {
           "name": "common/BaseSystemModule",
           "source": "src/common/BaseSystemModule.cpp",
           "functions_file": "tools/units/hw_common_BaseSystemModule.txt",
