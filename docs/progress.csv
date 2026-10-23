@@ -12531,27 +12531,27 @@ gameui,100A1F10,46,??_GImagePanel@vgui2@@UAEPAXI@Z,destructor',UNKNOWN,vgui2/con
 gameui,100A1F40,19,??0ImagePanel_RegisterMap@ImagePanel@vgui2@@QAE@XZ,vgui2::ImagePanel::ImagePanel_RegisterMap::ImagePanel_RegisterMap,UNKNOWN,vgui2/controls/ImagePanel.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,100A1F60,102,?ChainToMap@ImagePanel@vgui2@@SAXXZ,vgui2::ImagePanel::ChainToMap,UNKNOWN,vgui2/controls/ImagePanel.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,100A1FD0,10,?GetPanelBaseClassName@ImagePanel@vgui2@@SAPBDXZ,vgui2::ImagePanel::GetPanelBaseClassName,UNKNOWN,vgui2/controls/ImagePanel.cpp,,,MATCHED,100,gameui_manual.csv,
-gameui,100A1FE0,284,??0Tooltip@vgui2@@QAE@PAVPanel@1@PBD@Z,vgui2::Tooltip::Tooltip,ENGINE,vgui2/controls/Tooltip.cpp,,,TODO,,gameui_manual.csv,linux: _ZN5vgui27TooltipC2EPNS_5PanelEPKc
-gameui,100A20FC,113,,,UNKNOWN,vgui2/controls/Tooltip.cpp,,,TODO,,,linux: _ZN5vgui27TooltipD2Ev
-gameui,100A216D,22,?GetText@Tooltip@vgui2@@QAEPBDXZ,vgui2::Tooltip::GetText,ENGINE,vgui2/controls/Tooltip.cpp,,,TODO,,gameui_manual.csv,linux: _ZN5vgui27Tooltip7GetTextEv
-gameui,100A2183,169,?SetText@Tooltip@vgui2@@QAEXPBD@Z,vgui2::Tooltip::SetText,UNKNOWN,vgui2/controls/Tooltip.cpp,,,TODO,,gameui_manual.csv,linux: _ZN5vgui27Tooltip7SetTextEPKc
-gameui,100A222C,66,,,UNKNOWN,vgui2/controls/Tooltip.cpp,,,TODO,,,linux: _ZN5vgui27Tooltip19ApplySchemeSettingsEPNS_7ISchemeE
-gameui,100A226E,44,?ResetDelay@Tooltip@vgui2@@QAEXXZ,vgui2::Tooltip::ResetDelay,UNKNOWN,vgui2/controls/Tooltip.cpp,,,TODO,,gameui_manual.csv,linux: _ZN5vgui27Tooltip10ResetDelayEv
-gameui,100A229A,22,,,UNKNOWN,vgui2/controls/Tooltip.cpp,,,TODO,,,linux: _ZN5vgui27Tooltip15SetTooltipDelayEi
-gameui,100A22B0,17,,,UNKNOWN,vgui2/controls/Tooltip.cpp,,,TODO,,,linux: _ZN5vgui27Tooltip15GetTooltipDelayEv
-gameui,100A22C1,83,?ShowTooltip@Tooltip@vgui2@@QAEXPAVPanel@2@@Z,vgui2::Tooltip::ShowTooltip,UNKNOWN,vgui2/controls/Tooltip.cpp,,,TODO,,gameui_manual.csv,linux: _ZN5vgui27Tooltip11ShowTooltipEPNS_5PanelE
-gameui,100A2314,18,?InvalidateLayout@Tooltip@vgui2@@QAEXXZ,vgui2::Tooltip::InvalidateLayout,UNKNOWN,vgui2/controls/Tooltip.cpp,,,TODO,,gameui_manual.csv,linux: _ZN5vgui27Tooltip16InvalidateLayoutEv
-gameui,100A2326,564,?PerformLayout@Tooltip@vgui2@@QAEXXZ,vgui2::Tooltip::PerformLayout,ENGINE,vgui2/controls/Tooltip.cpp,,,TODO,,gameui_manual.csv,linux: _ZN5vgui27Tooltip13PerformLayoutEv
-gameui,100A255A,381,,,UNKNOWN,,,,TODO,,,
-gameui,100A26D7,18,,,UNKNOWN,,,,TODO,,,
-gameui,100A26E9,18,,,UNKNOWN,,,,TODO,,,
-gameui,100A26FB,36,?HideTooltip@Tooltip@vgui2@@QAEXXZ,vgui2::Tooltip::HideTooltip,UNKNOWN,,,,TODO,,gameui_manual.csv,
-gameui,100A2720,19,,,UNKNOWN,,,,TODO,,,
-gameui,100A2740,17,,,UNKNOWN,,,,TODO,,,
-gameui,100A2760,32,,,UNKNOWN,,,,TODO,,,
-gameui,100A2780,65,,,UNKNOWN,,,,TODO,,,
-gameui,100A27D0,16,,,UNKNOWN,,,,TODO,,,
-gameui,100A27E0,58,,,UNKNOWN,,,,TODO,,,
+gameui,100A1FE0,284,??0Tooltip@vgui2@@QAE@PAVPanel@1@PBD@Z,vgui2::Tooltip::Tooltip,ENGINE,vgui2/controls/Tooltip.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui27TooltipC2EPNS_5PanelEPKc
+gameui,100A20FC,113,??1Tooltip@vgui2@@QAE@XZ,vgui2::Tooltip::~Tooltip,UNKNOWN,vgui2/controls/Tooltip.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui27TooltipD2Ev
+gameui,100A216D,22,?GetText@Tooltip@vgui2@@QAEPBDXZ,vgui2::Tooltip::GetText,ENGINE,vgui2/controls/Tooltip.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui27Tooltip7GetTextEv
+gameui,100A2183,169,?SetText@Tooltip@vgui2@@QAEXPBD@Z,vgui2::Tooltip::SetText,UNKNOWN,vgui2/controls/Tooltip.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui27Tooltip7SetTextEPKc
+gameui,100A222C,66,?ApplySchemeSettings@Tooltip@vgui2@@EAEXPAVIScheme@2@@Z,vgui2::Tooltip::ApplySchemeSettings,UNKNOWN,vgui2/controls/Tooltip.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui27Tooltip19ApplySchemeSettingsEPNS_7ISchemeE
+gameui,100A226E,44,?ResetDelay@Tooltip@vgui2@@QAEXXZ,vgui2::Tooltip::ResetDelay,UNKNOWN,vgui2/controls/Tooltip.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui27Tooltip10ResetDelayEv
+gameui,100A229A,22,?SetTooltipDelay@Tooltip@vgui2@@QAEXH@Z,vgui2::Tooltip::SetTooltipDelay,UNKNOWN,vgui2/controls/Tooltip.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui27Tooltip15SetTooltipDelayEi
+gameui,100A22B0,17,?GetTooltipDelay@Tooltip@vgui2@@QAEHXZ,vgui2::Tooltip::GetTooltipDelay,UNKNOWN,vgui2/controls/Tooltip.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui27Tooltip15GetTooltipDelayEv
+gameui,100A22C1,83,?ShowTooltip@Tooltip@vgui2@@QAEXPAVPanel@2@@Z,vgui2::Tooltip::ShowTooltip,UNKNOWN,vgui2/controls/Tooltip.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui27Tooltip11ShowTooltipEPNS_5PanelE
+gameui,100A2314,18,?InvalidateLayout@Tooltip@vgui2@@QAEXXZ,vgui2::Tooltip::InvalidateLayout,UNKNOWN,vgui2/controls/Tooltip.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui27Tooltip16InvalidateLayoutEv
+gameui,100A2326,564,?PerformLayout@Tooltip@vgui2@@QAEXXZ,vgui2::Tooltip::PerformLayout,ENGINE,vgui2/controls/Tooltip.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui27Tooltip13PerformLayoutEv
+gameui,100A255A,381,?SizeTextWindow@Tooltip@vgui2@@QAEXXZ,vgui2::Tooltip::SizeTextWindow,UNKNOWN,vgui2/controls/Tooltip.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A26D7,18,?SetTooltipFormatToSingleLine@Tooltip@vgui2@@QAEXXZ,vgui2::Tooltip::SetTooltipFormatToSingleLine,UNKNOWN,vgui2/controls/Tooltip.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A26E9,18,?SetTooltipFormatToMultiLine@Tooltip@vgui2@@QAEXXZ,vgui2::Tooltip::SetTooltipFormatToMultiLine,UNKNOWN,vgui2/controls/Tooltip.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A26FB,36,?HideTooltip@Tooltip@vgui2@@QAEXXZ,vgui2::Tooltip::HideTooltip,UNKNOWN,vgui2/controls/Tooltip.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A2720,19,?Base@?$CUtlVector@D@@QAEPADXZ,CUtlVector<char>::Base,UNKNOWN,vgui2/controls/Tooltip.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A2740,17,?Size@?$CUtlVector@D@@QBEHXZ,CUtlVector<char>::Size,UNKNOWN,vgui2/controls/Tooltip.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A2760,32,?AddToTail@?$CUtlVector@D@@QAEHABD@Z,CUtlVector<char>::AddToTail,UNKNOWN,vgui2/controls/Tooltip.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A2780,65,?InsertBefore@?$CUtlVector@D@@QAEHHABD@Z,CUtlVector<char>::InsertBefore,UNKNOWN,vgui2/controls/Tooltip.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A27D0,16,?Base@?$CUtlMemory@D@@QAEPADXZ,CUtlMemory<char>::Base,UNKNOWN,vgui2/controls/Tooltip.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A27E0,58,?CopyConstruct@@YAXPADABD@Z,CopyConstruct,UNKNOWN,vgui2/controls/Tooltip.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,100A2820,81,??0CMemoryPool@@QAE@HH@Z,CMemoryPool::CMemoryPool,UNKNOWN,,,,TODO,,gameui_manual.csv,
 gameui,100A2871,63,??1CMemoryPool@@QAE@XZ,CMemoryPool::~CMemoryPool,UNKNOWN,,,,TODO,,gameui_manual.csv,
 gameui,100A28B0,266,,,UNKNOWN,,,,TODO,,,
@@ -30484,22 +30484,22 @@ hw,01E35A79,31,??2KeyValues@@SAPAXIHPBDH@Z,"public: static void * __cdecl KeyVal
 hw,01E35A98,31,,,ENGINE,public/KeyValues.cpp,,,TODO,,,
 hw,01E35AB7,31,,,ENGINE,public/KeyValues.cpp,,,TODO,,,
 hw,01E35AE0,46,??_GKeyValues@@AAEPAXI@Z,destructor',ENGINE,public/KeyValues.cpp,,,TODO,,,
-hw,01E35B10,284,??0Tooltip@vgui2@@QAE@PAVPanel@1@PBD@Z,vgui2::Tooltip::Tooltip,ENGINE,vgui2/controls/Tooltip.cpp,,,TODO,,linux_symbols:string:0.783,
-hw,01E35C2C,113,,,UNKNOWN,vgui2/controls/Tooltip.cpp,,,TODO,,,linux: _ZN5vgui27TooltipD2Ev
-hw,01E35C9D,22,?GetText@Tooltip@vgui2@@QAEPBDXZ,vgui2::Tooltip::GetText,ENGINE,vgui2/controls/Tooltip.cpp,,,TODO,,hw_manual.csv,linux: _ZN5vgui27Tooltip7GetTextEv
-hw,01E35CB3,169,?SetText@Tooltip@vgui2@@QAEXPBD@Z,vgui2::Tooltip::SetText,UNKNOWN,vgui2/controls/Tooltip.cpp,,,TODO,,,linux: _ZN5vgui27Tooltip7SetTextEPKc
-hw,01E35D5C,66,,vgui2::Tooltip::ApplySchemeSettings,ENGINE,vgui2/controls/Tooltip.cpp,,,TODO,,linux_symbols:string:0.75,
-hw,01E35D9E,44,?ResetDelay@Tooltip@vgui2@@QAEXXZ,vgui2::Tooltip::ResetDelay,UNKNOWN,vgui2/controls/Tooltip.cpp,,,TODO,,,linux: _ZN5vgui27Tooltip10ResetDelayEv
-hw,01E35DCA,22,,,UNKNOWN,vgui2/controls/Tooltip.cpp,,,TODO,,,linux: _ZN5vgui27Tooltip15SetTooltipDelayEi
-hw,01E35DE0,17,,,UNKNOWN,vgui2/controls/Tooltip.cpp,,,TODO,,,linux: _ZN5vgui27Tooltip15GetTooltipDelayEv
-hw,01E35DF1,83,?ShowTooltip@Tooltip@vgui2@@QAEXPAVPanel@2@@Z,vgui2::Tooltip::ShowTooltip,UNKNOWN,vgui2/controls/Tooltip.cpp,,,TODO,,,linux: _ZN5vgui27Tooltip11ShowTooltipEPNS_5PanelE
-hw,01E35E44,18,?InvalidateLayout@Tooltip@vgui2@@QAEXXZ,vgui2::Tooltip::InvalidateLayout,UNKNOWN,vgui2/controls/Tooltip.cpp,,,TODO,,,linux: _ZN5vgui27Tooltip16InvalidateLayoutEv
-hw,01E35E56,564,?PerformLayout@Tooltip@vgui2@@QAEXXZ,vgui2::Tooltip::PerformLayout,ENGINE,vgui2/controls/Tooltip.cpp,,,TODO,,linux_symbols:string:0.75,
-hw,01E3608A,381,,,ENGINE,vgui2/controls/Tooltip.cpp,,,TODO,,,
-hw,01E36207,18,,,ENGINE,vgui2/controls/Tooltip.cpp,,,TODO,,,
-hw,01E36219,18,,,ENGINE,vgui2/controls/Tooltip.cpp,,,TODO,,,
-hw,01E3622B,36,?HideTooltip@Tooltip@vgui2@@QAEXXZ,vgui2::Tooltip::HideTooltip,ENGINE,vgui2/controls/Tooltip.cpp,,,TODO,,,
-hw,01E36250,17,,,ENGINE,vgui2/controls/Tooltip.cpp,,,TODO,,,
+hw,01E35B10,284,??0Tooltip@vgui2@@QAE@PAVPanel@1@PBD@Z,vgui2::Tooltip::Tooltip,ENGINE,vgui2/controls/Tooltip.cpp,,,MATCHED,100,linux_symbols:string:0.783,
+hw,01E35C2C,113,??1Tooltip@vgui2@@QAE@XZ,vgui2::Tooltip::~Tooltip,UNKNOWN,vgui2/controls/Tooltip.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui27TooltipD2Ev
+hw,01E35C9D,22,?GetText@Tooltip@vgui2@@QAEPBDXZ,vgui2::Tooltip::GetText,ENGINE,vgui2/controls/Tooltip.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui27Tooltip7GetTextEv
+hw,01E35CB3,169,?SetText@Tooltip@vgui2@@QAEXPBD@Z,vgui2::Tooltip::SetText,UNKNOWN,vgui2/controls/Tooltip.cpp,,,MATCHED,100,,linux: _ZN5vgui27Tooltip7SetTextEPKc
+hw,01E35D5C,66,?ApplySchemeSettings@Tooltip@vgui2@@EAEXPAVIScheme@2@@Z,vgui2::Tooltip::ApplySchemeSettings,ENGINE,vgui2/controls/Tooltip.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E35D9E,44,?ResetDelay@Tooltip@vgui2@@QAEXXZ,vgui2::Tooltip::ResetDelay,UNKNOWN,vgui2/controls/Tooltip.cpp,,,MATCHED,100,,linux: _ZN5vgui27Tooltip10ResetDelayEv
+hw,01E35DCA,22,?SetTooltipDelay@Tooltip@vgui2@@QAEXH@Z,vgui2::Tooltip::SetTooltipDelay,UNKNOWN,vgui2/controls/Tooltip.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui27Tooltip15SetTooltipDelayEi
+hw,01E35DE0,17,?GetTooltipDelay@Tooltip@vgui2@@QAEHXZ,vgui2::Tooltip::GetTooltipDelay,UNKNOWN,vgui2/controls/Tooltip.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui27Tooltip15GetTooltipDelayEv
+hw,01E35DF1,83,?ShowTooltip@Tooltip@vgui2@@QAEXPAVPanel@2@@Z,vgui2::Tooltip::ShowTooltip,UNKNOWN,vgui2/controls/Tooltip.cpp,,,MATCHED,100,,linux: _ZN5vgui27Tooltip11ShowTooltipEPNS_5PanelE
+hw,01E35E44,18,?InvalidateLayout@Tooltip@vgui2@@QAEXXZ,vgui2::Tooltip::InvalidateLayout,UNKNOWN,vgui2/controls/Tooltip.cpp,,,MATCHED,100,,linux: _ZN5vgui27Tooltip16InvalidateLayoutEv
+hw,01E35E56,564,?PerformLayout@Tooltip@vgui2@@QAEXXZ,vgui2::Tooltip::PerformLayout,ENGINE,vgui2/controls/Tooltip.cpp,,,MATCHED,100,linux_symbols:string:0.75,
+hw,01E3608A,381,?SizeTextWindow@Tooltip@vgui2@@QAEXXZ,vgui2::Tooltip::SizeTextWindow,ENGINE,vgui2/controls/Tooltip.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E36207,18,?SetTooltipFormatToSingleLine@Tooltip@vgui2@@QAEXXZ,vgui2::Tooltip::SetTooltipFormatToSingleLine,ENGINE,vgui2/controls/Tooltip.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E36219,18,?SetTooltipFormatToMultiLine@Tooltip@vgui2@@QAEXXZ,vgui2::Tooltip::SetTooltipFormatToMultiLine,ENGINE,vgui2/controls/Tooltip.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3622B,36,?HideTooltip@Tooltip@vgui2@@QAEXXZ,vgui2::Tooltip::HideTooltip,ENGINE,vgui2/controls/Tooltip.cpp,,,MATCHED,100,,
+hw,01E36250,17,?Size@?$CUtlVector@D@@QBEHXZ,CUtlVector<char>::Size,ENGINE,vgui2/controls/Tooltip.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01E36270,81,??0CMemoryPool@@QAE@HH@Z,CMemoryPool::CMemoryPool,ENGINE,public/MemPool.cpp,,,TODO,,,
 hw,01E362C1,63,??1CMemoryPool@@QAE@XZ,CMemoryPool::~CMemoryPool,ENGINE,public/MemPool.cpp,,,TODO,,,
 hw,01E36300,266,,,ENGINE,public/MemPool.cpp,,,TODO,,,linux: _ZN11CMemoryPool10AddNewBlobEv
