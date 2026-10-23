@@ -3114,6 +3114,11 @@
           ]
         },
         {
+          "name": "common/TokenLine",
+          "source": "src/common/TokenLine.cpp",
+          "functions_file": "tools/units/hw_common_TokenLine.txt"
+        },
+        {
           "name": "engine/traceinit",
           "source": "src/engine_hw/traceinit.cpp",
           "functions_file": "tools/units/hw_engine_traceinit.txt"

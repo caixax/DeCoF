@@ -28899,16 +28899,16 @@ hw,01DFD920,17,,,ENGINE,engine/Tokenize_guess.cpp,,,TODO,,,
 hw,01DFD940,199,,,ENGINE,engine/Tokenize_guess.cpp,,,TODO,,,
 hw,01DFDA10,25,,,ENGINE,engine/Tokenize_guess.cpp,,,TODO,,,
 hw,01DFDA30,5,,,ENGINE,engine/Tokenize_guess.cpp,,,TODO,,,
-hw,01DFDA40,20,,,ENGINE,common/TokenLine.cpp,,,TODO,,,linux: _ZN9TokenLineC2Ev
-hw,01DFDA54,511,,,ENGINE,common/TokenLine.cpp,,,TODO,,,linux: _ZN9TokenLine7SetLineEPKc
-hw,01DFDC53,19,,,ENGINE,common/TokenLine.cpp,,,TODO,,,linux: _ZN9TokenLine7GetLineEv
-hw,01DFDC66,44,,,ENGINE,common/TokenLine.cpp,,,TODO,,,linux: _ZN9TokenLine8GetTokenEi
-hw,01DFDC92,144,,,ENGINE,common/TokenLine.cpp,,,TODO,,,linux: _ZN9TokenLine10CheckTokenEPc
-hw,01DFDD22,82,,,ENGINE,common/TokenLine.cpp,,,TODO,,,linux: _ZN9TokenLine10CountTokenEv
-hw,01DFDD74,62,,,ENGINE,common/TokenLine.cpp,,,TODO,,,linux: _ZN9TokenLine13GetRestOfLineEi
-hw,01DFDDB2,37,,,ENGINE,common/TokenLine.cpp,,,TODO,,,linux: _ZN9TokenLineC1EPc
-hw,01DFDDD7,23,,,ENGINE,common/TokenLine.cpp,,,TODO,,,linux: _ZN9TokenLineD1Ev
-hw,01DFDDF0,46,,,ENGINE,common/TokenLine.cpp,,,TODO,,,
+hw,01DFDA40,20,??1TokenLine@@UAE@XZ,TokenLine::~TokenLine,ENGINE,common/TokenLine.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN9TokenLineC2Ev
+hw,01DFDA54,511,?SetLine@TokenLine@@QAE_NPBD@Z,TokenLine::SetLine,ENGINE,common/TokenLine.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN9TokenLine7SetLineEPKc
+hw,01DFDC53,19,?GetLine@TokenLine@@QAEPADXZ,TokenLine::GetLine,ENGINE,common/TokenLine.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN9TokenLine7GetLineEv
+hw,01DFDC66,44,?GetToken@TokenLine@@QAEPADH@Z,TokenLine::GetToken,ENGINE,common/TokenLine.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN9TokenLine8GetTokenEi
+hw,01DFDC92,144,?CheckToken@TokenLine@@QAEPADPAD@Z,TokenLine::CheckToken,ENGINE,common/TokenLine.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN9TokenLine10CheckTokenEPc
+hw,01DFDD22,82,?CountToken@TokenLine@@QAEHXZ,TokenLine::CountToken,ENGINE,common/TokenLine.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN9TokenLine10CountTokenEv
+hw,01DFDD74,62,?GetRestOfLine@TokenLine@@QAEPADH@Z,TokenLine::GetRestOfLine,ENGINE,common/TokenLine.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN9TokenLine13GetRestOfLineEi
+hw,01DFDDB2,37,??0TokenLine@@QAE@PAD@Z,TokenLine::TokenLine,ENGINE,common/TokenLine.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN9TokenLineC1EPc
+hw,01DFDDD7,23,??0TokenLine@@QAE@XZ,TokenLine::TokenLine,ENGINE,common/TokenLine.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN9TokenLineD1Ev
+hw,01DFDDF0,46,??_GTokenLine@@UAEPAXI@Z,destructor',ENGINE,common/TokenLine.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01DFDE20,15,,,ENGINE,engine/traceinit.cpp,,,TODO,,,
 hw,01DFDE2F,15,,,ENGINE,engine/traceinit.cpp,,,TODO,,,
 hw,01DFDE3E,18,,,ENGINE,engine/traceinit.cpp,,,TODO,,,
