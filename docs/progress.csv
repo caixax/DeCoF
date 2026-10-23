@@ -24511,8 +24511,8 @@ hw,01D1EAB0,46,,,UNKNOWN,common/BaseSystemModule.cpp,,,TODO,,,inline function (C
 hw,01D1EAE0,28,,,UNKNOWN,common/BaseSystemModule.cpp,,,TODO,,,inline function (COMDAT) emitted after the object
 hw,01D1EB10,63,,,UNKNOWN,common/BaseSystemModule.cpp,,,TODO,,,inline function (COMDAT) emitted after the object
 hw,01D1EB50,39,,,UNKNOWN,common/BaseSystemModule.cpp,,,TODO,,,inline function (COMDAT) emitted after the object
-hw,01D1EC60,768,_LoadBMP8,,UNKNOWN,engine/bitmap_win.c,,,TODO,,,
-hw,01D1EF60,2571,_LoadBMP16,LoadBMP16,ENGINE,engine/bitmap_win.c,,,TODO,,linux_symbols:string:0.846,
+hw,01D1EC60,768,_LoadBMP8,,UNKNOWN,engine/bitmap_win.c,,,MATCHED,100,,
+hw,01D1EF60,2571,_LoadBMP16,LoadBMP16,ENGINE,engine/bitmap_win.c,,,MATCHED,100,linux_symbols:string:0.846,
 hw,01D1F970,277,_build_number,,UNKNOWN,engine/buildnum.c,,,MATCHED,100,,
 hw,01D1FA90,15,_$E4,_$E4,ENGINE,engine/cd.cpp,,,MATCHED,100,hw_manual.csv,"VC6 dynamic initializer of the static CCDAudio object ($E: constructor 01D1FD6A, atexit destructor 01D1FE3C)"
 hw,01D1FA9F,15,_$E1,_$E1,ENGINE,engine/cd.cpp,,,MATCHED,100,hw_manual.csv,"VC6 dynamic initializer of the static CCDAudio object ($E: constructor 01D1FD6A, atexit destructor 01D1FE3C)"

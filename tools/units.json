@@ -3252,6 +3252,11 @@
             "src/gameui",
             "src/common"
           ]
+        },
+        {
+          "name": "engine/bitmap_win",
+          "source": "src/engine_hw/bitmap_win.c",
+          "functions_file": "tools/units/hw_engine_bitmap_win.txt"
         }
       ]
     },
