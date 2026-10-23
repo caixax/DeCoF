@@ -12215,36 +12215,36 @@ gameui,1009A4B0,19,??0PanelMessageFunc_DisarmItem@MenuItem@vgui2@@QAE@XZ,vgui2::
 gameui,1009A4D0,107,?InitVar@PanelMessageFunc_DisarmItem@MenuItem@vgui2@@SAXXZ,vgui2::MenuItem::PanelMessageFunc_DisarmItem::InitVar,UNKNOWN,vgui2/controls/MenuItem.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,1009A540,19,??0PanelMessageFunc_OnKeyModeSet@MenuItem@vgui2@@QAE@XZ,vgui2::MenuItem::PanelMessageFunc_OnKeyModeSet::PanelMessageFunc_OnKeyModeSet,UNKNOWN,vgui2/controls/MenuItem.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,1009A560,107,?InitVar@PanelMessageFunc_OnKeyModeSet@MenuItem@vgui2@@SAXXZ,vgui2::MenuItem::PanelMessageFunc_OnKeyModeSet::InitVar,UNKNOWN,vgui2/controls/MenuItem.cpp,,,MATCHED,100,gameui_manual.csv,
-gameui,1009A5E0,107,,,UNKNOWN,,,,TODO,,,
-gameui,1009A64B,28,,,UNKNOWN,,,,TODO,,,
-gameui,1009A667,31,,,UNKNOWN,vgui2/controls/Image.cpp,,,TODO,,,linux: _ZN5vgui25Image6SetPosEii
-gameui,1009A686,35,,,UNKNOWN,vgui2/controls/Image.cpp,,,TODO,,,linux: _ZN5vgui25Image6GetPosERiS1_
-gameui,1009A6A9,35,,,UNKNOWN,vgui2/controls/Image.cpp,,,TODO,,,linux: _ZN5vgui25Image7GetSizeERiS1_
-gameui,1009A6CC,32,,,UNKNOWN,vgui2/controls/Image.cpp,,,TODO,,,linux: _ZN5vgui25Image14GetContentSizeERiS1_
-gameui,1009A6EC,31,,,UNKNOWN,vgui2/controls/Image.cpp,,,TODO,,,linux: _ZN5vgui25Image7SetSizeEii
-gameui,1009A70B,94,,,UNKNOWN,,,,TODO,,,
-gameui,1009A769,50,,,UNKNOWN,,,,TODO,,,
-gameui,1009A79B,98,,,UNKNOWN,vgui2/controls/Image.cpp,,,TODO,,,linux: _ZN5vgui25Image14DrawFilledRectEiiii
-gameui,1009A7FD,98,,,UNKNOWN,vgui2/controls/Image.cpp,,,TODO,,,linux: _ZN5vgui25Image16DrawOutlinedRectEiiii
-gameui,1009A85F,98,,,UNKNOWN,vgui2/controls/Image.cpp,,,TODO,,,linux: _ZN5vgui25Image8DrawLineEiiii
-gameui,1009A8C1,122,,,UNKNOWN,vgui2/controls/Image.cpp,,,TODO,,,linux: _ZN5vgui25Image12DrawPolyLineEPiS1_i
-gameui,1009A93B,38,,,UNKNOWN,vgui2/controls/Image.cpp,,,TODO,,,linux: _ZN5vgui25Image15DrawSetTextFontEm
-gameui,1009A961,94,,,UNKNOWN,,,,TODO,,,
-gameui,1009A9BF,50,,,UNKNOWN,,,,TODO,,,
-gameui,1009A9F1,66,,,UNKNOWN,,,,TODO,,,
-gameui,1009AA33,42,,,UNKNOWN,,,,TODO,,,
-gameui,1009AA5D,93,,,UNKNOWN,vgui2/controls/Image.cpp,,,TODO,,,linux: _ZN5vgui25Image13DrawPrintTextEPKwi
-gameui,1009AABA,39,,,UNKNOWN,vgui2/controls/Image.cpp,,,TODO,,,linux: _ZN5vgui25Image13DrawPrintTextEiiPKwi
-gameui,1009AAE1,90,,,UNKNOWN,vgui2/controls/Image.cpp,,,TODO,,,linux: _ZN5vgui25Image13DrawPrintCharEw
-gameui,1009AB3B,38,,,UNKNOWN,vgui2/controls/Image.cpp,,,TODO,,,linux: _ZN5vgui25Image14DrawSetTextureEi
-gameui,1009AB61,50,,,UNKNOWN,vgui2/controls/Image.cpp,,,TODO,,,linux: _ZN5vgui25Image16DrawTexturedRectEiiii
-gameui,1009AB93,11,,,UNKNOWN,vgui2/controls/Image.cpp,,,TODO,,,linux: _ZN5vgui25Image5PaintEv
-gameui,1009AB9E,37,,,UNKNOWN,vgui2/controls/Image.cpp,,,TODO,,,linux: _ZN5vgui25Image8SetColorE5Color
-gameui,1009ABC3,27,,,UNKNOWN,vgui2/controls/Image.cpp,,,TODO,,,linux: _ZN5vgui25Image8GetColorEv
-gameui,1009ABE0,46,,,UNKNOWN,,,,TODO,,,
-gameui,1009AC10,23,,,UNKNOWN,,,,TODO,,,
-gameui,1009AC30,20,,,UNKNOWN,,,,TODO,,,
-gameui,1009AC50,46,,,UNKNOWN,,,,TODO,,,
+gameui,1009A5E0,107,??0Image@vgui2@@QAE@XZ,vgui2::Image::Image,UNKNOWN,vgui2/controls/Image.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1009A64B,28,??1Image@vgui2@@UAE@XZ,vgui2::Image::~Image,UNKNOWN,vgui2/controls/Image.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1009A667,31,?SetPos@Image@vgui2@@UAEXHH@Z,vgui2::Image::SetPos,UNKNOWN,vgui2/controls/Image.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui25Image6SetPosEii
+gameui,1009A686,35,?GetPos@Image@vgui2@@UAEXAAH0@Z,vgui2::Image::GetPos,UNKNOWN,vgui2/controls/Image.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui25Image6GetPosERiS1_
+gameui,1009A6A9,35,?GetSize@Image@vgui2@@UAEXAAH0@Z,vgui2::Image::GetSize,UNKNOWN,vgui2/controls/Image.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui25Image7GetSizeERiS1_
+gameui,1009A6CC,32,?GetContentSize@Image@vgui2@@UAEXAAH0@Z,vgui2::Image::GetContentSize,UNKNOWN,vgui2/controls/Image.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui25Image14GetContentSizeERiS1_
+gameui,1009A6EC,31,?SetSize@Image@vgui2@@UAEXHH@Z,vgui2::Image::SetSize,UNKNOWN,vgui2/controls/Image.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui25Image7SetSizeEii
+gameui,1009A70B,94,?DrawSetColor@Image@vgui2@@MAEXVColor@@@Z,vgui2::Image::DrawSetColor,UNKNOWN,vgui2/controls/Image.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1009A769,50,?DrawSetColor@Image@vgui2@@MAEXHHHH@Z,vgui2::Image::DrawSetColor,UNKNOWN,vgui2/controls/Image.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1009A79B,98,?DrawFilledRect@Image@vgui2@@MAEXHHHH@Z,vgui2::Image::DrawFilledRect,UNKNOWN,vgui2/controls/Image.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui25Image14DrawFilledRectEiiii
+gameui,1009A7FD,98,?DrawOutlinedRect@Image@vgui2@@MAEXHHHH@Z,vgui2::Image::DrawOutlinedRect,UNKNOWN,vgui2/controls/Image.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui25Image16DrawOutlinedRectEiiii
+gameui,1009A85F,98,?DrawLine@Image@vgui2@@MAEXHHHH@Z,vgui2::Image::DrawLine,UNKNOWN,vgui2/controls/Image.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui25Image8DrawLineEiiii
+gameui,1009A8C1,122,?DrawPolyLine@Image@vgui2@@MAEXPAH0H@Z,vgui2::Image::DrawPolyLine,UNKNOWN,vgui2/controls/Image.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui25Image12DrawPolyLineEPiS1_i
+gameui,1009A93B,38,?DrawSetTextFont@Image@vgui2@@MAEXK@Z,vgui2::Image::DrawSetTextFont,UNKNOWN,vgui2/controls/Image.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui25Image15DrawSetTextFontEm
+gameui,1009A961,94,?DrawSetTextColor@Image@vgui2@@MAEXVColor@@@Z,vgui2::Image::DrawSetTextColor,UNKNOWN,vgui2/controls/Image.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1009A9BF,50,?DrawSetTextColor@Image@vgui2@@MAEXHHHH@Z,vgui2::Image::DrawSetTextColor,UNKNOWN,vgui2/controls/Image.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1009A9F1,66,?DrawSetTextPos@Image@vgui2@@MAEXHH@Z,vgui2::Image::DrawSetTextPos,UNKNOWN,vgui2/controls/Image.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1009AA33,42,?DrawPrintText@Image@vgui2@@MAEXPBGH@Z,vgui2::Image::DrawPrintText,UNKNOWN,vgui2/controls/Image.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1009AA5D,93,?DrawPrintText@Image@vgui2@@MAEXHHPBGH@Z,vgui2::Image::DrawPrintText,UNKNOWN,vgui2/controls/Image.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui25Image13DrawPrintTextEiiPKwi
+gameui,1009AABA,39,?DrawPrintChar@Image@vgui2@@MAEXG@Z,vgui2::Image::DrawPrintChar,UNKNOWN,vgui2/controls/Image.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui25Image13DrawPrintCharEw
+gameui,1009AAE1,90,?DrawPrintChar@Image@vgui2@@MAEXHHG@Z,vgui2::Image::DrawPrintChar,UNKNOWN,vgui2/controls/Image.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui25Image13DrawPrintCharEiiw
+gameui,1009AB3B,38,?DrawSetTexture@Image@vgui2@@MAEXH@Z,vgui2::Image::DrawSetTexture,UNKNOWN,vgui2/controls/Image.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui25Image14DrawSetTextureEi
+gameui,1009AB61,50,?DrawTexturedRect@Image@vgui2@@MAEXHHHH@Z,vgui2::Image::DrawTexturedRect,UNKNOWN,vgui2/controls/Image.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui25Image16DrawTexturedRectEiiii
+gameui,1009AB93,11,?Paint@Image@vgui2@@MAEXXZ,vgui2::Image::Paint,UNKNOWN,vgui2/controls/Image.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui25Image5PaintEv
+gameui,1009AB9E,37,?SetColor@Image@vgui2@@UAEXVColor@@@Z,vgui2::Image::SetColor,UNKNOWN,vgui2/controls/Image.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui25Image8SetColorE5Color
+gameui,1009ABC3,27,?GetColor@Image@vgui2@@UAE?AVColor@@XZ,vgui2::Image::GetColor,UNKNOWN,vgui2/controls/Image.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui25Image8GetColorEv
+gameui,1009ABE0,46,??_GImage@vgui2@@UAEPAXI@Z,destructor',UNKNOWN,vgui2/controls/Image.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1009AC10,23,??0IImage@vgui2@@QAE@XZ,vgui2::IImage::IImage,UNKNOWN,vgui2/controls/Image.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1009AC30,20,??1IImage@vgui2@@UAE@XZ,vgui2::IImage::~IImage,UNKNOWN,vgui2/controls/Image.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1009AC50,46,??_GIImage@vgui2@@UAEPAXI@Z,destructor',UNKNOWN,vgui2/controls/Image.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,1009AC80,492,,vgui2::SectionedListPanel::SectionedListPanel,ENGINE,,,,TODO,,linux_symbols:string:0.312,
 gameui,1009AE6C,81,,,UNKNOWN,,,,TODO,,,
 gameui,1009AEBD,454,,,UNKNOWN,,,,TODO,,,
@@ -31915,33 +31915,33 @@ hw,01E62410,102,?ChainToMap@ScrollBarSlider@vgui2@@SAXXZ,vgui2::ScrollBarSlider:
 hw,01E62480,64,?GetMessageMap@ScrollBarSlider@vgui2@@UAEPAUPanelMessageMap@2@XZ,vgui2::ScrollBarSlider::GetMessageMap,ENGINE,vgui2/controls/ScrollBarSlider.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01E624C0,10,?GetPanelClassName@ScrollBarSlider@vgui2@@SAPBDXZ,vgui2::ScrollBarSlider::GetPanelClassName,ENGINE,vgui2/controls/ScrollBarSlider.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01E624D0,10,?GetPanelBaseClassName@ScrollBarSlider@vgui2@@SAPBDXZ,vgui2::ScrollBarSlider::GetPanelBaseClassName,ENGINE,vgui2/controls/ScrollBarSlider.cpp,,,MATCHED,100,hw_manual.csv,
-hw,01E624E0,107,,,ENGINE,vgui2/controls/Image.cpp,,,TODO,,,
-hw,01E6254B,28,,,ENGINE,vgui2/controls/Image.cpp,,,TODO,,,
-hw,01E62567,31,,,UNKNOWN,vgui2/controls/Image.cpp,,,TODO,,,linux: _ZN5vgui25Image6SetPosEii
-hw,01E62586,35,,,UNKNOWN,vgui2/controls/Image.cpp,,,TODO,,,linux: _ZN5vgui25Image6GetPosERiS1_
-hw,01E625A9,35,,,UNKNOWN,vgui2/controls/Image.cpp,,,TODO,,,linux: _ZN5vgui25Image7GetSizeERiS1_
-hw,01E625CC,32,,,UNKNOWN,vgui2/controls/Image.cpp,,,TODO,,,linux: _ZN5vgui25Image14GetContentSizeERiS1_
-hw,01E625EC,31,,,UNKNOWN,vgui2/controls/Image.cpp,,,TODO,,,linux: _ZN5vgui25Image7SetSizeEii
-hw,01E6260B,94,,,ENGINE,vgui2/controls/Image.cpp,,,TODO,,,
-hw,01E62669,50,,,ENGINE,vgui2/controls/Image.cpp,,,TODO,,,
-hw,01E6269B,98,,,UNKNOWN,vgui2/controls/Image.cpp,,,TODO,,,linux: _ZN5vgui25Image14DrawFilledRectEiiii
-hw,01E626FD,98,,,UNKNOWN,vgui2/controls/Image.cpp,,,TODO,,,linux: _ZN5vgui25Image16DrawOutlinedRectEiiii
-hw,01E6275F,98,,,UNKNOWN,vgui2/controls/Image.cpp,,,TODO,,,linux: _ZN5vgui25Image8DrawLineEiiii
-hw,01E627C1,122,,,UNKNOWN,vgui2/controls/Image.cpp,,,TODO,,,linux: _ZN5vgui25Image12DrawPolyLineEPiS1_i
-hw,01E6283B,38,,,UNKNOWN,vgui2/controls/Image.cpp,,,TODO,,,linux: _ZN5vgui25Image15DrawSetTextFontEm
-hw,01E62861,94,,,ENGINE,vgui2/controls/Image.cpp,,,TODO,,,
-hw,01E628BF,50,,,ENGINE,vgui2/controls/Image.cpp,,,TODO,,,
-hw,01E628F1,66,,,ENGINE,vgui2/controls/Image.cpp,,,TODO,,,
-hw,01E62933,42,,,ENGINE,vgui2/controls/Image.cpp,,,TODO,,,
-hw,01E6295D,93,,,UNKNOWN,vgui2/controls/Image.cpp,,,TODO,,,linux: _ZN5vgui25Image13DrawPrintTextEPKwi
-hw,01E629BA,39,,,UNKNOWN,vgui2/controls/Image.cpp,,,TODO,,,linux: _ZN5vgui25Image13DrawPrintTextEiiPKwi
-hw,01E629E1,90,,,UNKNOWN,vgui2/controls/Image.cpp,,,TODO,,,linux: _ZN5vgui25Image13DrawPrintCharEw
-hw,01E62A3B,38,,,UNKNOWN,vgui2/controls/Image.cpp,,,TODO,,,linux: _ZN5vgui25Image14DrawSetTextureEi
-hw,01E62A61,50,,,UNKNOWN,vgui2/controls/Image.cpp,,,TODO,,,linux: _ZN5vgui25Image16DrawTexturedRectEiiii
-hw,01E62A93,11,,,UNKNOWN,vgui2/controls/Image.cpp,,,TODO,,,linux: _ZN5vgui25Image5PaintEv
-hw,01E62A9E,37,,,UNKNOWN,vgui2/controls/Image.cpp,,,TODO,,,linux: _ZN5vgui25Image8SetColorE5Color
-hw,01E62AC3,27,,,UNKNOWN,vgui2/controls/Image.cpp,,,TODO,,,linux: _ZN5vgui25Image8GetColorEv
-hw,01E62AE0,46,,,ENGINE,vgui2/controls/Image.cpp,,,TODO,,,
+hw,01E624E0,107,??0Image@vgui2@@QAE@XZ,vgui2::Image::Image,ENGINE,vgui2/controls/Image.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E6254B,28,??1Image@vgui2@@UAE@XZ,vgui2::Image::~Image,ENGINE,vgui2/controls/Image.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E62567,31,?SetPos@Image@vgui2@@UAEXHH@Z,vgui2::Image::SetPos,UNKNOWN,vgui2/controls/Image.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui25Image6SetPosEii
+hw,01E62586,35,?GetPos@Image@vgui2@@UAEXAAH0@Z,vgui2::Image::GetPos,UNKNOWN,vgui2/controls/Image.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui25Image6GetPosERiS1_
+hw,01E625A9,35,?GetSize@Image@vgui2@@UAEXAAH0@Z,vgui2::Image::GetSize,UNKNOWN,vgui2/controls/Image.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui25Image7GetSizeERiS1_
+hw,01E625CC,32,?GetContentSize@Image@vgui2@@UAEXAAH0@Z,vgui2::Image::GetContentSize,UNKNOWN,vgui2/controls/Image.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui25Image14GetContentSizeERiS1_
+hw,01E625EC,31,?SetSize@Image@vgui2@@UAEXHH@Z,vgui2::Image::SetSize,UNKNOWN,vgui2/controls/Image.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui25Image7SetSizeEii
+hw,01E6260B,94,?DrawSetColor@Image@vgui2@@MAEXVColor@@@Z,vgui2::Image::DrawSetColor,ENGINE,vgui2/controls/Image.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E62669,50,?DrawSetColor@Image@vgui2@@MAEXHHHH@Z,vgui2::Image::DrawSetColor,ENGINE,vgui2/controls/Image.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E6269B,98,?DrawFilledRect@Image@vgui2@@MAEXHHHH@Z,vgui2::Image::DrawFilledRect,UNKNOWN,vgui2/controls/Image.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui25Image14DrawFilledRectEiiii
+hw,01E626FD,98,?DrawOutlinedRect@Image@vgui2@@MAEXHHHH@Z,vgui2::Image::DrawOutlinedRect,UNKNOWN,vgui2/controls/Image.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui25Image16DrawOutlinedRectEiiii
+hw,01E6275F,98,?DrawLine@Image@vgui2@@MAEXHHHH@Z,vgui2::Image::DrawLine,UNKNOWN,vgui2/controls/Image.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui25Image8DrawLineEiiii
+hw,01E627C1,122,?DrawPolyLine@Image@vgui2@@MAEXPAH0H@Z,vgui2::Image::DrawPolyLine,UNKNOWN,vgui2/controls/Image.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui25Image12DrawPolyLineEPiS1_i
+hw,01E6283B,38,?DrawSetTextFont@Image@vgui2@@MAEXK@Z,vgui2::Image::DrawSetTextFont,UNKNOWN,vgui2/controls/Image.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui25Image15DrawSetTextFontEm
+hw,01E62861,94,?DrawSetTextColor@Image@vgui2@@MAEXVColor@@@Z,vgui2::Image::DrawSetTextColor,ENGINE,vgui2/controls/Image.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E628BF,50,?DrawSetTextColor@Image@vgui2@@MAEXHHHH@Z,vgui2::Image::DrawSetTextColor,ENGINE,vgui2/controls/Image.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E628F1,66,?DrawSetTextPos@Image@vgui2@@MAEXHH@Z,vgui2::Image::DrawSetTextPos,ENGINE,vgui2/controls/Image.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E62933,42,?DrawPrintText@Image@vgui2@@MAEXPBGH@Z,vgui2::Image::DrawPrintText,ENGINE,vgui2/controls/Image.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E6295D,93,?DrawPrintText@Image@vgui2@@MAEXHHPBGH@Z,vgui2::Image::DrawPrintText,UNKNOWN,vgui2/controls/Image.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui25Image13DrawPrintTextEiiPKwi
+hw,01E629BA,39,?DrawPrintChar@Image@vgui2@@MAEXG@Z,vgui2::Image::DrawPrintChar,UNKNOWN,vgui2/controls/Image.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui25Image13DrawPrintCharEw
+hw,01E629E1,90,?DrawPrintChar@Image@vgui2@@MAEXHHG@Z,vgui2::Image::DrawPrintChar,UNKNOWN,vgui2/controls/Image.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui25Image13DrawPrintCharEiiw
+hw,01E62A3B,38,?DrawSetTexture@Image@vgui2@@MAEXH@Z,vgui2::Image::DrawSetTexture,UNKNOWN,vgui2/controls/Image.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui25Image14DrawSetTextureEi
+hw,01E62A61,50,?DrawTexturedRect@Image@vgui2@@MAEXHHHH@Z,vgui2::Image::DrawTexturedRect,UNKNOWN,vgui2/controls/Image.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui25Image16DrawTexturedRectEiiii
+hw,01E62A93,11,?Paint@Image@vgui2@@MAEXXZ,vgui2::Image::Paint,UNKNOWN,vgui2/controls/Image.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui25Image5PaintEv
+hw,01E62A9E,37,?SetColor@Image@vgui2@@UAEXVColor@@@Z,vgui2::Image::SetColor,UNKNOWN,vgui2/controls/Image.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui25Image8SetColorE5Color
+hw,01E62AC3,27,?GetColor@Image@vgui2@@UAE?AVColor@@XZ,vgui2::Image::GetColor,UNKNOWN,vgui2/controls/Image.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui25Image8GetColorEv
+hw,01E62AE0,46,??_GImage@vgui2@@UAEPAXI@Z,destructor',ENGINE,vgui2/controls/Image.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01E62B10,203,??0TextImage@vgui2@@QAE@PBD@Z,vgui2::TextImage::TextImage,UNKNOWN,vgui2/controls/TextImage.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01E62BDB,193,??0TextImage@vgui2@@QAE@PBG@Z,vgui2::TextImage::TextImage,UNKNOWN,vgui2/controls/TextImage.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01E62C9C,71,??1TextImage@vgui2@@UAE@XZ,vgui2::TextImage::~TextImage,UNKNOWN,vgui2/controls/TextImage.cpp,,,MATCHED,100,hw_manual.csv,
