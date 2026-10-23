@@ -12517,20 +12517,20 @@ gameui,100A17A0,10,?GetPanelBaseClassName@RadioButton@vgui2@@SAPBDXZ,vgui2::Radi
 gameui,100A17B0,19,??0PanelMessageFunc_OnRadioButtonChecked@RadioButton@vgui2@@QAE@XZ,vgui2::RadioButton::PanelMessageFunc_OnRadioButtonChecked::PanelMessageFunc_OnRadioButtonChecked,UNKNOWN,vgui2/controls/RadioButton.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,100A17D0,110,?InitVar@PanelMessageFunc_OnRadioButtonChecked@RadioButton@vgui2@@SAXXZ,vgui2::RadioButton::PanelMessageFunc_OnRadioButtonChecked::InitVar,UNKNOWN,vgui2/controls/RadioButton.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,100A1840,120,?AddToMap@RadioButton@vgui2@@SAXPBDP8Panel@2@AEXXZHH0H0@Z,vgui2::RadioButton::AddToMap,UNKNOWN,vgui2/controls/RadioButton.cpp,,,MATCHED,100,gameui_manual.csv,
-gameui,100A18D0,150,,,UNKNOWN,,,,TODO,,,
-gameui,100A1966,72,,,UNKNOWN,,,,TODO,,,
-gameui,100A19AE,78,,,UNKNOWN,vgui2/controls/ImagePanel.cpp,,,TODO,,,linux: _ZN5vgui210ImagePanel13OnSizeChangedEii
-gameui,100A19FC,143,,,UNKNOWN,vgui2/controls/ImagePanel.cpp,,,TODO,,,linux: _ZN5vgui210ImagePanel8SetImageEPNS_6IImageE
-gameui,100A1A8B,17,,,UNKNOWN,vgui2/controls/ImagePanel.cpp,,,TODO,,,linux: _ZN5vgui210ImagePanel8GetImageEv
-gameui,100A1A9C,198,,,UNKNOWN,vgui2/controls/ImagePanel.cpp,,,TODO,,,linux: _ZN5vgui210ImagePanel15PaintBackgroundEv
-gameui,100A1B62,182,,,UNKNOWN,vgui2/controls/ImagePanel.cpp,,,TODO,,,linux: _ZN5vgui210ImagePanel11GetSettingsEP9KeyValues
-gameui,100A1C18,606,,vgui2::ImagePanel::ApplySettings,ENGINE,vgui2/controls/ImagePanel.cpp,,,TODO,,linux_symbols:string:0.45,linux: _ZN5vgui210ImagePanel13ApplySettingsEP9KeyValues
-gameui,100A1E76,106,,,UNKNOWN,vgui2/controls/ImagePanel.cpp,,,TODO,,,linux: _ZN5vgui210ImagePanel19ApplySchemeSettingsEPNS_7ISchemeE
-gameui,100A1EE0,48,,vgui2::ImagePanel::GetDescription,ENGINE,vgui2/controls/ImagePanel.cpp,,,TODO,,linux_symbols:string:0.438,linux: _ZN5vgui210ImagePanel14GetDescriptionEv
-gameui,100A1F10,46,,,UNKNOWN,,,,TODO,,,
-gameui,100A1F40,19,,,UNKNOWN,,,,TODO,,,
-gameui,100A1F60,102,,,UNKNOWN,,,,TODO,,,
-gameui,100A1FD0,10,,,UNKNOWN,,,,TODO,,,
+gameui,100A18D0,150,??0ImagePanel@vgui2@@QAE@PAVPanel@1@PBD@Z,vgui2::ImagePanel::ImagePanel,UNKNOWN,vgui2/controls/ImagePanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A1966,72,??1ImagePanel@vgui2@@UAE@XZ,vgui2::ImagePanel::~ImagePanel,UNKNOWN,vgui2/controls/ImagePanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A19AE,78,?OnSizeChanged@ImagePanel@vgui2@@MAEXHH@Z,vgui2::ImagePanel::OnSizeChanged,UNKNOWN,vgui2/controls/ImagePanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui210ImagePanel13OnSizeChangedEii
+gameui,100A19FC,143,?SetImage@ImagePanel@vgui2@@UAEXPAVIImage@2@@Z,vgui2::ImagePanel::SetImage,UNKNOWN,vgui2/controls/ImagePanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui210ImagePanel8SetImageEPNS_6IImageE
+gameui,100A1A8B,17,?GetImage@ImagePanel@vgui2@@UAEPAVIImage@2@XZ,vgui2::ImagePanel::GetImage,UNKNOWN,vgui2/controls/ImagePanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui210ImagePanel8GetImageEv
+gameui,100A1A9C,198,?PaintBackground@ImagePanel@vgui2@@MAEXXZ,vgui2::ImagePanel::PaintBackground,UNKNOWN,vgui2/controls/ImagePanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui210ImagePanel15PaintBackgroundEv
+gameui,100A1B62,182,?GetSettings@ImagePanel@vgui2@@MAEXPAVKeyValues@@@Z,vgui2::ImagePanel::GetSettings,UNKNOWN,vgui2/controls/ImagePanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui210ImagePanel11GetSettingsEP9KeyValues
+gameui,100A1C18,606,?ApplySettings@ImagePanel@vgui2@@MAEXPAVKeyValues@@@Z,vgui2::ImagePanel::ApplySettings,ENGINE,vgui2/controls/ImagePanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui210ImagePanel13ApplySettingsEP9KeyValues
+gameui,100A1E76,106,?ApplySchemeSettings@ImagePanel@vgui2@@MAEXPAVIScheme@2@@Z,vgui2::ImagePanel::ApplySchemeSettings,UNKNOWN,vgui2/controls/ImagePanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui210ImagePanel19ApplySchemeSettingsEPNS_7ISchemeE
+gameui,100A1EE0,48,?GetDescription@ImagePanel@vgui2@@MAEPBDXZ,vgui2::ImagePanel::GetDescription,ENGINE,vgui2/controls/ImagePanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui210ImagePanel14GetDescriptionEv
+gameui,100A1F10,46,??_GImagePanel@vgui2@@UAEPAXI@Z,destructor',UNKNOWN,vgui2/controls/ImagePanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A1F40,19,??0ImagePanel_RegisterMap@ImagePanel@vgui2@@QAE@XZ,vgui2::ImagePanel::ImagePanel_RegisterMap::ImagePanel_RegisterMap,UNKNOWN,vgui2/controls/ImagePanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A1F60,102,?ChainToMap@ImagePanel@vgui2@@SAXXZ,vgui2::ImagePanel::ChainToMap,UNKNOWN,vgui2/controls/ImagePanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A1FD0,10,?GetPanelBaseClassName@ImagePanel@vgui2@@SAPBDXZ,vgui2::ImagePanel::GetPanelBaseClassName,UNKNOWN,vgui2/controls/ImagePanel.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,100A1FE0,284,??0Tooltip@vgui2@@QAE@PAVPanel@1@PBD@Z,vgui2::Tooltip::Tooltip,ENGINE,vgui2/controls/Tooltip.cpp,,,TODO,,gameui_manual.csv,linux: _ZN5vgui27TooltipC2EPNS_5PanelEPKc
 gameui,100A20FC,113,,,UNKNOWN,vgui2/controls/Tooltip.cpp,,,TODO,,,linux: _ZN5vgui27TooltipD2Ev
 gameui,100A216D,22,?GetText@Tooltip@vgui2@@QAEPBDXZ,vgui2::Tooltip::GetText,ENGINE,vgui2/controls/Tooltip.cpp,,,TODO,,gameui_manual.csv,linux: _ZN5vgui27Tooltip7GetTextEv
@@ -30774,22 +30774,22 @@ hw,01E3F6D0,102,?ChainToMap@AnimatingImagePanel@vgui2@@SAXXZ,vgui2::AnimatingIma
 hw,01E3F740,64,?GetMessageMap@AnimatingImagePanel@vgui2@@UAEPAUPanelMessageMap@2@XZ,vgui2::AnimatingImagePanel::GetMessageMap,ENGINE,vgui2/controls/AnimatingImagePanel.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01E3F780,10,?GetPanelClassName@AnimatingImagePanel@vgui2@@SAPBDXZ,vgui2::AnimatingImagePanel::GetPanelClassName,ENGINE,vgui2/controls/AnimatingImagePanel.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01E3F790,10,?GetPanelBaseClassName@AnimatingImagePanel@vgui2@@SAPBDXZ,vgui2::AnimatingImagePanel::GetPanelBaseClassName,ENGINE,vgui2/controls/AnimatingImagePanel.cpp,,,MATCHED,100,hw_manual.csv,
-hw,01E3F7A0,150,,,ENGINE,vgui2/controls/ImagePanel.cpp,,,TODO,,,
-hw,01E3F836,72,,,ENGINE,vgui2/controls/ImagePanel.cpp,,,TODO,,,
-hw,01E3F87E,78,,,UNKNOWN,vgui2/controls/ImagePanel.cpp,,,TODO,,,linux: _ZN5vgui210ImagePanel13OnSizeChangedEii
-hw,01E3F8CC,143,,,UNKNOWN,vgui2/controls/ImagePanel.cpp,,,TODO,,,linux: _ZN5vgui210ImagePanel8SetImageEPNS_6IImageE
-hw,01E3F95B,17,,,UNKNOWN,vgui2/controls/ImagePanel.cpp,,,TODO,,,linux: _ZN5vgui210ImagePanel8GetImageEv
-hw,01E3F96C,198,,,UNKNOWN,vgui2/controls/ImagePanel.cpp,,,TODO,,,linux: _ZN5vgui210ImagePanel15PaintBackgroundEv
-hw,01E3FA32,182,,,UNKNOWN,vgui2/controls/ImagePanel.cpp,,,TODO,,,linux: _ZN5vgui210ImagePanel11GetSettingsEP9KeyValues
-hw,01E3FAE8,606,,vgui2::ImagePanel::ApplySettings,ENGINE,vgui2/controls/ImagePanel.cpp,,,TODO,,linux_symbols:string:0.45,
-hw,01E3FD46,106,,,UNKNOWN,vgui2/controls/ImagePanel.cpp,,,TODO,,,linux: _ZN5vgui210ImagePanel19ApplySchemeSettingsEPNS_7ISchemeE
-hw,01E3FDB0,48,,vgui2::ImagePanel::GetDescription,ENGINE,vgui2/controls/ImagePanel.cpp,,,TODO,,linux_symbols:string:0.417,
-hw,01E3FDE0,46,,,ENGINE,vgui2/controls/ImagePanel.cpp,,,TODO,,,
-hw,01E3FE10,19,,,ENGINE,vgui2/controls/ImagePanel.cpp,,,TODO,,,
-hw,01E3FE30,102,,,ENGINE,vgui2/controls/ImagePanel.cpp,,,TODO,,,
-hw,01E3FEA0,64,,,ENGINE,vgui2/controls/ImagePanel.cpp,,,TODO,,,
-hw,01E3FEE0,10,,,ENGINE,vgui2/controls/ImagePanel.cpp,,,TODO,,,
-hw,01E3FEF0,10,,,ENGINE,vgui2/controls/ImagePanel.cpp,,,TODO,,,
+hw,01E3F7A0,150,??0ImagePanel@vgui2@@QAE@PAVPanel@1@PBD@Z,vgui2::ImagePanel::ImagePanel,ENGINE,vgui2/controls/ImagePanel.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3F836,72,??1ImagePanel@vgui2@@UAE@XZ,vgui2::ImagePanel::~ImagePanel,ENGINE,vgui2/controls/ImagePanel.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3F87E,78,?OnSizeChanged@ImagePanel@vgui2@@MAEXHH@Z,vgui2::ImagePanel::OnSizeChanged,UNKNOWN,vgui2/controls/ImagePanel.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui210ImagePanel13OnSizeChangedEii
+hw,01E3F8CC,143,?SetImage@ImagePanel@vgui2@@UAEXPAVIImage@2@@Z,vgui2::ImagePanel::SetImage,UNKNOWN,vgui2/controls/ImagePanel.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui210ImagePanel8SetImageEPNS_6IImageE
+hw,01E3F95B,17,?GetImage@ImagePanel@vgui2@@UAEPAVIImage@2@XZ,vgui2::ImagePanel::GetImage,UNKNOWN,vgui2/controls/ImagePanel.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui210ImagePanel8GetImageEv
+hw,01E3F96C,198,?PaintBackground@ImagePanel@vgui2@@MAEXXZ,vgui2::ImagePanel::PaintBackground,UNKNOWN,vgui2/controls/ImagePanel.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui210ImagePanel15PaintBackgroundEv
+hw,01E3FA32,182,?GetSettings@ImagePanel@vgui2@@MAEXPAVKeyValues@@@Z,vgui2::ImagePanel::GetSettings,UNKNOWN,vgui2/controls/ImagePanel.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui210ImagePanel11GetSettingsEP9KeyValues
+hw,01E3FAE8,606,?ApplySettings@ImagePanel@vgui2@@MAEXPAVKeyValues@@@Z,vgui2::ImagePanel::ApplySettings,ENGINE,vgui2/controls/ImagePanel.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3FD46,106,?ApplySchemeSettings@ImagePanel@vgui2@@MAEXPAVIScheme@2@@Z,vgui2::ImagePanel::ApplySchemeSettings,UNKNOWN,vgui2/controls/ImagePanel.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui210ImagePanel19ApplySchemeSettingsEPNS_7ISchemeE
+hw,01E3FDB0,48,?GetDescription@ImagePanel@vgui2@@MAEPBDXZ,vgui2::ImagePanel::GetDescription,ENGINE,vgui2/controls/ImagePanel.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3FDE0,46,??_GImagePanel@vgui2@@UAEPAXI@Z,destructor',ENGINE,vgui2/controls/ImagePanel.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3FE10,19,??0ImagePanel_RegisterMap@ImagePanel@vgui2@@QAE@XZ,vgui2::ImagePanel::ImagePanel_RegisterMap::ImagePanel_RegisterMap,ENGINE,vgui2/controls/ImagePanel.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3FE30,102,?ChainToMap@ImagePanel@vgui2@@SAXXZ,vgui2::ImagePanel::ChainToMap,ENGINE,vgui2/controls/ImagePanel.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3FEA0,64,?GetMessageMap@ImagePanel@vgui2@@UAEPAUPanelMessageMap@2@XZ,vgui2::ImagePanel::GetMessageMap,ENGINE,vgui2/controls/ImagePanel.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3FEE0,10,?GetPanelClassName@ImagePanel@vgui2@@SAPBDXZ,vgui2::ImagePanel::GetPanelClassName,ENGINE,vgui2/controls/ImagePanel.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3FEF0,10,?GetPanelBaseClassName@ImagePanel@vgui2@@SAPBDXZ,vgui2::ImagePanel::GetPanelBaseClassName,ENGINE,vgui2/controls/ImagePanel.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01E3FF00,83,??0ToggleButton@vgui2@@QAE@PAVPanel@1@PBD1@Z,vgui2::ToggleButton::ToggleButton,ENGINE,vgui2/controls/ToggleButton.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01E3FF53,31,?OnMouseDoublePressed@ToggleButton@vgui2@@MAEXW4MouseCode@2@@Z,vgui2::ToggleButton::OnMouseDoublePressed,UNKNOWN,vgui2/controls/ToggleButton.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui212ToggleButton20OnMouseDoublePressedENS_9MouseCodeE
 hw,01E3FF72,79,?GetButtonFgColor@ToggleButton@vgui2@@MAE?AVColor@@XZ,vgui2::ToggleButton::GetButtonFgColor,UNKNOWN,vgui2/controls/ToggleButton.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui212ToggleButton16GetButtonFgColorEv

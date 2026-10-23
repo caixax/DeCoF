@@ -2781,6 +2781,18 @@
           ]
         },
         {
+          "name": "vgui2/controls/ImagePanel",
+          "source": "src/vgui2/controls/ImagePanel.cpp",
+          "functions_file": "tools/units/hw_vgui2_controls_ImagePanel.txt",
+          "includes": [
+            "src/gameui",
+            "src/public",
+            "src/common",
+            "src/engine",
+            "src/pm_shared"
+          ]
+        },
+        {
           "name": "engine/net_api",
           "source": "src/engine_hw/net_api.c",
           "functions_file": "tools/units/hw_engine_net_api.txt"
@@ -3469,6 +3481,11 @@
           "name": "vgui2/controls/URLLabel",
           "source": "src/vgui2/controls/URLLabel.cpp",
           "functions_file": "tools/units/gameui_vgui2_controls_URLLabel.txt"
+        },
+        {
+          "name": "vgui2/controls/ImagePanel",
+          "source": "src/vgui2/controls/ImagePanel.cpp",
+          "functions_file": "tools/units/gameui_vgui2_controls_ImagePanel.txt"
         },
         {
           "name": "public/utlsymbol",
