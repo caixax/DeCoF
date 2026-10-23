@@ -3289,6 +3289,11 @@
           "functions_file": "tools/units/hw_engine_bitmap_win.txt"
         },
         {
+          "name": "engine/voice_mixer_controls_openal",
+          "source": "src/engine_hw/voice_mixer_controls_openal.cpp",
+          "functions_file": "tools/units/hw_engine_voice_mixer_controls_openal.txt"
+        },
+        {
           "name": "engine/l_studio",
           "source": "src/engine_hw/l_studio.c",
           "functions_file": "tools/units/hw_engine_l_studio.txt"

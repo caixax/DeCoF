@@ -28086,7 +28086,7 @@ hw,01DD7817,1040,_SV_WriteClientdataToMessage,SV_WriteClientdataToMessage,ENGINE
 hw,01DD7C27,1160,_SV_WriteSpawn,SV_WriteSpawn,ENGINE,engine/sv_main.c,,,MATCHED,100,linux_symbols:string:0.769,
 hw,01DD80AF,180,_SV_SendUserReg,SV_SendUserReg,ENGINE,engine/sv_main.c,,,MATCHED,100,,
 hw,01DD8163,897,_SV_New_f,SV_New_f,ENGINE,engine/sv_main.c,,,MATCHED,100,linux_symbols:string:0.84,
-hw,01DD84E4,198,_SV_SendRes_f,SV_SendRes_f,ENGINE,engine/sv_main.c,,,EQUIVALENT,98.30,linux_symbols:string:0.766,"EQUIVALENT: same code and control flow; the host_client->m_sendrescount increment gets ecx/edx/eax in ours and eax/ecx/edx in retail, and the shift carries through the rest of the function (about 15 condition and increment variants tried)"
+hw,01DD84E4,198,_SV_SendRes_f,SV_SendRes_f,ENGINE,engine/sv_main.c,,,EQUIVALENT,98.30,linux_symbols:string:0.766,"EQUIVALENT: same code and control flow; the host_client->m_sendrescount increment gets ecx/edx/eax in ours and eax/ecx/edx in retail, and the shift carries through the rest of the function (about 20 condition and increment variants tried). Linux hw.so has 'if ( svs.maxclients > 1 && host_client->m_sendrescount > 1 ) return;' before the increment; written as an empty if it moves the registers by one step, an empty if that reads two host_client members (for example the same m_sendrescount test twice) gives 100%, so 2013 probably had a removed check with two host_client accesses there"
 hw,01DD85AA,349,_SV_Spawn_f,SV_Spawn_f,ENGINE,engine/sv_main.c,,,MATCHED,100,linux_symbols:string:0.716,
 hw,01DD8707,374,_SV_CheckVoiceChanges,,UNKNOWN,guess:engine/sv_main.c,,,MATCHED,100,hw_manual.csv,
 hw,01DD887D,276,_SV_CheckUpdateRate,SV_CheckUpdateRate,ENGINE,engine/sv_main.c,,,MATCHED,100,linux_symbols:string:0.778,
