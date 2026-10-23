@@ -101,7 +101,7 @@ DECLARE_INTERFACE_( IDXMgr_guess, IUnknown )
 	STDMETHOD( Unknown38_guess )( THIS ) PURE;
 	STDMETHOD( Unknown3C_guess )( THIS ) PURE;
 	STDMETHOD( GetDirectDraw_guess )( THIS_ LPDIRECTDRAW4 *ppDD ) PURE;
-	STDMETHOD( Unknown44_guess )( THIS ) PURE;
+	STDMETHOD( GetPrimarySurface_guess )( THIS_ LPDIRECTDRAWSURFACE4 *ppDDS ) PURE;
 	STDMETHOD( Unknown48_guess )( THIS ) PURE;
 	STDMETHOD( Unknown4C_guess )( THIS ) PURE;
 	STDMETHOD( Unknown50_guess )( THIS ) PURE;
@@ -148,9 +148,8 @@ template <class T> struct StackNode_guess
 	T					m_data_guess;
 	StackNode_guess<T>	*m_next_guess;
 
-	StackNode_guess( StackNode_guess<T> **head, const T &data )
+	StackNode_guess( StackNode_guess<T> **head, const T &data ) : m_data_guess( data )
 	{
-		m_data_guess = data;
 		m_next_guess = *head;
 		*head = this;
 	}
@@ -219,8 +218,8 @@ struct Globals_guess
 	int					m_pcnt_guess;
 	int					m_icnt_guess;
 	int					m_nfv_guess;
-	DWORD				m_winWidth_guess;
-	DWORD				m_winHeight_guess;
+	int					m_winWidth_guess;
+	int					m_winHeight_guess;
 	HWND				m_hwnd_guess;
 	HDC					m_hdc_guess;
 	IDXMgr_guess		*m_pDXMgr_guess;
@@ -1586,84 +1585,84 @@ void Resize_guess( DWORD dwWidth, DWORD dwHeight, const DWORD *lpdwCanon, DWORD 
 
 void CanonTo8888_guess( const RECT &rect, const DWORD *lpdwCanon, const DDSURFACEDESC2 &ddsd )
 {
-	int		k_guess, x_guess, y_guess, j_guess;
-	LPBYTE	lpSurf_guess = (LPBYTE)ddsd.lpSurface;
+	int		k_guess, col_guess, row_guess, w_guess;
+	LPBYTE	pSurf_guess = (LPBYTE)ddsd.lpSurface;
 
-	for ( y_guess = rect.top, k_guess = 0; y_guess < rect.bottom; y_guess++, lpSurf_guess += ddsd.lPitch )
+	for ( row_guess = rect.top, k_guess = 0; row_guess < rect.bottom; row_guess++, pSurf_guess += ddsd.lPitch )
 	{
-		for ( x_guess = rect.left, j_guess = 0; x_guess < rect.right; x_guess++, k_guess++, j_guess++ )
+		for ( col_guess = rect.left, w_guess = 0; col_guess < rect.right; col_guess++, k_guess++, w_guess++ )
 		{
-			( (LPDWORD)lpSurf_guess )[ j_guess ] = ( ( lpdwCanon[ k_guess ] & ddsd.ddpfPixelFormat.dwRBitMask ) >> 16 ) | ( lpdwCanon[ k_guess ] & ddsd.ddpfPixelFormat.dwGBitMask ) | ( ( lpdwCanon[ k_guess ] & ddsd.ddpfPixelFormat.dwBBitMask ) << 16 ) | ( lpdwCanon[ k_guess ] & ddsd.ddpfPixelFormat.dwRGBAlphaBitMask );
+			( (LPDWORD)pSurf_guess )[ w_guess ] = ( ( lpdwCanon[ k_guess ] & ddsd.ddpfPixelFormat.dwRBitMask ) >> 16 ) | ( lpdwCanon[ k_guess ] & ddsd.ddpfPixelFormat.dwGBitMask ) | ( ( lpdwCanon[ k_guess ] & ddsd.ddpfPixelFormat.dwBBitMask ) << 16 ) | ( lpdwCanon[ k_guess ] & ddsd.ddpfPixelFormat.dwRGBAlphaBitMask );
 		}
 	}
 }
 
 void CanonTo565_guess( const RECT &rect, const DWORD *lpdwCanon, const DDSURFACEDESC2 &ddsd )
 {
-	int		k_guess, x_guess, y_guess, j_guess;
-	LPBYTE	lpSurf_guess = (LPBYTE)ddsd.lpSurface;
+	int		k_guess, col_guess, row_guess, w_guess;
+	LPBYTE	pSurf_guess = (LPBYTE)ddsd.lpSurface;
 
-	for ( y_guess = rect.top, k_guess = 0; y_guess < rect.bottom; y_guess++, lpSurf_guess += ddsd.lPitch )
+	for ( row_guess = rect.top, k_guess = 0; row_guess < rect.bottom; row_guess++, pSurf_guess += ddsd.lPitch )
 	{
-		for ( x_guess = rect.left, j_guess = 0; x_guess < rect.right; x_guess++, k_guess++, j_guess++ )
+		for ( col_guess = rect.left, w_guess = 0; col_guess < rect.right; col_guess++, k_guess++, w_guess++ )
 		{
-			( (LPWORD)lpSurf_guess )[ j_guess ] = (WORD)( ( ( lpdwCanon[ k_guess ] & 0xF8 ) << 8 ) | ( ( lpdwCanon[ k_guess ] & 0xFC00 ) >> 5 ) | ( ( lpdwCanon[ k_guess ] & 0xF80000 ) >> 19 ) );
+			( (LPWORD)pSurf_guess )[ w_guess ] = (WORD)( ( ( lpdwCanon[ k_guess ] & 0xF8 ) << 8 ) | ( ( lpdwCanon[ k_guess ] & 0xFC00 ) >> 5 ) | ( ( lpdwCanon[ k_guess ] & 0xF80000 ) >> 19 ) );
 		}
 	}
 }
 
 void CanonTo555_guess( const RECT &rect, const DWORD *lpdwCanon, const DDSURFACEDESC2 &ddsd )
 {
-	int		k_guess, x_guess, y_guess, j_guess;
-	LPBYTE	lpSurf_guess = (LPBYTE)ddsd.lpSurface;
+	int		k_guess, col_guess, row_guess, w_guess;
+	LPBYTE	pSurf_guess = (LPBYTE)ddsd.lpSurface;
 
-	for ( y_guess = rect.top, k_guess = 0; y_guess < rect.bottom; y_guess++, lpSurf_guess += ddsd.lPitch )
+	for ( row_guess = rect.top, k_guess = 0; row_guess < rect.bottom; row_guess++, pSurf_guess += ddsd.lPitch )
 	{
-		for ( x_guess = rect.left, j_guess = 0; x_guess < rect.right; x_guess++, k_guess++, j_guess++ )
+		for ( col_guess = rect.left, w_guess = 0; col_guess < rect.right; col_guess++, k_guess++, w_guess++ )
 		{
-			( (LPWORD)lpSurf_guess )[ j_guess ] = (WORD)( ( ( lpdwCanon[ k_guess ] & 0xF8 ) << 7 ) | ( ( lpdwCanon[ k_guess ] & 0xF800 ) >> 6 ) | ( ( lpdwCanon[ k_guess ] & 0xF80000 ) >> 19 ) );
+			( (LPWORD)pSurf_guess )[ w_guess ] = (WORD)( ( ( lpdwCanon[ k_guess ] & 0xF8 ) << 7 ) | ( ( lpdwCanon[ k_guess ] & 0xF800 ) >> 6 ) | ( ( lpdwCanon[ k_guess ] & 0xF80000 ) >> 19 ) );
 		}
 	}
 }
 
 void CanonTo5551_guess( const RECT &rect, const DWORD *lpdwCanon, const DDSURFACEDESC2 &ddsd )
 {
-	int		k_guess, x_guess, y_guess, j_guess;
-	LPBYTE	lpSurf_guess = (LPBYTE)ddsd.lpSurface;
+	int		k_guess, col_guess, row_guess, w_guess;
+	LPBYTE	pSurf_guess = (LPBYTE)ddsd.lpSurface;
 
-	for ( y_guess = rect.top, k_guess = 0; y_guess < rect.bottom; y_guess++, lpSurf_guess += ddsd.lPitch )
+	for ( row_guess = rect.top, k_guess = 0; row_guess < rect.bottom; row_guess++, pSurf_guess += ddsd.lPitch )
 	{
-		for ( x_guess = rect.left, j_guess = 0; x_guess < rect.right; x_guess++, k_guess++, j_guess++ )
+		for ( col_guess = rect.left, w_guess = 0; col_guess < rect.right; col_guess++, k_guess++, w_guess++ )
 		{
-			( (LPWORD)lpSurf_guess )[ j_guess ] = (WORD)( ( ( lpdwCanon[ k_guess ] & 0xF8 ) << 7 ) | ( ( lpdwCanon[ k_guess ] & 0xF800 ) >> 6 ) | ( ( lpdwCanon[ k_guess ] & 0xF80000 ) >> 19 ) | ( ( lpdwCanon[ k_guess ] & 0x80000000 ) >> 16 ) );
+			( (LPWORD)pSurf_guess )[ w_guess ] = (WORD)( ( ( lpdwCanon[ k_guess ] & 0xF8 ) << 7 ) | ( ( lpdwCanon[ k_guess ] & 0xF800 ) >> 6 ) | ( ( lpdwCanon[ k_guess ] & 0xF80000 ) >> 19 ) | ( ( lpdwCanon[ k_guess ] & 0x80000000 ) >> 16 ) );
 		}
 	}
 }
 
 void CanonTo4444_guess( const RECT &rect, const DWORD *lpdwCanon, const DDSURFACEDESC2 &ddsd )
 {
-	int		k_guess, x_guess, y_guess, j_guess;
-	LPBYTE	lpSurf_guess = (LPBYTE)ddsd.lpSurface;
+	int		k_guess, col_guess, row_guess, w_guess;
+	LPBYTE	pSurf_guess = (LPBYTE)ddsd.lpSurface;
 
-	for ( y_guess = rect.top, k_guess = 0; y_guess < rect.bottom; y_guess++, lpSurf_guess += ddsd.lPitch )
+	for ( row_guess = rect.top, k_guess = 0; row_guess < rect.bottom; row_guess++, pSurf_guess += ddsd.lPitch )
 	{
-		for ( x_guess = rect.left, j_guess = 0; x_guess < rect.right; x_guess++, k_guess++, j_guess++ )
+		for ( col_guess = rect.left, w_guess = 0; col_guess < rect.right; col_guess++, k_guess++, w_guess++ )
 		{
-			( (LPWORD)lpSurf_guess )[ j_guess ] = (WORD)( ( ( lpdwCanon[ k_guess ] & 0xF0 ) << 4 ) | ( ( lpdwCanon[ k_guess ] & 0xF000 ) >> 8 ) | ( ( lpdwCanon[ k_guess ] & 0xF00000 ) >> 20 ) | ( ( lpdwCanon[ k_guess ] & 0xF0000000 ) >> 16 ) );
+			( (LPWORD)pSurf_guess )[ w_guess ] = (WORD)( ( ( lpdwCanon[ k_guess ] & 0xF0 ) << 4 ) | ( ( lpdwCanon[ k_guess ] & 0xF000 ) >> 8 ) | ( ( lpdwCanon[ k_guess ] & 0xF00000 ) >> 20 ) | ( ( lpdwCanon[ k_guess ] & 0xF0000000 ) >> 16 ) );
 		}
 	}
 }
 
 void CanonTo8_guess( const RECT &rect, const DWORD *lpdwCanon, const DDSURFACEDESC2 &ddsd )
 {
-	int		k_guess, x_guess, y_guess, j_guess;
-	LPBYTE	lpSurf_guess = (LPBYTE)ddsd.lpSurface;
+	int		k_guess, col_guess, row_guess, w_guess;
+	LPBYTE	pSurf_guess = (LPBYTE)ddsd.lpSurface;
 
-	for ( y_guess = rect.top, k_guess = 0; y_guess < rect.bottom; y_guess++, lpSurf_guess += ddsd.lPitch )
+	for ( row_guess = rect.top, k_guess = 0; row_guess < rect.bottom; row_guess++, pSurf_guess += ddsd.lPitch )
 	{
-		for ( x_guess = rect.left, j_guess = 0; x_guess < rect.right; x_guess++, k_guess++, j_guess++ )
+		for ( col_guess = rect.left, w_guess = 0; col_guess < rect.right; col_guess++, k_guess++, w_guess++ )
 		{
-			lpSurf_guess[ j_guess ] = (BYTE)( lpdwCanon[ k_guess ] & 0xFF );
+			pSurf_guess[ w_guess ] = (BYTE)( lpdwCanon[ k_guess ] & 0xFF );
 		}
 	}
 }
@@ -1716,7 +1715,7 @@ void LoadSurface_guess( LPDIRECTDRAWSURFACE4 lpDDS, DWORD dwFormat, DWORD dwWidt
 	lpDDS->Unlock( NULL );
 }
 
-HRESULT LoadSubSurface( LPDIRECTDRAWSURFACE4 lpDDS, DWORD dwFormat, DWORD dwWidth, DWORD dwHeight, const void *pixels, RECT *subimage )
+HRESULT LoadSubSurface_guess( LPDIRECTDRAWSURFACE4 lpDDS, DWORD dwFormat, DWORD dwWidth, DWORD dwHeight, const void *pixels, RECT *subimage )
 {
 	DDSURFACEDESC2	ddsd;
 	HRESULT			ddrval;
@@ -1880,19 +1879,19 @@ void APIENTRY glBegin (GLenum mode)
 	g_guess.m_nfv_guess = 0;
 	if ( g_guess.m_texturing_guess == TRUE && g_guess.m_updatestage_guess == FALSE )
 	{
-		TexInfo_guess		&ti_guess = g_guess.m_tex_guess[ g_guess.m_curtgt_guess[ 0 ] ];
-		LPDIRECT3DTEXTURE2	block_guess = ti_guess.m_block_guess;
+		TexInfo_guess		&texInfo_guess = g_guess.m_tex_guess[ g_guess.m_curtgt_guess[ 0 ] ];
+		LPDIRECT3DTEXTURE2	block_guess = texInfo_guess.m_block_guess;
 
-		SetTextureStageState_guess( 0, D3DTSS_ADDRESSU, ti_guess.m_addu_guess );
-		SetTextureStageState_guess( 0, D3DTSS_ADDRESSV, ti_guess.m_addv_guess );
-		SetTextureStageState_guess( 0, D3DTSS_MAGFILTER, ti_guess.m_magmode_guess );
-		SetTextureStageState_guess( 0, D3DTSS_MINFILTER, ti_guess.m_minmode_guess );
-		SetTextureStageState_guess( 0, D3DTSS_MIPFILTER, ti_guess.m_mipmode_guess );
+		SetTextureStageState_guess( 0, D3DTSS_ADDRESSU, texInfo_guess.m_addu_guess );
+		SetTextureStageState_guess( 0, D3DTSS_ADDRESSV, texInfo_guess.m_addv_guess );
+		SetTextureStageState_guess( 0, D3DTSS_MAGFILTER, texInfo_guess.m_magmode_guess );
+		SetTextureStageState_guess( 0, D3DTSS_MINFILTER, texInfo_guess.m_minmode_guess );
+		SetTextureStageState_guess( 0, D3DTSS_MIPFILTER, texInfo_guess.m_mipmode_guess );
 		SetTexture_guess( 0, block_guess );
 		switch ( g_guess.m_blendmode_guess[ 0 ] )
 		{
 		case GL_REPLACE:
-			switch ( ti_guess.m_internalformat_guess )
+			switch ( texInfo_guess.m_internalformat_guess )
 			{
 			case 1:
 			case 3:
@@ -1919,7 +1918,7 @@ void APIENTRY glBegin (GLenum mode)
 			}
 			break;
 		case GL_MODULATE:
-			switch ( ti_guess.m_internalformat_guess )
+			switch ( texInfo_guess.m_internalformat_guess )
 			{
 			case 1:
 			case 3:
@@ -1946,7 +1945,7 @@ void APIENTRY glBegin (GLenum mode)
 			}
 			break;
 		case GL_DECAL:
-			switch ( ti_guess.m_internalformat_guess )
+			switch ( texInfo_guess.m_internalformat_guess )
 			{
 			case 3:
 				SetTextureStageState_guess( 0, D3DTSS_COLORARG1, D3DTA_TEXTURE );
@@ -1972,7 +1971,7 @@ void APIENTRY glBegin (GLenum mode)
 			}
 			break;
 		case GL_BLEND:
-			switch ( ti_guess.m_internalformat_guess )
+			switch ( texInfo_guess.m_internalformat_guess )
 			{
 			case 1:
 			case 3:
@@ -2132,69 +2131,69 @@ void APIENTRY glBindTexture (GLenum target, GLuint texture)
 
 void APIENTRY glBlendFunc (GLenum sfactor, GLenum dfactor)
 {
-	int src_guess = -1, dst_guess = -1;
+	int srcmode_guess = -1, dstmode_guess = -1;
 
 	switch ( sfactor )
 	{
 	case GL_ZERO:
-		src_guess = D3DBLEND_ZERO;
+		srcmode_guess = D3DBLEND_ZERO;
 		break;
 	case GL_ONE:
-		src_guess = D3DBLEND_ONE;
+		srcmode_guess = D3DBLEND_ONE;
 		break;
 	case GL_DST_COLOR:
-		src_guess = D3DBLEND_DESTCOLOR;
+		srcmode_guess = D3DBLEND_DESTCOLOR;
 		break;
 	case GL_ONE_MINUS_DST_COLOR:
-		src_guess = D3DBLEND_INVDESTCOLOR;
+		srcmode_guess = D3DBLEND_INVDESTCOLOR;
 		break;
 	case GL_SRC_ALPHA:
-		src_guess = D3DBLEND_SRCALPHA;
+		srcmode_guess = D3DBLEND_SRCALPHA;
 		break;
 	case GL_ONE_MINUS_SRC_ALPHA:
-		src_guess = D3DBLEND_INVSRCALPHA;
+		srcmode_guess = D3DBLEND_INVSRCALPHA;
 		break;
 	case GL_DST_ALPHA:
-		src_guess = D3DBLEND_DESTALPHA;
+		srcmode_guess = D3DBLEND_DESTALPHA;
 		break;
 	case GL_ONE_MINUS_DST_ALPHA:
-		src_guess = D3DBLEND_INVDESTALPHA;
+		srcmode_guess = D3DBLEND_INVDESTALPHA;
 		break;
 	case GL_SRC_ALPHA_SATURATE:
-		src_guess = D3DBLEND_SRCALPHASAT;
+		srcmode_guess = D3DBLEND_SRCALPHASAT;
 		break;
 	}
 	switch ( dfactor )
 	{
 	case GL_ZERO:
-		dst_guess = D3DBLEND_ZERO;
+		dstmode_guess = D3DBLEND_ZERO;
 		break;
 	case GL_ONE:
-		dst_guess = D3DBLEND_ONE;
+		dstmode_guess = D3DBLEND_ONE;
 		break;
 	case GL_SRC_COLOR:
-		dst_guess = D3DBLEND_SRCCOLOR;
+		dstmode_guess = D3DBLEND_SRCCOLOR;
 		break;
 	case GL_ONE_MINUS_SRC_COLOR:
-		dst_guess = D3DBLEND_INVSRCCOLOR;
+		dstmode_guess = D3DBLEND_INVSRCCOLOR;
 		break;
 	case GL_SRC_ALPHA:
-		dst_guess = D3DBLEND_SRCALPHA;
+		dstmode_guess = D3DBLEND_SRCALPHA;
 		break;
 	case GL_ONE_MINUS_SRC_ALPHA:
-		dst_guess = D3DBLEND_INVSRCALPHA;
+		dstmode_guess = D3DBLEND_INVSRCALPHA;
 		break;
 	case GL_DST_ALPHA:
-		dst_guess = D3DBLEND_DESTALPHA;
+		dstmode_guess = D3DBLEND_DESTALPHA;
 		break;
 	case GL_ONE_MINUS_DST_ALPHA:
-		dst_guess = D3DBLEND_INVDESTALPHA;
+		dstmode_guess = D3DBLEND_INVDESTALPHA;
 		break;
 	}
-	if ( src_guess >= 0 )
-		SetRenderState_guess( D3DRENDERSTATE_SRCBLEND, src_guess );
-	if ( dst_guess >= 0 )
-		SetRenderState_guess( D3DRENDERSTATE_DESTBLEND, dst_guess );
+	if ( srcmode_guess >= 0 )
+		SetRenderState_guess( D3DRENDERSTATE_SRCBLEND, srcmode_guess );
+	if ( dstmode_guess >= 0 )
+		SetRenderState_guess( D3DRENDERSTATE_DESTBLEND, dstmode_guess );
 }
 
 void APIENTRY glClear (GLbitfield mask)
@@ -2689,12 +2688,18 @@ void APIENTRY glEnd (void)
 
 void APIENTRY glFogf (GLenum pname, GLfloat param)
 {
-	if ( pname == GL_FOG_DENSITY )
-		SetRenderState_guess( D3DRENDERSTATE_FOGTABLEDENSITY, *(DWORD *)&param );
-	else if ( pname == GL_FOG_START )
+	switch ( pname )
+	{
+	case GL_FOG_START:
 		SetRenderState_guess( D3DRENDERSTATE_FOGTABLESTART, *(DWORD *)&param );
-	else if ( pname == GL_FOG_END )
+		break;
+	case GL_FOG_END:
 		SetRenderState_guess( D3DRENDERSTATE_FOGTABLEEND, *(DWORD *)&param );
+		break;
+	case GL_FOG_DENSITY:
+		SetRenderState_guess( D3DRENDERSTATE_FOGTABLEDENSITY, *(DWORD *)&param );
+		break;
+	}
 }
 
 void APIENTRY glFogfv (GLenum pname, const GLfloat *params)
@@ -2709,14 +2714,21 @@ void APIENTRY glFogi (GLenum pname, GLint param)
 {
 	if ( pname == GL_FOG_MODE )
 	{
-		if ( param == GL_EXP )
-			SetRenderState_guess( D3DRENDERSTATE_FOGTABLEMODE, D3DFOG_EXP );
-		else if ( param == GL_EXP2 )
-			SetRenderState_guess( D3DRENDERSTATE_FOGTABLEMODE, D3DFOG_EXP2 );
-		else if ( param == GL_LINEAR )
+		switch ( param )
+		{
+		case GL_LINEAR:
 			SetRenderState_guess( D3DRENDERSTATE_FOGTABLEMODE, D3DFOG_LINEAR );
-		else
+			break;
+		case GL_EXP:
+			SetRenderState_guess( D3DRENDERSTATE_FOGTABLEMODE, D3DFOG_EXP );
+			break;
+		case GL_EXP2:
+			SetRenderState_guess( D3DRENDERSTATE_FOGTABLEMODE, D3DFOG_EXP2 );
+			break;
+		default:
 			SetRenderState_guess( D3DRENDERSTATE_FOGTABLEMODE, D3DFOG_NONE );
+			break;
+		}
 	}
 }
 
@@ -2746,10 +2758,15 @@ void APIENTRY glFrustum (GLdouble left, GLdouble right, GLdouble bottom, GLdoubl
 
 void APIENTRY glGetFloatv (GLenum pname, GLfloat *params)
 {
-	if ( pname == GL_MODELVIEW_MATRIX )
+	switch ( pname )
+	{
+	case GL_MODELVIEW_MATRIX:
 		g_guess.m_pD3DDev_guess->GetTransform( D3DTRANSFORMSTATE_WORLD, (LPD3DMATRIX)params );
-	else if ( pname == GL_PROJECTION_MATRIX )
+		break;
+	case GL_PROJECTION_MATRIX:
 		g_guess.m_pD3DDev_guess->GetTransform( D3DTRANSFORMSTATE_PROJECTION, (LPD3DMATRIX)params );
+		break;
+	}
 }
 
 DDDEVICEIDENTIFIER	g_ddDeviceId_guess;
@@ -2842,12 +2859,18 @@ void APIENTRY glPolygonMode (GLenum face, GLenum mode)
 {
 	int fillmode_guess = -1;
 
-	if ( mode == GL_POINT )
+	switch ( mode )
+	{
+	case GL_POINT:
 		fillmode_guess = D3DFILL_POINT;
-	else if ( mode == GL_LINE )
+		break;
+	case GL_LINE:
 		fillmode_guess = D3DFILL_WIREFRAME;
-	else if ( mode == GL_FILL )
+		break;
+	case GL_FILL:
 		fillmode_guess = D3DFILL_SOLID;
+		break;
+	}
 	if ( fillmode_guess >= 0 )
 		SetRenderState_guess( D3DRENDERSTATE_FILLMODE, fillmode_guess );
 }
@@ -2895,75 +2918,219 @@ void APIENTRY glPushMatrix (void)
 		g_guess.m_matrixStack_guess[ 1 ].Push_guess( m );
 }
 
+void APIENTRY glReadPixels (GLint x, GLint y, GLsizei width, GLsizei height, GLenum format, GLenum type, GLvoid *pixels)
+{
+	DDSURFACEDESC2			surfdesc_guess;
+	DWORD					dwMask_guess;
+	int						RRShift_guess, RLShift_guess;
+	int						BRShift_guess, BLShift_guess;
+	int						GRShift_guess, GLShift_guess;
+	LPDIRECTDRAWSURFACE4	lpFront_guess;
+
+	g_guess.m_pDXMgr_guess->GetPrimarySurface_guess( &lpFront_guess );
+	Q_memset( &surfdesc_guess, 0, sizeof( DDSURFACEDESC2 ) );
+	surfdesc_guess.dwSize = sizeof( DDSURFACEDESC2 );
+	if ( g_guess.m_fullscreen_guess )
+	{
+		HRESULT result_guess = lpFront_guess->Lock( NULL, &surfdesc_guess, DDLOCK_WAIT | DDLOCK_READONLY, NULL );
+		if ( result_guess != DD_OK )
+		{
+			OutputDebugString( "Wrapper: Lock on primary failed" );
+			lpFront_guess->Release();
+			return;
+		}
+	}
+	else
+	{
+		RECT	rect_guess;
+		POINT	ptTL_guess, ptBR_guess;
+		HRESULT	result_guess;
+
+		ptTL_guess.x = 0;
+		ptTL_guess.y = 0;
+		ClientToScreen( g_guess.m_hwnd_guess, &ptTL_guess );
+		ptBR_guess.x = g_guess.m_winWidth_guess;
+		ptBR_guess.y = g_guess.m_winHeight_guess;
+		ClientToScreen( g_guess.m_hwnd_guess, &ptBR_guess );
+		rect_guess.left = ptTL_guess.x;
+		rect_guess.right = ptBR_guess.x;
+		rect_guess.top = ptTL_guess.y;
+		rect_guess.bottom = ptBR_guess.y;
+		result_guess = lpFront_guess->Lock( &rect_guess, &surfdesc_guess, DDLOCK_WAIT | DDLOCK_READONLY, NULL );
+		if ( result_guess != DD_OK )
+		{
+			OutputDebugString( "Wrapper: Lock on primary failed" );
+			lpFront_guess->Release();
+			return;
+		}
+	}
+
+	// shifts that scale each color mask of the primary surface to 8 bits
+	for ( RRShift_guess = 0, dwMask_guess = surfdesc_guess.ddpfPixelFormat.dwRBitMask; !( dwMask_guess & 1 ); dwMask_guess >>= 1, RRShift_guess++ )
+		;
+	for ( RLShift_guess = 8; dwMask_guess & 1; dwMask_guess >>= 1, RLShift_guess-- )
+		;
+	for ( GRShift_guess = 0, dwMask_guess = surfdesc_guess.ddpfPixelFormat.dwGBitMask; !( dwMask_guess & 1 ); dwMask_guess >>= 1, GRShift_guess++ )
+		;
+	for ( GLShift_guess = 8; dwMask_guess & 1; dwMask_guess >>= 1, GLShift_guess-- )
+		;
+	for ( BRShift_guess = 0, dwMask_guess = surfdesc_guess.ddpfPixelFormat.dwBBitMask; !( dwMask_guess & 1 ); dwMask_guess >>= 1, BRShift_guess++ )
+		;
+	for ( BLShift_guess = 8; dwMask_guess & 1; dwMask_guess >>= 1, BLShift_guess-- )
+		;
+
+	// the window goes into pixels as bottom-up RGB rows
+	switch ( surfdesc_guess.ddpfPixelFormat.dwRGBBitCount )
+	{
+	case 16:
+		{
+			int		i, j;
+			LPBYTE	src_guess, dst_guess;
+
+			src_guess = (LPBYTE)surfdesc_guess.lpSurface;
+			dst_guess = (LPBYTE)pixels;
+			dst_guess += g_guess.m_winWidth_guess * ( g_guess.m_winHeight_guess - 1 ) * 3;
+			for ( i = 0; i < g_guess.m_winHeight_guess; i++ )
+			{
+				for ( j = 0; j < g_guess.m_winWidth_guess; j++ )
+				{
+					DWORD	rbyte_guess = ( ( ( (LPWORD)src_guess )[ j ] & surfdesc_guess.ddpfPixelFormat.dwRBitMask ) >> RRShift_guess ) << RLShift_guess;
+					DWORD	gbyte_guess = ( ( ( (LPWORD)src_guess )[ j ] & surfdesc_guess.ddpfPixelFormat.dwGBitMask ) >> GRShift_guess ) << GLShift_guess;
+					DWORD	bbyte_guess = ( ( ( (LPWORD)src_guess )[ j ] & surfdesc_guess.ddpfPixelFormat.dwBBitMask ) >> BRShift_guess ) << BLShift_guess;
+
+					*dst_guess++ = (BYTE)rbyte_guess;
+					*dst_guess++ = (BYTE)gbyte_guess;
+					*dst_guess++ = (BYTE)bbyte_guess;
+				}
+				src_guess += surfdesc_guess.lPitch;
+				dst_guess -= g_guess.m_winWidth_guess * 3 * 2;
+			}
+		}
+		break;
+	case 24:
+		{
+			int		i, j;
+			LPBYTE	src_guess, dst_guess;
+
+			src_guess = (LPBYTE)surfdesc_guess.lpSurface;
+			dst_guess = (LPBYTE)pixels;
+			dst_guess += g_guess.m_winWidth_guess * ( g_guess.m_winHeight_guess - 1 ) * 3;
+			for ( i = 0; i < g_guess.m_winHeight_guess; i++ )
+			{
+				for ( j = 0; j < g_guess.m_winWidth_guess; j++ )
+				{
+					DWORD	rbyte_guess = ( ( *(LPDWORD)( src_guess + j * 3 ) & surfdesc_guess.ddpfPixelFormat.dwRBitMask ) >> RRShift_guess ) << RLShift_guess;
+					DWORD	gbyte_guess = ( ( *(LPDWORD)( src_guess + j * 3 ) & surfdesc_guess.ddpfPixelFormat.dwGBitMask ) >> GRShift_guess ) << GLShift_guess;
+					DWORD	bbyte_guess = ( ( *(LPDWORD)( src_guess + j * 3 ) & surfdesc_guess.ddpfPixelFormat.dwBBitMask ) >> BRShift_guess ) << BLShift_guess;
+
+					*dst_guess++ = (BYTE)rbyte_guess;
+					*dst_guess++ = (BYTE)gbyte_guess;
+					*dst_guess++ = (BYTE)bbyte_guess;
+				}
+				src_guess += surfdesc_guess.lPitch;
+				dst_guess -= g_guess.m_winWidth_guess * 3 * 2;
+			}
+		}
+		break;
+	case 32:
+		{
+			int		i, j;
+			LPBYTE	src_guess, dst_guess;
+
+			src_guess = (LPBYTE)surfdesc_guess.lpSurface;
+			dst_guess = (LPBYTE)pixels;
+			dst_guess += g_guess.m_winWidth_guess * ( g_guess.m_winHeight_guess - 1 ) * 3;
+			for ( i = 0; i < g_guess.m_winHeight_guess; i++ )
+			{
+				for ( j = 0; j < g_guess.m_winWidth_guess; j++ )
+				{
+					DWORD	rbyte_guess = ( ( ( (LPDWORD)src_guess )[ j ] & surfdesc_guess.ddpfPixelFormat.dwRBitMask ) >> RRShift_guess ) << RLShift_guess;
+					DWORD	gbyte_guess = ( ( ( (LPDWORD)src_guess )[ j ] & surfdesc_guess.ddpfPixelFormat.dwGBitMask ) >> GRShift_guess ) << GLShift_guess;
+					DWORD	bbyte_guess = ( ( ( (LPDWORD)src_guess )[ j ] & surfdesc_guess.ddpfPixelFormat.dwBBitMask ) >> BRShift_guess ) << BLShift_guess;
+
+					*dst_guess++ = (BYTE)rbyte_guess;
+					*dst_guess++ = (BYTE)gbyte_guess;
+					*dst_guess++ = (BYTE)bbyte_guess;
+				}
+				src_guess += surfdesc_guess.lPitch;
+				dst_guess -= g_guess.m_winWidth_guess * 3 * 2;
+			}
+		}
+		break;
+	}
+	lpFront_guess->Release();
+	lpFront_guess->Unlock( NULL );
+}
+
 void APIENTRY glRotatef (GLfloat angle, GLfloat x, GLfloat y, GLfloat z)
 {
 	ProcessVertices_guess();
 	static double pi_guess = atan( 1.0 ) * 4.0;
-	D3DMATRIX	rot_guess;
-	double		rad_guess = angle * pi_guess / 180.0;
-	float		c_guess = (float)cos( rad_guess );
-	float		s_guess = (float)sin( rad_guess );
+	D3DMATRIX	rotmat_guess;
+	double		a_guess = angle * pi_guess / 180.0;
+	float		c_guess = (float)cos( a_guess );
+	float		sine_guess = (float)sin( a_guess );
 
 	if ( x == 1.0f )
 	{
-		rot_guess._11 = 1.0f;
-		rot_guess._21 = 0.0f;
-		rot_guess._31 = 0.0f;
-		rot_guess._41 = 0.0f;
-		rot_guess._12 = 0.0f;
-		rot_guess._22 = c_guess;
-		rot_guess._32 = -s_guess;
-		rot_guess._42 = 0.0f;
-		rot_guess._13 = 0.0f;
-		rot_guess._23 = s_guess;
-		rot_guess._33 = c_guess;
-		rot_guess._43 = 0.0f;
-		rot_guess._14 = 0.0f;
-		rot_guess._24 = 0.0f;
-		rot_guess._34 = 0.0f;
-		rot_guess._44 = 1.0f;
+		rotmat_guess._11 = 1.0f;
+		rotmat_guess._21 = 0.0f;
+		rotmat_guess._31 = 0.0f;
+		rotmat_guess._41 = 0.0f;
+		rotmat_guess._12 = 0.0f;
+		rotmat_guess._22 = c_guess;
+		rotmat_guess._32 = -sine_guess;
+		rotmat_guess._42 = 0.0f;
+		rotmat_guess._13 = 0.0f;
+		rotmat_guess._23 = sine_guess;
+		rotmat_guess._33 = c_guess;
+		rotmat_guess._43 = 0.0f;
+		rotmat_guess._14 = 0.0f;
+		rotmat_guess._24 = 0.0f;
+		rotmat_guess._34 = 0.0f;
+		rotmat_guess._44 = 1.0f;
 	}
 	else if ( y == 1.0f )
 	{
-		rot_guess._11 = c_guess;
-		rot_guess._21 = 0.0f;
-		rot_guess._31 = s_guess;
-		rot_guess._41 = 0.0f;
-		rot_guess._12 = 0.0f;
-		rot_guess._22 = 1.0f;
-		rot_guess._32 = 0.0f;
-		rot_guess._42 = 0.0f;
-		rot_guess._13 = -s_guess;
-		rot_guess._23 = 0.0f;
-		rot_guess._33 = c_guess;
-		rot_guess._43 = 0.0f;
-		rot_guess._14 = 0.0f;
-		rot_guess._24 = 0.0f;
-		rot_guess._34 = 0.0f;
-		rot_guess._44 = 1.0f;
+		rotmat_guess._11 = c_guess;
+		rotmat_guess._21 = 0.0f;
+		rotmat_guess._31 = sine_guess;
+		rotmat_guess._41 = 0.0f;
+		rotmat_guess._12 = 0.0f;
+		rotmat_guess._22 = 1.0f;
+		rotmat_guess._32 = 0.0f;
+		rotmat_guess._42 = 0.0f;
+		rotmat_guess._13 = -sine_guess;
+		rotmat_guess._23 = 0.0f;
+		rotmat_guess._33 = c_guess;
+		rotmat_guess._43 = 0.0f;
+		rotmat_guess._14 = 0.0f;
+		rotmat_guess._24 = 0.0f;
+		rotmat_guess._34 = 0.0f;
+		rotmat_guess._44 = 1.0f;
 	}
 	else if ( z == 1.0f )
 	{
-		rot_guess._11 = c_guess;
-		rot_guess._21 = -s_guess;
-		rot_guess._31 = 0.0f;
-		rot_guess._41 = 0.0f;
-		rot_guess._12 = s_guess;
-		rot_guess._22 = c_guess;
-		rot_guess._32 = 0.0f;
-		rot_guess._42 = 0.0f;
-		rot_guess._13 = 0.0f;
-		rot_guess._23 = 0.0f;
-		rot_guess._33 = 1.0f;
-		rot_guess._43 = 0.0f;
-		rot_guess._14 = 0.0f;
-		rot_guess._24 = 0.0f;
-		rot_guess._34 = 0.0f;
-		rot_guess._44 = 1.0f;
+		rotmat_guess._11 = c_guess;
+		rotmat_guess._21 = -sine_guess;
+		rotmat_guess._31 = 0.0f;
+		rotmat_guess._41 = 0.0f;
+		rotmat_guess._12 = sine_guess;
+		rotmat_guess._22 = c_guess;
+		rotmat_guess._32 = 0.0f;
+		rotmat_guess._42 = 0.0f;
+		rotmat_guess._13 = 0.0f;
+		rotmat_guess._23 = 0.0f;
+		rotmat_guess._33 = 1.0f;
+		rotmat_guess._43 = 0.0f;
+		rotmat_guess._14 = 0.0f;
+		rotmat_guess._24 = 0.0f;
+		rotmat_guess._34 = 0.0f;
+		rotmat_guess._44 = 1.0f;
 	}
 	else
 		return;
-	g_guess.m_pD3DDev_guess->MultiplyTransform( g_guess.m_matrixMode_guess, &rot_guess );
+	g_guess.m_pD3DDev_guess->MultiplyTransform( g_guess.m_matrixMode_guess, &rotmat_guess );
 }
 
 void APIENTRY glScalef (GLfloat x, GLfloat y, GLfloat z)
@@ -3000,10 +3167,12 @@ void APIENTRY glShadeModel (GLenum mode)
 
 void APIENTRY glTexCoord2f (GLfloat s, GLfloat t)
 {
-	if ( g_guess.m_tex_guess[ g_guess.m_curtgt_guess[ g_guess.m_curstage_guess ] ].m_minmode_guess == D3DTFN_POINT )
+	TexInfo_guess *ti_guess = &g_guess.m_tex_guess[ g_guess.m_curtgt_guess[ g_guess.m_curstage_guess ] ];
+
+	if ( ti_guess->m_minmode_guess == D3DTFN_POINT )
 	{
-		g_guess.m_tu_guess = (float)0.5 / (float)g_guess.m_tex_guess[ g_guess.m_curtgt_guess[ g_guess.m_curstage_guess ] ].m_dwWidth_guess + s;
-		g_guess.m_tv_guess = (float)0.5 / (float)g_guess.m_tex_guess[ g_guess.m_curtgt_guess[ g_guess.m_curstage_guess ] ].m_dwHeight_guess + t;
+		g_guess.m_tu_guess = s + 0.5 / g_guess.m_tex_guess[ g_guess.m_curtgt_guess[ g_guess.m_curstage_guess ] ].m_dwWidth_guess;
+		g_guess.m_tv_guess = t + 0.5 / g_guess.m_tex_guess[ g_guess.m_curtgt_guess[ g_guess.m_curstage_guess ] ].m_dwHeight_guess;
 	}
 	else
 	{
@@ -3029,12 +3198,6 @@ void APIENTRY glTexParameterf (GLenum target, GLenum pname, GLfloat param)
 {
 	switch ( pname )
 	{
-	case GL_TEXTURE_MAG_FILTER:
-		if ( param == GL_NEAREST )
-			g_guess.m_tex_guess[ g_guess.m_curtgt_guess[ g_guess.m_curstage_guess ] ].m_magmode_guess = D3DTFG_POINT;
-		else
-			g_guess.m_tex_guess[ g_guess.m_curtgt_guess[ g_guess.m_curstage_guess ] ].m_magmode_guess = D3DTFG_LINEAR;
-		break;
 	case GL_TEXTURE_MIN_FILTER:
 		switch ( (int)param )
 		{
@@ -3050,19 +3213,25 @@ void APIENTRY glTexParameterf (GLenum target, GLenum pname, GLfloat param)
 			g_guess.m_tex_guess[ g_guess.m_curtgt_guess[ g_guess.m_curstage_guess ] ].m_minmode_guess = D3DTFN_POINT;
 			g_guess.m_tex_guess[ g_guess.m_curtgt_guess[ g_guess.m_curstage_guess ] ].m_mipmode_guess = D3DTFP_POINT;
 			break;
-		case GL_LINEAR_MIPMAP_NEAREST:
-			g_guess.m_tex_guess[ g_guess.m_curtgt_guess[ g_guess.m_curstage_guess ] ].m_minmode_guess = D3DTFN_LINEAR;
-			g_guess.m_tex_guess[ g_guess.m_curtgt_guess[ g_guess.m_curstage_guess ] ].m_mipmode_guess = D3DTFP_POINT;
-			break;
 		case GL_NEAREST_MIPMAP_LINEAR:
 			g_guess.m_tex_guess[ g_guess.m_curtgt_guess[ g_guess.m_curstage_guess ] ].m_minmode_guess = D3DTFN_POINT;
 			g_guess.m_tex_guess[ g_guess.m_curtgt_guess[ g_guess.m_curstage_guess ] ].m_mipmode_guess = D3DTFP_LINEAR;
+			break;
+		case GL_LINEAR_MIPMAP_NEAREST:
+			g_guess.m_tex_guess[ g_guess.m_curtgt_guess[ g_guess.m_curstage_guess ] ].m_minmode_guess = D3DTFN_LINEAR;
+			g_guess.m_tex_guess[ g_guess.m_curtgt_guess[ g_guess.m_curstage_guess ] ].m_mipmode_guess = D3DTFP_POINT;
 			break;
 		case GL_LINEAR_MIPMAP_LINEAR:
 			g_guess.m_tex_guess[ g_guess.m_curtgt_guess[ g_guess.m_curstage_guess ] ].m_minmode_guess = D3DTFN_LINEAR;
 			g_guess.m_tex_guess[ g_guess.m_curtgt_guess[ g_guess.m_curstage_guess ] ].m_mipmode_guess = D3DTFP_LINEAR;
 			break;
 		}
+		break;
+	case GL_TEXTURE_MAG_FILTER:
+		if ( param == GL_NEAREST )
+			g_guess.m_tex_guess[ g_guess.m_curtgt_guess[ g_guess.m_curstage_guess ] ].m_magmode_guess = D3DTFG_POINT;
+		else
+			g_guess.m_tex_guess[ g_guess.m_curtgt_guess[ g_guess.m_curstage_guess ] ].m_magmode_guess = D3DTFG_LINEAR;
 		break;
 	case GL_TEXTURE_WRAP_S:
 		if ( param == GL_CLAMP )
@@ -3172,19 +3341,23 @@ void APIENTRY glTexCoordPointer (GLint size, GLenum type, GLsizei stride, const 
 
 void APIENTRY glDrawArrays (GLenum mode, GLint first, GLsizei count)
 {
-	const GLfloat	*tc_guess = g_guess.m_texcoordary_guess + first * 4 * ( g_guess.m_texcoordstride_guess / 4 );
-	const GLfloat	*v_guess = (const GLfloat *)g_guess.m_vertexary_guess + first * 4 * ( g_guess.m_texcoordstride_guess / 4 );
+	int				offs_guess = first * 4 * ( g_guess.m_texcoordstride_guess / 4 );
+	const GLfloat	*srctexcoord_guess = g_guess.m_texcoordary_guess + offs_guess;
+	const GLfloat	*srcvertex_guess = (const GLfloat *)g_guess.m_vertexary_guess + offs_guess;
+	int				tcstride_guess = g_guess.m_texcoordstride_guess / 4;
+	int				vstride_guess = g_guess.m_vertexstride_guess / 4;
 	int				i, j;
 
-	for ( i = first; i < count / 4; i++ )
+	count /= 4;
+	for ( i = first; i < count; i++ )
 	{
 		glBegin( GL_QUADS );
 		for ( j = 0; j < 4; j++ )
 		{
-			glTexCoord2f( tc_guess[ 0 ], tc_guess[ 1 ] );
-			glVertex2f( v_guess[ 0 ], v_guess[ 1 ] );
-			tc_guess += g_guess.m_texcoordstride_guess / 4;
-			v_guess += g_guess.m_vertexstride_guess / 4;
+			glTexCoord2f( srctexcoord_guess[ 0 ], srctexcoord_guess[ 1 ] );
+			glVertex2f( srcvertex_guess[ 0 ], srcvertex_guess[ 1 ] );
+			srctexcoord_guess += tcstride_guess;
+			srcvertex_guess += vstride_guess;
 		}
 		glEnd();
 	}
@@ -3883,8 +4056,8 @@ void APIENTRY glTexSubImage2D (GLenum target, GLint level, GLint xoffset, GLint 
 	x_guess = ( xoffset * ti_guess->m_dwWidth_guess ) / ti_guess->m_glWidth_guess;
 	y_guess = ( yoffset * ti_guess->m_dwHeight_guess ) / ti_guess->m_glHeight_guess;
 	SetRect( &subimage_guess, x_guess, y_guess, ( width * ti_guess->m_dwWidth_guess ) / ti_guess->m_glWidth_guess + x_guess, ( height * ti_guess->m_dwHeight_guess ) / ti_guess->m_glHeight_guess + y_guess );
-	if ( LoadSubSurface( lpDDS, ti_guess->m_internalformat_guess, width, height, pixels, &subimage_guess ) != DD_OK )
-		OutputDebugString( "Wrapper: LoadSubSurface Failure.\n" );
+	if ( LoadSubSurface_guess( lpDDS, ti_guess->m_internalformat_guess, width, height, pixels, &subimage_guess ) != DD_OK )
+		OutputDebugString( "Wrapper: LoadSubSurface_guess Failure.\n" );
 }
 
 void APIENTRY glTexImage2D (GLenum target, GLint level, GLint internalformat, GLsizei width, GLsizei height, GLint border, GLenum format, GLenum type, const GLvoid *pixels)
