@@ -11202,69 +11202,69 @@ gameui,1007AEE0,10,,,UNKNOWN,,,,TODO,,,
 gameui,1007AEF0,19,,,UNKNOWN,,,,TODO,,,
 gameui,1007AF10,107,,,UNKNOWN,,,,TODO,,,
 gameui,1007AF80,120,,,UNKNOWN,,,,TODO,,,
-gameui,1007B010,69,,,UNKNOWN,,,,TODO,,,
-gameui,1007B055,395,,vgui2::ComboBoxButton::ApplySchemeSettings,ENGINE,vgui2/controls/ComboBox.cpp,,,TODO,,linux_symbols:string:0.769,linux: _ZN5vgui214ComboBoxButton19ApplySchemeSettingsEPNS_7ISchemeE
-gameui,1007B1E0,15,,,UNKNOWN,vgui2/controls/ComboBox.cpp,,,TODO,,,linux: _ZN5vgui214ComboBoxButton9GetBorderEbbbb
-gameui,1007B1EF,69,,,UNKNOWN,vgui2/controls/ComboBox.cpp,,,TODO,,,linux: _ZN5vgui214ComboBoxButton14OnCursorExitedEv
-gameui,1007B234,399,,,UNKNOWN,,,,TODO,,,
-gameui,1007B3C3,128,,,UNKNOWN,,,,TODO,,,
-gameui,1007B443,43,,,UNKNOWN,,,,TODO,,,
-gameui,1007B46E,110,,,UNKNOWN,,,,TODO,,,
-gameui,1007B4DC,245,,,UNKNOWN,vgui2/controls/ComboBox.cpp,,,TODO,,,linux: _ZN5vgui28ComboBox7AddItemEPKcPK9KeyValues
-gameui,1007B5D1,173,,,UNKNOWN,vgui2/controls/ComboBox.cpp,,,TODO,,,linux: _ZN5vgui28ComboBox7AddItemEPKwPK9KeyValues
-gameui,1007B67E,287,,,UNKNOWN,vgui2/controls/ComboBox.cpp,,,TODO,,,linux: _ZN5vgui28ComboBox10UpdateItemEiPKcPK9KeyValues
-gameui,1007B79D,43,,,UNKNOWN,,,,TODO,,,
-gameui,1007B7C8,47,,,UNKNOWN,,,,TODO,,,
-gameui,1007B7F7,47,,,UNKNOWN,,,,TODO,,,
-gameui,1007B826,37,,,UNKNOWN,vgui2/controls/ComboBox.cpp,,,TODO,,,linux: _ZN5vgui28ComboBox14DeleteAllItemsEv
-gameui,1007B84B,37,,,UNKNOWN,vgui2/controls/ComboBox.cpp,,,TODO,,,linux: _ZN5vgui28ComboBox12GetItemCountEv
-gameui,1007B870,43,,,UNKNOWN,vgui2/controls/ComboBox.cpp,,,TODO,,,linux: _ZN5vgui28ComboBox12ActivateItemEi
-gameui,1007B89B,43,,,UNKNOWN,vgui2/controls/ComboBox.cpp,,,TODO,,,linux: _ZN5vgui28ComboBox17ActivateItemByRowEi
-gameui,1007B8C6,63,,,UNKNOWN,vgui2/controls/ComboBox.cpp,,,TODO,,,linux: _ZN5vgui28ComboBox7SetMenuEPNS_4MenuE
-gameui,1007B905,189,,,UNKNOWN,vgui2/controls/ComboBox.cpp,,,TODO,,,linux: _ZN5vgui28ComboBox13PerformLayoutEv
-gameui,1007B9C2,383,,,UNKNOWN,vgui2/controls/ComboBox.cpp,,,TODO,,,linux: _ZN5vgui28ComboBox12DoMenuLayoutEv
-gameui,1007BB41,11,,,UNKNOWN,vgui2/controls/ComboBox.cpp,,,TODO,,,linux: _ZN5vgui28ComboBox9SortItemsEv
-gameui,1007BB4C,37,,,UNKNOWN,vgui2/controls/ComboBox.cpp,,,TODO,,,linux: _ZN5vgui28ComboBox13GetActiveItemEv
-gameui,1007BB71,52,,,UNKNOWN,vgui2/controls/ComboBox.cpp,,,TODO,,,linux: _ZN5vgui28ComboBox21GetActiveItemUserDataEv
-gameui,1007BBA5,43,,,UNKNOWN,vgui2/controls/ComboBox.cpp,,,TODO,,,linux: _ZN5vgui28ComboBox15GetItemUserDataEi
-gameui,1007BBD0,34,,,UNKNOWN,vgui2/controls/ComboBox.cpp,,,TODO,,,linux: _ZN5vgui28ComboBox17IsDropdownVisibleEv
-gameui,1007BBF2,56,,vgui2::ComboBox::ApplySchemeSettings,ENGINE,vgui2/controls/ComboBox.cpp,,,TODO,,linux_symbols:string:0.75,linux: _ZN5vgui28ComboBox19ApplySchemeSettingsEPNS_7ISchemeE
-gameui,1007BC2A,40,,,UNKNOWN,vgui2/controls/ComboBox.cpp,,,TODO,,,linux: _ZN5vgui28ComboBox24SetDropdownButtonVisibleEb
-gameui,1007BC52,172,,vgui2::ComboBox::OnMousePressed,ENGINE,vgui2/controls/ComboBox.cpp,,,TODO,,linux_symbols:caller:0.7,linux: _ZN5vgui28ComboBox14OnMousePressedENS_9MouseCodeE
-gameui,1007BCFE,68,,,UNKNOWN,vgui2/controls/ComboBox.cpp,,,TODO,,,linux: _ZN5vgui28ComboBox20OnMouseDoublePressedENS_9MouseCodeE
-gameui,1007BD42,60,,,UNKNOWN,vgui2/controls/ComboBox.cpp,,,TODO,,,linux: _ZN5vgui28ComboBox9OnCommandEPKc
-gameui,1007BD7E,412,,,UNKNOWN,vgui2/controls/ComboBox.cpp,,,TODO,,,linux: _ZN5vgui28ComboBox9OnSetTextEPKw
-gameui,1007BF1A,85,,,UNKNOWN,vgui2/controls/ComboBox.cpp,,,TODO,,,linux: _ZN5vgui28ComboBox8HideMenuEv
-gameui,1007BF6F,64,,,UNKNOWN,vgui2/controls/ComboBox.cpp,,,TODO,,,linux: _ZN5vgui28ComboBox8ShowMenuEv
-gameui,1007BFAF,19,,,UNKNOWN,vgui2/controls/ComboBox.cpp,,,TODO,,,linux: _ZN5vgui28ComboBox11OnKillFocusEv
-gameui,1007BFC2,193,,,UNKNOWN,vgui2/controls/ComboBox.cpp,,,TODO,,,linux: _ZN5vgui28ComboBox11OnMenuCloseEv
-gameui,1007C083,646,,,UNKNOWN,vgui2/controls/ComboBox.cpp,,,TODO,,,linux: _ZN5vgui28ComboBox7DoClickEv
-gameui,1007C309,45,,,UNKNOWN,vgui2/controls/ComboBox.cpp,,,TODO,,,linux: _ZN5vgui28ComboBox15OnCursorEnteredEv
-gameui,1007C336,79,,,UNKNOWN,vgui2/controls/ComboBox.cpp,,,TODO,,,linux: _ZN5vgui28ComboBox14OnCursorExitedEv
-gameui,1007C385,32,,,UNKNOWN,vgui2/controls/ComboBox.cpp,,,TODO,,,linux: _ZN5vgui28ComboBox18OnMenuItemSelectedEv
-gameui,1007C3A5,82,,,UNKNOWN,vgui2/controls/ComboBox.cpp,,,TODO,,,linux: _ZN5vgui28ComboBox13OnSizeChangedEii
-gameui,1007C3F7,43,,,UNKNOWN,vgui2/controls/ComboBox.cpp,,,TODO,,,linux: _ZN5vgui28ComboBox10OnSetFocusEv
-gameui,1007C422,71,,,UNKNOWN,vgui2/controls/ComboBox.cpp,,,TODO,,,linux: _ZN5vgui28ComboBox14OnKeyCodeTypedENS_7KeyCodeE
-gameui,1007C469,652,,,UNKNOWN,vgui2/controls/ComboBox.cpp,,,TODO,,,linux: _ZN5vgui28ComboBox10OnKeyTypedEw
-gameui,1007C6F5,602,,,UNKNOWN,vgui2/controls/ComboBox.cpp,,,TODO,,,linux: _ZN5vgui28ComboBox21MoveAlongMenuItemListEi
-gameui,1007C94F,25,,,UNKNOWN,vgui2/controls/ComboBox.cpp,,,TODO,,,linux: _ZN5vgui28ComboBox16SetOpenDirectionENS0_15MenuDirection_eE
-gameui,1007C968,51,,,UNKNOWN,vgui2/controls/ComboBox.cpp,,,TODO,,,linux: _ZN5vgui28ComboBox18SetUseFallbackFontEbm
-gameui,1007C9A0,79,,,UNKNOWN,,,,TODO,,,
-gameui,1007C9F0,46,,,UNKNOWN,,,,TODO,,,
-gameui,1007CA20,19,,,UNKNOWN,,,,TODO,,,
-gameui,1007CA40,46,,,UNKNOWN,,,,TODO,,,
-gameui,1007CA70,19,,,UNKNOWN,,,,TODO,,,
-gameui,1007CA90,102,,,UNKNOWN,,,,TODO,,,
-gameui,1007CB00,10,,,UNKNOWN,,,,TODO,,,
-gameui,1007CB10,19,,,UNKNOWN,,,,TODO,,,
-gameui,1007CB30,110,,,UNKNOWN,,,,TODO,,,
-gameui,1007CBA0,120,,,UNKNOWN,,,,TODO,,,
-gameui,1007CC20,19,,,UNKNOWN,,,,TODO,,,
-gameui,1007CC40,107,,,UNKNOWN,,,,TODO,,,
-gameui,1007CCB0,19,,,UNKNOWN,,,,TODO,,,
-gameui,1007CCD0,107,,,UNKNOWN,,,,TODO,,,
-gameui,1007CD40,19,,,UNKNOWN,,,,TODO,,,
-gameui,1007CD60,110,,,UNKNOWN,,,,TODO,,,
+gameui,1007B010,69,??0ComboBoxButton@vgui2@@QAE@PAVComboBox@1@PBD1@Z,"public: __thiscall vgui2::ComboBoxButton::ComboBoxButton(class vgui2::ComboBox *,char const *,char const *)",UNKNOWN,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,
+gameui,1007B055,395,?ApplySchemeSettings@ComboBoxButton@vgui2@@UAEXPAVIScheme@2@@Z,public: virtual void __thiscall vgui2::ComboBoxButton::ApplySchemeSettings(class vgui2::IScheme *),ENGINE,vgui2/controls/ComboBox.cpp,,,MATCHED,100,linux_symbols:string:0.769,linux: _ZN5vgui214ComboBoxButton19ApplySchemeSettingsEPNS_7ISchemeE
+gameui,1007B1E0,15,?GetBorder@ComboBoxButton@vgui2@@UAEPAVIBorder@2@_N000@Z,"public: virtual class vgui2::IBorder * __thiscall vgui2::ComboBoxButton::GetBorder(bool,bool,bool,bool)",UNKNOWN,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,linux: _ZN5vgui214ComboBoxButton9GetBorderEbbbb
+gameui,1007B1EF,69,?OnCursorExited@ComboBoxButton@vgui2@@UAEXXZ,public: virtual void __thiscall vgui2::ComboBoxButton::OnCursorExited(void),UNKNOWN,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,linux: _ZN5vgui214ComboBoxButton14OnCursorExitedEv
+gameui,1007B234,399,??0ComboBox@vgui2@@QAE@PAVPanel@1@PBDH_N@Z,"public: __thiscall vgui2::ComboBox::ComboBox(class vgui2::Panel *,char const *,int,bool)",UNKNOWN,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,
+gameui,1007B3C3,128,??1ComboBox@vgui2@@UAE@XZ,public: virtual __thiscall vgui2::ComboBox::~ComboBox(void),UNKNOWN,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,
+gameui,1007B443,43,?SetNumberOfEditLines@ComboBox@vgui2@@UAEXH@Z,public: virtual void __thiscall vgui2::ComboBox::SetNumberOfEditLines(int),UNKNOWN,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,
+gameui,1007B46E,110,?AddItem@ComboBox@vgui2@@UAEHPBDPBVKeyValues@@@Z,"public: virtual int __thiscall vgui2::ComboBox::AddItem(char const *,class KeyValues const *)",UNKNOWN,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,
+gameui,1007B4DC,245,?AddItem@ComboBox@vgui2@@UAEHPBGPBVKeyValues@@@Z,"public: virtual int __thiscall vgui2::ComboBox::AddItem(unsigned short const *,class KeyValues const *)",UNKNOWN,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,linux: _ZN5vgui28ComboBox7AddItemEPKcPK9KeyValues
+gameui,1007B5D1,173,?UpdateItem@ComboBox@vgui2@@UAE_NHPBDPBVKeyValues@@@Z,"public: virtual bool __thiscall vgui2::ComboBox::UpdateItem(int,char const *,class KeyValues const *)",UNKNOWN,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,linux: _ZN5vgui28ComboBox7AddItemEPKwPK9KeyValues
+gameui,1007B67E,287,?UpdateItem@ComboBox@vgui2@@UAE_NHPBGPBVKeyValues@@@Z,"public: virtual bool __thiscall vgui2::ComboBox::UpdateItem(int,unsigned short const *,class KeyValues const *)",UNKNOWN,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,linux: _ZN5vgui28ComboBox10UpdateItemEiPKcPK9KeyValues
+gameui,1007B79D,43,?IsItemIDValid@ComboBox@vgui2@@UAE_NH@Z,public: virtual bool __thiscall vgui2::ComboBox::IsItemIDValid(int),UNKNOWN,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,
+gameui,1007B7C8,47,?SetItemEnabled@ComboBox@vgui2@@UAEXPBD_N@Z,"public: virtual void __thiscall vgui2::ComboBox::SetItemEnabled(char const *,bool)",UNKNOWN,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,
+gameui,1007B7F7,47,?SetItemEnabled@ComboBox@vgui2@@UAEXH_N@Z,"public: virtual void __thiscall vgui2::ComboBox::SetItemEnabled(int,bool)",UNKNOWN,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,
+gameui,1007B826,37,?DeleteAllItems@ComboBox@vgui2@@UAEXXZ,public: virtual void __thiscall vgui2::ComboBox::DeleteAllItems(void),UNKNOWN,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,linux: _ZN5vgui28ComboBox14DeleteAllItemsEv
+gameui,1007B84B,37,?GetItemCount@ComboBox@vgui2@@UAEHXZ,public: virtual int __thiscall vgui2::ComboBox::GetItemCount(void),UNKNOWN,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,linux: _ZN5vgui28ComboBox12GetItemCountEv
+gameui,1007B870,43,?ActivateItem@ComboBox@vgui2@@UAEXH@Z,public: virtual void __thiscall vgui2::ComboBox::ActivateItem(int),UNKNOWN,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,linux: _ZN5vgui28ComboBox12ActivateItemEi
+gameui,1007B89B,43,?ActivateItemByRow@ComboBox@vgui2@@UAEXH@Z,public: virtual void __thiscall vgui2::ComboBox::ActivateItemByRow(int),UNKNOWN,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,linux: _ZN5vgui28ComboBox17ActivateItemByRowEi
+gameui,1007B8C6,63,?SetMenu@ComboBox@vgui2@@UAEXPAVMenu@2@@Z,public: virtual void __thiscall vgui2::ComboBox::SetMenu(class vgui2::Menu *),UNKNOWN,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,linux: _ZN5vgui28ComboBox7SetMenuEPNS_4MenuE
+gameui,1007B905,189,?PerformLayout@ComboBox@vgui2@@UAEXXZ,public: virtual void __thiscall vgui2::ComboBox::PerformLayout(void),UNKNOWN,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,linux: _ZN5vgui28ComboBox13PerformLayoutEv
+gameui,1007B9C2,383,?DoMenuLayout@ComboBox@vgui2@@AAEXXZ,private: void __thiscall vgui2::ComboBox::DoMenuLayout(void),UNKNOWN,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,linux: _ZN5vgui28ComboBox12DoMenuLayoutEv
+gameui,1007BB41,11,?SortItems@ComboBox@vgui2@@UAEXXZ,public: virtual void __thiscall vgui2::ComboBox::SortItems(void),UNKNOWN,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,linux: _ZN5vgui28ComboBox9SortItemsEv
+gameui,1007BB4C,37,?GetActiveItem@ComboBox@vgui2@@UAEHXZ,public: virtual int __thiscall vgui2::ComboBox::GetActiveItem(void),UNKNOWN,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,linux: _ZN5vgui28ComboBox13GetActiveItemEv
+gameui,1007BB71,52,?GetActiveItemUserData@ComboBox@vgui2@@UAEPAVKeyValues@@XZ,public: virtual class KeyValues * __thiscall vgui2::ComboBox::GetActiveItemUserData(void),UNKNOWN,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,linux: _ZN5vgui28ComboBox21GetActiveItemUserDataEv
+gameui,1007BBA5,43,?GetItemUserData@ComboBox@vgui2@@UAEPAVKeyValues@@H@Z,public: virtual class KeyValues * __thiscall vgui2::ComboBox::GetItemUserData(int),UNKNOWN,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,linux: _ZN5vgui28ComboBox15GetItemUserDataEi
+gameui,1007BBD0,34,?IsDropdownVisible@ComboBox@vgui2@@UAE_NXZ,public: virtual bool __thiscall vgui2::ComboBox::IsDropdownVisible(void),UNKNOWN,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,linux: _ZN5vgui28ComboBox17IsDropdownVisibleEv
+gameui,1007BBF2,56,?ApplySchemeSettings@ComboBox@vgui2@@MAEXPAVIScheme@2@@Z,protected: virtual void __thiscall vgui2::ComboBox::ApplySchemeSettings(class vgui2::IScheme *),ENGINE,vgui2/controls/ComboBox.cpp,,,MATCHED,100,linux_symbols:string:0.75,linux: _ZN5vgui28ComboBox19ApplySchemeSettingsEPNS_7ISchemeE
+gameui,1007BC2A,40,?SetDropdownButtonVisible@ComboBox@vgui2@@UAEX_N@Z,public: virtual void __thiscall vgui2::ComboBox::SetDropdownButtonVisible(bool),UNKNOWN,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,linux: _ZN5vgui28ComboBox24SetDropdownButtonVisibleEb
+gameui,1007BC52,172,?OnMousePressed@ComboBox@vgui2@@UAEXW4MouseCode@2@@Z,public: virtual void __thiscall vgui2::ComboBox::OnMousePressed(enum vgui2::MouseCode),ENGINE,vgui2/controls/ComboBox.cpp,,,MATCHED,100,linux_symbols:caller:0.7,linux: _ZN5vgui28ComboBox14OnMousePressedENS_9MouseCodeE
+gameui,1007BCFE,68,?OnMouseDoublePressed@ComboBox@vgui2@@UAEXW4MouseCode@2@@Z,public: virtual void __thiscall vgui2::ComboBox::OnMouseDoublePressed(enum vgui2::MouseCode),UNKNOWN,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,linux: _ZN5vgui28ComboBox20OnMouseDoublePressedENS_9MouseCodeE
+gameui,1007BD42,60,?OnCommand@ComboBox@vgui2@@MAEXPBD@Z,protected: virtual void __thiscall vgui2::ComboBox::OnCommand(char const *),UNKNOWN,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,linux: _ZN5vgui28ComboBox9OnCommandEPKc
+gameui,1007BD7E,412,?OnSetText@ComboBox@vgui2@@MAEXPBG@Z,protected: virtual void __thiscall vgui2::ComboBox::OnSetText(unsigned short const *),UNKNOWN,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,linux: _ZN5vgui28ComboBox9OnSetTextEPKw
+gameui,1007BF1A,85,?HideMenu@ComboBox@vgui2@@UAEXXZ,public: virtual void __thiscall vgui2::ComboBox::HideMenu(void),UNKNOWN,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,linux: _ZN5vgui28ComboBox8HideMenuEv
+gameui,1007BF6F,64,?ShowMenu@ComboBox@vgui2@@UAEXXZ,public: virtual void __thiscall vgui2::ComboBox::ShowMenu(void),UNKNOWN,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,linux: _ZN5vgui28ComboBox8ShowMenuEv
+gameui,1007BFAF,19,?OnKillFocus@ComboBox@vgui2@@UAEXXZ,public: virtual void __thiscall vgui2::ComboBox::OnKillFocus(void),UNKNOWN,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,linux: _ZN5vgui28ComboBox11OnKillFocusEv
+gameui,1007BFC2,193,?OnMenuClose@ComboBox@vgui2@@UAEXXZ,public: virtual void __thiscall vgui2::ComboBox::OnMenuClose(void),UNKNOWN,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,linux: _ZN5vgui28ComboBox11OnMenuCloseEv
+gameui,1007C083,646,?DoClick@ComboBox@vgui2@@UAEXXZ,public: virtual void __thiscall vgui2::ComboBox::DoClick(void),UNKNOWN,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,linux: _ZN5vgui28ComboBox7DoClickEv
+gameui,1007C309,45,?OnCursorEntered@ComboBox@vgui2@@MAEXXZ,protected: virtual void __thiscall vgui2::ComboBox::OnCursorEntered(void),UNKNOWN,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,linux: _ZN5vgui28ComboBox15OnCursorEnteredEv
+gameui,1007C336,79,?OnCursorExited@ComboBox@vgui2@@MAEXXZ,protected: virtual void __thiscall vgui2::ComboBox::OnCursorExited(void),UNKNOWN,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,linux: _ZN5vgui28ComboBox14OnCursorExitedEv
+gameui,1007C385,32,?OnMenuItemSelected@ComboBox@vgui2@@UAEXXZ,public: virtual void __thiscall vgui2::ComboBox::OnMenuItemSelected(void),UNKNOWN,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,linux: _ZN5vgui28ComboBox18OnMenuItemSelectedEv
+gameui,1007C3A5,82,?OnSizeChanged@ComboBox@vgui2@@UAEXHH@Z,"public: virtual void __thiscall vgui2::ComboBox::OnSizeChanged(int,int)",UNKNOWN,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,linux: _ZN5vgui28ComboBox13OnSizeChangedEii
+gameui,1007C3F7,43,?OnSetFocus@ComboBox@vgui2@@MAEXXZ,protected: virtual void __thiscall vgui2::ComboBox::OnSetFocus(void),UNKNOWN,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,linux: _ZN5vgui28ComboBox10OnSetFocusEv
+gameui,1007C422,71,?OnKeyCodeTyped@ComboBox@vgui2@@MAEXW4KeyCode@2@@Z,protected: virtual void __thiscall vgui2::ComboBox::OnKeyCodeTyped(enum vgui2::KeyCode),UNKNOWN,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,linux: _ZN5vgui28ComboBox14OnKeyCodeTypedENS_7KeyCodeE
+gameui,1007C469,652,?OnKeyTyped@ComboBox@vgui2@@MAEXG@Z,protected: virtual void __thiscall vgui2::ComboBox::OnKeyTyped(unsigned short),UNKNOWN,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,linux: _ZN5vgui28ComboBox10OnKeyTypedEw
+gameui,1007C6F5,602,?MoveAlongMenuItemList@ComboBox@vgui2@@IAEXH@Z,protected: void __thiscall vgui2::ComboBox::MoveAlongMenuItemList(int),UNKNOWN,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,linux: _ZN5vgui28ComboBox21MoveAlongMenuItemListEi
+gameui,1007C94F,25,?SetOpenDirection@ComboBox@vgui2@@UAEXW4MenuDirection_e@12@@Z,public: virtual void __thiscall vgui2::ComboBox::SetOpenDirection(enum vgui2::ComboBox::MenuDirection_e),UNKNOWN,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,linux: _ZN5vgui28ComboBox16SetOpenDirectionENS0_15MenuDirection_eE
+gameui,1007C968,51,?SetUseFallbackFont@ComboBox@vgui2@@UAEX_NK@Z,"public: virtual void __thiscall vgui2::ComboBox::SetUseFallbackFont(bool,unsigned long)",UNKNOWN,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,linux: _ZN5vgui28ComboBox18SetUseFallbackFontEbm
+gameui,1007C9A0,79,?GetButtonBgColor@ComboBoxButton@vgui2@@UAE?AVColor@@XZ,public: virtual class Color __thiscall vgui2::ComboBoxButton::GetButtonBgColor(void),UNKNOWN,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,
+gameui,1007C9F0,46,??_GComboBoxButton@vgui2@@UAEPAXI@Z,public: virtual void * __thiscall vgui2::ComboBoxButton::`scalar deleting destructor'(unsigned int),UNKNOWN,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,
+gameui,1007CA20,19,??1ComboBoxButton@vgui2@@UAE@XZ,public: virtual __thiscall vgui2::ComboBoxButton::~ComboBoxButton(void),UNKNOWN,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,
+gameui,1007CA40,46,??_GComboBox@vgui2@@UAEPAXI@Z,public: virtual void * __thiscall vgui2::ComboBox::`scalar deleting destructor'(unsigned int),UNKNOWN,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,
+gameui,1007CA70,19,??0ComboBox_RegisterMap@ComboBox@vgui2@@QAE@XZ,public: __thiscall vgui2::ComboBox::ComboBox_RegisterMap::ComboBox_RegisterMap(void),UNKNOWN,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,
+gameui,1007CA90,102,?ChainToMap@ComboBox@vgui2@@SAXXZ,public: static void __cdecl vgui2::ComboBox::ChainToMap(void),UNKNOWN,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,
+gameui,1007CB00,10,?GetPanelBaseClassName@ComboBox@vgui2@@SAPBDXZ,public: static char const * __cdecl vgui2::ComboBox::GetPanelBaseClassName(void),UNKNOWN,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,
+gameui,1007CB10,19,??0PanelMessageFunc_ActivateItem@ComboBox@vgui2@@QAE@XZ,public: __thiscall vgui2::ComboBox::PanelMessageFunc_ActivateItem::PanelMessageFunc_ActivateItem(void),UNKNOWN,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,
+gameui,1007CB30,110,?InitVar@PanelMessageFunc_ActivateItem@ComboBox@vgui2@@SAXXZ,public: static void __cdecl vgui2::ComboBox::PanelMessageFunc_ActivateItem::InitVar(void),UNKNOWN,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,
+gameui,1007CBA0,120,?AddToMap@ComboBox@vgui2@@SAXPBDP8Panel@2@AEXXZHH0H0@Z,"public: static void __cdecl vgui2::ComboBox::AddToMap(char const *,void (__thiscall vgui2::Panel::*)(void),int,int,char const *,int,char const *)",UNKNOWN,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,
+gameui,1007CC20,19,??0PanelMessageFunc_OnMenuClose@ComboBox@vgui2@@QAE@XZ,public: __thiscall vgui2::ComboBox::PanelMessageFunc_OnMenuClose::PanelMessageFunc_OnMenuClose(void),UNKNOWN,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,
+gameui,1007CC40,107,?InitVar@PanelMessageFunc_OnMenuClose@ComboBox@vgui2@@SAXXZ,public: static void __cdecl vgui2::ComboBox::PanelMessageFunc_OnMenuClose::InitVar(void),UNKNOWN,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,
+gameui,1007CCB0,19,??0PanelMessageFunc_OnMenuItemSelected@ComboBox@vgui2@@QAE@XZ,public: __thiscall vgui2::ComboBox::PanelMessageFunc_OnMenuItemSelected::PanelMessageFunc_OnMenuItemSelected(void),UNKNOWN,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,
+gameui,1007CCD0,107,?InitVar@PanelMessageFunc_OnMenuItemSelected@ComboBox@vgui2@@SAXXZ,public: static void __cdecl vgui2::ComboBox::PanelMessageFunc_OnMenuItemSelected::InitVar(void),UNKNOWN,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,
+gameui,1007CD40,19,??0PanelMessageFunc_OnSetText@ComboBox@vgui2@@QAE@XZ,public: __thiscall vgui2::ComboBox::PanelMessageFunc_OnSetText::PanelMessageFunc_OnSetText(void),UNKNOWN,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,
+gameui,1007CD60,110,?InitVar@PanelMessageFunc_OnSetText@ComboBox@vgui2@@SAXXZ,public: static void __cdecl vgui2::ComboBox::PanelMessageFunc_OnSetText::InitVar(void),UNKNOWN,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,
 gameui,1007CE00,129,,,UNKNOWN,,,,TODO,,,
 gameui,1007CE81,129,,,UNKNOWN,,,,TODO,,,
 gameui,1007CF02,66,,,UNKNOWN,,,,TODO,,,
@@ -31428,74 +31428,74 @@ hw,01E53F90,25,?IsExternallyAllocated@?$CUtlMemory@UListElem_t@?$CUtlLinkedList@
 hw,01E53FB0,25,?Construct@@YAXPAPAVMenuItem@vgui2@@@Z,Construct,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,
 hw,01E53FD0,68,?IsInList@?$CUtlLinkedList@PAVMenuItem@vgui2@@H@@QBE_NH@Z,"*,int>::IsInList",UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,
 hw,01E54020,28,?Previous@?$CUtlLinkedList@PAVMenuItem@vgui2@@H@@QBEHH@Z,"*,int>::Previous",UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,
-hw,01E54040,69,,,ENGINE,vgui2/controls/ComboBox.cpp,,,TODO,,,
-hw,01E54085,395,,vgui2::ComboBoxButton::ApplySchemeSettings,ENGINE,vgui2/controls/ComboBox.cpp,,,TODO,,linux_symbols:string:0.764,
-hw,01E54210,15,,,UNKNOWN,vgui2/controls/ComboBox.cpp,,,TODO,,,linux: _ZN5vgui214ComboBoxButton9GetBorderEbbbb
-hw,01E5421F,69,,,UNKNOWN,vgui2/controls/ComboBox.cpp,,,TODO,,,linux: _ZN5vgui214ComboBoxButton14OnCursorExitedEv
-hw,01E54264,399,,,UNKNOWN,guess:vgui2/controls/ComboBox.cpp,,,TODO,,,
-hw,01E543F3,128,,,UNKNOWN,guess:vgui2/controls/ComboBox.cpp,,,TODO,,,
-hw,01E54473,43,,,UNKNOWN,guess:vgui2/controls/ComboBox.cpp,,,TODO,,,
-hw,01E5449E,110,,,UNKNOWN,guess:vgui2/controls/ComboBox.cpp,,,TODO,,,
-hw,01E5450C,245,,,UNKNOWN,vgui2/controls/ComboBox.cpp,,,TODO,,,linux: _ZN5vgui28ComboBox7AddItemEPKcPK9KeyValues
-hw,01E54601,173,,,UNKNOWN,vgui2/controls/ComboBox.cpp,,,TODO,,,linux: _ZN5vgui28ComboBox7AddItemEPKwPK9KeyValues
-hw,01E546AE,287,,,UNKNOWN,vgui2/controls/ComboBox.cpp,,,TODO,,,linux: _ZN5vgui28ComboBox10UpdateItemEiPKcPK9KeyValues
-hw,01E547CD,43,,,UNKNOWN,guess:vgui2/controls/ComboBox.cpp,,,TODO,,,
-hw,01E547F8,47,,,UNKNOWN,guess:vgui2/controls/ComboBox.cpp,,,TODO,,,
-hw,01E54827,47,,,UNKNOWN,guess:vgui2/controls/ComboBox.cpp,,,TODO,,,
-hw,01E54856,37,,,UNKNOWN,vgui2/controls/ComboBox.cpp,,,TODO,,,linux: _ZN5vgui28ComboBox14DeleteAllItemsEv
-hw,01E5487B,37,,,UNKNOWN,vgui2/controls/ComboBox.cpp,,,TODO,,,linux: _ZN5vgui28ComboBox12GetItemCountEv
-hw,01E548A0,43,,,UNKNOWN,vgui2/controls/ComboBox.cpp,,,TODO,,,linux: _ZN5vgui28ComboBox12ActivateItemEi
-hw,01E548CB,43,,,UNKNOWN,vgui2/controls/ComboBox.cpp,,,TODO,,,linux: _ZN5vgui28ComboBox17ActivateItemByRowEi
-hw,01E548F6,63,,,UNKNOWN,vgui2/controls/ComboBox.cpp,,,TODO,,,linux: _ZN5vgui28ComboBox7SetMenuEPNS_4MenuE
-hw,01E54935,189,,,UNKNOWN,vgui2/controls/ComboBox.cpp,,,TODO,,,linux: _ZN5vgui28ComboBox13PerformLayoutEv
-hw,01E549F2,383,,,UNKNOWN,vgui2/controls/ComboBox.cpp,,,TODO,,,linux: _ZN5vgui28ComboBox12DoMenuLayoutEv
-hw,01E54B71,11,,,UNKNOWN,vgui2/controls/ComboBox.cpp,,,TODO,,,linux: _ZN5vgui28ComboBox9SortItemsEv
-hw,01E54B7C,37,,,UNKNOWN,vgui2/controls/ComboBox.cpp,,,TODO,,,linux: _ZN5vgui28ComboBox13GetActiveItemEv
-hw,01E54BA1,52,,,UNKNOWN,vgui2/controls/ComboBox.cpp,,,TODO,,,linux: _ZN5vgui28ComboBox21GetActiveItemUserDataEv
-hw,01E54BD5,43,,,UNKNOWN,vgui2/controls/ComboBox.cpp,,,TODO,,,linux: _ZN5vgui28ComboBox15GetItemUserDataEi
-hw,01E54C00,34,,,UNKNOWN,vgui2/controls/ComboBox.cpp,,,TODO,,,linux: _ZN5vgui28ComboBox17IsDropdownVisibleEv
-hw,01E54C22,56,,vgui2::ComboBox::ApplySchemeSettings,ENGINE,vgui2/controls/ComboBox.cpp,,,TODO,,linux_symbols:string:0.833,
-hw,01E54C5A,40,,,UNKNOWN,vgui2/controls/ComboBox.cpp,,,TODO,,,linux: _ZN5vgui28ComboBox24SetDropdownButtonVisibleEb
-hw,01E54C82,172,,vgui2::ComboBox::OnMousePressed,ENGINE,vgui2/controls/ComboBox.cpp,,,TODO,,linux_symbols:caller:0.7,
-hw,01E54D2E,68,,,UNKNOWN,vgui2/controls/ComboBox.cpp,,,TODO,,,linux: _ZN5vgui28ComboBox20OnMouseDoublePressedENS_9MouseCodeE
-hw,01E54D72,60,,,UNKNOWN,vgui2/controls/ComboBox.cpp,,,TODO,,,linux: _ZN5vgui28ComboBox9OnCommandEPKc
-hw,01E54DAE,412,,,UNKNOWN,vgui2/controls/ComboBox.cpp,,,TODO,,,linux: _ZN5vgui28ComboBox9OnSetTextEPKw
-hw,01E54F4A,85,,,UNKNOWN,vgui2/controls/ComboBox.cpp,,,TODO,,,linux: _ZN5vgui28ComboBox8HideMenuEv
-hw,01E54F9F,64,,,UNKNOWN,vgui2/controls/ComboBox.cpp,,,TODO,,,linux: _ZN5vgui28ComboBox8ShowMenuEv
-hw,01E54FDF,19,,,UNKNOWN,vgui2/controls/ComboBox.cpp,,,TODO,,,linux: _ZN5vgui28ComboBox11OnKillFocusEv
-hw,01E54FF2,193,,,UNKNOWN,vgui2/controls/ComboBox.cpp,,,TODO,,,linux: _ZN5vgui28ComboBox11OnMenuCloseEv
-hw,01E550B3,646,,,UNKNOWN,vgui2/controls/ComboBox.cpp,,,TODO,,,linux: _ZN5vgui28ComboBox7DoClickEv
-hw,01E55339,45,,,UNKNOWN,vgui2/controls/ComboBox.cpp,,,TODO,,,linux: _ZN5vgui28ComboBox15OnCursorEnteredEv
-hw,01E55366,79,,,UNKNOWN,vgui2/controls/ComboBox.cpp,,,TODO,,,linux: _ZN5vgui28ComboBox14OnCursorExitedEv
-hw,01E553B5,32,,,UNKNOWN,vgui2/controls/ComboBox.cpp,,,TODO,,,linux: _ZN5vgui28ComboBox18OnMenuItemSelectedEv
-hw,01E553D5,82,,,UNKNOWN,vgui2/controls/ComboBox.cpp,,,TODO,,,linux: _ZN5vgui28ComboBox13OnSizeChangedEii
-hw,01E55427,43,,,UNKNOWN,vgui2/controls/ComboBox.cpp,,,TODO,,,linux: _ZN5vgui28ComboBox10OnSetFocusEv
-hw,01E55452,71,,,UNKNOWN,vgui2/controls/ComboBox.cpp,,,TODO,,,linux: _ZN5vgui28ComboBox14OnKeyCodeTypedENS_7KeyCodeE
-hw,01E55499,652,,,UNKNOWN,vgui2/controls/ComboBox.cpp,,,TODO,,,linux: _ZN5vgui28ComboBox10OnKeyTypedEw
-hw,01E55725,602,,,UNKNOWN,vgui2/controls/ComboBox.cpp,,,TODO,,,linux: _ZN5vgui28ComboBox21MoveAlongMenuItemListEi
-hw,01E5597F,25,,,UNKNOWN,vgui2/controls/ComboBox.cpp,,,TODO,,,linux: _ZN5vgui28ComboBox16SetOpenDirectionENS0_15MenuDirection_eE
-hw,01E55998,51,,,UNKNOWN,vgui2/controls/ComboBox.cpp,,,TODO,,,linux: _ZN5vgui28ComboBox18SetUseFallbackFontEbm
-hw,01E559D0,79,,,ENGINE,vgui2/controls/ComboBox.cpp,,,TODO,,,
-hw,01E55A20,46,,,ENGINE,vgui2/controls/ComboBox.cpp,,,TODO,,,
-hw,01E55A50,19,,,ENGINE,vgui2/controls/ComboBox.cpp,,,TODO,,,
-hw,01E55A70,46,,,ENGINE,vgui2/controls/ComboBox.cpp,,,TODO,,,
-hw,01E55AA0,19,,,ENGINE,vgui2/controls/ComboBox.cpp,,,TODO,,,
-hw,01E55AC0,102,,,ENGINE,vgui2/controls/ComboBox.cpp,,,TODO,,,
-hw,01E55B30,64,,,ENGINE,vgui2/controls/ComboBox.cpp,,,TODO,,,
-hw,01E55B70,10,,,ENGINE,vgui2/controls/ComboBox.cpp,,,TODO,,,
-hw,01E55B80,10,,,ENGINE,vgui2/controls/ComboBox.cpp,,,TODO,,,
-hw,01E55B90,13,,,ENGINE,vgui2/controls/ComboBox.cpp,,,TODO,,,
-hw,01E55BA0,13,,,ENGINE,vgui2/controls/ComboBox.cpp,,,TODO,,,
-hw,01E55BB0,19,,,ENGINE,vgui2/controls/ComboBox.cpp,,,TODO,,,
-hw,01E55BD0,110,,,ENGINE,vgui2/controls/ComboBox.cpp,,,TODO,,,
-hw,01E55C40,120,,,ENGINE,vgui2/controls/ComboBox.cpp,,,TODO,,,
-hw,01E55CC0,20,,,ENGINE,vgui2/controls/ComboBox.cpp,,,TODO,,,
-hw,01E55CE0,19,,,ENGINE,vgui2/controls/ComboBox.cpp,,,TODO,,,
-hw,01E55D00,107,,,ENGINE,vgui2/controls/ComboBox.cpp,,,TODO,,,
-hw,01E55D70,19,,,ENGINE,vgui2/controls/ComboBox.cpp,,,TODO,,,
-hw,01E55D90,107,,,ENGINE,vgui2/controls/ComboBox.cpp,,,TODO,,,
-hw,01E55E00,19,,,ENGINE,vgui2/controls/ComboBox.cpp,,,TODO,,,
-hw,01E55E20,110,,,ENGINE,vgui2/controls/ComboBox.cpp,,,TODO,,,
+hw,01E54040,69,??0ComboBoxButton@vgui2@@QAE@PAVComboBox@1@PBD1@Z,"public: __thiscall vgui2::ComboBoxButton::ComboBoxButton(class vgui2::ComboBox *,char const *,char const *)",ENGINE,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,
+hw,01E54085,395,?ApplySchemeSettings@ComboBoxButton@vgui2@@UAEXPAVIScheme@2@@Z,public: virtual void __thiscall vgui2::ComboBoxButton::ApplySchemeSettings(class vgui2::IScheme *),ENGINE,vgui2/controls/ComboBox.cpp,,,MATCHED,100,linux_symbols:string:0.764,
+hw,01E54210,15,?GetBorder@ComboBoxButton@vgui2@@UAEPAVIBorder@2@_N000@Z,"public: virtual class vgui2::IBorder * __thiscall vgui2::ComboBoxButton::GetBorder(bool,bool,bool,bool)",UNKNOWN,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,linux: _ZN5vgui214ComboBoxButton9GetBorderEbbbb
+hw,01E5421F,69,?OnCursorExited@ComboBoxButton@vgui2@@UAEXXZ,public: virtual void __thiscall vgui2::ComboBoxButton::OnCursorExited(void),UNKNOWN,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,linux: _ZN5vgui214ComboBoxButton14OnCursorExitedEv
+hw,01E54264,399,??0ComboBox@vgui2@@QAE@PAVPanel@1@PBDH_N@Z,"public: __thiscall vgui2::ComboBox::ComboBox(class vgui2::Panel *,char const *,int,bool)",UNKNOWN,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,
+hw,01E543F3,128,??1ComboBox@vgui2@@UAE@XZ,public: virtual __thiscall vgui2::ComboBox::~ComboBox(void),UNKNOWN,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,
+hw,01E54473,43,?SetNumberOfEditLines@ComboBox@vgui2@@UAEXH@Z,public: virtual void __thiscall vgui2::ComboBox::SetNumberOfEditLines(int),UNKNOWN,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,
+hw,01E5449E,110,?AddItem@ComboBox@vgui2@@UAEHPBDPBVKeyValues@@@Z,"public: virtual int __thiscall vgui2::ComboBox::AddItem(char const *,class KeyValues const *)",UNKNOWN,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,
+hw,01E5450C,245,?AddItem@ComboBox@vgui2@@UAEHPBGPBVKeyValues@@@Z,"public: virtual int __thiscall vgui2::ComboBox::AddItem(unsigned short const *,class KeyValues const *)",UNKNOWN,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,linux: _ZN5vgui28ComboBox7AddItemEPKcPK9KeyValues
+hw,01E54601,173,?UpdateItem@ComboBox@vgui2@@UAE_NHPBDPBVKeyValues@@@Z,"public: virtual bool __thiscall vgui2::ComboBox::UpdateItem(int,char const *,class KeyValues const *)",UNKNOWN,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,linux: _ZN5vgui28ComboBox7AddItemEPKwPK9KeyValues
+hw,01E546AE,287,?UpdateItem@ComboBox@vgui2@@UAE_NHPBGPBVKeyValues@@@Z,"public: virtual bool __thiscall vgui2::ComboBox::UpdateItem(int,unsigned short const *,class KeyValues const *)",UNKNOWN,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,linux: _ZN5vgui28ComboBox10UpdateItemEiPKcPK9KeyValues
+hw,01E547CD,43,?IsItemIDValid@ComboBox@vgui2@@UAE_NH@Z,public: virtual bool __thiscall vgui2::ComboBox::IsItemIDValid(int),UNKNOWN,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,
+hw,01E547F8,47,?SetItemEnabled@ComboBox@vgui2@@UAEXPBD_N@Z,"public: virtual void __thiscall vgui2::ComboBox::SetItemEnabled(char const *,bool)",UNKNOWN,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,
+hw,01E54827,47,?SetItemEnabled@ComboBox@vgui2@@UAEXH_N@Z,"public: virtual void __thiscall vgui2::ComboBox::SetItemEnabled(int,bool)",UNKNOWN,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,
+hw,01E54856,37,?DeleteAllItems@ComboBox@vgui2@@UAEXXZ,public: virtual void __thiscall vgui2::ComboBox::DeleteAllItems(void),UNKNOWN,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,linux: _ZN5vgui28ComboBox14DeleteAllItemsEv
+hw,01E5487B,37,?GetItemCount@ComboBox@vgui2@@UAEHXZ,public: virtual int __thiscall vgui2::ComboBox::GetItemCount(void),UNKNOWN,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,linux: _ZN5vgui28ComboBox12GetItemCountEv
+hw,01E548A0,43,?ActivateItem@ComboBox@vgui2@@UAEXH@Z,public: virtual void __thiscall vgui2::ComboBox::ActivateItem(int),UNKNOWN,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,linux: _ZN5vgui28ComboBox12ActivateItemEi
+hw,01E548CB,43,?ActivateItemByRow@ComboBox@vgui2@@UAEXH@Z,public: virtual void __thiscall vgui2::ComboBox::ActivateItemByRow(int),UNKNOWN,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,linux: _ZN5vgui28ComboBox17ActivateItemByRowEi
+hw,01E548F6,63,?SetMenu@ComboBox@vgui2@@UAEXPAVMenu@2@@Z,public: virtual void __thiscall vgui2::ComboBox::SetMenu(class vgui2::Menu *),UNKNOWN,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,linux: _ZN5vgui28ComboBox7SetMenuEPNS_4MenuE
+hw,01E54935,189,?PerformLayout@ComboBox@vgui2@@UAEXXZ,public: virtual void __thiscall vgui2::ComboBox::PerformLayout(void),UNKNOWN,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,linux: _ZN5vgui28ComboBox13PerformLayoutEv
+hw,01E549F2,383,?DoMenuLayout@ComboBox@vgui2@@AAEXXZ,private: void __thiscall vgui2::ComboBox::DoMenuLayout(void),UNKNOWN,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,linux: _ZN5vgui28ComboBox12DoMenuLayoutEv
+hw,01E54B71,11,?SortItems@ComboBox@vgui2@@UAEXXZ,public: virtual void __thiscall vgui2::ComboBox::SortItems(void),UNKNOWN,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,linux: _ZN5vgui28ComboBox9SortItemsEv
+hw,01E54B7C,37,?GetActiveItem@ComboBox@vgui2@@UAEHXZ,public: virtual int __thiscall vgui2::ComboBox::GetActiveItem(void),UNKNOWN,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,linux: _ZN5vgui28ComboBox13GetActiveItemEv
+hw,01E54BA1,52,?GetActiveItemUserData@ComboBox@vgui2@@UAEPAVKeyValues@@XZ,public: virtual class KeyValues * __thiscall vgui2::ComboBox::GetActiveItemUserData(void),UNKNOWN,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,linux: _ZN5vgui28ComboBox21GetActiveItemUserDataEv
+hw,01E54BD5,43,?GetItemUserData@ComboBox@vgui2@@UAEPAVKeyValues@@H@Z,public: virtual class KeyValues * __thiscall vgui2::ComboBox::GetItemUserData(int),UNKNOWN,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,linux: _ZN5vgui28ComboBox15GetItemUserDataEi
+hw,01E54C00,34,?IsDropdownVisible@ComboBox@vgui2@@UAE_NXZ,public: virtual bool __thiscall vgui2::ComboBox::IsDropdownVisible(void),UNKNOWN,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,linux: _ZN5vgui28ComboBox17IsDropdownVisibleEv
+hw,01E54C22,56,?ApplySchemeSettings@ComboBox@vgui2@@MAEXPAVIScheme@2@@Z,protected: virtual void __thiscall vgui2::ComboBox::ApplySchemeSettings(class vgui2::IScheme *),ENGINE,vgui2/controls/ComboBox.cpp,,,MATCHED,100,linux_symbols:string:0.833,
+hw,01E54C5A,40,?SetDropdownButtonVisible@ComboBox@vgui2@@UAEX_N@Z,public: virtual void __thiscall vgui2::ComboBox::SetDropdownButtonVisible(bool),UNKNOWN,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,linux: _ZN5vgui28ComboBox24SetDropdownButtonVisibleEb
+hw,01E54C82,172,?OnMousePressed@ComboBox@vgui2@@UAEXW4MouseCode@2@@Z,public: virtual void __thiscall vgui2::ComboBox::OnMousePressed(enum vgui2::MouseCode),ENGINE,vgui2/controls/ComboBox.cpp,,,MATCHED,100,linux_symbols:caller:0.7,
+hw,01E54D2E,68,?OnMouseDoublePressed@ComboBox@vgui2@@UAEXW4MouseCode@2@@Z,public: virtual void __thiscall vgui2::ComboBox::OnMouseDoublePressed(enum vgui2::MouseCode),UNKNOWN,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,linux: _ZN5vgui28ComboBox20OnMouseDoublePressedENS_9MouseCodeE
+hw,01E54D72,60,?OnCommand@ComboBox@vgui2@@MAEXPBD@Z,protected: virtual void __thiscall vgui2::ComboBox::OnCommand(char const *),UNKNOWN,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,linux: _ZN5vgui28ComboBox9OnCommandEPKc
+hw,01E54DAE,412,?OnSetText@ComboBox@vgui2@@MAEXPBG@Z,protected: virtual void __thiscall vgui2::ComboBox::OnSetText(unsigned short const *),UNKNOWN,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,linux: _ZN5vgui28ComboBox9OnSetTextEPKw
+hw,01E54F4A,85,?HideMenu@ComboBox@vgui2@@UAEXXZ,public: virtual void __thiscall vgui2::ComboBox::HideMenu(void),UNKNOWN,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,linux: _ZN5vgui28ComboBox8HideMenuEv
+hw,01E54F9F,64,?ShowMenu@ComboBox@vgui2@@UAEXXZ,public: virtual void __thiscall vgui2::ComboBox::ShowMenu(void),UNKNOWN,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,linux: _ZN5vgui28ComboBox8ShowMenuEv
+hw,01E54FDF,19,?OnKillFocus@ComboBox@vgui2@@UAEXXZ,public: virtual void __thiscall vgui2::ComboBox::OnKillFocus(void),UNKNOWN,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,linux: _ZN5vgui28ComboBox11OnKillFocusEv
+hw,01E54FF2,193,?OnMenuClose@ComboBox@vgui2@@UAEXXZ,public: virtual void __thiscall vgui2::ComboBox::OnMenuClose(void),UNKNOWN,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,linux: _ZN5vgui28ComboBox11OnMenuCloseEv
+hw,01E550B3,646,?DoClick@ComboBox@vgui2@@UAEXXZ,public: virtual void __thiscall vgui2::ComboBox::DoClick(void),UNKNOWN,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,linux: _ZN5vgui28ComboBox7DoClickEv
+hw,01E55339,45,?OnCursorEntered@ComboBox@vgui2@@MAEXXZ,protected: virtual void __thiscall vgui2::ComboBox::OnCursorEntered(void),UNKNOWN,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,linux: _ZN5vgui28ComboBox15OnCursorEnteredEv
+hw,01E55366,79,?OnCursorExited@ComboBox@vgui2@@MAEXXZ,protected: virtual void __thiscall vgui2::ComboBox::OnCursorExited(void),UNKNOWN,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,linux: _ZN5vgui28ComboBox14OnCursorExitedEv
+hw,01E553B5,32,?OnMenuItemSelected@ComboBox@vgui2@@UAEXXZ,public: virtual void __thiscall vgui2::ComboBox::OnMenuItemSelected(void),UNKNOWN,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,linux: _ZN5vgui28ComboBox18OnMenuItemSelectedEv
+hw,01E553D5,82,?OnSizeChanged@ComboBox@vgui2@@UAEXHH@Z,"public: virtual void __thiscall vgui2::ComboBox::OnSizeChanged(int,int)",UNKNOWN,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,linux: _ZN5vgui28ComboBox13OnSizeChangedEii
+hw,01E55427,43,?OnSetFocus@ComboBox@vgui2@@MAEXXZ,protected: virtual void __thiscall vgui2::ComboBox::OnSetFocus(void),UNKNOWN,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,linux: _ZN5vgui28ComboBox10OnSetFocusEv
+hw,01E55452,71,?OnKeyCodeTyped@ComboBox@vgui2@@MAEXW4KeyCode@2@@Z,protected: virtual void __thiscall vgui2::ComboBox::OnKeyCodeTyped(enum vgui2::KeyCode),UNKNOWN,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,linux: _ZN5vgui28ComboBox14OnKeyCodeTypedENS_7KeyCodeE
+hw,01E55499,652,?OnKeyTyped@ComboBox@vgui2@@MAEXG@Z,protected: virtual void __thiscall vgui2::ComboBox::OnKeyTyped(unsigned short),UNKNOWN,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,linux: _ZN5vgui28ComboBox10OnKeyTypedEw
+hw,01E55725,602,?MoveAlongMenuItemList@ComboBox@vgui2@@IAEXH@Z,protected: void __thiscall vgui2::ComboBox::MoveAlongMenuItemList(int),UNKNOWN,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,linux: _ZN5vgui28ComboBox21MoveAlongMenuItemListEi
+hw,01E5597F,25,?SetOpenDirection@ComboBox@vgui2@@UAEXW4MenuDirection_e@12@@Z,public: virtual void __thiscall vgui2::ComboBox::SetOpenDirection(enum vgui2::ComboBox::MenuDirection_e),UNKNOWN,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,linux: _ZN5vgui28ComboBox16SetOpenDirectionENS0_15MenuDirection_eE
+hw,01E55998,51,?SetUseFallbackFont@ComboBox@vgui2@@UAEX_NK@Z,"public: virtual void __thiscall vgui2::ComboBox::SetUseFallbackFont(bool,unsigned long)",UNKNOWN,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,linux: _ZN5vgui28ComboBox18SetUseFallbackFontEbm
+hw,01E559D0,79,?GetButtonBgColor@ComboBoxButton@vgui2@@UAE?AVColor@@XZ,public: virtual class Color __thiscall vgui2::ComboBoxButton::GetButtonBgColor(void),ENGINE,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,
+hw,01E55A20,46,??_GComboBoxButton@vgui2@@UAEPAXI@Z,public: virtual void * __thiscall vgui2::ComboBoxButton::`scalar deleting destructor'(unsigned int),ENGINE,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,
+hw,01E55A50,19,??1ComboBoxButton@vgui2@@UAE@XZ,public: virtual __thiscall vgui2::ComboBoxButton::~ComboBoxButton(void),ENGINE,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,
+hw,01E55A70,46,??_GComboBox@vgui2@@UAEPAXI@Z,public: virtual void * __thiscall vgui2::ComboBox::`scalar deleting destructor'(unsigned int),ENGINE,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,
+hw,01E55AA0,19,??0ComboBox_RegisterMap@ComboBox@vgui2@@QAE@XZ,public: __thiscall vgui2::ComboBox::ComboBox_RegisterMap::ComboBox_RegisterMap(void),ENGINE,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,
+hw,01E55AC0,102,?ChainToMap@ComboBox@vgui2@@SAXXZ,public: static void __cdecl vgui2::ComboBox::ChainToMap(void),ENGINE,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,
+hw,01E55B30,64,?GetMessageMap@ComboBox@vgui2@@UAEPAUPanelMessageMap@2@XZ,public: virtual struct vgui2::PanelMessageMap * __thiscall vgui2::ComboBox::GetMessageMap(void),ENGINE,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,
+hw,01E55B70,10,?GetPanelClassName@ComboBox@vgui2@@SAPBDXZ,public: static char const * __cdecl vgui2::ComboBox::GetPanelClassName(void),ENGINE,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,
+hw,01E55B80,10,?GetPanelBaseClassName@ComboBox@vgui2@@SAPBDXZ,public: static char const * __cdecl vgui2::ComboBox::GetPanelBaseClassName(void),ENGINE,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,
+hw,01E55B90,13,?OnShowMenu@ComboBox@vgui2@@UAEXPAVMenu@2@@Z,public: virtual void __thiscall vgui2::ComboBox::OnShowMenu(class vgui2::Menu *),ENGINE,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,
+hw,01E55BA0,13,?OnHideMenu@ComboBox@vgui2@@UAEXPAVMenu@2@@Z,public: virtual void __thiscall vgui2::ComboBox::OnHideMenu(class vgui2::Menu *),ENGINE,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,
+hw,01E55BB0,19,??0PanelMessageFunc_ActivateItem@ComboBox@vgui2@@QAE@XZ,public: __thiscall vgui2::ComboBox::PanelMessageFunc_ActivateItem::PanelMessageFunc_ActivateItem(void),ENGINE,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,
+hw,01E55BD0,110,?InitVar@PanelMessageFunc_ActivateItem@ComboBox@vgui2@@SAXXZ,public: static void __cdecl vgui2::ComboBox::PanelMessageFunc_ActivateItem::InitVar(void),ENGINE,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,
+hw,01E55C40,120,?AddToMap@ComboBox@vgui2@@SAXPBDP8Panel@2@AEXXZHH0H0@Z,"public: static void __cdecl vgui2::ComboBox::AddToMap(char const *,void (__thiscall vgui2::Panel::*)(void),int,int,char const *,int,char const *)",ENGINE,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,
+hw,01E55CC0,20,?GetMenu@ComboBox@vgui2@@UAEPAVMenu@2@XZ,public: virtual class vgui2::Menu * __thiscall vgui2::ComboBox::GetMenu(void),ENGINE,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,
+hw,01E55CE0,19,??0PanelMessageFunc_OnMenuClose@ComboBox@vgui2@@QAE@XZ,public: __thiscall vgui2::ComboBox::PanelMessageFunc_OnMenuClose::PanelMessageFunc_OnMenuClose(void),ENGINE,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,
+hw,01E55D00,107,?InitVar@PanelMessageFunc_OnMenuClose@ComboBox@vgui2@@SAXXZ,public: static void __cdecl vgui2::ComboBox::PanelMessageFunc_OnMenuClose::InitVar(void),ENGINE,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,
+hw,01E55D70,19,??0PanelMessageFunc_OnMenuItemSelected@ComboBox@vgui2@@QAE@XZ,public: __thiscall vgui2::ComboBox::PanelMessageFunc_OnMenuItemSelected::PanelMessageFunc_OnMenuItemSelected(void),ENGINE,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,
+hw,01E55D90,107,?InitVar@PanelMessageFunc_OnMenuItemSelected@ComboBox@vgui2@@SAXXZ,public: static void __cdecl vgui2::ComboBox::PanelMessageFunc_OnMenuItemSelected::InitVar(void),ENGINE,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,
+hw,01E55E00,19,??0PanelMessageFunc_OnSetText@ComboBox@vgui2@@QAE@XZ,public: __thiscall vgui2::ComboBox::PanelMessageFunc_OnSetText::PanelMessageFunc_OnSetText(void),ENGINE,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,
+hw,01E55E20,110,?InitVar@PanelMessageFunc_OnSetText@ComboBox@vgui2@@SAXXZ,public: static void __cdecl vgui2::ComboBox::PanelMessageFunc_OnSetText::InitVar(void),ENGINE,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,
 hw,01E55EC0,232,,,ENGINE,vgui2/controls/CheckButton.cpp,,,TODO,,,
 hw,01E55FA8,79,,,ENGINE,vgui2/controls/CheckButton.cpp,,,TODO,,,
 hw,01E55FF7,525,,,UNKNOWN,vgui2/controls/CheckButton.cpp,,,TODO,,,linux: _ZN5vgui211CheckButton19ApplySchemeSettingsEPNS_7ISchemeE

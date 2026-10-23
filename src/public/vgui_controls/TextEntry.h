@@ -298,6 +298,8 @@ private:
 	bool			   m_bAutoProgressOnHittingCharLimit : 1;
 	bool			   m_bUseFallbackFont : 1;
 	HFont			   m_hFallbackFont;
+
+	friend class ComboBox;
 };
 
 }

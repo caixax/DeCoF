@@ -2685,6 +2685,18 @@
           ]
         },
         {
+          "name": "vgui2/controls/ComboBox",
+          "source": "src/vgui2/controls/ComboBox.cpp",
+          "functions_file": "tools/units/hw_vgui2_controls_ComboBox.txt",
+          "includes": [
+            "src/gameui",
+            "src/public",
+            "src/common",
+            "src/engine",
+            "src/pm_shared"
+          ]
+        },
+        {
           "name": "engine/net_api",
           "source": "src/engine_hw/net_api.c",
           "functions_file": "tools/units/hw_engine_net_api.txt"
@@ -3251,6 +3263,11 @@
           "name": "vgui2/controls/BuildModeDialog",
           "source": "src/vgui2/controls/BuildModeDialog.cpp",
           "functions_file": "tools/units/gameui_vgui2_controls_BuildModeDialog.txt"
+        },
+        {
+          "name": "vgui2/controls/ComboBox",
+          "source": "src/vgui2/controls/ComboBox.cpp",
+          "functions_file": "tools/units/gameui_vgui2_controls_ComboBox.txt"
         },
         {
           "name": "vgui2/controls/ListPanel",

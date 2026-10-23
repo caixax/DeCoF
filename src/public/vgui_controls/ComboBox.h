@@ -116,7 +116,7 @@ protected:
 	virtual void OnCursorExited();
 
 	// custom message handlers
-	MESSAGE_FUNC_WCHARPTR( OnSetText, "SetText", newtext );
+	MESSAGE_FUNC_WCHARPTR( OnSetText, "SetText", text );
 	virtual void OnSetFocus();						// called after the panel receives the keyboard focus
 	virtual void OnKeyCodeTyped(KeyCode code);
 	void MoveAlongMenuItemList(int direction);
