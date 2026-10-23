@@ -60,5 +60,5 @@
 <rect x="24.00" y="692" width="552.58" height="18" fill="#2da44e"/>
 <rect x="576.58" y="692" width="23.43" height="18" fill="#d4a72c"/>
 <text x="24" y="726" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#57606a" xml:space="preserve">MATCHED 77.6% (15874)   EQUIVALENT 3.3% (63)   TODO 19.1% (5767)   3830822 code bytes</text>
-<text x="24" y="756" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="11" fill="#57606a">Target build 1.6a | commit 81e5b2d | 2026-10-23 | numbers from docs/progress.csv</text>
+<text x="24" y="756" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="11" fill="#57606a">Target build 1.6a | commit 1c4ab9e | 2026-10-23 | numbers from docs/progress.csv</text>
 </svg>
