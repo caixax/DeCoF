@@ -28031,17 +28031,17 @@ hw,01DD3B4A,62,_SNDDMA_Activate_guess,SNDDMA_Activate_guess,ENGINE,engine/snd_wi
 hw,01DD3B88,446,_SNDDMA_InitA3D_guess,SNDDMA_InitA3D_guess,ENGINE,engine/snd_win.c,,,MATCHED,100,,
 hw,01DD3D46,376,_S_DisableA3D_guess,,ENGINE,engine/snd_win.c,,,MATCHED,100,,
 hw,01DD3EBE,220,_S_EnableA3D_guess,,ENGINE,engine/snd_win.c,,,MATCHED,100,,
-hw,01DD3FA0,32,,,ENGINE,common/steamid.cpp,,,TODO,,,linux: _ZN8CSteamIDC1EPKc9EUniverse
-hw,01DD3FC0,1022,,,ENGINE,common/steamid.cpp,,,TODO,,,linux: _ZN8CSteamID13SetFromStringEPKc9EUniverse
-hw,01DD43BE,202,?SetFromSteam2String@CSteamID@@QAE_NPBDW4EUniverse@@@Z,CSteamID::SetFromSteam2String,ENGINE,common/steamid.cpp,,,TODO,,hw_manual.csv,linux: _ZN8CSteamID19SetFromSteam2StringEPKc9EUniverse
-hw,01DD4488,940,,,ENGINE,common/steamid.cpp,,,TODO,,,linux: _ZNK8CSteamID6RenderEv
-hw,01DD4834,34,,,ENGINE,common/steamid.cpp,,,TODO,,,linux: _ZN8CSteamID6RenderEy
-hw,01DD4856,114,,,ENGINE,common/steamid.cpp,,,TODO,,,linux: _ZNK8CSteamID21BValidExternalSteamIDEv
-hw,01DD48D0,119,?InstancedSet@CSteamID@@QAEXIIW4EUniverse@@W4EAccountType@@@Z,CSteamID::InstancedSet,ENGINE,common/steamid.cpp,,,TODO,,hw_manual.csv,
-hw,01DD4950,99,,,ENGINE,common/steamid.cpp,,,TODO,,,
-hw,01DD49C0,120,,,ENGINE,common/steamid.cpp,,,TODO,,,
-hw,01DD4A40,32,??0CSteamID@@QAE@_K@Z,CSteamID::CSteamID,ENGINE,common/steamid.cpp,,,TODO,,hw_manual.csv,
-hw,01DD4A60,27,?SetFromUint64@CSteamID@@QAEX_K@Z,CSteamID::SetFromUint64,ENGINE,common/steamid.cpp,,,TODO,,hw_manual.csv,
+hw,01DD3FA0,32,??0CSteamID@@QAE@PBDW4EUniverse@@@Z,CSteamID::CSteamID,ENGINE,common/steamid.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN8CSteamIDC1EPKc9EUniverse
+hw,01DD3FC0,1022,?SetFromString@CSteamID@@QAEXPBDW4EUniverse@@@Z,CSteamID::SetFromString,ENGINE,common/steamid.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN8CSteamID13SetFromStringEPKc9EUniverse
+hw,01DD43BE,202,?SetFromSteam2String@CSteamID@@QAE_NPBDW4EUniverse@@@Z,CSteamID::SetFromSteam2String,ENGINE,common/steamid.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN8CSteamID19SetFromSteam2StringEPKc9EUniverse
+hw,01DD4488,940,?Render@CSteamID@@QBEPBDXZ,CSteamID::Render,ENGINE,common/steamid.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZNK8CSteamID6RenderEv
+hw,01DD4834,34,?Render@CSteamID@@SAPBD_K@Z,CSteamID::Render,ENGINE,common/steamid.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN8CSteamID6RenderEy
+hw,01DD4856,114,?BValidExternalSteamID@CSteamID@@QBE_NXZ,CSteamID::BValidExternalSteamID,ENGINE,common/steamid.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZNK8CSteamID21BValidExternalSteamIDEv
+hw,01DD48D0,119,?InstancedSet@CSteamID@@QAEXIIW4EUniverse@@W4EAccountType@@@Z,CSteamID::InstancedSet,ENGINE,common/steamid.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DD4950,99,?CreateBlankAnonLogon@CSteamID@@QAEXW4EUniverse@@@Z,CSteamID::CreateBlankAnonLogon,ENGINE,common/steamid.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DD49C0,120,?SetFromSteam2@CSteamID@@QAEXPAUTSteamGlobalUserID@@W4EUniverse@@@Z,CSteamID::SetFromSteam2,ENGINE,common/steamid.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DD4A40,32,??0CSteamID@@QAE@_K@Z,CSteamID::CSteamID,ENGINE,common/steamid.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DD4A60,27,?SetFromUint64@CSteamID@@QAEX_K@Z,CSteamID::SetFromUint64,ENGINE,common/steamid.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01DD4A80,557,_Log_Printf,Log_Printf,ENGINE,engine/sv_log.c,,,MATCHED,100,linux_symbols:string:0.475,
 hw,01DD4CAD,113,_Log_PrintServerVars,Log_PrintServerVars,ENGINE,engine/sv_log.c,,,MATCHED,100,linux_symbols:string:0.833,
 hw,01DD4D1E,51,_Log_Close,Log_Close,ENGINE,engine/sv_log.c,,,MATCHED,100,linux_symbols:string:0.833,

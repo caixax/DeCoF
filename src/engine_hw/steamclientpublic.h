@@ -83,6 +83,24 @@ enum EAccountType
 	k_EAccountTypeMax
 };
 
+// Steam ID masks and instances (steamid.cpp)
+const unsigned int k_unSteamAccountIDMask = 0xFFFFFFFF;
+const unsigned int k_unSteamAccountInstanceMask = 0x000FFFFF;
+// we allow 3 simultaneous user account instances right now, 1= desktop, 2 = console, 4 = web, 0 = all
+const unsigned int k_unSteamUserDesktopInstance = 1;
+const unsigned int k_unSteamUserConsoleInstance = 2;
+const unsigned int k_unSteamUserWebInstance = 4;
+
+// Special flags for Chat accounts - they go in the top 8 bits
+// of the steam ID's "instance", leaving 12 for the actual instances
+enum EChatSteamIDInstanceFlags
+{
+	k_EChatAccountInstanceMask = 0x00000FFF, // top 8 bits are flags
+
+	k_EChatInstanceFlagClan = ( k_unSteamAccountInstanceMask + 1 ) >> 1,	// top bit
+	k_EChatInstanceFlagLobby = ( k_unSteamAccountInstanceMask + 1 ) >> 2,	// next one down, etc
+};
+
 #pragma pack( push, 1 )
 
 // Steam ID structure (64 bits total)
@@ -108,6 +126,9 @@ public:
 		SetFromUint64( ulSteamID );
 	}
 
+	// Initializes a steam ID from a string (steamid.cpp)
+	CSteamID( const char *pchSteamID, EUniverse eDefaultUniverse = k_EUniverseInvalid );
+
 	void InstancedSet( uint32 unAccountID, uint32 unInstance, EUniverse eUniverse, EAccountType eAccountType )
 	{
 		m_steamid.m_comp.m_unAccountID = unAccountID;
@@ -119,6 +140,14 @@ public:
 	void SetFromUint64( uint64 ulSteamID )
 	{
 		m_steamid.m_unAll64Bits = ulSteamID;
+	}
+
+	void CreateBlankAnonLogon( EUniverse eUniverse )
+	{
+		m_steamid.m_comp.m_unAccountID = 0;
+		m_steamid.m_comp.m_EAccountType = k_EAccountTypeAnonGameServer;
+		m_steamid.m_comp.m_EUniverse = eUniverse;
+		m_steamid.m_comp.m_unAccountInstance = 0;
 	}
 
 #if defined( SERVER_H )
@@ -153,7 +182,13 @@ public:
 	uint32 GetAccountID() const			{ return m_steamid.m_comp.m_unAccountID; }
 	EUniverse GetEUniverse() const		{ return m_steamid.m_comp.m_EUniverse; }
 
+	void SetFromString( const char *pchSteamID, EUniverse eDefaultUniverse );
 	bool SetFromSteam2String( const char *pchSteam2ID, EUniverse eUniverse );
+
+	const char *Render() const;					// renders this steam ID to string
+	static const char *Render( uint64 ulSteamID );	// static method to render a uint64 representation of a steam ID to a string
+
+	bool BValidExternalSteamID() const;
 
 private:
 	// These are defined here to prevent accidental implicit conversion of a u32AccountID to a CSteamID.
