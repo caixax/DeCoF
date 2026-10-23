@@ -3121,7 +3121,12 @@
         {
           "name": "engine/traceinit",
           "source": "src/engine_hw/traceinit.cpp",
-          "functions_file": "tools/units/hw_engine_traceinit.txt"
+          "functions_file": "tools/units/hw_engine_traceinit.txt",
+          "includes": [
+            "src/engine_hw",
+            "src/public",
+            "src/common"
+          ]
         },
         {
           "name": "public/UtlBuffer",
