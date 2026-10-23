@@ -3388,49 +3388,50 @@ extern "C" BOOL WINAPI wglChoosePixelFormat( HDC hdc, CONST PIXELFORMATDESCRIPTO
 
 HGLRC WINAPI wglCreateContext( HDC hdc )
 {
-	RECT				rect_guess;
+	RECT				rcwin_guess;
 	DDSURFACEDESC		ddsd;
 	D3DDEVICEDESC		hel_guess;
-	DXMGRCREATE_guess	create_guess;
-	LPDIRECT3D3			lpD3D_guess;
-	int					bpp_guess, wide_guess, tall_guess;
-	IDXEnum_guess		*lpTexEnum_guess;
-	int					parm_guess;
+	int					curwide_guess, curbpp_guess;
+	LPDIRECT3D3			lpDirect3D_guess;
+	DXMGRCREATE_guess	createparams_guess;
+	int					curtall_guess;
+	int					nParm_guess;
+	IDXEnum_guess		*texenum_guess;
+	LPDIRECTDRAW		tmpDD_guess;
+	int					ix_guess;
 	HRESULT				ddrval;
-	int					i;
-	LPDIRECTDRAW		lpDD_guess;
-	D3DDEVICEDESC		hal_guess;
-	bool				found_guess;
-	HKEY				hKey_guess;
-	DWORD				vbsize_guess;
-	D3DVERTEXBUFFERDESC	vbdesc_guess;
+	bool				have_guess;
+	D3DDEVICEDESC		haldesc_guess;
 	HMODULE				hOverlay_guess;
+	D3DVERTEXBUFFERDESC	vbDescr_guess;
+	DWORD				vbuflen_guess;
+	HKEY				hKey_guess;
 
 	g_guess.m_hdc_guess = hdc;
 	g_guess.m_hwnd_guess = WindowFromDC( g_guess.m_hdc_guess );
-	GetClientRect( g_guess.m_hwnd_guess, &rect_guess );
-	g_guess.m_winWidth_guess = LOWORD( rect_guess.right );
-	g_guess.m_winHeight_guess = LOWORD( rect_guess.bottom );
+	GetClientRect( g_guess.m_hwnd_guess, &rcwin_guess );
+	g_guess.m_winWidth_guess = LOWORD( rcwin_guess.right );
+	g_guess.m_winHeight_guess = LOWORD( rcwin_guess.bottom );
 
 	ddrval = CoInitialize( NULL );
 	if ( FAILED( ddrval ) )
 		return 0;
 
-	ddrval = DirectDrawCreate( NULL, &lpDD_guess, NULL );
+	ddrval = DirectDrawCreate( NULL, &tmpDD_guess, NULL );
 	if ( FAILED( ddrval ) )
 	{
 		CoUninitialize();
 		return 0;
 	}
 	ddsd.dwSize = sizeof( ddsd );
-	ddrval = lpDD_guess->GetDisplayMode( &ddsd );
+	ddrval = tmpDD_guess->GetDisplayMode( &ddsd );
 	if ( FAILED( ddrval ) )
 	{
-		lpDD_guess->Release();
+		tmpDD_guess->Release();
 		CoUninitialize();
 		return 0;
 	}
-	lpDD_guess->Release();
+	tmpDD_guess->Release();
 
 	ddrval = DXMgrCreate_guess( IID_IDXMgr_guess, (LPVOID *)&g_guess.m_pDXMgr_guess );
 	if ( FAILED( ddrval ) )
@@ -3446,27 +3447,27 @@ HGLRC WINAPI wglCreateContext( HDC hdc )
 		return 0;
 	}
 
-	Q_memset( &create_guess, 0, sizeof( create_guess ) );
-	create_guess.dwFlags_guess = DXMGRCREATE_DEFAULT_guess;
+	Q_memset( &createparams_guess, 0, sizeof( createparams_guess ) );
+	createparams_guess.dwFlags_guess = DXMGRCREATE_DEFAULT_guess;
 	if ( RegOpenKey( HKEY_LOCAL_MACHINE, "Software\\Microsoft\\Quake", &hKey_guess ) == ERROR_SUCCESS )
 	{
 		DWORD dwSize = 4, dwType, dwValue;
 
 		if ( RegQueryValueEx( hKey_guess, "Emulation", NULL, &dwType, (LPBYTE)&dwValue, &dwSize ) == ERROR_SUCCESS && dwType == REG_DWORD && dwValue != 0 )
 		{
-			create_guess.guidDevice_guess = IID_IDirect3DRGBDevice;
-			create_guess.dwFlags_guess |= DXMGRCREATE_DEVICE_guess;
+			createparams_guess.guidDevice_guess = IID_IDirect3DRGBDevice;
+			createparams_guess.dwFlags_guess |= DXMGRCREATE_DEVICE_guess;
 		}
 		RegCloseKey( hKey_guess );
 	}
-	create_guess.hWnd_guess = g_guess.m_hwnd_guess;
+	createparams_guess.hWnd_guess = g_guess.m_hwnd_guess;
 	if ( g_guess.m_fullscreen_guess )
 	{
-		IDXEnum_guess	*lpModeEnum_guess;
+		IDXEnum_guess	*pModeEnum_guess;
 		ULONG			fetched_guess;
 
-		create_guess.dwFlags_guess |= DXMGRCREATE_FULLSCREEN_guess;
-		ddrval = g_guess.m_pDXMgr_guess->EnumDisplayModes_guess( &lpModeEnum_guess, 0 );
+		createparams_guess.dwFlags_guess |= DXMGRCREATE_FULLSCREEN_guess;
+		ddrval = g_guess.m_pDXMgr_guess->EnumDisplayModes_guess( &pModeEnum_guess, 0 );
 		if ( FAILED( ddrval ) )
 		{
 			g_guess.m_pDXMgr_guess->Release();
@@ -3475,30 +3476,30 @@ HGLRC WINAPI wglCreateContext( HDC hdc )
 		}
 		while ( 1 )
 		{
-			ddrval = lpModeEnum_guess->Next( 1, &create_guess.mode_guess, &fetched_guess );
+			ddrval = pModeEnum_guess->Next( 1, &createparams_guess.mode_guess, &fetched_guess );
 			if ( FAILED( ddrval ) )
 			{
-				lpModeEnum_guess->Release();
+				pModeEnum_guess->Release();
 				g_guess.m_pDXMgr_guess->Release();
 				CoUninitialize();
 				return 0;
 			}
 			if ( fetched_guess == 0 )
 				break;
-			if ( create_guess.mode_guess.dwWidth_guess == ddsd.dwWidth && create_guess.mode_guess.dwHeight_guess == ddsd.dwHeight && create_guess.mode_guess.dwBPP_guess == ddsd.ddpfPixelFormat.dwRGBBitCount )
+			if ( createparams_guess.mode_guess.dwWidth_guess == ddsd.dwWidth && createparams_guess.mode_guess.dwHeight_guess == ddsd.dwHeight && createparams_guess.mode_guess.dwBPP_guess == ddsd.ddpfPixelFormat.dwRGBBitCount )
 			{
-				create_guess.dwFlags_guess |= DXMGRCREATE_MODE_guess;
+				createparams_guess.dwFlags_guess |= DXMGRCREATE_MODE_guess;
 				break;
 			}
 		}
-		lpModeEnum_guess->Release();
+		pModeEnum_guess->Release();
 	}
-	create_guess.dvNear_guess = 1.0f;
-	create_guess.dvFar_guess = 10.0f;
-	parm_guess = COM_CheckParm( "-freq" );
-	if ( parm_guess )
-		create_guess.mode_guess.dwRefreshRate_guess = atoi( com_argv[ parm_guess + 1 ] );
-	ddrval = g_guess.m_pDXMgr_guess->Create_guess( &create_guess );
+	createparams_guess.dvNear_guess = 1.0f;
+	createparams_guess.dvFar_guess = 10.0f;
+	nParm_guess = COM_CheckParm( "-freq" );
+	if ( nParm_guess )
+		createparams_guess.mode_guess.dwRefreshRate_guess = atoi( com_argv[ nParm_guess + 1 ] );
+	ddrval = g_guess.m_pDXMgr_guess->Create_guess( &createparams_guess );
 	if ( FAILED( ddrval ) )
 	{
 		g_guess.m_pDXMgr_guess->Release();
@@ -3531,9 +3532,10 @@ HGLRC WINAPI wglCreateContext( HDC hdc )
 			pfnHook_guess( &g_guess.m_pD3DDev_guess, &g_guess.m_pDD_guess );
 	}
 
-	hal_guess.dwSize = hel_guess.dwSize = sizeof( D3DDEVICEDESC );
-	g_guess.m_pD3DDev_guess->GetCaps( &hal_guess, &hel_guess );
-	g_guess.m_dd_guess = *( hal_guess.dwFlags ? &hal_guess : &hel_guess );
+	hel_guess.dwSize = sizeof( D3DDEVICEDESC );
+	haldesc_guess.dwSize = sizeof( D3DDEVICEDESC );
+	g_guess.m_pD3DDev_guess->GetCaps( &haldesc_guess, &hel_guess );
+	g_guess.m_dd_guess = haldesc_guess.dwFlags ? haldesc_guess : hel_guess;
 
 	if ( RegOpenKey( HKEY_LOCAL_MACHINE, "Software\\Microsoft\\Quake", &hKey_guess ) == ERROR_SUCCESS )
 	{
@@ -3555,7 +3557,7 @@ HGLRC WINAPI wglCreateContext( HDC hdc )
 		g_guess.m_usemipmap_guess = TRUE;
 	}
 
-	ddrval = g_guess.m_pDXMgr_guess->EnumTextureFormats_guess( &lpTexEnum_guess, 0 );
+	ddrval = g_guess.m_pDXMgr_guess->EnumTextureFormats_guess( &texenum_guess, 0 );
 	if ( FAILED( ddrval ) )
 	{
 		g_guess.m_pD3DDev_guess->Release();
@@ -3563,17 +3565,17 @@ HGLRC WINAPI wglCreateContext( HDC hdc )
 		CoUninitialize();
 		return 0;
 	}
-	VideoMode_GetCurrentVideoMode( &wide_guess, &tall_guess, &bpp_guess );
+	VideoMode_GetCurrentVideoMode( &curwide_guess, &curtall_guess, &curbpp_guess );
 
-	found_guess = false;
+	have_guess = false;
 	while ( 1 )
 	{
 		ULONG fetched_guess;
 
-		ddrval = lpTexEnum_guess->Next( 1, &g_guess.m_ddFiveBitAlphaFormat_guess, &fetched_guess );
+		ddrval = texenum_guess->Next( 1, &g_guess.m_ddFiveBitAlphaFormat_guess, &fetched_guess );
 		if ( FAILED( ddrval ) )
 		{
-			lpTexEnum_guess->Release();
+			texenum_guess->Release();
 			g_guess.m_pD3DDev_guess->Release();
 			g_guess.m_pDXMgr_guess->Release();
 			CoUninitialize();
@@ -3581,45 +3583,45 @@ HGLRC WINAPI wglCreateContext( HDC hdc )
 		}
 		if ( fetched_guess == 0 )
 			break;
-		if ( bpp_guess == 16 && ( g_guess.m_ddFiveBitAlphaFormat_guess.dwFlags & DDPF_RGB ) && g_guess.m_ddFiveBitAlphaFormat_guess.dwRGBBitCount == bpp_guess && ( g_guess.m_ddFiveBitAlphaFormat_guess.dwFlags & DDPF_ALPHAPIXELS ) && g_guess.m_ddFiveBitAlphaFormat_guess.dwRGBAlphaBitMask == 0x8000 && g_guess.m_ddFiveBitAlphaFormat_guess.dwRBitMask == 0x7C00 && g_guess.m_ddFiveBitAlphaFormat_guess.dwGBitMask == 0x3E0 && g_guess.m_ddFiveBitAlphaFormat_guess.dwBBitMask == 0x1F )
+		if ( curbpp_guess == 16 && ( g_guess.m_ddFiveBitAlphaFormat_guess.dwFlags & DDPF_RGB ) && g_guess.m_ddFiveBitAlphaFormat_guess.dwRGBBitCount == curbpp_guess && ( g_guess.m_ddFiveBitAlphaFormat_guess.dwFlags & DDPF_ALPHAPIXELS ) && g_guess.m_ddFiveBitAlphaFormat_guess.dwRGBAlphaBitMask == 0x8000 && g_guess.m_ddFiveBitAlphaFormat_guess.dwRBitMask == 0x7C00 && g_guess.m_ddFiveBitAlphaFormat_guess.dwGBitMask == 0x3E0 && g_guess.m_ddFiveBitAlphaFormat_guess.dwBBitMask == 0x1F )
 		{
-			found_guess = true;
+			have_guess = true;
 			break;
 		}
-		if ( bpp_guess == 32 && ( g_guess.m_ddFiveBitAlphaFormat_guess.dwFlags & DDPF_RGB ) && g_guess.m_ddFiveBitAlphaFormat_guess.dwRGBBitCount == bpp_guess && ( g_guess.m_ddFiveBitAlphaFormat_guess.dwFlags & DDPF_ALPHAPIXELS ) && g_guess.m_ddFiveBitAlphaFormat_guess.dwRGBAlphaBitMask == 0xFF000000 && g_guess.m_ddFiveBitAlphaFormat_guess.dwRBitMask == 0xFF0000 && g_guess.m_ddFiveBitAlphaFormat_guess.dwGBitMask == 0xFF00 && g_guess.m_ddFiveBitAlphaFormat_guess.dwBBitMask == 0xFF )
+		if ( curbpp_guess == 32 && ( g_guess.m_ddFiveBitAlphaFormat_guess.dwFlags & DDPF_RGB ) && g_guess.m_ddFiveBitAlphaFormat_guess.dwRGBBitCount == curbpp_guess && ( g_guess.m_ddFiveBitAlphaFormat_guess.dwFlags & DDPF_ALPHAPIXELS ) && g_guess.m_ddFiveBitAlphaFormat_guess.dwRGBAlphaBitMask == 0xFF000000 && g_guess.m_ddFiveBitAlphaFormat_guess.dwRBitMask == 0xFF0000 && g_guess.m_ddFiveBitAlphaFormat_guess.dwGBitMask == 0xFF00 && g_guess.m_ddFiveBitAlphaFormat_guess.dwBBitMask == 0xFF )
 		{
-			found_guess = true;
+			have_guess = true;
 			break;
 		}
 	}
-	if ( !found_guess )
+	if ( !have_guess )
 	{
 		OutputDebugString( "Wrapper: Unable to find 5551 texture.\n" );
-		lpTexEnum_guess->Release();
+		texenum_guess->Release();
 		g_guess.m_pD3DDev_guess->Release();
 		g_guess.m_pDXMgr_guess->Release();
 		CoUninitialize();
 		return 0;
 	}
 
-	ddrval = lpTexEnum_guess->Reset();
+	ddrval = texenum_guess->Reset();
 	if ( FAILED( ddrval ) )
 	{
-		lpTexEnum_guess->Release();
+		texenum_guess->Release();
 		g_guess.m_pD3DDev_guess->Release();
 		g_guess.m_pDXMgr_guess->Release();
 		CoUninitialize();
 		return 0;
 	}
-	found_guess = false;
+	have_guess = false;
 	while ( 1 )
 	{
 		ULONG fetched_guess;
 
-		ddrval = lpTexEnum_guess->Next( 1, &g_guess.m_ddFourBitAlphaFormat_guess, &fetched_guess );
+		ddrval = texenum_guess->Next( 1, &g_guess.m_ddFourBitAlphaFormat_guess, &fetched_guess );
 		if ( FAILED( ddrval ) )
 		{
-			lpTexEnum_guess->Release();
+			texenum_guess->Release();
 			g_guess.m_pD3DDev_guess->Release();
 			g_guess.m_pDXMgr_guess->Release();
 			CoUninitialize();
@@ -3629,34 +3631,34 @@ HGLRC WINAPI wglCreateContext( HDC hdc )
 			break;
 		if ( ( g_guess.m_ddFourBitAlphaFormat_guess.dwFlags & DDPF_RGB ) && g_guess.m_ddFourBitAlphaFormat_guess.dwRGBBitCount == 16 && ( g_guess.m_ddFourBitAlphaFormat_guess.dwFlags & DDPF_ALPHAPIXELS ) && g_guess.m_ddFourBitAlphaFormat_guess.dwRGBAlphaBitMask == 0xF000 && g_guess.m_ddFourBitAlphaFormat_guess.dwRBitMask == 0xF00 && g_guess.m_ddFourBitAlphaFormat_guess.dwGBitMask == 0xF0 && g_guess.m_ddFourBitAlphaFormat_guess.dwBBitMask == 0xF )
 		{
-			found_guess = true;
+			have_guess = true;
 			break;
 		}
 	}
-	if ( !found_guess )
+	if ( !have_guess )
 	{
 		OutputDebugString( "Wrapper: Not using 4444 texture.\n" );
 		g_guess.m_ddFourBitAlphaFormat_guess = g_guess.m_ddFiveBitAlphaFormat_guess;
 	}
 
-	ddrval = lpTexEnum_guess->Reset();
+	ddrval = texenum_guess->Reset();
 	if ( FAILED( ddrval ) )
 	{
-		lpTexEnum_guess->Release();
+		texenum_guess->Release();
 		g_guess.m_pD3DDev_guess->Release();
 		g_guess.m_pDXMgr_guess->Release();
 		CoUninitialize();
 		return 0;
 	}
-	found_guess = false;
+	have_guess = false;
 	while ( 1 )
 	{
 		ULONG fetched_guess;
 
-		ddrval = lpTexEnum_guess->Next( 1, &g_guess.m_ddFiveBitFormat_guess, &fetched_guess );
+		ddrval = texenum_guess->Next( 1, &g_guess.m_ddFiveBitFormat_guess, &fetched_guess );
 		if ( FAILED( ddrval ) )
 		{
-			lpTexEnum_guess->Release();
+			texenum_guess->Release();
 			g_guess.m_pD3DDev_guess->Release();
 			g_guess.m_pDXMgr_guess->Release();
 			CoUninitialize();
@@ -3666,38 +3668,38 @@ HGLRC WINAPI wglCreateContext( HDC hdc )
 			break;
 		if ( ( g_guess.m_ddFiveBitFormat_guess.dwFlags & DDPF_RGB ) && g_guess.m_ddFiveBitFormat_guess.dwRGBBitCount == 16 && !( g_guess.m_ddFiveBitFormat_guess.dwFlags & DDPF_ALPHAPIXELS ) && ( g_guess.m_ddFiveBitFormat_guess.dwRBitMask == 0xF800 || g_guess.m_ddFiveBitFormat_guess.dwRBitMask == 0x7C00 ) && ( g_guess.m_ddFiveBitFormat_guess.dwGBitMask == 0x7E0 || g_guess.m_ddFiveBitFormat_guess.dwGBitMask == 0x3E0 ) && g_guess.m_ddFiveBitFormat_guess.dwBBitMask == 0x1F )
 		{
-			found_guess = true;
+			have_guess = true;
 			break;
 		}
 	}
-	if ( !found_guess )
+	if ( !have_guess )
 	{
 		OutputDebugString( "Wrapper: Unable to find 555 or 565 texture.\n" );
-		lpTexEnum_guess->Release();
+		texenum_guess->Release();
 		g_guess.m_pD3DDev_guess->Release();
 		g_guess.m_pDXMgr_guess->Release();
 		CoUninitialize();
 		return 0;
 	}
 
-	ddrval = lpTexEnum_guess->Reset();
+	ddrval = texenum_guess->Reset();
 	if ( FAILED( ddrval ) )
 	{
-		lpTexEnum_guess->Release();
+		texenum_guess->Release();
 		g_guess.m_pD3DDev_guess->Release();
 		g_guess.m_pDXMgr_guess->Release();
 		CoUninitialize();
 		return 0;
 	}
-	found_guess = false;
+	have_guess = false;
 	while ( 1 )
 	{
 		ULONG fetched_guess;
 
-		ddrval = lpTexEnum_guess->Next( 1, &g_guess.m_ddLuminanceFormat_guess, &fetched_guess );
+		ddrval = texenum_guess->Next( 1, &g_guess.m_ddLuminanceFormat_guess, &fetched_guess );
 		if ( FAILED( ddrval ) )
 		{
-			lpTexEnum_guess->Release();
+			texenum_guess->Release();
 			g_guess.m_pD3DDev_guess->Release();
 			g_guess.m_pDXMgr_guess->Release();
 			CoUninitialize();
@@ -3707,16 +3709,16 @@ HGLRC WINAPI wglCreateContext( HDC hdc )
 			break;
 		if ( ( g_guess.m_ddLuminanceFormat_guess.dwFlags & DDPF_LUMINANCE ) && g_guess.m_ddLuminanceFormat_guess.dwLuminanceBitCount == 8 && g_guess.m_ddLuminanceFormat_guess.dwLuminanceBitMask == 0xFF )
 		{
-			found_guess = true;
+			have_guess = true;
 			break;
 		}
 	}
-	if ( !found_guess )
+	if ( !have_guess )
 	{
 		OutputDebugString( "Wrapper: Not using luminance texture\n" );
 		g_guess.m_ddLuminanceFormat_guess = g_guess.m_ddFiveBitFormat_guess;
 	}
-	lpTexEnum_guess->Release();
+	texenum_guess->Release();
 
 	if ( g_guess.m_dd_guess.dwMaxTextureWidth < 512 || g_guess.m_dd_guess.dwMaxTextureHeight < 512 )
 	{
@@ -3769,7 +3771,7 @@ HGLRC WINAPI wglCreateContext( HDC hdc )
 	if ( gl_d3dflip.value )
 		g_guess.m_doFlip_guess = TRUE;
 
-	ddrval = g_guess.m_pD3DDev_guess->GetDirect3D( &lpD3D_guess );
+	ddrval = g_guess.m_pD3DDev_guess->GetDirect3D( &lpDirect3D_guess );
 	if ( FAILED( ddrval ) )
 	{
 		g_guess.m_pD3DDev_guess->Release();
@@ -3777,13 +3779,13 @@ HGLRC WINAPI wglCreateContext( HDC hdc )
 		CoUninitialize();
 		return 0;
 	}
-	vbdesc_guess.dwSize = sizeof( vbdesc_guess );
-	vbdesc_guess.dwCaps = D3DVBCAPS_WRITEONLY;
-	if ( hal_guess.dwFlags == 0 )
-		vbdesc_guess.dwCaps = D3DVBCAPS_SYSTEMMEMORY;
-	vbdesc_guess.dwFVF = D3DFVF_XYZ | D3DFVF_DIFFUSE | D3DFVF_TEX2;
-	vbdesc_guess.dwNumVertices = VBNUMVERTS_guess;
-	ddrval = lpD3D_guess->CreateVertexBuffer( &vbdesc_guess, &g_guess.m_xyzbuf_guess, 0, NULL );
+	vbDescr_guess.dwSize = sizeof( vbDescr_guess );
+	vbDescr_guess.dwCaps = D3DVBCAPS_WRITEONLY;
+	if ( haldesc_guess.dwFlags == 0 )
+		vbDescr_guess.dwCaps = D3DVBCAPS_SYSTEMMEMORY;
+	vbDescr_guess.dwFVF = D3DFVF_XYZ | D3DFVF_DIFFUSE | D3DFVF_TEX2;
+	vbDescr_guess.dwNumVertices = VBNUMVERTS_guess;
+	ddrval = lpDirect3D_guess->CreateVertexBuffer( &vbDescr_guess, &g_guess.m_xyzbuf_guess, 0, NULL );
 	if ( FAILED( ddrval ) )
 	{
 		g_guess.m_pD3DDev_guess->Release();
@@ -3791,9 +3793,9 @@ HGLRC WINAPI wglCreateContext( HDC hdc )
 		CoUninitialize();
 		return 0;
 	}
-	g_guess.m_xyzbuf_guess->Lock( DDLOCK_WAIT | DDLOCK_WRITEONLY | DDLOCK_NOSYSLOCK, (LPVOID *)&g_guess.m_verts_guess, &vbsize_guess );
-	vbdesc_guess.dwFVF = g_guess.m_usemtex_guess ? ( D3DFVF_XYZRHW | D3DFVF_DIFFUSE | D3DFVF_TEX2 ) : D3DFVF_TLVERTEX;
-	ddrval = lpD3D_guess->CreateVertexBuffer( &vbdesc_guess, &g_guess.m_tlbuf_guess, 0, NULL );
+	g_guess.m_xyzbuf_guess->Lock( DDLOCK_WAIT | DDLOCK_WRITEONLY | DDLOCK_NOSYSLOCK, (LPVOID *)&g_guess.m_verts_guess, &vbuflen_guess );
+	vbDescr_guess.dwFVF = g_guess.m_usemtex_guess ? ( D3DFVF_XYZRHW | D3DFVF_DIFFUSE | D3DFVF_TEX2 ) : D3DFVF_TLVERTEX;
+	ddrval = lpDirect3D_guess->CreateVertexBuffer( &vbDescr_guess, &g_guess.m_tlbuf_guess, 0, NULL );
 	if ( FAILED( ddrval ) )
 	{
 		g_guess.m_pD3DDev_guess->Release();
@@ -3801,7 +3803,7 @@ HGLRC WINAPI wglCreateContext( HDC hdc )
 		CoUninitialize();
 		return 0;
 	}
-	lpD3D_guess->Release();
+	lpDirect3D_guess->Release();
 
 	g_guess.m_cullMode_guess = GL_BACK;
 	g_guess.m_cullEnabled_guess = FALSE;
@@ -3815,47 +3817,47 @@ HGLRC WINAPI wglCreateContext( HDC hdc )
 	g_guess.m_pcnt_guess = 0;
 	g_guess.m_icnt_guess = 0;
 	g_guess.m_curstage_guess = 0;
-	for ( i = 0; i < MAXGLTEXHANDLES_guess; i++ )
+	for ( ix_guess = 0; ix_guess < MAXGLTEXHANDLES_guess; ix_guess++ )
 	{
-		g_guess.m_tex_guess[ i ].m_ddsurf_guess = NULL;
-		g_guess.m_tex_guess[ i ].m_block_guess = NULL;
-		g_guess.m_tex_guess[ i ].m_minmode_guess = D3DTFN_POINT;
-		g_guess.m_tex_guess[ i ].m_magmode_guess = D3DTFG_LINEAR;
-		g_guess.m_tex_guess[ i ].m_mipmode_guess = D3DTFP_LINEAR;
-		g_guess.m_tex_guess[ i ].m_addu_guess = D3DTADDRESS_WRAP;
-		g_guess.m_tex_guess[ i ].m_addv_guess = D3DTADDRESS_WRAP;
+		g_guess.m_tex_guess[ ix_guess ].m_ddsurf_guess = NULL;
+		g_guess.m_tex_guess[ ix_guess ].m_block_guess = NULL;
+		g_guess.m_tex_guess[ ix_guess ].m_minmode_guess = D3DTFN_POINT;
+		g_guess.m_tex_guess[ ix_guess ].m_magmode_guess = D3DTFG_LINEAR;
+		g_guess.m_tex_guess[ ix_guess ].m_mipmode_guess = D3DTFP_LINEAR;
+		g_guess.m_tex_guess[ ix_guess ].m_addu_guess = D3DTADDRESS_WRAP;
+		g_guess.m_tex_guess[ ix_guess ].m_addv_guess = D3DTADDRESS_WRAP;
 	}
 
-	D3DMATRIX unity_guess;
+	D3DMATRIX identity_guess;
 
-	unity_guess._11 = 1.0f;
-	unity_guess._12 = 0.0f;
-	unity_guess._13 = 0.0f;
-	unity_guess._14 = 0.0f;
-	unity_guess._21 = 0.0f;
-	unity_guess._22 = 1.0f;
-	unity_guess._23 = 0.0f;
-	unity_guess._24 = 0.0f;
-	unity_guess._31 = 0.0f;
-	unity_guess._32 = 0.0f;
-	unity_guess._33 = 1.0f;
-	unity_guess._34 = 0.0f;
-	unity_guess._41 = 0.0f;
-	unity_guess._42 = 0.0f;
-	unity_guess._43 = 0.0f;
-	unity_guess._44 = 1.0f;
-	g_guess.m_pD3DDev_guess->SetTransform( D3DTRANSFORMSTATE_VIEW, &unity_guess );
-	g_guess.m_pD3DDev_guess->SetTransform( D3DTRANSFORMSTATE_WORLD, &unity_guess );
-	g_guess.m_pD3DDev_guess->SetTransform( D3DTRANSFORMSTATE_PROJECTION, &unity_guess );
+	identity_guess._11 = 1.0f;
+	identity_guess._12 = 0.0f;
+	identity_guess._13 = 0.0f;
+	identity_guess._14 = 0.0f;
+	identity_guess._21 = 0.0f;
+	identity_guess._22 = 1.0f;
+	identity_guess._23 = 0.0f;
+	identity_guess._24 = 0.0f;
+	identity_guess._31 = 0.0f;
+	identity_guess._32 = 0.0f;
+	identity_guess._33 = 1.0f;
+	identity_guess._34 = 0.0f;
+	identity_guess._41 = 0.0f;
+	identity_guess._42 = 0.0f;
+	identity_guess._43 = 0.0f;
+	identity_guess._44 = 1.0f;
+	g_guess.m_pD3DDev_guess->SetTransform( D3DTRANSFORMSTATE_VIEW, &identity_guess );
+	g_guess.m_pD3DDev_guess->SetTransform( D3DTRANSFORMSTATE_WORLD, &identity_guess );
+	g_guess.m_pD3DDev_guess->SetTransform( D3DTRANSFORMSTATE_PROJECTION, &identity_guess );
 
-	for ( i = 1; i < 256; i++ )
-		g_guess.m_pD3DDev_guess->GetRenderState( (D3DRENDERSTATETYPE)i, &g_guess.m_renderStates_guess[ i ] );
-	for ( i = 1; i < 24; i++ )
-		g_guess.m_pD3DDev_guess->GetTextureStageState( 0, (D3DTEXTURESTAGESTATETYPE)i, &g_guess.m_textureStageStates_guess[ 0 ][ i ] );
+	for ( ix_guess = 1; ix_guess < 256; ix_guess++ )
+		g_guess.m_pD3DDev_guess->GetRenderState( (D3DRENDERSTATETYPE)ix_guess, &g_guess.m_renderStates_guess[ ix_guess ] );
+	for ( ix_guess = 1; ix_guess < 24; ix_guess++ )
+		g_guess.m_pD3DDev_guess->GetTextureStageState( 0, (D3DTEXTURESTAGESTATETYPE)ix_guess, &g_guess.m_textureStageStates_guess[ 0 ][ ix_guess ] );
 	if ( g_guess.m_usemtex_guess )
 	{
-		for ( i = 1; i < 24; i++ )
-			g_guess.m_pD3DDev_guess->GetTextureStageState( 1, (D3DTEXTURESTAGESTATETYPE)i, &g_guess.m_textureStageStates_guess[ 1 ][ i ] );
+		for ( ix_guess = 1; ix_guess < 24; ix_guess++ )
+			g_guess.m_pD3DDev_guess->GetTextureStageState( 1, (D3DTEXTURESTAGESTATETYPE)ix_guess, &g_guess.m_textureStageStates_guess[ 1 ][ ix_guess ] );
 	}
 	g_guess.m_curTexture_guess[ 0 ] = NULL;
 	g_guess.m_curTexture_guess[ 1 ] = NULL;
@@ -3891,38 +3893,38 @@ BOOL WINAPI wglDeleteContext( HGLRC hglrc )
 {
 	int i;
 
-	if ( g_guess.m_pDXMgr_guess )
+	if ( !g_guess.m_pDXMgr_guess )
+		return TRUE;
+
+	g_guess.m_pD3DDev_guess->EndScene();
+	for ( i = 0; i < MAXGLTEXHANDLES_guess; i++ )
 	{
-		g_guess.m_pD3DDev_guess->EndScene();
-		for ( i = 0; i < MAXGLTEXHANDLES_guess; i++ )
+		if ( g_guess.m_tex_guess[ i ].m_block_guess )
 		{
-			if ( g_guess.m_tex_guess[ i ].m_block_guess )
-			{
-				g_guess.m_tex_guess[ i ].m_block_guess->Release();
-				g_guess.m_tex_guess[ i ].m_block_guess = NULL;
-			}
-			if ( g_guess.m_tex_guess[ i ].m_ddsurf_guess )
-			{
-				g_guess.m_tex_guess[ i ].m_ddsurf_guess->Release();
-				g_guess.m_tex_guess[ i ].m_ddsurf_guess = NULL;
-			}
+			g_guess.m_tex_guess[ i ].m_block_guess->Release();
+			g_guess.m_tex_guess[ i ].m_block_guess = NULL;
 		}
-		g_guess.m_pD3Dview_guess->Release();
-		g_guess.m_pD3Dview_guess = NULL;
-		g_guess.m_xyzbuf_guess->Unlock();
-		g_guess.m_xyzbuf_guess->Release();
-		g_guess.m_xyzbuf_guess = NULL;
-		g_guess.m_tlbuf_guess->Release();
-		g_guess.m_tlbuf_guess = NULL;
-		g_guess.m_pD3DDev_guess->Release();
-		g_guess.m_pD3DDev_guess = NULL;
-		g_guess.m_pD3DDevProcess_guess = NULL;
-		g_guess.m_pDD_guess->Release();
-		g_guess.m_pDD_guess = NULL;
-		g_guess.m_pDXMgr_guess->Release();
-		g_guess.m_pDXMgr_guess = NULL;
-		CoUninitialize();
+		if ( g_guess.m_tex_guess[ i ].m_ddsurf_guess )
+		{
+			g_guess.m_tex_guess[ i ].m_ddsurf_guess->Release();
+			g_guess.m_tex_guess[ i ].m_ddsurf_guess = NULL;
+		}
 	}
+	g_guess.m_pD3Dview_guess->Release();
+	g_guess.m_pD3Dview_guess = NULL;
+	g_guess.m_xyzbuf_guess->Unlock();
+	g_guess.m_xyzbuf_guess->Release();
+	g_guess.m_xyzbuf_guess = NULL;
+	g_guess.m_tlbuf_guess->Release();
+	g_guess.m_tlbuf_guess = NULL;
+	g_guess.m_pD3DDev_guess->Release();
+	g_guess.m_pD3DDev_guess = NULL;
+	g_guess.m_pD3DDevProcess_guess = NULL;
+	g_guess.m_pDD_guess->Release();
+	g_guess.m_pDD_guess = NULL;
+	g_guess.m_pDXMgr_guess->Release();
+	g_guess.m_pDXMgr_guess = NULL;
+	CoUninitialize();
 	return TRUE;
 }
 
@@ -4036,28 +4038,28 @@ void APIENTRY glDeleteTextures (GLsizei n, const GLuint *textures)
 
 void APIENTRY glTexSubImage2D (GLenum target, GLint level, GLint xoffset, GLint yoffset, GLsizei width, GLsizei height, GLenum format, GLenum type, const GLvoid *pixels)
 {
-	TexInfo_guess			*ti_guess = &g_guess.m_tex_guess[ g_guess.m_curtgt_guess[ g_guess.m_curstage_guess ] ];
-	LPDIRECTDRAWSURFACE4	lpDDS = ti_guess->m_ddsurf_guess;
-	LPDIRECTDRAWSURFACE4	lpDDSNext_guess;
-	DDSCAPS2				ddscaps_guess;
-	RECT					subimage_guess;
+	TexInfo_guess			*tex_guess = &g_guess.m_tex_guess[ g_guess.m_curtgt_guess[ g_guess.m_curstage_guess ] ];
+	LPDIRECTDRAWSURFACE4	lpDDSAttached_guess;
+	LPDIRECTDRAWSURFACE4	lpDDS = tex_guess->m_ddsurf_guess;
+	DDSURFACEDESC2			desc_guess;
+	RECT					rc_guess;
 	int						i;
-	int						x_guess, y_guess;
 
 	for ( i = 0; i < level; i++ )
 	{
-		Q_memset( &ddscaps_guess, 0, sizeof( ddscaps_guess ) );
-		ddscaps_guess.dwCaps = DDSCAPS_TEXTURE | DDSCAPS_MIPMAP;
-		if ( lpDDS->GetAttachedSurface( &ddscaps_guess, &lpDDSNext_guess ) == DDERR_NOTFOUND )
+		Q_memset( &desc_guess.ddsCaps, 0, sizeof( desc_guess.ddsCaps ) );
+		desc_guess.ddsCaps.dwCaps = DDSCAPS_TEXTURE | DDSCAPS_MIPMAP;
+		HRESULT ddrval = lpDDS->GetAttachedSurface( &desc_guess.ddsCaps, &lpDDSAttached_guess );
+		if ( ddrval == DDERR_NOTFOUND )
 			return;
-		lpDDS = lpDDSNext_guess;
-		lpDDSNext_guess->Release();
+		lpDDS = lpDDSAttached_guess;
+		lpDDS->Release();
 	}
-	x_guess = ( xoffset * ti_guess->m_dwWidth_guess ) / ti_guess->m_glWidth_guess;
-	y_guess = ( yoffset * ti_guess->m_dwHeight_guess ) / ti_guess->m_glHeight_guess;
-	SetRect( &subimage_guess, x_guess, y_guess, ( width * ti_guess->m_dwWidth_guess ) / ti_guess->m_glWidth_guess + x_guess, ( height * ti_guess->m_dwHeight_guess ) / ti_guess->m_glHeight_guess + y_guess );
-	if ( LoadSubSurface_guess( lpDDS, ti_guess->m_internalformat_guess, width, height, pixels, &subimage_guess ) != DD_OK )
-		OutputDebugString( "Wrapper: LoadSubSurface_guess Failure.\n" );
+	xoffset = ( xoffset * tex_guess->m_dwWidth_guess ) / tex_guess->m_glWidth_guess;
+	yoffset = ( yoffset * tex_guess->m_dwHeight_guess ) / tex_guess->m_glHeight_guess;
+	SetRect( &rc_guess, xoffset, yoffset, ( width * tex_guess->m_dwWidth_guess ) / tex_guess->m_glWidth_guess + xoffset, ( height * tex_guess->m_dwHeight_guess ) / tex_guess->m_glHeight_guess + yoffset );
+	if ( LoadSubSurface_guess( lpDDS, tex_guess->m_internalformat_guess, width, height, pixels, &rc_guess ) != DD_OK )
+		OutputDebugString( "Wrapper: LoadSubSurface Failure.\n" );
 }
 
 void APIENTRY glTexImage2D (GLenum target, GLint level, GLint internalformat, GLsizei width, GLsizei height, GLint border, GLenum format, GLenum type, const GLvoid *pixels)
