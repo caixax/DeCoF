@@ -185,8 +185,9 @@ def main():
             continue
         # VC6 names every object's dynamic initializers _$E1, _$E2...: the
         # same name in many objects, which a symbol map can not hold
+        # (tools/vc6_anon.py respells them _E$1, _E$2... in our objects)
         ours_all[unit] = {n: f for n, f in coff_functions(os.path.join(ROOT, u["base_path"])).items()
-                          if not n.lstrip("_").startswith("$E")}
+                          if not n.lstrip("_").startswith(("$E", "E$"))}
         relocs_all[unit] = coff_relocs(os.path.join(ROOT, u["base_path"]))
     defined = set()
     for funcs in ours_all.values():
