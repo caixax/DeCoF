@@ -3001,7 +3001,12 @@
         {
           "name": "engine/filesystem",
           "source": "src/engine_hw/filesystem.cpp",
-          "functions_file": "tools/units/hw_engine_filesystem.txt"
+          "functions_file": "tools/units/hw_engine_filesystem.txt",
+          "includes": [
+            "src/engine_hw",
+            "src/public",
+            "src/common"
+          ]
         },
         {
           "name": "engine/glHud",

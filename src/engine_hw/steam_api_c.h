@@ -186,6 +186,11 @@ __declspec( dllimport ) void		SteamAPI_WriteMiniDump( uint32 uStructuredExceptio
 __declspec( dllimport ) void		SteamAPI_SetMiniDumpComment( const char *pchMsg );
 __declspec( dllimport ) void		SteamAPI_UseBreakpadCrashHandler( char const *pchVersion, char const *pchDate, char const *pchTime, bool bFullMemoryDumps, void *pvContext, PFNPreMinidumpCallback m_pfnPreMinidumpCallback );
 
+// filesystem.cpp
+__declspec( dllimport ) void		SteamAPI_SetBreakpadAppID( uint32 unAppID );
+__declspec( dllimport ) bool		ISteamApps_BIsLowViolence( void );
+__declspec( dllimport ) const char	*ISteamApps_GetCurrentGameLanguage( void );
+
 // steam_gameserver
 __declspec( dllimport ) bool		SteamGameServer_Init( uint32 unIP, uint16 usPort, uint16 usGamePort, uint16 usSpectatorPort, uint16 usQueryPort, EServerMode eServerMode, const char *pchGameDir, const char *pchVersionString );
 __declspec( dllimport ) void		SteamGameServer_Shutdown( void );

@@ -4884,3 +4884,16 @@ va,name,kind,evidence
 01EBEE08,_gflGeigerDelay,data,"double gflGeigerDelay = -1.0 (Linux hw.so DWARF HUD.c line 62); compared with cl.time in Sbar_Geiger"
 01EB4198,_eventapi,data,"event_api_t eventapi (Linux hw.so DWARF eventapi.c line 194): version 1 then the EV_ functions in event_api.h slot order"
 01EF47E0,_g_laststepgap,data,"float g_laststepgap (Linux hw.so DWARF cl_pmove.c line 135): set from cl.time by PM_CL_PlaySound"
+01D5C2B0,_$E5,func,"dynamic initializer of g_fallbackLocalizationFiles (construct, then atexit); spelling from the compiled object (engine/filesystem.cpp)"
+01D5C2BF,_$E2,func,constructs g_fallbackLocalizationFiles (CUtlVector<char *> at 0207B1F8); spelling from the compiled object
+01D5C2D2,_$E4,func,atexit of the g_fallbackLocalizationFiles destructor; spelling from the compiled object
+01D5C2E4,_$E3,func,destroys g_fallbackLocalizationFiles; spelling from the compiled object
+01D5C2F3,?GetBaseDirectory@@YAPBDXZ,func,"engine/filesystem.cpp: returns s_pBaseDir (0207B20C, filled by FileSystem_Init); Linux _Z16GetBaseDirectoryv, filesystem.cpp line 66"
+01D5C2FD,?GetFileSystemFactory@@YAPAXXZ,func,"engine/filesystem.cpp: returns g_FileSystemFactory; Linux _Z20GetFileSystemFactoryv, filesystem.cpp line 71"
+01D5C307,?CheckLiblistForFallbackDir@@YAXPBD_N01@Z,func,"engine/filesystem.cpp: strings %s/liblist.gam, fallback_dir, GAME_FALLBACK; C++ linkage as the Linux _Z26CheckLiblistForFallbackDirPKcbS0_b"
+01D5D093,?FileSystem_LoadDLL@@YA_NP6APAVIBaseInterface@@PBDPAH@Z@Z,func,"engine/filesystem.cpp: strings filesystem_stdio.dll, filesystem_steam.dll, VFileSystem009; Linux inlined static FileSystem_LoadDLL (line 81, local fsmodule), called only by FileSystem_Init"
+01D5D14E,?FileSystem_UnloadDLL@@YAXXZ,func,"engine/filesystem.cpp: Sys_UnloadModule of g_pFileSystemModule; Linux inlined static FileSystem_UnloadDLL (line 119), called only by FileSystem_Shutdown"
+0207B1F8,?g_fallbackLocalizationFiles@@3V?$CUtlVector@PAD@@A,data,"engine/filesystem.cpp: CUtlVector<char *> filled by CheckLiblistForFallbackDir (AddToTail of Resource/%s_%%language%%.txt), read by BaseUI_Interface.cpp; Linux g_fallbackLocalizationFiles"
+0207B20C,_s_pBaseDir,data,"engine/filesystem.cpp: static char[512], strcpy of basedir in FileSystem_Init, returned by GetBaseDirectory; Linux _ZL10s_pBaseDir"
+0207B40C,_g_pFileSystemModule,data,"engine/filesystem.cpp: static CSysModule *, Sys_LoadModule result in FileSystem_LoadDLL; Linux static g_pFileSystemModule"
+0207B414,_g_bUsingSteamFileSystem_guess,data,"engine/filesystem.cpp: static bool set by FileSystem_LoadDLL when -steam selects filesystem_steam.dll, tested before IsGameSubscribed in FileSystem_SetGameDirectory; name unproven"

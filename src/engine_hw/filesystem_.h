@@ -18,6 +18,7 @@ int				FS_EndOfFile( FileHandle_t file );
 int				FS_Read( void *pOutput, int size, int count, FileHandle_t file );
 int				FS_Write( const void *pInput, int size, int count, FileHandle_t file );
 int				FS_FPrintf( FileHandle_t file, char *pFormat, ... );
+char			*FS_ReadLine( char *pOutput, int maxChars, FileHandle_t file );
 int				FS_FileExists( const char *pFileName );
 int				FS_FileSize( const char *pFileName );
 void			FS_Unlink( const char *filename );
