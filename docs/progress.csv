@@ -8335,16 +8335,16 @@ gameui,1001FD30,5,,,UNKNOWN,,,,TODO,,,
 gameui,1001FD40,5,,,UNKNOWN,,,,TODO,,,
 gameui,1001FD50,33,,,UNKNOWN,,,,TODO,,,
 gameui,1001FD80,58,,,UNKNOWN,,,,TODO,,,
-gameui,1001FDC0,112,,,UNKNOWN,,,,TODO,,,
-gameui,1001FE30,112,,,UNKNOWN,,,,TODO,,,
-gameui,1001FEA0,100,,,UNKNOWN,,,,TODO,,,
-gameui,1001FF04,101,,,UNKNOWN,,,,TODO,,,
-gameui,1001FF69,104,,,UNKNOWN,,,,TODO,,,
-gameui,1001FFD1,104,,,UNKNOWN,,,,TODO,,,
-gameui,10020039,10,,,UNKNOWN,,,,TODO,,,
-gameui,10020043,13,,,UNKNOWN,,,,TODO,,,
-gameui,10020050,406,,,UNKNOWN,,,,TODO,,,
-gameui,100201E6,90,,,UNKNOWN,,,,TODO,,,
+gameui,1001FDC0,112,?SharedWVarArgs@@YAPAGPAGZZ,"unsigned short * __cdecl SharedWVarArgs(unsigned short *,...)",UNKNOWN,game_shared/shared_util.cpp,,,TODO,,gameui_manual.csv,
+gameui,1001FE30,112,?SharedVarArgs@@YAPADPADZZ,"char * __cdecl SharedVarArgs(char *,...)",UNKNOWN,game_shared/shared_util.cpp,,,TODO,,gameui_manual.csv,
+gameui,1001FEA0,100,?BufPrintf@@YAPADPADAAHPBDZZ,"char * __cdecl BufPrintf(char *,int &,char const *,...)",UNKNOWN,game_shared/shared_util.cpp,,,TODO,,gameui_manual.csv,
+gameui,1001FF04,101,?BufWPrintf@@YAPAGPAGAAHPBGZZ,"unsigned short * __cdecl BufWPrintf(unsigned short *,int &,unsigned short const *,...)",UNKNOWN,game_shared/shared_util.cpp,,,TODO,,gameui_manual.csv,
+gameui,1001FF69,104,?NumAsWString@@YAPBGH@Z,unsigned short const * __cdecl NumAsWString(int),UNKNOWN,game_shared/shared_util.cpp,,,TODO,,gameui_manual.csv,
+gameui,1001FFD1,104,?NumAsString@@YAPBDH@Z,char const * __cdecl NumAsString(int),UNKNOWN,game_shared/shared_util.cpp,,,TODO,,gameui_manual.csv,
+gameui,10020039,10,?SharedGetToken@@YAPADXZ,char * __cdecl SharedGetToken(void),UNKNOWN,game_shared/shared_util.cpp,,,TODO,,gameui_manual.csv,
+gameui,10020043,13,?SharedSetQuoteChar@@YAXD@Z,void __cdecl SharedSetQuoteChar(char),UNKNOWN,game_shared/shared_util.cpp,,,TODO,,gameui_manual.csv,
+gameui,10020050,406,?SharedParse@@YAPBDPBD@Z,char const * __cdecl SharedParse(char const *),UNKNOWN,game_shared/shared_util.cpp,,,TODO,,gameui_manual.csv,
+gameui,100201E6,90,?SharedTokenWaiting@@YA_NPBD@Z,bool __cdecl SharedTokenWaiting(char const *),UNKNOWN,game_shared/shared_util.cpp,,,TODO,,gameui_manual.csv,
 gameui,10020240,72,,,UNKNOWN,,,,TODO,,,
 gameui,10020288,28,,,UNKNOWN,,,,TODO,,,
 gameui,100202A4,25,,CFindReplaceDialog::DoDataExchange,ENGINE,GameUI/BackgroundMenuButton.cpp,,,TODO,,ghidra,linux: _ZN21CBackgroundMenuButton9OnCommandEPKc
@@ -8620,8 +8620,8 @@ gameui,10029D40,19,,,UNKNOWN,,,,TODO,,,
 gameui,10029D60,107,,,UNKNOWN,,,,TODO,,,
 gameui,10029DD0,120,,,UNKNOWN,,,,TODO,,,
 gameui,10029E60,46,,,UNKNOWN,,,,TODO,,,
-gameui,10029E90,129,,,UNKNOWN,,,,TODO,,,
-gameui,10029F11,110,,,UNKNOWN,,,,TODO,,,
+gameui,10029E90,129,??0CvarLatch@@QAE@PBD0@Z,"public: __thiscall CvarLatch::CvarLatch(char const *,char const *)",UNKNOWN,GameUI/CvarLatch.cpp,,,TODO,,gameui_manual.csv,linux: _ZN9CvarLatchC2EPKcS1_
+gameui,10029F11,110,??1CvarLatch@@QAE@XZ,public: __thiscall CvarLatch::~CvarLatch(void),UNKNOWN,GameUI/CvarLatch.cpp,,,TODO,,gameui_manual.csv,linux: _ZN9CvarLatchD1Ev
 gameui,10029F80,997,,CDemoEditDialog::CDemoEditDialog,ENGINE,,,,TODO,,linux_symbols:string:0.73,
 gameui,1002A365,42,,,UNKNOWN,,,,TODO,,,
 gameui,1002A38F,169,,,UNKNOWN,,,,TODO,,,
@@ -9026,30 +9026,30 @@ gameui,10037E70,46,,,UNKNOWN,,,,TODO,,,
 gameui,10037EA0,23,,,UNKNOWN,,,,TODO,,,
 gameui,10037EC0,20,,,UNKNOWN,,,,TODO,,,
 gameui,10037EE0,46,,,UNKNOWN,,,,TODO,,,
-gameui,10037F10,17,,,UNKNOWN,,,,TODO,,,
-gameui,10037F21,42,,,UNKNOWN,,,,TODO,,,
-gameui,10037F4B,73,,,UNKNOWN,,,,TODO,,,
-gameui,10037F94,74,,,UNKNOWN,,,,TODO,,,
-gameui,10037FDE,98,,,UNKNOWN,,,,TODO,,,
-gameui,10038040,10,,,UNKNOWN,,,,TODO,,,
-gameui,1003804A,139,,,UNKNOWN,,,,TODO,,,
-gameui,100380D5,95,,,UNKNOWN,,,,TODO,,,
-gameui,10038134,109,,,UNKNOWN,,,,TODO,,,
-gameui,100381A1,30,,,UNKNOWN,,,,TODO,,,
-gameui,100381BF,30,,,UNKNOWN,,,,TODO,,,
-gameui,100381DD,30,,,UNKNOWN,,,,TODO,,,
-gameui,100381FB,26,,,UNKNOWN,,,,TODO,,,
-gameui,10038215,32,,,UNKNOWN,,,,TODO,,,
-gameui,10038235,46,,,UNKNOWN,,,,TODO,,,
-gameui,10038263,77,,,UNKNOWN,,,,TODO,,,
-gameui,100382B0,134,,,UNKNOWN,,,,TODO,,,
-gameui,10038336,150,,,UNKNOWN,,,,TODO,,,
-gameui,100383CC,23,,,UNKNOWN,,,,TODO,,,
-gameui,100383F0,96,,,UNKNOWN,,,,TODO,,,
-gameui,10038450,348,,,UNKNOWN,,,,TODO,,,
-gameui,100385AC,57,,,UNKNOWN,,,,TODO,,,
-gameui,100385E5,47,,,UNKNOWN,,,,TODO,,,
-gameui,10038614,115,,,UNKNOWN,,,,TODO,,,
+gameui,10037F10,17,?READ_OK@@YAHXZ,int __cdecl READ_OK(void),UNKNOWN,common/parsemsg.cpp,,,TODO,,gameui_manual.csv,linux: _Z7READ_OKv
+gameui,10037F21,42,?BEGIN_READ@@YAXPAXH@Z,"void __cdecl BEGIN_READ(void *,int)",UNKNOWN,common/parsemsg.cpp,,,TODO,,gameui_manual.csv,linux: _Z10BEGIN_READPvi
+gameui,10037F4B,73,?READ_CHAR@@YAHXZ,int __cdecl READ_CHAR(void),UNKNOWN,common/parsemsg.cpp,,,TODO,,gameui_manual.csv,linux: _Z9READ_CHARv
+gameui,10037F94,74,?READ_BYTE@@YAHXZ,int __cdecl READ_BYTE(void),UNKNOWN,common/parsemsg.cpp,,,TODO,,gameui_manual.csv,linux: _Z9READ_BYTEv
+gameui,10037FDE,98,?READ_SHORT@@YAHXZ,int __cdecl READ_SHORT(void),UNKNOWN,common/parsemsg.cpp,,,TODO,,gameui_manual.csv,linux: _Z10READ_SHORTv
+gameui,10038040,10,?READ_WORD@@YAHXZ,int __cdecl READ_WORD(void),UNKNOWN,common/parsemsg.cpp,,,TODO,,gameui_manual.csv,linux: _Z9READ_WORDv
+gameui,1003804A,139,?READ_LONG@@YAHXZ,int __cdecl READ_LONG(void),UNKNOWN,common/parsemsg.cpp,,,TODO,,gameui_manual.csv,linux: _Z9READ_LONGv
+gameui,100380D5,95,?READ_FLOAT@@YAMXZ,float __cdecl READ_FLOAT(void),UNKNOWN,common/parsemsg.cpp,,,TODO,,gameui_manual.csv,linux: _Z10READ_FLOATv
+gameui,10038134,109,?READ_STRING@@YAPADXZ,char * __cdecl READ_STRING(void),UNKNOWN,common/parsemsg.cpp,,,TODO,,gameui_manual.csv,linux: _Z11READ_STRINGv
+gameui,100381A1,30,?READ_COORD@@YAMXZ,float __cdecl READ_COORD(void),UNKNOWN,common/parsemsg.cpp,,,TODO,,gameui_manual.csv,linux: _Z10READ_COORDv
+gameui,100381BF,30,?READ_ANGLE@@YAMXZ,float __cdecl READ_ANGLE(void),UNKNOWN,common/parsemsg.cpp,,,TODO,,gameui_manual.csv,linux: _Z10READ_ANGLEv
+gameui,100381DD,30,?READ_HIRESANGLE@@YAMXZ,float __cdecl READ_HIRESANGLE(void),UNKNOWN,common/parsemsg.cpp,,,TODO,,gameui_manual.csv,linux: _Z15READ_HIRESANGLEv
+gameui,100381FB,26,??0BufferWriter@@QAE@XZ,public: __thiscall BufferWriter::BufferWriter(void),UNKNOWN,common/parsemsg.cpp,,,TODO,,gameui_manual.csv,linux: _ZN12BufferWriterC2Ev
+gameui,10038215,32,??0BufferWriter@@QAE@PAEH@Z,"public: __thiscall BufferWriter::BufferWriter(unsigned char *,int)",UNKNOWN,common/parsemsg.cpp,,,TODO,,gameui_manual.csv,linux: _ZN12BufferWriterC1EPhi
+gameui,10038235,46,?Init@BufferWriter@@QAEXPAEH@Z,"public: void __thiscall BufferWriter::Init(unsigned char *,int)",UNKNOWN,common/parsemsg.cpp,,,TODO,,gameui_manual.csv,linux: _ZN12BufferWriter4InitEPhi
+gameui,10038263,77,?WriteByte@BufferWriter@@QAEXE@Z,public: void __thiscall BufferWriter::WriteByte(unsigned char),UNKNOWN,common/parsemsg.cpp,,,TODO,,gameui_manual.csv,linux: _ZN12BufferWriter9WriteByteEh
+gameui,100382B0,134,?WriteLong@BufferWriter@@QAEXH@Z,public: void __thiscall BufferWriter::WriteLong(int),UNKNOWN,common/parsemsg.cpp,,,TODO,,gameui_manual.csv,linux: _ZN12BufferWriter9WriteLongEi
+gameui,10038336,150,?WriteString@BufferWriter@@QAEXPBD@Z,public: void __thiscall BufferWriter::WriteString(char const *),UNKNOWN,common/parsemsg.cpp,,,TODO,,gameui_manual.csv,linux: _ZN12BufferWriter11WriteStringEPKc
+gameui,100383CC,23,?GetSpaceUsed@BufferWriter@@QAEHXZ,public: int __thiscall BufferWriter::GetSpaceUsed(void),UNKNOWN,common/parsemsg.cpp,,,TODO,,gameui_manual.csv,linux: _ZN12BufferWriter12GetSpaceUsedEv
+gameui,100383F0,96,?SeedRandomNumberGenerator@@YAXJ@Z,void __cdecl SeedRandomNumberGenerator(long),UNKNOWN,common/Random.cpp,,,TODO,,gameui_manual.csv,linux: _Z25SeedRandomNumberGeneratorl
+gameui,10038450,348,,,UNKNOWN,common/Random.cpp,,,TODO,,,linux: _Z4ran1v
+gameui,100385AC,57,?fran1@@YAMXZ,float __cdecl fran1(void),UNKNOWN,common/Random.cpp,,,TODO,,gameui_manual.csv,linux: _Z5fran1v
+gameui,100385E5,47,?RandomFloat@@YAMMM@Z,"float __cdecl RandomFloat(float,float)",UNKNOWN,common/Random.cpp,,,TODO,,gameui_manual.csv,linux: _Z11RandomFloatff
+gameui,10038614,115,,,UNKNOWN,common/Random.cpp,,,TODO,,,linux: _Z10RandomLongii
 gameui,10038690,496,,CRefreshSteamLogin::CRefreshSteamLogin,ENGINE,,,,TODO,,linux_symbols:string:0.436,
 gameui,10038880,28,,,UNKNOWN,,,,TODO,,,
 gameui,1003889C,563,,,UNKNOWN,GameUI/RefreshSteamLogin.cpp,,,TODO,,,linux: _ZN18CRefreshSteamLogin9OnCommandEPKc
@@ -12860,10 +12860,10 @@ gameui,100AB630,76,,,UNKNOWN,,,,TODO,,,
 gameui,100AB680,45,,,UNKNOWN,,,,TODO,,,
 gameui,100AB6B0,221,,,UNKNOWN,,,,TODO,,,
 gameui,100AB790,221,,,UNKNOWN,,,,TODO,,,
-gameui,100AB8B0,523,,,UNKNOWN,,,,TODO,,,
-gameui,100ABABB,59,,,UNKNOWN,,,,TODO,,,
-gameui,100ABAF6,27,,,UNKNOWN,,,,TODO,,,
-gameui,100ABB20,88,,,UNKNOWN,,,,TODO,,,
+gameui,100AB8B0,523,?ParseFile@@YAPBDPBDPADPA_NPAUcharacterset_s@@@Z,"char const * __cdecl ParseFile(char const *,char *,bool *,struct characterset_s *)",UNKNOWN,public/filesystem_helpers.cpp,,,TODO,,gameui_manual.csv,
+gameui,100ABABB,59,?InitializeCharacterSets@@YAXXZ,void __cdecl InitializeCharacterSets(void),UNKNOWN,public/filesystem_helpers.cpp,,,TODO,,gameui_manual.csv,
+gameui,100ABAF6,27,?ParseFile@@YAPADPAD0PA_N@Z,"char * __cdecl ParseFile(char *,char *,bool *)",UNKNOWN,public/filesystem_helpers.cpp,,,TODO,,gameui_manual.csv,
+gameui,100ABB20,88,?CharacterSetBuild@@YAXPAUcharacterset_s@@PBD@Z,"void __cdecl CharacterSetBuild(struct characterset_s *,char const *)",UNKNOWN,public/characterset.cpp,,,TODO,,gameui_manual.csv,linux: _Z17CharacterSetBuildP14characterset_sPKc
 gameui,100ABB80,610,??0PanelListPanel@vgui2@@QAE@PAVPanel@1@PBD@Z,vgui2::PanelListPanel::PanelListPanel,UNKNOWN,vgui2/controls/PanelListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,100ABDE2,61,??1PanelListPanel@vgui2@@UAE@XZ,vgui2::PanelListPanel::~PanelListPanel,UNKNOWN,vgui2/controls/PanelListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,100ABE1F,164,?computeVPixelsNeeded@PanelListPanel@vgui2@@UAEHXZ,vgui2::PanelListPanel::computeVPixelsNeeded,UNKNOWN,vgui2/controls/PanelListPanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui214PanelListPanel20computeVPixelsNeededEv

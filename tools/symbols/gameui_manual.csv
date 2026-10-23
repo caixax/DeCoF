@@ -2269,3 +2269,41 @@ va,name,kind,evidence
 100417F0,?Grow@?$CUtlMemory@E@@QAEXH@Z,func,"public/UtlBuffer.cpp: same source as hw.dll's UtlBuffer object (Linux hw.so DWARF names, source order); offset and size in our compiled object equal the retail ones"
 100418C0,?EnsureCapacity@?$CUtlMemory@E@@QAEXH@Z,func,"public/UtlBuffer.cpp: same source as hw.dll's UtlBuffer object (Linux hw.so DWARF names, source order); offset and size in our compiled object equal the retail ones"
 100411E3,?VaScanf@CUtlBuffer@@QAEHPBDPAD@Z,func,"public/UtlBuffer.cpp: same source as hw.dll's UtlBuffer object; between SeekGet and Scanf in our compiled object, same size without the switch tables"
+1001FDC0,?SharedWVarArgs@@YAPAGPAGZZ,func,"game_shared/shared_util.cpp: same functions, order and sizes as hw.dll's shared_util object (refs/halflife names); Linux gameui.so DWARF order"
+1001FE30,?SharedVarArgs@@YAPADPADZZ,func,"game_shared/shared_util.cpp: same functions, order and sizes as hw.dll's shared_util object (refs/halflife names); Linux gameui.so DWARF order"
+1001FEA0,?BufPrintf@@YAPADPADAAHPBDZZ,func,"game_shared/shared_util.cpp: same functions, order and sizes as hw.dll's shared_util object (refs/halflife names); Linux gameui.so DWARF order"
+1001FF04,?BufWPrintf@@YAPAGPAGAAHPBGZZ,func,"game_shared/shared_util.cpp: same functions, order and sizes as hw.dll's shared_util object (refs/halflife names); Linux gameui.so DWARF order"
+1001FF69,?NumAsWString@@YAPBGH@Z,func,"game_shared/shared_util.cpp: same functions, order and sizes as hw.dll's shared_util object (refs/halflife names); Linux gameui.so DWARF order"
+1001FFD1,?NumAsString@@YAPBDH@Z,func,"game_shared/shared_util.cpp: same functions, order and sizes as hw.dll's shared_util object (refs/halflife names); Linux gameui.so DWARF order"
+10020039,?SharedGetToken@@YAPADXZ,func,"game_shared/shared_util.cpp: same functions, order and sizes as hw.dll's shared_util object (refs/halflife names); Linux gameui.so DWARF order"
+10020043,?SharedSetQuoteChar@@YAXD@Z,func,"game_shared/shared_util.cpp: same functions, order and sizes as hw.dll's shared_util object (refs/halflife names); Linux gameui.so DWARF order"
+10020050,?SharedParse@@YAPBDPBD@Z,func,"game_shared/shared_util.cpp: same functions, order and sizes as hw.dll's shared_util object (refs/halflife names); Linux gameui.so DWARF order"
+100201E6,?SharedTokenWaiting@@YA_NPBD@Z,func,"game_shared/shared_util.cpp: same functions, order and sizes as hw.dll's shared_util object (refs/halflife names); Linux gameui.so DWARF order"
+10029E90,??0CvarLatch@@QAE@PBD0@Z,func,GameUI/CvarLatch.cpp: Linux gameui.so DWARF constructor and destructor in source order (no vtable); decorations checked with VC6 cl
+10029F11,??1CvarLatch@@QAE@XZ,func,GameUI/CvarLatch.cpp: Linux gameui.so DWARF constructor and destructor in source order (no vtable); decorations checked with VC6 cl
+10037F10,?READ_OK@@YAHXZ,func,common/parsemsg.cpp: 19 functions in the order of refs/halflife common/parsemsg.cpp and the Linux gameui.so DWARF; READ_* decorations as in client.dll
+10037F21,?BEGIN_READ@@YAXPAXH@Z,func,common/parsemsg.cpp: 19 functions in the order of refs/halflife common/parsemsg.cpp and the Linux gameui.so DWARF; READ_* decorations as in client.dll
+10037F4B,?READ_CHAR@@YAHXZ,func,common/parsemsg.cpp: 19 functions in the order of refs/halflife common/parsemsg.cpp and the Linux gameui.so DWARF; READ_* decorations as in client.dll
+10037F94,?READ_BYTE@@YAHXZ,func,common/parsemsg.cpp: 19 functions in the order of refs/halflife common/parsemsg.cpp and the Linux gameui.so DWARF; READ_* decorations as in client.dll
+10037FDE,?READ_SHORT@@YAHXZ,func,common/parsemsg.cpp: 19 functions in the order of refs/halflife common/parsemsg.cpp and the Linux gameui.so DWARF; READ_* decorations as in client.dll
+10038040,?READ_WORD@@YAHXZ,func,common/parsemsg.cpp: 19 functions in the order of refs/halflife common/parsemsg.cpp and the Linux gameui.so DWARF; READ_* decorations as in client.dll
+1003804A,?READ_LONG@@YAHXZ,func,common/parsemsg.cpp: 19 functions in the order of refs/halflife common/parsemsg.cpp and the Linux gameui.so DWARF; READ_* decorations as in client.dll
+100380D5,?READ_FLOAT@@YAMXZ,func,common/parsemsg.cpp: 19 functions in the order of refs/halflife common/parsemsg.cpp and the Linux gameui.so DWARF; READ_* decorations as in client.dll
+10038134,?READ_STRING@@YAPADXZ,func,common/parsemsg.cpp: 19 functions in the order of refs/halflife common/parsemsg.cpp and the Linux gameui.so DWARF; READ_* decorations as in client.dll
+100381A1,?READ_COORD@@YAMXZ,func,common/parsemsg.cpp: 19 functions in the order of refs/halflife common/parsemsg.cpp and the Linux gameui.so DWARF; READ_* decorations as in client.dll
+100381BF,?READ_ANGLE@@YAMXZ,func,common/parsemsg.cpp: 19 functions in the order of refs/halflife common/parsemsg.cpp and the Linux gameui.so DWARF; READ_* decorations as in client.dll
+100381DD,?READ_HIRESANGLE@@YAMXZ,func,common/parsemsg.cpp: 19 functions in the order of refs/halflife common/parsemsg.cpp and the Linux gameui.so DWARF; READ_* decorations as in client.dll
+100381FB,??0BufferWriter@@QAE@XZ,func,common/parsemsg.cpp: 19 functions in the order of refs/halflife common/parsemsg.cpp and the Linux gameui.so DWARF; READ_* decorations as in client.dll
+10038215,??0BufferWriter@@QAE@PAEH@Z,func,common/parsemsg.cpp: 19 functions in the order of refs/halflife common/parsemsg.cpp and the Linux gameui.so DWARF; READ_* decorations as in client.dll
+10038235,?Init@BufferWriter@@QAEXPAEH@Z,func,common/parsemsg.cpp: 19 functions in the order of refs/halflife common/parsemsg.cpp and the Linux gameui.so DWARF; READ_* decorations as in client.dll
+10038263,?WriteByte@BufferWriter@@QAEXE@Z,func,common/parsemsg.cpp: 19 functions in the order of refs/halflife common/parsemsg.cpp and the Linux gameui.so DWARF; READ_* decorations as in client.dll
+100382B0,?WriteLong@BufferWriter@@QAEXH@Z,func,common/parsemsg.cpp: 19 functions in the order of refs/halflife common/parsemsg.cpp and the Linux gameui.so DWARF; READ_* decorations as in client.dll
+10038336,?WriteString@BufferWriter@@QAEXPBD@Z,func,common/parsemsg.cpp: 19 functions in the order of refs/halflife common/parsemsg.cpp and the Linux gameui.so DWARF; READ_* decorations as in client.dll
+100383CC,?GetSpaceUsed@BufferWriter@@QAEHXZ,func,common/parsemsg.cpp: 19 functions in the order of refs/halflife common/parsemsg.cpp and the Linux gameui.so DWARF; READ_* decorations as in client.dll
+100383F0,?SeedRandomNumberGenerator@@YAXJ@Z,func,"common/Random.cpp: Linux gameui.so DWARF order and prototypes (long, float); decorations checked with VC6 cl (ran1 and RandomLong left unnamed: int32 decorates as _H under VC6, the 2013 type is unknown)"
+100385AC,?fran1@@YAMXZ,func,"common/Random.cpp: Linux gameui.so DWARF order and prototypes (long, float); decorations checked with VC6 cl (ran1 and RandomLong left unnamed: int32 decorates as _H under VC6, the 2013 type is unknown)"
+100385E5,?RandomFloat@@YAMMM@Z,func,"common/Random.cpp: Linux gameui.so DWARF order and prototypes (long, float); decorations checked with VC6 cl (ran1 and RandomLong left unnamed: int32 decorates as _H under VC6, the 2013 type is unknown)"
+100AB8B0,?ParseFile@@YAPBDPBDPADPA_NPAUcharacterset_s@@@Z,func,"public/filesystem_helpers.cpp: Linux gameui.so DWARF prototypes (ParseFile x2, static InitializeCharacterSets after its first caller); 100ABAF6 calls 100AB8B0 with a NULL 4th argument; decorations checked with VC6 cl"
+100ABABB,?InitializeCharacterSets@@YAXXZ,func,"public/filesystem_helpers.cpp: Linux gameui.so DWARF prototypes (ParseFile x2, static InitializeCharacterSets after its first caller); 100ABAF6 calls 100AB8B0 with a NULL 4th argument; decorations checked with VC6 cl"
+100ABAF6,?ParseFile@@YAPADPAD0PA_N@Z,func,"public/filesystem_helpers.cpp: Linux gameui.so DWARF prototypes (ParseFile x2, static InitializeCharacterSets after its first caller); 100ABAF6 calls 100AB8B0 with a NULL 4th argument; decorations checked with VC6 cl"
+100ABB20,?CharacterSetBuild@@YAXPAUcharacterset_s@@PBD@Z,func,"public/characterset.cpp: CharacterSetBuild, called by InitializeCharacterSets with ""{}()'""; Linux gameui.so DWARF prototype; decoration checked with VC6 cl"

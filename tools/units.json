@@ -3651,6 +3651,36 @@
           "name": "public/utlsymbol",
           "source": "src/public/utlsymbol.cpp",
           "functions_file": "tools/units/gameui_public_utlsymbol.txt"
+        },
+        {
+          "name": "common/parsemsg",
+          "source": "src/common/parsemsg.cpp",
+          "functions_file": "tools/units/gameui_common_parsemsg.txt"
+        },
+        {
+          "name": "game_shared/shared_util",
+          "source": "src/game_shared/shared_util.cpp",
+          "functions_file": "tools/units/gameui_game_shared_shared_util.txt"
+        },
+        {
+          "name": "public/filesystem_helpers",
+          "source": "src/public/filesystem_helpers.cpp",
+          "functions_file": "tools/units/gameui_public_filesystem_helpers.txt"
+        },
+        {
+          "name": "public/characterset",
+          "source": "src/public/characterset.cpp",
+          "functions_file": "tools/units/gameui_public_characterset.txt"
+        },
+        {
+          "name": "GameUI/CvarLatch",
+          "source": "src/gameui/CvarLatch.cpp",
+          "functions_file": "tools/units/gameui_GameUI_CvarLatch.txt"
+        },
+        {
+          "name": "common/Random",
+          "source": "src/common/Random.cpp",
+          "functions_file": "tools/units/gameui_common_Random.txt"
         }
       ]
     }
