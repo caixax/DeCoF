@@ -269,6 +269,97 @@ typedef struct
 
 extern cl_enginefunc_dst_t	g_engdstAddrs;
 
+// Function type declarations for client destination functions
+typedef void (*DST_INITIALIZE_FUNC)	( struct cl_enginefuncs_s**, int *);
+typedef void (*DST_HUD_INIT_FUNC)		( void );
+typedef void (*DST_HUD_VIDINIT_FUNC)	( void );
+typedef void (*DST_HUD_REDRAW_FUNC)	( float*, int* );
+typedef void (*DST_HUD_UPDATECLIENTDATA_FUNC) ( struct client_data_s**, float* );
+typedef void (*DST_HUD_RESET_FUNC)    ( void );
+typedef void (*DST_HUD_CLIENTMOVE_FUNC)( struct playermove_s **, qboolean * );
+typedef void (*DST_HUD_CLIENTMOVEINIT_FUNC)( struct playermove_s ** );
+typedef void (*DST_HUD_TEXTURETYPE_FUNC)( char ** );
+typedef void (*DST_HUD_IN_ACTIVATEMOUSE_FUNC) ( void );
+typedef void (*DST_HUD_IN_DEACTIVATEMOUSE_FUNC)		( void );
+typedef void (*DST_HUD_IN_MOUSEEVENT_FUNC)		( int * );
+typedef void (*DST_HUD_IN_CLEARSTATES_FUNC)		( void );
+typedef void (*DST_HUD_IN_ACCUMULATE_FUNC ) ( void );
+typedef void (*DST_HUD_CL_CREATEMOVE_FUNC)		( float *, struct usercmd_s **, int * );
+typedef void (*DST_HUD_CL_ISTHIRDPERSON_FUNC) ( void );
+typedef void (*DST_HUD_CL_GETCAMERAOFFSETS_FUNC )( float ** );
+typedef void (*DST_HUD_KB_FIND_FUNC) ( const char ** );
+typedef void (*DST_HUD_CAMTHINK_FUNC )( void );
+typedef void (*DST_HUD_CALCREF_FUNC ) ( struct ref_params_s ** );
+typedef void (*DST_HUD_ADDENTITY_FUNC ) ( int *, struct cl_entity_s **, const char ** );
+typedef void (*DST_HUD_CREATEENTITIES_FUNC ) ( void );
+typedef void (*DST_HUD_DRAWNORMALTRIS_FUNC ) ( void );
+typedef void (*DST_HUD_DRAWTRANSTRIS_FUNC ) ( void );
+typedef void (*DST_HUD_STUDIOEVENT_FUNC ) ( const struct mstudioevent_s **, const struct cl_entity_s ** );
+typedef void (*DST_HUD_POSTRUNCMD_FUNC ) ( struct local_state_s **, struct local_state_s **, struct usercmd_s **, int *, double *, unsigned int * );
+typedef void (*DST_HUD_SHUTDOWN_FUNC ) ( void );
+typedef void (*DST_HUD_TXFERLOCALOVERRIDES_FUNC )( struct entity_state_s **, const struct clientdata_s ** );
+typedef void (*DST_HUD_PROCESSPLAYERSTATE_FUNC )( struct entity_state_s **, const struct entity_state_s ** );
+typedef void (*DST_HUD_TXFERPREDICTIONDATA_FUNC ) ( struct entity_state_s **, const struct entity_state_s **, struct clientdata_s **, const struct clientdata_s **, struct weapon_data_s **, const struct weapon_data_s ** );
+typedef void (*DST_HUD_DEMOREAD_FUNC ) ( int *, unsigned char ** );
+typedef void (*DST_HUD_CONNECTIONLESS_FUNC )( const struct netadr_s **, const char **, char **, int ** );
+typedef void (*DST_HUD_GETHULLBOUNDS_FUNC ) ( int *, float **, float ** );
+typedef void (*DST_HUD_FRAME_FUNC)		( double * );
+typedef void (*DST_HUD_KEY_EVENT_FUNC ) ( int *, int *, const char ** );
+typedef void (*DST_HUD_TEMPENTUPDATE_FUNC) ( double *, double *, double *, struct tempent_s ***, struct tempent_s ***, int ( **Callback_AddVisibleEntity )( struct cl_entity_s *pEntity ),	void ( **Callback_TempEntPlaySound )( struct tempent_s *pTemp, float damp ) );
+typedef void (*DST_HUD_GETUSERENTITY_FUNC ) ( int * );
+typedef void (*DST_HUD_VOICESTATUS_FUNC)(int *, qboolean *);
+typedef void (*DST_HUD_DIRECTORMESSAGE_FUNC)( int *, void ** );
+typedef void (*DST_HUD_STUDIO_INTERFACE_FUNC ) ( int *, struct r_studio_interface_s ***, struct engine_studio_api_s ** );
+typedef void (*DST_HUD_CHATINPUTPOSITION_FUNC)( int **, int ** );
+typedef void (*DST_HUD_GETPLAYERTEAM)(int);
+
+// Pointers to the client destination functions
+typedef struct cldll_func_dst_s
+{
+	DST_INITIALIZE_FUNC						pInitFunc;
+	DST_HUD_INIT_FUNC						pHudInitFunc;
+	DST_HUD_VIDINIT_FUNC					pHudVidInitFunc;
+	DST_HUD_REDRAW_FUNC						pHudRedrawFunc;
+	DST_HUD_UPDATECLIENTDATA_FUNC			pHudUpdateClientDataFunc;
+	DST_HUD_RESET_FUNC						pHudResetFunc;
+	DST_HUD_CLIENTMOVE_FUNC					pClientMove;
+	DST_HUD_CLIENTMOVEINIT_FUNC				pClientMoveInit;
+	DST_HUD_TEXTURETYPE_FUNC				pClientTextureType;
+	DST_HUD_IN_ACTIVATEMOUSE_FUNC			pIN_ActivateMouse;
+	DST_HUD_IN_DEACTIVATEMOUSE_FUNC			pIN_DeactivateMouse;
+	DST_HUD_IN_MOUSEEVENT_FUNC				pIN_MouseEvent;
+	DST_HUD_IN_CLEARSTATES_FUNC				pIN_ClearStates;
+	DST_HUD_IN_ACCUMULATE_FUNC				pIN_Accumulate;
+	DST_HUD_CL_CREATEMOVE_FUNC				pCL_CreateMove;
+	DST_HUD_CL_ISTHIRDPERSON_FUNC			pCL_IsThirdPerson;
+	DST_HUD_CL_GETCAMERAOFFSETS_FUNC		pCL_GetCameraOffsets;
+	DST_HUD_KB_FIND_FUNC					pFindKey;
+	DST_HUD_CAMTHINK_FUNC					pCamThink;
+	DST_HUD_CALCREF_FUNC					pCalcRefdef;
+	DST_HUD_ADDENTITY_FUNC					pAddEntity;
+	DST_HUD_CREATEENTITIES_FUNC				pCreateEntities;
+	DST_HUD_DRAWNORMALTRIS_FUNC				pDrawNormalTriangles;
+	DST_HUD_DRAWTRANSTRIS_FUNC				pDrawTransparentTriangles;
+	DST_HUD_STUDIOEVENT_FUNC				pStudioEvent;
+	DST_HUD_POSTRUNCMD_FUNC					pPostRunCmd;
+	DST_HUD_SHUTDOWN_FUNC					pShutdown;
+	DST_HUD_TXFERLOCALOVERRIDES_FUNC		pTxferLocalOverrides;
+	DST_HUD_PROCESSPLAYERSTATE_FUNC			pProcessPlayerState;
+	DST_HUD_TXFERPREDICTIONDATA_FUNC		pTxferPredictionData;
+	DST_HUD_DEMOREAD_FUNC					pReadDemoBuffer;
+	DST_HUD_CONNECTIONLESS_FUNC				pConnectionlessPacket;
+	DST_HUD_GETHULLBOUNDS_FUNC				pGetHullBounds;
+	DST_HUD_FRAME_FUNC						pHudFrame;
+	DST_HUD_KEY_EVENT_FUNC					pKeyEvent;
+	DST_HUD_TEMPENTUPDATE_FUNC				pTempEntUpdate;
+	DST_HUD_GETUSERENTITY_FUNC				pGetUserEntity;
+	DST_HUD_VOICESTATUS_FUNC				pVoiceStatus;	// Possibly null on old client dlls.
+	DST_HUD_DIRECTORMESSAGE_FUNC			pDirectorMessage;	// Possibly null on old client dlls.
+	DST_HUD_STUDIO_INTERFACE_FUNC			pStudioInterface;  // Not used by all clients
+	DST_HUD_CHATINPUTPOSITION_FUNC			pChatInputPosition;  // Not used by all clients
+	DST_HUD_GETPLAYERTEAM					pGetPlayerTeam; // Not used by all clients
+} cldll_func_dst_t;
+
 // Module exports
 typedef void (*PFN_LOADMOD)( char *pchModule );
 typedef void (*PFN_CLOSEMOD)( void );
@@ -351,5 +442,40 @@ typedef struct modfuncs_s
 	int m_nVoid8;
 	int m_nVoid9;
 } modfuncs_t;
+
+// Functions for ModuleS
+typedef void (*PFN_KICKPLAYER)(int nPlayerSlot, int nReason);
+
+typedef struct modshelpers_s
+{
+	PFN_KICKPLAYER m_pfnKickPlayer;
+
+	// reserved for future expansion
+	int m_nVoid1;
+	int m_nVoid2;
+	int m_nVoid3;
+	int m_nVoid4;
+	int m_nVoid5;
+	int m_nVoid6;
+	int m_nVoid7;
+	int m_nVoid8;
+	int m_nVoid9;
+} modshelpers_t;
+
+// Functions for moduleC
+typedef struct modchelpers_s
+{
+	// reserved for future expansion
+	int m_nVoid0;
+	int m_nVoid1;
+	int m_nVoid2;
+	int m_nVoid3;
+	int m_nVoid4;
+	int m_nVoid5;
+	int m_nVoid6;
+	int m_nVoid7;
+	int m_nVoid8;
+	int m_nVoid9;
+} modchelpers_t;
 
 #endif // APIPROXY_H

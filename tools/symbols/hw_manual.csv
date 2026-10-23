@@ -5186,3 +5186,4 @@ va,name,kind,evidence
 01D9FBB5,_GetExportNamesFromFile_guess,func,"engine/pe_win32_guess.c: FS_GetLocalCopy, OpenFile, CreateFileMapping, MapViewOfFile, then the export names into Hunk_TempAlloc; name is a guess"
 01D9FCCA,_StripMangledName_guess,func,engine/pe_win32_guess.c: copies a decorated export name up to its second @ (Export name is too large); name is a guess
 01D9FD45,_BuildExportTable_guess,func,"engine/pe_win32_guess.c: the stdcall functions of the PEFILE.C sample (Randy Kath, MSDN 1993: ImageFileType, NumOfSections, ImageDirectoryOffset, GetSectionNames, GetSectionHdrByName, IsDebugInfoStripped), same code, source order, ret 4/8/12"
+01D8D015,_CommonLoadSecurityModule,func,engine/module.cpp: Linux hw.so DWARF names (module.cpp: CommonLoadSecurityModule between NullDst and LoadSecurityModuleFromDisk); same order and count of functions in our compiled object
