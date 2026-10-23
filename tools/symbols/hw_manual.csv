@@ -2013,7 +2013,7 @@ va,name,kind,evidence
 01E70750,_strcpy,func,"C runtime, paired call site in matched sv_main.c functions"
 01E721E0,_strchr,func,"C runtime, paired call site in matched sv_main.c functions"
 01E71670,__chkstk,func,"C runtime stack probe, paired call site in matched sv_main.c functions"
-01E35C9D,?GetText@Tooltip@vgui2@@QAEPBDXZ,func,vgui2/controls/Tooltip.cpp: same position and size as the function of our object (hw.so DWARF Tooltip.cpp line order)
+01E35C9D,?GetText@Tooltip@vgui2@@QAEPBDXZ,func,Ghidra signature name ~<>; every use in 100% functions pairs with our ?GetText@Tooltip@vgui2@@QAEPBDXZ (tools/fid_fix.py)
 01E28197,?GetControlsModuleName@vgui2@@YAPBDXZ,func,"returns the bss buffer at 024FC6BC (g_szControlsModuleName), so it is GetControlsModuleName, not Panel::GetPanelClassName (bytematch could not tell the two apart: same bytes with the relocation masked)"
 01E2EF30,??1?$CUtlDict@UPanelMessageMapDictionaryEntry@CPanelMessageMapDictionary@@H@@QAE@XZ,func,Ghidra signature name ??1CAtlBaseModule@ATL@@QAE@XZ; every use in 100% functions pairs with our ??1?$CUtlDict@UPanelMessageMapDictionaryEntry@CPanelMessageMapDictionary@@H@@QAE@XZ (tools/fid_fix.py)
 01E28BEC,?GetBounds@Panel@vgui2@@QAEXAAH000@Z,func,Ghidra signature name CSliderCtrl::FUN_01e28bec; every use in 100% functions pairs with our ?GetBounds@Panel@vgui2@@QAEXAAH000@Z (tools/fid_fix.py)

@@ -3219,6 +3219,17 @@
           "name": "engine/voice_gain",
           "source": "src/engine_hw/voice_gain.cpp",
           "functions_file": "tools/units/hw_engine_voice_gain.txt"
+        },
+        {
+          "name": "engine/sys_sdlwind",
+          "source": "src/engine_hw/sys_sdlwind.cpp",
+          "functions_file": "tools/units/hw_engine_sys_sdlwind.txt",
+          "includes": [
+            "src/engine_hw",
+            "src/public",
+            "src/gameui",
+            "src/common"
+          ]
         }
       ]
     },

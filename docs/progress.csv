@@ -28710,38 +28710,38 @@ hw,01DF88A0,46,,,ENGINE,engine/LauncherDirectDraw_guess.cpp,,,TODO,,,
 hw,01DF88D0,23,,,ENGINE,engine/LauncherDirectDraw_guess.cpp,,,TODO,,,
 hw,01DF88F0,46,,,ENGINE,engine/LauncherDirectDraw_guess.cpp,,,TODO,,,
 hw,01DF8920,20,,,ENGINE,engine/LauncherDirectDraw_guess.cpp,,,TODO,,,
-hw,01DF8940,15,,,ENGINE,engine/sys_sdlwind.cpp,,,TODO,,,
-hw,01DF894F,15,,,ENGINE,engine/sys_sdlwind.cpp,,,TODO,,,
-hw,01DF895E,18,,,ENGINE,engine/sys_sdlwind.cpp,,,TODO,,,
-hw,01DF8970,15,,,ENGINE,engine/sys_sdlwind.cpp,,,TODO,,,
-hw,01DF897F,306,,,ENGINE,engine/sys_sdlwind.cpp,,,TODO,,,
-hw,01DF8AB1,256,,,ENGINE,engine/sys_sdlwind.cpp,,,TODO,,,
-hw,01DF8BF6,118,,,ENGINE,engine/sys_sdlwind.cpp,,,TODO,,,
-hw,01DF8C6C,150,,,ENGINE,engine/sys_sdlwind.cpp,,,TODO,,,
-hw,01DF8D02,1225,,,ENGINE,engine/sys_sdlwind.cpp,,,TODO,,,
-hw,01DF9243,36,,,ENGINE,engine/sys_sdlwind.cpp,,,TODO,,,
-hw,01DF9267,481,,,UNKNOWN,engine/sys_sdlwind.cpp,,,TODO,,,linux: _ZN5CGame16CreateGameWindowEv
-hw,01DF9448,33,,,UNKNOWN,engine/sys_sdlwind.cpp,,,TODO,,,linux: _ZN5CGameC1Ev
-hw,01DF9469,122,,,UNKNOWN,engine/sys_sdlwind.cpp,,,TODO,,,linux: _ZN5CGameD0Ev
-hw,01DF94E3,28,,,UNKNOWN,engine/sys_sdlwind.cpp,,,TODO,,,linux: _ZN5CGameD1Ev
-hw,01DF94FF,118,,,UNKNOWN,engine/sys_sdlwind.cpp,,,TODO,,,linux: _ZN5CGame4InitEPv
-hw,01DF9575,86,,,UNKNOWN,engine/sys_sdlwind.cpp,,,TODO,,,linux: _ZN5CGame8ShutdownEv
-hw,01DF95CB,17,,,UNKNOWN,engine/sys_sdlwind.cpp,,,TODO,,,linux: _ZN5CGame13GetMainWindowEv
-hw,01DF95DC,17,,,UNKNOWN,engine/sys_sdlwind.cpp,,,TODO,,,linux: _ZN5CGame20GetMainWindowAddressEv
-hw,01DF95ED,22,,,ENGINE,engine/sys_sdlwind.cpp,,,TODO,,,
-hw,01DF9603,31,,,UNKNOWN,engine/sys_sdlwind.cpp,,,TODO,,,linux: _ZN5CGame11SetWindowXYEii
-hw,01DF9622,31,,CDockingPanesRow::SetExtra,ENGINE,engine/sys_sdlwind.cpp,,,TODO,,ghidra,linux: _ZN5CGame13SetWindowSizeEii
-hw,01DF9641,81,,,UNKNOWN,engine/sys_sdlwind.cpp,,,TODO,,,linux: _ZN5CGame13GetWindowRectEPiS0_S0_S0_
-hw,01DF9692,17,,,UNKNOWN,engine/sys_sdlwind.cpp,,,TODO,,,linux: _ZN5CGame11IsActiveAppEv
-hw,01DF96A3,22,,,UNKNOWN,engine/sys_sdlwind.cpp,,,TODO,,,linux: _ZN5CGame12SetActiveAppEb
-hw,01DF96B9,17,,,UNKNOWN,engine/sys_sdlwind.cpp,,,TODO,,,linux: _ZN5CGame13IsMultiplayerEv
-hw,01DF96CA,190,,,ENGINE,engine/sys_sdlwind.cpp,,,TODO,,,linux: _ZN5CGame17PlayStartupVideosEv
-hw,01DF9788,699,,,ENGINE,engine/sys_sdlwind.cpp,,,TODO,,,linux: _ZN5CGame14PlayAVIAndWaitEPKc
-hw,01DF9A43,310,,,ENGINE,engine/sys_sdlwind.cpp,,,TODO,,,linux: _Z24GetWindowNameFromGameDirPci
-hw,01DF9B80,46,,,ENGINE,engine/sys_sdlwind.cpp,,,TODO,,,
-hw,01DF9BB0,23,,,ENGINE,engine/sys_sdlwind.cpp,,,TODO,,,
-hw,01DF9BD0,46,,,ENGINE,engine/sys_sdlwind.cpp,,,TODO,,,
-hw,01DF9C00,20,,,ENGINE,engine/sys_sdlwind.cpp,,,TODO,,,
+hw,01DF8940,15,_$E8,_$E8,ENGINE,engine/sys_sdlwind.cpp,,,MATCHED,100,,
+hw,01DF894F,15,_$E5,_$E5,ENGINE,engine/sys_sdlwind.cpp,,,MATCHED,100,,
+hw,01DF895E,18,_$E7,_$E7,ENGINE,engine/sys_sdlwind.cpp,,,MATCHED,100,,
+hw,01DF8970,15,_$E6,_$E6,ENGINE,engine/sys_sdlwind.cpp,,,MATCHED,100,,
+hw,01DF897F,306,?AppActivate@CGame@@QAEX_N@Z,CGame::AppActivate,ENGINE,engine/sys_sdlwind.cpp,,,MATCHED,100,,
+hw,01DF8AB1,256,?MapKey_guess@CGame@@QAEHJ@Z,CGame::MapKey_guess,ENGINE,engine/sys_sdlwind.cpp,,,MATCHED,100,,
+hw,01DF8BF6,118,?FieldsFromMouseWParam_guess@CGame@@QAEHI@Z,CGame::FieldsFromMouseWParam_guess,ENGINE,engine/sys_sdlwind.cpp,,,MATCHED,100,,
+hw,01DF8C6C,150,?FieldsFromMouseUpMsg_guess@CGame@@QAEHII@Z,CGame::FieldsFromMouseUpMsg_guess,ENGINE,engine/sys_sdlwind.cpp,,,MATCHED,100,,
+hw,01DF8D02,1225,?WindowProc_guess@CGame@@QAEJPAUHWND__@@IIJ@Z,CGame::WindowProc_guess,ENGINE,engine/sys_sdlwind.cpp,,,MATCHED,100,,
+hw,01DF9243,36,?SleepUntilInput@CGame@@UAEXH@Z,CGame::SleepUntilInput,ENGINE,engine/sys_sdlwind.cpp,,,MATCHED,100,,
+hw,01DF9267,481,?CreateGameWindow@CGame@@UAE_NXZ,CGame::CreateGameWindow,UNKNOWN,engine/sys_sdlwind.cpp,,,MATCHED,100,,linux: _ZN5CGame16CreateGameWindowEv
+hw,01DF9448,33,?HLEngineWindowProc_guess@@YGJPAUHWND__@@IIJ@Z,HLEngineWindowProc_guess,UNKNOWN,engine/sys_sdlwind.cpp,,,MATCHED,100,,linux: _ZN5CGameC1Ev
+hw,01DF9469,122,??0CGame@@QAE@XZ,CGame::CGame,UNKNOWN,engine/sys_sdlwind.cpp,,,MATCHED,100,,linux: _ZN5CGameD0Ev
+hw,01DF94E3,28,??1CGame@@UAE@XZ,CGame::~CGame,UNKNOWN,engine/sys_sdlwind.cpp,,,MATCHED,100,,linux: _ZN5CGameD1Ev
+hw,01DF94FF,118,?Init@CGame@@UAE_NPAX@Z,CGame::Init,UNKNOWN,engine/sys_sdlwind.cpp,,,MATCHED,100,,linux: _ZN5CGame4InitEPv
+hw,01DF9575,86,?Shutdown@CGame@@UAE_NXZ,CGame::Shutdown,UNKNOWN,engine/sys_sdlwind.cpp,,,MATCHED,100,,linux: _ZN5CGame8ShutdownEv
+hw,01DF95CB,17,?GetMainWindow@CGame@@UAEPAUHWND__@@XZ,CGame::GetMainWindow,UNKNOWN,engine/sys_sdlwind.cpp,,,MATCHED,100,,linux: _ZN5CGame13GetMainWindowEv
+hw,01DF95DC,17,?GetMainWindowAddress@CGame@@UAEPAPAUHWND__@@XZ,CGame::GetMainWindowAddress,UNKNOWN,engine/sys_sdlwind.cpp,,,MATCHED,100,,linux: _ZN5CGame20GetMainWindowAddressEv
+hw,01DF95ED,22,?SetMainWindow_guess@CGame@@QAEXPAUHWND__@@@Z,CGame::SetMainWindow_guess,ENGINE,engine/sys_sdlwind.cpp,,,MATCHED,100,,
+hw,01DF9603,31,?SetWindowXY@CGame@@UAEXHH@Z,CGame::SetWindowXY,UNKNOWN,engine/sys_sdlwind.cpp,,,MATCHED,100,,linux: _ZN5CGame11SetWindowXYEii
+hw,01DF9622,31,?SetWindowSize@CGame@@UAEXHH@Z,CGame::SetWindowSize,ENGINE,engine/sys_sdlwind.cpp,,,MATCHED,100,ghidra,linux: _ZN5CGame13SetWindowSizeEii
+hw,01DF9641,81,?GetWindowRect@CGame@@UAEXPAH000@Z,CGame::GetWindowRect,UNKNOWN,engine/sys_sdlwind.cpp,,,MATCHED,100,,linux: _ZN5CGame13GetWindowRectEPiS0_S0_S0_
+hw,01DF9692,17,?IsActiveApp@CGame@@UAE_NXZ,CGame::IsActiveApp,UNKNOWN,engine/sys_sdlwind.cpp,,,MATCHED,100,,linux: _ZN5CGame11IsActiveAppEv
+hw,01DF96A3,22,?SetActiveApp@CGame@@QAEX_N@Z,CGame::SetActiveApp,UNKNOWN,engine/sys_sdlwind.cpp,,,MATCHED,100,,linux: _ZN5CGame12SetActiveAppEb
+hw,01DF96B9,17,?IsMultiplayer@CGame@@UAE_NXZ,CGame::IsMultiplayer,UNKNOWN,engine/sys_sdlwind.cpp,,,MATCHED,100,,linux: _ZN5CGame13IsMultiplayerEv
+hw,01DF96CA,190,?PlayStartupVideos@CGame@@UAEXXZ,CGame::PlayStartupVideos,ENGINE,engine/sys_sdlwind.cpp,,,MATCHED,100,,linux: _ZN5CGame17PlayStartupVideosEv
+hw,01DF9788,699,?PlayAVIAndWait@CGame@@UAEXPBD@Z,CGame::PlayAVIAndWait,ENGINE,engine/sys_sdlwind.cpp,,,MATCHED,100,,linux: _ZN5CGame14PlayAVIAndWaitEPKc
+hw,01DF9A43,310,?GetWindowNameFromGameDir@@YAXPADH@Z,GetWindowNameFromGameDir,ENGINE,engine/sys_sdlwind.cpp,,,MATCHED,100,,linux: _Z24GetWindowNameFromGameDirPci
+hw,01DF9B80,46,??_GCGame@@UAEPAXI@Z,CGame::`scalar deleting destructor',ENGINE,engine/sys_sdlwind.cpp,,,MATCHED,100,,
+hw,01DF9BB0,23,??0IGame@@QAE@XZ,IGame::IGame,ENGINE,engine/sys_sdlwind.cpp,,,MATCHED,100,,
+hw,01DF9BD0,46,??_GIGame@@UAEPAXI@Z,IGame::`scalar deleting destructor',ENGINE,engine/sys_sdlwind.cpp,,,MATCHED,100,,
+hw,01DF9C00,20,??1IGame@@UAE@XZ,IGame::~IGame,ENGINE,engine/sys_sdlwind.cpp,,,MATCHED,100,,
 hw,01DF9C20,52,,,ENGINE,engine/cpu_guess.cpp,,,TODO,,,
 hw,01DF9C54,69,,,ENGINE,engine/cpu_guess.cpp,,,TODO,,,
 hw,01DF9C99,42,,,ENGINE,engine/cpu_guess.cpp,,,TODO,,,

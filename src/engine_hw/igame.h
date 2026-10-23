@@ -25,7 +25,10 @@ public:
 	virtual bool IsMultiplayer( void ) = 0;
 	virtual void PlayStartupVideos( void ) = 0;
 	virtual void PlayAVIAndWait( const char *aviFile ) = 0;
+#ifndef _WIN32
+	// SDL builds only: the Windows vtable ends with PlayAVIAndWait
 	virtual void SetCursorVisible( bool bState ) = 0;
+#endif
 };
 
 extern IGame *game;
