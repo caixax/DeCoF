@@ -3608,6 +3608,11 @@
           "functions_file": "tools/units/gameui_vgui2_controls_Image.txt"
         },
         {
+          "name": "public/UtlBuffer",
+          "source": "src/public/UtlBuffer.cpp",
+          "functions_file": "tools/units/gameui_public_UtlBuffer.txt"
+        },
+        {
           "name": "public/utlsymbol",
           "source": "src/public/utlsymbol.cpp",
           "functions_file": "tools/units/gameui_public_utlsymbol.txt"

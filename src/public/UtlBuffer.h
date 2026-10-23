@@ -203,6 +203,22 @@ inline bool CUtlBuffer::IsText() const
 }
 
 //-----------------------------------------------------------------------------
+// Am I valid? (overflow or underflow error), Once invalid it stays invalid
+//-----------------------------------------------------------------------------
+inline bool CUtlBuffer::IsValid() const
+{
+	return m_Error == 0;
+}
+
+//-----------------------------------------------------------------------------
+// memory allocation size, does *not* reflect size written or read
+//-----------------------------------------------------------------------------
+inline int CUtlBuffer::Size() const
+{
+	return m_Memory.NumAllocated();
+}
+
+//-----------------------------------------------------------------------------
 // Writes a character
 //-----------------------------------------------------------------------------
 inline void CUtlBuffer::PutChar( char c )
