@@ -63,6 +63,9 @@ public class DelinkUnits extends GhidraScript {
 		}
 		File out = null;
 		AddressSet set = null;
+		// object-local names (_$E1, $LN...) listed before any other function of
+		// the unit: resolved once the unit holds something to measure against
+		List<String> pending = new ArrayList<>();
 		int units = 0;
 		for (String raw : Files.readAllLines(Paths.get(args[0]))) {
 			String line = raw.strip();
@@ -81,6 +84,7 @@ public class DelinkUnits extends GhidraScript {
 					break;
 				case "unit":
 					if (out != null) {
+						includePending(pending, set);
 						exportSafe(out, set);
 						units++;
 					}
@@ -91,11 +95,18 @@ public class DelinkUnits extends GhidraScript {
 					forgetSymbols(arg);
 					break;
 				case "include":
+					if (set.isEmpty() && (arg.startsWith("$") || arg.startsWith("_$E"))) {
+						pending.add(arg);
+						break;
+					}
 					try {
 						set.add(findSymbol(arg, set));
 					}
 					catch (IllegalArgumentException e) {
 						printerr("DelinkUnits: skipping " + arg + " (" + e.getMessage() + ")");
+					}
+					if (!set.isEmpty()) {
+						includePending(pending, set);
 					}
 					break;
 				default:
@@ -103,10 +114,23 @@ public class DelinkUnits extends GhidraScript {
 			}
 		}
 		if (out != null) {
+			includePending(pending, set);
 			exportSafe(out, set);
 			units++;
 		}
 		println("DelinkUnits: exported " + units + " unit(s)");
+	}
+
+	private void includePending(List<String> pending, AddressSet set) {
+		for (String name : pending) {
+			try {
+				set.add(findSymbol(name, set));
+			}
+			catch (IllegalArgumentException e) {
+				printerr("DelinkUnits: skipping " + name + " (" + e.getMessage() + ")");
+			}
+		}
+		pending.clear();
 	}
 
 	// A class with several vtables (multiple inheritance) gets the same
