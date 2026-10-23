@@ -4897,3 +4897,11 @@ va,name,kind,evidence
 0207B20C,_s_pBaseDir,data,"engine/filesystem.cpp: static char[512], strcpy of basedir in FileSystem_Init, returned by GetBaseDirectory; Linux _ZL10s_pBaseDir"
 0207B40C,_g_pFileSystemModule,data,"engine/filesystem.cpp: static CSysModule *, Sys_LoadModule result in FileSystem_LoadDLL; Linux static g_pFileSystemModule"
 0207B414,_g_bUsingSteamFileSystem_guess,data,"engine/filesystem.cpp: static bool set by FileSystem_LoadDLL when -steam selects filesystem_steam.dll, tested before IsGameSubscribed in FileSystem_SetGameDirectory; name unproven"
+01E565C0,?GetMessageMap@CheckButton@vgui2@@UAEPAUPanelMessageMap@2@XZ,func,"vgui2/controls/CheckButton.cpp COMDAT after ChainToMap at 01E56550: calls 01E56600 (returns ""CheckButton""), only the CheckButton vtable points at it; hw_bytes.csv had paired it with Button's code, which is identical with relocations masked"
+01E56600,?GetPanelClassName@CheckButton@vgui2@@SAPBDXZ,func,"vgui2/controls/CheckButton.cpp: returns ""CheckButton"", called by GetMessageMap at 01E565C0 and stored by ChainToMap at 01E56550"
+02FB9D84,??_B?1??GetMessageMap@CheckButton@vgui2@@UAEPAUPanelMessageMap@2@XZ@51,data,guard flag of the function static of CheckButton::GetMessageMap at 01E565C0
+02FB9D88,?s_pMap@?1??GetMessageMap@CheckButton@vgui2@@UAEPAUPanelMessageMap@3@XZ@4PAU43@A,data,s_pMap of CheckButton::GetMessageMap at 01E565C0
+01E4C7B0,?GetMessageMap@Button@vgui2@@UAEPAUPanelMessageMap@2@XZ,func,"vgui2/controls/ScrollBar.cpp COMDAT after AddToMap at 01E4C730 (the ScrollBarButton vtable uses it first): calls 01E4C7F0 (returns ""Button""), four vtables point at it"
+01E4C7F0,?GetPanelClassName@Button@vgui2@@SAPBDXZ,func,"vgui2/controls/ScrollBar.cpp COMDAT: returns ""Button"", called by GetMessageMap at 01E4C7B0 and by Button::ChainToMap at 01E58100"
+02FB9DBC,??_B?1??GetMessageMap@Button@vgui2@@UAEPAUPanelMessageMap@2@XZ@51,data,guard flag of the function static of Button::GetMessageMap at 01E4C7B0
+02FB9DC0,?s_pMap@?1??GetMessageMap@Button@vgui2@@UAEPAUPanelMessageMap@3@XZ@4PAU43@A,data,s_pMap of Button::GetMessageMap at 01E4C7B0

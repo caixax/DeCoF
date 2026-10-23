@@ -657,7 +657,6 @@ va,name,kind,evidence
 01E53FB0,?Construct@@YAXPAPAVMenuItem@vgui2@@@Z,func,"bytes identical to ?Construct@@YAXPAPAVMenuItem@vgui2@@@Z in hw/vgui2/controls/Menu (relocated fields masked), one-to-one"
 01E53FD0,?IsInList@?$CUtlLinkedList@PAVMenuItem@vgui2@@H@@QBE_NH@Z,func,"bytes identical to ?IsInList@?$CUtlLinkedList@PAVMenuItem@vgui2@@H@@QBE_NH@Z in hw/vgui2/controls/Menu (relocated fields masked), one-to-one"
 01E54020,?Previous@?$CUtlLinkedList@PAVMenuItem@vgui2@@H@@QBEHH@Z,func,"bytes identical to ?Previous@?$CUtlLinkedList@PAVMenuItem@vgui2@@H@@QBEHH@Z in hw/vgui2/controls/Menu (relocated fields masked), one-to-one"
-01E565C0,?GetMessageMap@Button@vgui2@@UAEPAUPanelMessageMap@2@XZ,func,"bytes identical to ?GetMessageMap@Button@vgui2@@UAEPAUPanelMessageMap@2@XZ in hw/vgui2/controls/Button (relocated fields masked), one-to-one"
 01E5694B,?Init@Button@vgui2@@AAEXXZ,func,"bytes identical to ?Init@Button@vgui2@@AAEXXZ in hw/vgui2/controls/Button (relocated fields masked), one-to-one"
 01E56A5F,??1Button@vgui2@@UAE@XZ,func,"bytes identical to ??1Button@vgui2@@UAE@XZ in hw/vgui2/controls/Button (relocated fields masked), one-to-one"
 01E56A9E,?SetButtonActivationType@Button@vgui2@@UAEXW4ActivationType_t@12@@Z,func,"bytes identical to ?SetButtonActivationType@Button@vgui2@@UAEXW4ActivationType_t@12@@Z in hw/vgui2/controls/Button (relocated fields masked), one-to-one"

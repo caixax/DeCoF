@@ -13,6 +13,8 @@
 ??_GCheckButton@vgui2@@UAEPAXI@Z
 ??0CheckButton_RegisterMap@CheckButton@vgui2@@QAE@XZ
 ?ChainToMap@CheckButton@vgui2@@SAXXZ
+?GetMessageMap@CheckButton@vgui2@@UAEPAUPanelMessageMap@2@XZ
+?GetPanelClassName@CheckButton@vgui2@@SAPBDXZ
 ?GetPanelBaseClassName@CheckButton@vgui2@@SAPBDXZ
 ??0PanelMessageFunc_OnCheckButtonChecked@CheckButton@vgui2@@QAE@XZ
 ?InitVar@PanelMessageFunc_OnCheckButtonChecked@CheckButton@vgui2@@SAXXZ

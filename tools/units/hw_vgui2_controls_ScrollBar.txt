@@ -40,3 +40,5 @@
 ??0PanelMessageFunc_OnSliderMoved@ScrollBar@vgui2@@QAE@XZ
 ?InitVar@PanelMessageFunc_OnSliderMoved@ScrollBar@vgui2@@SAXXZ
 ?AddToMap@ScrollBar@vgui2@@SAXPBDP8Panel@2@AEXXZHH0H0@Z
+?GetMessageMap@Button@vgui2@@UAEPAUPanelMessageMap@2@XZ
+?GetPanelClassName@Button@vgui2@@SAPBDXZ
