@@ -3382,6 +3382,26 @@
           "name": "engine/LauncherDirectDraw_guess",
           "source": "src/engine_hw/LauncherDirectDraw_guess.cpp",
           "functions_file": "tools/units/hw_engine_LauncherDirectDraw_guess.txt"
+        },
+        {
+          "name": "engine/vgui_EngineSurface",
+          "source": "src/engine_hw/vgui_EngineSurface.cpp",
+          "functions_file": "tools/units/hw_engine_vgui_EngineSurface.txt",
+          "includes": [
+            "src/engine_hw",
+            "src/common",
+            "src/public"
+          ]
+        },
+        {
+          "name": "engine/vgui_EngineSurfaceWin32",
+          "source": "src/engine_hw/vgui_EngineSurfaceWin32.cpp",
+          "functions_file": "tools/units/hw_engine_vgui_EngineSurfaceWin32.txt",
+          "includes": [
+            "src/engine_hw",
+            "src/common",
+            "src/public"
+          ]
         }
       ]
     },

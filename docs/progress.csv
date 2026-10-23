@@ -28961,22 +28961,22 @@ hw,01DFEE60,19,?Size@CUtlBuffer@@QBEHXZ,CUtlBuffer::Size,ENGINE,public/UtlBuffer
 hw,01DFEE80,43,??0?$CUtlMemory@E@@QAE@PAEH@Z,char>,ENGINE,public/UtlBuffer.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01DFEEB0,42,?EnsureCapacity@?$CUtlMemory@E@@QAEXH@Z,char>::EnsureCapacity,ENGINE,public/UtlBuffer.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01DFEEE0,47,,,ENGINE,public/UtlBuffer.cpp,,,TODO,,,"not UtlBuffer code (the Linux public/UtlBuffer.cpp has no such function): a 42-byte stub of push ebp/ebx/esi/edi around the inline bytes 01 02 03 04 04 03 02 01 and 28 zero bytes; only .data 01ED1404 refers to it as {01DFEEE0, 0x16B2} (between the traceinit and vgui_EngineSurface data); owner object unknown"
-hw,01DFEF10,15,,,ENGINE,engine/vgui_EngineSurface.cpp,,,TODO,,,
-hw,01DFEF1F,15,,,ENGINE,engine/vgui_EngineSurface.cpp,,,TODO,,,
-hw,01DFEF2E,18,,,ENGINE,engine/vgui_EngineSurface.cpp,,,TODO,,,
-hw,01DFEF40,15,,,ENGINE,engine/vgui_EngineSurface.cpp,,,TODO,,,
-hw,01DFEF4F,10,,,ENGINE,engine/vgui_EngineSurface.cpp,,,TODO,,,
-hw,01DFEF59,25,,,ENGINE,engine/vgui_EngineSurface.cpp,,,TODO,,,
-hw,01DFEF72,10,,,ENGINE,engine/vgui_EngineSurface.cpp,,,TODO,,,
-hw,01DFEF7C,73,,,ENGINE,engine/vgui_EngineSurface.cpp,,,TODO,,,
-hw,01DFEFC5,66,,,ENGINE,engine/vgui_EngineSurface.cpp,,,TODO,,,
-hw,01DFF007,49,,,UNKNOWN,engine/vgui_EngineSurface.cpp,,,TODO,,,linux: _ZN13EngineSurface12drawSetColorEiiii
-hw,01DFF038,106,,,UNKNOWN,engine/vgui_EngineSurface.cpp,,,TODO,,,linux: _ZN13EngineSurface16drawSetTextColorEiiii
-hw,01DFF0A2,31,,,UNKNOWN,engine/vgui_EngineSurface.cpp,,,TODO,,,linux: _ZN13EngineSurface14drawSetTextPosEii
-hw,01DFF0C1,35,,,UNKNOWN,engine/vgui_EngineSurface.cpp,,,TODO,,,linux: _ZN13EngineSurface14drawGetTextPosERiS0_
-hw,01DFF0E4,31,,,UNKNOWN,engine/vgui_EngineSurface.cpp,,,TODO,,,linux: _ZN13EngineSurface18createNewTextureIDEv
-hw,01DFF110,46,,,ENGINE,engine/vgui_EngineSurface.cpp,,,TODO,,,
-hw,01DFF140,19,,,ENGINE,engine/vgui_EngineSurface.cpp,,,TODO,,,
+hw,01DFEF10,15,_$E6,,ENGINE,engine/vgui_EngineSurface.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DFEF1F,15,_$E3,,ENGINE,engine/vgui_EngineSurface.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DFEF2E,18,_$E5,,ENGINE,engine/vgui_EngineSurface.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DFEF40,15,_$E4,,ENGINE,engine/vgui_EngineSurface.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DFEF4F,10,_$E9,,ENGINE,engine/vgui_EngineSurface.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DFEF59,25,_$E8,,ENGINE,engine/vgui_EngineSurface.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DFEF72,10,?__CreateEngineSurfaceIEngineSurface_interface@@YAPAVIBaseInterface@@XZ,__CreateEngineSurfaceIEngineSurface_interface,ENGINE,engine/vgui_EngineSurface.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DFEF7C,73,?freeEngineSurface@EngineSurface@@SAXXZ,,ENGINE,engine/vgui_EngineSurface.cpp,,,MATCHED,100,,
+hw,01DFEFC5,66,??1EngineSurface@@UAE@XZ,EngineSurface::~EngineSurface,ENGINE,engine/vgui_EngineSurface.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DFF007,49,?drawSetColor@EngineSurface@@UAEXHHHH@Z,EngineSurface::drawSetColor,UNKNOWN,engine/vgui_EngineSurface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13EngineSurface12drawSetColorEiiii
+hw,01DFF038,106,?drawSetTextColor@EngineSurface@@UAEXHHHH@Z,EngineSurface::drawSetTextColor,UNKNOWN,engine/vgui_EngineSurface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13EngineSurface16drawSetTextColorEiiii
+hw,01DFF0A2,31,?drawSetTextPos@EngineSurface@@UAEXHH@Z,EngineSurface::drawSetTextPos,UNKNOWN,engine/vgui_EngineSurface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13EngineSurface14drawSetTextPosEii
+hw,01DFF0C1,35,?drawGetTextPos@EngineSurface@@UAEXAAH0@Z,EngineSurface::drawGetTextPos,UNKNOWN,engine/vgui_EngineSurface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13EngineSurface14drawGetTextPosERiS0_
+hw,01DFF0E4,31,?createNewTextureID@EngineSurface@@UAEHXZ,EngineSurface::createNewTextureID,UNKNOWN,engine/vgui_EngineSurface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13EngineSurface18createNewTextureIDEv
+hw,01DFF110,46,??_GEngineSurface@@UAEPAXI@Z,EngineSurface::`scalar deleting destructor',ENGINE,engine/vgui_EngineSurface.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DFF140,19,??1IEngineSurface@@UAE@XZ,IEngineSurface::~IEngineSurface,ENGINE,engine/vgui_EngineSurface.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01DFF160,20,?VguiSurfaceTexturesLessFunc@@YA_NABVTexture@?%vgui_EngineSurfaceHW.cpp0@@0@Z,?VguiSurfaceTexturesLessFunc@@YA_NABVTexture@?%vgui_EngineSurfaceHW.cpp0@@0@Z,UNKNOWN,engine/vgui_EngineSurfaceHW.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01DFF174,15,,,ENGINE,engine/vgui_EngineSurfaceHW.cpp,,,TODO,,,
 hw,01DFF183,27,,,ENGINE,engine/vgui_EngineSurfaceHW.cpp,,,TODO,,,
@@ -29049,9 +29049,9 @@ hw,01E01620,25,?Construct@@YAXPAVTexture@?%vgui_EngineSurfaceHW.cpp0@@@Z,?Constr
 hw,01E01640,31,?SetParent@?$CUtlRBTree@VTexture@?%vgui_EngineSurfaceHW.cpp0@@H@@IAEXHH@Z,?SetParent@?$CUtlRBTree@VTexture@?%vgui_EngineSurfaceHW.cpp0@@H@@IAEXHH@Z,UNKNOWN,engine/vgui_EngineSurfaceHW.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01E01660,30,?SetLeftChild@?$CUtlRBTree@VTexture@?%vgui_EngineSurfaceHW.cpp0@@H@@IAEXHH@Z,?SetLeftChild@?$CUtlRBTree@VTexture@?%vgui_EngineSurfaceHW.cpp0@@H@@IAEXHH@Z,ENGINE,engine/vgui_EngineSurfaceHW.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01E01680,31,?SetRightChild@?$CUtlRBTree@VTexture@?%vgui_EngineSurfaceHW.cpp0@@H@@IAEXHH@Z,?SetRightChild@?$CUtlRBTree@VTexture@?%vgui_EngineSurfaceHW.cpp0@@H@@IAEXHH@Z,UNKNOWN,engine/vgui_EngineSurfaceHW.cpp,,,MATCHED,100,hw_manual.csv,
-hw,01E016A0,49,,,ENGINE,engine/vgui_EngineSurfaceWin32.cpp,,,TODO,,,
-hw,01E016E0,31,,,ENGINE,engine/vgui_EngineSurfaceWin32.cpp,,,TODO,,,
-hw,01E01700,46,,,ENGINE,engine/vgui_EngineSurfaceWin32.cpp,,,TODO,,,
+hw,01E016A0,49,??0EngineSurface@@QAE@XZ,,ENGINE,engine/vgui_EngineSurfaceWin32.cpp,,,MATCHED,100,,
+hw,01E016E0,31,??0IEngineSurface@@QAE@XZ,IEngineSurface::IEngineSurface,ENGINE,engine/vgui_EngineSurfaceWin32.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E01700,46,??_GIEngineSurface@@UAEPAXI@Z,IEngineSurface::`scalar deleting destructor',ENGINE,engine/vgui_EngineSurfaceWin32.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01E01730,38,,vgui::Dar<char>::operator=,LIB,,,,,,ghidra,
 hw,01E01760,38,,vgui::Dar<char*>::operator=,LIB,,,,,,ghidra,
 hw,01E01790,38,,vgui::Dar<int>::operator=,LIB,,,,,,ghidra,
