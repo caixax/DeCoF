@@ -3114,6 +3114,16 @@
           ]
         },
         {
+          "name": "common/BaseSystemModule",
+          "source": "src/common/BaseSystemModule.cpp",
+          "functions_file": "tools/units/hw_common_BaseSystemModule.txt",
+          "includes": [
+            "src/engine_hw",
+            "src/public",
+            "src/common"
+          ]
+        },
+        {
           "name": "common/ObjectList",
           "source": "src/common/ObjectList.cpp",
           "functions_file": "tools/units/hw_common_ObjectList.txt"

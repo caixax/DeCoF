@@ -24489,28 +24489,28 @@ hw,01D1E35B,64,,,UNKNOWN,iga/IGA_Quantizer_guess.cpp,,,TODO,,,"octree colour qua
 hw,01D1E39B,189,,,UNKNOWN,iga/IGA_Quantizer_guess.cpp,,,TODO,,,"octree colour quantizer (RTTI CQuantizer, scalar deleting destructor at 01D1E5A0); no Linux file and no string names the file: the _guess file name only describes the object and sorts into its link position"
 hw,01D1E458,318,,,UNKNOWN,iga/IGA_Quantizer_guess.cpp,,,TODO,,,"octree colour quantizer (RTTI CQuantizer, scalar deleting destructor at 01D1E5A0); no Linux file and no string names the file: the _guess file name only describes the object and sorts into its link position"
 hw,01D1E5A0,46,,,UNKNOWN,iga/IGA_Quantizer_guess.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D1E5D0,129,,,UNKNOWN,common/BaseSystemModule.cpp,,,TODO,,,linux: _ZN16BaseSystemModuleC1Ev
-hw,01D1E651,90,,,UNKNOWN,common/BaseSystemModule.cpp,,,TODO,,,linux: _ZN16BaseSystemModuleD1Ev
-hw,01D1E6AB,19,,,UNKNOWN,common/BaseSystemModule.cpp,,,TODO,,,linux: _ZN16BaseSystemModule7GetNameEv
-hw,01D1E6BE,16,,BaseSystemModule::GetType,ENGINE,common/BaseSystemModule.cpp,,,TODO,,linux_symbols:string:0.75,linux: _ZN16BaseSystemModule7GetTypeEv
-hw,01D1E6CE,16,,,UNKNOWN,common/BaseSystemModule.cpp,,,TODO,,,linux: _ZN16BaseSystemModule13GetStatusLineEv
-hw,01D1E6DE,45,,BaseSystemModule::ExecuteCommand,ENGINE,common/BaseSystemModule.cpp,,,TODO,,linux_symbols:string:0.75,linux: _ZN16BaseSystemModule14ExecuteCommandEiPc
-hw,01D1E70B,16,,,UNKNOWN,common/BaseSystemModule.cpp,,,TODO,,,linux: _ZN16BaseSystemModule10GetVersionEv
-hw,01D1E71B,17,,,UNKNOWN,common/BaseSystemModule.cpp,,,TODO,,,linux: _ZN16BaseSystemModule9GetSerialEv
-hw,01D1E72C,20,,,UNKNOWN,common/BaseSystemModule.cpp,,,TODO,,,linux: _ZN16BaseSystemModule9GetSystemEv
-hw,01D1E740,136,,,UNKNOWN,common/BaseSystemModule.cpp,,,TODO,,,linux: _ZN16BaseSystemModule4InitEP11IBaseSystemiPc
-hw,01D1E7C8,30,,,UNKNOWN,common/BaseSystemModule.cpp,,,TODO,,,linux: _ZN16BaseSystemModule8RunFrameEd
-hw,01D1E7E6,184,,BaseSystemModule::ShutDown,ENGINE,common/BaseSystemModule.cpp,,,TODO,,linux_symbols:string:0.75,linux: _ZN16BaseSystemModule8ShutDownEv
-hw,01D1E89E,172,,BaseSystemModule::RegisterListener,ENGINE,common/BaseSystemModule.cpp,,,TODO,,linux_symbols:string:0.75,linux: _ZN16BaseSystemModule16RegisterListenerEP13ISystemModule
-hw,01D1E94A,128,,,UNKNOWN,common/BaseSystemModule.cpp,,,TODO,,,linux: _ZN16BaseSystemModule14RemoveListenerEP13ISystemModule
-hw,01D1E9CA,111,,,UNKNOWN,common/BaseSystemModule.cpp,,,TODO,,,linux: _ZN16BaseSystemModule10FireSignalEjPv
-hw,01D1EA39,61,,BaseSystemModule::ReceiveSignal,ENGINE,common/BaseSystemModule.cpp,,,TODO,,linux_symbols:string:0.75,linux: _ZN16BaseSystemModule13ReceiveSignalEP13ISystemModulejPv
-hw,01D1EA76,17,,,UNKNOWN,common/BaseSystemModule.cpp,,,TODO,,,linux: _ZN16BaseSystemModule8GetStateEv
-hw,01D1EA90,31,,,UNKNOWN,common/BaseSystemModule.cpp,,,TODO,,,inline function (COMDAT) emitted after the object
-hw,01D1EAB0,46,,,UNKNOWN,common/BaseSystemModule.cpp,,,TODO,,,inline function (COMDAT) emitted after the object
-hw,01D1EAE0,28,,,UNKNOWN,common/BaseSystemModule.cpp,,,TODO,,,inline function (COMDAT) emitted after the object
-hw,01D1EB10,63,,,UNKNOWN,common/BaseSystemModule.cpp,,,TODO,,,inline function (COMDAT) emitted after the object
-hw,01D1EB50,39,,,UNKNOWN,common/BaseSystemModule.cpp,,,TODO,,,inline function (COMDAT) emitted after the object
+hw,01D1E5D0,129,??0BaseSystemModule@@QAE@XZ,BaseSystemModule::BaseSystemModule,UNKNOWN,common/BaseSystemModule.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN16BaseSystemModuleC1Ev
+hw,01D1E651,90,??1BaseSystemModule@@UAE@XZ,BaseSystemModule::~BaseSystemModule,UNKNOWN,common/BaseSystemModule.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN16BaseSystemModuleD1Ev
+hw,01D1E6AB,19,?GetName@BaseSystemModule@@UAEPADXZ,BaseSystemModule::GetName,UNKNOWN,common/BaseSystemModule.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN16BaseSystemModule7GetNameEv
+hw,01D1E6BE,16,?GetType@BaseSystemModule@@UAEPADXZ,BaseSystemModule::GetType,ENGINE,common/BaseSystemModule.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN16BaseSystemModule7GetTypeEv
+hw,01D1E6CE,16,?GetStatusLine@BaseSystemModule@@UAEPADXZ,BaseSystemModule::GetStatusLine,UNKNOWN,common/BaseSystemModule.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN16BaseSystemModule13GetStatusLineEv
+hw,01D1E6DE,45,?ExecuteCommand@BaseSystemModule@@UAEXHPAD@Z,BaseSystemModule::ExecuteCommand,ENGINE,common/BaseSystemModule.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN16BaseSystemModule14ExecuteCommandEiPc
+hw,01D1E70B,16,?GetVersion@BaseSystemModule@@UAEHXZ,BaseSystemModule::GetVersion,UNKNOWN,common/BaseSystemModule.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN16BaseSystemModule10GetVersionEv
+hw,01D1E71B,17,?GetSerial@BaseSystemModule@@UAEHXZ,BaseSystemModule::GetSerial,UNKNOWN,common/BaseSystemModule.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN16BaseSystemModule9GetSerialEv
+hw,01D1E72C,20,?GetSystem@BaseSystemModule@@UAEPAVIBaseSystem@@XZ,BaseSystemModule::GetSystem,UNKNOWN,common/BaseSystemModule.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN16BaseSystemModule9GetSystemEv
+hw,01D1E740,136,?Init@BaseSystemModule@@UAE_NPAVIBaseSystem@@HPAD@Z,BaseSystemModule::Init,UNKNOWN,common/BaseSystemModule.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN16BaseSystemModule4InitEP11IBaseSystemiPc
+hw,01D1E7C8,30,?RunFrame@BaseSystemModule@@UAEXN@Z,BaseSystemModule::RunFrame,UNKNOWN,common/BaseSystemModule.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN16BaseSystemModule8RunFrameEd
+hw,01D1E7E6,184,?ShutDown@BaseSystemModule@@UAEXXZ,BaseSystemModule::ShutDown,ENGINE,common/BaseSystemModule.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN16BaseSystemModule8ShutDownEv
+hw,01D1E89E,172,?RegisterListener@BaseSystemModule@@UAEXPAVISystemModule@@@Z,BaseSystemModule::RegisterListener,ENGINE,common/BaseSystemModule.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN16BaseSystemModule16RegisterListenerEP13ISystemModule
+hw,01D1E94A,128,?RemoveListener@BaseSystemModule@@UAEXPAVISystemModule@@@Z,BaseSystemModule::RemoveListener,UNKNOWN,common/BaseSystemModule.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN16BaseSystemModule14RemoveListenerEP13ISystemModule
+hw,01D1E9CA,111,?FireSignal@BaseSystemModule@@QAEXIPAX@Z,BaseSystemModule::FireSignal,UNKNOWN,common/BaseSystemModule.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN16BaseSystemModule10FireSignalEjPv
+hw,01D1EA39,61,?ReceiveSignal@BaseSystemModule@@UAEXPAVISystemModule@@IPAX@Z,BaseSystemModule::ReceiveSignal,ENGINE,common/BaseSystemModule.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN16BaseSystemModule13ReceiveSignalEP13ISystemModulejPv
+hw,01D1EA76,17,?GetState@BaseSystemModule@@UAEHXZ,BaseSystemModule::GetState,UNKNOWN,common/BaseSystemModule.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN16BaseSystemModule8GetStateEv
+hw,01D1EA90,31,??0ISystemModule@@QAE@XZ,ISystemModule::ISystemModule,UNKNOWN,common/BaseSystemModule.cpp,,,MATCHED,100,hw_manual.csv,inline function (COMDAT) emitted after the object
+hw,01D1EAB0,46,??_GISystemModule@@UAEPAXI@Z,destructor',UNKNOWN,common/BaseSystemModule.cpp,,,MATCHED,100,hw_manual.csv,inline function (COMDAT) emitted after the object
+hw,01D1EAE0,28,??1ISystemModule@@UAE@XZ,ISystemModule::~ISystemModule,UNKNOWN,common/BaseSystemModule.cpp,,,MATCHED,100,hw_manual.csv,inline function (COMDAT) emitted after the object
+hw,01D1EB10,63,??_GBaseSystemModule@@UAEPAXI@Z,destructor',UNKNOWN,common/BaseSystemModule.cpp,,,MATCHED,100,hw_manual.csv,inline function (COMDAT) emitted after the object
+hw,01D1EB50,39,??_DBaseSystemModule@@QAEXXZ,destructor',UNKNOWN,common/BaseSystemModule.cpp,,,MATCHED,100,hw_manual.csv,inline function (COMDAT) emitted after the object
 hw,01D1EC60,768,_LoadBMP8,,UNKNOWN,engine/bitmap_win.c,,,MATCHED,100,,
 hw,01D1EF60,2571,_LoadBMP16,LoadBMP16,ENGINE,engine/bitmap_win.c,,,MATCHED,100,linux_symbols:string:0.846,
 hw,01D1F970,277,_build_number,,UNKNOWN,engine/buildnum.c,,,MATCHED,100,,
