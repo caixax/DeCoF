@@ -11265,21 +11265,21 @@ gameui,1007CCB0,19,??0PanelMessageFunc_OnMenuItemSelected@ComboBox@vgui2@@QAE@XZ
 gameui,1007CCD0,107,?InitVar@PanelMessageFunc_OnMenuItemSelected@ComboBox@vgui2@@SAXXZ,public: static void __cdecl vgui2::ComboBox::PanelMessageFunc_OnMenuItemSelected::InitVar(void),UNKNOWN,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,
 gameui,1007CD40,19,??0PanelMessageFunc_OnSetText@ComboBox@vgui2@@QAE@XZ,public: __thiscall vgui2::ComboBox::PanelMessageFunc_OnSetText::PanelMessageFunc_OnSetText(void),UNKNOWN,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,
 gameui,1007CD60,110,?InitVar@PanelMessageFunc_OnSetText@ComboBox@vgui2@@SAXXZ,public: static void __cdecl vgui2::ComboBox::PanelMessageFunc_OnSetText::InitVar(void),UNKNOWN,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,
-gameui,1007CE00,129,??0URLLabel@vgui2@@QAE@PAVPanel@1@PBD11@Z,vgui2::URLLabel::URLLabel,UNKNOWN,vgui2/controls/URLLabel.cpp,,,TODO,,gameui_manual.csv,
-gameui,1007CE81,129,??0URLLabel@vgui2@@QAE@PAVPanel@1@PBDPBG1@Z,vgui2::URLLabel::URLLabel,UNKNOWN,vgui2/controls/URLLabel.cpp,,,TODO,,gameui_manual.csv,
-gameui,1007CF02,66,??1URLLabel@vgui2@@UAE@XZ,vgui2::URLLabel::~URLLabel,UNKNOWN,vgui2/controls/URLLabel.cpp,,,TODO,,gameui_manual.csv,
-gameui,1007CF44,144,?SetURL@URLLabel@vgui2@@QAEXPBD@Z,vgui2::URLLabel::SetURL,UNKNOWN,vgui2/controls/URLLabel.cpp,,,TODO,,gameui_manual.csv,
-gameui,1007CFD4,67,?OnMousePressed@URLLabel@vgui2@@MAEXW4MouseCode@2@@Z,vgui2::URLLabel::OnMousePressed,UNKNOWN,vgui2/controls/URLLabel.cpp,,,TODO,,gameui_manual.csv,linux: _ZN5vgui28URLLabel14OnMousePressedENS_9MouseCodeE
-gameui,1007D017,201,?ApplySettings@URLLabel@vgui2@@MAEXPAVKeyValues@@@Z,vgui2::URLLabel::ApplySettings,UNKNOWN,vgui2/controls/URLLabel.cpp,,,TODO,,gameui_manual.csv,linux: _ZN5vgui28URLLabel13ApplySettingsEP9KeyValues
-gameui,1007D0E0,63,?GetSettings@URLLabel@vgui2@@MAEXPAVKeyValues@@@Z,vgui2::URLLabel::GetSettings,UNKNOWN,vgui2/controls/URLLabel.cpp,,,TODO,,gameui_manual.csv,linux: _ZN5vgui28URLLabel11GetSettingsEP9KeyValues
-gameui,1007D11F,48,?GetDescription@URLLabel@vgui2@@MAEPBDXZ,vgui2::URLLabel::GetDescription,ENGINE,vgui2/controls/URLLabel.cpp,,,TODO,,gameui_manual.csv,linux: _ZN5vgui28URLLabel14GetDescriptionEv
-gameui,1007D14F,84,?ApplySchemeSettings@URLLabel@vgui2@@MAEXPAVIScheme@2@@Z,vgui2::URLLabel::ApplySchemeSettings,ENGINE,vgui2/controls/URLLabel.cpp,,,TODO,,gameui_manual.csv,linux: _ZN5vgui28URLLabel19ApplySchemeSettingsEPNS_7ISchemeE
-gameui,1007D1B0,46,??_GURLLabel@vgui2@@UAEPAXI@Z,destructor',UNKNOWN,vgui2/controls/URLLabel.cpp,,,TODO,,gameui_manual.csv,
-gameui,1007D1E0,19,??0URLLabel_RegisterMap@URLLabel@vgui2@@QAE@XZ,vgui2::URLLabel::URLLabel_RegisterMap::URLLabel_RegisterMap,UNKNOWN,vgui2/controls/URLLabel.cpp,,,TODO,,gameui_manual.csv,
-gameui,1007D200,102,?ChainToMap@URLLabel@vgui2@@SAXXZ,vgui2::URLLabel::ChainToMap,UNKNOWN,vgui2/controls/URLLabel.cpp,,,TODO,,gameui_manual.csv,
-gameui,1007D270,64,?GetMessageMap@URLLabel@vgui2@@UAEPAUPanelMessageMap@2@XZ,vgui2::URLLabel::GetMessageMap,UNKNOWN,vgui2/controls/URLLabel.cpp,,,TODO,,gameui_manual.csv,
-gameui,1007D2B0,10,?GetPanelClassName@URLLabel@vgui2@@SAPBDXZ,vgui2::URLLabel::GetPanelClassName,UNKNOWN,vgui2/controls/URLLabel.cpp,,,TODO,,gameui_manual.csv,
-gameui,1007D2C0,10,?GetPanelBaseClassName@URLLabel@vgui2@@SAPBDXZ,vgui2::URLLabel::GetPanelBaseClassName,UNKNOWN,vgui2/controls/URLLabel.cpp,,,TODO,,gameui_manual.csv,
+gameui,1007CE00,129,??0URLLabel@vgui2@@QAE@PAVPanel@1@PBD11@Z,vgui2::URLLabel::URLLabel,UNKNOWN,vgui2/controls/URLLabel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1007CE81,129,??0URLLabel@vgui2@@QAE@PAVPanel@1@PBDPBG1@Z,vgui2::URLLabel::URLLabel,UNKNOWN,vgui2/controls/URLLabel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1007CF02,66,??1URLLabel@vgui2@@UAE@XZ,vgui2::URLLabel::~URLLabel,UNKNOWN,vgui2/controls/URLLabel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1007CF44,144,?SetURL@URLLabel@vgui2@@QAEXPBD@Z,vgui2::URLLabel::SetURL,UNKNOWN,vgui2/controls/URLLabel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1007CFD4,67,?OnMousePressed@URLLabel@vgui2@@MAEXW4MouseCode@2@@Z,vgui2::URLLabel::OnMousePressed,UNKNOWN,vgui2/controls/URLLabel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui28URLLabel14OnMousePressedENS_9MouseCodeE
+gameui,1007D017,201,?ApplySettings@URLLabel@vgui2@@MAEXPAVKeyValues@@@Z,vgui2::URLLabel::ApplySettings,UNKNOWN,vgui2/controls/URLLabel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui28URLLabel13ApplySettingsEP9KeyValues
+gameui,1007D0E0,63,?GetSettings@URLLabel@vgui2@@MAEXPAVKeyValues@@@Z,vgui2::URLLabel::GetSettings,UNKNOWN,vgui2/controls/URLLabel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui28URLLabel11GetSettingsEP9KeyValues
+gameui,1007D11F,48,?GetDescription@URLLabel@vgui2@@MAEPBDXZ,vgui2::URLLabel::GetDescription,ENGINE,vgui2/controls/URLLabel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui28URLLabel14GetDescriptionEv
+gameui,1007D14F,84,?ApplySchemeSettings@URLLabel@vgui2@@MAEXPAVIScheme@2@@Z,vgui2::URLLabel::ApplySchemeSettings,ENGINE,vgui2/controls/URLLabel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui28URLLabel19ApplySchemeSettingsEPNS_7ISchemeE
+gameui,1007D1B0,46,??_GURLLabel@vgui2@@UAEPAXI@Z,destructor',UNKNOWN,vgui2/controls/URLLabel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1007D1E0,19,??0URLLabel_RegisterMap@URLLabel@vgui2@@QAE@XZ,vgui2::URLLabel::URLLabel_RegisterMap::URLLabel_RegisterMap,UNKNOWN,vgui2/controls/URLLabel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1007D200,102,?ChainToMap@URLLabel@vgui2@@SAXXZ,vgui2::URLLabel::ChainToMap,UNKNOWN,vgui2/controls/URLLabel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1007D270,64,?GetMessageMap@URLLabel@vgui2@@UAEPAUPanelMessageMap@2@XZ,vgui2::URLLabel::GetMessageMap,UNKNOWN,vgui2/controls/URLLabel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1007D2B0,10,?GetPanelClassName@URLLabel@vgui2@@SAPBDXZ,vgui2::URLLabel::GetPanelClassName,UNKNOWN,vgui2/controls/URLLabel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1007D2C0,10,?GetPanelBaseClassName@URLLabel@vgui2@@SAPBDXZ,vgui2::URLLabel::GetPanelBaseClassName,UNKNOWN,vgui2/controls/URLLabel.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,1007D2D0,839,??0TextEntry@vgui2@@QAE@PAVPanel@1@PBD@Z,vgui2::TextEntry::TextEntry,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
 gameui,1007D617,118,??1TextEntry@vgui2@@UAE@XZ,vgui2::TextEntry::~TextEntry,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
 gameui,1007D68D,513,?ApplySchemeSettings@TextEntry@vgui2@@MAEXPAVIScheme@2@@Z,vgui2::TextEntry::ApplySchemeSettings,ENGINE,vgui2/controls/TextEntry.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui29TextEntry19ApplySchemeSettingsEPNS_7ISchemeE
@@ -30710,21 +30710,21 @@ hw,01E3E5C3,48,?GetDescription@CBitmapImagePanel@vgui2@@MAEPBDXZ,vgui2::CBitmapI
 hw,01E3E600,46,??_GCBitmapImagePanel@vgui2@@UAEPAXI@Z,destructor',ENGINE,vgui2/controls/BitmapImagePanel.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01E3E630,19,??1CBitmapImagePanel@vgui2@@UAE@XZ,vgui2::CBitmapImagePanel::~CBitmapImagePanel,ENGINE,vgui2/controls/BitmapImagePanel.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01E3E650,22,?setImageColor@CBitmapImagePanel@vgui2@@QAEXVColor@@@Z,vgui2::CBitmapImagePanel::setImageColor,ENGINE,vgui2/controls/BitmapImagePanel.cpp,,,MATCHED,100,hw_manual.csv,
-hw,01E3E670,129,??0URLLabel@vgui2@@QAE@PAVPanel@1@PBD11@Z,vgui2::URLLabel::URLLabel,ENGINE,vgui2/controls/URLLabel.cpp,,,TODO,,hw_manual.csv,
-hw,01E3E6F1,129,??0URLLabel@vgui2@@QAE@PAVPanel@1@PBDPBG1@Z,vgui2::URLLabel::URLLabel,ENGINE,vgui2/controls/URLLabel.cpp,,,TODO,,hw_manual.csv,
-hw,01E3E772,66,??1URLLabel@vgui2@@UAE@XZ,vgui2::URLLabel::~URLLabel,ENGINE,vgui2/controls/URLLabel.cpp,,,TODO,,hw_manual.csv,
-hw,01E3E7B4,144,?SetURL@URLLabel@vgui2@@QAEXPBD@Z,vgui2::URLLabel::SetURL,ENGINE,vgui2/controls/URLLabel.cpp,,,TODO,,hw_manual.csv,
-hw,01E3E844,67,?OnMousePressed@URLLabel@vgui2@@MAEXW4MouseCode@2@@Z,vgui2::URLLabel::OnMousePressed,UNKNOWN,vgui2/controls/URLLabel.cpp,,,TODO,,hw_manual.csv,linux: _ZN5vgui28URLLabel14OnMousePressedENS_9MouseCodeE
-hw,01E3E887,201,?ApplySettings@URLLabel@vgui2@@MAEXPAVKeyValues@@@Z,vgui2::URLLabel::ApplySettings,UNKNOWN,vgui2/controls/URLLabel.cpp,,,TODO,,hw_manual.csv,linux: _ZN5vgui28URLLabel13ApplySettingsEP9KeyValues
-hw,01E3E950,63,?GetSettings@URLLabel@vgui2@@MAEXPAVKeyValues@@@Z,vgui2::URLLabel::GetSettings,UNKNOWN,vgui2/controls/URLLabel.cpp,,,TODO,,hw_manual.csv,linux: _ZN5vgui28URLLabel11GetSettingsEP9KeyValues
-hw,01E3E98F,48,?GetDescription@URLLabel@vgui2@@MAEPBDXZ,vgui2::URLLabel::GetDescription,ENGINE,vgui2/controls/URLLabel.cpp,,,TODO,,hw_manual.csv,
-hw,01E3E9BF,84,?ApplySchemeSettings@URLLabel@vgui2@@MAEXPAVIScheme@2@@Z,vgui2::URLLabel::ApplySchemeSettings,ENGINE,vgui2/controls/URLLabel.cpp,,,TODO,,hw_manual.csv,
-hw,01E3EA20,46,??_GURLLabel@vgui2@@UAEPAXI@Z,destructor',ENGINE,vgui2/controls/URLLabel.cpp,,,TODO,,hw_manual.csv,
-hw,01E3EA50,19,??0URLLabel_RegisterMap@URLLabel@vgui2@@QAE@XZ,vgui2::URLLabel::URLLabel_RegisterMap::URLLabel_RegisterMap,ENGINE,vgui2/controls/URLLabel.cpp,,,TODO,,hw_manual.csv,
-hw,01E3EA70,102,?ChainToMap@URLLabel@vgui2@@SAXXZ,vgui2::URLLabel::ChainToMap,ENGINE,vgui2/controls/URLLabel.cpp,,,TODO,,hw_manual.csv,
-hw,01E3EAE0,64,?GetMessageMap@URLLabel@vgui2@@UAEPAUPanelMessageMap@2@XZ,vgui2::URLLabel::GetMessageMap,ENGINE,vgui2/controls/URLLabel.cpp,,,TODO,,hw_manual.csv,
-hw,01E3EB20,10,?GetPanelClassName@URLLabel@vgui2@@SAPBDXZ,vgui2::URLLabel::GetPanelClassName,ENGINE,vgui2/controls/URLLabel.cpp,,,TODO,,hw_manual.csv,
-hw,01E3EB30,10,?GetPanelBaseClassName@URLLabel@vgui2@@SAPBDXZ,vgui2::URLLabel::GetPanelBaseClassName,ENGINE,vgui2/controls/URLLabel.cpp,,,TODO,,hw_manual.csv,
+hw,01E3E670,129,??0URLLabel@vgui2@@QAE@PAVPanel@1@PBD11@Z,vgui2::URLLabel::URLLabel,ENGINE,vgui2/controls/URLLabel.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3E6F1,129,??0URLLabel@vgui2@@QAE@PAVPanel@1@PBDPBG1@Z,vgui2::URLLabel::URLLabel,ENGINE,vgui2/controls/URLLabel.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3E772,66,??1URLLabel@vgui2@@UAE@XZ,vgui2::URLLabel::~URLLabel,ENGINE,vgui2/controls/URLLabel.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3E7B4,144,?SetURL@URLLabel@vgui2@@QAEXPBD@Z,vgui2::URLLabel::SetURL,ENGINE,vgui2/controls/URLLabel.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3E844,67,?OnMousePressed@URLLabel@vgui2@@MAEXW4MouseCode@2@@Z,vgui2::URLLabel::OnMousePressed,UNKNOWN,vgui2/controls/URLLabel.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui28URLLabel14OnMousePressedENS_9MouseCodeE
+hw,01E3E887,201,?ApplySettings@URLLabel@vgui2@@MAEXPAVKeyValues@@@Z,vgui2::URLLabel::ApplySettings,UNKNOWN,vgui2/controls/URLLabel.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui28URLLabel13ApplySettingsEP9KeyValues
+hw,01E3E950,63,?GetSettings@URLLabel@vgui2@@MAEXPAVKeyValues@@@Z,vgui2::URLLabel::GetSettings,UNKNOWN,vgui2/controls/URLLabel.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui28URLLabel11GetSettingsEP9KeyValues
+hw,01E3E98F,48,?GetDescription@URLLabel@vgui2@@MAEPBDXZ,vgui2::URLLabel::GetDescription,ENGINE,vgui2/controls/URLLabel.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3E9BF,84,?ApplySchemeSettings@URLLabel@vgui2@@MAEXPAVIScheme@2@@Z,vgui2::URLLabel::ApplySchemeSettings,ENGINE,vgui2/controls/URLLabel.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3EA20,46,??_GURLLabel@vgui2@@UAEPAXI@Z,destructor',ENGINE,vgui2/controls/URLLabel.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3EA50,19,??0URLLabel_RegisterMap@URLLabel@vgui2@@QAE@XZ,vgui2::URLLabel::URLLabel_RegisterMap::URLLabel_RegisterMap,ENGINE,vgui2/controls/URLLabel.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3EA70,102,?ChainToMap@URLLabel@vgui2@@SAXXZ,vgui2::URLLabel::ChainToMap,ENGINE,vgui2/controls/URLLabel.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3EAE0,64,?GetMessageMap@URLLabel@vgui2@@UAEPAUPanelMessageMap@2@XZ,vgui2::URLLabel::GetMessageMap,ENGINE,vgui2/controls/URLLabel.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3EB20,10,?GetPanelClassName@URLLabel@vgui2@@SAPBDXZ,vgui2::URLLabel::GetPanelClassName,ENGINE,vgui2/controls/URLLabel.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3EB30,10,?GetPanelBaseClassName@URLLabel@vgui2@@SAPBDXZ,vgui2::URLLabel::GetPanelBaseClassName,ENGINE,vgui2/controls/URLLabel.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01E3EB40,67,??0Divider@vgui2@@QAE@PAVPanel@1@PBD@Z,vgui2::Divider::Divider,ENGINE,vgui2/controls/Divider.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui27DividerC2EPNS_5PanelEPKc
 hw,01E3EB83,28,??1Divider@vgui2@@UAE@XZ,vgui2::Divider::~Divider,ENGINE,vgui2/controls/Divider.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui27DividerD1Ev
 hw,01E3EB9F,56,?ApplySchemeSettings@Divider@vgui2@@UAEXPAVIScheme@2@@Z,vgui2::Divider::ApplySchemeSettings,ENGINE,vgui2/controls/Divider.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui27Divider19ApplySchemeSettingsEPNS_7ISchemeE
