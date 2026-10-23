@@ -24514,73 +24514,73 @@ hw,01D1EB50,39,,,UNKNOWN,common/BaseSystemModule.cpp,,,TODO,,,inline function (C
 hw,01D1EC60,768,_LoadBMP8,,UNKNOWN,engine/bitmap_win.c,,,TODO,,,
 hw,01D1EF60,2571,_LoadBMP16,LoadBMP16,ENGINE,engine/bitmap_win.c,,,TODO,,linux_symbols:string:0.846,
 hw,01D1F970,277,_build_number,,UNKNOWN,engine/buildnum.c,,,TODO,,,
-hw,01D1FA90,15,,,UNKNOWN,engine/cd.cpp,,,TODO,,,"VC6 dynamic initializer of the static CCDAudio object ($E: constructor 01D1FD6A, atexit destructor 01D1FE3C)"
-hw,01D1FA9F,15,,,UNKNOWN,engine/cd.cpp,,,TODO,,,"VC6 dynamic initializer of the static CCDAudio object ($E: constructor 01D1FD6A, atexit destructor 01D1FE3C)"
-hw,01D1FAAE,18,,,UNKNOWN,engine/cd.cpp,,,TODO,,,"VC6 dynamic initializer of the static CCDAudio object ($E: constructor 01D1FD6A, atexit destructor 01D1FE3C)"
-hw,01D1FAC0,15,,,UNKNOWN,engine/cd.cpp,,,TODO,,,"VC6 dynamic initializer of the static CCDAudio object ($E: constructor 01D1FD6A, atexit destructor 01D1FE3C)"
-hw,01D1FACF,12,,,UNKNOWN,engine/cd.cpp,,,TODO,,,linux: _Z13GetMainWindowv
-hw,01D1FADB,10,,,UNKNOWN,engine/cd.cpp,,,TODO,,,linux: _Z17GetInteralCDAudiov
-hw,01D1FAE5,15,_CD_Command_f,,UNKNOWN,engine/cd.cpp,,,TODO,,,
-hw,01D1FAF4,305,_MP3_GetTrack,MP3_GetTrack,ENGINE,engine/cd.cpp,,,TODO,,linux_symbols:string:0.75,linux: _Z12MP3_GetTrackPKc
-hw,01D1FC25,302,_MP3_Command_f,,UNKNOWN,engine/cd.cpp,,,TODO,,,
-hw,01D1FD53,23,_PrimeMusicStream,PrimeMusicStream,ENGINE,engine/cd.cpp,,,TODO,,hw_position.csv,
-hw,01D1FD6A,210,,,UNKNOWN,engine/cd.cpp,,,TODO,,,linux: _ZN8CCDAudioC1Ev
-hw,01D1FE3C,20,,,UNKNOWN,engine/cd.cpp,,,TODO,,,linux: _ZN8CCDAudioD1Ev
-hw,01D1FE50,55,,,UNKNOWN,engine/cd.cpp,,,TODO,,,linux: _ZN8CCDAudio12ResetCDTimesEv
-hw,01D1FE87,192,,,UNKNOWN,engine/cd.cpp,,,TODO,,,linux: _ZN8CCDAudio5_StopEii
-hw,01D1FF47,144,,,UNKNOWN,engine/cd.cpp,,,TODO,,,linux: _ZN8CCDAudio6_PauseEii
-hw,01D1FFD7,66,,,UNKNOWN,engine/cd.cpp,,,TODO,,,linux: _ZN8CCDAudio6_EjectEii
-hw,01D20019,54,,,UNKNOWN,engine/cd.cpp,,,TODO,,,linux: _ZN8CCDAudio10_CloseDoorEii
-hw,01D2004F,153,,,UNKNOWN,engine/cd.cpp,,,TODO,,,linux: _ZN8CCDAudio17_GetAudioDiskInfoEii
-hw,01D200E8,694,,,UNKNOWN,engine/cd.cpp,,,TODO,,,linux: _ZN8CCDAudio5_PlayEii
-hw,01D2039E,132,,,UNKNOWN,engine/cd.cpp,,,TODO,,,linux: _ZN8CCDAudio11_PrimeTrackEii
-hw,01D20422,236,,,UNKNOWN,engine/cd.cpp,,,TODO,,,linux: _ZN8CCDAudio7_ResumeEii
-hw,01D2050E,59,,,UNKNOWN,engine/cd.cpp,,,TODO,,,linux: _ZN8CCDAudio17_SwitchToLauncherEii
-hw,01D20549,50,,,UNKNOWN,engine/cd.cpp,,,TODO,,,linux: _ZN8CCDAudio15_SwitchToEngineEii
-hw,01D2057B,1217,,,UNKNOWN,engine/cd.cpp,,,TODO,,,linux: _ZN8CCDAudio4CD_fEv
-hw,01D20A3C,351,,,UNKNOWN,engine/cd.cpp,,,TODO,,,linux: _ZN8CCDAudio9_CDUpdateEii
-hw,01D20B9B,553,,CCDAudio::Init,ENGINE,engine/cd.cpp,,,TODO,,linux_symbols:string:0.777,linux: _ZN8CCDAudio4InitEv
-hw,01D20DC4,215,,,UNKNOWN,engine/cd.cpp,,,TODO,,,linux: _ZN8CCDAudio5_InitEii
-hw,01D20E9B,111,,,UNKNOWN,engine/cd.cpp,,,TODO,,,linux: _ZN8CCDAudio8ShutdownEv
-hw,01D20F0A,45,,,UNKNOWN,engine/cd.cpp,,,TODO,,,linux: _ZN8CCDAudio8_CDResetEii
-hw,01D20F37,36,,,UNKNOWN,engine/cd.cpp,,,TODO,,,linux: _ZN8CCDAudio5ResetEv
-hw,01D20F5B,36,,,UNKNOWN,engine/cd.cpp,,,TODO,,,linux: _ZN8CCDAudio4StopEv
-hw,01D20F7F,51,,,UNKNOWN,engine/cd.cpp,,,TODO,,,linux: _ZN8CCDAudio5PauseEv
-hw,01D20FB2,36,,,UNKNOWN,engine/cd.cpp,,,TODO,,,linux: _ZN8CCDAudio5EjectEv
-hw,01D20FD6,36,,,UNKNOWN,engine/cd.cpp,,,TODO,,,linux: _ZN8CCDAudio9CloseDoorEv
-hw,01D20FFA,36,,,UNKNOWN,engine/cd.cpp,,,TODO,,,linux: _ZN8CCDAudio16GetAudioDiskInfoEv
-hw,01D2101E,71,,,UNKNOWN,engine/cd.cpp,,,TODO,,,linux: _ZN8CCDAudio4PlayEib
-hw,01D21065,101,,,UNKNOWN,engine/cd.cpp,,,TODO,,,linux: _ZN8CCDAudio8PlayFileEPKcb
-hw,01D210CA,151,,,UNKNOWN,engine/cd.cpp,,,TODO,,,linux: _ZN8CCDAudio10PrimeTrackEPci
-hw,01D21161,51,,,UNKNOWN,engine/cd.cpp,,,TODO,,,linux: _ZN8CCDAudio6ResumeEv
-hw,01D21194,36,,,UNKNOWN,engine/cd.cpp,,,TODO,,,linux: _ZN8CCDAudio16SwitchToLauncherEv
-hw,01D211B8,36,,,UNKNOWN,engine/cd.cpp,,,TODO,,,linux: _ZN8CCDAudio14SwitchToEngineEv
-hw,01D211DC,55,,,UNKNOWN,engine/cd.cpp,,,TODO,,,linux: _ZN8CCDAudio7FadeOutEv
-hw,01D21213,245,,CCDAudio::Frame,ENGINE,engine/cd.cpp,,,TODO,,linux_symbols:data:0.8,linux: _ZN8CCDAudio5FrameEv
-hw,01D21308,21,_CDAudio_Init,,UNKNOWN,engine/cd.cpp,,,TODO,,,
-hw,01D2131D,21,_CDAudio_Shutdown,,UNKNOWN,engine/cd.cpp,,,TODO,,,
-hw,01D21332,34,_CDAudio_Play,,UNKNOWN,engine/cd.cpp,,,TODO,,,
-hw,01D21354,21,_CDAudio_Pause,,UNKNOWN,engine/cd.cpp,,,TODO,,,
-hw,01D21369,21,_CDAudio_Resume,,UNKNOWN,engine/cd.cpp,,,TODO,,,
-hw,01D2137E,21,_MP3_Resume_Audio,MP3_Resume_Audio,ENGINE,engine/cd.cpp,,,TODO,,hw_position.csv,
-hw,01D21393,21,_MP3_Suspend_Audio,MP3_Suspend_Audio,ENGINE,engine/cd.cpp,,,TODO,,hw_position.csv,
-hw,01D213A8,100,,,UNKNOWN,engine/cd.cpp,,,TODO,,,linux: _ZN8CCDAudio13MP3_PlayTrackEib
-hw,01D2140C,77,,,UNKNOWN,engine/cd.cpp,,,TODO,,,linux: _ZN8CCDAudio13MP3_PlayTrackEPKcb
-hw,01D21459,119,,,UNKNOWN,engine/cd.cpp,,,TODO,,,linux: _ZN8CCDAudio21MP3_PlayTrackFinalizeEib
-hw,01D214D0,90,,,UNKNOWN,engine/cd.cpp,,,TODO,,,linux: _ZN8CCDAudio8MP3_InitEv
-hw,01D2152A,104,,,UNKNOWN,engine/cd.cpp,,,TODO,,,linux: _ZN8CCDAudio12MP3_ShutdownEv
-hw,01D21592,119,,CCDAudio::MP3_Resume_Audio,ENGINE,engine/cd.cpp,,,TODO,,linux_symbols:consts:0.833,linux: _ZN8CCDAudio16MP3_Resume_AudioEv
-hw,01D21609,73,,CCDAudio::MP3_Suspend_Audio,ENGINE,engine/cd.cpp,,,TODO,,linux_symbols:consts:0.667,linux: _ZN8CCDAudio17MP3_Suspend_AudioEv
-hw,01D21652,42,,,UNKNOWN,engine/cd.cpp,,,TODO,,,linux: _ZN8CCDAudio17MP3_ReleaseDriverEv
-hw,01D2167C,112,,,UNKNOWN,engine/cd.cpp,,,TODO,,,linux: _ZN8CCDAudio13MP3_SetVolumeEf
-hw,01D216EC,358,,CCDAudio::MP3_InitStream,ENGINE,engine/cd.cpp,,,TODO,,linux_symbols:string:0.786,linux: _ZN8CCDAudio14MP3_InitStreamEib
-hw,01D21852,73,,,UNKNOWN,engine/cd.cpp,,,TODO,,,linux: _ZN8CCDAudio14MP3_InitStreamEPKcb
-hw,01D2189B,32,,,UNKNOWN,engine/cd.cpp,,,TODO,,,linux: _ZN8CCDAudio15MP3_StartStreamEv
-hw,01D218BB,49,,,UNKNOWN,engine/cd.cpp,,,TODO,,,linux: _ZN8CCDAudio14MP3_StopStreamEv
-hw,01D218EC,34,,,UNKNOWN,engine/cd.cpp,,,TODO,,,linux: _ZN8CCDAudio8MP3_LoopEv
-hw,01D2190E,44,,,UNKNOWN,engine/cd.cpp,,,TODO,,,linux: _ZN8CCDAudio12MP3_SetPauseEb
-hw,01D21940,46,,,UNKNOWN,engine/cd.cpp,,,TODO,,,inline function (COMDAT) emitted after the object
-hw,01D21970,23,,,UNKNOWN,engine/cd.cpp,,,TODO,,,inline function (COMDAT) emitted after the object
+hw,01D1FA90,15,_$E4,_$E4,ENGINE,engine/cd.cpp,,,MATCHED,100,hw_manual.csv,"VC6 dynamic initializer of the static CCDAudio object ($E: constructor 01D1FD6A, atexit destructor 01D1FE3C)"
+hw,01D1FA9F,15,_$E1,_$E1,ENGINE,engine/cd.cpp,,,MATCHED,100,hw_manual.csv,"VC6 dynamic initializer of the static CCDAudio object ($E: constructor 01D1FD6A, atexit destructor 01D1FE3C)"
+hw,01D1FAAE,18,_$E3,_$E3,ENGINE,engine/cd.cpp,,,MATCHED,100,hw_manual.csv,"VC6 dynamic initializer of the static CCDAudio object ($E: constructor 01D1FD6A, atexit destructor 01D1FE3C)"
+hw,01D1FAC0,15,_$E2,_$E2,ENGINE,engine/cd.cpp,,,MATCHED,100,hw_manual.csv,"VC6 dynamic initializer of the static CCDAudio object ($E: constructor 01D1FD6A, atexit destructor 01D1FE3C)"
+hw,01D1FACF,12,?GetMainWindow@@YAPAUHWND__@@XZ,GetMainWindow,ENGINE,engine/cd.cpp,,,MATCHED,100,hw_manual.csv,linux: _Z13GetMainWindowv
+hw,01D1FADB,10,?GetInteralCDAudio@@YAPAVCCDAudio@@XZ,GetInteralCDAudio,ENGINE,engine/cd.cpp,,,MATCHED,100,hw_manual.csv,linux: _Z17GetInteralCDAudiov
+hw,01D1FAE5,15,_CD_Command_f,,ENGINE,engine/cd.cpp,,,MATCHED,100,,
+hw,01D1FAF4,305,?MP3_GetTrack@@YAHPBD@Z,MP3_GetTrack,ENGINE,engine/cd.cpp,,,MATCHED,100,hw_manual.csv,linux: _Z12MP3_GetTrackPKc
+hw,01D1FC25,302,_MP3_Command_f,,ENGINE,engine/cd.cpp,,,MATCHED,100,,
+hw,01D1FD53,23,_PrimeMusicStream,PrimeMusicStream,ENGINE,engine/cd.cpp,,,MATCHED,100,hw_position.csv,
+hw,01D1FD6A,210,??0CCDAudio@@QAE@XZ,CCDAudio::CCDAudio,ENGINE,engine/cd.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN8CCDAudioC1Ev
+hw,01D1FE3C,20,??1CCDAudio@@UAE@XZ,CCDAudio::~CCDAudio,ENGINE,engine/cd.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN8CCDAudioD1Ev
+hw,01D1FE50,55,?ResetCDTimes@CCDAudio@@QAEXXZ,CCDAudio::ResetCDTimes,ENGINE,engine/cd.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN8CCDAudio12ResetCDTimesEv
+hw,01D1FE87,192,?_Stop@CCDAudio@@QAEXHH@Z,CCDAudio::_Stop,ENGINE,engine/cd.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN8CCDAudio5_StopEii
+hw,01D1FF47,144,?_Pause@CCDAudio@@QAEXHH@Z,CCDAudio::_Pause,ENGINE,engine/cd.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN8CCDAudio6_PauseEii
+hw,01D1FFD7,66,?_Eject@CCDAudio@@QAEXHH@Z,CCDAudio::_Eject,ENGINE,engine/cd.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN8CCDAudio6_EjectEii
+hw,01D20019,54,?_CloseDoor@CCDAudio@@QAEXHH@Z,CCDAudio::_CloseDoor,ENGINE,engine/cd.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN8CCDAudio10_CloseDoorEii
+hw,01D2004F,153,?_GetAudioDiskInfo@CCDAudio@@QAEXHH@Z,CCDAudio::_GetAudioDiskInfo,ENGINE,engine/cd.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN8CCDAudio17_GetAudioDiskInfoEii
+hw,01D200E8,694,?_Play@CCDAudio@@QAEXHH@Z,CCDAudio::_Play,ENGINE,engine/cd.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN8CCDAudio5_PlayEii
+hw,01D2039E,132,?_PrimeTrack@CCDAudio@@QAEXHH@Z,CCDAudio::_PrimeTrack,ENGINE,engine/cd.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN8CCDAudio11_PrimeTrackEii
+hw,01D20422,236,?_Resume@CCDAudio@@QAEXHH@Z,CCDAudio::_Resume,ENGINE,engine/cd.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN8CCDAudio7_ResumeEii
+hw,01D2050E,59,?_SwitchToLauncher@CCDAudio@@QAEXHH@Z,CCDAudio::_SwitchToLauncher,ENGINE,engine/cd.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN8CCDAudio17_SwitchToLauncherEii
+hw,01D20549,50,?_SwitchToEngine@CCDAudio@@QAEXHH@Z,CCDAudio::_SwitchToEngine,ENGINE,engine/cd.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN8CCDAudio15_SwitchToEngineEii
+hw,01D2057B,1217,?CD_f@CCDAudio@@QAEXXZ,CCDAudio::CD_f,ENGINE,engine/cd.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN8CCDAudio4CD_fEv
+hw,01D20A3C,351,?_CDUpdate@CCDAudio@@QAEXHH@Z,CCDAudio::_CDUpdate,ENGINE,engine/cd.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN8CCDAudio9_CDUpdateEii
+hw,01D20B9B,553,?Init@CCDAudio@@UAEHXZ,CCDAudio::Init,ENGINE,engine/cd.cpp,,,MATCHED,100,linux_symbols:string:0.777,linux: _ZN8CCDAudio4InitEv
+hw,01D20DC4,215,?_Init@CCDAudio@@QAEXHH@Z,CCDAudio::_Init,ENGINE,engine/cd.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN8CCDAudio5_InitEii
+hw,01D20E9B,111,?Shutdown@CCDAudio@@UAEXXZ,CCDAudio::Shutdown,ENGINE,engine/cd.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN8CCDAudio8ShutdownEv
+hw,01D20F0A,45,?_CDReset@CCDAudio@@QAEXHH@Z,CCDAudio::_CDReset,ENGINE,engine/cd.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN8CCDAudio8_CDResetEii
+hw,01D20F37,36,?Reset@CCDAudio@@QAEXXZ,CCDAudio::Reset,ENGINE,engine/cd.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN8CCDAudio5ResetEv
+hw,01D20F5B,36,?Stop@CCDAudio@@QAEXXZ,CCDAudio::Stop,ENGINE,engine/cd.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN8CCDAudio4StopEv
+hw,01D20F7F,51,?Pause@CCDAudio@@UAEXXZ,CCDAudio::Pause,ENGINE,engine/cd.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN8CCDAudio5PauseEv
+hw,01D20FB2,36,?Eject@CCDAudio@@QAEXXZ,CCDAudio::Eject,ENGINE,engine/cd.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN8CCDAudio5EjectEv
+hw,01D20FD6,36,?CloseDoor@CCDAudio@@QAEXXZ,CCDAudio::CloseDoor,ENGINE,engine/cd.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN8CCDAudio9CloseDoorEv
+hw,01D20FFA,36,?GetAudioDiskInfo@CCDAudio@@QAEXXZ,CCDAudio::GetAudioDiskInfo,ENGINE,engine/cd.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN8CCDAudio16GetAudioDiskInfoEv
+hw,01D2101E,71,?Play@CCDAudio@@UAEXH_N@Z,CCDAudio::Play,ENGINE,engine/cd.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN8CCDAudio4PlayEib
+hw,01D21065,101,?PlayFile@CCDAudio@@UAEXPBD_N@Z,CCDAudio::PlayFile,ENGINE,engine/cd.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN8CCDAudio8PlayFileEPKcb
+hw,01D210CA,151,?PrimeTrack@CCDAudio@@QAEXPADH@Z,CCDAudio::PrimeTrack,ENGINE,engine/cd.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN8CCDAudio10PrimeTrackEPci
+hw,01D21161,51,?Resume@CCDAudio@@UAEXXZ,CCDAudio::Resume,ENGINE,engine/cd.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN8CCDAudio6ResumeEv
+hw,01D21194,36,?SwitchToLauncher@CCDAudio@@QAEXXZ,CCDAudio::SwitchToLauncher,ENGINE,engine/cd.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN8CCDAudio16SwitchToLauncherEv
+hw,01D211B8,36,?SwitchToEngine@CCDAudio@@QAEXXZ,CCDAudio::SwitchToEngine,ENGINE,engine/cd.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN8CCDAudio14SwitchToEngineEv
+hw,01D211DC,55,?FadeOut@CCDAudio@@QAEXXZ,CCDAudio::FadeOut,ENGINE,engine/cd.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN8CCDAudio7FadeOutEv
+hw,01D21213,245,?Frame@CCDAudio@@UAEXXZ,CCDAudio::Frame,ENGINE,engine/cd.cpp,,,MATCHED,100,linux_symbols:data:0.8,linux: _ZN8CCDAudio5FrameEv
+hw,01D21308,21,_CDAudio_Init,,ENGINE,engine/cd.cpp,,,MATCHED,100,,
+hw,01D2131D,21,_CDAudio_Shutdown,,ENGINE,engine/cd.cpp,,,MATCHED,100,,
+hw,01D21332,34,_CDAudio_Play,,ENGINE,engine/cd.cpp,,,MATCHED,100,,
+hw,01D21354,21,_CDAudio_Pause,,ENGINE,engine/cd.cpp,,,MATCHED,100,,
+hw,01D21369,21,_CDAudio_Resume,,ENGINE,engine/cd.cpp,,,MATCHED,100,,
+hw,01D2137E,21,_MP3_Resume_Audio,MP3_Resume_Audio,ENGINE,engine/cd.cpp,,,MATCHED,100,hw_position.csv,
+hw,01D21393,21,_MP3_Suspend_Audio,MP3_Suspend_Audio,ENGINE,engine/cd.cpp,,,MATCHED,100,hw_position.csv,
+hw,01D213A8,100,?MP3_PlayTrack@CCDAudio@@QAE_NH_N@Z,CCDAudio::MP3_PlayTrack,ENGINE,engine/cd.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN8CCDAudio13MP3_PlayTrackEib
+hw,01D2140C,77,?MP3_PlayTrack@CCDAudio@@QAE_NPBD_N@Z,CCDAudio::MP3_PlayTrack,ENGINE,engine/cd.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN8CCDAudio13MP3_PlayTrackEPKcb
+hw,01D21459,119,?MP3_PlayTrackFinalize@CCDAudio@@QAEXH_N@Z,CCDAudio::MP3_PlayTrackFinalize,ENGINE,engine/cd.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN8CCDAudio21MP3_PlayTrackFinalizeEib
+hw,01D214D0,90,?MP3_Init@CCDAudio@@QAE_NXZ,CCDAudio::MP3_Init,ENGINE,engine/cd.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN8CCDAudio8MP3_InitEv
+hw,01D2152A,104,?MP3_Shutdown@CCDAudio@@QAEXXZ,CCDAudio::MP3_Shutdown,ENGINE,engine/cd.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN8CCDAudio12MP3_ShutdownEv
+hw,01D21592,119,?MP3_Resume_Audio@CCDAudio@@UAEXXZ,CCDAudio::MP3_Resume_Audio,ENGINE,engine/cd.cpp,,,MATCHED,100,linux_symbols:consts:0.833,linux: _ZN8CCDAudio16MP3_Resume_AudioEv
+hw,01D21609,73,?MP3_Suspend_Audio@CCDAudio@@UAEXXZ,CCDAudio::MP3_Suspend_Audio,ENGINE,engine/cd.cpp,,,MATCHED,100,linux_symbols:consts:0.667,linux: _ZN8CCDAudio17MP3_Suspend_AudioEv
+hw,01D21652,42,?MP3_ReleaseDriver@CCDAudio@@QAEXXZ,CCDAudio::MP3_ReleaseDriver,ENGINE,engine/cd.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN8CCDAudio17MP3_ReleaseDriverEv
+hw,01D2167C,112,?MP3_SetVolume@CCDAudio@@QAEHH@Z,CCDAudio::MP3_SetVolume,ENGINE,engine/cd.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN8CCDAudio13MP3_SetVolumeEf
+hw,01D216EC,358,?MP3_InitStream@CCDAudio@@QAE_NH_N@Z,CCDAudio::MP3_InitStream,ENGINE,engine/cd.cpp,,,MATCHED,100,linux_symbols:string:0.786,linux: _ZN8CCDAudio14MP3_InitStreamEib
+hw,01D21852,73,?MP3_InitStream@CCDAudio@@QAE_NPBD_N@Z,CCDAudio::MP3_InitStream,ENGINE,engine/cd.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN8CCDAudio14MP3_InitStreamEPKcb
+hw,01D2189B,32,?MP3_StartStream@CCDAudio@@QAEXXZ,CCDAudio::MP3_StartStream,ENGINE,engine/cd.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN8CCDAudio15MP3_StartStreamEv
+hw,01D218BB,49,?MP3_StopStream@CCDAudio@@QAEXXZ,CCDAudio::MP3_StopStream,ENGINE,engine/cd.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN8CCDAudio14MP3_StopStreamEv
+hw,01D218EC,34,?MP3_Loop@CCDAudio@@QAEXXZ,CCDAudio::MP3_Loop,ENGINE,engine/cd.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN8CCDAudio8MP3_LoopEv
+hw,01D2190E,44,?MP3_SetPause@CCDAudio@@QAEX_N@Z,CCDAudio::MP3_SetPause,ENGINE,engine/cd.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN8CCDAudio12MP3_SetPauseEb
+hw,01D21940,46,??_GCCDAudio@@UAEPAXI@Z,destructor',ENGINE,engine/cd.cpp,,,MATCHED,100,hw_manual.csv,inline function (COMDAT) emitted after the object
+hw,01D21970,23,??0ICDAudio@@QAE@XZ,ICDAudio::ICDAudio,ENGINE,engine/cd.cpp,,,MATCHED,100,hw_manual.csv,inline function (COMDAT) emitted after the object
 hw,01D21990,108,_hudGetScreenInfo,hudGetScreenInfo,ENGINE,engine/cdll_exp.c,,,TODO,,hw_position.csv,
 hw,01D219FC,98,_hudRegisterVariable,hudRegisterVariable,ENGINE,engine/cdll_exp.c,,,TODO,,hw_position.csv,
 hw,01D21A5E,56,_hudGetCvarFloat,hudGetCvarFloat,ENGINE,engine/cdll_exp.c,,,TODO,,hw_position.csv,
