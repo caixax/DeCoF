@@ -12688,46 +12688,46 @@ gameui,100A76D0,102,,,UNKNOWN,,,,TODO,,,
 gameui,100A7740,64,,,UNKNOWN,,,,TODO,,,
 gameui,100A7780,10,,,UNKNOWN,,,,TODO,,,
 gameui,100A7790,10,,,UNKNOWN,,,,TODO,,,
-gameui,100A77A0,155,,,UNKNOWN,,,,TODO,,,
-gameui,100A783B,30,,,UNKNOWN,vgui2/controls/AnimatingImagePanel.cpp,,,TODO,,,linux: _ZN5vgui219AnimatingImagePanel13PerformLayoutEv
-gameui,100A7859,74,,,UNKNOWN,vgui2/controls/AnimatingImagePanel.cpp,,,TODO,,,linux: _ZN5vgui219AnimatingImagePanel8AddImageEPNS_6IImageE
-gameui,100A78A3,163,,,UNKNOWN,vgui2/controls/AnimatingImagePanel.cpp,,,TODO,,,linux: _ZN5vgui219AnimatingImagePanel13LoadAnimationEPKci
-gameui,100A7946,144,,,UNKNOWN,vgui2/controls/AnimatingImagePanel.cpp,,,TODO,,,linux: _ZN5vgui219AnimatingImagePanel15PaintBackgroundEv
-gameui,100A79D6,149,,,UNKNOWN,vgui2/controls/AnimatingImagePanel.cpp,,,TODO,,,linux: _ZN5vgui219AnimatingImagePanel6OnTickEv
-gameui,100A7A6B,63,,,UNKNOWN,vgui2/controls/AnimatingImagePanel.cpp,,,TODO,,,linux: _ZN5vgui219AnimatingImagePanel11GetSettingsEP9KeyValues
-gameui,100A7AAA,186,,vgui2::AnimatingImagePanel::ApplySettings,ENGINE,vgui2/controls/AnimatingImagePanel.cpp,,,TODO,,linux_symbols:string:0.583,linux: _ZN5vgui219AnimatingImagePanel13ApplySettingsEP9KeyValues
-gameui,100A7B64,48,,vgui2::AnimatingImagePanel::GetDescription,ENGINE,vgui2/controls/AnimatingImagePanel.cpp,,,TODO,,linux_symbols:string:0.625,linux: _ZN5vgui219AnimatingImagePanel14GetDescriptionEv
-gameui,100A7B94,21,,,UNKNOWN,vgui2/controls/AnimatingImagePanel.cpp,,,TODO,,,linux: _ZN5vgui219AnimatingImagePanel14StartAnimationEv
-gameui,100A7BA9,21,,,UNKNOWN,vgui2/controls/AnimatingImagePanel.cpp,,,TODO,,,linux: _ZN5vgui219AnimatingImagePanel13StopAnimationEv
-gameui,100A7BBE,72,,,UNKNOWN,vgui2/controls/AnimatingImagePanel.cpp,,,TODO,,,linux: _ZN5vgui219AnimatingImagePanel14ResetAnimationEi
-gameui,100A7C10,46,,,UNKNOWN,,,,TODO,,,
-gameui,100A7C40,33,,,UNKNOWN,,,,TODO,,,
-gameui,100A7C70,50,,,UNKNOWN,,,,TODO,,,
-gameui,100A7CB0,27,,,UNKNOWN,,,,TODO,,,
-gameui,100A7CD0,25,,,UNKNOWN,,,,TODO,,,
-gameui,100A7CF0,51,,,UNKNOWN,,,,TODO,,,
-gameui,100A7D30,32,,,UNKNOWN,,,,TODO,,,
-gameui,100A7D50,70,,,UNKNOWN,,,,TODO,,,
-gameui,100A7DA0,25,,,UNKNOWN,,,,TODO,,,
-gameui,100A7DC0,65,,,UNKNOWN,,,,TODO,,,
-gameui,100A7E10,35,,,UNKNOWN,,,,TODO,,,
-gameui,100A7E40,11,,,UNKNOWN,,,,TODO,,,
-gameui,100A7E50,75,,,UNKNOWN,,,,TODO,,,
-gameui,100A7EA0,19,,,UNKNOWN,,,,TODO,,,
-gameui,100A7EC0,24,,,UNKNOWN,,,,TODO,,,
-gameui,100A7EE0,5,,,UNKNOWN,,,,TODO,,,
-gameui,100A7EF0,87,,,UNKNOWN,,,,TODO,,,
-gameui,100A7F50,86,,,UNKNOWN,,,,TODO,,,
-gameui,100A7FB0,69,,,UNKNOWN,,,,TODO,,,
-gameui,100A8000,58,,,UNKNOWN,,,,TODO,,,
-gameui,100A8040,17,,,UNKNOWN,,,,TODO,,,
-gameui,100A8060,199,,,UNKNOWN,,,,TODO,,,
-gameui,100A8130,25,,,UNKNOWN,,,,TODO,,,
-gameui,100A8150,19,,,UNKNOWN,,,,TODO,,,
-gameui,100A8170,102,,,UNKNOWN,,,,TODO,,,
-gameui,100A81E0,64,,,UNKNOWN,,,,TODO,,,
-gameui,100A8220,10,,,UNKNOWN,,,,TODO,,,
-gameui,100A8230,10,,,UNKNOWN,,,,TODO,,,
+gameui,100A77A0,155,??0AnimatingImagePanel@vgui2@@QAE@PAVPanel@1@PBD@Z,vgui2::AnimatingImagePanel::AnimatingImagePanel,UNKNOWN,vgui2/controls/AnimatingImagePanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A783B,30,?PerformLayout@AnimatingImagePanel@vgui2@@MAEXXZ,vgui2::AnimatingImagePanel::PerformLayout,UNKNOWN,vgui2/controls/AnimatingImagePanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui219AnimatingImagePanel13PerformLayoutEv
+gameui,100A7859,74,?AddImage@AnimatingImagePanel@vgui2@@UAEXPAVIImage@2@@Z,vgui2::AnimatingImagePanel::AddImage,UNKNOWN,vgui2/controls/AnimatingImagePanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui219AnimatingImagePanel8AddImageEPNS_6IImageE
+gameui,100A78A3,163,?LoadAnimation@AnimatingImagePanel@vgui2@@UAEXPBDH@Z,vgui2::AnimatingImagePanel::LoadAnimation,UNKNOWN,vgui2/controls/AnimatingImagePanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui219AnimatingImagePanel13LoadAnimationEPKci
+gameui,100A7946,144,?PaintBackground@AnimatingImagePanel@vgui2@@MAEXXZ,vgui2::AnimatingImagePanel::PaintBackground,UNKNOWN,vgui2/controls/AnimatingImagePanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui219AnimatingImagePanel15PaintBackgroundEv
+gameui,100A79D6,149,?OnTick@AnimatingImagePanel@vgui2@@MAEXXZ,vgui2::AnimatingImagePanel::OnTick,UNKNOWN,vgui2/controls/AnimatingImagePanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui219AnimatingImagePanel6OnTickEv
+gameui,100A7A6B,63,?GetSettings@AnimatingImagePanel@vgui2@@MAEXPAVKeyValues@@@Z,vgui2::AnimatingImagePanel::GetSettings,UNKNOWN,vgui2/controls/AnimatingImagePanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui219AnimatingImagePanel11GetSettingsEP9KeyValues
+gameui,100A7AAA,186,?ApplySettings@AnimatingImagePanel@vgui2@@MAEXPAVKeyValues@@@Z,vgui2::AnimatingImagePanel::ApplySettings,ENGINE,vgui2/controls/AnimatingImagePanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui219AnimatingImagePanel13ApplySettingsEP9KeyValues
+gameui,100A7B64,48,?GetDescription@AnimatingImagePanel@vgui2@@MAEPBDXZ,vgui2::AnimatingImagePanel::GetDescription,ENGINE,vgui2/controls/AnimatingImagePanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui219AnimatingImagePanel14GetDescriptionEv
+gameui,100A7B94,21,?StartAnimation@AnimatingImagePanel@vgui2@@UAEXXZ,vgui2::AnimatingImagePanel::StartAnimation,UNKNOWN,vgui2/controls/AnimatingImagePanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui219AnimatingImagePanel14StartAnimationEv
+gameui,100A7BA9,21,?StopAnimation@AnimatingImagePanel@vgui2@@UAEXXZ,vgui2::AnimatingImagePanel::StopAnimation,UNKNOWN,vgui2/controls/AnimatingImagePanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui219AnimatingImagePanel13StopAnimationEv
+gameui,100A7BBE,72,?ResetAnimation@AnimatingImagePanel@vgui2@@UAEXH@Z,vgui2::AnimatingImagePanel::ResetAnimation,UNKNOWN,vgui2/controls/AnimatingImagePanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui219AnimatingImagePanel14ResetAnimationEi
+gameui,100A7C10,46,??_GAnimatingImagePanel@vgui2@@UAEPAXI@Z,destructor',UNKNOWN,vgui2/controls/AnimatingImagePanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A7C40,33,??1AnimatingImagePanel@vgui2@@UAE@XZ,vgui2::AnimatingImagePanel::~AnimatingImagePanel,UNKNOWN,vgui2/controls/AnimatingImagePanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A7C70,50,??0?$CUtlVector@PAVIImage@vgui2@@@@QAE@HH@Z,*>,UNKNOWN,vgui2/controls/AnimatingImagePanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A7CB0,27,??1?$CUtlVector@PAVIImage@vgui2@@@@QAE@XZ,*>,UNKNOWN,vgui2/controls/AnimatingImagePanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A7CD0,25,??A?$CUtlVector@PAVIImage@vgui2@@@@QAEAAPAVIImage@vgui2@@H@Z,*>::operator[],UNKNOWN,vgui2/controls/AnimatingImagePanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A7CF0,51,?IsValidIndex@?$CUtlVector@PAVIImage@vgui2@@@@QBE_NH@Z,*>::IsValidIndex,UNKNOWN,vgui2/controls/AnimatingImagePanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A7D30,32,?AddToTail@?$CUtlVector@PAVIImage@vgui2@@@@QAEHABQAVIImage@vgui2@@@Z,*>::AddToTail,UNKNOWN,vgui2/controls/AnimatingImagePanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A7D50,70,?RemoveAll@?$CUtlVector@PAVIImage@vgui2@@@@QAEXXZ,*>::RemoveAll,UNKNOWN,vgui2/controls/AnimatingImagePanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A7DA0,25,?Element@?$CUtlVector@PAVIImage@vgui2@@@@QAEAAPAVIImage@vgui2@@H@Z,*>::Element,UNKNOWN,vgui2/controls/AnimatingImagePanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A7DC0,65,?InsertBefore@?$CUtlVector@PAVIImage@vgui2@@@@QAEHHABQAVIImage@vgui2@@@Z,*>::InsertBefore,UNKNOWN,vgui2/controls/AnimatingImagePanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A7E10,35,?Purge@?$CUtlVector@PAVIImage@vgui2@@@@QAEXXZ,*>::Purge,UNKNOWN,vgui2/controls/AnimatingImagePanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A7E40,11,?ResetDbgInfo@?$CUtlVector@PAVIImage@vgui2@@@@IAEXXZ,*>::ResetDbgInfo,UNKNOWN,vgui2/controls/AnimatingImagePanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A7E50,75,??0?$CUtlMemory@PAVIImage@vgui2@@@@QAE@HH@Z,*>,UNKNOWN,vgui2/controls/AnimatingImagePanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A7EA0,19,??1?$CUtlMemory@PAVIImage@vgui2@@@@QAE@XZ,*>,UNKNOWN,vgui2/controls/AnimatingImagePanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A7EC0,24,??A?$CUtlMemory@PAVIImage@vgui2@@@@QAEAAPAVIImage@vgui2@@H@Z,*>::operator[],UNKNOWN,vgui2/controls/AnimatingImagePanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A7EE0,5,?Destruct@@YAXPAPAVIImage@vgui2@@@Z,Destruct,UNKNOWN,vgui2/controls/AnimatingImagePanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A7EF0,87,?GrowVector@?$CUtlVector@PAVIImage@vgui2@@@@IAEXH@Z,*>::GrowVector,UNKNOWN,vgui2/controls/AnimatingImagePanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A7F50,86,?ShiftElementsRight@?$CUtlVector@PAVIImage@vgui2@@@@IAEXHH@Z,*>::ShiftElementsRight,UNKNOWN,vgui2/controls/AnimatingImagePanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A7FB0,69,?Purge@?$CUtlMemory@PAVIImage@vgui2@@@@QAEXXZ,*>::Purge,UNKNOWN,vgui2/controls/AnimatingImagePanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A8000,58,?CopyConstruct@@YAXPAPAVIImage@vgui2@@ABQAV12@@Z,CopyConstruct,UNKNOWN,vgui2/controls/AnimatingImagePanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A8040,17,?NumAllocated@?$CUtlMemory@PAVIImage@vgui2@@@@QBEHXZ,*>::NumAllocated,UNKNOWN,vgui2/controls/AnimatingImagePanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A8060,199,?Grow@?$CUtlMemory@PAVIImage@vgui2@@@@QAEXH@Z,*>::Grow,UNKNOWN,vgui2/controls/AnimatingImagePanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A8130,25,?IsExternallyAllocated@?$CUtlMemory@PAVIImage@vgui2@@@@QBE_NXZ,*>::IsExternallyAllocated,UNKNOWN,vgui2/controls/AnimatingImagePanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A8150,19,??0AnimatingImagePanel_RegisterMap@AnimatingImagePanel@vgui2@@QAE@XZ,vgui2::AnimatingImagePanel::AnimatingImagePanel_RegisterMap::AnimatingImagePanel_RegisterMap,UNKNOWN,vgui2/controls/AnimatingImagePanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A8170,102,?ChainToMap@AnimatingImagePanel@vgui2@@SAXXZ,vgui2::AnimatingImagePanel::ChainToMap,UNKNOWN,vgui2/controls/AnimatingImagePanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A81E0,64,?GetMessageMap@AnimatingImagePanel@vgui2@@UAEPAUPanelMessageMap@2@XZ,vgui2::AnimatingImagePanel::GetMessageMap,UNKNOWN,vgui2/controls/AnimatingImagePanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A8220,10,?GetPanelClassName@AnimatingImagePanel@vgui2@@SAPBDXZ,vgui2::AnimatingImagePanel::GetPanelClassName,UNKNOWN,vgui2/controls/AnimatingImagePanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A8230,10,?GetPanelBaseClassName@AnimatingImagePanel@vgui2@@SAPBDXZ,vgui2::AnimatingImagePanel::GetPanelBaseClassName,UNKNOWN,vgui2/controls/AnimatingImagePanel.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,100A8240,154,??0ScrollBarSlider@vgui2@@QAE@PAVPanel@1@PBD_N@Z,vgui2::ScrollBarSlider::ScrollBarSlider,UNKNOWN,vgui2/controls/ScrollBarSlider.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,100A82DA,43,?SetSize@ScrollBarSlider@vgui2@@UAEXHH@Z,vgui2::ScrollBarSlider::SetSize,UNKNOWN,vgui2/controls/ScrollBarSlider.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui215ScrollBarSlider7SetSizeEii
 gameui,100A8305,17,?IsVertical@ScrollBarSlider@vgui2@@UAE_NXZ,vgui2::ScrollBarSlider::IsVertical,UNKNOWN,vgui2/controls/ScrollBarSlider.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui215ScrollBarSlider10IsVerticalEv
@@ -30734,46 +30734,46 @@ hw,01E3EC30,102,,,ENGINE,vgui2/controls/Divider.cpp,,,TODO,,,
 hw,01E3ECA0,64,,,ENGINE,vgui2/controls/Divider.cpp,,,TODO,,,
 hw,01E3ECE0,10,,,ENGINE,vgui2/controls/Divider.cpp,,,TODO,,,
 hw,01E3ECF0,10,,,ENGINE,vgui2/controls/Divider.cpp,,,TODO,,,
-hw,01E3ED00,155,,,ENGINE,vgui2/controls/AnimatingImagePanel.cpp,,,TODO,,,
-hw,01E3ED9B,30,,,UNKNOWN,vgui2/controls/AnimatingImagePanel.cpp,,,TODO,,,linux: _ZN5vgui219AnimatingImagePanel13PerformLayoutEv
-hw,01E3EDB9,74,,,UNKNOWN,vgui2/controls/AnimatingImagePanel.cpp,,,TODO,,,linux: _ZN5vgui219AnimatingImagePanel8AddImageEPNS_6IImageE
-hw,01E3EE03,163,,,UNKNOWN,vgui2/controls/AnimatingImagePanel.cpp,,,TODO,,,linux: _ZN5vgui219AnimatingImagePanel13LoadAnimationEPKci
-hw,01E3EEA6,144,,,UNKNOWN,vgui2/controls/AnimatingImagePanel.cpp,,,TODO,,,linux: _ZN5vgui219AnimatingImagePanel15PaintBackgroundEv
-hw,01E3EF36,149,,,UNKNOWN,vgui2/controls/AnimatingImagePanel.cpp,,,TODO,,,linux: _ZN5vgui219AnimatingImagePanel6OnTickEv
-hw,01E3EFCB,63,,,UNKNOWN,vgui2/controls/AnimatingImagePanel.cpp,,,TODO,,,linux: _ZN5vgui219AnimatingImagePanel11GetSettingsEP9KeyValues
-hw,01E3F00A,186,,vgui2::AnimatingImagePanel::ApplySettings,ENGINE,vgui2/controls/AnimatingImagePanel.cpp,,,TODO,,linux_symbols:string:0.583,
-hw,01E3F0C4,48,,vgui2::AnimatingImagePanel::GetDescription,ENGINE,vgui2/controls/AnimatingImagePanel.cpp,,,TODO,,linux_symbols:string:0.611,
-hw,01E3F0F4,21,,,UNKNOWN,vgui2/controls/AnimatingImagePanel.cpp,,,TODO,,,linux: _ZN5vgui219AnimatingImagePanel14StartAnimationEv
-hw,01E3F109,21,,,UNKNOWN,vgui2/controls/AnimatingImagePanel.cpp,,,TODO,,,linux: _ZN5vgui219AnimatingImagePanel13StopAnimationEv
-hw,01E3F11E,72,,,UNKNOWN,vgui2/controls/AnimatingImagePanel.cpp,,,TODO,,,linux: _ZN5vgui219AnimatingImagePanel14ResetAnimationEi
-hw,01E3F170,46,,,ENGINE,vgui2/controls/AnimatingImagePanel.cpp,,,TODO,,,
-hw,01E3F1A0,33,,,ENGINE,vgui2/controls/AnimatingImagePanel.cpp,,,TODO,,,
-hw,01E3F1D0,50,,,ENGINE,vgui2/controls/AnimatingImagePanel.cpp,,,TODO,,,
-hw,01E3F210,27,,,ENGINE,vgui2/controls/AnimatingImagePanel.cpp,,,TODO,,,
-hw,01E3F230,25,,,ENGINE,vgui2/controls/AnimatingImagePanel.cpp,,,TODO,,,
-hw,01E3F250,51,,,ENGINE,vgui2/controls/AnimatingImagePanel.cpp,,,TODO,,,
-hw,01E3F290,32,,,ENGINE,vgui2/controls/AnimatingImagePanel.cpp,,,TODO,,,
-hw,01E3F2B0,70,,,ENGINE,vgui2/controls/AnimatingImagePanel.cpp,,,TODO,,,
-hw,01E3F300,25,,,ENGINE,vgui2/controls/AnimatingImagePanel.cpp,,,TODO,,,
-hw,01E3F320,65,,,ENGINE,vgui2/controls/AnimatingImagePanel.cpp,,,TODO,,,
-hw,01E3F370,35,,,ENGINE,vgui2/controls/AnimatingImagePanel.cpp,,,TODO,,,
-hw,01E3F3A0,11,,,ENGINE,vgui2/controls/AnimatingImagePanel.cpp,,,TODO,,,
-hw,01E3F3B0,75,,,ENGINE,vgui2/controls/AnimatingImagePanel.cpp,,,TODO,,,
-hw,01E3F400,19,,,ENGINE,vgui2/controls/AnimatingImagePanel.cpp,,,TODO,,,
-hw,01E3F420,24,,,ENGINE,vgui2/controls/AnimatingImagePanel.cpp,,,TODO,,,
-hw,01E3F440,5,,,ENGINE,vgui2/controls/AnimatingImagePanel.cpp,,,TODO,,,
-hw,01E3F450,87,,,ENGINE,vgui2/controls/AnimatingImagePanel.cpp,,,TODO,,,
-hw,01E3F4B0,86,,,ENGINE,vgui2/controls/AnimatingImagePanel.cpp,,,TODO,,,
-hw,01E3F510,69,,,ENGINE,vgui2/controls/AnimatingImagePanel.cpp,,,TODO,,,
-hw,01E3F560,58,,,ENGINE,vgui2/controls/AnimatingImagePanel.cpp,,,TODO,,,
-hw,01E3F5A0,17,,,ENGINE,vgui2/controls/AnimatingImagePanel.cpp,,,TODO,,,
-hw,01E3F5C0,199,,,ENGINE,vgui2/controls/AnimatingImagePanel.cpp,,,TODO,,,
-hw,01E3F690,25,,,ENGINE,vgui2/controls/AnimatingImagePanel.cpp,,,TODO,,,
-hw,01E3F6B0,19,,,ENGINE,vgui2/controls/AnimatingImagePanel.cpp,,,TODO,,,
-hw,01E3F6D0,102,,,ENGINE,vgui2/controls/AnimatingImagePanel.cpp,,,TODO,,,
-hw,01E3F740,64,,,ENGINE,vgui2/controls/AnimatingImagePanel.cpp,,,TODO,,,
-hw,01E3F780,10,,,ENGINE,vgui2/controls/AnimatingImagePanel.cpp,,,TODO,,,
-hw,01E3F790,10,,,ENGINE,vgui2/controls/AnimatingImagePanel.cpp,,,TODO,,,
+hw,01E3ED00,155,??0AnimatingImagePanel@vgui2@@QAE@PAVPanel@1@PBD@Z,vgui2::AnimatingImagePanel::AnimatingImagePanel,ENGINE,vgui2/controls/AnimatingImagePanel.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3ED9B,30,?PerformLayout@AnimatingImagePanel@vgui2@@MAEXXZ,vgui2::AnimatingImagePanel::PerformLayout,UNKNOWN,vgui2/controls/AnimatingImagePanel.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui219AnimatingImagePanel13PerformLayoutEv
+hw,01E3EDB9,74,?AddImage@AnimatingImagePanel@vgui2@@UAEXPAVIImage@2@@Z,vgui2::AnimatingImagePanel::AddImage,UNKNOWN,vgui2/controls/AnimatingImagePanel.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui219AnimatingImagePanel8AddImageEPNS_6IImageE
+hw,01E3EE03,163,?LoadAnimation@AnimatingImagePanel@vgui2@@UAEXPBDH@Z,vgui2::AnimatingImagePanel::LoadAnimation,UNKNOWN,vgui2/controls/AnimatingImagePanel.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui219AnimatingImagePanel13LoadAnimationEPKci
+hw,01E3EEA6,144,?PaintBackground@AnimatingImagePanel@vgui2@@MAEXXZ,vgui2::AnimatingImagePanel::PaintBackground,UNKNOWN,vgui2/controls/AnimatingImagePanel.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui219AnimatingImagePanel15PaintBackgroundEv
+hw,01E3EF36,149,?OnTick@AnimatingImagePanel@vgui2@@MAEXXZ,vgui2::AnimatingImagePanel::OnTick,UNKNOWN,vgui2/controls/AnimatingImagePanel.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui219AnimatingImagePanel6OnTickEv
+hw,01E3EFCB,63,?GetSettings@AnimatingImagePanel@vgui2@@MAEXPAVKeyValues@@@Z,vgui2::AnimatingImagePanel::GetSettings,UNKNOWN,vgui2/controls/AnimatingImagePanel.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui219AnimatingImagePanel11GetSettingsEP9KeyValues
+hw,01E3F00A,186,?ApplySettings@AnimatingImagePanel@vgui2@@MAEXPAVKeyValues@@@Z,vgui2::AnimatingImagePanel::ApplySettings,ENGINE,vgui2/controls/AnimatingImagePanel.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3F0C4,48,?GetDescription@AnimatingImagePanel@vgui2@@MAEPBDXZ,vgui2::AnimatingImagePanel::GetDescription,ENGINE,vgui2/controls/AnimatingImagePanel.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3F0F4,21,?StartAnimation@AnimatingImagePanel@vgui2@@UAEXXZ,vgui2::AnimatingImagePanel::StartAnimation,UNKNOWN,vgui2/controls/AnimatingImagePanel.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui219AnimatingImagePanel14StartAnimationEv
+hw,01E3F109,21,?StopAnimation@AnimatingImagePanel@vgui2@@UAEXXZ,vgui2::AnimatingImagePanel::StopAnimation,UNKNOWN,vgui2/controls/AnimatingImagePanel.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui219AnimatingImagePanel13StopAnimationEv
+hw,01E3F11E,72,?ResetAnimation@AnimatingImagePanel@vgui2@@UAEXH@Z,vgui2::AnimatingImagePanel::ResetAnimation,UNKNOWN,vgui2/controls/AnimatingImagePanel.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui219AnimatingImagePanel14ResetAnimationEi
+hw,01E3F170,46,??_GAnimatingImagePanel@vgui2@@UAEPAXI@Z,destructor',ENGINE,vgui2/controls/AnimatingImagePanel.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3F1A0,33,??1AnimatingImagePanel@vgui2@@UAE@XZ,vgui2::AnimatingImagePanel::~AnimatingImagePanel,ENGINE,vgui2/controls/AnimatingImagePanel.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3F1D0,50,??0?$CUtlVector@PAVIImage@vgui2@@@@QAE@HH@Z,*>,ENGINE,vgui2/controls/AnimatingImagePanel.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3F210,27,??1?$CUtlVector@PAVIImage@vgui2@@@@QAE@XZ,*>,ENGINE,vgui2/controls/AnimatingImagePanel.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3F230,25,??A?$CUtlVector@PAVIImage@vgui2@@@@QAEAAPAVIImage@vgui2@@H@Z,*>::operator[],ENGINE,vgui2/controls/AnimatingImagePanel.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3F250,51,?IsValidIndex@?$CUtlVector@PAVIImage@vgui2@@@@QBE_NH@Z,*>::IsValidIndex,ENGINE,vgui2/controls/AnimatingImagePanel.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3F290,32,?AddToTail@?$CUtlVector@PAVIImage@vgui2@@@@QAEHABQAVIImage@vgui2@@@Z,*>::AddToTail,ENGINE,vgui2/controls/AnimatingImagePanel.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3F2B0,70,?RemoveAll@?$CUtlVector@PAVIImage@vgui2@@@@QAEXXZ,*>::RemoveAll,ENGINE,vgui2/controls/AnimatingImagePanel.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3F300,25,?Element@?$CUtlVector@PAVIImage@vgui2@@@@QAEAAPAVIImage@vgui2@@H@Z,*>::Element,ENGINE,vgui2/controls/AnimatingImagePanel.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3F320,65,?InsertBefore@?$CUtlVector@PAVIImage@vgui2@@@@QAEHHABQAVIImage@vgui2@@@Z,*>::InsertBefore,ENGINE,vgui2/controls/AnimatingImagePanel.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3F370,35,?Purge@?$CUtlVector@PAVIImage@vgui2@@@@QAEXXZ,*>::Purge,ENGINE,vgui2/controls/AnimatingImagePanel.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3F3A0,11,?ResetDbgInfo@?$CUtlVector@PAVIImage@vgui2@@@@IAEXXZ,*>::ResetDbgInfo,ENGINE,vgui2/controls/AnimatingImagePanel.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3F3B0,75,??0?$CUtlMemory@PAVIImage@vgui2@@@@QAE@HH@Z,*>,ENGINE,vgui2/controls/AnimatingImagePanel.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3F400,19,??1?$CUtlMemory@PAVIImage@vgui2@@@@QAE@XZ,*>,ENGINE,vgui2/controls/AnimatingImagePanel.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3F420,24,??A?$CUtlMemory@PAVIImage@vgui2@@@@QAEAAPAVIImage@vgui2@@H@Z,*>::operator[],ENGINE,vgui2/controls/AnimatingImagePanel.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3F440,5,?Destruct@@YAXPAPAVIImage@vgui2@@@Z,Destruct,ENGINE,vgui2/controls/AnimatingImagePanel.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3F450,87,?GrowVector@?$CUtlVector@PAVIImage@vgui2@@@@IAEXH@Z,*>::GrowVector,ENGINE,vgui2/controls/AnimatingImagePanel.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3F4B0,86,?ShiftElementsRight@?$CUtlVector@PAVIImage@vgui2@@@@IAEXHH@Z,*>::ShiftElementsRight,ENGINE,vgui2/controls/AnimatingImagePanel.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3F510,69,?Purge@?$CUtlMemory@PAVIImage@vgui2@@@@QAEXXZ,*>::Purge,ENGINE,vgui2/controls/AnimatingImagePanel.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3F560,58,?CopyConstruct@@YAXPAPAVIImage@vgui2@@ABQAV12@@Z,CopyConstruct,ENGINE,vgui2/controls/AnimatingImagePanel.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3F5A0,17,?NumAllocated@?$CUtlMemory@PAVIImage@vgui2@@@@QBEHXZ,*>::NumAllocated,ENGINE,vgui2/controls/AnimatingImagePanel.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3F5C0,199,?Grow@?$CUtlMemory@PAVIImage@vgui2@@@@QAEXH@Z,*>::Grow,ENGINE,vgui2/controls/AnimatingImagePanel.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3F690,25,?IsExternallyAllocated@?$CUtlMemory@PAVIImage@vgui2@@@@QBE_NXZ,*>::IsExternallyAllocated,ENGINE,vgui2/controls/AnimatingImagePanel.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3F6B0,19,??0AnimatingImagePanel_RegisterMap@AnimatingImagePanel@vgui2@@QAE@XZ,vgui2::AnimatingImagePanel::AnimatingImagePanel_RegisterMap::AnimatingImagePanel_RegisterMap,ENGINE,vgui2/controls/AnimatingImagePanel.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3F6D0,102,?ChainToMap@AnimatingImagePanel@vgui2@@SAXXZ,vgui2::AnimatingImagePanel::ChainToMap,ENGINE,vgui2/controls/AnimatingImagePanel.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3F740,64,?GetMessageMap@AnimatingImagePanel@vgui2@@UAEPAUPanelMessageMap@2@XZ,vgui2::AnimatingImagePanel::GetMessageMap,ENGINE,vgui2/controls/AnimatingImagePanel.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3F780,10,?GetPanelClassName@AnimatingImagePanel@vgui2@@SAPBDXZ,vgui2::AnimatingImagePanel::GetPanelClassName,ENGINE,vgui2/controls/AnimatingImagePanel.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3F790,10,?GetPanelBaseClassName@AnimatingImagePanel@vgui2@@SAPBDXZ,vgui2::AnimatingImagePanel::GetPanelBaseClassName,ENGINE,vgui2/controls/AnimatingImagePanel.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01E3F7A0,150,,,ENGINE,vgui2/controls/ImagePanel.cpp,,,TODO,,,
 hw,01E3F836,72,,,ENGINE,vgui2/controls/ImagePanel.cpp,,,TODO,,,
 hw,01E3F87E,78,,,UNKNOWN,vgui2/controls/ImagePanel.cpp,,,TODO,,,linux: _ZN5vgui210ImagePanel13OnSizeChangedEii
