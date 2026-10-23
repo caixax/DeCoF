@@ -3362,6 +3362,11 @@
           "name": "engine/glide_guess",
           "source": "src/engine_hw/glide_guess.c",
           "functions_file": "tools/units/hw_engine_glide_guess.txt"
+        },
+        {
+          "name": "engine/voice_record_dsound",
+          "source": "src/engine_hw/voice_record_dsound.cpp",
+          "functions_file": "tools/units/hw_engine_voice_record_dsound.txt"
         }
       ]
     },
