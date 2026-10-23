@@ -3154,6 +3154,11 @@
           "functions_file": "tools/units/hw_common_TokenLine.txt"
         },
         {
+          "name": "engine/downloadthread",
+          "source": "src/engine_hw/downloadthread.cpp",
+          "functions_file": "tools/units/hw_engine_downloadthread.txt"
+        },
+        {
           "name": "engine/LoadBlob",
           "source": "src/engine_hw/LoadBlob.cpp",
           "functions_file": "tools/units/hw_engine_LoadBlob.txt",
