@@ -1111,7 +1111,7 @@ void Cache_Print_Sounds_And_Totals( void )
 		{
 			char	pathbuf[512];
 
-			_splitpath( sortarray[j]->name, NULL, pathbuf, NULL, NULL );
+			Sys_SplitPath( sortarray[j]->name, NULL, pathbuf, NULL, NULL );
 			FS_FPrintf( file, "\tTotal Bytes used in \"%s\": %s\n", pathbuf, CommatizeNumber( totalsndbytes - subtot, buf ) );
 			subtot = totalsndbytes;
 		}

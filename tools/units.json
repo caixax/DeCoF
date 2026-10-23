@@ -3149,6 +3149,16 @@
             "/Od",
             "/MT"
           ]
+        },
+        {
+          "name": "engine/CircularBuffer",
+          "source": "src/engine_hw/CircularBuffer.cpp",
+          "functions_file": "tools/units/hw_engine_CircularBuffer.txt"
+        },
+        {
+          "name": "engine/voice_gain",
+          "source": "src/engine_hw/voice_gain.cpp",
+          "functions_file": "tools/units/hw_engine_voice_gain.txt"
         }
       ]
     },

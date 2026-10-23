@@ -4730,3 +4730,9 @@ va,name,kind,evidence
 01E40240,?GetMessageMap@ToggleButton@vgui2@@UAEPAUPanelMessageMap@2@XZ,func,"vgui2/controls/ToggleButton.cpp: same position and size as the function of our object (hw.so DWARF ToggleButton.cpp line order; COMDAT tail ??_G, destructor, Button::OnHotkey, message map helpers)"
 01E40280,?GetPanelClassName@ToggleButton@vgui2@@SAPBDXZ,func,"vgui2/controls/ToggleButton.cpp: returns ""ToggleButton"""
 01E40290,?GetPanelBaseClassName@ToggleButton@vgui2@@SAPBDXZ,func,"vgui2/controls/ToggleButton.cpp: returns ""Button"""
+01D2419C,?AssertValid@CCircularBuffer@@IAEXXZ,func,engine/CircularBuffer.cpp in the source order of the Linux hw.so DWARF (_ZN15CCircularBuffer11AssertValidEv); access from our CircularBuffer.h
+01D241A7,?SetSize@CCircularBuffer@@QAEXH@Z,func,engine/CircularBuffer.cpp in the source order of the Linux hw.so DWARF (_ZN15CCircularBuffer7SetSizeEi); access from our CircularBuffer.h
+01D2420A,?GetWriteAvailable@CCircularBuffer@@QAEHXZ,func,engine/CircularBuffer.cpp in the source order of the Linux hw.so DWARF (_ZN15CCircularBuffer17GetWriteAvailableEv); access from our CircularBuffer.h
+01D24228,?GetSize@CCircularBuffer@@QAEHXZ,func,engine/CircularBuffer.cpp in the source order of the Linux hw.so DWARF (_ZN15CCircularBuffer7GetSizeEv); access from our CircularBuffer.h
+01D24259,?Peek@CCircularBuffer@@QAEHPADH@Z,func,engine/CircularBuffer.cpp in the source order of the Linux hw.so DWARF (_ZN15CCircularBuffer4PeekEPci); access from our CircularBuffer.h
+01D24329,?Advance@CCircularBuffer@@QAEHH@Z,func,engine/CircularBuffer.cpp in the source order of the Linux hw.so DWARF (_ZN15CCircularBuffer7AdvanceEi); access from our CircularBuffer.h

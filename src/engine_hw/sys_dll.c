@@ -864,14 +864,20 @@ qboolean Sys_RegKeyValueExists_guess( char *pszSubKey, char *pszElement )
 		return false;
 	}
 
+	if ( lResult != ERROR_SUCCESS )
+	{
+		RegCloseKey( hKey );
+		return false;
+	}
+
 	dwSize = 0;
 	lResult = RegQueryValueEx( hKey, pszElement, 0, &dwType, NULL, &dwSize );
 	RegCloseKey( hKey );
 
-	if ( lResult == ERROR_SUCCESS )
-		return true;
+	if ( lResult != ERROR_SUCCESS )
+		return false;
 
-	return false;
+	return true;
 }
 
 /*
@@ -1617,7 +1623,9 @@ True while a control key is held (nothing calls it)
 */
 qboolean Sys_IsCtrlDown_guess( void )
 {
-	return GetKeyState( VK_CONTROL ) < 0;
+	if ( GetKeyState( VK_CONTROL ) < 0 )
+		return 1;
+	return 0;
 }
 
 void Sys_SplitPath( const char *path, char *drive, char *dir, char *fname, char *ext )

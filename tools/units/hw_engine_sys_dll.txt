@@ -21,9 +21,13 @@ _GameSetState
 _GameSetBackground
 _ForceReloadProfile
 _Sys_GetRegKeyValue
+_Sys_RegKeyValueExists_guess
 _Sys_SetRegKeyValue
 _Voice_GetClientListening
 _Voice_SetClientListening
+_GetDispatch
+_FindAddressInTable
+_FindNameInTable
 _FunctionFromName
 _NameForFunction
 _GetEntityInit
@@ -41,3 +45,4 @@ _IN_ClearStates
 _Sys_GetClipboardData_guess
 _Sys_FreeClipboardData_guess
 _Sys_IsCtrlDown_guess
+_Sys_SplitPath
