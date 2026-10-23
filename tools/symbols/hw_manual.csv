@@ -4957,3 +4957,8 @@ va,name,kind,evidence
 01DFDD74,?GetRestOfLine@TokenLine@@QAEPADH@Z,func,"common/TokenLine.cpp: Linux hw.so DWARF names (TokenLine.cpp, source order); offset and size in our compiled object equal the retail ones"
 01DFDDD7,??0TokenLine@@QAE@XZ,func,"common/TokenLine.cpp: Linux hw.so DWARF names (TokenLine.cpp, source order); offset and size in our compiled object equal the retail ones"
 01DFDDF0,??_GTokenLine@@UAEPAXI@Z,func,"common/TokenLine.cpp: Linux hw.so DWARF names (TokenLine.cpp, source order); offset and size in our compiled object equal the retail ones"
+02C0EA3C,_r_pefragtopnode,data,"mnode_t *r_pefragtopnode (Quake gl_refrag.c, Linux hw.so DWARF gl_refrag.c line 12): cleared by R_AddEfrags, set by R_SplitEntityOnNode, copied to ent->topnode"
+02C0EA40,_lastlink,data,"efrag_t **lastlink (Quake gl_refrag.c, Linux hw.so DWARF gl_refrag.c line 25): set to &ent->efrag by R_AddEfrags"
+02C0EA44,_r_addent,data,"cl_entity_t *r_addent (Quake gl_refrag.c, Linux hw.so DWARF gl_refrag.c line 29): stored by R_AddEfrags, read into ef->entity"
+02C0EA50,_r_emaxs,data,"vec3_t r_emaxs (Quake gl_refrag.c, Linux hw.so DWARF line 27): origin + model maxs in R_AddEfrags, second BoxOnPlaneSide argument"
+02C0EA60,_r_emins,data,"vec3_t r_emins (Quake gl_refrag.c, Linux hw.so DWARF line 27): origin + model mins in R_AddEfrags, first BoxOnPlaneSide argument"
