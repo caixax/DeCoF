@@ -2704,7 +2704,12 @@
         {
           "name": "engine/voice",
           "source": "src/engine_hw/voice.cpp",
-          "functions_file": "tools/units/hw_engine_voice.txt"
+          "functions_file": "tools/units/hw_engine_voice.txt",
+          "includes": [
+            "src/engine_hw",
+            "src/public",
+            "src/common"
+          ]
         },
         {
           "name": "engine/r_trans",

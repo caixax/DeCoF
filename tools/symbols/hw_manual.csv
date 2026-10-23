@@ -3902,3 +3902,14 @@ va,name,kind,evidence
 01D9D492,_QGL_D3DShared,func,"engine_api_t QGL_D3DShared( struct tagD3DGlobals * ) of the HL SDK common/engine_launcher_api.h; copies two fields of the struct, right before QGL_D3DInit; called by the Direct3D video mode"
 01ED004C,?ddraw_guess@@3PAVILauncherDirectDraw@@A,data,pointer to the ILauncherDirectDraw (RTTI CLauncherDirectDraw) whose slots CVideoMode_Common::Init calls to list the display modes
 01E149E0,_DirectDrawCreate@12,func,"import thunk jmp [DDRAW.DLL DirectDrawCreate], called by CVideoMode_Direct3DFullScreen::InitDirectDraw_guess (ddraw.h declares it without dllimport)"
+01E0D73F,?GetMixerControls@@YAPAVIMixerControls@@XZ,func,"voice_mixer_controls: Voice_Init stores its result in g_pMixerControls and calls slot +0x10 (SelectMicrophoneForWaveInput) on it; the Linux Voice_Init calls GetMixerControls (C++ linkage, _Z16GetMixerControlsv) there; replaces the Ghidra label CreateObject"
+01E0E655,?VoiceSE_RegisterCvars@@YAXXZ,func,voice_sound_engine_interface: called by Voice_RegisterCvars after its cvars; C++ linkage as in the Linux build (_Z21VoiceSE_RegisterCvarsv); replaces the C spelling of hw_1.6a.csv
+01E0E6F7,?VoiceSE_Idle@@YAXM@Z,func,voice_sound_engine_interface: called by Voice_Idle with frametime; C++ linkage as in the Linux build (_Z12VoiceSE_Idlef); replaces the C spelling of hw_1.6a.csv
+01E0E7F6,?VoiceSE_StartChannel@@YAXH@Z,func,voice_sound_engine_interface: called by Voice_Idle when a channel's time pad runs out; C++ linkage as in the Linux build (_Z20VoiceSE_StartChanneli); replaces the C spelling of hw_1.6a.csv
+01E0B1F3,?Voice_GetOutputData@@YAHHPADHHH@Z,func,voice.cpp: C++ linkage as in the Linux build (_Z19Voice_GetOutputDataiPciii); bytes identical to our object; replaces the C spelling of hw_1.6a.csv
+01D0F550,_$E8,func,"dynamic initializer of g_TempConsoleBuffer (construct, then atexit); spelling from the compiled object"
+01D0F55F,_$E5,func,"constructs g_TempConsoleBuffer (CUtlVector<char>( 0, 1024 )); spelling from the compiled object"
+01D0F575,_$E7,func,atexit of the g_TempConsoleBuffer destructor thunk; spelling from the compiled object
+01D0F587,_$E6,func,destroys g_TempConsoleBuffer; spelling from the compiled object
+01E0B1CE,_$E3,func,dynamic initializer of g_VoiceChannels; spelling from the compiled object
+01E0B1D8,_$E2,func,constructs g_VoiceChannels[5] (vector constructor iterator with the CVoiceChannel constructor); spelling from the compiled object

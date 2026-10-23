@@ -1,5 +1,5 @@
 _VoiceSE_GetSoundDataCallback
-_VoiceSE_RegisterCvars
-_VoiceSE_Idle
-_VoiceSE_StartChannel
+?VoiceSE_RegisterCvars@@YAXXZ
+?VoiceSE_Idle@@YAXM@Z
+?VoiceSE_StartChannel@@YAXH@Z
 _VoiceSE_GetSFXCache
