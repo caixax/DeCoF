@@ -30433,15 +30433,15 @@ hw,01E33A00,199,?Grow@?$CUtlMemory@UNode_t@?$CUtlRBTree@IG@@@@QAEXH@Z,short>::No
 hw,01E33AD0,25,?Construct@@YAXPAI@Z,Construct,ENGINE,public/utlsymbol.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01E33AF0,34,?SetParent@?$CUtlRBTree@IG@@IAEXGG@Z,short>::SetParent,ENGINE,public/utlsymbol.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01E33B20,37,??0KeyValues@@QAE@PBD@Z,KeyValues::KeyValues,UNKNOWN,public/KeyValues.cpp,,,MATCHED,100,,
-hw,01E33B45,53,??0KeyValues@@QAE@PBD00@Z,KeyValues::KeyValues,ENGINE,public/KeyValues.cpp,,,TODO,,,
-hw,01E33B7A,53,??0KeyValues@@QAE@PBD0PBG@Z,"public: __thiscall KeyValues::KeyValues(char const *,char const *,unsigned short const *)",ENGINE,public/KeyValues.cpp,,,TODO,,,
-hw,01E33BAF,53,??0KeyValues@@QAE@PBD0H@Z,KeyValues::KeyValues,ENGINE,public/KeyValues.cpp,,,TODO,,,
-hw,01E33BE4,69,??0KeyValues@@QAE@PBD0000@Z,"public: __thiscall KeyValues::KeyValues(char const *,char const *,char const *,char const *,char const *)",ENGINE,public/KeyValues.cpp,,,TODO,,,
-hw,01E33C29,69,??0KeyValues@@QAE@PBD0H0H@Z,KeyValues::KeyValues,ENGINE,public/KeyValues.cpp,,,TODO,,,
+hw,01E33B45,53,??0KeyValues@@QAE@PBD00@Z,KeyValues::KeyValues,ENGINE,public/KeyValues.cpp,,,MATCHED,100,,
+hw,01E33B7A,53,??0KeyValues@@QAE@PBD0PBG@Z,"public: __thiscall KeyValues::KeyValues(char const *,char const *,unsigned short const *)",ENGINE,public/KeyValues.cpp,,,MATCHED,100,,
+hw,01E33BAF,53,??0KeyValues@@QAE@PBD0H@Z,KeyValues::KeyValues,ENGINE,public/KeyValues.cpp,,,MATCHED,100,,
+hw,01E33BE4,69,??0KeyValues@@QAE@PBD0000@Z,"public: __thiscall KeyValues::KeyValues(char const *,char const *,char const *,char const *,char const *)",ENGINE,public/KeyValues.cpp,,,MATCHED,100,,
+hw,01E33C29,69,??0KeyValues@@QAE@PBD0H0H@Z,KeyValues::KeyValues,ENGINE,public/KeyValues.cpp,,,MATCHED,100,,
 hw,01E33C6E,102,?Init@KeyValues@@AAEXPBD@Z,KeyValues::Init,UNKNOWN,public/KeyValues.cpp,,,MATCHED,100,,
 hw,01E33CD4,111,??1KeyValues@@AAE@XZ,KeyValues::~KeyValues,UNKNOWN,public/KeyValues.cpp,,,MATCHED,100,,
 hw,01E33D43,39,?GetName@KeyValues@@UBEPBDXZ,KeyValues::GetName,UNKNOWN,public/KeyValues.cpp,,,MATCHED,100,,linux: _ZNK9KeyValues7GetNameEv
-hw,01E33D6A,17,,,UNKNOWN,public/KeyValues.cpp,,,TODO,,,linux: _ZNK9KeyValues13GetNameSymbolEv
+hw,01E33D6A,17,?GetNameSymbol@KeyValues@@UBEHXZ,KeyValues::GetNameSymbol,UNKNOWN,public/KeyValues.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZNK9KeyValues13GetNameSymbolEv
 hw,01E33D7B,177,?LoadFromFile@KeyValues@@UAE_NPAVIFileSystem@@PBD1@Z,KeyValues::LoadFromFile,UNKNOWN,public/KeyValues.cpp,,,MATCHED,100,,
 hw,01E33E2C,130,?LoadFromBuffer@KeyValues@@QAEXPBD@Z,KeyValues::LoadFromBuffer,UNKNOWN,public/KeyValues.cpp,,,MATCHED,100,,
 hw,01E33EAE,569,?ReadToken@@YAPADPAPAD@Z,ReadToken,UNKNOWN,public/KeyValues.cpp,,,MATCHED,100,,
@@ -30479,11 +30479,11 @@ hw,01E3592B,73,?IsEmpty@KeyValues@@UAE_NPBD@Z,KeyValues::IsEmpty,UNKNOWN,public/
 hw,01E35974,121,?Clear@KeyValues@@UAEXXZ,KeyValues::Clear,UNKNOWN,public/KeyValues.cpp,,,MATCHED,100,,linux: _ZN9KeyValues5ClearEv
 hw,01E359ED,56,?GetDataType@KeyValues@@UAE?AW4types_t@1@PBD@Z,KeyValues::GetDataType,UNKNOWN,public/KeyValues.cpp,,,MATCHED,100,,linux: _ZN9KeyValues11GetDataTypeEPKc
 hw,01E35A25,53,?deleteThis@KeyValues@@UAEXXZ,KeyValues::deleteThis,ENGINE,public/KeyValues.cpp,,,MATCHED,100,ghidra,linux: _ZN9KeyValues10deleteThisEv
-hw,01E35A5A,31,??2KeyValues@@SAPAXI@Z,new,ENGINE,public/KeyValues.cpp,,,TODO,,,
-hw,01E35A79,31,??2KeyValues@@SAPAXIHPBDH@Z,"public: static void * __cdecl KeyValues::operator new(unsigned int,int,char const *,int)",ENGINE,public/KeyValues.cpp,,,TODO,,,
-hw,01E35A98,31,,,ENGINE,public/KeyValues.cpp,,,TODO,,,
-hw,01E35AB7,31,,,ENGINE,public/KeyValues.cpp,,,TODO,,,
-hw,01E35AE0,46,??_GKeyValues@@AAEPAXI@Z,destructor',ENGINE,public/KeyValues.cpp,,,TODO,,,
+hw,01E35A5A,31,??2KeyValues@@SAPAXI@Z,new,ENGINE,public/KeyValues.cpp,,,MATCHED,100,,
+hw,01E35A79,31,??2KeyValues@@SAPAXIHPBDH@Z,"public: static void * __cdecl KeyValues::operator new(unsigned int,int,char const *,int)",ENGINE,public/KeyValues.cpp,,,MATCHED,100,,
+hw,01E35A98,31,??3KeyValues@@SAXPAX@Z,delete,ENGINE,public/KeyValues.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E35AB7,31,??3KeyValues@@SAXPAXHPBDH@Z,delete,ENGINE,public/KeyValues.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E35AE0,46,??_GKeyValues@@AAEPAXI@Z,destructor',ENGINE,public/KeyValues.cpp,,,MATCHED,100,,
 hw,01E35B10,284,??0Tooltip@vgui2@@QAE@PAVPanel@1@PBD@Z,vgui2::Tooltip::Tooltip,ENGINE,vgui2/controls/Tooltip.cpp,,,MATCHED,100,linux_symbols:string:0.783,
 hw,01E35C2C,113,??1Tooltip@vgui2@@QAE@XZ,vgui2::Tooltip::~Tooltip,UNKNOWN,vgui2/controls/Tooltip.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui27TooltipD2Ev
 hw,01E35C9D,22,?GetText@Tooltip@vgui2@@QAEPBDXZ,vgui2::Tooltip::GetText,ENGINE,vgui2/controls/Tooltip.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui27Tooltip7GetTextEv

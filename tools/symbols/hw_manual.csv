@@ -5094,3 +5094,6 @@ va,name,kind,evidence
 01DFC5A0,??1IThread@@UAE@XZ,func,"engine/thread.cpp: Linux hw.so DWARF names (thread.cpp, source order; the static ThreadFunc follows its first caller Init); same order and count of functions in our compiled object"
 01E36300,?AddNewBlob@CMemoryPool@@AAEXXZ,func,"public/MemPool.cpp: Linux hw.so DWARF names (public/MemPool.cpp, source order); offset and size in our compiled object equal the retail ones"
 01E364A1,?Free@CMemoryPool@@QAEXPAX@Z,func,"public/MemPool.cpp: Linux hw.so DWARF names (public/MemPool.cpp, source order); offset and size in our compiled object equal the retail ones"
+01E33D6A,?GetNameSymbol@KeyValues@@UBEHXZ,func,public/KeyValues.cpp: same position and size as the function of the GameUI.dll KeyValues object at 100726BA (one source for both DLLs); 100% in objdiff
+01E35A98,??3KeyValues@@SAXPAX@Z,func,public/KeyValues.cpp: same position and size as the function of the GameUI.dll KeyValues object at 100743E8 (one source for both DLLs); 100% in objdiff
+01E35AB7,??3KeyValues@@SAXPAXHPBDH@Z,func,public/KeyValues.cpp: same position and size as the function of the GameUI.dll KeyValues object at 10074407 (one source for both DLLs); 100% in objdiff

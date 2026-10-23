@@ -10,6 +10,7 @@
 ?Init@KeyValues@@AAEXPBD@Z
 ??1KeyValues@@AAE@XZ
 ?GetName@KeyValues@@UBEPBDXZ
+?GetNameSymbol@KeyValues@@UBEHXZ
 ?LoadFromFile@KeyValues@@UAE_NPAVIFileSystem@@PBD1@Z
 ?LoadFromBuffer@KeyValues@@QAEXPBD@Z
 ?ReadToken@@YAPADPAPAD@Z
@@ -49,4 +50,6 @@
 ?deleteThis@KeyValues@@UAEXXZ
 ??2KeyValues@@SAPAXI@Z
 ??2KeyValues@@SAPAXIHPBDH@Z
+??3KeyValues@@SAXPAX@Z
+??3KeyValues@@SAXPAXHPBDH@Z
 ??_GKeyValues@@AAEPAXI@Z
