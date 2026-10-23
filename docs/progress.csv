@@ -28612,89 +28612,89 @@ hw,01DF5CF0,46,,,ENGINE,engine/sys_engine.cpp,,,TODO,,,
 hw,01DF5D20,23,,,ENGINE,engine/sys_engine.cpp,,,TODO,,,
 hw,01DF5D40,46,,,ENGINE,engine/sys_engine.cpp,,,TODO,,,
 hw,01DF5D70,20,,,ENGINE,engine/sys_engine.cpp,,,TODO,,,
-hw,01DF5D90,134,,,ENGINE,engine/sys_getmodes.cpp,,,TODO,,,
-hw,01DF5E16,34,,,ENGINE,engine/sys_getmodes.cpp,,,TODO,,,
-hw,01DF5E38,20,,,UNKNOWN,engine/sys_getmodes.cpp,,,TODO,,,linux: _ZNK17CVideoMode_Common14GetInitializedEv
-hw,01DF5E4C,25,,,UNKNOWN,engine/sys_getmodes.cpp,,,TODO,,,linux: _ZN17CVideoMode_Common14SetInitializedEb
-hw,01DF5E65,20,,,UNKNOWN,engine/sys_getmodes.cpp,,,TODO,,,linux: _ZNK17CVideoMode_Common14IsWindowedModeEv
-hw,01DF5E79,102,,,UNKNOWN,engine/sys_getmodes.cpp,,,TODO,,,linux: _ZN17CVideoMode_Common7AddModeEiii
-hw,01DF5EDF,56,,,UNKNOWN,engine/sys_getmodes.cpp,,,TODO,,,linux: _ZN17CVideoMode_Common7GetModeEi
-hw,01DF5F17,20,,,UNKNOWN,engine/sys_getmodes.cpp,,,TODO,,,linux: _ZN17CVideoMode_Common12GetModeCountEv
-hw,01DF5F2B,16,,,UNKNOWN,engine/sys_getmodes.cpp,,,TODO,,,linux: _ZN17CVideoMode_Common15MaxBitsPerPixelEv
-hw,01DF5F3B,32,,,UNKNOWN,engine/sys_getmodes.cpp,,,TODO,,,linux: _ZN17CVideoMode_Common14GetCurrentModeEv
-hw,01DF5F5B,1119,,CVideoMode_Common::Init,ENGINE,engine/sys_getmodes.cpp,,,TODO,,linux_symbols:string:0.791,
-hw,01DF63BA,100,,,UNKNOWN,engine/sys_getmodes.cpp,,,TODO,,,linux: _ZN17CVideoMode_Common4InitEPv
-hw,01DF641E,128,,,UNKNOWN,engine/sys_getmodes.cpp,,,TODO,,,linux: _ZN17CVideoMode_Common20UpdateWindowPositionEv
-hw,01DF649E,11,,,UNKNOWN,engine/sys_getmodes.cpp,,,TODO,,,linux: _ZN17CVideoMode_Common33ChangeDisplaySettingsToFullscreenEv
-hw,01DF64A9,11,,,UNKNOWN,engine/sys_getmodes.cpp,,,TODO,,,linux: _ZN17CVideoMode_Common17ReleaseFullScreenEv
-hw,01DF64B4,280,,CVideoMode_Common::AdjustWindowForMode,ENGINE,engine/sys_getmodes.cpp,,,TODO,,linux_symbols:caller:0.667,
-hw,01DF65CC,125,,,UNKNOWN,engine/sys_getmodes.cpp,,,TODO,,,linux: _ZN17CVideoMode_Common8ShutdownEv
-hw,01DF6649,11,,,UNKNOWN,engine/sys_getmodes.cpp,,,TODO,,,linux: _ZN17CVideoMode_Common10FlipScreenEv
-hw,01DF6654,136,,,UNKNOWN,engine/sys_getmodes.cpp,,,TODO,,,linux: _ZN17CVideoMode_Common18CenterEngineWindowEPvii
-hw,01DF66DC,754,,CVideoMode_Common::LoadStartupGraphic,ENGINE,engine/sys_getmodes.cpp,,,TODO,,linux_symbols:string:0.795,
-hw,01DF69CE,697,,,UNKNOWN,guess:engine/sys_getmodes.cpp,,,TODO,,,
-hw,01DF6C87,264,,,UNKNOWN,guess:engine/sys_getmodes.cpp,,,TODO,,,
-hw,01DF6D8F,11,,,UNKNOWN,engine/sys_getmodes.cpp,,,TODO,,,linux: _ZN17CVideoMode_Common12RestoreVideoEv
-hw,01DF6D9A,11,,,UNKNOWN,engine/sys_getmodes.cpp,,,TODO,,,linux: _ZN17CVideoMode_Common12ReleaseVideoEv
-hw,01DF6DA5,45,,,UNKNOWN,guess:engine/sys_getmodes.cpp,,,TODO,,,
-hw,01DF6DD2,48,,,UNKNOWN,engine/sys_getmodes.cpp,,,TODO,,,linux: _ZN17CVideoMode_OpenGL4InitEPv
-hw,01DF6E02,44,,,UNKNOWN,engine/sys_getmodes.cpp,,,TODO,,,linux: _ZN17CVideoMode_OpenGL12ReleaseVideoEv
-hw,01DF6E2E,176,,,UNKNOWN,engine/sys_getmodes.cpp,,,TODO,,,linux: _ZN17CVideoMode_OpenGL12RestoreVideoEv
-hw,01DF6EDE,68,,,UNKNOWN,engine/sys_getmodes.cpp,,,TODO,,,linux: _ZN17CVideoMode_OpenGL17ReleaseFullScreenEv
-hw,01DF6F22,252,,,UNKNOWN,engine/sys_getmodes.cpp,,,TODO,,,linux: _ZN17CVideoMode_OpenGL33ChangeDisplaySettingsToFullscreenEv
-hw,01DF701E,11,,,UNKNOWN,engine/sys_getmodes.cpp,,,TODO,,,linux: _ZN17CVideoMode_OpenGL10FlipScreenEv
-hw,01DF7029,88,,,UNKNOWN,guess:engine/sys_getmodes.cpp,,,TODO,,,
-hw,01DF7081,28,,,UNKNOWN,guess:engine/sys_getmodes.cpp,,,TODO,,,
-hw,01DF709D,72,,,UNKNOWN,guess:engine/sys_getmodes.cpp,,,TODO,,,
-hw,01DF70E5,72,,,UNKNOWN,guess:engine/sys_getmodes.cpp,,,TODO,,,
-hw,01DF712D,70,,,UNKNOWN,guess:engine/sys_getmodes.cpp,,,TODO,,,
-hw,01DF7173,347,,,UNKNOWN,guess:engine/sys_getmodes.cpp,,,TODO,,,
-hw,01DF72CE,47,,,UNKNOWN,guess:engine/sys_getmodes.cpp,,,TODO,,,
-hw,01DF72FD,128,,,UNKNOWN,guess:engine/sys_getmodes.cpp,,,TODO,,,
-hw,01DF737D,27,,,UNKNOWN,guess:engine/sys_getmodes.cpp,,,TODO,,,
-hw,01DF7398,147,,,UNKNOWN,guess:engine/sys_getmodes.cpp,,,TODO,,,
-hw,01DF742B,41,,,UNKNOWN,guess:engine/sys_getmodes.cpp,,,TODO,,,
-hw,01DF7454,28,,,UNKNOWN,guess:engine/sys_getmodes.cpp,,,TODO,,,
-hw,01DF7470,48,,,UNKNOWN,guess:engine/sys_getmodes.cpp,,,TODO,,,
+hw,01DF5D90,134,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
+hw,01DF5E16,34,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
+hw,01DF5E38,20,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,linux: _ZNK17CVideoMode_Common14GetInitializedEv
+hw,01DF5E4C,25,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,linux: _ZN17CVideoMode_Common14SetInitializedEb
+hw,01DF5E65,20,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,linux: _ZNK17CVideoMode_Common14IsWindowedModeEv
+hw,01DF5E79,102,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,linux: _ZN17CVideoMode_Common7AddModeEiii
+hw,01DF5EDF,56,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,linux: _ZN17CVideoMode_Common7GetModeEi
+hw,01DF5F17,20,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,linux: _ZN17CVideoMode_Common12GetModeCountEv
+hw,01DF5F2B,16,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,linux: _ZN17CVideoMode_Common15MaxBitsPerPixelEv
+hw,01DF5F3B,32,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,linux: _ZN17CVideoMode_Common14GetCurrentModeEv
+hw,01DF5F5B,1119,,CVideoMode_Common::Init,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,linux_symbols:string:0.791,
+hw,01DF63BA,100,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,linux: _ZN17CVideoMode_Common4InitEPv
+hw,01DF641E,128,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,linux: _ZN17CVideoMode_Common20UpdateWindowPositionEv
+hw,01DF649E,11,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,linux: _ZN17CVideoMode_Common33ChangeDisplaySettingsToFullscreenEv
+hw,01DF64A9,11,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,linux: _ZN17CVideoMode_Common17ReleaseFullScreenEv
+hw,01DF64B4,280,,CVideoMode_Common::AdjustWindowForMode,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,linux_symbols:caller:0.667,
+hw,01DF65CC,125,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,linux: _ZN17CVideoMode_Common8ShutdownEv
+hw,01DF6649,11,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,linux: _ZN17CVideoMode_Common10FlipScreenEv
+hw,01DF6654,136,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,linux: _ZN17CVideoMode_Common18CenterEngineWindowEPvii
+hw,01DF66DC,754,,CVideoMode_Common::LoadStartupGraphic,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,linux_symbols:string:0.795,
+hw,01DF69CE,697,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
+hw,01DF6C87,264,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
+hw,01DF6D8F,11,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,linux: _ZN17CVideoMode_Common12RestoreVideoEv
+hw,01DF6D9A,11,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,linux: _ZN17CVideoMode_Common12ReleaseVideoEv
+hw,01DF6DA5,45,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
+hw,01DF6DD2,48,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,linux: _ZN17CVideoMode_OpenGL4InitEPv
+hw,01DF6E02,44,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,linux: _ZN17CVideoMode_OpenGL12ReleaseVideoEv
+hw,01DF6E2E,176,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
+hw,01DF6EDE,68,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,linux: _ZN17CVideoMode_OpenGL17ReleaseFullScreenEv
+hw,01DF6F22,252,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,linux: _ZN17CVideoMode_OpenGL33ChangeDisplaySettingsToFullscreenEv
+hw,01DF701E,11,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,linux: _ZN17CVideoMode_OpenGL10FlipScreenEv
+hw,01DF7029,88,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
+hw,01DF7081,28,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
+hw,01DF709D,72,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
+hw,01DF70E5,72,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
+hw,01DF712D,70,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
+hw,01DF7173,347,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
+hw,01DF72CE,47,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
+hw,01DF72FD,128,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
+hw,01DF737D,27,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
+hw,01DF7398,147,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
+hw,01DF742B,41,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
+hw,01DF7454,28,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
+hw,01DF7470,48,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
 hw,01DF74A0,250,_VideoMode_Create,VideoMode_Create,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,linux_symbols:string:0.65,
-hw,01DF759A,80,_Sys_SetRenderer_guess,,ENGINE,engine/sys_getmodes.cpp,,,TODO,,,
-hw,01DF75EA,83,_Sys_SetVideoMode_guess,,ENGINE,engine/sys_getmodes.cpp,,,TODO,,,
-hw,01DF763D,50,,,ENGINE,engine/sys_getmodes.cpp,,,TODO,,,
-hw,01DF766F,85,_VideoMode_GetCurrentVideoMode,,ENGINE,engine/sys_getmodes.cpp,,,TODO,,,
-hw,01DF76C4,77,,,ENGINE,engine/sys_getmodes.cpp,,,TODO,,,
-hw,01DF7711,61,_VideoMode_IsWindowed,,ENGINE,engine/sys_getmodes.cpp,,,TODO,,,
-hw,01DF7750,46,,,ENGINE,engine/sys_getmodes.cpp,,,TODO,,,
-hw,01DF7780,23,,,ENGINE,engine/sys_getmodes.cpp,,,TODO,,,
-hw,01DF77A0,16,,,ENGINE,engine/sys_getmodes.cpp,,,TODO,,,
-hw,01DF77B0,46,,,ENGINE,engine/sys_getmodes.cpp,,,TODO,,,
-hw,01DF77E0,19,,,ENGINE,engine/sys_getmodes.cpp,,,TODO,,,
-hw,01DF7800,16,,,ENGINE,engine/sys_getmodes.cpp,,,TODO,,,
-hw,01DF7810,46,,,ENGINE,engine/sys_getmodes.cpp,,,TODO,,,
-hw,01DF7840,16,,,ENGINE,engine/sys_getmodes.cpp,,,TODO,,,
-hw,01DF7850,46,,,ENGINE,engine/sys_getmodes.cpp,,,TODO,,,
-hw,01DF7880,50,,,ENGINE,engine/sys_getmodes.cpp,,,TODO,,,
-hw,01DF78C0,27,,,ENGINE,engine/sys_getmodes.cpp,,,TODO,,,
-hw,01DF78E0,25,,,ENGINE,engine/sys_getmodes.cpp,,,TODO,,,
-hw,01DF7900,17,,,ENGINE,engine/sys_getmodes.cpp,,,TODO,,,
-hw,01DF7920,26,,,ENGINE,engine/sys_getmodes.cpp,,,TODO,,,
-hw,01DF7940,63,,,ENGINE,engine/sys_getmodes.cpp,,,TODO,,,
-hw,01DF7980,35,,,ENGINE,engine/sys_getmodes.cpp,,,TODO,,,
-hw,01DF79B0,25,,,ENGINE,engine/sys_getmodes.cpp,,,TODO,,,
-hw,01DF79D0,61,,,ENGINE,engine/sys_getmodes.cpp,,,TODO,,,
-hw,01DF7A10,70,,,ENGINE,engine/sys_getmodes.cpp,,,TODO,,,
-hw,01DF7A60,86,,,ENGINE,engine/sys_getmodes.cpp,,,TODO,,,
-hw,01DF7AC0,11,,,ENGINE,engine/sys_getmodes.cpp,,,TODO,,,
-hw,01DF7AD0,75,,,ENGINE,engine/sys_getmodes.cpp,,,TODO,,,
-hw,01DF7B20,19,,,ENGINE,engine/sys_getmodes.cpp,,,TODO,,,
-hw,01DF7B40,26,,,ENGINE,engine/sys_getmodes.cpp,,,TODO,,,
-hw,01DF7B60,69,,,ENGINE,engine/sys_getmodes.cpp,,,TODO,,,
-hw,01DF7BB0,5,,,ENGINE,engine/sys_getmodes.cpp,,,TODO,,,
-hw,01DF7BC0,87,,,ENGINE,engine/sys_getmodes.cpp,,,TODO,,,
-hw,01DF7C20,86,,,ENGINE,engine/sys_getmodes.cpp,,,TODO,,,
-hw,01DF7C80,25,,,ENGINE,engine/sys_getmodes.cpp,,,TODO,,,
-hw,01DF7CA0,25,,,ENGINE,engine/sys_getmodes.cpp,,,TODO,,,
-hw,01DF7CC0,17,,,ENGINE,engine/sys_getmodes.cpp,,,TODO,,,
-hw,01DF7CE0,199,,,ENGINE,engine/sys_getmodes.cpp,,,TODO,,,
+hw,01DF759A,80,_Sys_SetRenderer_guess,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
+hw,01DF75EA,83,_Sys_SetVideoMode_guess,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
+hw,01DF763D,50,_VideoMode_GetVideoModes,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DF766F,85,_VideoMode_GetCurrentVideoMode,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
+hw,01DF76C4,77,_VideoMode_GetCurrentRenderer,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DF7711,61,_VideoMode_IsWindowed,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
+hw,01DF7750,46,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
+hw,01DF7780,23,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
+hw,01DF77A0,16,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
+hw,01DF77B0,46,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
+hw,01DF77E0,19,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
+hw,01DF7800,16,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
+hw,01DF7810,46,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
+hw,01DF7840,16,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
+hw,01DF7850,46,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
+hw,01DF7880,50,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
+hw,01DF78C0,27,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
+hw,01DF78E0,25,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
+hw,01DF7900,17,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
+hw,01DF7920,26,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
+hw,01DF7940,63,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
+hw,01DF7980,35,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
+hw,01DF79B0,25,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
+hw,01DF79D0,61,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
+hw,01DF7A10,70,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
+hw,01DF7A60,86,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
+hw,01DF7AC0,11,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
+hw,01DF7AD0,75,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
+hw,01DF7B20,19,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
+hw,01DF7B40,26,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
+hw,01DF7B60,69,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
+hw,01DF7BB0,5,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
+hw,01DF7BC0,87,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
+hw,01DF7C20,86,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
+hw,01DF7C80,25,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
+hw,01DF7CA0,25,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
+hw,01DF7CC0,17,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
+hw,01DF7CE0,199,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
 hw,01DF7DB0,15,,,ENGINE,engine/LauncherDirectDraw_guess.cpp,,,TODO,,,
 hw,01DF7DBF,15,,,ENGINE,engine/LauncherDirectDraw_guess.cpp,,,TODO,,,
 hw,01DF7DCE,18,,,ENGINE,engine/LauncherDirectDraw_guess.cpp,,,TODO,,,

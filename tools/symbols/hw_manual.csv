@@ -3817,3 +3817,88 @@ va,name,kind,evidence
 01E55D90,?InitVar@PanelMessageFunc_OnMenuItemSelected@ComboBox@vgui2@@SAXXZ,func,"vgui2/controls/ComboBox.cpp COMDAT tail: same order and sizes as our object"
 01E55E00,??0PanelMessageFunc_OnSetText@ComboBox@vgui2@@QAE@XZ,func,"vgui2/controls/ComboBox.cpp COMDAT tail: same order and sizes as our object"
 01E55E20,?InitVar@PanelMessageFunc_OnSetText@ComboBox@vgui2@@SAXXZ,func,"vgui2/controls/ComboBox.cpp COMDAT tail: same order and sizes as our object"
+01DF5D90,??0CVideoMode_Common@@QAE@XZ,func,"engine/sys_getmodes.cpp of the Linux hw.so DWARF; stores the CVideoMode_Common vtable, 640x480x16 safe mode"
+01DF5E16,??1CVideoMode_Common@@UAE@XZ,func,"engine/sys_getmodes.cpp of the Linux hw.so DWARF; destroys m_ImageID, called by ??_GCVideoMode_Common"
+01DF5E38,?GetInitialized@CVideoMode_Common@@UAE_NXZ,func,RTTI CVideoMode_Common vtable slot 8
+01DF5E4C,?SetInitialized@CVideoMode_Common@@UAEX_N@Z,func,RTTI CVideoMode_Common vtable slot 9
+01DF5E65,?IsWindowedMode@CVideoMode_Common@@UAE_NXZ,func,RTTI CVideoMode_Common vtable slot 7
+01DF5E79,?AddMode@CVideoMode_Common@@UAE_NHHH@Z,func,RTTI CVideoMode_Common vtable slot 3
+01DF5EDF,?GetMode@CVideoMode_Common@@UAEPAUvmode_s@@H@Z,func,RTTI CVideoMode_Common vtable slot 5
+01DF5F17,?GetModeCount@CVideoMode_Common@@UAEHXZ,func,RTTI CVideoMode_Common vtable slot 6
+01DF5F2B,?MaxBitsPerPixel@CVideoMode_Common@@UAEHXZ,func,RTTI CVideoMode_Common vtable slot 15; engine/sys_getmodes.cpp of the Linux hw.so DWARF
+01DF5F3B,?GetCurrentMode@CVideoMode_Common@@UAEPAUvmode_s@@XZ,func,RTTI CVideoMode_Common vtable slot 4
+01DF5F5B,?Init@CVideoMode_Common@@UAE_NPAX@Z,func,"RTTI CVideoMode_Common vtable slot 1; strings ScreenWidth, -forceres"
+01DF63BA,?VideoModeCompare@@YAHPBX0@Z,func,engine/sys_getmodes.cpp of the Linux hw.so DWARF; the qsort callback of CVideoMode_Common::Init
+01DF641E,?UpdateWindowPosition@CVideoMode_Common@@UAEXXZ,func,RTTI CVideoMode_Common vtable slot 10
+01DF649E,?ChangeDisplaySettingsToFullscreen@CVideoMode_Common@@UAEXXZ,func,RTTI CVideoMode_Common vtable slot 17; empty
+01DF64A9,?ReleaseFullScreen@CVideoMode_Common@@UAEXXZ,func,RTTI CVideoMode_Common vtable slot 16; empty
+01DF64B4,?AdjustWindowForMode@CVideoMode_Common@@IAEXXZ,func,"engine/sys_getmodes.cpp of the Linux hw.so DWARF; AdjustWindowRectEx, SetWindowPos, CenterEngineWindow"
+01DF65CC,?Shutdown@CVideoMode_Common@@UAEXXZ,func,RTTI CVideoMode_Common vtable slot 2
+01DF6649,?FlipScreen@CVideoMode_Common@@UAEXXZ,func,RTTI CVideoMode_Common vtable slot 11; empty
+01DF6654,?CenterEngineWindow@CVideoMode_Common@@IAEXPAUHWND__@@HH@Z,func,"engine/sys_getmodes.cpp of the Linux hw.so DWARF; GetSystemMetrics, game->SetWindowXY, SetWindowPos"
+01DF66DC,?LoadStartupGraphic@CVideoMode_Common@@IAEXXZ,func,engine/sys_getmodes.cpp of the Linux hw.so DWARF; string resource/BackgroundLoadingLayout.txt
+01DF69CE,?DrawStartupGraphic@CVideoMode_Common@@IAEXPAUHWND__@@@Z,func,"engine/sys_getmodes.cpp of the Linux hw.so DWARF; draws m_ImageID through a memory DC, called by Init with the main window"
+01DF6C87,?DrawImage_guess@CVideoMode_Common@@IAEXPAUHDC__@@PAEHHHHHH@Z,func,member of CVideoMode_Common between DrawStartupGraphic and RestoreVideo: scales one RGBA image onto the DC with SetPixel
+01DF6D8F,?RestoreVideo@CVideoMode_Common@@UAEXXZ,func,RTTI CVideoMode_Common vtable slot 12; empty
+01DF6D9A,?ReleaseVideo@CVideoMode_Common@@UAEXXZ,func,RTTI CVideoMode_Common vtable slot 13; empty
+01DF6DA5,??0CVideoMode_OpenGL@@QAE@_N@Z,func,"engine/sys_getmodes.cpp of the Linux hw.so DWARF; stores the CVideoMode_OpenGL vtable and m_bWindowed, called by VideoMode_Create"
+01DF6DD2,?Init@CVideoMode_OpenGL@@UAE_NPAX@Z,func,RTTI CVideoMode_OpenGL vtable slot 1
+01DF6E02,?ReleaseVideo@CVideoMode_OpenGL@@UAEXXZ,func,RTTI CVideoMode_OpenGL vtable slot 13
+01DF6E2E,?RestoreVideo@CVideoMode_OpenGL@@UAEXXZ,func,RTTI CVideoMode_OpenGL vtable slot 12
+01DF6EDE,?ReleaseFullScreen@CVideoMode_OpenGL@@UAEXXZ,func,RTTI CVideoMode_OpenGL vtable slot 16
+01DF6F22,?ChangeDisplaySettingsToFullscreen@CVideoMode_OpenGL@@UAEXXZ,func,RTTI CVideoMode_OpenGL vtable slot 17
+01DF701E,?FlipScreen@CVideoMode_OpenGL@@UAEXXZ,func,RTTI CVideoMode_OpenGL vtable slot 11
+01DF7029,??0CVideoMode_Direct3DFullScreen@@QAE@XZ,func,stores the vtable of RTTI class CVideoMode_Direct3DFullScreen
+01DF7081,??1CVideoMode_Direct3DFullScreen@@UAE@XZ,func,called by ??_GCVideoMode_Direct3DFullScreen (RTTI vtable slot 14)
+01DF709D,?Init@CVideoMode_Direct3DFullScreen@@UAE_NPAX@Z,func,RTTI CVideoMode_Direct3DFullScreen vtable slot 1
+01DF70E5,?RestoreVideo@CVideoMode_Direct3DFullScreen@@UAEXXZ,func,RTTI CVideoMode_Direct3DFullScreen vtable slot 12
+01DF712D,?IsWindowsNT_guess@CVideoMode_Direct3DFullScreen@@AAE_NXZ,func,GetVersionEx platform test called by the DirectDraw setup of CVideoMode_Direct3DFullScreen
+01DF7173,?InitDirectDraw_guess@CVideoMode_Direct3DFullScreen@@AAE_NXZ,func,"DirectDrawCreate, SetCooperativeLevel, SetDisplayMode and QGL_D3DShared, called by CVideoMode_Direct3DFullScreen::Init"
+01DF72CE,?ReleaseVideo@CVideoMode_Direct3DFullScreen@@UAEXXZ,func,RTTI CVideoMode_Direct3DFullScreen vtable slot 13
+01DF72FD,?SetFullScreenMode_guess@CVideoMode_Direct3DFullScreen@@AAEXXZ,func,"exclusive SetCooperativeLevel and SetDisplayMode, called by CVideoMode_Direct3DFullScreen::RestoreVideo"
+01DF737D,?Shutdown@CVideoMode_Direct3DFullScreen@@UAEXXZ,func,RTTI CVideoMode_Direct3DFullScreen vtable slot 2
+01DF7398,?ShutdownDirectDraw_guess@CVideoMode_Direct3DFullScreen@@AAEXXZ,func,"releases the DirectDraw objects, called by CVideoMode_Direct3DFullScreen::Shutdown"
+01DF742B,??0VideoMode_Direct3DWindowed@@QAE@XZ,func,stores the vtable of RTTI class VideoMode_Direct3DWindowed
+01DF7454,??1VideoMode_Direct3DWindowed@@UAE@XZ,func,called by ??_GVideoMode_Direct3DWindowed (RTTI vtable slot 14)
+01DF7470,?Init@VideoMode_Direct3DWindowed@@UAE_NPAX@Z,func,RTTI VideoMode_Direct3DWindowed vtable slot 1
+01DF759A,_VideoMode_SwitchMode,func,"engine/sys_getmodes.cpp of the Linux hw.so DWARF (line 1967, after VideoMode_Create); strings EngineDLL, EngineD3D, ScreenWindowed"
+01DF75EA,_VideoMode_SetVideoMode,func,"engine/sys_getmodes.cpp of the Linux hw.so DWARF (line 1985); strings ScreenWidth, ScreenHeight, ScreenBPP"
+01DF766F,_VideoMode_GetCurrentVideoMode,func,engine/sys_getmodes.cpp of the Linux hw.so DWARF; videomode->GetCurrentMode
+01DF7711,_VideoMode_IsWindowed,func,engine/sys_getmodes.cpp of the Linux hw.so DWARF; videomode->IsWindowedMode
+01DF7750,??_GCVideoMode_Common@@UAEPAXI@Z,func,RTTI CVideoMode_Common vtable slot 14
+01DF7780,??0IVideoMode@@QAE@XZ,func,"stores the IVideoMode vtable, called by the CVideoMode_Common constructor"
+01DF77A0,?GetName@CVideoMode_OpenGL@@UAEPBDXZ,func,RTTI CVideoMode_OpenGL vtable slot 0; returns gl
+01DF77B0,??_GCVideoMode_OpenGL@@UAEPAXI@Z,func,RTTI CVideoMode_OpenGL vtable slot 14
+01DF77E0,??1CVideoMode_OpenGL@@UAE@XZ,func,called by ??_GCVideoMode_OpenGL
+01DF7800,?GetName@CVideoMode_Direct3DFullScreen@@UAEPBDXZ,func,RTTI CVideoMode_Direct3DFullScreen vtable slot 0; returns d3d
+01DF7810,??_GCVideoMode_Direct3DFullScreen@@UAEPAXI@Z,func,RTTI CVideoMode_Direct3DFullScreen vtable slot 14
+01DF7840,?GetName@VideoMode_Direct3DWindowed@@UAEPBDXZ,func,RTTI VideoMode_Direct3DWindowed vtable slot 0; returns d3d
+01DF7850,??_GVideoMode_Direct3DWindowed@@UAEPAXI@Z,func,RTTI VideoMode_Direct3DWindowed vtable slot 14
+01DF7880,??0?$CUtlVector@Ubimage_t@CVideoMode_Common@@@@QAE@HH@Z,func,"COMDAT of CUtlVector<CVideoMode_Common::bimage_t> after sys_getmodes.cpp, in the order of our compiled object"
+01DF78C0,??1?$CUtlVector@Ubimage_t@CVideoMode_Common@@@@QAE@XZ,func,"COMDAT of CUtlVector<CVideoMode_Common::bimage_t> after sys_getmodes.cpp, in the order of our compiled object"
+01DF78E0,??A?$CUtlVector@Ubimage_t@CVideoMode_Common@@@@QAEAAUbimage_t@CVideoMode_Common@@H@Z,func,"COMDAT of CUtlVector<CVideoMode_Common::bimage_t> after sys_getmodes.cpp, in the order of our compiled object"
+01DF7900,?Count@?$CUtlVector@Ubimage_t@CVideoMode_Common@@@@QBEHXZ,func,"COMDAT of CUtlVector<CVideoMode_Common::bimage_t> after sys_getmodes.cpp, in the order of our compiled object"
+01DF7920,?AddToTail@?$CUtlVector@Ubimage_t@CVideoMode_Common@@@@QAEHXZ,func,"COMDAT of CUtlVector<CVideoMode_Common::bimage_t> after sys_getmodes.cpp, in the order of our compiled object"
+01DF7940,?Remove@?$CUtlVector@Ubimage_t@CVideoMode_Common@@@@QAEXH@Z,func,"COMDAT of CUtlVector<CVideoMode_Common::bimage_t> after sys_getmodes.cpp, in the order of our compiled object"
+01DF7980,?Purge@?$CUtlVector@Ubimage_t@CVideoMode_Common@@@@QAEXXZ,func,"COMDAT of CUtlVector<CVideoMode_Common::bimage_t> after sys_getmodes.cpp, in the order of our compiled object"
+01DF79B0,?Element@?$CUtlVector@Ubimage_t@CVideoMode_Common@@@@QAEAAUbimage_t@CVideoMode_Common@@H@Z,func,"COMDAT of CUtlVector<CVideoMode_Common::bimage_t> after sys_getmodes.cpp, in the order of our compiled object"
+01DF79D0,?InsertBefore@?$CUtlVector@Ubimage_t@CVideoMode_Common@@@@QAEHH@Z,func,"COMDAT of CUtlVector<CVideoMode_Common::bimage_t> after sys_getmodes.cpp, in the order of our compiled object"
+01DF7A10,?RemoveAll@?$CUtlVector@Ubimage_t@CVideoMode_Common@@@@QAEXXZ,func,"COMDAT of CUtlVector<CVideoMode_Common::bimage_t> after sys_getmodes.cpp, in the order of our compiled object"
+01DF7A60,?ShiftElementsLeft@?$CUtlVector@Ubimage_t@CVideoMode_Common@@@@IAEXHH@Z,func,"COMDAT of CUtlVector<CVideoMode_Common::bimage_t> after sys_getmodes.cpp, in the order of our compiled object"
+01DF7AC0,?ResetDbgInfo@?$CUtlVector@Ubimage_t@CVideoMode_Common@@@@IAEXXZ,func,"COMDAT of CUtlVector<CVideoMode_Common::bimage_t> after sys_getmodes.cpp, in the order of our compiled object"
+01DF7AD0,??0?$CUtlMemory@Ubimage_t@CVideoMode_Common@@@@QAE@HH@Z,func,"COMDAT of CUtlVector<CVideoMode_Common::bimage_t> after sys_getmodes.cpp, in the order of our compiled object"
+01DF7B20,??1?$CUtlMemory@Ubimage_t@CVideoMode_Common@@@@QAE@XZ,func,"COMDAT of CUtlVector<CVideoMode_Common::bimage_t> after sys_getmodes.cpp, in the order of our compiled object"
+01DF7B40,??A?$CUtlMemory@Ubimage_t@CVideoMode_Common@@@@QAEAAUbimage_t@CVideoMode_Common@@H@Z,func,"COMDAT of CUtlVector<CVideoMode_Common::bimage_t> after sys_getmodes.cpp, in the order of our compiled object"
+01DF7B60,?Purge@?$CUtlMemory@Ubimage_t@CVideoMode_Common@@@@QAEXXZ,func,"COMDAT of CUtlVector<CVideoMode_Common::bimage_t> after sys_getmodes.cpp, in the order of our compiled object"
+01DF7BB0,?Destruct@@YAXPAUbimage_t@CVideoMode_Common@@@Z,func,"COMDAT of CUtlVector<CVideoMode_Common::bimage_t> after sys_getmodes.cpp, in the order of our compiled object"
+01DF7BC0,?GrowVector@?$CUtlVector@Ubimage_t@CVideoMode_Common@@@@IAEXH@Z,func,"COMDAT of CUtlVector<CVideoMode_Common::bimage_t> after sys_getmodes.cpp, in the order of our compiled object"
+01DF7C20,?ShiftElementsRight@?$CUtlVector@Ubimage_t@CVideoMode_Common@@@@IAEXHH@Z,func,"COMDAT of CUtlVector<CVideoMode_Common::bimage_t> after sys_getmodes.cpp, in the order of our compiled object"
+01DF7C80,?IsExternallyAllocated@?$CUtlMemory@Ubimage_t@CVideoMode_Common@@@@QBE_NXZ,func,"COMDAT of CUtlVector<CVideoMode_Common::bimage_t> after sys_getmodes.cpp, in the order of our compiled object"
+01DF7CA0,?Construct@@YAXPAUbimage_t@CVideoMode_Common@@@Z,func,"COMDAT of CUtlVector<CVideoMode_Common::bimage_t> after sys_getmodes.cpp, in the order of our compiled object"
+01DF7CC0,?NumAllocated@?$CUtlMemory@Ubimage_t@CVideoMode_Common@@@@QBEHXZ,func,"COMDAT of CUtlVector<CVideoMode_Common::bimage_t> after sys_getmodes.cpp, in the order of our compiled object"
+01DF7CE0,?Grow@?$CUtlMemory@Ubimage_t@CVideoMode_Common@@@@QAEXH@Z,func,"COMDAT of CUtlVector<CVideoMode_Common::bimage_t> after sys_getmodes.cpp, in the order of our compiled object"
+01DD1B07,_Snd_ReleaseBuffer,func,"Linux hw.so symbol Snd_ReleaseBuffer and engine_api_t of the HL SDK common/engine_launcher_api.h; S_Shutdown when the sound buffer is released, called by CVideoMode_Common::AdjustWindowForMode before the mode change"
+01DD1B45,_Snd_AcquireBuffer,func,"Linux hw.so symbol Snd_AcquireBuffer and engine_api_t of the HL SDK common/engine_launcher_api.h; S_Startup, called by CVideoMode_Common::AdjustWindowForMode after the mode change"
+01D9D492,_QGL_D3DShared,func,"engine_api_t QGL_D3DShared( struct tagD3DGlobals * ) of the HL SDK common/engine_launcher_api.h; copies two fields of the struct, right before QGL_D3DInit; called by the Direct3D video mode"
+01ED004C,?ddraw_guess@@3PAVILauncherDirectDraw@@A,data,pointer to the ILauncherDirectDraw (RTTI CLauncherDirectDraw) whose slots CVideoMode_Common::Init calls to list the display modes
+01E149E0,_DirectDrawCreate@12,func,"import thunk jmp [DDRAW.DLL DirectDrawCreate], called by CVideoMode_Direct3DFullScreen::InitDirectDraw_guess (ddraw.h declares it without dllimport)"

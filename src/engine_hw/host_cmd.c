@@ -141,8 +141,8 @@ qboolean	Voice_RecordStop( void );
 void	Master_SetMaster_f( void );
 
 // sys_dll2.cpp (names unproven: both store the choice in the registry for the next start)
-void	Sys_SetRenderer_guess( int hardware, int windowed );	// 0x01DF759A, "EngineDLL", "EngineD3D", "ScreenWindowed"
-void	Sys_SetVideoMode_guess( int width, int height, int bpp );	// 0x01DF75EA, "ScreenWidth", "ScreenHeight", "ScreenBPP"
+void	VideoMode_SwitchMode( int hardware, int windowed );
+void	VideoMode_SetVideoMode( int width, int height, int bpp );
 
 // pr_edict.c
 edict_t	*CreateNamedEntity( int className );
@@ -3993,7 +3993,7 @@ void Host_SetRenderer_f( void )
 	if ( Cmd_Argc() == 3 && !stricmp( Cmd_Argv( 2 ), "windowed" ) )
 		windowed = 1;
 
-	Sys_SetRenderer_guess( hardware, windowed );
+	VideoMode_SwitchMode( hardware, windowed );
 }
 
 /*
@@ -4018,7 +4018,7 @@ void Host_SetVideoMode_f( void )
 	if ( Cmd_Argc() == 4 )
 		bpp = Q_atoi( Cmd_Argv( 3 ) );
 
-	Sys_SetVideoMode_guess( w, h, bpp );
+	VideoMode_SetVideoMode( w, h, bpp );
 }
 
 /*
