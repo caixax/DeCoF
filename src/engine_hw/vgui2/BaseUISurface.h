@@ -184,6 +184,14 @@ public:
 	int GetHTMLWindowCount_guess() { return m_HtmlWindows_guess.GetCount(); }
 	HtmlWindow *GetHTMLWindow_guess( int i ) { return m_HtmlWindows_guess[i]; }
 
+	// the mouse movement since the last call (VguiWrap2_GetMouseDelta)
+	void GetMouseDelta( int *x, int *y )
+	{
+		*x = m_deltax;
+		*y = m_deltay;
+		m_deltax = m_deltay = 0;
+	}
+
 private:
 	void InternalSolveTraverse( VPANEL panel );
 	void InternalThinkTraverse( VPANEL panel );
