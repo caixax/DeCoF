@@ -29542,12 +29542,12 @@ hw,01E0E8FA,17,?VoiceSE_InitMouth@@YAXH@Z,VoiceSE_InitMouth,ENGINE,engine/voice_
 hw,01E0E90B,17,?VoiceSE_CloseMouth@@YAXH@Z,VoiceSE_CloseMouth,ENGINE,engine/voice_sound_engine_interface.cpp,,,MATCHED,100,,
 hw,01E0E91C,25,?VoiceSE_MoveMouth@@YAXHPAFH@Z,VoiceSE_MoveMouth,ENGINE,engine/voice_sound_engine_interface.cpp,,,MATCHED,100,,
 hw,01E0E935,20,_VoiceSE_NotifyFreeChannel,,ENGINE,engine/voice_sound_engine_interface.cpp,,,MATCHED,100,,
-hw,01E0E950,270,?ReadWaveFile@@YA_NPBDAAPADAAH222@Z,ReadWaveFile,ENGINE,engine/voice_wavefile.cpp,,,TODO,,,linux: _Z12ReadWaveFilePKcRPcRiS3_S3_S3_
-hw,01E0EA5E,31,,,ENGINE,engine/voice_wavefile.cpp,,,TODO,,,
-hw,01E0EA7D,32,,,ENGINE,engine/voice_wavefile.cpp,,,TODO,,,
-hw,01E0EA9D,383,?WriteWaveFile@@YA_NPBD0HHHH@Z,WriteWaveFile,ENGINE,engine/voice_wavefile.cpp,,,TODO,,,linux: _Z13WriteWaveFilePKcS0_iiii
-hw,01E0EC1C,25,,,ENGINE,engine/voice_wavefile.cpp,,,TODO,,,
-hw,01E0EC35,25,,,ENGINE,engine/voice_wavefile.cpp,,,TODO,,,
+hw,01E0E950,270,?ReadWaveFile@@YA_NPBDAAPADAAH222@Z,ReadWaveFile,ENGINE,engine/voice_wavefile.cpp,,,MATCHED,100,hw_manual.csv,linux: _Z12ReadWaveFilePKcRPcRiS3_S3_S3_
+hw,01E0EA5E,31,?ReadDWord@@YAKPAX@Z,ReadDWord,ENGINE,engine/voice_wavefile.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E0EA7D,32,?ReadWord@@YAGPAX@Z,ReadWord,ENGINE,engine/voice_wavefile.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E0EA9D,383,?WriteWaveFile@@YA_NPBD0HHHH@Z,WriteWaveFile,ENGINE,engine/voice_wavefile.cpp,,,MATCHED,100,hw_manual.csv,linux: _Z13WriteWaveFilePKcS0_iiii
+hw,01E0EC1C,25,?WriteDWord@@YAXPAXK@Z,WriteDWord,ENGINE,engine/voice_wavefile.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E0EC35,25,?WriteWord@@YAXPAXG@Z,WriteWord,ENGINE,engine/voice_wavefile.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01E0EC50,116,_W_CleanupName,,ENGINE,engine/wad.c,,,MATCHED,100,,
 hw,01E0ECC4,481,_W_LoadWadFile,W_LoadWadFile,ENGINE,engine/wad.c,,,MATCHED,100,linux_symbols:string:0.833,
 hw,01E0EEA5,140,_W_GetLumpinfo,W_GetLumpinfo,ENGINE,engine/wad.c,,,MATCHED,100,,

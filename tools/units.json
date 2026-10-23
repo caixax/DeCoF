@@ -3302,6 +3302,11 @@
           "name": "engine/l_studio",
           "source": "src/engine_hw/l_studio.c",
           "functions_file": "tools/units/hw_engine_l_studio.txt"
+        },
+        {
+          "name": "engine/voice_wavefile",
+          "source": "src/engine_hw/voice_wavefile.cpp",
+          "functions_file": "tools/units/hw_engine_voice_wavefile.txt"
         }
       ]
     },
