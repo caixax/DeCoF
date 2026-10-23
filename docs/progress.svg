@@ -26,11 +26,11 @@
 <rect x="24.00" y="248" width="712.00" height="18" fill="#2da44e"/>
 <text x="24" y="282" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#57606a" xml:space="preserve">MATCHED 100.0% (367)   EQUIVALENT 0.0% (0)   TODO 0.0% (0)   22929 code bytes</text>
 <text x="24" y="314" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#1f2328">hw.dll</text>
-<text x="736" y="314" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#1f2328" text-anchor="end">83.7% done (6100 of 8104 functions)</text>
+<text x="736" y="314" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#1f2328" text-anchor="end">83.9% done (6123 of 8104 functions)</text>
 <rect x="24" y="322" width="712" height="18" rx="4" fill="#afb8c1"/>
-<rect x="24.00" y="322" width="579.86" height="18" fill="#2da44e"/>
-<rect x="603.86" y="322" width="15.98" height="18" fill="#d4a72c"/>
-<text x="24" y="356" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#57606a" xml:space="preserve">MATCHED 81.4% (6074)   EQUIVALENT 2.2% (26)   TODO 16.3% (2004)   1350830 code bytes   (not started (VC6 installed; processor pack and VS 2005 objects need those compilers))</text>
+<rect x="24.00" y="322" width="581.06" height="18" fill="#2da44e"/>
+<rect x="605.06" y="322" width="15.98" height="18" fill="#d4a72c"/>
+<text x="24" y="356" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#57606a" xml:space="preserve">MATCHED 81.6% (6097)   EQUIVALENT 2.2% (26)   TODO 16.1% (1981)   1350830 code bytes   (not started (VC6 installed; processor pack and VS 2005 objects need those compilers))</text>
 <text x="24" y="388" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#1f2328">GameUI.dll</text>
 <text x="736" y="388" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#1f2328" text-anchor="end">33.8% done (1961 of 5550 functions)</text>
 <rect x="24" y="396" width="712" height="18" rx="4" fill="#afb8c1"/>
@@ -55,10 +55,10 @@
 <rect x="679.86" y="618" width="38.13" height="18" fill="#d4a72c"/>
 <text x="24" y="652" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#57606a" xml:space="preserve">MATCHED 92.1% (7914)   EQUIVALENT 5.4% (36)   TODO 2.5% (48)   1785281 code bytes</text>
 <text x="24" y="684" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#1f2328">All binaries (CoFLaunchApp.exe not counted yet)</text>
-<text x="736" y="684" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#1f2328" text-anchor="end">81.2% done (16055 of 21704 functions)</text>
+<text x="736" y="684" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#1f2328" text-anchor="end">81.2% done (16078 of 21704 functions)</text>
 <rect x="24" y="692" width="712" height="18" rx="4" fill="#afb8c1"/>
-<rect x="24.00" y="692" width="554.38" height="18" fill="#2da44e"/>
-<rect x="578.38" y="692" width="23.43" height="18" fill="#d4a72c"/>
-<text x="24" y="726" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#57606a" xml:space="preserve">MATCHED 77.9% (15992)   EQUIVALENT 3.3% (63)   TODO 18.8% (5649)   3830822 code bytes</text>
-<text x="24" y="756" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="11" fill="#57606a">Target build 1.6a | commit be313f1 | 2026-10-23 | numbers from docs/progress.csv</text>
+<rect x="24.00" y="692" width="554.80" height="18" fill="#2da44e"/>
+<rect x="578.80" y="692" width="23.43" height="18" fill="#d4a72c"/>
+<text x="24" y="726" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#57606a" xml:space="preserve">MATCHED 77.9% (16015)   EQUIVALENT 3.3% (63)   TODO 18.8% (5626)   3830822 code bytes</text>
+<text x="24" y="756" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="11" fill="#57606a">Target build 1.6a | commit 89c092d | 2026-10-23 | numbers from docs/progress.csv</text>
 </svg>
