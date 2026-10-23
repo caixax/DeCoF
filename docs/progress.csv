@@ -28748,85 +28748,85 @@ hw,01DF9C99,42,,,ENGINE,engine/cpu_guess.cpp,,,TODO,,,
 hw,01DF9CC3,194,,,ENGINE,engine/cpu_guess.cpp,,,TODO,,,
 hw,01DF9D85,140,,,ENGINE,engine/cpu_guess.cpp,,,TODO,,,
 hw,01DF9E3F,146,,,ENGINE,engine/cpu_guess.cpp,,,TODO,,,
-hw,01DF9F00,10,,,ENGINE,engine/SystemWrapper.cpp,,,TODO,,,linux: _Z15COM_BuildNumberv
-hw,01DF9F0A,79,,,ENGINE,engine/SystemWrapper.cpp,,,TODO,,,linux: _Z19COM_RemoveEvilCharsPc
-hw,01DF9F59,15,,,ENGINE,engine/SystemWrapper.cpp,,,TODO,,,
-hw,01DF9F68,17,,,ENGINE,engine/SystemWrapper.cpp,,,TODO,,,
-hw,01DF9F79,18,,,ENGINE,engine/SystemWrapper.cpp,,,TODO,,,
-hw,01DF9F8B,15,,,ENGINE,engine/SystemWrapper.cpp,,,TODO,,,
-hw,01DF9F9A,27,_SystemWrapper_Init,SystemWrapper_Init,ENGINE,engine/SystemWrapper.cpp,,,TODO,,linux_symbols:string:0.75,
-hw,01DF9FB5,23,_SystemWrapper_RunFrame,,UNKNOWN,guess:engine/SystemWrapper.cpp,,,TODO,,,
-hw,01DF9FCC,15,_SystemWrapper_ShutDown,,UNKNOWN,guess:engine/SystemWrapper.cpp,,,TODO,,,
-hw,01DF9FDB,33,,,UNKNOWN,guess:engine/SystemWrapper.cpp,,,TODO,,,
-hw,01DF9FFC,19,,,UNKNOWN,guess:engine/SystemWrapper.cpp,,,TODO,,,
-hw,01DFA00F,111,,,UNKNOWN,guess:engine/SystemWrapper.cpp,,,TODO,,,
-hw,01DFA07E,150,,,UNKNOWN,guess:engine/SystemWrapper.cpp,,,TODO,,,
-hw,01DFA114,154,,,UNKNOWN,guess:engine/SystemWrapper.cpp,,,TODO,,,
-hw,01DFA1AE,16,,,UNKNOWN,guess:engine/SystemWrapper.cpp,,,TODO,,,
-hw,01DFA1BE,16,,,UNKNOWN,guess:engine/SystemWrapper.cpp,,,TODO,,,
-hw,01DFA1CE,49,,,UNKNOWN,guess:engine/SystemWrapper.cpp,,,TODO,,,
-hw,01DFA1FF,49,,,UNKNOWN,guess:engine/SystemWrapper.cpp,,,TODO,,,
-hw,01DFA230,50,,,UNKNOWN,guess:engine/SystemWrapper.cpp,,,TODO,,,
-hw,01DFA262,46,,,UNKNOWN,guess:engine/SystemWrapper.cpp,,,TODO,,,
-hw,01DFA290,29,,,UNKNOWN,guess:engine/SystemWrapper.cpp,,,TODO,,,
-hw,01DFA2AD,25,,,UNKNOWN,guess:engine/SystemWrapper.cpp,,,TODO,,,
-hw,01DFA2C6,37,,,UNKNOWN,guess:engine/SystemWrapper.cpp,,,TODO,,,
-hw,01DFA2EB,37,,DoMessageBox,ENGINE,guess:engine/SystemWrapper.cpp,,,TODO,,ghidra,
-hw,01DFA310,29,,,UNKNOWN,guess:engine/SystemWrapper.cpp,,,TODO,,,
-hw,01DFA32D,45,,,UNKNOWN,guess:engine/SystemWrapper.cpp,,,TODO,,,
-hw,01DFA35A,29,,,UNKNOWN,guess:engine/SystemWrapper.cpp,,,TODO,,,
-hw,01DFA377,13,,,UNKNOWN,guess:engine/SystemWrapper.cpp,,,TODO,,,
-hw,01DFA384,192,,,UNKNOWN,guess:engine/SystemWrapper.cpp,,,TODO,,,
-hw,01DFA444,187,,,UNKNOWN,guess:engine/SystemWrapper.cpp,,,TODO,,,
-hw,01DFA4FF,73,,,UNKNOWN,guess:engine/SystemWrapper.cpp,,,TODO,,,
-hw,01DFA548,123,,SystemWrapper::Errorf,ENGINE,engine/SystemWrapper.cpp,,,TODO,,linux_symbols:string:0.525,
-hw,01DFA5C3,16,,,UNKNOWN,engine/SystemWrapper.cpp,,,TODO,,,linux: _ZN13SystemWrapper13GetStatusLineEv
-hw,01DFA5D3,242,,,UNKNOWN,engine/SystemWrapper.cpp,,,TODO,,,linux: _ZN13SystemWrapper4InitEP11IBaseSystemiPc
-hw,01DFA6C5,24,,,UNKNOWN,engine/SystemWrapper.cpp,,,TODO,,,linux: _ZN13SystemWrapper4StopEv
-hw,01DFA6DD,238,,,UNKNOWN,engine/SystemWrapper.cpp,,,TODO,,,linux: _ZN13SystemWrapper8ShutDownEv
-hw,01DFA7CB,135,,SystemWrapper::ExecuteCommand,ENGINE,engine/SystemWrapper.cpp,,,TODO,,linux_symbols:string:0.833,
-hw,01DFA852,298,,SystemWrapper::CMD_LoadModule,ENGINE,engine/SystemWrapper.cpp,,,TODO,,linux_symbols:string:0.75,
-hw,01DFA97C,303,,SystemWrapper::CMD_UnloadModule,ENGINE,engine/SystemWrapper.cpp,,,TODO,,linux_symbols:string:0.75,
-hw,01DFAAAB,557,,SystemWrapper::GetLibrary,ENGINE,engine/SystemWrapper.cpp,,,TODO,,linux_symbols:string:0.5,
-hw,01DFACD8,26,,SystemWrapper::SetTitle,ENGINE,engine/SystemWrapper.cpp,,,TODO,,linux_symbols:string:0.75,
-hw,01DFACF2,26,,SystemWrapper::SetStatusLine,ENGINE,engine/SystemWrapper.cpp,,,TODO,,linux_symbols:string:0.75,
-hw,01DFAD0C,20,,,UNKNOWN,engine/SystemWrapper.cpp,,,TODO,,,linux: _ZN13SystemWrapper7GetTimeEv
-hw,01DFAD20,26,,SystemWrapper::RedirectOutput,ENGINE,engine/SystemWrapper.cpp,,,TODO,,linux_symbols:string:0.75,
-hw,01DFAD3A,65,,,UNKNOWN,engine/SystemWrapper.cpp,,,TODO,,,linux: _ZN13SystemWrapper6PrintfEPcz
-hw,01DFAD7B,159,,,UNKNOWN,engine/SystemWrapper.cpp,,,TODO,,,linux: _ZN13SystemWrapper8RunFrameEd
-hw,01DFAE1A,71,,,UNKNOWN,engine/SystemWrapper.cpp,,,TODO,,,linux: _ZN13SystemWrapper11ExecuteFileEPc
-hw,01DFAE61,60,,,UNKNOWN,engine/SystemWrapper.cpp,,,TODO,,,linux: _ZN13SystemWrapper7DPrintfEPcz
-hw,01DFAE9D,225,,SystemWrapper::RegisterCommand,ENGINE,engine/SystemWrapper.cpp,,,TODO,,linux_symbols:string:0.75,
-hw,01DFAF7E,16,,,UNKNOWN,engine/SystemWrapper.cpp,,,TODO,,,linux: _ZN13SystemWrapper13GetFileSystemEv
-hw,01DFAF8E,39,,,UNKNOWN,engine/SystemWrapper.cpp,,,TODO,,,linux: _ZN13SystemWrapper8LoadFileEPKcPi
-hw,01DFAFB5,25,,,UNKNOWN,engine/SystemWrapper.cpp,,,TODO,,,linux: _ZN13SystemWrapper8FreeFileEPh
-hw,01DFAFCE,20,,,UNKNOWN,engine/SystemWrapper.cpp,,,TODO,,,linux: _ZN13SystemWrapper7GetTickEv
-hw,01DFAFE2,187,,SystemWrapper::CMD_Modules,ENGINE,engine/SystemWrapper.cpp,,,TODO,,linux_symbols:string:0.75,
-hw,01DFB09D,16,,SystemWrapper::GetType,ENGINE,engine/SystemWrapper.cpp,,,TODO,,linux_symbols:string:0.75,
-hw,01DFB0AD,26,,,UNKNOWN,engine/SystemWrapper.cpp,,,TODO,,,linux: _ZN13SystemWrapper17GetCommandMatchesEPcP10ObjectList
-hw,01DFB0C7,170,,,UNKNOWN,engine/SystemWrapper.cpp,,,TODO,,,linux: _ZN13SystemWrapper10FindModuleEPcS0_
-hw,01DFB171,51,,SystemWrapper::LogConsole,ENGINE,engine/SystemWrapper.cpp,,,TODO,,linux_symbols:string:0.75,
-hw,01DFB1A4,16,,,UNKNOWN,engine/SystemWrapper.cpp,,,TODO,,,linux: _ZN13SystemWrapper8GetPanelEv
-hw,01DFB1B4,15,,,UNKNOWN,engine/SystemWrapper.cpp,,,TODO,,,linux: _ZN13SystemWrapper8InitVGUIEP11IVGuiModule
-hw,01DFB1C3,130,,SystemWrapper::AddModule,ENGINE,engine/SystemWrapper.cpp,,,TODO,,linux_symbols:string:0.75,
-hw,01DFB245,151,,SystemWrapper::GetModule,ENGINE,engine/SystemWrapper.cpp,,,TODO,,linux_symbols:callseq:0.833,
-hw,01DFB2DC,283,,,UNKNOWN,engine/SystemWrapper.cpp,,,TODO,,,linux: _ZN13SystemWrapper12RemoveModuleEP13ISystemModule
-hw,01DFB3F7,334,,SystemWrapper::ExecuteString,ENGINE,engine/SystemWrapper.cpp,,,TODO,,linux_symbols:string:0.75,
-hw,01DFB545,182,,,ENGINE,engine/SystemWrapper.cpp,,,TODO,,,
-hw,01DFB600,39,,,ENGINE,engine/SystemWrapper.cpp,,,TODO,,,
-hw,01DFB630,85,,,ENGINE,engine/SystemWrapper.cpp,,,TODO,,,
-hw,01DFB690,55,,,ENGINE,engine/SystemWrapper.cpp,,,TODO,,,
-hw,01DFB6D0,33,,,ENGINE,engine/SystemWrapper.cpp,,,TODO,,,
-hw,01DFB700,41,,,ENGINE,engine/SystemWrapper.cpp,,,TODO,,,
-hw,01DFB730,13,,,ENGINE,engine/SystemWrapper.cpp,,,TODO,,,
-hw,01DFB740,13,,,ENGINE,engine/SystemWrapper.cpp,,,TODO,,,
-hw,01DFB750,85,,,ENGINE,engine/SystemWrapper.cpp,,,TODO,,,
-hw,01DFB7B0,55,,,ENGINE,engine/SystemWrapper.cpp,,,TODO,,,
-hw,01DFB7F0,33,,,ENGINE,engine/SystemWrapper.cpp,,,TODO,,,
-hw,01DFB820,41,,,ENGINE,engine/SystemWrapper.cpp,,,TODO,,,
-hw,01DFB860,63,,,ENGINE,engine/SystemWrapper.cpp,,,TODO,,,
-hw,01DFB990,63,,,ENGINE,engine/SystemWrapper.cpp,,,TODO,,,
-hw,01DFB9D0,39,,,ENGINE,engine/SystemWrapper.cpp,,,TODO,,,
+hw,01DF9F00,10,?COM_BuildNumber@@YAHXZ,COM_BuildNumber,ENGINE,engine/SystemWrapper.cpp,,,MATCHED,100,hw_manual.csv,linux: _Z15COM_BuildNumberv
+hw,01DF9F0A,79,?COM_RemoveEvilChars@@YAXPAD@Z,COM_RemoveEvilChars,ENGINE,engine/SystemWrapper.cpp,,,MATCHED,100,hw_manual.csv,linux: _Z19COM_RemoveEvilCharsPc
+hw,01DF9F59,15,_$E5,,ENGINE,engine/SystemWrapper.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DF9F68,17,_$E2,,ENGINE,engine/SystemWrapper.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DF9F79,18,_$E4,,ENGINE,engine/SystemWrapper.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DF9F8B,15,_$E3,,ENGINE,engine/SystemWrapper.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DF9F9A,27,_SystemWrapper_Init,SystemWrapper_Init,ENGINE,engine/SystemWrapper.cpp,,,MATCHED,100,linux_symbols:string:0.75,
+hw,01DF9FB5,23,_SystemWrapper_RunFrame,,ENGINE,engine/SystemWrapper.cpp,,,MATCHED,100,,
+hw,01DF9FCC,15,_SystemWrapper_ShutDown,,ENGINE,engine/SystemWrapper.cpp,,,MATCHED,100,,
+hw,01DF9FDB,33,_SystemWrapper_LoadModule,,ENGINE,engine/SystemWrapper.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DF9FFC,19,_SystemWrapper_ExecuteString,,ENGINE,engine/SystemWrapper.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DFA00F,111,_SystemWrapperCommandForwarder,,ENGINE,engine/SystemWrapper.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DFA07E,150,??0EngineWrapper@@QAE@XZ,EngineWrapper::EngineWrapper,ENGINE,engine/SystemWrapper.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DFA114,154,??1EngineWrapper@@UAE@XZ,EngineWrapper::~EngineWrapper,ENGINE,engine/SystemWrapper.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DFA1AE,16,?GetType@EngineWrapper@@UAEPADXZ,EngineWrapper::GetType,ENGINE,engine/SystemWrapper.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DFA1BE,16,?GetStatusLine@EngineWrapper@@UAEPADXZ,EngineWrapper::GetStatusLine,ENGINE,engine/SystemWrapper.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DFA1CE,49,?GetViewOrigin@EngineWrapper@@UAE_NPAM@Z,EngineWrapper::GetViewOrigin,ENGINE,engine/SystemWrapper.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DFA1FF,49,?GetViewAngles@EngineWrapper@@UAE_NPAM@Z,EngineWrapper::GetViewAngles,ENGINE,engine/SystemWrapper.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DFA230,50,?GetCvarFloat@EngineWrapper@@UAEMPAD@Z,EngineWrapper::GetCvarFloat,ENGINE,engine/SystemWrapper.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DFA262,46,?GetCvarString@EngineWrapper@@UAEPADPAD@Z,EngineWrapper::GetCvarString,ENGINE,engine/SystemWrapper.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DFA290,29,?SetCvar@EngineWrapper@@UAEXPAD0@Z,EngineWrapper::SetCvar,ENGINE,engine/SystemWrapper.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DFA2AD,25,?Cbuf_AddText@EngineWrapper@@UAEXPAD@Z,EngineWrapper::Cbuf_AddText,ENGINE,engine/SystemWrapper.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DFA2C6,37,?DemoUpdateClientData@EngineWrapper@@UAEXPAUclient_data_s@@@Z,EngineWrapper::DemoUpdateClientData,ENGINE,engine/SystemWrapper.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DFA2EB,37,?CL_QueueEvent@EngineWrapper@@UAEXHHMPAUevent_args_s@@@Z,EngineWrapper::CL_QueueEvent,ENGINE,engine/SystemWrapper.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DFA310,29,?HudWeaponAnim@EngineWrapper@@UAEXHH@Z,EngineWrapper::HudWeaponAnim,ENGINE,engine/SystemWrapper.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DFA32D,45,?CL_DemoPlaySound@EngineWrapper@@UAEXHPADMMHH@Z,EngineWrapper::CL_DemoPlaySound,ENGINE,engine/SystemWrapper.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DFA35A,29,?ClientDLL_ReadDemoBuffer@EngineWrapper@@UAEXHPAE@Z,EngineWrapper::ClientDLL_ReadDemoBuffer,ENGINE,engine/SystemWrapper.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DFA377,13,?GetTraceEntity@EngineWrapper@@UAEHXZ,EngineWrapper::GetTraceEntity,ENGINE,engine/SystemWrapper.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DFA384,192,??0SystemWrapper@@QAE@XZ,SystemWrapper::SystemWrapper,ENGINE,engine/SystemWrapper.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DFA444,187,??1SystemWrapper@@UAE@XZ,SystemWrapper::~SystemWrapper,ENGINE,engine/SystemWrapper.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DFA4FF,73,?CheckParam@SystemWrapper@@UAEPADPAD@Z,SystemWrapper::CheckParam,ENGINE,engine/SystemWrapper.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DFA548,123,?Errorf@SystemWrapper@@UAAXPADZZ,SystemWrapper::Errorf,ENGINE,engine/SystemWrapper.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DFA5C3,16,?GetStatusLine@SystemWrapper@@UAEPADXZ,SystemWrapper::GetStatusLine,ENGINE,engine/SystemWrapper.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13SystemWrapper13GetStatusLineEv
+hw,01DFA5D3,242,?Init@SystemWrapper@@UAE_NPAVIBaseSystem@@HPAD@Z,SystemWrapper::Init,ENGINE,engine/SystemWrapper.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13SystemWrapper4InitEP11IBaseSystemiPc
+hw,01DFA6C5,24,?Stop@SystemWrapper@@UAEXXZ,SystemWrapper::Stop,ENGINE,engine/SystemWrapper.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13SystemWrapper4StopEv
+hw,01DFA6DD,238,?ShutDown@SystemWrapper@@UAEXXZ,SystemWrapper::ShutDown,ENGINE,engine/SystemWrapper.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13SystemWrapper8ShutDownEv
+hw,01DFA7CB,135,?ExecuteCommand@SystemWrapper@@UAEXHPAD@Z,SystemWrapper::ExecuteCommand,ENGINE,engine/SystemWrapper.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DFA852,298,?CMD_LoadModule@SystemWrapper@@IAEXPAD@Z,SystemWrapper::CMD_LoadModule,ENGINE,engine/SystemWrapper.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DFA97C,303,?CMD_UnloadModule@SystemWrapper@@IAEXPAD@Z,SystemWrapper::CMD_UnloadModule,ENGINE,engine/SystemWrapper.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DFAAAB,557,?GetLibrary@SystemWrapper@@IAEPAUlibrary_t@1@PAD@Z,SystemWrapper::GetLibrary,ENGINE,engine/SystemWrapper.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DFACD8,26,?SetTitle@SystemWrapper@@UAEXPAD@Z,SystemWrapper::SetTitle,ENGINE,engine/SystemWrapper.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DFACF2,26,?SetStatusLine@SystemWrapper@@UAEXPAD@Z,SystemWrapper::SetStatusLine,ENGINE,engine/SystemWrapper.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DFAD0C,20,?GetTime@SystemWrapper@@UAENXZ,SystemWrapper::GetTime,ENGINE,engine/SystemWrapper.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13SystemWrapper7GetTimeEv
+hw,01DFAD20,26,?RedirectOutput@SystemWrapper@@UAEXPADH@Z,SystemWrapper::RedirectOutput,ENGINE,engine/SystemWrapper.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DFAD3A,65,?Printf@SystemWrapper@@UAAXPADZZ,SystemWrapper::Printf,ENGINE,engine/SystemWrapper.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13SystemWrapper6PrintfEPcz
+hw,01DFAD7B,159,?RunFrame@SystemWrapper@@UAEXN@Z,SystemWrapper::RunFrame,ENGINE,engine/SystemWrapper.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13SystemWrapper8RunFrameEd
+hw,01DFAE1A,71,?ExecuteFile@SystemWrapper@@UAEXPAD@Z,SystemWrapper::ExecuteFile,ENGINE,engine/SystemWrapper.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13SystemWrapper11ExecuteFileEPc
+hw,01DFAE61,60,?DPrintf@SystemWrapper@@UAAXPADZZ,SystemWrapper::DPrintf,ENGINE,engine/SystemWrapper.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13SystemWrapper7DPrintfEPcz
+hw,01DFAE9D,225,?RegisterCommand@SystemWrapper@@UAE_NPADPAVISystemModule@@H@Z,SystemWrapper::RegisterCommand,ENGINE,engine/SystemWrapper.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DFAF7E,16,?GetFileSystem@SystemWrapper@@UAEPAVIFileSystem@@XZ,SystemWrapper::GetFileSystem,ENGINE,engine/SystemWrapper.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13SystemWrapper13GetFileSystemEv
+hw,01DFAF8E,39,?LoadFile@SystemWrapper@@UAEPAEPBDPAH@Z,SystemWrapper::LoadFile,ENGINE,engine/SystemWrapper.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13SystemWrapper8LoadFileEPKcPi
+hw,01DFAFB5,25,?FreeFile@SystemWrapper@@UAEXPAE@Z,SystemWrapper::FreeFile,ENGINE,engine/SystemWrapper.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13SystemWrapper8FreeFileEPh
+hw,01DFAFCE,20,?GetTick@SystemWrapper@@UAEIXZ,SystemWrapper::GetTick,ENGINE,engine/SystemWrapper.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13SystemWrapper7GetTickEv
+hw,01DFAFE2,187,?CMD_Modules@SystemWrapper@@IAEXPAD@Z,SystemWrapper::CMD_Modules,ENGINE,engine/SystemWrapper.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DFB09D,16,?GetType@SystemWrapper@@UAEPADXZ,SystemWrapper::GetType,ENGINE,engine/SystemWrapper.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DFB0AD,26,?GetCommandMatches@SystemWrapper@@UAEXPADPAVObjectList@@@Z,SystemWrapper::GetCommandMatches,ENGINE,engine/SystemWrapper.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13SystemWrapper17GetCommandMatchesEPcP10ObjectList
+hw,01DFB0C7,170,?FindModule@SystemWrapper@@IAEPAVISystemModule@@PAD0@Z,SystemWrapper::FindModule,ENGINE,engine/SystemWrapper.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13SystemWrapper10FindModuleEPcS0_
+hw,01DFB171,51,?LogConsole@SystemWrapper@@UAEXPAD@Z,SystemWrapper::LogConsole,ENGINE,engine/SystemWrapper.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DFB1A4,16,?GetPanel@SystemWrapper@@UAEPAUPanel@@XZ,SystemWrapper::GetPanel,ENGINE,engine/SystemWrapper.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13SystemWrapper8GetPanelEv
+hw,01DFB1B4,15,?InitVGUI@SystemWrapper@@UAE_NPAUIVGuiModule@@@Z,SystemWrapper::InitVGUI,ENGINE,engine/SystemWrapper.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13SystemWrapper8InitVGUIEP11IVGuiModule
+hw,01DFB1C3,130,?AddModule@SystemWrapper@@UAE_NPAVISystemModule@@PAD@Z,SystemWrapper::AddModule,ENGINE,engine/SystemWrapper.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DFB245,151,?GetModule@SystemWrapper@@UAEPAVISystemModule@@PAD00@Z,SystemWrapper::GetModule,ENGINE,engine/SystemWrapper.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DFB2DC,283,?RemoveModule@SystemWrapper@@UAE_NPAVISystemModule@@@Z,SystemWrapper::RemoveModule,ENGINE,engine/SystemWrapper.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN13SystemWrapper12RemoveModuleEP13ISystemModule
+hw,01DFB3F7,334,?ExecuteString@SystemWrapper@@UAEXPAD@Z,SystemWrapper::ExecuteString,ENGINE,engine/SystemWrapper.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DFB545,182,?DispatchCommand@SystemWrapper@@IAE_NPAD@Z,SystemWrapper::DispatchCommand,ENGINE,engine/SystemWrapper.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DFB600,39,??_DSystemWrapper@@QAEXXZ,destructor',ENGINE,engine/SystemWrapper.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DFB630,85,??0IEngineWrapper@@QAE@XZ,IEngineWrapper::IEngineWrapper,ENGINE,engine/SystemWrapper.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DFB690,55,??_GIEngineWrapper@@UAEPAXI@Z,destructor',ENGINE,engine/SystemWrapper.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DFB6D0,33,??_DIEngineWrapper@@QAEXXZ,destructor',ENGINE,engine/SystemWrapper.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DFB700,41,??1IEngineWrapper@@UAE@XZ,IEngineWrapper::~IEngineWrapper,ENGINE,engine/SystemWrapper.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DFB730,13,?SetFPS@SystemWrapper@@UAEXM@Z,SystemWrapper::SetFPS,ENGINE,engine/SystemWrapper.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DFB740,13,?ShowConsole@SystemWrapper@@UAEX_N@Z,SystemWrapper::ShowConsole,ENGINE,engine/SystemWrapper.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DFB750,85,??0IBaseSystem@@QAE@XZ,IBaseSystem::IBaseSystem,ENGINE,engine/SystemWrapper.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DFB7B0,55,??_GIBaseSystem@@UAEPAXI@Z,destructor',ENGINE,engine/SystemWrapper.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DFB7F0,33,??_DIBaseSystem@@QAEXXZ,destructor',ENGINE,engine/SystemWrapper.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DFB820,41,??1IBaseSystem@@UAE@XZ,IBaseSystem::~IBaseSystem,ENGINE,engine/SystemWrapper.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DFB860,63,??_GSystemWrapper@@UAEPAXI@Z,destructor',ENGINE,engine/SystemWrapper.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DFB990,63,??_GEngineWrapper@@UAEPAXI@Z,destructor',ENGINE,engine/SystemWrapper.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DFB9D0,39,??_DEngineWrapper@@QAEXXZ,destructor',ENGINE,engine/SystemWrapper.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01DFBA20,45,_SafeRead,SafeRead,ENGINE,engine/textures.c,,,MATCHED,100,hw_manual.csv,
 hw,01DFBA4D,103,_CleanupName,CleanupName,ENGINE,engine/textures.c,,,MATCHED,100,hw_manual.csv,
 hw,01DFBAB4,44,_lump_sorter,lump_sorter,ENGINE,engine/textures.c,,,MATCHED,100,hw_manual.csv,

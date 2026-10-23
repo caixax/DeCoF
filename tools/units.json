@@ -3017,7 +3017,12 @@
         {
           "name": "engine/SystemWrapper",
           "source": "src/engine_hw/SystemWrapper.cpp",
-          "functions_file": "tools/units/hw_engine_SystemWrapper.txt"
+          "functions_file": "tools/units/hw_engine_SystemWrapper.txt",
+          "includes": [
+            "src/engine_hw",
+            "src/public",
+            "src/common"
+          ]
         },
         {
           "name": "engine/traceinit",
