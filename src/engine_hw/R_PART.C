@@ -52,7 +52,7 @@ extern	float		filterColorBlue;
 extern	float		filterBrightness;
 
 // mathlib.c
-void	VectorVectors( vec3_t forward, vec3_t right, vec3_t up );
+void	VectorMatrix( vec3_t forward, vec3_t right, vec3_t up );
 
 // cl_tent.c
 extern	cvar_t		tracerLength;
@@ -1231,7 +1231,7 @@ void R_RocketTrail( vec_t *start, vec_t *end, int type )
 	if ( type == 7 )
 	{
 		dec = 1;
-		VectorVectors( vec, right, up );
+		VectorMatrix( vec, right, up );
 	}
 	else if ( type < 128 )
 	{

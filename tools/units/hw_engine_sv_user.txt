@@ -33,3 +33,4 @@ _SV_ExecuteClientMessage
 _SV_SetPlayer
 _SV_ShowServerinfo_f
 _SV_SendEnts_f
+_SV_FullUpdate_f

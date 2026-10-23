@@ -24513,7 +24513,7 @@ hw,01D1EB10,63,,,UNKNOWN,common/BaseSystemModule.cpp,,,TODO,,,inline function (C
 hw,01D1EB50,39,,,UNKNOWN,common/BaseSystemModule.cpp,,,TODO,,,inline function (COMDAT) emitted after the object
 hw,01D1EC60,768,_LoadBMP8,,UNKNOWN,engine/bitmap_win.c,,,TODO,,,
 hw,01D1EF60,2571,_LoadBMP16,LoadBMP16,ENGINE,engine/bitmap_win.c,,,TODO,,linux_symbols:string:0.846,
-hw,01D1F970,277,_build_number,,UNKNOWN,engine/buildnum.c,,,TODO,,,
+hw,01D1F970,277,_build_number,,UNKNOWN,engine/buildnum.c,,,MATCHED,100,,
 hw,01D1FA90,15,_$E4,_$E4,ENGINE,engine/cd.cpp,,,MATCHED,100,hw_manual.csv,"VC6 dynamic initializer of the static CCDAudio object ($E: constructor 01D1FD6A, atexit destructor 01D1FE3C)"
 hw,01D1FA9F,15,_$E1,_$E1,ENGINE,engine/cd.cpp,,,MATCHED,100,hw_manual.csv,"VC6 dynamic initializer of the static CCDAudio object ($E: constructor 01D1FD6A, atexit destructor 01D1FE3C)"
 hw,01D1FAAE,18,_$E3,_$E3,ENGINE,engine/cd.cpp,,,MATCHED,100,hw_manual.csv,"VC6 dynamic initializer of the static CCDAudio object ($E: constructor 01D1FD6A, atexit destructor 01D1FE3C)"
@@ -27647,7 +27647,7 @@ hw,01DB35A7,441,_R_TeleportSplash,R_TeleportSplash,ENGINE,engine/R_PART.C,,,MATC
 hw,01DB3760,345,_R_ShowLine,R_ShowLine,ENGINE,engine/R_PART.C,,,MATCHED,100,,
 hw,01DB38B9,965,_R_BloodStream,R_BloodStream,ENGINE,engine/R_PART.C,,,MATCHED,100,,
 hw,01DB3C7E,503,_R_Blood,R_Blood,ENGINE,engine/R_PART.C,,,MATCHED,100,linux_symbols:consts:0.738,
-hw,01DB3E75,1522,_R_RocketTrail,R_RocketTrail,ENGINE,engine/R_PART.C,,,TODO,99.99,linux_symbols:callseq:0.688,"relocation targets differ (instructions identical): retail _VectorMatrix, ours _VectorVectors"
+hw,01DB3E75,1522,_R_RocketTrail,R_RocketTrail,ENGINE,engine/R_PART.C,,,MATCHED,100,linux_symbols:callseq:0.688,
 hw,01DB4487,1602,_R_DrawParticles,R_DrawParticles,ENGINE,engine/R_PART.C,,,MATCHED,100,,
 hw,01DB4AF1,1678,_R_TracerDraw,R_TracerDraw,ENGINE,engine/R_PART.C,,,MATCHED,100,,
 hw,01DB517F,63,_R_BeamAlloc,R_BeamAlloc,ENGINE,engine/R_PART.C,,,MATCHED,100,,
@@ -28450,7 +28450,7 @@ hw,01DF1CB8,372,_SV_ExecuteClientMessage,SV_ExecuteClientMessage,ENGINE,engine/s
 hw,01DF1E2C,150,_SV_SetPlayer,SV_SetPlayer,ENGINE,engine/sv_user.c,,,MATCHED,100,linux_symbols:string:0.75,
 hw,01DF1EC2,35,_SV_ShowServerinfo_f,SV_ShowServerinfo_f,ENGINE,engine/sv_user.c,,,MATCHED,100,linux_symbols:caller:1.0,
 hw,01DF1EE5,67,_SV_SendEnts_f,,UNKNOWN,guess:engine/sv_user.c,,,MATCHED,100,hw_manual.csv,
-hw,01DF1F28,280,_SV_FullUpdate_f,SV_FullUpdate_Internal,ENGINE,engine/sv_user.c,,,TODO,,hw_manual.csv,
+hw,01DF1F28,280,_SV_FullUpdate_f,SV_FullUpdate_Internal,ENGINE,engine/sv_user.c,,,MATCHED,100,hw_manual.csv,
 hw,01DF2040,119,_Sys_PageIn,Sys_PageIn,ENGINE,engine/sys_dll.c,,,TODO,,,
 hw,01DF20B7,97,_Sys_FindFirst,,ENGINE,engine/sys_dll.c,,,TODO,,,
 hw,01DF2118,56,_Sys_FindNext,,ENGINE,engine/sys_dll.c,,,TODO,,,
