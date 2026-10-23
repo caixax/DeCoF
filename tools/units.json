@@ -2897,7 +2897,12 @@
         {
           "name": "engine/download",
           "source": "src/engine_hw/download.cpp",
-          "functions_file": "tools/units/hw_engine_download.txt"
+          "functions_file": "tools/units/hw_engine_download.txt",
+          "includes": [
+            "src/engine_hw",
+            "src/public",
+            "src/common"
+          ]
         },
         {
           "name": "engine/eventapi",

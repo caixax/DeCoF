@@ -25705,83 +25705,83 @@ hw,01D599C3,127,,,UNKNOWN,engine/dinput_guess.c,,,TODO,,,"Windows mouse input (D
 hw,01D59A42,156,,,UNKNOWN,engine/dinput_guess.c,,,TODO,,,"Windows mouse input (DirectInput through g_fUseDInput, -noforcemparms, GetCursorPos/SetCursorPos, Key_Event, ClientDLL_MouseEvent), the counterpart of Quake in_win.c; no Linux file and no string names the file: the _guess stem only sorts into the link position between DetailTexture.cpp and download.cpp"
 hw,01D59ADE,40,_IN_UpdateMouse_guess,,UNKNOWN,engine/dinput_guess.c,,,TODO,,,"Windows mouse input (DirectInput through g_fUseDInput, -noforcemparms, GetCursorPos/SetCursorPos, Key_Event, ClientDLL_MouseEvent), the counterpart of Quake in_win.c; no Linux file and no string names the file: the _guess stem only sorts into the link position between DetailTexture.cpp and download.cpp"
 hw,01D59B06,92,,,UNKNOWN,engine/dinput_guess.c,,,TODO,,,"Windows mouse input (DirectInput through g_fUseDInput, -noforcemparms, GetCursorPos/SetCursorPos, Key_Event, ClientDLL_MouseEvent), the counterpart of Quake in_win.c; no Linux file and no string names the file: the _guess stem only sorts into the link position between DetailTexture.cpp and download.cpp"
-hw,01D59B70,23,,,UNKNOWN,engine/download.cpp,,,TODO,,,"2013 version (DownloadCache in cache/DownloadCache.db, WinINet worker thread); the Linux file is the later Steam HTTP version, so no position names"
-hw,01D59B87,11,,,UNKNOWN,engine/download.cpp,,,TODO,,,"2013 version (DownloadCache in cache/DownloadCache.db, WinINet worker thread); the Linux file is the later Steam HTTP version, so no position names"
-hw,01D59B92,191,,,UNKNOWN,engine/download.cpp,,,TODO,,,"2013 version (DownloadCache in cache/DownloadCache.db, WinINet worker thread); the Linux file is the later Steam HTTP version, so no position names"
-hw,01D59C51,134,,,UNKNOWN,engine/download.cpp,,,TODO,,,"2013 version (DownloadCache in cache/DownloadCache.db, WinINet worker thread); the Linux file is the later Steam HTTP version, so no position names"
-hw,01D59CD7,360,,,UNKNOWN,engine/download.cpp,,,TODO,,,"2013 version (DownloadCache in cache/DownloadCache.db, WinINet worker thread); the Linux file is the later Steam HTTP version, so no position names"
-hw,01D59E3F,486,,,UNKNOWN,engine/download.cpp,,,TODO,,,"2013 version (DownloadCache in cache/DownloadCache.db, WinINet worker thread); the Linux file is the later Steam HTTP version, so no position names"
-hw,01D5A025,213,,,UNKNOWN,engine/download.cpp,,,TODO,,,"2013 version (DownloadCache in cache/DownloadCache.db, WinINet worker thread); the Linux file is the later Steam HTTP version, so no position names"
-hw,01D5A0FA,143,,,UNKNOWN,engine/download.cpp,,,TODO,,,"2013 version (DownloadCache in cache/DownloadCache.db, WinINet worker thread); the Linux file is the later Steam HTTP version, so no position names"
-hw,01D5A189,361,,,UNKNOWN,engine/download.cpp,,,TODO,,,"2013 version (DownloadCache in cache/DownloadCache.db, WinINet worker thread); the Linux file is the later Steam HTTP version, so no position names"
-hw,01D5A2F2,15,,,UNKNOWN,engine/download.cpp,,,TODO,,,"2013 version (DownloadCache in cache/DownloadCache.db, WinINet worker thread); the Linux file is the later Steam HTTP version, so no position names"
-hw,01D5A301,15,,,UNKNOWN,engine/download.cpp,,,TODO,,,"2013 version (DownloadCache in cache/DownloadCache.db, WinINet worker thread); the Linux file is the later Steam HTTP version, so no position names"
-hw,01D5A310,18,,,UNKNOWN,engine/download.cpp,,,TODO,,,"2013 version (DownloadCache in cache/DownloadCache.db, WinINet worker thread); the Linux file is the later Steam HTTP version, so no position names"
-hw,01D5A322,15,,,UNKNOWN,engine/download.cpp,,,TODO,,,"2013 version (DownloadCache in cache/DownloadCache.db, WinINet worker thread); the Linux file is the later Steam HTTP version, so no position names"
-hw,01D5A331,86,,,UNKNOWN,engine/download.cpp,,,TODO,,,"2013 version (DownloadCache in cache/DownloadCache.db, WinINet worker thread); the Linux file is the later Steam HTTP version, so no position names"
-hw,01D5A387,130,,,UNKNOWN,engine/download.cpp,,,TODO,,,"2013 version (DownloadCache in cache/DownloadCache.db, WinINet worker thread); the Linux file is the later Steam HTTP version, so no position names"
-hw,01D5A409,113,,,UNKNOWN,engine/download.cpp,,,TODO,,,"2013 version (DownloadCache in cache/DownloadCache.db, WinINet worker thread); the Linux file is the later Steam HTTP version, so no position names"
-hw,01D5A47A,76,,,UNKNOWN,engine/download.cpp,,,TODO,,,"2013 version (DownloadCache in cache/DownloadCache.db, WinINet worker thread); the Linux file is the later Steam HTTP version, so no position names"
-hw,01D5A4C6,315,,,UNKNOWN,engine/download.cpp,,,TODO,,,"2013 version (DownloadCache in cache/DownloadCache.db, WinINet worker thread); the Linux file is the later Steam HTTP version, so no position names"
-hw,01D5A601,290,,DownloadManager::Reset,ENGINE,engine/download.cpp,,,TODO,,linux_symbols:string:0.75,"2013 version (DownloadCache in cache/DownloadCache.db, WinINet worker thread); the Linux file is the later Steam HTTP version, so no position names"
-hw,01D5A723,193,,,UNKNOWN,engine/download.cpp,,,TODO,,,"2013 version (DownloadCache in cache/DownloadCache.db, WinINet worker thread); the Linux file is the later Steam HTTP version, so no position names"
-hw,01D5A7E4,413,,,UNKNOWN,engine/download.cpp,,,TODO,,,"2013 version (DownloadCache in cache/DownloadCache.db, WinINet worker thread); the Linux file is the later Steam HTTP version, so no position names"
-hw,01D5A981,234,,,UNKNOWN,engine/download.cpp,,,TODO,,,"2013 version (DownloadCache in cache/DownloadCache.db, WinINet worker thread); the Linux file is the later Steam HTTP version, so no position names"
-hw,01D5AA6B,35,,,UNKNOWN,engine/download.cpp,,,TODO,,,"2013 version (DownloadCache in cache/DownloadCache.db, WinINet worker thread); the Linux file is the later Steam HTTP version, so no position names"
-hw,01D5AA8E,15,_CL_HTTPUpdate,,UNKNOWN,engine/download.cpp,,,TODO,,,"2013 version (DownloadCache in cache/DownloadCache.db, WinINet worker thread); the Linux file is the later Steam HTTP version, so no position names"
-hw,01D5AA9D,15,_CL_HTTPStop_f,,UNKNOWN,engine/download.cpp,,,TODO,,,"2013 version (DownloadCache in cache/DownloadCache.db, WinINet worker thread); the Linux file is the later Steam HTTP version, so no position names"
-hw,01D5AAAC,24,_CL_QueueHTTPDownload,,UNKNOWN,engine/download.cpp,,,TODO,,,"2013 version (DownloadCache in cache/DownloadCache.db, WinINet worker thread); the Linux file is the later Steam HTTP version, so no position names"
-hw,01D5AAC4,15,_CL_GetDownloadQueueSize,,UNKNOWN,engine/download.cpp,,,TODO,,,"2013 version (DownloadCache in cache/DownloadCache.db, WinINet worker thread); the Linux file is the later Steam HTTP version, so no position names"
-hw,01D5AAD3,73,_CL_CanUseHTTPDownload,,UNKNOWN,engine/download.cpp,,,TODO,,,"2013 version (DownloadCache in cache/DownloadCache.db, WinINet worker thread); the Linux file is the later Steam HTTP version, so no position names"
-hw,01D5AB1C,48,_CL_MarkMapAsUsingHTTPDownload,,UNKNOWN,engine/download.cpp,,,TODO,,,"2013 version (DownloadCache in cache/DownloadCache.db, WinINet worker thread); the Linux file is the later Steam HTTP version, so no position names"
-hw,01D5AB50,98,,,UNKNOWN,engine/download.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D5ABC0,46,,,UNKNOWN,engine/download.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D5ABF0,19,,,UNKNOWN,engine/download.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D5AC10,19,,,UNKNOWN,engine/download.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D5AC30,50,,,UNKNOWN,engine/download.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D5AC70,27,,,UNKNOWN,engine/download.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D5AC90,25,,,UNKNOWN,engine/download.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D5ACB0,17,,,UNKNOWN,engine/download.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D5ACD0,32,,,UNKNOWN,engine/download.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D5ACF0,63,,,UNKNOWN,engine/download.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D5AD30,70,,,UNKNOWN,engine/download.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D5AD80,50,,,UNKNOWN,engine/download.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D5ADC0,27,,,UNKNOWN,engine/download.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D5ADE0,32,,,UNKNOWN,engine/download.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D5AE00,25,,,UNKNOWN,engine/download.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D5AE20,65,,,UNKNOWN,engine/download.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D5AE70,35,,,UNKNOWN,engine/download.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D5AEA0,86,,,UNKNOWN,engine/download.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D5AF00,11,,,UNKNOWN,engine/download.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D5AF10,75,,,UNKNOWN,engine/download.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D5AF60,19,,,UNKNOWN,engine/download.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D5AF80,24,,,UNKNOWN,engine/download.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D5AFA0,5,,,UNKNOWN,engine/download.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D5AFB0,65,,,UNKNOWN,engine/download.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D5B000,35,,,UNKNOWN,engine/download.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D5B030,11,,,UNKNOWN,engine/download.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D5B040,75,,,UNKNOWN,engine/download.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D5B090,19,,,UNKNOWN,engine/download.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D5B0B0,87,,,UNKNOWN,engine/download.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D5B110,86,,,UNKNOWN,engine/download.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D5B170,69,,,UNKNOWN,engine/download.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D5B1C0,58,,,UNKNOWN,engine/download.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D5B200,87,,,UNKNOWN,engine/download.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D5B260,86,,,UNKNOWN,engine/download.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D5B2C0,69,,,UNKNOWN,engine/download.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D5B310,58,,,UNKNOWN,engine/download.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D5B350,17,,,UNKNOWN,engine/download.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D5B370,199,,,UNKNOWN,engine/download.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D5B440,25,,,UNKNOWN,engine/download.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D5B460,17,,,UNKNOWN,engine/download.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D5B480,199,,,UNKNOWN,engine/download.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D5B550,25,,,UNKNOWN,engine/download.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D59B70,23,??0DownloadCache_guess@@QAE@XZ,DownloadCache_guess::DownloadCache_guess,UNKNOWN,engine/download.cpp,,,MATCHED,100,,"2013 version (DownloadCache in cache/DownloadCache.db, WinINet worker thread); the Linux file is the later Steam HTTP version, so no position names"
+hw,01D59B87,11,??1DownloadCache_guess@@QAE@XZ,DownloadCache_guess::~DownloadCache_guess,UNKNOWN,engine/download.cpp,,,MATCHED,100,hw_manual.csv,"2013 version (DownloadCache in cache/DownloadCache.db, WinINet worker thread); the Linux file is the later Steam HTTP version, so no position names"
+hw,01D59B92,191,?BuildKeyNames_guess@DownloadCache_guess@@AAEXPBD@Z,DownloadCache_guess::BuildKeyNames_guess,UNKNOWN,engine/download.cpp,,,MATCHED,100,,"2013 version (DownloadCache in cache/DownloadCache.db, WinINet worker thread); the Linux file is the later Steam HTTP version, so no position names"
+hw,01D59C51,134,?Init_guess@DownloadCache_guess@@QAEXXZ,DownloadCache_guess::Init_guess,UNKNOWN,engine/download.cpp,,,MATCHED,100,,"2013 version (DownloadCache in cache/DownloadCache.db, WinINet worker thread); the Linux file is the later Steam HTTP version, so no position names"
+hw,01D59CD7,360,?GetCachedData_guess@DownloadCache_guess@@QAEXPAURequestContext@@@Z,DownloadCache_guess::GetCachedData_guess,UNKNOWN,engine/download.cpp,,,MATCHED,100,hw_manual.csv,"2013 version (DownloadCache in cache/DownloadCache.db, WinINet worker thread); the Linux file is the later Steam HTTP version, so no position names"
+hw,01D59E3F,486,?PersistToDisk_guess@DownloadCache_guess@@QAEXPBURequestContext@@@Z,DownloadCache_guess::PersistToDisk_guess,UNKNOWN,engine/download.cpp,,,MATCHED,100,,"2013 version (DownloadCache in cache/DownloadCache.db, WinINet worker thread); the Linux file is the later Steam HTTP version, so no position names"
+hw,01D5A025,213,?PersistToCache_guess@DownloadCache_guess@@QAEXPBURequestContext@@@Z,DownloadCache_guess::PersistToCache_guess,UNKNOWN,engine/download.cpp,,,MATCHED,100,,"2013 version (DownloadCache in cache/DownloadCache.db, WinINet worker thread); the Linux file is the later Steam HTTP version, so no position names"
+hw,01D5A0FA,143,?GetCacheFilename_guess@DownloadCache_guess@@AAEXPBURequestContext@@QAD@Z,DownloadCache_guess::GetCacheFilename_guess,UNKNOWN,engine/download.cpp,,,MATCHED,100,,"2013 version (DownloadCache in cache/DownloadCache.db, WinINet worker thread); the Linux file is the later Steam HTTP version, so no position names"
+hw,01D5A189,361,?GenerateCacheFilename_guess@DownloadCache_guess@@AAEXPBURequestContext@@QAD@Z,DownloadCache_guess::GenerateCacheFilename_guess,UNKNOWN,engine/download.cpp,,,MATCHED,100,,"2013 version (DownloadCache in cache/DownloadCache.db, WinINet worker thread); the Linux file is the later Steam HTTP version, so no position names"
+hw,01D5A2F2,15,_$E5,,UNKNOWN,engine/download.cpp,,,MATCHED,100,hw_manual.csv,"2013 version (DownloadCache in cache/DownloadCache.db, WinINet worker thread); the Linux file is the later Steam HTTP version, so no position names"
+hw,01D5A301,15,_$E2,,UNKNOWN,engine/download.cpp,,,MATCHED,100,hw_manual.csv,"2013 version (DownloadCache in cache/DownloadCache.db, WinINet worker thread); the Linux file is the later Steam HTTP version, so no position names"
+hw,01D5A310,18,_$E4,,UNKNOWN,engine/download.cpp,,,MATCHED,100,hw_manual.csv,"2013 version (DownloadCache in cache/DownloadCache.db, WinINet worker thread); the Linux file is the later Steam HTTP version, so no position names"
+hw,01D5A322,15,_$E3,,UNKNOWN,engine/download.cpp,,,MATCHED,100,hw_manual.csv,"2013 version (DownloadCache in cache/DownloadCache.db, WinINet worker thread); the Linux file is the later Steam HTTP version, so no position names"
+hw,01D5A331,86,??0DownloadManager@@QAE@XZ,DownloadManager::DownloadManager,UNKNOWN,engine/download.cpp,,,MATCHED,100,,"2013 version (DownloadCache in cache/DownloadCache.db, WinINet worker thread); the Linux file is the later Steam HTTP version, so no position names"
+hw,01D5A387,130,??1DownloadManager@@QAE@XZ,DownloadManager::~DownloadManager,UNKNOWN,engine/download.cpp,,,MATCHED,100,,"2013 version (DownloadCache in cache/DownloadCache.db, WinINet worker thread); the Linux file is the later Steam HTTP version, so no position names"
+hw,01D5A409,113,?HasMapBeenDownloadedFromServer@DownloadManager@@QAE_NPBD@Z,DownloadManager::HasMapBeenDownloadedFromServer,UNKNOWN,engine/download.cpp,,,MATCHED,100,,"2013 version (DownloadCache in cache/DownloadCache.db, WinINet worker thread); the Linux file is the later Steam HTTP version, so no position names"
+hw,01D5A47A,76,?MarkMapAsDownloadedFromServer@DownloadManager@@QAEXPBD@Z,DownloadManager::MarkMapAsDownloadedFromServer,UNKNOWN,engine/download.cpp,,,MATCHED,100,,"2013 version (DownloadCache in cache/DownloadCache.db, WinINet worker thread); the Linux file is the later Steam HTTP version, so no position names"
+hw,01D5A4C6,315,?Queue@DownloadManager@@QAEXPBD0@Z,DownloadManager::Queue,UNKNOWN,engine/download.cpp,,,MATCHED,100,,"2013 version (DownloadCache in cache/DownloadCache.db, WinINet worker thread); the Linux file is the later Steam HTTP version, so no position names"
+hw,01D5A601,290,?Reset@DownloadManager@@AAEXXZ,DownloadManager::Reset,ENGINE,engine/download.cpp,,,MATCHED,100,linux_symbols:string:0.75,"2013 version (DownloadCache in cache/DownloadCache.db, WinINet worker thread); the Linux file is the later Steam HTTP version, so no position names"
+hw,01D5A723,193,?PruneCompletedRequests_guess@DownloadManager@@AAEXXZ,DownloadManager::PruneCompletedRequests_guess,UNKNOWN,engine/download.cpp,,,MATCHED,100,,"2013 version (DownloadCache in cache/DownloadCache.db, WinINet worker thread); the Linux file is the later Steam HTTP version, so no position names"
+hw,01D5A7E4,413,?CheckActiveDownload@DownloadManager@@AAEXXZ,DownloadManager::CheckActiveDownload,UNKNOWN,engine/download.cpp,,,MATCHED,100,,"2013 version (DownloadCache in cache/DownloadCache.db, WinINet worker thread); the Linux file is the later Steam HTTP version, so no position names"
+hw,01D5A981,234,?StartNewDownload@DownloadManager@@AAEXXZ,DownloadManager::StartNewDownload,UNKNOWN,engine/download.cpp,,,MATCHED,100,,"2013 version (DownloadCache in cache/DownloadCache.db, WinINet worker thread); the Linux file is the later Steam HTTP version, so no position names"
+hw,01D5AA6B,35,?Update@DownloadManager@@QAEXXZ,DownloadManager::Update,UNKNOWN,engine/download.cpp,,,MATCHED,100,hw_manual.csv,"2013 version (DownloadCache in cache/DownloadCache.db, WinINet worker thread); the Linux file is the later Steam HTTP version, so no position names"
+hw,01D5AA8E,15,_CL_HTTPUpdate,,UNKNOWN,engine/download.cpp,,,MATCHED,100,,"2013 version (DownloadCache in cache/DownloadCache.db, WinINet worker thread); the Linux file is the later Steam HTTP version, so no position names"
+hw,01D5AA9D,15,_CL_HTTPStop_f,,UNKNOWN,engine/download.cpp,,,MATCHED,100,,"2013 version (DownloadCache in cache/DownloadCache.db, WinINet worker thread); the Linux file is the later Steam HTTP version, so no position names"
+hw,01D5AAAC,24,_CL_QueueHTTPDownload,,UNKNOWN,engine/download.cpp,,,MATCHED,100,,"2013 version (DownloadCache in cache/DownloadCache.db, WinINet worker thread); the Linux file is the later Steam HTTP version, so no position names"
+hw,01D5AAC4,15,_CL_GetDownloadQueueSize,,UNKNOWN,engine/download.cpp,,,MATCHED,100,,"2013 version (DownloadCache in cache/DownloadCache.db, WinINet worker thread); the Linux file is the later Steam HTTP version, so no position names"
+hw,01D5AAD3,73,_CL_CanUseHTTPDownload,,UNKNOWN,engine/download.cpp,,,MATCHED,100,,"2013 version (DownloadCache in cache/DownloadCache.db, WinINet worker thread); the Linux file is the later Steam HTTP version, so no position names"
+hw,01D5AB1C,48,_CL_MarkMapAsUsingHTTPDownload,,UNKNOWN,engine/download.cpp,,,MATCHED,100,,"2013 version (DownloadCache in cache/DownloadCache.db, WinINet worker thread); the Linux file is the later Steam HTTP version, so no position names"
+hw,01D5AB50,98,?CloneString_guess@@YAPADPBD@Z,CloneString_guess,UNKNOWN,engine/download.cpp,,,MATCHED,100,,inline or template function (COMDAT) emitted after the object
+hw,01D5ABC0,46,??_GDownloadCache_guess@@QAEPAXI@Z,destructor',UNKNOWN,engine/download.cpp,,,MATCHED,100,,inline or template function (COMDAT) emitted after the object
+hw,01D5ABF0,19,?Stop@DownloadManager@@QAEXXZ,DownloadManager::Stop,UNKNOWN,engine/download.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D5AC10,19,?GetQueueSize@DownloadManager@@QAEHXZ,DownloadManager::GetQueueSize,UNKNOWN,engine/download.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D5AC30,50,??0?$CUtlVector@PAURequestContext@@@@QAE@HH@Z,*>,UNKNOWN,engine/download.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D5AC70,27,??1?$CUtlVector@PAURequestContext@@@@QAE@XZ,*>,UNKNOWN,engine/download.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D5AC90,25,??A?$CUtlVector@PAURequestContext@@@@QAEAAPAURequestContext@@H@Z,*>::operator[],UNKNOWN,engine/download.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D5ACB0,17,?Count@?$CUtlVector@PAURequestContext@@@@QBEHXZ,*>::Count,UNKNOWN,engine/download.cpp,,,MATCHED,100,,inline or template function (COMDAT) emitted after the object
+hw,01D5ACD0,32,?AddToTail@?$CUtlVector@PAURequestContext@@@@QAEHABQAURequestContext@@@Z,*>::AddToTail,UNKNOWN,engine/download.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D5ACF0,63,?Remove@?$CUtlVector@PAURequestContext@@@@QAEXH@Z,*>::Remove,UNKNOWN,engine/download.cpp,,,MATCHED,100,,inline or template function (COMDAT) emitted after the object
+hw,01D5AD30,70,?RemoveAll@?$CUtlVector@PAURequestContext@@@@QAEXXZ,*>::RemoveAll,UNKNOWN,engine/download.cpp,,,MATCHED,100,,inline or template function (COMDAT) emitted after the object
+hw,01D5AD80,50,??0?$CUtlVector@PAD@@QAE@HH@Z,*>,UNKNOWN,engine/download.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D5ADC0,27,??1?$CUtlVector@PAD@@QAE@XZ,*>,UNKNOWN,engine/download.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D5ADE0,32,?AddToTail@?$CUtlVector@PAD@@QAEHABQAD@Z,*>::AddToTail,UNKNOWN,engine/download.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D5AE00,25,?Element@?$CUtlVector@PAURequestContext@@@@QAEAAPAURequestContext@@H@Z,*>::Element,UNKNOWN,engine/download.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D5AE20,65,?InsertBefore@?$CUtlVector@PAURequestContext@@@@QAEHHABQAURequestContext@@@Z,*>::InsertBefore,UNKNOWN,engine/download.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D5AE70,35,?Purge@?$CUtlVector@PAURequestContext@@@@QAEXXZ,*>::Purge,UNKNOWN,engine/download.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D5AEA0,86,?ShiftElementsLeft@?$CUtlVector@PAURequestContext@@@@IAEXHH@Z,*>::ShiftElementsLeft,UNKNOWN,engine/download.cpp,,,MATCHED,100,,inline or template function (COMDAT) emitted after the object
+hw,01D5AF00,11,?ResetDbgInfo@?$CUtlVector@PAURequestContext@@@@IAEXXZ,*>::ResetDbgInfo,UNKNOWN,engine/download.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D5AF10,75,??0?$CUtlMemory@PAURequestContext@@@@QAE@HH@Z,*>,UNKNOWN,engine/download.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D5AF60,19,??1?$CUtlMemory@PAURequestContext@@@@QAE@XZ,*>,UNKNOWN,engine/download.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D5AF80,24,??A?$CUtlMemory@PAURequestContext@@@@QAEAAPAURequestContext@@H@Z,*>::operator[],UNKNOWN,engine/download.cpp,,,MATCHED,100,,inline or template function (COMDAT) emitted after the object
+hw,01D5AFA0,5,?Destruct@@YAXPAPAURequestContext@@@Z,Destruct,UNKNOWN,engine/download.cpp,,,MATCHED,100,,inline or template function (COMDAT) emitted after the object
+hw,01D5AFB0,65,?InsertBefore@?$CUtlVector@PAD@@QAEHHABQAD@Z,*>::InsertBefore,UNKNOWN,engine/download.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D5B000,35,?Purge@?$CUtlVector@PAD@@QAEXXZ,*>::Purge,UNKNOWN,engine/download.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D5B030,11,?ResetDbgInfo@?$CUtlVector@PAD@@IAEXXZ,*>::ResetDbgInfo,UNKNOWN,engine/download.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D5B040,75,??0?$CUtlMemory@PAD@@QAE@HH@Z,*>,UNKNOWN,engine/download.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D5B090,19,??1?$CUtlMemory@PAD@@QAE@XZ,*>,UNKNOWN,engine/download.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D5B0B0,87,?GrowVector@?$CUtlVector@PAURequestContext@@@@IAEXH@Z,*>::GrowVector,UNKNOWN,engine/download.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D5B110,86,?ShiftElementsRight@?$CUtlVector@PAURequestContext@@@@IAEXHH@Z,*>::ShiftElementsRight,UNKNOWN,engine/download.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D5B170,69,?Purge@?$CUtlMemory@PAURequestContext@@@@QAEXXZ,*>::Purge,UNKNOWN,engine/download.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D5B1C0,58,?CopyConstruct@@YAXPAPAURequestContext@@ABQAU1@@Z,CopyConstruct,UNKNOWN,engine/download.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D5B200,87,?GrowVector@?$CUtlVector@PAD@@IAEXH@Z,*>::GrowVector,UNKNOWN,engine/download.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D5B260,86,?ShiftElementsRight@?$CUtlVector@PAD@@IAEXHH@Z,*>::ShiftElementsRight,UNKNOWN,engine/download.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D5B2C0,69,?Purge@?$CUtlMemory@PAD@@QAEXXZ,*>::Purge,UNKNOWN,engine/download.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D5B310,58,?CopyConstruct@@YAXPAPADABQAD@Z,CopyConstruct,UNKNOWN,engine/download.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D5B350,17,?NumAllocated@?$CUtlMemory@PAURequestContext@@@@QBEHXZ,*>::NumAllocated,UNKNOWN,engine/download.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D5B370,199,?Grow@?$CUtlMemory@PAURequestContext@@@@QAEXH@Z,*>::Grow,UNKNOWN,engine/download.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D5B440,25,?IsExternallyAllocated@?$CUtlMemory@PAURequestContext@@@@QBE_NXZ,*>::IsExternallyAllocated,UNKNOWN,engine/download.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D5B460,17,?NumAllocated@?$CUtlMemory@PAD@@QBEHXZ,*>::NumAllocated,UNKNOWN,engine/download.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D5B480,199,?Grow@?$CUtlMemory@PAD@@QAEXH@Z,*>::Grow,UNKNOWN,engine/download.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D5B550,25,?IsExternallyAllocated@?$CUtlMemory@PAD@@QBE_NXZ,*>::IsExternallyAllocated,UNKNOWN,engine/download.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
 hw,01D5B570,5,,,UNKNOWN,engine/downloadthread.cpp,,,TODO,,,"WinINet HTTP download worker (InternetOpenUrlA with 'Referer: hl1://%s', If-Range/Range resume); Source's engine/downloadthread.cpp has the same code with hl2://; no Linux file; name from the Source counterpart and the link position between download.cpp and eventapi.c"
 hw,01D5B575,72,,,UNKNOWN,engine/downloadthread.cpp,,,TODO,,,"WinINet HTTP download worker (InternetOpenUrlA with 'Referer: hl1://%s', If-Range/Range resume); Source's engine/downloadthread.cpp has the same code with hl2://; no Linux file; name from the Source counterpart and the link position between download.cpp and eventapi.c"
 hw,01D5B620,402,,,UNKNOWN,engine/downloadthread.cpp,,,TODO,,,"WinINet HTTP download worker (InternetOpenUrlA with 'Referer: hl1://%s', If-Range/Range resume); Source's engine/downloadthread.cpp has the same code with hl2://; no Linux file; name from the Source counterpart and the link position between download.cpp and eventapi.c"
 hw,01D5B7B2,254,,,UNKNOWN,engine/downloadthread.cpp,,,TODO,,,"WinINet HTTP download worker (InternetOpenUrlA with 'Referer: hl1://%s', If-Range/Range resume); Source's engine/downloadthread.cpp has the same code with hl2://; no Linux file; name from the Source counterpart and the link position between download.cpp and eventapi.c"
 hw,01D5B8B0,5,,,UNKNOWN,engine/downloadthread.cpp,,,TODO,,,"WinINet HTTP download worker (InternetOpenUrlA with 'Referer: hl1://%s', If-Range/Range resume); Source's engine/downloadthread.cpp has the same code with hl2://; no Linux file; name from the Source counterpart and the link position between download.cpp and eventapi.c"
-hw,01D5B8B5,1442,,,UNKNOWN,engine/downloadthread.cpp,,,TODO,,,"WinINet HTTP download worker (InternetOpenUrlA with 'Referer: hl1://%s', If-Range/Range resume); Source's engine/downloadthread.cpp has the same code with hl2://; no Linux file; name from the Source counterpart and the link position between download.cpp and eventapi.c"
+hw,01D5B8B5,1442,?DownloadThread_guess@@YGKPAX@Z,DownloadThread_guess,UNKNOWN,engine/downloadthread.cpp,,,TODO,,,"WinINet HTTP download worker (InternetOpenUrlA with 'Referer: hl1://%s', If-Range/Range resume); Source's engine/downloadthread.cpp has the same code with hl2://; no Linux file; name from the Source counterpart and the link position between download.cpp and eventapi.c"
 hw,01D5BE60,171,_EV_PlaySound,EV_PlaySound,ENGINE,engine/eventapi.c,,,TODO,,hw_position.csv,
 hw,01D5BF0B,38,_EV_StopSound,EV_StopSound,ENGINE,engine/eventapi.c,,,TODO,,hw_position.csv,
 hw,01D5BF31,88,_EV_FindModelIndex,EV_FindModelIndex,ENGINE,engine/eventapi.c,,,TODO,,hw_position.csv,

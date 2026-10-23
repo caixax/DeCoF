@@ -3992,3 +3992,44 @@ va,name,kind,evidence
 01E3F740,?GetMessageMap@AnimatingImagePanel@vgui2@@UAEPAUPanelMessageMap@2@XZ,func,"vgui2/controls/AnimatingImagePanel.cpp: function 38 of the object (VC6 keeps the hw.so DWARF line order, then the COMDAT tail in the order of our object), vtable slots of the RTTI AnimatingImagePanel vtable"
 01E3F780,?GetPanelClassName@AnimatingImagePanel@vgui2@@SAPBDXZ,func,"vgui2/controls/AnimatingImagePanel.cpp: function 39 of the object (VC6 keeps the hw.so DWARF line order, then the COMDAT tail in the order of our object), vtable slots of the RTTI AnimatingImagePanel vtable"
 01E3F790,?GetPanelBaseClassName@AnimatingImagePanel@vgui2@@SAPBDXZ,func,"vgui2/controls/AnimatingImagePanel.cpp: function 40 of the object (VC6 keeps the hw.so DWARF line order, then the COMDAT tail in the order of our object), vtable slots of the RTTI AnimatingImagePanel vtable"
+01D59B87,??1DownloadCache_guess@@QAE@XZ,func,"download.cpp: the empty DownloadCache destructor, called by its scalar deleting destructor 01D5ABC0"
+01D59CD7,?GetCachedData_guess@DownloadCache_guess@@QAEXPAURequestContext@@@Z,func,"download.cpp: called by DownloadManager::StartNewDownload on the active request; reads the cache file with FS_Open ""rb"" into +0x420"
+01D5A2F2,_$E5,func,"download.cpp: dynamic initializer of TheDownloadManager (construct, then atexit); spelling from the compiled object"
+01D5A301,_$E2,func,download.cpp: constructs TheDownloadManager; spelling from the compiled object
+01D5A310,_$E4,func,download.cpp: atexit of the TheDownloadManager destructor thunk; spelling from the compiled object
+01D5A322,_$E3,func,download.cpp: destroys TheDownloadManager; spelling from the compiled object
+01D5AA6B,?Update@DownloadManager@@QAEXXZ,func,"download.cpp: DownloadManager::Update (Linux DWARF method), called by CL_HTTPUpdate"
+01D5ABF0,?Stop@DownloadManager@@QAEXXZ,func,download.cpp: inline DownloadManager::Stop (Linux DWARF method) calls Reset; called by CL_HTTPStop_f
+01D5AC10,?GetQueueSize@DownloadManager@@QAEHXZ,func,download.cpp: inline DownloadManager::GetQueueSize (Linux DWARF method) returns m_queuedRequests.Count(); called by CL_GetDownloadQueueSize
+01D5AC30,??0?$CUtlVector@PAURequestContext@@@@QAE@HH@Z,func,"COMDAT: CUtlVector<RequestContext*> constructor, called by the DownloadManager constructor for +0 and +0x18"
+01D5AC70,??1?$CUtlVector@PAURequestContext@@@@QAE@XZ,func,"COMDAT: CUtlVector<RequestContext*> destructor (Purge, then the CUtlMemory destructor)"
+01D5AC90,??A?$CUtlVector@PAURequestContext@@@@QAEAAPAURequestContext@@H@Z,func,"COMDAT: CUtlVector<RequestContext*>::operator[], used by Reset, PruneCompletedRequests and StartNewDownload"
+01D5ACD0,?AddToTail@?$CUtlVector@PAURequestContext@@@@QAEHABQAURequestContext@@@Z,func,"COMDAT: CUtlVector<RequestContext*>::AddToTail (InsertBefore( m_Size )), used by Queue and Reset"
+01D5AD80,??0?$CUtlVector@PAD@@QAE@HH@Z,func,"COMDAT: CUtlVector<char*> constructor, called by the DownloadManager constructor for +0x34"
+01D5ADC0,??1?$CUtlVector@PAD@@QAE@XZ,func,"COMDAT: CUtlVector<char*> destructor, called by the DownloadManager destructor for +0x34"
+01D5ADE0,?AddToTail@?$CUtlVector@PAD@@QAEHABQAD@Z,func,"COMDAT: CUtlVector<char*>::AddToTail, used by MarkMapAsDownloadedFromServer"
+01D5AE00,?Element@?$CUtlVector@PAURequestContext@@@@QAEAAPAURequestContext@@H@Z,func,"COMDAT: CUtlVector<RequestContext*>::Element, used by Remove, RemoveAll and InsertBefore (UtlVector.h)"
+01D5AE20,?InsertBefore@?$CUtlVector@PAURequestContext@@@@QAEHHABQAURequestContext@@@Z,func,"COMDAT: CUtlVector<RequestContext*>::InsertBefore( elem, src )"
+01D5AE70,?Purge@?$CUtlVector@PAURequestContext@@@@QAEXXZ,func,"COMDAT: CUtlVector<RequestContext*>::Purge (RemoveAll, m_Memory.Purge, ResetDbgInfo)"
+01D5AF00,?ResetDbgInfo@?$CUtlVector@PAURequestContext@@@@IAEXXZ,func,COMDAT: CUtlVector<RequestContext*>::ResetDbgInfo (empty without _DEBUG)
+01D5AF10,??0?$CUtlMemory@PAURequestContext@@@@QAE@HH@Z,func,COMDAT: CUtlMemory<RequestContext*> constructor
+01D5AF60,??1?$CUtlMemory@PAURequestContext@@@@QAE@XZ,func,COMDAT: CUtlMemory<RequestContext*> destructor (Purge)
+01D5AFB0,?InsertBefore@?$CUtlVector@PAD@@QAEHHABQAD@Z,func,"COMDAT: CUtlVector<char*>::InsertBefore( elem, src )"
+01D5B000,?Purge@?$CUtlVector@PAD@@QAEXXZ,func,COMDAT: CUtlVector<char*>::Purge
+01D5B030,?ResetDbgInfo@?$CUtlVector@PAD@@IAEXXZ,func,COMDAT: CUtlVector<char*>::ResetDbgInfo
+01D5B040,??0?$CUtlMemory@PAD@@QAE@HH@Z,func,COMDAT: CUtlMemory<char*> constructor
+01D5B090,??1?$CUtlMemory@PAD@@QAE@XZ,func,COMDAT: CUtlMemory<char*> destructor
+01D5B0B0,?GrowVector@?$CUtlVector@PAURequestContext@@@@IAEXH@Z,func,COMDAT: CUtlVector<RequestContext*>::GrowVector
+01D5B110,?ShiftElementsRight@?$CUtlVector@PAURequestContext@@@@IAEXHH@Z,func,COMDAT: CUtlVector<RequestContext*>::ShiftElementsRight
+01D5B170,?Purge@?$CUtlMemory@PAURequestContext@@@@QAEXXZ,func,COMDAT: CUtlMemory<RequestContext*>::Purge
+01D5B1C0,?CopyConstruct@@YAXPAPAURequestContext@@ABQAU1@@Z,func,COMDAT: CopyConstruct<RequestContext*> (UtlMemory.h)
+01D5B200,?GrowVector@?$CUtlVector@PAD@@IAEXH@Z,func,COMDAT: CUtlVector<char*>::GrowVector
+01D5B260,?ShiftElementsRight@?$CUtlVector@PAD@@IAEXHH@Z,func,COMDAT: CUtlVector<char*>::ShiftElementsRight
+01D5B2C0,?Purge@?$CUtlMemory@PAD@@QAEXXZ,func,COMDAT: CUtlMemory<char*>::Purge
+01D5B310,?CopyConstruct@@YAXPAPADABQAD@Z,func,COMDAT: CopyConstruct<char*> (UtlMemory.h)
+01D5B350,?NumAllocated@?$CUtlMemory@PAURequestContext@@@@QBEHXZ,func,"COMDAT: CUtlMemory<RequestContext*>::NumAllocated (17 bytes, as in vgui_intwrap2)"
+01D5B370,?Grow@?$CUtlMemory@PAURequestContext@@@@QAEXH@Z,func,COMDAT: CUtlMemory<RequestContext*>::Grow
+01D5B440,?IsExternallyAllocated@?$CUtlMemory@PAURequestContext@@@@QBE_NXZ,func,"COMDAT: CUtlMemory<RequestContext*>::IsExternallyAllocated (25 bytes, as in vgui_intwrap2)"
+01D5B460,?NumAllocated@?$CUtlMemory@PAD@@QBEHXZ,func,COMDAT: CUtlMemory<char*>::NumAllocated
+01D5B480,?Grow@?$CUtlMemory@PAD@@QAEXH@Z,func,COMDAT: CUtlMemory<char*>::Grow
+01D5B550,?IsExternallyAllocated@?$CUtlMemory@PAD@@QBE_NXZ,func,COMDAT: CUtlMemory<char*>::IsExternallyAllocated
