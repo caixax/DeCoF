@@ -339,3 +339,5 @@ The 1.55 hl.dll is an unoptimized debug build of nearly the same source. `disasm
 - A call result stored into a stack slot before the other arguments are pushed is a named local (`const char *text_guess = tag_guess;` before `_stricmp`); a temporary bool kept across `_bstr_t` temporaries is the compiler's.
 - `mov byte [x], 1; mov ecx, 1; test ecx, ecx; je` is an assignment used as a condition: `else if ( m_bOnLink = true )`.
 - Local names without a source get `_guess` names picked by hash bucket (tools/vc6_slots.py); when two locals share a bucket, declare them at the top of the function in reverse slot order (CreateBrowser_guess).
+- A chained assignment `qglX = dllX = glX;` stores right to left through one register; separate statements reload (opengl2d3d QGL_D3DInit).
+- DirectDraw surface caps come from a `DDSURFACEDESC2` member (`ddsd.ddsCaps.dwCaps`), not a separate DDSCAPS2 local: the member offset is part of the match (opengl2d3d glTexImage2D).
