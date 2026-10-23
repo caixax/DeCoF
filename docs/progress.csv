@@ -28742,12 +28742,12 @@ hw,01DF9B80,46,??_GCGame@@UAEPAXI@Z,CGame::`scalar deleting destructor',ENGINE,e
 hw,01DF9BB0,23,??0IGame@@QAE@XZ,IGame::IGame,ENGINE,engine/sys_sdlwind.cpp,,,MATCHED,100,,
 hw,01DF9BD0,46,??_GIGame@@UAEPAXI@Z,IGame::`scalar deleting destructor',ENGINE,engine/sys_sdlwind.cpp,,,MATCHED,100,,
 hw,01DF9C00,20,??1IGame@@UAE@XZ,IGame::~IGame,ENGINE,engine/sys_sdlwind.cpp,,,MATCHED,100,,
-hw,01DF9C20,52,,,ENGINE,engine/cpu_guess.cpp,,,TODO,,,
-hw,01DF9C54,69,,,ENGINE,engine/cpu_guess.cpp,,,TODO,,,
-hw,01DF9C99,42,,,ENGINE,engine/cpu_guess.cpp,,,TODO,,,
-hw,01DF9CC3,194,,,ENGINE,engine/cpu_guess.cpp,,,TODO,,,
-hw,01DF9D85,140,,,ENGINE,engine/cpu_guess.cpp,,,TODO,,,
-hw,01DF9E3F,146,,,ENGINE,engine/cpu_guess.cpp,,,TODO,,,
+hw,01DF9C20,52,?HasCpuid@@YAIXZ,HasCpuid,ENGINE,utils/procinfo/procinfo.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DF9C54,69,?HasTsc@@YAIXZ,HasTsc,ENGINE,utils/procinfo/procinfo.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DF9C99,42,?GetRDTSC@@YA_KXZ,GetRDTSC,ENGINE,utils/procinfo/procinfo.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DF9CC3,194,?PROC_GetSpeed@@YAHXZ,PROC_GetSpeed,ENGINE,utils/procinfo/procinfo.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DF9D85,140,?PROC_IsMMX@@YAHXZ,PROC_IsMMX,ENGINE,utils/procinfo/procinfo.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DF9E3F,146,?PROC_Is3DNow_guess@@YAHXZ,PROC_Is3DNow_guess,ENGINE,utils/procinfo/procinfo.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01DF9F00,10,?COM_BuildNumber@@YAHXZ,COM_BuildNumber,ENGINE,engine/SystemWrapper.cpp,,,MATCHED,100,hw_manual.csv,linux: _Z15COM_BuildNumberv
 hw,01DF9F0A,79,?COM_RemoveEvilChars@@YAXPAD@Z,COM_RemoveEvilChars,ENGINE,engine/SystemWrapper.cpp,,,MATCHED,100,hw_manual.csv,linux: _Z19COM_RemoveEvilCharsPc
 hw,01DF9F59,15,_$E5,,ENGINE,engine/SystemWrapper.cpp,,,MATCHED,100,hw_manual.csv,

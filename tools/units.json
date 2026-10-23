@@ -3322,6 +3322,11 @@
           "name": "engine/czmodelcheck",
           "source": "src/engine_hw/czmodelcheck.cpp",
           "functions_file": "tools/units/hw_engine_czmodelcheck.txt"
+        },
+        {
+          "name": "utils/procinfo/procinfo",
+          "source": "src/utils/procinfo/procinfo.cpp",
+          "functions_file": "tools/units/hw_utils_procinfo_procinfo.txt"
         }
       ]
     },
