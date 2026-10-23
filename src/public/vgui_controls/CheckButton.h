@@ -15,10 +15,10 @@
 #include <vgui/VGUI.h>
 #include <vgui_controls/ToggleButton.h>
 
+class CheckImage;
+
 namespace vgui2
 {
-
-class CheckImage;
 
 //-----------------------------------------------------------------------------
 // Purpose: Tick-box button
@@ -51,6 +51,8 @@ protected:
 	*/
 
 private:
+	friend class ::CheckImage;
+
 	enum { CHECK_INSET = 6 };
 	CheckImage *_checkBoxImage;
 	bool m_bCheckButtonCheckable;

@@ -11747,26 +11747,26 @@ gameui,1008CFE0,10,,,UNKNOWN,,,,TODO,,,
 gameui,1008CFF0,19,,,UNKNOWN,,,,TODO,,,
 gameui,1008D010,107,,,UNKNOWN,,,,TODO,,,
 gameui,1008D080,120,,,UNKNOWN,,,,TODO,,,
-gameui,1008D110,232,,,UNKNOWN,,,,TODO,,,
-gameui,1008D1F8,79,,,UNKNOWN,,,,TODO,,,
-gameui,1008D247,525,,,UNKNOWN,vgui2/controls/CheckButton.cpp,,,TODO,,,linux: _ZN5vgui211CheckButton19ApplySchemeSettingsEPNS_7ISchemeE
-gameui,1008D454,15,,,UNKNOWN,vgui2/controls/CheckButton.cpp,,,TODO,,,linux: _ZN5vgui211CheckButton9GetBorderEbbbb
-gameui,1008D463,125,,,UNKNOWN,vgui2/controls/CheckButton.cpp,,,TODO,,,linux: _ZN5vgui211CheckButton11SetSelectedEb
-gameui,1008D4E0,36,,,UNKNOWN,vgui2/controls/CheckButton.cpp,,,TODO,,,linux: _ZN5vgui211CheckButton23SetCheckButtonCheckableEb
-gameui,1008D504,79,,,UNKNOWN,vgui2/controls/CheckButton.cpp,,,TODO,,,linux: _ZN5vgui211CheckButton16GetButtonFgColorEv
-gameui,1008D553,13,,,UNKNOWN,vgui2/controls/CheckButton.cpp,,,TODO,,,linux: _ZN5vgui211CheckButton20OnCheckButtonCheckedEPNS_5PanelE
-gameui,1008D560,103,,,UNKNOWN,,,,TODO,,,
-gameui,1008D5D0,295,,,UNKNOWN,,,,TODO,,,
-gameui,1008D700,46,,,UNKNOWN,,,,TODO,,,
-gameui,1008D730,19,,,UNKNOWN,,,,TODO,,,
-gameui,1008D750,46,,,UNKNOWN,,,,TODO,,,
-gameui,1008D780,19,,,UNKNOWN,,,,TODO,,,
-gameui,1008D7A0,19,,,UNKNOWN,,,,TODO,,,
-gameui,1008D7C0,102,,,UNKNOWN,,,,TODO,,,
-gameui,1008D830,10,,,UNKNOWN,,,,TODO,,,
-gameui,1008D840,19,,,UNKNOWN,,,,TODO,,,
-gameui,1008D860,110,,,UNKNOWN,,,,TODO,,,
-gameui,1008D8D0,120,,,UNKNOWN,,,,TODO,,,
+gameui,1008D110,232,??0CheckButton@vgui2@@QAE@PAVPanel@1@PBD1@Z,vgui2::CheckButton::CheckButton,UNKNOWN,vgui2/controls/CheckButton.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008D1F8,79,??1CheckButton@vgui2@@UAE@XZ,vgui2::CheckButton::~CheckButton,UNKNOWN,vgui2/controls/CheckButton.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008D247,525,?ApplySchemeSettings@CheckButton@vgui2@@MAEXPAVIScheme@2@@Z,vgui2::CheckButton::ApplySchemeSettings,UNKNOWN,vgui2/controls/CheckButton.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui211CheckButton19ApplySchemeSettingsEPNS_7ISchemeE
+gameui,1008D454,15,?GetBorder@CheckButton@vgui2@@MAEPAVIBorder@2@_N000@Z,vgui2::CheckButton::GetBorder,UNKNOWN,vgui2/controls/CheckButton.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui211CheckButton9GetBorderEbbbb
+gameui,1008D463,125,?SetSelected@CheckButton@vgui2@@UAEX_N@Z,vgui2::CheckButton::SetSelected,UNKNOWN,vgui2/controls/CheckButton.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui211CheckButton11SetSelectedEb
+gameui,1008D4E0,36,?SetCheckButtonCheckable@CheckButton@vgui2@@UAEX_N@Z,vgui2::CheckButton::SetCheckButtonCheckable,UNKNOWN,vgui2/controls/CheckButton.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui211CheckButton23SetCheckButtonCheckableEb
+gameui,1008D504,79,?GetButtonFgColor@CheckButton@vgui2@@MAE?AVColor@@XZ,vgui2::CheckButton::GetButtonFgColor,UNKNOWN,vgui2/controls/CheckButton.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui211CheckButton16GetButtonFgColorEv
+gameui,1008D553,13,?OnCheckButtonChecked@CheckButton@vgui2@@MAEXPAVPanel@2@@Z,vgui2::CheckButton::OnCheckButtonChecked,UNKNOWN,vgui2/controls/CheckButton.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui211CheckButton20OnCheckButtonCheckedEPNS_5PanelE
+gameui,1008D560,103,??0CheckImage@@QAE@PAVCheckButton@vgui2@@@Z,CheckImage::CheckImage,UNKNOWN,vgui2/controls/CheckButton.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008D5D0,295,?Paint@CheckImage@@UAEXXZ,CheckImage::Paint,UNKNOWN,vgui2/controls/CheckButton.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008D700,46,??_GCheckImage@@UAEPAXI@Z,destructor',UNKNOWN,vgui2/controls/CheckButton.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008D730,19,??1CheckImage@@UAE@XZ,CheckImage::~CheckImage,UNKNOWN,vgui2/controls/CheckButton.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008D750,46,??_GCheckButton@vgui2@@UAEPAXI@Z,destructor',UNKNOWN,vgui2/controls/CheckButton.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008D780,19,??1ToggleButton@vgui2@@UAE@XZ,vgui2::ToggleButton::~ToggleButton,UNKNOWN,vgui2/controls/CheckButton.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008D7A0,19,??0CheckButton_RegisterMap@CheckButton@vgui2@@QAE@XZ,vgui2::CheckButton::CheckButton_RegisterMap::CheckButton_RegisterMap,UNKNOWN,vgui2/controls/CheckButton.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008D7C0,102,?ChainToMap@CheckButton@vgui2@@SAXXZ,vgui2::CheckButton::ChainToMap,UNKNOWN,vgui2/controls/CheckButton.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008D830,10,?GetPanelBaseClassName@CheckButton@vgui2@@SAPBDXZ,vgui2::CheckButton::GetPanelBaseClassName,UNKNOWN,vgui2/controls/CheckButton.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008D840,19,??0PanelMessageFunc_OnCheckButtonChecked@CheckButton@vgui2@@QAE@XZ,vgui2::CheckButton::PanelMessageFunc_OnCheckButtonChecked::PanelMessageFunc_OnCheckButtonChecked,UNKNOWN,vgui2/controls/CheckButton.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008D860,110,?InitVar@PanelMessageFunc_OnCheckButtonChecked@CheckButton@vgui2@@SAXXZ,vgui2::CheckButton::PanelMessageFunc_OnCheckButtonChecked::InitVar,UNKNOWN,vgui2/controls/CheckButton.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008D8D0,120,?AddToMap@CheckButton@vgui2@@SAXPBDP8Panel@2@AEXXZHH0H0@Z,vgui2::CheckButton::AddToMap,UNKNOWN,vgui2/controls/CheckButton.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,1008D960,83,??0ToggleButton@vgui2@@QAE@PAVPanel@1@PBD1@Z,vgui2::ToggleButton::ToggleButton,UNKNOWN,vgui2/controls/ToggleButton.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,1008D9B3,31,?OnMouseDoublePressed@ToggleButton@vgui2@@MAEXW4MouseCode@2@@Z,vgui2::ToggleButton::OnMouseDoublePressed,UNKNOWN,vgui2/controls/ToggleButton.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui212ToggleButton20OnMouseDoublePressedENS_9MouseCodeE
 gameui,1008D9D2,79,?GetButtonFgColor@ToggleButton@vgui2@@MAE?AVColor@@XZ,vgui2::ToggleButton::GetButtonFgColor,UNKNOWN,vgui2/controls/ToggleButton.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui212ToggleButton16GetButtonFgColorEv
@@ -31496,27 +31496,27 @@ hw,01E55D70,19,??0PanelMessageFunc_OnMenuItemSelected@ComboBox@vgui2@@QAE@XZ,pub
 hw,01E55D90,107,?InitVar@PanelMessageFunc_OnMenuItemSelected@ComboBox@vgui2@@SAXXZ,public: static void __cdecl vgui2::ComboBox::PanelMessageFunc_OnMenuItemSelected::InitVar(void),ENGINE,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,
 hw,01E55E00,19,??0PanelMessageFunc_OnSetText@ComboBox@vgui2@@QAE@XZ,public: __thiscall vgui2::ComboBox::PanelMessageFunc_OnSetText::PanelMessageFunc_OnSetText(void),ENGINE,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,
 hw,01E55E20,110,?InitVar@PanelMessageFunc_OnSetText@ComboBox@vgui2@@SAXXZ,public: static void __cdecl vgui2::ComboBox::PanelMessageFunc_OnSetText::InitVar(void),ENGINE,vgui2/controls/ComboBox.cpp,,,MATCHED,100,,
-hw,01E55EC0,232,,,ENGINE,vgui2/controls/CheckButton.cpp,,,TODO,,,
-hw,01E55FA8,79,,,ENGINE,vgui2/controls/CheckButton.cpp,,,TODO,,,
-hw,01E55FF7,525,,,UNKNOWN,vgui2/controls/CheckButton.cpp,,,TODO,,,linux: _ZN5vgui211CheckButton19ApplySchemeSettingsEPNS_7ISchemeE
-hw,01E56204,15,,,UNKNOWN,vgui2/controls/CheckButton.cpp,,,TODO,,,linux: _ZN5vgui211CheckButton9GetBorderEbbbb
-hw,01E56213,125,,,UNKNOWN,vgui2/controls/CheckButton.cpp,,,TODO,,,linux: _ZN5vgui211CheckButton11SetSelectedEb
-hw,01E56290,36,,,UNKNOWN,vgui2/controls/CheckButton.cpp,,,TODO,,,linux: _ZN5vgui211CheckButton23SetCheckButtonCheckableEb
-hw,01E562B4,79,,,UNKNOWN,vgui2/controls/CheckButton.cpp,,,TODO,,,linux: _ZN5vgui211CheckButton16GetButtonFgColorEv
-hw,01E56303,13,,,UNKNOWN,vgui2/controls/CheckButton.cpp,,,TODO,,,linux: _ZN5vgui211CheckButton20OnCheckButtonCheckedEPNS_5PanelE
-hw,01E56310,103,,,ENGINE,vgui2/controls/CheckButton.cpp,,,TODO,,,
-hw,01E56380,295,,,ENGINE,vgui2/controls/CheckButton.cpp,,,TODO,,,
-hw,01E564B0,46,,,ENGINE,vgui2/controls/CheckButton.cpp,,,TODO,,,
-hw,01E564E0,19,,,ENGINE,vgui2/controls/CheckButton.cpp,,,TODO,,,
-hw,01E56500,46,,,ENGINE,vgui2/controls/CheckButton.cpp,,,TODO,,,
-hw,01E56530,19,,,ENGINE,vgui2/controls/CheckButton.cpp,,,TODO,,,
-hw,01E56550,102,,,ENGINE,vgui2/controls/CheckButton.cpp,,,TODO,,,
+hw,01E55EC0,232,??0CheckButton@vgui2@@QAE@PAVPanel@1@PBD1@Z,vgui2::CheckButton::CheckButton,ENGINE,vgui2/controls/CheckButton.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E55FA8,79,??1CheckButton@vgui2@@UAE@XZ,vgui2::CheckButton::~CheckButton,ENGINE,vgui2/controls/CheckButton.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E55FF7,525,?ApplySchemeSettings@CheckButton@vgui2@@MAEXPAVIScheme@2@@Z,vgui2::CheckButton::ApplySchemeSettings,UNKNOWN,vgui2/controls/CheckButton.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui211CheckButton19ApplySchemeSettingsEPNS_7ISchemeE
+hw,01E56204,15,?GetBorder@CheckButton@vgui2@@MAEPAVIBorder@2@_N000@Z,vgui2::CheckButton::GetBorder,UNKNOWN,vgui2/controls/CheckButton.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui211CheckButton9GetBorderEbbbb
+hw,01E56213,125,?SetSelected@CheckButton@vgui2@@UAEX_N@Z,vgui2::CheckButton::SetSelected,UNKNOWN,vgui2/controls/CheckButton.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui211CheckButton11SetSelectedEb
+hw,01E56290,36,?SetCheckButtonCheckable@CheckButton@vgui2@@UAEX_N@Z,vgui2::CheckButton::SetCheckButtonCheckable,UNKNOWN,vgui2/controls/CheckButton.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui211CheckButton23SetCheckButtonCheckableEb
+hw,01E562B4,79,?GetButtonFgColor@CheckButton@vgui2@@MAE?AVColor@@XZ,vgui2::CheckButton::GetButtonFgColor,UNKNOWN,vgui2/controls/CheckButton.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui211CheckButton16GetButtonFgColorEv
+hw,01E56303,13,?OnCheckButtonChecked@CheckButton@vgui2@@MAEXPAVPanel@2@@Z,vgui2::CheckButton::OnCheckButtonChecked,UNKNOWN,vgui2/controls/CheckButton.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui211CheckButton20OnCheckButtonCheckedEPNS_5PanelE
+hw,01E56310,103,??0CheckImage@@QAE@PAVCheckButton@vgui2@@@Z,CheckImage::CheckImage,ENGINE,vgui2/controls/CheckButton.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E56380,295,?Paint@CheckImage@@UAEXXZ,CheckImage::Paint,ENGINE,vgui2/controls/CheckButton.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E564B0,46,??_GCheckImage@@UAEPAXI@Z,destructor',ENGINE,vgui2/controls/CheckButton.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E564E0,19,??1CheckImage@@UAE@XZ,CheckImage::~CheckImage,ENGINE,vgui2/controls/CheckButton.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E56500,46,??_GCheckButton@vgui2@@UAEPAXI@Z,destructor',ENGINE,vgui2/controls/CheckButton.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E56530,19,??0CheckButton_RegisterMap@CheckButton@vgui2@@QAE@XZ,vgui2::CheckButton::CheckButton_RegisterMap::CheckButton_RegisterMap,ENGINE,vgui2/controls/CheckButton.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E56550,102,?ChainToMap@CheckButton@vgui2@@SAXXZ,vgui2::CheckButton::ChainToMap,ENGINE,vgui2/controls/CheckButton.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01E565C0,64,?GetMessageMap@Button@vgui2@@UAEPAUPanelMessageMap@2@XZ,vgui2::Button::GetMessageMap,UNKNOWN,vgui2/controls/Button.cpp,,,MATCHED,100,,
 hw,01E56600,10,?GetPanelClassName@Button@vgui2@@SAPBDXZ,vgui2::Button::GetPanelClassName,UNKNOWN,,,,TODO,,,
-hw,01E56610,10,,,UNKNOWN,,,,TODO,,,
-hw,01E56620,19,,,ENGINE,vgui2/controls/CheckButton.cpp,,,TODO,,,
-hw,01E56640,110,,,ENGINE,vgui2/controls/CheckButton.cpp,,,TODO,,,
-hw,01E566B0,120,,,ENGINE,vgui2/controls/CheckButton.cpp,,,TODO,,,
+hw,01E56610,10,?GetPanelBaseClassName@CheckButton@vgui2@@SAPBDXZ,vgui2::CheckButton::GetPanelBaseClassName,UNKNOWN,vgui2/controls/CheckButton.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E56620,19,??0PanelMessageFunc_OnCheckButtonChecked@CheckButton@vgui2@@QAE@XZ,vgui2::CheckButton::PanelMessageFunc_OnCheckButtonChecked::PanelMessageFunc_OnCheckButtonChecked,ENGINE,vgui2/controls/CheckButton.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E56640,110,?InitVar@PanelMessageFunc_OnCheckButtonChecked@CheckButton@vgui2@@SAXXZ,vgui2::CheckButton::PanelMessageFunc_OnCheckButtonChecked::InitVar,ENGINE,vgui2/controls/CheckButton.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E566B0,120,?AddToMap@CheckButton@vgui2@@SAXPBDP8Panel@2@AEXXZHH0H0@Z,vgui2::CheckButton::AddToMap,ENGINE,vgui2/controls/CheckButton.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01E56730,15,_$E8,,UNKNOWN,vgui2/controls/Button.cpp,,,MATCHED,100,,
 hw,01E5673F,21,_$E5,,ENGINE,vgui2/controls/Button.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01E56754,18,_$E7,,UNKNOWN,vgui2/controls/Button.cpp,,,MATCHED,100,,
