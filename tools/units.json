@@ -3139,6 +3139,11 @@
           "functions_file": "tools/units/hw_engine_sys_engine.txt"
         },
         {
+          "name": "engine/thread",
+          "source": "src/engine_hw/thread.cpp",
+          "functions_file": "tools/units/hw_engine_thread.txt"
+        },
+        {
           "name": "engine/traceinit",
           "source": "src/engine_hw/traceinit.cpp",
           "functions_file": "tools/units/hw_engine_traceinit.txt",
