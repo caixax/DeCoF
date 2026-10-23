@@ -2697,6 +2697,18 @@
           ]
         },
         {
+          "name": "vgui2/controls/BitmapImagePanel",
+          "source": "src/vgui2/controls/BitmapImagePanel.cpp",
+          "functions_file": "tools/units/hw_vgui2_controls_BitmapImagePanel.txt",
+          "includes": [
+            "src/gameui",
+            "src/public",
+            "src/common",
+            "src/engine",
+            "src/pm_shared"
+          ]
+        },
+        {
           "name": "vgui2/controls/MessageBox",
           "source": "src/vgui2/controls/MessageBox.cpp",
           "functions_file": "tools/units/hw_vgui2_controls_MessageBox.txt",
@@ -3285,6 +3297,11 @@
           "name": "vgui2/controls/ComboBox",
           "source": "src/vgui2/controls/ComboBox.cpp",
           "functions_file": "tools/units/gameui_vgui2_controls_ComboBox.txt"
+        },
+        {
+          "name": "vgui2/controls/BitmapImagePanel",
+          "source": "src/vgui2/controls/BitmapImagePanel.cpp",
+          "functions_file": "tools/units/gameui_vgui2_controls_BitmapImagePanel.txt"
         },
         {
           "name": "vgui2/controls/MessageBox",

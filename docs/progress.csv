@@ -10607,19 +10607,19 @@ gameui,10066960,58,?CopyConstruct@@YAXPAPAGABQAG@Z,CopyConstruct,UNKNOWN,vgui2/c
 gameui,100669A0,17,?NumAllocated@?$CUtlMemory@PAG@@QBEHXZ,*>::NumAllocated,UNKNOWN,vgui2/controls/TextImage.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,100669C0,199,?Grow@?$CUtlMemory@PAG@@QAEXH@Z,*>::Grow,UNKNOWN,vgui2/controls/TextImage.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,10066A90,25,?IsExternallyAllocated@?$CUtlMemory@PAG@@QBE_NXZ,*>::IsExternallyAllocated,UNKNOWN,vgui2/controls/TextImage.cpp,,,MATCHED,100,gameui_manual.csv,
-gameui,10066AB0,234,,,UNKNOWN,,,,TODO,,,
-gameui,10066B9A,62,,,UNKNOWN,,,,TODO,,,
-gameui,10066BD8,638,,,UNKNOWN,vgui2/controls/BitmapImagePanel.cpp,,,TODO,,,linux: _ZN5vgui217CBitmapImagePanel20ComputeImagePositionERiS1_S1_S1_
-gameui,10066E7A,104,,,UNKNOWN,vgui2/controls/BitmapImagePanel.cpp,,,TODO,,,linux: _ZN5vgui217CBitmapImagePanel11PaintBorderEv
-gameui,10066EE2,173,,,UNKNOWN,vgui2/controls/BitmapImagePanel.cpp,,,TODO,,,linux: _ZN5vgui217CBitmapImagePanel15PaintBackgroundEv
-gameui,10066F8F,158,,,UNKNOWN,vgui2/controls/BitmapImagePanel.cpp,,,TODO,,,linux: _ZN5vgui217CBitmapImagePanel10setTextureEPKcb
-gameui,1006702D,33,,,UNKNOWN,vgui2/controls/BitmapImagePanel.cpp,,,TODO,,,linux: _ZN5vgui217CBitmapImagePanel19SetContentAlignmentENS_5Label9AlignmentE
-gameui,1006704E,284,,,UNKNOWN,vgui2/controls/BitmapImagePanel.cpp,,,TODO,,,linux: _ZN5vgui217CBitmapImagePanel11GetSettingsEP9KeyValues
-gameui,1006718E,739,,,UNKNOWN,vgui2/controls/BitmapImagePanel.cpp,,,TODO,,,linux: _ZN5vgui217CBitmapImagePanel13ApplySettingsEP9KeyValues
-gameui,10067471,82,,,UNKNOWN,vgui2/controls/BitmapImagePanel.cpp,,,TODO,,,linux: _ZN5vgui217CBitmapImagePanel19ApplySchemeSettingsEPNS_7ISchemeE
-gameui,100674C3,48,,vgui2::CBitmapImagePanel::GetDescription,ENGINE,vgui2/controls/BitmapImagePanel.cpp,,,TODO,,linux_symbols:string:0.438,linux: _ZN5vgui217CBitmapImagePanel14GetDescriptionEv
-gameui,10067500,46,,,UNKNOWN,,,,TODO,,,
-gameui,10067530,19,,,UNKNOWN,,,,TODO,,,
+gameui,10066AB0,234,??0CBitmapImagePanel@vgui2@@QAE@PAVPanel@1@PBD1@Z,vgui2::CBitmapImagePanel::CBitmapImagePanel,UNKNOWN,vgui2/controls/BitmapImagePanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10066B9A,62,?CloneString@@YAPADPBD@Z,CloneString,UNKNOWN,vgui2/controls/BitmapImagePanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10066BD8,638,?ComputeImagePosition@CBitmapImagePanel@vgui2@@EAEXAAH000@Z,vgui2::CBitmapImagePanel::ComputeImagePosition,UNKNOWN,vgui2/controls/BitmapImagePanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui217CBitmapImagePanel20ComputeImagePositionERiS1_S1_S1_
+gameui,10066E7A,104,?PaintBorder@CBitmapImagePanel@vgui2@@MAEXXZ,vgui2::CBitmapImagePanel::PaintBorder,UNKNOWN,vgui2/controls/BitmapImagePanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui217CBitmapImagePanel11PaintBorderEv
+gameui,10066EE2,173,?PaintBackground@CBitmapImagePanel@vgui2@@UAEXXZ,vgui2::CBitmapImagePanel::PaintBackground,UNKNOWN,vgui2/controls/BitmapImagePanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui217CBitmapImagePanel15PaintBackgroundEv
+gameui,10066F8F,158,?setTexture@CBitmapImagePanel@vgui2@@UAEXPBD_N@Z,vgui2::CBitmapImagePanel::setTexture,UNKNOWN,vgui2/controls/BitmapImagePanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui217CBitmapImagePanel10setTextureEPKcb
+gameui,1006702D,33,?SetContentAlignment@CBitmapImagePanel@vgui2@@UAEXW4Alignment@Label@2@@Z,vgui2::CBitmapImagePanel::SetContentAlignment,UNKNOWN,vgui2/controls/BitmapImagePanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui217CBitmapImagePanel19SetContentAlignmentENS_5Label9AlignmentE
+gameui,1006704E,284,?GetSettings@CBitmapImagePanel@vgui2@@MAEXPAVKeyValues@@@Z,vgui2::CBitmapImagePanel::GetSettings,UNKNOWN,vgui2/controls/BitmapImagePanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui217CBitmapImagePanel11GetSettingsEP9KeyValues
+gameui,1006718E,739,?ApplySettings@CBitmapImagePanel@vgui2@@MAEXPAVKeyValues@@@Z,vgui2::CBitmapImagePanel::ApplySettings,UNKNOWN,vgui2/controls/BitmapImagePanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui217CBitmapImagePanel13ApplySettingsEP9KeyValues
+gameui,10067471,82,?ApplySchemeSettings@CBitmapImagePanel@vgui2@@MAEXPAVIScheme@2@@Z,vgui2::CBitmapImagePanel::ApplySchemeSettings,UNKNOWN,vgui2/controls/BitmapImagePanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui217CBitmapImagePanel19ApplySchemeSettingsEPNS_7ISchemeE
+gameui,100674C3,48,?GetDescription@CBitmapImagePanel@vgui2@@MAEPBDXZ,vgui2::CBitmapImagePanel::GetDescription,ENGINE,vgui2/controls/BitmapImagePanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui217CBitmapImagePanel14GetDescriptionEv
+gameui,10067500,46,??_GCBitmapImagePanel@vgui2@@UAEPAXI@Z,destructor',UNKNOWN,vgui2/controls/BitmapImagePanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10067530,19,??1CBitmapImagePanel@vgui2@@UAE@XZ,vgui2::CBitmapImagePanel::~CBitmapImagePanel,UNKNOWN,vgui2/controls/BitmapImagePanel.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,10067550,1792,??0Frame@vgui2@@QAE@PAVPanel@1@PBD_N@Z,vgui2::Frame::Frame,ENGINE,,,,MATCHED,100,gameui_manual.csv,
 gameui,10067C50,785,??1Frame@vgui2@@UAE@XZ,vgui2::Frame::~Frame,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
 gameui,10067F61,603,?SetupResizeCursors@Frame@vgui2@@AAEXXZ,vgui2::Frame::SetupResizeCursors,UNKNOWN,,,,MATCHED,100,gameui_manual.csv,
@@ -30696,20 +30696,20 @@ hw,01E3D980,65,?CopyConstruct@@YAXPAUPanelItem_t@@ABU1@@Z,CopyConstruct,ENGINE,v
 hw,01E3D9D0,17,?NumAllocated@?$CUtlMemory@UPanelItem_t@@@@QBEHXZ,PanelItem_t>::NumAllocated,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01E3D9F0,199,?Grow@?$CUtlMemory@UPanelItem_t@@@@QAEXH@Z,PanelItem_t>::Grow,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01E3DAC0,25,?IsExternallyAllocated@?$CUtlMemory@UPanelItem_t@@@@QBE_NXZ,PanelItem_t>::IsExternallyAllocated,ENGINE,vgui2/controls/BuildModeDialog.cpp,,,MATCHED,100,hw_manual.csv,
-hw,01E3DBB0,234,,,ENGINE,vgui2/controls/BitmapImagePanel.cpp,,,TODO,,,
-hw,01E3DC9A,62,,,ENGINE,vgui2/controls/BitmapImagePanel.cpp,,,TODO,,,
-hw,01E3DCD8,638,,,UNKNOWN,vgui2/controls/BitmapImagePanel.cpp,,,TODO,,,linux: _ZN5vgui217CBitmapImagePanel20ComputeImagePositionERiS1_S1_S1_
-hw,01E3DF7A,104,,,UNKNOWN,vgui2/controls/BitmapImagePanel.cpp,,,TODO,,,linux: _ZN5vgui217CBitmapImagePanel11PaintBorderEv
-hw,01E3DFE2,173,,,UNKNOWN,vgui2/controls/BitmapImagePanel.cpp,,,TODO,,,linux: _ZN5vgui217CBitmapImagePanel15PaintBackgroundEv
-hw,01E3E08F,158,,,UNKNOWN,vgui2/controls/BitmapImagePanel.cpp,,,TODO,,,linux: _ZN5vgui217CBitmapImagePanel10setTextureEPKcb
-hw,01E3E12D,33,,,UNKNOWN,vgui2/controls/BitmapImagePanel.cpp,,,TODO,,,linux: _ZN5vgui217CBitmapImagePanel19SetContentAlignmentENS_5Label9AlignmentE
-hw,01E3E14E,284,,,UNKNOWN,vgui2/controls/BitmapImagePanel.cpp,,,TODO,,,linux: _ZN5vgui217CBitmapImagePanel11GetSettingsEP9KeyValues
-hw,01E3E28E,739,,,UNKNOWN,vgui2/controls/BitmapImagePanel.cpp,,,TODO,,,linux: _ZN5vgui217CBitmapImagePanel13ApplySettingsEP9KeyValues
-hw,01E3E571,82,,,UNKNOWN,vgui2/controls/BitmapImagePanel.cpp,,,TODO,,,linux: _ZN5vgui217CBitmapImagePanel19ApplySchemeSettingsEPNS_7ISchemeE
-hw,01E3E5C3,48,,vgui2::CBitmapImagePanel::GetDescription,ENGINE,vgui2/controls/BitmapImagePanel.cpp,,,TODO,,linux_symbols:string:0.611,
-hw,01E3E600,46,,,ENGINE,vgui2/controls/BitmapImagePanel.cpp,,,TODO,,,
-hw,01E3E630,19,,,ENGINE,vgui2/controls/BitmapImagePanel.cpp,,,TODO,,,
-hw,01E3E650,22,,,ENGINE,vgui2/controls/BitmapImagePanel.cpp,,,TODO,,,
+hw,01E3DBB0,234,??0CBitmapImagePanel@vgui2@@QAE@PAVPanel@1@PBD1@Z,vgui2::CBitmapImagePanel::CBitmapImagePanel,ENGINE,vgui2/controls/BitmapImagePanel.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3DC9A,62,?CloneString@@YAPADPBD@Z,CloneString,ENGINE,vgui2/controls/BitmapImagePanel.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3DCD8,638,?ComputeImagePosition@CBitmapImagePanel@vgui2@@EAEXAAH000@Z,vgui2::CBitmapImagePanel::ComputeImagePosition,UNKNOWN,vgui2/controls/BitmapImagePanel.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui217CBitmapImagePanel20ComputeImagePositionERiS1_S1_S1_
+hw,01E3DF7A,104,?PaintBorder@CBitmapImagePanel@vgui2@@MAEXXZ,vgui2::CBitmapImagePanel::PaintBorder,UNKNOWN,vgui2/controls/BitmapImagePanel.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui217CBitmapImagePanel11PaintBorderEv
+hw,01E3DFE2,173,?PaintBackground@CBitmapImagePanel@vgui2@@UAEXXZ,vgui2::CBitmapImagePanel::PaintBackground,UNKNOWN,vgui2/controls/BitmapImagePanel.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui217CBitmapImagePanel15PaintBackgroundEv
+hw,01E3E08F,158,?setTexture@CBitmapImagePanel@vgui2@@UAEXPBD_N@Z,vgui2::CBitmapImagePanel::setTexture,UNKNOWN,vgui2/controls/BitmapImagePanel.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui217CBitmapImagePanel10setTextureEPKcb
+hw,01E3E12D,33,?SetContentAlignment@CBitmapImagePanel@vgui2@@UAEXW4Alignment@Label@2@@Z,vgui2::CBitmapImagePanel::SetContentAlignment,UNKNOWN,vgui2/controls/BitmapImagePanel.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui217CBitmapImagePanel19SetContentAlignmentENS_5Label9AlignmentE
+hw,01E3E14E,284,?GetSettings@CBitmapImagePanel@vgui2@@MAEXPAVKeyValues@@@Z,vgui2::CBitmapImagePanel::GetSettings,UNKNOWN,vgui2/controls/BitmapImagePanel.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui217CBitmapImagePanel11GetSettingsEP9KeyValues
+hw,01E3E28E,739,?ApplySettings@CBitmapImagePanel@vgui2@@MAEXPAVKeyValues@@@Z,vgui2::CBitmapImagePanel::ApplySettings,UNKNOWN,vgui2/controls/BitmapImagePanel.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui217CBitmapImagePanel13ApplySettingsEP9KeyValues
+hw,01E3E571,82,?ApplySchemeSettings@CBitmapImagePanel@vgui2@@MAEXPAVIScheme@2@@Z,vgui2::CBitmapImagePanel::ApplySchemeSettings,UNKNOWN,vgui2/controls/BitmapImagePanel.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui217CBitmapImagePanel19ApplySchemeSettingsEPNS_7ISchemeE
+hw,01E3E5C3,48,?GetDescription@CBitmapImagePanel@vgui2@@MAEPBDXZ,vgui2::CBitmapImagePanel::GetDescription,ENGINE,vgui2/controls/BitmapImagePanel.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3E600,46,??_GCBitmapImagePanel@vgui2@@UAEPAXI@Z,destructor',ENGINE,vgui2/controls/BitmapImagePanel.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3E630,19,??1CBitmapImagePanel@vgui2@@UAE@XZ,vgui2::CBitmapImagePanel::~CBitmapImagePanel,ENGINE,vgui2/controls/BitmapImagePanel.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E3E650,22,?setImageColor@CBitmapImagePanel@vgui2@@QAEXVColor@@@Z,vgui2::CBitmapImagePanel::setImageColor,ENGINE,vgui2/controls/BitmapImagePanel.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01E3E670,129,,,ENGINE,vgui2/controls/URLLabel.cpp,,,TODO,,,
 hw,01E3E6F1,129,,,ENGINE,vgui2/controls/URLLabel.cpp,,,TODO,,,
 hw,01E3E772,66,,,ENGINE,vgui2/controls/URLLabel.cpp,,,TODO,,,
