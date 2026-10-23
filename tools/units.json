@@ -2976,7 +2976,12 @@
         {
           "name": "engine/DemoPlayerWrapper",
           "source": "src/engine_hw/DemoPlayerWrapper.cpp",
-          "functions_file": "tools/units/hw_engine_DemoPlayerWrapper.txt"
+          "functions_file": "tools/units/hw_engine_DemoPlayerWrapper.txt",
+          "includes": [
+            "src/engine_hw",
+            "src/public",
+            "src/common"
+          ]
         },
         {
           "name": "engine/download",
