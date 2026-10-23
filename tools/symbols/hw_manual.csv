@@ -4713,3 +4713,5 @@ va,name,kind,evidence
 01E5F800,?InitVar@PanelMessageFunc_OnDialogVariablesChanged@Frame@vgui2@@SAXXZ,func,vgui2/controls/Frame.cpp: same position and size as the function of the GameUI.dll Frame object at 1006BD40 (both DLLs link the same vgui_controls objects)
 01E5F3A0,?GetMessageMap@Frame@vgui2@@UAEPAUPanelMessageMap@2@XZ,func,"vgui2/controls/Frame.cpp: COMDAT after ChainToMap, guarded init of the Frame message map, calls GetPanelClassName at 01E5F3E0 (same code as our object); GameUI.dll emits it in an earlier object"
 01E5F3E0,?GetPanelClassName@Frame@vgui2@@SAPBDXZ,func,"vgui2/controls/Frame.cpp: returns ""Frame"""
+01E2BFC3,_$E6,func,"vgui2/controls/Panel.cpp: dynamic initializer between QueryInterface and GetPanelMap, as _E$6 in our object; calls 01E2BFCD"
+01E2BFCD,_$E5,func,"vgui2/controls/Panel.cpp: dynamic initializer after _$E6, as _E$5 in our object (initializes a Panel message map item with the parameter ""direction"")"

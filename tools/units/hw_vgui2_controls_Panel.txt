@@ -156,6 +156,8 @@
 ?InternalMove@Panel@vgui2@@EAEXXZ
 ?OnTick@Panel@vgui2@@UAEXXZ
 ?QueryInterface@Panel@vgui2@@MAEPAXW4EInterfaceID@2@@Z
+_$E6
+_$E5
 ?GetPanelMap@Panel@vgui2@@UAEPAUPanelMap_t@2@XZ
 ?PreparePanelMessageMap@@YAXPAUPanelMessageMap@vgui2@@@Z
 ?OnMessage@Panel@vgui2@@UAEXPBVKeyValues@@I@Z

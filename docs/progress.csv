@@ -30137,8 +30137,8 @@ hw,01E2BF3A,11,?OnMove@Panel@vgui2@@UAEXXZ,vgui2::Panel::OnMove,UNKNOWN,vgui2/co
 hw,01E2BF45,89,?InternalMove@Panel@vgui2@@EAEXXZ,vgui2::Panel::InternalMove,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel12InternalMoveEv
 hw,01E2BF9E,11,?OnTick@Panel@vgui2@@UAEXXZ,vgui2::Panel::OnTick,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN5vgui25Panel6OnTickEv
 hw,01E2BFA9,26,?QueryInterface@Panel@vgui2@@MAEPAXW4EInterfaceID@2@@Z,vgui2::Panel::QueryInterface,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel14QueryInterfaceENS_12EInterfaceIDE
-hw,01E2BFC3,10,,,UNKNOWN,guess:vgui2/controls/Panel.cpp,,,TODO,,,
-hw,01E2BFCD,134,,,UNKNOWN,guess:vgui2/controls/Panel.cpp,,,TODO,,,
+hw,01E2BFC3,10,_$E6,,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E2BFCD,134,_$E5,,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01E2C053,16,?GetPanelMap@Panel@vgui2@@UAEPAUPanelMap_t@2@XZ,vgui2::Panel::GetPanelMap,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel11GetPanelMapEv
 hw,01E2C063,269,?PreparePanelMessageMap@@YAXPAUPanelMessageMap@vgui2@@@Z,PreparePanelMessageMap,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,linux: _Z22PreparePanelMessageMapPN5vgui215PanelMessageMapE
 hw,01E2C170,1874,?OnMessage@Panel@vgui2@@UAEXPBVKeyValues@@I@Z,vgui2::Panel::OnMessage,ENGINE,vgui2/controls/Panel.cpp,,,MATCHED,100,linux_symbols:caller:0.833,
