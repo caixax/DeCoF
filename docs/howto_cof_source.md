@@ -116,6 +116,8 @@ Rules that hold for this build:
 - A static GCC inlined in the Linux build exists in the DWARF only as an inline subprogram (dwarf_file.py does not list it, its name and locals are there). A DWARF "local" can be an extern declared inside the function. `build.py check` prints the old object's match under a compile error: look for the "base ... ok" line.
 - An empty `if ( c ) { /* comment */ }` emits nothing at `/Od`; `if ( c ) ;` keeps the comparison (fld/fcomp) without a branch: retail's lone fld/fcomp in R_StudioSetupBones is the HLSDK's emptied prevframe test.
 - Check the DWARF block locals before trying casts: a float copied into a stack temporary before an int-to-float multiply is a named block local (`float baseframe = currententity->curstate.frame;` in CL_StudioEstimateFrame).
+- `b = ( n > 0 ) ? true : false;` stores setg straight into a bool, `b = n > 0;` clears the register first (xor before test/setg) (FileSystem_SetGameDirectory). `bool b = a > 0 && _stricmp( x, y );` gives the mov 1 / mov 0 temporary.
+- A source in src/common that needs engine headers includes them inside `extern "C"` through quakedef.h and server.h only: the includer's directory is searched first, so src/common/const.h, mathlib.h, usercmd.h and cvardef.h shadow the engine copies, while headers included from src/engine_hw resolve there (steamid.cpp).
 
 ## cof.exe units (the VC6 launcher)
 

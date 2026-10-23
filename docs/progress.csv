@@ -29474,26 +29474,26 @@ hw,01E0C930,27,??0?$CSizedCircularBuffer@$0FGCC@@@QAE@XZ,CSizedCircularBuffer<22
 hw,01E0C950,42,??0CAutoGain@@QAE@XZ,CAutoGain::CAutoGain,ENGINE,engine/voice_gain.cpp,,,MATCHED,100,,linux: _ZN9CAutoGainC1Ev
 hw,01E0C97A,118,?Reset@CAutoGain@@QAEXHMMM@Z,CAutoGain::Reset,ENGINE,engine/voice_gain.cpp,,,MATCHED,100,,linux: _ZN9CAutoGain5ResetEifff
 hw,01E0C9F0,642,?ProcessSamples@CAutoGain@@QAEXPAFH@Z,CAutoGain::ProcessSamples,ENGINE,engine/voice_gain.cpp,,,MATCHED,100,,linux: _ZN9CAutoGain14ProcessSamplesEPsi
-hw,01E0CC80,57,,,ENGINE,engine/voice_mixer_controls_openal.cpp,,,TODO,,,
-hw,01E0CCB9,36,,,ENGINE,engine/voice_mixer_controls_openal.cpp,,,TODO,,,
-hw,01E0CCDD,846,,,ENGINE,engine/voice_mixer_controls_openal.cpp,,,TODO,,,
-hw,01E0D02B,51,,,ENGINE,engine/voice_mixer_controls_openal.cpp,,,TODO,,,
-hw,01E0D05E,221,,,UNKNOWN,engine/voice_mixer_controls_openal.cpp,,,TODO,,,linux: _ZN14CMixerControls14GetValue_FloatEN14IMixerControls7ControlERf
-hw,01E0D13B,212,,,UNKNOWN,engine/voice_mixer_controls_openal.cpp,,,TODO,,,linux: _ZN14CMixerControls14SetValue_FloatEN14IMixerControls7ControlEf
-hw,01E0D20F,260,,,UNKNOWN,engine/voice_mixer_controls_openal.cpp,,,TODO,,,linux: _ZN14CMixerControls28SelectMicrophoneForWaveInputEv
-hw,01E0D313,55,,,ENGINE,engine/voice_mixer_controls_openal.cpp,,,TODO,,,
-hw,01E0D34A,40,,,ENGINE,engine/voice_mixer_controls_openal.cpp,,,TODO,,,
-hw,01E0D372,102,,,ENGINE,engine/voice_mixer_controls_openal.cpp,,,TODO,,,
-hw,01E0D3D8,96,,,ENGINE,engine/voice_mixer_controls_openal.cpp,,,TODO,,,
-hw,01E0D438,96,,,ENGINE,engine/voice_mixer_controls_openal.cpp,,,TODO,,,
-hw,01E0D498,91,,,ENGINE,engine/voice_mixer_controls_openal.cpp,,,TODO,,,
-hw,01E0D4F3,78,,,ENGINE,engine/voice_mixer_controls_openal.cpp,,,TODO,,,
-hw,01E0D541,510,,,ENGINE,engine/voice_mixer_controls_openal.cpp,,,TODO,,,
-hw,01E0D73F,52,?GetMixerControls@@YAPAVIMixerControls@@XZ,GetMixerControls,ENGINE,engine/voice_mixer_controls_openal.cpp,,,TODO,,hw_manual.csv,
-hw,01E0D780,46,,,ENGINE,engine/voice_mixer_controls_openal.cpp,,,TODO,,,
-hw,01E0D7B0,23,,,ENGINE,engine/voice_mixer_controls_openal.cpp,,,TODO,,,
-hw,01E0D7D0,46,,,ENGINE,engine/voice_mixer_controls_openal.cpp,,,TODO,,,
-hw,01E0D800,20,,,ENGINE,engine/voice_mixer_controls_openal.cpp,,,TODO,,,
+hw,01E0CC80,57,??0CMixerControls@@QAE@XZ,CMixerControls::CMixerControls,ENGINE,engine/voice_mixer_controls_openal.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E0CCB9,36,??1CMixerControls@@UAE@XZ,CMixerControls::~CMixerControls,ENGINE,engine/voice_mixer_controls_openal.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E0CCDD,846,?Init_guess@CMixerControls@@IAE_NXZ,CMixerControls::Init_guess,ENGINE,engine/voice_mixer_controls_openal.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E0D02B,51,?Term_guess@CMixerControls@@IAEXXZ,CMixerControls::Term_guess,ENGINE,engine/voice_mixer_controls_openal.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E0D05E,221,?GetValue_Float@CMixerControls@@UAE_NW4Control@IMixerControls@@AAM@Z,CMixerControls::GetValue_Float,UNKNOWN,engine/voice_mixer_controls_openal.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN14CMixerControls14GetValue_FloatEN14IMixerControls7ControlERf
+hw,01E0D13B,212,?SetValue_Float@CMixerControls@@UAE_NW4Control@IMixerControls@@M@Z,CMixerControls::SetValue_Float,UNKNOWN,engine/voice_mixer_controls_openal.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN14CMixerControls14SetValue_FloatEN14IMixerControls7ControlEf
+hw,01E0D20F,260,?SelectMicrophoneForWaveInput@CMixerControls@@UAE_NXZ,CMixerControls::SelectMicrophoneForWaveInput,UNKNOWN,engine/voice_mixer_controls_openal.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN14CMixerControls28SelectMicrophoneForWaveInputEv
+hw,01E0D313,55,?Release@CMixerControls@@UAEXXZ,CMixerControls::Release,ENGINE,engine/voice_mixer_controls_openal.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E0D34A,40,?Clear_guess@CMixerControls@@IAEXXZ,CMixerControls::Clear_guess,ENGINE,engine/voice_mixer_controls_openal.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E0D372,102,?GetControlOption_guess@CMixerControls@@IAE_NKKAA_N@Z,CMixerControls::GetControlOption_guess,ENGINE,engine/voice_mixer_controls_openal.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E0D3D8,96,?SetControlOption_guess@CMixerControls@@IAE_NKK_N@Z,CMixerControls::SetControlOption_guess,ENGINE,engine/voice_mixer_controls_openal.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E0D438,96,?GetControlUnsigned_guess@CMixerControls@@IAE_NKKAAK@Z,CMixerControls::GetControlUnsigned_guess,ENGINE,engine/voice_mixer_controls_openal.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E0D498,91,?SetControlUnsigned_guess@CMixerControls@@IAE_NKKK@Z,CMixerControls::SetControlUnsigned_guess,ENGINE,engine/voice_mixer_controls_openal.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E0D4F3,78,?GetLineControls_guess@CMixerControls@@IAE_NKPAUtagMIXERCONTROLA@@K@Z,CMixerControls::GetLineControls_guess,ENGINE,engine/voice_mixer_controls_openal.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E0D541,510,?FindMicSelectControl_guess@CMixerControls@@IAEXKK@Z,CMixerControls::FindMicSelectControl_guess,ENGINE,engine/voice_mixer_controls_openal.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E0D73F,52,?GetMixerControls@@YAPAVIMixerControls@@XZ,GetMixerControls,ENGINE,engine/voice_mixer_controls_openal.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E0D780,46,??_GCMixerControls@@UAEPAXI@Z,destructor',ENGINE,engine/voice_mixer_controls_openal.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E0D7B0,23,??0IMixerControls@@QAE@XZ,IMixerControls::IMixerControls,ENGINE,engine/voice_mixer_controls_openal.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E0D7D0,46,??_GIMixerControls@@MAEPAXI@Z,destructor',ENGINE,engine/voice_mixer_controls_openal.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E0D800,20,??1IMixerControls@@MAE@XZ,IMixerControls::~IMixerControls,ENGINE,engine/voice_mixer_controls_openal.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01E0D820,39,,,ENGINE,engine/voice_record_dsound.cpp,,,TODO,,,
 hw,01E0D847,36,,,ENGINE,engine/voice_record_dsound.cpp,,,TODO,,,
 hw,01E0D86B,55,,,ENGINE,engine/voice_record_dsound.cpp,,,TODO,,,
