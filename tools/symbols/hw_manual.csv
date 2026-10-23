@@ -4587,3 +4587,9 @@ va,name,kind,evidence
 01E5A9A0,?InitVar@PanelMessageFunc_OnHotkeyPressed@Label@vgui2@@SAXXZ,func,vgui2/controls/Label.cpp: same position and size as the function of the GameUI.dll Label object at 1005D160 (both DLLs link the same vgui_controls objects)
 01E5AA10,??0PanelMessageFunc_OnDialogVariablesChanged@Label@vgui2@@QAE@XZ,func,vgui2/controls/Label.cpp: same position and size as the function of the GameUI.dll Label object at 1005D1D0 (both DLLs link the same vgui_controls objects)
 01E5AA30,?InitVar@PanelMessageFunc_OnDialogVariablesChanged@Label@vgui2@@SAXXZ,func,vgui2/controls/Label.cpp: same position and size as the function of the GameUI.dll Label object at 1005D1F0 (both DLLs link the same vgui_controls objects)
+01DD1690,_S_GetWAVPointer,func,"engine_api_t S_GetWAVPointer (HL SDK common/engine_launcher_api.h, cl_dll/soundsystem.cpp); returns &hWaveOut or NULL, first function of snd_win.c"
+01DD2263,_SNDDMA_GetEAXDMAPos_guess,func,"snd_win.c; called by SNDDMA_GetDMAPos when the EAX buffers are in use; play position of the front left EAX buffer; the name is a guess"
+01DD22BE,_FreeEAXBuffers_guess,func,"snd_win.c; called by FreeSound and on every error of the EAX buffer setup; releases the EAX property sets, 3D buffers and speaker buffers; the name is a guess"
+01DD2497,_SNDDMA_InitEAX_guess,func,"snd_win.c; called by SNDDMA_InitDirect when s_eax is set; strings ""DS:CreateSoundBuffer for EAX front left failed"" and ""EAX initialization successful""; the name is a guess"
+01DD3B4A,_SNDDMA_Activate_guess,func,"snd_win.c; no caller; reallocates the A3D voices with the main window and resets gSndBufSize; the name is a guess"
+01DD3B88,_SNDDMA_InitA3D_guess,func,"snd_win.c; called by SNDDMA_Init and S_EnableA3D_guess; strings ""Initializing Aureal A3D..."" and ""A3D Initialized successfully""; the name is a guess"
