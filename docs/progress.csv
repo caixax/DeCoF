@@ -23967,10 +23967,10 @@ hw,01D0F434,109,_VGUI2_Find_String,VGUI2_Find_String,ENGINE,engine/vgui2/text_dr
 hw,01D0F4A1,107,_VGUI2_MessageFontInfo,VGUI2_MessageFontInfo,ENGINE,engine/vgui2/text_draw.cpp,,,TODO,,hw_position.csv,
 hw,01D0F510,21,,,UNKNOWN,engine/vgui2/text_draw.cpp,,,TODO,,,inline function (COMDAT) emitted after the object
 hw,01D0F530,28,,,UNKNOWN,engine/vgui2/text_draw.cpp,,,TODO,,,inline function (COMDAT) emitted after the object
-hw,01D0F550,15,,,UNKNOWN,engine/vgui_intwrap2.cpp,,,TODO,,,"VC6 dynamic initializer ($E) of g_TempConsoleBuffer (CUtlVector<char> constructor 01D0FF00, atexit destructor 01D0FF40)"
-hw,01D0F55F,22,,,UNKNOWN,engine/vgui_intwrap2.cpp,,,TODO,,,"VC6 dynamic initializer ($E) of g_TempConsoleBuffer (CUtlVector<char> constructor 01D0FF00, atexit destructor 01D0FF40)"
-hw,01D0F575,18,,,UNKNOWN,engine/vgui_intwrap2.cpp,,,TODO,,,"VC6 dynamic initializer ($E) of g_TempConsoleBuffer (CUtlVector<char> constructor 01D0FF00, atexit destructor 01D0FF40)"
-hw,01D0F587,15,,,UNKNOWN,engine/vgui_intwrap2.cpp,,,TODO,,,"VC6 dynamic initializer ($E) of g_TempConsoleBuffer (CUtlVector<char> constructor 01D0FF00, atexit destructor 01D0FF40)"
+hw,01D0F550,15,_E$8,,UNKNOWN,engine/vgui_intwrap2.cpp,,,TODO,,,"VC6 dynamic initializer ($E) of g_TempConsoleBuffer (CUtlVector<char> constructor 01D0FF00, atexit destructor 01D0FF40)"
+hw,01D0F55F,22,_E$5,,UNKNOWN,engine/vgui_intwrap2.cpp,,,TODO,,,"VC6 dynamic initializer ($E) of g_TempConsoleBuffer (CUtlVector<char> constructor 01D0FF00, atexit destructor 01D0FF40)"
+hw,01D0F575,18,_E$7,,UNKNOWN,engine/vgui_intwrap2.cpp,,,TODO,,,"VC6 dynamic initializer ($E) of g_TempConsoleBuffer (CUtlVector<char> constructor 01D0FF00, atexit destructor 01D0FF40)"
+hw,01D0F587,15,_E$6,,UNKNOWN,engine/vgui_intwrap2.cpp,,,TODO,,,"VC6 dynamic initializer ($E) of g_TempConsoleBuffer (CUtlVector<char> constructor 01D0FF00, atexit destructor 01D0FF40)"
 hw,01D0F596,156,_VGuiWrap2_Startup,VGuiWrap2_Startup,ENGINE,engine/vgui_intwrap2.cpp,,,MATCHED,100,hw_position.csv,
 hw,01D0F632,42,_VGuiWrap2_Shutdown,VGuiWrap2_Shutdown,ENGINE,engine/vgui_intwrap2.cpp,,,MATCHED,100,hw_position.csv,
 hw,01D0F65C,49,_VGuiWrap2_CallEngineSurfaceAppHandler,VGuiWrap2_CallEngineSurfaceAppHandler,ENGINE,engine/vgui_intwrap2.cpp,,,MATCHED,100,hw_position.csv,
@@ -23995,14 +23995,14 @@ hw,01D0F9BA,113,_VGuiWrap2_ConPrintf,,UNKNOWN,engine/vgui_intwrap2.cpp,,,MATCHED
 hw,01D0FA2B,113,_VGuiWrap2_ConDPrintf,,UNKNOWN,engine/vgui_intwrap2.cpp,,,MATCHED,100,,
 hw,01D0FA9C,39,_VGuiWrap2_LoadingStarted,,UNKNOWN,engine/vgui_intwrap2.cpp,,,MATCHED,100,,
 hw,01D0FAC3,39,_VGuiWrap2_LoadingFinished,,UNKNOWN,engine/vgui_intwrap2.cpp,,,MATCHED,100,,
-hw,01D0FAEA,96,_StartLoadingProgressBar,,UNKNOWN,engine/vgui_intwrap2.cpp,,,TODO,94.48,,
+hw,01D0FAEA,96,_StartLoadingProgressBar,,UNKNOWN,engine/vgui_intwrap2.cpp,,,MATCHED,100,,
 hw,01D0FB4A,48,_ContinueLoadingProgressBar,,UNKNOWN,engine/vgui_intwrap2.cpp,,,MATCHED,100,,
 hw,01D0FB7A,44,_SetLoadingProgressBarStatusText,,UNKNOWN,engine/vgui_intwrap2.cpp,,,MATCHED,100,,
 hw,01D0FBA6,164,_StopLoadingProgressBar,,UNKNOWN,engine/vgui_intwrap2.cpp,,,MATCHED,100,,
 hw,01D0FC4A,35,_SetSecondaryProgressBar,,UNKNOWN,engine/vgui_intwrap2.cpp,,,MATCHED,100,,
 hw,01D0FC6D,35,_SetSecondaryProgressBarText,,UNKNOWN,engine/vgui_intwrap2.cpp,,,MATCHED,100,,
 hw,01D0FC90,51,_ValidateCDKey,,UNKNOWN,engine/vgui_intwrap2.cpp,,,MATCHED,100,,
-hw,01D0FCC3,51,,,UNKNOWN,engine/vgui_intwrap2.cpp,,,TODO,,,"Windows only (no Linux counterpart), between ValidateCDKey and VGUI2_OnDisconnectFromServer: calls staticGameUIFuncs slot 0x58 with its argument; called by hudServerCmd for the savehack/optionshack commands"
+hw,01D0FCC3,51,_VGuiWrap2_OpenDialog_guess,,UNKNOWN,engine/vgui_intwrap2.cpp,,,MATCHED,100,,"Windows only (no Linux counterpart), between ValidateCDKey and VGUI2_OnDisconnectFromServer: calls staticGameUIFuncs slot 0x58 with its argument; called by hudServerCmd for the savehack/optionshack commands"
 hw,01D0FCF6,40,_VGUI2_OnDisconnectFromServer,,UNKNOWN,engine/vgui_intwrap2.cpp,,,MATCHED,100,,
 hw,01D0FD1E,23,_VGuiWrap2_IsInCareerMatch,,UNKNOWN,engine/vgui_intwrap2.cpp,,,MATCHED,100,,
 hw,01D0FD35,10,_VguiWrap2_GetCareerUI,VguiWrap2_GetCareerUI,ENGINE,engine/vgui_intwrap2.cpp,,,MATCHED,100,hw_position.csv,
@@ -24013,32 +24013,32 @@ hw,01D0FDD3,75,_ProcessTutorMessageDecayBuffer,ProcessTutorMessageDecayBuffer,EN
 hw,01D0FE1E,99,_ConstructTutorMessageDecayBuffer,ConstructTutorMessageDecayBuffer,ENGINE,engine/vgui_intwrap2.cpp,,,MATCHED,100,hw_position.csv,
 hw,01D0FE81,25,_ResetTutorMessageDecayData,ResetTutorMessageDecayData,ENGINE,engine/vgui_intwrap2.cpp,,,MATCHED,100,hw_position.csv,
 hw,01D0FE9A,23,_VguiWrap2_GetMouseDelta,VguiWrap2_GetMouseDelta,ENGINE,engine/vgui_intwrap2.cpp,,,MATCHED,100,hw_position.csv,
-hw,01D0FEC0,61,,,UNKNOWN,engine/vgui_intwrap2.cpp,,,TODO,,,
-hw,01D0FF00,50,,,UNKNOWN,engine/vgui_intwrap2.cpp,,,TODO,,,
-hw,01D0FF40,27,,,UNKNOWN,engine/vgui_intwrap2.cpp,,,TODO,,,
-hw,01D0FF60,25,,,UNKNOWN,engine/vgui_intwrap2.cpp,,,TODO,,,
-hw,01D0FF80,19,,,UNKNOWN,engine/vgui_intwrap2.cpp,,,TODO,,,
-hw,01D0FFA0,32,,,UNKNOWN,engine/vgui_intwrap2.cpp,,,TODO,,,
-hw,01D0FFC0,32,,,UNKNOWN,engine/vgui_intwrap2.cpp,,,TODO,,,
-hw,01D0FFE0,35,,,UNKNOWN,engine/vgui_intwrap2.cpp,,,TODO,,,
-hw,01D10010,65,,,UNKNOWN,engine/vgui_intwrap2.cpp,,,TODO,,,
-hw,01D10060,109,,,UNKNOWN,engine/vgui_intwrap2.cpp,,,TODO,,,
-hw,01D100D0,70,,,UNKNOWN,engine/vgui_intwrap2.cpp,,,TODO,,,
-hw,01D10120,11,,,UNKNOWN,engine/vgui_intwrap2.cpp,,,TODO,,,
-hw,01D10130,72,,,UNKNOWN,engine/vgui_intwrap2.cpp,,,TODO,,,
-hw,01D10180,19,,,UNKNOWN,engine/vgui_intwrap2.cpp,,,TODO,,,
-hw,01D101A0,21,,,UNKNOWN,engine/vgui_intwrap2.cpp,,,TODO,,,
-hw,01D101C0,16,,,UNKNOWN,engine/vgui_intwrap2.cpp,,,TODO,,,
-hw,01D101D0,69,,,UNKNOWN,engine/vgui_intwrap2.cpp,,,TODO,,,
-hw,01D10220,25,,,UNKNOWN,engine/vgui_intwrap2.cpp,,,TODO,,,
-hw,01D10240,87,,,UNKNOWN,engine/vgui_intwrap2.cpp,,,TODO,,,
-hw,01D102A0,83,,,UNKNOWN,engine/vgui_intwrap2.cpp,,,TODO,,,
-hw,01D10300,58,,,UNKNOWN,engine/vgui_intwrap2.cpp,,,TODO,,,
-hw,01D10340,25,,,UNKNOWN,engine/vgui_intwrap2.cpp,,,TODO,,,
-hw,01D10360,5,,,UNKNOWN,engine/vgui_intwrap2.cpp,,,TODO,,,
-hw,01D10370,25,,,UNKNOWN,engine/vgui_intwrap2.cpp,,,TODO,,,
-hw,01D10390,17,,,UNKNOWN,engine/vgui_intwrap2.cpp,,,TODO,,,
-hw,01D103B0,193,,,UNKNOWN,engine/vgui_intwrap2.cpp,,,TODO,,,
+hw,01D0FEC0,61,?GetMouseDelta@BaseUISurface@@QAEXPAH0@Z,BaseUISurface::GetMouseDelta,UNKNOWN,engine/vgui_intwrap2.cpp,,,MATCHED,100,,
+hw,01D0FF00,50,??0?$CUtlVector@D@@QAE@HH@Z,CUtlVector<char>::CUtlVector<char>,UNKNOWN,engine/vgui_intwrap2.cpp,,,MATCHED,100,,
+hw,01D0FF40,27,??1?$CUtlVector@D@@QAE@XZ,CUtlVector<char>::~CUtlVector<char>,UNKNOWN,engine/vgui_intwrap2.cpp,,,MATCHED,100,,
+hw,01D0FF60,25,??A?$CUtlVector@D@@QAEAADH@Z,CUtlVector<char>::operator[],UNKNOWN,engine/vgui_intwrap2.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01D0FF80,19,?Base@?$CUtlVector@D@@QAEPADXZ,CUtlVector<char>::Base,UNKNOWN,engine/vgui_intwrap2.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01D0FFA0,32,?AddToTail@?$CUtlVector@D@@QAEHABD@Z,CUtlVector<char>::AddToTail,UNKNOWN,engine/vgui_intwrap2.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01D0FFC0,32,?AddMultipleToTail@?$CUtlVector@D@@QAEHH@Z,CUtlVector<char>::AddMultipleToTail,UNKNOWN,engine/vgui_intwrap2.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01D0FFE0,35,?Purge@?$CUtlVector@D@@QAEXXZ,CUtlVector<char>::Purge,UNKNOWN,engine/vgui_intwrap2.cpp,,,MATCHED,100,,
+hw,01D10010,65,?InsertBefore@?$CUtlVector@D@@QAEHHABD@Z,CUtlVector<char>::InsertBefore,UNKNOWN,engine/vgui_intwrap2.cpp,,,MATCHED,100,,
+hw,01D10060,109,?InsertMultipleBefore@?$CUtlVector@D@@QAEHHH@Z,CUtlVector<char>::InsertMultipleBefore,UNKNOWN,engine/vgui_intwrap2.cpp,,,MATCHED,100,,
+hw,01D100D0,70,?RemoveAll@?$CUtlVector@D@@QAEXXZ,CUtlVector<char>::RemoveAll,UNKNOWN,engine/vgui_intwrap2.cpp,,,MATCHED,100,,
+hw,01D10120,11,?ResetDbgInfo@?$CUtlVector@D@@IAEXXZ,CUtlVector<char>::ResetDbgInfo,UNKNOWN,engine/vgui_intwrap2.cpp,,,MATCHED,100,,
+hw,01D10130,72,??0?$CUtlMemory@D@@QAE@HH@Z,CUtlMemory<char>::CUtlMemory<char>,UNKNOWN,engine/vgui_intwrap2.cpp,,,MATCHED,100,,
+hw,01D10180,19,??1?$CUtlMemory@D@@QAE@XZ,CUtlMemory<char>::~CUtlMemory<char>,UNKNOWN,engine/vgui_intwrap2.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01D101A0,21,??A?$CUtlMemory@D@@QAEAADH@Z,CUtlMemory<char>::operator[],UNKNOWN,engine/vgui_intwrap2.cpp,,,MATCHED,100,,
+hw,01D101C0,16,?Base@?$CUtlMemory@D@@QAEPADXZ,CUtlMemory<char>::Base,UNKNOWN,engine/vgui_intwrap2.cpp,,,MATCHED,100,,
+hw,01D101D0,69,?Purge@?$CUtlMemory@D@@QAEXXZ,CUtlMemory<char>::Purge,UNKNOWN,engine/vgui_intwrap2.cpp,,,MATCHED,100,,
+hw,01D10220,25,?Element@?$CUtlVector@D@@QAEAADH@Z,CUtlVector<char>::Element,UNKNOWN,engine/vgui_intwrap2.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01D10240,87,?GrowVector@?$CUtlVector@D@@IAEXH@Z,CUtlVector<char>::GrowVector,UNKNOWN,engine/vgui_intwrap2.cpp,,,MATCHED,100,,
+hw,01D102A0,83,?ShiftElementsRight@?$CUtlVector@D@@IAEXHH@Z,CUtlVector<char>::ShiftElementsRight,UNKNOWN,engine/vgui_intwrap2.cpp,,,MATCHED,100,,
+hw,01D10300,58,?CopyConstruct@@YAXPADABD@Z,CopyConstruct,UNKNOWN,engine/vgui_intwrap2.cpp,,,MATCHED,100,,
+hw,01D10340,25,?Construct@@YAXPAD@Z,Construct,UNKNOWN,engine/vgui_intwrap2.cpp,,,MATCHED,100,,
+hw,01D10360,5,?Destruct@@YAXPAD@Z,Destruct,UNKNOWN,engine/vgui_intwrap2.cpp,,,MATCHED,100,,
+hw,01D10370,25,?IsExternallyAllocated@?$CUtlMemory@D@@QBE_NXZ,CUtlMemory<char>::IsExternallyAllocated,UNKNOWN,engine/vgui_intwrap2.cpp,,,MATCHED,100,,
+hw,01D10390,17,?NumAllocated@?$CUtlMemory@D@@QBEHXZ,CUtlMemory<char>::NumAllocated,UNKNOWN,engine/vgui_intwrap2.cpp,,,MATCHED,100,,
+hw,01D103B0,193,?Grow@?$CUtlMemory@D@@QAEXH@Z,CUtlMemory<char>::Grow,UNKNOWN,engine/vgui_intwrap2.cpp,,,MATCHED,100,,
 hw,01D10480,119,,,UNKNOWN,iga/IGA_Engine_guess.cpp,,,TODO,,,"Valve's in-game advertising glue (C exports AdsStartup_guess and friends called by Host_Init, Host_Frame, V_RenderView; RTTI CInGameAdvertisingSystem; ENGINEINGAMEADVERTISINGVERSION001, iga_shoot, iga metadata); no Linux file and no string names the file: the _guess file name only describes the object and sorts into its link position; 01D10480-01D10D3F, before the $E helpers at 01D10D40, may be a separate object"
 hw,01D104F7,323,,,UNKNOWN,iga/IGA_Engine_guess.cpp,,,TODO,,,"Valve's in-game advertising glue (C exports AdsStartup_guess and friends called by Host_Init, Host_Frame, V_RenderView; RTTI CInGameAdvertisingSystem; ENGINEINGAMEADVERTISINGVERSION001, iga_shoot, iga metadata); no Linux file and no string names the file: the _guess file name only describes the object and sorts into its link position; 01D10480-01D10D3F, before the $E helpers at 01D10D40, may be a separate object"
 hw,01D1063A,107,,,UNKNOWN,iga/IGA_Engine_guess.cpp,,,TODO,,,"Valve's in-game advertising glue (C exports AdsStartup_guess and friends called by Host_Init, Host_Frame, V_RenderView; RTTI CInGameAdvertisingSystem; ENGINEINGAMEADVERTISINGVERSION001, iga_shoot, iga metadata); no Linux file and no string names the file: the _guess file name only describes the object and sorts into its link position; 01D10480-01D10D3F, before the $E helpers at 01D10D40, may be a separate object"

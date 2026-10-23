@@ -37,3 +37,4 @@ _eaxpre_guess,464,EAX_REVERBPROPERTIES eaxpre_guess[29] (SND_MIX.C); the string 
 _voxperiod,8,char voxperiod[] = "_period" (SND_MIX.C)
 _userfilters,1048576,userfilter_t userfilters[MAX_USERFILTERS] (filter.h; 32768 entries of 32 bytes)
 _ipfilters,524288,ipfilter_t ipfilters[MAX_IPFILTERS] (filter.h; 32768 entries of 16 bytes)
+_gmodinfo,572,modinfo_t gmodinfo (modinfo.h: 0x23C bytes; StartLoadingProgressBar reads type at +0x238)

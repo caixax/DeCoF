@@ -3743,3 +3743,9 @@ va,name,kind,evidence
 01E3D9D0,?NumAllocated@?$CUtlMemory@UPanelItem_t@@@@QBEHXZ,func,"vgui2/controls/BuildModeDialog.cpp COMDAT tail: same order and sizes as our object"
 01E3D9F0,?Grow@?$CUtlMemory@UPanelItem_t@@@@QAEXH@Z,func,"vgui2/controls/BuildModeDialog.cpp COMDAT tail: same order and sizes as our object"
 01E3DAC0,?IsExternallyAllocated@?$CUtlMemory@UPanelItem_t@@@@QBE_NXZ,func,"vgui2/controls/BuildModeDialog.cpp COMDAT tail: same order and sizes as our object"
+01D0FF60,??A?$CUtlVector@D@@QAEAADH@Z,func,"CUtlVector<char>::operator[]: VGuiWrap2_ConPrintf passes its result to memcpy as &g_TempConsoleBuffer[pos]; bytes equal Element (01D10220), told apart by the callers"
+01D0FF80,?Base@?$CUtlVector@D@@QAEPADXZ,func,CUtlVector<char>::Base: VGuiWrap2_Startup passes its result on g_TempConsoleBuffer to VGuiWrap2_ConPrintf; calls CUtlMemory<char>::Base
+01D0FFA0,?AddToTail@?$CUtlVector@D@@QAEHABD@Z,func,"CUtlVector<char>::AddToTail: VGuiWrap2_Startup calls it with a temporary 0 char; calls InsertBefore( m_Size, src )"
+01D0FFC0,?AddMultipleToTail@?$CUtlVector@D@@QAEHH@Z,func,"CUtlVector<char>::AddMultipleToTail: VGuiWrap2_ConPrintf calls it with the strlen; calls InsertMultipleBefore( m_Size, num )"
+01D10180,??1?$CUtlMemory@D@@QAE@XZ,func,"CUtlMemory<char> destructor: called by the CUtlVector<char> destructor (01D0FF40) after Purge, calls CUtlMemory<char>::Purge"
+01D10220,?Element@?$CUtlVector@D@@QAEAADH@Z,func,"CUtlVector<char>::Element: called by InsertBefore, InsertMultipleBefore, RemoveAll and ShiftElementsRight (UtlVector.h); bytes equal operator[] (01D0FF60)"

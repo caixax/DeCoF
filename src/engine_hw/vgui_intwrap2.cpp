@@ -396,16 +396,16 @@ void VGuiWrap2_LoadingFinished( const char *resourceType, const char *resourceNa
 //-----------------------------------------------------------------------------
 void StartLoadingProgressBar( const char *loadingType, int numProgressPoints )
 {
-	if ( ( !UserIsConnectedOnLoopback() || gmodinfo.type == SINGLEPLAYER_ONLY ) && UserIsConnectedOnLoopback() )
-		return;
-
-	if ( staticUIFuncs )
-		staticUIFuncs->ActivateGameUI();
-
-	if ( staticGameUIFuncs )
+	if ( ( UserIsConnectedOnLoopback() && gmodinfo.type != SINGLEPLAYER_ONLY ) || !UserIsConnectedOnLoopback() )
 	{
-		staticGameUIFuncs->StartProgressBar( loadingType, numProgressPoints );
-		SCR_UpdateScreen();
+		if ( staticUIFuncs )
+			staticUIFuncs->ActivateGameUI();
+
+		if ( staticGameUIFuncs )
+		{
+			staticGameUIFuncs->StartProgressBar( loadingType, numProgressPoints );
+			SCR_UpdateScreen();
+		}
 	}
 }
 

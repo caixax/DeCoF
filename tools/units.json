@@ -2773,7 +2773,13 @@
         {
           "name": "engine/vgui_intwrap2",
           "source": "src/engine_hw/vgui_intwrap2.cpp",
-          "functions_file": "tools/units/hw_engine_vgui_intwrap2.txt"
+          "functions_file": "tools/units/hw_engine_vgui_intwrap2.txt",
+          "includes": [
+            "src/engine_hw",
+            "src/public",
+            "src/gameui",
+            "src/common"
+          ]
         },
         {
           "name": "engine/chase",
