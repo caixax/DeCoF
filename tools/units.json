@@ -3159,6 +3159,11 @@
           ]
         },
         {
+          "name": "public/registry",
+          "source": "src/public/registry.cpp",
+          "functions_file": "tools/units/hw_public_registry.txt"
+        },
+        {
           "name": "public/UtlBuffer",
           "source": "src/public/UtlBuffer.cpp",
           "functions_file": "tools/units/hw_public_UtlBuffer.txt"

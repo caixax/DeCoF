@@ -27829,21 +27829,21 @@ hw,01DC4E25,21,_tri_ScreenTransform,tri_ScreenTransform,ENGINE,engine/r_triangle
 hw,01DC4E3A,21,_tri_WorldTransform,tri_WorldTransform,ENGINE,engine/r_triangle.c,,,MATCHED,100,,
 hw,01DC4E4F,47,_tri_BoxinPVS,tri_BoxinPVS,ENGINE,engine/r_triangle.c,,,MATCHED,100,,
 hw,01DC4E7E,114,_tri_LightAtPoint,tri_LightAtPoint,ENGINE,engine/r_triangle.c,,,MATCHED,100,,
-hw,01DC4EF0,15,,,ENGINE,public/registry.cpp,,,TODO,,,
-hw,01DC4EFF,15,,,ENGINE,public/registry.cpp,,,TODO,,,
-hw,01DC4F0E,18,,,ENGINE,public/registry.cpp,,,TODO,,,
-hw,01DC4F20,15,,,ENGINE,public/registry.cpp,,,TODO,,,
-hw,01DC4F2F,48,,,ENGINE,public/registry.cpp,,,TODO,,,
-hw,01DC4F5F,20,,,ENGINE,public/registry.cpp,,,TODO,,,
-hw,01DC4F73,98,,,UNKNOWN,public/registry.cpp,,,TODO,,,linux: _ZN9CRegistry7ReadIntEPKci
-hw,01DC4FD5,65,,,UNKNOWN,public/registry.cpp,,,TODO,,,linux: _ZN9CRegistry8WriteIntEPKci
-hw,01DC5016,108,,,UNKNOWN,public/registry.cpp,,,TODO,,,linux: _ZN9CRegistry10ReadStringEPKcS1_
-hw,01DC5082,76,,,UNKNOWN,public/registry.cpp,,,TODO,,,linux: _ZN9CRegistry11WriteStringEPKcS1_
-hw,01DC50CE,128,,,UNKNOWN,public/registry.cpp,,,TODO,,,linux: _ZN9CRegistry4InitEv
-hw,01DC514E,10,,,ENGINE,public/registry.cpp,,,TODO,,,
-hw,01DC5158,45,,,ENGINE,public/registry.cpp,,,TODO,,,
-hw,01DC5190,46,,,ENGINE,public/registry.cpp,,,TODO,,,
-hw,01DC51C0,23,,,ENGINE,public/registry.cpp,,,TODO,,,
+hw,01DC4EF0,15,_$E4,,ENGINE,public/registry.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DC4EFF,15,_$E1,,ENGINE,public/registry.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DC4F0E,18,_$E3,,ENGINE,public/registry.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DC4F20,15,_$E2,,ENGINE,public/registry.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DC4F2F,48,??0CRegistry@@QAE@XZ,CRegistry::CRegistry,ENGINE,public/registry.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DC4F5F,20,??1CRegistry@@UAE@XZ,CRegistry::~CRegistry,ENGINE,public/registry.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DC4F73,98,?ReadInt@CRegistry@@UAEHPBDH@Z,CRegistry::ReadInt,UNKNOWN,public/registry.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN9CRegistry7ReadIntEPKci
+hw,01DC4FD5,65,?WriteInt@CRegistry@@UAEXPBDH@Z,CRegistry::WriteInt,UNKNOWN,public/registry.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN9CRegistry8WriteIntEPKci
+hw,01DC5016,108,?ReadString@CRegistry@@UAEPBDPBD0@Z,CRegistry::ReadString,UNKNOWN,public/registry.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN9CRegistry10ReadStringEPKcS1_
+hw,01DC5082,76,?WriteString@CRegistry@@UAEXPBD0@Z,CRegistry::WriteString,UNKNOWN,public/registry.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN9CRegistry11WriteStringEPKcS1_
+hw,01DC50CE,128,?Init@CRegistry@@UAEXXZ,CRegistry::Init,UNKNOWN,public/registry.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN9CRegistry4InitEv
+hw,01DC514E,10,?GetGameName_guess@@YAPBDXZ,GetGameName_guess,ENGINE,public/registry.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DC5158,45,?Shutdown@CRegistry@@UAEXXZ,CRegistry::Shutdown,ENGINE,public/registry.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DC5190,46,??_GCRegistry@@UAEPAXI@Z,destructor',ENGINE,public/registry.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DC51C0,23,??0IRegistry@@QAE@XZ,IRegistry::IRegistry,ENGINE,public/registry.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01DC51E0,25,_Sequence_FreeDataPointer,,ENGINE,engine/Sequence.c,,,MATCHED,100,hw_manual.csv,
 hw,01DC51F9,91,_Sequence_GetCommandEnumForName,Sequence_GetCommandEnumForName,ENGINE,engine/Sequence.c,,,MATCHED,100,linux_symbols:data1:0.667,
 hw,01DC5254,564,_Sequence_ResetDefaults,Sequence_ResetDefaults,ENGINE,engine/Sequence.c,,,MATCHED,100,,
