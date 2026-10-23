@@ -326,3 +326,12 @@ The 1.55 hl.dll is an unoptimized debug build of nearly the same source. `disasm
 - VGUI1 functions are `VGUIAPI` (dllexport), so calls into vgui.dll go through import thunks; declare them with the same attribute or the call form differs.
 - The CoF `cl_enginefunc_t` is 0x21C bytes; only src/gameui/cdll_int.h declares it at that size, so units that need the full table include that header.
 - VC6 orders a file's static .bss variables by a hash of their names, like stack slots: when a static table must land at a fixed offset, its name is part of the match (VGUI_EngineSurfaceWrap staticKeyTable_guess).
+
+## Patterns from HtmlWindow.cpp (VC6 COM code)
+
+- VC6 emits a static function right after its first caller, so a function that retail places before its first caller is a global one (InitKeyTable_guess and the window, hook and EnumChildWindows procedures of HtmlWindow.cpp).
+- The COM interfaces of the old IE headers (`interface DECLSPEC_UUID`: IDocHostUIHandler, DWebBrowserEvents2, HTMLDocumentEvents) have no `novtable`, so their implicit constructors store a vtable; MIDL_INTERFACE ones give empty constructor COMDATs. Write the interface methods with the SDK signatures (STDMETHODCALLTYPE) and the whole COMDAT tail (FS_ constructors, forwarders, scalar deleting destructors, _bstr_t from comutil.h) comes out in retail order.
+- `IsEqualIID` calls the C++ inline `?IsEqualGUID@@YAHABU_GUID@@0@Z` of objbase.h (one copy at 01D0E2C0); IIDs are uuid.lib externs (`_IID_IOleObject`), laid out in .rdata in the order of the object's external symbols.
+- A call result stored into a stack slot before the other arguments are pushed is a named local (`const char *text_guess = tag_guess;` before `_stricmp`); a temporary bool kept across `_bstr_t` temporaries is the compiler's.
+- `mov byte [x], 1; mov ecx, 1; test ecx, ecx; je` is an assignment used as a condition: `else if ( m_bOnLink = true )`.
+- Local names without a source get `_guess` names picked by hash bucket (tools/vc6_slots.py); when two locals share a bucket, declare them at the top of the function in reverse slot order (CreateBrowser_guess).
