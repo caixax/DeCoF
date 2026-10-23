@@ -3367,6 +3367,11 @@
           "name": "engine/voice_record_dsound",
           "source": "src/engine_hw/voice_record_dsound.cpp",
           "functions_file": "tools/units/hw_engine_voice_record_dsound.txt"
+        },
+        {
+          "name": "engine/voice_record_wavein",
+          "source": "src/engine_hw/voice_record_wavein.cpp",
+          "functions_file": "tools/units/hw_engine_voice_record_wavein.txt"
         }
       ]
     },
