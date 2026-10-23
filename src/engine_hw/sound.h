@@ -200,9 +200,9 @@ typedef struct voxword
 extern	char		*rgpparseword[CVOXWORDMAX];
 extern	voxword_t	rgrgvoxword[16][CVOXWORDMAX];
 
-// snd_win.c: plays a channel on its A3D hardware voice, true when A3D took it (0x01DD0E91)
-int		hwPaintChannel_guess( int ch_idx, channel_t *ch, sfxcache_t *sc, int unused1, int unused2, float pitch );
-// snd_win.c: restarts the hardware voice of a stream channel that ended (0x01DD15D3)
+// snd_mix.c: plays a channel on its A3D hardware voice, true when A3D took it (0x01DD0E91)
+int		hwPaintChannel_guess( int ch_idx, channel_t *ch, sfxcache_t *sc, int count, int unused, float pitch );
+// snd_mix.c: restarts the hardware voice of a stream channel that ended (0x01DD15D3)
 void	hwStopChannel_guess( int ch_idx );
 
 // snd_mixa.s

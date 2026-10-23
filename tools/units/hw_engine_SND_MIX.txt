@@ -46,3 +46,6 @@ _VOX_ReadSentenceFile
 _VOX_Shutdown
 _VOX_LookupString
 _VOX_TrimStartEndTimes
+_hwPaintChannel_guess
+_hA3D_FeedBuffer
+_hwStopChannel_guess
