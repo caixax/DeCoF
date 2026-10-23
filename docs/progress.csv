@@ -31291,25 +31291,25 @@ hw,01E50166,148,?DeleteAllItems@Menu@vgui2@@UAEXXZ,vgui2::Menu::DeleteAllItems,U
 hw,01E501FA,253,?AddMenuItem@Menu@vgui2@@UAEHPAVMenuItem@2@@Z,vgui2::Menu::AddMenuItem,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,
 hw,01E502F7,79,?AddMenuItemCharCommand@Menu@vgui2@@IAEHPAVMenuItem@2@PBDPAVPanel@2@PBVKeyValues@@@Z,vgui2::Menu::AddMenuItemCharCommand,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,
 hw,01E50346,79,?AddMenuItemKeyValuesCommand@Menu@vgui2@@IAEHPAVMenuItem@2@PAVKeyValues@@PAVPanel@2@PBV4@@Z,vgui2::Menu::AddMenuItemKeyValuesCommand,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,
-hw,01E50395,103,,,ENGINE,vgui2/controls/Menu.cpp,,,TODO,,,
-hw,01E503FC,103,,,ENGINE,vgui2/controls/Menu.cpp,,,TODO,,,
+hw,01E50395,103,,,ENGINE,vgui2/controls/Menu.cpp,,,MATCHED,100,,
+hw,01E503FC,103,,,ENGINE,vgui2/controls/Menu.cpp,,,MATCHED,100,,
 hw,01E50463,47,?AddMenuItem@Menu@vgui2@@UAEHPBD0PAVPanel@2@PBVKeyValues@@@Z,vgui2::Menu::AddMenuItem,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,
-hw,01E50492,103,,,ENGINE,vgui2/controls/Menu.cpp,,,TODO,,,
-hw,01E504F9,103,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu11AddMenuItemEPKcS2_PNS_5PanelEPK9KeyValues
+hw,01E50492,103,,,ENGINE,vgui2/controls/Menu.cpp,,,MATCHED,100,,
+hw,01E504F9,103,,,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,linux: _ZN5vgui24Menu11AddMenuItemEPKcS2_PNS_5PanelEPK9KeyValues
 hw,01E50560,47,?AddMenuItem@Menu@vgui2@@UAEHPBDPAVKeyValues@@PAVPanel@2@PBV3@@Z,vgui2::Menu::AddMenuItem,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,linux: _ZN5vgui24Menu11AddMenuItemEPKcS2_P9KeyValuesPNS_5PanelEPKS3_
 hw,01E5058F,43,?AddMenuItem@Menu@vgui2@@UAEHPBDPAVPanel@2@PBVKeyValues@@@Z,vgui2::Menu::AddMenuItem,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,linux: _ZN5vgui24Menu11AddMenuItemEPKcPKwP9KeyValuesPNS_5PanelEPKS5_
-hw,01E505BA,103,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu11AddMenuItemEPKcP9KeyValuesPNS_5PanelEPKS3_
-hw,01E50621,103,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu11AddMenuItemEPKcPNS_5PanelEPK9KeyValues
+hw,01E505BA,103,,,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,linux: _ZN5vgui24Menu11AddMenuItemEPKcP9KeyValuesPNS_5PanelEPKS3_
+hw,01E50621,103,,,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,linux: _ZN5vgui24Menu11AddMenuItemEPKcPNS_5PanelEPK9KeyValues
 hw,01E50688,47,?AddCheckableMenuItem@Menu@vgui2@@UAEHPBD0PAVPanel@2@PBVKeyValues@@@Z,vgui2::Menu::AddCheckableMenuItem,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,linux: _ZN5vgui24Menu20AddCheckableMenuItemEPKcS2_S2_PNS_5PanelEPK9KeyValues
-hw,01E506B7,103,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu20AddCheckableMenuItemEPKcPKwS2_PNS_5PanelEPK9KeyValues
-hw,01E5071E,103,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu20AddCheckableMenuItemEPKcS2_PNS_5PanelEPK9KeyValues
+hw,01E506B7,103,,,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,linux: _ZN5vgui24Menu20AddCheckableMenuItemEPKcPKwS2_PNS_5PanelEPK9KeyValues
+hw,01E5071E,103,,,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,linux: _ZN5vgui24Menu20AddCheckableMenuItemEPKcS2_PNS_5PanelEPK9KeyValues
 hw,01E50785,47,?AddCheckableMenuItem@Menu@vgui2@@UAEHPBDPAVKeyValues@@PAVPanel@2@PBV3@@Z,vgui2::Menu::AddCheckableMenuItem,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,linux: _ZN5vgui24Menu20AddCheckableMenuItemEPKcS2_P9KeyValuesPNS_5PanelEPKS3_
 hw,01E507B4,43,?AddCheckableMenuItem@Menu@vgui2@@UAEHPBDPAVPanel@2@PBVKeyValues@@@Z,vgui2::Menu::AddCheckableMenuItem,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,linux: _ZN5vgui24Menu20AddCheckableMenuItemEPKcPKwP9KeyValuesPNS_5PanelEPKS5_
-hw,01E507DF,105,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu20AddCheckableMenuItemEPKcP9KeyValuesPNS_5PanelEPKS3_
-hw,01E50848,105,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu20AddCheckableMenuItemEPKcPNS_5PanelEPK9KeyValues
+hw,01E507DF,105,,,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,linux: _ZN5vgui24Menu20AddCheckableMenuItemEPKcP9KeyValuesPNS_5PanelEPKS3_
+hw,01E50848,105,,,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,linux: _ZN5vgui24Menu20AddCheckableMenuItemEPKcPNS_5PanelEPK9KeyValues
 hw,01E508B1,51,?AddCascadingMenuItem@Menu@vgui2@@UAEHPBD0PAVPanel@2@PAV12@PBVKeyValues@@@Z,vgui2::Menu::AddCascadingMenuItem,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,linux: _ZN5vgui24Menu20AddCascadingMenuItemEPKcS2_S2_PNS_5PanelEPS0_PK9KeyValues
-hw,01E508E4,105,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu20AddCascadingMenuItemEPKcPKwS2_PNS_5PanelEPS0_PK9KeyValues
-hw,01E5094D,105,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu20AddCascadingMenuItemEPKcS2_PNS_5PanelEPS0_PK9KeyValues
+hw,01E508E4,105,,,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,linux: _ZN5vgui24Menu20AddCascadingMenuItemEPKcPKwS2_PNS_5PanelEPS0_PK9KeyValues
+hw,01E5094D,105,,,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,linux: _ZN5vgui24Menu20AddCascadingMenuItemEPKcS2_PNS_5PanelEPS0_PK9KeyValues
 hw,01E509B6,51,?AddCascadingMenuItem@Menu@vgui2@@UAEHPBDPAVKeyValues@@PAVPanel@2@PAV12@PBV3@@Z,vgui2::Menu::AddCascadingMenuItem,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,linux: _ZN5vgui24Menu20AddCascadingMenuItemEPKcS2_P9KeyValuesPNS_5PanelEPS0_PKS3_
 hw,01E509E9,47,?AddCascadingMenuItem@Menu@vgui2@@UAEHPBDPAVPanel@2@PAV12@PBVKeyValues@@@Z,vgui2::Menu::AddCascadingMenuItem,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,
 hw,01E50A18,148,?UpdateMenuItem@Menu@vgui2@@UAEXHPBDPAVKeyValues@@PBV3@@Z,vgui2::Menu::UpdateMenuItem,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,
@@ -31339,7 +31339,7 @@ hw,01E51C0D,241,?SetVisible@Menu@vgui2@@UAEX_N@Z,vgui2::Menu::SetVisible,UNKNOWN
 hw,01E51CFE,388,?ApplySchemeSettings@Menu@vgui2@@UAEXPAVIScheme@2@@Z,vgui2::Menu::ApplySchemeSettings,ENGINE,vgui2/controls/Menu.cpp,,,MATCHED,100,linux_symbols:string:0.765,
 hw,01E51E82,159,?SetBgColor@Menu@vgui2@@UAEXVColor@@@Z,vgui2::Menu::SetBgColor,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,linux: _ZN5vgui24Menu10SetBgColorE5Color
 hw,01E51F21,159,?SetFgColor@Menu@vgui2@@UAEXVColor@@@Z,vgui2::Menu::SetFgColor,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,linux: _ZN5vgui24Menu10SetFgColorE5Color
-hw,01E51FC0,25,,,UNKNOWN,vgui2/controls/Menu.cpp,,,TODO,,,linux: _ZN5vgui24Menu9SetBorderEPNS_7IBorderE
+hw,01E51FC0,25,,,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,linux: _ZN5vgui24Menu9SetBorderEPNS_7IBorderE
 hw,01E51FD9,48,?GetParentMenuItem@Menu@vgui2@@AAEPAVMenuItem@2@XZ,vgui2::Menu::GetParentMenuItem,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,linux: _ZN5vgui24Menu17GetParentMenuItemEv
 hw,01E52009,536,?OnMenuItemSelected@Menu@vgui2@@MAEXPAVPanel@2@@Z,vgui2::Menu::OnMenuItemSelected,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,linux: _ZN5vgui24Menu18OnMenuItemSelectedEPNS_5PanelE
 hw,01E52221,20,?GetActiveItem@Menu@vgui2@@UAEHXZ,vgui2::Menu::GetActiveItem,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,linux: _ZN5vgui24Menu13GetActiveItemEv
@@ -31375,45 +31375,45 @@ hw,01E52FFD,82,?SetItemVisible@Menu@vgui2@@UAEXH_N@Z,vgui2::Menu::SetItemVisible
 hw,01E5304F,308,?PlaceContextMenu@Menu@vgui2@@SAXPAVPanel@2@PAV12@@Z,vgui2::Menu::PlaceContextMenu,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,
 hw,01E53183,86,?SetFont@Menu@vgui2@@UAEXK@Z,vgui2::Menu::SetFont,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,
 hw,01E531D9,56,?SetUseFallbackFont@Menu@vgui2@@QAEX_NK@Z,vgui2::Menu::SetUseFallbackFont,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,
-hw,01E53220,46,,,ENGINE,vgui2/controls/Menu.cpp,,,TODO,,,
-hw,01E53250,19,,,ENGINE,vgui2/controls/Menu.cpp,,,TODO,,,
-hw,01E53270,102,,,ENGINE,vgui2/controls/Menu.cpp,,,TODO,,,
-hw,01E532E0,64,,,ENGINE,vgui2/controls/Menu.cpp,,,TODO,,,
-hw,01E53320,10,,,ENGINE,vgui2/controls/Menu.cpp,,,TODO,,,
-hw,01E53330,10,,,ENGINE,vgui2/controls/Menu.cpp,,,TODO,,,
-hw,01E53340,19,,,ENGINE,vgui2/controls/Menu.cpp,,,TODO,,,
+hw,01E53220,46,,,ENGINE,vgui2/controls/Menu.cpp,,,MATCHED,100,,
+hw,01E53250,19,,,ENGINE,vgui2/controls/Menu.cpp,,,MATCHED,100,,
+hw,01E53270,102,,,ENGINE,vgui2/controls/Menu.cpp,,,MATCHED,100,,
+hw,01E532E0,64,,,ENGINE,vgui2/controls/Menu.cpp,,,MATCHED,100,,
+hw,01E53320,10,,,ENGINE,vgui2/controls/Menu.cpp,,,MATCHED,100,,
+hw,01E53330,10,,,ENGINE,vgui2/controls/Menu.cpp,,,MATCHED,100,,
+hw,01E53340,19,,,ENGINE,vgui2/controls/Menu.cpp,,,MATCHED,100,,
 hw,01E53360,110,?InitVar@PanelMessageFunc_OnMenuItemSelected@Menu@vgui2@@SAXXZ,vgui2::Menu::PanelMessageFunc_OnMenuItemSelected::InitVar,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,
-hw,01E533D0,120,,,ENGINE,vgui2/controls/Menu.cpp,,,TODO,,,
-hw,01E53450,19,,,ENGINE,vgui2/controls/Menu.cpp,,,TODO,,,
-hw,01E53470,107,,,ENGINE,vgui2/controls/Menu.cpp,,,TODO,,,
-hw,01E534E0,19,,,ENGINE,vgui2/controls/Menu.cpp,,,TODO,,,
-hw,01E53500,107,,,ENGINE,vgui2/controls/Menu.cpp,,,TODO,,,
-hw,01E53570,19,,,ENGINE,vgui2/controls/Menu.cpp,,,TODO,,,
-hw,01E53590,110,,,ENGINE,vgui2/controls/Menu.cpp,,,TODO,,,
-hw,01E53600,19,,,ENGINE,vgui2/controls/Menu.cpp,,,TODO,,,
-hw,01E53620,110,,,ENGINE,vgui2/controls/Menu.cpp,,,TODO,,,
+hw,01E533D0,120,,,ENGINE,vgui2/controls/Menu.cpp,,,MATCHED,100,,
+hw,01E53450,19,,,ENGINE,vgui2/controls/Menu.cpp,,,MATCHED,100,,
+hw,01E53470,107,,,ENGINE,vgui2/controls/Menu.cpp,,,MATCHED,100,,
+hw,01E534E0,19,,,ENGINE,vgui2/controls/Menu.cpp,,,MATCHED,100,,
+hw,01E53500,107,,,ENGINE,vgui2/controls/Menu.cpp,,,MATCHED,100,,
+hw,01E53570,19,,,ENGINE,vgui2/controls/Menu.cpp,,,MATCHED,100,,
+hw,01E53590,110,,,ENGINE,vgui2/controls/Menu.cpp,,,MATCHED,100,,
+hw,01E53600,19,,,ENGINE,vgui2/controls/Menu.cpp,,,MATCHED,100,,
+hw,01E53620,110,,,ENGINE,vgui2/controls/Menu.cpp,,,MATCHED,100,,
 hw,01E536E0,8,?InvalidIndex@?$CUtlLinkedList@PAVMenuItem@vgui2@@H@@SAHXZ,"*,int>::InvalidIndex",UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,
 hw,01E536F0,48,??0?$CUtlLinkedList@PAVMenuItem@vgui2@@H@@QAE@HH@Z,"*,int>",UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,
 hw,01E53720,27,??1?$CUtlLinkedList@PAVMenuItem@vgui2@@H@@QAE@XZ,"*,int>",UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,
-hw,01E53740,25,,,ENGINE,vgui2/controls/Menu.cpp,,,TODO,,,
+hw,01E53740,25,,,ENGINE,vgui2/controls/Menu.cpp,,,MATCHED,100,,
 hw,01E53760,31,?AddToTail@?$CUtlLinkedList@PAVMenuItem@vgui2@@H@@QAEHABQAVMenuItem@vgui2@@@Z,"*,int>::AddToTail",UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,
 hw,01E53780,187,?RemoveAll@?$CUtlLinkedList@PAVMenuItem@vgui2@@H@@QAEXXZ,"*,int>::RemoveAll",UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,
 hw,01E53840,17,?Count@?$CUtlLinkedList@PAVMenuItem@vgui2@@H@@QBEHXZ,"*,int>::Count",UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,
-hw,01E53860,17,,,ENGINE,vgui2/controls/Menu.cpp,,,TODO,,,
+hw,01E53860,17,,,ENGINE,vgui2/controls/Menu.cpp,,,MATCHED,100,,
 hw,01E53880,28,?Next@?$CUtlLinkedList@PAVMenuItem@vgui2@@H@@QBEHH@Z,"*,int>::Next",UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,
 hw,01E538A0,91,?IsValidIndex@?$CUtlLinkedList@PAVMenuItem@vgui2@@H@@QBE_NH@Z,"*,int>::IsValidIndex",UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,
 hw,01E53900,51,?IsValidIndex@?$CUtlVector@H@@QBE_NH@Z,CUtlVector<int>::IsValidIndex,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,
 hw,01E53940,77,?Find@?$CUtlVector@H@@QAEHABH@Z,CUtlVector<int>::Find,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,hw_manual.csv,
-hw,01E53990,25,,,ENGINE,vgui2/controls/Menu.cpp,,,TODO,,,
-hw,01E539B0,25,,,ENGINE,vgui2/controls/Menu.cpp,,,TODO,,,
+hw,01E53990,25,,,ENGINE,vgui2/controls/Menu.cpp,,,MATCHED,100,,
+hw,01E539B0,25,,,ENGINE,vgui2/controls/Menu.cpp,,,MATCHED,100,,
 hw,01E539D0,25,?ResetDbgInfo@?$CUtlLinkedList@PAVMenuItem@vgui2@@H@@IAEXXZ,"*,int>::ResetDbgInfo",UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,
-hw,01E539F0,25,,,ENGINE,vgui2/controls/Menu.cpp,,,TODO,,,
+hw,01E539F0,25,,,ENGINE,vgui2/controls/Menu.cpp,,,MATCHED,100,,
 hw,01E53A10,72,?InsertBefore@?$CUtlLinkedList@PAVMenuItem@vgui2@@H@@QAEHHABQAVMenuItem@vgui2@@@Z,"*,int>::InsertBefore",UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,
 hw,01E53A60,64,?ConstructList@?$CUtlLinkedList@PAVMenuItem@vgui2@@H@@IAEXXZ,"*,int>::ConstructList",UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,
 hw,01E53AA0,75,??0?$CUtlMemory@UListElem_t@?$CUtlLinkedList@PAVMenuItem@vgui2@@H@@@@QAE@HH@Z,"*,int>::ListElem_t>",UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,
-hw,01E53AF0,19,,,ENGINE,vgui2/controls/Menu.cpp,,,TODO,,,
-hw,01E53B10,26,,,ENGINE,vgui2/controls/Menu.cpp,,,TODO,,,
-hw,01E53B30,26,,,ENGINE,vgui2/controls/Menu.cpp,,,TODO,,,
+hw,01E53AF0,19,,,ENGINE,vgui2/controls/Menu.cpp,,,MATCHED,100,,
+hw,01E53B10,26,,,ENGINE,vgui2/controls/Menu.cpp,,,MATCHED,100,,
+hw,01E53B30,26,,,ENGINE,vgui2/controls/Menu.cpp,,,MATCHED,100,,
 hw,01E53B50,16,?Base@?$CUtlMemory@UListElem_t@?$CUtlLinkedList@PAVMenuItem@vgui2@@H@@@@QAEPAUListElem_t@?$CUtlLinkedList@PAVMenuItem@vgui2@@H@@XZ,"*,int>::ListElem_t>::Base",UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,,
 hw,01E53B60,5,?Destruct@@YAXPAPAVMenuItem@vgui2@@@Z,Destruct,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01E53B70,17,?Size@?$CUtlVector@H@@QBEHXZ,CUtlVector<int>::Size,ENGINE,vgui2/controls/Menu.cpp,,,MATCHED,100,hw_manual.csv,
