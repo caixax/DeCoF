@@ -26498,11 +26498,11 @@ hw,01D8A8F4,79,_Key_ClearStates,,UNKNOWN,engine/KEYS.C,,,MATCHED,100,hw_manual.c
 hw,01D8A943,51,_Key_BindingForKey,,UNKNOWN,engine/KEYS.C,,,MATCHED,100,hw_manual.csv,
 hw,01D8A976,51,_Key_Shutdown,,UNKNOWN,engine/KEYS.C,,,MATCHED,100,hw_manual.csv,
 hw,01D8A9B0,656,_Mod_LoadStudioModel,Mod_LoadStudioModel,ENGINE,engine/l_studio.c,,,MATCHED,100,linux_symbols:string:0.775,
-hw,01D8AC40,107,,,UNKNOWN,engine/LoadBlob.cpp,,,TODO,,,"linux: FIsBlob (cof.exe LoadBlob.cpp ?FIsBlob@@YADPBD@Z has the same code: open rb, read 0x44 bytes, compare 0x12345678)"
-hw,01D8ACAB,493,,,UNKNOWN,engine/LoadBlob.cpp,,,TODO,,,linux: NLoadBlobFile (cof.exe ?NLoadBlobFile@@YAPAXPBDPAUBlobFootprint_s@@PAXD@Z)
-hw,01D8AE98,311,,,UNKNOWN,engine/LoadBlob.cpp,,,TODO,,,no Linux counterpart; cof.exe LoadBlob.cpp has the same function as ?LoadBlobFile_guess@@YAPAXPAEPAUBlobFootprint_s@@PAXH@Z
-hw,01D8AFCF,217,,,UNKNOWN,engine/LoadBlob.cpp,,,TODO,,,no Linux counterpart; cof.exe LoadBlob.cpp has the same function as ?ProcessBlobImports_guess@@YAXPAUBlobHeader_s_guess@@@Z (LoadLibraryA and GetProcAddress)
-hw,01D8B0A8,17,,,UNKNOWN,engine/LoadBlob.cpp,,,TODO,,,linux: FreeBlob (cof.exe ?FreeBlob@@YAXPAUBlobFootprint_s@@@Z; here it also calls FreeLibrary)
+hw,01D8AC40,107,_FIsBlob,,UNKNOWN,engine/LoadBlob.cpp,,,MATCHED,100,,"linux: FIsBlob (cof.exe LoadBlob.cpp ?FIsBlob@@YADPBD@Z has the same code: open rb, read 0x44 bytes, compare 0x12345678)"
+hw,01D8ACAB,493,_NLoadBlobFile,,UNKNOWN,engine/LoadBlob.cpp,,,MATCHED,100,,linux: NLoadBlobFile (cof.exe ?NLoadBlobFile@@YAPAXPBDPAUBlobFootprint_s@@PAXD@Z)
+hw,01D8AE98,311,_LoadBlobFile_guess,,UNKNOWN,engine/LoadBlob.cpp,,,MATCHED,100,hw_manual.csv,no Linux counterpart; cof.exe LoadBlob.cpp has the same function as ?LoadBlobFile_guess@@YAPAXPAEPAUBlobFootprint_s@@PAXH@Z
+hw,01D8AFCF,217,?ProcessBlobImports_guess@@YAXPAUBlobHeader_s_guess@@@Z,ProcessBlobImports_guess,UNKNOWN,engine/LoadBlob.cpp,,,MATCHED,100,hw_manual.csv,no Linux counterpart; cof.exe LoadBlob.cpp has the same function as ?ProcessBlobImports_guess@@YAXPAUBlobHeader_s_guess@@@Z (LoadLibraryA and GetProcAddress)
+hw,01D8B0A8,17,_FreeBlob,,UNKNOWN,engine/LoadBlob.cpp,,,MATCHED,100,,linux: FreeBlob (cof.exe ?FreeBlob@@YAXPAUBlobFootprint_s@@@Z; here it also calls FreeLibrary)
 hw,01D8B0C0,42,_anglemod,anglemod,ENGINE,engine/mathlib.c,,,MATCHED,100,,
 hw,01D8B0EA,18,_BOPS_Error,BOPS_Error,ENGINE,engine/mathlib.c,,,MATCHED,100,,
 hw,01D8B0FC,3300,_InvertMatrix,InvertMatrix,ENGINE,engine/mathlib.c,,,MATCHED,100,,

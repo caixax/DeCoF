@@ -3149,6 +3149,16 @@
           "functions_file": "tools/units/hw_common_TokenLine.txt"
         },
         {
+          "name": "engine/LoadBlob",
+          "source": "src/engine_hw/LoadBlob.cpp",
+          "functions_file": "tools/units/hw_engine_LoadBlob.txt",
+          "includes": [
+            "src/engine_hw",
+            "src/public",
+            "src/common"
+          ]
+        },
+        {
           "name": "engine/sys_engine",
           "source": "src/engine_hw/sys_engine.cpp",
           "functions_file": "tools/units/hw_engine_sys_engine.txt"
