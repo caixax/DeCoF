@@ -3377,6 +3377,11 @@
           "name": "engine/voice_record_wavein",
           "source": "src/engine_hw/voice_record_wavein.cpp",
           "functions_file": "tools/units/hw_engine_voice_record_wavein.txt"
+        },
+        {
+          "name": "engine/LauncherDirectDraw_guess",
+          "source": "src/engine_hw/LauncherDirectDraw_guess.cpp",
+          "functions_file": "tools/units/hw_engine_LauncherDirectDraw_guess.txt"
         }
       ]
     },
