@@ -384,3 +384,15 @@ Four agents were stopped mid-work, files on disk not committed: HtmlWindow.cpp (
 Tool blocker: compiler static initializer helpers (`_$E2`, `_$E3`, ...) cannot be named in more than one object (the export refuses duplicates program-wide), which leaves 8 functions in sv_remoteaccess/utlsymbol TODO. There are uncommitted, unfinished edits to tools/build.py and tools/ghidra_scripts/DelinkUnits.java in the working tree from a stopped agent: review before keeping.
 
 Decisions for the user: (1) IGA ad SDK and A3D renderer in scope or LIB; (2) correct the wrong Button::GetMessageMap name (01E565C0 is CheckButton's, 01E4C7B0 is Button's); (3) assemble the Quake .s files with MSVC 14.27 ml.exe; (4) move the 252 exported vgui::Dar<> instantiations (01E040A0-01E08D20, VGUI_EngineSurfaceWrap object) from LIB into scope; (5) /MT for all hw units (DetailTexture needs it per unit).
+
+## 2026-10-23 (session 2)
+
+hw.dll reached about 80% MATCHED (79.2% at the last count, before the final commits). Done this session, all at 100% unless noted: vgui_intwrap2.cpp 72/72, voice.cpp 34/34, download.cpp 71/71, sys_dll2.cpp 85/86 (CEngineAPI::Run EQUIVALENT 99.95%, compiler temporary), sys_getmodes.cpp 83/83, HtmlWindow.cpp 288/288 (no DWARF: members are _guess), SystemWrapper.cpp 79/79 (ISystemModule is a virtual base at +0x194), cd.cpp 67/67, sys_sdlwind.cpp 32/32, cl_extrap.c 8/8, cmodel.c 9/9, r_triangle.c 20/20, cdll_exp.c 20/20; vgui2 controls in hw and GameUI: BuildModeDialog, ComboBox, MessageBox, BitmapImagePanel, AnimatingImagePanel, EditablePanel (CreateControlByName), RichText, CheckButton, Divider, URLLabel, ImagePanel, Tooltip. opengl2d3d_guess.cpp (the D3D wrapper) is /Od VC6 like the engine: 340 of 356 at 100% (commit above), the large functions are left.
+
+Tools: e77faea and 81e5b2d let the VC6 dynamic initializer names (_$E1, _$E2, ...) live once per unit (delinker picks the copy next to the unit; a unit list must not start with one); 38ff3e4 makes bytematch skip them in their vc6_anon spelling.
+
+Setup note: refs/dxheaders (git-ignored) is a copy of d3d.h, d3dcaps.h, d3dtypes.h, d3dvec.inl, ddraw.h and winapifamily.h from C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um; recreate it on a fresh checkout (the opengl2d3d unit includes it).
+
+Stopped mid-work at the user's request: the engine C tail agent (next: cmodel done, the rest of cl_draw, eventapi, wad, gl_refrag, chase, glHud, sv_pmove, buildnum, l_studio, sys_dll, HUD, com_custom, cl_pmove), the vgui2 tail agent (next: Menu, Button, Frame, Image, Label, TextEntry, ToggleButton, controls.cpp tails), the snd_win agent (snd_win.c, filesystem.cpp, bitmap_win.c, steamid.cpp, voice_mixer_controls_openal.cpp, voice helper units), the opengl2d3d agent (16 large functions left).
+
+Review items: RichText's 01E45430 was renamed to CUtlMemory<TFormatStream>::IsExternallyAllocated by position (identical bytes to the wchar_t one at 01E45320). Open decisions unchanged: IGA and A3D scope (about 156 KB with hla3d and vgui_surfacelib), Button::GetMessageMap name, .s files with ml.exe, the 252 vgui::Dar instantiations, /MT for all hw units.
