@@ -4991,3 +4991,18 @@ va,name,kind,evidence
 01DFE540,?NumAllocated@?$CUtlMemory@PAVInitFunc@CInitTracker@@@@QBEHXZ,func,engine/traceinit.cpp: Linux hw.so DWARF names (traceinit.cpp; template members of UtlVector.h/UtlMemory.h used by the file); offset and size in our compiled object equal the retail ones
 01DFE560,?Grow@?$CUtlMemory@PAVInitFunc@CInitTracker@@@@QAEXH@Z,func,engine/traceinit.cpp: Linux hw.so DWARF names (traceinit.cpp; template members of UtlVector.h/UtlMemory.h used by the file); offset and size in our compiled object equal the retail ones
 01DFE630,?IsExternallyAllocated@?$CUtlMemory@PAVInitFunc@CInitTracker@@@@QBE_NXZ,func,engine/traceinit.cpp: Linux hw.so DWARF names (traceinit.cpp; template members of UtlVector.h/UtlMemory.h used by the file); offset and size in our compiled object equal the retail ones
+01D9662B,?RemoveHead@ObjectList@@QAEPAXXZ,func,"common/ObjectList.cpp: Linux hw.so DWARF names (ObjectList.cpp, source order); offset and size in our compiled object equal the retail ones"
+01D966B3,?AddTail@ObjectList@@QAE_NPAX@Z,func,"common/ObjectList.cpp: Linux hw.so DWARF names (ObjectList.cpp, source order); offset and size in our compiled object equal the retail ones"
+01D967B9,?IsEmpty@ObjectList@@UAE_NXZ,func,"common/ObjectList.cpp: Linux hw.so DWARF names (ObjectList.cpp, source order); offset and size in our compiled object equal the retail ones"
+01D967D2,?CountElements@ObjectList@@UAEHXZ,func,"common/ObjectList.cpp: Linux hw.so DWARF names (ObjectList.cpp, source order); offset and size in our compiled object equal the retail ones"
+01D967E3,?Contains@ObjectList@@UAE_NPAX@Z,func,"common/ObjectList.cpp: Linux hw.so DWARF names (ObjectList.cpp, source order); offset and size in our compiled object equal the retail ones"
+01D9682C,?Clear@ObjectList@@UAEX_N@Z,func,"common/ObjectList.cpp: Linux hw.so DWARF names (ObjectList.cpp, source order); offset and size in our compiled object equal the retail ones"
+01D968B4,?Remove@ObjectList@@UAE_NPAX@Z,func,"common/ObjectList.cpp: Linux hw.so DWARF names (ObjectList.cpp, source order); offset and size in our compiled object equal the retail ones"
+01D96986,?Init@ObjectList@@UAEXXZ,func,"common/ObjectList.cpp: Linux hw.so DWARF names (ObjectList.cpp, source order); offset and size in our compiled object equal the retail ones"
+01D969B9,?GetFirst@ObjectList@@UAEPAXXZ,func,"common/ObjectList.cpp: Linux hw.so DWARF names (ObjectList.cpp, source order); offset and size in our compiled object equal the retail ones"
+01D969F3,?GetNext@ObjectList@@UAEPAXXZ,func,"common/ObjectList.cpp: Linux hw.so DWARF names (ObjectList.cpp, source order); offset and size in our compiled object equal the retail ones"
+01D96A2E,?Add@ObjectList@@UAE_NPAX@Z,func,"common/ObjectList.cpp: Linux hw.so DWARF names (ObjectList.cpp, source order); offset and size in our compiled object equal the retail ones"
+01D96A50,??_GObjectList@@UAEPAXI@Z,func,"common/ObjectList.cpp: Linux hw.so DWARF names (ObjectList.cpp, source order); offset and size in our compiled object equal the retail ones"
+01D96A80,??0IObjectContainer@@QAE@XZ,func,"common/ObjectList.cpp: Linux hw.so DWARF names (ObjectList.cpp, source order); offset and size in our compiled object equal the retail ones"
+01D96AA0,??_GIObjectContainer@@UAEPAXI@Z,func,"common/ObjectList.cpp: Linux hw.so DWARF names (ObjectList.cpp, source order); offset and size in our compiled object equal the retail ones"
+01D96AD0,??1IObjectContainer@@UAE@XZ,func,"common/ObjectList.cpp: Linux hw.so DWARF names (ObjectList.cpp, source order); offset and size in our compiled object equal the retail ones"

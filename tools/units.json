@@ -3114,6 +3114,11 @@
           ]
         },
         {
+          "name": "common/ObjectList",
+          "source": "src/common/ObjectList.cpp",
+          "functions_file": "tools/units/hw_common_ObjectList.txt"
+        },
+        {
           "name": "common/TokenLine",
           "source": "src/common/TokenLine.cpp",
           "functions_file": "tools/units/hw_common_TokenLine.txt"

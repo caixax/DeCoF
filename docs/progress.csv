@@ -26668,25 +26668,25 @@ hw,01D95D89,55,_NET_DrawUpdateRate,,UNKNOWN,engine/net_ws.c,,,MATCHED,100,hw_man
 hw,01D95DC0,108,_NET_DrawDataSegment,,UNKNOWN,engine/net_ws.c,,,MATCHED,100,hw_manual.csv,
 hw,01D95E2C,1713,_SCR_NetGraph,,UNKNOWN,engine/net_ws.c,,,MATCHED,100,hw_manual.csv,
 hw,01D964DD,97,_SCR_DrawFPS,,UNKNOWN,engine/net_ws.c,,,MATCHED,100,hw_manual.csv,
-hw,01D96540,71,,,UNKNOWN,common/ObjectList.cpp,,,TODO,,,linux: _ZN10ObjectListC1Ev
-hw,01D96587,38,,,UNKNOWN,common/ObjectList.cpp,,,TODO,,,linux: _ZN10ObjectListD1Ev
-hw,01D965AD,126,,,UNKNOWN,common/ObjectList.cpp,,,TODO,,,linux: _ZN10ObjectList7AddHeadEPv
-hw,01D9662B,136,,,UNKNOWN,common/ObjectList.cpp,,,TODO,,,linux: _ZN10ObjectList10RemoveHeadEv
-hw,01D966B3,126,,,UNKNOWN,common/ObjectList.cpp,,,TODO,,,linux: _ZN10ObjectList7AddTailEPv
-hw,01D96731,136,,,UNKNOWN,common/ObjectList.cpp,,,TODO,,,linux: _ZN10ObjectList10RemoveTailEv
-hw,01D967B9,25,,,UNKNOWN,common/ObjectList.cpp,,,TODO,,,linux: _ZN10ObjectList7IsEmptyEv
-hw,01D967D2,17,,,UNKNOWN,common/ObjectList.cpp,,,TODO,,,linux: _ZN10ObjectList13CountElementsEv
-hw,01D967E3,73,,,UNKNOWN,common/ObjectList.cpp,,,TODO,,,linux: _ZN10ObjectList8ContainsEPv
-hw,01D9682C,136,,,UNKNOWN,common/ObjectList.cpp,,,TODO,,,linux: _ZN10ObjectList5ClearEb
-hw,01D968B4,210,,,UNKNOWN,common/ObjectList.cpp,,,TODO,,,linux: _ZN10ObjectList6RemoveEPv
-hw,01D96986,51,,Concurrency::details::ContextBase::ClearCancel,ENGINE,common/ObjectList.cpp,,,TODO,,ghidra,linux: _ZN10ObjectList4InitEv
-hw,01D969B9,58,,,UNKNOWN,common/ObjectList.cpp,,,TODO,,,linux: _ZN10ObjectList8GetFirstEv
-hw,01D969F3,59,,,UNKNOWN,common/ObjectList.cpp,,,TODO,,,linux: _ZN10ObjectList7GetNextEv
-hw,01D96A2E,25,,,UNKNOWN,common/ObjectList.cpp,,,TODO,,,linux: _ZN10ObjectList3AddEPv
-hw,01D96A50,46,,,UNKNOWN,common/ObjectList.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D96A80,23,,,UNKNOWN,common/ObjectList.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D96AA0,46,,,UNKNOWN,common/ObjectList.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D96AD0,20,,,UNKNOWN,common/ObjectList.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D96540,71,??0ObjectList@@QAE@XZ,ObjectList::ObjectList,UNKNOWN,common/ObjectList.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN10ObjectListC1Ev
+hw,01D96587,38,??1ObjectList@@UAE@XZ,ObjectList::~ObjectList,UNKNOWN,common/ObjectList.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN10ObjectListD1Ev
+hw,01D965AD,126,?AddHead@ObjectList@@QAE_NPAX@Z,ObjectList::AddHead,UNKNOWN,common/ObjectList.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN10ObjectList7AddHeadEPv
+hw,01D9662B,136,?RemoveHead@ObjectList@@QAEPAXXZ,ObjectList::RemoveHead,UNKNOWN,common/ObjectList.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN10ObjectList10RemoveHeadEv
+hw,01D966B3,126,?AddTail@ObjectList@@QAE_NPAX@Z,ObjectList::AddTail,UNKNOWN,common/ObjectList.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN10ObjectList7AddTailEPv
+hw,01D96731,136,?RemoveTail@ObjectList@@QAEPAXXZ,ObjectList::RemoveTail,UNKNOWN,common/ObjectList.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN10ObjectList10RemoveTailEv
+hw,01D967B9,25,?IsEmpty@ObjectList@@UAE_NXZ,ObjectList::IsEmpty,UNKNOWN,common/ObjectList.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN10ObjectList7IsEmptyEv
+hw,01D967D2,17,?CountElements@ObjectList@@UAEHXZ,ObjectList::CountElements,UNKNOWN,common/ObjectList.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN10ObjectList13CountElementsEv
+hw,01D967E3,73,?Contains@ObjectList@@UAE_NPAX@Z,ObjectList::Contains,UNKNOWN,common/ObjectList.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN10ObjectList8ContainsEPv
+hw,01D9682C,136,?Clear@ObjectList@@UAEX_N@Z,ObjectList::Clear,UNKNOWN,common/ObjectList.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN10ObjectList5ClearEb
+hw,01D968B4,210,?Remove@ObjectList@@UAE_NPAX@Z,ObjectList::Remove,UNKNOWN,common/ObjectList.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN10ObjectList6RemoveEPv
+hw,01D96986,51,?Init@ObjectList@@UAEXXZ,ObjectList::Init,ENGINE,common/ObjectList.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN10ObjectList4InitEv
+hw,01D969B9,58,?GetFirst@ObjectList@@UAEPAXXZ,ObjectList::GetFirst,UNKNOWN,common/ObjectList.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN10ObjectList8GetFirstEv
+hw,01D969F3,59,?GetNext@ObjectList@@UAEPAXXZ,ObjectList::GetNext,UNKNOWN,common/ObjectList.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN10ObjectList7GetNextEv
+hw,01D96A2E,25,?Add@ObjectList@@UAE_NPAX@Z,ObjectList::Add,UNKNOWN,common/ObjectList.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN10ObjectList3AddEPv
+hw,01D96A50,46,??_GObjectList@@UAEPAXI@Z,destructor',UNKNOWN,common/ObjectList.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D96A80,23,??0IObjectContainer@@QAE@XZ,IObjectContainer::IObjectContainer,UNKNOWN,common/ObjectList.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D96AA0,46,??_GIObjectContainer@@UAEPAXI@Z,destructor',UNKNOWN,common/ObjectList.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
+hw,01D96AD0,20,??1IObjectContainer@@UAE@XZ,IObjectContainer::~IObjectContainer,UNKNOWN,common/ObjectList.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
 hw,01D96AF0,26,?DebugPrint_guess@@YAXPBD@Z,DebugPrint_guess,ENGINE,engine/opengl2d3d_guess.cpp,,,MATCHED,100,hw_manual.csv,"OpenGL-on-Direct3D wrapper (exports glAccum@8 and the other gl*/wgl* entry points, QGL_D3DInit, 'Wrapper: Lock on primary failed'); no Linux file and no string names the file: the _guess file name only describes the object and sorts into its link position between ObjectList.cpp and pmove.c"
 hw,01D96B0A,7,_glAccum@8,glAccum,ENGINE,engine/opengl2d3d_guess.cpp,,,MATCHED,100,hw_manual.csv,"OpenGL-on-Direct3D wrapper (exports glAccum@8 and the other gl*/wgl* entry points, QGL_D3DInit, 'Wrapper: Lock on primary failed'); no Linux file and no string names the file: the _guess file name only describes the object and sorts into its link position between ObjectList.cpp and pmove.c"
 hw,01D96B11,17,_glAreTexturesResident@12,glAreTexturesResident,ENGINE,engine/opengl2d3d_guess.cpp,,,MATCHED,100,hw_manual.csv,"OpenGL-on-Direct3D wrapper (exports glAccum@8 and the other gl*/wgl* entry points, QGL_D3DInit, 'Wrapper: Lock on primary failed'); no Linux file and no string names the file: the _guess file name only describes the object and sorts into its link position between ObjectList.cpp and pmove.c"
