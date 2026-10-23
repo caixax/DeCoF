@@ -3154,6 +3154,11 @@
         {
           "name": "engine/opengl2d3d_guess",
           "source": "src/engine_hw/opengl2d3d_guess.cpp",
+          "includes": [
+            "src/engine_hw",
+            "src/common",
+            "refs/dxheaders"
+          ],
           "functions_file": "tools/units/hw_engine_opengl2d3d_guess.txt"
         },
         {
