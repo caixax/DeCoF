@@ -4064,35 +4064,41 @@ void APIENTRY glTexSubImage2D (GLenum target, GLint level, GLint xoffset, GLint 
 
 void APIENTRY glTexImage2D (GLenum target, GLint level, GLint internalformat, GLsizei width, GLsizei height, GLint border, GLenum format, GLenum type, const GLvoid *pixels)
 {
-	TexInfo_guess	*ti_guess = &g_guess.m_tex_guess[ g_guess.m_curtgt_guess[ g_guess.m_curstage_guess ] ];
-	DWORD			newwidth_guess, newheight_guess;
+	TexInfo_guess	*tex_guess = &g_guess.m_tex_guess[ g_guess.m_curtgt_guess[ g_guess.m_curstage_guess ] ];
+	DWORD			nw_guess, nh_guess;
 
-	if ( g_guess.m_subsample_guess == FALSE )
+	if ( g_guess.m_subsample_guess )
 	{
-		newwidth_guess = width;
-		newheight_guess = height;
-	}
-	else if ( width <= 256 && height <= 256 )
-	{
-		newwidth_guess = width;
-		newheight_guess = height;
-	}
-	else if ( width > height )
-	{
-		newwidth_guess = 256;
-		newheight_guess = ( height << 8 ) / width;
+		if ( width > 256 || height > 256 )
+		{
+			if ( width > height )
+			{
+				nw_guess = 256;
+				nh_guess = ( height << 8 ) / width;
+			}
+			else
+			{
+				nh_guess = 256;
+				nw_guess = ( width << 8 ) / height;
+			}
+		}
+		else
+		{
+			nw_guess = width;
+			nh_guess = height;
+		}
 	}
 	else
 	{
-		newheight_guess = 256;
-		newwidth_guess = ( width << 8 ) / height;
+		nw_guess = width;
+		nh_guess = height;
 	}
 	if ( g_guess.m_makeSquare_guess )
 	{
-		if ( newwidth_guess < newheight_guess )
-			newwidth_guess = newheight_guess;
+		if ( nh_guess > nw_guess )
+			nw_guess = nh_guess;
 		else
-			newheight_guess = newwidth_guess;
+			nh_guess = nw_guess;
 	}
 
 	if ( level == 0 )
@@ -4116,14 +4122,14 @@ void APIENTRY glTexImage2D (GLenum target, GLint level, GLint internalformat, GL
 		case GL_RGBA4:
 		case GL_RGB5_A1:
 		case GL_RGBA8:
-			if ( g_guess.m_use4444_guess == FALSE )
-			{
-				ddsd.ddpfPixelFormat = g_guess.m_ddFiveBitAlphaFormat_guess;
-			}
-			else
+			if ( g_guess.m_use4444_guess )
 			{
 				ddsd.ddpfPixelFormat = g_guess.m_ddFourBitAlphaFormat_guess;
 				g_guess.m_use4444_guess = FALSE;
+			}
+			else
+			{
+				ddsd.ddpfPixelFormat = g_guess.m_ddFiveBitAlphaFormat_guess;
 			}
 			break;
 		default:
@@ -4131,8 +4137,8 @@ void APIENTRY glTexImage2D (GLenum target, GLint level, GLint internalformat, GL
 			break;
 		}
 		ddsd.dwSize = sizeof( ddsd );
-		ddsd.dwHeight = newheight_guess;
-		ddsd.dwWidth = newwidth_guess;
+		ddsd.dwHeight = nh_guess;
+		ddsd.dwWidth = nw_guess;
 		ddsd.dwFlags = DDSD_CAPS | DDSD_HEIGHT | DDSD_WIDTH | DDSD_PIXELFORMAT | DDSD_TEXTURESTAGE;
 		ddsd.dwTextureStage = g_guess.m_curstage_guess;
 		ddsd.ddsCaps.dwCaps = DDSCAPS_TEXTURE;
@@ -4143,24 +4149,23 @@ void APIENTRY glTexImage2D (GLenum target, GLint level, GLint internalformat, GL
 			OutputDebugString( "Wrapper: CreateSurface for texture failed\n" );
 			return;
 		}
-		LoadSurface_guess( lpDDS, internalformat, width, height, newwidth_guess, newheight_guess, pixels );
-		if ( ti_guess->m_block_guess )
-			ti_guess->m_block_guess->Release();
-		if ( ti_guess->m_ddsurf_guess )
-			ti_guess->m_ddsurf_guess->Release();
-		ddrval = lpDDS->QueryInterface( IID_IDirect3DTexture2, (LPVOID *)&ti_guess->m_block_guess );
-		if ( ddrval != DD_OK )
+		LoadSurface_guess( lpDDS, internalformat, width, height, nw_guess, nh_guess, pixels );
+		if ( tex_guess->m_block_guess )
+			tex_guess->m_block_guess->Release();
+		if ( tex_guess->m_ddsurf_guess )
+			tex_guess->m_ddsurf_guess->Release();
+		if ( lpDDS->QueryInterface( IID_IDirect3DTexture2, (LPVOID *)&tex_guess->m_block_guess ) != DD_OK )
 		{
 			OutputDebugString( "Wrapper: QueryInterface for Texture2 failed.\n" );
 			lpDDS->Release();
 			return;
 		}
-		ti_guess->m_internalformat_guess = internalformat;
-		ti_guess->m_dwWidth_guess = newwidth_guess;
-		ti_guess->m_dwHeight_guess = newheight_guess;
-		ti_guess->m_ddsurf_guess = lpDDS;
-		ti_guess->m_glWidth_guess = width;
-		ti_guess->m_glHeight_guess = height;
+		tex_guess->m_internalformat_guess = internalformat;
+		tex_guess->m_dwWidth_guess = nw_guess;
+		tex_guess->m_dwHeight_guess = nh_guess;
+		tex_guess->m_ddsurf_guess = lpDDS;
+		tex_guess->m_glWidth_guess = width;
+		tex_guess->m_glHeight_guess = height;
 	}
 	else if ( level == 1 && g_guess.m_usemipmap_guess )
 	{
@@ -4183,20 +4188,20 @@ void APIENTRY glTexImage2D (GLenum target, GLint level, GLint internalformat, GL
 		case GL_RGBA4:
 		case GL_RGB5_A1:
 		case GL_RGBA8:
-			if ( g_guess.m_use4444_guess == FALSE )
-			{
-				ddsd.ddpfPixelFormat = g_guess.m_ddFiveBitAlphaFormat_guess;
-			}
-			else
+			if ( g_guess.m_use4444_guess )
 			{
 				ddsd.ddpfPixelFormat = g_guess.m_ddFourBitAlphaFormat_guess;
 				g_guess.m_use4444_guess = FALSE;
 			}
+			else
+			{
+				ddsd.ddpfPixelFormat = g_guess.m_ddFiveBitAlphaFormat_guess;
+			}
 			break;
 		}
 		ddsd.dwSize = sizeof( ddsd );
-		ddsd.dwHeight = ti_guess->m_dwHeight_guess;
-		ddsd.dwWidth = ti_guess->m_dwWidth_guess;
+		ddsd.dwHeight = tex_guess->m_dwHeight_guess;
+		ddsd.dwWidth = tex_guess->m_dwWidth_guess;
 		ddsd.dwFlags = DDSD_CAPS | DDSD_HEIGHT | DDSD_WIDTH | DDSD_PIXELFORMAT | DDSD_TEXTURESTAGE;
 		ddsd.dwTextureStage = g_guess.m_curstage_guess;
 		ddsd.ddsCaps.dwCaps = DDSCAPS_TEXTURE | DDSCAPS_MIPMAP | DDSCAPS_COMPLEX;
@@ -4207,37 +4212,37 @@ void APIENTRY glTexImage2D (GLenum target, GLint level, GLint internalformat, GL
 			OutputDebugString( "Wrapper: CreateSurface for texture failed\n" );
 			return;
 		}
-		lpDDS->Blt( NULL, ti_guess->m_ddsurf_guess, NULL, DDBLT_WAIT, NULL );
-		ti_guess->m_block_guess->Release();
-		ti_guess->m_ddsurf_guess->Release();
-		ti_guess->m_ddsurf_guess = lpDDS;
-		ti_guess->m_ddsurf_guess->QueryInterface( IID_IDirect3DTexture2, (LPVOID *)&ti_guess->m_block_guess );
+		lpDDS->Blt( NULL, tex_guess->m_ddsurf_guess, NULL, DDBLT_WAIT, NULL );
+		tex_guess->m_block_guess->Release();
+		tex_guess->m_ddsurf_guess->Release();
+		tex_guess->m_ddsurf_guess = lpDDS;
+		tex_guess->m_ddsurf_guess->QueryInterface( IID_IDirect3DTexture2, (LPVOID *)&tex_guess->m_block_guess );
 		Q_memset( &ddsd.ddsCaps, 0, sizeof( ddsd.ddsCaps ) );
 		ddsd.ddsCaps.dwCaps = DDSCAPS_TEXTURE | DDSCAPS_MIPMAP;
-		ti_guess->m_ddsurf_guess->GetAttachedSurface( &ddsd.ddsCaps, &lpDDSMip_guess );
-		LoadSurface_guess( lpDDSMip_guess, internalformat, width, height, newwidth_guess, newheight_guess, pixels );
+		tex_guess->m_ddsurf_guess->GetAttachedSurface( &ddsd.ddsCaps, &lpDDSMip_guess );
+		LoadSurface_guess( lpDDSMip_guess, internalformat, width, height, nw_guess, nh_guess, pixels );
 		lpDDSMip_guess->Release();
 	}
 	else if ( g_guess.m_usemipmap_guess )
 	{
-		LPDIRECTDRAWSURFACE4	lpDDS, lpDDSNext_guess;
-		DDSCAPS2				ddscaps_guess;
-		HRESULT					ddrval;
+		LPDIRECTDRAWSURFACE4	lpDDSAttached_guess;
+		LPDIRECTDRAWSURFACE4	lpDDS;
+		DDSURFACEDESC2			desc_guess;
 		int						i;
 
-		lpDDS = g_guess.m_tex_guess[ g_guess.m_curtgt_guess[ g_guess.m_curstage_guess ] ].m_ddsurf_guess;
+		lpDDS = tex_guess->m_ddsurf_guess;
 		lpDDS->AddRef();
 		for ( i = 0; i < level; i++ )
 		{
-			Q_memset( &ddscaps_guess, 0, sizeof( ddscaps_guess ) );
-			ddscaps_guess.dwCaps = DDSCAPS_TEXTURE | DDSCAPS_MIPMAP;
-			ddrval = lpDDS->GetAttachedSurface( &ddscaps_guess, &lpDDSNext_guess );
+			Q_memset( &desc_guess.ddsCaps, 0, sizeof( desc_guess.ddsCaps ) );
+			desc_guess.ddsCaps.dwCaps = DDSCAPS_TEXTURE | DDSCAPS_MIPMAP;
+			HRESULT ddrval = lpDDS->GetAttachedSurface( &desc_guess.ddsCaps, &lpDDSAttached_guess );
 			lpDDS->Release();
 			if ( ddrval == DDERR_NOTFOUND )
 				return;
-			lpDDS = lpDDSNext_guess;
+			lpDDS = lpDDSAttached_guess;
 		}
-		LoadSurface_guess( lpDDS, internalformat, width, height, newwidth_guess, newheight_guess, pixels );
+		LoadSurface_guess( lpDDS, internalformat, width, height, nw_guess, nh_guess, pixels );
 		lpDDS->Release();
 	}
 	g_guess.m_updatestage_guess = FALSE;
