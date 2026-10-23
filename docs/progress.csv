@@ -31514,15 +31514,15 @@ hw,01E56550,102,,,ENGINE,vgui2/controls/CheckButton.cpp,,,TODO,,,
 hw,01E565C0,64,?GetMessageMap@Button@vgui2@@UAEPAUPanelMessageMap@2@XZ,vgui2::Button::GetMessageMap,UNKNOWN,vgui2/controls/Button.cpp,,,MATCHED,100,,
 hw,01E56600,10,?GetPanelClassName@Button@vgui2@@SAPBDXZ,vgui2::Button::GetPanelClassName,UNKNOWN,,,,TODO,,,
 hw,01E56610,10,,,UNKNOWN,,,,TODO,,,
-hw,01E56620,19,,,ENGINE,vgui2/controls/Button.cpp,,,TODO,,,
-hw,01E56640,110,,,ENGINE,vgui2/controls/Button.cpp,,,TODO,,,
-hw,01E566B0,120,,,ENGINE,vgui2/controls/Button.cpp,,,TODO,,,
+hw,01E56620,19,,,ENGINE,vgui2/controls/CheckButton.cpp,,,TODO,,,
+hw,01E56640,110,,,ENGINE,vgui2/controls/CheckButton.cpp,,,TODO,,,
+hw,01E566B0,120,,,ENGINE,vgui2/controls/CheckButton.cpp,,,TODO,,,
 hw,01E56730,15,_$E8,,UNKNOWN,vgui2/controls/Button.cpp,,,MATCHED,100,,
-hw,01E5673F,21,,,ENGINE,vgui2/controls/Button.cpp,,,TODO,,,
+hw,01E5673F,21,,,ENGINE,vgui2/controls/Button.cpp,,,MATCHED,100,,
 hw,01E56754,18,_$E7,,UNKNOWN,vgui2/controls/Button.cpp,,,MATCHED,100,,
-hw,01E56766,15,_$E6,,UNKNOWN,vgui2/controls/Button.cpp,,,TODO,99.99,,"relocation targets differ (instructions identical): retail ??1CAtlBaseModule@ATL@@QAE@XZ, ours ??1CUtlSymbolTable@@QAE@XZ"
-hw,01E56775,235,,,ENGINE,vgui2/controls/Button.cpp,,,TODO,,,
-hw,01E56860,235,,,ENGINE,vgui2/controls/Button.cpp,,,TODO,,,
+hw,01E56766,15,_$E6,,UNKNOWN,vgui2/controls/Button.cpp,,,MATCHED,100,,
+hw,01E56775,235,,,ENGINE,vgui2/controls/Button.cpp,,,MATCHED,100,,
+hw,01E56860,235,,,ENGINE,vgui2/controls/Button.cpp,,,MATCHED,100,,
 hw,01E5694B,276,?Init@Button@vgui2@@AAEXXZ,vgui2::Button::Init,UNKNOWN,vgui2/controls/Button.cpp,,,MATCHED,100,,
 hw,01E56A5F,63,??1Button@vgui2@@UAE@XZ,vgui2::Button::~Button,UNKNOWN,vgui2/controls/Button.cpp,,,MATCHED,100,,
 hw,01E56A9E,25,?SetButtonActivationType@Button@vgui2@@UAEXW4ActivationType_t@12@@Z,vgui2::Button::SetButtonActivationType,UNKNOWN,vgui2/controls/Button.cpp,,,MATCHED,100,,linux: _ZN5vgui26Button23SetButtonActivationTypeENS0_16ActivationType_tE
@@ -31541,8 +31541,8 @@ hw,01E56DBC,145,?Paint@Button@vgui2@@MAEXXZ,vgui2::Button::Paint,UNKNOWN,vgui2/c
 hw,01E56E4D,165,?PerformLayout@Button@vgui2@@UAEXXZ,vgui2::Button::PerformLayout,UNKNOWN,vgui2/controls/Button.cpp,,,MATCHED,100,,linux: _ZN5vgui26Button13PerformLayoutEv
 hw,01E56EF2,98,?GetButtonFgColor@Button@vgui2@@UAE?AVColor@@XZ,vgui2::Button::GetButtonFgColor,UNKNOWN,vgui2/controls/Button.cpp,,,MATCHED,100,,linux: _ZN5vgui26Button16GetButtonFgColorEv
 hw,01E56F54,98,?GetButtonBgColor@Button@vgui2@@UAE?AVColor@@XZ,vgui2::Button::GetButtonBgColor,UNKNOWN,vgui2/controls/Button.cpp,,,MATCHED,100,,linux: _ZN5vgui26Button16GetButtonBgColorEv
-hw,01E56FB6,37,,,UNKNOWN,vgui2/controls/Button.cpp,,,TODO,,,linux: _ZN5vgui26Button10OnSetFocusEv
-hw,01E56FDB,37,,,UNKNOWN,vgui2/controls/Button.cpp,,,TODO,,,linux: _ZN5vgui26Button11OnKillFocusEv
+hw,01E56FB6,37,,,UNKNOWN,vgui2/controls/Button.cpp,,,MATCHED,100,,linux: _ZN5vgui26Button10OnSetFocusEv
+hw,01E56FDB,37,,,UNKNOWN,vgui2/controls/Button.cpp,,,MATCHED,100,,linux: _ZN5vgui26Button11OnKillFocusEv
 hw,01E57000,490,?ApplySchemeSettings@Button@vgui2@@MAEXPAVIScheme@2@@Z,vgui2::Button::ApplySchemeSettings,ENGINE,vgui2/controls/Button.cpp,,,MATCHED,100,linux_symbols:string:0.633,
 hw,01E571EA,109,?SetDefaultColor@Button@vgui2@@UAEXVColor@@0@Z,vgui2::Button::SetDefaultColor,UNKNOWN,vgui2/controls/Button.cpp,,,MATCHED,100,,linux: _ZN5vgui26Button15SetDefaultColorE5ColorS1_
 hw,01E57257,109,?SetArmedColor@Button@vgui2@@UAEXVColor@@0@Z,vgui2::Button::SetArmedColor,UNKNOWN,vgui2/controls/Button.cpp,,,MATCHED,100,,linux: _ZN5vgui26Button13SetArmedColorE5ColorS1_
@@ -31551,8 +31551,8 @@ hw,01E57331,43,?SetDefaultBorder@Button@vgui2@@UAEXPAVIBorder@2@@Z,vgui2::Button
 hw,01E5735C,43,?SetDepressedBorder@Button@vgui2@@UAEXPAVIBorder@2@@Z,vgui2::Button::SetDepressedBorder,UNKNOWN,vgui2/controls/Button.cpp,,,MATCHED,100,,linux: _ZN5vgui26Button18SetDepressedBorderEPNS_7IBorderE
 hw,01E57387,43,?SetKeyFocusBorder@Button@vgui2@@UAEXPAVIBorder@2@@Z,vgui2::Button::SetKeyFocusBorder,UNKNOWN,vgui2/controls/Button.cpp,,,MATCHED,100,,linux: _ZN5vgui26Button17SetKeyFocusBorderEPNS_7IBorderE
 hw,01E573B2,195,?GetBorder@Button@vgui2@@MAEPAVIBorder@2@_N000@Z,vgui2::Button::GetBorder,UNKNOWN,vgui2/controls/Button.cpp,,,MATCHED,100,,linux: _ZN5vgui26Button9GetBorderEbbbb
-hw,01E57475,245,,,UNKNOWN,vgui2/controls/Button.cpp,,,TODO,,,linux: _ZN5vgui26Button25SetAsCurrentDefaultButtonEi
-hw,01E5756A,245,,,UNKNOWN,vgui2/controls/Button.cpp,,,TODO,,,linux: _ZN5vgui26Button18SetAsDefaultButtonEi
+hw,01E57475,245,,,UNKNOWN,vgui2/controls/Button.cpp,,,MATCHED,100,,linux: _ZN5vgui26Button25SetAsCurrentDefaultButtonEi
+hw,01E5756A,245,,,UNKNOWN,vgui2/controls/Button.cpp,,,MATCHED,100,,linux: _ZN5vgui26Button18SetAsDefaultButtonEi
 hw,01E5765F,70,?SetArmedSound@Button@vgui2@@QAEXPBD@Z,vgui2::Button::SetArmedSound,UNKNOWN,vgui2/controls/Button.cpp,,,MATCHED,100,,linux: _ZN5vgui26Button13SetArmedSoundEPKc
 hw,01E576A5,70,?SetDepressedSound@Button@vgui2@@QAEXPBD@Z,vgui2::Button::SetDepressedSound,UNKNOWN,vgui2/controls/Button.cpp,,,MATCHED,100,,linux: _ZN5vgui26Button17SetDepressedSoundEPKc
 hw,01E576EB,70,?SetReleasedSound@Button@vgui2@@QAEXPBD@Z,vgui2::Button::SetReleasedSound,UNKNOWN,vgui2/controls/Button.cpp,,,MATCHED,100,,linux: _ZN5vgui26Button16SetReleasedSoundEPKc
@@ -31576,21 +31576,21 @@ hw,01E57EB1,137,?OnKeyCodePressed@Button@vgui2@@MAEXW4KeyCode@2@@Z,vgui2::Button
 hw,01E57F3A,112,?OnKeyCodeReleased@Button@vgui2@@MAEXW4KeyCode@2@@Z,vgui2::Button::OnKeyCodeReleased,UNKNOWN,vgui2/controls/Button.cpp,,,MATCHED,100,,linux: _ZN5vgui26Button17OnKeyCodeReleasedENS_7KeyCodeE
 hw,01E57FAA,192,?DrawFocusBorder@Button@vgui2@@MAEXHHHH@Z,vgui2::Button::DrawFocusBorder,UNKNOWN,vgui2/controls/Button.cpp,,,MATCHED,100,,linux: _ZN5vgui26Button15DrawFocusBorderEiiii
 hw,01E5806A,57,?SizeToContents@Button@vgui2@@UAEXXZ,vgui2::Button::SizeToContents,UNKNOWN,vgui2/controls/Button.cpp,,,MATCHED,100,,linux: _ZN5vgui26Button14SizeToContentsEv
-hw,01E580B0,46,,,ENGINE,vgui2/controls/Button.cpp,,,TODO,,,
-hw,01E580E0,19,,,ENGINE,vgui2/controls/Button.cpp,,,TODO,,,
-hw,01E58100,102,,,ENGINE,vgui2/controls/Button.cpp,,,TODO,,,
-hw,01E58170,10,,,ENGINE,vgui2/controls/Button.cpp,,,TODO,,,
-hw,01E58180,19,,,ENGINE,vgui2/controls/Button.cpp,,,TODO,,,
-hw,01E581A0,107,,,ENGINE,vgui2/controls/Button.cpp,,,TODO,,,
-hw,01E58210,120,,,ENGINE,vgui2/controls/Button.cpp,,,TODO,,,
-hw,01E58290,19,,,ENGINE,vgui2/controls/Button.cpp,,,TODO,,,
-hw,01E582B0,107,,,ENGINE,vgui2/controls/Button.cpp,,,TODO,,,
-hw,01E58320,19,,,ENGINE,vgui2/controls/Button.cpp,,,TODO,,,
-hw,01E58340,110,,,ENGINE,vgui2/controls/Button.cpp,,,TODO,,,
-hw,01E583B0,19,,,ENGINE,vgui2/controls/Button.cpp,,,TODO,,,
-hw,01E583D0,110,,,ENGINE,vgui2/controls/Button.cpp,,,TODO,,,
-hw,01E58440,19,,,ENGINE,vgui2/controls/Button.cpp,,,TODO,,,
-hw,01E58460,110,,,ENGINE,vgui2/controls/Button.cpp,,,TODO,,,
+hw,01E580B0,46,,,ENGINE,vgui2/controls/Button.cpp,,,MATCHED,100,,
+hw,01E580E0,19,,,ENGINE,vgui2/controls/Button.cpp,,,MATCHED,100,,
+hw,01E58100,102,,,ENGINE,vgui2/controls/Button.cpp,,,MATCHED,100,,
+hw,01E58170,10,,,ENGINE,vgui2/controls/Button.cpp,,,MATCHED,100,,
+hw,01E58180,19,,,ENGINE,vgui2/controls/Button.cpp,,,MATCHED,100,,
+hw,01E581A0,107,,,ENGINE,vgui2/controls/Button.cpp,,,MATCHED,100,,
+hw,01E58210,120,,,ENGINE,vgui2/controls/Button.cpp,,,MATCHED,100,,
+hw,01E58290,19,,,ENGINE,vgui2/controls/Button.cpp,,,MATCHED,100,,
+hw,01E582B0,107,,,ENGINE,vgui2/controls/Button.cpp,,,MATCHED,100,,
+hw,01E58320,19,,,ENGINE,vgui2/controls/Button.cpp,,,MATCHED,100,,
+hw,01E58340,110,,,ENGINE,vgui2/controls/Button.cpp,,,MATCHED,100,,
+hw,01E583B0,19,,,ENGINE,vgui2/controls/Button.cpp,,,MATCHED,100,,
+hw,01E583D0,110,,,ENGINE,vgui2/controls/Button.cpp,,,MATCHED,100,,
+hw,01E58440,19,,,ENGINE,vgui2/controls/Button.cpp,,,MATCHED,100,,
+hw,01E58460,110,,,ENGINE,vgui2/controls/Button.cpp,,,MATCHED,100,,
 hw,01E58500,278,,,ENGINE,vgui2/controls/Label.cpp,,,TODO,,,
 hw,01E58616,278,,,ENGINE,vgui2/controls/Label.cpp,,,TODO,,,
 hw,01E5872C,194,??1Label@vgui2@@UAE@XZ,vgui2::Label::~Label,UNKNOWN,vgui2/controls/Label.cpp,,,MATCHED,100,,

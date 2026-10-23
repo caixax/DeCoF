@@ -1,4 +1,10 @@
 ?GetMessageMap@Button@vgui2@@UAEPAUPanelMessageMap@2@XZ
+_$E8
+_$E5
+_$E7
+_$E6
+??0Button@vgui2@@QAE@PAVPanel@1@PBD1@Z
+??0Button@vgui2@@QAE@PAVPanel@1@PBDPBG@Z
 ?Init@Button@vgui2@@AAEXXZ
 ??1Button@vgui2@@UAE@XZ
 ?SetButtonActivationType@Button@vgui2@@UAEXW4ActivationType_t@12@@Z
@@ -17,6 +23,8 @@
 ?PerformLayout@Button@vgui2@@UAEXXZ
 ?GetButtonFgColor@Button@vgui2@@UAE?AVColor@@XZ
 ?GetButtonBgColor@Button@vgui2@@UAE?AVColor@@XZ
+?OnSetFocus@Button@vgui2@@UAEXXZ
+?OnKillFocus@Button@vgui2@@UAEXXZ
 ?ApplySchemeSettings@Button@vgui2@@MAEXPAVIScheme@2@@Z
 ?SetDefaultColor@Button@vgui2@@UAEXVColor@@0@Z
 ?SetArmedColor@Button@vgui2@@UAEXVColor@@0@Z
@@ -25,6 +33,8 @@
 ?SetDepressedBorder@Button@vgui2@@UAEXPAVIBorder@2@@Z
 ?SetKeyFocusBorder@Button@vgui2@@UAEXPAVIBorder@2@@Z
 ?GetBorder@Button@vgui2@@MAEPAVIBorder@2@_N000@Z
+?SetAsCurrentDefaultButton@Button@vgui2@@UAEXH@Z
+?SetAsDefaultButton@Button@vgui2@@UAEXH@Z
 ?SetArmedSound@Button@vgui2@@QAEXPBD@Z
 ?SetDepressedSound@Button@vgui2@@QAEXPBD@Z
 ?SetReleasedSound@Button@vgui2@@QAEXPBD@Z
@@ -48,3 +58,18 @@
 ?OnKeyCodeReleased@Button@vgui2@@MAEXW4KeyCode@2@@Z
 ?DrawFocusBorder@Button@vgui2@@MAEXHHHH@Z
 ?SizeToContents@Button@vgui2@@UAEXXZ
+??_GButton@vgui2@@UAEPAXI@Z
+??0Button_RegisterMap@Button@vgui2@@QAE@XZ
+?ChainToMap@Button@vgui2@@SAXXZ
+?GetPanelBaseClassName@Button@vgui2@@SAPBDXZ
+??0PanelMessageFunc_DoClick@Button@vgui2@@QAE@XZ
+?InitVar@PanelMessageFunc_DoClick@Button@vgui2@@SAXXZ
+?AddToMap@Button@vgui2@@SAXPBDP8Panel@2@AEXXZHH0H0@Z
+??0PanelMessageFunc_OnHotkey@Button@vgui2@@QAE@XZ
+?InitVar@PanelMessageFunc_OnHotkey@Button@vgui2@@SAXXZ
+??0PanelMessageFunc_SetAsDefaultButton@Button@vgui2@@QAE@XZ
+?InitVar@PanelMessageFunc_SetAsDefaultButton@Button@vgui2@@SAXXZ
+??0PanelMessageFunc_SetAsCurrentDefaultButton@Button@vgui2@@QAE@XZ
+?InitVar@PanelMessageFunc_SetAsCurrentDefaultButton@Button@vgui2@@SAXXZ
+??0PanelMessageFunc_OnSetState@Button@vgui2@@QAE@XZ
+?InitVar@PanelMessageFunc_OnSetState@Button@vgui2@@SAXXZ
