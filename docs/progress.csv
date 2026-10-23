@@ -29473,7 +29473,7 @@ hw,01E0C8F0,52,?End@CVoiceTimer@@QAEXPAN@Z,CVoiceTimer::End,ENGINE,engine/voice.
 hw,01E0C930,27,??0?$CSizedCircularBuffer@$0FGCC@@@QAE@XZ,CSizedCircularBuffer<22050>::CSizedCircularBuffer<22050>,ENGINE,engine/voice.cpp,,,MATCHED,100,,
 hw,01E0C950,42,??0CAutoGain@@QAE@XZ,CAutoGain::CAutoGain,ENGINE,engine/voice_gain.cpp,,,MATCHED,100,,linux: _ZN9CAutoGainC1Ev
 hw,01E0C97A,118,?Reset@CAutoGain@@QAEXHMMM@Z,CAutoGain::Reset,ENGINE,engine/voice_gain.cpp,,,MATCHED,100,,linux: _ZN9CAutoGain5ResetEifff
-hw,01E0C9F0,642,?ProcessSamples@CAutoGain@@QAEXPAFH@Z,CAutoGain::ProcessSamples,ENGINE,engine/voice_gain.cpp,,,TODO,99.95,,linux: _ZN9CAutoGain14ProcessSamplesEPsi
+hw,01E0C9F0,642,?ProcessSamples@CAutoGain@@QAEXPAFH@Z,CAutoGain::ProcessSamples,ENGINE,engine/voice_gain.cpp,,,MATCHED,100,,linux: _ZN9CAutoGain14ProcessSamplesEPsi
 hw,01E0CC80,57,,,ENGINE,engine/voice_mixer_controls_openal.cpp,,,TODO,,,
 hw,01E0CCB9,36,,,ENGINE,engine/voice_mixer_controls_openal.cpp,,,TODO,,,
 hw,01E0CCDD,846,,,ENGINE,engine/voice_mixer_controls_openal.cpp,,,TODO,,,
@@ -29528,20 +29528,20 @@ hw,01E0E417,78,,,ENGINE,engine/voice_record_wavein.cpp,,,TODO,,,
 hw,01E0E465,109,?CreateVoiceRecord_WaveIn_guess@@YAPAVIVoiceRecord@@H@Z,CreateVoiceRecord_WaveIn_guess,ENGINE,engine/voice_record_wavein.cpp,,,TODO,,,
 hw,01E0E4E0,46,,,ENGINE,engine/voice_record_wavein.cpp,,,TODO,,,
 hw,01E0E510,27,,,ENGINE,engine/voice_record_wavein.cpp,,,TODO,,,
-hw,01E0E530,293,_VoiceSE_GetSoundDataCallback,VoiceSE_GetSoundDataCallback,ENGINE,engine/voice_sound_engine_interface.cpp,,,TODO,0.00,linux_symbols:caller:0.685,
-hw,01E0E655,31,?VoiceSE_RegisterCvars@@YAXXZ,VoiceSE_RegisterCvars,ENGINE,engine/voice_sound_engine_interface.cpp,,,TODO,0.00,hw_manual.csv,
-hw,01E0E674,126,?VoiceSE_Init@@YA_NXZ,VoiceSE_Init,UNKNOWN,engine/voice_sound_engine_interface.cpp,,,TODO,0.00,,linux: _Z12VoiceSE_Initv
-hw,01E0E6F2,5,?VoiceSE_Term@@YAXXZ,VoiceSE_Term,UNKNOWN,engine/voice_sound_engine_interface.cpp,,,TODO,0.00,,linux: _Z12VoiceSE_Termv
-hw,01E0E6F7,255,?VoiceSE_Idle@@YAXM@Z,VoiceSE_Idle,ENGINE,engine/voice_sound_engine_interface.cpp,,,TODO,0.00,hw_manual.csv,
-hw,01E0E7F6,140,?VoiceSE_StartChannel@@YAXH@Z,VoiceSE_StartChannel,ENGINE,engine/voice_sound_engine_interface.cpp,,,TODO,0.00,hw_manual.csv,
-hw,01E0E882,27,?VoiceSE_EndChannel@@YAXH@Z,VoiceSE_EndChannel,ENGINE,engine/voice_sound_engine_interface.cpp,,,TODO,0.00,,
-hw,01E0E89D,69,_VoiceSE_GetSFXCache,,ENGINE,engine/voice_sound_engine_interface.cpp,,,TODO,0.00,,
-hw,01E0E8E2,12,?VoiceSE_StartOverdrive@@YAXXZ,VoiceSE_StartOverdrive,ENGINE,engine/voice_sound_engine_interface.cpp,,,TODO,0.00,,
-hw,01E0E8EE,12,?VoiceSE_EndOverdrive@@YAXXZ,VoiceSE_EndOverdrive,ENGINE,engine/voice_sound_engine_interface.cpp,,,TODO,0.00,,
-hw,01E0E8FA,17,?VoiceSE_InitMouth@@YAXH@Z,VoiceSE_InitMouth,ENGINE,engine/voice_sound_engine_interface.cpp,,,TODO,0.00,,
-hw,01E0E90B,17,?VoiceSE_CloseMouth@@YAXH@Z,VoiceSE_CloseMouth,ENGINE,engine/voice_sound_engine_interface.cpp,,,TODO,0.00,,
-hw,01E0E91C,25,?VoiceSE_MoveMouth@@YAXHPAFH@Z,VoiceSE_MoveMouth,ENGINE,engine/voice_sound_engine_interface.cpp,,,TODO,0.00,,
-hw,01E0E935,20,_VoiceSE_NotifyFreeChannel,,ENGINE,engine/voice_sound_engine_interface.cpp,,,TODO,0.00,,
+hw,01E0E530,293,_VoiceSE_GetSoundDataCallback,VoiceSE_GetSoundDataCallback,ENGINE,engine/voice_sound_engine_interface.cpp,,,MATCHED,100,linux_symbols:caller:0.685,
+hw,01E0E655,31,?VoiceSE_RegisterCvars@@YAXXZ,VoiceSE_RegisterCvars,ENGINE,engine/voice_sound_engine_interface.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E0E674,126,?VoiceSE_Init@@YA_NXZ,VoiceSE_Init,UNKNOWN,engine/voice_sound_engine_interface.cpp,,,MATCHED,100,,linux: _Z12VoiceSE_Initv
+hw,01E0E6F2,5,?VoiceSE_Term@@YAXXZ,VoiceSE_Term,UNKNOWN,engine/voice_sound_engine_interface.cpp,,,MATCHED,100,,linux: _Z12VoiceSE_Termv
+hw,01E0E6F7,255,?VoiceSE_Idle@@YAXM@Z,VoiceSE_Idle,ENGINE,engine/voice_sound_engine_interface.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E0E7F6,140,?VoiceSE_StartChannel@@YAXH@Z,VoiceSE_StartChannel,ENGINE,engine/voice_sound_engine_interface.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E0E882,27,?VoiceSE_EndChannel@@YAXH@Z,VoiceSE_EndChannel,ENGINE,engine/voice_sound_engine_interface.cpp,,,MATCHED,100,,
+hw,01E0E89D,69,_VoiceSE_GetSFXCache,,ENGINE,engine/voice_sound_engine_interface.cpp,,,MATCHED,100,,
+hw,01E0E8E2,12,?VoiceSE_StartOverdrive@@YAXXZ,VoiceSE_StartOverdrive,ENGINE,engine/voice_sound_engine_interface.cpp,,,MATCHED,100,,
+hw,01E0E8EE,12,?VoiceSE_EndOverdrive@@YAXXZ,VoiceSE_EndOverdrive,ENGINE,engine/voice_sound_engine_interface.cpp,,,MATCHED,100,,
+hw,01E0E8FA,17,?VoiceSE_InitMouth@@YAXH@Z,VoiceSE_InitMouth,ENGINE,engine/voice_sound_engine_interface.cpp,,,MATCHED,100,,
+hw,01E0E90B,17,?VoiceSE_CloseMouth@@YAXH@Z,VoiceSE_CloseMouth,ENGINE,engine/voice_sound_engine_interface.cpp,,,MATCHED,100,,
+hw,01E0E91C,25,?VoiceSE_MoveMouth@@YAXHPAFH@Z,VoiceSE_MoveMouth,ENGINE,engine/voice_sound_engine_interface.cpp,,,MATCHED,100,,
+hw,01E0E935,20,_VoiceSE_NotifyFreeChannel,,ENGINE,engine/voice_sound_engine_interface.cpp,,,MATCHED,100,,
 hw,01E0E950,270,?ReadWaveFile@@YA_NPBDAAPADAAH222@Z,ReadWaveFile,ENGINE,engine/voice_wavefile.cpp,,,TODO,,,linux: _Z12ReadWaveFilePKcRPcRiS3_S3_S3_
 hw,01E0EA5E,31,,,ENGINE,engine/voice_wavefile.cpp,,,TODO,,,
 hw,01E0EA7D,32,,,ENGINE,engine/voice_wavefile.cpp,,,TODO,,,
