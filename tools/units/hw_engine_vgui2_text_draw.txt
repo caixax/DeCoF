@@ -1,4 +1,6 @@
 _VGUI2_Draw_Init
+_$E5
+_$E4
 _VGUI2_ResetCurrentTexture
 _VGUI2_GetConsoleFont
 _VGUI2_GetCreditsFont
@@ -15,3 +17,5 @@ _VGUI2_GetFontTall
 _VGUI2_GetFontWide
 _VGUI2_Find_String
 _VGUI2_MessageFontInfo
+?ResetCurrentTexture@BaseUISurface@@QAEXXZ
+?ResetViewPort@BaseUISurface@@QAEXXZ

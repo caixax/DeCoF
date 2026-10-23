@@ -2905,7 +2905,12 @@
         {
           "name": "engine/vgui2/text_draw",
           "source": "src/engine_hw/vgui2/text_draw.cpp",
-          "functions_file": "tools/units/hw_engine_vgui2_text_draw.txt"
+          "functions_file": "tools/units/hw_engine_vgui2_text_draw.txt",
+          "includes": [
+            "src/engine_hw",
+            "src/public",
+            "src/common"
+          ]
         },
         {
           "name": "engine/vgui_intwrap2",

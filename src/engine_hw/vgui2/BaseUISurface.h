@@ -166,6 +166,8 @@ public:
 
 	virtual void SetAllowHTMLJavaScript( bool state ) { m_bAllowJavaScript = state; }
 
+	void ResetCurrentTexture() { m_iCurrentTexture = 0; }
+	void ResetViewPort();	// inline, defined where IEngineSurface is complete (text_draw.cpp)
 	void DrawSetTextureRGBAWithAlphaChannel( int id, const unsigned char *rgba, int wide, int tall, int hardwareFilter, bool forceReload );
 
 	virtual void SetLanguage( const char *pchLang )

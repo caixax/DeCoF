@@ -5271,3 +5271,7 @@ va,name,kind,evidence
 01E0E510,??0?$CSizedCircularBuffer@$0PAA@@@QAE@XZ,func,"engine/voice_record_wavein.cpp: RTTI class VoiceRecord_WaveIn; Init and RecordAddBuffer from its strings, Release, RecordStart, RecordStop, Idle, GetRecordedData and the constructor and destructor after the Linux hw.so DWARF VoiceRecord_OpenAL (same IVoiceRecord interface); the other helpers are guesses; offsets and sizes in our compiled object equal the retail ones"
 01E8EA38,??_7VoiceRecord_WaveIn@@6B@,data,"engine/voice_record_wavein.cpp: vtable of VoiceRecord_WaveIn (RTTI), stored by the constructor"
 01E8B4B4,__imp__waveInAddBuffer@12,data,winmm.dll import waveInAddBuffer (IAT slot called by VoiceRecord_WaveIn::RecordAddBuffer)
+01D0ED70,_$E5,func,engine/vgui2/text_draw.cpp: dynamic initializer of the static Color _col (Linux hw.so DWARF line 41); spelling from the compiled object
+01D0ED7A,_$E4,func,"engine/vgui2/text_draw.cpp: constructs _col = Color( 255, 255, 255, 255 ); spelling from the compiled object"
+01D0F510,?ResetCurrentTexture@BaseUISurface@@QAEXXZ,func,"engine/vgui2/text_draw.cpp: BaseUISurface::ResetCurrentTexture (Linux hw.so DWARF member of BaseUISurface) clears m_iCurrentTexture (+0x20), called by VGUI2_ResetCurrentTexture; inline COMDAT after the object"
+01D0F530,?ResetViewPort@BaseUISurface@@QAEXXZ,func,engine/vgui2/text_draw.cpp: BaseUISurface::ResetViewPort (Linux hw.so DWARF member of BaseUISurface) calls IEngineSurface::resetViewPort (slot 23) on _engineSurface (+0xc); inline COMDAT after the object

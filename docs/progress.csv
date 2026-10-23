@@ -23946,27 +23946,27 @@ hw,01D0ECD0,46,,,UNKNOWN,engine/vgui2/MemoryBitmap.cpp,,,TODO,,,inline or templa
 hw,01D0ED00,23,,,UNKNOWN,engine/vgui2/MemoryBitmap.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
 hw,01D0ED20,46,,,UNKNOWN,engine/vgui2/MemoryBitmap.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
 hw,01D0ED50,20,,,UNKNOWN,engine/vgui2/MemoryBitmap.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
-hw,01D0ED70,10,,,UNKNOWN,engine/vgui2/text_draw.cpp,,,TODO,,,"VC6 dynamic initializer ($E) of a global Color (Color::Color(int,int,int,int))"
-hw,01D0ED7A,43,,,UNKNOWN,engine/vgui2/text_draw.cpp,,,TODO,,,"VC6 dynamic initializer ($E) of a global Color (Color::Color(int,int,int,int))"
-hw,01D0EDA5,116,_VGUI2_Draw_Init,VGUI2_Draw_Init,ENGINE,engine/vgui2/text_draw.cpp,,,TODO,,linux_symbols:string:0.75,
-hw,01D0EE19,15,_VGUI2_ResetCurrentTexture,,UNKNOWN,engine/vgui2/text_draw.cpp,,,TODO,,,
-hw,01D0EE28,10,_VGUI2_GetConsoleFont,,UNKNOWN,engine/vgui2/text_draw.cpp,,,TODO,,,
-hw,01D0EE32,10,_VGUI2_GetCreditsFont,VGUI2_GetCreditsFont,UNKNOWN,engine/vgui2/text_draw.cpp,,,TODO,,,
-hw,01D0EE3C,207,_VGUI2_Draw_Character,,UNKNOWN,engine/vgui2/text_draw.cpp,,,TODO,,,
-hw,01D0EF0B,237,_VGUI2_Draw_CharacterAdd,,UNKNOWN,engine/vgui2/text_draw.cpp,,,TODO,,,
-hw,01D0EFF8,260,_VGUI2_DrawString,,UNKNOWN,engine/vgui2/text_draw.cpp,,,TODO,,,
-hw,01D0F0FC,143,_VGUI2_DrawStringClient,VGUI2_DrawStringClient,ENGINE,engine/vgui2/text_draw.cpp,,,TODO,,hw_position.csv,
-hw,01D0F18B,228,_VGUI2_DrawStringReverseClient,VGUI2_DrawStringReverseClient,ENGINE,engine/vgui2/text_draw.cpp,,,TODO,,hw_position.csv,
-hw,01D0F26F,40,_VGUI2_Draw_SetTextColor,,UNKNOWN,engine/vgui2/text_draw.cpp,,,TODO,,,
-hw,01D0F297,40,_VGUI2_Draw_SetTextColorAlpha,VGUI2_Draw_SetTextColorAlpha,ENGINE,engine/vgui2/text_draw.cpp,,,TODO,,hw_position.csv,
-hw,01D0F2BF,140,_VGUI2_Draw_StringLen,,UNKNOWN,engine/vgui2/text_draw.cpp,,,TODO,,,
-hw,01D0F34B,125,_VGUI2_Draw_StringLenW,VGUI2_Draw_StringLenW,ENGINE,engine/vgui2/text_draw.cpp,,,TODO,,hw_position.csv,
-hw,01D0F3C8,42,_VGUI2_GetFontTall,,UNKNOWN,engine/vgui2/text_draw.cpp,,,TODO,,,
-hw,01D0F3F2,66,_VGUI2_GetFontWide,VGUI2_GetFontWide,ENGINE,engine/vgui2/text_draw.cpp,,,TODO,,hw_position.csv,
-hw,01D0F434,109,_VGUI2_Find_String,VGUI2_Find_String,ENGINE,engine/vgui2/text_draw.cpp,,,TODO,,hw_position.csv,
-hw,01D0F4A1,107,_VGUI2_MessageFontInfo,VGUI2_MessageFontInfo,ENGINE,engine/vgui2/text_draw.cpp,,,TODO,,hw_position.csv,
-hw,01D0F510,21,,,UNKNOWN,engine/vgui2/text_draw.cpp,,,TODO,,,inline function (COMDAT) emitted after the object
-hw,01D0F530,28,,,UNKNOWN,engine/vgui2/text_draw.cpp,,,TODO,,,inline function (COMDAT) emitted after the object
+hw,01D0ED70,10,_$E5,,UNKNOWN,engine/vgui2/text_draw.cpp,,,MATCHED,100,hw_manual.csv,"VC6 dynamic initializer ($E) of a global Color (Color::Color(int,int,int,int))"
+hw,01D0ED7A,43,_$E4,,UNKNOWN,engine/vgui2/text_draw.cpp,,,MATCHED,100,hw_manual.csv,"VC6 dynamic initializer ($E) of a global Color (Color::Color(int,int,int,int))"
+hw,01D0EDA5,116,_VGUI2_Draw_Init,VGUI2_Draw_Init,ENGINE,engine/vgui2/text_draw.cpp,,,MATCHED,100,linux_symbols:string:0.75,
+hw,01D0EE19,15,_VGUI2_ResetCurrentTexture,,UNKNOWN,engine/vgui2/text_draw.cpp,,,MATCHED,100,,
+hw,01D0EE28,10,_VGUI2_GetConsoleFont,,UNKNOWN,engine/vgui2/text_draw.cpp,,,MATCHED,100,,
+hw,01D0EE32,10,_VGUI2_GetCreditsFont,VGUI2_GetCreditsFont,UNKNOWN,engine/vgui2/text_draw.cpp,,,MATCHED,100,,
+hw,01D0EE3C,207,_VGUI2_Draw_Character,,UNKNOWN,engine/vgui2/text_draw.cpp,,,MATCHED,100,,
+hw,01D0EF0B,237,_VGUI2_Draw_CharacterAdd,,UNKNOWN,engine/vgui2/text_draw.cpp,,,MATCHED,100,,
+hw,01D0EFF8,260,_VGUI2_DrawString,,UNKNOWN,engine/vgui2/text_draw.cpp,,,MATCHED,100,,
+hw,01D0F0FC,143,_VGUI2_DrawStringClient,VGUI2_DrawStringClient,ENGINE,engine/vgui2/text_draw.cpp,,,MATCHED,100,hw_position.csv,
+hw,01D0F18B,228,_VGUI2_DrawStringReverseClient,VGUI2_DrawStringReverseClient,ENGINE,engine/vgui2/text_draw.cpp,,,MATCHED,100,hw_position.csv,
+hw,01D0F26F,40,_VGUI2_Draw_SetTextColor,,UNKNOWN,engine/vgui2/text_draw.cpp,,,MATCHED,100,,
+hw,01D0F297,40,_VGUI2_Draw_SetTextColorAlpha,VGUI2_Draw_SetTextColorAlpha,ENGINE,engine/vgui2/text_draw.cpp,,,MATCHED,100,hw_position.csv,
+hw,01D0F2BF,140,_VGUI2_Draw_StringLen,,UNKNOWN,engine/vgui2/text_draw.cpp,,,MATCHED,100,,
+hw,01D0F34B,125,_VGUI2_Draw_StringLenW,VGUI2_Draw_StringLenW,ENGINE,engine/vgui2/text_draw.cpp,,,MATCHED,100,hw_position.csv,
+hw,01D0F3C8,42,_VGUI2_GetFontTall,,UNKNOWN,engine/vgui2/text_draw.cpp,,,MATCHED,100,,
+hw,01D0F3F2,66,_VGUI2_GetFontWide,VGUI2_GetFontWide,ENGINE,engine/vgui2/text_draw.cpp,,,MATCHED,100,hw_position.csv,
+hw,01D0F434,109,_VGUI2_Find_String,VGUI2_Find_String,ENGINE,engine/vgui2/text_draw.cpp,,,MATCHED,100,hw_position.csv,
+hw,01D0F4A1,107,_VGUI2_MessageFontInfo,VGUI2_MessageFontInfo,ENGINE,engine/vgui2/text_draw.cpp,,,MATCHED,100,hw_position.csv,
+hw,01D0F510,21,?ResetCurrentTexture@BaseUISurface@@QAEXXZ,BaseUISurface::ResetCurrentTexture,UNKNOWN,engine/vgui2/text_draw.cpp,,,MATCHED,100,hw_manual.csv,inline function (COMDAT) emitted after the object
+hw,01D0F530,28,?ResetViewPort@BaseUISurface@@QAEXXZ,BaseUISurface::ResetViewPort,UNKNOWN,engine/vgui2/text_draw.cpp,,,MATCHED,100,hw_manual.csv,inline function (COMDAT) emitted after the object
 hw,01D0F550,15,_$E8,,UNKNOWN,engine/vgui_intwrap2.cpp,,,MATCHED,100,hw_manual.csv,"VC6 dynamic initializer ($E) of g_TempConsoleBuffer (CUtlVector<char> constructor 01D0FF00, atexit destructor 01D0FF40)"
 hw,01D0F55F,22,_$E5,,UNKNOWN,engine/vgui_intwrap2.cpp,,,MATCHED,100,hw_manual.csv,"VC6 dynamic initializer ($E) of g_TempConsoleBuffer (CUtlVector<char> constructor 01D0FF00, atexit destructor 01D0FF40)"
 hw,01D0F575,18,_$E7,,UNKNOWN,engine/vgui_intwrap2.cpp,,,MATCHED,100,hw_manual.csv,"VC6 dynamic initializer ($E) of g_TempConsoleBuffer (CUtlVector<char> constructor 01D0FF00, atexit destructor 01D0FF40)"
