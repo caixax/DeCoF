@@ -174,6 +174,7 @@ _$E19
 ?ShiftElementsRight@?$CUtlVector@VCUtlSymbol@@@@IAEXHH@Z
 ?Purge@?$CUtlMemory@VCUtlSymbol@@@@QAEXXZ
 ?CopyConstruct@@YAXPAVCUtlSymbol@@ABV1@@Z
+??2@YAPAXIPAX@Z
 ??0CUtlSymbol@@QAE@ABV0@@Z
 ?NumAllocated@?$CUtlMemory@VCUtlSymbol@@@@QBEHXZ
 ?Grow@?$CUtlMemory@VCUtlSymbol@@@@QAEXH@Z

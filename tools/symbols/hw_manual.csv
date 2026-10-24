@@ -5394,3 +5394,4 @@ va,name,kind,evidence
 01DFF183,_$E3,func,"engine/vgui_EngineSurfaceHW.cpp: VC6 dynamic initializer (calls ??0?$CUtlRBTree@VTexture@?%vgui_EngineSurfaceHW.cpp0@@H@@QAE@HHP6A_NABVTexture@?%vgui_EngineSurfaceHW.cpp0@@0@Z@Z on _g_VGuiSurfaceTextures); same offset and size in our compiled object; spelling from the compiled object"
 01DFF19E,_$E5,func,"engine/vgui_EngineSurfaceHW.cpp: VC6 dynamic initializer (atexit of 0x1dff1b0); same offset and size in our compiled object; spelling from the compiled object"
 01DFF1B0,_$E4,func,"engine/vgui_EngineSurfaceHW.cpp: VC6 dynamic initializer (calls ??1?$CUtlRBTree@VTexture@?%vgui_EngineSurfaceHW.cpp0@@H@@QAE@XZ on _g_VGuiSurfaceTextures); same offset and size in our compiled object; spelling from the compiled object"
+01E701EE,??2@YAPAXI@Z,func,"bytes identical to VC6 LIBCMT.LIB(new.obj) operator new (relocations masked); the file-local copy of BaseUISurface_Font.cpp is 01D06014 (hw_local.csv)"

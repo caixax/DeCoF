@@ -1,0 +1,4 @@
+va,name,unit,evidence
+01D05E29,??3@YAXPAX@Z,engine/vgui2/BaseUISurface_Font,"file-local operator delete (free) of BaseUISurface_Font.cpp, called by ~VFontData and the FontPlat scalar deleting destructors; the CRT copy is 01E6F9FC"
+01D06014,??2@YAPAXI@Z,engine/vgui2/BaseUISurface_Font,"file-local operator new (malloc) of BaseUISurface_Font.cpp, called by LoadVFontDataFrom32BitTGA; the CRT copy is 01E701EE"
+01E3DC9A,?CloneString@@YAPADPBD@Z,vgui2/controls/BitmapImagePanel,"static inline in BitmapImagePanel.cpp"

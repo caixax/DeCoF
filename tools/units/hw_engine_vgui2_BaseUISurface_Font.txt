@@ -7,7 +7,9 @@ _$E4
 _$E3
 ??0VFontData@@QAE@XZ
 ??1VFontData@@QAE@XZ
+??3@YAXPAX@Z
 ?LoadVFontDataFrom32BitTGA@@YA_NPAVFileImageStream@@PAVVFontData@@@Z
+??2@YAPAXI@Z
 ??0FileImageStream_Memory@@QAE@PAXH@Z
 ?Read@FileImageStream_Memory@@UAEXPAXH@Z
 ?ErrorStatus@FileImageStream_Memory@@UAE_NXZ

@@ -23514,7 +23514,7 @@ hw,01D059F0,87,?GrowVector@?$CUtlVector@VCUtlSymbol@@@@IAEXH@Z,CUtlSymbol>::Grow
 hw,01D05A50,85,?ShiftElementsRight@?$CUtlVector@VCUtlSymbol@@@@IAEXHH@Z,CUtlSymbol>::ShiftElementsRight,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01D05AB0,69,?Purge@?$CUtlMemory@VCUtlSymbol@@@@QAEXXZ,CUtlSymbol>::Purge,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01D05B00,57,?CopyConstruct@@YAXPAVCUtlSymbol@@ABV1@@Z,CopyConstruct,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,
-hw,01D05B40,8,??2@YAPAXIPAX@Z,new,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,inline or template function (COMDAT) emitted after the object
+hw,01D05B40,8,??2@YAPAXIPAX@Z,new,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,,inline or template function (COMDAT) emitted after the object
 hw,01D05B50,28,??0CUtlSymbol@@QAE@ABV0@@Z,CUtlSymbol::CUtlSymbol,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01D05B70,17,?NumAllocated@?$CUtlMemory@VCUtlSymbol@@@@QBEHXZ,CUtlSymbol>::NumAllocated,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01D05B90,197,?Grow@?$CUtlMemory@VCUtlSymbol@@@@QAEXH@Z,CUtlSymbol>::Grow,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,
@@ -23528,9 +23528,9 @@ hw,01D05DA2,18,_$E4,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,MATCHED,100,h
 hw,01D05DB4,15,_$E3,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01D05DC3,53,??0VFontData@@QAE@XZ,VFontData::VFontData,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01D05DF8,49,??1VFontData@@QAE@XZ,VFontData::~VFontData,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,MATCHED,100,hw_manual.csv,
-hw,01D05E29,17,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,
+hw,01D05E29,17,??3@YAXPAX@Z,delete,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,MATCHED,100,hw_local.csv,file-local operator delete of BaseUISurface_Font.cpp (the CRT copy is 01E6F9FC)
 hw,01D05E3A,474,?LoadVFontDataFrom32BitTGA@@YA_NPAVFileImageStream@@PAVVFontData@@@Z,LoadVFontDataFrom32BitTGA,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,MATCHED,100,hw_manual.csv,
-hw,01D06014,17,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,
+hw,01D06014,17,??2@YAPAXI@Z,new,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,MATCHED,100,hw_local.csv,file-local operator new of BaseUISurface_Font.cpp (the CRT copy is 01E701EE)
 hw,01D06025,68,??0FileImageStream_Memory@@QAE@PAXH@Z,FileImageStream_Memory::FileImageStream_Memory,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01D06069,119,?Read@FileImageStream_Memory@@UAEXPAXH@Z,FileImageStream_Memory::Read,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN22FileImageStream_Memory4ReadEPvi
 hw,01D060E0,32,?ErrorStatus@FileImageStream_Memory@@UAE_NXZ,FileImageStream_Memory::ErrorStatus,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN22FileImageStream_Memory11ErrorStatusEv
@@ -32101,7 +32101,7 @@ hw,01E6F4B0,36,_mmed3,,UNKNOWN,bzip2/blocksort.c,,,MATCHED,100,hw_manual.csv,
 hw,01E6F4E0,731,_BZ2_hbMakeCodeLengths,,UNKNOWN,bzip2/huffman.c,,,EQUIVALENT,71.35,hw_manual.csv,"EQUIVALENT: the unmodified official bzip2 1.0.2 source; retail was compiled with VC6 and the Processor Pack (cl 12.00.9044, Utc12_2_C), ours with VC6 RTM (12.00.8168), which allocates registers and reduces loops differently"
 hw,01E6F7C0,70,_BZ2_hbAssignCodes,,UNKNOWN,bzip2/huffman.c,,,EQUIVALENT,80.20,hw_manual.csv,"EQUIVALENT: the unmodified official bzip2 1.0.2 source; retail was compiled with VC6 and the Processor Pack (cl 12.00.9044, Utc12_2_C), ours with VC6 RTM (12.00.8168), which allocates registers and reduces loops differently"
 hw,01E6F810,236,_BZ2_hbCreateDecodeTables,,UNKNOWN,bzip2/huffman.c,,,EQUIVALENT,67.50,hw_manual.csv,"EQUIVALENT: the unmodified official bzip2 1.0.2 source; retail was compiled with VC6 and the Processor Pack (cl 12.00.9044, Utc12_2_C), ours with VC6 RTM (12.00.8168), which allocates registers and reduces loops differently"
-hw,01E6F9FC,11,,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(atox.obj)"
+hw,01E6F9FC,11,??3@YAXPAX@Z,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(delete.obj)"
 hw,01E6FA07,126,,,LIB,,,,,,,"VC6 C++ library (std::_Lockit, _Xlen/_Xran, logic_error/length_error/out_of_range)"
 hw,01E6FAA3,21,,,LIB,,,,,,,"VC6 C++ library (std::_Lockit, _Xlen/_Xran, logic_error/length_error/out_of_range)"
 hw,01E6FAB8,89,,,LIB,,,,,,,"VC6 C++ library (std::_Lockit, _Xlen/_Xran, logic_error/length_error/out_of_range)"
@@ -32127,7 +32127,7 @@ hw,01E6FF86,81,__snprintf,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.
 hw,01E6FFE0,133,_strstr,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(strstr.obj)"
 hw,01E70060,129,,_strcmp,LIB,,,,,,ghidra,
 hw,01E700F0,254,_strncpy,_strncpy,LIB,,,,,,ghidra,
-hw,01E701EE,14,,operator_new,LIB,,,,,,ghidra,
+hw,01E701EE,14,??2@YAPAXI@Z,operator_new,LIB,,,,,,hw_manual.csv,"VC6 static CRT, bytes identical to LIBCMT.LIB(new.obj)"
 hw,01E70200,664,_memcpy,,LIB,,,,,,,VC6 static CRT function (not identified byte for byte by the CRT scan)
 hw,01E70540,208,__stricmp,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(stricmp.obj)"
 hw,01E70610,308,__strupr,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(strupr.obj)"
