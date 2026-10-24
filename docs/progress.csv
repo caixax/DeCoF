@@ -9486,23 +9486,23 @@ gameui,10044833,174,?SetSelected@CCommandCheckButton@@UAEX_N@Z,public: virtual v
 gameui,100448F0,46,??_GCCommandCheckButton@@UAEPAXI@Z,public: virtual void * __thiscall CCommandCheckButton::`scalar deleting destructor'(unsigned int),UNKNOWN,GameUI/CommandCheckButton.cpp,,,MATCHED,100,,
 gameui,10044920,64,?GetMessageMap@CheckButton@vgui2@@UAEPAUPanelMessageMap@2@XZ,public: virtual struct vgui2::PanelMessageMap * __thiscall vgui2::CheckButton::GetMessageMap(void),UNKNOWN,GameUI/CommandCheckButton.cpp,,,MATCHED,100,,
 gameui,10044960,10,?GetPanelClassName@CheckButton@vgui2@@SAPBDXZ,public: static char const * __cdecl vgui2::CheckButton::GetPanelClassName(void),UNKNOWN,GameUI/CommandCheckButton.cpp,,,MATCHED,100,,
-gameui,10044970,137,,,UNKNOWN,GameUI/CvarNegateCheckButton.cpp,,,TODO,,,linux: _ZN22CCvarNegateCheckButtonC1EPN5vgui25PanelEPKcS4_S4_
-gameui,100449F9,46,,,UNKNOWN,GameUI/CvarNegateCheckButton.cpp,,,TODO,,,linux: _ZN22CCvarNegateCheckButtonD2Ev
-gameui,10044A27,170,,,UNKNOWN,GameUI/CvarNegateCheckButton.cpp,,,TODO,,,linux: _ZN22CCvarNegateCheckButton5PaintEv
-gameui,10044AD1,100,,,UNKNOWN,GameUI/CvarNegateCheckButton.cpp,,,TODO,,,linux: _ZN22CCvarNegateCheckButton5ResetEv
-gameui,10044B35,50,,,UNKNOWN,GameUI/CvarNegateCheckButton.cpp,,,TODO,,,linux: _ZN22CCvarNegateCheckButton15HasBeenModifiedEv
-gameui,10044B67,25,,,UNKNOWN,GameUI/CvarNegateCheckButton.cpp,,,TODO,,,linux: _ZN22CCvarNegateCheckButton11SetSelectedEb
-gameui,10044B80,201,,CCvarNegateCheckButton::ApplyChanges,ENGINE,GameUI/CvarNegateCheckButton.cpp,,,TODO,,linux_symbols:callseq:0.708,linux: _ZN22CCvarNegateCheckButton12ApplyChangesEv
-gameui,10044C49,92,,,UNKNOWN,GameUI/CvarNegateCheckButton.cpp,,,TODO,,,linux: _ZN22CCvarNegateCheckButton15OnButtonCheckedEv
-gameui,10044CB0,46,,,UNKNOWN,GameUI/CvarNegateCheckButton.cpp,,,TODO,,,
-gameui,10044CE0,19,,,UNKNOWN,GameUI/CvarNegateCheckButton.cpp,,,TODO,,,
-gameui,10044D00,102,,,UNKNOWN,GameUI/CvarNegateCheckButton.cpp,,,TODO,,,
-gameui,10044D70,64,,,UNKNOWN,GameUI/CvarNegateCheckButton.cpp,,,TODO,,,
-gameui,10044DB0,10,,,UNKNOWN,GameUI/CvarNegateCheckButton.cpp,,,TODO,,,
-gameui,10044DC0,10,,,UNKNOWN,GameUI/CvarNegateCheckButton.cpp,,,TODO,,,
-gameui,10044DD0,19,,,UNKNOWN,GameUI/CvarNegateCheckButton.cpp,,,TODO,,,
-gameui,10044DF0,107,,,UNKNOWN,GameUI/CvarNegateCheckButton.cpp,,,TODO,,,
-gameui,10044E60,120,,,UNKNOWN,GameUI/CvarNegateCheckButton.cpp,,,TODO,,,
+gameui,10044970,137,??0CCvarNegateCheckButton@@QAE@PAVPanel@vgui2@@PBD11@Z,"public: __thiscall CCvarNegateCheckButton::CCvarNegateCheckButton(class vgui2::Panel *,char const *,char const *,char const *)",UNKNOWN,GameUI/CvarNegateCheckButton.cpp,,,MATCHED,100,,linux: _ZN22CCvarNegateCheckButtonC1EPN5vgui25PanelEPKcS4_S4_
+gameui,100449F9,46,??1CCvarNegateCheckButton@@UAE@XZ,public: virtual __thiscall CCvarNegateCheckButton::~CCvarNegateCheckButton(void),UNKNOWN,GameUI/CvarNegateCheckButton.cpp,,,MATCHED,100,,linux: _ZN22CCvarNegateCheckButtonD2Ev
+gameui,10044A27,170,?Paint@CCvarNegateCheckButton@@UAEXXZ,public: virtual void __thiscall CCvarNegateCheckButton::Paint(void),UNKNOWN,GameUI/CvarNegateCheckButton.cpp,,,MATCHED,100,,linux: _ZN22CCvarNegateCheckButton5PaintEv
+gameui,10044AD1,100,?Reset@CCvarNegateCheckButton@@QAEXXZ,public: void __thiscall CCvarNegateCheckButton::Reset(void),UNKNOWN,GameUI/CvarNegateCheckButton.cpp,,,MATCHED,100,,linux: _ZN22CCvarNegateCheckButton5ResetEv
+gameui,10044B35,50,?HasBeenModified@CCvarNegateCheckButton@@QAE_NXZ,public: bool __thiscall CCvarNegateCheckButton::HasBeenModified(void),UNKNOWN,GameUI/CvarNegateCheckButton.cpp,,,MATCHED,100,,linux: _ZN22CCvarNegateCheckButton15HasBeenModifiedEv
+gameui,10044B67,25,?SetSelected@CCvarNegateCheckButton@@UAEX_N@Z,public: virtual void __thiscall CCvarNegateCheckButton::SetSelected(bool),UNKNOWN,GameUI/CvarNegateCheckButton.cpp,,,MATCHED,100,,linux: _ZN22CCvarNegateCheckButton11SetSelectedEb
+gameui,10044B80,201,?ApplyChanges@CCvarNegateCheckButton@@QAEXXZ,public: void __thiscall CCvarNegateCheckButton::ApplyChanges(void),ENGINE,GameUI/CvarNegateCheckButton.cpp,,,MATCHED,100,linux_symbols:callseq:0.708,linux: _ZN22CCvarNegateCheckButton12ApplyChangesEv
+gameui,10044C49,92,?OnButtonChecked@CCvarNegateCheckButton@@EAEXXZ,private: virtual void __thiscall CCvarNegateCheckButton::OnButtonChecked(void),UNKNOWN,GameUI/CvarNegateCheckButton.cpp,,,MATCHED,100,,linux: _ZN22CCvarNegateCheckButton15OnButtonCheckedEv
+gameui,10044CB0,46,??_GCCvarNegateCheckButton@@UAEPAXI@Z,public: virtual void * __thiscall CCvarNegateCheckButton::`scalar deleting destructor'(unsigned int),UNKNOWN,GameUI/CvarNegateCheckButton.cpp,,,MATCHED,100,,
+gameui,10044CE0,19,??0CCvarNegateCheckButton_RegisterMap@CCvarNegateCheckButton@@QAE@XZ,public: __thiscall CCvarNegateCheckButton::CCvarNegateCheckButton_RegisterMap::CCvarNegateCheckButton_RegisterMap(void),UNKNOWN,GameUI/CvarNegateCheckButton.cpp,,,MATCHED,100,,
+gameui,10044D00,102,?ChainToMap@CCvarNegateCheckButton@@SAXXZ,public: static void __cdecl CCvarNegateCheckButton::ChainToMap(void),UNKNOWN,GameUI/CvarNegateCheckButton.cpp,,,MATCHED,100,,
+gameui,10044D70,64,?GetMessageMap@CCvarNegateCheckButton@@UAEPAUPanelMessageMap@vgui2@@XZ,public: virtual struct vgui2::PanelMessageMap * __thiscall CCvarNegateCheckButton::GetMessageMap(void),UNKNOWN,GameUI/CvarNegateCheckButton.cpp,,,MATCHED,100,,
+gameui,10044DB0,10,?GetPanelClassName@CCvarNegateCheckButton@@SAPBDXZ,public: static char const * __cdecl CCvarNegateCheckButton::GetPanelClassName(void),UNKNOWN,GameUI/CvarNegateCheckButton.cpp,,,MATCHED,100,,
+gameui,10044DC0,10,?GetPanelBaseClassName@CCvarNegateCheckButton@@SAPBDXZ,public: static char const * __cdecl CCvarNegateCheckButton::GetPanelBaseClassName(void),UNKNOWN,GameUI/CvarNegateCheckButton.cpp,,,MATCHED,100,,
+gameui,10044DD0,19,??0PanelMessageFunc_OnButtonChecked@CCvarNegateCheckButton@@QAE@XZ,public: __thiscall CCvarNegateCheckButton::PanelMessageFunc_OnButtonChecked::PanelMessageFunc_OnButtonChecked(void),UNKNOWN,GameUI/CvarNegateCheckButton.cpp,,,MATCHED,100,,
+gameui,10044DF0,107,?InitVar@PanelMessageFunc_OnButtonChecked@CCvarNegateCheckButton@@SAXXZ,public: static void __cdecl CCvarNegateCheckButton::PanelMessageFunc_OnButtonChecked::InitVar(void),UNKNOWN,GameUI/CvarNegateCheckButton.cpp,,,MATCHED,100,,
+gameui,10044E60,120,?AddToMap@CCvarNegateCheckButton@@SAXPBDP8Panel@vgui2@@AEXXZHH0H0@Z,"public: static void __cdecl CCvarNegateCheckButton::AddToMap(char const *,void (__thiscall vgui2::Panel::*)(void),int,int,char const *,int,char const *)",UNKNOWN,GameUI/CvarNegateCheckButton.cpp,,,MATCHED,100,,
 gameui,10044EF0,240,??0CCvarSlider@@QAE@PAVPanel@vgui2@@PBD1MM1_N@Z,"public: __thiscall CCvarSlider::CCvarSlider(class vgui2::Panel *,char const *,char const *,float,float,char const *,bool)",UNKNOWN,GameUI/CvarSlider.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN11CCvarSliderC1EPN5vgui25PanelEPKcS4_ffS4_b
 gameui,10044FE0,28,??1CCvarSlider@@UAE@XZ,public: virtual __thiscall CCvarSlider::~CCvarSlider(void),UNKNOWN,GameUI/CvarSlider.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN11CCvarSliderD1Ev
 gameui,10044FFC,148,?Paint@CCvarSlider@@UAEXXZ,public: virtual void __thiscall CCvarSlider::Paint(void),UNKNOWN,GameUI/CvarSlider.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN11CCvarSlider5PaintEv

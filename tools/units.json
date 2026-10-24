@@ -4013,6 +4013,11 @@
           "name": "GameUI/DemoPlayerFileDialog",
           "source": "src/gameui/DemoPlayerFileDialog.cpp",
           "functions_file": "tools/units/gameui_GameUI_DemoPlayerFileDialog.txt"
+        },
+        {
+          "name": "GameUI/CvarNegateCheckButton",
+          "source": "src/gameui/CvarNegateCheckButton.cpp",
+          "functions_file": "tools/units/gameui_GameUI_CvarNegateCheckButton.txt"
         }
       ]
     }

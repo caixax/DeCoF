@@ -4776,3 +4776,20 @@ va,name,kind,evidence
 1002EBE6,?OnCommand@CDemoPlayerFileDialog@@UAEXPBD@Z,func,GameUI/DemoPlayerFileDialog.cpp: same position and size as in our compiled object; linux: _ZN21CDemoPlayerFileDialog9OnCommandEPKc
 1002ECE8,?OnClose@CDemoPlayerFileDialog@@UAEXXZ,func,GameUI/DemoPlayerFileDialog.cpp: same position and size as in our compiled object; linux: _ZN21CDemoPlayerFileDialog7OnCloseEv
 1002ED10,??_GCDemoPlayerFileDialog@@UAEPAXI@Z,func,GameUI/DemoPlayerFileDialog.cpp: same position and size as in our compiled object
+10044970,??0CCvarNegateCheckButton@@QAE@PAVPanel@vgui2@@PBD11@Z,func,GameUI/CvarNegateCheckButton.cpp: same position and size as in our compiled object; linux: _ZN22CCvarNegateCheckButtonC1EPN5vgui25PanelEPKcS4_S4_
+100449F9,??1CCvarNegateCheckButton@@UAE@XZ,func,GameUI/CvarNegateCheckButton.cpp: same position and size as in our compiled object; linux: _ZN22CCvarNegateCheckButtonD2Ev
+10044A27,?Paint@CCvarNegateCheckButton@@UAEXXZ,func,GameUI/CvarNegateCheckButton.cpp: same position and size as in our compiled object; linux: _ZN22CCvarNegateCheckButton5PaintEv
+10044AD1,?Reset@CCvarNegateCheckButton@@QAEXXZ,func,GameUI/CvarNegateCheckButton.cpp: same position and size as in our compiled object; linux: _ZN22CCvarNegateCheckButton5ResetEv
+10044B35,?HasBeenModified@CCvarNegateCheckButton@@QAE_NXZ,func,GameUI/CvarNegateCheckButton.cpp: same position and size as in our compiled object; linux: _ZN22CCvarNegateCheckButton15HasBeenModifiedEv
+10044B67,?SetSelected@CCvarNegateCheckButton@@UAEX_N@Z,func,GameUI/CvarNegateCheckButton.cpp: same position and size as in our compiled object; linux: _ZN22CCvarNegateCheckButton11SetSelectedEb
+10044B80,?ApplyChanges@CCvarNegateCheckButton@@QAEXXZ,func,GameUI/CvarNegateCheckButton.cpp: same position and size as in our compiled object; linux: _ZN22CCvarNegateCheckButton12ApplyChangesEv
+10044C49,?OnButtonChecked@CCvarNegateCheckButton@@EAEXXZ,func,GameUI/CvarNegateCheckButton.cpp: same position and size as in our compiled object; linux: _ZN22CCvarNegateCheckButton15OnButtonCheckedEv
+10044CB0,??_GCCvarNegateCheckButton@@UAEPAXI@Z,func,GameUI/CvarNegateCheckButton.cpp: same position and size as in our compiled object
+10044CE0,??0CCvarNegateCheckButton_RegisterMap@CCvarNegateCheckButton@@QAE@XZ,func,GameUI/CvarNegateCheckButton.cpp: same position and size as in our compiled object
+10044D00,?ChainToMap@CCvarNegateCheckButton@@SAXXZ,func,GameUI/CvarNegateCheckButton.cpp: same position and size as in our compiled object
+10044D70,?GetMessageMap@CCvarNegateCheckButton@@UAEPAUPanelMessageMap@vgui2@@XZ,func,GameUI/CvarNegateCheckButton.cpp: same position and size as in our compiled object
+10044DB0,?GetPanelClassName@CCvarNegateCheckButton@@SAPBDXZ,func,GameUI/CvarNegateCheckButton.cpp: same position and size as in our compiled object
+10044DC0,?GetPanelBaseClassName@CCvarNegateCheckButton@@SAPBDXZ,func,GameUI/CvarNegateCheckButton.cpp: same position and size as in our compiled object
+10044DD0,??0PanelMessageFunc_OnButtonChecked@CCvarNegateCheckButton@@QAE@XZ,func,GameUI/CvarNegateCheckButton.cpp: same position and size as in our compiled object
+10044DF0,?InitVar@PanelMessageFunc_OnButtonChecked@CCvarNegateCheckButton@@SAXXZ,func,GameUI/CvarNegateCheckButton.cpp: same position and size as in our compiled object
+10044E60,?AddToMap@CCvarNegateCheckButton@@SAXPBDP8Panel@vgui2@@AEXXZHH0H0@Z,func,GameUI/CvarNegateCheckButton.cpp: same position and size as in our compiled object
