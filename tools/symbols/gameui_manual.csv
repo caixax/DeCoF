@@ -5318,3 +5318,7 @@ va,name,kind,evidence
 1005D660,?NumAllocated@?$CUtlMemory@UTImageInfo@Label@vgui2@@@@QBEHXZ,func,"vgui2/controls/Label.cpp: CUtlVector<Label::TImageInfo> template COMDAT, same position and size as in our compiled object (tail in the object's template order)"
 1005D680,?Grow@?$CUtlMemory@UTImageInfo@Label@vgui2@@@@QAEXH@Z,func,"vgui2/controls/Label.cpp: CUtlVector<Label::TImageInfo> template COMDAT, same position and size as in our compiled object (tail in the object's template order)"
 1005D750,?IsExternallyAllocated@?$CUtlMemory@UTImageInfo@Label@vgui2@@@@QBE_NXZ,func,"vgui2/controls/Label.cpp: CUtlVector<Label::TImageInfo> template COMDAT, same position and size as in our compiled object (tail in the object's template order)"
+10058F20,_$E8,func,"vgui2/controls/Button.cpp: first dynamic initializer at the head of the object (g_ButtonSoundNames), in the order of our object's .text (_E$8, _E$5, _E$7, _E$6), same size; as hw.dll 01E56730"
+10058F2F,_$E5,func,"vgui2/controls/Button.cpp: constructs g_ButtonSoundNames, same position and size as in our compiled object; as hw.dll 01E5673F"
+10058F44,_$E7,func,"vgui2/controls/Button.cpp: registers the g_ButtonSoundNames destructor with atexit, same position and size as in our compiled object; as hw.dll 01E56754"
+10058F56,_$E6,func,"vgui2/controls/Button.cpp: atexit destructor helper of g_ButtonSoundNames, same position and size as in our compiled object; as hw.dll 01E56766"
