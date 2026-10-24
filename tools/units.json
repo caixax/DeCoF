@@ -3948,6 +3948,11 @@
           "name": "GameUI/ChangeGameDialog",
           "source": "src/gameui/ChangeGameDialog.cpp",
           "functions_file": "tools/units/gameui_GameUI_ChangeGameDialog.txt"
+        },
+        {
+          "name": "GameUI/LoadGameDialog",
+          "source": "src/gameui/LoadGameDialog.cpp",
+          "functions_file": "tools/units/gameui_GameUI_LoadGameDialog.txt"
         }
       ]
     }

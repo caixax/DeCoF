@@ -9787,14 +9787,14 @@ gameui,1004BBD8,28,,,UNKNOWN,GameUI/HelpDialog.cpp,,,TODO,,,linux: _ZN11CHelpDia
 gameui,1004BBF4,96,,CHelpDialog::OnClose,ENGINE,GameUI/HelpDialog.cpp,,,TODO,,linux_symbols:string:0.781,linux: _ZN11CHelpDialog7OnCloseEv
 gameui,1004BC54,115,,,UNKNOWN,GameUI/HelpDialog.cpp,,,TODO,,,linux: _ZN11CHelpDialog9OnCommandEPKc
 gameui,1004BCD0,46,,,UNKNOWN,GameUI/HelpDialog.cpp,,,TODO,,,
-gameui,1004BD00,392,,CLoadGameDialog::CLoadGameDialog,ENGINE,GameUI/LoadGameDialog.cpp,,,TODO,,linux_symbols:string:0.391,linux: _ZN15CLoadGameDialogC1EPN5vgui25PanelE
-gameui,1004BE88,28,,,UNKNOWN,GameUI/LoadGameDialog.cpp,,,TODO,,,linux: _ZN15CLoadGameDialogD1Ev
-gameui,1004BEA4,242,,CLoadGameDialog::OnCommand,ENGINE,GameUI/LoadGameDialog.cpp,,,TODO,,linux_symbols:string:0.763,linux: _ZN15CLoadGameDialog9OnCommandEPKc
-gameui,1004BF96,33,,,UNKNOWN,GameUI/LoadGameDialog.cpp,,,TODO,,,linux: _ZN15CLoadGameDialog7OnCloseEv
-gameui,1004BFB7,311,,,UNKNOWN,GameUI/LoadGameDialog.cpp,,,TODO,,,linux: _ZN15CLoadGameDialog20CreateSavedGamesListEv
-gameui,1004C0EE,744,,CLoadGameDialog::ParseSaveData,ENGINE,GameUI/LoadGameDialog.cpp,,,TODO,,linux_symbols:caller:0.778,linux: _ZN15CLoadGameDialog13ParseSaveDataEPKcS1_P9KeyValues
-gameui,1004C3D6,564,,CLoadGameDialog::ScanSavedGames,ENGINE,GameUI/LoadGameDialog.cpp,,,TODO,,linux_symbols:caller:0.538,linux: _ZN15CLoadGameDialog14ScanSavedGamesEv
-gameui,1004C610,46,,,UNKNOWN,GameUI/LoadGameDialog.cpp,,,TODO,,,
+gameui,1004BD00,392,??0CLoadGameDialog@@QAE@PAVPanel@vgui2@@@Z,public: __thiscall CLoadGameDialog::CLoadGameDialog(class vgui2::Panel *),ENGINE,GameUI/LoadGameDialog.cpp,,,MATCHED,100,linux_symbols:string:0.391,linux: _ZN15CLoadGameDialogC1EPN5vgui25PanelE
+gameui,1004BE88,28,??1CLoadGameDialog@@UAE@XZ,public: virtual __thiscall CLoadGameDialog::~CLoadGameDialog(void),UNKNOWN,GameUI/LoadGameDialog.cpp,,,MATCHED,100,,linux: _ZN15CLoadGameDialogD1Ev
+gameui,1004BEA4,242,?OnCommand@CLoadGameDialog@@MAEXPBD@Z,protected: virtual void __thiscall CLoadGameDialog::OnCommand(char const *),ENGINE,GameUI/LoadGameDialog.cpp,,,MATCHED,100,linux_symbols:string:0.763,linux: _ZN15CLoadGameDialog9OnCommandEPKc
+gameui,1004BF96,33,?OnClose@CLoadGameDialog@@MAEXXZ,protected: virtual void __thiscall CLoadGameDialog::OnClose(void),UNKNOWN,GameUI/LoadGameDialog.cpp,,,MATCHED,100,,linux: _ZN15CLoadGameDialog7OnCloseEv
+gameui,1004BFB7,311,?CreateSavedGamesList@CLoadGameDialog@@IAEXXZ,protected: void __thiscall CLoadGameDialog::CreateSavedGamesList(void),UNKNOWN,GameUI/LoadGameDialog.cpp,,,MATCHED,100,,linux: _ZN15CLoadGameDialog20CreateSavedGamesListEv
+gameui,1004C0EE,744,?ParseSaveData@CLoadGameDialog@@IAE_NPBD0PAVKeyValues@@@Z,"protected: bool __thiscall CLoadGameDialog::ParseSaveData(char const *,char const *,class KeyValues *)",ENGINE,GameUI/LoadGameDialog.cpp,,,MATCHED,100,linux_symbols:caller:0.778,linux: _ZN15CLoadGameDialog13ParseSaveDataEPKcS1_P9KeyValues
+gameui,1004C3D6,564,?ScanSavedGames@CLoadGameDialog@@IAEXXZ,protected: void __thiscall CLoadGameDialog::ScanSavedGames(void),ENGINE,GameUI/LoadGameDialog.cpp,,,MATCHED,100,linux_symbols:caller:0.538,linux: _ZN15CLoadGameDialog14ScanSavedGamesEv
+gameui,1004C610,46,??_GCLoadGameDialog@@UAEPAXI@Z,public: virtual void * __thiscall CLoadGameDialog::`scalar deleting destructor'(unsigned int),UNKNOWN,GameUI/LoadGameDialog.cpp,,,MATCHED,100,,
 gameui,1004C640,257,??0CMultiplayerAdvancedPage@@QAE@PAVPanel@vgui2@@@Z,public: __thiscall CMultiplayerAdvancedPage::CMultiplayerAdvancedPage(class vgui2::Panel *),ENGINE,GameUI/MultiplayerAdvancedDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN24CMultiplayerAdvancedPageC1EPN5vgui25PanelE
 gameui,1004C741,498,??0CMultiplayerAdvancedDialog@@QAE@PAVPanel@vgui2@@@Z,public: __thiscall CMultiplayerAdvancedDialog::CMultiplayerAdvancedDialog(class vgui2::Panel *),ENGINE,GameUI/MultiplayerAdvancedDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN26CMultiplayerAdvancedDialogC1EPN5vgui25PanelE
 gameui,1004C933,28,??1CMultiplayerAdvancedDialog@@UAE@XZ,public: virtual __thiscall CMultiplayerAdvancedDialog::~CMultiplayerAdvancedDialog(void),UNKNOWN,GameUI/MultiplayerAdvancedDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN26CMultiplayerAdvancedDialogD1Ev

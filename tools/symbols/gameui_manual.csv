@@ -4403,3 +4403,11 @@ va,name,kind,evidence
 10024B82,?OnCommand@CChangeGameDialog@@MAEXPBD@Z,func,"GameUI/ChangeGameDialog.cpp: same position and size as in our compiled object (RTTI CChangeGameDialog, vtable slots, strings)"
 10024CAD,?OnClose@CChangeGameDialog@@MAEXXZ,func,"GameUI/ChangeGameDialog.cpp: same position and size as in our compiled object (RTTI CChangeGameDialog, vtable slots, strings)"
 10024CD0,??_GCChangeGameDialog@@UAEPAXI@Z,func,"GameUI/ChangeGameDialog.cpp: same position and size as in our compiled object (RTTI CChangeGameDialog, vtable slots, strings)"
+1004BD00,??0CLoadGameDialog@@QAE@PAVPanel@vgui2@@@Z,func,GameUI/LoadGameDialog.cpp: same position and size as in our compiled object; linux: _ZN15CLoadGameDialogC1EPN5vgui25PanelE
+1004BE88,??1CLoadGameDialog@@UAE@XZ,func,GameUI/LoadGameDialog.cpp: same position and size as in our compiled object; linux: _ZN15CLoadGameDialogD1Ev
+1004BEA4,?OnCommand@CLoadGameDialog@@MAEXPBD@Z,func,GameUI/LoadGameDialog.cpp: same position and size as in our compiled object; linux: _ZN15CLoadGameDialog9OnCommandEPKc
+1004BF96,?OnClose@CLoadGameDialog@@MAEXXZ,func,GameUI/LoadGameDialog.cpp: same position and size as in our compiled object; linux: _ZN15CLoadGameDialog7OnCloseEv
+1004BFB7,?CreateSavedGamesList@CLoadGameDialog@@IAEXXZ,func,GameUI/LoadGameDialog.cpp: same position and size as in our compiled object; linux: _ZN15CLoadGameDialog20CreateSavedGamesListEv
+1004C0EE,?ParseSaveData@CLoadGameDialog@@IAE_NPBD0PAVKeyValues@@@Z,func,GameUI/LoadGameDialog.cpp: same position and size as in our compiled object; linux: _ZN15CLoadGameDialog13ParseSaveDataEPKcS1_P9KeyValues
+1004C3D6,?ScanSavedGames@CLoadGameDialog@@IAEXXZ,func,GameUI/LoadGameDialog.cpp: same position and size as in our compiled object; linux: _ZN15CLoadGameDialog14ScanSavedGamesEv
+1004C610,??_GCLoadGameDialog@@UAEPAXI@Z,func,GameUI/LoadGameDialog.cpp: same position and size as in our compiled object
