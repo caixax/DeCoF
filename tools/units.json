@@ -4183,6 +4183,11 @@
           "name": "GameUI/LoadingDialog",
           "source": "src/gameui/LoadingDialog.cpp",
           "functions_file": "tools/units/gameui_GameUI_LoadingDialog.txt"
+        },
+        {
+          "name": "GameUI/MasterVersionChk_guess",
+          "source": "src/gameui/MasterVersionChk_guess.cpp",
+          "functions_file": "tools/units/gameui_GameUI_MasterVersionChk_guess.txt"
         }
       ]
     }

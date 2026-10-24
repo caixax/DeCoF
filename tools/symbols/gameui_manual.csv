@@ -5562,3 +5562,11 @@ va,name,kind,evidence
 10034670,??1LoadingHTML@CLoadingDialog@@UAE@XZ,func,GameUI/LoadingDialog.cpp: same position and size as in our compiled object
 100346A0,?GetMessageMap@RichText@vgui2@@UAEPAUPanelMessageMap@2@XZ,func,GameUI/LoadingDialog.cpp: same position and size as in our compiled object
 100346E0,?GetPanelClassName@RichText@vgui2@@SAPBDXZ,func,GameUI/LoadingDialog.cpp: same position and size as in our compiled object
+100360D0,??0CMasterVersionChkMsgHandler@@QAE@W4HANDLERTYPE@CMsgHandler@@PAX@Z,func,GameUI/MasterVersionChk_guess.cpp: same position and size as in our compiled object (RTTI CMasterVersionChkMsgHandler)
+100360F9,?Process_guess@CMasterVersionChkMsgHandler@@UAE_NPAUnetadr_s@@PAVCMsgBuffer@@@Z,func,"GameUI/MasterVersionChk_guess.cpp: vtable slot 1 (""outofdate""), same position and size as in our compiled object"
+100361E0,??_GCMasterVersionChkMsgHandler@@UAEPAXI@Z,func,GameUI/MasterVersionChk_guess.cpp: same position and size as in our compiled object
+10036210,??1CMasterVersionChkMsgHandler@@UAE@XZ,func,"GameUI/MasterVersionChk_guess.cpp: compiler-generated destructor COMDAT, same position and size as in our compiled object"
+10036230,??0QuitMessageBox@@QAE@PBD0PAVPanel@vgui2@@@Z,func,"GameUI/MasterVersionChk_guess.cpp: inline constructor COMDAT (RTTI QuitMessageBox), same position and size as in our compiled object"
+10036260,?OnClose@QuitMessageBox@@UAEXXZ,func,"GameUI/MasterVersionChk_guess.cpp: inline OnClose COMDAT (QuitMessageBox vtable slot 157, ""#GameUI_OutOfDate_URL""), same position and size as in our compiled object"
+10036300,??_GQuitMessageBox@@UAEPAXI@Z,func,GameUI/MasterVersionChk_guess.cpp: same position and size as in our compiled object
+10036330,??1QuitMessageBox@@UAE@XZ,func,"GameUI/MasterVersionChk_guess.cpp: compiler-generated destructor COMDAT, same position and size as in our compiled object"
