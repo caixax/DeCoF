@@ -66,7 +66,7 @@ va,name,kind,evidence
 10101E00,?AxisDir@CBaseToggle@@SAXPAUentvars_s@@@Z,func,"aligned reference, confirmed by hl/dlls/buttons:?Spawn@CMomentaryRotButton@@UAEXXZ (95% or more)"
 101025C0,?LinearMove@CBaseToggle@@QAEXVVector@@M@Z,func,"aligned reference, confirmed by hl/dlls/buttons:?ButtonReturn@CBaseButton@@QAEXXZ (95% or more)"
 10116A30,?PRECACHE_SOUND@@YAHPAD@Z,func,"aligned reference, confirmed by hl/dlls/animation:?SequencePrecache@@YAXPAXPBD@Z (95% or more)"
-10116A40,?UTIL_PlayWeaponSound_guess@@YAXPBDH_NVVector@@PAVCBaseEntity@@1@Z,func,"aligned reference, confirmed by hl/dlls/cof_glock:?PrimaryAttack@CGlock@@UAEXXZ (95% or more)"
+10116A40,?PlayWeaponSound_guess@@YAXPBDH_NVVector@@PAVCBaseEntity@@1@Z,func,"aligned reference, confirmed by hl/dlls/cof_glock:?PrimaryAttack@CGlock@@UAEXXZ (95% or more)"
 10118390,?UTIL_EntitiesInBox@@YAHPAPAVCBaseEntity@@HABVVector@@1H@Z,func,"aligned reference, confirmed by hl/dlls/func_break:?Die@CBreakable@@QAEXXZ (95% or more)"
 101185C0,?UTIL_FindEntityGeneric@@YAPAVCBaseEntity@@PBDAAVVector@@M@Z,func,"aligned reference, confirmed by hl/dlls/scripted:?StartSentence@CScriptedSentence@@QAEHPAVCBaseMonster@@@Z (95% or more)"
 10118780,?UTIL_FollowAliasReference@@YAPAVCBaseEntity@@PAV1@PBD@Z,func,"aligned reference, confirmed by hl/dlls/util:?UTIL_FollowReference@@YAPAVCBaseEntity@@PAV1@PBD@Z (95% or more)"

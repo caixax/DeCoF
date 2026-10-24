@@ -121,7 +121,7 @@ void CVP70::SuicideShot( void )
 		m_pPlayer->Killed( m_pPlayer->pev, GIB_NEVER );
 
 		int pitch = 95 + RANDOM_LONG( 0, 10 );
-		UTIL_PlayWeaponSound_guess( "weapons/vp70/vp70_fire.wav", 0, true, m_pPlayer->EarPosition(), m_pPlayer, true );
+		PlayWeaponSound_guess( "weapons/vp70/vp70_fire.wav", 0, true, m_pPlayer->EarPosition(), m_pPlayer, true );
 		return;
 	}
 

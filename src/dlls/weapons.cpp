@@ -1204,7 +1204,7 @@ void CBasePlayerWeapon::ItemPostFrame( void )
 						if ( g_pGameRules->IsMultiplayer() )
 							STOP_SOUND( ENT( m_pPlayer->pev ), CHAN_WEAPON, STRING( shoot_loop_sound ) );
 						else
-							UTIL_PlayWeaponSound_guess( STRING( shoot_loop_sound ), 2, true, m_pPlayer->EarPosition(), m_pPlayer, true );
+							PlayWeaponSound_guess( STRING( shoot_loop_sound ), 2, true, m_pPlayer->EarPosition(), m_pPlayer, true );
 					}
 
 					if ( shoot_loop_sound_end )
@@ -1212,7 +1212,7 @@ void CBasePlayerWeapon::ItemPostFrame( void )
 						if ( g_pGameRules->IsMultiplayer() )
 							EMIT_SOUND_DYN( ENT( m_pPlayer->pev ), CHAN_WEAPON, STRING( shoot_loop_sound_end ), 1, 0.8, 0, 100 );
 						else
-							UTIL_PlayWeaponSound_guess( STRING( shoot_loop_sound_end ), 0, true, m_pPlayer->EarPosition(), m_pPlayer, true );
+							PlayWeaponSound_guess( STRING( shoot_loop_sound_end ), 0, true, m_pPlayer->EarPosition(), m_pPlayer, true );
 					}
 				}
 			}
@@ -1231,7 +1231,7 @@ void CBasePlayerWeapon::ItemPostFrame( void )
 					if ( g_pGameRules->IsMultiplayer() )
 						STOP_SOUND( ENT( m_pPlayer->pev ), CHAN_WEAPON, STRING( shoot_loop_sound ) );
 					else
-						UTIL_PlayWeaponSound_guess( STRING( shoot_loop_sound_end ), 2, true, m_pPlayer->EarPosition(), m_pPlayer, true );
+						PlayWeaponSound_guess( STRING( shoot_loop_sound_end ), 2, true, m_pPlayer->EarPosition(), m_pPlayer, true );
 				}
 
 				if ( shoot_loop_sound_end )
@@ -1239,7 +1239,7 @@ void CBasePlayerWeapon::ItemPostFrame( void )
 					if ( g_pGameRules->IsMultiplayer() )
 						EMIT_SOUND_DYN( ENT( m_pPlayer->pev ), CHAN_WEAPON, STRING( shoot_loop_sound_end ), 1, 0.8, 0, 100 );
 					else
-						UTIL_PlayWeaponSound_guess( STRING( shoot_loop_sound_end ), 0, true, m_pPlayer->EarPosition(), m_pPlayer, true );
+						PlayWeaponSound_guess( STRING( shoot_loop_sound_end ), 0, true, m_pPlayer->EarPosition(), m_pPlayer, true );
 				}
 			}
 		}

@@ -7139,7 +7139,7 @@ ReturnSpot:
 
 void GetCurrentPath( char *path )
 {
-	_getcwd( path, 260 );
+	getcwd( path, 260 );
 }
 
 void CBasePlayer::CrashGame( void )

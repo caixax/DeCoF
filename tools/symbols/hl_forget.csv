@@ -17,3 +17,7 @@ va,name,evidence
 101A1F78,__real@c3480000,"stale label: the float at 101A1F78 is -90.0 (bytes 0000b4c2), not -200"
 100360F0,FUN_100360f0,"default Ghidra label of CDualWeapon::TMPShoot, created when the ret 4 stub was recreated"
 10037D40,?CameraShoot@CDualWeapon@@QAEX_N@Z,"bytematch pairing on an identical empty function; 10037D40 is the imbue slot of the basic_streambuf vtable, CameraShoot is 10031010"
+1000E5E0,??BVector@@QAEPAMXZ,the function here is Vector::Vector (link position)
+10041890,??0Vector@@QAE@XZ,the function here is CSquadMonster::MySquadMonsterPointer (link position)
+100C52B0,??1CMultiplayGameMgrHelper@@UAE@XZ,the function here is ~IVoiceGameMgrHelper (vtable)
+10116A40,?UTIL_PlayWeaponSound_guess@@YAXPBDH_NVVector@@PAVCBaseEntity@@1@Z,renamed PlayWeaponSound_guess so it sorts into its retail slot between PRECACHE_SOUND and ReadEntVars

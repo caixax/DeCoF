@@ -1756,7 +1756,7 @@ void CDualWeapon::P345Shoot( bool left )
 
 	int pitch = 95 + RANDOM_LONG( 0, 10 );
 
-	UTIL_PlayWeaponSound_guess( "weapons_new/p345/p345_fire.wav", 0, true, m_pPlayer->EarPosition(), m_pPlayer, true );
+	PlayWeaponSound_guess( "weapons_new/p345/p345_fire.wav", 0, true, m_pPlayer->EarPosition(), m_pPlayer, true );
 
 	m_pPlayer->m_iExtraSoundTypes = bits_SOUND_COMBAT;
 	m_pPlayer->m_flStopExtraSoundTime = gpGlobals->time + 0.2;
@@ -1928,7 +1928,7 @@ void CDualWeapon::RevolverShoot( bool left )
 
 	int pitch = 95 + RANDOM_LONG( 0, 10 );
 
-	UTIL_PlayWeaponSound_guess( "weapons_new/revolver/revolver_fire.wav", 0, true, m_pPlayer->EarPosition(), m_pPlayer, true );
+	PlayWeaponSound_guess( "weapons_new/revolver/revolver_fire.wav", 0, true, m_pPlayer->EarPosition(), m_pPlayer, true );
 
 	m_pPlayer->m_iExtraSoundTypes = bits_SOUND_COMBAT;
 	m_pPlayer->m_flStopExtraSoundTime = gpGlobals->time + 0.2;
@@ -2164,7 +2164,7 @@ void CDualWeapon::VP70Shoot( void )
 
 	int pitch = 95 + RANDOM_LONG( 0, 10 );
 
-	UTIL_PlayWeaponSound_guess( "weapons_new/vp70/vp70_fire.wav", 0, true, m_pPlayer->EarPosition(), m_pPlayer, true );
+	PlayWeaponSound_guess( "weapons_new/vp70/vp70_fire.wav", 0, true, m_pPlayer->EarPosition(), m_pPlayer, true );
 
 	m_pPlayer->m_iExtraSoundTypes = bits_SOUND_COMBAT;
 	m_pPlayer->m_flStopExtraSoundTime = gpGlobals->time + 0.2;
@@ -2343,7 +2343,7 @@ void CDualWeapon::GlockShoot( bool left )
 		if ( !m_pPlayer->m_bInfiniteAmmo )
 			m_pPlayer->m_iDualWeaponLeftAmmo--;
 
-		UTIL_PlayWeaponSound_guess( "weapons_new/glock/glock_fire.wav", 0, true, m_pPlayer->EarPosition(), m_pPlayer, true );
+		PlayWeaponSound_guess( "weapons_new/glock/glock_fire.wav", 0, true, m_pPlayer->EarPosition(), m_pPlayer, true );
 		UpdateWeaponAmmo();
 	}
 	else
@@ -2351,7 +2351,7 @@ void CDualWeapon::GlockShoot( bool left )
 		if ( !m_pPlayer->m_bInfiniteAmmo )
 			m_pPlayer->m_iDualWeaponRightAmmo--;
 
-		UTIL_PlayWeaponSound_guess( "weapons_new/glock/glock_fire.wav", 0, true, m_pPlayer->EarPosition(), m_pPlayer, true );
+		PlayWeaponSound_guess( "weapons_new/glock/glock_fire.wav", 0, true, m_pPlayer->EarPosition(), m_pPlayer, true );
 		UpdateWeaponAmmo();
 	}
 

@@ -123,7 +123,7 @@ float UTIL_WeaponTimeBase( void )
 extern int gmsgPlaySFX;
 
 // CoF 1.6a (no symbol): sends a weapon sound to the clients (PlaySFX message)
-void UTIL_PlayWeaponSound_guess( const char *sample, int iParam2_guess, bool bParam3_guess, Vector vecOrigin, CBaseEntity *pPlayer, bool bParam6_guess )
+void PlayWeaponSound_guess( const char *sample, int iParam2_guess, bool bParam3_guess, Vector vecOrigin, CBaseEntity *pPlayer, bool bParam6_guess )
 {
 	int iParam3_guess = bParam3_guess;
 

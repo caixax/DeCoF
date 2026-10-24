@@ -81,4 +81,4 @@
 ?DeleteAllCFGFiles@@YAXXZ
 ?ApplyCFGSettingToPlayer@@YAXPAVCBasePlayer@@@Z
 ?ApplyCFGSettingToPlayerLate@@YAXPAVCBasePlayer@@@Z
-??1CMultiplayGameMgrHelper@@UAE@XZ
+??1IVoiceGameMgrHelper@@UAE@XZ

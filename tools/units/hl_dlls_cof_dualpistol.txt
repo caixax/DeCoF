@@ -50,3 +50,5 @@ _weapon_dualweapon
 ??$_Destroy_in_place@PAD@std@@YAXAAPAD@Z
 ??1error_category@std@@UAE@XZ
 ?imbue@?$basic_streambuf@DU?$char_traits@D@std@@@std@@MAEXABVlocale@2@@Z
+??$_Allocate@$07U_Default_allocate_traits@std@@$0A@@std@@YAPAXI@Z
+??$_Allocate_manually_vector_aligned@U_Default_allocate_traits@std@@@std@@YAPAXI@Z

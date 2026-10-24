@@ -575,7 +575,7 @@ float UTIL_WeaponTimeBase( void );
 
 // CoF 1.6a (util.cpp, no symbol): plays a weapon sound; used by the weapons
 // of the final patch for their "weapons_new/" fire sounds
-void UTIL_PlayWeaponSound_guess( const char *sample, int iParam2_guess, bool bParam3_guess, Vector vecOrigin, CBaseEntity *pPlayer, bool bParam6_guess );
+void PlayWeaponSound_guess( const char *sample, int iParam2_guess, bool bParam3_guess, Vector vecOrigin, CBaseEntity *pPlayer, bool bParam6_guess );
 int GetStdLightStyle (int iStyle); //LRC- declared here so it can be used by everything that
 									// needs to deal with the standard lightstyles.
 // LRC- for aliases and groups

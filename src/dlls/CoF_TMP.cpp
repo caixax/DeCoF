@@ -85,7 +85,7 @@ void CTmp::SuicideShot( void )
 		m_pPlayer->pev->health = 0;
 		m_pPlayer->Killed( m_pPlayer->pev, GIB_NEVER );
 
-		UTIL_PlayWeaponSound_guess( "weapons_new/tmp/tmp_shoot_end.wav", 0, true, m_pPlayer->EarPosition(), m_pPlayer, true );
+		PlayWeaponSound_guess( "weapons_new/tmp/tmp_shoot_end.wav", 0, true, m_pPlayer->EarPosition(), m_pPlayer, true );
 		return;
 	}
 
@@ -387,7 +387,7 @@ void CTmp::PrimaryAttack( void )
 		if ( g_pGameRules->IsMultiplayer() )
 			EMIT_SOUND( ENT( m_pPlayer->pev ), CHAN_WEAPON, STRING( shoot_loop_sound ), 1, ATTN_NORM );
 		else
-			UTIL_PlayWeaponSound_guess( STRING( shoot_loop_sound ), 1, true, m_pPlayer->EarPosition(), m_pPlayer, true );
+			PlayWeaponSound_guess( STRING( shoot_loop_sound ), 1, true, m_pPlayer->EarPosition(), m_pPlayer, true );
 	}
 
 	m_pPlayer->m_iExtraSoundTypes = bits_SOUND_COMBAT;

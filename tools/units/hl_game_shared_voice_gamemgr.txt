@@ -11,3 +11,4 @@
 ?CallMonsterThink@CBaseMonster@@QAEXXZ
 ?SUB_CallUseToggle@CBaseEntity@@QAEXXZ
 ??0CVoiceGameMgr@@QAE@XZ
+??0?$CBitVec@$0CA@@@QAE@XZ

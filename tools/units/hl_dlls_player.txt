@@ -258,3 +258,4 @@ _player
 ?UpdateStatusBar@CBasePlayer@@QAEXXZ
 ?VibrateCheck@CBasePlayer@@QAEXXZ
 ?EncryptStatsFile@CBasePlayer@@QAE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V23@0@Z
+?PrintInventoryModelInfoDebug@CBasePlayer@@QAEXXZ

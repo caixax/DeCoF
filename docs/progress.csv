@@ -13385,6 +13385,7 @@ gameui,100BFEF4,486,_ldexp,,LIB,,,,,,,"VC6 runtime library, bytes identical to L
 gameui,100C00DA,89,,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(chsize.obj)"
 gameui,100C0133,97,__setmode_lk,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(setmode.obj)"
 gameui,100C0338,308,__strlwr,,LIB,,,,,,,"VC6 runtime library, bytes identical to LIBCMT.LIB(strlwr.obj)"
+hl,10001090,9,??0?$CBitVec@$0CA@@@QAE@XZ,CBitVec<32>::CBitVec<32>,HLSDK,game_shared/voice_gamemgr.cpp,1.0,,MATCHED,100,hl_manual.csv,found by the hl.dll link comparison (tools/link_diff.py); no progress.csv row before (FillGaps created the Ghidra function where it was missing)
 hl,100010A0,24,??0CVoiceGameMgr@@QAE@XZ,CVoiceGameMgr::CVoiceGameMgr,UNKNOWN,game_shared/voice_gamemgr.cpp,,,MATCHED,100,hl_manual.csv,
 hl,100010C0,7,??1CVoiceGameMgr@@UAE@XZ,CVoiceGameMgr::~CVoiceGameMgr,HLSDK,game_shared/voice_gamemgr.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100010D0,48,??4CBitVecAccessor@@QAEXH@Z,CBitVecAccessor::operator=,HLSDK,game_shared/voice_gamemgr.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,refbytes:paranoia:game_shared__voice_gamemgr.obj:score0,
@@ -13594,7 +13595,7 @@ hl,1000E5A0,5,_info_alias,info_alias,HLSDK,dlls/alias.cpp,,,MATCHED,100,exports+
 hl,1000E5B0,5,_info_group,info_group,HLSDK,dlls/alias.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( info_group, CInfoGroup )"
 hl,1000E5C0,5,_multi_alias,multi_alias,HLSDK,dlls/alias.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( multi_alias, CMultiAlias )"
 hl,1000E5D0,5,_trigger_changealias,trigger_changealias,HLSDK,dlls/alias.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( trigger_changealias, CTriggerChangeAlias )"
-hl,1000E5E0,3,??BVector@@QAEPAMXZ,*,UNKNOWN,dlls/animating.cpp,,,MATCHED,100,,found by tools/gaps.py (no Ghidra function before)
+hl,1000E5E0,3,??0Vector@@QAE@XZ,Vector::Vector,HLSDK,dlls/animating.cpp,,,MATCHED,100,hl_bytes.csv,"Vector::Vector by link position (animating.obj); was ??BVector@@QAEPAMXZ, same 3 bytes"
 hl,1000E5F0,310,?DispatchAnimEvents@CBaseAnimating@@QAEXM@Z,CBaseAnimating::DispatchAnimEvents,HLSDK,dlls/animating.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1000E730,43,?ExtractBbox@CBaseAnimating@@QAEHHPAM0@Z,CBaseAnimating::ExtractBbox,HLSDK,dlls/animating.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1000E760,81,?FindTransition@CBaseAnimating@@QAEHHHPAH@Z,CBaseAnimating::FindTransition,HLSDK,dlls/animating.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
@@ -14289,7 +14290,8 @@ hl,1002F0C0,12,?Precache@CDoorPropView@@UAEXXZ,CDoorPropView::Precache,COF,dlls/
 hl,1002F0D0,156,?Spawn@CDoorPropView@@UAEXXZ,CDoorPropView::Spawn,COF,dlls/cof_door_prop_view.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1002F170,5,_door_prop_view,door_prop_view,HLSDK,dlls/cof_door_prop_view.cpp,,,MATCHED,100,exports+jmp_thunk,"LINK_ENTITY_TO_CLASS( door_prop_view, CDoorPropView )"
 hl,1002F180,92,??$GetClassPtr@VCDualWeapon@@@@YAPAVCDualWeapon@@PAV0@@Z,GetClassPtr<CDualWeapon>,HLSDK,dlls/cof_dualpistol.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
-hl,1002F1E0,87,,,LIB,,,,,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
+hl,1002F1E0,39,??$_Allocate@$07U_Default_allocate_traits@std@@$0A@@std@@YAPAXI@Z,"std::_Allocate<8,std::_Default_allocate_traits,0>",LIB,dlls/cof_dualpistol.cpp,1.6a,,MATCHED,100,hl_manual.csv,found by the hl.dll link comparison (tools/link_diff.py); Ghidra body shrunk from 87 bytes (it held the start of _Allocate_manually_vector_aligned)
+hl,1002F210,48,??$_Allocate_manually_vector_aligned@U_Default_allocate_traits@std@@@std@@YAPAXI@Z,std::_Allocate_manually_vector_aligned<std::_Default_allocate_traits>,LIB,dlls/cof_dualpistol.cpp,1.6a,,MATCHED,100,hl_manual.csv,found by the hl.dll link comparison (tools/link_diff.py); no progress.csv row before (FillGaps created the Ghidra function where it was missing)
 hl,1002F240,8,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
 hl,1002F250,8,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
 hl,1002F260,10,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
@@ -14639,7 +14641,7 @@ hl,10040F50,327,?LookupFloat@CFlier@@QAEHXZ,CFlier::LookupFloat,COF,dlls/cof_fly
 hl,100410A0,230,?MetalHitSound@CFlier@@QAEXXZ,CFlier::MetalHitSound,UNKNOWN,dlls/cof_flygare.cpp,,,MATCHED,100,,
 hl,100411A0,1387,?Move@CFlier@@UAEXM@Z,CFlier::Move,COF,dlls/cof_flygare.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10041710,373,?MoveExecute@CFlier@@UAEXPAVCBaseEntity@@ABVVector@@M@Z,CFlier::MoveExecute,COF,dlls/cof_flygare.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,10041890,3,??0Vector@@QAE@XZ,Vector::Vector,HLSDK,dlls/cof_thirdpersoninteraction.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
+hl,10041890,3,?MySquadMonsterPointer@CSquadMonster@@UAEPAV1@XZ,CSquadMonster::MySquadMonsterPointer,HLSDK,dlls/cof_flygare.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_bytes.csv,"by link position (cof_flygare.obj, CFlier vtables); was ??0Vector@@QAE@XZ, same 3 bytes"
 hl,100418A0,97,?PainSound@CFlier@@UAEXXZ,CFlier::PainSound,COF,dlls/cof_flygare.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10041910,234,?Precache@CFlier@@UAEXXZ,CFlier::Precache,COF,dlls/cof_flygare.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10041A00,49,?Restore@CAcidSpit@@UAEHAAVCRestore@@@Z,CAcidSpit::Restore,COF,dlls/cof_flygare.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
@@ -16867,7 +16869,9 @@ hl,100B3480,92,??$GetClassPtr@VCCineScientist@@@@YAPAVCCineScientist@@PAV0@@Z,Ge
 hl,100B34E0,685,?BloodGush@CCineBlood@@QAEXXZ,CCineBlood::BloodGush,HLSDK,dlls/h_cine.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100B3790,23,?BloodStart@CCineBlood@@QAEXPAVCBaseEntity@@0W4USE_TYPE@@M@Z,CCineBlood::BloodStart,HLSDK,dlls/h_cine.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100B37B0,265,?CineSpawn@CLegacyCineMonster@@QAEXPAD@Z,CLegacyCineMonster::CineSpawn,HLSDK,dlls/h_cine.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,100B38C0,102,?CineThink@CLegacyCineMonster@@QAEXXZ,CLegacyCineMonster::CineThink,HLSDK,dlls/h_cine.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
+hl,100B38C0,94,?CineThink@CLegacyCineMonster@@QAEXXZ,CLegacyCineMonster::CineThink,HLSDK,dlls/h_cine.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,"Ghidra body shrunk from 102 bytes (it ran into Die, its tail jump target)"
+hl,100B3920,8,?Die@CLegacyCineMonster@@QAEXXZ,CLegacyCineMonster::Die,HLSDK,dlls/h_cine.cpp,1.0,,MATCHED,100,hl_auto.csv,found by the hl.dll link comparison (tools/link_diff.py); no progress.csv row before (FillGaps created the Ghidra function where it was missing)
+hl,100B3930,47,?Pain@CLegacyCineMonster@@QAEXXZ,CLegacyCineMonster::Pain,HLSDK,dlls/h_cine.cpp,1.0,,MATCHED,100,hl_manual.csv,found by the hl.dll link comparison (tools/link_diff.py); no progress.csv row before (FillGaps created the Ghidra function where it was missing)
 hl,100B3960,11,?Spawn@CCine2HeavyWeapons@@UAEXXZ,CCine2HeavyWeapons::Spawn,HLSDK,dlls/h_cine.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,refbytes:paranoia:dlls__h_cine.obj:score2,
 hl,100B3970,11,?Spawn@CCine2Scientist@@UAEXXZ,CCine2Scientist::Spawn,HLSDK,dlls/h_cine.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,refbytes:paranoia:dlls__h_cine.obj:score2,
 hl,100B3980,11,?Spawn@CCine2Slave@@UAEXXZ,CCine2Slave::Spawn,HLSDK,dlls/h_cine.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,refbytes:paranoia:dlls__h_cine.obj:score2,
@@ -17325,7 +17329,7 @@ hl,100C5040,74,,,LIB,,,,,,,"STL, iostream or CRT code from the toolchain (not de
 hl,100C5090,77,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
 hl,100C50E0,160,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
 hl,100C5180,292,??0CHalfLifeMultiplay@@QAE@XZ,CHalfLifeMultiplay::CHalfLifeMultiplay,HLSDK,dlls/multiplay_gamerules.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,100C52B0,7,??1CMultiplayGameMgrHelper@@UAE@XZ,CMultiplayGameMgrHelper::~CMultiplayGameMgrHelper,UNKNOWN,dlls/multiplay_gamerules.cpp,,,MATCHED,100,,found by tools/gaps.py (no Ghidra function before)
+hl,100C52B0,7,??1IVoiceGameMgrHelper@@UAE@XZ,IVoiceGameMgrHelper::~IVoiceGameMgrHelper,HLSDK,dlls/multiplay_gamerules.cpp,,,MATCHED,100,hl_bytes.csv,stores the IVoiceGameMgrHelper vtable; was ??1CMultiplayGameMgrHelper@@UAE@XZ
 hl,100C52C0,6,?AllowAutoTargetCrosshair@CGameRules@@UAEHXZ,CGameRules::AllowAutoTargetCrosshair,HLSDK,dlls/gamerules.h,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100C52D0,32,?AllowAutoTargetCrosshair@CHalfLifeMultiplay@@UAEHXZ,CHalfLifeMultiplay::AllowAutoTargetCrosshair,COF,dlls/multiplay_gamerules.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100C52F0,8,?AmmoShouldRespawn@CHalfLifeMultiplay@@UAEHPAVCBasePlayerAmmo@@@Z,CHalfLifeMultiplay::AmmoShouldRespawn,HLSDK,dlls/multiplay_gamerules.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
@@ -17540,6 +17544,8 @@ hl,100D2EE0,92,??$GetClassPtr@VCFuncTrainControls@@@@YAPAVCFuncTrainControls@@PA
 hl,100D2F40,92,??$GetClassPtr@VCGunTarget@@@@YAPAVCGunTarget@@PAV0@@Z,GetClassPtr<CGunTarget>,HLSDK,dlls/plats.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
 hl,100D2FA0,92,??$GetClassPtr@VCPlatTrigger@@@@YAPAVCPlatTrigger@@PAV0@@Z,CPlatTrigger>,HLSDK,dlls/plats.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_manual.csv,
 hl,100D3000,92,??$GetClassPtr@VCTrainSequence@@@@YAPAVCTrainSequence@@PAV0@@Z,GetClassPtr<CTrainSequence>,HLSDK,dlls/plats.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,jmp_target_of_export+rtti,
+hl,100D305C,8,??_9CFuncPlat@@$BBCE@AE,CFuncPlat::`vcall'{292}',LIB,dlls/plats.cpp,,,MATCHED,100,hl_auto.csv,found by the hl.dll link comparison (tools/link_diff.py); no progress.csv row before (FillGaps created the Ghidra function where it was missing)
+hl,100D3064,8,??_9CFuncPlat@@$BBCI@AE,CFuncPlat::`vcall'{296}',LIB,dlls/plats.cpp,,,MATCHED,100,hl_auto.csv,found by the hl.dll link comparison (tools/link_diff.py); no progress.csv row before (FillGaps created the Ghidra function where it was missing)
 hl,100D3070,182,?Activate@CGunTarget@@UAEXXZ,CGunTarget::Activate,HLSDK,dlls/plats.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100D3130,58,?ArrivalNotify@CTrainSequence@@QAEXXZ,CTrainSequence::ArrivalNotify,SPIRIT,dlls/plats.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100D3170,212,?Blocked@CFuncPlat@@UAEXPAVCBaseEntity@@@Z,CFuncPlat::Blocked,HLSDK,dlls/plats.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
@@ -17831,6 +17837,7 @@ hl,100EF2D0,4674,?PreThink@CBasePlayer@@UAEXXZ,CBasePlayer::PreThink,HLSDK,dlls/
 hl,100F0520,240,?Precache@CBasePlayer@@UAEXXZ,CBasePlayer::Precache,HLSDK,dlls/player.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100F0610,123,?PrintInventoryClassnameInfoDebug@CBasePlayer@@QAEXXZ,CBasePlayer::PrintInventoryClassnameInfoDebug,UNKNOWN,dlls/player.cpp,,,MATCHED,100,,found by tools/gaps.py (no Ghidra function before)
 hl,100F0690,222,?PrintInventoryInfoDebug@CBasePlayer@@QAEXXZ,CBasePlayer::PrintInventoryInfoDebug,COF,dlls/player.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
+hl,100F0770,123,?PrintInventoryModelInfoDebug@CBasePlayer@@QAEXXZ,CBasePlayer::PrintInventoryModelInfoDebug,COF,dlls/player.cpp,1.0,,MATCHED,100,hl_manual.csv,found by the hl.dll link comparison (tools/link_diff.py); no progress.csv row before (FillGaps created the Ghidra function where it was missing)
 hl,100F07F0,677,?QuickSelectItem@CBasePlayer@@QAEXH@Z,CBasePlayer::QuickSelectItem,COF,dlls/player.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100F0AA0,244,?RecallDocument@CBasePlayer@@QAEXH@Z,CBasePlayer::RecallDocument,UNKNOWN,dlls/player.cpp,,,MATCHED,100,,
 hl,100F0BA0,949,?RemoveAllItems@CBasePlayer@@QAEXH@Z,CBasePlayer::RemoveAllItems,HLSDK,dlls/player.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
@@ -18665,7 +18672,7 @@ hl,10116990,78,?PRECACHE_MODEL@@YAHPAD@Z,PRECACHE_MODEL,COF,dlls/util.cpp,1.0,1.
 hl,101169E0,26,?PRECACHE_SOUND@@YAHH@Z,PRECACHE_SOUND,UNKNOWN,dlls/util.cpp,,,MATCHED,100,,
 hl,10116A00,34,?PRECACHE_SOUND@@YAHHPAD@Z,PRECACHE_SOUND,UNKNOWN,dlls/util.cpp,,,MATCHED,100,,
 hl,10116A30,10,?PRECACHE_SOUND@@YAHPAD@Z,PRECACHE_SOUND,UNKNOWN,dlls/util.cpp,,,MATCHED,100,,
-hl,10116A40,485,?UTIL_PlayWeaponSound_guess@@YAXPBDH_NVVector@@PAVCBaseEntity@@1@Z,UTIL_PlayWeaponSound_guess,UNKNOWN,dlls/util.cpp,,,MATCHED,100,,
+hl,10116A40,485,?PlayWeaponSound_guess@@YAXPBDH_NVVector@@PAVCBaseEntity@@1@Z,PlayWeaponSound_guess,UNKNOWN,dlls/util.cpp,,,MATCHED,100,,was UTIL_PlayWeaponSound_guess; the stem sorts into the retail slot between PRECACHE_SOUND and ReadEntVars
 hl,10116C30,25,?ReadEntVars@CRestore@@QAEHPBDPAUentvars_s@@@Z,CRestore::ReadEntVars,HLSDK,dlls/util.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10116C50,878,?ReadField@CRestore@@QAEHPAXPAUTYPEDESCRIPTION@@HHHPAD0@Z,CRestore::ReadField,HLSDK,dlls/util.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10117010,235,?ReadFields@CRestore@@QAEHPBDPAXPAUTYPEDESCRIPTION@@H@Z,CRestore::ReadFields,HLSDK,dlls/util.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,

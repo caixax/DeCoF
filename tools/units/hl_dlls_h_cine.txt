@@ -30,3 +30,5 @@ _monster_cine3_scientist
 _monster_cine_barney
 _monster_cine_panther
 _monster_cine_scientist
+?Die@CLegacyCineMonster@@QAEXXZ
+?Pain@CLegacyCineMonster@@QAEXXZ

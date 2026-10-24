@@ -19,6 +19,6 @@
 ?SetBlending@CBaseAnimating@@QAEMHM@Z
 ?SetBoneController@CBaseAnimating@@QAEMHM@Z
 ?StudioFrameAdvance@CBaseAnimating@@QAEMM@Z
-??BVector@@QAEPAMXZ
+??0Vector@@QAE@XZ
 ?GetAutomovement@CBaseAnimating@@QAEXAAVVector@@0M@Z
 ?GetBoneCount@CBaseAnimating@@QAEHXZ

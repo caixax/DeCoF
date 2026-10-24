@@ -137,3 +137,5 @@ _scripted_trainsequence
 ?FixupAngles@@YAXAAVVector@@@Z
 ?Fix@@YAMM@Z
 ?PlatSpawnInsideTrigger@@YAXPAUentvars_s@@@Z
+??_9CFuncPlat@@$BBCE@AE
+??_9CFuncPlat@@$BBCI@AE

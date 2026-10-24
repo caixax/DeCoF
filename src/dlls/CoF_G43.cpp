@@ -200,7 +200,7 @@ void CG43::SuicideShot( void )
 		m_pPlayer->pev->health = 0;
 		m_pPlayer->Killed( m_pPlayer->pev, GIB_NEVER );
 
-		UTIL_PlayWeaponSound_guess( "weapons_new/g43/g43_fire.wav", 0, true, m_pPlayer->EarPosition(), m_pPlayer, true );
+		PlayWeaponSound_guess( "weapons_new/g43/g43_fire.wav", 0, true, m_pPlayer->EarPosition(), m_pPlayer, true );
 		return;
 	}
 
@@ -539,7 +539,7 @@ void CG43::PrimaryAttack( void )
 
 	m_pPlayer->ViewKnock( 6.0 );
 
-	UTIL_PlayWeaponSound_guess( "weapons_new/g43/g43_fire.wav", 0, true, m_pPlayer->EarPosition(), m_pPlayer, true );
+	PlayWeaponSound_guess( "weapons_new/g43/g43_fire.wav", 0, true, m_pPlayer->EarPosition(), m_pPlayer, true );
 
 	m_pPlayer->m_iExtraSoundTypes = bits_SOUND_COMBAT;
 	m_pPlayer->m_flStopExtraSoundTime = gpGlobals->time + 0.2;
