@@ -17,12 +17,14 @@
 #include <vgui_controls/Frame.h>
 #include "Taskbar.h"
 
+namespace vgui = vgui2;
+
 //-----------------------------------------------------------------------------
 // Purpose: Frame whose title is mirrored in the taskbar
 //-----------------------------------------------------------------------------
 class CTaskFrame : public vgui2::Frame
 {
-	DECLARE_CLASS_SIMPLE( CTaskFrame, vgui2::Frame );
+	DECLARE_CLASS_SIMPLE( CTaskFrame, vgui::Frame );
 
 public:
 	CTaskFrame( vgui2::Panel *parent, const char *panelName, bool showTaskbarIcon = true ) : BaseClass( parent, panelName, showTaskbarIcon ) {}

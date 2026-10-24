@@ -101,11 +101,11 @@ CCDKeyEntryDialog::CCDKeyEntryDialog( vgui2::Panel *parent, bool inConnect ) : B
 
 	if ( m_bIsValveCDKey )
 	{
-		LoadControlSettings( "Resource\\ValveCDKeyEntryDialog.res" );
+		LoadControlSettings( "Resource/ValveCDKeyEntryDialog.res" );
 	}
 	else
 	{
-		LoadControlSettings( "Resource\\CDKeyEntryDialog.res" );
+		LoadControlSettings( "Resource/CDKeyEntryDialog.res" );
 	}
 
 	SetMinimizeButtonVisible( false );
