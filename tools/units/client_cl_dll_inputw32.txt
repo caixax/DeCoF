@@ -16,3 +16,4 @@ _IN_MouseEvent
 ?RawValuePointer@@YAPAKH@Z
 ?IN_Shutdown@@YAXXZ
 ?IN_ResetMouse@@YAXXZ
+?IN_GetMousePos@@YAXPAH0@Z

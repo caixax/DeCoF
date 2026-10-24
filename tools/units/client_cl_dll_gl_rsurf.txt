@@ -33,3 +33,5 @@
 ?RenderAdditionalBumpPass@@YAXXZ
 ?RenderSecondPass@@YAXXZ
 ?RenderSpecular@@YAXXZ
+??0BrushFace@@QAE@XZ
+??0BrushVertex@@QAE@XZ

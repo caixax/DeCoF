@@ -34,3 +34,6 @@ _HUD_ConnectionlessPacket
 ??__FgMP3Info_guess@@YAXXZ
 ??1MP3FileInfo@@UAE@XZ
 ??_GMP3FileInfo@@UAEPAXI@Z
+
+_HUD_PlayerMove
+_HUD_PlayerMoveInit

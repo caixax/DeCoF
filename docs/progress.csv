@@ -855,7 +855,9 @@ client,1001D410,16,_HUD_ConnectionlessPacket,HUD_ConnectionlessPacket,HLSDK,cl_d
 client,1001D420,21,_HUD_DirectorMessage,HUD_DirectorMessage,HLSDK,cl_dll/cdll_int.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__cdll_int.obj:score1,
 client,1001D440,50,_HUD_Frame,HUD_Frame,HLSDK,cl_dll/cdll_int.cpp,,,MATCHED,100,client_1.6a_exports.csv,
 client,1001D480,32,_HUD_GetHullBounds,HUD_GetHullBounds,HLSDK,cl_dll/cdll_int.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__cdll_int.obj:score0,
-client,1001D4A0,33,_HUD_Init,HUD_Init,HLSDK,cl_dll/cdll_int.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__cdll_int.obj:score2,
+client,1001D4A0,30,_HUD_Init,HUD_Init,HLSDK,cl_dll/cdll_int.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__cdll_int.obj:score2,
+client,1001D4C0,5,_HUD_PlayerMove,HUD_PlayerMove,HLSDK,cl_dll/cdll_int.cpp,,,MATCHED,100,client_1.6a_exports.csv,found by the client.dll link comparison (tools/link_diff.py); no progress.csv row before (the HUD_Init body held its first byte)
+client,1001D4D0,5,_HUD_PlayerMoveInit,HUD_PlayerMoveInit,HLSDK,cl_dll/cdll_int.cpp,,,MATCHED,100,client_1.6a_exports.csv,found by the client.dll link comparison (tools/link_diff.py); no progress.csv row before
 client,1001D4E0,9,_HUD_PlayerMoveTexture,HUD_PlayerMoveTexture,HLSDK,cl_dll/cdll_int.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__cdll_int.obj:score1,
 client,1001D4F0,34,_HUD_Redraw,HUD_Redraw,HLSDK,cl_dll/cdll_int.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__cdll_int.obj:score2,
 client,1001D520,10,_HUD_Reset,HUD_Reset,HLSDK,cl_dll/cdll_int.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__cdll_int.obj:score2,
@@ -895,7 +897,8 @@ client,10020370,14,?actionPerformed@CClothesMenuHandler_Command@@UAEXPAVPanel@vg
 client,10020380,445,,,LIB,guess:cl_dll/ClothesMenu_guess.cpp,,,TODO,,,STL/iostream instantiation (toolchain code) placed before the object that first uses it
 client,10020556,6,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
 client,1002055C,181,,,LIB,guess:cl_dll/ClothesMenu_guess.cpp,,,TODO,,,STL/iostream instantiation (toolchain code) placed before the object that first uses it
-client,10020620,87,,,LIB,guess:cl_dll/ClothesMenu_guess.cpp,,,TODO,,,STL/iostream instantiation (toolchain code) placed before the object that first uses it
+client,10020620,39,??$_Allocate@$07U_Default_allocate_traits@std@@$0A@@std@@YAPAXI@Z,"std::_Allocate<8,std::_Default_allocate_traits,0>",LIB,cl_dll/CoopStats_guess.cpp,,,MATCHED,100,client_manual.csv,named by the client.dll link comparison (tools/link_diff.py); Ghidra body shrunk from 87 bytes (it held _Allocate_manually_vector_aligned)
+client,10020650,48,??$_Allocate_manually_vector_aligned@U_Default_allocate_traits@std@@@std@@YAPAXI@Z,std::_Allocate_manually_vector_aligned<std::_Default_allocate_traits>,LIB,cl_dll/CoopStats_guess.cpp,,,MATCHED,100,client_manual.csv,found by the client.dll link comparison (tools/link_diff.py); no progress.csv row before (the 87-byte Ghidra body of 10020620 held it)
 client,10020680,8,,,LIB,guess:cl_dll/ClothesMenu_guess.cpp,,,TODO,,,STL/iostream instantiation (toolchain code) placed before the object that first uses it
 client,10020690,8,,,LIB,guess:cl_dll/ClothesMenu_guess.cpp,,,TODO,,,STL/iostream instantiation (toolchain code) placed before the object that first uses it
 client,100206A0,10,,,LIB,guess:cl_dll/ClothesMenu_guess.cpp,,,TODO,,,STL/iostream instantiation (toolchain code) placed before the object that first uses it
@@ -1218,6 +1221,7 @@ client,1003B0C0,2752,?RenderMessages_guess@CHUDControl@@QAEXXZ,CHUDControl::Rend
 client,1003BBD0,37,?ShowSMSIcon_guess@CHUDControl@@QAEX_N@Z,CHUDControl::ShowSMSIcon_guess,COF,guess:cl_dll/HUDControl_guess.cpp,,,MATCHED,100,client_manual.csv,
 client,1003BC00,3,?UpdateOnPlayerInfo_guess@CHUDControl@@QAEXXZ,CHUDControl::UpdateOnPlayerInfo_guess,COF,cl_dll/HUDControl_guess.cpp,,,MATCHED,100,client_manual.csv,
 client,1003BC10,732,?paint@CHUDControl@@MAEXXZ,CHUDControl::paint,COF,guess:cl_dll/HUDControl_guess.cpp,,,MATCHED,100,client_manual.csv,
+client,1003BF00,5,?paintBackground@CHUDControl@@MAEXXZ,CHUDControl::paintBackground,COF,guess:cl_dll/HUDControl_guess.cpp,,,MATCHED,100,client_manual.csv,found by the client.dll link comparison (tools/link_diff.py); no progress.csv row before
 client,1003BF20,5081,?solve@CHUDControl@@MAEXXZ,CHUDControl::solve,COF,guess:cl_dll/HUDControl_guess.cpp,,,EQUIVALENT,94.44,client_manual.csv,EQUIVALENT: register allocation (retail keeps this in edi spilled to [ebp-0x298] and the player info pointer in ebx in the coop loop; ours this in ebx) and the camera zoom block keeps start time and length in stack temporaries (frame 0x2a0 against 0x29c)
 client,1003D300,1305,??0CAnimalStatue@@QAE@XZ,CAnimalStatue::CAnimalStatue,COF,cl_dll/AnimalStatue_guess.cpp,,,MATCHED,100,,
 client,1003D820,40,??1CAnimalStatue@@QAE@XZ,CAnimalStatue::~CAnimalStatue,COF,cl_dll/AnimalStatue_guess.cpp,,,MATCHED,100,,
@@ -1454,6 +1458,7 @@ client,10053750,61,?R_StudioDrawModel@@YAHH@Z,R_StudioDrawModel,UNKNOWN,cl_dll/G
 client,10053790,28,??0CGameStudioModelRenderer@@QAE@XZ,CGameStudioModelRenderer::CGameStudioModelRenderer,HLSDK,cl_dll/GameStudioModelRenderer.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__GameStudioModelRenderer.obj:score1,
 client,100537B0,38,??_GCGameStudioModelRenderer@@UAEPAXI@Z,destructor',COF,cl_dll/GameStudioModelRenderer.cpp,,,MATCHED,100,client_1.6a_ghidra_names.csv,
 client,100537E0,24,?DrawCustomEntModel@@YAXPAUcl_entity_s@@HH@Z,DrawCustomEntModel,PARANOIA,cl_dll/GameStudioModelRenderer.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__GameStudioModelRenderer.obj:score2,
+client,10053800,10,?ExtDrawShield@@YAXXZ,ExtDrawShield,PARANOIA,cl_dll/GameStudioModelRenderer.cpp,,,MATCHED,100,client_manual.csv,found by the client.dll link comparison (tools/link_diff.py); no progress.csv row before (the HUD_DrawNormalTriangles body held it)
 client,10053810,10,?R_StudioInit@@YAXXZ,R_StudioInit,HLSDK,cl_dll/GameStudioModelRenderer.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__GameStudioModelRenderer.obj:score2,
 client,10053820,53,_HUD_GetStudioModelInterface,HUD_GetStudioModelInterface,HLSDK,cl_dll/GameStudioModelRenderer.cpp,,,MATCHED,100,client_1.6a_exports.csv,
 client,10053860,515,?Draw@CHudGeiger@@UAEHM@Z,CHudGeiger::Draw,HLSDK,cl_dll/geiger.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__geiger.obj:score14,
@@ -1610,6 +1615,8 @@ client,10060B10,80,?RendererVidInit@@YAXXZ,RendererVidInit,PARANOIA,cl_dll/gl_re
 client,10060B60,110,?ResetRenderState@@YAXXZ,ResetRenderState,PARANOIA,cl_dll/gl_renderer.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__gl_renderer.obj:score9,
 client,10060BD0,48,?RestoreWorldDrawing@@YAXXZ,RestoreWorldDrawing,PARANOIA,cl_dll/gl_renderer.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__gl_renderer.obj:score3,
 client,10060C00,247,?getCubeVector@@YAXHHHAAVVector@@@Z,getCubeVector,UNKNOWN,cl_dll/gl_renderer.cpp,,,MATCHED,100,,
+client,10060D10,3,??0BrushFace@@QAE@XZ,BrushFace::BrushFace,PARANOIA,cl_dll/gl_rsurf.cpp,,,MATCHED,100,client_manual.csv,found by the client.dll link comparison (tools/link_diff.py); no progress.csv row before
+client,10060D20,3,??0BrushVertex@@QAE@XZ,BrushVertex::BrushVertex,PARANOIA,cl_dll/gl_rsurf.cpp,,,MATCHED,100,client_manual.csv,found by the client.dll link comparison (tools/link_diff.py); no progress.csv row before
 client,10060D30,38,?AddPolyToLightmapChain@@YAXPAUmsurface_s@@@Z,AddPolyToLightmapChain,PARANOIA,cl_dll/gl_rsurf.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__gl_rsurf.obj:score0,
 client,10060D60,22,?AddPolyToSkyChain@@YAXPAUmsurface_s@@@Z,AddPolyToSkyChain,UNKNOWN,cl_dll/gl_rsurf.cpp,,,MATCHED,100,,
 client,10060D80,84,?AddPolyToSpecularChain@@YAXPAUmsurface_s@@@Z,AddPolyToSpecularChain,UNKNOWN,cl_dll/gl_rsurf.cpp,,,MATCHED,100,,
@@ -1768,6 +1775,9 @@ client,1006E340,13,?__CmdFunc_ReturnMenu_guess@@YAXXZ,__CmdFunc_ReturnMenu_guess
 client,1006E350,15,?__CmdFunc_StopMP3@@YAXXZ,__CmdFunc_StopMP3,UNKNOWN,,,,MATCHED,100,client_manual.csv,
 client,1006E360,5,?__CmdFunc_TextureTest_guess@@YAXXZ,__CmdFunc_TextureTest_guess,UNKNOWN,,,,MATCHED,100,client_manual.csv,
 client,1006E370,51,?__CmdFunc_To3DMenu_guess@@YAXXZ,__CmdFunc_To3DMenu_guess,UNKNOWN,,,,MATCHED,100,client_manual.csv,
+client,1006E3B0,39,?__CmdFunc_ToUnlockables_guess@@YAXXZ,__CmdFunc_ToUnlockables_guess,COF,cl_dll/hud.cpp,,,MATCHED,100,client_manual.csv,found by the client.dll link comparison (tools/link_diff.py); no progress.csv row before
+client,1006E3E0,15,?__CmdFunc_ToggleServerBrowser@@YAXXZ,__CmdFunc_ToggleServerBrowser,HLSDK,cl_dll/hud.cpp,,,MATCHED,100,client_manual.csv,found by the client.dll link comparison (tools/link_diff.py); no progress.csv row before
+client,1006E3F0,78,?__CmdFunc_Unlockables_guess@@YAXXZ,__CmdFunc_Unlockables_guess,COF,cl_dll/hud.cpp,,,MATCHED,100,client_manual.csv,found by the client.dll link comparison (tools/link_diff.py); no progress.csv row before
 client,1006E440,27,?__MsgFunc_AddNote@@YAHPBDHPAX@Z,__MsgFunc_AddNote,UNKNOWN,cl_dll/hud.cpp,,,MATCHED,100,,
 client,1006E460,32,?__MsgFunc_AddShine@@YAHPBDHPAX@Z,__MsgFunc_AddShine,UNKNOWN,cl_dll/hud.cpp,,,MATCHED,100,,
 client,1006E480,33,?__MsgFunc_AllowSpec@@YAHPBDHPAX@Z,__MsgFunc_AllowSpec,LIB,,,,,,refbytes:paranoia:cl_dll__hud.obj:score2,
@@ -1937,7 +1947,8 @@ client,100748A0,23,?ServerResponse@@YAXPAUnet_response_s@@@Z,ServerResponse,HLSD
 client,100748C0,326,?ServerResponse@CHudServers@@QAEXPAUnet_response_s@@@Z,CHudServers::ServerResponse,UNKNOWN,cl_dll/hud_servers.cpp,,,MATCHED,100,,
 client,10074A10,23,?ServerRules@@YAXH@Z,ServerRules,UNKNOWN,cl_dll/hud_servers.cpp,,,MATCHED,100,,
 client,10074A30,91,?ServerRules@CHudServers@@QAEXH@Z,CHudServers::ServerRules,UNKNOWN,cl_dll/hud_servers.cpp,,,MATCHED,100,,
-client,10074A90,55,?ServersCancel@@YAXXZ,ServersCancel,UNKNOWN,,,,MATCHED,100,client_manual.csv,
+client,10074A90,15,?ServersCancel@@YAXXZ,ServersCancel,UNKNOWN,,,,MATCHED,100,client_manual.csv,
+client,10074AA0,17,?ServersGetCount@@YAHXZ,ServersGetCount,HLSDK,cl_dll/hud_servers.cpp,,,MATCHED,100,client_manual.csv,found by the client.dll link comparison (tools/link_diff.py); no progress.csv row before (the ServersCancel body held it)
 client,10074AC0,27,?ServersGetInfo@@YAPBDH@Z,ServersGetInfo,HLSDK,cl_dll/hud_servers.cpp,,,MATCHED,100,reloc:100A0070,
 client,10074AE0,59,?ServersInit@@YAXXZ,ServersInit,UNKNOWN,cl_dll/hud_servers.cpp,,,MATCHED,100,,
 client,10074B20,29,?ServersIsQuerying@@YAHXZ,ServersIsQuerying,UNKNOWN,,,,MATCHED,100,client_manual.csv,
@@ -2005,6 +2016,7 @@ client,10078EB0,12,?IN_DodgeUp@@YAXXZ,IN_DodgeUp,UNKNOWN,,,,MATCHED,100,client_m
 client,10078EC0,12,?IN_DownDown@@YAXXZ,IN_DownDown,UNKNOWN,,,,MATCHED,100,client_manual.csv,found by tools/gaps.py (no Ghidra function before)
 client,10078ED0,12,?IN_DownUp@@YAXXZ,IN_DownUp,UNKNOWN,,,,MATCHED,100,client_manual.csv,found by tools/gaps.py (no Ghidra function before)
 client,10078EE0,85,?IN_DuckDown@@YAXXZ,IN_DuckDown,UNKNOWN,,,,MATCHED,100,client_manual.csv,
+client,10078F40,12,?IN_DuckUp@@YAXXZ,IN_DuckUp,HLSDK,cl_dll/input.cpp,,,MATCHED,100,client_manual.csv,found by the client.dll link comparison (tools/link_diff.py); no progress.csv row before
 client,10078F50,245,?IN_ForwardDown@@YAXXZ,IN_ForwardDown,UNKNOWN,cl_dll/input.cpp,,,MATCHED,100,client_manual.csv,
 client,10079050,47,?IN_ForwardUp@@YAXXZ,IN_ForwardUp,UNKNOWN,,,,MATCHED,100,client_manual.csv,
 client,10079080,12,?IN_GraphDown@@YAXXZ,IN_GraphDown,UNKNOWN,,,,MATCHED,100,client_manual.csv,found by tools/gaps.py (no Ghidra function before)
@@ -2016,6 +2028,14 @@ client,100791E0,12,?IN_JLookDown@@YAXXZ,IN_JLookDown,UNKNOWN,,,,MATCHED,100,clie
 client,100791F0,12,?IN_JLookUp@@YAXXZ,IN_JLookUp,UNKNOWN,,,,MATCHED,100,client_manual.csv,found by tools/gaps.py (no Ghidra function before)
 client,10079200,119,?IN_JumpDown@@YAXXZ,IN_JumpDown,UNKNOWN,,,,MATCHED,100,client_manual.csv,
 client,10079280,12,?IN_JumpUp@@YAXXZ,IN_JumpUp,UNKNOWN,,,,MATCHED,100,client_manual.csv,found by tools/gaps.py (no Ghidra function before)
+client,10079290,12,?IN_KLookDown@@YAXXZ,IN_KLookDown,HLSDK,cl_dll/input.cpp,,,MATCHED,100,client_manual.csv,found by the client.dll link comparison (tools/link_diff.py); no progress.csv row before
+client,100792A0,12,?IN_KLookUp@@YAXXZ,IN_KLookUp,HLSDK,cl_dll/input.cpp,,,MATCHED,100,client_manual.csv,found by the client.dll link comparison (tools/link_diff.py); no progress.csv row before
+client,100792B0,12,?IN_LookdownDown@@YAXXZ,IN_LookdownDown,HLSDK,cl_dll/input.cpp,,,MATCHED,100,client_manual.csv,found by the client.dll link comparison (tools/link_diff.py); no progress.csv row before
+client,100792C0,12,?IN_LookdownUp@@YAXXZ,IN_LookdownUp,HLSDK,cl_dll/input.cpp,,,MATCHED,100,client_manual.csv,found by the client.dll link comparison (tools/link_diff.py); no progress.csv row before
+client,100792D0,12,?IN_LookupDown@@YAXXZ,IN_LookupDown,HLSDK,cl_dll/input.cpp,,,MATCHED,100,client_manual.csv,found by the client.dll link comparison (tools/link_diff.py); no progress.csv row before
+client,100792E0,12,?IN_LookupUp@@YAXXZ,IN_LookupUp,HLSDK,cl_dll/input.cpp,,,MATCHED,100,client_manual.csv,found by the client.dll link comparison (tools/link_diff.py); no progress.csv row before
+client,100792F0,12,?IN_MLookDown@@YAXXZ,IN_MLookDown,HLSDK,cl_dll/input.cpp,,,MATCHED,100,client_manual.csv,found by the client.dll link comparison (tools/link_diff.py); no progress.csv row before
+client,10079300,50,?IN_MLookUp@@YAXXZ,IN_MLookUp,HLSDK,cl_dll/input.cpp,,,MATCHED,100,client_manual.csv,found by the client.dll link comparison (tools/link_diff.py); no progress.csv row before
 client,10079340,225,?IN_MoveleftDown@@YAXXZ,IN_MoveleftDown,UNKNOWN,cl_dll/input.cpp,,,MATCHED,100,client_manual.csv,
 client,10079430,29,?IN_MoveleftUp@@YAXXZ,IN_MoveleftUp,UNKNOWN,,,,MATCHED,100,client_manual.csv,found by tools/gaps.py (no Ghidra function before)
 client,10079450,225,?IN_MoverightDown@@YAXXZ,IN_MoverightDown,UNKNOWN,cl_dll/input.cpp,,,MATCHED,100,client_manual.csv,
@@ -2031,6 +2051,10 @@ client,100798D0,70,?IN_SpeedDown@@YAXXZ,IN_SpeedDown,UNKNOWN,,,,MATCHED,100,clie
 client,10079920,12,?IN_SpeedUp@@YAXXZ,IN_SpeedUp,UNKNOWN,,,,MATCHED,100,client_manual.csv,found by tools/gaps.py (no Ghidra function before)
 client,10079930,12,?IN_StrafeDown@@YAXXZ,IN_StrafeDown,UNKNOWN,,,,MATCHED,100,client_manual.csv,found by tools/gaps.py (no Ghidra function before)
 client,10079940,12,?IN_StrafeUp@@YAXXZ,IN_StrafeUp,UNKNOWN,,,,MATCHED,100,client_manual.csv,found by tools/gaps.py (no Ghidra function before)
+client,10079950,12,?IN_UpDown@@YAXXZ,IN_UpDown,HLSDK,cl_dll/input.cpp,,,MATCHED,100,client_manual.csv,found by the client.dll link comparison (tools/link_diff.py); no progress.csv row before
+client,10079960,12,?IN_UpUp@@YAXXZ,IN_UpUp,HLSDK,cl_dll/input.cpp,,,MATCHED,100,client_manual.csv,found by the client.dll link comparison (tools/link_diff.py); no progress.csv row before
+client,10079970,211,?IN_UseDown@@YAXXZ,IN_UseDown,HLSDK,cl_dll/input.cpp,,,MATCHED,100,client_manual.csv,found by the client.dll link comparison (tools/link_diff.py); no progress.csv row before
+client,10079A50,12,?IN_UseUp@@YAXXZ,IN_UseUp,HLSDK,cl_dll/input.cpp,,,MATCHED,100,client_manual.csv,found by the client.dll link comparison (tools/link_diff.py); no progress.csv row before
 client,10079A60,2774,?InitInput@@YAXXZ,InitInput,HLSDK,cl_dll/input.cpp,,,MATCHED,100,reloc:1001D4A0,
 client,1007A540,86,?KB_Add@@YAXPBDPAUkbutton_s@@@Z,KB_Add,HLSDK,cl_dll/input.cpp,,,MATCHED,100,reloc:1007A710,
 client,1007A5A0,357,?KB_ConvertString@@YAHPADPAPAD@Z,KB_ConvertString,HLSDK,cl_dll/input.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__input.obj:score7,
@@ -2045,6 +2069,7 @@ client,1007AD10,10,_HUD_Shutdown,HUD_Shutdown,HLSDK,cl_dll/input.cpp,,,MATCHED,1
 client,1007AD20,54,_KB_Find,KB_Find,HLSDK,cl_dll/input.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__input.obj:score2,
 client,1007AD60,61,?Force_CenterView_f@@YAXXZ,Force_CenterView_f,UNKNOWN,cl_dll/inputw32.cpp,,,MATCHED,100,,
 client,1007ADA0,271,?IN_Commands@@YAXXZ,IN_Commands,HLSDK,cl_dll/inputw32.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__inputw32.obj:score2,
+client,1007AEB0,6,?IN_GetMousePos@@YAXPAH0@Z,IN_GetMousePos,HLSDK,cl_dll/inputw32.cpp,,,MATCHED,100,client_manual.csv,found by the client.dll link comparison (tools/link_diff.py); no progress.csv row before
 client,1007AEC0,537,?IN_Init@@YAXXZ,IN_Init,UNKNOWN,cl_dll/inputw32.cpp,,,MATCHED,100,,
 client,1007B0E0,1157,?IN_JoyMove@@YAXMPAUusercmd_s@@@Z,IN_JoyMove,HLSDK,cl_dll/inputw32.cpp,,,MATCHED,100,reloc:1007BAD0,
 client,1007B580,1360,?IN_MouseMove@@YAXMPAUusercmd_s@@@Z,IN_MouseMove,HLSDK,cl_dll/inputw32.cpp,,,MATCHED,100,reloc:1007BAD0,
@@ -2094,7 +2119,8 @@ client,1007D3D0,6,?VidInit@CHudLensflare@@UAEHXZ,,COF,cl_dll/lensflare.cpp,,,MAT
 client,1007D3E0,24,?__MsgFunc_Lensflare@@YAHPBDHPAX@Z,,COF,cl_dll/lensflare.cpp,,,MATCHED,100,,
 client,1007D400,201,?ConLog@@YAXPBDZZ,ConLog,PARANOIA,cl_dll/log.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__log.obj:score13,
 client,1007D4D0,185,?Log@@YAXPBDZZ,Log,PARANOIA,cl_dll/log.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__log.obj:score12,
-client,1007D590,193,?SetupLogging@@YAXXZ,SetupLogging,PARANOIA,cl_dll/log.cpp,,,MATCHED,100,reloc:1001D4A0,
+client,1007D590,159,?SetupLogging@@YAXXZ,SetupLogging,PARANOIA,cl_dll/log.cpp,,,MATCHED,100,reloc:1001D4A0,
+client,1007D630,34,?StartLog@@YAXXZ,StartLog,PARANOIA,cl_dll/log.cpp,,,MATCHED,100,client_manual.csv,found by the client.dll link comparison (tools/link_diff.py); no progress.csv row before (the SetupLogging body held it)
 client,1007D660,324,?Draw@CHudMenu@@UAEHM@Z,CHudMenu::Draw,HLSDK,cl_dll/menu.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__menu.obj:score7,
 client,1007D7B0,47,?Init@CHudMenu@@UAEHXZ,CHudMenu::Init,HLSDK,cl_dll/menu.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__menu.obj:score4,
 client,1007D7E0,19,?InitHUDData@CHudMenu@@UAEXXZ,CHudMenu::InitHUDData,UNKNOWN,cl_dll/menu.cpp,,,MATCHED,100,,
@@ -2401,7 +2427,7 @@ client,100938C0,318,?OrthoQuad@@YAXHHHH@Z,OrthoQuad,PARANOIA,cl_dll/tri.cpp,,,MA
 client,10093A00,439,?OrthoScope@@YAXXZ,OrthoScope,PARANOIA,cl_dll/tri.cpp,,,MATCHED,100,similar:1.00,
 client,10093BC0,183,?RenderFog@@YAXXZ,RenderFog,UNKNOWN,cl_dll/tri.cpp,,,MATCHED,100,,
 client,10093C80,104,?UseTexture@@YAHAAHPAD@Z,UseTexture,SPIRIT,cl_dll/tri.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__tri.obj:score6,
-client,10093CF0,38,_HUD_DrawNormalTriangles,HUD_DrawNormalTriangles,HLSDK,,,,MATCHED,100,client_1.6a_exports.csv,
+client,10093CF0,28,_HUD_DrawNormalTriangles,HUD_DrawNormalTriangles,HLSDK,,,,MATCHED,100,client_1.6a_exports.csv,
 client,10093D10,255,_HUD_DrawTransparentTriangles,HUD_DrawTransparentTriangles,HLSDK,,,,MATCHED,100,client_1.6a_exports.csv,
 client,10093E10,16,??0CObjectsManager@@QAE@XZ,CObjectsManager::CObjectsManager,UNKNOWN,cl_dll/triapiobjects.cpp,,,MATCHED,100,,
 client,10093E20,435,??0CSmokePuff@@QAE@VVector@@0MMMMMMMMMM@Z,CSmokePuff::CSmokePuff,PARANOIA,,,,MATCHED,100,client_1.6a_ghidra_names.csv,

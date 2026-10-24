@@ -78,3 +78,5 @@
 ?xsputn@?$basic_streambuf@DU?$char_traits@D@std@@@std@@MAE_JPBD_J@Z
 ??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 ??1CCoopStats@@QAE@XZ
+??$_Allocate@$07U_Default_allocate_traits@std@@$0A@@std@@YAPAXI@Z
+??$_Allocate_manually_vector_aligned@U_Default_allocate_traits@std@@@std@@YAPAXI@Z
