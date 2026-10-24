@@ -3956,3 +3956,21 @@ va,name,kind,evidence
 100F4F84,_?buf@?1??ReadBitString@BitBuffer@@QAEPADXZ@4PADA,data,HLTV/common/BitBuffer.cpp function static of ReadBitString (gameui.so DWARF buf[8192]); .bss layout like our object
 100F6F84,_?string@?1??ReadStringLine@BitBuffer@@QAEPADXZ@4PADA,data,HLTV/common/BitBuffer.cpp function static of ReadStringLine (gameui.so DWARF string[2048]); .bss layout like our object
 100C47D8,??_7BitBuffer@@6B@,data,HLTV/common/BitBuffer.cpp vtable: stored by every BitBuffer constructor (RTTI BitBuffer); the object matches at 100%
+10044EF0,??0CCvarSlider@@QAE@PAVPanel@vgui2@@PBD1MM1_N@Z,func,GameUI/CvarSlider.cpp: same position and size as in our compiled object; linux: _ZN11CCvarSliderC1EPN5vgui25PanelEPKcS4_ffS4_b
+10044FE0,??1CCvarSlider@@UAE@XZ,func,GameUI/CvarSlider.cpp: same position and size as in our compiled object; linux: _ZN11CCvarSliderD1Ev
+10044FFC,?Paint@CCvarSlider@@UAEXXZ,func,GameUI/CvarSlider.cpp: same position and size as in our compiled object; linux: _ZN11CCvarSlider5PaintEv
+10045090,?ApplyChanges@CCvarSlider@@QAEXXZ,func,GameUI/CvarSlider.cpp: same position and size as in our compiled object; linux: _ZN11CCvarSlider12ApplyChangesEv
+1004511E,?GetSliderValue@CCvarSlider@@QAEMXZ,func,GameUI/CvarSlider.cpp: same position and size as in our compiled object; linux: _ZN11CCvarSlider14GetSliderValueEv
+1004515F,?SetSliderValue@CCvarSlider@@QAEXM@Z,func,GameUI/CvarSlider.cpp: same position and size as in our compiled object; linux: _ZN11CCvarSlider14SetSliderValueEf
+100451D3,?Reset@CCvarSlider@@QAEXXZ,func,GameUI/CvarSlider.cpp: same position and size as in our compiled object; linux: _ZN11CCvarSlider5ResetEv
+10045264,?HasBeenModified@CCvarSlider@@QAE_NXZ,func,GameUI/CvarSlider.cpp: same position and size as in our compiled object; linux: _ZN11CCvarSlider15HasBeenModifiedEv
+1004529B,?OnSliderMoved@CCvarSlider@@EAEXXZ,func,GameUI/CvarSlider.cpp: same position and size as in our compiled object; linux: _ZN11CCvarSlider13OnSliderMovedEv
+10045350,??_GCCvarSlider@@UAEPAXI@Z,func,GameUI/CvarSlider.cpp: same position and size as in our compiled object
+10045380,??0CCvarSlider_RegisterMap@CCvarSlider@@QAE@XZ,func,GameUI/CvarSlider.cpp: same position and size as in our compiled object
+100453A0,?ChainToMap@CCvarSlider@@SAXXZ,func,GameUI/CvarSlider.cpp: same position and size as in our compiled object
+10045410,?GetMessageMap@CCvarSlider@@UAEPAUPanelMessageMap@vgui2@@XZ,func,GameUI/CvarSlider.cpp: same position and size as in our compiled object
+10045450,?GetPanelClassName@CCvarSlider@@SAPBDXZ,func,GameUI/CvarSlider.cpp: same position and size as in our compiled object
+10045460,?GetPanelBaseClassName@CCvarSlider@@SAPBDXZ,func,GameUI/CvarSlider.cpp: same position and size as in our compiled object
+10045470,??0PanelMessageFunc_OnSliderMoved@CCvarSlider@@QAE@XZ,func,GameUI/CvarSlider.cpp: same position and size as in our compiled object
+10045490,?InitVar@PanelMessageFunc_OnSliderMoved@CCvarSlider@@SAXXZ,func,GameUI/CvarSlider.cpp: same position and size as in our compiled object
+10045500,?AddToMap@CCvarSlider@@SAXPBDP8Panel@vgui2@@AEXXZHH0H0@Z,func,GameUI/CvarSlider.cpp: same position and size as in our compiled object
