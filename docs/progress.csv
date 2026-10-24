@@ -9087,36 +9087,36 @@ gameui,100392F0,19,,,UNKNOWN,GameUI/RunGameEngine.cpp,,,TODO,,,
 gameui,10039310,46,,,UNKNOWN,GameUI/RunGameEngine.cpp,,,TODO,,,
 gameui,10039340,31,,FID_conflict:IConnectionPoint,ENGINE,GameUI/RunGameEngine.cpp,,,TODO,,ghidra,
 gameui,10039360,46,,,UNKNOWN,GameUI/RunGameEngine.cpp,,,TODO,,,
-gameui,10039390,116,,,UNKNOWN,GameUI/ScriptObject.cpp,,,TODO,,,linux: _Z23StripFloatTrailingZerosPc
-gameui,10039404,104,,,UNKNOWN,GameUI/ScriptObject.cpp,,,TODO,,,linux: _ZN11mpcontrol_tC1EPN5vgui25PanelEPKc
-gameui,1003946C,169,,,UNKNOWN,GameUI/ScriptObject.cpp,,,TODO,,,linux: _ZN11mpcontrol_t13OnSizeChangedEii
-gameui,10039515,71,,,UNKNOWN,GameUI/ScriptObject.cpp,,,TODO,,,linux: _ZN15CScriptListItemC1Ev
-gameui,1003955C,94,,,UNKNOWN,GameUI/ScriptObject.cpp,,,TODO,,,linux: _ZN15CScriptListItemC1EPKcS1_
-gameui,100395BA,77,,,UNKNOWN,GameUI/ScriptObject.cpp,,,TODO,,,linux: _ZN13CScriptObjectC1Ev
-gameui,10039607,99,,,UNKNOWN,GameUI/ScriptObject.cpp,,,TODO,,,linux: _ZN13CScriptObjectD1Ev
-gameui,1003966A,112,,,UNKNOWN,GameUI/ScriptObject.cpp,,,TODO,,,linux: _ZN13CScriptObject11SetCurValueEPKc
-gameui,100396DA,119,,,UNKNOWN,GameUI/ScriptObject.cpp,,,TODO,,,linux: _ZN13CScriptObject7AddItemEP15CScriptListItem
-gameui,10039751,164,,,UNKNOWN,GameUI/ScriptObject.cpp,,,TODO,,,linux: _Z27UTIL_StripInvalidCharactersPc
-gameui,100397F5,79,,,UNKNOWN,GameUI/ScriptObject.cpp,,,TODO,,,linux: _Z11FixupStringPc
-gameui,10039844,919,,CScriptObject::WriteToScriptFile,ENGINE,GameUI/ScriptObject.cpp,,,TODO,,linux_symbols:string:0.619,linux: _ZN13CScriptObject17WriteToScriptFileEPv
-gameui,10039BEB,614,,CScriptObject::WriteToFile,ENGINE,GameUI/ScriptObject.cpp,,,TODO,,linux_symbols:string:0.618,linux: _ZN13CScriptObject11WriteToFileEPv
-gameui,10039E61,759,,CScriptObject::WriteToConfig,ENGINE,GameUI/ScriptObject.cpp,,,TODO,,linux_symbols:string:0.43,linux: _ZN13CScriptObject13WriteToConfigEv
-gameui,1003A168,94,,,UNKNOWN,GameUI/ScriptObject.cpp,,,TODO,,,linux: _ZN13CScriptObject7GetTypeEPc
-gameui,1003A1C6,1956,,CScriptObject::ReadFromBuffer,ENGINE,GameUI/ScriptObject.cpp,,,TODO,,linux_symbols:string:0.613,linux: _ZN13CScriptObject14ReadFromBufferEPPc
-gameui,1003A97A,44,,ATL::CRegKey::CRegKey,ENGINE,GameUI/ScriptObject.cpp,,,TODO,,ghidra,linux: _ZN12CDescriptionC1EP15CPanelListPanel
-gameui,1003A9A6,171,,,UNKNOWN,GameUI/ScriptObject.cpp,,,TODO,,,linux: _ZN12CDescriptionD2Ev
-gameui,1003AA51,113,,,UNKNOWN,GameUI/ScriptObject.cpp,,,TODO,,,linux: _ZN12CDescription9AddObjectEP13CScriptObject
-gameui,1003AAC2,910,,CDescription::ReadFromBuffer,ENGINE,GameUI/ScriptObject.cpp,,,TODO,,linux_symbols:string:0.755,linux: _ZN12CDescription14ReadFromBufferEPPc
-gameui,1003AE50,200,,,UNKNOWN,GameUI/ScriptObject.cpp,,,TODO,,,linux: _ZN12CDescription12InitFromFileEPc
-gameui,1003AF18,71,,CDescription::WriteToFile,ENGINE,GameUI/ScriptObject.cpp,,,TODO,,linux_symbols:caller:0.778,linux: _ZN12CDescription11WriteToFileEPv
-gameui,1003AF5F,50,,CDescription::WriteToConfig,ENGINE,GameUI/ScriptObject.cpp,,,TODO,,linux_symbols:caller:0.778,linux: _ZN12CDescription13WriteToConfigEv
-gameui,1003AF91,103,,CDescription::WriteToScriptFile,ENGINE,GameUI/ScriptObject.cpp,,,TODO,,linux_symbols:caller:0.733,linux: _ZN12CDescription17WriteToScriptFileEPv
-gameui,1003AFF8,357,,,UNKNOWN,GameUI/ScriptObject.cpp,,,TODO,,,linux: _ZN12CDescription21TransferCurrentValuesEPKc
-gameui,1003B15D,31,,,UNKNOWN,GameUI/ScriptObject.cpp,,,TODO,,,linux: _ZN12CDescription14setDescriptionEPKc
-gameui,1003B17C,31,,,UNKNOWN,GameUI/ScriptObject.cpp,,,TODO,,,linux: _ZN12CDescription7setHintEPKc
-gameui,1003B1A0,46,,,UNKNOWN,GameUI/ScriptObject.cpp,,,TODO,,,
-gameui,1003B1D0,19,,,UNKNOWN,GameUI/ScriptObject.cpp,,,TODO,,,
-gameui,1003B1F0,46,,,UNKNOWN,GameUI/ScriptObject.cpp,,,TODO,,,
+gameui,10039390,116,?StripFloatTrailingZeros@@YAXPAD@Z,void __cdecl StripFloatTrailingZeros(char *),UNKNOWN,GameUI/ScriptObject.cpp,,,MATCHED,100,gameui_manual.csv,linux: _Z23StripFloatTrailingZerosPc
+gameui,10039404,104,??0mpcontrol_t@@QAE@PAVPanel@vgui2@@PBD@Z,"public: __thiscall mpcontrol_t::mpcontrol_t(class vgui2::Panel *,char const *)",UNKNOWN,GameUI/ScriptObject.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN11mpcontrol_tC1EPN5vgui25PanelEPKc
+gameui,1003946C,169,?OnSizeChanged@mpcontrol_t@@UAEXHH@Z,"public: virtual void __thiscall mpcontrol_t::OnSizeChanged(int,int)",UNKNOWN,GameUI/ScriptObject.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN11mpcontrol_t13OnSizeChangedEii
+gameui,10039515,71,??0CScriptListItem@@QAE@XZ,public: __thiscall CScriptListItem::CScriptListItem(void),UNKNOWN,GameUI/ScriptObject.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN15CScriptListItemC1Ev
+gameui,1003955C,94,??0CScriptListItem@@QAE@PBD0@Z,"public: __thiscall CScriptListItem::CScriptListItem(char const *,char const *)",UNKNOWN,GameUI/ScriptObject.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN15CScriptListItemC1EPKcS1_
+gameui,100395BA,77,??0CScriptObject@@QAE@XZ,public: __thiscall CScriptObject::CScriptObject(void),UNKNOWN,GameUI/ScriptObject.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN13CScriptObjectC1Ev
+gameui,10039607,99,??1CScriptObject@@UAE@XZ,public: virtual __thiscall CScriptObject::~CScriptObject(void),UNKNOWN,GameUI/ScriptObject.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN13CScriptObjectD1Ev
+gameui,1003966A,112,?SetCurValue@CScriptObject@@QAEXPBD@Z,public: void __thiscall CScriptObject::SetCurValue(char const *),UNKNOWN,GameUI/ScriptObject.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN13CScriptObject11SetCurValueEPKc
+gameui,100396DA,119,?AddItem@CScriptObject@@QAEXPAVCScriptListItem@@@Z,public: void __thiscall CScriptObject::AddItem(class CScriptListItem *),UNKNOWN,GameUI/ScriptObject.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN13CScriptObject7AddItemEP15CScriptListItem
+gameui,10039751,164,?UTIL_StripInvalidCharacters@@YAXPAD@Z,void __cdecl UTIL_StripInvalidCharacters(char *),UNKNOWN,GameUI/ScriptObject.cpp,,,MATCHED,100,gameui_manual.csv,linux: _Z27UTIL_StripInvalidCharactersPc
+gameui,100397F5,79,?FixupString@@YAXPAD@Z,void __cdecl FixupString(char *),UNKNOWN,GameUI/ScriptObject.cpp,,,MATCHED,100,gameui_manual.csv,linux: _Z11FixupStringPc
+gameui,10039844,919,?WriteToScriptFile@CScriptObject@@QAEXPAX@Z,public: void __thiscall CScriptObject::WriteToScriptFile(void *),ENGINE,GameUI/ScriptObject.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN13CScriptObject17WriteToScriptFileEPv
+gameui,10039BEB,614,?WriteToFile@CScriptObject@@QAEXPAX@Z,public: void __thiscall CScriptObject::WriteToFile(void *),ENGINE,GameUI/ScriptObject.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN13CScriptObject11WriteToFileEPv
+gameui,10039E61,759,?WriteToConfig@CScriptObject@@QAEXXZ,public: void __thiscall CScriptObject::WriteToConfig(void),ENGINE,GameUI/ScriptObject.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN13CScriptObject13WriteToConfigEv
+gameui,1003A168,94,?GetType@CScriptObject@@QAE?AW4objtype_t@@PAD@Z,public: enum objtype_t __thiscall CScriptObject::GetType(char *),UNKNOWN,GameUI/ScriptObject.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN13CScriptObject7GetTypeEPc
+gameui,1003A1C6,1956,?ReadFromBuffer@CScriptObject@@QAE_NPAPAD@Z,public: bool __thiscall CScriptObject::ReadFromBuffer(char * *),ENGINE,GameUI/ScriptObject.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN13CScriptObject14ReadFromBufferEPPc
+gameui,1003A97A,44,??0CDescription@@QAE@PAUCPanelListPanel@@@Z,public: __thiscall CDescription::CDescription(struct CPanelListPanel *),ENGINE,GameUI/ScriptObject.cpp,,,MATCHED,100,ghidra,linux: _ZN12CDescriptionC1EP15CPanelListPanel
+gameui,1003A9A6,171,??1CDescription@@QAE@XZ,public: __thiscall CDescription::~CDescription(void),UNKNOWN,GameUI/ScriptObject.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN12CDescriptionD2Ev
+gameui,1003AA51,113,?AddObject@CDescription@@QAEXPAVCScriptObject@@@Z,public: void __thiscall CDescription::AddObject(class CScriptObject *),UNKNOWN,GameUI/ScriptObject.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN12CDescription9AddObjectEP13CScriptObject
+gameui,1003AAC2,910,?ReadFromBuffer@CDescription@@QAE_NPAPAD@Z,public: bool __thiscall CDescription::ReadFromBuffer(char * *),ENGINE,GameUI/ScriptObject.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN12CDescription14ReadFromBufferEPPc
+gameui,1003AE50,200,?InitFromFile@CDescription@@UAE_NPAD@Z,public: virtual bool __thiscall CDescription::InitFromFile(char *),UNKNOWN,GameUI/ScriptObject.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN12CDescription12InitFromFileEPc
+gameui,1003AF18,71,?WriteToFile@CDescription@@QAEXPAX@Z,public: void __thiscall CDescription::WriteToFile(void *),ENGINE,GameUI/ScriptObject.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN12CDescription11WriteToFileEPv
+gameui,1003AF5F,50,?WriteToConfig@CDescription@@QAEXXZ,public: void __thiscall CDescription::WriteToConfig(void),ENGINE,GameUI/ScriptObject.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN12CDescription13WriteToConfigEv
+gameui,1003AF91,103,?WriteToScriptFile@CDescription@@QAEXPAX@Z,public: void __thiscall CDescription::WriteToScriptFile(void *),ENGINE,GameUI/ScriptObject.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN12CDescription17WriteToScriptFileEPv
+gameui,1003AFF8,357,?TransferCurrentValues@CDescription@@QAEXPBD@Z,public: void __thiscall CDescription::TransferCurrentValues(char const *),UNKNOWN,GameUI/ScriptObject.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN12CDescription21TransferCurrentValuesEPKc
+gameui,1003B15D,31,?setDescription@CDescription@@QAEXPBD@Z,public: void __thiscall CDescription::setDescription(char const *),UNKNOWN,GameUI/ScriptObject.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN12CDescription14setDescriptionEPKc
+gameui,1003B17C,31,?setHint@CDescription@@QAEXPBD@Z,public: void __thiscall CDescription::setHint(char const *),UNKNOWN,GameUI/ScriptObject.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN12CDescription7setHintEPKc
+gameui,1003B1A0,46,??_Gmpcontrol_t@@UAEPAXI@Z,public: virtual void * __thiscall mpcontrol_t::`scalar deleting destructor'(unsigned int),UNKNOWN,GameUI/ScriptObject.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1003B1D0,19,??1mpcontrol_t@@UAE@XZ,public: virtual __thiscall mpcontrol_t::~mpcontrol_t(void),UNKNOWN,GameUI/ScriptObject.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1003B1F0,46,??_GCScriptObject@@UAEPAXI@Z,public: virtual void * __thiscall CScriptObject::`scalar deleting destructor'(unsigned int),UNKNOWN,GameUI/ScriptObject.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,1003B220,94,,,UNKNOWN,GameUI/Socket_guess.cpp,,,TODO,,,
 gameui,1003B27E,129,,,UNKNOWN,GameUI/Socket_guess.cpp,,,TODO,,,
 gameui,1003B2FF,246,,,UNKNOWN,GameUI/Socket_guess.cpp,,,TODO,,,

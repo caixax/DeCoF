@@ -4324,3 +4324,38 @@ va,name,kind,evidence
 10058A20,?InitVar@PanelMessageFunc_OnCheckButtonChecked@COptionsSubVoice@@SAXXZ,func,GameUI/OptionsSubVoice.cpp: same position and size as in our compiled object
 10058A90,??0PanelMessageFunc_OnControlModified@COptionsSubVoice@@QAE@XZ,func,GameUI/OptionsSubVoice.cpp: same position and size as in our compiled object
 10058AB0,?InitVar@PanelMessageFunc_OnControlModified@COptionsSubVoice@@SAXXZ,func,GameUI/OptionsSubVoice.cpp: same position and size as in our compiled object
+10039390,?StripFloatTrailingZeros@@YAXPAD@Z,func,GameUI/ScriptObject.cpp: same position as in our compiled object (gameui.so DWARF names and line order)
+10039404,??0mpcontrol_t@@QAE@PAVPanel@vgui2@@PBD@Z,func,GameUI/ScriptObject.cpp: same position as in our compiled object (gameui.so DWARF names and line order)
+1003946C,?OnSizeChanged@mpcontrol_t@@UAEXHH@Z,func,GameUI/ScriptObject.cpp: same position as in our compiled object (gameui.so DWARF names and line order)
+10039515,??0CScriptListItem@@QAE@XZ,func,GameUI/ScriptObject.cpp: same position as in our compiled object (gameui.so DWARF names and line order)
+1003955C,??0CScriptListItem@@QAE@PBD0@Z,func,GameUI/ScriptObject.cpp: same position as in our compiled object (gameui.so DWARF names and line order)
+100395BA,??0CScriptObject@@QAE@XZ,func,GameUI/ScriptObject.cpp: same position as in our compiled object (gameui.so DWARF names and line order)
+10039607,??1CScriptObject@@UAE@XZ,func,GameUI/ScriptObject.cpp: same position as in our compiled object (gameui.so DWARF names and line order)
+1003966A,?SetCurValue@CScriptObject@@QAEXPBD@Z,func,GameUI/ScriptObject.cpp: same position as in our compiled object (gameui.so DWARF names and line order)
+100396DA,?AddItem@CScriptObject@@QAEXPAVCScriptListItem@@@Z,func,GameUI/ScriptObject.cpp: same position as in our compiled object (gameui.so DWARF names and line order)
+10039751,?UTIL_StripInvalidCharacters@@YAXPAD@Z,func,GameUI/ScriptObject.cpp: same position as in our compiled object (gameui.so DWARF names and line order)
+100397F5,?FixupString@@YAXPAD@Z,func,GameUI/ScriptObject.cpp: same position as in our compiled object (gameui.so DWARF names and line order)
+10039844,?WriteToScriptFile@CScriptObject@@QAEXPAX@Z,func,GameUI/ScriptObject.cpp: same position as in our compiled object (gameui.so DWARF names and line order)
+10039BEB,?WriteToFile@CScriptObject@@QAEXPAX@Z,func,GameUI/ScriptObject.cpp: same position as in our compiled object (gameui.so DWARF names and line order)
+10039E61,?WriteToConfig@CScriptObject@@QAEXXZ,func,GameUI/ScriptObject.cpp: same position as in our compiled object (gameui.so DWARF names and line order)
+1003A168,?GetType@CScriptObject@@QAE?AW4objtype_t@@PAD@Z,func,GameUI/ScriptObject.cpp: same position as in our compiled object (gameui.so DWARF names and line order)
+1003A1C6,?ReadFromBuffer@CScriptObject@@QAE_NPAPAD@Z,func,GameUI/ScriptObject.cpp: same position as in our compiled object (gameui.so DWARF names and line order)
+1003A97A,??0CDescription@@QAE@PAUCPanelListPanel@@@Z,func,GameUI/ScriptObject.cpp: same position as in our compiled object (gameui.so DWARF names and line order)
+1003A9A6,??1CDescription@@QAE@XZ,func,GameUI/ScriptObject.cpp: same position as in our compiled object (gameui.so DWARF names and line order)
+1003AA51,?AddObject@CDescription@@QAEXPAVCScriptObject@@@Z,func,GameUI/ScriptObject.cpp: same position as in our compiled object (gameui.so DWARF names and line order)
+1003AAC2,?ReadFromBuffer@CDescription@@QAE_NPAPAD@Z,func,GameUI/ScriptObject.cpp: same position as in our compiled object (gameui.so DWARF names and line order)
+1003AE50,?InitFromFile@CDescription@@UAE_NPAD@Z,func,GameUI/ScriptObject.cpp: same position as in our compiled object (gameui.so DWARF names and line order)
+1003AF18,?WriteToFile@CDescription@@QAEXPAX@Z,func,GameUI/ScriptObject.cpp: same position as in our compiled object (gameui.so DWARF names and line order)
+1003AF5F,?WriteToConfig@CDescription@@QAEXXZ,func,GameUI/ScriptObject.cpp: same position as in our compiled object (gameui.so DWARF names and line order)
+1003AF91,?WriteToScriptFile@CDescription@@QAEXPAX@Z,func,GameUI/ScriptObject.cpp: same position as in our compiled object (gameui.so DWARF names and line order)
+1003AFF8,?TransferCurrentValues@CDescription@@QAEXPBD@Z,func,GameUI/ScriptObject.cpp: same position as in our compiled object (gameui.so DWARF names and line order)
+1003B15D,?setDescription@CDescription@@QAEXPBD@Z,func,GameUI/ScriptObject.cpp: same position as in our compiled object (gameui.so DWARF names and line order)
+1003B17C,?setHint@CDescription@@QAEXPBD@Z,func,GameUI/ScriptObject.cpp: same position as in our compiled object (gameui.so DWARF names and line order)
+1003B1A0,??_Gmpcontrol_t@@UAEPAXI@Z,func,GameUI/ScriptObject.cpp: scalar deleting destructor COMDAT after the object (calls the implicit ~mpcontrol_t); same bytes as in our compiled object
+1003B1D0,??1mpcontrol_t@@UAE@XZ,func,GameUI/ScriptObject.cpp: implicit mpcontrol_t destructor COMDAT (calls ~Panel); same bytes as in our compiled object
+1003B1F0,??_GCScriptObject@@UAEPAXI@Z,func,GameUI/ScriptObject.cpp: scalar deleting destructor COMDAT after the object (calls ~CScriptObject); same bytes as in our compiled object
+100E5038,?objtypes@@3PAUobjtypedesc_t@@A,data,GameUI/ScriptObject.cpp global (gameui.so DWARF objtypes[4]): BOOL NUMBER LIST STRING descriptors searched by CScriptObject::GetType
+100FE48C,_token,data,GameUI/ScriptObject.cpp static (gameui.so DWARF token[1024]): COM_ParseFile output buffer of the ReadFromBuffer functions
+100C8A60,??_7mpcontrol_t@@6B@,data,GameUI/ScriptObject.cpp vtable stored by the mpcontrol_t constructor (RTTI mpcontrol_t); the object matches at 100%
+100C8C7C,??_7CScriptObject@@6B@,data,GameUI/ScriptObject.cpp vtable stored by the CScriptObject constructor and destructor (RTTI CScriptObject); the object matches at 100%
+100C8EAC,??_7CDescription@@6B@,data,GameUI/ScriptObject.cpp vtable stored by the CDescription constructor and destructor (RTTI CDescription); the object matches at 100%
