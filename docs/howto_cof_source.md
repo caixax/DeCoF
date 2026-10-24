@@ -375,3 +375,10 @@ The 1.55 hl.dll is an unoptimized debug build of nearly the same source. `disasm
 - A 100% function can still point at the wrong literal: tools/relocaudit.py caught `"Resource\\..."` versus `"Resource/..."` paths (CDKeyEntryDialog) and `vgui2::` versus `vgui::` base class names in DECLARE_CLASS_SIMPLE (CTaskFrame, CCreateMultiplayerGameServerPage, TestScriptController).
 - Winsock calls go through import thunks (VC6 winsock.h has no dllimport); name the thunks in gameui_manual.csv (`_htons@4`, `_recvfrom@24`, ...). `#define FD_SETSIZE 1024` precedes windows.h in Socket_guess.cpp. GameUI has no engine heap: src/gameui/mem.h maps the shared common/ObjectList.cpp onto the HLTV Mem_ZeroMalloc and the CRT free.
 - In this shell, `/D` and `/I` arguments passed to a Python wrapper are rewritten as MSYS paths (use `-D`, `-I`), and heredocs collapse a double backslash to a single one (write sources with backslashes through the editor); Python text-mode writes produce CRLF (open files in binary mode to keep LF).
+
+## Patterns from CareerGameTasks.cpp and the GameUI leftovers
+
+- VC6 <string.h> has C++ inline overloads (`wcsstr( wchar_t *, const wchar_t * )`, `wcschr`, `wcsrchr`, `wcspbrk`): a call with a non-const first argument goes through a 21-byte COMDAT `?wcsstr@@YAPAGPAGPBG@Z` that calls `_wcsstr`, emitted in the tail of the first object that uses it.
+- `searchStr[2] = (char)stringNum + '0';` gives `movsx eax, byte [stringNum]; add eax, 0x30`; without the cast it is a plain dword load.
+- A template COMDAT that exists twice with identical bytes has two names: the linker keeps one copy per name, in the first object of the link order that defines it. The CGameUI handle at +0x140 is therefore not `DHANDLE<Frame>` (DemoPlayerDialog.cpp comes first) but the `DHANDLE<CCDKeyEntryDialog>` of the emptied ValidateCDKey; a member that is never read can still be typed by such evidence.
+- Resource paths of LoadControlSettings use either slash (`"Resource/OptionsSubKeyboard.res"`): check each one with relocaudit, objdiff counts the function at 100% either way.
