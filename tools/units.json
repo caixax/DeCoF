@@ -4058,6 +4058,11 @@
           "name": "GameUI/OptionsSubMouse",
           "source": "src/gameui/OptionsSubMouse.cpp",
           "functions_file": "tools/units/gameui_GameUI_OptionsSubMouse.txt"
+        },
+        {
+          "name": "GameUI/DottedLabel",
+          "source": "src/gameui/DottedLabel.cpp",
+          "functions_file": "tools/units/gameui_GameUI_DottedLabel.txt"
         }
       ]
     }

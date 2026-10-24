@@ -8748,10 +8748,10 @@ gameui,100301D5,13,?FromString@DirectorCmd@@QAEXPAD@Z,public: void __thiscall Di
 gameui,100301E2,42,?Clear@DirectorCmd@@QAEXXZ,public: void __thiscall DirectorCmd::Clear(void),UNKNOWN,HLTV/common/DirectorCmd.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN11DirectorCmd5ClearEv
 gameui,1003020C,37,?Resize@DirectorCmd@@QAEXH@Z,public: void __thiscall DirectorCmd::Resize(int),UNKNOWN,HLTV/common/DirectorCmd.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN11DirectorCmd6ResizeEi
 gameui,10030240,46,??_GDirectorCmd@@UAEPAXI@Z,public: virtual void * __thiscall DirectorCmd::`scalar deleting destructor'(unsigned int),UNKNOWN,HLTV/common/DirectorCmd.cpp,,,MATCHED,100,gameui_manual.csv,
-gameui,10030270,244,,,UNKNOWN,GameUI/DottedLabel.cpp,,,TODO,,,linux: _ZN14CDottedBgLabelC1EPN5vgui25PanelEPKcS4_iii
-gameui,10030364,592,,,UNKNOWN,GameUI/DottedLabel.cpp,,,TODO,,,linux: _ZN14CDottedBgLabel15PaintBackgroundEv
-gameui,100305C0,46,,,UNKNOWN,GameUI/DottedLabel.cpp,,,TODO,,,
-gameui,100305F0,19,,,UNKNOWN,GameUI/DottedLabel.cpp,,,TODO,,,
+gameui,10030270,244,??0CDottedBgLabel@@QAE@PAVPanel@vgui2@@PBD1HHH@Z,"public: __thiscall CDottedBgLabel::CDottedBgLabel(class vgui2::Panel *,char const *,char const *,int,int,int)",UNKNOWN,GameUI/DottedLabel.cpp,,,MATCHED,100,,linux: _ZN14CDottedBgLabelC1EPN5vgui25PanelEPKcS4_iii
+gameui,10030364,592,?PaintBackground@CDottedBgLabel@@UAEXXZ,public: virtual void __thiscall CDottedBgLabel::PaintBackground(void),UNKNOWN,GameUI/DottedLabel.cpp,,,MATCHED,100,,linux: _ZN14CDottedBgLabel15PaintBackgroundEv
+gameui,100305C0,46,??_GCDottedBgLabel@@UAEPAXI@Z,public: virtual void * __thiscall CDottedBgLabel::`scalar deleting destructor'(unsigned int),UNKNOWN,GameUI/DottedLabel.cpp,,,MATCHED,100,,
+gameui,100305F0,19,??1CDottedBgLabel@@UAE@XZ,public: virtual __thiscall CDottedBgLabel::~CDottedBgLabel(void),UNKNOWN,GameUI/DottedLabel.cpp,,,MATCHED,100,,
 gameui,10030610,15,,,UNKNOWN,GameUI/GameConsole.cpp,,,TODO,,,
 gameui,1003061F,15,,,UNKNOWN,GameUI/GameConsole.cpp,,,TODO,,,
 gameui,1003062E,18,,,UNKNOWN,GameUI/GameConsole.cpp,,,TODO,,,

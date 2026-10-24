@@ -4920,3 +4920,7 @@ va,name,kind,evidence
 100539B0,?AddToMap@COptionsSubMouse@@SAXPBDP8Panel@vgui2@@AEXXZHH0H0@Z,func,GameUI/OptionsSubMouse.cpp: same position and size as in our compiled object
 10053A30,??0PanelMessageFunc_OnTextChanged@COptionsSubMouse@@QAE@XZ,func,GameUI/OptionsSubMouse.cpp: same position and size as in our compiled object
 10053A50,?InitVar@PanelMessageFunc_OnTextChanged@COptionsSubMouse@@SAXXZ,func,GameUI/OptionsSubMouse.cpp: same position and size as in our compiled object
+10030270,??0CDottedBgLabel@@QAE@PAVPanel@vgui2@@PBD1HHH@Z,func,GameUI/DottedLabel.cpp: same position and size as in our compiled object; linux: _ZN14CDottedBgLabelC1EPN5vgui25PanelEPKcS4_iii
+10030364,?PaintBackground@CDottedBgLabel@@UAEXXZ,func,GameUI/DottedLabel.cpp: same position and size as in our compiled object; linux: _ZN14CDottedBgLabel15PaintBackgroundEv
+100305C0,??_GCDottedBgLabel@@UAEPAXI@Z,func,GameUI/DottedLabel.cpp: same position and size as in our compiled object
+100305F0,??1CDottedBgLabel@@UAE@XZ,func,"GameUI/DottedLabel.cpp: compiler-generated destructor COMDAT (no vptr store), same position and size as in our compiled object"
