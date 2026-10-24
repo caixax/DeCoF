@@ -9970,50 +9970,50 @@ gameui,10053940,110,,,UNKNOWN,GameUI/OptionsSubMouse.cpp,,,TODO,,,
 gameui,100539B0,120,,,UNKNOWN,GameUI/OptionsSubMouse.cpp,,,TODO,,,
 gameui,10053A30,19,,,UNKNOWN,GameUI/OptionsSubMouse.cpp,,,TODO,,,
 gameui,10053A50,110,,,UNKNOWN,GameUI/OptionsSubMouse.cpp,,,TODO,,,
-gameui,10053AC0,72,,,UNKNOWN,GameUI/OptionsSubMultiplayer.cpp,,,TODO,,,
-gameui,10053B08,220,,,UNKNOWN,GameUI/OptionsSubMultiplayer.cpp,,,TODO,,,
-gameui,10053BE4,841,,,UNKNOWN,GameUI/OptionsSubMultiplayer.cpp,,,TODO,,,linux: _ZN19CrosshairImagePanel5PaintEv
-gameui,10053F2D,3031,,COptionsSubMultiplayer::COptionsSubMultiplayer,ENGINE,GameUI/OptionsSubMultiplayer.cpp,,,TODO,,linux_symbols:string:0.389,linux: _ZN22COptionsSubMultiplayerC2EPN5vgui25PanelE
-gameui,10054B04,28,,,UNKNOWN,GameUI/OptionsSubMultiplayer.cpp,,,TODO,,,
-gameui,10054B20,161,,COptionsSubMultiplayer::OnCommand,ENGINE,GameUI/OptionsSubMultiplayer.cpp,,,TODO,,linux_symbols:caller:0.37,linux: _ZN22COptionsSubMultiplayer9OnCommandEPKc
-gameui,10054BC1,423,,COptionsSubMultiplayer::InitLogoList,ENGINE,GameUI/OptionsSubMultiplayer.cpp,,,TODO,,linux_symbols:string:0.312,linux: _ZN22COptionsSubMultiplayer12InitLogoListEP23CLabeledCommandComboBox
-gameui,10054D68,406,,COptionsSubMultiplayer::InitModelList,ENGINE,GameUI/OptionsSubMultiplayer.cpp,,,TODO,,linux_symbols:string:0.469,linux: _ZN22COptionsSubMultiplayer13InitModelListEP23CLabeledCommandComboBox
-gameui,10054EFE,564,,COptionsSubMultiplayer::InitCrosshairColorEntries,ENGINE,GameUI/OptionsSubMultiplayer.cpp,,,TODO,,linux_symbols:caller:0.424,linux: _ZN22COptionsSubMultiplayer25InitCrosshairColorEntriesEv
-gameui,10055132,335,,COptionsSubMultiplayer::RedrawCrosshairImage,ENGINE,GameUI/OptionsSubMultiplayer.cpp,,,TODO,,linux_symbols:callseq:0.775,linux: _ZN22COptionsSubMultiplayer20RedrawCrosshairImageEv
-gameui,10055281,297,,COptionsSubMultiplayer::InitCrosshairSizeList,ENGINE,GameUI/OptionsSubMultiplayer.cpp,,,TODO,,linux_symbols:string:0.562,linux: _ZN22COptionsSubMultiplayer21InitCrosshairSizeListEP23CLabeledCommandComboBox
-gameui,100553AA,464,,COptionsSubMultiplayer::RemapLogo,ENGINE,GameUI/OptionsSubMultiplayer.cpp,,,TODO,,linux_symbols:string:0.314,linux: _ZN22COptionsSubMultiplayer9RemapLogoEv
-gameui,1005557A,179,,COptionsSubMultiplayer::RemapModel,ENGINE,GameUI/OptionsSubMultiplayer.cpp,,,TODO,,linux_symbols:string:0.893,linux: _ZN22COptionsSubMultiplayer10RemapModelEv
-gameui,1005562D,53,,COptionsSubMultiplayer::OnTextChanged,ENGINE,GameUI/OptionsSubMultiplayer.cpp,,,TODO,,linux_symbols:caller:0.833,linux: _ZN22COptionsSubMultiplayer13OnTextChangedEPN5vgui25PanelE
-gameui,10055662,85,,COptionsSubMultiplayer::OnSliderMoved,ENGINE,GameUI/OptionsSubMultiplayer.cpp,,,TODO,,linux_symbols:caller:0.933,linux: _ZN22COptionsSubMultiplayer13OnSliderMovedEP9KeyValues
-gameui,100556B7,107,,,UNKNOWN,GameUI/OptionsSubMultiplayer.cpp,,,TODO,,,linux: _ZN22COptionsSubMultiplayer19OnApplyButtonEnableEv
-gameui,10055722,749,,COptionsSubMultiplayer::RemapPalette,ENGINE,GameUI/OptionsSubMultiplayer.cpp,,,TODO,,linux_symbols:string:0.581,
-gameui,10055A0F,740,,,UNKNOWN,GameUI/OptionsSubMultiplayer.cpp,,,TODO,,,
-gameui,10055CF3,181,,,UNKNOWN,GameUI/OptionsSubMultiplayer.cpp,,,TODO,,,
-gameui,10055DA8,985,,COptionsSubMultiplayer::RemapLogoPalette,ENGINE,GameUI/OptionsSubMultiplayer.cpp,,,TODO,,linux_symbols:string:0.584,linux: _ZN22COptionsSubMultiplayer16RemapLogoPaletteEPciii
-gameui,10056181,11,,,UNKNOWN,GameUI/OptionsSubMultiplayer.cpp,,,TODO,,,linux: _ZN22COptionsSubMultiplayer11OnResetDataEv
-gameui,1005618C,904,,COptionsSubMultiplayer::OnApplyChanges,ENGINE,GameUI/OptionsSubMultiplayer.cpp,,,TODO,,linux_symbols:string:0.381,linux: _ZN22COptionsSubMultiplayer14OnApplyChangesEv
-gameui,10056514,159,,,UNKNOWN,GameUI/OptionsSubMultiplayer.cpp,,,TODO,,,
-gameui,100565C0,64,,,UNKNOWN,GameUI/OptionsSubMultiplayer.cpp,,,TODO,,,
-gameui,10056600,10,,,UNKNOWN,GameUI/OptionsSubMultiplayer.cpp,,,TODO,,,
-gameui,10056610,46,,,UNKNOWN,GameUI/OptionsSubMultiplayer.cpp,,,TODO,,,
-gameui,10056640,19,,,UNKNOWN,GameUI/OptionsSubMultiplayer.cpp,,,TODO,,,
-gameui,10056660,19,,,UNKNOWN,GameUI/OptionsSubMultiplayer.cpp,,,TODO,,,
-gameui,10056680,102,,,UNKNOWN,GameUI/OptionsSubMultiplayer.cpp,,,TODO,,,
-gameui,100566F0,64,,,UNKNOWN,GameUI/OptionsSubMultiplayer.cpp,,,TODO,,,
-gameui,10056730,10,,,UNKNOWN,GameUI/OptionsSubMultiplayer.cpp,,,TODO,,,
-gameui,10056740,10,,,UNKNOWN,GameUI/OptionsSubMultiplayer.cpp,,,TODO,,,
-gameui,10056750,19,,,UNKNOWN,GameUI/OptionsSubMultiplayer.cpp,,,TODO,,,
-gameui,10056770,110,,,UNKNOWN,GameUI/OptionsSubMultiplayer.cpp,,,TODO,,,
-gameui,100567E0,120,,,UNKNOWN,GameUI/OptionsSubMultiplayer.cpp,,,TODO,,,
-gameui,10056860,19,,,UNKNOWN,GameUI/OptionsSubMultiplayer.cpp,,,TODO,,,
-gameui,10056880,107,,,UNKNOWN,GameUI/OptionsSubMultiplayer.cpp,,,TODO,,,
-gameui,100568F0,19,,,UNKNOWN,GameUI/OptionsSubMultiplayer.cpp,,,TODO,,,
-gameui,10056910,107,,,UNKNOWN,GameUI/OptionsSubMultiplayer.cpp,,,TODO,,,
-gameui,10056980,46,,,UNKNOWN,GameUI/OptionsSubMultiplayer.cpp,,,TODO,,,
-gameui,100569B0,22,,,UNKNOWN,GameUI/OptionsSubMultiplayer.cpp,,,TODO,,,
-gameui,100569D0,19,,,UNKNOWN,GameUI/OptionsSubMultiplayer.cpp,,,TODO,,,
-gameui,100569F0,19,,,UNKNOWN,GameUI/OptionsSubMultiplayer.cpp,,,TODO,,,
-gameui,10056A10,25,,,UNKNOWN,GameUI/OptionsSubMultiplayer.cpp,,,TODO,,,
+gameui,10053AC0,72,??0CrosshairImagePanel@@QAE@PAVPanel@vgui2@@PBDPAVCCvarToggleCheckButton@@@Z,"public: __thiscall CrosshairImagePanel::CrosshairImagePanel(class vgui2::Panel *,char const *,class CCvarToggleCheckButton *)",UNKNOWN,GameUI/OptionsSubMultiplayer.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10053B08,220,?UpdateCrosshair@CrosshairImagePanel@@QAEXHHHH@Z,"public: void __thiscall CrosshairImagePanel::UpdateCrosshair(int,int,int,int)",UNKNOWN,GameUI/OptionsSubMultiplayer.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10053BE4,841,?Paint@CrosshairImagePanel@@UAEXXZ,public: virtual void __thiscall CrosshairImagePanel::Paint(void),UNKNOWN,GameUI/OptionsSubMultiplayer.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN19CrosshairImagePanel5PaintEv
+gameui,10053F2D,3031,??0COptionsSubMultiplayer@@QAE@PAVPanel@vgui2@@@Z,public: __thiscall COptionsSubMultiplayer::COptionsSubMultiplayer(class vgui2::Panel *),ENGINE,GameUI/OptionsSubMultiplayer.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN22COptionsSubMultiplayerC2EPN5vgui25PanelE
+gameui,10054B04,28,??1COptionsSubMultiplayer@@UAE@XZ,public: virtual __thiscall COptionsSubMultiplayer::~COptionsSubMultiplayer(void),UNKNOWN,GameUI/OptionsSubMultiplayer.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10054B20,161,?OnCommand@COptionsSubMultiplayer@@UAEXPBD@Z,public: virtual void __thiscall COptionsSubMultiplayer::OnCommand(char const *),ENGINE,GameUI/OptionsSubMultiplayer.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN22COptionsSubMultiplayer9OnCommandEPKc
+gameui,10054BC1,423,?InitLogoList@COptionsSubMultiplayer@@AAEXPAVCLabeledCommandComboBox@@@Z,private: void __thiscall COptionsSubMultiplayer::InitLogoList(class CLabeledCommandComboBox *),ENGINE,GameUI/OptionsSubMultiplayer.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN22COptionsSubMultiplayer12InitLogoListEP23CLabeledCommandComboBox
+gameui,10054D68,406,?InitModelList@COptionsSubMultiplayer@@AAEXPAVCLabeledCommandComboBox@@@Z,private: void __thiscall COptionsSubMultiplayer::InitModelList(class CLabeledCommandComboBox *),ENGINE,GameUI/OptionsSubMultiplayer.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN22COptionsSubMultiplayer13InitModelListEP23CLabeledCommandComboBox
+gameui,10054EFE,564,?InitCrosshairColorEntries@COptionsSubMultiplayer@@AAEXXZ,private: void __thiscall COptionsSubMultiplayer::InitCrosshairColorEntries(void),ENGINE,GameUI/OptionsSubMultiplayer.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN22COptionsSubMultiplayer25InitCrosshairColorEntriesEv
+gameui,10055132,335,?RedrawCrosshairImage@COptionsSubMultiplayer@@AAEXXZ,private: void __thiscall COptionsSubMultiplayer::RedrawCrosshairImage(void),ENGINE,GameUI/OptionsSubMultiplayer.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN22COptionsSubMultiplayer20RedrawCrosshairImageEv
+gameui,10055281,297,?InitCrosshairSizeList@COptionsSubMultiplayer@@AAEXPAVCLabeledCommandComboBox@@@Z,private: void __thiscall COptionsSubMultiplayer::InitCrosshairSizeList(class CLabeledCommandComboBox *),ENGINE,GameUI/OptionsSubMultiplayer.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN22COptionsSubMultiplayer21InitCrosshairSizeListEP23CLabeledCommandComboBox
+gameui,100553AA,464,?RemapLogo@COptionsSubMultiplayer@@AAEXXZ,private: void __thiscall COptionsSubMultiplayer::RemapLogo(void),ENGINE,GameUI/OptionsSubMultiplayer.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN22COptionsSubMultiplayer9RemapLogoEv
+gameui,1005557A,179,?RemapModel@COptionsSubMultiplayer@@AAEXXZ,private: void __thiscall COptionsSubMultiplayer::RemapModel(void),ENGINE,GameUI/OptionsSubMultiplayer.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN22COptionsSubMultiplayer10RemapModelEv
+gameui,1005562D,53,?OnTextChanged@COptionsSubMultiplayer@@EAEXPAVPanel@vgui2@@@Z,private: virtual void __thiscall COptionsSubMultiplayer::OnTextChanged(class vgui2::Panel *),ENGINE,GameUI/OptionsSubMultiplayer.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN22COptionsSubMultiplayer13OnTextChangedEPN5vgui25PanelE
+gameui,10055662,85,?OnSliderMoved@COptionsSubMultiplayer@@EAEXPAVKeyValues@@@Z,private: virtual void __thiscall COptionsSubMultiplayer::OnSliderMoved(class KeyValues *),ENGINE,GameUI/OptionsSubMultiplayer.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN22COptionsSubMultiplayer13OnSliderMovedEP9KeyValues
+gameui,100556B7,107,?OnApplyButtonEnable@COptionsSubMultiplayer@@EAEXXZ,private: virtual void __thiscall COptionsSubMultiplayer::OnApplyButtonEnable(void),UNKNOWN,GameUI/OptionsSubMultiplayer.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN22COptionsSubMultiplayer19OnApplyButtonEnableEv
+gameui,10055722,749,?RemapPalette@COptionsSubMultiplayer@@AAEXPADHH@Z,"private: void __thiscall COptionsSubMultiplayer::RemapPalette(char *,int,int)",ENGINE,GameUI/OptionsSubMultiplayer.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10055A0F,740,?PaletteHueReplace@@YAXPAUtagRGBQUAD@@HHH@Z,"void __cdecl PaletteHueReplace(struct tagRGBQUAD *,int,int,int)",UNKNOWN,GameUI/OptionsSubMultiplayer.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10055CF3,181,?ColorForName@COptionsSubMultiplayer@@AAEXPBDAAH11@Z,"private: void __thiscall COptionsSubMultiplayer::ColorForName(char const *,int &,int &,int &)",UNKNOWN,GameUI/OptionsSubMultiplayer.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10055DA8,985,?RemapLogoPalette@COptionsSubMultiplayer@@AAEXPADHHH@Z,"private: void __thiscall COptionsSubMultiplayer::RemapLogoPalette(char *,int,int,int)",ENGINE,GameUI/OptionsSubMultiplayer.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN22COptionsSubMultiplayer16RemapLogoPaletteEPciii
+gameui,10056181,11,?OnResetData@COptionsSubMultiplayer@@MAEXXZ,protected: virtual void __thiscall COptionsSubMultiplayer::OnResetData(void),UNKNOWN,GameUI/OptionsSubMultiplayer.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN22COptionsSubMultiplayer11OnResetDataEv
+gameui,1005618C,904,?OnApplyChanges@COptionsSubMultiplayer@@MAEXXZ,protected: virtual void __thiscall COptionsSubMultiplayer::OnApplyChanges(void),ENGINE,GameUI/OptionsSubMultiplayer.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN22COptionsSubMultiplayer14OnApplyChangesEv
+gameui,10056514,159,?ApplyCrosshairColorChanges@COptionsSubMultiplayer@@AAEXXZ,private: void __thiscall COptionsSubMultiplayer::ApplyCrosshairColorChanges(void),UNKNOWN,GameUI/OptionsSubMultiplayer.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100565C0,64,?GetMessageMap@ImagePanel@vgui2@@UAEPAUPanelMessageMap@2@XZ,public: virtual struct vgui2::PanelMessageMap * __thiscall vgui2::ImagePanel::GetMessageMap(void),UNKNOWN,GameUI/OptionsSubMultiplayer.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10056600,10,?GetPanelClassName@ImagePanel@vgui2@@SAPBDXZ,public: static char const * __cdecl vgui2::ImagePanel::GetPanelClassName(void),UNKNOWN,GameUI/OptionsSubMultiplayer.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10056610,46,??_GCrosshairImagePanel@@UAEPAXI@Z,public: virtual void * __thiscall CrosshairImagePanel::`scalar deleting destructor'(unsigned int),UNKNOWN,GameUI/OptionsSubMultiplayer.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10056640,19,??1CrosshairImagePanel@@UAE@XZ,public: virtual __thiscall CrosshairImagePanel::~CrosshairImagePanel(void),UNKNOWN,GameUI/OptionsSubMultiplayer.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10056660,19,??0COptionsSubMultiplayer_RegisterMap@COptionsSubMultiplayer@@QAE@XZ,public: __thiscall COptionsSubMultiplayer::COptionsSubMultiplayer_RegisterMap::COptionsSubMultiplayer_RegisterMap(void),UNKNOWN,GameUI/OptionsSubMultiplayer.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10056680,102,?ChainToMap@COptionsSubMultiplayer@@SAXXZ,public: static void __cdecl COptionsSubMultiplayer::ChainToMap(void),UNKNOWN,GameUI/OptionsSubMultiplayer.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100566F0,64,?GetMessageMap@COptionsSubMultiplayer@@UAEPAUPanelMessageMap@vgui2@@XZ,public: virtual struct vgui2::PanelMessageMap * __thiscall COptionsSubMultiplayer::GetMessageMap(void),UNKNOWN,GameUI/OptionsSubMultiplayer.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10056730,10,?GetPanelClassName@COptionsSubMultiplayer@@SAPBDXZ,public: static char const * __cdecl COptionsSubMultiplayer::GetPanelClassName(void),UNKNOWN,GameUI/OptionsSubMultiplayer.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10056740,10,?GetPanelBaseClassName@COptionsSubMultiplayer@@SAPBDXZ,public: static char const * __cdecl COptionsSubMultiplayer::GetPanelBaseClassName(void),UNKNOWN,GameUI/OptionsSubMultiplayer.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10056750,19,??0PanelMessageFunc_OnTextChanged@COptionsSubMultiplayer@@QAE@XZ,public: __thiscall COptionsSubMultiplayer::PanelMessageFunc_OnTextChanged::PanelMessageFunc_OnTextChanged(void),UNKNOWN,GameUI/OptionsSubMultiplayer.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10056770,110,?InitVar@PanelMessageFunc_OnTextChanged@COptionsSubMultiplayer@@SAXXZ,public: static void __cdecl COptionsSubMultiplayer::PanelMessageFunc_OnTextChanged::InitVar(void),UNKNOWN,GameUI/OptionsSubMultiplayer.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100567E0,120,?AddToMap@COptionsSubMultiplayer@@SAXPBDP8Panel@vgui2@@AEXXZHH0H0@Z,"public: static void __cdecl COptionsSubMultiplayer::AddToMap(char const *,void (__thiscall vgui2::Panel::*)(void),int,int,char const *,int,char const *)",UNKNOWN,GameUI/OptionsSubMultiplayer.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10056860,19,??0PanelMessageFunc_OnSliderMoved@COptionsSubMultiplayer@@QAE@XZ,public: __thiscall COptionsSubMultiplayer::PanelMessageFunc_OnSliderMoved::PanelMessageFunc_OnSliderMoved(void),UNKNOWN,GameUI/OptionsSubMultiplayer.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10056880,107,?InitVar@PanelMessageFunc_OnSliderMoved@COptionsSubMultiplayer@@SAXXZ,public: static void __cdecl COptionsSubMultiplayer::PanelMessageFunc_OnSliderMoved::InitVar(void),UNKNOWN,GameUI/OptionsSubMultiplayer.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100568F0,19,??0PanelMessageFunc_OnApplyButtonEnable@COptionsSubMultiplayer@@QAE@XZ,public: __thiscall COptionsSubMultiplayer::PanelMessageFunc_OnApplyButtonEnable::PanelMessageFunc_OnApplyButtonEnable(void),UNKNOWN,GameUI/OptionsSubMultiplayer.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10056910,107,?InitVar@PanelMessageFunc_OnApplyButtonEnable@COptionsSubMultiplayer@@SAXXZ,public: static void __cdecl COptionsSubMultiplayer::PanelMessageFunc_OnApplyButtonEnable::InitVar(void),UNKNOWN,GameUI/OptionsSubMultiplayer.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10056980,46,??_GCOptionsSubMultiplayer@@UAEPAXI@Z,public: virtual void * __thiscall COptionsSubMultiplayer::`scalar deleting destructor'(unsigned int),UNKNOWN,GameUI/OptionsSubMultiplayer.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100569B0,22,??0?$DHANDLE@VCMultiplayerAdvancedDialog@@@vgui2@@QAE@XZ,public: __thiscall vgui2::DHANDLE<class CMultiplayerAdvancedDialog>::DHANDLE<class CMultiplayerAdvancedDialog>(void),UNKNOWN,GameUI/OptionsSubMultiplayer.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100569D0,19,?Get@?$DHANDLE@VCMultiplayerAdvancedDialog@@@vgui2@@QAEPAVCMultiplayerAdvancedDialog@@XZ,public: class CMultiplayerAdvancedDialog * __thiscall vgui2::DHANDLE<class CMultiplayerAdvancedDialog>::Get(void),UNKNOWN,GameUI/OptionsSubMultiplayer.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100569F0,19,??C?$DHANDLE@VCMultiplayerAdvancedDialog@@@vgui2@@QAEPAVCMultiplayerAdvancedDialog@@XZ,public: class CMultiplayerAdvancedDialog * __thiscall vgui2::DHANDLE<class CMultiplayerAdvancedDialog>::operator->(void),UNKNOWN,GameUI/OptionsSubMultiplayer.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10056A10,25,??4?$DHANDLE@VCMultiplayerAdvancedDialog@@@vgui2@@QAEPAVCMultiplayerAdvancedDialog@@PAV2@@Z,public: class CMultiplayerAdvancedDialog * __thiscall vgui2::DHANDLE<class CMultiplayerAdvancedDialog>::operator=(class CMultiplayerAdvancedDialog *),UNKNOWN,GameUI/OptionsSubMultiplayer.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,10056A40,936,??0COptionsSubVideo@@QAE@PAVPanel@vgui2@@@Z,public: __thiscall COptionsSubVideo::COptionsSubVideo(class vgui2::Panel *),UNKNOWN,GameUI/OptionsSubVideo.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN16COptionsSubVideoC2EPN5vgui25PanelE
 gameui,10056DE8,505,?PrepareResolutionList@COptionsSubVideo@@AAEXXZ,private: void __thiscall COptionsSubVideo::PrepareResolutionList(void),UNKNOWN,GameUI/OptionsSubVideo.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN16COptionsSubVideo21PrepareResolutionListEv
 gameui,10056FE1,28,??1COptionsSubVideo@@UAE@XZ,public: virtual __thiscall COptionsSubVideo::~COptionsSubVideo(void),UNKNOWN,GameUI/OptionsSubVideo.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN16COptionsSubVideoD1Ev

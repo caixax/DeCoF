@@ -4793,3 +4793,47 @@ va,name,kind,evidence
 10044DD0,??0PanelMessageFunc_OnButtonChecked@CCvarNegateCheckButton@@QAE@XZ,func,GameUI/CvarNegateCheckButton.cpp: same position and size as in our compiled object
 10044DF0,?InitVar@PanelMessageFunc_OnButtonChecked@CCvarNegateCheckButton@@SAXXZ,func,GameUI/CvarNegateCheckButton.cpp: same position and size as in our compiled object
 10044E60,?AddToMap@CCvarNegateCheckButton@@SAXPBDP8Panel@vgui2@@AEXXZHH0H0@Z,func,GameUI/CvarNegateCheckButton.cpp: same position and size as in our compiled object
+10053AC0,??0CrosshairImagePanel@@QAE@PAVPanel@vgui2@@PBDPAVCCvarToggleCheckButton@@@Z,func,GameUI/OptionsSubMultiplayer.cpp: same position and size as in our compiled object
+10053B08,?UpdateCrosshair@CrosshairImagePanel@@QAEXHHHH@Z,func,GameUI/OptionsSubMultiplayer.cpp: same position and size as in our compiled object
+10053BE4,?Paint@CrosshairImagePanel@@UAEXXZ,func,GameUI/OptionsSubMultiplayer.cpp: same position and size as in our compiled object; linux: _ZN19CrosshairImagePanel5PaintEv
+10053F2D,??0COptionsSubMultiplayer@@QAE@PAVPanel@vgui2@@@Z,func,GameUI/OptionsSubMultiplayer.cpp: same position (size 3031 against 3021) as in our compiled object; linux: _ZN22COptionsSubMultiplayerC2EPN5vgui25PanelE
+10054B04,??1COptionsSubMultiplayer@@UAE@XZ,func,GameUI/OptionsSubMultiplayer.cpp: same position and size as in our compiled object
+10054B20,?OnCommand@COptionsSubMultiplayer@@UAEXPBD@Z,func,GameUI/OptionsSubMultiplayer.cpp: same position and size as in our compiled object; linux: _ZN22COptionsSubMultiplayer9OnCommandEPKc
+10054BC1,?InitLogoList@COptionsSubMultiplayer@@AAEXPAVCLabeledCommandComboBox@@@Z,func,GameUI/OptionsSubMultiplayer.cpp: same position and size as in our compiled object; linux: _ZN22COptionsSubMultiplayer12InitLogoListEP23CLabeledCommandComboBox
+10054D68,?InitModelList@COptionsSubMultiplayer@@AAEXPAVCLabeledCommandComboBox@@@Z,func,GameUI/OptionsSubMultiplayer.cpp: same position (size 406 against 404) as in our compiled object; linux: _ZN22COptionsSubMultiplayer13InitModelListEP23CLabeledCommandComboBox
+10054EFE,?InitCrosshairColorEntries@COptionsSubMultiplayer@@AAEXXZ,func,GameUI/OptionsSubMultiplayer.cpp: same position (size 564 against 548) as in our compiled object; linux: _ZN22COptionsSubMultiplayer25InitCrosshairColorEntriesEv
+10055132,?RedrawCrosshairImage@COptionsSubMultiplayer@@AAEXXZ,func,GameUI/OptionsSubMultiplayer.cpp: same position (size 335 against 334) as in our compiled object; linux: _ZN22COptionsSubMultiplayer20RedrawCrosshairImageEv
+10055281,?InitCrosshairSizeList@COptionsSubMultiplayer@@AAEXPAVCLabeledCommandComboBox@@@Z,func,GameUI/OptionsSubMultiplayer.cpp: same position (size 297 against 296) as in our compiled object; linux: _ZN22COptionsSubMultiplayer21InitCrosshairSizeListEP23CLabeledCommandComboBox
+100553AA,?RemapLogo@COptionsSubMultiplayer@@AAEXXZ,func,GameUI/OptionsSubMultiplayer.cpp: same position (size 464 against 457) as in our compiled object; linux: _ZN22COptionsSubMultiplayer9RemapLogoEv
+1005557A,?RemapModel@COptionsSubMultiplayer@@AAEXXZ,func,GameUI/OptionsSubMultiplayer.cpp: same position (size 179 against 177) as in our compiled object; linux: _ZN22COptionsSubMultiplayer10RemapModelEv
+1005562D,?OnTextChanged@COptionsSubMultiplayer@@EAEXPAVPanel@vgui2@@@Z,func,GameUI/OptionsSubMultiplayer.cpp: same position (size 53 against 51) as in our compiled object; linux: _ZN22COptionsSubMultiplayer13OnTextChangedEPN5vgui25PanelE
+10055662,?OnSliderMoved@COptionsSubMultiplayer@@EAEXPAVKeyValues@@@Z,func,GameUI/OptionsSubMultiplayer.cpp: same position and size as in our compiled object; linux: _ZN22COptionsSubMultiplayer13OnSliderMovedEP9KeyValues
+100556B7,?OnApplyButtonEnable@COptionsSubMultiplayer@@EAEXXZ,func,GameUI/OptionsSubMultiplayer.cpp: same position and size as in our compiled object; linux: _ZN22COptionsSubMultiplayer19OnApplyButtonEnableEv
+10055722,?RemapPalette@COptionsSubMultiplayer@@AAEXPADHH@Z,func,GameUI/OptionsSubMultiplayer.cpp: same position and size as in our compiled object
+10055A0F,?PaletteHueReplace@@YAXPAUtagRGBQUAD@@HHH@Z,func,GameUI/OptionsSubMultiplayer.cpp: same position and size as in our compiled object
+10055CF3,?ColorForName@COptionsSubMultiplayer@@AAEXPBDAAH11@Z,func,GameUI/OptionsSubMultiplayer.cpp: same position (size 181 against 172) as in our compiled object
+10055DA8,?RemapLogoPalette@COptionsSubMultiplayer@@AAEXPADHHH@Z,func,GameUI/OptionsSubMultiplayer.cpp: same position (size 985 against 997) as in our compiled object; linux: _ZN22COptionsSubMultiplayer16RemapLogoPaletteEPciii
+10056181,?OnResetData@COptionsSubMultiplayer@@MAEXXZ,func,GameUI/OptionsSubMultiplayer.cpp: same position and size as in our compiled object; linux: _ZN22COptionsSubMultiplayer11OnResetDataEv
+1005618C,?OnApplyChanges@COptionsSubMultiplayer@@MAEXXZ,func,GameUI/OptionsSubMultiplayer.cpp: same position (size 904 against 907) as in our compiled object; linux: _ZN22COptionsSubMultiplayer14OnApplyChangesEv
+10056514,?ApplyCrosshairColorChanges@COptionsSubMultiplayer@@AAEXXZ,func,GameUI/OptionsSubMultiplayer.cpp: same position (size 159 against 157) as in our compiled object
+100565C0,?GetMessageMap@ImagePanel@vgui2@@UAEPAUPanelMessageMap@2@XZ,func,GameUI/OptionsSubMultiplayer.cpp: same position and size as in our compiled object
+10056600,?GetPanelClassName@ImagePanel@vgui2@@SAPBDXZ,func,GameUI/OptionsSubMultiplayer.cpp: same position and size as in our compiled object
+10056610,??_GCrosshairImagePanel@@UAEPAXI@Z,func,GameUI/OptionsSubMultiplayer.cpp: same position and size as in our compiled object
+10056640,??1CrosshairImagePanel@@UAE@XZ,func,GameUI/OptionsSubMultiplayer.cpp: same position and size as in our compiled object
+10056660,??0COptionsSubMultiplayer_RegisterMap@COptionsSubMultiplayer@@QAE@XZ,func,GameUI/OptionsSubMultiplayer.cpp: same position and size as in our compiled object
+10056680,?ChainToMap@COptionsSubMultiplayer@@SAXXZ,func,GameUI/OptionsSubMultiplayer.cpp: same position and size as in our compiled object
+100566F0,?GetMessageMap@COptionsSubMultiplayer@@UAEPAUPanelMessageMap@vgui2@@XZ,func,GameUI/OptionsSubMultiplayer.cpp: same position and size as in our compiled object
+10056730,?GetPanelClassName@COptionsSubMultiplayer@@SAPBDXZ,func,GameUI/OptionsSubMultiplayer.cpp: same position and size as in our compiled object
+10056740,?GetPanelBaseClassName@COptionsSubMultiplayer@@SAPBDXZ,func,GameUI/OptionsSubMultiplayer.cpp: same position and size as in our compiled object
+10056750,??0PanelMessageFunc_OnTextChanged@COptionsSubMultiplayer@@QAE@XZ,func,GameUI/OptionsSubMultiplayer.cpp: same position and size as in our compiled object
+10056770,?InitVar@PanelMessageFunc_OnTextChanged@COptionsSubMultiplayer@@SAXXZ,func,GameUI/OptionsSubMultiplayer.cpp: same position and size as in our compiled object
+100567E0,?AddToMap@COptionsSubMultiplayer@@SAXPBDP8Panel@vgui2@@AEXXZHH0H0@Z,func,GameUI/OptionsSubMultiplayer.cpp: same position and size as in our compiled object
+10056860,??0PanelMessageFunc_OnSliderMoved@COptionsSubMultiplayer@@QAE@XZ,func,GameUI/OptionsSubMultiplayer.cpp: same position and size as in our compiled object
+10056880,?InitVar@PanelMessageFunc_OnSliderMoved@COptionsSubMultiplayer@@SAXXZ,func,GameUI/OptionsSubMultiplayer.cpp: same position and size as in our compiled object
+100568F0,??0PanelMessageFunc_OnApplyButtonEnable@COptionsSubMultiplayer@@QAE@XZ,func,GameUI/OptionsSubMultiplayer.cpp: same position and size as in our compiled object
+10056910,?InitVar@PanelMessageFunc_OnApplyButtonEnable@COptionsSubMultiplayer@@SAXXZ,func,GameUI/OptionsSubMultiplayer.cpp: same position and size as in our compiled object
+10056980,??_GCOptionsSubMultiplayer@@UAEPAXI@Z,func,GameUI/OptionsSubMultiplayer.cpp: same position and size as in our compiled object
+100569B0,??0?$DHANDLE@VCMultiplayerAdvancedDialog@@@vgui2@@QAE@XZ,func,GameUI/OptionsSubMultiplayer.cpp: same position and size as in our compiled object
+100569D0,?Get@?$DHANDLE@VCMultiplayerAdvancedDialog@@@vgui2@@QAEPAVCMultiplayerAdvancedDialog@@XZ,func,GameUI/OptionsSubMultiplayer.cpp: same position and size as in our compiled object
+100569F0,??C?$DHANDLE@VCMultiplayerAdvancedDialog@@@vgui2@@QAEPAVCMultiplayerAdvancedDialog@@XZ,func,GameUI/OptionsSubMultiplayer.cpp: same position and size as in our compiled object
+10056A10,??4?$DHANDLE@VCMultiplayerAdvancedDialog@@@vgui2@@QAEPAVCMultiplayerAdvancedDialog@@PAV2@@Z,func,GameUI/OptionsSubMultiplayer.cpp: same position and size as in our compiled object

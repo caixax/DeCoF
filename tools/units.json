@@ -4018,6 +4018,11 @@
           "name": "GameUI/CvarNegateCheckButton",
           "source": "src/gameui/CvarNegateCheckButton.cpp",
           "functions_file": "tools/units/gameui_GameUI_CvarNegateCheckButton.txt"
+        },
+        {
+          "name": "GameUI/OptionsSubMultiplayer",
+          "source": "src/gameui/OptionsSubMultiplayer.cpp",
+          "functions_file": "tools/units/gameui_GameUI_OptionsSubMultiplayer.txt"
         }
       ]
     }
