@@ -4125,6 +4125,11 @@
           "functions_file": "tools/units/gameui_GameUI_RunGameEngine.txt"
         },
         {
+          "name": "public/MemPool",
+          "source": "src/public/MemPool.cpp",
+          "functions_file": "tools/units/gameui_public_MemPool.txt"
+        },
+        {
           "name": "GameUI/OptionsSubKeyboard",
           "source": "src/gameui/OptionsSubKeyboard.cpp",
           "functions_file": "tools/units/gameui_GameUI_OptionsSubKeyboard.txt"

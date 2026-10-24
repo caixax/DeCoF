@@ -5257,3 +5257,5 @@ va,name,kind,evidence
 10039310,??_GCRunGameEngine@@UAEPAXI@Z,func,GameUI/RunGameEngine.cpp: same position and size as in our compiled object
 10039340,??0IRunGameEngine@@QAE@XZ,func,"GameUI/RunGameEngine.cpp: implicit constructor COMDAT, same position and size as in our compiled object"
 10039360,??_GIRunGameEngine@@UAEPAXI@Z,func,GameUI/RunGameEngine.cpp: same position and size as in our compiled object
+100A28B0,?AddNewBlob@CMemoryPool@@AAEXXZ,func,public/MemPool.cpp (shared with hw.dll): same position and size as in our compiled object; linux: _ZN11CMemoryPool10AddNewBlobEv
+100A2A51,?Free@CMemoryPool@@QAEXPAX@Z,func,public/MemPool.cpp (shared with hw.dll): same position and size as in our compiled object; linux: _ZN11CMemoryPool4FreeEPv

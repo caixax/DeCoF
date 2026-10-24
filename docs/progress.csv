@@ -12551,11 +12551,11 @@ gameui,100A2760,32,?AddToTail@?$CUtlVector@D@@QAEHABD@Z,CUtlVector<char>::AddToT
 gameui,100A2780,65,?InsertBefore@?$CUtlVector@D@@QAEHHABD@Z,CUtlVector<char>::InsertBefore,UNKNOWN,vgui2/controls/Tooltip.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,100A27D0,16,?Base@?$CUtlMemory@D@@QAEPADXZ,CUtlMemory<char>::Base,UNKNOWN,vgui2/controls/Tooltip.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,100A27E0,58,?CopyConstruct@@YAXPADABD@Z,CopyConstruct,UNKNOWN,vgui2/controls/Tooltip.cpp,,,MATCHED,100,gameui_manual.csv,
-gameui,100A2820,81,??0CMemoryPool@@QAE@HH@Z,CMemoryPool::CMemoryPool,UNKNOWN,public/MemPool.cpp,,,TODO,,gameui_manual.csv,linux: _ZN11CMemoryPoolC1Eii
-gameui,100A2871,63,??1CMemoryPool@@QAE@XZ,CMemoryPool::~CMemoryPool,UNKNOWN,public/MemPool.cpp,,,TODO,,gameui_manual.csv,linux: _ZN11CMemoryPoolD2Ev
-gameui,100A28B0,266,,,UNKNOWN,public/MemPool.cpp,,,TODO,,,linux: _ZN11CMemoryPool10AddNewBlobEv
-gameui,100A29BA,151,?Alloc@CMemoryPool@@QAEPAXI@Z,CMemoryPool::Alloc,UNKNOWN,public/MemPool.cpp,,,TODO,,gameui_manual.csv,linux: _ZN11CMemoryPool5AllocEj
-gameui,100A2A51,56,,,UNKNOWN,public/MemPool.cpp,,,TODO,,,linux: _ZN11CMemoryPool4FreeEPv
+gameui,100A2820,81,??0CMemoryPool@@QAE@HH@Z,CMemoryPool::CMemoryPool,UNKNOWN,public/MemPool.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN11CMemoryPoolC1Eii
+gameui,100A2871,63,??1CMemoryPool@@QAE@XZ,CMemoryPool::~CMemoryPool,UNKNOWN,public/MemPool.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN11CMemoryPoolD2Ev
+gameui,100A28B0,266,?AddNewBlob@CMemoryPool@@AAEXXZ,private: void __thiscall CMemoryPool::AddNewBlob(void),UNKNOWN,public/MemPool.cpp,,,MATCHED,100,,linux: _ZN11CMemoryPool10AddNewBlobEv
+gameui,100A29BA,151,?Alloc@CMemoryPool@@QAEPAXI@Z,CMemoryPool::Alloc,UNKNOWN,public/MemPool.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN11CMemoryPool5AllocEj
+gameui,100A2A51,56,?Free@CMemoryPool@@QAEXPAX@Z,public: void __thiscall CMemoryPool::Free(void *),UNKNOWN,public/MemPool.cpp,,,MATCHED,100,,linux: _ZN11CMemoryPool4FreeEPv
 gameui,100A2A90,119,??0MenuButton@vgui2@@QAE@PAVPanel@1@PBD1@Z,vgui2::MenuButton::MenuButton,UNKNOWN,vgui2/controls/MenuButton.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,100A2B07,28,??1MenuButton@vgui2@@UAE@XZ,vgui2::MenuButton::~MenuButton,UNKNOWN,vgui2/controls/MenuButton.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,100A2B23,116,?SetMenu@MenuButton@vgui2@@UAEXPAVMenu@2@@Z,vgui2::MenuButton::SetMenu,UNKNOWN,vgui2/controls/MenuButton.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui210MenuButton7SetMenuEPNS_4MenuE
