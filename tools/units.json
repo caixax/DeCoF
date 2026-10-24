@@ -4120,6 +4120,11 @@
           "functions_file": "tools/units/gameui_GameUI_GameConsole.txt"
         },
         {
+          "name": "GameUI/RunGameEngine",
+          "source": "src/gameui/RunGameEngine.cpp",
+          "functions_file": "tools/units/gameui_GameUI_RunGameEngine.txt"
+        },
+        {
           "name": "GameUI/OptionsSubKeyboard",
           "source": "src/gameui/OptionsSubKeyboard.cpp",
           "functions_file": "tools/units/gameui_GameUI_OptionsSubKeyboard.txt"

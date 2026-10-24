@@ -9061,32 +9061,32 @@ gameui,10038F20,102,?ChainToMap@CRefreshSteamLogin@@SAXXZ,public: static void __
 gameui,10038F90,64,?GetMessageMap@CRefreshSteamLogin@@UAEPAUPanelMessageMap@vgui2@@XZ,public: virtual struct vgui2::PanelMessageMap * __thiscall CRefreshSteamLogin::GetMessageMap(void),UNKNOWN,GameUI/RefreshSteamLogin.cpp,,,MATCHED,100,,
 gameui,10038FD0,10,?GetPanelClassName@CRefreshSteamLogin@@SAPBDXZ,public: static char const * __cdecl CRefreshSteamLogin::GetPanelClassName(void),UNKNOWN,GameUI/RefreshSteamLogin.cpp,,,MATCHED,100,,
 gameui,10038FE0,10,?GetPanelBaseClassName@CRefreshSteamLogin@@SAPBDXZ,public: static char const * __cdecl CRefreshSteamLogin::GetPanelBaseClassName(void),UNKNOWN,GameUI/RefreshSteamLogin.cpp,,,MATCHED,100,,
-gameui,10038FF0,15,,,UNKNOWN,GameUI/RunGameEngine.cpp,,,TODO,,,
-gameui,10038FFF,15,,,UNKNOWN,GameUI/RunGameEngine.cpp,,,TODO,,,
-gameui,1003900E,18,,,UNKNOWN,GameUI/RunGameEngine.cpp,,,TODO,,,
-gameui,10039020,15,,,UNKNOWN,GameUI/RunGameEngine.cpp,,,TODO,,,
-gameui,1003902F,10,,,UNKNOWN,GameUI/RunGameEngine.cpp,,,TODO,,,
-gameui,10039039,25,,_GLOBAL__sub_I_RunGameEngine.cpp,ENGINE,GameUI/RunGameEngine.cpp,,,TODO,,linux_symbols:string:0.75,
-gameui,10039052,10,,,UNKNOWN,GameUI/RunGameEngine.cpp,,,TODO,,,
-gameui,10039060,19,,,UNKNOWN,GameUI/RunGameEngine.cpp,,,TODO,,,
-gameui,10039080,31,,,UNKNOWN,GameUI/RunGameEngine.cpp,,,TODO,,,
-gameui,100390A0,13,,,UNKNOWN,GameUI/RunGameEngine.cpp,,,TODO,,,linux: _ZN14CRunGameEngine9IsRunningEv
-gameui,100390B0,31,,,UNKNOWN,GameUI/RunGameEngine.cpp,,,TODO,,,linux: _ZN14CRunGameEngine14AddTextCommandEPKc
-gameui,100390D0,18,,,UNKNOWN,GameUI/RunGameEngine.cpp,,,TODO,,,linux: _ZN14CRunGameEngine9RunEngineEiPKcS1_
-gameui,100390F0,72,,,UNKNOWN,GameUI/RunGameEngine.cpp,,,TODO,,,linux: _ZN14CRunGameEngine8IsInGameEv
-gameui,10039140,15,,,UNKNOWN,GameUI/RunGameEngine.cpp,,,TODO,,,linux: _ZN14CRunGameEngine11GetGameInfoEPci
-gameui,10039150,169,,CRunGameEngine::SetTrackerUserID,ENGINE,GameUI/RunGameEngine.cpp,,,TODO,,linux_symbols:string:0.425,linux: _ZN14CRunGameEngine16SetTrackerUserIDEiPKc
-gameui,10039200,22,,,UNKNOWN,GameUI/RunGameEngine.cpp,,,TODO,,,linux: _ZN14CRunGameEngine14GetPlayerCountEv
-gameui,10039220,50,,,UNKNOWN,GameUI/RunGameEngine.cpp,,,TODO,,,linux: _ZN14CRunGameEngine15GetPlayerUserIDEi
-gameui,10039260,70,,,UNKNOWN,GameUI/RunGameEngine.cpp,,,TODO,,,linux: _ZN14CRunGameEngine13GetPlayerNameEi
-gameui,100392B0,13,,,UNKNOWN,GameUI/RunGameEngine.cpp,,,TODO,,,linux: _ZN14CRunGameEngine20GetEngineBuildNumberEv
-gameui,100392C0,13,,,UNKNOWN,GameUI/RunGameEngine.cpp,,,TODO,,,linux: _ZN14CRunGameEngine23GetProductVersionStringEv
-gameui,100392D0,15,,,UNKNOWN,GameUI/RunGameEngine.cpp,,,TODO,,,linux: _ZN14CRunGameEngine20GetPlayerFriendsNameEi
-gameui,100392E0,15,,,UNKNOWN,GameUI/RunGameEngine.cpp,,,TODO,,,linux: _ZN14CRunGameEngine18GetPlayerFriendsIDEi
-gameui,100392F0,19,,,UNKNOWN,GameUI/RunGameEngine.cpp,,,TODO,,,
-gameui,10039310,46,,,UNKNOWN,GameUI/RunGameEngine.cpp,,,TODO,,,
-gameui,10039340,31,,FID_conflict:IConnectionPoint,ENGINE,GameUI/RunGameEngine.cpp,,,TODO,,ghidra,
-gameui,10039360,46,,,UNKNOWN,GameUI/RunGameEngine.cpp,,,TODO,,,
+gameui,10038FF0,15,_$E5,_$E5,UNKNOWN,GameUI/RunGameEngine.cpp,,,MATCHED,100,,
+gameui,10038FFF,15,_$E2,_$E2,UNKNOWN,GameUI/RunGameEngine.cpp,,,MATCHED,100,,
+gameui,1003900E,18,_$E4,_$E4,UNKNOWN,GameUI/RunGameEngine.cpp,,,MATCHED,100,,
+gameui,10039020,15,_$E3,_$E3,UNKNOWN,GameUI/RunGameEngine.cpp,,,MATCHED,100,,
+gameui,1003902F,10,_$E8,_$E8,UNKNOWN,GameUI/RunGameEngine.cpp,,,MATCHED,100,,
+gameui,10039039,25,_$E7,_$E7,ENGINE,GameUI/RunGameEngine.cpp,,,MATCHED,100,linux_symbols:string:0.75,
+gameui,10039052,10,?__CreateCRunGameEngineIRunGameEngine_interface@@YAPAVIBaseInterface@@XZ,class IBaseInterface * __cdecl __CreateCRunGameEngineIRunGameEngine_interface(void),UNKNOWN,GameUI/RunGameEngine.cpp,,,MATCHED,100,,
+gameui,10039060,19,??1CRunGameEngine@@UAE@XZ,public: virtual __thiscall CRunGameEngine::~CRunGameEngine(void),UNKNOWN,GameUI/RunGameEngine.cpp,,,MATCHED,100,,
+gameui,10039080,31,??0CRunGameEngine@@QAE@XZ,public: __thiscall CRunGameEngine::CRunGameEngine(void),UNKNOWN,GameUI/RunGameEngine.cpp,,,MATCHED,100,,
+gameui,100390A0,13,?IsRunning@CRunGameEngine@@UAE_NXZ,public: virtual bool __thiscall CRunGameEngine::IsRunning(void),UNKNOWN,GameUI/RunGameEngine.cpp,,,MATCHED,100,,linux: _ZN14CRunGameEngine9IsRunningEv
+gameui,100390B0,31,?AddTextCommand@CRunGameEngine@@UAE_NPBD@Z,public: virtual bool __thiscall CRunGameEngine::AddTextCommand(char const *),UNKNOWN,GameUI/RunGameEngine.cpp,,,MATCHED,100,,linux: _ZN14CRunGameEngine14AddTextCommandEPKc
+gameui,100390D0,18,?RunEngine@CRunGameEngine@@UAE?AW4ERunResult@IRunGameEngine@@HPBD0@Z,"public: virtual enum IRunGameEngine::ERunResult __thiscall CRunGameEngine::RunEngine(int,char const *,char const *)",UNKNOWN,GameUI/RunGameEngine.cpp,,,MATCHED,100,,linux: _ZN14CRunGameEngine9RunEngineEiPKcS1_
+gameui,100390F0,72,?IsInGame@CRunGameEngine@@UAE_NXZ,public: virtual bool __thiscall CRunGameEngine::IsInGame(void),UNKNOWN,GameUI/RunGameEngine.cpp,,,MATCHED,100,,linux: _ZN14CRunGameEngine8IsInGameEv
+gameui,10039140,15,?GetGameInfo@CRunGameEngine@@UAE_NPADH@Z,"public: virtual bool __thiscall CRunGameEngine::GetGameInfo(char *,int)",UNKNOWN,GameUI/RunGameEngine.cpp,,,MATCHED,100,,linux: _ZN14CRunGameEngine11GetGameInfoEPci
+gameui,10039150,169,?SetTrackerUserID@CRunGameEngine@@UAEXHPBD@Z,"public: virtual void __thiscall CRunGameEngine::SetTrackerUserID(int,char const *)",ENGINE,GameUI/RunGameEngine.cpp,,,MATCHED,100,linux_symbols:string:0.425,linux: _ZN14CRunGameEngine16SetTrackerUserIDEiPKc
+gameui,10039200,22,?GetPlayerCount@CRunGameEngine@@UAEHXZ,public: virtual int __thiscall CRunGameEngine::GetPlayerCount(void),UNKNOWN,GameUI/RunGameEngine.cpp,,,MATCHED,100,,linux: _ZN14CRunGameEngine14GetPlayerCountEv
+gameui,10039220,50,?GetPlayerUserID@CRunGameEngine@@UAEIH@Z,public: virtual unsigned int __thiscall CRunGameEngine::GetPlayerUserID(int),UNKNOWN,GameUI/RunGameEngine.cpp,,,MATCHED,100,,linux: _ZN14CRunGameEngine15GetPlayerUserIDEi
+gameui,10039260,70,?GetPlayerName@CRunGameEngine@@UAEPBDH@Z,public: virtual char const * __thiscall CRunGameEngine::GetPlayerName(int),UNKNOWN,GameUI/RunGameEngine.cpp,,,MATCHED,100,,linux: _ZN14CRunGameEngine13GetPlayerNameEi
+gameui,100392B0,13,?GetEngineBuildNumber@CRunGameEngine@@UAEIXZ,public: virtual unsigned int __thiscall CRunGameEngine::GetEngineBuildNumber(void),UNKNOWN,GameUI/RunGameEngine.cpp,,,MATCHED,100,,linux: _ZN14CRunGameEngine20GetEngineBuildNumberEv
+gameui,100392C0,13,?GetProductVersionString@CRunGameEngine@@UAEPBDXZ,public: virtual char const * __thiscall CRunGameEngine::GetProductVersionString(void),UNKNOWN,GameUI/RunGameEngine.cpp,,,MATCHED,100,,linux: _ZN14CRunGameEngine23GetProductVersionStringEv
+gameui,100392D0,15,?GetPlayerFriendsName@CRunGameEngine@@UAEPBDH@Z,public: virtual char const * __thiscall CRunGameEngine::GetPlayerFriendsName(int),UNKNOWN,GameUI/RunGameEngine.cpp,,,MATCHED,100,,linux: _ZN14CRunGameEngine20GetPlayerFriendsNameEi
+gameui,100392E0,15,?GetPlayerFriendsID@CRunGameEngine@@UAEIH@Z,public: virtual unsigned int __thiscall CRunGameEngine::GetPlayerFriendsID(int),UNKNOWN,GameUI/RunGameEngine.cpp,,,MATCHED,100,,linux: _ZN14CRunGameEngine18GetPlayerFriendsIDEi
+gameui,100392F0,19,??1IRunGameEngine@@UAE@XZ,public: virtual __thiscall IRunGameEngine::~IRunGameEngine(void),UNKNOWN,GameUI/RunGameEngine.cpp,,,MATCHED,100,,
+gameui,10039310,46,??_GCRunGameEngine@@UAEPAXI@Z,public: virtual void * __thiscall CRunGameEngine::`scalar deleting destructor'(unsigned int),UNKNOWN,GameUI/RunGameEngine.cpp,,,MATCHED,100,,
+gameui,10039340,31,??0IRunGameEngine@@QAE@XZ,public: __thiscall IRunGameEngine::IRunGameEngine(void),ENGINE,GameUI/RunGameEngine.cpp,,,MATCHED,100,ghidra,
+gameui,10039360,46,??_GIRunGameEngine@@UAEPAXI@Z,public: virtual void * __thiscall IRunGameEngine::`scalar deleting destructor'(unsigned int),UNKNOWN,GameUI/RunGameEngine.cpp,,,MATCHED,100,,
 gameui,10039390,116,?StripFloatTrailingZeros@@YAXPAD@Z,void __cdecl StripFloatTrailingZeros(char *),UNKNOWN,GameUI/ScriptObject.cpp,,,MATCHED,100,gameui_manual.csv,linux: _Z23StripFloatTrailingZerosPc
 gameui,10039404,104,??0mpcontrol_t@@QAE@PAVPanel@vgui2@@PBD@Z,"public: __thiscall mpcontrol_t::mpcontrol_t(class vgui2::Panel *,char const *)",UNKNOWN,GameUI/ScriptObject.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN11mpcontrol_tC1EPN5vgui25PanelEPKc
 gameui,1003946C,169,?OnSizeChanged@mpcontrol_t@@UAEXHH@Z,"public: virtual void __thiscall mpcontrol_t::OnSizeChanged(int,int)",UNKNOWN,GameUI/ScriptObject.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN11mpcontrol_t13OnSizeChangedEii

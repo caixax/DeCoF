@@ -5231,3 +5231,29 @@ va,name,kind,evidence
 100530F0,?NumAllocated@?$CUtlMemory@VCUtlSymbol@@@@QBEHXZ,func,GameUI/OptionsSubKeyboard.cpp: same position and size as in our compiled object
 10053110,?Grow@?$CUtlMemory@VCUtlSymbol@@@@QAEXH@Z,func,GameUI/OptionsSubKeyboard.cpp: same position and size as in our compiled object
 100531E0,?IsExternallyAllocated@?$CUtlMemory@VCUtlSymbol@@@@QBE_NXZ,func,GameUI/OptionsSubKeyboard.cpp: same position and size as in our compiled object
+10038FF0,_$E5,func,"GameUI/RunGameEngine.cpp: dynamic initializer of the CRunGameEngine singleton, same position and size as in our compiled object"
+10038FFF,_$E2,func,"GameUI/RunGameEngine.cpp: constructs the CRunGameEngine singleton, same position and size as in our compiled object"
+1003900E,_$E4,func,"GameUI/RunGameEngine.cpp: registers the singleton destructor with atexit, same position and size as in our compiled object"
+10039020,_$E3,func,"GameUI/RunGameEngine.cpp: atexit destructor helper of the singleton, same position and size as in our compiled object"
+1003902F,_$E8,func,"GameUI/RunGameEngine.cpp: dynamic initializer of the RunGameEngine006 InterfaceReg, same position and size as in our compiled object"
+10039039,_$E7,func,"GameUI/RunGameEngine.cpp: constructs the RunGameEngine006 InterfaceReg, same position and size as in our compiled object"
+10039052,?__CreateCRunGameEngineIRunGameEngine_interface@@YAPAVIBaseInterface@@XZ,func,"GameUI/RunGameEngine.cpp: EXPOSE_SINGLE_INTERFACE create function, same position and size as in our compiled object"
+10039060,??1CRunGameEngine@@UAE@XZ,func,"GameUI/RunGameEngine.cpp: compiler-generated destructor COMDAT, same position and size as in our compiled object"
+10039080,??0CRunGameEngine@@QAE@XZ,func,"GameUI/RunGameEngine.cpp: implicit constructor COMDAT, same position and size as in our compiled object"
+100390A0,?IsRunning@CRunGameEngine@@UAE_NXZ,func,"GameUI/RunGameEngine.cpp: inline CRunGameEngine COMDAT (class defined in the .cpp), same position and size as in our compiled object; linux: _ZN14CRunGameEngine9IsRunningEv"
+100390B0,?AddTextCommand@CRunGameEngine@@UAE_NPBD@Z,func,"GameUI/RunGameEngine.cpp: inline CRunGameEngine COMDAT (class defined in the .cpp), same position and size as in our compiled object; linux: _ZN14CRunGameEngine14AddTextCommandEPKc"
+100390D0,?RunEngine@CRunGameEngine@@UAE?AW4ERunResult@IRunGameEngine@@HPBD0@Z,func,"GameUI/RunGameEngine.cpp: inline CRunGameEngine COMDAT (class defined in the .cpp), same position and size as in our compiled object; linux: _ZN14CRunGameEngine9RunEngineEiPKcS1_"
+100390F0,?IsInGame@CRunGameEngine@@UAE_NXZ,func,"GameUI/RunGameEngine.cpp: inline CRunGameEngine COMDAT (class defined in the .cpp), same position and size as in our compiled object; linux: _ZN14CRunGameEngine8IsInGameEv"
+10039140,?GetGameInfo@CRunGameEngine@@UAE_NPADH@Z,func,"GameUI/RunGameEngine.cpp: inline CRunGameEngine COMDAT (class defined in the .cpp), same position and size as in our compiled object; linux: _ZN14CRunGameEngine11GetGameInfoEPci"
+10039150,?SetTrackerUserID@CRunGameEngine@@UAEXHPBD@Z,func,"GameUI/RunGameEngine.cpp: inline CRunGameEngine COMDAT (class defined in the .cpp), same position and size as in our compiled object; linux: _ZN14CRunGameEngine16SetTrackerUserIDEiPKc"
+10039200,?GetPlayerCount@CRunGameEngine@@UAEHXZ,func,"GameUI/RunGameEngine.cpp: inline CRunGameEngine COMDAT (class defined in the .cpp), same position and size as in our compiled object; linux: _ZN14CRunGameEngine14GetPlayerCountEv"
+10039220,?GetPlayerUserID@CRunGameEngine@@UAEIH@Z,func,"GameUI/RunGameEngine.cpp: inline CRunGameEngine COMDAT (class defined in the .cpp), same position and size as in our compiled object; linux: _ZN14CRunGameEngine15GetPlayerUserIDEi"
+10039260,?GetPlayerName@CRunGameEngine@@UAEPBDH@Z,func,"GameUI/RunGameEngine.cpp: inline CRunGameEngine COMDAT (class defined in the .cpp), same position and size as in our compiled object; linux: _ZN14CRunGameEngine13GetPlayerNameEi"
+100392B0,?GetEngineBuildNumber@CRunGameEngine@@UAEIXZ,func,"GameUI/RunGameEngine.cpp: inline CRunGameEngine COMDAT (class defined in the .cpp), same position and size as in our compiled object; linux: _ZN14CRunGameEngine20GetEngineBuildNumberEv"
+100392C0,?GetProductVersionString@CRunGameEngine@@UAEPBDXZ,func,"GameUI/RunGameEngine.cpp: inline CRunGameEngine COMDAT (class defined in the .cpp), same position and size as in our compiled object; linux: _ZN14CRunGameEngine23GetProductVersionStringEv"
+100392D0,?GetPlayerFriendsName@CRunGameEngine@@UAEPBDH@Z,func,"GameUI/RunGameEngine.cpp: inline CRunGameEngine COMDAT (class defined in the .cpp), same position and size as in our compiled object; linux: _ZN14CRunGameEngine20GetPlayerFriendsNameEi"
+100392E0,?GetPlayerFriendsID@CRunGameEngine@@UAEIH@Z,func,"GameUI/RunGameEngine.cpp: inline CRunGameEngine COMDAT (class defined in the .cpp), same position and size as in our compiled object; linux: _ZN14CRunGameEngine18GetPlayerFriendsIDEi"
+100392F0,??1IRunGameEngine@@UAE@XZ,func,"GameUI/RunGameEngine.cpp: compiler-generated destructor COMDAT, same position and size as in our compiled object"
+10039310,??_GCRunGameEngine@@UAEPAXI@Z,func,GameUI/RunGameEngine.cpp: same position and size as in our compiled object
+10039340,??0IRunGameEngine@@QAE@XZ,func,"GameUI/RunGameEngine.cpp: implicit constructor COMDAT, same position and size as in our compiled object"
+10039360,??_GIRunGameEngine@@UAEPAXI@Z,func,GameUI/RunGameEngine.cpp: same position and size as in our compiled object
