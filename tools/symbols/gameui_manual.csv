@@ -4364,3 +4364,20 @@ va,name,kind,evidence
 1004DE1B,?OnCommand@CNewGameDialog@@MAEXPBD@Z,func,GameUI/NewGameDialog.cpp: same position and size as in our compiled object; linux: _ZN14CNewGameDialog9OnCommandEPKc
 1004DFD5,?OnClose@CNewGameDialog@@MAEXXZ,func,GameUI/NewGameDialog.cpp: same position and size as in our compiled object; linux: _ZN14CNewGameDialog7OnCloseEv
 1004E000,??_GCNewGameDialog@@UAEPAXI@Z,func,GameUI/NewGameDialog.cpp: same position and size as in our compiled object
+10045AE0,??0CCvarToggleCheckButton@@QAE@PAVPanel@vgui2@@PBD11@Z,func,GameUI/CvarToggleCheckButton.cpp: same position and size as in our compiled object; linux: _ZN22CCvarToggleCheckButtonC2EPN5vgui25PanelEPKcS4_S4_
+10045B75,??1CCvarToggleCheckButton@@UAE@XZ,func,GameUI/CvarToggleCheckButton.cpp: same position and size as in our compiled object; linux: _ZN22CCvarToggleCheckButtonD1Ev
+10045C46,?ApplyChanges@CCvarToggleCheckButton@@QAEXXZ,func,GameUI/CvarToggleCheckButton.cpp: same position and size as in our compiled object; linux: _ZN22CCvarToggleCheckButton12ApplyChangesEv
+10045D04,?HasBeenModified@CCvarToggleCheckButton@@QAE_NXZ,func,GameUI/CvarToggleCheckButton.cpp: same position and size as in our compiled object; linux: _ZN22CCvarToggleCheckButton15HasBeenModifiedEv
+10045D36,?SetSelected@CCvarToggleCheckButton@@UAEX_N@Z,func,GameUI/CvarToggleCheckButton.cpp: same position and size as in our compiled object; linux: _ZN22CCvarToggleCheckButton11SetSelectedEb
+10045D4F,?OnButtonChecked@CCvarToggleCheckButton@@EAEXXZ,func,GameUI/CvarToggleCheckButton.cpp: same position and size as in our compiled object; linux: _ZN22CCvarToggleCheckButton15OnButtonCheckedEv
+10045DB0,??_GCCvarToggleCheckButton@@UAEPAXI@Z,func,GameUI/CvarToggleCheckButton.cpp: same position and size as in our compiled object
+10045DE0,??0CCvarToggleCheckButton_RegisterMap@CCvarToggleCheckButton@@QAE@XZ,func,GameUI/CvarToggleCheckButton.cpp: same position and size as in our compiled object
+10045E00,?ChainToMap@CCvarToggleCheckButton@@SAXXZ,func,GameUI/CvarToggleCheckButton.cpp: same position and size as in our compiled object
+10045E70,?GetMessageMap@CCvarToggleCheckButton@@UAEPAUPanelMessageMap@vgui2@@XZ,func,GameUI/CvarToggleCheckButton.cpp: same position and size as in our compiled object
+10045EB0,?GetPanelClassName@CCvarToggleCheckButton@@SAPBDXZ,func,GameUI/CvarToggleCheckButton.cpp: same position and size as in our compiled object
+10045EC0,?GetPanelBaseClassName@CCvarToggleCheckButton@@SAPBDXZ,func,GameUI/CvarToggleCheckButton.cpp: same position and size as in our compiled object
+10045ED0,??0PanelMessageFunc_OnButtonChecked@CCvarToggleCheckButton@@QAE@XZ,func,GameUI/CvarToggleCheckButton.cpp: same position and size as in our compiled object
+10045EF0,?InitVar@PanelMessageFunc_OnButtonChecked@CCvarToggleCheckButton@@SAXXZ,func,GameUI/CvarToggleCheckButton.cpp: same position and size as in our compiled object
+10045F60,?AddToMap@CCvarToggleCheckButton@@SAXPBDP8Panel@vgui2@@AEXXZHH0H0@Z,func,GameUI/CvarToggleCheckButton.cpp: same position and size as in our compiled object
+10045BA3,?Paint@CCvarToggleCheckButton@@UAEXXZ,func,GameUI/CvarToggleCheckButton.cpp: same position (size 163 against 169) as in our compiled object; linux: _ZN22CCvarToggleCheckButton5PaintEv
+10045CA6,?Reset@CCvarToggleCheckButton@@QAEXXZ,func,GameUI/CvarToggleCheckButton.cpp: same position (size 94 against 100) as in our compiled object; linux: _ZN22CCvarToggleCheckButton5ResetEv

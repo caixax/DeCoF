@@ -3933,6 +3933,11 @@
           "name": "GameUI/NewGameDialog",
           "source": "src/gameui/NewGameDialog.cpp",
           "functions_file": "tools/units/gameui_GameUI_NewGameDialog.txt"
+        },
+        {
+          "name": "GameUI/CvarToggleCheckButton",
+          "source": "src/gameui/CvarToggleCheckButton.cpp",
+          "functions_file": "tools/units/gameui_GameUI_CvarToggleCheckButton.txt"
         }
       ]
     }

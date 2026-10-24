@@ -9537,23 +9537,23 @@ gameui,100459B0,10,,CCvarTextEntry::CCvarTextEntry,ENGINE,GameUI/CvarTextEntry.c
 gameui,100459C0,19,,,UNKNOWN,GameUI/CvarTextEntry.cpp,,,TODO,,,
 gameui,100459E0,107,,,UNKNOWN,GameUI/CvarTextEntry.cpp,,,TODO,,,
 gameui,10045A50,120,,,UNKNOWN,GameUI/CvarTextEntry.cpp,,,TODO,,,
-gameui,10045AE0,149,,,UNKNOWN,GameUI/CvarToggleCheckButton.cpp,,,TODO,,,linux: _ZN22CCvarToggleCheckButtonC2EPN5vgui25PanelEPKcS4_S4_
-gameui,10045B75,46,,,UNKNOWN,GameUI/CvarToggleCheckButton.cpp,,,TODO,,,linux: _ZN22CCvarToggleCheckButtonD1Ev
-gameui,10045BA3,163,,,UNKNOWN,GameUI/CvarToggleCheckButton.cpp,,,TODO,,,linux: _ZN22CCvarToggleCheckButton5PaintEv
-gameui,10045C46,96,,CCvarToggleCheckButton::ApplyChanges,ENGINE,GameUI/CvarToggleCheckButton.cpp,,,TODO,,linux_symbols:callseq:0.714,linux: _ZN22CCvarToggleCheckButton12ApplyChangesEv
-gameui,10045CA6,94,,,UNKNOWN,GameUI/CvarToggleCheckButton.cpp,,,TODO,,,linux: _ZN22CCvarToggleCheckButton5ResetEv
-gameui,10045D04,50,,,UNKNOWN,GameUI/CvarToggleCheckButton.cpp,,,TODO,,,linux: _ZN22CCvarToggleCheckButton15HasBeenModifiedEv
-gameui,10045D36,25,,,UNKNOWN,GameUI/CvarToggleCheckButton.cpp,,,TODO,,,linux: _ZN22CCvarToggleCheckButton11SetSelectedEb
-gameui,10045D4F,92,,,UNKNOWN,GameUI/CvarToggleCheckButton.cpp,,,TODO,,,linux: _ZN22CCvarToggleCheckButton15OnButtonCheckedEv
-gameui,10045DB0,46,,,UNKNOWN,GameUI/CvarToggleCheckButton.cpp,,,TODO,,,
-gameui,10045DE0,19,,,UNKNOWN,GameUI/CvarToggleCheckButton.cpp,,,TODO,,,
-gameui,10045E00,102,,,UNKNOWN,GameUI/CvarToggleCheckButton.cpp,,,TODO,,,
-gameui,10045E70,64,,,UNKNOWN,GameUI/CvarToggleCheckButton.cpp,,,TODO,,,
-gameui,10045EB0,10,,,UNKNOWN,GameUI/CvarToggleCheckButton.cpp,,,TODO,,,
-gameui,10045EC0,10,,,UNKNOWN,GameUI/CvarToggleCheckButton.cpp,,,TODO,,,
-gameui,10045ED0,19,,,UNKNOWN,GameUI/CvarToggleCheckButton.cpp,,,TODO,,,
-gameui,10045EF0,107,,,UNKNOWN,GameUI/CvarToggleCheckButton.cpp,,,TODO,,,
-gameui,10045F60,120,,,UNKNOWN,GameUI/CvarToggleCheckButton.cpp,,,TODO,,,
+gameui,10045AE0,149,??0CCvarToggleCheckButton@@QAE@PAVPanel@vgui2@@PBD11@Z,"public: __thiscall CCvarToggleCheckButton::CCvarToggleCheckButton(class vgui2::Panel *,char const *,char const *,char const *)",UNKNOWN,GameUI/CvarToggleCheckButton.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN22CCvarToggleCheckButtonC2EPN5vgui25PanelEPKcS4_S4_
+gameui,10045B75,46,??1CCvarToggleCheckButton@@UAE@XZ,public: virtual __thiscall CCvarToggleCheckButton::~CCvarToggleCheckButton(void),UNKNOWN,GameUI/CvarToggleCheckButton.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN22CCvarToggleCheckButtonD1Ev
+gameui,10045BA3,163,?Paint@CCvarToggleCheckButton@@UAEXXZ,public: virtual void __thiscall CCvarToggleCheckButton::Paint(void),UNKNOWN,GameUI/CvarToggleCheckButton.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN22CCvarToggleCheckButton5PaintEv
+gameui,10045C46,96,?ApplyChanges@CCvarToggleCheckButton@@QAEXXZ,public: void __thiscall CCvarToggleCheckButton::ApplyChanges(void),ENGINE,GameUI/CvarToggleCheckButton.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN22CCvarToggleCheckButton12ApplyChangesEv
+gameui,10045CA6,94,?Reset@CCvarToggleCheckButton@@QAEXXZ,public: void __thiscall CCvarToggleCheckButton::Reset(void),UNKNOWN,GameUI/CvarToggleCheckButton.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN22CCvarToggleCheckButton5ResetEv
+gameui,10045D04,50,?HasBeenModified@CCvarToggleCheckButton@@QAE_NXZ,public: bool __thiscall CCvarToggleCheckButton::HasBeenModified(void),UNKNOWN,GameUI/CvarToggleCheckButton.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN22CCvarToggleCheckButton15HasBeenModifiedEv
+gameui,10045D36,25,?SetSelected@CCvarToggleCheckButton@@UAEX_N@Z,public: virtual void __thiscall CCvarToggleCheckButton::SetSelected(bool),UNKNOWN,GameUI/CvarToggleCheckButton.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN22CCvarToggleCheckButton11SetSelectedEb
+gameui,10045D4F,92,?OnButtonChecked@CCvarToggleCheckButton@@EAEXXZ,private: virtual void __thiscall CCvarToggleCheckButton::OnButtonChecked(void),UNKNOWN,GameUI/CvarToggleCheckButton.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN22CCvarToggleCheckButton15OnButtonCheckedEv
+gameui,10045DB0,46,??_GCCvarToggleCheckButton@@UAEPAXI@Z,public: virtual void * __thiscall CCvarToggleCheckButton::`scalar deleting destructor'(unsigned int),UNKNOWN,GameUI/CvarToggleCheckButton.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10045DE0,19,??0CCvarToggleCheckButton_RegisterMap@CCvarToggleCheckButton@@QAE@XZ,public: __thiscall CCvarToggleCheckButton::CCvarToggleCheckButton_RegisterMap::CCvarToggleCheckButton_RegisterMap(void),UNKNOWN,GameUI/CvarToggleCheckButton.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10045E00,102,?ChainToMap@CCvarToggleCheckButton@@SAXXZ,public: static void __cdecl CCvarToggleCheckButton::ChainToMap(void),UNKNOWN,GameUI/CvarToggleCheckButton.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10045E70,64,?GetMessageMap@CCvarToggleCheckButton@@UAEPAUPanelMessageMap@vgui2@@XZ,public: virtual struct vgui2::PanelMessageMap * __thiscall CCvarToggleCheckButton::GetMessageMap(void),UNKNOWN,GameUI/CvarToggleCheckButton.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10045EB0,10,?GetPanelClassName@CCvarToggleCheckButton@@SAPBDXZ,public: static char const * __cdecl CCvarToggleCheckButton::GetPanelClassName(void),UNKNOWN,GameUI/CvarToggleCheckButton.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10045EC0,10,?GetPanelBaseClassName@CCvarToggleCheckButton@@SAPBDXZ,public: static char const * __cdecl CCvarToggleCheckButton::GetPanelBaseClassName(void),UNKNOWN,GameUI/CvarToggleCheckButton.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10045ED0,19,??0PanelMessageFunc_OnButtonChecked@CCvarToggleCheckButton@@QAE@XZ,public: __thiscall CCvarToggleCheckButton::PanelMessageFunc_OnButtonChecked::PanelMessageFunc_OnButtonChecked(void),UNKNOWN,GameUI/CvarToggleCheckButton.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10045EF0,107,?InitVar@PanelMessageFunc_OnButtonChecked@CCvarToggleCheckButton@@SAXXZ,public: static void __cdecl CCvarToggleCheckButton::PanelMessageFunc_OnButtonChecked::InitVar(void),UNKNOWN,GameUI/CvarToggleCheckButton.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10045F60,120,?AddToMap@CCvarToggleCheckButton@@SAXPBDP8Panel@vgui2@@AEXXZHH0H0@Z,"public: static void __cdecl CCvarToggleCheckButton::AddToMap(char const *,void (__thiscall vgui2::Panel::*)(void),int,int,char const *,int,char const *)",UNKNOWN,GameUI/CvarToggleCheckButton.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,10045FE0,151,,,UNKNOWN,GameUI/KeyToggleCheckButton.cpp,,,TODO,,,linux: _ZN21CKeyToggleCheckButtonC2EPN5vgui25PanelEPKcS4_S4_S4_
 gameui,10046077,64,,,UNKNOWN,GameUI/KeyToggleCheckButton.cpp,,,TODO,,,linux: _ZN21CKeyToggleCheckButtonD2Ev
 gameui,100460B7,129,,,UNKNOWN,GameUI/KeyToggleCheckButton.cpp,,,TODO,,,linux: _ZN21CKeyToggleCheckButton5PaintEv
