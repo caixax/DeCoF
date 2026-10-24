@@ -15662,7 +15662,7 @@ hl,1007ABC0,1021,?ItemPostFrame@CSyringe@@UAEXXZ,CSyringe::ItemPostFrame,COF,dll
 hl,1007AFC0,126,?Precache@CSyringe@@UAEXXZ,CSyringe::Precache,COF,dlls/cof_syringe.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1007B040,129,?PrimaryAttack@CSyringe@@UAEXXZ,CSyringe::PrimaryAttack,COF,dlls/cof_syringe.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1007B0D0,50,?Redeploy@CSyringe@@QAEXXZ,CSyringe::Redeploy,COF,dlls/cof_syringe.cpp,2010-prototype,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,1007B110,1236,?SecondaryAttack@CSyringe@@UAEXXZ,CSyringe::SecondaryAttack,COF,dlls/cof_syringe.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,EQUIVALENT,99.98,hl_1.55_to_1.6a.csv,"EQUIVALENT: only the x component of vecStart and vecEnd loads its operands in the other order (retail loads view_ofs.x first for vecStart and origin.x first for vecEnd). Tried operand swaps, vecEnd from vecStart, late assignment, parentheses, 48 as 48.0/48.0f, moving tr and pHealVictim, declaring vecEnd first."
+hl,1007B110,1236,?SecondaryAttack@CSyringe@@UAEXXZ,CSyringe::SecondaryAttack,COF,dlls/cof_syringe.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1007B5F0,6,?ShouldWeaponIdle@CSyringe@@UAEHXZ,CSyringe::ShouldWeaponIdle,COF,dlls/cof_syringe.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1007B600,253,?Spawn@CSyringe@@UAEXXZ,CSyringe::Spawn,COF,dlls/cof_syringe.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1007B700,149,?WeaponIdle@CSyringe@@UAEXXZ,CSyringe::WeaponIdle,COF,dlls/cof_syringe.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,

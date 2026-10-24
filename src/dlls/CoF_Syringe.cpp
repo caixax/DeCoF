@@ -311,8 +311,10 @@ void CSyringe::SecondaryAttack( void )
 
 	pHealVictim = NULL;
 
-	Vector vecStart = m_pPlayer->pev->origin + m_pPlayer->pev->view_ofs;
-	Vector vecEnd = m_pPlayer->pev->origin + m_pPlayer->pev->view_ofs + gpGlobals->v_forward * 48;
+	entvars_t *pevStart = m_pPlayer->pev;
+	Vector vecStart = pevStart->origin + m_pPlayer->pev->view_ofs;
+	entvars_t *pevEnd = m_pPlayer->pev;
+	Vector vecEnd = pevEnd->origin + m_pPlayer->pev->view_ofs + gpGlobals->v_forward * 48;
 
 	TraceResult tr;
 	UTIL_MakeVectors( m_pPlayer->pev->angles );
