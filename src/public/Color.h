@@ -22,7 +22,7 @@ public:
 	// constructors
 	Color()
 	{
-		*((int *)this) = 0;
+		SetColor(0, 0, 0, 0);
 	}
 	Color(int r,int g,int b)
 	{

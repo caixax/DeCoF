@@ -7393,88 +7393,88 @@ coflaunchapp,06000030,28,CoFLaunchApp.Properties.Resources::get_tslogo,assembly 
 coflaunchapp,06000031,28,CoFLaunchApp.Properties.Resources::get_unlocks,assembly hidebysig specialname static class [System.Drawing]System.Drawing.Bitmap get_unlocks(),COF,coflaunchapp/Properties/Resources.Designer.cs,1.0,1.0->1.55 same; 1.55->1.6a same,MATCHED,100,ildasm_il_compare,
 coflaunchapp,06000032,28,CoFLaunchApp.Properties.Resources::get_unlocksmo,assembly hidebysig specialname static class [System.Drawing]System.Drawing.Bitmap get_unlocksmo(),COF,coflaunchapp/Properties/Resources.Designer.cs,1.0,1.0->1.55 same; 1.55->1.6a same,MATCHED,100,ildasm_il_compare,
 coflaunchapp,06000033,22,CoFLaunchApp.Program::Main,private hidebysig static void Main(),COF,coflaunchapp/Program.cs,1.0,1.0->1.55 same; 1.55->1.6a same,MATCHED,100,ildasm_il_compare,
-gameui,10001000,69,,,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,TODO,,,linux: _ZN21CCareerPanelListPanel19ApplySchemeSettingsEPN5vgui27ISchemeE
-gameui,10001045,90,,,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,TODO,,,linux: _ZN9ColorFadeC2Ev
-gameui,1000109F,48,,,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,TODO,,,linux: _ZN9ColorFade7SetFadeE5ColorS0_fNS_7FadeDirE
-gameui,100010CF,81,,,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,TODO,,,linux: _ZN9ColorFade8DrawFadeEiiii
-gameui,10001120,190,,,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,TODO,,,linux: _ZN13CCareerButtonC1EPN5vgui25PanelEPKcS4_S4_b
-gameui,100011DE,584,,,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,TODO,,,linux: _ZN13CCareerButton5PaintEv
-gameui,10001426,43,,,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,TODO,,,linux: _ZN13CCareerButton14SetArmedBorderEPN5vgui27IBorderE
-gameui,10001451,96,,,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,TODO,,,linux: _ZN13CCareerButton9GetBorderEbbbb
-gameui,100014B1,1088,,CCareerButton::ApplySchemeSettings,ENGINE,GameUI/CareerBaseFrame.cpp,,,TODO,,linux_symbols:string:0.812,linux: _ZN13CCareerButton19ApplySchemeSettingsEPN5vgui27ISchemeE
-gameui,100018F1,360,,,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,TODO,,,
-gameui,10001A59,245,,CAutosaveLabel::ApplySchemeSettings,ENGINE,GameUI/CareerBaseFrame.cpp,,,TODO,,linux_symbols:string:0.768,linux: _ZN14CAutosaveLabel19ApplySchemeSettingsEPN5vgui27ISchemeE
-gameui,10001B4E,174,,,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,TODO,,,linux: _ZN14CAutosaveLabel13PerformLayoutEv
-gameui,10001BFC,411,,,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,TODO,,,linux: _ZN14CAutosaveLabel15PaintBackgroundEv
-gameui,10001D97,30,,,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,TODO,,,linux: _ZN14CAutosaveLabel10GetBgColorEv
-gameui,10001DB5,499,,CCareerBaseFrame::CCareerBaseFrame,ENGINE,GameUI/CareerBaseFrame.cpp,,,TODO,,linux_symbols:string:0.337,linux: _ZN16CCareerBaseFrameC1EPN5vgui25PanelEPKcb
-gameui,10001FA8,42,,CBasePane::~CBasePane,ENGINE,GameUI/CareerBaseFrame.cpp,,,TODO,,ghidra,
-gameui,10001FD2,188,,,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,TODO,,,linux: _ZN16CCareerBaseFrame7OnThinkEv
-gameui,1000208E,113,,,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,TODO,,,linux: _ZN16CCareerBaseFrame18ShowAutosaveNoticeEv
-gameui,100020FF,449,,,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,TODO,,,linux: _ZN16CCareerBaseFrame19ApplySchemeSettingsEPN5vgui27ISchemeE
-gameui,100022C0,375,,CCareerBaseFrame::SetImageBackground,ENGINE,GameUI/CareerBaseFrame.cpp,,,TODO,,linux_symbols:string:0.764,linux: _ZN16CCareerBaseFrame18SetImageBackgroundEb
-gameui,10002437,481,,,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,TODO,,,linux: _ZN16CCareerBaseFrame19DrawBackgroundImageEv
-gameui,10002618,298,,CCareerBaseFrame::PaintBackground,ENGINE,GameUI/CareerBaseFrame.cpp,,,TODO,,linux_symbols:string:0.792,linux: _ZN16CCareerBaseFrame15PaintBackgroundEv
-gameui,10002742,147,,,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,TODO,,,
-gameui,100027D5,40,,,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,TODO,,,
-gameui,100027FD,118,,,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,TODO,,,
-gameui,10002873,524,,CCareerBaseFrame::Activate,ENGINE,GameUI/CareerBaseFrame.cpp,,,TODO,,linux_symbols:string:0.397,linux: _ZN16CCareerBaseFrame8ActivateEv
-gameui,10002A7F,770,,,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,TODO,,,linux: _ZN16CCareerBaseFrame13PerformLayoutEv
-gameui,10002D90,46,,,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,TODO,,,
-gameui,10002DC0,19,,,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,TODO,,,
-gameui,10002DE0,46,,,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,TODO,,,
-gameui,10002E10,19,,,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,TODO,,,
-gameui,10002E30,46,,,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,TODO,,,
-gameui,10002E60,43,,,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,TODO,,,
-gameui,10002E90,34,,,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,TODO,,,
-gameui,10002EC0,16,,,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,TODO,,,
-gameui,10002ED0,45,,,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,TODO,,,
-gameui,10002F00,30,??0Color@@QAE@XZ,Color::Color,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,TODO,,gameui_manual.csv,
-gameui,10002F20,40,??0Color@@QAE@HHHH@Z,Color::Color,ENGINE,GameUI/CareerBaseFrame.cpp,,,TODO,,gameui_manual.csv,
-gameui,10002F50,48,,,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,TODO,,,
-gameui,10002F80,64,,,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,TODO,,,
-gameui,10002FC0,25,??A?$CUtlVector@VPHandle@vgui2@@@@QAEAAVPHandle@vgui2@@H@Z,vgui2::PHandle>::operator[],UNKNOWN,GameUI/CareerBaseFrame.cpp,,,TODO,,gameui_manual.csv,
-gameui,10002FE0,17,?Count@?$CUtlVector@VPHandle@vgui2@@@@QBEHXZ,vgui2::PHandle>::Count,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,TODO,,gameui_manual.csv,
-gameui,10003000,50,,,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,TODO,,,
-gameui,10003040,27,,,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,TODO,,,
-gameui,10003060,17,,,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,TODO,,,
-gameui,10003080,25,,,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,TODO,,,
-gameui,100030A0,17,,,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,TODO,,,
-gameui,100030C0,32,,,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,TODO,,,
-gameui,100030E0,27,,,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,TODO,,,
-gameui,10003100,27,,,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,TODO,,,
-gameui,10003120,27,,,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,TODO,,,
-gameui,10003140,17,,,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,TODO,,,
-gameui,10003160,17,?GetVPanel@Panel@vgui2@@UAEIXZ,vgui2::Panel::GetVPanel,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,TODO,,gameui_manual.csv,linux: _ZN5vgui25Panel9GetVPanelEv
-gameui,10003180,17,,,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,TODO,,,linux: _ZN5vgui25Panel14IsProportionalEv
-gameui,100031A0,14,,,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,TODO,,,linux: _ZN5vgui25Panel8GetPanelEv
-gameui,100031B0,24,,,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,TODO,,,
-gameui,100031D0,65,,,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,TODO,,,
-gameui,10003220,35,,,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,TODO,,,
-gameui,10003250,11,,,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,TODO,,,
-gameui,10003260,75,,,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,TODO,,,
-gameui,100032B0,19,,,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,TODO,,,
-gameui,100032D0,24,,,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,TODO,,,
-gameui,100032F0,25,,,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,TODO,,,
-gameui,10003310,70,,,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,TODO,,,
-gameui,10003360,87,,,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,TODO,,,
-gameui,100033C0,86,,,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,TODO,,,
-gameui,10003420,58,,,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,TODO,,,
-gameui,10003460,8,??2@YAPAXIPAX@Z,new,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,TODO,,gameui_manual.csv,
-gameui,10003470,69,,,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,TODO,,,
-gameui,100034C0,17,,,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,TODO,,,
-gameui,100034E0,199,,,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,TODO,,,
-gameui,100035B0,25,,,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,TODO,,,
-gameui,100035D0,5,,,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,TODO,,,
-gameui,100035E0,64,,,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,TODO,,,
-gameui,10003620,10,,,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,TODO,,,
-gameui,10003630,64,?GetMessageMap@Label@vgui2@@UAEPAUPanelMessageMap@2@XZ,vgui2::Label::GetMessageMap,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,TODO,,gameui_manual.csv,
-gameui,10003670,10,?GetPanelClassName@Label@vgui2@@SAPBDXZ,vgui2::Label::GetPanelClassName,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,TODO,,gameui_manual.csv,
-gameui,10003680,64,,,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,TODO,,,
-gameui,100036C0,10,,,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,TODO,,,
-gameui,100036D0,25,,,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,TODO,,,
-gameui,100036F0,20,,,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,TODO,,,
-gameui,10003710,22,,,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,TODO,,,
+gameui,10001000,69,?ApplySchemeSettings@CCareerPanelListPanel@@UAEXPAVIScheme@vgui2@@@Z,CCareerPanelListPanel::ApplySchemeSettings,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,MATCHED,100,,linux: _ZN21CCareerPanelListPanel19ApplySchemeSettingsEPN5vgui27ISchemeE
+gameui,10001045,90,??0ColorFade@@QAE@XZ,ColorFade::ColorFade,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,MATCHED,100,,linux: _ZN9ColorFadeC2Ev
+gameui,1000109F,48,?SetFade@ColorFade@@QAEXVColor@@0MW4FadeDir@1@@Z,ColorFade::SetFade,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,MATCHED,100,,linux: _ZN9ColorFade7SetFadeE5ColorS0_fNS_7FadeDirE
+gameui,100010CF,81,?DrawFade@ColorFade@@QAEXHHHH@Z,ColorFade::DrawFade,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,MATCHED,100,,linux: _ZN9ColorFade8DrawFadeEiiii
+gameui,10001120,190,??0CCareerButton@@QAE@PAVPanel@vgui2@@PBD11_N@Z,CCareerButton::CCareerButton,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,MATCHED,100,,linux: _ZN13CCareerButtonC1EPN5vgui25PanelEPKcS4_S4_b
+gameui,100011DE,584,?Paint@CCareerButton@@UAEXXZ,CCareerButton::Paint,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,MATCHED,100,,linux: _ZN13CCareerButton5PaintEv
+gameui,10001426,43,?SetArmedBorder@CCareerButton@@UAEXPAVIBorder@vgui2@@@Z,CCareerButton::SetArmedBorder,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,MATCHED,100,,linux: _ZN13CCareerButton14SetArmedBorderEPN5vgui27IBorderE
+gameui,10001451,96,?GetBorder@CCareerButton@@MAEPAVIBorder@vgui2@@_N000@Z,CCareerButton::GetBorder,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,MATCHED,100,,linux: _ZN13CCareerButton9GetBorderEbbbb
+gameui,100014B1,1088,?ApplySchemeSettings@CCareerButton@@UAEXPAVIScheme@vgui2@@@Z,CCareerButton::ApplySchemeSettings,ENGINE,GameUI/CareerBaseFrame.cpp,,,MATCHED,100,linux_symbols:string:0.812,linux: _ZN13CCareerButton19ApplySchemeSettingsEPN5vgui27ISchemeE
+gameui,100018F1,360,??0CAutosaveLabel@@QAE@PAVPanel@vgui2@@PBD1@Z,CAutosaveLabel::CAutosaveLabel,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,MATCHED,100,,
+gameui,10001A59,245,?ApplySchemeSettings@CAutosaveLabel@@UAEXPAVIScheme@vgui2@@@Z,CAutosaveLabel::ApplySchemeSettings,ENGINE,GameUI/CareerBaseFrame.cpp,,,MATCHED,100,linux_symbols:string:0.768,linux: _ZN14CAutosaveLabel19ApplySchemeSettingsEPN5vgui27ISchemeE
+gameui,10001B4E,174,?PerformLayout@CAutosaveLabel@@UAEXXZ,CAutosaveLabel::PerformLayout,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,MATCHED,100,,linux: _ZN14CAutosaveLabel13PerformLayoutEv
+gameui,10001BFC,411,?PaintBackground@CAutosaveLabel@@UAEXXZ,CAutosaveLabel::PaintBackground,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,MATCHED,100,,linux: _ZN14CAutosaveLabel15PaintBackgroundEv
+gameui,10001D97,30,?GetBgColor@CAutosaveLabel@@UAE?AVColor@@XZ,CAutosaveLabel::GetBgColor,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,MATCHED,100,,linux: _ZN14CAutosaveLabel10GetBgColorEv
+gameui,10001DB5,499,??0CCareerBaseFrame@@QAE@PAVPanel@vgui2@@PBD_N@Z,CCareerBaseFrame::CCareerBaseFrame,ENGINE,GameUI/CareerBaseFrame.cpp,,,MATCHED,100,linux_symbols:string:0.337,linux: _ZN16CCareerBaseFrameC1EPN5vgui25PanelEPKcb
+gameui,10001FA8,42,??1CCareerBaseFrame@@UAE@XZ,CCareerBaseFrame::~CCareerBaseFrame,ENGINE,GameUI/CareerBaseFrame.cpp,,,MATCHED,100,ghidra,
+gameui,10001FD2,188,?OnThink@CCareerBaseFrame@@UAEXXZ,CCareerBaseFrame::OnThink,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN16CCareerBaseFrame7OnThinkEv
+gameui,1000208E,113,?ShowAutosaveNotice@CCareerBaseFrame@@UAEXXZ,CCareerBaseFrame::ShowAutosaveNotice,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN16CCareerBaseFrame18ShowAutosaveNoticeEv
+gameui,100020FF,449,?ApplySchemeSettings@CCareerBaseFrame@@UAEXPAVIScheme@vgui2@@@Z,CCareerBaseFrame::ApplySchemeSettings,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,MATCHED,100,,linux: _ZN16CCareerBaseFrame19ApplySchemeSettingsEPN5vgui27ISchemeE
+gameui,100022C0,375,?SetImageBackground@CCareerBaseFrame@@IAEX_N@Z,CCareerBaseFrame::SetImageBackground,ENGINE,GameUI/CareerBaseFrame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN16CCareerBaseFrame18SetImageBackgroundEb
+gameui,10002437,481,?DrawBackgroundImage@CCareerBaseFrame@@AAEXXZ,CCareerBaseFrame::DrawBackgroundImage,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,MATCHED,100,,linux: _ZN16CCareerBaseFrame19DrawBackgroundImageEv
+gameui,10002618,298,?PaintBackground@CCareerBaseFrame@@UAEXXZ,CCareerBaseFrame::PaintBackground,ENGINE,GameUI/CareerBaseFrame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN16CCareerBaseFrame15PaintBackgroundEv
+gameui,10002742,147,?GetAlternateProportionalValueFromNormal@@YAHH@Z,GetAlternateProportionalValueFromNormal,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,MATCHED,100,,
+gameui,100027D5,40,?GetAlternateProportionalValueFromScaled@@YAHH@Z,GetAlternateProportionalValueFromScaled,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,MATCHED,100,,
+gameui,100027FD,118,?RepositionControl@@YAXPAVPanel@vgui2@@@Z,RepositionControl,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,MATCHED,100,,
+gameui,10002873,524,?Activate@CCareerBaseFrame@@UAEXXZ,CCareerBaseFrame::Activate,ENGINE,GameUI/CareerBaseFrame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN16CCareerBaseFrame8ActivateEv
+gameui,10002A7F,770,?PerformLayout@CCareerBaseFrame@@UAEXXZ,CCareerBaseFrame::PerformLayout,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN16CCareerBaseFrame13PerformLayoutEv
+gameui,10002D90,46,??_GCCareerButton@@UAEPAXI@Z,destructor',UNKNOWN,GameUI/CareerBaseFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10002DC0,19,??1CCareerButton@@UAE@XZ,CCareerButton::~CCareerButton,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10002DE0,46,??_GCAutosaveLabel@@UAEPAXI@Z,destructor',UNKNOWN,GameUI/CareerBaseFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10002E10,19,??1CAutosaveLabel@@UAE@XZ,CAutosaveLabel::~CAutosaveLabel,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10002E30,46,??_GCCareerBaseFrame@@UAEPAXI@Z,destructor',UNKNOWN,GameUI/CareerBaseFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10002E60,43,??0?$Dar@PAVButton@vgui2@@@vgui2@@QAE@XZ,*>,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,MATCHED,100,,
+gameui,10002E90,34,??1?$Dar@PAVButton@vgui2@@@vgui2@@QAE@XZ,*>,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,MATCHED,100,,
+gameui,10002EC0,16,?GetCount@?$Dar@PAVButton@vgui2@@@vgui2@@QAEHXZ,*>::GetCount,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,MATCHED,100,,
+gameui,10002ED0,45,??A?$Dar@PAVButton@vgui2@@@vgui2@@QAEPAVButton@1@H@Z,*>::operator[],UNKNOWN,GameUI/CareerBaseFrame.cpp,,,MATCHED,100,,
+gameui,10002F00,30,??0Color@@QAE@XZ,Color::Color,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10002F20,40,??0Color@@QAE@HHHH@Z,Color::Color,ENGINE,GameUI/CareerBaseFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10002F50,48,?SetColor@Color@@QAEXHHHH@Z,Color::SetColor,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,MATCHED,100,,
+gameui,10002F80,64,?GetColor@Color@@QBEXAAH000@Z,Color::GetColor,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,MATCHED,100,,
+gameui,10002FC0,25,??A?$CUtlVector@VPHandle@vgui2@@@@QAEAAVPHandle@vgui2@@H@Z,vgui2::PHandle>::operator[],UNKNOWN,GameUI/CareerBaseFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10002FE0,17,?Count@?$CUtlVector@VPHandle@vgui2@@@@QBEHXZ,vgui2::PHandle>::Count,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10003000,50,??0?$CUtlVector@PAVPanel@vgui2@@@@QAE@HH@Z,*>,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,MATCHED,100,,
+gameui,10003040,27,??1?$CUtlVector@PAVPanel@vgui2@@@@QAE@XZ,*>,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,MATCHED,100,,
+gameui,10003060,17,?GetTitle@CareerDefinition@@QBEPBGXZ,CareerDefinition::GetTitle,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,MATCHED,100,,
+gameui,10003080,25,??A?$CUtlVector@PAVPanel@vgui2@@@@QAEAAPAVPanel@vgui2@@H@Z,*>::operator[],UNKNOWN,GameUI/CareerBaseFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100030A0,17,?Count@?$CUtlVector@PAVPanel@vgui2@@@@QBEHXZ,*>::Count,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100030C0,32,?AddToTail@?$CUtlVector@PAVPanel@vgui2@@@@QAEHABQAVPanel@vgui2@@@Z,*>::AddToTail,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,MATCHED,100,,
+gameui,100030E0,27,?GetBgStartColor@CareerDefinition@@QBE?AVColor@@XZ,CareerDefinition::GetBgStartColor,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,MATCHED,100,,
+gameui,10003100,27,?GetBgEndColor@CareerDefinition@@QBE?AVColor@@XZ,CareerDefinition::GetBgEndColor,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,MATCHED,100,,
+gameui,10003120,27,?GetTextColor@CareerDefinition@@QBE?AVColor@@XZ,CareerDefinition::GetTextColor,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,MATCHED,100,,
+gameui,10003140,17,?GetActiveCareerDefinition@CareerDefinitionManager@@QAEPAVCareerDefinition@@XZ,CareerDefinitionManager::GetActiveCareerDefinition,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10003160,17,?GetVPanel@Panel@vgui2@@UAEIXZ,vgui2::Panel::GetVPanel,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui25Panel9GetVPanelEv
+gameui,10003180,17,?IsProportional@Panel@vgui2@@UAE_NXZ,vgui2::Panel::IsProportional,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel14IsProportionalEv
+gameui,100031A0,14,?GetPanel@Panel@vgui2@@EAEPAV12@XZ,vgui2::Panel::GetPanel,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,MATCHED,100,,linux: _ZN5vgui25Panel8GetPanelEv
+gameui,100031B0,24,??A?$CUtlMemory@VPHandle@vgui2@@@@QAEAAVPHandle@vgui2@@H@Z,vgui2::PHandle>::operator[],UNKNOWN,GameUI/CareerBaseFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100031D0,65,?InsertBefore@?$CUtlVector@PAVPanel@vgui2@@@@QAEHHABQAVPanel@vgui2@@@Z,*>::InsertBefore,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,MATCHED,100,,
+gameui,10003220,35,?Purge@?$CUtlVector@PAVPanel@vgui2@@@@QAEXXZ,*>::Purge,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,MATCHED,100,,
+gameui,10003250,11,?ResetDbgInfo@?$CUtlVector@PAVPanel@vgui2@@@@IAEXXZ,*>::ResetDbgInfo,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,MATCHED,100,,
+gameui,10003260,75,??0?$CUtlMemory@PAVPanel@vgui2@@@@QAE@HH@Z,*>,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,MATCHED,100,,
+gameui,100032B0,19,??1?$CUtlMemory@PAVPanel@vgui2@@@@QAE@XZ,*>,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100032D0,24,??A?$CUtlMemory@PAVPanel@vgui2@@@@QAEAAPAVPanel@vgui2@@H@Z,*>::operator[],UNKNOWN,GameUI/CareerBaseFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100032F0,25,?Element@?$CUtlVector@PAVPanel@vgui2@@@@QAEAAPAVPanel@vgui2@@H@Z,*>::Element,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10003310,70,?RemoveAll@?$CUtlVector@PAVPanel@vgui2@@@@QAEXXZ,*>::RemoveAll,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,MATCHED,100,,
+gameui,10003360,87,?GrowVector@?$CUtlVector@PAVPanel@vgui2@@@@IAEXH@Z,*>::GrowVector,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,MATCHED,100,,
+gameui,100033C0,86,?ShiftElementsRight@?$CUtlVector@PAVPanel@vgui2@@@@IAEXHH@Z,*>::ShiftElementsRight,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,MATCHED,100,,
+gameui,10003420,58,?CopyConstruct@@YAXPAPAVPanel@vgui2@@ABQAV12@@Z,CopyConstruct,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,MATCHED,100,,
+gameui,10003460,8,??2@YAPAXIPAX@Z,new,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10003470,69,?Purge@?$CUtlMemory@PAVPanel@vgui2@@@@QAEXXZ,*>::Purge,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,MATCHED,100,,
+gameui,100034C0,17,?NumAllocated@?$CUtlMemory@PAVPanel@vgui2@@@@QBEHXZ,*>::NumAllocated,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,MATCHED,100,,
+gameui,100034E0,199,?Grow@?$CUtlMemory@PAVPanel@vgui2@@@@QAEXH@Z,*>::Grow,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,MATCHED,100,,
+gameui,100035B0,25,?IsExternallyAllocated@?$CUtlMemory@PAVPanel@vgui2@@@@QBE_NXZ,*>::IsExternallyAllocated,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,MATCHED,100,,
+gameui,100035D0,5,?Destruct@@YAXPAPAVPanel@vgui2@@@Z,Destruct,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,MATCHED,100,,
+gameui,100035E0,64,?GetMessageMap@Frame@vgui2@@UAEPAUPanelMessageMap@2@XZ,vgui2::Frame::GetMessageMap,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10003620,10,?GetPanelClassName@Frame@vgui2@@SAPBDXZ,vgui2::Frame::GetPanelClassName,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10003630,64,?GetMessageMap@Label@vgui2@@UAEPAUPanelMessageMap@2@XZ,vgui2::Label::GetMessageMap,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10003670,10,?GetPanelClassName@Label@vgui2@@SAPBDXZ,vgui2::Label::GetPanelClassName,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10003680,64,?GetMessageMap@Button@vgui2@@UAEPAUPanelMessageMap@2@XZ,vgui2::Button::GetMessageMap,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100036C0,10,?GetPanelClassName@Button@vgui2@@SAPBDXZ,vgui2::Button::GetPanelClassName,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100036D0,25,?OnHotkey@Button@vgui2@@UAEXXZ,vgui2::Button::OnHotkey,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,MATCHED,100,,
+gameui,100036F0,20,?GetScrollbar@CPanelListPanel@@IAEPAVScrollBar@vgui2@@XZ,CPanelListPanel::GetScrollbar,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,MATCHED,100,,
+gameui,10003710,22,?setImageColor@CBitmapImagePanel@vgui2@@QAEXVColor@@@Z,vgui2::CBitmapImagePanel::setImageColor,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,MATCHED,100,,
 gameui,10003730,53,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,linux: _ZN5CRectC2Ev
 gameui,10003765,51,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,linux: _ZN5CRectC1Eiiii
 gameui,10003798,871,,CBotButton::CBotButton,ENGINE,GameUI/CareerBotFrame.cpp,,,TODO,,linux_symbols:string:0.794,linux: _ZN10CBotButtonC1EPN5vgui25PanelEPKcS4_
