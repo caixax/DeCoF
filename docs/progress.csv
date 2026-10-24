@@ -31994,35 +31994,38 @@ hw,01E63EE0,58,?CopyConstruct@@YAXPAPAGABQAG@Z,CopyConstruct,UNKNOWN,vgui2/contr
 hw,01E63F20,17,?NumAllocated@?$CUtlMemory@PAG@@QBEHXZ,*>::NumAllocated,UNKNOWN,vgui2/controls/TextImage.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01E63F40,199,?Grow@?$CUtlMemory@PAG@@QAEXH@Z,*>::Grow,UNKNOWN,vgui2/controls/TextImage.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01E64010,25,?IsExternallyAllocated@?$CUtlMemory@PAG@@QBE_NXZ,*>::IsExternallyAllocated,UNKNOWN,vgui2/controls/TextImage.cpp,,,MATCHED,100,hw_manual.csv,
-hw,01E64040,10,,,ENGINE,vgui2/vgui_surfacelib/FontManager.cpp,,,TODO,,,
-hw,01E64050,12,,,ENGINE,vgui2/vgui_surfacelib/FontManager.cpp,,,TODO,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(fgetchar.obj); was LIB (short CRT byte match), code belongs to this object"
-hw,01E64070,6,,,ENGINE,vgui2/vgui_surfacelib/FontManager.cpp,,,TODO,,,"VC6 static CRT, bytes identical to LIBC.LIB(mterrno.obj); was LIB (short CRT byte match), code belongs to this object"
-hw,01E64080,309,,,ENGINE,vgui2/vgui_surfacelib/FontManager.cpp,,,TODO,,,
-hw,01E641C0,225,,,ENGINE,vgui2/vgui_surfacelib/FontManager.cpp,,,TODO,,,
-hw,01E642D0,59,,,ENGINE,vgui2/vgui_surfacelib/FontManager.cpp,,,TODO,,,
-hw,01E64310,193,,,ENGINE,vgui2/vgui_surfacelib/FontManager.cpp,,,TODO,,,
-hw,01E643E0,310,,,ENGINE,vgui2/vgui_surfacelib/FontManager.cpp,,,TODO,,,
-hw,01E64520,336,,,ENGINE,vgui2/vgui_surfacelib/FontManager.cpp,,,TODO,,,
-hw,01E64670,77,,,ENGINE,vgui2/vgui_surfacelib/FontManager.cpp,,,TODO,,,
-hw,01E646C0,1,,,ENGINE,vgui2/vgui_surfacelib/FontManager.cpp,,,TODO,,,
-hw,01E646D0,33,,,ENGINE,vgui2/vgui_surfacelib/FontManager.cpp,,,TODO,,,
-hw,01E64700,106,,,ENGINE,vgui2/vgui_surfacelib/FontManager.cpp,,,TODO,,,
-hw,01E64770,23,,,ENGINE,vgui2/vgui_surfacelib/FontManager.cpp,,,TODO,,,
-hw,01E64790,49,,,ENGINE,vgui2/vgui_surfacelib/FontManager.cpp,,,TODO,,,
-hw,01E647D0,81,,,ENGINE,vgui2/vgui_surfacelib/FontManager.cpp,,,TODO,,,
-hw,01E64830,136,,,ENGINE,vgui2/vgui_surfacelib/FontManager.cpp,,,TODO,,,
-hw,01E648C0,64,,,ENGINE,vgui2/vgui_surfacelib/FontManager.cpp,,,TODO,,,
-hw,01E64900,67,,,ENGINE,vgui2/vgui_surfacelib/FontManager.cpp,,,TODO,,,
-hw,01E64950,82,,,ENGINE,vgui2/vgui_surfacelib/FontManager.cpp,,,TODO,,,
-hw,01E649B0,23,,,ENGINE,vgui2/vgui_surfacelib/FontManager.cpp,,,TODO,,,
-hw,01E649D0,147,,,ENGINE,vgui2/vgui_surfacelib/FontManager.cpp,,,TODO,,,
-hw,01E64A70,82,,,ENGINE,vgui2/vgui_surfacelib/FontManager.cpp,,,TODO,,,
-hw,01E64AD0,40,,,ENGINE,vgui2/vgui_surfacelib/FontManager.cpp,,,TODO,,,
-hw,01E64B00,62,,,ENGINE,vgui2/vgui_surfacelib/FontManager.cpp,,,TODO,,,
-hw,01E64B40,109,,,ENGINE,vgui2/vgui_surfacelib/FontManager.cpp,,,TODO,,,
-hw,01E64BB0,128,,,ENGINE,vgui2/vgui_surfacelib/FontManager.cpp,,,TODO,,,
-hw,01E64C30,52,,,ENGINE,vgui2/vgui_surfacelib/FontManager.cpp,,,TODO,,,
-hw,01E64C70,103,,,ENGINE,vgui2/vgui_surfacelib/FontManager.cpp,,,TODO,,,
+hw,01E64030,10,_$E1,,ENGINE,vgui2/vgui_surfacelib/FontManager.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E64040,10,_$E2,,ENGINE,vgui2/vgui_surfacelib/FontManager.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E64050,12,_$E3,,ENGINE,vgui2/vgui_surfacelib/FontManager.cpp,,,MATCHED,100,hw_manual.csv,"VC6 static CRT, bytes identical to LIBCMT.LIB(fgetchar.obj); was LIB (short CRT byte match), code belongs to this object"
+hw,01E64060,10,_$E4,,ENGINE,vgui2/vgui_surfacelib/FontManager.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E64070,6,?FontManager@@YAAAVCFontManager@@XZ,,ENGINE,vgui2/vgui_surfacelib/FontManager.cpp,,,MATCHED,100,hw_manual.csv,"VC6 static CRT, bytes identical to LIBC.LIB(mterrno.obj); was LIB (short CRT byte match), code belongs to this object"
+hw,01E64080,309,??0CFontManager@@QAE@XZ,,ENGINE,vgui2/vgui_surfacelib/FontManager.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E641C0,225,??1CFontManager@@QAE@XZ,,ENGINE,vgui2/vgui_surfacelib/FontManager.cpp,,,EQUIVALENT,93.42,hw_manual.csv,"EQUIVALENT: cl 12.00.9044 codegen (VC6 processor pack, Rich header Utc12_2_CPP.9044 x3), RTM 8168 differs: dead store of RemoveAll's i (sub esp,8 against push ecx), base+offset into ecx (mov edx,[esi]; mov ecx,edi; add ecx,edx against mov ecx,[esi]; add ecx,edi)"
+hw,01E642B0,22,?SetLanguage@CFontManager@@QAEXPBD@Z,,ENGINE,vgui2/vgui_surfacelib/FontManager.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E642D0,59,?ClearAllFonts@CFontManager@@QAEXXZ,,ENGINE,vgui2/vgui_surfacelib/FontManager.cpp,,,EQUIVALENT,75.57,hw_manual.csv,"EQUIVALENT: cl 12.00.9044 codegen (VC6 processor pack, Rich header Utc12_2_CPP.9044 x3), RTM 8168 differs: RemoveAll's empty Destruct loop leaves a dead store of i (extra stack slot shifts the register choice)"
+hw,01E64310,193,?CreateFont@CFontManager@@QAEKXZ,,ENGINE,vgui2/vgui_surfacelib/FontManager.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E643E0,310,?AddGlyphSetToFont@CFontManager@@QAE_NKPBDHHHHH@Z,,ENGINE,vgui2/vgui_surfacelib/FontManager.cpp,,,EQUIVALENT,30.95,hw_manual.csv,"EQUIVALENT: cl 12.00.9044 codegen (VC6 processor pack, Rich header Utc12_2_CPP.9044 x3), RTM 8168 differs: the two AddFont(winFont, 0, 0xFFFF) tails are merged in retail (one block, 4 calls against 5), base+offset for this into ecx, block order"
+hw,01E64520,336,?CreateOrFindWin32Font@CFontManager@@AAEPAVCWin32Font@@PBDHHHHH@Z,,ENGINE,vgui2/vgui_surfacelib/FontManager.cpp,,,EQUIVALENT,83.70,hw_manual.csv,"EQUIVALENT: cl 12.00.9044 codegen (VC6 processor pack, Rich header Utc12_2_CPP.9044 x3), RTM 8168 differs: RTM keeps tall and windowsFontName in ebx/ebp, retail only tall; argument reloads differ"
+hw,01E64670,77,?GetFontByName@CFontManager@@QAEKPBD@Z,,ENGINE,vgui2/vgui_surfacelib/FontManager.cpp,,,EQUIVALENT,96.94,hw_manual.csv,"EQUIVALENT: cl 12.00.9044 codegen (VC6 processor pack, Rich header Utc12_2_CPP.9044 x3), RTM 8168 differs: base+offset for the this of Name() computed through edx (mov edx,[esi]; mov ecx,ebx; add ecx,edx against mov ecx,[esi]; add ecx,ebx)"
+hw,01E646C0,1,??3@YAXPAX0@Z,,ENGINE,vgui2/vgui_surfacelib/FontManager.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E646D0,33,?GetFontForChar@CFontManager@@QAEPAVCWin32Font@@KG@Z,,ENGINE,vgui2/vgui_surfacelib/FontManager.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E64700,106,?GetCharABCwide@CFontManager@@QAEXKHAAH00@Z,,ENGINE,vgui2/vgui_surfacelib/FontManager.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E64770,23,?GetFontTall@CFontManager@@QAEHK@Z,,ENGINE,vgui2/vgui_surfacelib/FontManager.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E64790,49,?GetFontAscent@CFontManager@@QAEHKG@Z,,ENGINE,vgui2/vgui_surfacelib/FontManager.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E647D0,81,?GetCharacterWidth@CFontManager@@QAEHKH@Z,,ENGINE,vgui2/vgui_surfacelib/FontManager.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E64830,136,?GetTextSize@CFontManager@@QAEXKPBGAAH1@Z,,ENGINE,vgui2/vgui_surfacelib/FontManager.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E648C0,64,?IsFontForeignLanguageCapable@CFontManager@@QAE_NPBD@Z,,ENGINE,vgui2/vgui_surfacelib/FontManager.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E64900,67,?GetFallbackFontName@CFontManager@@AAEPBDPBD@Z,,ENGINE,vgui2/vgui_surfacelib/FontManager.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E64950,82,?GetForeignFallbackFontName@CFontManager@@AAEPBDXZ,,ENGINE,vgui2/vgui_surfacelib/FontManager.cpp,,,EQUIVALENT,75.00,hw_manual.csv,"EQUIVALENT: cl 12.00.9044 codegen (VC6 processor pack, Rich header Utc12_2_CPP.9044 x3), RTM 8168 differs: retail saves ebx/esi/edi before the s_bSupportsUnicode test, RTM after it (shrink wrapping)"
+hw,01E649B0,23,?GetFontUnderlined@CFontManager@@QAE_NK@Z,,ENGINE,vgui2/vgui_surfacelib/FontManager.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E649D0,147,??1?$CUtlVector@VCFontAmalgam@@@@QAE@XZ,,ENGINE,vgui2/vgui_surfacelib/FontManager.cpp,,,EQUIVALENT,98.10,hw_manual.csv,"EQUIVALENT: cl 12.00.9044 codegen (VC6 processor pack, Rich header Utc12_2_CPP.9044 x3), RTM 8168 differs: base+offset for the this of ~CFontAmalgam computed through edx (one extra mov)"
+hw,01E64A70,82,??1?$CUtlVector@PAVCWin32Font@@@@QAE@XZ,,ENGINE,vgui2/vgui_surfacelib/FontManager.cpp,,,EQUIVALENT,74.62,hw_manual.csv,"EQUIVALENT: cl 12.00.9044 codegen (VC6 processor pack, Rich header Utc12_2_CPP.9044 x3), RTM 8168 differs: RemoveAll's empty Destruct loop leaves a dead store of i (push ecx, dec, mov [esp+4]) that retail removed"
+hw,01E64AD0,40,??1?$CUtlMemory@VCFontAmalgam@@@@QAE@XZ,,ENGINE,vgui2/vgui_surfacelib/FontManager.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E64B00,62,?Construct@@YAXPAVCFontAmalgam@@@Z,,ENGINE,vgui2/vgui_surfacelib/FontManager.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E64B40,109,?Grow@?$CUtlMemory@VCFontAmalgam@@@@QAEXH@Z,,ENGINE,vgui2/vgui_surfacelib/FontManager.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E64BB0,128,?GrowVector@?$CUtlVector@PAVCWin32Font@@@@IAEXH@Z,,ENGINE,vgui2/vgui_surfacelib/FontManager.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E64C30,52,?ShiftElementsRight@?$CUtlVector@PAVCWin32Font@@@@IAEXHH@Z,,ENGINE,vgui2/vgui_surfacelib/FontManager.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E64C70,103,?Grow@?$CUtlMemory@PAVCWin32Font@@@@QAEXH@Z,,ENGINE,vgui2/vgui_surfacelib/FontManager.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01E64CE0,199,,,ENGINE,vgui2/vgui_surfacelib/Win32Font_guess.cpp,,,TODO,,,
 hw,01E64DB0,105,,,ENGINE,vgui2/vgui_surfacelib/Win32Font_guess.cpp,,,TODO,,,
 hw,01E64E30,939,,,ENGINE,vgui2/vgui_surfacelib/Win32Font_guess.cpp,,,TODO,,,

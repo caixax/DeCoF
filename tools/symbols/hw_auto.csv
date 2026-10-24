@@ -2347,3 +2347,8 @@ va,name,kind,evidence
 023CA304,_g_pvModuleSpecial,data,aligned reference:objdiff:hw/engine/module:_CloseSecurityModule (100.0%)
 0249A7F4,?g_hinstOpenGlEarly@@3PAUHINSTANCE__@@A,data,aligned reference:objdiff:hw/engine/module:_CommonLoadSecurityModule (100.0%)
 027D6220,_glw_state,data,aligned reference:objdiff:hw/engine/module:_CommonLoadSecurityModule (100.0%)
+01E717DA,_iswprint,func,aligned reference:objdiff:hw/vgui2/vgui_surfacelib/FontManager:?GetCharacterWidth@CFontManager@@QAEHKH@Z (100.0%)
+01ED6BE8,_g_szValidAsianFonts,data,aligned reference:objdiff:hw/vgui2/vgui_surfacelib/FontManager:?IsFontForeignLanguageCapable@CFontManager@@QAE_NPBD@Z (100.0%)
+01ED6BF0,?g_FallbackFonts@@3PAUFallbackFont_t@@A,data,aligned reference:objdiff:hw/vgui2/vgui_surfacelib/FontManager:?GetFallbackFontName@CFontManager@@AAEPBDPBD@Z (100.0%)
+02500C0C,??_C@_00A@?$AA@,data,bytes:objdiff:hw/vgui2/vgui_surfacelib/FontManager:??0CFontManager@@QAE@XZ (100.0%)
+02500E60,_s_FontManager,data,aligned reference:objdiff:hw/vgui2/vgui_surfacelib/FontManager:?FontManager@@YAAAVCFontManager@@XZ (100.0%)

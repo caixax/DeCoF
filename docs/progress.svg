@@ -26,11 +26,11 @@
 <rect x="24.00" y="248" width="712.00" height="18" fill="#2da44e"/>
 <text x="24" y="282" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#57606a" xml:space="preserve">MATCHED 100.0% (367)   EQUIVALENT 0.0% (0)   TODO 0.0% (0)   22929 code bytes</text>
 <text x="24" y="314" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#1f2328">hw.dll</text>
-<text x="736" y="314" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#1f2328" text-anchor="end">93.1% done (7353 of 8104 functions)</text>
+<text x="736" y="314" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#1f2328" text-anchor="end">93.4% done (7385 of 8107 functions)</text>
 <rect x="24" y="322" width="712" height="18" rx="4" fill="#afb8c1"/>
-<rect x="24.00" y="322" width="647.17" height="18" fill="#2da44e"/>
-<rect x="671.17" y="322" width="15.98" height="18" fill="#d4a72c"/>
-<text x="24" y="356" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#57606a" xml:space="preserve">MATCHED 90.9% (7327)   EQUIVALENT 2.2% (26)   TODO 6.9% (751)   1350830 code bytes   (not started (VC6 installed; processor pack and VS 2005 objects need those compilers))</text>
+<rect x="24.00" y="322" width="648.02" height="18" fill="#2da44e"/>
+<rect x="672.02" y="322" width="16.67" height="18" fill="#d4a72c"/>
+<text x="24" y="356" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#57606a" xml:space="preserve">MATCHED 91.0% (7351)   EQUIVALENT 2.3% (34)   TODO 6.6% (722)   1350872 code bytes   (not started (VC6 installed; processor pack and VS 2005 objects need those compilers))</text>
 <text x="24" y="388" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#1f2328">GameUI.dll</text>
 <text x="736" y="388" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#1f2328" text-anchor="end">100.0% done (5202 of 5202 functions)</text>
 <rect x="24" y="396" width="712" height="18" rx="4" fill="#afb8c1"/>
@@ -54,10 +54,10 @@
 <rect x="685.83" y="618" width="32.70" height="18" fill="#d4a72c"/>
 <text x="24" y="652" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#57606a" xml:space="preserve">MATCHED 93.0% (7951)   EQUIVALENT 4.6% (27)   TODO 2.5% (20)   1785690 code bytes</text>
 <text x="24" y="684" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#1f2328">All binaries (CoFLaunchApp.exe not counted yet)</text>
-<text x="736" y="684" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#1f2328" text-anchor="end">96.4% done (20585 of 21356 functions)</text>
+<text x="736" y="684" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#1f2328" text-anchor="end">96.5% done (20617 of 21359 functions)</text>
 <rect x="24" y="692" width="712" height="18" rx="4" fill="#afb8c1"/>
-<rect x="24.00" y="692" width="665.32" height="18" fill="#2da44e"/>
-<rect x="689.32" y="692" width="21.08" height="18" fill="#d4a72c"/>
-<text x="24" y="726" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#57606a" xml:space="preserve">MATCHED 93.4% (20531)   EQUIVALENT 3.0% (54)   TODO 3.6% (771)   3797355 code bytes</text>
-<text x="24" y="756" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="11" fill="#57606a">Target build 1.6a | commit e5f7196 | 2026-10-25 | numbers from docs/progress.csv</text>
+<rect x="24.00" y="692" width="665.63" height="18" fill="#2da44e"/>
+<rect x="689.63" y="692" width="21.33" height="18" fill="#d4a72c"/>
+<text x="24" y="726" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#57606a" xml:space="preserve">MATCHED 93.5% (20555)   EQUIVALENT 3.0% (62)   TODO 3.5% (742)   3797397 code bytes</text>
+<text x="24" y="756" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="11" fill="#57606a">Target build 1.6a | commit 8b8e723 | 2026-10-25 | numbers from docs/progress.csv</text>
 </svg>
