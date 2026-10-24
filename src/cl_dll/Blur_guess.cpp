@@ -8,7 +8,6 @@
 #include "const.h"
 #include "com_model.h"
 #include "glmanager.h"
-#include <mmsystem.h>
 
 extern cvar_t *cv_blurtest;
 
@@ -142,7 +141,7 @@ bool CBlur_guess::AnimateNextFrame_guess( int desiredFrameRate )
 	static float lastTime = 0.0f;
 	float elapsedTime = 0.0;
 
-	float currentTime = timeGetTime() * 0.001f;
+	float currentTime = GetTickCount() * 0.001f;
 	elapsedTime = currentTime - lastTime;
 
 	if ( elapsedTime > ( 1.0f / desiredFrameRate ) )

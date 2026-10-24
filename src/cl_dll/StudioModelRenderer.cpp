@@ -2254,7 +2254,7 @@ vec3_t vecWheelchairOrigin_guess;		// attachment 0 of the wheelchair, read by V_
 vec3_t vecModelAttachOrigin_guess;		// attachment of the ModelAttach entity, read by V_CalcNormalRefdef
 CStudioModelRenderer g_StudioModelRenderer_guess;	// constructed at startup and destroyed at exit, never used
 extern int iUnknown1054506C_guess;
-extern int iUnknown101902FC_guess;
+int iUnknown101902FC_guess = 50;	// distance of the unlocked item model in front of the view (set by the credits)
 extern int iUnknown101B27C8_guess;
 extern cl_entity_t *pDualEnt_guess;
 cl_entity_t *GetDualEntity_guess( void );

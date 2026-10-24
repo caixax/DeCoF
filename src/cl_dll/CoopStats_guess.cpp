@@ -16,6 +16,7 @@
 void IrrKlangPlay_guess( const char *pszFile );
 void IrrKlangSetLoop_guess( bool bLoop );
 
+int iUnknown1018F6D0_guess = 256;	// nothing reads it in 1.6a
 int g_iCoopStatsTitleTall_guess = 32;
 int g_iCoopStatsWide_guess = 220;
 int g_iCoopStatsTall_guess = 24;
