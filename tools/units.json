@@ -3006,7 +3006,12 @@
         {
           "name": "engine/filesystem_internal",
           "source": "src/engine_hw/filesystem_internal.cpp",
-          "functions_file": "tools/units/hw_engine_filesystem_internal.txt"
+          "functions_file": "tools/units/hw_engine_filesystem_internal.txt",
+          "includes": [
+            "src/engine_hw",
+            "src/public",
+            "src/common"
+          ]
         },
         {
           "name": "engine/filesystem",

@@ -37,6 +37,8 @@ _FS_GetCharacter
 _FS_LogLevelLoadStarted
 _FS_LogLevelLoadFinished
 _FS_HintResourceNeed
+_FS_ResumeResourcePreloading_guess
+_FS_PauseResourcePreloading_guess
 _FS_SetVBuf
 _FS_GetInterfaceVersion
 _FS_GetReadBuffer

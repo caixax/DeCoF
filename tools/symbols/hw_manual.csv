@@ -5343,3 +5343,5 @@ va,name,kind,evidence
 01D0ED50,??1IImage@vgui2@@UAE@XZ,func,"engine/vgui2/MemoryBitmap.cpp: inline virtual destructor of IImage (stores the IImage vtable 01E8C810), called by ~MemoryBitmap; COMDAT after the object"
 01E8C7F0,??_7MemoryBitmap@vgui2@@6B@,data,engine/vgui2/MemoryBitmap.cpp: vtable of MemoryBitmap (RTTI vgui2::MemoryBitmap) stored by its constructor and destructor
 01E8C810,??_7IImage@vgui2@@6B@,data,"engine/vgui2/MemoryBitmap.cpp: vtable of IImage (RTTI vgui2::IImage, six pure virtuals and the destructor) stored by the IImage constructor and destructor"
+01D5D680,_FS_ResumeResourcePreloading_guess,func,"engine/filesystem_internal.cpp: wrapper that calls IFileSystem slot 0xAC (ResumeResourcePreloading), between FS_HintResourceNeed and FS_SetVBuf in source order (name unproven); identical bytes in our compiled object"
+01D5D698,_FS_PauseResourcePreloading_guess,func,"engine/filesystem_internal.cpp: wrapper that calls IFileSystem slot 0xA8 (PauseResourcePreloading), between FS_HintResourceNeed and FS_SetVBuf in source order (name unproven); identical bytes in our compiled object"
