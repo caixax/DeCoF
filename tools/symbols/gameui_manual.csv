@@ -4946,3 +4946,20 @@ va,name,kind,evidence
 10037450,??0IMusicManager@@QAE@XZ,func,GameUI/MusicManager.cpp: same position and size as in our compiled object
 10037470,??_GIMusicManager@@UAEPAXI@Z,func,GameUI/MusicManager.cpp: same position and size as in our compiled object
 100374A0,??1IMusicManager@@UAE@XZ,func,GameUI/MusicManager.cpp: same position and size as in our compiled object
+1004FDF0,??0COptionsSubAdvanced@@QAE@PAVPanel@vgui2@@@Z,func,GameUI/OptionsSubAdvanced.cpp: same position and size as in our compiled object; linux: _ZN19COptionsSubAdvancedC2EPN5vgui25PanelE
+1004FF96,?OnCommand@COptionsSubAdvanced@@UAEXPBD@Z,func,GameUI/OptionsSubAdvanced.cpp: same position and size as in our compiled object; linux: _ZN19COptionsSubAdvanced9OnCommandEPKc
+10050018,??1COptionsSubAdvanced@@UAE@XZ,func,GameUI/OptionsSubAdvanced.cpp: same position and size as in our compiled object; linux: _ZN19COptionsSubAdvancedD2Ev
+10050034,?OnResetData@COptionsSubAdvanced@@UAEXXZ,func,GameUI/OptionsSubAdvanced.cpp: same position and size as in our compiled object; linux: _ZN19COptionsSubAdvanced11OnResetDataEv
+10050076,?OnApplyChanges@COptionsSubAdvanced@@UAEXXZ,func,GameUI/OptionsSubAdvanced.cpp: same position and size as in our compiled object; linux: _ZN19COptionsSubAdvanced14OnApplyChangesEv
+1005008F,?OnContentControlClose@COptionsSubAdvanced@@EAEXXZ,func,GameUI/OptionsSubAdvanced.cpp: same position and size as in our compiled object; linux: _ZN19COptionsSubAdvanced21OnContentControlCloseEv
+10050132,?OnOpenContentControlDialog@COptionsSubAdvanced@@AAEXXZ,func,GameUI/OptionsSubAdvanced.cpp: same position and size as in our compiled object; linux: _ZN19COptionsSubAdvanced26OnOpenContentControlDialogEv
+10050160,??_GCOptionsSubAdvanced@@UAEPAXI@Z,func,GameUI/OptionsSubAdvanced.cpp: same position and size as in our compiled object
+10050190,??0COptionsSubAdvanced_RegisterMap@COptionsSubAdvanced@@QAE@XZ,func,GameUI/OptionsSubAdvanced.cpp: same position and size as in our compiled object
+100501B0,?ChainToMap@COptionsSubAdvanced@@SAXXZ,func,GameUI/OptionsSubAdvanced.cpp: same position and size as in our compiled object
+10050220,?GetMessageMap@COptionsSubAdvanced@@UAEPAUPanelMessageMap@vgui2@@XZ,func,GameUI/OptionsSubAdvanced.cpp: same position and size as in our compiled object
+10050260,?GetPanelClassName@COptionsSubAdvanced@@SAPBDXZ,func,GameUI/OptionsSubAdvanced.cpp: same position and size as in our compiled object
+10050270,?GetPanelBaseClassName@COptionsSubAdvanced@@SAPBDXZ,func,GameUI/OptionsSubAdvanced.cpp: same position and size as in our compiled object
+10050280,??0PanelMessageFunc_OnContentControlClose@COptionsSubAdvanced@@QAE@XZ,func,GameUI/OptionsSubAdvanced.cpp: same position and size as in our compiled object
+100502A0,?InitVar@PanelMessageFunc_OnContentControlClose@COptionsSubAdvanced@@SAXXZ,func,GameUI/OptionsSubAdvanced.cpp: same position and size as in our compiled object
+10050310,?AddToMap@COptionsSubAdvanced@@SAXPBDP8Panel@vgui2@@AEXXZHH0H0@Z,func,GameUI/OptionsSubAdvanced.cpp: same position and size as in our compiled object
+10050390,?IsPasswordEnabled@CContentControlDialog@@QAE_NXZ,func,GameUI/OptionsSubAdvanced.cpp: same position and size as in our compiled object

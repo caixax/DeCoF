@@ -4068,6 +4068,11 @@
           "name": "GameUI/MusicManager",
           "source": "src/gameui/MusicManager.cpp",
           "functions_file": "tools/units/gameui_GameUI_MusicManager.txt"
+        },
+        {
+          "name": "GameUI/OptionsSubAdvanced",
+          "source": "src/gameui/OptionsSubAdvanced.cpp",
+          "functions_file": "tools/units/gameui_GameUI_OptionsSubAdvanced.txt"
         }
       ]
     }
