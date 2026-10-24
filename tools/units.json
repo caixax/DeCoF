@@ -3983,6 +3983,11 @@
           "name": "GameUI/CommandCheckButton",
           "source": "src/gameui/CommandCheckButton.cpp",
           "functions_file": "tools/units/gameui_GameUI_CommandCheckButton.txt"
+        },
+        {
+          "name": "GameUI/PlayerListDialog",
+          "source": "src/gameui/PlayerListDialog.cpp",
+          "functions_file": "tools/units/gameui_GameUI_PlayerListDialog.txt"
         }
       ]
     }

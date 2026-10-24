@@ -9822,22 +9822,22 @@ gameui,1004DDFF,28,??1CNewGameDialog@@UAE@XZ,public: virtual __thiscall CNewGame
 gameui,1004DE1B,442,?OnCommand@CNewGameDialog@@MAEXPBD@Z,protected: virtual void __thiscall CNewGameDialog::OnCommand(char const *),ENGINE,GameUI/NewGameDialog.cpp,,,MATCHED,100,linux_symbols:string:0.875,linux: _ZN14CNewGameDialog9OnCommandEPKc
 gameui,1004DFD5,33,?OnClose@CNewGameDialog@@MAEXXZ,protected: virtual void __thiscall CNewGameDialog::OnClose(void),UNKNOWN,GameUI/NewGameDialog.cpp,,,MATCHED,100,,linux: _ZN14CNewGameDialog7OnCloseEv
 gameui,1004E000,46,??_GCNewGameDialog@@UAEPAXI@Z,public: virtual void * __thiscall CNewGameDialog::`scalar deleting destructor'(unsigned int),UNKNOWN,GameUI/NewGameDialog.cpp,,,MATCHED,100,,
-gameui,1004E030,658,,CPlayerListDialog::CPlayerListDialog,ENGINE,GameUI/PlayerListDialog.cpp,,,TODO,,linux_symbols:string:0.536,linux: _ZN17CPlayerListDialogC2EPN5vgui25PanelE
-gameui,1004E2C2,28,,,UNKNOWN,GameUI/PlayerListDialog.cpp,,,TODO,,,linux: _ZN17CPlayerListDialogD2Ev
-gameui,1004E2DE,367,,,UNKNOWN,GameUI/PlayerListDialog.cpp,,,TODO,,,linux: _ZN17CPlayerListDialog8ActivateEv
-gameui,1004E44D,557,,CPlayerListDialog::RefreshPlayerProperties,ENGINE,GameUI/PlayerListDialog.cpp,,,TODO,,linux_symbols:string:0.456,linux: _ZN17CPlayerListDialog23RefreshPlayerPropertiesEv
-gameui,1004E67A,56,,,UNKNOWN,GameUI/PlayerListDialog.cpp,,,TODO,,,linux: _ZN17CPlayerListDialog9OnCommandEPKc
-gameui,1004E6B2,216,,,UNKNOWN,GameUI/PlayerListDialog.cpp,,,TODO,,,linux: _ZN17CPlayerListDialog29ToggleMuteStateOfSelectedUserEv
-gameui,1004E78A,546,,CPlayerListDialog::OnItemSelected,ENGINE,GameUI/PlayerListDialog.cpp,,,TODO,,linux_symbols:string:0.871,linux: _ZN17CPlayerListDialog14OnItemSelectedEv
-gameui,1004E9B0,46,,,UNKNOWN,GameUI/PlayerListDialog.cpp,,,TODO,,,
-gameui,1004E9E0,19,,,UNKNOWN,GameUI/PlayerListDialog.cpp,,,TODO,,,
-gameui,1004EA00,102,,,UNKNOWN,GameUI/PlayerListDialog.cpp,,,TODO,,,
-gameui,1004EA70,64,,,UNKNOWN,GameUI/PlayerListDialog.cpp,,,TODO,,,
-gameui,1004EAB0,10,,,UNKNOWN,GameUI/PlayerListDialog.cpp,,,TODO,,,
-gameui,1004EAC0,10,,,UNKNOWN,GameUI/PlayerListDialog.cpp,,,TODO,,,
-gameui,1004EAD0,19,,,UNKNOWN,GameUI/PlayerListDialog.cpp,,,TODO,,,
-gameui,1004EAF0,107,,,UNKNOWN,GameUI/PlayerListDialog.cpp,,,TODO,,,
-gameui,1004EB60,120,,,UNKNOWN,GameUI/PlayerListDialog.cpp,,,TODO,,,
+gameui,1004E030,658,??0CPlayerListDialog@@QAE@PAVPanel@vgui2@@@Z,public: __thiscall CPlayerListDialog::CPlayerListDialog(class vgui2::Panel *),ENGINE,GameUI/PlayerListDialog.cpp,,,MATCHED,100,linux_symbols:string:0.536,linux: _ZN17CPlayerListDialogC2EPN5vgui25PanelE
+gameui,1004E2C2,28,??1CPlayerListDialog@@UAE@XZ,public: virtual __thiscall CPlayerListDialog::~CPlayerListDialog(void),UNKNOWN,GameUI/PlayerListDialog.cpp,,,MATCHED,100,,linux: _ZN17CPlayerListDialogD2Ev
+gameui,1004E2DE,367,?Activate@CPlayerListDialog@@UAEXXZ,public: virtual void __thiscall CPlayerListDialog::Activate(void),UNKNOWN,GameUI/PlayerListDialog.cpp,,,MATCHED,100,,linux: _ZN17CPlayerListDialog8ActivateEv
+gameui,1004E44D,557,?RefreshPlayerProperties@CPlayerListDialog@@AAEXXZ,private: void __thiscall CPlayerListDialog::RefreshPlayerProperties(void),ENGINE,GameUI/PlayerListDialog.cpp,,,MATCHED,100,linux_symbols:string:0.456,linux: _ZN17CPlayerListDialog23RefreshPlayerPropertiesEv
+gameui,1004E67A,56,?OnCommand@CPlayerListDialog@@EAEXPBD@Z,private: virtual void __thiscall CPlayerListDialog::OnCommand(char const *),UNKNOWN,GameUI/PlayerListDialog.cpp,,,MATCHED,100,,linux: _ZN17CPlayerListDialog9OnCommandEPKc
+gameui,1004E6B2,216,?ToggleMuteStateOfSelectedUser@CPlayerListDialog@@AAEXXZ,private: void __thiscall CPlayerListDialog::ToggleMuteStateOfSelectedUser(void),UNKNOWN,GameUI/PlayerListDialog.cpp,,,MATCHED,100,,linux: _ZN17CPlayerListDialog29ToggleMuteStateOfSelectedUserEv
+gameui,1004E78A,546,?OnItemSelected@CPlayerListDialog@@EAEXXZ,private: virtual void __thiscall CPlayerListDialog::OnItemSelected(void),ENGINE,GameUI/PlayerListDialog.cpp,,,MATCHED,100,linux_symbols:string:0.871,linux: _ZN17CPlayerListDialog14OnItemSelectedEv
+gameui,1004E9B0,46,??_GCPlayerListDialog@@UAEPAXI@Z,public: virtual void * __thiscall CPlayerListDialog::`scalar deleting destructor'(unsigned int),UNKNOWN,GameUI/PlayerListDialog.cpp,,,MATCHED,100,,
+gameui,1004E9E0,19,??0CPlayerListDialog_RegisterMap@CPlayerListDialog@@QAE@XZ,public: __thiscall CPlayerListDialog::CPlayerListDialog_RegisterMap::CPlayerListDialog_RegisterMap(void),UNKNOWN,GameUI/PlayerListDialog.cpp,,,MATCHED,100,,
+gameui,1004EA00,102,?ChainToMap@CPlayerListDialog@@SAXXZ,public: static void __cdecl CPlayerListDialog::ChainToMap(void),UNKNOWN,GameUI/PlayerListDialog.cpp,,,MATCHED,100,,
+gameui,1004EA70,64,?GetMessageMap@CPlayerListDialog@@UAEPAUPanelMessageMap@vgui2@@XZ,public: virtual struct vgui2::PanelMessageMap * __thiscall CPlayerListDialog::GetMessageMap(void),UNKNOWN,GameUI/PlayerListDialog.cpp,,,MATCHED,100,,
+gameui,1004EAB0,10,?GetPanelClassName@CPlayerListDialog@@SAPBDXZ,public: static char const * __cdecl CPlayerListDialog::GetPanelClassName(void),UNKNOWN,GameUI/PlayerListDialog.cpp,,,MATCHED,100,,
+gameui,1004EAC0,10,?GetPanelBaseClassName@CPlayerListDialog@@SAPBDXZ,public: static char const * __cdecl CPlayerListDialog::GetPanelBaseClassName(void),UNKNOWN,GameUI/PlayerListDialog.cpp,,,MATCHED,100,,
+gameui,1004EAD0,19,??0PanelMessageFunc_OnItemSelected@CPlayerListDialog@@QAE@XZ,public: __thiscall CPlayerListDialog::PanelMessageFunc_OnItemSelected::PanelMessageFunc_OnItemSelected(void),UNKNOWN,GameUI/PlayerListDialog.cpp,,,MATCHED,100,,
+gameui,1004EAF0,107,?InitVar@PanelMessageFunc_OnItemSelected@CPlayerListDialog@@SAXXZ,public: static void __cdecl CPlayerListDialog::PanelMessageFunc_OnItemSelected::InitVar(void),UNKNOWN,GameUI/PlayerListDialog.cpp,,,MATCHED,100,,
+gameui,1004EB60,120,?AddToMap@CPlayerListDialog@@SAXPBDP8Panel@vgui2@@AEXXZHH0H0@Z,"public: static void __cdecl CPlayerListDialog::AddToMap(char const *,void (__thiscall vgui2::Panel::*)(void),int,int,char const *,int,char const *)",UNKNOWN,GameUI/PlayerListDialog.cpp,,,MATCHED,100,,
 gameui,1004EBE0,374,??0CSaveGameDialog@@QAE@PAVPanel@vgui2@@@Z,public: __thiscall CSaveGameDialog::CSaveGameDialog(class vgui2::Panel *),ENGINE,GameUI/SaveGameDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN15CSaveGameDialogC2EPN5vgui25PanelE
 gameui,1004ED56,28,??1CSaveGameDialog@@UAE@XZ,public: virtual __thiscall CSaveGameDialog::~CSaveGameDialog(void),UNKNOWN,GameUI/SaveGameDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN15CSaveGameDialogD1Ev
 gameui,1004ED72,271,?OnCommand@CSaveGameDialog@@MAEXPBD@Z,protected: virtual void __thiscall CSaveGameDialog::OnCommand(char const *),ENGINE,GameUI/SaveGameDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN15CSaveGameDialog9OnCommandEPKc

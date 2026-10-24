@@ -4546,3 +4546,19 @@ va,name,kind,evidence
 100448F0,??_GCCommandCheckButton@@UAEPAXI@Z,func,GameUI/CommandCheckButton.cpp: same position and size as in our compiled object
 10044920,?GetMessageMap@CheckButton@vgui2@@UAEPAUPanelMessageMap@2@XZ,func,"GameUI/CommandCheckButton.cpp: inline CheckButton COMDAT used by the CCommandCheckButton vtable, same size as in our compiled object"
 10044960,?GetPanelClassName@CheckButton@vgui2@@SAPBDXZ,func,"GameUI/CommandCheckButton.cpp: inline CheckButton COMDAT called by GetMessageMap, same size as in our compiled object"
+1004E030,??0CPlayerListDialog@@QAE@PAVPanel@vgui2@@@Z,func,GameUI/PlayerListDialog.cpp: same position and size as in our compiled object; linux: _ZN17CPlayerListDialogC2EPN5vgui25PanelE
+1004E2C2,??1CPlayerListDialog@@UAE@XZ,func,GameUI/PlayerListDialog.cpp: same position and size as in our compiled object; linux: _ZN17CPlayerListDialogD2Ev
+1004E2DE,?Activate@CPlayerListDialog@@UAEXXZ,func,GameUI/PlayerListDialog.cpp: same position and size as in our compiled object; linux: _ZN17CPlayerListDialog8ActivateEv
+1004E44D,?RefreshPlayerProperties@CPlayerListDialog@@AAEXXZ,func,GameUI/PlayerListDialog.cpp: same position and size as in our compiled object; linux: _ZN17CPlayerListDialog23RefreshPlayerPropertiesEv
+1004E67A,?OnCommand@CPlayerListDialog@@EAEXPBD@Z,func,GameUI/PlayerListDialog.cpp: same position and size as in our compiled object; linux: _ZN17CPlayerListDialog9OnCommandEPKc
+1004E6B2,?ToggleMuteStateOfSelectedUser@CPlayerListDialog@@AAEXXZ,func,GameUI/PlayerListDialog.cpp: same position and size as in our compiled object; linux: _ZN17CPlayerListDialog29ToggleMuteStateOfSelectedUserEv
+1004E78A,?OnItemSelected@CPlayerListDialog@@EAEXXZ,func,GameUI/PlayerListDialog.cpp: same position and size as in our compiled object; linux: _ZN17CPlayerListDialog14OnItemSelectedEv
+1004E9B0,??_GCPlayerListDialog@@UAEPAXI@Z,func,GameUI/PlayerListDialog.cpp: same position and size as in our compiled object
+1004E9E0,??0CPlayerListDialog_RegisterMap@CPlayerListDialog@@QAE@XZ,func,GameUI/PlayerListDialog.cpp: same position and size as in our compiled object
+1004EA00,?ChainToMap@CPlayerListDialog@@SAXXZ,func,GameUI/PlayerListDialog.cpp: same position and size as in our compiled object
+1004EA70,?GetMessageMap@CPlayerListDialog@@UAEPAUPanelMessageMap@vgui2@@XZ,func,GameUI/PlayerListDialog.cpp: same position and size as in our compiled object
+1004EAB0,?GetPanelClassName@CPlayerListDialog@@SAPBDXZ,func,GameUI/PlayerListDialog.cpp: same position and size as in our compiled object
+1004EAC0,?GetPanelBaseClassName@CPlayerListDialog@@SAPBDXZ,func,GameUI/PlayerListDialog.cpp: same position and size as in our compiled object
+1004EAD0,??0PanelMessageFunc_OnItemSelected@CPlayerListDialog@@QAE@XZ,func,GameUI/PlayerListDialog.cpp: same position and size as in our compiled object
+1004EAF0,?InitVar@PanelMessageFunc_OnItemSelected@CPlayerListDialog@@SAXXZ,func,GameUI/PlayerListDialog.cpp: same position and size as in our compiled object
+1004EB60,?AddToMap@CPlayerListDialog@@SAXPBDP8Panel@vgui2@@AEXXZHH0H0@Z,func,GameUI/PlayerListDialog.cpp: same position and size as in our compiled object
