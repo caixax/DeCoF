@@ -9303,13 +9303,13 @@ gameui,10040A60,46,,,UNKNOWN,GameUI/TaskButton.cpp,,,TODO,,,
 gameui,10040A90,19,,,UNKNOWN,GameUI/TaskButton.cpp,,,TODO,,,
 gameui,10040AB0,46,,,UNKNOWN,GameUI/TaskButton.cpp,,,TODO,,,
 gameui,10040AE0,28,,,UNKNOWN,GameUI/TaskButton.cpp,,,TODO,,,
-gameui,10040B00,296,,,UNKNOWN,GameUI/TextEntryBox.cpp,,,TODO,,,linux: _ZN13CTextEntryBoxC1EPKcS1_S1_bPN5vgui25PanelE
-gameui,10040C28,79,,,UNKNOWN,GameUI/TextEntryBox.cpp,,,TODO,,,linux: _ZN13CTextEntryBoxD1Ev
-gameui,10040C77,68,,,UNKNOWN,GameUI/TextEntryBox.cpp,,,TODO,,,linux: _ZN13CTextEntryBox10ShowWindowEPN5vgui25FrameE
-gameui,10040CBB,341,,,UNKNOWN,GameUI/TextEntryBox.cpp,,,TODO,,,linux: _ZN13CTextEntryBox13PerformLayoutEv
-gameui,10040E10,74,,,UNKNOWN,GameUI/TextEntryBox.cpp,,,TODO,,,linux: _ZN13CTextEntryBox9OnCommandEPKc
-gameui,10040E5A,77,,,UNKNOWN,GameUI/TextEntryBox.cpp,,,TODO,,,linux: _ZN13CTextEntryBox14OnKeyCodeTypedEN5vgui27KeyCodeE
-gameui,10040EB0,46,,,UNKNOWN,GameUI/TextEntryBox.cpp,,,TODO,,,
+gameui,10040B00,296,??0CTextEntryBox@@QAE@PBD00_NPAVPanel@vgui2@@@Z,"public: __thiscall CTextEntryBox::CTextEntryBox(char const *,char const *,char const *,bool,class vgui2::Panel *)",UNKNOWN,GameUI/TextEntryBox.cpp,,,MATCHED,100,,linux: _ZN13CTextEntryBoxC1EPKcS1_S1_bPN5vgui25PanelE
+gameui,10040C28,79,??1CTextEntryBox@@UAE@XZ,public: virtual __thiscall CTextEntryBox::~CTextEntryBox(void),UNKNOWN,GameUI/TextEntryBox.cpp,,,MATCHED,100,,linux: _ZN13CTextEntryBoxD1Ev
+gameui,10040C77,68,?ShowWindow@CTextEntryBox@@UAEXPAVFrame@vgui2@@@Z,public: virtual void __thiscall CTextEntryBox::ShowWindow(class vgui2::Frame *),UNKNOWN,GameUI/TextEntryBox.cpp,,,MATCHED,100,,linux: _ZN13CTextEntryBox10ShowWindowEPN5vgui25FrameE
+gameui,10040CBB,341,?PerformLayout@CTextEntryBox@@UAEXXZ,public: virtual void __thiscall CTextEntryBox::PerformLayout(void),UNKNOWN,GameUI/TextEntryBox.cpp,,,MATCHED,100,,linux: _ZN13CTextEntryBox13PerformLayoutEv
+gameui,10040E10,74,?OnCommand@CTextEntryBox@@MAEXPBD@Z,protected: virtual void __thiscall CTextEntryBox::OnCommand(char const *),UNKNOWN,GameUI/TextEntryBox.cpp,,,MATCHED,100,,linux: _ZN13CTextEntryBox9OnCommandEPKc
+gameui,10040E5A,77,?OnKeyCodeTyped@CTextEntryBox@@UAEXW4KeyCode@vgui2@@@Z,public: virtual void __thiscall CTextEntryBox::OnKeyCodeTyped(enum vgui2::KeyCode),UNKNOWN,GameUI/TextEntryBox.cpp,,,MATCHED,100,,linux: _ZN13CTextEntryBox14OnKeyCodeTypedEN5vgui27KeyCodeE
+gameui,10040EB0,46,??_GCTextEntryBox@@UAEPAXI@Z,public: virtual void * __thiscall CTextEntryBox::`scalar deleting destructor'(unsigned int),UNKNOWN,GameUI/TextEntryBox.cpp,,,MATCHED,100,,
 gameui,10040EE0,93,??0CUtlBuffer@@QAE@HH_N@Z,CUtlBuffer::CUtlBuffer,UNKNOWN,public/UtlBuffer.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,10040F3D,93,??0CUtlBuffer@@QAE@PBXH_N@Z,CUtlBuffer::CUtlBuffer,UNKNOWN,public/UtlBuffer.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,10040F9A,25,?EnsureCapacity@CUtlBuffer@@QAEXH@Z,CUtlBuffer::EnsureCapacity,UNKNOWN,public/UtlBuffer.cpp,,,MATCHED,100,gameui_manual.csv,

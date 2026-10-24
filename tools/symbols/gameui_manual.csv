@@ -4837,3 +4837,10 @@ va,name,kind,evidence
 100569D0,?Get@?$DHANDLE@VCMultiplayerAdvancedDialog@@@vgui2@@QAEPAVCMultiplayerAdvancedDialog@@XZ,func,GameUI/OptionsSubMultiplayer.cpp: same position and size as in our compiled object
 100569F0,??C?$DHANDLE@VCMultiplayerAdvancedDialog@@@vgui2@@QAEPAVCMultiplayerAdvancedDialog@@XZ,func,GameUI/OptionsSubMultiplayer.cpp: same position and size as in our compiled object
 10056A10,??4?$DHANDLE@VCMultiplayerAdvancedDialog@@@vgui2@@QAEPAVCMultiplayerAdvancedDialog@@PAV2@@Z,func,GameUI/OptionsSubMultiplayer.cpp: same position and size as in our compiled object
+10040B00,??0CTextEntryBox@@QAE@PBD00_NPAVPanel@vgui2@@@Z,func,GameUI/TextEntryBox.cpp: same position and size as in our compiled object; linux: _ZN13CTextEntryBoxC1EPKcS1_S1_bPN5vgui25PanelE
+10040C28,??1CTextEntryBox@@UAE@XZ,func,GameUI/TextEntryBox.cpp: same position and size as in our compiled object; linux: _ZN13CTextEntryBoxD1Ev
+10040C77,?ShowWindow@CTextEntryBox@@UAEXPAVFrame@vgui2@@@Z,func,GameUI/TextEntryBox.cpp: same position and size as in our compiled object; linux: _ZN13CTextEntryBox10ShowWindowEPN5vgui25FrameE
+10040CBB,?PerformLayout@CTextEntryBox@@UAEXXZ,func,GameUI/TextEntryBox.cpp: same position and size as in our compiled object; linux: _ZN13CTextEntryBox13PerformLayoutEv
+10040E10,?OnCommand@CTextEntryBox@@MAEXPBD@Z,func,GameUI/TextEntryBox.cpp: same position and size as in our compiled object; linux: _ZN13CTextEntryBox9OnCommandEPKc
+10040E5A,?OnKeyCodeTyped@CTextEntryBox@@UAEXW4KeyCode@vgui2@@@Z,func,GameUI/TextEntryBox.cpp: same position and size as in our compiled object; linux: _ZN13CTextEntryBox14OnKeyCodeTypedEN5vgui27KeyCodeE
+10040EB0,??_GCTextEntryBox@@UAEPAXI@Z,func,GameUI/TextEntryBox.cpp: same position and size as in our compiled object

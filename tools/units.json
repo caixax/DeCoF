@@ -4020,6 +4020,11 @@
           "functions_file": "tools/units/gameui_GameUI_CvarNegateCheckButton.txt"
         },
         {
+          "name": "GameUI/TextEntryBox",
+          "source": "src/gameui/TextEntryBox.cpp",
+          "functions_file": "tools/units/gameui_GameUI_TextEntryBox.txt"
+        },
+        {
           "name": "GameUI/OptionsSubMultiplayer",
           "source": "src/gameui/OptionsSubMultiplayer.cpp",
           "functions_file": "tools/units/gameui_GameUI_OptionsSubMultiplayer.txt"

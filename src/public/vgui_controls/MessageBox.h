@@ -66,10 +66,9 @@ protected:
 	virtual void OnClose();
 
 	Button *m_pOkButton;
-
-private:
 	Label *m_pMessageLabel;
 
+private:
 	MESSAGE_FUNC( OnShutdownRequest, "ShutdownRequest" );
 
 	void Init();
