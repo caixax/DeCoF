@@ -8699,12 +8699,12 @@ gameui,1002E790,23,,,UNKNOWN,GameUI/DemoPlayerDialog.cpp,,,TODO,,,
 gameui,1002E7B0,19,,,UNKNOWN,GameUI/DemoPlayerDialog.cpp,,,TODO,,,
 gameui,1002E7D0,19,,,UNKNOWN,GameUI/DemoPlayerDialog.cpp,,,TODO,,,
 gameui,1002E7F0,25,,,UNKNOWN,GameUI/DemoPlayerDialog.cpp,,,TODO,,,
-gameui,1002E900,398,,CDemoPlayerFileDialog::CDemoPlayerFileDialog,ENGINE,GameUI/DemoPlayerFileDialog.cpp,,,TODO,,linux_symbols:string:0.763,
-gameui,1002EA8E,28,,,UNKNOWN,GameUI/DemoPlayerFileDialog.cpp,,,TODO,,,
-gameui,1002EAAA,316,,CDemoPlayerFileDialog::LoadDemoList,ENGINE,GameUI/DemoPlayerFileDialog.cpp,,,TODO,,linux_symbols:string:0.769,linux: _ZN21CDemoPlayerFileDialog12LoadDemoListEv
-gameui,1002EBE6,258,,,UNKNOWN,GameUI/DemoPlayerFileDialog.cpp,,,TODO,,,linux: _ZN21CDemoPlayerFileDialog9OnCommandEPKc
-gameui,1002ECE8,33,,,UNKNOWN,GameUI/DemoPlayerFileDialog.cpp,,,TODO,,,linux: _ZN21CDemoPlayerFileDialog7OnCloseEv
-gameui,1002ED10,46,,,UNKNOWN,GameUI/DemoPlayerFileDialog.cpp,,,TODO,,,
+gameui,1002E900,398,??0CDemoPlayerFileDialog@@QAE@PAVPanel@vgui2@@PBD@Z,"public: __thiscall CDemoPlayerFileDialog::CDemoPlayerFileDialog(class vgui2::Panel *,char const *)",ENGINE,GameUI/DemoPlayerFileDialog.cpp,,,MATCHED,100,linux_symbols:string:0.763,
+gameui,1002EA8E,28,??1CDemoPlayerFileDialog@@UAE@XZ,public: virtual __thiscall CDemoPlayerFileDialog::~CDemoPlayerFileDialog(void),UNKNOWN,GameUI/DemoPlayerFileDialog.cpp,,,MATCHED,100,,
+gameui,1002EAAA,316,?LoadDemoList@CDemoPlayerFileDialog@@AAEXXZ,private: void __thiscall CDemoPlayerFileDialog::LoadDemoList(void),ENGINE,GameUI/DemoPlayerFileDialog.cpp,,,MATCHED,100,linux_symbols:string:0.769,linux: _ZN21CDemoPlayerFileDialog12LoadDemoListEv
+gameui,1002EBE6,258,?OnCommand@CDemoPlayerFileDialog@@UAEXPBD@Z,public: virtual void __thiscall CDemoPlayerFileDialog::OnCommand(char const *),UNKNOWN,GameUI/DemoPlayerFileDialog.cpp,,,MATCHED,100,,linux: _ZN21CDemoPlayerFileDialog9OnCommandEPKc
+gameui,1002ECE8,33,?OnClose@CDemoPlayerFileDialog@@UAEXXZ,public: virtual void __thiscall CDemoPlayerFileDialog::OnClose(void),UNKNOWN,GameUI/DemoPlayerFileDialog.cpp,,,MATCHED,100,,linux: _ZN21CDemoPlayerFileDialog7OnCloseEv
+gameui,1002ED10,46,??_GCDemoPlayerFileDialog@@UAEPAXI@Z,public: virtual void * __thiscall CDemoPlayerFileDialog::`scalar deleting destructor'(unsigned int),UNKNOWN,GameUI/DemoPlayerFileDialog.cpp,,,MATCHED,100,,
 gameui,1002ED40,42,??0DirectorCmd@@QAE@XZ,public: __thiscall DirectorCmd::DirectorCmd(void),UNKNOWN,HLTV/common/DirectorCmd.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN11DirectorCmdC2Ev
 gameui,1002ED6A,39,??1DirectorCmd@@UAE@XZ,public: virtual __thiscall DirectorCmd::~DirectorCmd(void),UNKNOWN,HLTV/common/DirectorCmd.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN11DirectorCmdD2Ev
 gameui,1002ED91,87,?GetEventData@DirectorCmd@@QAE_NAAH00@Z,"public: bool __thiscall DirectorCmd::GetEventData(int &,int &,int &)",UNKNOWN,HLTV/common/DirectorCmd.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN11DirectorCmd12GetEventDataERiS0_S0_

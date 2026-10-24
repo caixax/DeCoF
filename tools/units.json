@@ -4008,6 +4008,11 @@
           "name": "GameUI/ContentControlDialog",
           "source": "src/gameui/ContentControlDialog.cpp",
           "functions_file": "tools/units/gameui_GameUI_ContentControlDialog.txt"
+        },
+        {
+          "name": "GameUI/DemoPlayerFileDialog",
+          "source": "src/gameui/DemoPlayerFileDialog.cpp",
+          "functions_file": "tools/units/gameui_GameUI_DemoPlayerFileDialog.txt"
         }
       ]
     }

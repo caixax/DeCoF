@@ -4770,3 +4770,9 @@ va,name,kind,evidence
 10008CD0,?Count@?$CUtlVector@PAVCBitmapButton@@@@QBEHXZ,func,"GameUI/CareerBotFrame.cpp: same position as in our compiled object"
 10008E90,?Count@?$CUtlVector@PBVCCareerCharacter@@@@QBEHXZ,func,"GameUI/CareerBotFrame.cpp: same position as in our compiled object"
 10009D40,?IsExternallyAllocated@?$CUtlMemory@PBVCCareerCharacter@@@@QBE_NXZ,func,"GameUI/CareerBotFrame.cpp: bytes identical to our compiled object (relocations masked)"
+1002E900,??0CDemoPlayerFileDialog@@QAE@PAVPanel@vgui2@@PBD@Z,func,GameUI/DemoPlayerFileDialog.cpp: same position and size as in our compiled object; Linux constructor _ZN21CDemoPlayerFileDialogC1EPN5vgui25PanelEPKc
+1002EA8E,??1CDemoPlayerFileDialog@@UAE@XZ,func,GameUI/DemoPlayerFileDialog.cpp: same position and size as in our compiled object; Linux destructor _ZN21CDemoPlayerFileDialogD1Ev
+1002EAAA,?LoadDemoList@CDemoPlayerFileDialog@@AAEXXZ,func,"GameUI/DemoPlayerFileDialog.cpp: same position as in our compiled object (""*.dem"" FindFirst loop); linux: _ZN21CDemoPlayerFileDialog12LoadDemoListEv"
+1002EBE6,?OnCommand@CDemoPlayerFileDialog@@UAEXPBD@Z,func,GameUI/DemoPlayerFileDialog.cpp: same position and size as in our compiled object; linux: _ZN21CDemoPlayerFileDialog9OnCommandEPKc
+1002ECE8,?OnClose@CDemoPlayerFileDialog@@UAEXXZ,func,GameUI/DemoPlayerFileDialog.cpp: same position and size as in our compiled object; linux: _ZN21CDemoPlayerFileDialog7OnCloseEv
+1002ED10,??_GCDemoPlayerFileDialog@@UAEPAXI@Z,func,GameUI/DemoPlayerFileDialog.cpp: same position and size as in our compiled object
