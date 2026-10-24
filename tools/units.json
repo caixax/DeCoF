@@ -3674,6 +3674,11 @@
           "functions_file": "tools/units/gameui_vgui2_controls_Slider.txt"
         },
         {
+          "name": "vgui2/controls/PanelHorizListPanel",
+          "source": "src/vgui2/controls/PanelHorizListPanel.cpp",
+          "functions_file": "tools/units/gameui_vgui2_controls_PanelHorizListPanel.txt"
+        },
+        {
           "name": "vgui2/controls/ProgressBar",
           "source": "src/vgui2/controls/ProgressBar.cpp",
           "functions_file": "tools/units/gameui_vgui2_controls_ProgressBar.txt"

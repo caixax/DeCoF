@@ -3824,3 +3824,39 @@ va,name,kind,evidence
 1008F240,??0Slider_RegisterMap@Slider@vgui2@@QAE@XZ,func,"vgui2/controls/Slider.cpp: COMDAT tail (message map functions; ~Slider, GetMessageMap and GetPanelClassName live in GameUI/CvarSlider.cpp)"
 1008F260,?ChainToMap@Slider@vgui2@@SAXXZ,func,"vgui2/controls/Slider.cpp: COMDAT tail (message map functions; ~Slider, GetMessageMap and GetPanelClassName live in GameUI/CvarSlider.cpp)"
 1008F2D0,?GetPanelBaseClassName@Slider@vgui2@@SAPBDXZ,func,"vgui2/controls/Slider.cpp: COMDAT tail (message map functions; ~Slider, GetMessageMap and GetPanelClassName live in GameUI/CvarSlider.cpp)"
+10071550,??0ScrollBarReversedButtons@@QAE@PAVPanel@vgui2@@PBD_N@Z,func,vgui2/controls/PanelHorizListPanel.cpp: main text in gameui.so DWARF line order, same position in our compiled object
+1007157D,?ApplySchemeSettings@ScrollBarReversedButtons@@UAEXPAVIScheme@vgui2@@@Z,func,vgui2/controls/PanelHorizListPanel.cpp: main text in gameui.so DWARF line order, same position in our compiled object
+10071732,??0PanelHorizListPanel@vgui2@@QAE@PAVPanel@1@PBD@Z,func,vgui2/controls/PanelHorizListPanel.cpp: main text in gameui.so DWARF line order, same position in our compiled object
+1007188B,??1PanelHorizListPanel@vgui2@@UAE@XZ,func,vgui2/controls/PanelHorizListPanel.cpp: main text in gameui.so DWARF line order, same position in our compiled object
+100718BA,?computeHPixelsNeeded@PanelHorizListPanel@vgui2@@UAEHXZ,func,vgui2/controls/PanelHorizListPanel.cpp: main text in gameui.so DWARF line order, same position in our compiled object
+10071959,?GetCellRenderer@PanelHorizListPanel@vgui2@@UAEPAVPanel@2@H@Z,func,vgui2/controls/PanelHorizListPanel.cpp: main text in gameui.so DWARF line order, same position in our compiled object
+1007198F,?AddItem@PanelHorizListPanel@vgui2@@UAEHPAVPanel@2@@Z,func,vgui2/controls/PanelHorizListPanel.cpp: main text in gameui.so DWARF line order, same position in our compiled object
+100719F2,?GetItemCount@PanelHorizListPanel@vgui2@@UAEHXZ,func,vgui2/controls/PanelHorizListPanel.cpp: main text in gameui.so DWARF line order, same position in our compiled object
+10071A08,?GetItem@PanelHorizListPanel@vgui2@@UAEPAVPanel@2@H@Z,func,vgui2/controls/PanelHorizListPanel.cpp: main text in gameui.so DWARF line order, same position in our compiled object
+10071A40,?GetDataItem@PanelHorizListPanel@vgui2@@QAEPAUdataitem_s@12@H@Z,func,vgui2/controls/PanelHorizListPanel.cpp: main text in gameui.so DWARF line order, same position in our compiled object
+10071A76,?RemoveItem@PanelHorizListPanel@vgui2@@UAEXH@Z,func,vgui2/controls/PanelHorizListPanel.cpp: main text in gameui.so DWARF line order, same position in our compiled object
+10071AF7,?DeleteAllItems@PanelHorizListPanel@vgui2@@UAEXXZ,func,vgui2/controls/PanelHorizListPanel.cpp: main text in gameui.so DWARF line order, same position in our compiled object
+10071BB2,?OnMouseWheeled@PanelHorizListPanel@vgui2@@MAEXH@Z,func,vgui2/controls/PanelHorizListPanel.cpp: main text in gameui.so DWARF line order, same position in our compiled object
+10071C01,?PerformLayout@PanelHorizListPanel@vgui2@@MAEXXZ,func,vgui2/controls/PanelHorizListPanel.cpp: main text in gameui.so DWARF line order, same position in our compiled object
+10071E3C,?PaintBackground@PanelHorizListPanel@vgui2@@MAEXXZ,func,vgui2/controls/PanelHorizListPanel.cpp: main text in gameui.so DWARF line order, same position in our compiled object
+10071E4F,?ApplySchemeSettings@PanelHorizListPanel@vgui2@@UAEXPAVIScheme@2@@Z,func,vgui2/controls/PanelHorizListPanel.cpp: main text in gameui.so DWARF line order, same position in our compiled object
+10071FC4,?OnSliderMoved@PanelHorizListPanel@vgui2@@UAEXH@Z,func,vgui2/controls/PanelHorizListPanel.cpp: main text in gameui.so DWARF line order, same position in our compiled object
+10071FEE,?GetSliderRange@PanelHorizListPanel@vgui2@@QAEXAAH0@Z,func,vgui2/controls/PanelHorizListPanel.cpp: main text in gameui.so DWARF line order, same position in our compiled object
+10072017,?GetSliderPosition@PanelHorizListPanel@vgui2@@QAEHXZ,func,vgui2/controls/PanelHorizListPanel.cpp: main text in gameui.so DWARF line order, same position in our compiled object
+10072036,?SetSliderPosition@PanelHorizListPanel@vgui2@@QAEXH@Z,func,vgui2/controls/PanelHorizListPanel.cpp: main text in gameui.so DWARF line order, same position in our compiled object
+1007205B,_$E8,func,vgui2/controls/PanelHorizListPanel.cpp: main text in gameui.so DWARF line order, same position in our compiled object
+10072065,_$E7,func,vgui2/controls/PanelHorizListPanel.cpp: main text in gameui.so DWARF line order, same position in our compiled object
+100720EB,?GetPanelMap@PanelHorizListPanel@vgui2@@UAEPAUPanelMap_t@2@XZ,func,vgui2/controls/PanelHorizListPanel.cpp: main text in gameui.so DWARF line order, same position in our compiled object
+10072100,??_GScrollBarReversedButtons@@UAEPAXI@Z,func,vgui2/controls/PanelHorizListPanel.cpp: COMDAT tail, same position and size as in our compiled object
+10072130,??1ScrollBarReversedButtons@@UAE@XZ,func,vgui2/controls/PanelHorizListPanel.cpp: COMDAT tail, same position and size as in our compiled object
+10072150,??_GPanelHorizListPanel@vgui2@@UAEPAXI@Z,func,vgui2/controls/PanelHorizListPanel.cpp: COMDAT tail, same position and size as in our compiled object
+10072180,??0?$Dar@PAUdataitem_s@PanelHorizListPanel@vgui2@@@vgui2@@QAE@XZ,func,vgui2/controls/PanelHorizListPanel.cpp: COMDAT tail, same position and size as in our compiled object
+100721B0,??1?$Dar@PAUdataitem_s@PanelHorizListPanel@vgui2@@@vgui2@@QAE@XZ,func,vgui2/controls/PanelHorizListPanel.cpp: COMDAT tail, same position and size as in our compiled object
+100721E0,?GetCount@?$Dar@PAUdataitem_s@PanelHorizListPanel@vgui2@@@vgui2@@QAEHXZ,func,vgui2/controls/PanelHorizListPanel.cpp: COMDAT tail, same position and size as in our compiled object
+100721F0,?PutElement@?$Dar@PAUdataitem_s@PanelHorizListPanel@vgui2@@@vgui2@@QAEHPAUdataitem_s@PanelHorizListPanel@2@@Z,func,vgui2/controls/PanelHorizListPanel.cpp: COMDAT tail, same position and size as in our compiled object
+10072230,?RemoveElementAt@?$Dar@PAUdataitem_s@PanelHorizListPanel@vgui2@@@vgui2@@QAEXH@Z,func,vgui2/controls/PanelHorizListPanel.cpp: COMDAT tail, same position and size as in our compiled object
+100722A0,?RemoveAll@?$Dar@PAUdataitem_s@PanelHorizListPanel@vgui2@@@vgui2@@QAEXXZ,func,vgui2/controls/PanelHorizListPanel.cpp: COMDAT tail, same position and size as in our compiled object
+100722C0,??A?$Dar@PAUdataitem_s@PanelHorizListPanel@vgui2@@@vgui2@@QAEPAUdataitem_s@PanelHorizListPanel@1@H@Z,func,vgui2/controls/PanelHorizListPanel.cpp: COMDAT tail, same position and size as in our compiled object
+100722F0,?AddElement@?$Dar@PAUdataitem_s@PanelHorizListPanel@vgui2@@@vgui2@@QAEHPAUdataitem_s@PanelHorizListPanel@2@@Z,func,vgui2/controls/PanelHorizListPanel.cpp: COMDAT tail, same position and size as in our compiled object
+10072340,?FindElement@?$Dar@PAUdataitem_s@PanelHorizListPanel@vgui2@@@vgui2@@QAEHPAUdataitem_s@PanelHorizListPanel@2@@Z,func,vgui2/controls/PanelHorizListPanel.cpp: COMDAT tail, same position and size as in our compiled object
+10072390,?EnsureCapacity@?$Dar@PAUdataitem_s@PanelHorizListPanel@vgui2@@@vgui2@@QAEXH@Z,func,vgui2/controls/PanelHorizListPanel.cpp: COMDAT tail, same position and size as in our compiled object

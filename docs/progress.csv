@@ -10885,42 +10885,42 @@ gameui,10071420,25,?IsExternallyAllocated@?$CUtlMemory@VPHandle@vgui2@@@@QBE_NXZ
 gameui,10071440,17,?NumAllocated@?$CUtlMemory@H@@QBEHXZ,CUtlMemory<int>::NumAllocated,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,10071460,199,?Grow@?$CUtlMemory@H@@QAEXH@Z,CUtlMemory<int>::Grow,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,10071530,25,?IsExternallyAllocated@?$CUtlMemory@H@@QBE_NXZ,CUtlMemory<int>::IsExternallyAllocated,UNKNOWN,vgui2/controls/BuildGroup.cpp,,,MATCHED,100,gameui_manual.csv,
-gameui,10071550,45,,,UNKNOWN,vgui2/controls/PanelHorizListPanel.cpp,,,TODO,,,
-gameui,1007157D,437,,,UNKNOWN,vgui2/controls/PanelHorizListPanel.cpp,,,TODO,,,linux: _ZN24ScrollBarReversedButtons19ApplySchemeSettingsEPN5vgui27ISchemeE
-gameui,10071732,345,,vgui2::PanelHorizListPanel::PanelHorizListPanel,ENGINE,vgui2/controls/PanelHorizListPanel.cpp,,,TODO,,linux_symbols:string:0.75,linux: _ZN5vgui219PanelHorizListPanelC1EPNS_5PanelEPKc
-gameui,1007188B,47,,,UNKNOWN,vgui2/controls/PanelHorizListPanel.cpp,,,TODO,,,
-gameui,100718BA,159,,,UNKNOWN,vgui2/controls/PanelHorizListPanel.cpp,,,TODO,,,linux: _ZN5vgui219PanelHorizListPanel20computeHPixelsNeededEv
-gameui,10071959,54,,,UNKNOWN,vgui2/controls/PanelHorizListPanel.cpp,,,TODO,,,linux: _ZN5vgui219PanelHorizListPanel15GetCellRendererEi
-gameui,1007198F,99,,,UNKNOWN,vgui2/controls/PanelHorizListPanel.cpp,,,TODO,,,linux: _ZN5vgui219PanelHorizListPanel7AddItemEPNS_5PanelE
-gameui,100719F2,22,,,UNKNOWN,vgui2/controls/PanelHorizListPanel.cpp,,,TODO,,,linux: _ZN5vgui219PanelHorizListPanel12GetItemCountEv
-gameui,10071A08,56,,,UNKNOWN,vgui2/controls/PanelHorizListPanel.cpp,,,TODO,,,linux: _ZN5vgui219PanelHorizListPanel7GetItemEi
-gameui,10071A40,54,,,UNKNOWN,vgui2/controls/PanelHorizListPanel.cpp,,,TODO,,,linux: _ZN5vgui219PanelHorizListPanel11GetDataItemEi
-gameui,10071A76,129,,,UNKNOWN,vgui2/controls/PanelHorizListPanel.cpp,,,TODO,,,linux: _ZN5vgui219PanelHorizListPanel10RemoveItemEi
-gameui,10071AF7,187,,,UNKNOWN,vgui2/controls/PanelHorizListPanel.cpp,,,TODO,,,linux: _ZN5vgui219PanelHorizListPanel14DeleteAllItemsEv
-gameui,10071BB2,79,,,UNKNOWN,vgui2/controls/PanelHorizListPanel.cpp,,,TODO,,,linux: _ZN5vgui219PanelHorizListPanel14OnMouseWheeledEi
-gameui,10071C01,571,,,UNKNOWN,vgui2/controls/PanelHorizListPanel.cpp,,,TODO,,,linux: _ZN5vgui219PanelHorizListPanel13PerformLayoutEv
-gameui,10071E3C,19,,,UNKNOWN,vgui2/controls/PanelHorizListPanel.cpp,,,TODO,,,linux: _ZN5vgui219PanelHorizListPanel15PaintBackgroundEv
-gameui,10071E4F,373,,,UNKNOWN,vgui2/controls/PanelHorizListPanel.cpp,,,TODO,,,linux: _ZN5vgui219PanelHorizListPanel19ApplySchemeSettingsEPNS_7ISchemeE
-gameui,10071FC4,42,,,UNKNOWN,vgui2/controls/PanelHorizListPanel.cpp,,,TODO,,,linux: _ZN5vgui219PanelHorizListPanel13OnSliderMovedEi
-gameui,10071FEE,41,,,UNKNOWN,vgui2/controls/PanelHorizListPanel.cpp,,,TODO,,,
-gameui,10072017,31,,,UNKNOWN,vgui2/controls/PanelHorizListPanel.cpp,,,TODO,,,
-gameui,10072036,37,,,UNKNOWN,vgui2/controls/PanelHorizListPanel.cpp,,,TODO,,,
-gameui,1007205B,10,,,UNKNOWN,vgui2/controls/PanelHorizListPanel.cpp,,,TODO,,,
-gameui,10072065,134,,,UNKNOWN,vgui2/controls/PanelHorizListPanel.cpp,,,TODO,,,
-gameui,100720EB,16,,,UNKNOWN,vgui2/controls/PanelHorizListPanel.cpp,,,TODO,,,
-gameui,10072100,46,,,UNKNOWN,vgui2/controls/PanelHorizListPanel.cpp,,,TODO,,,
-gameui,10072130,19,,,UNKNOWN,vgui2/controls/PanelHorizListPanel.cpp,,,TODO,,,
-gameui,10072150,46,,,UNKNOWN,vgui2/controls/PanelHorizListPanel.cpp,,,TODO,,,
-gameui,10072180,43,,,UNKNOWN,vgui2/controls/PanelHorizListPanel.cpp,,,TODO,,,
-gameui,100721B0,34,,,UNKNOWN,vgui2/controls/PanelHorizListPanel.cpp,,,TODO,,,
-gameui,100721E0,16,,,UNKNOWN,vgui2/controls/PanelHorizListPanel.cpp,,,TODO,,,
-gameui,100721F0,53,,,UNKNOWN,vgui2/controls/PanelHorizListPanel.cpp,,,TODO,,,
-gameui,10072230,105,,,UNKNOWN,vgui2/controls/PanelHorizListPanel.cpp,,,TODO,,,
-gameui,100722A0,20,,,UNKNOWN,vgui2/controls/PanelHorizListPanel.cpp,,,TODO,,,
-gameui,100722C0,45,,,UNKNOWN,vgui2/controls/PanelHorizListPanel.cpp,,,TODO,,,
-gameui,100722F0,68,,,UNKNOWN,vgui2/controls/PanelHorizListPanel.cpp,,,TODO,,,
-gameui,10072340,70,,,UNKNOWN,vgui2/controls/PanelHorizListPanel.cpp,,,TODO,,,
-gameui,10072390,221,,,UNKNOWN,vgui2/controls/PanelHorizListPanel.cpp,,,TODO,,,
+gameui,10071550,45,??0ScrollBarReversedButtons@@QAE@PAVPanel@vgui2@@PBD_N@Z,ScrollBarReversedButtons::ScrollBarReversedButtons,UNKNOWN,vgui2/controls/PanelHorizListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1007157D,437,?ApplySchemeSettings@ScrollBarReversedButtons@@UAEXPAVIScheme@vgui2@@@Z,ScrollBarReversedButtons::ApplySchemeSettings,UNKNOWN,vgui2/controls/PanelHorizListPanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN24ScrollBarReversedButtons19ApplySchemeSettingsEPN5vgui27ISchemeE
+gameui,10071732,345,??0PanelHorizListPanel@vgui2@@QAE@PAVPanel@1@PBD@Z,vgui2::PanelHorizListPanel::PanelHorizListPanel,ENGINE,vgui2/controls/PanelHorizListPanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui219PanelHorizListPanelC1EPNS_5PanelEPKc
+gameui,1007188B,47,??1PanelHorizListPanel@vgui2@@UAE@XZ,vgui2::PanelHorizListPanel::~PanelHorizListPanel,UNKNOWN,vgui2/controls/PanelHorizListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100718BA,159,?computeHPixelsNeeded@PanelHorizListPanel@vgui2@@UAEHXZ,vgui2::PanelHorizListPanel::computeHPixelsNeeded,UNKNOWN,vgui2/controls/PanelHorizListPanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui219PanelHorizListPanel20computeHPixelsNeededEv
+gameui,10071959,54,?GetCellRenderer@PanelHorizListPanel@vgui2@@UAEPAVPanel@2@H@Z,vgui2::PanelHorizListPanel::GetCellRenderer,UNKNOWN,vgui2/controls/PanelHorizListPanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui219PanelHorizListPanel15GetCellRendererEi
+gameui,1007198F,99,?AddItem@PanelHorizListPanel@vgui2@@UAEHPAVPanel@2@@Z,vgui2::PanelHorizListPanel::AddItem,UNKNOWN,vgui2/controls/PanelHorizListPanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui219PanelHorizListPanel7AddItemEPNS_5PanelE
+gameui,100719F2,22,?GetItemCount@PanelHorizListPanel@vgui2@@UAEHXZ,vgui2::PanelHorizListPanel::GetItemCount,UNKNOWN,vgui2/controls/PanelHorizListPanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui219PanelHorizListPanel12GetItemCountEv
+gameui,10071A08,56,?GetItem@PanelHorizListPanel@vgui2@@UAEPAVPanel@2@H@Z,vgui2::PanelHorizListPanel::GetItem,UNKNOWN,vgui2/controls/PanelHorizListPanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui219PanelHorizListPanel7GetItemEi
+gameui,10071A40,54,?GetDataItem@PanelHorizListPanel@vgui2@@QAEPAUdataitem_s@12@H@Z,vgui2::PanelHorizListPanel::GetDataItem,UNKNOWN,vgui2/controls/PanelHorizListPanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui219PanelHorizListPanel11GetDataItemEi
+gameui,10071A76,129,?RemoveItem@PanelHorizListPanel@vgui2@@UAEXH@Z,vgui2::PanelHorizListPanel::RemoveItem,UNKNOWN,vgui2/controls/PanelHorizListPanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui219PanelHorizListPanel10RemoveItemEi
+gameui,10071AF7,187,?DeleteAllItems@PanelHorizListPanel@vgui2@@UAEXXZ,vgui2::PanelHorizListPanel::DeleteAllItems,UNKNOWN,vgui2/controls/PanelHorizListPanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui219PanelHorizListPanel14DeleteAllItemsEv
+gameui,10071BB2,79,?OnMouseWheeled@PanelHorizListPanel@vgui2@@MAEXH@Z,vgui2::PanelHorizListPanel::OnMouseWheeled,UNKNOWN,vgui2/controls/PanelHorizListPanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui219PanelHorizListPanel14OnMouseWheeledEi
+gameui,10071C01,571,?PerformLayout@PanelHorizListPanel@vgui2@@MAEXXZ,vgui2::PanelHorizListPanel::PerformLayout,UNKNOWN,vgui2/controls/PanelHorizListPanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui219PanelHorizListPanel13PerformLayoutEv
+gameui,10071E3C,19,?PaintBackground@PanelHorizListPanel@vgui2@@MAEXXZ,vgui2::PanelHorizListPanel::PaintBackground,UNKNOWN,vgui2/controls/PanelHorizListPanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui219PanelHorizListPanel15PaintBackgroundEv
+gameui,10071E4F,373,?ApplySchemeSettings@PanelHorizListPanel@vgui2@@UAEXPAVIScheme@2@@Z,vgui2::PanelHorizListPanel::ApplySchemeSettings,UNKNOWN,vgui2/controls/PanelHorizListPanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui219PanelHorizListPanel19ApplySchemeSettingsEPNS_7ISchemeE
+gameui,10071FC4,42,?OnSliderMoved@PanelHorizListPanel@vgui2@@UAEXH@Z,vgui2::PanelHorizListPanel::OnSliderMoved,UNKNOWN,vgui2/controls/PanelHorizListPanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui219PanelHorizListPanel13OnSliderMovedEi
+gameui,10071FEE,41,?GetSliderRange@PanelHorizListPanel@vgui2@@QAEXAAH0@Z,vgui2::PanelHorizListPanel::GetSliderRange,UNKNOWN,vgui2/controls/PanelHorizListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10072017,31,?GetSliderPosition@PanelHorizListPanel@vgui2@@QAEHXZ,vgui2::PanelHorizListPanel::GetSliderPosition,UNKNOWN,vgui2/controls/PanelHorizListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10072036,37,?SetSliderPosition@PanelHorizListPanel@vgui2@@QAEXH@Z,vgui2::PanelHorizListPanel::SetSliderPosition,UNKNOWN,vgui2/controls/PanelHorizListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1007205B,10,_$E8,,UNKNOWN,vgui2/controls/PanelHorizListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10072065,134,_$E7,,UNKNOWN,vgui2/controls/PanelHorizListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100720EB,16,?GetPanelMap@PanelHorizListPanel@vgui2@@UAEPAUPanelMap_t@2@XZ,vgui2::PanelHorizListPanel::GetPanelMap,UNKNOWN,vgui2/controls/PanelHorizListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10072100,46,??_GScrollBarReversedButtons@@UAEPAXI@Z,destructor',UNKNOWN,vgui2/controls/PanelHorizListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10072130,19,??1ScrollBarReversedButtons@@UAE@XZ,ScrollBarReversedButtons::~ScrollBarReversedButtons,UNKNOWN,vgui2/controls/PanelHorizListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10072150,46,??_GPanelHorizListPanel@vgui2@@UAEPAXI@Z,destructor',UNKNOWN,vgui2/controls/PanelHorizListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10072180,43,??0?$Dar@PAUdataitem_s@PanelHorizListPanel@vgui2@@@vgui2@@QAE@XZ,*>,UNKNOWN,vgui2/controls/PanelHorizListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100721B0,34,??1?$Dar@PAUdataitem_s@PanelHorizListPanel@vgui2@@@vgui2@@QAE@XZ,*>,UNKNOWN,vgui2/controls/PanelHorizListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100721E0,16,?GetCount@?$Dar@PAUdataitem_s@PanelHorizListPanel@vgui2@@@vgui2@@QAEHXZ,*>::GetCount,UNKNOWN,vgui2/controls/PanelHorizListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100721F0,53,?PutElement@?$Dar@PAUdataitem_s@PanelHorizListPanel@vgui2@@@vgui2@@QAEHPAUdataitem_s@PanelHorizListPanel@2@@Z,*>::PutElement,UNKNOWN,vgui2/controls/PanelHorizListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10072230,105,?RemoveElementAt@?$Dar@PAUdataitem_s@PanelHorizListPanel@vgui2@@@vgui2@@QAEXH@Z,*>::RemoveElementAt,UNKNOWN,vgui2/controls/PanelHorizListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100722A0,20,?RemoveAll@?$Dar@PAUdataitem_s@PanelHorizListPanel@vgui2@@@vgui2@@QAEXXZ,*>::RemoveAll,UNKNOWN,vgui2/controls/PanelHorizListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100722C0,45,??A?$Dar@PAUdataitem_s@PanelHorizListPanel@vgui2@@@vgui2@@QAEPAUdataitem_s@PanelHorizListPanel@1@H@Z,*>::operator[],UNKNOWN,vgui2/controls/PanelHorizListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100722F0,68,?AddElement@?$Dar@PAUdataitem_s@PanelHorizListPanel@vgui2@@@vgui2@@QAEHPAUdataitem_s@PanelHorizListPanel@2@@Z,*>::AddElement,UNKNOWN,vgui2/controls/PanelHorizListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10072340,70,?FindElement@?$Dar@PAUdataitem_s@PanelHorizListPanel@vgui2@@@vgui2@@QAEHPAUdataitem_s@PanelHorizListPanel@2@@Z,*>::FindElement,UNKNOWN,vgui2/controls/PanelHorizListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10072390,221,?EnsureCapacity@?$Dar@PAUdataitem_s@PanelHorizListPanel@vgui2@@@vgui2@@QAEXH@Z,*>::EnsureCapacity,UNKNOWN,vgui2/controls/PanelHorizListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,10072470,37,??0KeyValues@@QAE@PBD@Z,KeyValues::KeyValues,UNKNOWN,public/KeyValues.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,10072495,53,??0KeyValues@@QAE@PBD00@Z,KeyValues::KeyValues,UNKNOWN,public/KeyValues.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,100724CA,53,??0KeyValues@@QAE@PBD0PBG@Z,KeyValues::KeyValues,UNKNOWN,public/KeyValues.cpp,,,MATCHED,100,gameui_manual.csv,
