@@ -3938,6 +3938,11 @@
           "name": "GameUI/CvarToggleCheckButton",
           "source": "src/gameui/CvarToggleCheckButton.cpp",
           "functions_file": "tools/units/gameui_GameUI_CvarToggleCheckButton.txt"
+        },
+        {
+          "name": "GameUI/CvarTextEntry",
+          "source": "src/gameui/CvarTextEntry.cpp",
+          "functions_file": "tools/units/gameui_GameUI_CvarTextEntry.txt"
         }
       ]
     }

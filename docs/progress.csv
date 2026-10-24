@@ -9521,22 +9521,22 @@ gameui,10045460,10,?GetPanelBaseClassName@CCvarSlider@@SAPBDXZ,public: static ch
 gameui,10045470,19,??0PanelMessageFunc_OnSliderMoved@CCvarSlider@@QAE@XZ,public: __thiscall CCvarSlider::PanelMessageFunc_OnSliderMoved::PanelMessageFunc_OnSliderMoved(void),UNKNOWN,GameUI/CvarSlider.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,10045490,107,?InitVar@PanelMessageFunc_OnSliderMoved@CCvarSlider@@SAXXZ,public: static void __cdecl CCvarSlider::PanelMessageFunc_OnSliderMoved::InitVar(void),UNKNOWN,GameUI/CvarSlider.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,10045500,120,?AddToMap@CCvarSlider@@SAXPBDP8Panel@vgui2@@AEXXZHH0H0@Z,"public: static void __cdecl CCvarSlider::AddToMap(char const *,void (__thiscall vgui2::Panel::*)(void),int,int,char const *,int,char const *)",UNKNOWN,GameUI/CvarSlider.cpp,,,MATCHED,100,gameui_manual.csv,
-gameui,10045590,155,,,UNKNOWN,GameUI/CvarTextEntry.cpp,,,TODO,,,linux: _ZN14CCvarTextEntryC2EPN5vgui25PanelEPKcS4_
-gameui,1004562B,58,,,UNKNOWN,GameUI/CvarTextEntry.cpp,,,TODO,,,linux: _ZN14CCvarTextEntryD1Ev
-gameui,10045665,78,,CCvarTextEntry::ApplySchemeSettings,ENGINE,GameUI/CvarTextEntry.cpp,,,TODO,,linux_symbols:caller:0.75,linux: _ZN14CCvarTextEntry19ApplySchemeSettingsEPN5vgui27ISchemeE
-gameui,100456B3,221,,,UNKNOWN,GameUI/CvarTextEntry.cpp,,,TODO,,,linux: _ZN14CCvarTextEntry12ApplyChangesEb
-gameui,10045790,106,,,UNKNOWN,GameUI/CvarTextEntry.cpp,,,TODO,,,linux: _ZN14CCvarTextEntry5ResetEv
-gameui,100457FA,60,,,UNKNOWN,GameUI/CvarTextEntry.cpp,,,TODO,,,linux: _ZN14CCvarTextEntry15HasBeenModifiedEv
-gameui,10045836,106,,,UNKNOWN,GameUI/CvarTextEntry.cpp,,,TODO,,,linux: _ZN14CCvarTextEntry13OnTextChangedEv
-gameui,100458A0,46,,,UNKNOWN,GameUI/CvarTextEntry.cpp,,,TODO,,,
-gameui,100458D0,19,,,UNKNOWN,GameUI/CvarTextEntry.cpp,,,TODO,,,
-gameui,100458F0,102,,CTextEntryBox::CTextEntryBox,ENGINE,GameUI/CvarTextEntry.cpp,,,TODO,,linux_symbols:caller:0.667,
-gameui,10045960,64,,,UNKNOWN,GameUI/CvarTextEntry.cpp,,,TODO,,,
-gameui,100459A0,10,,,UNKNOWN,GameUI/CvarTextEntry.cpp,,,TODO,,,
-gameui,100459B0,10,,CCvarTextEntry::CCvarTextEntry,ENGINE,GameUI/CvarTextEntry.cpp,,,TODO,,linux_symbols:string:0.25,
-gameui,100459C0,19,,,UNKNOWN,GameUI/CvarTextEntry.cpp,,,TODO,,,
-gameui,100459E0,107,,,UNKNOWN,GameUI/CvarTextEntry.cpp,,,TODO,,,
-gameui,10045A50,120,,,UNKNOWN,GameUI/CvarTextEntry.cpp,,,TODO,,,
+gameui,10045590,155,??0CCvarTextEntry@@QAE@PAVPanel@vgui2@@PBD1@Z,"public: __thiscall CCvarTextEntry::CCvarTextEntry(class vgui2::Panel *,char const *,char const *)",UNKNOWN,GameUI/CvarTextEntry.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN14CCvarTextEntryC2EPN5vgui25PanelEPKcS4_
+gameui,1004562B,58,??1CCvarTextEntry@@UAE@XZ,public: virtual __thiscall CCvarTextEntry::~CCvarTextEntry(void),UNKNOWN,GameUI/CvarTextEntry.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN14CCvarTextEntryD1Ev
+gameui,10045665,78,?ApplySchemeSettings@CCvarTextEntry@@UAEXPAVIScheme@vgui2@@@Z,public: virtual void __thiscall CCvarTextEntry::ApplySchemeSettings(class vgui2::IScheme *),ENGINE,GameUI/CvarTextEntry.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN14CCvarTextEntry19ApplySchemeSettingsEPN5vgui27ISchemeE
+gameui,100456B3,221,?ApplyChanges@CCvarTextEntry@@QAEX_N@Z,public: void __thiscall CCvarTextEntry::ApplyChanges(bool),UNKNOWN,GameUI/CvarTextEntry.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN14CCvarTextEntry12ApplyChangesEb
+gameui,10045790,106,?Reset@CCvarTextEntry@@QAEXXZ,public: void __thiscall CCvarTextEntry::Reset(void),UNKNOWN,GameUI/CvarTextEntry.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN14CCvarTextEntry5ResetEv
+gameui,100457FA,60,?HasBeenModified@CCvarTextEntry@@QAE_NXZ,public: bool __thiscall CCvarTextEntry::HasBeenModified(void),UNKNOWN,GameUI/CvarTextEntry.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN14CCvarTextEntry15HasBeenModifiedEv
+gameui,10045836,106,?OnTextChanged@CCvarTextEntry@@UAEXXZ,public: virtual void __thiscall CCvarTextEntry::OnTextChanged(void),UNKNOWN,GameUI/CvarTextEntry.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN14CCvarTextEntry13OnTextChangedEv
+gameui,100458A0,46,??_GCCvarTextEntry@@UAEPAXI@Z,public: virtual void * __thiscall CCvarTextEntry::`scalar deleting destructor'(unsigned int),UNKNOWN,GameUI/CvarTextEntry.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100458D0,19,??0CCvarTextEntry_RegisterMap@CCvarTextEntry@@QAE@XZ,public: __thiscall CCvarTextEntry::CCvarTextEntry_RegisterMap::CCvarTextEntry_RegisterMap(void),UNKNOWN,GameUI/CvarTextEntry.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100458F0,102,?ChainToMap@CCvarTextEntry@@SAXXZ,public: static void __cdecl CCvarTextEntry::ChainToMap(void),ENGINE,GameUI/CvarTextEntry.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10045960,64,?GetMessageMap@CCvarTextEntry@@UAEPAUPanelMessageMap@vgui2@@XZ,public: virtual struct vgui2::PanelMessageMap * __thiscall CCvarTextEntry::GetMessageMap(void),UNKNOWN,GameUI/CvarTextEntry.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100459A0,10,?GetPanelClassName@CCvarTextEntry@@SAPBDXZ,public: static char const * __cdecl CCvarTextEntry::GetPanelClassName(void),UNKNOWN,GameUI/CvarTextEntry.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100459B0,10,?GetPanelBaseClassName@CCvarTextEntry@@SAPBDXZ,public: static char const * __cdecl CCvarTextEntry::GetPanelBaseClassName(void),ENGINE,GameUI/CvarTextEntry.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100459C0,19,??0PanelMessageFunc_OnTextChanged@CCvarTextEntry@@QAE@XZ,public: __thiscall CCvarTextEntry::PanelMessageFunc_OnTextChanged::PanelMessageFunc_OnTextChanged(void),UNKNOWN,GameUI/CvarTextEntry.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100459E0,107,?InitVar@PanelMessageFunc_OnTextChanged@CCvarTextEntry@@SAXXZ,public: static void __cdecl CCvarTextEntry::PanelMessageFunc_OnTextChanged::InitVar(void),UNKNOWN,GameUI/CvarTextEntry.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10045A50,120,?AddToMap@CCvarTextEntry@@SAXPBDP8Panel@vgui2@@AEXXZHH0H0@Z,"public: static void __cdecl CCvarTextEntry::AddToMap(char const *,void (__thiscall vgui2::Panel::*)(void),int,int,char const *,int,char const *)",UNKNOWN,GameUI/CvarTextEntry.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,10045AE0,149,??0CCvarToggleCheckButton@@QAE@PAVPanel@vgui2@@PBD11@Z,"public: __thiscall CCvarToggleCheckButton::CCvarToggleCheckButton(class vgui2::Panel *,char const *,char const *,char const *)",UNKNOWN,GameUI/CvarToggleCheckButton.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN22CCvarToggleCheckButtonC2EPN5vgui25PanelEPKcS4_S4_
 gameui,10045B75,46,??1CCvarToggleCheckButton@@UAE@XZ,public: virtual __thiscall CCvarToggleCheckButton::~CCvarToggleCheckButton(void),UNKNOWN,GameUI/CvarToggleCheckButton.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN22CCvarToggleCheckButtonD1Ev
 gameui,10045BA3,163,?Paint@CCvarToggleCheckButton@@UAEXXZ,public: virtual void __thiscall CCvarToggleCheckButton::Paint(void),UNKNOWN,GameUI/CvarToggleCheckButton.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN22CCvarToggleCheckButton5PaintEv

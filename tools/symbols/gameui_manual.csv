@@ -4381,3 +4381,19 @@ va,name,kind,evidence
 10045F60,?AddToMap@CCvarToggleCheckButton@@SAXPBDP8Panel@vgui2@@AEXXZHH0H0@Z,func,GameUI/CvarToggleCheckButton.cpp: same position and size as in our compiled object
 10045BA3,?Paint@CCvarToggleCheckButton@@UAEXXZ,func,GameUI/CvarToggleCheckButton.cpp: same position (size 163 against 169) as in our compiled object; linux: _ZN22CCvarToggleCheckButton5PaintEv
 10045CA6,?Reset@CCvarToggleCheckButton@@QAEXXZ,func,GameUI/CvarToggleCheckButton.cpp: same position (size 94 against 100) as in our compiled object; linux: _ZN22CCvarToggleCheckButton5ResetEv
+10045590,??0CCvarTextEntry@@QAE@PAVPanel@vgui2@@PBD1@Z,func,GameUI/CvarTextEntry.cpp: same position and size as in our compiled object; linux: _ZN14CCvarTextEntryC2EPN5vgui25PanelEPKcS4_
+1004562B,??1CCvarTextEntry@@UAE@XZ,func,GameUI/CvarTextEntry.cpp: same position and size as in our compiled object; linux: _ZN14CCvarTextEntryD1Ev
+10045665,?ApplySchemeSettings@CCvarTextEntry@@UAEXPAVIScheme@vgui2@@@Z,func,GameUI/CvarTextEntry.cpp: same position and size as in our compiled object; linux: _ZN14CCvarTextEntry19ApplySchemeSettingsEPN5vgui27ISchemeE
+100456B3,?ApplyChanges@CCvarTextEntry@@QAEX_N@Z,func,GameUI/CvarTextEntry.cpp: same position and size as in our compiled object; linux: _ZN14CCvarTextEntry12ApplyChangesEb
+10045790,?Reset@CCvarTextEntry@@QAEXXZ,func,GameUI/CvarTextEntry.cpp: same position and size as in our compiled object; linux: _ZN14CCvarTextEntry5ResetEv
+100457FA,?HasBeenModified@CCvarTextEntry@@QAE_NXZ,func,GameUI/CvarTextEntry.cpp: same position and size as in our compiled object; linux: _ZN14CCvarTextEntry15HasBeenModifiedEv
+10045836,?OnTextChanged@CCvarTextEntry@@UAEXXZ,func,GameUI/CvarTextEntry.cpp: same position and size as in our compiled object; linux: _ZN14CCvarTextEntry13OnTextChangedEv
+100458A0,??_GCCvarTextEntry@@UAEPAXI@Z,func,GameUI/CvarTextEntry.cpp: same position and size as in our compiled object
+100458D0,??0CCvarTextEntry_RegisterMap@CCvarTextEntry@@QAE@XZ,func,GameUI/CvarTextEntry.cpp: same position and size as in our compiled object
+100458F0,?ChainToMap@CCvarTextEntry@@SAXXZ,func,GameUI/CvarTextEntry.cpp: same position and size as in our compiled object
+10045960,?GetMessageMap@CCvarTextEntry@@UAEPAUPanelMessageMap@vgui2@@XZ,func,GameUI/CvarTextEntry.cpp: same position and size as in our compiled object
+100459A0,?GetPanelClassName@CCvarTextEntry@@SAPBDXZ,func,GameUI/CvarTextEntry.cpp: same position and size as in our compiled object
+100459B0,?GetPanelBaseClassName@CCvarTextEntry@@SAPBDXZ,func,GameUI/CvarTextEntry.cpp: same position and size as in our compiled object
+100459C0,??0PanelMessageFunc_OnTextChanged@CCvarTextEntry@@QAE@XZ,func,GameUI/CvarTextEntry.cpp: same position and size as in our compiled object
+100459E0,?InitVar@PanelMessageFunc_OnTextChanged@CCvarTextEntry@@SAXXZ,func,GameUI/CvarTextEntry.cpp: same position and size as in our compiled object
+10045A50,?AddToMap@CCvarTextEntry@@SAXPBDP8Panel@vgui2@@AEXXZHH0H0@Z,func,GameUI/CvarTextEntry.cpp: same position and size as in our compiled object

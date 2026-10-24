@@ -14,9 +14,11 @@
 
 #include <vgui_controls/TextEntry.h>
 
+namespace vgui = vgui2;
+
 class CCvarTextEntry : public vgui2::TextEntry
 {
-	DECLARE_CLASS_SIMPLE( CCvarTextEntry, vgui2::TextEntry );
+	DECLARE_CLASS_SIMPLE( CCvarTextEntry, vgui::TextEntry );
 
 public:
 	CCvarTextEntry( vgui2::Panel *parent, const char *panelName, char const *cvarname );
