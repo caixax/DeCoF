@@ -1863,7 +1863,7 @@ int CStudioModelRenderer::StudioDrawPlayer( int flags, entity_state_t *pplayer )
 			if (iMuzzleFlash_guess && iMuzzleFlashEnt_guess == m_pCurrentEntity->index)
 			{
 				iMuzzleFlash_guess = 0;
-				StudioMuzzleFlash_guess( pweaponmodel->name, 0, false, 1.0 );
+				StudioWeaponMuzzleFlash_guess( pweaponmodel->name, 0, false, 1.0 );
 			}
 
 			*m_pCurrentEntity = saveent;
@@ -1880,7 +1880,7 @@ int CStudioModelRenderer::StudioDrawPlayer( int flags, entity_state_t *pplayer )
 
 /*
 ====================
-StudioMuzzleFlash_guess
+StudioWeaponMuzzleFlash_guess
 
 Cry of Fear: flash model and light at an attachment of the weapon model of
 another player (called by StudioDrawPlayer after the weapon is drawn)
@@ -1888,7 +1888,7 @@ another player (called by StudioDrawPlayer after the weapon is drawn)
 */
 cl_entity_t tpmuzzleflash_guess[9];	// only [0] is used (retail bss holds 9 entities)
 
-void CStudioModelRenderer::StudioMuzzleFlash_guess( char *modelname, int iAttachment, bool bAlt, float flScale )
+void CStudioModelRenderer::StudioWeaponMuzzleFlash_guess( char *modelname, int iAttachment, bool bAlt, float flScale )
 {
 	int i;
 	mstudioattachment_t *pattachment;
@@ -2361,8 +2361,8 @@ skipmodel:
 			g_HeadShieldEnt.angles[2] = 0;
 			g_HeadShieldEnt.curstate.angles[2] = 0;
 			g_HeadShieldEnt.origin = g_HeadShieldEnt.curstate.origin + forward * dist;
-			g_HeadShieldEnt.angles[0] = g_HeadShieldEnt.curstate.angles[0] = iUnknown101B27C8_guess;
-			g_HeadShieldEnt.angles[1] = g_HeadShieldEnt.curstate.angles[1] = yaw;
+			g_HeadShieldEnt.curstate.angles[0] = g_HeadShieldEnt.angles[0] = iUnknown101B27C8_guess;
+			g_HeadShieldEnt.curstate.angles[1] = g_HeadShieldEnt.angles[1] = yaw;
 		}
 		goto setupdone;
 	}
