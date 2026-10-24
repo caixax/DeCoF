@@ -196,7 +196,7 @@ COptionsSubKeyboard::COptionsSubKeyboard( vgui::Panel *parent ) : PropertyPage( 
 	m_pSetBindingButton = new Button( this, "ChangeKeyButton", "" );
 	m_pClearBindingButton = new Button( this, "ClearKeyButton", "" );
 
-	LoadControlSettings( "Resource\\OptionsSubKeyboard.res" );
+	LoadControlSettings( "Resource/OptionsSubKeyboard.res" );
 
 	m_pSetBindingButton->SetEnabled( false );
 	m_pClearBindingButton->SetEnabled( false );
