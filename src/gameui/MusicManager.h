@@ -12,11 +12,12 @@
 #pragma once
 #endif
 
+#include <stdlib.h>
+
 #include "IMusicManager.h"
 
 //-----------------------------------------------------------------------------
 // Purpose: Plays the menu and round end music tracks
-// (the data members are declared with MusicManager.cpp)
 //-----------------------------------------------------------------------------
 class MusicManager : public IMusicManager
 {
@@ -32,8 +33,23 @@ public:
 
 	void Init();
 	void Reset();
+
+private:
+	TrackType m_currentTrack;
+
+	struct TrackInfo
+	{
+		char t_path[_MAX_PATH];
+		bool looping;
+	};
+	TrackInfo m_tracks[TRACKTYPE_NUM];
+
+	bool m_useLoopingInfo;
 };
 
 extern MusicManager *TheMusicManager;
+
+void CreateMusicManager();
+void ShutdownMusicManager();
 
 #endif // MUSICMANAGER_H

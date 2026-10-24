@@ -4924,3 +4924,25 @@ va,name,kind,evidence
 10030364,?PaintBackground@CDottedBgLabel@@UAEXXZ,func,GameUI/DottedLabel.cpp: same position and size as in our compiled object; linux: _ZN14CDottedBgLabel15PaintBackgroundEv
 100305C0,??_GCDottedBgLabel@@UAEPAXI@Z,func,GameUI/DottedLabel.cpp: same position and size as in our compiled object
 100305F0,??1CDottedBgLabel@@UAE@XZ,func,"GameUI/DottedLabel.cpp: compiler-generated destructor COMDAT (no vptr store), same position and size as in our compiled object"
+10036E60,_$E7,func,GameUI/MusicManager.cpp: same position and size as in our compiled object
+10036E6F,_$E4,func,GameUI/MusicManager.cpp: same position and size as in our compiled object
+10036E7E,_$E6,func,GameUI/MusicManager.cpp: same position and size as in our compiled object
+10036E90,_$E5,func,GameUI/MusicManager.cpp: same position and size as in our compiled object
+10036E9F,_$E10,func,GameUI/MusicManager.cpp: same position and size as in our compiled object
+10036EA9,_$E9,func,GameUI/MusicManager.cpp: same position and size as in our compiled object
+10036EC2,?__CreateMusicManagerIMusicManager_interface@@YAPAVIBaseInterface@@XZ,func,GameUI/MusicManager.cpp: same position and size as in our compiled object
+10036ECC,?CreateMusicManager@@YAXXZ,func,GameUI/MusicManager.cpp: same position and size as in our compiled object
+10036EE6,?ShutdownMusicManager@@YAXXZ,func,GameUI/MusicManager.cpp: same position and size as in our compiled object
+10036EF5,??0MusicManager@@QAE@XZ,func,GameUI/MusicManager.cpp: same position and size as in our compiled object
+10036F69,??1MusicManager@@UAE@XZ,func,GameUI/MusicManager.cpp: same position and size as in our compiled object
+10036F85,?Reset@MusicManager@@QAEXXZ,func,GameUI/MusicManager.cpp: same position and size as in our compiled object
+10036FAE,?Init@MusicManager@@QAEXXZ,func,GameUI/MusicManager.cpp: same position and size as in our compiled object; linux: _ZN12MusicManager4InitEv
+10037249,?StartTrack@MusicManager@@UAEXW4TrackType@@_N@Z,func,GameUI/MusicManager.cpp: same position and size as in our compiled object; linux: _ZN12MusicManager10StartTrackE9TrackTypeb.part.2
+10037385,?StopTrack@MusicManager@@UAEXXZ,func,GameUI/MusicManager.cpp: same position and size as in our compiled object; linux: _ZN12MusicManager9StopTrackEv
+100373B4,?FadeOutTrack@MusicManager@@UAEXXZ,func,GameUI/MusicManager.cpp: same position and size as in our compiled object; linux: _ZN12MusicManager12FadeOutTrackEv
+100373E3,?IsPlayingTrack@MusicManager@@UAE_NXZ,func,GameUI/MusicManager.cpp: same position and size as in our compiled object
+100373FC,?IsPlayingTrack@MusicManager@@UAE_NW4TrackType@@@Z,func,GameUI/MusicManager.cpp: same position and size as in our compiled object
+10037420,??_GMusicManager@@UAEPAXI@Z,func,GameUI/MusicManager.cpp: same position and size as in our compiled object
+10037450,??0IMusicManager@@QAE@XZ,func,GameUI/MusicManager.cpp: same position and size as in our compiled object
+10037470,??_GIMusicManager@@UAEPAXI@Z,func,GameUI/MusicManager.cpp: same position and size as in our compiled object
+100374A0,??1IMusicManager@@UAE@XZ,func,GameUI/MusicManager.cpp: same position and size as in our compiled object

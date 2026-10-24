@@ -4063,6 +4063,11 @@
           "name": "GameUI/DottedLabel",
           "source": "src/gameui/DottedLabel.cpp",
           "functions_file": "tools/units/gameui_GameUI_DottedLabel.txt"
+        },
+        {
+          "name": "GameUI/MusicManager",
+          "source": "src/gameui/MusicManager.cpp",
+          "functions_file": "tools/units/gameui_GameUI_MusicManager.txt"
         }
       ]
     }
