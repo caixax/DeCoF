@@ -1376,7 +1376,7 @@ client,1004BA60,24,?__MsgFunc_DeathMsg@@YAHPBDHPAX@Z,__MsgFunc_DeathMsg,LIB,,,,,
 client,1004BA80,92,?Demo_WriteBuffer@@YAXHHPAE@Z,Demo_WriteBuffer,HLSDK,cl_dll/demo.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__demo.obj:score4,
 client,1004BAE0,149,_Demo_ReadBuffer,Demo_ReadBuffer,HLSDK,cl_dll/demo.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__demo.obj:score2,
 client,1004BB80,169,?DlightFlash@@YAXPAM@Z,DlightFlash,UNKNOWN,cl_dll/entity.cpp,,,MATCHED,100,,
-client,1004BC30,1166,?MuzzleFlash_guess@@YAXPAUcl_entity_s@@H_NM@Z,MuzzleFlash_guess,UNKNOWN,,,,TODO,87.96,client_manual.csv,
+client,1004BC30,1166,?MuzzleFlash_guess@@YAXPAUcl_entity_s@@H_NM@Z,MuzzleFlash_guess,UNKNOWN,cl_dll/entity.cpp,,,TODO,98.35,client_manual.csv,98.36%: retail loads the default 4.0 into xmm1 once and stores it from there (start and else branch) and reloads pWeapon->iId into eax after storing pModel; ours stores the 4.0 as an immediate and reloads iId into ecx first (register allocation)
 client,1004C0C0,586,,,UNKNOWN,cl_dll/entity.cpp,,,EQUIVALENT,88.22,,"EQUIVALENT: retail keeps flFlashScale in the dead pszModel parameter slot ([ebp+8]) and needs no extra local, ours spills it to [ebp-4], which changes register use and store scheduling (same difference as MuzzleFlash_guess)"
 client,1004C310,126,_HUD_AddEntity,HUD_AddEntity,HLSDK,cl_dll/entity.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__entity.obj:score4,
 client,1004C390,245,_HUD_CreateEntities,HUD_CreateEntities,HLSDK,cl_dll/entity.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__entity.obj:score6,

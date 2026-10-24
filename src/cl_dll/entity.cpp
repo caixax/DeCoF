@@ -774,8 +774,8 @@ void MuzzleFlash_guess( cl_entity_t *pEntity, int iAttachment, bool bAlt, float 
 	muzzleflash_guess[0].curstate.modelindex = iModelIndex;
 	muzzleflash_guess[0].curstate.scale = flFlashScale * flScale;
 	muzzleflash_guess[0].index = 0;
-	muzzleflash_guess[0].origin = pEntity->attachment[iAttachment];
-	muzzleflash_guess[0].angles = pEntity->angles;
+	muzzleflash_guess[0].origin = (float *)pEntity->attachment[iAttachment];
+	muzzleflash_guess[0].angles = (float *)pEntity->angles;
 	muzzleflash_guess[0].angles[2] = gEngfuncs.pfnRandomFloat( 1, 359 );
 
 	if ( bAlt )
@@ -802,7 +802,7 @@ void MuzzleFlash_guess( cl_entity_t *pEntity, int iAttachment, bool bAlt, float 
 	}
 
 	dlight_t *dl = gEngfuncs.pEfxAPI->CL_AllocDlight( 0 );
-	dl->origin = pPlayer->origin;
+	VectorCopy( pPlayer->origin, dl->origin );
 	dl->radius = 128;
 	dl->color.r = 225;
 	dl->color.g = 96;
@@ -810,7 +810,7 @@ void MuzzleFlash_guess( cl_entity_t *pEntity, int iAttachment, bool bAlt, float 
 	dl->die = gEngfuncs.GetClientTime() + 0.06;
 
 	DynamicLight *dl2 = MY_AllocDlight( 0 );
-	dl2->origin = pPlayer->origin;
+	VectorCopy( pPlayer->origin, dl2->origin );
 	dl2->radius = 128;
 	dl2->color = Vector( 1.0f, 0.37f, 0.0f );
 	dl2->die = gEngfuncs.GetClientTime() + 0.06;
