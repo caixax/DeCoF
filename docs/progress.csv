@@ -10083,10 +10083,10 @@ gameui,10058CCA,482,?VGuiControls_Init@vgui2@@YA_NPBDPAP6APAVIBaseInterface@@0PA
 gameui,10058EAC,86,?InitializeInterface_guess@vgui2@@YAPAXPBDPAP6APAVIBaseInterface@@0PAH@ZH@Z,vgui2::InitializeInterface_guess,UNKNOWN,vgui2/controls/controls.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,10058F02,5,?VGuiControls_Shutdown@vgui2@@YAXXZ,vgui2::VGuiControls_Shutdown,UNKNOWN,vgui2/controls/controls.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,10058F07,10,?GetControlsModuleName@vgui2@@YAPBDXZ,vgui2::GetControlsModuleName,UNKNOWN,vgui2/controls/controls.cpp,,,MATCHED,100,gameui_manual.csv,
-gameui,10058F20,15,_$E8,_$E8,UNKNOWN,vgui2/controls/Button.cpp,,,TODO,,,
-gameui,10058F2F,21,_$E5,_$E5,UNKNOWN,vgui2/controls/Button.cpp,,,TODO,,,
-gameui,10058F44,18,_$E7,_$E7,UNKNOWN,vgui2/controls/Button.cpp,,,TODO,,,
-gameui,10058F56,15,_$E6,_$E6,UNKNOWN,vgui2/controls/Button.cpp,,,TODO,,,
+gameui,10058F20,15,_$E8,_$E8,UNKNOWN,vgui2/controls/Button.cpp,,,MATCHED,100,,
+gameui,10058F2F,21,_$E5,_$E5,UNKNOWN,vgui2/controls/Button.cpp,,,MATCHED,100,,
+gameui,10058F44,18,_$E7,_$E7,UNKNOWN,vgui2/controls/Button.cpp,,,MATCHED,100,,
+gameui,10058F56,15,_$E6,_$E6,UNKNOWN,vgui2/controls/Button.cpp,,,MATCHED,100,,
 gameui,10058F65,235,??0Button@vgui2@@QAE@PAVPanel@1@PBD1@Z,vgui2::Button::Button,UNKNOWN,vgui2/controls/Button.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,10059050,235,??0Button@vgui2@@QAE@PAVPanel@1@PBDPBG@Z,vgui2::Button::Button,UNKNOWN,vgui2/controls/Button.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,1005913B,276,?Init@Button@vgui2@@AAEXXZ,vgui2::Button::Init,UNKNOWN,vgui2/controls/Button.cpp,,,MATCHED,100,gameui_manual.csv,
@@ -10401,8 +10401,8 @@ gameui,100614FA,11,?OnMove@Panel@vgui2@@UAEXXZ,vgui2::Panel::OnMove,UNKNOWN,vgui
 gameui,10061505,89,?InternalMove@Panel@vgui2@@EAEXXZ,vgui2::Panel::InternalMove,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui25Panel12InternalMoveEv
 gameui,1006155E,11,?OnTick@Panel@vgui2@@UAEXXZ,vgui2::Panel::OnTick,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui25Panel6OnTickEv
 gameui,10061569,26,?QueryInterface@Panel@vgui2@@MAEPAXW4EInterfaceID@2@@Z,vgui2::Panel::QueryInterface,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui25Panel14QueryInterfaceENS_12EInterfaceIDE
-gameui,10061583,10,_$E6,_$E6,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,
-gameui,1006158D,134,_$E5,_$E5,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,
+gameui,10061583,10,_$E6,_$E6,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,
+gameui,1006158D,134,_$E5,_$E5,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,
 gameui,10061613,16,?GetPanelMap@Panel@vgui2@@UAEPAUPanelMap_t@2@XZ,vgui2::Panel::GetPanelMap,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui25Panel11GetPanelMapEv
 gameui,10061623,269,?PreparePanelMessageMap@@YAXPAUPanelMessageMap@vgui2@@@Z,PreparePanelMessageMap,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _Z22PreparePanelMessageMapPN5vgui215PanelMessageMapE
 gameui,10061730,1874,?OnMessage@Panel@vgui2@@UAEXPBVKeyValues@@I@Z,vgui2::Panel::OnMessage,ENGINE,vgui2/controls/Panel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui25Panel9OnMessageEPK9KeyValuesj
@@ -10429,7 +10429,7 @@ gameui,10062DFE,47,?StripNamespace@CPanelMessageMapDictionary@@AAEPBDPBD@Z,CPane
 gameui,10062E2D,67,?FindPanelMessageMap@CPanelMessageMapDictionary@@QAEPAUPanelMessageMap@vgui2@@PBD@Z,CPanelMessageMapDictionary::FindPanelMessageMap,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,10062E70,115,?FindOrAddPanelMessageMap@CPanelMessageMapDictionary@@QAEPAUPanelMessageMap@vgui2@@PBD@Z,CPanelMessageMapDictionary::FindOrAddPanelMessageMap,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,10062EE3,62,?GetPanelMessageMapDictionary@@YAAAVCPanelMessageMapDictionary@@XZ,GetPanelMessageMapDictionary,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,gameui_manual.csv,
-gameui,10062F21,15,_$E9,_$E9,UNKNOWN,vgui2/controls/Panel.cpp,,,TODO,,,
+gameui,10062F21,15,_$E9,_$E9,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,,
 gameui,10062F30,21,?FindOrAddPanelMessageMap@vgui2@@YAPAUPanelMessageMap@1@PBD@Z,vgui2::FindOrAddPanelMessageMap,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,10062F45,21,?FindPanelMessageMap@vgui2@@YAPAUPanelMessageMap@1@PBD@Z,vgui2::FindPanelMessageMap,UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,10062F60,46,??_GPanel@vgui2@@UAEPAXI@Z,destructor',UNKNOWN,vgui2/controls/Panel.cpp,,,MATCHED,100,gameui_manual.csv,
