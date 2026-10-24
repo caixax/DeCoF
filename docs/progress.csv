@@ -882,7 +882,7 @@ client,1001F060,414,?ActionSignal@CBookMenu@@QAEXH@Z,CBookMenu::ActionSignal,COF
 client,1001F220,8,?Initialize@CBookMenu@@QAEXXZ,CBookMenu::Initialize,COF,cl_dll/BookMenu_guess.cpp,,,MATCHED,100,,
 client,1001F230,14,?actionPerformed@CBookMenuHandler_Command@@UAEXPAVPanel@vgui@@@Z,CBookMenuHandler_Command::actionPerformed,COF,cl_dll/BookMenu_guess.cpp,,,MATCHED,100,,
 client,1001F240,108,?setVisible@CBookMenu@@UAEX_N@Z,CBookMenu::setVisible,COF,cl_dll/BookMenu_guess.cpp,,,MATCHED,100,,
-client,1001F2B0,1802,??0CClothesMenu@@QAE@XZ,CClothesMenu::CClothesMenu,COF,guess:cl_dll/ClothesMenu_guess.cpp,,,EQUIVALENT,99.99,client_manual.csv,"EQUIVALENT: the loop counter i and y sit in swapped stack slots (retail i at [ebp-0x14], y at [ebp-0x18]); declaration order does not move them"
+client,1001F2B0,1802,??0CClothesMenu@@QAE@XZ,CClothesMenu::CClothesMenu,COF,guess:cl_dll/ClothesMenu_guess.cpp,,,EQUIVALENT,99.99,client_manual.csv,"EQUIVALENT: the loop counter i and y sit in swapped stack slots (retail i at [ebp-0x14], y at [ebp-0x18]); declaration order, chained init (i = y = 0) and moving y do not move them"
 client,1001F9C0,7,??1CClothesMenu@@QAE@XZ,CClothesMenu::~CClothesMenu,UNKNOWN,cl_dll/ClothesMenu_guess.cpp,,,MATCHED,100,client_manual.csv,found by tools/gaps.py (no Ghidra function before)
 client,1001F9D0,1023,?ActionSignal@CClothesMenu@@QAEXH@Z,CClothesMenu::ActionSignal,COF,guess:cl_dll/ClothesMenu_guess.cpp,,,MATCHED,100,client_manual.csv,
 client,1001FE60,18,?Initialize@CClothesMenu@@QAEXXZ,CClothesMenu::Initialize,COF,cl_dll/ClothesMenu_guess.cpp,,,MATCHED,100,,
@@ -1376,13 +1376,13 @@ client,1004BA60,24,?__MsgFunc_DeathMsg@@YAHPBDHPAX@Z,__MsgFunc_DeathMsg,LIB,,,,,
 client,1004BA80,92,?Demo_WriteBuffer@@YAXHHPAE@Z,Demo_WriteBuffer,HLSDK,cl_dll/demo.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__demo.obj:score4,
 client,1004BAE0,149,_Demo_ReadBuffer,Demo_ReadBuffer,HLSDK,cl_dll/demo.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__demo.obj:score2,
 client,1004BB80,169,?DlightFlash@@YAXPAM@Z,DlightFlash,UNKNOWN,cl_dll/entity.cpp,,,MATCHED,100,,
-client,1004BC30,1166,?MuzzleFlash_guess@@YAXPAUcl_entity_s@@H_NM@Z,MuzzleFlash_guess,UNKNOWN,cl_dll/entity.cpp,,,TODO,98.35,client_manual.csv,98.36%: retail loads the default 4.0 into xmm1 once and stores it from there (start and else branch) and reloads pWeapon->iId into eax after storing pModel; ours stores the 4.0 as an immediate and reloads iId into ecx first (register allocation)
+client,1004BC30,1166,?MuzzleFlash_guess@@YAXPAUcl_entity_s@@H_NM@Z,MuzzleFlash_guess,UNKNOWN,cl_dll/entity.cpp,,,TODO,98.35,client_manual.csv,"98.36%: retail loads the default 4.0 into xmm1 once and stores it from there (start and else branch) and reloads pWeapon->iId into eax after storing pModel; ours stores the 4.0 as an immediate and reloads iId into ecx first; an aggregate holding iModelIndex and pModel (escaping through &iModelIndex) gives the retail iId reloads (99.13%) but has no source support, the 4.0 stays; 12 variants"
 client,1004C0C0,586,?MuzzleFlash_guess@@YAXPBDHVVector@@1@Z,MuzzleFlash_guess,UNKNOWN,cl_dll/entity.cpp,,,EQUIVALENT,88.22,client_manual.csv,"EQUIVALENT: retail keeps flFlashScale in the dead pszModel parameter slot ([ebp+8]) and needs no extra local, ours spills it to [ebp-4], which changes register use and store scheduling (same difference as MuzzleFlash_guess)"
 client,1004C310,126,_HUD_AddEntity,HUD_AddEntity,HLSDK,cl_dll/entity.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__entity.obj:score4,
 client,1004C390,245,_HUD_CreateEntities,HUD_CreateEntities,HLSDK,cl_dll/entity.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__entity.obj:score6,
 client,1004C490,3,_HUD_GetUserEntity,HUD_GetUserEntity,HLSDK,cl_dll/entity.cpp,,,MATCHED,100,client_1.6a_exports.csv,
 client,1004C4A0,544,_HUD_ProcessPlayerState,HUD_ProcessPlayerState,HLSDK,cl_dll/entity.cpp,,,MATCHED,100,client_1.6a_exports.csv,
-client,1004C6C0,2772,_HUD_StudioEvent,HUD_StudioEvent,HLSDK,cl_dll/entity.cpp,,,TODO,99.53,client_1.6a_exports.csv,
+client,1004C6C0,2772,_HUD_StudioEvent,HUD_StudioEvent,HLSDK,cl_dll/entity.cpp,,,TODO,99.53,client_1.6a_exports.csv,"99.54%: case 5004 computes event->options (add ebx,0xc) once before the m_pWeapon null test, retail computes it separately on the weapon-list true edge and at the bCS block (the strstr-fail path joins after it, lazy placement); 20 variants (pszOptions at case, function top or per block, event->options per use, nested or merged conditions, else-if chain, a WEAPON local, duplicated tails) do not reproduce it"
 client,1004D250,2786,_HUD_TempEntUpdate,HUD_TempEntUpdate,HLSDK,cl_dll/entity.cpp,,,MATCHED,100,client_1.6a_exports.csv,
 client,1004DD40,192,_HUD_TxferLocalOverrides,HUD_TxferLocalOverrides,HLSDK,cl_dll/entity.cpp,,,MATCHED,100,client_1.6a_exports.csv,
 client,1004DE00,464,_HUD_TxferPredictionData,HUD_TxferPredictionData,HLSDK,cl_dll/entity.cpp,,,MATCHED,100,client_1.6a_exports.csv,
@@ -1402,7 +1402,7 @@ client,1004E530,120,?EV_HLDM_DamageDecal@@YAPADPAUphysent_s@@@Z,EV_HLDM_DamageDe
 client,1004E5B0,58,?EV_HLDM_DecalGunshot@@YAXPAUpmtrace_s@@H@Z,EV_HLDM_DecalGunshot,HLSDK,guess:cl_dll/ev_hldm.cpp,,,MATCHED,100,reloc:1004E5F0,
 client,1004E5F0,666,?EV_HLDM_FireBullets@@YAXHPAM00H00MHHPAHMM@Z,EV_HLDM_FireBullets,HLSDK,cl_dll/ev_hldm.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__ev_hldm.obj:score12,
 client,1004E890,429,?EV_HLDM_GunshotDecalTrace@@YAXPAUpmtrace_s@@PAD@Z,EV_HLDM_GunshotDecalTrace,HLSDK,guess:cl_dll/ev_hldm.cpp,,,MATCHED,100,similar:0.91,
-client,1004EA60,1448,?EV_HLDM_PlayTextureSound@@YAMHPAUpmtrace_s@@PAM1H@Z,EV_HLDM_PlayTextureSound,HLSDK,guess:cl_dll/ev_hldm.cpp,,,TODO,99.97,reloc:1004E5F0,
+client,1004EA60,1448,?EV_HLDM_PlayTextureSound@@YAMHPAUpmtrace_s@@PAM1H@Z,EV_HLDM_PlayTextureSound,HLSDK,guess:cl_dll/ev_hldm.cpp,,,TODO,99.97,reloc:1004E5F0,"99.97%: one instruction in the inline strcpy( szbuffer, pTextureName ) loop, retail mov [edx+ecx-1],al and ours mov [ecx+edx-1],al (operand order of a commutative address; the first strcpy matches); 6 variants of the dead and declaration code do not move it"
 client,1004F050,46,?EV_StopPreviousGauss@@YAXH@Z,EV_StopPreviousGauss,HLSDK,cl_dll/ev_hldm.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__ev_hldm.obj:score4,
 client,1004F080,3,?EV_TFC_IsAllyTeam@@YAHHH@Z,EV_TFC_IsAllyTeam,UNKNOWN,cl_dll/ev_hldm.cpp,,,MATCHED,100,,
 client,1004F090,1272,_EV_ClientSound_guess,,UNKNOWN,guess:cl_dll/ev_hldm.cpp,,,MATCHED,100,client_manual.csv,
@@ -1899,7 +1899,7 @@ client,100726C0,68,?GetNumWidth@CHud@@QAEHHH@Z,CHud::GetNumWidth,HLSDK,cl_dll/hu
 client,10072710,41,?IsViewEntityActive_guess@@YA_NXZ,IsViewEntityActive_guess,UNKNOWN,cl_dll/hud_redraw.cpp,,,MATCHED,100,,
 client,10072740,3694,?Redraw@CHud@@QAEHMH@Z,CHud::Redraw,HLSDK,cl_dll/hud_redraw.cpp,,,EQUIVALENT,98.58,client_1.6a_ghidra_names.csv,"EQUIVALENT: the two host_framerate == iSkipSceneFramerate_guess compares use swapped xmm0/xmm1, the two inline strcpy loops use lea ecx,[ecx+1] in retail and inc ecx in ours, and retail hoists mov ecx,ebx before the time update (8 variants)"
 client,100735B0,81,?ScaleColors@@YAXAAH00H@Z,ScaleColors,HLSDK,cl_dll/hud_redraw.cpp,,,MATCHED,100,refbytes:hlsdk:cl_dll__hud_redraw.obj:score1,
-client,10073610,1075,?Think@CHud@@QAEXXZ,CHud::Think,UNKNOWN,cl_dll/hud_redraw.cpp,,,EQUIVALENT,99.21,,"EQUIVALENT: retail loads curtime into xmm5 right after its fstp, ours loads it later (8 variants)"
+client,10073610,1075,?Think@CHud@@QAEXXZ,CHud::Think,UNKNOWN,cl_dll/hud_redraw.cpp,,,EQUIVALENT,99.21,,"EQUIVALENT: retail loads curtime into xmm5 right after its fstp, ours loads it later (13 variants: declaration order, chained declarations, an unused delta, mod = -mod)"
 client,10073A50,122,??0CHudServers@@QAE@XZ,CHudServers::CHudServers,HLSDK,cl_dll/hud_servers.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__hud_servers.obj:score0,
 client,10073AD0,148,??1CHudServers@@QAE@XZ,CHudServers::~CHudServers,UNKNOWN,cl_dll/hud_servers.cpp,,,MATCHED,100,,
 client,10073B70,141,?AddServer@CHudServers@@QAEXPAPAUserver_s@1@PAU21@@Z,CHudServers::AddServer,HLSDK,cl_dll/hud_servers.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__hud_servers.obj:score2,
@@ -2020,7 +2020,7 @@ client,10079340,225,?IN_MoveleftDown@@YAXXZ,IN_MoveleftDown,UNKNOWN,cl_dll/input
 client,10079430,29,?IN_MoveleftUp@@YAXXZ,IN_MoveleftUp,UNKNOWN,,,,MATCHED,100,client_manual.csv,found by tools/gaps.py (no Ghidra function before)
 client,10079450,225,?IN_MoverightDown@@YAXXZ,IN_MoverightDown,UNKNOWN,cl_dll/input.cpp,,,MATCHED,100,client_manual.csv,
 client,10079540,38,?IN_MoverightUp@@YAXXZ,IN_MoverightUp,UNKNOWN,,,,MATCHED,100,client_manual.csv,found by tools/gaps.py (no Ghidra function before)
-client,10079570,627,?IN_ObjectivesDown@@YAXXZ,IN_ObjectivesDown,UNKNOWN,cl_dll/input.cpp,,,TODO,99.65,client_manual.csv,
+client,10079570,627,?IN_ObjectivesDown@@YAXXZ,IN_ObjectivesDown,UNKNOWN,cl_dll/input.cpp,,,TODO,99.65,client_manual.csv,"99.65%: esi and edi swapped between the HUD control pointer and iLen from the first strlen through the @ loop (same difference as CHud::MsgFunc_Objectives and MsgControlHint_guess); 22 variants (declaration order and placement, loop and init forms, chained init, ternary, != form, continue)"
 client,100797F0,12,?IN_ObjectivesUp@@YAXXZ,IN_ObjectivesUp,UNKNOWN,,,,MATCHED,100,client_manual.csv,found by tools/gaps.py (no Ghidra function before)
 client,10079800,77,?IN_XboxFix_guess@@YAXXZ,IN_XboxFix_guess,UNKNOWN,,,,MATCHED,100,client_manual.csv,found by tools/gaps.py (no Ghidra function before)
 client,10079850,35,?IN_ReloadDown@@YAXXZ,IN_ReloadDown,UNKNOWN,,,,MATCHED,100,client_manual.csv,
@@ -2887,20 +2887,20 @@ client,100AD830,416,?paintBackground@CTips@@MAEXXZ,CTips::paintBackground,PARANO
 client,100AD9D0,1139,?AddViewmodelBob_guess@@YAXPAUref_params_s@@AAVVector@@1MMPAUcl_entity_s@@_N@Z,AddViewmodelBob_guess,UNKNOWN,cl_dll/view.cpp,,,MATCHED,100,client_manual.csv,
 client,100ADE50,91,?NormalizeAngles360_guess@@YAXMM@Z,NormalizeAngles360_guess,UNKNOWN,cl_dll/view.cpp,,,MATCHED,100,client_manual.csv,
 client,100ADEC0,578,?CalcViewModelLag_guess@@YAXMAAVVector@@00PAUcl_entity_s@@_N@Z,CalcViewModelLag_guess,UNKNOWN,cl_dll/view.cpp,,,MATCHED,100,client_manual.csv,
-client,100AE110,1060,?CalcViewmodelBob_guess@@YAMPAUref_params_s@@MM@Z,CalcViewmodelBob_guess,UNKNOWN,cl_dll/view.cpp,,,TODO,97.69,client_manual.csv,97.69%: retail keeps 320.0 in xmm4 and 0 in xmm2 (ours xmm5 and xmm3); 8 attempts
+client,100AE110,1060,?CalcViewmodelBob_guess@@YAMPAUref_params_s@@MM@Z,CalcViewmodelBob_guess,UNKNOWN,cl_dll/view.cpp,,,TODO,97.69,client_manual.csv,"97.69%: retail keeps 320.0 in xmm4 and 0 in xmm2 (ours xmm5 and xmm3) and computes bob_offset into xmm0 before curtime - lastbobtime (ours interleaves them); 19 attempts (bob_offset expression and RemapVal forms, operand order, declarations, clamp forms, speed branches): the expression shape does not change the code"
 client,100AE540,576,?SetupMagliteLight_guess@@YAXVVector@@0MM@Z,SetupMagliteLight_guess,UNKNOWN,cl_dll/view.cpp,,,MATCHED,100,client_manual.csv,
 client,100AE780,16,?GetDualEntity_guess@@YAPAUcl_entity_s@@XZ,GetDualEntity_guess,UNKNOWN,cl_dll/view.cpp,,,MATCHED,100,client_manual.csv,
 client,100AE790,192,?MaxAngleBetweenAngles@@YAMPAM0@Z,MaxAngleBetweenAngles,UNKNOWN,cl_dll/view.cpp,,,MATCHED,100,client_manual.csv,
 client,100AE850,330,?V_DecayPunchAngle_guess@@YAXVVector@@PAUref_params_s@@@Z,V_DecayPunchAngle_guess,UNKNOWN,cl_dll/view.cpp,,,MATCHED,100,client_manual.csv,
 client,100AE9A0,110,?V_ViewPunch_guess@@YAXMMM@Z,V_ViewPunch_guess,UNKNOWN,,,,MATCHED,100,client_manual.csv,
 client,100AEA10,1106,?SetupFlashlight@@YAXVVector@@0MM@Z,SetupFlashlight,UNKNOWN,cl_dll/view.cpp,,,MATCHED,100,client_manual.csv,
-client,100AEE70,725,?SetupViewModelLight_guess@@YAXVVector@@0MM@Z,SetupViewModelLight_guess,UNKNOWN,cl_dll/view.cpp,,,TODO,99.26,client_manual.csv,"99.26%: register choice in addideal = (1 - tr.fraction)*30 (retail fraction in xmm2, 1.0 in xmm0, movaps xmm1,xmm0); 8 attempts"
+client,100AEE70,725,?SetupViewModelLight_guess@@YAXVVector@@0MM@Z,SetupViewModelLight_guess,UNKNOWN,cl_dll/view.cpp,,,TODO,99.26,client_manual.csv,"99.26%: register choice in addideal = (1 - tr.fraction)*30 (retail fraction in xmm2, 1.0 in xmm0, movaps xmm1,xmm0); 16 attempts (constant forms 1, 1.0f, double, operand order, a fraction local, declaration order)"
 client,100AF150,9,?GetBobMode_guess@@YAHPAUref_params_s@@@Z,GetBobMode_guess,UNKNOWN,cl_dll/view.cpp,,,MATCHED,100,client_manual.csv,
 client,100AF160,231,?V_AddIdle@@YAXPAUref_params_s@@@Z,V_AddIdle,UNKNOWN,cl_dll/view.cpp,,,MATCHED,100,,
 client,100AF250,429,?V_CalcBob@@YAMPAUref_params_s@@@Z,V_CalcBob,UNKNOWN,cl_dll/view.cpp,,,MATCHED,100,,
 client,100AF400,568,?V_CalcGunAngle@@YAXPAUref_params_s@@@Z,V_CalcGunAngle,UNKNOWN,cl_dll/view.cpp,,,MATCHED,100,,
 client,100AF640,335,?V_CalcIntermissionRefdef@@YAXPAUref_params_s@@@Z,V_CalcIntermissionRefdef,UNKNOWN,cl_dll/view.cpp,,,MATCHED,100,,
-client,100AF790,8402,?V_CalcNormalRefdef@@YAXPAUref_params_s@@@Z,V_CalcNormalRefdef,UNKNOWN,cl_dll/view.cpp,,,TODO,97.87,client_manual.csv,"97.87%: register allocation and stack slots only (ent/view spill slots swapped, water block shares one slot for waterOffset and waterDist, operand order of commutative adds such as bob + simorg[2]); 8 attempts"
+client,100AF790,8402,?V_CalcNormalRefdef@@YAXPAUref_params_s@@@Z,V_CalcNormalRefdef,UNKNOWN,cl_dll/view.cpp,,,TODO,97.87,client_manual.csv,"97.87%: register allocation and stack slots only (ent/view spill slots swapped, water block shares one slot for waterOffset and waterDist, operand order of commutative adds such as bob + simorg[2]); in the water block retail reloads waterDist after each PM_PointContents and converts it to float at every use, ours converts it once and spills the float; 8 attempts"
 client,100B1870,160,?V_CalcRoll@@YAMVVector@@0MM@Z,V_CalcRoll,UNKNOWN,cl_dll/view.cpp,,,MATCHED,100,,
 client,100B1910,1576,?V_CalcSpectatorRefdef@@YAXPAUref_params_s@@@Z,V_CalcSpectatorRefdef,UNKNOWN,cl_dll/view.cpp,,,MATCHED,100,,
 client,100B1F60,138,?V_CalcViewRoll@@YAXPAUref_params_s@@@Z,V_CalcViewRoll,UNKNOWN,cl_dll/view.cpp,,,MATCHED,100,,
