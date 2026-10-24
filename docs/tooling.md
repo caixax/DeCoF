@@ -59,7 +59,24 @@ Flags in use for the 1.6a game DLLs (evidence in `docs/toolchains.md`): `/O2 /Oy
 | `tools/scan_calls.py` | engine table usage, messages, cvars, commands (`docs/calls/`) |
 | `tools/hdrstruct.py` | member lists of function tables from headers |
 | `tools/make_dist.py` | assemble `dist/` from retail 1.6a plus fully linked DLLs |
+| `tools/compare_pe.py` | section by section comparison of a linked DLL with retail (run by `build.py link`) |
+| `tools/link_diff.py` | per-function comparison of a linked DLL with retail: code, extra functions, references, data contents, exports, imports, Rich header, layout shifts |
 | `tools/progress.py` | `docs/progress.json`, `docs/progress.svg`, `docs/PROGRESS.md` from `docs/progress.csv` (never edit the outputs by hand) |
+
+## Linking and comparing a DLL (Phase 3)
+
+```
+python tools/build.py link hl                      build/link/hl/hl.dll + .map, copied to build/bin/
+python tools/link_diff.py hl [--all] [--csv out]   explain every difference with retail
+python tools/make_dist.py --bin build/dist_hl      dist/ with only the DLLs in that folder rebuilt
+```
+
+- The link section of `tools/units.json` holds the flags, the link order (`order`, retail image order), `src/dlls/hl.def`, the libraries and `implibs` (steam_api.lib made from the retail DLL by `tools/implib.py`). The link compiles every unit again into `build/link_obj/` with `cflags_extra` (`/Zc:inline`); objdiff keeps using `build/base/`.
+- `build/bin/` holds every DLL that ever linked (client.dll, opengl32.dll, CoFLaunchApp.exe too). To test one DLL alone, copy it into its own folder and pass that folder to `make_dist.py --bin`.
+- link 14.27 never lets a base relocation straddle a 4 KB page: it moves the next COMDAT by one 16-byte step instead (retail and rebuilt both have 0 straddling relocations). A function whose size differs (the EQUIVALENT ones) therefore changes which functions get this padding further down, so the code layout toggles by 16 bytes until the next such case. It is not a flag difference.
+- Library members are pulled in the order their symbols are first needed: retail GetCurrentPath (player.cpp) called the oldnames alias `getcwd`, ours calls `_getcwd`, which puts libucrt getcwd.obj (and after it widechartomultibyte.obj and the GetFullPathNameW import) earlier. With `getcwd` the whole static CRT order and the kernel32 import order are identical (relink test); GetCurrentPath is MATCHED, so the change waits for the user.
+- Functions are placed alphabetically by decorated name inside each object, data in definition order: an unproven `_guess` name that sorts elsewhere moves its function (UTIL_PlayWeaponSound_guess sits between PRECACHE_SOUND and ReadEntVars in retail), and the .data/.rdata order shows the original definition order of each file, which the function order cannot.
+- The Rich header shows 4 more C++ objects in retail (159 against 155, objects that add no code) and the Steamworks SDK steam_api.lib (VS 2005 import library, prod 123 build 50727) where ours is made by lib 14.27; the import hints differ for the same reason (kernel32.lib from an older SDK, the SDK's steam_api.lib).
 
 ## Progress report hook
 
