@@ -2712,6 +2712,19 @@ int HeadShieldThink( void ) // buz: return 1 to draw shield
 	}
 }
 
+// empty, called where dlls/util.cpp calls the server engine's VEC_TO_ANGLES:
+// the angles stay unset
+void vectoangles_guess( Vector vec, Vector angles )
+{
+}
+
+// UTIL_VecToAngles of dlls/util.cpp (unreferenced)
+Vector UTIL_VecToAngles_guess( const Vector &vec )
+{
+	float rgflVecOut[3];
+	vectoangles_guess(vec, rgflVecOut);
+	return Vector(rgflVecOut);
+}
 
 
 

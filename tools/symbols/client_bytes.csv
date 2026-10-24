@@ -428,7 +428,6 @@ va,name,kind,evidence
 1004B5B0,?YesNoInit_guess@@YAXXZ,func,"bytes identical to ?YesNoInit_guess@@YAXXZ in client/cl_dll/Yesno_guess (relocated fields masked), one-to-one"
 1004B5D0,?actionPerformed@CYesnoHandler_Command@@UAEXPAVPanel@vgui@@@Z,func,"bytes identical to ?actionPerformed@CYesnoHandler_Command@@UAEXPAVPanel@vgui@@@Z in client/cl_dll/Yesno_guess (relocated fields masked), one-to-one"
 1004BB80,?DlightFlash@@YAXPAM@Z,func,"bytes identical to ?DlightFlash@@YAXPAM@Z in client/cl_dll/entity (relocated fields masked), one-to-one"
-1004DFD0,??1CGameStudioModelRenderer@@UAE@XZ,func,"bytes identical to ??1CGameStudioModelRenderer@@UAE@XZ in client/cl_dll/GameStudioModelRenderer (relocated fields masked), one-to-one"
 1004F080,?EV_TFC_IsAllyTeam@@YAHHH@Z,func,"bytes identical to ?EV_TFC_IsAllyTeam@@YAHHH@Z in client/cl_dll/ev_hldm (relocated fields masked), one-to-one"
 10051260,_EV_FireGlock1,func,"bytes identical to _EV_FireGlock1 in client/cl_dll/ev_hldm (relocated fields masked), one-to-one"
 10053090,?InstallExceptionHandler@@YAXXZ,func,"bytes identical to ?InstallExceptionHandler@@YAXXZ in client/cl_dll/exception (relocated fields masked), one-to-one"

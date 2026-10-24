@@ -1401,6 +1401,11 @@
           "functions_file": "tools/units/client_cl_dll_entity.txt"
         },
         {
+          "name": "cl_dll/events",
+          "source": "src/cl_dll/events.cpp",
+          "functions_file": "tools/units/client_cl_dll_events.txt"
+        },
+        {
           "name": "cl_dll/demo",
           "source": "src/cl_dll/demo.cpp",
           "functions_file": "tools/units/client_cl_dll_demo.txt"
@@ -1924,6 +1929,7 @@
           "cl_dll/death",
           "cl_dll/demo",
           "cl_dll/entity",
+          "cl_dll/events",
           "cl_dll/ev_common",
           "cl_dll/ev_hldm",
           "cl_dll/exception",

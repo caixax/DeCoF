@@ -8,4 +8,3 @@ CGameStudioModelRenderer::`scalar_deleting_destructor'
 _HUD_GetStudioModelInterface
 ??__Eg_StudioRenderer@@YAXXZ
 ??__Fg_StudioRenderer@@YAXXZ
-??1CGameStudioModelRenderer@@UAE@XZ

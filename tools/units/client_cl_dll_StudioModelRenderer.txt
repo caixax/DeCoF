@@ -47,3 +47,5 @@ CGameStudioModelRenderer::`scalar_deleting_destructor'
 ?StudioMuzzleFlash_guess@CStudioModelRenderer@@QAEXPADH_NM@Z
 ??__Eg_StudioModelRenderer_guess@@YAXXZ
 ??__Fg_StudioModelRenderer_guess@@YAXXZ
+?UTIL_VecToAngles_guess@@YA?AVVector@@ABV1@@Z
+?vectoangles_guess@@YAXVVector@@0@Z
