@@ -4163,6 +4163,11 @@
           "name": "common/BaseSystemModule",
           "source": "src/common/BaseSystemModule.cpp",
           "functions_file": "tools/units/gameui_common_BaseSystemModule.txt"
+        },
+        {
+          "name": "common/ObjectList",
+          "source": "src/common/ObjectList.cpp",
+          "functions_file": "tools/units/gameui_common_ObjectList.txt"
         }
       ]
     }

@@ -9006,25 +9006,25 @@ gameui,1003781F,160,?CompareAdr_guess@CNetAPI@@UAE_NPAUnetadr_s@@0@Z,"public: vi
 gameui,100378BF,92,?GetLocalIP_guess@CNetAPI@@UAEXPAUnetadr_s@@@Z,public: virtual void __thiscall CNetAPI::GetLocalIP_guess(struct netadr_s *),UNKNOWN,GameUI/NetAPI_guess.cpp,,,MATCHED,100,,
 gameui,10037920,31,??0CNetAPI@@QAE@XZ,public: __thiscall CNetAPI::CNetAPI(void),UNKNOWN,GameUI/NetAPI_guess.cpp,,,MATCHED,100,,
 gameui,10037940,23,??0INetAPI@@QAE@XZ,public: __thiscall INetAPI::INetAPI(void),UNKNOWN,GameUI/NetAPI_guess.cpp,,,MATCHED,100,,
-gameui,10037960,71,,,UNKNOWN,common/ObjectList.cpp,,,TODO,,,linux: _ZN10ObjectListC2Ev
-gameui,100379A7,38,,,UNKNOWN,common/ObjectList.cpp,,,TODO,,,linux: _ZN10ObjectListD2Ev
-gameui,100379CD,126,,,UNKNOWN,common/ObjectList.cpp,,,TODO,,,linux: _ZN10ObjectList7AddHeadEPv
-gameui,10037A4B,136,,,UNKNOWN,common/ObjectList.cpp,,,TODO,,,linux: _ZN10ObjectList10RemoveHeadEv
-gameui,10037AD3,126,,,UNKNOWN,common/ObjectList.cpp,,,TODO,,,linux: _ZN10ObjectList7AddTailEPv
-gameui,10037B51,136,,,UNKNOWN,common/ObjectList.cpp,,,TODO,,,linux: _ZN10ObjectList10RemoveTailEv
-gameui,10037BD9,25,,,UNKNOWN,common/ObjectList.cpp,,,TODO,,,linux: _ZN10ObjectList7IsEmptyEv
-gameui,10037BF2,17,,,UNKNOWN,common/ObjectList.cpp,,,TODO,,,linux: _ZN10ObjectList13CountElementsEv
-gameui,10037C03,73,,,UNKNOWN,common/ObjectList.cpp,,,TODO,,,linux: _ZN10ObjectList8ContainsEPv
-gameui,10037C4C,136,,,UNKNOWN,common/ObjectList.cpp,,,TODO,,,linux: _ZN10ObjectList5ClearEb
-gameui,10037CD4,210,,,UNKNOWN,common/ObjectList.cpp,,,TODO,,,linux: _ZN10ObjectList6RemoveEPv
-gameui,10037DA6,51,,Concurrency::details::ContextBase::ClearCancel,ENGINE,common/ObjectList.cpp,,,TODO,,ghidra,linux: _ZN10ObjectList4InitEv
-gameui,10037DD9,58,,,UNKNOWN,common/ObjectList.cpp,,,TODO,,,linux: _ZN10ObjectList8GetFirstEv
-gameui,10037E13,59,,,UNKNOWN,common/ObjectList.cpp,,,TODO,,,linux: _ZN10ObjectList7GetNextEv
-gameui,10037E4E,25,,,UNKNOWN,common/ObjectList.cpp,,,TODO,,,linux: _ZN10ObjectList3AddEPv
-gameui,10037E70,46,,,UNKNOWN,common/ObjectList.cpp,,,TODO,,,
-gameui,10037EA0,23,,,UNKNOWN,common/ObjectList.cpp,,,TODO,,,
-gameui,10037EC0,20,,,UNKNOWN,common/ObjectList.cpp,,,TODO,,,
-gameui,10037EE0,46,,,UNKNOWN,common/ObjectList.cpp,,,TODO,,,
+gameui,10037960,71,??0ObjectList@@QAE@XZ,public: __thiscall ObjectList::ObjectList(void),UNKNOWN,common/ObjectList.cpp,,,MATCHED,100,,linux: _ZN10ObjectListC2Ev
+gameui,100379A7,38,??1ObjectList@@UAE@XZ,public: virtual __thiscall ObjectList::~ObjectList(void),UNKNOWN,common/ObjectList.cpp,,,MATCHED,100,,linux: _ZN10ObjectListD2Ev
+gameui,100379CD,126,?AddHead@ObjectList@@QAE_NPAX@Z,public: bool __thiscall ObjectList::AddHead(void *),UNKNOWN,common/ObjectList.cpp,,,MATCHED,100,,linux: _ZN10ObjectList7AddHeadEPv
+gameui,10037A4B,136,?RemoveHead@ObjectList@@QAEPAXXZ,public: void * __thiscall ObjectList::RemoveHead(void),UNKNOWN,common/ObjectList.cpp,,,MATCHED,100,,linux: _ZN10ObjectList10RemoveHeadEv
+gameui,10037AD3,126,?AddTail@ObjectList@@QAE_NPAX@Z,public: bool __thiscall ObjectList::AddTail(void *),UNKNOWN,common/ObjectList.cpp,,,MATCHED,100,,linux: _ZN10ObjectList7AddTailEPv
+gameui,10037B51,136,?RemoveTail@ObjectList@@QAEPAXXZ,public: void * __thiscall ObjectList::RemoveTail(void),UNKNOWN,common/ObjectList.cpp,,,MATCHED,100,,linux: _ZN10ObjectList10RemoveTailEv
+gameui,10037BD9,25,?IsEmpty@ObjectList@@UAE_NXZ,public: virtual bool __thiscall ObjectList::IsEmpty(void),UNKNOWN,common/ObjectList.cpp,,,MATCHED,100,,linux: _ZN10ObjectList7IsEmptyEv
+gameui,10037BF2,17,?CountElements@ObjectList@@UAEHXZ,public: virtual int __thiscall ObjectList::CountElements(void),UNKNOWN,common/ObjectList.cpp,,,MATCHED,100,,linux: _ZN10ObjectList13CountElementsEv
+gameui,10037C03,73,?Contains@ObjectList@@UAE_NPAX@Z,public: virtual bool __thiscall ObjectList::Contains(void *),UNKNOWN,common/ObjectList.cpp,,,MATCHED,100,,linux: _ZN10ObjectList8ContainsEPv
+gameui,10037C4C,136,?Clear@ObjectList@@UAEX_N@Z,public: virtual void __thiscall ObjectList::Clear(bool),UNKNOWN,common/ObjectList.cpp,,,MATCHED,100,,linux: _ZN10ObjectList5ClearEb
+gameui,10037CD4,210,?Remove@ObjectList@@UAE_NPAX@Z,public: virtual bool __thiscall ObjectList::Remove(void *),UNKNOWN,common/ObjectList.cpp,,,MATCHED,100,,linux: _ZN10ObjectList6RemoveEPv
+gameui,10037DA6,51,?Init@ObjectList@@UAEXXZ,public: virtual void __thiscall ObjectList::Init(void),ENGINE,common/ObjectList.cpp,,,MATCHED,100,ghidra,linux: _ZN10ObjectList4InitEv
+gameui,10037DD9,58,?GetFirst@ObjectList@@UAEPAXXZ,public: virtual void * __thiscall ObjectList::GetFirst(void),UNKNOWN,common/ObjectList.cpp,,,MATCHED,100,,linux: _ZN10ObjectList8GetFirstEv
+gameui,10037E13,59,?GetNext@ObjectList@@UAEPAXXZ,public: virtual void * __thiscall ObjectList::GetNext(void),UNKNOWN,common/ObjectList.cpp,,,MATCHED,100,,linux: _ZN10ObjectList7GetNextEv
+gameui,10037E4E,25,?Add@ObjectList@@UAE_NPAX@Z,public: virtual bool __thiscall ObjectList::Add(void *),UNKNOWN,common/ObjectList.cpp,,,MATCHED,100,,linux: _ZN10ObjectList3AddEPv
+gameui,10037E70,46,??_GObjectList@@UAEPAXI@Z,public: virtual void * __thiscall ObjectList::`scalar deleting destructor'(unsigned int),UNKNOWN,common/ObjectList.cpp,,,MATCHED,100,,
+gameui,10037EA0,23,??0IObjectContainer@@QAE@XZ,public: __thiscall IObjectContainer::IObjectContainer(void),UNKNOWN,common/ObjectList.cpp,,,MATCHED,100,,
+gameui,10037EC0,20,??1IObjectContainer@@UAE@XZ,public: virtual __thiscall IObjectContainer::~IObjectContainer(void),UNKNOWN,common/ObjectList.cpp,,,MATCHED,100,,
+gameui,10037EE0,46,??_GIObjectContainer@@UAEPAXI@Z,public: virtual void * __thiscall IObjectContainer::`scalar deleting destructor'(unsigned int),UNKNOWN,common/ObjectList.cpp,,,MATCHED,100,,
 gameui,10037F10,17,?READ_OK@@YAHXZ,int __cdecl READ_OK(void),UNKNOWN,common/parsemsg.cpp,,,MATCHED,100,gameui_manual.csv,linux: _Z7READ_OKv
 gameui,10037F21,42,?BEGIN_READ@@YAXPAXH@Z,"void __cdecl BEGIN_READ(void *,int)",UNKNOWN,common/parsemsg.cpp,,,MATCHED,100,gameui_manual.csv,linux: _Z10BEGIN_READPvi
 gameui,10037F4B,73,?READ_CHAR@@YAHXZ,int __cdecl READ_CHAR(void),UNKNOWN,common/parsemsg.cpp,,,MATCHED,100,gameui_manual.csv,linux: _Z9READ_CHARv

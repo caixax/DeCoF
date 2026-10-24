@@ -5404,3 +5404,22 @@ va,name,kind,evidence
 10021730,??1ISystemModule@@UAE@XZ,func,common/BaseSystemModule.cpp (shared with hw.dll): same position and size as in our compiled object
 10021760,??_GBaseSystemModule@@UAEPAXI@Z,func,common/BaseSystemModule.cpp (shared with hw.dll): same position and size as in our compiled object
 100217A0,??_DBaseSystemModule@@QAEXXZ,func,common/BaseSystemModule.cpp (shared with hw.dll): same position and size as in our compiled object
+10037960,??0ObjectList@@QAE@XZ,func,common/ObjectList.cpp (shared with hw.dll): same position and size as in our compiled object; linux: _ZN10ObjectListC2Ev
+100379A7,??1ObjectList@@UAE@XZ,func,common/ObjectList.cpp (shared with hw.dll): same position and size as in our compiled object; linux: _ZN10ObjectListD2Ev
+100379CD,?AddHead@ObjectList@@QAE_NPAX@Z,func,common/ObjectList.cpp (shared with hw.dll): same position and size as in our compiled object; linux: _ZN10ObjectList7AddHeadEPv
+10037A4B,?RemoveHead@ObjectList@@QAEPAXXZ,func,common/ObjectList.cpp (shared with hw.dll): same position and size as in our compiled object; linux: _ZN10ObjectList10RemoveHeadEv
+10037AD3,?AddTail@ObjectList@@QAE_NPAX@Z,func,common/ObjectList.cpp (shared with hw.dll): same position and size as in our compiled object; linux: _ZN10ObjectList7AddTailEPv
+10037B51,?RemoveTail@ObjectList@@QAEPAXXZ,func,common/ObjectList.cpp (shared with hw.dll): same position and size as in our compiled object; linux: _ZN10ObjectList10RemoveTailEv
+10037BD9,?IsEmpty@ObjectList@@UAE_NXZ,func,common/ObjectList.cpp (shared with hw.dll): same position and size as in our compiled object; linux: _ZN10ObjectList7IsEmptyEv
+10037BF2,?CountElements@ObjectList@@UAEHXZ,func,common/ObjectList.cpp (shared with hw.dll): same position and size as in our compiled object; linux: _ZN10ObjectList13CountElementsEv
+10037C03,?Contains@ObjectList@@UAE_NPAX@Z,func,common/ObjectList.cpp (shared with hw.dll): same position and size as in our compiled object; linux: _ZN10ObjectList8ContainsEPv
+10037C4C,?Clear@ObjectList@@UAEX_N@Z,func,common/ObjectList.cpp (shared with hw.dll): same position and size as in our compiled object; linux: _ZN10ObjectList5ClearEb
+10037CD4,?Remove@ObjectList@@UAE_NPAX@Z,func,common/ObjectList.cpp (shared with hw.dll): same position and size as in our compiled object; linux: _ZN10ObjectList6RemoveEPv
+10037DA6,?Init@ObjectList@@UAEXXZ,func,common/ObjectList.cpp (shared with hw.dll): same position and size as in our compiled object; linux: _ZN10ObjectList4InitEv
+10037DD9,?GetFirst@ObjectList@@UAEPAXXZ,func,common/ObjectList.cpp (shared with hw.dll): same position and size as in our compiled object; linux: _ZN10ObjectList8GetFirstEv
+10037E13,?GetNext@ObjectList@@UAEPAXXZ,func,common/ObjectList.cpp (shared with hw.dll): same position and size as in our compiled object; linux: _ZN10ObjectList7GetNextEv
+10037E4E,?Add@ObjectList@@UAE_NPAX@Z,func,common/ObjectList.cpp (shared with hw.dll): same position and size as in our compiled object; linux: _ZN10ObjectList3AddEPv
+10037E70,??_GObjectList@@UAEPAXI@Z,func,common/ObjectList.cpp (shared with hw.dll): same position and size as in our compiled object
+10037EA0,??0IObjectContainer@@QAE@XZ,func,common/ObjectList.cpp (shared with hw.dll): same position and size as in our compiled object
+10037EC0,??1IObjectContainer@@UAE@XZ,func,common/ObjectList.cpp (shared with hw.dll): same position and size as in our compiled object
+10037EE0,??_GIObjectContainer@@UAEPAXI@Z,func,common/ObjectList.cpp (shared with hw.dll): same position and size as in our compiled object
