@@ -2611,3 +2611,106 @@ va,name,kind,evidence
 1000B3A0,??1SavedMap@@QAE@XZ,func,GameUI/CareerBox.cpp: same position and size as in our compiled object
 1000B3C0,?id@?$ctype@G@std@@$D,func,GameUI/CareerBox.cpp: same position and size as in our compiled object
 1000B3F0,?id@?$ctype@G@std@@$E,func,GameUI/CareerBox.cpp: same position and size as in our compiled object
+1008F2E0,??0TestScriptController@vgui2@@QAE@XZ,func,vgui2/controls/TestScriptController.cpp: same position in our compiled object and same size
+1008F3C5,??1TestScriptController@vgui2@@UAE@XZ,func,vgui2/controls/TestScriptController.cpp: same position in our compiled object and same size
+1008F408,?OnTick@TestScriptController@vgui2@@MAEXXZ,func,vgui2/controls/TestScriptController.cpp: same position in our compiled object and same size
+1008F464,?ExecuteNextScriptCommand@TestScriptController@vgui2@@AAEXXZ,func,vgui2/controls/TestScriptController.cpp: same position in our compiled object (main text in gameui.so DWARF line order)
+1008F8D9,?FindMessageTarget@TestScriptController@vgui2@@AAEIPBD@Z,func,vgui2/controls/TestScriptController.cpp: same position in our compiled object (main text in gameui.so DWARF line order)
+1008F989,?FindMessageTargetInSubPanel@TestScriptController@vgui2@@AAEIIPBD@Z,func,vgui2/controls/TestScriptController.cpp: same position in our compiled object (main text in gameui.so DWARF line order)
+1008FB49,?OnPanelNotFoundError@TestScriptController@vgui2@@AAEXPBD@Z,func,vgui2/controls/TestScriptController.cpp: same position in our compiled object (main text in gameui.so DWARF line order)
+1008FC66,?PrintMatchingPanels@TestScriptController@vgui2@@AAEHIPBD@Z,func,vgui2/controls/TestScriptController.cpp: same position in our compiled object (main text in gameui.so DWARF line order)
+1008FD73,?CalculateFullNameForPanel@TestScriptController@vgui2@@AAEXIPADH@Z,func,vgui2/controls/TestScriptController.cpp: same position in our compiled object (main text in gameui.so DWARF line order)
+1008FE5F,?LoadScriptFile@TestScriptController@vgui2@@AAE_NPBD@Z,func,vgui2/controls/TestScriptController.cpp: same position in our compiled object (main text in gameui.so DWARF line order)
+10090038,?ExecuteScript@TestScriptController@vgui2@@QAE_NPBD@Z,func,vgui2/controls/TestScriptController.cpp: same position in our compiled object (main text in gameui.so DWARF line order)
+10090189,?ClearScriptCommandBuffer@TestScriptController@vgui2@@AAEXXZ,func,vgui2/controls/TestScriptController.cpp: same position in our compiled object and same size
+10090262,?MakeValueString@TestScriptController@vgui2@@AAEXPBDPADH@Z,func,vgui2/controls/TestScriptController.cpp: same position in our compiled object and same size
+10090315,?IsNextTokenNewline@@YA_NPBD@Z,func,vgui2/controls/TestScriptController.cpp: same position in our compiled object and same size
+10090372,?ParseScriptFile@TestScriptController@vgui2@@AAE_NPBDH@Z,func,vgui2/controls/TestScriptController.cpp: same position in our compiled object and same size
+100903C0,?ParseFunction@TestScriptController@vgui2@@AAEPBDAAUScriptFunction_t@12@PBD@Z,func,vgui2/controls/TestScriptController.cpp: same position in our compiled object and same size
+10090B21,?AbortOnAnyErrorLogsPresent@TestScriptController@vgui2@@AAEXXZ,func,vgui2/controls/TestScriptController.cpp: same position in our compiled object and same size
+10090C2B,?CreateNewUniqueTestString@TestScriptController@vgui2@@AAEXXZ,func,vgui2/controls/TestScriptController.cpp: same position in our compiled object and same size
+10090CC5,?OnDelay@TestScriptController@vgui2@@EAEXM@Z,func,vgui2/controls/TestScriptController.cpp: same position in our compiled object (main text in gameui.so DWARF line order)
+10090D0C,?OnSetScriptRunRate@TestScriptController@vgui2@@EAEXM@Z,func,vgui2/controls/TestScriptController.cpp: same position in our compiled object and same size
+10090D50,??_GTestScriptController@vgui2@@UAEPAXI@Z,func,vgui2/controls/TestScriptController.cpp: same position in our compiled object and same size
+10090D80,??0TestScriptController_RegisterMap@TestScriptController@vgui2@@QAE@XZ,func,vgui2/controls/TestScriptController.cpp: same position in our compiled object and same size
+10090DA0,?ChainToMap@TestScriptController@vgui2@@SAXXZ,func,vgui2/controls/TestScriptController.cpp: same position in our compiled object and same size
+10090E10,?GetMessageMap@TestScriptController@vgui2@@UAEPAUPanelMessageMap@2@XZ,func,vgui2/controls/TestScriptController.cpp: same position in our compiled object and same size
+10090E50,?GetPanelClassName@TestScriptController@vgui2@@SAPBDXZ,func,vgui2/controls/TestScriptController.cpp: same position in our compiled object and same size
+10090E60,?GetPanelBaseClassName@TestScriptController@vgui2@@SAPBDXZ,func,vgui2/controls/TestScriptController.cpp: same position in our compiled object and same size
+10090E70,??0PanelMessageFunc_OnDelay@TestScriptController@vgui2@@QAE@XZ,func,vgui2/controls/TestScriptController.cpp: same position in our compiled object and same size
+10090E90,?InitVar@PanelMessageFunc_OnDelay@TestScriptController@vgui2@@SAXXZ,func,vgui2/controls/TestScriptController.cpp: same position in our compiled object and same size
+10090F00,?AddToMap@TestScriptController@vgui2@@SAXPBDP8Panel@2@AEXXZHH0H0@Z,func,vgui2/controls/TestScriptController.cpp: same position in our compiled object and same size
+10090F80,??0PanelMessageFunc_OnSetScriptRunRate@TestScriptController@vgui2@@QAE@XZ,func,vgui2/controls/TestScriptController.cpp: same position in our compiled object and same size
+10090FA0,?InitVar@PanelMessageFunc_OnSetScriptRunRate@TestScriptController@vgui2@@SAXXZ,func,vgui2/controls/TestScriptController.cpp: same position in our compiled object and same size
+10091010,??A?$CUtlVector@UScriptCommand_t@TestScriptController@vgui2@@@@QAEAAUScriptCommand_t@TestScriptController@vgui2@@H@Z,func,vgui2/controls/TestScriptController.cpp: same position in our compiled object and same size
+10091030,?Count@?$CUtlVector@UScriptCommand_t@TestScriptController@vgui2@@@@QBEHXZ,func,vgui2/controls/TestScriptController.cpp: same position in our compiled object and same size
+10091050,?IsValidIndex@?$CUtlVector@UScriptCommand_t@TestScriptController@vgui2@@@@QBE_NH@Z,func,vgui2/controls/TestScriptController.cpp: same position in our compiled object and same size
+10091090,?AddToTail@?$CUtlVector@UScriptCommand_t@TestScriptController@vgui2@@@@QAEHXZ,func,vgui2/controls/TestScriptController.cpp: same position in our compiled object and same size
+100910B0,?RemoveAll@?$CUtlVector@UScriptCommand_t@TestScriptController@vgui2@@@@QAEXXZ,func,vgui2/controls/TestScriptController.cpp: same position in our compiled object and same size
+10091100,??0?$CUtlVector@UScriptFunction_t@TestScriptController@vgui2@@@@QAE@HH@Z,func,vgui2/controls/TestScriptController.cpp: same position in our compiled object and same size
+10091140,??1?$CUtlVector@UScriptFunction_t@TestScriptController@vgui2@@@@QAE@XZ,func,vgui2/controls/TestScriptController.cpp: same position in our compiled object and same size
+10091160,??A?$CUtlVector@UScriptFunction_t@TestScriptController@vgui2@@@@QAEAAUScriptFunction_t@TestScriptController@vgui2@@H@Z,func,vgui2/controls/TestScriptController.cpp: same position in our compiled object and same size
+10091180,?Count@?$CUtlVector@UScriptFunction_t@TestScriptController@vgui2@@@@QBEHXZ,func,vgui2/controls/TestScriptController.cpp: same position in our compiled object and same size
+100911A0,?IsValidIndex@?$CUtlVector@UScriptFunction_t@TestScriptController@vgui2@@@@QBE_NH@Z,func,vgui2/controls/TestScriptController.cpp: same position in our compiled object and same size
+100911E0,?AddToTail@?$CUtlVector@UScriptFunction_t@TestScriptController@vgui2@@@@QAEHXZ,func,vgui2/controls/TestScriptController.cpp: same position in our compiled object and same size
+10091200,?EnsureCapacity@?$CUtlVector@UScriptFunction_t@TestScriptController@vgui2@@@@QAEXH@Z,func,vgui2/controls/TestScriptController.cpp: same position in our compiled object and same size
+10091230,?RemoveAll@?$CUtlVector@UScriptFunction_t@TestScriptController@vgui2@@@@QAEXXZ,func,vgui2/controls/TestScriptController.cpp: same position in our compiled object and same size
+10091280,??0?$CUtlVector@UScriptProgramCounter_t@TestScriptController@vgui2@@@@QAE@HH@Z,func,vgui2/controls/TestScriptController.cpp: same position in our compiled object and same size
+100912C0,??1?$CUtlVector@UScriptProgramCounter_t@TestScriptController@vgui2@@@@QAE@XZ,func,vgui2/controls/TestScriptController.cpp: same position in our compiled object and same size
+100912E0,??A?$CUtlVector@UScriptProgramCounter_t@TestScriptController@vgui2@@@@QAEAAUScriptProgramCounter_t@TestScriptController@vgui2@@H@Z,func,vgui2/controls/TestScriptController.cpp: same position in our compiled object and same size
+10091300,?Count@?$CUtlVector@UScriptProgramCounter_t@TestScriptController@vgui2@@@@QBEHXZ,func,vgui2/controls/TestScriptController.cpp: same position in our compiled object and same size
+10091320,?AddToTail@?$CUtlVector@UScriptProgramCounter_t@TestScriptController@vgui2@@@@QAEHXZ,func,vgui2/controls/TestScriptController.cpp: same position in our compiled object and same size
+10091340,?Remove@?$CUtlVector@UScriptProgramCounter_t@TestScriptController@vgui2@@@@QAEXH@Z,func,vgui2/controls/TestScriptController.cpp: same position in our compiled object and same size
+10091380,?RemoveAll@?$CUtlVector@UScriptProgramCounter_t@TestScriptController@vgui2@@@@QAEXXZ,func,vgui2/controls/TestScriptController.cpp: same position in our compiled object and same size
+100913D0,?Element@?$CUtlVector@UScriptCommand_t@TestScriptController@vgui2@@@@QAEAAUScriptCommand_t@TestScriptController@vgui2@@H@Z,func,vgui2/controls/TestScriptController.cpp: same position in our compiled object and same size
+100913F0,?InsertBefore@?$CUtlVector@UScriptCommand_t@TestScriptController@vgui2@@@@QAEHH@Z,func,vgui2/controls/TestScriptController.cpp: same position in our compiled object and same size
+10091430,??A?$CUtlMemory@UScriptCommand_t@TestScriptController@vgui2@@@@QAEAAUScriptCommand_t@TestScriptController@vgui2@@H@Z,func,vgui2/controls/TestScriptController.cpp: same position in our compiled object and same size
+10091450,?Destruct@@YAXPAUScriptCommand_t@TestScriptController@vgui2@@@Z,func,vgui2/controls/TestScriptController.cpp: same position in our compiled object and same size
+10091460,?Element@?$CUtlVector@UScriptFunction_t@TestScriptController@vgui2@@@@QAEAAUScriptFunction_t@TestScriptController@vgui2@@H@Z,func,vgui2/controls/TestScriptController.cpp: same position in our compiled object and same size
+10091480,?InsertBefore@?$CUtlVector@UScriptFunction_t@TestScriptController@vgui2@@@@QAEHH@Z,func,vgui2/controls/TestScriptController.cpp: same position in our compiled object and same size
+100914C0,?Purge@?$CUtlVector@UScriptFunction_t@TestScriptController@vgui2@@@@QAEXXZ,func,vgui2/controls/TestScriptController.cpp: same position in our compiled object and same size
+100914F0,?ResetDbgInfo@?$CUtlVector@UScriptFunction_t@TestScriptController@vgui2@@@@IAEXXZ,func,vgui2/controls/TestScriptController.cpp: same position in our compiled object and same size
+10091500,??0?$CUtlMemory@UScriptFunction_t@TestScriptController@vgui2@@@@QAE@HH@Z,func,vgui2/controls/TestScriptController.cpp: same position in our compiled object and same size
+10091550,??1?$CUtlMemory@UScriptFunction_t@TestScriptController@vgui2@@@@QAE@XZ,func,vgui2/controls/TestScriptController.cpp: same position in our compiled object and same size
+10091570,??A?$CUtlMemory@UScriptFunction_t@TestScriptController@vgui2@@@@QAEAAUScriptFunction_t@TestScriptController@vgui2@@H@Z,func,vgui2/controls/TestScriptController.cpp: same position in our compiled object and same size
+10091590,?EnsureCapacity@?$CUtlMemory@UScriptFunction_t@TestScriptController@vgui2@@@@QAEXH@Z,func,vgui2/controls/TestScriptController.cpp: same position in our compiled object and same size
+100915C0,?Destruct@@YAXPAUScriptFunction_t@TestScriptController@vgui2@@@Z,func,vgui2/controls/TestScriptController.cpp: same position in our compiled object and same size
+100915D0,?Element@?$CUtlVector@UScriptProgramCounter_t@TestScriptController@vgui2@@@@QAEAAUScriptProgramCounter_t@TestScriptController@vgui2@@H@Z,func,vgui2/controls/TestScriptController.cpp: same position in our compiled object and same size
+100915F0,?InsertBefore@?$CUtlVector@UScriptProgramCounter_t@TestScriptController@vgui2@@@@QAEHH@Z,func,vgui2/controls/TestScriptController.cpp: same position in our compiled object and same size
+10091630,?Purge@?$CUtlVector@UScriptProgramCounter_t@TestScriptController@vgui2@@@@QAEXXZ,func,vgui2/controls/TestScriptController.cpp: same position in our compiled object and same size
+10091660,?ShiftElementsLeft@?$CUtlVector@UScriptProgramCounter_t@TestScriptController@vgui2@@@@IAEXHH@Z,func,vgui2/controls/TestScriptController.cpp: same position in our compiled object and same size
+100916C0,?ResetDbgInfo@?$CUtlVector@UScriptProgramCounter_t@TestScriptController@vgui2@@@@IAEXXZ,func,vgui2/controls/TestScriptController.cpp: same position in our compiled object and same size
+100916D0,??0?$CUtlMemory@UScriptProgramCounter_t@TestScriptController@vgui2@@@@QAE@HH@Z,func,vgui2/controls/TestScriptController.cpp: same position in our compiled object and same size
+10091720,??1?$CUtlMemory@UScriptProgramCounter_t@TestScriptController@vgui2@@@@QAE@XZ,func,vgui2/controls/TestScriptController.cpp: same position in our compiled object and same size
+10091740,??A?$CUtlMemory@UScriptProgramCounter_t@TestScriptController@vgui2@@@@QAEAAUScriptProgramCounter_t@TestScriptController@vgui2@@H@Z,func,vgui2/controls/TestScriptController.cpp: same position in our compiled object and same size
+10091760,?Destruct@@YAXPAUScriptProgramCounter_t@TestScriptController@vgui2@@@Z,func,vgui2/controls/TestScriptController.cpp: same position in our compiled object and same size
+10091770,??_GScriptFunction_t@TestScriptController@vgui2@@QAEPAXI@Z,func,vgui2/controls/TestScriptController.cpp: same position in our compiled object and same size
+100917A0,??1ScriptFunction_t@TestScriptController@vgui2@@QAE@XZ,func,vgui2/controls/TestScriptController.cpp: same position in our compiled object and same size
+100917C0,??1?$CUtlVector@UScriptCommand_t@TestScriptController@vgui2@@@@QAE@XZ,func,vgui2/controls/TestScriptController.cpp: same position in our compiled object and same size
+100917E0,?GrowVector@?$CUtlVector@UScriptCommand_t@TestScriptController@vgui2@@@@IAEXH@Z,func,vgui2/controls/TestScriptController.cpp: same position in our compiled object and same size
+10091840,?ShiftElementsRight@?$CUtlVector@UScriptCommand_t@TestScriptController@vgui2@@@@IAEXHH@Z,func,vgui2/controls/TestScriptController.cpp: same position in our compiled object and same size
+100918A0,?Construct@@YAXPAUScriptCommand_t@TestScriptController@vgui2@@@Z,func,vgui2/controls/TestScriptController.cpp: same position in our compiled object and same size
+100918C0,?GrowVector@?$CUtlVector@UScriptFunction_t@TestScriptController@vgui2@@@@IAEXH@Z,func,vgui2/controls/TestScriptController.cpp: same position in our compiled object and same size
+10091920,?ShiftElementsRight@?$CUtlVector@UScriptFunction_t@TestScriptController@vgui2@@@@IAEXHH@Z,func,vgui2/controls/TestScriptController.cpp: same position in our compiled object and same size
+10091980,?Grow@?$CUtlMemory@UScriptFunction_t@TestScriptController@vgui2@@@@QAEXH@Z,func,vgui2/controls/TestScriptController.cpp: same position in our compiled object and same size
+10091A50,?Purge@?$CUtlMemory@UScriptFunction_t@TestScriptController@vgui2@@@@QAEXXZ,func,vgui2/controls/TestScriptController.cpp: same position in our compiled object and same size
+10091AA0,?Construct@@YAXPAUScriptFunction_t@TestScriptController@vgui2@@@Z,func,vgui2/controls/TestScriptController.cpp: same position in our compiled object and same size
+10091AE0,?GrowVector@?$CUtlVector@UScriptProgramCounter_t@TestScriptController@vgui2@@@@IAEXH@Z,func,vgui2/controls/TestScriptController.cpp: same position in our compiled object and same size
+10091B40,?ShiftElementsRight@?$CUtlVector@UScriptProgramCounter_t@TestScriptController@vgui2@@@@IAEXHH@Z,func,vgui2/controls/TestScriptController.cpp: same position in our compiled object and same size
+10091BA0,?Purge@?$CUtlMemory@UScriptProgramCounter_t@TestScriptController@vgui2@@@@QAEXXZ,func,vgui2/controls/TestScriptController.cpp: same position in our compiled object and same size
+10091BF0,?Construct@@YAXPAUScriptProgramCounter_t@TestScriptController@vgui2@@@Z,func,vgui2/controls/TestScriptController.cpp: same position in our compiled object and same size
+10091C10,??0ScriptFunction_t@TestScriptController@vgui2@@QAE@XZ,func,vgui2/controls/TestScriptController.cpp: same position in our compiled object and same size
+10091C30,??0?$CUtlVector@UScriptCommand_t@TestScriptController@vgui2@@@@QAE@HH@Z,func,vgui2/controls/TestScriptController.cpp: same position in our compiled object and same size
+10091C70,?Purge@?$CUtlVector@UScriptCommand_t@TestScriptController@vgui2@@@@QAEXXZ,func,vgui2/controls/TestScriptController.cpp: same position in our compiled object and same size
+10091CA0,?ResetDbgInfo@?$CUtlVector@UScriptCommand_t@TestScriptController@vgui2@@@@IAEXXZ,func,vgui2/controls/TestScriptController.cpp: same position in our compiled object and same size
+10091CB0,??1?$CUtlMemory@UScriptCommand_t@TestScriptController@vgui2@@@@QAE@XZ,func,vgui2/controls/TestScriptController.cpp: same position in our compiled object and same size
+10091CD0,?NumAllocated@?$CUtlMemory@UScriptCommand_t@TestScriptController@vgui2@@@@QBEHXZ,func,vgui2/controls/TestScriptController.cpp: same position in our compiled object and same size
+10091CF0,?Grow@?$CUtlMemory@UScriptCommand_t@TestScriptController@vgui2@@@@QAEXH@Z,func,vgui2/controls/TestScriptController.cpp: same position in our compiled object and same size
+10091DC0,?NumAllocated@?$CUtlMemory@UScriptFunction_t@TestScriptController@vgui2@@@@QBEHXZ,func,vgui2/controls/TestScriptController.cpp: same position in our compiled object and same size
+10091DE0,?IsExternallyAllocated@?$CUtlMemory@UScriptFunction_t@TestScriptController@vgui2@@@@QBE_NXZ,func,vgui2/controls/TestScriptController.cpp: same position in our compiled object and same size
+10091E00,?NumAllocated@?$CUtlMemory@UScriptProgramCounter_t@TestScriptController@vgui2@@@@QBEHXZ,func,vgui2/controls/TestScriptController.cpp: same position in our compiled object and same size
+10091E20,?Grow@?$CUtlMemory@UScriptProgramCounter_t@TestScriptController@vgui2@@@@QAEXH@Z,func,vgui2/controls/TestScriptController.cpp: same position in our compiled object and same size
+10091EF0,?IsExternallyAllocated@?$CUtlMemory@UScriptProgramCounter_t@TestScriptController@vgui2@@@@QBE_NXZ,func,vgui2/controls/TestScriptController.cpp: same position in our compiled object and same size
+10091F10,??0?$CUtlMemory@UScriptCommand_t@TestScriptController@vgui2@@@@QAE@HH@Z,func,vgui2/controls/TestScriptController.cpp: same position in our compiled object and same size
+10091F60,?Purge@?$CUtlMemory@UScriptCommand_t@TestScriptController@vgui2@@@@QAEXXZ,func,vgui2/controls/TestScriptController.cpp: same position in our compiled object and same size
+10091FB0,?IsExternallyAllocated@?$CUtlMemory@UScriptCommand_t@TestScriptController@vgui2@@@@QBE_NXZ,func,vgui2/controls/TestScriptController.cpp: same position in our compiled object and same size

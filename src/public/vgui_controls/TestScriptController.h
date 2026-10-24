@@ -51,9 +51,13 @@ private:
 	MESSAGE_FUNC_FLOAT( OnDelay, "Delay", time );
 	MESSAGE_FUNC_FLOAT( OnSetScriptRunRate, "SetScriptRunRate", time );
 
-	// the values come with TestScriptController.cpp
 	enum ScriptCommandType_e
 	{
+		SCRIPTCOMMAND_MESSAGE,
+		SCRIPTCOMMAND_WAITUNTILVISIBLE,
+		SCRIPTCOMMAND_WAITUNTILENABLED,
+		SCRIPTCOMMAND_REGISTRYSET,
+		SCRIPTCOMMAND_EXEC,
 	};
 
 	struct ScriptCommand_t

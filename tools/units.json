@@ -3618,6 +3618,11 @@
           "functions_file": "tools/units/gameui_vgui2_controls_ListPanel.txt"
         },
         {
+          "name": "vgui2/controls/TestScriptController",
+          "source": "src/vgui2/controls/TestScriptController.cpp",
+          "functions_file": "tools/units/gameui_vgui2_controls_TestScriptController.txt"
+        },
+        {
           "name": "vgui2/controls/ProgressBar",
           "source": "src/vgui2/controls/ProgressBar.cpp",
           "functions_file": "tools/units/gameui_vgui2_controls_ProgressBar.txt"
