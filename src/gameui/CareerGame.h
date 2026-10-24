@@ -146,8 +146,8 @@ public:
 	int GetPointsRemaining();
 	void SetPoints( int );
 	int GetHighestCostAvailable( int reputationPoints );
-	void MarkJumpButtonsFlashed();
-	int GetPointsFlashed();
+	void MarkJumpButtonsFlashed() { m_reputationPointsFlashed = m_reputationPoints; }
+	int GetPointsFlashed() { return m_reputationPointsFlashed; }
 
 	void AddMapTriplet( MapVec );
 	void PrintMaps();

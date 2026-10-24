@@ -7475,187 +7475,187 @@ gameui,100036C0,10,?GetPanelClassName@Button@vgui2@@SAPBDXZ,vgui2::Button::GetPa
 gameui,100036D0,25,?OnHotkey@Button@vgui2@@UAEXXZ,vgui2::Button::OnHotkey,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,MATCHED,100,,
 gameui,100036F0,20,?GetScrollbar@CPanelListPanel@@IAEPAVScrollBar@vgui2@@XZ,CPanelListPanel::GetScrollbar,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,MATCHED,100,,
 gameui,10003710,22,?setImageColor@CBitmapImagePanel@vgui2@@QAEXVColor@@@Z,vgui2::CBitmapImagePanel::setImageColor,UNKNOWN,GameUI/CareerBaseFrame.cpp,,,MATCHED,100,,
-gameui,10003730,53,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,linux: _ZN5CRectC2Ev
-gameui,10003765,51,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,linux: _ZN5CRectC1Eiiii
-gameui,10003798,871,,CBotButton::CBotButton,ENGINE,GameUI/CareerBotFrame.cpp,,,TODO,,linux_symbols:string:0.794,linux: _ZN10CBotButtonC1EPN5vgui25PanelEPKcS4_
-gameui,10003AFF,109,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,linux: _ZN10CBotButtonD1Ev
-gameui,10003B6C,43,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,linux: _ZN10CBotButton14SetArmedBorderEPN5vgui27IBorderE
-gameui,10003B97,96,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,linux: _ZN10CBotButton9GetBorderEbbbb
-gameui,10003BF7,365,,CBotButton::ApplySchemeSettings,ENGINE,GameUI/CareerBotFrame.cpp,,,TODO,,linux_symbols:string:0.701,linux: _ZN10CBotButton19ApplySchemeSettingsEPN5vgui27ISchemeE
-gameui,10003D64,159,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,linux: _ZN10CBotButton13UpdateBgColorEv
-gameui,10003E03,72,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,linux: _ZN10CBotButton10GetBgColorEv
-gameui,10003E4B,156,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,linux: _ZN10CBotButton13GetImageColorEv
-gameui,10003EE7,47,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,linux: _ZN10CBotButton9SetActionEPKc
-gameui,10003F16,246,,CBotButton::SetCategoryText,ENGINE,GameUI/CareerBotFrame.cpp,,,TODO,,linux_symbols:string:0.833,linux: _ZN10CBotButton15SetCategoryTextEPN5vgui29TextImageES2_PKcf
-gameui,1000400C,208,,CBotButton::GetLevelColor,ENGINE,GameUI/CareerBotFrame.cpp,,,TODO,,linux_symbols:string:0.769,linux: _ZN10CBotButton13GetLevelColorEi
-gameui,100040DC,105,,CBotButton::GetLevelFont,ENGINE,GameUI/CareerBotFrame.cpp,,,TODO,,linux_symbols:string:0.75,linux: _ZN10CBotButton12GetLevelFontEiPN5vgui27ISchemeE
-gameui,10004145,318,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,linux: _Z18GetPreferredWeaponPK10BotProfile
-gameui,10004283,2855,,CBotButton::SetCharacter,ENGINE,GameUI/CareerBotFrame.cpp,,,TODO,,linux_symbols:string:0.823,linux: _ZN10CBotButton12SetCharacterEPK16CCareerCharacter
-gameui,10004DAA,86,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,linux: _ZN10CBotButton12HasCharacterEPKc
-gameui,10004E00,20,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,linux: _ZN10CBotButton12GetCharacterEv
-gameui,10004E14,112,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,linux: _ZN10CBotButton13SetImgTextureEiPKc
-gameui,10004E84,153,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,linux: _ZN10CBotButton14ForceImgUploadEi
-gameui,10004F1D,103,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,linux: _ZN10CBotButton14ForceImgReloadEi
-gameui,10004F84,65,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,linux: _ZN10CBotButton11ForceReloadEv
-gameui,10004FC5,858,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,linux: _ZN10CBotButton15PaintBackgroundEv
-gameui,1000531F,1935,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,linux: _ZN10CBotButton13PerformLayoutEv
-gameui,10005AAE,337,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,linux: _ZN10CBotButton5PaintEv
-gameui,10005BFF,2610,,CCareerBotFrame::CCareerBotFrame,ENGINE,GameUI/CareerBotFrame.cpp,,,TODO,,linux_symbols:string:0.843,linux: _ZN15CCareerBotFrameC1EPN5vgui25PanelE
-gameui,10006631,42,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,linux: _ZN15CCareerBotFrameD1Ev
-gameui,1000665B,402,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,linux: _ZN15CCareerBotFrame19ApplySchemeSettingsEPN5vgui27ISchemeE
-gameui,100067ED,136,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,linux: _ZN15CCareerBotFrame7OnThinkEv
-gameui,10006875,135,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,linux: _Z11BotSortFuncPKvS0_
-gameui,100068FC,1359,,CCareerBotFrame::Activate,ENGINE,GameUI/CareerBotFrame.cpp,,,TODO,,linux_symbols:string:0.863,linux: _ZN15CCareerBotFrame8ActivateEv
-gameui,10006E4B,147,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,linux: _ZN15CCareerBotFrame14GetHiredButtonEPKc
-gameui,10006EDE,149,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,linux: _ZN15CCareerBotFrame13GetPoolButtonEPKc
-gameui,10006F73,487,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,linux: _ZN15CCareerBotFrame21UpdatePointsRemainingEv
-gameui,1000715A,1079,,CCareerBotFrame::OnCommand,ENGINE,GameUI/CareerBotFrame.cpp,,,TODO,,linux_symbols:string:0.523,linux: _ZN15CCareerBotFrame9OnCommandEPKc
-gameui,10007591,200,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,linux: _ZN15CCareerBotFrame4HireEPKc
-gameui,10007659,150,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,linux: _ZN15CCareerBotFrame4FireEPKc
-gameui,100076EF,238,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,linux: _ZN15CCareerBotFrame9SortHiresEv
-gameui,100077DD,234,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,linux: _ZN15CCareerBotFrame17GetPoolCharactersEi
-gameui,100078C7,467,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,linux: _ZN15CCareerBotFrame10AutoRosterEv
-gameui,10007A9A,77,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,linux: _ZN15CCareerBotFrame14OnKeyCodeTypedEN5vgui27KeyCodeE
-gameui,10007AF0,46,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10007B20,39,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10007B50,19,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10007B70,14,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10007B80,17,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10007BA0,17,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10007BC0,17,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10007BE0,46,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10007C10,25,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10007C30,17,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10007C50,17,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10007C70,17,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10007C90,17,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10007CB0,16,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10007CC0,17,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10007CE0,17,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10007D00,23,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10007D20,17,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10007D40,46,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10007D70,102,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10007DE0,94,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10007E40,397,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10007FD0,17,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10007FF0,17,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10008010,52,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10008050,24,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10008070,27,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10008090,22,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,100080B0,34,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,100080E0,31,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10008100,53,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10008140,56,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10008180,94,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,100081E0,17,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10008200,17,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10008220,34,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10008250,52,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10008290,17,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,100082B0,17,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,100082D0,66,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10008320,84,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10008380,46,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,100083B0,62,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,100083F0,27,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10008410,25,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10008430,68,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10008480,70,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,100084D0,66,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10008520,46,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10008550,25,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10008570,532,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10008790,29,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
+gameui,10003730,53,??0CRect@@QAE@XZ,CRect::CRect,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5CRectC2Ev
+gameui,10003765,51,??0CRect@@QAE@HHHH@Z,CRect::CRect,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5CRectC1Eiiii
+gameui,10003798,871,??0CBotButton@@QAE@PAVPanel@vgui2@@PBD1@Z,CBotButton::CBotButton,ENGINE,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN10CBotButtonC1EPN5vgui25PanelEPKcS4_
+gameui,10003AFF,109,??1CBotButton@@UAE@XZ,CBotButton::~CBotButton,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN10CBotButtonD1Ev
+gameui,10003B6C,43,?SetArmedBorder@CBotButton@@QAEXPAVIBorder@vgui2@@@Z,CBotButton::SetArmedBorder,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN10CBotButton14SetArmedBorderEPN5vgui27IBorderE
+gameui,10003B97,96,?GetBorder@CBotButton@@MAEPAVIBorder@vgui2@@_N000@Z,CBotButton::GetBorder,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN10CBotButton9GetBorderEbbbb
+gameui,10003BF7,365,?ApplySchemeSettings@CBotButton@@UAEXPAVIScheme@vgui2@@@Z,CBotButton::ApplySchemeSettings,ENGINE,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN10CBotButton19ApplySchemeSettingsEPN5vgui27ISchemeE
+gameui,10003D64,159,?UpdateBgColor@CBotButton@@QAEXXZ,CBotButton::UpdateBgColor,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN10CBotButton13UpdateBgColorEv
+gameui,10003E03,72,?GetBgColor@CBotButton@@UAE?AVColor@@XZ,CBotButton::GetBgColor,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN10CBotButton10GetBgColorEv
+gameui,10003E4B,156,?GetImageColor@CBotButton@@UAE?AVColor@@XZ,CBotButton::GetImageColor,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN10CBotButton13GetImageColorEv
+gameui,10003EE7,47,?SetAction@CBotButton@@QAEXPBD@Z,CBotButton::SetAction,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN10CBotButton9SetActionEPKc
+gameui,10003F16,246,?SetCategoryText@CBotButton@@QAEXPAVTextImage@vgui2@@0PBDM@Z,CBotButton::SetCategoryText,ENGINE,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN10CBotButton15SetCategoryTextEPN5vgui29TextImageES2_PKcf
+gameui,1000400C,208,?GetLevelColor@CBotButton@@QAE?AVColor@@H@Z,CBotButton::GetLevelColor,ENGINE,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN10CBotButton13GetLevelColorEi
+gameui,100040DC,105,?GetLevelFont@CBotButton@@QAEKHPAVIScheme@vgui2@@@Z,CBotButton::GetLevelFont,ENGINE,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN10CBotButton12GetLevelFontEiPN5vgui27ISchemeE
+gameui,10004145,318,?GetPreferredWeapon@@YAPBDPBVBotProfile@@@Z,GetPreferredWeapon,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _Z18GetPreferredWeaponPK10BotProfile
+gameui,10004283,2855,?SetCharacter@CBotButton@@QAEXPBVCCareerCharacter@@@Z,CBotButton::SetCharacter,ENGINE,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN10CBotButton12SetCharacterEPK16CCareerCharacter
+gameui,10004DAA,86,?HasCharacter@CBotButton@@QAE_NPBD@Z,CBotButton::HasCharacter,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN10CBotButton12HasCharacterEPKc
+gameui,10004E00,20,?GetCharacter@CBotButton@@QAEPBVCCareerCharacter@@XZ,CBotButton::GetCharacter,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN10CBotButton12GetCharacterEv
+gameui,10004E14,112,?SetImgTexture@CBotButton@@UAEXHPBD@Z,CBotButton::SetImgTexture,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN10CBotButton13SetImgTextureEiPKc
+gameui,10004E84,153,?ForceImgUpload@CBotButton@@MAEXH@Z,CBotButton::ForceImgUpload,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN10CBotButton14ForceImgUploadEi
+gameui,10004F1D,103,?ForceImgReload@CBotButton@@MAEXH@Z,CBotButton::ForceImgReload,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN10CBotButton14ForceImgReloadEi
+gameui,10004F84,65,?ForceReload@CBotButton@@UAEXXZ,CBotButton::ForceReload,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN10CBotButton11ForceReloadEv
+gameui,10004FC5,858,?PaintBackground@CBotButton@@UAEXXZ,CBotButton::PaintBackground,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN10CBotButton15PaintBackgroundEv
+gameui,1000531F,1935,?PerformLayout@CBotButton@@UAEXXZ,CBotButton::PerformLayout,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN10CBotButton13PerformLayoutEv
+gameui,10005AAE,337,?Paint@CBotButton@@UAEXXZ,CBotButton::Paint,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN10CBotButton5PaintEv
+gameui,10005BFF,2610,??0CCareerBotFrame@@QAE@PAVPanel@vgui2@@@Z,CCareerBotFrame::CCareerBotFrame,ENGINE,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN15CCareerBotFrameC1EPN5vgui25PanelE
+gameui,10006631,42,??1CCareerBotFrame@@UAE@XZ,CCareerBotFrame::~CCareerBotFrame,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN15CCareerBotFrameD1Ev
+gameui,1000665B,402,?ApplySchemeSettings@CCareerBotFrame@@UAEXPAVIScheme@vgui2@@@Z,CCareerBotFrame::ApplySchemeSettings,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN15CCareerBotFrame19ApplySchemeSettingsEPN5vgui27ISchemeE
+gameui,100067ED,136,?OnThink@CCareerBotFrame@@EAEXXZ,CCareerBotFrame::OnThink,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN15CCareerBotFrame7OnThinkEv
+gameui,10006875,135,?BotSortFunc@@YAHPBX0@Z,BotSortFunc,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _Z11BotSortFuncPKvS0_
+gameui,100068FC,1359,?Activate@CCareerBotFrame@@UAEXXZ,CCareerBotFrame::Activate,ENGINE,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN15CCareerBotFrame8ActivateEv
+gameui,10006E4B,147,?GetHiredButton@CCareerBotFrame@@AAEPAVCBotButton@@PBD@Z,CCareerBotFrame::GetHiredButton,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN15CCareerBotFrame14GetHiredButtonEPKc
+gameui,10006EDE,149,?GetPoolButton@CCareerBotFrame@@AAEPAVCBotButton@@PBD@Z,CCareerBotFrame::GetPoolButton,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN15CCareerBotFrame13GetPoolButtonEPKc
+gameui,10006F73,487,?UpdatePointsRemaining@CCareerBotFrame@@QAEXXZ,CCareerBotFrame::UpdatePointsRemaining,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN15CCareerBotFrame21UpdatePointsRemainingEv
+gameui,1000715A,1079,?OnCommand@CCareerBotFrame@@EAEXPBD@Z,CCareerBotFrame::OnCommand,ENGINE,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN15CCareerBotFrame9OnCommandEPKc
+gameui,10007591,200,?Hire@CCareerBotFrame@@AAEHPBD@Z,CCareerBotFrame::Hire,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN15CCareerBotFrame4HireEPKc
+gameui,10007659,150,?Fire@CCareerBotFrame@@AAEXPBD@Z,CCareerBotFrame::Fire,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN15CCareerBotFrame4FireEPKc
+gameui,100076EF,238,?SortHires@CCareerBotFrame@@AAEXXZ,CCareerBotFrame::SortHires,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN15CCareerBotFrame9SortHiresEv
+gameui,100077DD,234,?GetPoolCharacters@CCareerBotFrame@@AAEPAV?$CUtlVector@PBVCCareerCharacter@@@@H@Z,CCareerBotFrame::GetPoolCharacters,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN15CCareerBotFrame17GetPoolCharactersEi
+gameui,100078C7,467,?AutoRoster@CCareerBotFrame@@AAEXXZ,CCareerBotFrame::AutoRoster,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN15CCareerBotFrame10AutoRosterEv
+gameui,10007A9A,77,?OnKeyCodeTyped@CCareerBotFrame@@UAEXW4KeyCode@vgui2@@@Z,CCareerBotFrame::OnKeyCodeTyped,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN15CCareerBotFrame14OnKeyCodeTypedEN5vgui27KeyCodeE
+gameui,10007AF0,46,??_GCBotButton@@UAEPAXI@Z,destructor',UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10007B20,39,??_H@YGXPAXIHP6EX0@Z@Z,iterator',UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10007B50,19,??1CImageButton@@UAE@XZ,CImageButton::~CImageButton,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10007B70,14,?x@CRect@@QAEAAHXZ,CRect::x,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10007B80,17,?y@CRect@@QAEAAHXZ,CRect::y,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10007BA0,17,?w@CRect@@QAEAAHXZ,CRect::w,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10007BC0,17,?h@CRect@@QAEAAHXZ,CRect::h,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10007BE0,46,??_GCCareerBotFrame@@UAEPAXI@Z,destructor',UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10007C10,25,?ShowLock@CBotButton@@QAEX_N@Z,CBotButton::ShowLock,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10007C30,17,?GetAggression@BotProfile@@QBEMXZ,BotProfile::GetAggression,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10007C50,17,?GetSkill@BotProfile@@QBEMXZ,BotProfile::GetSkill,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10007C70,17,?GetTeamwork@BotProfile@@QBEMXZ,BotProfile::GetTeamwork,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10007C90,17,?GetWeaponPreferenceCount@BotProfile@@QBEHXZ,BotProfile::GetWeaponPreferenceCount,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10007CB0,16,?GetProfile@CCareerCharacter@@QBEPBVBotProfile@@XZ,CCareerCharacter::GetProfile,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10007CC0,17,?GetHiredCharacters@CCareerGame@@QAEAAV?$vector@PAVCCareerCharacter@@V?$allocator@PAVCCareerCharacter@@@std@@@std@@XZ,CCareerGame::GetHiredCharacters,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10007CE0,17,?GetAvailableCharacters@CCareerGame@@QAEAAV?$vector@PAVCCareerCharacter@@V?$allocator@PAVCCareerCharacter@@@std@@@std@@XZ,CCareerGame::GetAvailableCharacters,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10007D00,23,?MarkJumpButtonsFlashed@CCareerGame@@QAEXXZ,CCareerGame::MarkJumpButtonsFlashed,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10007D20,17,?GetPointsFlashed@CCareerGame@@QAEHXZ,CCareerGame::GetPointsFlashed,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10007D40,46,??_G?$CUtlVector@PBVCCareerCharacter@@@@QAEPAXI@Z,destructor',UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10007D70,102,??0?$vector@PAVCCareerCharacter@@V?$allocator@PAVCCareerCharacter@@@std@@@std@@QAE@ABV01@@Z,>,LIB,GameUI/CareerBotFrame.cpp,,,TODO,,gameui_manual.csv,
+gameui,10007DE0,94,??1?$vector@PAVCCareerCharacter@@V?$allocator@PAVCCareerCharacter@@@std@@@std@@QAE@XZ,>,LIB,GameUI/CareerBotFrame.cpp,,,TODO,,gameui_manual.csv,
+gameui,10007E40,397,??4?$vector@PAVCCareerCharacter@@V?$allocator@PAVCCareerCharacter@@@std@@@std@@QAEAAV01@ABV01@@Z,>::operator=,LIB,GameUI/CareerBotFrame.cpp,,,TODO,,gameui_manual.csv,
+gameui,10007FD0,17,?begin@?$vector@PAVCCareerCharacter@@V?$allocator@PAVCCareerCharacter@@@std@@@std@@QAEPAPAVCCareerCharacter@@XZ,>::begin,LIB,GameUI/CareerBotFrame.cpp,,,TODO,,gameui_manual.csv,
+gameui,10007FF0,17,?end@?$vector@PAVCCareerCharacter@@V?$allocator@PAVCCareerCharacter@@@std@@@std@@QAEPAPAVCCareerCharacter@@XZ,>::end,LIB,GameUI/CareerBotFrame.cpp,,,TODO,,gameui_manual.csv,
+gameui,10008010,52,?size@?$vector@PAVCCareerCharacter@@V?$allocator@PAVCCareerCharacter@@@std@@@std@@QBEIXZ,>::size,LIB,GameUI/CareerBotFrame.cpp,,,TODO,,gameui_manual.csv,
+gameui,10008050,24,?empty@?$vector@PAVCCareerCharacter@@V?$allocator@PAVCCareerCharacter@@@std@@@std@@QBE_NXZ,>::empty,LIB,GameUI/CareerBotFrame.cpp,,,TODO,,gameui_manual.csv,
+gameui,10008070,27,??A?$vector@PAVCCareerCharacter@@V?$allocator@PAVCCareerCharacter@@@std@@@std@@QAEAAPAVCCareerCharacter@@I@Z,>::operator[],LIB,GameUI/CareerBotFrame.cpp,,,TODO,,gameui_manual.csv,
+gameui,10008090,22,?back@?$vector@PAVCCareerCharacter@@V?$allocator@PAVCCareerCharacter@@@std@@@std@@QAEAAPAVCCareerCharacter@@XZ,>::back,LIB,GameUI/CareerBotFrame.cpp,,,TODO,,gameui_manual.csv,
+gameui,100080B0,34,?push_back@?$vector@PAVCCareerCharacter@@V?$allocator@PAVCCareerCharacter@@@std@@@std@@QAEXABQAVCCareerCharacter@@@Z,>::push_back,LIB,GameUI/CareerBotFrame.cpp,,,TODO,,gameui_manual.csv,
+gameui,100080E0,31,?pop_back@?$vector@PAVCCareerCharacter@@V?$allocator@PAVCCareerCharacter@@@std@@@std@@QAEXXZ,>::pop_back,LIB,GameUI/CareerBotFrame.cpp,,,TODO,,gameui_manual.csv,
+gameui,10008100,53,?PutElement@?$Dar@PAVButton@vgui2@@@vgui2@@QAEHPAVButton@2@@Z,*>::PutElement,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10008140,56,??0?$vector@PBVCCareerCharacter@@V?$allocator@PBVCCareerCharacter@@@std@@@std@@QAE@ABV?$allocator@PBVCCareerCharacter@@@1@@Z,>,LIB,GameUI/CareerBotFrame.cpp,,,TODO,,gameui_manual.csv,
+gameui,10008180,94,??1?$vector@PBVCCareerCharacter@@V?$allocator@PBVCCareerCharacter@@@std@@@std@@QAE@XZ,>,LIB,GameUI/CareerBotFrame.cpp,,,TODO,,gameui_manual.csv,
+gameui,100081E0,17,?begin@?$vector@PBVCCareerCharacter@@V?$allocator@PBVCCareerCharacter@@@std@@@std@@QAEPAPBVCCareerCharacter@@XZ,>::begin,LIB,GameUI/CareerBotFrame.cpp,,,TODO,,gameui_manual.csv,
+gameui,10008200,17,?end@?$vector@PBVCCareerCharacter@@V?$allocator@PBVCCareerCharacter@@@std@@@std@@QAEPAPBVCCareerCharacter@@XZ,>::end,LIB,GameUI/CareerBotFrame.cpp,,,TODO,,gameui_manual.csv,
+gameui,10008220,34,?push_back@?$vector@PBVCCareerCharacter@@V?$allocator@PBVCCareerCharacter@@@std@@@std@@QAEXABQBVCCareerCharacter@@@Z,>::push_back,LIB,GameUI/CareerBotFrame.cpp,,,TODO,,gameui_manual.csv,
+gameui,10008250,52,?capacity@?$vector@PAVCCareerCharacter@@V?$allocator@PAVCCareerCharacter@@@std@@@std@@QBEIXZ,>::capacity,LIB,GameUI/CareerBotFrame.cpp,,,TODO,,gameui_manual.csv,
+gameui,10008290,17,?begin@?$vector@PAVCCareerCharacter@@V?$allocator@PAVCCareerCharacter@@@std@@@std@@QBEPBQAVCCareerCharacter@@XZ,>::begin,LIB,GameUI/CareerBotFrame.cpp,,,TODO,,gameui_manual.csv,
+gameui,100082B0,17,?end@?$vector@PAVCCareerCharacter@@V?$allocator@PAVCCareerCharacter@@@std@@@std@@QBEPBQAVCCareerCharacter@@XZ,>::end,LIB,GameUI/CareerBotFrame.cpp,,,TODO,,gameui_manual.csv,
+gameui,100082D0,66,?insert@?$vector@PAVCCareerCharacter@@V?$allocator@PAVCCareerCharacter@@@std@@@std@@QAEPAPAVCCareerCharacter@@PAPAV3@ABQAV3@@Z,>::insert,LIB,GameUI/CareerBotFrame.cpp,,,TODO,,gameui_manual.csv,
+gameui,10008320,84,?erase@?$vector@PAVCCareerCharacter@@V?$allocator@PAVCCareerCharacter@@@std@@@std@@QAEPAPAVCCareerCharacter@@PAPAV3@@Z,>::erase,LIB,GameUI/CareerBotFrame.cpp,,,TODO,,gameui_manual.csv,
+gameui,10008380,46,?_Destroy@?$vector@PAVCCareerCharacter@@V?$allocator@PAVCCareerCharacter@@@std@@@std@@IAEXPAPAVCCareerCharacter@@0@Z,>::_Destroy,LIB,GameUI/CareerBotFrame.cpp,,,TODO,,gameui_manual.csv,
+gameui,100083B0,62,?_Ucopy@?$vector@PAVCCareerCharacter@@V?$allocator@PAVCCareerCharacter@@@std@@@std@@IAEPAPAVCCareerCharacter@@PBQAV3@0PAPAV3@@Z,>::_Ucopy,LIB,GameUI/CareerBotFrame.cpp,,,TODO,,gameui_manual.csv,
+gameui,100083F0,27,?allocate@?$allocator@PAVCCareerCharacter@@@std@@QAEPAPAVCCareerCharacter@@IPBX@Z,*>::allocate,LIB,GameUI/CareerBotFrame.cpp,,,TODO,,gameui_manual.csv,
+gameui,10008410,25,?deallocate@?$allocator@PAVCCareerCharacter@@@std@@QAEXPAXI@Z,*>::deallocate,LIB,GameUI/CareerBotFrame.cpp,,,TODO,,gameui_manual.csv,
+gameui,10008430,68,?AddElement@?$Dar@PAVButton@vgui2@@@vgui2@@QAEHPAVButton@2@@Z,*>::AddElement,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10008480,70,?FindElement@?$Dar@PAVButton@vgui2@@@vgui2@@QAEHPAVButton@2@@Z,*>::FindElement,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100084D0,66,?insert@?$vector@PBVCCareerCharacter@@V?$allocator@PBVCCareerCharacter@@@std@@@std@@QAEPAPBVCCareerCharacter@@PAPBV3@ABQBV3@@Z,>::insert,LIB,GameUI/CareerBotFrame.cpp,,,TODO,,gameui_manual.csv,
+gameui,10008520,46,?_Destroy@?$vector@PBVCCareerCharacter@@V?$allocator@PBVCCareerCharacter@@@std@@@std@@IAEXPAPBVCCareerCharacter@@0@Z,>::_Destroy,LIB,GameUI/CareerBotFrame.cpp,,,TODO,,gameui_manual.csv,
+gameui,10008550,25,?deallocate@?$allocator@PBVCCareerCharacter@@@std@@QAEXPAXI@Z,*>::deallocate,LIB,GameUI/CareerBotFrame.cpp,,,TODO,,gameui_manual.csv,
+gameui,10008570,532,?insert@?$vector@PAVCCareerCharacter@@V?$allocator@PAVCCareerCharacter@@@std@@@std@@QAEXPAPAVCCareerCharacter@@IABQAV3@@Z,>::insert,LIB,GameUI/CareerBotFrame.cpp,,,TODO,,gameui_manual.csv,
+gameui,10008790,29,?construct@?$allocator@PAVCCareerCharacter@@@std@@QAEXPAPAVCCareerCharacter@@ABQAV3@@Z,*>::construct,LIB,GameUI/CareerBotFrame.cpp,,,TODO,,gameui_manual.csv,
 gameui,100087B0,25,,std::allocator<std::_Container_proxy>::destroy,LIB,,,,,,ghidra,
-gameui,100087D0,221,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,100088B0,532,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
+gameui,100087D0,221,?EnsureCapacity@?$Dar@PAVButton@vgui2@@@vgui2@@QAEXH@Z,*>::EnsureCapacity,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100088B0,532,?insert@?$vector@PBVCCareerCharacter@@V?$allocator@PBVCCareerCharacter@@@std@@@std@@QAEXPAPBVCCareerCharacter@@IABQBV3@@Z,>::insert,LIB,GameUI/CareerBotFrame.cpp,,,TODO,,gameui_manual.csv,
 gameui,10008AD0,25,,std::allocator<std::_Container_proxy>::destroy,LIB,,,,,,ghidra,
-gameui,10008AF0,57,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10008B30,52,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10008B70,62,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10008BB0,17,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10008BD0,57,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10008C10,27,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10008C30,29,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10008C50,50,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10008C90,27,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10008CB0,25,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10008CD0,17,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10008CF0,32,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10008D10,50,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10008D50,27,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10008D70,25,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10008D90,17,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10008DB0,32,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10008DD0,62,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10008E10,50,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10008E50,27,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10008E70,25,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10008E90,17,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10008EB0,32,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10008ED0,100,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10008F40,48,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10008F70,48,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10008FA0,33,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10008FD0,36,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10009000,46,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10009030,58,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10009070,5,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10009080,36,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,100090B0,46,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,100090E0,5,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,100090F0,33,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10009120,58,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10009160,65,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,100091B0,35,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,100091E0,11,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,100091F0,75,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10009240,19,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10009260,24,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10009280,65,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,100092D0,35,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10009300,11,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10009310,75,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10009360,19,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10009380,24,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,100093A0,25,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,100093C0,65,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10009410,35,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10009440,11,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10009450,75,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,100094A0,19,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,100094C0,24,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,100094E0,5,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,100094F0,25,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10009510,70,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10009560,87,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,100095C0,86,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10009620,58,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10009660,69,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,100096B0,25,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,100096D0,70,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10009720,87,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10009780,86,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,100097E0,58,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10009820,69,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10009870,70,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,100098C0,87,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10009920,86,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10009980,69,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,100099D0,58,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10009A10,17,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10009A30,199,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10009B00,25,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10009B20,5,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10009B30,17,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10009B50,199,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10009C20,25,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10009C40,5,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10009C50,17,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10009C70,199,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
-gameui,10009D40,25,,,UNKNOWN,GameUI/CareerBotFrame.cpp,,,TODO,,,
+gameui,10008AF0,57,?_Ufill@?$vector@PAVCCareerCharacter@@V?$allocator@PAVCCareerCharacter@@@std@@@std@@IAEXPAPAVCCareerCharacter@@IABQAV3@@Z,>::_Ufill,LIB,GameUI/CareerBotFrame.cpp,,,TODO,,gameui_manual.csv,
+gameui,10008B30,52,?size@?$vector@PBVCCareerCharacter@@V?$allocator@PBVCCareerCharacter@@@std@@@std@@QBEIXZ,>::size,LIB,GameUI/CareerBotFrame.cpp,,,TODO,,gameui_manual.csv,
+gameui,10008B70,62,?_Ucopy@?$vector@PBVCCareerCharacter@@V?$allocator@PBVCCareerCharacter@@@std@@@std@@IAEPAPBVCCareerCharacter@@PBQBV3@0PAPBV3@@Z,>::_Ucopy,LIB,GameUI/CareerBotFrame.cpp,,,TODO,,gameui_manual.csv,
+gameui,10008BB0,17,?GetScrollBar@PanelHorizListPanel@vgui2@@QAEPAVScrollBar@2@XZ,vgui2::PanelHorizListPanel::GetScrollBar,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10008BD0,57,?_Ufill@?$vector@PBVCCareerCharacter@@V?$allocator@PBVCCareerCharacter@@@std@@@std@@IAEXPAPBVCCareerCharacter@@IABQBV3@@Z,>::_Ufill,LIB,GameUI/CareerBotFrame.cpp,,,TODO,,gameui_manual.csv,
+gameui,10008C10,27,?allocate@?$allocator@PBVCCareerCharacter@@@std@@QAEPAPBVCCareerCharacter@@IPBX@Z,*>::allocate,LIB,GameUI/CareerBotFrame.cpp,,,TODO,,gameui_manual.csv,
+gameui,10008C30,29,?construct@?$allocator@PBVCCareerCharacter@@@std@@QAEXPAPBVCCareerCharacter@@ABQBV3@@Z,*>::construct,LIB,GameUI/CareerBotFrame.cpp,,,TODO,,gameui_manual.csv,
+gameui,10008C50,50,??0?$CUtlVector@PAVCBitmapButton@@@@QAE@HH@Z,*>,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10008C90,27,??1?$CUtlVector@PAVCBitmapButton@@@@QAE@XZ,*>,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10008CB0,25,??A?$CUtlVector@PAVCBitmapButton@@@@QAEAAPAVCBitmapButton@@H@Z,*>::operator[],UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10008CD0,17,?Count@?$CUtlVector@PAVCBitmapButton@@@@QBEHXZ,*>::Count,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10008CF0,32,?AddToTail@?$CUtlVector@PAVCBitmapButton@@@@QAEHABQAVCBitmapButton@@@Z,*>::AddToTail,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10008D10,50,??0?$CUtlVector@PAVCCareerCharacter@@@@QAE@HH@Z,*>,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10008D50,27,??1?$CUtlVector@PAVCCareerCharacter@@@@QAE@XZ,*>,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10008D70,25,??A?$CUtlVector@PAVCCareerCharacter@@@@QAEAAPAVCCareerCharacter@@H@Z,*>::operator[],UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10008D90,17,?Count@?$CUtlVector@PAVCCareerCharacter@@@@QBEHXZ,*>::Count,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10008DB0,32,?AddToTail@?$CUtlVector@PAVCCareerCharacter@@@@QAEHABQAVCCareerCharacter@@@Z,*>::AddToTail,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10008DD0,62,?SortUtlVector_guess@@YAXPAV?$CUtlVector@PAVCCareerCharacter@@@@P6AHPBX1@Z@Z,SortUtlVector_guess,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10008E10,50,??0?$CUtlVector@PBVCCareerCharacter@@@@QAE@HH@Z,*>,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10008E50,27,??1?$CUtlVector@PBVCCareerCharacter@@@@QAE@XZ,*>,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10008E70,25,??A?$CUtlVector@PBVCCareerCharacter@@@@QAEAAPBVCCareerCharacter@@H@Z,*>::operator[],UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10008E90,17,?Count@?$CUtlVector@PBVCCareerCharacter@@@@QBEHXZ,*>::Count,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10008EB0,32,?AddToTail@?$CUtlVector@PBVCCareerCharacter@@@@QAEHABQBVCCareerCharacter@@@Z,*>::AddToTail,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10008ED0,100,?FastRemove@?$CUtlVector@PBVCCareerCharacter@@@@QAEXH@Z,*>::FastRemove,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10008F40,48,?copy@std@@YAPAPAVCCareerCharacter@@PBQAV2@0PAPAV2@@Z,std::copy,LIB,GameUI/CareerBotFrame.cpp,,,TODO,,gameui_manual.csv,
+gameui,10008F70,48,?copy@std@@YAPAPAVCCareerCharacter@@PAPAV2@00@Z,std::copy,LIB,GameUI/CareerBotFrame.cpp,,,TODO,,gameui_manual.csv,
+gameui,10008FA0,33,?_Allocate@std@@YAPAPAVCCareerCharacter@@HPAPAV2@@Z,std::_Allocate,LIB,GameUI/CareerBotFrame.cpp,,,TODO,,gameui_manual.csv,
+gameui,10008FD0,36,?fill@std@@YAXPAPAVCCareerCharacter@@0ABQAV2@@Z,std::fill,LIB,GameUI/CareerBotFrame.cpp,,,TODO,,gameui_manual.csv,
+gameui,10009000,46,?copy_backward@std@@YAPAPAVCCareerCharacter@@PAPAV2@00@Z,std::copy_backward,LIB,GameUI/CareerBotFrame.cpp,,,TODO,,gameui_manual.csv,
+gameui,10009030,58,?_Construct@std@@YAXPAPAVCCareerCharacter@@ABQAV2@@Z,std::_Construct,LIB,GameUI/CareerBotFrame.cpp,,,TODO,,gameui_manual.csv,
+gameui,10009070,5,?_Destroy@std@@YAXPAPAVCCareerCharacter@@@Z,std::_Destroy,LIB,GameUI/CareerBotFrame.cpp,,,TODO,,gameui_manual.csv,
+gameui,10009080,36,?fill@std@@YAXPAPBVCCareerCharacter@@0ABQBV2@@Z,std::fill,LIB,GameUI/CareerBotFrame.cpp,,,TODO,,gameui_manual.csv,
+gameui,100090B0,46,?copy_backward@std@@YAPAPBVCCareerCharacter@@PAPBV2@00@Z,std::copy_backward,LIB,GameUI/CareerBotFrame.cpp,,,TODO,,gameui_manual.csv,
+gameui,100090E0,5,?_Destroy@std@@YAXPAPBVCCareerCharacter@@@Z,std::_Destroy,LIB,GameUI/CareerBotFrame.cpp,,,TODO,,gameui_manual.csv,
+gameui,100090F0,33,?_Allocate@std@@YAPAPBVCCareerCharacter@@HPAPBV2@@Z,std::_Allocate,LIB,GameUI/CareerBotFrame.cpp,,,TODO,,gameui_manual.csv,
+gameui,10009120,58,?_Construct@std@@YAXPAPBVCCareerCharacter@@ABQBV2@@Z,std::_Construct,LIB,GameUI/CareerBotFrame.cpp,,,TODO,,gameui_manual.csv,
+gameui,10009160,65,?InsertBefore@?$CUtlVector@PAVCBitmapButton@@@@QAEHHABQAVCBitmapButton@@@Z,*>::InsertBefore,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100091B0,35,?Purge@?$CUtlVector@PAVCBitmapButton@@@@QAEXXZ,*>::Purge,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100091E0,11,?ResetDbgInfo@?$CUtlVector@PAVCBitmapButton@@@@IAEXXZ,*>::ResetDbgInfo,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100091F0,75,??0?$CUtlMemory@PAVCBitmapButton@@@@QAE@HH@Z,*>,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10009240,19,??1?$CUtlMemory@PAVCBitmapButton@@@@QAE@XZ,*>,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10009260,24,??A?$CUtlMemory@PAVCBitmapButton@@@@QAEAAPAVCBitmapButton@@H@Z,*>::operator[],UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10009280,65,?InsertBefore@?$CUtlVector@PAVCCareerCharacter@@@@QAEHHABQAVCCareerCharacter@@@Z,*>::InsertBefore,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100092D0,35,?Purge@?$CUtlVector@PAVCCareerCharacter@@@@QAEXXZ,*>::Purge,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10009300,11,?ResetDbgInfo@?$CUtlVector@PAVCCareerCharacter@@@@IAEXXZ,*>::ResetDbgInfo,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10009310,75,??0?$CUtlMemory@PAVCCareerCharacter@@@@QAE@HH@Z,*>,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10009360,19,??1?$CUtlMemory@PAVCCareerCharacter@@@@QAE@XZ,*>,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10009380,24,??A?$CUtlMemory@PAVCCareerCharacter@@@@QAEAAPAVCCareerCharacter@@H@Z,*>::operator[],UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100093A0,25,?Element@?$CUtlVector@PBVCCareerCharacter@@@@QAEAAPBVCCareerCharacter@@H@Z,*>::Element,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100093C0,65,?InsertBefore@?$CUtlVector@PBVCCareerCharacter@@@@QAEHHABQBVCCareerCharacter@@@Z,*>::InsertBefore,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10009410,35,?Purge@?$CUtlVector@PBVCCareerCharacter@@@@QAEXXZ,*>::Purge,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10009440,11,?ResetDbgInfo@?$CUtlVector@PBVCCareerCharacter@@@@IAEXXZ,*>::ResetDbgInfo,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10009450,75,??0?$CUtlMemory@PBVCCareerCharacter@@@@QAE@HH@Z,*>,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100094A0,19,??1?$CUtlMemory@PBVCCareerCharacter@@@@QAE@XZ,*>,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100094C0,24,??A?$CUtlMemory@PBVCCareerCharacter@@@@QAEAAPBVCCareerCharacter@@H@Z,*>::operator[],UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100094E0,5,?Destruct@@YAXPAPBVCCareerCharacter@@@Z,Destruct,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100094F0,25,?Element@?$CUtlVector@PAVCBitmapButton@@@@QAEAAPAVCBitmapButton@@H@Z,*>::Element,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10009510,70,?RemoveAll@?$CUtlVector@PAVCBitmapButton@@@@QAEXXZ,*>::RemoveAll,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10009560,87,?GrowVector@?$CUtlVector@PAVCBitmapButton@@@@IAEXH@Z,*>::GrowVector,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100095C0,86,?ShiftElementsRight@?$CUtlVector@PAVCBitmapButton@@@@IAEXHH@Z,*>::ShiftElementsRight,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10009620,58,?CopyConstruct@@YAXPAPAVCBitmapButton@@ABQAV1@@Z,CopyConstruct,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10009660,69,?Purge@?$CUtlMemory@PAVCBitmapButton@@@@QAEXXZ,*>::Purge,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100096B0,25,?Element@?$CUtlVector@PAVCCareerCharacter@@@@QAEAAPAVCCareerCharacter@@H@Z,*>::Element,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100096D0,70,?RemoveAll@?$CUtlVector@PAVCCareerCharacter@@@@QAEXXZ,*>::RemoveAll,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10009720,87,?GrowVector@?$CUtlVector@PAVCCareerCharacter@@@@IAEXH@Z,*>::GrowVector,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10009780,86,?ShiftElementsRight@?$CUtlVector@PAVCCareerCharacter@@@@IAEXHH@Z,*>::ShiftElementsRight,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100097E0,58,?CopyConstruct@@YAXPAPAVCCareerCharacter@@ABQAV1@@Z,CopyConstruct,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10009820,69,?Purge@?$CUtlMemory@PAVCCareerCharacter@@@@QAEXXZ,*>::Purge,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10009870,70,?RemoveAll@?$CUtlVector@PBVCCareerCharacter@@@@QAEXXZ,*>::RemoveAll,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100098C0,87,?GrowVector@?$CUtlVector@PBVCCareerCharacter@@@@IAEXH@Z,*>::GrowVector,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10009920,86,?ShiftElementsRight@?$CUtlVector@PBVCCareerCharacter@@@@IAEXHH@Z,*>::ShiftElementsRight,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10009980,69,?Purge@?$CUtlMemory@PBVCCareerCharacter@@@@QAEXXZ,*>::Purge,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100099D0,58,?CopyConstruct@@YAXPAPBVCCareerCharacter@@ABQBV1@@Z,CopyConstruct,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10009A10,17,?NumAllocated@?$CUtlMemory@PAVCBitmapButton@@@@QBEHXZ,*>::NumAllocated,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10009A30,199,?Grow@?$CUtlMemory@PAVCBitmapButton@@@@QAEXH@Z,*>::Grow,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10009B00,25,?IsExternallyAllocated@?$CUtlMemory@PAVCBitmapButton@@@@QBE_NXZ,*>::IsExternallyAllocated,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10009B20,5,?Destruct@@YAXPAPAVCBitmapButton@@@Z,Destruct,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10009B30,17,?NumAllocated@?$CUtlMemory@PAVCCareerCharacter@@@@QBEHXZ,*>::NumAllocated,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10009B50,199,?Grow@?$CUtlMemory@PAVCCareerCharacter@@@@QAEXH@Z,*>::Grow,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10009C20,25,?IsExternallyAllocated@?$CUtlMemory@PAVCCareerCharacter@@@@QBE_NXZ,*>::IsExternallyAllocated,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10009C40,5,?Destruct@@YAXPAPAVCCareerCharacter@@@Z,Destruct,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10009C50,17,?NumAllocated@?$CUtlMemory@PBVCCareerCharacter@@@@QBEHXZ,*>::NumAllocated,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10009C70,199,?Grow@?$CUtlMemory@PBVCCareerCharacter@@@@QAEXH@Z,*>::Grow,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10009D40,25,?IsExternallyAllocated@?$CUtlMemory@PBVCCareerCharacter@@@@QBE_NXZ,*>::IsExternallyAllocated,UNKNOWN,GameUI/CareerBotFrame.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,10009D60,843,??0CCareerBaseBox@@QAE@PAVPanel@vgui2@@PBD_N@Z,CCareerBaseBox::CCareerBaseBox,ENGINE,GameUI/CareerBox.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN14CCareerBaseBoxC1EPN5vgui25PanelEPKcb
 gameui,1000A0AB,21,?SetCancelButtonAsDefault@CCareerBaseBox@@QAEXXZ,CCareerBaseBox::SetCancelButtonAsDefault,UNKNOWN,GameUI/CareerBox.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN14CCareerBaseBox24SetCancelButtonAsDefaultEv
 gameui,1000A0C0,43,?SetLabelText@CCareerBaseBox@@QAEXPBG@Z,CCareerBaseBox::SetLabelText,UNKNOWN,GameUI/CareerBox.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN14CCareerBaseBox12SetLabelTextEPKw

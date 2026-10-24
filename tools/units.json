@@ -3810,6 +3810,11 @@
           "functions_file": "tools/units/gameui_GameUI_CareerBaseFrame.txt"
         },
         {
+          "name": "GameUI/CareerBotFrame",
+          "source": "src/gameui/CareerBotFrame.cpp",
+          "functions_file": "tools/units/gameui_GameUI_CareerBotFrame.txt"
+        },
+        {
           "name": "GameUI/CareerProfileFrame",
           "source": "src/gameui/CareerProfileFrame.cpp",
           "functions_file": "tools/units/gameui_GameUI_CareerProfileFrame.txt"
