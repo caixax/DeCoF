@@ -4173,6 +4173,11 @@
           "name": "GameUI/DemoEditDialog",
           "source": "src/gameui/DemoEditDialog.cpp",
           "functions_file": "tools/units/gameui_GameUI_DemoEditDialog.txt"
+        },
+        {
+          "name": "GameUI/Socket_guess",
+          "source": "src/gameui/Socket_guess.cpp",
+          "functions_file": "tools/units/gameui_GameUI_Socket_guess.txt"
         }
       ]
     }
