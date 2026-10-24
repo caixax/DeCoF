@@ -12,6 +12,7 @@ Everything below lives outside the repository on this machine. Paths are the def
 | ghidra-delinker-extension 0.9.2 | `...\Ghidra\Extensions\ghidra-delinker-extension` | github.com/boricj/ghidra-delinker-extension (Apache-2.0) |
 | MCP bridge (Python 3.13 venv) | `I:\Tools\ghidra-mcp-venv\Scripts\bridge-mcp-ghidra.exe` | ghidra-mcp release wheel 7.0.0 |
 | objdiff-cli 3.8.2 | `I:\Tools\bin\objdiff-cli.exe` | github.com/encounter/objdiff |
+| Visual C# 2010 compiler, csc.exe 4.0.30319.1 (C# 4) | `I:\Tools\csc40` | official .NET Framework 4.0 redistributable `dotNetFx40_Full_x86_x64.exe` (download.microsoft.com, Microsoft Authenticode signature valid), extracted, see "CoFLaunchApp.exe" below |
 | JDK 21 (Temurin) | system install | already present |
 | Python 3.14 + pefile, capstone | system install | pip |
 
@@ -91,6 +92,23 @@ python tools/make_dist.py --keep --bin build/dist_hl --bin build/dist_launcher
 - The EXE has no base relocations: link_diff reconstructs the places they would be (absolute operands found by a linear sweep of the code, aligned words that point into the image in the data sections) for both images, so the per-function and reference comparison works as for the DLLs.
 - `"resources"` in a link section names a retail PE whose resources are linked in through `tools/res_from_pe.py` (a .res written into build/link/<dll>/ at link time, converted by the linker's cvtres), so the icons are never committed. The retail .rsrc of cof.exe was rewritten after the link by a resource editor (CoF's icon added as icon 5 and a language-neutral group icon 101 next to Valve's ones, 4-byte data alignment, code page 1252, directory version 4.0, SizeOfInitializedData recomputed from the raw section sizes); cvtres gives the same resources (types, names, languages, bytes) with 8-byte alignment, code page 0 and version 0.0, and the VC6 linker counts the .bss part of .data in SizeOfInitializedData.
 - make_dist takes `--bin` several times (the last folder that has a binary wins); `launcher.exe` from a bin folder becomes `cof.exe` in dist/. Every binary under test keeps its own folder (build/dist_hl, build/dist_launcher, ...), and a test build names all of them: a binary missing from the folders given goes back to retail.
+
+### CoFLaunchApp.exe (.NET settings launcher)
+
+```
+python tools/coflaunchapp/build.py [--retail-path]   build/coflaunchapp/CoFLaunchApp.exe, copied to build/bin/ and build/dist_coflaunchapp/
+python tools/coflaunchapp/compare.py [--show NAME]   per method IL, types, manifest, resources, metadata blob, whole file
+python tools/coflaunchapp/progress.py                rewrites the coflaunchapp rows of docs/progress.csv
+python tools/make_dist.py --keep --bin build/dist_hl --bin build/dist_launcher --bin build/dist_coflaunchapp
+```
+
+- Compiler: Visual C# 2010, csc 4.0.30319.1 (C# 4). The csc.exe of the installed framework (`C:\Windows\Microsoft.NET\Framework\v4.0.30319`, 4.8.9232) is the C# 5 compiler and differs only in .maxstack: C# 2, 3 and 4 count the object a newobj pushes before popping its arguments, C# 5 gives the exact depth. `--csc C:\Windows\Microsoft.NET\Framework\v4.0.30319\csc.exe` shows the two methods that differ (InitializeComponent 7 against 6, Resources.get_ResourceManager 3 against 2).
+- .NET 4.0 can not be installed over 4.8, so the compiler is extracted, not installed. `7z x dotNetFx40_Full_x86_x64.exe -ox`, then from `x\netfx_Core.mzz` (a CAB) take `csc.exe_x86`, `csc.exe.config_x86`, `cscompui.dll_x86_enu`, `msvcr_clr_dll_x86` and `default.win32manifest_x86` and name them as the MSI File table does: `I:\Tools\csc40\csc.exe`, `csc.exe.config`, `1033\cscui.dll` (csc 4.0 asks for cscui.dll), `msvcr100_clr0400.dll` and `default.win32manifest`.
+- `msvcr100_clr0400.dll` must sit next to csc.exe: the copy the 4.8 runtime leaves in SysWOW64 is a 14.8 build and csc 4.0 fails to start with 0xC000007B. Without `default.win32manifest` next to csc.exe no manifest is embedded and the .rsrc is 524 bytes short (the 4.0 file has the same bytes as the 4.8 one).
+- csc 4.0 runs on the installed 4.8 runtime (its config asks for v4.0.30319) and references the 4.8 assemblies of the framework folder. The metadata and PE writers belong to the runtime, which is why the PE header says linker 11.0, as retail does.
+- Source order: csc 4.0 and 4.8 emit types, members, assembly references and assembly attributes in command line order; build.py's order gives the retail metadata (the VS 2010 template order does not).
+- `--retail-path` maps a temporary `subst U:` to build/coflaunchapp/retail_drive and compiles in `U:\common\Cry of Fear\CryOfFear\StatsResetProgram\CoFLaunchApp\CoFLaunchApp\obj\x86\Release`, so the debug directory holds the retail PDB path and compare.py can check the whole file. It refuses to run when U: exists and always removes the mapping. Without it the PDB path is 49 bytes shorter and everything after the debug record moves.
+- Result with `--retail-path`: 51 of 51 methods identical, metadata identical except the MVID, managed and Win32 resources identical, 2,683,904 bytes on both sides. The only differing bytes are per build fields: PE and debug timestamps (8), MVID (16), PDB GUID and age (16) and the drive letter of the PDB path (csc.exe writes `u:`, retail has `U:`).
 
 ## Progress report hook
 

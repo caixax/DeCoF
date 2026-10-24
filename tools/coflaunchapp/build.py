@@ -1,30 +1,54 @@
-"""Build CoFLaunchApp.exe from src/coflaunchapp.
+r"""Build CoFLaunchApp.exe from src/coflaunchapp.
 
-The retail launcher was built by Visual Studio 2010 era MSBuild (Release, x86,
-.NET Framework 4 Client Profile, PDB path ...\\obj\\x86\\Release\\) with the
-legacy (pre-Roslyn) C# compiler. This script runs the same csc options with
-the legacy compiler that ships with .NET Framework 4.8 (csc 4.8.9232).
+The retail launcher (PE timestamp 2013-04-19) is a Visual Studio 2010 Windows
+Forms project (Release, x86, .NET Framework 4 Client Profile, PDB path
+U:\...\CoFLaunchApp\obj\x86\Release\CoFLaunchApp.pdb). It was compiled by
+Visual C# 2010, the C# 4 compiler of .NET Framework 4.0 (csc 4.0.30319.1,
+also the in-process compiler of the VS 2010 IDE). This script runs that
+compiler, extracted from Microsoft's .NET Framework 4.0 redistributable into
+I:\Tools\csc40 (setup in docs/tooling.md).
 
-The retail era compiler is older than csc 4.8 and differs in two ways that
-show in the output:
-  - it walks the source file list in the other direction. The 1.0 launcher
-    has its types in the order Settings, Resources, Program, Form1, which is
-    the Visual Studio 2010 template order reversed. The command line below is
-    therefore chosen to give the retail metadata order under csc 4.8; it is
-    not a replay of the original command line.
-  - it computes .maxstack one higher in Form1.InitializeComponent and
-    Resources.get_ResourceManager (also true of the 1.0 and 1.55 builds).
-    csc 4.8 emits the exact depth, so these two method headers differ.
+How the compiler was pinned down:
+  - .maxstack: C# 2, 3 and 4 (csc 2.0, 3.5, 4.0.30319.1) count the object a
+    newobj pushes before popping its arguments, so a method whose deepest
+    point is a newobj gets one more than the exact depth. The C# 5 compiler
+    that .NET Framework 4.5 to 4.8 install as csc.exe (4.8.9232 here) emits
+    the exact depth. Retail has the higher value in InitializeComponent (new
+    Font with 5 arguments at depth 6, .maxstack 7) and in
+    Resources.get_ResourceManager (new ResourceManager at depth 2, .maxstack
+    3); csc 4.0 reproduces both, csc 4.8 gives 6 and 2.
+  - linker version 11.0 in the PE header is written by the runtime's PE
+    writer, not by csc: csc 4.0 running on the 4.8 runtime also writes 11.0,
+    so the build machine had .NET 4.5 or later installed.
+  - with csc 4.0 every method, the metadata (only the MVID differs), the
+    managed resources, the Win32 resources and the file size equal retail.
+
+Source order: csc emits types, members, assembly references and assembly
+attributes in command line order (csc 4.0 and 4.8 alike). The order below
+gives the retail metadata; it is not the order a VS 2010 project would pass
+(template order with the target framework file last), so the original build
+was most likely the IDE's in-process compiler, which gets its file list from
+the project system. Its output path also kept the drive letter "U:", where
+csc.exe writes "u:" into the debug directory.
 
 Resources are never stored in the repository. At build time the embedded
 .resources files and the Win32 resources are pulled out of the retail exe with
 ildasm, the application icon is rebuilt from the Win32 resources, and the
-output goes to build/coflaunchapp/CoFLaunchApp.exe.
+output goes to build/coflaunchapp/CoFLaunchApp.exe, build/bin and
+build/dist_coflaunchapp (the folder make_dist.py --bin takes for a test build).
 
-Usage: python tools/coflaunchapp/build.py
+Usage: python tools/coflaunchapp/build.py [--retail-path] [--csc PATH]
+  --retail-path  compile on a temporary subst drive U: inside the retail
+                 project path, so the debug directory holds the retail PDB
+                 path (only the drive letter case differs) and compare.py can
+                 compare the whole file byte by byte
+  --csc PATH     another compiler (for example the C# 5 csc of the installed
+                 framework, to see the .maxstack difference)
 """
 
+import argparse
 import os
+import shutil
 import struct
 import subprocess
 import sys
@@ -35,14 +59,18 @@ SRC = os.path.join(ROOT, "src", "coflaunchapp")
 OUT = os.path.join(ROOT, "build", "coflaunchapp")
 RES = os.path.join(OUT, "retail")
 OBJ = os.path.join(OUT, "obj")
+DIST = os.path.join(ROOT, "build", "dist_coflaunchapp")
+# Project folder of the retail build (from the PDB path in its debug directory)
+RETAIL_DRIVE = "U:"
+RETAIL_PROJECT = r"\common\Cry of Fear\CryOfFear\StatsResetProgram\CoFLaunchApp\CoFLaunchApp"
 
 FRAMEWORK = r"C:\Windows\Microsoft.NET\Framework\v4.0.30319"
-CSC = os.path.join(FRAMEWORK, "csc.exe")
+CSC = r"I:\Tools\csc40\csc.exe"
 ILDASM = r"C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.8.1 Tools\ildasm.exe"
 
-# Compile order for csc 4.8. Recovered from the binary: retail lists the types
+# Compile order. Recovered from the binary: retail lists the types
 # Form1, Settings, Resources, Program, and the assembly references in the
-# order System.Windows.Forms, System, mscorlib, System.Drawing. csc 4.8 emits
+# order System.Windows.Forms, System, mscorlib, System.Drawing. csc emits
 # types in command line order and this order reproduces both. Form1.cs must
 # come before Form1.Designer.cs so the Form1 methods precede Dispose and
 # InitializeComponent. AssemblyInfo.cs declares no types, its place only
@@ -79,14 +107,13 @@ REFERENCES = [
 ]
 
 # MSBuild generates this file for every project targeting .NET 4 and passes it
-# to csc after the project sources. csc 4.8 emits assembly level attributes
+# to csc after the project sources. csc emits assembly level attributes
 # file by file in reverse command line order, and the CLR metadata writer then
 # sorts the CustomAttribute table with an unstable quicksort, so the attribute
 # order ildasm shows depends on that input order. Simulating the sort shows
 # that retail emitted the AssemblyInfo.cs attributes before
-# TargetFrameworkAttribute (what the retail era compiler does with this file
-# last). Under csc 4.8 that needs this file before AssemblyInfo.cs, so it is
-# passed first.
+# TargetFrameworkAttribute. With csc that needs this file before
+# AssemblyInfo.cs, so it is passed first.
 TARGET_FRAMEWORK_FILE = ".NETFramework,Version=v4.0,Profile=Client.AssemblyAttributes.cs"
 TARGET_FRAMEWORK_SOURCE = (
     "// <autogenerated />\r\n"
@@ -166,15 +193,19 @@ def rebuild_icon(res_path, ico_path):
         f.write(header + directory + images)
 
 
-def compile_exe():
+def compile_exe(outdir=OUT):
+    """Compile into outdir and return the path of the exe."""
+    if not os.path.isfile(CSC):
+        sys.exit("compiler not found: %s (setup in docs/tooling.md)" % CSC)
     os.makedirs(OBJ, exist_ok=True)
+    os.makedirs(outdir, exist_ok=True)
     attr_file = os.path.join(OBJ, TARGET_FRAMEWORK_FILE)
     with open(attr_file, "w", newline="") as f:
         f.write(TARGET_FRAMEWORK_SOURCE)
     icon = os.path.join(OBJ, "app.ico")
     rebuild_icon(os.path.join(RES, "retail.res"), icon)
 
-    exe = os.path.join(OUT, "CoFLaunchApp.exe")
+    exe = os.path.join(outdir, "CoFLaunchApp.exe")
     cmd = [
         CSC,
         "/noconfig",
@@ -204,17 +235,43 @@ def compile_exe():
     warnings = [l for l in out.splitlines() if ": warning " in l]
     for line in warnings:
         print(line.strip())
-    print("built %s" % os.path.relpath(exe, ROOT))
-    # tools/make_dist.py takes complete rebuilt binaries from build/bin
-    import shutil
-    bindir = os.path.join(ROOT, "build", "bin")
-    os.makedirs(bindir, exist_ok=True)
-    shutil.copyfile(exe, os.path.join(bindir, "CoFLaunchApp.exe"))
+    return exe
+
+
+def compile_at_retail_path():
+    """Compile on a temporary subst drive inside the retail project folder."""
+    if os.path.exists(RETAIL_DRIVE + "\\"):
+        sys.exit("drive %s is in use, build without --retail-path" % RETAIL_DRIVE)
+    target = os.path.join(OUT, "retail_drive")
+    os.makedirs(target, exist_ok=True)
+    run(["subst", RETAIL_DRIVE, target], ROOT)
+    try:
+        project = RETAIL_DRIVE + RETAIL_PROJECT
+        built = compile_exe(os.path.join(project, "obj", "x86", "Release"))
+        exe = os.path.join(OUT, "CoFLaunchApp.exe")
+        shutil.copyfile(built, exe)
+        shutil.copyfile(built[:-4] + ".pdb", exe[:-4] + ".pdb")
+    finally:
+        run(["subst", RETAIL_DRIVE, "/d"], ROOT)
+    return exe
 
 
 def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--retail-path", action="store_true")
+    ap.add_argument("--csc")
+    args = ap.parse_args()
+    if args.csc:
+        global CSC
+        CSC = args.csc
     extract_retail_resources()
-    compile_exe()
+    exe = compile_at_retail_path() if args.retail_path else compile_exe()
+    print("built %s with %s" % (os.path.relpath(exe, ROOT), CSC))
+    # tools/make_dist.py takes complete rebuilt binaries from build/bin and
+    # from the per binary test folder (make_dist.py --bin build/dist_coflaunchapp)
+    for folder in (os.path.join(ROOT, "build", "bin"), DIST):
+        os.makedirs(folder, exist_ok=True)
+        shutil.copyfile(exe, os.path.join(folder, "CoFLaunchApp.exe"))
 
 
 if __name__ == "__main__":

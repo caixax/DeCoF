@@ -19,7 +19,7 @@ Generated from `tools/pe_inventory.py` (Rich header, optional header, debug dire
 | **1.6a** | **hw.dll** (sw.dll identical) | **cl 12.00.8168 (VC++ 6.0 RTM), mostly Standard Edition objects, plus VC6 processor pack (12.00.9044) and VS 2005 (14.00.50727) objects** | **link 6.00.8168** | Release, no debug directory | static |
 | **1.6a** | **GameUI.dll** | **cl 12.00.8168 (VC++ 6.0 RTM), Standard Edition C++ objects** | **link 6.00.8168** | Release, no debug directory | static |
 | **1.6a** | **cof.exe** | **cl 12.00.8168 (VC++ 6.0 RTM)** | **link 6.00.8168** | Release, no debug directory | static |
-| **1.6a** | **CoFLaunchApp.exe** | **C# (.NET), no native compiler** | - | Release (`...\CoFLaunchApp\obj\x86\Release\CoFLaunchApp.pdb`) | mscoree.dll |
+| **1.6a** | **CoFLaunchApp.exe** | **Visual C# 2010, csc 4.0.30319.1 (C# 4, .NET Framework 4 Client Profile)** | - | Release (`...\CoFLaunchApp\obj\x86\Release\CoFLaunchApp.pdb`) | mscoree.dll |
 
 ## Evidence
 
@@ -75,7 +75,7 @@ All values from `tools/pe_inventory.py` (`docs/versions.csv`), 2026-10-10.
 - **hw.dll** (2013-04-21, linker 6.00): Rich header `Utc12_C_Std.8168` x92, `Utc12_CPP_Std.8168` x98 (Standard Edition), `Utc12_C.8168` x199, `Utc12_CPP.8168` x18, `Utc12_2_C.9044` x7 and `Utc12_2_CPP.9044` x3 (VC6 with the processor pack), `Utc12_2_C.8943` x1, `Utc13_C.8830` x3, `Utc1400_C.50727` x72 (VS 2005), `Masm613.7299` x46, `Linker600.8168`. The header does not say which of these entries are engine objects and which come from prebuilt libraries (Miles, VGUI, steam_api_c); that is settled per object when hw.dll units are built. The 7 `Utc12_2_C.9044` objects are the bzip2 1.0.2 library (blocksort, huffman, crctable, randtable, compress, decompress, bzlib; version string "1.0.2, 30-Dec-2001", stdcall API from BZ_EXPORT): the official bzip2-1.0.2 source (sourceware.org, SHA-512 checked) compiled with VC6 RTM `/O2 /DWIN32 /DBZ_EXPORT` gives BZ2_bzBuffToBuffCompress, BZ2_bzBuffToBuffDecompress and BZ2_bz__AssertH__fail byte for byte, but the larger functions differ in register allocation and loop strength reduction, which needs the processor pack compiler (cl 12.00.9044, VC6 with the Processor Pack). Until that compiler is available, bzip2 can only be EQUIVALENT.
 - **GameUI.dll** (2013-04-21, linker 6.00): `Utc12_CPP_Std.8168` x131, `Utc12_C.8168` x155, `Utc12_CPP.8168` x13, `Masm613.7299` x35, `Linker600.8168`.
 - **cof.exe** (linker 6.00): `Utc12_C.8168` x122, `Utc12_CPP.8168` x10, `Masm613.7299` x21, `Cvtres500.1720`, `Linker600.8168`. Version resource 1, 1, 1, 1.
-- **CoFLaunchApp.exe**: managed (imports only `mscoree.dll`), PDB path `U:\common\Cry of Fear\CryOfFear\StatsResetProgram\CoFLaunchApp\...`, assembly version 1.0.0. No native compiler involved.
+- **CoFLaunchApp.exe**: managed (imports only `mscoree.dll`), PDB path `U:\common\Cry of Fear\CryOfFear\StatsResetProgram\CoFLaunchApp\...`, assembly version 1.0.0. No native compiler involved. C# compiler: Visual C# 2010 (csc 4.0.30319.1), shown by a .maxstack one above the exact depth where a method peaks at a newobj (the C# 5 compiler of .NET 4.5 and later gives the exact depth); the linker version 11.0 comes from the runtime PE writer of a machine with .NET 4.5 or later (docs/tooling.md, CoFLaunchApp.exe).
 - The Standard Edition compiler has no optimizer; it accepts /O2 and generates unoptimized code. The installed Professional Edition with /Od produces the same code (proven on opengl32.dll).
 
 ## Inline expansion experiment (/Ob1), 2026-10-11

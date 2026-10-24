@@ -12,6 +12,11 @@ Reported:
   - managed resources (names and bytes) and the Win32 resource blob
   - byte level: the metadata blob (only the MVID should differ) and the
     region holding the IL bodies and embedded resources
+  - whole file: size, then every differing byte, sorted into the per build
+    fields (PE and debug directory timestamps, MVID, PDB GUID and age, PDB
+    path) and anything else. Needs the same PDB path length on both sides
+    (build.py --retail-path); otherwise only the bytes before the debug
+    record are compared, because everything after it moves.
 
 Usage:
   python tools/coflaunchapp/compare.py               summary
@@ -226,6 +231,72 @@ def pe_checks():
             len(diff), len(ia), (" at rva " + ", ".join("%#x" % (atext + start + i) for i in diff[:8])) if diff else ""))
 
 
+def per_build_fields(path):
+    """Return (file bytes, {offset: field name}, offset of the CodeView record, its size)."""
+    data, offset, md_rva, md_size, text = pe_layout(path)
+    fields = {}
+
+    def mark(start, size, name):
+        for i in range(start, start + size):
+            fields[i] = name
+
+    pe = struct.unpack_from("<I", data, 0x3C)[0]
+    mark(pe + 8, 4, "PE timestamp")
+    dbg_rva, dbg_size = struct.unpack_from("<II", data, pe + 24 + 96 + 6 * 8)
+    cv = cv_size = None
+    for e in range(offset(dbg_rva), offset(dbg_rva) + dbg_size, 28):
+        mark(e + 4, 4, "debug timestamp")
+        kind, size, rva, ptr = struct.unpack_from("<IIII", data, e + 12)
+        if kind == 2 and data[ptr:ptr + 4] == b"RSDS":
+            cv, cv_size = ptr, size
+            mark(ptr + 4, 20, "PDB GUID and age")
+            mark(ptr + 24, size - 24, "PDB path")
+    # metadata root: version string, then the stream headers; MVID is GUID 1
+    md = offset(md_rva)
+    vlen = struct.unpack_from("<I", data, md + 12)[0]
+    pos = md + 16 + vlen
+    streams = struct.unpack_from("<H", data, pos + 2)[0]
+    pos += 4
+    for _ in range(streams):
+        soff, ssize = struct.unpack_from("<II", data, pos)
+        end = data.index(b"\0", pos + 8)
+        name = data[pos + 8:end]
+        if name == b"#GUID":
+            mark(md + soff, 16, "MVID")
+        pos = (end + 4) & ~3
+    return data, fields, cv, cv_size
+
+
+def file_check():
+    """Whole file comparison with the per build fields named."""
+    a, fields, acv, acv_size = per_build_fields(RETAIL)
+    b, _, bcv, bcv_size = per_build_fields(REBUILT)
+    print("file: retail %d bytes, rebuilt %d bytes" % (len(a), len(b)))
+    limit = min(len(a), len(b))
+    note = ""
+    if (acv, acv_size) != (bcv, bcv_size):
+        limit = min(acv, bcv)
+        note = " (PDB path length differs, compared up to the debug record only; build.py --retail-path compares all)"
+    counts = {}
+    other = []
+    for i in range(limit):
+        if a[i] != b[i]:
+            name = fields.get(i)
+            if name:
+                counts[name] = counts.get(name, 0) + 1
+            else:
+                other.append(i)
+    if acv is not None and (acv, acv_size) == (bcv, bcv_size):
+        pa = a[acv + 24:acv + acv_size].rstrip(b"\0").decode("latin-1")
+        pb = b[bcv + 24:bcv + bcv_size].rstrip(b"\0").decode("latin-1")
+        if pa != pb:
+            print("PDB path: retail %s rebuilt %s" % (pa, pb))
+    print("file bytes differing in per build fields: %s" % (
+        ", ".join("%s %d" % kv for kv in sorted(counts.items())) or "none"))
+    print("file bytes differing elsewhere: %d%s%s" % (
+        len(other), (" at offset " + ", ".join("%#x" % i for i in other[:8])) if other else "", note))
+
+
 def first_diff(a, b):
     for idx in range(max(len(a), len(b))):
         x = a[idx].strip() if idx < len(a) else "<end>"
@@ -342,6 +413,7 @@ def compare(verbose_filter=None):
             print("resource %s: retail %s rebuilt %s" % (
                 name, "%d bytes" % a[0] if a else "absent", "%d bytes" % b[0] if b else "absent"))
     pe_checks()
+    file_check()
     return results
 
 

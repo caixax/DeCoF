@@ -102,8 +102,8 @@ def notes(entry):
         return ""
     if entry.get("maxstack_only"):
         a, b = entry["maxstack"]
-        return ("instructions and locals identical; .maxstack retail %d, rebuilt %d. csc 4.8 emits the exact "
-                "depth, the retail era compiler one more (same in 1.0 and 1.55)" % (a, b))
+        return ("instructions and locals identical; .maxstack retail %d, rebuilt %d. The C# 5 csc (4.5 to 4.8) "
+                "emits the exact depth, csc 4.0 (the retail compiler) one more after a newobj" % (a, b))
     return entry.get("diff", "")
 
 

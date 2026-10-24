@@ -1,34 +1,34 @@
 {
-  "commit": "a2cdb29",
+  "commit": "a45ba8e",
   "counting": "LIB rows excluded; bytes weighted by function size",
   "date": "2026-10-25",
   "dlls": {
     "CoFLaunchApp.exe": {
       "bytes": {
-        "EQUIVALENT": 4014,
-        "MATCHED": 3665,
+        "EQUIVALENT": 0,
+        "MATCHED": 7679,
         "TODO": 0,
         "total": 7679
       },
       "categories": {
         "COF": {
           "bytes": {
-            "EQUIVALENT": 4014,
-            "MATCHED": 3665,
+            "EQUIVALENT": 0,
+            "MATCHED": 7679,
             "TODO": 0,
             "total": 7679
           },
           "functions": {
-            "EQUIVALENT": 2,
-            "MATCHED": 49,
+            "EQUIVALENT": 0,
+            "MATCHED": 51,
             "TODO": 0,
             "total": 51
           }
         }
       },
       "functions": {
-        "EQUIVALENT": 2,
-        "MATCHED": 49,
+        "EQUIVALENT": 0,
+        "MATCHED": 51,
         "TODO": 0,
         "total": 51
       }
@@ -356,14 +356,14 @@
   },
   "shown_total": {
     "bytes": {
-      "EQUIVALENT": 95498,
-      "MATCHED": 1646324,
+      "EQUIVALENT": 91484,
+      "MATCHED": 1650338,
       "TODO": 43883,
       "total": 1785705
     },
     "functions": {
-      "EQUIVALENT": 35,
-      "MATCHED": 7925,
+      "EQUIVALENT": 33,
+      "MATCHED": 7927,
       "TODO": 43,
       "total": 8003
     }
@@ -371,14 +371,14 @@
   "target_version": "1.6a",
   "total": {
     "bytes": {
-      "EQUIVALENT": 125933,
-      "MATCHED": 3534135,
+      "EQUIVALENT": 121919,
+      "MATCHED": 3538149,
       "TODO": 137302,
       "total": 3797370
     },
     "functions": {
-      "EQUIVALENT": 62,
-      "MATCHED": 20504,
+      "EQUIVALENT": 60,
+      "MATCHED": 20506,
       "TODO": 795,
       "total": 21361
     }
