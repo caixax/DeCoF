@@ -3413,6 +3413,16 @@
             "src/common",
             "src/public"
           ]
+        },
+        {
+          "name": "engine/vgui2/MemoryBitmap",
+          "source": "src/engine_hw/vgui2/MemoryBitmap.cpp",
+          "functions_file": "tools/units/hw_engine_vgui2_MemoryBitmap.txt",
+          "includes": [
+            "src/engine_hw/vgui2",
+            "src/public",
+            "src/common"
+          ]
         }
       ]
     },

@@ -36,12 +36,15 @@ public:
 	virtual void SetSize(int x, int y);
 	virtual void SetColor(Color col);
 
+	const char *GetName_guess();
+
 	// uploads new memory into the texture
 	void ForceUpload_guess(unsigned char *texture, int wide, int tall);
 
+	// returns the texture id
+	int GetID_guess();
+
 private:
-	// NOTE: MemoryBitmap.cpp is not written yet; these members only give the
-	// class its retail size (0x24: the operator new in HtmlWindow::OnPaint).
 	int _id_guess;
 	bool _uploaded_guess;
 	bool _valid_guess;

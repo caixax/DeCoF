@@ -5328,3 +5328,18 @@ va,name,kind,evidence
 024E0758,_staticPanel,data,engine/vgui_intwrap.cpp: static vgui::Panel *staticPanel (Linux hw.so DWARF line 51) created by VGuiWrap_Startup and returned by VGuiWrap_GetPanel; spelling from the compiled object
 024E075C,_staticEngineSurface,data,engine/vgui_intwrap.cpp: static EngineSurfaceWrap *staticEngineSurface (Linux hw.so DWARF line 52) created by VGuiWrap_Startup; spelling from the compiled object
 01ED1688,?vgui_emulatemouse@@3Ucvar_s@@A,data,"engine/vgui_intwrap.cpp: cvar_t vgui_emulatemouse (name ""vgui_emulatemouse"", string ""0""), registered by VGuiWrap_Startup; C++ linkage as in VGUI_EngineSurfaceWrap.cpp"
+01D0E9DD,??1MemoryBitmap@vgui2@@UAE@XZ,func,"engine/vgui2/MemoryBitmap.cpp: destructor: stores the MemoryBitmap vtable 01E8C7F0, then ~IImage; called by the scalar deleting destructor in vtable slot 6; identical bytes in our compiled object"
+01D0E9F9,?GetSize@MemoryBitmap@vgui2@@UAEXAAH0@Z,func,"engine/vgui2/MemoryBitmap.cpp: MemoryBitmap vtable 01E8C7F0 slot 3 (IImage::GetSize), ISurface::DrawGetTextureSize; identical bytes in our compiled object"
+01D0EA46,?GetContentSize@MemoryBitmap@vgui2@@UAEXAAH0@Z,func,"engine/vgui2/MemoryBitmap.cpp: MemoryBitmap vtable 01E8C7F0 slot 2 (IImage::GetContentSize), calls GetSize; identical bytes in our compiled object"
+01D0EA66,?SetSize@MemoryBitmap@vgui2@@UAEXHH@Z,func,"engine/vgui2/MemoryBitmap.cpp: MemoryBitmap vtable 01E8C7F0 slot 4 (IImage::SetSize), empty; identical bytes in our compiled object"
+01D0EA73,?SetPos@MemoryBitmap@vgui2@@UAEXHH@Z,func,engine/vgui2/MemoryBitmap.cpp: MemoryBitmap vtable 01E8C7F0 slot 1 (IImage::SetPos); identical bytes in our compiled object
+01D0EA92,?SetColor@MemoryBitmap@vgui2@@UAEXVColor@@@Z,func,engine/vgui2/MemoryBitmap.cpp: MemoryBitmap vtable 01E8C7F0 slot 5 (IImage::SetColor); identical bytes in our compiled object
+01D0EAA8,?GetName_guess@MemoryBitmap@vgui2@@QAEPBDXZ,func,"engine/vgui2/MemoryBitmap.cpp: non-virtual, returns the string ""MemoryBitmap"" (name unproven); identical bytes in our compiled object"
+01D0EAB8,?Paint@MemoryBitmap@vgui2@@UAEXXZ,func,engine/vgui2/MemoryBitmap.cpp: MemoryBitmap vtable 01E8C7F0 slot 0 (IImage::Paint); identical bytes in our compiled object
+01D0EC98,?GetID_guess@MemoryBitmap@vgui2@@QAEHXZ,func,"engine/vgui2/MemoryBitmap.cpp: non-virtual, returns the texture id member (+4) that Paint and ForceUpload_guess create (name unproven); identical bytes in our compiled object"
+01D0ECD0,??_GMemoryBitmap@vgui2@@UAEPAXI@Z,func,"engine/vgui2/MemoryBitmap.cpp: scalar deleting destructor in MemoryBitmap vtable 01E8C7F0 slot 6 (calls ~MemoryBitmap 01D0E9DD), COMDAT after the object"
+01D0ED00,??0IImage@vgui2@@QAE@XZ,func,"engine/vgui2/MemoryBitmap.cpp: implicit constructor of IImage (stores the IImage vtable 01E8C810), called first by the MemoryBitmap constructor; COMDAT after the object"
+01D0ED20,??_GIImage@vgui2@@UAEPAXI@Z,func,"engine/vgui2/MemoryBitmap.cpp: scalar deleting destructor in IImage vtable 01E8C810 slot 6 (calls ~IImage 01D0ED50), COMDAT after the object"
+01D0ED50,??1IImage@vgui2@@UAE@XZ,func,"engine/vgui2/MemoryBitmap.cpp: inline virtual destructor of IImage (stores the IImage vtable 01E8C810), called by ~MemoryBitmap; COMDAT after the object"
+01E8C7F0,??_7MemoryBitmap@vgui2@@6B@,data,engine/vgui2/MemoryBitmap.cpp: vtable of MemoryBitmap (RTTI vgui2::MemoryBitmap) stored by its constructor and destructor
+01E8C810,??_7IImage@vgui2@@6B@,data,"engine/vgui2/MemoryBitmap.cpp: vtable of IImage (RTTI vgui2::IImage, six pure virtuals and the destructor) stored by the IImage constructor and destructor"
