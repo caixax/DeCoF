@@ -4567,3 +4567,9 @@ va,name,kind,evidence
 1004BBF4,?OnClose@CHelpDialog@@MAEXXZ,func,GameUI/HelpDialog.cpp: same position and size as in our compiled object; linux: _ZN11CHelpDialog7OnCloseEv
 1004BC54,?OnCommand@CHelpDialog@@MAEXPBD@Z,func,GameUI/HelpDialog.cpp: same position and size as in our compiled object; linux: _ZN11CHelpDialog9OnCommandEPKc
 1004BCD0,??_GCHelpDialog@@UAEPAXI@Z,func,GameUI/HelpDialog.cpp: same position and size as in our compiled object
+10020240,??0CBackgroundMenuButton@@QAE@PAVPanel@vgui2@@PBD@Z,func,GameUI/BackgroundMenuButton.cpp: same position and size as in our compiled object; linux: _ZN21CBackgroundMenuButtonC2EPN5vgui25PanelEPKc
+10020288,??1CBackgroundMenuButton@@UAE@XZ,func,GameUI/BackgroundMenuButton.cpp: same position and size as in our compiled object; linux: _ZN21CBackgroundMenuButtonD2Ev
+100202A4,?OnCommand@CBackgroundMenuButton@@UAEXPBD@Z,func,GameUI/BackgroundMenuButton.cpp: same position and size as in our compiled object; linux: _ZN21CBackgroundMenuButton9OnCommandEPKc
+100202BD,?ApplySchemeSettings@CBackgroundMenuButton@@EAEXPAVIScheme@vgui2@@@Z,func,GameUI/BackgroundMenuButton.cpp: same position and size as in our compiled object; linux: _ZN21CBackgroundMenuButton19ApplySchemeSettingsEPN5vgui27ISchemeE
+10020470,??_GCBackgroundMenuButton@@UAEPAXI@Z,func,GameUI/BackgroundMenuButton.cpp: same position and size as in our compiled object
+100204A0,?SetArmed@CBackgroundMenuButton@@UAEX_N@Z,func,"GameUI/BackgroundMenuButton.cpp: inline SetArmed COMDAT (header line 34 in the Linux DWARF), same size as in our compiled object"

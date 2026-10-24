@@ -8344,12 +8344,12 @@ gameui,10020039,10,?SharedGetToken@@YAPADXZ,char * __cdecl SharedGetToken(void),
 gameui,10020043,13,?SharedSetQuoteChar@@YAXD@Z,void __cdecl SharedSetQuoteChar(char),UNKNOWN,game_shared/shared_util.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,10020050,406,?SharedParse@@YAPBDPBD@Z,char const * __cdecl SharedParse(char const *),UNKNOWN,game_shared/shared_util.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,100201E6,90,?SharedTokenWaiting@@YA_NPBD@Z,bool __cdecl SharedTokenWaiting(char const *),UNKNOWN,game_shared/shared_util.cpp,,,MATCHED,100,gameui_manual.csv,
-gameui,10020240,72,,,UNKNOWN,GameUI/BackgroundMenuButton.cpp,,,TODO,,,linux: _ZN21CBackgroundMenuButtonC2EPN5vgui25PanelEPKc
-gameui,10020288,28,,,UNKNOWN,GameUI/BackgroundMenuButton.cpp,,,TODO,,,linux: _ZN21CBackgroundMenuButtonD2Ev
-gameui,100202A4,25,,CFindReplaceDialog::DoDataExchange,ENGINE,GameUI/BackgroundMenuButton.cpp,,,TODO,,ghidra,linux: _ZN21CBackgroundMenuButton9OnCommandEPKc
-gameui,100202BD,428,,,UNKNOWN,GameUI/BackgroundMenuButton.cpp,,,TODO,,,linux: _ZN21CBackgroundMenuButton19ApplySchemeSettingsEPN5vgui27ISchemeE
-gameui,10020470,46,,,UNKNOWN,GameUI/BackgroundMenuButton.cpp,,,TODO,,,
-gameui,100204A0,95,,,UNKNOWN,GameUI/BackgroundMenuButton.cpp,,,TODO,,,
+gameui,10020240,72,??0CBackgroundMenuButton@@QAE@PAVPanel@vgui2@@PBD@Z,"public: __thiscall CBackgroundMenuButton::CBackgroundMenuButton(class vgui2::Panel *,char const *)",UNKNOWN,GameUI/BackgroundMenuButton.cpp,,,MATCHED,100,,linux: _ZN21CBackgroundMenuButtonC2EPN5vgui25PanelEPKc
+gameui,10020288,28,??1CBackgroundMenuButton@@UAE@XZ,public: virtual __thiscall CBackgroundMenuButton::~CBackgroundMenuButton(void),UNKNOWN,GameUI/BackgroundMenuButton.cpp,,,MATCHED,100,,linux: _ZN21CBackgroundMenuButtonD2Ev
+gameui,100202A4,25,?OnCommand@CBackgroundMenuButton@@UAEXPBD@Z,public: virtual void __thiscall CBackgroundMenuButton::OnCommand(char const *),ENGINE,GameUI/BackgroundMenuButton.cpp,,,MATCHED,100,ghidra,linux: _ZN21CBackgroundMenuButton9OnCommandEPKc
+gameui,100202BD,428,?ApplySchemeSettings@CBackgroundMenuButton@@EAEXPAVIScheme@vgui2@@@Z,private: virtual void __thiscall CBackgroundMenuButton::ApplySchemeSettings(class vgui2::IScheme *),UNKNOWN,GameUI/BackgroundMenuButton.cpp,,,MATCHED,100,,linux: _ZN21CBackgroundMenuButton19ApplySchemeSettingsEPN5vgui27ISchemeE
+gameui,10020470,46,??_GCBackgroundMenuButton@@UAEPAXI@Z,public: virtual void * __thiscall CBackgroundMenuButton::`scalar deleting destructor'(unsigned int),UNKNOWN,GameUI/BackgroundMenuButton.cpp,,,MATCHED,100,,
+gameui,100204A0,95,?SetArmed@CBackgroundMenuButton@@UAEX_N@Z,public: virtual void __thiscall CBackgroundMenuButton::SetArmed(bool),UNKNOWN,GameUI/BackgroundMenuButton.cpp,,,MATCHED,100,,
 gameui,10020500,63,,CBasePanel::CBasePanel,ENGINE,GameUI/BasePanel.cpp,,,TODO,,linux_symbols:string:0.75,linux: _ZN10CBasePanelC1Ev
 gameui,1002053F,37,,,UNKNOWN,GameUI/BasePanel.cpp,,,TODO,,,linux: _ZN10CBasePanel12OnChildAddedEj
 gameui,10020564,55,,,UNKNOWN,GameUI/BasePanel.cpp,,,TODO,,,linux: _ZN10CBasePanel16IsWithinTraverseEiib

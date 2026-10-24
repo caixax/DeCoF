@@ -3993,6 +3993,11 @@
           "name": "GameUI/HelpDialog",
           "source": "src/gameui/HelpDialog.cpp",
           "functions_file": "tools/units/gameui_GameUI_HelpDialog.txt"
+        },
+        {
+          "name": "GameUI/BackgroundMenuButton",
+          "source": "src/gameui/BackgroundMenuButton.cpp",
+          "functions_file": "tools/units/gameui_GameUI_BackgroundMenuButton.txt"
         }
       ]
     }
