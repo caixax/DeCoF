@@ -37,4 +37,5 @@
 ?GetBotProfileManager@CareerDifficultyDefinition@@QAEPAVBotProfileManager@@XZ
 ?GetCareerName@CareerDefinition@@QBEPBDXZ
 ?GetSaveDirectory@CareerDefinition@@QBEPBDXZ
+?CloneString@@YAPADPBD@Z
 ?CloneWString@@YAPAGPBG@Z
