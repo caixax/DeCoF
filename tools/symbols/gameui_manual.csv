@@ -3150,3 +3150,25 @@ va,name,kind,evidence
 100186B0,??_GCCareerMapFrame@@UAEPAXI@Z,func,"GameUI/CareerMapFrame.cpp: same position as in our compiled object"
 10018700,?AreChecksumsOk@CCareerGame@@QAE_NXZ,func,"GameUI/CareerMapFrame.cpp: same position as in our compiled object"
 10018710,?GetMaps@CCareerGame@@QAEAAV?$vector@V?$vector@PAVCCareerMap@@V?$allocator@PAVCCareerMap@@@std@@@std@@V?$allocator@V?$vector@PAVCCareerMap@@V?$allocator@PAVCCareerMap@@@std@@@std@@@2@@std@@XZ,func,"GameUI/CareerMapFrame.cpp: same position as in our compiled object"
+1004C640,??0CMultiplayerAdvancedPage@@QAE@PAVPanel@vgui2@@@Z,func,GameUI/MultiplayerAdvancedDialog.cpp: same position and size as in our compiled object; linux: _ZN24CMultiplayerAdvancedPageC1EPN5vgui25PanelE
+1004C741,??0CMultiplayerAdvancedDialog@@QAE@PAVPanel@vgui2@@@Z,func,GameUI/MultiplayerAdvancedDialog.cpp: same position and size as in our compiled object; linux: _ZN26CMultiplayerAdvancedDialogC1EPN5vgui25PanelE
+1004C933,??1CMultiplayerAdvancedDialog@@UAE@XZ,func,GameUI/MultiplayerAdvancedDialog.cpp: same position and size as in our compiled object; linux: _ZN26CMultiplayerAdvancedDialogD1Ev
+1004C94F,??1CMultiplayerAdvancedPage@@UAE@XZ,func,GameUI/MultiplayerAdvancedDialog.cpp: same position and size as in our compiled object; linux: _ZN24CMultiplayerAdvancedPageD2Ev
+1004C96B,?OnClose@CMultiplayerAdvancedDialog@@UAEXXZ,func,GameUI/MultiplayerAdvancedDialog.cpp: same position and size as in our compiled object; linux: _ZN26CMultiplayerAdvancedDialog7OnCloseEv
+1004C98C,?OnCommand@CMultiplayerAdvancedDialog@@UAEXPBD@Z,func,GameUI/MultiplayerAdvancedDialog.cpp: same position and size as in our compiled object; linux: _ZN26CMultiplayerAdvancedDialog9OnCommandEPKc
+1004C9D8,?OnResetData@CMultiplayerAdvancedPage@@UAEXXZ,func,GameUI/MultiplayerAdvancedDialog.cpp: same position and size as in our compiled object; linux: _ZN24CMultiplayerAdvancedPage11OnResetDataEv
+1004C9F1,?OnApplyChanges@CMultiplayerAdvancedPage@@UAEXXZ,func,GameUI/MultiplayerAdvancedDialog.cpp: same position and size as in our compiled object; linux: _ZN24CMultiplayerAdvancedPage14OnApplyChangesEv
+1004CA0A,?GatherCurrentValues@CMultiplayerAdvanced@@IAEXXZ,func,GameUI/MultiplayerAdvancedDialog.cpp: same position (size 737 against 751) as in our compiled object; linux: _ZN20CMultiplayerAdvanced19GatherCurrentValuesEv
+1004CCFB,?CreateControls@CMultiplayerAdvanced@@IAEXXZ,func,GameUI/MultiplayerAdvancedDialog.cpp: same position (size 851 against 871) as in our compiled object; linux: _ZN20CMultiplayerAdvanced14CreateControlsEv
+1004D05E,?DestroyControls@CMultiplayerAdvanced@@IAEXXZ,func,GameUI/MultiplayerAdvancedDialog.cpp: same position and size as in our compiled object; linux: _ZN20CMultiplayerAdvanced15DestroyControlsEv
+1004D126,?SaveValues@CMultiplayerAdvanced@@IAEXXZ,func,GameUI/MultiplayerAdvancedDialog.cpp: same position and size as in our compiled object; linux: _ZN20CMultiplayerAdvanced10SaveValuesEv
+1004D19A,?WriteScriptHeader@CInfoDescription@@UAEXPAX@Z,func,GameUI/MultiplayerAdvancedDialog.cpp: same position and size as in our compiled object; linux: _ZN16CInfoDescription17WriteScriptHeaderEPv
+1004D2C5,?WriteFileHeader@CInfoDescription@@UAEXPAX@Z,func,GameUI/MultiplayerAdvancedDialog.cpp: same position and size as in our compiled object; linux: _ZN16CInfoDescription15WriteFileHeaderEPv
+1004D3A5,??0CInfoDescription@@QAE@PAUCPanelListPanel@@@Z,func,GameUI/MultiplayerAdvancedDialog.cpp: same position and size as in our compiled object; linux: _ZN16CInfoDescriptionC1EP15CPanelListPanel
+1004D3E4,?InitFromFile@CInfoDescription@@UAE_NPAD@Z,func,GameUI/MultiplayerAdvancedDialog.cpp: same position (size 715 against 721) as in our compiled object; linux: _ZN16CInfoDescription12InitFromFileEPc
+1004D6B0,??_GCMultiplayerAdvancedPage@@UAEPAXI@Z,func,GameUI/MultiplayerAdvancedDialog.cpp: same position and size as in our compiled object
+1004D6E0,??_GCMultiplayerAdvancedDialog@@UAEPAXI@Z,func,GameUI/MultiplayerAdvancedDialog.cpp: same position and size as in our compiled object
+1004D710,??4CScriptObject@@QAEAAV0@ABV0@@Z,func,GameUI/MultiplayerAdvancedDialog.cpp: same position and size as in our compiled object
+1004D890,??_GCDescription@@QAEPAXI@Z,func,GameUI/MultiplayerAdvancedDialog.cpp: same position and size as in our compiled object
+1004D8C0,??4Panel@vgui2@@QAEAAV01@ABV01@@Z,func,GameUI/MultiplayerAdvancedDialog.cpp: same position and size as in our compiled object
+1004DB50,??4IClientPanel@vgui2@@QAEAAV01@ABV01@@Z,func,GameUI/MultiplayerAdvancedDialog.cpp: same position and size as in our compiled object

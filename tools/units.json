@@ -3817,6 +3817,11 @@
           "name": "GameUI/GameConsoleDialog",
           "source": "src/gameui/GameConsoleDialog.cpp",
           "functions_file": "tools/units/gameui_GameUI_GameConsoleDialog.txt"
+        },
+        {
+          "name": "GameUI/MultiplayerAdvancedDialog",
+          "source": "src/gameui/MultiplayerAdvancedDialog.cpp",
+          "functions_file": "tools/units/gameui_GameUI_MultiplayerAdvancedDialog.txt"
         }
       ]
     }

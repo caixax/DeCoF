@@ -9796,28 +9796,28 @@ gameui,1004BFB7,311,,,UNKNOWN,GameUI/LoadGameDialog.cpp,,,TODO,,,linux: _ZN15CLo
 gameui,1004C0EE,744,,CLoadGameDialog::ParseSaveData,ENGINE,GameUI/LoadGameDialog.cpp,,,TODO,,linux_symbols:caller:0.778,linux: _ZN15CLoadGameDialog13ParseSaveDataEPKcS1_P9KeyValues
 gameui,1004C3D6,564,,CLoadGameDialog::ScanSavedGames,ENGINE,GameUI/LoadGameDialog.cpp,,,TODO,,linux_symbols:caller:0.538,linux: _ZN15CLoadGameDialog14ScanSavedGamesEv
 gameui,1004C610,46,,,UNKNOWN,GameUI/LoadGameDialog.cpp,,,TODO,,,
-gameui,1004C640,257,,CMultiplayerAdvancedPage::CMultiplayerAdvancedPage,ENGINE,GameUI/MultiplayerAdvancedDialog.cpp,,,TODO,,linux_symbols:string:0.472,linux: _ZN24CMultiplayerAdvancedPageC1EPN5vgui25PanelE
-gameui,1004C741,498,,CMultiplayerAdvancedDialog::CMultiplayerAdvancedDialog,ENGINE,GameUI/MultiplayerAdvancedDialog.cpp,,,TODO,,linux_symbols:string:0.442,linux: _ZN26CMultiplayerAdvancedDialogC1EPN5vgui25PanelE
-gameui,1004C933,28,,,UNKNOWN,GameUI/MultiplayerAdvancedDialog.cpp,,,TODO,,,linux: _ZN26CMultiplayerAdvancedDialogD1Ev
-gameui,1004C94F,28,,,UNKNOWN,GameUI/MultiplayerAdvancedDialog.cpp,,,TODO,,,linux: _ZN24CMultiplayerAdvancedPageD2Ev
-gameui,1004C96B,33,,,UNKNOWN,GameUI/MultiplayerAdvancedDialog.cpp,,,TODO,,,linux: _ZN26CMultiplayerAdvancedDialog7OnCloseEv
-gameui,1004C98C,76,,,UNKNOWN,GameUI/MultiplayerAdvancedDialog.cpp,,,TODO,,,linux: _ZN26CMultiplayerAdvancedDialog9OnCommandEPKc
-gameui,1004C9D8,25,,,UNKNOWN,GameUI/MultiplayerAdvancedDialog.cpp,,,TODO,,,linux: _ZN24CMultiplayerAdvancedPage11OnResetDataEv
-gameui,1004C9F1,25,,,UNKNOWN,GameUI/MultiplayerAdvancedDialog.cpp,,,TODO,,,linux: _ZN24CMultiplayerAdvancedPage14OnApplyChangesEv
-gameui,1004CA0A,737,,,UNKNOWN,GameUI/MultiplayerAdvancedDialog.cpp,,,TODO,,,linux: _ZN20CMultiplayerAdvanced19GatherCurrentValuesEv
-gameui,1004CCFB,851,,CMultiplayerAdvanced::CreateControls,ENGINE,GameUI/MultiplayerAdvancedDialog.cpp,,,TODO,,linux_symbols:string:0.809,linux: _ZN20CMultiplayerAdvanced14CreateControlsEv
-gameui,1004D05E,200,,,UNKNOWN,GameUI/MultiplayerAdvancedDialog.cpp,,,TODO,,,linux: _ZN20CMultiplayerAdvanced15DestroyControlsEv
-gameui,1004D126,116,,,UNKNOWN,GameUI/MultiplayerAdvancedDialog.cpp,,,TODO,,,linux: _ZN20CMultiplayerAdvanced10SaveValuesEv
-gameui,1004D19A,299,,CInfoDescription::WriteScriptHeader,ENGINE,GameUI/MultiplayerAdvancedDialog.cpp,,,TODO,,linux_symbols:string:0.75,linux: _ZN16CInfoDescription17WriteScriptHeaderEPv
-gameui,1004D2C5,224,,CInfoDescription::WriteFileHeader,ENGINE,GameUI/MultiplayerAdvancedDialog.cpp,,,TODO,,linux_symbols:string:0.75,linux: _ZN16CInfoDescription15WriteFileHeaderEPv
-gameui,1004D3A5,63,,CInfoDescription::CInfoDescription,ENGINE,GameUI/MultiplayerAdvancedDialog.cpp,,,TODO,,linux_symbols:string:0.75,linux: _ZN16CInfoDescriptionC1EP15CPanelListPanel
-gameui,1004D3E4,715,,CInfoDescription::InitFromFile,ENGINE,GameUI/MultiplayerAdvancedDialog.cpp,,,TODO,,linux_symbols:string:0.6,linux: _ZN16CInfoDescription12InitFromFileEPc
-gameui,1004D6B0,46,,,UNKNOWN,GameUI/MultiplayerAdvancedDialog.cpp,,,TODO,,,
-gameui,1004D6E0,46,,,UNKNOWN,GameUI/MultiplayerAdvancedDialog.cpp,,,TODO,,,
-gameui,1004D710,371,,,UNKNOWN,GameUI/MultiplayerAdvancedDialog.cpp,,,TODO,,,
-gameui,1004D890,46,,,UNKNOWN,GameUI/MultiplayerAdvancedDialog.cpp,,,TODO,,,
-gameui,1004D8C0,656,,,UNKNOWN,GameUI/MultiplayerAdvancedDialog.cpp,,,TODO,,,
-gameui,1004DB50,16,,,UNKNOWN,GameUI/MultiplayerAdvancedDialog.cpp,,,TODO,,,
+gameui,1004C640,257,??0CMultiplayerAdvancedPage@@QAE@PAVPanel@vgui2@@@Z,public: __thiscall CMultiplayerAdvancedPage::CMultiplayerAdvancedPage(class vgui2::Panel *),ENGINE,GameUI/MultiplayerAdvancedDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN24CMultiplayerAdvancedPageC1EPN5vgui25PanelE
+gameui,1004C741,498,??0CMultiplayerAdvancedDialog@@QAE@PAVPanel@vgui2@@@Z,public: __thiscall CMultiplayerAdvancedDialog::CMultiplayerAdvancedDialog(class vgui2::Panel *),ENGINE,GameUI/MultiplayerAdvancedDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN26CMultiplayerAdvancedDialogC1EPN5vgui25PanelE
+gameui,1004C933,28,??1CMultiplayerAdvancedDialog@@UAE@XZ,public: virtual __thiscall CMultiplayerAdvancedDialog::~CMultiplayerAdvancedDialog(void),UNKNOWN,GameUI/MultiplayerAdvancedDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN26CMultiplayerAdvancedDialogD1Ev
+gameui,1004C94F,28,??1CMultiplayerAdvancedPage@@UAE@XZ,public: virtual __thiscall CMultiplayerAdvancedPage::~CMultiplayerAdvancedPage(void),UNKNOWN,GameUI/MultiplayerAdvancedDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN24CMultiplayerAdvancedPageD2Ev
+gameui,1004C96B,33,?OnClose@CMultiplayerAdvancedDialog@@UAEXXZ,public: virtual void __thiscall CMultiplayerAdvancedDialog::OnClose(void),UNKNOWN,GameUI/MultiplayerAdvancedDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN26CMultiplayerAdvancedDialog7OnCloseEv
+gameui,1004C98C,76,?OnCommand@CMultiplayerAdvancedDialog@@UAEXPBD@Z,public: virtual void __thiscall CMultiplayerAdvancedDialog::OnCommand(char const *),UNKNOWN,GameUI/MultiplayerAdvancedDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN26CMultiplayerAdvancedDialog9OnCommandEPKc
+gameui,1004C9D8,25,?OnResetData@CMultiplayerAdvancedPage@@UAEXXZ,public: virtual void __thiscall CMultiplayerAdvancedPage::OnResetData(void),UNKNOWN,GameUI/MultiplayerAdvancedDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN24CMultiplayerAdvancedPage11OnResetDataEv
+gameui,1004C9F1,25,?OnApplyChanges@CMultiplayerAdvancedPage@@UAEXXZ,public: virtual void __thiscall CMultiplayerAdvancedPage::OnApplyChanges(void),UNKNOWN,GameUI/MultiplayerAdvancedDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN24CMultiplayerAdvancedPage14OnApplyChangesEv
+gameui,1004CA0A,737,?GatherCurrentValues@CMultiplayerAdvanced@@IAEXXZ,protected: void __thiscall CMultiplayerAdvanced::GatherCurrentValues(void),UNKNOWN,GameUI/MultiplayerAdvancedDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN20CMultiplayerAdvanced19GatherCurrentValuesEv
+gameui,1004CCFB,851,?CreateControls@CMultiplayerAdvanced@@IAEXXZ,protected: void __thiscall CMultiplayerAdvanced::CreateControls(void),ENGINE,GameUI/MultiplayerAdvancedDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN20CMultiplayerAdvanced14CreateControlsEv
+gameui,1004D05E,200,?DestroyControls@CMultiplayerAdvanced@@IAEXXZ,protected: void __thiscall CMultiplayerAdvanced::DestroyControls(void),UNKNOWN,GameUI/MultiplayerAdvancedDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN20CMultiplayerAdvanced15DestroyControlsEv
+gameui,1004D126,116,?SaveValues@CMultiplayerAdvanced@@IAEXXZ,protected: void __thiscall CMultiplayerAdvanced::SaveValues(void),UNKNOWN,GameUI/MultiplayerAdvancedDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN20CMultiplayerAdvanced10SaveValuesEv
+gameui,1004D19A,299,?WriteScriptHeader@CInfoDescription@@UAEXPAX@Z,public: virtual void __thiscall CInfoDescription::WriteScriptHeader(void *),ENGINE,GameUI/MultiplayerAdvancedDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN16CInfoDescription17WriteScriptHeaderEPv
+gameui,1004D2C5,224,?WriteFileHeader@CInfoDescription@@UAEXPAX@Z,public: virtual void __thiscall CInfoDescription::WriteFileHeader(void *),ENGINE,GameUI/MultiplayerAdvancedDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN16CInfoDescription15WriteFileHeaderEPv
+gameui,1004D3A5,63,??0CInfoDescription@@QAE@PAUCPanelListPanel@@@Z,public: __thiscall CInfoDescription::CInfoDescription(struct CPanelListPanel *),ENGINE,GameUI/MultiplayerAdvancedDialog.cpp,,,TODO,99.99,gameui_manual.csv,"relocation targets differ (instructions identical): retail ??0CRegKey@ATL@@QAE@PAVCAtlTransactionManager@1@@Z, ours ??0CDescription@@QAE@PAUCPanelListPanel@@@Z"
+gameui,1004D3E4,715,?InitFromFile@CInfoDescription@@UAE_NPAD@Z,public: virtual bool __thiscall CInfoDescription::InitFromFile(char *),ENGINE,GameUI/MultiplayerAdvancedDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN16CInfoDescription12InitFromFileEPc
+gameui,1004D6B0,46,??_GCMultiplayerAdvancedPage@@UAEPAXI@Z,public: virtual void * __thiscall CMultiplayerAdvancedPage::`scalar deleting destructor'(unsigned int),UNKNOWN,GameUI/MultiplayerAdvancedDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1004D6E0,46,??_GCMultiplayerAdvancedDialog@@UAEPAXI@Z,public: virtual void * __thiscall CMultiplayerAdvancedDialog::`scalar deleting destructor'(unsigned int),UNKNOWN,GameUI/MultiplayerAdvancedDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1004D710,371,??4CScriptObject@@QAEAAV0@ABV0@@Z,public: class CScriptObject & __thiscall CScriptObject::operator=(class CScriptObject const &),UNKNOWN,GameUI/MultiplayerAdvancedDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1004D890,46,??_GCDescription@@QAEPAXI@Z,public: void * __thiscall CDescription::`scalar deleting destructor'(unsigned int),UNKNOWN,GameUI/MultiplayerAdvancedDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1004D8C0,656,??4Panel@vgui2@@QAEAAV01@ABV01@@Z,public: class vgui2::Panel & __thiscall vgui2::Panel::operator=(class vgui2::Panel const &),UNKNOWN,GameUI/MultiplayerAdvancedDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1004DB50,16,??4IClientPanel@vgui2@@QAEAAV01@ABV01@@Z,public: class vgui2::IClientPanel & __thiscall vgui2::IClientPanel::operator=(class vgui2::IClientPanel const &),UNKNOWN,GameUI/MultiplayerAdvancedDialog.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,1004DB60,671,,CNewGameDialog::CNewGameDialog,ENGINE,GameUI/NewGameDialog.cpp,,,TODO,,linux_symbols:string:0.48,linux: _ZN14CNewGameDialogC2EPN5vgui25PanelE
 gameui,1004DDFF,28,,,UNKNOWN,GameUI/NewGameDialog.cpp,,,TODO,,,linux: _ZN14CNewGameDialogD1Ev
 gameui,1004DE1B,442,,CNewGameDialog::OnCommand,ENGINE,GameUI/NewGameDialog.cpp,,,TODO,,linux_symbols:string:0.875,linux: _ZN14CNewGameDialog9OnCommandEPKc
