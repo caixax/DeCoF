@@ -3827,6 +3827,11 @@
           "name": "GameUI/CreateMultiplayerGameGameplayPage",
           "source": "src/gameui/CreateMultiplayerGameGameplayPage.cpp",
           "functions_file": "tools/units/gameui_GameUI_CreateMultiplayerGameGameplayPage.txt"
+        },
+        {
+          "name": "GameUI/CreateMultiplayerGameDialog",
+          "source": "src/gameui/CreateMultiplayerGameDialog.cpp",
+          "functions_file": "tools/units/gameui_GameUI_CreateMultiplayerGameDialog.txt"
         }
       ]
     }

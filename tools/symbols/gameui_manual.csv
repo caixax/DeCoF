@@ -3186,3 +3186,11 @@ va,name,kind,evidence
 10028F95,?WriteFileHeader@CServerDescription@@UAEXPAX@Z,func,GameUI/CreateMultiplayerGameGameplayPage.cpp: same position and size as in our compiled object; linux: _ZN18CServerDescription15WriteFileHeaderEPv
 100290B0,??_GCCreateMultiplayerGameGameplayPage@@UAEPAXI@Z,func,GameUI/CreateMultiplayerGameGameplayPage.cpp: same position and size as in our compiled object
 100290E0,?getHint@CDescription@@QAEPBDXZ,func,GameUI/CreateMultiplayerGameGameplayPage.cpp: same position and size as in our compiled object
+100276A0,??0CCreateMultiplayerGameDialog@@QAE@PAVPanel@vgui2@@@Z,func,GameUI/CreateMultiplayerGameDialog.cpp: same position and size as in our compiled object; linux: _ZN28CCreateMultiplayerGameDialogC2EPN5vgui25PanelE
+10027C85,??1CCreateMultiplayerGameDialog@@UAE@XZ,func,GameUI/CreateMultiplayerGameDialog.cpp: same position and size as in our compiled object; linux: _ZN28CCreateMultiplayerGameDialogD2Ev
+10027CD1,?SetTitle@CCreateMultiplayerGameDialog@@MAEXPBD_N@Z,func,GameUI/CreateMultiplayerGameDialog.cpp: same position and size as in our compiled object; linux: _ZN28CCreateMultiplayerGameDialog8SetTitleEPKcb
+10027D90,?OnOK@CCreateMultiplayerGameDialog@@MAEXXZ,func,GameUI/CreateMultiplayerGameDialog.cpp: same position (size 1269 against 1261) as in our compiled object; linux: _ZN28CCreateMultiplayerGameDialog4OnOKEv
+10028285,?OnClose@CCreateMultiplayerGameDialog@@MAEXXZ,func,GameUI/CreateMultiplayerGameDialog.cpp: same position and size as in our compiled object; linux: _ZN28CCreateMultiplayerGameDialog7OnCloseEv
+100282B0,?GetMessageMap@PropertyDialog@vgui2@@UAEPAUPanelMessageMap@2@XZ,func,GameUI/CreateMultiplayerGameDialog.cpp: same position and size as in our compiled object
+100282F0,?GetPanelClassName@PropertyDialog@vgui2@@SAPBDXZ,func,GameUI/CreateMultiplayerGameDialog.cpp: same position and size as in our compiled object
+10028300,??_GCCreateMultiplayerGameDialog@@UAEPAXI@Z,func,GameUI/CreateMultiplayerGameDialog.cpp: same position and size as in our compiled object
