@@ -15914,7 +15914,7 @@ hl,1008A280,38,?HasAlienGibs@CBaseMonster@@UAEHXZ,CBaseMonster::HasAlienGibs,HLS
 hl,1008A2B0,38,?HasHumanGibs@CBaseMonster@@UAEHXZ,CBaseMonster::HasHumanGibs,HLSDK,dlls/combat.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1008A2E0,37,?Instance@CBaseEntity@@SAPAV1@PAUentvars_s@@@Z,CBaseEntity::Instance,UNKNOWN,dlls/combat.cpp,,,MATCHED,100,,
 hl,1008A310,24,?KillRemove@CBaseMonster@@QAEXXZ,CBaseMonster::KillRemove,COF,dlls/combat.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,1008A330,262,?Killed@CBaseMonster@@UAEXPAUentvars_s@@H@Z,CBaseMonster::Killed,HLSDK,dlls/combat.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,EQUIVALENT,85.21,hl_1.55_to_1.6a.csv,"EQUIVALENT: same statements as 1.55; retail keeps the HasMemory(bits_MEMORY_KILLED) gib-and-return block inline and the later ShouldGibMonster test jumps back into it, ours moves that block out of line; 7 source shapes of both blocks gave identical code"
+hl,1008A330,262,?Killed@CBaseMonster@@UAEXPAUentvars_s@@H@Z,CBaseMonster::Killed,HLSDK,dlls/combat.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1008A440,193,?LimitVelocity@CGib@@QAEXXZ,CGib::LimitVelocity,HLSDK,dlls/combat.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,refbytes:paranoia:dlls__combat.obj:score3,
 hl,1008A510,384,?MakeDamageBloodDecal@CBaseMonster@@QAEXHMPAUTraceResult@@ABVVector@@@Z,CBaseMonster::MakeDamageBloodDecal,UNKNOWN,dlls/combat.cpp,,,MATCHED,100,,
 hl,1008A690,848,?RadiusDamage@@YAXVVector@@PAUentvars_s@@1MMHH@Z,RadiusDamage,HLSDK,dlls/combat.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,

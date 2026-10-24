@@ -805,7 +805,8 @@ BOOL CBaseMonster::ShouldGibMonster( int iGib )
 
 void CBaseMonster::CallGibMonster( void )
 {
-/*
+	return;
+
 	BOOL fade = FALSE;
 
 	if ( HasHumanGibs() )
@@ -843,7 +844,6 @@ void CBaseMonster::CallGibMonster( void )
 
 	if ( ShouldFadeOnDeath() && !fade )
 		UTIL_Remove(this);
-*/
 }
 
 
