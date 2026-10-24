@@ -5259,3 +5259,10 @@ va,name,kind,evidence
 10039360,??_GIRunGameEngine@@UAEPAXI@Z,func,GameUI/RunGameEngine.cpp: same position and size as in our compiled object
 100A28B0,?AddNewBlob@CMemoryPool@@AAEXXZ,func,public/MemPool.cpp (shared with hw.dll): same position and size as in our compiled object; linux: _ZN11CMemoryPool10AddNewBlobEv
 100A2A51,?Free@CMemoryPool@@QAEXPAX@Z,func,public/MemPool.cpp (shared with hw.dll): same position and size as in our compiled object; linux: _ZN11CMemoryPool4FreeEPv
+1004FA60,??0COptionsDialog@@QAE@PAVPanel@vgui2@@@Z,func,GameUI/OptionsDialog.cpp: same position and size as in our compiled object; linux: _ZN14COptionsDialogC2EPN5vgui25PanelE
+1004FC6E,??1COptionsDialog@@UAE@XZ,func,GameUI/OptionsDialog.cpp: same position and size as in our compiled object; linux: _ZN14COptionsDialogD2Ev
+1004FC8A,?SetTitle@COptionsDialog@@UAEXPBD_N@Z,func,GameUI/OptionsDialog.cpp: same position and size as in our compiled object; linux: _ZN14COptionsDialog8SetTitleEPKcb
+1004FD49,?Activate@COptionsDialog@@UAEXXZ,func,GameUI/OptionsDialog.cpp: same position and size as in our compiled object; linux: _ZN14COptionsDialog8ActivateEv
+1004FD66,?Run@COptionsDialog@@QAEXXZ,func,GameUI/OptionsDialog.cpp: same position and size as in our compiled object; linux: _ZN14COptionsDialog3RunEv
+1004FD94,?OnClose@COptionsDialog@@UAEXXZ,func,GameUI/OptionsDialog.cpp: same position and size as in our compiled object; linux: _ZN14COptionsDialog7OnCloseEv
+1004FDC0,??_GCOptionsDialog@@UAEPAXI@Z,func,GameUI/OptionsDialog.cpp: same position and size as in our compiled object

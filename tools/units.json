@@ -4133,6 +4133,11 @@
           "name": "GameUI/OptionsSubKeyboard",
           "source": "src/gameui/OptionsSubKeyboard.cpp",
           "functions_file": "tools/units/gameui_GameUI_OptionsSubKeyboard.txt"
+        },
+        {
+          "name": "GameUI/OptionsDialog",
+          "source": "src/gameui/OptionsDialog.cpp",
+          "functions_file": "tools/units/gameui_GameUI_OptionsDialog.txt"
         }
       ]
     }

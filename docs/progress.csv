@@ -9849,13 +9849,13 @@ gameui,1004F32B,824,?ParseSaveData@CSaveGameDialog@@IAE_NPBD0PAVKeyValues@@@Z,"p
 gameui,1004F663,822,?ScanSavedGames@CSaveGameDialog@@IAEXXZ,protected: void __thiscall CSaveGameDialog::ScanSavedGames(void),ENGINE,GameUI/SaveGameDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN15CSaveGameDialog14ScanSavedGamesEv
 gameui,1004F999,139,?FindSaveSlot@CSaveGameDialog@@IAEPBDXZ,protected: char const * __thiscall CSaveGameDialog::FindSaveSlot(void),ENGINE,GameUI/SaveGameDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN15CSaveGameDialog12FindSaveSlotEv
 gameui,1004FA30,46,??_GCSaveGameDialog@@UAEPAXI@Z,public: virtual void * __thiscall CSaveGameDialog::`scalar deleting destructor'(unsigned int),UNKNOWN,GameUI/SaveGameDialog.cpp,,,MATCHED,100,gameui_manual.csv,
-gameui,1004FA60,526,,COptionsDialog::COptionsDialog,ENGINE,GameUI/OptionsDialog.cpp,,,TODO,,linux_symbols:string:0.526,linux: _ZN14COptionsDialogC2EPN5vgui25PanelE
-gameui,1004FC6E,28,,,UNKNOWN,GameUI/OptionsDialog.cpp,,,TODO,,,linux: _ZN14COptionsDialogD2Ev
-gameui,1004FC8A,191,,,UNKNOWN,GameUI/OptionsDialog.cpp,,,TODO,,,linux: _ZN14COptionsDialog8SetTitleEPKcb
-gameui,1004FD49,29,,,UNKNOWN,GameUI/OptionsDialog.cpp,,,TODO,,,linux: _ZN14COptionsDialog8ActivateEv
-gameui,1004FD66,46,,,UNKNOWN,GameUI/OptionsDialog.cpp,,,TODO,,,linux: _ZN14COptionsDialog3RunEv
-gameui,1004FD94,33,,,UNKNOWN,GameUI/OptionsDialog.cpp,,,TODO,,,linux: _ZN14COptionsDialog7OnCloseEv
-gameui,1004FDC0,46,,,UNKNOWN,GameUI/OptionsDialog.cpp,,,TODO,,,
+gameui,1004FA60,526,??0COptionsDialog@@QAE@PAVPanel@vgui2@@@Z,public: __thiscall COptionsDialog::COptionsDialog(class vgui2::Panel *),ENGINE,GameUI/OptionsDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN14COptionsDialogC2EPN5vgui25PanelE
+gameui,1004FC6E,28,??1COptionsDialog@@UAE@XZ,public: virtual __thiscall COptionsDialog::~COptionsDialog(void),UNKNOWN,GameUI/OptionsDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN14COptionsDialogD2Ev
+gameui,1004FC8A,191,?SetTitle@COptionsDialog@@UAEXPBD_N@Z,"public: virtual void __thiscall COptionsDialog::SetTitle(char const *,bool)",UNKNOWN,GameUI/OptionsDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN14COptionsDialog8SetTitleEPKcb
+gameui,1004FD49,29,?Activate@COptionsDialog@@UAEXXZ,public: virtual void __thiscall COptionsDialog::Activate(void),UNKNOWN,GameUI/OptionsDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN14COptionsDialog8ActivateEv
+gameui,1004FD66,46,?Run@COptionsDialog@@QAEXXZ,public: void __thiscall COptionsDialog::Run(void),UNKNOWN,GameUI/OptionsDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN14COptionsDialog3RunEv
+gameui,1004FD94,33,?OnClose@COptionsDialog@@UAEXXZ,public: virtual void __thiscall COptionsDialog::OnClose(void),UNKNOWN,GameUI/OptionsDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN14COptionsDialog7OnCloseEv
+gameui,1004FDC0,46,??_GCOptionsDialog@@UAEPAXI@Z,public: virtual void * __thiscall COptionsDialog::`scalar deleting destructor'(unsigned int),UNKNOWN,GameUI/OptionsDialog.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,1004FDF0,422,??0COptionsSubAdvanced@@QAE@PAVPanel@vgui2@@@Z,public: __thiscall COptionsSubAdvanced::COptionsSubAdvanced(class vgui2::Panel *),ENGINE,GameUI/OptionsSubAdvanced.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN19COptionsSubAdvancedC2EPN5vgui25PanelE
 gameui,1004FF96,130,?OnCommand@COptionsSubAdvanced@@UAEXPBD@Z,public: virtual void __thiscall COptionsSubAdvanced::OnCommand(char const *),UNKNOWN,GameUI/OptionsSubAdvanced.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN19COptionsSubAdvanced9OnCommandEPKc
 gameui,10050018,28,??1COptionsSubAdvanced@@UAE@XZ,public: virtual __thiscall COptionsSubAdvanced::~COptionsSubAdvanced(void),UNKNOWN,GameUI/OptionsSubAdvanced.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN19COptionsSubAdvancedD2Ev
