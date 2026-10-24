@@ -8539,11 +8539,11 @@ gameui,100248A4,734,,,UNKNOWN,GameUI/ChangeGameDialog.cpp,,,TODO,,,
 gameui,10024B82,299,,,UNKNOWN,GameUI/ChangeGameDialog.cpp,,,TODO,,,
 gameui,10024CAD,33,,,UNKNOWN,GameUI/ChangeGameDialog.cpp,,,TODO,,,
 gameui,10024CD0,46,,,UNKNOWN,GameUI/ChangeGameDialog.cpp,,,TODO,,,
-gameui,10024D00,64,_MD5Init,MD5Init,ENGINE,public/checksum_md5.cpp,,,TODO,,linux_symbols:consts:1.0,linux: _Z7MD5InitP12MD5Context_t
-gameui,10024D40,301,,,UNKNOWN,public/checksum_md5.cpp,,,TODO,,,linux: _Z9MD5UpdateP12MD5Context_tPKhj
-gameui,10024E6D,226,,,UNKNOWN,public/checksum_md5.cpp,,,TODO,,,linux: _Z8MD5FinalPhP12MD5Context_t
-gameui,10024F4F,3875,_MD5Transform,MD5Transform,ENGINE,public/checksum_md5.cpp,,,TODO,,linux_symbols:consts:0.92,linux: _Z12MD5TransformPjPKj
-gameui,10025E72,112,,,UNKNOWN,public/checksum_md5.cpp,,,TODO,,,linux: _Z9MD5_PrintPh
+gameui,10024D00,64,?MD5Init@@YAXPAUMD5Context_t@@@Z,void __cdecl MD5Init(struct MD5Context_t *),ENGINE,public/checksum_md5.cpp,,,MATCHED,100,gameui_manual.csv,linux: _Z7MD5InitP12MD5Context_t
+gameui,10024D40,301,?MD5Update@@YAXPAUMD5Context_t@@PBEI@Z,"void __cdecl MD5Update(struct MD5Context_t *,unsigned char const *,unsigned int)",UNKNOWN,public/checksum_md5.cpp,,,MATCHED,100,gameui_manual.csv,linux: _Z9MD5UpdateP12MD5Context_tPKhj
+gameui,10024E6D,226,?MD5Final@@YAXQAEPAUMD5Context_t@@@Z,"void __cdecl MD5Final(unsigned char * const,struct MD5Context_t *)",UNKNOWN,public/checksum_md5.cpp,,,MATCHED,100,gameui_manual.csv,linux: _Z8MD5FinalPhP12MD5Context_t
+gameui,10024F4F,3875,?MD5Transform@@YAXQAIQBI@Z,"void __cdecl MD5Transform(unsigned int * const,unsigned int const * const)",ENGINE,public/checksum_md5.cpp,,,MATCHED,100,gameui_manual.csv,linux: _Z12MD5TransformPjPKj
+gameui,10025E72,112,?MD5_Print@@YAPADQAE@Z,char * __cdecl MD5_Print(unsigned char * const),UNKNOWN,public/checksum_md5.cpp,,,MATCHED,100,gameui_manual.csv,linux: _Z9MD5_PrintPh
 gameui,10025EF0,50,,,UNKNOWN,HLTV/common/common.cpp,,,TODO,,,
 gameui,10025F22,403,,,UNKNOWN,HLTV/common/common.cpp,,,TODO,,,
 gameui,100260B5,66,_COM_TimeString,COM_TimeString,ENGINE,HLTV/common/common.cpp,,,TODO,,linux_symbols:string:0.375,linux: _Z14COM_TimeStringv

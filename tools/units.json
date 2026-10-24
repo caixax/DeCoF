@@ -3842,6 +3842,11 @@
           "name": "GameUI/CreateMultiplayerGameDialog",
           "source": "src/gameui/CreateMultiplayerGameDialog.cpp",
           "functions_file": "tools/units/gameui_GameUI_CreateMultiplayerGameDialog.txt"
+        },
+        {
+          "name": "public/checksum_md5",
+          "source": "src/public/checksum_md5.cpp",
+          "functions_file": "tools/units/gameui_public_checksum_md5.txt"
         }
       ]
     }

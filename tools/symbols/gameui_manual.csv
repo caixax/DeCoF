@@ -3552,3 +3552,8 @@ va,name,kind,evidence
 100A0AA0,?Purge@?$CUtlMemory@Ucolumn_t@SectionedListPanel@vgui2@@@@QAEXXZ,func,"vgui2/controls/SectionedListPanel.cpp: COMDAT tail, same position and size as in our compiled object (template members in declaration order)"
 100A0AF0,?IsExternallyAllocated@?$CUtlMemory@Ucolumn_t@SectionedListPanel@vgui2@@@@QBE_NXZ,func,"vgui2/controls/SectionedListPanel.cpp: COMDAT tail, same position and size as in our compiled object (template members in declaration order)"
 100A0B10,?Destruct@@YAXPAUcolumn_t@SectionedListPanel@vgui2@@@Z,func,"vgui2/controls/SectionedListPanel.cpp: COMDAT tail, same position and size as in our compiled object (template members in declaration order)"
+10024D00,?MD5Init@@YAXPAUMD5Context_t@@@Z,func,public/checksum_md5.cpp: same position and size as in our compiled object (hw crc.c MD5 code); linux: _Z7MD5InitP12MD5Context_t
+10024D40,?MD5Update@@YAXPAUMD5Context_t@@PBEI@Z,func,public/checksum_md5.cpp: same position and size as in our compiled object (hw crc.c MD5 code); linux: _Z9MD5UpdateP12MD5Context_tPKhj
+10024E6D,?MD5Final@@YAXQAEPAUMD5Context_t@@@Z,func,public/checksum_md5.cpp: same position and size as in our compiled object (hw crc.c MD5 code); linux: _Z8MD5FinalPhP12MD5Context_t
+10024F4F,?MD5Transform@@YAXQAIQBI@Z,func,public/checksum_md5.cpp: same position and size as in our compiled object (hw crc.c MD5 code); linux: _Z12MD5TransformPjPKj
+10025E72,?MD5_Print@@YAPADQAE@Z,func,public/checksum_md5.cpp: same position and size as in our compiled object (hw crc.c MD5_Print with sprintf and strcat); linux: _Z9MD5_PrintPh
