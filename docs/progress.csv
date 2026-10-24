@@ -8464,14 +8464,14 @@ gameui,10022C1B,114,?FastClear@BitBuffer@@QAEXXZ,public: void __thiscall BitBuff
 gameui,10022C8D,37,?ConcatBuffer@BitBuffer@@QAEXPAV1@@Z,public: void __thiscall BitBuffer::ConcatBuffer(class BitBuffer *),UNKNOWN,HLTV/common/BitBuffer.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN9BitBuffer12ConcatBufferEPS_
 gameui,10022CB2,36,?WriteCoord@BitBuffer@@QAEXM@Z,public: void __thiscall BitBuffer::WriteCoord(float),UNKNOWN,HLTV/common/BitBuffer.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN9BitBuffer10WriteCoordEf
 gameui,10022CE0,46,??_GBitBuffer@@UAEPAXI@Z,public: virtual void * __thiscall BitBuffer::`scalar deleting destructor'(unsigned int),UNKNOWN,HLTV/common/BitBuffer.cpp,,,MATCHED,100,gameui_manual.csv,
-gameui,10022D10,340,,,UNKNOWN,GameUI/BitmapButton.cpp,,,TODO,,,linux: _ZN13CBitmapButtonC1EPN5vgui25PanelEPKcS4_S4_S4_S4_S4_
-gameui,10022E74,279,,,UNKNOWN,GameUI/BitmapButton.cpp,,,TODO,,,linux: _ZN13CBitmapButton15PaintBackgroundEv
-gameui,10022F8B,157,,CBitmapButton::ApplySchemeSettings,ENGINE,GameUI/BitmapButton.cpp,,,TODO,,linux_symbols:string:0.861,linux: _ZN13CBitmapButton19ApplySchemeSettingsEPN5vgui27ISchemeE
-gameui,10023028,218,,,UNKNOWN,GameUI/BitmapButton.cpp,,,TODO,,,linux: _ZN13CBitmapButton7OnThinkEv
-gameui,10023102,34,,,UNKNOWN,GameUI/BitmapButton.cpp,,,TODO,,,linux: _ZN13CBitmapButton5FlashEv
-gameui,10023130,46,,,UNKNOWN,GameUI/BitmapButton.cpp,,,TODO,,,
-gameui,10023160,19,,,UNKNOWN,GameUI/BitmapButton.cpp,,,TODO,,,
-gameui,10023180,13,,,UNKNOWN,GameUI/BitmapButton.cpp,,,TODO,,,
+gameui,10022D10,340,??0CBitmapButton@@QAE@PAVPanel@vgui2@@PBD11111@Z,"public: __thiscall CBitmapButton::CBitmapButton(class vgui2::Panel *,char const *,char const *,char const *,char const *,char const *,char const *)",UNKNOWN,GameUI/BitmapButton.cpp,,,MATCHED,100,,linux: _ZN13CBitmapButtonC1EPN5vgui25PanelEPKcS4_S4_S4_S4_S4_
+gameui,10022E74,279,?PaintBackground@CBitmapButton@@UAEXXZ,public: virtual void __thiscall CBitmapButton::PaintBackground(void),UNKNOWN,GameUI/BitmapButton.cpp,,,MATCHED,100,,linux: _ZN13CBitmapButton15PaintBackgroundEv
+gameui,10022F8B,157,?ApplySchemeSettings@CBitmapButton@@UAEXPAVIScheme@vgui2@@@Z,public: virtual void __thiscall CBitmapButton::ApplySchemeSettings(class vgui2::IScheme *),ENGINE,GameUI/BitmapButton.cpp,,,MATCHED,100,linux_symbols:string:0.861,linux: _ZN13CBitmapButton19ApplySchemeSettingsEPN5vgui27ISchemeE
+gameui,10023028,218,?OnThink@CBitmapButton@@UAEXXZ,public: virtual void __thiscall CBitmapButton::OnThink(void),UNKNOWN,GameUI/BitmapButton.cpp,,,MATCHED,100,,linux: _ZN13CBitmapButton7OnThinkEv
+gameui,10023102,34,?Flash@CBitmapButton@@QAEXXZ,public: void __thiscall CBitmapButton::Flash(void),UNKNOWN,GameUI/BitmapButton.cpp,,,MATCHED,100,,linux: _ZN13CBitmapButton5FlashEv
+gameui,10023130,46,??_GCBitmapButton@@UAEPAXI@Z,public: virtual void * __thiscall CBitmapButton::`scalar deleting destructor'(unsigned int),UNKNOWN,GameUI/BitmapButton.cpp,,,MATCHED,100,,
+gameui,10023160,19,??1CBitmapButton@@UAE@XZ,public: virtual __thiscall CBitmapButton::~CBitmapButton(void),UNKNOWN,GameUI/BitmapButton.cpp,,,MATCHED,100,,
+gameui,10023180,13,?DrawFocusBorder@CBitmapButton@@UAEXHHHH@Z,"public: virtual void __thiscall CBitmapButton::DrawFocusBorder(int,int,int,int)",UNKNOWN,GameUI/BitmapButton.cpp,,,MATCHED,100,,
 gameui,10023190,60,,,UNKNOWN,HLTV/common/byteorder.cpp,,,TODO,,,linux: _Z8BigShorts
 gameui,100231CC,9,,,UNKNOWN,HLTV/common/byteorder.cpp,,,TODO,,,linux: _Z11LittleShorts
 gameui,100231D5,115,,,UNKNOWN,HLTV/common/byteorder.cpp,,,TODO,,,linux: _Z7BigLongi

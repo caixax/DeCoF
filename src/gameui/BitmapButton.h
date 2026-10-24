@@ -23,7 +23,7 @@ public:
 	CBitmapButton( vgui2::Panel *parent, const char *panelName, const char *text, const char *normalImage, const char *armedImage, const char *clickedImage, const char *disabledImage );
 
 	virtual void PaintBackground();
-	virtual void DrawFocusBorder( int tx0, int ty0, int tx1, int ty1 );
+	virtual void DrawFocusBorder( int tx0, int ty0, int tx1, int ty1 ) {}
 	virtual void ApplySchemeSettings( vgui2::IScheme *pScheme );
 	virtual void OnThink();
 

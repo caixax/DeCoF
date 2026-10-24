@@ -4870,3 +4870,11 @@ va,name,kind,evidence
 100461A0,?ApplyChanges@CKeyToggleCheckButton@@QAEXXZ,func,GameUI/KeyToggleCheckButton.cpp: same position and size as in our compiled object; linux: _ZN21CKeyToggleCheckButton12ApplyChangesEv
 1004622F,?HasBeenModified@CKeyToggleCheckButton@@QAE_NXZ,func,GameUI/KeyToggleCheckButton.cpp: same position and size as in our compiled object; linux: _ZN21CKeyToggleCheckButton15HasBeenModifiedEv
 10046270,??_GCKeyToggleCheckButton@@UAEPAXI@Z,func,GameUI/KeyToggleCheckButton.cpp: same position and size as in our compiled object
+10022D10,??0CBitmapButton@@QAE@PAVPanel@vgui2@@PBD11111@Z,func,GameUI/BitmapButton.cpp: same position as in our compiled object; linux: _ZN13CBitmapButtonC1EPN5vgui25PanelEPKcS4_S4_S4_S4_S4_
+10022E74,?PaintBackground@CBitmapButton@@UAEXXZ,func,GameUI/BitmapButton.cpp: same position and size as in our compiled object; linux: _ZN13CBitmapButton15PaintBackgroundEv
+10022F8B,?ApplySchemeSettings@CBitmapButton@@UAEXPAVIScheme@vgui2@@@Z,func,GameUI/BitmapButton.cpp: same position and size as in our compiled object; linux: _ZN13CBitmapButton19ApplySchemeSettingsEPN5vgui27ISchemeE
+10023028,?OnThink@CBitmapButton@@UAEXXZ,func,GameUI/BitmapButton.cpp: same position and size as in our compiled object; linux: _ZN13CBitmapButton7OnThinkEv
+10023102,?Flash@CBitmapButton@@QAEXXZ,func,GameUI/BitmapButton.cpp: same position and size as in our compiled object; linux: _ZN13CBitmapButton5FlashEv
+10023130,??_GCBitmapButton@@UAEPAXI@Z,func,GameUI/BitmapButton.cpp: same position and size as in our compiled object
+10023160,??1CBitmapButton@@UAE@XZ,func,"GameUI/BitmapButton.cpp: compiler-generated destructor COMDAT (no vptr store), same position and size as in our compiled object"
+10023180,?DrawFocusBorder@CBitmapButton@@UAEXHHHH@Z,func,"GameUI/BitmapButton.cpp: empty inline DrawFocusBorder COMDAT (header line 34 in the Linux DWARF), same position and size as in our compiled object"

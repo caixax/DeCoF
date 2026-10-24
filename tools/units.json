@@ -4038,6 +4038,11 @@
           "name": "GameUI/KeyToggleCheckButton",
           "source": "src/gameui/KeyToggleCheckButton.cpp",
           "functions_file": "tools/units/gameui_GameUI_KeyToggleCheckButton.txt"
+        },
+        {
+          "name": "GameUI/BitmapButton",
+          "source": "src/gameui/BitmapButton.cpp",
+          "functions_file": "tools/units/gameui_GameUI_BitmapButton.txt"
         }
       ]
     }
