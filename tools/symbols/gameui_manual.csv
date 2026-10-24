@@ -5361,3 +5361,24 @@ va,name,kind,evidence
 1002E7B0,?Get@?$DHANDLE@VFrame@vgui2@@@vgui2@@QAEPAVFrame@2@XZ,func,GameUI/DemoPlayerDialog.cpp: same position and size as in our compiled object
 1002E7D0,??C?$DHANDLE@VFrame@vgui2@@@vgui2@@QAEPAVFrame@1@XZ,func,GameUI/DemoPlayerDialog.cpp: same position and size as in our compiled object
 1002E7F0,??4?$DHANDLE@VFrame@vgui2@@@vgui2@@QAEPAVFrame@1@PAV21@@Z,func,GameUI/DemoPlayerDialog.cpp: same position and size as in our compiled object
+1002BE40,??0CDemoEventsDialog@@QAE@PAVPanel@vgui2@@PBDPAVIEngineWrapper@@PAVIDemoPlayer@@@Z,func,GameUI/DemoEventsDialog.cpp: same position and size as in our compiled object; linux: _ZN17CDemoEventsDialogC1EPN5vgui25PanelEPKcP14IEngineWrapperP11IDemoPlayer
+1002C11E,??1CDemoEventsDialog@@UAE@XZ,func,GameUI/DemoEventsDialog.cpp: same position and size as in our compiled object; linux: _ZN17CDemoEventsDialogD2Ev
+1002C13A,?OnCommand@CDemoEventsDialog@@UAEXPBD@Z,func,GameUI/DemoEventsDialog.cpp: same position and size as in our compiled object; linux: _ZN17CDemoEventsDialog9OnCommandEPKc
+1002C1FE,?GetCurrentCmd@CDemoEventsDialog@@IAEXXZ,func,GameUI/DemoEventsDialog.cpp: same position and size as in our compiled object; linux: _ZN17CDemoEventsDialog13GetCurrentCmdEv
+1002C2EF,?OnAdd@CDemoEventsDialog@@IAEXXZ,func,GameUI/DemoEventsDialog.cpp: same position and size as in our compiled object; linux: _ZN17CDemoEventsDialog5OnAddEv
+1002C3CD,?OnGoto@CDemoEventsDialog@@IAEXXZ,func,GameUI/DemoEventsDialog.cpp: same position and size as in our compiled object; linux: _ZN17CDemoEventsDialog6OnGotoEv
+1002C44A,?OnModify@CDemoEventsDialog@@IAEXXZ,func,GameUI/DemoEventsDialog.cpp: same position and size as in our compiled object; linux: _ZN17CDemoEventsDialog8OnModifyEv
+1002C495,?OnRemove@CDemoEventsDialog@@IAEXXZ,func,GameUI/DemoEventsDialog.cpp: same position and size as in our compiled object; linux: _ZN17CDemoEventsDialog8OnRemoveEv
+1002C4F6,?OnUpdate@CDemoEventsDialog@@UAEXXZ,func,GameUI/DemoEventsDialog.cpp: same position and size as in our compiled object; linux: _ZN17CDemoEventsDialog8OnUpdateEv
+1002C750,??_GCDemoEventsDialog@@UAEPAXI@Z,func,GameUI/DemoEventsDialog.cpp: same position and size as in our compiled object
+1002C780,??0CDemoEventsDialog_RegisterMap@CDemoEventsDialog@@QAE@XZ,func,GameUI/DemoEventsDialog.cpp: same position and size as in our compiled object
+1002C7A0,?ChainToMap@CDemoEventsDialog@@SAXXZ,func,GameUI/DemoEventsDialog.cpp: same position and size as in our compiled object
+1002C810,?GetMessageMap@CDemoEventsDialog@@UAEPAUPanelMessageMap@vgui2@@XZ,func,GameUI/DemoEventsDialog.cpp: same position and size as in our compiled object
+1002C850,?GetPanelClassName@CDemoEventsDialog@@SAPBDXZ,func,GameUI/DemoEventsDialog.cpp: same position and size as in our compiled object
+1002C860,?GetPanelBaseClassName@CDemoEventsDialog@@SAPBDXZ,func,GameUI/DemoEventsDialog.cpp: same position and size as in our compiled object
+1002C870,??0PanelMessageFunc_OnUpdate@CDemoEventsDialog@@QAE@XZ,func,GameUI/DemoEventsDialog.cpp: same position and size as in our compiled object
+1002C890,?InitVar@PanelMessageFunc_OnUpdate@CDemoEventsDialog@@SAXXZ,func,GameUI/DemoEventsDialog.cpp: same position and size as in our compiled object
+1002C900,?AddToMap@CDemoEventsDialog@@SAXPBDP8Panel@vgui2@@AEXXZHH0H0@Z,func,GameUI/DemoEventsDialog.cpp: same position and size as in our compiled object
+1002C980,??0PanelMessageFunc_OnUpdateLastCmd@CDemoEventsDialog@@QAE@XZ,func,GameUI/DemoEventsDialog.cpp: same position and size as in our compiled object
+1002C9A0,?InitVar@PanelMessageFunc_OnUpdateLastCmd@CDemoEventsDialog@@SAXXZ,func,GameUI/DemoEventsDialog.cpp: same position and size as in our compiled object
+1002CA10,?OnUpdateLastCmd@CDemoEventsDialog@@UAEXXZ,func,GameUI/DemoEventsDialog.cpp: same position and size as in our compiled object

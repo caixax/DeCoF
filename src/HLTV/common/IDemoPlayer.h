@@ -1,7 +1,7 @@
 //========= Copyright (c) 1996-2003, Valve LLC, All rights reserved. ============
 //
-// Purpose: the HLTV demo player module as GameUI sees it (the 2013 interface,
-//			the same methods as hw.dll's IDemoPlayer behind the system module)
+// Purpose: the HLTV demo player module as GameUI sees it (the 2013 interface:
+//			the methods of hw.dll's IDemoPlayer on the director as a virtual base)
 //
 // $NoKeywords: $
 //=============================================================================
@@ -13,7 +13,7 @@
 #pragma once
 #endif
 
-#include "ISystemModule.h"
+#include "IDirector.h"
 
 struct ref_params_s;
 typedef struct ref_params_s ref_params_t;
@@ -21,7 +21,7 @@ typedef struct ref_params_s ref_params_t;
 class IWorld;
 class DirectorCmd;
 
-class IDemoPlayer : virtual public ISystemModule
+class IDemoPlayer : virtual public IDirector
 {
 public:
 	virtual					~IDemoPlayer() {}

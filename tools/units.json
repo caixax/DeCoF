@@ -4153,6 +4153,11 @@
           "name": "GameUI/DemoPlayerDialog",
           "source": "src/gameui/DemoPlayerDialog.cpp",
           "functions_file": "tools/units/gameui_GameUI_DemoPlayerDialog.txt"
+        },
+        {
+          "name": "GameUI/DemoEventsDialog",
+          "source": "src/gameui/DemoEventsDialog.cpp",
+          "functions_file": "tools/units/gameui_GameUI_DemoEventsDialog.txt"
         }
       ]
     }

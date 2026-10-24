@@ -8650,27 +8650,27 @@ gameui,1002BD20,10,,,UNKNOWN,GameUI/DemoEditDialog.cpp,,,TODO,,,
 gameui,1002BD30,19,,,UNKNOWN,GameUI/DemoEditDialog.cpp,,,TODO,,,
 gameui,1002BD50,107,,,UNKNOWN,GameUI/DemoEditDialog.cpp,,,TODO,,,
 gameui,1002BDC0,120,,,UNKNOWN,GameUI/DemoEditDialog.cpp,,,TODO,,,
-gameui,1002BE40,734,,CDemoEventsDialog::CDemoEventsDialog,ENGINE,GameUI/DemoEventsDialog.cpp,,,TODO,,linux_symbols:string:0.715,linux: _ZN17CDemoEventsDialogC1EPN5vgui25PanelEPKcP14IEngineWrapperP11IDemoPlayer
-gameui,1002C11E,28,,,UNKNOWN,GameUI/DemoEventsDialog.cpp,,,TODO,,,linux: _ZN17CDemoEventsDialogD2Ev
-gameui,1002C13A,196,,CDemoEventsDialog::OnCommand,ENGINE,GameUI/DemoEventsDialog.cpp,,,TODO,,linux_symbols:string:0.8,linux: _ZN17CDemoEventsDialog9OnCommandEPKc
-gameui,1002C1FE,241,,,UNKNOWN,GameUI/DemoEventsDialog.cpp,,,TODO,,,linux: _ZN17CDemoEventsDialog13GetCurrentCmdEv
-gameui,1002C2EF,222,,,UNKNOWN,GameUI/DemoEventsDialog.cpp,,,TODO,,,linux: _ZN17CDemoEventsDialog5OnAddEv
-gameui,1002C3CD,125,,,UNKNOWN,GameUI/DemoEventsDialog.cpp,,,TODO,,,linux: _ZN17CDemoEventsDialog6OnGotoEv
-gameui,1002C44A,75,,,UNKNOWN,GameUI/DemoEventsDialog.cpp,,,TODO,,,linux: _ZN17CDemoEventsDialog8OnModifyEv
-gameui,1002C495,97,,,UNKNOWN,GameUI/DemoEventsDialog.cpp,,,TODO,,,linux: _ZN17CDemoEventsDialog8OnRemoveEv
-gameui,1002C4F6,588,,CDemoEventsDialog::OnUpdate,ENGINE,GameUI/DemoEventsDialog.cpp,,,TODO,,linux_symbols:caller:0.853,linux: _ZN17CDemoEventsDialog8OnUpdateEv
-gameui,1002C750,46,,,UNKNOWN,GameUI/DemoEventsDialog.cpp,,,TODO,,,
-gameui,1002C780,19,,,UNKNOWN,GameUI/DemoEventsDialog.cpp,,,TODO,,,
-gameui,1002C7A0,102,,,UNKNOWN,GameUI/DemoEventsDialog.cpp,,,TODO,,,
-gameui,1002C810,64,,,UNKNOWN,GameUI/DemoEventsDialog.cpp,,,TODO,,,
-gameui,1002C850,10,,,UNKNOWN,GameUI/DemoEventsDialog.cpp,,,TODO,,,
-gameui,1002C860,10,,,UNKNOWN,GameUI/DemoEventsDialog.cpp,,,TODO,,,
-gameui,1002C870,19,,,UNKNOWN,GameUI/DemoEventsDialog.cpp,,,TODO,,,
-gameui,1002C890,107,,,UNKNOWN,GameUI/DemoEventsDialog.cpp,,,TODO,,,
-gameui,1002C900,120,,,UNKNOWN,GameUI/DemoEventsDialog.cpp,,,TODO,,,
-gameui,1002C980,19,,,UNKNOWN,GameUI/DemoEventsDialog.cpp,,,TODO,,,
-gameui,1002C9A0,107,,,UNKNOWN,GameUI/DemoEventsDialog.cpp,,,TODO,,,
-gameui,1002CA10,25,,,UNKNOWN,GameUI/DemoEventsDialog.cpp,,,TODO,,,
+gameui,1002BE40,734,??0CDemoEventsDialog@@QAE@PAVPanel@vgui2@@PBDPAVIEngineWrapper@@PAVIDemoPlayer@@@Z,"public: __thiscall CDemoEventsDialog::CDemoEventsDialog(class vgui2::Panel *,char const *,class IEngineWrapper *,class IDemoPlayer *)",ENGINE,GameUI/DemoEventsDialog.cpp,,,TODO,99.99,gameui_manual.csv,"relocation targets differ (instructions identical): retail s_Resource/DemoEventsDialog.res_100e346c, ours $SG8299"
+gameui,1002C11E,28,??1CDemoEventsDialog@@UAE@XZ,public: virtual __thiscall CDemoEventsDialog::~CDemoEventsDialog(void),UNKNOWN,GameUI/DemoEventsDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN17CDemoEventsDialogD2Ev
+gameui,1002C13A,196,?OnCommand@CDemoEventsDialog@@UAEXPBD@Z,public: virtual void __thiscall CDemoEventsDialog::OnCommand(char const *),ENGINE,GameUI/DemoEventsDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN17CDemoEventsDialog9OnCommandEPKc
+gameui,1002C1FE,241,?GetCurrentCmd@CDemoEventsDialog@@IAEXXZ,protected: void __thiscall CDemoEventsDialog::GetCurrentCmd(void),UNKNOWN,GameUI/DemoEventsDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN17CDemoEventsDialog13GetCurrentCmdEv
+gameui,1002C2EF,222,?OnAdd@CDemoEventsDialog@@IAEXXZ,protected: void __thiscall CDemoEventsDialog::OnAdd(void),UNKNOWN,GameUI/DemoEventsDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN17CDemoEventsDialog5OnAddEv
+gameui,1002C3CD,125,?OnGoto@CDemoEventsDialog@@IAEXXZ,protected: void __thiscall CDemoEventsDialog::OnGoto(void),UNKNOWN,GameUI/DemoEventsDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN17CDemoEventsDialog6OnGotoEv
+gameui,1002C44A,75,?OnModify@CDemoEventsDialog@@IAEXXZ,protected: void __thiscall CDemoEventsDialog::OnModify(void),UNKNOWN,GameUI/DemoEventsDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN17CDemoEventsDialog8OnModifyEv
+gameui,1002C495,97,?OnRemove@CDemoEventsDialog@@IAEXXZ,protected: void __thiscall CDemoEventsDialog::OnRemove(void),UNKNOWN,GameUI/DemoEventsDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN17CDemoEventsDialog8OnRemoveEv
+gameui,1002C4F6,588,?OnUpdate@CDemoEventsDialog@@UAEXXZ,public: virtual void __thiscall CDemoEventsDialog::OnUpdate(void),ENGINE,GameUI/DemoEventsDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN17CDemoEventsDialog8OnUpdateEv
+gameui,1002C750,46,??_GCDemoEventsDialog@@UAEPAXI@Z,public: virtual void * __thiscall CDemoEventsDialog::`scalar deleting destructor'(unsigned int),UNKNOWN,GameUI/DemoEventsDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1002C780,19,??0CDemoEventsDialog_RegisterMap@CDemoEventsDialog@@QAE@XZ,public: __thiscall CDemoEventsDialog::CDemoEventsDialog_RegisterMap::CDemoEventsDialog_RegisterMap(void),UNKNOWN,GameUI/DemoEventsDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1002C7A0,102,?ChainToMap@CDemoEventsDialog@@SAXXZ,public: static void __cdecl CDemoEventsDialog::ChainToMap(void),UNKNOWN,GameUI/DemoEventsDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1002C810,64,?GetMessageMap@CDemoEventsDialog@@UAEPAUPanelMessageMap@vgui2@@XZ,public: virtual struct vgui2::PanelMessageMap * __thiscall CDemoEventsDialog::GetMessageMap(void),UNKNOWN,GameUI/DemoEventsDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1002C850,10,?GetPanelClassName@CDemoEventsDialog@@SAPBDXZ,public: static char const * __cdecl CDemoEventsDialog::GetPanelClassName(void),UNKNOWN,GameUI/DemoEventsDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1002C860,10,?GetPanelBaseClassName@CDemoEventsDialog@@SAPBDXZ,public: static char const * __cdecl CDemoEventsDialog::GetPanelBaseClassName(void),UNKNOWN,GameUI/DemoEventsDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1002C870,19,??0PanelMessageFunc_OnUpdate@CDemoEventsDialog@@QAE@XZ,public: __thiscall CDemoEventsDialog::PanelMessageFunc_OnUpdate::PanelMessageFunc_OnUpdate(void),UNKNOWN,GameUI/DemoEventsDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1002C890,107,?InitVar@PanelMessageFunc_OnUpdate@CDemoEventsDialog@@SAXXZ,public: static void __cdecl CDemoEventsDialog::PanelMessageFunc_OnUpdate::InitVar(void),UNKNOWN,GameUI/DemoEventsDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1002C900,120,?AddToMap@CDemoEventsDialog@@SAXPBDP8Panel@vgui2@@AEXXZHH0H0@Z,"public: static void __cdecl CDemoEventsDialog::AddToMap(char const *,void (__thiscall vgui2::Panel::*)(void),int,int,char const *,int,char const *)",UNKNOWN,GameUI/DemoEventsDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1002C980,19,??0PanelMessageFunc_OnUpdateLastCmd@CDemoEventsDialog@@QAE@XZ,public: __thiscall CDemoEventsDialog::PanelMessageFunc_OnUpdateLastCmd::PanelMessageFunc_OnUpdateLastCmd(void),UNKNOWN,GameUI/DemoEventsDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1002C9A0,107,?InitVar@PanelMessageFunc_OnUpdateLastCmd@CDemoEventsDialog@@SAXXZ,public: static void __cdecl CDemoEventsDialog::PanelMessageFunc_OnUpdateLastCmd::InitVar(void),UNKNOWN,GameUI/DemoEventsDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1002CA10,25,?OnUpdateLastCmd@CDemoEventsDialog@@UAEXXZ,public: virtual void __thiscall CDemoEventsDialog::OnUpdateLastCmd(void),UNKNOWN,GameUI/DemoEventsDialog.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,1002CA30,1802,??0CDemoPlayerDialog@@QAE@PAVPanel@vgui2@@@Z,public: __thiscall CDemoPlayerDialog::CDemoPlayerDialog(class vgui2::Panel *),UNKNOWN,GameUI/DemoPlayerDialog.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,1002D13A,251,??1CDemoPlayerDialog@@UAE@XZ,public: virtual __thiscall CDemoPlayerDialog::~CDemoPlayerDialog(void),UNKNOWN,GameUI/DemoPlayerDialog.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,1002D235,597,?ApplySchemeSettings@CDemoPlayerDialog@@MAEXPAVIScheme@vgui2@@@Z,protected: virtual void __thiscall CDemoPlayerDialog::ApplySchemeSettings(class vgui2::IScheme *),ENGINE,GameUI/DemoPlayerDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN17CDemoPlayerDialog19ApplySchemeSettingsEPN5vgui27ISchemeE

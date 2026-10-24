@@ -40,7 +40,7 @@ public:
 	virtual void OnCommand( const char *command );
 
 	MESSAGE_FUNC( OnUpdate, "UpdateCmdList" );
-	MESSAGE_FUNC( OnUpdateLastCmd, "UpdateLastCmd" );
+	MESSAGE_FUNC( OnUpdateLastCmd, "UpdateLastCmd" ) { OnUpdate(); }
 
 protected:
 	void GetCurrentCmd();
