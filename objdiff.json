@@ -2546,6 +2546,14 @@
       "metadata": {
         "source_path": "src/launcher/SteamAppStartup_guess.cpp"
       }
+    },
+    {
+      "name": "gameui/GameUI/CareerGameTasks",
+      "target_path": "build/target/gameui/GameUI/CareerGameTasks.obj",
+      "base_path": "build/base/gameui/GameUI/CareerGameTasks.obj",
+      "metadata": {
+        "source_path": "src/gameui/CareerGameTasks.cpp"
+      }
     }
   ]
 }

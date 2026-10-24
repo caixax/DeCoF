@@ -8037,27 +8037,27 @@ gameui,10014210,114,?_Median@std@@YAPAVCCareerCharacter@@PAV2@00@Z,std::_Median,
 gameui,10014290,91,?_Unguarded_partition@std@@YAPAPAVCCareerCharacter@@PAPAV2@0PAV2@@Z,std::_Unguarded_partition,LIB,GameUI/CareerGame.cpp,,,TODO,,gameui_manual.csv,
 gameui,100142F0,34,?iter_swap@std@@YAXPAPAVCCareerCharacter@@0@Z,std::iter_swap,LIB,GameUI/CareerGame.cpp,,,TODO,,gameui_manual.csv,
 gameui,10014320,34,?_Iter_swap@std@@YAXPAPAVCCareerCharacter@@00@Z,std::_Iter_swap,LIB,GameUI/CareerGame.cpp,,,TODO,,gameui_manual.csv,
-gameui,10014350,925,,,UNKNOWN,GameUI/CareerGameTasks.cpp,,,TODO,,,linux: _Z29ConstructStringWithReorderingPwiS_iz
-gameui,100146ED,1392,,CCareerUITask::CCareerUITask,ENGINE,GameUI/CareerGameTasks.cpp,,,TODO,,linux_symbols:string:0.497,linux: _ZN13CCareerUITaskC2EPKc
-gameui,10014C5D,41,,,UNKNOWN,GameUI/CareerGameTasks.cpp,,,TODO,,,linux: _ZN13CCareerUITask34GetLocalizedTaskNameWithCompletionEv
-gameui,10014C90,21,,,UNKNOWN,GameUI/CareerGameTasks.cpp,,,TODO,,,
-gameui,10014CB0,23,,,UNKNOWN,GameUI/CareerGameTasks.cpp,,,TODO,,,
-gameui,10014CD0,17,,,UNKNOWN,GameUI/CareerGameTasks.cpp,,,TODO,,,linux: _ZN13CCareerUITask10IsCompleteEv
-gameui,10014CF0,17,,,UNKNOWN,GameUI/CareerGameTasks.cpp,,,TODO,,,linux: _ZN13CCareerUITask20IsCompletedThisRoundEv
-gameui,10014D10,17,,,UNKNOWN,GameUI/CareerGameTasks.cpp,,,TODO,,,linux: _ZN13CCareerUITask20IsCompletedThisMatchEv
-gameui,10014D30,16,,,UNKNOWN,GameUI/CareerGameTasks.cpp,,,TODO,,,linux: _ZN13CCareerUITask6GetMapEv
-gameui,10014D40,17,,,UNKNOWN,GameUI/CareerGameTasks.cpp,,,TODO,,,linux: _ZN13CCareerUITask11GetTaskNameEv
-gameui,10014D60,19,,,UNKNOWN,GameUI/CareerGameTasks.cpp,,,TODO,,,linux: _ZN13CCareerUITask20GetLocalizedTaskNameEv
-gameui,10014D80,38,,,UNKNOWN,GameUI/CareerGameTasks.cpp,,,TODO,,,linux: _ZN13CCareerUITask5ResetEv
-gameui,10014DB0,40,,,UNKNOWN,GameUI/CareerGameTasks.cpp,,,TODO,,,linux: _ZN13CCareerUITask3SetEb
-gameui,10014DE0,18,,,UNKNOWN,GameUI/CareerGameTasks.cpp,,,TODO,,,linux: _ZN13CCareerUITask10StartRoundEv
-gameui,10014E00,19,,,UNKNOWN,GameUI/CareerGameTasks.cpp,,,TODO,,,linux: _ZNK13CCareerUITask13GetWeaponNameEv
-gameui,10014E20,20,,,UNKNOWN,GameUI/CareerGameTasks.cpp,,,TODO,,,linux: _ZNK13CCareerUITask9GetRepeatEv
-gameui,10014E40,20,,,UNKNOWN,GameUI/CareerGameTasks.cpp,,,TODO,,,linux: _ZNK13CCareerUITask11MustSurviveEv
-gameui,10014E60,20,,,UNKNOWN,GameUI/CareerGameTasks.cpp,,,TODO,,,linux: _ZNK13CCareerUITask6InARowEv
-gameui,10014E80,20,,,UNKNOWN,GameUI/CareerGameTasks.cpp,,,TODO,,,linux: _ZNK13CCareerUITask10GetPartialEv
-gameui,10014EA0,25,,,UNKNOWN,GameUI/CareerGameTasks.cpp,,,TODO,,,linux: _ZN13CCareerUITask10SetPartialEi
-gameui,10014EC0,20,,,UNKNOWN,GameUI/CareerGameTasks.cpp,,,TODO,,,linux: _ZNK13CCareerUITask14IsMaxRoundTimeEv
+gameui,10014350,925,?ConstructStringWithReordering@@YAXPAGH0HZZ,ConstructStringWithReordering,UNKNOWN,GameUI/CareerGameTasks.cpp,,,MATCHED,100,gameui_manual.csv,linux: _Z29ConstructStringWithReorderingPwiS_iz
+gameui,100146ED,1392,??0CCareerUITask@@QAE@PBD@Z,CCareerUITask::CCareerUITask,ENGINE,GameUI/CareerGameTasks.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN13CCareerUITaskC2EPKc
+gameui,10014C5D,41,?GetLocalizedTaskNameWithCompletion@CCareerUITask@@UAEPBGXZ,CCareerUITask::GetLocalizedTaskNameWithCompletion,UNKNOWN,GameUI/CareerGameTasks.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN13CCareerUITask34GetLocalizedTaskNameWithCompletionEv
+gameui,10014C90,21,?wcsstr@@YAPAGPAGPBG@Z,wcsstr,UNKNOWN,GameUI/CareerGameTasks.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10014CB0,23,??0ICareerTask@@QAE@XZ,ICareerTask::ICareerTask,UNKNOWN,GameUI/CareerGameTasks.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10014CD0,17,?IsComplete@CCareerUITask@@UAE_NXZ,CCareerUITask::IsComplete,UNKNOWN,GameUI/CareerGameTasks.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN13CCareerUITask10IsCompleteEv
+gameui,10014CF0,17,?IsCompletedThisRound@CCareerUITask@@UAE_NXZ,CCareerUITask::IsCompletedThisRound,UNKNOWN,GameUI/CareerGameTasks.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN13CCareerUITask20IsCompletedThisRoundEv
+gameui,10014D10,17,?IsCompletedThisMatch@CCareerUITask@@UAE_NXZ,CCareerUITask::IsCompletedThisMatch,UNKNOWN,GameUI/CareerGameTasks.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN13CCareerUITask20IsCompletedThisMatchEv
+gameui,10014D30,16,?GetMap@CCareerUITask@@UAEPBDXZ,CCareerUITask::GetMap,UNKNOWN,GameUI/CareerGameTasks.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN13CCareerUITask6GetMapEv
+gameui,10014D40,17,?GetTaskName@CCareerUITask@@UAEPBDXZ,CCareerUITask::GetTaskName,UNKNOWN,GameUI/CareerGameTasks.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN13CCareerUITask11GetTaskNameEv
+gameui,10014D60,19,?GetLocalizedTaskName@CCareerUITask@@UAEPBGXZ,CCareerUITask::GetLocalizedTaskName,UNKNOWN,GameUI/CareerGameTasks.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN13CCareerUITask20GetLocalizedTaskNameEv
+gameui,10014D80,38,?Reset@CCareerUITask@@UAEXXZ,CCareerUITask::Reset,UNKNOWN,GameUI/CareerGameTasks.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN13CCareerUITask5ResetEv
+gameui,10014DB0,40,?Set@CCareerUITask@@UAEX_N@Z,CCareerUITask::Set,UNKNOWN,GameUI/CareerGameTasks.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN13CCareerUITask3SetEb
+gameui,10014DE0,18,?StartRound@CCareerUITask@@UAEXXZ,CCareerUITask::StartRound,UNKNOWN,GameUI/CareerGameTasks.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN13CCareerUITask10StartRoundEv
+gameui,10014E00,19,?GetWeaponName@CCareerUITask@@UBEPBDXZ,CCareerUITask::GetWeaponName,UNKNOWN,GameUI/CareerGameTasks.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZNK13CCareerUITask13GetWeaponNameEv
+gameui,10014E20,20,?GetRepeat@CCareerUITask@@UBEHXZ,CCareerUITask::GetRepeat,UNKNOWN,GameUI/CareerGameTasks.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZNK13CCareerUITask9GetRepeatEv
+gameui,10014E40,20,?MustSurvive@CCareerUITask@@UBE_NXZ,CCareerUITask::MustSurvive,UNKNOWN,GameUI/CareerGameTasks.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZNK13CCareerUITask11MustSurviveEv
+gameui,10014E60,20,?InARow@CCareerUITask@@UBE_NXZ,CCareerUITask::InARow,UNKNOWN,GameUI/CareerGameTasks.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZNK13CCareerUITask6InARowEv
+gameui,10014E80,20,?GetPartial@CCareerUITask@@UBEHXZ,CCareerUITask::GetPartial,UNKNOWN,GameUI/CareerGameTasks.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZNK13CCareerUITask10GetPartialEv
+gameui,10014EA0,25,?SetPartial@CCareerUITask@@UAEXH@Z,CCareerUITask::SetPartial,UNKNOWN,GameUI/CareerGameTasks.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN13CCareerUITask10SetPartialEi
+gameui,10014EC0,20,?IsMaxRoundTime@CCareerUITask@@UBE_NXZ,CCareerUITask::IsMaxRoundTime,UNKNOWN,GameUI/CareerGameTasks.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZNK13CCareerUITask14IsMaxRoundTimeEv
 gameui,10014EE0,1273,?ShowCareerMapDescription@@YAXPAVRichText@vgui2@@PAVCCareerMap@@VColor@@2@Z,ShowCareerMapDescription,ENGINE,GameUI/CareerMapFrame.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,100153D9,915,??0CMapButton@@QAE@PAVCCareerMapFrame@@PBD11@Z,CMapButton::CMapButton,ENGINE,GameUI/CareerMapFrame.cpp,,,MATCHED,100,linux_symbols:string:0.806,
 gameui,1001576C,103,??1CMapButton@@UAE@XZ,CMapButton::~CMapButton,UNKNOWN,GameUI/CareerMapFrame.cpp,,,MATCHED,100,,

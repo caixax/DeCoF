@@ -25,13 +25,13 @@ public:
 	virtual bool IsComplete() { return m_isComplete; }
 	virtual bool IsCompletedThisRound() { return m_completedThisRound; }
 	virtual bool IsCompletedThisMatch() { return m_isComplete; }
-	virtual const char *GetMap() { return NULL; }
+	virtual const char *GetMap() { return ""; }
 	virtual const char *GetTaskName() { return m_name; }
 	virtual const wchar_t *GetLocalizedTaskName() { return m_localizedName; }
 	virtual const wchar_t *GetLocalizedTaskNameWithCompletion();
 
-	virtual void Reset() { m_isComplete = false; m_completedThisRound = false; }
-	virtual void Set( bool thisRound ) { m_isComplete = true; m_completedThisRound = thisRound; }
+	virtual void Reset() { m_completedThisRound = false; m_isComplete = false; m_partials = 0; }
+	virtual void Set( bool thisRound ) { m_completedThisRound = true; m_isComplete = true; m_partials = 0; }
 	virtual void StartRound() { m_completedThisRound = false; }
 
 	virtual const char *GetWeaponName() const { return m_weapon; }

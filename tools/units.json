@@ -3835,6 +3835,11 @@
           "functions_file": "tools/units/gameui_GameUI_CareerDefinitions.txt"
         },
         {
+          "name": "GameUI/CareerGameTasks",
+          "source": "src/gameui/CareerGameTasks.cpp",
+          "functions_file": "tools/units/gameui_GameUI_CareerGameTasks.txt"
+        },
+        {
           "name": "GameUI/CareerGame",
           "source": "src/gameui/CareerGame.cpp",
           "functions_file": "tools/units/gameui_GameUI_CareerGame.txt"
