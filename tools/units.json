@@ -3958,6 +3958,11 @@
           "name": "GameUI/LabeledCommandComboBox",
           "source": "src/gameui/LabeledCommandComboBox.cpp",
           "functions_file": "tools/units/gameui_GameUI_LabeledCommandComboBox.txt"
+        },
+        {
+          "name": "GameUI/BitmapImagePanel",
+          "source": "src/gameui/BitmapImagePanel.cpp",
+          "functions_file": "tools/units/gameui_GameUI_BitmapImagePanel.txt"
         }
       ]
     }

@@ -4453,3 +4453,10 @@ va,name,kind,evidence
 10046C70,??0PanelMessageFunc_OnTextChanged@CLabeledCommandComboBox@@QAE@XZ,func,GameUI/LabeledCommandComboBox.cpp: same position and size as in our compiled object
 10046C90,?InitVar@PanelMessageFunc_OnTextChanged@CLabeledCommandComboBox@@SAXXZ,func,GameUI/LabeledCommandComboBox.cpp: same position and size as in our compiled object
 10046D00,?AddToMap@CLabeledCommandComboBox@@SAXPBDP8Panel@vgui2@@AEXXZHH0H0@Z,func,GameUI/LabeledCommandComboBox.cpp: same position and size as in our compiled object
+10044510,??0CBitmapImagePanel@@QAE@PAVPanel@vgui2@@PBD1@Z,func,GameUI/BitmapImagePanel.cpp: same position and size as in our compiled object; linux: _ZN17CBitmapImagePanelC1EPN5vgui25PanelEPKcS4_
+10044584,?PaintBackground@CBitmapImagePanel@@UAEXXZ,func,GameUI/BitmapImagePanel.cpp: same position and size as in our compiled object; linux: _ZN17CBitmapImagePanel15PaintBackgroundEv
+10044630,?setTexture@CBitmapImagePanel@@UAEXPBD@Z,func,GameUI/BitmapImagePanel.cpp: same position and size as in our compiled object; linux: _ZN17CBitmapImagePanel10setTextureEPKc
+10044674,?forceUpload@CBitmapImagePanel@@AAEXXZ,func,GameUI/BitmapImagePanel.cpp: same position and size as in our compiled object; linux: _ZN17CBitmapImagePanel11forceUploadEv
+100446D5,?forceReload@CBitmapImagePanel@@UAEXXZ,func,GameUI/BitmapImagePanel.cpp: same position and size as in our compiled object; linux: _ZN17CBitmapImagePanel11forceReloadEv
+10044720,??_GCBitmapImagePanel@@UAEPAXI@Z,func,GameUI/BitmapImagePanel.cpp: same position and size as in our compiled object
+10044750,??1CBitmapImagePanel@@UAE@XZ,func,GameUI/BitmapImagePanel.cpp: same position and size as in our compiled object

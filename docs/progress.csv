@@ -9473,13 +9473,13 @@ gameui,100443E0,25,,,UNKNOWN,GameUI/VGuiSystemModuleLoader.cpp,,,TODO,,,
 gameui,10044400,17,,,UNKNOWN,GameUI/VGuiSystemModuleLoader.cpp,,,TODO,,,
 gameui,10044420,199,,,UNKNOWN,GameUI/VGuiSystemModuleLoader.cpp,,,TODO,,,
 gameui,100444F0,25,,,UNKNOWN,GameUI/VGuiSystemModuleLoader.cpp,,,TODO,,,
-gameui,10044510,116,,,UNKNOWN,GameUI/BitmapImagePanel.cpp,,,TODO,,,linux: _ZN17CBitmapImagePanelC1EPN5vgui25PanelEPKcS4_
-gameui,10044584,172,,,UNKNOWN,GameUI/BitmapImagePanel.cpp,,,TODO,,,linux: _ZN17CBitmapImagePanel15PaintBackgroundEv
-gameui,10044630,68,,,UNKNOWN,GameUI/BitmapImagePanel.cpp,,,TODO,,,linux: _ZN17CBitmapImagePanel10setTextureEPKc
-gameui,10044674,97,,,UNKNOWN,GameUI/BitmapImagePanel.cpp,,,TODO,,,linux: _ZN17CBitmapImagePanel11forceUploadEv
-gameui,100446D5,64,,,UNKNOWN,GameUI/BitmapImagePanel.cpp,,,TODO,,,linux: _ZN17CBitmapImagePanel11forceReloadEv
-gameui,10044720,46,,,UNKNOWN,GameUI/BitmapImagePanel.cpp,,,TODO,,,
-gameui,10044750,19,,,UNKNOWN,GameUI/BitmapImagePanel.cpp,,,TODO,,,
+gameui,10044510,116,??0CBitmapImagePanel@@QAE@PAVPanel@vgui2@@PBD1@Z,"public: __thiscall CBitmapImagePanel::CBitmapImagePanel(class vgui2::Panel *,char const *,char const *)",UNKNOWN,GameUI/BitmapImagePanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN17CBitmapImagePanelC1EPN5vgui25PanelEPKcS4_
+gameui,10044584,172,?PaintBackground@CBitmapImagePanel@@UAEXXZ,public: virtual void __thiscall CBitmapImagePanel::PaintBackground(void),UNKNOWN,GameUI/BitmapImagePanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN17CBitmapImagePanel15PaintBackgroundEv
+gameui,10044630,68,?setTexture@CBitmapImagePanel@@UAEXPBD@Z,public: virtual void __thiscall CBitmapImagePanel::setTexture(char const *),UNKNOWN,GameUI/BitmapImagePanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN17CBitmapImagePanel10setTextureEPKc
+gameui,10044674,97,?forceUpload@CBitmapImagePanel@@AAEXXZ,private: void __thiscall CBitmapImagePanel::forceUpload(void),UNKNOWN,GameUI/BitmapImagePanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN17CBitmapImagePanel11forceUploadEv
+gameui,100446D5,64,?forceReload@CBitmapImagePanel@@UAEXXZ,public: virtual void __thiscall CBitmapImagePanel::forceReload(void),UNKNOWN,GameUI/BitmapImagePanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN17CBitmapImagePanel11forceReloadEv
+gameui,10044720,46,??_GCBitmapImagePanel@@UAEPAXI@Z,public: virtual void * __thiscall CBitmapImagePanel::`scalar deleting destructor'(unsigned int),UNKNOWN,GameUI/BitmapImagePanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10044750,19,??1CBitmapImagePanel@@UAE@XZ,public: virtual __thiscall CBitmapImagePanel::~CBitmapImagePanel(void),UNKNOWN,GameUI/BitmapImagePanel.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,10044770,131,,,UNKNOWN,GameUI/CommandCheckButton.cpp,,,TODO,,,linux: _ZN19CCommandCheckButtonC1EPN5vgui25PanelEPKcS4_S4_S4_
 gameui,100447F3,64,,,UNKNOWN,GameUI/CommandCheckButton.cpp,,,TODO,,,linux: _ZN19CCommandCheckButtonD1Ev
 gameui,10044833,174,,,UNKNOWN,GameUI/CommandCheckButton.cpp,,,TODO,,,linux: _ZN19CCommandCheckButton11SetSelectedEb
