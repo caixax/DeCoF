@@ -8350,38 +8350,38 @@ gameui,100202A4,25,?OnCommand@CBackgroundMenuButton@@UAEXPBD@Z,public: virtual v
 gameui,100202BD,428,?ApplySchemeSettings@CBackgroundMenuButton@@EAEXPAVIScheme@vgui2@@@Z,private: virtual void __thiscall CBackgroundMenuButton::ApplySchemeSettings(class vgui2::IScheme *),UNKNOWN,GameUI/BackgroundMenuButton.cpp,,,MATCHED,100,,linux: _ZN21CBackgroundMenuButton19ApplySchemeSettingsEPN5vgui27ISchemeE
 gameui,10020470,46,??_GCBackgroundMenuButton@@UAEPAXI@Z,public: virtual void * __thiscall CBackgroundMenuButton::`scalar deleting destructor'(unsigned int),UNKNOWN,GameUI/BackgroundMenuButton.cpp,,,MATCHED,100,,
 gameui,100204A0,95,?SetArmed@CBackgroundMenuButton@@UAEX_N@Z,public: virtual void __thiscall CBackgroundMenuButton::SetArmed(bool),UNKNOWN,GameUI/BackgroundMenuButton.cpp,,,MATCHED,100,,
-gameui,10020500,63,,CBasePanel::CBasePanel,ENGINE,GameUI/BasePanel.cpp,,,TODO,,linux_symbols:string:0.75,linux: _ZN10CBasePanelC1Ev
-gameui,1002053F,37,,,UNKNOWN,GameUI/BasePanel.cpp,,,TODO,,,linux: _ZN10CBasePanel12OnChildAddedEj
-gameui,10020564,55,,,UNKNOWN,GameUI/BasePanel.cpp,,,TODO,,,linux: _ZN10CBasePanel16IsWithinTraverseEiib
-gameui,1002059B,293,,,UNKNOWN,GameUI/BasePanel.cpp,,,TODO,,,linux: _ZN10CBasePanel15PaintBackgroundEv
-gameui,100206D4,1048,,CBasePanel::ApplySchemeSettings,ENGINE,GameUI/BasePanel.cpp,,,TODO,,linux_symbols:string:0.782,linux: _ZN10CBasePanel19ApplySchemeSettingsEPN5vgui27ISchemeE
-gameui,10020AEC,22,,,UNKNOWN,GameUI/BasePanel.cpp,,,TODO,,,linux: _ZN10CBasePanel24SetBackgroundRenderStateENS_16EBackgroundStateE
-gameui,10020B02,483,,,UNKNOWN,GameUI/BasePanel.cpp,,,TODO,,,linux: _ZN10CBasePanel19DrawBackgroundImageEv
-gameui,10020CF0,46,,,UNKNOWN,GameUI/BasePanel.cpp,,,TODO,,,
-gameui,10020D20,30,,,UNKNOWN,GameUI/BasePanel.cpp,,,TODO,,,
-gameui,10020D40,64,,,UNKNOWN,GameUI/BasePanel.cpp,,,TODO,,,
-gameui,10020D80,10,?GetPanelClassName@Panel@vgui2@@SAPBDXZ,vgui2::Panel::GetPanelClassName,UNKNOWN,GameUI/BasePanel.cpp,,,TODO,,gameui_manual.csv,
-gameui,10020D90,50,,,UNKNOWN,GameUI/BasePanel.cpp,,,TODO,,,
-gameui,10020DD0,27,,,UNKNOWN,GameUI/BasePanel.cpp,,,TODO,,,
-gameui,10020DF0,25,,,UNKNOWN,GameUI/BasePanel.cpp,,,TODO,,,
-gameui,10020E10,17,,,UNKNOWN,GameUI/BasePanel.cpp,,,TODO,,,
-gameui,10020E30,26,,,UNKNOWN,GameUI/BasePanel.cpp,,,TODO,,,
-gameui,10020E50,61,,,UNKNOWN,GameUI/BasePanel.cpp,,,TODO,,,
-gameui,10020E90,35,,,UNKNOWN,GameUI/BasePanel.cpp,,,TODO,,,
-gameui,10020EC0,11,,,UNKNOWN,GameUI/BasePanel.cpp,,,TODO,,,
-gameui,10020ED0,75,,,UNKNOWN,GameUI/BasePanel.cpp,,,TODO,,,
-gameui,10020F20,19,,,UNKNOWN,GameUI/BasePanel.cpp,,,TODO,,,
-gameui,10020F40,26,,,UNKNOWN,GameUI/BasePanel.cpp,,,TODO,,,
-gameui,10020F60,25,,,UNKNOWN,GameUI/BasePanel.cpp,,,TODO,,,
-gameui,10020F80,70,,,UNKNOWN,GameUI/BasePanel.cpp,,,TODO,,,
-gameui,10020FD0,87,,,UNKNOWN,GameUI/BasePanel.cpp,,,TODO,,,
-gameui,10021030,86,,,UNKNOWN,GameUI/BasePanel.cpp,,,TODO,,,
-gameui,10021090,25,,,UNKNOWN,GameUI/BasePanel.cpp,,,TODO,,,
-gameui,100210B0,69,,,UNKNOWN,GameUI/BasePanel.cpp,,,TODO,,,
-gameui,10021100,17,,,UNKNOWN,GameUI/BasePanel.cpp,,,TODO,,,
-gameui,10021120,199,,,UNKNOWN,GameUI/BasePanel.cpp,,,TODO,,,
-gameui,100211F0,25,,,UNKNOWN,GameUI/BasePanel.cpp,,,TODO,,,
-gameui,10021210,5,,,UNKNOWN,GameUI/BasePanel.cpp,,,TODO,,,
+gameui,10020500,63,??0CBasePanel@@QAE@XZ,public: __thiscall CBasePanel::CBasePanel(void),ENGINE,GameUI/BasePanel.cpp,,,MATCHED,100,linux_symbols:string:0.75,linux: _ZN10CBasePanelC1Ev
+gameui,1002053F,37,?OnChildAdded@CBasePanel@@UAEXI@Z,public: virtual void __thiscall CBasePanel::OnChildAdded(unsigned int),UNKNOWN,GameUI/BasePanel.cpp,,,MATCHED,100,,linux: _ZN10CBasePanel12OnChildAddedEj
+gameui,10020564,55,?IsWithinTraverse@CBasePanel@@UAEIHH_N@Z,"public: virtual unsigned int __thiscall CBasePanel::IsWithinTraverse(int,int,bool)",UNKNOWN,GameUI/BasePanel.cpp,,,MATCHED,100,,linux: _ZN10CBasePanel16IsWithinTraverseEiib
+gameui,1002059B,293,?PaintBackground@CBasePanel@@UAEXXZ,public: virtual void __thiscall CBasePanel::PaintBackground(void),UNKNOWN,GameUI/BasePanel.cpp,,,MATCHED,100,,linux: _ZN10CBasePanel15PaintBackgroundEv
+gameui,100206D4,1048,?ApplySchemeSettings@CBasePanel@@UAEXPAVIScheme@vgui2@@@Z,public: virtual void __thiscall CBasePanel::ApplySchemeSettings(class vgui2::IScheme *),ENGINE,GameUI/BasePanel.cpp,,,MATCHED,100,linux_symbols:string:0.782,linux: _ZN10CBasePanel19ApplySchemeSettingsEPN5vgui27ISchemeE
+gameui,10020AEC,22,?SetBackgroundRenderState@CBasePanel@@QAEXW4EBackgroundState@1@@Z,public: void __thiscall CBasePanel::SetBackgroundRenderState(enum CBasePanel::EBackgroundState),UNKNOWN,GameUI/BasePanel.cpp,,,MATCHED,100,,linux: _ZN10CBasePanel24SetBackgroundRenderStateENS_16EBackgroundStateE
+gameui,10020B02,483,?DrawBackgroundImage@CBasePanel@@AAEXXZ,private: void __thiscall CBasePanel::DrawBackgroundImage(void),UNKNOWN,GameUI/BasePanel.cpp,,,MATCHED,100,,linux: _ZN10CBasePanel19DrawBackgroundImageEv
+gameui,10020CF0,46,??_GCBasePanel@@UAEPAXI@Z,public: virtual void * __thiscall CBasePanel::`scalar deleting destructor'(unsigned int),UNKNOWN,GameUI/BasePanel.cpp,,,MATCHED,100,,
+gameui,10020D20,30,??1CBasePanel@@UAE@XZ,public: virtual __thiscall CBasePanel::~CBasePanel(void),UNKNOWN,GameUI/BasePanel.cpp,,,MATCHED,100,,
+gameui,10020D40,64,?GetMessageMap@Panel@vgui2@@UAEPAUPanelMessageMap@2@XZ,public: virtual struct vgui2::PanelMessageMap * __thiscall vgui2::Panel::GetMessageMap(void),UNKNOWN,GameUI/BasePanel.cpp,,,MATCHED,100,,
+gameui,10020D80,10,?GetPanelClassName@Panel@vgui2@@SAPBDXZ,vgui2::Panel::GetPanelClassName,UNKNOWN,GameUI/BasePanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10020D90,50,??0?$CUtlVector@Ubimage_t@CBasePanel@@@@QAE@HH@Z,"public: __thiscall CUtlVector<struct CBasePanel::bimage_t>::CUtlVector<struct CBasePanel::bimage_t>(int,int)",UNKNOWN,GameUI/BasePanel.cpp,,,MATCHED,100,,
+gameui,10020DD0,27,??1?$CUtlVector@Ubimage_t@CBasePanel@@@@QAE@XZ,public: __thiscall CUtlVector<struct CBasePanel::bimage_t>::~CUtlVector<struct CBasePanel::bimage_t>(void),UNKNOWN,GameUI/BasePanel.cpp,,,MATCHED,100,,
+gameui,10020DF0,25,??A?$CUtlVector@Ubimage_t@CBasePanel@@@@QAEAAUbimage_t@CBasePanel@@H@Z,public: struct CBasePanel::bimage_t & __thiscall CUtlVector<struct CBasePanel::bimage_t>::operator[](int),UNKNOWN,GameUI/BasePanel.cpp,,,MATCHED,100,,
+gameui,10020E10,17,?Count@?$CUtlVector@Ubimage_t@CBasePanel@@@@QBEHXZ,public: int __thiscall CUtlVector<struct CBasePanel::bimage_t>::Count(void)const ,UNKNOWN,GameUI/BasePanel.cpp,,,MATCHED,100,,
+gameui,10020E30,26,?AddToTail@?$CUtlVector@Ubimage_t@CBasePanel@@@@QAEHXZ,public: int __thiscall CUtlVector<struct CBasePanel::bimage_t>::AddToTail(void),UNKNOWN,GameUI/BasePanel.cpp,,,MATCHED,100,,
+gameui,10020E50,61,?InsertBefore@?$CUtlVector@Ubimage_t@CBasePanel@@@@QAEHH@Z,public: int __thiscall CUtlVector<struct CBasePanel::bimage_t>::InsertBefore(int),UNKNOWN,GameUI/BasePanel.cpp,,,MATCHED,100,,
+gameui,10020E90,35,?Purge@?$CUtlVector@Ubimage_t@CBasePanel@@@@QAEXXZ,public: void __thiscall CUtlVector<struct CBasePanel::bimage_t>::Purge(void),UNKNOWN,GameUI/BasePanel.cpp,,,MATCHED,100,,
+gameui,10020EC0,11,?ResetDbgInfo@?$CUtlVector@Ubimage_t@CBasePanel@@@@IAEXXZ,protected: void __thiscall CUtlVector<struct CBasePanel::bimage_t>::ResetDbgInfo(void),UNKNOWN,GameUI/BasePanel.cpp,,,MATCHED,100,,
+gameui,10020ED0,75,??0?$CUtlMemory@Ubimage_t@CBasePanel@@@@QAE@HH@Z,"public: __thiscall CUtlMemory<struct CBasePanel::bimage_t>::CUtlMemory<struct CBasePanel::bimage_t>(int,int)",UNKNOWN,GameUI/BasePanel.cpp,,,MATCHED,100,,
+gameui,10020F20,19,??1?$CUtlMemory@Ubimage_t@CBasePanel@@@@QAE@XZ,public: __thiscall CUtlMemory<struct CBasePanel::bimage_t>::~CUtlMemory<struct CBasePanel::bimage_t>(void),UNKNOWN,GameUI/BasePanel.cpp,,,MATCHED,100,,
+gameui,10020F40,26,??A?$CUtlMemory@Ubimage_t@CBasePanel@@@@QAEAAUbimage_t@CBasePanel@@H@Z,public: struct CBasePanel::bimage_t & __thiscall CUtlMemory<struct CBasePanel::bimage_t>::operator[](int),UNKNOWN,GameUI/BasePanel.cpp,,,MATCHED,100,,
+gameui,10020F60,25,?Element@?$CUtlVector@Ubimage_t@CBasePanel@@@@QAEAAUbimage_t@CBasePanel@@H@Z,public: struct CBasePanel::bimage_t & __thiscall CUtlVector<struct CBasePanel::bimage_t>::Element(int),UNKNOWN,GameUI/BasePanel.cpp,,,MATCHED,100,,
+gameui,10020F80,70,?RemoveAll@?$CUtlVector@Ubimage_t@CBasePanel@@@@QAEXXZ,public: void __thiscall CUtlVector<struct CBasePanel::bimage_t>::RemoveAll(void),UNKNOWN,GameUI/BasePanel.cpp,,,MATCHED,100,,
+gameui,10020FD0,87,?GrowVector@?$CUtlVector@Ubimage_t@CBasePanel@@@@IAEXH@Z,protected: void __thiscall CUtlVector<struct CBasePanel::bimage_t>::GrowVector(int),UNKNOWN,GameUI/BasePanel.cpp,,,MATCHED,100,,
+gameui,10021030,86,?ShiftElementsRight@?$CUtlVector@Ubimage_t@CBasePanel@@@@IAEXHH@Z,"protected: void __thiscall CUtlVector<struct CBasePanel::bimage_t>::ShiftElementsRight(int,int)",UNKNOWN,GameUI/BasePanel.cpp,,,MATCHED,100,,
+gameui,10021090,25,?Construct@@YAXPAUbimage_t@CBasePanel@@@Z,void __cdecl Construct(struct CBasePanel::bimage_t *),UNKNOWN,GameUI/BasePanel.cpp,,,MATCHED,100,,
+gameui,100210B0,69,?Purge@?$CUtlMemory@Ubimage_t@CBasePanel@@@@QAEXXZ,public: void __thiscall CUtlMemory<struct CBasePanel::bimage_t>::Purge(void),UNKNOWN,GameUI/BasePanel.cpp,,,MATCHED,100,,
+gameui,10021100,17,?NumAllocated@?$CUtlMemory@Ubimage_t@CBasePanel@@@@QBEHXZ,public: int __thiscall CUtlMemory<struct CBasePanel::bimage_t>::NumAllocated(void)const ,UNKNOWN,GameUI/BasePanel.cpp,,,MATCHED,100,,
+gameui,10021120,199,?Grow@?$CUtlMemory@Ubimage_t@CBasePanel@@@@QAEXH@Z,public: void __thiscall CUtlMemory<struct CBasePanel::bimage_t>::Grow(int),UNKNOWN,GameUI/BasePanel.cpp,,,MATCHED,100,,
+gameui,100211F0,25,?IsExternallyAllocated@?$CUtlMemory@Ubimage_t@CBasePanel@@@@QBE_NXZ,public: bool __thiscall CUtlMemory<struct CBasePanel::bimage_t>::IsExternallyAllocated(void)const ,UNKNOWN,GameUI/BasePanel.cpp,,,MATCHED,100,,
+gameui,10021210,5,?Destruct@@YAXPAUbimage_t@CBasePanel@@@Z,void __cdecl Destruct(struct CBasePanel::bimage_t *),UNKNOWN,GameUI/BasePanel.cpp,,,MATCHED,100,,
 gameui,10021220,129,,,UNKNOWN,common/BaseSystemModule.cpp,,,TODO,,,linux: _ZN16BaseSystemModuleC1Ev
 gameui,100212A1,90,,,UNKNOWN,common/BaseSystemModule.cpp,,,TODO,,,linux: _ZN16BaseSystemModuleD1Ev
 gameui,100212FB,19,,,UNKNOWN,common/BaseSystemModule.cpp,,,TODO,,,linux: _ZN16BaseSystemModule7GetNameEv

@@ -5036,3 +5036,34 @@ va,name,kind,evidence
 1002333B,?LongNoSwap@@YA_H_H@Z,func,HLTV/common/byteorder.cpp: same position and size as in our compiled object; int32 is __int32 (steamtypes.h) as in Random.cpp; linux: _Z10LongNoSwapi
 10023343,?FloatSwap@@YAMM@Z,func,HLTV/common/byteorder.cpp: same position and size as in our compiled object; int32 is __int32 (steamtypes.h) as in Random.cpp; linux: _Z9FloatSwapf
 1002336E,?FloatNoSwap@@YAMM@Z,func,HLTV/common/byteorder.cpp: same position and size as in our compiled object; int32 is __int32 (steamtypes.h) as in Random.cpp; linux: _Z11FloatNoSwapf
+10020500,??0CBasePanel@@QAE@XZ,func,GameUI/BasePanel.cpp: same position and size as in our compiled object; linux: _ZN10CBasePanelC1Ev
+1002053F,?OnChildAdded@CBasePanel@@UAEXI@Z,func,GameUI/BasePanel.cpp: same position and size as in our compiled object; linux: _ZN10CBasePanel12OnChildAddedEj
+10020564,?IsWithinTraverse@CBasePanel@@UAEIHH_N@Z,func,GameUI/BasePanel.cpp: same position and size as in our compiled object; linux: _ZN10CBasePanel16IsWithinTraverseEiib
+1002059B,?PaintBackground@CBasePanel@@UAEXXZ,func,GameUI/BasePanel.cpp: same position and size as in our compiled object; linux: _ZN10CBasePanel15PaintBackgroundEv
+100206D4,?ApplySchemeSettings@CBasePanel@@UAEXPAVIScheme@vgui2@@@Z,func,GameUI/BasePanel.cpp: same position and size as in our compiled object; linux: _ZN10CBasePanel19ApplySchemeSettingsEPN5vgui27ISchemeE
+10020AEC,?SetBackgroundRenderState@CBasePanel@@QAEXW4EBackgroundState@1@@Z,func,GameUI/BasePanel.cpp: same position and size as in our compiled object; linux: _ZN10CBasePanel24SetBackgroundRenderStateENS_16EBackgroundStateE
+10020B02,?DrawBackgroundImage@CBasePanel@@AAEXXZ,func,GameUI/BasePanel.cpp: same position and size as in our compiled object; linux: _ZN10CBasePanel19DrawBackgroundImageEv
+10020CF0,??_GCBasePanel@@UAEPAXI@Z,func,GameUI/BasePanel.cpp: same position and size as in our compiled object
+10020D20,??1CBasePanel@@UAE@XZ,func,GameUI/BasePanel.cpp: same position and size as in our compiled object
+10020D40,?GetMessageMap@Panel@vgui2@@UAEPAUPanelMessageMap@2@XZ,func,GameUI/BasePanel.cpp: same position and size as in our compiled object
+10020D90,??0?$CUtlVector@Ubimage_t@CBasePanel@@@@QAE@HH@Z,func,GameUI/BasePanel.cpp: same position and size as in our compiled object
+10020DD0,??1?$CUtlVector@Ubimage_t@CBasePanel@@@@QAE@XZ,func,GameUI/BasePanel.cpp: same position and size as in our compiled object
+10020DF0,??A?$CUtlVector@Ubimage_t@CBasePanel@@@@QAEAAUbimage_t@CBasePanel@@H@Z,func,GameUI/BasePanel.cpp: same position and size as in our compiled object
+10020E10,?Count@?$CUtlVector@Ubimage_t@CBasePanel@@@@QBEHXZ,func,GameUI/BasePanel.cpp: same position and size as in our compiled object
+10020E30,?AddToTail@?$CUtlVector@Ubimage_t@CBasePanel@@@@QAEHXZ,func,GameUI/BasePanel.cpp: same position and size as in our compiled object
+10020E50,?InsertBefore@?$CUtlVector@Ubimage_t@CBasePanel@@@@QAEHH@Z,func,GameUI/BasePanel.cpp: same position and size as in our compiled object
+10020E90,?Purge@?$CUtlVector@Ubimage_t@CBasePanel@@@@QAEXXZ,func,GameUI/BasePanel.cpp: same position and size as in our compiled object
+10020EC0,?ResetDbgInfo@?$CUtlVector@Ubimage_t@CBasePanel@@@@IAEXXZ,func,GameUI/BasePanel.cpp: same position and size as in our compiled object
+10020ED0,??0?$CUtlMemory@Ubimage_t@CBasePanel@@@@QAE@HH@Z,func,GameUI/BasePanel.cpp: same position and size as in our compiled object
+10020F20,??1?$CUtlMemory@Ubimage_t@CBasePanel@@@@QAE@XZ,func,GameUI/BasePanel.cpp: same position and size as in our compiled object
+10020F40,??A?$CUtlMemory@Ubimage_t@CBasePanel@@@@QAEAAUbimage_t@CBasePanel@@H@Z,func,GameUI/BasePanel.cpp: same position and size as in our compiled object
+10020F60,?Element@?$CUtlVector@Ubimage_t@CBasePanel@@@@QAEAAUbimage_t@CBasePanel@@H@Z,func,GameUI/BasePanel.cpp: same position and size as in our compiled object
+10020F80,?RemoveAll@?$CUtlVector@Ubimage_t@CBasePanel@@@@QAEXXZ,func,GameUI/BasePanel.cpp: same position and size as in our compiled object
+10020FD0,?GrowVector@?$CUtlVector@Ubimage_t@CBasePanel@@@@IAEXH@Z,func,GameUI/BasePanel.cpp: same position and size as in our compiled object
+10021030,?ShiftElementsRight@?$CUtlVector@Ubimage_t@CBasePanel@@@@IAEXHH@Z,func,GameUI/BasePanel.cpp: same position and size as in our compiled object
+10021090,?Construct@@YAXPAUbimage_t@CBasePanel@@@Z,func,GameUI/BasePanel.cpp: same position and size as in our compiled object
+100210B0,?Purge@?$CUtlMemory@Ubimage_t@CBasePanel@@@@QAEXXZ,func,GameUI/BasePanel.cpp: same position and size as in our compiled object
+10021100,?NumAllocated@?$CUtlMemory@Ubimage_t@CBasePanel@@@@QBEHXZ,func,GameUI/BasePanel.cpp: same position and size as in our compiled object
+10021120,?Grow@?$CUtlMemory@Ubimage_t@CBasePanel@@@@QAEXH@Z,func,GameUI/BasePanel.cpp: same position and size as in our compiled object
+100211F0,?IsExternallyAllocated@?$CUtlMemory@Ubimage_t@CBasePanel@@@@QBE_NXZ,func,GameUI/BasePanel.cpp: same position and size as in our compiled object
+10021210,?Destruct@@YAXPAUbimage_t@CBasePanel@@@Z,func,GameUI/BasePanel.cpp: same position and size as in our compiled object
