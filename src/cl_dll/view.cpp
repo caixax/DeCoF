@@ -2557,7 +2557,11 @@ void AddViewmodelBob_guess( struct ref_params_s *pparams, Vector &origin, Vector
 
 	if ( !gHUD.m_iLadder_guess && !gHUD.m_iFallOver_guess && !iAttachCamFlag_guess )
 	{
-		view->curstate.angles[0] -= flWeaponLower_guess;
+		// both branches are the same in retail; only the m_pWeapon load of the condition is left
+		if ( gHUD.m_Ammo.m_pWeapon && gHUD.m_Ammo.m_pWeapon->iId )
+			view->curstate.angles[0] -= flWeaponLower_guess;
+		else
+			view->curstate.angles[0] -= flWeaponLower_guess;
 
 		if ( bLeft )
 		{
@@ -2572,7 +2576,10 @@ void AddViewmodelBob_guess( struct ref_params_s *pparams, Vector &origin, Vector
 	}
 	else
 	{
-		view->curstate.angles[0] -= flWeaponLower_guess * 2;
+		if ( gHUD.m_Ammo.m_pWeapon && gHUD.m_Ammo.m_pWeapon->iId )
+			view->curstate.angles[0] -= flWeaponLower_guess * 2;
+		else
+			view->curstate.angles[0] -= flWeaponLower_guess * 2;
 
 		if ( bLeft )
 			view->curstate.angles[1] += flWeaponLower_guess * 0.5f;

@@ -2884,7 +2884,7 @@ client,100AD510,46,?ShowTip@@YAXPAUclient_textmessage_s@@@Z,ShowTip,PARANOIA,gue
 client,100AD540,368,?VGuiAddScreenMessage@@YAXPAUclient_textmessage_s@@@Z,VGuiAddScreenMessage,PARANOIA,guess:cl_dll/vgui_tips.cpp,,,MATCHED,100,similar:1.00,
 client,100AD6B0,375,?VGuiAddScrollingMessage@@YAXPAUclient_textmessage_s@@@Z,VGuiAddScrollingMessage,PARANOIA,guess:cl_dll/vgui_tips.cpp,,,MATCHED,100,similar:1.00,
 client,100AD830,416,?paintBackground@CTips@@MAEXXZ,CTips::paintBackground,PARANOIA,cl_dll/vgui_tips.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__vgui_tips.obj:score8,
-client,100AD9D0,1139,?AddViewmodelBob_guess@@YAXPAUref_params_s@@AAVVector@@1MMPAUcl_entity_s@@_N@Z,AddViewmodelBob_guess,UNKNOWN,cl_dll/view.cpp,,,TODO,99.12,client_manual.csv,99.12%: retail has a dead load of gHUD.m_Ammo.m_pWeapon before if ( bLeft ) in both arms; 8 attempts
+client,100AD9D0,1139,?AddViewmodelBob_guess@@YAXPAUref_params_s@@AAVVector@@1MMPAUcl_entity_s@@_N@Z,AddViewmodelBob_guess,UNKNOWN,cl_dll/view.cpp,,,MATCHED,100,client_manual.csv,
 client,100ADE50,91,?NormalizeAngles360_guess@@YAXMM@Z,NormalizeAngles360_guess,UNKNOWN,cl_dll/view.cpp,,,MATCHED,100,client_manual.csv,
 client,100ADEC0,578,?CalcViewModelLag_guess@@YAXMAAVVector@@00PAUcl_entity_s@@_N@Z,CalcViewModelLag_guess,UNKNOWN,cl_dll/view.cpp,,,MATCHED,100,client_manual.csv,
 client,100AE110,1060,?CalcViewmodelBob_guess@@YAMPAUref_params_s@@MM@Z,CalcViewmodelBob_guess,UNKNOWN,cl_dll/view.cpp,,,TODO,97.69,client_manual.csv,97.69%: retail keeps 320.0 in xmm4 and 0 in xmm2 (ours xmm5 and xmm3); 8 attempts
