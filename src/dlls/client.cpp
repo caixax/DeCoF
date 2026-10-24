@@ -399,7 +399,7 @@ static const char *pPoliceAdLibSomething[] =
 	"player/police/adlib/something_9.wav",
 };
 
-int demolevel = 0;
+int demolevel = 1;
 
 static const char *pMorphineInjectionSounds[] =
 {

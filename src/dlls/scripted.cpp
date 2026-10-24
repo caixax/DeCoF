@@ -141,7 +141,8 @@ void CCineMonster :: KeyValue( KeyValueData *pkvd )
 	}
 }
 
-TYPEDESCRIPTION	CCineMonster::m_SaveData[] = 
+/*
+TYPEDESCRIPTION	CCineMonster::m_SaveData[] =
 {
 	DEFINE_FIELD( CCineMonster, m_iState, FIELD_INTEGER ), //LRC
 	DEFINE_FIELD( CCineMonster, m_iszIdle, FIELD_STRING ),
@@ -174,6 +175,7 @@ TYPEDESCRIPTION	CCineMonster::m_SaveData[] =
 
 
 IMPLEMENT_SAVERESTORE( CCineMonster, CBaseMonster );
+*/
 
 LINK_ENTITY_TO_CLASS( scripted_sequence, CCineMonster );
 LINK_ENTITY_TO_CLASS( scripted_action, CCineMonster ); //LRC

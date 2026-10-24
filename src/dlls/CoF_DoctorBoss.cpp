@@ -32,6 +32,8 @@
 extern int gmsgCustomDLight;
 extern bool m_gbIsInCutscene;
 
+const char *ActivityGet[] = { NULL, "HIDING", "AIMING", "RUNNING" };
+
 int sameactioncount = 0;
 
 LINK_ENTITY_TO_CLASS( monster_doctorboss, CDoctorBoss );

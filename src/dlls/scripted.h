@@ -55,10 +55,10 @@ public:
 	virtual int	 ObjectCaps( void ) { return (CBaseMonster :: ObjectCaps() & ~FCAP_ACROSS_TRANSITION); }
 	virtual void Activate( void );
 
-	virtual int		Save( CSave &save );
-	virtual int		Restore( CRestore &restore );
-	
-	static	TYPEDESCRIPTION m_SaveData[];
+//	virtual int		Save( CSave &save );
+//	virtual int		Restore( CRestore &restore );
+
+//	static	TYPEDESCRIPTION m_SaveData[];
 
 	//LRC: states for script entities
 	virtual STATE	GetState( void ) { return m_iState; };
