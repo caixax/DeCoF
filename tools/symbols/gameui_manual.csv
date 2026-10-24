@@ -5266,3 +5266,23 @@ va,name,kind,evidence
 1004FD66,?Run@COptionsDialog@@QAEXXZ,func,GameUI/OptionsDialog.cpp: same position and size as in our compiled object; linux: _ZN14COptionsDialog3RunEv
 1004FD94,?OnClose@COptionsDialog@@UAEXXZ,func,GameUI/OptionsDialog.cpp: same position and size as in our compiled object; linux: _ZN14COptionsDialog7OnCloseEv
 1004FDC0,??_GCOptionsDialog@@UAEPAXI@Z,func,GameUI/OptionsDialog.cpp: same position and size as in our compiled object
+10025EF0,?Mem_ZeroMalloc@@YAPAXI@Z,func,HLTV/common/common.cpp: same position and size as in our compiled object (gameui.so DWARF names and line order; core.so symbols)
+10025F22,?COM_BuildNumber@@YAHXZ,func,HLTV/common/common.cpp: same position and size as in our compiled object (gameui.so DWARF names and line order; core.so symbols)
+100260B5,?COM_TimeString@@YAPADXZ,func,HLTV/common/common.cpp: same position and size as in our compiled object (gameui.so DWARF names and line order; core.so symbols); linux: _Z14COM_TimeStringv
+100260F7,?COM_SkipPath@@YAPADPAD@Z,func,HLTV/common/common.cpp: same position and size as in our compiled object (gameui.so DWARF names and line order; core.so symbols); linux: _Z12COM_SkipPathPc
+1002613C,?COM_FileBase@@YAXPAD0@Z,func,HLTV/common/common.cpp: same position and size as in our compiled object (gameui.so DWARF names and line order; core.so symbols); linux: _Z12COM_FileBasePcS_
+10026251,?COM_UngetToken@@YAXXZ,func,HLTV/common/common.cpp: same position and size as in our compiled object (gameui.so DWARF names and line order; core.so symbols); linux: _Z14COM_UngetTokenv
+1002625D,?COM_Parse@@YAPADPAD@Z,func,HLTV/common/common.cpp: same position and size as in our compiled object (gameui.so DWARF names and line order; core.so symbols); linux: _Z9COM_ParsePc
+1002640D,?COM_VarArgs@@YAPADPADZZ,func,HLTV/common/common.cpp: same position and size as in our compiled object (gameui.so DWARF names and line order; core.so symbols); linux: _Z11COM_VarArgsPcz
+10026441,?COM_Nibble@@YAED@Z,func,HLTV/common/common.cpp: same position and size as in our compiled object (gameui.so DWARF names and line order; core.so symbols); linux: COM_Nibble
+10026499,?COM_HexConvert@@YAXPBDHPAE@Z,func,HLTV/common/common.cpp: same position and size as in our compiled object (gameui.so DWARF names and line order; core.so symbols); linux: _Z14COM_HexConvertPKciPh
+1002650D,?COM_BinPrintf@@YAPADPAEH@Z,func,HLTV/common/common.cpp: same position and size as in our compiled object (gameui.so DWARF names and line order; core.so symbols); linux: _Z13COM_BinPrintfPhi
+1002659D,?COM_FormatTime@@YAPADM@Z,func,HLTV/common/common.cpp: same position and size as in our compiled object (gameui.so DWARF names and line order; core.so symbols); linux: _Z14COM_FormatTimef
+1002664F,?COM_RemoveEvilChars@@YAXPAD@Z,func,HLTV/common/common.cpp: same position and size as in our compiled object (gameui.so DWARF names and line order; core.so symbols)
+100266AC,?COM_GetBaseDir_guess@@YAPADXZ,func,HLTV/common/common.cpp: same position and size as in our compiled object (gameui.so DWARF names and line order; core.so symbols)
+10026746,?COM_FixSlashes_guess@@YAXPAD@Z,func,HLTV/common/common.cpp: same position and size as in our compiled object (gameui.so DWARF names and line order; core.so symbols)
+10026771,?COM_FileNameCmp@@YAHPBD0@Z,func,HLTV/common/common.cpp: same position and size as in our compiled object (gameui.so DWARF names and line order; core.so symbols)
+1002680B,?COM_IsWhiteSpace@@YA_ND@Z,func,HLTV/common/common.cpp: same position and size as in our compiled object (gameui.so DWARF names and line order; core.so symbols)
+1002684A,?COM_TrimSpace@@YAXPBDPAD@Z,func,HLTV/common/common.cpp: same position and size as in our compiled object (gameui.so DWARF names and line order; core.so symbols)
+10026911,?COM_UnpackRGB@@YAXAAH00_I@Z,func,HLTV/common/common.cpp: same position and size as in our compiled object (gameui.so DWARF names and line order; core.so symbols)
+10026945,?COM_PackRGB@@YAIHHH@Z,func,HLTV/common/common.cpp: same position and size as in our compiled object (gameui.so DWARF names and line order; core.so symbols)

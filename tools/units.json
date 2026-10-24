@@ -4138,6 +4138,11 @@
           "name": "GameUI/OptionsDialog",
           "source": "src/gameui/OptionsDialog.cpp",
           "functions_file": "tools/units/gameui_GameUI_OptionsDialog.txt"
+        },
+        {
+          "name": "HLTV/common/common",
+          "source": "src/HLTV/common/common.cpp",
+          "functions_file": "tools/units/gameui_HLTV_common_common.txt"
         }
       ]
     }

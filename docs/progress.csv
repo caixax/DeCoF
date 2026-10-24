@@ -8544,26 +8544,26 @@ gameui,10024D40,301,?MD5Update@@YAXPAUMD5Context_t@@PBEI@Z,"void __cdecl MD5Upda
 gameui,10024E6D,226,?MD5Final@@YAXQAEPAUMD5Context_t@@@Z,"void __cdecl MD5Final(unsigned char * const,struct MD5Context_t *)",UNKNOWN,public/checksum_md5.cpp,,,MATCHED,100,gameui_manual.csv,linux: _Z8MD5FinalPhP12MD5Context_t
 gameui,10024F4F,3875,?MD5Transform@@YAXQAIQBI@Z,"void __cdecl MD5Transform(unsigned int * const,unsigned int const * const)",ENGINE,public/checksum_md5.cpp,,,MATCHED,100,gameui_manual.csv,linux: _Z12MD5TransformPjPKj
 gameui,10025E72,112,?MD5_Print@@YAPADQAE@Z,char * __cdecl MD5_Print(unsigned char * const),UNKNOWN,public/checksum_md5.cpp,,,MATCHED,100,gameui_manual.csv,linux: _Z9MD5_PrintPh
-gameui,10025EF0,50,,,UNKNOWN,HLTV/common/common.cpp,,,TODO,,,
-gameui,10025F22,403,,,UNKNOWN,HLTV/common/common.cpp,,,TODO,,,
-gameui,100260B5,66,_COM_TimeString,COM_TimeString,ENGINE,HLTV/common/common.cpp,,,TODO,,linux_symbols:string:0.375,linux: _Z14COM_TimeStringv
-gameui,100260F7,69,,,UNKNOWN,HLTV/common/common.cpp,,,TODO,,,linux: _Z12COM_SkipPathPc
-gameui,1002613C,277,,,UNKNOWN,HLTV/common/common.cpp,,,TODO,,,linux: _Z12COM_FileBasePcS_
-gameui,10026251,12,,,UNKNOWN,HLTV/common/common.cpp,,,TODO,,,linux: _Z14COM_UngetTokenv
-gameui,1002625D,432,,,UNKNOWN,HLTV/common/common.cpp,,,TODO,,,linux: _Z9COM_ParsePc
-gameui,1002640D,52,,,UNKNOWN,HLTV/common/common.cpp,,,TODO,,,linux: _Z11COM_VarArgsPcz
-gameui,10026441,88,,,UNKNOWN,HLTV/common/common.cpp,,,TODO,,,linux: COM_Nibble
-gameui,10026499,116,,,UNKNOWN,HLTV/common/common.cpp,,,TODO,,,linux: _Z14COM_HexConvertPKciPh
-gameui,1002650D,144,,,UNKNOWN,HLTV/common/common.cpp,,,TODO,,,linux: _Z13COM_BinPrintfPhi
-gameui,1002659D,178,_COM_FormatTime,COM_FormatTime,ENGINE,HLTV/common/common.cpp,,,TODO,,linux_symbols:string:0.531,linux: _Z14COM_FormatTimef
-gameui,1002664F,93,,,UNKNOWN,HLTV/common/common.cpp,,,TODO,,,
-gameui,100266AC,154,,,UNKNOWN,HLTV/common/common.cpp,,,TODO,,,
-gameui,10026746,43,,,UNKNOWN,HLTV/common/common.cpp,,,TODO,,,
-gameui,10026771,154,,,UNKNOWN,HLTV/common/common.cpp,,,TODO,,,
-gameui,1002680B,63,,,UNKNOWN,HLTV/common/common.cpp,,,TODO,,,
-gameui,1002684A,199,,,UNKNOWN,HLTV/common/common.cpp,,,TODO,,,
-gameui,10026911,52,,,UNKNOWN,HLTV/common/common.cpp,,,TODO,,,
-gameui,10026945,41,,,UNKNOWN,HLTV/common/common.cpp,,,TODO,,,
+gameui,10025EF0,50,?Mem_ZeroMalloc@@YAPAXI@Z,void * __cdecl Mem_ZeroMalloc(unsigned int),UNKNOWN,HLTV/common/common.cpp,,,MATCHED,100,,
+gameui,10025F22,403,?COM_BuildNumber@@YAHXZ,int __cdecl COM_BuildNumber(void),UNKNOWN,HLTV/common/common.cpp,,,TODO,99.99,,"relocation targets differ (instructions identical): retail DAT_100e1b00, ours $SG42348"
+gameui,100260B5,66,?COM_TimeString@@YAPADXZ,char * __cdecl COM_TimeString(void),ENGINE,HLTV/common/common.cpp,,,MATCHED,100,linux_symbols:string:0.375,linux: _Z14COM_TimeStringv
+gameui,100260F7,69,?COM_SkipPath@@YAPADPAD@Z,char * __cdecl COM_SkipPath(char *),UNKNOWN,HLTV/common/common.cpp,,,MATCHED,100,,linux: _Z12COM_SkipPathPc
+gameui,1002613C,277,?COM_FileBase@@YAXPAD0@Z,"void __cdecl COM_FileBase(char *,char *)",UNKNOWN,HLTV/common/common.cpp,,,MATCHED,100,,linux: _Z12COM_FileBasePcS_
+gameui,10026251,12,?COM_UngetToken@@YAXXZ,void __cdecl COM_UngetToken(void),UNKNOWN,HLTV/common/common.cpp,,,MATCHED,100,,linux: _Z14COM_UngetTokenv
+gameui,1002625D,432,?COM_Parse@@YAPADPAD@Z,char * __cdecl COM_Parse(char *),UNKNOWN,HLTV/common/common.cpp,,,MATCHED,100,,linux: _Z9COM_ParsePc
+gameui,1002640D,52,?COM_VarArgs@@YAPADPADZZ,"char * __cdecl COM_VarArgs(char *,...)",UNKNOWN,HLTV/common/common.cpp,,,MATCHED,100,,linux: _Z11COM_VarArgsPcz
+gameui,10026441,88,?COM_Nibble@@YAED@Z,unsigned char __cdecl COM_Nibble(char),UNKNOWN,HLTV/common/common.cpp,,,MATCHED,100,,linux: COM_Nibble
+gameui,10026499,116,?COM_HexConvert@@YAXPBDHPAE@Z,"void __cdecl COM_HexConvert(char const *,int,unsigned char *)",UNKNOWN,HLTV/common/common.cpp,,,MATCHED,100,,linux: _Z14COM_HexConvertPKciPh
+gameui,1002650D,144,?COM_BinPrintf@@YAPADPAEH@Z,"char * __cdecl COM_BinPrintf(unsigned char *,int)",UNKNOWN,HLTV/common/common.cpp,,,MATCHED,100,,linux: _Z13COM_BinPrintfPhi
+gameui,1002659D,178,?COM_FormatTime@@YAPADM@Z,char * __cdecl COM_FormatTime(float),ENGINE,HLTV/common/common.cpp,,,MATCHED,100,linux_symbols:string:0.531,linux: _Z14COM_FormatTimef
+gameui,1002664F,93,?COM_RemoveEvilChars@@YAXPAD@Z,void __cdecl COM_RemoveEvilChars(char *),UNKNOWN,HLTV/common/common.cpp,,,MATCHED,100,,
+gameui,100266AC,154,?COM_GetBaseDir_guess@@YAPADXZ,char * __cdecl COM_GetBaseDir_guess(void),UNKNOWN,HLTV/common/common.cpp,,,MATCHED,100,,
+gameui,10026746,43,?COM_FixSlashes_guess@@YAXPAD@Z,void __cdecl COM_FixSlashes_guess(char *),UNKNOWN,HLTV/common/common.cpp,,,MATCHED,100,,
+gameui,10026771,154,?COM_FileNameCmp@@YAHPBD0@Z,"int __cdecl COM_FileNameCmp(char const *,char const *)",UNKNOWN,HLTV/common/common.cpp,,,MATCHED,100,,
+gameui,1002680B,63,?COM_IsWhiteSpace@@YA_ND@Z,bool __cdecl COM_IsWhiteSpace(char),UNKNOWN,HLTV/common/common.cpp,,,MATCHED,100,,
+gameui,1002684A,199,?COM_TrimSpace@@YAXPBDPAD@Z,"void __cdecl COM_TrimSpace(char const *,char *)",UNKNOWN,HLTV/common/common.cpp,,,MATCHED,100,,
+gameui,10026911,52,?COM_UnpackRGB@@YAXAAH00_I@Z,"void __cdecl COM_UnpackRGB(int &,int &,int &,unsigned __int32)",UNKNOWN,HLTV/common/common.cpp,,,MATCHED,100,,
+gameui,10026945,41,?COM_PackRGB@@YAIHHH@Z,"unsigned int __cdecl COM_PackRGB(int,int,int)",UNKNOWN,HLTV/common/common.cpp,,,MATCHED,100,,
 gameui,10026970,143,?SetJoinTeamCombo@CCreateMultiplayerGameBotPage@@AAEXPBD@Z,private: void __thiscall CCreateMultiplayerGameBotPage::SetJoinTeamCombo(char const *),UNKNOWN,GameUI/CreateMultiplayerGameBotPage.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,100269FF,143,?SetChatterCombo@CCreateMultiplayerGameBotPage@@AAEXPBD@Z,private: void __thiscall CCreateMultiplayerGameBotPage::SetChatterCombo(char const *),UNKNOWN,GameUI/CreateMultiplayerGameBotPage.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,10026A8E,2081,??0CCreateMultiplayerGameBotPage@@QAE@PAVPanel@vgui2@@PBDPAVKeyValues@@@Z,"public: __thiscall CCreateMultiplayerGameBotPage::CCreateMultiplayerGameBotPage(class vgui2::Panel *,char const *,class KeyValues *)",ENGINE,GameUI/CreateMultiplayerGameBotPage.cpp,,,MATCHED,100,gameui_manual.csv,
