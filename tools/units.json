@@ -3792,6 +3792,11 @@
           "name": "GameUI/CreateMultiplayerGameBotPage",
           "source": "src/gameui/CreateMultiplayerGameBotPage.cpp",
           "functions_file": "tools/units/gameui_GameUI_CreateMultiplayerGameBotPage.txt"
+        },
+        {
+          "name": "GameUI/CreateMultiplayerGameServerPage",
+          "source": "src/gameui/CreateMultiplayerGameServerPage.cpp",
+          "functions_file": "tools/units/gameui_GameUI_CreateMultiplayerGameServerPage.txt"
         }
       ]
     }

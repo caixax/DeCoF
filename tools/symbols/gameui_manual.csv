@@ -2858,3 +2858,25 @@ va,name,kind,evidence
 10027640,?GetPanelClassName@PropertyPage@vgui2@@SAPBDXZ,func,GameUI/CreateMultiplayerGameBotPage.cpp: same position and size as in our compiled object
 10027650,?SetPaintBorder@PropertyPage@vgui2@@UAEX_N@Z,func,GameUI/CreateMultiplayerGameBotPage.cpp: same position and size as in our compiled object
 10027670,??_GCCreateMultiplayerGameBotPage@@UAEPAXI@Z,func,GameUI/CreateMultiplayerGameBotPage.cpp: same position and size as in our compiled object
+10029100,??0CCreateMultiplayerGameServerPage@@QAE@PAVPanel@vgui2@@PBD@Z,func,GameUI/CreateMultiplayerGameServerPage.cpp: same position and size as in our compiled object
+1002935C,??1CCreateMultiplayerGameServerPage@@UAE@XZ,func,GameUI/CreateMultiplayerGameServerPage.cpp: same position and size as in our compiled object
+10029378,?OnApplyChanges@CCreateMultiplayerGameServerPage@@MAEXXZ,func,GameUI/CreateMultiplayerGameServerPage.cpp: same position and size as in our compiled object; linux: _ZN32CCreateMultiplayerGameServerPage14OnApplyChangesEv
+10029479,?LoadMaps@CCreateMultiplayerGameServerPage@@AAEXPBD@Z,func,GameUI/CreateMultiplayerGameServerPage.cpp: same position and size as in our compiled object; linux: _ZN32CCreateMultiplayerGameServerPage8LoadMapsEPKc
+100296EB,?LoadMapList@CCreateMultiplayerGameServerPage@@AAEXXZ,func,GameUI/CreateMultiplayerGameServerPage.cpp: same position and size as in our compiled object; linux: _ZN32CCreateMultiplayerGameServerPage11LoadMapListEv
+10029800,?SetBotQuota@CCreateMultiplayerGameServerPage@@QAEXH@Z,func,GameUI/CreateMultiplayerGameServerPage.cpp: same position and size as in our compiled object; linux: _ZN32CCreateMultiplayerGameServerPage11SetBotQuotaEi
+10029842,?SetBotsEnabled@CCreateMultiplayerGameServerPage@@QAEX_N@Z,func,GameUI/CreateMultiplayerGameServerPage.cpp: same position and size as in our compiled object; linux: _ZN32CCreateMultiplayerGameServerPage14SetBotsEnabledEb
+1002986D,?GetBotQuota@CCreateMultiplayerGameServerPage@@QAEHXZ,func,GameUI/CreateMultiplayerGameServerPage.cpp: same position and size as in our compiled object; linux: _ZN32CCreateMultiplayerGameServerPage11GetBotQuotaEv
+100298A6,?GetBotsEnabled@CCreateMultiplayerGameServerPage@@QAE_NXZ,func,GameUI/CreateMultiplayerGameServerPage.cpp: same position and size as in our compiled object; linux: _ZN32CCreateMultiplayerGameServerPage14GetBotsEnabledEv
+100298CB,?IsRandomMapSelected@CCreateMultiplayerGameServerPage@@QAE_NXZ,func,GameUI/CreateMultiplayerGameServerPage.cpp: same position and size as in our compiled object; linux: _ZN32CCreateMultiplayerGameServerPage19IsRandomMapSelectedEv
+10029928,?GetMapName@CCreateMultiplayerGameServerPage@@QAEPBDXZ,func,GameUI/CreateMultiplayerGameServerPage.cpp: same position and size as in our compiled object; linux: _ZN32CCreateMultiplayerGameServerPage10GetMapNameEv
+100299F9,?SetMap@CCreateMultiplayerGameServerPage@@QAEXPBD@Z,func,GameUI/CreateMultiplayerGameServerPage.cpp: same position and size as in our compiled object; linux: _ZN32CCreateMultiplayerGameServerPage6SetMapEPKc
+10029AD2,?OnCheckButtonChecked@CCreateMultiplayerGameServerPage@@EAEXXZ,func,GameUI/CreateMultiplayerGameServerPage.cpp: same position and size as in our compiled object; linux: _ZN32CCreateMultiplayerGameServerPage20OnCheckButtonCheckedEv
+10029C50,??0CCreateMultiplayerGameServerPage_RegisterMap@CCreateMultiplayerGameServerPage@@QAE@XZ,func,GameUI/CreateMultiplayerGameServerPage.cpp: same position and size as in our compiled object
+10029C70,?ChainToMap@CCreateMultiplayerGameServerPage@@SAXXZ,func,GameUI/CreateMultiplayerGameServerPage.cpp: same position and size as in our compiled object
+10029CE0,?GetMessageMap@CCreateMultiplayerGameServerPage@@UAEPAUPanelMessageMap@vgui2@@XZ,func,GameUI/CreateMultiplayerGameServerPage.cpp: same position and size as in our compiled object
+10029D20,?GetPanelClassName@CCreateMultiplayerGameServerPage@@SAPBDXZ,func,GameUI/CreateMultiplayerGameServerPage.cpp: same position and size as in our compiled object
+10029D30,?GetPanelBaseClassName@CCreateMultiplayerGameServerPage@@SAPBDXZ,func,GameUI/CreateMultiplayerGameServerPage.cpp: same position and size as in our compiled object
+10029D40,??0PanelMessageFunc_OnCheckButtonChecked@CCreateMultiplayerGameServerPage@@QAE@XZ,func,GameUI/CreateMultiplayerGameServerPage.cpp: same position and size as in our compiled object
+10029D60,?InitVar@PanelMessageFunc_OnCheckButtonChecked@CCreateMultiplayerGameServerPage@@SAXXZ,func,GameUI/CreateMultiplayerGameServerPage.cpp: same position and size as in our compiled object
+10029DD0,?AddToMap@CCreateMultiplayerGameServerPage@@SAXPBDP8Panel@vgui2@@AEXXZHH0H0@Z,func,GameUI/CreateMultiplayerGameServerPage.cpp: same position and size as in our compiled object
+10029E60,??_GCCreateMultiplayerGameServerPage@@UAEPAXI@Z,func,GameUI/CreateMultiplayerGameServerPage.cpp: same position and size as in our compiled object
