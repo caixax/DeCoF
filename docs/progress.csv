@@ -24062,7 +24062,7 @@ hw,01D10D9D,15,_AdsShutdown_guess,,UNKNOWN,iga/IGA_Engine_guess.cpp,,,TODO,,,"Va
 hw,01D10DAC,19,_AdsFrame_guess,,UNKNOWN,iga/IGA_Engine_guess.cpp,,,TODO,,,"Valve's in-game advertising glue (C exports AdsStartup_guess and friends called by Host_Init, Host_Frame, V_RenderView; RTTI CInGameAdvertisingSystem; ENGINEINGAMEADVERTISINGVERSION001, iga_shoot, iga metadata); no Linux file and no string names the file: the _guess file name only describes the object and sorts into its link position; 01D10480-01D10D3F, before the $E helpers at 01D10D40, may be a separate object"
 hw,01D10DBF,19,_LevelLoaded_guess,,UNKNOWN,iga/IGA_Engine_guess.cpp,,,TODO,,,"Valve's in-game advertising glue (C exports AdsStartup_guess and friends called by Host_Init, Host_Frame, V_RenderView; RTTI CInGameAdvertisingSystem; ENGINEINGAMEADVERTISINGVERSION001, iga_shoot, iga metadata); no Linux file and no string names the file: the _guess file name only describes the object and sorts into its link position; 01D10480-01D10D3F, before the $E helpers at 01D10D40, may be a separate object"
 hw,01D10DD2,27,_AdsRenderView_guess,,UNKNOWN,iga/IGA_Engine_guess.cpp,,,TODO,,,"Valve's in-game advertising glue (C exports AdsStartup_guess and friends called by Host_Init, Host_Frame, V_RenderView; RTTI CInGameAdvertisingSystem; ENGINEINGAMEADVERTISINGVERSION001, iga_shoot, iga metadata); no Linux file and no string names the file: the _guess file name only describes the object and sorts into its link position; 01D10480-01D10D3F, before the $E helpers at 01D10D40, may be a separate object"
-hw,01D10DED,28,,,UNKNOWN,iga/IGA_Engine_guess.cpp,,,TODO,,,"Valve's in-game advertising glue (C exports AdsStartup_guess and friends called by Host_Init, Host_Frame, V_RenderView; RTTI CInGameAdvertisingSystem; ENGINEINGAMEADVERTISINGVERSION001, iga_shoot, iga metadata); no Linux file and no string names the file: the _guess file name only describes the object and sorts into its link position; 01D10480-01D10D3F, before the $E helpers at 01D10D40, may be a separate object"
+hw,01D10DED,28,_IGA_ClientFactory_guess,,UNKNOWN,iga/IGA_Engine_guess.cpp,,,TODO,,,"Valve's in-game advertising glue (C exports AdsStartup_guess and friends called by Host_Init, Host_Frame, V_RenderView; RTTI CInGameAdvertisingSystem; ENGINEINGAMEADVERTISINGVERSION001, iga_shoot, iga metadata); no Linux file and no string names the file: the _guess file name only describes the object and sorts into its link position; 01D10480-01D10D3F, before the $E helpers at 01D10D40, may be a separate object"
 hw,01D10E09,15,_ResetLevelState_guess,,UNKNOWN,iga/IGA_Engine_guess.cpp,,,TODO,,,"Valve's in-game advertising glue (C exports AdsStartup_guess and friends called by Host_Init, Host_Frame, V_RenderView; RTTI CInGameAdvertisingSystem; ENGINEINGAMEADVERTISINGVERSION001, iga_shoot, iga metadata); no Linux file and no string names the file: the _guess file name only describes the object and sorts into its link position; 01D10480-01D10D3F, before the $E helpers at 01D10D40, may be a separate object"
 hw,01D10E18,19,_AdsDecalTexture_guess,,UNKNOWN,iga/IGA_Engine_guess.cpp,,,TODO,,,"Valve's in-game advertising glue (C exports AdsStartup_guess and friends called by Host_Init, Host_Frame, V_RenderView; RTTI CInGameAdvertisingSystem; ENGINEINGAMEADVERTISINGVERSION001, iga_shoot, iga metadata); no Linux file and no string names the file: the _guess file name only describes the object and sorts into its link position; 01D10480-01D10D3F, before the $E helpers at 01D10D40, may be a separate object"
 hw,01D10E2B,15,,,UNKNOWN,iga/IGA_Engine_guess.cpp,,,TODO,,,"Valve's in-game advertising glue (C exports AdsStartup_guess and friends called by Host_Init, Host_Frame, V_RenderView; RTTI CInGameAdvertisingSystem; ENGINEINGAMEADVERTISINGVERSION001, iga_shoot, iga metadata); no Linux file and no string names the file: the _guess file name only describes the object and sorts into its link position; 01D10480-01D10D3F, before the $E helpers at 01D10D40, may be a separate object"
@@ -25932,10 +25932,10 @@ hw,01D61165,32,_LoadTransBMP,LoadTransBMP,ENGINE,engine/GL_DRAW.C,,,MATCHED,100,
 hw,01D61185,689,_LoadTransPic,LoadTransPic,ENGINE,engine/GL_DRAW.C,,,MATCHED,100,linux_symbols:caller:0.355,
 hw,01D61436,544,_Draw_MiptexTexture,Draw_MiptexTexture,ENGINE,engine/GL_DRAW.C,,,MATCHED,100,linux_symbols:string:0.443,
 hw,01D61656,505,_GL_LoadFilterTexture,,UNKNOWN,engine/GL_DRAW.C,,,MATCHED,100,hw_manual.csv,
-hw,01D61850,568,,,UNKNOWN,,,,TODO,,,
-hw,01D61A88,507,,,UNKNOWN,,,,TODO,,,
-hw,01D61C83,1047,_BuildTris,BuildTris,ENGINE,engine/GL_MESH.C,,,TODO,,linux_symbols:string:0.756,
-hw,01D6209A,696,_GL_MakeAliasModelDisplayLists,GL_MakeAliasModelDisplayLists,ENGINE,engine/GL_MESH.C,,,TODO,,linux_symbols:string:0.47,
+hw,01D61850,568,_StripLength,StripLength,ENGINE,engine/GL_MESH.C,,,MATCHED,100,hw_manual.csv,
+hw,01D61A88,507,_FanLength,FanLength,ENGINE,engine/GL_MESH.C,,,MATCHED,100,hw_manual.csv,
+hw,01D61C83,1047,_BuildTris,BuildTris,ENGINE,engine/GL_MESH.C,,,MATCHED,100,linux_symbols:string:0.756,
+hw,01D6209A,696,_GL_MakeAliasModelDisplayLists,GL_MakeAliasModelDisplayLists,ENGINE,engine/GL_MESH.C,,,MATCHED,100,linux_symbols:string:0.47,
 hw,01D62360,107,_Mod_Extradata,Mod_Extradata,ENGINE,engine/GL_MODEL.C,,,MATCHED,100,linux_symbols:string:0.875,
 hw,01D623CB,168,_Mod_PointInLeaf,Mod_PointInLeaf,ENGINE,engine/GL_MODEL.C,,,MATCHED,100,linux_symbols:string:0.833,
 hw,01D62473,88,_Mod_ClearAll,Mod_ClearAll,ENGINE,engine/GL_MODEL.C,,,MATCHED,100,,
@@ -28612,89 +28612,89 @@ hw,01DF5CF0,46,??_GCEngine@@UAEPAXI@Z,destructor',ENGINE,engine/sys_engine.cpp,,
 hw,01DF5D20,23,??0IEngine@@QAE@XZ,IEngine::IEngine,ENGINE,engine/sys_engine.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01DF5D40,46,??_GIEngine@@UAEPAXI@Z,destructor',ENGINE,engine/sys_engine.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01DF5D70,20,??1IEngine@@UAE@XZ,IEngine::~IEngine,ENGINE,engine/sys_engine.cpp,,,MATCHED,100,hw_manual.csv,
-hw,01DF5D90,134,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
-hw,01DF5E16,34,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
-hw,01DF5E38,20,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,linux: _ZNK17CVideoMode_Common14GetInitializedEv
-hw,01DF5E4C,25,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,linux: _ZN17CVideoMode_Common14SetInitializedEb
-hw,01DF5E65,20,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,linux: _ZNK17CVideoMode_Common14IsWindowedModeEv
-hw,01DF5E79,102,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,linux: _ZN17CVideoMode_Common7AddModeEiii
-hw,01DF5EDF,56,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,linux: _ZN17CVideoMode_Common7GetModeEi
-hw,01DF5F17,20,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,linux: _ZN17CVideoMode_Common12GetModeCountEv
-hw,01DF5F2B,16,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,linux: _ZN17CVideoMode_Common15MaxBitsPerPixelEv
-hw,01DF5F3B,32,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,linux: _ZN17CVideoMode_Common14GetCurrentModeEv
-hw,01DF5F5B,1119,,CVideoMode_Common::Init,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,linux_symbols:string:0.791,
-hw,01DF63BA,100,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,linux: _ZN17CVideoMode_Common4InitEPv
-hw,01DF641E,128,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,linux: _ZN17CVideoMode_Common20UpdateWindowPositionEv
-hw,01DF649E,11,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,linux: _ZN17CVideoMode_Common33ChangeDisplaySettingsToFullscreenEv
-hw,01DF64A9,11,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,linux: _ZN17CVideoMode_Common17ReleaseFullScreenEv
-hw,01DF64B4,280,,CVideoMode_Common::AdjustWindowForMode,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,linux_symbols:caller:0.667,
-hw,01DF65CC,125,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,linux: _ZN17CVideoMode_Common8ShutdownEv
-hw,01DF6649,11,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,linux: _ZN17CVideoMode_Common10FlipScreenEv
-hw,01DF6654,136,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,linux: _ZN17CVideoMode_Common18CenterEngineWindowEPvii
-hw,01DF66DC,754,,CVideoMode_Common::LoadStartupGraphic,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,linux_symbols:string:0.795,
-hw,01DF69CE,697,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
-hw,01DF6C87,264,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
-hw,01DF6D8F,11,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,linux: _ZN17CVideoMode_Common12RestoreVideoEv
-hw,01DF6D9A,11,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,linux: _ZN17CVideoMode_Common12ReleaseVideoEv
-hw,01DF6DA5,45,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
-hw,01DF6DD2,48,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,linux: _ZN17CVideoMode_OpenGL4InitEPv
-hw,01DF6E02,44,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,linux: _ZN17CVideoMode_OpenGL12ReleaseVideoEv
-hw,01DF6E2E,176,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
-hw,01DF6EDE,68,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,linux: _ZN17CVideoMode_OpenGL17ReleaseFullScreenEv
-hw,01DF6F22,252,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,linux: _ZN17CVideoMode_OpenGL33ChangeDisplaySettingsToFullscreenEv
-hw,01DF701E,11,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,linux: _ZN17CVideoMode_OpenGL10FlipScreenEv
-hw,01DF7029,88,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
-hw,01DF7081,28,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
-hw,01DF709D,72,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
-hw,01DF70E5,72,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
-hw,01DF712D,70,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
-hw,01DF7173,347,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
-hw,01DF72CE,47,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
-hw,01DF72FD,128,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
-hw,01DF737D,27,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
-hw,01DF7398,147,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
-hw,01DF742B,41,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
-hw,01DF7454,28,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
-hw,01DF7470,48,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
+hw,01DF5D90,134,??0CVideoMode_Common@@QAE@XZ,CVideoMode_Common::CVideoMode_Common,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DF5E16,34,??1CVideoMode_Common@@UAE@XZ,CVideoMode_Common::~CVideoMode_Common,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DF5E38,20,?GetInitialized@CVideoMode_Common@@UAE_NXZ,CVideoMode_Common::GetInitialized,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZNK17CVideoMode_Common14GetInitializedEv
+hw,01DF5E4C,25,?SetInitialized@CVideoMode_Common@@UAEX_N@Z,CVideoMode_Common::SetInitialized,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN17CVideoMode_Common14SetInitializedEb
+hw,01DF5E65,20,?IsWindowedMode@CVideoMode_Common@@UAE_NXZ,CVideoMode_Common::IsWindowedMode,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZNK17CVideoMode_Common14IsWindowedModeEv
+hw,01DF5E79,102,?AddMode@CVideoMode_Common@@UAE_NHHH@Z,CVideoMode_Common::AddMode,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN17CVideoMode_Common7AddModeEiii
+hw,01DF5EDF,56,?GetMode@CVideoMode_Common@@UAEPAUvmode_s@@H@Z,CVideoMode_Common::GetMode,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN17CVideoMode_Common7GetModeEi
+hw,01DF5F17,20,?GetModeCount@CVideoMode_Common@@UAEHXZ,CVideoMode_Common::GetModeCount,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN17CVideoMode_Common12GetModeCountEv
+hw,01DF5F2B,16,?MaxBitsPerPixel@CVideoMode_Common@@UAEHXZ,CVideoMode_Common::MaxBitsPerPixel,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN17CVideoMode_Common15MaxBitsPerPixelEv
+hw,01DF5F3B,32,?GetCurrentMode@CVideoMode_Common@@UAEPAUvmode_s@@XZ,CVideoMode_Common::GetCurrentMode,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN17CVideoMode_Common14GetCurrentModeEv
+hw,01DF5F5B,1119,?Init@CVideoMode_Common@@UAE_NPAX@Z,CVideoMode_Common::Init,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DF63BA,100,?VideoModeCompare@@YAHPBX0@Z,VideoModeCompare,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN17CVideoMode_Common4InitEPv
+hw,01DF641E,128,?UpdateWindowPosition@CVideoMode_Common@@UAEXXZ,CVideoMode_Common::UpdateWindowPosition,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN17CVideoMode_Common20UpdateWindowPositionEv
+hw,01DF649E,11,?ChangeDisplaySettingsToFullscreen@CVideoMode_Common@@UAEXXZ,CVideoMode_Common::ChangeDisplaySettingsToFullscreen,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN17CVideoMode_Common33ChangeDisplaySettingsToFullscreenEv
+hw,01DF64A9,11,?ReleaseFullScreen@CVideoMode_Common@@UAEXXZ,CVideoMode_Common::ReleaseFullScreen,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN17CVideoMode_Common17ReleaseFullScreenEv
+hw,01DF64B4,280,?AdjustWindowForMode@CVideoMode_Common@@IAEXXZ,CVideoMode_Common::AdjustWindowForMode,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DF65CC,125,?Shutdown@CVideoMode_Common@@UAEXXZ,CVideoMode_Common::Shutdown,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN17CVideoMode_Common8ShutdownEv
+hw,01DF6649,11,?FlipScreen@CVideoMode_Common@@UAEXXZ,CVideoMode_Common::FlipScreen,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN17CVideoMode_Common10FlipScreenEv
+hw,01DF6654,136,?CenterEngineWindow@CVideoMode_Common@@IAEXPAUHWND__@@HH@Z,CVideoMode_Common::CenterEngineWindow,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN17CVideoMode_Common18CenterEngineWindowEPvii
+hw,01DF66DC,754,?LoadStartupGraphic@CVideoMode_Common@@IAEXXZ,CVideoMode_Common::LoadStartupGraphic,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DF69CE,697,?DrawStartupGraphic@CVideoMode_Common@@IAEXPAUHWND__@@@Z,CVideoMode_Common::DrawStartupGraphic,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DF6C87,264,?DrawImage_guess@CVideoMode_Common@@IAEXPAUHDC__@@PAEHHHHHH@Z,CVideoMode_Common::DrawImage_guess,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DF6D8F,11,?RestoreVideo@CVideoMode_Common@@UAEXXZ,CVideoMode_Common::RestoreVideo,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN17CVideoMode_Common12RestoreVideoEv
+hw,01DF6D9A,11,?ReleaseVideo@CVideoMode_Common@@UAEXXZ,CVideoMode_Common::ReleaseVideo,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN17CVideoMode_Common12ReleaseVideoEv
+hw,01DF6DA5,45,??0CVideoMode_OpenGL@@QAE@_N@Z,CVideoMode_OpenGL::CVideoMode_OpenGL,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DF6DD2,48,?Init@CVideoMode_OpenGL@@UAE_NPAX@Z,CVideoMode_OpenGL::Init,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN17CVideoMode_OpenGL4InitEPv
+hw,01DF6E02,44,?ReleaseVideo@CVideoMode_OpenGL@@UAEXXZ,CVideoMode_OpenGL::ReleaseVideo,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN17CVideoMode_OpenGL12ReleaseVideoEv
+hw,01DF6E2E,176,?RestoreVideo@CVideoMode_OpenGL@@UAEXXZ,CVideoMode_OpenGL::RestoreVideo,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DF6EDE,68,?ReleaseFullScreen@CVideoMode_OpenGL@@UAEXXZ,CVideoMode_OpenGL::ReleaseFullScreen,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN17CVideoMode_OpenGL17ReleaseFullScreenEv
+hw,01DF6F22,252,?ChangeDisplaySettingsToFullscreen@CVideoMode_OpenGL@@UAEXXZ,CVideoMode_OpenGL::ChangeDisplaySettingsToFullscreen,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN17CVideoMode_OpenGL33ChangeDisplaySettingsToFullscreenEv
+hw,01DF701E,11,?FlipScreen@CVideoMode_OpenGL@@UAEXXZ,CVideoMode_OpenGL::FlipScreen,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN17CVideoMode_OpenGL10FlipScreenEv
+hw,01DF7029,88,??0CVideoMode_Direct3DFullScreen@@QAE@XZ,CVideoMode_Direct3DFullScreen::CVideoMode_Direct3DFullScreen,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DF7081,28,??1CVideoMode_Direct3DFullScreen@@UAE@XZ,CVideoMode_Direct3DFullScreen::~CVideoMode_Direct3DFullScreen,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DF709D,72,?Init@CVideoMode_Direct3DFullScreen@@UAE_NPAX@Z,CVideoMode_Direct3DFullScreen::Init,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DF70E5,72,?RestoreVideo@CVideoMode_Direct3DFullScreen@@UAEXXZ,CVideoMode_Direct3DFullScreen::RestoreVideo,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DF712D,70,?IsWindowsNT_guess@CVideoMode_Direct3DFullScreen@@AAE_NXZ,CVideoMode_Direct3DFullScreen::IsWindowsNT_guess,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DF7173,347,?InitDirectDraw_guess@CVideoMode_Direct3DFullScreen@@AAE_NXZ,CVideoMode_Direct3DFullScreen::InitDirectDraw_guess,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DF72CE,47,?ReleaseVideo@CVideoMode_Direct3DFullScreen@@UAEXXZ,CVideoMode_Direct3DFullScreen::ReleaseVideo,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DF72FD,128,?SetFullScreenMode_guess@CVideoMode_Direct3DFullScreen@@AAEXXZ,CVideoMode_Direct3DFullScreen::SetFullScreenMode_guess,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DF737D,27,?Shutdown@CVideoMode_Direct3DFullScreen@@UAEXXZ,CVideoMode_Direct3DFullScreen::Shutdown,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DF7398,147,?ShutdownDirectDraw_guess@CVideoMode_Direct3DFullScreen@@AAEXXZ,CVideoMode_Direct3DFullScreen::ShutdownDirectDraw_guess,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DF742B,41,??0VideoMode_Direct3DWindowed@@QAE@XZ,VideoMode_Direct3DWindowed::VideoMode_Direct3DWindowed,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DF7454,28,??1VideoMode_Direct3DWindowed@@UAE@XZ,VideoMode_Direct3DWindowed::~VideoMode_Direct3DWindowed,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DF7470,48,?Init@VideoMode_Direct3DWindowed@@UAE_NPAX@Z,VideoMode_Direct3DWindowed::Init,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01DF74A0,250,_VideoMode_Create,VideoMode_Create,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,linux_symbols:string:0.65,
-hw,01DF759A,80,_Sys_SetRenderer_guess,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
-hw,01DF75EA,83,_Sys_SetVideoMode_guess,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
+hw,01DF759A,80,_VideoMode_SwitchMode,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DF75EA,83,_VideoMode_SetVideoMode,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01DF763D,50,_VideoMode_GetVideoModes,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01DF766F,85,_VideoMode_GetCurrentVideoMode,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
 hw,01DF76C4,77,_VideoMode_GetCurrentRenderer,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01DF7711,61,_VideoMode_IsWindowed,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
-hw,01DF7750,46,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
-hw,01DF7780,23,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
-hw,01DF77A0,16,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
-hw,01DF77B0,46,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
-hw,01DF77E0,19,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
-hw,01DF7800,16,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
-hw,01DF7810,46,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
-hw,01DF7840,16,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
-hw,01DF7850,46,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
-hw,01DF7880,50,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
-hw,01DF78C0,27,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
-hw,01DF78E0,25,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
-hw,01DF7900,17,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
-hw,01DF7920,26,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
-hw,01DF7940,63,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
-hw,01DF7980,35,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
-hw,01DF79B0,25,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
-hw,01DF79D0,61,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
-hw,01DF7A10,70,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
-hw,01DF7A60,86,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
-hw,01DF7AC0,11,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
-hw,01DF7AD0,75,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
-hw,01DF7B20,19,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
-hw,01DF7B40,26,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
-hw,01DF7B60,69,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
-hw,01DF7BB0,5,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
-hw,01DF7BC0,87,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
-hw,01DF7C20,86,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
-hw,01DF7C80,25,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
-hw,01DF7CA0,25,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
-hw,01DF7CC0,17,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
-hw,01DF7CE0,199,,,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,,
+hw,01DF7750,46,??_GCVideoMode_Common@@UAEPAXI@Z,destructor',ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DF7780,23,??0IVideoMode@@QAE@XZ,IVideoMode::IVideoMode,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DF77A0,16,?GetName@CVideoMode_OpenGL@@UAEPBDXZ,CVideoMode_OpenGL::GetName,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DF77B0,46,??_GCVideoMode_OpenGL@@UAEPAXI@Z,destructor',ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DF77E0,19,??1CVideoMode_OpenGL@@UAE@XZ,CVideoMode_OpenGL::~CVideoMode_OpenGL,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DF7800,16,?GetName@CVideoMode_Direct3DFullScreen@@UAEPBDXZ,CVideoMode_Direct3DFullScreen::GetName,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DF7810,46,??_GCVideoMode_Direct3DFullScreen@@UAEPAXI@Z,destructor',ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DF7840,16,?GetName@VideoMode_Direct3DWindowed@@UAEPBDXZ,VideoMode_Direct3DWindowed::GetName,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DF7850,46,??_GVideoMode_Direct3DWindowed@@UAEPAXI@Z,destructor',ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DF7880,50,??0?$CUtlVector@Ubimage_t@CVideoMode_Common@@@@QAE@HH@Z,CVideoMode_Common::bimage_t>,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DF78C0,27,??1?$CUtlVector@Ubimage_t@CVideoMode_Common@@@@QAE@XZ,CVideoMode_Common::bimage_t>,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DF78E0,25,??A?$CUtlVector@Ubimage_t@CVideoMode_Common@@@@QAEAAUbimage_t@CVideoMode_Common@@H@Z,CVideoMode_Common::bimage_t>::operator[],ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DF7900,17,?Count@?$CUtlVector@Ubimage_t@CVideoMode_Common@@@@QBEHXZ,CVideoMode_Common::bimage_t>::Count,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DF7920,26,?AddToTail@?$CUtlVector@Ubimage_t@CVideoMode_Common@@@@QAEHXZ,CVideoMode_Common::bimage_t>::AddToTail,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DF7940,63,?Remove@?$CUtlVector@Ubimage_t@CVideoMode_Common@@@@QAEXH@Z,CVideoMode_Common::bimage_t>::Remove,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DF7980,35,?Purge@?$CUtlVector@Ubimage_t@CVideoMode_Common@@@@QAEXXZ,CVideoMode_Common::bimage_t>::Purge,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DF79B0,25,?Element@?$CUtlVector@Ubimage_t@CVideoMode_Common@@@@QAEAAUbimage_t@CVideoMode_Common@@H@Z,CVideoMode_Common::bimage_t>::Element,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DF79D0,61,?InsertBefore@?$CUtlVector@Ubimage_t@CVideoMode_Common@@@@QAEHH@Z,CVideoMode_Common::bimage_t>::InsertBefore,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DF7A10,70,?RemoveAll@?$CUtlVector@Ubimage_t@CVideoMode_Common@@@@QAEXXZ,CVideoMode_Common::bimage_t>::RemoveAll,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DF7A60,86,?ShiftElementsLeft@?$CUtlVector@Ubimage_t@CVideoMode_Common@@@@IAEXHH@Z,CVideoMode_Common::bimage_t>::ShiftElementsLeft,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DF7AC0,11,?ResetDbgInfo@?$CUtlVector@Ubimage_t@CVideoMode_Common@@@@IAEXXZ,CVideoMode_Common::bimage_t>::ResetDbgInfo,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DF7AD0,75,??0?$CUtlMemory@Ubimage_t@CVideoMode_Common@@@@QAE@HH@Z,CVideoMode_Common::bimage_t>,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DF7B20,19,??1?$CUtlMemory@Ubimage_t@CVideoMode_Common@@@@QAE@XZ,CVideoMode_Common::bimage_t>,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DF7B40,26,??A?$CUtlMemory@Ubimage_t@CVideoMode_Common@@@@QAEAAUbimage_t@CVideoMode_Common@@H@Z,CVideoMode_Common::bimage_t>::operator[],ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DF7B60,69,?Purge@?$CUtlMemory@Ubimage_t@CVideoMode_Common@@@@QAEXXZ,CVideoMode_Common::bimage_t>::Purge,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DF7BB0,5,?Destruct@@YAXPAUbimage_t@CVideoMode_Common@@@Z,Destruct,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DF7BC0,87,?GrowVector@?$CUtlVector@Ubimage_t@CVideoMode_Common@@@@IAEXH@Z,CVideoMode_Common::bimage_t>::GrowVector,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DF7C20,86,?ShiftElementsRight@?$CUtlVector@Ubimage_t@CVideoMode_Common@@@@IAEXHH@Z,CVideoMode_Common::bimage_t>::ShiftElementsRight,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DF7C80,25,?IsExternallyAllocated@?$CUtlMemory@Ubimage_t@CVideoMode_Common@@@@QBE_NXZ,CVideoMode_Common::bimage_t>::IsExternallyAllocated,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DF7CA0,25,?Construct@@YAXPAUbimage_t@CVideoMode_Common@@@Z,Construct,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DF7CC0,17,?NumAllocated@?$CUtlMemory@Ubimage_t@CVideoMode_Common@@@@QBEHXZ,CVideoMode_Common::bimage_t>::NumAllocated,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DF7CE0,199,?Grow@?$CUtlMemory@Ubimage_t@CVideoMode_Common@@@@QAEXH@Z,CVideoMode_Common::bimage_t>::Grow,ENGINE,engine/sys_getmodes.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01DF7DB0,15,_$E4,,ENGINE,engine/LauncherDirectDraw_guess.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01DF7DBF,15,_$E1,,ENGINE,engine/LauncherDirectDraw_guess.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01DF7DCE,18,_$E3,,ENGINE,engine/LauncherDirectDraw_guess.cpp,,,MATCHED,100,hw_manual.csv,
@@ -29627,7 +29627,7 @@ hw,01E137C4,20,_MaskExceptions,MaskExceptions,ENGINE,engine/sys_wina.s,,,TODO,,,
 hw,01E137E6,13,_Sys_PushFPCW_SetHigh,,ENGINE,engine/sys_wina.s,,,TODO,,,
 hw,01E137F3,7,_Sys_PopFPCW,,ENGINE,engine/sys_wina.s,,,TODO,,,
 hw,01E137FA,50,_Sys_SetFPCW,Sys_SetFPCW,ENGINE,engine/sys_wina.s,,,TODO,,,
-hw,01E1382C,1,,,ENGINE,engine/sys_wina.s,,,TODO,,,
+hw,01E1382C,1,_Sys_InitFPU_guess,,ENGINE,engine/sys_wina.s,,,TODO,,hw_manual.csv,
 hw,01E13830,136,_SV_HullPointContents,,ENGINE,engine/worlda.s,,,TODO,,,
 hw,01E14E40,10,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(errmode.obj); was LIB (short CRT byte match), code belongs to this object"
 hw,01E14E50,29,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
