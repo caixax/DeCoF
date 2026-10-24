@@ -9603,46 +9603,46 @@ gameui,10046C60,10,?GetPanelBaseClassName@CLabeledCommandComboBox@@SAPBDXZ,publi
 gameui,10046C70,19,??0PanelMessageFunc_OnTextChanged@CLabeledCommandComboBox@@QAE@XZ,public: __thiscall CLabeledCommandComboBox::PanelMessageFunc_OnTextChanged::PanelMessageFunc_OnTextChanged(void),UNKNOWN,GameUI/LabeledCommandComboBox.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,10046C90,110,?InitVar@PanelMessageFunc_OnTextChanged@CLabeledCommandComboBox@@SAXXZ,public: static void __cdecl CLabeledCommandComboBox::PanelMessageFunc_OnTextChanged::InitVar(void),UNKNOWN,GameUI/LabeledCommandComboBox.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,10046D00,120,?AddToMap@CLabeledCommandComboBox@@SAXPBDP8Panel@vgui2@@AEXXZHH0H0@Z,"public: static void __cdecl CLabeledCommandComboBox::AddToMap(char const *,void (__thiscall vgui2::Panel::*)(void),int,int,char const *,int,char const *)",UNKNOWN,GameUI/LabeledCommandComboBox.cpp,,,MATCHED,100,gameui_manual.csv,
-gameui,10046D90,45,,,UNKNOWN,GameUI/PanelListPanel.cpp,,,TODO,,,
-gameui,10046DBD,437,,,UNKNOWN,GameUI/PanelListPanel.cpp,,,TODO,,,linux: _ZN25VScrollBarReversedButtons19ApplySchemeSettingsEPN5vgui27ISchemeE
-gameui,10046F72,465,,CPanelListPanel::CPanelListPanel,ENGINE,GameUI/PanelListPanel.cpp,,,TODO,,linux_symbols:string:0.3,linux: _ZN15CPanelListPanelC1EPN5vgui25PanelEPKcb
-gameui,10047143,47,,,UNKNOWN,GameUI/PanelListPanel.cpp,,,TODO,,,
-gameui,10047172,135,,,UNKNOWN,GameUI/PanelListPanel.cpp,,,TODO,,,linux: _ZN15CPanelListPanel20computeVPixelsNeededEv
-gameui,100471F9,54,,,UNKNOWN,GameUI/PanelListPanel.cpp,,,TODO,,,linux: _ZN15CPanelListPanel15GetCellRendererEi
-gameui,1004722F,99,,,UNKNOWN,GameUI/PanelListPanel.cpp,,,TODO,,,linux: _ZN15CPanelListPanel7AddItemEPN5vgui25PanelE
-gameui,10047292,22,,,UNKNOWN,GameUI/PanelListPanel.cpp,,,TODO,,,linux: _ZN15CPanelListPanel12GetItemCountEv
-gameui,100472A8,56,,,UNKNOWN,GameUI/PanelListPanel.cpp,,,TODO,,,linux: _ZN15CPanelListPanel7GetItemEi
-gameui,100472E0,54,,,UNKNOWN,GameUI/PanelListPanel.cpp,,,TODO,,,linux: _ZN15CPanelListPanel11GetDataItemEi
-gameui,10047316,129,,,UNKNOWN,GameUI/PanelListPanel.cpp,,,TODO,,,linux: _ZN15CPanelListPanel10RemoveItemEi
-gameui,10047397,187,,,UNKNOWN,GameUI/PanelListPanel.cpp,,,TODO,,,linux: _ZN15CPanelListPanel14DeleteAllItemsEv
-gameui,10047452,91,,,UNKNOWN,GameUI/PanelListPanel.cpp,,,TODO,,,linux: _ZN15CPanelListPanel14OnMouseWheeledEi
-gameui,100474AD,495,,,UNKNOWN,GameUI/PanelListPanel.cpp,,,TODO,,,linux: _ZN15CPanelListPanel13PerformLayoutEv
-gameui,1004769C,19,,,UNKNOWN,GameUI/PanelListPanel.cpp,,,TODO,,,linux: _ZN15CPanelListPanel15PaintBackgroundEv
-gameui,100476AF,132,,,UNKNOWN,GameUI/PanelListPanel.cpp,,,TODO,,,linux: _ZN15CPanelListPanel19ApplySchemeSettingsEPN5vgui27ISchemeE
-gameui,10047733,42,,,UNKNOWN,GameUI/PanelListPanel.cpp,,,TODO,,,linux: _ZN15CPanelListPanel13OnSliderMovedEi
-gameui,1004775D,25,,,UNKNOWN,GameUI/PanelListPanel.cpp,,,TODO,,,
-gameui,10047780,46,,,UNKNOWN,GameUI/PanelListPanel.cpp,,,TODO,,,
-gameui,100477B0,19,,,UNKNOWN,GameUI/PanelListPanel.cpp,,,TODO,,,
+gameui,10046D90,45,??0VScrollBarReversedButtons@@QAE@PAVPanel@vgui2@@PBD_N@Z,"public: __thiscall VScrollBarReversedButtons::VScrollBarReversedButtons(class vgui2::Panel *,char const *,bool)",UNKNOWN,GameUI/PanelListPanel.cpp,,,MATCHED,100,,
+gameui,10046DBD,437,?ApplySchemeSettings@VScrollBarReversedButtons@@UAEXPAVIScheme@vgui2@@@Z,public: virtual void __thiscall VScrollBarReversedButtons::ApplySchemeSettings(class vgui2::IScheme *),UNKNOWN,GameUI/PanelListPanel.cpp,,,MATCHED,100,,linux: _ZN25VScrollBarReversedButtons19ApplySchemeSettingsEPN5vgui27ISchemeE
+gameui,10046F72,465,??0CPanelListPanel@@QAE@PAVPanel@vgui2@@PBD_N@Z,"public: __thiscall CPanelListPanel::CPanelListPanel(class vgui2::Panel *,char const *,bool)",ENGINE,GameUI/PanelListPanel.cpp,,,MATCHED,100,linux_symbols:string:0.3,linux: _ZN15CPanelListPanelC1EPN5vgui25PanelEPKcb
+gameui,10047143,47,??1CPanelListPanel@@UAE@XZ,public: virtual __thiscall CPanelListPanel::~CPanelListPanel(void),UNKNOWN,GameUI/PanelListPanel.cpp,,,MATCHED,100,,
+gameui,10047172,135,?computeVPixelsNeeded@CPanelListPanel@@UAEHXZ,public: virtual int __thiscall CPanelListPanel::computeVPixelsNeeded(void),UNKNOWN,GameUI/PanelListPanel.cpp,,,MATCHED,100,,linux: _ZN15CPanelListPanel20computeVPixelsNeededEv
+gameui,100471F9,54,?GetCellRenderer@CPanelListPanel@@UAEPAVPanel@vgui2@@H@Z,public: virtual class vgui2::Panel * __thiscall CPanelListPanel::GetCellRenderer(int),UNKNOWN,GameUI/PanelListPanel.cpp,,,MATCHED,100,,linux: _ZN15CPanelListPanel15GetCellRendererEi
+gameui,1004722F,99,?AddItem@CPanelListPanel@@UAEHPAVPanel@vgui2@@@Z,public: virtual int __thiscall CPanelListPanel::AddItem(class vgui2::Panel *),UNKNOWN,GameUI/PanelListPanel.cpp,,,MATCHED,100,,linux: _ZN15CPanelListPanel7AddItemEPN5vgui25PanelE
+gameui,10047292,22,?GetItemCount@CPanelListPanel@@UAEHXZ,public: virtual int __thiscall CPanelListPanel::GetItemCount(void),UNKNOWN,GameUI/PanelListPanel.cpp,,,MATCHED,100,,linux: _ZN15CPanelListPanel12GetItemCountEv
+gameui,100472A8,56,?GetItem@CPanelListPanel@@UAEPAVPanel@vgui2@@H@Z,public: virtual class vgui2::Panel * __thiscall CPanelListPanel::GetItem(int),UNKNOWN,GameUI/PanelListPanel.cpp,,,MATCHED,100,,linux: _ZN15CPanelListPanel7GetItemEi
+gameui,100472E0,54,?GetDataItem@CPanelListPanel@@IAEPAUdataitem_s@1@H@Z,protected: struct CPanelListPanel::dataitem_s * __thiscall CPanelListPanel::GetDataItem(int),UNKNOWN,GameUI/PanelListPanel.cpp,,,MATCHED,100,,linux: _ZN15CPanelListPanel11GetDataItemEi
+gameui,10047316,129,?RemoveItem@CPanelListPanel@@UAEXH@Z,public: virtual void __thiscall CPanelListPanel::RemoveItem(int),UNKNOWN,GameUI/PanelListPanel.cpp,,,MATCHED,100,,linux: _ZN15CPanelListPanel10RemoveItemEi
+gameui,10047397,187,?DeleteAllItems@CPanelListPanel@@UAEXXZ,public: virtual void __thiscall CPanelListPanel::DeleteAllItems(void),UNKNOWN,GameUI/PanelListPanel.cpp,,,MATCHED,100,,linux: _ZN15CPanelListPanel14DeleteAllItemsEv
+gameui,10047452,91,?OnMouseWheeled@CPanelListPanel@@MAEXH@Z,protected: virtual void __thiscall CPanelListPanel::OnMouseWheeled(int),UNKNOWN,GameUI/PanelListPanel.cpp,,,MATCHED,100,,linux: _ZN15CPanelListPanel14OnMouseWheeledEi
+gameui,100474AD,495,?PerformLayout@CPanelListPanel@@MAEXXZ,protected: virtual void __thiscall CPanelListPanel::PerformLayout(void),UNKNOWN,GameUI/PanelListPanel.cpp,,,MATCHED,100,,linux: _ZN15CPanelListPanel13PerformLayoutEv
+gameui,1004769C,19,?PaintBackground@CPanelListPanel@@MAEXXZ,protected: virtual void __thiscall CPanelListPanel::PaintBackground(void),UNKNOWN,GameUI/PanelListPanel.cpp,,,MATCHED,100,,linux: _ZN15CPanelListPanel15PaintBackgroundEv
+gameui,100476AF,132,?ApplySchemeSettings@CPanelListPanel@@UAEXPAVIScheme@vgui2@@@Z,public: virtual void __thiscall CPanelListPanel::ApplySchemeSettings(class vgui2::IScheme *),UNKNOWN,GameUI/PanelListPanel.cpp,,,MATCHED,100,,linux: _ZN15CPanelListPanel19ApplySchemeSettingsEPN5vgui27ISchemeE
+gameui,10047733,42,?OnSliderMoved@CPanelListPanel@@UAEXH@Z,public: virtual void __thiscall CPanelListPanel::OnSliderMoved(int),UNKNOWN,GameUI/PanelListPanel.cpp,,,MATCHED,100,,linux: _ZN15CPanelListPanel13OnSliderMovedEi
+gameui,1004775D,25,?SetSliderYOffset@CPanelListPanel@@QAEXH@Z,public: void __thiscall CPanelListPanel::SetSliderYOffset(int),UNKNOWN,GameUI/PanelListPanel.cpp,,,MATCHED,100,,
+gameui,10047780,46,??_GVScrollBarReversedButtons@@UAEPAXI@Z,public: virtual void * __thiscall VScrollBarReversedButtons::`scalar deleting destructor'(unsigned int),UNKNOWN,GameUI/PanelListPanel.cpp,,,MATCHED,100,,
+gameui,100477B0,19,??1VScrollBarReversedButtons@@UAE@XZ,public: virtual __thiscall VScrollBarReversedButtons::~VScrollBarReversedButtons(void),UNKNOWN,GameUI/PanelListPanel.cpp,,,MATCHED,100,,
 gameui,100477D0,19,??1ScrollBar@vgui2@@UAE@XZ,vgui2::ScrollBar::~ScrollBar,UNKNOWN,vgui2/controls/ScrollBar.cpp,,,MATCHED,100,gameui_manual.csv,
-gameui,100477F0,46,,,UNKNOWN,GameUI/PanelListPanel.cpp,,,TODO,,,
-gameui,10047820,43,,,UNKNOWN,GameUI/PanelListPanel.cpp,,,TODO,,,
-gameui,10047850,34,,,UNKNOWN,GameUI/PanelListPanel.cpp,,,TODO,,,
-gameui,10047880,16,,,UNKNOWN,GameUI/PanelListPanel.cpp,,,TODO,,,
-gameui,10047890,53,,,UNKNOWN,GameUI/PanelListPanel.cpp,,,TODO,,,
-gameui,100478D0,105,,,UNKNOWN,GameUI/PanelListPanel.cpp,,,TODO,,,
-gameui,10047940,20,,,UNKNOWN,GameUI/PanelListPanel.cpp,,,TODO,,,
-gameui,10047960,45,,,UNKNOWN,GameUI/PanelListPanel.cpp,,,TODO,,,
-gameui,10047990,68,,,UNKNOWN,GameUI/PanelListPanel.cpp,,,TODO,,,
-gameui,100479E0,70,,,UNKNOWN,GameUI/PanelListPanel.cpp,,,TODO,,,
-gameui,10047A30,221,,,UNKNOWN,GameUI/PanelListPanel.cpp,,,TODO,,,
+gameui,100477F0,46,??_GCPanelListPanel@@UAEPAXI@Z,public: virtual void * __thiscall CPanelListPanel::`scalar deleting destructor'(unsigned int),UNKNOWN,GameUI/PanelListPanel.cpp,,,MATCHED,100,,
+gameui,10047820,43,??0?$Dar@PAUdataitem_s@CPanelListPanel@@@vgui2@@QAE@XZ,public: __thiscall vgui2::Dar<struct CPanelListPanel::dataitem_s *>::Dar<struct CPanelListPanel::dataitem_s *>(void),UNKNOWN,GameUI/PanelListPanel.cpp,,,MATCHED,100,,
+gameui,10047850,34,??1?$Dar@PAUdataitem_s@CPanelListPanel@@@vgui2@@QAE@XZ,public: __thiscall vgui2::Dar<struct CPanelListPanel::dataitem_s *>::~Dar<struct CPanelListPanel::dataitem_s *>(void),UNKNOWN,GameUI/PanelListPanel.cpp,,,MATCHED,100,,
+gameui,10047880,16,?GetCount@?$Dar@PAUdataitem_s@CPanelListPanel@@@vgui2@@QAEHXZ,public: int __thiscall vgui2::Dar<struct CPanelListPanel::dataitem_s *>::GetCount(void),UNKNOWN,GameUI/PanelListPanel.cpp,,,MATCHED,100,,
+gameui,10047890,53,?PutElement@?$Dar@PAUdataitem_s@CPanelListPanel@@@vgui2@@QAEHPAUdataitem_s@CPanelListPanel@@@Z,public: int __thiscall vgui2::Dar<struct CPanelListPanel::dataitem_s *>::PutElement(struct CPanelListPanel::dataitem_s *),UNKNOWN,GameUI/PanelListPanel.cpp,,,MATCHED,100,,
+gameui,100478D0,105,?RemoveElementAt@?$Dar@PAUdataitem_s@CPanelListPanel@@@vgui2@@QAEXH@Z,public: void __thiscall vgui2::Dar<struct CPanelListPanel::dataitem_s *>::RemoveElementAt(int),UNKNOWN,GameUI/PanelListPanel.cpp,,,MATCHED,100,,
+gameui,10047940,20,?RemoveAll@?$Dar@PAUdataitem_s@CPanelListPanel@@@vgui2@@QAEXXZ,public: void __thiscall vgui2::Dar<struct CPanelListPanel::dataitem_s *>::RemoveAll(void),UNKNOWN,GameUI/PanelListPanel.cpp,,,MATCHED,100,,
+gameui,10047960,45,??A?$Dar@PAUdataitem_s@CPanelListPanel@@@vgui2@@QAEPAUdataitem_s@CPanelListPanel@@H@Z,public: struct CPanelListPanel::dataitem_s * __thiscall vgui2::Dar<struct CPanelListPanel::dataitem_s *>::operator[](int),UNKNOWN,GameUI/PanelListPanel.cpp,,,MATCHED,100,,
+gameui,10047990,68,?AddElement@?$Dar@PAUdataitem_s@CPanelListPanel@@@vgui2@@QAEHPAUdataitem_s@CPanelListPanel@@@Z,public: int __thiscall vgui2::Dar<struct CPanelListPanel::dataitem_s *>::AddElement(struct CPanelListPanel::dataitem_s *),UNKNOWN,GameUI/PanelListPanel.cpp,,,MATCHED,100,,
+gameui,100479E0,70,?FindElement@?$Dar@PAUdataitem_s@CPanelListPanel@@@vgui2@@QAEHPAUdataitem_s@CPanelListPanel@@@Z,public: int __thiscall vgui2::Dar<struct CPanelListPanel::dataitem_s *>::FindElement(struct CPanelListPanel::dataitem_s *),UNKNOWN,GameUI/PanelListPanel.cpp,,,MATCHED,100,,
+gameui,10047A30,221,?EnsureCapacity@?$Dar@PAUdataitem_s@CPanelListPanel@@@vgui2@@QAEXH@Z,public: void __thiscall vgui2::Dar<struct CPanelListPanel::dataitem_s *>::EnsureCapacity(int),UNKNOWN,GameUI/PanelListPanel.cpp,,,MATCHED,100,,
 gameui,10047B10,64,?GetMessageMap@ScrollBar@vgui2@@UAEPAUPanelMessageMap@2@XZ,vgui2::ScrollBar::GetMessageMap,UNKNOWN,vgui2/controls/ScrollBar.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,10047B50,10,?GetPanelClassName@ScrollBar@vgui2@@SAPBDXZ,vgui2::ScrollBar::GetPanelClassName,UNKNOWN,vgui2/controls/ScrollBar.cpp,,,MATCHED,100,gameui_manual.csv,
-gameui,10047B60,19,,,UNKNOWN,GameUI/PanelListPanel.cpp,,,TODO,,,
-gameui,10047B80,102,,,UNKNOWN,GameUI/PanelListPanel.cpp,,,TODO,,,
-gameui,10047BF0,10,,,UNKNOWN,GameUI/PanelListPanel.cpp,,,TODO,,,
-gameui,10047C00,19,,,UNKNOWN,GameUI/PanelListPanel.cpp,,,TODO,,,
-gameui,10047C20,110,,,UNKNOWN,GameUI/PanelListPanel.cpp,,,TODO,,,
-gameui,10047C90,120,,,UNKNOWN,GameUI/PanelListPanel.cpp,,,TODO,,,
+gameui,10047B60,19,??0CPanelListPanel_RegisterMap@CPanelListPanel@@QAE@XZ,public: __thiscall CPanelListPanel::CPanelListPanel_RegisterMap::CPanelListPanel_RegisterMap(void),UNKNOWN,GameUI/PanelListPanel.cpp,,,MATCHED,100,,
+gameui,10047B80,102,?ChainToMap@CPanelListPanel@@SAXXZ,public: static void __cdecl CPanelListPanel::ChainToMap(void),UNKNOWN,GameUI/PanelListPanel.cpp,,,MATCHED,100,,
+gameui,10047BF0,10,?GetPanelBaseClassName@CPanelListPanel@@SAPBDXZ,public: static char const * __cdecl CPanelListPanel::GetPanelBaseClassName(void),UNKNOWN,GameUI/PanelListPanel.cpp,,,MATCHED,100,,
+gameui,10047C00,19,??0PanelMessageFunc_OnSliderMoved@CPanelListPanel@@QAE@XZ,public: __thiscall CPanelListPanel::PanelMessageFunc_OnSliderMoved::PanelMessageFunc_OnSliderMoved(void),UNKNOWN,GameUI/PanelListPanel.cpp,,,MATCHED,100,,
+gameui,10047C20,110,?InitVar@PanelMessageFunc_OnSliderMoved@CPanelListPanel@@SAXXZ,public: static void __cdecl CPanelListPanel::PanelMessageFunc_OnSliderMoved::InitVar(void),UNKNOWN,GameUI/PanelListPanel.cpp,,,MATCHED,100,,
+gameui,10047C90,120,?AddToMap@CPanelListPanel@@SAXPBDP8Panel@vgui2@@AEXXZHH0H0@Z,"public: static void __cdecl CPanelListPanel::AddToMap(char const *,void (__thiscall vgui2::Panel::*)(void),int,int,char const *,int,char const *)",UNKNOWN,GameUI/PanelListPanel.cpp,,,MATCHED,100,,
 gameui,10047D20,130,??0VControlsListPanel@@QAE@PAVPanel@vgui2@@PBD@Z,"public: __thiscall VControlsListPanel::VControlsListPanel(class vgui2::Panel *,char const *)",UNKNOWN,GameUI/vcontrolslistpanel.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,10047DA2,54,??1VControlsListPanel@@UAE@XZ,public: virtual __thiscall VControlsListPanel::~VControlsListPanel(void),UNKNOWN,GameUI/vcontrolslistpanel.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,10047DD8,62,?ApplySchemeSettings@VControlsListPanel@@EAEXPAVIScheme@vgui2@@@Z,private: virtual void __thiscall VControlsListPanel::ApplySchemeSettings(class vgui2::IScheme *),UNKNOWN,GameUI/vcontrolslistpanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN18VControlsListPanel19ApplySchemeSettingsEPN5vgui27ISchemeE

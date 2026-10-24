@@ -20,9 +20,11 @@ namespace vgui2
 class ScrollBar;
 };
 
-class CPanelListPanel : public vgui2::Panel
+namespace vgui = vgui2;
+
+class CPanelListPanel : public vgui::Panel
 {
-	DECLARE_CLASS_SIMPLE( CPanelListPanel, vgui2::Panel );
+	DECLARE_CLASS_SIMPLE( CPanelListPanel, vgui::Panel );
 
 public:
 	typedef struct dataitem_s

@@ -5106,3 +5106,40 @@ va,name,kind,evidence
 10048470,?GetMessageMap@SectionedListPanel@vgui2@@UAEPAUPanelMessageMap@2@XZ,func,GameUI/vcontrolslistpanel.cpp: same position and size as in our compiled object
 100484B0,?GetPanelClassName@SectionedListPanel@vgui2@@SAPBDXZ,func,GameUI/vcontrolslistpanel.cpp: same position and size as in our compiled object
 100484C0,?RemoveAll@SectionedListPanel@vgui2@@UAEXXZ,func,GameUI/vcontrolslistpanel.cpp: same position and size as in our compiled object
+10046D90,??0VScrollBarReversedButtons@@QAE@PAVPanel@vgui2@@PBD_N@Z,func,GameUI/PanelListPanel.cpp: same position and size as in our compiled object
+10046DBD,?ApplySchemeSettings@VScrollBarReversedButtons@@UAEXPAVIScheme@vgui2@@@Z,func,GameUI/PanelListPanel.cpp: same position and size as in our compiled object; linux: _ZN25VScrollBarReversedButtons19ApplySchemeSettingsEPN5vgui27ISchemeE
+10046F72,??0CPanelListPanel@@QAE@PAVPanel@vgui2@@PBD_N@Z,func,GameUI/PanelListPanel.cpp: same position and size as in our compiled object; linux: _ZN15CPanelListPanelC1EPN5vgui25PanelEPKcb
+10047143,??1CPanelListPanel@@UAE@XZ,func,GameUI/PanelListPanel.cpp: same position and size as in our compiled object
+10047172,?computeVPixelsNeeded@CPanelListPanel@@UAEHXZ,func,GameUI/PanelListPanel.cpp: same position and size as in our compiled object; linux: _ZN15CPanelListPanel20computeVPixelsNeededEv
+100471F9,?GetCellRenderer@CPanelListPanel@@UAEPAVPanel@vgui2@@H@Z,func,GameUI/PanelListPanel.cpp: same position and size as in our compiled object; linux: _ZN15CPanelListPanel15GetCellRendererEi
+1004722F,?AddItem@CPanelListPanel@@UAEHPAVPanel@vgui2@@@Z,func,GameUI/PanelListPanel.cpp: same position and size as in our compiled object; linux: _ZN15CPanelListPanel7AddItemEPN5vgui25PanelE
+10047292,?GetItemCount@CPanelListPanel@@UAEHXZ,func,GameUI/PanelListPanel.cpp: same position and size as in our compiled object; linux: _ZN15CPanelListPanel12GetItemCountEv
+100472A8,?GetItem@CPanelListPanel@@UAEPAVPanel@vgui2@@H@Z,func,GameUI/PanelListPanel.cpp: same position and size as in our compiled object; linux: _ZN15CPanelListPanel7GetItemEi
+100472E0,?GetDataItem@CPanelListPanel@@IAEPAUdataitem_s@1@H@Z,func,GameUI/PanelListPanel.cpp: same position and size as in our compiled object; linux: _ZN15CPanelListPanel11GetDataItemEi
+10047316,?RemoveItem@CPanelListPanel@@UAEXH@Z,func,GameUI/PanelListPanel.cpp: same position and size as in our compiled object; linux: _ZN15CPanelListPanel10RemoveItemEi
+10047397,?DeleteAllItems@CPanelListPanel@@UAEXXZ,func,GameUI/PanelListPanel.cpp: same position and size as in our compiled object; linux: _ZN15CPanelListPanel14DeleteAllItemsEv
+10047452,?OnMouseWheeled@CPanelListPanel@@MAEXH@Z,func,GameUI/PanelListPanel.cpp: same position and size as in our compiled object; linux: _ZN15CPanelListPanel14OnMouseWheeledEi
+100474AD,?PerformLayout@CPanelListPanel@@MAEXXZ,func,GameUI/PanelListPanel.cpp: same position and size as in our compiled object; linux: _ZN15CPanelListPanel13PerformLayoutEv
+1004769C,?PaintBackground@CPanelListPanel@@MAEXXZ,func,GameUI/PanelListPanel.cpp: same position and size as in our compiled object; linux: _ZN15CPanelListPanel15PaintBackgroundEv
+100476AF,?ApplySchemeSettings@CPanelListPanel@@UAEXPAVIScheme@vgui2@@@Z,func,GameUI/PanelListPanel.cpp: same position and size as in our compiled object; linux: _ZN15CPanelListPanel19ApplySchemeSettingsEPN5vgui27ISchemeE
+10047733,?OnSliderMoved@CPanelListPanel@@UAEXH@Z,func,GameUI/PanelListPanel.cpp: same position and size as in our compiled object; linux: _ZN15CPanelListPanel13OnSliderMovedEi
+1004775D,?SetSliderYOffset@CPanelListPanel@@QAEXH@Z,func,GameUI/PanelListPanel.cpp: same position and size as in our compiled object
+10047780,??_GVScrollBarReversedButtons@@UAEPAXI@Z,func,GameUI/PanelListPanel.cpp: same position and size as in our compiled object
+100477B0,??1VScrollBarReversedButtons@@UAE@XZ,func,GameUI/PanelListPanel.cpp: same position and size as in our compiled object
+100477F0,??_GCPanelListPanel@@UAEPAXI@Z,func,GameUI/PanelListPanel.cpp: same position and size as in our compiled object
+10047820,??0?$Dar@PAUdataitem_s@CPanelListPanel@@@vgui2@@QAE@XZ,func,GameUI/PanelListPanel.cpp: same position and size as in our compiled object
+10047850,??1?$Dar@PAUdataitem_s@CPanelListPanel@@@vgui2@@QAE@XZ,func,GameUI/PanelListPanel.cpp: same position and size as in our compiled object
+10047880,?GetCount@?$Dar@PAUdataitem_s@CPanelListPanel@@@vgui2@@QAEHXZ,func,GameUI/PanelListPanel.cpp: same position and size as in our compiled object
+10047890,?PutElement@?$Dar@PAUdataitem_s@CPanelListPanel@@@vgui2@@QAEHPAUdataitem_s@CPanelListPanel@@@Z,func,GameUI/PanelListPanel.cpp: same position and size as in our compiled object
+100478D0,?RemoveElementAt@?$Dar@PAUdataitem_s@CPanelListPanel@@@vgui2@@QAEXH@Z,func,GameUI/PanelListPanel.cpp: same position and size as in our compiled object
+10047940,?RemoveAll@?$Dar@PAUdataitem_s@CPanelListPanel@@@vgui2@@QAEXXZ,func,GameUI/PanelListPanel.cpp: same position and size as in our compiled object
+10047960,??A?$Dar@PAUdataitem_s@CPanelListPanel@@@vgui2@@QAEPAUdataitem_s@CPanelListPanel@@H@Z,func,GameUI/PanelListPanel.cpp: same position and size as in our compiled object
+10047990,?AddElement@?$Dar@PAUdataitem_s@CPanelListPanel@@@vgui2@@QAEHPAUdataitem_s@CPanelListPanel@@@Z,func,GameUI/PanelListPanel.cpp: same position and size as in our compiled object
+100479E0,?FindElement@?$Dar@PAUdataitem_s@CPanelListPanel@@@vgui2@@QAEHPAUdataitem_s@CPanelListPanel@@@Z,func,GameUI/PanelListPanel.cpp: same position and size as in our compiled object
+10047A30,?EnsureCapacity@?$Dar@PAUdataitem_s@CPanelListPanel@@@vgui2@@QAEXH@Z,func,GameUI/PanelListPanel.cpp: same position and size as in our compiled object
+10047B60,??0CPanelListPanel_RegisterMap@CPanelListPanel@@QAE@XZ,func,GameUI/PanelListPanel.cpp: same position and size as in our compiled object
+10047B80,?ChainToMap@CPanelListPanel@@SAXXZ,func,GameUI/PanelListPanel.cpp: same position and size as in our compiled object
+10047BF0,?GetPanelBaseClassName@CPanelListPanel@@SAPBDXZ,func,GameUI/PanelListPanel.cpp: same position and size as in our compiled object
+10047C00,??0PanelMessageFunc_OnSliderMoved@CPanelListPanel@@QAE@XZ,func,GameUI/PanelListPanel.cpp: same position and size as in our compiled object
+10047C20,?InitVar@PanelMessageFunc_OnSliderMoved@CPanelListPanel@@SAXXZ,func,GameUI/PanelListPanel.cpp: same position and size as in our compiled object
+10047C90,?AddToMap@CPanelListPanel@@SAXPBDP8Panel@vgui2@@AEXXZHH0H0@Z,func,GameUI/PanelListPanel.cpp: same position and size as in our compiled object
