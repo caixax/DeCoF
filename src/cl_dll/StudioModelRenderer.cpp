@@ -1955,7 +1955,7 @@ void CStudioModelRenderer::StudioMuzzleFlash_guess( char *modelname, int iAttach
 	tpmuzzleflash_guess[0].curstate.scale = flFlashScale * flScale;
 	tpmuzzleflash_guess[0].player = 0;
 	tpmuzzleflash_guess[0].origin = attachment[iAttachment];
-	tpmuzzleflash_guess[0].angles = Vector( pPlayer->angles );
+	VectorCopy( pPlayer->angles, tpmuzzleflash_guess[0].angles );
 	tpmuzzleflash_guess[0].angles[2] = gEngfuncs.pfnRandomFloat( 1, 359 );
 
 	if ( bAlt == true )
