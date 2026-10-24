@@ -9561,48 +9561,48 @@ gameui,10046138,104,,,UNKNOWN,GameUI/KeyToggleCheckButton.cpp,,,TODO,,,linux: _Z
 gameui,100461A0,143,,CKeyToggleCheckButton::ApplyChanges,ENGINE,GameUI/KeyToggleCheckButton.cpp,,,TODO,,linux_symbols:string:0.75,linux: _ZN21CKeyToggleCheckButton12ApplyChangesEv
 gameui,1004622F,50,,,UNKNOWN,GameUI/KeyToggleCheckButton.cpp,,,TODO,,,linux: _ZN21CKeyToggleCheckButton15HasBeenModifiedEv
 gameui,10046270,46,,,UNKNOWN,GameUI/KeyToggleCheckButton.cpp,,,TODO,,,
-gameui,100462A0,129,,,UNKNOWN,GameUI/LabeledCommandComboBox.cpp,,,TODO,,,linux: _ZN23CLabeledCommandComboBoxC2EPN5vgui25PanelEPKc
-gameui,10046321,42,,,UNKNOWN,GameUI/LabeledCommandComboBox.cpp,,,TODO,,,linux: _ZN23CLabeledCommandComboBoxD1Ev
-gameui,1004634B,33,,,UNKNOWN,GameUI/LabeledCommandComboBox.cpp,,,TODO,,,linux: _ZN23CLabeledCommandComboBox14DeleteAllItemsEv
-gameui,1004636C,189,,,UNKNOWN,GameUI/LabeledCommandComboBox.cpp,,,TODO,,,linux: _ZN23CLabeledCommandComboBox7AddItemEPKcS1_
-gameui,10046429,85,,,UNKNOWN,GameUI/LabeledCommandComboBox.cpp,,,TODO,,,linux: _ZN23CLabeledCommandComboBox12ActivateItemEi
-gameui,1004647E,91,,,UNKNOWN,GameUI/LabeledCommandComboBox.cpp,,,TODO,,,linux: _ZN23CLabeledCommandComboBox14SetInitialItemEi
-gameui,100464D9,188,,,UNKNOWN,GameUI/LabeledCommandComboBox.cpp,,,TODO,,,linux: _ZN23CLabeledCommandComboBox13OnTextChangedEPKc
-gameui,10046595,64,,,UNKNOWN,GameUI/LabeledCommandComboBox.cpp,,,TODO,,,linux: _ZN23CLabeledCommandComboBox20GetActiveItemCommandEv
-gameui,100465D5,114,,CLabeledCommandComboBox::ApplyChanges,ENGINE,GameUI/LabeledCommandComboBox.cpp,,,TODO,,linux_symbols:callseq:0.857,linux: _ZN23CLabeledCommandComboBox12ApplyChangesEv
-gameui,10046647,34,,,UNKNOWN,GameUI/LabeledCommandComboBox.cpp,,,TODO,,,linux: _ZN23CLabeledCommandComboBox15HasBeenModifiedEv
-gameui,10046669,47,,,UNKNOWN,GameUI/LabeledCommandComboBox.cpp,,,TODO,,,linux: _ZN23CLabeledCommandComboBox5ResetEv
-gameui,100466A0,46,,,UNKNOWN,GameUI/LabeledCommandComboBox.cpp,,,TODO,,,
-gameui,100466D0,50,,,UNKNOWN,GameUI/LabeledCommandComboBox.cpp,,,TODO,,,
-gameui,10046710,27,,,UNKNOWN,GameUI/LabeledCommandComboBox.cpp,,,TODO,,,
-gameui,10046730,25,,,UNKNOWN,GameUI/LabeledCommandComboBox.cpp,,,TODO,,,
-gameui,10046750,17,,,UNKNOWN,GameUI/LabeledCommandComboBox.cpp,,,TODO,,,
-gameui,10046770,17,,,UNKNOWN,GameUI/LabeledCommandComboBox.cpp,,,TODO,,,
-gameui,10046790,26,,,UNKNOWN,GameUI/LabeledCommandComboBox.cpp,,,TODO,,,
-gameui,100467B0,70,,,UNKNOWN,GameUI/LabeledCommandComboBox.cpp,,,TODO,,,
-gameui,10046800,25,,,UNKNOWN,GameUI/LabeledCommandComboBox.cpp,,,TODO,,,
-gameui,10046820,61,,,UNKNOWN,GameUI/LabeledCommandComboBox.cpp,,,TODO,,,
-gameui,10046860,35,,,UNKNOWN,GameUI/LabeledCommandComboBox.cpp,,,TODO,,,
-gameui,10046890,11,,,UNKNOWN,GameUI/LabeledCommandComboBox.cpp,,,TODO,,,
-gameui,100468A0,78,,,UNKNOWN,GameUI/LabeledCommandComboBox.cpp,,,TODO,,,
-gameui,100468F0,19,,,UNKNOWN,GameUI/LabeledCommandComboBox.cpp,,,TODO,,,
-gameui,10046910,29,,,UNKNOWN,GameUI/LabeledCommandComboBox.cpp,,,TODO,,,
-gameui,10046930,5,,,UNKNOWN,GameUI/LabeledCommandComboBox.cpp,,,TODO,,,
-gameui,10046940,87,,,UNKNOWN,GameUI/LabeledCommandComboBox.cpp,,,TODO,,,
-gameui,100469A0,89,,,UNKNOWN,GameUI/LabeledCommandComboBox.cpp,,,TODO,,,
-gameui,10046A00,69,,,UNKNOWN,GameUI/LabeledCommandComboBox.cpp,,,TODO,,,
-gameui,10046A50,28,,,UNKNOWN,GameUI/LabeledCommandComboBox.cpp,,,TODO,,,
-gameui,10046A70,17,,,UNKNOWN,GameUI/LabeledCommandComboBox.cpp,,,TODO,,,
-gameui,10046A90,205,,,UNKNOWN,GameUI/LabeledCommandComboBox.cpp,,,TODO,,,
-gameui,10046B60,25,,,UNKNOWN,GameUI/LabeledCommandComboBox.cpp,,,TODO,,,
-gameui,10046B80,19,,,UNKNOWN,GameUI/LabeledCommandComboBox.cpp,,,TODO,,,
-gameui,10046BA0,102,,,UNKNOWN,GameUI/LabeledCommandComboBox.cpp,,,TODO,,,
-gameui,10046C10,64,,,UNKNOWN,GameUI/LabeledCommandComboBox.cpp,,,TODO,,,
-gameui,10046C50,10,,,UNKNOWN,GameUI/LabeledCommandComboBox.cpp,,,TODO,,,
-gameui,10046C60,10,,CLabeledCommandComboBox::CLabeledCommandComboBox,ENGINE,GameUI/LabeledCommandComboBox.cpp,,,TODO,,linux_symbols:string:0.25,
-gameui,10046C70,19,,,UNKNOWN,GameUI/LabeledCommandComboBox.cpp,,,TODO,,,
-gameui,10046C90,110,,,UNKNOWN,GameUI/LabeledCommandComboBox.cpp,,,TODO,,,
-gameui,10046D00,120,,,UNKNOWN,GameUI/LabeledCommandComboBox.cpp,,,TODO,,,
+gameui,100462A0,129,??0CLabeledCommandComboBox@@QAE@PAVPanel@vgui2@@PBD@Z,"public: __thiscall CLabeledCommandComboBox::CLabeledCommandComboBox(class vgui2::Panel *,char const *)",UNKNOWN,GameUI/LabeledCommandComboBox.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN23CLabeledCommandComboBoxC2EPN5vgui25PanelEPKc
+gameui,10046321,42,??1CLabeledCommandComboBox@@UAE@XZ,public: virtual __thiscall CLabeledCommandComboBox::~CLabeledCommandComboBox(void),UNKNOWN,GameUI/LabeledCommandComboBox.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN23CLabeledCommandComboBoxD1Ev
+gameui,1004634B,33,?DeleteAllItems@CLabeledCommandComboBox@@UAEXXZ,public: virtual void __thiscall CLabeledCommandComboBox::DeleteAllItems(void),UNKNOWN,GameUI/LabeledCommandComboBox.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN23CLabeledCommandComboBox14DeleteAllItemsEv
+gameui,1004636C,189,?AddItem@CLabeledCommandComboBox@@UAEXPBD0@Z,"public: virtual void __thiscall CLabeledCommandComboBox::AddItem(char const *,char const *)",UNKNOWN,GameUI/LabeledCommandComboBox.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN23CLabeledCommandComboBox7AddItemEPKcS1_
+gameui,10046429,85,?ActivateItem@CLabeledCommandComboBox@@UAEXH@Z,public: virtual void __thiscall CLabeledCommandComboBox::ActivateItem(int),UNKNOWN,GameUI/LabeledCommandComboBox.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN23CLabeledCommandComboBox12ActivateItemEi
+gameui,1004647E,91,?SetInitialItem@CLabeledCommandComboBox@@QAEXH@Z,public: void __thiscall CLabeledCommandComboBox::SetInitialItem(int),UNKNOWN,GameUI/LabeledCommandComboBox.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN23CLabeledCommandComboBox14SetInitialItemEi
+gameui,100464D9,188,?OnTextChanged@CLabeledCommandComboBox@@EAEXPBD@Z,private: virtual void __thiscall CLabeledCommandComboBox::OnTextChanged(char const *),UNKNOWN,GameUI/LabeledCommandComboBox.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN23CLabeledCommandComboBox13OnTextChangedEPKc
+gameui,10046595,64,?GetActiveItemCommand@CLabeledCommandComboBox@@QAEPBDXZ,public: char const * __thiscall CLabeledCommandComboBox::GetActiveItemCommand(void),UNKNOWN,GameUI/LabeledCommandComboBox.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN23CLabeledCommandComboBox20GetActiveItemCommandEv
+gameui,100465D5,114,?ApplyChanges@CLabeledCommandComboBox@@QAEXXZ,public: void __thiscall CLabeledCommandComboBox::ApplyChanges(void),ENGINE,GameUI/LabeledCommandComboBox.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN23CLabeledCommandComboBox12ApplyChangesEv
+gameui,10046647,34,?HasBeenModified@CLabeledCommandComboBox@@QAE_NXZ,public: bool __thiscall CLabeledCommandComboBox::HasBeenModified(void),UNKNOWN,GameUI/LabeledCommandComboBox.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN23CLabeledCommandComboBox15HasBeenModifiedEv
+gameui,10046669,47,?Reset@CLabeledCommandComboBox@@QAEXXZ,public: void __thiscall CLabeledCommandComboBox::Reset(void),UNKNOWN,GameUI/LabeledCommandComboBox.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN23CLabeledCommandComboBox5ResetEv
+gameui,100466A0,46,??_GCLabeledCommandComboBox@@UAEPAXI@Z,public: virtual void * __thiscall CLabeledCommandComboBox::`scalar deleting destructor'(unsigned int),UNKNOWN,GameUI/LabeledCommandComboBox.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100466D0,50,??0?$CUtlVector@UCOMMANDITEM@CLabeledCommandComboBox@@@@QAE@HH@Z,"public: __thiscall CUtlVector<struct CLabeledCommandComboBox::COMMANDITEM>::CUtlVector<struct CLabeledCommandComboBox::COMMANDITEM>(int,int)",UNKNOWN,GameUI/LabeledCommandComboBox.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10046710,27,??1?$CUtlVector@UCOMMANDITEM@CLabeledCommandComboBox@@@@QAE@XZ,public: __thiscall CUtlVector<struct CLabeledCommandComboBox::COMMANDITEM>::~CUtlVector<struct CLabeledCommandComboBox::COMMANDITEM>(void),UNKNOWN,GameUI/LabeledCommandComboBox.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10046730,25,??A?$CUtlVector@UCOMMANDITEM@CLabeledCommandComboBox@@@@QAEAAUCOMMANDITEM@CLabeledCommandComboBox@@H@Z,public: struct CLabeledCommandComboBox::COMMANDITEM & __thiscall CUtlVector<struct CLabeledCommandComboBox::COMMANDITEM>::operator[](int),UNKNOWN,GameUI/LabeledCommandComboBox.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10046750,17,?Count@?$CUtlVector@UCOMMANDITEM@CLabeledCommandComboBox@@@@QBEHXZ,public: int __thiscall CUtlVector<struct CLabeledCommandComboBox::COMMANDITEM>::Count(void)const ,UNKNOWN,GameUI/LabeledCommandComboBox.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10046770,17,?Size@?$CUtlVector@UCOMMANDITEM@CLabeledCommandComboBox@@@@QBEHXZ,public: int __thiscall CUtlVector<struct CLabeledCommandComboBox::COMMANDITEM>::Size(void)const ,UNKNOWN,GameUI/LabeledCommandComboBox.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10046790,26,?AddToTail@?$CUtlVector@UCOMMANDITEM@CLabeledCommandComboBox@@@@QAEHXZ,public: int __thiscall CUtlVector<struct CLabeledCommandComboBox::COMMANDITEM>::AddToTail(void),UNKNOWN,GameUI/LabeledCommandComboBox.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100467B0,70,?RemoveAll@?$CUtlVector@UCOMMANDITEM@CLabeledCommandComboBox@@@@QAEXXZ,public: void __thiscall CUtlVector<struct CLabeledCommandComboBox::COMMANDITEM>::RemoveAll(void),UNKNOWN,GameUI/LabeledCommandComboBox.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10046800,25,?Element@?$CUtlVector@UCOMMANDITEM@CLabeledCommandComboBox@@@@QAEAAUCOMMANDITEM@CLabeledCommandComboBox@@H@Z,public: struct CLabeledCommandComboBox::COMMANDITEM & __thiscall CUtlVector<struct CLabeledCommandComboBox::COMMANDITEM>::Element(int),UNKNOWN,GameUI/LabeledCommandComboBox.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10046820,61,?InsertBefore@?$CUtlVector@UCOMMANDITEM@CLabeledCommandComboBox@@@@QAEHH@Z,public: int __thiscall CUtlVector<struct CLabeledCommandComboBox::COMMANDITEM>::InsertBefore(int),UNKNOWN,GameUI/LabeledCommandComboBox.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10046860,35,?Purge@?$CUtlVector@UCOMMANDITEM@CLabeledCommandComboBox@@@@QAEXXZ,public: void __thiscall CUtlVector<struct CLabeledCommandComboBox::COMMANDITEM>::Purge(void),UNKNOWN,GameUI/LabeledCommandComboBox.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10046890,11,?ResetDbgInfo@?$CUtlVector@UCOMMANDITEM@CLabeledCommandComboBox@@@@IAEXXZ,protected: void __thiscall CUtlVector<struct CLabeledCommandComboBox::COMMANDITEM>::ResetDbgInfo(void),UNKNOWN,GameUI/LabeledCommandComboBox.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100468A0,78,??0?$CUtlMemory@UCOMMANDITEM@CLabeledCommandComboBox@@@@QAE@HH@Z,"public: __thiscall CUtlMemory<struct CLabeledCommandComboBox::COMMANDITEM>::CUtlMemory<struct CLabeledCommandComboBox::COMMANDITEM>(int,int)",UNKNOWN,GameUI/LabeledCommandComboBox.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100468F0,19,??1?$CUtlMemory@UCOMMANDITEM@CLabeledCommandComboBox@@@@QAE@XZ,public: __thiscall CUtlMemory<struct CLabeledCommandComboBox::COMMANDITEM>::~CUtlMemory<struct CLabeledCommandComboBox::COMMANDITEM>(void),UNKNOWN,GameUI/LabeledCommandComboBox.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10046910,29,??A?$CUtlMemory@UCOMMANDITEM@CLabeledCommandComboBox@@@@QAEAAUCOMMANDITEM@CLabeledCommandComboBox@@H@Z,public: struct CLabeledCommandComboBox::COMMANDITEM & __thiscall CUtlMemory<struct CLabeledCommandComboBox::COMMANDITEM>::operator[](int),UNKNOWN,GameUI/LabeledCommandComboBox.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10046930,5,?Destruct@@YAXPAUCOMMANDITEM@CLabeledCommandComboBox@@@Z,void __cdecl Destruct(struct CLabeledCommandComboBox::COMMANDITEM *),UNKNOWN,GameUI/LabeledCommandComboBox.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10046940,87,?GrowVector@?$CUtlVector@UCOMMANDITEM@CLabeledCommandComboBox@@@@IAEXH@Z,protected: void __thiscall CUtlVector<struct CLabeledCommandComboBox::COMMANDITEM>::GrowVector(int),UNKNOWN,GameUI/LabeledCommandComboBox.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100469A0,89,?ShiftElementsRight@?$CUtlVector@UCOMMANDITEM@CLabeledCommandComboBox@@@@IAEXHH@Z,"protected: void __thiscall CUtlVector<struct CLabeledCommandComboBox::COMMANDITEM>::ShiftElementsRight(int,int)",UNKNOWN,GameUI/LabeledCommandComboBox.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10046A00,69,?Purge@?$CUtlMemory@UCOMMANDITEM@CLabeledCommandComboBox@@@@QAEXXZ,public: void __thiscall CUtlMemory<struct CLabeledCommandComboBox::COMMANDITEM>::Purge(void),UNKNOWN,GameUI/LabeledCommandComboBox.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10046A50,28,?Construct@@YAXPAUCOMMANDITEM@CLabeledCommandComboBox@@@Z,void __cdecl Construct(struct CLabeledCommandComboBox::COMMANDITEM *),UNKNOWN,GameUI/LabeledCommandComboBox.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10046A70,17,?NumAllocated@?$CUtlMemory@UCOMMANDITEM@CLabeledCommandComboBox@@@@QBEHXZ,public: int __thiscall CUtlMemory<struct CLabeledCommandComboBox::COMMANDITEM>::NumAllocated(void)const ,UNKNOWN,GameUI/LabeledCommandComboBox.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10046A90,205,?Grow@?$CUtlMemory@UCOMMANDITEM@CLabeledCommandComboBox@@@@QAEXH@Z,public: void __thiscall CUtlMemory<struct CLabeledCommandComboBox::COMMANDITEM>::Grow(int),UNKNOWN,GameUI/LabeledCommandComboBox.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10046B60,25,?IsExternallyAllocated@?$CUtlMemory@UCOMMANDITEM@CLabeledCommandComboBox@@@@QBE_NXZ,public: bool __thiscall CUtlMemory<struct CLabeledCommandComboBox::COMMANDITEM>::IsExternallyAllocated(void)const ,UNKNOWN,GameUI/LabeledCommandComboBox.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10046B80,19,??0CLabeledCommandComboBox_RegisterMap@CLabeledCommandComboBox@@QAE@XZ,public: __thiscall CLabeledCommandComboBox::CLabeledCommandComboBox_RegisterMap::CLabeledCommandComboBox_RegisterMap(void),UNKNOWN,GameUI/LabeledCommandComboBox.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10046BA0,102,?ChainToMap@CLabeledCommandComboBox@@SAXXZ,public: static void __cdecl CLabeledCommandComboBox::ChainToMap(void),UNKNOWN,GameUI/LabeledCommandComboBox.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10046C10,64,?GetMessageMap@CLabeledCommandComboBox@@UAEPAUPanelMessageMap@vgui2@@XZ,public: virtual struct vgui2::PanelMessageMap * __thiscall CLabeledCommandComboBox::GetMessageMap(void),UNKNOWN,GameUI/LabeledCommandComboBox.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10046C50,10,?GetPanelClassName@CLabeledCommandComboBox@@SAPBDXZ,public: static char const * __cdecl CLabeledCommandComboBox::GetPanelClassName(void),UNKNOWN,GameUI/LabeledCommandComboBox.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10046C60,10,?GetPanelBaseClassName@CLabeledCommandComboBox@@SAPBDXZ,public: static char const * __cdecl CLabeledCommandComboBox::GetPanelBaseClassName(void),ENGINE,GameUI/LabeledCommandComboBox.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10046C70,19,??0PanelMessageFunc_OnTextChanged@CLabeledCommandComboBox@@QAE@XZ,public: __thiscall CLabeledCommandComboBox::PanelMessageFunc_OnTextChanged::PanelMessageFunc_OnTextChanged(void),UNKNOWN,GameUI/LabeledCommandComboBox.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10046C90,110,?InitVar@PanelMessageFunc_OnTextChanged@CLabeledCommandComboBox@@SAXXZ,public: static void __cdecl CLabeledCommandComboBox::PanelMessageFunc_OnTextChanged::InitVar(void),UNKNOWN,GameUI/LabeledCommandComboBox.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10046D00,120,?AddToMap@CLabeledCommandComboBox@@SAXPBDP8Panel@vgui2@@AEXXZHH0H0@Z,"public: static void __cdecl CLabeledCommandComboBox::AddToMap(char const *,void (__thiscall vgui2::Panel::*)(void),int,int,char const *,int,char const *)",UNKNOWN,GameUI/LabeledCommandComboBox.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,10046D90,45,,,UNKNOWN,GameUI/PanelListPanel.cpp,,,TODO,,,
 gameui,10046DBD,437,,,UNKNOWN,GameUI/PanelListPanel.cpp,,,TODO,,,linux: _ZN25VScrollBarReversedButtons19ApplySchemeSettingsEPN5vgui27ISchemeE
 gameui,10046F72,465,,CPanelListPanel::CPanelListPanel,ENGINE,GameUI/PanelListPanel.cpp,,,TODO,,linux_symbols:string:0.3,linux: _ZN15CPanelListPanelC1EPN5vgui25PanelEPKcb

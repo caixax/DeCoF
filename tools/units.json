@@ -3953,6 +3953,11 @@
           "name": "GameUI/LoadGameDialog",
           "source": "src/gameui/LoadGameDialog.cpp",
           "functions_file": "tools/units/gameui_GameUI_LoadGameDialog.txt"
+        },
+        {
+          "name": "GameUI/LabeledCommandComboBox",
+          "source": "src/gameui/LabeledCommandComboBox.cpp",
+          "functions_file": "tools/units/gameui_GameUI_LabeledCommandComboBox.txt"
         }
       ]
     }

@@ -4411,3 +4411,45 @@ va,name,kind,evidence
 1004C0EE,?ParseSaveData@CLoadGameDialog@@IAE_NPBD0PAVKeyValues@@@Z,func,GameUI/LoadGameDialog.cpp: same position and size as in our compiled object; linux: _ZN15CLoadGameDialog13ParseSaveDataEPKcS1_P9KeyValues
 1004C3D6,?ScanSavedGames@CLoadGameDialog@@IAEXXZ,func,GameUI/LoadGameDialog.cpp: same position and size as in our compiled object; linux: _ZN15CLoadGameDialog14ScanSavedGamesEv
 1004C610,??_GCLoadGameDialog@@UAEPAXI@Z,func,GameUI/LoadGameDialog.cpp: same position and size as in our compiled object
+100462A0,??0CLabeledCommandComboBox@@QAE@PAVPanel@vgui2@@PBD@Z,func,GameUI/LabeledCommandComboBox.cpp: same position and size as in our compiled object; linux: _ZN23CLabeledCommandComboBoxC2EPN5vgui25PanelEPKc
+10046321,??1CLabeledCommandComboBox@@UAE@XZ,func,GameUI/LabeledCommandComboBox.cpp: same position and size as in our compiled object; linux: _ZN23CLabeledCommandComboBoxD1Ev
+1004634B,?DeleteAllItems@CLabeledCommandComboBox@@UAEXXZ,func,GameUI/LabeledCommandComboBox.cpp: same position and size as in our compiled object; linux: _ZN23CLabeledCommandComboBox14DeleteAllItemsEv
+1004636C,?AddItem@CLabeledCommandComboBox@@UAEXPBD0@Z,func,GameUI/LabeledCommandComboBox.cpp: same position and size as in our compiled object; linux: _ZN23CLabeledCommandComboBox7AddItemEPKcS1_
+10046429,?ActivateItem@CLabeledCommandComboBox@@UAEXH@Z,func,GameUI/LabeledCommandComboBox.cpp: same position and size as in our compiled object; linux: _ZN23CLabeledCommandComboBox12ActivateItemEi
+1004647E,?SetInitialItem@CLabeledCommandComboBox@@QAEXH@Z,func,GameUI/LabeledCommandComboBox.cpp: same position and size as in our compiled object; linux: _ZN23CLabeledCommandComboBox14SetInitialItemEi
+100464D9,?OnTextChanged@CLabeledCommandComboBox@@EAEXPBD@Z,func,GameUI/LabeledCommandComboBox.cpp: same position and size as in our compiled object; linux: _ZN23CLabeledCommandComboBox13OnTextChangedEPKc
+10046595,?GetActiveItemCommand@CLabeledCommandComboBox@@QAEPBDXZ,func,GameUI/LabeledCommandComboBox.cpp: same position and size as in our compiled object; linux: _ZN23CLabeledCommandComboBox20GetActiveItemCommandEv
+100465D5,?ApplyChanges@CLabeledCommandComboBox@@QAEXXZ,func,GameUI/LabeledCommandComboBox.cpp: same position and size as in our compiled object; linux: _ZN23CLabeledCommandComboBox12ApplyChangesEv
+10046647,?HasBeenModified@CLabeledCommandComboBox@@QAE_NXZ,func,GameUI/LabeledCommandComboBox.cpp: same position and size as in our compiled object; linux: _ZN23CLabeledCommandComboBox15HasBeenModifiedEv
+10046669,?Reset@CLabeledCommandComboBox@@QAEXXZ,func,GameUI/LabeledCommandComboBox.cpp: same position and size as in our compiled object; linux: _ZN23CLabeledCommandComboBox5ResetEv
+100466A0,??_GCLabeledCommandComboBox@@UAEPAXI@Z,func,GameUI/LabeledCommandComboBox.cpp: same position and size as in our compiled object
+100466D0,??0?$CUtlVector@UCOMMANDITEM@CLabeledCommandComboBox@@@@QAE@HH@Z,func,GameUI/LabeledCommandComboBox.cpp: same position (size 50 against None) as in our compiled object
+10046710,??1?$CUtlVector@UCOMMANDITEM@CLabeledCommandComboBox@@@@QAE@XZ,func,GameUI/LabeledCommandComboBox.cpp: same position (size 27 against None) as in our compiled object
+10046730,??A?$CUtlVector@UCOMMANDITEM@CLabeledCommandComboBox@@@@QAEAAUCOMMANDITEM@CLabeledCommandComboBox@@H@Z,func,GameUI/LabeledCommandComboBox.cpp: same position (size 25 against None) as in our compiled object
+10046750,?Count@?$CUtlVector@UCOMMANDITEM@CLabeledCommandComboBox@@@@QBEHXZ,func,GameUI/LabeledCommandComboBox.cpp: same position (size 17 against None) as in our compiled object
+10046770,?Size@?$CUtlVector@UCOMMANDITEM@CLabeledCommandComboBox@@@@QBEHXZ,func,GameUI/LabeledCommandComboBox.cpp: same position (size 17 against None) as in our compiled object
+10046790,?AddToTail@?$CUtlVector@UCOMMANDITEM@CLabeledCommandComboBox@@@@QAEHXZ,func,GameUI/LabeledCommandComboBox.cpp: same position (size 26 against None) as in our compiled object
+100467B0,?RemoveAll@?$CUtlVector@UCOMMANDITEM@CLabeledCommandComboBox@@@@QAEXXZ,func,GameUI/LabeledCommandComboBox.cpp: same position (size 70 against None) as in our compiled object
+10046800,?Element@?$CUtlVector@UCOMMANDITEM@CLabeledCommandComboBox@@@@QAEAAUCOMMANDITEM@CLabeledCommandComboBox@@H@Z,func,GameUI/LabeledCommandComboBox.cpp: same position (size 25 against None) as in our compiled object
+10046820,?InsertBefore@?$CUtlVector@UCOMMANDITEM@CLabeledCommandComboBox@@@@QAEHH@Z,func,GameUI/LabeledCommandComboBox.cpp: same position (size 61 against None) as in our compiled object
+10046860,?Purge@?$CUtlVector@UCOMMANDITEM@CLabeledCommandComboBox@@@@QAEXXZ,func,GameUI/LabeledCommandComboBox.cpp: same position (size 35 against None) as in our compiled object
+10046890,?ResetDbgInfo@?$CUtlVector@UCOMMANDITEM@CLabeledCommandComboBox@@@@IAEXXZ,func,GameUI/LabeledCommandComboBox.cpp: same position (size 11 against None) as in our compiled object
+100468A0,??0?$CUtlMemory@UCOMMANDITEM@CLabeledCommandComboBox@@@@QAE@HH@Z,func,GameUI/LabeledCommandComboBox.cpp: same position (size 78 against None) as in our compiled object
+100468F0,??1?$CUtlMemory@UCOMMANDITEM@CLabeledCommandComboBox@@@@QAE@XZ,func,GameUI/LabeledCommandComboBox.cpp: same position (size 19 against None) as in our compiled object
+10046910,??A?$CUtlMemory@UCOMMANDITEM@CLabeledCommandComboBox@@@@QAEAAUCOMMANDITEM@CLabeledCommandComboBox@@H@Z,func,GameUI/LabeledCommandComboBox.cpp: same position (size 29 against None) as in our compiled object
+10046930,?Destruct@@YAXPAUCOMMANDITEM@CLabeledCommandComboBox@@@Z,func,GameUI/LabeledCommandComboBox.cpp: same position and size as in our compiled object
+10046940,?GrowVector@?$CUtlVector@UCOMMANDITEM@CLabeledCommandComboBox@@@@IAEXH@Z,func,GameUI/LabeledCommandComboBox.cpp: same position (size 87 against None) as in our compiled object
+100469A0,?ShiftElementsRight@?$CUtlVector@UCOMMANDITEM@CLabeledCommandComboBox@@@@IAEXHH@Z,func,GameUI/LabeledCommandComboBox.cpp: same position (size 89 against None) as in our compiled object
+10046A00,?Purge@?$CUtlMemory@UCOMMANDITEM@CLabeledCommandComboBox@@@@QAEXXZ,func,GameUI/LabeledCommandComboBox.cpp: same position (size 69 against None) as in our compiled object
+10046A50,?Construct@@YAXPAUCOMMANDITEM@CLabeledCommandComboBox@@@Z,func,GameUI/LabeledCommandComboBox.cpp: same position and size as in our compiled object
+10046A70,?NumAllocated@?$CUtlMemory@UCOMMANDITEM@CLabeledCommandComboBox@@@@QBEHXZ,func,GameUI/LabeledCommandComboBox.cpp: same position (size 17 against None) as in our compiled object
+10046A90,?Grow@?$CUtlMemory@UCOMMANDITEM@CLabeledCommandComboBox@@@@QAEXH@Z,func,GameUI/LabeledCommandComboBox.cpp: same position (size 205 against None) as in our compiled object
+10046B60,?IsExternallyAllocated@?$CUtlMemory@UCOMMANDITEM@CLabeledCommandComboBox@@@@QBE_NXZ,func,GameUI/LabeledCommandComboBox.cpp: same position (size 25 against None) as in our compiled object
+10046B80,??0CLabeledCommandComboBox_RegisterMap@CLabeledCommandComboBox@@QAE@XZ,func,GameUI/LabeledCommandComboBox.cpp: same position and size as in our compiled object
+10046BA0,?ChainToMap@CLabeledCommandComboBox@@SAXXZ,func,GameUI/LabeledCommandComboBox.cpp: same position and size as in our compiled object
+10046C10,?GetMessageMap@CLabeledCommandComboBox@@UAEPAUPanelMessageMap@vgui2@@XZ,func,GameUI/LabeledCommandComboBox.cpp: same position and size as in our compiled object
+10046C50,?GetPanelClassName@CLabeledCommandComboBox@@SAPBDXZ,func,GameUI/LabeledCommandComboBox.cpp: same position and size as in our compiled object
+10046C60,?GetPanelBaseClassName@CLabeledCommandComboBox@@SAPBDXZ,func,GameUI/LabeledCommandComboBox.cpp: same position and size as in our compiled object
+10046C70,??0PanelMessageFunc_OnTextChanged@CLabeledCommandComboBox@@QAE@XZ,func,GameUI/LabeledCommandComboBox.cpp: same position and size as in our compiled object
+10046C90,?InitVar@PanelMessageFunc_OnTextChanged@CLabeledCommandComboBox@@SAXXZ,func,GameUI/LabeledCommandComboBox.cpp: same position and size as in our compiled object
+10046D00,?AddToMap@CLabeledCommandComboBox@@SAXPBDP8Panel@vgui2@@AEXXZHH0H0@Z,func,GameUI/LabeledCommandComboBox.cpp: same position and size as in our compiled object
