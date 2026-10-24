@@ -81,6 +81,21 @@ python tools/make_dist.py --bin build/dist_hl      dist/ with only the DLLs in t
 - Functions Ghidra never created (or merged into a neighbour) are found by link_diff as "found in retail by code but without a progress.csv row": shrink the neighbour with `tools/ghidra_scripts/SetBodyRange.java`, create the function with `FillGaps.java` (both through the GhidraMCP `/run_ghidra_script`, then `/save_program`), add the name to `tools/symbols/hl_manual.csv` and the unit list, re-delink and check.
 - The Rich header shows 4 more C++ objects in retail (159 against 155, objects that add no code) and the Steamworks SDK steam_api.lib (VS 2005 import library, prod 123 build 50727) where ours is made by lib 14.27; the import hints differ for the same reason (kernel32.lib from an older SDK, the SDK's steam_api.lib).
 
+### client.dll
+
+```
+python tools/build.py link client                  build/link/client/client.dll + .map (no error, no warning)
+python tools/link_diff.py client --all             functions, exports, imports, layout
+python tools/data_drift.py client                  where named globals drift (missing, resized or reordered data)
+```
+
+- link_diff compares an import slot by the imported function (the IAT name), not by the symbol map label: AnimateNextFrame_guess called timeGetTime where retail calls GetTickCount, and objdiff had passed it because the retail label was wrong.
+- link_diff's data check covers each referenced object only up to the next referenced address and does not follow pointers, so a pointer table with other strings passes (view.cpp modelmap held the 15 HLSDK p_/v_ model pairs, retail only the flashlight). data_drift.py and a masked byte comparison of .data find such cases.
+- Every vgui class is `__declspec(dllexport)` (VGUI.h), so each object that includes a vgui header emits that class's vtable and its implicit copy and move constructors and assignment operators as COMDATs (they are client.dll exports). The first object in link order keeps them, and inside an object the vtables follow class definition order. The include lists therefore decide where they land: VGUI_TextEntry.h in vgui_TeamFortressViewport.h after VGUI_Slider.h puts TextEntry into voice_vgui_tweakdlg.obj, vgui_ScorePanel.h after HUDControl_guess.h puts TablePanel, HeaderPanel and TextGrid into HUDControl_guess.obj after the CHUDControl vtable, as in retail.
+- An inline header function emitted out of line is placed by its decorated name like any other function, so a byte-matched inline name at a place where it can not sort is another function: 10044020 is not cl_util.h's PlaySound but InventorySound_guess of the RECBInventory object.
+- String literals inside an object's .rdata come in the order the source first uses them, so they show the original function definition order of each file, which ours does not always have (ammo.cpp, AmmoInventory_guess.cpp, ClothesMenu_guess.cpp and others). The RTTI type descriptors of cdll_int.obj are in another order too, and anonymous namespace names (`?A0x...`) are a hash of the original source path. None of this changes code.
+- The retail static UCRT is older than the Windows 10 SDK 10.0.19041 one we link: retail _fptostr.obj has the four-argument should_round_up (19041 adds __acrt_has_trailing_digits and check_trailing), so the CRT code is about 300 bytes shorter around cfout.obj, and an extra 5-byte jmp follows the _Lockit functions (the same as hl.dll). Linking with the 10.0.18362 UCRT is a toolchain change that waits for the user.
+
 ### cof.exe (VC6 launcher)
 
 ```
