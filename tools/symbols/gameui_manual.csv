@@ -3557,3 +3557,7 @@ va,name,kind,evidence
 10024E6D,?MD5Final@@YAXQAEPAUMD5Context_t@@@Z,func,public/checksum_md5.cpp: same position and size as in our compiled object (hw crc.c MD5 code); linux: _Z8MD5FinalPhP12MD5Context_t
 10024F4F,?MD5Transform@@YAXQAIQBI@Z,func,public/checksum_md5.cpp: same position and size as in our compiled object (hw crc.c MD5 code); linux: _Z12MD5TransformPjPKj
 10025E72,?MD5_Print@@YAPADQAE@Z,func,public/checksum_md5.cpp: same position and size as in our compiled object (hw crc.c MD5_Print with sprintf and strcat); linux: _Z9MD5_PrintPh
+10105120,_g_BreakSet,data,public/filesystem_helpers.cpp static: built from "{}()'" by InitializeCharacterSets; .bss layout like our object
+10105220,_g_BreakSetIncludingColons,data,public/filesystem_helpers.cpp static: built from "{}()':" by InitializeCharacterSets; .bss layout like our object
+10105320,_?s_CharacterSetInitialized@?1??InitializeCharacterSets@@YAXXZ@4_NA,data,public/filesystem_helpers.cpp function static of InitializeCharacterSets; .bss layout like our object
+10105321,_?com_ignorecolons@?5??ParseFile@@YAPBDPBDPADPA_NPAUcharacterset_s@@@Z@4_NA,data,public/filesystem_helpers.cpp function static of ParseFile (gameui.so DWARF local); .bss layout like our object
