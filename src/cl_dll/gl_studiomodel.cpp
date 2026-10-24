@@ -1200,12 +1200,18 @@ void CStudioModelRenderer::GL_SetupLighting ()
 		{
 			bright = gEngfuncs.pfnRandomFloat(-0.1, 0.1) + 0.5;
 			r = gEngfuncs.pfnRandomFloat(-0.1, 0.1) + 0.1;
-			light.ambientlight[0] = light.ambientlight[1] = light.ambientlight[2] = bright;
-			light.addlight[0] = light.addlight[1] = light.addlight[2] = r;
+			light.ambientlight[0] = bright;
+			light.ambientlight[1] = bright;
+			light.ambientlight[2] = bright;
+			light.addlight[0] = r;
+			light.addlight[1] = r;
+			light.addlight[2] = r;
 		}
 		else
 		{
-			light.ambientlight[0] = light.ambientlight[1] = light.ambientlight[2] = bright;
+			light.ambientlight[0] = bright;
+			light.ambientlight[1] = bright;
+			light.ambientlight[2] = bright;
 			light.addlight[0] = r;
 			light.addlight[1] = g;
 			light.addlight[2] = b;
