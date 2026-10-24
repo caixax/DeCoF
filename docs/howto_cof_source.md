@@ -330,6 +330,13 @@ The 1.55 hl.dll is an unoptimized debug build of nearly the same source. `disasm
 - `-(float)sin( yaw )` (the cast before the negation) when retail negates a float (16-byte `xorps` mask).
 - VC6 STL objects (DetailTexture.cpp: `std::string`, `std::map`, `std::vector`) are built without /GX but with /MT (unit cflags): only `_MT` makes `std::_Lockit` a real call. The whole COMDAT tail then comes out in retail order; the linker folded identical COMDATs (`string::size` into `string::length`, placement new), so skip those when pairing by position. Ghidra splits a function with a try/catch (VC6 `basic_string::_Copy`) at its catch funclet: remove the `Catch@` and continuation functions, extend the body and turn the jump it marked as a call back into a jump before delinking. File statics with an explicit `= false` lie in retail .bss after the uninitialized ones in definition order; `once`, `defaultID` and the lexer tables that the DWARF gives as const values or const arrays are plain initialized statics in 2013 (.data).
 
+## Patterns from the hl.dll EQUIVALENT pass (MSVC 14.27)
+
+- A callee in the same object whose body is empty (or a bare `return FALSE;` with the old code commented out) lets MSVC 14.27 drop calls to it and the code that only feeds them, even when it is defined after the caller: when retail keeps the calls, the callee keeps its old body after `return;` (CBaseMonster::CallGibMonster, seen in CBaseMonster::Killed).
+- A `nop dword ptr [eax]` (or another multi-byte nop) at a block join that no jump comes back to is the aligned head of a loop whose body is gone: an empty `for ( int i = 0; i < 1; i++ ) {}` at that place gives the same padding (CSuicider::Killed, where the 1.55 gun setup used to be).
+- Swapped operands of one component of a Vector sum or product (`movss xmm1, [view_ofs.x]` against `[origin.x]`) and swapped registers that follow from it change when a pointer or scalar of the expression is read through a local first: `float flSpeed = m_flFlySpeed;` (CRoofBossHead::TrackTarget), `entvars_t *pevStart = m_pPlayer->pev;` for one operand (CSyringe::SecondaryAttack), `CBasePlayer *pPlayer = m_pPlayer;` hoists the load above a branch (CShotgun::ItemPostFrame). The effect is not local: a new local can flip the operands of a far away expression in the same function, so check the whole function after each try (PostThink, CheatImpulseCommands stay EQUIVALENT for that reason).
+- `try_variants.py` writes the whole file with CRLF when it finds any CRLF in it: keep the file's own line ending in every inserted line, or a LF file comes back converted.
+
 ## What not to do
 
 - Do not edit shared headers (`cbase.h`, `weapons.h`, `player.h`, `util.h`, ...) without coordinating: several files depend on them.
