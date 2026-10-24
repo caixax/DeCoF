@@ -8924,24 +8924,24 @@ gameui,10036230,45,,,UNKNOWN,GameUI/MasterVersionChk_guess.cpp,,,TODO,,,
 gameui,10036260,156,,,UNKNOWN,GameUI/MasterVersionChk_guess.cpp,,,TODO,,,
 gameui,10036300,46,,,UNKNOWN,GameUI/MasterVersionChk_guess.cpp,,,TODO,,,
 gameui,10036330,19,,,UNKNOWN,GameUI/MasterVersionChk_guess.cpp,,,TODO,,,
-gameui,10036350,62,,,UNKNOWN,GameUI/ModInfo.cpp,,,TODO,,,
-gameui,1003638E,15,,,UNKNOWN,GameUI/ModInfo.cpp,,,TODO,,,
-gameui,1003639D,68,,,UNKNOWN,GameUI/ModInfo.cpp,,,TODO,,,
-gameui,100363E1,11,,,UNKNOWN,GameUI/ModInfo.cpp,,,TODO,,,
-gameui,100363EC,43,,,UNKNOWN,GameUI/ModInfo.cpp,,,TODO,,,
-gameui,10036417,36,,CModInfo::GetStartMap,ENGINE,GameUI/ModInfo.cpp,,,TODO,,linux_symbols:string:0.75,linux: _ZN8CModInfo11GetStartMapEv
-gameui,1003643B,36,,CModInfo::GetTrainMap,ENGINE,GameUI/ModInfo.cpp,,,TODO,,linux_symbols:string:0.75,linux: _ZN8CModInfo11GetTrainMapEv
-gameui,1003645F,55,,CModInfo::IsMultiplayerOnly,ENGINE,GameUI/ModInfo.cpp,,,TODO,,linux_symbols:string:0.75,linux: _ZN8CModInfo17IsMultiplayerOnlyEv
-gameui,10036496,55,,,UNKNOWN,GameUI/ModInfo.cpp,,,TODO,,,
-gameui,100364CD,55,,CModInfo::NoModels,ENGINE,GameUI/ModInfo.cpp,,,TODO,,linux_symbols:string:0.75,linux: _ZN8CModInfo8NoModelsEv
-gameui,10036504,55,,CModInfo::NoHiModel,ENGINE,GameUI/ModInfo.cpp,,,TODO,,linux_symbols:string:0.75,linux: _ZN8CModInfo9NoHiModelEv
-gameui,1003653B,36,,CModInfo::GetFallbackDir,ENGINE,GameUI/ModInfo.cpp,,,TODO,,linux_symbols:string:0.75,linux: _ZN8CModInfo14GetFallbackDirEv
-gameui,1003655F,55,,CModInfo::UseFallbackDirMaps,ENGINE,GameUI/ModInfo.cpp,,,TODO,,linux_symbols:string:0.75,linux: _ZN8CModInfo18UseFallbackDirMapsEv
-gameui,10036596,55,,CModInfo::GetDetailedTexture,ENGINE,GameUI/ModInfo.cpp,,,TODO,,linux_symbols:string:0.75,linux: _ZN8CModInfo18GetDetailedTextureEv
-gameui,100365CD,36,,,UNKNOWN,GameUI/ModInfo.cpp,,,TODO,,,linux: _ZN8CModInfo18GetGameDescriptionEv
-gameui,100365F1,36,,CModInfo::GetMPFilter,ENGINE,GameUI/ModInfo.cpp,,,TODO,,linux_symbols:string:0.75,linux: _ZN8CModInfo11GetMPFilterEv
-gameui,10036615,199,,CModInfo::LoadCurrentGameInfo,ENGINE,GameUI/ModInfo.cpp,,,TODO,,linux_symbols:string:0.833,linux: _ZN8CModInfo19LoadCurrentGameInfoEv
-gameui,100366DC,227,,,UNKNOWN,GameUI/ModInfo.cpp,,,TODO,,,
+gameui,10036350,62,?ModInfo@@YAAAVCModInfo@@XZ,class CModInfo & __cdecl ModInfo(void),UNKNOWN,GameUI/ModInfo.cpp,,,MATCHED,100,,
+gameui,1003638E,15,_$E3,_$E3,UNKNOWN,GameUI/ModInfo.cpp,,,MATCHED,100,,
+gameui,1003639D,68,??0CModInfo@@QAE@XZ,public: __thiscall CModInfo::CModInfo(void),UNKNOWN,GameUI/ModInfo.cpp,,,MATCHED,100,,
+gameui,100363E1,11,??1CModInfo@@QAE@XZ,public: __thiscall CModInfo::~CModInfo(void),UNKNOWN,GameUI/ModInfo.cpp,,,MATCHED,100,,
+gameui,100363EC,43,?FreeModInfo@CModInfo@@QAEXXZ,public: void __thiscall CModInfo::FreeModInfo(void),UNKNOWN,GameUI/ModInfo.cpp,,,MATCHED,100,,
+gameui,10036417,36,?GetStartMap@CModInfo@@QAEPBDXZ,public: char const * __thiscall CModInfo::GetStartMap(void),ENGINE,GameUI/ModInfo.cpp,,,MATCHED,100,linux_symbols:string:0.75,linux: _ZN8CModInfo11GetStartMapEv
+gameui,1003643B,36,?GetTrainMap@CModInfo@@QAEPBDXZ,public: char const * __thiscall CModInfo::GetTrainMap(void),ENGINE,GameUI/ModInfo.cpp,,,MATCHED,100,linux_symbols:string:0.75,linux: _ZN8CModInfo11GetTrainMapEv
+gameui,1003645F,55,?IsMultiplayerOnly@CModInfo@@QAE_NXZ,public: bool __thiscall CModInfo::IsMultiplayerOnly(void),ENGINE,GameUI/ModInfo.cpp,,,MATCHED,100,linux_symbols:string:0.75,linux: _ZN8CModInfo17IsMultiplayerOnlyEv
+gameui,10036496,55,?IsSinglePlayerOnly@CModInfo@@QAE_NXZ,public: bool __thiscall CModInfo::IsSinglePlayerOnly(void),UNKNOWN,GameUI/ModInfo.cpp,,,MATCHED,100,,
+gameui,100364CD,55,?NoModels@CModInfo@@QAE_NXZ,public: bool __thiscall CModInfo::NoModels(void),ENGINE,GameUI/ModInfo.cpp,,,MATCHED,100,linux_symbols:string:0.75,linux: _ZN8CModInfo8NoModelsEv
+gameui,10036504,55,?NoHiModel@CModInfo@@QAE_NXZ,public: bool __thiscall CModInfo::NoHiModel(void),ENGINE,GameUI/ModInfo.cpp,,,MATCHED,100,linux_symbols:string:0.75,linux: _ZN8CModInfo9NoHiModelEv
+gameui,1003653B,36,?GetFallbackDir@CModInfo@@QAEPBDXZ,public: char const * __thiscall CModInfo::GetFallbackDir(void),ENGINE,GameUI/ModInfo.cpp,,,MATCHED,100,linux_symbols:string:0.75,linux: _ZN8CModInfo14GetFallbackDirEv
+gameui,1003655F,55,?UseFallbackDirMaps@CModInfo@@QAE_NXZ,public: bool __thiscall CModInfo::UseFallbackDirMaps(void),ENGINE,GameUI/ModInfo.cpp,,,MATCHED,100,linux_symbols:string:0.75,linux: _ZN8CModInfo18UseFallbackDirMapsEv
+gameui,10036596,55,?GetDetailedTexture@CModInfo@@QAE_NXZ,public: bool __thiscall CModInfo::GetDetailedTexture(void),ENGINE,GameUI/ModInfo.cpp,,,MATCHED,100,linux_symbols:string:0.75,linux: _ZN8CModInfo18GetDetailedTextureEv
+gameui,100365CD,36,?GetGameDescription@CModInfo@@QAEPBDXZ,public: char const * __thiscall CModInfo::GetGameDescription(void),UNKNOWN,GameUI/ModInfo.cpp,,,MATCHED,100,,linux: _ZN8CModInfo18GetGameDescriptionEv
+gameui,100365F1,36,?GetMPFilter@CModInfo@@QAEPBDXZ,public: char const * __thiscall CModInfo::GetMPFilter(void),ENGINE,GameUI/ModInfo.cpp,,,MATCHED,100,linux_symbols:string:0.75,linux: _ZN8CModInfo11GetMPFilterEv
+gameui,10036615,199,?LoadCurrentGameInfo@CModInfo@@QAEXXZ,public: void __thiscall CModInfo::LoadCurrentGameInfo(void),ENGINE,GameUI/ModInfo.cpp,,,MATCHED,100,linux_symbols:string:0.833,linux: _ZN8CModInfo19LoadCurrentGameInfoEv
+gameui,100366DC,227,?LoadGameInfoFromBuffer@CModInfo@@QAEXPBDH@Z,"public: void __thiscall CModInfo::LoadGameInfoFromBuffer(char const *,int)",UNKNOWN,GameUI/ModInfo.cpp,,,MATCHED,100,,
 gameui,100367C0,109,??0CMsgBuffer@@QAE@PBDP6AX0ZZ@Z,"public: __thiscall CMsgBuffer::CMsgBuffer(char const *,void (__cdecl*)(char const *,...))",UNKNOWN,GameUI/MsgBuffer_guess.cpp,,,MATCHED,100,,
 gameui,1003682D,20,??1CMsgBuffer@@UAE@XZ,public: virtual __thiscall CMsgBuffer::~CMsgBuffer(void),UNKNOWN,GameUI/MsgBuffer_guess.cpp,,,MATCHED,100,,
 gameui,10036841,30,?Push_guess@CMsgBuffer@@QAEXXZ,public: void __thiscall CMsgBuffer::Push_guess(void),UNKNOWN,GameUI/MsgBuffer_guess.cpp,,,MATCHED,100,,

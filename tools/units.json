@@ -4095,6 +4095,11 @@
           "functions_file": "tools/units/gameui_HLTV_common_byteorder.txt"
         },
         {
+          "name": "GameUI/ModInfo",
+          "source": "src/gameui/ModInfo.cpp",
+          "functions_file": "tools/units/gameui_GameUI_ModInfo.txt"
+        },
+        {
           "name": "GameUI/BasePanel",
           "source": "src/gameui/BasePanel.cpp",
           "functions_file": "tools/units/gameui_GameUI_BasePanel.txt"

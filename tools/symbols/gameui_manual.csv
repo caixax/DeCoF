@@ -5067,3 +5067,21 @@ va,name,kind,evidence
 10021120,?Grow@?$CUtlMemory@Ubimage_t@CBasePanel@@@@QAEXH@Z,func,GameUI/BasePanel.cpp: same position and size as in our compiled object
 100211F0,?IsExternallyAllocated@?$CUtlMemory@Ubimage_t@CBasePanel@@@@QBE_NXZ,func,GameUI/BasePanel.cpp: same position and size as in our compiled object
 10021210,?Destruct@@YAXPAUbimage_t@CBasePanel@@@Z,func,GameUI/BasePanel.cpp: same position and size as in our compiled object
+10036350,?ModInfo@@YAAAVCModInfo@@XZ,func,GameUI/ModInfo.cpp: same position and size as in our compiled object; linux: _Z7ModInfov
+1003638E,_$E3,func,"GameUI/ModInfo.cpp: atexit destructor helper of the static s_ModInfo, same position and size as in our compiled object"
+1003639D,??0CModInfo@@QAE@XZ,func,"GameUI/ModInfo.cpp: same position and size as in our compiled object (""ModData""); linux: _ZN8CModInfoC1Ev"
+100363E1,??1CModInfo@@QAE@XZ,func,"GameUI/ModInfo.cpp: empty destructor, same position and size as in our compiled object; linux: _ZN8CModInfoD1Ev"
+100363EC,?FreeModInfo@CModInfo@@QAEXXZ,func,GameUI/ModInfo.cpp: same position and size as in our compiled object; linux: _ZN8CModInfo11FreeModInfoEv
+10036417,?GetStartMap@CModInfo@@QAEPBDXZ,func,GameUI/ModInfo.cpp: same position and size as in our compiled object; linux: _ZN8CModInfo11GetStartMapEv
+1003643B,?GetTrainMap@CModInfo@@QAEPBDXZ,func,GameUI/ModInfo.cpp: same position and size as in our compiled object; linux: _ZN8CModInfo11GetTrainMapEv
+1003645F,?IsMultiplayerOnly@CModInfo@@QAE_NXZ,func,GameUI/ModInfo.cpp: same position and size as in our compiled object; linux: _ZN8CModInfo17IsMultiplayerOnlyEv
+10036496,?IsSinglePlayerOnly@CModInfo@@QAE_NXZ,func,"GameUI/ModInfo.cpp: same position and size as in our compiled object (""singleplayer_only""); linux: _ZN8CModInfo18IsSinglePlayerOnlyEv"
+100364CD,?NoModels@CModInfo@@QAE_NXZ,func,GameUI/ModInfo.cpp: same position and size as in our compiled object; linux: _ZN8CModInfo8NoModelsEv
+10036504,?NoHiModel@CModInfo@@QAE_NXZ,func,GameUI/ModInfo.cpp: same position and size as in our compiled object; linux: _ZN8CModInfo9NoHiModelEv
+1003653B,?GetFallbackDir@CModInfo@@QAEPBDXZ,func,GameUI/ModInfo.cpp: same position and size as in our compiled object; linux: _ZN8CModInfo14GetFallbackDirEv
+1003655F,?UseFallbackDirMaps@CModInfo@@QAE_NXZ,func,GameUI/ModInfo.cpp: same position and size as in our compiled object; linux: _ZN8CModInfo18UseFallbackDirMapsEv
+10036596,?GetDetailedTexture@CModInfo@@QAE_NXZ,func,GameUI/ModInfo.cpp: same position and size as in our compiled object; linux: _ZN8CModInfo18GetDetailedTextureEv
+100365CD,?GetGameDescription@CModInfo@@QAEPBDXZ,func,GameUI/ModInfo.cpp: same position and size as in our compiled object; linux: _ZN8CModInfo18GetGameDescriptionEv
+100365F1,?GetMPFilter@CModInfo@@QAEPBDXZ,func,GameUI/ModInfo.cpp: same position and size as in our compiled object; linux: _ZN8CModInfo11GetMPFilterEv
+10036615,?LoadCurrentGameInfo@CModInfo@@QAEXXZ,func,"GameUI/ModInfo.cpp: same position and size as in our compiled object (""liblist.gam""); linux: _ZN8CModInfo19LoadCurrentGameInfoEv"
+100366DC,?LoadGameInfoFromBuffer@CModInfo@@QAEXPBDH@Z,func,GameUI/ModInfo.cpp: same position and size as in our compiled object; linux: _ZN8CModInfo22LoadGameInfoFromBufferEPKci
