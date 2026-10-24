@@ -3283,6 +3283,11 @@
           "functions_file": "tools/units/hw_iga_IGA_Engine_guess.txt"
         },
         {
+          "name": "iga/IGA_Quantizer_guess",
+          "source": "src/iga/IGA_Quantizer_guess.cpp",
+          "functions_file": "tools/units/hw_iga_IGA_Quantizer_guess.txt"
+        },
+        {
           "name": "engine/hla3d_guess",
           "source": "src/engine_hw/hla3d_guess.cpp",
           "functions_file": "tools/units/hw_engine_hla3d_guess.txt"
