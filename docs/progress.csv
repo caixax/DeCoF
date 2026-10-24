@@ -8058,41 +8058,41 @@ gameui,10014E60,20,,,UNKNOWN,GameUI/CareerGameTasks.cpp,,,TODO,,,linux: _ZNK13CC
 gameui,10014E80,20,,,UNKNOWN,GameUI/CareerGameTasks.cpp,,,TODO,,,linux: _ZNK13CCareerUITask10GetPartialEv
 gameui,10014EA0,25,,,UNKNOWN,GameUI/CareerGameTasks.cpp,,,TODO,,,linux: _ZN13CCareerUITask10SetPartialEi
 gameui,10014EC0,20,,,UNKNOWN,GameUI/CareerGameTasks.cpp,,,TODO,,,linux: _ZNK13CCareerUITask14IsMaxRoundTimeEv
-gameui,10014EE0,1273,_ShowCareerMapDescription,ShowCareerMapDescription,ENGINE,GameUI/CareerMapFrame.cpp,,,TODO,,linux_symbols:string:0.754,
-gameui,100153D9,915,,CMapButton::CMapButton,ENGINE,GameUI/CareerMapFrame.cpp,,,TODO,,linux_symbols:string:0.806,
-gameui,1001576C,103,,,UNKNOWN,GameUI/CareerMapFrame.cpp,,,TODO,,,
-gameui,100157D3,246,,CMapButton::ApplySchemeSettings,ENGINE,GameUI/CareerMapFrame.cpp,,,TODO,,linux_symbols:string:0.767,linux: _ZN10CMapButton19ApplySchemeSettingsEPN5vgui27ISchemeE
-gameui,100158C9,470,,,UNKNOWN,GameUI/CareerMapFrame.cpp,,,TODO,,,linux: _ZN10CMapButton15PaintBackgroundEv
-gameui,10015A9F,60,,,UNKNOWN,GameUI/CareerMapFrame.cpp,,,TODO,,,linux: _ZN10CMapButton10SetMapNameEPKc
-gameui,10015ADB,366,,,UNKNOWN,GameUI/CareerMapFrame.cpp,,,TODO,,,linux: _ZN10CMapButton11PaintBorderEv
-gameui,10015C49,236,,CMapButton::SetActive,ENGINE,GameUI/CareerMapFrame.cpp,,,TODO,,linux_symbols:caller:0.37,linux: _ZN10CMapButton9SetActiveEb
-gameui,10015D35,43,,,UNKNOWN,GameUI/CareerMapFrame.cpp,,,TODO,,,linux: _ZN10CMapButton11SetDefeatedEb
-gameui,10015D60,274,,,UNKNOWN,GameUI/CareerMapFrame.cpp,,,TODO,,,linux: _ZN10CMapButton10GetBgColorEv
-gameui,10015E72,274,,,UNKNOWN,GameUI/CareerMapFrame.cpp,,,TODO,,,linux: _ZN10CMapButton13GetImageColorEv
-gameui,10015F84,175,,,UNKNOWN,GameUI/CareerMapFrame.cpp,,,TODO,,,linux: _ZN10CMapButton20OnMouseDoublePressedEN5vgui29MouseCodeE
-gameui,10016033,66,,,UNKNOWN,GameUI/CareerMapFrame.cpp,,,TODO,,,linux: _ZN10CMapButton14OnMousePressedEN5vgui29MouseCodeE
-gameui,10016075,2746,,CCareerMapFrame::CCareerMapFrame,ENGINE,GameUI/CareerMapFrame.cpp,,,TODO,,linux_symbols:string:0.718,linux: _ZN15CCareerMapFrameC2EPN5vgui25PanelE
-gameui,10016B2F,28,,,UNKNOWN,GameUI/CareerMapFrame.cpp,,,TODO,,,
-gameui,10016B4B,977,,CCareerMapFrame::ApplySchemeSettings,ENGINE,GameUI/CareerMapFrame.cpp,,,TODO,,linux_symbols:string:0.685,
-gameui,10016F1C,10,,,UNKNOWN,GameUI/CareerMapFrame.cpp,,,TODO,,,
-gameui,10016F26,134,,,UNKNOWN,GameUI/CareerMapFrame.cpp,,,TODO,,,
-gameui,10016FAC,16,,,UNKNOWN,GameUI/CareerMapFrame.cpp,,,TODO,,,linux: _ZN15CCareerMapFrame11GetPanelMapEv
-gameui,10016FBC,3282,,CCareerMapFrame::OnSliderMoved,ENGINE,GameUI/CareerMapFrame.cpp,,,TODO,,linux_symbols:string:0.784,linux: _ZN15CCareerMapFrame13OnSliderMovedEi.part.43
-gameui,10017C8E,227,,CCareerMapFrame::OnThink,ENGINE,GameUI/CareerMapFrame.cpp,,,TODO,,linux_symbols:string:0.583,linux: _ZN15CCareerMapFrame7OnThinkEv
-gameui,10017D71,616,,CCareerMapFrame::Activate,ENGINE,GameUI/CareerMapFrame.cpp,,,TODO,,linux_symbols:string:0.868,linux: _ZN15CCareerMapFrame8ActivateEv
-gameui,10017FD9,75,,CCareerMapFrame::GetNextButton,ENGINE,GameUI/CareerMapFrame.cpp,,,TODO,,linux_symbols:consts:0.667,linux: _ZN15CCareerMapFrame13GetNextButtonEv
-gameui,10018024,461,,CCareerMapFrame::ShowMapDescription,ENGINE,GameUI/CareerMapFrame.cpp,,,TODO,,linux_symbols:string:0.912,linux: _ZN15CCareerMapFrame18ShowMapDescriptionEP10CCareerMap
-gameui,100181F1,652,,CCareerMapFrame::OnCommand,ENGINE,GameUI/CareerMapFrame.cpp,,,TODO,,linux_symbols:string:0.691,linux: _ZN15CCareerMapFrame9OnCommandEPKc
-gameui,1001847D,348,,CCareerMapFrame::ChangeActiveMap,ENGINE,GameUI/CareerMapFrame.cpp,,,TODO,,linux_symbols:caller:0.406,linux: _ZN15CCareerMapFrame15ChangeActiveMapEii
-gameui,100185D9,150,,,UNKNOWN,GameUI/CareerMapFrame.cpp,,,TODO,,,linux: _ZN15CCareerMapFrame14OnKeyCodeTypedEN5vgui27KeyCodeE
-gameui,10018670,13,,,UNKNOWN,GameUI/CareerMapFrame.cpp,,,TODO,,,
-gameui,10018680,46,,,UNKNOWN,GameUI/CareerMapFrame.cpp,,,TODO,,,
-gameui,100186B0,46,,,UNKNOWN,GameUI/CareerMapFrame.cpp,,,TODO,,,
-gameui,100186E0,21,,,UNKNOWN,GameUI/CareerMapFrame.cpp,,,TODO,,,
-gameui,10018700,16,,,UNKNOWN,GameUI/CareerMapFrame.cpp,,,TODO,,,
-gameui,10018710,17,,,UNKNOWN,GameUI/CareerMapFrame.cpp,,,TODO,,,
-gameui,10018730,25,,,UNKNOWN,GameUI/CareerMapFrame.cpp,,,TODO,,,
-gameui,10018760,25,,,UNKNOWN,GameUI/CareerMapFrame.cpp,,,TODO,,,
+gameui,10014EE0,1273,?ShowCareerMapDescription@@YAXPAVRichText@vgui2@@PAVCCareerMap@@VColor@@2@Z,ShowCareerMapDescription,ENGINE,GameUI/CareerMapFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100153D9,915,??0CMapButton@@QAE@PAVCCareerMapFrame@@PBD11@Z,CMapButton::CMapButton,ENGINE,GameUI/CareerMapFrame.cpp,,,MATCHED,100,linux_symbols:string:0.806,
+gameui,1001576C,103,??1CMapButton@@UAE@XZ,CMapButton::~CMapButton,UNKNOWN,GameUI/CareerMapFrame.cpp,,,MATCHED,100,,
+gameui,100157D3,246,?ApplySchemeSettings@CMapButton@@UAEXPAVIScheme@vgui2@@@Z,CMapButton::ApplySchemeSettings,ENGINE,GameUI/CareerMapFrame.cpp,,,MATCHED,100,linux_symbols:string:0.767,linux: _ZN10CMapButton19ApplySchemeSettingsEPN5vgui27ISchemeE
+gameui,100158C9,470,?PaintBackground@CMapButton@@UAEXXZ,CMapButton::PaintBackground,UNKNOWN,GameUI/CareerMapFrame.cpp,,,MATCHED,100,,linux: _ZN10CMapButton15PaintBackgroundEv
+gameui,10015A9F,60,?SetMapName@CMapButton@@QAEXPBD@Z,CMapButton::SetMapName,UNKNOWN,GameUI/CareerMapFrame.cpp,,,MATCHED,100,,linux: _ZN10CMapButton10SetMapNameEPKc
+gameui,10015ADB,366,?PaintBorder@CMapButton@@UAEXXZ,CMapButton::PaintBorder,UNKNOWN,GameUI/CareerMapFrame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN10CMapButton11PaintBorderEv
+gameui,10015C49,236,?SetActive@CMapButton@@QAEX_N@Z,CMapButton::SetActive,ENGINE,GameUI/CareerMapFrame.cpp,,,MATCHED,100,linux_symbols:caller:0.37,linux: _ZN10CMapButton9SetActiveEb
+gameui,10015D35,43,?SetDefeated@CMapButton@@QAEX_N@Z,CMapButton::SetDefeated,UNKNOWN,GameUI/CareerMapFrame.cpp,,,MATCHED,100,,linux: _ZN10CMapButton11SetDefeatedEb
+gameui,10015D60,274,?GetBgColor@CMapButton@@UAE?AVColor@@XZ,CMapButton::GetBgColor,UNKNOWN,GameUI/CareerMapFrame.cpp,,,MATCHED,100,,linux: _ZN10CMapButton10GetBgColorEv
+gameui,10015E72,274,?GetImageColor@CMapButton@@UAE?AVColor@@XZ,CMapButton::GetImageColor,UNKNOWN,GameUI/CareerMapFrame.cpp,,,MATCHED,100,,linux: _ZN10CMapButton13GetImageColorEv
+gameui,10015F84,175,?OnMouseDoublePressed@CMapButton@@UAEXW4MouseCode@vgui2@@@Z,CMapButton::OnMouseDoublePressed,UNKNOWN,GameUI/CareerMapFrame.cpp,,,MATCHED,100,,linux: _ZN10CMapButton20OnMouseDoublePressedEN5vgui29MouseCodeE
+gameui,10016033,66,?OnMousePressed@CMapButton@@UAEXW4MouseCode@vgui2@@@Z,CMapButton::OnMousePressed,UNKNOWN,GameUI/CareerMapFrame.cpp,,,MATCHED,100,,linux: _ZN10CMapButton14OnMousePressedEN5vgui29MouseCodeE
+gameui,10016075,2746,??0CCareerMapFrame@@QAE@PAVPanel@vgui2@@@Z,CCareerMapFrame::CCareerMapFrame,ENGINE,GameUI/CareerMapFrame.cpp,,,MATCHED,100,linux_symbols:string:0.718,linux: _ZN15CCareerMapFrameC2EPN5vgui25PanelE
+gameui,10016B2F,28,??1CCareerMapFrame@@UAE@XZ,CCareerMapFrame::~CCareerMapFrame,UNKNOWN,GameUI/CareerMapFrame.cpp,,,MATCHED,100,,
+gameui,10016B4B,977,?ApplySchemeSettings@CCareerMapFrame@@UAEXPAVIScheme@vgui2@@@Z,CCareerMapFrame::ApplySchemeSettings,ENGINE,GameUI/CareerMapFrame.cpp,,,MATCHED,100,linux_symbols:string:0.685,
+gameui,10016F1C,10,_$E10,,UNKNOWN,GameUI/CareerMapFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10016F26,134,_$E9,,UNKNOWN,GameUI/CareerMapFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10016FAC,16,?GetPanelMap@CCareerMapFrame@@MAEPAUPanelMap_t@vgui2@@XZ,CCareerMapFrame::GetPanelMap,UNKNOWN,GameUI/CareerMapFrame.cpp,,,MATCHED,100,,linux: _ZN15CCareerMapFrame11GetPanelMapEv
+gameui,10016FBC,3282,?OnSliderMoved@CCareerMapFrame@@MAEXH@Z,CCareerMapFrame::OnSliderMoved,ENGINE,GameUI/CareerMapFrame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN15CCareerMapFrame13OnSliderMovedEi.part.43
+gameui,10017C8E,227,?OnThink@CCareerMapFrame@@MAEXXZ,CCareerMapFrame::OnThink,ENGINE,GameUI/CareerMapFrame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN15CCareerMapFrame7OnThinkEv
+gameui,10017D71,616,?Activate@CCareerMapFrame@@UAEXXZ,CCareerMapFrame::Activate,ENGINE,GameUI/CareerMapFrame.cpp,,,MATCHED,100,linux_symbols:string:0.868,linux: _ZN15CCareerMapFrame8ActivateEv
+gameui,10017FD9,75,?GetNextButton@CCareerMapFrame@@QAEPAVButton@vgui2@@XZ,CCareerMapFrame::GetNextButton,ENGINE,GameUI/CareerMapFrame.cpp,,,MATCHED,100,linux_symbols:consts:0.667,linux: _ZN15CCareerMapFrame13GetNextButtonEv
+gameui,10018024,461,?ShowMapDescription@CCareerMapFrame@@QAEXPAVCCareerMap@@@Z,CCareerMapFrame::ShowMapDescription,ENGINE,GameUI/CareerMapFrame.cpp,,,MATCHED,100,linux_symbols:string:0.912,linux: _ZN15CCareerMapFrame18ShowMapDescriptionEP10CCareerMap
+gameui,100181F1,652,?OnCommand@CCareerMapFrame@@UAEXPBD@Z,CCareerMapFrame::OnCommand,ENGINE,GameUI/CareerMapFrame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN15CCareerMapFrame9OnCommandEPKc
+gameui,1001847D,348,?ChangeActiveMap@CCareerMapFrame@@AAEXHH@Z,CCareerMapFrame::ChangeActiveMap,ENGINE,GameUI/CareerMapFrame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN15CCareerMapFrame15ChangeActiveMapEii
+gameui,100185D9,150,?OnKeyCodeTyped@CCareerMapFrame@@UAEXW4KeyCode@vgui2@@@Z,CCareerMapFrame::OnKeyCodeTyped,UNKNOWN,GameUI/CareerMapFrame.cpp,,,MATCHED,100,,linux: _ZN15CCareerMapFrame14OnKeyCodeTypedEN5vgui27KeyCodeE
+gameui,10018670,13,?DrawFocusBorder@CMapButton@@UAEXHHHH@Z,CMapButton::DrawFocusBorder,UNKNOWN,GameUI/CareerMapFrame.cpp,,,MATCHED,100,,
+gameui,10018680,46,??_GCMapButton@@UAEPAXI@Z,destructor',UNKNOWN,GameUI/CareerMapFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100186B0,46,??_GCCareerMapFrame@@UAEPAXI@Z,destructor',UNKNOWN,GameUI/CareerMapFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100186E0,21,?IgnoreDoubleClicks_guess@CMapButton@@QAEXXZ,CMapButton::IgnoreDoubleClicks_guess,UNKNOWN,GameUI/CareerMapFrame.cpp,,,MATCHED,100,,
+gameui,10018700,16,?AreChecksumsOk@CCareerGame@@QAE_NXZ,CCareerGame::AreChecksumsOk,UNKNOWN,GameUI/CareerMapFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10018710,17,?GetMaps@CCareerGame@@QAEAAV?$vector@V?$vector@PAVCCareerMap@@V?$allocator@PAVCCareerMap@@@std@@@std@@V?$allocator@V?$vector@PAVCCareerMap@@V?$allocator@PAVCCareerMap@@@std@@@std@@@2@@std@@XZ,CCareerGame::GetMaps,LIB,GameUI/CareerMapFrame.cpp,,,TODO,,gameui_manual.csv,
+gameui,10018730,25,?IsMedalEarned@CCareerGame@@QAE_NW4CareerDifficultyType@@@Z,CCareerGame::IsMedalEarned,UNKNOWN,GameUI/CareerMapFrame.cpp,,,MATCHED,100,,
+gameui,10018760,25,?SetColor@CDottedBgLabel@@QAEXVColor@@@Z,CDottedBgLabel::SetColor,UNKNOWN,GameUI/CareerMapFrame.cpp,,,MATCHED,100,,
 gameui,10018780,75,,,UNKNOWN,GameUI/CareerProfile.cpp,,,TODO,,,
 gameui,100187CB,118,,,UNKNOWN,GameUI/CareerProfile.cpp,,,TODO,,,
 gameui,10018841,434,,,UNKNOWN,GameUI/CareerProfile.cpp,,,TODO,,,

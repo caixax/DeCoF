@@ -22,8 +22,85 @@ class CCareerMap;
 class BufferWriter;
 class CvarLatch;
 
+class BotProfile;
+
+//-----------------------------------------------------------------------------
+// Purpose: A bot the player can hire
+//-----------------------------------------------------------------------------
+class CCareerCharacter
+{
+public:
+	CCareerCharacter( const BotProfile *profile );
+
+	void Print();
+	char *Save( char *buf, int &len, int indent );
+	int GetPoints() const;
+	const char *GetName() const;
+	bool operator<( const CCareerCharacter &other ) const;
+	const BotProfile *GetProfile() const { return m_pProfile; }
+	int GetRange( float value ) const;
+	const char *GetSkinThumbnailFname() const;
+	const char *GetWeaponPreferenceAsString( int i ) const;
+	int GetWeaponPreferenceCount() const;
+	float GetSkill() const;
+	float GetTeamwork() const;
+	float GetAggression() const;
+
+private:
+	const BotProfile *m_pProfile;
+};
+
 typedef std::vector< CCareerCharacter * > CharacterVec;
 typedef CharacterVec::iterator CharacterVecIt;
+typedef CharacterVec::const_iterator CharacterVecCIt;
+
+//-----------------------------------------------------------------------------
+// Purpose: One career map with its enemies and tasks
+//-----------------------------------------------------------------------------
+class CCareerMap
+{
+public:
+	CCareerMap( const char *name, const CharacterVec &bots, bool friendlyFire );
+	~CCareerMap();
+
+	const char *GetName() const { return m_name; }
+	bool IsDefeated() const { return m_defeated; }
+	void SetDefeated( bool defeated ) { m_defeated = defeated; }
+	const CharacterVec &GetBotList() const { return m_bots; }
+
+	virtual int GetNumBotNames() const;
+	virtual const char *GetBotName( int i ) const;
+
+	void SetTasks( ITaskVec tasks ) { m_tasks = tasks; }
+	ITaskVec *GetTasks() { return &m_tasks; }
+	void ResetTaskCompletion();
+
+	void SetMinEnemyCount( int count ) { m_minEnemyCount = count; }
+	int GetMinEnemyCount() const { return m_minEnemyCount; }
+
+	void SetThreshold( int value ) { m_threshold = value; }
+	int GetThreshold() const { return m_threshold; }
+
+	int GetCurrentEnemyCount() const;
+	bool IsFriendlyFireOn() const;
+
+	void SetExtraInitialization( const char *extra );
+	const char *GetExtraInitialization() const { return m_extra; }
+
+	void SetTeammatesAllowed( bool allowed ) { m_allowTeammates = allowed; }
+	bool AreTeammatesAllowed() const { return m_allowTeammates; }
+
+private:
+	char m_name[64];
+	bool m_defeated;
+	bool m_friendlyFire;
+	CharacterVec m_bots;
+	ITaskVec m_tasks;
+	int m_minEnemyCount;
+	int m_threshold;
+	char *m_extra;
+	bool m_allowTeammates;
+};
 
 typedef std::vector< CCareerMap * > MapVec;
 typedef MapVec::iterator MapVecIt;
@@ -48,7 +125,7 @@ public:
 	void Init();
 	void Reset();
 	void SetDifficulty( CareerDifficultyType difficulty );
-	bool AreChecksumsOk();
+	bool AreChecksumsOk() { return m_checksumsOk; }
 
 	bool LoadProfile( CareerDifficultyType );
 	bool SaveProfile( bool );
@@ -81,7 +158,7 @@ public:
 	bool SetLastMap( const char *mapName );
 	CCareerMap *GetLastMapPtr();
 	CCareerMap *GetPlayableMap( const char *name );
-	MapsVec &GetMaps();
+	MapsVec &GetMaps() { return m_maps; }
 	CCareerMap *GetMap( const char *name );
 	int GetMapTripletNum( const char *name );
 	int GetMapTripletOffset( const char *name );
@@ -119,7 +196,7 @@ public:
 	CCareerMap *GetFirstUndefeatedMap();
 	void SetRoundTimeLength( int val );
 	void SetWinfastLength( int );
-	bool IsMedalEarned( CareerDifficultyType );
+	bool IsMedalEarned( CareerDifficultyType difficulty ) { return m_medals[difficulty]; }
 
 	std::vector< CCareerProfileData * > BuildProfileList();
 	CCareerProfileData *GetProfileForName( const char * );
@@ -182,5 +259,7 @@ protected:
 };
 
 extern CCareerGame *TheCareerGame;
+
+void Career_Printf( const char *fmt, ... );
 
 #endif // CAREERGAME_H
