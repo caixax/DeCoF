@@ -4033,6 +4033,11 @@
           "name": "GameUI/TaskButton",
           "source": "src/gameui/TaskButton.cpp",
           "functions_file": "tools/units/gameui_GameUI_TaskButton.txt"
+        },
+        {
+          "name": "GameUI/KeyToggleCheckButton",
+          "source": "src/gameui/KeyToggleCheckButton.cpp",
+          "functions_file": "tools/units/gameui_GameUI_KeyToggleCheckButton.txt"
         }
       ]
     }

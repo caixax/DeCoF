@@ -4863,3 +4863,10 @@ va,name,kind,evidence
 10040A90,??1CWindowStateImage@@UAE@XZ,func,GameUI/TaskButton.cpp: same position and size as in our compiled object
 10040AB0,??_GCWindowStateImage@@UAEPAXI@Z,func,GameUI/TaskButton.cpp: same position and size as in our compiled object
 10040AE0,?SetBkColor@Image@vgui2@@UAEXVColor@@@Z,func,GameUI/TaskButton.cpp: same position and size as in our compiled object
+10045FE0,??0CKeyToggleCheckButton@@QAE@PAVPanel@vgui2@@PBD111@Z,func,GameUI/KeyToggleCheckButton.cpp: same position and size as in our compiled object; linux: _ZN21CKeyToggleCheckButtonC2EPN5vgui25PanelEPKcS4_S4_S4_
+10046077,??1CKeyToggleCheckButton@@UAE@XZ,func,GameUI/KeyToggleCheckButton.cpp: same position and size as in our compiled object; linux: _ZN21CKeyToggleCheckButtonD2Ev
+100460B7,?Paint@CKeyToggleCheckButton@@UAEXXZ,func,GameUI/KeyToggleCheckButton.cpp: same position and size as in our compiled object; linux: _ZN21CKeyToggleCheckButton5PaintEv
+10046138,?Reset@CKeyToggleCheckButton@@QAEXXZ,func,GameUI/KeyToggleCheckButton.cpp: same position and size as in our compiled object; linux: _ZN21CKeyToggleCheckButton5ResetEv
+100461A0,?ApplyChanges@CKeyToggleCheckButton@@QAEXXZ,func,GameUI/KeyToggleCheckButton.cpp: same position and size as in our compiled object; linux: _ZN21CKeyToggleCheckButton12ApplyChangesEv
+1004622F,?HasBeenModified@CKeyToggleCheckButton@@QAE_NXZ,func,GameUI/KeyToggleCheckButton.cpp: same position and size as in our compiled object; linux: _ZN21CKeyToggleCheckButton15HasBeenModifiedEv
+10046270,??_GCKeyToggleCheckButton@@UAEPAXI@Z,func,GameUI/KeyToggleCheckButton.cpp: same position and size as in our compiled object
