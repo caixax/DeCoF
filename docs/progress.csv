@@ -23283,7 +23283,7 @@ hw,01D01C45,34,?HideConsole@CBaseUI@@UAEXXZ,CBaseUI::HideConsole,UNKNOWN,engine/
 hw,01D01C67,34,?ShowConsole@CBaseUI@@UAEXXZ,CBaseUI::ShowConsole,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN7CBaseUI11ShowConsoleEv
 hw,01D01C89,208,?Key_Event@CBaseUI@@UAEHHHPBD@Z,CBaseUI::Key_Event,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN7CBaseUI9Key_EventEiiPKc
 hw,01D01D59,238,?Paint@CBaseUI@@UAEXHHHH@Z,CBaseUI::Paint,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN7CBaseUI5PaintEiiii
-hw,01D01E47,48,,,UNKNOWN,guess:engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,
+hw,01D01E47,48,??0CEngineVGui@@QAE@XZ,CEngineVGui::CEngineVGui,UNKNOWN,guess:engine/vgui2/BaseUI_Interface.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01D01E77,15,?SteamRefreshLogin@CEngineVGui@@UAE_NPBD_N@Z,CEngineVGui::SteamRefreshLogin,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN11CEngineVGui17SteamRefreshLoginEPKcb
 hw,01D01E86,15,?SteamProcessCall@CEngineVGui@@UAE_NPA_NPAUTSteamProgress@@PAUTSteamError@@@Z,CEngineVGui::SteamProcessCall,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN11CEngineVGui16SteamProcessCallEPbP14TSteamProgressP11TSteamError
 hw,01D01E95,58,?SetEngineVisible@CEngineVGui@@QAEX_N@Z,CEngineVGui::SetEngineVisible,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN11CEngineVGui16SetEngineVisibleEb
