@@ -12862,7 +12862,7 @@ gameui,100AB790,221,?EnsureCapacity@?$Dar@PAVPageTab@vgui2@@@vgui2@@QAEXH@Z,*>::
 gameui,100AB8B0,523,?ParseFile@@YAPBDPBDPADPA_NPAUcharacterset_s@@@Z,"char const * __cdecl ParseFile(char const *,char *,bool *,struct characterset_s *)",UNKNOWN,public/filesystem_helpers.cpp,,,TODO,,gameui_manual.csv,
 gameui,100ABABB,59,?InitializeCharacterSets@@YAXXZ,void __cdecl InitializeCharacterSets(void),UNKNOWN,public/filesystem_helpers.cpp,,,TODO,,gameui_manual.csv,
 gameui,100ABAF6,27,?ParseFile@@YAPADPAD0PA_N@Z,"char * __cdecl ParseFile(char *,char *,bool *)",UNKNOWN,public/filesystem_helpers.cpp,,,TODO,,gameui_manual.csv,
-gameui,100ABB20,88,?CharacterSetBuild@@YAXPAUcharacterset_s@@PBD@Z,"void __cdecl CharacterSetBuild(struct characterset_s *,char const *)",UNKNOWN,public/characterset.cpp,,,TODO,,gameui_manual.csv,linux: _Z17CharacterSetBuildP14characterset_sPKc
+gameui,100ABB20,88,?CharacterSetBuild@@YAXPAUcharacterset_s@@PBD@Z,"void __cdecl CharacterSetBuild(struct characterset_s *,char const *)",UNKNOWN,public/characterset.cpp,,,MATCHED,100,gameui_manual.csv,linux: _Z17CharacterSetBuildP14characterset_sPKc
 gameui,100ABB80,610,??0PanelListPanel@vgui2@@QAE@PAVPanel@1@PBD@Z,vgui2::PanelListPanel::PanelListPanel,UNKNOWN,vgui2/controls/PanelListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,100ABDE2,61,??1PanelListPanel@vgui2@@UAE@XZ,vgui2::PanelListPanel::~PanelListPanel,UNKNOWN,vgui2/controls/PanelListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,100ABE1F,164,?computeVPixelsNeeded@PanelListPanel@vgui2@@UAEHXZ,vgui2::PanelListPanel::computeVPixelsNeeded,UNKNOWN,vgui2/controls/PanelListPanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui214PanelListPanel20computeVPixelsNeededEv
