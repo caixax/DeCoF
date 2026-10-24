@@ -826,7 +826,7 @@ client,1001CB20,3,??0CBlurTexture_guess@@QAE@XZ,,COF,cl_dll/Blur_guess.cpp,,,MAT
 client,1001CB30,97,?AnimateNextFrame_guess@CBlur_guess@@QAE_NH@Z,,COF,cl_dll/Blur_guess.cpp,,,MATCHED,100,,
 client,1001CBA0,52,?BindTexture_guess@CBlurTexture_guess@@QAEXHH@Z,,COF,cl_dll/Blur_guess.cpp,,,MATCHED,100,,found by tools/gaps.py (no Ghidra function before)
 client,1001CBE0,332,?Draw_guess@CBlurTexture_guess@@QAEXHH@Z,,COF,cl_dll/Blur_guess.cpp,,,MATCHED,100,,
-client,1001CD30,136,?DrawBlur_guess@CBlur_guess@@QAEXXZ,,COF,cl_dll/Blur_guess.cpp,,,TODO,91.90,,found by tools/gaps.py (no Ghidra function before)
+client,1001CD30,136,?DrawBlur_guess@CBlur_guess@@QAEXXZ,,COF,cl_dll/Blur_guess.cpp,,,TODO,91.90,,91.90%: retail keeps this in edi and saves esi inside the cv_blurtest block without using it (a register the allocator gave to something later removed); ours keeps this in esi; a local pointer to m_Output_guess or local copies of the screen size do not change it
 client,1001CDC0,283,?DrawQuad_guess@CBlurTexture_guess@@QAEXHHH@Z,,COF,cl_dll/Blur_guess.cpp,,,MATCHED,100,,
 client,1001CEE0,154,?Init_guess@CBlurTexture_guess@@QAEXHH@Z,,COF,cl_dll/Blur_guess.cpp,,,MATCHED,100,,
 client,1001CF80,50,?InitScreen_guess@CBlur_guess@@QAEXXZ,,COF,cl_dll/Blur_guess.cpp,,,MATCHED,100,,
@@ -2149,7 +2149,7 @@ client,1007FC10,31,?IrrKlangStop_guess@@YAXM@Z,IrrKlangStop_guess,UNKNOWN,guess:
 client,1007FC30,280,?PrintAverage_guess@@YGXPBEI@Z,PrintAverage_guess,UNKNOWN,guess:cl_dll/mp3.cpp,,,MATCHED,100,client_manual.csv,
 client,1007FD50,1448,?PlayMP3@CMP3@@QAEHPBD@Z,CMP3::PlayMP3,UNKNOWN,guess:cl_dll/mp3.cpp,,,MATCHED,100,client_manual.csv,
 client,10080300,269,?PlayMP3Path_guess@CMP3@@QAEHPBD@Z,CMP3::PlayMP3Path_guess,UNKNOWN,guess:cl_dll/mp3.cpp,,,MATCHED,100,client_manual.csv,
-client,10080410,752,?PlaySFX_guess@CMP3@@QAEXPBDH_NVVector@@@Z,CMP3::PlaySFX_guess,UNKNOWN,guess:cl_dll/mp3.cpp,,,TODO,95.16,client_manual.csv,
+client,10080410,752,?PlaySFX_guess@CMP3@@QAEXPBDH_NVVector@@@Z,CMP3::PlaySFX_guess,UNKNOWN,guess:cl_dll/mp3.cpp,,,TODO,95.16,client_manual.csv,"95.16%: retail saves ebx, esi and edi at entry; ours saves esi only after the early return and ebx only around the weapons/ path loop (shrink-wrapping); declaring bFound and j with their initializers at the top gets the retail saves (95.38%) but moves the zeroing out of the block, and a single if around the body or other declaration placements do not change it"
 client,10080710,84,?SetPaused_guess@CMP3@@QAEH_N@Z,CMP3::SetPaused_guess,UNKNOWN,guess:cl_dll/mp3.cpp,,,MATCHED,100,client_manual.csv,
 client,10080770,6,?Shutdown@CMP3@@QAEHXZ,CMP3::Shutdown,UNKNOWN,,,,MATCHED,100,client_manual.csv,found by tools/gaps.py (no Ghidra function before)
 client,10080780,194,?StopMP3@CMP3@@QAEHM@Z,CMP3::StopMP3,UNKNOWN,guess:cl_dll/mp3.cpp,,,MATCHED,100,client_manual.csv,
@@ -2246,7 +2246,7 @@ client,10086850,55,?EndShaders_guess@CCgWater_guess@@QAEXXZ,CCgWater_guess::EndS
 client,10086890,944,?Init_guess@CCgWater_guess@@QAEXXZ,,COF,cl_dll/CgWater_guess.cpp,,,MATCHED,100,,
 client,10086C40,112,?PostDraw_guess@CCgWater_guess@@QAEXXZ,,COF,cl_dll/CgWater_guess.cpp,,,MATCHED,100,,
 client,10086CB0,90,?PreDraw_guess@CCgWater_guess@@QAEXXZ,,COF,cl_dll/CgWater_guess.cpp,,,MATCHED,100,,
-client,10086D10,2235,?Render_guess@CCgWater_guess@@QAEXXZ,CCgWater_guess::Render_guess,UNKNOWN,cl_dll/CgWater_guess.cpp,,,TODO,95.86,,
+client,10086D10,2235,?Render_guess@CCgWater_guess@@QAEXXZ,CCgWater_guess::Render_guess,UNKNOWN,cl_dll/CgWater_guess.cpp,,,TODO,95.86,,"95.86%: float temporaries of the water quad loop are allocated differently: retail keeps s0, t0, r0 in stack homes and reloads t0 for r0 = t0 + 0, packs maxs[1] and t1 into one slot and loads the vertex fields in the order maxs[2], mins[1], maxs[1], mins[0], maxs[0]; ours keeps them in xmm registers; reading the fields directly or through pointers does not help"
 client,100875D0,497,?RenderQuad_guess@CCgWater_guess@@QAEXXZ,,COF,cl_dll/CgWater_guess.cpp,,,MATCHED,100,,
 client,100877D0,142,?SetBlackShader_guess@CCgWater_guess@@QAEXXZ,,COF,cl_dll/CgWater_guess.cpp,,,MATCHED,100,,
 client,10087860,168,?UpdateEntities_guess@CCgWater_guess@@QAEXXZ,,COF,cl_dll/CgWater_guess.cpp,,,MATCHED,100,,
@@ -2275,7 +2275,7 @@ client,10088040,83,??1texture_s_guess@@QAE@XZ,texture_s_guess::~texture_s_guess,
 client,100880A0,154,?CheckMipmapSupport_guess@CTextureManager_guess@@QAEXXZ,,COF,cl_dll/TextureManager_guess.cpp,,,MATCHED,100,,
 client,10088140,359,?CreateTexture_guess@CTextureManager_guess@@QAEXHHPAIII@Z,,COF,cl_dll/TextureManager_guess.cpp,,,MATCHED,100,,
 client,100882B0,325,?GetPath_guess@CTextureManager_guess@@QAE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@ABV23@HPAH@Z,,COF,cl_dll/TextureManager_guess.cpp,,,MATCHED,100,,
-client,10088400,2173,?FindTexture_guess@CTextureManager_guess@@QAE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@ABV23@PAH@Z,CTextureManager_guess::FindTexture_guess,COF,,,,TODO,93.73,client_manual.csv,
+client,10088400,2173,?FindTexture_guess@CTextureManager_guess@@QAE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@ABV23@PAH@Z,CTextureManager_guess::FindTexture_guess,COF,cl_dll/TextureManager_guess.cpp,,,TODO,93.73,client_manual.csv,"93.73%: retail calls basic_string::erase(size-1, size) for base out of line (the two mapname erases are inline) and has a 0x108 frame with base at [ebp-0xd0]; ours inlines all three erases (0x10c frame, base at [ebp-0xb8]); the rest is the same code"
 client,10088CA0,79,?GetTexture_guess@CTextureManager_guess@@QAEPAUtexture_s_guess@@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z,,COF,cl_dll/TextureManager_guess.cpp,,,MATCHED,100,,
 client,10088CF0,2293,?FindNumberedTextures_guess@CTextureManager_guess@@QAE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@ABV23@PAH@Z,CTextureManager_guess::FindNumberedTextures_guess,COF,,,,MATCHED,100,client_manual.csv,
 client,100895F0,567,?FindImageFile_guess@CTextureManager_guess@@QAE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@ABV23@@Z,,COF,cl_dll/TextureManager_guess.cpp,,,MATCHED,100,,
@@ -2290,7 +2290,7 @@ client,10089F20,746,?LoadTexture_guess@CTextureManager_guess@@QAE_NHPBDH_N@Z,CTe
 client,1008A210,11,?LoadPlayerShadow_guess@CTextureManager_guess@@QAEXXZ,,COF,cl_dll/TextureManager_guess.cpp,,,MATCHED,100,,
 client,1008A220,10,?_Xran@?$_String_val@U?$_Simple_types@D@std@@@std@@SAXXZ,>::_Xran,LIB,,,,MATCHED,100,client_manual.csv,
 client,1008A230,79,?erase@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@II@Z,>::erase,LIB,cl_dll/TextureManager_guess.cpp,,,MATCHED,100,,
-client,1008A280,170,?IsExtensionSupported_guess@@YAEPBD0@Z,IsExtensionSupported_guess,UNKNOWN,,,,TODO,96.00,client_manual.csv,
+client,1008A280,170,?IsExtensionSupported_guess@@YAEPBD0@Z,IsExtensionSupported_guess,UNKNOWN,cl_dll/TextureManager_guess.cpp,,,TODO,96.00,client_manual.csv,"96.00%: retail recomputes extlen - 1 at the top of the inner loop (mov eax, [ebp-4]; dec eax) with an 8-byte frame, ours hoists it into an extra slot [ebp-8] (0xc frame); while/for forms of the inner loop and other declaration placements do not change it"
 client,1008A330,239,?push_back@?$list@Utexture_s_guess@@V?$allocator@Utexture_s_guess@@@std@@@std@@QAEXABUtexture_s_guess@@@Z,>::push_back,LIB,cl_dll/TextureManager_guess.cpp,,,MATCHED,100,,
 client,1008A420,382,?Draw@CHudSayText@@UAEHM@Z,CHudSayText::Draw,UNKNOWN,cl_dll/saytext.cpp,,,MATCHED,100,,
 client,1008A5A0,496,?EnsureTextFitsInOneLineAndWrapIfHaveTo@CHudSayText@@QAEXH@Z,CHudSayText::EnsureTextFitsInOneLineAndWrapIfHaveTo,HLSDK,cl_dll/saytext.cpp,,,MATCHED,100,client_1.6a_ghidra_names.csv,
