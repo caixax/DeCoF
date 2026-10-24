@@ -26,7 +26,7 @@ class CareerDifficultyDefinition
 public:
 	CareerDifficultyDefinition();
 	~CareerDifficultyDefinition();
-	void Init( const char *vdfFilename, const char *botFilename, const char *botFilenameOverride );
+	void Init( const char *careerName, const char *vdfFilename, const char *botFilename );
 	void Reset();
 
 	BotProfileManager *GetBotProfileManager() { return m_botManager; }
@@ -118,7 +118,7 @@ class CareerDefinitionManager
 public:
 	CareerDefinitionManager();
 	~CareerDefinitionManager();
-	void Create();
+	static void Create();
 
 	CareerDefinition *GetCareerDefinition( const char *careerName );
 	CareerDefinition *GetActiveCareerDefinition() { return m_activeCareer; }

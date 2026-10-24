@@ -41,13 +41,13 @@ public:
 	virtual void Reset() = 0;
 	virtual void Set( bool ) = 0;
 	virtual void StartRound() = 0;
-	virtual const char *GetWeaponName() = 0;
-	virtual int GetRepeat() = 0;
-	virtual bool MustSurvive() = 0;
-	virtual bool InARow() = 0;
-	virtual int GetPartial() = 0;
+	virtual const char *GetWeaponName() const = 0;
+	virtual int GetRepeat() const = 0;
+	virtual bool MustSurvive() const = 0;
+	virtual bool InARow() const = 0;
+	virtual int GetPartial() const = 0;
 	virtual void SetPartial( int ) = 0;
-	virtual bool IsMaxRoundTime() = 0;
+	virtual bool IsMaxRoundTime() const = 0;
 };
 
 typedef std::vector< ICareerTask * > ITaskVec;

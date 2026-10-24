@@ -1,5 +1,5 @@
 {
-  "commit": "a51d1c9",
+  "commit": "d23e63d",
   "counting": "LIB rows excluded; bytes weighted by function size",
   "date": "2026-10-24",
   "dlls": {
@@ -36,45 +36,45 @@
     "GameUI.dll": {
       "bytes": {
         "EQUIVALENT": 0,
-        "MATCHED": 415060,
-        "TODO": 255442,
-        "total": 670502
+        "MATCHED": 422978,
+        "TODO": 240158,
+        "total": 663136
       },
       "categories": {
         "ENGINE": {
           "bytes": {
             "EQUIVALENT": 0,
-            "MATCHED": 97568,
-            "TODO": 90334,
+            "MATCHED": 102521,
+            "TODO": 85381,
             "total": 187902
           },
           "functions": {
             "EQUIVALENT": 0,
-            "MATCHED": 200,
-            "TODO": 197,
+            "MATCHED": 205,
+            "TODO": 192,
             "total": 397
           }
         },
         "UNKNOWN": {
           "bytes": {
             "EQUIVALENT": 0,
-            "MATCHED": 317492,
-            "TODO": 165108,
-            "total": 482600
+            "MATCHED": 320457,
+            "TODO": 154777,
+            "total": 475234
           },
           "functions": {
             "EQUIVALENT": 0,
-            "MATCHED": 3153,
-            "TODO": 1870,
-            "total": 5023
+            "MATCHED": 3188,
+            "TODO": 1729,
+            "total": 4917
           }
         }
       },
       "functions": {
         "EQUIVALENT": 0,
-        "MATCHED": 3353,
-        "TODO": 2067,
-        "total": 5420
+        "MATCHED": 3393,
+        "TODO": 1921,
+        "total": 5314
       }
     },
     "client.dll": {
@@ -372,15 +372,15 @@
   "total": {
     "bytes": {
       "EQUIVALENT": 126040,
-      "MATCHED": 3292432,
-      "TODO": 393413,
-      "total": 3811885
+      "MATCHED": 3300350,
+      "TODO": 378129,
+      "total": 3804519
     },
     "functions": {
       "EQUIVALENT": 63,
-      "MATCHED": 18635,
-      "TODO": 2876,
-      "total": 21574
+      "MATCHED": 18675,
+      "TODO": 2730,
+      "total": 21468
     }
   }
 }
