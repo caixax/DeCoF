@@ -8222,54 +8222,54 @@ gameui,1001BE1A,15,,,UNKNOWN,GameUI/CareerProfileButton.cpp,,,TODO,,,
 gameui,1001BE29,18,,,UNKNOWN,GameUI/CareerProfileButton.cpp,,,TODO,,,
 gameui,1001BE40,46,,,UNKNOWN,GameUI/CareerProfileButton.cpp,,,TODO,,,
 gameui,1001BE70,19,,,UNKNOWN,GameUI/CareerProfileButton.cpp,,,TODO,,,
-gameui,1001BE90,152,,,UNKNOWN,GameUI/CareerProfileFrame.cpp,,,TODO,,,linux: _ZN19MissionPackComboBox18OnMenuItemSelectedEv
-gameui,1001BF28,1267,,CCareerProfileFrame::CCareerProfileFrame,ENGINE,GameUI/CareerProfileFrame.cpp,,,TODO,,linux_symbols:string:0.803,linux: _ZN19CCareerProfileFrameC2EPN5vgui25PanelE
-gameui,1001C41B,42,,,UNKNOWN,GameUI/CareerProfileFrame.cpp,,,TODO,,,
-gameui,1001C445,27,,,UNKNOWN,GameUI/CareerProfileFrame.cpp,,,TODO,,,linux: _ZN19CCareerProfileFrame13PerformLayoutEv
-gameui,1001C460,270,,CCareerProfileFrame::Activate,ENGINE,GameUI/CareerProfileFrame.cpp,,,TODO,,linux_symbols:string:0.675,linux: _ZN19CCareerProfileFrame8ActivateEv
-gameui,1001C56E,98,,,UNKNOWN,GameUI/CareerProfileFrame.cpp,,,TODO,,,linux: _ZN19CCareerProfileFrame12RestoreFocusEv
-gameui,1001C5D0,72,,,UNKNOWN,GameUI/CareerProfileFrame.cpp,,,TODO,,,linux: _ZN19CCareerProfileFrame7OnThinkEv
-gameui,1001C618,802,,CCareerProfileFrame::PopulateProfiles,ENGINE,GameUI/CareerProfileFrame.cpp,,,TODO,,linux_symbols:string:0.86,linux: _ZN19CCareerProfileFrame16PopulateProfilesEv
-gameui,1001C93A,400,,,UNKNOWN,GameUI/CareerProfileFrame.cpp,,,TODO,,,linux: _ZN19CCareerProfileFrame19ApplySchemeSettingsEPN5vgui27ISchemeE
-gameui,1001CACA,102,,CCareerProfileFrame::ChooseDifficulty,ENGINE,GameUI/CareerProfileFrame.cpp,,,TODO,,linux_symbols:string:0.854,linux: _ZN19CCareerProfileFrame16ChooseDifficultyEv
-gameui,1001CB30,162,,,UNKNOWN,GameUI/CareerProfileFrame.cpp,,,TODO,,,
-gameui,1001CBD2,83,,,UNKNOWN,GameUI/CareerProfileFrame.cpp,,,TODO,,,
-gameui,1001CC25,1812,,CCareerProfileFrame::OnCommand,ENGINE,GameUI/CareerProfileFrame.cpp,,,TODO,,linux_symbols:string:0.614,linux: _ZN19CCareerProfileFrame9OnCommandEPKc
-gameui,1001D339,70,,,UNKNOWN,GameUI/CareerProfileFrame.cpp,,,TODO,,,linux: _ZN19CCareerProfileFrame14OnKeyCodeTypedEN5vgui27KeyCodeE
-gameui,1001D37F,947,,CCareerProfileFrame::PopulateMissionPacks,ENGINE,GameUI/CareerProfileFrame.cpp,,,TODO,,linux_symbols:string:0.626,linux: _ZN19CCareerProfileFrame20PopulateMissionPacksEv
-gameui,1001D732,44,,,UNKNOWN,GameUI/CareerProfileFrame.cpp,,,TODO,,,
-gameui,1001D75E,15,,,UNKNOWN,GameUI/CareerProfileFrame.cpp,,,TODO,,,
-gameui,1001D76D,18,,,UNKNOWN,GameUI/CareerProfileFrame.cpp,,,TODO,,,
-gameui,1001D780,61,,,UNKNOWN,GameUI/CareerProfileFrame.cpp,,,TODO,,,
-gameui,1001D7C0,46,,,UNKNOWN,GameUI/CareerProfileFrame.cpp,,,TODO,,,
-gameui,1001D7F0,19,,,UNKNOWN,GameUI/CareerProfileFrame.cpp,,,TODO,,,
-gameui,1001D810,46,,,UNKNOWN,GameUI/CareerProfileFrame.cpp,,,TODO,,,
-gameui,1001D840,43,,,UNKNOWN,GameUI/CareerProfileFrame.cpp,,,TODO,,,
-gameui,1001D870,34,,,UNKNOWN,GameUI/CareerProfileFrame.cpp,,,TODO,,,
-gameui,1001D8A0,16,,,UNKNOWN,GameUI/CareerProfileFrame.cpp,,,TODO,,,
-gameui,1001D8B0,68,,,UNKNOWN,GameUI/CareerProfileFrame.cpp,,,TODO,,,
-gameui,1001D900,20,,,UNKNOWN,GameUI/CareerProfileFrame.cpp,,,TODO,,,
-gameui,1001D920,45,,,UNKNOWN,GameUI/CareerProfileFrame.cpp,,,TODO,,,
-gameui,1001D950,24,,,UNKNOWN,GameUI/CareerProfileFrame.cpp,,,TODO,,,
-gameui,1001D970,221,,,UNKNOWN,GameUI/CareerProfileFrame.cpp,,,TODO,,,
-gameui,1001DA50,45,,,UNKNOWN,GameUI/CareerProfileFrame.cpp,,,TODO,,,
-gameui,1001DA80,64,,,UNKNOWN,GameUI/CareerProfileFrame.cpp,,,TODO,,,
-gameui,1001DAC0,10,,,UNKNOWN,GameUI/CareerProfileFrame.cpp,,,TODO,,,
-gameui,1001DAD0,46,,,UNKNOWN,GameUI/CareerProfileFrame.cpp,,,TODO,,,
-gameui,1001DB00,19,,,UNKNOWN,GameUI/CareerProfileFrame.cpp,,,TODO,,,
-gameui,1001DB20,40,,,UNKNOWN,GameUI/CareerProfileFrame.cpp,,,TODO,,,
-gameui,1001DB50,40,,,UNKNOWN,GameUI/CareerProfileFrame.cpp,,,TODO,,,
-gameui,1001DB80,17,,,UNKNOWN,GameUI/CareerProfileFrame.cpp,,,TODO,,,
-gameui,1001DBA0,17,,,UNKNOWN,GameUI/CareerProfileFrame.cpp,,,TODO,,,
-gameui,1001DBC0,17,,,UNKNOWN,GameUI/CareerProfileFrame.cpp,,,TODO,,,
-gameui,1001DBE0,25,,,UNKNOWN,GameUI/CareerProfileFrame.cpp,,,TODO,,,
-gameui,1001DC00,25,,,UNKNOWN,GameUI/CareerProfileFrame.cpp,,,TODO,,,
-gameui,1001DC20,19,,,UNKNOWN,GameUI/CareerProfileFrame.cpp,,,TODO,,,
-gameui,1001DC40,64,,,UNKNOWN,GameUI/CareerProfileFrame.cpp,,,TODO,,,
-gameui,1001DC80,10,,,UNKNOWN,GameUI/CareerProfileFrame.cpp,,,TODO,,,
-gameui,1001DC90,13,,,UNKNOWN,GameUI/CareerProfileFrame.cpp,,,TODO,,,
-gameui,1001DCA0,13,,,UNKNOWN,GameUI/CareerProfileFrame.cpp,,,TODO,,,
-gameui,1001DCB0,20,,,UNKNOWN,GameUI/CareerProfileFrame.cpp,,,TODO,,,
+gameui,1001BE90,152,?OnMenuItemSelected@MissionPackComboBox@@UAEXXZ,MissionPackComboBox::OnMenuItemSelected,UNKNOWN,GameUI/CareerProfileFrame.cpp,,,MATCHED,100,,linux: _ZN19MissionPackComboBox18OnMenuItemSelectedEv
+gameui,1001BF28,1267,??0CCareerProfileFrame@@QAE@PAVPanel@vgui2@@@Z,CCareerProfileFrame::CCareerProfileFrame,ENGINE,GameUI/CareerProfileFrame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN19CCareerProfileFrameC2EPN5vgui25PanelE
+gameui,1001C41B,42,??1CCareerProfileFrame@@UAE@XZ,CCareerProfileFrame::~CCareerProfileFrame,UNKNOWN,GameUI/CareerProfileFrame.cpp,,,MATCHED,100,,
+gameui,1001C445,27,?PerformLayout@CCareerProfileFrame@@UAEXXZ,CCareerProfileFrame::PerformLayout,UNKNOWN,GameUI/CareerProfileFrame.cpp,,,MATCHED,100,,linux: _ZN19CCareerProfileFrame13PerformLayoutEv
+gameui,1001C460,270,?Activate@CCareerProfileFrame@@UAEXXZ,CCareerProfileFrame::Activate,ENGINE,GameUI/CareerProfileFrame.cpp,,,MATCHED,100,linux_symbols:string:0.675,linux: _ZN19CCareerProfileFrame8ActivateEv
+gameui,1001C56E,98,?RestoreFocus@CCareerProfileFrame@@AAEXXZ,CCareerProfileFrame::RestoreFocus,UNKNOWN,GameUI/CareerProfileFrame.cpp,,,MATCHED,100,,linux: _ZN19CCareerProfileFrame12RestoreFocusEv
+gameui,1001C5D0,72,?OnThink@CCareerProfileFrame@@UAEXXZ,CCareerProfileFrame::OnThink,UNKNOWN,GameUI/CareerProfileFrame.cpp,,,MATCHED,100,,linux: _ZN19CCareerProfileFrame7OnThinkEv
+gameui,1001C618,802,?PopulateProfiles@CCareerProfileFrame@@AAEHXZ,CCareerProfileFrame::PopulateProfiles,ENGINE,GameUI/CareerProfileFrame.cpp,,,MATCHED,100,linux_symbols:string:0.86,linux: _ZN19CCareerProfileFrame16PopulateProfilesEv
+gameui,1001C93A,400,?ApplySchemeSettings@CCareerProfileFrame@@UAEXPAVIScheme@vgui2@@@Z,CCareerProfileFrame::ApplySchemeSettings,UNKNOWN,GameUI/CareerProfileFrame.cpp,,,MATCHED,100,,linux: _ZN19CCareerProfileFrame19ApplySchemeSettingsEPN5vgui27ISchemeE
+gameui,1001CACA,102,?ChooseDifficulty@CCareerProfileFrame@@AAEXXZ,CCareerProfileFrame::ChooseDifficulty,ENGINE,GameUI/CareerProfileFrame.cpp,,,MATCHED,100,linux_symbols:string:0.854,linux: _ZN19CCareerProfileFrame16ChooseDifficultyEv
+gameui,1001CB30,162,?UpdateSelectedProfile@CCareerProfileFrame@@AAEXPBD@Z,CCareerProfileFrame::UpdateSelectedProfile,UNKNOWN,GameUI/CareerProfileFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1001CBD2,83,?HandleDifficulty@@YA_NW4CareerDifficultyType@@@Z,HandleDifficulty,UNKNOWN,GameUI/CareerProfileFrame.cpp,,,MATCHED,100,,
+gameui,1001CC25,1812,?OnCommand@CCareerProfileFrame@@UAEXPBD@Z,CCareerProfileFrame::OnCommand,ENGINE,GameUI/CareerProfileFrame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN19CCareerProfileFrame9OnCommandEPKc
+gameui,1001D339,70,?OnKeyCodeTyped@CCareerProfileFrame@@UAEXW4KeyCode@vgui2@@@Z,CCareerProfileFrame::OnKeyCodeTyped,UNKNOWN,GameUI/CareerProfileFrame.cpp,,,MATCHED,100,,linux: _ZN19CCareerProfileFrame14OnKeyCodeTypedEN5vgui27KeyCodeE
+gameui,1001D37F,947,?PopulateMissionPacks@CCareerProfileFrame@@AAEXXZ,CCareerProfileFrame::PopulateMissionPacks,ENGINE,GameUI/CareerProfileFrame.cpp,,,MATCHED,100,linux_symbols:string:0.626,
+gameui,1001D732,44,?SelectMissionPack@CCareerProfileFrame@@QAEXPBD@Z,CCareerProfileFrame::SelectMissionPack,UNKNOWN,GameUI/CareerProfileFrame.cpp,,,MATCHED,100,,
+gameui,1001D75E,15,_$E24,,UNKNOWN,GameUI/CareerProfileFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1001D76D,18,_$E23,,UNKNOWN,GameUI/CareerProfileFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1001D780,61,??0MissionPackComboBox@@QAE@PAVCCareerProfileFrame@@PBDH_N@Z,MissionPackComboBox::MissionPackComboBox,UNKNOWN,GameUI/CareerProfileFrame.cpp,,,MATCHED,100,,
+gameui,1001D7C0,46,??_GMissionPackComboBox@@UAEPAXI@Z,destructor',UNKNOWN,GameUI/CareerProfileFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1001D7F0,19,??1MissionPackComboBox@@UAE@XZ,MissionPackComboBox::~MissionPackComboBox,UNKNOWN,GameUI/CareerProfileFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1001D810,46,??_GCCareerProfileFrame@@UAEPAXI@Z,destructor',UNKNOWN,GameUI/CareerProfileFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1001D840,43,??0?$Dar@PAVCProfileButton@@@vgui2@@QAE@XZ,*>,UNKNOWN,GameUI/CareerProfileFrame.cpp,,,MATCHED,100,,
+gameui,1001D870,34,??1?$Dar@PAVCProfileButton@@@vgui2@@QAE@XZ,*>,UNKNOWN,GameUI/CareerProfileFrame.cpp,,,MATCHED,100,,
+gameui,1001D8A0,16,?GetCount@?$Dar@PAVCProfileButton@@@vgui2@@QAEHXZ,*>::GetCount,UNKNOWN,GameUI/CareerProfileFrame.cpp,,,MATCHED,100,,
+gameui,1001D8B0,68,?AddElement@?$Dar@PAVCProfileButton@@@vgui2@@QAEHPAVCProfileButton@@@Z,*>::AddElement,UNKNOWN,GameUI/CareerProfileFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1001D900,20,?RemoveAll@?$Dar@PAVCProfileButton@@@vgui2@@QAEXXZ,*>::RemoveAll,UNKNOWN,GameUI/CareerProfileFrame.cpp,,,MATCHED,100,,
+gameui,1001D920,45,??A?$Dar@PAVCProfileButton@@@vgui2@@QAEPAVCProfileButton@@H@Z,*>::operator[],UNKNOWN,GameUI/CareerProfileFrame.cpp,,,MATCHED,100,,
+gameui,1001D950,24,?empty@?$vector@PAVCCareerProfileData@@V?$allocator@PAVCCareerProfileData@@@std@@@std@@QBE_NXZ,>::empty,LIB,GameUI/CareerProfileFrame.cpp,,,TODO,,gameui_manual.csv,
+gameui,1001D970,221,?EnsureCapacity@?$Dar@PAVCProfileButton@@@vgui2@@QAEXH@Z,*>::EnsureCapacity,UNKNOWN,GameUI/CareerProfileFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1001DA50,45,??0CCareerPanelListPanel@@QAE@PAVPanel@vgui2@@PBD_N@Z,CCareerPanelListPanel::CCareerPanelListPanel,UNKNOWN,GameUI/CareerProfileFrame.cpp,,,MATCHED,100,,
+gameui,1001DA80,64,?GetMessageMap@CPanelListPanel@@UAEPAUPanelMessageMap@vgui2@@XZ,CPanelListPanel::GetMessageMap,UNKNOWN,GameUI/CareerProfileFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1001DAC0,10,?GetPanelClassName@CPanelListPanel@@SAPBDXZ,CPanelListPanel::GetPanelClassName,UNKNOWN,GameUI/CareerProfileFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1001DAD0,46,??_GCCareerPanelListPanel@@UAEPAXI@Z,destructor',UNKNOWN,GameUI/CareerProfileFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1001DB00,19,??1CCareerPanelListPanel@@UAE@XZ,CCareerPanelListPanel::~CCareerPanelListPanel,UNKNOWN,GameUI/CareerProfileFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1001DB20,40,?ShowPlayerName@CCareerBaseFrame@@IAEX_N@Z,CCareerBaseFrame::ShowPlayerName,UNKNOWN,GameUI/CareerProfileFrame.cpp,,,MATCHED,100,,
+gameui,1001DB50,40,?ShowMissionPackName@CCareerBaseFrame@@IAEX_N@Z,CCareerBaseFrame::ShowMissionPackName,UNKNOWN,GameUI/CareerProfileFrame.cpp,,,MATCHED,100,,
+gameui,1001DB80,17,?GetAuthor@CareerDefinition@@QBEPBGXZ,CareerDefinition::GetAuthor,UNKNOWN,GameUI/CareerProfileFrame.cpp,,,MATCHED,100,,
+gameui,1001DBA0,17,?GetDescription@CareerDefinition@@QBEPBGXZ,CareerDefinition::GetDescription,UNKNOWN,GameUI/CareerProfileFrame.cpp,,,MATCHED,100,,
+gameui,1001DBC0,17,?GetURL@CareerDefinition@@QBEPBDXZ,CareerDefinition::GetURL,UNKNOWN,GameUI/CareerProfileFrame.cpp,,,MATCHED,100,,
+gameui,1001DBE0,25,?QueueFocusUpdate@CCareerProfileFrame@@QAEXH@Z,CCareerProfileFrame::QueueFocusUpdate,UNKNOWN,GameUI/CareerProfileFrame.cpp,,,MATCHED,100,,
+gameui,1001DC00,25,?SetActive@CProfileButton@@QAEX_N@Z,CProfileButton::SetActive,UNKNOWN,GameUI/CareerProfileFrame.cpp,,,MATCHED,100,,
+gameui,1001DC20,19,?GetProfileName@CProfileButton@@QAEPBDXZ,CProfileButton::GetProfileName,UNKNOWN,GameUI/CareerProfileFrame.cpp,,,MATCHED,100,,
+gameui,1001DC40,64,?GetMessageMap@ComboBox@vgui2@@UAEPAUPanelMessageMap@2@XZ,vgui2::ComboBox::GetMessageMap,UNKNOWN,GameUI/CareerProfileFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1001DC80,10,?GetPanelClassName@ComboBox@vgui2@@SAPBDXZ,vgui2::ComboBox::GetPanelClassName,UNKNOWN,GameUI/CareerProfileFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1001DC90,13,?OnShowMenu@ComboBox@vgui2@@UAEXPAVMenu@2@@Z,vgui2::ComboBox::OnShowMenu,UNKNOWN,GameUI/CareerProfileFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1001DCA0,13,?OnHideMenu@ComboBox@vgui2@@UAEXPAVMenu@2@@Z,vgui2::ComboBox::OnHideMenu,UNKNOWN,GameUI/CareerProfileFrame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1001DCB0,20,?GetMenu@ComboBox@vgui2@@UAEPAVMenu@2@XZ,vgui2::ComboBox::GetMenu,UNKNOWN,GameUI/CareerProfileFrame.cpp,,,MATCHED,100,,
 gameui,1001DCD0,36,,,UNKNOWN,game_shared/bot/bot_profile.cpp,,,TODO,,,
 gameui,1001DCF4,13,,,UNKNOWN,game_shared/bot/bot_profile.cpp,,,TODO,,,
 gameui,1001DD01,13,,,UNKNOWN,game_shared/bot/bot_profile.cpp,,,TODO,,,

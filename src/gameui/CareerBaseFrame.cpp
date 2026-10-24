@@ -583,7 +583,7 @@ void CCareerBaseFrame::Activate()
 	wchar_t wbuf[BufLen] = L"";
 	wchar_t *tmp = wbuf;
 	int len = BufLen;
-	BufWPrintf( tmp, len, L"%hs - %s", name, localize()->Find( asciiDifficulty ) );
+	BufWPrintf( tmp, len, L"%hs / %s", name, localize()->Find( asciiDifficulty ) );
 	m_pPlayerName->SetText( wbuf );
 
 	m_pMissionPackName->SetText( TheCareerDefinitions->GetActiveCareerDefinition()->GetTitle() );
