@@ -9951,25 +9951,25 @@ gameui,100530B0,57,,,UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,TODO,,,
 gameui,100530F0,17,,,UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,TODO,,,
 gameui,10053110,197,,,UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,TODO,,,
 gameui,100531E0,25,,,UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,TODO,,,
-gameui,10053210,825,,COptionsSubMouse::COptionsSubMouse,ENGINE,GameUI/OptionsSubMouse.cpp,,,TODO,,linux_symbols:string:0.263,linux: _ZN16COptionsSubMouseC2EPN5vgui25PanelE
-gameui,10053549,28,,,UNKNOWN,GameUI/OptionsSubMouse.cpp,,,TODO,,,linux: _ZN16COptionsSubMouseD1Ev
-gameui,10053565,109,,,UNKNOWN,GameUI/OptionsSubMouse.cpp,,,TODO,,,linux: _ZN16COptionsSubMouse11OnResetDataEv
-gameui,100535D2,109,,COptionsSubMouse::OnApplyChanges,ENGINE,GameUI/OptionsSubMouse.cpp,,,TODO,,linux_symbols:caller:0.667,linux: _ZN16COptionsSubMouse14OnApplyChangesEv
-gameui,1005363F,68,,,UNKNOWN,GameUI/OptionsSubMouse.cpp,,,TODO,,,linux: _ZN16COptionsSubMouse19ApplySchemeSettingsEPN5vgui27ISchemeE
-gameui,10053683,122,,,UNKNOWN,GameUI/OptionsSubMouse.cpp,,,TODO,,,linux: _ZN16COptionsSubMouse17OnControlModifiedEPN5vgui25PanelE
-gameui,100536FD,176,,,UNKNOWN,GameUI/OptionsSubMouse.cpp,,,TODO,,,linux: _ZN16COptionsSubMouse13OnTextChangedEPN5vgui25PanelE
-gameui,100537AD,80,,,UNKNOWN,GameUI/OptionsSubMouse.cpp,,,TODO,,,linux: _ZN16COptionsSubMouse22UpdateSensitivityLabelEv
-gameui,10053800,46,,,UNKNOWN,GameUI/OptionsSubMouse.cpp,,,TODO,,,
-gameui,10053830,19,,,UNKNOWN,GameUI/OptionsSubMouse.cpp,,,TODO,,,
-gameui,10053850,102,,,UNKNOWN,GameUI/OptionsSubMouse.cpp,,,TODO,,,
-gameui,100538C0,64,,,UNKNOWN,GameUI/OptionsSubMouse.cpp,,,TODO,,,
-gameui,10053900,10,,,UNKNOWN,GameUI/OptionsSubMouse.cpp,,,TODO,,,
-gameui,10053910,10,,,UNKNOWN,GameUI/OptionsSubMouse.cpp,,,TODO,,,
-gameui,10053920,19,,,UNKNOWN,GameUI/OptionsSubMouse.cpp,,,TODO,,,
-gameui,10053940,110,,,UNKNOWN,GameUI/OptionsSubMouse.cpp,,,TODO,,,
-gameui,100539B0,120,,,UNKNOWN,GameUI/OptionsSubMouse.cpp,,,TODO,,,
-gameui,10053A30,19,,,UNKNOWN,GameUI/OptionsSubMouse.cpp,,,TODO,,,
-gameui,10053A50,110,,,UNKNOWN,GameUI/OptionsSubMouse.cpp,,,TODO,,,
+gameui,10053210,825,??0COptionsSubMouse@@QAE@PAVPanel@vgui2@@@Z,public: __thiscall COptionsSubMouse::COptionsSubMouse(class vgui2::Panel *),ENGINE,GameUI/OptionsSubMouse.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN16COptionsSubMouseC2EPN5vgui25PanelE
+gameui,10053549,28,??1COptionsSubMouse@@UAE@XZ,public: virtual __thiscall COptionsSubMouse::~COptionsSubMouse(void),UNKNOWN,GameUI/OptionsSubMouse.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN16COptionsSubMouseD1Ev
+gameui,10053565,109,?OnResetData@COptionsSubMouse@@UAEXXZ,public: virtual void __thiscall COptionsSubMouse::OnResetData(void),UNKNOWN,GameUI/OptionsSubMouse.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN16COptionsSubMouse11OnResetDataEv
+gameui,100535D2,109,?OnApplyChanges@COptionsSubMouse@@UAEXXZ,public: virtual void __thiscall COptionsSubMouse::OnApplyChanges(void),ENGINE,GameUI/OptionsSubMouse.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN16COptionsSubMouse14OnApplyChangesEv
+gameui,1005363F,68,?ApplySchemeSettings@COptionsSubMouse@@MAEXPAVIScheme@vgui2@@@Z,protected: virtual void __thiscall COptionsSubMouse::ApplySchemeSettings(class vgui2::IScheme *),UNKNOWN,GameUI/OptionsSubMouse.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN16COptionsSubMouse19ApplySchemeSettingsEPN5vgui27ISchemeE
+gameui,10053683,122,?OnControlModified@COptionsSubMouse@@MAEXPAVPanel@vgui2@@@Z,protected: virtual void __thiscall COptionsSubMouse::OnControlModified(class vgui2::Panel *),UNKNOWN,GameUI/OptionsSubMouse.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN16COptionsSubMouse17OnControlModifiedEPN5vgui25PanelE
+gameui,100536FD,176,?OnTextChanged@COptionsSubMouse@@MAEXPAVPanel@vgui2@@@Z,protected: virtual void __thiscall COptionsSubMouse::OnTextChanged(class vgui2::Panel *),UNKNOWN,GameUI/OptionsSubMouse.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN16COptionsSubMouse13OnTextChangedEPN5vgui25PanelE
+gameui,100537AD,80,?UpdateSensitivityLabel@COptionsSubMouse@@IAEXXZ,protected: void __thiscall COptionsSubMouse::UpdateSensitivityLabel(void),UNKNOWN,GameUI/OptionsSubMouse.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN16COptionsSubMouse22UpdateSensitivityLabelEv
+gameui,10053800,46,??_GCOptionsSubMouse@@UAEPAXI@Z,public: virtual void * __thiscall COptionsSubMouse::`scalar deleting destructor'(unsigned int),UNKNOWN,GameUI/OptionsSubMouse.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10053830,19,??0COptionsSubMouse_RegisterMap@COptionsSubMouse@@QAE@XZ,public: __thiscall COptionsSubMouse::COptionsSubMouse_RegisterMap::COptionsSubMouse_RegisterMap(void),UNKNOWN,GameUI/OptionsSubMouse.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10053850,102,?ChainToMap@COptionsSubMouse@@SAXXZ,public: static void __cdecl COptionsSubMouse::ChainToMap(void),UNKNOWN,GameUI/OptionsSubMouse.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100538C0,64,?GetMessageMap@COptionsSubMouse@@UAEPAUPanelMessageMap@vgui2@@XZ,public: virtual struct vgui2::PanelMessageMap * __thiscall COptionsSubMouse::GetMessageMap(void),UNKNOWN,GameUI/OptionsSubMouse.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10053900,10,?GetPanelClassName@COptionsSubMouse@@SAPBDXZ,public: static char const * __cdecl COptionsSubMouse::GetPanelClassName(void),UNKNOWN,GameUI/OptionsSubMouse.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10053910,10,?GetPanelBaseClassName@COptionsSubMouse@@SAPBDXZ,public: static char const * __cdecl COptionsSubMouse::GetPanelBaseClassName(void),UNKNOWN,GameUI/OptionsSubMouse.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10053920,19,??0PanelMessageFunc_OnControlModified@COptionsSubMouse@@QAE@XZ,public: __thiscall COptionsSubMouse::PanelMessageFunc_OnControlModified::PanelMessageFunc_OnControlModified(void),UNKNOWN,GameUI/OptionsSubMouse.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10053940,110,?InitVar@PanelMessageFunc_OnControlModified@COptionsSubMouse@@SAXXZ,public: static void __cdecl COptionsSubMouse::PanelMessageFunc_OnControlModified::InitVar(void),UNKNOWN,GameUI/OptionsSubMouse.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100539B0,120,?AddToMap@COptionsSubMouse@@SAXPBDP8Panel@vgui2@@AEXXZHH0H0@Z,"public: static void __cdecl COptionsSubMouse::AddToMap(char const *,void (__thiscall vgui2::Panel::*)(void),int,int,char const *,int,char const *)",UNKNOWN,GameUI/OptionsSubMouse.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10053A30,19,??0PanelMessageFunc_OnTextChanged@COptionsSubMouse@@QAE@XZ,public: __thiscall COptionsSubMouse::PanelMessageFunc_OnTextChanged::PanelMessageFunc_OnTextChanged(void),UNKNOWN,GameUI/OptionsSubMouse.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10053A50,110,?InitVar@PanelMessageFunc_OnTextChanged@COptionsSubMouse@@SAXXZ,public: static void __cdecl COptionsSubMouse::PanelMessageFunc_OnTextChanged::InitVar(void),UNKNOWN,GameUI/OptionsSubMouse.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,10053AC0,72,??0CrosshairImagePanel@@QAE@PAVPanel@vgui2@@PBDPAVCCvarToggleCheckButton@@@Z,"public: __thiscall CrosshairImagePanel::CrosshairImagePanel(class vgui2::Panel *,char const *,class CCvarToggleCheckButton *)",UNKNOWN,GameUI/OptionsSubMultiplayer.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,10053B08,220,?UpdateCrosshair@CrosshairImagePanel@@QAEXHHHH@Z,"public: void __thiscall CrosshairImagePanel::UpdateCrosshair(int,int,int,int)",UNKNOWN,GameUI/OptionsSubMultiplayer.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,10053BE4,841,?Paint@CrosshairImagePanel@@UAEXXZ,public: virtual void __thiscall CrosshairImagePanel::Paint(void),UNKNOWN,GameUI/OptionsSubMultiplayer.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN19CrosshairImagePanel5PaintEv

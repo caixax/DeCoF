@@ -4053,6 +4053,11 @@
           "name": "GameUI/ImageButton",
           "source": "src/gameui/ImageButton.cpp",
           "functions_file": "tools/units/gameui_GameUI_ImageButton.txt"
+        },
+        {
+          "name": "GameUI/OptionsSubMouse",
+          "source": "src/gameui/OptionsSubMouse.cpp",
+          "functions_file": "tools/units/gameui_GameUI_OptionsSubMouse.txt"
         }
       ]
     }

@@ -4901,3 +4901,22 @@ va,name,kind,evidence
 100324DC,?ForceUpload@CImageButton@@UAEXXZ,func,GameUI/ImageButton.cpp: same position and size as in our compiled object; linux: _ZN12CImageButton11ForceUploadEv
 1003254C,?ForceReload@CImageButton@@UAEXXZ,func,GameUI/ImageButton.cpp: same position and size as in our compiled object; linux: _ZN12CImageButton11ForceReloadEv
 100325A0,??_GCImageButton@@UAEPAXI@Z,func,GameUI/ImageButton.cpp: same position and size as in our compiled object
+10053210,??0COptionsSubMouse@@QAE@PAVPanel@vgui2@@@Z,func,GameUI/OptionsSubMouse.cpp: same position and size as in our compiled object; linux: _ZN16COptionsSubMouseC2EPN5vgui25PanelE
+10053549,??1COptionsSubMouse@@UAE@XZ,func,GameUI/OptionsSubMouse.cpp: same position and size as in our compiled object; linux: _ZN16COptionsSubMouseD1Ev
+10053565,?OnResetData@COptionsSubMouse@@UAEXXZ,func,GameUI/OptionsSubMouse.cpp: same position and size as in our compiled object; linux: _ZN16COptionsSubMouse11OnResetDataEv
+100535D2,?OnApplyChanges@COptionsSubMouse@@UAEXXZ,func,GameUI/OptionsSubMouse.cpp: same position and size as in our compiled object; linux: _ZN16COptionsSubMouse14OnApplyChangesEv
+1005363F,?ApplySchemeSettings@COptionsSubMouse@@MAEXPAVIScheme@vgui2@@@Z,func,GameUI/OptionsSubMouse.cpp: same position and size as in our compiled object; linux: _ZN16COptionsSubMouse19ApplySchemeSettingsEPN5vgui27ISchemeE
+10053683,?OnControlModified@COptionsSubMouse@@MAEXPAVPanel@vgui2@@@Z,func,GameUI/OptionsSubMouse.cpp: same position and size as in our compiled object; linux: _ZN16COptionsSubMouse17OnControlModifiedEPN5vgui25PanelE
+100536FD,?OnTextChanged@COptionsSubMouse@@MAEXPAVPanel@vgui2@@@Z,func,GameUI/OptionsSubMouse.cpp: same position and size as in our compiled object; linux: _ZN16COptionsSubMouse13OnTextChangedEPN5vgui25PanelE
+100537AD,?UpdateSensitivityLabel@COptionsSubMouse@@IAEXXZ,func,GameUI/OptionsSubMouse.cpp: same position and size as in our compiled object; linux: _ZN16COptionsSubMouse22UpdateSensitivityLabelEv
+10053800,??_GCOptionsSubMouse@@UAEPAXI@Z,func,GameUI/OptionsSubMouse.cpp: same position and size as in our compiled object
+10053830,??0COptionsSubMouse_RegisterMap@COptionsSubMouse@@QAE@XZ,func,GameUI/OptionsSubMouse.cpp: same position and size as in our compiled object
+10053850,?ChainToMap@COptionsSubMouse@@SAXXZ,func,GameUI/OptionsSubMouse.cpp: same position and size as in our compiled object
+100538C0,?GetMessageMap@COptionsSubMouse@@UAEPAUPanelMessageMap@vgui2@@XZ,func,GameUI/OptionsSubMouse.cpp: same position and size as in our compiled object
+10053900,?GetPanelClassName@COptionsSubMouse@@SAPBDXZ,func,GameUI/OptionsSubMouse.cpp: same position and size as in our compiled object
+10053910,?GetPanelBaseClassName@COptionsSubMouse@@SAPBDXZ,func,GameUI/OptionsSubMouse.cpp: same position and size as in our compiled object
+10053920,??0PanelMessageFunc_OnControlModified@COptionsSubMouse@@QAE@XZ,func,GameUI/OptionsSubMouse.cpp: same position and size as in our compiled object
+10053940,?InitVar@PanelMessageFunc_OnControlModified@COptionsSubMouse@@SAXXZ,func,GameUI/OptionsSubMouse.cpp: same position and size as in our compiled object
+100539B0,?AddToMap@COptionsSubMouse@@SAXPBDP8Panel@vgui2@@AEXXZHH0H0@Z,func,GameUI/OptionsSubMouse.cpp: same position and size as in our compiled object
+10053A30,??0PanelMessageFunc_OnTextChanged@COptionsSubMouse@@QAE@XZ,func,GameUI/OptionsSubMouse.cpp: same position and size as in our compiled object
+10053A50,?InitVar@PanelMessageFunc_OnTextChanged@COptionsSubMouse@@SAXXZ,func,GameUI/OptionsSubMouse.cpp: same position and size as in our compiled object
