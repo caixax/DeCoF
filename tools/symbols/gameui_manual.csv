@@ -5024,3 +5024,15 @@ va,name,kind,evidence
 10058C18,_htons@4,func,WSOCK32 import thunk (ordinal 9)
 10058C1E,_getsockname@12,func,WSOCK32 import thunk (ordinal 6)
 10058C24,_gethostname@8,func,WSOCK32 import thunk (ordinal 57)
+10023190,?BigShort@@YAFF@Z,func,HLTV/common/byteorder.cpp: same position and size as in our compiled object; int32 is __int32 (steamtypes.h) as in Random.cpp; linux: _Z8BigShorts
+100231CC,?LittleShort@@YAFF@Z,func,HLTV/common/byteorder.cpp: same position and size as in our compiled object; int32 is __int32 (steamtypes.h) as in Random.cpp; linux: _Z11LittleShorts
+100231D5,?BigLong@@YA_H_H@Z,func,HLTV/common/byteorder.cpp: same position and size as in our compiled object; int32 is __int32 (steamtypes.h) as in Random.cpp; linux: _Z7BigLongi
+10023248,?LittleLong@@YA_H_H@Z,func,HLTV/common/byteorder.cpp: same position and size as in our compiled object; int32 is __int32 (steamtypes.h) as in Random.cpp; linux: _Z10LittleLongi
+10023250,?BigFloat@@YAMM@Z,func,HLTV/common/byteorder.cpp: same position and size as in our compiled object; int32 is __int32 (steamtypes.h) as in Random.cpp; linux: _Z8BigFloatf
+1002327B,?LittleFloat@@YAMM@Z,func,HLTV/common/byteorder.cpp: same position and size as in our compiled object; int32 is __int32 (steamtypes.h) as in Random.cpp; linux: _Z11LittleFloatf
+10023283,?ShortSwap@@YAFF@Z,func,HLTV/common/byteorder.cpp: same position and size as in our compiled object; int32 is __int32 (steamtypes.h) as in Random.cpp; linux: _Z9ShortSwaps
+100232BF,?ShortNoSwap@@YAFF@Z,func,HLTV/common/byteorder.cpp: same position and size as in our compiled object; int32 is __int32 (steamtypes.h) as in Random.cpp; linux: _Z11ShortNoSwaps
+100232C8,?LongSwap@@YA_H_H@Z,func,HLTV/common/byteorder.cpp: same position and size as in our compiled object; int32 is __int32 (steamtypes.h) as in Random.cpp; linux: _Z8LongSwapi
+1002333B,?LongNoSwap@@YA_H_H@Z,func,HLTV/common/byteorder.cpp: same position and size as in our compiled object; int32 is __int32 (steamtypes.h) as in Random.cpp; linux: _Z10LongNoSwapi
+10023343,?FloatSwap@@YAMM@Z,func,HLTV/common/byteorder.cpp: same position and size as in our compiled object; int32 is __int32 (steamtypes.h) as in Random.cpp; linux: _Z9FloatSwapf
+1002336E,?FloatNoSwap@@YAMM@Z,func,HLTV/common/byteorder.cpp: same position and size as in our compiled object; int32 is __int32 (steamtypes.h) as in Random.cpp; linux: _Z11FloatNoSwapf

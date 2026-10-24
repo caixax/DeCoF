@@ -8472,18 +8472,18 @@ gameui,10023102,34,?Flash@CBitmapButton@@QAEXXZ,public: void __thiscall CBitmapB
 gameui,10023130,46,??_GCBitmapButton@@UAEPAXI@Z,public: virtual void * __thiscall CBitmapButton::`scalar deleting destructor'(unsigned int),UNKNOWN,GameUI/BitmapButton.cpp,,,MATCHED,100,,
 gameui,10023160,19,??1CBitmapButton@@UAE@XZ,public: virtual __thiscall CBitmapButton::~CBitmapButton(void),UNKNOWN,GameUI/BitmapButton.cpp,,,MATCHED,100,,
 gameui,10023180,13,?DrawFocusBorder@CBitmapButton@@UAEXHHHH@Z,"public: virtual void __thiscall CBitmapButton::DrawFocusBorder(int,int,int,int)",UNKNOWN,GameUI/BitmapButton.cpp,,,MATCHED,100,,
-gameui,10023190,60,,,UNKNOWN,HLTV/common/byteorder.cpp,,,TODO,,,linux: _Z8BigShorts
-gameui,100231CC,9,,,UNKNOWN,HLTV/common/byteorder.cpp,,,TODO,,,linux: _Z11LittleShorts
-gameui,100231D5,115,,,UNKNOWN,HLTV/common/byteorder.cpp,,,TODO,,,linux: _Z7BigLongi
-gameui,10023248,8,,,UNKNOWN,HLTV/common/byteorder.cpp,,,TODO,,,linux: _Z10LittleLongi
-gameui,10023250,43,,,UNKNOWN,HLTV/common/byteorder.cpp,,,TODO,,,linux: _Z8BigFloatf
-gameui,1002327B,8,,,UNKNOWN,HLTV/common/byteorder.cpp,,,TODO,,,linux: _Z11LittleFloatf
-gameui,10023283,60,,,UNKNOWN,HLTV/common/byteorder.cpp,,,TODO,,,linux: _Z9ShortSwaps
-gameui,100232BF,9,,,UNKNOWN,HLTV/common/byteorder.cpp,,,TODO,,,linux: _Z11ShortNoSwaps
-gameui,100232C8,115,,,UNKNOWN,HLTV/common/byteorder.cpp,,,TODO,,,linux: _Z8LongSwapi
-gameui,1002333B,8,,,UNKNOWN,HLTV/common/byteorder.cpp,,,TODO,,,linux: _Z10LongNoSwapi
-gameui,10023343,43,,,UNKNOWN,HLTV/common/byteorder.cpp,,,TODO,,,linux: _Z9FloatSwapf
-gameui,1002336E,8,,,UNKNOWN,HLTV/common/byteorder.cpp,,,TODO,,,linux: _Z11FloatNoSwapf
+gameui,10023190,60,?BigShort@@YAFF@Z,short __cdecl BigShort(short),UNKNOWN,HLTV/common/byteorder.cpp,,,MATCHED,100,,linux: _Z8BigShorts
+gameui,100231CC,9,?LittleShort@@YAFF@Z,short __cdecl LittleShort(short),UNKNOWN,HLTV/common/byteorder.cpp,,,MATCHED,100,,linux: _Z11LittleShorts
+gameui,100231D5,115,?BigLong@@YA_H_H@Z,__int32 __cdecl BigLong(__int32),UNKNOWN,HLTV/common/byteorder.cpp,,,MATCHED,100,,linux: _Z7BigLongi
+gameui,10023248,8,?LittleLong@@YA_H_H@Z,__int32 __cdecl LittleLong(__int32),UNKNOWN,HLTV/common/byteorder.cpp,,,MATCHED,100,,linux: _Z10LittleLongi
+gameui,10023250,43,?BigFloat@@YAMM@Z,float __cdecl BigFloat(float),UNKNOWN,HLTV/common/byteorder.cpp,,,MATCHED,100,,linux: _Z8BigFloatf
+gameui,1002327B,8,?LittleFloat@@YAMM@Z,float __cdecl LittleFloat(float),UNKNOWN,HLTV/common/byteorder.cpp,,,MATCHED,100,,linux: _Z11LittleFloatf
+gameui,10023283,60,?ShortSwap@@YAFF@Z,short __cdecl ShortSwap(short),UNKNOWN,HLTV/common/byteorder.cpp,,,MATCHED,100,,linux: _Z9ShortSwaps
+gameui,100232BF,9,?ShortNoSwap@@YAFF@Z,short __cdecl ShortNoSwap(short),UNKNOWN,HLTV/common/byteorder.cpp,,,MATCHED,100,,linux: _Z11ShortNoSwaps
+gameui,100232C8,115,?LongSwap@@YA_H_H@Z,__int32 __cdecl LongSwap(__int32),UNKNOWN,HLTV/common/byteorder.cpp,,,MATCHED,100,,linux: _Z8LongSwapi
+gameui,1002333B,8,?LongNoSwap@@YA_H_H@Z,__int32 __cdecl LongNoSwap(__int32),UNKNOWN,HLTV/common/byteorder.cpp,,,MATCHED,100,,linux: _Z10LongNoSwapi
+gameui,10023343,43,?FloatSwap@@YAMM@Z,float __cdecl FloatSwap(float),UNKNOWN,HLTV/common/byteorder.cpp,,,MATCHED,100,,linux: _Z9FloatSwapf
+gameui,1002336E,8,?FloatNoSwap@@YAMM@Z,float __cdecl FloatNoSwap(float),UNKNOWN,HLTV/common/byteorder.cpp,,,MATCHED,100,,linux: _Z11FloatNoSwapf
 gameui,10023380,934,??0CCDKeyEntryDialog@@QAE@PAVPanel@vgui2@@_N@Z,"public: __thiscall CCDKeyEntryDialog::CCDKeyEntryDialog(class vgui2::Panel *,bool)",ENGINE,GameUI/CDKeyEntryDialog.cpp,,,TODO,99.99,gameui_manual.csv,"relocation targets differ (instructions identical): retail s_Resource/CDKeyEntryDialog.res_100e1824, ours $SG57700; retail s_Resource/ValveCDKeyEntryDialog.r_100e1800, ours $SG57698"
 gameui,10023726,28,??1CCDKeyEntryDialog@@UAE@XZ,public: virtual __thiscall CCDKeyEntryDialog::~CCDKeyEntryDialog(void),UNKNOWN,GameUI/CDKeyEntryDialog.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,10023742,630,?OnCommand@CCDKeyEntryDialog@@EAEXPBD@Z,private: virtual void __thiscall CCDKeyEntryDialog::OnCommand(char const *),ENGINE,GameUI/CDKeyEntryDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN17CCDKeyEntryDialog9OnCommandEPKc
