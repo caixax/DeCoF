@@ -18,6 +18,8 @@
 #include <UtlVector.h>
 #include "ICareerUI.h"
 
+namespace vgui = vgui2;
+
 class CTaskButton;
 class CBackgroundMenuButton;
 class CGameMenu;
@@ -28,7 +30,7 @@ class KeyValues;
 //-----------------------------------------------------------------------------
 class CTaskbar : public vgui2::EditablePanel
 {
-	DECLARE_CLASS_SIMPLE( CTaskbar, vgui2::EditablePanel );
+	DECLARE_CLASS_SIMPLE( CTaskbar, vgui::EditablePanel );
 
 public:
 	CTaskbar(vgui2::Panel *parent, const char *panelName);

@@ -36,7 +36,7 @@ public:
 	{
 		m_pImage = image;
 		m_pMouseOverImage = mouseoverImage;
-		SetImageAtIndex( 0, m_pImage, 0 );
+		SetArmed( IsArmed() );
 	}
 
 	virtual void SetArmed( bool state )

@@ -4206,6 +4206,11 @@
             "src/pm_shared",
             "src/game_shared"
           ]
+        },
+        {
+          "name": "GameUI/Taskbar",
+          "source": "src/gameui/Taskbar.cpp",
+          "functions_file": "tools/units/gameui_GameUI_Taskbar.txt"
         }
       ]
     }

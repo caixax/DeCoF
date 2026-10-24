@@ -5635,3 +5635,93 @@ va,name,kind,evidence
 1001FD80,?_Construct@std@@YAXPAPADABQAD@Z,func,"game_shared/bot/bot_profile.cpp: COMDAT tail (VC6 STL list<BotProfile *> and vector<char *> instantiations, BotProfile inlines), same size and order as in our compiled object; calls from the matched BotProfileManager functions agree"
 1001FB20,?destroy@?$allocator@PAD@std@@QAEXPAPAD@Z,func,"game_shared/bot/bot_profile.cpp: COMDAT in the bot_profile tail between vector<char *>::insert and size, same size as in our compiled object; called by the matched vector<char *>::_Destroy and list erase (replaces the Ghidra FID label std::allocator<std::_Container_proxy>::destroy)"
 1001FB40,?destroy@?$allocator@PAVBotProfile@@@std@@QAEXPAPAVBotProfile@@@Z,func,"game_shared/bot/bot_profile.cpp: COMDAT in the bot_profile tail between vector<char *>::insert and size, same size as in our compiled object; called by the matched vector<char *>::_Destroy and list erase (replaces the Ghidra FID label std::allocator<std::_Container_proxy>::destroy)"
+1003CCF0,??0CareerQueryBox@@QAE@PBD0PAVPanel@vgui2@@@Z,func,GameUI/Taskbar.cpp: same position and size as in our compiled object
+1003CD1D,?ApplySchemeSettings@CareerQueryBox@@UAEXPAVIScheme@vgui2@@@Z,func,GameUI/Taskbar.cpp: same position and size as in our compiled object
+1003CDA8,??0CTaskbar@@QAE@PAVPanel@vgui2@@PBD@Z,func,GameUI/Taskbar.cpp: same position and size as in our compiled object
+1003D020,??1CTaskbar@@UAE@XZ,func,GameUI/Taskbar.cpp: same position and size as in our compiled object
+1003D04F,?CreatePlatformMenu@CTaskbar@@AAEXXZ,func,GameUI/Taskbar.cpp: same position and size as in our compiled object; linux: _ZN8CTaskbar18CreatePlatformMenuEv
+1003D157,?CreateGameMenu@CTaskbar@@AAEXXZ,func,GameUI/Taskbar.cpp: same position and size as in our compiled object; linux: _ZN8CTaskbar14CreateGameMenuEv
+1003D1D7,?UpdateGameMenus@CTaskbar@@AAEXXZ,func,GameUI/Taskbar.cpp: same position and size as in our compiled object; linux: _ZN8CTaskbar15UpdateGameMenusEv
+1003D4AB,?UpdateTaskButtons@CTaskbar@@AAEXXZ,func,GameUI/Taskbar.cpp: same position and size as in our compiled object; linux: _ZN8CTaskbar17UpdateTaskButtonsEv
+1003D824,?RecursiveLoadGameMenu@CTaskbar@@AAEPAVCGameMenu@@PAVKeyValues@@@Z,func,GameUI/Taskbar.cpp: same position and size as in our compiled object; linux: _ZN8CTaskbar21RecursiveLoadGameMenuEP9KeyValues
+1003D901,?RunFrame@CTaskbar@@QAEXXZ,func,GameUI/Taskbar.cpp: same position (size 183 against 186) as in our compiled object; linux: _ZN8CTaskbar8RunFrameEv
+1003D9B8,?SetTitle@CTaskbar@@QAEXIPBG@Z,func,GameUI/Taskbar.cpp: same position and size as in our compiled object; linux: _ZN8CTaskbar8SetTitleEjPKw
+1003D9E8,?PerformLayout@CTaskbar@@EAEXXZ,func,GameUI/Taskbar.cpp: same position and size as in our compiled object; linux: _ZN8CTaskbar13PerformLayoutEv
+1003DB27,?ApplySchemeSettings@CTaskbar@@EAEXPAVIScheme@vgui2@@@Z,func,GameUI/Taskbar.cpp: same position and size as in our compiled object; linux: _ZN8CTaskbar19ApplySchemeSettingsEPN5vgui27ISchemeE
+1003DC3A,?AddTask@CTaskbar@@QAEXI@Z,func,GameUI/Taskbar.cpp: same position and size as in our compiled object; linux: _ZN8CTaskbar7AddTaskEj
+1003DC49,?FindTask@CTaskbar@@AAEPAVCTaskButton@@I@Z,func,GameUI/Taskbar.cpp: same position and size as in our compiled object; linux: _ZN8CTaskbar8FindTaskEj
+1003DCB5,?OnActivateModule@CTaskbar@@EAEXH@Z,func,GameUI/Taskbar.cpp: same position and size as in our compiled object; linux: _ZN8CTaskbar16OnActivateModuleEi
+1003DD0F,?OnCommand@CTaskbar@@EAEXPBD@Z,func,GameUI/Taskbar.cpp: same position and size as in our compiled object; linux: _ZN8CTaskbar9OnCommandEPKc
+1003E5F3,?OnOpenQuitConfirmationDialog@CTaskbar@@QAEXXZ,func,GameUI/Taskbar.cpp: same position and size as in our compiled object; linux: _ZN8CTaskbar28OnOpenQuitConfirmationDialogEv
+1003E718,?OnOpenNewGameDialog@CTaskbar@@QAEXXZ,func,GameUI/Taskbar.cpp: same position and size as in our compiled object; linux: _ZN8CTaskbar19OnOpenNewGameDialogEv
+1003E7AE,?OnOpenLoadGameDialog@CTaskbar@@QAEXXZ,func,GameUI/Taskbar.cpp: same position and size as in our compiled object; linux: _ZN8CTaskbar20OnOpenLoadGameDialogEv
+1003E844,?OnOpenSaveGameDialog@CTaskbar@@QAEXXZ,func,GameUI/Taskbar.cpp: same position and size as in our compiled object; linux: _ZN8CTaskbar20OnOpenSaveGameDialogEv
+1003E8DA,?OnOpenOptionsDialog@CTaskbar@@QAEXXZ,func,GameUI/Taskbar.cpp: same position and size as in our compiled object; linux: _ZN8CTaskbar19OnOpenOptionsDialogEv
+1003E970,?OnOpenServerBrowser@CTaskbar@@QAEXXZ,func,GameUI/Taskbar.cpp: same position and size as in our compiled object; linux: _ZN8CTaskbar19OnOpenServerBrowserEv
+1003E98A,?OnOpenDemoDialog@CTaskbar@@QAEXXZ,func,GameUI/Taskbar.cpp: same position and size as in our compiled object; linux: _ZN8CTaskbar16OnOpenDemoDialogEv
+1003EA22,?OnOpenCreateMultiplayerGameDialog@CTaskbar@@QAEXXZ,func,GameUI/Taskbar.cpp: same position and size as in our compiled object; linux: _ZN8CTaskbar33OnOpenCreateMultiplayerGameDialogEv
+1003EAB8,?OnOpenResumeCareerGameDialog@CTaskbar@@QAEPAVFrame@vgui2@@W4CareerDifficultyType@@@Z,func,GameUI/Taskbar.cpp: same position and size as in our compiled object
+1003EB8A,?OnOpenNewCareerNameDialog@CTaskbar@@QAEXXZ,func,GameUI/Taskbar.cpp: same position and size as in our compiled object
+1003ECF3,?OnOpenCareerProfileFrame@CTaskbar@@QAEXXZ,func,GameUI/Taskbar.cpp: same position and size as in our compiled object; linux: _ZN8CTaskbar24OnOpenCareerProfileFrameEv
+1003EDBF,?OnOpenCareerMapDialog@CTaskbar@@QAEX_N@Z,func,GameUI/Taskbar.cpp: same position and size as in our compiled object; linux: _ZN8CTaskbar21OnOpenCareerMapDialogEb
+1003EE57,?OnOpenCareerBotDialog@CTaskbar@@QAEXXZ,func,GameUI/Taskbar.cpp: same position and size as in our compiled object; linux: _ZN8CTaskbar21OnOpenCareerBotDialogEv
+1003EEED,?OnOpenCreateCareerGameDialog@CTaskbar@@QAEXXZ,func,GameUI/Taskbar.cpp: same position and size as in our compiled object; linux: _ZN8CTaskbar28OnOpenCreateCareerGameDialogEv
+1003F056,?OnOpenChangeGameDialog@CTaskbar@@QAEXXZ,func,GameUI/Taskbar.cpp: same position and size as in our compiled object; linux: _ZN8CTaskbar22OnOpenChangeGameDialogEv
+1003F0EC,?OnOpenPlayerListDialog@CTaskbar@@QAEXXZ,func,GameUI/Taskbar.cpp: same position and size as in our compiled object; linux: _ZN8CTaskbar22OnOpenPlayerListDialogEv
+1003F182,?PositionDialog@CTaskbar@@QAEXVPHandle@vgui2@@@Z,func,GameUI/Taskbar.cpp: same position and size as in our compiled object; linux: _ZN8CTaskbar14PositionDialogEN5vgui27PHandleE
+1003F20D,?ActivateGameUI@CTaskbar@@EAEXXZ,func,GameUI/Taskbar.cpp: same position and size as in our compiled object; linux: _ZN8CTaskbar14ActivateGameUIEv
+1003F230,??_GCareerQueryBox@@UAEPAXI@Z,func,GameUI/Taskbar.cpp: same position and size as in our compiled object
+1003F260,??1CareerQueryBox@@UAE@XZ,func,GameUI/Taskbar.cpp: same position and size as in our compiled object
+1003F280,??_GCTaskbar@@UAEPAXI@Z,func,GameUI/Taskbar.cpp: same position and size as in our compiled object
+1003F2B0,??0CGameMenu@@QAE@PAVPanel@vgui2@@PBD@Z,func,GameUI/Taskbar.cpp: same position and size as in our compiled object
+1003F300,?ApplySchemeSettings@CGameMenu@@UAEXPAVIScheme@vgui2@@@Z,func,GameUI/Taskbar.cpp: same position and size as in our compiled object
+1003F3C0,?LayoutMenuBorder@CGameMenu@@UAEXXZ,func,GameUI/Taskbar.cpp: same position and size as in our compiled object
+1003F3D0,?SetVisible@CGameMenu@@UAEX_N@Z,func,GameUI/Taskbar.cpp: same position and size as in our compiled object
+1003F420,?AddMenuItem@CGameMenu@@UAEHPBD00PAVPanel@vgui2@@PAVKeyValues@@@Z,func,GameUI/Taskbar.cpp: same position and size as in our compiled object
+1003F4C0,??0CGameMenuItem@@QAE@PAVMenu@vgui2@@PBD@Z,func,GameUI/Taskbar.cpp: same position and size as in our compiled object
+1003F510,?ApplySchemeSettings@CGameMenuItem@@UAEXPAVIScheme@vgui2@@@Z,func,GameUI/Taskbar.cpp: same position and size as in our compiled object
+1003F720,??_GCGameMenuItem@@UAEPAXI@Z,func,GameUI/Taskbar.cpp: same position and size as in our compiled object
+1003F750,??1CGameMenuItem@@UAE@XZ,func,GameUI/Taskbar.cpp: same position and size as in our compiled object
+1003F770,?AddMenuItem@CGameMenu@@UAEHPBD0PAVKeyValues@@PAVPanel@vgui2@@1@Z,func,GameUI/Taskbar.cpp: same position and size as in our compiled object
+1003F810,?SetRightAlignedText_guess@CGameMenuItem@@QAEX_N@Z,func,GameUI/Taskbar.cpp: same position and size as in our compiled object
+1003F830,?OnThink@CGameMenu@@UAEXXZ,func,GameUI/Taskbar.cpp: same position and size as in our compiled object
+1003F980,?OnCommand@CGameMenu@@UAEXPBD@Z,func,GameUI/Taskbar.cpp: same position and size as in our compiled object
+1003F9E0,?RestartListUpdate_guess@CGameMenu@@QAEXXZ,func,GameUI/Taskbar.cpp: same position and size as in our compiled object
+1003FA00,?OnKillFocus@CGameMenu@@UAEXXZ,func,GameUI/Taskbar.cpp: same position and size as in our compiled object
+1003FA40,??_GCGameMenu@@UAEPAXI@Z,func,GameUI/Taskbar.cpp: same position and size as in our compiled object
+1003FA70,??1CGameMenu@@UAE@XZ,func,GameUI/Taskbar.cpp: same position and size as in our compiled object
+1003FA90,?UpdateMenuItemState_guess@CGameMenu@@QAEX_N00@Z,func,GameUI/Taskbar.cpp: same position (size 475 against 451) as in our compiled object
+1003FC70,??CPHandle@vgui2@@QAEPAVPanel@1@XZ,func,GameUI/Taskbar.cpp: same position and size as in our compiled object
+1003FC90,??B?$DHANDLE@VFrame@vgui2@@@vgui2@@QAEPAVFrame@1@XZ,func,GameUI/Taskbar.cpp: same position and size as in our compiled object
+1003FCB0,??B?$DHANDLE@VFrame@vgui2@@@vgui2@@QAE_NXZ,func,GameUI/Taskbar.cpp: same position and size as in our compiled object
+1003FCD0,??0CTaskbar_RegisterMap@CTaskbar@@QAE@XZ,func,GameUI/Taskbar.cpp: same position and size as in our compiled object
+1003FCF0,?ChainToMap@CTaskbar@@SAXXZ,func,GameUI/Taskbar.cpp: same position and size as in our compiled object
+1003FD60,?GetMessageMap@CTaskbar@@UAEPAUPanelMessageMap@vgui2@@XZ,func,GameUI/Taskbar.cpp: same position and size as in our compiled object
+1003FDA0,?GetPanelClassName@CTaskbar@@SAPBDXZ,func,GameUI/Taskbar.cpp: same position and size as in our compiled object
+1003FDB0,?GetPanelBaseClassName@CTaskbar@@SAPBDXZ,func,GameUI/Taskbar.cpp: same position and size as in our compiled object
+1003FDC0,??0PanelMessageFunc_OnActivateModule@CTaskbar@@QAE@XZ,func,GameUI/Taskbar.cpp: same position and size as in our compiled object
+1003FDE0,?InitVar@PanelMessageFunc_OnActivateModule@CTaskbar@@SAXXZ,func,GameUI/Taskbar.cpp: same position and size as in our compiled object
+1003FE50,?AddToMap@CTaskbar@@SAXPBDP8Panel@vgui2@@AEXXZHH0H0@Z,func,GameUI/Taskbar.cpp: same position and size as in our compiled object
+1003FED0,??0PanelMessageFunc_ActivateGameUI@CTaskbar@@QAE@XZ,func,GameUI/Taskbar.cpp: same position and size as in our compiled object
+1003FEF0,?InitVar@PanelMessageFunc_ActivateGameUI@CTaskbar@@SAXXZ,func,GameUI/Taskbar.cpp: same position and size as in our compiled object
+1003FF60,??0?$CUtlVector@PAVCTaskButton@@@@QAE@HH@Z,func,GameUI/Taskbar.cpp: same position and size as in our compiled object
+1003FFA0,??1?$CUtlVector@PAVCTaskButton@@@@QAE@XZ,func,GameUI/Taskbar.cpp: same position and size as in our compiled object
+1003FFC0,??A?$CUtlVector@PAVCTaskButton@@@@QAEAAPAVCTaskButton@@H@Z,func,GameUI/Taskbar.cpp: same position and size as in our compiled object
+1003FFE0,?Count@?$CUtlVector@PAVCTaskButton@@@@QBEHXZ,func,GameUI/Taskbar.cpp: same position and size as in our compiled object
+10040000,?Remove@?$CUtlVector@PAVCTaskButton@@@@QAEXH@Z,func,GameUI/Taskbar.cpp: same position and size as in our compiled object
+10040040,?Element@?$CUtlVector@PAVCTaskButton@@@@QAEAAPAVCTaskButton@@H@Z,func,GameUI/Taskbar.cpp: same position and size as in our compiled object
+10040060,?Purge@?$CUtlVector@PAVCTaskButton@@@@QAEXXZ,func,GameUI/Taskbar.cpp: same position and size as in our compiled object
+10040090,?ShiftElementsLeft@?$CUtlVector@PAVCTaskButton@@@@IAEXHH@Z,func,GameUI/Taskbar.cpp: same position and size as in our compiled object
+100400F0,?ResetDbgInfo@?$CUtlVector@PAVCTaskButton@@@@IAEXXZ,func,GameUI/Taskbar.cpp: same position and size as in our compiled object
+10040100,??0?$CUtlMemory@PAVCTaskButton@@@@QAE@HH@Z,func,GameUI/Taskbar.cpp: same position and size as in our compiled object
+10040150,??1?$CUtlMemory@PAVCTaskButton@@@@QAE@XZ,func,GameUI/Taskbar.cpp: same position and size as in our compiled object
+10040170,??A?$CUtlMemory@PAVCTaskButton@@@@QAEAAPAVCTaskButton@@H@Z,func,GameUI/Taskbar.cpp: same position and size as in our compiled object
+10040190,?Destruct@@YAXPAPAVCTaskButton@@@Z,func,GameUI/Taskbar.cpp: same position and size as in our compiled object
+100401A0,?RemoveAll@?$CUtlVector@PAVCTaskButton@@@@QAEXXZ,func,GameUI/Taskbar.cpp: same position and size as in our compiled object
+100401F0,?Purge@?$CUtlMemory@PAVCTaskButton@@@@QAEXXZ,func,GameUI/Taskbar.cpp: same position and size as in our compiled object
+10040240,?IsExternallyAllocated@?$CUtlMemory@PAVCTaskButton@@@@QBE_NXZ,func,GameUI/Taskbar.cpp: same position and size as in our compiled object
+10040260,?SetImages@CBackgroundMenuButton@@QAEXPAVIImage@vgui2@@0@Z,func,GameUI/Taskbar.cpp: same position and size as in our compiled object
+100402B0,?GetMessageMap@Menu@vgui2@@UAEPAUPanelMessageMap@2@XZ,func,GameUI/Taskbar.cpp: same position and size as in our compiled object
+100402F0,?GetPanelClassName@Menu@vgui2@@SAPBDXZ,func,GameUI/Taskbar.cpp: same position and size as in our compiled object
+10040350,?GetMessageMap@QueryBox@vgui2@@UAEPAUPanelMessageMap@2@XZ,func,GameUI/Taskbar.cpp: same position and size as in our compiled object
+10040390,?GetPanelClassName@QueryBox@vgui2@@SAPBDXZ,func,GameUI/Taskbar.cpp: same position and size as in our compiled object

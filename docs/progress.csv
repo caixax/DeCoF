@@ -9191,99 +9191,99 @@ gameui,1003CCAE,27,?Sys_PostMessage@@YAXHIII@Z,Sys_PostMessage,UNKNOWN,GameUI/Sy
 gameui,1003CCC9,19,?Sys_SetCursorPos@@YAXHH@Z,Sys_SetCursorPos,UNKNOWN,GameUI/Sys_Utils.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,1003CCDC,10,?Sys_CreateWindowEx@@YAHPBD@Z,Sys_CreateWindowEx,UNKNOWN,GameUI/Sys_Utils.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,1003CCE6,5,?Sys_DestroyWindow@@YAXH@Z,Sys_DestroyWindow,UNKNOWN,GameUI/Sys_Utils.cpp,,,MATCHED,100,gameui_manual.csv,
-gameui,1003CCF0,45,,,UNKNOWN,GameUI/Taskbar.cpp,,,TODO,,,
-gameui,1003CD1D,139,,,UNKNOWN,GameUI/Taskbar.cpp,,,TODO,,,
-gameui,1003CDA8,632,,CTaskbar::CTaskbar,ENGINE,GameUI/Taskbar.cpp,,,TODO,,linux_symbols:string:0.396,
-gameui,1003D020,47,,,UNKNOWN,GameUI/Taskbar.cpp,,,TODO,,,
-gameui,1003D04F,264,,CTaskbar::CreatePlatformMenu,ENGINE,GameUI/Taskbar.cpp,,,TODO,,linux_symbols:caller:0.667,linux: _ZN8CTaskbar18CreatePlatformMenuEv
-gameui,1003D157,128,,,UNKNOWN,GameUI/Taskbar.cpp,,,TODO,,,linux: _ZN8CTaskbar14CreateGameMenuEv
-gameui,1003D1D7,724,,,UNKNOWN,GameUI/Taskbar.cpp,,,TODO,,,linux: _ZN8CTaskbar15UpdateGameMenusEv
-gameui,1003D4AB,889,,,UNKNOWN,GameUI/Taskbar.cpp,,,TODO,,,linux: _ZN8CTaskbar17UpdateTaskButtonsEv
-gameui,1003D824,221,,,UNKNOWN,GameUI/Taskbar.cpp,,,TODO,,,linux: _ZN8CTaskbar21RecursiveLoadGameMenuEP9KeyValues
-gameui,1003D901,183,,CTaskbar::RunFrame,ENGINE,GameUI/Taskbar.cpp,,,TODO,,linux_symbols:caller:0.688,linux: _ZN8CTaskbar8RunFrameEv
-gameui,1003D9B8,48,,,UNKNOWN,GameUI/Taskbar.cpp,,,TODO,,,linux: _ZN8CTaskbar8SetTitleEjPKw
-gameui,1003D9E8,319,,,UNKNOWN,GameUI/Taskbar.cpp,,,TODO,,,linux: _ZN8CTaskbar13PerformLayoutEv
-gameui,1003DB27,275,,CTaskbar::ApplySchemeSettings,ENGINE,GameUI/Taskbar.cpp,,,TODO,,linux_symbols:string:0.765,linux: _ZN8CTaskbar19ApplySchemeSettingsEPN5vgui27ISchemeE
-gameui,1003DC3A,15,,,UNKNOWN,GameUI/Taskbar.cpp,,,TODO,,,linux: _ZN8CTaskbar7AddTaskEj
-gameui,1003DC49,108,,,UNKNOWN,GameUI/Taskbar.cpp,,,TODO,,,linux: _ZN8CTaskbar8FindTaskEj
-gameui,1003DCB5,27,,,UNKNOWN,GameUI/Taskbar.cpp,,,TODO,,,linux: _ZN8CTaskbar16OnActivateModuleEi
-gameui,1003DCD0,63,?OnGameUIActivated@CTaskbar@@QAEXXZ,CTaskbar::OnGameUIActivated,ENGINE,GameUI/Taskbar.cpp,,,TODO,,gameui_manual.csv,linux: _ZN8CTaskbar17OnGameUIActivatedEv
-gameui,1003DD0F,2276,,CTaskbar::OnCommand,ENGINE,GameUI/Taskbar.cpp,,,TODO,,linux_symbols:string:0.578,linux: _ZN8CTaskbar9OnCommandEPKc
-gameui,1003E5F3,293,,CTaskbar::OnOpenQuitConfirmationDialog,ENGINE,GameUI/Taskbar.cpp,,,TODO,,linux_symbols:string:0.668,linux: _ZN8CTaskbar28OnOpenQuitConfirmationDialogEv
-gameui,1003E718,150,,CTaskbar::OnOpenNewGameDialog,ENGINE,GameUI/Taskbar.cpp,,,TODO,,linux_symbols:caller:0.708,linux: _ZN8CTaskbar19OnOpenNewGameDialogEv
-gameui,1003E7AE,150,,CTaskbar::OnOpenLoadGameDialog,ENGINE,GameUI/Taskbar.cpp,,,TODO,,linux_symbols:caller:0.708,linux: _ZN8CTaskbar20OnOpenLoadGameDialogEv
-gameui,1003E844,150,,CTaskbar::OnOpenSaveGameDialog,ENGINE,GameUI/Taskbar.cpp,,,TODO,,linux_symbols:caller:0.708,linux: _ZN8CTaskbar20OnOpenSaveGameDialogEv
-gameui,1003E8DA,150,,CTaskbar::OnOpenOptionsDialog,ENGINE,GameUI/Taskbar.cpp,,,TODO,,linux_symbols:caller:0.708,linux: _ZN8CTaskbar19OnOpenOptionsDialogEv
-gameui,1003E970,26,,,UNKNOWN,GameUI/Taskbar.cpp,,,TODO,,,linux: _ZN8CTaskbar19OnOpenServerBrowserEv
-gameui,1003E98A,152,,,UNKNOWN,GameUI/Taskbar.cpp,,,TODO,,,linux: _ZN8CTaskbar16OnOpenDemoDialogEv
-gameui,1003EA22,150,,CTaskbar::OnOpenCreateMultiplayerGameDialog,ENGINE,GameUI/Taskbar.cpp,,,TODO,,linux_symbols:caller:0.708,linux: _ZN8CTaskbar33OnOpenCreateMultiplayerGameDialogEv
-gameui,1003EAB8,210,,,UNKNOWN,GameUI/Taskbar.cpp,,,TODO,,,
-gameui,1003EB8A,361,,,UNKNOWN,GameUI/Taskbar.cpp,,,TODO,,,
-gameui,1003ECF3,204,,CTaskbar::OnOpenCareerProfileFrame,ENGINE,GameUI/Taskbar.cpp,,,TODO,,linux_symbols:caller:0.697,linux: _ZN8CTaskbar24OnOpenCareerProfileFrameEv
-gameui,1003EDBF,152,,,UNKNOWN,GameUI/Taskbar.cpp,,,TODO,,,linux: _ZN8CTaskbar21OnOpenCareerMapDialogEb
-gameui,1003EE57,150,,CTaskbar::OnOpenCareerBotDialog,ENGINE,GameUI/Taskbar.cpp,,,TODO,,linux_symbols:caller:0.708,linux: _ZN8CTaskbar21OnOpenCareerBotDialogEv
-gameui,1003EEED,361,,,UNKNOWN,GameUI/Taskbar.cpp,,,TODO,,,linux: _ZN8CTaskbar28OnOpenCreateCareerGameDialogEv
-gameui,1003F056,150,,,UNKNOWN,GameUI/Taskbar.cpp,,,TODO,,,linux: _ZN8CTaskbar22OnOpenChangeGameDialogEv
-gameui,1003F0EC,150,,CTaskbar::OnOpenPlayerListDialog,ENGINE,GameUI/Taskbar.cpp,,,TODO,,linux_symbols:caller:0.708,linux: _ZN8CTaskbar22OnOpenPlayerListDialogEv
-gameui,1003F182,139,,,UNKNOWN,GameUI/Taskbar.cpp,,,TODO,,,linux: _ZN8CTaskbar14PositionDialogEN5vgui27PHandleE
-gameui,1003F20D,27,,,UNKNOWN,GameUI/Taskbar.cpp,,,TODO,,,linux: _ZN8CTaskbar14ActivateGameUIEv
-gameui,1003F230,46,,,UNKNOWN,GameUI/Taskbar.cpp,,,TODO,,,
-gameui,1003F260,19,,,UNKNOWN,GameUI/Taskbar.cpp,,,TODO,,,
-gameui,1003F280,46,,,UNKNOWN,GameUI/Taskbar.cpp,,,TODO,,,
-gameui,1003F2B0,74,,,UNKNOWN,GameUI/Taskbar.cpp,,,TODO,,,
-gameui,1003F300,185,,CGameMenu::ApplySchemeSettings,ENGINE,GameUI/Taskbar.cpp,,,TODO,,linux_symbols:string:0.75,
-gameui,1003F3C0,11,,,UNKNOWN,GameUI/Taskbar.cpp,,,TODO,,,
-gameui,1003F3D0,67,,,UNKNOWN,GameUI/Taskbar.cpp,,,TODO,,,
-gameui,1003F420,149,,,UNKNOWN,GameUI/Taskbar.cpp,,,TODO,,,
-gameui,1003F4C0,70,,,UNKNOWN,GameUI/Taskbar.cpp,,,TODO,,,
-gameui,1003F510,520,,CGameMenuItem::ApplySchemeSettings,ENGINE,GameUI/Taskbar.cpp,,,TODO,,linux_symbols:string:0.794,
-gameui,1003F720,46,,,UNKNOWN,GameUI/Taskbar.cpp,,,TODO,,,
-gameui,1003F750,19,,,UNKNOWN,GameUI/Taskbar.cpp,,,TODO,,,
-gameui,1003F770,159,,,UNKNOWN,GameUI/Taskbar.cpp,,,TODO,,,
-gameui,1003F810,25,,,UNKNOWN,GameUI/Taskbar.cpp,,,TODO,,,
-gameui,1003F830,336,,,UNKNOWN,GameUI/Taskbar.cpp,,,TODO,,,
-gameui,1003F980,83,,,UNKNOWN,GameUI/Taskbar.cpp,,,TODO,,,
-gameui,1003F9E0,21,,,UNKNOWN,GameUI/Taskbar.cpp,,,TODO,,,
-gameui,1003FA00,54,,,UNKNOWN,GameUI/Taskbar.cpp,,,TODO,,,
-gameui,1003FA40,46,,,UNKNOWN,GameUI/Taskbar.cpp,,,TODO,,,
-gameui,1003FA70,19,,,UNKNOWN,GameUI/Taskbar.cpp,,,TODO,,,
-gameui,1003FA90,475,,CTaskbar::UpdateGameMenus,ENGINE,GameUI/Taskbar.cpp,,,TODO,,linux_symbols:string:0.5,
-gameui,1003FC70,19,,,UNKNOWN,GameUI/Taskbar.cpp,,,TODO,,,
-gameui,1003FC90,19,,,UNKNOWN,GameUI/Taskbar.cpp,,,TODO,,,
-gameui,1003FCB0,25,,,UNKNOWN,GameUI/Taskbar.cpp,,,TODO,,,
-gameui,1003FCD0,19,,,UNKNOWN,GameUI/Taskbar.cpp,,,TODO,,,
-gameui,1003FCF0,102,,,UNKNOWN,GameUI/Taskbar.cpp,,,TODO,,,
-gameui,1003FD60,64,,,UNKNOWN,GameUI/Taskbar.cpp,,,TODO,,,
-gameui,1003FDA0,10,,,UNKNOWN,GameUI/Taskbar.cpp,,,TODO,,,
-gameui,1003FDB0,10,,,UNKNOWN,GameUI/Taskbar.cpp,,,TODO,,,
-gameui,1003FDC0,19,,,UNKNOWN,GameUI/Taskbar.cpp,,,TODO,,,
-gameui,1003FDE0,110,,,UNKNOWN,GameUI/Taskbar.cpp,,,TODO,,,
-gameui,1003FE50,120,,,UNKNOWN,GameUI/Taskbar.cpp,,,TODO,,,
-gameui,1003FED0,19,,,UNKNOWN,GameUI/Taskbar.cpp,,,TODO,,,
-gameui,1003FEF0,107,,,UNKNOWN,GameUI/Taskbar.cpp,,,TODO,,,
-gameui,1003FF60,50,,,UNKNOWN,GameUI/Taskbar.cpp,,,TODO,,,
-gameui,1003FFA0,27,,,UNKNOWN,GameUI/Taskbar.cpp,,,TODO,,,
-gameui,1003FFC0,25,,,UNKNOWN,GameUI/Taskbar.cpp,,,TODO,,,
-gameui,1003FFE0,17,,,UNKNOWN,GameUI/Taskbar.cpp,,,TODO,,,
-gameui,10040000,63,,,UNKNOWN,GameUI/Taskbar.cpp,,,TODO,,,
-gameui,10040040,25,,,UNKNOWN,GameUI/Taskbar.cpp,,,TODO,,,
-gameui,10040060,35,,,UNKNOWN,GameUI/Taskbar.cpp,,,TODO,,,
-gameui,10040090,86,,,UNKNOWN,GameUI/Taskbar.cpp,,,TODO,,,
-gameui,100400F0,11,,,UNKNOWN,GameUI/Taskbar.cpp,,,TODO,,,
-gameui,10040100,75,,,UNKNOWN,GameUI/Taskbar.cpp,,,TODO,,,
-gameui,10040150,19,,,UNKNOWN,GameUI/Taskbar.cpp,,,TODO,,,
-gameui,10040170,24,,,UNKNOWN,GameUI/Taskbar.cpp,,,TODO,,,
-gameui,10040190,5,,,UNKNOWN,GameUI/Taskbar.cpp,,,TODO,,,
-gameui,100401A0,70,,,UNKNOWN,GameUI/Taskbar.cpp,,,TODO,,,
-gameui,100401F0,69,,,UNKNOWN,GameUI/Taskbar.cpp,,,TODO,,,
-gameui,10040240,25,,,UNKNOWN,GameUI/Taskbar.cpp,,,TODO,,,
-gameui,10040260,66,,,UNKNOWN,GameUI/Taskbar.cpp,,,TODO,,,
-gameui,100402B0,64,,,UNKNOWN,GameUI/Taskbar.cpp,,,TODO,,,
-gameui,100402F0,10,,,UNKNOWN,GameUI/Taskbar.cpp,,,TODO,,,
+gameui,1003CCF0,45,??0CareerQueryBox@@QAE@PBD0PAVPanel@vgui2@@@Z,"public: __thiscall CareerQueryBox::CareerQueryBox(char const *,char const *,class vgui2::Panel *)",UNKNOWN,GameUI/Taskbar.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1003CD1D,139,?ApplySchemeSettings@CareerQueryBox@@UAEXPAVIScheme@vgui2@@@Z,public: virtual void __thiscall CareerQueryBox::ApplySchemeSettings(class vgui2::IScheme *),UNKNOWN,GameUI/Taskbar.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1003CDA8,632,??0CTaskbar@@QAE@PAVPanel@vgui2@@PBD@Z,"public: __thiscall CTaskbar::CTaskbar(class vgui2::Panel *,char const *)",ENGINE,GameUI/Taskbar.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1003D020,47,??1CTaskbar@@UAE@XZ,public: virtual __thiscall CTaskbar::~CTaskbar(void),UNKNOWN,GameUI/Taskbar.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1003D04F,264,?CreatePlatformMenu@CTaskbar@@AAEXXZ,private: void __thiscall CTaskbar::CreatePlatformMenu(void),ENGINE,GameUI/Taskbar.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN8CTaskbar18CreatePlatformMenuEv
+gameui,1003D157,128,?CreateGameMenu@CTaskbar@@AAEXXZ,private: void __thiscall CTaskbar::CreateGameMenu(void),UNKNOWN,GameUI/Taskbar.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN8CTaskbar14CreateGameMenuEv
+gameui,1003D1D7,724,?UpdateGameMenus@CTaskbar@@AAEXXZ,private: void __thiscall CTaskbar::UpdateGameMenus(void),UNKNOWN,GameUI/Taskbar.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN8CTaskbar15UpdateGameMenusEv
+gameui,1003D4AB,889,?UpdateTaskButtons@CTaskbar@@AAEXXZ,private: void __thiscall CTaskbar::UpdateTaskButtons(void),UNKNOWN,GameUI/Taskbar.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN8CTaskbar17UpdateTaskButtonsEv
+gameui,1003D824,221,?RecursiveLoadGameMenu@CTaskbar@@AAEPAVCGameMenu@@PAVKeyValues@@@Z,private: class CGameMenu * __thiscall CTaskbar::RecursiveLoadGameMenu(class KeyValues *),UNKNOWN,GameUI/Taskbar.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN8CTaskbar21RecursiveLoadGameMenuEP9KeyValues
+gameui,1003D901,183,?RunFrame@CTaskbar@@QAEXXZ,public: void __thiscall CTaskbar::RunFrame(void),ENGINE,GameUI/Taskbar.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN8CTaskbar8RunFrameEv
+gameui,1003D9B8,48,?SetTitle@CTaskbar@@QAEXIPBG@Z,"public: void __thiscall CTaskbar::SetTitle(unsigned int,unsigned short const *)",UNKNOWN,GameUI/Taskbar.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN8CTaskbar8SetTitleEjPKw
+gameui,1003D9E8,319,?PerformLayout@CTaskbar@@EAEXXZ,private: virtual void __thiscall CTaskbar::PerformLayout(void),UNKNOWN,GameUI/Taskbar.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN8CTaskbar13PerformLayoutEv
+gameui,1003DB27,275,?ApplySchemeSettings@CTaskbar@@EAEXPAVIScheme@vgui2@@@Z,private: virtual void __thiscall CTaskbar::ApplySchemeSettings(class vgui2::IScheme *),ENGINE,GameUI/Taskbar.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN8CTaskbar19ApplySchemeSettingsEPN5vgui27ISchemeE
+gameui,1003DC3A,15,?AddTask@CTaskbar@@QAEXI@Z,public: void __thiscall CTaskbar::AddTask(unsigned int),UNKNOWN,GameUI/Taskbar.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN8CTaskbar7AddTaskEj
+gameui,1003DC49,108,?FindTask@CTaskbar@@AAEPAVCTaskButton@@I@Z,private: class CTaskButton * __thiscall CTaskbar::FindTask(unsigned int),UNKNOWN,GameUI/Taskbar.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN8CTaskbar8FindTaskEj
+gameui,1003DCB5,27,?OnActivateModule@CTaskbar@@EAEXH@Z,private: virtual void __thiscall CTaskbar::OnActivateModule(int),UNKNOWN,GameUI/Taskbar.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN8CTaskbar16OnActivateModuleEi
+gameui,1003DCD0,63,?OnGameUIActivated@CTaskbar@@QAEXXZ,CTaskbar::OnGameUIActivated,ENGINE,GameUI/Taskbar.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN8CTaskbar17OnGameUIActivatedEv
+gameui,1003DD0F,2276,?OnCommand@CTaskbar@@EAEXPBD@Z,private: virtual void __thiscall CTaskbar::OnCommand(char const *),ENGINE,GameUI/Taskbar.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN8CTaskbar9OnCommandEPKc
+gameui,1003E5F3,293,?OnOpenQuitConfirmationDialog@CTaskbar@@QAEXXZ,public: void __thiscall CTaskbar::OnOpenQuitConfirmationDialog(void),ENGINE,GameUI/Taskbar.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN8CTaskbar28OnOpenQuitConfirmationDialogEv
+gameui,1003E718,150,?OnOpenNewGameDialog@CTaskbar@@QAEXXZ,public: void __thiscall CTaskbar::OnOpenNewGameDialog(void),ENGINE,GameUI/Taskbar.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN8CTaskbar19OnOpenNewGameDialogEv
+gameui,1003E7AE,150,?OnOpenLoadGameDialog@CTaskbar@@QAEXXZ,public: void __thiscall CTaskbar::OnOpenLoadGameDialog(void),ENGINE,GameUI/Taskbar.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN8CTaskbar20OnOpenLoadGameDialogEv
+gameui,1003E844,150,?OnOpenSaveGameDialog@CTaskbar@@QAEXXZ,public: void __thiscall CTaskbar::OnOpenSaveGameDialog(void),ENGINE,GameUI/Taskbar.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN8CTaskbar20OnOpenSaveGameDialogEv
+gameui,1003E8DA,150,?OnOpenOptionsDialog@CTaskbar@@QAEXXZ,public: void __thiscall CTaskbar::OnOpenOptionsDialog(void),ENGINE,GameUI/Taskbar.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN8CTaskbar19OnOpenOptionsDialogEv
+gameui,1003E970,26,?OnOpenServerBrowser@CTaskbar@@QAEXXZ,public: void __thiscall CTaskbar::OnOpenServerBrowser(void),UNKNOWN,GameUI/Taskbar.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN8CTaskbar19OnOpenServerBrowserEv
+gameui,1003E98A,152,?OnOpenDemoDialog@CTaskbar@@QAEXXZ,public: void __thiscall CTaskbar::OnOpenDemoDialog(void),UNKNOWN,GameUI/Taskbar.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN8CTaskbar16OnOpenDemoDialogEv
+gameui,1003EA22,150,?OnOpenCreateMultiplayerGameDialog@CTaskbar@@QAEXXZ,public: void __thiscall CTaskbar::OnOpenCreateMultiplayerGameDialog(void),ENGINE,GameUI/Taskbar.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN8CTaskbar33OnOpenCreateMultiplayerGameDialogEv
+gameui,1003EAB8,210,?OnOpenResumeCareerGameDialog@CTaskbar@@QAEPAVFrame@vgui2@@W4CareerDifficultyType@@@Z,public: class vgui2::Frame * __thiscall CTaskbar::OnOpenResumeCareerGameDialog(enum CareerDifficultyType),UNKNOWN,GameUI/Taskbar.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1003EB8A,361,?OnOpenNewCareerNameDialog@CTaskbar@@QAEXXZ,public: void __thiscall CTaskbar::OnOpenNewCareerNameDialog(void),UNKNOWN,GameUI/Taskbar.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1003ECF3,204,?OnOpenCareerProfileFrame@CTaskbar@@QAEXXZ,public: void __thiscall CTaskbar::OnOpenCareerProfileFrame(void),ENGINE,GameUI/Taskbar.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN8CTaskbar24OnOpenCareerProfileFrameEv
+gameui,1003EDBF,152,?OnOpenCareerMapDialog@CTaskbar@@QAEX_N@Z,public: void __thiscall CTaskbar::OnOpenCareerMapDialog(bool),UNKNOWN,GameUI/Taskbar.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN8CTaskbar21OnOpenCareerMapDialogEb
+gameui,1003EE57,150,?OnOpenCareerBotDialog@CTaskbar@@QAEXXZ,public: void __thiscall CTaskbar::OnOpenCareerBotDialog(void),ENGINE,GameUI/Taskbar.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN8CTaskbar21OnOpenCareerBotDialogEv
+gameui,1003EEED,361,?OnOpenCreateCareerGameDialog@CTaskbar@@QAEXXZ,public: void __thiscall CTaskbar::OnOpenCreateCareerGameDialog(void),UNKNOWN,GameUI/Taskbar.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN8CTaskbar28OnOpenCreateCareerGameDialogEv
+gameui,1003F056,150,?OnOpenChangeGameDialog@CTaskbar@@QAEXXZ,public: void __thiscall CTaskbar::OnOpenChangeGameDialog(void),UNKNOWN,GameUI/Taskbar.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN8CTaskbar22OnOpenChangeGameDialogEv
+gameui,1003F0EC,150,?OnOpenPlayerListDialog@CTaskbar@@QAEXXZ,public: void __thiscall CTaskbar::OnOpenPlayerListDialog(void),ENGINE,GameUI/Taskbar.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN8CTaskbar22OnOpenPlayerListDialogEv
+gameui,1003F182,139,?PositionDialog@CTaskbar@@QAEXVPHandle@vgui2@@@Z,public: void __thiscall CTaskbar::PositionDialog(class vgui2::PHandle),UNKNOWN,GameUI/Taskbar.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN8CTaskbar14PositionDialogEN5vgui27PHandleE
+gameui,1003F20D,27,?ActivateGameUI@CTaskbar@@EAEXXZ,private: virtual void __thiscall CTaskbar::ActivateGameUI(void),UNKNOWN,GameUI/Taskbar.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN8CTaskbar14ActivateGameUIEv
+gameui,1003F230,46,??_GCareerQueryBox@@UAEPAXI@Z,public: virtual void * __thiscall CareerQueryBox::`scalar deleting destructor'(unsigned int),UNKNOWN,GameUI/Taskbar.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1003F260,19,??1CareerQueryBox@@UAE@XZ,public: virtual __thiscall CareerQueryBox::~CareerQueryBox(void),UNKNOWN,GameUI/Taskbar.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1003F280,46,??_GCTaskbar@@UAEPAXI@Z,public: virtual void * __thiscall CTaskbar::`scalar deleting destructor'(unsigned int),UNKNOWN,GameUI/Taskbar.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1003F2B0,74,??0CGameMenu@@QAE@PAVPanel@vgui2@@PBD@Z,"public: __thiscall CGameMenu::CGameMenu(class vgui2::Panel *,char const *)",UNKNOWN,GameUI/Taskbar.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1003F300,185,?ApplySchemeSettings@CGameMenu@@UAEXPAVIScheme@vgui2@@@Z,public: virtual void __thiscall CGameMenu::ApplySchemeSettings(class vgui2::IScheme *),ENGINE,GameUI/Taskbar.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1003F3C0,11,?LayoutMenuBorder@CGameMenu@@UAEXXZ,public: virtual void __thiscall CGameMenu::LayoutMenuBorder(void),UNKNOWN,GameUI/Taskbar.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1003F3D0,67,?SetVisible@CGameMenu@@UAEX_N@Z,public: virtual void __thiscall CGameMenu::SetVisible(bool),UNKNOWN,GameUI/Taskbar.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1003F420,149,?AddMenuItem@CGameMenu@@UAEHPBD00PAVPanel@vgui2@@PAVKeyValues@@@Z,"public: virtual int __thiscall CGameMenu::AddMenuItem(char const *,char const *,char const *,class vgui2::Panel *,class KeyValues *)",UNKNOWN,GameUI/Taskbar.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1003F4C0,70,??0CGameMenuItem@@QAE@PAVMenu@vgui2@@PBD@Z,"public: __thiscall CGameMenuItem::CGameMenuItem(class vgui2::Menu *,char const *)",UNKNOWN,GameUI/Taskbar.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1003F510,520,?ApplySchemeSettings@CGameMenuItem@@UAEXPAVIScheme@vgui2@@@Z,public: virtual void __thiscall CGameMenuItem::ApplySchemeSettings(class vgui2::IScheme *),ENGINE,GameUI/Taskbar.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1003F720,46,??_GCGameMenuItem@@UAEPAXI@Z,public: virtual void * __thiscall CGameMenuItem::`scalar deleting destructor'(unsigned int),UNKNOWN,GameUI/Taskbar.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1003F750,19,??1CGameMenuItem@@UAE@XZ,public: virtual __thiscall CGameMenuItem::~CGameMenuItem(void),UNKNOWN,GameUI/Taskbar.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1003F770,159,?AddMenuItem@CGameMenu@@UAEHPBD0PAVKeyValues@@PAVPanel@vgui2@@1@Z,"public: virtual int __thiscall CGameMenu::AddMenuItem(char const *,char const *,class KeyValues *,class vgui2::Panel *,class KeyValues *)",UNKNOWN,GameUI/Taskbar.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1003F810,25,?SetRightAlignedText_guess@CGameMenuItem@@QAEX_N@Z,public: void __thiscall CGameMenuItem::SetRightAlignedText_guess(bool),UNKNOWN,GameUI/Taskbar.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1003F830,336,?OnThink@CGameMenu@@UAEXXZ,public: virtual void __thiscall CGameMenu::OnThink(void),UNKNOWN,GameUI/Taskbar.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1003F980,83,?OnCommand@CGameMenu@@UAEXPBD@Z,public: virtual void __thiscall CGameMenu::OnCommand(char const *),UNKNOWN,GameUI/Taskbar.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1003F9E0,21,?RestartListUpdate_guess@CGameMenu@@QAEXXZ,public: void __thiscall CGameMenu::RestartListUpdate_guess(void),UNKNOWN,GameUI/Taskbar.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1003FA00,54,?OnKillFocus@CGameMenu@@UAEXXZ,public: virtual void __thiscall CGameMenu::OnKillFocus(void),UNKNOWN,GameUI/Taskbar.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1003FA40,46,??_GCGameMenu@@UAEPAXI@Z,public: virtual void * __thiscall CGameMenu::`scalar deleting destructor'(unsigned int),UNKNOWN,GameUI/Taskbar.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1003FA70,19,??1CGameMenu@@UAE@XZ,public: virtual __thiscall CGameMenu::~CGameMenu(void),UNKNOWN,GameUI/Taskbar.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1003FA90,475,?UpdateMenuItemState_guess@CGameMenu@@QAEX_N00@Z,"public: void __thiscall CGameMenu::UpdateMenuItemState_guess(bool,bool,bool)",ENGINE,GameUI/Taskbar.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1003FC70,19,??CPHandle@vgui2@@QAEPAVPanel@1@XZ,public: class vgui2::Panel * __thiscall vgui2::PHandle::operator->(void),UNKNOWN,GameUI/Taskbar.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1003FC90,19,??B?$DHANDLE@VFrame@vgui2@@@vgui2@@QAEPAVFrame@1@XZ,public: __thiscall vgui2::DHANDLE<class vgui2::Frame>::operator class vgui2::Frame *(void),UNKNOWN,GameUI/Taskbar.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1003FCB0,25,??B?$DHANDLE@VFrame@vgui2@@@vgui2@@QAE_NXZ,public: __thiscall vgui2::DHANDLE<class vgui2::Frame>::operator bool(void),UNKNOWN,GameUI/Taskbar.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1003FCD0,19,??0CTaskbar_RegisterMap@CTaskbar@@QAE@XZ,public: __thiscall CTaskbar::CTaskbar_RegisterMap::CTaskbar_RegisterMap(void),UNKNOWN,GameUI/Taskbar.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1003FCF0,102,?ChainToMap@CTaskbar@@SAXXZ,public: static void __cdecl CTaskbar::ChainToMap(void),UNKNOWN,GameUI/Taskbar.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1003FD60,64,?GetMessageMap@CTaskbar@@UAEPAUPanelMessageMap@vgui2@@XZ,public: virtual struct vgui2::PanelMessageMap * __thiscall CTaskbar::GetMessageMap(void),UNKNOWN,GameUI/Taskbar.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1003FDA0,10,?GetPanelClassName@CTaskbar@@SAPBDXZ,public: static char const * __cdecl CTaskbar::GetPanelClassName(void),UNKNOWN,GameUI/Taskbar.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1003FDB0,10,?GetPanelBaseClassName@CTaskbar@@SAPBDXZ,public: static char const * __cdecl CTaskbar::GetPanelBaseClassName(void),UNKNOWN,GameUI/Taskbar.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1003FDC0,19,??0PanelMessageFunc_OnActivateModule@CTaskbar@@QAE@XZ,public: __thiscall CTaskbar::PanelMessageFunc_OnActivateModule::PanelMessageFunc_OnActivateModule(void),UNKNOWN,GameUI/Taskbar.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1003FDE0,110,?InitVar@PanelMessageFunc_OnActivateModule@CTaskbar@@SAXXZ,public: static void __cdecl CTaskbar::PanelMessageFunc_OnActivateModule::InitVar(void),UNKNOWN,GameUI/Taskbar.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1003FE50,120,?AddToMap@CTaskbar@@SAXPBDP8Panel@vgui2@@AEXXZHH0H0@Z,"public: static void __cdecl CTaskbar::AddToMap(char const *,void (__thiscall vgui2::Panel::*)(void),int,int,char const *,int,char const *)",UNKNOWN,GameUI/Taskbar.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1003FED0,19,??0PanelMessageFunc_ActivateGameUI@CTaskbar@@QAE@XZ,public: __thiscall CTaskbar::PanelMessageFunc_ActivateGameUI::PanelMessageFunc_ActivateGameUI(void),UNKNOWN,GameUI/Taskbar.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1003FEF0,107,?InitVar@PanelMessageFunc_ActivateGameUI@CTaskbar@@SAXXZ,public: static void __cdecl CTaskbar::PanelMessageFunc_ActivateGameUI::InitVar(void),UNKNOWN,GameUI/Taskbar.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1003FF60,50,??0?$CUtlVector@PAVCTaskButton@@@@QAE@HH@Z,"public: __thiscall CUtlVector<class CTaskButton *>::CUtlVector<class CTaskButton *>(int,int)",UNKNOWN,GameUI/Taskbar.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1003FFA0,27,??1?$CUtlVector@PAVCTaskButton@@@@QAE@XZ,public: __thiscall CUtlVector<class CTaskButton *>::~CUtlVector<class CTaskButton *>(void),UNKNOWN,GameUI/Taskbar.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1003FFC0,25,??A?$CUtlVector@PAVCTaskButton@@@@QAEAAPAVCTaskButton@@H@Z,public: class CTaskButton * & __thiscall CUtlVector<class CTaskButton *>::operator[](int),UNKNOWN,GameUI/Taskbar.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1003FFE0,17,?Count@?$CUtlVector@PAVCTaskButton@@@@QBEHXZ,public: int __thiscall CUtlVector<class CTaskButton *>::Count(void)const ,UNKNOWN,GameUI/Taskbar.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10040000,63,?Remove@?$CUtlVector@PAVCTaskButton@@@@QAEXH@Z,public: void __thiscall CUtlVector<class CTaskButton *>::Remove(int),UNKNOWN,GameUI/Taskbar.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10040040,25,?Element@?$CUtlVector@PAVCTaskButton@@@@QAEAAPAVCTaskButton@@H@Z,public: class CTaskButton * & __thiscall CUtlVector<class CTaskButton *>::Element(int),UNKNOWN,GameUI/Taskbar.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10040060,35,?Purge@?$CUtlVector@PAVCTaskButton@@@@QAEXXZ,public: void __thiscall CUtlVector<class CTaskButton *>::Purge(void),UNKNOWN,GameUI/Taskbar.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10040090,86,?ShiftElementsLeft@?$CUtlVector@PAVCTaskButton@@@@IAEXHH@Z,"protected: void __thiscall CUtlVector<class CTaskButton *>::ShiftElementsLeft(int,int)",UNKNOWN,GameUI/Taskbar.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100400F0,11,?ResetDbgInfo@?$CUtlVector@PAVCTaskButton@@@@IAEXXZ,protected: void __thiscall CUtlVector<class CTaskButton *>::ResetDbgInfo(void),UNKNOWN,GameUI/Taskbar.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10040100,75,??0?$CUtlMemory@PAVCTaskButton@@@@QAE@HH@Z,"public: __thiscall CUtlMemory<class CTaskButton *>::CUtlMemory<class CTaskButton *>(int,int)",UNKNOWN,GameUI/Taskbar.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10040150,19,??1?$CUtlMemory@PAVCTaskButton@@@@QAE@XZ,public: __thiscall CUtlMemory<class CTaskButton *>::~CUtlMemory<class CTaskButton *>(void),UNKNOWN,GameUI/Taskbar.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10040170,24,??A?$CUtlMemory@PAVCTaskButton@@@@QAEAAPAVCTaskButton@@H@Z,public: class CTaskButton * & __thiscall CUtlMemory<class CTaskButton *>::operator[](int),UNKNOWN,GameUI/Taskbar.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10040190,5,?Destruct@@YAXPAPAVCTaskButton@@@Z,void __cdecl Destruct(class CTaskButton * *),UNKNOWN,GameUI/Taskbar.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100401A0,70,?RemoveAll@?$CUtlVector@PAVCTaskButton@@@@QAEXXZ,public: void __thiscall CUtlVector<class CTaskButton *>::RemoveAll(void),UNKNOWN,GameUI/Taskbar.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100401F0,69,?Purge@?$CUtlMemory@PAVCTaskButton@@@@QAEXXZ,public: void __thiscall CUtlMemory<class CTaskButton *>::Purge(void),UNKNOWN,GameUI/Taskbar.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10040240,25,?IsExternallyAllocated@?$CUtlMemory@PAVCTaskButton@@@@QBE_NXZ,public: bool __thiscall CUtlMemory<class CTaskButton *>::IsExternallyAllocated(void)const ,UNKNOWN,GameUI/Taskbar.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10040260,66,?SetImages@CBackgroundMenuButton@@QAEXPAVIImage@vgui2@@0@Z,"public: void __thiscall CBackgroundMenuButton::SetImages(class vgui2::IImage *,class vgui2::IImage *)",UNKNOWN,GameUI/Taskbar.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100402B0,64,?GetMessageMap@Menu@vgui2@@UAEPAUPanelMessageMap@2@XZ,public: virtual struct vgui2::PanelMessageMap * __thiscall vgui2::Menu::GetMessageMap(void),UNKNOWN,GameUI/Taskbar.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100402F0,10,?GetPanelClassName@Menu@vgui2@@SAPBDXZ,public: static char const * __cdecl vgui2::Menu::GetPanelClassName(void),UNKNOWN,GameUI/Taskbar.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,10040300,64,?GetMessageMap@MenuItem@vgui2@@UAEPAUPanelMessageMap@2@XZ,vgui2::MenuItem::GetMessageMap,UNKNOWN,vgui2/controls/MenuItem.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,10040340,10,?GetPanelClassName@MenuItem@vgui2@@SAPBDXZ,vgui2::MenuItem::GetPanelClassName,UNKNOWN,vgui2/controls/MenuItem.cpp,,,MATCHED,100,gameui_manual.csv,
-gameui,10040350,64,,,UNKNOWN,GameUI/Taskbar.cpp,,,TODO,,,
-gameui,10040390,10,,,UNKNOWN,GameUI/Taskbar.cpp,,,TODO,,,
+gameui,10040350,64,?GetMessageMap@QueryBox@vgui2@@UAEPAUPanelMessageMap@2@XZ,public: virtual struct vgui2::PanelMessageMap * __thiscall vgui2::QueryBox::GetMessageMap(void),UNKNOWN,GameUI/Taskbar.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10040390,10,?GetPanelClassName@QueryBox@vgui2@@SAPBDXZ,public: static char const * __cdecl vgui2::QueryBox::GetPanelClassName(void),UNKNOWN,GameUI/Taskbar.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,100403C0,176,??0CTaskButton@@QAE@PAVPanel@vgui2@@I@Z,"public: __thiscall CTaskButton::CTaskButton(class vgui2::Panel *,unsigned int)",UNKNOWN,GameUI/TaskButton.cpp,,,MATCHED,100,,linux: _ZN11CTaskButtonC1EPN5vgui25PanelEj
 gameui,10040470,42,??1CTaskButton@@UAE@XZ,public: virtual __thiscall CTaskButton::~CTaskButton(void),UNKNOWN,GameUI/TaskButton.cpp,,,MATCHED,100,,linux: _ZN11CTaskButtonD2Ev
 gameui,1004049A,59,?SetTitle@CTaskButton@@QAEXPBG@Z,public: void __thiscall CTaskButton::SetTitle(unsigned short const *),UNKNOWN,GameUI/TaskButton.cpp,,,MATCHED,100,,linux: _ZN11CTaskButton8SetTitleEPKw
