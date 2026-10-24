@@ -4046,3 +4046,30 @@ va,name,kind,evidence
 1008C590,?InitVar@PanelMessageFunc_OnPageHide@PropertyPage@vgui2@@SAXXZ,func,"vgui2/controls/PropertyPage.cpp: same position and size as in our compiled object (gameui.so DWARF line order, message map strings)"
 1008C600,??0PanelMessageFunc_OnPageTabActivated@PropertyPage@vgui2@@QAE@XZ,func,"vgui2/controls/PropertyPage.cpp: same position and size as in our compiled object (gameui.so DWARF line order, message map strings)"
 1008C620,?InitVar@PanelMessageFunc_OnPageTabActivated@PropertyPage@vgui2@@SAXXZ,func,"vgui2/controls/PropertyPage.cpp: same position and size as in our compiled object (gameui.so DWARF line order, message map strings)"
+10056A40,??0COptionsSubVideo@@QAE@PAVPanel@vgui2@@@Z,func,GameUI/OptionsSubVideo.cpp: same position and size as in our compiled object; linux: _ZN16COptionsSubVideoC2EPN5vgui25PanelE
+10056DE8,?PrepareResolutionList@COptionsSubVideo@@AAEXXZ,func,GameUI/OptionsSubVideo.cpp: same position and size as in our compiled object; linux: _ZN16COptionsSubVideo21PrepareResolutionListEv
+10056FE1,??1COptionsSubVideo@@UAE@XZ,func,GameUI/OptionsSubVideo.cpp: same position and size as in our compiled object; linux: _ZN16COptionsSubVideoD1Ev
+10056FFD,?OnResetData@COptionsSubVideo@@UAEXXZ,func,GameUI/OptionsSubVideo.cpp: same position and size as in our compiled object; linux: _ZN16COptionsSubVideo11OnResetDataEv
+1005703C,?SetCurrentRendererComboItem@COptionsSubVideo@@AAEXXZ,func,GameUI/OptionsSubVideo.cpp: same position and size as in our compiled object; linux: _ZN16COptionsSubVideo27SetCurrentRendererComboItemEv
+1005709A,?SetCurrentResolutionComboItem@COptionsSubVideo@@AAEXXZ,func,GameUI/OptionsSubVideo.cpp: same position and size as in our compiled object; linux: _ZN16COptionsSubVideo29SetCurrentResolutionComboItemEv
+1005717D,?OnApplyChanges@COptionsSubVideo@@UAEXXZ,func,GameUI/OptionsSubVideo.cpp: same position and size as in our compiled object; linux: _ZN16COptionsSubVideo14OnApplyChangesEv
+100571F6,?GetVidSettings@COptionsSubVideo@@AAEXXZ,func,GameUI/OptionsSubVideo.cpp: same position and size as in our compiled object; linux: _ZN16COptionsSubVideo14GetVidSettingsEv
+10057281,?RevertVidSettings@COptionsSubVideo@@AAEXXZ,func,GameUI/OptionsSubVideo.cpp: same position and size as in our compiled object; linux: _ZN16COptionsSubVideo17RevertVidSettingsEv
+100572A9,?ApplyVidSettings@COptionsSubVideo@@AAEX_N@Z,func,GameUI/OptionsSubVideo.cpp: same position and size as in our compiled object; linux: _ZN16COptionsSubVideo16ApplyVidSettingsEb
+100574AE,?OnButtonChecked@COptionsSubVideo@@EAEXPAVKeyValues@@@Z,func,GameUI/OptionsSubVideo.cpp: same position and size as in our compiled object; linux: _ZN16COptionsSubVideo15OnButtonCheckedEP9KeyValues
+100574E7,?OnTextChanged@COptionsSubVideo@@EAEXPAVPanel@vgui2@@PBD@Z,func,GameUI/OptionsSubVideo.cpp: same position and size as in our compiled object; linux: _ZN16COptionsSubVideo13OnTextChangedEPN5vgui25PanelEPKc
+10057671,?OnDataChanged@COptionsSubVideo@@EAEXXZ,func,GameUI/OptionsSubVideo.cpp: same position and size as in our compiled object; linux: _ZN16COptionsSubVideo13OnDataChangedEv
+100576C0,??0COptionsSubVideo_RegisterMap@COptionsSubVideo@@QAE@XZ,func,GameUI/OptionsSubVideo.cpp: same position and size as in our compiled object
+100576E0,?ChainToMap@COptionsSubVideo@@SAXXZ,func,GameUI/OptionsSubVideo.cpp: same position and size as in our compiled object
+10057750,?GetMessageMap@COptionsSubVideo@@UAEPAUPanelMessageMap@vgui2@@XZ,func,GameUI/OptionsSubVideo.cpp: same position and size as in our compiled object
+10057790,?GetPanelClassName@COptionsSubVideo@@SAPBDXZ,func,GameUI/OptionsSubVideo.cpp: same position and size as in our compiled object
+100577A0,?GetPanelBaseClassName@COptionsSubVideo@@SAPBDXZ,func,GameUI/OptionsSubVideo.cpp: same position and size as in our compiled object
+100577B0,??0PanelMessageFunc_OnDataChanged@COptionsSubVideo@@QAE@XZ,func,GameUI/OptionsSubVideo.cpp: same position and size as in our compiled object
+100577D0,?InitVar@PanelMessageFunc_OnDataChanged@COptionsSubVideo@@SAXXZ,func,GameUI/OptionsSubVideo.cpp: same position and size as in our compiled object
+10057840,?AddToMap@COptionsSubVideo@@SAXPBDP8Panel@vgui2@@AEXXZHH0H0@Z,func,GameUI/OptionsSubVideo.cpp: same position and size as in our compiled object
+100578C0,??0PanelMessageFunc_OnButtonChecked@COptionsSubVideo@@QAE@XZ,func,GameUI/OptionsSubVideo.cpp: same position and size as in our compiled object
+100578E0,?InitVar@PanelMessageFunc_OnButtonChecked@COptionsSubVideo@@SAXXZ,func,GameUI/OptionsSubVideo.cpp: same position and size as in our compiled object
+10057950,??0PanelMessageFunc_OnTextChanged@COptionsSubVideo@@QAE@XZ,func,GameUI/OptionsSubVideo.cpp: same position and size as in our compiled object
+10057970,?InitVar@PanelMessageFunc_OnTextChanged@COptionsSubVideo@@SAXXZ,func,GameUI/OptionsSubVideo.cpp: same position and size as in our compiled object
+100579F0,?IsWideScreen@@YA_NHH@Z,func,GameUI/OptionsSubVideo.cpp: same position and size as in our compiled object
+10057A40,??_GCOptionsSubVideo@@UAEPAXI@Z,func,GameUI/OptionsSubVideo.cpp: same position and size as in our compiled object

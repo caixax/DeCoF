@@ -3898,6 +3898,11 @@
           "name": "vgui2/controls/PropertyPage",
           "source": "src/vgui2/controls/PropertyPage.cpp",
           "functions_file": "tools/units/gameui_vgui2_controls_PropertyPage.txt"
+        },
+        {
+          "name": "GameUI/OptionsSubVideo",
+          "source": "src/gameui/OptionsSubVideo.cpp",
+          "functions_file": "tools/units/gameui_GameUI_OptionsSubVideo.txt"
         }
       ]
     }

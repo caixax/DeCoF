@@ -10014,33 +10014,33 @@ gameui,100569B0,22,,,UNKNOWN,GameUI/OptionsSubMultiplayer.cpp,,,TODO,,,
 gameui,100569D0,19,,,UNKNOWN,GameUI/OptionsSubMultiplayer.cpp,,,TODO,,,
 gameui,100569F0,19,,,UNKNOWN,GameUI/OptionsSubMultiplayer.cpp,,,TODO,,,
 gameui,10056A10,25,,,UNKNOWN,GameUI/OptionsSubMultiplayer.cpp,,,TODO,,,
-gameui,10056A40,936,,,UNKNOWN,GameUI/OptionsSubVideo.cpp,,,TODO,,,linux: _ZN16COptionsSubVideoC2EPN5vgui25PanelE
-gameui,10056DE8,505,,,UNKNOWN,GameUI/OptionsSubVideo.cpp,,,TODO,,,linux: _ZN16COptionsSubVideo21PrepareResolutionListEv
-gameui,10056FE1,28,,,UNKNOWN,GameUI/OptionsSubVideo.cpp,,,TODO,,,linux: _ZN16COptionsSubVideoD1Ev
-gameui,10056FFD,63,,,UNKNOWN,GameUI/OptionsSubVideo.cpp,,,TODO,,,linux: _ZN16COptionsSubVideo11OnResetDataEv
-gameui,1005703C,94,,,UNKNOWN,GameUI/OptionsSubVideo.cpp,,,TODO,,,linux: _ZN16COptionsSubVideo27SetCurrentRendererComboItemEv
-gameui,1005709A,227,,,UNKNOWN,GameUI/OptionsSubVideo.cpp,,,TODO,,,linux: _ZN16COptionsSubVideo29SetCurrentResolutionComboItemEv
-gameui,1005717D,121,,COptionsSubVideo::OnApplyChanges,ENGINE,GameUI/OptionsSubVideo.cpp,,,TODO,,linux_symbols:caller:0.667,linux: _ZN16COptionsSubVideo14OnApplyChangesEv
-gameui,100571F6,139,,,UNKNOWN,GameUI/OptionsSubVideo.cpp,,,TODO,,,linux: _ZN16COptionsSubVideo14GetVidSettingsEv
-gameui,10057281,40,,,UNKNOWN,GameUI/OptionsSubVideo.cpp,,,TODO,,,linux: _ZN16COptionsSubVideo17RevertVidSettingsEv
-gameui,100572A9,517,,COptionsSubVideo::ApplyVidSettings,ENGINE,GameUI/OptionsSubVideo.cpp,,,TODO,,linux_symbols:string:0.395,linux: _ZN16COptionsSubVideo16ApplyVidSettingsEb
-gameui,100574AE,57,,,UNKNOWN,GameUI/OptionsSubVideo.cpp,,,TODO,,,linux: _ZN16COptionsSubVideo15OnButtonCheckedEP9KeyValues
-gameui,100574E7,394,,,UNKNOWN,GameUI/OptionsSubVideo.cpp,,,TODO,,,linux: _ZN16COptionsSubVideo13OnTextChangedEPN5vgui25PanelEPKc
-gameui,10057671,75,,,UNKNOWN,GameUI/OptionsSubVideo.cpp,,,TODO,,,linux: _ZN16COptionsSubVideo13OnDataChangedEv
-gameui,100576C0,19,,,UNKNOWN,GameUI/OptionsSubVideo.cpp,,,TODO,,,
-gameui,100576E0,102,,,UNKNOWN,GameUI/OptionsSubVideo.cpp,,,TODO,,,
-gameui,10057750,64,,,UNKNOWN,GameUI/OptionsSubVideo.cpp,,,TODO,,,
-gameui,10057790,10,,,UNKNOWN,GameUI/OptionsSubVideo.cpp,,,TODO,,,
-gameui,100577A0,10,,,UNKNOWN,GameUI/OptionsSubVideo.cpp,,,TODO,,,
-gameui,100577B0,19,,,UNKNOWN,GameUI/OptionsSubVideo.cpp,,,TODO,,,
-gameui,100577D0,107,,,UNKNOWN,GameUI/OptionsSubVideo.cpp,,,TODO,,,
-gameui,10057840,120,,,UNKNOWN,GameUI/OptionsSubVideo.cpp,,,TODO,,,
-gameui,100578C0,19,,,UNKNOWN,GameUI/OptionsSubVideo.cpp,,,TODO,,,
-gameui,100578E0,107,,,UNKNOWN,GameUI/OptionsSubVideo.cpp,,,TODO,,,
-gameui,10057950,19,,,UNKNOWN,GameUI/OptionsSubVideo.cpp,,,TODO,,,
-gameui,10057970,113,,,UNKNOWN,GameUI/OptionsSubVideo.cpp,,,TODO,,,
-gameui,100579F0,71,,,UNKNOWN,GameUI/OptionsSubVideo.cpp,,,TODO,,,
-gameui,10057A40,46,,,UNKNOWN,GameUI/OptionsSubVideo.cpp,,,TODO,,,
+gameui,10056A40,936,??0COptionsSubVideo@@QAE@PAVPanel@vgui2@@@Z,public: __thiscall COptionsSubVideo::COptionsSubVideo(class vgui2::Panel *),UNKNOWN,GameUI/OptionsSubVideo.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN16COptionsSubVideoC2EPN5vgui25PanelE
+gameui,10056DE8,505,?PrepareResolutionList@COptionsSubVideo@@AAEXXZ,private: void __thiscall COptionsSubVideo::PrepareResolutionList(void),UNKNOWN,GameUI/OptionsSubVideo.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN16COptionsSubVideo21PrepareResolutionListEv
+gameui,10056FE1,28,??1COptionsSubVideo@@UAE@XZ,public: virtual __thiscall COptionsSubVideo::~COptionsSubVideo(void),UNKNOWN,GameUI/OptionsSubVideo.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN16COptionsSubVideoD1Ev
+gameui,10056FFD,63,?OnResetData@COptionsSubVideo@@UAEXXZ,public: virtual void __thiscall COptionsSubVideo::OnResetData(void),UNKNOWN,GameUI/OptionsSubVideo.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN16COptionsSubVideo11OnResetDataEv
+gameui,1005703C,94,?SetCurrentRendererComboItem@COptionsSubVideo@@AAEXXZ,private: void __thiscall COptionsSubVideo::SetCurrentRendererComboItem(void),UNKNOWN,GameUI/OptionsSubVideo.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN16COptionsSubVideo27SetCurrentRendererComboItemEv
+gameui,1005709A,227,?SetCurrentResolutionComboItem@COptionsSubVideo@@AAEXXZ,private: void __thiscall COptionsSubVideo::SetCurrentResolutionComboItem(void),UNKNOWN,GameUI/OptionsSubVideo.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN16COptionsSubVideo29SetCurrentResolutionComboItemEv
+gameui,1005717D,121,?OnApplyChanges@COptionsSubVideo@@UAEXXZ,public: virtual void __thiscall COptionsSubVideo::OnApplyChanges(void),ENGINE,GameUI/OptionsSubVideo.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN16COptionsSubVideo14OnApplyChangesEv
+gameui,100571F6,139,?GetVidSettings@COptionsSubVideo@@AAEXXZ,private: void __thiscall COptionsSubVideo::GetVidSettings(void),UNKNOWN,GameUI/OptionsSubVideo.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN16COptionsSubVideo14GetVidSettingsEv
+gameui,10057281,40,?RevertVidSettings@COptionsSubVideo@@AAEXXZ,private: void __thiscall COptionsSubVideo::RevertVidSettings(void),UNKNOWN,GameUI/OptionsSubVideo.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN16COptionsSubVideo17RevertVidSettingsEv
+gameui,100572A9,517,?ApplyVidSettings@COptionsSubVideo@@AAEX_N@Z,private: void __thiscall COptionsSubVideo::ApplyVidSettings(bool),ENGINE,GameUI/OptionsSubVideo.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN16COptionsSubVideo16ApplyVidSettingsEb
+gameui,100574AE,57,?OnButtonChecked@COptionsSubVideo@@EAEXPAVKeyValues@@@Z,private: virtual void __thiscall COptionsSubVideo::OnButtonChecked(class KeyValues *),UNKNOWN,GameUI/OptionsSubVideo.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN16COptionsSubVideo15OnButtonCheckedEP9KeyValues
+gameui,100574E7,394,?OnTextChanged@COptionsSubVideo@@EAEXPAVPanel@vgui2@@PBD@Z,"private: virtual void __thiscall COptionsSubVideo::OnTextChanged(class vgui2::Panel *,char const *)",UNKNOWN,GameUI/OptionsSubVideo.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN16COptionsSubVideo13OnTextChangedEPN5vgui25PanelEPKc
+gameui,10057671,75,?OnDataChanged@COptionsSubVideo@@EAEXXZ,private: virtual void __thiscall COptionsSubVideo::OnDataChanged(void),UNKNOWN,GameUI/OptionsSubVideo.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN16COptionsSubVideo13OnDataChangedEv
+gameui,100576C0,19,??0COptionsSubVideo_RegisterMap@COptionsSubVideo@@QAE@XZ,public: __thiscall COptionsSubVideo::COptionsSubVideo_RegisterMap::COptionsSubVideo_RegisterMap(void),UNKNOWN,GameUI/OptionsSubVideo.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100576E0,102,?ChainToMap@COptionsSubVideo@@SAXXZ,public: static void __cdecl COptionsSubVideo::ChainToMap(void),UNKNOWN,GameUI/OptionsSubVideo.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10057750,64,?GetMessageMap@COptionsSubVideo@@UAEPAUPanelMessageMap@vgui2@@XZ,public: virtual struct vgui2::PanelMessageMap * __thiscall COptionsSubVideo::GetMessageMap(void),UNKNOWN,GameUI/OptionsSubVideo.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10057790,10,?GetPanelClassName@COptionsSubVideo@@SAPBDXZ,public: static char const * __cdecl COptionsSubVideo::GetPanelClassName(void),UNKNOWN,GameUI/OptionsSubVideo.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100577A0,10,?GetPanelBaseClassName@COptionsSubVideo@@SAPBDXZ,public: static char const * __cdecl COptionsSubVideo::GetPanelBaseClassName(void),UNKNOWN,GameUI/OptionsSubVideo.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100577B0,19,??0PanelMessageFunc_OnDataChanged@COptionsSubVideo@@QAE@XZ,public: __thiscall COptionsSubVideo::PanelMessageFunc_OnDataChanged::PanelMessageFunc_OnDataChanged(void),UNKNOWN,GameUI/OptionsSubVideo.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100577D0,107,?InitVar@PanelMessageFunc_OnDataChanged@COptionsSubVideo@@SAXXZ,public: static void __cdecl COptionsSubVideo::PanelMessageFunc_OnDataChanged::InitVar(void),UNKNOWN,GameUI/OptionsSubVideo.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10057840,120,?AddToMap@COptionsSubVideo@@SAXPBDP8Panel@vgui2@@AEXXZHH0H0@Z,"public: static void __cdecl COptionsSubVideo::AddToMap(char const *,void (__thiscall vgui2::Panel::*)(void),int,int,char const *,int,char const *)",UNKNOWN,GameUI/OptionsSubVideo.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100578C0,19,??0PanelMessageFunc_OnButtonChecked@COptionsSubVideo@@QAE@XZ,public: __thiscall COptionsSubVideo::PanelMessageFunc_OnButtonChecked::PanelMessageFunc_OnButtonChecked(void),UNKNOWN,GameUI/OptionsSubVideo.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100578E0,107,?InitVar@PanelMessageFunc_OnButtonChecked@COptionsSubVideo@@SAXXZ,public: static void __cdecl COptionsSubVideo::PanelMessageFunc_OnButtonChecked::InitVar(void),UNKNOWN,GameUI/OptionsSubVideo.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10057950,19,??0PanelMessageFunc_OnTextChanged@COptionsSubVideo@@QAE@XZ,public: __thiscall COptionsSubVideo::PanelMessageFunc_OnTextChanged::PanelMessageFunc_OnTextChanged(void),UNKNOWN,GameUI/OptionsSubVideo.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10057970,113,?InitVar@PanelMessageFunc_OnTextChanged@COptionsSubVideo@@SAXXZ,public: static void __cdecl COptionsSubVideo::PanelMessageFunc_OnTextChanged::InitVar(void),UNKNOWN,GameUI/OptionsSubVideo.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100579F0,71,?IsWideScreen@@YA_NHH@Z,"bool __cdecl IsWideScreen(int,int)",UNKNOWN,GameUI/OptionsSubVideo.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10057A40,46,??_GCOptionsSubVideo@@UAEPAXI@Z,public: virtual void * __thiscall COptionsSubVideo::`scalar deleting destructor'(unsigned int),UNKNOWN,GameUI/OptionsSubVideo.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,10057A70,1055,,COptionsSubVoice::COptionsSubVoice,ENGINE,GameUI/OptionsSubVoice.cpp,,,TODO,,linux_symbols:string:0.354,linux: _ZN16COptionsSubVoiceC2EPN5vgui25PanelE
 gameui,10057E8F,51,,,UNKNOWN,GameUI/OptionsSubVoice.cpp,,,TODO,,,linux: _ZN16COptionsSubVoiceD2Ev
 gameui,10057EC2,293,,,UNKNOWN,GameUI/OptionsSubVoice.cpp,,,TODO,,,linux: _ZN16COptionsSubVoice11OnResetDataEv
