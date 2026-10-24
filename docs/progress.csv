@@ -1887,7 +1887,7 @@ client,10071C40,5,?MsgFunc_ViewMode@CHud@@QAAXPBDHPAX@Z,CHud::MsgFunc_ViewMode,U
 client,10071C50,49,?MsgFunc_WeaponBody@CHud@@QAAHPBDHPAX@Z,CHud::MsgFunc_WeaponBody,UNKNOWN,cl_dll/hud_msg.cpp,,,MATCHED,100,client_manual.csv,
 client,10071C90,100,?MsgFunc_Wheelchair@CHud@@QAAHPBDHPAX@Z,CHud::MsgFunc_Wheelchair,UNKNOWN,cl_dll/hud_msg.cpp,,,MATCHED,100,client_manual.csv,
 client,10071D00,124,?strstrtolower@@YA_NPAD0@Z,strstrtolower,UNKNOWN,cl_dll/hud_msg.cpp,,,MATCHED,100,client_manual.csv,
-client,10071D80,107,?AverageFPS_guess@CHud@@QAEHH@Z,CHud::AverageFPS_guess,UNKNOWN,cl_dll/hud_redraw.cpp,,,EQUIVALENT,99.12,client_manual.csv,EQUIVALENT: eax and edx swap between count and total inside the loop (8 variants)
+client,10071D80,107,?AverageFPS_guess@CHud@@QAEHH@Z,CHud::AverageFPS_guess,UNKNOWN,cl_dll/hud_redraw.cpp,,,MATCHED,100,client_manual.csv,
 client,10071DF0,865,?DrawBlurTest@CHud@@QAEXM@Z,CHud::DrawBlurTest,UNKNOWN,cl_dll/hud_redraw.cpp,,,MATCHED,100,,
 client,10072160,495,?DrawHudNumber@CHud@@QAEHHHHHHHH@Z,CHud::DrawHudNumber,HLSDK,cl_dll/hud_redraw.cpp,,,MATCHED,100,client_1.6a_ghidra_names.csv,
 client,10072350,85,?DrawHudNumberString@CHud@@QAEHHHHHHHH@Z,CHud::DrawHudNumberString,UNKNOWN,cl_dll/hud_redraw.cpp,,,MATCHED,100,,

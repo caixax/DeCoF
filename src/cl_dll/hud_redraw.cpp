@@ -118,8 +118,8 @@ int CHud :: AverageFPS_guess( int iFPS )
 	m_iFPSCount_guess++;
 	m_iFPS_guess[m_iFPSCount_guess] = iFPS;
 
-	int iCount = 0;
-	int iTotal = 0;
+	int iTotal, iCount;
+	iTotal = iCount = 0;
 
 	for ( int j = 1; j <= 50; j++ )
 	{
