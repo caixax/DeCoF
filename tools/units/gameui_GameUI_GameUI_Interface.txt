@@ -43,7 +43,7 @@ _$E15
 ??0?$DHANDLE@VCLoadingDialog@@@vgui2@@QAE@XZ
 ??_GCGameUI@@UAEPAXI@Z
 ??0IGameUI@@QAE@XZ
-??0?$DHANDLE@VFrame@vgui2@@@vgui2@@QAE@XZ
+??0?$DHANDLE@VCCDKeyEntryDialog@@@vgui2@@QAE@XZ
 ??0?$DHANDLE@VTestScriptController@vgui2@@@vgui2@@QAE@XZ
 ??_GIGameUI@@UAEPAXI@Z
 ??1IGameUI@@UAE@XZ

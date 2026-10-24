@@ -22,6 +22,7 @@ class TestScriptController;
 };
 
 struct CSocket;
+class CCDKeyEntryDialog;
 
 //-----------------------------------------------------------------------------
 // Purpose: Implementation of GameUI's exposed interface
@@ -94,8 +95,11 @@ private:
 
 	CSocket *m_pMaster;
 
-	// Cry of Fear addition, never read in GameUI_Interface.cpp; the handle type is not recorded
-	vgui2::DHANDLE<vgui2::Frame> m_hDialog_guess;
+	// not in the Linux build, never read here: the handle of the CD key dialog
+	// that ValidateCDKey opened before Cry of Fear emptied it (CCDKeyEntryDialog
+	// is still linked but never constructed); its DHANDLE constructor is a
+	// COMDAT of this object, so no earlier object made a handle of this type
+	vgui2::DHANDLE<CCDKeyEntryDialog> m_hCDKeyEntryDialog_guess;
 	vgui2::DHANDLE<vgui2::TestScriptController> m_hTestScriptController;
 };
 

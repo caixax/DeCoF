@@ -8693,7 +8693,7 @@ gameui,1002E505,277,?OnMessage@CDemoPlayerDialog@@UAEXPBVKeyValues@@I@Z,"public:
 gameui,1002E61A,70,?OnStop@CDemoPlayerDialog@@IAEXXZ,protected: void __thiscall CDemoPlayerDialog::OnStop(void),UNKNOWN,GameUI/DemoPlayerDialog.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,1002E660,166,?OnLoad@CDemoPlayerDialog@@IAEXXZ,protected: void __thiscall CDemoPlayerDialog::OnLoad(void),UNKNOWN,GameUI/DemoPlayerDialog.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,1002E710,46,??_GCDemoPlayerDialog@@UAEPAXI@Z,public: virtual void * __thiscall CDemoPlayerDialog::`scalar deleting destructor'(unsigned int),UNKNOWN,GameUI/DemoPlayerDialog.cpp,,,MATCHED,100,gameui_manual.csv,
-gameui,1002E740,22,??0?$DHANDLE@VFrame@vgui2@@@vgui2@@QAE@XZ,public: __thiscall vgui2::DHANDLE<class vgui2::Frame>::DHANDLE<class vgui2::Frame>(void),UNKNOWN,GameUI/DemoPlayerDialog.cpp,,,TODO,,gameui_manual.csv,"bytes identical to our COMDAT; the name is also on 10032050 (GameUI_Interface.cpp, CGameUI +0x140 handle, type assumed Frame), so the delinker cannot export it here: this one is DHANDLE<vgui2::Frame> (gameui.so DWARF m_hDemoPlayerFileDialog and m_hDemoEventsDialog, its Get, operator-> and operator= follow it), 10032050 must be another DHANDLE type"
+gameui,1002E740,22,??0?$DHANDLE@VFrame@vgui2@@@vgui2@@QAE@XZ,public: __thiscall vgui2::DHANDLE<class vgui2::Frame>::DHANDLE<class vgui2::Frame>(void),UNKNOWN,GameUI/DemoPlayerDialog.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,1002E760,33,??_DCDemoPlayerDialog@@QAEXXZ,public: void __thiscall CDemoPlayerDialog::`vbase destructor'(void),UNKNOWN,GameUI/DemoPlayerDialog.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,1002E790,23,??0PHandle@vgui2@@QAE@XZ,public: __thiscall vgui2::PHandle::PHandle(void),UNKNOWN,GameUI/DemoPlayerDialog.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,1002E7B0,19,?Get@?$DHANDLE@VFrame@vgui2@@@vgui2@@QAEPAVFrame@2@XZ,public: class vgui2::Frame * __thiscall vgui2::DHANDLE<class vgui2::Frame>::Get(void),UNKNOWN,GameUI/DemoPlayerDialog.cpp,,,MATCHED,100,gameui_manual.csv,
@@ -8821,7 +8821,7 @@ gameui,10031FA8,50,?SetSecondaryProgressBarText@CGameUI@@UAEXPBD@Z,CGameUI::SetS
 gameui,10031FE0,22,??0?$DHANDLE@VCLoadingDialog@@@vgui2@@QAE@XZ,CLoadingDialog>,UNKNOWN,GameUI/GameUI_Interface.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,10032000,46,??_GCGameUI@@UAEPAXI@Z,destructor',UNKNOWN,GameUI/GameUI_Interface.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,10032030,31,??0IGameUI@@QAE@XZ,IGameUI::IGameUI,UNKNOWN,GameUI/GameUI_Interface.cpp,,,MATCHED,100,gameui_manual.csv,
-gameui,10032050,22,??0?$DHANDLE@VFrame@vgui2@@@vgui2@@QAE@XZ,vgui2::Frame>,UNKNOWN,GameUI/GameUI_Interface.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10032050,22,??0?$DHANDLE@VCCDKeyEntryDialog@@@vgui2@@QAE@XZ,vgui2::DHANDLE<CCDKeyEntryDialog>::DHANDLE,UNKNOWN,GameUI/GameUI_Interface.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,10032070,22,??0?$DHANDLE@VTestScriptController@vgui2@@@vgui2@@QAE@XZ,vgui2::TestScriptController>,UNKNOWN,GameUI/GameUI_Interface.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,10032090,46,??_GIGameUI@@UAEPAXI@Z,destructor',UNKNOWN,GameUI/GameUI_Interface.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,100320C0,19,??1IGameUI@@UAE@XZ,IGameUI::~IGameUI,UNKNOWN,GameUI/GameUI_Interface.cpp,,,MATCHED,100,gameui_manual.csv,
