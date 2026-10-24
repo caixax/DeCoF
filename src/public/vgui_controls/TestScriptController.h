@@ -16,6 +16,8 @@
 #include <UtlVector.h>
 #include <utlsymbol.h>
 
+namespace vgui = vgui2;
+
 namespace vgui2
 {
 
@@ -24,7 +26,7 @@ namespace vgui2
 //-----------------------------------------------------------------------------
 class TestScriptController : public Panel
 {
-	DECLARE_CLASS_SIMPLE( TestScriptController, Panel );
+	DECLARE_CLASS_SIMPLE( TestScriptController, vgui::Panel );
 
 public:
 	TestScriptController();
