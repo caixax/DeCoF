@@ -2239,6 +2239,7 @@
           "name": "bzip2/blocksort",
           "source": "refs/bzip2-1.0.2-dl/bzip2-1.0.2/blocksort.c",
           "functions_file": "tools/units/hw_bzip2_blocksort.txt",
+          "toolchain": "vc6pp",
           "cflags": [
             "/nologo",
             "/c",
@@ -2257,6 +2258,7 @@
           "name": "bzip2/huffman",
           "source": "refs/bzip2-1.0.2-dl/bzip2-1.0.2/huffman.c",
           "functions_file": "tools/units/hw_bzip2_huffman.txt",
+          "toolchain": "vc6pp",
           "cflags": [
             "/nologo",
             "/c",
@@ -2275,6 +2277,7 @@
           "name": "bzip2/crctable",
           "source": "refs/bzip2-1.0.2-dl/bzip2-1.0.2/crctable.c",
           "functions_file": "tools/units/hw_bzip2_crctable.txt",
+          "toolchain": "vc6pp",
           "cflags": [
             "/nologo",
             "/c",
@@ -2293,6 +2296,7 @@
           "name": "bzip2/randtable",
           "source": "refs/bzip2-1.0.2-dl/bzip2-1.0.2/randtable.c",
           "functions_file": "tools/units/hw_bzip2_randtable.txt",
+          "toolchain": "vc6pp",
           "cflags": [
             "/nologo",
             "/c",
@@ -2311,6 +2315,7 @@
           "name": "bzip2/compress",
           "source": "refs/bzip2-1.0.2-dl/bzip2-1.0.2/compress.c",
           "functions_file": "tools/units/hw_bzip2_compress.txt",
+          "toolchain": "vc6pp",
           "cflags": [
             "/nologo",
             "/c",
@@ -2329,6 +2334,7 @@
           "name": "bzip2/decompress",
           "source": "refs/bzip2-1.0.2-dl/bzip2-1.0.2/decompress.c",
           "functions_file": "tools/units/hw_bzip2_decompress.txt",
+          "toolchain": "vc6pp",
           "cflags": [
             "/nologo",
             "/c",
@@ -2347,6 +2353,7 @@
           "name": "bzip2/bzlib",
           "source": "refs/bzip2-1.0.2-dl/bzip2-1.0.2/bzlib.c",
           "functions_file": "tools/units/hw_bzip2_bzlib.txt",
+          "toolchain": "vc6pp",
           "cflags": [
             "/nologo",
             "/c",
