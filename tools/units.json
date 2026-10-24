@@ -3206,12 +3206,23 @@
         {
           "name": "engine/vgui_int",
           "source": "src/engine_hw/vgui_int.cpp",
-          "functions_file": "tools/units/hw_engine_vgui_int.txt"
+          "functions_file": "tools/units/hw_engine_vgui_int.txt",
+          "includes": [
+            "src/engine_hw",
+            "src/common",
+            "src/public"
+          ]
         },
         {
           "name": "engine/vgui_intwrap",
           "source": "src/engine_hw/vgui_intwrap.cpp",
-          "functions_file": "tools/units/hw_engine_vgui_intwrap.txt"
+          "functions_file": "tools/units/hw_engine_vgui_intwrap.txt",
+          "includes": [
+            "src/engine_hw",
+            "src/public",
+            "src/common",
+            "src/utils/vgui/include"
+          ]
         },
         {
           "name": "engine/voice_sound_engine_interface",

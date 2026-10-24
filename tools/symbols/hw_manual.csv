@@ -5316,3 +5316,15 @@ va,name,kind,evidence
 01E016E0,??0IEngineSurface@@QAE@XZ,func,"engine/vgui_EngineSurfaceWin32.cpp: implicit IEngineSurface constructor called by EngineSurface::EngineSurface, COMDAT after the object"
 01E01700,??_GIEngineSurface@@UAEPAXI@Z,func,"engine/vgui_EngineSurfaceWin32.cpp: scalar deleting destructor of the IEngineSurface vtable the constructor stores, COMDAT after the object"
 0249EFE0,___g_CreateEngineSurfaceIEngineSurface_reg,data,engine/vgui_EngineSurface.cpp: InterfaceReg of EngineSurface007 built by EXPOSE_SINGLE_INTERFACE (Linux hw.so DWARF line 15)
+01E09500,?VGuiWrap_SetRootPanelSize@@YAXXZ,func,"engine/vgui_intwrap.cpp: Linux hw.so DWARF _Z25VGuiWrap_SetRootPanelSizev (C++ linkage, line 60); first function of the object, called by VGuiWrap_Startup and VGuiWrap_Paint; identical bytes in our compiled object"
+01E09569,_$E24,func,"engine/vgui_intwrap.cpp: dynamic initializer of the static CDummyApp theApp (Linux hw.so DWARF line 94); calls the constructing initializer, no atexit (no destructor); spelling from the compiled object"
+01E09573,_$E23,func,engine/vgui_intwrap.cpp: constructs theApp (mov ecx 024E0528 then the CDummyApp constructor); spelling from the compiled object
+01E09940,??0CDummyApp@@QAE@XZ,func,"engine/vgui_intwrap.cpp: implicit constructor of CDummyApp (Linux hw.so DWARF class, vgui::App base constructor then vtable 01E8E8BC), COMDAT after the object; identical bytes in our compiled object"
+01E09960,?main@CDummyApp@@UAEXHQAPAD@Z,func,"engine/vgui_intwrap.cpp: Linux hw.so DWARF _ZN9CDummyApp4mainEiPPc (empty, ret 8), CDummyApp vtable 01E8E8BC; identical bytes in our compiled object"
+01E09970,?platTick@CDummyApp@@MAEXXZ,func,"engine/vgui_intwrap.cpp: Linux hw.so DWARF _ZN9CDummyApp8platTickEv (empty), CDummyApp vtable 01E8E8BC; identical bytes in our compiled object"
+01E09980,??_GEngineSurfaceWrap@@QAEPAXI@Z,func,"engine/vgui_intwrap.cpp: scalar deleting destructor of EngineSurfaceWrap (calls ??1EngineSurfaceWrap@@QAE@XZ, non-virtual), used by delete staticEngineSurface in VGuiWrap_Shutdown; COMDAT after the object"
+01E8E8BC,??_7CDummyApp@@6B@,data,engine/vgui_intwrap.cpp: vtable of CDummyApp stored by its constructor
+024E0528,_theApp,data,engine/vgui_intwrap.cpp: static CDummyApp theApp (Linux hw.so DWARF line 94) constructed by the dynamic initializer; spelling from the compiled object
+024E0758,_staticPanel,data,engine/vgui_intwrap.cpp: static vgui::Panel *staticPanel (Linux hw.so DWARF line 51) created by VGuiWrap_Startup and returned by VGuiWrap_GetPanel; spelling from the compiled object
+024E075C,_staticEngineSurface,data,engine/vgui_intwrap.cpp: static EngineSurfaceWrap *staticEngineSurface (Linux hw.so DWARF line 52) created by VGuiWrap_Startup; spelling from the compiled object
+01ED1688,?vgui_emulatemouse@@3Ucvar_s@@A,data,"engine/vgui_intwrap.cpp: cvar_t vgui_emulatemouse (name ""vgui_emulatemouse"", string ""0""), registered by VGuiWrap_Startup; C++ linkage as in VGUI_EngineSurfaceWrap.cpp"

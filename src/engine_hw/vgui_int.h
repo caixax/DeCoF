@@ -17,6 +17,29 @@ void	VGUI2_OnDisconnectFromServer( int eLoginFailure );
 
 int		VGui_GameUIKeyPressed( void );
 
+// vgui_intwrap.cpp, the VGUI1 layer
+void	VGuiWrap_Startup( void );
+void	VGuiWrap_Shutdown( void );
+int		VGuiWrap_CallEngineSurfaceAppHandler( void *hwnd, unsigned int msg, unsigned int wparam, long lparam );
+void	*VGuiWrap_GetPanel( void );
+void	VGuiWrap_ReleaseMouse( void );
+void	VGuiWrap_GetMouse( void );
+void	VGuiWrap_SetVisible( int state );
+void	VGuiWrap_Paint( int paintAll );
+
+// vgui_intwrap2.cpp, the VGUI2 layer
+void	VGuiWrap2_Startup( void );
+void	VGuiWrap2_Shutdown( void );
+int		VGuiWrap2_CallEngineSurfaceAppHandler( void *hwnd, unsigned int msg, unsigned int wparam, long lparam );
+int		VGuiWrap2_UseVGUI1( void );
+void	*VGuiWrap2_GetPanel( void );
+void	VGuiWrap2_ReleaseMouse( void );
+void	VGuiWrap2_GetMouse( void );
+void	VGuiWrap2_SetVisible( int state );
+int		VGuiWrap2_GameUIKeyPressed( void );
+int		VGuiWrap2_Key_Event( int down, int keynum, const char *pszCurrentBinding );
+void	VGuiWrap2_Paint( void );
+
 unsigned int	VGUI2_GetConsoleFont( void );
 unsigned int	VGUI2_GetCreditsFont( void );
 void	VGui_Paint( void );
