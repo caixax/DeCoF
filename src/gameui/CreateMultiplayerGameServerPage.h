@@ -14,6 +14,8 @@
 
 #include <vgui_controls/PropertyPage.h>
 
+namespace vgui = vgui2;
+
 class CCvarToggleCheckButton;
 
 namespace vgui2
@@ -28,7 +30,7 @@ class TextEntry;
 //-----------------------------------------------------------------------------
 class CCreateMultiplayerGameServerPage : public vgui2::PropertyPage
 {
-	DECLARE_CLASS_SIMPLE( CCreateMultiplayerGameServerPage, vgui2::PropertyPage );
+	DECLARE_CLASS_SIMPLE( CCreateMultiplayerGameServerPage, vgui::PropertyPage );
 
 public:
 	CCreateMultiplayerGameServerPage( vgui2::Panel *parent, const char *name );
