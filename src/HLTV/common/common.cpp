@@ -48,7 +48,7 @@ int COM_BuildNumber( void )
 	if ( b != 0 )
 		return b;
 
-	char *date = __DATE__;
+	char *date = "Dec  2 2012";	// __DATE__ of the retail build of this file
 	char *mon[12] = { "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" };
 	char mond[12] = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
 

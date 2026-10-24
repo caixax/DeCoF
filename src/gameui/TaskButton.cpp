@@ -148,7 +148,7 @@ void CTaskButton::OnMouseDoublePressed( MouseCode mouseCode )
 //-----------------------------------------------------------------------------
 void CTaskButton::ApplySchemeSettings( IScheme *pScheme )
 {
-	BaseClass::ApplySchemeSettings( pScheme );
+	Label::ApplySchemeSettings( pScheme );
 
 	m_LabelColor = GetSchemeColor( "DisabledText1", pScheme );
 	m_SelectedColor = GetSchemeColor( "BrightBaseText", pScheme );

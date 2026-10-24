@@ -8545,7 +8545,7 @@ gameui,10024E6D,226,?MD5Final@@YAXQAEPAUMD5Context_t@@@Z,"void __cdecl MD5Final(
 gameui,10024F4F,3875,?MD5Transform@@YAXQAIQBI@Z,"void __cdecl MD5Transform(unsigned int * const,unsigned int const * const)",ENGINE,public/checksum_md5.cpp,,,MATCHED,100,gameui_manual.csv,linux: _Z12MD5TransformPjPKj
 gameui,10025E72,112,?MD5_Print@@YAPADQAE@Z,char * __cdecl MD5_Print(unsigned char * const),UNKNOWN,public/checksum_md5.cpp,,,MATCHED,100,gameui_manual.csv,linux: _Z9MD5_PrintPh
 gameui,10025EF0,50,?Mem_ZeroMalloc@@YAPAXI@Z,void * __cdecl Mem_ZeroMalloc(unsigned int),UNKNOWN,HLTV/common/common.cpp,,,MATCHED,100,,
-gameui,10025F22,403,?COM_BuildNumber@@YAHXZ,int __cdecl COM_BuildNumber(void),UNKNOWN,HLTV/common/common.cpp,,,TODO,99.99,,"relocation targets differ (instructions identical): retail DAT_100e1b00, ours $SG42348"
+gameui,10025F22,403,?COM_BuildNumber@@YAHXZ,int __cdecl COM_BuildNumber(void),UNKNOWN,HLTV/common/common.cpp,,,MATCHED,100,,
 gameui,100260B5,66,?COM_TimeString@@YAPADXZ,char * __cdecl COM_TimeString(void),ENGINE,HLTV/common/common.cpp,,,MATCHED,100,linux_symbols:string:0.375,linux: _Z14COM_TimeStringv
 gameui,100260F7,69,?COM_SkipPath@@YAPADPAD@Z,char * __cdecl COM_SkipPath(char *),UNKNOWN,HLTV/common/common.cpp,,,MATCHED,100,,linux: _Z12COM_SkipPathPc
 gameui,1002613C,277,?COM_FileBase@@YAXPAD0@Z,"void __cdecl COM_FileBase(char *,char *)",UNKNOWN,HLTV/common/common.cpp,,,MATCHED,100,,linux: _Z12COM_FileBasePcS_
@@ -9292,7 +9292,7 @@ gameui,1004064E,147,?ShouldDisplay@CTaskButton@@QAE_NXZ,public: bool __thiscall 
 gameui,100406E1,42,?GetTaskPanel@CTaskButton@@QAEIXZ,public: unsigned int __thiscall CTaskButton::GetTaskPanel(void),UNKNOWN,GameUI/TaskButton.cpp,,,MATCHED,100,,linux: _ZN11CTaskButton12GetTaskPanelEv
 gameui,1004070B,108,?OnMousePressed@CTaskButton@@MAEXW4MouseCode@vgui2@@@Z,protected: virtual void __thiscall CTaskButton::OnMousePressed(enum vgui2::MouseCode),UNKNOWN,GameUI/TaskButton.cpp,,,MATCHED,100,,linux: _ZN11CTaskButton14OnMousePressedEN5vgui29MouseCodeE
 gameui,10040777,31,?OnMouseDoublePressed@CTaskButton@@MAEXW4MouseCode@vgui2@@@Z,protected: virtual void __thiscall CTaskButton::OnMouseDoublePressed(enum vgui2::MouseCode),UNKNOWN,GameUI/TaskButton.cpp,,,MATCHED,100,,linux: _ZN11CTaskButton20OnMouseDoublePressedEN5vgui29MouseCodeE
-gameui,10040796,265,?ApplySchemeSettings@CTaskButton@@MAEXPAVIScheme@vgui2@@@Z,protected: virtual void __thiscall CTaskButton::ApplySchemeSettings(class vgui2::IScheme *),ENGINE,GameUI/TaskButton.cpp,,,TODO,99.99,linux_symbols:caller:0.853,"relocation targets differ (instructions identical): retail ?ApplySchemeSettings@Label@vgui2@@MAEXPAVIScheme@2@@Z, ours ?ApplySchemeSettings@Panel@vgui2@@UAEXPAVIScheme@2@@Z"
+gameui,10040796,265,?ApplySchemeSettings@CTaskButton@@MAEXPAVIScheme@vgui2@@@Z,protected: virtual void __thiscall CTaskButton::ApplySchemeSettings(class vgui2::IScheme *),ENGINE,GameUI/TaskButton.cpp,,,MATCHED,100,linux_symbols:caller:0.853,
 gameui,1004089F,53,??0CWindowStateImage@@QAE@XZ,public: __thiscall CWindowStateImage::CWindowStateImage(void),UNKNOWN,GameUI/TaskButton.cpp,,,MATCHED,100,,linux: _ZN17CWindowStateImageC2Ev
 gameui,100408D4,30,?SetTall@CWindowStateImage@@QAEXH@Z,public: void __thiscall CWindowStateImage::SetTall(int),UNKNOWN,GameUI/TaskButton.cpp,,,MATCHED,100,,linux: _ZN17CWindowStateImage7SetTallEi
 gameui,100408F2,289,?Paint@CWindowStateImage@@UAEXXZ,public: virtual void __thiscall CWindowStateImage::Paint(void),UNKNOWN,GameUI/TaskButton.cpp,,,MATCHED,100,,linux: _ZN17CWindowStateImage5PaintEv
