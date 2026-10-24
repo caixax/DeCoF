@@ -365,3 +365,12 @@ The 1.55 hl.dll is an unoptimized debug build of nearly the same source. `disasm
 - The Windows GameUI code sometimes differs from the Linux DWARF (an extra local such as enemyListStr, a 2-element intbuf): locals the DWARF lacks get `_guess` names fitted to the VC6 slot hash.
 - tools/name_unit.py and align_names.py pair identical STL template copies and `_$E` initializers wrongly; name such tails from the call targets of callers that already match byte for byte (scratch helpers tailmatch.py, verify_lib.py, strcheck.py in the session scratchpad tools folder did this for the Career files).
 - A panel class with multiple inheritance and a message map needs `#pragma pointers_to_members( full_generality, virtual_inheritance )` before it (vgui2 HTML.h): retail uses the general member-pointer form for its message map entries.
+
+## Patterns from the small GameUI files, Socket_guess and bot_profile
+
+- A class with a `double` member puts its first data member at +8 after the vptr (CSocketThread): no padding member is needed; a 4-byte gap after the vptr of a class without doubles is a real member (CMsgHandler).
+- A static function defined before its first caller is emitted right after that caller (GetSocketThread_guess, SocketThreadFunc_guess); defined after it, it stays at its definition.
+- The class-key seen first in a translation unit decides the decoration (`struct CPanelListPanel;` in ScriptObject.h gives `PAU`): every unit calling a function must see the same key first, or a full link fails (CreateMultiplayerGameGameplayPage includes ScriptObject.h first).
+- A 100% function can still point at the wrong literal: tools/relocaudit.py caught `"Resource\\..."` versus `"Resource/..."` paths (CDKeyEntryDialog) and `vgui2::` versus `vgui::` base class names in DECLARE_CLASS_SIMPLE (CTaskFrame, CCreateMultiplayerGameServerPage, TestScriptController).
+- Winsock calls go through import thunks (VC6 winsock.h has no dllimport); name the thunks in gameui_manual.csv (`_htons@4`, `_recvfrom@24`, ...). `#define FD_SETSIZE 1024` precedes windows.h in Socket_guess.cpp. GameUI has no engine heap: src/gameui/mem.h maps the shared common/ObjectList.cpp onto the HLTV Mem_ZeroMalloc and the CRT free.
+- In this shell, `/D` and `/I` arguments passed to a Python wrapper are rewritten as MSYS paths (use `-D`, `-I`), and heredocs collapse a double backslash to a single one (write sources with backslashes through the editor); Python text-mode writes produce CRLF (open files in binary mode to keep LF).
