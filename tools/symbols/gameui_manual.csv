@@ -4397,3 +4397,9 @@ va,name,kind,evidence
 100459C0,??0PanelMessageFunc_OnTextChanged@CCvarTextEntry@@QAE@XZ,func,GameUI/CvarTextEntry.cpp: same position and size as in our compiled object
 100459E0,?InitVar@PanelMessageFunc_OnTextChanged@CCvarTextEntry@@SAXXZ,func,GameUI/CvarTextEntry.cpp: same position and size as in our compiled object
 10045A50,?AddToMap@CCvarTextEntry@@SAXPBDP8Panel@vgui2@@AEXXZHH0H0@Z,func,GameUI/CvarTextEntry.cpp: same position and size as in our compiled object
+10024730,??0CChangeGameDialog@@QAE@PAVPanel@vgui2@@@Z,func,"GameUI/ChangeGameDialog.cpp: same position and size as in our compiled object (RTTI CChangeGameDialog, vtable slots, strings)"
+10024888,??1CChangeGameDialog@@UAE@XZ,func,"GameUI/ChangeGameDialog.cpp: same position and size as in our compiled object (RTTI CChangeGameDialog, vtable slots, strings)"
+100248A4,?LoadModList_guess@CChangeGameDialog@@AAEXXZ,func,"GameUI/ChangeGameDialog.cpp: same position and size as in our compiled object (RTTI CChangeGameDialog, vtable slots, strings)"
+10024B82,?OnCommand@CChangeGameDialog@@MAEXPBD@Z,func,"GameUI/ChangeGameDialog.cpp: same position and size as in our compiled object (RTTI CChangeGameDialog, vtable slots, strings)"
+10024CAD,?OnClose@CChangeGameDialog@@MAEXXZ,func,"GameUI/ChangeGameDialog.cpp: same position and size as in our compiled object (RTTI CChangeGameDialog, vtable slots, strings)"
+10024CD0,??_GCChangeGameDialog@@UAEPAXI@Z,func,"GameUI/ChangeGameDialog.cpp: same position and size as in our compiled object (RTTI CChangeGameDialog, vtable slots, strings)"

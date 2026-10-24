@@ -3943,6 +3943,11 @@
           "name": "GameUI/CvarTextEntry",
           "source": "src/gameui/CvarTextEntry.cpp",
           "functions_file": "tools/units/gameui_GameUI_CvarTextEntry.txt"
+        },
+        {
+          "name": "GameUI/ChangeGameDialog",
+          "source": "src/gameui/ChangeGameDialog.cpp",
+          "functions_file": "tools/units/gameui_GameUI_ChangeGameDialog.txt"
         }
       ]
     }

@@ -8533,12 +8533,12 @@ gameui,10024680,64,?GetMessageMap@MessageBox@vgui2@@UAEPAUPanelMessageMap@2@XZ,p
 gameui,100246C0,10,?GetPanelClassName@MessageBox@vgui2@@SAPBDXZ,public: static char const * __cdecl vgui2::MessageBox::GetPanelClassName(void),UNKNOWN,GameUI/CDKeyEntryDialog.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,100246D0,64,?GetMessageMap@TextEntry@vgui2@@UAEPAUPanelMessageMap@2@XZ,public: virtual struct vgui2::PanelMessageMap * __thiscall vgui2::TextEntry::GetMessageMap(void),UNKNOWN,GameUI/CDKeyEntryDialog.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,10024710,10,?GetPanelClassName@TextEntry@vgui2@@SAPBDXZ,public: static char const * __cdecl vgui2::TextEntry::GetPanelClassName(void),UNKNOWN,GameUI/CDKeyEntryDialog.cpp,,,MATCHED,100,gameui_manual.csv,
-gameui,10024730,344,,,UNKNOWN,GameUI/ChangeGameDialog.cpp,,,TODO,,,
-gameui,10024888,28,,,UNKNOWN,GameUI/ChangeGameDialog.cpp,,,TODO,,,
-gameui,100248A4,734,,,UNKNOWN,GameUI/ChangeGameDialog.cpp,,,TODO,,,
-gameui,10024B82,299,,,UNKNOWN,GameUI/ChangeGameDialog.cpp,,,TODO,,,
-gameui,10024CAD,33,,,UNKNOWN,GameUI/ChangeGameDialog.cpp,,,TODO,,,
-gameui,10024CD0,46,,,UNKNOWN,GameUI/ChangeGameDialog.cpp,,,TODO,,,
+gameui,10024730,344,??0CChangeGameDialog@@QAE@PAVPanel@vgui2@@@Z,public: __thiscall CChangeGameDialog::CChangeGameDialog(class vgui2::Panel *),UNKNOWN,GameUI/ChangeGameDialog.cpp,,,MATCHED,100,,
+gameui,10024888,28,??1CChangeGameDialog@@UAE@XZ,public: virtual __thiscall CChangeGameDialog::~CChangeGameDialog(void),UNKNOWN,GameUI/ChangeGameDialog.cpp,,,MATCHED,100,,
+gameui,100248A4,734,?LoadModList_guess@CChangeGameDialog@@AAEXXZ,private: void __thiscall CChangeGameDialog::LoadModList_guess(void),UNKNOWN,GameUI/ChangeGameDialog.cpp,,,MATCHED,100,,
+gameui,10024B82,299,?OnCommand@CChangeGameDialog@@MAEXPBD@Z,protected: virtual void __thiscall CChangeGameDialog::OnCommand(char const *),UNKNOWN,GameUI/ChangeGameDialog.cpp,,,MATCHED,100,,
+gameui,10024CAD,33,?OnClose@CChangeGameDialog@@MAEXXZ,protected: virtual void __thiscall CChangeGameDialog::OnClose(void),UNKNOWN,GameUI/ChangeGameDialog.cpp,,,MATCHED,100,,
+gameui,10024CD0,46,??_GCChangeGameDialog@@UAEPAXI@Z,public: virtual void * __thiscall CChangeGameDialog::`scalar deleting destructor'(unsigned int),UNKNOWN,GameUI/ChangeGameDialog.cpp,,,MATCHED,100,,
 gameui,10024D00,64,?MD5Init@@YAXPAUMD5Context_t@@@Z,void __cdecl MD5Init(struct MD5Context_t *),ENGINE,public/checksum_md5.cpp,,,MATCHED,100,gameui_manual.csv,linux: _Z7MD5InitP12MD5Context_t
 gameui,10024D40,301,?MD5Update@@YAXPAUMD5Context_t@@PBEI@Z,"void __cdecl MD5Update(struct MD5Context_t *,unsigned char const *,unsigned int)",UNKNOWN,public/checksum_md5.cpp,,,MATCHED,100,gameui_manual.csv,linux: _Z9MD5UpdateP12MD5Context_tPKhj
 gameui,10024E6D,226,?MD5Final@@YAXQAEPAUMD5Context_t@@@Z,"void __cdecl MD5Final(unsigned char * const,struct MD5Context_t *)",UNKNOWN,public/checksum_md5.cpp,,,MATCHED,100,gameui_manual.csv,linux: _Z8MD5FinalPhP12MD5Context_t
