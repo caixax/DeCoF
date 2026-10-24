@@ -8851,16 +8851,16 @@ gameui,100326E9,39,?Sys_GetFactory@@YAP6APAVIBaseInterface@@PBDPAH@ZPAVCSysModul
 gameui,10032710,10,?Sys_GetFactoryThis@@YAP6APAVIBaseInterface@@PBDPAH@ZXZ,,UNKNOWN,public/interface.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,1003271A,22,?Sys_GetFactory@@YAP6APAVIBaseInterface@@PBDPAH@Z0@Z,,UNKNOWN,public/interface.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,10032730,26,?Sys_GetProcAddress@@YAPAXPBD0@Z,Sys_GetProcAddress,UNKNOWN,public/interface.cpp,,,MATCHED,100,gameui_manual.csv,
-gameui,10032750,145,,,UNKNOWN,GameUI/labelslidercombo.cpp,,,TODO,,,linux: _ZN16LabelSliderComboC2EPN5vgui25PanelEPKcS4_
-gameui,100327E1,28,,,UNKNOWN,GameUI/labelslidercombo.cpp,,,TODO,,,linux: _ZN16LabelSliderComboD1Ev
-gameui,100327FD,39,,,UNKNOWN,GameUI/labelslidercombo.cpp,,,TODO,,,linux: _ZN16LabelSliderCombo13OnCursorMovedEii
-gameui,10032824,41,,,UNKNOWN,GameUI/labelslidercombo.cpp,,,TODO,,,linux: _ZN16LabelSliderCombo8SetValueEib
-gameui,1003284D,64,,,UNKNOWN,GameUI/labelslidercombo.cpp,,,TODO,,,linux: _ZN16LabelSliderCombo10SetVisibleEb
-gameui,1003288D,266,,,UNKNOWN,GameUI/labelslidercombo.cpp,,,TODO,,,linux: _ZN16LabelSliderCombo15UpdateTextEntryEb
-gameui,100329A0,46,,,UNKNOWN,GameUI/labelslidercombo.cpp,,,TODO,,,
-gameui,100329D0,19,,,UNKNOWN,GameUI/labelslidercombo.cpp,,,TODO,,,
-gameui,100329F0,64,,,UNKNOWN,GameUI/labelslidercombo.cpp,,,TODO,,,
-gameui,10032A30,10,,,UNKNOWN,GameUI/labelslidercombo.cpp,,,TODO,,,
+gameui,10032750,145,??0LabelSliderCombo@@QAE@PAVPanel@vgui2@@PBD1@Z,"public: __thiscall LabelSliderCombo::LabelSliderCombo(class vgui2::Panel *,char const *,char const *)",UNKNOWN,GameUI/labelslidercombo.cpp,,,MATCHED,100,,linux: _ZN16LabelSliderComboC2EPN5vgui25PanelEPKcS4_
+gameui,100327E1,28,??1LabelSliderCombo@@UAE@XZ,public: virtual __thiscall LabelSliderCombo::~LabelSliderCombo(void),UNKNOWN,GameUI/labelslidercombo.cpp,,,MATCHED,100,,linux: _ZN16LabelSliderComboD1Ev
+gameui,100327FD,39,?OnCursorMoved@LabelSliderCombo@@UAEXHH@Z,"public: virtual void __thiscall LabelSliderCombo::OnCursorMoved(int,int)",UNKNOWN,GameUI/labelslidercombo.cpp,,,MATCHED,100,,linux: _ZN16LabelSliderCombo13OnCursorMovedEii
+gameui,10032824,41,?SetValue@LabelSliderCombo@@UAEXH_N@Z,"public: virtual void __thiscall LabelSliderCombo::SetValue(int,bool)",UNKNOWN,GameUI/labelslidercombo.cpp,,,MATCHED,100,,linux: _ZN16LabelSliderCombo8SetValueEib
+gameui,1003284D,64,?SetVisible@LabelSliderCombo@@UAEX_N@Z,public: virtual void __thiscall LabelSliderCombo::SetVisible(bool),UNKNOWN,GameUI/labelslidercombo.cpp,,,MATCHED,100,,linux: _ZN16LabelSliderCombo10SetVisibleEb
+gameui,1003288D,266,?UpdateTextEntry@LabelSliderCombo@@AAEX_N@Z,private: void __thiscall LabelSliderCombo::UpdateTextEntry(bool),UNKNOWN,GameUI/labelslidercombo.cpp,,,MATCHED,100,,linux: _ZN16LabelSliderCombo15UpdateTextEntryEb
+gameui,100329A0,46,??_GLabelSliderCombo@@UAEPAXI@Z,public: virtual void * __thiscall LabelSliderCombo::`scalar deleting destructor'(unsigned int),UNKNOWN,GameUI/labelslidercombo.cpp,,,MATCHED,100,,
+gameui,100329D0,19,??1Slider@vgui2@@UAE@XZ,public: virtual __thiscall vgui2::Slider::~Slider(void),UNKNOWN,GameUI/labelslidercombo.cpp,,,MATCHED,100,,
+gameui,100329F0,64,?GetMessageMap@Slider@vgui2@@UAEPAUPanelMessageMap@2@XZ,public: virtual struct vgui2::PanelMessageMap * __thiscall vgui2::Slider::GetMessageMap(void),UNKNOWN,GameUI/labelslidercombo.cpp,,,MATCHED,100,,
+gameui,10032A30,10,?GetPanelClassName@Slider@vgui2@@SAPBDXZ,public: static char const * __cdecl vgui2::Slider::GetPanelClassName(void),UNKNOWN,GameUI/labelslidercombo.cpp,,,MATCHED,100,,
 gameui,10032A40,2663,,CLoadingDialog::CLoadingDialog,ENGINE,GameUI/LoadingDialog.cpp,,,TODO,,linux_symbols:string:0.775,
 gameui,100334A7,28,,,UNKNOWN,GameUI/LoadingDialog.cpp,,,TODO,,,
 gameui,100334C3,241,,,UNKNOWN,GameUI/LoadingDialog.cpp,,,TODO,,,

@@ -4073,6 +4073,11 @@
           "name": "GameUI/OptionsSubAdvanced",
           "source": "src/gameui/OptionsSubAdvanced.cpp",
           "functions_file": "tools/units/gameui_GameUI_OptionsSubAdvanced.txt"
+        },
+        {
+          "name": "GameUI/labelslidercombo",
+          "source": "src/gameui/labelslidercombo.cpp",
+          "functions_file": "tools/units/gameui_GameUI_labelslidercombo.txt"
         }
       ]
     }

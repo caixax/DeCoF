@@ -4963,3 +4963,13 @@ va,name,kind,evidence
 100502A0,?InitVar@PanelMessageFunc_OnContentControlClose@COptionsSubAdvanced@@SAXXZ,func,GameUI/OptionsSubAdvanced.cpp: same position and size as in our compiled object
 10050310,?AddToMap@COptionsSubAdvanced@@SAXPBDP8Panel@vgui2@@AEXXZHH0H0@Z,func,GameUI/OptionsSubAdvanced.cpp: same position and size as in our compiled object
 10050390,?IsPasswordEnabled@CContentControlDialog@@QAE_NXZ,func,GameUI/OptionsSubAdvanced.cpp: same position and size as in our compiled object
+10032750,??0LabelSliderCombo@@QAE@PAVPanel@vgui2@@PBD1@Z,func,GameUI/labelslidercombo.cpp: same position and size as in our compiled object; linux: _ZN16LabelSliderComboC2EPN5vgui25PanelEPKcS4_
+100327E1,??1LabelSliderCombo@@UAE@XZ,func,GameUI/labelslidercombo.cpp: same position and size as in our compiled object; linux: _ZN16LabelSliderComboD1Ev
+100327FD,?OnCursorMoved@LabelSliderCombo@@UAEXHH@Z,func,GameUI/labelslidercombo.cpp: same position and size as in our compiled object; linux: _ZN16LabelSliderCombo13OnCursorMovedEii
+10032824,?SetValue@LabelSliderCombo@@UAEXH_N@Z,func,GameUI/labelslidercombo.cpp: same position and size as in our compiled object; linux: _ZN16LabelSliderCombo8SetValueEib
+1003284D,?SetVisible@LabelSliderCombo@@UAEX_N@Z,func,GameUI/labelslidercombo.cpp: same position and size as in our compiled object; linux: _ZN16LabelSliderCombo10SetVisibleEb
+1003288D,?UpdateTextEntry@LabelSliderCombo@@AAEX_N@Z,func,GameUI/labelslidercombo.cpp: same position and size as in our compiled object; linux: _ZN16LabelSliderCombo15UpdateTextEntryEb
+100329A0,??_GLabelSliderCombo@@UAEPAXI@Z,func,GameUI/labelslidercombo.cpp: same position and size as in our compiled object
+100329D0,??1Slider@vgui2@@UAE@XZ,func,"GameUI/labelslidercombo.cpp: compiler-generated Slider destructor COMDAT called by ~LabelSliderCombo, same position and size as in our compiled object"
+100329F0,?GetMessageMap@Slider@vgui2@@UAEPAUPanelMessageMap@2@XZ,func,"GameUI/labelslidercombo.cpp: inline Slider COMDAT used by the LabelSliderCombo vtable, same position and size as in our compiled object"
+10032A30,?GetPanelClassName@Slider@vgui2@@SAPBDXZ,func,"GameUI/labelslidercombo.cpp: inline Slider COMDAT called by GetMessageMap (""Slider""), same position and size as in our compiled object"
