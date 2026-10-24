@@ -9887,70 +9887,70 @@ gameui,100508F0,10,?GetPanelBaseClassName@COptionsSubAudio@@SAPBDXZ,public: stat
 gameui,10050900,19,??0PanelMessageFunc_OnControlModified@COptionsSubAudio@@QAE@XZ,public: __thiscall COptionsSubAudio::PanelMessageFunc_OnControlModified::PanelMessageFunc_OnControlModified(void),UNKNOWN,GameUI/OptionsSubAudio.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,10050920,107,?InitVar@PanelMessageFunc_OnControlModified@COptionsSubAudio@@SAXXZ,public: static void __cdecl COptionsSubAudio::PanelMessageFunc_OnControlModified::InitVar(void),UNKNOWN,GameUI/OptionsSubAudio.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,10050990,120,?AddToMap@COptionsSubAudio@@SAXPBDP8Panel@vgui2@@AEXXZHH0H0@Z,"public: static void __cdecl COptionsSubAudio::AddToMap(char const *,void (__thiscall vgui2::Panel::*)(void),int,int,char const *,int,char const *)",UNKNOWN,GameUI/OptionsSubAudio.cpp,,,MATCHED,100,gameui_manual.csv,
-gameui,10050A10,975,,,UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,TODO,,,
-gameui,10050F87,345,,COptionsSubKeyboard::COptionsSubKeyboard,ENGINE,GameUI/OptionsSubKeyboard.cpp,,,TODO,,linux_symbols:string:0.408,
-gameui,100510E0,50,,,UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,TODO,,,
-gameui,10051112,47,,,UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,TODO,,,linux: _ZN19COptionsSubKeyboard11OnResetDataEv
-gameui,10051141,19,,,UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,TODO,,,linux: _ZN19COptionsSubKeyboard14OnApplyChangesEv
-gameui,10051154,76,,COptionsSubKeyboard::CreateKeyBindingList,ENGINE,GameUI/OptionsSubKeyboard.cpp,,,TODO,,linux_symbols:string:0.533,linux: _ZN19COptionsSubKeyboard20CreateKeyBindingListEv
-gameui,100511A0,461,,COptionsSubKeyboard::OnCommand,ENGINE,GameUI/OptionsSubKeyboard.cpp,,,TODO,,linux_symbols:string:0.778,linux: _ZN19COptionsSubKeyboard9OnCommandEPKc
-gameui,1005136D,96,,,UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,TODO,,,
-gameui,100513CD,994,,COptionsSubKeyboard::ParseActionDescriptions,ENGINE,GameUI/OptionsSubKeyboard.cpp,,,TODO,,linux_symbols:string:0.536,
-gameui,100517AF,35,,,UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,TODO,,,
-gameui,100517D2,10,,,UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,TODO,,,
-gameui,100517DC,267,,,UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,TODO,,,
-gameui,100518E7,34,,,UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,TODO,,,
-gameui,10051909,149,,,UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,TODO,,,
-gameui,1005199E,123,,,UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,TODO,,,
-gameui,10051A19,255,,,UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,TODO,,,
-gameui,10051B18,455,,,UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,TODO,,,
-gameui,10051CDF,167,,,UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,TODO,,,
-gameui,10051D86,103,,,UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,TODO,,,
-gameui,10051DED,117,,,UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,TODO,,,
-gameui,10051E62,62,,,UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,TODO,,,
-gameui,10051EA0,47,,,UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,TODO,,,
-gameui,10051ECF,43,,COptionsSubKeyboard::UnbindKey,ENGINE,GameUI/OptionsSubKeyboard.cpp,,,TODO,,linux_symbols:string:0.75,linux: _ZN19COptionsSubKeyboard9UnbindKeyEPKc
-gameui,10051EFA,499,,COptionsSubKeyboard::ApplyAllBindings,ENGINE,GameUI/OptionsSubKeyboard.cpp,,,TODO,,linux_symbols:string:0.573,linux: _ZN19COptionsSubKeyboard16ApplyAllBindingsEv
-gameui,100520ED,695,,COptionsSubKeyboard::FillInDefaultBindings,ENGINE,GameUI/OptionsSubKeyboard.cpp,,,TODO,,linux_symbols:string:0.375,linux: _ZN19COptionsSubKeyboard21FillInDefaultBindingsEv
-gameui,100523A4,362,,,UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,TODO,,,linux: _ZN19COptionsSubKeyboard12ItemSelectedEi
-gameui,1005250E,395,,,UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,TODO,,,linux: _ZN19COptionsSubKeyboard6FinishEiiPKc
-gameui,10052699,95,,,UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,TODO,,,
-gameui,100526F8,99,,,UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,TODO,,,linux: _ZN19COptionsSubKeyboard14OnKeyCodeTypedEN5vgui27KeyCodeE
-gameui,1005275B,26,,,UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,TODO,,,linux: _ZN19COptionsSubKeyboard10OnKeyTypedEw
-gameui,10052775,197,,,UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,TODO,,,linux: _ZN19COptionsSubKeyboard14OnMousePressedEN5vgui29MouseCodeE
-gameui,1005284A,197,,,UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,TODO,,,linux: _ZN19COptionsSubKeyboard20OnMouseDoublePressedEN5vgui29MouseCodeE
-gameui,1005291F,130,,COptionsSubKeyboard::OnMouseWheeled,ENGINE,GameUI/OptionsSubKeyboard.cpp,,,TODO,,linux_symbols:string:0.75,linux: _ZN19COptionsSubKeyboard14OnMouseWheeledEi
-gameui,100529A1,364,,,UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,TODO,,,linux: _ZN19COptionsSubKeyboard16OnKeyCodePressedEN5vgui27KeyCodeE
-gameui,10052B10,46,,,UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,TODO,,,
-gameui,10052B40,19,,,UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,TODO,,,
-gameui,10052B60,102,,,UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,TODO,,,
-gameui,10052BD0,64,,,UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,TODO,,,
-gameui,10052C10,10,,,UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,TODO,,,
-gameui,10052C20,10,,,UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,TODO,,,
-gameui,10052C30,19,,,UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,TODO,,,
-gameui,10052C50,110,,,UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,TODO,,,
-gameui,10052CC0,120,,,UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,TODO,,,
-gameui,10052D40,50,,,UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,TODO,,,
-gameui,10052D80,27,,,UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,TODO,,,
-gameui,10052DA0,25,,,UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,TODO,,,
-gameui,10052DC0,17,,,UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,TODO,,,
-gameui,10052DE0,32,,,UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,TODO,,,
-gameui,10052E00,70,,,UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,TODO,,,
-gameui,10052E50,25,,,UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,TODO,,,
-gameui,10052E70,65,,,UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,TODO,,,
-gameui,10052EC0,35,,,UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,TODO,,,
-gameui,10052EF0,11,,,UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,TODO,,,
-gameui,10052F00,74,,,UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,TODO,,,
-gameui,10052F50,19,,,UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,TODO,,,
-gameui,10052F70,24,,,UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,TODO,,,
-gameui,10052F90,5,,,UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,TODO,,,
-gameui,10052FA0,87,,,UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,TODO,,,
-gameui,10053000,85,,,UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,TODO,,,
-gameui,10053060,69,,,UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,TODO,,,
-gameui,100530B0,57,,,UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,TODO,,,
-gameui,100530F0,17,,,UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,TODO,,,
-gameui,10053110,197,,,UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,TODO,,,
-gameui,100531E0,25,,,UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,TODO,,,
+gameui,10050A10,975,?KeyCodeToEngineKey_guess@@YAHW4KeyCode@vgui2@@@Z,int __cdecl KeyCodeToEngineKey_guess(enum vgui2::KeyCode),UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10050F87,345,??0COptionsSubKeyboard@@QAE@PAVPanel@vgui2@@@Z,public: __thiscall COptionsSubKeyboard::COptionsSubKeyboard(class vgui2::Panel *),ENGINE,GameUI/OptionsSubKeyboard.cpp,,,TODO,99.99,gameui_manual.csv,"relocation targets differ (instructions identical): retail s_Resource/OptionsSubKeyboard.res_100e82ec, ours $SG55481"
+gameui,100510E0,50,??1COptionsSubKeyboard@@UAE@XZ,public: virtual __thiscall COptionsSubKeyboard::~COptionsSubKeyboard(void),UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10051112,47,?OnResetData@COptionsSubKeyboard@@UAEXXZ,public: virtual void __thiscall COptionsSubKeyboard::OnResetData(void),UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN19COptionsSubKeyboard11OnResetDataEv
+gameui,10051141,19,?OnApplyChanges@COptionsSubKeyboard@@UAEXXZ,public: virtual void __thiscall COptionsSubKeyboard::OnApplyChanges(void),UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN19COptionsSubKeyboard14OnApplyChangesEv
+gameui,10051154,76,?CreateKeyBindingList@COptionsSubKeyboard@@AAEXXZ,private: void __thiscall COptionsSubKeyboard::CreateKeyBindingList(void),ENGINE,GameUI/OptionsSubKeyboard.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN19COptionsSubKeyboard20CreateKeyBindingListEv
+gameui,100511A0,461,?OnCommand@COptionsSubKeyboard@@EAEXPBD@Z,private: virtual void __thiscall COptionsSubKeyboard::OnCommand(char const *),ENGINE,GameUI/OptionsSubKeyboard.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN19COptionsSubKeyboard9OnCommandEPKc
+gameui,1005136D,96,?UTIL_va@@YAPADPADZZ,"char * __cdecl UTIL_va(char *,...)",UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100513CD,994,?ParseActionDescriptions@COptionsSubKeyboard@@AAEXXZ,private: void __thiscall COptionsSubKeyboard::ParseActionDescriptions(void),ENGINE,GameUI/OptionsSubKeyboard.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100517AF,35,?UTIL_Parse@@YAPADPAD@Z,char * __cdecl UTIL_Parse(char *),UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100517D2,10,?UTIL_GetToken@@YAPADXZ,char * __cdecl UTIL_GetToken(void),UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100517DC,267,?GetItemForBinding@COptionsSubKeyboard@@AAEPAVKeyValues@@PBD@Z,private: class KeyValues * __thiscall COptionsSubKeyboard::GetItemForBinding(char const *),UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100518E7,34,?GetKeyName@COptionsSubKeyboard@@AAEPBDH@Z,private: char const * __thiscall COptionsSubKeyboard::GetKeyName(int),UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10051909,149,?FindKeyForName@COptionsSubKeyboard@@AAEHPBD@Z,private: int __thiscall COptionsSubKeyboard::FindKeyForName(char const *),UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1005199E,123,?AddBinding@COptionsSubKeyboard@@AAEXPAVKeyValues@@PBD@Z,"private: void __thiscall COptionsSubKeyboard::AddBinding(class KeyValues *,char const *)",UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10051A19,255,?ClearBindItems@COptionsSubKeyboard@@AAEXXZ,private: void __thiscall COptionsSubKeyboard::ClearBindItems(void),UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10051B18,455,?RemoveKeyFromBindItems@COptionsSubKeyboard@@AAEXPBD@Z,private: void __thiscall COptionsSubKeyboard::RemoveKeyFromBindItems(char const *),UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10051CDF,167,?FillInCurrentBindings@COptionsSubKeyboard@@AAEXXZ,private: void __thiscall COptionsSubKeyboard::FillInCurrentBindings(void),UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10051D86,103,?DeleteSavedBindings@COptionsSubKeyboard@@AAEXXZ,private: void __thiscall COptionsSubKeyboard::DeleteSavedBindings(void),UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10051DED,117,?SaveCurrentBindings@COptionsSubKeyboard@@AAEXXZ,private: void __thiscall COptionsSubKeyboard::SaveCurrentBindings(void),UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10051E62,62,?UTIL_CopyString@@YAPADPBD@Z,char * __cdecl UTIL_CopyString(char const *),UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10051EA0,47,?BindKey@COptionsSubKeyboard@@AAEXPBD0@Z,"private: void __thiscall COptionsSubKeyboard::BindKey(char const *,char const *)",UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10051ECF,43,?UnbindKey@COptionsSubKeyboard@@AAEXPBD@Z,private: void __thiscall COptionsSubKeyboard::UnbindKey(char const *),ENGINE,GameUI/OptionsSubKeyboard.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN19COptionsSubKeyboard9UnbindKeyEPKc
+gameui,10051EFA,499,?ApplyAllBindings@COptionsSubKeyboard@@AAEXXZ,private: void __thiscall COptionsSubKeyboard::ApplyAllBindings(void),ENGINE,GameUI/OptionsSubKeyboard.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN19COptionsSubKeyboard16ApplyAllBindingsEv
+gameui,100520ED,695,?FillInDefaultBindings@COptionsSubKeyboard@@AAEXXZ,private: void __thiscall COptionsSubKeyboard::FillInDefaultBindings(void),ENGINE,GameUI/OptionsSubKeyboard.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN19COptionsSubKeyboard21FillInDefaultBindingsEv
+gameui,100523A4,362,?ItemSelected@COptionsSubKeyboard@@EAEXH@Z,private: virtual void __thiscall COptionsSubKeyboard::ItemSelected(int),UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN19COptionsSubKeyboard12ItemSelectedEi
+gameui,1005250E,395,?Finish@COptionsSubKeyboard@@UAEXHH@Z,"public: virtual void __thiscall COptionsSubKeyboard::Finish(int,int)",UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN19COptionsSubKeyboard6FinishEiiPKc
+gameui,10052699,95,?GetButtonName@@YAPBDH@Z,char const * __cdecl GetButtonName(int),UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100526F8,99,?OnKeyCodeTyped@COptionsSubKeyboard@@UAEXW4KeyCode@vgui2@@@Z,public: virtual void __thiscall COptionsSubKeyboard::OnKeyCodeTyped(enum vgui2::KeyCode),UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN19COptionsSubKeyboard14OnKeyCodeTypedEN5vgui27KeyCodeE
+gameui,1005275B,26,?OnKeyTyped@COptionsSubKeyboard@@UAEXG@Z,public: virtual void __thiscall COptionsSubKeyboard::OnKeyTyped(unsigned short),UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN19COptionsSubKeyboard10OnKeyTypedEw
+gameui,10052775,197,?OnMousePressed@COptionsSubKeyboard@@UAEXW4MouseCode@vgui2@@@Z,public: virtual void __thiscall COptionsSubKeyboard::OnMousePressed(enum vgui2::MouseCode),UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN19COptionsSubKeyboard14OnMousePressedEN5vgui29MouseCodeE
+gameui,1005284A,197,?OnMouseDoublePressed@COptionsSubKeyboard@@UAEXW4MouseCode@vgui2@@@Z,public: virtual void __thiscall COptionsSubKeyboard::OnMouseDoublePressed(enum vgui2::MouseCode),UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN19COptionsSubKeyboard20OnMouseDoublePressedEN5vgui29MouseCodeE
+gameui,1005291F,130,?OnMouseWheeled@COptionsSubKeyboard@@UAEXH@Z,public: virtual void __thiscall COptionsSubKeyboard::OnMouseWheeled(int),ENGINE,GameUI/OptionsSubKeyboard.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN19COptionsSubKeyboard14OnMouseWheeledEi
+gameui,100529A1,364,?OnKeyCodePressed@COptionsSubKeyboard@@UAEXW4KeyCode@vgui2@@@Z,public: virtual void __thiscall COptionsSubKeyboard::OnKeyCodePressed(enum vgui2::KeyCode),UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN19COptionsSubKeyboard16OnKeyCodePressedEN5vgui27KeyCodeE
+gameui,10052B10,46,??_GCOptionsSubKeyboard@@UAEPAXI@Z,public: virtual void * __thiscall COptionsSubKeyboard::`scalar deleting destructor'(unsigned int),UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10052B40,19,??0COptionsSubKeyboard_RegisterMap@COptionsSubKeyboard@@QAE@XZ,public: __thiscall COptionsSubKeyboard::COptionsSubKeyboard_RegisterMap::COptionsSubKeyboard_RegisterMap(void),UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10052B60,102,?ChainToMap@COptionsSubKeyboard@@SAXXZ,public: static void __cdecl COptionsSubKeyboard::ChainToMap(void),UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10052BD0,64,?GetMessageMap@COptionsSubKeyboard@@UAEPAUPanelMessageMap@vgui2@@XZ,public: virtual struct vgui2::PanelMessageMap * __thiscall COptionsSubKeyboard::GetMessageMap(void),UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10052C10,10,?GetPanelClassName@COptionsSubKeyboard@@SAPBDXZ,public: static char const * __cdecl COptionsSubKeyboard::GetPanelClassName(void),UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10052C20,10,?GetPanelBaseClassName@COptionsSubKeyboard@@SAPBDXZ,public: static char const * __cdecl COptionsSubKeyboard::GetPanelBaseClassName(void),UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10052C30,19,??0PanelMessageFunc_ItemSelected@COptionsSubKeyboard@@QAE@XZ,public: __thiscall COptionsSubKeyboard::PanelMessageFunc_ItemSelected::PanelMessageFunc_ItemSelected(void),UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10052C50,110,?InitVar@PanelMessageFunc_ItemSelected@COptionsSubKeyboard@@SAXXZ,public: static void __cdecl COptionsSubKeyboard::PanelMessageFunc_ItemSelected::InitVar(void),UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10052CC0,120,?AddToMap@COptionsSubKeyboard@@SAXPBDP8Panel@vgui2@@AEXXZHH0H0@Z,"public: static void __cdecl COptionsSubKeyboard::AddToMap(char const *,void (__thiscall vgui2::Panel::*)(void),int,int,char const *,int,char const *)",UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10052D40,50,??0?$CUtlVector@VCUtlSymbol@@@@QAE@HH@Z,"public: __thiscall CUtlVector<class CUtlSymbol>::CUtlVector<class CUtlSymbol>(int,int)",UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10052D80,27,??1?$CUtlVector@VCUtlSymbol@@@@QAE@XZ,public: __thiscall CUtlVector<class CUtlSymbol>::~CUtlVector<class CUtlSymbol>(void),UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10052DA0,25,??A?$CUtlVector@VCUtlSymbol@@@@QAEAAVCUtlSymbol@@H@Z,public: class CUtlSymbol & __thiscall CUtlVector<class CUtlSymbol>::operator[](int),UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10052DC0,17,?Count@?$CUtlVector@VCUtlSymbol@@@@QBEHXZ,public: int __thiscall CUtlVector<class CUtlSymbol>::Count(void)const ,UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10052DE0,32,?AddToTail@?$CUtlVector@VCUtlSymbol@@@@QAEHABVCUtlSymbol@@@Z,public: int __thiscall CUtlVector<class CUtlSymbol>::AddToTail(class CUtlSymbol const &),UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10052E00,70,?RemoveAll@?$CUtlVector@VCUtlSymbol@@@@QAEXXZ,public: void __thiscall CUtlVector<class CUtlSymbol>::RemoveAll(void),UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10052E50,25,?Element@?$CUtlVector@VCUtlSymbol@@@@QAEAAVCUtlSymbol@@H@Z,public: class CUtlSymbol & __thiscall CUtlVector<class CUtlSymbol>::Element(int),UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10052E70,65,?InsertBefore@?$CUtlVector@VCUtlSymbol@@@@QAEHHABVCUtlSymbol@@@Z,"public: int __thiscall CUtlVector<class CUtlSymbol>::InsertBefore(int,class CUtlSymbol const &)",UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10052EC0,35,?Purge@?$CUtlVector@VCUtlSymbol@@@@QAEXXZ,public: void __thiscall CUtlVector<class CUtlSymbol>::Purge(void),UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10052EF0,11,?ResetDbgInfo@?$CUtlVector@VCUtlSymbol@@@@IAEXXZ,protected: void __thiscall CUtlVector<class CUtlSymbol>::ResetDbgInfo(void),UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10052F00,74,??0?$CUtlMemory@VCUtlSymbol@@@@QAE@HH@Z,"public: __thiscall CUtlMemory<class CUtlSymbol>::CUtlMemory<class CUtlSymbol>(int,int)",UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10052F50,19,??1?$CUtlMemory@VCUtlSymbol@@@@QAE@XZ,public: __thiscall CUtlMemory<class CUtlSymbol>::~CUtlMemory<class CUtlSymbol>(void),UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10052F70,24,??A?$CUtlMemory@VCUtlSymbol@@@@QAEAAVCUtlSymbol@@H@Z,public: class CUtlSymbol & __thiscall CUtlMemory<class CUtlSymbol>::operator[](int),UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10052F90,5,?Destruct@@YAXPAVCUtlSymbol@@@Z,void __cdecl Destruct(class CUtlSymbol *),UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10052FA0,87,?GrowVector@?$CUtlVector@VCUtlSymbol@@@@IAEXH@Z,protected: void __thiscall CUtlVector<class CUtlSymbol>::GrowVector(int),UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10053000,85,?ShiftElementsRight@?$CUtlVector@VCUtlSymbol@@@@IAEXHH@Z,"protected: void __thiscall CUtlVector<class CUtlSymbol>::ShiftElementsRight(int,int)",UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10053060,69,?Purge@?$CUtlMemory@VCUtlSymbol@@@@QAEXXZ,public: void __thiscall CUtlMemory<class CUtlSymbol>::Purge(void),UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100530B0,57,?CopyConstruct@@YAXPAVCUtlSymbol@@ABV1@@Z,"void __cdecl CopyConstruct(class CUtlSymbol *,class CUtlSymbol const &)",UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100530F0,17,?NumAllocated@?$CUtlMemory@VCUtlSymbol@@@@QBEHXZ,public: int __thiscall CUtlMemory<class CUtlSymbol>::NumAllocated(void)const ,UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10053110,197,?Grow@?$CUtlMemory@VCUtlSymbol@@@@QAEXH@Z,public: void __thiscall CUtlMemory<class CUtlSymbol>::Grow(int),UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100531E0,25,?IsExternallyAllocated@?$CUtlMemory@VCUtlSymbol@@@@QBE_NXZ,public: bool __thiscall CUtlMemory<class CUtlSymbol>::IsExternallyAllocated(void)const ,UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,10053210,825,??0COptionsSubMouse@@QAE@PAVPanel@vgui2@@@Z,public: __thiscall COptionsSubMouse::COptionsSubMouse(class vgui2::Panel *),ENGINE,GameUI/OptionsSubMouse.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN16COptionsSubMouseC2EPN5vgui25PanelE
 gameui,10053549,28,??1COptionsSubMouse@@UAE@XZ,public: virtual __thiscall COptionsSubMouse::~COptionsSubMouse(void),UNKNOWN,GameUI/OptionsSubMouse.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN16COptionsSubMouseD1Ev
 gameui,10053565,109,?OnResetData@COptionsSubMouse@@UAEXXZ,public: virtual void __thiscall COptionsSubMouse::OnResetData(void),UNKNOWN,GameUI/OptionsSubMouse.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN16COptionsSubMouse11OnResetDataEv

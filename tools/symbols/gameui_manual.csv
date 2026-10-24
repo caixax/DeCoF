@@ -5167,3 +5167,67 @@ va,name,kind,evidence
 10030A70,??_GIGameConsole@@UAEPAXI@Z,func,GameUI/GameConsole.cpp: same position and size as in our compiled object
 10030AA0,??1IGameConsole@@UAE@XZ,func,"GameUI/GameConsole.cpp: compiler-generated IGameConsole destructor COMDAT, same position and size as in our compiled object"
 10030AC0,?SETUP_PANEL@vgui2@@YAPAVCGameConsoleDialog@@PAV2@@Z,func,"GameUI/GameConsole.cpp: SETUP_PANEL<CGameConsoleDialog> template COMDAT (MakeReadyForUse), same position and size as in our compiled object"
+10050A10,?KeyCodeToEngineKey_guess@@YAHW4KeyCode@vgui2@@@Z,func,GameUI/OptionsSubKeyboard.cpp: same position (size 975 against 1399) as in our compiled object
+10050F87,??0COptionsSubKeyboard@@QAE@PAVPanel@vgui2@@@Z,func,GameUI/OptionsSubKeyboard.cpp: same position and size as in our compiled object
+100510E0,??1COptionsSubKeyboard@@UAE@XZ,func,GameUI/OptionsSubKeyboard.cpp: same position and size as in our compiled object
+10051112,?OnResetData@COptionsSubKeyboard@@UAEXXZ,func,GameUI/OptionsSubKeyboard.cpp: same position and size as in our compiled object; linux: _ZN19COptionsSubKeyboard11OnResetDataEv
+10051141,?OnApplyChanges@COptionsSubKeyboard@@UAEXXZ,func,GameUI/OptionsSubKeyboard.cpp: same position and size as in our compiled object; linux: _ZN19COptionsSubKeyboard14OnApplyChangesEv
+10051154,?CreateKeyBindingList@COptionsSubKeyboard@@AAEXXZ,func,GameUI/OptionsSubKeyboard.cpp: same position and size as in our compiled object; linux: _ZN19COptionsSubKeyboard20CreateKeyBindingListEv
+100511A0,?OnCommand@COptionsSubKeyboard@@EAEXPBD@Z,func,GameUI/OptionsSubKeyboard.cpp: same position and size as in our compiled object; linux: _ZN19COptionsSubKeyboard9OnCommandEPKc
+1005136D,?UTIL_va@@YAPADPADZZ,func,GameUI/OptionsSubKeyboard.cpp: same position and size as in our compiled object
+100513CD,?ParseActionDescriptions@COptionsSubKeyboard@@AAEXXZ,func,GameUI/OptionsSubKeyboard.cpp: same position (size 994 against 995) as in our compiled object
+100517AF,?UTIL_Parse@@YAPADPAD@Z,func,GameUI/OptionsSubKeyboard.cpp: same position (size 35 against 29) as in our compiled object
+100517D2,?UTIL_GetToken@@YAPADXZ,func,GameUI/OptionsSubKeyboard.cpp: same position and size as in our compiled object
+100517DC,?GetItemForBinding@COptionsSubKeyboard@@AAEPAVKeyValues@@PBD@Z,func,GameUI/OptionsSubKeyboard.cpp: same position and size as in our compiled object
+100518E7,?GetKeyName@COptionsSubKeyboard@@AAEPBDH@Z,func,GameUI/OptionsSubKeyboard.cpp: same position and size as in our compiled object
+10051909,?FindKeyForName@COptionsSubKeyboard@@AAEHPBD@Z,func,GameUI/OptionsSubKeyboard.cpp: same position and size as in our compiled object
+1005199E,?AddBinding@COptionsSubKeyboard@@AAEXPAVKeyValues@@PBD@Z,func,GameUI/OptionsSubKeyboard.cpp: same position and size as in our compiled object
+10051A19,?ClearBindItems@COptionsSubKeyboard@@AAEXXZ,func,GameUI/OptionsSubKeyboard.cpp: same position and size as in our compiled object
+10051B18,?RemoveKeyFromBindItems@COptionsSubKeyboard@@AAEXPBD@Z,func,GameUI/OptionsSubKeyboard.cpp: same position and size as in our compiled object
+10051CDF,?FillInCurrentBindings@COptionsSubKeyboard@@AAEXXZ,func,GameUI/OptionsSubKeyboard.cpp: same position and size as in our compiled object
+10051D86,?DeleteSavedBindings@COptionsSubKeyboard@@AAEXXZ,func,GameUI/OptionsSubKeyboard.cpp: same position and size as in our compiled object
+10051DED,?SaveCurrentBindings@COptionsSubKeyboard@@AAEXXZ,func,GameUI/OptionsSubKeyboard.cpp: same position and size as in our compiled object
+10051E62,?UTIL_CopyString@@YAPADPBD@Z,func,GameUI/OptionsSubKeyboard.cpp: same position and size as in our compiled object
+10051EA0,?BindKey@COptionsSubKeyboard@@AAEXPBD0@Z,func,GameUI/OptionsSubKeyboard.cpp: same position and size as in our compiled object
+10051ECF,?UnbindKey@COptionsSubKeyboard@@AAEXPBD@Z,func,GameUI/OptionsSubKeyboard.cpp: same position and size as in our compiled object; linux: _ZN19COptionsSubKeyboard9UnbindKeyEPKc
+10051EFA,?ApplyAllBindings@COptionsSubKeyboard@@AAEXXZ,func,GameUI/OptionsSubKeyboard.cpp: same position and size as in our compiled object; linux: _ZN19COptionsSubKeyboard16ApplyAllBindingsEv
+100520ED,?FillInDefaultBindings@COptionsSubKeyboard@@AAEXXZ,func,GameUI/OptionsSubKeyboard.cpp: same position (size 695 against 693) as in our compiled object; linux: _ZN19COptionsSubKeyboard21FillInDefaultBindingsEv
+100523A4,?ItemSelected@COptionsSubKeyboard@@EAEXH@Z,func,GameUI/OptionsSubKeyboard.cpp: same position and size as in our compiled object; linux: _ZN19COptionsSubKeyboard12ItemSelectedEi
+1005250E,?Finish@COptionsSubKeyboard@@UAEXHH@Z,func,GameUI/OptionsSubKeyboard.cpp: same position and size as in our compiled object; linux: _ZN19COptionsSubKeyboard6FinishEiiPKc
+10052699,?GetButtonName@@YAPBDH@Z,func,GameUI/OptionsSubKeyboard.cpp: same position and size as in our compiled object
+100526F8,?OnKeyCodeTyped@COptionsSubKeyboard@@UAEXW4KeyCode@vgui2@@@Z,func,GameUI/OptionsSubKeyboard.cpp: same position (size 99 against 91) as in our compiled object; linux: _ZN19COptionsSubKeyboard14OnKeyCodeTypedEN5vgui27KeyCodeE
+1005275B,?OnKeyTyped@COptionsSubKeyboard@@UAEXG@Z,func,GameUI/OptionsSubKeyboard.cpp: same position and size as in our compiled object; linux: _ZN19COptionsSubKeyboard10OnKeyTypedEw
+10052775,?OnMousePressed@COptionsSubKeyboard@@UAEXW4MouseCode@vgui2@@@Z,func,GameUI/OptionsSubKeyboard.cpp: same position (size 197 against 212) as in our compiled object; linux: _ZN19COptionsSubKeyboard14OnMousePressedEN5vgui29MouseCodeE
+1005284A,?OnMouseDoublePressed@COptionsSubKeyboard@@UAEXW4MouseCode@vgui2@@@Z,func,GameUI/OptionsSubKeyboard.cpp: same position (size 197 against 212) as in our compiled object; linux: _ZN19COptionsSubKeyboard20OnMouseDoublePressedEN5vgui29MouseCodeE
+1005291F,?OnMouseWheeled@COptionsSubKeyboard@@UAEXH@Z,func,GameUI/OptionsSubKeyboard.cpp: same position and size as in our compiled object; linux: _ZN19COptionsSubKeyboard14OnMouseWheeledEi
+100529A1,?OnKeyCodePressed@COptionsSubKeyboard@@UAEXW4KeyCode@vgui2@@@Z,func,GameUI/OptionsSubKeyboard.cpp: same position and size as in our compiled object; linux: _ZN19COptionsSubKeyboard16OnKeyCodePressedEN5vgui27KeyCodeE
+10052B10,??_GCOptionsSubKeyboard@@UAEPAXI@Z,func,GameUI/OptionsSubKeyboard.cpp: same position and size as in our compiled object
+10052B40,??0COptionsSubKeyboard_RegisterMap@COptionsSubKeyboard@@QAE@XZ,func,GameUI/OptionsSubKeyboard.cpp: same position and size as in our compiled object
+10052B60,?ChainToMap@COptionsSubKeyboard@@SAXXZ,func,GameUI/OptionsSubKeyboard.cpp: same position and size as in our compiled object
+10052BD0,?GetMessageMap@COptionsSubKeyboard@@UAEPAUPanelMessageMap@vgui2@@XZ,func,GameUI/OptionsSubKeyboard.cpp: same position and size as in our compiled object
+10052C10,?GetPanelClassName@COptionsSubKeyboard@@SAPBDXZ,func,GameUI/OptionsSubKeyboard.cpp: same position and size as in our compiled object
+10052C20,?GetPanelBaseClassName@COptionsSubKeyboard@@SAPBDXZ,func,GameUI/OptionsSubKeyboard.cpp: same position and size as in our compiled object
+10052C30,??0PanelMessageFunc_ItemSelected@COptionsSubKeyboard@@QAE@XZ,func,GameUI/OptionsSubKeyboard.cpp: same position and size as in our compiled object
+10052C50,?InitVar@PanelMessageFunc_ItemSelected@COptionsSubKeyboard@@SAXXZ,func,GameUI/OptionsSubKeyboard.cpp: same position and size as in our compiled object
+10052CC0,?AddToMap@COptionsSubKeyboard@@SAXPBDP8Panel@vgui2@@AEXXZHH0H0@Z,func,GameUI/OptionsSubKeyboard.cpp: same position and size as in our compiled object
+10052D40,??0?$CUtlVector@VCUtlSymbol@@@@QAE@HH@Z,func,GameUI/OptionsSubKeyboard.cpp: same position and size as in our compiled object
+10052D80,??1?$CUtlVector@VCUtlSymbol@@@@QAE@XZ,func,GameUI/OptionsSubKeyboard.cpp: same position and size as in our compiled object
+10052DA0,??A?$CUtlVector@VCUtlSymbol@@@@QAEAAVCUtlSymbol@@H@Z,func,GameUI/OptionsSubKeyboard.cpp: same position and size as in our compiled object
+10052DC0,?Count@?$CUtlVector@VCUtlSymbol@@@@QBEHXZ,func,GameUI/OptionsSubKeyboard.cpp: same position and size as in our compiled object
+10052DE0,?AddToTail@?$CUtlVector@VCUtlSymbol@@@@QAEHABVCUtlSymbol@@@Z,func,GameUI/OptionsSubKeyboard.cpp: same position and size as in our compiled object
+10052E00,?RemoveAll@?$CUtlVector@VCUtlSymbol@@@@QAEXXZ,func,GameUI/OptionsSubKeyboard.cpp: same position and size as in our compiled object
+10052E50,?Element@?$CUtlVector@VCUtlSymbol@@@@QAEAAVCUtlSymbol@@H@Z,func,GameUI/OptionsSubKeyboard.cpp: same position and size as in our compiled object
+10052E70,?InsertBefore@?$CUtlVector@VCUtlSymbol@@@@QAEHHABVCUtlSymbol@@@Z,func,GameUI/OptionsSubKeyboard.cpp: same position and size as in our compiled object
+10052EC0,?Purge@?$CUtlVector@VCUtlSymbol@@@@QAEXXZ,func,GameUI/OptionsSubKeyboard.cpp: same position and size as in our compiled object
+10052EF0,?ResetDbgInfo@?$CUtlVector@VCUtlSymbol@@@@IAEXXZ,func,GameUI/OptionsSubKeyboard.cpp: same position and size as in our compiled object
+10052F00,??0?$CUtlMemory@VCUtlSymbol@@@@QAE@HH@Z,func,GameUI/OptionsSubKeyboard.cpp: same position and size as in our compiled object
+10052F50,??1?$CUtlMemory@VCUtlSymbol@@@@QAE@XZ,func,GameUI/OptionsSubKeyboard.cpp: same position and size as in our compiled object
+10052F70,??A?$CUtlMemory@VCUtlSymbol@@@@QAEAAVCUtlSymbol@@H@Z,func,GameUI/OptionsSubKeyboard.cpp: same position and size as in our compiled object
+10052F90,?Destruct@@YAXPAVCUtlSymbol@@@Z,func,GameUI/OptionsSubKeyboard.cpp: same position and size as in our compiled object
+10052FA0,?GrowVector@?$CUtlVector@VCUtlSymbol@@@@IAEXH@Z,func,GameUI/OptionsSubKeyboard.cpp: same position and size as in our compiled object
+10053000,?ShiftElementsRight@?$CUtlVector@VCUtlSymbol@@@@IAEXHH@Z,func,GameUI/OptionsSubKeyboard.cpp: same position and size as in our compiled object
+10053060,?Purge@?$CUtlMemory@VCUtlSymbol@@@@QAEXXZ,func,GameUI/OptionsSubKeyboard.cpp: same position and size as in our compiled object
+100530B0,?CopyConstruct@@YAXPAVCUtlSymbol@@ABV1@@Z,func,GameUI/OptionsSubKeyboard.cpp: same position and size as in our compiled object
+100530F0,?NumAllocated@?$CUtlMemory@VCUtlSymbol@@@@QBEHXZ,func,GameUI/OptionsSubKeyboard.cpp: same position and size as in our compiled object
+10053110,?Grow@?$CUtlMemory@VCUtlSymbol@@@@QAEXH@Z,func,GameUI/OptionsSubKeyboard.cpp: same position and size as in our compiled object
+100531E0,?IsExternallyAllocated@?$CUtlMemory@VCUtlSymbol@@@@QBE_NXZ,func,GameUI/OptionsSubKeyboard.cpp: same position and size as in our compiled object
