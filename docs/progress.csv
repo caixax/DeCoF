@@ -26470,11 +26470,11 @@ hw,01D89460,25,?IsExternallyAllocated@?$CUtlMemory@UNode_t@?$CUtlRBTree@Uiprate_
 hw,01D89480,17,?NumAllocated@?$CUtlMemory@UNode_t@?$CUtlRBTree@Uiprate_s@CIPRateLimit@@H@@@@QBEHXZ,,UNKNOWN,engine/ipratelimit.cpp,,,MATCHED,100,,inline or template function (COMDAT) emitted after the object
 hw,01D894A0,199,?Grow@?$CUtlMemory@UNode_t@?$CUtlRBTree@Uiprate_s@CIPRateLimit@@H@@@@QAEXH@Z,,UNKNOWN,engine/ipratelimit.cpp,,,MATCHED,100,,inline or template function (COMDAT) emitted after the object
 hw,01D89570,25,?Construct@@YAXPAUiprate_s@CIPRateLimit@@@Z,,UNKNOWN,engine/ipratelimit.cpp,,,MATCHED,100,,inline or template function (COMDAT) emitted after the object
-hw,01D89590,15,,,UNKNOWN,engine/ipratelimitWrapper.cpp,,,TODO,,,"VC6 dynamic initializer ($E) of the static CIPRateLimit (constructor 01D87D80, atexit destructor 01D87DB6)"
-hw,01D8959F,15,,,UNKNOWN,engine/ipratelimitWrapper.cpp,,,TODO,,,"VC6 dynamic initializer ($E) of the static CIPRateLimit (constructor 01D87D80, atexit destructor 01D87DB6)"
-hw,01D895AE,18,,,UNKNOWN,engine/ipratelimitWrapper.cpp,,,TODO,,,"VC6 dynamic initializer ($E) of the static CIPRateLimit (constructor 01D87D80, atexit destructor 01D87DB6)"
-hw,01D895C0,15,,,UNKNOWN,engine/ipratelimitWrapper.cpp,,,TODO,,,"VC6 dynamic initializer ($E) of the static CIPRateLimit (constructor 01D87D80, atexit destructor 01D87DB6)"
-hw,01D895CF,39,_CheckIP,CheckIP,ENGINE,engine/ipratelimitWrapper.cpp,,,TODO,,linux_symbols:caller:0.667,
+hw,01D89590,15,_$E4,,UNKNOWN,engine/ipratelimitWrapper.cpp,,,MATCHED,100,hw_manual.csv,"VC6 dynamic initializer ($E) of the static CIPRateLimit (constructor 01D87D80, atexit destructor 01D87DB6)"
+hw,01D8959F,15,_$E1,,UNKNOWN,engine/ipratelimitWrapper.cpp,,,MATCHED,100,hw_manual.csv,"VC6 dynamic initializer ($E) of the static CIPRateLimit (constructor 01D87D80, atexit destructor 01D87DB6)"
+hw,01D895AE,18,_$E3,,UNKNOWN,engine/ipratelimitWrapper.cpp,,,MATCHED,100,hw_manual.csv,"VC6 dynamic initializer ($E) of the static CIPRateLimit (constructor 01D87D80, atexit destructor 01D87DB6)"
+hw,01D895C0,15,_$E2,,UNKNOWN,engine/ipratelimitWrapper.cpp,,,MATCHED,100,hw_manual.csv,"VC6 dynamic initializer ($E) of the static CIPRateLimit (constructor 01D87D80, atexit destructor 01D87DB6)"
+hw,01D895CF,39,_CheckIP,CheckIP,ENGINE,engine/ipratelimitWrapper.cpp,,,MATCHED,100,linux_symbols:caller:0.667,
 hw,01D89600,277,_CheckForCommand,,UNKNOWN,engine/KEYS.C,,,MATCHED,100,hw_manual.csv,
 hw,01D89715,266,_CompleteCommand,,UNKNOWN,engine/KEYS.C,,,MATCHED,100,hw_manual.csv,
 hw,01D8981F,164,_Key_UpLine,,UNKNOWN,engine/KEYS.C,,,MATCHED,100,hw_manual.csv,
