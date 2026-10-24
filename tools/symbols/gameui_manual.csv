@@ -5003,3 +5003,24 @@ va,name,kind,evidence
 10036D2D,?GetSpace_guess@CMsgBuffer@@AAEPAXH@Z,func,"GameUI/MsgBuffer_guess.cpp: same position and size as in our compiled object (RTTI CMsgBuffer, error strings; method names unproven)"
 10036DFA,?Write_guess@CMsgBuffer@@AAEXPBXH@Z,func,"GameUI/MsgBuffer_guess.cpp: same position and size as in our compiled object (RTTI CMsgBuffer, error strings; method names unproven)"
 10036E30,??_GCMsgBuffer@@UAEPAXI@Z,func,"GameUI/MsgBuffer_guess.cpp: same position and size as in our compiled object (RTTI CMsgBuffer, error strings; method names unproven)"
+100374C0,_$E2,func,"GameUI/NetAPI_guess.cpp: dynamic initializer of the static CNetAPI object, same position and size as in our compiled object"
+100374CA,_$E1,func,"GameUI/NetAPI_guess.cpp: dynamic initializer of the static CNetAPI object (constructs it at 100FDB88), same position and size as in our compiled object"
+100374D9,?NetAdrToSockAddr_guess@CNetAPI@@UAEXPAUnetadr_s@@PAUsockaddr@@@Z,func,"GameUI/NetAPI_guess.cpp: CNetAPI vtable slot 0 (RTTI CNetAPI), Quake NetadrToSockadr; same position and size as in our compiled object"
+1003754A,?SockAddrToNetAdr_guess@CNetAPI@@UAEXPAUsockaddr@@PAUnetadr_s@@@Z,func,"GameUI/NetAPI_guess.cpp: CNetAPI vtable slot 1, Quake SockadrToNetadr; same position and size as in our compiled object"
+10037587,?AdrToString_guess@CNetAPI@@UAEPADPAUnetadr_s@@@Z,func,"GameUI/NetAPI_guess.cpp: CNetAPI vtable slot 2, ""loopback"" and ""%i.%i.%i.%i:%i""; same position and size as in our compiled object"
+1003761D,?StringToAdr_guess@CNetAPI@@UAE_NPBDPAUnetadr_s@@@Z,func,"GameUI/NetAPI_guess.cpp: CNetAPI vtable slot 3, ""localhost""; same position and size as in our compiled object"
+10037690,?StringToSockaddr_guess@@YA_NPBDPAUsockaddr@@@Z,func,"GameUI/NetAPI_guess.cpp: static helper after its first caller, Quake NET_StringToSockaddr; same position and size as in our compiled object"
+1003779C,?GetSocketAddress_guess@CNetAPI@@UAEXHPAUnetadr_s@@@Z,func,"GameUI/NetAPI_guess.cpp: CNetAPI vtable slot 4 (gethostname, getsockname); same position and size as in our compiled object"
+1003781F,?CompareAdr_guess@CNetAPI@@UAE_NPAUnetadr_s@@0@Z,func,GameUI/NetAPI_guess.cpp: CNetAPI vtable slot 5; same position and size as in our compiled object
+100378BF,?GetLocalIP_guess@CNetAPI@@UAEXPAUnetadr_s@@@Z,func,"GameUI/NetAPI_guess.cpp: CNetAPI vtable slot 6 (gethostname, gethostbyname); same position and size as in our compiled object"
+10037920,??0CNetAPI@@QAE@XZ,func,"GameUI/NetAPI_guess.cpp: implicit CNetAPI constructor COMDAT (stores the CNetAPI vtable), same position and size as in our compiled object"
+10037940,??0INetAPI@@QAE@XZ,func,"GameUI/NetAPI_guess.cpp: implicit INetAPI constructor COMDAT (stores the INetAPI vtable), same position and size as in our compiled object"
+100E4D6C,?net_guess@@3PAVINetAPI@@A,data,GameUI/NetAPI_guess.cpp: .data pointer initialized to the static CNetAPI object; used by the Socket_guess.cpp code
+100FDB88,_g_NetAPI_guess,data,"GameUI/NetAPI_guess.cpp: the static CNetAPI object (.bss), constructed by _$E1"
+100FDB8C,_?s@?1??AdrToString_guess@CNetAPI@@UAEPADPAUnetadr_s@@@Z@4PADA,data,"GameUI/NetAPI_guess.cpp: static buffer of AdrToString_guess (.bss, after the CNetAPI object as in our object)"
+10058C06,_ntohs@4,func,WSOCK32 import thunk (ordinal 15) called by GameUI/NetAPI_guess.cpp
+10058C0C,_gethostbyname@4,func,WSOCK32 import thunk (ordinal 52)
+10058C12,_inet_addr@4,func,WSOCK32 import thunk (ordinal 10)
+10058C18,_htons@4,func,WSOCK32 import thunk (ordinal 9)
+10058C1E,_getsockname@12,func,WSOCK32 import thunk (ordinal 6)
+10058C24,_gethostname@8,func,WSOCK32 import thunk (ordinal 57)

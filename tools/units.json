@@ -4083,6 +4083,11 @@
           "name": "GameUI/MsgBuffer_guess",
           "source": "src/gameui/MsgBuffer_guess.cpp",
           "functions_file": "tools/units/gameui_GameUI_MsgBuffer_guess.txt"
+        },
+        {
+          "name": "GameUI/NetAPI_guess",
+          "source": "src/gameui/NetAPI_guess.cpp",
+          "functions_file": "tools/units/gameui_GameUI_NetAPI_guess.txt"
         }
       ]
     }
