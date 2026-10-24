@@ -8752,30 +8752,30 @@ gameui,10030270,244,??0CDottedBgLabel@@QAE@PAVPanel@vgui2@@PBD1HHH@Z,"public: __
 gameui,10030364,592,?PaintBackground@CDottedBgLabel@@UAEXXZ,public: virtual void __thiscall CDottedBgLabel::PaintBackground(void),UNKNOWN,GameUI/DottedLabel.cpp,,,MATCHED,100,,linux: _ZN14CDottedBgLabel15PaintBackgroundEv
 gameui,100305C0,46,??_GCDottedBgLabel@@UAEPAXI@Z,public: virtual void * __thiscall CDottedBgLabel::`scalar deleting destructor'(unsigned int),UNKNOWN,GameUI/DottedLabel.cpp,,,MATCHED,100,,
 gameui,100305F0,19,??1CDottedBgLabel@@UAE@XZ,public: virtual __thiscall CDottedBgLabel::~CDottedBgLabel(void),UNKNOWN,GameUI/DottedLabel.cpp,,,MATCHED,100,,
-gameui,10030610,15,,,UNKNOWN,GameUI/GameConsole.cpp,,,TODO,,,
-gameui,1003061F,15,,,UNKNOWN,GameUI/GameConsole.cpp,,,TODO,,,
-gameui,1003062E,18,,,UNKNOWN,GameUI/GameConsole.cpp,,,TODO,,,
-gameui,10030640,15,,,UNKNOWN,GameUI/GameConsole.cpp,,,TODO,,,
-gameui,1003064F,38,,CMFCToolBarDateTimeCtrlImpl::CMFCToolBarDateTimeCtrlImpl,ENGINE,GameUI/GameConsole.cpp,,,TODO,,ghidra,
-gameui,10030675,35,,,UNKNOWN,GameUI/GameConsole.cpp,,,TODO,,,
-gameui,10030698,279,,CGameConsole::Initialize,ENGINE,GameUI/GameConsole.cpp,,,TODO,,linux_symbols:string:0.783,linux: _ZN12CGameConsole10InitializeEv
-gameui,100307AF,82,,,UNKNOWN,GameUI/GameConsole.cpp,,,TODO,,,linux: _ZN12CGameConsole8ActivateEv
-gameui,10030801,36,,,UNKNOWN,GameUI/GameConsole.cpp,,,TODO,,,linux: _ZN12CGameConsole4HideEv
-gameui,10030825,36,,,UNKNOWN,GameUI/GameConsole.cpp,,,TODO,,,linux: _ZN12CGameConsole5ClearEv
-gameui,10030849,103,,,UNKNOWN,GameUI/GameConsole.cpp,,,TODO,,,linux: _ZN12CGameConsole6PrintfEPKcz
-gameui,100308B0,103,,,UNKNOWN,GameUI/GameConsole.cpp,,,TODO,,,linux: _ZN12CGameConsole7DPrintfEPKcz
-gameui,10030917,44,,,UNKNOWN,GameUI/GameConsole.cpp,,,TODO,,,linux: _ZN12CGameConsole16IsConsoleVisibleEv
-gameui,10030943,105,,,UNKNOWN,GameUI/GameConsole.cpp,,,TODO,,,linux: _ZN12CGameConsole15ActivateDelayedEf
-gameui,100309AC,51,,,UNKNOWN,GameUI/GameConsole.cpp,,,TODO,,,linux: _ZN12CGameConsole9SetParentEi
-gameui,100309DF,16,,CGameConsole::OnCmdCondump,ENGINE,GameUI/GameConsole.cpp,,,TODO,,linux_symbols:caller:1.0,linux: _ZN12CGameConsole12OnCmdCondumpEv
-gameui,100309EF,10,,,UNKNOWN,GameUI/GameConsole.cpp,,,TODO,,,
-gameui,100309F9,25,__GLOBAL__sub_I_g_GameConsole,_GLOBAL__sub_I_g_GameConsole,ENGINE,GameUI/GameConsole.cpp,,,TODO,,linux_symbols:string:0.75,
-gameui,10030A12,10,,,UNKNOWN,GameUI/GameConsole.cpp,,,TODO,,,
-gameui,10030A20,46,,,UNKNOWN,GameUI/GameConsole.cpp,,,TODO,,,
-gameui,10030A50,31,,,UNKNOWN,GameUI/GameConsole.cpp,,,TODO,,,
-gameui,10030A70,46,,,UNKNOWN,GameUI/GameConsole.cpp,,,TODO,,,
-gameui,10030AA0,19,,,UNKNOWN,GameUI/GameConsole.cpp,,,TODO,,,
-gameui,10030AC0,16,,,UNKNOWN,GameUI/GameConsole.cpp,,,TODO,,,
+gameui,10030610,15,_$E8,_$E8,UNKNOWN,GameUI/GameConsole.cpp,,,MATCHED,100,,
+gameui,1003061F,15,_$E5,_$E5,UNKNOWN,GameUI/GameConsole.cpp,,,MATCHED,100,,
+gameui,1003062E,18,_$E7,_$E7,UNKNOWN,GameUI/GameConsole.cpp,,,MATCHED,100,,
+gameui,10030640,15,_$E6,_$E6,UNKNOWN,GameUI/GameConsole.cpp,,,MATCHED,100,,
+gameui,1003064F,38,??0CGameConsole@@QAE@XZ,public: __thiscall CGameConsole::CGameConsole(void),ENGINE,GameUI/GameConsole.cpp,,,MATCHED,100,ghidra,
+gameui,10030675,35,??1CGameConsole@@UAE@XZ,public: virtual __thiscall CGameConsole::~CGameConsole(void),UNKNOWN,GameUI/GameConsole.cpp,,,MATCHED,100,,
+gameui,10030698,279,?Initialize@CGameConsole@@UAEXXZ,public: virtual void __thiscall CGameConsole::Initialize(void),ENGINE,GameUI/GameConsole.cpp,,,MATCHED,100,linux_symbols:string:0.783,linux: _ZN12CGameConsole10InitializeEv
+gameui,100307AF,82,?Activate@CGameConsole@@UAEXXZ,public: virtual void __thiscall CGameConsole::Activate(void),UNKNOWN,GameUI/GameConsole.cpp,,,MATCHED,100,,linux: _ZN12CGameConsole8ActivateEv
+gameui,10030801,36,?Hide@CGameConsole@@UAEXXZ,public: virtual void __thiscall CGameConsole::Hide(void),UNKNOWN,GameUI/GameConsole.cpp,,,MATCHED,100,,linux: _ZN12CGameConsole4HideEv
+gameui,10030825,36,?Clear@CGameConsole@@UAEXXZ,public: virtual void __thiscall CGameConsole::Clear(void),UNKNOWN,GameUI/GameConsole.cpp,,,MATCHED,100,,linux: _ZN12CGameConsole5ClearEv
+gameui,10030849,103,?Printf@CGameConsole@@UAAXPBDZZ,"public: virtual void __cdecl CGameConsole::Printf(char const *,...)",UNKNOWN,GameUI/GameConsole.cpp,,,MATCHED,100,,linux: _ZN12CGameConsole6PrintfEPKcz
+gameui,100308B0,103,?DPrintf@CGameConsole@@UAAXPBDZZ,"public: virtual void __cdecl CGameConsole::DPrintf(char const *,...)",UNKNOWN,GameUI/GameConsole.cpp,,,MATCHED,100,,linux: _ZN12CGameConsole7DPrintfEPKcz
+gameui,10030917,44,?IsConsoleVisible@CGameConsole@@UAE_NXZ,public: virtual bool __thiscall CGameConsole::IsConsoleVisible(void),UNKNOWN,GameUI/GameConsole.cpp,,,MATCHED,100,,linux: _ZN12CGameConsole16IsConsoleVisibleEv
+gameui,10030943,105,?ActivateDelayed@CGameConsole@@QAEXM@Z,public: void __thiscall CGameConsole::ActivateDelayed(float),UNKNOWN,GameUI/GameConsole.cpp,,,MATCHED,100,,linux: _ZN12CGameConsole15ActivateDelayedEf
+gameui,100309AC,51,?SetParent@CGameConsole@@UAEXH@Z,public: virtual void __thiscall CGameConsole::SetParent(int),UNKNOWN,GameUI/GameConsole.cpp,,,MATCHED,100,,linux: _ZN12CGameConsole9SetParentEi
+gameui,100309DF,16,?OnCmdCondump@CGameConsole@@SAXXZ,public: static void __cdecl CGameConsole::OnCmdCondump(void),ENGINE,GameUI/GameConsole.cpp,,,MATCHED,100,linux_symbols:caller:1.0,linux: _ZN12CGameConsole12OnCmdCondumpEv
+gameui,100309EF,10,_$E11,_$E11,UNKNOWN,GameUI/GameConsole.cpp,,,MATCHED,100,,
+gameui,100309F9,25,_$E10,_$E10,ENGINE,GameUI/GameConsole.cpp,,,MATCHED,100,linux_symbols:string:0.75,
+gameui,10030A12,10,?__CreateCGameConsoleIGameConsole_interface@@YAPAVIBaseInterface@@XZ,class IBaseInterface * __cdecl __CreateCGameConsoleIGameConsole_interface(void),UNKNOWN,GameUI/GameConsole.cpp,,,MATCHED,100,,
+gameui,10030A20,46,??_GCGameConsole@@UAEPAXI@Z,public: virtual void * __thiscall CGameConsole::`scalar deleting destructor'(unsigned int),UNKNOWN,GameUI/GameConsole.cpp,,,MATCHED,100,,
+gameui,10030A50,31,??0IGameConsole@@QAE@XZ,public: __thiscall IGameConsole::IGameConsole(void),UNKNOWN,GameUI/GameConsole.cpp,,,MATCHED,100,,
+gameui,10030A70,46,??_GIGameConsole@@UAEPAXI@Z,public: virtual void * __thiscall IGameConsole::`scalar deleting destructor'(unsigned int),UNKNOWN,GameUI/GameConsole.cpp,,,MATCHED,100,,
+gameui,10030AA0,19,??1IGameConsole@@UAE@XZ,public: virtual __thiscall IGameConsole::~IGameConsole(void),UNKNOWN,GameUI/GameConsole.cpp,,,MATCHED,100,,
+gameui,10030AC0,16,?SETUP_PANEL@vgui2@@YAPAVCGameConsoleDialog@@PAV2@@Z,class CGameConsoleDialog * __cdecl vgui2::SETUP_PANEL(class CGameConsoleDialog *),UNKNOWN,GameUI/GameConsole.cpp,,,MATCHED,100,,
 gameui,10030AD0,24,?DebugMessage_guess@@YAXPBD@Z,DebugMessage_guess,UNKNOWN,GameUI/GameUI_Interface.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,10030AE8,10,,,UNKNOWN,GameUI/GameUI_Interface.cpp,,,TODO,,,
 gameui,10030AF2,15,,,UNKNOWN,GameUI/GameUI_Interface.cpp,,,TODO,,,

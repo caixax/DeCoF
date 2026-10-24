@@ -5143,3 +5143,27 @@ va,name,kind,evidence
 10047C00,??0PanelMessageFunc_OnSliderMoved@CPanelListPanel@@QAE@XZ,func,GameUI/PanelListPanel.cpp: same position and size as in our compiled object
 10047C20,?InitVar@PanelMessageFunc_OnSliderMoved@CPanelListPanel@@SAXXZ,func,GameUI/PanelListPanel.cpp: same position and size as in our compiled object
 10047C90,?AddToMap@CPanelListPanel@@SAXPBDP8Panel@vgui2@@AEXXZHH0H0@Z,func,GameUI/PanelListPanel.cpp: same position and size as in our compiled object
+10030610,_$E8,func,"GameUI/GameConsole.cpp: dynamic initializer of g_GameConsole, same position and size as in our compiled object"
+1003061F,_$E5,func,"GameUI/GameConsole.cpp: constructs g_GameConsole, same position and size as in our compiled object"
+1003062E,_$E7,func,"GameUI/GameConsole.cpp: registers the g_GameConsole destructor with atexit, same position and size as in our compiled object"
+10030640,_$E6,func,"GameUI/GameConsole.cpp: atexit destructor helper of g_GameConsole, same position and size as in our compiled object"
+1003064F,??0CGameConsole@@QAE@XZ,func,GameUI/GameConsole.cpp: same position and size as in our compiled object; linux: _ZN12CGameConsoleC1Ev
+10030675,??1CGameConsole@@UAE@XZ,func,GameUI/GameConsole.cpp: same position and size as in our compiled object; linux: _ZN12CGameConsoleD1Ev
+10030698,?Initialize@CGameConsole@@UAEXXZ,func,GameUI/GameConsole.cpp: same position and size as in our compiled object; linux: _ZN12CGameConsole10InitializeEv
+100307AF,?Activate@CGameConsole@@UAEXXZ,func,GameUI/GameConsole.cpp: same position and size as in our compiled object; linux: _ZN12CGameConsole8ActivateEv
+10030801,?Hide@CGameConsole@@UAEXXZ,func,GameUI/GameConsole.cpp: same position and size as in our compiled object; linux: _ZN12CGameConsole4HideEv
+10030825,?Clear@CGameConsole@@UAEXXZ,func,GameUI/GameConsole.cpp: same position and size as in our compiled object; linux: _ZN12CGameConsole5ClearEv
+10030849,?Printf@CGameConsole@@UAAXPBDZZ,func,GameUI/GameConsole.cpp: same position and size as in our compiled object; linux: _ZN12CGameConsole6PrintfEPKcz
+100308B0,?DPrintf@CGameConsole@@UAAXPBDZZ,func,GameUI/GameConsole.cpp: same position and size as in our compiled object; linux: _ZN12CGameConsole7DPrintfEPKcz
+10030917,?IsConsoleVisible@CGameConsole@@UAE_NXZ,func,GameUI/GameConsole.cpp: same position and size as in our compiled object; linux: _ZN12CGameConsole16IsConsoleVisibleEv
+10030943,?ActivateDelayed@CGameConsole@@QAEXM@Z,func,GameUI/GameConsole.cpp: same position and size as in our compiled object; linux: _ZN12CGameConsole15ActivateDelayedEf
+100309AC,?SetParent@CGameConsole@@UAEXH@Z,func,GameUI/GameConsole.cpp: same position and size as in our compiled object; linux: _ZN12CGameConsole9SetParentEi
+100309DF,?OnCmdCondump@CGameConsole@@SAXXZ,func,"GameUI/GameConsole.cpp: ""condump"" command handler, same position and size as in our compiled object; linux: _ZN12CGameConsole12OnCmdCondumpEv"
+100309EF,_$E11,func,"GameUI/GameConsole.cpp: dynamic initializer of the GameConsole003 InterfaceReg, same position and size as in our compiled object"
+100309F9,_$E10,func,"GameUI/GameConsole.cpp: constructs the GameConsole003 InterfaceReg (was the Linux __GLOBAL__sub_I_g_GameConsole label), same position and size as in our compiled object"
+10030A12,?__CreateCGameConsoleIGameConsole_interface@@YAPAVIBaseInterface@@XZ,func,"GameUI/GameConsole.cpp: EXPOSE_SINGLE_INTERFACE_GLOBALVAR create function, same position and size as in our compiled object"
+10030A20,??_GCGameConsole@@UAEPAXI@Z,func,GameUI/GameConsole.cpp: same position and size as in our compiled object
+10030A50,??0IGameConsole@@QAE@XZ,func,"GameUI/GameConsole.cpp: implicit IGameConsole constructor COMDAT, same position and size as in our compiled object"
+10030A70,??_GIGameConsole@@UAEPAXI@Z,func,GameUI/GameConsole.cpp: same position and size as in our compiled object
+10030AA0,??1IGameConsole@@UAE@XZ,func,"GameUI/GameConsole.cpp: compiler-generated IGameConsole destructor COMDAT, same position and size as in our compiled object"
+10030AC0,?SETUP_PANEL@vgui2@@YAPAVCGameConsoleDialog@@PAV2@@Z,func,"GameUI/GameConsole.cpp: SETUP_PANEL<CGameConsoleDialog> template COMDAT (MakeReadyForUse), same position and size as in our compiled object"

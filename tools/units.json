@@ -4113,6 +4113,11 @@
           "name": "GameUI/PanelListPanel",
           "source": "src/gameui/PanelListPanel.cpp",
           "functions_file": "tools/units/gameui_GameUI_PanelListPanel.txt"
+        },
+        {
+          "name": "GameUI/GameConsole",
+          "source": "src/gameui/GameConsole.cpp",
+          "functions_file": "tools/units/gameui_GameUI_GameConsole.txt"
         }
       ]
     }
