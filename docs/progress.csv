@@ -32792,10 +32792,10 @@ hw,01E8A2CE,46,__wcsdup,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LI
 hw,01E8A2FC,498,,,LIB,,,,,,,VC6 static CRT (__crtCompareStringW)
 hw,01E8A517,48,_wcsncnt,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(w_cmp.obj)"
 hw,01E8A547,248,__wcsnicmp,,LIB,,,,,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(wcsnicmp.obj)"
-launcher,01401000,10,,$E1,ENGINE,commandline.cpp,,,TODO,,disassembly,"VC6 dynamic initializer of g_CmdLine ($E1 calls $E2 then $E3); every object names its helpers $E1 to $E4, so the symbol map can not pair them and objdiff does not score them"
-launcher,0140100A,10,,$E2,ENGINE,commandline.cpp,,,TODO,,disassembly,"VC6 dynamic initializer of g_CmdLine ($E2 runs the constructor); every object names its helpers $E1 to $E4, so the symbol map can not pair them and objdiff does not score them"
-launcher,01401014,12,,$E3,ENGINE,commandline.cpp,,,TODO,,disassembly,"VC6 dynamic initializer of g_CmdLine ($E3 registers $E4 with atexit); every object names its helpers $E1 to $E4, so the symbol map can not pair them and objdiff does not score them"
-launcher,01401020,10,,$E4,ENGINE,commandline.cpp,,,TODO,,disassembly,"VC6 dynamic initializer of g_CmdLine ($E4 runs the destructor); every object names its helpers $E1 to $E4, so the symbol map can not pair them and objdiff does not score them"
+launcher,01401000,10,_$E4,,ENGINE,commandline.cpp,,,MATCHED,100,launcher_manual.csv,"VC6 dynamic initializer of g_CmdLine: calls $E1, then $E3; spelling from the compiled object"
+launcher,0140100A,10,_$E1,,ENGINE,commandline.cpp,,,MATCHED,100,launcher_manual.csv,VC6 dynamic initializer helper: constructs g_CmdLine; spelling from the compiled object
+launcher,01401014,12,_$E3,,ENGINE,commandline.cpp,,,MATCHED,100,launcher_manual.csv,VC6 dynamic initializer helper: registers $E2 with atexit; spelling from the compiled object
+launcher,01401020,10,_$E2,,ENGINE,commandline.cpp,,,MATCHED,100,launcher_manual.csv,VC6 dynamic initializer helper: destroys g_CmdLine; spelling from the compiled object
 launcher,0140102A,13,??0CCommandLine@@QAE@XZ,CCommandLine::CCommandLine,ENGINE,commandline.cpp,,,MATCHED,100,launcher_1.6a.csv,"VC6 static CRT, bytes identical to LIBCMT.LIB(undname.obj)"
 launcher,01401037,28,??_GCCommandLine@@UAEPAXI@Z,CCommandLine::`scalar deleting destructor',ENGINE,commandline.cpp,,,MATCHED,100,launcher_1.6a.csv,"VC6 static CRT, bytes identical to LIBCMT.LIB(rtti.obj)"
 launcher,01401053,16,??1CCommandLine@@UAE@XZ,CCommandLine::~CCommandLine,ENGINE,commandline.cpp,,,MATCHED,100,launcher_1.6a.csv,
@@ -32827,10 +32827,10 @@ launcher,01401DEB,186,?NLoadBlobFile@@YAPAXPBDPAUBlobFootprint_s@@PAXD@Z,NLoadBl
 launcher,01401EA5,172,?LoadBlobFile_guess@@YAPAXPAEPAUBlobFootprint_s@@PAXH@Z,LoadBlobFile_guess,ENGINE,LoadBlob.cpp,,,MATCHED,100,launcher_1.6a.csv,
 launcher,01401F51,125,?ProcessBlobImports_guess@@YAXPAUBlobHeader_s_guess@@@Z,ProcessBlobImports_guess,ENGINE,LoadBlob.cpp,,,EQUIVALENT,96.66,launcher_1.6a.csv,"EQUIVALENT: retail adds the name offset with add eax, ecx / add eax, 2 on the import-by-name path, VC6 /O1 emits lea eax, [eax+ecx+2] (one byte shorter, so everything after it up to the import thunks moves down a byte); expression shapes, IMAGE_IMPORT_BY_NAME->Name, loop forms and other /G and /O flags all give the lea"
 launcher,01401FCE,13,?FreeBlob@@YAXPAUBlobFootprint_s@@@Z,FreeBlob,ENGINE,LoadBlob.cpp,,,MATCHED,100,launcher_1.6a.csv,
-launcher,01401FDB,10,,$E1,ENGINE,registry.cpp,,,TODO,,disassembly,"VC6 dynamic initializer of g_Registry ($E1 calls $E2 then $E3); every object names its helpers $E1 to $E4, so the symbol map can not pair them and objdiff does not score them"
-launcher,01401FE5,10,,$E2,ENGINE,registry.cpp,,,TODO,,disassembly,"VC6 dynamic initializer of g_Registry ($E2 runs the constructor); every object names its helpers $E1 to $E4, so the symbol map can not pair them and objdiff does not score them"
-launcher,01401FEF,12,,$E3,ENGINE,registry.cpp,,,TODO,,disassembly,"VC6 dynamic initializer of g_Registry ($E3 registers $E4 with atexit); every object names its helpers $E1 to $E4, so the symbol map can not pair them and objdiff does not score them"
-launcher,01401FFB,10,,$E4,ENGINE,registry.cpp,,,TODO,,disassembly,"VC6 dynamic initializer of g_Registry ($E4 runs the destructor); every object names its helpers $E1 to $E4, so the symbol map can not pair them and objdiff does not score them"
+launcher,01401FDB,10,_$E4,,ENGINE,registry.cpp,,,MATCHED,100,launcher_manual.csv,"VC6 dynamic initializer of g_Registry: calls $E1, then $E3; spelling from the compiled object"
+launcher,01401FE5,10,_$E1,,ENGINE,registry.cpp,,,MATCHED,100,launcher_manual.csv,VC6 dynamic initializer helper: constructs g_Registry; spelling from the compiled object
+launcher,01401FEF,12,_$E3,,ENGINE,registry.cpp,,,MATCHED,100,launcher_manual.csv,VC6 dynamic initializer helper: registers $E2 with atexit; spelling from the compiled object
+launcher,01401FFB,10,_$E2,,ENGINE,registry.cpp,,,MATCHED,100,launcher_manual.csv,VC6 dynamic initializer helper: destroys g_Registry; spelling from the compiled object
 launcher,01402005,17,??0CRegistry@@QAE@XZ,CRegistry::CRegistry,ENGINE,registry.cpp,,,MATCHED,100,launcher_1.6a.csv,
 launcher,01402016,28,??_GCRegistry@@UAEPAXI@Z,CRegistry::`scalar deleting destructor',ENGINE,registry.cpp,,,MATCHED,100,launcher_1.6a.csv,"VC6 static CRT, bytes identical to LIBCMT.LIB(rtti.obj)"
 launcher,01402032,7,??1CRegistry@@UAE@XZ,CRegistry::~CRegistry,ENGINE,registry.cpp,,,MATCHED,100,launcher_1.6a.csv,

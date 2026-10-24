@@ -1,3 +1,7 @@
+_$E4
+_$E1
+_$E3
+_$E2
 ??0CCommandLine@@QAE@XZ
 ??_GCCommandLine@@UAEPAXI@Z
 ??1CCommandLine@@UAE@XZ
