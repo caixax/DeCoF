@@ -355,3 +355,5 @@ The 1.55 hl.dll is an unoptimized debug build of nearly the same source. `disasm
 - `iswalnum` and friends must come from ctype.h, not wctype.h: VC6 disables the C++ inline in ctype.h, so the call goes to the CRT like retail.
 - A compiler-generated destructor does not store the vptr; a written (even empty) destructor does. Write one only when retail stores it.
 - VC6 orders the COMDAT tail of an object (inline and template functions) in a way not reproduced yet (CDKeyEntryDialog, GameConsoleDialog): tails were named by content; objdiff ignores order, a full link will not.
+- The Windows GameUI code sometimes differs from the Linux DWARF (an extra local such as enemyListStr, a 2-element intbuf): locals the DWARF lacks get `_guess` names fitted to the VC6 slot hash.
+- tools/name_unit.py and align_names.py pair identical STL template copies and `_$E` initializers wrongly; name such tails from the call targets of callers that already match byte for byte (scratch helpers tailmatch.py, verify_lib.py, strcheck.py in the session scratchpad tools folder did this for the Career files).
