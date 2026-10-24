@@ -3802,6 +3802,11 @@
           "name": "GameUI/CreateMultiplayerGameServerPage",
           "source": "src/gameui/CreateMultiplayerGameServerPage.cpp",
           "functions_file": "tools/units/gameui_GameUI_CreateMultiplayerGameServerPage.txt"
+        },
+        {
+          "name": "GameUI/GameConsoleDialog",
+          "source": "src/gameui/GameConsoleDialog.cpp",
+          "functions_file": "tools/units/gameui_GameUI_GameConsoleDialog.txt"
         }
       ]
     }

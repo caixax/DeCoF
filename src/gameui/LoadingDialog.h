@@ -91,4 +91,7 @@ private:
 	char m_szUserName[64];
 };
 
+// returns the loading dialog, if it is up
+extern CLoadingDialog *LoadingDialog();
+
 #endif // LOADINGDIALOG_H
