@@ -4,6 +4,10 @@
 //   symbols <csv>      apply a symbol map (va,name,kind) before exporting
 //   unit <out.obj>     start a unit written to out.obj
 //   include <name>     add the function or data labelled <name> to the unit
+//   include <name> <va>  the same for the copy of <name> at <va>: a name local
+//                      to its object (a file static, tools/symbols/<dll>_local.csv)
+//                      labels one address per object, and build.py tells
+//                      each unit which one is its own
 //
 // Symbol map rules: MSVC C++ names ("?...") are added as secondary labels so
 // readable primary names survive. C names ("_Foo", "_Foo@8") become the
@@ -95,6 +99,19 @@ public class DelinkUnits extends GhidraScript {
 					forgetSymbols(arg);
 					break;
 				case "include":
+					if (arg.indexOf(' ') > 0) {
+						String[] at = arg.split("\\s+");
+						try {
+							set.add(findSymbolAt(at[0], toAddr(Long.parseUnsignedLong(at[1], 16))));
+						}
+						catch (IllegalArgumentException e) {
+							printerr("DelinkUnits: skipping " + arg + " (" + e.getMessage() + ")");
+						}
+						if (!set.isEmpty()) {
+							includePending(pending, set);
+						}
+						break;
+					}
 					if (set.isEmpty() && (arg.startsWith("$") || arg.startsWith("_$E"))) {
 						pending.add(arg);
 						break;
@@ -559,7 +576,6 @@ public class DelinkUnits extends GhidraScript {
 	private AddressSet findSymbol(String name, AddressSet unit) {
 		// C names are stored without their leading underscore as primary,
 		// and with it as a secondary label; either spelling resolves.
-		AddressSet set = new AddressSet();
 		SymbolTable symtab = currentProgram.getSymbolTable();
 		List<Symbol> found = new ArrayList<>();
 		symtab.getSymbols(name).forEach(found::add);
@@ -582,6 +598,27 @@ public class DelinkUnits extends GhidraScript {
 			found.clear();
 			found.add(best);
 		}
+		return symbolExtent(found, name);
+	}
+
+	// the copy of an object-local name (a file static that several objects
+	// define, tools/symbols/<dll>_local.csv) at the address the job gives
+	private AddressSet findSymbolAt(String name, Address addr) {
+		List<Symbol> found = new ArrayList<>();
+		for (Symbol s : currentProgram.getSymbolTable().getSymbols(name)) {
+			if (s.getAddress().equals(addr)) {
+				found.add(s);
+				break;
+			}
+		}
+		if (found.isEmpty()) {
+			throw new IllegalArgumentException("symbol not found at " + addr);
+		}
+		return symbolExtent(found, name);
+	}
+
+	private AddressSet symbolExtent(List<Symbol> found, String name) {
+		AddressSet set = new AddressSet();
 		for (Symbol s : found) {
 			Function fn = getFunctionAt(s.getAddress());
 			if (fn != null) {

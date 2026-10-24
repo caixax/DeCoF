@@ -46,6 +46,7 @@ python tools/build.py all    [unit ...]
 
 - Units and flags: `tools/units.json`. Retail addresses and decorated names: `tools/symbols/<dll>_1.6a.csv` (`va,name,kind`).
 - `target` writes a job file and runs `tools/ghidra_scripts/DelinkUnits.java` through the MCP server when it is up, or through headless Ghidra when it is not. The script adds the decorated names as labels (readable primary names are kept) and exports each unit as a COFF object with relocations, so objdiff compares relocation targets by symbol name.
+- A name labels one retail address only (the COFF exporter refuses duplicates): `merged_symbols` in build.py keeps one address per name (curated maps first, then the strongest progress.csv evidence) and DelinkUnits.java drops stale copies in Ghidra. Names local to their object may repeat, one address per unit: `$LN...` jump tables and the VC6 dynamic initializers `_$E1`, `_$E2`, ... (DelinkUnits takes the copy nearest the unit's code), and the file statics listed in `tools/symbols/<dll>_local.csv` (`va,name,unit,evidence`, unit without the dll: a static `CloneString` in BitmapImagePanel.cpp, the file-local `operator new`/`operator delete` of hw BaseUISurface_Font.cpp). Besides the listed copies such a name keeps one other address (the copy every other object uses, such as the CRT `operator new`). The job file then names the address, `include <name> <va>`: the listed copy for its unit, the remaining copy for every other unit.
 - Outputs: `build/base/...obj` (ours), `build/target/...obj` (retail), `build/report.json`.
 
 Flags in use for the 1.6a game DLLs (evidence in `docs/toolchains.md`): `/O2 /Oy- /GS /GR /EHsc /MT /fp:precise`, default `/arch:SSE2`, no `/GL`. Confirmed so far by one fully matching unit (`hl/dlls/h_export`).
@@ -103,4 +104,4 @@ python tools/make_dist.py --bin build/dist_hl      dist/ with only the DLLs in t
 | Entity class sizes 1.55 vs 1.6a | `tools/class_sizes.py` | `docs/class_sizes.csv` |
 | Symbol maps, applied in Ghidra with demangling | `tools/ghidra_scripts/ApplyNames.java` | `tools/symbols/<dll>_1.6a.csv` |
 
-Hand-curated names go in `tools/symbols/<dll>_manual.csv` (never overwritten by the pipeline). Evidence for every name is kept in the `evidence` column of `docs/progress.csv`.
+Hand-curated names go in `tools/symbols/<dll>_manual.csv` (never overwritten by the pipeline); a name that several objects define as a file static gets one row per extra copy in `tools/symbols/<dll>_local.csv`. Evidence for every name is kept in the `evidence` column of `docs/progress.csv`.

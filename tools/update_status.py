@@ -90,8 +90,9 @@ def update(rep, args, path):
             if os.path.exists(sp):
                 for r in csv.DictReader(open(sp)):
                     symbols[dll].setdefault(r["name"], []).append(r["va"])
-        # a name local to its object (the VC6 dynamic initializers _$E1, ...)
-        # labels one address per unit: take the row of this unit's file
+        # a name local to its object (the VC6 dynamic initializers _$E1, ...,
+        # the file statics of tools/symbols/<dll>_local.csv) labels one
+        # address per unit: take the row of this unit's file
         stem = unit["name"].split("/", 1)[1] + "."
         for fn in unit.get("functions", []):
             # the objects spell the VC6 dynamic initializers _E$1 (tools/vc6_anon.py)

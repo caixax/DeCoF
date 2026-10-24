@@ -121,12 +121,26 @@ def mcp_call(path, body=None, query=None, timeout=120):
         return json.loads(r.read().decode())
 
 
+def local_names(d):
+    """tools/symbols/<dll>_local.csv (va,name,unit,evidence): names local to
+    their object that several objects define, such as file statics (a static
+    CloneString, a file-local operator new). Each row is one object's copy;
+    unit is the unit name without the dll ("GameUI/CareerDefinitions").
+    Returns {name: {unit: va}}."""
+    out = {}
+    path = os.path.join(ROOT, d["symbols"]).replace("_1.6a.csv", "_local.csv")
+    if os.path.exists(path):
+        for r in csv.DictReader(open(path)):
+            out.setdefault(r["name"], {})[r["unit"]] = r["va"].upper()
+    return out
+
+
 def merged_symbols(d, dll, tag=""):
     """tools/symbols/<dll>_1.6a.csv, then _decorated.csv (decorated forms of
     its undecorated C++ names), _auto.csv (harvested), then the
-    curated _usermsgs.csv, _vtable.csv and _manual.csv (later files
-    override earlier ones), written to build/jobs/. A tag gives the job its
-    own copies, so concurrent delinks do not overwrite each other's files."""
+    curated _usermsgs.csv, _vtable.csv, _manual.csv and _local.csv (later
+    files override earlier ones), written to build/jobs/. A tag gives the job
+    its own copies, so concurrent delinks do not overwrite each other's files."""
     rows = {}
     curated = set()
     base = os.path.join(ROOT, d["symbols"])
@@ -145,12 +159,18 @@ def merged_symbols(d, dll, tag=""):
                 rows[va] = (r["name"], r.get("kind") or "func")
                 if i > 0:
                     curated.add(va)
+    local = local_names(d)
+    for name, units in local.items():
+        for va in units.values():
+            rows[va] = (name, "func")
+            curated.add(va)
     # a name may live at one address only (the COFF exporter refuses
     # duplicates): curated entries win, then the strongest evidence in
     # docs/progress.csv; the losers are forgotten in Ghidra. Names local to
     # their object ($LN jump tables, the VC6 dynamic initializers _$E1,
     # _$E2, ... that every C++ object with constructed globals numbers from
-    # 1) may label one address per unit
+    # 1) may label one address per unit, and so may the copies that
+    # _local.csv lists: besides them the name keeps one other address
     rank = {}
     for r in csv.DictReader(open(os.path.join(ROOT, "docs", "progress.csv"))):
         if r["dll"] == dll:
@@ -162,6 +182,8 @@ def merged_symbols(d, dll, tag=""):
         by_name.setdefault(name, []).append(va)
     forget = []
     for name, vas in by_name.items():
+        own = set(local.get(name, {}).values())
+        vas = [va for va in vas if va not in own]
         if len(vas) > 1 and not name.startswith(("$", "_$E")):
             keep = [va for va in vas if va in curated]
             if len(keep) != 1:
@@ -207,12 +229,28 @@ def merged_symbols(d, dll, tag=""):
 
 def write_job(d, items, job, dll, tag=""):
     os.makedirs(os.path.dirname(job), exist_ok=True)
+    symbols = merged_symbols(d, dll, tag)
+    # a name of _local.csv labels several addresses: each unit includes the
+    # copy listed for it, any other unit the one copy the list leaves out
+    local = local_names(d)
+    vas = {}
+    for r in csv.DictReader(open(symbols)):
+        if r["name"] in local:
+            vas.setdefault(r["name"], []).append(r["va"].upper())
     with open(job, "w") as f:
-        f.write("symbols %s\n" % merged_symbols(d, dll, tag))
+        f.write("symbols %s\n" % symbols)
         f.write("forget %s\n" % os.path.join(ROOT, "build", "jobs", "forget_%s%s.csv" % (dll, tag)))
         for u, full in items:
             f.write("unit %s\n" % obj_path("target", full))
             for name in unit_functions(u) + u.get("data", []):
+                if name in local:
+                    va = local[name].get(u["name"])
+                    rest = [v for v in vas.get(name, []) if v not in local[name].values()]
+                    if va is None and len(rest) == 1:
+                        va = rest[0]
+                    if va is not None:
+                        f.write("include %s %s\n" % (name, va))
+                        continue
                 f.write("include %s\n" % name)
 
 
