@@ -3893,6 +3893,11 @@
           "name": "HLTV/common/DirectorCmd",
           "source": "src/HLTV/common/DirectorCmd.cpp",
           "functions_file": "tools/units/gameui_HLTV_common_DirectorCmd.txt"
+        },
+        {
+          "name": "vgui2/controls/PropertyPage",
+          "source": "src/vgui2/controls/PropertyPage.cpp",
+          "functions_file": "tools/units/gameui_vgui2_controls_PropertyPage.txt"
         }
       ]
     }

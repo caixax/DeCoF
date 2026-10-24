@@ -11691,32 +11691,32 @@ gameui,1008BDD0,199,?Grow@?$CUtlMemory@UNode_t@?$CUtlRBTree@UIndexItem_t@ListPan
 gameui,1008BEA0,69,?Purge@?$CUtlMemory@UNode_t@?$CUtlRBTree@UIndexItem_t@ListPanel@vgui2@@H@@@@QAEXXZ,"vgui2::ListPanel::IndexItem_t,int>::Node_t>::Purge",UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,1008BEF0,25,?Construct@@YAXPAUIndexItem_t@ListPanel@vgui2@@@Z,Construct,UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,1008BF10,25,?IsExternallyAllocated@?$CUtlMemory@UNode_t@?$CUtlRBTree@UIndexItem_t@ListPanel@vgui2@@H@@@@QBE_NXZ,"vgui2::ListPanel::IndexItem_t,int>::Node_t>::IsExternallyAllocated",UNKNOWN,vgui2/controls/ListPanel.cpp,,,MATCHED,100,gameui_manual.csv,
-gameui,1008BF30,151,,,UNKNOWN,vgui2/controls/PropertyPage.cpp,,,TODO,,,
-gameui,1008BFC7,28,,,UNKNOWN,vgui2/controls/PropertyPage.cpp,,,TODO,,,
-gameui,1008BFE3,11,,,UNKNOWN,vgui2/controls/PropertyPage.cpp,,,TODO,,,linux: _ZN5vgui212PropertyPage11OnResetDataEv
-gameui,1008BFEE,11,,,UNKNOWN,vgui2/controls/PropertyPage.cpp,,,TODO,,,linux: _ZN5vgui212PropertyPage14OnApplyChangesEv
-gameui,1008BFF9,11,,,UNKNOWN,vgui2/controls/PropertyPage.cpp,,,TODO,,,linux: _ZN5vgui212PropertyPage10OnPageShowEv
-gameui,1008C004,11,,,UNKNOWN,vgui2/controls/PropertyPage.cpp,,,TODO,,,linux: _ZN5vgui212PropertyPage10OnPageHideEv
-gameui,1008C00F,31,,,UNKNOWN,vgui2/controls/PropertyPage.cpp,,,TODO,,,linux: _ZN5vgui212PropertyPage18OnPageTabActivatedEPNS_5PanelE
-gameui,1008C02E,175,,,UNKNOWN,vgui2/controls/PropertyPage.cpp,,,TODO,,,linux: _ZN5vgui212PropertyPage11PaintBorderEv
-gameui,1008C0DD,204,,,UNKNOWN,vgui2/controls/PropertyPage.cpp,,,TODO,,,linux: _ZN5vgui212PropertyPage14OnKeyCodeTypedENS_7KeyCodeE
-gameui,1008C1A9,71,,,UNKNOWN,vgui2/controls/PropertyPage.cpp,,,TODO,,,linux: _ZN5vgui212PropertyPage19ApplySchemeSettingsEPNS_7ISchemeE
-gameui,1008C1F0,123,,,UNKNOWN,vgui2/controls/PropertyPage.cpp,,,TODO,,,linux: _ZN5vgui212PropertyPage10SetVisibleEb
-gameui,1008C270,46,,,UNKNOWN,vgui2/controls/PropertyPage.cpp,,,TODO,,,
-gameui,1008C2A0,19,,,UNKNOWN,vgui2/controls/PropertyPage.cpp,,,TODO,,,
-gameui,1008C2C0,102,,,UNKNOWN,vgui2/controls/PropertyPage.cpp,,,TODO,,,
-gameui,1008C330,10,,,UNKNOWN,vgui2/controls/PropertyPage.cpp,,,TODO,,,
-gameui,1008C340,19,,,UNKNOWN,vgui2/controls/PropertyPage.cpp,,,TODO,,,
-gameui,1008C360,107,,,UNKNOWN,vgui2/controls/PropertyPage.cpp,,,TODO,,,
-gameui,1008C3D0,120,,,UNKNOWN,vgui2/controls/PropertyPage.cpp,,,TODO,,,
-gameui,1008C450,19,,,UNKNOWN,vgui2/controls/PropertyPage.cpp,,,TODO,,,
-gameui,1008C470,107,,,UNKNOWN,vgui2/controls/PropertyPage.cpp,,,TODO,,,
-gameui,1008C4E0,19,,,UNKNOWN,vgui2/controls/PropertyPage.cpp,,,TODO,,,
-gameui,1008C500,107,,,UNKNOWN,vgui2/controls/PropertyPage.cpp,,,TODO,,,
-gameui,1008C570,19,,,UNKNOWN,vgui2/controls/PropertyPage.cpp,,,TODO,,,
-gameui,1008C590,107,,,UNKNOWN,vgui2/controls/PropertyPage.cpp,,,TODO,,,
-gameui,1008C600,19,,,UNKNOWN,vgui2/controls/PropertyPage.cpp,,,TODO,,,
-gameui,1008C620,110,,,UNKNOWN,vgui2/controls/PropertyPage.cpp,,,TODO,,,
+gameui,1008BF30,151,??0PropertyPage@vgui2@@QAE@PAVPanel@1@PBD_N@Z,"public: __thiscall vgui2::PropertyPage::PropertyPage(class vgui2::Panel *,char const *,bool)",UNKNOWN,vgui2/controls/PropertyPage.cpp,,,MATCHED,100,,
+gameui,1008BFC7,28,??1PropertyPage@vgui2@@UAE@XZ,public: virtual __thiscall vgui2::PropertyPage::~PropertyPage(void),UNKNOWN,vgui2/controls/PropertyPage.cpp,,,MATCHED,100,,
+gameui,1008BFE3,11,?OnResetData@PropertyPage@vgui2@@UAEXXZ,public: virtual void __thiscall vgui2::PropertyPage::OnResetData(void),UNKNOWN,vgui2/controls/PropertyPage.cpp,,,MATCHED,100,,linux: _ZN5vgui212PropertyPage11OnResetDataEv
+gameui,1008BFEE,11,?OnApplyChanges@PropertyPage@vgui2@@UAEXXZ,public: virtual void __thiscall vgui2::PropertyPage::OnApplyChanges(void),UNKNOWN,vgui2/controls/PropertyPage.cpp,,,MATCHED,100,,linux: _ZN5vgui212PropertyPage14OnApplyChangesEv
+gameui,1008BFF9,11,?OnPageShow@PropertyPage@vgui2@@UAEXXZ,public: virtual void __thiscall vgui2::PropertyPage::OnPageShow(void),UNKNOWN,vgui2/controls/PropertyPage.cpp,,,MATCHED,100,,linux: _ZN5vgui212PropertyPage10OnPageShowEv
+gameui,1008C004,11,?OnPageHide@PropertyPage@vgui2@@UAEXXZ,public: virtual void __thiscall vgui2::PropertyPage::OnPageHide(void),UNKNOWN,vgui2/controls/PropertyPage.cpp,,,MATCHED,100,,linux: _ZN5vgui212PropertyPage10OnPageHideEv
+gameui,1008C00F,31,?OnPageTabActivated@PropertyPage@vgui2@@MAEXPAVPanel@2@@Z,protected: virtual void __thiscall vgui2::PropertyPage::OnPageTabActivated(class vgui2::Panel *),UNKNOWN,vgui2/controls/PropertyPage.cpp,,,MATCHED,100,,linux: _ZN5vgui212PropertyPage18OnPageTabActivatedEPNS_5PanelE
+gameui,1008C02E,175,?PaintBorder@PropertyPage@vgui2@@UAEXXZ,public: virtual void __thiscall vgui2::PropertyPage::PaintBorder(void),UNKNOWN,vgui2/controls/PropertyPage.cpp,,,MATCHED,100,,linux: _ZN5vgui212PropertyPage11PaintBorderEv
+gameui,1008C0DD,204,?OnKeyCodeTyped@PropertyPage@vgui2@@UAEXW4KeyCode@2@@Z,public: virtual void __thiscall vgui2::PropertyPage::OnKeyCodeTyped(enum vgui2::KeyCode),UNKNOWN,vgui2/controls/PropertyPage.cpp,,,MATCHED,100,,linux: _ZN5vgui212PropertyPage14OnKeyCodeTypedENS_7KeyCodeE
+gameui,1008C1A9,71,?ApplySchemeSettings@PropertyPage@vgui2@@UAEXPAVIScheme@2@@Z,public: virtual void __thiscall vgui2::PropertyPage::ApplySchemeSettings(class vgui2::IScheme *),UNKNOWN,vgui2/controls/PropertyPage.cpp,,,MATCHED,100,,linux: _ZN5vgui212PropertyPage19ApplySchemeSettingsEPNS_7ISchemeE
+gameui,1008C1F0,123,?SetVisible@PropertyPage@vgui2@@UAEX_N@Z,public: virtual void __thiscall vgui2::PropertyPage::SetVisible(bool),UNKNOWN,vgui2/controls/PropertyPage.cpp,,,MATCHED,100,,linux: _ZN5vgui212PropertyPage10SetVisibleEb
+gameui,1008C270,46,??_GPropertyPage@vgui2@@UAEPAXI@Z,public: virtual void * __thiscall vgui2::PropertyPage::`scalar deleting destructor'(unsigned int),UNKNOWN,vgui2/controls/PropertyPage.cpp,,,MATCHED,100,,
+gameui,1008C2A0,19,??0PropertyPage_RegisterMap@PropertyPage@vgui2@@QAE@XZ,public: __thiscall vgui2::PropertyPage::PropertyPage_RegisterMap::PropertyPage_RegisterMap(void),UNKNOWN,vgui2/controls/PropertyPage.cpp,,,MATCHED,100,,
+gameui,1008C2C0,102,?ChainToMap@PropertyPage@vgui2@@SAXXZ,public: static void __cdecl vgui2::PropertyPage::ChainToMap(void),UNKNOWN,vgui2/controls/PropertyPage.cpp,,,MATCHED,100,,
+gameui,1008C330,10,?GetPanelBaseClassName@PropertyPage@vgui2@@SAPBDXZ,public: static char const * __cdecl vgui2::PropertyPage::GetPanelBaseClassName(void),UNKNOWN,vgui2/controls/PropertyPage.cpp,,,MATCHED,100,,
+gameui,1008C340,19,??0PanelMessageFunc_OnResetData@PropertyPage@vgui2@@QAE@XZ,public: __thiscall vgui2::PropertyPage::PanelMessageFunc_OnResetData::PanelMessageFunc_OnResetData(void),UNKNOWN,vgui2/controls/PropertyPage.cpp,,,MATCHED,100,,
+gameui,1008C360,107,?InitVar@PanelMessageFunc_OnResetData@PropertyPage@vgui2@@SAXXZ,public: static void __cdecl vgui2::PropertyPage::PanelMessageFunc_OnResetData::InitVar(void),UNKNOWN,vgui2/controls/PropertyPage.cpp,,,MATCHED,100,,
+gameui,1008C3D0,120,?AddToMap@PropertyPage@vgui2@@SAXPBDP8Panel@2@AEXXZHH0H0@Z,"public: static void __cdecl vgui2::PropertyPage::AddToMap(char const *,void (__thiscall vgui2::Panel::*)(void),int,int,char const *,int,char const *)",UNKNOWN,vgui2/controls/PropertyPage.cpp,,,MATCHED,100,,
+gameui,1008C450,19,??0PanelMessageFunc_OnApplyChanges@PropertyPage@vgui2@@QAE@XZ,public: __thiscall vgui2::PropertyPage::PanelMessageFunc_OnApplyChanges::PanelMessageFunc_OnApplyChanges(void),UNKNOWN,vgui2/controls/PropertyPage.cpp,,,MATCHED,100,,
+gameui,1008C470,107,?InitVar@PanelMessageFunc_OnApplyChanges@PropertyPage@vgui2@@SAXXZ,public: static void __cdecl vgui2::PropertyPage::PanelMessageFunc_OnApplyChanges::InitVar(void),UNKNOWN,vgui2/controls/PropertyPage.cpp,,,MATCHED,100,,
+gameui,1008C4E0,19,??0PanelMessageFunc_OnPageShow@PropertyPage@vgui2@@QAE@XZ,public: __thiscall vgui2::PropertyPage::PanelMessageFunc_OnPageShow::PanelMessageFunc_OnPageShow(void),UNKNOWN,vgui2/controls/PropertyPage.cpp,,,MATCHED,100,,
+gameui,1008C500,107,?InitVar@PanelMessageFunc_OnPageShow@PropertyPage@vgui2@@SAXXZ,public: static void __cdecl vgui2::PropertyPage::PanelMessageFunc_OnPageShow::InitVar(void),UNKNOWN,vgui2/controls/PropertyPage.cpp,,,MATCHED,100,,
+gameui,1008C570,19,??0PanelMessageFunc_OnPageHide@PropertyPage@vgui2@@QAE@XZ,public: __thiscall vgui2::PropertyPage::PanelMessageFunc_OnPageHide::PanelMessageFunc_OnPageHide(void),UNKNOWN,vgui2/controls/PropertyPage.cpp,,,MATCHED,100,,
+gameui,1008C590,107,?InitVar@PanelMessageFunc_OnPageHide@PropertyPage@vgui2@@SAXXZ,public: static void __cdecl vgui2::PropertyPage::PanelMessageFunc_OnPageHide::InitVar(void),UNKNOWN,vgui2/controls/PropertyPage.cpp,,,MATCHED,100,,
+gameui,1008C600,19,??0PanelMessageFunc_OnPageTabActivated@PropertyPage@vgui2@@QAE@XZ,public: __thiscall vgui2::PropertyPage::PanelMessageFunc_OnPageTabActivated::PanelMessageFunc_OnPageTabActivated(void),UNKNOWN,vgui2/controls/PropertyPage.cpp,,,MATCHED,100,,
+gameui,1008C620,110,?InitVar@PanelMessageFunc_OnPageTabActivated@PropertyPage@vgui2@@SAXXZ,public: static void __cdecl vgui2::PropertyPage::PanelMessageFunc_OnPageTabActivated::InitVar(void),UNKNOWN,vgui2/controls/PropertyPage.cpp,,,MATCHED,100,,
 gameui,1008C690,760,,vgui2::PropertyDialog::PropertyDialog,ENGINE,vgui2/controls/PropertyDialog.cpp,,,TODO,,linux_symbols:string:0.453,linux: _ZN5vgui214PropertyDialogC2EPNS_5PanelEPKc
 gameui,1008C988,28,,,UNKNOWN,vgui2/controls/PropertyDialog.cpp,,,TODO,,,linux: _ZN5vgui214PropertyDialogD2Ev
 gameui,1008C9A4,20,,,UNKNOWN,vgui2/controls/PropertyDialog.cpp,,,TODO,,,linux: _ZN5vgui214PropertyDialog16GetPropertySheetEv
