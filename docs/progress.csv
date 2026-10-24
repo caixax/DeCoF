@@ -9044,11 +9044,11 @@ gameui,10038263,77,?WriteByte@BufferWriter@@QAEXE@Z,public: void __thiscall Buff
 gameui,100382B0,134,?WriteLong@BufferWriter@@QAEXH@Z,public: void __thiscall BufferWriter::WriteLong(int),UNKNOWN,common/parsemsg.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN12BufferWriter9WriteLongEi
 gameui,10038336,150,?WriteString@BufferWriter@@QAEXPBD@Z,public: void __thiscall BufferWriter::WriteString(char const *),UNKNOWN,common/parsemsg.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN12BufferWriter11WriteStringEPKc
 gameui,100383CC,23,?GetSpaceUsed@BufferWriter@@QAEHXZ,public: int __thiscall BufferWriter::GetSpaceUsed(void),UNKNOWN,common/parsemsg.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN12BufferWriter12GetSpaceUsedEv
-gameui,100383F0,96,?SeedRandomNumberGenerator@@YAXJ@Z,void __cdecl SeedRandomNumberGenerator(long),UNKNOWN,common/Random.cpp,,,TODO,,gameui_manual.csv,linux: _Z25SeedRandomNumberGeneratorl
-gameui,10038450,348,,,UNKNOWN,common/Random.cpp,,,TODO,,,linux: _Z4ran1v
-gameui,100385AC,57,?fran1@@YAMXZ,float __cdecl fran1(void),UNKNOWN,common/Random.cpp,,,TODO,,gameui_manual.csv,linux: _Z5fran1v
-gameui,100385E5,47,?RandomFloat@@YAMMM@Z,"float __cdecl RandomFloat(float,float)",UNKNOWN,common/Random.cpp,,,TODO,,gameui_manual.csv,linux: _Z11RandomFloatff
-gameui,10038614,115,,,UNKNOWN,common/Random.cpp,,,TODO,,,linux: _Z10RandomLongii
+gameui,100383F0,96,?SeedRandomNumberGenerator@@YAXJ@Z,void __cdecl SeedRandomNumberGenerator(long),UNKNOWN,common/Random.cpp,,,MATCHED,100,gameui_manual.csv,linux: _Z25SeedRandomNumberGeneratorl
+gameui,10038450,348,?ran1@@YA_HXZ,__int32 __cdecl ran1(void),UNKNOWN,common/Random.cpp,,,MATCHED,100,gameui_manual.csv,linux: _Z4ran1v
+gameui,100385AC,57,?fran1@@YAMXZ,float __cdecl fran1(void),UNKNOWN,common/Random.cpp,,,MATCHED,100,gameui_manual.csv,linux: _Z5fran1v
+gameui,100385E5,47,?RandomFloat@@YAMMM@Z,"float __cdecl RandomFloat(float,float)",UNKNOWN,common/Random.cpp,,,MATCHED,100,gameui_manual.csv,linux: _Z11RandomFloatff
+gameui,10038614,115,?RandomLong@@YA_H_H0@Z,"__int32 __cdecl RandomLong(__int32,__int32)",UNKNOWN,common/Random.cpp,,,MATCHED,100,gameui_manual.csv,linux: _Z10RandomLongii
 gameui,10038690,496,,CRefreshSteamLogin::CRefreshSteamLogin,ENGINE,GameUI/RefreshSteamLogin.cpp,,,TODO,,linux_symbols:string:0.436,linux: _ZN18CRefreshSteamLoginC2EPN5vgui25PanelEPKc
 gameui,10038880,28,,,UNKNOWN,GameUI/RefreshSteamLogin.cpp,,,TODO,,,linux: _ZN18CRefreshSteamLoginD2Ev
 gameui,1003889C,563,,,UNKNOWN,GameUI/RefreshSteamLogin.cpp,,,TODO,,,linux: _ZN18CRefreshSteamLogin9OnCommandEPKc

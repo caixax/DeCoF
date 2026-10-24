@@ -3566,3 +3566,8 @@ va,name,kind,evidence
 100FE3D0,_giRead,data,common/parsemsg.cpp static (refs/halflife): cleared by BEGIN_READ; .bss layout like our object
 100FE3D4,_giSize,data,common/parsemsg.cpp static (refs/halflife): set by BEGIN_READ; .bss layout like our object
 100FE3D8,_giBadRead,data,common/parsemsg.cpp static (refs/halflife): returned by READ_OK; .bss layout like our object
+10038450,?ran1@@YA_HXZ,func,common/Random.cpp: same position and size as in our compiled object (hw pr_cmds.c ran1); int32 is __int32 from public/steam/steamtypes.h (the gameui.so DWARF includes it for Random.cpp); linux: _Z4ran1v
+10038614,?RandomLong@@YA_H_H0@Z,func,common/Random.cpp: same position and size as in our compiled object; int32 is __int32 from public/steam/steamtypes.h (the gameui.so DWARF includes it for Random.cpp); linux: _Z10RandomLongii
+100FE3E4,_?iv@?1??ran1@@YA_HXZ@4PA_HA,data,common/Random.cpp function static of ran1 (gameui.so DWARF iv[32]); .bss layout like our object
+100FE464,_idum,data,common/Random.cpp static (gameui.so DWARF idum): seeded by SeedRandomNumberGenerator; .bss layout like our object
+100FE468,_?iy@?1??ran1@@YA_HXZ@4_HA,data,common/Random.cpp function static of ran1 (gameui.so DWARF iy); .bss layout like our object
