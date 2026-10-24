@@ -699,7 +699,8 @@ void CBookSimon :: MonsterThink( void )
 							Vector AttachOrg, AttachOrg2, AttachAng2, vecShootOrigin;
 							UTIL_MakeVectors ( pev->angles );
 							vecShootOrigin = pev->origin + Vector( 0, 0, 35 );
-							Vector vecShootDir = ( ( plr->BodyTarget( vecShootOrigin ) - plr->pev->origin ) + plr->pev->origin - vecShootOrigin ).Normalize();
+							entvars_t *pevPlr = plr->pev;
+							Vector vecShootDir = ( plr->pev->origin + ( plr->BodyTarget( vecShootOrigin ) - pevPlr->origin ) - vecShootOrigin ).Normalize();
 
 							EMIT_SOUND_DYN( ENT(pev), CHAN_WEAPON, "weapons/shotgun/shoot.wav", 1, ATTN_NORM, 0, 100 );
 							FireBullets( 5, vecShootOrigin, vecShootDir, VECTOR_CONE_5DEGREES, 1024, BULLET_MONSTER_12MM, 10, 1, NULL );

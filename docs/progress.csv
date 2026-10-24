@@ -15421,7 +15421,7 @@ hl,1006EE80,5,?CheckRangeAttack1@CBookSimon@@UAEHMM@Z,CBookSimon::CheckRangeAtta
 hl,1006EE90,5,?CheckRangeAttack2@CBookSimon@@UAEHMM@Z,CBookSimon::CheckRangeAttack2,COF,dlls/cof_sicksimon.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1006EEA0,17,?Classify@CBookSimon@@UAEHXZ,CBookSimon::Classify,COF,dlls/cof_sicksimon.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,1006EEC0,428,?Killed@CBookSimon@@UAEXPAUentvars_s@@H@Z,CBookSimon::Killed,COF,dlls/cof_sicksimon.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
-hl,1006F070,3962,?MonsterThink@CBookSimon@@UAEXXZ,CBookSimon::MonsterThink,COF,dlls/cof_sicksimon.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,EQUIVALENT,99.01,hl_1.55_to_1.6a.csv,"EQUIVALENT: register allocation only: in the frags == 0 block the x and y components of vecShootDir load in another order and one mov ecx, ebx before FireBullets lands one instruction later; the same expression in the wheelchair block matches. Operand order variants changed nothing."
+hl,1006F070,3962,?MonsterThink@CBookSimon@@UAEXXZ,CBookSimon::MonsterThink,COF,dlls/cof_sicksimon.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10070000,71,?Precache@CBookSimon@@UAEXXZ,CBookSimon::Precache,COF,dlls/cof_sicksimon.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10070050,540,?RealKilled@CBookSimon@@QAEXXZ,CBookSimon::RealKilled,COF,dlls/cof_sicksimon.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10070270,49,?Restore@CBookSimon@@UAEHAAVCRestore@@@Z,CBookSimon::Restore,COF,dlls/cof_sicksimon.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
