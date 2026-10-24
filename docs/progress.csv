@@ -9420,59 +9420,59 @@ gameui,100431A0,17,?NumAllocated@?$CUtlMemory@UNode_t@?$CUtlRBTree@IG@@@@QBEHXZ,
 gameui,100431C0,199,?Grow@?$CUtlMemory@UNode_t@?$CUtlRBTree@IG@@@@QAEXH@Z,short>::Node_t>::Grow,UNKNOWN,public/utlsymbol.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,10043290,25,?Construct@@YAXPAI@Z,Construct,UNKNOWN,public/utlsymbol.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,100432B0,34,?SetParent@?$CUtlRBTree@IG@@IAEXGG@Z,short>::SetParent,UNKNOWN,public/utlsymbol.cpp,,,MATCHED,100,gameui_manual.csv,
-gameui,100432E0,15,,,UNKNOWN,GameUI/VGuiSystemModuleLoader.cpp,,,TODO,,,
-gameui,100432EF,15,,,UNKNOWN,GameUI/VGuiSystemModuleLoader.cpp,,,TODO,,,
-gameui,100432FE,18,,,UNKNOWN,GameUI/VGuiSystemModuleLoader.cpp,,,TODO,,,
-gameui,10043310,15,,,UNKNOWN,GameUI/VGuiSystemModuleLoader.cpp,,,TODO,,,
-gameui,1004331F,10,,,UNKNOWN,GameUI/VGuiSystemModuleLoader.cpp,,,TODO,,,
-gameui,10043329,25,__GLOBAL__sub_I_g_VModuleLoader,_GLOBAL__sub_I_g_VModuleLoader,ENGINE,GameUI/VGuiSystemModuleLoader.cpp,,,TODO,,linux_symbols:string:0.75,
-gameui,10043342,10,,,UNKNOWN,GameUI/VGuiSystemModuleLoader.cpp,,,TODO,,,
-gameui,1004334C,70,,,UNKNOWN,GameUI/VGuiSystemModuleLoader.cpp,,,TODO,,,
-gameui,10043392,39,,,UNKNOWN,GameUI/VGuiSystemModuleLoader.cpp,,,TODO,,,
-gameui,100433B9,17,,,UNKNOWN,GameUI/VGuiSystemModuleLoader.cpp,,,TODO,,,
-gameui,100433CA,477,,CVGuiSystemModuleLoader::InitializeAllModules,ENGINE,GameUI/VGuiSystemModuleLoader.cpp,,,TODO,,linux_symbols:string:0.846,linux: _ZN23CVGuiSystemModuleLoader20InitializeAllModulesEPPFP14IBaseInterfacePKcPiEi
-gameui,100435A7,1027,,CVGuiSystemModuleLoader::LoadPlatformModules,ENGINE,GameUI/VGuiSystemModuleLoader.cpp,,,TODO,,linux_symbols:string:0.671,linux: _ZN23CVGuiSystemModuleLoader19LoadPlatformModulesEPPFP14IBaseInterfacePKcPiEib
-gameui,100439AA,272,,,UNKNOWN,GameUI/VGuiSystemModuleLoader.cpp,,,TODO,,,linux: _ZN23CVGuiSystemModuleLoader23ShutdownPlatformModulesEv
-gameui,10043ABA,81,,,UNKNOWN,GameUI/VGuiSystemModuleLoader.cpp,,,TODO,,,linux: _ZN23CVGuiSystemModuleLoader25DeactivatePlatformModulesEv
-gameui,10043B0B,81,,,UNKNOWN,GameUI/VGuiSystemModuleLoader.cpp,,,TODO,,,linux: _ZN23CVGuiSystemModuleLoader25ReactivatePlatformModulesEv
-gameui,10043B5C,122,,,UNKNOWN,GameUI/VGuiSystemModuleLoader.cpp,,,TODO,,,linux: _ZN23CVGuiSystemModuleLoader21UnloadPlatformModulesEv
-gameui,10043BD6,15,,,UNKNOWN,GameUI/VGuiSystemModuleLoader.cpp,,,TODO,,,linux: _ZN23CVGuiSystemModuleLoader8RunFrameEv
-gameui,10043C20,22,,,UNKNOWN,GameUI/VGuiSystemModuleLoader.cpp,,,TODO,,,linux: _ZN23CVGuiSystemModuleLoader14GetModuleCountEv
-gameui,10043C36,57,,CVGuiSystemModuleLoader::GetModuleLabel,ENGINE,GameUI/VGuiSystemModuleLoader.cpp,,,TODO,,linux_symbols:string:0.75,linux: _ZN23CVGuiSystemModuleLoader14GetModuleLabelEi
-gameui,10043C6F,60,,,UNKNOWN,GameUI/VGuiSystemModuleLoader.cpp,,,TODO,,,linux: _ZN23CVGuiSystemModuleLoader14IsModuleHiddenEi
-gameui,10043CAB,360,,,UNKNOWN,GameUI/VGuiSystemModuleLoader.cpp,,,TODO,,,linux: _ZN23CVGuiSystemModuleLoader14ActivateModuleEi.part.6
-gameui,10043E13,152,,,UNKNOWN,GameUI/VGuiSystemModuleLoader.cpp,,,TODO,,,linux: _ZN23CVGuiSystemModuleLoader14ActivateModuleEi
-gameui,10043EAB,39,,,UNKNOWN,GameUI/VGuiSystemModuleLoader.cpp,,,TODO,,,linux: _ZN23CVGuiSystemModuleLoader16GetModuleFactoryEi
-gameui,10043ED2,130,,,UNKNOWN,GameUI/VGuiSystemModuleLoader.cpp,,,TODO,,,linux: _ZN23CVGuiSystemModuleLoader23PostMessageToAllModulesEP9KeyValues
-gameui,10043F54,18,,,UNKNOWN,GameUI/VGuiSystemModuleLoader.cpp,,,TODO,,,linux: _ZN23CVGuiSystemModuleLoader20SetPlatformToRestartEv
-gameui,10043F66,17,,,UNKNOWN,GameUI/VGuiSystemModuleLoader.cpp,,,TODO,,,
-gameui,10043F80,46,,,UNKNOWN,GameUI/VGuiSystemModuleLoader.cpp,,,TODO,,,
-gameui,10043FB0,31,,,UNKNOWN,GameUI/VGuiSystemModuleLoader.cpp,,,TODO,,,
-gameui,10043FD0,46,,,UNKNOWN,GameUI/VGuiSystemModuleLoader.cpp,,,TODO,,,
-gameui,10044000,19,,,UNKNOWN,GameUI/VGuiSystemModuleLoader.cpp,,,TODO,,,
-gameui,10044020,50,,,UNKNOWN,GameUI/VGuiSystemModuleLoader.cpp,,,TODO,,,
-gameui,10044060,27,,,UNKNOWN,GameUI/VGuiSystemModuleLoader.cpp,,,TODO,,,
-gameui,10044080,25,,,UNKNOWN,GameUI/VGuiSystemModuleLoader.cpp,,,TODO,,,
-gameui,100440A0,17,,,UNKNOWN,GameUI/VGuiSystemModuleLoader.cpp,,,TODO,,,
-gameui,100440C0,17,,,UNKNOWN,GameUI/VGuiSystemModuleLoader.cpp,,,TODO,,,
-gameui,100440E0,51,,,UNKNOWN,GameUI/VGuiSystemModuleLoader.cpp,,,TODO,,,
-gameui,10044120,26,,,UNKNOWN,GameUI/VGuiSystemModuleLoader.cpp,,,TODO,,,
-gameui,10044140,70,,,UNKNOWN,GameUI/VGuiSystemModuleLoader.cpp,,,TODO,,,
-gameui,10044190,25,,,UNKNOWN,GameUI/VGuiSystemModuleLoader.cpp,,,TODO,,,
-gameui,100441B0,61,,,UNKNOWN,GameUI/VGuiSystemModuleLoader.cpp,,,TODO,,,
-gameui,100441F0,35,,,UNKNOWN,GameUI/VGuiSystemModuleLoader.cpp,,,TODO,,,
-gameui,10044220,11,,,UNKNOWN,GameUI/VGuiSystemModuleLoader.cpp,,,TODO,,,
-gameui,10044230,75,,,UNKNOWN,GameUI/VGuiSystemModuleLoader.cpp,,,TODO,,,
-gameui,10044280,19,,,UNKNOWN,GameUI/VGuiSystemModuleLoader.cpp,,,TODO,,,
-gameui,100442A0,26,,,UNKNOWN,GameUI/VGuiSystemModuleLoader.cpp,,,TODO,,,
-gameui,100442C0,5,,,UNKNOWN,GameUI/VGuiSystemModuleLoader.cpp,,,TODO,,,
-gameui,100442D0,87,,,UNKNOWN,GameUI/VGuiSystemModuleLoader.cpp,,,TODO,,,
-gameui,10044330,86,,,UNKNOWN,GameUI/VGuiSystemModuleLoader.cpp,,,TODO,,,
-gameui,10044390,69,,,UNKNOWN,GameUI/VGuiSystemModuleLoader.cpp,,,TODO,,,
-gameui,100443E0,25,,,UNKNOWN,GameUI/VGuiSystemModuleLoader.cpp,,,TODO,,,
-gameui,10044400,17,,,UNKNOWN,GameUI/VGuiSystemModuleLoader.cpp,,,TODO,,,
-gameui,10044420,199,,,UNKNOWN,GameUI/VGuiSystemModuleLoader.cpp,,,TODO,,,
-gameui,100444F0,25,,,UNKNOWN,GameUI/VGuiSystemModuleLoader.cpp,,,TODO,,,
+gameui,100432E0,15,_$E8,_$E8,UNKNOWN,GameUI/VGuiSystemModuleLoader.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100432EF,15,_$E5,_$E5,UNKNOWN,GameUI/VGuiSystemModuleLoader.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100432FE,18,_$E7,_$E7,UNKNOWN,GameUI/VGuiSystemModuleLoader.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10043310,15,_$E6,_$E6,UNKNOWN,GameUI/VGuiSystemModuleLoader.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1004331F,10,_$E11,_$E11,UNKNOWN,GameUI/VGuiSystemModuleLoader.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10043329,25,_$E10,_$E10,ENGINE,GameUI/VGuiSystemModuleLoader.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10043342,10,?__CreateCVGuiSystemModuleLoaderIVGuiModuleLoader_interface@@YAPAVIBaseInterface@@XZ,class IBaseInterface * __cdecl __CreateCVGuiSystemModuleLoaderIVGuiModuleLoader_interface(void),UNKNOWN,GameUI/VGuiSystemModuleLoader.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1004334C,70,??0CVGuiSystemModuleLoader@@QAE@XZ,public: __thiscall CVGuiSystemModuleLoader::CVGuiSystemModuleLoader(void),UNKNOWN,GameUI/VGuiSystemModuleLoader.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10043392,39,??1CVGuiSystemModuleLoader@@UAE@XZ,public: virtual __thiscall CVGuiSystemModuleLoader::~CVGuiSystemModuleLoader(void),UNKNOWN,GameUI/VGuiSystemModuleLoader.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100433B9,17,?IsPlatformReady@CVGuiSystemModuleLoader@@QAE_NXZ,public: bool __thiscall CVGuiSystemModuleLoader::IsPlatformReady(void),UNKNOWN,GameUI/VGuiSystemModuleLoader.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100433CA,477,?InitializeAllModules@CVGuiSystemModuleLoader@@AAE_NPAP6APAVIBaseInterface@@PBDPAH@ZH@Z,"private: bool __thiscall CVGuiSystemModuleLoader::InitializeAllModules(class IBaseInterface * (__cdecl**)(char const *,int *),int)",ENGINE,GameUI/VGuiSystemModuleLoader.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN23CVGuiSystemModuleLoader20InitializeAllModulesEPPFP14IBaseInterfacePKcPiEi
+gameui,100435A7,1027,?LoadPlatformModules@CVGuiSystemModuleLoader@@QAE_NPAP6APAVIBaseInterface@@PBDPAH@ZH_N@Z,"public: bool __thiscall CVGuiSystemModuleLoader::LoadPlatformModules(class IBaseInterface * (__cdecl**)(char const *,int *),int,bool)",ENGINE,GameUI/VGuiSystemModuleLoader.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN23CVGuiSystemModuleLoader19LoadPlatformModulesEPPFP14IBaseInterfacePKcPiEib
+gameui,100439AA,272,?ShutdownPlatformModules@CVGuiSystemModuleLoader@@QAEXXZ,public: void __thiscall CVGuiSystemModuleLoader::ShutdownPlatformModules(void),UNKNOWN,GameUI/VGuiSystemModuleLoader.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN23CVGuiSystemModuleLoader23ShutdownPlatformModulesEv
+gameui,10043ABA,81,?DeactivatePlatformModules@CVGuiSystemModuleLoader@@QAEXXZ,public: void __thiscall CVGuiSystemModuleLoader::DeactivatePlatformModules(void),UNKNOWN,GameUI/VGuiSystemModuleLoader.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN23CVGuiSystemModuleLoader25DeactivatePlatformModulesEv
+gameui,10043B0B,81,?ReactivatePlatformModules@CVGuiSystemModuleLoader@@QAEXXZ,public: void __thiscall CVGuiSystemModuleLoader::ReactivatePlatformModules(void),UNKNOWN,GameUI/VGuiSystemModuleLoader.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN23CVGuiSystemModuleLoader25ReactivatePlatformModulesEv
+gameui,10043B5C,122,?UnloadPlatformModules@CVGuiSystemModuleLoader@@QAEXXZ,public: void __thiscall CVGuiSystemModuleLoader::UnloadPlatformModules(void),UNKNOWN,GameUI/VGuiSystemModuleLoader.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN23CVGuiSystemModuleLoader21UnloadPlatformModulesEv
+gameui,10043BD6,15,?RunFrame@CVGuiSystemModuleLoader@@QAEXXZ,public: void __thiscall CVGuiSystemModuleLoader::RunFrame(void),UNKNOWN,GameUI/VGuiSystemModuleLoader.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN23CVGuiSystemModuleLoader8RunFrameEv
+gameui,10043C20,22,?GetModuleCount@CVGuiSystemModuleLoader@@UAEHXZ,public: virtual int __thiscall CVGuiSystemModuleLoader::GetModuleCount(void),UNKNOWN,GameUI/VGuiSystemModuleLoader.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN23CVGuiSystemModuleLoader14GetModuleCountEv
+gameui,10043C36,57,?GetModuleLabel@CVGuiSystemModuleLoader@@UAEPBDH@Z,public: virtual char const * __thiscall CVGuiSystemModuleLoader::GetModuleLabel(int),ENGINE,GameUI/VGuiSystemModuleLoader.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN23CVGuiSystemModuleLoader14GetModuleLabelEi
+gameui,10043C6F,60,?IsModuleHidden@CVGuiSystemModuleLoader@@QAE_NH@Z,public: bool __thiscall CVGuiSystemModuleLoader::IsModuleHidden(int),UNKNOWN,GameUI/VGuiSystemModuleLoader.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN23CVGuiSystemModuleLoader14IsModuleHiddenEi
+gameui,10043CAB,360,?ActivateModule@CVGuiSystemModuleLoader@@UAE_NH@Z,public: virtual bool __thiscall CVGuiSystemModuleLoader::ActivateModule(int),UNKNOWN,GameUI/VGuiSystemModuleLoader.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN23CVGuiSystemModuleLoader14ActivateModuleEi.part.6
+gameui,10043E13,152,?ActivateModule@CVGuiSystemModuleLoader@@UAE_NPBD@Z,public: virtual bool __thiscall CVGuiSystemModuleLoader::ActivateModule(char const *),UNKNOWN,GameUI/VGuiSystemModuleLoader.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN23CVGuiSystemModuleLoader14ActivateModuleEi
+gameui,10043EAB,39,?GetModuleFactory@CVGuiSystemModuleLoader@@UAEP6APAVIBaseInterface@@PBDPAH@ZH@Z,"public: virtual class IBaseInterface * (__cdecl*__thiscall CVGuiSystemModuleLoader::GetModuleFactory(int))(char const *,int *)",UNKNOWN,GameUI/VGuiSystemModuleLoader.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN23CVGuiSystemModuleLoader16GetModuleFactoryEi
+gameui,10043ED2,130,?PostMessageToAllModules@CVGuiSystemModuleLoader@@QAEXPAVKeyValues@@@Z,public: void __thiscall CVGuiSystemModuleLoader::PostMessageToAllModules(class KeyValues *),UNKNOWN,GameUI/VGuiSystemModuleLoader.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN23CVGuiSystemModuleLoader23PostMessageToAllModulesEP9KeyValues
+gameui,10043F54,18,?SetPlatformToRestart@CVGuiSystemModuleLoader@@UAEXXZ,public: virtual void __thiscall CVGuiSystemModuleLoader::SetPlatformToRestart(void),UNKNOWN,GameUI/VGuiSystemModuleLoader.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN23CVGuiSystemModuleLoader20SetPlatformToRestartEv
+gameui,10043F66,17,?ShouldPlatformRestart@CVGuiSystemModuleLoader@@QAE_NXZ,public: bool __thiscall CVGuiSystemModuleLoader::ShouldPlatformRestart(void),UNKNOWN,GameUI/VGuiSystemModuleLoader.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10043F80,46,??_GCVGuiSystemModuleLoader@@UAEPAXI@Z,public: virtual void * __thiscall CVGuiSystemModuleLoader::`scalar deleting destructor'(unsigned int),UNKNOWN,GameUI/VGuiSystemModuleLoader.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10043FB0,31,??0IVGuiModuleLoader@@QAE@XZ,public: __thiscall IVGuiModuleLoader::IVGuiModuleLoader(void),UNKNOWN,GameUI/VGuiSystemModuleLoader.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10043FD0,46,??_GIVGuiModuleLoader@@UAEPAXI@Z,public: virtual void * __thiscall IVGuiModuleLoader::`scalar deleting destructor'(unsigned int),UNKNOWN,GameUI/VGuiSystemModuleLoader.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10044000,19,??1IVGuiModuleLoader@@UAE@XZ,public: virtual __thiscall IVGuiModuleLoader::~IVGuiModuleLoader(void),UNKNOWN,GameUI/VGuiSystemModuleLoader.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10044020,50,??0?$CUtlVector@Umodule_t@CVGuiSystemModuleLoader@@@@QAE@HH@Z,"public: __thiscall CUtlVector<struct CVGuiSystemModuleLoader::module_t>::CUtlVector<struct CVGuiSystemModuleLoader::module_t>(int,int)",UNKNOWN,GameUI/VGuiSystemModuleLoader.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10044060,27,??1?$CUtlVector@Umodule_t@CVGuiSystemModuleLoader@@@@QAE@XZ,public: __thiscall CUtlVector<struct CVGuiSystemModuleLoader::module_t>::~CUtlVector<struct CVGuiSystemModuleLoader::module_t>(void),UNKNOWN,GameUI/VGuiSystemModuleLoader.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10044080,25,??A?$CUtlVector@Umodule_t@CVGuiSystemModuleLoader@@@@QAEAAUmodule_t@CVGuiSystemModuleLoader@@H@Z,public: struct CVGuiSystemModuleLoader::module_t & __thiscall CUtlVector<struct CVGuiSystemModuleLoader::module_t>::operator[](int),UNKNOWN,GameUI/VGuiSystemModuleLoader.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100440A0,17,?Count@?$CUtlVector@Umodule_t@CVGuiSystemModuleLoader@@@@QBEHXZ,public: int __thiscall CUtlVector<struct CVGuiSystemModuleLoader::module_t>::Count(void)const ,UNKNOWN,GameUI/VGuiSystemModuleLoader.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100440C0,17,?Size@?$CUtlVector@Umodule_t@CVGuiSystemModuleLoader@@@@QBEHXZ,public: int __thiscall CUtlVector<struct CVGuiSystemModuleLoader::module_t>::Size(void)const ,UNKNOWN,GameUI/VGuiSystemModuleLoader.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100440E0,51,?IsValidIndex@?$CUtlVector@Umodule_t@CVGuiSystemModuleLoader@@@@QBE_NH@Z,public: bool __thiscall CUtlVector<struct CVGuiSystemModuleLoader::module_t>::IsValidIndex(int)const ,UNKNOWN,GameUI/VGuiSystemModuleLoader.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10044120,26,?AddToTail@?$CUtlVector@Umodule_t@CVGuiSystemModuleLoader@@@@QAEHXZ,public: int __thiscall CUtlVector<struct CVGuiSystemModuleLoader::module_t>::AddToTail(void),UNKNOWN,GameUI/VGuiSystemModuleLoader.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10044140,70,?RemoveAll@?$CUtlVector@Umodule_t@CVGuiSystemModuleLoader@@@@QAEXXZ,public: void __thiscall CUtlVector<struct CVGuiSystemModuleLoader::module_t>::RemoveAll(void),UNKNOWN,GameUI/VGuiSystemModuleLoader.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10044190,25,?Element@?$CUtlVector@Umodule_t@CVGuiSystemModuleLoader@@@@QAEAAUmodule_t@CVGuiSystemModuleLoader@@H@Z,public: struct CVGuiSystemModuleLoader::module_t & __thiscall CUtlVector<struct CVGuiSystemModuleLoader::module_t>::Element(int),UNKNOWN,GameUI/VGuiSystemModuleLoader.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100441B0,61,?InsertBefore@?$CUtlVector@Umodule_t@CVGuiSystemModuleLoader@@@@QAEHH@Z,public: int __thiscall CUtlVector<struct CVGuiSystemModuleLoader::module_t>::InsertBefore(int),UNKNOWN,GameUI/VGuiSystemModuleLoader.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100441F0,35,?Purge@?$CUtlVector@Umodule_t@CVGuiSystemModuleLoader@@@@QAEXXZ,public: void __thiscall CUtlVector<struct CVGuiSystemModuleLoader::module_t>::Purge(void),UNKNOWN,GameUI/VGuiSystemModuleLoader.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10044220,11,?ResetDbgInfo@?$CUtlVector@Umodule_t@CVGuiSystemModuleLoader@@@@IAEXXZ,protected: void __thiscall CUtlVector<struct CVGuiSystemModuleLoader::module_t>::ResetDbgInfo(void),UNKNOWN,GameUI/VGuiSystemModuleLoader.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10044230,75,??0?$CUtlMemory@Umodule_t@CVGuiSystemModuleLoader@@@@QAE@HH@Z,"public: __thiscall CUtlMemory<struct CVGuiSystemModuleLoader::module_t>::CUtlMemory<struct CVGuiSystemModuleLoader::module_t>(int,int)",UNKNOWN,GameUI/VGuiSystemModuleLoader.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10044280,19,??1?$CUtlMemory@Umodule_t@CVGuiSystemModuleLoader@@@@QAE@XZ,public: __thiscall CUtlMemory<struct CVGuiSystemModuleLoader::module_t>::~CUtlMemory<struct CVGuiSystemModuleLoader::module_t>(void),UNKNOWN,GameUI/VGuiSystemModuleLoader.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100442A0,26,??A?$CUtlMemory@Umodule_t@CVGuiSystemModuleLoader@@@@QAEAAUmodule_t@CVGuiSystemModuleLoader@@H@Z,public: struct CVGuiSystemModuleLoader::module_t & __thiscall CUtlMemory<struct CVGuiSystemModuleLoader::module_t>::operator[](int),UNKNOWN,GameUI/VGuiSystemModuleLoader.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100442C0,5,?Destruct@@YAXPAUmodule_t@CVGuiSystemModuleLoader@@@Z,void __cdecl Destruct(struct CVGuiSystemModuleLoader::module_t *),UNKNOWN,GameUI/VGuiSystemModuleLoader.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100442D0,87,?GrowVector@?$CUtlVector@Umodule_t@CVGuiSystemModuleLoader@@@@IAEXH@Z,protected: void __thiscall CUtlVector<struct CVGuiSystemModuleLoader::module_t>::GrowVector(int),UNKNOWN,GameUI/VGuiSystemModuleLoader.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10044330,86,?ShiftElementsRight@?$CUtlVector@Umodule_t@CVGuiSystemModuleLoader@@@@IAEXHH@Z,"protected: void __thiscall CUtlVector<struct CVGuiSystemModuleLoader::module_t>::ShiftElementsRight(int,int)",UNKNOWN,GameUI/VGuiSystemModuleLoader.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10044390,69,?Purge@?$CUtlMemory@Umodule_t@CVGuiSystemModuleLoader@@@@QAEXXZ,public: void __thiscall CUtlMemory<struct CVGuiSystemModuleLoader::module_t>::Purge(void),UNKNOWN,GameUI/VGuiSystemModuleLoader.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100443E0,25,?Construct@@YAXPAUmodule_t@CVGuiSystemModuleLoader@@@Z,void __cdecl Construct(struct CVGuiSystemModuleLoader::module_t *),UNKNOWN,GameUI/VGuiSystemModuleLoader.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10044400,17,?NumAllocated@?$CUtlMemory@Umodule_t@CVGuiSystemModuleLoader@@@@QBEHXZ,public: int __thiscall CUtlMemory<struct CVGuiSystemModuleLoader::module_t>::NumAllocated(void)const ,UNKNOWN,GameUI/VGuiSystemModuleLoader.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10044420,199,?Grow@?$CUtlMemory@Umodule_t@CVGuiSystemModuleLoader@@@@QAEXH@Z,public: void __thiscall CUtlMemory<struct CVGuiSystemModuleLoader::module_t>::Grow(int),UNKNOWN,GameUI/VGuiSystemModuleLoader.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100444F0,25,?IsExternallyAllocated@?$CUtlMemory@Umodule_t@CVGuiSystemModuleLoader@@@@QBE_NXZ,public: bool __thiscall CUtlMemory<struct CVGuiSystemModuleLoader::module_t>::IsExternallyAllocated(void)const ,UNKNOWN,GameUI/VGuiSystemModuleLoader.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,10044510,116,??0CBitmapImagePanel@@QAE@PAVPanel@vgui2@@PBD1@Z,"public: __thiscall CBitmapImagePanel::CBitmapImagePanel(class vgui2::Panel *,char const *,char const *)",UNKNOWN,GameUI/BitmapImagePanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN17CBitmapImagePanelC1EPN5vgui25PanelEPKcS4_
 gameui,10044584,172,?PaintBackground@CBitmapImagePanel@@UAEXXZ,public: virtual void __thiscall CBitmapImagePanel::PaintBackground(void),UNKNOWN,GameUI/BitmapImagePanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN17CBitmapImagePanel15PaintBackgroundEv
 gameui,10044630,68,?setTexture@CBitmapImagePanel@@UAEXPBD@Z,public: virtual void __thiscall CBitmapImagePanel::setTexture(char const *),UNKNOWN,GameUI/BitmapImagePanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN17CBitmapImagePanel10setTextureEPKc

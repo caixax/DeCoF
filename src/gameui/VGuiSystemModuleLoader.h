@@ -16,6 +16,7 @@
 #include <UtlVector.h>
 
 class KeyValues;
+class IVGuiModule;
 
 //-----------------------------------------------------------------------------
 // Purpose: Handles loading/unloading of different vgui modules into a shared context
@@ -80,7 +81,12 @@ private:
 	bool m_bModulesInitialized;
 	bool m_bPlatformShouldRestartAfterExit;
 
-	struct module_t;
+	struct module_t
+	{
+		CSysModule *module;
+		IVGuiModule *moduleInterface;
+		KeyValues *data;
+	};
 	CUtlVector<module_t> m_Modules;
 	KeyValues *m_pPlatformModuleData;
 };
