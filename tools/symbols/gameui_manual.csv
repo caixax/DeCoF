@@ -4359,3 +4359,8 @@ va,name,kind,evidence
 100C8A60,??_7mpcontrol_t@@6B@,data,GameUI/ScriptObject.cpp vtable stored by the mpcontrol_t constructor (RTTI mpcontrol_t); the object matches at 100%
 100C8C7C,??_7CScriptObject@@6B@,data,GameUI/ScriptObject.cpp vtable stored by the CScriptObject constructor and destructor (RTTI CScriptObject); the object matches at 100%
 100C8EAC,??_7CDescription@@6B@,data,GameUI/ScriptObject.cpp vtable stored by the CDescription constructor and destructor (RTTI CDescription); the object matches at 100%
+1004DB60,??0CNewGameDialog@@QAE@PAVPanel@vgui2@@@Z,func,GameUI/NewGameDialog.cpp: same position and size as in our compiled object; linux: _ZN14CNewGameDialogC2EPN5vgui25PanelE
+1004DDFF,??1CNewGameDialog@@UAE@XZ,func,GameUI/NewGameDialog.cpp: same position and size as in our compiled object; linux: _ZN14CNewGameDialogD1Ev
+1004DE1B,?OnCommand@CNewGameDialog@@MAEXPBD@Z,func,GameUI/NewGameDialog.cpp: same position and size as in our compiled object; linux: _ZN14CNewGameDialog9OnCommandEPKc
+1004DFD5,?OnClose@CNewGameDialog@@MAEXXZ,func,GameUI/NewGameDialog.cpp: same position and size as in our compiled object; linux: _ZN14CNewGameDialog7OnCloseEv
+1004E000,??_GCNewGameDialog@@UAEPAXI@Z,func,GameUI/NewGameDialog.cpp: same position and size as in our compiled object

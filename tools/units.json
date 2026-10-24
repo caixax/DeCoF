@@ -3928,6 +3928,11 @@
           "name": "GameUI/ScriptObject",
           "source": "src/gameui/ScriptObject.cpp",
           "functions_file": "tools/units/gameui_GameUI_ScriptObject.txt"
+        },
+        {
+          "name": "GameUI/NewGameDialog",
+          "source": "src/gameui/NewGameDialog.cpp",
+          "functions_file": "tools/units/gameui_GameUI_NewGameDialog.txt"
         }
       ]
     }

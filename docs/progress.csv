@@ -9817,11 +9817,11 @@ gameui,1004D710,371,??4CScriptObject@@QAEAAV0@ABV0@@Z,public: class CScriptObjec
 gameui,1004D890,46,??_GCDescription@@QAEPAXI@Z,public: void * __thiscall CDescription::`scalar deleting destructor'(unsigned int),UNKNOWN,GameUI/MultiplayerAdvancedDialog.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,1004D8C0,656,??4Panel@vgui2@@QAEAAV01@ABV01@@Z,public: class vgui2::Panel & __thiscall vgui2::Panel::operator=(class vgui2::Panel const &),UNKNOWN,GameUI/MultiplayerAdvancedDialog.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,1004DB50,16,??4IClientPanel@vgui2@@QAEAAV01@ABV01@@Z,public: class vgui2::IClientPanel & __thiscall vgui2::IClientPanel::operator=(class vgui2::IClientPanel const &),UNKNOWN,GameUI/MultiplayerAdvancedDialog.cpp,,,MATCHED,100,gameui_manual.csv,
-gameui,1004DB60,671,,CNewGameDialog::CNewGameDialog,ENGINE,GameUI/NewGameDialog.cpp,,,TODO,,linux_symbols:string:0.48,linux: _ZN14CNewGameDialogC2EPN5vgui25PanelE
-gameui,1004DDFF,28,,,UNKNOWN,GameUI/NewGameDialog.cpp,,,TODO,,,linux: _ZN14CNewGameDialogD1Ev
-gameui,1004DE1B,442,,CNewGameDialog::OnCommand,ENGINE,GameUI/NewGameDialog.cpp,,,TODO,,linux_symbols:string:0.875,linux: _ZN14CNewGameDialog9OnCommandEPKc
-gameui,1004DFD5,33,,,UNKNOWN,GameUI/NewGameDialog.cpp,,,TODO,,,linux: _ZN14CNewGameDialog7OnCloseEv
-gameui,1004E000,46,,,UNKNOWN,GameUI/NewGameDialog.cpp,,,TODO,,,
+gameui,1004DB60,671,??0CNewGameDialog@@QAE@PAVPanel@vgui2@@@Z,public: __thiscall CNewGameDialog::CNewGameDialog(class vgui2::Panel *),ENGINE,GameUI/NewGameDialog.cpp,,,MATCHED,100,linux_symbols:string:0.48,linux: _ZN14CNewGameDialogC2EPN5vgui25PanelE
+gameui,1004DDFF,28,??1CNewGameDialog@@UAE@XZ,public: virtual __thiscall CNewGameDialog::~CNewGameDialog(void),UNKNOWN,GameUI/NewGameDialog.cpp,,,MATCHED,100,,linux: _ZN14CNewGameDialogD1Ev
+gameui,1004DE1B,442,?OnCommand@CNewGameDialog@@MAEXPBD@Z,protected: virtual void __thiscall CNewGameDialog::OnCommand(char const *),ENGINE,GameUI/NewGameDialog.cpp,,,MATCHED,100,linux_symbols:string:0.875,linux: _ZN14CNewGameDialog9OnCommandEPKc
+gameui,1004DFD5,33,?OnClose@CNewGameDialog@@MAEXXZ,protected: virtual void __thiscall CNewGameDialog::OnClose(void),UNKNOWN,GameUI/NewGameDialog.cpp,,,MATCHED,100,,linux: _ZN14CNewGameDialog7OnCloseEv
+gameui,1004E000,46,??_GCNewGameDialog@@UAEPAXI@Z,public: virtual void * __thiscall CNewGameDialog::`scalar deleting destructor'(unsigned int),UNKNOWN,GameUI/NewGameDialog.cpp,,,MATCHED,100,,
 gameui,1004E030,658,,CPlayerListDialog::CPlayerListDialog,ENGINE,GameUI/PlayerListDialog.cpp,,,TODO,,linux_symbols:string:0.536,linux: _ZN17CPlayerListDialogC2EPN5vgui25PanelE
 gameui,1004E2C2,28,,,UNKNOWN,GameUI/PlayerListDialog.cpp,,,TODO,,,linux: _ZN17CPlayerListDialogD2Ev
 gameui,1004E2DE,367,,,UNKNOWN,GameUI/PlayerListDialog.cpp,,,TODO,,,linux: _ZN17CPlayerListDialog8ActivateEv
