@@ -8210,17 +8210,17 @@ gameui,1001B7E0,40,??4SavedMap@@QAEAAV0@ABV0@@Z,SavedMap::operator=,UNKNOWN,Game
 gameui,1001B810,40,??0SavedMap@@QAE@ABV0@@Z,SavedMap::SavedMap,UNKNOWN,GameUI/CareerProfile.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,1001B840,25,??4?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@ABV01@@Z,>::operator=,LIB,GameUI/CareerProfile.cpp,,,TODO,,gameui_manual.csv,
 gameui,1001B860,29,?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@ABV12@@Z,>::assign,LIB,GameUI/CareerProfile.cpp,,,TODO,,gameui_manual.csv,
-gameui,1001B880,311,,CProfileButton::CProfileButton,ENGINE,GameUI/CareerProfileButton.cpp,,,TODO,,linux_symbols:string:0.8,linux: _ZN14CProfileButtonC2EP19CCareerProfileFramePKcPKwPb
-gameui,1001B9B7,47,,,UNKNOWN,GameUI/CareerProfileButton.cpp,,,TODO,,,linux: _ZN14CProfileButton14SetProfileNameEPKc
-gameui,1001B9E6,151,,CProfileButton::OnMouseDoublePressed,ENGINE,GameUI/CareerProfileButton.cpp,,,TODO,,linux_symbols:string:0.821,linux: _ZN14CProfileButton20OnMouseDoublePressedEN5vgui29MouseCodeE
-gameui,1001BA7D,368,,CProfileButton::ApplySchemeSettings,ENGINE,GameUI/CareerProfileButton.cpp,,,TODO,,linux_symbols:string:0.84,linux: _ZN14CProfileButton19ApplySchemeSettingsEPN5vgui27ISchemeE
-gameui,1001BBED,101,,,UNKNOWN,GameUI/CareerProfileButton.cpp,,,TODO,,,linux: _ZN14CProfileButton9GetBorderEbbbb
-gameui,1001BC52,64,,,UNKNOWN,GameUI/CareerProfileButton.cpp,,,TODO,,,linux: _ZN14CProfileButton10GetBgColorEv
-gameui,1001BC92,392,,,UNKNOWN,GameUI/CareerProfileButton.cpp,,,TODO,,,linux: _ZN14CProfileButton5PaintEv
-gameui,1001BE1A,15,,,UNKNOWN,GameUI/CareerProfileButton.cpp,,,TODO,,,
-gameui,1001BE29,18,,,UNKNOWN,GameUI/CareerProfileButton.cpp,,,TODO,,,
-gameui,1001BE40,46,,,UNKNOWN,GameUI/CareerProfileButton.cpp,,,TODO,,,
-gameui,1001BE70,19,,,UNKNOWN,GameUI/CareerProfileButton.cpp,,,TODO,,,
+gameui,1001B880,311,??0CProfileButton@@QAE@PAVCCareerProfileFrame@@PBDPBGPA_N@Z,"public: __thiscall CProfileButton::CProfileButton(class CCareerProfileFrame *,char const *,unsigned short const *,bool *)",ENGINE,GameUI/CareerProfileButton.cpp,,,MATCHED,100,linux_symbols:string:0.8,linux: _ZN14CProfileButtonC2EP19CCareerProfileFramePKcPKwPb
+gameui,1001B9B7,47,?SetProfileName@CProfileButton@@QAEXPBD@Z,public: void __thiscall CProfileButton::SetProfileName(char const *),UNKNOWN,GameUI/CareerProfileButton.cpp,,,MATCHED,100,,linux: _ZN14CProfileButton14SetProfileNameEPKc
+gameui,1001B9E6,151,?OnMouseDoublePressed@CProfileButton@@UAEXW4MouseCode@vgui2@@@Z,public: virtual void __thiscall CProfileButton::OnMouseDoublePressed(enum vgui2::MouseCode),ENGINE,GameUI/CareerProfileButton.cpp,,,MATCHED,100,linux_symbols:string:0.821,linux: _ZN14CProfileButton20OnMouseDoublePressedEN5vgui29MouseCodeE
+gameui,1001BA7D,368,?ApplySchemeSettings@CProfileButton@@UAEXPAVIScheme@vgui2@@@Z,public: virtual void __thiscall CProfileButton::ApplySchemeSettings(class vgui2::IScheme *),ENGINE,GameUI/CareerProfileButton.cpp,,,MATCHED,100,linux_symbols:string:0.84,linux: _ZN14CProfileButton19ApplySchemeSettingsEPN5vgui27ISchemeE
+gameui,1001BBED,101,?GetBorder@CProfileButton@@MAEPAVIBorder@vgui2@@_N000@Z,"protected: virtual class vgui2::IBorder * __thiscall CProfileButton::GetBorder(bool,bool,bool,bool)",UNKNOWN,GameUI/CareerProfileButton.cpp,,,MATCHED,100,,linux: _ZN14CProfileButton9GetBorderEbbbb
+gameui,1001BC52,64,?GetBgColor@CProfileButton@@UAE?AVColor@@XZ,public: virtual class Color __thiscall CProfileButton::GetBgColor(void),UNKNOWN,GameUI/CareerProfileButton.cpp,,,MATCHED,100,,linux: _ZN14CProfileButton10GetBgColorEv
+gameui,1001BC92,392,?Paint@CProfileButton@@UAEXXZ,public: virtual void __thiscall CProfileButton::Paint(void),UNKNOWN,GameUI/CareerProfileButton.cpp,,,MATCHED,100,,linux: _ZN14CProfileButton5PaintEv
+gameui,1001BE1A,15,_$E23,_$E23,UNKNOWN,GameUI/CareerProfileButton.cpp,,,MATCHED,100,,
+gameui,1001BE29,18,_$E22,_$E22,UNKNOWN,GameUI/CareerProfileButton.cpp,,,MATCHED,100,,
+gameui,1001BE40,46,??_GCProfileButton@@UAEPAXI@Z,public: virtual void * __thiscall CProfileButton::`scalar deleting destructor'(unsigned int),UNKNOWN,GameUI/CareerProfileButton.cpp,,,MATCHED,100,,
+gameui,1001BE70,19,??1CProfileButton@@UAE@XZ,public: virtual __thiscall CProfileButton::~CProfileButton(void),UNKNOWN,GameUI/CareerProfileButton.cpp,,,MATCHED,100,,
 gameui,1001BE90,152,?OnMenuItemSelected@MissionPackComboBox@@UAEXXZ,MissionPackComboBox::OnMenuItemSelected,UNKNOWN,GameUI/CareerProfileFrame.cpp,,,MATCHED,100,,linux: _ZN19MissionPackComboBox18OnMenuItemSelectedEv
 gameui,1001BF28,1267,??0CCareerProfileFrame@@QAE@PAVPanel@vgui2@@@Z,CCareerProfileFrame::CCareerProfileFrame,ENGINE,GameUI/CareerProfileFrame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN19CCareerProfileFrameC2EPN5vgui25PanelE
 gameui,1001C41B,42,??1CCareerProfileFrame@@UAE@XZ,CCareerProfileFrame::~CCareerProfileFrame,UNKNOWN,GameUI/CareerProfileFrame.cpp,,,MATCHED,100,,

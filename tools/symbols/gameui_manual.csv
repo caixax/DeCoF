@@ -4517,3 +4517,14 @@ va,name,kind,evidence
 100FE978,_?runningFunction@?1??ShutdownPlatformModules@CVGuiSystemModuleLoader@@QAEXXZ@4_NA,data,GameUI/VGuiSystemModuleLoader.cpp function static of ShutdownPlatformModules (gameui.so DWARF runningFunction): recursion guard
 100CA158,??_7CVGuiSystemModuleLoader@@6B@,data,GameUI/VGuiSystemModuleLoader.cpp vtable stored by the CVGuiSystemModuleLoader constructor and destructor; the object matches at 100%
 100CA178,??_7IVGuiModuleLoader@@6B@,data,GameUI/VGuiSystemModuleLoader.cpp vtable stored by the IVGuiModuleLoader constructor COMDAT; the object matches at 100%
+1001B880,??0CProfileButton@@QAE@PAVCCareerProfileFrame@@PBDPBGPA_N@Z,func,GameUI/CareerProfileButton.cpp: same position and size as in our compiled object; linux: _ZN14CProfileButtonC2EP19CCareerProfileFramePKcPKwPb
+1001B9B7,?SetProfileName@CProfileButton@@QAEXPBD@Z,func,GameUI/CareerProfileButton.cpp: same position and size as in our compiled object; linux: _ZN14CProfileButton14SetProfileNameEPKc
+1001B9E6,?OnMouseDoublePressed@CProfileButton@@UAEXW4MouseCode@vgui2@@@Z,func,GameUI/CareerProfileButton.cpp: same position and size as in our compiled object; linux: _ZN14CProfileButton20OnMouseDoublePressedEN5vgui29MouseCodeE
+1001BA7D,?ApplySchemeSettings@CProfileButton@@UAEXPAVIScheme@vgui2@@@Z,func,GameUI/CareerProfileButton.cpp: same position and size as in our compiled object; linux: _ZN14CProfileButton19ApplySchemeSettingsEPN5vgui27ISchemeE
+1001BBED,?GetBorder@CProfileButton@@MAEPAVIBorder@vgui2@@_N000@Z,func,GameUI/CareerProfileButton.cpp: same position and size as in our compiled object; linux: _ZN14CProfileButton9GetBorderEbbbb
+1001BC52,?GetBgColor@CProfileButton@@UAE?AVColor@@XZ,func,GameUI/CareerProfileButton.cpp: same position and size as in our compiled object; linux: _ZN14CProfileButton10GetBgColorEv
+1001BC92,?Paint@CProfileButton@@UAEXXZ,func,GameUI/CareerProfileButton.cpp: same position and size as in our compiled object; linux: _ZN14CProfileButton5PaintEv
+1001BE1A,_$E23,func,GameUI/CareerProfileButton.cpp: same position and size as in our compiled object
+1001BE29,_$E22,func,GameUI/CareerProfileButton.cpp: same position and size as in our compiled object
+1001BE40,??_GCProfileButton@@UAEPAXI@Z,func,GameUI/CareerProfileButton.cpp: same position and size as in our compiled object
+1001BE70,??1CProfileButton@@UAE@XZ,func,GameUI/CareerProfileButton.cpp: same position and size as in our compiled object
