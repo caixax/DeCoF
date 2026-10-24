@@ -8705,49 +8705,49 @@ gameui,1002EAAA,316,,CDemoPlayerFileDialog::LoadDemoList,ENGINE,GameUI/DemoPlaye
 gameui,1002EBE6,258,,,UNKNOWN,GameUI/DemoPlayerFileDialog.cpp,,,TODO,,,linux: _ZN21CDemoPlayerFileDialog9OnCommandEPKc
 gameui,1002ECE8,33,,,UNKNOWN,GameUI/DemoPlayerFileDialog.cpp,,,TODO,,,linux: _ZN21CDemoPlayerFileDialog7OnCloseEv
 gameui,1002ED10,46,,,UNKNOWN,GameUI/DemoPlayerFileDialog.cpp,,,TODO,,,
-gameui,1002ED40,42,,,UNKNOWN,HLTV/common/DirectorCmd.cpp,,,TODO,,,linux: _ZN11DirectorCmdC2Ev
-gameui,1002ED6A,39,,,UNKNOWN,HLTV/common/DirectorCmd.cpp,,,TODO,,,linux: _ZN11DirectorCmdD2Ev
-gameui,1002ED91,87,,,UNKNOWN,HLTV/common/DirectorCmd.cpp,,,TODO,,,linux: _ZN11DirectorCmd12GetEventDataERiS0_S0_
-gameui,1002EDE8,55,,,UNKNOWN,HLTV/common/DirectorCmd.cpp,,,TODO,,,linux: _ZN11DirectorCmd11GetModeDataERi
-gameui,1002EE1F,103,,,UNKNOWN,HLTV/common/DirectorCmd.cpp,,,TODO,,,linux: _ZN11DirectorCmd12GetChaseDataERiS0_RfS0_
-gameui,1002EE86,55,,,UNKNOWN,HLTV/common/DirectorCmd.cpp,,,TODO,,,linux: _ZN11DirectorCmd12GetInEyeDataERi
-gameui,1002EEBD,87,,,UNKNOWN,HLTV/common/DirectorCmd.cpp,,,TODO,,,linux: _ZN11DirectorCmd10GetMapDataERiRfS1_
-gameui,1002EF14,182,,,UNKNOWN,HLTV/common/DirectorCmd.cpp,,,TODO,,,linux: _ZN11DirectorCmd13GetCameraDataEPfS0_RfRi
-gameui,1002EFCA,182,,,UNKNOWN,HLTV/common/DirectorCmd.cpp,,,TODO,,,linux: _ZN11DirectorCmd14GetCamPathDataEPfS0_RfRi
-gameui,1002F080,79,,,UNKNOWN,HLTV/common/DirectorCmd.cpp,,,TODO,,,linux: _ZN11DirectorCmd12GetSoundDataEPcRf
-gameui,1002F0CF,17,,,UNKNOWN,HLTV/common/DirectorCmd.cpp,,,TODO,,,linux: _ZN11DirectorCmd7GetTimeEv
-gameui,1002F0E0,17,,,UNKNOWN,HLTV/common/DirectorCmd.cpp,,,TODO,,,linux: _ZN11DirectorCmd7GetTypeEv
-gameui,1002F0F1,24,,,UNKNOWN,HLTV/common/DirectorCmd.cpp,,,TODO,,,linux: _ZN11DirectorCmd7GetNameEv
-gameui,1002F109,55,,,UNKNOWN,HLTV/common/DirectorCmd.cpp,,,TODO,,,linux: _ZN11DirectorCmd16GetTimeScaleDataERf
-gameui,1002F140,55,,,UNKNOWN,HLTV/common/DirectorCmd.cpp,,,TODO,,,linux: _ZN11DirectorCmd16GetWayPointsDataERi
-gameui,1002F177,195,,,UNKNOWN,HLTV/common/DirectorCmd.cpp,,,TODO,,,linux: _ZN11DirectorCmd14GetMessageDataERiS0_PfRfS2_S2_S2_Pc
-gameui,1002F23A,87,,,UNKNOWN,HLTV/common/DirectorCmd.cpp,,,TODO,,,linux: _ZN11DirectorCmd13GetStatusDataERiS0_S0_
-gameui,1002F291,63,,,UNKNOWN,HLTV/common/DirectorCmd.cpp,,,TODO,,,linux: _ZN11DirectorCmd13GetBannerDataEPc
-gameui,1002F2D0,63,,,UNKNOWN,HLTV/common/DirectorCmd.cpp,,,TODO,,,linux: _ZN11DirectorCmd16GetStuffTextDataEPc
-gameui,1002F30F,78,,,UNKNOWN,HLTV/common/DirectorCmd.cpp,,,TODO,,,linux: _ZN11DirectorCmd12SetEventDataEiii
-gameui,1002F35D,93,,,UNKNOWN,HLTV/common/DirectorCmd.cpp,,,TODO,,,linux: _ZN11DirectorCmd12SetChaseDataEiifi
-gameui,1002F3BA,48,,,UNKNOWN,HLTV/common/DirectorCmd.cpp,,,TODO,,,linux: _ZN11DirectorCmd12SetInEyeDataEi
-gameui,1002F3EA,78,,,UNKNOWN,HLTV/common/DirectorCmd.cpp,,,TODO,,,linux: _ZN11DirectorCmd10SetMapDataEiff
-gameui,1002F438,31,,,UNKNOWN,HLTV/common/DirectorCmd.cpp,,,TODO,,,linux: _ZN11DirectorCmd12SetStartDataEv
-gameui,1002F457,48,,,UNKNOWN,HLTV/common/DirectorCmd.cpp,,,TODO,,,linux: _ZN11DirectorCmd11SetModeDataEi
-gameui,1002F487,174,,,UNKNOWN,HLTV/common/DirectorCmd.cpp,,,TODO,,,linux: _ZN11DirectorCmd13SetCameraDataEPfS0_fi
-gameui,1002F535,174,,,UNKNOWN,HLTV/common/DirectorCmd.cpp,,,TODO,,,linux: _ZN11DirectorCmd14SetCamPathDataEPfS0_fi
-gameui,1002F5E3,85,,,UNKNOWN,HLTV/common/DirectorCmd.cpp,,,TODO,,,linux: _ZN11DirectorCmd12SetSoundDataEPcf
-gameui,1002F638,48,,,UNKNOWN,HLTV/common/DirectorCmd.cpp,,,TODO,,,linux: _ZN11DirectorCmd16SetTimeScaleDataEf
-gameui,1002F668,22,,,UNKNOWN,HLTV/common/DirectorCmd.cpp,,,TODO,,,linux: _ZN11DirectorCmd7SetTimeEf
-gameui,1002F67E,195,,,UNKNOWN,HLTV/common/DirectorCmd.cpp,,,TODO,,,linux: _ZN11DirectorCmd14SetMessageDataEijPfffffPc
-gameui,1002F741,112,,,UNKNOWN,HLTV/common/DirectorCmd.cpp,,,TODO,,,linux: _ZN11DirectorCmd4CopyEPS_
-gameui,1002F7B1,78,,,UNKNOWN,HLTV/common/DirectorCmd.cpp,,,TODO,,,linux: _ZN11DirectorCmd13SetStatusDataEiii
-gameui,1002F7FF,70,,,UNKNOWN,HLTV/common/DirectorCmd.cpp,,,TODO,,,linux: _ZN11DirectorCmd13SetBannerDataEPc
-gameui,1002F845,70,,,UNKNOWN,HLTV/common/DirectorCmd.cpp,,,TODO,,,linux: _ZN11DirectorCmd16SetStuffTextDataEPc
-gameui,1002F88B,48,,,UNKNOWN,HLTV/common/DirectorCmd.cpp,,,TODO,,,linux: _ZN11DirectorCmd12SetWayPointsEi
-gameui,1002F8BB,769,,,UNKNOWN,HLTV/common/DirectorCmd.cpp,,,TODO,,,linux: _ZN11DirectorCmd14ReadFromStreamEP9BitBuffer
-gameui,1002FBF8,118,,,UNKNOWN,HLTV/common/DirectorCmd.cpp,,,TODO,,,linux: _ZN11DirectorCmd13WriteToStreamEP9BitBuffer
-gameui,1002FC6E,1323,,DirectorCmd::ToString,ENGINE,HLTV/common/DirectorCmd.cpp,,,TODO,,linux_symbols:string:0.737,linux: _ZN11DirectorCmd8ToStringEv
-gameui,100301D5,13,,,UNKNOWN,HLTV/common/DirectorCmd.cpp,,,TODO,,,linux: _ZN11DirectorCmd10FromStringEPc
-gameui,100301E2,42,,,UNKNOWN,HLTV/common/DirectorCmd.cpp,,,TODO,,,linux: _ZN11DirectorCmd5ClearEv
-gameui,1003020C,37,,,UNKNOWN,HLTV/common/DirectorCmd.cpp,,,TODO,,,linux: _ZN11DirectorCmd6ResizeEi
-gameui,10030240,46,,,UNKNOWN,HLTV/common/DirectorCmd.cpp,,,TODO,,,
+gameui,1002ED40,42,??0DirectorCmd@@QAE@XZ,public: __thiscall DirectorCmd::DirectorCmd(void),UNKNOWN,HLTV/common/DirectorCmd.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN11DirectorCmdC2Ev
+gameui,1002ED6A,39,??1DirectorCmd@@UAE@XZ,public: virtual __thiscall DirectorCmd::~DirectorCmd(void),UNKNOWN,HLTV/common/DirectorCmd.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN11DirectorCmdD2Ev
+gameui,1002ED91,87,?GetEventData@DirectorCmd@@QAE_NAAH00@Z,"public: bool __thiscall DirectorCmd::GetEventData(int &,int &,int &)",UNKNOWN,HLTV/common/DirectorCmd.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN11DirectorCmd12GetEventDataERiS0_S0_
+gameui,1002EDE8,55,?GetModeData@DirectorCmd@@QAE_NAAH@Z,public: bool __thiscall DirectorCmd::GetModeData(int &),UNKNOWN,HLTV/common/DirectorCmd.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN11DirectorCmd11GetModeDataERi
+gameui,1002EE1F,103,?GetChaseData@DirectorCmd@@QAE_NAAH0AAM0@Z,"public: bool __thiscall DirectorCmd::GetChaseData(int &,int &,float &,int &)",UNKNOWN,HLTV/common/DirectorCmd.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN11DirectorCmd12GetChaseDataERiS0_RfS0_
+gameui,1002EE86,55,?GetInEyeData@DirectorCmd@@QAE_NAAH@Z,public: bool __thiscall DirectorCmd::GetInEyeData(int &),UNKNOWN,HLTV/common/DirectorCmd.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN11DirectorCmd12GetInEyeDataERi
+gameui,1002EEBD,87,?GetMapData@DirectorCmd@@QAE_NAAHAAM1@Z,"public: bool __thiscall DirectorCmd::GetMapData(int &,float &,float &)",UNKNOWN,HLTV/common/DirectorCmd.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN11DirectorCmd10GetMapDataERiRfS1_
+gameui,1002EF14,182,?GetCameraData@DirectorCmd@@QAE_NPAM0AAMAAH@Z,"public: bool __thiscall DirectorCmd::GetCameraData(float *,float *,float &,int &)",UNKNOWN,HLTV/common/DirectorCmd.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN11DirectorCmd13GetCameraDataEPfS0_RfRi
+gameui,1002EFCA,182,?GetCamPathData@DirectorCmd@@QAE_NPAM0AAMAAH@Z,"public: bool __thiscall DirectorCmd::GetCamPathData(float *,float *,float &,int &)",UNKNOWN,HLTV/common/DirectorCmd.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN11DirectorCmd14GetCamPathDataEPfS0_RfRi
+gameui,1002F080,79,?GetSoundData@DirectorCmd@@QAE_NPADAAM@Z,"public: bool __thiscall DirectorCmd::GetSoundData(char *,float &)",UNKNOWN,HLTV/common/DirectorCmd.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN11DirectorCmd12GetSoundDataEPcRf
+gameui,1002F0CF,17,?GetTime@DirectorCmd@@QAEMXZ,public: float __thiscall DirectorCmd::GetTime(void),UNKNOWN,HLTV/common/DirectorCmd.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN11DirectorCmd7GetTimeEv
+gameui,1002F0E0,17,?GetType@DirectorCmd@@QAEHXZ,public: int __thiscall DirectorCmd::GetType(void),UNKNOWN,HLTV/common/DirectorCmd.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN11DirectorCmd7GetTypeEv
+gameui,1002F0F1,24,?GetName@DirectorCmd@@QAEPADXZ,public: char * __thiscall DirectorCmd::GetName(void),UNKNOWN,HLTV/common/DirectorCmd.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN11DirectorCmd7GetNameEv
+gameui,1002F109,55,?GetTimeScaleData@DirectorCmd@@QAE_NAAM@Z,public: bool __thiscall DirectorCmd::GetTimeScaleData(float &),UNKNOWN,HLTV/common/DirectorCmd.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN11DirectorCmd16GetTimeScaleDataERf
+gameui,1002F140,55,?GetWayPointsData@DirectorCmd@@QAE_NAAH@Z,public: bool __thiscall DirectorCmd::GetWayPointsData(int &),UNKNOWN,HLTV/common/DirectorCmd.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN11DirectorCmd16GetWayPointsDataERi
+gameui,1002F177,195,?GetMessageData@DirectorCmd@@QAE_NAAH0PAMAAM222PAD@Z,"public: bool __thiscall DirectorCmd::GetMessageData(int &,int &,float *,float &,float &,float &,float &,char *)",UNKNOWN,HLTV/common/DirectorCmd.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN11DirectorCmd14GetMessageDataERiS0_PfRfS2_S2_S2_Pc
+gameui,1002F23A,87,?GetStatusData@DirectorCmd@@QAE_NAAH00@Z,"public: bool __thiscall DirectorCmd::GetStatusData(int &,int &,int &)",UNKNOWN,HLTV/common/DirectorCmd.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN11DirectorCmd13GetStatusDataERiS0_S0_
+gameui,1002F291,63,?GetBannerData@DirectorCmd@@QAE_NPAD@Z,public: bool __thiscall DirectorCmd::GetBannerData(char *),UNKNOWN,HLTV/common/DirectorCmd.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN11DirectorCmd13GetBannerDataEPc
+gameui,1002F2D0,63,?GetStuffTextData@DirectorCmd@@QAE_NPAD@Z,public: bool __thiscall DirectorCmd::GetStuffTextData(char *),UNKNOWN,HLTV/common/DirectorCmd.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN11DirectorCmd16GetStuffTextDataEPc
+gameui,1002F30F,78,?SetEventData@DirectorCmd@@QAEXHHH@Z,"public: void __thiscall DirectorCmd::SetEventData(int,int,int)",UNKNOWN,HLTV/common/DirectorCmd.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN11DirectorCmd12SetEventDataEiii
+gameui,1002F35D,93,?SetChaseData@DirectorCmd@@QAEXHHMH@Z,"public: void __thiscall DirectorCmd::SetChaseData(int,int,float,int)",UNKNOWN,HLTV/common/DirectorCmd.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN11DirectorCmd12SetChaseDataEiifi
+gameui,1002F3BA,48,?SetInEyeData@DirectorCmd@@QAEXH@Z,public: void __thiscall DirectorCmd::SetInEyeData(int),UNKNOWN,HLTV/common/DirectorCmd.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN11DirectorCmd12SetInEyeDataEi
+gameui,1002F3EA,78,?SetMapData@DirectorCmd@@QAEXHMM@Z,"public: void __thiscall DirectorCmd::SetMapData(int,float,float)",UNKNOWN,HLTV/common/DirectorCmd.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN11DirectorCmd10SetMapDataEiff
+gameui,1002F438,31,?SetStartData@DirectorCmd@@QAEXXZ,public: void __thiscall DirectorCmd::SetStartData(void),UNKNOWN,HLTV/common/DirectorCmd.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN11DirectorCmd12SetStartDataEv
+gameui,1002F457,48,?SetModeData@DirectorCmd@@QAEXH@Z,public: void __thiscall DirectorCmd::SetModeData(int),UNKNOWN,HLTV/common/DirectorCmd.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN11DirectorCmd11SetModeDataEi
+gameui,1002F487,174,?SetCameraData@DirectorCmd@@QAEXPAM0MH@Z,"public: void __thiscall DirectorCmd::SetCameraData(float *,float *,float,int)",UNKNOWN,HLTV/common/DirectorCmd.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN11DirectorCmd13SetCameraDataEPfS0_fi
+gameui,1002F535,174,?SetCamPathData@DirectorCmd@@QAEXPAM0MH@Z,"public: void __thiscall DirectorCmd::SetCamPathData(float *,float *,float,int)",UNKNOWN,HLTV/common/DirectorCmd.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN11DirectorCmd14SetCamPathDataEPfS0_fi
+gameui,1002F5E3,85,?SetSoundData@DirectorCmd@@QAEXPADM@Z,"public: void __thiscall DirectorCmd::SetSoundData(char *,float)",UNKNOWN,HLTV/common/DirectorCmd.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN11DirectorCmd12SetSoundDataEPcf
+gameui,1002F638,48,?SetTimeScaleData@DirectorCmd@@QAEXM@Z,public: void __thiscall DirectorCmd::SetTimeScaleData(float),UNKNOWN,HLTV/common/DirectorCmd.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN11DirectorCmd16SetTimeScaleDataEf
+gameui,1002F668,22,?SetTime@DirectorCmd@@QAEXM@Z,public: void __thiscall DirectorCmd::SetTime(float),UNKNOWN,HLTV/common/DirectorCmd.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN11DirectorCmd7SetTimeEf
+gameui,1002F67E,195,?SetMessageData@DirectorCmd@@QAEXHIPAMMMMMPAD@Z,"public: void __thiscall DirectorCmd::SetMessageData(int,unsigned int,float *,float,float,float,float,char *)",UNKNOWN,HLTV/common/DirectorCmd.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN11DirectorCmd14SetMessageDataEijPfffffPc
+gameui,1002F741,112,?Copy@DirectorCmd@@QAEXPAV1@@Z,public: void __thiscall DirectorCmd::Copy(class DirectorCmd *),UNKNOWN,HLTV/common/DirectorCmd.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN11DirectorCmd4CopyEPS_
+gameui,1002F7B1,78,?SetStatusData@DirectorCmd@@QAEXHHH@Z,"public: void __thiscall DirectorCmd::SetStatusData(int,int,int)",UNKNOWN,HLTV/common/DirectorCmd.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN11DirectorCmd13SetStatusDataEiii
+gameui,1002F7FF,70,?SetBannerData@DirectorCmd@@QAEXPAD@Z,public: void __thiscall DirectorCmd::SetBannerData(char *),UNKNOWN,HLTV/common/DirectorCmd.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN11DirectorCmd13SetBannerDataEPc
+gameui,1002F845,70,?SetStuffTextData@DirectorCmd@@QAEXPAD@Z,public: void __thiscall DirectorCmd::SetStuffTextData(char *),UNKNOWN,HLTV/common/DirectorCmd.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN11DirectorCmd16SetStuffTextDataEPc
+gameui,1002F88B,48,?SetWayPoints@DirectorCmd@@QAEXH@Z,public: void __thiscall DirectorCmd::SetWayPoints(int),UNKNOWN,HLTV/common/DirectorCmd.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN11DirectorCmd12SetWayPointsEi
+gameui,1002F8BB,769,?ReadFromStream@DirectorCmd@@QAE_NPAVBitBuffer@@@Z,public: bool __thiscall DirectorCmd::ReadFromStream(class BitBuffer *),UNKNOWN,HLTV/common/DirectorCmd.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN11DirectorCmd14ReadFromStreamEP9BitBuffer
+gameui,1002FBF8,118,?WriteToStream@DirectorCmd@@QAEXPAVBitBuffer@@@Z,public: void __thiscall DirectorCmd::WriteToStream(class BitBuffer *),UNKNOWN,HLTV/common/DirectorCmd.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN11DirectorCmd13WriteToStreamEP9BitBuffer
+gameui,1002FC6E,1323,?ToString@DirectorCmd@@QAEPADXZ,public: char * __thiscall DirectorCmd::ToString(void),ENGINE,HLTV/common/DirectorCmd.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN11DirectorCmd8ToStringEv
+gameui,100301D5,13,?FromString@DirectorCmd@@QAEXPAD@Z,public: void __thiscall DirectorCmd::FromString(char *),UNKNOWN,HLTV/common/DirectorCmd.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN11DirectorCmd10FromStringEPc
+gameui,100301E2,42,?Clear@DirectorCmd@@QAEXXZ,public: void __thiscall DirectorCmd::Clear(void),UNKNOWN,HLTV/common/DirectorCmd.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN11DirectorCmd5ClearEv
+gameui,1003020C,37,?Resize@DirectorCmd@@QAEXH@Z,public: void __thiscall DirectorCmd::Resize(int),UNKNOWN,HLTV/common/DirectorCmd.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN11DirectorCmd6ResizeEi
+gameui,10030240,46,??_GDirectorCmd@@UAEPAXI@Z,public: virtual void * __thiscall DirectorCmd::`scalar deleting destructor'(unsigned int),UNKNOWN,HLTV/common/DirectorCmd.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,10030270,244,,,UNKNOWN,GameUI/DottedLabel.cpp,,,TODO,,,linux: _ZN14CDottedBgLabelC1EPN5vgui25PanelEPKcS4_iii
 gameui,10030364,592,,,UNKNOWN,GameUI/DottedLabel.cpp,,,TODO,,,linux: _ZN14CDottedBgLabel15PaintBackgroundEv
 gameui,100305C0,46,,,UNKNOWN,GameUI/DottedLabel.cpp,,,TODO,,,

@@ -3888,6 +3888,11 @@
           "name": "GameUI/CvarSlider",
           "source": "src/gameui/CvarSlider.cpp",
           "functions_file": "tools/units/gameui_GameUI_CvarSlider.txt"
+        },
+        {
+          "name": "HLTV/common/DirectorCmd",
+          "source": "src/HLTV/common/DirectorCmd.cpp",
+          "functions_file": "tools/units/gameui_HLTV_common_DirectorCmd.txt"
         }
       ]
     }
