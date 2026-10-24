@@ -5085,3 +5085,24 @@ va,name,kind,evidence
 100365F1,?GetMPFilter@CModInfo@@QAEPBDXZ,func,GameUI/ModInfo.cpp: same position and size as in our compiled object; linux: _ZN8CModInfo11GetMPFilterEv
 10036615,?LoadCurrentGameInfo@CModInfo@@QAEXXZ,func,"GameUI/ModInfo.cpp: same position and size as in our compiled object (""liblist.gam""); linux: _ZN8CModInfo19LoadCurrentGameInfoEv"
 100366DC,?LoadGameInfoFromBuffer@CModInfo@@QAEXPBDH@Z,func,GameUI/ModInfo.cpp: same position and size as in our compiled object; linux: _ZN8CModInfo22LoadGameInfoFromBufferEPKci
+10047D20,??0VControlsListPanel@@QAE@PAVPanel@vgui2@@PBD@Z,func,GameUI/vcontrolslistpanel.cpp: same position and size as in our compiled object
+10047DA2,??1VControlsListPanel@@UAE@XZ,func,GameUI/vcontrolslistpanel.cpp: same position and size as in our compiled object
+10047DD8,?ApplySchemeSettings@VControlsListPanel@@EAEXPAVIScheme@vgui2@@@Z,func,GameUI/vcontrolslistpanel.cpp: same position and size as in our compiled object; linux: _ZN18VControlsListPanel19ApplySchemeSettingsEPN5vgui27ISchemeE
+10047E16,?StartCaptureMode@VControlsListPanel@@UAEXK@Z,func,GameUI/vcontrolslistpanel.cpp: same position and size as in our compiled object; linux: _ZN18VControlsListPanel16StartCaptureModeEm
+10047F38,?EndCaptureMode@VControlsListPanel@@UAEXK@Z,func,GameUI/vcontrolslistpanel.cpp: same position and size as in our compiled object; linux: _ZN18VControlsListPanel14EndCaptureModeEm
+10048042,?SetItemOfInterest@VControlsListPanel@@UAEXH@Z,func,GameUI/vcontrolslistpanel.cpp: same position and size as in our compiled object; linux: _ZN18VControlsListPanel17SetItemOfInterestEi
+1004805B,?GetItemOfInterest@VControlsListPanel@@UAEHXZ,func,GameUI/vcontrolslistpanel.cpp: same position and size as in our compiled object; linux: _ZN18VControlsListPanel17GetItemOfInterestEv
+1004806F,?IsCapturing@VControlsListPanel@@UAE_NXZ,func,GameUI/vcontrolslistpanel.cpp: same position and size as in our compiled object; linux: _ZN18VControlsListPanel11IsCapturingEv
+10048083,?OnMousePressed@VControlsListPanel@@UAEXW4MouseCode@vgui2@@@Z,func,GameUI/vcontrolslistpanel.cpp: same position and size as in our compiled object; linux: _ZN18VControlsListPanel14OnMousePressedEN5vgui29MouseCodeE
+100480EC,?OnMouseDoublePressed@VControlsListPanel@@UAEXW4MouseCode@vgui2@@@Z,func,GameUI/vcontrolslistpanel.cpp: same position and size as in our compiled object; linux: _ZN18VControlsListPanel20OnMouseDoublePressedEN5vgui29MouseCodeE
+10048140,??0CInlineEditPanel@@QAE@XZ,func,GameUI/vcontrolslistpanel.cpp: same position and size as in our compiled object
+10048170,?Paint@CInlineEditPanel@@UAEXXZ,func,GameUI/vcontrolslistpanel.cpp: same position and size as in our compiled object
+10048310,?OnKeyCodeTyped@CInlineEditPanel@@UAEXW4KeyCode@vgui2@@@Z,func,GameUI/vcontrolslistpanel.cpp: same position and size as in our compiled object
+10048360,?ApplySchemeSettings@CInlineEditPanel@@UAEXPAVIScheme@vgui2@@@Z,func,GameUI/vcontrolslistpanel.cpp: same position and size as in our compiled object
+100483A0,?OnMousePressed@CInlineEditPanel@@UAEXW4MouseCode@vgui2@@@Z,func,GameUI/vcontrolslistpanel.cpp: same position and size as in our compiled object
+100483F0,??_GCInlineEditPanel@@UAEPAXI@Z,func,GameUI/vcontrolslistpanel.cpp: same position and size as in our compiled object
+10048420,??1CInlineEditPanel@@UAE@XZ,func,GameUI/vcontrolslistpanel.cpp: same position and size as in our compiled object
+10048440,??_GVControlsListPanel@@UAEPAXI@Z,func,GameUI/vcontrolslistpanel.cpp: same position and size as in our compiled object
+10048470,?GetMessageMap@SectionedListPanel@vgui2@@UAEPAUPanelMessageMap@2@XZ,func,GameUI/vcontrolslistpanel.cpp: same position and size as in our compiled object
+100484B0,?GetPanelClassName@SectionedListPanel@vgui2@@SAPBDXZ,func,GameUI/vcontrolslistpanel.cpp: same position and size as in our compiled object
+100484C0,?RemoveAll@SectionedListPanel@vgui2@@UAEXXZ,func,GameUI/vcontrolslistpanel.cpp: same position and size as in our compiled object

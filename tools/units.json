@@ -4103,6 +4103,11 @@
           "name": "GameUI/BasePanel",
           "source": "src/gameui/BasePanel.cpp",
           "functions_file": "tools/units/gameui_GameUI_BasePanel.txt"
+        },
+        {
+          "name": "GameUI/vcontrolslistpanel",
+          "source": "src/gameui/vcontrolslistpanel.cpp",
+          "functions_file": "tools/units/gameui_GameUI_vcontrolslistpanel.txt"
         }
       ]
     }

@@ -9643,27 +9643,27 @@ gameui,10047BF0,10,,,UNKNOWN,GameUI/PanelListPanel.cpp,,,TODO,,,
 gameui,10047C00,19,,,UNKNOWN,GameUI/PanelListPanel.cpp,,,TODO,,,
 gameui,10047C20,110,,,UNKNOWN,GameUI/PanelListPanel.cpp,,,TODO,,,
 gameui,10047C90,120,,,UNKNOWN,GameUI/PanelListPanel.cpp,,,TODO,,,
-gameui,10047D20,130,,,UNKNOWN,GameUI/vcontrolslistpanel.cpp,,,TODO,,,
-gameui,10047DA2,54,,,UNKNOWN,GameUI/vcontrolslistpanel.cpp,,,TODO,,,
-gameui,10047DD8,62,,,UNKNOWN,GameUI/vcontrolslistpanel.cpp,,,TODO,,,linux: _ZN18VControlsListPanel19ApplySchemeSettingsEPN5vgui27ISchemeE
-gameui,10047E16,290,,,UNKNOWN,GameUI/vcontrolslistpanel.cpp,,,TODO,,,linux: _ZN18VControlsListPanel16StartCaptureModeEm
-gameui,10047F38,266,,,UNKNOWN,GameUI/vcontrolslistpanel.cpp,,,TODO,,,linux: _ZN18VControlsListPanel14EndCaptureModeEm
-gameui,10048042,25,,,UNKNOWN,GameUI/vcontrolslistpanel.cpp,,,TODO,,,linux: _ZN18VControlsListPanel17SetItemOfInterestEi
-gameui,1004805B,20,,,UNKNOWN,GameUI/vcontrolslistpanel.cpp,,,TODO,,,linux: _ZN18VControlsListPanel17GetItemOfInterestEv
-gameui,1004806F,20,,,UNKNOWN,GameUI/vcontrolslistpanel.cpp,,,TODO,,,linux: _ZN18VControlsListPanel11IsCapturingEv
-gameui,10048083,105,,,UNKNOWN,GameUI/vcontrolslistpanel.cpp,,,TODO,,,linux: _ZN18VControlsListPanel14OnMousePressedEN5vgui29MouseCodeE
-gameui,100480EC,81,,,UNKNOWN,GameUI/vcontrolslistpanel.cpp,,,TODO,,,linux: _ZN18VControlsListPanel20OnMouseDoublePressedEN5vgui29MouseCodeE
-gameui,10048140,38,,VControlsListPanel::VControlsListPanel,ENGINE,GameUI/vcontrolslistpanel.cpp,,,TODO,,linux_symbols:string:0.75,
-gameui,10048170,409,,,UNKNOWN,GameUI/vcontrolslistpanel.cpp,,,TODO,,,
-gameui,10048310,68,,,UNKNOWN,GameUI/vcontrolslistpanel.cpp,,,TODO,,,
-gameui,10048360,56,,,UNKNOWN,GameUI/vcontrolslistpanel.cpp,,,TODO,,,
-gameui,100483A0,68,,,UNKNOWN,GameUI/vcontrolslistpanel.cpp,,,TODO,,,
-gameui,100483F0,46,,,UNKNOWN,GameUI/vcontrolslistpanel.cpp,,,TODO,,,
-gameui,10048420,19,,,UNKNOWN,GameUI/vcontrolslistpanel.cpp,,,TODO,,,
-gameui,10048440,46,,,UNKNOWN,GameUI/vcontrolslistpanel.cpp,,,TODO,,,
-gameui,10048470,64,,,UNKNOWN,GameUI/vcontrolslistpanel.cpp,,,TODO,,,
-gameui,100484B0,10,,,UNKNOWN,GameUI/vcontrolslistpanel.cpp,,,TODO,,,
-gameui,100484C0,25,,,UNKNOWN,GameUI/vcontrolslistpanel.cpp,,,TODO,,,
+gameui,10047D20,130,??0VControlsListPanel@@QAE@PAVPanel@vgui2@@PBD@Z,"public: __thiscall VControlsListPanel::VControlsListPanel(class vgui2::Panel *,char const *)",UNKNOWN,GameUI/vcontrolslistpanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10047DA2,54,??1VControlsListPanel@@UAE@XZ,public: virtual __thiscall VControlsListPanel::~VControlsListPanel(void),UNKNOWN,GameUI/vcontrolslistpanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10047DD8,62,?ApplySchemeSettings@VControlsListPanel@@EAEXPAVIScheme@vgui2@@@Z,private: virtual void __thiscall VControlsListPanel::ApplySchemeSettings(class vgui2::IScheme *),UNKNOWN,GameUI/vcontrolslistpanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN18VControlsListPanel19ApplySchemeSettingsEPN5vgui27ISchemeE
+gameui,10047E16,290,?StartCaptureMode@VControlsListPanel@@UAEXK@Z,public: virtual void __thiscall VControlsListPanel::StartCaptureMode(unsigned long),UNKNOWN,GameUI/vcontrolslistpanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN18VControlsListPanel16StartCaptureModeEm
+gameui,10047F38,266,?EndCaptureMode@VControlsListPanel@@UAEXK@Z,public: virtual void __thiscall VControlsListPanel::EndCaptureMode(unsigned long),UNKNOWN,GameUI/vcontrolslistpanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN18VControlsListPanel14EndCaptureModeEm
+gameui,10048042,25,?SetItemOfInterest@VControlsListPanel@@UAEXH@Z,public: virtual void __thiscall VControlsListPanel::SetItemOfInterest(int),UNKNOWN,GameUI/vcontrolslistpanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN18VControlsListPanel17SetItemOfInterestEi
+gameui,1004805B,20,?GetItemOfInterest@VControlsListPanel@@UAEHXZ,public: virtual int __thiscall VControlsListPanel::GetItemOfInterest(void),UNKNOWN,GameUI/vcontrolslistpanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN18VControlsListPanel17GetItemOfInterestEv
+gameui,1004806F,20,?IsCapturing@VControlsListPanel@@UAE_NXZ,public: virtual bool __thiscall VControlsListPanel::IsCapturing(void),UNKNOWN,GameUI/vcontrolslistpanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN18VControlsListPanel11IsCapturingEv
+gameui,10048083,105,?OnMousePressed@VControlsListPanel@@UAEXW4MouseCode@vgui2@@@Z,public: virtual void __thiscall VControlsListPanel::OnMousePressed(enum vgui2::MouseCode),UNKNOWN,GameUI/vcontrolslistpanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN18VControlsListPanel14OnMousePressedEN5vgui29MouseCodeE
+gameui,100480EC,81,?OnMouseDoublePressed@VControlsListPanel@@UAEXW4MouseCode@vgui2@@@Z,public: virtual void __thiscall VControlsListPanel::OnMouseDoublePressed(enum vgui2::MouseCode),UNKNOWN,GameUI/vcontrolslistpanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN18VControlsListPanel20OnMouseDoublePressedEN5vgui29MouseCodeE
+gameui,10048140,38,??0CInlineEditPanel@@QAE@XZ,public: __thiscall CInlineEditPanel::CInlineEditPanel(void),ENGINE,GameUI/vcontrolslistpanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10048170,409,?Paint@CInlineEditPanel@@UAEXXZ,public: virtual void __thiscall CInlineEditPanel::Paint(void),UNKNOWN,GameUI/vcontrolslistpanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10048310,68,?OnKeyCodeTyped@CInlineEditPanel@@UAEXW4KeyCode@vgui2@@@Z,public: virtual void __thiscall CInlineEditPanel::OnKeyCodeTyped(enum vgui2::KeyCode),UNKNOWN,GameUI/vcontrolslistpanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10048360,56,?ApplySchemeSettings@CInlineEditPanel@@UAEXPAVIScheme@vgui2@@@Z,public: virtual void __thiscall CInlineEditPanel::ApplySchemeSettings(class vgui2::IScheme *),UNKNOWN,GameUI/vcontrolslistpanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100483A0,68,?OnMousePressed@CInlineEditPanel@@UAEXW4MouseCode@vgui2@@@Z,public: virtual void __thiscall CInlineEditPanel::OnMousePressed(enum vgui2::MouseCode),UNKNOWN,GameUI/vcontrolslistpanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100483F0,46,??_GCInlineEditPanel@@UAEPAXI@Z,public: virtual void * __thiscall CInlineEditPanel::`scalar deleting destructor'(unsigned int),UNKNOWN,GameUI/vcontrolslistpanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10048420,19,??1CInlineEditPanel@@UAE@XZ,public: virtual __thiscall CInlineEditPanel::~CInlineEditPanel(void),UNKNOWN,GameUI/vcontrolslistpanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10048440,46,??_GVControlsListPanel@@UAEPAXI@Z,public: virtual void * __thiscall VControlsListPanel::`scalar deleting destructor'(unsigned int),UNKNOWN,GameUI/vcontrolslistpanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10048470,64,?GetMessageMap@SectionedListPanel@vgui2@@UAEPAUPanelMessageMap@2@XZ,public: virtual struct vgui2::PanelMessageMap * __thiscall vgui2::SectionedListPanel::GetMessageMap(void),UNKNOWN,GameUI/vcontrolslistpanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100484B0,10,?GetPanelClassName@SectionedListPanel@vgui2@@SAPBDXZ,public: static char const * __cdecl vgui2::SectionedListPanel::GetPanelClassName(void),UNKNOWN,GameUI/vcontrolslistpanel.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100484C0,25,?RemoveAll@SectionedListPanel@vgui2@@UAEXXZ,public: virtual void __thiscall vgui2::SectionedListPanel::RemoveAll(void),UNKNOWN,GameUI/vcontrolslistpanel.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,100484E0,724,??0CContentControlDialog@@QAE@PAVPanel@vgui2@@@Z,public: __thiscall CContentControlDialog::CContentControlDialog(class vgui2::Panel *),ENGINE,GameUI/ContentControlDialog.cpp,,,MATCHED,100,linux_symbols:string:0.443,
 gameui,100487B4,28,??1CContentControlDialog@@UAE@XZ,public: virtual __thiscall CContentControlDialog::~CContentControlDialog(void),UNKNOWN,GameUI/ContentControlDialog.cpp,,,MATCHED,100,,
 gameui,100487D0,163,?Activate@CContentControlDialog@@UAEXXZ,public: virtual void __thiscall CContentControlDialog::Activate(void),UNKNOWN,GameUI/ContentControlDialog.cpp,,,MATCHED,100,,linux: _ZN21CContentControlDialog8ActivateEv
