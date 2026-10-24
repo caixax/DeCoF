@@ -3913,6 +3913,11 @@
           "name": "vgui2/controls/PropertyDialog",
           "source": "src/vgui2/controls/PropertyDialog.cpp",
           "functions_file": "tools/units/gameui_vgui2_controls_PropertyDialog.txt"
+        },
+        {
+          "name": "vgui2/controls/QueryBox",
+          "source": "src/vgui2/controls/QueryBox.cpp",
+          "functions_file": "tools/units/gameui_vgui2_controls_QueryBox.txt"
         }
       ]
     }

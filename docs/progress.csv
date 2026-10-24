@@ -12011,22 +12011,22 @@ gameui,10094950,17,?NumAllocated@?$CUtlMemory@UCustomURLHandler_t@HTML@vgui2@@@@
 gameui,10094970,199,?Grow@?$CUtlMemory@UCustomURLHandler_t@HTML@vgui2@@@@QAEXH@Z,vgui2::HTML::CustomURLHandler_t>::Grow,UNKNOWN,vgui2/controls/HTML.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,10094A40,25,?IsExternallyAllocated@?$CUtlMemory@UCustomURLHandler_t@HTML@vgui2@@@@QBE_NXZ,vgui2::HTML::CustomURLHandler_t>::IsExternallyAllocated,UNKNOWN,vgui2/controls/HTML.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,10094A60,5,?Destruct@@YAXPAUCustomURLHandler_t@HTML@vgui2@@@Z,Destruct,UNKNOWN,vgui2/controls/HTML.cpp,,,MATCHED,100,gameui_manual.csv,
-gameui,10094A70,273,,,UNKNOWN,vgui2/controls/QueryBox.cpp,,,TODO,,,linux: _ZN5vgui28QueryBoxC1EPKcS2_PNS_5PanelE
-gameui,10094B81,273,,,UNKNOWN,vgui2/controls/QueryBox.cpp,,,TODO,,,linux: _ZN5vgui28QueryBoxC1EPKwS2_PNS_5PanelE
-gameui,10094C92,149,,,UNKNOWN,vgui2/controls/QueryBox.cpp,,,TODO,,,linux: _ZN5vgui28QueryBoxD2Ev
-gameui,10094D27,373,,,UNKNOWN,vgui2/controls/QueryBox.cpp,,,TODO,,,linux: _ZN5vgui28QueryBox13PerformLayoutEv
-gameui,10094E9C,235,,,UNKNOWN,vgui2/controls/QueryBox.cpp,,,TODO,,,linux: _ZN5vgui28QueryBox9OnCommandEPKc
-gameui,10094F87,60,,,UNKNOWN,vgui2/controls/QueryBox.cpp,,,TODO,,,linux: _ZN5vgui28QueryBox12SetOKCommandEP9KeyValues
-gameui,10094FC3,114,,,UNKNOWN,vgui2/controls/QueryBox.cpp,,,TODO,,,linux: _ZN5vgui28QueryBox17SetOKCommandValueEPKci
-gameui,10095035,60,,,UNKNOWN,vgui2/controls/QueryBox.cpp,,,TODO,,,linux: _ZN5vgui28QueryBox16SetCancelCommandEP9KeyValues
-gameui,10095071,61,,,UNKNOWN,vgui2/controls/QueryBox.cpp,,,TODO,,,linux: _ZN5vgui28QueryBox19SetCancelButtonTextEPKc
-gameui,100950AE,61,,,UNKNOWN,vgui2/controls/QueryBox.cpp,,,TODO,,,linux: _ZN5vgui28QueryBox19SetCancelButtonTextEPKw
-gameui,100950EB,52,,,UNKNOWN,vgui2/controls/QueryBox.cpp,,,TODO,,,linux: _ZN5vgui28QueryBox14OnKeyCodeTypedENS_7KeyCodeE
-gameui,1009511F,36,,,UNKNOWN,vgui2/controls/QueryBox.cpp,,,TODO,,,linux: _ZN5vgui28QueryBox25SetKeyFocusOnCancelButtonEv
-gameui,10095150,46,,,UNKNOWN,vgui2/controls/QueryBox.cpp,,,TODO,,,
-gameui,10095180,19,,,UNKNOWN,vgui2/controls/QueryBox.cpp,,,TODO,,,
-gameui,100951A0,102,,,UNKNOWN,vgui2/controls/QueryBox.cpp,,,TODO,,,
-gameui,10095210,10,,,UNKNOWN,vgui2/controls/QueryBox.cpp,,,TODO,,,
+gameui,10094A70,273,??0QueryBox@vgui2@@QAE@PBD0PAVPanel@1@@Z,"public: __thiscall vgui2::QueryBox::QueryBox(char const *,char const *,class vgui2::Panel *)",UNKNOWN,vgui2/controls/QueryBox.cpp,,,MATCHED,100,,linux: _ZN5vgui28QueryBoxC1EPKcS2_PNS_5PanelE
+gameui,10094B81,273,??0QueryBox@vgui2@@QAE@PBG0PAVPanel@1@@Z,"public: __thiscall vgui2::QueryBox::QueryBox(unsigned short const *,unsigned short const *,class vgui2::Panel *)",UNKNOWN,vgui2/controls/QueryBox.cpp,,,MATCHED,100,,linux: _ZN5vgui28QueryBoxC1EPKwS2_PNS_5PanelE
+gameui,10094C92,149,??1QueryBox@vgui2@@UAE@XZ,public: virtual __thiscall vgui2::QueryBox::~QueryBox(void),UNKNOWN,vgui2/controls/QueryBox.cpp,,,MATCHED,100,,linux: _ZN5vgui28QueryBoxD2Ev
+gameui,10094D27,373,?PerformLayout@QueryBox@vgui2@@UAEXXZ,public: virtual void __thiscall vgui2::QueryBox::PerformLayout(void),UNKNOWN,vgui2/controls/QueryBox.cpp,,,MATCHED,100,,linux: _ZN5vgui28QueryBox13PerformLayoutEv
+gameui,10094E9C,235,?OnCommand@QueryBox@vgui2@@MAEXPBD@Z,protected: virtual void __thiscall vgui2::QueryBox::OnCommand(char const *),UNKNOWN,vgui2/controls/QueryBox.cpp,,,MATCHED,100,,linux: _ZN5vgui28QueryBox9OnCommandEPKc
+gameui,10094F87,60,?SetOKCommand@QueryBox@vgui2@@QAEXPAVKeyValues@@@Z,public: void __thiscall vgui2::QueryBox::SetOKCommand(class KeyValues *),UNKNOWN,vgui2/controls/QueryBox.cpp,,,MATCHED,100,,linux: _ZN5vgui28QueryBox12SetOKCommandEP9KeyValues
+gameui,10094FC3,114,?SetOKCommandValue@QueryBox@vgui2@@QAEXPBDH@Z,"public: void __thiscall vgui2::QueryBox::SetOKCommandValue(char const *,int)",UNKNOWN,vgui2/controls/QueryBox.cpp,,,MATCHED,100,,linux: _ZN5vgui28QueryBox17SetOKCommandValueEPKci
+gameui,10095035,60,?SetCancelCommand@QueryBox@vgui2@@QAEXPAVKeyValues@@@Z,public: void __thiscall vgui2::QueryBox::SetCancelCommand(class KeyValues *),UNKNOWN,vgui2/controls/QueryBox.cpp,,,MATCHED,100,,linux: _ZN5vgui28QueryBox16SetCancelCommandEP9KeyValues
+gameui,10095071,61,?SetCancelButtonText@QueryBox@vgui2@@QAEXPBD@Z,public: void __thiscall vgui2::QueryBox::SetCancelButtonText(char const *),UNKNOWN,vgui2/controls/QueryBox.cpp,,,MATCHED,100,,linux: _ZN5vgui28QueryBox19SetCancelButtonTextEPKc
+gameui,100950AE,61,?SetCancelButtonText@QueryBox@vgui2@@QAEXPBG@Z,public: void __thiscall vgui2::QueryBox::SetCancelButtonText(unsigned short const *),UNKNOWN,vgui2/controls/QueryBox.cpp,,,MATCHED,100,,linux: _ZN5vgui28QueryBox19SetCancelButtonTextEPKw
+gameui,100950EB,52,?OnKeyCodeTyped@QueryBox@vgui2@@MAEXW4KeyCode@2@@Z,protected: virtual void __thiscall vgui2::QueryBox::OnKeyCodeTyped(enum vgui2::KeyCode),UNKNOWN,vgui2/controls/QueryBox.cpp,,,MATCHED,100,,linux: _ZN5vgui28QueryBox14OnKeyCodeTypedENS_7KeyCodeE
+gameui,1009511F,36,?SetKeyFocusOnCancelButton@QueryBox@vgui2@@QAEXXZ,public: void __thiscall vgui2::QueryBox::SetKeyFocusOnCancelButton(void),UNKNOWN,vgui2/controls/QueryBox.cpp,,,MATCHED,100,,linux: _ZN5vgui28QueryBox25SetKeyFocusOnCancelButtonEv
+gameui,10095150,46,??_GQueryBox@vgui2@@UAEPAXI@Z,public: virtual void * __thiscall vgui2::QueryBox::`scalar deleting destructor'(unsigned int),UNKNOWN,vgui2/controls/QueryBox.cpp,,,MATCHED,100,,
+gameui,10095180,19,??0QueryBox_RegisterMap@QueryBox@vgui2@@QAE@XZ,public: __thiscall vgui2::QueryBox::QueryBox_RegisterMap::QueryBox_RegisterMap(void),UNKNOWN,vgui2/controls/QueryBox.cpp,,,MATCHED,100,,
+gameui,100951A0,102,?ChainToMap@QueryBox@vgui2@@SAXXZ,public: static void __cdecl vgui2::QueryBox::ChainToMap(void),UNKNOWN,vgui2/controls/QueryBox.cpp,,,MATCHED,100,,
+gameui,10095210,10,?GetPanelBaseClassName@QueryBox@vgui2@@SAPBDXZ,public: static char const * __cdecl vgui2::QueryBox::GetPanelBaseClassName(void),UNKNOWN,vgui2/controls/QueryBox.cpp,,,MATCHED,100,,
 gameui,10095220,651,??0Menu@vgui2@@QAE@PAVPanel@1@PBD@Z,vgui2::Menu::Menu,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,100954AB,107,??1Menu@vgui2@@UAE@XZ,vgui2::Menu::~Menu,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,10095516,148,?DeleteAllItems@Menu@vgui2@@UAEXXZ,vgui2::Menu::DeleteAllItems,UNKNOWN,vgui2/controls/Menu.cpp,,,MATCHED,100,gameui_manual.csv,
