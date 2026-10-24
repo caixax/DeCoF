@@ -2799,3 +2799,51 @@ va,name,kind,evidence
 10003620,?GetPanelClassName@Frame@vgui2@@SAPBDXZ,func,"GameUI/CareerBaseFrame.cpp: same position as in our compiled object"
 10003680,?GetMessageMap@Button@vgui2@@UAEPAUPanelMessageMap@2@XZ,func,"GameUI/CareerBaseFrame.cpp: same position as in our compiled object"
 100036C0,?GetPanelClassName@Button@vgui2@@SAPBDXZ,func,"GameUI/CareerBaseFrame.cpp: same position as in our compiled object"
+10023380,??0CCDKeyEntryDialog@@QAE@PAVPanel@vgui2@@_N@Z,func,GameUI/CDKeyEntryDialog.cpp: same position and size as in our compiled object
+10023726,??1CCDKeyEntryDialog@@UAE@XZ,func,GameUI/CDKeyEntryDialog.cpp: same position and size as in our compiled object
+10023742,?OnCommand@CCDKeyEntryDialog@@EAEXPBD@Z,func,GameUI/CDKeyEntryDialog.cpp: same position and size as in our compiled object; linux: _ZN17CCDKeyEntryDialog9OnCommandEPKc
+100239B8,?OnClose@CCDKeyEntryDialog@@EAEXXZ,func,GameUI/CDKeyEntryDialog.cpp: same position and size as in our compiled object; linux: _ZN17CCDKeyEntryDialog7OnCloseEv
+100239FA,?OnThink@CCDKeyEntryDialog@@EAEXXZ,func,GameUI/CDKeyEntryDialog.cpp: same position and size as in our compiled object; linux: _ZN17CCDKeyEntryDialog7OnThinkEv
+10023A90,?IsEnteredKeyValid@CCDKeyEntryDialog@@AAE_NXZ,func,GameUI/CDKeyEntryDialog.cpp: same position and size as in our compiled object; linux: _ZN17CCDKeyEntryDialog17IsEnteredKeyValidEv
+10023A9D,?OnTextChanged@CCDKeyEntryDialog@@EAEXPAVPanel@vgui2@@@Z,func,GameUI/CDKeyEntryDialog.cpp: same position and size as in our compiled object; linux: _ZN17CCDKeyEntryDialog13OnTextChangedEPN5vgui25PanelE
+10023D79,?Activate@CCDKeyEntryDialog@@UAEXXZ,func,GameUI/CDKeyEntryDialog.cpp: same position and size as in our compiled object; linux: _ZN17CCDKeyEntryDialog8ActivateEv
+10023DB0,??0CUpperCaseTextEntry@@QAE@PAVPanel@vgui2@@PBD@Z,func,GameUI/CDKeyEntryDialog.cpp: same position and size as in our compiled object
+10023DE0,?OnKeyTyped@CUpperCaseTextEntry@@UAEXG@Z,func,GameUI/CDKeyEntryDialog.cpp: same position and size as in our compiled object
+10023E40,??_GCUpperCaseTextEntry@@UAEPAXI@Z,func,GameUI/CDKeyEntryDialog.cpp: same position and size as in our compiled object
+10023E70,??1CUpperCaseTextEntry@@UAE@XZ,func,GameUI/CDKeyEntryDialog.cpp: same position and size as in our compiled object
+10023E90,??_GCCDKeyEntryDialog@@UAEPAXI@Z,func,GameUI/CDKeyEntryDialog.cpp: same position and size as in our compiled object
+10023EC0,??0CloseMessageBox@@QAE@PBD0PAVPanel@vgui2@@@Z,func,GameUI/CDKeyEntryDialog.cpp: same position and size as in our compiled object
+10023EF0,?OnClose@CloseMessageBox@@UAEXXZ,func,GameUI/CDKeyEntryDialog.cpp: same position and size as in our compiled object
+10023F10,??_GCloseMessageBox@@UAEPAXI@Z,func,GameUI/CDKeyEntryDialog.cpp: same position and size as in our compiled object
+10023F40,??1CloseMessageBox@@UAE@XZ,func,GameUI/CDKeyEntryDialog.cpp: same position and size as in our compiled object
+10023F60,??0CTaskFrame@@QAE@PAVPanel@vgui2@@PBD_N@Z,func,GameUI/CDKeyEntryDialog.cpp: same position and size as in our compiled object
+10023FA0,??0CTaskFrame_RegisterMap@CTaskFrame@@QAE@XZ,func,GameUI/CDKeyEntryDialog.cpp: same position and size as in our compiled object
+10023FC0,?ChainToMap@CTaskFrame@@SAXXZ,func,GameUI/CDKeyEntryDialog.cpp: same position and size as in our compiled object
+10024030,?GetMessageMap@CTaskFrame@@UAEPAUPanelMessageMap@vgui2@@XZ,func,GameUI/CDKeyEntryDialog.cpp: same position and size as in our compiled object
+10024070,?GetPanelClassName@CTaskFrame@@SAPBDXZ,func,GameUI/CDKeyEntryDialog.cpp: same position and size as in our compiled object
+10024080,?GetPanelBaseClassName@CTaskFrame@@SAPBDXZ,func,GameUI/CDKeyEntryDialog.cpp: same position and size as in our compiled object
+10024090,??1CTaskFrame@@UAE@XZ,func,GameUI/CDKeyEntryDialog.cpp: same position and size as in our compiled object
+100240B0,?SetTitle@CTaskFrame@@UAEXPBD_N@Z,func,GameUI/CDKeyEntryDialog.cpp: same position and size as in our compiled object
+10024170,??_GCTaskFrame@@UAEPAXI@Z,func,GameUI/CDKeyEntryDialog.cpp: same position and size as in our compiled object
+100241A0,??0CCDKeyEntryDialog_RegisterMap@CCDKeyEntryDialog@@QAE@XZ,func,GameUI/CDKeyEntryDialog.cpp: same position and size as in our compiled object
+100241C0,?ChainToMap@CCDKeyEntryDialog@@SAXXZ,func,GameUI/CDKeyEntryDialog.cpp: same position and size as in our compiled object
+10024230,?GetMessageMap@CCDKeyEntryDialog@@UAEPAUPanelMessageMap@vgui2@@XZ,func,GameUI/CDKeyEntryDialog.cpp: same position and size as in our compiled object
+10024270,?GetPanelClassName@CCDKeyEntryDialog@@SAPBDXZ,func,GameUI/CDKeyEntryDialog.cpp: same position and size as in our compiled object
+10024280,?GetPanelBaseClassName@CCDKeyEntryDialog@@SAPBDXZ,func,GameUI/CDKeyEntryDialog.cpp: same position and size as in our compiled object
+10024290,??0PanelMessageFunc_OnTextChanged@CCDKeyEntryDialog@@QAE@XZ,func,GameUI/CDKeyEntryDialog.cpp: same position and size as in our compiled object
+100242B0,?InitVar@PanelMessageFunc_OnTextChanged@CCDKeyEntryDialog@@SAXXZ,func,GameUI/CDKeyEntryDialog.cpp: same position and size as in our compiled object
+10024320,?AddToMap@CCDKeyEntryDialog@@SAXPBDP8Panel@vgui2@@AEXXZHH0H0@Z,func,GameUI/CDKeyEntryDialog.cpp: same position and size as in our compiled object
+100243C0,?InsertBefore@?$CUtlVector@UMessageMapItem_t@vgui2@@@@QAEHHABUMessageMapItem_t@vgui2@@@Z,func,GameUI/CDKeyEntryDialog.cpp: same position and size as in our compiled object
+10024410,?Element@?$CUtlVector@UMessageMapItem_t@vgui2@@@@QAEAAUMessageMapItem_t@vgui2@@H@Z,func,GameUI/CDKeyEntryDialog.cpp: same position and size as in our compiled object
+10024430,?GrowVector@?$CUtlVector@UMessageMapItem_t@vgui2@@@@IAEXH@Z,func,GameUI/CDKeyEntryDialog.cpp: same position and size as in our compiled object
+10024490,?ResetDbgInfo@?$CUtlVector@UMessageMapItem_t@vgui2@@@@IAEXXZ,func,GameUI/CDKeyEntryDialog.cpp: same position and size as in our compiled object
+100244A0,?ShiftElementsRight@?$CUtlVector@UMessageMapItem_t@vgui2@@@@IAEXHH@Z,func,GameUI/CDKeyEntryDialog.cpp: same position and size as in our compiled object
+10024500,?CopyConstruct@@YAXPAUMessageMapItem_t@vgui2@@ABU12@@Z,func,GameUI/CDKeyEntryDialog.cpp: same position and size as in our compiled object
+10024550,??A?$CUtlMemory@UMessageMapItem_t@vgui2@@@@QAEAAUMessageMapItem_t@vgui2@@H@Z,func,GameUI/CDKeyEntryDialog.cpp: same position and size as in our compiled object
+10024570,?NumAllocated@?$CUtlMemory@UMessageMapItem_t@vgui2@@@@QBEHXZ,func,GameUI/CDKeyEntryDialog.cpp: same position and size as in our compiled object
+10024590,?Grow@?$CUtlMemory@UMessageMapItem_t@vgui2@@@@QAEXH@Z,func,GameUI/CDKeyEntryDialog.cpp: same position and size as in our compiled object
+10024660,?IsExternallyAllocated@?$CUtlMemory@UMessageMapItem_t@vgui2@@@@QBE_NXZ,func,GameUI/CDKeyEntryDialog.cpp: same position and size as in our compiled object
+10024680,?GetMessageMap@MessageBox@vgui2@@UAEPAUPanelMessageMap@2@XZ,func,GameUI/CDKeyEntryDialog.cpp: same position and size as in our compiled object
+100246C0,?GetPanelClassName@MessageBox@vgui2@@SAPBDXZ,func,GameUI/CDKeyEntryDialog.cpp: same position and size as in our compiled object
+100246D0,?GetMessageMap@TextEntry@vgui2@@UAEPAUPanelMessageMap@2@XZ,func,GameUI/CDKeyEntryDialog.cpp: same position and size as in our compiled object
+10024710,?GetPanelClassName@TextEntry@vgui2@@SAPBDXZ,func,GameUI/CDKeyEntryDialog.cpp: same position and size as in our compiled object

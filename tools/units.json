@@ -3782,6 +3782,11 @@
           "name": "GameUI/SaveGameDialog",
           "source": "src/gameui/SaveGameDialog.cpp",
           "functions_file": "tools/units/gameui_GameUI_SaveGameDialog.txt"
+        },
+        {
+          "name": "GameUI/CDKeyEntryDialog",
+          "source": "src/gameui/CDKeyEntryDialog.cpp",
+          "functions_file": "tools/units/gameui_GameUI_CDKeyEntryDialog.txt"
         }
       ]
     }
