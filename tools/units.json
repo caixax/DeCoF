@@ -3822,6 +3822,11 @@
           "name": "GameUI/MultiplayerAdvancedDialog",
           "source": "src/gameui/MultiplayerAdvancedDialog.cpp",
           "functions_file": "tools/units/gameui_GameUI_MultiplayerAdvancedDialog.txt"
+        },
+        {
+          "name": "GameUI/CreateMultiplayerGameGameplayPage",
+          "source": "src/gameui/CreateMultiplayerGameGameplayPage.cpp",
+          "functions_file": "tools/units/gameui_GameUI_CreateMultiplayerGameGameplayPage.txt"
         }
       ]
     }

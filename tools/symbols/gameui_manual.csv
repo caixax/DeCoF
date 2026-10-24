@@ -3172,3 +3172,17 @@ va,name,kind,evidence
 1004D890,??_GCDescription@@QAEPAXI@Z,func,GameUI/MultiplayerAdvancedDialog.cpp: same position and size as in our compiled object
 1004D8C0,??4Panel@vgui2@@QAEAAV01@ABV01@@Z,func,GameUI/MultiplayerAdvancedDialog.cpp: same position and size as in our compiled object
 1004DB50,??4IClientPanel@vgui2@@QAEAAV01@ABV01@@Z,func,GameUI/MultiplayerAdvancedDialog.cpp: same position and size as in our compiled object
+10028330,??0CCreateMultiplayerGameGameplayPage@@QAE@PAVPanel@vgui2@@PBD@Z,func,GameUI/CreateMultiplayerGameGameplayPage.cpp: same position and size as in our compiled object; linux: _ZN34CCreateMultiplayerGameGameplayPageC2EPN5vgui25PanelEPKc
+1002841A,??1CCreateMultiplayerGameGameplayPage@@UAE@XZ,func,GameUI/CreateMultiplayerGameGameplayPage.cpp: same position and size as in our compiled object; linux: _ZN34CCreateMultiplayerGameGameplayPageD2Ev
+10028436,?GetMaxPlayers@CCreateMultiplayerGameGameplayPage@@QAEHXZ,func,GameUI/CreateMultiplayerGameGameplayPage.cpp: same position and size as in our compiled object; linux: _ZN34CCreateMultiplayerGameGameplayPage13GetMaxPlayersEv
+1002845C,?GetPassword@CCreateMultiplayerGameGameplayPage@@QAEPBDXZ,func,GameUI/CreateMultiplayerGameGameplayPage.cpp: same position and size as in our compiled object; linux: _ZN34CCreateMultiplayerGameGameplayPage11GetPasswordEv
+10028479,?GetHostName@CCreateMultiplayerGameGameplayPage@@QAEPBDXZ,func,GameUI/CreateMultiplayerGameGameplayPage.cpp: same position and size as in our compiled object; linux: _ZN34CCreateMultiplayerGameGameplayPage11GetHostNameEv
+10028496,?GetValue@CCreateMultiplayerGameGameplayPage@@AAEPBDPBD0@Z,func,GameUI/CreateMultiplayerGameGameplayPage.cpp: same position (size 272 against 270) as in our compiled object; linux: _ZN34CCreateMultiplayerGameGameplayPage8GetValueEPKcS1_
+100285A6,?OnApplyChanges@CCreateMultiplayerGameGameplayPage@@MAEXXZ,func,GameUI/CreateMultiplayerGameGameplayPage.cpp: same position and size as in our compiled object; linux: _ZN34CCreateMultiplayerGameGameplayPage14OnApplyChangesEv
+10028626,?LoadGameOptionsList@CCreateMultiplayerGameGameplayPage@@AAEXXZ,func,GameUI/CreateMultiplayerGameGameplayPage.cpp: same position (size 1062 against 1078) as in our compiled object; linux: _ZN34CCreateMultiplayerGameGameplayPage19LoadGameOptionsListEv
+10028A5C,?GatherCurrentValues@CCreateMultiplayerGameGameplayPage@@AAEXXZ,func,GameUI/CreateMultiplayerGameGameplayPage.cpp: same position (size 908 against 924) as in our compiled object; linux: _ZN34CCreateMultiplayerGameGameplayPage19GatherCurrentValuesEv
+10028DF8,??0CServerDescription@@QAE@PAVCPanelListPanel@@@Z,func,GameUI/CreateMultiplayerGameGameplayPage.cpp: same position and size as in our compiled object; linux: _ZN18CServerDescriptionC1EP15CPanelListPanel
+10028E37,?WriteScriptHeader@CServerDescription@@UAEXPAX@Z,func,GameUI/CreateMultiplayerGameGameplayPage.cpp: same position and size as in our compiled object; linux: _ZN18CServerDescription17WriteScriptHeaderEPv
+10028F95,?WriteFileHeader@CServerDescription@@UAEXPAX@Z,func,GameUI/CreateMultiplayerGameGameplayPage.cpp: same position and size as in our compiled object; linux: _ZN18CServerDescription15WriteFileHeaderEPv
+100290B0,??_GCCreateMultiplayerGameGameplayPage@@UAEPAXI@Z,func,GameUI/CreateMultiplayerGameGameplayPage.cpp: same position and size as in our compiled object
+100290E0,?getHint@CDescription@@QAEPBDXZ,func,GameUI/CreateMultiplayerGameGameplayPage.cpp: same position and size as in our compiled object
