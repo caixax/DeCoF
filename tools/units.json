@@ -3878,6 +3878,11 @@
           "name": "GameUI/LogoFile",
           "source": "src/gameui/LogoFile.cpp",
           "functions_file": "tools/units/gameui_GameUI_LogoFile.txt"
+        },
+        {
+          "name": "HLTV/common/BitBuffer",
+          "source": "src/HLTV/common/BitBuffer.cpp",
+          "functions_file": "tools/units/gameui_HLTV_common_BitBuffer.txt"
         }
       ]
     }

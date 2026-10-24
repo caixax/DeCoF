@@ -8404,66 +8404,66 @@ gameui,10021700,46,,,UNKNOWN,common/BaseSystemModule.cpp,,,TODO,,,
 gameui,10021730,28,,,UNKNOWN,common/BaseSystemModule.cpp,,,TODO,,,
 gameui,10021760,63,,,UNKNOWN,common/BaseSystemModule.cpp,,,TODO,,,
 gameui,100217A0,39,,,UNKNOWN,common/BaseSystemModule.cpp,,,TODO,,,
-gameui,100218B0,39,,,UNKNOWN,HLTV/common/BitBuffer.cpp,,,TODO,,,linux: _ZN9BitBufferC1Ev
-gameui,100218D7,78,,,UNKNOWN,HLTV/common/BitBuffer.cpp,,,TODO,,,linux: _ZN9BitBufferC2EPvj
-gameui,10021925,28,,,UNKNOWN,HLTV/common/BitBuffer.cpp,,,TODO,,,linux: _ZN9BitBufferD2Ev
-gameui,10021941,53,,,UNKNOWN,HLTV/common/BitBuffer.cpp,,,TODO,,,linux: _ZN9BitBufferC1Ej
-gameui,10021976,153,,,UNKNOWN,HLTV/common/BitBuffer.cpp,,,TODO,,,linux: _ZN9BitBuffer6ResizeEj
-gameui,10021A0F,71,,,UNKNOWN,HLTV/common/BitBuffer.cpp,,,TODO,,,linux: _ZN9BitBuffer5ClearEv
-gameui,10021A56,32,,,UNKNOWN,HLTV/common/BitBuffer.cpp,,,TODO,,,linux: _ZN9BitBuffer10CurrentBitEv
-gameui,10021A76,47,,,UNKNOWN,HLTV/common/BitBuffer.cpp,,,TODO,,,linux: _ZN9BitBuffer5ResetEv
-gameui,10021AA5,108,,,UNKNOWN,HLTV/common/BitBuffer.cpp,,,TODO,,,linux: _ZN9BitBuffer4FreeEv
-gameui,10021B11,353,,,UNKNOWN,HLTV/common/BitBuffer.cpp,,,TODO,,,linux: _ZN9BitBuffer8ReadBitsEi
-gameui,10021C72,247,,,UNKNOWN,HLTV/common/BitBuffer.cpp,,,TODO,,,linux: _ZN9BitBuffer7ReadBitEv
-gameui,10021D69,69,,,UNKNOWN,HLTV/common/BitBuffer.cpp,,,TODO,,,linux: _ZN9BitBuffer8PeekBitsEi
-gameui,10021DAE,21,,,UNKNOWN,HLTV/common/BitBuffer.cpp,,,TODO,,,linux: _ZN9BitBuffer8ReadCharEv
-gameui,10021DC3,21,,,UNKNOWN,HLTV/common/BitBuffer.cpp,,,TODO,,,linux: _ZN9BitBuffer8ReadByteEv
-gameui,10021DD8,21,,,UNKNOWN,HLTV/common/BitBuffer.cpp,,,TODO,,,linux: _ZN9BitBuffer9ReadShortEv
-gameui,10021DED,21,,,UNKNOWN,HLTV/common/BitBuffer.cpp,,,TODO,,,linux: _ZN9BitBuffer8ReadWordEv
-gameui,10021E02,21,,,UNKNOWN,HLTV/common/BitBuffer.cpp,,,TODO,,,linux: _ZN9BitBuffer8ReadLongEv
-gameui,10021E17,44,,,UNKNOWN,HLTV/common/BitBuffer.cpp,,,TODO,,,linux: _ZN9BitBuffer9ReadFloatEv
-gameui,10021E43,219,,,UNKNOWN,HLTV/common/BitBuffer.cpp,,,TODO,,,linux: _ZN9BitBuffer7ReadBufEiPv
-gameui,10021F1E,44,,,UNKNOWN,HLTV/common/BitBuffer.cpp,,,TODO,,,linux: _ZN9BitBuffer8WriteBufEPS_i
-gameui,10021F4A,92,,,UNKNOWN,HLTV/common/BitBuffer.cpp,,,TODO,,,linux: _ZN9BitBuffer10ReadStringEv
-gameui,10021FA6,98,,,UNKNOWN,HLTV/common/BitBuffer.cpp,,,TODO,,,linux: _ZN9BitBuffer14ReadStringLineEv
-gameui,10022008,36,,,UNKNOWN,HLTV/common/BitBuffer.cpp,,,TODO,,,linux: _ZN9BitBuffer9ReadAngleEv
-gameui,1002202C,36,,,UNKNOWN,HLTV/common/BitBuffer.cpp,,,TODO,,,linux: _ZN9BitBuffer14ReadHiresAngleEv
-gameui,10022050,371,,,UNKNOWN,HLTV/common/BitBuffer.cpp,,,TODO,,,linux: _ZN9BitBuffer8WriteBitEi
-gameui,100221C3,437,,,UNKNOWN,HLTV/common/BitBuffer.cpp,,,TODO,,,linux: _ZN9BitBuffer9WriteBitsEji
-gameui,10022378,142,,,UNKNOWN,HLTV/common/BitBuffer.cpp,,,TODO,,,linux: _ZN9BitBuffer10WriteSBitsEii
-gameui,10022406,27,,,UNKNOWN,HLTV/common/BitBuffer.cpp,,,TODO,,,linux: _ZN9BitBuffer9WriteCharEi
-gameui,10022421,27,,,UNKNOWN,HLTV/common/BitBuffer.cpp,,,TODO,,,linux: _ZN9BitBuffer9WriteByteEi
-gameui,1002243C,27,,,UNKNOWN,HLTV/common/BitBuffer.cpp,,,TODO,,,linux: _ZN9BitBuffer10WriteShortEi
-gameui,10022457,27,,,UNKNOWN,HLTV/common/BitBuffer.cpp,,,TODO,,,linux: _ZN9BitBuffer9WriteWordEi
-gameui,10022472,27,,,UNKNOWN,HLTV/common/BitBuffer.cpp,,,TODO,,,linux: _ZN9BitBuffer9WriteLongEj
-gameui,1002248D,50,,,UNKNOWN,HLTV/common/BitBuffer.cpp,,,TODO,,,linux: _ZN9BitBuffer10WriteFloatEf
-gameui,100224BF,59,,,UNKNOWN,HLTV/common/BitBuffer.cpp,,,TODO,,,linux: _ZN9BitBuffer11WriteStringEPKc
-gameui,100224FA,248,,,UNKNOWN,HLTV/common/BitBuffer.cpp,,,TODO,,,linux: _ZN9BitBuffer8WriteBufEPKvi
-gameui,100225F2,76,,,UNKNOWN,HLTV/common/BitBuffer.cpp,,,TODO,,,linux: _ZN9BitBuffer12WriteBitDataEPvi
-gameui,1002263E,47,,,UNKNOWN,HLTV/common/BitBuffer.cpp,,,TODO,,,linux: _ZN9BitBuffer10WriteAngleEf
-gameui,1002266D,47,,,UNKNOWN,HLTV/common/BitBuffer.cpp,,,TODO,,,linux: _ZN9BitBuffer15WriteHiresAngleEf
-gameui,1002269C,37,,,UNKNOWN,HLTV/common/BitBuffer.cpp,,,TODO,,,linux: _ZN9BitBuffer11CurrentSizeEv
-gameui,100226C1,31,,,UNKNOWN,HLTV/common/BitBuffer.cpp,,,TODO,,,linux: _ZN9BitBuffer9SpaceLeftEv
-gameui,100226E0,45,,,UNKNOWN,HLTV/common/BitBuffer.cpp,,,TODO,,,linux: _ZN9BitBuffer9AlignByteEv
-gameui,1002270D,61,,,UNKNOWN,HLTV/common/BitBuffer.cpp,,,TODO,,,linux: _ZN9BitBuffer9ReadSBitsEi
-gameui,1002274A,82,,,UNKNOWN,HLTV/common/BitBuffer.cpp,,,TODO,,,linux: _ZN9BitBuffer12ReadBitAngleEi
-gameui,1002279C,114,,,UNKNOWN,HLTV/common/BitBuffer.cpp,,,TODO,,,linux: _ZN9BitBuffer13WriteBitAngleEfi
-gameui,1002280E,68,,,UNKNOWN,HLTV/common/BitBuffer.cpp,,,TODO,,,linux: _ZN9BitBuffer13ReadBitStringEv
-gameui,10022852,71,,,UNKNOWN,HLTV/common/BitBuffer.cpp,,,TODO,,,linux: _ZN9BitBuffer14WriteBitStringEPKc
-gameui,10022899,27,,,UNKNOWN,HLTV/common/BitBuffer.cpp,,,TODO,,,linux: _ZN9BitBuffer12StartBitModeEv
-gameui,100228B4,19,,,UNKNOWN,HLTV/common/BitBuffer.cpp,,,TODO,,,linux: _ZN9BitBuffer10EndBitModeEv
-gameui,100228C7,83,,,UNKNOWN,HLTV/common/BitBuffer.cpp,,,TODO,,,linux: _ZN9BitBuffer11ReadBitDataEPvi
-gameui,1002291A,82,,,UNKNOWN,HLTV/common/BitBuffer.cpp,,,TODO,,,linux: _ZN9BitBuffer9SetBufferEPvi
-gameui,1002296C,107,,,UNKNOWN,HLTV/common/BitBuffer.cpp,,,TODO,,,linux: _ZN9BitBuffer16ReadBitVec3CoordEPf
-gameui,100229D7,158,,,UNKNOWN,HLTV/common/BitBuffer.cpp,,,TODO,,,linux: _ZN9BitBuffer12ReadBitCoordEv
-gameui,10022A75,36,,,UNKNOWN,HLTV/common/BitBuffer.cpp,,,TODO,,,linux: _ZN9BitBuffer9ReadCoordEv
-gameui,10022A99,58,,,UNKNOWN,HLTV/common/BitBuffer.cpp,,,TODO,,,linux: _ZN9BitBuffer9SkipBytesEi
-gameui,10022AD3,260,,,UNKNOWN,HLTV/common/BitBuffer.cpp,,,TODO,,,linux: _ZN9BitBuffer8SkipBitsEi
-gameui,10022BD7,68,,,UNKNOWN,HLTV/common/BitBuffer.cpp,,,TODO,,,linux: _ZN9BitBuffer10SkipStringEv
-gameui,10022C1B,114,,,UNKNOWN,HLTV/common/BitBuffer.cpp,,,TODO,,,linux: _ZN9BitBuffer9FastClearEv
-gameui,10022C8D,37,,,UNKNOWN,HLTV/common/BitBuffer.cpp,,,TODO,,,linux: _ZN9BitBuffer12ConcatBufferEPS_
-gameui,10022CB2,36,,,UNKNOWN,HLTV/common/BitBuffer.cpp,,,TODO,,,linux: _ZN9BitBuffer10WriteCoordEf
-gameui,10022CE0,46,,,UNKNOWN,HLTV/common/BitBuffer.cpp,,,TODO,,,
+gameui,100218B0,39,??0BitBuffer@@QAE@XZ,public: __thiscall BitBuffer::BitBuffer(void),UNKNOWN,HLTV/common/BitBuffer.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN9BitBufferC1Ev
+gameui,100218D7,78,??0BitBuffer@@QAE@PAXI@Z,"public: __thiscall BitBuffer::BitBuffer(void *,unsigned int)",UNKNOWN,HLTV/common/BitBuffer.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN9BitBufferC2EPvj
+gameui,10021925,28,??1BitBuffer@@UAE@XZ,public: virtual __thiscall BitBuffer::~BitBuffer(void),UNKNOWN,HLTV/common/BitBuffer.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN9BitBufferD2Ev
+gameui,10021941,53,??0BitBuffer@@QAE@I@Z,public: __thiscall BitBuffer::BitBuffer(unsigned int),UNKNOWN,HLTV/common/BitBuffer.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN9BitBufferC1Ej
+gameui,10021976,153,?Resize@BitBuffer@@QAE_NI@Z,public: bool __thiscall BitBuffer::Resize(unsigned int),UNKNOWN,HLTV/common/BitBuffer.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN9BitBuffer6ResizeEj
+gameui,10021A0F,71,?Clear@BitBuffer@@QAEXXZ,public: void __thiscall BitBuffer::Clear(void),UNKNOWN,HLTV/common/BitBuffer.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN9BitBuffer5ClearEv
+gameui,10021A56,32,?CurrentBit@BitBuffer@@QAEHXZ,public: int __thiscall BitBuffer::CurrentBit(void),UNKNOWN,HLTV/common/BitBuffer.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN9BitBuffer10CurrentBitEv
+gameui,10021A76,47,?Reset@BitBuffer@@QAEXXZ,public: void __thiscall BitBuffer::Reset(void),UNKNOWN,HLTV/common/BitBuffer.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN9BitBuffer5ResetEv
+gameui,10021AA5,108,?Free@BitBuffer@@QAEXXZ,public: void __thiscall BitBuffer::Free(void),UNKNOWN,HLTV/common/BitBuffer.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN9BitBuffer4FreeEv
+gameui,10021B11,353,?ReadBits@BitBuffer@@QAEIH@Z,public: unsigned int __thiscall BitBuffer::ReadBits(int),UNKNOWN,HLTV/common/BitBuffer.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN9BitBuffer8ReadBitsEi
+gameui,10021C72,247,?ReadBit@BitBuffer@@QAEHXZ,public: int __thiscall BitBuffer::ReadBit(void),UNKNOWN,HLTV/common/BitBuffer.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN9BitBuffer7ReadBitEv
+gameui,10021D69,69,?PeekBits@BitBuffer@@QAEIH@Z,public: unsigned int __thiscall BitBuffer::PeekBits(int),UNKNOWN,HLTV/common/BitBuffer.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN9BitBuffer8PeekBitsEi
+gameui,10021DAE,21,?ReadChar@BitBuffer@@QAEHXZ,public: int __thiscall BitBuffer::ReadChar(void),UNKNOWN,HLTV/common/BitBuffer.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN9BitBuffer8ReadCharEv
+gameui,10021DC3,21,?ReadByte@BitBuffer@@QAEHXZ,public: int __thiscall BitBuffer::ReadByte(void),UNKNOWN,HLTV/common/BitBuffer.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN9BitBuffer8ReadByteEv
+gameui,10021DD8,21,?ReadShort@BitBuffer@@QAEHXZ,public: int __thiscall BitBuffer::ReadShort(void),UNKNOWN,HLTV/common/BitBuffer.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN9BitBuffer9ReadShortEv
+gameui,10021DED,21,?ReadWord@BitBuffer@@QAEHXZ,public: int __thiscall BitBuffer::ReadWord(void),UNKNOWN,HLTV/common/BitBuffer.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN9BitBuffer8ReadWordEv
+gameui,10021E02,21,?ReadLong@BitBuffer@@QAEIXZ,public: unsigned int __thiscall BitBuffer::ReadLong(void),UNKNOWN,HLTV/common/BitBuffer.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN9BitBuffer8ReadLongEv
+gameui,10021E17,44,?ReadFloat@BitBuffer@@QAEMXZ,public: float __thiscall BitBuffer::ReadFloat(void),UNKNOWN,HLTV/common/BitBuffer.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN9BitBuffer9ReadFloatEv
+gameui,10021E43,219,?ReadBuf@BitBuffer@@QAE_NHPAX@Z,"public: bool __thiscall BitBuffer::ReadBuf(int,void *)",UNKNOWN,HLTV/common/BitBuffer.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN9BitBuffer7ReadBufEiPv
+gameui,10021F1E,44,?WriteBuf@BitBuffer@@QAEXPAV1@H@Z,"public: void __thiscall BitBuffer::WriteBuf(class BitBuffer *,int)",UNKNOWN,HLTV/common/BitBuffer.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN9BitBuffer8WriteBufEPS_i
+gameui,10021F4A,92,?ReadString@BitBuffer@@QAEPADXZ,public: char * __thiscall BitBuffer::ReadString(void),UNKNOWN,HLTV/common/BitBuffer.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN9BitBuffer10ReadStringEv
+gameui,10021FA6,98,?ReadStringLine@BitBuffer@@QAEPADXZ,public: char * __thiscall BitBuffer::ReadStringLine(void),UNKNOWN,HLTV/common/BitBuffer.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN9BitBuffer14ReadStringLineEv
+gameui,10022008,36,?ReadAngle@BitBuffer@@QAEMXZ,public: float __thiscall BitBuffer::ReadAngle(void),UNKNOWN,HLTV/common/BitBuffer.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN9BitBuffer9ReadAngleEv
+gameui,1002202C,36,?ReadHiresAngle@BitBuffer@@QAEMXZ,public: float __thiscall BitBuffer::ReadHiresAngle(void),UNKNOWN,HLTV/common/BitBuffer.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN9BitBuffer14ReadHiresAngleEv
+gameui,10022050,371,?WriteBit@BitBuffer@@QAEXH@Z,public: void __thiscall BitBuffer::WriteBit(int),UNKNOWN,HLTV/common/BitBuffer.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN9BitBuffer8WriteBitEi
+gameui,100221C3,437,?WriteBits@BitBuffer@@QAEXIH@Z,"public: void __thiscall BitBuffer::WriteBits(unsigned int,int)",UNKNOWN,HLTV/common/BitBuffer.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN9BitBuffer9WriteBitsEji
+gameui,10022378,142,?WriteSBits@BitBuffer@@QAEXHH@Z,"public: void __thiscall BitBuffer::WriteSBits(int,int)",UNKNOWN,HLTV/common/BitBuffer.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN9BitBuffer10WriteSBitsEii
+gameui,10022406,27,?WriteChar@BitBuffer@@QAEXH@Z,public: void __thiscall BitBuffer::WriteChar(int),UNKNOWN,HLTV/common/BitBuffer.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN9BitBuffer9WriteCharEi
+gameui,10022421,27,?WriteByte@BitBuffer@@QAEXH@Z,public: void __thiscall BitBuffer::WriteByte(int),UNKNOWN,HLTV/common/BitBuffer.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN9BitBuffer9WriteByteEi
+gameui,1002243C,27,?WriteShort@BitBuffer@@QAEXH@Z,public: void __thiscall BitBuffer::WriteShort(int),UNKNOWN,HLTV/common/BitBuffer.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN9BitBuffer10WriteShortEi
+gameui,10022457,27,?WriteWord@BitBuffer@@QAEXH@Z,public: void __thiscall BitBuffer::WriteWord(int),UNKNOWN,HLTV/common/BitBuffer.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN9BitBuffer9WriteWordEi
+gameui,10022472,27,?WriteLong@BitBuffer@@QAEXI@Z,public: void __thiscall BitBuffer::WriteLong(unsigned int),UNKNOWN,HLTV/common/BitBuffer.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN9BitBuffer9WriteLongEj
+gameui,1002248D,50,?WriteFloat@BitBuffer@@QAEXM@Z,public: void __thiscall BitBuffer::WriteFloat(float),UNKNOWN,HLTV/common/BitBuffer.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN9BitBuffer10WriteFloatEf
+gameui,100224BF,59,?WriteString@BitBuffer@@QAEXPBD@Z,public: void __thiscall BitBuffer::WriteString(char const *),UNKNOWN,HLTV/common/BitBuffer.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN9BitBuffer11WriteStringEPKc
+gameui,100224FA,248,?WriteBuf@BitBuffer@@QAEXPBXH@Z,"public: void __thiscall BitBuffer::WriteBuf(void const *,int)",UNKNOWN,HLTV/common/BitBuffer.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN9BitBuffer8WriteBufEPKvi
+gameui,100225F2,76,?WriteBitData@BitBuffer@@QAEXPAXH@Z,"public: void __thiscall BitBuffer::WriteBitData(void *,int)",UNKNOWN,HLTV/common/BitBuffer.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN9BitBuffer12WriteBitDataEPvi
+gameui,1002263E,47,?WriteAngle@BitBuffer@@QAEXM@Z,public: void __thiscall BitBuffer::WriteAngle(float),UNKNOWN,HLTV/common/BitBuffer.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN9BitBuffer10WriteAngleEf
+gameui,1002266D,47,?WriteHiresAngle@BitBuffer@@QAEXM@Z,public: void __thiscall BitBuffer::WriteHiresAngle(float),UNKNOWN,HLTV/common/BitBuffer.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN9BitBuffer15WriteHiresAngleEf
+gameui,1002269C,37,?CurrentSize@BitBuffer@@QAEHXZ,public: int __thiscall BitBuffer::CurrentSize(void),UNKNOWN,HLTV/common/BitBuffer.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN9BitBuffer11CurrentSizeEv
+gameui,100226C1,31,?SpaceLeft@BitBuffer@@QAEHXZ,public: int __thiscall BitBuffer::SpaceLeft(void),UNKNOWN,HLTV/common/BitBuffer.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN9BitBuffer9SpaceLeftEv
+gameui,100226E0,45,?AlignByte@BitBuffer@@QAEXXZ,public: void __thiscall BitBuffer::AlignByte(void),UNKNOWN,HLTV/common/BitBuffer.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN9BitBuffer9AlignByteEv
+gameui,1002270D,61,?ReadSBits@BitBuffer@@QAEHH@Z,public: int __thiscall BitBuffer::ReadSBits(int),UNKNOWN,HLTV/common/BitBuffer.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN9BitBuffer9ReadSBitsEi
+gameui,1002274A,82,?ReadBitAngle@BitBuffer@@QAEMH@Z,public: float __thiscall BitBuffer::ReadBitAngle(int),UNKNOWN,HLTV/common/BitBuffer.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN9BitBuffer12ReadBitAngleEi
+gameui,1002279C,114,?WriteBitAngle@BitBuffer@@QAEXMH@Z,"public: void __thiscall BitBuffer::WriteBitAngle(float,int)",UNKNOWN,HLTV/common/BitBuffer.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN9BitBuffer13WriteBitAngleEfi
+gameui,1002280E,68,?ReadBitString@BitBuffer@@QAEPADXZ,public: char * __thiscall BitBuffer::ReadBitString(void),UNKNOWN,HLTV/common/BitBuffer.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN9BitBuffer13ReadBitStringEv
+gameui,10022852,71,?WriteBitString@BitBuffer@@QAEXPBD@Z,public: void __thiscall BitBuffer::WriteBitString(char const *),UNKNOWN,HLTV/common/BitBuffer.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN9BitBuffer14WriteBitStringEPKc
+gameui,10022899,27,?StartBitMode@BitBuffer@@QAEXXZ,public: void __thiscall BitBuffer::StartBitMode(void),UNKNOWN,HLTV/common/BitBuffer.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN9BitBuffer12StartBitModeEv
+gameui,100228B4,19,?EndBitMode@BitBuffer@@QAEXXZ,public: void __thiscall BitBuffer::EndBitMode(void),UNKNOWN,HLTV/common/BitBuffer.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN9BitBuffer10EndBitModeEv
+gameui,100228C7,83,?ReadBitData@BitBuffer@@QAEHPAXH@Z,"public: int __thiscall BitBuffer::ReadBitData(void *,int)",UNKNOWN,HLTV/common/BitBuffer.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN9BitBuffer11ReadBitDataEPvi
+gameui,1002291A,82,?SetBuffer@BitBuffer@@QAEXPAXH@Z,"public: void __thiscall BitBuffer::SetBuffer(void *,int)",UNKNOWN,HLTV/common/BitBuffer.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN9BitBuffer9SetBufferEPvi
+gameui,1002296C,107,?ReadBitVec3Coord@BitBuffer@@QAEXPAM@Z,public: void __thiscall BitBuffer::ReadBitVec3Coord(float *),UNKNOWN,HLTV/common/BitBuffer.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN9BitBuffer16ReadBitVec3CoordEPf
+gameui,100229D7,158,?ReadBitCoord@BitBuffer@@QAEMXZ,public: float __thiscall BitBuffer::ReadBitCoord(void),UNKNOWN,HLTV/common/BitBuffer.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN9BitBuffer12ReadBitCoordEv
+gameui,10022A75,36,?ReadCoord@BitBuffer@@QAEMXZ,public: float __thiscall BitBuffer::ReadCoord(void),UNKNOWN,HLTV/common/BitBuffer.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN9BitBuffer9ReadCoordEv
+gameui,10022A99,58,?SkipBytes@BitBuffer@@QAEXH@Z,public: void __thiscall BitBuffer::SkipBytes(int),UNKNOWN,HLTV/common/BitBuffer.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN9BitBuffer9SkipBytesEi
+gameui,10022AD3,260,?SkipBits@BitBuffer@@QAEXH@Z,public: void __thiscall BitBuffer::SkipBits(int),UNKNOWN,HLTV/common/BitBuffer.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN9BitBuffer8SkipBitsEi
+gameui,10022BD7,68,?SkipString@BitBuffer@@QAEHXZ,public: int __thiscall BitBuffer::SkipString(void),UNKNOWN,HLTV/common/BitBuffer.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN9BitBuffer10SkipStringEv
+gameui,10022C1B,114,?FastClear@BitBuffer@@QAEXXZ,public: void __thiscall BitBuffer::FastClear(void),UNKNOWN,HLTV/common/BitBuffer.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN9BitBuffer9FastClearEv
+gameui,10022C8D,37,?ConcatBuffer@BitBuffer@@QAEXPAV1@@Z,public: void __thiscall BitBuffer::ConcatBuffer(class BitBuffer *),UNKNOWN,HLTV/common/BitBuffer.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN9BitBuffer12ConcatBufferEPS_
+gameui,10022CB2,36,?WriteCoord@BitBuffer@@QAEXM@Z,public: void __thiscall BitBuffer::WriteCoord(float),UNKNOWN,HLTV/common/BitBuffer.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN9BitBuffer10WriteCoordEf
+gameui,10022CE0,46,??_GBitBuffer@@UAEPAXI@Z,public: virtual void * __thiscall BitBuffer::`scalar deleting destructor'(unsigned int),UNKNOWN,HLTV/common/BitBuffer.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,10022D10,340,,,UNKNOWN,GameUI/BitmapButton.cpp,,,TODO,,,linux: _ZN13CBitmapButtonC1EPN5vgui25PanelEPKcS4_S4_S4_S4_S4_
 gameui,10022E74,279,,,UNKNOWN,GameUI/BitmapButton.cpp,,,TODO,,,linux: _ZN13CBitmapButton15PaintBackgroundEv
 gameui,10022F8B,157,,CBitmapButton::ApplySchemeSettings,ENGINE,GameUI/BitmapButton.cpp,,,TODO,,linux_symbols:string:0.861,linux: _ZN13CBitmapButton19ApplySchemeSettingsEPN5vgui27ISchemeE
