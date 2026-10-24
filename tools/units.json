@@ -3794,6 +3794,11 @@
           "functions_file": "tools/units/gameui_GameUI_CareerMapFrame.txt"
         },
         {
+          "name": "GameUI/CareerProfile",
+          "source": "src/gameui/CareerProfile.cpp",
+          "functions_file": "tools/units/gameui_GameUI_CareerProfile.txt"
+        },
+        {
           "name": "GameUI/SaveGameDialog",
           "source": "src/gameui/SaveGameDialog.cpp",
           "functions_file": "tools/units/gameui_GameUI_SaveGameDialog.txt"
