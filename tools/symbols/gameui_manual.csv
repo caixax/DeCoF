@@ -4562,3 +4562,8 @@ va,name,kind,evidence
 1004EAD0,??0PanelMessageFunc_OnItemSelected@CPlayerListDialog@@QAE@XZ,func,GameUI/PlayerListDialog.cpp: same position and size as in our compiled object
 1004EAF0,?InitVar@PanelMessageFunc_OnItemSelected@CPlayerListDialog@@SAXXZ,func,GameUI/PlayerListDialog.cpp: same position and size as in our compiled object
 1004EB60,?AddToMap@CPlayerListDialog@@SAXPBDP8Panel@vgui2@@AEXXZHH0H0@Z,func,GameUI/PlayerListDialog.cpp: same position and size as in our compiled object
+1004BAB0,??0CHelpDialog@@QAE@XZ,func,GameUI/HelpDialog.cpp: same position and size as in our compiled object; linux: _ZN11CHelpDialogC1Ev
+1004BBD8,??1CHelpDialog@@UAE@XZ,func,GameUI/HelpDialog.cpp: same position and size as in our compiled object; linux: _ZN11CHelpDialogD2Ev
+1004BBF4,?OnClose@CHelpDialog@@MAEXXZ,func,GameUI/HelpDialog.cpp: same position and size as in our compiled object; linux: _ZN11CHelpDialog7OnCloseEv
+1004BC54,?OnCommand@CHelpDialog@@MAEXPBD@Z,func,GameUI/HelpDialog.cpp: same position and size as in our compiled object; linux: _ZN11CHelpDialog9OnCommandEPKc
+1004BCD0,??_GCHelpDialog@@UAEPAXI@Z,func,GameUI/HelpDialog.cpp: same position and size as in our compiled object

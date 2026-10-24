@@ -9782,11 +9782,11 @@ gameui,1004B990,126,?GetItemText@CompletionItem@CGameConsoleDialog@@QAEPBDXZ,pub
 gameui,1004BA10,17,?HasExtra@CHistoryItem@@QAE_NXZ,public: bool __thiscall CHistoryItem::HasExtra(void),UNKNOWN,GameUI/GameConsoleDialog.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,1004BA30,57,?GetCommand@CompletionItem@CGameConsoleDialog@@QAEPBDXZ,public: char const * __thiscall CGameConsoleDialog::CompletionItem::GetCommand(void),UNKNOWN,GameUI/GameConsoleDialog.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,1004BA70,46,??_GCHistoryItem@@QAEPAXI@Z,public: void * __thiscall CHistoryItem::`scalar deleting destructor'(unsigned int),UNKNOWN,GameUI/GameConsoleDialog.cpp,,,MATCHED,100,gameui_manual.csv,
-gameui,1004BAB0,296,,CHelpDialog::CHelpDialog,ENGINE,GameUI/HelpDialog.cpp,,,TODO,,linux_symbols:string:0.514,linux: _ZN11CHelpDialogC1Ev
-gameui,1004BBD8,28,,,UNKNOWN,GameUI/HelpDialog.cpp,,,TODO,,,linux: _ZN11CHelpDialogD2Ev
-gameui,1004BBF4,96,,CHelpDialog::OnClose,ENGINE,GameUI/HelpDialog.cpp,,,TODO,,linux_symbols:string:0.781,linux: _ZN11CHelpDialog7OnCloseEv
-gameui,1004BC54,115,,,UNKNOWN,GameUI/HelpDialog.cpp,,,TODO,,,linux: _ZN11CHelpDialog9OnCommandEPKc
-gameui,1004BCD0,46,,,UNKNOWN,GameUI/HelpDialog.cpp,,,TODO,,,
+gameui,1004BAB0,296,??0CHelpDialog@@QAE@XZ,public: __thiscall CHelpDialog::CHelpDialog(void),ENGINE,GameUI/HelpDialog.cpp,,,MATCHED,100,linux_symbols:string:0.514,linux: _ZN11CHelpDialogC1Ev
+gameui,1004BBD8,28,??1CHelpDialog@@UAE@XZ,public: virtual __thiscall CHelpDialog::~CHelpDialog(void),UNKNOWN,GameUI/HelpDialog.cpp,,,MATCHED,100,,linux: _ZN11CHelpDialogD2Ev
+gameui,1004BBF4,96,?OnClose@CHelpDialog@@MAEXXZ,protected: virtual void __thiscall CHelpDialog::OnClose(void),ENGINE,GameUI/HelpDialog.cpp,,,MATCHED,100,linux_symbols:string:0.781,linux: _ZN11CHelpDialog7OnCloseEv
+gameui,1004BC54,115,?OnCommand@CHelpDialog@@MAEXPBD@Z,protected: virtual void __thiscall CHelpDialog::OnCommand(char const *),UNKNOWN,GameUI/HelpDialog.cpp,,,MATCHED,100,,linux: _ZN11CHelpDialog9OnCommandEPKc
+gameui,1004BCD0,46,??_GCHelpDialog@@UAEPAXI@Z,public: virtual void * __thiscall CHelpDialog::`scalar deleting destructor'(unsigned int),UNKNOWN,GameUI/HelpDialog.cpp,,,MATCHED,100,,
 gameui,1004BD00,392,??0CLoadGameDialog@@QAE@PAVPanel@vgui2@@@Z,public: __thiscall CLoadGameDialog::CLoadGameDialog(class vgui2::Panel *),ENGINE,GameUI/LoadGameDialog.cpp,,,MATCHED,100,linux_symbols:string:0.391,linux: _ZN15CLoadGameDialogC1EPN5vgui25PanelE
 gameui,1004BE88,28,??1CLoadGameDialog@@UAE@XZ,public: virtual __thiscall CLoadGameDialog::~CLoadGameDialog(void),UNKNOWN,GameUI/LoadGameDialog.cpp,,,MATCHED,100,,linux: _ZN15CLoadGameDialogD1Ev
 gameui,1004BEA4,242,?OnCommand@CLoadGameDialog@@MAEXPBD@Z,protected: virtual void __thiscall CLoadGameDialog::OnCommand(char const *),ENGINE,GameUI/LoadGameDialog.cpp,,,MATCHED,100,linux_symbols:string:0.763,linux: _ZN15CLoadGameDialog9OnCommandEPKc

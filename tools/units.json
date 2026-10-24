@@ -3988,6 +3988,11 @@
           "name": "GameUI/PlayerListDialog",
           "source": "src/gameui/PlayerListDialog.cpp",
           "functions_file": "tools/units/gameui_GameUI_PlayerListDialog.txt"
+        },
+        {
+          "name": "GameUI/HelpDialog",
+          "source": "src/gameui/HelpDialog.cpp",
+          "functions_file": "tools/units/gameui_GameUI_HelpDialog.txt"
         }
       ]
     }
