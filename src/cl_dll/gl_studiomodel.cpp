@@ -1681,11 +1681,39 @@ void CStudioModelRenderer::GL_DrawPoints ( )
 			// pages of the book menu that are not unlocked yet
 			if (g_DrawHeadShied)
 			{
-				if ((strstr(ptex->name, "page1") && !(gHUD.m_iUnlocks_guess & 0x2000000)) ||
-					(strstr(ptex->name, "page2") && !(gHUD.m_iUnlocks_guess & 0x4000000)) ||
-					(strstr(ptex->name, "page3") && !(gHUD.m_iUnlocks_guess & 0x8000000)) ||
-					(strstr(ptex->name, "page4") && !(gHUD.m_iUnlocks_guess & 0x10000000)) ||
-					(strstr(ptex->name, "page5") && !(gHUD.m_iUnlocks_guess & 0x20000000)))
+				if (strstr(ptex->name, "page1") && !(gHUD.m_iUnlocks_guess & 0x2000000))
+				{
+					LoadPageLockedTexture_guess();
+					if (g_bPageLockedLoaded_guess)
+						gl.glBindTexture( GL_TEXTURE_2D, g_iPageLockedTexture_guess );
+					else
+						gl.glBindTexture( GL_TEXTURE_2D, (ptex->index & 0xFFFF) );
+				}
+				else if (strstr(ptex->name, "page2") && !(gHUD.m_iUnlocks_guess & 0x4000000))
+				{
+					LoadPageLockedTexture_guess();
+					if (g_bPageLockedLoaded_guess)
+						gl.glBindTexture( GL_TEXTURE_2D, g_iPageLockedTexture_guess );
+					else
+						gl.glBindTexture( GL_TEXTURE_2D, (ptex->index & 0xFFFF) );
+				}
+				else if (strstr(ptex->name, "page3") && !(gHUD.m_iUnlocks_guess & 0x8000000))
+				{
+					LoadPageLockedTexture_guess();
+					if (g_bPageLockedLoaded_guess)
+						gl.glBindTexture( GL_TEXTURE_2D, g_iPageLockedTexture_guess );
+					else
+						gl.glBindTexture( GL_TEXTURE_2D, (ptex->index & 0xFFFF) );
+				}
+				else if (strstr(ptex->name, "page4") && !(gHUD.m_iUnlocks_guess & 0x10000000))
+				{
+					LoadPageLockedTexture_guess();
+					if (g_bPageLockedLoaded_guess)
+						gl.glBindTexture( GL_TEXTURE_2D, g_iPageLockedTexture_guess );
+					else
+						gl.glBindTexture( GL_TEXTURE_2D, (ptex->index & 0xFFFF) );
+				}
+				else if (strstr(ptex->name, "page5") && !(gHUD.m_iUnlocks_guess & 0x20000000))
 				{
 					LoadPageLockedTexture_guess();
 					if (g_bPageLockedLoaded_guess)
