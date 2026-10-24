@@ -1,6 +1,6 @@
 """Build and diff driver.
 
-  python tools/build.py base   [unit ...]   compile src/ units (cl 19.27.29112)
+  python tools/build.py base   [unit ...]   compile src/ units (toolchain of the unit or its DLL)
   python tools/build.py target [unit ...]   delink retail units through Ghidra
   python tools/build.py objdiff             write objdiff.json
   python tools/build.py report              objdiff report, per unit and function
@@ -14,6 +14,11 @@
 Units are named <dll>/<path>, for example hl/dlls/h_export. Config lives in
 tools/units.json. Outputs: build/base/<dll>/<path>.obj (ours) and
 build/target/<dll>/<path>.obj (retail, delinked).
+
+Toolchains: "toolchain" of a DLL (msvc1427 by default, vc6) compiles its
+units and links it; a unit may name its own compiler ("toolchain": "vc6pp"
+for the hw.dll objects of the VC6 processor pack), used for build/base and
+build/link_obj alike, while the DLL keeps linking with its own toolchain.
 """
 import csv
 import json
@@ -53,9 +58,21 @@ def obj_path(kind, full):
     return os.path.join(ROOT, "build", kind, *full.split("/")) + ".obj"
 
 
-def toolchain(d):
-    """msvc1427 (default, the 1.6a game DLLs) or vc6 (engine, opengl32, GameUI)."""
-    return msvc6 if d.get("toolchain") == "vc6" else msvc
+TOOLCHAINS = {"msvc1427": msvc, "vc6": msvc6.RTM, "vc6pp": msvc6.PP}
+
+
+def toolchain_name(d, u=None):
+    """msvc1427 (default, the 1.6a game DLLs), vc6 (engine, opengl32, GameUI,
+    launcher) or vc6pp (VC6 SP6 with the processor pack). A unit's own
+    "toolchain" replaces the DLL's for its compile only."""
+    name = (u or {}).get("toolchain", d.get("toolchain", "msvc1427"))
+    if name not in TOOLCHAINS:
+        sys.exit("unknown toolchain %r (known: %s)" % (name, ", ".join(sorted(TOOLCHAINS))))
+    return name
+
+
+def toolchain(d, u=None):
+    return TOOLCHAINS[toolchain_name(d, u)]
 
 
 def unit_functions(u):
@@ -71,7 +88,7 @@ def build_base(units, kind="base", extra=()):
     they are."""
     ok = True
     for dll, d, u, full in units:
-        tc = toolchain(d)
+        tc = toolchain(d, u)
         tc.check()
         out = obj_path(kind, full)
         os.makedirs(os.path.dirname(out), exist_ok=True)
@@ -83,7 +100,7 @@ def build_base(units, kind="base", extra=()):
         cmd += ["/Fo" + out, os.path.join(ROOT, u["source"])]
         res = subprocess.run(cmd, env=tc.env(), cwd=ROOT, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
         rc = res.returncode
-        if rc == 0 and d.get("toolchain") == "vc6":
+        if rc == 0 and toolchain_name(d, u).startswith("vc6"):
             # VC6 numbers anonymous namespaces at random on each compile:
             # give them the names the retail RTTI records
             import vc6_anon
@@ -293,7 +310,7 @@ def build_target(units):
                                  stderr=subprocess.STDOUT)
         for u, full in items:
             exists = os.path.exists(obj_path("target", full))
-            if exists and d.get("toolchain") == "vc6":
+            if exists and toolchain_name(d, u).startswith("vc6"):
                 # the same object-local spellings as our compiled objects
                 import vc6_anon
                 vc6_anon.fix(obj_path("target", full))
@@ -376,6 +393,8 @@ def link(dll):
     kind = "link_obj" if lk.get("cflags_extra") else "base"
     if not build_base(units, kind, lk.get("cflags_extra", ())):
         sys.exit("not linking: some units do not compile")
+    # the DLL's toolchain links (and makes "staticlibs"), whatever compiled
+    # its units
     tc = toolchain(cfg)
     tmp = os.path.join(ROOT, "build", "link", dll)
     os.makedirs(tmp, exist_ok=True)
