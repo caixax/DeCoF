@@ -3471,6 +3471,22 @@
             "src/common",
             "src/public"
           ]
+        },
+        {
+          "name": "vgui2/vgui_surfacelib/FontAmalgam",
+          "source": "src/vgui2/vgui_surfacelib/FontAmalgam.cpp",
+          "functions_file": "tools/units/hw_vgui2_vgui_surfacelib_FontAmalgam.txt",
+          "cflags": [
+            "/nologo",
+            "/c",
+            "/W3",
+            "/GX",
+            "/O2"
+          ],
+          "includes": [
+            "src/common",
+            "src/public"
+          ]
         }
       ]
     },

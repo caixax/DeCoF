@@ -32050,16 +32050,19 @@ hw,01E663E0,200,?IsLeftChild@?$CUtlRBTree@Uabc_cache_t@CWin32Font@@G@@QBE_NG@Z,,
 hw,01E664B0,485,?RotateLeft@?$CUtlRBTree@Uabc_cache_t@CWin32Font@@G@@IAEXG@Z,,ENGINE,vgui2/vgui_surfacelib/Win32Font.cpp,,,EQUIVALENT,91.55,hw_manual.csv,"EQUIVALENT: cl 12.00.9044 codegen (VC6 processor pack, Rich header Utc12_2_CPP.9044 x3), RTM 8168 differs: register allocation of the inlined Links calls (UtlRBTree.h, shared with the /Od units)"
 hw,01E666A0,489,?RotateRight@?$CUtlRBTree@Uabc_cache_t@CWin32Font@@G@@IAEXG@Z,,ENGINE,vgui2/vgui_surfacelib/Win32Font.cpp,,,EQUIVALENT,94.43,hw_manual.csv,"EQUIVALENT: cl 12.00.9044 codegen (VC6 processor pack, Rich header Utc12_2_CPP.9044 x3), RTM 8168 differs: register allocation of the inlined Links calls (UtlRBTree.h, shared with the /Od units)"
 hw,01E66890,116,?Grow@?$CUtlMemory@UNode_t@?$CUtlRBTree@Uabc_cache_t@CWin32Font@@G@@@@QAEXH@Z,,ENGINE,vgui2/vgui_surfacelib/Win32Font.cpp,,,EQUIVALENT,97.39,hw_manual.csv,"EQUIVALENT: cl 12.00.9044 codegen (VC6 processor pack, Rich header Utc12_2_CPP.9044 x3), RTM 8168 differs: one register choice in the growSize computation (UtlMemory.h, shared with the /Od units)"
-hw,01E66910,44,,,ENGINE,vgui2/vgui_surfacelib/FontAmalgam.cpp,,,TODO,,,
-hw,01E66940,82,,,ENGINE,vgui2/vgui_surfacelib/FontAmalgam.cpp,,,TODO,,,
-hw,01E669A0,4,,,ENGINE,vgui2/vgui_surfacelib/FontAmalgam.cpp,,,TODO,,,
-hw,01E669D0,182,,,ENGINE,vgui2/vgui_surfacelib/FontAmalgam.cpp,,,TODO,,,
-hw,01E66A90,55,,,ENGINE,vgui2/vgui_surfacelib/FontAmalgam.cpp,,,TODO,,,
-hw,01E66AD0,21,,,ENGINE,vgui2/vgui_surfacelib/FontAmalgam.cpp,,,TODO,,,
-hw,01E66AF0,4,,,ENGINE,vgui2/vgui_surfacelib/FontAmalgam.cpp,,,TODO,,,
-hw,01E66B30,4,,,ENGINE,vgui2/vgui_surfacelib/FontAmalgam.cpp,,,TODO,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(undname.obj); was LIB (short CRT byte match), code belongs to this object"
-hw,01E66B40,19,,,ENGINE,vgui2/vgui_surfacelib/FontAmalgam.cpp,,,TODO,,,
-hw,01E66B60,106,,,ENGINE,vgui2/vgui_surfacelib/FontAmalgam.cpp,,,TODO,,,
+hw,01E66910,44,??0CFontAmalgam@@QAE@XZ,,ENGINE,vgui2/vgui_surfacelib/FontAmalgam.cpp,,,EQUIVALENT,82.05,hw_manual.csv,"EQUIVALENT: cl 12.00.9044 codegen (VC6 processor pack, Rich header Utc12_2_CPP.9044 x3), RTM 8168 differs: store scheduling of the CUtlVector(0, 4) members: retail stores m_GrowSize and m_Size before m_NumAllocated and malloc"
+hw,01E66940,82,??1CFontAmalgam@@QAE@XZ,,ENGINE,vgui2/vgui_surfacelib/FontAmalgam.cpp,,,EQUIVALENT,74.62,hw_manual.csv,"EQUIVALENT: cl 12.00.9044 codegen (VC6 processor pack, Rich header Utc12_2_CPP.9044 x3), RTM 8168 differs: RemoveAll's empty Destruct loop leaves a dead store of i (push ecx, dec, mov [esp+4]) that retail removed"
+hw,01E669A0,4,?Name@CFontAmalgam@@QAEPBDXZ,,ENGINE,vgui2/vgui_surfacelib/FontAmalgam.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E669B0,30,?SetName@CFontAmalgam@@QAEXPBD@Z,,ENGINE,vgui2/vgui_surfacelib/FontAmalgam.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E669D0,182,?AddFont@CFontAmalgam@@QAEXPAVCWin32Font@@HH@Z,,ENGINE,vgui2/vgui_surfacelib/FontAmalgam.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E66A90,55,?GetFontForChar@CFontAmalgam@@QAEPAVCWin32Font@@H@Z,,ENGINE,vgui2/vgui_surfacelib/FontAmalgam.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E66AD0,21,?GetFontHeight@CFontAmalgam@@QAEHXZ,,ENGINE,vgui2/vgui_surfacelib/FontAmalgam.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E66AF0,4,?GetFontMaxWidth@CFontAmalgam@@QAEHXZ,,ENGINE,vgui2/vgui_surfacelib/FontAmalgam.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E66B00,16,?GetFontName@CFontAmalgam@@QAEPBDH@Z,,ENGINE,vgui2/vgui_surfacelib/FontAmalgam.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E66B10,30,?GetFlags@CFontAmalgam@@QAEHH@Z,,ENGINE,vgui2/vgui_surfacelib/FontAmalgam.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E66B30,4,?GetCount@CFontAmalgam@@QAEHXZ,,ENGINE,vgui2/vgui_surfacelib/FontAmalgam.cpp,,,MATCHED,100,hw_manual.csv,"VC6 static CRT, bytes identical to LIBCMT.LIB(undname.obj); was LIB (short CRT byte match), code belongs to this object"
+hw,01E66B40,19,?GetUnderlined@CFontAmalgam@@QAE_NXZ,,ENGINE,vgui2/vgui_surfacelib/FontAmalgam.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E66B60,106,?Grow@?$CUtlMemory@UTFontRange@CFontAmalgam@@@@QAEXH@Z,,ENGINE,vgui2/vgui_surfacelib/FontAmalgam.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01E66BD0,64,_BZ2_bz__AssertH__fail,BZ2_bz__AssertH__fail,ENGINE,bzip2/bzlib.c,,,MATCHED,100,linux_symbols:string:0.781,
 hw,01E66C10,459,_BZ2_bzCompressInit@16,,UNKNOWN,bzip2/bzlib.c,,,MATCHED,100,hw_manual.csv,
 hw,01E66DE0,6,_bz_config_ok,,UNKNOWN,bzip2/bzlib.c,,,MATCHED,100,bzip2 1.0.2 bzlib.c (emission order of the official source),
