@@ -824,7 +824,7 @@ void COptionsSubMultiplayer::ColorForName( char const *pszColorName, int &r, int
 
 	for ( int i = 0; i < count; i++ )
 	{
-		if ( !strnicmp( pszColorName, itemlist[ i ].name, strlen( itemlist[ i ].name ) ) )
+		if ( !_strnicmp( pszColorName, itemlist[ i ].name, strlen( itemlist[ i ].name ) ) )
 		{
 			r = itemlist[ i ].r;
 			g = itemlist[ i ].g;

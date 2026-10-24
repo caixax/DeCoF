@@ -223,7 +223,7 @@ void COptionsSubVideo::GetVidSettings()
 
 	gameuifuncs->GetCurrentVideoMode( &p->w, &p->h, &p->bpp );
 	gameuifuncs->GetCurrentRenderer( p->renderer, 128, &p->windowed );
-	_strlwr( p->renderer );
+	strlwr( p->renderer );
 
 	m_CurrentSettings = m_OrigSettings;
 }
