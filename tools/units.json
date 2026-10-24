@@ -3787,6 +3787,11 @@
           "name": "GameUI/CDKeyEntryDialog",
           "source": "src/gameui/CDKeyEntryDialog.cpp",
           "functions_file": "tools/units/gameui_GameUI_CDKeyEntryDialog.txt"
+        },
+        {
+          "name": "GameUI/CreateMultiplayerGameBotPage",
+          "source": "src/gameui/CreateMultiplayerGameBotPage.cpp",
+          "functions_file": "tools/units/gameui_GameUI_CreateMultiplayerGameBotPage.txt"
         }
       ]
     }

@@ -8565,17 +8565,17 @@ gameui,1002680B,63,,,UNKNOWN,HLTV/common/common.cpp,,,TODO,,,
 gameui,1002684A,199,,,UNKNOWN,HLTV/common/common.cpp,,,TODO,,,
 gameui,10026911,52,,,UNKNOWN,HLTV/common/common.cpp,,,TODO,,,
 gameui,10026945,41,,,UNKNOWN,HLTV/common/common.cpp,,,TODO,,,
-gameui,10026970,143,,,UNKNOWN,GameUI/CreateMultiplayerGameBotPage.cpp,,,TODO,,,
-gameui,100269FF,143,,,UNKNOWN,GameUI/CreateMultiplayerGameBotPage.cpp,,,TODO,,,
-gameui,10026A8E,2081,,CCreateMultiplayerGameBotPage::CCreateMultiplayerGameBotPage,ENGINE,GameUI/CreateMultiplayerGameBotPage.cpp,,,TODO,,linux_symbols:string:0.724,
-gameui,100272AF,28,,,UNKNOWN,GameUI/CreateMultiplayerGameBotPage.cpp,,,TODO,,,
-gameui,100272CB,11,,,UNKNOWN,GameUI/CreateMultiplayerGameBotPage.cpp,,,TODO,,,linux: _ZN29CCreateMultiplayerGameBotPage14OnResetChangesEv
-gameui,100272D6,794,,CCreateMultiplayerGameBotPage::UpdateKeys,ENGINE,GameUI/CreateMultiplayerGameBotPage.cpp,,,TODO,,linux_symbols:data:0.845,linux: _ZN29CCreateMultiplayerGameBotPage10UpdateKeysEP9KeyValues
-gameui,100275F0,11,,,UNKNOWN,GameUI/CreateMultiplayerGameBotPage.cpp,,,TODO,,,linux: _ZN29CCreateMultiplayerGameBotPage14OnApplyChangesEv
-gameui,10027600,64,,,UNKNOWN,GameUI/CreateMultiplayerGameBotPage.cpp,,,TODO,,,
-gameui,10027640,10,,,UNKNOWN,GameUI/CreateMultiplayerGameBotPage.cpp,,,TODO,,,
-gameui,10027650,25,,,UNKNOWN,GameUI/CreateMultiplayerGameBotPage.cpp,,,TODO,,,
-gameui,10027670,46,,,UNKNOWN,GameUI/CreateMultiplayerGameBotPage.cpp,,,TODO,,,
+gameui,10026970,143,?SetJoinTeamCombo@CCreateMultiplayerGameBotPage@@AAEXPBD@Z,private: void __thiscall CCreateMultiplayerGameBotPage::SetJoinTeamCombo(char const *),UNKNOWN,GameUI/CreateMultiplayerGameBotPage.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100269FF,143,?SetChatterCombo@CCreateMultiplayerGameBotPage@@AAEXPBD@Z,private: void __thiscall CCreateMultiplayerGameBotPage::SetChatterCombo(char const *),UNKNOWN,GameUI/CreateMultiplayerGameBotPage.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10026A8E,2081,??0CCreateMultiplayerGameBotPage@@QAE@PAVPanel@vgui2@@PBDPAVKeyValues@@@Z,"public: __thiscall CCreateMultiplayerGameBotPage::CCreateMultiplayerGameBotPage(class vgui2::Panel *,char const *,class KeyValues *)",ENGINE,GameUI/CreateMultiplayerGameBotPage.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100272AF,28,??1CCreateMultiplayerGameBotPage@@UAE@XZ,public: virtual __thiscall CCreateMultiplayerGameBotPage::~CCreateMultiplayerGameBotPage(void),UNKNOWN,GameUI/CreateMultiplayerGameBotPage.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100272CB,11,?OnResetChanges@CCreateMultiplayerGameBotPage@@MAEXXZ,protected: virtual void __thiscall CCreateMultiplayerGameBotPage::OnResetChanges(void),UNKNOWN,GameUI/CreateMultiplayerGameBotPage.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN29CCreateMultiplayerGameBotPage14OnResetChangesEv
+gameui,100272D6,794,?UpdateKeys@CCreateMultiplayerGameBotPage@@QAEXPAVKeyValues@@@Z,public: void __thiscall CCreateMultiplayerGameBotPage::UpdateKeys(class KeyValues *),ENGINE,GameUI/CreateMultiplayerGameBotPage.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN29CCreateMultiplayerGameBotPage10UpdateKeysEP9KeyValues
+gameui,100275F0,11,?OnApplyChanges@CCreateMultiplayerGameBotPage@@MAEXXZ,protected: virtual void __thiscall CCreateMultiplayerGameBotPage::OnApplyChanges(void),UNKNOWN,GameUI/CreateMultiplayerGameBotPage.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN29CCreateMultiplayerGameBotPage14OnApplyChangesEv
+gameui,10027600,64,?GetMessageMap@PropertyPage@vgui2@@UAEPAUPanelMessageMap@2@XZ,public: virtual struct vgui2::PanelMessageMap * __thiscall vgui2::PropertyPage::GetMessageMap(void),UNKNOWN,GameUI/CreateMultiplayerGameBotPage.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10027640,10,?GetPanelClassName@PropertyPage@vgui2@@SAPBDXZ,public: static char const * __cdecl vgui2::PropertyPage::GetPanelClassName(void),UNKNOWN,GameUI/CreateMultiplayerGameBotPage.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10027650,25,?SetPaintBorder@PropertyPage@vgui2@@UAEX_N@Z,public: virtual void __thiscall vgui2::PropertyPage::SetPaintBorder(bool),UNKNOWN,GameUI/CreateMultiplayerGameBotPage.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10027670,46,??_GCCreateMultiplayerGameBotPage@@UAEPAXI@Z,public: virtual void * __thiscall CCreateMultiplayerGameBotPage::`scalar deleting destructor'(unsigned int),UNKNOWN,GameUI/CreateMultiplayerGameBotPage.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,100276A0,1509,,CCreateMultiplayerGameDialog::CCreateMultiplayerGameDialog,ENGINE,GameUI/CreateMultiplayerGameDialog.cpp,,,TODO,,linux_symbols:string:0.853,linux: _ZN28CCreateMultiplayerGameDialogC2EPN5vgui25PanelE
 gameui,10027C85,76,,,UNKNOWN,GameUI/CreateMultiplayerGameDialog.cpp,,,TODO,,,linux: _ZN28CCreateMultiplayerGameDialogD2Ev
 gameui,10027CD1,191,,,UNKNOWN,GameUI/CreateMultiplayerGameDialog.cpp,,,TODO,,,linux: _ZN28CCreateMultiplayerGameDialog8SetTitleEPKcb

@@ -1,5 +1,5 @@
 {
-  "commit": "c90c401",
+  "commit": "fe20dd3",
   "counting": "LIB rows excluded; bytes weighted by function size",
   "date": "2026-10-24",
   "dlls": {
@@ -36,44 +36,44 @@
     "GameUI.dll": {
       "bytes": {
         "EQUIVALENT": 0,
-        "MATCHED": 311142,
-        "TODO": 365622,
+        "MATCHED": 314498,
+        "TODO": 362266,
         "total": 676764
       },
       "categories": {
         "ENGINE": {
           "bytes": {
             "EQUIVALENT": 0,
-            "MATCHED": 56108,
-            "TODO": 132489,
+            "MATCHED": 58983,
+            "TODO": 129614,
             "total": 188597
           },
           "functions": {
             "EQUIVALENT": 0,
-            "MATCHED": 141,
-            "TODO": 259,
+            "MATCHED": 143,
+            "TODO": 257,
             "total": 400
           }
         },
         "UNKNOWN": {
           "bytes": {
             "EQUIVALENT": 0,
-            "MATCHED": 255034,
-            "TODO": 233133,
+            "MATCHED": 255515,
+            "TODO": 232652,
             "total": 488167
           },
           "functions": {
             "EQUIVALENT": 0,
-            "MATCHED": 2493,
-            "TODO": 2607,
+            "MATCHED": 2502,
+            "TODO": 2598,
             "total": 5100
           }
         }
       },
       "functions": {
         "EQUIVALENT": 0,
-        "MATCHED": 2634,
-        "TODO": 2866,
+        "MATCHED": 2645,
+        "TODO": 2855,
         "total": 5500
       }
     },
@@ -372,14 +372,14 @@
   "total": {
     "bytes": {
       "EQUIVALENT": 126040,
-      "MATCHED": 3184937,
-      "TODO": 507170,
+      "MATCHED": 3188293,
+      "TODO": 503814,
       "total": 3818147
     },
     "functions": {
       "EQUIVALENT": 63,
-      "MATCHED": 17866,
-      "TODO": 3725,
+      "MATCHED": 17877,
+      "TODO": 3714,
       "total": 21654
     }
   }

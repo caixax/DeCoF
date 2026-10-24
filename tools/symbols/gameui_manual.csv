@@ -2847,3 +2847,14 @@ va,name,kind,evidence
 100246C0,?GetPanelClassName@MessageBox@vgui2@@SAPBDXZ,func,GameUI/CDKeyEntryDialog.cpp: same position and size as in our compiled object
 100246D0,?GetMessageMap@TextEntry@vgui2@@UAEPAUPanelMessageMap@2@XZ,func,GameUI/CDKeyEntryDialog.cpp: same position and size as in our compiled object
 10024710,?GetPanelClassName@TextEntry@vgui2@@SAPBDXZ,func,GameUI/CDKeyEntryDialog.cpp: same position and size as in our compiled object
+10026970,?SetJoinTeamCombo@CCreateMultiplayerGameBotPage@@AAEXPBD@Z,func,GameUI/CreateMultiplayerGameBotPage.cpp: same position and size as in our compiled object
+100269FF,?SetChatterCombo@CCreateMultiplayerGameBotPage@@AAEXPBD@Z,func,GameUI/CreateMultiplayerGameBotPage.cpp: same position and size as in our compiled object
+10026A8E,??0CCreateMultiplayerGameBotPage@@QAE@PAVPanel@vgui2@@PBDPAVKeyValues@@@Z,func,GameUI/CreateMultiplayerGameBotPage.cpp: same position and size as in our compiled object
+100272AF,??1CCreateMultiplayerGameBotPage@@UAE@XZ,func,GameUI/CreateMultiplayerGameBotPage.cpp: same position and size as in our compiled object
+100272CB,?OnResetChanges@CCreateMultiplayerGameBotPage@@MAEXXZ,func,GameUI/CreateMultiplayerGameBotPage.cpp: same position and size as in our compiled object; linux: _ZN29CCreateMultiplayerGameBotPage14OnResetChangesEv
+100272D6,?UpdateKeys@CCreateMultiplayerGameBotPage@@QAEXPAVKeyValues@@@Z,func,GameUI/CreateMultiplayerGameBotPage.cpp: same position and size as in our compiled object; linux: _ZN29CCreateMultiplayerGameBotPage10UpdateKeysEP9KeyValues
+100275F0,?OnApplyChanges@CCreateMultiplayerGameBotPage@@MAEXXZ,func,GameUI/CreateMultiplayerGameBotPage.cpp: same position and size as in our compiled object; linux: _ZN29CCreateMultiplayerGameBotPage14OnApplyChangesEv
+10027600,?GetMessageMap@PropertyPage@vgui2@@UAEPAUPanelMessageMap@2@XZ,func,GameUI/CreateMultiplayerGameBotPage.cpp: same position and size as in our compiled object
+10027640,?GetPanelClassName@PropertyPage@vgui2@@SAPBDXZ,func,GameUI/CreateMultiplayerGameBotPage.cpp: same position and size as in our compiled object
+10027650,?SetPaintBorder@PropertyPage@vgui2@@UAEX_N@Z,func,GameUI/CreateMultiplayerGameBotPage.cpp: same position and size as in our compiled object
+10027670,??_GCCreateMultiplayerGameBotPage@@UAEPAXI@Z,func,GameUI/CreateMultiplayerGameBotPage.cpp: same position and size as in our compiled object
