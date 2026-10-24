@@ -3561,3 +3561,8 @@ va,name,kind,evidence
 10105220,_g_BreakSetIncludingColons,data,public/filesystem_helpers.cpp static: built from "{}()':" by InitializeCharacterSets; .bss layout like our object
 10105320,_?s_CharacterSetInitialized@?1??InitializeCharacterSets@@YAXXZ@4_NA,data,public/filesystem_helpers.cpp function static of InitializeCharacterSets; .bss layout like our object
 10105321,_?com_ignorecolons@?5??ParseFile@@YAPBDPBDPADPA_NPAUcharacterset_s@@@Z@4_NA,data,public/filesystem_helpers.cpp function static of ParseFile (gameui.so DWARF local); .bss layout like our object
+100FDBCC,_gpBuf,data,common/parsemsg.cpp static (refs/halflife): set by BEGIN_READ; .bss layout like our object
+100FDBD0,_?string@?1??READ_STRING@@YAPADXZ@4PADA,data,common/parsemsg.cpp function static of READ_STRING (refs/halflife); .bss layout like our object
+100FE3D0,_giRead,data,common/parsemsg.cpp static (refs/halflife): cleared by BEGIN_READ; .bss layout like our object
+100FE3D4,_giSize,data,common/parsemsg.cpp static (refs/halflife): set by BEGIN_READ; .bss layout like our object
+100FE3D8,_giBadRead,data,common/parsemsg.cpp static (refs/halflife): returned by READ_OK; .bss layout like our object
