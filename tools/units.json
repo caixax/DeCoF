@@ -3456,6 +3456,7 @@
           "name": "vgui2/vgui_surfacelib/FontManager",
           "source": "src/vgui2/vgui_surfacelib/FontManager.cpp",
           "functions_file": "tools/units/hw_vgui2_vgui_surfacelib_FontManager.txt",
+          "toolchain": "vc6pp",
           "cflags": [
             "/nologo",
             "/c",
@@ -3472,6 +3473,7 @@
           "name": "vgui2/vgui_surfacelib/Win32Font",
           "source": "src/vgui2/vgui_surfacelib/Win32Font.cpp",
           "functions_file": "tools/units/hw_vgui2_vgui_surfacelib_Win32Font.txt",
+          "toolchain": "vc6pp",
           "cflags": [
             "/nologo",
             "/c",
@@ -3488,6 +3490,7 @@
           "name": "vgui2/vgui_surfacelib/FontAmalgam",
           "source": "src/vgui2/vgui_surfacelib/FontAmalgam.cpp",
           "functions_file": "tools/units/hw_vgui2_vgui_surfacelib_FontAmalgam.txt",
+          "toolchain": "vc6pp",
           "cflags": [
             "/nologo",
             "/c",
