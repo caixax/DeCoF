@@ -540,11 +540,11 @@ extern int HeadShieldThink( void ); // buz
 extern "C" int iStepPunch_guess;		// pm_shared.c
 extern "C" int iStepPunchRun_guess;
 
-void V_ViewPunch_guess( float x, float y, float z );
+void PunchViewAngles_guess( float x, float y, float z );
 void MuzzleFlash_guess( cl_entity_t *pEntity, int iAttachment, bool bAlt, float flScale );
 void AddViewmodelBob_guess( struct ref_params_s *pparams, Vector &origin, Vector &angles, float frametime, float curtime, cl_entity_t *view, bool bLeft );
 void CalcViewModelLag_guess( float frametime, Vector &origin, Vector &angles, Vector &original_angles, cl_entity_t *view, bool bLeft );
-void SetupMagliteLight_guess( vec3_t origin, vec3_t angles, float time, float frametime );
+void CreateMagliteLight_guess( vec3_t origin, vec3_t angles, float time, float frametime );
 void SetupViewModelLight_guess( vec3_t origin, vec3_t angles, float time, float frametime );
 
 extern int iUnknown1054506C_guess;
@@ -611,9 +611,9 @@ void V_CalcNormalRefdef ( struct ref_params_s *pparams )
 		iStepPunch_guess = 0;
 
 		if ( iStepPunchRun_guess )
-			V_ViewPunch_guess( -3, 1, 0 );
+			PunchViewAngles_guess( -3, 1, 0 );
 		else
-			V_ViewPunch_guess( -0.75, 0.5, 0 );
+			PunchViewAngles_guess( -0.75, 0.5, 0 );
 	}
 
 	// cof: wheelchair view
@@ -1297,7 +1297,7 @@ void V_CalcNormalRefdef ( struct ref_params_s *pparams )
 			VectorAngles( dir, dir );
 			dir[0] = -dir[0];
 
-			SetupMagliteLight_guess( tr->endpos, dir, pparams->time, pparams->frametime );
+			CreateMagliteLight_guess( tr->endpos, dir, pparams->time, pparams->frametime );
 		}
 	}
 
@@ -2228,9 +2228,9 @@ extern cl_entity_t *pAttachCamEnt_guess;
 int iModelAttachEnt_guess = -1;
 int iModelAttachNum_guess = -1;
 
-int MsgModelAttach_guess( const char *pszName, int iSize, void *pbuf );
-int MsgThirdPerson_guess( const char *pszName, int iSize, void *pbuf );
-int MsgCoopCamAnim_guess( const char *pszName, int iSize, void *pbuf );
+int __MsgFunc_ModelAttach_guess( const char *pszName, int iSize, void *pbuf );
+int __MsgFunc_ThirdPerson_guess( const char *pszName, int iSize, void *pbuf );
+int __MsgFunc_CoopCamAnim_guess( const char *pszName, int iSize, void *pbuf );
 
 void V_Init (void)
 {
@@ -2250,12 +2250,12 @@ void V_Init (void)
 	cl_chasedist		= gEngfuncs.pfnRegisterVariable( "cl_chasedist","112", 0 );
 	cl_forcepause		= gEngfuncs.pfnRegisterVariable( "cl_forcepause","0", 0 ); // buz test
 
-	gEngfuncs.pfnHookUserMsg( "ModelAttach", MsgModelAttach_guess );
-	gEngfuncs.pfnHookUserMsg( "ThirdPerson", MsgThirdPerson_guess );
-	gEngfuncs.pfnHookUserMsg( "CoopCamAnim", MsgCoopCamAnim_guess );
+	gEngfuncs.pfnHookUserMsg( "ModelAttach", __MsgFunc_ModelAttach_guess );
+	gEngfuncs.pfnHookUserMsg( "ThirdPerson", __MsgFunc_ThirdPerson_guess );
+	gEngfuncs.pfnHookUserMsg( "CoopCamAnim", __MsgFunc_CoopCamAnim_guess );
 }
 
-int MsgModelAttach_guess( const char *pszName, int iSize, void *pbuf )
+int __MsgFunc_ModelAttach_guess( const char *pszName, int iSize, void *pbuf )
 {
 	BEGIN_READ( pbuf, iSize );
 
@@ -2265,7 +2265,7 @@ int MsgModelAttach_guess( const char *pszName, int iSize, void *pbuf )
 	return 1;
 }
 
-int MsgThirdPerson_guess( const char *pszName, int iSize, void *pbuf )
+int __MsgFunc_ThirdPerson_guess( const char *pszName, int iSize, void *pbuf )
 {
 	BEGIN_READ( pbuf, iSize );
 
@@ -2285,7 +2285,7 @@ int MsgThirdPerson_guess( const char *pszName, int iSize, void *pbuf )
 	return 1;
 }
 
-int MsgCoopCamAnim_guess( const char *pszName, int iSize, void *pbuf )
+int __MsgFunc_CoopCamAnim_guess( const char *pszName, int iSize, void *pbuf )
 {
 	BEGIN_READ( pbuf, iSize );
 
@@ -2310,7 +2310,7 @@ cl_entity_t *GetDualEntity_guess( void )
 	return gEngfuncs.GetEntityByIndex( g_iDualEntIndex_guess );
 }
 
-void NormalizeAngles360_guess( float pitch, float yaw )
+void AngleNormalize360_guess( float pitch, float yaw )
 {
 	while ( pitch > 360 )
 		pitch -= 360;
@@ -2333,7 +2333,7 @@ bool VectorIsValid_guess( float x, float y, float z )
 	return IsFinite_guess( x ) && IsFinite_guess( y ) && IsFinite_guess( z );
 }
 
-void V_DecayPunchAngle_guess( Vector punch, struct ref_params_s *pparams )
+void PunchAngleDecay_guess( Vector punch, struct ref_params_s *pparams )
 {
 	float	damping;
 	float	springForceMagnitude;
@@ -2362,6 +2362,16 @@ void V_DecayPunchAngle_guess( Vector punch, struct ref_params_s *pparams )
 	}
 }
 
+void PunchViewAngles_guess( float x, float y, float z )
+{
+	if ( !pAttachCamEnt_guess || iAttachCamFlag_guess > 0 )
+	{
+		ev_punchanglevel_guess[0] -= x * 20;
+		ev_punchanglevel_guess[1] += y * 20;
+		ev_punchanglevel_guess[2] += z * 20;
+	}
+}
+
 //===============================
 // view model lag and bob
 //===============================
@@ -2383,7 +2393,7 @@ float g_lateralBob_guess;
 float flWeaponLower_guess;
 float flUnknown1055959C_guess;
 
-int GetBobMode_guess( struct ref_params_s *pparams )
+int TestBobMode_guess( struct ref_params_s *pparams )
 {
 	cl_entity_t *player = gEngfuncs.GetLocalPlayer();
 
@@ -2409,7 +2419,7 @@ float CalcViewmodelBob_guess( struct ref_params_s *pparams, float frametime, flo
 		return 0.0f;
 	}
 
-	if ( GetBobMode_guess( pparams ) == 1 || gHUD.m_iLadder_guess || gHUD.m_iFallOver_guess || iAttachCamFlag_guess )
+	if ( TestBobMode_guess( pparams ) == 1 || gHUD.m_iLadder_guess || gHUD.m_iFallOver_guess || iAttachCamFlag_guess )
 	{
 		if ( gHUD.m_iLadder_guess || gHUD.m_iFallOver_guess || iAttachCamFlag_guess )
 		{
@@ -2651,7 +2661,7 @@ extern cl_entity_t *pAttachCamEnt_guess;
 extern int iBoat_guess;
 extern int iWheelchair_guess;
 
-void SetupMagliteLight_guess( vec3_t origin, vec3_t angles, float time, float frametime )
+void CreateMagliteLight_guess( vec3_t origin, vec3_t angles, float time, float frametime )
 {
 	if ( !( gHUD.m_iFlashFlags_guess & 8 ) )
 		return;

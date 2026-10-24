@@ -81,7 +81,7 @@ void EV_FireGroza( struct event_args_s *args );
 void EV_SmokePuff( struct event_args_s *args );
 void EV_ClientSound_guess( struct event_args_s *args );
 void EV_RevolverShells_guess( struct event_args_s *args );
-void EV_ServerMuzzleFlash_guess( struct event_args_s *args );
+void EV_ThirdPersonMuzzleFlash_guess( struct event_args_s *args );
 void EV_ViewPunch_guess( struct event_args_s *args );
 void EV_WeaponShoot_guess( struct event_args_s *args );
 }
@@ -2236,13 +2236,10 @@ void EV_SmokePuff( struct event_args_s *args )
 	g_objmanager.AddObject(pObj);
 }
 
-void V_ViewPunch_guess( float x, float y, float z );
+void PunchViewAngles_guess( float x, float y, float z );
 
 extern int iWheelchair_guess;
 extern vec3_t vecWheelchairAngles_guess;
-extern cl_entity_t *pAttachCamEnt_guess;
-extern int iAttachCamFlag_guess;
-extern vec3_t ev_punchanglevel_guess;
 
 // muzzle flash of the weapon models seen by the studio renderer
 int iMuzzleFlash_guess;
@@ -2250,19 +2247,9 @@ int iMuzzleFlashType_guess;
 int iMuzzleFlashEnt_guess;
 vec3_t vecMuzzleFlashAngles_guess;
 
-void V_ViewPunch_guess( float x, float y, float z )
-{
-	if ( !pAttachCamEnt_guess || iAttachCamFlag_guess > 0 )
-	{
-		ev_punchanglevel_guess[0] -= x * 20;
-		ev_punchanglevel_guess[1] += y * 20;
-		ev_punchanglevel_guess[2] += z * 20;
-	}
-}
-
 void EV_ViewPunch_guess( struct event_args_s *args )
 {
-	V_ViewPunch_guess( args->origin[0], args->origin[1], args->origin[2] );
+	PunchViewAngles_guess( args->origin[0], args->origin[1], args->origin[2] );
 }
 
 void EV_RevolverShells_guess( struct event_args_s *args )
@@ -2276,7 +2263,7 @@ void EV_RevolverShells_guess( struct event_args_s *args )
 	}
 }
 
-void EV_ServerMuzzleFlash_guess( struct event_args_s *args )
+void EV_ThirdPersonMuzzleFlash_guess( struct event_args_s *args )
 {
 	int idx = args->entindex;
 	cl_entity_t *ent = gEngfuncs.GetEntityByIndex( idx );

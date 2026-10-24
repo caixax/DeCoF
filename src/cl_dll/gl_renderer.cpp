@@ -748,7 +748,7 @@ void DrawBump()
 }
 
 // "texturetest" command (hud.cpp): clears the texture chains of the world
-void TextureTest_guess( void )
+void ClearTextureChains_guess( void )
 {
 	model_t *world = gEngfuncs.GetEntityByIndex(0)->model;
 

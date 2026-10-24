@@ -15,7 +15,7 @@ public:
 	void		SortSystems( void );
 //	void		DeleteSystem( ParticleSystem* );
 	void		DeleteSystemWithEntity( int entindex ); // buz
-	void		KillViewModelSystems_guess( bool bNow );	// KillWpnPart message
+	void		DeleteViewModelSystems_guess( bool bNow );	// KillWpnPart message
 
 //private:
 	ParticleSystem* m_pFirstSystem;

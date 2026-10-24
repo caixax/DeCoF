@@ -4,9 +4,9 @@
 ?Initialize@CPhone@@QAEXXZ
 ?KeyInput@CPhone@@QAEHHHPBD@Z
 ?MsgPhone_guess@@YAHPBDHPAX@Z
-?Dial_guess@CPhone@@QAEXXZ
+?PhoneDial_guess@CPhone@@QAEXXZ
 ?PhoneInit_guess@@YAXXZ
 ?actionPerformed@CPhoneHandler_Command@@UAEXPAVPanel@vgui@@@Z
 ?setVisible@CPhone@@UAEX_N@Z
-?PressDigit_guess@CPhone@@QAEXH@Z
+?AddDigit_guess@CPhone@@QAEXH@Z
 ??1CPhone@@QAE@XZ

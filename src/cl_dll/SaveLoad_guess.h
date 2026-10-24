@@ -15,7 +15,7 @@ public:
 	void Initialize();
 	void ActionSignal( int cmd );
 
-	void UpdateSlots_guess();
+	void ReadAllSlots_guess();
 	void ReadSlot_guess( int slot );
 	void WriteSaveInfo_guess( const char *pszFile );
 

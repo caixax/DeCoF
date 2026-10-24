@@ -2,7 +2,7 @@
 ?ActionSignal@CVGUIBillboard@@QAEXH@Z
 ?Initialize@CVGUIBillboard@@QAEXXZ
 ?KeyInput@CVGUIBillboard@@QAEHHHPBD@Z
-?BoardInit_guess@@YAXXZ
+?VGUI_BoardInit_guess@@YAXXZ
 ?actionPerformed@CBillboardHandler_Command@@UAEXPAVPanel@vgui@@@Z
 ?paint@CVGUIBillboard@@MAEXXZ
 ?setVisible@CVGUIBillboard@@UAEX_N@Z

@@ -54,6 +54,6 @@ public:
 	}
 };
 
-void CustomDocInit_guess();
+void VGUI_CustomDocInit_guess();
 
 #endif // _GAMEOVER_H

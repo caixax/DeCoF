@@ -389,10 +389,10 @@ void CRECBInventory::ActionSignal( int cmd )
 		}
 		break;
 	case 54:
-		if ( strlen( gHUD.GetInventoryItem_guess( m_iSelected_guess ) ) && strstr( gHUD.GetInventoryItem_guess( m_iSelected_guess ), "weapon_" ) )
+		if ( strlen( gHUD.GetSlotItem_guess( m_iSelected_guess ) ) && strstr( gHUD.GetSlotItem_guess( m_iSelected_guess ), "weapon_" ) )
 		{
-			m_pItemImages_guess[6]->setImage( vgui_LoadTGA( gHUD.CheckItem( "inventory_picture", gHUD.GetInventoryItem_guess( m_iSelected_guess ) ) ) );
-			strncpy( gHUD.m_szInventoryWeapon1_guess, gHUD.GetInventoryItem_guess( m_iSelected_guess ), 128 );
+			m_pItemImages_guess[6]->setImage( vgui_LoadTGA( gHUD.CheckItem( "inventory_picture", gHUD.GetSlotItem_guess( m_iSelected_guess ) ) ) );
+			strncpy( gHUD.m_szInventoryWeapon1_guess, gHUD.GetSlotItem_guess( m_iSelected_guess ), 128 );
 			gEngfuncs.pfnPlaySoundByName( "inventory/inventory_click.wav", 1 );
 			sprintf( szCommand, "quickselset1 %i\n", m_iSelected_guess );
 			gEngfuncs.pfnServerCmd( szCommand );
@@ -406,10 +406,10 @@ void CRECBInventory::ActionSignal( int cmd )
 		m_iAction_guess = 0;
 		break;
 	case 55:
-		if ( strlen( gHUD.GetInventoryItem_guess( m_iSelected_guess ) ) && strstr( gHUD.GetInventoryItem_guess( m_iSelected_guess ), "weapon_" ) )
+		if ( strlen( gHUD.GetSlotItem_guess( m_iSelected_guess ) ) && strstr( gHUD.GetSlotItem_guess( m_iSelected_guess ), "weapon_" ) )
 		{
-			m_pItemImages_guess[7]->setImage( vgui_LoadTGA( gHUD.CheckItem( "inventory_picture", gHUD.GetInventoryItem_guess( m_iSelected_guess ) ) ) );
-			strncpy( gHUD.m_szInventoryWeapon2_guess, gHUD.GetInventoryItem_guess( m_iSelected_guess ), 128 );
+			m_pItemImages_guess[7]->setImage( vgui_LoadTGA( gHUD.CheckItem( "inventory_picture", gHUD.GetSlotItem_guess( m_iSelected_guess ) ) ) );
+			strncpy( gHUD.m_szInventoryWeapon2_guess, gHUD.GetSlotItem_guess( m_iSelected_guess ), 128 );
 			gEngfuncs.pfnPlaySoundByName( "inventory/inventory_click.wav", 1 );
 			sprintf( szCommand, "quickselset2 %i\n", m_iSelected_guess );
 			gEngfuncs.pfnServerCmd( szCommand );
@@ -423,10 +423,10 @@ void CRECBInventory::ActionSignal( int cmd )
 		m_iAction_guess = 0;
 		break;
 	case 56:
-		if ( strlen( gHUD.GetInventoryItem_guess( m_iSelected_guess ) ) && strstr( gHUD.GetInventoryItem_guess( m_iSelected_guess ), "weapon_" ) )
+		if ( strlen( gHUD.GetSlotItem_guess( m_iSelected_guess ) ) && strstr( gHUD.GetSlotItem_guess( m_iSelected_guess ), "weapon_" ) )
 		{
-			m_pItemImages_guess[9]->setImage( vgui_LoadTGA( gHUD.CheckItem( "inventory_picture", gHUD.GetInventoryItem_guess( m_iSelected_guess ) ) ) );
-			strncpy( gHUD.m_szInventoryWeapon3_guess, gHUD.GetInventoryItem_guess( m_iSelected_guess ), 128 );
+			m_pItemImages_guess[9]->setImage( vgui_LoadTGA( gHUD.CheckItem( "inventory_picture", gHUD.GetSlotItem_guess( m_iSelected_guess ) ) ) );
+			strncpy( gHUD.m_szInventoryWeapon3_guess, gHUD.GetSlotItem_guess( m_iSelected_guess ), 128 );
 			gEngfuncs.pfnPlaySoundByName( "inventory/inventory_click.wav", 1 );
 			sprintf( szCommand, "quickselset3 %i\n", m_iSelected_guess );
 			gEngfuncs.pfnServerCmd( szCommand );
@@ -445,7 +445,7 @@ void CRECBInventory::ActionSignal( int cmd )
 	}
 }
 
-void CRECBInventory::Reset_guess()
+void CRECBInventory::ClearItems_guess()
 {
 	for ( int i = 0; i < 10; i++ )
 		m_pItemImages_guess[i]->setImage( NULL );
@@ -482,10 +482,10 @@ void CRECBInventory::DoAction_guess( int slot )
 		}
 		else
 		{
-			if ( strlen( gHUD.CheckItem( "combined_result", gHUD.GetInventoryItem_guess( m_iActionItem1_guess ) ) ) <= 1 )
+			if ( strlen( gHUD.CheckItem( "combined_result", gHUD.GetSlotItem_guess( m_iActionItem1_guess ) ) ) <= 1 )
 				break;
 
-			sprintf( szCommand, "inventorycombine %i %i %s\n", m_iActionItem1_guess, m_iActionItem2_guess, gHUD.CheckItem( "combined_result", gHUD.GetInventoryItem_guess( m_iActionItem1_guess ) ) );
+			sprintf( szCommand, "inventorycombine %i %i %s\n", m_iActionItem1_guess, m_iActionItem2_guess, gHUD.CheckItem( "combined_result", gHUD.GetSlotItem_guess( m_iActionItem1_guess ) ) );
 			gEngfuncs.pfnServerCmd( szCommand );
 		}
 
@@ -501,10 +501,10 @@ void CRECBInventory::DoAction_guess( int slot )
 		gEngfuncs.pfnServerCmd( szCmd );
 		break;
 	case 5:
-		if ( strlen( gHUD.GetInventoryItem_guess( slot ) ) && strstr( gHUD.GetInventoryItem_guess( slot ), "weapon_" ) )
+		if ( strlen( gHUD.GetSlotItem_guess( slot ) ) && strstr( gHUD.GetSlotItem_guess( slot ), "weapon_" ) )
 		{
-			m_pItemImages_guess[6]->setImage( vgui_LoadTGA( gHUD.CheckItem( "inventory_picture", gHUD.GetInventoryItem_guess( slot ) ) ) );
-			strncpy( gHUD.m_szInventoryWeapon1_guess, gHUD.GetInventoryItem_guess( slot ), 128 );
+			m_pItemImages_guess[6]->setImage( vgui_LoadTGA( gHUD.CheckItem( "inventory_picture", gHUD.GetSlotItem_guess( slot ) ) ) );
+			strncpy( gHUD.m_szInventoryWeapon1_guess, gHUD.GetSlotItem_guess( slot ), 128 );
 			gEngfuncs.pfnPlaySoundByName( "inventory/inventory_click.wav", 1 );
 			sprintf( szCmd, "quickselset1 %i\n", slot );
 			gEngfuncs.pfnServerCmd( szCmd );
@@ -513,10 +513,10 @@ void CRECBInventory::DoAction_guess( int slot )
 			gEngfuncs.pfnPlaySoundByName( "inventory/inventory_no.wav", 1 );
 		break;
 	case 6:
-		if ( strlen( gHUD.GetInventoryItem_guess( slot ) ) && strstr( gHUD.GetInventoryItem_guess( slot ), "weapon_" ) )
+		if ( strlen( gHUD.GetSlotItem_guess( slot ) ) && strstr( gHUD.GetSlotItem_guess( slot ), "weapon_" ) )
 		{
-			m_pItemImages_guess[7]->setImage( vgui_LoadTGA( gHUD.CheckItem( "inventory_picture", gHUD.GetInventoryItem_guess( slot ) ) ) );
-			strncpy( gHUD.m_szInventoryWeapon2_guess, gHUD.GetInventoryItem_guess( slot ), 128 );
+			m_pItemImages_guess[7]->setImage( vgui_LoadTGA( gHUD.CheckItem( "inventory_picture", gHUD.GetSlotItem_guess( slot ) ) ) );
+			strncpy( gHUD.m_szInventoryWeapon2_guess, gHUD.GetSlotItem_guess( slot ), 128 );
 			gEngfuncs.pfnPlaySoundByName( "inventory/inventory_click.wav", 1 );
 			sprintf( szCmd, "quickselset2 %i\n", slot );
 			gEngfuncs.pfnServerCmd( szCmd );
@@ -535,7 +535,7 @@ void CRECBInventory::DoAction_guess( int slot )
 				return;
 			}
 
-			if ( strlen( gHUD.CheckItem( "classname", gHUD.GetInventoryItem_guess( m_iActionItem1_guess ) ) ) > 1 )
+			if ( strlen( gHUD.CheckItem( "classname", gHUD.GetSlotItem_guess( m_iActionItem1_guess ) ) ) > 1 )
 			{
 				sprintf( szCommand, "inventorydualwield %i %i\n", m_iActionItem1_guess, m_iActionItem2_guess );
 				gEngfuncs.pfnServerCmd( szCommand );
@@ -546,10 +546,10 @@ void CRECBInventory::DoAction_guess( int slot )
 		}
 		return;
 	case 8:
-		if ( strlen( gHUD.GetInventoryItem_guess( slot ) ) && strstr( gHUD.GetInventoryItem_guess( slot ), "weapon_" ) )
+		if ( strlen( gHUD.GetSlotItem_guess( slot ) ) && strstr( gHUD.GetSlotItem_guess( slot ), "weapon_" ) )
 		{
-			m_pItemImages_guess[9]->setImage( vgui_LoadTGA( gHUD.CheckItem( "inventory_picture", gHUD.GetInventoryItem_guess( slot ) ) ) );
-			strncpy( gHUD.m_szInventoryWeapon3_guess, gHUD.GetInventoryItem_guess( slot ), 128 );
+			m_pItemImages_guess[9]->setImage( vgui_LoadTGA( gHUD.CheckItem( "inventory_picture", gHUD.GetSlotItem_guess( slot ) ) ) );
+			strncpy( gHUD.m_szInventoryWeapon3_guess, gHUD.GetSlotItem_guess( slot ), 128 );
 			gEngfuncs.pfnPlaySoundByName( "inventory/inventory_click.wav", 1 );
 			sprintf( szCmd, "quickselset3 %i\n", slot );
 			gEngfuncs.pfnServerCmd( szCmd );
@@ -602,7 +602,7 @@ int CRECBInventory::KeyInput( int down, int keynum, const char *pszCurrentBindin
 	return 0;
 }
 
-bool CRECBInventory::IsCursorOver_guess( int x, int y, int wide, int tall )
+bool CRECBInventory::MouseOver_guess( int x, int y, int wide, int tall )
 {
 	int cx, cy;
 
@@ -692,28 +692,28 @@ int MsgQSlotUpdate_guess( const char *pszName, int iSize, void *pbuf )
 		switch ( iSlot )
 		{
 		case 1:
-			if ( strlen( gHUD.GetInventoryItem_guess( iItem ) ) && strstr( gHUD.GetInventoryItem_guess( iItem ), "weapon_" ) )
+			if ( strlen( gHUD.GetSlotItem_guess( iItem ) ) && strstr( gHUD.GetSlotItem_guess( iItem ), "weapon_" ) )
 			{
-				gViewPort->m_pRECBInventory_guess->m_pItemImages_guess[6]->setImage( vgui_LoadTGA( gHUD.CheckItem( "inventory_picture", gHUD.GetInventoryItem_guess( iItem ) ) ) );
-				strncpy( gHUD.m_szInventoryWeapon1_guess, gHUD.GetInventoryItem_guess( iItem ), 128 );
+				gViewPort->m_pRECBInventory_guess->m_pItemImages_guess[6]->setImage( vgui_LoadTGA( gHUD.CheckItem( "inventory_picture", gHUD.GetSlotItem_guess( iItem ) ) ) );
+				strncpy( gHUD.m_szInventoryWeapon1_guess, gHUD.GetSlotItem_guess( iItem ), 128 );
 				sprintf( szCommand, "quickselset1 %i\n", iItem );
 				gEngfuncs.pfnServerCmd( szCommand );
 			}
 			break;
 		case 2:
-			if ( strlen( gHUD.GetInventoryItem_guess( iItem ) ) && strstr( gHUD.GetInventoryItem_guess( iItem ), "weapon_" ) )
+			if ( strlen( gHUD.GetSlotItem_guess( iItem ) ) && strstr( gHUD.GetSlotItem_guess( iItem ), "weapon_" ) )
 			{
-				gViewPort->m_pRECBInventory_guess->m_pItemImages_guess[7]->setImage( vgui_LoadTGA( gHUD.CheckItem( "inventory_picture", gHUD.GetInventoryItem_guess( iItem ) ) ) );
-				strncpy( gHUD.m_szInventoryWeapon2_guess, gHUD.GetInventoryItem_guess( iItem ), 128 );
+				gViewPort->m_pRECBInventory_guess->m_pItemImages_guess[7]->setImage( vgui_LoadTGA( gHUD.CheckItem( "inventory_picture", gHUD.GetSlotItem_guess( iItem ) ) ) );
+				strncpy( gHUD.m_szInventoryWeapon2_guess, gHUD.GetSlotItem_guess( iItem ), 128 );
 				sprintf( szCommand, "quickselset2 %i\n", iItem );
 				gEngfuncs.pfnServerCmd( szCommand );
 			}
 			break;
 		case 3:
-			if ( strlen( gHUD.GetInventoryItem_guess( iItem ) ) && strstr( gHUD.GetInventoryItem_guess( iItem ), "weapon_" ) )
+			if ( strlen( gHUD.GetSlotItem_guess( iItem ) ) && strstr( gHUD.GetSlotItem_guess( iItem ), "weapon_" ) )
 			{
-				gViewPort->m_pRECBInventory_guess->m_pItemImages_guess[9]->setImage( vgui_LoadTGA( gHUD.CheckItem( "inventory_picture", gHUD.GetInventoryItem_guess( iItem ) ) ) );
-				strncpy( gHUD.m_szInventoryWeapon3_guess, gHUD.GetInventoryItem_guess( iItem ), 128 );
+				gViewPort->m_pRECBInventory_guess->m_pItemImages_guess[9]->setImage( vgui_LoadTGA( gHUD.CheckItem( "inventory_picture", gHUD.GetSlotItem_guess( iItem ) ) ) );
+				strncpy( gHUD.m_szInventoryWeapon3_guess, gHUD.GetSlotItem_guess( iItem ), 128 );
 				sprintf( szCommand, "quickselset3 %i\n", iItem );
 				gEngfuncs.pfnServerCmd( szCommand );
 			}
@@ -733,7 +733,7 @@ void CRECBInventory::SelectItem_guess( int slot )
 	{
 		if ( m_iDualWield_guess != slot )
 		{
-			if ( strlen( gHUD.CheckItem( "classname", gHUD.GetInventoryItem_guess( slot ) ) ) > 1 )
+			if ( strlen( gHUD.CheckItem( "classname", gHUD.GetSlotItem_guess( slot ) ) ) > 1 )
 			{
 				sprintf( szCmd, "inventorydualwield %i %i\n", m_iDualWield_guess, slot );
 				gEngfuncs.pfnServerCmd( szCmd );
@@ -756,9 +756,9 @@ void CRECBInventory::SelectItem_guess( int slot )
 		{
 			if ( m_iCombine_guess != slot )
 			{
-				if ( strlen( gHUD.CheckItem( "combined_result", gHUD.GetInventoryItem_guess( slot ) ) ) > 1 )
+				if ( strlen( gHUD.CheckItem( "combined_result", gHUD.GetSlotItem_guess( slot ) ) ) > 1 )
 				{
-					sprintf( szCommand, "inventorycombine %i %i %s\n", m_iCombine_guess, slot, gHUD.CheckItem( "combined_result", gHUD.GetInventoryItem_guess( m_iCombine_guess ) ) );
+					sprintf( szCommand, "inventorycombine %i %i %s\n", m_iCombine_guess, slot, gHUD.CheckItem( "combined_result", gHUD.GetSlotItem_guess( m_iCombine_guess ) ) );
 					gEngfuncs.pfnServerCmd( szCommand );
 					m_iDualWield_guess = 0;
 					g_bInventoryFadeOut_guess = false;
@@ -775,7 +775,7 @@ void CRECBInventory::SelectItem_guess( int slot )
 		}
 		else
 		{
-			if ( strlen( gHUD.GetInventoryItem_guess( slot ) ) > 1 )
+			if ( strlen( gHUD.GetSlotItem_guess( slot ) ) > 1 )
 			{
 				int x, y, wide, tall;
 				bool bItem = false;
@@ -783,7 +783,7 @@ void CRECBInventory::SelectItem_guess( int slot )
 				m_iSelected_guess = slot;
 				gEngfuncs.pfnPlaySoundByName( "inventory/inventory_toggle.wav", 1 );
 
-				if ( !strstr( gHUD.GetInventoryItem_guess( m_iSelected_guess ), "weapon_" ) )
+				if ( !strstr( gHUD.GetSlotItem_guess( m_iSelected_guess ), "weapon_" ) )
 					bItem = true;
 
 				m_pItemButtons_guess[m_iSelected_guess - 1]->getPos( x, y );
@@ -923,7 +923,7 @@ void CRECBInventory::Update_guess()
 	m_pBackgroundPanel_guess->setBgColor( 0, 0, 0, 0 );
 }
 
-void QSlotInit_guess()
+void VGUI_QSlotInit_guess()
 {
 	gEngfuncs.pfnHookUserMsg( "QSlotClear", MsgQSlotClear_guess );
 	gEngfuncs.pfnHookUserMsg( "QSlotUpdate", MsgQSlotUpdate_guess );
@@ -1085,9 +1085,9 @@ void CRECBInventory::solve()
 
 		for ( i = 1; i <= 6; i++ )
 		{
-			if ( m_pItemButtons_guess[i - 1]->isArmed() && strlen( gHUD.GetInventoryItem_guess( i ) ) > 1 )
+			if ( m_pItemButtons_guess[i - 1]->isArmed() && strlen( gHUD.GetSlotItem_guess( i ) ) > 1 )
 			{
-				m_pItemImages_guess[8]->setImage( vgui_LoadTGA( gHUD.CheckItem( "check_picture", gHUD.GetInventoryItem_guess( i ) ) ) );
+				m_pItemImages_guess[8]->setImage( vgui_LoadTGA( gHUD.CheckItem( "check_picture", gHUD.GetSlotItem_guess( i ) ) ) );
 				m_iHoverItem_guess = i;
 			}
 		}

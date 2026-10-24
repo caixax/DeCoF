@@ -59,6 +59,6 @@ public:
 	}
 };
 
-void AmmoInvInit_guess();
+void VGUI_AmmoInvInit_guess();
 
 #endif // _AMMOINVENTORY_H

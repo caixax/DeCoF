@@ -31,19 +31,19 @@ public:
 	void CheckMipmapSupport_guess( void );
 	void CreateTexture_guess( int width, int height, GLuint *texture, GLenum target, GLenum format );
 	std::string GetPath_guess( const std::string &name, int type, int *found );
-	std::string FindTexture_guess( const std::string &name, int *found );
+	std::string GetTexturePath_guess( const std::string &name, int *found );
 	texture_t_guess *GetTexture_guess( const std::string &name );
-	std::string FindNumberedTextures_guess( const std::string &name, int *count );
-	std::string FindImageFile_guess( const std::string &path );
+	std::string ImportFrames_guess( const std::string &name, int *count );
+	std::string ImportImageFile_guess( const std::string &path );
 	bool IsHardware_guess( void );
-	void Reset_guess( void );
-	void UploadImage_guess( texture_t_guess *tex );
-	texture_t_guess *GetTexture_guess( const char *name );
+	void LevelInit_guess( void );
+	void LoadFile_guess( texture_t_guess *tex );
+	texture_t_guess *LoadFromName_guess( const char *name );
 	texture_t_guess *LoadImage_guess( const std::string &name );
 	texture_t_guess *LoadSprite_guess( const std::string &name );
-	texture_t_guess *Load_guess( const std::string &name );
+	texture_t_guess *LoadTex_guess( const std::string &name );
 	bool LoadTexture_guess( int texture, const char *name, int format, bool check );
-	void LoadPlayerShadow_guess( void );
+	void PrecachePlayerShadow_guess( void );
 
 	int		m_iMipmapMode_guess;
 	int		m_iNextTexture_guess;
@@ -52,6 +52,6 @@ public:
 
 extern CTextureManager_guess g_TextureManager_guess;
 
-byte IsExtensionSupported_guess( const char *extension, const char *extensions );
+byte isExtensionSupported_guess( const char *extension, const char *extensions );
 
 #endif // GUESS_TEXTUREMANAGER_H

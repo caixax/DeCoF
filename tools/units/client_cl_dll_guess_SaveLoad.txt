@@ -1,6 +1,6 @@
 ?Initialize@CSaveLoad@@QAEXXZ
-?DirectoryExists_guess@@YA_NPBD@Z
-?UpdateSlots_guess@CSaveLoad@@QAEXXZ
+?PathExists_guess@@YA_NPBD@Z
+?ReadAllSlots_guess@CSaveLoad@@QAEXXZ
 ?SaveLoadInit_guess@@YAXXZ
 ?actionPerformed@CSaveLoadHandler_Command@@UAEXPAVPanel@vgui@@@Z
 ??0CSaveLoad@@QAE@XZ

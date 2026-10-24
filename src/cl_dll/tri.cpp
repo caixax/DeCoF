@@ -677,7 +677,7 @@ void DrawFXObjects( void )
 
 extern int fxcounter;
 
-void SplashEffect_guess( cl_drip *drip )
+void DripSplashEffect_guess( cl_drip *drip )
 {
 	if (fxcounter >= MAXFX)
 	{
@@ -704,7 +704,7 @@ void SplashEffect_guess( cl_drip *drip )
 	fxcounter++;
 }
 
-void RingEffect_guess( cl_drip *drip )
+void DripWaterRingEffect_guess( cl_drip *drip )
 {
 	if (fxcounter >= MAXFX)
 	{

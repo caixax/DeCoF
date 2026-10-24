@@ -1,5 +1,5 @@
 ??0CTelephone@@QAE@XZ
-?PressDigit_guess@CTelephone@@QAEXH@Z
+?AddDigit_guess@CTelephone@@QAEXH@Z
 ?Initialize@CTelephone@@QAEXXZ
 ?TelephoneInit_guess@@YAXXZ
 ?actionPerformed@CTelephoneHandler_Command@@UAEXPAVPanel@vgui@@@Z

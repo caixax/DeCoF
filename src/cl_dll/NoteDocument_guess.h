@@ -22,7 +22,7 @@ public:
 	void PrevLine_guess();
 	void PrevPage_guess();
 	void SetPage_guess( int page );
-	void ReadLine_guess();
+	void SetText_guess();
 
 	virtual void setVisible( bool state )
 	{

@@ -17,7 +17,7 @@ public:
 	void PostDraw_guess( void );
 	void PreDraw_guess( void );
 	void Render_guess( void );
-	void RenderQuad_guess( void );
+	void ScreenQuad_guess( void );
 	void SetBlackShader_guess( void );
 	void UpdateEntities_guess( void );
 

@@ -138,7 +138,7 @@ int MsgBoard_guess( const char *pszName, int iSize, void *pbuf )
 	return 1;
 }
 
-void BoardInit_guess()
+void VGUI_BoardInit_guess()
 {
 	gEngfuncs.pfnHookUserMsg( "Board", MsgBoard_guess );
 }

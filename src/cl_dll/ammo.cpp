@@ -941,7 +941,7 @@ int CHudAmmo::MsgFunc_DualAmmo( const char *pszName, int iSize, void *pbuf )
 // Cry of Fear: the weapon in hand changed, drop the particle systems of the view model
 int CHudAmmo::MsgFunc_WpnDeploy( const char *pszName, int iSize, void *pbuf )
 {
-	g_pParticleSystems.KillViewModelSystems_guess( true );
+	g_pParticleSystems.DeleteViewModelSystems_guess( true );
 	flUnknown1055959C_guess = 0;
 
 	return 1;

@@ -163,8 +163,8 @@ extern float flUnknown1055959C_guess;
 int IsInDonatorGroup1_guess( void );	// Steam clan 0x29D6CA
 int IsInDonatorGroup2_guess( void );	// Steam clan 0x46AE0A
 
-void IrrKlangInit_guess( void );
-void IrrKlangSetParams_guess( float flParm1, float flParm2, float flParm3, float flParm4 );
+void IrrKlangCreate_guess( void );
+void IrrKlangSetFade_guess( float flParm1, float flParm2, float flParm3, float flParm4 );
 void IrrKlangStop_guess( float flFadeTime );
 
 void ShutdownInput (void);
@@ -678,11 +678,11 @@ void __CmdFunc_Unlockables_guess( void )
 	}
 }
 
-void TextureTest_guess( void );
+void ClearTextureChains_guess( void );
 
 void __CmdFunc_TextureTest_guess( void )
 {
-	TextureTest_guess();
+	ClearTextureChains_guess();
 }
 
 // buz
@@ -706,30 +706,30 @@ void InitPostEffects();
 
 void CanUseInit( void ); // Wargon: »конка юза.
 void HUDControlInit_guess( void );
-void BoardInit_guess( void );
+void VGUI_BoardInit_guess( void );
 void NoteDocInit_guess( void );
-void KeypadInit_guess( void );
+void VGUI_KeypadInit_guess( void );
 void PhoneInit_guess( void );
 void PuzzlebarInit_guess( void );
 void SaveInit_guess( void );
 void YesNoInit_guess( void );
 void StatueInit_guess( void );
-void ComputerInit_guess( void );
+void VGUI_ComputerInit_guess( void );
 void UserDocInit_guess( void );
 void PadlockInit_guess( void );
 void SaveLoadInit_guess( void );
-void GameMenuInit_guess( void );
+void VGUI_GameMenuInit_guess( void );
 void ScopeInit_guess( void );
 void TVFrameInit_guess( void );
-void BossBarInit_guess( void );
+void VGUI_BossBarInit_guess( void );
 void TelephoneInit_guess( void );
-void QSlotInit_guess( void );
-void AmmoInvInit_guess( void );
-void CreditsInit_guess( void );
-void ClothesInit_guess( void );
+void VGUI_QSlotInit_guess( void );
+void VGUI_AmmoInvInit_guess( void );
+void VGUI_CreditsInit_guess( void );
+void VGUI_ClothesInit_guess( void );
 void UnlockablesInit_guess( void );
-void CoopStatsInit_guess( void );
-void CustomDocInit_guess( void );
+void VGUI_CoopStatsInit_guess( void );
+void VGUI_CustomDocInit_guess( void );
 
 // This is called every time the DLL is loaded
 void CHud :: Init( void )
@@ -778,30 +778,30 @@ void CHud :: Init( void )
 	SubtitleInit(); // buz
 	TabPanelInit(); // buz
 	HUDControlInit_guess();
-	BoardInit_guess();
+	VGUI_BoardInit_guess();
 	NoteDocInit_guess();
-	KeypadInit_guess();
+	VGUI_KeypadInit_guess();
 	PhoneInit_guess();
 	PuzzlebarInit_guess();
 	SaveInit_guess();
 	YesNoInit_guess();
 	StatueInit_guess();
-	ComputerInit_guess();
+	VGUI_ComputerInit_guess();
 	UserDocInit_guess();
 	PadlockInit_guess();
 	SaveLoadInit_guess();
-	GameMenuInit_guess();
+	VGUI_GameMenuInit_guess();
 	ScopeInit_guess();
 	TVFrameInit_guess();
-	BossBarInit_guess();
+	VGUI_BossBarInit_guess();
 	TelephoneInit_guess();
-	QSlotInit_guess();
-	AmmoInvInit_guess();
-	CreditsInit_guess();
-	ClothesInit_guess();
+	VGUI_QSlotInit_guess();
+	VGUI_AmmoInvInit_guess();
+	VGUI_CreditsInit_guess();
+	VGUI_ClothesInit_guess();
 	UnlockablesInit_guess();
-	CoopStatsInit_guess();
-	CustomDocInit_guess();
+	VGUI_CoopStatsInit_guess();
+	VGUI_CustomDocInit_guess();
 
 	m_bConcussed_guess = false;
 
@@ -900,7 +900,7 @@ void CHud :: Init( void )
 
 	HOOK_MESSAGE( PlayMP3 );
 	HOOK_COMMAND( "stopmp3", StopMP3 );
-	IrrKlangSetParams_guess( 0, 0, 0, 0 );
+	IrrKlangSetFade_guess( 0, 0, 0, 0 );
 
 	HOOK_COMMAND( "beginspgame", BeginSPGame_guess );
 	HOOK_COMMAND( "to3dmenu", To3DMenu_guess );
@@ -975,7 +975,7 @@ void CHud :: Init( void )
 	ServersInit();
 
 	if ( !gEngfuncs.CheckParm( "-nomusic", NULL ) )
-		IrrKlangInit_guess();
+		IrrKlangCreate_guess();
 
 	MsgFunc_ResetHUD(0, 0, NULL );
 	Log("END Initializing variables\n");
@@ -1051,7 +1051,7 @@ void CHud :: VidInit( void )
 	bCustomGloveTexture_guess = false;
 	flNextSoundCacheTime_guess = 0;
 	iHudActive_guess = 1;
-	IrrKlangSetParams_guess( 0, 0, 0, 0 );
+	IrrKlangSetFade_guess( 0, 0, 0, 0 );
 
 	Log("\nInitializing video\n");
 
@@ -1531,7 +1531,7 @@ char *CHud::GetKeyForCommand_guess( char *pszCommand )
 	return NULL;
 }
 
-char *CHud::GetInventoryItem_guess( int iSlot )
+char *CHud::GetSlotItem_guess( int iSlot )
 {
 	switch ( iSlot )
 	{
@@ -1552,12 +1552,12 @@ char *CHud::GetInventoryItem_guess( int iSlot )
 	return "";
 }
 
-int CHud::AddUnknown5590_guess( int iValue )
+int CHud::PlusUnknown5590_guess( int iValue )
 {
 	return m_iUnknown5590_guess + iValue;
 }
 
-int CHud::SubUnknown5590_guess( int iValue )
+int CHud::MinusUnknown5590_guess( int iValue )
 {
-	return iValue - AddUnknown5590_guess( 0 );
+	return iValue - PlusUnknown5590_guess( 0 );
 }

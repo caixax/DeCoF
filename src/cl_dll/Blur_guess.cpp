@@ -19,7 +19,7 @@ public:
 	void Init_guess( int width, int height );
 	void BindTexture_guess( int width, int height );
 	void DrawQuad_guess( int width, int height, int of );
-	void Draw_guess( int width, int height );
+	void DrawBlended_guess( int width, int height );
 
 	unsigned int	m_uiTexture_guess;
 	float			m_flAlpha_guess;
@@ -31,7 +31,7 @@ public:
 class CBlur_guess
 {
 public:
-	void InitScreen_guess( void );
+	void Initialize_guess( void );
 	void DrawBlur_guess( void );
 	bool AnimateNextFrame_guess( int desiredFrameRate );
 
@@ -76,7 +76,7 @@ void CBlurTexture_guess::DrawQuad_guess( int width, int height, int of )
 	glVertex3f( 1, 1, -1 );
 }
 
-void CBlurTexture_guess::Draw_guess( int width, int height )
+void CBlurTexture_guess::DrawBlended_guess( int width, int height )
 {
 	glEnable( GL_TEXTURE_RECTANGLE_NV );
 	glColor3f( 1, 1, 1 );
@@ -109,7 +109,7 @@ void CBlurTexture_guess::Draw_guess( int width, int height )
 	glEnable( GL_DEPTH_TEST );
 }
 
-void CBlur_guess::InitScreen_guess( void )
+void CBlur_guess::Initialize_guess( void )
 {
 	m_iActive_guess = 1;
 	m_Output_guess.Init_guess( 320, 240 );
@@ -129,7 +129,7 @@ void CBlur_guess::DrawBlur_guess( void )
 		m_Output_guess.m_flRed_guess = 1.0;
 		m_Output_guess.m_flGreen_guess = 1.0;
 		m_Output_guess.m_flBlue_guess = 1.0;
-		m_Output_guess.Draw_guess( ScreenWidth, ScreenHeight );
+		m_Output_guess.DrawBlended_guess( ScreenWidth, ScreenHeight );
 		m_Output_guess.BindTexture_guess( ScreenWidth, ScreenHeight );
 
 		glDisable( GL_BLEND );

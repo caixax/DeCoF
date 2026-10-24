@@ -157,31 +157,31 @@ void CKeypad::ActionSignal( int cmd )
 		gViewPort->UpdateCursorState();
 		break;
 	case 2:
-		PressKey_guess( 1 );
+		EnterKey_guess( 1 );
 		break;
 	case 3:
-		PressKey_guess( 2 );
+		EnterKey_guess( 2 );
 		break;
 	case 4:
-		PressKey_guess( 3 );
+		EnterKey_guess( 3 );
 		break;
 	case 5:
-		PressKey_guess( 4 );
+		EnterKey_guess( 4 );
 		break;
 	case 6:
-		PressKey_guess( 5 );
+		EnterKey_guess( 5 );
 		break;
 	case 7:
-		PressKey_guess( 6 );
+		EnterKey_guess( 6 );
 		break;
 	case 8:
-		PressKey_guess( 7 );
+		EnterKey_guess( 7 );
 		break;
 	case 9:
-		PressKey_guess( 8 );
+		EnterKey_guess( 8 );
 		break;
 	case 10:
-		PressKey_guess( 9 );
+		EnterKey_guess( 9 );
 		break;
 	default:
 		gEngfuncs.Con_DPrintf( "Unknown Keypad ActionSignal %i.\n", cmd );
@@ -200,7 +200,7 @@ void CKeypad::Activate_guess()
 	}
 }
 
-void CKeypad::PressKey_guess( int key )
+void CKeypad::EnterKey_guess( int key )
 {
 	char szDigit[4];
 	char szStars[8];
@@ -371,7 +371,7 @@ void CKeypad::UpdateLayout_guess()
 	m_pKey9_guess->setPos( 370, 290 );
 }
 
-void KeypadInit_guess()
+void VGUI_KeypadInit_guess()
 {
 	gEngfuncs.pfnHookUserMsg( "Keypad", MsgKeypad_guess );
 }

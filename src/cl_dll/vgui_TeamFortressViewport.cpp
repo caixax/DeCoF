@@ -2658,10 +2658,10 @@ int	TeamFortressViewport::KeyInput( int down, int keynum, const char *pszCurrent
 		m_flKeyInputTime_guess = gEngfuncs.GetClientTime() + 0.2;
 
 		if ( keynum >= '0' && keynum <= '9' )
-			m_pPhone_guess->PressDigit_guess( keynum - '0' );
+			m_pPhone_guess->AddDigit_guess( keynum - '0' );
 
 		if ( keynum == K_ENTER )
-			m_pPhone_guess->Dial_guess();
+			m_pPhone_guess->PhoneDial_guess();
 	}
 
 	if (m_pPhone_guess && m_pPhone_guess->isVisible())

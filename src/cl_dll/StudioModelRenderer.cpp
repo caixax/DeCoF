@@ -2005,7 +2005,7 @@ StudioCalcAttachments
 
 ====================
 */
-void UpdatePlayerFlashlights_guess( void );
+void DrawPlayerFlashlights_guess( void );
 
 void CStudioModelRenderer::StudioCalcAttachments( void )
 {
@@ -2026,7 +2026,7 @@ void CStudioModelRenderer::StudioCalcAttachments( void )
 	}
 
 	if ( gEngfuncs.GetMaxClients() > 1 )
-		UpdatePlayerFlashlights_guess();
+		DrawPlayerFlashlights_guess();
 }
 
 /*

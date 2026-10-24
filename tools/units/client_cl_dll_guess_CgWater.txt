@@ -2,7 +2,7 @@
 ?Init_guess@CCgWater_guess@@QAEXXZ
 ?PostDraw_guess@CCgWater_guess@@QAEXXZ
 ?PreDraw_guess@CCgWater_guess@@QAEXXZ
-?RenderQuad_guess@CCgWater_guess@@QAEXXZ
+?ScreenQuad_guess@CCgWater_guess@@QAEXXZ
 ?SetBlackShader_guess@CCgWater_guess@@QAEXXZ
 ?UpdateEntities_guess@CCgWater_guess@@QAEXXZ
 ?Render_guess@CCgWater_guess@@QAEXXZ

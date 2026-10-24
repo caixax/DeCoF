@@ -49,6 +49,6 @@ public:
 	}
 };
 
-void BoardInit_guess();
+void VGUI_BoardInit_guess();
 
 #endif // _VGUIBILLBOARD_H

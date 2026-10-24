@@ -20,7 +20,7 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 
-void IrrKlangPlay_guess( const char *pszFile );
+void IrrKlangPlayMP3_guess( const char *pszFile );
 void IrrKlangSetLoop_guess( bool bLoop );
 
 const char *GetVersion_guess();
@@ -307,7 +307,7 @@ void CGameMenu::ActionSignal( int cmd )
 			gViewPort->m_pSaveLoad_guess->m_flSlot5ClickTime_guess = 0;
 
 			gViewPort->m_pSaveLoad_guess->m_iMode_guess = 1;
-			gViewPort->m_pSaveLoad_guess->UpdateSlots_guess();
+			gViewPort->m_pSaveLoad_guess->ReadAllSlots_guess();
 			gViewPort->m_pSaveLoad_guess->setVisible( true );
 			gViewPort->UpdateCursorState();
 			gEngfuncs.pfnServerCmd( "freeze 1024" );
@@ -343,7 +343,7 @@ void CGameMenu::ActionSignal( int cmd )
 		for ( i = 0; i < MAX_CAMPAIGNS_guess; i++ )
 			m_pCampaignButton_guess[i]->setVisible( true );
 
-		LoadCampaigns_guess();
+		ReadCampaigns_guess();
 		m_pCampaignList_guess->validate();
 		break;
 	case 4:
@@ -535,7 +535,7 @@ void CGameMenu::ParseCampaign_guess( char *pszFile, int index )
 		gEngfuncs.Con_Printf( "PARSING CUSTOM CAMPAIGN: Couldn't parse data from campaign file %s\n", pszFile );
 }
 
-void CGameMenu::LoadCampaigns_guess()
+void CGameMenu::ReadCampaigns_guess()
 {
 	int i;
 
@@ -609,7 +609,7 @@ void CGameMenu::ResetButtonPositions_guess()
 	m_pQuit_guess->setPos( x, y - tall );
 }
 
-void GameMenuInit_guess()
+void VGUI_GameMenuInit_guess()
 {
 	gEngfuncs.pfnHookUserMsg( "GameMenu", MsgGameMenu_guess );
 }
@@ -643,7 +643,7 @@ void CGameMenu::setVisible( bool state )
 	{
 		ResetButtonPositions_guess();
 		IrrKlangSetLoop_guess( true );
-		IrrKlangPlay_guess( "gamestartup.mp3" );
+		IrrKlangPlayMP3_guess( "gamestartup.mp3" );
 
 		m_iArmedCampaign_guess = -1;
 		m_bCampaignArmed_guess = true;

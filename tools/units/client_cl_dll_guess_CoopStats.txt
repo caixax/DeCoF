@@ -1,5 +1,5 @@
 ?Initialize@CCoopStats@@QAEXXZ
-?CoopStatsInit_guess@@YAXXZ
+?VGUI_CoopStatsInit_guess@@YAXXZ
 ??0CCoopStats@@QAE@XZ
 ?SetEndingOrUnlockables@@YAXH_N00@Z
 ?MsgBeatCoop_guess@@YAHPBDHPAX@Z

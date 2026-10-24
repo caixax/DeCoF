@@ -91,7 +91,7 @@ void CCgWater_guess::Init_guess( void )
 	}
 
 	bool bTextureShader = true;
-	if ( !IsExtensionSupported_guess( "GL_NV_texture_shader", strdup( (const char *)glGetString( GL_EXTENSIONS ) ) ) )
+	if ( !isExtensionSupported_guess( "GL_NV_texture_shader", strdup( (const char *)glGetString( GL_EXTENSIONS ) ) ) )
 		bTextureShader = false;
 
 	if ( !m_bEnabled_guess )
@@ -358,7 +358,7 @@ void CCgWater_guess::Render_guess( void )
 
 	// put the scene back
 	glBindTexture( GL_TEXTURE_2D, m_iSceneTexture_guess );
-	RenderQuad_guess();
+	ScreenQuad_guess();
 
 	g_CgContext_guess.EnableVertexProfile_guess();
 	g_CgContext_guess.EnableFragmentProfile_guess();
@@ -443,7 +443,7 @@ void CCgWater_guess::Render_guess( void )
 	glBindTexture( GL_TEXTURE_2D, g_iWaterOldTexture_guess );
 }
 
-void CCgWater_guess::RenderQuad_guess( void )
+void CCgWater_guess::ScreenQuad_guess( void )
 {
 	glMatrixMode( GL_MODELVIEW );
 	glPushMatrix();

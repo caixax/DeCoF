@@ -15,9 +15,9 @@ public:
 	void ActionSignal( int cmd );
 	int KeyInput( int down, int keynum, const char *pszCurrentBinding );
 
-	void Reset_guess();
+	void ClearItems_guess();
 	void DoAction_guess( int slot );
-	bool IsCursorOver_guess( int x, int y, int wide, int tall );
+	bool MouseOver_guess( int x, int y, int wide, int tall );
 	void SelectItem_guess( int slot );
 	void SetAction_guess( int action );
 	void Update_guess();
@@ -82,6 +82,6 @@ public:
 	}
 };
 
-void QSlotInit_guess();
+void VGUI_QSlotInit_guess();
 
 #endif // _RECBINVENTORY_H

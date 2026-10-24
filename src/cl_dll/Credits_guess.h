@@ -74,6 +74,6 @@ public:
 
 extern bool g_bUnlockShown_guess;
 
-char *va_guess( const char *format, ... );
+char *UTIL_VarArgs_guess( const char *format, ... );
 
 #endif // _CREDITS_H

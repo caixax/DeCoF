@@ -171,7 +171,7 @@ void CPBuffer_guess::Prepare_guess( void )
 
 	const char *extensions = wglGetExtensionsStringARB( wglGetCurrentDC() );
 
-	if ( !IsExtensionSupported_guess( "WGL_ARB_pixel_format", extensions ) || !IsExtensionSupported_guess( "WGL_ARB_pbuffer", extensions ) )
+	if ( !isExtensionSupported_guess( "WGL_ARB_pixel_format", extensions ) || !isExtensionSupported_guess( "WGL_ARB_pbuffer", extensions ) )
 	{
 		m_bValid_guess = false;
 		return;

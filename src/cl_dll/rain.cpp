@@ -17,8 +17,8 @@
 #include "custom_alloc.h"
 
 void WaterLandingEffect(cl_drip *drip);
-void SplashLandingEffect_guess(cl_drip *drip);
-float VectorDistance_guess(vec3_t a, vec3_t b);
+void GroundSplashEffect_guess(cl_drip *drip);
+float DistanceBetween_guess(vec3_t a, vec3_t b);
 
 extern cvar_t *cl_ripples;
 
@@ -108,12 +108,12 @@ void ProcessRain( void )
 		{
 			if (player)
 			{
-				if (VectorDistance_guess(player->origin, curDrip->origin) <= 500)
+				if (DistanceBetween_guess(player->origin, curDrip->origin) <= 500)
 				{
 					if (curDrip->landInWater == 1)
 						WaterLandingEffect(curDrip); // create water rings
 					if (curDrip->landInWater == 2)
-						SplashLandingEffect_guess(curDrip);
+						GroundSplashEffect_guess(curDrip);
 				}
 			}
 
@@ -324,12 +324,12 @@ void WaterLandingEffect(cl_drip *drip)
 	fxcounter++;
 }
 
-float VectorDistance_guess(vec3_t a, vec3_t b)
+float DistanceBetween_guess(vec3_t a, vec3_t b)
 {
 	return Length(b - a);
 }
 
-void SplashLandingEffect_guess(cl_drip *drip)
+void GroundSplashEffect_guess(cl_drip *drip)
 {
 	if (CVAR_GET_FLOAT("r_weather") < 2)
 		return;

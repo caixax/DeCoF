@@ -15,7 +15,7 @@ extern int iMenuMode_guess;
 extern int iDoctorMode_guess;
 extern int iVGUIMenuNoMusic_guess;
 
-void IrrKlangPlay_guess( const char *pszFile );
+void IrrKlangPlayMP3_guess( const char *pszFile );
 
 CGameOver::CGameOver() : Panel( 0, 0, ScreenWidth, ScreenHeight )
 {
@@ -136,7 +136,7 @@ void CGameOver::ActionSignal( int cmd )
 			gViewPort->m_pSaveLoad_guess->m_flSlot4ClickTime_guess = 0;
 			gViewPort->m_pSaveLoad_guess->m_flSlot5ClickTime_guess = 0;
 			gViewPort->m_pSaveLoad_guess->m_iMode_guess = 1;
-			gViewPort->m_pSaveLoad_guess->UpdateSlots_guess();
+			gViewPort->m_pSaveLoad_guess->ReadAllSlots_guess();
 			gViewPort->m_pSaveLoad_guess->setVisible( true );
 			gViewPort->UpdateCursorState();
 
@@ -177,7 +177,7 @@ int MsgCustomDoc_guess( const char *pszName, int iSize, void *pbuf )
 	return 1;
 }
 
-void CustomDocInit_guess()
+void VGUI_CustomDocInit_guess()
 {
 	gEngfuncs.pfnHookUserMsg( "CustomDoc", MsgCustomDoc_guess );
 }
@@ -187,7 +187,7 @@ void CGameOver::setVisible( bool state )
 	if ( state )
 	{
 		if ( !iVGUIMenuNoMusic_guess )
-			IrrKlangPlay_guess( "game_over.mp3" );
+			IrrKlangPlayMP3_guess( "game_over.mp3" );
 
 		m_bLoadArmed_guess = false;
 		m_bExitArmed_guess = false;

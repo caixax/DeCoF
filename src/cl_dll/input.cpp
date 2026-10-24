@@ -89,7 +89,7 @@ void IN_Shutdown( void );
 void V_Init( void );
 void VectorAngles( const float *forward, float *angles );
 int CL_ButtonBits( int );
-void MP3_Shutdown_guess( void );
+void IrrKlangDestroy_guess( void );
 void ParseHintTokens( char *pszName, char *pszFile );
 int IsInDonatorGroup1_guess( void );	// Steam clan 0x29D6CA
 int IsInDonatorGroup2_guess( void );	// Steam clan 0x46AE0A
@@ -945,7 +945,7 @@ void IN_Documents(void)
 {
 }
 
-void IN_XboxFix_guess(void)
+void IN_PadFix_guess(void)
 {
 	bXboxFix_guess = false;
 	gHUD.m_bXboxFix_guess[0] = true;
@@ -1476,7 +1476,7 @@ void InitInput (void)
 	gEngfuncs.pfnAddCommand ("-attack3", IN_Attack3Up);
 	gEngfuncs.pfnAddCommand ("+dodge", IN_DodgeDown);
 	gEngfuncs.pfnAddCommand ("-dodge", IN_DodgeUp);
-	gEngfuncs.pfnAddCommand ("xboxfix", IN_XboxFix_guess);
+	gEngfuncs.pfnAddCommand ("xboxfix", IN_PadFix_guess);
 	gEngfuncs.pfnAddCommand ("documents", IN_Documents);
 	gEngfuncs.pfnAddCommand ("+inventory", IN_InventoryDown);
 	gEngfuncs.pfnAddCommand ("-inventory", IN_InventoryUp);
@@ -1630,5 +1630,5 @@ void ShutdownInput (void)
 void DLLEXPORT HUD_Shutdown( void )
 {
 	ShutdownInput();
-	MP3_Shutdown_guess();
+	IrrKlangDestroy_guess();
 }

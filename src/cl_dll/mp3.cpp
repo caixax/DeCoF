@@ -8,7 +8,7 @@
 
 using namespace irrklang;
 
-char *va_guess( const char *format, ... );
+char *UTIL_VarArgs_guess( const char *format, ... );
 
 // static: the wrappers keep g_pMP3_guess in a register across the calls into CMP3
 static CMP3		*g_pMP3_guess;			// 0x105440A4
@@ -125,9 +125,9 @@ int CMP3::Initialize( void )
 	return 0;
 }
 
-void IrrKlangInit_guess( void )
+void IrrKlangCreate_guess( void )
 {
-	MP3_Shutdown_guess();
+	IrrKlangDestroy_guess();
 
 	g_pMP3_guess = new CMP3;
 	if ( g_pMP3_guess )
@@ -137,7 +137,7 @@ void IrrKlangInit_guess( void )
 	}
 }
 
-void MP3_Shutdown_guess( void )
+void IrrKlangDestroy_guess( void )
 {
 	if ( g_pSoundEngine_guess )
 		g_pSoundEngine_guess->drop();
@@ -172,7 +172,7 @@ bool IrrKlangIsPaused_guess( void )
 	return false;
 }
 
-void IrrKlangPlay_guess( const char *pszFile )
+void IrrKlangPlayMP3_guess( const char *pszFile )
 {
 	if ( g_pMP3_guess )
 		g_pMP3_guess->PlayMP3( pszFile );
@@ -184,7 +184,7 @@ void IrrKlangPlaySFX_guess( const char *pszFile, int iType, bool bFlag, vec3_t v
 		g_pMP3_guess->PlaySFX_guess( pszFile, iType, bFlag, vecOrigin );
 }
 
-void IrrKlangSetParams_guess( float flParm1, float flParm2, float flParm3, float flParm4 )
+void IrrKlangSetFade_guess( float flParm1, float flParm2, float flParm3, float flParm4 )
 {
 	if ( g_pMP3_guess )
 	{
@@ -224,14 +224,14 @@ void IrrKlangStop_guess( float flFadeTime )
 }
 
 // prints the average value of a block of bytes, never called
-void __stdcall PrintAverage_guess( const unsigned char *pData, unsigned int iSize )
+void __stdcall OutputAverage_guess( const unsigned char *pData, unsigned int iSize )
 {
 	int iTotal = 0;
 
 	for ( unsigned int i = 0; i < iSize; i++ )
 		iTotal += pData[i];
 
-	gEngfuncs.pfnCenterPrint( va_guess( "%.3f\n", (float)iTotal / (float)iSize ) );
+	gEngfuncs.pfnCenterPrint( UTIL_VarArgs_guess( "%.3f\n", (float)iTotal / (float)iSize ) );
 }
 
 int CMP3::PlayMP3( const char *pszSong )

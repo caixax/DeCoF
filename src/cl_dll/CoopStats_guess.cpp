@@ -13,7 +13,7 @@
 #include "CoopStats_guess.h"
 #include "Credits_guess.h"
 
-void IrrKlangPlay_guess( const char *pszFile );
+void IrrKlangPlayMP3_guess( const char *pszFile );
 void IrrKlangSetLoop_guess( bool bLoop );
 
 int iUnknown1018F6D0_guess = 256;	// nothing reads it in 1.6a
@@ -565,7 +565,7 @@ int MsgCoopStats_guess( const char *pszName, int iSize, void *pbuf )
 	if ( iTimeAttack )
 	{
 		IrrKlangSetLoop_guess( true );
-		IrrKlangPlay_guess( "stats.mp3" );
+		IrrKlangPlayMP3_guess( "stats.mp3" );
 
 		switch ( iGrade )
 		{
@@ -644,23 +644,23 @@ int MsgCoopStats_guess( const char *pszName, int iSize, void *pbuf )
 			gViewPort->m_pCoopStats_guess->m_pStatLabel_guess[iPlayer][9]->setFgColor( 255, 255, 255, 0 );
 		}
 
-		gViewPort->m_pCoopStats_guess->m_pStatLabel_guess[iPlayer][1]->setText( va_guess( "%s - Shots fired: %i", g_PlayerInfoList[iPlayer].name, iShotsFired ) );
-		gViewPort->m_pCoopStats_guess->m_pStatLabel_guess[iPlayer][2]->setText( va_guess( "%s - Shots hit: %i", g_PlayerInfoList[iPlayer].name, iShotsHit ) );
-		gViewPort->m_pCoopStats_guess->m_pStatLabel_guess[iPlayer][3]->setText( va_guess( "%s - Shots missed: %i", g_PlayerInfoList[iPlayer].name, iShotsMissed ) );
-		gViewPort->m_pCoopStats_guess->m_pStatLabel_guess[iPlayer][4]->setText( va_guess( "%s - Accuracy: %i", g_PlayerInfoList[iPlayer].name, (int)flAccuracy ) );
-		gViewPort->m_pCoopStats_guess->m_pStatLabel_guess[iPlayer][5]->setText( va_guess( "%s - Damage taken: %i", g_PlayerInfoList[iPlayer].name, iDamageTaken ) );
-		gViewPort->m_pCoopStats_guess->m_pStatLabel_guess[iPlayer][6]->setText( va_guess( "%s - Time taken: %i:%i:%i", g_PlayerInfoList[iPlayer].name, iHours, iMinutes, iSeconds ) );
-		gViewPort->m_pCoopStats_guess->m_pStatLabel_guess[iPlayer][7]->setText( va_guess( "%s - Killed by melee: %i", g_PlayerInfoList[iPlayer].name, iMeleeKills ) );
-		gViewPort->m_pCoopStats_guess->m_pStatLabel_guess[iPlayer][8]->setText( va_guess( "%s - Killed by shooting: %i", g_PlayerInfoList[iPlayer].name, iShootingKills ) );
+		gViewPort->m_pCoopStats_guess->m_pStatLabel_guess[iPlayer][1]->setText( UTIL_VarArgs_guess( "%s - Shots fired: %i", g_PlayerInfoList[iPlayer].name, iShotsFired ) );
+		gViewPort->m_pCoopStats_guess->m_pStatLabel_guess[iPlayer][2]->setText( UTIL_VarArgs_guess( "%s - Shots hit: %i", g_PlayerInfoList[iPlayer].name, iShotsHit ) );
+		gViewPort->m_pCoopStats_guess->m_pStatLabel_guess[iPlayer][3]->setText( UTIL_VarArgs_guess( "%s - Shots missed: %i", g_PlayerInfoList[iPlayer].name, iShotsMissed ) );
+		gViewPort->m_pCoopStats_guess->m_pStatLabel_guess[iPlayer][4]->setText( UTIL_VarArgs_guess( "%s - Accuracy: %i", g_PlayerInfoList[iPlayer].name, (int)flAccuracy ) );
+		gViewPort->m_pCoopStats_guess->m_pStatLabel_guess[iPlayer][5]->setText( UTIL_VarArgs_guess( "%s - Damage taken: %i", g_PlayerInfoList[iPlayer].name, iDamageTaken ) );
+		gViewPort->m_pCoopStats_guess->m_pStatLabel_guess[iPlayer][6]->setText( UTIL_VarArgs_guess( "%s - Time taken: %i:%i:%i", g_PlayerInfoList[iPlayer].name, iHours, iMinutes, iSeconds ) );
+		gViewPort->m_pCoopStats_guess->m_pStatLabel_guess[iPlayer][7]->setText( UTIL_VarArgs_guess( "%s - Killed by melee: %i", g_PlayerInfoList[iPlayer].name, iMeleeKills ) );
+		gViewPort->m_pCoopStats_guess->m_pStatLabel_guess[iPlayer][8]->setText( UTIL_VarArgs_guess( "%s - Killed by shooting: %i", g_PlayerInfoList[iPlayer].name, iShootingKills ) );
 
 		if ( iTimeAttack )
-			gViewPort->m_pCoopStats_guess->m_pStatLabel_guess[iPlayer][9]->setText( va_guess( "%s - Seconds earned: %i", g_PlayerInfoList[iPlayer].name, iSecondsEarned ) );
+			gViewPort->m_pCoopStats_guess->m_pStatLabel_guess[iPlayer][9]->setText( UTIL_VarArgs_guess( "%s - Seconds earned: %i", g_PlayerInfoList[iPlayer].name, iSecondsEarned ) );
 	}
 
 	return 1;
 }
 
-void CoopStatsInit_guess()
+void VGUI_CoopStatsInit_guess()
 {
 	gEngfuncs.pfnHookUserMsg( "CoopStats", MsgCoopStats_guess );
 	gEngfuncs.pfnHookUserMsg( "BeatCoop", MsgBeatCoop_guess );

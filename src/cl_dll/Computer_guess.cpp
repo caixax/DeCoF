@@ -206,7 +206,7 @@ int MsgComputer_guess( const char *pszName, int iSize, void *pbuf )
 	return 1;
 }
 
-void ComputerInit_guess()
+void VGUI_ComputerInit_guess()
 {
 	gEngfuncs.pfnHookUserMsg( "Computer", MsgComputer_guess );
 }

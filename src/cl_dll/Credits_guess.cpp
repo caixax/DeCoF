@@ -29,7 +29,7 @@ extern bool g_bHoodieLoaded_guess;
 extern bool g_bJeansLoaded_guess;
 extern bool g_bFaceLoaded_guess;
 
-void IrrKlangPlay_guess( const char *pszFile );
+void IrrKlangPlayMP3_guess( const char *pszFile );
 void IrrKlangSetLoop_guess( bool bLoop );
 void IrrKlangStop_guess( float flFadeTime );
 
@@ -487,50 +487,50 @@ int MsgCredits_guess( const char *pszName, int iSize, void *pbuf )
 	gViewPort->m_pCredits_guess->m_bShowStats_guess = false;
 	gViewPort->m_pCredits_guess->m_flStartTime_guess = gEngfuncs.GetClientTime();
 
-	gViewPort->m_pCredits_guess->m_pStatLabel_guess[1]->setText( va_guess( "Shots fired: %i", gViewPort->m_pCredits_guess->m_iShotsFired_guess ) );
-	gViewPort->m_pCredits_guess->m_pStatLabel_guess[2]->setText( va_guess( "Shots hit: %i", gViewPort->m_pCredits_guess->m_iShotsHit_guess ) );
-	gViewPort->m_pCredits_guess->m_pStatLabel_guess[3]->setText( va_guess( "Shots missed: %i", gViewPort->m_pCredits_guess->m_iShotsMissed_guess ) );
-	gViewPort->m_pCredits_guess->m_pStatLabel_guess[4]->setText( va_guess( "Overall accuracy: %i percent", (int)gViewPort->m_pCredits_guess->m_flAccuracy_guess ) );
+	gViewPort->m_pCredits_guess->m_pStatLabel_guess[1]->setText( UTIL_VarArgs_guess( "Shots fired: %i", gViewPort->m_pCredits_guess->m_iShotsFired_guess ) );
+	gViewPort->m_pCredits_guess->m_pStatLabel_guess[2]->setText( UTIL_VarArgs_guess( "Shots hit: %i", gViewPort->m_pCredits_guess->m_iShotsHit_guess ) );
+	gViewPort->m_pCredits_guess->m_pStatLabel_guess[3]->setText( UTIL_VarArgs_guess( "Shots missed: %i", gViewPort->m_pCredits_guess->m_iShotsMissed_guess ) );
+	gViewPort->m_pCredits_guess->m_pStatLabel_guess[4]->setText( UTIL_VarArgs_guess( "Overall accuracy: %i percent", (int)gViewPort->m_pCredits_guess->m_flAccuracy_guess ) );
 
 	if ( iCoop )
 	{
-		gViewPort->m_pCredits_guess->m_pStatLabel_guess[5]->setText( va_guess( "Overall damage taken: %i", gViewPort->m_pCredits_guess->m_iDamageTaken_guess ) );
-		gViewPort->m_pCredits_guess->m_pStatLabel_guess[6]->setText( va_guess( "Distance travelled on foot: %i.%i km", (int)gViewPort->m_pCredits_guess->m_flDistance_guess, (int)gViewPort->m_pCredits_guess->m_flDistanceDecimal_guess ) );
-		gViewPort->m_pCredits_guess->m_pStatLabel_guess[7]->setText( va_guess( "Time taken: %i:%i:%i", gViewPort->m_pCredits_guess->m_iHours_guess, gViewPort->m_pCredits_guess->m_iMinutes_guess, gViewPort->m_pCredits_guess->m_iSeconds_guess ) );
-		gViewPort->m_pCredits_guess->m_pStatLabel_guess[8]->setText( va_guess( "Enemies killed by melee: %i", gViewPort->m_pCredits_guess->m_iMeleeKills_guess ) );
-		gViewPort->m_pCredits_guess->m_pStatLabel_guess[9]->setText( va_guess( "Enemies killed by firearms: %i", gViewPort->m_pCredits_guess->m_iFirearmKills_guess ) );
+		gViewPort->m_pCredits_guess->m_pStatLabel_guess[5]->setText( UTIL_VarArgs_guess( "Overall damage taken: %i", gViewPort->m_pCredits_guess->m_iDamageTaken_guess ) );
+		gViewPort->m_pCredits_guess->m_pStatLabel_guess[6]->setText( UTIL_VarArgs_guess( "Distance travelled on foot: %i.%i km", (int)gViewPort->m_pCredits_guess->m_flDistance_guess, (int)gViewPort->m_pCredits_guess->m_flDistanceDecimal_guess ) );
+		gViewPort->m_pCredits_guess->m_pStatLabel_guess[7]->setText( UTIL_VarArgs_guess( "Time taken: %i:%i:%i", gViewPort->m_pCredits_guess->m_iHours_guess, gViewPort->m_pCredits_guess->m_iMinutes_guess, gViewPort->m_pCredits_guess->m_iSeconds_guess ) );
+		gViewPort->m_pCredits_guess->m_pStatLabel_guess[8]->setText( UTIL_VarArgs_guess( "Enemies killed by melee: %i", gViewPort->m_pCredits_guess->m_iMeleeKills_guess ) );
+		gViewPort->m_pCredits_guess->m_pStatLabel_guess[9]->setText( UTIL_VarArgs_guess( "Enemies killed by firearms: %i", gViewPort->m_pCredits_guess->m_iFirearmKills_guess ) );
 		gViewPort->m_pCredits_guess->m_pStatLabel_guess[10]->setText( "" );
 		gViewPort->m_pCredits_guess->m_pStatLabel_guess[11]->setText( "" );
 		gViewPort->m_pCredits_guess->m_pStatLabel_guess[12]->setText( "" );
 	}
 	else
 	{
-		gViewPort->m_pCredits_guess->m_pStatLabel_guess[5]->setText( va_guess( "Syringes used: %i", gViewPort->m_pCredits_guess->m_iSyringesUsed_guess ) );
-		gViewPort->m_pCredits_guess->m_pStatLabel_guess[6]->setText( va_guess( "Times saved: %i", gViewPort->m_pCredits_guess->m_iTimesSaved_guess ) );
-		gViewPort->m_pCredits_guess->m_pStatLabel_guess[7]->setText( va_guess( "Weapons found: %i", gViewPort->m_pCredits_guess->m_iWeaponsFound_guess ) );
-		gViewPort->m_pCredits_guess->m_pStatLabel_guess[8]->setText( va_guess( "Overall damage taken: %i", gViewPort->m_pCredits_guess->m_iDamageTaken_guess ) );
-		gViewPort->m_pCredits_guess->m_pStatLabel_guess[9]->setText( va_guess( "Distance travelled on foot: %i.%i km", (int)gViewPort->m_pCredits_guess->m_flDistance_guess, (int)gViewPort->m_pCredits_guess->m_flDistanceDecimal_guess ) );
-		gViewPort->m_pCredits_guess->m_pStatLabel_guess[10]->setText( va_guess( "Time taken: %i:%i:%i", gViewPort->m_pCredits_guess->m_iHours_guess, gViewPort->m_pCredits_guess->m_iMinutes_guess, gViewPort->m_pCredits_guess->m_iSeconds_guess ) );
-		gViewPort->m_pCredits_guess->m_pStatLabel_guess[11]->setText( va_guess( "Enemies killed by melee: %i", gViewPort->m_pCredits_guess->m_iMeleeKills_guess ) );
-		gViewPort->m_pCredits_guess->m_pStatLabel_guess[12]->setText( va_guess( "Enemies killed by firearms: %i", gViewPort->m_pCredits_guess->m_iFirearmKills_guess ) );
+		gViewPort->m_pCredits_guess->m_pStatLabel_guess[5]->setText( UTIL_VarArgs_guess( "Syringes used: %i", gViewPort->m_pCredits_guess->m_iSyringesUsed_guess ) );
+		gViewPort->m_pCredits_guess->m_pStatLabel_guess[6]->setText( UTIL_VarArgs_guess( "Times saved: %i", gViewPort->m_pCredits_guess->m_iTimesSaved_guess ) );
+		gViewPort->m_pCredits_guess->m_pStatLabel_guess[7]->setText( UTIL_VarArgs_guess( "Weapons found: %i", gViewPort->m_pCredits_guess->m_iWeaponsFound_guess ) );
+		gViewPort->m_pCredits_guess->m_pStatLabel_guess[8]->setText( UTIL_VarArgs_guess( "Overall damage taken: %i", gViewPort->m_pCredits_guess->m_iDamageTaken_guess ) );
+		gViewPort->m_pCredits_guess->m_pStatLabel_guess[9]->setText( UTIL_VarArgs_guess( "Distance travelled on foot: %i.%i km", (int)gViewPort->m_pCredits_guess->m_flDistance_guess, (int)gViewPort->m_pCredits_guess->m_flDistanceDecimal_guess ) );
+		gViewPort->m_pCredits_guess->m_pStatLabel_guess[10]->setText( UTIL_VarArgs_guess( "Time taken: %i:%i:%i", gViewPort->m_pCredits_guess->m_iHours_guess, gViewPort->m_pCredits_guess->m_iMinutes_guess, gViewPort->m_pCredits_guess->m_iSeconds_guess ) );
+		gViewPort->m_pCredits_guess->m_pStatLabel_guess[11]->setText( UTIL_VarArgs_guess( "Enemies killed by melee: %i", gViewPort->m_pCredits_guess->m_iMeleeKills_guess ) );
+		gViewPort->m_pCredits_guess->m_pStatLabel_guess[12]->setText( UTIL_VarArgs_guess( "Enemies killed by firearms: %i", gViewPort->m_pCredits_guess->m_iFirearmKills_guess ) );
 	}
 
 	switch ( gViewPort->m_pCredits_guess->m_iDifficulty_guess )
 	{
 	case 1:
-		gViewPort->m_pCredits_guess->m_pStatLabel_guess[13]->setText( va_guess( "Difficulty chosen: Easy" ) );
+		gViewPort->m_pCredits_guess->m_pStatLabel_guess[13]->setText( UTIL_VarArgs_guess( "Difficulty chosen: Easy" ) );
 		break;
 	case 2:
-		gViewPort->m_pCredits_guess->m_pStatLabel_guess[13]->setText( va_guess( "Difficulty chosen: Normal" ) );
+		gViewPort->m_pCredits_guess->m_pStatLabel_guess[13]->setText( UTIL_VarArgs_guess( "Difficulty chosen: Normal" ) );
 		break;
 	case 3:
-		gViewPort->m_pCredits_guess->m_pStatLabel_guess[13]->setText( va_guess( "Difficulty chosen: Hard" ) );
+		gViewPort->m_pCredits_guess->m_pStatLabel_guess[13]->setText( UTIL_VarArgs_guess( "Difficulty chosen: Hard" ) );
 		break;
 	case 4:
-		gViewPort->m_pCredits_guess->m_pStatLabel_guess[13]->setText( va_guess( "Difficulty chosen: Nightmare" ) );
+		gViewPort->m_pCredits_guess->m_pStatLabel_guess[13]->setText( UTIL_VarArgs_guess( "Difficulty chosen: Nightmare" ) );
 		break;
 	default:
-		gViewPort->m_pCredits_guess->m_pStatLabel_guess[13]->setText( va_guess( "Difficulty chosen: Easy" ) );
+		gViewPort->m_pCredits_guess->m_pStatLabel_guess[13]->setText( UTIL_VarArgs_guess( "Difficulty chosen: Easy" ) );
 		break;
 	}
 
@@ -721,7 +721,7 @@ void CCredits::ShowUnlock_guess( int iUnlock, const char *pszText, int iDistance
 	g_HeadShieldState = SHIELD_ON;
 }
 
-char *va_guess( const char *format, ... )
+char *UTIL_VarArgs_guess( const char *format, ... )
 {
 	va_list argptr;
 	static char string[1024];
@@ -733,7 +733,7 @@ char *va_guess( const char *format, ... )
 	return string;
 }
 
-void CreditsInit_guess()
+void VGUI_CreditsInit_guess()
 {
 	gEngfuncs.pfnHookUserMsg( "Credits", MsgCredits_guess );
 }
@@ -802,7 +802,7 @@ void CCredits::solve()
 		if ( flTime > m_flStatsTime_guess && !m_bShowStats_guess )
 		{
 			IrrKlangSetLoop_guess( true );
-			IrrKlangPlay_guess( "stats.mp3" );
+			IrrKlangPlayMP3_guess( "stats.mp3" );
 			m_bShowStats_guess = true;
 			m_pLetterboxBottom_guess->setVisible( false );
 			m_pLetterboxTop_guess->setVisible( false );

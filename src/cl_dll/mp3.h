@@ -51,14 +51,14 @@ public:
 	bool	m_bStopping_guess;
 };
 
-void IrrKlangInit_guess( void );
-void MP3_Shutdown_guess( void );
+void IrrKlangCreate_guess( void );
+void IrrKlangDestroy_guess( void );
 void IrrKlangFrame_guess( void );
 void IrrKlangInitialize_guess( void );
 bool IrrKlangIsPaused_guess( void );
-void IrrKlangPlay_guess( const char *pszFile );
+void IrrKlangPlayMP3_guess( const char *pszFile );
 void IrrKlangPlaySFX_guess( const char *pszFile, int iType, bool bFlag, vec3_t vecOrigin );
-void IrrKlangSetParams_guess( float flParm1, float flParm2, float flParm3, float flParm4 );
+void IrrKlangSetFade_guess( float flParm1, float flParm2, float flParm3, float flParm4 );
 void IrrKlangSetLoop_guess( bool bLoop );
 void IrrKlangSetPaused_guess( bool bPaused );
 void IrrKlangSetStopping_guess( bool bStopping );

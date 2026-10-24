@@ -113,34 +113,34 @@ void CTelephone::ActionSignal( int cmd )
 	switch ( cmd )
 	{
 	case 1:
-		PressDigit_guess( 1 );
+		AddDigit_guess( 1 );
 		break;
 	case 2:
-		PressDigit_guess( 2 );
+		AddDigit_guess( 2 );
 		break;
 	case 3:
-		PressDigit_guess( 3 );
+		AddDigit_guess( 3 );
 		break;
 	case 4:
-		PressDigit_guess( 4 );
+		AddDigit_guess( 4 );
 		break;
 	case 5:
-		PressDigit_guess( 5 );
+		AddDigit_guess( 5 );
 		break;
 	case 6:
-		PressDigit_guess( 6 );
+		AddDigit_guess( 6 );
 		break;
 	case 7:
-		PressDigit_guess( 7 );
+		AddDigit_guess( 7 );
 		break;
 	case 8:
-		PressDigit_guess( 8 );
+		AddDigit_guess( 8 );
 		break;
 	case 9:
-		PressDigit_guess( 9 );
+		AddDigit_guess( 9 );
 		break;
 	case 10:
-		PressDigit_guess( 0 );
+		AddDigit_guess( 0 );
 		break;
 	case 11:
 		Dial_guess();
@@ -156,7 +156,7 @@ void CTelephone::ActionSignal( int cmd )
 	}
 }
 
-void CTelephone::PressDigit_guess( int digit )
+void CTelephone::AddDigit_guess( int digit )
 {
 	char szDigit[4];
 

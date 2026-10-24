@@ -55,6 +55,6 @@ public:
 	}
 };
 
-void ComputerInit_guess();
+void VGUI_ComputerInit_guess();
 
 #endif // _COMPUTER_H

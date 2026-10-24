@@ -609,12 +609,12 @@ void CNoteDocument::SetPage_guess( int page )
 		gEngfuncs.pfnPlaySoundByName( m_szSound_guess, 1 );
 
 	m_iLine_guess = 1;
-	ReadLine_guess();
+	SetText_guess();
 
 	m_pImageLabel_guess->setImage( pImage );
 }
 
-void CNoteDocument::ReadLine_guess()
+void CNoteDocument::SetText_guess()
 {
 	char szPath[256];
 

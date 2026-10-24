@@ -21,7 +21,7 @@
 ?CaptureBlurTexture_guess@@YAXHHHH@Z
 ?LoadJeansTexture_guess@@YAXXZ
 ?LoadWaterLoTexture_guess@@YAXXZ
-?UpdatePlayerFlashlights_guess@@YAXXZ
+?DrawPlayerFlashlights_guess@@YAXXZ
 ?LoadGloveTexture_guess@@YAXH@Z
 ?LoadPoliceSleeveTexture_guess@@YAXH@Z
-?VecDistance_guess@@YAMVVector@@0@Z
+?DistanceTo_guess@@YAMVVector@@0@Z

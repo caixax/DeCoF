@@ -629,8 +629,8 @@ void LoadWaterLoTexture_guess( void )
 		g_bWaterLoLoaded_guess = true;
 }
 
-// a copy of VectorDistance_guess in rain.cpp (identical bytes at 100855B0)
-float VecDistance_guess( vec3_t a, vec3_t b )
+// a copy of DistanceBetween_guess in rain.cpp (identical bytes at 100855B0)
+float DistanceTo_guess( vec3_t a, vec3_t b )
 {
 	return Length(b - a);
 }
@@ -639,7 +639,7 @@ float VecDistance_guess( vec3_t a, vec3_t b )
 // Cry of Fear: flashlights of the other players in multiplayer
 // (called from StudioCalcAttachments, the light starts at attachment 3 of the player model)
 //
-void UpdatePlayerFlashlights_guess( void )
+void DrawPlayerFlashlights_guess( void )
 {
 	cl_entity_t *localplayer = gEngfuncs.GetLocalPlayer();
 
@@ -1240,7 +1240,7 @@ void CStudioModelRenderer::GL_SetupLighting ()
 	{
 		static bool bFlicker_guess;
 
-		float dist = VecDistance_guess(v_origin, m_pCurrentEntity->curstate.origin) - 64;
+		float dist = DistanceTo_guess(v_origin, m_pCurrentEntity->curstate.origin) - 64;
 		if (dist < 0)
 			dist = 0;
 		if (dist > 255.0)

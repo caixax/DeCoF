@@ -98,7 +98,7 @@ int MsgBossBar_guess( const char *pszName, int iSize, void *pbuf )
 	return 1;
 }
 
-void BossBarInit_guess()
+void VGUI_BossBarInit_guess()
 {
 	gEngfuncs.pfnHookUserMsg( "BossBar", MsgBossBar_guess );
 }

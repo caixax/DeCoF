@@ -114,7 +114,7 @@ public:
 	bool IsProgramValid_guess( const char *path, int type );
 	cgprogram_t_guess *RemoveProgram_guess( cgprogram_t_guess *program );
 	void Shutdown_guess( void );
-	bool Init_guess( void );
+	bool Startup_guess( void );
 
 	void EnableVertexProfile_guess( void )
 	{

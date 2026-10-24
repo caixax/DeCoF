@@ -17,7 +17,7 @@ public:
 	int KeyInput( int down, int keynum, const char *pszCurrentBinding );
 
 	void Activate_guess();
-	void PressKey_guess( int key );
+	void EnterKey_guess( int key );
 	void Submit_guess();
 	void UpdateLayout_guess();
 
@@ -74,6 +74,6 @@ public:
 	}
 };
 
-void KeypadInit_guess();
+void VGUI_KeypadInit_guess();
 
 #endif // _KEYPAD_H

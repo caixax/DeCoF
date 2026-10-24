@@ -4,7 +4,7 @@
 ?DrawHudNumberString@CHud@@QAEHHHHHHHH@Z
 ?DrawHudStringReverse@CHud@@QAEHHHHPADHHH@Z
 ?DrawBlurTest@CHud@@QAEXM@Z
-?RedrawFrame_guess@@YAXXZ
+?DrawMP3Frame_guess@@YAXXZ
 ?IsViewEntityActive_guess@@YA_NXZ
 ?Think@CHud@@QAEXXZ
 ?AverageFPS_guess@CHud@@QAEHH@Z

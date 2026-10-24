@@ -1,9 +1,9 @@
 ??0CHUDControl@@QAE@XZ
 ??1CHUDControl@@QAE@XZ
 ?HUDControlInit_guess@@YAXXZ
-?UpdateHUDVisibility_guess@CHUDControl@@QAEXXZ
+?HandleHUDVisibility_guess@CHUDControl@@QAEXXZ
 ?Initialize@CHUDControl@@QAEXXZ
-?UpdateLogo_guess@CHUDControl@@QAEXXZ
+?LogoUpdate_guess@CHUDControl@@QAEXXZ
 ?MsgCameraZoom_guess@@YAHPBDHPAX@Z
 ?MsgChapter_guess@@YAHPBDHPAX@Z
 ?MsgCoFLogo_guess@@YAHPBDHPAX@Z
@@ -18,10 +18,10 @@
 ?MsgShowHint_guess@@YAHPBDHPAX@Z
 ?MsgSimonMode_guess@@YAHPBDHPAX@Z
 ?MsgStamina_guess@@YAHPBDHPAX@Z
-?MsgTimer_guess@@YAHPBDHPAX@Z
+?MsgTimerMode_guess@@YAHPBDHPAX@Z
 ?MsgTimerPlus_guess@@YAHPBDHPAX@Z
 ?ParseHintTokens@@YAXPAD0@Z
-?DrawMessages_guess@CHUDControl@@QAEXXZ
+?RenderMessages_guess@CHUDControl@@QAEXXZ
 ?ShowSMSIcon_guess@CHUDControl@@QAEX_N@Z
 ?paint@CHUDControl@@MAEXXZ
 ?paintBackground@CHUDControl@@MAEXXZ

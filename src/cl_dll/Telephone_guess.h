@@ -15,7 +15,7 @@ public:
 	void Initialize();
 	void ActionSignal( int cmd );
 
-	void PressDigit_guess( int digit );
+	void AddDigit_guess( int digit );
 	void Dial_guess();
 
 	virtual void setVisible( bool state );

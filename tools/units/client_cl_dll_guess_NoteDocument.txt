@@ -10,7 +10,7 @@
 ?MsgNoteDoc_guess@@YAHPBDHPAX@Z
 ?NextLine_guess@CNoteDocument@@QAEXXZ
 ?PrevLine_guess@CNoteDocument@@QAEXXZ
-?ReadLine_guess@CNoteDocument@@QAEXXZ
+?SetText_guess@CNoteDocument@@QAEXXZ
 ?paint@CNoteDocument@@MAEXXZ
 ?paintBackground@CNoteDocument@@MAEXXZ
 ?setVisible@CNoteDocument@@UAEX_N@Z

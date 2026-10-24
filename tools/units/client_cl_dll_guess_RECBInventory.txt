@@ -1,10 +1,10 @@
 ??0CRECBInventory@@QAE@HHHHHH@Z
-?Reset_guess@CRECBInventory@@QAEXXZ
+?ClearItems_guess@CRECBInventory@@QAEXXZ
 ?KeyInput@CRECBInventory@@QAEHHHPBD@Z
-?IsCursorOver_guess@CRECBInventory@@QAE_NHHHH@Z
+?MouseOver_guess@CRECBInventory@@QAE_NHHHH@Z
 ?MsgInventChck_guess@@YAHPBDHPAX@Z
 ?SetAction_guess@CRECBInventory@@QAEXH@Z
-?QSlotInit_guess@@YAXXZ
+?VGUI_QSlotInit_guess@@YAXXZ
 ?actionPerformed@CRECBInventoryHandler_Command@@UAEXPAVPanel@vgui@@@Z
 ?ActionSignal@CRECBInventory@@QAEXH@Z
 ?DoAction_guess@CRECBInventory@@QAEXH@Z

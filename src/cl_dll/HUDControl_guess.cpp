@@ -418,7 +418,7 @@ int MsgSimonMode_guess( const char *pszName, int iSize, void *pbuf )
 	return 1;
 }
 
-int MsgTimer_guess( const char *pszName, int iSize, void *pbuf )
+int MsgTimerMode_guess( const char *pszName, int iSize, void *pbuf )
 {
 	if ( gViewPort->m_pHUDControl_guess )
 	{
@@ -736,7 +736,7 @@ void HUDControlInit_guess()
 	gEngfuncs.pfnHookUserMsg( "HealthCap", MsgHealthCap_guess );
 	gEngfuncs.pfnHookUserMsg( "Chapter", MsgChapter_guess );
 	gEngfuncs.pfnHookUserMsg( "ControlHint", MsgControlHint_guess );
-	gEngfuncs.pfnHookUserMsg( "Timer", MsgTimer_guess );
+	gEngfuncs.pfnHookUserMsg( "Timer", MsgTimerMode_guess );
 	gEngfuncs.pfnHookUserMsg( "Lobby", MsgLobby_guess );
 	gEngfuncs.pfnHookUserMsg( "MPModel", MsgMPModel_guess );
 	gEngfuncs.pfnHookUserMsg( "HoldBreath", MsgHoldBreath_guess );
@@ -1122,7 +1122,7 @@ CHUDControl::~CHUDControl()
 	delete m_pIntroductionImage_guess;
 }
 
-void CHUDControl::UpdateHUDVisibility_guess()
+void CHUDControl::HandleHUDVisibility_guess()
 {
 	int i;
 
@@ -1321,7 +1321,7 @@ void CHUDControl::Initialize()
 	m_iInventoryHintY_guess = -160;
 }
 
-void CHUDControl::UpdateLogo_guess()
+void CHUDControl::LogoUpdate_guess()
 {
 	if ( m_bShowLogo_guess )
 	{
@@ -1366,7 +1366,7 @@ void CHUDControl::UpdateLogo_guess()
 	}
 }
 
-void CHUDControl::DrawMessages_guess()
+void CHUDControl::RenderMessages_guess()
 {
 	float flTime = gEngfuncs.GetClientTime();
 
@@ -1763,7 +1763,7 @@ void CHUDControl::paint()
 		}
 	}
 
-	DrawMessages_guess();
+	RenderMessages_guess();
 	Panel::paint();
 }
 
@@ -2160,8 +2160,8 @@ void CHUDControl::solve()
 		}
 	}
 
-	UpdateHUDVisibility_guess();
-	UpdateLogo_guess();
+	HandleHUDVisibility_guess();
+	LogoUpdate_guess();
 
 	if ( iWheelchair_guess && m_pStaminaBar_guess->isVisible() )
 		m_pStaminaBar_guess->setVisible( false );

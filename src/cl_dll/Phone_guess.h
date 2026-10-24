@@ -16,9 +16,9 @@ public:
 	void ActionSignal( int cmd );
 	int KeyInput( int down, int keynum, const char *pszCurrentBinding );
 
-	void PressDigit_guess( int digit );
+	void AddDigit_guess( int digit );
 	void Clear_guess();
-	void Dial_guess();
+	void PhoneDial_guess();
 
 	virtual void setVisible( bool state )
 	{

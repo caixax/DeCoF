@@ -1043,17 +1043,17 @@ public:
 	float GetSensitivity();
 
 	char *GetKeyForCommand_guess( char *pszCommand );	// the key bound to a command in config.cfg ("Couldn't get key for bind %s!")
-	char *GetInventoryItem_guess( int iSlot );			// m_szInventoryItem1_guess-6, slot 1-6
+	char *GetSlotItem_guess( int iSlot );			// m_szInventoryItem1_guess-6, slot 1-6
 	char *CheckItem( char *pszName, char *pszFile );	// the value of key pszName in an item script (" * CheckItem parsing error")
 	int AverageFPS_guess( int iFPS );					// adds a sample to m_iFPS_guess, returns the average of the last 50
 	void DrawBlurTest( float frametime );				// buz: a free function in Paranoia, the screen blur of Cry of Fear
 	void DrawNewFade_guess( float flTime );				// draws the NewFade fade, never called in 1.6a (the argument is unused)
 
 	// never called in 1.6a
-	int AddUnknown5590_guess( int iValue );
-	int SubUnknown5590_guess( int iValue );
+	int PlusUnknown5590_guess( int iValue );
+	int MinusUnknown5590_guess( int iValue );
 
-	int		m_iUnknown5590_guess;	// only read by AddUnknown5590_guess; gHUD is 0x5598 bytes (MP3FileInfo object at gHUD+0x5598)
+	int		m_iUnknown5590_guess;	// only read by PlusUnknown5590_guess; gHUD is 0x5598 bytes (MP3FileInfo object at gHUD+0x5598)
 };
 
 class TeamFortressViewport;

@@ -403,7 +403,7 @@ int MsgSaveLoad_guess( const char *pszName, int iSize, void *pbuf )
 		if ( !gViewPort->m_pSaveLoad_guess->m_iMode_guess )
 			strcpy( gViewPort->m_pSaveLoad_guess->m_szSaveName_guess, READ_STRING() );
 
-		gViewPort->m_pSaveLoad_guess->UpdateSlots_guess();
+		gViewPort->m_pSaveLoad_guess->ReadAllSlots_guess();
 		gViewPort->m_pSaveLoad_guess->setVisible( true );
 		gViewPort->UpdateCursorState();
 		gEngfuncs.pfnServerCmd( "freeze 1024" );
@@ -417,12 +417,12 @@ int MsgSaveLoad_guess( const char *pszName, int iSize, void *pbuf )
 	return 1;
 }
 
-bool DirectoryExists_guess( const char *pszPath )
+bool PathExists_guess( const char *pszPath )
 {
 	return GetFileAttributes( pszPath ) != INVALID_FILE_ATTRIBUTES;
 }
 
-void CSaveLoad::UpdateSlots_guess()
+void CSaveLoad::ReadAllSlots_guess()
 {
 	m_pSlot1Label_guess->setText( "" );
 	m_pSlot2Label_guess->setText( "" );
@@ -502,7 +502,7 @@ void CSaveLoad::WriteSaveInfo_guess( const char *pszFile )
 			szDir[i] = '\\';
 	}
 
-	if ( !DirectoryExists_guess( szDir ) )
+	if ( !PathExists_guess( szDir ) )
 	{
 		gEngfuncs.Con_Printf( "Creating save directory %s\n", szDir );
 

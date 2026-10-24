@@ -16,7 +16,7 @@ extern bool g_bSleeveLoaded_guess;
 extern bool g_bJeansLoaded_guess;
 extern bool g_bFaceLoaded_guess;
 
-void SetCustomHoodie_guess();
+void UseCustomHoodie_guess();
 
 CClothesMenu::CClothesMenu() : Panel( 0, 0, ScreenWidth, ScreenHeight )
 {
@@ -203,7 +203,7 @@ void CClothesMenu::ActionSignal( int cmd )
 	case 12:
 		if ( m_iUnlocked_guess & 0x800 )
 		{
-			SetCustomHoodie_guess();
+			UseCustomHoodie_guess();
 			m_flNextClick_guess = gEngfuncs.GetClientTime() + 0.5;
 		}
 		break;
@@ -340,7 +340,7 @@ void CClothesMenu::UpdateButtons_guess()
 
 }
 
-void SetCustomHoodie_guess()
+void UseCustomHoodie_guess()
 {
 	char szCommand[256];
 
@@ -365,7 +365,7 @@ void SetCustomHoodie_guess()
 	}
 }
 
-void ClothesInit_guess()
+void VGUI_ClothesInit_guess()
 {
 	gHUD.m_iClothesState_guess = 0;
 	gEngfuncs.pfnHookUserMsg( "Clothes", MsgClothes_guess );

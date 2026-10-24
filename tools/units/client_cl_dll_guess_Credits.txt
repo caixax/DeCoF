@@ -1,7 +1,7 @@
 ?CountLines_guess@CCredits@@QAEHXZ
 ?Initialize@CCredits@@QAEXXZ
-?va_guess@@YAPADPBDZZ
-?CreditsInit_guess@@YAXXZ
+?UTIL_VarArgs_guess@@YAPADPBDZZ
+?VGUI_CreditsInit_guess@@YAXXZ
 ??0CCredits@@QAE@XZ
 ?MsgCredits_guess@@YAHPBDHPAX@Z
 ?SetLine_guess@CCredits@@QAEXHH@Z

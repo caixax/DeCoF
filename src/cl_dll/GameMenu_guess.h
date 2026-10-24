@@ -37,7 +37,7 @@ public:
 	void ActionSignal( int cmd );
 
 	void ParseCampaign_guess( char *pszFile, int index );
-	void LoadCampaigns_guess();
+	void ReadCampaigns_guess();
 	void ResetButtonPositions_guess();
 
 	virtual void setVisible( bool state );

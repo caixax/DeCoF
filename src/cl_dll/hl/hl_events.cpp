@@ -50,7 +50,7 @@ void EV_SmokePuff( struct event_args_s *args );
 void EV_ViewPunch_guess( struct event_args_s *args );
 void EV_WeaponShoot_guess( struct event_args_s *args );
 void EV_ClientSound_guess( struct event_args_s *args );
-void EV_ServerMuzzleFlash_guess( struct event_args_s *args );
+void EV_ThirdPersonMuzzleFlash_guess( struct event_args_s *args );
 void EV_RevolverShells_guess( struct event_args_s *args );
 }
 
@@ -99,6 +99,6 @@ void Game_HookEvents( void )
 	gEngfuncs.pfnHookEvent( "events/viewpunch.sc",				EV_ViewPunch_guess );
 	gEngfuncs.pfnHookEvent( "events/weaponshoot.sc",			EV_WeaponShoot_guess );
 	gEngfuncs.pfnHookEvent( "events/clientsound.sc",			EV_ClientSound_guess );
-	gEngfuncs.pfnHookEvent( "events/muzzleflash.sc",			EV_ServerMuzzleFlash_guess );
+	gEngfuncs.pfnHookEvent( "events/muzzleflash.sc",			EV_ThirdPersonMuzzleFlash_guess );
 	gEngfuncs.pfnHookEvent( "events/revolvershells.sc",			EV_RevolverShells_guess );
 }

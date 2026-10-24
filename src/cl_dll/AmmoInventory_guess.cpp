@@ -342,7 +342,7 @@ int MsgAmmoInv_guess( const char *pszName, int iSize, void *pbuf )
 	return 1;
 }
 
-void AmmoInvInit_guess()
+void VGUI_AmmoInvInit_guess()
 {
 	gEngfuncs.pfnHookUserMsg( "AmmoInv", MsgAmmoInv_guess );
 }

@@ -169,9 +169,9 @@ public:
 extern "C" __declspec( dllimport ) ISteamFriends * __cdecl SteamFriends();
 //=========================================================
 
-void IrrKlangPlay_guess( const char *pszFile );
+void IrrKlangPlayMP3_guess( const char *pszFile );
 void IrrKlangPlaySFX_guess( const char *pszFile, int iType, bool bFlag, vec3_t vecOrigin );
-void IrrKlangSetParams_guess( float flParm1, float flParm2, float flParm3, float flParm4 );
+void IrrKlangSetFade_guess( float flParm1, float flParm2, float flParm3, float flParm4 );
 void IrrKlangSetLoop_guess( bool bLoop );
 void IrrKlangSetStopping_guess( bool bStopping );
 void IrrKlangStop_guess( float flFadeTime );
@@ -420,9 +420,9 @@ int CHud :: MsgFunc_ResetHUD(const char *pszName, int iSize, void *pbuf )
 	if ( gViewPort && gViewPort->m_pRECBInventory_guess )
 	{
 		for ( int i = 1; i <= 6; i++ )
-			GetInventoryItem_guess( i )[0] = 0;
+			GetSlotItem_guess( i )[0] = 0;
 
-		gViewPort->m_pRECBInventory_guess->Reset_guess();
+		gViewPort->m_pRECBInventory_guess->ClearItems_guess();
 	}
 
 	if ( !strcmp( gEngfuncs.pfnGetLevelName(), "maps/video_stress_test.bsp" ) )
@@ -484,10 +484,10 @@ void CHud :: MsgFunc_InitHUD( const char *pszName, int iSize, void *pbuf )
 
 	if ( g_TextureManager_guess.IsHardware_guess() )
 	{
-		g_TextureManager_guess.Reset_guess();
-		g_TextureManager_guess.LoadPlayerShadow_guess();
+		g_TextureManager_guess.LevelInit_guess();
+		g_TextureManager_guess.PrecachePlayerShadow_guess();
 		g_CgContext_guess.Shutdown_guess();
-		g_CgContext_guess.Init_guess();
+		g_CgContext_guess.Startup_guess();
 		g_CgWater_guess.Init_guess();
 	}
 }
@@ -684,7 +684,7 @@ int CHud :: MsgFunc_PlayMP3( const char *pszName, int iSize, void *pbuf ) //AJH 
 	if ( iPlay )
 	{
 		if ( flFadeTime != 0 )
-			IrrKlangSetParams_guess( -1, -1, gEngfuncs.GetClientTime(), flFadeTime );
+			IrrKlangSetFade_guess( -1, -1, gEngfuncs.GetClientTime(), flFadeTime );
 
 		if ( iLoop )
 			IrrKlangSetLoop_guess( true );
@@ -692,7 +692,7 @@ int CHud :: MsgFunc_PlayMP3( const char *pszName, int iSize, void *pbuf ) //AJH 
 			IrrKlangSetLoop_guess( false );
 
 		IrrKlangSetStopping_guess( false );
-		IrrKlangPlay_guess( szFile );
+		IrrKlangPlayMP3_guess( szFile );
 	}
 	else
 	{
@@ -1406,7 +1406,7 @@ int CHud :: MsgFunc_Inventory( const char *pszName, int iSize, void *pbuf )
 	int iSilent = READ_BYTE();
 	int iTactical = READ_BYTE();
 
-	strcpy( GetInventoryItem_guess( iSlot ), szItem );
+	strcpy( GetSlotItem_guess( iSlot ), szItem );
 
 	if ( !gViewPort || !gViewPort->m_pRECBInventory_guess )
 		return 1;
@@ -1443,13 +1443,13 @@ int CHud :: MsgFunc_Inventory( const char *pszName, int iSize, void *pbuf )
 	}
 
 	if ( iReset )
-		gViewPort->m_pRECBInventory_guess->Reset_guess();
+		gViewPort->m_pRECBInventory_guess->ClearItems_guess();
 
 	if ( iSlot )
 	{
-		if ( strlen( gHUD.GetInventoryItem_guess( iSlot ) ) > 1 )
+		if ( strlen( gHUD.GetSlotItem_guess( iSlot ) ) > 1 )
 		{
-			gViewPort->m_pRECBInventory_guess->m_pItemImages_guess[iSlot - 1]->setImage( vgui_LoadTGA( CheckItem( "inventory_picture", GetInventoryItem_guess( iSlot ) ) ) );
+			gViewPort->m_pRECBInventory_guess->m_pItemImages_guess[iSlot - 1]->setImage( vgui_LoadTGA( CheckItem( "inventory_picture", GetSlotItem_guess( iSlot ) ) ) );
 
 			char *pszNiceName = CheckItem( "nice_name", szItem );
 			if ( pszNiceName )
@@ -1483,10 +1483,10 @@ int CHud :: MsgFunc_Inventory( const char *pszName, int iSize, void *pbuf )
 	{
 		for ( int i = 1; i <= 6; i++ )
 		{
-			if ( !strcmp( "inventoryitems/weapons/weapon_glock.txt", GetInventoryItem_guess( i ) ) )
+			if ( !strcmp( "inventoryitems/weapons/weapon_glock.txt", GetSlotItem_guess( i ) ) )
 			{
-				strcpy( GetInventoryItem_guess( i ), "inventoryitems/weapons/weapon_glocktac.txt" );
-				gViewPort->m_pRECBInventory_guess->m_pItemImages_guess[i - 1]->setImage( vgui_LoadTGA( CheckItem( "inventory_picture", GetInventoryItem_guess( i ) ) ) );
+				strcpy( GetSlotItem_guess( i ), "inventoryitems/weapons/weapon_glocktac.txt" );
+				gViewPort->m_pRECBInventory_guess->m_pItemImages_guess[i - 1]->setImage( vgui_LoadTGA( CheckItem( "inventory_picture", GetSlotItem_guess( i ) ) ) );
 			}
 		}
 
@@ -1512,10 +1512,10 @@ int CHud :: MsgFunc_Inventory( const char *pszName, int iSize, void *pbuf )
 	{
 		for ( int i = 1; i <= 6; i++ )
 		{
-			if ( !strcmp( "inventoryitems/weapons/weapon_glocktac.txt", GetInventoryItem_guess( i ) ) )
+			if ( !strcmp( "inventoryitems/weapons/weapon_glocktac.txt", GetSlotItem_guess( i ) ) )
 			{
-				strcpy( GetInventoryItem_guess( i ), "inventoryitems/weapons/weapon_glock.txt" );
-				gViewPort->m_pRECBInventory_guess->m_pItemImages_guess[i - 1]->setImage( vgui_LoadTGA( CheckItem( "inventory_picture", GetInventoryItem_guess( i ) ) ) );
+				strcpy( GetSlotItem_guess( i ), "inventoryitems/weapons/weapon_glock.txt" );
+				gViewPort->m_pRECBInventory_guess->m_pItemImages_guess[i - 1]->setImage( vgui_LoadTGA( CheckItem( "inventory_picture", GetSlotItem_guess( i ) ) ) );
 			}
 		}
 

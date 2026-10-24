@@ -290,7 +290,7 @@ extern int g_HeadShieldState; // buz
 
 // called by Redraw between the time update and the blur, disabled in 1.6a: the binary keeps
 // only the return, the old body is unknown (Paranoia called gMP3.Frame() from Redraw)
-void RedrawFrame_guess( void )
+void DrawMP3Frame_guess( void )
 {
 	return;
 
@@ -457,7 +457,7 @@ int CHud :: Redraw( float flTime, int intermission )
 	m_flTimeDelta = (double)m_flTime - m_fOldTime;
 	static float m_flShotTime = 0;
 
-	RedrawFrame_guess();
+	DrawMP3Frame_guess();
 	DrawBlurTest(m_flTimeDelta);
 
 	//LRC - handle fog fading effects. (is this the right place for it?)

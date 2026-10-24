@@ -30,6 +30,6 @@ public:
 	ImagePanel	*m_pBar_guess;			// 0x1dc, cut to the health fraction in solve
 };
 
-void BossBarInit_guess();
+void VGUI_BossBarInit_guess();
 
 #endif // _BOSSBAR_H

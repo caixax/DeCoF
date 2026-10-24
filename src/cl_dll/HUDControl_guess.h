@@ -14,9 +14,9 @@ public:
 	~CHUDControl();
 	void Initialize();
 
-	void UpdateHUDVisibility_guess();
-	void UpdateLogo_guess();
-	void DrawMessages_guess();
+	void HandleHUDVisibility_guess();
+	void LogoUpdate_guess();
+	void RenderMessages_guess();
 	void ShowSMSIcon_guess( bool bShow );
 	void UpdateOnPlayerInfo_guess();
 

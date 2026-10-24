@@ -1,7 +1,7 @@
 ??0CAmmoInventory@@QAE@XZ
 ?Initialize@CAmmoInventory@@QAEXXZ
 ?KeyInput@CAmmoInventory@@QAEHHHPBD@Z
-?AmmoInvInit_guess@@YAXXZ
+?VGUI_AmmoInvInit_guess@@YAXXZ
 ?actionPerformed@CAmmoInventoryHandler_Command@@UAEXPAVPanel@vgui@@@Z
 ?solve@CAmmoInventory@@MAEXXZ
 ?ActionSignal@CAmmoInventory@@QAEXH@Z

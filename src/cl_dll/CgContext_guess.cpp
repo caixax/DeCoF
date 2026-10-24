@@ -38,7 +38,7 @@ cgprogram_t_guess *CCgContext_guess::AddProgram_guess( const char *name, int typ
 	cgprogram_t_guess *program = FindProgram_guess( name );
 
 	if ( !m_context_guess )
-		Init_guess();
+		Startup_guess();
 
 	if ( !program )
 	{
@@ -137,7 +137,7 @@ void CCgContext_guess::Shutdown_guess( void )
 	m_bInitialized_guess = false;
 }
 
-bool CCgContext_guess::Init_guess( void )
+bool CCgContext_guess::Startup_guess( void )
 {
 	bool result;
 

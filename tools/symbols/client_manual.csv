@@ -61,7 +61,7 @@ va,name,kind,evidence
 10079540,?IN_MoverightUp@@YAXXZ,func,"registered by InitInput with the string -moveright (push 10079540 before the string push); KeyUp(&in_moveright), HandleButtonsUp(IN_MOVERIGHT) (added by an agent)"
 10079570,?IN_ObjectivesDown@@YAXXZ,func,"registered by InitInput with the string +objectives (push 10079570 before the string push); KeyDown, objective text panel; name from the command string, position between IN_MoverightUp and the xboxfix handler in decorated-name order (added by an agent)"
 100797F0,?IN_ObjectivesUp@@YAXXZ,func,registered by InitInput with the string -objectives (push 100797F0 before the string push); KeyUp on the same button as IN_ObjectivesDown at 10079570 (added by an agent)
-10079800,?IN_XboxFix_guess@@YAXXZ,func,"registered by InitInput with the string xboxfix (push 10079800 before the string push); clears a bool and sets a 26 byte gHUD array to 1; position between IN_ObjectivesUp and IN_ReloadDown in decorated-name order, so the original name is not IN_XboxFix (added by an agent)"
+10079800,?IN_PadFix_guess@@YAXXZ,func,"registered by InitInput with the string xboxfix (push 10079800 before the string push); clears a bool and sets a 26 byte gHUD array to 1; position between IN_ObjectivesUp and IN_ReloadDown in decorated-name order, so the original name is not IN_XboxFix (added by an agent)"
 10079850,?IN_ReloadDown@@YAXXZ,func,"registered by InitInput with the string +reload (push 10079850 before the string push); KeyDown(&in_reload), ServerCmd wheelchairreload (added by an agent)"
 10079880,?IN_ReloadUp@@YAXXZ,func,registered by InitInput with the string -reload (push 10079880 before the string push); KeyUp(&in_reload) (added by an agent)
 10079890,?IN_ScoreDown@@YAXXZ,func,"registered by InitInput with the string +score (push 10079890 before the string push); KeyDown(&in_score), TeamFortressViewport::ShowScoreBoard (also +showscores) (added by an agent)"
@@ -78,9 +78,9 @@ va,name,kind,evidence
 100362B0,??0CHUDControl@@QAE@XZ,func,constructor: writes the CHUDControl vtable 101452CC (RTTI .?AVCHUDControl@@); TeamFortressViewport calls it after new(0x104C) and stores the object at +0x142C (added by an agent)
 10038350,??1CHUDControl@@QAE@XZ,func,destructor: writes the CHUDControl vtable 101452CC then deletes the twelve 0x24-byte images loaded by the constructor (added by an agent)
 10038900,?HUDControlInit_guess@@YAXXZ,func,hooks the 16 user messages Stamina..SimonMode (strings) with the handlers of this object; called from CHud::Init after SubtitleInit like the Paranoia XxxInit functions (added by an agent)
-10038A10,?UpdateHUDVisibility_guess@CHUDControl@@QAEXXZ,func,called by CHUDControl::solve (1003CDBC); hides the bars on maps/c_nightmare.bsp or when hud_draw is 0 (added by an agent)
+10038A10,?HandleHUDVisibility_guess@CHUDControl@@QAEXXZ,func,called by CHUDControl::solve (1003CDBC); hides the bars on maps/c_nightmare.bsp or when hud_draw is 0 (added by an agent)
 10038DF0,?Initialize@CHUDControl@@QAEXXZ,func,"called at the end of the constructor and by TeamFortressViewport::Initialize next to the other panels' Initialize calls (Paranoia pattern, as CRadioIcon::Initialize) (added by an agent)"
-10039210,?UpdateLogo_guess@CHUDControl@@QAEXXZ,func,"called by CHUDControl::solve (1003CDC3); fades the logo panel at +0xFD4, string host_framerate (added by an agent)"
+10039210,?LogoUpdate_guess@CHUDControl@@QAEXXZ,func,"called by CHUDControl::solve (1003CDC3); fades the logo panel at +0xFD4, string host_framerate (added by an agent)"
 100393D0,?MsgCameraZoom_guess@@YAHPBDHPAX@Z,func,handler hooked for user message CameraZoom (string) in 10038900 (added by an agent)
 10039430,?MsgChapter_guess@@YAHPBDHPAX@Z,func,handler hooked for user message Chapter (string) in 10038900 (added by an agent)
 10039560,?MsgCoFLogo_guess@@YAHPBDHPAX@Z,func,handler hooked for user message CoFLogo (string) in 10038900 (added by an agent)
@@ -95,10 +95,10 @@ va,name,kind,evidence
 1003A180,?MsgShowHint_guess@@YAHPBDHPAX@Z,func,handler hooked for user message ShowHint (string) in 10038900 (added by an agent)
 1003A330,?MsgSimonMode_guess@@YAHPBDHPAX@Z,func,handler hooked for user message SimonMode (string) in 10038900 (added by an agent)
 1003A360,?MsgStamina_guess@@YAHPBDHPAX@Z,func,handler hooked for user message Stamina (string) in 10038900 (added by an agent)
-1003A3E0,?MsgTimer_guess@@YAHPBDHPAX@Z,func,handler hooked for user message Timer (string) in 10038900 (added by an agent)
+1003A3E0,?MsgTimerMode_guess@@YAHPBDHPAX@Z,func,handler hooked for user message Timer (string) in 10038900 (added by an agent)
 1003A580,?MsgTimerPlus_guess@@YAHPBDHPAX@Z,func,handler hooked for user message TimerPlus (string) in 10038900 (added by an agent)
 1003A930,?ParseHintTokens@@YAXPAD0@Z,func,its own error strings 'ParseHintTokens Couldn't open file %s' and 'ParseHintTokens Error parsing file %s' (added by an agent)
-1003B0C0,?DrawMessages_guess@CHUDControl@@QAEXXZ,func,"called by CHUDControl::paint (1003BEDB); hint bar, chapter title and message strip, string cl_subtitles (added by an agent)"
+1003B0C0,?RenderMessages_guess@CHUDControl@@QAEXXZ,func,"called by CHUDControl::paint (1003BEDB); hint bar, chapter title and message strip, string cl_subtitles (added by an agent)"
 1003BBD0,?ShowSMSIcon_guess@CHUDControl@@QAEX_N@Z,func,"sets the alpha +0xFFC to 255, the flag +0xFF4 and the visibility of the SMS icon panel +0xFF0; called by Initialize and twice at 10071A75/10071AD4 (added by an agent)"
 1003BC10,?paint@CHUDControl@@MAEXXZ,func,"CHUDControl vtable slot 112 (+0x1C0), vgui::Panel::paint (added by an agent)"
 1003BF00,?paintBackground@CHUDControl@@MAEXXZ,func,"CHUDControl vtable slot 111 (+0x1BC), vgui::Panel::paintBackground; jumps to the import of Panel::paintBackground (added by an agent)"
@@ -120,9 +120,9 @@ va,name,kind,evidence
 1001C190,?__MsgFunc_WpnDeploy@@YAHPBDHPAX@Z,func,pushed by CHudAmmo::Init for the WpnDeploy message string (added by an agent)
 10093300,?OrthoDraw@@YAXHHMMMMHHHH@Z,func,OrthoDraw reads 4 more int args (ebp+0x20..0x2c); OrthoGasMask and OrthoScope push -1 four times before the 6 OrthoDraw args (added by an agent)
 100B31A0,?V_StartPitchDrift@@YAXXZ,func,pushed as the centerview command handler by V_Init and tail-jumped from V_DriftPitch (added by an agent)
-100B3240,?MsgCoopCamAnim_guess@@YAHPBDHPAX@Z,func,V_Init hooks it with the string CoopCamAnim (pfnHookUserMsg slot) (added by an agent)
-100B32A0,?MsgModelAttach_guess@@YAHPBDHPAX@Z,func,V_Init hooks it with the string ModelAttach (added by an agent)
-100B32D0,?MsgThirdPerson_guess@@YAHPBDHPAX@Z,func,V_Init hooks it with the string ThirdPerson (added by an agent)
+100B3240,?__MsgFunc_CoopCamAnim_guess@@YAHPBDHPAX@Z,func,V_Init hooks it with the string CoopCamAnim (pfnHookUserMsg slot) (added by an agent)
+100B32A0,?__MsgFunc_ModelAttach_guess@@YAHPBDHPAX@Z,func,V_Init hooks it with the string ModelAttach (added by an agent)
+100B32D0,?__MsgFunc_ThirdPerson_guess@@YAHPBDHPAX@Z,func,V_Init hooks it with the string ThirdPerson (added by an agent)
 100B2140,?V_DropPunchAngle@@YAXMPAM@Z,func,"ev_punchangle (10559620) is scaled with VectorNormalize, Length, VectorMA, VectorScale as in V_DropPunchAngle (added by an agent)"
 100AF790,?V_CalcNormalRefdef@@YAXPAUref_params_s@@@Z,func,"largest function of the view range, called from V_CalcRefdef (added by an agent)"
 100B3340,_V_CalcRefdef,func,export V_CalcRefdef (added by an agent)
@@ -150,10 +150,10 @@ va,name,kind,evidence
 10052E00,_EV_ViewPunch_guess,func,EV_HookEvents hooks it with events/viewpunch.sc; was named __vsnprintf_l by position (added by an agent)
 10052E40,_EV_WeaponShoot_guess,func,EV_HookEvents hooks it with events/weaponshoot.sc (added by an agent)
 1004F090,_EV_ClientSound_guess,func,EV_HookEvents hooks it with events/clientsound.sc (added by an agent)
-10052AA0,_EV_ServerMuzzleFlash_guess,func,EV_HookEvents hooks it with events/muzzleflash.sc (added by an agent)
+10052AA0,_EV_ThirdPersonMuzzleFlash_guess,func,EV_HookEvents hooks it with events/muzzleflash.sc (added by an agent)
 10052750,_EV_RevolverShells_guess,func,EV_HookEvents hooks it with events/revolvershells.sc (added by an agent)
 10051480,_EV_FireGlock2,func,EV_HookEvents hooks it with events/glock2.sc (added by an agent)
-100AE9A0,?V_ViewPunch_guess@@YAXMMM@Z,func,called by the viewpunch event with the three origin floats (added by an agent)
+100AE9A0,?PunchViewAngles_guess@@YAXMMM@Z,func,called by the viewpunch event with the three origin floats (added by an agent)
 1000C290,?UpdateSpeakerStatus@CVoiceStatus@@QAEXHH@Z,func,"callee of HUD_VoiceStatus, same function in the Paranoia voice_status.cpp (added by an agent)"
 10030160,?MsgFunc_BlackBars@CBlackBar@@QAEHPBDHPAX@Z,func,"called by the BlackBars wrapper 10030320, hooked with the string BlackBars (push at 10030136); was MsgFunc_StatusIcon from refbytes; lies in the CBlackBar object between Init and VidInit (added by an agent)"
 10030320,?__MsgFunc_BlackBars@@YAHPBDHPAX@Z,func,handler pushed with the string BlackBars in CBlackBar::Init (10030136); calls 10030160; was __MsgFunc_StatusIcon from refbytes; DECLARE_MESSAGE wrapper after VidInit in the CBlackBar object (added by an agent)
@@ -207,7 +207,7 @@ va,name,kind,evidence
 100A3E30,??0DetpackButton@@QAE@HPBDHHHH@Z,func,"inline constructor: CommandButton(..., false) then the int member at +0x130; first of three identical ctors between ??0CMenuHandler_StringCommand and ??0MenuSeparator in name order (Detpack < Disguise < Feign) (added by an agent)"
 100A3E70,??0DisguiseButton@@QAE@HPBDHHHH@Z,func,"inline constructor: CommandButton(..., false) then the int member at +0x130; second of three identical ctors between ??0CMenuHandler_StringCommand and ??0MenuSeparator in name order (added by an agent)"
 100A3EB0,??0FeignButton@@QAE@HPBDHHHH@Z,func,"inline constructor: CommandButton(..., false) then the int member at +0x130; third of three identical ctors between ??0CMenuHandler_StringCommand and ??0MenuSeparator in name order (added by an agent)"
-10049A20,?PressDigit_guess@CPhone@@QAEXH@Z,func,plays phone/tone_zero..nine.wav and appends the digit; called by CPhone::ActionSignal cases 1-10
+10049A20,?AddDigit_guess@CPhone@@QAEXH@Z,func,plays phone/tone_zero..nine.wav and appends the digit; called by CPhone::ActionSignal cases 1-10
 1003E0B0,?MsgBoard_guess@@YAHPBDHPAX@Z,func,"hooked as ""Board"" by BoardInit_guess (1003E1E0); reads gViewPort->m_pVGUIBillboard_guess (added by an agent)"
 100309E0,??0CSaveLoad@@QAE@XZ,func,stores the CSaveLoad vftable; called by the viewport after new(0x184); gfx/vgui/save_load.tga
 100314A0,?ActionSignal@CSaveLoad@@QAEXH@Z,func,called by CSaveLoadHandler_Command::actionPerformed (100327C0); cofload/unfreezesave commands
@@ -227,7 +227,7 @@ va,name,kind,evidence
 10047550,?MsgNoteDoc_guess@@YAHPBDHPAX@Z,func,hooked by NoteDocInit_guess with the string NoteDoc
 10048430,?NextLine_guess@CNoteDocument@@QAEXXZ,func,increments m_iLine_guess and wraps to 1; CNoteDocument::ActionSignal case 2
 100487D0,?PrevLine_guess@CNoteDocument@@QAEXXZ,func,decrements m_iLine_guess and wraps to the line count; CNoteDocument::ActionSignal case 1
-10048C50,?ReadLine_guess@CNoteDocument@@QAEXXZ,func,reads line m_iLine_guess of the page text file; called by SetPage_guess
+10048C50,?SetText_guess@CNoteDocument@@QAEXXZ,func,reads line m_iLine_guess of the page text file; called by SetPage_guess
 10048F10,?paint@CNoteDocument@@MAEXXZ,func,"CNoteDocument vftable slot 112 (paint), ends with Panel::paint (added by an agent)"
 10049020,?paintBackground@CNoteDocument@@MAEXXZ,func,"CNoteDocument vftable slot 111 (paintBackground), tail call to Panel::paintBackground (added by an agent)"
 10049030,?setVisible@CNoteDocument@@UAEX_N@Z,func,"CNoteDocument vftable slot 9 (setVisible), tail call to Panel::setVisible (added by an agent)"
@@ -238,7 +238,7 @@ va,name,kind,evidence
 10072480,?DrawNewFade_guess@CHud@@QAEXM@Z,func,CHud method without callers in the hud_redraw window (ret 4: one unused argument); draws a full screen quad colored by the NewFade members gHUD+0x2938..0x2959 behind gl.IsGLAllowed
 1002C390,??0CGameMenu@@QAE@XZ,func,stores the CGameMenu vftable; called by the viewport after new(0xc748); gfx/vgui/menu_logo.tga
 1002D8D0,?ActionSignal@CGameMenu@@QAEXH@Z,func,called by CGameMenuHandler_Command::actionPerformed (1002EBC0); optionshack commands
-1002E6C0,?LoadCampaigns_guess@CGameMenu@@QAEXXZ,func,"called by ActionSignal case 3; *.custom search, calls ParseCampaign_guess (1002E340) (added by an agent)"
+1002E6C0,?ReadCampaigns_guess@CGameMenu@@QAEXXZ,func,"called by ActionSignal case 3; *.custom search, calls ParseCampaign_guess (1002E340) (added by an agent)"
 1002EA30,?ResetButtonPositions_guess@CGameMenu@@QAEXXZ,func,called by setVisible and solve; setPos of the ten menu pictures
 10048AA0,?PrevPage_guess@CNoteDocument@@QAEXXZ,func,switches m_iPage_guess 1-4 to the previous page with an image and calls SetPage_guess; unreferenced function between PrevLine_guess and SetPage_guess
 1001E420,?ActionSignal@CAmmoInventory@@QAEXH@Z,func,"strings ""dropammo 1""-""dropammo 6"", inventory_toggle.wav; called by CAmmoInventoryHandler_Command::actionPerformed (1001E950) (added by an agent)"
@@ -330,7 +330,7 @@ va,name,kind,evidence
 10026E70,?MsgCredits_guess@@YAHPBDHPAX@Z,func,hooked for the Credits user message in CreditsInit_guess (10029450 area) (added by an agent)
 10028F90,?SetLine_guess@CCredits@@QAEXHH@Z,func,"called by MsgCredits_guess for each line; sets the text of one credit label, # selects the creditstitle font (added by an agent)"
 10029180,?ShowUnlock_guess@CCredits@@QAEXHPBDHPADH@Z,func,called by solve with the Unlocked: texts and the unlock models (added by an agent)
-10029420,?va_guess@@YAPADPBDZZ,func,"vsprintf into a static buffer, called with the stat formats by MsgCredits_guess and MsgCoopStats_guess (added by an agent)"
+10029420,?UTIL_VarArgs_guess@@YAPADPBDZZ,func,"vsprintf into a static buffer, called with the stat formats by MsgCredits_guess and MsgCoopStats_guess (added by an agent)"
 100294C0,?solve@CCredits@@MAEXXZ,func,vtable slot 110 (solve) of CCredits (added by an agent)
 10092390,?DrawFXObjects@@YAXXZ,func,"Paranoia DrawFXObjects: sprites/waterring.spr, walks g_fxArray, called from HUD_DrawTransparentTriangles after DrawRain (added by an agent)"
 100A95B0,?InputSignalHideCommandMenu@TeamFortressViewport@@QAEXXZ,func,follows InputPlayerSpecial in name order; tests m_pCurrentCommandMenu (+0xc4) and compares the time with m_flMenuOpenTime like the HLSDK InputSignalHideCommandMenu; Ghidra had it inside __CmdFunc_CloseCommandMenu
@@ -425,7 +425,7 @@ va,name,kind,evidence
 101B27BC,?g_iUnlockClothes_guess@@3HA,data,address from 3 paired references in functions of identical size (our global plus addend against the retail address)
 101B27C0,?g_iCreditsLetterboxHeight_guess@@3HA,data,address from 5 paired references in functions of identical size (our global plus addend against the retail address)
 101B27C8,?iUnknown101B27C8_guess@@3HA,data,address from 2 paired references in functions of identical size (our global plus addend against the retail address)
-101B27D0,?string@?1??va_guess@@YAPADPBDZZ@4PADA,data,address from 2 paired references in functions of identical size (our global plus addend against the retail address)
+101B27D0,?string@?1??UTIL_VarArgs_guess@@YAPADPBDZZ@4PADA,data,address from 2 paired references in functions of identical size (our global plus addend against the retail address)
 101B2BD0,?g_iLetterboxHeight_guess@@3HA,data,address from 5 paired references in functions of identical size (our global plus addend against the retail address)
 101B2BD4,?g_flLookingAt_guess@@3MA,data,address from 1 paired references in functions of identical size (our global plus addend against the retail address)
 101B2BD8,?g_iSimonMode_guess@@3HA,data,address from 2 paired references in functions of identical size (our global plus addend against the retail address)
@@ -936,21 +936,21 @@ va,name,kind,evidence
 105436D8,?pTelescopeEnt_guess@@3PAUcl_entity_s@@A,data,address from 2 paired references in functions of identical size (our global plus addend against the retail address)
 100AE790,?MaxAngleBetweenAngles@@YAMPAM0@Z,func,"only caller is V_GetDoubleTargetsCam, which calls MaxAngleBetweenAngles in the HLSDK view.cpp; calls NormalizeAngles on both arguments and takes the largest wrapped difference (added by an agent)"
 100AD9D0,?AddViewmodelBob_guess@@YAXPAUref_params_s@@AAVVector@@1MMPAUcl_entity_s@@_N@Z,func,"called twice by V_CalcNormalRefdef with the view model and with g_HeadShieldEnt; AngleVectors, calls 100AE110, applies vertical and lateral bob to origin and angles like the Half-Life 2 AddViewmodelBob, cl_weapon_idle_speed and cl_weapon_idle_dampener sway (added by an agent)"
-100ADE50,?NormalizeAngles360_guess@@YAXMM@Z,func,no callers; wraps its two float arguments into 0..360 with four while loops; next to the view.cpp functions in decorated-name order (added by an agent)
+100ADE50,?AngleNormalize360_guess@@YAXMM@Z,func,no callers; wraps its two float arguments into 0..360 with four while loops; next to the view.cpp functions in decorated-name order (added by an agent)
 100AE110,?CalcViewmodelBob_guess@@YAMPAUref_params_s@@MM@Z,func,"only caller is 100AD9D0; vertical and lateral bob with cycle 0.45 and bob up 0.5 like the Half-Life 2 CalcViewmodelBob, clamps -7..4 (added by an agent)"
-100AE540,?SetupMagliteLight_guess@@YAXVVector@@0MM@Z,func,"strings gfx/low/flashlight2.tga and gfx/flashlight2.tga, dlight key -8, flash flag 8; V_CalcNormalRefdef calls it only when gHUD.m_iMaglite_guess is set and the weapon is 1; body is the Paranoia SetupFlashlight (added by an agent)"
+100AE540,?CreateMagliteLight_guess@@YAXVVector@@0MM@Z,func,"strings gfx/low/flashlight2.tga and gfx/flashlight2.tga, dlight key -8, flash flag 8; V_CalcNormalRefdef calls it only when gHUD.m_iMaglite_guess is set and the weapon is 1; body is the Paranoia SetupFlashlight (added by an agent)"
 100AE780,?GetDualEntity_guess@@YAPAUcl_entity_s@@XZ,func,only caller is __MsgFunc_DualWield (StudioModelRenderer.cpp calls GetDualEntity_guess there); returns GetEntityByIndex( g_iDualEntIndex_guess ) (added by an agent)
-100AE850,?V_DecayPunchAngle_guess@@YAXVVector@@PAUref_params_s@@@Z,func,"no callers; the multiplayer half of V_DropPunchAngle (damping 9, spring 65, clamps of ev_punchangle) on a Vector argument and pparams->frametime (added by an agent)"
+100AE850,?PunchAngleDecay_guess@@YAXVVector@@PAUref_params_s@@@Z,func,"no callers; the multiplayer half of V_DropPunchAngle (damping 9, spring 65, clamps of ev_punchangle) on a Vector argument and pparams->frametime (added by an agent)"
 100AEA10,?SetupFlashlight@@YAXVVector@@0MM@Z,func,"strings cof_reducedlightxangle, cof_reducedlightzangle, cof_reducedlightradius, gfx/flashlight.tga; called by V_CalcNormalRefdef with the view origin and angles, time and frametime like the Paranoia SetupFlashlight (added by an agent)"
 100AEE70,?SetupViewModelLight_guess@@YAXVVector@@0MM@Z,func,"strings gfx/flashlight2.tga, flash flag 4, dlight key -66 aimed from view model attachment 1 to attachment 2; called by V_CalcNormalRefdef right after SetupFlashlight with the same arguments (added by an agent)"
-100AF150,?GetBobMode_guess@@YAHPAUref_params_s@@@Z,func,only caller is 100AE110 (CalcViewmodelBob_guess) with pparams; calls GetLocalPlayer and returns 0 (added by an agent)
+100AF150,?TestBobMode_guess@@YAHPAUref_params_s@@@Z,func,only caller is 100AE110 (CalcViewmodelBob_guess) with pparams; calls GetLocalPlayer and returns 0 (added by an agent)
 10071D00,?strstrtolower@@YA_NPAD0@Z,func,"bytes identical to our strstrtolower (strncpy 256, tolower loop, strstr); the same function is strstrtolower in player.obj of the hl.dll 1.55 PDB (added by an agent)"
 1006ED50,?COM_Parse@@YAPADPAD@Z,func,"HLSDK COM_Parse (multiplay_gamerules.cpp, also COM_Parse in the hl.dll 1.55 PDB): 1500-byte token buffer, // comments, quoted strings, single characters {}()',; called by CheckItem; its buffer lies in the hud_msg.cpp bss (added by an agent)"
 1006EE60,?GetCurrentPath@@YAXPAD@Z,func,"_getcwd( path, 260 ), identical to GetCurrentPath in player.obj of the hl.dll 1.55 PDB (added by an agent)"
 1006EE90,?CheckItem@CHud@@QAEPADPAD0@Z,func,"string ' * CheckItem parsing error: expecting { after key name'; COM_LoadFile(file, 5), COM_Parse loop, 'data' key, same code as GetDescriptionFromItem of the server; callers pass inventory_picture/nice_name (added by an agent)"
 1006F090,?IsInDonatorGroup1_guess@@YAHXZ,func,SteamFriends() GetClanCount/GetClanByIndex loop comparing the clan account 0x29D6CA; called first by __CmdFunc_DonatorCheck_guess which sets donator level 1/2 (added by an agent)
 1006F110,?IsInDonatorGroup2_guess@@YAHXZ,func,SteamFriends() GetClanCount/GetClanByIndex loop comparing the clan account 0x46AE0A; called by __CmdFunc_DonatorCheck_guess (bGroup2) (added by an agent)
-10080B90,?KillViewModelSystems_guess@ParticleSystemManager@@QAEX_N@Z,func,called only by the KillWpnPart message handler (HOOK_MESSAGE string KillWpnPart in CHudParticle::Init) with READ_BYTE != 0; walks m_pFirstSystem and sets state +0x98 / +0xA8 of view model systems (added by an agent)
+10080B90,?DeleteViewModelSystems_guess@ParticleSystemManager@@QAEX_N@Z,func,called only by the KillWpnPart message handler (HOOK_MESSAGE string KillWpnPart in CHudParticle::Init) with READ_BYTE != 0; walks m_pFirstSystem and sets state +0x98 / +0xA8 of view model systems (added by an agent)
 10080AE0,??1ParticleSystemManager@@QAE@XZ,func,jmp to ClearSystems (Paranoia ~ParticleSystemManager calls ClearSystems); registered with atexit by the g_pParticleSystems initializer at 100010B0 (added by an agent)
 1006F190,?MsgFunc_AddNote@CHud@@QAAHPBDHPAX@Z,func,"called by __MsgFunc_AddNote (push gHUD), which CHud::Init passes with ""AddNote"" to pfnHookUserMsg; handlers of hud_msg.cpp are in decorated-name order (added by an agent)"
 1006F890,?MsgFunc_AttachCam@CHud@@QAAHPBDHPAX@Z,func,"called by __MsgFunc_AttachCam (push gHUD), which CHud::Init passes with ""AttachCam"" to pfnHookUserMsg; handlers of hud_msg.cpp are in decorated-name order (added by an agent)"
@@ -1121,7 +1121,7 @@ va,name,kind,evidence
 1055033C,?vecCameraAngles_guess@@3VVector@@A,data,"camera angles of the attach camera: V_CalcNormalRefdef copies them into the view angles, ParticleSystem::DrawSystem and StudioDrawModel read them"
 10086520,?FindProgram_guess@CCgContext_guess@@QAEPAUcgprogram_s_guess@@PBD@Z,func,bytes identical to ?FindProgram_guess@CCgContext_guess@@QAEPAUcgprogram_s_guess@@PBD@Z in client/cl_dll/CgContext_guess (relocated fields masked)
 10086560,?GetFragmentProfile_guess@CCgContext_guess@@QAE?AW4CGprofile@@XZ,func,bytes identical to ?GetFragmentProfile_guess@CCgContext_guess@@QAE?AW4CGprofile@@XZ in client/cl_dll/CgContext_guess (relocated fields masked)
-10086670,?Init_guess@CCgContext_guess@@QAE_NXZ,func,bytes identical to ?Init_guess@CCgContext_guess@@QAE_NXZ in client/cl_dll/CgContext_guess (relocated fields masked)
+10086670,?Startup_guess@CCgContext_guess@@QAE_NXZ,func,bytes identical to ?Startup_guess@CCgContext_guess@@QAE_NXZ in client/cl_dll/CgContext_guess (relocated fields masked)
 10086580,?IsProgramValid_guess@CCgContext_guess@@QAE_NPBDH@Z,func,bytes identical to ?IsProgramValid_guess@CCgContext_guess@@QAE_NPBDH@Z in client/cl_dll/CgContext_guess (relocated fields masked)
 100865F0,?RemoveProgram_guess@CCgContext_guess@@QAEPAUcgprogram_s_guess@@PAU2@@Z,func,bytes identical to ?RemoveProgram_guess@CCgContext_guess@@QAEPAUcgprogram_s_guess@@PAU2@@Z in client/cl_dll/CgContext_guess (relocated fields masked)
 10086640,?Shutdown_guess@CCgContext_guess@@QAEXXZ,func,bytes identical to ?Shutdown_guess@CCgContext_guess@@QAEXXZ in client/cl_dll/CgContext_guess (relocated fields masked)
@@ -1129,7 +1129,7 @@ va,name,kind,evidence
 10086890,?Init_guess@CCgWater_guess@@QAEXXZ,func,bytes identical to ?Init_guess@CCgWater_guess@@QAEXXZ in client/cl_dll/CgWater_guess (relocated fields masked)
 10086C40,?PostDraw_guess@CCgWater_guess@@QAEXXZ,func,bytes identical to ?PostDraw_guess@CCgWater_guess@@QAEXXZ in client/cl_dll/CgWater_guess (relocated fields masked)
 10086CB0,?PreDraw_guess@CCgWater_guess@@QAEXXZ,func,bytes identical to ?PreDraw_guess@CCgWater_guess@@QAEXXZ in client/cl_dll/CgWater_guess (relocated fields masked)
-100875D0,?RenderQuad_guess@CCgWater_guess@@QAEXXZ,func,bytes identical to ?RenderQuad_guess@CCgWater_guess@@QAEXXZ in client/cl_dll/CgWater_guess (relocated fields masked)
+100875D0,?ScreenQuad_guess@CCgWater_guess@@QAEXXZ,func,bytes identical to ?ScreenQuad_guess@CCgWater_guess@@QAEXXZ in client/cl_dll/CgWater_guess (relocated fields masked)
 100877D0,?SetBlackShader_guess@CCgWater_guess@@QAEXXZ,func,bytes identical to ?SetBlackShader_guess@CCgWater_guess@@QAEXXZ in client/cl_dll/CgWater_guess (relocated fields masked)
 10087860,?UpdateEntities_guess@CCgWater_guess@@QAEXXZ,func,bytes identical to ?UpdateEntities_guess@CCgWater_guess@@QAEXXZ in client/cl_dll/CgWater_guess (relocated fields masked)
 10087950,?Create_guess@CPBuffer_guess@@QAEXXZ,func,bytes identical to ?Create_guess@CPBuffer_guess@@QAEXXZ in client/cl_dll/PBuffer_guess (relocated fields masked)
@@ -1138,32 +1138,32 @@ va,name,kind,evidence
 10087D30,?SwitchToWindow_guess@CPBuffer_guess@@QAEXXZ,func,bytes identical to ?SwitchToWindow_guess@CPBuffer_guess@@QAEXXZ in client/cl_dll/PBuffer_guess (relocated fields masked)
 100880A0,?CheckMipmapSupport_guess@CTextureManager_guess@@QAEXXZ,func,bytes identical to ?CheckMipmapSupport_guess@CTextureManager_guess@@QAEXXZ in client/cl_dll/TextureManager_guess (relocated fields masked)
 10088140,?CreateTexture_guess@CTextureManager_guess@@QAEXHHPAIII@Z,func,bytes identical to ?CreateTexture_guess@CTextureManager_guess@@QAEXHHPAIII@Z in client/cl_dll/TextureManager_guess (relocated fields masked)
-100895F0,?FindImageFile_guess@CTextureManager_guess@@QAE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@ABV23@@Z,func,bytes identical to ?FindImageFile_guess@CTextureManager_guess@@QAE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@ABV23@@Z in client/cl_dll/TextureManager_guess (relocated fields masked)
+100895F0,?ImportImageFile_guess@CTextureManager_guess@@QAE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@ABV23@@Z,func,bytes identical to ?ImportImageFile_guess@CTextureManager_guess@@QAE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@ABV23@@Z in client/cl_dll/TextureManager_guess (relocated fields masked)
 100882B0,?GetPath_guess@CTextureManager_guess@@QAE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@ABV23@HPAH@Z,func,bytes identical to ?GetPath_guess@CTextureManager_guess@@QAE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@ABV23@HPAH@Z in client/cl_dll/TextureManager_guess (relocated fields masked)
 10088CA0,?GetTexture_guess@CTextureManager_guess@@QAEPAUtexture_s_guess@@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z,func,bytes identical to ?GetTexture_guess@CTextureManager_guess@@QAEPAUtexture_s_guess@@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z in client/cl_dll/TextureManager_guess (relocated fields masked)
-10089950,?GetTexture_guess@CTextureManager_guess@@QAEPAUtexture_s_guess@@PBD@Z,func,bytes identical to ?GetTexture_guess@CTextureManager_guess@@QAEPAUtexture_s_guess@@PBD@Z in client/cl_dll/TextureManager_guess (relocated fields masked)
+10089950,?LoadFromName_guess@CTextureManager_guess@@QAEPAUtexture_s_guess@@PBD@Z,func,bytes identical to ?LoadFromName_guess@CTextureManager_guess@@QAEPAUtexture_s_guess@@PBD@Z in client/cl_dll/TextureManager_guess (relocated fields masked)
 10089830,?IsHardware_guess@CTextureManager_guess@@QAE_NXZ,func,bytes identical to ?IsHardware_guess@CTextureManager_guess@@QAE_NXZ in client/cl_dll/TextureManager_guess (relocated fields masked)
-10089EF0,?Load_guess@CTextureManager_guess@@QAEPAUtexture_s_guess@@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z,func,bytes identical to ?Load_guess@CTextureManager_guess@@QAEPAUtexture_s_guess@@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z in client/cl_dll/TextureManager_guess (relocated fields masked)
-1008A210,?LoadPlayerShadow_guess@CTextureManager_guess@@QAEXXZ,func,bytes identical to ?LoadPlayerShadow_guess@CTextureManager_guess@@QAEXXZ in client/cl_dll/TextureManager_guess (relocated fields masked)
-10089840,?Reset_guess@CTextureManager_guess@@QAEXXZ,func,bytes identical to ?Reset_guess@CTextureManager_guess@@QAEXXZ in client/cl_dll/TextureManager_guess (relocated fields masked)
-10089880,?UploadImage_guess@CTextureManager_guess@@QAEXPAUtexture_s_guess@@@Z,func,bytes identical to ?UploadImage_guess@CTextureManager_guess@@QAEXPAUtexture_s_guess@@@Z in client/cl_dll/TextureManager_guess (relocated fields masked)
+10089EF0,?LoadTex_guess@CTextureManager_guess@@QAEPAUtexture_s_guess@@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z,func,bytes identical to ?LoadTex_guess@CTextureManager_guess@@QAEPAUtexture_s_guess@@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z in client/cl_dll/TextureManager_guess (relocated fields masked)
+1008A210,?PrecachePlayerShadow_guess@CTextureManager_guess@@QAEXXZ,func,bytes identical to ?PrecachePlayerShadow_guess@CTextureManager_guess@@QAEXXZ in client/cl_dll/TextureManager_guess (relocated fields masked)
+10089840,?LevelInit_guess@CTextureManager_guess@@QAEXXZ,func,bytes identical to ?LevelInit_guess@CTextureManager_guess@@QAEXXZ in client/cl_dll/TextureManager_guess (relocated fields masked)
+10089880,?LoadFile_guess@CTextureManager_guess@@QAEXPAUtexture_s_guess@@@Z,func,bytes identical to ?LoadFile_guess@CTextureManager_guess@@QAEXPAUtexture_s_guess@@@Z in client/cl_dll/TextureManager_guess (relocated fields masked)
 10559504,?flMouseOfs2X_guess@@3MA,data,"IN_MouseMove adds the mouse delta to it (second pair), CHud::Redraw raises it by 5 up to 40"
 10559508,?flMouseOfs2Y_guess@@3MA,data,IN_MouseMove adds the mouse delta to it and clamps it to -60..60
 1002C250,??$?HDU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@ABV10@0@Z,func,"identical bytes (bytematch --at); std::operator+(string,string) called from CGameMenu::LoadCampaigns_guess, STL instantiation placed before GameMenu_guess.obj (added by an agent)"
 1002C2A0,??$?HDU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@ABV10@QBD@Z,func,"identical bytes (bytematch --at); std::operator+(string,const char*) called from CGameMenu::LoadCampaigns_guess, STL instantiation placed before GameMenu_guess.obj (added by an agent)"
 1002C2F0,??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@U_String_constructor_concat_tag@1@ABV01@QBDI2I@Z,func,identical bytes (bytematch --at); basic_string concat constructor called by the two std::operator+ at 1002C250 and 1002C2A0 (added by an agent)
-10088400,?FindTexture_guess@CTextureManager_guess@@QAE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@ABV23@PAH@Z,func,source order between GetPath and GetTexture; calls FindNumberedTextures and FindImageFile (added by an agent)
-10088CF0,?FindNumberedTextures_guess@CTextureManager_guess@@QAE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@ABV23@PAH@Z,func,source order after GetTexture; sprintf %i loop over FindImageFile (added by an agent)
+10088400,?GetTexturePath_guess@CTextureManager_guess@@QAE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@ABV23@PAH@Z,func,source order between GetPath and GetTexture; calls FindNumberedTextures and FindImageFile (added by an agent)
+10088CF0,?ImportFrames_guess@CTextureManager_guess@@QAE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@ABV23@PAH@Z,func,source order after GetTexture; sprintf %i loop over FindImageFile (added by an agent)
 10089A00,?LoadImage_guess@CTextureManager_guess@@QAEPAUtexture_s_guess@@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z,func,source order after GetTexture(char*); GetPath then UploadImage (added by an agent)
 10089C80,?LoadSprite_guess@CTextureManager_guess@@QAEPAUtexture_s_guess@@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z,func,source order before Load; SPR_Load and SpriteTexture calls (added by an agent)
 10089F20,?LoadTexture_guess@CTextureManager_guess@@QAE_NHPBDH_N@Z,func,"source order after Load; IsHardware, GetPath, UploadImage (added by an agent)"
 1007D630,?StartLog@@YAXXZ,func,"tail-call target (jmp) of SetupLogging after its ret, pushes the three banner strings (Paranoia client library loaded) to Log like Paranoia StartLog; Ghidra merged it into SetupLogging (added by an agent)"
-10065260,?UpdatePlayerFlashlights_guess@@YAXXZ,func,"only caller StudioCalcAttachments (1008BD9A, after GetMaxClients() > 1); loops over g_PlayerInfoList/g_PlayerExtraInfo, MY_AllocDlight, gfx/low/flashlight2.tga and gfx/flashlight2.tga, cl_lowflashlight (added by an agent)"
+10065260,?DrawPlayerFlashlights_guess@@YAXXZ,func,"only caller StudioCalcAttachments (1008BD9A, after GetMaxClients() > 1); loops over g_PlayerInfoList/g_PlayerExtraInfo, MY_AllocDlight, gfx/low/flashlight2.tga and gfx/flashlight2.tga, cl_lowflashlight (added by an agent)"
 100863F0,?AddProgram_guess@CCgContext_guess@@QAEPAUcgprogram_s_guess@@PBDH@Z,func,"string %s/cgshaders/%s; calls FindProgram, Init, IsProgramValid; name order before FindProgram (added by an agent)"
 10087FE0,??1CTextureManager_guess@@QAE@XZ,func,calls Reset_guess then frees the texture list; name order between ??1?$_Alloc_construct_ptr and ??1texture_s_guess (added by an agent)
-1008A280,?IsExtensionSupported_guess@@YAEPBD0@Z,func,tolower compare loop over the GL extension string; called by CheckMipmapSupport (added by an agent)
+1008A280,?isExtensionSupported_guess@@YAEPBD0@Z,func,tolower compare loop over the GL extension string; called by CheckMipmapSupport (added by an agent)
 10086570,?IsInitialized_guess@CCgContext_guess@@QAE_NXZ,func,returns the bool at +0x10 written by Init_guess; name order between GetFragmentProfile and IsProgramValid (added by an agent)
-1005EB40,?TextureTest_guess@@YAXXZ,func,"target of the jmp in __CmdFunc_TextureTest_guess (texturetest command, hud.cpp); clears world texture chains (added by an agent)"
+1005EB40,?ClearTextureChains_guess@@YAXXZ,func,"target of the jmp in __CmdFunc_TextureTest_guess (texturetest command, hud.cpp); clears world texture chains (added by an agent)"
 10087920,??1CPBuffer_guess@@QAE@XZ,func,empty body (ret 0); name order right after ??0CPBuffer_guess (added by an agent)
 10087930,?BindTexture_guess@CPBuffer_guess@@QAEXXZ,func,string Couldnt bind pbuffer to render texture; wglBindTexImageARB (added by an agent)
 10087D00,?ReleaseTexture_guess@CPBuffer_guess@@QAEXXZ,func,string Couldnt release pbuffer to render texture; wglReleaseTexImageARB (added by an agent)
@@ -1204,29 +1204,29 @@ va,name,kind,evidence
 1001CB20,??0CBlurTexture_guess@@QAE@XZ,func,between battery.cpp and cdll_int.cpp; bytes identical to the compiled Blur_guess.cpp (relocations masked); method order follows the alphabetical layout
 1001CB30,?AnimateNextFrame_guess@CBlur_guess@@QAE_NH@Z,func,between battery.cpp and cdll_int.cpp; bytes identical to the compiled Blur_guess.cpp (relocations masked); method order follows the alphabetical layout
 1001CBA0,?BindTexture_guess@CBlurTexture_guess@@QAEXHH@Z,func,between battery.cpp and cdll_int.cpp; bytes identical to the compiled Blur_guess.cpp (relocations masked); method order follows the alphabetical layout
-1001CBE0,?Draw_guess@CBlurTexture_guess@@QAEXHH@Z,func,between battery.cpp and cdll_int.cpp; bytes identical to the compiled Blur_guess.cpp (relocations masked); method order follows the alphabetical layout
+1001CBE0,?DrawBlended_guess@CBlurTexture_guess@@QAEXHH@Z,func,between battery.cpp and cdll_int.cpp; bytes identical to the compiled Blur_guess.cpp (relocations masked); method order follows the alphabetical layout
 1001CD30,?DrawBlur_guess@CBlur_guess@@QAEXXZ,func,between battery.cpp and cdll_int.cpp; bytes identical to the compiled Blur_guess.cpp (relocations masked); method order follows the alphabetical layout
 1001CDC0,?DrawQuad_guess@CBlurTexture_guess@@QAEXHHH@Z,func,between battery.cpp and cdll_int.cpp; bytes identical to the compiled Blur_guess.cpp (relocations masked); method order follows the alphabetical layout
 1001CEE0,?Init_guess@CBlurTexture_guess@@QAEXHH@Z,func,between battery.cpp and cdll_int.cpp; bytes identical to the compiled Blur_guess.cpp (relocations masked); method order follows the alphabetical layout
-1001CF80,?InitScreen_guess@CBlur_guess@@QAEXXZ,func,between battery.cpp and cdll_int.cpp; bytes identical to the compiled Blur_guess.cpp (relocations masked); method order follows the alphabetical layout
+1001CF80,?Initialize_guess@CBlur_guess@@QAEXXZ,func,between battery.cpp and cdll_int.cpp; bytes identical to the compiled Blur_guess.cpp (relocations masked); method order follows the alphabetical layout
 100642B0,?LoadGloveTexture_guess@@YAXH@Z,func,"same function as before (glove texture loader); its only caller GL_DrawPoints (10066B14) pushes one argument (push 0, add esp 4), so it takes an unused int (added by an agent)"
 10064A40,?LoadPoliceSleeveTexture_guess@@YAXH@Z,func,"same function as before (police sleeve texture loader); its only caller GL_DrawPoints (100668EE) pushes one argument (push 0, add esp 4), so it takes an unused int (added by an agent)"
-10065210,?VecDistance_guess@@YAMVVector@@0@Z,func,"only caller GL_SetupLighting (10067EDD, distance from v_origin to curstate.origin for the flickering lights); two Vectors by value, Length(b - a); same bytes as VectorDistance_guess of rain.cpp (100855B0), a second copy in this object (added by an agent)"
+10065210,?DistanceTo_guess@@YAMVVector@@0@Z,func,"only caller GL_SetupLighting (10067EDD, distance from v_origin to curstate.origin for the flickering lights); two Vectors by value, Length(b - a); same bytes as VectorDistance_guess of rain.cpp (100855B0), a second copy in this object (added by an agent)"
 1007FD50,?PlayMP3@CMP3@@QAEHPBD@Z,func,"identical bytes to our CMP3::PlayMP3 (strings %s/mp3/%s, MP3Volume, -nomusic, the end song list); Paranoia CMP3::PlayMP3 structure (m_szMP3File strcmp, strcpy); called by IrrKlangPlay_guess (added by an agent)"
 1007F6E0,??0CMP3@@QAE@XZ,func,identical bytes to our CMP3 constructor; called by IrrKlangInit_guess right after operator new(0xE0) (added by an agent)
 1007F730,?Disabled_guess@CMP3@@QAEXXZ,func,"identical bytes (ret 0, a disabled function); no callers; between the CMP3 constructor and CMP3::Frame in the object (added by an agent)"
 1007F740,?Frame@CMP3@@QAEXXZ,func,"identical bytes to our CMP3::Frame (volume and MP3Volume cvars, fadeout by GetClientTime as in Paranoia CMP3::Frame); called by IrrKlangFrame_guess (added by an agent)"
 1007F940,?Initialize@CMP3@@QAEHXZ,func,identical bytes to our CMP3::Initialize; called by IrrKlangFrame_guess when the initialized flag is clear (added by an agent)
-1007F9E0,?IrrKlangInit_guess@@YAXXZ,func,identical bytes; called by CHud::Init; calls createIrrKlangDevice with the string 1.6.0 (added by an agent)
-1007FA40,?MP3_Shutdown_guess@@YAXXZ,func,identical bytes; called by HUD_Shutdown and IrrKlangInit_guess; drops the irrKlang engine and deletes the CMP3 object (added by an agent)
+1007F9E0,?IrrKlangCreate_guess@@YAXXZ,func,identical bytes; called by CHud::Init; calls createIrrKlangDevice with the string 1.6.0 (added by an agent)
+1007FA40,?IrrKlangDestroy_guess@@YAXXZ,func,identical bytes; called by HUD_Shutdown and IrrKlangInit_guess; drops the irrKlang engine and deletes the CMP3 object (added by an agent)
 1007FAC0,?IrrKlangInitialize_guess@@YAXXZ,func,identical bytes (tail jump to CMP3::Initialize through the CMP3 pointer); no callers (added by an agent)
-1007FAF0,?IrrKlangPlay_guess@@YAXPBD@Z,func,"identical bytes; calls CMP3::PlayMP3; called by CHud::MsgFunc_PlayMP3, CGameMenu, CGameOver, CCredits, MsgCoopStats_guess (added by an agent)"
+1007FAF0,?IrrKlangPlayMP3_guess@@YAXPBD@Z,func,"identical bytes; calls CMP3::PlayMP3; called by CHud::MsgFunc_PlayMP3, CGameMenu, CGameOver, CCredits, MsgCoopStats_guess (added by an agent)"
 1007FB10,?IrrKlangPlaySFX_guess@@YAXPBDH_NVVector@@@Z,func,identical bytes; calls the CMP3 sound effect method; called by CHud::MsgFunc_PlaySFX (bool third argument) and HUD_StudioEvent (added by an agent)
-1007FB50,?IrrKlangSetParams_guess@@YAXMMMM@Z,func,"identical bytes; called by CHud::Init, CHud::VidInit and CHud::MsgFunc_PlayMP3; writes the four fade floats of CMP3 (added by an agent)"
+1007FB50,?IrrKlangSetFade_guess@@YAXMMMM@Z,func,"identical bytes; called by CHud::Init, CHud::VidInit and CHud::MsgFunc_PlayMP3; writes the four fade floats of CMP3 (added by an agent)"
 1007FBB0,?IrrKlangSetLoop_guess@@YAX_N@Z,func,"identical bytes; writes CMP3+0xDC, read by CMP3::PlayMP3 as the play2D loop flag (added by an agent)"
 1007FBF0,?IrrKlangSetStopping_guess@@YAX_N@Z,func,"identical bytes; writes CMP3+0xDD, also set by CMP3::StopMP3 (added by an agent)"
 1007FC10,?IrrKlangStop_guess@@YAXM@Z,func,identical bytes; calls CMP3::StopMP3; called by __CmdFunc_StopMP3 and CHud::MsgFunc_PlayMP3 (added by an agent)
-1007FC30,?PrintAverage_guess@@YGXPBEI@Z,func,"identical bytes (stdcall, sums a byte buffer and center-prints the average with %.3f); no callers (added by an agent)"
+1007FC30,?OutputAverage_guess@@YGXPBEI@Z,func,"identical bytes (stdcall, sums a byte buffer and center-prints the average with %.3f); no callers (added by an agent)"
 10080300,?PlayMP3Path_guess@CMP3@@QAEHPBD@Z,func,identical bytes (PlayMP3 that passes the path to play2D unchanged); no callers (added by an agent)
 10080410,?PlaySFX_guess@CMP3@@QAEXPBDH_NVVector@@@Z,func,"called only by IrrKlangPlaySFX_guess with the same six argument dwords (ret 0x18); strings weapons/, weapons_new/, %s/sound/%s, volume; our function differs only in register save placement (added by an agent)"
 10080710,?SetPaused_guess@CMP3@@QAEH_N@Z,func,identical bytes; called by IrrKlangSetPaused_guess; calls ISoundEngine::setAllSoundsPaused and writes CMP3+0xBC read by IrrKlangIsPaused_guess (added by an agent)

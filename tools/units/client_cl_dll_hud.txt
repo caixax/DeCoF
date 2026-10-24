@@ -12,11 +12,11 @@
 ?__MsgFunc_BigPrick@@YAHPBDHPAX@Z
 ?__MsgFunc_SetFOV@@YAHPBDHPAX@Z
 ?GetPlayerTextColor@CHLVoiceStatusHelper@@UAEXHQAH@Z
-?GetInventoryItem_guess@CHud@@QAEPADH@Z
+?GetSlotItem_guess@CHud@@QAEPADH@Z
 ?HUD_IsGame@@YAHPBD@Z
-?SubUnknown5590_guess@CHud@@QAEHH@Z
+?MinusUnknown5590_guess@CHud@@QAEHH@Z
 ?MsgFunc_HUDColor@CHud@@QAAHPBDHPAX@Z
-?AddUnknown5590_guess@CHud@@QAEHH@Z
+?PlusUnknown5590_guess@CHud@@QAEHH@Z
 ?__MsgFunc_BlackWhite@@YAHPBDHPAX@Z
 ?__MsgFunc_Blur@@YAHPBDHPAX@Z
 ?__MsgFunc_Boat@@YAHPBDHPAX@Z

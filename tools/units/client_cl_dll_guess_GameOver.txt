@@ -3,7 +3,7 @@
 ?ActionSignal@CGameOver@@QAEXH@Z
 ?Initialize@CGameOver@@QAEXXZ
 ?MsgCustomDoc_guess@@YAHPBDHPAX@Z
-?CustomDocInit_guess@@YAXXZ
+?VGUI_CustomDocInit_guess@@YAXXZ
 ?actionPerformed@CGameOverHandler_Command@@UAEXPAVPanel@vgui@@@Z
 ?setVisible@CGameOver@@UAEX_N@Z
 ?solve@CGameOver@@MAEXXZ
