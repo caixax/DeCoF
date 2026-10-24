@@ -6,6 +6,8 @@ Method (as for hw.dll, docs/hw_regions.md): each object is contiguous. Its regul
 
 Notes go to progress.csv as "linux: <symbol>" where the number of functions of an object equals the Linux DWARF count (D0/D2 destructor pairs and GCC .part clones merged). Names were given only where the decoration is certain (VC6 cl checked); the other new rows have a file and a note.
 
+Link (2026-10-25): the objects from vgui2/controls/controls.cpp to the end come from a static library, vgui_controls.lib in the retail project. Retail has the import thunks of kernel32, user32 and wsock32 (10058B28-10058C66) between OptionsSubVoice.obj and controls.obj, and putting those objects into a library linked after the import libraries (`"staticlibs"` in the gameui link section) makes VC6 link pull them in exactly the retail object order and start addresses.
+
 | File | Range | Rows | Evidence for new attributions |
 |---|---|---|---|
 | GameUI/CareerBaseFrame.cpp | 10001000-10003710 | 82 |  |

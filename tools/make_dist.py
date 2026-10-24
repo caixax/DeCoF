@@ -35,6 +35,7 @@ DIST = os.path.join(ROOT, "dist")
 DLLS = {
     "client.dll": os.path.join("cryoffear", "cl_dlls", "client.dll"),
     "hl.dll": os.path.join("cryoffear", "cl_dlls", "hl.dll"),
+    "GameUI.dll": os.path.join("cryoffear", "cl_dlls", "GameUI.dll"),
     "opengl32.dll": "opengl32.dll",
     "CoFLaunchApp.exe": "CoFLaunchApp.exe",
     "launcher.exe": "cof.exe",

@@ -14,6 +14,8 @@
 #include "GameUI_Interface.h"
 #include "EngineInterface.h"
 
+#undef PostMessage	// windows.h, from cdll_int.h
+
 #include <vgui/ILocalize.h>
 #include <vgui/ISurface.h>
 #include <vgui/ISystem.h>

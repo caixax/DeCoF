@@ -14,7 +14,7 @@
 
 #include "interface.h"
 
-struct IBaseSystem;
+class IBaseSystem;
 
 //-----------------------------------------------------------------------------
 // Purpose: contains all the functions that the GameUI dll exports

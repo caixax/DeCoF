@@ -82,12 +82,12 @@ CCareerProfileFrame::CCareerProfileFrame( Panel *parent ) : CCareerBaseFrame( pa
 	new CBitmapImagePanel( this, "TitlePanel", "gfx/career/Logo_CSCZ_Big" );
 	new CBitmapImagePanel( this, "SelectProfilePanel", "gfx/career/hed_selectprofile" );
 
-	m_buttons.AddElement( new CCareerButton( this, "Cancel", "#Career_Cancel", "gfx/career/icon_cancel", false ) );
-	m_buttons.AddElement( m_pNewButton = new CCareerButton( this, "NewProfile", "#Career_New", "", false ) );
+	m_buttons.PutElement( new CCareerButton( this, "Cancel", "#Career_Cancel", "gfx/career/icon_cancel", false ) );
+	m_buttons.PutElement( m_pNewButton = new CCareerButton( this, "NewProfile", "#Career_New", "", false ) );
 
-	m_buttons.AddElement( m_pResumeButton = new CCareerButton( this, "ResumeProfile", "#Career_Resume", "", false ) );
+	m_buttons.PutElement( m_pResumeButton = new CCareerButton( this, "ResumeProfile", "#Career_Resume", "", false ) );
 
-	m_buttons.AddElement( m_pDeleteButton = new CCareerButton( this, "DeleteProfile", "#Career_Delete", "", false ) );
+	m_buttons.PutElement( m_pDeleteButton = new CCareerButton( this, "DeleteProfile", "#Career_Delete", "", false ) );
 
 	m_pMissionPackBackground = new CDottedBgLabel( this, "MissionPackSelectBackground", "", 0, 0, 0 );
 	m_pMissionPackBackground->SetTextInset( 2, 2 );

@@ -477,7 +477,7 @@ void TextImage::RecalculateNewLinePositions()
 
 		// get the width
 		charWidth = surface()->GetCharacterWidth(font, ch);
-		if (iswcntrl(ch))
+		if (iswprint(ch))
 		{
 			justStartedNewLine = false;
 		}

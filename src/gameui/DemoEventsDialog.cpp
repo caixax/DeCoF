@@ -47,7 +47,7 @@ CDemoEventsDialog::CDemoEventsDialog( vgui::Panel *parent, const char *name, IEn
 	Button *modify = new Button( this, "ModifyButton", "#GameUI_Modify" );
 	Button *goto_ = new Button( this, "GotoButton", "#GameUI_Goto" );
 
-	LoadControlSettings( "Resource\\DemoEventsDialog.res" );
+	LoadControlSettings( "Resource/DemoEventsDialog.res" );
 
 	m_EventList->AddColumnHeader( 0, "time", "#GameUI_Time", 32, 0 );
 	m_EventList->AddColumnHeader( 1, "type", "#GameUI_Type", 128, 0 );

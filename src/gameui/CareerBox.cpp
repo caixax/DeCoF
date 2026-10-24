@@ -52,8 +52,8 @@ CCareerBaseBox::CCareerBaseBox( Panel *parent, const char *panelName, bool loadR
 	m_pCancelButton = new CCareerButton( this, "CancelButton", "", "", false );
 	m_pOkButton->SetVisible( false );
 
-	m_buttons.AddElement( m_pOkButton );
-	m_buttons.AddElement( m_pCancelButton );
+	m_buttons.PutElement( m_pOkButton );
+	m_buttons.PutElement( m_pCancelButton );
 
 	m_cancelFocus = false;
 
@@ -237,7 +237,7 @@ void CCareerBaseBox::OnCommand( const char *command )
 //-----------------------------------------------------------------------------
 void CCareerBaseBox::AddButton( Button *pButton )
 {
-	m_buttons.AddElement( pButton );
+	m_buttons.PutElement( pButton );
 }
 
 //-----------------------------------------------------------------------------

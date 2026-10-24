@@ -26,7 +26,7 @@ using namespace vgui2;
 #define RANDOM_MAP "< Random Map >"
 
 // common/Random.cpp
-extern int RandomLong( int lLow, int lHigh );
+extern int32 RandomLong( int32 lLow, int32 lHigh );
 
 //-----------------------------------------------------------------------------
 // Purpose: Constructor

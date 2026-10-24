@@ -17,7 +17,7 @@ _$E15
 ?SendShutdownMsgFunc_guess@@YGHHH@Z
 ?RunVguiTestScript@@YAXXZ
 ?RunVguiTestScript@CGameUI@@QAEXPBD@Z
-?Start@CGameUI@@UAEXPAUcl_enginefuncs_s@@HPAUIBaseSystem@@@Z
+?Start@CGameUI@@UAEXPAUcl_enginefuncs_s@@HPAVIBaseSystem@@@Z
 ?FindPlatformDirectory@CGameUI@@AAE_NPADH@Z
 ?ValidateCDKey@CGameUI@@UAEX_N0@Z
 ?OpenDialog_guess@CGameUI@@UAEXH@Z

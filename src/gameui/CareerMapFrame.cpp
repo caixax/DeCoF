@@ -93,7 +93,7 @@ void ShowCareerMapDescription( RichText *pText, CCareerMap *pMap, Color normalCo
 		localize()->ConvertANSIToUnicode( botStr, botWStr, sizeof( botWStr ) );
 		wcsncat( str, botWStr, DescLen );
 	}
-	wcsncat( str, L"\n", DescLen );
+	wcsncat( str, L"\n\n", DescLen );
 
 	wcsncat( str, localize()->Find( "#Career_TasksColon" ), DescLen );
 	wcsncat( str, L"\n", DescLen );
@@ -480,9 +480,9 @@ CCareerMapFrame::CCareerMapFrame( Panel *parent ) : CCareerBaseFrame( parent, "C
 	m_pNextButton = new CCareerButton( this, "ButtonNext", "#Career_MapNext", "gfx/career/icon_forward", true );
 	m_pPlayButton = new CCareerButton( this, "ButtonPlay", "#Career_Start", "gfx/career/icon_forward", true );
 	m_pCancelButton = new CCareerButton( this, "ButtonCancel", "#Career_Cancel", "gfx/career/icon_cancel", false );
-	m_buttons.AddElement( m_pNextButton );
-	m_buttons.AddElement( m_pPlayButton );
-	m_buttons.AddElement( m_pCancelButton );
+	m_buttons.PutElement( m_pNextButton );
+	m_buttons.PutElement( m_pPlayButton );
+	m_buttons.PutElement( m_pCancelButton );
 
 	for ( i=0; i<3; ++i )
 	{
@@ -520,8 +520,8 @@ CCareerMapFrame::CCareerMapFrame( Panel *parent ) : CCareerBaseFrame( parent, "C
 	}
 
 	m_pMapScroll = new ScrollBar( this, "MapScrollbar", false );
-	m_buttons.AddElement( m_pMapScroll->GetButton( 0 ) );
-	m_buttons.AddElement( m_pMapScroll->GetButton( 1 ) );
+	m_buttons.PutElement( m_pMapScroll->GetButton( 0 ) );
+	m_buttons.PutElement( m_pMapScroll->GetButton( 1 ) );
 
 	new CBitmapImagePanel( this, "TitlePanel", "gfx/career/Logo_CSCZ_Big" );
 	new CBitmapImagePanel( this, "SelectLocationPanel", "gfx/career/hed_selectlocation" );
@@ -878,7 +878,7 @@ void CCareerMapFrame::OnCommand( const char *command )
 	{
 		OnClose();
 		engine->pfnResetTutorMessageDecayData();
-		g_pTaskbar->OnOpenCareerProfileFrame();
+		g_pTaskbar->OnOpenNewCareerNameDialog();
 	}
 	else if ( !strcmp( cmd, "map" ) )
 	{

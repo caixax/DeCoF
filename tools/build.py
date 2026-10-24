@@ -390,6 +390,27 @@ def link(dll):
                            stdout=subprocess.DEVNULL) != 0:
             sys.exit("import library for %s failed" % src)
         made[lib] = path
+    # "staticlibs": {"<name>.lib": "<unit>"} puts that unit and every unit
+    # after it in the link order into a static library (lib.exe of the
+    # toolchain) instead of the command line, like a retail project that
+    # linked a library of its own (GameUI.dll and vgui_controls.lib). The
+    # linker then pulls its members in the order they are first needed, after
+    # the import thunks of the libraries before it.
+    objs = [obj_path(kind, full) for _d, _c, _u, full in units]
+    for lib, first in lk.get("staticlibs", {}).items():
+        names = [full.split("/", 1)[1] for _d, _c, _u, full in units]
+        k = names.index(first)
+        path = os.path.join(tmp, lib)
+        if os.path.exists(path):
+            os.remove(path)
+        res = subprocess.run([os.path.join(os.path.dirname(tc.link_path()), "lib.exe"), "/nologo",
+                              "/out:" + path] + objs[k:], env=tc.env(), cwd=ROOT,
+                             stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+        if res.returncode != 0:
+            print(res.stdout.decode("latin-1")[-2000:])
+            sys.exit("static library %s failed" % lib)
+        objs = objs[:k]
+        made[lib] = path
     libs = []
     for lib in lk["libs"]:
         if lib.startswith("@"):
@@ -407,7 +428,7 @@ def link(dll):
         libs.append(res)
     out = os.path.join(tmp, lk["out"])
     cmd = [tc.link_path()] + lk["flags"] + ["/out:" + out, "/map:" + out + ".map"]
-    cmd += [obj_path(kind, full) for _d, _c, _u, full in units] + libs
+    cmd += objs + libs
     res = subprocess.run(cmd, env=tc.env(), cwd=ROOT, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
     log = res.stdout.decode("latin-1").splitlines()
     with open(out + ".log", "w") as f:
