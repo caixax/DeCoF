@@ -5524,3 +5524,41 @@ va,name,kind,evidence
 10058C5A,_sendto@24,func,WSOCK32 import thunk (ordinal 20) called by GameUI/Socket_guess.cpp
 10058C60,_recvfrom@24,func,WSOCK32 import thunk (ordinal 17) called by GameUI/Socket_guess.cpp
 100FE8E0,?socketCount_guess@@3HA,data,GameUI/Socket_guess.cpp: socket counter incremented by AddSocketToThread_guess and decremented by RemoveSocketFromThread_guess
+10032A40,??0CLoadingDialog@@QAE@PAVPanel@vgui2@@@Z,func,GameUI/LoadingDialog.cpp: same position and size as in our compiled object
+100334A7,??1CLoadingDialog@@UAE@XZ,func,GameUI/LoadingDialog.cpp: same position and size as in our compiled object
+100334C3,?DisplayProgressBar@CLoadingDialog@@QAEXPBD0@Z,func,GameUI/LoadingDialog.cpp: same position and size as in our compiled object
+100335B4,?SetupControlSettingsForErrorDisplay@CLoadingDialog@@IAEXPBD@Z,func,GameUI/LoadingDialog.cpp: same position and size as in our compiled object; linux: _ZN14CLoadingDialog35SetupControlSettingsForErrorDisplayEPKc
+1003372D,?DisplayGenericError@CLoadingDialog@@QAEXPBD0@Z,func,GameUI/LoadingDialog.cpp: same position and size as in our compiled object; linux: _ZN14CLoadingDialog19DisplayGenericErrorEPKcS1_
+1003397F,?DisplayVACBannedError@CLoadingDialog@@QAEXXZ,func,GameUI/LoadingDialog.cpp: same position and size as in our compiled object; linux: _ZN14CLoadingDialog21DisplayVACBannedErrorEv
+100339B6,?DisplayNoSteamConnectionError@CLoadingDialog@@QAEXXZ,func,GameUI/LoadingDialog.cpp: same position and size as in our compiled object; linux: _ZN14CLoadingDialog29DisplayNoSteamConnectionErrorEv
+100339D8,?DisplaySteamConnectionError@CLoadingDialog@@QAEXPBDW4ESteamLoginFailure@@@Z,func,GameUI/LoadingDialog.cpp: same position (size 190 against 180) as in our compiled object; linux: _ZN14CLoadingDialog27DisplaySteamConnectionErrorEPKc18ESteamLoginFailure
+10033A96,?SetStatusText@CLoadingDialog@@QAEXPBD@Z,func,GameUI/LoadingDialog.cpp: same position and size as in our compiled object; linux: _ZN14CLoadingDialog13SetStatusTextEPKc
+10033AC1,?OnThink@CLoadingDialog@@MAEXXZ,func,GameUI/LoadingDialog.cpp: same position (size 400 against 401) as in our compiled object; linux: _ZN14CLoadingDialog7OnThinkEv
+10033C51,?PerformLayout@CLoadingDialog@@MAEXXZ,func,GameUI/LoadingDialog.cpp: same position and size as in our compiled object; linux: _ZN14CLoadingDialog13PerformLayoutEv
+10033C72,?SetProgressPoint@CLoadingDialog@@QAEXH@Z,func,GameUI/LoadingDialog.cpp: same position and size as in our compiled object; linux: _ZN14CLoadingDialog16SetProgressPointEi
+10033D11,?SetProgressRange@CLoadingDialog@@QAEXHH@Z,func,GameUI/LoadingDialog.cpp: same position and size as in our compiled object; linux: _ZN14CLoadingDialog16SetProgressRangeEii
+10033D36,?SetSecondaryProgress@CLoadingDialog@@QAEXM@Z,func,GameUI/LoadingDialog.cpp: same position and size as in our compiled object; linux: _ZN14CLoadingDialog20SetSecondaryProgressEf
+10033F0B,?SetSecondaryProgressText@CLoadingDialog@@QAEXPBD@Z,func,GameUI/LoadingDialog.cpp: same position and size as in our compiled object; linux: _ZN14CLoadingDialog24SetSecondaryProgressTextEPKc
+10033F2F,?OnClose@CLoadingDialog@@MAEXXZ,func,GameUI/LoadingDialog.cpp: same position and size as in our compiled object; linux: _ZN14CLoadingDialog7OnCloseEv
+10033F6A,?SwitchToHttpDownloadDialog@CLoadingDialog@@QAEXPBD@Z,func,GameUI/LoadingDialog.cpp: same position and size as in our compiled object; linux: _ZN14CLoadingDialog26SwitchToHttpDownloadDialogEPKc
+10034006,?SwitchToPausedCareerDialog@CLoadingDialog@@QAEXXZ,func,GameUI/LoadingDialog.cpp: same position and size as in our compiled object; linux: _ZN14CLoadingDialog26SwitchToPausedCareerDialogEv
+10034060,?CompleteSwitchToPausedCareerDialog@CLoadingDialog@@AAEXXZ,func,GameUI/LoadingDialog.cpp: same position (size 385 against 383) as in our compiled object; linux: _ZN14CLoadingDialog34CompleteSwitchToPausedCareerDialogEv
+100341E1,?OnCommand@CLoadingDialog@@MAEXPBD@Z,func,GameUI/LoadingDialog.cpp: same position and size as in our compiled object; linux: _ZN14CLoadingDialog9OnCommandEPKc
+100342D4,?OnKeyCodePressed@CLoadingDialog@@MAEXW4KeyCode@vgui2@@@Z,func,GameUI/LoadingDialog.cpp: same position and size as in our compiled object; linux: _ZN14CLoadingDialog16OnKeyCodePressedEN5vgui27KeyCodeE
+10034308,?OnStartURL@LoadingHTML@CLoadingDialog@@UAE_NPBD0_N@Z,func,GameUI/LoadingDialog.cpp: same position and size as in our compiled object
+10034354,?ApplySchemeSettings@CLoadingDialog@@MAEXPAVIScheme@vgui2@@@Z,func,GameUI/LoadingDialog.cpp: same position and size as in our compiled object
+100343A4,?LoadingDialog@@YAPAVCLoadingDialog@@XZ,func,GameUI/LoadingDialog.cpp: same position and size as in our compiled object
+100343C0,??0CareerRichText@@QAE@PAVPanel@vgui2@@PBD@Z,func,GameUI/LoadingDialog.cpp: same position and size as in our compiled object
+10034410,?ApplySchemeSettings@CareerRichText@@UAEXPAVIScheme@vgui2@@@Z,func,GameUI/LoadingDialog.cpp: same position and size as in our compiled object
+10034480,?PerformLayout@CareerRichText@@UAEXXZ,func,GameUI/LoadingDialog.cpp: same position and size as in our compiled object
+100344E0,?IsFullHeight@CareerRichText@@QAE_NXZ,func,GameUI/LoadingDialog.cpp: same position (size 75 against 69) as in our compiled object
+10034530,??_GCareerRichText@@UAEPAXI@Z,func,GameUI/LoadingDialog.cpp: same position and size as in our compiled object
+10034560,??1CareerRichText@@UAE@XZ,func,GameUI/LoadingDialog.cpp: same position and size as in our compiled object
+10034580,??_GCLoadingDialog@@UAEPAXI@Z,func,GameUI/LoadingDialog.cpp: same position and size as in our compiled object
+100345B0,??0LoadingHTML@CLoadingDialog@@QAE@PAVPanel@vgui2@@PBD@Z,func,GameUI/LoadingDialog.cpp: same position and size as in our compiled object
+100345F0,?GetMessageMap@HTML@vgui2@@UAEPAUPanelMessageMap@2@XZ,func,GameUI/LoadingDialog.cpp: same position and size as in our compiled object
+10034630,?GetPanelClassName@HTML@vgui2@@SAPBDXZ,func,GameUI/LoadingDialog.cpp: same position and size as in our compiled object
+10034640,??_GLoadingHTML@CLoadingDialog@@UAEPAXI@Z,func,GameUI/LoadingDialog.cpp: same position and size as in our compiled object
+10034670,??1LoadingHTML@CLoadingDialog@@UAE@XZ,func,GameUI/LoadingDialog.cpp: same position and size as in our compiled object
+100346A0,?GetMessageMap@RichText@vgui2@@UAEPAUPanelMessageMap@2@XZ,func,GameUI/LoadingDialog.cpp: same position and size as in our compiled object
+100346E0,?GetPanelClassName@RichText@vgui2@@SAPBDXZ,func,GameUI/LoadingDialog.cpp: same position and size as in our compiled object

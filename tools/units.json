@@ -4178,6 +4178,11 @@
           "name": "GameUI/Socket_guess",
           "source": "src/gameui/Socket_guess.cpp",
           "functions_file": "tools/units/gameui_GameUI_Socket_guess.txt"
+        },
+        {
+          "name": "GameUI/LoadingDialog",
+          "source": "src/gameui/LoadingDialog.cpp",
+          "functions_file": "tools/units/gameui_GameUI_LoadingDialog.txt"
         }
       ]
     }

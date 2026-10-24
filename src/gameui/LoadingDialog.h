@@ -20,16 +20,18 @@ namespace vgui2
 class Button;
 class Label;
 class ProgressBar;
-class CBitmapImagePanel;
 };
 
 class CareerRichText;
+class CBitmapImagePanel;
 
 //-----------------------------------------------------------------------------
 // Purpose: Dialog for displaying level loading status
 //-----------------------------------------------------------------------------
 class CLoadingDialog : public vgui2::Frame
 {
+	typedef vgui2::Frame BaseClass;
+
 public:
 	CLoadingDialog( vgui2::Panel *parent );
 	~CLoadingDialog();
@@ -74,9 +76,9 @@ private:
 	CareerRichText *m_pCareerMapDescLabel;
 	vgui2::Label *m_pCareerMapLabel;
 	vgui2::Label *m_pCareerScenarioInfo;
-	vgui2::CBitmapImagePanel *m_pCareerMapImagePanel;
+	CBitmapImagePanel *m_pCareerMapImagePanel;
 	float m_switchTime;
-	LoadingHTML *m_pHTML_guess;	// Cry of Fear addition, created by the constructor
+	LoadingHTML *m_pHTML_guess;	// Cry of Fear addition ("BannerAd"), created by the constructor
 
 	int m_iRangeMin, m_iRangeMax;
 	bool m_bShowingSecondaryProgress;

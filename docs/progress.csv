@@ -8861,44 +8861,44 @@ gameui,100329A0,46,??_GLabelSliderCombo@@UAEPAXI@Z,public: virtual void * __this
 gameui,100329D0,19,??1Slider@vgui2@@UAE@XZ,public: virtual __thiscall vgui2::Slider::~Slider(void),UNKNOWN,GameUI/labelslidercombo.cpp,,,MATCHED,100,,
 gameui,100329F0,64,?GetMessageMap@Slider@vgui2@@UAEPAUPanelMessageMap@2@XZ,public: virtual struct vgui2::PanelMessageMap * __thiscall vgui2::Slider::GetMessageMap(void),UNKNOWN,GameUI/labelslidercombo.cpp,,,MATCHED,100,,
 gameui,10032A30,10,?GetPanelClassName@Slider@vgui2@@SAPBDXZ,public: static char const * __cdecl vgui2::Slider::GetPanelClassName(void),UNKNOWN,GameUI/labelslidercombo.cpp,,,MATCHED,100,,
-gameui,10032A40,2663,,CLoadingDialog::CLoadingDialog,ENGINE,GameUI/LoadingDialog.cpp,,,TODO,,linux_symbols:string:0.775,
-gameui,100334A7,28,,,UNKNOWN,GameUI/LoadingDialog.cpp,,,TODO,,,
-gameui,100334C3,241,,,UNKNOWN,GameUI/LoadingDialog.cpp,,,TODO,,,
-gameui,100335B4,377,,CLoadingDialog::SetupControlSettingsForErrorDisplay,ENGINE,GameUI/LoadingDialog.cpp,,,TODO,,linux_symbols:string:0.557,linux: _ZN14CLoadingDialog35SetupControlSettingsForErrorDisplayEPKc
-gameui,1003372D,594,,CLoadingDialog::DisplayGenericError,ENGINE,GameUI/LoadingDialog.cpp,,,TODO,,linux_symbols:string:0.847,linux: _ZN14CLoadingDialog19DisplayGenericErrorEPKcS1_
-gameui,1003397F,55,,CLoadingDialog::DisplayVACBannedError,ENGINE,GameUI/LoadingDialog.cpp,,,TODO,,linux_symbols:string:0.861,linux: _ZN14CLoadingDialog21DisplayVACBannedErrorEv
-gameui,100339B6,34,,CLoadingDialog::DisplayNoSteamConnectionError,ENGINE,GameUI/LoadingDialog.cpp,,,TODO,,linux_symbols:caller:0.833,linux: _ZN14CLoadingDialog29DisplayNoSteamConnectionErrorEv
-gameui,100339D8,190,,CLoadingDialog::DisplaySteamConnectionError,ENGINE,GameUI/LoadingDialog.cpp,,,TODO,,linux_symbols:string:0.753,linux: _ZN14CLoadingDialog27DisplaySteamConnectionErrorEPKc18ESteamLoginFailure
-gameui,10033A96,43,,,UNKNOWN,GameUI/LoadingDialog.cpp,,,TODO,,,linux: _ZN14CLoadingDialog13SetStatusTextEPKc
-gameui,10033AC1,400,,CLoadingDialog::OnThink,ENGINE,GameUI/LoadingDialog.cpp,,,TODO,,linux_symbols:string:0.779,linux: _ZN14CLoadingDialog7OnThinkEv
-gameui,10033C51,33,,,UNKNOWN,GameUI/LoadingDialog.cpp,,,TODO,,,linux: _ZN14CLoadingDialog13PerformLayoutEv
-gameui,10033C72,159,,,UNKNOWN,GameUI/LoadingDialog.cpp,,,TODO,,,linux: _ZN14CLoadingDialog16SetProgressPointEi
-gameui,10033D11,37,,,UNKNOWN,GameUI/LoadingDialog.cpp,,,TODO,,,linux: _ZN14CLoadingDialog16SetProgressRangeEii
-gameui,10033D36,469,,CLoadingDialog::SetSecondaryProgress,ENGINE,GameUI/LoadingDialog.cpp,,,TODO,,linux_symbols:string:0.75,linux: _ZN14CLoadingDialog20SetSecondaryProgressEf
-gameui,10033F0B,36,,CLoadingDialog::SetSecondaryProgressText,ENGINE,GameUI/LoadingDialog.cpp,,,TODO,,linux_symbols:string:0.75,linux: _ZN14CLoadingDialog24SetSecondaryProgressTextEPKc
-gameui,10033F2F,59,,,UNKNOWN,GameUI/LoadingDialog.cpp,,,TODO,,,linux: _ZN14CLoadingDialog7OnCloseEv
-gameui,10033F6A,156,,,UNKNOWN,GameUI/LoadingDialog.cpp,,,TODO,,,linux: _ZN14CLoadingDialog26SwitchToHttpDownloadDialogEPKc
-gameui,10034006,90,,CLoadingDialog::SwitchToPausedCareerDialog,ENGINE,GameUI/LoadingDialog.cpp,,,TODO,,linux_symbols:caller:0.667,linux: _ZN14CLoadingDialog26SwitchToPausedCareerDialogEv
-gameui,10034060,385,,CLoadingDialog::CompleteSwitchToPausedCareerDialog,ENGINE,GameUI/LoadingDialog.cpp,,,TODO,,linux_symbols:callseq:0.767,linux: _ZN14CLoadingDialog34CompleteSwitchToPausedCareerDialogEv
-gameui,100341E1,243,,CLoadingDialog::OnCommand,ENGINE,GameUI/LoadingDialog.cpp,,,TODO,,linux_symbols:string:0.708,linux: _ZN14CLoadingDialog9OnCommandEPKc
-gameui,100342D4,52,,,UNKNOWN,GameUI/LoadingDialog.cpp,,,TODO,,,linux: _ZN14CLoadingDialog16OnKeyCodePressedEN5vgui27KeyCodeE
-gameui,10034308,76,,,UNKNOWN,GameUI/LoadingDialog.cpp,,,TODO,,,
-gameui,10034354,80,,CLoadingDialog::ApplySchemeSettings,ENGINE,GameUI/LoadingDialog.cpp,,,TODO,,linux_symbols:string:0.75,
-gameui,100343A4,15,,,UNKNOWN,GameUI/LoadingDialog.cpp,,,TODO,,,
-gameui,100343C0,66,,,UNKNOWN,GameUI/LoadingDialog.cpp,,,TODO,,,
-gameui,10034410,103,,,UNKNOWN,GameUI/LoadingDialog.cpp,,,TODO,,,
-gameui,10034480,84,,,UNKNOWN,GameUI/LoadingDialog.cpp,,,TODO,,,
-gameui,100344E0,75,,,UNKNOWN,GameUI/LoadingDialog.cpp,,,TODO,,,
-gameui,10034530,46,,,UNKNOWN,GameUI/LoadingDialog.cpp,,,TODO,,,
-gameui,10034560,28,,,UNKNOWN,GameUI/LoadingDialog.cpp,,,TODO,,,
-gameui,10034580,46,,,UNKNOWN,GameUI/LoadingDialog.cpp,,,TODO,,,
-gameui,100345B0,63,,,UNKNOWN,GameUI/LoadingDialog.cpp,,,TODO,,,
-gameui,100345F0,64,,,UNKNOWN,GameUI/LoadingDialog.cpp,,,TODO,,,
-gameui,10034630,10,,,UNKNOWN,GameUI/LoadingDialog.cpp,,,TODO,,,
-gameui,10034640,46,,,UNKNOWN,GameUI/LoadingDialog.cpp,,,TODO,,,
-gameui,10034670,38,,CMultiPageDHtmlDialog::~CMultiPageDHtmlDialog,ENGINE,GameUI/LoadingDialog.cpp,,,TODO,,ghidra,
-gameui,100346A0,64,,,UNKNOWN,GameUI/LoadingDialog.cpp,,,TODO,,,
-gameui,100346E0,10,,,UNKNOWN,GameUI/LoadingDialog.cpp,,,TODO,,,
+gameui,10032A40,2663,??0CLoadingDialog@@QAE@PAVPanel@vgui2@@@Z,public: __thiscall CLoadingDialog::CLoadingDialog(class vgui2::Panel *),ENGINE,GameUI/LoadingDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100334A7,28,??1CLoadingDialog@@UAE@XZ,public: virtual __thiscall CLoadingDialog::~CLoadingDialog(void),UNKNOWN,GameUI/LoadingDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100334C3,241,?DisplayProgressBar@CLoadingDialog@@QAEXPBD0@Z,"public: void __thiscall CLoadingDialog::DisplayProgressBar(char const *,char const *)",UNKNOWN,GameUI/LoadingDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100335B4,377,?SetupControlSettingsForErrorDisplay@CLoadingDialog@@IAEXPBD@Z,protected: void __thiscall CLoadingDialog::SetupControlSettingsForErrorDisplay(char const *),ENGINE,GameUI/LoadingDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN14CLoadingDialog35SetupControlSettingsForErrorDisplayEPKc
+gameui,1003372D,594,?DisplayGenericError@CLoadingDialog@@QAEXPBD0@Z,"public: void __thiscall CLoadingDialog::DisplayGenericError(char const *,char const *)",ENGINE,GameUI/LoadingDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN14CLoadingDialog19DisplayGenericErrorEPKcS1_
+gameui,1003397F,55,?DisplayVACBannedError@CLoadingDialog@@QAEXXZ,public: void __thiscall CLoadingDialog::DisplayVACBannedError(void),ENGINE,GameUI/LoadingDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN14CLoadingDialog21DisplayVACBannedErrorEv
+gameui,100339B6,34,?DisplayNoSteamConnectionError@CLoadingDialog@@QAEXXZ,public: void __thiscall CLoadingDialog::DisplayNoSteamConnectionError(void),ENGINE,GameUI/LoadingDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN14CLoadingDialog29DisplayNoSteamConnectionErrorEv
+gameui,100339D8,190,?DisplaySteamConnectionError@CLoadingDialog@@QAEXPBDW4ESteamLoginFailure@@@Z,"public: void __thiscall CLoadingDialog::DisplaySteamConnectionError(char const *,enum ESteamLoginFailure)",ENGINE,GameUI/LoadingDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN14CLoadingDialog27DisplaySteamConnectionErrorEPKc18ESteamLoginFailure
+gameui,10033A96,43,?SetStatusText@CLoadingDialog@@QAEXPBD@Z,public: void __thiscall CLoadingDialog::SetStatusText(char const *),UNKNOWN,GameUI/LoadingDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN14CLoadingDialog13SetStatusTextEPKc
+gameui,10033AC1,400,?OnThink@CLoadingDialog@@MAEXXZ,protected: virtual void __thiscall CLoadingDialog::OnThink(void),ENGINE,GameUI/LoadingDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN14CLoadingDialog7OnThinkEv
+gameui,10033C51,33,?PerformLayout@CLoadingDialog@@MAEXXZ,protected: virtual void __thiscall CLoadingDialog::PerformLayout(void),UNKNOWN,GameUI/LoadingDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN14CLoadingDialog13PerformLayoutEv
+gameui,10033C72,159,?SetProgressPoint@CLoadingDialog@@QAEXH@Z,public: void __thiscall CLoadingDialog::SetProgressPoint(int),UNKNOWN,GameUI/LoadingDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN14CLoadingDialog16SetProgressPointEi
+gameui,10033D11,37,?SetProgressRange@CLoadingDialog@@QAEXHH@Z,"public: void __thiscall CLoadingDialog::SetProgressRange(int,int)",UNKNOWN,GameUI/LoadingDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN14CLoadingDialog16SetProgressRangeEii
+gameui,10033D36,469,?SetSecondaryProgress@CLoadingDialog@@QAEXM@Z,public: void __thiscall CLoadingDialog::SetSecondaryProgress(float),ENGINE,GameUI/LoadingDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN14CLoadingDialog20SetSecondaryProgressEf
+gameui,10033F0B,36,?SetSecondaryProgressText@CLoadingDialog@@QAEXPBD@Z,public: void __thiscall CLoadingDialog::SetSecondaryProgressText(char const *),ENGINE,GameUI/LoadingDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN14CLoadingDialog24SetSecondaryProgressTextEPKc
+gameui,10033F2F,59,?OnClose@CLoadingDialog@@MAEXXZ,protected: virtual void __thiscall CLoadingDialog::OnClose(void),UNKNOWN,GameUI/LoadingDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN14CLoadingDialog7OnCloseEv
+gameui,10033F6A,156,?SwitchToHttpDownloadDialog@CLoadingDialog@@QAEXPBD@Z,public: void __thiscall CLoadingDialog::SwitchToHttpDownloadDialog(char const *),UNKNOWN,GameUI/LoadingDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN14CLoadingDialog26SwitchToHttpDownloadDialogEPKc
+gameui,10034006,90,?SwitchToPausedCareerDialog@CLoadingDialog@@QAEXXZ,public: void __thiscall CLoadingDialog::SwitchToPausedCareerDialog(void),ENGINE,GameUI/LoadingDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN14CLoadingDialog26SwitchToPausedCareerDialogEv
+gameui,10034060,385,?CompleteSwitchToPausedCareerDialog@CLoadingDialog@@AAEXXZ,private: void __thiscall CLoadingDialog::CompleteSwitchToPausedCareerDialog(void),ENGINE,GameUI/LoadingDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN14CLoadingDialog34CompleteSwitchToPausedCareerDialogEv
+gameui,100341E1,243,?OnCommand@CLoadingDialog@@MAEXPBD@Z,protected: virtual void __thiscall CLoadingDialog::OnCommand(char const *),ENGINE,GameUI/LoadingDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN14CLoadingDialog9OnCommandEPKc
+gameui,100342D4,52,?OnKeyCodePressed@CLoadingDialog@@MAEXW4KeyCode@vgui2@@@Z,protected: virtual void __thiscall CLoadingDialog::OnKeyCodePressed(enum vgui2::KeyCode),UNKNOWN,GameUI/LoadingDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN14CLoadingDialog16OnKeyCodePressedEN5vgui27KeyCodeE
+gameui,10034308,76,?OnStartURL@LoadingHTML@CLoadingDialog@@UAE_NPBD0_N@Z,"public: virtual bool __thiscall CLoadingDialog::LoadingHTML::OnStartURL(char const *,char const *,bool)",UNKNOWN,GameUI/LoadingDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10034354,80,?ApplySchemeSettings@CLoadingDialog@@MAEXPAVIScheme@vgui2@@@Z,protected: virtual void __thiscall CLoadingDialog::ApplySchemeSettings(class vgui2::IScheme *),ENGINE,GameUI/LoadingDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100343A4,15,?LoadingDialog@@YAPAVCLoadingDialog@@XZ,class CLoadingDialog * __cdecl LoadingDialog(void),UNKNOWN,GameUI/LoadingDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100343C0,66,??0CareerRichText@@QAE@PAVPanel@vgui2@@PBD@Z,"public: __thiscall CareerRichText::CareerRichText(class vgui2::Panel *,char const *)",UNKNOWN,GameUI/LoadingDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10034410,103,?ApplySchemeSettings@CareerRichText@@UAEXPAVIScheme@vgui2@@@Z,public: virtual void __thiscall CareerRichText::ApplySchemeSettings(class vgui2::IScheme *),UNKNOWN,GameUI/LoadingDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10034480,84,?PerformLayout@CareerRichText@@UAEXXZ,public: virtual void __thiscall CareerRichText::PerformLayout(void),UNKNOWN,GameUI/LoadingDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100344E0,75,?IsFullHeight@CareerRichText@@QAE_NXZ,public: bool __thiscall CareerRichText::IsFullHeight(void),UNKNOWN,GameUI/LoadingDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10034530,46,??_GCareerRichText@@UAEPAXI@Z,public: virtual void * __thiscall CareerRichText::`scalar deleting destructor'(unsigned int),UNKNOWN,GameUI/LoadingDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10034560,28,??1CareerRichText@@UAE@XZ,public: virtual __thiscall CareerRichText::~CareerRichText(void),UNKNOWN,GameUI/LoadingDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10034580,46,??_GCLoadingDialog@@UAEPAXI@Z,public: virtual void * __thiscall CLoadingDialog::`scalar deleting destructor'(unsigned int),UNKNOWN,GameUI/LoadingDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100345B0,63,??0LoadingHTML@CLoadingDialog@@QAE@PAVPanel@vgui2@@PBD@Z,"public: __thiscall CLoadingDialog::LoadingHTML::LoadingHTML(class vgui2::Panel *,char const *)",UNKNOWN,GameUI/LoadingDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100345F0,64,?GetMessageMap@HTML@vgui2@@UAEPAUPanelMessageMap@2@XZ,public: virtual struct vgui2::PanelMessageMap * __thiscall vgui2::HTML::GetMessageMap(void),UNKNOWN,GameUI/LoadingDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10034630,10,?GetPanelClassName@HTML@vgui2@@SAPBDXZ,public: static char const * __cdecl vgui2::HTML::GetPanelClassName(void),UNKNOWN,GameUI/LoadingDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10034640,46,??_GLoadingHTML@CLoadingDialog@@UAEPAXI@Z,public: virtual void * __thiscall CLoadingDialog::LoadingHTML::`scalar deleting destructor'(unsigned int),UNKNOWN,GameUI/LoadingDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10034670,38,??1LoadingHTML@CLoadingDialog@@UAE@XZ,public: virtual __thiscall CLoadingDialog::LoadingHTML::~LoadingHTML(void),ENGINE,GameUI/LoadingDialog.cpp,,,MATCHED,100,ghidra,
+gameui,100346A0,64,?GetMessageMap@RichText@vgui2@@UAEPAUPanelMessageMap@2@XZ,public: virtual struct vgui2::PanelMessageMap * __thiscall vgui2::RichText::GetMessageMap(void),UNKNOWN,GameUI/LoadingDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100346E0,10,?GetPanelClassName@RichText@vgui2@@SAPBDXZ,public: static char const * __cdecl vgui2::RichText::GetPanelClassName(void),UNKNOWN,GameUI/LoadingDialog.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,100346F0,81,?fgetLittleShort@@YAHPAPAE@Z,int __cdecl fgetLittleShort(unsigned char * *),UNKNOWN,GameUI/LogoFile.cpp,,,MATCHED,100,gameui_manual.csv,linux: _Z15fgetLittleShortPPh
 gameui,10034741,152,?fgetLittleLong@@YAHPAPAE@Z,int __cdecl fgetLittleLong(unsigned char * *),UNKNOWN,GameUI/LogoFile.cpp,,,MATCHED,100,gameui_manual.csv,linux: _Z14fgetLittleLongPPh
 gameui,100347D9,10,?AveragePixels@@YAEH@Z,unsigned char __cdecl AveragePixels(int),UNKNOWN,GameUI/LogoFile.cpp,,,MATCHED,100,gameui_manual.csv,linux: _Z13AveragePixelsi
