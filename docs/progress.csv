@@ -12757,23 +12757,23 @@ gameui,100A8E00,102,?ChainToMap@ScrollBarSlider@vgui2@@SAXXZ,vgui2::ScrollBarSli
 gameui,100A8E70,64,?GetMessageMap@ScrollBarSlider@vgui2@@UAEPAUPanelMessageMap@2@XZ,vgui2::ScrollBarSlider::GetMessageMap,UNKNOWN,vgui2/controls/ScrollBarSlider.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,100A8EB0,10,?GetPanelClassName@ScrollBarSlider@vgui2@@SAPBDXZ,vgui2::ScrollBarSlider::GetPanelClassName,UNKNOWN,vgui2/controls/ScrollBarSlider.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,100A8EC0,10,?GetPanelBaseClassName@ScrollBarSlider@vgui2@@SAPBDXZ,vgui2::ScrollBarSlider::GetPanelBaseClassName,UNKNOWN,vgui2/controls/ScrollBarSlider.cpp,,,MATCHED,100,gameui_manual.csv,
-gameui,100A8ED0,90,,,UNKNOWN,vgui2/controls/ImageList.cpp,,,TODO,,,
-gameui,100A8F2A,120,,,UNKNOWN,vgui2/controls/ImageList.cpp,,,TODO,,,
-gameui,100A8FA2,25,,,UNKNOWN,vgui2/controls/ImageList.cpp,,,TODO,,,
-gameui,100A8FBB,66,,,UNKNOWN,vgui2/controls/ImageList.cpp,,,TODO,,,
-gameui,100A8FFD,19,,,UNKNOWN,vgui2/controls/ImageList.cpp,,,TODO,,,
-gameui,100A9010,27,,,UNKNOWN,vgui2/controls/ImageList.cpp,,,TODO,,,
-gameui,100A902B,25,,,UNKNOWN,vgui2/controls/ImageList.cpp,,,TODO,,,
-gameui,100A9050,31,,,UNKNOWN,vgui2/controls/ImageList.cpp,,,TODO,,,
-gameui,100A9070,11,,,UNKNOWN,vgui2/controls/ImageList.cpp,,,TODO,,,linux: _ZN10BlankImage5PaintEv
-gameui,100A9080,13,,,UNKNOWN,vgui2/controls/ImageList.cpp,,,TODO,,,linux: _ZN10BlankImage6SetPosEii
-gameui,100A9090,31,,,UNKNOWN,vgui2/controls/ImageList.cpp,,,TODO,,,linux: _ZN10BlankImage14GetContentSizeERiS0_
-gameui,100A90B0,31,,,UNKNOWN,vgui2/controls/ImageList.cpp,,,TODO,,,linux: _ZN10BlankImage7GetSizeERiS0_
-gameui,100A90D0,13,,,UNKNOWN,vgui2/controls/ImageList.cpp,,,TODO,,,linux: _ZN10BlankImage7SetSizeEii
-gameui,100A90E0,13,,,UNKNOWN,vgui2/controls/ImageList.cpp,,,TODO,,,linux: _ZN10BlankImage8SetColorE5Color
-gameui,100A90F0,46,,,UNKNOWN,vgui2/controls/ImageList.cpp,,,TODO,,,
-gameui,100A9120,19,,,UNKNOWN,vgui2/controls/ImageList.cpp,,,TODO,,,
-gameui,100A9140,17,,,UNKNOWN,vgui2/controls/ImageList.cpp,,,TODO,,,
+gameui,100A8ED0,90,??0ImageList@vgui2@@QAE@_N@Z,public: __thiscall vgui2::ImageList::ImageList(bool),UNKNOWN,vgui2/controls/ImageList.cpp,,,MATCHED,100,,
+gameui,100A8F2A,120,??1ImageList@vgui2@@QAE@XZ,public: __thiscall vgui2::ImageList::~ImageList(void),UNKNOWN,vgui2/controls/ImageList.cpp,,,MATCHED,100,,
+gameui,100A8FA2,25,?AddImage@ImageList@vgui2@@QAEHPAVIImage@2@@Z,public: int __thiscall vgui2::ImageList::AddImage(class vgui2::IImage *),UNKNOWN,vgui2/controls/ImageList.cpp,,,MATCHED,100,,
+gameui,100A8FBB,66,?SetImageAtIndex@ImageList@vgui2@@QAEXHPAVIImage@2@@Z,"public: void __thiscall vgui2::ImageList::SetImageAtIndex(int,class vgui2::IImage *)",UNKNOWN,vgui2/controls/ImageList.cpp,,,MATCHED,100,,
+gameui,100A8FFD,19,?GetImageCount@ImageList@vgui2@@QAEHXZ,public: int __thiscall vgui2::ImageList::GetImageCount(void),UNKNOWN,vgui2/controls/ImageList.cpp,,,MATCHED,100,,
+gameui,100A9010,27,?GetImage@ImageList@vgui2@@QAEPAVIImage@2@H@Z,public: class vgui2::IImage * __thiscall vgui2::ImageList::GetImage(int),UNKNOWN,vgui2/controls/ImageList.cpp,,,MATCHED,100,,
+gameui,100A902B,25,?IsValidIndex@ImageList@vgui2@@QAE_NH@Z,public: bool __thiscall vgui2::ImageList::IsValidIndex(int),UNKNOWN,vgui2/controls/ImageList.cpp,,,MATCHED,100,,
+gameui,100A9050,31,??0BlankImage@vgui2@@QAE@XZ,public: __thiscall vgui2::BlankImage::BlankImage(void),UNKNOWN,vgui2/controls/ImageList.cpp,,,MATCHED,100,,
+gameui,100A9070,11,?Paint@BlankImage@vgui2@@UAEXXZ,public: virtual void __thiscall vgui2::BlankImage::Paint(void),UNKNOWN,vgui2/controls/ImageList.cpp,,,MATCHED,100,,linux: _ZN10BlankImage5PaintEv
+gameui,100A9080,13,?SetPos@BlankImage@vgui2@@UAEXHH@Z,"public: virtual void __thiscall vgui2::BlankImage::SetPos(int,int)",UNKNOWN,vgui2/controls/ImageList.cpp,,,MATCHED,100,,linux: _ZN10BlankImage6SetPosEii
+gameui,100A9090,31,?GetContentSize@BlankImage@vgui2@@UAEXAAH0@Z,"public: virtual void __thiscall vgui2::BlankImage::GetContentSize(int &,int &)",UNKNOWN,vgui2/controls/ImageList.cpp,,,MATCHED,100,,linux: _ZN10BlankImage14GetContentSizeERiS0_
+gameui,100A90B0,31,?GetSize@BlankImage@vgui2@@UAEXAAH0@Z,"public: virtual void __thiscall vgui2::BlankImage::GetSize(int &,int &)",UNKNOWN,vgui2/controls/ImageList.cpp,,,MATCHED,100,,linux: _ZN10BlankImage7GetSizeERiS0_
+gameui,100A90D0,13,?SetSize@BlankImage@vgui2@@UAEXHH@Z,"public: virtual void __thiscall vgui2::BlankImage::SetSize(int,int)",UNKNOWN,vgui2/controls/ImageList.cpp,,,MATCHED,100,,linux: _ZN10BlankImage7SetSizeEii
+gameui,100A90E0,13,?SetColor@BlankImage@vgui2@@UAEXVColor@@@Z,public: virtual void __thiscall vgui2::BlankImage::SetColor(class Color),UNKNOWN,vgui2/controls/ImageList.cpp,,,MATCHED,100,,linux: _ZN10BlankImage8SetColorE5Color
+gameui,100A90F0,46,??_GBlankImage@vgui2@@UAEPAXI@Z,public: virtual void * __thiscall vgui2::BlankImage::`scalar deleting destructor'(unsigned int),UNKNOWN,vgui2/controls/ImageList.cpp,,,MATCHED,100,,
+gameui,100A9120,19,??1BlankImage@vgui2@@UAE@XZ,public: virtual __thiscall vgui2::BlankImage::~BlankImage(void),UNKNOWN,vgui2/controls/ImageList.cpp,,,MATCHED,100,,
+gameui,100A9140,17,?Count@?$CUtlVector@PAVIImage@vgui2@@@@QBEHXZ,public: int __thiscall CUtlVector<class vgui2::IImage *>::Count(void)const ,UNKNOWN,vgui2/controls/ImageList.cpp,,,MATCHED,100,,
 gameui,100A9160,239,??0PropertySheet@vgui2@@QAE@PAVPanel@1@PBD@Z,vgui2::PropertySheet::PropertySheet,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,100A924F,268,??0PropertySheet@vgui2@@QAE@PAVPanel@1@PBDPAVComboBox@1@@Z,vgui2::PropertySheet::PropertySheet,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,100A935B,53,??1PropertySheet@vgui2@@UAE@XZ,vgui2::PropertySheet::~PropertySheet,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,MATCHED,100,gameui_manual.csv,

@@ -4140,6 +4140,11 @@
           "functions_file": "tools/units/gameui_GameUI_OptionsDialog.txt"
         },
         {
+          "name": "vgui2/controls/ImageList",
+          "source": "src/vgui2/controls/ImageList.cpp",
+          "functions_file": "tools/units/gameui_vgui2_controls_ImageList.txt"
+        },
+        {
           "name": "HLTV/common/common",
           "source": "src/HLTV/common/common.cpp",
           "functions_file": "tools/units/gameui_HLTV_common_common.txt"

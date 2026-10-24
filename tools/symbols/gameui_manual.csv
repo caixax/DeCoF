@@ -5286,3 +5286,20 @@ va,name,kind,evidence
 1002684A,?COM_TrimSpace@@YAXPBDPAD@Z,func,HLTV/common/common.cpp: same position and size as in our compiled object (gameui.so DWARF names and line order; core.so symbols)
 10026911,?COM_UnpackRGB@@YAXAAH00_I@Z,func,HLTV/common/common.cpp: same position and size as in our compiled object (gameui.so DWARF names and line order; core.so symbols)
 10026945,?COM_PackRGB@@YAIHHH@Z,func,HLTV/common/common.cpp: same position and size as in our compiled object (gameui.so DWARF names and line order; core.so symbols)
+100A8ED0,??0ImageList@vgui2@@QAE@_N@Z,func,vgui2/controls/ImageList.cpp: same position and size as in our compiled object; linux: _ZN5vgui29ImageListC1Eb
+100A8F2A,??1ImageList@vgui2@@QAE@XZ,func,vgui2/controls/ImageList.cpp: same position and size as in our compiled object; linux: _ZN5vgui29ImageListD1Ev
+100A8FA2,?AddImage@ImageList@vgui2@@QAEHPAVIImage@2@@Z,func,vgui2/controls/ImageList.cpp: same position and size as in our compiled object; linux: _ZN5vgui29ImageList8AddImageEPNS_6IImageE
+100A8FBB,?SetImageAtIndex@ImageList@vgui2@@QAEXHPAVIImage@2@@Z,func,vgui2/controls/ImageList.cpp: same position and size as in our compiled object; linux: _ZN5vgui29ImageList15SetImageAtIndexEiPNS_6IImageE
+100A8FFD,?GetImageCount@ImageList@vgui2@@QAEHXZ,func,vgui2/controls/ImageList.cpp: same position and size as in our compiled object; linux: _ZN5vgui29ImageList13GetImageCountEv
+100A9010,?GetImage@ImageList@vgui2@@QAEPAVIImage@2@H@Z,func,vgui2/controls/ImageList.cpp: same position and size as in our compiled object; linux: _ZN5vgui29ImageList8GetImageEi
+100A902B,?IsValidIndex@ImageList@vgui2@@QAE_NH@Z,func,vgui2/controls/ImageList.cpp: same position and size as in our compiled object; linux: _ZN5vgui29ImageList12IsValidIndexEi
+100A9050,??0BlankImage@vgui2@@QAE@XZ,func,"vgui2/controls/ImageList.cpp: implicit BlankImage constructor COMDAT, same position and size as in our compiled object"
+100A9070,?Paint@BlankImage@vgui2@@UAEXXZ,func,"vgui2/controls/ImageList.cpp: inline BlankImage COMDAT, same position and size as in our compiled object; linux: _ZN10BlankImage5PaintEv"
+100A9080,?SetPos@BlankImage@vgui2@@UAEXHH@Z,func,"vgui2/controls/ImageList.cpp: inline BlankImage COMDAT, same position and size as in our compiled object; linux: _ZN10BlankImage6SetPosEii"
+100A9090,?GetContentSize@BlankImage@vgui2@@UAEXAAH0@Z,func,"vgui2/controls/ImageList.cpp: inline BlankImage COMDAT, same position and size as in our compiled object; linux: _ZN10BlankImage14GetContentSizeERiS0_"
+100A90B0,?GetSize@BlankImage@vgui2@@UAEXAAH0@Z,func,"vgui2/controls/ImageList.cpp: inline BlankImage COMDAT, same position and size as in our compiled object; linux: _ZN10BlankImage7GetSizeERiS0_"
+100A90D0,?SetSize@BlankImage@vgui2@@UAEXHH@Z,func,"vgui2/controls/ImageList.cpp: inline BlankImage COMDAT, same position and size as in our compiled object; linux: _ZN10BlankImage7SetSizeEii"
+100A90E0,?SetColor@BlankImage@vgui2@@UAEXVColor@@@Z,func,"vgui2/controls/ImageList.cpp: inline BlankImage COMDAT, same position and size as in our compiled object; linux: _ZN10BlankImage8SetColorE5Color"
+100A90F0,??_GBlankImage@vgui2@@UAEPAXI@Z,func,vgui2/controls/ImageList.cpp: same position and size as in our compiled object
+100A9120,??1BlankImage@vgui2@@UAE@XZ,func,"vgui2/controls/ImageList.cpp: compiler-generated destructor COMDAT, same position and size as in our compiled object"
+100A9140,?Count@?$CUtlVector@PAVIImage@vgui2@@@@QBEHXZ,func,"vgui2/controls/ImageList.cpp: CUtlVector<IImage *> template COMDAT not emitted by AnimatingImagePanel.cpp (Count and Size have the same code; Count as in the later Source SDK ImageList), same position and size as in our compiled object"
