@@ -49,6 +49,20 @@ public:
 		DIRECT_HWND_RENDER	= 6,
 	};
 
+	// flags for the font
+	enum EFontFlags
+	{
+		FONTFLAG_NONE,
+		FONTFLAG_ITALIC			= 0x001,
+		FONTFLAG_UNDERLINE		= 0x002,
+		FONTFLAG_STRIKEOUT		= 0x004,
+		FONTFLAG_SYMBOL			= 0x008,
+		FONTFLAG_ANTIALIAS		= 0x010,
+		FONTFLAG_GAUSSIANBLUR	= 0x020,
+		FONTFLAG_ROTARY			= 0x040,
+		FONTFLAG_DROPSHADOW		= 0x080,
+	};
+
 	virtual void Shutdown() = 0;
 	virtual void RunFrame() = 0;
 	virtual VPANEL GetEmbeddedPanel() = 0;

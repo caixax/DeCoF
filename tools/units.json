@@ -3455,6 +3455,22 @@
             "src/common",
             "src/public"
           ]
+        },
+        {
+          "name": "vgui2/vgui_surfacelib/Win32Font",
+          "source": "src/vgui2/vgui_surfacelib/Win32Font.cpp",
+          "functions_file": "tools/units/hw_vgui2_vgui_surfacelib_Win32Font.txt",
+          "cflags": [
+            "/nologo",
+            "/c",
+            "/W3",
+            "/GX",
+            "/O2"
+          ],
+          "includes": [
+            "src/common",
+            "src/public"
+          ]
         }
       ]
     },

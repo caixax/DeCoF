@@ -32026,25 +32026,30 @@ hw,01E64B40,109,?Grow@?$CUtlMemory@VCFontAmalgam@@@@QAEXH@Z,,ENGINE,vgui2/vgui_s
 hw,01E64BB0,128,?GrowVector@?$CUtlVector@PAVCWin32Font@@@@IAEXH@Z,,ENGINE,vgui2/vgui_surfacelib/FontManager.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01E64C30,52,?ShiftElementsRight@?$CUtlVector@PAVCWin32Font@@@@IAEXHH@Z,,ENGINE,vgui2/vgui_surfacelib/FontManager.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01E64C70,103,?Grow@?$CUtlMemory@PAVCWin32Font@@@@QAEXH@Z,,ENGINE,vgui2/vgui_surfacelib/FontManager.cpp,,,MATCHED,100,hw_manual.csv,
-hw,01E64CE0,199,,,ENGINE,vgui2/vgui_surfacelib/Win32Font_guess.cpp,,,TODO,,,
-hw,01E64DB0,105,,,ENGINE,vgui2/vgui_surfacelib/Win32Font_guess.cpp,,,TODO,,,
-hw,01E64E30,939,,,ENGINE,vgui2/vgui_surfacelib/Win32Font_guess.cpp,,,TODO,,,
-hw,01E651E0,1515,,,ENGINE,vgui2/vgui_surfacelib/Win32Font_guess.cpp,,,TODO,,,
-hw,01E657D0,75,,,ENGINE,vgui2/vgui_surfacelib/Win32Font_guess.cpp,,,TODO,,,
-hw,01E65820,220,,,ENGINE,vgui2/vgui_surfacelib/Win32Font_guess.cpp,,,TODO,,,
-hw,01E65900,185,,,ENGINE,vgui2/vgui_surfacelib/Win32Font_guess.cpp,,,TODO,,,
-hw,01E659C0,450,,,ENGINE,vgui2/vgui_surfacelib/Win32Font_guess.cpp,,,TODO,,,
-hw,01E65B90,80,,,ENGINE,vgui2/vgui_surfacelib/Win32Font_guess.cpp,,,TODO,,,
-hw,01E65C10,787,,,ENGINE,vgui2/vgui_surfacelib/Win32Font_guess.cpp,,,TODO,,,
-hw,01E65F30,4,,,ENGINE,vgui2/vgui_surfacelib/Win32Font_guess.cpp,,,TODO,,,
-hw,01E65F40,4,,,ENGINE,vgui2/vgui_surfacelib/Win32Font_guess.cpp,,,TODO,,,
-hw,01E65F50,4,,,ENGINE,vgui2/vgui_surfacelib/Win32Font_guess.cpp,,,TODO,,,
-hw,01E65F90,94,,,ENGINE,vgui2/vgui_surfacelib/Win32Font_guess.cpp,,,TODO,,,
-hw,01E65FF0,1001,,,ENGINE,vgui2/vgui_surfacelib/Win32Font_guess.cpp,,,TODO,,,
-hw,01E663E0,200,,,ENGINE,vgui2/vgui_surfacelib/Win32Font_guess.cpp,,,TODO,,,
-hw,01E664B0,485,,,ENGINE,vgui2/vgui_surfacelib/Win32Font_guess.cpp,,,TODO,,,
-hw,01E666A0,489,,,ENGINE,vgui2/vgui_surfacelib/Win32Font_guess.cpp,,,TODO,,,
-hw,01E66890,116,,,ENGINE,vgui2/vgui_surfacelib/Win32Font_guess.cpp,,,TODO,,,
+hw,01E64CE0,199,??0CWin32Font@@QAE@XZ,,ENGINE,vgui2/vgui_surfacelib/Win32Font.cpp,,,EQUIVALENT,93.06,hw_manual.csv,"EQUIVALENT: cl 12.00.9044 codegen (VC6 processor pack, Rich header Utc12_2_CPP.9044 x3), RTM 8168 differs: RTM duplicates the epilogue for the s_bOsVersionInitialized branch, retail shares it"
+hw,01E64DB0,105,??1CWin32Font@@QAE@XZ,,ENGINE,vgui2/vgui_surfacelib/Win32Font.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E64E20,12,?FontEnumProc@@YGHPBUtagLOGFONTA@@PBUtagTEXTMETRICA@@KJ@Z,,ENGINE,vgui2/vgui_surfacelib/Win32Font.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E64E30,939,?Create@CWin32Font@@QAE_NPBDHHHHH@Z,,ENGINE,vgui2/vgui_surfacelib/Win32Font.cpp,,,EQUIVALENT,77.21,hw_manual.csv,"EQUIVALENT: cl 12.00.9044 codegen (VC6 processor pack, Rich header Utc12_2_CPP.9044 x3), RTM 8168 differs: strcpy into lfFaceName is a byte loop in retail (rep movsd/movsb in RTM), register allocation of the flag bit extraction; same calls and constants"
+hw,01E651E0,1515,?GetCharRGBA@CWin32Font@@QAEXHHHHHPAE@Z,,ENGINE,vgui2/vgui_surfacelib/Win32Font.cpp,,,EQUIVALENT,66.50,hw_manual.csv,"EQUIVALENT: cl 12.00.9044 codegen (VC6 processor pack, Rich header Utc12_2_CPP.9044 x3), RTM 8168 differs: register allocation and block order (retail moves the render-to-bitmap branch after the epilogue), SelectObject/ExtTextOutA through a register; same calls, constants and members"
+hw,01E657D0,75,?ApplyRotaryEffectToTexture@CWin32Font@@AAEXHHHHPAE@Z,,ENGINE,vgui2/vgui_surfacelib/Win32Font.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E65820,220,?ApplyScanlineEffectToTexture@CWin32Font@@AAEXHHHHPAE@Z,,ENGINE,vgui2/vgui_surfacelib/Win32Font.cpp,,,EQUIVALENT,93.62,hw_manual.csv,"EQUIVALENT: cl 12.00.9044 codegen (VC6 processor pack, Rich header Utc12_2_CPP.9044 x3), RTM 8168 differs: spill slots of the loop counters (y in [esp+0x10] against registers)"
+hw,01E65900,185,?ApplyDropShadowToTexture@CWin32Font@@AAEXHHHHHHPAE@Z,,ENGINE,vgui2/vgui_surfacelib/Win32Font.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E659C0,450,?ApplyGaussianBlurToTexture@CWin32Font@@AAEXHHHHPAE@Z,,ENGINE,vgui2/vgui_surfacelib/Win32Font.cpp,,,EQUIVALENT,67.85,hw_manual.csv,"EQUIVALENT: cl 12.00.9044 codegen (VC6 processor pack, Rich header Utc12_2_CPP.9044 x3), RTM 8168 differs: register allocation and spill slots of the inlined GetBlurValueForPixel loops; same calls and constants"
+hw,01E65B90,80,?IsEqualTo@CWin32Font@@QAE_NPBDHHHHH@Z,,ENGINE,vgui2/vgui_surfacelib/Win32Font.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E65BE0,7,?IsValid@CWin32Font@@QAE_NXZ,,ENGINE,vgui2/vgui_surfacelib/Win32Font.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E65BF0,21,?SetAsActiveFont@CWin32Font@@QAEXPAUHDC__@@@Z,,ENGINE,vgui2/vgui_surfacelib/Win32Font.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E65C10,787,?GetCharABCWidths@CWin32Font@@QAEXHAAH00@Z,,ENGINE,vgui2/vgui_surfacelib/Win32Font.cpp,,,EQUIVALENT,89.60,hw_manual.csv,"EQUIVALENT: cl 12.00.9044 codegen (VC6 processor pack, Rich header Utc12_2_CPP.9044 x3), RTM 8168 differs: register allocation and stack layout of the inlined CUtlRBTree Find/Insert; same calls"
+hw,01E65F30,4,?GetHeight@CWin32Font@@QAEHXZ,,ENGINE,vgui2/vgui_surfacelib/Win32Font.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E65F40,4,?GetAscent@CWin32Font@@QAEHXZ,,ENGINE,vgui2/vgui_surfacelib/Win32Font.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E65F50,4,?GetMaxCharWidth@CWin32Font@@QAEHXZ,,ENGINE,vgui2/vgui_surfacelib/Win32Font.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E65F60,4,?GetFlags@CWin32Font@@QAEHXZ,,ENGINE,vgui2/vgui_surfacelib/Win32Font.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E65F70,19,?ExtendedABCWidthsCacheLessFunc@CWin32Font@@CA_NABUabc_cache_t@1@0@Z,,ENGINE,vgui2/vgui_surfacelib/Win32Font.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E65F90,94,?Links@?$CUtlRBTree@Uabc_cache_t@CWin32Font@@G@@IBEABULinks_t@1@G@Z,,ENGINE,vgui2/vgui_surfacelib/Win32Font.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E65FF0,1001,?InsertAt@?$CUtlRBTree@Uabc_cache_t@CWin32Font@@G@@IAEGG_N@Z,,ENGINE,vgui2/vgui_surfacelib/Win32Font.cpp,,,EQUIVALENT,93.24,hw_manual.csv,"EQUIVALENT: cl 12.00.9044 codegen (VC6 processor pack, Rich header Utc12_2_CPP.9044 x3), RTM 8168 differs: register allocation and spill slots (UtlRBTree.h, shared with the /Od units)"
+hw,01E663E0,200,?IsLeftChild@?$CUtlRBTree@Uabc_cache_t@CWin32Font@@G@@QBE_NG@Z,,ENGINE,vgui2/vgui_surfacelib/Win32Font.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01E664B0,485,?RotateLeft@?$CUtlRBTree@Uabc_cache_t@CWin32Font@@G@@IAEXG@Z,,ENGINE,vgui2/vgui_surfacelib/Win32Font.cpp,,,EQUIVALENT,91.55,hw_manual.csv,"EQUIVALENT: cl 12.00.9044 codegen (VC6 processor pack, Rich header Utc12_2_CPP.9044 x3), RTM 8168 differs: register allocation of the inlined Links calls (UtlRBTree.h, shared with the /Od units)"
+hw,01E666A0,489,?RotateRight@?$CUtlRBTree@Uabc_cache_t@CWin32Font@@G@@IAEXG@Z,,ENGINE,vgui2/vgui_surfacelib/Win32Font.cpp,,,EQUIVALENT,94.43,hw_manual.csv,"EQUIVALENT: cl 12.00.9044 codegen (VC6 processor pack, Rich header Utc12_2_CPP.9044 x3), RTM 8168 differs: register allocation of the inlined Links calls (UtlRBTree.h, shared with the /Od units)"
+hw,01E66890,116,?Grow@?$CUtlMemory@UNode_t@?$CUtlRBTree@Uabc_cache_t@CWin32Font@@G@@@@QAEXH@Z,,ENGINE,vgui2/vgui_surfacelib/Win32Font.cpp,,,EQUIVALENT,97.39,hw_manual.csv,"EQUIVALENT: cl 12.00.9044 codegen (VC6 processor pack, Rich header Utc12_2_CPP.9044 x3), RTM 8168 differs: one register choice in the growSize computation (UtlMemory.h, shared with the /Od units)"
 hw,01E66910,44,,,ENGINE,vgui2/vgui_surfacelib/FontAmalgam.cpp,,,TODO,,,
 hw,01E66940,82,,,ENGINE,vgui2/vgui_surfacelib/FontAmalgam.cpp,,,TODO,,,
 hw,01E669A0,4,,,ENGINE,vgui2/vgui_surfacelib/FontAmalgam.cpp,,,TODO,,,
