@@ -3867,6 +3867,11 @@
           "name": "public/checksum_md5",
           "source": "src/public/checksum_md5.cpp",
           "functions_file": "tools/units/gameui_public_checksum_md5.txt"
+        },
+        {
+          "name": "GameUI/LogoFile",
+          "source": "src/gameui/LogoFile.cpp",
+          "functions_file": "tools/units/gameui_GameUI_LogoFile.txt"
         }
       ]
     }

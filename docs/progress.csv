@@ -8899,23 +8899,23 @@ gameui,10034640,46,,,UNKNOWN,GameUI/LoadingDialog.cpp,,,TODO,,,
 gameui,10034670,38,,CMultiPageDHtmlDialog::~CMultiPageDHtmlDialog,ENGINE,GameUI/LoadingDialog.cpp,,,TODO,,ghidra,
 gameui,100346A0,64,,,UNKNOWN,GameUI/LoadingDialog.cpp,,,TODO,,,
 gameui,100346E0,10,,,UNKNOWN,GameUI/LoadingDialog.cpp,,,TODO,,,
-gameui,100346F0,81,,,UNKNOWN,GameUI/LogoFile.cpp,,,TODO,,,linux: _Z15fgetLittleShortPPh
-gameui,10034741,152,,,UNKNOWN,GameUI/LogoFile.cpp,,,TODO,,,linux: _Z14fgetLittleLongPPh
-gameui,100347D9,10,,,UNKNOWN,GameUI/LogoFile.cpp,,,TODO,,,linux: _Z13AveragePixelsi
-gameui,100347E3,955,,,UNKNOWN,GameUI/LogoFile.cpp,,,TODO,,,linux: _Z7GrabMipP10BITMAPINFOPhPcjPiS3_
-gameui,10034B9E,732,,,UNKNOWN,GameUI/LogoFile.cpp,,,TODO,,,linux: _Z13UpdateLogoWADPviii
-gameui,10034E7A,1070,,,UNKNOWN,GameUI/LogoFile.cpp,,,TODO,,,linux: _Z14GrabMipFromTGAPhS_Pcjii
-gameui,100352A8,1328,,,UNKNOWN,GameUI/LogoFile.cpp,,,TODO,,,linux: _Z20UpdateLogoWADFromTGAPKc
-gameui,100357D8,1971,,,UNKNOWN,GameUI/LogoFile.cpp,,,TODO,,,linux: _Z7LoadTGAPKcPhiPiS2_i
-gameui,10035F90,19,,,UNKNOWN,GameUI/LogoFile.cpp,,,TODO,,,
-gameui,10035FB0,17,,,UNKNOWN,GameUI/LogoFile.cpp,,,TODO,,,
-gameui,10035FD0,19,,,UNKNOWN,GameUI/LogoFile.cpp,,,TODO,,,
-gameui,10035FF0,19,,,UNKNOWN,GameUI/LogoFile.cpp,,,TODO,,,
-gameui,10036010,19,,,UNKNOWN,GameUI/LogoFile.cpp,,,TODO,,,
-gameui,10036030,16,,,UNKNOWN,GameUI/LogoFile.cpp,,,TODO,,,
-gameui,10036040,17,,,UNKNOWN,GameUI/LogoFile.cpp,,,TODO,,,
-gameui,10036060,69,,,UNKNOWN,GameUI/LogoFile.cpp,,,TODO,,,
-gameui,100360B0,25,,,UNKNOWN,GameUI/LogoFile.cpp,,,TODO,,,
+gameui,100346F0,81,?fgetLittleShort@@YAHPAPAE@Z,int __cdecl fgetLittleShort(unsigned char * *),UNKNOWN,GameUI/LogoFile.cpp,,,MATCHED,100,gameui_manual.csv,linux: _Z15fgetLittleShortPPh
+gameui,10034741,152,?fgetLittleLong@@YAHPAPAE@Z,int __cdecl fgetLittleLong(unsigned char * *),UNKNOWN,GameUI/LogoFile.cpp,,,MATCHED,100,gameui_manual.csv,linux: _Z14fgetLittleLongPPh
+gameui,100347D9,10,?AveragePixels@@YAEH@Z,unsigned char __cdecl AveragePixels(int),UNKNOWN,GameUI/LogoFile.cpp,,,MATCHED,100,gameui_manual.csv,linux: _Z13AveragePixelsi
+gameui,100347E3,955,?GrabMip@@YAHPAXPAEPADKPAH3@Z,"int __cdecl GrabMip(void *,unsigned char *,char *,unsigned long,int *,int *)",UNKNOWN,GameUI/LogoFile.cpp,,,MATCHED,100,gameui_manual.csv,linux: _Z7GrabMipP10BITMAPINFOPhPcjPiS3_
+gameui,10034B9E,732,?UpdateLogoWAD@@YA_NPAXHHH@Z,"bool __cdecl UpdateLogoWAD(void *,int,int,int)",UNKNOWN,GameUI/LogoFile.cpp,,,MATCHED,100,gameui_manual.csv,linux: _Z13UpdateLogoWADPviii
+gameui,10034E7A,1070,?GrabMipFromTGA@@YAHPAE0PADKHH@Z,"int __cdecl GrabMipFromTGA(unsigned char *,unsigned char *,char *,unsigned long,int,int)",UNKNOWN,GameUI/LogoFile.cpp,,,MATCHED,100,gameui_manual.csv,linux: _Z14GrabMipFromTGAPhS_Pcjii
+gameui,100352A8,1328,?UpdateLogoWADFromTGA@@YA_NPBD@Z,bool __cdecl UpdateLogoWADFromTGA(char const *),UNKNOWN,GameUI/LogoFile.cpp,,,MATCHED,100,gameui_manual.csv,linux: _Z20UpdateLogoWADFromTGAPKc
+gameui,100357D8,1971,?LoadTGA@@YA_NPBDPAEHPAH2H@Z,"bool __cdecl LoadTGA(char const *,unsigned char *,int,int *,int *,int)",UNKNOWN,GameUI/LogoFile.cpp,,,MATCHED,100,gameui_manual.csv,linux: _Z7LoadTGAPKcPhiPiS2_i
+gameui,10035F90,19,??1CUtlBuffer@@QAE@XZ,public: __thiscall CUtlBuffer::~CUtlBuffer(void),UNKNOWN,GameUI/LogoFile.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10035FB0,17,?TellPut@CUtlBuffer@@QBEHXZ,public: int __thiscall CUtlBuffer::TellPut(void)const ,UNKNOWN,GameUI/LogoFile.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10035FD0,19,?Base@CUtlBuffer@@QAEPAXXZ,public: void * __thiscall CUtlBuffer::Base(void),UNKNOWN,GameUI/LogoFile.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10035FF0,19,?Size@CUtlBuffer@@QBEHXZ,public: int __thiscall CUtlBuffer::Size(void)const ,UNKNOWN,GameUI/LogoFile.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10036010,19,??1?$CUtlMemory@E@@QAE@XZ,public: __thiscall CUtlMemory<unsigned char>::~CUtlMemory<unsigned char>(void),UNKNOWN,GameUI/LogoFile.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10036030,16,?Base@?$CUtlMemory@E@@QAEPAEXZ,public: unsigned char * __thiscall CUtlMemory<unsigned char>::Base(void),UNKNOWN,GameUI/LogoFile.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10036040,17,?NumAllocated@?$CUtlMemory@E@@QBEHXZ,public: int __thiscall CUtlMemory<unsigned char>::NumAllocated(void)const ,UNKNOWN,GameUI/LogoFile.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10036060,69,?Purge@?$CUtlMemory@E@@QAEXXZ,public: void __thiscall CUtlMemory<unsigned char>::Purge(void),UNKNOWN,GameUI/LogoFile.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100360B0,25,?IsExternallyAllocated@?$CUtlMemory@E@@QBE_NXZ,public: bool __thiscall CUtlMemory<unsigned char>::IsExternallyAllocated(void)const ,UNKNOWN,GameUI/LogoFile.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,100360D0,41,,,UNKNOWN,GameUI/MasterVersionChk_guess.cpp,,,TODO,,,
 gameui,100360F9,222,,,UNKNOWN,GameUI/MasterVersionChk_guess.cpp,,,TODO,,,
 gameui,100361E0,46,,,UNKNOWN,GameUI/MasterVersionChk_guess.cpp,,,TODO,,,

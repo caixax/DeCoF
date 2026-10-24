@@ -3860,3 +3860,30 @@ va,name,kind,evidence
 100722F0,?AddElement@?$Dar@PAUdataitem_s@PanelHorizListPanel@vgui2@@@vgui2@@QAEHPAUdataitem_s@PanelHorizListPanel@2@@Z,func,vgui2/controls/PanelHorizListPanel.cpp: COMDAT tail, same position and size as in our compiled object
 10072340,?FindElement@?$Dar@PAUdataitem_s@PanelHorizListPanel@vgui2@@@vgui2@@QAEHPAUdataitem_s@PanelHorizListPanel@2@@Z,func,vgui2/controls/PanelHorizListPanel.cpp: COMDAT tail, same position and size as in our compiled object
 10072390,?EnsureCapacity@?$Dar@PAUdataitem_s@PanelHorizListPanel@vgui2@@@vgui2@@QAEXH@Z,func,vgui2/controls/PanelHorizListPanel.cpp: COMDAT tail, same position and size as in our compiled object
+100346F0,?fgetLittleShort@@YAHPAPAE@Z,func,GameUI/LogoFile.cpp: same position and size as in our compiled object; linux: _Z15fgetLittleShortPPh
+10034741,?fgetLittleLong@@YAHPAPAE@Z,func,GameUI/LogoFile.cpp: same position and size as in our compiled object; linux: _Z14fgetLittleLongPPh
+100347D9,?AveragePixels@@YAEH@Z,func,GameUI/LogoFile.cpp: same position and size as in our compiled object; linux: _Z13AveragePixelsi
+100347E3,?GrabMip@@YAHPAXPAEPADKPAH3@Z,func,GameUI/LogoFile.cpp: same position and size as in our compiled object; Windows takes the DIB handle it GlobalLocks; linux: _Z7GrabMipP10BITMAPINFOPhPcjPiS3_
+10034B9E,?UpdateLogoWAD@@YA_NPAXHHH@Z,func,GameUI/LogoFile.cpp: same position and size as in our compiled object; linux: _Z13UpdateLogoWADPviii
+10034E7A,?GrabMipFromTGA@@YAHPAE0PADKHH@Z,func,GameUI/LogoFile.cpp: same position and size as in our compiled object; linux: _Z14GrabMipFromTGAPhS_Pcjii
+100352A8,?UpdateLogoWADFromTGA@@YA_NPBD@Z,func,GameUI/LogoFile.cpp: same position and size as in our compiled object; linux: _Z20UpdateLogoWADFromTGAPKc
+100357D8,?LoadTGA@@YA_NPBDPAEHPAH2H@Z,func,GameUI/LogoFile.cpp: same position and size as in our compiled object; static, after its first caller; linux: _Z7LoadTGAPKcPhiPiS2_i
+10035F90,??1CUtlBuffer@@QAE@XZ,func,GameUI/LogoFile.cpp: UtlBuffer.h/UtlMemory.h inline emitted as a COMDAT with this object (first user); same bytes as in our compiled object
+10035FB0,?TellPut@CUtlBuffer@@QBEHXZ,func,GameUI/LogoFile.cpp: UtlBuffer.h/UtlMemory.h inline emitted as a COMDAT with this object (first user); same bytes as in our compiled object
+10035FD0,?Base@CUtlBuffer@@QAEPAXXZ,func,GameUI/LogoFile.cpp: UtlBuffer.h/UtlMemory.h inline emitted as a COMDAT with this object (first user); same bytes as in our compiled object
+10035FF0,?Size@CUtlBuffer@@QBEHXZ,func,GameUI/LogoFile.cpp: UtlBuffer.h/UtlMemory.h inline emitted as a COMDAT with this object (first user); same bytes as in our compiled object
+10036010,??1?$CUtlMemory@E@@QAE@XZ,func,GameUI/LogoFile.cpp: UtlBuffer.h/UtlMemory.h inline emitted as a COMDAT with this object (first user); same bytes as in our compiled object
+10036030,?Base@?$CUtlMemory@E@@QAEPAEXZ,func,GameUI/LogoFile.cpp: UtlBuffer.h/UtlMemory.h inline emitted as a COMDAT with this object (first user); same bytes as in our compiled object
+10036040,?NumAllocated@?$CUtlMemory@E@@QBEHXZ,func,GameUI/LogoFile.cpp: UtlBuffer.h/UtlMemory.h inline emitted as a COMDAT with this object (first user); same bytes as in our compiled object
+10036060,?Purge@?$CUtlMemory@E@@QAEXXZ,func,GameUI/LogoFile.cpp: UtlBuffer.h/UtlMemory.h inline emitted as a COMDAT with this object (first user); same bytes as in our compiled object
+100360B0,?IsExternallyAllocated@?$CUtlMemory@E@@QBE_NXZ,func,GameUI/LogoFile.cpp: UtlBuffer.h/UtlMemory.h inline emitted as a COMDAT with this object (first user); same bytes as in our compiled object
+100F9ED8,?maxdistortion@@3MA,data,GameUI/LogoFile.cpp global from the gameui.so DWARF; .bss layout like our object (offset 0x0 from maxdistortion)
+100F9EDC,?linearpalette@@3PAY02MA,data,GameUI/LogoFile.cpp global from the gameui.so DWARF; .bss layout like our object (offset 0x4 from maxdistortion)
+100FAADC,?d_red@@3MA,data,GameUI/LogoFile.cpp global from the gameui.so DWARF; .bss layout like our object (offset 0xC04 from maxdistortion)
+100FAAE0,?colors_used@@3HA,data,GameUI/LogoFile.cpp global from the gameui.so DWARF; .bss layout like our object (offset 0xC08 from maxdistortion)
+100FAAE4,?color_used@@3PAHA,data,GameUI/LogoFile.cpp global from the gameui.so DWARF; .bss layout like our object (offset 0xC0C from maxdistortion)
+100FAEE4,?d_green@@3MA,data,GameUI/LogoFile.cpp global from the gameui.so DWARF; .bss layout like our object (offset 0x100C from maxdistortion)
+100FAEE8,?palLogo@@3PAEA,data,GameUI/LogoFile.cpp global from the gameui.so DWARF; .bss layout like our object (offset 0x1010 from maxdistortion)
+100FB1E8,?targa_header@@3U_TargaHeader@@A,data,GameUI/LogoFile.cpp global from the gameui.so DWARF; .bss layout like our object (offset 0x1310 from maxdistortion)
+100FB1FC,?pixdata@@3PAEA,data,GameUI/LogoFile.cpp global from the gameui.so DWARF; .bss layout like our object (offset 0x1324 from maxdistortion)
+100FB2FC,?d_blue@@3MA,data,GameUI/LogoFile.cpp global from the gameui.so DWARF; .bss layout like our object (offset 0x1424 from maxdistortion)
