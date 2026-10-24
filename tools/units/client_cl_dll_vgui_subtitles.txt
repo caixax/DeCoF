@@ -7,3 +7,4 @@
 ?paintBackground@CSubtitleTextPanel@@UAEXXZ
 ?SubtitleMessageAdd@@YAXPAUclient_textmessage_s@@@Z
 ?paintBackground@CSubtitle@@MAEXXZ
+?SubtitleEmpty_guess@@YAXXZ

@@ -11,3 +11,4 @@
 ?UpdateGrassModelPosition@@YAXPAUgrass_type_s@@PAUcl_entity_s@@ABVVector@@2@Z
 ?UpdateGrassSpritePosition@@YAXPAUgrass_type_s@@PAUgrass_sprite_s@@ABVVector@@2@Z
 ?GrassDraw@@YAXXZ
+??0grass_sprite_s@@QAE@XZ

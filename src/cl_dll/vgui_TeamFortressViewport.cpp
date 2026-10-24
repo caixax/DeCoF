@@ -2314,6 +2314,20 @@ void TeamFortressViewport::HideUserDocument_guess( void )
 	}
 }
 
+// Cry of Fear: three empty functions nothing calls (retail 100A8310,
+// 100A9030 and 100A90B0); the names only keep them in their retail slots
+void TeamFortressViewport::CreateEmpty_guess( void )
+{
+}
+
+void TeamFortressViewport::HandleEmpty_guess( int iUnused )
+{
+}
+
+void TeamFortressViewport::HideEmpty_guess( void )
+{
+}
+
 
 // Removes all VGUI Menu's onscreen
 void TeamFortressViewport::HideVGUIMenu()

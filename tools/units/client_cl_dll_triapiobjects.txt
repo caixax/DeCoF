@@ -10,3 +10,4 @@
 ??1CObjectsManager@@QAE@XZ
 ??__Eg_objmanager@@YAXXZ
 ??__Fg_objmanager@@YAXXZ
+??0puff_s@CSmokePuff@@QAE@XZ

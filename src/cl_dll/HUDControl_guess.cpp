@@ -11,6 +11,7 @@
 #include "cdll_int.h"
 #include "vgui_TeamFortressViewport.h"
 #include "HUDControl_guess.h"
+#include "vgui_ScorePanel.h"
 #include "..\game_shared\vgui_loadtga.h"
 #include "windows.h"
 

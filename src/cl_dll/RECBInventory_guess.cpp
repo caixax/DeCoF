@@ -16,6 +16,12 @@ extern int iWheelchair_guess;
 
 bool g_bInventoryFadeOut_guess;
 
+// plays a sound by name; only __CmdFunc_Unlockables_guess (hud.cpp) calls it
+void InventorySound_guess( char *pszSound, float flVolume )
+{
+	gEngfuncs.pfnPlaySoundByName( pszSound, flVolume );
+}
+
 CRECBInventory::CRECBInventory( int iTrans, int iRemoveMe, int x, int y, int wide, int tall ) : CMenuPanel( iTrans, iRemoveMe, x, y, wide, tall )
 {
 	int iWide, iTall;

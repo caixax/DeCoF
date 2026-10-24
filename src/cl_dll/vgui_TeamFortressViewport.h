@@ -27,6 +27,7 @@
 #include<VGUI_ScrollPanel.h>
 #include<VGUI_ScrollBar.h>
 #include<VGUI_Slider.h>
+#include<VGUI_TextEntry.h>
 
 #include "vgui_subtitles.h" // buz
 #include "vgui_radio.h" // buz
@@ -572,6 +573,9 @@ public:
 	CMenuPanel* ShowUserDocument_guess( void );		// menu 34
 	void HideNoteDocument_guess( void );			// never called in 1.6a
 	void HideUserDocument_guess( void );			// never called in 1.6a
+	void CreateEmpty_guess( void );					// empty, never called in 1.6a
+	void HandleEmpty_guess( int iUnused );			// empty, never called in 1.6a
+	void HideEmpty_guess( void );					// empty, never called in 1.6a
 
 	CCommandMenu *CreateSubMenu( CommandButton *pButton, CCommandMenu *pParentMenu, int iYOffset, int iXOffset = 0 );
 

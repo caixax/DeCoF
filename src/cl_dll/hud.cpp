@@ -660,6 +660,8 @@ void __CmdFunc_ToUnlockables_guess( void )
 }
 
 // not hooked in 1.6a
+void InventorySound_guess( char *pszSound, float flVolume );
+
 void __CmdFunc_Unlockables_guess( void )
 {
 	if ( gEngfuncs.pfnGetLevelName() && strstr( gEngfuncs.pfnGetLevelName(), "game_menu" ) )
@@ -668,7 +670,7 @@ void __CmdFunc_Unlockables_guess( void )
 	}
 	else if ( iHudActive_guess )
 	{
-		PlaySound( "inventory/inventory_no.wav", 1 );
+		InventorySound_guess( "inventory/inventory_no.wav", 1 );
 	}
 	else
 	{

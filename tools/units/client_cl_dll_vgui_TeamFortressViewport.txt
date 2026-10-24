@@ -145,3 +145,6 @@ TeamFortressViewport::operator_new
 ?mouseReleased@CDragNDropHandler@@UAEXW4MouseCode@vgui@@PAVPanel@3@@Z
 ?UpdateOnPlayerInfo@TeamFortressViewport@@QAEXXZ
 ?UpdateHighlights@TeamFortressViewport@@QAEXXZ
+?CreateEmpty_guess@TeamFortressViewport@@QAEXXZ
+?HandleEmpty_guess@TeamFortressViewport@@QAEXH@Z
+?HideEmpty_guess@TeamFortressViewport@@QAEXXZ

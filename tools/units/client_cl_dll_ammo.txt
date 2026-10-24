@@ -17,7 +17,6 @@
 ?MsgFunc_WeapPickup@CHudAmmo@@QAEHPBDHPAX@Z
 ?MsgFunc_WeaponList@CHudAmmo@@QAEHPBDHPAX@Z
 ?Think@CHudAmmo@@UAEXXZ
-?PlaySoundA@@YAXPADM@Z
 ?CountAmmo@WeaponsResource@@QAEHH@Z
 ?DrawAmmoBar@@YAXPAUWEAPON@@HHHH@Z
 ?GetLastPos@WeaponsResource@@QAEPAUWEAPON@@H@Z

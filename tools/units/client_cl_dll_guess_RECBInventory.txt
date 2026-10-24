@@ -15,3 +15,4 @@
 ?Update_guess@CRECBInventory@@QAEXXZ
 ?setVisible@CRECBInventory@@UAEX_N@Z
 ?solve@CRECBInventory@@MAEXXZ
+?InventorySound_guess@@YAXPADM@Z

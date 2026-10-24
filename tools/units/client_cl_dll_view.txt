@@ -39,3 +39,4 @@ _V_CalcRefdef
 ?SetupViewModelLight_guess@@YAXVVector@@0MM@Z
 ?GetBobMode_guess@@YAHPAUref_params_s@@@Z
 ?VectorIsValid_guess@@YA_NMMM@Z
+_V_CalcEmpty_guess

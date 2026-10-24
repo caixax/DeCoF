@@ -50,6 +50,11 @@ void SubtitleMessageAdd( client_textmessage_t *tempMessage )
 		gEngfuncs.Con_Printf("Subtitle error: CSubtitle or ViewPort is not constructed!\n");
 }
 
+// Cry of Fear: an empty function nothing calls (retail 100A2A30)
+void SubtitleEmpty_guess( void )
+{
+}
+
 void SubtitleInit()
 {
 	time_min = gEngfuncs.pfnRegisterVariable( "subt_mintime", "0", 0 );

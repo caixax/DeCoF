@@ -88,5 +88,5 @@
 ?__MsgFunc_AddNote@@YAHPBDHPAX@Z
 ?__MsgFunc_AddShine@@YAHPBDHPAX@Z
 ?__MsgFunc_AttachCam@@YAHPBDHPAX@Z
-??1CBlackBar@@UAE@XZ
 ??__Fg_VoiceStatusHelper@@YAXXZ
+??1IVoiceStatusHelper@@UAE@XZ

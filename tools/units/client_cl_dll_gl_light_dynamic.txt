@@ -31,3 +31,5 @@
 ?FinishPointLight@@YAXXZ
 ?FinishSpotLight@@YAXXZ
 ?GetDlightsForPoint@@YAHVVector@@00PAPAUDynamicLight@@H@Z
+??0DynamicLight@@QAE@XZ
+??0mplane_s@@QAE@XZ

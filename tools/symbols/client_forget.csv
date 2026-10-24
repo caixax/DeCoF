@@ -13,3 +13,5 @@ va,name,evidence
 10545081,?bUnknown10545081_guess@@3_NA,"member, not a global: the CCgWater_guess constructor clears [this+9], so CHud::Init and CHud::VidInit clear g_CgWater_guess.m_bEnabled_guess"
 1004DFD0,??1CGameStudioModelRenderer@@UAE@XZ,false byte match of a single jmp: 1004DFD0 is EV_HookEvents; retail has no standalone CGameStudioModelRenderer destructor (its ??_G and the g_StudioRenderer atexit thunk call ~CStudioModelRenderer directly)
 10090C20,?Shutdown_guess@CPBuffer_guess@@QAEXXZ,stale copy of the PBuffer_guess name (10087D20): 10090C20 is vectoangles_guess in the StudioModelRenderer object
+10044020,?PlaySoundA@@YAXPADM@Z,renamed ?InventorySound_guess@@YAXPADM@Z: not the cl_util.h inline (decorated-name slot between CRECBInventory::Initialize and KeyInput)
+1006CA10,??1CBlackBar@@UAE@XZ,renamed ??1IVoiceStatusHelper@@UAE@XZ: the function stores the IVoiceStatusHelper vftable

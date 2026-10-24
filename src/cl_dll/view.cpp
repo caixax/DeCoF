@@ -1872,22 +1872,9 @@ void V_GetMapChasePosition(int target, float * cl_angles, float * origin, float 
 int V_FindViewModelByWeaponModel(int weaponindex)
 {
 
+	// Cry of Fear maps only the flashlight (1.6a data)
 	static char * modelmap[][2] =	{
-		{ "models/p_crossbow.mdl",		"models/v_crossbow.mdl"		},
-		{ "models/p_crowbar.mdl",		"models/v_crowbar.mdl"		},
-		{ "models/p_egon.mdl",			"models/v_egon.mdl"			},
-		{ "models/p_gauss.mdl",			"models/v_gauss.mdl"		},
-		{ "models/p_9mmhandgun.mdl",	"models/v_9mmhandgun.mdl"	},
-		{ "models/p_grenade.mdl",		"models/v_grenade.mdl"		},
-		{ "models/p_hgun.mdl",			"models/v_hgun.mdl"			},
-		{ "models/p_9mmAR.mdl",			"models/v_9mmAR.mdl"		},
-		{ "models/p_357.mdl",			"models/v_357.mdl"			},
-		{ "models/p_rpg.mdl",			"models/v_rpg.mdl"			},
-		{ "models/p_shotgun.mdl",		"models/v_shotgun.mdl"		},
-		{ "models/p_squeak.mdl",		"models/v_squeak.mdl"		},
-		{ "models/p_tripmine.mdl",		"models/v_tripmine.mdl"		},
-		{ "models/p_satchel_radio.mdl",	"models/v_satchel_radio.mdl"},
-		{ "models/p_satchel.mdl",		"models/v_satchel.mdl"		},
+		{ "models/weapons/flashlight/p_flashlight.mdl",	"models/weapons/flashlight/v_flashlight.mdl" },
 		{ NULL, NULL } };
 
 	struct model_s * weaponModel = IEngineStudio.GetModelByIndex( weaponindex );
@@ -2087,6 +2074,12 @@ void V_CalcSpectatorRefdef ( struct ref_params_s * pparams )
 
 
 cvar_t *cl_forcepause;
+
+// Cry of Fear: an empty function nothing calls (retail 100B3330, the slot
+// just before V_CalcRefdef)
+extern "C" void V_CalcEmpty_guess( void )
+{
+}
 
 void DLLEXPORT V_CalcRefdef( struct ref_params_s *pparams )
 {

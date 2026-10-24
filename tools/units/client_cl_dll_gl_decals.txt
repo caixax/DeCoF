@@ -22,3 +22,5 @@
 ?DrawDecals@@YAXXZ
 ?GetEntry@DecalGroup@@QAEPAVDecalGroupEntry@@H@Z
 ?PasteViewDecal@@YAXXZ
+??0customdecal_s@@QAE@XZ
+??0decal_msg_cache@@QAE@XZ
