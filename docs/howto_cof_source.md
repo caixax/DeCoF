@@ -351,3 +351,7 @@ The 1.55 hl.dll is an unoptimized debug build of nearly the same source. `disasm
 - A method retail calls directly although the class has virtuals is non-virtual (VoiceRecord_WaveIn::Init); `xor eax, eax` / `mov eax, 1` returns of a method mean BOOL, not bool.
 - utils/procinfo/procinfo.cpp (refs/halflife) is linked into hw.dll: HasCpuid, HasTsc, GetRDTSC and PROC_GetSpeed byte for byte, PROC_IsMMX in a later `_asm pushad` + `__try` form, plus a 3DNow test after it. The `__try` bodies needed SetBodyRange.java before delinking.
 - pe_win32_guess.c holds the stdcall helpers of the PEFILE.C sample (ImageFileType, NumOfSections, ImageDirectoryOffset, GetSectionNames, GetSectionHdrByName, IsDebugInfoStripped, `ret 4/8/12`); its local names (psh, nSections, ped, pNames, pCnt, nCnt) fit the VC6 slot hash unchanged.
+- GameUI: retail often uses a `while` loop where the Source SDK code has `for`; the loop shape decides the match (OptionsSub*, dialogs).
+- `iswalnum` and friends must come from ctype.h, not wctype.h: VC6 disables the C++ inline in ctype.h, so the call goes to the CRT like retail.
+- A compiler-generated destructor does not store the vptr; a written (even empty) destructor does. Write one only when retail stores it.
+- VC6 orders the COMDAT tail of an object (inline and template functions) in a way not reproduced yet (CDKeyEntryDialog, GameConsoleDialog): tails were named by content; objdiff ignores order, a full link will not.
