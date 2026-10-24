@@ -667,7 +667,8 @@ void CShotgun::ItemPostFrame( void )
 		{
 			if ( !pev->iuser2 )
 			{
-				if ( m_iClip != 5 && m_pPlayer->m_rgAmmo[m_iPrimaryAmmoType] )
+				CBasePlayer *pPlayer = m_pPlayer;
+				if ( m_iClip != 5 && pPlayer->m_rgAmmo[m_iPrimaryAmmoType] )
 				{
 					Reload();
 				}
@@ -682,7 +683,7 @@ void CShotgun::ItemPostFrame( void )
 					}
 					else
 					{
-						m_pPlayer->PlayerAnimation( "shotgun_reloadend", false );
+						pPlayer->PlayerAnimation( "shotgun_reloadend", false );
 						SendWeaponAnim( SHOTGUN_REL_END );
 						m_flNextPrimaryAttack = gpGlobals->time + 0.5;
 					}
