@@ -3266,6 +3266,11 @@
           "functions_file": "tools/units/hw_a3d_A3DRenderer_guess.txt"
         },
         {
+          "name": "public/IceKey",
+          "source": "src/public/IceKey.cpp",
+          "functions_file": "tools/units/hw_public_IceKey.txt"
+        },
+        {
           "name": "iga/IGA_Engine_guess",
           "source": "src/iga/IGA_Engine_guess.cpp",
           "functions_file": "tools/units/hw_iga_IGA_Engine_guess.txt"
