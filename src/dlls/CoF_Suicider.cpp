@@ -421,8 +421,17 @@ void CSuicider :: Killed( entvars_t *pevAttacker, int iGib )
 		Vector vecAng;
 		GetAttachment( 1, vecSrc, vecAng );
 
-		// CoF: 1.55 also set the script, the clip and the velocity of the dropped gun here
-		CBaseEntity *pGun = CBaseEntity::Create( pev->iuser1 ? "weapon_p345" : "weapon_glock", vecSrc, pev->angles, edict() );
+		CBaseEntity *pGun;
+		if ( pev->iuser1 )
+			pGun = CBaseEntity::Create( "weapon_p345", vecSrc, pev->angles, edict() );
+		else
+			pGun = CBaseEntity::Create( "weapon_glock", vecSrc, pev->angles, edict() );
+
+		// CoF: 1.55 also set the script, the clip and the velocity of the dropped gun here;
+		// an empty loop is left (retail still aligns its head)
+		for ( int i = 0; i < 1; i++ )
+		{
+		}
 	}
 
 	CBaseEntity *pAttacker = CBaseEntity::Instance( pevAttacker );
