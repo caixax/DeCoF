@@ -4892,3 +4892,12 @@ va,name,kind,evidence
 10050900,??0PanelMessageFunc_OnControlModified@COptionsSubAudio@@QAE@XZ,func,GameUI/OptionsSubAudio.cpp: same position and size as in our compiled object
 10050920,?InitVar@PanelMessageFunc_OnControlModified@COptionsSubAudio@@SAXXZ,func,GameUI/OptionsSubAudio.cpp: same position and size as in our compiled object
 10050990,?AddToMap@COptionsSubAudio@@SAXPBDP8Panel@vgui2@@AEXXZHH0H0@Z,func,GameUI/OptionsSubAudio.cpp: same position and size as in our compiled object
+100321E0,??0CImageButton@@QAE@PAVPanel@vgui2@@PBD1@Z,func,GameUI/ImageButton.cpp: same position and size as in our compiled object; linux: _ZN12CImageButtonC1EPN5vgui25PanelEPKcS4_
+10032248,?PaintBackground@CImageButton@@UAEXXZ,func,GameUI/ImageButton.cpp: same position and size as in our compiled object; linux: _ZN12CImageButton15PaintBackgroundEv
+1003240B,?SetImagePadding@CImageButton@@QAEXH@Z,func,GameUI/ImageButton.cpp: same position and size as in our compiled object; linux: _ZN12CImageButton15SetImagePaddingEi
+10032436,?SetFillPadding@CImageButton@@QAEXH@Z,func,GameUI/ImageButton.cpp: same position and size as in our compiled object; linux: _ZN12CImageButton14SetFillPaddingEi
+10032461,?GetImageColor@CImageButton@@UAE?AVColor@@XZ,func,GameUI/ImageButton.cpp: same position and size as in our compiled object; linux: _ZN12CImageButton13GetImageColorEv
+1003248C,?SetTexture@CImageButton@@UAEXPBD@Z,func,GameUI/ImageButton.cpp: same position and size as in our compiled object; linux: _ZN12CImageButton10SetTextureEPKc
+100324DC,?ForceUpload@CImageButton@@UAEXXZ,func,GameUI/ImageButton.cpp: same position and size as in our compiled object; linux: _ZN12CImageButton11ForceUploadEv
+1003254C,?ForceReload@CImageButton@@UAEXXZ,func,GameUI/ImageButton.cpp: same position and size as in our compiled object; linux: _ZN12CImageButton11ForceReloadEv
+100325A0,??_GCImageButton@@UAEPAXI@Z,func,GameUI/ImageButton.cpp: same position and size as in our compiled object

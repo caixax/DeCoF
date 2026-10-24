@@ -4048,6 +4048,11 @@
           "name": "GameUI/OptionsSubAudio",
           "source": "src/gameui/OptionsSubAudio.cpp",
           "functions_file": "tools/units/gameui_GameUI_OptionsSubAudio.txt"
+        },
+        {
+          "name": "GameUI/ImageButton",
+          "source": "src/gameui/ImageButton.cpp",
+          "functions_file": "tools/units/gameui_GameUI_ImageButton.txt"
         }
       ]
     }

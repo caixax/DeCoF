@@ -8833,15 +8833,15 @@ gameui,10032160,19,??C?$DHANDLE@VCLoadingDialog@@@vgui2@@QAEPAVCLoadingDialog@@X
 gameui,10032180,25,??4?$DHANDLE@VCLoadingDialog@@@vgui2@@QAEPAVCLoadingDialog@@PAV2@@Z,CLoadingDialog>::operator=,UNKNOWN,GameUI/GameUI_Interface.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,100321A0,25,??B?$DHANDLE@VCLoadingDialog@@@vgui2@@QAE_NXZ,bool,UNKNOWN,GameUI/GameUI_Interface.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,100321C0,20,?CanUnpause@CCareerGame@@QBE_NXZ,CCareerGame::CanUnpause,UNKNOWN,GameUI/GameUI_Interface.cpp,,,MATCHED,100,gameui_manual.csv,
-gameui,100321E0,104,,,UNKNOWN,GameUI/ImageButton.cpp,,,TODO,,,linux: _ZN12CImageButtonC1EPN5vgui25PanelEPKcS4_
-gameui,10032248,451,,,UNKNOWN,GameUI/ImageButton.cpp,,,TODO,,,linux: _ZN12CImageButton15PaintBackgroundEv
-gameui,1003240B,43,,,UNKNOWN,GameUI/ImageButton.cpp,,,TODO,,,linux: _ZN12CImageButton15SetImagePaddingEi
-gameui,10032436,43,,,UNKNOWN,GameUI/ImageButton.cpp,,,TODO,,,linux: _ZN12CImageButton14SetFillPaddingEi
-gameui,10032461,43,,,UNKNOWN,GameUI/ImageButton.cpp,,,TODO,,,linux: _ZN12CImageButton13GetImageColorEv
-gameui,1003248C,80,,,UNKNOWN,GameUI/ImageButton.cpp,,,TODO,,,linux: _ZN12CImageButton10SetTextureEPKc
-gameui,100324DC,112,,,UNKNOWN,GameUI/ImageButton.cpp,,,TODO,,,linux: _ZN12CImageButton11ForceUploadEv
-gameui,1003254C,73,,,UNKNOWN,GameUI/ImageButton.cpp,,,TODO,,,linux: _ZN12CImageButton11ForceReloadEv
-gameui,100325A0,46,,,UNKNOWN,GameUI/ImageButton.cpp,,,TODO,,,
+gameui,100321E0,104,??0CImageButton@@QAE@PAVPanel@vgui2@@PBD1@Z,"public: __thiscall CImageButton::CImageButton(class vgui2::Panel *,char const *,char const *)",UNKNOWN,GameUI/ImageButton.cpp,,,MATCHED,100,,linux: _ZN12CImageButtonC1EPN5vgui25PanelEPKcS4_
+gameui,10032248,451,?PaintBackground@CImageButton@@UAEXXZ,public: virtual void __thiscall CImageButton::PaintBackground(void),UNKNOWN,GameUI/ImageButton.cpp,,,MATCHED,100,,linux: _ZN12CImageButton15PaintBackgroundEv
+gameui,1003240B,43,?SetImagePadding@CImageButton@@QAEXH@Z,public: void __thiscall CImageButton::SetImagePadding(int),UNKNOWN,GameUI/ImageButton.cpp,,,MATCHED,100,,linux: _ZN12CImageButton15SetImagePaddingEi
+gameui,10032436,43,?SetFillPadding@CImageButton@@QAEXH@Z,public: void __thiscall CImageButton::SetFillPadding(int),UNKNOWN,GameUI/ImageButton.cpp,,,MATCHED,100,,linux: _ZN12CImageButton14SetFillPaddingEi
+gameui,10032461,43,?GetImageColor@CImageButton@@UAE?AVColor@@XZ,public: virtual class Color __thiscall CImageButton::GetImageColor(void),UNKNOWN,GameUI/ImageButton.cpp,,,MATCHED,100,,linux: _ZN12CImageButton13GetImageColorEv
+gameui,1003248C,80,?SetTexture@CImageButton@@UAEXPBD@Z,public: virtual void __thiscall CImageButton::SetTexture(char const *),UNKNOWN,GameUI/ImageButton.cpp,,,MATCHED,100,,linux: _ZN12CImageButton10SetTextureEPKc
+gameui,100324DC,112,?ForceUpload@CImageButton@@UAEXXZ,public: virtual void __thiscall CImageButton::ForceUpload(void),UNKNOWN,GameUI/ImageButton.cpp,,,MATCHED,100,,linux: _ZN12CImageButton11ForceUploadEv
+gameui,1003254C,73,?ForceReload@CImageButton@@UAEXXZ,public: virtual void __thiscall CImageButton::ForceReload(void),UNKNOWN,GameUI/ImageButton.cpp,,,MATCHED,100,,linux: _ZN12CImageButton11ForceReloadEv
+gameui,100325A0,46,??_GCImageButton@@UAEPAXI@Z,public: virtual void * __thiscall CImageButton::`scalar deleting destructor'(unsigned int),UNKNOWN,GameUI/ImageButton.cpp,,,MATCHED,100,,
 gameui,100325D0,53,??0InterfaceReg@@QAE@P6APAVIBaseInterface@@XZPBD@Z,InterfaceReg::InterfaceReg,UNKNOWN,public/interface.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,10032605,97,_CreateInterface,CreateInterface,ENGINE,public/interface.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,10032666,19,?Sys_GetProcAddress@@YAPAXPAXPBD@Z,Sys_GetProcAddress,UNKNOWN,public/interface.cpp,,,MATCHED,100,gameui_manual.csv,
