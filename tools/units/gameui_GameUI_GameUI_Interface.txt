@@ -1,7 +1,15 @@
 ?DebugMessage_guess@@YAXPBD@Z
+_$E8
+_$E7
+_$E13
+_$E10
+_$E12
+_$E11
 ?GameClientExports@@YAPAVIGameClientExports@@XZ
 ?GameUI@@YAAAVCGameUI@@XZ
 ?EngineVGUI@@YAAAVIEngineVGui@@XZ
+_$E16
+_$E15
 ?__CreateCGameUIIGameUI_interface@@YAPAVIBaseInterface@@XZ
 ??0CGameUI@@QAE@XZ
 ??1CGameUI@@UAE@XZ
