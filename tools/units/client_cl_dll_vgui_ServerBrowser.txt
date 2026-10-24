@@ -31,3 +31,4 @@
 ?mouseWheeled@LabelSortInputHandler@@UAEXHPAVPanel@vgui@@@Z
 ?actionPerformed@RefreshHandler@?A0x1d568137@@UAEXPAVPanel@vgui@@@Z
 ?actionPerformed@StopHandler@?A0x1d568137@@UAEXPAVPanel@vgui@@@Z
+?startCellEditing@ServerBrowserTablePanel@?A0x1d568137@@UAEPAVPanel@vgui@@HH@Z

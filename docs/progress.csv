@@ -2676,7 +2676,7 @@ client,100A0630,3,?mouseReleased@LabelSortInputHandler@@UAEXW4MouseCode@vgui@@PA
 client,100A0640,3,?mouseWheeled@CBrowser_InputSignal@?A0x1d568137@@UAEXHPAVPanel@vgui@@@Z,namespace'::CBrowser_InputSignal::mouseWheeled,UNKNOWN,guess:cl_dll/vgui_ServerBrowser.cpp,,,MATCHED,100,client_manual.csv,
 client,100A0650,3,?mouseWheeled@LabelSortInputHandler@@UAEXHPAVPanel@vgui@@@Z,LabelSortInputHandler::mouseWheeled,UNKNOWN,guess:cl_dll/vgui_ServerBrowser.cpp,,,MATCHED,100,client_manual.csv,
 client,100A0660,394,?setSize@ServerBrowser@@UAEXHH@Z,ServerBrowser::setSize,HLSDK,cl_dll/vgui_ServerBrowser.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__vgui_ServerBrowser.obj:score24,
-client,100A07F0,5,,,UNKNOWN,,,,TODO,,,
+client,100A07F0,5,?startCellEditing@ServerBrowserTablePanel@?A0x1d568137@@UAEPAVPanel@vgui@@HH@Z,namespace'::ServerBrowserTablePanel::startCellEditing,HLSDK,cl_dll/vgui_ServerBrowser.cpp,,,MATCHED,100,client_manual.csv,
 client,100A0800,36,??0SpectatorPanel@@QAE@HHHH@Z,SpectatorPanel::SpectatorPanel,HLSDK,cl_dll/vgui_SpectatorPanel.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__vgui_SpectatorPanel.obj:score0,
 client,100A0830,7,??1SpectatorPanel@@UAE@XZ,SpectatorPanel::~SpectatorPanel,HLSDK,cl_dll/vgui_SpectatorPanel.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__vgui_SpectatorPanel.obj:score1,
 client,100A0840,38,??_GSpectatorPanel@@UAEPAXI@Z,destructor',UNKNOWN,cl_dll/vgui_SpectatorPanel.cpp,,,MATCHED,100,,
