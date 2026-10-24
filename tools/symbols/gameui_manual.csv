@@ -4528,3 +4528,15 @@ va,name,kind,evidence
 1001BE29,_$E22,func,GameUI/CareerProfileButton.cpp: same position and size as in our compiled object
 1001BE40,??_GCProfileButton@@UAEPAXI@Z,func,GameUI/CareerProfileButton.cpp: same position and size as in our compiled object
 1001BE70,??1CProfileButton@@UAE@XZ,func,GameUI/CareerProfileButton.cpp: same position and size as in our compiled object
+10038690,??0CRefreshSteamLogin@@QAE@PAVPanel@vgui2@@PBD@Z,func,GameUI/RefreshSteamLogin.cpp: same position and size as in our compiled object; linux: _ZN18CRefreshSteamLoginC2EPN5vgui25PanelEPKc
+10038880,??1CRefreshSteamLogin@@UAE@XZ,func,GameUI/RefreshSteamLogin.cpp: same position and size as in our compiled object; linux: _ZN18CRefreshSteamLoginD2Ev
+1003889C,?OnCommand@CRefreshSteamLogin@@MAEXPBD@Z,func,GameUI/RefreshSteamLogin.cpp: same position and size as in our compiled object; linux: _ZN18CRefreshSteamLogin9OnCommandEPKc
+10038ACF,?OnClose@CRefreshSteamLogin@@MAEXXZ,func,GameUI/RefreshSteamLogin.cpp: same position and size as in our compiled object; linux: _ZN18CRefreshSteamLogin7OnCloseEv
+10038B05,?OnThink@CRefreshSteamLogin@@MAEXXZ,func,GameUI/RefreshSteamLogin.cpp: same position and size as in our compiled object; linux: _ZN18CRefreshSteamLogin7OnThinkEv
+10038E8B,?Activate@CRefreshSteamLogin@@UAEXXZ,func,GameUI/RefreshSteamLogin.cpp: same position and size as in our compiled object; linux: _ZN18CRefreshSteamLogin8ActivateEv
+10038ED0,??_GCRefreshSteamLogin@@UAEPAXI@Z,func,GameUI/RefreshSteamLogin.cpp: same position and size as in our compiled object
+10038F00,??0CRefreshSteamLogin_RegisterMap@CRefreshSteamLogin@@QAE@XZ,func,GameUI/RefreshSteamLogin.cpp: same position and size as in our compiled object
+10038F20,?ChainToMap@CRefreshSteamLogin@@SAXXZ,func,GameUI/RefreshSteamLogin.cpp: same position and size as in our compiled object
+10038F90,?GetMessageMap@CRefreshSteamLogin@@UAEPAUPanelMessageMap@vgui2@@XZ,func,GameUI/RefreshSteamLogin.cpp: same position and size as in our compiled object
+10038FD0,?GetPanelClassName@CRefreshSteamLogin@@SAPBDXZ,func,GameUI/RefreshSteamLogin.cpp: same position and size as in our compiled object
+10038FE0,?GetPanelBaseClassName@CRefreshSteamLogin@@SAPBDXZ,func,GameUI/RefreshSteamLogin.cpp: same position and size as in our compiled object

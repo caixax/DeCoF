@@ -3973,6 +3973,11 @@
           "name": "GameUI/CareerProfileButton",
           "source": "src/gameui/CareerProfileButton.cpp",
           "functions_file": "tools/units/gameui_GameUI_CareerProfileButton.txt"
+        },
+        {
+          "name": "GameUI/RefreshSteamLogin",
+          "source": "src/gameui/RefreshSteamLogin.cpp",
+          "functions_file": "tools/units/gameui_GameUI_RefreshSteamLogin.txt"
         }
       ]
     }
