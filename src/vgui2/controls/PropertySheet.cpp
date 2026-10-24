@@ -713,12 +713,12 @@ void PropertySheet::OnTextChanged(Panel *panel, const wchar_t *wszText)
 {
 	if (panel == _combo)
 	{
-		wchar_t tabText[30];
+		wchar_t tabText_guess[30];
 		for (int i = 0; i < _pageTabs.GetCount(); i++)
 		{
-			tabText[0] = 0;
-			_pageTabs[i]->GetText(tabText, 30);
-			if (!wcsicmp(wszText, tabText))
+			tabText_guess[0] = 0;
+			_pageTabs[i]->GetText(tabText_guess, 30);
+			if (!wcsicmp(wszText, tabText_guess))
 			{
 				ChangeActiveTab(i);
 			}
