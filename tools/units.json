@@ -4148,6 +4148,11 @@
           "name": "HLTV/common/common",
           "source": "src/HLTV/common/common.cpp",
           "functions_file": "tools/units/gameui_HLTV_common_common.txt"
+        },
+        {
+          "name": "GameUI/DemoPlayerDialog",
+          "source": "src/gameui/DemoPlayerDialog.cpp",
+          "functions_file": "tools/units/gameui_GameUI_DemoPlayerDialog.txt"
         }
       ]
     }

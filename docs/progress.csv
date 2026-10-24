@@ -8671,34 +8671,34 @@ gameui,1002C900,120,,,UNKNOWN,GameUI/DemoEventsDialog.cpp,,,TODO,,,
 gameui,1002C980,19,,,UNKNOWN,GameUI/DemoEventsDialog.cpp,,,TODO,,,
 gameui,1002C9A0,107,,,UNKNOWN,GameUI/DemoEventsDialog.cpp,,,TODO,,,
 gameui,1002CA10,25,,,UNKNOWN,GameUI/DemoEventsDialog.cpp,,,TODO,,,
-gameui,1002CA30,1802,,,UNKNOWN,GameUI/DemoPlayerDialog.cpp,,,TODO,,,
-gameui,1002D13A,251,,,UNKNOWN,GameUI/DemoPlayerDialog.cpp,,,TODO,,,
-gameui,1002D235,597,,CDemoPlayerDialog::ApplySchemeSettings,ENGINE,GameUI/DemoPlayerDialog.cpp,,,TODO,,linux_symbols:string:0.82,linux: _ZN17CDemoPlayerDialog19ApplySchemeSettingsEPN5vgui27ISchemeE
-gameui,1002D48A,75,,,UNKNOWN,GameUI/DemoPlayerDialog.cpp,,,TODO,,,linux: _ZN17CDemoPlayerDialog7OnThinkEv
-gameui,1002D4D5,1672,,CDemoPlayerDialog::Update,ENGINE,GameUI/DemoPlayerDialog.cpp,,,TODO,,linux_symbols:string:0.717,linux: _ZN17CDemoPlayerDialog6UpdateEv
-gameui,1002DB5D,69,,,UNKNOWN,GameUI/DemoPlayerDialog.cpp,,,TODO,,,linux: _ZN17CDemoPlayerDialog6OnPlayEv
-gameui,1002DBA2,468,,CDemoPlayerDialog::LoadModules,ENGINE,GameUI/DemoPlayerDialog.cpp,,,TODO,,linux_symbols:string:0.55,linux: _ZN17CDemoPlayerDialog11LoadModulesEv
-gameui,1002DD76,64,,,UNKNOWN,GameUI/DemoPlayerDialog.cpp,,,TODO,,,linux: _ZN17CDemoPlayerDialog7OnPauseEv
-gameui,1002DDB6,185,,,UNKNOWN,GameUI/DemoPlayerDialog.cpp,,,TODO,,,linux: _ZN17CDemoPlayerDialog11OnNextFrameEi
-gameui,1002DE6F,141,,,UNKNOWN,GameUI/DemoPlayerDialog.cpp,,,TODO,,,linux: _ZN17CDemoPlayerDialog7OnStartEv
-gameui,1002DEFC,96,,,UNKNOWN,GameUI/DemoPlayerDialog.cpp,,,TODO,,,linux: _ZN17CDemoPlayerDialog8OnSlowerEv
-gameui,1002DF5C,36,,,UNKNOWN,GameUI/DemoPlayerDialog.cpp,,,TODO,,,linux: _ZN17CDemoPlayerDialog6OnSaveEv
-gameui,1002DF80,278,,,UNKNOWN,GameUI/DemoPlayerDialog.cpp,,,TODO,,,linux: _ZN17CDemoPlayerDialog8OnEventsEv
-gameui,1002E096,92,,,UNKNOWN,GameUI/DemoPlayerDialog.cpp,,,TODO,,,linux: _ZN17CDemoPlayerDialog8OnFasterEv
-gameui,1002E0F2,90,,,UNKNOWN,GameUI/DemoPlayerDialog.cpp,,,TODO,,,linux: _ZN17CDemoPlayerDialog5OnEndEv
-gameui,1002E14C,33,,,UNKNOWN,GameUI/DemoPlayerDialog.cpp,,,TODO,,,linux: _ZN17CDemoPlayerDialog7OnCloseEv
-gameui,1002E16D,507,,,UNKNOWN,GameUI/DemoPlayerDialog.cpp,,,TODO,,,linux: _ZN17CDemoPlayerDialog9OnCommandEPKc
-gameui,1002E368,413,,CDemoPlayerDialog::ReceiveSignal,ENGINE,GameUI/DemoPlayerDialog.cpp,,,TODO,,linux_symbols:string:0.75,linux: _ZN17CDemoPlayerDialog13ReceiveSignalEP13ISystemModulejPv
-gameui,1002E505,277,,,UNKNOWN,GameUI/DemoPlayerDialog.cpp,,,TODO,,,
-gameui,1002E61A,70,,,UNKNOWN,GameUI/DemoPlayerDialog.cpp,,,TODO,,,
-gameui,1002E660,166,,,UNKNOWN,GameUI/DemoPlayerDialog.cpp,,,TODO,,,
-gameui,1002E710,46,,,UNKNOWN,GameUI/DemoPlayerDialog.cpp,,,TODO,,,
-gameui,1002E740,22,,,UNKNOWN,GameUI/DemoPlayerDialog.cpp,,,TODO,,,
-gameui,1002E760,33,,,UNKNOWN,GameUI/DemoPlayerDialog.cpp,,,TODO,,,
-gameui,1002E790,23,,,UNKNOWN,GameUI/DemoPlayerDialog.cpp,,,TODO,,,
-gameui,1002E7B0,19,,,UNKNOWN,GameUI/DemoPlayerDialog.cpp,,,TODO,,,
-gameui,1002E7D0,19,,,UNKNOWN,GameUI/DemoPlayerDialog.cpp,,,TODO,,,
-gameui,1002E7F0,25,,,UNKNOWN,GameUI/DemoPlayerDialog.cpp,,,TODO,,,
+gameui,1002CA30,1802,??0CDemoPlayerDialog@@QAE@PAVPanel@vgui2@@@Z,public: __thiscall CDemoPlayerDialog::CDemoPlayerDialog(class vgui2::Panel *),UNKNOWN,GameUI/DemoPlayerDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1002D13A,251,??1CDemoPlayerDialog@@UAE@XZ,public: virtual __thiscall CDemoPlayerDialog::~CDemoPlayerDialog(void),UNKNOWN,GameUI/DemoPlayerDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1002D235,597,?ApplySchemeSettings@CDemoPlayerDialog@@MAEXPAVIScheme@vgui2@@@Z,protected: virtual void __thiscall CDemoPlayerDialog::ApplySchemeSettings(class vgui2::IScheme *),ENGINE,GameUI/DemoPlayerDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN17CDemoPlayerDialog19ApplySchemeSettingsEPN5vgui27ISchemeE
+gameui,1002D48A,75,?OnThink@CDemoPlayerDialog@@UAEXXZ,public: virtual void __thiscall CDemoPlayerDialog::OnThink(void),UNKNOWN,GameUI/DemoPlayerDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN17CDemoPlayerDialog7OnThinkEv
+gameui,1002D4D5,1672,?Update@CDemoPlayerDialog@@IAEXXZ,protected: void __thiscall CDemoPlayerDialog::Update(void),ENGINE,GameUI/DemoPlayerDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN17CDemoPlayerDialog6UpdateEv
+gameui,1002DB5D,69,?OnPlay@CDemoPlayerDialog@@IAEXXZ,protected: void __thiscall CDemoPlayerDialog::OnPlay(void),UNKNOWN,GameUI/DemoPlayerDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN17CDemoPlayerDialog6OnPlayEv
+gameui,1002DBA2,468,?LoadModules@CDemoPlayerDialog@@IAE_NXZ,protected: bool __thiscall CDemoPlayerDialog::LoadModules(void),ENGINE,GameUI/DemoPlayerDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1002DD76,64,?OnPause@CDemoPlayerDialog@@IAEXXZ,protected: void __thiscall CDemoPlayerDialog::OnPause(void),UNKNOWN,GameUI/DemoPlayerDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN17CDemoPlayerDialog7OnPauseEv
+gameui,1002DDB6,185,?OnNextFrame@CDemoPlayerDialog@@IAEXH@Z,protected: void __thiscall CDemoPlayerDialog::OnNextFrame(int),UNKNOWN,GameUI/DemoPlayerDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN17CDemoPlayerDialog11OnNextFrameEi
+gameui,1002DE6F,141,?OnStart@CDemoPlayerDialog@@IAEXXZ,protected: void __thiscall CDemoPlayerDialog::OnStart(void),UNKNOWN,GameUI/DemoPlayerDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN17CDemoPlayerDialog7OnStartEv
+gameui,1002DEFC,96,?OnSlower@CDemoPlayerDialog@@IAEXXZ,protected: void __thiscall CDemoPlayerDialog::OnSlower(void),UNKNOWN,GameUI/DemoPlayerDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN17CDemoPlayerDialog8OnSlowerEv
+gameui,1002DF5C,36,?OnSave@CDemoPlayerDialog@@IAEXXZ,protected: void __thiscall CDemoPlayerDialog::OnSave(void),UNKNOWN,GameUI/DemoPlayerDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN17CDemoPlayerDialog6OnSaveEv
+gameui,1002DF80,278,?OnEvents@CDemoPlayerDialog@@IAEXXZ,protected: void __thiscall CDemoPlayerDialog::OnEvents(void),UNKNOWN,GameUI/DemoPlayerDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN17CDemoPlayerDialog8OnEventsEv
+gameui,1002E096,92,?OnFaster@CDemoPlayerDialog@@IAEXXZ,protected: void __thiscall CDemoPlayerDialog::OnFaster(void),UNKNOWN,GameUI/DemoPlayerDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN17CDemoPlayerDialog8OnFasterEv
+gameui,1002E0F2,90,?OnEnd@CDemoPlayerDialog@@IAEXXZ,protected: void __thiscall CDemoPlayerDialog::OnEnd(void),UNKNOWN,GameUI/DemoPlayerDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN17CDemoPlayerDialog5OnEndEv
+gameui,1002E14C,33,?OnClose@CDemoPlayerDialog@@UAEXXZ,public: virtual void __thiscall CDemoPlayerDialog::OnClose(void),UNKNOWN,GameUI/DemoPlayerDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN17CDemoPlayerDialog7OnCloseEv
+gameui,1002E16D,507,?OnCommand@CDemoPlayerDialog@@UAEXPBD@Z,public: virtual void __thiscall CDemoPlayerDialog::OnCommand(char const *),UNKNOWN,GameUI/DemoPlayerDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN17CDemoPlayerDialog9OnCommandEPKc
+gameui,1002E368,413,?ReceiveSignal@CDemoPlayerDialog@@UAEXPAVISystemModule@@IPAX@Z,"public: virtual void __thiscall CDemoPlayerDialog::ReceiveSignal(class ISystemModule *,unsigned int,void *)",ENGINE,GameUI/DemoPlayerDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN17CDemoPlayerDialog13ReceiveSignalEP13ISystemModulejPv
+gameui,1002E505,277,?OnMessage@CDemoPlayerDialog@@UAEXPBVKeyValues@@I@Z,"public: virtual void __thiscall CDemoPlayerDialog::OnMessage(class KeyValues const *,unsigned int)",UNKNOWN,GameUI/DemoPlayerDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1002E61A,70,?OnStop@CDemoPlayerDialog@@IAEXXZ,protected: void __thiscall CDemoPlayerDialog::OnStop(void),UNKNOWN,GameUI/DemoPlayerDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1002E660,166,?OnLoad@CDemoPlayerDialog@@IAEXXZ,protected: void __thiscall CDemoPlayerDialog::OnLoad(void),UNKNOWN,GameUI/DemoPlayerDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1002E710,46,??_GCDemoPlayerDialog@@UAEPAXI@Z,public: virtual void * __thiscall CDemoPlayerDialog::`scalar deleting destructor'(unsigned int),UNKNOWN,GameUI/DemoPlayerDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1002E740,22,??0?$DHANDLE@VFrame@vgui2@@@vgui2@@QAE@XZ,public: __thiscall vgui2::DHANDLE<class vgui2::Frame>::DHANDLE<class vgui2::Frame>(void),UNKNOWN,GameUI/DemoPlayerDialog.cpp,,,TODO,,gameui_manual.csv,"bytes identical to our COMDAT; the name is also on 10032050 (GameUI_Interface.cpp, CGameUI +0x140 handle, type assumed Frame), so the delinker cannot export it here: this one is DHANDLE<vgui2::Frame> (gameui.so DWARF m_hDemoPlayerFileDialog and m_hDemoEventsDialog, its Get, operator-> and operator= follow it), 10032050 must be another DHANDLE type"
+gameui,1002E760,33,??_DCDemoPlayerDialog@@QAEXXZ,public: void __thiscall CDemoPlayerDialog::`vbase destructor'(void),UNKNOWN,GameUI/DemoPlayerDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1002E790,23,??0PHandle@vgui2@@QAE@XZ,public: __thiscall vgui2::PHandle::PHandle(void),UNKNOWN,GameUI/DemoPlayerDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1002E7B0,19,?Get@?$DHANDLE@VFrame@vgui2@@@vgui2@@QAEPAVFrame@2@XZ,public: class vgui2::Frame * __thiscall vgui2::DHANDLE<class vgui2::Frame>::Get(void),UNKNOWN,GameUI/DemoPlayerDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1002E7D0,19,??C?$DHANDLE@VFrame@vgui2@@@vgui2@@QAEPAVFrame@1@XZ,public: class vgui2::Frame * __thiscall vgui2::DHANDLE<class vgui2::Frame>::operator->(void),UNKNOWN,GameUI/DemoPlayerDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1002E7F0,25,??4?$DHANDLE@VFrame@vgui2@@@vgui2@@QAEPAVFrame@1@PAV21@@Z,public: class vgui2::Frame * __thiscall vgui2::DHANDLE<class vgui2::Frame>::operator=(class vgui2::Frame *),UNKNOWN,GameUI/DemoPlayerDialog.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,1002E900,398,??0CDemoPlayerFileDialog@@QAE@PAVPanel@vgui2@@PBD@Z,"public: __thiscall CDemoPlayerFileDialog::CDemoPlayerFileDialog(class vgui2::Panel *,char const *)",ENGINE,GameUI/DemoPlayerFileDialog.cpp,,,MATCHED,100,linux_symbols:string:0.763,
 gameui,1002EA8E,28,??1CDemoPlayerFileDialog@@UAE@XZ,public: virtual __thiscall CDemoPlayerFileDialog::~CDemoPlayerFileDialog(void),UNKNOWN,GameUI/DemoPlayerFileDialog.cpp,,,MATCHED,100,,
 gameui,1002EAAA,316,?LoadDemoList@CDemoPlayerFileDialog@@AAEXXZ,private: void __thiscall CDemoPlayerFileDialog::LoadDemoList(void),ENGINE,GameUI/DemoPlayerFileDialog.cpp,,,MATCHED,100,linux_symbols:string:0.769,linux: _ZN21CDemoPlayerFileDialog12LoadDemoListEv

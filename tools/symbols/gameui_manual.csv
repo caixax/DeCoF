@@ -5333,3 +5333,31 @@ va,name,kind,evidence
 10030B31,_$E11,func,"GameUI/GameUI_Interface.cpp: atexit destructor helper of g_GameUI, same position and size as _E$11 in our compiled object"
 10030B5E,_$E16,func,"GameUI/GameUI_Interface.cpp: dynamic initializer of the GameUI InterfaceReg, same position and size as _E$16 in our compiled object"
 10030B68,_$E15,func,"GameUI/GameUI_Interface.cpp: constructs the GameUI InterfaceReg (was the Linux __GLOBAL__sub_I_g_szEXEName label), same position and size as _E$15 in our compiled object"
+1002CA30,??0CDemoPlayerDialog@@QAE@PAVPanel@vgui2@@@Z,func,GameUI/DemoPlayerDialog.cpp: same position (size 1802 against 1775) as in our compiled object
+1002D13A,??1CDemoPlayerDialog@@UAE@XZ,func,GameUI/DemoPlayerDialog.cpp: same position and size as in our compiled object
+1002D235,?ApplySchemeSettings@CDemoPlayerDialog@@MAEXPAVIScheme@vgui2@@@Z,func,GameUI/DemoPlayerDialog.cpp: same position and size as in our compiled object; linux: _ZN17CDemoPlayerDialog19ApplySchemeSettingsEPN5vgui27ISchemeE
+1002D48A,?OnThink@CDemoPlayerDialog@@UAEXXZ,func,GameUI/DemoPlayerDialog.cpp: same position (size 75 against 71) as in our compiled object; linux: _ZN17CDemoPlayerDialog7OnThinkEv
+1002D4D5,?Update@CDemoPlayerDialog@@IAEXXZ,func,GameUI/DemoPlayerDialog.cpp: same position and size as in our compiled object; linux: _ZN17CDemoPlayerDialog6UpdateEv
+1002DB5D,?OnPlay@CDemoPlayerDialog@@IAEXXZ,func,GameUI/DemoPlayerDialog.cpp: same position and size as in our compiled object; linux: _ZN17CDemoPlayerDialog6OnPlayEv
+1002DBA2,?LoadModules@CDemoPlayerDialog@@IAE_NXZ,func,GameUI/DemoPlayerDialog.cpp: same position and size as in our compiled object; linux: _ZN17CDemoPlayerDialog11LoadModulesEv
+1002DD76,?OnPause@CDemoPlayerDialog@@IAEXXZ,func,GameUI/DemoPlayerDialog.cpp: same position and size as in our compiled object; linux: _ZN17CDemoPlayerDialog7OnPauseEv
+1002DDB6,?OnNextFrame@CDemoPlayerDialog@@IAEXH@Z,func,GameUI/DemoPlayerDialog.cpp: same position (size 185 against 182) as in our compiled object; linux: _ZN17CDemoPlayerDialog11OnNextFrameEi
+1002DE6F,?OnStart@CDemoPlayerDialog@@IAEXXZ,func,GameUI/DemoPlayerDialog.cpp: same position (size 141 against 139) as in our compiled object; linux: _ZN17CDemoPlayerDialog7OnStartEv
+1002DEFC,?OnSlower@CDemoPlayerDialog@@IAEXXZ,func,GameUI/DemoPlayerDialog.cpp: same position (size 96 against 91) as in our compiled object; linux: _ZN17CDemoPlayerDialog8OnSlowerEv
+1002DF5C,?OnSave@CDemoPlayerDialog@@IAEXXZ,func,GameUI/DemoPlayerDialog.cpp: same position and size as in our compiled object; linux: _ZN17CDemoPlayerDialog6OnSaveEv
+1002DF80,?OnEvents@CDemoPlayerDialog@@IAEXXZ,func,GameUI/DemoPlayerDialog.cpp: same position and size as in our compiled object; linux: _ZN17CDemoPlayerDialog8OnEventsEv
+1002E096,?OnFaster@CDemoPlayerDialog@@IAEXXZ,func,GameUI/DemoPlayerDialog.cpp: same position (size 92 against 87) as in our compiled object; linux: _ZN17CDemoPlayerDialog8OnFasterEv
+1002E0F2,?OnEnd@CDemoPlayerDialog@@IAEXXZ,func,GameUI/DemoPlayerDialog.cpp: same position (size 90 against 88) as in our compiled object; linux: _ZN17CDemoPlayerDialog5OnEndEv
+1002E14C,?OnClose@CDemoPlayerDialog@@UAEXXZ,func,GameUI/DemoPlayerDialog.cpp: same position and size as in our compiled object; linux: _ZN17CDemoPlayerDialog7OnCloseEv
+1002E16D,?OnCommand@CDemoPlayerDialog@@UAEXPBD@Z,func,GameUI/DemoPlayerDialog.cpp: same position and size as in our compiled object; linux: _ZN17CDemoPlayerDialog9OnCommandEPKc
+1002E368,?ReceiveSignal@CDemoPlayerDialog@@UAEXPAVISystemModule@@IPAX@Z,func,GameUI/DemoPlayerDialog.cpp: same position (size 413 against 403) as in our compiled object; linux: _ZN17CDemoPlayerDialog13ReceiveSignalEP13ISystemModulejPv
+1002E505,?OnMessage@CDemoPlayerDialog@@UAEXPBVKeyValues@@I@Z,func,GameUI/DemoPlayerDialog.cpp: same position and size as in our compiled object
+1002E61A,?OnStop@CDemoPlayerDialog@@IAEXXZ,func,GameUI/DemoPlayerDialog.cpp: same position and size as in our compiled object
+1002E660,?OnLoad@CDemoPlayerDialog@@IAEXXZ,func,GameUI/DemoPlayerDialog.cpp: same position and size as in our compiled object
+1002E710,??_GCDemoPlayerDialog@@UAEPAXI@Z,func,GameUI/DemoPlayerDialog.cpp: same position and size as in our compiled object
+1002E740,??0?$DHANDLE@VFrame@vgui2@@@vgui2@@QAE@XZ,func,GameUI/DemoPlayerDialog.cpp: same position and size as in our compiled object
+1002E760,??_DCDemoPlayerDialog@@QAEXXZ,func,GameUI/DemoPlayerDialog.cpp: same position and size as in our compiled object
+1002E790,??0PHandle@vgui2@@QAE@XZ,func,GameUI/DemoPlayerDialog.cpp: same position and size as in our compiled object
+1002E7B0,?Get@?$DHANDLE@VFrame@vgui2@@@vgui2@@QAEPAVFrame@2@XZ,func,GameUI/DemoPlayerDialog.cpp: same position and size as in our compiled object
+1002E7D0,??C?$DHANDLE@VFrame@vgui2@@@vgui2@@QAEPAVFrame@1@XZ,func,GameUI/DemoPlayerDialog.cpp: same position and size as in our compiled object
+1002E7F0,??4?$DHANDLE@VFrame@vgui2@@@vgui2@@QAEPAVFrame@1@PAV21@@Z,func,GameUI/DemoPlayerDialog.cpp: same position and size as in our compiled object
