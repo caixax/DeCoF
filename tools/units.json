@@ -3978,6 +3978,11 @@
           "name": "GameUI/RefreshSteamLogin",
           "source": "src/gameui/RefreshSteamLogin.cpp",
           "functions_file": "tools/units/gameui_GameUI_RefreshSteamLogin.txt"
+        },
+        {
+          "name": "GameUI/CommandCheckButton",
+          "source": "src/gameui/CommandCheckButton.cpp",
+          "functions_file": "tools/units/gameui_GameUI_CommandCheckButton.txt"
         }
       ]
     }

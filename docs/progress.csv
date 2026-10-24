@@ -9480,12 +9480,12 @@ gameui,10044674,97,?forceUpload@CBitmapImagePanel@@AAEXXZ,private: void __thisca
 gameui,100446D5,64,?forceReload@CBitmapImagePanel@@UAEXXZ,public: virtual void __thiscall CBitmapImagePanel::forceReload(void),UNKNOWN,GameUI/BitmapImagePanel.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN17CBitmapImagePanel11forceReloadEv
 gameui,10044720,46,??_GCBitmapImagePanel@@UAEPAXI@Z,public: virtual void * __thiscall CBitmapImagePanel::`scalar deleting destructor'(unsigned int),UNKNOWN,GameUI/BitmapImagePanel.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,10044750,19,??1CBitmapImagePanel@@UAE@XZ,public: virtual __thiscall CBitmapImagePanel::~CBitmapImagePanel(void),UNKNOWN,GameUI/BitmapImagePanel.cpp,,,MATCHED,100,gameui_manual.csv,
-gameui,10044770,131,,,UNKNOWN,GameUI/CommandCheckButton.cpp,,,TODO,,,linux: _ZN19CCommandCheckButtonC1EPN5vgui25PanelEPKcS4_S4_S4_
-gameui,100447F3,64,,,UNKNOWN,GameUI/CommandCheckButton.cpp,,,TODO,,,linux: _ZN19CCommandCheckButtonD1Ev
-gameui,10044833,174,,,UNKNOWN,GameUI/CommandCheckButton.cpp,,,TODO,,,linux: _ZN19CCommandCheckButton11SetSelectedEb
-gameui,100448F0,46,,,UNKNOWN,GameUI/CommandCheckButton.cpp,,,TODO,,,
-gameui,10044920,64,,,UNKNOWN,GameUI/CommandCheckButton.cpp,,,TODO,,,
-gameui,10044960,10,,,UNKNOWN,GameUI/CommandCheckButton.cpp,,,TODO,,,
+gameui,10044770,131,??0CCommandCheckButton@@QAE@PAVPanel@vgui2@@PBD111@Z,"public: __thiscall CCommandCheckButton::CCommandCheckButton(class vgui2::Panel *,char const *,char const *,char const *,char const *)",UNKNOWN,GameUI/CommandCheckButton.cpp,,,MATCHED,100,,linux: _ZN19CCommandCheckButtonC1EPN5vgui25PanelEPKcS4_S4_S4_
+gameui,100447F3,64,??1CCommandCheckButton@@UAE@XZ,public: virtual __thiscall CCommandCheckButton::~CCommandCheckButton(void),UNKNOWN,GameUI/CommandCheckButton.cpp,,,MATCHED,100,,linux: _ZN19CCommandCheckButtonD1Ev
+gameui,10044833,174,?SetSelected@CCommandCheckButton@@UAEX_N@Z,public: virtual void __thiscall CCommandCheckButton::SetSelected(bool),UNKNOWN,GameUI/CommandCheckButton.cpp,,,MATCHED,100,,linux: _ZN19CCommandCheckButton11SetSelectedEb
+gameui,100448F0,46,??_GCCommandCheckButton@@UAEPAXI@Z,public: virtual void * __thiscall CCommandCheckButton::`scalar deleting destructor'(unsigned int),UNKNOWN,GameUI/CommandCheckButton.cpp,,,MATCHED,100,,
+gameui,10044920,64,?GetMessageMap@CheckButton@vgui2@@UAEPAUPanelMessageMap@2@XZ,public: virtual struct vgui2::PanelMessageMap * __thiscall vgui2::CheckButton::GetMessageMap(void),UNKNOWN,GameUI/CommandCheckButton.cpp,,,MATCHED,100,,
+gameui,10044960,10,?GetPanelClassName@CheckButton@vgui2@@SAPBDXZ,public: static char const * __cdecl vgui2::CheckButton::GetPanelClassName(void),UNKNOWN,GameUI/CommandCheckButton.cpp,,,MATCHED,100,,
 gameui,10044970,137,,,UNKNOWN,GameUI/CvarNegateCheckButton.cpp,,,TODO,,,linux: _ZN22CCvarNegateCheckButtonC1EPN5vgui25PanelEPKcS4_S4_
 gameui,100449F9,46,,,UNKNOWN,GameUI/CvarNegateCheckButton.cpp,,,TODO,,,linux: _ZN22CCvarNegateCheckButtonD2Ev
 gameui,10044A27,170,,,UNKNOWN,GameUI/CvarNegateCheckButton.cpp,,,TODO,,,linux: _ZN22CCvarNegateCheckButton5PaintEv

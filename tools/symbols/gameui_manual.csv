@@ -4540,3 +4540,9 @@ va,name,kind,evidence
 10038F90,?GetMessageMap@CRefreshSteamLogin@@UAEPAUPanelMessageMap@vgui2@@XZ,func,GameUI/RefreshSteamLogin.cpp: same position and size as in our compiled object
 10038FD0,?GetPanelClassName@CRefreshSteamLogin@@SAPBDXZ,func,GameUI/RefreshSteamLogin.cpp: same position and size as in our compiled object
 10038FE0,?GetPanelBaseClassName@CRefreshSteamLogin@@SAPBDXZ,func,GameUI/RefreshSteamLogin.cpp: same position and size as in our compiled object
+10044770,??0CCommandCheckButton@@QAE@PAVPanel@vgui2@@PBD111@Z,func,GameUI/CommandCheckButton.cpp: same position and size as in our compiled object; linux: _ZN19CCommandCheckButtonC1EPN5vgui25PanelEPKcS4_S4_S4_
+100447F3,??1CCommandCheckButton@@UAE@XZ,func,GameUI/CommandCheckButton.cpp: same position and size as in our compiled object; linux: _ZN19CCommandCheckButtonD1Ev
+10044833,?SetSelected@CCommandCheckButton@@UAEX_N@Z,func,GameUI/CommandCheckButton.cpp: same position and size as in our compiled object; linux: _ZN19CCommandCheckButton11SetSelectedEb
+100448F0,??_GCCommandCheckButton@@UAEPAXI@Z,func,GameUI/CommandCheckButton.cpp: same position and size as in our compiled object
+10044920,?GetMessageMap@CheckButton@vgui2@@UAEPAUPanelMessageMap@2@XZ,func,"GameUI/CommandCheckButton.cpp: inline CheckButton COMDAT used by the CCommandCheckButton vtable, same size as in our compiled object"
+10044960,?GetPanelClassName@CheckButton@vgui2@@SAPBDXZ,func,"GameUI/CommandCheckButton.cpp: inline CheckButton COMDAT called by GetMessageMap, same size as in our compiled object"
