@@ -7860,183 +7860,183 @@ gameui,1000F2C0,46,??_G?$vector@PAVCCareerMap@@V?$allocator@PAVCCareerMap@@@std@
 gameui,1000F2F0,397,??4?$vector@PAVCCareerMap@@V?$allocator@PAVCCareerMap@@@std@@@std@@QAEAAV01@ABV01@@Z,>::operator=,LIB,GameUI/CareerDefinitions.cpp,,,TODO,,gameui_manual.csv,
 gameui,1000F480,52,?capacity@?$vector@PAVCCareerMap@@V?$allocator@PAVCCareerMap@@@std@@@std@@QBEIXZ,>::capacity,LIB,GameUI/CareerDefinitions.cpp,,,TODO,,gameui_manual.csv,
 gameui,1000F4C0,48,?copy@std@@YAPAPAVCCareerMap@@PBQAV2@0PAPAV2@@Z,std::copy,LIB,GameUI/CareerDefinitions.cpp,,,TODO,,gameui_manual.csv,
-gameui,1000F4F0,15,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,1000F4FF,15,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,1000F50E,18,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,1000F520,15,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,1000F52F,10,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,1000F539,25,__GLOBAL__sub_I_TheCareerGame,_GLOBAL__sub_I_TheCareerGame,ENGINE,GameUI/CareerGame.cpp,,,TODO,,linux_symbols:string:0.75,
-gameui,1000F552,10,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,1000F55C,5,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,1000F561,743,___MsgFunc_CZCareer,__MsgFunc_CZCareer,ENGINE,GameUI/CareerGame.cpp,,,TODO,,linux_symbols:string:0.69,linux: _Z18__MsgFunc_CZCareerPKciPv
-gameui,1000F848,20,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,linux: _ZN11CCareerGame18GetRoundTimeLengthEv
-gameui,1000F85C,24,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,linux: _ZN16CCareerCharacterC2EPK10BotProfile
-gameui,1000F874,125,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,linux: _ZN16CCareerCharacter5PrintEv
-gameui,1000F8F1,56,,CCareerCharacter::Save,ENGINE,GameUI/CareerGame.cpp,,,TODO,,linux_symbols:string:0.75,linux: _ZN16CCareerCharacter4SaveEPcRii
-gameui,1000F929,33,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,linux: _ZNK16CCareerCharacter9GetPointsEv
-gameui,1000F94A,36,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,linux: _ZNK16CCareerCharacter7GetNameEv
-gameui,1000F96E,415,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,linux: _ZNK16CCareerCharacterltERKS_
-gameui,1000FB0D,123,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,linux: _ZNK16CCareerCharacter8GetRangeEf
-gameui,1000FB88,337,,CCareerCharacter::GetSkinThumbnailFname,ENGINE,GameUI/CareerGame.cpp,,,TODO,,linux_symbols:string:0.451,linux: _ZNK16CCareerCharacter21GetSkinThumbnailFnameEv
-gameui,1000FD01,52,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,linux: _ZNK16CCareerCharacter27GetWeaponPreferenceAsStringEi
-gameui,1000FD35,46,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,linux: _ZNK16CCareerCharacter24GetWeaponPreferenceCountEv
-gameui,1000FD63,46,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,linux: _ZNK16CCareerCharacter8GetSkillEv
-gameui,1000FD91,46,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,linux: _ZNK16CCareerCharacter11GetTeamworkEv
-gameui,1000FDBF,46,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,linux: _ZNK16CCareerCharacter13GetAggressionEv
-gameui,1000FDED,133,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,linux: _ZN10CCareerMapC1EPKcRKSt6vectorIP16CCareerCharacterSaIS4_EEb
-gameui,1000FE72,227,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,linux: _ZN10CCareerMapD1Ev
-gameui,1000FF55,22,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,linux: _ZNK10CCareerMap14GetNumBotNamesEv
-gameui,1000FF6B,61,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,linux: _ZNK10CCareerMap10GetBotNameEi
-gameui,1000FFA8,79,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,1000FFF7,17,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,10010008,123,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,10010083,75,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,100100CE,333,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,1001021B,205,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,100102E8,179,,CCareerGame::Create,ENGINE,GameUI/CareerGame.cpp,,,TODO,,linux_symbols:string:0.75,linux: _ZN11CCareerGame6CreateEv
-gameui,1001039B,427,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,linux: _ZN11CCareerGame4InitEv
-gameui,10010546,33,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,linux: _ZN11CCareerGame13SetDifficultyE20CareerDifficultyType
-gameui,10010567,399,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,linux: _ZN11CCareerGame5ResetEv
-gameui,100106F6,179,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,linux: _ZN11CCareerGame6UpdateEv
-gameui,100107A9,143,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,linux: _ZN11CCareerGame11ClearRosterEv
-gameui,10010838,283,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,linux: _ZN11CCareerGame4HireEPKc
-gameui,10010953,229,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,linux: _ZN11CCareerGame4FireEPKc
-gameui,10010A38,96,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,linux: _ZN11CCareerGame18GetPointsRemainingEv
-gameui,10010A98,144,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,linux: _ZN11CCareerGame23GetHighestCostAvailableEi
-gameui,10010B28,370,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,linux: _ZN11CCareerGame9PrintMapsEv
-gameui,10010C9A,46,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,linux: _ZN11CCareerGame9DefeatMapEPKc
-gameui,10010CC8,17,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,linux: _ZN11CCareerGame10GetLastMapEv
-gameui,10010CD9,20,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,linux: _ZN11CCareerGame13GetLastMapPtrEv
-gameui,10010CED,90,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,linux: _ZN11CCareerGame10SetLastMapEPKc
-gameui,10010D47,178,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,linux: _ZN11CCareerGame14GetPlayableMapEPKc
-gameui,10010DF9,143,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,linux: _ZN11CCareerGame6GetMapEPKc
-gameui,10010E88,164,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,linux: _ZN11CCareerGame16GetMapTripletNumEPKc
-gameui,10010F2C,145,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,linux: _ZN11CCareerGame19GetMapTripletOffsetEPKc
-gameui,10010FBD,183,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,linux: _ZN11CCareerGame20GetCurrentMapTripletEP7MapInfo
-gameui,10011074,271,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,linux: _ZN11CCareerGame27DoesCurrentMapUnlockTripletEv
-gameui,10011183,271,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,linux: _ZN11CCareerGame16DoesWinUnlockAllEv
-gameui,10011292,123,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,linux: _ZN11CCareerGame21GetFirstUndefeatedMapEv
-gameui,1001130D,48,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,linux: _ZN11CCareerGame16GetTaskVecForMapEPKc
-gameui,1001133D,25,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,linux: _ZN11CCareerGame10StartMatchEv
-gameui,10011356,32,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,linux: _ZN11CCareerGame23GetNumTasksOnCurrentMapEv
-gameui,10011376,117,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,linux: _ZN11CCareerGame14GetCurrentTaskEi
-gameui,100113EB,807,,CCareerGame::StopMatch,ENGINE,GameUI/CareerGame.cpp,,,TODO,,linux_symbols:string:0.762,linux: _ZN11CCareerGame9StopMatchEii
-gameui,10011712,11,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,1001171D,217,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,100117F6,3928,,CCareerGame::SendMatchCommand,ENGINE,GameUI/CareerGame.cpp,,,TODO,,linux_symbols:string:0.698,linux: _ZN11CCareerGame16SendMatchCommandEv
-gameui,1001274E,601,,CCareerGame::FinishMatchStart,ENGINE,GameUI/CareerGame.cpp,,,TODO,,linux_symbols:string:0.765,linux: _ZN11CCareerGame16FinishMatchStartEv
-gameui,100129A7,28,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,linux: _ZN11CCareerGame14IsPlayingMatchEv
-gameui,100129C3,41,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,linux: _ZN11CCareerGame17GetCurrentTaskVecEv
-gameui,100129EC,25,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,linux: _ZN11CCareerGame24SetBotPoolSliderPositionEi
-gameui,10012A05,20,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,linux: _ZN11CCareerGame24GetBotPoolSliderPositionEv
-gameui,10012A19,89,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,linux: _ZN11CCareerGame18OnRoundEndMenuOpenEb
-gameui,10012A72,89,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,linux: _ZN11CCareerGame18OnMatchEndMenuOpenEb
-gameui,10012ACB,110,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,linux: _ZN11CCareerGame19OnRoundEndMenuCloseEb
-gameui,10012B39,119,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,linux: _ZN11CCareerGame19OnMatchEndMenuCloseEb
-gameui,10012BB0,15,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,10012BBF,18,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,10012BE0,46,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,10012C10,31,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,10012C30,52,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,10012C70,46,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,10012CA0,19,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,10012CC0,23,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,10012CE0,46,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,10012D10,46,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,10012D40,20,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,10012D60,46,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,10012D90,23,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,10012DB0,17,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,10012DD0,17,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,10012DF0,17,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,10012E10,17,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,10012E30,22,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,10012E50,17,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,10012E70,17,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,10012E90,17,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,10012EB0,17,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,10012ED0,17,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,10012EF0,17,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,10012F10,17,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,10012F30,36,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,10012F60,28,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,10012F80,20,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,10012FA0,20,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,10012FC0,20,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,10012FE0,20,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,10013000,20,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,10013020,20,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,10013040,25,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,10013060,37,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,10013090,27,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,100130B0,27,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,100130D0,403,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,10013270,29,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,10013290,397,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,10013420,27,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,10013440,37,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,10013470,56,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,100134B0,94,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,10013510,52,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,10013550,27,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,10013570,34,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,100135A0,37,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,100135D0,69,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,10013620,17,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,10013640,17,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,10013660,16,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,10013670,17,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,10013690,17,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,100136B0,17,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,100136D0,17,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,100136F0,17,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,10013710,17,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,10013730,17,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,10013750,16,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,10013760,56,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,100137A0,26,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,100137C0,56,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,10013800,76,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,10013850,52,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,10013890,17,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,100138B0,17,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,100138D0,52,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,10013910,17,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,10013930,17,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,10013950,76,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,100139A0,17,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,100139C0,17,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,100139E0,66,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,10013A30,76,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,10013A80,46,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,10013AB0,25,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,10013AD0,532,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
+gameui,1000F4F0,15,_$E22,,UNKNOWN,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1000F4FF,15,_$E19,,UNKNOWN,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1000F50E,18,_$E21,,UNKNOWN,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1000F520,15,_$E20,,UNKNOWN,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1000F52F,10,_$E25,,UNKNOWN,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1000F539,25,_$E24,_GLOBAL__sub_I_TheCareerGame,ENGINE,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1000F552,10,?__CreateCCareerGameICareerUI_interface@@YAPAVIBaseInterface@@XZ,__CreateCCareerGameICareerUI_interface,UNKNOWN,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1000F55C,5,?Career_Printf@@YAXPBDZZ,Career_Printf,UNKNOWN,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1000F561,743,?__MsgFunc_CZCareer@@YAHPBDHPAX@Z,__MsgFunc_CZCareer,ENGINE,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _Z18__MsgFunc_CZCareerPKciPv
+gameui,1000F848,20,?GetRoundTimeLength@CCareerGame@@UAEHXZ,CCareerGame::GetRoundTimeLength,UNKNOWN,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN11CCareerGame18GetRoundTimeLengthEv
+gameui,1000F85C,24,??0CCareerCharacter@@QAE@PBVBotProfile@@@Z,CCareerCharacter::CCareerCharacter,UNKNOWN,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN16CCareerCharacterC2EPK10BotProfile
+gameui,1000F874,125,?Print@CCareerCharacter@@QAEXXZ,CCareerCharacter::Print,UNKNOWN,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN16CCareerCharacter5PrintEv
+gameui,1000F8F1,56,?Save@CCareerCharacter@@QAEPADPADAAHH@Z,CCareerCharacter::Save,ENGINE,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN16CCareerCharacter4SaveEPcRii
+gameui,1000F929,33,?GetPoints@CCareerCharacter@@QBEHXZ,CCareerCharacter::GetPoints,UNKNOWN,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZNK16CCareerCharacter9GetPointsEv
+gameui,1000F94A,36,?GetName@CCareerCharacter@@QBEPBDXZ,CCareerCharacter::GetName,UNKNOWN,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZNK16CCareerCharacter7GetNameEv
+gameui,1000F96E,415,??MCCareerCharacter@@QBE_NABV0@@Z,CCareerCharacter::operator<,UNKNOWN,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZNK16CCareerCharacterltERKS_
+gameui,1000FB0D,123,?GetRange@CCareerCharacter@@QBEHM@Z,CCareerCharacter::GetRange,UNKNOWN,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZNK16CCareerCharacter8GetRangeEf
+gameui,1000FB88,337,?GetSkinThumbnailFname@CCareerCharacter@@QBEPBDXZ,CCareerCharacter::GetSkinThumbnailFname,ENGINE,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZNK16CCareerCharacter21GetSkinThumbnailFnameEv
+gameui,1000FD01,52,?GetWeaponPreferenceAsString@CCareerCharacter@@QBEPBDH@Z,CCareerCharacter::GetWeaponPreferenceAsString,UNKNOWN,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZNK16CCareerCharacter27GetWeaponPreferenceAsStringEi
+gameui,1000FD35,46,?GetWeaponPreferenceCount@CCareerCharacter@@QBEHXZ,CCareerCharacter::GetWeaponPreferenceCount,UNKNOWN,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZNK16CCareerCharacter24GetWeaponPreferenceCountEv
+gameui,1000FD63,46,?GetSkill@CCareerCharacter@@QBEMXZ,CCareerCharacter::GetSkill,UNKNOWN,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZNK16CCareerCharacter8GetSkillEv
+gameui,1000FD91,46,?GetTeamwork@CCareerCharacter@@QBEMXZ,CCareerCharacter::GetTeamwork,UNKNOWN,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZNK16CCareerCharacter11GetTeamworkEv
+gameui,1000FDBF,46,?GetAggression@CCareerCharacter@@QBEMXZ,CCareerCharacter::GetAggression,UNKNOWN,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZNK16CCareerCharacter13GetAggressionEv
+gameui,1000FDED,133,??0CCareerMap@@QAE@PBDABV?$vector@PAVCCareerCharacter@@V?$allocator@PAVCCareerCharacter@@@std@@@std@@_N@Z,CCareerMap::CCareerMap,LIB,GameUI/CareerGame.cpp,,,TODO,,gameui_manual.csv,linux: _ZN10CCareerMapC1EPKcRKSt6vectorIP16CCareerCharacterSaIS4_EEb
+gameui,1000FE72,227,??1CCareerMap@@QAE@XZ,CCareerMap::~CCareerMap,UNKNOWN,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN10CCareerMapD1Ev
+gameui,1000FF55,22,?GetNumBotNames@CCareerMap@@UBEHXZ,CCareerMap::GetNumBotNames,UNKNOWN,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZNK10CCareerMap14GetNumBotNamesEv
+gameui,1000FF6B,61,?GetBotName@CCareerMap@@UBEPBDH@Z,CCareerMap::GetBotName,UNKNOWN,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZNK10CCareerMap10GetBotNameEi
+gameui,1000FFA8,79,?SetExtraInitialization@CCareerMap@@QAEXPBD@Z,CCareerMap::SetExtraInitialization,UNKNOWN,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1000FFF7,17,?IsFriendlyFireOn@CCareerMap@@QBE_NXZ,CCareerMap::IsFriendlyFireOn,UNKNOWN,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10010008,123,?GetCurrentEnemyCount@CCareerMap@@QBEHXZ,CCareerMap::GetCurrentEnemyCount,UNKNOWN,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10010083,75,?ResetTaskCompletion@CCareerMap@@QAEXXZ,CCareerMap::ResetTaskCompletion,UNKNOWN,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100100CE,333,??0CCareerGame@@QAE@XZ,CCareerGame::CCareerGame,UNKNOWN,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1001021B,205,??1CCareerGame@@UAE@XZ,CCareerGame::~CCareerGame,UNKNOWN,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100102E8,179,?Create@CCareerGame@@SAXXZ,CCareerGame::Create,ENGINE,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN11CCareerGame6CreateEv
+gameui,1001039B,427,?Init@CCareerGame@@QAEXXZ,CCareerGame::Init,UNKNOWN,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN11CCareerGame4InitEv
+gameui,10010546,33,?SetDifficulty@CCareerGame@@QAEXW4CareerDifficultyType@@@Z,CCareerGame::SetDifficulty,UNKNOWN,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN11CCareerGame13SetDifficultyE20CareerDifficultyType
+gameui,10010567,399,?Reset@CCareerGame@@QAEXXZ,CCareerGame::Reset,UNKNOWN,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN11CCareerGame5ResetEv
+gameui,100106F6,179,?Update@CCareerGame@@QAEXXZ,CCareerGame::Update,UNKNOWN,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN11CCareerGame6UpdateEv
+gameui,100107A9,143,?ClearRoster@CCareerGame@@QAEXXZ,CCareerGame::ClearRoster,UNKNOWN,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN11CCareerGame11ClearRosterEv
+gameui,10010838,283,?Hire@CCareerGame@@QAE_NPBD@Z,CCareerGame::Hire,UNKNOWN,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN11CCareerGame4HireEPKc
+gameui,10010953,229,?Fire@CCareerGame@@QAE_NPBD@Z,CCareerGame::Fire,UNKNOWN,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN11CCareerGame4FireEPKc
+gameui,10010A38,96,?GetPointsRemaining@CCareerGame@@QAEHXZ,CCareerGame::GetPointsRemaining,UNKNOWN,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN11CCareerGame18GetPointsRemainingEv
+gameui,10010A98,144,?GetHighestCostAvailable@CCareerGame@@QAEHH@Z,CCareerGame::GetHighestCostAvailable,UNKNOWN,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN11CCareerGame23GetHighestCostAvailableEi
+gameui,10010B28,370,?PrintMaps@CCareerGame@@QAEXXZ,CCareerGame::PrintMaps,UNKNOWN,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN11CCareerGame9PrintMapsEv
+gameui,10010C9A,46,?DefeatMap@CCareerGame@@QAEXPBD@Z,CCareerGame::DefeatMap,UNKNOWN,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN11CCareerGame9DefeatMapEPKc
+gameui,10010CC8,17,?GetLastMap@CCareerGame@@QAEPBDXZ,CCareerGame::GetLastMap,UNKNOWN,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN11CCareerGame10GetLastMapEv
+gameui,10010CD9,20,?GetLastMapPtr@CCareerGame@@QAEPAVCCareerMap@@XZ,CCareerGame::GetLastMapPtr,UNKNOWN,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN11CCareerGame13GetLastMapPtrEv
+gameui,10010CED,90,?SetLastMap@CCareerGame@@QAE_NPBD@Z,CCareerGame::SetLastMap,UNKNOWN,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN11CCareerGame10SetLastMapEPKc
+gameui,10010D47,178,?GetPlayableMap@CCareerGame@@QAEPAVCCareerMap@@PBD@Z,CCareerGame::GetPlayableMap,UNKNOWN,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN11CCareerGame14GetPlayableMapEPKc
+gameui,10010DF9,143,?GetMap@CCareerGame@@QAEPAVCCareerMap@@PBD@Z,CCareerGame::GetMap,UNKNOWN,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN11CCareerGame6GetMapEPKc
+gameui,10010E88,164,?GetMapTripletNum@CCareerGame@@QAEHPBD@Z,CCareerGame::GetMapTripletNum,UNKNOWN,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN11CCareerGame16GetMapTripletNumEPKc
+gameui,10010F2C,145,?GetMapTripletOffset@CCareerGame@@QAEHPBD@Z,CCareerGame::GetMapTripletOffset,UNKNOWN,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN11CCareerGame19GetMapTripletOffsetEPKc
+gameui,10010FBD,183,?GetCurrentMapTriplet@CCareerGame@@UAEHPAUMapInfo@@@Z,CCareerGame::GetCurrentMapTriplet,UNKNOWN,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN11CCareerGame20GetCurrentMapTripletEP7MapInfo
+gameui,10011074,271,?DoesCurrentMapUnlockTriplet@CCareerGame@@QAE_NXZ,CCareerGame::DoesCurrentMapUnlockTriplet,UNKNOWN,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN11CCareerGame27DoesCurrentMapUnlockTripletEv
+gameui,10011183,271,?DoesWinUnlockAll@CCareerGame@@UAE_NXZ,CCareerGame::DoesWinUnlockAll,UNKNOWN,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN11CCareerGame16DoesWinUnlockAllEv
+gameui,10011292,123,?GetFirstUndefeatedMap@CCareerGame@@QAEPAVCCareerMap@@XZ,CCareerGame::GetFirstUndefeatedMap,UNKNOWN,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN11CCareerGame21GetFirstUndefeatedMapEv
+gameui,1001130D,48,?GetTaskVecForMap@CCareerGame@@QAEPAV?$vector@PAVICareerTask@@V?$allocator@PAVICareerTask@@@std@@@std@@PBD@Z,CCareerGame::GetTaskVecForMap,UNKNOWN,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN11CCareerGame16GetTaskVecForMapEPKc
+gameui,1001133D,25,?StartMatch@CCareerGame@@QAEXXZ,CCareerGame::StartMatch,UNKNOWN,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN11CCareerGame10StartMatchEv
+gameui,10011356,32,?GetNumTasksOnCurrentMap@CCareerGame@@QAEHXZ,CCareerGame::GetNumTasksOnCurrentMap,UNKNOWN,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN11CCareerGame23GetNumTasksOnCurrentMapEv
+gameui,10011376,117,?GetCurrentTask@CCareerGame@@QAEPAVICareerTask@@H@Z,CCareerGame::GetCurrentTask,UNKNOWN,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN11CCareerGame14GetCurrentTaskEi
+gameui,100113EB,807,?StopMatch@CCareerGame@@QAEXHH@Z,CCareerGame::StopMatch,ENGINE,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN11CCareerGame9StopMatchEii
+gameui,10011712,11,?StartLoading@CCareerGame@@QAEXXZ,CCareerGame::StartLoading,UNKNOWN,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1001171D,217,?AddSavedCvar@CCareerGame@@IAEXPBD0_N@Z,CCareerGame::AddSavedCvar,UNKNOWN,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100117F6,3928,?SendMatchCommand@CCareerGame@@QAEXXZ,CCareerGame::SendMatchCommand,ENGINE,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN11CCareerGame16SendMatchCommandEv
+gameui,1001274E,601,?FinishMatchStart@CCareerGame@@QAEXXZ,CCareerGame::FinishMatchStart,ENGINE,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN11CCareerGame16FinishMatchStartEv
+gameui,100129A7,28,?IsPlayingMatch@CCareerGame@@UAE_NXZ,CCareerGame::IsPlayingMatch,UNKNOWN,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN11CCareerGame14IsPlayingMatchEv
+gameui,100129C3,41,?GetCurrentTaskVec@CCareerGame@@UAEPAV?$vector@PAVICareerTask@@V?$allocator@PAVICareerTask@@@std@@@std@@XZ,CCareerGame::GetCurrentTaskVec,UNKNOWN,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN11CCareerGame17GetCurrentTaskVecEv
+gameui,100129EC,25,?SetBotPoolSliderPosition@CCareerGame@@QAEXH@Z,CCareerGame::SetBotPoolSliderPosition,UNKNOWN,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN11CCareerGame24SetBotPoolSliderPositionEi
+gameui,10012A05,20,?GetBotPoolSliderPosition@CCareerGame@@QAEHXZ,CCareerGame::GetBotPoolSliderPosition,UNKNOWN,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN11CCareerGame24GetBotPoolSliderPositionEv
+gameui,10012A19,89,?OnRoundEndMenuOpen@CCareerGame@@UAEX_N@Z,CCareerGame::OnRoundEndMenuOpen,UNKNOWN,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN11CCareerGame18OnRoundEndMenuOpenEb
+gameui,10012A72,89,?OnMatchEndMenuOpen@CCareerGame@@UAEX_N@Z,CCareerGame::OnMatchEndMenuOpen,UNKNOWN,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN11CCareerGame18OnMatchEndMenuOpenEb
+gameui,10012ACB,110,?OnRoundEndMenuClose@CCareerGame@@UAEX_N@Z,CCareerGame::OnRoundEndMenuClose,UNKNOWN,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN11CCareerGame19OnRoundEndMenuCloseEb
+gameui,10012B39,119,?OnMatchEndMenuClose@CCareerGame@@UAEX_N@Z,CCareerGame::OnMatchEndMenuClose,UNKNOWN,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN11CCareerGame19OnMatchEndMenuCloseEb
+gameui,10012BB0,15,_$E32,,UNKNOWN,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10012BBF,18,_$E31,,UNKNOWN,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10012BE0,46,??_GCCareerGame@@UAEPAXI@Z,destructor',UNKNOWN,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10012C10,31,??0ICareerUI@@QAE@XZ,ICareerUI::ICareerUI,UNKNOWN,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10012C30,52,??0CCareerProfileData@@QAE@XZ,CCareerProfileData::CCareerProfileData,UNKNOWN,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10012C70,46,??_GICareerUI@@UAEPAXI@Z,destructor',UNKNOWN,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10012CA0,19,??1ICareerUI@@UAE@XZ,ICareerUI::~ICareerUI,UNKNOWN,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10012CC0,23,??0IBaseInterface@@QAE@XZ,IBaseInterface::IBaseInterface,UNKNOWN,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10012CE0,46,??_GCareerDefinitionManager@@QAEPAXI@Z,destructor',UNKNOWN,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10012D10,46,??_GCvarLatch@@QAEPAXI@Z,destructor',UNKNOWN,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10012D40,20,??1IBaseInterface@@UAE@XZ,IBaseInterface::~IBaseInterface,UNKNOWN,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10012D60,46,??_GIBaseInterface@@UAEPAXI@Z,destructor',UNKNOWN,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10012D90,23,?GetWeaponPreference@BotProfile@@QBEHH@Z,BotProfile::GetWeaponPreference,UNKNOWN,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10012DB0,17,?GetCost@BotProfile@@QBEHXZ,BotProfile::GetCost,UNKNOWN,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10012DD0,17,?GetSkin@BotProfile@@QBEHXZ,BotProfile::GetSkin,UNKNOWN,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10012DF0,17,?GetName@CCareerMap@@QBEPBDXZ,CCareerMap::GetName,UNKNOWN,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10012E10,17,?IsDefeated@CCareerMap@@QBE_NXZ,CCareerMap::IsDefeated,UNKNOWN,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10012E30,22,?SetDefeated@CCareerMap@@QAEX_N@Z,CCareerMap::SetDefeated,UNKNOWN,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10012E50,17,?GetBotList@CCareerMap@@QBEABV?$vector@PAVCCareerCharacter@@V?$allocator@PAVCCareerCharacter@@@std@@@std@@XZ,CCareerMap::GetBotList,LIB,GameUI/CareerGame.cpp,,,TODO,,gameui_manual.csv,
+gameui,10012E70,17,?GetTasks@CCareerMap@@QAEPAV?$vector@PAVICareerTask@@V?$allocator@PAVICareerTask@@@std@@@std@@XZ,CCareerMap::GetTasks,LIB,GameUI/CareerGame.cpp,,,TODO,,gameui_manual.csv,
+gameui,10012E90,17,?GetMinEnemyCount@CCareerMap@@QBEHXZ,CCareerMap::GetMinEnemyCount,UNKNOWN,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10012EB0,17,?GetThreshold@CCareerMap@@QBEHXZ,CCareerMap::GetThreshold,UNKNOWN,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10012ED0,17,?GetExtraInitialization@CCareerMap@@QBEPBDXZ,CCareerMap::GetExtraInitialization,UNKNOWN,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10012EF0,17,?AreTeammatesAllowed@CCareerMap@@QBE_NXZ,CCareerMap::AreTeammatesAllowed,UNKNOWN,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10012F10,17,?GetPoints@CCareerGame@@QAEHXZ,CCareerGame::GetPoints,UNKNOWN,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10012F30,36,??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV?$allocator@D@1@@Z,>,LIB,GameUI/CareerGame.cpp,,,TODO,,gameui_manual.csv,
+gameui,10012F60,28,?PlayAsCT@CCareerGame@@UAE_NXZ,CCareerGame::PlayAsCT,UNKNOWN,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10012F80,20,?GetReputationGained@CCareerGame@@UAEHXZ,CCareerGame::GetReputationGained,UNKNOWN,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10012FA0,20,?GetNumMapsUnlocked@CCareerGame@@UAEHXZ,CCareerGame::GetNumMapsUnlocked,UNKNOWN,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10012FC0,20,?GetWinfastLength@CCareerGame@@UAEHXZ,CCareerGame::GetWinfastLength,UNKNOWN,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10012FE0,20,?GetDifficulty@CCareerGame@@UBE?AW4CareerDifficultyType@@XZ,CCareerGame::GetDifficulty,UNKNOWN,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10013000,20,?GetMatchNumWins@CCareerGame@@QBEHXZ,CCareerGame::GetMatchNumWins,UNKNOWN,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10013020,20,?GetMatchWinBy@CCareerGame@@QBEHXZ,CCareerGame::GetMatchWinBy,UNKNOWN,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10013040,25,?SetRoundTimeLength@CCareerGame@@QAEXH@Z,CCareerGame::SetRoundTimeLength,UNKNOWN,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10013060,37,?clear@?$vector@PAVICareerTask@@V?$allocator@PAVICareerTask@@@std@@@std@@QAEXXZ,>::clear,LIB,GameUI/CareerGame.cpp,,,TODO,,gameui_manual.csv,
+gameui,10013090,27,??A?$vector@PAVCCareerCharacter@@V?$allocator@PAVCCareerCharacter@@@std@@@std@@QBEABQAVCCareerCharacter@@I@Z,>::operator[],LIB,GameUI/CareerGame.cpp,,,TODO,,gameui_manual.csv,
+gameui,100130B0,27,??A?$vector@PAVCCareerMap@@V?$allocator@PAVCCareerMap@@@std@@@std@@QAEAAPAVCCareerMap@@I@Z,>::operator[],LIB,GameUI/CareerGame.cpp,,,TODO,,gameui_manual.csv,
+gameui,100130D0,403,??4?$vector@V?$vector@PAVCCareerMap@@V?$allocator@PAVCCareerMap@@@std@@@std@@V?$allocator@V?$vector@PAVCCareerMap@@V?$allocator@PAVCCareerMap@@@std@@@std@@@2@@std@@QAEAAV01@ABV01@@Z,>::operator=,LIB,GameUI/CareerGame.cpp,,,TODO,,gameui_manual.csv,
+gameui,10013270,29,??A?$vector@V?$vector@PAVCCareerMap@@V?$allocator@PAVCCareerMap@@@std@@@std@@V?$allocator@V?$vector@PAVCCareerMap@@V?$allocator@PAVCCareerMap@@@std@@@std@@@2@@std@@QAEAAV?$vector@PAVCCareerMap@@V?$allocator@PAVCCareerMap@@@std@@@1@I@Z,>::operator[],LIB,GameUI/CareerGame.cpp,,,TODO,,gameui_manual.csv,
+gameui,10013290,397,??4?$vector@HV?$allocator@H@std@@@std@@QAEAAV01@ABV01@@Z,>::operator=,LIB,GameUI/CareerGame.cpp,,,TODO,,gameui_manual.csv,
+gameui,10013420,27,??A?$vector@HV?$allocator@H@std@@@std@@QAEAAHI@Z,>::operator[],LIB,GameUI/CareerGame.cpp,,,TODO,,gameui_manual.csv,
+gameui,10013440,37,?clear@?$vector@HV?$allocator@H@std@@@std@@QAEXXZ,>::clear,LIB,GameUI/CareerGame.cpp,,,TODO,,gameui_manual.csv,
+gameui,10013470,56,??0?$vector@PAVCvarLatch@@V?$allocator@PAVCvarLatch@@@std@@@std@@QAE@ABV?$allocator@PAVCvarLatch@@@1@@Z,>,LIB,GameUI/CareerGame.cpp,,,TODO,,gameui_manual.csv,
+gameui,100134B0,94,??1?$vector@PAVCvarLatch@@V?$allocator@PAVCvarLatch@@@std@@@std@@QAE@XZ,>,LIB,GameUI/CareerGame.cpp,,,TODO,,gameui_manual.csv,
+gameui,10013510,52,?size@?$vector@PAVCvarLatch@@V?$allocator@PAVCvarLatch@@@std@@@std@@QBEIXZ,>::size,LIB,GameUI/CareerGame.cpp,,,TODO,,gameui_manual.csv,
+gameui,10013550,27,??A?$vector@PAVCvarLatch@@V?$allocator@PAVCvarLatch@@@std@@@std@@QAEAAPAVCvarLatch@@I@Z,>::operator[],LIB,GameUI/CareerGame.cpp,,,TODO,,gameui_manual.csv,
+gameui,10013570,34,?push_back@?$vector@PAVCvarLatch@@V?$allocator@PAVCvarLatch@@@std@@@std@@QAEXABQAVCvarLatch@@@Z,>::push_back,LIB,GameUI/CareerGame.cpp,,,TODO,,gameui_manual.csv,
+gameui,100135A0,37,?clear@?$vector@PAVCvarLatch@@V?$allocator@PAVCvarLatch@@@std@@@std@@QAEXXZ,>::clear,LIB,GameUI/CareerGame.cpp,,,TODO,,gameui_manual.csv,
+gameui,100135D0,69,??0CCareerProfileDifficultyData@@QAE@XZ,CCareerProfileDifficultyData::CCareerProfileDifficultyData,UNKNOWN,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10013620,17,?GetCharacters@CareerDifficultyDefinition@@QAEPAV?$vector@PAVCCareerCharacter@@V?$allocator@PAVCCareerCharacter@@@std@@@std@@XZ,CareerDifficultyDefinition::GetCharacters,LIB,GameUI/CareerGame.cpp,,,TODO,,gameui_manual.csv,
+gameui,10013640,17,?GetCharacterCostAvailibility@CareerDifficultyDefinition@@QAEPAV?$vector@HV?$allocator@H@std@@@std@@XZ,CareerDifficultyDefinition::GetCharacterCostAvailibility,LIB,GameUI/CareerGame.cpp,,,TODO,,gameui_manual.csv,
+gameui,10013660,16,?GetBasePoints@CareerDifficultyDefinition@@QBEHXZ,CareerDifficultyDefinition::GetBasePoints,UNKNOWN,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10013670,17,?GetMatchNumWins@CareerDifficultyDefinition@@QBEHXZ,CareerDifficultyDefinition::GetMatchNumWins,UNKNOWN,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10013690,17,?GetMatchWinBy@CareerDifficultyDefinition@@QBEHXZ,CareerDifficultyDefinition::GetMatchWinBy,UNKNOWN,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100136B0,17,?GetRoundTimeMins@CareerDifficultyDefinition@@QBEHXZ,CareerDifficultyDefinition::GetRoundTimeMins,UNKNOWN,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100136D0,17,?GetBombCountdownTimeSecs@CareerDifficultyDefinition@@QBEHXZ,CareerDifficultyDefinition::GetBombCountdownTimeSecs,UNKNOWN,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100136F0,17,?GetFreezeTimeSecs@CareerDifficultyDefinition@@QBEHXZ,CareerDifficultyDefinition::GetFreezeTimeSecs,UNKNOWN,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10013710,17,?GetMaps@CareerDifficultyDefinition@@QAEPAV?$vector@V?$vector@PAVCCareerMap@@V?$allocator@PAVCCareerMap@@@std@@@std@@V?$allocator@V?$vector@PAVCCareerMap@@V?$allocator@PAVCCareerMap@@@std@@@std@@@2@@std@@XZ,CareerDifficultyDefinition::GetMaps,LIB,GameUI/CareerGame.cpp,,,TODO,,gameui_manual.csv,
+gameui,10013730,17,?GetBotProfileDBFilename@CareerDifficultyDefinition@@QBEPBDXZ,CareerDifficultyDefinition::GetBotProfileDBFilename,UNKNOWN,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10013750,16,?IsCT@CareerDefinition@@QBE_NXZ,CareerDefinition::IsCT,UNKNOWN,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10013760,56,??0?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@QAE@ABV?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@1@@Z,>,LIB,GameUI/CareerGame.cpp,,,TODO,,gameui_manual.csv,
+gameui,100137A0,26,?GetDifficulty@CareerDefinition@@QAEPAVCareerDifficultyDefinition@@W4CareerDifficultyType@@@Z,CareerDefinition::GetDifficulty,UNKNOWN,GameUI/CareerGame.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100137C0,56,??0?$vector@VSavedMap@@V?$allocator@VSavedMap@@@std@@@std@@QAE@ABV?$allocator@VSavedMap@@@1@@Z,>,LIB,GameUI/CareerGame.cpp,,,TODO,,gameui_manual.csv,
+gameui,10013800,76,?erase@?$vector@PAVICareerTask@@V?$allocator@PAVICareerTask@@@std@@@std@@QAEPAPAVICareerTask@@PAPAV3@0@Z,>::erase,LIB,GameUI/CareerGame.cpp,,,TODO,,gameui_manual.csv,
+gameui,10013850,52,?capacity@?$vector@V?$vector@PAVCCareerMap@@V?$allocator@PAVCCareerMap@@@std@@@std@@V?$allocator@V?$vector@PAVCCareerMap@@V?$allocator@PAVCCareerMap@@@std@@@std@@@2@@std@@QBEIXZ,>::capacity,LIB,GameUI/CareerGame.cpp,,,TODO,,gameui_manual.csv,
+gameui,10013890,17,?begin@?$vector@V?$vector@PAVCCareerMap@@V?$allocator@PAVCCareerMap@@@std@@@std@@V?$allocator@V?$vector@PAVCCareerMap@@V?$allocator@PAVCCareerMap@@@std@@@std@@@2@@std@@QBEPBV?$vector@PAVCCareerMap@@V?$allocator@PAVCCareerMap@@@std@@@2@XZ,>::begin,LIB,GameUI/CareerGame.cpp,,,TODO,,gameui_manual.csv,
+gameui,100138B0,17,?end@?$vector@V?$vector@PAVCCareerMap@@V?$allocator@PAVCCareerMap@@@std@@@std@@V?$allocator@V?$vector@PAVCCareerMap@@V?$allocator@PAVCCareerMap@@@std@@@std@@@2@@std@@QBEPBV?$vector@PAVCCareerMap@@V?$allocator@PAVCCareerMap@@@std@@@2@XZ,>::end,LIB,GameUI/CareerGame.cpp,,,TODO,,gameui_manual.csv,
+gameui,100138D0,52,?capacity@?$vector@HV?$allocator@H@std@@@std@@QBEIXZ,>::capacity,LIB,GameUI/CareerGame.cpp,,,TODO,,gameui_manual.csv,
+gameui,10013910,17,?begin@?$vector@HV?$allocator@H@std@@@std@@QBEPBHXZ,>::begin,LIB,GameUI/CareerGame.cpp,,,TODO,,gameui_manual.csv,
+gameui,10013930,17,?end@?$vector@HV?$allocator@H@std@@@std@@QBEPBHXZ,>::end,LIB,GameUI/CareerGame.cpp,,,TODO,,gameui_manual.csv,
+gameui,10013950,76,?erase@?$vector@HV?$allocator@H@std@@@std@@QAEPAHPAH0@Z,>::erase,LIB,GameUI/CareerGame.cpp,,,TODO,,gameui_manual.csv,
+gameui,100139A0,17,?begin@?$vector@PAVCvarLatch@@V?$allocator@PAVCvarLatch@@@std@@@std@@QAEPAPAVCvarLatch@@XZ,>::begin,LIB,GameUI/CareerGame.cpp,,,TODO,,gameui_manual.csv,
+gameui,100139C0,17,?end@?$vector@PAVCvarLatch@@V?$allocator@PAVCvarLatch@@@std@@@std@@QAEPAPAVCvarLatch@@XZ,>::end,LIB,GameUI/CareerGame.cpp,,,TODO,,gameui_manual.csv,
+gameui,100139E0,66,?insert@?$vector@PAVCvarLatch@@V?$allocator@PAVCvarLatch@@@std@@@std@@QAEPAPAVCvarLatch@@PAPAV3@ABQAV3@@Z,>::insert,LIB,GameUI/CareerGame.cpp,,,TODO,,gameui_manual.csv,
+gameui,10013A30,76,?erase@?$vector@PAVCvarLatch@@V?$allocator@PAVCvarLatch@@@std@@@std@@QAEPAPAVCvarLatch@@PAPAV3@0@Z,>::erase,LIB,GameUI/CareerGame.cpp,,,TODO,,gameui_manual.csv,
+gameui,10013A80,46,?_Destroy@?$vector@PAVCvarLatch@@V?$allocator@PAVCvarLatch@@@std@@@std@@IAEXPAPAVCvarLatch@@0@Z,>::_Destroy,LIB,GameUI/CareerGame.cpp,,,TODO,,gameui_manual.csv,
+gameui,10013AB0,25,?deallocate@?$allocator@PAVCvarLatch@@@std@@QAEXPAXI@Z,*>::deallocate,LIB,GameUI/CareerGame.cpp,,,TODO,,gameui_manual.csv,
+gameui,10013AD0,532,?insert@?$vector@PAVCvarLatch@@V?$allocator@PAVCvarLatch@@@std@@@std@@QAEXPAPAVCvarLatch@@IABQAV3@@Z,>::insert,LIB,GameUI/CareerGame.cpp,,,TODO,,gameui_manual.csv,
 gameui,10013CF0,25,,std::allocator<std::_Container_proxy>::destroy,LIB,,,,,,ghidra,
-gameui,10013D10,62,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,10013D50,57,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,10013D90,27,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,10013DB0,29,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,10013DD0,34,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,10013E00,50,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,10013E40,48,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,10013E70,48,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,10013EA0,48,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,10013ED0,48,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,10013F00,36,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,10013F30,46,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,10013F60,5,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,10013F70,33,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,10013FA0,58,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,10013FE0,7,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,10013FF0,122,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,10014070,34,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,100140A0,187,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,10014160,61,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,100141A0,110,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,10014210,114,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,10014290,91,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,100142F0,34,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
-gameui,10014320,34,,,UNKNOWN,GameUI/CareerGame.cpp,,,TODO,,,
+gameui,10013D10,62,?_Ucopy@?$vector@PAVCvarLatch@@V?$allocator@PAVCvarLatch@@@std@@@std@@IAEPAPAVCvarLatch@@PBQAV3@0PAPAV3@@Z,>::_Ucopy,LIB,GameUI/CareerGame.cpp,,,TODO,,gameui_manual.csv,
+gameui,10013D50,57,?_Ufill@?$vector@PAVCvarLatch@@V?$allocator@PAVCvarLatch@@@std@@@std@@IAEXPAPAVCvarLatch@@IABQAV3@@Z,>::_Ufill,LIB,GameUI/CareerGame.cpp,,,TODO,,gameui_manual.csv,
+gameui,10013D90,27,?allocate@?$allocator@PAVCvarLatch@@@std@@QAEPAPAVCvarLatch@@IPBX@Z,*>::allocate,LIB,GameUI/CareerGame.cpp,,,TODO,,gameui_manual.csv,
+gameui,10013DB0,29,?construct@?$allocator@PAVCvarLatch@@@std@@QAEXPAPAVCvarLatch@@ABQAV3@@Z,*>::construct,LIB,GameUI/CareerGame.cpp,,,TODO,,gameui_manual.csv,
+gameui,10013DD0,34,?sort@std@@YAXPAPAVCCareerCharacter@@0@Z,std::sort,LIB,GameUI/CareerGame.cpp,,,TODO,,gameui_manual.csv,
+gameui,10013E00,50,?copy@std@@YAPAV?$vector@PAVCCareerMap@@V?$allocator@PAVCCareerMap@@@std@@@1@PBV21@0PAV21@@Z,std::copy,LIB,GameUI/CareerGame.cpp,,,TODO,,gameui_manual.csv,
+gameui,10013E40,48,?copy@std@@YAPAHPBH0PAH@Z,std::copy,LIB,GameUI/CareerGame.cpp,,,TODO,,gameui_manual.csv,
+gameui,10013E70,48,?copy@std@@YAPAPAVICareerTask@@PAPAV2@00@Z,std::copy,LIB,GameUI/CareerGame.cpp,,,TODO,,gameui_manual.csv,
+gameui,10013EA0,48,?copy@std@@YAPAHPAH00@Z,std::copy,LIB,GameUI/CareerGame.cpp,,,TODO,,gameui_manual.csv,
+gameui,10013ED0,48,?copy@std@@YAPAPAVCvarLatch@@PAPAV2@00@Z,std::copy,LIB,GameUI/CareerGame.cpp,,,TODO,,gameui_manual.csv,
+gameui,10013F00,36,?fill@std@@YAXPAPAVCvarLatch@@0ABQAV2@@Z,std::fill,LIB,GameUI/CareerGame.cpp,,,TODO,,gameui_manual.csv,
+gameui,10013F30,46,?copy_backward@std@@YAPAPAVCvarLatch@@PAPAV2@00@Z,std::copy_backward,LIB,GameUI/CareerGame.cpp,,,TODO,,gameui_manual.csv,
+gameui,10013F60,5,?_Destroy@std@@YAXPAPAVCvarLatch@@@Z,std::_Destroy,LIB,GameUI/CareerGame.cpp,,,TODO,,gameui_manual.csv,
+gameui,10013F70,33,?_Allocate@std@@YAPAPAVCvarLatch@@HPAPAV2@@Z,std::_Allocate,LIB,GameUI/CareerGame.cpp,,,TODO,,gameui_manual.csv,
+gameui,10013FA0,58,?_Construct@std@@YAXPAPAVCvarLatch@@ABQAV2@@Z,std::_Construct,LIB,GameUI/CareerGame.cpp,,,TODO,,gameui_manual.csv,
+gameui,10013FE0,7,?_Val_type@std@@YAPAPAVCCareerCharacter@@PBQAV2@@Z,std::_Val_type,LIB,GameUI/CareerGame.cpp,,,TODO,,gameui_manual.csv,
+gameui,10013FF0,122,?_Sort_0@std@@YAXPAPAVCCareerCharacter@@00@Z,std::_Sort_0,LIB,GameUI/CareerGame.cpp,,,TODO,,gameui_manual.csv,
+gameui,10014070,34,?_Insertion_sort@std@@YAXPAPAVCCareerCharacter@@0@Z,std::_Insertion_sort,LIB,GameUI/CareerGame.cpp,,,TODO,,gameui_manual.csv,
+gameui,100140A0,187,?_Sort@std@@YAXPAPAVCCareerCharacter@@00@Z,std::_Sort,LIB,GameUI/CareerGame.cpp,,,TODO,,gameui_manual.csv,
+gameui,10014160,61,?_Unguarded_insert@std@@YAXPAPAVCCareerCharacter@@PAV2@@Z,std::_Unguarded_insert,LIB,GameUI/CareerGame.cpp,,,TODO,,gameui_manual.csv,
+gameui,100141A0,110,?_Insertion_sort_1@std@@YAXPAPAVCCareerCharacter@@00@Z,std::_Insertion_sort_1,LIB,GameUI/CareerGame.cpp,,,TODO,,gameui_manual.csv,
+gameui,10014210,114,?_Median@std@@YAPAVCCareerCharacter@@PAV2@00@Z,std::_Median,LIB,GameUI/CareerGame.cpp,,,TODO,,gameui_manual.csv,
+gameui,10014290,91,?_Unguarded_partition@std@@YAPAPAVCCareerCharacter@@PAPAV2@0PAV2@@Z,std::_Unguarded_partition,LIB,GameUI/CareerGame.cpp,,,TODO,,gameui_manual.csv,
+gameui,100142F0,34,?iter_swap@std@@YAXPAPAVCCareerCharacter@@0@Z,std::iter_swap,LIB,GameUI/CareerGame.cpp,,,TODO,,gameui_manual.csv,
+gameui,10014320,34,?_Iter_swap@std@@YAXPAPAVCCareerCharacter@@00@Z,std::_Iter_swap,LIB,GameUI/CareerGame.cpp,,,TODO,,gameui_manual.csv,
 gameui,10014350,925,,,UNKNOWN,GameUI/CareerGameTasks.cpp,,,TODO,,,linux: _Z29ConstructStringWithReorderingPwiS_iz
 gameui,100146ED,1392,,CCareerUITask::CCareerUITask,ENGINE,GameUI/CareerGameTasks.cpp,,,TODO,,linux_symbols:string:0.497,linux: _ZN13CCareerUITaskC2EPKc
 gameui,10014C5D,41,,,UNKNOWN,GameUI/CareerGameTasks.cpp,,,TODO,,,linux: _ZN13CCareerUITask34GetLocalizedTaskNameWithCompletionEv

@@ -3830,6 +3830,11 @@
           "functions_file": "tools/units/gameui_GameUI_CareerDefinitions.txt"
         },
         {
+          "name": "GameUI/CareerGame",
+          "source": "src/gameui/CareerGame.cpp",
+          "functions_file": "tools/units/gameui_GameUI_CareerGame.txt"
+        },
+        {
           "name": "GameUI/SaveGameDialog",
           "source": "src/gameui/SaveGameDialog.cpp",
           "functions_file": "tools/units/gameui_GameUI_SaveGameDialog.txt"

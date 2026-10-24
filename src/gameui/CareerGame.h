@@ -33,7 +33,7 @@ public:
 	CCareerCharacter( const BotProfile *profile );
 
 	void Print();
-	char *Save( char *buf, int &len, int indent );
+	char *Save( char *buf, int &len, int hired );
 	int GetPoints() const;
 	const char *GetName() const;
 	bool operator<( const CCareerCharacter &other ) const;
@@ -135,14 +135,14 @@ public:
 
 	static const char *GetSaveGamePlayerName( const char * );
 
-	CharacterVec &GetHiredCharacters();
-	CharacterVec &GetAvailableCharacters();
+	CharacterVec &GetHiredCharacters() { return m_hiredCharacters; }
+	CharacterVec &GetAvailableCharacters() { return m_availableCharacters; }
 	void ClearRoster();
 	void AddCharacter( CCareerCharacter * );
 	bool Hire( const char *name );
 	bool Fire( const char *name );
 
-	int GetPoints();
+	int GetPoints() { return m_reputationPoints; }
 	int GetPointsRemaining();
 	void SetPoints( int );
 	int GetHighestCostAvailable( int reputationPoints );
@@ -174,15 +174,15 @@ public:
 	void FinishMatchStart();
 
 	// ICareerUI
-	virtual bool PlayAsCT();
+	virtual bool PlayAsCT() { return m_isCT != 0; }
 	virtual bool IsPlayingMatch();
 	virtual ITaskVec *GetCurrentTaskVec();
-	virtual int GetReputationGained();
-	virtual int GetNumMapsUnlocked();
+	virtual int GetReputationGained() { return m_matchReputationGain; }
+	virtual int GetNumMapsUnlocked() { return m_matchMapsUnlocked; }
 	virtual bool DoesWinUnlockAll();
 	virtual int GetRoundTimeLength();
-	virtual int GetWinfastLength();
-	virtual CareerDifficultyType GetDifficulty() const;
+	virtual int GetWinfastLength() { return m_winfastLength; }
+	virtual CareerDifficultyType GetDifficulty() const { return m_difficulty; }
 	virtual int GetCurrentMapTriplet( MapInfo *maps );
 	virtual void OnRoundEndMenuOpen( bool didWin );
 	virtual void OnMatchEndMenuOpen( bool didWin );
@@ -191,10 +191,10 @@ public:
 
 	void SetBotPoolSliderPosition( int position );
 	int GetBotPoolSliderPosition();
-	int GetMatchNumWins() const;
-	int GetMatchWinBy() const;
+	int GetMatchNumWins() const { return m_matchNumWins; }
+	int GetMatchWinBy() const { return m_matchWinBy; }
 	CCareerMap *GetFirstUndefeatedMap();
-	void SetRoundTimeLength( int val );
+	void SetRoundTimeLength( int val ) { m_roundTimeLength = val; }
 	void SetWinfastLength( int );
 	bool IsMedalEarned( CareerDifficultyType difficulty ) { return m_medals[difficulty]; }
 
