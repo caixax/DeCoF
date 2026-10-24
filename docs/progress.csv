@@ -2172,7 +2172,7 @@ client,10080B40,74,?DeleteSystemWithEntity@ParticleSystemManager@@QAEXH@Z,Partic
 client,10080B90,76,?KillViewModelSystems_guess@ParticleSystemManager@@QAEX_N@Z,ParticleSystemManager::KillViewModelSystems_guess,UNKNOWN,cl_dll/particlemgr.cpp,,,MATCHED,100,client_manual.csv,
 client,10080BE0,33,?FindSystem@ParticleSystemManager@@QAEPAVParticleSystem@@PAUcl_entity_s@@@Z,ParticleSystemManager::FindSystem,SPIRIT,cl_dll/particlemgr.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__particlemgr.obj:score0,
 client,10080C10,117,?SortSystems@ParticleSystemManager@@QAEXXZ,ParticleSystemManager::SortSystems,SPIRIT,cl_dll/particlemgr.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__particlemgr.obj:score1,
-client,10080C90,237,?UpdateSystems@ParticleSystemManager@@QAEXMH@Z,ParticleSystemManager::UpdateSystems,UNKNOWN,cl_dll/particlemgr.cpp,,,TODO,29.84,,
+client,10080C90,237,?UpdateSystems@ParticleSystemManager@@QAEXMH@Z,ParticleSystemManager::UpdateSystems,UNKNOWN,cl_dll/particlemgr.cpp,,,TODO,94.04,,"94.04%: retail tests renderfx 70 then sky into one skip block (cmp 70; je skip; test sky; je next) and keeps every skip block separate; one if with || makes the compiler merge all skip tails (29.8%), the Paranoia condition plus a separate fx 70 block keeps them separate but tests sky twice"
 client,10080D80,8,?Draw@CHudParticle@@UAEHM@Z,CHudParticle::Draw,UNKNOWN,cl_dll/particlemsg.cpp,,,MATCHED,100,,
 client,10080D90,88,?Init@CHudParticle@@UAEHXZ,CHudParticle::Init,UNKNOWN,,,,MATCHED,100,client_manual.csv,
 client,10080DF0,42,?MsgFunc_DelParticle@CHudParticle@@QAEHPBDHPAX@Z,CHudParticle::MsgFunc_DelParticle,PARANOIA,cl_dll/particlemsg.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__particlemsg.obj:score3,
