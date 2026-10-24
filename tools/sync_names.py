@@ -41,6 +41,18 @@ def undecorate(names):
     return dict(zip(names, out)) if len(out) == len(names) else {}
 
 
+def is_std(name, full):
+    """True when the function itself lives in namespace std (an STL
+    instantiation), not when it only takes or returns std types
+    (CCareerGame::GetTaskVecForMap returns a std::vector)."""
+    if full:
+        for cc in ("__thiscall ", "__cdecl ", "__stdcall ", "__fastcall "):
+            i = full.find(cc)
+            if i >= 0:
+                return full[i + len(cc):].startswith("std::")
+    return "@std@@" in name
+
+
 def main():
     dry = "--dry" in sys.argv
     dll = sys.argv[sys.argv.index("--dll") + 1] if "--dll" in sys.argv else "hl"
@@ -124,7 +136,7 @@ def main():
         r["name"] = new
         if manual.get(int(r["va"], 16)) == new:
             r["evidence"] = "%s_manual.csv" % dll
-        if "@std@@" in new:
+        if is_std(new, dem.get(new)):
             r["class"] = "LIB"  # STL instantiation from the toolchain headers
         r["demangled"] = dem.get(new, r["demangled"]).split("(")[0].split(" ")[-1] if new in dem else r["demangled"]
         if unit and (not old_src or old_src.startswith("guess:") or old_name):
