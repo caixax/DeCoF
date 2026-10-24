@@ -8619,8 +8619,8 @@ gameui,10029D40,19,??0PanelMessageFunc_OnCheckButtonChecked@CCreateMultiplayerGa
 gameui,10029D60,107,?InitVar@PanelMessageFunc_OnCheckButtonChecked@CCreateMultiplayerGameServerPage@@SAXXZ,public: static void __cdecl CCreateMultiplayerGameServerPage::PanelMessageFunc_OnCheckButtonChecked::InitVar(void),UNKNOWN,GameUI/CreateMultiplayerGameServerPage.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,10029DD0,120,?AddToMap@CCreateMultiplayerGameServerPage@@SAXPBDP8Panel@vgui2@@AEXXZHH0H0@Z,"public: static void __cdecl CCreateMultiplayerGameServerPage::AddToMap(char const *,void (__thiscall vgui2::Panel::*)(void),int,int,char const *,int,char const *)",UNKNOWN,GameUI/CreateMultiplayerGameServerPage.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,10029E60,46,??_GCCreateMultiplayerGameServerPage@@UAEPAXI@Z,public: virtual void * __thiscall CCreateMultiplayerGameServerPage::`scalar deleting destructor'(unsigned int),UNKNOWN,GameUI/CreateMultiplayerGameServerPage.cpp,,,MATCHED,100,gameui_manual.csv,
-gameui,10029E90,129,??0CvarLatch@@QAE@PBD0@Z,"public: __thiscall CvarLatch::CvarLatch(char const *,char const *)",UNKNOWN,GameUI/CvarLatch.cpp,,,TODO,,gameui_manual.csv,linux: _ZN9CvarLatchC2EPKcS1_
-gameui,10029F11,110,??1CvarLatch@@QAE@XZ,public: __thiscall CvarLatch::~CvarLatch(void),UNKNOWN,GameUI/CvarLatch.cpp,,,TODO,,gameui_manual.csv,linux: _ZN9CvarLatchD1Ev
+gameui,10029E90,129,??0CvarLatch@@QAE@PBD0@Z,"public: __thiscall CvarLatch::CvarLatch(char const *,char const *)",UNKNOWN,GameUI/CvarLatch.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN9CvarLatchC2EPKcS1_
+gameui,10029F11,110,??1CvarLatch@@QAE@XZ,public: __thiscall CvarLatch::~CvarLatch(void),UNKNOWN,GameUI/CvarLatch.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN9CvarLatchD1Ev
 gameui,10029F80,997,,CDemoEditDialog::CDemoEditDialog,ENGINE,GameUI/DemoEditDialog.cpp,,,TODO,,linux_symbols:string:0.73,linux: _ZN15CDemoEditDialogC1EPN5vgui25PanelEPKcP14IEngineWrapperP11IDemoPlayer
 gameui,1002A365,42,,,UNKNOWN,GameUI/DemoEditDialog.cpp,,,TODO,,,linux: _ZN15CDemoEditDialogD1Ev
 gameui,1002A38F,169,,,UNKNOWN,GameUI/DemoEditDialog.cpp,,,TODO,,,linux: _ZN15CDemoEditDialog13SetDataFieldiEiPci
