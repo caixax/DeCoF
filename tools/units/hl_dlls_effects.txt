@@ -745,3 +745,4 @@ _cof_document
 ?ObjectCaps@CRainModify@@UAEHXZ
 ?ObjectCaps@CRainSettings@@UAEHXZ
 ?ObjectCaps@CSprite@@UAEHXZ
+?Animate@CGlow@@QAEXM@Z

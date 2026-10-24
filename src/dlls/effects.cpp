@@ -27,6 +27,7 @@
 #include "movewith.h" //LRC - the DesiredThink system
 #include "studio.h"
 #include "gamerules.h"
+#include <cmath>
 
 #define	SF_GIBSHOOTER_REPEATABLE	1 // allows a gibshooter to be refired
 

@@ -16104,7 +16104,7 @@ hl,10092380,49,?Activate@CEnvSky@@UAEXXZ,CEnvSky::Activate,SPIRIT,dlls/effects.c
 hl,100923C0,49,?Activate@CLightning@@UAEXXZ,CLightning::Activate,HLSDK,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10092400,278,?Affect@CEnvBeamTrail@@QAEXPAVCBaseEntity@@W4USE_TYPE@@@Z,CEnvBeamTrail::Affect,UNKNOWN,dlls/effects.cpp,,,MATCHED,100,,
 hl,10092520,25,?AllowToContinue@CCofStressTest@@QAEXXZ,CCofStressTest::AllowToContinue,UNKNOWN,dlls/effects.cpp,,,MATCHED,100,,
-hl,10092540,80,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
+hl,10092540,80,?Animate@CGlow@@QAEXM@Z,CGlow::Animate,HLSDK,dlls/effects.cpp,1.0,,MATCHED,100,hl_manual.csv,found by the link comparison (was an unnamed LIB row); effects.cpp includes <cmath> for the float fmod overload
 hl,10092590,125,?Animate@CSprite@@QAEXM@Z,CSprite::Animate,HLSDK,dlls/effects.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10092610,72,?AnimateThink@CSprite@@QAEXXZ,CSprite::AnimateThink,HLSDK,dlls/effects.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,10092660,57,?AnimateUntilDead@CSprite@@QAEXXZ,CSprite::AnimateUntilDead,HLSDK,dlls/effects.cpp,2010-prototype,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
@@ -17725,7 +17725,7 @@ hl,100DEEC0,50,?DualWieldAnimation@CBasePlayer@@QAEXH@Z,CBasePlayer::DualWieldAn
 hl,100DEF00,29,?Duck@CBasePlayer@@UAEXXZ,CBasePlayer::Duck,HLSDK,dlls/player.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100DEF20,182,?EHandlesNotSame@CBasePlayer@@QAE_NVEHANDLE@@0@Z,CBasePlayer::EHandlesNotSame,UNKNOWN,dlls/player.cpp,,,MATCHED,100,,
 hl,100DEFF0,90,?EnableControl@CBasePlayer@@QAEXH@Z,CBasePlayer::EnableControl,UNKNOWN,dlls/player.cpp,,,MATCHED,100,,
-hl,100DF050,170,,,LIB,,,,TODO,,,"STL, iostream or CRT code from the toolchain (not decompiled)"
+hl,100DF050,170,?EncryptStatsFile@CBasePlayer@@QAE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V23@0@Z,CBasePlayer::EncryptStatsFile,COF,dlls/player.cpp,1.0,1.55->1.6a changed,MATCHED,100,hl_manual.csv,found by the link comparison (was an unnamed LIB row); 1.6a dropped the 1.55 XOR loop and returns NULL (unreferenced; would construct a std::string from a null pointer if called)
 hl,100DF100,128,?EndSave@CBasePlayer@@QAEXXZ,CBasePlayer::EndSave,COF,dlls/player.cpp,2010-prototype,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100DF180,1274,?EntSelectSpawnPoint@@YAPAUedict_s@@PAVCBaseEntity@@@Z,EntSelectSpawnPoint,HLSDK,dlls/player.cpp,1.0,1.0->1.4 same; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,
 hl,100DF690,13,?FBecomeProne@CBasePlayer@@UAEHXZ,CBasePlayer::FBecomeProne,HLSDK,dlls/player.cpp,1.0,1.0->1.4 changed; 1.4->1.55 same,MATCHED,100,hl_1.55_to_1.6a.csv,

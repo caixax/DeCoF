@@ -15110,6 +15110,7 @@ void CBasePlayer::MultiplayerTouch( CBaseEntity *pOther )
 
 std::string CBasePlayer::EncryptStatsFile( std::string value, std::string key )
 {
+/*
 	std::string retval( value );
 
 	unsigned short klen = key.length();
@@ -15124,6 +15125,8 @@ std::string CBasePlayer::EncryptStatsFile( std::string value, std::string key )
 	}
 
 	return retval;
+*/
+	return NULL;
 }
 
 bool CBasePlayer::CheckBeatenEnding( int ending )
