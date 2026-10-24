@@ -5322,3 +5322,6 @@ va,name,kind,evidence
 10058F2F,_$E5,func,"vgui2/controls/Button.cpp: constructs g_ButtonSoundNames, same position and size as in our compiled object; as hw.dll 01E5673F"
 10058F44,_$E7,func,"vgui2/controls/Button.cpp: registers the g_ButtonSoundNames destructor with atexit, same position and size as in our compiled object; as hw.dll 01E56754"
 10058F56,_$E6,func,"vgui2/controls/Button.cpp: atexit destructor helper of g_ButtonSoundNames, same position and size as in our compiled object; as hw.dll 01E56766"
+10061583,_$E6,func,"vgui2/controls/Panel.cpp: dynamic initializer between QueryInterface and GetPanelMap, as _E$6 in our object; calls 1006158D; as hw.dll 01E2BFC3"
+1006158D,_$E5,func,"vgui2/controls/Panel.cpp: initializes the static panel map entry (""direction""), same position and size as _E$5 in our compiled object"
+10062F21,_$E9,func,"vgui2/controls/Panel.cpp: atexit destructor helper of the GetPanelMessageMapDictionary static, same position and size as _E$9 in our compiled object"
