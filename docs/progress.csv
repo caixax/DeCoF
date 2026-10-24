@@ -9839,17 +9839,17 @@ gameui,1004EAC0,10,,,UNKNOWN,GameUI/PlayerListDialog.cpp,,,TODO,,,
 gameui,1004EAD0,19,,,UNKNOWN,GameUI/PlayerListDialog.cpp,,,TODO,,,
 gameui,1004EAF0,107,,,UNKNOWN,GameUI/PlayerListDialog.cpp,,,TODO,,,
 gameui,1004EB60,120,,,UNKNOWN,GameUI/PlayerListDialog.cpp,,,TODO,,,
-gameui,1004EBE0,374,,CSaveGameDialog::CSaveGameDialog,ENGINE,GameUI/SaveGameDialog.cpp,,,TODO,,linux_symbols:string:0.523,linux: _ZN15CSaveGameDialogC2EPN5vgui25PanelE
-gameui,1004ED56,28,,,UNKNOWN,GameUI/SaveGameDialog.cpp,,,TODO,,,linux: _ZN15CSaveGameDialogD1Ev
-gameui,1004ED72,271,,CSaveGameDialog::OnCommand,ENGINE,GameUI/SaveGameDialog.cpp,,,TODO,,linux_symbols:string:0.763,linux: _ZN15CSaveGameDialog9OnCommandEPKc
-gameui,1004EE81,33,,,UNKNOWN,GameUI/SaveGameDialog.cpp,,,TODO,,,linux: _ZN15CSaveGameDialog7OnCloseEv
-gameui,1004EEA2,311,,,UNKNOWN,GameUI/SaveGameDialog.cpp,,,TODO,,,linux: _ZN15CSaveGameDialog20CreateSavedGamesListEv
-gameui,1004EFD9,770,_SaveReadNameAndComment,SaveReadNameAndComment,ENGINE,GameUI/SaveGameDialog.cpp,,,TODO,,linux_symbols:string:0.76,linux: _Z22SaveReadNameAndCommentPvPcS0_
-gameui,1004F2DB,80,,,UNKNOWN,GameUI/SaveGameDialog.cpp,,,TODO,,,linux: _Z17TimeStampSortFuncPN5vgui29ListPanelERKNS_13ListPanelItemES4_
-gameui,1004F32B,824,,CSaveGameDialog::ParseSaveData,ENGINE,GameUI/SaveGameDialog.cpp,,,TODO,,linux_symbols:string:0.833,linux: _ZN15CSaveGameDialog13ParseSaveDataEPKcS1_P9KeyValues
-gameui,1004F663,822,,CSaveGameDialog::ScanSavedGames,ENGINE,GameUI/SaveGameDialog.cpp,,,TODO,,linux_symbols:string:0.622,linux: _ZN15CSaveGameDialog14ScanSavedGamesEv
-gameui,1004F999,139,,CSaveGameDialog::FindSaveSlot,ENGINE,GameUI/SaveGameDialog.cpp,,,TODO,,linux_symbols:string:0.396,linux: _ZN15CSaveGameDialog12FindSaveSlotEv
-gameui,1004FA30,46,,,UNKNOWN,GameUI/SaveGameDialog.cpp,,,TODO,,,
+gameui,1004EBE0,374,??0CSaveGameDialog@@QAE@PAVPanel@vgui2@@@Z,public: __thiscall CSaveGameDialog::CSaveGameDialog(class vgui2::Panel *),ENGINE,GameUI/SaveGameDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN15CSaveGameDialogC2EPN5vgui25PanelE
+gameui,1004ED56,28,??1CSaveGameDialog@@UAE@XZ,public: virtual __thiscall CSaveGameDialog::~CSaveGameDialog(void),UNKNOWN,GameUI/SaveGameDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN15CSaveGameDialogD1Ev
+gameui,1004ED72,271,?OnCommand@CSaveGameDialog@@MAEXPBD@Z,protected: virtual void __thiscall CSaveGameDialog::OnCommand(char const *),ENGINE,GameUI/SaveGameDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN15CSaveGameDialog9OnCommandEPKc
+gameui,1004EE81,33,?OnClose@CSaveGameDialog@@MAEXXZ,protected: virtual void __thiscall CSaveGameDialog::OnClose(void),UNKNOWN,GameUI/SaveGameDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN15CSaveGameDialog7OnCloseEv
+gameui,1004EEA2,311,?CreateSavedGamesList@CSaveGameDialog@@IAEXXZ,protected: void __thiscall CSaveGameDialog::CreateSavedGamesList(void),UNKNOWN,GameUI/SaveGameDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN15CSaveGameDialog20CreateSavedGamesListEv
+gameui,1004EFD9,770,?SaveReadNameAndComment@@YAHPAXPAD1@Z,"int __cdecl SaveReadNameAndComment(void *,char *,char *)",ENGINE,GameUI/SaveGameDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _Z22SaveReadNameAndCommentPvPcS0_
+gameui,1004F2DB,80,?TimeStampSortFunc@@YAHPAVListPanel@vgui2@@ABVListPanelItem@2@1@Z,"int __cdecl TimeStampSortFunc(class vgui2::ListPanel *,class vgui2::ListPanelItem const &,class vgui2::ListPanelItem const &)",UNKNOWN,GameUI/SaveGameDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _Z17TimeStampSortFuncPN5vgui29ListPanelERKNS_13ListPanelItemES4_
+gameui,1004F32B,824,?ParseSaveData@CSaveGameDialog@@IAE_NPBD0PAVKeyValues@@@Z,"protected: bool __thiscall CSaveGameDialog::ParseSaveData(char const *,char const *,class KeyValues *)",ENGINE,GameUI/SaveGameDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN15CSaveGameDialog13ParseSaveDataEPKcS1_P9KeyValues
+gameui,1004F663,822,?ScanSavedGames@CSaveGameDialog@@IAEXXZ,protected: void __thiscall CSaveGameDialog::ScanSavedGames(void),ENGINE,GameUI/SaveGameDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN15CSaveGameDialog14ScanSavedGamesEv
+gameui,1004F999,139,?FindSaveSlot@CSaveGameDialog@@IAEPBDXZ,protected: char const * __thiscall CSaveGameDialog::FindSaveSlot(void),ENGINE,GameUI/SaveGameDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN15CSaveGameDialog12FindSaveSlotEv
+gameui,1004FA30,46,??_GCSaveGameDialog@@UAEPAXI@Z,public: virtual void * __thiscall CSaveGameDialog::`scalar deleting destructor'(unsigned int),UNKNOWN,GameUI/SaveGameDialog.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,1004FA60,526,,COptionsDialog::COptionsDialog,ENGINE,GameUI/OptionsDialog.cpp,,,TODO,,linux_symbols:string:0.526,linux: _ZN14COptionsDialogC2EPN5vgui25PanelE
 gameui,1004FC6E,28,,,UNKNOWN,GameUI/OptionsDialog.cpp,,,TODO,,,linux: _ZN14COptionsDialogD2Ev
 gameui,1004FC8A,191,,,UNKNOWN,GameUI/OptionsDialog.cpp,,,TODO,,,linux: _ZN14COptionsDialog8SetTitleEPKcb

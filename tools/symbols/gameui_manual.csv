@@ -2714,3 +2714,14 @@ va,name,kind,evidence
 10091F10,??0?$CUtlMemory@UScriptCommand_t@TestScriptController@vgui2@@@@QAE@HH@Z,func,vgui2/controls/TestScriptController.cpp: same position in our compiled object and same size
 10091F60,?Purge@?$CUtlMemory@UScriptCommand_t@TestScriptController@vgui2@@@@QAEXXZ,func,vgui2/controls/TestScriptController.cpp: same position in our compiled object and same size
 10091FB0,?IsExternallyAllocated@?$CUtlMemory@UScriptCommand_t@TestScriptController@vgui2@@@@QBE_NXZ,func,vgui2/controls/TestScriptController.cpp: same position in our compiled object and same size
+1004EBE0,??0CSaveGameDialog@@QAE@PAVPanel@vgui2@@@Z,func,GameUI/SaveGameDialog.cpp: same position and size as in our compiled object; linux: _ZN15CSaveGameDialogC2EPN5vgui25PanelE
+1004ED56,??1CSaveGameDialog@@UAE@XZ,func,GameUI/SaveGameDialog.cpp: same position and size as in our compiled object; linux: _ZN15CSaveGameDialogD1Ev
+1004ED72,?OnCommand@CSaveGameDialog@@MAEXPBD@Z,func,GameUI/SaveGameDialog.cpp: same position and size as in our compiled object; linux: _ZN15CSaveGameDialog9OnCommandEPKc
+1004EE81,?OnClose@CSaveGameDialog@@MAEXXZ,func,GameUI/SaveGameDialog.cpp: same position and size as in our compiled object; linux: _ZN15CSaveGameDialog7OnCloseEv
+1004EEA2,?CreateSavedGamesList@CSaveGameDialog@@IAEXXZ,func,GameUI/SaveGameDialog.cpp: same position and size as in our compiled object; linux: _ZN15CSaveGameDialog20CreateSavedGamesListEv
+1004EFD9,?SaveReadNameAndComment@@YAHPAXPAD1@Z,func,GameUI/SaveGameDialog.cpp: same position and size as in our compiled object; linux: _Z22SaveReadNameAndCommentPvPcS0_
+1004F2DB,?TimeStampSortFunc@@YAHPAVListPanel@vgui2@@ABVListPanelItem@2@1@Z,func,GameUI/SaveGameDialog.cpp: same position and size as in our compiled object; linux: _Z17TimeStampSortFuncPN5vgui29ListPanelERKNS_13ListPanelItemES4_
+1004F32B,?ParseSaveData@CSaveGameDialog@@IAE_NPBD0PAVKeyValues@@@Z,func,GameUI/SaveGameDialog.cpp: same position and size as in our compiled object; linux: _ZN15CSaveGameDialog13ParseSaveDataEPKcS1_P9KeyValues
+1004F663,?ScanSavedGames@CSaveGameDialog@@IAEXXZ,func,GameUI/SaveGameDialog.cpp: same position and size as in our compiled object; linux: _ZN15CSaveGameDialog14ScanSavedGamesEv
+1004F999,?FindSaveSlot@CSaveGameDialog@@IAEPBDXZ,func,GameUI/SaveGameDialog.cpp: same position and size as in our compiled object; linux: _ZN15CSaveGameDialog12FindSaveSlotEv
+1004FA30,??_GCSaveGameDialog@@UAEPAXI@Z,func,GameUI/SaveGameDialog.cpp: same position and size as in our compiled object

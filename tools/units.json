@@ -3741,6 +3741,11 @@
           "name": "GameUI/CareerBox",
           "source": "src/gameui/CareerBox.cpp",
           "functions_file": "tools/units/gameui_GameUI_CareerBox.txt"
+        },
+        {
+          "name": "GameUI/SaveGameDialog",
+          "source": "src/gameui/SaveGameDialog.cpp",
+          "functions_file": "tools/units/gameui_GameUI_SaveGameDialog.txt"
         }
       ]
     }
