@@ -1,4 +1,6 @@
 ??0EngineSurfaceWrap@@QAE@PAVPanel@vgui@@PAVIEngineSurface@@@Z
+_$E26
+_$E25
 ??1EngineSurfaceWrap@@QAE@XZ
 ?AppHandler@EngineSurfaceWrap@@UAEXPAXIIJ@Z
 ?setCursor@EngineSurfaceWrap@@UAEXPAVCursor@vgui@@@Z

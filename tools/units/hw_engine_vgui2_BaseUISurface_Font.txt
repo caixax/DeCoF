@@ -1,6 +1,10 @@
 ?GetTextSize@EngineFont@@UAEXPBDAAH1@Z
 ?getId@EngineFont@@UAEHXZ
 ?getPlat@EngineFont@@QAEPAVBaseFontPlat@@XZ
+_$E5
+_$E2
+_$E4
+_$E3
 ??0VFontData@@QAE@XZ
 ??1VFontData@@QAE@XZ
 ?LoadVFontDataFrom32BitTGA@@YA_NPAVFileImageStream@@PAVVFontData@@@Z

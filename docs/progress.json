@@ -1,5 +1,5 @@
 {
-  "commit": "fe20dd3",
+  "commit": "de1acea",
   "counting": "LIB rows excluded; bytes weighted by function size",
   "date": "2026-10-24",
   "dlls": {
@@ -282,44 +282,44 @@
     "hw.dll": {
       "bytes": {
         "EQUIVALENT": 30310,
-        "MATCHED": 1224221,
-        "TODO": 96299,
+        "MATCHED": 1224927,
+        "TODO": 95593,
         "total": 1350830
       },
       "categories": {
         "ENGINE": {
           "bytes": {
             "EQUIVALENT": 21160,
-            "MATCHED": 922823,
-            "TODO": 25812,
+            "MATCHED": 923021,
+            "TODO": 25614,
             "total": 969795
           },
           "functions": {
             "EQUIVALENT": 8,
-            "MATCHED": 4713,
-            "TODO": 228,
+            "MATCHED": 4725,
+            "TODO": 216,
             "total": 4949
           }
         },
         "UNKNOWN": {
           "bytes": {
             "EQUIVALENT": 9150,
-            "MATCHED": 301398,
-            "TODO": 70487,
+            "MATCHED": 301906,
+            "TODO": 69979,
             "total": 381035
           },
           "functions": {
             "EQUIVALENT": 18,
-            "MATCHED": 2562,
-            "TODO": 575,
+            "MATCHED": 2594,
+            "TODO": 543,
             "total": 3155
           }
         }
       },
       "functions": {
         "EQUIVALENT": 26,
-        "MATCHED": 7275,
-        "TODO": 803,
+        "MATCHED": 7319,
+        "TODO": 759,
         "total": 8104
       }
     },
@@ -372,14 +372,14 @@
   "total": {
     "bytes": {
       "EQUIVALENT": 126040,
-      "MATCHED": 3188293,
-      "TODO": 503814,
+      "MATCHED": 3188999,
+      "TODO": 503108,
       "total": 3818147
     },
     "functions": {
       "EQUIVALENT": 63,
-      "MATCHED": 17877,
-      "TODO": 3714,
+      "MATCHED": 17921,
+      "TODO": 3670,
       "total": 21654
     }
   }

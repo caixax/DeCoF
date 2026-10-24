@@ -3,6 +3,8 @@
 ??0CUtlSymbol@@QAE@PBD@Z
 ?String@CUtlSymbol@@QBEPBDXZ
 ??8CUtlSymbol@@QBE_NPBD@Z
+_$E3
+_$E2
 ?SymLess@CUtlSymbolTable@@KA_NABI0@Z
 ?SymLessi@CUtlSymbolTable@@KA_NABI0@Z
 ??0CUtlSymbolTable@@QAE@HH_N@Z

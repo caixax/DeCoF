@@ -1,4 +1,8 @@
 ?VguiSurfaceTexturesLessFunc@@YA_NABVTexture@?%vgui_EngineSurfaceHW.cpp0@@0@Z
+_$E6
+_$E3
+_$E5
+_$E4
 ?InterpTCoord@@YAMHHHMM@Z
 ?ScissorRect_TCoords@@YA_NHHHHMMMMPAUtagRECT@@PAVTCoordRect@@@Z
 ?ScissorRect@@YA_NHHHHPAUtagRECT@@@Z

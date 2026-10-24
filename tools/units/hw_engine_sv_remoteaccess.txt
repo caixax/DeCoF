@@ -1,4 +1,10 @@
 ?__CreateCServerRemoteAccessIGameServerData_interface@@YAPAVIBaseInterface@@XZ
+_$E5
+_$E2
+_$E4
+_$E3
+_$E8
+_$E7
 ??0CServerRemoteAccess@@QAE@XZ
 ?WriteDataRequest@CServerRemoteAccess@@UAEXPBXH@Z
 ?ReadDataResponse@CServerRemoteAccess@@UAEHPAXH@Z

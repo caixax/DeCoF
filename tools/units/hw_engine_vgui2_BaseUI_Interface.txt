@@ -1,4 +1,10 @@
 ?BaseUI@@YAAAVCBaseUI@@XZ
+_$E10
+_$E7
+_$E9
+_$E8
+_$E13
+_$E12
 ?__CreateCBaseUIIBaseUI_interface@@YAPAVIBaseInterface@@XZ
 ??0CBaseUI@@QAE@XZ
 ??1CBaseUI@@UAE@XZ
@@ -17,6 +23,12 @@
 ?SteamProcessCall@CEngineVGui@@UAE_NPA_NPAUTSteamProgress@@PAUTSteamError@@@Z
 ?SetEngineVisible@CEngineVGui@@QAEX_N@Z
 ?GetPanel@CEngineVGui@@UAEIW4VGUIPANEL@@@Z
+_$E18
+_$E15
+_$E17
+_$E16
+_$E21
+_$E20
 ?__CreateCEngineVGuiIEngineVGui_interface@@YAPAVIBaseInterface@@XZ
 ??_GCBaseUI@@UAEPAXI@Z
 ??0IBaseUI@@QAE@XZ

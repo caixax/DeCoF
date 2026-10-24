@@ -23263,13 +23263,13 @@ hl,101A0E44,10,??__Finitlocks@std@@YAXXZ,std::`dynamic atexit destructor for 'in
 hl,101A0E4E,10,??__Finitlocks@std@@YAXXZ,std::`dynamic atexit destructor for 'initlocks'',LIB,,,,,,crt_bytes_ambiguous,
 hl,101A0E58,10,??__Finitlocks@std@@YAXXZ,std::`dynamic atexit destructor for 'initlocks'',LIB,,,,,,crt_bytes_ambiguous,
 hl,101A0E62,10,??__Finitlocks@std@@YAXXZ,std::`dynamic atexit destructor for 'initlocks'',LIB,,,,,,crt_bytes_ambiguous,
-hw,01D01000,15,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
-hw,01D0100F,15,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
-hw,01D0101E,18,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
-hw,01D01030,15,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
+hw,01D01000,15,_$E10,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,MATCHED,100,hw_manual.csv,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
+hw,01D0100F,15,_$E7,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,MATCHED,100,hw_manual.csv,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
+hw,01D0101E,18,_$E9,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,MATCHED,100,hw_manual.csv,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
+hw,01D01030,15,_$E8,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,MATCHED,100,hw_manual.csv,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
 hw,01D0103F,10,?BaseUI@@YAAAVCBaseUI@@XZ,BaseUI,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,MATCHED,100,hw_manual.csv,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
-hw,01D01049,10,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
-hw,01D01053,25,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
+hw,01D01049,10,_$E13,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,MATCHED,100,hw_manual.csv,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
+hw,01D01053,25,_$E12,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,MATCHED,100,hw_manual.csv,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
 hw,01D0106C,10,?__CreateCBaseUIIBaseUI_interface@@YAPAVIBaseInterface@@XZ,__CreateCBaseUIIBaseUI_interface,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,MATCHED,100,hw_manual.csv,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
 hw,01D01076,74,??0CBaseUI@@QAE@XZ,CBaseUI::CBaseUI,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,MATCHED,100,hw_manual.csv,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
 hw,01D010C0,38,??1CBaseUI@@UAE@XZ,CBaseUI::~CBaseUI,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,MATCHED,100,hw_manual.csv,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
@@ -23288,12 +23288,12 @@ hw,01D01E77,15,?SteamRefreshLogin@CEngineVGui@@UAE_NPBD_N@Z,CEngineVGui::SteamRe
 hw,01D01E86,15,?SteamProcessCall@CEngineVGui@@UAE_NPA_NPAUTSteamProgress@@PAUTSteamError@@@Z,CEngineVGui::SteamProcessCall,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN11CEngineVGui16SteamProcessCallEPbP14TSteamProgressP11TSteamError
 hw,01D01E95,58,?SetEngineVisible@CEngineVGui@@QAEX_N@Z,CEngineVGui::SetEngineVisible,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN11CEngineVGui16SetEngineVisibleEb
 hw,01D01ECF,83,?GetPanel@CEngineVGui@@UAEIW4VGUIPANEL@@@Z,CEngineVGui::GetPanel,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN11CEngineVGui8GetPanelE9VGUIPANEL
-hw,01D01F22,15,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
-hw,01D01F31,15,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
-hw,01D01F40,18,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
-hw,01D01F52,15,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
-hw,01D01F61,10,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
-hw,01D01F6B,25,,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,TODO,,,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
+hw,01D01F22,15,_$E18,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,MATCHED,100,hw_manual.csv,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
+hw,01D01F31,15,_$E15,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,MATCHED,100,hw_manual.csv,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
+hw,01D01F40,18,_$E17,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,MATCHED,100,hw_manual.csv,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
+hw,01D01F52,15,_$E16,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,MATCHED,100,hw_manual.csv,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
+hw,01D01F61,10,_$E21,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,MATCHED,100,hw_manual.csv,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
+hw,01D01F6B,25,_$E20,,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,MATCHED,100,hw_manual.csv,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
 hw,01D01F84,10,?__CreateCEngineVGuiIEngineVGui_interface@@YAPAVIBaseInterface@@XZ,__CreateCEngineVGuiIEngineVGui_interface,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,MATCHED,100,hw_manual.csv,"VC6 interface factory helper ($E) of VEngineVGui001, registered by 01D01F6B"
 hw,01D01F90,46,??_GCBaseUI@@UAEPAXI@Z,destructor',UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
 hw,01D01FC0,31,??0IBaseUI@@QAE@XZ,IBaseUI::IBaseUI,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
@@ -23332,20 +23332,20 @@ hw,01D02580,70,?RemoveAll@?$CUtlVector@PAD@@QAEXXZ,*>::RemoveAll,UNKNOWN,engine/
 hw,01D025D0,25,?Element@?$CUtlVector@PAD@@QAEAAPADH@Z,*>::Element,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
 hw,01D025F0,24,??A?$CUtlMemory@PAD@@QAEAAPADH@Z,*>::operator[],UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
 hw,01D02610,5,?Destruct@@YAXPAPAD@Z,Destruct,UNKNOWN,engine/vgui2/BaseUI_Interface.cpp,,,MATCHED,100,hw_manual.csv,inline or template function (COMDAT) emitted after the object
-hw,01D02620,15,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
-hw,01D0262F,15,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
-hw,01D0263E,18,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
-hw,01D02650,15,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
-hw,01D0265F,15,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
-hw,01D0266E,15,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
-hw,01D0267D,18,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
-hw,01D0268F,15,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
-hw,01D0269E,15,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
-hw,01D026AD,15,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
-hw,01D026BC,18,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
-hw,01D026CE,15,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
-hw,01D026DD,10,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
-hw,01D026E7,25,,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,TODO,,,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
+hw,01D02620,15,_$E7,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
+hw,01D0262F,15,_$E4,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
+hw,01D0263E,18,_$E6,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
+hw,01D02650,15,_$E5,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
+hw,01D0265F,15,_$E12,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
+hw,01D0266E,15,_$E9,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
+hw,01D0267D,18,_$E11,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
+hw,01D0268F,15,_$E10,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
+hw,01D0269E,15,_$E17,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
+hw,01D026AD,15,_$E14,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
+hw,01D026BC,18,_$E16,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
+hw,01D026CE,15,_$E15,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
+hw,01D026DD,10,_$E20,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
+hw,01D026E7,25,_$E19,,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
 hw,01D02700,10,?__CreateBaseUISurfaceISurface_interface@@YAPAVIBaseInterface@@XZ,__CreateBaseUISurfaceISurface_interface,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
 hw,01D0270A,10,?inputinternal@@YAPAVIInputInternal@vgui2@@XZ,inputinternal,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,"VC6 dynamic initializer ($E) of a file static (constructor, atexit destructor and interface registration helpers)"
 hw,01D02714,97,?GetVGUI2KeyCodeForBind@@YA?AW4KeyCode@vgui2@@PBD@Z,GetVGUI2KeyCodeForBind,UNKNOWN,engine/vgui2/BaseUISurface.cpp,,,MATCHED,100,hw_manual.csv,
@@ -23516,10 +23516,10 @@ hw,01D05C60,25,?IsExternallyAllocated@?$CUtlMemory@VCUtlSymbol@@@@QBE_NXZ,CUtlSy
 hw,01D05C80,226,?GetTextSize@EngineFont@@UAEXPBDAAH1@Z,EngineFont::GetTextSize,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN10EngineFont11GetTextSizeEPKcRiS2_
 hw,01D05D62,17,?getId@EngineFont@@UAEHXZ,EngineFont::getId,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,MATCHED,100,hw_manual.csv,linux: _ZN10EngineFont5getIdEv
 hw,01D05D73,17,?getPlat@EngineFont@@QAEPAVBaseFontPlat@@XZ,EngineFont::getPlat,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,MATCHED,100,hw_manual.csv,
-hw,01D05D84,15,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,
-hw,01D05D93,15,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,
-hw,01D05DA2,18,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,
-hw,01D05DB4,15,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,
+hw,01D05D84,15,_$E5,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01D05D93,15,_$E2,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01D05DA2,18,_$E4,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01D05DB4,15,_$E3,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01D05DC3,53,??0VFontData@@QAE@XZ,VFontData::VFontData,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01D05DF8,49,??1VFontData@@QAE@XZ,VFontData::~VFontData,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01D05E29,17,,,UNKNOWN,engine/vgui2/BaseUISurface_Font.cpp,,,TODO,,,
@@ -28258,12 +28258,12 @@ hw,01DE9324,474,_SV_Trace_Toss,,ENGINE,engine/sv_phys.c,,,MATCHED,100,hw_manual.
 hw,01DE9500,65,_PM_SV_PlaybackEventFull,PM_SV_PlaybackEventFull,ENGINE,engine/sv_pmove.c,,,MATCHED,100,linux_symbols:caller:1.0,
 hw,01DE9541,63,_PM_SV_PlaySound,PM_SV_PlaySound,ENGINE,engine/sv_pmove.c,,,MATCHED,100,,
 hw,01DE9580,153,_PM_SV_TraceTexture,PM_SV_TraceTexture,ENGINE,engine/sv_pmove.c,,,MATCHED,100,linux_symbols:caller:0.867,
-hw,01DE9620,15,,,ENGINE,engine/sv_remoteaccess.cpp,,,TODO,,,"_$E5 of our object (calls _$E2 and _$E4); bytes identical, but sv_steam3.cpp uses the same static _$E names and the COFF exporter refuses a duplicate name, so objdiff cannot pair it"
-hw,01DE962F,15,,,ENGINE,engine/sv_remoteaccess.cpp,,,TODO,,,"_$E2 of our object (constructs g_ServerRemoteAccess); bytes identical, but sv_steam3.cpp uses the same static _$E names and the COFF exporter refuses a duplicate name, so objdiff cannot pair it"
-hw,01DE963E,18,,,ENGINE,engine/sv_remoteaccess.cpp,,,TODO,,,"_$E4 of our object (atexit of _$E3); bytes identical, but sv_steam3.cpp uses the same static _$E names and the COFF exporter refuses a duplicate name, so objdiff cannot pair it"
-hw,01DE9650,15,,,ENGINE,engine/sv_remoteaccess.cpp,,,TODO,,,"_$E3 of our object (destroys g_ServerRemoteAccess); bytes identical, but sv_steam3.cpp uses the same static _$E names and the COFF exporter refuses a duplicate name, so objdiff cannot pair it"
-hw,01DE965F,10,,,ENGINE,engine/sv_remoteaccess.cpp,,,TODO,,,"_$E8 of our object (calls _$E7); bytes identical, but sv_steam3.cpp uses the same static _$E names and the COFF exporter refuses a duplicate name, so objdiff cannot pair it"
-hw,01DE9669,25,,,ENGINE,engine/sv_remoteaccess.cpp,,,TODO,,,"_$E7 of our object (constructs the GameServerData001 InterfaceReg); bytes identical, but sv_steam3.cpp uses the same static _$E names and the COFF exporter refuses a duplicate name, so objdiff cannot pair it"
+hw,01DE9620,15,_$E5,,ENGINE,engine/sv_remoteaccess.cpp,,,MATCHED,100,hw_manual.csv,_$E5 of our object (calls _$E2 and _$E4)
+hw,01DE962F,15,_$E2,,ENGINE,engine/sv_remoteaccess.cpp,,,MATCHED,100,hw_manual.csv,_$E2 of our object (constructs g_ServerRemoteAccess)
+hw,01DE963E,18,_$E4,,ENGINE,engine/sv_remoteaccess.cpp,,,MATCHED,100,hw_manual.csv,_$E4 of our object (atexit of _$E3)
+hw,01DE9650,15,_$E3,,ENGINE,engine/sv_remoteaccess.cpp,,,MATCHED,100,hw_manual.csv,_$E3 of our object (destroys g_ServerRemoteAccess)
+hw,01DE965F,10,_$E8,,ENGINE,engine/sv_remoteaccess.cpp,,,MATCHED,100,hw_manual.csv,_$E8 of our object (calls _$E7)
+hw,01DE9669,25,_$E7,,ENGINE,engine/sv_remoteaccess.cpp,,,MATCHED,100,hw_manual.csv,_$E7 of our object (constructs the GameServerData001 InterfaceReg)
 hw,01DE9682,10,?__CreateCServerRemoteAccessIGameServerData_interface@@YAPAVIBaseInterface@@XZ,__CreateCServerRemoteAccessIGameServerData_interface,UNKNOWN,engine/sv_remoteaccess.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01DE968C,66,??0CServerRemoteAccess@@QAE@XZ,CServerRemoteAccess::CServerRemoteAccess,UNKNOWN,engine/sv_remoteaccess.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01DE96CE,260,?WriteDataRequest@CServerRemoteAccess@@UAEXPBXH@Z,,ENGINE,engine/sv_remoteaccess.cpp,,,MATCHED,100,linux_symbols:caller:0.667,
@@ -28978,10 +28978,10 @@ hw,01DFF0E4,31,?createNewTextureID@EngineSurface@@UAEHXZ,EngineSurface::createNe
 hw,01DFF110,46,??_GEngineSurface@@UAEPAXI@Z,EngineSurface::`scalar deleting destructor',ENGINE,engine/vgui_EngineSurface.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01DFF140,19,??1IEngineSurface@@UAE@XZ,IEngineSurface::~IEngineSurface,ENGINE,engine/vgui_EngineSurface.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01DFF160,20,?VguiSurfaceTexturesLessFunc@@YA_NABVTexture@?%vgui_EngineSurfaceHW.cpp0@@0@Z,?VguiSurfaceTexturesLessFunc@@YA_NABVTexture@?%vgui_EngineSurfaceHW.cpp0@@0@Z,UNKNOWN,engine/vgui_EngineSurfaceHW.cpp,,,MATCHED,100,hw_manual.csv,
-hw,01DFF174,15,,,ENGINE,engine/vgui_EngineSurfaceHW.cpp,,,TODO,,,
-hw,01DFF183,27,,,ENGINE,engine/vgui_EngineSurfaceHW.cpp,,,TODO,,,
-hw,01DFF19E,18,,,ENGINE,engine/vgui_EngineSurfaceHW.cpp,,,TODO,,,
-hw,01DFF1B0,15,,,ENGINE,engine/vgui_EngineSurfaceHW.cpp,,,TODO,,,
+hw,01DFF174,15,_$E6,,ENGINE,engine/vgui_EngineSurfaceHW.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DFF183,27,_$E3,,ENGINE,engine/vgui_EngineSurfaceHW.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DFF19E,18,_$E5,,ENGINE,engine/vgui_EngineSurfaceHW.cpp,,,MATCHED,100,hw_manual.csv,
+hw,01DFF1B0,15,_$E4,,ENGINE,engine/vgui_EngineSurfaceHW.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01DFF1BF,49,?InterpTCoord@@YAMHHHMM@Z,InterpTCoord,UNKNOWN,engine/vgui_EngineSurfaceHW.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01DFF1F0,307,?ScissorRect_TCoords@@YA_NHHHHMMMMPAUtagRECT@@PAVTCoordRect@@@Z,ScissorRect_TCoords,UNKNOWN,engine/vgui_EngineSurfaceHW.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01DFF323,43,?ScissorRect@@YA_NHHHHPAUtagRECT@@@Z,ScissorRect,UNKNOWN,engine/vgui_EngineSurfaceHW.cpp,,,MATCHED,100,hw_manual.csv,
@@ -29098,8 +29098,8 @@ hw,01E02AA0,73,,vgui::Bitmap::Bitmap,LIB,,,,,,ghidra,
 hw,01E02AF0,64,,vgui::Bitmap::operator=,LIB,,,,,,ghidra,
 hw,01E02B30,37,,vgui::BitmapTGA::BitmapTGA,LIB,,,,,,ghidra,
 hw,01E02B60,28,,vgui::BitmapTGA::operator=,LIB,,,,,,ghidra,
-hw,01E02B80,10,,,UNKNOWN,engine/VGUI_EngineSurfaceWrap.cpp,,,TODO,,,VC6 dynamic initializer ($E) of a file static (the staticFontInfoVGUIDar constructor)
-hw,01E02B8A,15,,,UNKNOWN,engine/VGUI_EngineSurfaceWrap.cpp,,,TODO,,,VC6 dynamic initializer ($E) of a file static (the staticFontInfoVGUIDar constructor)
+hw,01E02B80,10,_$E26,,UNKNOWN,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,VC6 dynamic initializer ($E) of a file static (the staticFontInfoVGUIDar constructor)
+hw,01E02B8A,15,_$E25,,UNKNOWN,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,VC6 dynamic initializer ($E) of a file static (the staticFontInfoVGUIDar constructor)
 hw,01E02B99,1505,??0EngineSurfaceWrap@@QAE@PAVPanel@vgui@@PAVIEngineSurface@@@Z,EngineSurfaceWrap::EngineSurfaceWrap,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01E0317A,51,??1EngineSurfaceWrap@@QAE@XZ,EngineSurfaceWrap::~EngineSurfaceWrap,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01E031AD,697,?AppHandler@EngineSurfaceWrap@@UAEXPAXIIJ@Z,EngineSurfaceWrap::AppHandler,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,
@@ -30375,8 +30375,8 @@ hw,01E32682,15,?CurrTable@CUtlSymbol@@KAPAVCUtlSymbolTable@@XZ,CUtlSymbol::CurrT
 hw,01E32691,51,??0CUtlSymbol@@QAE@PBD@Z,CUtlSymbol::CUtlSymbol,ENGINE,public/utlsymbol.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01E326C4,40,?String@CUtlSymbol@@QBEPBDXZ,CUtlSymbol::String,ENGINE,public/utlsymbol.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01E326EC,59,??8CUtlSymbol@@QBE_NPBD@Z,CUtlSymbol::operator==,ENGINE,public/utlsymbol.cpp,,,MATCHED,100,hw_manual.csv,
-hw,01E32727,10,,,ENGINE,public/utlsymbol.cpp,,,TODO,,,"_$E3 of our object (dynamic initializer of g_LessCtx, calls 01E32731); bytes identical, but sv_steam3.cpp already gives _$E3 to 01DEC801 and the COFF exporter refuses a duplicate name, so objdiff cannot pair it"
-hw,01E32731,15,,,ENGINE,public/utlsymbol.cpp,,,TODO,,,"_$E2 of our object (constructs g_LessCtx); bytes identical, but sv_steam3.cpp already gives _$E2 to 01DEC813 and the COFF exporter refuses a duplicate name, so objdiff cannot pair it"
+hw,01E32727,10,_$E3,,ENGINE,public/utlsymbol.cpp,,,MATCHED,100,hw_manual.csv,"_$E3 of our object (dynamic initializer of g_LessCtx, calls 01E32731)"
+hw,01E32731,15,_$E2,,ENGINE,public/utlsymbol.cpp,,,MATCHED,100,hw_manual.csv,_$E2 of our object (constructs g_LessCtx)
 hw,01E32740,130,?SymLess@CUtlSymbolTable@@KA_NABI0@Z,CUtlSymbolTable::SymLess,ENGINE,public/utlsymbol.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01E327C2,130,?SymLessi@CUtlSymbolTable@@KA_NABI0@Z,CUtlSymbolTable::SymLessi,ENGINE,public/utlsymbol.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01E32844,84,??0CUtlSymbolTable@@QAE@HH_N@Z,CUtlSymbolTable::CUtlSymbolTable,ENGINE,public/utlsymbol.cpp,,,MATCHED,100,hw_manual.csv,
