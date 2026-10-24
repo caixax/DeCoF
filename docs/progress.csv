@@ -734,7 +734,7 @@ client,10016BA0,1848,_PM_WalkMove,,UNKNOWN,pm_shared/pm_shared.c,,,MATCHED,100,,
 client,100172E0,148,_PM_WaterJump,PM_WaterJump,HLSDK,pm_shared/pm_shared.c,,,MATCHED,100,refbytes:paranoia:pm_shared__pm_shared.obj:score6,
 client,10017380,1052,_PM_WaterMove,,UNKNOWN,pm_shared/pm_shared.c,,,MATCHED,100,,
 client,100177A0,27,?CountAmmo@WeaponsResource@@QAEHH@Z,WeaponsResource::CountAmmo,UNKNOWN,cl_dll/ammo.cpp,,,MATCHED,100,,
-client,100177C0,8615,?Draw@CHudAmmo@@UAEHM@Z,CHudAmmo::Draw,UNKNOWN,cl_dll/ammo.cpp,,,TODO,87.42,client_manual.csv,
+client,100177C0,8615,?Draw@CHudAmmo@@UAEHM@Z,CHudAmmo::Draw,UNKNOWN,cl_dll/ammo.cpp,,,TODO,87.39,client_manual.csv,"87.39%: retail keeps this in edi and pw in ebx (spilled to the dead flTime slot [ebp+8]) with a 0x4c frame, ours keeps this in ebx and the constant 1 in edi with a 0x40 frame, which changes every register below; retail also keeps each switch case's sprite rect pushes separate (ours merges them), and evaluates the DrawHudNumber x of the right dual weapon after GetMags_guess with cmove while ours evaluates it first with a branch; the iId >= 200 tests (cmp 0xc8) come from retail"
 client,10019A10,173,?DrawAmmoBar@@YAXPAUWEAPON@@HHHH@Z,DrawAmmoBar,UNKNOWN,cl_dll/ammo.cpp,,,MATCHED,100,,
 client,10019AC0,156,?DrawBar@@YAHHHHHM@Z,DrawBar,HLSDK,cl_dll/ammo.cpp,,,MATCHED,100,refbytes:paranoia:cl_dll__ammo.obj:score3,
 client,10019B60,988,?DrawWList@CHudAmmo@@QAEHM@Z,CHudAmmo::DrawWList,HLSDK,cl_dll/ammo.cpp,,,MATCHED,100,client_1.6a_ghidra_names.csv,

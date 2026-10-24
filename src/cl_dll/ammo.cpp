@@ -1565,7 +1565,7 @@ int CHudAmmo::Draw(float flTime)
 				gHUD.DrawHudNumber( xNumber, y, DHN_3DIGITS | DHN_DRAWZERO, GetMags_guess( 13 ), r, g, b );
 			}
 
-			if ( pw->iId > 199 )
+			if ( pw->iId >= 200 )
 			{
 				UnpackRGB(r,g,b, gHUD.m_iHUDColor);
 				ScaleColors(r, g, b, a );
@@ -1673,7 +1673,7 @@ int CHudAmmo::Draw(float flTime)
 				UnpackRGB(r,g,b, gHUD.m_iHUDColor);
 				ScaleColors(r, g, b, a );
 
-				if ( pw->iId > 199 )
+				if ( pw->iId >= 200 )
 					gHUD.DrawHudNumber( x, y, DHN_3DIGITS | DHN_DRAWZERO, pw->iClip, r, g, b );
 
 				float flGap = flCurrentKick_guess * 3;
