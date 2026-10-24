@@ -9873,20 +9873,20 @@ gameui,10050280,19,,,UNKNOWN,GameUI/OptionsSubAdvanced.cpp,,,TODO,,,
 gameui,100502A0,107,,,UNKNOWN,GameUI/OptionsSubAdvanced.cpp,,,TODO,,,
 gameui,10050310,120,,,UNKNOWN,GameUI/OptionsSubAdvanced.cpp,,,TODO,,,
 gameui,10050390,27,,,UNKNOWN,GameUI/OptionsSubAdvanced.cpp,,,TODO,,,
-gameui,100503B0,771,,COptionsSubAudio::COptionsSubAudio,ENGINE,GameUI/OptionsSubAudio.cpp,,,TODO,,linux_symbols:string:0.452,linux: _ZN16COptionsSubAudioC2EPN5vgui25PanelE
-gameui,100506B3,28,,,UNKNOWN,GameUI/OptionsSubAudio.cpp,,,TODO,,,linux: _ZN16COptionsSubAudioD1Ev
-gameui,100506CF,95,,,UNKNOWN,GameUI/OptionsSubAudio.cpp,,,TODO,,,linux: _ZN16COptionsSubAudio11OnResetDataEv
-gameui,1005072E,95,,COptionsSubAudio::OnApplyChanges,ENGINE,GameUI/OptionsSubAudio.cpp,,,TODO,,linux_symbols:caller:0.444,linux: _ZN16COptionsSubAudio14OnApplyChangesEv
-gameui,1005078D,75,,,UNKNOWN,GameUI/OptionsSubAudio.cpp,,,TODO,,,linux: _ZN16COptionsSubAudio17OnControlModifiedEv
-gameui,100507E0,46,,,UNKNOWN,GameUI/OptionsSubAudio.cpp,,,TODO,,,
-gameui,10050810,19,,,UNKNOWN,GameUI/OptionsSubAudio.cpp,,,TODO,,,
-gameui,10050830,102,,,UNKNOWN,GameUI/OptionsSubAudio.cpp,,,TODO,,,
-gameui,100508A0,64,,,UNKNOWN,GameUI/OptionsSubAudio.cpp,,,TODO,,,
-gameui,100508E0,10,,,UNKNOWN,GameUI/OptionsSubAudio.cpp,,,TODO,,,
-gameui,100508F0,10,,,UNKNOWN,GameUI/OptionsSubAudio.cpp,,,TODO,,,
-gameui,10050900,19,,,UNKNOWN,GameUI/OptionsSubAudio.cpp,,,TODO,,,
-gameui,10050920,107,,,UNKNOWN,GameUI/OptionsSubAudio.cpp,,,TODO,,,
-gameui,10050990,120,,,UNKNOWN,GameUI/OptionsSubAudio.cpp,,,TODO,,,
+gameui,100503B0,771,??0COptionsSubAudio@@QAE@PAVPanel@vgui2@@@Z,public: __thiscall COptionsSubAudio::COptionsSubAudio(class vgui2::Panel *),ENGINE,GameUI/OptionsSubAudio.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN16COptionsSubAudioC2EPN5vgui25PanelE
+gameui,100506B3,28,??1COptionsSubAudio@@UAE@XZ,public: virtual __thiscall COptionsSubAudio::~COptionsSubAudio(void),UNKNOWN,GameUI/OptionsSubAudio.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN16COptionsSubAudioD1Ev
+gameui,100506CF,95,?OnResetData@COptionsSubAudio@@UAEXXZ,public: virtual void __thiscall COptionsSubAudio::OnResetData(void),UNKNOWN,GameUI/OptionsSubAudio.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN16COptionsSubAudio11OnResetDataEv
+gameui,1005072E,95,?OnApplyChanges@COptionsSubAudio@@UAEXXZ,public: virtual void __thiscall COptionsSubAudio::OnApplyChanges(void),ENGINE,GameUI/OptionsSubAudio.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN16COptionsSubAudio14OnApplyChangesEv
+gameui,1005078D,75,?OnControlModified@COptionsSubAudio@@EAEXXZ,private: virtual void __thiscall COptionsSubAudio::OnControlModified(void),UNKNOWN,GameUI/OptionsSubAudio.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN16COptionsSubAudio17OnControlModifiedEv
+gameui,100507E0,46,??_GCOptionsSubAudio@@UAEPAXI@Z,public: virtual void * __thiscall COptionsSubAudio::`scalar deleting destructor'(unsigned int),UNKNOWN,GameUI/OptionsSubAudio.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10050810,19,??0COptionsSubAudio_RegisterMap@COptionsSubAudio@@QAE@XZ,public: __thiscall COptionsSubAudio::COptionsSubAudio_RegisterMap::COptionsSubAudio_RegisterMap(void),UNKNOWN,GameUI/OptionsSubAudio.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10050830,102,?ChainToMap@COptionsSubAudio@@SAXXZ,public: static void __cdecl COptionsSubAudio::ChainToMap(void),UNKNOWN,GameUI/OptionsSubAudio.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100508A0,64,?GetMessageMap@COptionsSubAudio@@UAEPAUPanelMessageMap@vgui2@@XZ,public: virtual struct vgui2::PanelMessageMap * __thiscall COptionsSubAudio::GetMessageMap(void),UNKNOWN,GameUI/OptionsSubAudio.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100508E0,10,?GetPanelClassName@COptionsSubAudio@@SAPBDXZ,public: static char const * __cdecl COptionsSubAudio::GetPanelClassName(void),UNKNOWN,GameUI/OptionsSubAudio.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100508F0,10,?GetPanelBaseClassName@COptionsSubAudio@@SAPBDXZ,public: static char const * __cdecl COptionsSubAudio::GetPanelBaseClassName(void),UNKNOWN,GameUI/OptionsSubAudio.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10050900,19,??0PanelMessageFunc_OnControlModified@COptionsSubAudio@@QAE@XZ,public: __thiscall COptionsSubAudio::PanelMessageFunc_OnControlModified::PanelMessageFunc_OnControlModified(void),UNKNOWN,GameUI/OptionsSubAudio.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10050920,107,?InitVar@PanelMessageFunc_OnControlModified@COptionsSubAudio@@SAXXZ,public: static void __cdecl COptionsSubAudio::PanelMessageFunc_OnControlModified::InitVar(void),UNKNOWN,GameUI/OptionsSubAudio.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10050990,120,?AddToMap@COptionsSubAudio@@SAXPBDP8Panel@vgui2@@AEXXZHH0H0@Z,"public: static void __cdecl COptionsSubAudio::AddToMap(char const *,void (__thiscall vgui2::Panel::*)(void),int,int,char const *,int,char const *)",UNKNOWN,GameUI/OptionsSubAudio.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,10050A10,975,,,UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,TODO,,,
 gameui,10050F87,345,,COptionsSubKeyboard::COptionsSubKeyboard,ENGINE,GameUI/OptionsSubKeyboard.cpp,,,TODO,,linux_symbols:string:0.408,
 gameui,100510E0,50,,,UNKNOWN,GameUI/OptionsSubKeyboard.cpp,,,TODO,,,

@@ -4878,3 +4878,17 @@ va,name,kind,evidence
 10023130,??_GCBitmapButton@@UAEPAXI@Z,func,GameUI/BitmapButton.cpp: same position and size as in our compiled object
 10023160,??1CBitmapButton@@UAE@XZ,func,"GameUI/BitmapButton.cpp: compiler-generated destructor COMDAT (no vptr store), same position and size as in our compiled object"
 10023180,?DrawFocusBorder@CBitmapButton@@UAEXHHHH@Z,func,"GameUI/BitmapButton.cpp: empty inline DrawFocusBorder COMDAT (header line 34 in the Linux DWARF), same position and size as in our compiled object"
+100503B0,??0COptionsSubAudio@@QAE@PAVPanel@vgui2@@@Z,func,GameUI/OptionsSubAudio.cpp: same position and size as in our compiled object; linux: _ZN16COptionsSubAudioC2EPN5vgui25PanelE
+100506B3,??1COptionsSubAudio@@UAE@XZ,func,GameUI/OptionsSubAudio.cpp: same position and size as in our compiled object; linux: _ZN16COptionsSubAudioD1Ev
+100506CF,?OnResetData@COptionsSubAudio@@UAEXXZ,func,GameUI/OptionsSubAudio.cpp: same position and size as in our compiled object; linux: _ZN16COptionsSubAudio11OnResetDataEv
+1005072E,?OnApplyChanges@COptionsSubAudio@@UAEXXZ,func,GameUI/OptionsSubAudio.cpp: same position and size as in our compiled object; linux: _ZN16COptionsSubAudio14OnApplyChangesEv
+1005078D,?OnControlModified@COptionsSubAudio@@EAEXXZ,func,GameUI/OptionsSubAudio.cpp: same position and size as in our compiled object; linux: _ZN16COptionsSubAudio17OnControlModifiedEv
+100507E0,??_GCOptionsSubAudio@@UAEPAXI@Z,func,GameUI/OptionsSubAudio.cpp: same position and size as in our compiled object
+10050810,??0COptionsSubAudio_RegisterMap@COptionsSubAudio@@QAE@XZ,func,GameUI/OptionsSubAudio.cpp: same position and size as in our compiled object
+10050830,?ChainToMap@COptionsSubAudio@@SAXXZ,func,GameUI/OptionsSubAudio.cpp: same position and size as in our compiled object
+100508A0,?GetMessageMap@COptionsSubAudio@@UAEPAUPanelMessageMap@vgui2@@XZ,func,GameUI/OptionsSubAudio.cpp: same position and size as in our compiled object
+100508E0,?GetPanelClassName@COptionsSubAudio@@SAPBDXZ,func,GameUI/OptionsSubAudio.cpp: same position and size as in our compiled object
+100508F0,?GetPanelBaseClassName@COptionsSubAudio@@SAPBDXZ,func,GameUI/OptionsSubAudio.cpp: same position and size as in our compiled object
+10050900,??0PanelMessageFunc_OnControlModified@COptionsSubAudio@@QAE@XZ,func,GameUI/OptionsSubAudio.cpp: same position and size as in our compiled object
+10050920,?InitVar@PanelMessageFunc_OnControlModified@COptionsSubAudio@@SAXXZ,func,GameUI/OptionsSubAudio.cpp: same position and size as in our compiled object
+10050990,?AddToMap@COptionsSubAudio@@SAXPBDP8Panel@vgui2@@AEXXZHH0H0@Z,func,GameUI/OptionsSubAudio.cpp: same position and size as in our compiled object

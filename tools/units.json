@@ -4043,6 +4043,11 @@
           "name": "GameUI/BitmapButton",
           "source": "src/gameui/BitmapButton.cpp",
           "functions_file": "tools/units/gameui_GameUI_BitmapButton.txt"
+        },
+        {
+          "name": "GameUI/OptionsSubAudio",
+          "source": "src/gameui/OptionsSubAudio.cpp",
+          "functions_file": "tools/units/gameui_GameUI_OptionsSubAudio.txt"
         }
       ]
     }
