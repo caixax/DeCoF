@@ -12775,91 +12775,91 @@ gameui,100A90E0,13,,,UNKNOWN,vgui2/controls/ImageList.cpp,,,TODO,,,linux: _ZN10B
 gameui,100A90F0,46,,,UNKNOWN,vgui2/controls/ImageList.cpp,,,TODO,,,
 gameui,100A9120,19,,,UNKNOWN,vgui2/controls/ImageList.cpp,,,TODO,,,
 gameui,100A9140,17,,,UNKNOWN,vgui2/controls/ImageList.cpp,,,TODO,,,
-gameui,100A9160,239,,,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,TODO,,,
-gameui,100A924F,268,,,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,TODO,,,
-gameui,100A935B,53,,,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,TODO,,,
-gameui,100A9390,352,,,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,TODO,,,linux: _ZN5vgui213PropertySheet7AddPageEPNS_5PanelEPKc
-gameui,100A94F0,59,,,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,TODO,,,linux: _ZN5vgui213PropertySheet13SetActivePageEPNS_5PanelE
-gameui,100A952B,43,,,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,TODO,,,linux: _ZN5vgui213PropertySheet11SetTabWidthEi
-gameui,100A9556,161,,,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,TODO,,,linux: _ZN5vgui213PropertySheet12ResetAllDataEv
-gameui,100A95F7,161,,,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,TODO,,,linux: _ZN5vgui213PropertySheet12ApplyChangesEv
-gameui,100A9698,20,,,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,TODO,,,linux: _ZN5vgui213PropertySheet13GetActivePageEv
-gameui,100A96AC,20,,,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,TODO,,,linux: _ZN5vgui213PropertySheet12GetActiveTabEv
-gameui,100A96C0,22,,,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,TODO,,,linux: _ZN5vgui213PropertySheet11GetNumPagesEv
-gameui,100A96D6,59,,,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,TODO,,,linux: _ZN5vgui213PropertySheet17GetActiveTabTitleEPci
-gameui,100A9711,89,,,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,TODO,,,linux: _ZN5vgui213PropertySheet11GetTabTitleEiPci
-gameui,100A976A,83,,,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,TODO,,,linux: _ZN5vgui213PropertySheet16GetActivePageNumEv
-gameui,100A97BD,191,,,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,TODO,,,linux: _ZN5vgui213PropertySheet12RequestFocusEi
-gameui,100A987C,218,,,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,TODO,,,linux: _ZN5vgui213PropertySheet16RequestFocusPrevEj
-gameui,100A9956,117,,,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,TODO,,,linux: _ZN5vgui213PropertySheet16RequestFocusNextEj
-gameui,100A99CB,662,,,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,TODO,,,linux: _ZN5vgui213PropertySheet13PerformLayoutEv
-gameui,100A9C61,97,,,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,TODO,,,linux: _ZN5vgui213PropertySheet12OnTabPressedEPNS_5PanelE
-gameui,100A9CC2,54,,,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,TODO,,,linux: _ZN5vgui213PropertySheet7GetPageEi
-gameui,100A9CF8,33,,,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,TODO,,,linux: _ZN5vgui213PropertySheet11DisablePageEPKc
-gameui,100A9D19,33,,,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,TODO,,,linux: _ZN5vgui213PropertySheet10EnablePageEPKc
-gameui,100A9D3A,225,,,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,TODO,,,linux: _ZN5vgui213PropertySheet9EnDisPageEPKcb
-gameui,100A9E1B,262,,,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,TODO,,,linux: _ZN5vgui213PropertySheet10DeletePageEPNS_5PanelE
-gameui,100A9F21,1097,,vgui2::PropertySheet::ChangeActiveTab,ENGINE,vgui2/controls/PropertySheet.cpp,,,TODO,,linux_symbols:string:0.75,linux: _ZN5vgui213PropertySheet15ChangeActiveTabEi
-gameui,100AA36A,126,,,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,TODO,,,linux: _ZN5vgui213PropertySheet9HasHotkeyEw
-gameui,100AA3E8,75,,,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,TODO,,,linux: _ZN5vgui213PropertySheet17OnOpenContextMenuEv
-gameui,100AA433,105,,,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,TODO,,,linux: _ZN5vgui213PropertySheet14OnKeyCodeTypedENS_7KeyCodeE
-gameui,100AA49C,153,,,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,TODO,,,linux: _ZN5vgui213PropertySheet13OnTextChangedEPNS_5PanelEPKw
-gameui,100AA535,119,,,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,TODO,,,linux: _ZN5vgui213PropertySheet9OnCommandEPKc
-gameui,100AA5AC,75,,,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,TODO,,,linux: _ZN5vgui213PropertySheet19OnApplyButtonEnableEv
-gameui,100AA5F7,138,,,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,TODO,,,linux: _ZN5vgui213PropertySheet25OnCurrentDefaultButtonSetEPNS_5PanelE
-gameui,100AA681,138,,,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,TODO,,,linux: _ZN5vgui213PropertySheet18OnDefaultButtonSetEPNS_5PanelE
-gameui,100AA70B,110,,,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,TODO,,,linux: _ZN5vgui213PropertySheet19OnFindDefaultButtonEv
-gameui,100AA779,318,,,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,TODO,,,
-gameui,100AA8C0,46,,,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,TODO,,,
-gameui,100AA8F0,153,,,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,TODO,,,
-gameui,100AA990,227,,vgui2::PageTab::ApplySchemeSettings,ENGINE,vgui2/controls/PropertySheet.cpp,,,TODO,,linux_symbols:string:0.833,
-gameui,100AAA80,21,,,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,TODO,,,
-gameui,100AAAA0,98,,vgui2::PageTab::GetBorder,ENGINE,vgui2/controls/PropertySheet.cpp,,,TODO,,linux_symbols:string:0.75,
-gameui,100AAB10,64,,,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,TODO,,,
-gameui,100AAB50,54,,,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,TODO,,,
-gameui,100AAB90,13,,,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,TODO,,,
-gameui,100AABA0,259,,,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,TODO,,,
-gameui,100AACB0,86,,,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,TODO,,,
-gameui,100AAD10,46,,,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,TODO,,,
-gameui,100AAD40,28,,,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,TODO,,,
-gameui,100AAD60,19,,,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,TODO,,,
-gameui,100AAD80,102,,,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,TODO,,,
-gameui,100AADF0,64,,,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,TODO,,,
-gameui,100AAE30,10,,,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,TODO,,,
-gameui,100AAE40,10,,,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,TODO,,,
-gameui,100AAE50,19,,,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,TODO,,,
-gameui,100AAE70,110,,,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,TODO,,,
-gameui,100AAEE0,120,,,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,TODO,,,
-gameui,100AAF60,19,,,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,TODO,,,
-gameui,100AAF80,113,,,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,TODO,,,
-gameui,100AB000,19,,,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,TODO,,,
-gameui,100AB020,107,,,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,TODO,,,
-gameui,100AB090,19,,,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,TODO,,,
-gameui,100AB0B0,107,,,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,TODO,,,
-gameui,100AB120,19,,,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,TODO,,,
-gameui,100AB140,110,,,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,TODO,,,
-gameui,100AB1B0,19,,,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,TODO,,,
-gameui,100AB1D0,110,,,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,TODO,,,
-gameui,100AB240,43,,,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,TODO,,,
-gameui,100AB270,19,,,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,TODO,,,
-gameui,100AB290,107,,,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,TODO,,,
-gameui,100AB300,34,,,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,TODO,,,
-gameui,100AB330,16,,,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,TODO,,,
-gameui,100AB340,68,,,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,TODO,,,
-gameui,100AB390,70,,,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,TODO,,,
-gameui,100AB3E0,35,,,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,TODO,,,
-gameui,100AB410,105,,,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,TODO,,,
-gameui,100AB480,76,,,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,TODO,,,
-gameui,100AB4D0,45,,,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,TODO,,,
-gameui,100AB500,43,,,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,TODO,,,
-gameui,100AB530,34,,,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,TODO,,,
-gameui,100AB560,16,,,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,TODO,,,
-gameui,100AB570,68,,,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,TODO,,,
-gameui,100AB5C0,105,,,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,TODO,,,
-gameui,100AB630,76,,,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,TODO,,,
-gameui,100AB680,45,,,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,TODO,,,
-gameui,100AB6B0,221,,,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,TODO,,,
-gameui,100AB790,221,,,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,TODO,,,
+gameui,100A9160,239,??0PropertySheet@vgui2@@QAE@PAVPanel@1@PBD@Z,vgui2::PropertySheet::PropertySheet,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A924F,268,??0PropertySheet@vgui2@@QAE@PAVPanel@1@PBDPAVComboBox@1@@Z,vgui2::PropertySheet::PropertySheet,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A935B,53,??1PropertySheet@vgui2@@UAE@XZ,vgui2::PropertySheet::~PropertySheet,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100A9390,352,?AddPage@PropertySheet@vgui2@@UAEXPAVPanel@2@PBD@Z,vgui2::PropertySheet::AddPage,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui213PropertySheet7AddPageEPNS_5PanelEPKc
+gameui,100A94F0,59,?SetActivePage@PropertySheet@vgui2@@UAEXPAVPanel@2@@Z,vgui2::PropertySheet::SetActivePage,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui213PropertySheet13SetActivePageEPNS_5PanelE
+gameui,100A952B,43,?SetTabWidth@PropertySheet@vgui2@@UAEXH@Z,vgui2::PropertySheet::SetTabWidth,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui213PropertySheet11SetTabWidthEi
+gameui,100A9556,161,?ResetAllData@PropertySheet@vgui2@@UAEXXZ,vgui2::PropertySheet::ResetAllData,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui213PropertySheet12ResetAllDataEv
+gameui,100A95F7,161,?ApplyChanges@PropertySheet@vgui2@@UAEXXZ,vgui2::PropertySheet::ApplyChanges,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui213PropertySheet12ApplyChangesEv
+gameui,100A9698,20,?GetActivePage@PropertySheet@vgui2@@UAEPAVPanel@2@XZ,vgui2::PropertySheet::GetActivePage,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui213PropertySheet13GetActivePageEv
+gameui,100A96AC,20,?GetActiveTab@PropertySheet@vgui2@@UAEPAVPanel@2@XZ,vgui2::PropertySheet::GetActiveTab,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui213PropertySheet12GetActiveTabEv
+gameui,100A96C0,22,?GetNumPages@PropertySheet@vgui2@@UAEHXZ,vgui2::PropertySheet::GetNumPages,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui213PropertySheet11GetNumPagesEv
+gameui,100A96D6,59,?GetActiveTabTitle@PropertySheet@vgui2@@UAEXPADH@Z,vgui2::PropertySheet::GetActiveTabTitle,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui213PropertySheet17GetActiveTabTitleEPci
+gameui,100A9711,89,?GetTabTitle@PropertySheet@vgui2@@UAE_NHPADH@Z,vgui2::PropertySheet::GetTabTitle,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui213PropertySheet11GetTabTitleEiPci
+gameui,100A976A,83,?GetActivePageNum@PropertySheet@vgui2@@UAEHXZ,vgui2::PropertySheet::GetActivePageNum,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui213PropertySheet16GetActivePageNumEv
+gameui,100A97BD,191,?RequestFocus@PropertySheet@vgui2@@UAEXH@Z,vgui2::PropertySheet::RequestFocus,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui213PropertySheet12RequestFocusEi
+gameui,100A987C,218,?RequestFocusPrev@PropertySheet@vgui2@@UAE_NI@Z,vgui2::PropertySheet::RequestFocusPrev,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui213PropertySheet16RequestFocusPrevEj
+gameui,100A9956,117,?RequestFocusNext@PropertySheet@vgui2@@UAE_NI@Z,vgui2::PropertySheet::RequestFocusNext,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui213PropertySheet16RequestFocusNextEj
+gameui,100A99CB,662,?PerformLayout@PropertySheet@vgui2@@MAEXXZ,vgui2::PropertySheet::PerformLayout,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui213PropertySheet13PerformLayoutEv
+gameui,100A9C61,97,?OnTabPressed@PropertySheet@vgui2@@MAEXPAVPanel@2@@Z,vgui2::PropertySheet::OnTabPressed,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui213PropertySheet12OnTabPressedEPNS_5PanelE
+gameui,100A9CC2,54,?GetPage@PropertySheet@vgui2@@UAEPAVPanel@2@H@Z,vgui2::PropertySheet::GetPage,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui213PropertySheet7GetPageEi
+gameui,100A9CF8,33,?DisablePage@PropertySheet@vgui2@@UAEXPBD@Z,vgui2::PropertySheet::DisablePage,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui213PropertySheet11DisablePageEPKc
+gameui,100A9D19,33,?EnablePage@PropertySheet@vgui2@@UAEXPBD@Z,vgui2::PropertySheet::EnablePage,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui213PropertySheet10EnablePageEPKc
+gameui,100A9D3A,225,?EnDisPage@PropertySheet@vgui2@@EAEXPBD_N@Z,vgui2::PropertySheet::EnDisPage,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui213PropertySheet9EnDisPageEPKcb
+gameui,100A9E1B,262,?DeletePage@PropertySheet@vgui2@@UAEXPAVPanel@2@@Z,vgui2::PropertySheet::DeletePage,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui213PropertySheet10DeletePageEPNS_5PanelE
+gameui,100A9F21,1097,?ChangeActiveTab@PropertySheet@vgui2@@MAEXH@Z,vgui2::PropertySheet::ChangeActiveTab,ENGINE,vgui2/controls/PropertySheet.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui213PropertySheet15ChangeActiveTabEi
+gameui,100AA36A,126,?HasHotkey@PropertySheet@vgui2@@MAEPAVPanel@2@G@Z,vgui2::PropertySheet::HasHotkey,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui213PropertySheet9HasHotkeyEw
+gameui,100AA3E8,75,?OnOpenContextMenu@PropertySheet@vgui2@@MAEXXZ,vgui2::PropertySheet::OnOpenContextMenu,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui213PropertySheet17OnOpenContextMenuEv
+gameui,100AA433,105,?OnKeyCodeTyped@PropertySheet@vgui2@@MAEXW4KeyCode@2@@Z,vgui2::PropertySheet::OnKeyCodeTyped,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui213PropertySheet14OnKeyCodeTypedENS_7KeyCodeE
+gameui,100AA49C,153,?OnTextChanged@PropertySheet@vgui2@@MAEXPAVPanel@2@PBG@Z,vgui2::PropertySheet::OnTextChanged,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui213PropertySheet13OnTextChangedEPNS_5PanelEPKw
+gameui,100AA535,119,?OnCommand@PropertySheet@vgui2@@MAEXPBD@Z,vgui2::PropertySheet::OnCommand,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui213PropertySheet9OnCommandEPKc
+gameui,100AA5AC,75,?OnApplyButtonEnable@PropertySheet@vgui2@@MAEXXZ,vgui2::PropertySheet::OnApplyButtonEnable,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui213PropertySheet19OnApplyButtonEnableEv
+gameui,100AA5F7,138,?OnCurrentDefaultButtonSet@PropertySheet@vgui2@@MAEXPAVPanel@2@@Z,vgui2::PropertySheet::OnCurrentDefaultButtonSet,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui213PropertySheet25OnCurrentDefaultButtonSetEPNS_5PanelE
+gameui,100AA681,138,?OnDefaultButtonSet@PropertySheet@vgui2@@MAEXPAVPanel@2@@Z,vgui2::PropertySheet::OnDefaultButtonSet,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui213PropertySheet18OnDefaultButtonSetEPNS_5PanelE
+gameui,100AA70B,110,?OnFindDefaultButton@PropertySheet@vgui2@@MAEXXZ,vgui2::PropertySheet::OnFindDefaultButton,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui213PropertySheet19OnFindDefaultButtonEv
+gameui,100AA779,318,?RemoveAllPages@PropertySheet@vgui2@@QAEXXZ,vgui2::PropertySheet::RemoveAllPages,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100AA8C0,46,??_GPropertySheet@vgui2@@UAEPAXI@Z,destructor',UNKNOWN,vgui2/controls/PropertySheet.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100AA8F0,153,??0PageTab@vgui2@@QAE@PAVPanel@1@PBD1H@Z,vgui2::PageTab::PageTab,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100AA990,227,?ApplySchemeSettings@PageTab@vgui2@@UAEXPAVIScheme@2@@Z,vgui2::PageTab::ApplySchemeSettings,ENGINE,vgui2/controls/PropertySheet.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100AAA80,21,?max_guess@@YAHHH@Z,max_guess,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100AAAA0,98,?GetBorder@PageTab@vgui2@@UAEPAVIBorder@2@_N000@Z,vgui2::PageTab::GetBorder,ENGINE,vgui2/controls/PropertySheet.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100AAB10,64,?GetButtonFgColor@PageTab@vgui2@@UAE?AVColor@@XZ,vgui2::PageTab::GetButtonFgColor,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100AAB50,54,?SetActive@PageTab@vgui2@@UAEX_N@Z,vgui2::PageTab::SetActive,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100AAB90,13,?CanBeDefaultButton@PageTab@vgui2@@UAE_NXZ,vgui2::PageTab::CanBeDefaultButton,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100AABA0,259,?OnMousePressed@PageTab@vgui2@@UAEXW4MouseCode@2@@Z,vgui2::PageTab::OnMousePressed,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100AACB0,86,?OnMouseReleased@PageTab@vgui2@@UAEXW4MouseCode@2@@Z,vgui2::PageTab::OnMouseReleased,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100AAD10,46,??_GPageTab@vgui2@@UAEPAXI@Z,destructor',UNKNOWN,vgui2/controls/PropertySheet.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100AAD40,28,??1PageTab@vgui2@@UAE@XZ,vgui2::PageTab::~PageTab,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100AAD60,19,??0PropertySheet_RegisterMap@PropertySheet@vgui2@@QAE@XZ,vgui2::PropertySheet::PropertySheet_RegisterMap::PropertySheet_RegisterMap,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100AAD80,102,?ChainToMap@PropertySheet@vgui2@@SAXXZ,vgui2::PropertySheet::ChainToMap,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100AADF0,64,?GetMessageMap@PropertySheet@vgui2@@UAEPAUPanelMessageMap@2@XZ,vgui2::PropertySheet::GetMessageMap,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100AAE30,10,?GetPanelClassName@PropertySheet@vgui2@@SAPBDXZ,vgui2::PropertySheet::GetPanelClassName,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100AAE40,10,?GetPanelBaseClassName@PropertySheet@vgui2@@SAPBDXZ,vgui2::PropertySheet::GetPanelBaseClassName,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100AAE50,19,??0PanelMessageFunc_OnTabPressed@PropertySheet@vgui2@@QAE@XZ,vgui2::PropertySheet::PanelMessageFunc_OnTabPressed::PanelMessageFunc_OnTabPressed,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100AAE70,110,?InitVar@PanelMessageFunc_OnTabPressed@PropertySheet@vgui2@@SAXXZ,vgui2::PropertySheet::PanelMessageFunc_OnTabPressed::InitVar,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100AAEE0,120,?AddToMap@PropertySheet@vgui2@@SAXPBDP8Panel@2@AEXXZHH0H0@Z,vgui2::PropertySheet::AddToMap,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100AAF60,19,??0PanelMessageFunc_OnTextChanged@PropertySheet@vgui2@@QAE@XZ,vgui2::PropertySheet::PanelMessageFunc_OnTextChanged::PanelMessageFunc_OnTextChanged,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100AAF80,113,?InitVar@PanelMessageFunc_OnTextChanged@PropertySheet@vgui2@@SAXXZ,vgui2::PropertySheet::PanelMessageFunc_OnTextChanged::InitVar,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100AB000,19,??0PanelMessageFunc_OnOpenContextMenu@PropertySheet@vgui2@@QAE@XZ,vgui2::PropertySheet::PanelMessageFunc_OnOpenContextMenu::PanelMessageFunc_OnOpenContextMenu,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100AB020,107,?InitVar@PanelMessageFunc_OnOpenContextMenu@PropertySheet@vgui2@@SAXXZ,vgui2::PropertySheet::PanelMessageFunc_OnOpenContextMenu::InitVar,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100AB090,19,??0PanelMessageFunc_OnApplyButtonEnable@PropertySheet@vgui2@@QAE@XZ,vgui2::PropertySheet::PanelMessageFunc_OnApplyButtonEnable::PanelMessageFunc_OnApplyButtonEnable,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100AB0B0,107,?InitVar@PanelMessageFunc_OnApplyButtonEnable@PropertySheet@vgui2@@SAXXZ,vgui2::PropertySheet::PanelMessageFunc_OnApplyButtonEnable::InitVar,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100AB120,19,??0PanelMessageFunc_OnDefaultButtonSet@PropertySheet@vgui2@@QAE@XZ,vgui2::PropertySheet::PanelMessageFunc_OnDefaultButtonSet::PanelMessageFunc_OnDefaultButtonSet,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100AB140,110,?InitVar@PanelMessageFunc_OnDefaultButtonSet@PropertySheet@vgui2@@SAXXZ,vgui2::PropertySheet::PanelMessageFunc_OnDefaultButtonSet::InitVar,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100AB1B0,19,??0PanelMessageFunc_OnCurrentDefaultButtonSet@PropertySheet@vgui2@@QAE@XZ,vgui2::PropertySheet::PanelMessageFunc_OnCurrentDefaultButtonSet::PanelMessageFunc_OnCurrentDefaultButtonSet,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100AB1D0,110,?InitVar@PanelMessageFunc_OnCurrentDefaultButtonSet@PropertySheet@vgui2@@SAXXZ,vgui2::PropertySheet::PanelMessageFunc_OnCurrentDefaultButtonSet::InitVar,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100AB240,43,??0?$Dar@PAVPanel@vgui2@@@vgui2@@QAE@XZ,*>,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100AB270,19,??0PanelMessageFunc_OnFindDefaultButton@PropertySheet@vgui2@@QAE@XZ,vgui2::PropertySheet::PanelMessageFunc_OnFindDefaultButton::PanelMessageFunc_OnFindDefaultButton,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100AB290,107,?InitVar@PanelMessageFunc_OnFindDefaultButton@PropertySheet@vgui2@@SAXXZ,vgui2::PropertySheet::PanelMessageFunc_OnFindDefaultButton::InitVar,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100AB300,34,??1?$Dar@PAVPanel@vgui2@@@vgui2@@QAE@XZ,*>,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100AB330,16,?GetCount@?$Dar@PAVPanel@vgui2@@@vgui2@@QAEHXZ,*>::GetCount,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100AB340,68,?AddElement@?$Dar@PAVPanel@vgui2@@@vgui2@@QAEHPAVPanel@2@@Z,*>::AddElement,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100AB390,70,?FindElement@?$Dar@PAVPanel@vgui2@@@vgui2@@QAEHPAVPanel@2@@Z,*>::FindElement,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100AB3E0,35,?HasElement@?$Dar@PAVPanel@vgui2@@@vgui2@@QAE_NPAVPanel@2@@Z,*>::HasElement,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100AB410,105,?RemoveElementAt@?$Dar@PAVPanel@vgui2@@@vgui2@@QAEXH@Z,*>::RemoveElementAt,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100AB480,76,?RemoveElement@?$Dar@PAVPanel@vgui2@@@vgui2@@QAEXPAVPanel@2@@Z,*>::RemoveElement,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100AB4D0,45,??A?$Dar@PAVPanel@vgui2@@@vgui2@@QAEPAVPanel@1@H@Z,*>::operator[],UNKNOWN,vgui2/controls/PropertySheet.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100AB500,43,??0?$Dar@PAVPageTab@vgui2@@@vgui2@@QAE@XZ,*>,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100AB530,34,??1?$Dar@PAVPageTab@vgui2@@@vgui2@@QAE@XZ,*>,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100AB560,16,?GetCount@?$Dar@PAVPageTab@vgui2@@@vgui2@@QAEHXZ,*>::GetCount,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100AB570,68,?AddElement@?$Dar@PAVPageTab@vgui2@@@vgui2@@QAEHPAVPageTab@2@@Z,*>::AddElement,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100AB5C0,105,?RemoveElementAt@?$Dar@PAVPageTab@vgui2@@@vgui2@@QAEXH@Z,*>::RemoveElementAt,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100AB630,76,?RemoveElement@?$Dar@PAVPageTab@vgui2@@@vgui2@@QAEXPAVPageTab@2@@Z,*>::RemoveElement,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100AB680,45,??A?$Dar@PAVPageTab@vgui2@@@vgui2@@QAEPAVPageTab@1@H@Z,*>::operator[],UNKNOWN,vgui2/controls/PropertySheet.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100AB6B0,221,?EnsureCapacity@?$Dar@PAVPanel@vgui2@@@vgui2@@QAEXH@Z,*>::EnsureCapacity,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100AB790,221,?EnsureCapacity@?$Dar@PAVPageTab@vgui2@@@vgui2@@QAEXH@Z,*>::EnsureCapacity,UNKNOWN,vgui2/controls/PropertySheet.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,100AB8B0,523,?ParseFile@@YAPBDPBDPADPA_NPAUcharacterset_s@@@Z,"char const * __cdecl ParseFile(char const *,char *,bool *,struct characterset_s *)",UNKNOWN,public/filesystem_helpers.cpp,,,TODO,,gameui_manual.csv,
 gameui,100ABABB,59,?InitializeCharacterSets@@YAXXZ,void __cdecl InitializeCharacterSets(void),UNKNOWN,public/filesystem_helpers.cpp,,,TODO,,gameui_manual.csv,
 gameui,100ABAF6,27,?ParseFile@@YAPADPAD0PA_N@Z,"char * __cdecl ParseFile(char *,char *,bool *)",UNKNOWN,public/filesystem_helpers.cpp,,,TODO,,gameui_manual.csv,

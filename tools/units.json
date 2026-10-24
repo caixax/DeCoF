@@ -3654,6 +3654,11 @@
           "functions_file": "tools/units/gameui_vgui2_controls_TestScriptController.txt"
         },
         {
+          "name": "vgui2/controls/PropertySheet",
+          "source": "src/vgui2/controls/PropertySheet.cpp",
+          "functions_file": "tools/units/gameui_vgui2_controls_PropertySheet.txt"
+        },
+        {
           "name": "vgui2/controls/ProgressBar",
           "source": "src/vgui2/controls/ProgressBar.cpp",
           "functions_file": "tools/units/gameui_vgui2_controls_ProgressBar.txt"

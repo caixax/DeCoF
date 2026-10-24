@@ -169,6 +169,7 @@ public:	\
 // two parameters
 #define MESSAGE_FUNC_INT_INT( name, scriptname, p1, p2 )	_MessageFuncCommon( name, scriptname, 2, vgui2::DATATYPE_INT, #p1, vgui2::DATATYPE_INT, #p2 );	virtual void name( int p1, int p2 )
 #define MESSAGE_FUNC_PTR_INT( name, scriptname, p1, p2 )	_MessageFuncCommon( name, scriptname, 2, vgui2::DATATYPE_PTR, #p1, vgui2::DATATYPE_INT, #p2 );	virtual void name( vgui2::Panel *p1, int p2 )
+#define MESSAGE_FUNC_PTR_WCHARPTR( name, scriptname, p1, p2 )	_MessageFuncCommon( name, scriptname, 2, vgui2::DATATYPE_PTR, #p1, vgui2::DATATYPE_CONSTWCHARPTR, #p2 );	virtual void name( vgui2::Panel *p1, const wchar_t *p2 )
 #define MESSAGE_FUNC_HANDLE_HANDLE( name, scriptname, p1, p2 )	_MessageFuncCommon( name, scriptname, 2, vgui2::DATATYPE_INT, #p1, vgui2::DATATYPE_INT, #p2 );	virtual void name( vgui2::VPANEL p1, vgui2::VPANEL p2 )
 
 // unlimited parameters (passed in the whole KeyValues)

@@ -3030,3 +3030,88 @@ va,name,kind,evidence
 1004BA10,?HasExtra@CHistoryItem@@QAE_NXZ,func,GameUI/GameConsoleDialog.cpp: same position and size as in our compiled object
 1004BA30,?GetCommand@CompletionItem@CGameConsoleDialog@@QAEPBDXZ,func,GameUI/GameConsoleDialog.cpp: same position and size as in our compiled object
 1004BA70,??_GCHistoryItem@@QAEPAXI@Z,func,GameUI/GameConsoleDialog.cpp: same position and size as in our compiled object
+100A9160,??0PropertySheet@vgui2@@QAE@PAVPanel@1@PBD@Z,func,vgui2/controls/PropertySheet.cpp: main text in gameui.so DWARF line order, same position and size as in our compiled object
+100A924F,??0PropertySheet@vgui2@@QAE@PAVPanel@1@PBDPAVComboBox@1@@Z,func,vgui2/controls/PropertySheet.cpp: main text in gameui.so DWARF line order, same position and size as in our compiled object
+100A935B,??1PropertySheet@vgui2@@UAE@XZ,func,vgui2/controls/PropertySheet.cpp: main text in gameui.so DWARF line order, same position and size as in our compiled object
+100A9390,?AddPage@PropertySheet@vgui2@@UAEXPAVPanel@2@PBD@Z,func,vgui2/controls/PropertySheet.cpp: main text in gameui.so DWARF line order, same position and size as in our compiled object
+100A94F0,?SetActivePage@PropertySheet@vgui2@@UAEXPAVPanel@2@@Z,func,vgui2/controls/PropertySheet.cpp: main text in gameui.so DWARF line order, same position and size as in our compiled object
+100A952B,?SetTabWidth@PropertySheet@vgui2@@UAEXH@Z,func,vgui2/controls/PropertySheet.cpp: main text in gameui.so DWARF line order, same position and size as in our compiled object
+100A9556,?ResetAllData@PropertySheet@vgui2@@UAEXXZ,func,vgui2/controls/PropertySheet.cpp: main text in gameui.so DWARF line order, same position and size as in our compiled object
+100A95F7,?ApplyChanges@PropertySheet@vgui2@@UAEXXZ,func,vgui2/controls/PropertySheet.cpp: main text in gameui.so DWARF line order, same position and size as in our compiled object
+100A9698,?GetActivePage@PropertySheet@vgui2@@UAEPAVPanel@2@XZ,func,vgui2/controls/PropertySheet.cpp: main text in gameui.so DWARF line order, same position and size as in our compiled object
+100A96AC,?GetActiveTab@PropertySheet@vgui2@@UAEPAVPanel@2@XZ,func,vgui2/controls/PropertySheet.cpp: main text in gameui.so DWARF line order, same position and size as in our compiled object
+100A96C0,?GetNumPages@PropertySheet@vgui2@@UAEHXZ,func,vgui2/controls/PropertySheet.cpp: main text in gameui.so DWARF line order, same position and size as in our compiled object
+100A96D6,?GetActiveTabTitle@PropertySheet@vgui2@@UAEXPADH@Z,func,vgui2/controls/PropertySheet.cpp: main text in gameui.so DWARF line order, same position and size as in our compiled object
+100A9711,?GetTabTitle@PropertySheet@vgui2@@UAE_NHPADH@Z,func,vgui2/controls/PropertySheet.cpp: main text in gameui.so DWARF line order, same position and size as in our compiled object
+100A976A,?GetActivePageNum@PropertySheet@vgui2@@UAEHXZ,func,vgui2/controls/PropertySheet.cpp: main text in gameui.so DWARF line order, same position and size as in our compiled object
+100A97BD,?RequestFocus@PropertySheet@vgui2@@UAEXH@Z,func,vgui2/controls/PropertySheet.cpp: main text in gameui.so DWARF line order, same position and size as in our compiled object
+100A987C,?RequestFocusPrev@PropertySheet@vgui2@@UAE_NI@Z,func,vgui2/controls/PropertySheet.cpp: main text in gameui.so DWARF line order, same position and size as in our compiled object
+100A9956,?RequestFocusNext@PropertySheet@vgui2@@UAE_NI@Z,func,vgui2/controls/PropertySheet.cpp: main text in gameui.so DWARF line order, same position and size as in our compiled object
+100A99CB,?PerformLayout@PropertySheet@vgui2@@MAEXXZ,func,vgui2/controls/PropertySheet.cpp: main text in gameui.so DWARF line order, same position and size as in our compiled object
+100A9C61,?OnTabPressed@PropertySheet@vgui2@@MAEXPAVPanel@2@@Z,func,vgui2/controls/PropertySheet.cpp: main text in gameui.so DWARF line order, same position and size as in our compiled object
+100A9CC2,?GetPage@PropertySheet@vgui2@@UAEPAVPanel@2@H@Z,func,vgui2/controls/PropertySheet.cpp: main text in gameui.so DWARF line order, same position and size as in our compiled object
+100A9CF8,?DisablePage@PropertySheet@vgui2@@UAEXPBD@Z,func,vgui2/controls/PropertySheet.cpp: main text in gameui.so DWARF line order, same position and size as in our compiled object
+100A9D19,?EnablePage@PropertySheet@vgui2@@UAEXPBD@Z,func,vgui2/controls/PropertySheet.cpp: main text in gameui.so DWARF line order, same position and size as in our compiled object
+100A9D3A,?EnDisPage@PropertySheet@vgui2@@EAEXPBD_N@Z,func,vgui2/controls/PropertySheet.cpp: main text in gameui.so DWARF line order, same position and size as in our compiled object
+100A9E1B,?DeletePage@PropertySheet@vgui2@@UAEXPAVPanel@2@@Z,func,vgui2/controls/PropertySheet.cpp: main text in gameui.so DWARF line order, same position and size as in our compiled object
+100A9F21,?ChangeActiveTab@PropertySheet@vgui2@@MAEXH@Z,func,vgui2/controls/PropertySheet.cpp: main text in gameui.so DWARF line order, same position and size as in our compiled object
+100AA36A,?HasHotkey@PropertySheet@vgui2@@MAEPAVPanel@2@G@Z,func,vgui2/controls/PropertySheet.cpp: main text in gameui.so DWARF line order, same position and size as in our compiled object
+100AA3E8,?OnOpenContextMenu@PropertySheet@vgui2@@MAEXXZ,func,vgui2/controls/PropertySheet.cpp: main text in gameui.so DWARF line order, same position and size as in our compiled object
+100AA433,?OnKeyCodeTyped@PropertySheet@vgui2@@MAEXW4KeyCode@2@@Z,func,vgui2/controls/PropertySheet.cpp: main text in gameui.so DWARF line order, same position and size as in our compiled object
+100AA49C,?OnTextChanged@PropertySheet@vgui2@@MAEXPAVPanel@2@PBG@Z,func,vgui2/controls/PropertySheet.cpp: main text in gameui.so DWARF line order, same position and size as in our compiled object
+100AA535,?OnCommand@PropertySheet@vgui2@@MAEXPBD@Z,func,vgui2/controls/PropertySheet.cpp: main text in gameui.so DWARF line order, same position and size as in our compiled object
+100AA5AC,?OnApplyButtonEnable@PropertySheet@vgui2@@MAEXXZ,func,vgui2/controls/PropertySheet.cpp: main text in gameui.so DWARF line order, same position and size as in our compiled object
+100AA5F7,?OnCurrentDefaultButtonSet@PropertySheet@vgui2@@MAEXPAVPanel@2@@Z,func,vgui2/controls/PropertySheet.cpp: main text in gameui.so DWARF line order, same position and size as in our compiled object
+100AA681,?OnDefaultButtonSet@PropertySheet@vgui2@@MAEXPAVPanel@2@@Z,func,vgui2/controls/PropertySheet.cpp: main text in gameui.so DWARF line order, same position and size as in our compiled object
+100AA70B,?OnFindDefaultButton@PropertySheet@vgui2@@MAEXXZ,func,vgui2/controls/PropertySheet.cpp: main text in gameui.so DWARF line order, same position and size as in our compiled object
+100AA779,?RemoveAllPages@PropertySheet@vgui2@@QAEXXZ,func,vgui2/controls/PropertySheet.cpp: main text in gameui.so DWARF line order, same position and size as in our compiled object
+100AA8C0,??_GPropertySheet@vgui2@@UAEPAXI@Z,func,vgui2/controls/PropertySheet.cpp: COMDAT tail, message map functions in declaration order
+100AA8F0,??0PageTab@vgui2@@QAE@PAVPanel@1@PBD1H@Z,func,vgui2/controls/PropertySheet.cpp: COMDAT tail, PageTab vtable slot or constructor called by AddPage
+100AA990,?ApplySchemeSettings@PageTab@vgui2@@UAEXPAVIScheme@2@@Z,func,vgui2/controls/PropertySheet.cpp: COMDAT tail, PageTab vtable slot or constructor called by AddPage
+100AAA80,?max_guess@@YAHHH@Z,func,vgui2/controls/PropertySheet.cpp: COMDAT int max (a > b ? a : b), called by PageTab::ApplySchemeSettings and RemoveAllPages; name unproven
+100AAAA0,?GetBorder@PageTab@vgui2@@UAEPAVIBorder@2@_N000@Z,func,vgui2/controls/PropertySheet.cpp: COMDAT tail, PageTab vtable slot or constructor called by AddPage
+100AAB10,?GetButtonFgColor@PageTab@vgui2@@UAE?AVColor@@XZ,func,vgui2/controls/PropertySheet.cpp: COMDAT tail, PageTab vtable slot or constructor called by AddPage
+100AAB50,?SetActive@PageTab@vgui2@@UAEX_N@Z,func,vgui2/controls/PropertySheet.cpp: COMDAT tail, PageTab vtable slot or constructor called by AddPage
+100AAB90,?CanBeDefaultButton@PageTab@vgui2@@UAE_NXZ,func,vgui2/controls/PropertySheet.cpp: COMDAT tail, PageTab vtable slot or constructor called by AddPage
+100AABA0,?OnMousePressed@PageTab@vgui2@@UAEXW4MouseCode@2@@Z,func,vgui2/controls/PropertySheet.cpp: COMDAT tail, PageTab vtable slot or constructor called by AddPage
+100AACB0,?OnMouseReleased@PageTab@vgui2@@UAEXW4MouseCode@2@@Z,func,vgui2/controls/PropertySheet.cpp: COMDAT tail, PageTab vtable slot or constructor called by AddPage
+100AAD10,??_GPageTab@vgui2@@UAEPAXI@Z,func,vgui2/controls/PropertySheet.cpp: COMDAT tail, PageTab vtable slot or constructor called by AddPage
+100AAD40,??1PageTab@vgui2@@UAE@XZ,func,vgui2/controls/PropertySheet.cpp: COMDAT tail, PageTab vtable slot or constructor called by AddPage
+100AAD60,??0PropertySheet_RegisterMap@PropertySheet@vgui2@@QAE@XZ,func,vgui2/controls/PropertySheet.cpp: COMDAT tail, message map functions in declaration order
+100AAD80,?ChainToMap@PropertySheet@vgui2@@SAXXZ,func,vgui2/controls/PropertySheet.cpp: COMDAT tail, message map functions in declaration order
+100AADF0,?GetMessageMap@PropertySheet@vgui2@@UAEPAUPanelMessageMap@2@XZ,func,vgui2/controls/PropertySheet.cpp: COMDAT tail, message map functions in declaration order
+100AAE30,?GetPanelClassName@PropertySheet@vgui2@@SAPBDXZ,func,vgui2/controls/PropertySheet.cpp: COMDAT tail, message map functions in declaration order
+100AAE40,?GetPanelBaseClassName@PropertySheet@vgui2@@SAPBDXZ,func,vgui2/controls/PropertySheet.cpp: COMDAT tail, message map functions in declaration order
+100AAE50,??0PanelMessageFunc_OnTabPressed@PropertySheet@vgui2@@QAE@XZ,func,vgui2/controls/PropertySheet.cpp: COMDAT tail, message map functions in declaration order
+100AAE70,?InitVar@PanelMessageFunc_OnTabPressed@PropertySheet@vgui2@@SAXXZ,func,vgui2/controls/PropertySheet.cpp: COMDAT tail, message map functions in declaration order
+100AAEE0,?AddToMap@PropertySheet@vgui2@@SAXPBDP8Panel@2@AEXXZHH0H0@Z,func,vgui2/controls/PropertySheet.cpp: COMDAT tail, message map functions in declaration order
+100AAF60,??0PanelMessageFunc_OnTextChanged@PropertySheet@vgui2@@QAE@XZ,func,vgui2/controls/PropertySheet.cpp: COMDAT tail, message map functions in declaration order
+100AAF80,?InitVar@PanelMessageFunc_OnTextChanged@PropertySheet@vgui2@@SAXXZ,func,vgui2/controls/PropertySheet.cpp: COMDAT tail, message map functions in declaration order
+100AB000,??0PanelMessageFunc_OnOpenContextMenu@PropertySheet@vgui2@@QAE@XZ,func,vgui2/controls/PropertySheet.cpp: COMDAT tail, message map functions in declaration order
+100AB020,?InitVar@PanelMessageFunc_OnOpenContextMenu@PropertySheet@vgui2@@SAXXZ,func,vgui2/controls/PropertySheet.cpp: COMDAT tail, message map functions in declaration order
+100AB090,??0PanelMessageFunc_OnApplyButtonEnable@PropertySheet@vgui2@@QAE@XZ,func,vgui2/controls/PropertySheet.cpp: COMDAT tail, message map functions in declaration order
+100AB0B0,?InitVar@PanelMessageFunc_OnApplyButtonEnable@PropertySheet@vgui2@@SAXXZ,func,vgui2/controls/PropertySheet.cpp: COMDAT tail, message map functions in declaration order
+100AB120,??0PanelMessageFunc_OnDefaultButtonSet@PropertySheet@vgui2@@QAE@XZ,func,vgui2/controls/PropertySheet.cpp: COMDAT tail, message map functions in declaration order
+100AB140,?InitVar@PanelMessageFunc_OnDefaultButtonSet@PropertySheet@vgui2@@SAXXZ,func,vgui2/controls/PropertySheet.cpp: COMDAT tail, message map functions in declaration order
+100AB1B0,??0PanelMessageFunc_OnCurrentDefaultButtonSet@PropertySheet@vgui2@@QAE@XZ,func,vgui2/controls/PropertySheet.cpp: COMDAT tail, message map functions in declaration order
+100AB1D0,?InitVar@PanelMessageFunc_OnCurrentDefaultButtonSet@PropertySheet@vgui2@@SAXXZ,func,vgui2/controls/PropertySheet.cpp: COMDAT tail, message map functions in declaration order
+100AB240,??0?$Dar@PAVPanel@vgui2@@@vgui2@@QAE@XZ,func,vgui2/controls/PropertySheet.cpp: COMDAT tail; Dar member by its callers (constructor, destructor, AddPage, DeletePage, RemoveAllPages)
+100AB270,??0PanelMessageFunc_OnFindDefaultButton@PropertySheet@vgui2@@QAE@XZ,func,vgui2/controls/PropertySheet.cpp: COMDAT tail, message map functions in declaration order
+100AB290,?InitVar@PanelMessageFunc_OnFindDefaultButton@PropertySheet@vgui2@@SAXXZ,func,vgui2/controls/PropertySheet.cpp: COMDAT tail, message map functions in declaration order
+100AB300,??1?$Dar@PAVPanel@vgui2@@@vgui2@@QAE@XZ,func,vgui2/controls/PropertySheet.cpp: COMDAT tail; Dar member by its callers (constructor, destructor, AddPage, DeletePage, RemoveAllPages)
+100AB330,?GetCount@?$Dar@PAVPanel@vgui2@@@vgui2@@QAEHXZ,func,vgui2/controls/PropertySheet.cpp: COMDAT tail; Dar member by its callers (constructor, destructor, AddPage, DeletePage, RemoveAllPages)
+100AB340,?AddElement@?$Dar@PAVPanel@vgui2@@@vgui2@@QAEHPAVPanel@2@@Z,func,vgui2/controls/PropertySheet.cpp: COMDAT tail; Dar member by its callers (constructor, destructor, AddPage, DeletePage, RemoveAllPages)
+100AB390,?FindElement@?$Dar@PAVPanel@vgui2@@@vgui2@@QAEHPAVPanel@2@@Z,func,vgui2/controls/PropertySheet.cpp: COMDAT tail; Dar member by its callers (constructor, destructor, AddPage, DeletePage, RemoveAllPages)
+100AB3E0,?HasElement@?$Dar@PAVPanel@vgui2@@@vgui2@@QAE_NPAVPanel@2@@Z,func,vgui2/controls/PropertySheet.cpp: COMDAT tail; Dar member by its callers (constructor, destructor, AddPage, DeletePage, RemoveAllPages)
+100AB410,?RemoveElementAt@?$Dar@PAVPanel@vgui2@@@vgui2@@QAEXH@Z,func,vgui2/controls/PropertySheet.cpp: COMDAT tail; Dar member by its callers (constructor, destructor, AddPage, DeletePage, RemoveAllPages)
+100AB480,?RemoveElement@?$Dar@PAVPanel@vgui2@@@vgui2@@QAEXPAVPanel@2@@Z,func,vgui2/controls/PropertySheet.cpp: COMDAT tail; Dar member by its callers (constructor, destructor, AddPage, DeletePage, RemoveAllPages)
+100AB4D0,??A?$Dar@PAVPanel@vgui2@@@vgui2@@QAEPAVPanel@1@H@Z,func,vgui2/controls/PropertySheet.cpp: COMDAT tail; Dar member by its callers (constructor, destructor, AddPage, DeletePage, RemoveAllPages)
+100AB500,??0?$Dar@PAVPageTab@vgui2@@@vgui2@@QAE@XZ,func,vgui2/controls/PropertySheet.cpp: COMDAT tail; Dar member by its callers (constructor, destructor, AddPage, DeletePage, RemoveAllPages)
+100AB530,??1?$Dar@PAVPageTab@vgui2@@@vgui2@@QAE@XZ,func,vgui2/controls/PropertySheet.cpp: COMDAT tail; Dar member by its callers (constructor, destructor, AddPage, DeletePage, RemoveAllPages)
+100AB560,?GetCount@?$Dar@PAVPageTab@vgui2@@@vgui2@@QAEHXZ,func,vgui2/controls/PropertySheet.cpp: COMDAT tail; Dar member by its callers (constructor, destructor, AddPage, DeletePage, RemoveAllPages)
+100AB570,?AddElement@?$Dar@PAVPageTab@vgui2@@@vgui2@@QAEHPAVPageTab@2@@Z,func,vgui2/controls/PropertySheet.cpp: COMDAT tail; Dar member by its callers (constructor, destructor, AddPage, DeletePage, RemoveAllPages)
+100AB5C0,?RemoveElementAt@?$Dar@PAVPageTab@vgui2@@@vgui2@@QAEXH@Z,func,vgui2/controls/PropertySheet.cpp: COMDAT tail; Dar member by its callers (constructor, destructor, AddPage, DeletePage, RemoveAllPages)
+100AB630,?RemoveElement@?$Dar@PAVPageTab@vgui2@@@vgui2@@QAEXPAVPageTab@2@@Z,func,vgui2/controls/PropertySheet.cpp: COMDAT tail; Dar member by its callers (constructor, destructor, AddPage, DeletePage, RemoveAllPages)
+100AB680,??A?$Dar@PAVPageTab@vgui2@@@vgui2@@QAEPAVPageTab@1@H@Z,func,vgui2/controls/PropertySheet.cpp: COMDAT tail; Dar member by its callers (constructor, destructor, AddPage, DeletePage, RemoveAllPages)
+100AB6B0,?EnsureCapacity@?$Dar@PAVPanel@vgui2@@@vgui2@@QAEXH@Z,func,vgui2/controls/PropertySheet.cpp: COMDAT tail; Dar member by its callers (constructor, destructor, AddPage, DeletePage, RemoveAllPages)
+100AB790,?EnsureCapacity@?$Dar@PAVPageTab@vgui2@@@vgui2@@QAEXH@Z,func,vgui2/controls/PropertySheet.cpp: COMDAT tail; Dar member by its callers (constructor, destructor, AddPage, DeletePage, RemoveAllPages)
