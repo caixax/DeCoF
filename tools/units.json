@@ -3998,6 +3998,11 @@
           "name": "GameUI/BackgroundMenuButton",
           "source": "src/gameui/BackgroundMenuButton.cpp",
           "functions_file": "tools/units/gameui_GameUI_BackgroundMenuButton.txt"
+        },
+        {
+          "name": "GameUI/ContentControlDialog",
+          "source": "src/gameui/ContentControlDialog.cpp",
+          "functions_file": "tools/units/gameui_GameUI_ContentControlDialog.txt"
         }
       ]
     }

@@ -9664,22 +9664,22 @@ gameui,10048440,46,,,UNKNOWN,GameUI/vcontrolslistpanel.cpp,,,TODO,,,
 gameui,10048470,64,,,UNKNOWN,GameUI/vcontrolslistpanel.cpp,,,TODO,,,
 gameui,100484B0,10,,,UNKNOWN,GameUI/vcontrolslistpanel.cpp,,,TODO,,,
 gameui,100484C0,25,,,UNKNOWN,GameUI/vcontrolslistpanel.cpp,,,TODO,,,
-gameui,100484E0,724,,CContentControlDialog::CContentControlDialog,ENGINE,GameUI/ContentControlDialog.cpp,,,TODO,,linux_symbols:string:0.443,
-gameui,100487B4,28,,,UNKNOWN,GameUI/ContentControlDialog.cpp,,,TODO,,,
-gameui,100487D0,163,,,UNKNOWN,GameUI/ContentControlDialog.cpp,,,TODO,,,linux: _ZN21CContentControlDialog8ActivateEv
-gameui,10048873,67,,,UNKNOWN,GameUI/ContentControlDialog.cpp,,,TODO,,,linux: _ZN21CContentControlDialog13ResetPasswordEv
-gameui,100488B6,28,,,UNKNOWN,GameUI/ContentControlDialog.cpp,,,TODO,,,linux: _ZN21CContentControlDialog13ApplyPasswordEv
-gameui,100488D2,110,,,UNKNOWN,GameUI/ContentControlDialog.cpp,,,TODO,,,linux: _ZN21CContentControlDialog7ExplainEPKcz
-gameui,10048940,342,,CContentControlDialog::OnCommand,ENGINE,GameUI/ContentControlDialog.cpp,,,TODO,,linux_symbols:string:0.6,linux: _ZN21CContentControlDialog9OnCommandEPKc.part.1
-gameui,10048A96,83,,,UNKNOWN,GameUI/ContentControlDialog.cpp,,,TODO,,,linux: _ZN21CContentControlDialog7OnCloseEv
-gameui,10048AE9,149,,,UNKNOWN,GameUI/ContentControlDialog.cpp,,,TODO,,,linux: _ZN21CContentControlDialog9BinPrintfEPhi
-gameui,10048B7E,73,,,UNKNOWN,GameUI/ContentControlDialog.cpp,,,TODO,,,linux: _ZN21CContentControlDialog10WriteTokenEPKc
-gameui,10048BC7,99,,,UNKNOWN,GameUI/ContentControlDialog.cpp,,,TODO,,,linux: _ZN21CContentControlDialog12HashPasswordEPKcPc
-gameui,10048C2A,191,,,UNKNOWN,GameUI/ContentControlDialog.cpp,,,TODO,,,linux: _ZN21CContentControlDialog14EnablePasswordEPKc
-gameui,10048CE9,242,,CContentControlDialog::DisablePassword,ENGINE,GameUI/ContentControlDialog.cpp,,,TODO,,linux_symbols:string:0.651,linux: _ZN21CContentControlDialog15DisablePasswordEPKc
-gameui,10048DDB,27,,,UNKNOWN,GameUI/ContentControlDialog.cpp,,,TODO,,,linux: _ZN21CContentControlDialog25IsPasswordEnabledInDialogEv
-gameui,10048DF6,233,,CContentControlDialog::UpdateContentControlStatus,ENGINE,GameUI/ContentControlDialog.cpp,,,TODO,,linux_symbols:string:0.8,linux: _ZN21CContentControlDialog26UpdateContentControlStatusEv
-gameui,10048EE0,46,,,UNKNOWN,GameUI/ContentControlDialog.cpp,,,TODO,,,
+gameui,100484E0,724,??0CContentControlDialog@@QAE@PAVPanel@vgui2@@@Z,public: __thiscall CContentControlDialog::CContentControlDialog(class vgui2::Panel *),ENGINE,GameUI/ContentControlDialog.cpp,,,MATCHED,100,linux_symbols:string:0.443,
+gameui,100487B4,28,??1CContentControlDialog@@UAE@XZ,public: virtual __thiscall CContentControlDialog::~CContentControlDialog(void),UNKNOWN,GameUI/ContentControlDialog.cpp,,,MATCHED,100,,
+gameui,100487D0,163,?Activate@CContentControlDialog@@UAEXXZ,public: virtual void __thiscall CContentControlDialog::Activate(void),UNKNOWN,GameUI/ContentControlDialog.cpp,,,MATCHED,100,,linux: _ZN21CContentControlDialog8ActivateEv
+gameui,10048873,67,?ResetPassword@CContentControlDialog@@QAEXXZ,public: void __thiscall CContentControlDialog::ResetPassword(void),UNKNOWN,GameUI/ContentControlDialog.cpp,,,MATCHED,100,,linux: _ZN21CContentControlDialog13ResetPasswordEv
+gameui,100488B6,28,?ApplyPassword@CContentControlDialog@@QAEXXZ,public: void __thiscall CContentControlDialog::ApplyPassword(void),UNKNOWN,GameUI/ContentControlDialog.cpp,,,MATCHED,100,,linux: _ZN21CContentControlDialog13ApplyPasswordEv
+gameui,100488D2,110,?Explain@CContentControlDialog@@IAAXPBDZZ,"protected: void __cdecl CContentControlDialog::Explain(char const *,...)",UNKNOWN,GameUI/ContentControlDialog.cpp,,,MATCHED,100,,linux: _ZN21CContentControlDialog7ExplainEPKcz
+gameui,10048940,342,?OnCommand@CContentControlDialog@@UAEXPBD@Z,public: virtual void __thiscall CContentControlDialog::OnCommand(char const *),ENGINE,GameUI/ContentControlDialog.cpp,,,MATCHED,100,linux_symbols:string:0.6,linux: _ZN21CContentControlDialog9OnCommandEPKc.part.1
+gameui,10048A96,83,?OnClose@CContentControlDialog@@UAEXXZ,public: virtual void __thiscall CContentControlDialog::OnClose(void),UNKNOWN,GameUI/ContentControlDialog.cpp,,,MATCHED,100,,linux: _ZN21CContentControlDialog7OnCloseEv
+gameui,10048AE9,149,?BinPrintf@CContentControlDialog@@IAEPADPAEH@Z,"protected: char * __thiscall CContentControlDialog::BinPrintf(unsigned char *,int)",UNKNOWN,GameUI/ContentControlDialog.cpp,,,MATCHED,100,,linux: _ZN21CContentControlDialog9BinPrintfEPhi
+gameui,10048B7E,73,?WriteToken@CContentControlDialog@@IAEXPBD@Z,protected: void __thiscall CContentControlDialog::WriteToken(char const *),UNKNOWN,GameUI/ContentControlDialog.cpp,,,MATCHED,100,,linux: _ZN21CContentControlDialog10WriteTokenEPKc
+gameui,10048BC7,99,?HashPassword@CContentControlDialog@@IAEXPBDPAD@Z,"protected: void __thiscall CContentControlDialog::HashPassword(char const *,char *)",UNKNOWN,GameUI/ContentControlDialog.cpp,,,MATCHED,100,,linux: _ZN21CContentControlDialog12HashPasswordEPKcPc
+gameui,10048C2A,191,?EnablePassword@CContentControlDialog@@IAE_NPBD@Z,protected: bool __thiscall CContentControlDialog::EnablePassword(char const *),UNKNOWN,GameUI/ContentControlDialog.cpp,,,MATCHED,100,,linux: _ZN21CContentControlDialog14EnablePasswordEPKc
+gameui,10048CE9,242,?DisablePassword@CContentControlDialog@@IAE_NPBD@Z,protected: bool __thiscall CContentControlDialog::DisablePassword(char const *),ENGINE,GameUI/ContentControlDialog.cpp,,,MATCHED,100,linux_symbols:string:0.651,linux: _ZN21CContentControlDialog15DisablePasswordEPKc
+gameui,10048DDB,27,?IsPasswordEnabledInDialog@CContentControlDialog@@QAE_NXZ,public: bool __thiscall CContentControlDialog::IsPasswordEnabledInDialog(void),UNKNOWN,GameUI/ContentControlDialog.cpp,,,MATCHED,100,,linux: _ZN21CContentControlDialog25IsPasswordEnabledInDialogEv
+gameui,10048DF6,233,?UpdateContentControlStatus@CContentControlDialog@@IAEXXZ,protected: void __thiscall CContentControlDialog::UpdateContentControlStatus(void),ENGINE,GameUI/ContentControlDialog.cpp,,,MATCHED,100,linux_symbols:string:0.8,linux: _ZN21CContentControlDialog26UpdateContentControlStatusEv
+gameui,10048EE0,46,??_GCContentControlDialog@@UAEPAXI@Z,public: virtual void * __thiscall CContentControlDialog::`scalar deleting destructor'(unsigned int),UNKNOWN,GameUI/ContentControlDialog.cpp,,,MATCHED,100,,
 gameui,10048F10,40,??0CHistoryItem@@QAE@XZ,public: __thiscall CHistoryItem::CHistoryItem(void),UNKNOWN,GameUI/GameConsoleDialog.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,10048F38,58,??0CHistoryItem@@QAE@PBD0@Z,"public: __thiscall CHistoryItem::CHistoryItem(char const *,char const *)",UNKNOWN,GameUI/GameConsoleDialog.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,10048F72,68,??0CHistoryItem@@QAE@ABV0@@Z,public: __thiscall CHistoryItem::CHistoryItem(class CHistoryItem const &),UNKNOWN,GameUI/GameConsoleDialog.cpp,,,MATCHED,100,gameui_manual.csv,
