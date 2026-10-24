@@ -69,6 +69,7 @@ protected:
 
 	MESSAGE_FUNC( OnApplyButtonEnable, "ApplyButtonEnable" );
 	void EnableApplyButton(bool bEnable);
+	bool IsApplyButtonEnabled();
 
 private:
 	PropertySheet *_propertySheet;

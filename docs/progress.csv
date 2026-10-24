@@ -11717,35 +11717,35 @@ gameui,1008C570,19,??0PanelMessageFunc_OnPageHide@PropertyPage@vgui2@@QAE@XZ,pub
 gameui,1008C590,107,?InitVar@PanelMessageFunc_OnPageHide@PropertyPage@vgui2@@SAXXZ,public: static void __cdecl vgui2::PropertyPage::PanelMessageFunc_OnPageHide::InitVar(void),UNKNOWN,vgui2/controls/PropertyPage.cpp,,,MATCHED,100,,
 gameui,1008C600,19,??0PanelMessageFunc_OnPageTabActivated@PropertyPage@vgui2@@QAE@XZ,public: __thiscall vgui2::PropertyPage::PanelMessageFunc_OnPageTabActivated::PanelMessageFunc_OnPageTabActivated(void),UNKNOWN,vgui2/controls/PropertyPage.cpp,,,MATCHED,100,,
 gameui,1008C620,110,?InitVar@PanelMessageFunc_OnPageTabActivated@PropertyPage@vgui2@@SAXXZ,public: static void __cdecl vgui2::PropertyPage::PanelMessageFunc_OnPageTabActivated::InitVar(void),UNKNOWN,vgui2/controls/PropertyPage.cpp,,,MATCHED,100,,
-gameui,1008C690,760,,vgui2::PropertyDialog::PropertyDialog,ENGINE,vgui2/controls/PropertyDialog.cpp,,,TODO,,linux_symbols:string:0.453,linux: _ZN5vgui214PropertyDialogC2EPNS_5PanelEPKc
-gameui,1008C988,28,,,UNKNOWN,vgui2/controls/PropertyDialog.cpp,,,TODO,,,linux: _ZN5vgui214PropertyDialogD2Ev
-gameui,1008C9A4,20,,,UNKNOWN,vgui2/controls/PropertyDialog.cpp,,,TODO,,,linux: _ZN5vgui214PropertyDialog16GetPropertySheetEv
-gameui,1008C9B8,37,,,UNKNOWN,vgui2/controls/PropertyDialog.cpp,,,TODO,,,linux: _ZN5vgui214PropertyDialog13GetActivePageEv
-gameui,1008C9DD,47,,,UNKNOWN,vgui2/controls/PropertyDialog.cpp,,,TODO,,,linux: _ZN5vgui214PropertyDialog7AddPageEPNS_5PanelEPKc
-gameui,1008CA0C,37,,,UNKNOWN,vgui2/controls/PropertyDialog.cpp,,,TODO,,,linux: _ZN5vgui214PropertyDialog12ResetAllDataEv
-gameui,1008CA31,311,,,UNKNOWN,vgui2/controls/PropertyDialog.cpp,,,TODO,,,linux: _ZN5vgui214PropertyDialog13PerformLayoutEv
-gameui,1008CB68,209,,,UNKNOWN,vgui2/controls/PropertyDialog.cpp,,,TODO,,,linux: _ZN5vgui214PropertyDialog9OnCommandEPKc
-gameui,1008CC39,25,,,UNKNOWN,vgui2/controls/PropertyDialog.cpp,,,TODO,,,linux: _ZN5vgui214PropertyDialog14OnKeyCodeTypedENS_7KeyCodeE
-gameui,1008CC52,101,,,UNKNOWN,vgui2/controls/PropertyDialog.cpp,,,TODO,,,linux: _ZN5vgui214PropertyDialog4OnOKEv
-gameui,1008CCB7,75,,,UNKNOWN,vgui2/controls/PropertyDialog.cpp,,,TODO,,,linux: _ZN5vgui214PropertyDialog17ActivateBuildModeEv
-gameui,1008CD02,43,,,UNKNOWN,vgui2/controls/PropertyDialog.cpp,,,TODO,,,linux: _ZN5vgui214PropertyDialog15SetOKButtonTextEPKc
-gameui,1008CD2D,43,,,UNKNOWN,vgui2/controls/PropertyDialog.cpp,,,TODO,,,linux: _ZN5vgui214PropertyDialog19SetCancelButtonTextEPKc
-gameui,1008CD58,43,,,UNKNOWN,vgui2/controls/PropertyDialog.cpp,,,TODO,,,linux: _ZN5vgui214PropertyDialog18SetApplyButtonTextEPKc
-gameui,1008CD83,58,,,UNKNOWN,vgui2/controls/PropertyDialog.cpp,,,TODO,,,linux: _ZN5vgui214PropertyDialog18SetOKButtonVisibleEb
-gameui,1008CDBD,58,,,UNKNOWN,vgui2/controls/PropertyDialog.cpp,,,TODO,,,linux: _ZN5vgui214PropertyDialog22SetCancelButtonVisibleEb
-gameui,1008CDF7,58,,,UNKNOWN,vgui2/controls/PropertyDialog.cpp,,,TODO,,,linux: _ZN5vgui214PropertyDialog21SetApplyButtonVisibleEb
-gameui,1008CE31,58,,,UNKNOWN,vgui2/controls/PropertyDialog.cpp,,,TODO,,,linux: _ZN5vgui214PropertyDialog19OnApplyButtonEnableEv
-gameui,1008CE6B,61,,,UNKNOWN,vgui2/controls/PropertyDialog.cpp,,,TODO,,,linux: _ZN5vgui214PropertyDialog17EnableApplyButtonEb
-gameui,1008CEA8,40,,,UNKNOWN,vgui2/controls/PropertyDialog.cpp,,,TODO,,,linux: _ZN5vgui214PropertyDialog12RequestFocusEi
-gameui,1008CED0,37,,,UNKNOWN,vgui2/controls/PropertyDialog.cpp,,,TODO,,,linux: _ZN5vgui214PropertyDialog20IsApplyButtonEnabledEv
-gameui,1008CEF5,30,,,UNKNOWN,vgui2/controls/PropertyDialog.cpp,,,TODO,,,linux: _ZN5vgui214PropertyDialog12ApplyChangesEv
-gameui,1008CF20,46,,,UNKNOWN,vgui2/controls/PropertyDialog.cpp,,,TODO,,,
-gameui,1008CF50,19,,,UNKNOWN,vgui2/controls/PropertyDialog.cpp,,,TODO,,,
-gameui,1008CF70,102,,,UNKNOWN,vgui2/controls/PropertyDialog.cpp,,,TODO,,,
-gameui,1008CFE0,10,,,UNKNOWN,vgui2/controls/PropertyDialog.cpp,,,TODO,,,
-gameui,1008CFF0,19,,,UNKNOWN,vgui2/controls/PropertyDialog.cpp,,,TODO,,,
-gameui,1008D010,107,,,UNKNOWN,vgui2/controls/PropertyDialog.cpp,,,TODO,,,
-gameui,1008D080,120,,,UNKNOWN,vgui2/controls/PropertyDialog.cpp,,,TODO,,,
+gameui,1008C690,760,??0PropertyDialog@vgui2@@QAE@PAVPanel@1@PBD@Z,"public: __thiscall vgui2::PropertyDialog::PropertyDialog(class vgui2::Panel *,char const *)",ENGINE,vgui2/controls/PropertyDialog.cpp,,,MATCHED,100,linux_symbols:string:0.453,linux: _ZN5vgui214PropertyDialogC2EPNS_5PanelEPKc
+gameui,1008C988,28,??1PropertyDialog@vgui2@@UAE@XZ,public: virtual __thiscall vgui2::PropertyDialog::~PropertyDialog(void),UNKNOWN,vgui2/controls/PropertyDialog.cpp,,,MATCHED,100,,linux: _ZN5vgui214PropertyDialogD2Ev
+gameui,1008C9A4,20,?GetPropertySheet@PropertyDialog@vgui2@@UAEPAVPropertySheet@2@XZ,public: virtual class vgui2::PropertySheet * __thiscall vgui2::PropertyDialog::GetPropertySheet(void),UNKNOWN,vgui2/controls/PropertyDialog.cpp,,,MATCHED,100,,linux: _ZN5vgui214PropertyDialog16GetPropertySheetEv
+gameui,1008C9B8,37,?GetActivePage@PropertyDialog@vgui2@@UAEPAVPanel@2@XZ,public: virtual class vgui2::Panel * __thiscall vgui2::PropertyDialog::GetActivePage(void),UNKNOWN,vgui2/controls/PropertyDialog.cpp,,,MATCHED,100,,linux: _ZN5vgui214PropertyDialog13GetActivePageEv
+gameui,1008C9DD,47,?AddPage@PropertyDialog@vgui2@@UAEXPAVPanel@2@PBD@Z,"public: virtual void __thiscall vgui2::PropertyDialog::AddPage(class vgui2::Panel *,char const *)",UNKNOWN,vgui2/controls/PropertyDialog.cpp,,,MATCHED,100,,linux: _ZN5vgui214PropertyDialog7AddPageEPNS_5PanelEPKc
+gameui,1008CA0C,37,?ResetAllData@PropertyDialog@vgui2@@UAEXXZ,public: virtual void __thiscall vgui2::PropertyDialog::ResetAllData(void),UNKNOWN,vgui2/controls/PropertyDialog.cpp,,,MATCHED,100,,linux: _ZN5vgui214PropertyDialog12ResetAllDataEv
+gameui,1008CA31,311,?PerformLayout@PropertyDialog@vgui2@@MAEXXZ,protected: virtual void __thiscall vgui2::PropertyDialog::PerformLayout(void),UNKNOWN,vgui2/controls/PropertyDialog.cpp,,,MATCHED,100,,linux: _ZN5vgui214PropertyDialog13PerformLayoutEv
+gameui,1008CB68,209,?OnCommand@PropertyDialog@vgui2@@MAEXPBD@Z,protected: virtual void __thiscall vgui2::PropertyDialog::OnCommand(char const *),UNKNOWN,vgui2/controls/PropertyDialog.cpp,,,MATCHED,100,,linux: _ZN5vgui214PropertyDialog9OnCommandEPKc
+gameui,1008CC39,25,?OnKeyCodeTyped@PropertyDialog@vgui2@@MAEXW4KeyCode@2@@Z,protected: virtual void __thiscall vgui2::PropertyDialog::OnKeyCodeTyped(enum vgui2::KeyCode),UNKNOWN,vgui2/controls/PropertyDialog.cpp,,,MATCHED,100,,linux: _ZN5vgui214PropertyDialog14OnKeyCodeTypedENS_7KeyCodeE
+gameui,1008CC52,101,?OnOK@PropertyDialog@vgui2@@MAEXXZ,protected: virtual void __thiscall vgui2::PropertyDialog::OnOK(void),UNKNOWN,vgui2/controls/PropertyDialog.cpp,,,MATCHED,100,,linux: _ZN5vgui214PropertyDialog4OnOKEv
+gameui,1008CCB7,75,?ActivateBuildMode@PropertyDialog@vgui2@@MAEXXZ,protected: virtual void __thiscall vgui2::PropertyDialog::ActivateBuildMode(void),UNKNOWN,vgui2/controls/PropertyDialog.cpp,,,MATCHED,100,,linux: _ZN5vgui214PropertyDialog17ActivateBuildModeEv
+gameui,1008CD02,43,?SetOKButtonText@PropertyDialog@vgui2@@QAEXPBD@Z,public: void __thiscall vgui2::PropertyDialog::SetOKButtonText(char const *),UNKNOWN,vgui2/controls/PropertyDialog.cpp,,,MATCHED,100,,linux: _ZN5vgui214PropertyDialog15SetOKButtonTextEPKc
+gameui,1008CD2D,43,?SetCancelButtonText@PropertyDialog@vgui2@@QAEXPBD@Z,public: void __thiscall vgui2::PropertyDialog::SetCancelButtonText(char const *),UNKNOWN,vgui2/controls/PropertyDialog.cpp,,,MATCHED,100,,linux: _ZN5vgui214PropertyDialog19SetCancelButtonTextEPKc
+gameui,1008CD58,43,?SetApplyButtonText@PropertyDialog@vgui2@@QAEXPBD@Z,public: void __thiscall vgui2::PropertyDialog::SetApplyButtonText(char const *),UNKNOWN,vgui2/controls/PropertyDialog.cpp,,,MATCHED,100,,linux: _ZN5vgui214PropertyDialog18SetApplyButtonTextEPKc
+gameui,1008CD83,58,?SetOKButtonVisible@PropertyDialog@vgui2@@QAEX_N@Z,public: void __thiscall vgui2::PropertyDialog::SetOKButtonVisible(bool),UNKNOWN,vgui2/controls/PropertyDialog.cpp,,,MATCHED,100,,linux: _ZN5vgui214PropertyDialog18SetOKButtonVisibleEb
+gameui,1008CDBD,58,?SetCancelButtonVisible@PropertyDialog@vgui2@@QAEX_N@Z,public: void __thiscall vgui2::PropertyDialog::SetCancelButtonVisible(bool),UNKNOWN,vgui2/controls/PropertyDialog.cpp,,,MATCHED,100,,linux: _ZN5vgui214PropertyDialog22SetCancelButtonVisibleEb
+gameui,1008CDF7,58,?SetApplyButtonVisible@PropertyDialog@vgui2@@QAEX_N@Z,public: void __thiscall vgui2::PropertyDialog::SetApplyButtonVisible(bool),UNKNOWN,vgui2/controls/PropertyDialog.cpp,,,MATCHED,100,,linux: _ZN5vgui214PropertyDialog21SetApplyButtonVisibleEb
+gameui,1008CE31,58,?OnApplyButtonEnable@PropertyDialog@vgui2@@MAEXXZ,protected: virtual void __thiscall vgui2::PropertyDialog::OnApplyButtonEnable(void),UNKNOWN,vgui2/controls/PropertyDialog.cpp,,,MATCHED,100,,linux: _ZN5vgui214PropertyDialog19OnApplyButtonEnableEv
+gameui,1008CE6B,61,?EnableApplyButton@PropertyDialog@vgui2@@IAEX_N@Z,protected: void __thiscall vgui2::PropertyDialog::EnableApplyButton(bool),UNKNOWN,vgui2/controls/PropertyDialog.cpp,,,MATCHED,100,,linux: _ZN5vgui214PropertyDialog17EnableApplyButtonEb
+gameui,1008CEA8,40,?RequestFocus@PropertyDialog@vgui2@@MAEXH@Z,protected: virtual void __thiscall vgui2::PropertyDialog::RequestFocus(int),UNKNOWN,vgui2/controls/PropertyDialog.cpp,,,MATCHED,100,,linux: _ZN5vgui214PropertyDialog12RequestFocusEi
+gameui,1008CED0,37,?IsApplyButtonEnabled@PropertyDialog@vgui2@@IAE_NXZ,protected: bool __thiscall vgui2::PropertyDialog::IsApplyButtonEnabled(void),UNKNOWN,vgui2/controls/PropertyDialog.cpp,,,MATCHED,100,,linux: _ZN5vgui214PropertyDialog20IsApplyButtonEnabledEv
+gameui,1008CEF5,30,?ApplyChanges@PropertyDialog@vgui2@@UAEXXZ,public: virtual void __thiscall vgui2::PropertyDialog::ApplyChanges(void),UNKNOWN,vgui2/controls/PropertyDialog.cpp,,,MATCHED,100,,linux: _ZN5vgui214PropertyDialog12ApplyChangesEv
+gameui,1008CF20,46,??_GPropertyDialog@vgui2@@UAEPAXI@Z,public: virtual void * __thiscall vgui2::PropertyDialog::`scalar deleting destructor'(unsigned int),UNKNOWN,vgui2/controls/PropertyDialog.cpp,,,MATCHED,100,,
+gameui,1008CF50,19,??0PropertyDialog_RegisterMap@PropertyDialog@vgui2@@QAE@XZ,public: __thiscall vgui2::PropertyDialog::PropertyDialog_RegisterMap::PropertyDialog_RegisterMap(void),UNKNOWN,vgui2/controls/PropertyDialog.cpp,,,MATCHED,100,,
+gameui,1008CF70,102,?ChainToMap@PropertyDialog@vgui2@@SAXXZ,public: static void __cdecl vgui2::PropertyDialog::ChainToMap(void),UNKNOWN,vgui2/controls/PropertyDialog.cpp,,,MATCHED,100,,
+gameui,1008CFE0,10,?GetPanelBaseClassName@PropertyDialog@vgui2@@SAPBDXZ,public: static char const * __cdecl vgui2::PropertyDialog::GetPanelBaseClassName(void),UNKNOWN,vgui2/controls/PropertyDialog.cpp,,,MATCHED,100,,
+gameui,1008CFF0,19,??0PanelMessageFunc_OnApplyButtonEnable@PropertyDialog@vgui2@@QAE@XZ,public: __thiscall vgui2::PropertyDialog::PanelMessageFunc_OnApplyButtonEnable::PanelMessageFunc_OnApplyButtonEnable(void),UNKNOWN,vgui2/controls/PropertyDialog.cpp,,,MATCHED,100,,
+gameui,1008D010,107,?InitVar@PanelMessageFunc_OnApplyButtonEnable@PropertyDialog@vgui2@@SAXXZ,public: static void __cdecl vgui2::PropertyDialog::PanelMessageFunc_OnApplyButtonEnable::InitVar(void),UNKNOWN,vgui2/controls/PropertyDialog.cpp,,,MATCHED,100,,
+gameui,1008D080,120,?AddToMap@PropertyDialog@vgui2@@SAXPBDP8Panel@2@AEXXZHH0H0@Z,"public: static void __cdecl vgui2::PropertyDialog::AddToMap(char const *,void (__thiscall vgui2::Panel::*)(void),int,int,char const *,int,char const *)",UNKNOWN,vgui2/controls/PropertyDialog.cpp,,,MATCHED,100,,
 gameui,1008D110,232,??0CheckButton@vgui2@@QAE@PAVPanel@1@PBD1@Z,vgui2::CheckButton::CheckButton,UNKNOWN,vgui2/controls/CheckButton.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,1008D1F8,79,??1CheckButton@vgui2@@UAE@XZ,vgui2::CheckButton::~CheckButton,UNKNOWN,vgui2/controls/CheckButton.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,1008D247,525,?ApplySchemeSettings@CheckButton@vgui2@@MAEXPAVIScheme@2@@Z,vgui2::CheckButton::ApplySchemeSettings,UNKNOWN,vgui2/controls/CheckButton.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui211CheckButton19ApplySchemeSettingsEPNS_7ISchemeE

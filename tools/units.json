@@ -3903,6 +3903,11 @@
           "name": "GameUI/OptionsSubVideo",
           "source": "src/gameui/OptionsSubVideo.cpp",
           "functions_file": "tools/units/gameui_GameUI_OptionsSubVideo.txt"
+        },
+        {
+          "name": "vgui2/controls/PropertyDialog",
+          "source": "src/vgui2/controls/PropertyDialog.cpp",
+          "functions_file": "tools/units/gameui_vgui2_controls_PropertyDialog.txt"
         }
       ]
     }
