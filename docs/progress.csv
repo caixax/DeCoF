@@ -29635,143 +29635,143 @@ hw,01E137F3,7,_Sys_PopFPCW,,ENGINE,engine/sys_wina.s,,,TODO,,,
 hw,01E137FA,50,_Sys_SetFPCW,Sys_SetFPCW,ENGINE,engine/sys_wina.s,,,TODO,,,
 hw,01E1382C,1,_Sys_InitFPU_guess,,ENGINE,engine/sys_wina.s,,,TODO,,hw_manual.csv,
 hw,01E13830,136,_SV_HullPointContents,,ENGINE,engine/worlda.s,,,TODO,,,
-hw,01E14E40,10,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(errmode.obj); was LIB (short CRT byte match), code belongs to this object"
-hw,01E14E50,29,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E14E70,69,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E14EC0,153,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E14F70,39,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E14FA0,27,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E14FC0,27,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E14FE0,27,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E15020,22,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E15060,18,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E15080,32,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E150A0,27,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E150E0,21,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E15100,21,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E15160,38,_hwSetListenerPosition_guess,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E151C0,43,_hwSetListenerOrientation_guess,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E151F0,38,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E15220,21,_hwFlush_guess,hwFlush_guess,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E15240,21,_hwClear_guess,hwClear_guess,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E15290,27,_hwSetVolume_guess,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E15540,332,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E156D0,38,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E15720,25,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E15740,19,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E15760,19,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E15780,25,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E15810,25,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E158D0,25,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E15910,25,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E15930,25,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E15950,25,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E15970,25,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E15990,25,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E159B0,25,_hwSetVoiceRelative_guess,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E159D0,32,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E15A10,19,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E15A40,21,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E15A60,21,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E15A80,21,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E15AA0,21,_hwUpdateStream_guess,hwUpdateStream_guess,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E15AC0,21,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E15AE0,27,_hwSet2DVolume_guess,hwSet2DVolume_guess,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E15B00,32,_hwLockBuffer_guess,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E15B20,32,_hwUnlockBuffer_guess,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E15B40,32,_hwGetCurrentPosition_guess,hwGetCurrentPosition_guess,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E15B60,25,_hwIsActive_guess,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E15B80,53,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E15BC0,43,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E15BF0,53,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E15C30,22,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E15C70,22,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E15C90,28,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E15CB0,38,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E15CE0,22,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E15D50,21,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E15D70,18,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E15D90,61,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E15DD0,24,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E15DF0,13,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E15E00,10,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E15E10,8,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E15E20,251,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E15F20,208,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E15FF0,274,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E16120,125,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E161C0,18,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E161E0,4,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E161F0,21,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E16210,24,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E16230,60,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E16270,21,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E16290,21,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E162B0,13,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E162C0,61,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E16300,189,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E16560,167,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E16610,28,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E16630,27,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E16650,27,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E16670,4,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E166A0,289,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E167D0,37,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E16800,36,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E16830,61,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E16870,88,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E168D0,17,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E168F0,103,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E16960,135,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E169F0,93,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E16A50,34,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E16A80,91,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E16AE0,35,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E16B10,1,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E16B20,80,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E16B70,52,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E16BB0,30,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E16BE0,226,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E16CD0,185,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E16D90,160,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E16E30,91,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E16E90,116,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E16F20,7,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E170B0,545,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E17370,106,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E173E0,97,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E17450,79,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E17600,490,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E177F0,355,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E17CD0,92,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E17D30,98,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E17DA0,98,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E17F70,165,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E18080,103,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E180F0,143,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E18250,81,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E18330,134,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E183C0,113,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E189A0,106,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E18A10,97,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E18A80,66,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E18AD0,228,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E18BE0,497,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E18DE0,297,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E18FD0,62,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E19010,47,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E19080,56,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E19140,95,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E19290,46,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E192E0,75,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E19370,99,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E193F0,388,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E19580,247,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E19680,134,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E19710,433,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E198D0,155,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E19970,9,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
-hw,01E19990,132,,,ENGINE,a3d/A3DRenderer_guess.cpp,,,TODO,,,
+hw,01E14E40,10,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(errmode.obj); was LIB (short CRT byte match), code belongs to this object; Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E14E50,29,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E14E70,69,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E14EC0,153,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E14F70,39,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E14FA0,27,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E14FC0,27,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E14FE0,27,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E15020,22,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E15060,18,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E15080,32,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E150A0,27,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E150E0,21,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E15100,21,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E15160,38,_hwSetListenerPosition_guess,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E151C0,43,_hwSetListenerOrientation_guess,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E151F0,38,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E15220,21,_hwFlush_guess,hwFlush_guess,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E15240,21,_hwClear_guess,hwClear_guess,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E15290,27,_hwSetVolume_guess,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E15540,332,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E156D0,38,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E15720,25,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E15740,19,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E15760,19,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E15780,25,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E15810,25,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E158D0,25,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E15910,25,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E15930,25,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E15950,25,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E15970,25,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E15990,25,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E159B0,25,_hwSetVoiceRelative_guess,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E159D0,32,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E15A10,19,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E15A40,21,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E15A60,21,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E15A80,21,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E15AA0,21,_hwUpdateStream_guess,hwUpdateStream_guess,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E15AC0,21,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E15AE0,27,_hwSet2DVolume_guess,hwSet2DVolume_guess,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E15B00,32,_hwLockBuffer_guess,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E15B20,32,_hwUnlockBuffer_guess,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E15B40,32,_hwGetCurrentPosition_guess,hwGetCurrentPosition_guess,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E15B60,25,_hwIsActive_guess,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E15B80,53,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E15BC0,43,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E15BF0,53,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E15C30,22,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E15C70,22,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E15C90,28,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E15CB0,38,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E15CE0,22,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E15D50,21,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E15D70,18,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E15D90,61,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E15DD0,24,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E15DF0,13,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E15E00,10,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E15E10,8,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E15E20,251,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E15F20,208,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E15FF0,274,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E16120,125,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E161C0,18,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E161E0,4,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E161F0,21,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E16210,24,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E16230,60,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E16270,21,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E16290,21,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E162B0,13,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E162C0,61,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E16300,189,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E16560,167,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E16610,28,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E16630,27,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E16650,27,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E16670,4,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E166A0,289,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E167D0,37,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E16800,36,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E16830,61,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E16870,88,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E168D0,17,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E168F0,103,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E16960,135,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E169F0,93,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E16A50,34,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E16A80,91,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E16AE0,35,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E16B10,1,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E16B20,80,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E16B70,52,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E16BB0,30,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E16BE0,226,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E16CD0,185,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E16D90,160,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E16E30,91,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E16E90,116,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E16F20,7,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E170B0,545,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E17370,106,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E173E0,97,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E17450,79,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E17600,490,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E177F0,355,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E17CD0,92,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E17D30,98,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E17DA0,98,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E17F70,165,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E18080,103,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E180F0,143,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E18250,81,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E18330,134,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E183C0,113,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E189A0,106,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E18A10,97,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E18A80,66,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E18AD0,228,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E18BE0,497,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E18DE0,297,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E18FD0,62,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E19010,47,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E19080,56,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E19140,95,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E19290,46,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E192E0,75,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E19370,99,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E193F0,388,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E19580,247,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E19680,134,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E19710,433,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E198D0,155,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E19970,9,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
+hw,01E19990,132,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
 hw,01E1A0C0,16,,,LIB,,,,,,,"IGA/Radial in-game advertising SDK (third-party static library, optimized build; docs/hw_regions.md)"
 hw,01E1A150,208,,,LIB,,,,,,,"IGA/Radial in-game advertising SDK (third-party static library, optimized build; docs/hw_regions.md)"
 hw,01E1A220,134,,,LIB,,,,,,,"IGA/Radial in-game advertising SDK (third-party static library, optimized build; docs/hw_regions.md)"
