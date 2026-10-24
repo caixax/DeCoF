@@ -7,7 +7,7 @@
 ?OnApplyChanges@CCreateMultiplayerGameGameplayPage@@MAEXXZ
 ?LoadGameOptionsList@CCreateMultiplayerGameGameplayPage@@AAEXXZ
 ?GatherCurrentValues@CCreateMultiplayerGameGameplayPage@@AAEXXZ
-??0CServerDescription@@QAE@PAVCPanelListPanel@@@Z
+??0CServerDescription@@QAE@PAUCPanelListPanel@@@Z
 ?WriteScriptHeader@CServerDescription@@UAEXPAX@Z
 ?WriteFileHeader@CServerDescription@@UAEXPAX@Z
 ??_GCCreateMultiplayerGameGameplayPage@@UAEPAXI@Z

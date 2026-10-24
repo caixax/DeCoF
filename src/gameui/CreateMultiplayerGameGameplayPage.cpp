@@ -10,9 +10,9 @@
 #include <string.h>
 #include <time.h>
 
+#include "ScriptObject.h"
 #include "CreateMultiplayerGameGameplayPage.h"
 #include "PanelListPanel.h"
-#include "ScriptObject.h"
 
 #include <vgui/ILocalize.h>
 #include <vgui/KeyValues.h>
