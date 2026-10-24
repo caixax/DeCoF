@@ -3498,6 +3498,7 @@
       "link": {
         "out": "launcher.exe",
         "retail": "versions/1.6a/cof.exe",
+        "resources": "versions/1.6a/cof.exe",
         "flags": [
           "/nologo",
           "/subsystem:windows",

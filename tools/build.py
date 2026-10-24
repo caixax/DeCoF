@@ -397,6 +397,14 @@ def link(dll):
         else:
             libs.append(lib)
     libs += list(made.values())
+    # "resources": a retail PE whose resources (icons, version) are linked in
+    # as they are (tools/res_from_pe.py), so no asset is committed
+    if "resources" in lk:
+        res = os.path.join(tmp, os.path.splitext(lk["out"])[0] + ".res")
+        if subprocess.call([sys.executable, os.path.join(ROOT, "tools", "res_from_pe.py"),
+                            os.path.join(ROOT, lk["resources"]), res]) != 0:
+            sys.exit("resources from %s failed" % lk["resources"])
+        libs.append(res)
     out = os.path.join(tmp, lk["out"])
     cmd = [tc.link_path()] + lk["flags"] + ["/out:" + out, "/map:" + out + ".map"]
     cmd += [obj_path(kind, full) for _d, _c, _u, full in units] + libs

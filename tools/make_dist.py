@@ -1,6 +1,6 @@
 """Assemble a playable game in dist/ from retail 1.6a plus rebuilt DLLs.
 
-Usage: python tools/make_dist.py [--dry-run] [--keep] [--bin build/bin]
+Usage: python tools/make_dist.py [--dry-run] [--keep] [--bin build/bin ...]
 
 1. Deletes dist/ and copies versions/1.6a into it (files are copied, never
    hard linked, so the game can not write through into versions/).
@@ -11,6 +11,15 @@ Usage: python tools/make_dist.py [--dry-run] [--keep] [--bin build/bin]
 --keep leaves an existing dist/ in place and only sets every in-scope DLL
 to its rebuilt or retail copy (for example --keep --bin <empty dir> puts
 the retail DLLs back for a comparison run).
+
+--bin may be given several times: each binary comes from the last folder
+that has it. Every rebuilt binary under test has its own folder, filled by
+the agent that tests it and left alone by the others (build/dist_hl:
+hl.dll, build/dist_launcher: launcher.exe, which becomes cof.exe). A test
+build with several rebuilt binaries names all their folders, for example
+  python tools/make_dist.py --keep --bin build/dist_hl --bin build/dist_launcher
+because any in-scope binary missing from the folders given goes back to
+retail.
 """
 import argparse
 import hashlib
@@ -28,6 +37,7 @@ DLLS = {
     "hl.dll": os.path.join("cryoffear", "cl_dlls", "hl.dll"),
     "opengl32.dll": "opengl32.dll",
     "CoFLaunchApp.exe": "CoFLaunchApp.exe",
+    "launcher.exe": "cof.exe",
 }
 
 
@@ -42,7 +52,7 @@ def sha256(path):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--dry-run", action="store_true")
-    ap.add_argument("--bin", default=os.path.join(ROOT, "build", "bin"))
+    ap.add_argument("--bin", action="append")
     ap.add_argument("--keep", action="store_true")
     args = ap.parse_args()
 
@@ -51,14 +61,15 @@ def main():
     if os.path.normcase(os.path.dirname(DIST)) != os.path.normcase(ROOT):
         sys.exit("refusing to touch %s" % DIST)
 
+    bins = args.bin or [os.path.join(ROOT, "build", "bin")]
     replace = []
     for name, rel in sorted(DLLS.items()):
-        built = os.path.join(args.bin, name)
-        if os.path.isfile(built):
-            replace.append((name, built, rel))
-            print("rebuilt  %-13s <- %s" % (name, built))
+        found = [os.path.join(b, name) for b in bins if os.path.isfile(os.path.join(b, name))]
+        if found:
+            replace.append((name, found[-1], rel))
+            print("rebuilt  %-13s <- %s" % (name, found[-1]))
         else:
-            print("retail   %-13s (no complete build in %s)" % (name, args.bin))
+            print("retail   %-13s (no complete build in %s)" % (name, ", ".join(bins)))
 
     if args.dry_run:
         print("dry run: would delete %s, copy %s, then replace %d DLL(s)"

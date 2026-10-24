@@ -80,6 +80,18 @@ python tools/make_dist.py --bin build/dist_hl      dist/ with only the DLLs in t
 - Functions Ghidra never created (or merged into a neighbour) are found by link_diff as "found in retail by code but without a progress.csv row": shrink the neighbour with `tools/ghidra_scripts/SetBodyRange.java`, create the function with `FillGaps.java` (both through the GhidraMCP `/run_ghidra_script`, then `/save_program`), add the name to `tools/symbols/hl_manual.csv` and the unit list, re-delink and check.
 - The Rich header shows 4 more C++ objects in retail (159 against 155, objects that add no code) and the Steamworks SDK steam_api.lib (VS 2005 import library, prod 123 build 50727) where ours is made by lib 14.27; the import hints differ for the same reason (kernel32.lib from an older SDK, the SDK's steam_api.lib).
 
+### cof.exe (VC6 launcher)
+
+```
+python tools/build.py link launcher                build/link/launcher/launcher.exe + .map (VC6 link 6.00), copied to build/bin/
+python tools/link_diff.py launcher
+python tools/make_dist.py --keep --bin build/dist_hl --bin build/dist_launcher
+```
+
+- The EXE has no base relocations: link_diff reconstructs the places they would be (absolute operands found by a linear sweep of the code, aligned words that point into the image in the data sections) for both images, so the per-function and reference comparison works as for the DLLs.
+- `"resources"` in a link section names a retail PE whose resources are linked in through `tools/res_from_pe.py` (a .res written into build/link/<dll>/ at link time, converted by the linker's cvtres), so the icons are never committed. The retail .rsrc of cof.exe was rewritten after the link by a resource editor (CoF's icon added as icon 5 and a language-neutral group icon 101 next to Valve's ones, 4-byte data alignment, code page 1252, directory version 4.0, SizeOfInitializedData recomputed from the raw section sizes); cvtres gives the same resources (types, names, languages, bytes) with 8-byte alignment, code page 0 and version 0.0, and the VC6 linker counts the .bss part of .data in SizeOfInitializedData.
+- make_dist takes `--bin` several times (the last folder that has a binary wins); `launcher.exe` from a bin folder becomes `cof.exe` in dist/. Every binary under test keeps its own folder (build/dist_hl, build/dist_launcher, ...), and a test build names all of them: a binary missing from the folders given goes back to retail.
+
 ## Progress report hook
 
 `tools/hooks/pre-commit` reruns `tools/progress.py` on the staged `docs/progress.csv` and stages the three outputs whenever the CSV is part of a commit. `.git/hooks` is not versioned; install the hook once per clone:

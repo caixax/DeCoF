@@ -18,7 +18,8 @@ sections; this tool explains why they differ:
   the referenced data objects must have the same contents (relocated words
   masked; the extent is the smaller of the two neighbourhoods).
 - exports (names, ordinals, order, targets), imports (order, hints), the
-  Rich header, base relocations that straddle a page.
+  Rich header, base relocations that straddle a page. An EXE without base
+  relocations gets them reconstructed (Image.synth_relocs).
 - layout: where the code shift changes inside game code.
 
 Output stays short; --csv writes one row per retail function.
@@ -53,6 +54,8 @@ class Image:
             for e in blk.entries:
                 if e.type == 3:
                     self.relocs.add(e.rva)
+        if not self.relocs:
+            self.relocs = self.synth_relocs()
         self.names = collections.defaultdict(set)
         for va, name in symbols:
             self.names[va].add(name)
@@ -62,6 +65,39 @@ class Image:
         self.vas = sorted(self.names)
         text = self.pe.sections[0]
         self.text = (self.base + text.VirtualAddress, self.base + text.VirtualAddress + text.Misc_VirtualSize)
+
+    def synth_relocs(self):
+        """An EXE linked without base relocations (cof.exe): the places a
+        relocation would have, found by a linear sweep of the code (absolute
+        immediates and displacements that point into the image) and by
+        scanning the data sections for aligned words that do. Heuristic: a
+        jump table decoded as code can hide or invent a few."""
+        lo, hi = self.base, self.base + self.pe.OPTIONAL_HEADER.SizeOfImage
+        md = capstone.Cs(capstone.CS_ARCH_X86, capstone.CS_MODE_32)
+        md.detail = True
+        out = set()
+        for sec in self.pe.sections:
+            start, size = sec.VirtualAddress, min(sec.Misc_VirtualSize, sec.SizeOfRawData)
+            data = bytes(self.img[start:start + size])
+            if sec.Characteristics & 0x20000000:
+                pos = 0
+                while pos < size:
+                    n = 0
+                    for ins in md.disasm(data[pos:], start + pos):
+                        n += ins.size
+                        # rel32 branch targets are not absolute
+                        rel = ins.mnemonic.startswith(("call", "j", "loop"))
+                        for off in (ins.disp_offset, 0 if rel else ins.imm_offset):
+                            if off and ins.size - off >= 4:
+                                v = int.from_bytes(ins.bytes[off:off + 4], "little")
+                                if lo <= v < hi:
+                                    out.add(ins.address + off)
+                    pos += n + 1 if n == 0 else n
+            else:
+                for o in range(0, size - 3, 4):
+                    if lo <= int.from_bytes(data[o:o + 4], "little") < hi:
+                        out.add(start + o)
+        return out
 
     def b(self, va, n):
         o = va - self.base
@@ -231,9 +267,17 @@ def main():
         else:
             for (m1, b1, t1), (m2, b2, t2) in zip(ta, tb):
                 for (k1, v1), (k2, v2) in zip(t1, t2):
+                    iat1 = {n for n in R.names.get(v1, ()) if n.startswith("IAT:")}
+                    iat2 = {n for n in O.names.get(v2, ()) if n.startswith("IAT:")}
                     if k1 == "in" or k2 == "in":
                         if (k1, v1) != (k2, v2):
                             st = "branch target differs"
+                    elif iat1 or iat2:
+                        # an import slot: the imported function decides, not
+                        # a label of the symbol map (which can be wrong)
+                        if not iat1 & iat2:
+                            st = "imports %s, retail %s" % ("/".join(sorted(iat2)) or O.near(v2),
+                                                            "/".join(sorted(iat1)) or R.near(v1))
                     elif R.names.get(v1, set()) & O.names.get(v2, set()):
                         pass
                     elif v1 in pair:

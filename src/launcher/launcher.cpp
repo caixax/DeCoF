@@ -21,12 +21,23 @@
 #include "iregistry.h"
 #include "SteamAppStartup_guess.h"
 
-IFileSystem *g_pFileSystem;
-char g_szEXEName_guess[ MAX_PATH ];		// only cleared, by UTIL_GetBaseDir
+IFileSystem *g_pFileSystem = NULL;
+
+// The three arrays below span exactly 0x2100000 bytes of .bss (0x014135C8 to
+// 0x035135C8 in the retail image with the 0x01400000 base), address space that
+// LoadBlobFile_guess copies the sections of a blob engine into. Only the byte
+// at offset 1000 is referenced (cleared by UTIL_GetBaseDir), so how the space is
+// split is not visible in the binary. Zero-initialized definitions: VC6 puts
+// them after the uninitialized globals of the file, in definition order, which
+// is the retail .bss order (g_pFileSystem, these, szDefaultEngineDLL_guess).
+char g_rgchBlobSpaceLow_guess[ 1000 ] = { 0 };
+char g_szEXEName_guess[ MAX_PATH ] = "";
+char g_rgchBlobSpace_guess[ 0x2100000 - 1000 - MAX_PATH ] = { 0 };
+
 char com_gamedir[ MAX_PATH ];
 char szBaseDir[ MAX_PATH ];
 char szNewCommandParams[ 2048 ];
-char szDefaultEngineDLL_guess[ 8 ];		// never written: an empty default for the EngineDLL key
+char szDefaultEngineDLL_guess[ 8 ] = "";		// never written: an empty default for the EngineDLL key
 
 //-----------------------------------------------------------------------------
 // Purpose: Returns the directory the launcher runs from, without a trailing slash
