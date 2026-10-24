@@ -7810,7 +7810,7 @@ gameui,1000E1A0,17,?GetCareerName@CareerDefinition@@QBEPBDXZ,CareerDefinition::G
 gameui,1000E1C0,17,?GetSaveDirectory@CareerDefinition@@QBEPBDXZ,CareerDefinition::GetSaveDirectory,UNKNOWN,GameUI/CareerDefinitions.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,1000E1E0,17,?begin@?$vector@PAVICareerTask@@V?$allocator@PAVICareerTask@@@std@@@std@@QAEPAPAVICareerTask@@XZ,>::begin,LIB,GameUI/CareerDefinitions.cpp,,,TODO,,gameui_manual.csv,
 gameui,1000E200,532,?insert@?$vector@PAVICareerTask@@V?$allocator@PAVICareerTask@@@std@@@std@@QAEXPAPAVICareerTask@@IABQAV3@@Z,>::insert,LIB,GameUI/CareerDefinitions.cpp,,,TODO,,gameui_manual.csv,
-gameui,1000E420,98,,,UNKNOWN,GameUI/CareerDefinitions.cpp,,,TODO,,,
+gameui,1000E420,98,,,UNKNOWN,GameUI/CareerDefinitions.cpp,,,TODO,,,"CloneString (inline in game_shared/shared_util.h), bytes identical to our object (gameui_manual.csv); not delinked: the same decorated name labels the BitmapImagePanel.cpp CloneString at 10066B9A and tools/build.py keeps a name at one address only (only $ and _$E names may repeat)"
 gameui,1000E490,101,?CloneWString@@YAPAGPBG@Z,CloneWString,UNKNOWN,GameUI/CareerDefinitions.cpp,,,MATCHED,100,,
 gameui,1000E500,29,?construct@?$allocator@PAVICareerTask@@@std@@QAEXPAPAVICareerTask@@ABQAV3@@Z,*>::construct,LIB,GameUI/CareerDefinitions.cpp,,,TODO,,gameui_manual.csv,
 gameui,1000E520,25,,std::allocator<std::_Container_proxy>::destroy,LIB,,,,,,ghidra,
