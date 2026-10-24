@@ -4844,3 +4844,22 @@ va,name,kind,evidence
 10040E10,?OnCommand@CTextEntryBox@@MAEXPBD@Z,func,GameUI/TextEntryBox.cpp: same position and size as in our compiled object; linux: _ZN13CTextEntryBox9OnCommandEPKc
 10040E5A,?OnKeyCodeTyped@CTextEntryBox@@UAEXW4KeyCode@vgui2@@@Z,func,GameUI/TextEntryBox.cpp: same position and size as in our compiled object; linux: _ZN13CTextEntryBox14OnKeyCodeTypedEN5vgui27KeyCodeE
 10040EB0,??_GCTextEntryBox@@UAEPAXI@Z,func,GameUI/TextEntryBox.cpp: same position and size as in our compiled object
+100403C0,??0CTaskButton@@QAE@PAVPanel@vgui2@@I@Z,func,GameUI/TaskButton.cpp: same position and size as in our compiled object; linux: _ZN11CTaskButtonC1EPN5vgui25PanelEj
+10040470,??1CTaskButton@@UAE@XZ,func,GameUI/TaskButton.cpp: same position and size as in our compiled object; linux: _ZN11CTaskButtonD2Ev
+1004049A,?SetTitle@CTaskButton@@QAEXPBG@Z,func,GameUI/TaskButton.cpp: same position and size as in our compiled object; linux: _ZN11CTaskButton8SetTitleEPKw
+100404D5,?SetSelected@CTaskButton@@QAEX_N@Z,func,GameUI/TaskButton.cpp: same position and size as in our compiled object; linux: _ZN11CTaskButton11SetSelectedEb
+1004064E,?ShouldDisplay@CTaskButton@@QAE_NXZ,func,GameUI/TaskButton.cpp: same position and size as in our compiled object; linux: _ZN11CTaskButton13ShouldDisplayEv
+100406E1,?GetTaskPanel@CTaskButton@@QAEIXZ,func,GameUI/TaskButton.cpp: same position and size as in our compiled object; linux: _ZN11CTaskButton12GetTaskPanelEv
+1004070B,?OnMousePressed@CTaskButton@@MAEXW4MouseCode@vgui2@@@Z,func,GameUI/TaskButton.cpp: same position and size as in our compiled object; linux: _ZN11CTaskButton14OnMousePressedEN5vgui29MouseCodeE
+10040777,?OnMouseDoublePressed@CTaskButton@@MAEXW4MouseCode@vgui2@@@Z,func,GameUI/TaskButton.cpp: same position and size as in our compiled object; linux: _ZN11CTaskButton20OnMouseDoublePressedEN5vgui29MouseCodeE
+10040796,?ApplySchemeSettings@CTaskButton@@MAEXPAVIScheme@vgui2@@@Z,func,GameUI/TaskButton.cpp: same position and size as in our compiled object; linux: _ZN11CTaskButton19ApplySchemeSettingsEPN5vgui27ISchemeE
+1004089F,??0CWindowStateImage@@QAE@XZ,func,GameUI/TaskButton.cpp: same position and size as in our compiled object; linux: _ZN17CWindowStateImageC2Ev
+100408D4,?SetTall@CWindowStateImage@@QAEXH@Z,func,GameUI/TaskButton.cpp: same position and size as in our compiled object; linux: _ZN17CWindowStateImage7SetTallEi
+100408F2,?Paint@CWindowStateImage@@UAEXXZ,func,GameUI/TaskButton.cpp: same position and size as in our compiled object; linux: _ZN17CWindowStateImage5PaintEv
+10040A13,?SetFocused@CWindowStateImage@@QAEXXZ,func,GameUI/TaskButton.cpp: same position and size as in our compiled object; linux: _ZN17CWindowStateImage10SetFocusedEv
+10040A28,?SetOutOfFocus@CWindowStateImage@@QAEXXZ,func,GameUI/TaskButton.cpp: same position and size as in our compiled object; linux: _ZN17CWindowStateImage13SetOutOfFocusEv
+10040A3D,?SetMinimized@CWindowStateImage@@QAEXXZ,func,GameUI/TaskButton.cpp: same position and size as in our compiled object; linux: _ZN17CWindowStateImage12SetMinimizedEv
+10040A60,??_GCTaskButton@@UAEPAXI@Z,func,GameUI/TaskButton.cpp: same position and size as in our compiled object
+10040A90,??1CWindowStateImage@@UAE@XZ,func,GameUI/TaskButton.cpp: same position and size as in our compiled object
+10040AB0,??_GCWindowStateImage@@UAEPAXI@Z,func,GameUI/TaskButton.cpp: same position and size as in our compiled object
+10040AE0,?SetBkColor@Image@vgui2@@UAEXVColor@@@Z,func,GameUI/TaskButton.cpp: same position and size as in our compiled object

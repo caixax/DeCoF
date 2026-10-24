@@ -4028,6 +4028,11 @@
           "name": "GameUI/OptionsSubMultiplayer",
           "source": "src/gameui/OptionsSubMultiplayer.cpp",
           "functions_file": "tools/units/gameui_GameUI_OptionsSubMultiplayer.txt"
+        },
+        {
+          "name": "GameUI/TaskButton",
+          "source": "src/gameui/TaskButton.cpp",
+          "functions_file": "tools/units/gameui_GameUI_TaskButton.txt"
         }
       ]
     }

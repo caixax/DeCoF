@@ -9284,25 +9284,25 @@ gameui,10040300,64,?GetMessageMap@MenuItem@vgui2@@UAEPAUPanelMessageMap@2@XZ,vgu
 gameui,10040340,10,?GetPanelClassName@MenuItem@vgui2@@SAPBDXZ,vgui2::MenuItem::GetPanelClassName,UNKNOWN,vgui2/controls/MenuItem.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,10040350,64,,,UNKNOWN,GameUI/Taskbar.cpp,,,TODO,,,
 gameui,10040390,10,,,UNKNOWN,GameUI/Taskbar.cpp,,,TODO,,,
-gameui,100403C0,176,,,UNKNOWN,GameUI/TaskButton.cpp,,,TODO,,,linux: _ZN11CTaskButtonC1EPN5vgui25PanelEj
-gameui,10040470,42,,,UNKNOWN,GameUI/TaskButton.cpp,,,TODO,,,linux: _ZN11CTaskButtonD2Ev
-gameui,1004049A,59,,,UNKNOWN,GameUI/TaskButton.cpp,,,TODO,,,linux: _ZN11CTaskButton8SetTitleEPKw
-gameui,100404D5,377,,,UNKNOWN,GameUI/TaskButton.cpp,,,TODO,,,linux: _ZN11CTaskButton11SetSelectedEb
-gameui,1004064E,147,,,UNKNOWN,GameUI/TaskButton.cpp,,,TODO,,,linux: _ZN11CTaskButton13ShouldDisplayEv
-gameui,100406E1,42,,,UNKNOWN,GameUI/TaskButton.cpp,,,TODO,,,linux: _ZN11CTaskButton12GetTaskPanelEv
-gameui,1004070B,108,,,UNKNOWN,GameUI/TaskButton.cpp,,,TODO,,,linux: _ZN11CTaskButton14OnMousePressedEN5vgui29MouseCodeE
-gameui,10040777,31,,,UNKNOWN,GameUI/TaskButton.cpp,,,TODO,,,linux: _ZN11CTaskButton20OnMouseDoublePressedEN5vgui29MouseCodeE
-gameui,10040796,265,,CTaskButton::ApplySchemeSettings,ENGINE,GameUI/TaskButton.cpp,,,TODO,,linux_symbols:caller:0.853,linux: _ZN11CTaskButton19ApplySchemeSettingsEPN5vgui27ISchemeE
-gameui,1004089F,53,,,UNKNOWN,GameUI/TaskButton.cpp,,,TODO,,,linux: _ZN17CWindowStateImageC2Ev
-gameui,100408D4,30,,,UNKNOWN,GameUI/TaskButton.cpp,,,TODO,,,linux: _ZN17CWindowStateImage7SetTallEi
-gameui,100408F2,289,,,UNKNOWN,GameUI/TaskButton.cpp,,,TODO,,,linux: _ZN17CWindowStateImage5PaintEv
-gameui,10040A13,21,,,UNKNOWN,GameUI/TaskButton.cpp,,,TODO,,,linux: _ZN17CWindowStateImage10SetFocusedEv
-gameui,10040A28,21,,,UNKNOWN,GameUI/TaskButton.cpp,,,TODO,,,linux: _ZN17CWindowStateImage13SetOutOfFocusEv
-gameui,10040A3D,21,,,UNKNOWN,GameUI/TaskButton.cpp,,,TODO,,,linux: _ZN17CWindowStateImage12SetMinimizedEv
-gameui,10040A60,46,,,UNKNOWN,GameUI/TaskButton.cpp,,,TODO,,,
-gameui,10040A90,19,,,UNKNOWN,GameUI/TaskButton.cpp,,,TODO,,,
-gameui,10040AB0,46,,,UNKNOWN,GameUI/TaskButton.cpp,,,TODO,,,
-gameui,10040AE0,28,,,UNKNOWN,GameUI/TaskButton.cpp,,,TODO,,,
+gameui,100403C0,176,??0CTaskButton@@QAE@PAVPanel@vgui2@@I@Z,"public: __thiscall CTaskButton::CTaskButton(class vgui2::Panel *,unsigned int)",UNKNOWN,GameUI/TaskButton.cpp,,,MATCHED,100,,linux: _ZN11CTaskButtonC1EPN5vgui25PanelEj
+gameui,10040470,42,??1CTaskButton@@UAE@XZ,public: virtual __thiscall CTaskButton::~CTaskButton(void),UNKNOWN,GameUI/TaskButton.cpp,,,MATCHED,100,,linux: _ZN11CTaskButtonD2Ev
+gameui,1004049A,59,?SetTitle@CTaskButton@@QAEXPBG@Z,public: void __thiscall CTaskButton::SetTitle(unsigned short const *),UNKNOWN,GameUI/TaskButton.cpp,,,MATCHED,100,,linux: _ZN11CTaskButton8SetTitleEPKw
+gameui,100404D5,377,?SetSelected@CTaskButton@@QAEX_N@Z,public: void __thiscall CTaskButton::SetSelected(bool),UNKNOWN,GameUI/TaskButton.cpp,,,MATCHED,100,,linux: _ZN11CTaskButton11SetSelectedEb
+gameui,1004064E,147,?ShouldDisplay@CTaskButton@@QAE_NXZ,public: bool __thiscall CTaskButton::ShouldDisplay(void),UNKNOWN,GameUI/TaskButton.cpp,,,MATCHED,100,,linux: _ZN11CTaskButton13ShouldDisplayEv
+gameui,100406E1,42,?GetTaskPanel@CTaskButton@@QAEIXZ,public: unsigned int __thiscall CTaskButton::GetTaskPanel(void),UNKNOWN,GameUI/TaskButton.cpp,,,MATCHED,100,,linux: _ZN11CTaskButton12GetTaskPanelEv
+gameui,1004070B,108,?OnMousePressed@CTaskButton@@MAEXW4MouseCode@vgui2@@@Z,protected: virtual void __thiscall CTaskButton::OnMousePressed(enum vgui2::MouseCode),UNKNOWN,GameUI/TaskButton.cpp,,,MATCHED,100,,linux: _ZN11CTaskButton14OnMousePressedEN5vgui29MouseCodeE
+gameui,10040777,31,?OnMouseDoublePressed@CTaskButton@@MAEXW4MouseCode@vgui2@@@Z,protected: virtual void __thiscall CTaskButton::OnMouseDoublePressed(enum vgui2::MouseCode),UNKNOWN,GameUI/TaskButton.cpp,,,MATCHED,100,,linux: _ZN11CTaskButton20OnMouseDoublePressedEN5vgui29MouseCodeE
+gameui,10040796,265,?ApplySchemeSettings@CTaskButton@@MAEXPAVIScheme@vgui2@@@Z,protected: virtual void __thiscall CTaskButton::ApplySchemeSettings(class vgui2::IScheme *),ENGINE,GameUI/TaskButton.cpp,,,TODO,99.99,linux_symbols:caller:0.853,"relocation targets differ (instructions identical): retail ?ApplySchemeSettings@Label@vgui2@@MAEXPAVIScheme@2@@Z, ours ?ApplySchemeSettings@Panel@vgui2@@UAEXPAVIScheme@2@@Z"
+gameui,1004089F,53,??0CWindowStateImage@@QAE@XZ,public: __thiscall CWindowStateImage::CWindowStateImage(void),UNKNOWN,GameUI/TaskButton.cpp,,,MATCHED,100,,linux: _ZN17CWindowStateImageC2Ev
+gameui,100408D4,30,?SetTall@CWindowStateImage@@QAEXH@Z,public: void __thiscall CWindowStateImage::SetTall(int),UNKNOWN,GameUI/TaskButton.cpp,,,MATCHED,100,,linux: _ZN17CWindowStateImage7SetTallEi
+gameui,100408F2,289,?Paint@CWindowStateImage@@UAEXXZ,public: virtual void __thiscall CWindowStateImage::Paint(void),UNKNOWN,GameUI/TaskButton.cpp,,,MATCHED,100,,linux: _ZN17CWindowStateImage5PaintEv
+gameui,10040A13,21,?SetFocused@CWindowStateImage@@QAEXXZ,public: void __thiscall CWindowStateImage::SetFocused(void),UNKNOWN,GameUI/TaskButton.cpp,,,MATCHED,100,,linux: _ZN17CWindowStateImage10SetFocusedEv
+gameui,10040A28,21,?SetOutOfFocus@CWindowStateImage@@QAEXXZ,public: void __thiscall CWindowStateImage::SetOutOfFocus(void),UNKNOWN,GameUI/TaskButton.cpp,,,MATCHED,100,,linux: _ZN17CWindowStateImage13SetOutOfFocusEv
+gameui,10040A3D,21,?SetMinimized@CWindowStateImage@@QAEXXZ,public: void __thiscall CWindowStateImage::SetMinimized(void),UNKNOWN,GameUI/TaskButton.cpp,,,MATCHED,100,,linux: _ZN17CWindowStateImage12SetMinimizedEv
+gameui,10040A60,46,??_GCTaskButton@@UAEPAXI@Z,public: virtual void * __thiscall CTaskButton::`scalar deleting destructor'(unsigned int),UNKNOWN,GameUI/TaskButton.cpp,,,MATCHED,100,,
+gameui,10040A90,19,??1CWindowStateImage@@UAE@XZ,public: virtual __thiscall CWindowStateImage::~CWindowStateImage(void),UNKNOWN,GameUI/TaskButton.cpp,,,MATCHED,100,,
+gameui,10040AB0,46,??_GCWindowStateImage@@UAEPAXI@Z,public: virtual void * __thiscall CWindowStateImage::`scalar deleting destructor'(unsigned int),UNKNOWN,GameUI/TaskButton.cpp,,,MATCHED,100,,
+gameui,10040AE0,28,?SetBkColor@Image@vgui2@@UAEXVColor@@@Z,public: virtual void __thiscall vgui2::Image::SetBkColor(class Color),UNKNOWN,GameUI/TaskButton.cpp,,,MATCHED,100,,
 gameui,10040B00,296,??0CTextEntryBox@@QAE@PBD00_NPAVPanel@vgui2@@@Z,"public: __thiscall CTextEntryBox::CTextEntryBox(char const *,char const *,char const *,bool,class vgui2::Panel *)",UNKNOWN,GameUI/TextEntryBox.cpp,,,MATCHED,100,,linux: _ZN13CTextEntryBoxC1EPKcS1_S1_bPN5vgui25PanelE
 gameui,10040C28,79,??1CTextEntryBox@@UAE@XZ,public: virtual __thiscall CTextEntryBox::~CTextEntryBox(void),UNKNOWN,GameUI/TextEntryBox.cpp,,,MATCHED,100,,linux: _ZN13CTextEntryBoxD1Ev
 gameui,10040C77,68,?ShowWindow@CTextEntryBox@@UAEXPAVFrame@vgui2@@@Z,public: virtual void __thiscall CTextEntryBox::ShowWindow(class vgui2::Frame *),UNKNOWN,GameUI/TextEntryBox.cpp,,,MATCHED,100,,linux: _ZN13CTextEntryBox10ShowWindowEPN5vgui25FrameE
