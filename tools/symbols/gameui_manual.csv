@@ -4295,3 +4295,32 @@ va,name,kind,evidence
 10095180,??0QueryBox_RegisterMap@QueryBox@vgui2@@QAE@XZ,func,"vgui2/controls/QueryBox.cpp: same position and size as in our compiled object (gameui.so DWARF line order, vtable slots, strings)"
 100951A0,?ChainToMap@QueryBox@vgui2@@SAXXZ,func,"vgui2/controls/QueryBox.cpp: same position and size as in our compiled object (gameui.so DWARF line order, vtable slots, strings)"
 10095210,?GetPanelBaseClassName@QueryBox@vgui2@@SAPBDXZ,func,"vgui2/controls/QueryBox.cpp: same position and size as in our compiled object (gameui.so DWARF line order, vtable slots, strings)"
+10057A70,??0COptionsSubVoice@@QAE@PAVPanel@vgui2@@@Z,func,GameUI/OptionsSubVoice.cpp: same position and size as in our compiled object; linux: _ZN16COptionsSubVoiceC2EPN5vgui25PanelE
+10057E8F,??1COptionsSubVoice@@UAE@XZ,func,GameUI/OptionsSubVoice.cpp: same position and size as in our compiled object; linux: _ZN16COptionsSubVoiceD2Ev
+10057EC2,?OnResetData@COptionsSubVoice@@UAEXXZ,func,GameUI/OptionsSubVoice.cpp: same position and size as in our compiled object; linux: _ZN16COptionsSubVoice11OnResetDataEv
+10057FE7,?OnSliderMoved@COptionsSubVoice@@EAEXH@Z,func,GameUI/OptionsSubVoice.cpp: same position and size as in our compiled object; linux: _ZN16COptionsSubVoice13OnSliderMovedEi
+10058065,?OnCheckButtonChecked@COptionsSubVoice@@EAEXH@Z,func,GameUI/OptionsSubVoice.cpp: same position and size as in our compiled object; linux: _ZN16COptionsSubVoice20OnCheckButtonCheckedEi
+100580EC,?OnApplyChanges@COptionsSubVoice@@UAEXXZ,func,GameUI/OptionsSubVoice.cpp: same position and size as in our compiled object; linux: _ZN16COptionsSubVoice14OnApplyChangesEv
+100581DE,?StartTestMicrophone@COptionsSubVoice@@AAEXXZ,func,GameUI/OptionsSubVoice.cpp: same position and size as in our compiled object; linux: _ZN16COptionsSubVoice19StartTestMicrophoneEv
+10058322,?UseCurrentVoiceParameters@COptionsSubVoice@@AAEXXZ,func,GameUI/OptionsSubVoice.cpp: same position and size as in our compiled object; linux: _ZN16COptionsSubVoice25UseCurrentVoiceParametersEv
+100583F2,?ResetVoiceParameters@COptionsSubVoice@@AAEXXZ,func,GameUI/OptionsSubVoice.cpp: same position and size as in our compiled object; linux: _ZN16COptionsSubVoice20ResetVoiceParametersEv
+100584AC,?EndTestMicrophone@COptionsSubVoice@@AAEXXZ,func,GameUI/OptionsSubVoice.cpp: same position and size as in our compiled object; linux: _ZN16COptionsSubVoice17EndTestMicrophoneEv
+100585D5,?OnCommand@COptionsSubVoice@@EAEXPBD@Z,func,GameUI/OptionsSubVoice.cpp: same position and size as in our compiled object; linux: _ZN16COptionsSubVoice9OnCommandEPKc
+10058626,?OnPageHide@COptionsSubVoice@@EAEXXZ,func,GameUI/OptionsSubVoice.cpp: same position and size as in our compiled object; linux: _ZN16COptionsSubVoice10OnPageHideEv
+10058650,?OnControlModified@COptionsSubVoice@@EAEXXZ,func,GameUI/OptionsSubVoice.cpp: same position and size as in our compiled object; linux: _ZN16COptionsSubVoice17OnControlModifiedEv
+1005869B,?OnThink@COptionsSubVoice@@MAEXXZ,func,GameUI/OptionsSubVoice.cpp: same position and size as in our compiled object; linux: _ZN16COptionsSubVoice7OnThinkEv
+10058740,??_GCOptionsSubVoice@@UAEPAXI@Z,func,GameUI/OptionsSubVoice.cpp: same position and size as in our compiled object
+10058770,??0COptionsSubVoice_RegisterMap@COptionsSubVoice@@QAE@XZ,func,GameUI/OptionsSubVoice.cpp: same position and size as in our compiled object
+10058790,?ChainToMap@COptionsSubVoice@@SAXXZ,func,GameUI/OptionsSubVoice.cpp: same position and size as in our compiled object
+10058800,?GetMessageMap@COptionsSubVoice@@UAEPAUPanelMessageMap@vgui2@@XZ,func,GameUI/OptionsSubVoice.cpp: same position and size as in our compiled object
+10058840,?GetPanelClassName@COptionsSubVoice@@SAPBDXZ,func,GameUI/OptionsSubVoice.cpp: same position and size as in our compiled object
+10058850,?GetPanelBaseClassName@COptionsSubVoice@@SAPBDXZ,func,GameUI/OptionsSubVoice.cpp: same position and size as in our compiled object
+10058860,??0PanelMessageFunc_OnPageHide@COptionsSubVoice@@QAE@XZ,func,GameUI/OptionsSubVoice.cpp: same position and size as in our compiled object
+10058880,?InitVar@PanelMessageFunc_OnPageHide@COptionsSubVoice@@SAXXZ,func,GameUI/OptionsSubVoice.cpp: same position and size as in our compiled object
+100588F0,?AddToMap@COptionsSubVoice@@SAXPBDP8Panel@vgui2@@AEXXZHH0H0@Z,func,GameUI/OptionsSubVoice.cpp: same position and size as in our compiled object
+10058970,??0PanelMessageFunc_OnSliderMoved@COptionsSubVoice@@QAE@XZ,func,GameUI/OptionsSubVoice.cpp: same position and size as in our compiled object
+10058990,?InitVar@PanelMessageFunc_OnSliderMoved@COptionsSubVoice@@SAXXZ,func,GameUI/OptionsSubVoice.cpp: same position and size as in our compiled object
+10058A00,??0PanelMessageFunc_OnCheckButtonChecked@COptionsSubVoice@@QAE@XZ,func,GameUI/OptionsSubVoice.cpp: same position and size as in our compiled object
+10058A20,?InitVar@PanelMessageFunc_OnCheckButtonChecked@COptionsSubVoice@@SAXXZ,func,GameUI/OptionsSubVoice.cpp: same position and size as in our compiled object
+10058A90,??0PanelMessageFunc_OnControlModified@COptionsSubVoice@@QAE@XZ,func,GameUI/OptionsSubVoice.cpp: same position and size as in our compiled object
+10058AB0,?InitVar@PanelMessageFunc_OnControlModified@COptionsSubVoice@@SAXXZ,func,GameUI/OptionsSubVoice.cpp: same position and size as in our compiled object

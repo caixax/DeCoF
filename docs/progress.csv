@@ -10041,35 +10041,35 @@ gameui,10057950,19,??0PanelMessageFunc_OnTextChanged@COptionsSubVideo@@QAE@XZ,pu
 gameui,10057970,113,?InitVar@PanelMessageFunc_OnTextChanged@COptionsSubVideo@@SAXXZ,public: static void __cdecl COptionsSubVideo::PanelMessageFunc_OnTextChanged::InitVar(void),UNKNOWN,GameUI/OptionsSubVideo.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,100579F0,71,?IsWideScreen@@YA_NHH@Z,"bool __cdecl IsWideScreen(int,int)",UNKNOWN,GameUI/OptionsSubVideo.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,10057A40,46,??_GCOptionsSubVideo@@UAEPAXI@Z,public: virtual void * __thiscall COptionsSubVideo::`scalar deleting destructor'(unsigned int),UNKNOWN,GameUI/OptionsSubVideo.cpp,,,MATCHED,100,gameui_manual.csv,
-gameui,10057A70,1055,,COptionsSubVoice::COptionsSubVoice,ENGINE,GameUI/OptionsSubVoice.cpp,,,TODO,,linux_symbols:string:0.354,linux: _ZN16COptionsSubVoiceC2EPN5vgui25PanelE
-gameui,10057E8F,51,,,UNKNOWN,GameUI/OptionsSubVoice.cpp,,,TODO,,,linux: _ZN16COptionsSubVoiceD2Ev
-gameui,10057EC2,293,,,UNKNOWN,GameUI/OptionsSubVoice.cpp,,,TODO,,,linux: _ZN16COptionsSubVoice11OnResetDataEv
-gameui,10057FE7,126,,,UNKNOWN,GameUI/OptionsSubVoice.cpp,,,TODO,,,linux: _ZN16COptionsSubVoice13OnSliderMovedEi
-gameui,10058065,135,,,UNKNOWN,GameUI/OptionsSubVoice.cpp,,,TODO,,,linux: _ZN16COptionsSubVoice20OnCheckButtonCheckedEi
-gameui,100580EC,242,,COptionsSubVoice::OnApplyChanges,ENGINE,GameUI/OptionsSubVoice.cpp,,,TODO,,linux_symbols:caller:0.8,linux: _ZN16COptionsSubVoice14OnApplyChangesEv
-gameui,100581DE,324,,COptionsSubVoice::StartTestMicrophone,ENGINE,GameUI/OptionsSubVoice.cpp,,,TODO,,linux_symbols:string:0.438,linux: _ZN16COptionsSubVoice19StartTestMicrophoneEv
-gameui,10058322,208,,COptionsSubVoice::UseCurrentVoiceParameters,ENGINE,GameUI/OptionsSubVoice.cpp,,,TODO,,linux_symbols:callseq:0.8,linux: _ZN16COptionsSubVoice25UseCurrentVoiceParametersEv
-gameui,100583F2,186,,,UNKNOWN,GameUI/OptionsSubVoice.cpp,,,TODO,,,linux: _ZN16COptionsSubVoice20ResetVoiceParametersEv
-gameui,100584AC,297,,,UNKNOWN,GameUI/OptionsSubVoice.cpp,,,TODO,,,linux: _ZN16COptionsSubVoice17EndTestMicrophoneEv
-gameui,100585D5,81,,,UNKNOWN,GameUI/OptionsSubVoice.cpp,,,TODO,,,linux: _ZN16COptionsSubVoice9OnCommandEPKc
-gameui,10058626,42,,,UNKNOWN,GameUI/OptionsSubVoice.cpp,,,TODO,,,linux: _ZN16COptionsSubVoice10OnPageHideEv
-gameui,10058650,75,,,UNKNOWN,GameUI/OptionsSubVoice.cpp,,,TODO,,,linux: _ZN16COptionsSubVoice17OnControlModifiedEv
-gameui,1005869B,163,,,UNKNOWN,GameUI/OptionsSubVoice.cpp,,,TODO,,,linux: _ZN16COptionsSubVoice7OnThinkEv
-gameui,10058740,46,,,UNKNOWN,GameUI/OptionsSubVoice.cpp,,,TODO,,,
-gameui,10058770,19,,,UNKNOWN,GameUI/OptionsSubVoice.cpp,,,TODO,,,
-gameui,10058790,102,,,UNKNOWN,GameUI/OptionsSubVoice.cpp,,,TODO,,,
-gameui,10058800,64,,,UNKNOWN,GameUI/OptionsSubVoice.cpp,,,TODO,,,
-gameui,10058840,10,,,UNKNOWN,GameUI/OptionsSubVoice.cpp,,,TODO,,,
-gameui,10058850,10,,,UNKNOWN,GameUI/OptionsSubVoice.cpp,,,TODO,,,
-gameui,10058860,19,,,UNKNOWN,GameUI/OptionsSubVoice.cpp,,,TODO,,,
-gameui,10058880,107,,,UNKNOWN,GameUI/OptionsSubVoice.cpp,,,TODO,,,
-gameui,100588F0,120,,,UNKNOWN,GameUI/OptionsSubVoice.cpp,,,TODO,,,
-gameui,10058970,19,,,UNKNOWN,GameUI/OptionsSubVoice.cpp,,,TODO,,,
-gameui,10058990,110,,,UNKNOWN,GameUI/OptionsSubVoice.cpp,,,TODO,,,
-gameui,10058A00,19,,,UNKNOWN,GameUI/OptionsSubVoice.cpp,,,TODO,,,
-gameui,10058A20,110,,,UNKNOWN,GameUI/OptionsSubVoice.cpp,,,TODO,,,
-gameui,10058A90,19,,,UNKNOWN,GameUI/OptionsSubVoice.cpp,,,TODO,,,
-gameui,10058AB0,107,,,UNKNOWN,GameUI/OptionsSubVoice.cpp,,,TODO,,,
+gameui,10057A70,1055,??0COptionsSubVoice@@QAE@PAVPanel@vgui2@@@Z,public: __thiscall COptionsSubVoice::COptionsSubVoice(class vgui2::Panel *),ENGINE,GameUI/OptionsSubVoice.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN16COptionsSubVoiceC2EPN5vgui25PanelE
+gameui,10057E8F,51,??1COptionsSubVoice@@UAE@XZ,public: virtual __thiscall COptionsSubVoice::~COptionsSubVoice(void),UNKNOWN,GameUI/OptionsSubVoice.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN16COptionsSubVoiceD2Ev
+gameui,10057EC2,293,?OnResetData@COptionsSubVoice@@UAEXXZ,public: virtual void __thiscall COptionsSubVoice::OnResetData(void),UNKNOWN,GameUI/OptionsSubVoice.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN16COptionsSubVoice11OnResetDataEv
+gameui,10057FE7,126,?OnSliderMoved@COptionsSubVoice@@EAEXH@Z,private: virtual void __thiscall COptionsSubVoice::OnSliderMoved(int),UNKNOWN,GameUI/OptionsSubVoice.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN16COptionsSubVoice13OnSliderMovedEi
+gameui,10058065,135,?OnCheckButtonChecked@COptionsSubVoice@@EAEXH@Z,private: virtual void __thiscall COptionsSubVoice::OnCheckButtonChecked(int),UNKNOWN,GameUI/OptionsSubVoice.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN16COptionsSubVoice20OnCheckButtonCheckedEi
+gameui,100580EC,242,?OnApplyChanges@COptionsSubVoice@@UAEXXZ,public: virtual void __thiscall COptionsSubVoice::OnApplyChanges(void),ENGINE,GameUI/OptionsSubVoice.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN16COptionsSubVoice14OnApplyChangesEv
+gameui,100581DE,324,?StartTestMicrophone@COptionsSubVoice@@AAEXXZ,private: void __thiscall COptionsSubVoice::StartTestMicrophone(void),ENGINE,GameUI/OptionsSubVoice.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN16COptionsSubVoice19StartTestMicrophoneEv
+gameui,10058322,208,?UseCurrentVoiceParameters@COptionsSubVoice@@AAEXXZ,private: void __thiscall COptionsSubVoice::UseCurrentVoiceParameters(void),ENGINE,GameUI/OptionsSubVoice.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN16COptionsSubVoice25UseCurrentVoiceParametersEv
+gameui,100583F2,186,?ResetVoiceParameters@COptionsSubVoice@@AAEXXZ,private: void __thiscall COptionsSubVoice::ResetVoiceParameters(void),UNKNOWN,GameUI/OptionsSubVoice.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN16COptionsSubVoice20ResetVoiceParametersEv
+gameui,100584AC,297,?EndTestMicrophone@COptionsSubVoice@@AAEXXZ,private: void __thiscall COptionsSubVoice::EndTestMicrophone(void),UNKNOWN,GameUI/OptionsSubVoice.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN16COptionsSubVoice17EndTestMicrophoneEv
+gameui,100585D5,81,?OnCommand@COptionsSubVoice@@EAEXPBD@Z,private: virtual void __thiscall COptionsSubVoice::OnCommand(char const *),UNKNOWN,GameUI/OptionsSubVoice.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN16COptionsSubVoice9OnCommandEPKc
+gameui,10058626,42,?OnPageHide@COptionsSubVoice@@EAEXXZ,private: virtual void __thiscall COptionsSubVoice::OnPageHide(void),UNKNOWN,GameUI/OptionsSubVoice.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN16COptionsSubVoice10OnPageHideEv
+gameui,10058650,75,?OnControlModified@COptionsSubVoice@@EAEXXZ,private: virtual void __thiscall COptionsSubVoice::OnControlModified(void),UNKNOWN,GameUI/OptionsSubVoice.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN16COptionsSubVoice17OnControlModifiedEv
+gameui,1005869B,163,?OnThink@COptionsSubVoice@@MAEXXZ,protected: virtual void __thiscall COptionsSubVoice::OnThink(void),UNKNOWN,GameUI/OptionsSubVoice.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN16COptionsSubVoice7OnThinkEv
+gameui,10058740,46,??_GCOptionsSubVoice@@UAEPAXI@Z,public: virtual void * __thiscall COptionsSubVoice::`scalar deleting destructor'(unsigned int),UNKNOWN,GameUI/OptionsSubVoice.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10058770,19,??0COptionsSubVoice_RegisterMap@COptionsSubVoice@@QAE@XZ,public: __thiscall COptionsSubVoice::COptionsSubVoice_RegisterMap::COptionsSubVoice_RegisterMap(void),UNKNOWN,GameUI/OptionsSubVoice.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10058790,102,?ChainToMap@COptionsSubVoice@@SAXXZ,public: static void __cdecl COptionsSubVoice::ChainToMap(void),UNKNOWN,GameUI/OptionsSubVoice.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10058800,64,?GetMessageMap@COptionsSubVoice@@UAEPAUPanelMessageMap@vgui2@@XZ,public: virtual struct vgui2::PanelMessageMap * __thiscall COptionsSubVoice::GetMessageMap(void),UNKNOWN,GameUI/OptionsSubVoice.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10058840,10,?GetPanelClassName@COptionsSubVoice@@SAPBDXZ,public: static char const * __cdecl COptionsSubVoice::GetPanelClassName(void),UNKNOWN,GameUI/OptionsSubVoice.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10058850,10,?GetPanelBaseClassName@COptionsSubVoice@@SAPBDXZ,public: static char const * __cdecl COptionsSubVoice::GetPanelBaseClassName(void),UNKNOWN,GameUI/OptionsSubVoice.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10058860,19,??0PanelMessageFunc_OnPageHide@COptionsSubVoice@@QAE@XZ,public: __thiscall COptionsSubVoice::PanelMessageFunc_OnPageHide::PanelMessageFunc_OnPageHide(void),UNKNOWN,GameUI/OptionsSubVoice.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10058880,107,?InitVar@PanelMessageFunc_OnPageHide@COptionsSubVoice@@SAXXZ,public: static void __cdecl COptionsSubVoice::PanelMessageFunc_OnPageHide::InitVar(void),UNKNOWN,GameUI/OptionsSubVoice.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100588F0,120,?AddToMap@COptionsSubVoice@@SAXPBDP8Panel@vgui2@@AEXXZHH0H0@Z,"public: static void __cdecl COptionsSubVoice::AddToMap(char const *,void (__thiscall vgui2::Panel::*)(void),int,int,char const *,int,char const *)",UNKNOWN,GameUI/OptionsSubVoice.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10058970,19,??0PanelMessageFunc_OnSliderMoved@COptionsSubVoice@@QAE@XZ,public: __thiscall COptionsSubVoice::PanelMessageFunc_OnSliderMoved::PanelMessageFunc_OnSliderMoved(void),UNKNOWN,GameUI/OptionsSubVoice.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10058990,110,?InitVar@PanelMessageFunc_OnSliderMoved@COptionsSubVoice@@SAXXZ,public: static void __cdecl COptionsSubVoice::PanelMessageFunc_OnSliderMoved::InitVar(void),UNKNOWN,GameUI/OptionsSubVoice.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10058A00,19,??0PanelMessageFunc_OnCheckButtonChecked@COptionsSubVoice@@QAE@XZ,public: __thiscall COptionsSubVoice::PanelMessageFunc_OnCheckButtonChecked::PanelMessageFunc_OnCheckButtonChecked(void),UNKNOWN,GameUI/OptionsSubVoice.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10058A20,110,?InitVar@PanelMessageFunc_OnCheckButtonChecked@COptionsSubVoice@@SAXXZ,public: static void __cdecl COptionsSubVoice::PanelMessageFunc_OnCheckButtonChecked::InitVar(void),UNKNOWN,GameUI/OptionsSubVoice.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10058A90,19,??0PanelMessageFunc_OnControlModified@COptionsSubVoice@@QAE@XZ,public: __thiscall COptionsSubVoice::PanelMessageFunc_OnControlModified::PanelMessageFunc_OnControlModified(void),UNKNOWN,GameUI/OptionsSubVoice.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10058AB0,107,?InitVar@PanelMessageFunc_OnControlModified@COptionsSubVoice@@SAXXZ,public: static void __cdecl COptionsSubVoice::PanelMessageFunc_OnControlModified::InitVar(void),UNKNOWN,GameUI/OptionsSubVoice.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,10058C70,10,?keyvalues@@YAPAVIKeyValues@@XZ,keyvalues,UNKNOWN,vgui2/controls/controls.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,10058C7A,10,?input@vgui2@@YAPAVIInput@1@XZ,vgui2::input,UNKNOWN,vgui2/controls/controls.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,10058C84,10,?scheme@vgui2@@YAPAVISchemeManager@1@XZ,vgui2::scheme,UNKNOWN,vgui2/controls/controls.cpp,,,MATCHED,100,gameui_manual.csv,

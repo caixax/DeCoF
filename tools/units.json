@@ -3918,6 +3918,11 @@
           "name": "vgui2/controls/QueryBox",
           "source": "src/vgui2/controls/QueryBox.cpp",
           "functions_file": "tools/units/gameui_vgui2_controls_QueryBox.txt"
+        },
+        {
+          "name": "GameUI/OptionsSubVoice",
+          "source": "src/gameui/OptionsSubVoice.cpp",
+          "functions_file": "tools/units/gameui_GameUI_OptionsSubVoice.txt"
         }
       ]
     }
