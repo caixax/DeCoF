@@ -3669,6 +3669,11 @@
           "functions_file": "tools/units/gameui_vgui2_controls_HTML.txt"
         },
         {
+          "name": "vgui2/controls/Slider",
+          "source": "src/vgui2/controls/Slider.cpp",
+          "functions_file": "tools/units/gameui_vgui2_controls_Slider.txt"
+        },
+        {
           "name": "vgui2/controls/ProgressBar",
           "source": "src/vgui2/controls/ProgressBar.cpp",
           "functions_file": "tools/units/gameui_vgui2_controls_ProgressBar.txt"

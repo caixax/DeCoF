@@ -11779,41 +11779,41 @@ gameui,1008DBF0,102,?ChainToMap@ToggleButton@vgui2@@SAXXZ,vgui2::ToggleButton::C
 gameui,1008DC60,64,?GetMessageMap@ToggleButton@vgui2@@UAEPAUPanelMessageMap@2@XZ,vgui2::ToggleButton::GetMessageMap,UNKNOWN,vgui2/controls/ToggleButton.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,1008DCA0,10,?GetPanelClassName@ToggleButton@vgui2@@SAPBDXZ,vgui2::ToggleButton::GetPanelClassName,UNKNOWN,vgui2/controls/ToggleButton.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,1008DCB0,10,?GetPanelBaseClassName@ToggleButton@vgui2@@SAPBDXZ,vgui2::ToggleButton::GetPanelBaseClassName,UNKNOWN,vgui2/controls/ToggleButton.cpp,,,MATCHED,100,gameui_manual.csv,
-gameui,1008DCC0,206,,,UNKNOWN,vgui2/controls/Slider.cpp,,,TODO,,,linux: _ZN5vgui26SliderC2EPNS_5PanelEPKc
-gameui,1008DD8E,43,,,UNKNOWN,vgui2/controls/Slider.cpp,,,TODO,,,linux: _ZN5vgui26Slider13OnSizeChangedEii
-gameui,1008DDB9,146,,,UNKNOWN,vgui2/controls/Slider.cpp,,,TODO,,,linux: _ZN5vgui26Slider8SetValueEib
-gameui,1008DE4B,20,,,UNKNOWN,vgui2/controls/Slider.cpp,,,TODO,,,linux: _ZN5vgui26Slider8GetValueEv
-gameui,1008DE5F,85,,,UNKNOWN,vgui2/controls/Slider.cpp,,,TODO,,,linux: _ZN5vgui26Slider13PerformLayoutEv
-gameui,1008DEB4,225,,,UNKNOWN,vgui2/controls/Slider.cpp,,,TODO,,,linux: _ZN5vgui26Slider24RecomputeNobPosFromValueEv
-gameui,1008DF95,166,,,UNKNOWN,vgui2/controls/Slider.cpp,,,TODO,,,linux: _ZN5vgui26Slider24RecomputeValueFromNobPosEv
-gameui,1008E03B,90,,,UNKNOWN,vgui2/controls/Slider.cpp,,,TODO,,,linux: _ZN5vgui26Slider22SendSliderMovedMessageEv
-gameui,1008E095,255,,vgui2::Slider::ApplySchemeSettings,ENGINE,vgui2/controls/Slider.cpp,,,TODO,,linux_symbols:string:0.411,linux: _ZN5vgui26Slider19ApplySchemeSettingsEPNS_7ISchemeE
-gameui,1008E194,194,,,UNKNOWN,vgui2/controls/Slider.cpp,,,TODO,,,linux: _ZN5vgui26Slider11GetSettingsEP9KeyValues
-gameui,1008E256,136,,vgui2::Slider::ApplySettings,ENGINE,vgui2/controls/Slider.cpp,,,TODO,,linux_symbols:string:0.833,linux: _ZN5vgui26Slider13ApplySettingsEP9KeyValues
-gameui,1008E2DE,48,,vgui2::Slider::GetDescription,ENGINE,vgui2/controls/Slider.cpp,,,TODO,,linux_symbols:string:0.625,linux: _ZN5vgui26Slider14GetDescriptionEv
-gameui,1008E30E,88,,,UNKNOWN,vgui2/controls/Slider.cpp,,,TODO,,,linux: _ZN5vgui26Slider12GetTrackRectERiS1_S1_S1_
-gameui,1008E366,35,,,UNKNOWN,vgui2/controls/Slider.cpp,,,TODO,,,linux: _ZN5vgui26Slider5PaintEv
-gameui,1008E389,647,,,UNKNOWN,vgui2/controls/Slider.cpp,,,TODO,,,linux: _ZN5vgui26Slider9DrawTicksEv
-gameui,1008E610,675,,,UNKNOWN,vgui2/controls/Slider.cpp,,,TODO,,,linux: _ZN5vgui26Slider14DrawTickLabelsEv
-gameui,1008E8B3,274,,,UNKNOWN,vgui2/controls/Slider.cpp,,,TODO,,,linux: _ZN5vgui26Slider7DrawNobEv
-gameui,1008E9C5,237,,,UNKNOWN,vgui2/controls/Slider.cpp,,,TODO,,,linux: _ZN5vgui26Slider15SetTickCaptionsEPKcS2_
-gameui,1008EAB2,237,,,UNKNOWN,vgui2/controls/Slider.cpp,,,TODO,,,linux: _ZN5vgui26Slider15SetTickCaptionsEPKwS2_
-gameui,1008EB9F,232,,vgui2::Slider::PaintBackground,ENGINE,vgui2/controls/Slider.cpp,,,TODO,,linux_symbols:string:0.768,linux: _ZN5vgui26Slider15PaintBackgroundEv
-gameui,1008EC87,143,,,UNKNOWN,vgui2/controls/Slider.cpp,,,TODO,,,linux: _ZN5vgui26Slider8SetRangeEii
-gameui,1008ED16,41,,CMFCVisualManagerOfficeXP::GetSmartDockingBaseGuideColors,ENGINE,vgui2/controls/Slider.cpp,,,TODO,,ghidra,linux: _ZN5vgui26Slider8GetRangeERiS1_
-gameui,1008ED3F,271,,,UNKNOWN,vgui2/controls/Slider.cpp,,,TODO,,,linux: _ZN5vgui26Slider13OnCursorMovedEii
-gameui,1008EE4E,287,,,UNKNOWN,vgui2/controls/Slider.cpp,,,TODO,,,linux: _ZN5vgui26Slider14OnMousePressedENS_9MouseCodeE
-gameui,1008EF6D,31,,,UNKNOWN,vgui2/controls/Slider.cpp,,,TODO,,,linux: _ZN5vgui26Slider20OnMouseDoublePressedENS_9MouseCodeE
-gameui,1008EF8C,441,,,UNKNOWN,vgui2/controls/Slider.cpp,,,TODO,,,linux: _ZN5vgui26Slider14OnKeyCodeTypedENS_7KeyCodeE
-gameui,1008F173,43,,,UNKNOWN,vgui2/controls/Slider.cpp,,,TODO,,,linux: _ZN5vgui26Slider15OnMouseReleasedENS_9MouseCodeE
-gameui,1008F19E,35,,,UNKNOWN,vgui2/controls/Slider.cpp,,,TODO,,,linux: _ZN5vgui26Slider9GetNobPosERiS1_
-gameui,1008F1C1,25,,,UNKNOWN,vgui2/controls/Slider.cpp,,,TODO,,,linux: _ZN5vgui26Slider15SetButtonOffsetEi
-gameui,1008F1DA,25,,,UNKNOWN,vgui2/controls/Slider.cpp,,,TODO,,,linux: _ZN5vgui26Slider13SetThumbWidthEi
-gameui,1008F1F3,25,,,UNKNOWN,vgui2/controls/Slider.cpp,,,TODO,,,linux: _ZN5vgui26Slider11SetNumTicksEi
-gameui,1008F210,46,,,UNKNOWN,vgui2/controls/Slider.cpp,,,TODO,,,
-gameui,1008F240,19,,,UNKNOWN,vgui2/controls/Slider.cpp,,,TODO,,,
-gameui,1008F260,102,,,UNKNOWN,vgui2/controls/Slider.cpp,,,TODO,,,
-gameui,1008F2D0,10,,,UNKNOWN,vgui2/controls/Slider.cpp,,,TODO,,,
+gameui,1008DCC0,206,??0Slider@vgui2@@QAE@PAVPanel@1@PBD@Z,vgui2::Slider::Slider,UNKNOWN,vgui2/controls/Slider.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui26SliderC2EPNS_5PanelEPKc
+gameui,1008DD8E,43,?OnSizeChanged@Slider@vgui2@@MAEXHH@Z,vgui2::Slider::OnSizeChanged,UNKNOWN,vgui2/controls/Slider.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui26Slider13OnSizeChangedEii
+gameui,1008DDB9,146,?SetValue@Slider@vgui2@@UAEXH_N@Z,vgui2::Slider::SetValue,UNKNOWN,vgui2/controls/Slider.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui26Slider8SetValueEib
+gameui,1008DE4B,20,?GetValue@Slider@vgui2@@UAEHXZ,vgui2::Slider::GetValue,UNKNOWN,vgui2/controls/Slider.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui26Slider8GetValueEv
+gameui,1008DE5F,85,?PerformLayout@Slider@vgui2@@MAEXXZ,vgui2::Slider::PerformLayout,UNKNOWN,vgui2/controls/Slider.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui26Slider13PerformLayoutEv
+gameui,1008DEB4,225,?RecomputeNobPosFromValue@Slider@vgui2@@MAEXXZ,vgui2::Slider::RecomputeNobPosFromValue,UNKNOWN,vgui2/controls/Slider.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui26Slider24RecomputeNobPosFromValueEv
+gameui,1008DF95,166,?RecomputeValueFromNobPos@Slider@vgui2@@MAEXXZ,vgui2::Slider::RecomputeValueFromNobPos,UNKNOWN,vgui2/controls/Slider.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui26Slider24RecomputeValueFromNobPosEv
+gameui,1008E03B,90,?SendSliderMovedMessage@Slider@vgui2@@MAEXXZ,vgui2::Slider::SendSliderMovedMessage,UNKNOWN,vgui2/controls/Slider.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui26Slider22SendSliderMovedMessageEv
+gameui,1008E095,255,?ApplySchemeSettings@Slider@vgui2@@MAEXPAVIScheme@2@@Z,vgui2::Slider::ApplySchemeSettings,ENGINE,vgui2/controls/Slider.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui26Slider19ApplySchemeSettingsEPNS_7ISchemeE
+gameui,1008E194,194,?GetSettings@Slider@vgui2@@MAEXPAVKeyValues@@@Z,vgui2::Slider::GetSettings,UNKNOWN,vgui2/controls/Slider.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui26Slider11GetSettingsEP9KeyValues
+gameui,1008E256,136,?ApplySettings@Slider@vgui2@@MAEXPAVKeyValues@@@Z,vgui2::Slider::ApplySettings,ENGINE,vgui2/controls/Slider.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui26Slider13ApplySettingsEP9KeyValues
+gameui,1008E2DE,48,?GetDescription@Slider@vgui2@@MAEPBDXZ,vgui2::Slider::GetDescription,ENGINE,vgui2/controls/Slider.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui26Slider14GetDescriptionEv
+gameui,1008E30E,88,?GetTrackRect@Slider@vgui2@@MAEXAAH000@Z,vgui2::Slider::GetTrackRect,UNKNOWN,vgui2/controls/Slider.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui26Slider12GetTrackRectERiS1_S1_S1_
+gameui,1008E366,35,?Paint@Slider@vgui2@@MAEXXZ,vgui2::Slider::Paint,UNKNOWN,vgui2/controls/Slider.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui26Slider5PaintEv
+gameui,1008E389,647,?DrawTicks@Slider@vgui2@@IAEXXZ,vgui2::Slider::DrawTicks,UNKNOWN,vgui2/controls/Slider.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui26Slider9DrawTicksEv
+gameui,1008E610,675,?DrawTickLabels@Slider@vgui2@@IAEXXZ,vgui2::Slider::DrawTickLabels,UNKNOWN,vgui2/controls/Slider.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui26Slider14DrawTickLabelsEv
+gameui,1008E8B3,274,?DrawNob@Slider@vgui2@@IAEXXZ,vgui2::Slider::DrawNob,UNKNOWN,vgui2/controls/Slider.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui26Slider7DrawNobEv
+gameui,1008E9C5,237,?SetTickCaptions@Slider@vgui2@@UAEXPBD0@Z,vgui2::Slider::SetTickCaptions,UNKNOWN,vgui2/controls/Slider.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui26Slider15SetTickCaptionsEPKcS2_
+gameui,1008EAB2,237,?SetTickCaptions@Slider@vgui2@@UAEXPBG0@Z,vgui2::Slider::SetTickCaptions,UNKNOWN,vgui2/controls/Slider.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui26Slider15SetTickCaptionsEPKwS2_
+gameui,1008EB9F,232,?PaintBackground@Slider@vgui2@@MAEXXZ,vgui2::Slider::PaintBackground,ENGINE,vgui2/controls/Slider.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui26Slider15PaintBackgroundEv
+gameui,1008EC87,143,?SetRange@Slider@vgui2@@UAEXHH@Z,vgui2::Slider::SetRange,UNKNOWN,vgui2/controls/Slider.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui26Slider8SetRangeEii
+gameui,1008ED16,41,?GetRange@Slider@vgui2@@UAEXAAH0@Z,vgui2::Slider::GetRange,ENGINE,vgui2/controls/Slider.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui26Slider8GetRangeERiS1_
+gameui,1008ED3F,271,?OnCursorMoved@Slider@vgui2@@UAEXHH@Z,vgui2::Slider::OnCursorMoved,UNKNOWN,vgui2/controls/Slider.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui26Slider13OnCursorMovedEii
+gameui,1008EE4E,287,?OnMousePressed@Slider@vgui2@@UAEXW4MouseCode@2@@Z,vgui2::Slider::OnMousePressed,UNKNOWN,vgui2/controls/Slider.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui26Slider14OnMousePressedENS_9MouseCodeE
+gameui,1008EF6D,31,?OnMouseDoublePressed@Slider@vgui2@@UAEXW4MouseCode@2@@Z,vgui2::Slider::OnMouseDoublePressed,UNKNOWN,vgui2/controls/Slider.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui26Slider20OnMouseDoublePressedENS_9MouseCodeE
+gameui,1008EF8C,441,?OnKeyCodeTyped@Slider@vgui2@@MAEXW4KeyCode@2@@Z,vgui2::Slider::OnKeyCodeTyped,UNKNOWN,vgui2/controls/Slider.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui26Slider14OnKeyCodeTypedENS_7KeyCodeE
+gameui,1008F173,43,?OnMouseReleased@Slider@vgui2@@UAEXW4MouseCode@2@@Z,vgui2::Slider::OnMouseReleased,UNKNOWN,vgui2/controls/Slider.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui26Slider15OnMouseReleasedENS_9MouseCodeE
+gameui,1008F19E,35,?GetNobPos@Slider@vgui2@@UAEXAAH0@Z,vgui2::Slider::GetNobPos,UNKNOWN,vgui2/controls/Slider.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui26Slider9GetNobPosERiS1_
+gameui,1008F1C1,25,?SetButtonOffset@Slider@vgui2@@UAEXH@Z,vgui2::Slider::SetButtonOffset,UNKNOWN,vgui2/controls/Slider.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui26Slider15SetButtonOffsetEi
+gameui,1008F1DA,25,?SetThumbWidth@Slider@vgui2@@UAEXH@Z,vgui2::Slider::SetThumbWidth,UNKNOWN,vgui2/controls/Slider.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui26Slider13SetThumbWidthEi
+gameui,1008F1F3,25,?SetNumTicks@Slider@vgui2@@UAEXH@Z,vgui2::Slider::SetNumTicks,UNKNOWN,vgui2/controls/Slider.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui26Slider11SetNumTicksEi
+gameui,1008F210,46,??_GSlider@vgui2@@UAEPAXI@Z,destructor',UNKNOWN,vgui2/controls/Slider.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008F240,19,??0Slider_RegisterMap@Slider@vgui2@@QAE@XZ,vgui2::Slider::Slider_RegisterMap::Slider_RegisterMap,UNKNOWN,vgui2/controls/Slider.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008F260,102,?ChainToMap@Slider@vgui2@@SAXXZ,vgui2::Slider::ChainToMap,UNKNOWN,vgui2/controls/Slider.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1008F2D0,10,?GetPanelBaseClassName@Slider@vgui2@@SAPBDXZ,vgui2::Slider::GetPanelBaseClassName,UNKNOWN,vgui2/controls/Slider.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,1008F2E0,229,??0TestScriptController@vgui2@@QAE@XZ,vgui2::TestScriptController::TestScriptController,UNKNOWN,vgui2/controls/TestScriptController.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,1008F3C5,67,??1TestScriptController@vgui2@@UAE@XZ,vgui2::TestScriptController::~TestScriptController,UNKNOWN,vgui2/controls/TestScriptController.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,1008F408,92,?OnTick@TestScriptController@vgui2@@MAEXXZ,vgui2::TestScriptController::OnTick,ENGINE,vgui2/controls/TestScriptController.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui220TestScriptController6OnTickEv
