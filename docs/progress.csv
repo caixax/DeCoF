@@ -8621,35 +8621,35 @@ gameui,10029DD0,120,?AddToMap@CCreateMultiplayerGameServerPage@@SAXPBDP8Panel@vg
 gameui,10029E60,46,??_GCCreateMultiplayerGameServerPage@@UAEPAXI@Z,public: virtual void * __thiscall CCreateMultiplayerGameServerPage::`scalar deleting destructor'(unsigned int),UNKNOWN,GameUI/CreateMultiplayerGameServerPage.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,10029E90,129,??0CvarLatch@@QAE@PBD0@Z,"public: __thiscall CvarLatch::CvarLatch(char const *,char const *)",UNKNOWN,GameUI/CvarLatch.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN9CvarLatchC2EPKcS1_
 gameui,10029F11,110,??1CvarLatch@@QAE@XZ,public: __thiscall CvarLatch::~CvarLatch(void),UNKNOWN,GameUI/CvarLatch.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN9CvarLatchD1Ev
-gameui,10029F80,997,,CDemoEditDialog::CDemoEditDialog,ENGINE,GameUI/DemoEditDialog.cpp,,,TODO,,linux_symbols:string:0.73,linux: _ZN15CDemoEditDialogC1EPN5vgui25PanelEPKcP14IEngineWrapperP11IDemoPlayer
-gameui,1002A365,42,,,UNKNOWN,GameUI/DemoEditDialog.cpp,,,TODO,,,linux: _ZN15CDemoEditDialogD1Ev
-gameui,1002A38F,169,,,UNKNOWN,GameUI/DemoEditDialog.cpp,,,TODO,,,linux: _ZN15CDemoEditDialog13SetDataFieldiEiPci
-gameui,1002A438,174,,,UNKNOWN,GameUI/DemoEditDialog.cpp,,,TODO,,,linux: _ZN15CDemoEditDialog13SetDataFieldfEiPcf
-gameui,1002A4E6,155,,,UNKNOWN,GameUI/DemoEditDialog.cpp,,,TODO,,,linux: _ZN15CDemoEditDialog12SetDataFieldEiPcS0_
-gameui,1002A581,100,,,UNKNOWN,GameUI/DemoEditDialog.cpp,,,TODO,,,linux: _ZN15CDemoEditDialog13GetDataFieldiEi
-gameui,1002A5E5,100,,,UNKNOWN,GameUI/DemoEditDialog.cpp,,,TODO,,,linux: _ZN15CDemoEditDialog13GetDataFieldfEi
-gameui,1002A649,101,,,UNKNOWN,GameUI/DemoEditDialog.cpp,,,TODO,,,linux: _ZN15CDemoEditDialog14GetDataField2fEiPfS0_
-gameui,1002A6AE,105,,,UNKNOWN,GameUI/DemoEditDialog.cpp,,,TODO,,,linux: _ZN15CDemoEditDialog14GetDataField3fEiPfS0_S0_
-gameui,1002A717,100,,,UNKNOWN,GameUI/DemoEditDialog.cpp,,,TODO,,,linux: _ZN15CDemoEditDialog13GetDataFieldxEi
-gameui,1002A77B,62,,,UNKNOWN,GameUI/DemoEditDialog.cpp,,,TODO,,,linux: _ZN15CDemoEditDialog13GetDataFieldsEi
-gameui,1002A7B9,212,,,UNKNOWN,GameUI/DemoEditDialog.cpp,,,TODO,,,linux: _ZN15CDemoEditDialog4OnOKEv
-gameui,1002A88D,298,,,UNKNOWN,GameUI/DemoEditDialog.cpp,,,TODO,,,linux: _ZN15CDemoEditDialog9OnGetViewEv
-gameui,1002A9B7,79,,,UNKNOWN,GameUI/DemoEditDialog.cpp,,,TODO,,,linux: _ZN15CDemoEditDialog9OnGetTimeEv
-gameui,1002AA06,1280,,,UNKNOWN,GameUI/DemoEditDialog.cpp,,,TODO,,,linux: _ZN15CDemoEditDialog12UpdateDrcCmdEv
-gameui,1002AF3A,1971,,CDemoEditDialog::OnUpdate,ENGINE,GameUI/DemoEditDialog.cpp,,,TODO,,linux_symbols:string:0.527,linux: _ZN15CDemoEditDialog8OnUpdateEv
-gameui,1002B721,190,,,UNKNOWN,GameUI/DemoEditDialog.cpp,,,TODO,,,linux: _ZN15CDemoEditDialog15ClearDataFieldsEv
-gameui,1002B7DF,39,,,UNKNOWN,GameUI/DemoEditDialog.cpp,,,TODO,,,linux: _ZN15CDemoEditDialog10SetCommandEP11DirectorCmd
-gameui,1002B806,116,,CDemoEditDialog::OnCommand,ENGINE,GameUI/DemoEditDialog.cpp,,,TODO,,linux_symbols:string:0.5,linux: _ZN15CDemoEditDialog9OnCommandEPKc
-gameui,1002B87A,856,,CDemoEditDialog::OnTypeChanged,ENGINE,GameUI/DemoEditDialog.cpp,,,TODO,,linux_symbols:string:0.467,linux: _ZN15CDemoEditDialog13OnTypeChangedEv
-gameui,1002BC10,46,,,UNKNOWN,GameUI/DemoEditDialog.cpp,,,TODO,,,
-gameui,1002BC40,19,,,UNKNOWN,GameUI/DemoEditDialog.cpp,,,TODO,,,
-gameui,1002BC60,102,,,UNKNOWN,GameUI/DemoEditDialog.cpp,,,TODO,,,
-gameui,1002BCD0,64,,,UNKNOWN,GameUI/DemoEditDialog.cpp,,,TODO,,,
-gameui,1002BD10,10,,,UNKNOWN,GameUI/DemoEditDialog.cpp,,,TODO,,,
-gameui,1002BD20,10,,,UNKNOWN,GameUI/DemoEditDialog.cpp,,,TODO,,,
-gameui,1002BD30,19,,,UNKNOWN,GameUI/DemoEditDialog.cpp,,,TODO,,,
-gameui,1002BD50,107,,,UNKNOWN,GameUI/DemoEditDialog.cpp,,,TODO,,,
-gameui,1002BDC0,120,,,UNKNOWN,GameUI/DemoEditDialog.cpp,,,TODO,,,
+gameui,10029F80,997,??0CDemoEditDialog@@QAE@PAVPanel@vgui2@@PBDPAVIEngineWrapper@@PAVIDemoPlayer@@@Z,"public: __thiscall CDemoEditDialog::CDemoEditDialog(class vgui2::Panel *,char const *,class IEngineWrapper *,class IDemoPlayer *)",ENGINE,GameUI/DemoEditDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN15CDemoEditDialogC1EPN5vgui25PanelEPKcP14IEngineWrapperP11IDemoPlayer
+gameui,1002A365,42,??1CDemoEditDialog@@UAE@XZ,public: virtual __thiscall CDemoEditDialog::~CDemoEditDialog(void),UNKNOWN,GameUI/DemoEditDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN15CDemoEditDialogD1Ev
+gameui,1002A38F,169,?SetDataFieldi@CDemoEditDialog@@IAEXHPADH@Z,"protected: void __thiscall CDemoEditDialog::SetDataFieldi(int,char *,int)",UNKNOWN,GameUI/DemoEditDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN15CDemoEditDialog13SetDataFieldiEiPci
+gameui,1002A438,174,?SetDataFieldf@CDemoEditDialog@@IAEXHPADM@Z,"protected: void __thiscall CDemoEditDialog::SetDataFieldf(int,char *,float)",UNKNOWN,GameUI/DemoEditDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN15CDemoEditDialog13SetDataFieldfEiPcf
+gameui,1002A4E6,155,?SetDataField@CDemoEditDialog@@IAEXHPAD0@Z,"protected: void __thiscall CDemoEditDialog::SetDataField(int,char *,char *)",UNKNOWN,GameUI/DemoEditDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN15CDemoEditDialog12SetDataFieldEiPcS0_
+gameui,1002A581,100,?GetDataFieldi@CDemoEditDialog@@IAEHH@Z,protected: int __thiscall CDemoEditDialog::GetDataFieldi(int),UNKNOWN,GameUI/DemoEditDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN15CDemoEditDialog13GetDataFieldiEi
+gameui,1002A5E5,100,?GetDataFieldf@CDemoEditDialog@@IAEMH@Z,protected: float __thiscall CDemoEditDialog::GetDataFieldf(int),UNKNOWN,GameUI/DemoEditDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN15CDemoEditDialog13GetDataFieldfEi
+gameui,1002A649,101,?GetDataField2f@CDemoEditDialog@@IAEXHPAM0@Z,"protected: void __thiscall CDemoEditDialog::GetDataField2f(int,float *,float *)",UNKNOWN,GameUI/DemoEditDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN15CDemoEditDialog14GetDataField2fEiPfS0_
+gameui,1002A6AE,105,?GetDataField3f@CDemoEditDialog@@IAEXHPAM00@Z,"protected: void __thiscall CDemoEditDialog::GetDataField3f(int,float *,float *,float *)",UNKNOWN,GameUI/DemoEditDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN15CDemoEditDialog14GetDataField3fEiPfS0_S0_
+gameui,1002A717,100,?GetDataFieldx@CDemoEditDialog@@IAEHH@Z,protected: int __thiscall CDemoEditDialog::GetDataFieldx(int),UNKNOWN,GameUI/DemoEditDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN15CDemoEditDialog13GetDataFieldxEi
+gameui,1002A77B,62,?GetDataFields@CDemoEditDialog@@IAEPADH@Z,protected: char * __thiscall CDemoEditDialog::GetDataFields(int),UNKNOWN,GameUI/DemoEditDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN15CDemoEditDialog13GetDataFieldsEi
+gameui,1002A7B9,212,?OnOK@CDemoEditDialog@@IAEXXZ,protected: void __thiscall CDemoEditDialog::OnOK(void),UNKNOWN,GameUI/DemoEditDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN15CDemoEditDialog4OnOKEv
+gameui,1002A88D,298,?OnGetView@CDemoEditDialog@@IAEXXZ,protected: void __thiscall CDemoEditDialog::OnGetView(void),UNKNOWN,GameUI/DemoEditDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN15CDemoEditDialog9OnGetViewEv
+gameui,1002A9B7,79,?OnGetTime@CDemoEditDialog@@IAEXXZ,protected: void __thiscall CDemoEditDialog::OnGetTime(void),UNKNOWN,GameUI/DemoEditDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN15CDemoEditDialog9OnGetTimeEv
+gameui,1002AA06,1280,?UpdateDrcCmd@CDemoEditDialog@@IAEXXZ,protected: void __thiscall CDemoEditDialog::UpdateDrcCmd(void),UNKNOWN,GameUI/DemoEditDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN15CDemoEditDialog12UpdateDrcCmdEv
+gameui,1002AF3A,1971,?OnUpdate@CDemoEditDialog@@IAEXXZ,protected: void __thiscall CDemoEditDialog::OnUpdate(void),ENGINE,GameUI/DemoEditDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN15CDemoEditDialog8OnUpdateEv
+gameui,1002B721,190,?ClearDataFields@CDemoEditDialog@@IAEXXZ,protected: void __thiscall CDemoEditDialog::ClearDataFields(void),UNKNOWN,GameUI/DemoEditDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN15CDemoEditDialog15ClearDataFieldsEv
+gameui,1002B7DF,39,?SetCommand@CDemoEditDialog@@QAEXPAVDirectorCmd@@@Z,public: void __thiscall CDemoEditDialog::SetCommand(class DirectorCmd *),UNKNOWN,GameUI/DemoEditDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN15CDemoEditDialog10SetCommandEP11DirectorCmd
+gameui,1002B806,116,?OnCommand@CDemoEditDialog@@UAEXPBD@Z,public: virtual void __thiscall CDemoEditDialog::OnCommand(char const *),ENGINE,GameUI/DemoEditDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN15CDemoEditDialog9OnCommandEPKc
+gameui,1002B87A,856,?OnTypeChanged@CDemoEditDialog@@MAEXXZ,protected: virtual void __thiscall CDemoEditDialog::OnTypeChanged(void),ENGINE,GameUI/DemoEditDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN15CDemoEditDialog13OnTypeChangedEv
+gameui,1002BC10,46,??_GCDemoEditDialog@@UAEPAXI@Z,public: virtual void * __thiscall CDemoEditDialog::`scalar deleting destructor'(unsigned int),UNKNOWN,GameUI/DemoEditDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1002BC40,19,??0CDemoEditDialog_RegisterMap@CDemoEditDialog@@QAE@XZ,public: __thiscall CDemoEditDialog::CDemoEditDialog_RegisterMap::CDemoEditDialog_RegisterMap(void),UNKNOWN,GameUI/DemoEditDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1002BC60,102,?ChainToMap@CDemoEditDialog@@SAXXZ,public: static void __cdecl CDemoEditDialog::ChainToMap(void),UNKNOWN,GameUI/DemoEditDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1002BCD0,64,?GetMessageMap@CDemoEditDialog@@UAEPAUPanelMessageMap@vgui2@@XZ,public: virtual struct vgui2::PanelMessageMap * __thiscall CDemoEditDialog::GetMessageMap(void),UNKNOWN,GameUI/DemoEditDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1002BD10,10,?GetPanelClassName@CDemoEditDialog@@SAPBDXZ,public: static char const * __cdecl CDemoEditDialog::GetPanelClassName(void),UNKNOWN,GameUI/DemoEditDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1002BD20,10,?GetPanelBaseClassName@CDemoEditDialog@@SAPBDXZ,public: static char const * __cdecl CDemoEditDialog::GetPanelBaseClassName(void),UNKNOWN,GameUI/DemoEditDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1002BD30,19,??0PanelMessageFunc_OnTypeChanged@CDemoEditDialog@@QAE@XZ,public: __thiscall CDemoEditDialog::PanelMessageFunc_OnTypeChanged::PanelMessageFunc_OnTypeChanged(void),UNKNOWN,GameUI/DemoEditDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1002BD50,107,?InitVar@PanelMessageFunc_OnTypeChanged@CDemoEditDialog@@SAXXZ,public: static void __cdecl CDemoEditDialog::PanelMessageFunc_OnTypeChanged::InitVar(void),UNKNOWN,GameUI/DemoEditDialog.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1002BDC0,120,?AddToMap@CDemoEditDialog@@SAXPBDP8Panel@vgui2@@AEXXZHH0H0@Z,"public: static void __cdecl CDemoEditDialog::AddToMap(char const *,void (__thiscall vgui2::Panel::*)(void),int,int,char const *,int,char const *)",UNKNOWN,GameUI/DemoEditDialog.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,1002BE40,734,??0CDemoEventsDialog@@QAE@PAVPanel@vgui2@@PBDPAVIEngineWrapper@@PAVIDemoPlayer@@@Z,"public: __thiscall CDemoEventsDialog::CDemoEventsDialog(class vgui2::Panel *,char const *,class IEngineWrapper *,class IDemoPlayer *)",ENGINE,GameUI/DemoEventsDialog.cpp,,,TODO,99.99,gameui_manual.csv,"relocation targets differ (instructions identical): retail s_Resource/DemoEventsDialog.res_100e346c, ours $SG8299"
 gameui,1002C11E,28,??1CDemoEventsDialog@@UAE@XZ,public: virtual __thiscall CDemoEventsDialog::~CDemoEventsDialog(void),UNKNOWN,GameUI/DemoEventsDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN17CDemoEventsDialogD2Ev
 gameui,1002C13A,196,?OnCommand@CDemoEventsDialog@@UAEXPBD@Z,public: virtual void __thiscall CDemoEventsDialog::OnCommand(char const *),ENGINE,GameUI/DemoEventsDialog.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN17CDemoEventsDialog9OnCommandEPKc

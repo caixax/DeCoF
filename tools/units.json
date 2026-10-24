@@ -4168,6 +4168,11 @@
           "name": "common/ObjectList",
           "source": "src/common/ObjectList.cpp",
           "functions_file": "tools/units/gameui_common_ObjectList.txt"
+        },
+        {
+          "name": "GameUI/DemoEditDialog",
+          "source": "src/gameui/DemoEditDialog.cpp",
+          "functions_file": "tools/units/gameui_GameUI_DemoEditDialog.txt"
         }
       ]
     }

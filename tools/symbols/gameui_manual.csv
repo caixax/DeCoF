@@ -5423,3 +5423,32 @@ va,name,kind,evidence
 10037EA0,??0IObjectContainer@@QAE@XZ,func,common/ObjectList.cpp (shared with hw.dll): same position and size as in our compiled object
 10037EC0,??1IObjectContainer@@UAE@XZ,func,common/ObjectList.cpp (shared with hw.dll): same position and size as in our compiled object
 10037EE0,??_GIObjectContainer@@UAEPAXI@Z,func,common/ObjectList.cpp (shared with hw.dll): same position and size as in our compiled object
+10029F80,??0CDemoEditDialog@@QAE@PAVPanel@vgui2@@PBDPAVIEngineWrapper@@PAVIDemoPlayer@@@Z,func,GameUI/DemoEditDialog.cpp: same position and size as in our compiled object; linux: _ZN15CDemoEditDialogC1EPN5vgui25PanelEPKcP14IEngineWrapperP11IDemoPlayer
+1002A365,??1CDemoEditDialog@@UAE@XZ,func,GameUI/DemoEditDialog.cpp: same position and size as in our compiled object; linux: _ZN15CDemoEditDialogD1Ev
+1002A38F,?SetDataFieldi@CDemoEditDialog@@IAEXHPADH@Z,func,GameUI/DemoEditDialog.cpp: same position and size as in our compiled object; linux: _ZN15CDemoEditDialog13SetDataFieldiEiPci
+1002A438,?SetDataFieldf@CDemoEditDialog@@IAEXHPADM@Z,func,GameUI/DemoEditDialog.cpp: same position and size as in our compiled object; linux: _ZN15CDemoEditDialog13SetDataFieldfEiPcf
+1002A4E6,?SetDataField@CDemoEditDialog@@IAEXHPAD0@Z,func,GameUI/DemoEditDialog.cpp: same position and size as in our compiled object; linux: _ZN15CDemoEditDialog12SetDataFieldEiPcS0_
+1002A581,?GetDataFieldi@CDemoEditDialog@@IAEHH@Z,func,GameUI/DemoEditDialog.cpp: same position and size as in our compiled object; linux: _ZN15CDemoEditDialog13GetDataFieldiEi
+1002A5E5,?GetDataFieldf@CDemoEditDialog@@IAEMH@Z,func,GameUI/DemoEditDialog.cpp: same position and size as in our compiled object; linux: _ZN15CDemoEditDialog13GetDataFieldfEi
+1002A649,?GetDataField2f@CDemoEditDialog@@IAEXHPAM0@Z,func,GameUI/DemoEditDialog.cpp: same position and size as in our compiled object; linux: _ZN15CDemoEditDialog14GetDataField2fEiPfS0_
+1002A6AE,?GetDataField3f@CDemoEditDialog@@IAEXHPAM00@Z,func,GameUI/DemoEditDialog.cpp: same position and size as in our compiled object; linux: _ZN15CDemoEditDialog14GetDataField3fEiPfS0_S0_
+1002A717,?GetDataFieldx@CDemoEditDialog@@IAEHH@Z,func,GameUI/DemoEditDialog.cpp: same position and size as in our compiled object; linux: _ZN15CDemoEditDialog13GetDataFieldxEi
+1002A77B,?GetDataFields@CDemoEditDialog@@IAEPADH@Z,func,GameUI/DemoEditDialog.cpp: same position and size as in our compiled object; linux: _ZN15CDemoEditDialog13GetDataFieldsEi
+1002A7B9,?OnOK@CDemoEditDialog@@IAEXXZ,func,GameUI/DemoEditDialog.cpp: same position and size as in our compiled object; linux: _ZN15CDemoEditDialog4OnOKEv
+1002A88D,?OnGetView@CDemoEditDialog@@IAEXXZ,func,GameUI/DemoEditDialog.cpp: same position and size as in our compiled object; linux: _ZN15CDemoEditDialog9OnGetViewEv
+1002A9B7,?OnGetTime@CDemoEditDialog@@IAEXXZ,func,GameUI/DemoEditDialog.cpp: same position and size as in our compiled object; linux: _ZN15CDemoEditDialog9OnGetTimeEv
+1002AA06,?UpdateDrcCmd@CDemoEditDialog@@IAEXXZ,func,GameUI/DemoEditDialog.cpp: same position (size 1280 against 1332) as in our compiled object; linux: _ZN15CDemoEditDialog12UpdateDrcCmdEv
+1002AF3A,?OnUpdate@CDemoEditDialog@@IAEXXZ,func,GameUI/DemoEditDialog.cpp: same position (size 1971 against 2023) as in our compiled object; linux: _ZN15CDemoEditDialog8OnUpdateEv
+1002B721,?ClearDataFields@CDemoEditDialog@@IAEXXZ,func,GameUI/DemoEditDialog.cpp: same position and size as in our compiled object; linux: _ZN15CDemoEditDialog15ClearDataFieldsEv
+1002B7DF,?SetCommand@CDemoEditDialog@@QAEXPAVDirectorCmd@@@Z,func,GameUI/DemoEditDialog.cpp: same position and size as in our compiled object; linux: _ZN15CDemoEditDialog10SetCommandEP11DirectorCmd
+1002B806,?OnCommand@CDemoEditDialog@@UAEXPBD@Z,func,GameUI/DemoEditDialog.cpp: same position and size as in our compiled object; linux: _ZN15CDemoEditDialog9OnCommandEPKc
+1002B87A,?OnTypeChanged@CDemoEditDialog@@MAEXXZ,func,GameUI/DemoEditDialog.cpp: same position (size 856 against 908) as in our compiled object; linux: _ZN15CDemoEditDialog13OnTypeChangedEv
+1002BC10,??_GCDemoEditDialog@@UAEPAXI@Z,func,GameUI/DemoEditDialog.cpp: same position and size as in our compiled object
+1002BC40,??0CDemoEditDialog_RegisterMap@CDemoEditDialog@@QAE@XZ,func,GameUI/DemoEditDialog.cpp: same position and size as in our compiled object
+1002BC60,?ChainToMap@CDemoEditDialog@@SAXXZ,func,GameUI/DemoEditDialog.cpp: same position and size as in our compiled object
+1002BCD0,?GetMessageMap@CDemoEditDialog@@UAEPAUPanelMessageMap@vgui2@@XZ,func,GameUI/DemoEditDialog.cpp: same position and size as in our compiled object
+1002BD10,?GetPanelClassName@CDemoEditDialog@@SAPBDXZ,func,GameUI/DemoEditDialog.cpp: same position and size as in our compiled object
+1002BD20,?GetPanelBaseClassName@CDemoEditDialog@@SAPBDXZ,func,GameUI/DemoEditDialog.cpp: same position and size as in our compiled object
+1002BD30,??0PanelMessageFunc_OnTypeChanged@CDemoEditDialog@@QAE@XZ,func,GameUI/DemoEditDialog.cpp: same position and size as in our compiled object
+1002BD50,?InitVar@PanelMessageFunc_OnTypeChanged@CDemoEditDialog@@SAXXZ,func,GameUI/DemoEditDialog.cpp: same position and size as in our compiled object
+1002BDC0,?AddToMap@CDemoEditDialog@@SAXPBDP8Panel@vgui2@@AEXXZHH0H0@Z,func,GameUI/DemoEditDialog.cpp: same position and size as in our compiled object
