@@ -267,7 +267,8 @@ void CRoofBossHead :: TrackTarget ( void )
 		pev->velocity.z += RANDOM_FLOAT ( -0.10, 0.10 );
 	}
 
-	pev->velocity = pev->velocity * m_flFlySpeed;
+	float flSpeed = m_flFlySpeed;
+	pev->velocity = pev->velocity * flSpeed;
 	pev->nextthink = gpGlobals->time + 0.1;
 
 	pev->angles = UTIL_VecToAngles (pev->velocity);
