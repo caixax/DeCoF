@@ -4188,6 +4188,24 @@
           "name": "GameUI/MasterVersionChk_guess",
           "source": "src/gameui/MasterVersionChk_guess.cpp",
           "functions_file": "tools/units/gameui_GameUI_MasterVersionChk_guess.txt"
+        },
+        {
+          "name": "game_shared/bot/bot_profile",
+          "source": "src/game_shared/bot/bot_profile.cpp",
+          "functions_file": "tools/units/gameui_game_shared_bot_bot_profile.txt",
+          "defines": [
+            "WIN32",
+            "_WINDOWS",
+            "GAMEUI_EXPORTS"
+          ],
+          "includes": [
+            "src/gameui",
+            "src/public",
+            "src/common",
+            "src/engine",
+            "src/pm_shared",
+            "src/game_shared"
+          ]
         }
       ]
     }
