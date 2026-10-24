@@ -3664,6 +3664,11 @@
           "functions_file": "tools/units/gameui_vgui2_controls_SectionedListPanel.txt"
         },
         {
+          "name": "vgui2/controls/HTML",
+          "source": "src/vgui2/controls/HTML.cpp",
+          "functions_file": "tools/units/gameui_vgui2_controls_HTML.txt"
+        },
+        {
           "name": "vgui2/controls/ProgressBar",
           "source": "src/vgui2/controls/ProgressBar.cpp",
           "functions_file": "tools/units/gameui_vgui2_controls_ProgressBar.txt"

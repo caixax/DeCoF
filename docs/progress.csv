@@ -11942,75 +11942,75 @@ gameui,10092900,110,?InitVar@PanelMessageFunc_SetProgress@ProgressBar@vgui2@@SAX
 gameui,10092970,120,?AddToMap@ProgressBar@vgui2@@SAXPBDP8Panel@2@AEXXZHH0H0@Z,vgui2::ProgressBar::AddToMap,UNKNOWN,vgui2/controls/ProgressBar.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,100929F0,19,??0PanelMessageFunc_OnDialogVariablesChanged@ProgressBar@vgui2@@QAE@XZ,vgui2::ProgressBar::PanelMessageFunc_OnDialogVariablesChanged::PanelMessageFunc_OnDialogVariablesChanged,UNKNOWN,vgui2/controls/ProgressBar.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,10092A10,107,?InitVar@PanelMessageFunc_OnDialogVariablesChanged@ProgressBar@vgui2@@SAXXZ,vgui2::ProgressBar::PanelMessageFunc_OnDialogVariablesChanged::InitVar,UNKNOWN,vgui2/controls/ProgressBar.cpp,,,MATCHED,100,gameui_manual.csv,
-gameui,10092A80,718,,,UNKNOWN,vgui2/controls/HTML.cpp,,,TODO,,,
-gameui,10092D4E,80,,,UNKNOWN,vgui2/controls/HTML.cpp,,,TODO,,,
-gameui,10092D9E,70,,,UNKNOWN,vgui2/controls/HTML.cpp,,,TODO,,,linux: _ZN5vgui24HTML19ApplySchemeSettingsEPNS_7ISchemeE
-gameui,10092DE4,25,,,UNKNOWN,vgui2/controls/HTML.cpp,,,TODO,,,linux: _ZN5vgui24HTML5PaintEv
-gameui,10092DFD,37,,,UNKNOWN,vgui2/controls/HTML.cpp,,,TODO,,,linux: _ZN5vgui24HTML13PaintComboBoxEv
-gameui,10092E22,317,,,UNKNOWN,vgui2/controls/HTML.cpp,,,TODO,,,linux: _ZN16HTMLComboBoxHost15PaintBackgroundEv
-gameui,10092F5F,83,,,UNKNOWN,vgui2/controls/HTML.cpp,,,TODO,,,linux: _ZN5vgui24HTML13PerformLayoutEv
-gameui,10092FB2,179,,,UNKNOWN,vgui2/controls/HTML.cpp,,,TODO,,,
-gameui,10093065,33,,,UNKNOWN,vgui2/controls/HTML.cpp,,,TODO,,,
-gameui,10093086,1101,,,UNKNOWN,vgui2/controls/HTML.cpp,,,TODO,,,
-gameui,100934D3,393,,,UNKNOWN,vgui2/controls/HTML.cpp,,,TODO,,,
-gameui,1009365C,67,,,UNKNOWN,vgui2/controls/HTML.cpp,,,TODO,,,linux: _ZN5vgui24HTML11StopLoadingEv
-gameui,1009369F,67,,,UNKNOWN,vgui2/controls/HTML.cpp,,,TODO,,,linux: _ZN5vgui24HTML7RefreshEv
-gameui,100936E2,37,,,UNKNOWN,vgui2/controls/HTML.cpp,,,TODO,,,
-gameui,10093707,43,,,UNKNOWN,vgui2/controls/HTML.cpp,,,TODO,,,
-gameui,10093732,121,,,UNKNOWN,vgui2/controls/HTML.cpp,,,TODO,,,
-gameui,100937AB,170,,,UNKNOWN,vgui2/controls/HTML.cpp,,,TODO,,,
-gameui,10093855,155,,,UNKNOWN,vgui2/controls/HTML.cpp,,,TODO,,,linux: _ZN5vgui24HTML14OnMousePressedENS_9MouseCodeE
-gameui,100938F0,121,,,UNKNOWN,vgui2/controls/HTML.cpp,,,TODO,,,linux: _ZN5vgui24HTML15OnMouseReleasedENS_9MouseCodeE
-gameui,10093969,86,,,UNKNOWN,vgui2/controls/HTML.cpp,,,TODO,,,linux: _ZN5vgui24HTML13OnCursorMovedEii
-gameui,100939BF,121,,,UNKNOWN,vgui2/controls/HTML.cpp,,,TODO,,,linux: _ZN5vgui24HTML20OnMouseDoublePressedENS_9MouseCodeE
-gameui,10093A38,13,,,UNKNOWN,vgui2/controls/HTML.cpp,,,TODO,,,linux: _ZN5vgui24HTML10OnKeyTypedEw
-gameui,10093A45,272,,,UNKNOWN,vgui2/controls/HTML.cpp,,,TODO,,,
-gameui,10093B55,100,,,UNKNOWN,vgui2/controls/HTML.cpp,,,TODO,,,
-gameui,10093BB9,97,,,UNKNOWN,vgui2/controls/HTML.cpp,,,TODO,,,
-gameui,10093C1A,465,,,UNKNOWN,vgui2/controls/HTML.cpp,,,TODO,,,
-gameui,10093DEB,263,,,UNKNOWN,vgui2/controls/HTML.cpp,,,TODO,,,
-gameui,10093EF2,197,,,UNKNOWN,vgui2/controls/HTML.cpp,,,TODO,,,
-gameui,10093FB7,13,,,UNKNOWN,vgui2/controls/HTML.cpp,,,TODO,,,
-gameui,10093FC4,13,,,UNKNOWN,vgui2/controls/HTML.cpp,,,TODO,,,
-gameui,10093FD1,198,,,UNKNOWN,vgui2/controls/HTML.cpp,,,TODO,,,
-gameui,10094097,90,,,UNKNOWN,vgui2/controls/HTML.cpp,,,TODO,,,
-gameui,100940F1,90,,,UNKNOWN,vgui2/controls/HTML.cpp,,,TODO,,,
-gameui,1009414B,307,,vgui2::HTML::OnSliderMoved,ENGINE,vgui2/controls/HTML.cpp,,,TODO,,linux_symbols:string:0.75,
-gameui,1009427E,124,,,UNKNOWN,vgui2/controls/HTML.cpp,,,TODO,,,
-gameui,100942FA,25,,,UNKNOWN,vgui2/controls/HTML.cpp,,,TODO,,,
-gameui,10094313,25,,,UNKNOWN,vgui2/controls/HTML.cpp,,,TODO,,,
-gameui,1009432C,25,,,UNKNOWN,vgui2/controls/HTML.cpp,,,TODO,,,
-gameui,10094350,46,,,UNKNOWN,vgui2/controls/HTML.cpp,,,TODO,,,
-gameui,10094380,23,,,UNKNOWN,vgui2/controls/HTML.cpp,,,TODO,,,
-gameui,100943A0,54,,,UNKNOWN,vgui2/controls/HTML.cpp,,,TODO,,,
-gameui,100943E0,19,,,UNKNOWN,vgui2/controls/HTML.cpp,,,TODO,,,
-gameui,10094400,102,,,UNKNOWN,vgui2/controls/HTML.cpp,,,TODO,,,
-gameui,10094470,10,,,UNKNOWN,vgui2/controls/HTML.cpp,,,TODO,,,
-gameui,10094480,19,,,UNKNOWN,vgui2/controls/HTML.cpp,,,TODO,,,
-gameui,100944A0,107,,,UNKNOWN,vgui2/controls/HTML.cpp,,,TODO,,,
-gameui,10094510,120,,,UNKNOWN,vgui2/controls/HTML.cpp,,,TODO,,,
-gameui,10094590,50,,,UNKNOWN,vgui2/controls/HTML.cpp,,,TODO,,,
-gameui,100945D0,27,,,UNKNOWN,vgui2/controls/HTML.cpp,,,TODO,,,
-gameui,100945F0,25,,,UNKNOWN,vgui2/controls/HTML.cpp,,,TODO,,,
-gameui,10094610,17,,,UNKNOWN,vgui2/controls/HTML.cpp,,,TODO,,,
-gameui,10094630,26,,,UNKNOWN,vgui2/controls/HTML.cpp,,,TODO,,,
-gameui,10094650,61,,,UNKNOWN,vgui2/controls/HTML.cpp,,,TODO,,,
-gameui,10094690,35,,,UNKNOWN,vgui2/controls/HTML.cpp,,,TODO,,,
-gameui,100946C0,11,,,UNKNOWN,vgui2/controls/HTML.cpp,,,TODO,,,
-gameui,100946D0,75,,,UNKNOWN,vgui2/controls/HTML.cpp,,,TODO,,,
-gameui,10094720,19,,,UNKNOWN,vgui2/controls/HTML.cpp,,,TODO,,,
-gameui,10094740,26,,,UNKNOWN,vgui2/controls/HTML.cpp,,,TODO,,,
-gameui,10094770,25,,,UNKNOWN,vgui2/controls/HTML.cpp,,,TODO,,,
-gameui,10094790,70,,,UNKNOWN,vgui2/controls/HTML.cpp,,,TODO,,,
-gameui,100947E0,87,,,UNKNOWN,vgui2/controls/HTML.cpp,,,TODO,,,
-gameui,10094840,86,,,UNKNOWN,vgui2/controls/HTML.cpp,,,TODO,,,
-gameui,100948A0,53,,__ExceptionPtrCreate,LIB,,,,,,ghidra,
-gameui,100948E0,69,,,UNKNOWN,vgui2/controls/HTML.cpp,,,TODO,,,
-gameui,10094930,22,,,UNKNOWN,vgui2/controls/HTML.cpp,,,TODO,,,
-gameui,10094950,17,,,UNKNOWN,vgui2/controls/HTML.cpp,,,TODO,,,
-gameui,10094970,199,,,UNKNOWN,vgui2/controls/HTML.cpp,,,TODO,,,
-gameui,10094A40,25,,,UNKNOWN,vgui2/controls/HTML.cpp,,,TODO,,,
-gameui,10094A60,5,,,UNKNOWN,vgui2/controls/HTML.cpp,,,TODO,,,
+gameui,10092A80,718,??0HTML@vgui2@@QAE@PAVPanel@1@PBD_N@Z,vgui2::HTML::HTML,UNKNOWN,vgui2/controls/HTML.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10092D4E,80,??1HTML@vgui2@@UAE@XZ,vgui2::HTML::~HTML,UNKNOWN,vgui2/controls/HTML.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10092D9E,70,?ApplySchemeSettings@HTML@vgui2@@MAEXPAVIScheme@2@@Z,vgui2::HTML::ApplySchemeSettings,UNKNOWN,vgui2/controls/HTML.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui24HTML19ApplySchemeSettingsEPNS_7ISchemeE
+gameui,10092DE4,25,?StartAnimate_guess@HTML@vgui2@@QAEXH@Z,vgui2::HTML::StartAnimate_guess,UNKNOWN,vgui2/controls/HTML.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui24HTML5PaintEv
+gameui,10092DFD,37,?StopAnimate_guess@HTML@vgui2@@QAEXXZ,vgui2::HTML::StopAnimate_guess,UNKNOWN,vgui2/controls/HTML.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui24HTML13PaintComboBoxEv
+gameui,10092E22,317,?PaintBackground@HTML@vgui2@@MAEXXZ,vgui2::HTML::PaintBackground,UNKNOWN,vgui2/controls/HTML.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN16HTMLComboBoxHost15PaintBackgroundEv
+gameui,10092F5F,83,?PerformLayout@HTML@vgui2@@MAEXXZ,vgui2::HTML::PerformLayout,UNKNOWN,vgui2/controls/HTML.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui24HTML13PerformLayoutEv
+gameui,10092FB2,179,?SetVisible@HTML@vgui2@@UAEX_N@Z,vgui2::HTML::SetVisible,UNKNOWN,vgui2/controls/HTML.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10093065,33,?OnMove@HTML@vgui2@@MAEXXZ,vgui2::HTML::OnMove,UNKNOWN,vgui2/controls/HTML.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10093086,1101,?CalcScrollBars@HTML@vgui2@@MAEXHH@Z,vgui2::HTML::CalcScrollBars,UNKNOWN,vgui2/controls/HTML.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100934D3,393,?OpenURL@HTML@vgui2@@UAEXPBD_N@Z,vgui2::HTML::OpenURL,UNKNOWN,vgui2/controls/HTML.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1009365C,67,?StopLoading@HTML@vgui2@@UAE_NXZ,vgui2::HTML::StopLoading,UNKNOWN,vgui2/controls/HTML.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui24HTML11StopLoadingEv
+gameui,1009369F,67,?Refresh@HTML@vgui2@@UAE_NXZ,vgui2::HTML::Refresh,UNKNOWN,vgui2/controls/HTML.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui24HTML7RefreshEv
+gameui,100936E2,37,?Clear_guess@HTML@vgui2@@UAEXXZ,vgui2::HTML::Clear_guess,UNKNOWN,vgui2/controls/HTML.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10093707,43,?AddText_guess@HTML@vgui2@@UAEXPBD@Z,vgui2::HTML::AddText_guess,UNKNOWN,vgui2/controls/HTML.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10093732,121,?OnSizeChanged@HTML@vgui2@@MAEXHH@Z,vgui2::HTML::OnSizeChanged,UNKNOWN,vgui2/controls/HTML.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100937AB,170,?OnTick@HTML@vgui2@@MAEXXZ,vgui2::HTML::OnTick,UNKNOWN,vgui2/controls/HTML.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10093855,155,?OnMousePressed@HTML@vgui2@@MAEXW4MouseCode@2@@Z,vgui2::HTML::OnMousePressed,UNKNOWN,vgui2/controls/HTML.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui24HTML14OnMousePressedENS_9MouseCodeE
+gameui,100938F0,121,?OnMouseReleased@HTML@vgui2@@MAEXW4MouseCode@2@@Z,vgui2::HTML::OnMouseReleased,UNKNOWN,vgui2/controls/HTML.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui24HTML15OnMouseReleasedENS_9MouseCodeE
+gameui,10093969,86,?OnCursorMoved@HTML@vgui2@@MAEXHH@Z,vgui2::HTML::OnCursorMoved,UNKNOWN,vgui2/controls/HTML.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui24HTML13OnCursorMovedEii
+gameui,100939BF,121,?OnMouseDoublePressed@HTML@vgui2@@MAEXW4MouseCode@2@@Z,vgui2::HTML::OnMouseDoublePressed,UNKNOWN,vgui2/controls/HTML.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui24HTML20OnMouseDoublePressedENS_9MouseCodeE
+gameui,10093A38,13,?OnKeyTyped@HTML@vgui2@@MAEXG@Z,vgui2::HTML::OnKeyTyped,UNKNOWN,vgui2/controls/HTML.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN5vgui24HTML10OnKeyTypedEw
+gameui,10093A45,272,?OnKeyCodePressed@HTML@vgui2@@MAEXW4KeyCode@2@@Z,vgui2::HTML::OnKeyCodePressed,UNKNOWN,vgui2/controls/HTML.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10093B55,100,?OnMouseWheeled@HTML@vgui2@@MAEXH@Z,vgui2::HTML::OnMouseWheeled,UNKNOWN,vgui2/controls/HTML.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10093BB9,97,?AddCustomURLHandler@HTML@vgui2@@UAEXPBDPAVPanel@2@@Z,vgui2::HTML::AddCustomURLHandler,UNKNOWN,vgui2/controls/HTML.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10093C1A,465,?OnStartURL@HTML@vgui2@@UAE_NPBD0_N@Z,vgui2::HTML::OnStartURL,UNKNOWN,vgui2/controls/HTML.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10093DEB,263,?BrowserResize@HTML@vgui2@@MAEXXZ,vgui2::HTML::BrowserResize,UNKNOWN,vgui2/controls/HTML.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10093EF2,197,?OnFinishURL@HTML@vgui2@@UAEXPBD@Z,vgui2::HTML::OnFinishURL,UNKNOWN,vgui2/controls/HTML.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10093FB7,13,?OnProgressURL@HTML@vgui2@@UAEXJJ@Z,vgui2::HTML::OnProgressURL,UNKNOWN,vgui2/controls/HTML.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10093FC4,13,?OnSetStatusText@HTML@vgui2@@UAEXPBD@Z,vgui2::HTML::OnSetStatusText,UNKNOWN,vgui2/controls/HTML.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10093FD1,198,?OnUpdate@HTML@vgui2@@UAEXXZ,vgui2::HTML::OnUpdate,UNKNOWN,vgui2/controls/HTML.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10094097,90,?OnLink@HTML@vgui2@@UAEXXZ,vgui2::HTML::OnLink,UNKNOWN,vgui2/controls/HTML.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100940F1,90,?OffLink@HTML@vgui2@@UAEXXZ,vgui2::HTML::OffLink,UNKNOWN,vgui2/controls/HTML.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1009414B,307,?OnSliderMoved@HTML@vgui2@@MAEXXZ,vgui2::HTML::OnSliderMoved,ENGINE,vgui2/controls/HTML.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1009427E,124,?IsScrolledToBottom@HTML@vgui2@@QAE_NXZ,vgui2::HTML::IsScrolledToBottom,UNKNOWN,vgui2/controls/HTML.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100942FA,25,?SetScrollbarsEnabled@HTML@vgui2@@UAEX_N@Z,vgui2::HTML::SetScrollbarsEnabled,UNKNOWN,vgui2/controls/HTML.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10094313,25,?SetContextMenuEnabled@HTML@vgui2@@UAEX_N@Z,vgui2::HTML::SetContextMenuEnabled,UNKNOWN,vgui2/controls/HTML.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,1009432C,25,?NewWindowsOnly@HTML@vgui2@@UAEX_N@Z,vgui2::HTML::NewWindowsOnly,UNKNOWN,vgui2/controls/HTML.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10094350,46,??_GHTML@vgui2@@UAEPAXI@Z,destructor',UNKNOWN,vgui2/controls/HTML.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10094380,23,??0IHTMLEvents@vgui2@@QAE@XZ,vgui2::IHTMLEvents::IHTMLEvents,UNKNOWN,vgui2/controls/HTML.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100943A0,54,?IsSteamInOfflineMode_guess@@YA_NXZ,IsSteamInOfflineMode_guess,UNKNOWN,vgui2/controls/HTML.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100943E0,19,??0HTML_RegisterMap@HTML@vgui2@@QAE@XZ,vgui2::HTML::HTML_RegisterMap::HTML_RegisterMap,UNKNOWN,vgui2/controls/HTML.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10094400,102,?ChainToMap@HTML@vgui2@@SAXXZ,vgui2::HTML::ChainToMap,UNKNOWN,vgui2/controls/HTML.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10094470,10,?GetPanelBaseClassName@HTML@vgui2@@SAPBDXZ,vgui2::HTML::GetPanelBaseClassName,UNKNOWN,vgui2/controls/HTML.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10094480,19,??0PanelMessageFunc_OnSliderMoved@HTML@vgui2@@QAE@XZ,vgui2::HTML::PanelMessageFunc_OnSliderMoved::PanelMessageFunc_OnSliderMoved,UNKNOWN,vgui2/controls/HTML.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100944A0,107,?InitVar@PanelMessageFunc_OnSliderMoved@HTML@vgui2@@SAXXZ,vgui2::HTML::PanelMessageFunc_OnSliderMoved::InitVar,UNKNOWN,vgui2/controls/HTML.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10094510,120,?AddToMap@HTML@vgui2@@SAXPBDP8Panel@2@AEXXZHH0H0@Z,vgui2::HTML::AddToMap,UNKNOWN,vgui2/controls/HTML.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10094590,50,??0?$CUtlVector@UCustomURLHandler_t@HTML@vgui2@@@@QAE@HH@Z,vgui2::HTML::CustomURLHandler_t>,UNKNOWN,vgui2/controls/HTML.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100945D0,27,??1?$CUtlVector@UCustomURLHandler_t@HTML@vgui2@@@@QAE@XZ,vgui2::HTML::CustomURLHandler_t>,UNKNOWN,vgui2/controls/HTML.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100945F0,25,??A?$CUtlVector@UCustomURLHandler_t@HTML@vgui2@@@@QAEAAUCustomURLHandler_t@HTML@vgui2@@H@Z,vgui2::HTML::CustomURLHandler_t>::operator[],UNKNOWN,vgui2/controls/HTML.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10094610,17,?Count@?$CUtlVector@UCustomURLHandler_t@HTML@vgui2@@@@QBEHXZ,vgui2::HTML::CustomURLHandler_t>::Count,UNKNOWN,vgui2/controls/HTML.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10094630,26,?AddToTail@?$CUtlVector@UCustomURLHandler_t@HTML@vgui2@@@@QAEHXZ,vgui2::HTML::CustomURLHandler_t>::AddToTail,UNKNOWN,vgui2/controls/HTML.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10094650,61,?InsertBefore@?$CUtlVector@UCustomURLHandler_t@HTML@vgui2@@@@QAEHH@Z,vgui2::HTML::CustomURLHandler_t>::InsertBefore,UNKNOWN,vgui2/controls/HTML.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10094690,35,?Purge@?$CUtlVector@UCustomURLHandler_t@HTML@vgui2@@@@QAEXXZ,vgui2::HTML::CustomURLHandler_t>::Purge,UNKNOWN,vgui2/controls/HTML.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100946C0,11,?ResetDbgInfo@?$CUtlVector@UCustomURLHandler_t@HTML@vgui2@@@@IAEXXZ,vgui2::HTML::CustomURLHandler_t>::ResetDbgInfo,UNKNOWN,vgui2/controls/HTML.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100946D0,75,??0?$CUtlMemory@UCustomURLHandler_t@HTML@vgui2@@@@QAE@HH@Z,vgui2::HTML::CustomURLHandler_t>,UNKNOWN,vgui2/controls/HTML.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10094720,19,??1?$CUtlMemory@UCustomURLHandler_t@HTML@vgui2@@@@QAE@XZ,vgui2::HTML::CustomURLHandler_t>,UNKNOWN,vgui2/controls/HTML.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10094740,26,??A?$CUtlMemory@UCustomURLHandler_t@HTML@vgui2@@@@QAEAAUCustomURLHandler_t@HTML@vgui2@@H@Z,vgui2::HTML::CustomURLHandler_t>::operator[],UNKNOWN,vgui2/controls/HTML.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10094770,25,?Element@?$CUtlVector@UCustomURLHandler_t@HTML@vgui2@@@@QAEAAUCustomURLHandler_t@HTML@vgui2@@H@Z,vgui2::HTML::CustomURLHandler_t>::Element,UNKNOWN,vgui2/controls/HTML.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10094790,70,?RemoveAll@?$CUtlVector@UCustomURLHandler_t@HTML@vgui2@@@@QAEXXZ,vgui2::HTML::CustomURLHandler_t>::RemoveAll,UNKNOWN,vgui2/controls/HTML.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100947E0,87,?GrowVector@?$CUtlVector@UCustomURLHandler_t@HTML@vgui2@@@@IAEXH@Z,vgui2::HTML::CustomURLHandler_t>::GrowVector,UNKNOWN,vgui2/controls/HTML.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10094840,86,?ShiftElementsRight@?$CUtlVector@UCustomURLHandler_t@HTML@vgui2@@@@IAEXHH@Z,vgui2::HTML::CustomURLHandler_t>::ShiftElementsRight,UNKNOWN,vgui2/controls/HTML.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,100948A0,53,?Construct@@YAXPAUCustomURLHandler_t@HTML@vgui2@@@Z,Construct,UNKNOWN,vgui2/controls/HTML.cpp,,,MATCHED,100,gameui_manual.csv,Ghidra function identification false match (__ExceptionPtrCreate)
+gameui,100948E0,69,?Purge@?$CUtlMemory@UCustomURLHandler_t@HTML@vgui2@@@@QAEXXZ,vgui2::HTML::CustomURLHandler_t>::Purge,UNKNOWN,vgui2/controls/HTML.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10094930,22,??0CustomURLHandler_t@HTML@vgui2@@QAE@XZ,vgui2::HTML::CustomURLHandler_t::CustomURLHandler_t,UNKNOWN,vgui2/controls/HTML.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10094950,17,?NumAllocated@?$CUtlMemory@UCustomURLHandler_t@HTML@vgui2@@@@QBEHXZ,vgui2::HTML::CustomURLHandler_t>::NumAllocated,UNKNOWN,vgui2/controls/HTML.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10094970,199,?Grow@?$CUtlMemory@UCustomURLHandler_t@HTML@vgui2@@@@QAEXH@Z,vgui2::HTML::CustomURLHandler_t>::Grow,UNKNOWN,vgui2/controls/HTML.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10094A40,25,?IsExternallyAllocated@?$CUtlMemory@UCustomURLHandler_t@HTML@vgui2@@@@QBE_NXZ,vgui2::HTML::CustomURLHandler_t>::IsExternallyAllocated,UNKNOWN,vgui2/controls/HTML.cpp,,,MATCHED,100,gameui_manual.csv,
+gameui,10094A60,5,?Destruct@@YAXPAUCustomURLHandler_t@HTML@vgui2@@@Z,Destruct,UNKNOWN,vgui2/controls/HTML.cpp,,,MATCHED,100,gameui_manual.csv,
 gameui,10094A70,273,,,UNKNOWN,vgui2/controls/QueryBox.cpp,,,TODO,,,linux: _ZN5vgui28QueryBoxC1EPKcS2_PNS_5PanelE
 gameui,10094B81,273,,,UNKNOWN,vgui2/controls/QueryBox.cpp,,,TODO,,,linux: _ZN5vgui28QueryBoxC1EPKwS2_PNS_5PanelE
 gameui,10094C92,149,,,UNKNOWN,vgui2/controls/QueryBox.cpp,,,TODO,,,linux: _ZN5vgui28QueryBoxD2Ev

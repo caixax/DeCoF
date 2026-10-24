@@ -3571,3 +3571,72 @@ va,name,kind,evidence
 100FE3E4,_?iv@?1??ran1@@YA_HXZ@4PA_HA,data,common/Random.cpp function static of ran1 (gameui.so DWARF iv[32]); .bss layout like our object
 100FE464,_idum,data,common/Random.cpp static (gameui.so DWARF idum): seeded by SeedRandomNumberGenerator; .bss layout like our object
 100FE468,_?iy@?1??ran1@@YA_HXZ@4_HA,data,common/Random.cpp function static of ran1 (gameui.so DWARF iy); .bss layout like our object
+10092A80,??0HTML@vgui2@@QAE@PAVPanel@1@PBD_N@Z,func,vgui2/controls/HTML.cpp: main text in source order (2003 IE based control; vtable order checked against the retail RTTI vtable)
+10092D4E,??1HTML@vgui2@@UAE@XZ,func,vgui2/controls/HTML.cpp: main text in source order (2003 IE based control; vtable order checked against the retail RTTI vtable)
+10092D9E,?ApplySchemeSettings@HTML@vgui2@@MAEXPAVIScheme@2@@Z,func,vgui2/controls/HTML.cpp: main text in source order (2003 IE based control; vtable order checked against the retail RTTI vtable)
+10092DE4,?StartAnimate_guess@HTML@vgui2@@QAEXH@Z,func,vgui2/controls/HTML.cpp: main text in source order (2003 IE based control; vtable order checked against the retail RTTI vtable)
+10092DFD,?StopAnimate_guess@HTML@vgui2@@QAEXXZ,func,vgui2/controls/HTML.cpp: main text in source order (2003 IE based control; vtable order checked against the retail RTTI vtable)
+10092E22,?PaintBackground@HTML@vgui2@@MAEXXZ,func,vgui2/controls/HTML.cpp: main text in source order (2003 IE based control; vtable order checked against the retail RTTI vtable)
+10092F5F,?PerformLayout@HTML@vgui2@@MAEXXZ,func,vgui2/controls/HTML.cpp: main text in source order (2003 IE based control; vtable order checked against the retail RTTI vtable)
+10092FB2,?SetVisible@HTML@vgui2@@UAEX_N@Z,func,vgui2/controls/HTML.cpp: main text in source order (2003 IE based control; vtable order checked against the retail RTTI vtable)
+10093065,?OnMove@HTML@vgui2@@MAEXXZ,func,vgui2/controls/HTML.cpp: main text in source order (2003 IE based control; vtable order checked against the retail RTTI vtable)
+10093086,?CalcScrollBars@HTML@vgui2@@MAEXHH@Z,func,vgui2/controls/HTML.cpp: main text in source order (2003 IE based control; vtable order checked against the retail RTTI vtable)
+100934D3,?OpenURL@HTML@vgui2@@UAEXPBD_N@Z,func,vgui2/controls/HTML.cpp: main text in source order (2003 IE based control; vtable order checked against the retail RTTI vtable)
+1009365C,?StopLoading@HTML@vgui2@@UAE_NXZ,func,vgui2/controls/HTML.cpp: main text in source order (2003 IE based control; vtable order checked against the retail RTTI vtable)
+1009369F,?Refresh@HTML@vgui2@@UAE_NXZ,func,vgui2/controls/HTML.cpp: main text in source order (2003 IE based control; vtable order checked against the retail RTTI vtable)
+100936E2,?Clear_guess@HTML@vgui2@@UAEXXZ,func,vgui2/controls/HTML.cpp: main text in source order (2003 IE based control; vtable order checked against the retail RTTI vtable)
+10093707,?AddText_guess@HTML@vgui2@@UAEXPBD@Z,func,vgui2/controls/HTML.cpp: main text in source order (2003 IE based control; vtable order checked against the retail RTTI vtable)
+10093732,?OnSizeChanged@HTML@vgui2@@MAEXHH@Z,func,vgui2/controls/HTML.cpp: main text in source order (2003 IE based control; vtable order checked against the retail RTTI vtable)
+100937AB,?OnTick@HTML@vgui2@@MAEXXZ,func,vgui2/controls/HTML.cpp: main text in source order (2003 IE based control; vtable order checked against the retail RTTI vtable)
+10093855,?OnMousePressed@HTML@vgui2@@MAEXW4MouseCode@2@@Z,func,vgui2/controls/HTML.cpp: main text in source order (2003 IE based control; vtable order checked against the retail RTTI vtable)
+100938F0,?OnMouseReleased@HTML@vgui2@@MAEXW4MouseCode@2@@Z,func,vgui2/controls/HTML.cpp: main text in source order (2003 IE based control; vtable order checked against the retail RTTI vtable)
+10093969,?OnCursorMoved@HTML@vgui2@@MAEXHH@Z,func,vgui2/controls/HTML.cpp: main text in source order (2003 IE based control; vtable order checked against the retail RTTI vtable)
+100939BF,?OnMouseDoublePressed@HTML@vgui2@@MAEXW4MouseCode@2@@Z,func,vgui2/controls/HTML.cpp: main text in source order (2003 IE based control; vtable order checked against the retail RTTI vtable)
+10093A38,?OnKeyTyped@HTML@vgui2@@MAEXG@Z,func,vgui2/controls/HTML.cpp: main text in source order (2003 IE based control; vtable order checked against the retail RTTI vtable)
+10093A45,?OnKeyCodePressed@HTML@vgui2@@MAEXW4KeyCode@2@@Z,func,vgui2/controls/HTML.cpp: main text in source order (2003 IE based control; vtable order checked against the retail RTTI vtable)
+10093B55,?OnMouseWheeled@HTML@vgui2@@MAEXH@Z,func,vgui2/controls/HTML.cpp: main text in source order (2003 IE based control; vtable order checked against the retail RTTI vtable)
+10093BB9,?AddCustomURLHandler@HTML@vgui2@@UAEXPBDPAVPanel@2@@Z,func,vgui2/controls/HTML.cpp: main text in source order (2003 IE based control; vtable order checked against the retail RTTI vtable)
+10093C1A,?OnStartURL@HTML@vgui2@@UAE_NPBD0_N@Z,func,vgui2/controls/HTML.cpp: main text in source order (2003 IE based control; vtable order checked against the retail RTTI vtable)
+10093DEB,?BrowserResize@HTML@vgui2@@MAEXXZ,func,vgui2/controls/HTML.cpp: main text in source order (2003 IE based control; vtable order checked against the retail RTTI vtable)
+10093EF2,?OnFinishURL@HTML@vgui2@@UAEXPBD@Z,func,vgui2/controls/HTML.cpp: main text in source order (2003 IE based control; vtable order checked against the retail RTTI vtable)
+10093FB7,?OnProgressURL@HTML@vgui2@@UAEXJJ@Z,func,vgui2/controls/HTML.cpp: main text in source order (2003 IE based control; vtable order checked against the retail RTTI vtable)
+10093FC4,?OnSetStatusText@HTML@vgui2@@UAEXPBD@Z,func,vgui2/controls/HTML.cpp: main text in source order (2003 IE based control; vtable order checked against the retail RTTI vtable)
+10093FD1,?OnUpdate@HTML@vgui2@@UAEXXZ,func,vgui2/controls/HTML.cpp: main text in source order (2003 IE based control; vtable order checked against the retail RTTI vtable)
+10094097,?OnLink@HTML@vgui2@@UAEXXZ,func,vgui2/controls/HTML.cpp: main text in source order (2003 IE based control; vtable order checked against the retail RTTI vtable)
+100940F1,?OffLink@HTML@vgui2@@UAEXXZ,func,vgui2/controls/HTML.cpp: main text in source order (2003 IE based control; vtable order checked against the retail RTTI vtable)
+1009414B,?OnSliderMoved@HTML@vgui2@@MAEXXZ,func,vgui2/controls/HTML.cpp: main text in source order (2003 IE based control; vtable order checked against the retail RTTI vtable)
+1009427E,?IsScrolledToBottom@HTML@vgui2@@QAE_NXZ,func,vgui2/controls/HTML.cpp: main text in source order (2003 IE based control; vtable order checked against the retail RTTI vtable)
+100942FA,?SetScrollbarsEnabled@HTML@vgui2@@UAEX_N@Z,func,vgui2/controls/HTML.cpp: main text in source order (2003 IE based control; vtable order checked against the retail RTTI vtable)
+10094313,?SetContextMenuEnabled@HTML@vgui2@@UAEX_N@Z,func,vgui2/controls/HTML.cpp: main text in source order (2003 IE based control; vtable order checked against the retail RTTI vtable)
+1009432C,?NewWindowsOnly@HTML@vgui2@@UAEX_N@Z,func,vgui2/controls/HTML.cpp: main text in source order (2003 IE based control; vtable order checked against the retail RTTI vtable)
+10094350,??_GHTML@vgui2@@UAEPAXI@Z,func,vgui2/controls/HTML.cpp: COMDAT tail, same position and size as in our compiled object
+10094380,??0IHTMLEvents@vgui2@@QAE@XZ,func,vgui2/controls/HTML.cpp: COMDAT tail, same position and size as in our compiled object
+100943A0,?IsSteamInOfflineMode_guess@@YA_NXZ,func,vgui2/controls/HTML.cpp: COMDAT inline reading the Steam offline registry value, called by OpenURL; name unproven
+100943E0,??0HTML_RegisterMap@HTML@vgui2@@QAE@XZ,func,vgui2/controls/HTML.cpp: COMDAT tail, same position and size as in our compiled object
+10094400,?ChainToMap@HTML@vgui2@@SAXXZ,func,vgui2/controls/HTML.cpp: COMDAT tail, same position and size as in our compiled object
+10094470,?GetPanelBaseClassName@HTML@vgui2@@SAPBDXZ,func,vgui2/controls/HTML.cpp: COMDAT tail, same position and size as in our compiled object
+10094480,??0PanelMessageFunc_OnSliderMoved@HTML@vgui2@@QAE@XZ,func,vgui2/controls/HTML.cpp: COMDAT tail, same position and size as in our compiled object
+100944A0,?InitVar@PanelMessageFunc_OnSliderMoved@HTML@vgui2@@SAXXZ,func,vgui2/controls/HTML.cpp: COMDAT tail, same position and size as in our compiled object
+10094510,?AddToMap@HTML@vgui2@@SAXPBDP8Panel@2@AEXXZHH0H0@Z,func,vgui2/controls/HTML.cpp: COMDAT tail, same position and size as in our compiled object
+10094590,??0?$CUtlVector@UCustomURLHandler_t@HTML@vgui2@@@@QAE@HH@Z,func,vgui2/controls/HTML.cpp: COMDAT tail, same position and size as in our compiled object
+100945D0,??1?$CUtlVector@UCustomURLHandler_t@HTML@vgui2@@@@QAE@XZ,func,vgui2/controls/HTML.cpp: COMDAT tail, same position and size as in our compiled object
+100945F0,??A?$CUtlVector@UCustomURLHandler_t@HTML@vgui2@@@@QAEAAUCustomURLHandler_t@HTML@vgui2@@H@Z,func,vgui2/controls/HTML.cpp: COMDAT tail, same position and size as in our compiled object
+10094610,?Count@?$CUtlVector@UCustomURLHandler_t@HTML@vgui2@@@@QBEHXZ,func,vgui2/controls/HTML.cpp: COMDAT tail, same position and size as in our compiled object
+10094630,?AddToTail@?$CUtlVector@UCustomURLHandler_t@HTML@vgui2@@@@QAEHXZ,func,vgui2/controls/HTML.cpp: COMDAT tail, same position and size as in our compiled object
+10094650,?InsertBefore@?$CUtlVector@UCustomURLHandler_t@HTML@vgui2@@@@QAEHH@Z,func,vgui2/controls/HTML.cpp: COMDAT tail, same position and size as in our compiled object
+10094690,?Purge@?$CUtlVector@UCustomURLHandler_t@HTML@vgui2@@@@QAEXXZ,func,vgui2/controls/HTML.cpp: COMDAT tail, same position and size as in our compiled object
+100946C0,?ResetDbgInfo@?$CUtlVector@UCustomURLHandler_t@HTML@vgui2@@@@IAEXXZ,func,vgui2/controls/HTML.cpp: COMDAT tail, same position and size as in our compiled object
+100946D0,??0?$CUtlMemory@UCustomURLHandler_t@HTML@vgui2@@@@QAE@HH@Z,func,vgui2/controls/HTML.cpp: COMDAT tail, same position and size as in our compiled object
+10094720,??1?$CUtlMemory@UCustomURLHandler_t@HTML@vgui2@@@@QAE@XZ,func,vgui2/controls/HTML.cpp: COMDAT tail, same position and size as in our compiled object
+10094740,??A?$CUtlMemory@UCustomURLHandler_t@HTML@vgui2@@@@QAEAAUCustomURLHandler_t@HTML@vgui2@@H@Z,func,vgui2/controls/HTML.cpp: COMDAT tail, same position and size as in our compiled object
+10094770,?Element@?$CUtlVector@UCustomURLHandler_t@HTML@vgui2@@@@QAEAAUCustomURLHandler_t@HTML@vgui2@@H@Z,func,vgui2/controls/HTML.cpp: COMDAT tail, same position and size as in our compiled object
+10094790,?RemoveAll@?$CUtlVector@UCustomURLHandler_t@HTML@vgui2@@@@QAEXXZ,func,vgui2/controls/HTML.cpp: COMDAT tail, same position and size as in our compiled object
+100947E0,?GrowVector@?$CUtlVector@UCustomURLHandler_t@HTML@vgui2@@@@IAEXH@Z,func,vgui2/controls/HTML.cpp: COMDAT tail, same position and size as in our compiled object
+10094840,?ShiftElementsRight@?$CUtlVector@UCustomURLHandler_t@HTML@vgui2@@@@IAEXHH@Z,func,vgui2/controls/HTML.cpp: COMDAT tail, same position and size as in our compiled object
+100948A0,?Construct@@YAXPAUCustomURLHandler_t@HTML@vgui2@@@Z,func,vgui2/controls/HTML.cpp: COMDAT tail, same position and size as in our compiled object
+100948E0,?Purge@?$CUtlMemory@UCustomURLHandler_t@HTML@vgui2@@@@QAEXXZ,func,vgui2/controls/HTML.cpp: COMDAT tail, same position and size as in our compiled object
+10094930,??0CustomURLHandler_t@HTML@vgui2@@QAE@XZ,func,vgui2/controls/HTML.cpp: COMDAT tail, same position and size as in our compiled object
+10094950,?NumAllocated@?$CUtlMemory@UCustomURLHandler_t@HTML@vgui2@@@@QBEHXZ,func,vgui2/controls/HTML.cpp: COMDAT tail, same position and size as in our compiled object
+10094970,?Grow@?$CUtlMemory@UCustomURLHandler_t@HTML@vgui2@@@@QAEXH@Z,func,vgui2/controls/HTML.cpp: COMDAT tail, same position and size as in our compiled object
+10094A40,?IsExternallyAllocated@?$CUtlMemory@UCustomURLHandler_t@HTML@vgui2@@@@QBE_NXZ,func,vgui2/controls/HTML.cpp: COMDAT tail, same position and size as in our compiled object
+10094A60,?Destruct@@YAXPAUCustomURLHandler_t@HTML@vgui2@@@Z,func,vgui2/controls/HTML.cpp: COMDAT tail, same position and size as in our compiled object
