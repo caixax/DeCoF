@@ -4158,6 +4158,11 @@
           "name": "GameUI/DemoEventsDialog",
           "source": "src/gameui/DemoEventsDialog.cpp",
           "functions_file": "tools/units/gameui_GameUI_DemoEventsDialog.txt"
+        },
+        {
+          "name": "common/BaseSystemModule",
+          "source": "src/common/BaseSystemModule.cpp",
+          "functions_file": "tools/units/gameui_common_BaseSystemModule.txt"
         }
       ]
     }

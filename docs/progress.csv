@@ -8382,28 +8382,28 @@ gameui,10021100,17,?NumAllocated@?$CUtlMemory@Ubimage_t@CBasePanel@@@@QBEHXZ,pub
 gameui,10021120,199,?Grow@?$CUtlMemory@Ubimage_t@CBasePanel@@@@QAEXH@Z,public: void __thiscall CUtlMemory<struct CBasePanel::bimage_t>::Grow(int),UNKNOWN,GameUI/BasePanel.cpp,,,MATCHED,100,,
 gameui,100211F0,25,?IsExternallyAllocated@?$CUtlMemory@Ubimage_t@CBasePanel@@@@QBE_NXZ,public: bool __thiscall CUtlMemory<struct CBasePanel::bimage_t>::IsExternallyAllocated(void)const ,UNKNOWN,GameUI/BasePanel.cpp,,,MATCHED,100,,
 gameui,10021210,5,?Destruct@@YAXPAUbimage_t@CBasePanel@@@Z,void __cdecl Destruct(struct CBasePanel::bimage_t *),UNKNOWN,GameUI/BasePanel.cpp,,,MATCHED,100,,
-gameui,10021220,129,,,UNKNOWN,common/BaseSystemModule.cpp,,,TODO,,,linux: _ZN16BaseSystemModuleC1Ev
-gameui,100212A1,90,,,UNKNOWN,common/BaseSystemModule.cpp,,,TODO,,,linux: _ZN16BaseSystemModuleD1Ev
-gameui,100212FB,19,,,UNKNOWN,common/BaseSystemModule.cpp,,,TODO,,,linux: _ZN16BaseSystemModule7GetNameEv
-gameui,1002130E,16,,BaseSystemModule::GetType,ENGINE,common/BaseSystemModule.cpp,,,TODO,,linux_symbols:string:0.75,linux: _ZN16BaseSystemModule7GetTypeEv
-gameui,1002131E,16,,BaseSystemModule::GetStatusLine,ENGINE,common/BaseSystemModule.cpp,,,TODO,,linux_symbols:string:0.75,linux: _ZN16BaseSystemModule13GetStatusLineEv
-gameui,1002132E,45,,BaseSystemModule::ExecuteCommand,ENGINE,common/BaseSystemModule.cpp,,,TODO,,linux_symbols:string:0.75,linux: _ZN16BaseSystemModule14ExecuteCommandEiPc
-gameui,1002135B,16,,,UNKNOWN,common/BaseSystemModule.cpp,,,TODO,,,linux: _ZN16BaseSystemModule10GetVersionEv
-gameui,1002136B,17,,,UNKNOWN,common/BaseSystemModule.cpp,,,TODO,,,linux: _ZN16BaseSystemModule9GetSerialEv
-gameui,1002137C,20,,,UNKNOWN,common/BaseSystemModule.cpp,,,TODO,,,linux: _ZN16BaseSystemModule9GetSystemEv
-gameui,10021390,136,,,UNKNOWN,common/BaseSystemModule.cpp,,,TODO,,,linux: _ZN16BaseSystemModule4InitEP11IBaseSystemiPc
-gameui,10021418,30,,,UNKNOWN,common/BaseSystemModule.cpp,,,TODO,,,linux: _ZN16BaseSystemModule8RunFrameEd
-gameui,10021436,184,,BaseSystemModule::ShutDown,ENGINE,common/BaseSystemModule.cpp,,,TODO,,linux_symbols:string:0.75,linux: _ZN16BaseSystemModule8ShutDownEv
-gameui,100214EE,172,,BaseSystemModule::RegisterListener,ENGINE,common/BaseSystemModule.cpp,,,TODO,,linux_symbols:string:0.75,linux: _ZN16BaseSystemModule16RegisterListenerEP13ISystemModule
-gameui,1002159A,128,,,UNKNOWN,common/BaseSystemModule.cpp,,,TODO,,,linux: _ZN16BaseSystemModule14RemoveListenerEP13ISystemModule
-gameui,1002161A,111,,,UNKNOWN,common/BaseSystemModule.cpp,,,TODO,,,linux: _ZN16BaseSystemModule10FireSignalEjPv
-gameui,10021689,61,,BaseSystemModule::ReceiveSignal,ENGINE,common/BaseSystemModule.cpp,,,TODO,,linux_symbols:string:0.75,linux: _ZN16BaseSystemModule13ReceiveSignalEP13ISystemModulejPv
-gameui,100216C6,17,,,UNKNOWN,common/BaseSystemModule.cpp,,,TODO,,,linux: _ZN16BaseSystemModule8GetStateEv
-gameui,100216E0,31,,,UNKNOWN,common/BaseSystemModule.cpp,,,TODO,,,
-gameui,10021700,46,,,UNKNOWN,common/BaseSystemModule.cpp,,,TODO,,,
-gameui,10021730,28,,,UNKNOWN,common/BaseSystemModule.cpp,,,TODO,,,
-gameui,10021760,63,,,UNKNOWN,common/BaseSystemModule.cpp,,,TODO,,,
-gameui,100217A0,39,,,UNKNOWN,common/BaseSystemModule.cpp,,,TODO,,,
+gameui,10021220,129,??0BaseSystemModule@@QAE@XZ,public: __thiscall BaseSystemModule::BaseSystemModule(void),UNKNOWN,common/BaseSystemModule.cpp,,,MATCHED,100,,linux: _ZN16BaseSystemModuleC1Ev
+gameui,100212A1,90,??1BaseSystemModule@@UAE@XZ,public: virtual __thiscall BaseSystemModule::~BaseSystemModule(void),UNKNOWN,common/BaseSystemModule.cpp,,,MATCHED,100,,linux: _ZN16BaseSystemModuleD1Ev
+gameui,100212FB,19,?GetName@BaseSystemModule@@UAEPADXZ,public: virtual char * __thiscall BaseSystemModule::GetName(void),UNKNOWN,common/BaseSystemModule.cpp,,,MATCHED,100,,linux: _ZN16BaseSystemModule7GetNameEv
+gameui,1002130E,16,?GetType@BaseSystemModule@@UAEPADXZ,public: virtual char * __thiscall BaseSystemModule::GetType(void),ENGINE,common/BaseSystemModule.cpp,,,MATCHED,100,linux_symbols:string:0.75,linux: _ZN16BaseSystemModule7GetTypeEv
+gameui,1002131E,16,?GetStatusLine@BaseSystemModule@@UAEPADXZ,public: virtual char * __thiscall BaseSystemModule::GetStatusLine(void),ENGINE,common/BaseSystemModule.cpp,,,MATCHED,100,linux_symbols:string:0.75,linux: _ZN16BaseSystemModule13GetStatusLineEv
+gameui,1002132E,45,?ExecuteCommand@BaseSystemModule@@UAEXHPAD@Z,"public: virtual void __thiscall BaseSystemModule::ExecuteCommand(int,char *)",ENGINE,common/BaseSystemModule.cpp,,,MATCHED,100,linux_symbols:string:0.75,linux: _ZN16BaseSystemModule14ExecuteCommandEiPc
+gameui,1002135B,16,?GetVersion@BaseSystemModule@@UAEHXZ,public: virtual int __thiscall BaseSystemModule::GetVersion(void),UNKNOWN,common/BaseSystemModule.cpp,,,MATCHED,100,,linux: _ZN16BaseSystemModule10GetVersionEv
+gameui,1002136B,17,?GetSerial@BaseSystemModule@@UAEHXZ,public: virtual int __thiscall BaseSystemModule::GetSerial(void),UNKNOWN,common/BaseSystemModule.cpp,,,MATCHED,100,,linux: _ZN16BaseSystemModule9GetSerialEv
+gameui,1002137C,20,?GetSystem@BaseSystemModule@@UAEPAVIBaseSystem@@XZ,public: virtual class IBaseSystem * __thiscall BaseSystemModule::GetSystem(void),UNKNOWN,common/BaseSystemModule.cpp,,,MATCHED,100,,linux: _ZN16BaseSystemModule9GetSystemEv
+gameui,10021390,136,?Init@BaseSystemModule@@UAE_NPAVIBaseSystem@@HPAD@Z,"public: virtual bool __thiscall BaseSystemModule::Init(class IBaseSystem *,int,char *)",UNKNOWN,common/BaseSystemModule.cpp,,,MATCHED,100,,linux: _ZN16BaseSystemModule4InitEP11IBaseSystemiPc
+gameui,10021418,30,?RunFrame@BaseSystemModule@@UAEXN@Z,public: virtual void __thiscall BaseSystemModule::RunFrame(double),UNKNOWN,common/BaseSystemModule.cpp,,,MATCHED,100,,linux: _ZN16BaseSystemModule8RunFrameEd
+gameui,10021436,184,?ShutDown@BaseSystemModule@@UAEXXZ,public: virtual void __thiscall BaseSystemModule::ShutDown(void),ENGINE,common/BaseSystemModule.cpp,,,MATCHED,100,linux_symbols:string:0.75,linux: _ZN16BaseSystemModule8ShutDownEv
+gameui,100214EE,172,?RegisterListener@BaseSystemModule@@UAEXPAVISystemModule@@@Z,public: virtual void __thiscall BaseSystemModule::RegisterListener(class ISystemModule *),ENGINE,common/BaseSystemModule.cpp,,,MATCHED,100,linux_symbols:string:0.75,linux: _ZN16BaseSystemModule16RegisterListenerEP13ISystemModule
+gameui,1002159A,128,?RemoveListener@BaseSystemModule@@UAEXPAVISystemModule@@@Z,public: virtual void __thiscall BaseSystemModule::RemoveListener(class ISystemModule *),UNKNOWN,common/BaseSystemModule.cpp,,,MATCHED,100,,linux: _ZN16BaseSystemModule14RemoveListenerEP13ISystemModule
+gameui,1002161A,111,?FireSignal@BaseSystemModule@@QAEXIPAX@Z,"public: void __thiscall BaseSystemModule::FireSignal(unsigned int,void *)",UNKNOWN,common/BaseSystemModule.cpp,,,MATCHED,100,,linux: _ZN16BaseSystemModule10FireSignalEjPv
+gameui,10021689,61,?ReceiveSignal@BaseSystemModule@@UAEXPAVISystemModule@@IPAX@Z,"public: virtual void __thiscall BaseSystemModule::ReceiveSignal(class ISystemModule *,unsigned int,void *)",ENGINE,common/BaseSystemModule.cpp,,,MATCHED,100,linux_symbols:string:0.75,linux: _ZN16BaseSystemModule13ReceiveSignalEP13ISystemModulejPv
+gameui,100216C6,17,?GetState@BaseSystemModule@@UAEHXZ,public: virtual int __thiscall BaseSystemModule::GetState(void),UNKNOWN,common/BaseSystemModule.cpp,,,MATCHED,100,,linux: _ZN16BaseSystemModule8GetStateEv
+gameui,100216E0,31,??0ISystemModule@@QAE@XZ,public: __thiscall ISystemModule::ISystemModule(void),UNKNOWN,common/BaseSystemModule.cpp,,,MATCHED,100,,
+gameui,10021700,46,??_GISystemModule@@UAEPAXI@Z,public: virtual void * __thiscall ISystemModule::`scalar deleting destructor'(unsigned int),UNKNOWN,common/BaseSystemModule.cpp,,,MATCHED,100,,
+gameui,10021730,28,??1ISystemModule@@UAE@XZ,public: virtual __thiscall ISystemModule::~ISystemModule(void),UNKNOWN,common/BaseSystemModule.cpp,,,MATCHED,100,,
+gameui,10021760,63,??_GBaseSystemModule@@UAEPAXI@Z,public: virtual void * __thiscall BaseSystemModule::`scalar deleting destructor'(unsigned int),UNKNOWN,common/BaseSystemModule.cpp,,,MATCHED,100,,
+gameui,100217A0,39,??_DBaseSystemModule@@QAEXXZ,public: void __thiscall BaseSystemModule::`vbase destructor'(void),UNKNOWN,common/BaseSystemModule.cpp,,,MATCHED,100,,
 gameui,100218B0,39,??0BitBuffer@@QAE@XZ,public: __thiscall BitBuffer::BitBuffer(void),UNKNOWN,HLTV/common/BitBuffer.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN9BitBufferC1Ev
 gameui,100218D7,78,??0BitBuffer@@QAE@PAXI@Z,"public: __thiscall BitBuffer::BitBuffer(void *,unsigned int)",UNKNOWN,HLTV/common/BitBuffer.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN9BitBufferC2EPvj
 gameui,10021925,28,??1BitBuffer@@UAE@XZ,public: virtual __thiscall BitBuffer::~BitBuffer(void),UNKNOWN,HLTV/common/BitBuffer.cpp,,,MATCHED,100,gameui_manual.csv,linux: _ZN9BitBufferD2Ev

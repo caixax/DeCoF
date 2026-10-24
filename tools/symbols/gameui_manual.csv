@@ -5382,3 +5382,25 @@ va,name,kind,evidence
 1002C980,??0PanelMessageFunc_OnUpdateLastCmd@CDemoEventsDialog@@QAE@XZ,func,GameUI/DemoEventsDialog.cpp: same position and size as in our compiled object
 1002C9A0,?InitVar@PanelMessageFunc_OnUpdateLastCmd@CDemoEventsDialog@@SAXXZ,func,GameUI/DemoEventsDialog.cpp: same position and size as in our compiled object
 1002CA10,?OnUpdateLastCmd@CDemoEventsDialog@@UAEXXZ,func,GameUI/DemoEventsDialog.cpp: same position and size as in our compiled object
+10021220,??0BaseSystemModule@@QAE@XZ,func,common/BaseSystemModule.cpp (shared with hw.dll): same position and size as in our compiled object; linux: _ZN16BaseSystemModuleC1Ev
+100212A1,??1BaseSystemModule@@UAE@XZ,func,common/BaseSystemModule.cpp (shared with hw.dll): same position and size as in our compiled object; linux: _ZN16BaseSystemModuleD1Ev
+100212FB,?GetName@BaseSystemModule@@UAEPADXZ,func,common/BaseSystemModule.cpp (shared with hw.dll): same position and size as in our compiled object; linux: _ZN16BaseSystemModule7GetNameEv
+1002130E,?GetType@BaseSystemModule@@UAEPADXZ,func,common/BaseSystemModule.cpp (shared with hw.dll): same position and size as in our compiled object; linux: _ZN16BaseSystemModule7GetTypeEv
+1002131E,?GetStatusLine@BaseSystemModule@@UAEPADXZ,func,common/BaseSystemModule.cpp (shared with hw.dll): same position and size as in our compiled object; linux: _ZN16BaseSystemModule13GetStatusLineEv
+1002132E,?ExecuteCommand@BaseSystemModule@@UAEXHPAD@Z,func,common/BaseSystemModule.cpp (shared with hw.dll): same position and size as in our compiled object; linux: _ZN16BaseSystemModule14ExecuteCommandEiPc
+1002135B,?GetVersion@BaseSystemModule@@UAEHXZ,func,common/BaseSystemModule.cpp (shared with hw.dll): same position and size as in our compiled object; linux: _ZN16BaseSystemModule10GetVersionEv
+1002136B,?GetSerial@BaseSystemModule@@UAEHXZ,func,common/BaseSystemModule.cpp (shared with hw.dll): same position and size as in our compiled object; linux: _ZN16BaseSystemModule9GetSerialEv
+1002137C,?GetSystem@BaseSystemModule@@UAEPAVIBaseSystem@@XZ,func,common/BaseSystemModule.cpp (shared with hw.dll): same position and size as in our compiled object; linux: _ZN16BaseSystemModule9GetSystemEv
+10021390,?Init@BaseSystemModule@@UAE_NPAVIBaseSystem@@HPAD@Z,func,common/BaseSystemModule.cpp (shared with hw.dll): same position and size as in our compiled object; linux: _ZN16BaseSystemModule4InitEP11IBaseSystemiPc
+10021418,?RunFrame@BaseSystemModule@@UAEXN@Z,func,common/BaseSystemModule.cpp (shared with hw.dll): same position and size as in our compiled object; linux: _ZN16BaseSystemModule8RunFrameEd
+10021436,?ShutDown@BaseSystemModule@@UAEXXZ,func,common/BaseSystemModule.cpp (shared with hw.dll): same position and size as in our compiled object; linux: _ZN16BaseSystemModule8ShutDownEv
+100214EE,?RegisterListener@BaseSystemModule@@UAEXPAVISystemModule@@@Z,func,common/BaseSystemModule.cpp (shared with hw.dll): same position and size as in our compiled object; linux: _ZN16BaseSystemModule16RegisterListenerEP13ISystemModule
+1002159A,?RemoveListener@BaseSystemModule@@UAEXPAVISystemModule@@@Z,func,common/BaseSystemModule.cpp (shared with hw.dll): same position and size as in our compiled object; linux: _ZN16BaseSystemModule14RemoveListenerEP13ISystemModule
+1002161A,?FireSignal@BaseSystemModule@@QAEXIPAX@Z,func,common/BaseSystemModule.cpp (shared with hw.dll): same position and size as in our compiled object; linux: _ZN16BaseSystemModule10FireSignalEjPv
+10021689,?ReceiveSignal@BaseSystemModule@@UAEXPAVISystemModule@@IPAX@Z,func,common/BaseSystemModule.cpp (shared with hw.dll): same position and size as in our compiled object; linux: _ZN16BaseSystemModule13ReceiveSignalEP13ISystemModulejPv
+100216C6,?GetState@BaseSystemModule@@UAEHXZ,func,common/BaseSystemModule.cpp (shared with hw.dll): same position and size as in our compiled object; linux: _ZN16BaseSystemModule8GetStateEv
+100216E0,??0ISystemModule@@QAE@XZ,func,common/BaseSystemModule.cpp (shared with hw.dll): same position and size as in our compiled object
+10021700,??_GISystemModule@@UAEPAXI@Z,func,common/BaseSystemModule.cpp (shared with hw.dll): same position and size as in our compiled object
+10021730,??1ISystemModule@@UAE@XZ,func,common/BaseSystemModule.cpp (shared with hw.dll): same position and size as in our compiled object
+10021760,??_GBaseSystemModule@@UAEPAXI@Z,func,common/BaseSystemModule.cpp (shared with hw.dll): same position and size as in our compiled object
+100217A0,??_DBaseSystemModule@@QAEXXZ,func,common/BaseSystemModule.cpp (shared with hw.dll): same position and size as in our compiled object
