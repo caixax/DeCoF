@@ -17,6 +17,79 @@
 #include "cbase.h"
 #include "monsters.h"
 #include "customentity.h"
+
+//=========================================================
+// Declared by the 1.6a effects.h before CSprite: the vtables and
+// type descriptors of retail effects.obj start with these four (the
+// 1.55 PDB has CEnvModel at line 78 of effects.h, CSprite at 279).
+//=========================================================
+class CParticle : public CPointEntity
+{
+public:
+	virtual void Spawn( void );
+	virtual void Precache( void );
+	virtual void SendInitMessage( CBasePlayer *player );
+	void EXPORT KillParticle( void );
+	static CParticle *CreateParticle( int message, bool starton, Vector origin, int weaponattachment, float life, CBaseEntity *attachentity, float velocityx, float velocityy, float velocityz );
+	virtual void Use( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE useType, float value );
+};
+
+class CEnvModel : public CBaseAnimating
+{
+	void Spawn( void );
+	void Precache( void );
+	void EXPORT Think( void );
+	void KeyValue( KeyValueData *pkvd );
+	STATE GetState( void );
+	void Use( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE useType, float value );
+	virtual int	ObjectCaps( void ) { return CBaseEntity :: ObjectCaps() & ~FCAP_ACROSS_TRANSITION; }
+
+	virtual int		Save( CSave &save );
+	virtual int		Restore( CRestore &restore );
+	static	TYPEDESCRIPTION m_SaveData[];
+	float VecToYaw( Vector vecDir );
+
+	void SetSequence( void );
+	bool m_bIssuedNote;
+	int m_ChestNumbers;
+	int number1;
+	int number2;
+
+	string_t m_iszSequence_On;
+	string_t m_iszSequence_Off;
+	int m_iAction_On;
+	int m_iAction_Off;
+
+public:
+	void VisibilityCheck( void );
+};
+
+class CCofBreatheToggle : public CBaseEntity
+{
+public:
+	virtual void Spawn( void );
+	virtual void Precache( void );
+	virtual void Use( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE useType, float value );
+};
+
+class CCofStressTest : public CBaseEntity
+{
+public:
+	virtual void Spawn( void );
+	void EXPORT TurnOnBumpMaps( void );
+	void EXPORT TurnOnWater( void );
+	void EXPORT TurnOnDynLight( void );
+	void EXPORT TurnOnWeather( void );
+	void EXPORT StartNextEffect( void );
+	void EXPORT ReportEffect( void );
+	void EXPORT Disconnect( void );
+	void AllowToContinue( void );
+	virtual void Use( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE useType, float value );
+	int currenteffect;
+	int startfps;
+	int currentfps;
+};
+
 #include "effects.h"
 #include "weapons.h"
 #include "decals.h"
@@ -35,22 +108,28 @@
 #define SF_FUNNEL_REPEATABLE		2 // allows a funnel to be refired
 
 //=========================================================
-// Declarations that belong in headers which are not rebuilt yet.
-// effects.h: CParticle, CCofComputer, CCofYesNo.
-// cof_importantclassdefs.h: CCoFDocument.
-// Layouts from the 1.55 PDB, offsets checked against 1.6a.
+// cof_keypad.h, included after effects.h (the retail CCofKeypad
+// vtable follows CRainModify)
 //=========================================================
-class CParticle : public CPointEntity
+class CCofKeypad : public CBaseEntity
 {
 public:
 	virtual void Spawn( void );
 	virtual void Precache( void );
-	virtual void SendInitMessage( CBasePlayer *player );
-	void EXPORT KillParticle( void );
-	static CParticle *CreateParticle( int message, bool starton, Vector origin, int weaponattachment, float life, CBaseEntity *attachentity, float velocityx, float velocityy, float velocityz );
 	virtual void Use( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE useType, float value );
+	bool m_IsCorrect;
+	virtual int Save( CSave &save );
+	virtual int Restore( CRestore &restore );
+	virtual int ObjectCaps( void ) { return CBaseEntity :: ObjectCaps() & ~FCAP_ACROSS_TRANSITION; }
+	static TYPEDESCRIPTION m_SaveData[];
 };
 
+//=========================================================
+// Declarations that belong in headers which are not rebuilt yet.
+// effects.h: CCofComputer, CCofYesNo.
+// cof_importantclassdefs.h: CCoFDocument.
+// Layouts from the 1.55 PDB, offsets checked against 1.6a.
+//=========================================================
 class CCofComputer : public CBaseEntity
 {
 public:
@@ -1924,36 +2003,6 @@ void CSprite::Use( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE useTy
 #define SF_ENVMODEL_OFF			1
 #define SF_ENVMODEL_DROPTOFLOOR	2
 #define SF_ENVMODEL_SOLID		4
-
-class CEnvModel : public CBaseAnimating
-{
-	void Spawn( void );
-	void Precache( void );
-	void EXPORT Think( void );
-	void KeyValue( KeyValueData *pkvd );
-	STATE GetState( void );
-	void Use( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE useType, float value );
-	virtual int	ObjectCaps( void ) { return CBaseEntity :: ObjectCaps() & ~FCAP_ACROSS_TRANSITION; }
-
-	virtual int		Save( CSave &save );
-	virtual int		Restore( CRestore &restore );
-	static	TYPEDESCRIPTION m_SaveData[];
-	float VecToYaw( Vector vecDir );
-
-	void SetSequence( void );
-	bool m_bIssuedNote;
-	int m_ChestNumbers;
-	int number1;
-	int number2;
-
-	string_t m_iszSequence_On;
-	string_t m_iszSequence_Off;
-	int m_iAction_On;
-	int m_iAction_Off;
-
-public:
-	void VisibilityCheck( void );
-};
 
 TYPEDESCRIPTION CEnvModel::m_SaveData[] =
 {
@@ -5547,6 +5596,27 @@ public:
 LINK_ENTITY_TO_CLASS( trigger_followme, CTriggerFollow );
 
 
+// cof_survivalmode and cof_phonecheck are declared around CDynamicLight
+// (their vtables lie on both sides of it in retail effects.obj)
+class CCoFSurvivalMode : public CPointEntity
+{
+public:
+	virtual void Spawn( void );
+	virtual void Precache( void );
+	virtual void Use( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE useType, float value );
+	void EXPORT SurvivalThink( void );
+	bool m_bSurvivalMode;
+	bool m_bSurvivalModeRunning;
+	string_t m_sSurvivalTriggerWhenWon;
+	string_t m_sSurvivalTriggerWhenAllDead;
+	int m_iSurvivalTimeInSeconds;
+	int m_iCurrentSurvivalTime;
+	float m_flNextSurvivalCount;
+	int m_iTimeSeconds;
+	int m_iTimeMinutes;
+	int m_iTimeHours;
+};
+
 // buz: dynamic light entity
 #define SF_DYNLIGHT_STARTOFF 1
 
@@ -5601,6 +5671,15 @@ public:
 	}
 
 	static CDynamicLight *CreateLight( Vector origin, int r, int g, int b, int radius );
+};
+
+class CCofPhoneCheck : public CBaseMonster
+{
+public:
+	virtual void Spawn( void );
+	virtual void Precache( void );
+	void UnlockCheck( int number );
+	void DistanceCheck( int number );
 };
 
 CDynamicLight *CDynamicLight::CreateLight( Vector origin, int r, int g, int b, int radius )
@@ -6609,19 +6688,6 @@ void CCofInterDoorOnOff::Use( CBaseEntity *pActivator, CBaseEntity *pCaller, USE
 //=========================================================
 // cof_keypad (the class is declared in cof_keypad.h)
 //=========================================================
-class CCofKeypad : public CBaseEntity
-{
-public:
-	virtual void Spawn( void );
-	virtual void Precache( void );
-	virtual void Use( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE useType, float value );
-	bool m_IsCorrect;
-	virtual int Save( CSave &save );
-	virtual int Restore( CRestore &restore );
-	virtual int ObjectCaps( void ) { return CBaseEntity :: ObjectCaps() & ~FCAP_ACROSS_TRANSITION; }
-	static TYPEDESCRIPTION m_SaveData[];
-};
-
 TYPEDESCRIPTION	CCofKeypad::m_SaveData[] =
 {
 	DEFINE_FIELD( CCofKeypad, m_IsCorrect, FIELD_BOOLEAN ),
@@ -6827,15 +6893,6 @@ void CCofPhoneTrigger::Use( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_T
 //=========================================================
 // cof_phonecheck
 //=========================================================
-class CCofPhoneCheck : public CBaseMonster
-{
-public:
-	virtual void Spawn( void );
-	virtual void Precache( void );
-	void UnlockCheck( int number );
-	void DistanceCheck( int number );
-};
-
 LINK_ENTITY_TO_CLASS( cof_phonecheck, CCofPhoneCheck );
 
 void CCofPhoneCheck::Spawn( void )
@@ -7616,24 +7673,6 @@ void CCofYesNo::Use( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE use
 //=========================================================
 // cof_stresstest
 //=========================================================
-class CCofStressTest : public CBaseEntity
-{
-public:
-	virtual void Spawn( void );
-	void EXPORT TurnOnBumpMaps( void );
-	void EXPORT TurnOnWater( void );
-	void EXPORT TurnOnDynLight( void );
-	void EXPORT TurnOnWeather( void );
-	void EXPORT StartNextEffect( void );
-	void EXPORT ReportEffect( void );
-	void EXPORT Disconnect( void );
-	void AllowToContinue( void );
-	virtual void Use( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE useType, float value );
-	int currenteffect;
-	int startfps;
-	int currentfps;
-};
-
 LINK_ENTITY_TO_CLASS( cof_stresstest, CCofStressTest );
 
 void CCofStressTest::Spawn( void )
@@ -8060,14 +8099,6 @@ void CCofComputer::Use( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE 
 //=========================================================
 // cof_playerbreathetoggle
 //=========================================================
-class CCofBreatheToggle : public CBaseEntity
-{
-public:
-	virtual void Spawn( void );
-	virtual void Precache( void );
-	virtual void Use( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE useType, float value );
-};
-
 LINK_ENTITY_TO_CLASS( cof_playerbreathetoggle, CCofBreatheToggle );
 
 void CCofBreatheToggle::Spawn( void )
@@ -13000,25 +13031,6 @@ LINK_ENTITY_TO_CLASS( cof_simpletext, CCoFSimpleText );
 //=========================================================
 // cof_survivalmode
 //=========================================================
-class CCoFSurvivalMode : public CPointEntity
-{
-public:
-	virtual void Spawn( void );
-	virtual void Precache( void );
-	virtual void Use( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE useType, float value );
-	void EXPORT SurvivalThink( void );
-	bool m_bSurvivalMode;
-	bool m_bSurvivalModeRunning;
-	string_t m_sSurvivalTriggerWhenWon;
-	string_t m_sSurvivalTriggerWhenAllDead;
-	int m_iSurvivalTimeInSeconds;
-	int m_iCurrentSurvivalTime;
-	float m_flNextSurvivalCount;
-	int m_iTimeSeconds;
-	int m_iTimeMinutes;
-	int m_iTimeHours;
-};
-
 void CCoFSurvivalMode::Spawn( void )
 {
 	Precache();
