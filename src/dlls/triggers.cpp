@@ -3402,6 +3402,8 @@ void CChangeLevel :: ExecuteChangeLevel( void )
 
 
 FILE_GLOBAL char st_szNextMap[cchMapNameMost];
+float initial_timer_time;
+float timer_time;
 FILE_GLOBAL char st_szNextSpot[cchMapNameMost];
 
 edict_t *CChangeLevel :: FindLandmark( const char *pLandmarkName )
