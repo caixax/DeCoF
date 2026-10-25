@@ -77,6 +77,8 @@ hw.dll RTTI (`/GR`): every vtable of retail hw.dll that tools/rtti.py finds has 
 | `tools/delink_retail.py` | retail-derived COFF objects for third-party code without source or official library (hw.dll A3D, Radial, Miles helper, DirectX manager; run by `build.py link`) |
 | `tools/libmember.py` | one member of a newer official library with its debug sections dropped, for a VC6 link |
 | `tools/progress.py` | `docs/progress.json`, `docs/progress.svg`, `docs/PROGRESS.md` from `docs/progress.csv` (never edit the outputs by hand) |
+| `tools/symeq.py` | symbolic equivalence check of one function, retail target object against ours, ignoring register and stack slot choice: calls with arguments, stores to non stack memory, branch conditions, switch dispatch, return value (`python tools/symeq.py <unit> <symbol> [--verbose] [--idioms] [--obj=L:off:size,R:off:size,...]`); the EQUIVALENT proofs of the client verification pass (docs/sessions.md 2026-10-25) |
+| `tools/symeq_ifc.py` | symeq.py with if-conversion (a branch diamond on one side and a cmov on the other compare equal) and `--byteflags` (byte flags set on some paths keep one slot size) |
 
 ## Linking and comparing a DLL (Phase 3)
 

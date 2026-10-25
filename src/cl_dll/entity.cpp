@@ -773,7 +773,7 @@ void MuzzleFlash_guess( cl_entity_t *pEntity, int iAttachment, bool bAlt, float 
 	muzzleflash_guess[0].model = pModel;
 	muzzleflash_guess[0].curstate.modelindex = iModelIndex;
 	muzzleflash_guess[0].curstate.scale = flFlashScale * flScale;
-	muzzleflash_guess[0].index = 0;
+	muzzleflash_guess[0].player = 0;
 	muzzleflash_guess[0].origin = (float *)pEntity->attachment[iAttachment];
 	muzzleflash_guess[0].angles = (float *)pEntity->angles;
 	muzzleflash_guess[0].angles[2] = gEngfuncs.pfnRandomFloat( 1, 359 );
@@ -875,7 +875,7 @@ void MuzzleFlash_guess( const char *pszModel, int iUnused_guess, Vector vecOrigi
 	muzzleflash_guess[0] = *pPlayer;
 	muzzleflash_guess[0].curstate.scale = flFlashScale;
 	muzzleflash_guess[0].curstate.modelindex = iModelIndex;
-	muzzleflash_guess[0].index = 0;
+	muzzleflash_guess[0].player = 0;
 	muzzleflash_guess[0].model = pModel;
 	muzzleflash_guess[0].origin = vecOrigin;
 	muzzleflash_guess[0].angles = vecAngles;
