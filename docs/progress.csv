@@ -884,7 +884,7 @@ client,1001F060,414,?ActionSignal@CBookMenu@@QAEXH@Z,CBookMenu::ActionSignal,COF
 client,1001F220,8,?Initialize@CBookMenu@@QAEXXZ,CBookMenu::Initialize,COF,cl_dll/BookMenu_guess.cpp,,,MATCHED,100,,
 client,1001F230,14,?actionPerformed@CBookMenuHandler_Command@@UAEXPAVPanel@vgui@@@Z,CBookMenuHandler_Command::actionPerformed,COF,cl_dll/BookMenu_guess.cpp,,,MATCHED,100,,
 client,1001F240,108,?setVisible@CBookMenu@@UAEX_N@Z,CBookMenu::setVisible,COF,cl_dll/BookMenu_guess.cpp,,,MATCHED,100,,
-client,1001F2B0,1802,??0CClothesMenu@@QAE@XZ,CClothesMenu::CClothesMenu,COF,guess:cl_dll/ClothesMenu_guess.cpp,,,EQUIVALENT,99.99,client_manual.csv,"EQUIVALENT: the loop counter i and y sit in swapped stack slots (retail i at [ebp-0x14], y at [ebp-0x18]); declaration order, chained init (i = y = 0) and moving y do not move them"
+client,1001F2B0,1802,??0CClothesMenu@@QAE@XZ,CClothesMenu::CClothesMenu,COF,guess:cl_dll/ClothesMenu_guess.cpp,,,MATCHED,100,client_manual.csv,
 client,1001F9C0,7,??1CClothesMenu@@QAE@XZ,CClothesMenu::~CClothesMenu,UNKNOWN,cl_dll/ClothesMenu_guess.cpp,,,MATCHED,100,client_manual.csv,found by tools/gaps.py (no Ghidra function before)
 client,1001F9D0,1023,?ActionSignal@CClothesMenu@@QAEXH@Z,CClothesMenu::ActionSignal,COF,guess:cl_dll/ClothesMenu_guess.cpp,,,MATCHED,100,client_manual.csv,
 client,1001FE60,18,?Initialize@CClothesMenu@@QAEXXZ,CClothesMenu::Initialize,COF,cl_dll/ClothesMenu_guess.cpp,,,MATCHED,100,,

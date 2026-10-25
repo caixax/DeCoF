@@ -21,14 +21,14 @@ void UseCustomHoodie_guess();
 CClothesMenu::CClothesMenu() : Panel( 0, 0, ScreenWidth, ScreenHeight )
 {
 	ColorButton *pButton;
-	int y = 0;
+	int y;
 	int i;
 	int tall = ScreenHeight / 12;
 	int wide = ScreenWidth / 2;
 
 	CSchemeManager *pSchemes = gViewPort->GetSchemeManager();
 
-	for ( i = 0; i <= 12; i++ )
+	for ( i = 0, y = 0; i <= 12; i++, y += tall )
 	{
 		m_pClothesButton_guess[i] = new ColorButton( "", ScreenWidth / 2, y, wide, tall, false, false );
 		m_pClothesButton_guess[i]->setParent( this );
@@ -40,7 +40,6 @@ CClothesMenu::CClothesMenu() : Panel( 0, 0, ScreenWidth, ScreenHeight )
 		m_pClothesButton_guess[i]->setArmedColor( 255, 0, 0, 32 );
 		m_pClothesButton_guess[i]->setBgColor( 0, 0, 0, 128 );
 		m_pClothesButton_guess[i]->setFgColor( 255, 255, 255, 128 );
-		y += tall;
 	}
 
 	pButton = new ColorButton( "Close", 0, ScreenHeight - tall, wide / 2, tall, false, false );
