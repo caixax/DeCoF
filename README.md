@@ -145,9 +145,7 @@ The pre-commit hook in `tools/hooks/` regenerates the progress report (`docs/PRO
 
 ## What's next
 
-1. Play the assembled build and fix anything that behaves differently from retail.
-2. An improved edition built on this source, with the original bugs fixed and optimizations, kept separate so this tree stays faithful to retail.
-3. Co-op on top of that edition.
+Play the assembled build and fix anything that behaves differently from retail. The follow-up project is [ReCoF](https://github.com/caixax/ReCoF).
 
 ## References and credits
 
