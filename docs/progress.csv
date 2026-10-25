@@ -7353,7 +7353,7 @@ client,1013165E,120,__filter_x86_sse2_floating_point_exception_default,_filter_x
 client,10139280,10,??__Fg_VoiceStatus@@YAXXZ,`dynamic atexit destructor for 'g_VoiceStatus'',UNKNOWN,game_shared/voice_status.cpp,,,MATCHED,100,tools/dyninit.py,
 client,10139290,10,??__Fg_VoiceTweakDlg@@YAXXZ,`dynamic atexit destructor for 'g_VoiceTweakDlg'',UNKNOWN,game_shared/voice_vgui_tweakdlg.cpp,,,MATCHED,100,crt_bytes_ambiguous,
 client,101392A0,10,??__FgHUD@@YAXXZ,`dynamic atexit destructor for 'gHUD'',UNKNOWN,cl_dll/cdll_int.cpp,,,MATCHED,100,crt_bytes_ambiguous,
-client,101392B0,76,??__FgMP3Info_guess@@YAXXZ,`dynamic atexit destructor for 'gMP3Info_guess'',UNKNOWN,cl_dll/cdll_int.cpp,,,EQUIVALENT,76.19,,"EQUIVALENT: code identical; our COMDAT also holds the exception handler stub after the ret (with int3 padding), which the delinker leaves out of the retail function"
+client,101392B0,81,??__FgMP3Info_guess@@YAXXZ,`dynamic atexit destructor for 'gMP3Info_guess'',UNKNOWN,cl_dll/cdll_int.cpp,,,MATCHED,100,,
 client,10139310,10,??__Fg_StudioRenderer@@YAXXZ,`dynamic atexit destructor for 'g_StudioRenderer'',UNKNOWN,cl_dll/GameStudioModelRenderer.cpp,,,MATCHED,100,crt_bytes_ambiguous,
 client,10139320,10,??__Fgl@@YAXXZ,`dynamic atexit destructor for 'gl'',UNKNOWN,cl_dll/glmanager.cpp,,,MATCHED,100,crt_bytes_ambiguous,
 client,10139330,11,,`dynamic atexit destructor for 'g_VoiceStatusHelper'',UNKNOWN,cl_dll/hud.cpp,,,TODO,0.00,,"the second static ??__Fg_VoiceStatusHelper@@YAXXZ of hud.obj (MSVC names the registration and the thunk alike); the symbol map can hold the name once, so objdiff can not pair this one"
