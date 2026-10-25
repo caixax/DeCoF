@@ -32046,7 +32046,7 @@ hw,01E647D0,81,?GetCharacterWidth@CFontManager@@QAEHKH@Z,,ENGINE,vgui2/vgui_surf
 hw,01E64830,136,?GetTextSize@CFontManager@@QAEXKPBGAAH1@Z,,ENGINE,vgui2/vgui_surfacelib/FontManager.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01E648C0,64,?IsFontForeignLanguageCapable@CFontManager@@QAE_NPBD@Z,,ENGINE,vgui2/vgui_surfacelib/FontManager.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01E64900,67,?GetFallbackFontName@CFontManager@@AAEPBDPBD@Z,,ENGINE,vgui2/vgui_surfacelib/FontManager.cpp,,,MATCHED,100,hw_manual.csv,
-hw,01E64950,82,?GetForeignFallbackFontName@CFontManager@@AAEPBDXZ,,ENGINE,vgui2/vgui_surfacelib/FontManager.cpp,,,EQUIVALENT,75.00,hw_manual.csv,"EQUIVALENT: compiled with vc6pp (VC6 SP6 + processor pack, c2 13.00.9044) like retail; retail saves ebx/esi/edi before the s_bSupportsUnicode test and pops them on the early return, vc6pp saves them after the test (shrink wrapping). Declaring or initializing i first or dropping != NULL does not help"
+hw,01E64950,82,?GetForeignFallbackFontName@CFontManager@@AAEPBDXZ,,ENGINE,vgui2/vgui_surfacelib/FontManager.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01E649B0,23,?GetFontUnderlined@CFontManager@@QAE_NK@Z,,ENGINE,vgui2/vgui_surfacelib/FontManager.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01E649D0,147,??1?$CUtlVector@VCFontAmalgam@@@@QAE@XZ,,ENGINE,vgui2/vgui_surfacelib/FontManager.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01E64A70,82,??1?$CUtlVector@PAVCWin32Font@@@@QAE@XZ,,ENGINE,vgui2/vgui_surfacelib/FontManager.cpp,,,MATCHED,100,hw_manual.csv,

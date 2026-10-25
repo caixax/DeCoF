@@ -382,7 +382,7 @@ const char *CFontManager::GetForeignFallbackFontName()
 	for (i = 0; g_Win98ForeignFallbackFonts[i].language != NULL; i++)
 	{
 		if (!_stricmp(g_Win98ForeignFallbackFonts[i].language, m_szLanguage))
-			break;
+			return g_Win98ForeignFallbackFonts[i].fallbackFont;
 	}
 
 	return g_Win98ForeignFallbackFonts[i].fallbackFont;
