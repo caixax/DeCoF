@@ -1875,7 +1875,7 @@ client,10070B20,38,?MsgFunc_Maglite@CHud@@QAAHPBDHPAX@Z,CHud::MsgFunc_Maglite,UN
 client,10070B50,16,?MsgFunc_Materials@CHud@@QAAHPBDHPAX@Z,CHud::MsgFunc_Materials,UNKNOWN,cl_dll/hud_msg.cpp,,,MATCHED,100,client_manual.csv,
 client,10070B60,73,?MsgFunc_Muzzleflash@CHud@@QAAHPBDHPAX@Z,CHud::MsgFunc_Muzzleflash,UNKNOWN,cl_dll/hud_msg.cpp,,,MATCHED,100,client_manual.csv,
 client,10070BB0,159,?MsgFunc_NewFade@CHud@@QAAHPBDHPAX@Z,CHud::MsgFunc_NewFade,UNKNOWN,cl_dll/hud_msg.cpp,,,MATCHED,100,client_manual.csv,
-client,10070C50,598,?MsgFunc_Objectives@CHud@@QAAHPBDHPAX@Z,CHud::MsgFunc_Objectives,UNKNOWN,cl_dll/hud_msg.cpp,,,EQUIVALENT,99.63,client_manual.csv,"EQUIVALENT: in the szHintLine1 copy loop retail keeps the HUD control pointer in edi and iLen in esi, ours swaps them (8 attempts)"
+client,10070C50,598,?MsgFunc_Objectives@CHud@@QAAHPBDHPAX@Z,CHud::MsgFunc_Objectives,UNKNOWN,cl_dll/hud_msg.cpp,,,MATCHED,100,client_manual.csv,
 client,10070EB0,45,?MsgFunc_PhoneOff@CHud@@QAAHPBDHPAX@Z,CHud::MsgFunc_PhoneOff,UNKNOWN,cl_dll/hud_msg.cpp,,,MATCHED,100,client_manual.csv,
 client,10070EE0,310,?MsgFunc_PlayMP3@CHud@@QAAHPBDHPAX@Z,CHud::MsgFunc_PlayMP3,UNKNOWN,cl_dll/hud_msg.cpp,,,MATCHED,100,client_manual.csv,
 client,10071020,627,?MsgFunc_PlaySFX@CHud@@QAAHPBDHPAX@Z,CHud::MsgFunc_PlaySFX,UNKNOWN,cl_dll/hud_msg.cpp,,,MATCHED,100,client_manual.csv,

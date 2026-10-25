@@ -11,9 +11,9 @@
 <text x="24" y="92" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#1f2328">client.dll</text>
 <text x="736" y="92" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#1f2328" text-anchor="end">93.3% done (2251 of 2271 functions)</text>
 <rect x="24" y="100" width="712" height="18" rx="4" fill="#afb8c1"/>
-<rect x="24.00" y="100" width="622.28" height="18" fill="#2da44e"/>
-<rect x="646.28" y="100" width="41.74" height="18" fill="#d4a72c"/>
-<text x="24" y="134" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#57606a" xml:space="preserve">MATCHED 87.4% (2229)   EQUIVALENT 5.9% (22)   TODO 6.7% (20)   650142 code bytes</text>
+<rect x="24.00" y="100" width="622.93" height="18" fill="#2da44e"/>
+<rect x="646.93" y="100" width="41.09" height="18" fill="#d4a72c"/>
+<text x="24" y="134" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#57606a" xml:space="preserve">MATCHED 87.5% (2230)   EQUIVALENT 5.8% (21)   TODO 6.7% (20)   650142 code bytes</text>
 <text x="24" y="166" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#1f2328">hl.dll</text>
 <text x="736" y="166" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#1f2328" text-anchor="end">100.0% done (5334 of 5334 functions)</text>
 <rect x="24" y="174" width="712" height="18" rx="4" fill="#afb8c1"/>
@@ -50,14 +50,14 @@
 <text x="24" y="610" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#1f2328">Started binaries (client.dll, hl.dll, opengl32.dll, CoFLaunchApp.exe)</text>
 <text x="736" y="610" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#1f2328" text-anchor="end">97.5% done (8003 of 8023 functions)</text>
 <rect x="24" y="618" width="712" height="18" rx="4" fill="#afb8c1"/>
-<rect x="24.00" y="618" width="661.85" height="18" fill="#2da44e"/>
-<rect x="685.85" y="618" width="32.69" height="18" fill="#d4a72c"/>
-<text x="24" y="652" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#57606a" xml:space="preserve">MATCHED 93.0% (7976)   EQUIVALENT 4.6% (27)   TODO 2.5% (20)   1786216 code bytes</text>
+<rect x="24.00" y="618" width="662.08" height="18" fill="#2da44e"/>
+<rect x="686.08" y="618" width="32.45" height="18" fill="#d4a72c"/>
+<text x="24" y="652" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#57606a" xml:space="preserve">MATCHED 93.0% (7977)   EQUIVALENT 4.6% (26)   TODO 2.5% (20)   1786216 code bytes</text>
 <text x="24" y="684" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#1f2328">All binaries (CoFLaunchApp.exe not counted yet)</text>
 <text x="736" y="684" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#1f2328" text-anchor="end">98.3% done (21376 of 21511 functions)</text>
 <rect x="24" y="692" width="712" height="18" rx="4" fill="#afb8c1"/>
-<rect x="24.00" y="692" width="683.85" height="18" fill="#2da44e"/>
-<rect x="707.85" y="692" width="15.93" height="18" fill="#d4a72c"/>
-<text x="24" y="726" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#57606a" xml:space="preserve">MATCHED 96.0% (21342)   EQUIVALENT 2.2% (34)   TODO 1.7% (135)   3805164 code bytes</text>
-<text x="24" y="756" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="11" fill="#57606a">Target build 1.6a | commit 4863bc0 | 2026-10-25 | numbers from docs/progress.csv</text>
+<rect x="24.00" y="692" width="683.96" height="18" fill="#2da44e"/>
+<rect x="707.96" y="692" width="15.82" height="18" fill="#d4a72c"/>
+<text x="24" y="726" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#57606a" xml:space="preserve">MATCHED 96.1% (21343)   EQUIVALENT 2.2% (33)   TODO 1.7% (135)   3805164 code bytes</text>
+<text x="24" y="756" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="11" fill="#57606a">Target build 1.6a | commit 4f2019e | 2026-10-25 | numbers from docs/progress.csv</text>
 </svg>
