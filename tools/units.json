@@ -2056,6 +2056,30 @@
           "functions_file": "tools/units/hw_engine_zone.txt"
         },
         {
+          "name": "engine/math",
+          "source": "src/engine_hw/math.asm",
+          "toolchain": "vc6pp",
+          "functions": ["_Invert24To16", "_TransformVector", "_BoxOnPlaneSide"]
+        },
+        {
+          "name": "engine/snd_mixa",
+          "source": "src/engine_hw/snd_mixa.asm",
+          "toolchain": "vc6pp",
+          "functions": ["_SND_PaintChannelFrom8Asm_guess", "_Snd_WriteLinearBlastStereo16", "_SND_PaintChannelFrom8A3D_guess"]
+        },
+        {
+          "name": "engine/sys_wina",
+          "source": "src/engine_hw/sys_wina.asm",
+          "toolchain": "vc6pp",
+          "functions": ["_MaskExceptions", "_Sys_LowFPPrecision", "_Sys_HighFPPrecision", "_Sys_PushFPCW_SetHigh", "_Sys_PopFPCW", "_Sys_SetFPCW", "_Sys_InitFPU_guess"]
+        },
+        {
+          "name": "engine/worlda",
+          "source": "src/engine_hw/worlda.asm",
+          "toolchain": "vc6pp",
+          "functions": ["_SV_HullPointContents"]
+        },
+        {
           "name": "engine/info",
           "source": "src/engine_hw/info.c",
           "functions_file": "tools/units/hw_engine_info.txt"

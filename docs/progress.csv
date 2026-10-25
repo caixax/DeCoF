@@ -29651,16 +29651,20 @@ hw,01E12D4D,202,_Cache_Alloc,Cache_Alloc,ENGINE,engine/zone.c,,,MATCHED,100,linu
 hw,01E12E17,179,_Memory_Init,Memory_Init,ENGINE,engine/zone.c,,,MATCHED,100,linux_symbols:string:0.511,
 hw,01E12ECA,545,_Cache_Print_Models_And_Totals,Cache_Print_Models_And_Totals,ENGINE,engine/zone.c,,,MATCHED,100,linux_symbols:string:0.879,
 hw,01E130EB,547,_Cache_Print_Sounds_And_Totals,Cache_Print_Sounds_And_Totals,ENGINE,engine/zone.c,,,MATCHED,100,linux_symbols:string:0.879,
-hw,01E1339C,46,_BoxOnPlaneSide,,ENGINE,engine/math.s,,,TODO,,,
-hw,01E13578,232,_SND_PaintChannelFrom8Asm_guess,,ENGINE,engine/snd_mixa.s,,,TODO,,,
-hw,01E13660,124,_Snd_WriteLinearBlastStereo16,Snd_WriteLinearBlastStereo16,ENGINE,engine/snd_mixa.s,,,TODO,,,
-hw,01E136DC,232,_SND_PaintChannelFrom8A3D_guess,,ENGINE,engine/snd_mixa.s,,,TODO,,,
-hw,01E137C4,20,_MaskExceptions,MaskExceptions,ENGINE,engine/sys_wina.s,,,TODO,,,
-hw,01E137E6,13,_Sys_PushFPCW_SetHigh,,ENGINE,engine/sys_wina.s,,,TODO,,,
-hw,01E137F3,7,_Sys_PopFPCW,,ENGINE,engine/sys_wina.s,,,TODO,,,
-hw,01E137FA,50,_Sys_SetFPCW,Sys_SetFPCW,ENGINE,engine/sys_wina.s,,,TODO,,,
-hw,01E1382C,1,_Sys_InitFPU_guess,,ENGINE,engine/sys_wina.s,,,TODO,,hw_manual.csv,
-hw,01E13830,136,_SV_HullPointContents,,ENGINE,engine/worlda.s,,,TODO,,,
+hw,01E13310,25,_Invert24To16,Invert24To16,ENGINE,engine/math.s,,,MATCHED,100,hw_manual.csv,Quake math.s unchanged
+hw,01E1332A,113,_TransformVector,TransformVector,ENGINE,engine/math.s,,,MATCHED,100,hw_manual.csv,Quake math.s unchanged
+hw,01E1339C,475,_BoxOnPlaneSide,BoxOnPlaneSide,ENGINE,engine/math.s,,,MATCHED,100,hw_manual.csv,Quake math.s through gas2masm and ml (src/engine_hw/math.asm); body covers the jump table cases
+hw,01E13578,232,_SND_PaintChannelFrom8Asm_guess,SND_PaintChannelFrom8Asm_guess,ENGINE,engine/snd_mixa.s,,,MATCHED,100,hw_auto.csv,"Quake snd_mixa.s SND_PaintChannelFrom8 byte for byte; renamed in GoldSrc because the C SND_PaintChannelFrom8 of snd_mix.c (01DCD579, Linux hw.so name, 197 bytes C) is linked too and both are public"
+hw,01E13660,124,_Snd_WriteLinearBlastStereo16,Snd_WriteLinearBlastStereo16,ENGINE,engine/snd_mixa.s,,,MATCHED,100,hw_manual.csv,Quake snd_mixa.s unchanged
+hw,01E136DC,232,_SND_PaintChannelFrom8A3D_guess,SND_PaintChannelFrom8A3D_guess,ENGINE,engine/snd_mixa.s,,,MATCHED,100,hw_auto.csv,GoldSrc copy of the asm 8 bit mixer that adds into a3dpaintbuffer_guess (S_MixChannelsToPaintbuffer calls it when pout is not paintbuffer)
+hw,01E137C4,20,_MaskExceptions,MaskExceptions,ENGINE,engine/sys_wina.s,,,MATCHED,100,hw_manual.csv,Quake sys_wina.s unchanged
+hw,01E137D8,7,_Sys_LowFPPrecision,Sys_LowFPPrecision,ENGINE,engine/sys_wina.s,,,MATCHED,100,hw_manual.csv,Quake sys_wina.s unchanged
+hw,01E137DF,7,_Sys_HighFPPrecision,Sys_HighFPPrecision,ENGINE,engine/sys_wina.s,,,MATCHED,100,hw_manual.csv,GoldSrc loads high_cw_guess instead of full_cw
+hw,01E137E6,13,_Sys_PushFPCW_SetHigh,Sys_PushFPCW_SetHigh,ENGINE,engine/sys_wina.s,,,MATCHED,100,hw_auto.csv,Quake sys_wina.s unchanged
+hw,01E137F3,7,_Sys_PopFPCW,Sys_PopFPCW,ENGINE,engine/sys_wina.s,,,MATCHED,100,hw_auto.csv,Quake sys_wina.s unchanged
+hw,01E137FA,50,_Sys_SetFPCW,Sys_SetFPCW,ENGINE,engine/sys_wina.s,,,MATCHED,100,hw_manual.csv,GoldSrc also stores the full precision word into high_cw_guess
+hw,01E1382C,1,_Sys_InitFPU_guess,Sys_InitFPU_guess,ENGINE,engine/sys_wina.s,,,MATCHED,100,hw_manual.csv,GoldSrc: empty routine after Sys_SetFPCW
+hw,01E13830,136,_SV_HullPointContents,SV_HullPointContents,ENGINE,engine/worlda.s,,,MATCHED,100,hw_auto.csv,Quake worlda.s unchanged
 hw,01E14E40,10,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"VC6 static CRT, bytes identical to LIBCMT.LIB(errmode.obj); was LIB (short CRT byte match), code belongs to this object; Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
 hw,01E14E50,29,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"
 hw,01E14E70,69,,,LIB,a3d/A3DRenderer_guess.cpp,,,TODO,,,"Aureal A3D library (separately built, optimized, no engine calls; strings match Aureal a3dapi1.dll): LIB per docs/hw_scope_question.md"

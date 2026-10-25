@@ -1,5 +1,5 @@
 {
-  "commit": "c0a0b7d",
+  "commit": "54601a3",
   "counting": "LIB rows excluded; bytes weighted by function size",
   "date": "2026-10-25",
   "dlls": {
@@ -282,23 +282,23 @@
     "hw.dll": {
       "bytes": {
         "EQUIVALENT": 2989,
-        "MATCHED": 1278726,
-        "TODO": 57710,
-        "total": 1339425
+        "MATCHED": 1280168,
+        "TODO": 56849,
+        "total": 1340006
       },
       "categories": {
         "ENGINE": {
           "bytes": {
             "EQUIVALENT": 2989,
-            "MATCHED": 954589,
-            "TODO": 1887,
-            "total": 959465
+            "MATCHED": 956031,
+            "TODO": 1026,
+            "total": 960046
           },
           "functions": {
             "EQUIVALENT": 6,
-            "MATCHED": 4800,
-            "TODO": 19,
-            "total": 4825
+            "MATCHED": 4814,
+            "TODO": 9,
+            "total": 4829
           }
         },
         "UNKNOWN": {
@@ -318,9 +318,9 @@
       },
       "functions": {
         "EQUIVALENT": 6,
-        "MATCHED": 7475,
-        "TODO": 497,
-        "total": 7978
+        "MATCHED": 7489,
+        "TODO": 487,
+        "total": 7982
       }
     },
     "opengl32.dll": {
@@ -372,15 +372,15 @@
   "total": {
     "bytes": {
       "EQUIVALENT": 85128,
-      "MATCHED": 3599828,
-      "TODO": 101520,
-      "total": 3786476
+      "MATCHED": 3601270,
+      "TODO": 100659,
+      "total": 3787057
     },
     "functions": {
       "EQUIVALENT": 34,
-      "MATCHED": 20704,
-      "TODO": 517,
-      "total": 21255
+      "MATCHED": 20718,
+      "TODO": 507,
+      "total": 21259
     }
   }
 }

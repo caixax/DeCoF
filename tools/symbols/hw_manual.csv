@@ -5544,3 +5544,17 @@ va,name,kind,evidence
 01D1C190,?AllocSamples@@YAPAUSample@@HH@Z,func,"inline AllocSamples of quantize.h (Source SDK), COMDAT of mathlib/imagequant.cpp, called by ColorQuantize"
 01EA9284,_Weights,data,"mathlib/imagequant.cpp: static Weights[] = 5,7,4,8 (Source SDK imagequant.cpp)"
 01EA9288,_ExtraValueXForms,data,"mathlib/imagequant.cpp: static ExtraValueXForms[] = 76,151,28 (Source SDK imagequant.cpp)"
+01E13310,_Invert24To16,func,Quake WinQuake math.s first routine (refs/Quake): the bytes of math.s assembled with ml match 01E13310-01E13577
+01E1332A,_TransformVector,func,Quake WinQuake math.s second routine (vright/vup/vpn dot products)
+01E137D8,_Sys_LowFPPrecision,func,Quake WinQuake sys_wina.s (fldcw single_cw)
+01E137DF,_Sys_HighFPPrecision,func,Quake WinQuake sys_wina.s (fldcw of the full precision word)
+01ED2934,Ljmptab,data,Quake math.s BoxOnPlaneSide jump table (local label of math.obj)
+01ED2954,fpenv,data,Quake sys_wina.s MaskExceptions FPU environment (local label of sys_wina.obj)
+01ED2974,ceil_cw,data,Quake sys_wina.s public control word
+01ED2978,single_cw,data,Quake sys_wina.s public control word
+01ED297C,full_cw,data,"Quake sys_wina.s public control word, loaded by Sys_PushFPCW_SetHigh"
+01ED2980,high_cw_guess,data,"GoldSrc sys_wina.s: second copy of the full precision word, written by Sys_SetFPCW, loaded by Sys_HighFPPrecision"
+01ED2984,cw,data,Quake sys_wina.s public control word (Sys_SetFPCW fnstcw)
+01ED2988,pushed_cw,data,Quake sys_wina.s public control word (Sys_PushFPCW_SetHigh / Sys_PopFPCW)
+01ED298C,spare_cw_guess,data,"GoldSrc sys_wina.s: unreferenced dword after pushed_cw, before worlda.s Ltemp"
+01ED2990,Ltemp,data,Quake worlda.s SV_HullPointContents temporary (local label of worlda.obj)
