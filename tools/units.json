@@ -4093,7 +4093,7 @@
           "/nodefaultlib:libcp.lib"
         ],
         "libs": [
-          "dinput.lib",
+          "@dinput.lib",
           "ddraw.lib",
           "winmm.lib",
           "wsock32.lib",
@@ -4102,27 +4102,24 @@
           "gdi32.lib",
           "advapi32.lib",
           "ole32.lib",
+          "ws2_32.lib",
           "@a3d_retail.lib",
           "version.lib",
           "@vgui.lib",
           "@mss32.lib",
-          "@mss32_retail.lib",
           "wininet.lib",
           "@radial_retail.lib",
-          "I:/Tools/vc6/VC98/LIB/WSOCK32.LIB",
           "@vgui_controls.lib",
           "@vgui_surfacelib.lib",
           "@bzip2.lib",
           "@steam_api_c.lib",
           "libcmt.lib",
           "libcpmt.lib",
-          "@dxmgr_retail.lib",
-          "oleaut32.lib",
-          "ws2_32.lib",
           "comsupp.lib",
+          "oleaut32.lib",
+          "@dxmgr_retail.lib",
           "uuid.lib",
-          "dxguid.lib",
-          "@dinput8_dilib5.obj"
+          "dxguid.lib"
         ],
         "implibs": {
           "versions/1.6a/vgui.dll": "vgui.lib",
@@ -4130,9 +4127,10 @@
           "versions/1.6a/steam_api_c.dll": "steam_api_c.lib"
         },
         "lib_members": {
-          "dinput8_dilib5.obj": [
+          "dinput.lib": [
             "I:/Tools/winsdk-10.0.19041.1/Windows Kits/10/Lib/10.0.19041.0/um/x86/dinput8.lib",
-            "dilib5.obj"
+            "dilib5.obj",
+            "I:/Tools/vc6/VC98/LIB/DINPUT.LIB"
           ]
         },
         "staticlibs": {
@@ -4151,10 +4149,6 @@
             "ranges": [
               [
                 "01E14E40",
-                "01E19980"
-              ],
-              [
-                "01E19990",
                 "01E19A14"
               ],
               [
@@ -4181,7 +4175,7 @@
           },
           {
             "name": "mss32",
-            "lib": "mss32_retail.lib",
+            "lib": "mss32.lib",
             "note": "MSS_auto_cleanup of the Miles mss32.lib (static member: atexit(AIL_shutdown))",
             "ranges": [
               [

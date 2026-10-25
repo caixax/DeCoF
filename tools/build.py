@@ -446,12 +446,26 @@ def link(dll):
         made[lib] = path
     # "lib_members": {"<out>.obj": ["<official lib>", "<member>"]}: one
     # member of a newer official library with its debug sections dropped
-    # (tools/libmember.py; link 6.00 cannot read them), placed by "@<out>.obj"
-    for name, (lib, member) in lk.get("lib_members", {}).items():
+    # (tools/libmember.py; link 6.00 cannot read them), placed by "@<out>.obj".
+    # {"<out>.lib": ["<official lib>", "<member>", "<other official lib>"]}
+    # adds the member to a copy of the other library instead, so the linker
+    # pulls it among that library's members ("@<out>.lib")
+    for name, spec in lk.get("lib_members", {}).items():
+        lib, member = spec[0], spec[1]
         path = os.path.join(tmp, name)
-        if subprocess.call([sys.executable, os.path.join(ROOT, "tools", "libmember.py"), lib, member, path],
+        obj = path if len(spec) < 3 else os.path.join(tmp, "%s_%s" % (os.path.splitext(name)[0], member))
+        if subprocess.call([sys.executable, os.path.join(ROOT, "tools", "libmember.py"), lib, member, obj],
                            stdout=subprocess.DEVNULL) != 0:
             sys.exit("library member %s(%s) failed" % (lib, member))
+        if len(spec) > 2:
+            if os.path.exists(path):
+                os.remove(path)
+            res = subprocess.run([os.path.join(os.path.dirname(tc.link_path()), "lib.exe"), "/nologo",
+                                  "/out:" + path, spec[2], obj], env=tc.env(), cwd=ROOT,
+                                 stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+            if res.returncode != 0:
+                print(res.stdout.decode("latin-1")[-2000:])
+                sys.exit("library %s failed" % name)
         made[name] = path
     # "staticlibs": {"<name>.lib": "<unit>"} puts that unit and every unit
     # after it in the link order into a static library (lib.exe of the
@@ -491,6 +505,13 @@ def link(dll):
         for p in lk["retail_objects"]:
             groups.setdefault(p["lib"], []).append(os.path.join(tmp, "retail_%s.obj" % p["name"]))
         for lib, members in groups.items():
+            if lib in made:
+                # an import library made above: the piece joins it as a
+                # member (the Miles mss32.lib holds MSS_auto_cleanup next to
+                # its import members, so its thunks come before and after it)
+                imp = made[lib] + ".imp"
+                os.replace(made[lib], imp)
+                members = [imp] + members
             make_lib(lib, members)
     libs = []
     for lib in lk["libs"]:
