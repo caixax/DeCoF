@@ -7,6 +7,7 @@
 //=============================================================================
 
 #include <windows.h>
+#undef PostMessage	// vgui2::Panel::PostMessage
 #include <string.h>
 #include <stdio.h>
 

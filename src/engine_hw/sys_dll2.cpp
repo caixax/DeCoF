@@ -84,7 +84,7 @@ void	VideoMode_GetCurrentRenderer( char *name, int namelen, int *windowed );
 // this file
 void		SetRateRegistrySetting( const char *pchRate );
 const char	*GetRateRegistrySetting( const char *pchDef );
-void		F( IEngineAPI **api );
+__declspec( dllexport ) void F( IEngineAPI **api );
 void		Sys_VID_FlipScreen( void );
 int			Sys_GetSurfaceCacheSize( int width, int height );
 void		Legacy_ErrorMessage( int nLevel, const char *pszErrorMessage );
@@ -118,7 +118,6 @@ extern HGLRC	baseRC;
 extern HDC		maindc;
 extern qboolean	g_bIsWin95;
 extern qboolean	g_bIsWin98;
-extern HINSTANCE	g_hinstOpenGlEarly;
 extern char	*szCommonPreloads;
 extern char	*szReslistsBaseDir;
 extern char	*szReslistsExt;
@@ -170,7 +169,7 @@ const char *GetRateRegistrySetting( const char *pchDef )
 	return registry->ReadString( "rate", pchDef );
 }
 
-void F( IEngineAPI **api )
+__declspec( dllexport ) void F( IEngineAPI **api )
 {
 	*api = (IEngineAPI *)Sys_GetFactoryThis()( VENGINE_LAUNCHER_API_VERSION, NULL );
 }

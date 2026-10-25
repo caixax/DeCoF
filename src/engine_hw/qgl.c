@@ -22,20 +22,20 @@ typedef struct
 
 glwstate_t glw_state;
 
-int   ( WINAPI * qwglChoosePixelFormat )(HDC, CONST PIXELFORMATDESCRIPTOR *);
+__declspec( dllexport ) int   ( WINAPI * qwglChoosePixelFormat )(HDC, CONST PIXELFORMATDESCRIPTOR *);
 int   ( WINAPI * qwglDescribePixelFormat )(HDC, int, UINT, LPPIXELFORMATDESCRIPTOR);
 int   ( WINAPI * qwglGetPixelFormat )(HDC);
-BOOL  ( WINAPI * qwglSetPixelFormat )(HDC, int, CONST PIXELFORMATDESCRIPTOR *);
+__declspec( dllexport ) BOOL  ( WINAPI * qwglSetPixelFormat )(HDC, int, CONST PIXELFORMATDESCRIPTOR *);
 BOOL  ( WINAPI * qwglSwapBuffers )(HDC);
 
 BOOL  ( WINAPI * qwglCopyContext )(HGLRC, HGLRC, UINT);
-HGLRC ( WINAPI * qwglCreateContext )(HDC);
+__declspec( dllexport ) HGLRC ( WINAPI * qwglCreateContext )(HDC);
 HGLRC ( WINAPI * qwglCreateLayerContext )(HDC, int);
-BOOL  ( WINAPI * qwglDeleteContext )(HGLRC);
-HGLRC ( WINAPI * qwglGetCurrentContext )(VOID);
-HDC   ( WINAPI * qwglGetCurrentDC )(VOID);
+__declspec( dllexport ) BOOL  ( WINAPI * qwglDeleteContext )(HGLRC);
+__declspec( dllexport ) HGLRC ( WINAPI * qwglGetCurrentContext )(VOID);
+__declspec( dllexport ) HDC   ( WINAPI * qwglGetCurrentDC )(VOID);
 PROC  ( WINAPI * qwglGetProcAddress )(LPCSTR);
-BOOL  ( WINAPI * qwglMakeCurrent )(HDC, HGLRC);
+__declspec( dllexport ) BOOL  ( WINAPI * qwglMakeCurrent )(HDC, HGLRC);
 BOOL  ( WINAPI * qwglShareLists )(HGLRC, HGLRC);
 BOOL  ( WINAPI * qwglUseFontBitmaps )(HDC, DWORD, DWORD, DWORD);
 BOOL  ( WINAPI * qwglUseFontOutlines )(HDC, DWORD, DWORD, DWORD, FLOAT, FLOAT, int, LPGLYPHMETRICSFLOAT);

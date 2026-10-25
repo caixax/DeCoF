@@ -5,6 +5,8 @@
 // $NoKeywords: $
 //=============================================================================
 
+#include <windows.h>
+#undef GetCharABCWidths	// CWin32Font::GetCharABCWidths
 #include <malloc.h>
 #include <string.h>
 

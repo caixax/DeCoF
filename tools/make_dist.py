@@ -37,6 +37,9 @@ DLLS = {
     "hl.dll": os.path.join("cryoffear", "cl_dlls", "hl.dll"),
     "GameUI.dll": os.path.join("cryoffear", "cl_dlls", "GameUI.dll"),
     "opengl32.dll": "opengl32.dll",
+    # the engine; retail ships sw.dll as a byte-identical copy of hw.dll
+    "hw.dll": "hw.dll",
+    "sw.dll": "sw.dll",
     "CoFLaunchApp.exe": "CoFLaunchApp.exe",
     "launcher.exe": "cof.exe",
 }

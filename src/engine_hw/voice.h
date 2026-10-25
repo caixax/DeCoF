@@ -11,7 +11,7 @@
 
 #include "ivoicetweak.h"
 
-extern IVoiceTweak g_VoiceTweakAPI;
+extern "C" IVoiceTweak g_VoiceTweakAPI;	// cl_enginefuncs.pVoiceTweak (cdll_int.c)
 
 class CCircularBuffer;
 

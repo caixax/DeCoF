@@ -177,6 +177,7 @@ qboolean	g_bUsingInGameAdvertisements = false;
 quakeparms_t	host_parms;
 
 qboolean	host_initialized = false;	// true if into command execution
+qboolean	gfNoMasterServer = false;
 
 double		host_frametime;
 double		realtime;				// without any filtering or bounding

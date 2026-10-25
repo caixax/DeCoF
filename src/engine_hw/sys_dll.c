@@ -216,6 +216,11 @@ static double	curtime = 0.0;
 static double	lastcurtime = 0.0;
 
 void		(*Launcher_ConsolePrintf)( char *, ... );
+void		(*VID_FlipScreen_guess)( void );
+
+// set and read by sys_dll2.cpp
+qboolean	g_bPrintingKeepAliveDots;
+qboolean	gHasMMXTechnology;
 
 qboolean	g_bIsDedicatedServer;
 

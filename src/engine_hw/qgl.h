@@ -689,20 +689,20 @@ extern void ( APIENTRY * dllVertexPointer )(GLint size, GLenum type, GLsizei str
 extern void ( APIENTRY * dllViewport )(GLint x, GLint y, GLsizei width, GLsizei height);
 
 #ifdef _WIN32
-extern int   ( WINAPI * qwglChoosePixelFormat )(HDC, CONST PIXELFORMATDESCRIPTOR *);
+extern __declspec( dllexport ) int   ( WINAPI * qwglChoosePixelFormat )(HDC, CONST PIXELFORMATDESCRIPTOR *);
 extern int   ( WINAPI * qwglDescribePixelFormat )(HDC, int, UINT, LPPIXELFORMATDESCRIPTOR);
 extern int   ( WINAPI * qwglGetPixelFormat )(HDC);
-extern BOOL  ( WINAPI * qwglSetPixelFormat )(HDC, int, CONST PIXELFORMATDESCRIPTOR *);
+extern __declspec( dllexport ) BOOL  ( WINAPI * qwglSetPixelFormat )(HDC, int, CONST PIXELFORMATDESCRIPTOR *);
 extern BOOL  ( WINAPI * qwglSwapBuffers )(HDC);
 
 extern BOOL  ( WINAPI * qwglCopyContext )(HGLRC, HGLRC, UINT);
-extern HGLRC ( WINAPI * qwglCreateContext )(HDC);
+extern __declspec( dllexport ) HGLRC ( WINAPI * qwglCreateContext )(HDC);
 extern HGLRC ( WINAPI * qwglCreateLayerContext )(HDC, int);
-extern BOOL  ( WINAPI * qwglDeleteContext )(HGLRC);
-extern HGLRC ( WINAPI * qwglGetCurrentContext )(VOID);
-extern HDC   ( WINAPI * qwglGetCurrentDC )(VOID);
+extern __declspec( dllexport ) BOOL  ( WINAPI * qwglDeleteContext )(HGLRC);
+extern __declspec( dllexport ) HGLRC ( WINAPI * qwglGetCurrentContext )(VOID);
+extern __declspec( dllexport ) HDC   ( WINAPI * qwglGetCurrentDC )(VOID);
 extern PROC  ( WINAPI * qwglGetProcAddress )(LPCSTR);
-extern BOOL  ( WINAPI * qwglMakeCurrent )(HDC, HGLRC);
+extern __declspec( dllexport ) BOOL  ( WINAPI * qwglMakeCurrent )(HDC, HGLRC);
 extern BOOL  ( WINAPI * qwglShareLists )(HGLRC, HGLRC);
 extern BOOL  ( WINAPI * qwglUseFontBitmaps )(HDC, DWORD, DWORD, DWORD);
 extern BOOL  ( WINAPI * qwglUseFontOutlines )(HDC, DWORD, DWORD, DWORD, FLOAT, FLOAT, int, LPGLYPHMETRICSFLOAT);

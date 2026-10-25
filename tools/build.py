@@ -413,7 +413,9 @@ def link(dll):
         sys.exit("%s has no link section in tools/units.json" % dll)
     lk = cfg["link"]
     units = load_units([])
-    units = [x for x in units if x[0] == dll]
+    # "skip_units": units whose retail bytes are linked instead
+    # ("retail_objects", third-party code classed LIB)
+    units = [x for x in units if x[0] == dll and x[3].split("/", 1)[1] not in lk.get("skip_units", ())]
     # "order": the units in the order of the retail image (the link order)
     if "order" in lk:
         pos = {n: i for i, n in enumerate(lk["order"])}
@@ -421,7 +423,9 @@ def link(dll):
         if missing:
             sys.exit("units missing from the link order: %s" % " ".join(missing))
         units.sort(key=lambda x: pos[x[3].split("/", 1)[1]])
-    kind = "link_obj" if lk.get("cflags_extra") else "base"
+    # "objdir": compile into build/<objdir>/ (hw.dll: build/link_obj, so a
+    # link never rewrites the build/base objects other work is diffing)
+    kind = lk.get("objdir") or ("link_obj" if lk.get("cflags_extra") else "base")
     if not build_base(units, kind, lk.get("cflags_extra", ())):
         sys.exit("not linking: some units do not compile")
     # the DLL's toolchain links (and makes "staticlibs"), whatever compiled
@@ -440,6 +444,15 @@ def link(dll):
                            stdout=subprocess.DEVNULL) != 0:
             sys.exit("import library for %s failed" % src)
         made[lib] = path
+    # "lib_members": {"<out>.obj": ["<official lib>", "<member>"]}: one
+    # member of a newer official library with its debug sections dropped
+    # (tools/libmember.py; link 6.00 cannot read them), placed by "@<out>.obj"
+    for name, (lib, member) in lk.get("lib_members", {}).items():
+        path = os.path.join(tmp, name)
+        if subprocess.call([sys.executable, os.path.join(ROOT, "tools", "libmember.py"), lib, member, path],
+                           stdout=subprocess.DEVNULL) != 0:
+            sys.exit("library member %s(%s) failed" % (lib, member))
+        made[name] = path
     # "staticlibs": {"<name>.lib": "<unit>"} puts that unit and every unit
     # after it in the link order into a static library (lib.exe of the
     # toolchain) instead of the command line, like a retail project that
@@ -447,20 +460,38 @@ def link(dll):
     # linker then pulls its members in the order they are first needed, after
     # the import thunks of the libraries before it.
     objs = [obj_path(kind, full) for _d, _c, _u, full in units]
-    for lib, first in lk.get("staticlibs", {}).items():
-        names = [full.split("/", 1)[1] for _d, _c, _u, full in units]
-        k = names.index(first)
+    names = [full.split("/", 1)[1] for _d, _c, _u, full in units]
+
+    def make_lib(lib, members):
         path = os.path.join(tmp, lib)
         if os.path.exists(path):
             os.remove(path)
         res = subprocess.run([os.path.join(os.path.dirname(tc.link_path()), "lib.exe"), "/nologo",
-                              "/out:" + path] + objs[k:], env=tc.env(), cwd=ROOT,
+                              "/out:" + path] + members, env=tc.env(), cwd=ROOT,
                              stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
         if res.returncode != 0:
             print(res.stdout.decode("latin-1")[-2000:])
             sys.exit("static library %s failed" % lib)
-        objs = objs[:k]
         made[lib] = path
+
+    # several libraries: each takes the units from its first one up to the
+    # next library's first unit (taken from the last one backwards)
+    for lib, first in sorted(lk.get("staticlibs", {}).items(), key=lambda x: -names.index(x[1])):
+        k = names.index(first)
+        make_lib(lib, objs[k:])
+        objs, names = objs[:k], names[:k]
+    # "retail_objects": third-party code without source or official library
+    # (classed LIB), written from the retail bytes by tools/delink_retail.py
+    # into build/link/<dll>/retail_<name>.obj and put into the library its
+    # entry names, which "libs" places like any other ("@a3d_retail.lib")
+    if lk.get("retail_objects"):
+        if subprocess.call([sys.executable, os.path.join(ROOT, "tools", "delink_retail.py"), dll, tmp]) != 0:
+            sys.exit("retail-derived objects have unresolved references")
+        groups = {}
+        for p in lk["retail_objects"]:
+            groups.setdefault(p["lib"], []).append(os.path.join(tmp, "retail_%s.obj" % p["name"]))
+        for lib, members in groups.items():
+            make_lib(lib, members)
     libs = []
     for lib in lk["libs"]:
         if lib.startswith("@"):

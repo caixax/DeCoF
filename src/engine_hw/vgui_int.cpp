@@ -9,6 +9,7 @@
 #include <windows.h>
 
 #include "vgui_EngineSurface.h"
+#include <VGUI_Frame.h>
 
 extern "C"
 {

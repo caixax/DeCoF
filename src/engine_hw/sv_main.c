@@ -2018,6 +2018,8 @@ typedef struct
 
 challenge_t	g_rg_sv_challenges[MAX_CHALLENGES];
 
+qboolean	allow_cheats;
+
 /*
 =================
 SV_CheckChallenge

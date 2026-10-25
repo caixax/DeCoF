@@ -2225,6 +2225,11 @@
           "functions_file": "tools/units/hw_engine_CL_TENT.txt"
         },
         {
+          "name": "engine/r_efx",
+          "source": "src/engine_hw/r_efx.c",
+          "functions_file": "tools/units/hw_engine_r_efx.txt"
+        },
+        {
           "name": "engine/R_PART",
           "source": "src/engine_hw/R_PART.C",
           "functions_file": "tools/units/hw_engine_R_PART.txt"
@@ -3640,10 +3645,19 @@
           "name": "engine/vgui_int",
           "source": "src/engine_hw/vgui_int.cpp",
           "functions_file": "tools/units/hw_engine_vgui_int.txt",
+          "cflags": [
+            "/nologo",
+            "/c",
+            "/G5",
+            "/W3",
+            "/Od",
+            "/GR"
+          ],
           "includes": [
             "src/engine_hw",
             "src/common",
-            "src/public"
+            "src/public",
+            "src/utils/vgui/include"
           ]
         },
         {
@@ -4060,7 +4074,401 @@
             "src/public"
           ]
         }
-      ]
+      ],
+      "link": {
+        "out": "hw.dll",
+        "retail": "versions/1.6a/hw.dll",
+        "resources": "versions/1.6a/hw.dll",
+        "objdir": "link_obj",
+        "flags": [
+          "/nologo",
+          "/dll",
+          "/machine:I386",
+          "/subsystem:windows",
+          "/incremental:no",
+          "/debug",
+          "/pdb:build/link/hw/hw.pdb",
+          "/base:0x1D00000",
+          "/nodefaultlib:libc.lib",
+          "/nodefaultlib:libcp.lib"
+        ],
+        "libs": [
+          "dinput.lib",
+          "ddraw.lib",
+          "winmm.lib",
+          "wsock32.lib",
+          "kernel32.lib",
+          "user32.lib",
+          "gdi32.lib",
+          "advapi32.lib",
+          "ole32.lib",
+          "@a3d_retail.lib",
+          "version.lib",
+          "@vgui.lib",
+          "@mss32.lib",
+          "@mss32_retail.lib",
+          "wininet.lib",
+          "@radial_retail.lib",
+          "I:/Tools/vc6/VC98/LIB/WSOCK32.LIB",
+          "@vgui_controls.lib",
+          "@vgui_surfacelib.lib",
+          "@bzip2.lib",
+          "@steam_api_c.lib",
+          "libcmt.lib",
+          "libcpmt.lib",
+          "@dxmgr_retail.lib",
+          "oleaut32.lib",
+          "ws2_32.lib",
+          "comsupp.lib",
+          "uuid.lib",
+          "dxguid.lib",
+          "@dinput8_dilib5.obj"
+        ],
+        "implibs": {
+          "versions/1.6a/vgui.dll": "vgui.lib",
+          "versions/1.6a/Mss32.dll": "mss32.lib",
+          "versions/1.6a/steam_api_c.dll": "steam_api_c.lib"
+        },
+        "lib_members": {
+          "dinput8_dilib5.obj": [
+            "I:/Tools/winsdk-10.0.19041.1/Windows Kits/10/Lib/10.0.19041.0/um/x86/dinput8.lib",
+            "dilib5.obj"
+          ]
+        },
+        "staticlibs": {
+          "bzip2.lib": "bzip2/bzlib",
+          "vgui_surfacelib.lib": "vgui2/vgui_surfacelib/FontManager",
+          "vgui_controls.lib": "vgui2/controls/controls"
+        },
+        "skip_units": [
+          "a3d/A3DRenderer_guess"
+        ],
+        "retail_objects": [
+          {
+            "name": "a3d",
+            "lib": "a3d_retail.lib",
+            "note": "Aureal A3D library (CA3DRenderer, CA3DSource2D/3D, the hw* C entry points used by hla3d): code, .rdata (vtables, GUIDs), RTTI, EH tables, .data, .bss",
+            "ranges": [
+              [
+                "01E14E40",
+                "01E19980"
+              ],
+              [
+                "01E19990",
+                "01E19A14"
+              ],
+              [
+                "01E90430",
+                "01E907A8"
+              ],
+              [
+                "01E99870",
+                "01E99958"
+              ],
+              [
+                "01E9AA18",
+                "01E9ABF0"
+              ],
+              [
+                "01ED2994",
+                "01ED2E2C"
+              ],
+              [
+                "024FBCA4",
+                "024FBCB0"
+              ]
+            ],
+            "aliases_note": "SND_MIX.C calls these entry points by the names below; engine/hla3d_guess.cpp and the symbol map use other _guess names for some of the same addresses (paired by the call order of each SND_MIX function against retail)",
+            "aliases": {
+              "01E14E40": "_A3D_SetCurrentSfx_guess",
+              "01E15720": "_A3DSource_Play_guess",
+              "01E15740": "_A3DSource_Stop_guess",
+              "01E15760": "_A3DSource_Flush_guess",
+              "01E15780": "_A3DSource_SetPosition_guess",
+              "01E15810": "_A3DSource_SetGain_guess",
+              "01E158D0": "_A3DSource_SetPitch_guess",
+              "01E15990": "_A3DSource_SetRenderMode_guess",
+              "01E15A10": "_A3DSource_IsPlaying_guess",
+              "01E15BC0": "_A3DSource_Unlock_guess",
+              "01E15BF0": "_A3DSource_Lock_guess",
+              "01E15C30": "_A3DSource_GetFreeSamples_guess",
+              "01E15C70": "_A3DSource_Update_guess",
+              "01E15C90": "_A3DSource_GetDone_guess",
+              "01E15CB0": "_A3DSource_Feed16_guess",
+              "01E15CE0": "_A3DSource_Restart_guess",
+              "01E15D50": "_A3DSource_GetStreamPos_guess",
+              "01E15D70": "_A3DSource_SetStreamPos_guess"
+            }
+          },
+          {
+            "name": "mss32",
+            "lib": "mss32_retail.lib",
+            "note": "MSS_auto_cleanup of the Miles mss32.lib (static member: atexit(AIL_shutdown))",
+            "ranges": [
+              [
+                "01E1A0C0",
+                "01E1A0E0"
+              ]
+            ]
+          },
+          {
+            "name": "radial",
+            "lib": "radial_retail.lib",
+            "note": "IGA Radial client SDK 2.0.0.0 (rad* entry points, HTTP client, cache files)",
+            "ranges": [
+              [
+                "01E1A150",
+                "01E27F00"
+              ],
+              [
+                "01E907A8",
+                "01E907C8"
+              ],
+              [
+                "01ED2E2C",
+                "01ED34E4"
+              ],
+              [
+                "024FBCB0",
+                "024FC6BC"
+              ],
+              [
+                "02FB9CC0",
+                "02FB9D54"
+              ]
+            ]
+          },
+          {
+            "name": "dxmgr",
+            "lib": "dxmgr_retail.lib",
+            "note": "DirectX manager of the OpenGL-on-Direct3D wrapper with its ATL support code (DXMgrCreate, ddraw enumeration, COM registration, security descriptors), and the five interface GUIDs of its MIDL header (IID_IDXMgr and the four its ATL tables use) that sit in the engine's .rdata; IID_IDirectDraw4 and IID_IDirect3D3, which the VC6 DXGUID.LIB lacks (the Windows SDK dxguid.lib holds every GUID in one object and clashes with the VC6 one)",
+            "ranges": [
+              [
+                "01E845FA",
+                "01E899F0"
+              ],
+              [
+                "01E972F4",
+                "01E97590"
+              ],
+              [
+                "01E8D4C0",
+                "01E8D500"
+              ],
+              [
+                "01E8EAE0",
+                "01E8EAF0"
+              ],
+              [
+                "01E8EE00",
+                "01E8EE10"
+              ],
+              [
+                "02501388",
+                "025013B0"
+              ]
+            ]
+          }
+        ],
+        "order": [
+          "engine/vgui2/BaseUI_Interface",
+          "vgui2/controls/Panel",
+          "engine/vgui2/BaseUISurface",
+          "engine/vgui2/BaseUISurface_Font",
+          "engine/vgui2/FontTextureCache",
+          "engine/vgui2/HtmlWindow",
+          "engine/vgui2/MemoryBitmap",
+          "engine/vgui2/text_draw",
+          "engine/vgui_intwrap2",
+          "public/IceKey",
+          "iga/IGA_Engine_guess",
+          "iga/IGA_Metadata_guess",
+          "mathlib/imagequant",
+          "mathlib/quantize",
+          "iga/IGA_Quantizer_guess",
+          "common/BaseSystemModule",
+          "engine/bitmap_win",
+          "engine/buildnum",
+          "engine/cd",
+          "engine/cdll_exp",
+          "engine/cdll_int",
+          "engine/chase",
+          "engine/CircularBuffer",
+          "engine/CL_DEMO",
+          "engine/cl_draw",
+          "engine/cl_ents",
+          "engine/cl_extrap",
+          "engine/CL_MAIN",
+          "engine/CL_PARSE",
+          "engine/cl_parsefn",
+          "engine/cl_pmove",
+          "engine/cl_pred",
+          "engine/cl_spectator",
+          "engine/CL_TENT",
+          "engine/cmd",
+          "engine/cmodel",
+          "engine/com_custom",
+          "engine/common",
+          "engine/CONSOLE",
+          "engine/crc",
+          "engine/cvar",
+          "engine/czmodelcheck",
+          "engine/decals",
+          "engine/delta",
+          "engine/DemoPlayerWrapper",
+          "engine/DetailTexture",
+          "engine/dinput_guess",
+          "engine/download",
+          "engine/downloadthread",
+          "engine/eventapi",
+          "engine/filesystem",
+          "engine/filesystem_internal",
+          "engine/GL_DRAW",
+          "engine/GL_MESH",
+          "engine/GL_MODEL",
+          "engine/gl_refrag",
+          "engine/gl_rlight",
+          "engine/GL_RMAIN",
+          "engine/GL_RMISC",
+          "engine/GL_RSURF",
+          "engine/gl_screen",
+          "engine/GL_VIDNT",
+          "engine/GL_WARP",
+          "engine/glHud",
+          "engine/glide_guess",
+          "engine/hashpak",
+          "engine/hla3d_guess",
+          "engine/host",
+          "engine/host_cmd",
+          "engine/HUD",
+          "engine/info",
+          "public/interface",
+          "engine/ipratelimit",
+          "engine/ipratelimitWrapper",
+          "engine/KEYS",
+          "engine/l_studio",
+          "engine/LoadBlob",
+          "engine/mathlib",
+          "engine/mem",
+          "engine/module",
+          "engine/net_api",
+          "engine/net_chan",
+          "engine/net_ws",
+          "common/ObjectList",
+          "engine/opengl2d3d_guess",
+          "engine/pe_win32_guess",
+          "engine/pmove",
+          "engine/pmovedbg",
+          "engine/pmovetst",
+          "engine/pr_cmds",
+          "engine/pr_edict",
+          "engine/prefs_guess",
+          "engine/qgl",
+          "engine/r_efx",
+          "engine/R_PART",
+          "engine/r_studio",
+          "engine/r_trans",
+          "engine/r_triangle",
+          "public/registry",
+          "engine/Sequence",
+          "game_shared/shared_util",
+          "engine/SND_DMA",
+          "engine/SND_MEM",
+          "engine/SND_MIX",
+          "engine/snd_win",
+          "common/steamid",
+          "engine/sv_log",
+          "engine/sv_main",
+          "engine/sv_move",
+          "engine/sv_phys",
+          "engine/sv_pmove",
+          "engine/sv_remoteaccess",
+          "engine/sv_secure",
+          "engine/sv_steam3",
+          "engine/sv_upld",
+          "engine/sv_user",
+          "engine/sys_dll",
+          "engine/sys_dll2",
+          "engine/sys_engine",
+          "engine/sys_getmodes",
+          "engine/LauncherDirectDraw_guess",
+          "engine/sys_sdlwind",
+          "utils/procinfo/procinfo",
+          "engine/SystemWrapper",
+          "engine/textures",
+          "engine/thread",
+          "engine/tmessage",
+          "engine/Tokenize_guess",
+          "common/TokenLine",
+          "engine/traceinit",
+          "public/UtlBuffer",
+          "engine/verify_guess",
+          "engine/vgui_EngineSurface",
+          "engine/vgui_EngineSurfaceHW",
+          "engine/vgui_EngineSurfaceWin32",
+          "engine/VGUI_EngineSurfaceWrap",
+          "engine/vgui_int",
+          "engine/vgui_intwrap",
+          "engine/VIEW",
+          "engine/voice",
+          "engine/voice_gain",
+          "engine/voice_mixer_controls_openal",
+          "engine/voice_record_dsound",
+          "engine/voice_record_wavein",
+          "engine/voice_sound_engine_interface",
+          "engine/voice_wavefile",
+          "engine/wad",
+          "engine/world",
+          "engine/zone",
+          "engine/math",
+          "engine/snd_mixa",
+          "engine/sys_wina",
+          "engine/worlda",
+          "vgui2/controls/controls",
+          "vgui2/controls/EditablePanel",
+          "public/utlsymbol",
+          "public/KeyValues",
+          "vgui2/controls/Tooltip",
+          "public/MemPool",
+          "vgui2/controls/BuildGroup",
+          "vgui2/controls/FocusNavGroup",
+          "vgui2/controls/BuildModeDialog",
+          "vgui2/controls/BitmapImagePanel",
+          "vgui2/controls/URLLabel",
+          "vgui2/controls/Divider",
+          "vgui2/controls/AnimatingImagePanel",
+          "vgui2/controls/ImagePanel",
+          "vgui2/controls/ToggleButton",
+          "vgui2/controls/RichText",
+          "vgui2/controls/TextEntry",
+          "vgui2/controls/ScrollBar",
+          "vgui2/controls/RadioButton",
+          "vgui2/controls/ProgressBar",
+          "vgui2/controls/MessageBox",
+          "vgui2/controls/MenuItem",
+          "vgui2/controls/Menu",
+          "vgui2/controls/ComboBox",
+          "vgui2/controls/CheckButton",
+          "vgui2/controls/Button",
+          "vgui2/controls/Label",
+          "vgui2/controls/Frame",
+          "vgui2/controls/MenuButton",
+          "vgui2/controls/PanelListPanel",
+          "vgui2/controls/ScrollBarSlider",
+          "vgui2/controls/Image",
+          "vgui2/controls/TextImage",
+          "vgui2/vgui_surfacelib/FontManager",
+          "vgui2/vgui_surfacelib/Win32Font",
+          "vgui2/vgui_surfacelib/FontAmalgam",
+          "bzip2/bzlib",
+          "bzip2/compress",
+          "bzip2/decompress",
+          "bzip2/blocksort",
+          "bzip2/huffman",
+          "bzip2/crctable",
+          "bzip2/randtable"
+        ]
+      }
     },
     "launcher": {
       "toolchain": "vc6",

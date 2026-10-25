@@ -17,16 +17,11 @@
 #include "filesystem_.h"
 #include "winquake.h"
 
-extern int		gD3DMode;
 extern int		atismoothing;
 
 extern void		( *VID_FlipScreen_guess )( void );
 
-extern int		TEXTURE0_SGIS;
-extern int		TEXTURE1_SGIS;
-extern int		TEXTURE2_SGIS;
 extern GLenum	oldtarget;
-extern int		gl_mtexable;
 
 void	GL_SelectTexture( GLenum target );
 void	DT_Initialize( void );
@@ -42,7 +37,10 @@ int		ReadPixels3Dfx_guess( int x, int y, int width, int height, byte *buffer );
 #define GL_TEXTURE2_ARB				0x84C2
 #define GL_MAX_TEXTURE_UNITS_ARB	0x84E2
 
+qboolean	scr_skiponeupdate;
 int			gGLHardwareType = 0;
+int			gD3DMode;
+int			gl_mtexable;
 
 qboolean	gfMiniDriver_guess;
 RECT		window_rect;
@@ -53,10 +51,23 @@ const char	*gl_renderer;
 const char	*gl_version;
 const char	*gl_extensions;
 
+qboolean	scr_skipupdate;
+
+float		gldepthmin, gldepthmax;
+
 void	( APIENTRY * qglPNTrianglesiATI )( GLenum pname, GLint param );
 
-cvar_t	vid_d3d = { "vid_d3d", "0" };
+cvar_t	gl_ztrick = { "gl_ztrick", "0" };
 cvar_t	gl_d3dflip = { "gl_d3dflip", "0" };
+cvar_t	vid_d3d = { "vid_d3d", "0" };
+
+int		texture_mode = GL_LINEAR;
+
+int		texture_extension_number_guess = 1;
+
+int		TEXTURE0_SGIS = GL_TEXTURE0_SGIS;
+int		TEXTURE1_SGIS = GL_TEXTURE1_SGIS;
+int		TEXTURE2_SGIS = GL_TEXTURE2_SGIS;
 
 /*
 ================

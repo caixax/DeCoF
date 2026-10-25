@@ -524,7 +524,7 @@ static	char		*cmd_args = NULL;
 
 cmd_source_t	cmd_source;
 
-static	cmd_function_t	*cmd_functions;		// possible commands to execute
+cmd_function_t	*cmd_functions;		// possible commands to execute (module.cpp reads it)
 
 cmd_function_t *Cmd_GetFirstCmd( void )
 {

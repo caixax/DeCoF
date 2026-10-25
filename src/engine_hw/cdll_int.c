@@ -148,10 +148,8 @@ void	FreeBlob( BlobFootprint_t *pblobfootprint );
 
 #define MAX_BEAMENTS		64
 
-extern	cldll_func_t		cl_funcs;
-extern	BlobFootprint_t		g_blobfootprintClient_guess;
-extern	qboolean			fClientLoaded;
-extern	HMODULE				hClientDLL;
+cldll_func_t		cl_funcs;
+BlobFootprint_t		g_blobfootprintClient_guess;
 extern	cvar_t				cl_lw;
 extern	cvar_t				*cl_righthand;
 extern	float				scr_fov_value;
@@ -185,9 +183,643 @@ struct model_s	*SPR_GetModelPointer( HSPRITE hSprite );
 void	CL_DemoEvent( int flags, int idx, float delay, event_args_t *pargs );
 pfnUserMsgHook	HookServerMsg( const char *pszName, pfnUserMsgHook pfn );
 
-extern	struct cl_enginefuncs_s		cl_enginefuncs;
-extern	struct cldll_func_dst_s		g_cldstAddrs;
-extern	int							g_bTamperTrap_guess;
+
+
+
+
+struct hud_player_info_s;
+struct SCREENINFO_s;
+struct client_textmessage_s;
+
+// cl_draw.c
+void SPR_DisableScissor( void );
+void SPR_Draw( int frame, int x, int y, const wrect_t *prc );
+void SPR_DrawAdditive( int frame, int x, int y, const wrect_t *prc );
+void SPR_DrawHoles( int frame, int x, int y, const wrect_t *prc );
+void SPR_EnableScissor( int x, int y, int width, int height );
+int SPR_Frames( HSPRITE hSprite );
+int SPR_Height( HSPRITE hSprite, int frame );
+HSPRITE SPR_Load( const char *pTextureName );
+void SPR_Set( HSPRITE hSprite, int r, int g, int b );
+int SPR_Width( HSPRITE hSprite, int frame );
+void SetCrosshair( HSPRITE hspr, wrect_t rc, int r, int g, int b );
+
+// GL_DRAW.C
+void Draw_FillRGBA( int x, int y, int w, int h, int r, int g, int b, int a );
+void Draw_SetTextColor( float r, float g, float b );
+int Draw_String( int x, int y, char *str );
+
+// tmessage.c
+int TextMessageDrawCharacter( int x, int y, int number, int r, int g, int b );
+struct client_textmessage_s *TextMessageGet( const char *pName );
+
+// KEYS.C
+void Key_Event( int key, qboolean down );
+
+// pr_cmds.c
+int hudCheckParm( char *parm, char **ppnext );
+
+// cdll_exp.c
+int hudAddCommand( char *cmd_name, void ( *function )( void ) );
+void hudCenterPrint( const char *string );
+int hudClientCmd( char *pszCmdString );
+void hudConsolePrint( const char *string );
+void hudDrawConsoleStringLen( const char *string, int *width, int *height );
+float hudGetCvarFloat( char *szName );
+char *hudGetCvarString( char *szName );
+void hudGetPlayerInfo( int ent_num, struct hud_player_info_s *pinfo );
+int hudGetScreenInfo( struct SCREENINFO_s *pscrinfo );
+int hudHookUserMsg( char *szMsgName, pfnUserMsgHook pfn );
+void hudPlaySoundByIndex( int iSound, float volume );
+void hudPlaySoundByName( char *szSound, float volume );
+void hudPlaySoundByNameAtLocation( char *szSound, float volume, float *origin );
+struct cvar_s *hudRegisterVariable( char *szName, char *szValue, int flags );
+int hudServerCmd( char *pszCmdString );
+
+// cdll_int.c
+int CL_CreateVisibleEntity( int type, struct cl_entity_s *ent );
+struct model_s *CL_LoadModel( const char *modelname, int *index );
+client_sprite_t *SPR_GetList( char *psz, int *piCount );
+int hudCenterX( void );
+int hudCenterY( void );
+float hudGetClientMaxspeed( void );
+float hudGetClientTime( void );
+struct cl_entity_s *hudGetEntityByIndex( int idx );
+struct cl_entity_s *hudGetLocalPlayer( void );
+int hudGetMaxClients( void );
+void hudGetMousePosition( int *mx, int *my );
+const struct model_s *hudGetSpritePointer( HSPRITE hSprite );
+void hudGetViewAngles( float *va );
+struct cl_entity_s *hudGetViewModel( void );
+int hudIsNoClipping( void );
+const char *hudPhysInfo_ValueForKey( const char *key );
+const char *hudServerInfo_ValueForKey( const char *key );
+void hudSetViewAngles( float *va );
+
+// cdll_int.c
+void COM_AddAppDirectoryToSearchPath( const char *pszBaseDir, const char *appName );
+char *COM_ParseFile( char *data, char *token );
+int ClientDLL_ExpandFileName( const char *fileName, char *nameOutBuffer, int nameOutBufferSize );
+const char *GetCmdFunctionName( unsigned int cmdhandle );
+struct cvar_s *GetFirstCVarPtr( void );
+unsigned int GetFirstCmdFunctionHandle( void );
+unsigned int GetNextCmdFunctionHandle( unsigned int cmdhandle );
+int GetPlayerForTrackerID( int trackerID );
+qboolean GetPlayerUniqueID( int iPlayer, char *playerID );
+int GetTrackerIDForPlayer( int playerSlot );
+const char *LocalPlayerInfo_ValueForKey( const char *key );
+void PlayerInfo_SetValueForKey( const char *key, const char *value );
+const char *PlayerInfo_ValueForKey( int playerNum, const char *key );
+float hudGetClientOldTime( void );
+const char *hudGetGameDir( void );
+const char *hudGetLevelName( void );
+struct model_s *hudGetModelByIndex( const int index );
+void hudGetScreenFade( struct screenfade_s *fade );
+float hudGetServerGravityValue( void );
+void hudPlaybackEvent( int flags, const struct edict_s *pInvoker, unsigned short eventindex, float delay, float *origin, float *angles, float fparam1, float fparam2, int iparam1, int iparam2, int bparam1, int bparam2 );
+unsigned short hudPrecacheEvent( int type, const char *psz );
+void hudSetScreenFade( struct screenfade_s *fade );
+void hudWeaponAnim( int iAnim, int body );
+
+// vgui_intwrap2.cpp
+void ConstructTutorMessageDecayBuffer( int *buffer, int bufferLength );
+void ProcessTutorMessageDecayBuffer( int *buffer, int bufferLength );
+void ResetTutorMessageDecayData( void );
+void *VguiWrap2_GetCareerUI( void );
+void VguiWrap2_GetMouseDelta( int *x, int *y );
+
+// GL_DRAW.C
+void Draw_FillRGBABlend( int x, int y, int w, int h, int r, int g, int b, int a );
+
+// sv_main.c
+int GetGameAppID( void );
+
+// dinput_guess.cpp
+void GetMousePos_guess( POINT *ppt );
+void SetMouseEnable( qboolean fEnable );
+void SetMousePos_guess( int x, int y );
+
+// KEYS.C
+const char *Key_NameForBinding( const char *pBinding );
+
+// cd.cpp
+void PrimeMusicStream( char *filename, int looping );
+
+// GL_RMAIN.C
+model_t *R_LoadMapSprite( const char *szFilename );
+
+// pr_cmds.c
+float RandomFloat( float flLow, float flHigh );
+int32 RandomLong( int32 lLow, int32 lHigh );
+
+// cl_draw.c
+void SPR_DrawGeneric( int frame, int x, int y, const wrect_t *prc, int src, int dest, int width, int height );
+void SetFilterBrightness( float brightness );
+void SetFilterColor( float r, float g, float b );
+void SetFilterMode( int mode );
+
+// Sequence.c
+struct sequenceEntry_s *SequenceGet( const char *fileName, const char *entryName );
+struct sentenceEntry_s *SequencePickSentence( const char *groupName, int pickMethod, int *picked );
+
+// vgui2/text_draw.cpp
+int VGUI2_DrawStringClient( int x, int y, const char *str, int r, int g, int b );
+int VGUI2_DrawStringReverseClient( int x, int y, const char *str, int r, int g, int b );
+int VGUI2_Draw_Character( int x, int y, int ch, unsigned int font );
+int VGUI2_Draw_CharacterAdd( int x, int y, int ch, int r, int g, int b, unsigned int font );
+
+// cdll_exp.c
+void hudPlaySoundByNameAtPitch( char *szSound, float volume, int pitch );
+void hudPlaySoundVoiceByName( char *szSound, float volume, int pitch );
+int hudServerCmdUnreliable( char *pszCmdString );
+int hudFilteredClientCmd( char *pszCmdString );
+
+// vgui_EngineSurfaceHW.cpp
+void VGui_ViewportPaintBackground( int *extents );
+
+// module.cpp
+void NullDst( void );
+
+cmdalias_t *GetAliasesList( void );
+
+// ********************************************************
+// Functions exported by the engine
+// ********************************************************
+
+// Function type declarations for engine exports
+typedef HSPRITE						(*pfnEngSrc_pfnSPR_Load_t )			( const char *szPicName );
+typedef int							(*pfnEngSrc_pfnSPR_Frames_t )			( HSPRITE hPic );
+typedef int							(*pfnEngSrc_pfnSPR_Height_t )			( HSPRITE hPic, int frame );
+typedef int							(*pfnEngSrc_pfnSPR_Width_t )			( HSPRITE hPic, int frame );
+typedef void						(*pfnEngSrc_pfnSPR_Set_t )				( HSPRITE hPic, int r, int g, int b );
+typedef void						(*pfnEngSrc_pfnSPR_Draw_t )			( int frame, int x, int y, const struct rect_s *prc );
+typedef void						(*pfnEngSrc_pfnSPR_DrawHoles_t )		( int frame, int x, int y, const struct rect_s *prc );
+typedef void						(*pfnEngSrc_pfnSPR_DrawAdditive_t )	( int frame, int x, int y, const struct rect_s *prc );
+typedef void						(*pfnEngSrc_pfnSPR_EnableScissor_t )	( int x, int y, int width, int height );
+typedef void						(*pfnEngSrc_pfnSPR_DisableScissor_t )	( void );
+typedef struct client_sprite_s	*	(*pfnEngSrc_pfnSPR_GetList_t )			( char *psz, int *piCount );
+typedef void						(*pfnEngSrc_pfnFillRGBA_t )			( int x, int y, int width, int height, int r, int g, int b, int a );
+typedef int							(*pfnEngSrc_pfnGetScreenInfo_t ) 		( struct SCREENINFO_s *pscrinfo );
+typedef void						(*pfnEngSrc_pfnSetCrosshair_t )		( HSPRITE hspr, wrect_t rc, int r, int g, int b );
+typedef struct cvar_s *				(*pfnEngSrc_pfnRegisterVariable_t )	( char *szName, char *szValue, int flags );
+typedef float						(*pfnEngSrc_pfnGetCvarFloat_t )		( char *szName );
+typedef char*						(*pfnEngSrc_pfnGetCvarString_t )		( char *szName );
+typedef int							(*pfnEngSrc_pfnAddCommand_t )			( char *cmd_name, void (*pfnEngSrc_function)(void) );
+typedef int							(*pfnEngSrc_pfnHookUserMsg_t )			( char *szMsgName, pfnUserMsgHook pfn );
+typedef int							(*pfnEngSrc_pfnServerCmd_t )			( char *szCmdString );
+typedef int							(*pfnEngSrc_pfnClientCmd_t )			( char *szCmdString );
+typedef void						(*pfnEngSrc_pfnPrimeMusicStream_t )	( char *szFilename, int looping );
+typedef void						(*pfnEngSrc_pfnGetPlayerInfo_t )		( int ent_num, struct hud_player_info_s *pinfo );
+typedef void						(*pfnEngSrc_pfnPlaySoundByName_t )		( char *szSound, float volume );
+typedef void						(*pfnEngSrc_pfnPlaySoundByNameAtPitch_t )	( char *szSound, float volume, int pitch );
+typedef void						(*pfnEngSrc_pfnPlaySoundVoiceByName_t )		( char *szSound, float volume, int pitch );
+typedef void						(*pfnEngSrc_pfnPlaySoundByIndex_t )	( int iSound, float volume );
+typedef void						(*pfnEngSrc_pfnAngleVectors_t )		( const float * vecAngles, float * forward, float * right, float * up );
+typedef struct client_textmessage_s*(*pfnEngSrc_pfnTextMessageGet_t )		( const char *pName );
+typedef int							(*pfnEngSrc_pfnDrawCharacter_t )		( int x, int y, int number, int r, int g, int b );
+typedef int							(*pfnEngSrc_pfnDrawConsoleString_t )	( int x, int y, char *string );
+typedef void						(*pfnEngSrc_pfnDrawSetTextColor_t )	( float r, float g, float b );
+typedef void						(*pfnEngSrc_pfnDrawConsoleStringLen_t )(  const char *string, int *length, int *height );
+typedef void						(*pfnEngSrc_pfnConsolePrint_t )		( const char *string );
+typedef void						(*pfnEngSrc_pfnCenterPrint_t )			( const char *string );
+typedef int							(*pfnEngSrc_GetWindowCenterX_t )		( void );
+typedef int							(*pfnEngSrc_GetWindowCenterY_t )		( void );
+typedef void						(*pfnEngSrc_GetViewAngles_t )			( float * );
+typedef void						(*pfnEngSrc_SetViewAngles_t )			( float * );
+typedef int							(*pfnEngSrc_GetMaxClients_t )			( void );
+typedef void						(*pfnEngSrc_Cvar_SetValue_t )			( char *cvar, float value );
+typedef int       					(*pfnEngSrc_Cmd_Argc_t)					(void);	
+typedef char *						(*pfnEngSrc_Cmd_Argv_t )				( int arg );
+typedef void						(*pfnEngSrc_Con_Printf_t )				( char *fmt, ... );
+typedef void						(*pfnEngSrc_Con_DPrintf_t )			( char *fmt, ... );
+typedef void						(*pfnEngSrc_Con_NPrintf_t )			( int pos, char *fmt, ... );
+typedef void						(*pfnEngSrc_Con_NXPrintf_t )			( struct con_nprint_s *info, char *fmt, ... );
+typedef const char *				(*pfnEngSrc_PhysInfo_ValueForKey_t )	( const char *key );
+typedef const char *				(*pfnEngSrc_ServerInfo_ValueForKey_t )( const char *key );
+typedef float						(*pfnEngSrc_GetClientMaxspeed_t )		( void );
+typedef int							(*pfnEngSrc_CheckParm_t )				( char *parm, char **ppnext );
+typedef void						(*pfnEngSrc_Key_Event_t )				( int key, int down );
+typedef void						(*pfnEngSrc_GetMousePosition_t )		( int *mx, int *my );
+typedef int							(*pfnEngSrc_IsNoClipping_t )			( void );
+typedef struct cl_entity_s *		(*pfnEngSrc_GetLocalPlayer_t )		( void );
+typedef struct cl_entity_s *		(*pfnEngSrc_GetViewModel_t )			( void );
+typedef struct cl_entity_s *		(*pfnEngSrc_GetEntityByIndex_t )		( int idx );
+typedef float						(*pfnEngSrc_GetClientTime_t )			( void );
+typedef void						(*pfnEngSrc_V_CalcShake_t )			( void );
+typedef void						(*pfnEngSrc_V_ApplyShake_t )			( float *origin, float *angles, float factor );
+typedef int							(*pfnEngSrc_PM_PointContents_t )		( float *point, int *truecontents );
+typedef int							(*pfnEngSrc_PM_WaterEntity_t )			( float *p );
+typedef struct pmtrace_s *			(*pfnEngSrc_PM_TraceLine_t )			( float *start, float *end, int flags, int usehull, int ignore_pe );
+typedef struct model_s *			(*pfnEngSrc_CL_LoadModel_t )			( const char *modelname, int *index );
+typedef int							(*pfnEngSrc_CL_CreateVisibleEntity_t )	( int type, struct cl_entity_s *ent );
+typedef const struct model_s *		(*pfnEngSrc_GetSpritePointer_t )		( HSPRITE hSprite );
+typedef void						(*pfnEngSrc_pfnPlaySoundByNameAtLocation_t )	( char *szSound, float volume, float *origin );
+typedef unsigned short				(*pfnEngSrc_pfnPrecacheEvent_t )		( int type, const char* psz );
+typedef void						(*pfnEngSrc_pfnPlaybackEvent_t )		( int flags, const struct edict_s *pInvoker, unsigned short eventindex, float delay, float *origin, float *angles, float fparam1, float fparam2, int iparam1, int iparam2, int bparam1, int bparam2 );
+typedef void						(*pfnEngSrc_pfnWeaponAnim_t )			( int iAnim, int body );
+typedef float						(*pfnEngSrc_pfnRandomFloat_t )			( float flLow, float flHigh );
+typedef int32						(*pfnEngSrc_pfnRandomLong_t )			( int32 lLow, int32 lHigh );
+typedef void						(*pfnEngSrc_pfnHookEvent_t )			( char *name, void ( *pfnEvent )( struct event_args_s *args ) );
+typedef int							(*pfnEngSrc_Con_IsVisible_t)			();
+typedef const char *				(*pfnEngSrc_pfnGetGameDirectory_t )	( void );
+typedef struct cvar_s *				(*pfnEngSrc_pfnGetCvarPointer_t )		( const char *szName );
+typedef const char *				(*pfnEngSrc_Key_LookupBinding_t )		( const char *pBinding );
+typedef const char *				(*pfnEngSrc_pfnGetLevelName_t )		( void );
+typedef void						(*pfnEngSrc_pfnGetScreenFade_t )		( struct screenfade_s *fade );
+typedef void						(*pfnEngSrc_pfnSetScreenFade_t )		( struct screenfade_s *fade );
+typedef void *						(*pfnEngSrc_VGui_GetPanel_t )         ( );
+typedef void                        (*pfnEngSrc_VGui_ViewportPaintBackground_t ) (int extents[4]);
+typedef byte*						(*pfnEngSrc_COM_LoadFile_t )				( char *path, int usehunk, int *pLength );
+typedef char*						(*pfnEngSrc_COM_ParseFile_t )			( char *data, char *token );
+typedef void						(*pfnEngSrc_COM_FreeFile_t)				( void *buffer );
+typedef struct triangleapi_s *		pTriAPI;
+typedef struct efx_api_s *			pEfxAPI;
+typedef struct event_api_s *		pEventAPI;
+typedef struct demo_api_s *			pDemoAPI;
+typedef struct net_api_s *			pNetAPI;
+typedef struct IVoiceTweak_s *		pVoiceTweak;
+typedef int							(*pfnEngSrc_IsSpectateOnly_t ) ( void );
+typedef struct model_s *			(*pfnEngSrc_LoadMapSprite_t )			( const char *filename );
+typedef void						(*pfnEngSrc_COM_AddAppDirectoryToSearchPath_t ) ( const char *pszBaseDir, const char *appName );
+typedef int							(*pfnEngSrc_COM_ExpandFilename_t)				 ( const char *fileName, char *nameOutBuffer, int nameOutBufferSize );
+typedef const char *				(*pfnEngSrc_PlayerInfo_ValueForKey_t )( int playerNum, const char *key );
+typedef void						(*pfnEngSrc_PlayerInfo_SetValueForKey_t )( const char *key, const char *value );
+typedef qboolean					(*pfnEngSrc_GetPlayerUniqueID_t)(int iPlayer, char playerID[16]);
+typedef int							(*pfnEngSrc_GetTrackerIDForPlayer_t)(int playerSlot);
+typedef int							(*pfnEngSrc_GetPlayerForTrackerID_t)(int trackerID);
+typedef int							(*pfnEngSrc_pfnServerCmdUnreliable_t )( char *szCmdString );
+typedef void						(*pfnEngSrc_GetMousePos_t )(struct tagPOINT *ppt);
+typedef void						(*pfnEngSrc_SetMousePos_t )(int x, int y);
+typedef void						(*pfnEngSrc_SetMouseEnable_t)(qboolean fEnable);
+typedef struct cvar_s *				(*pfnEngSrc_GetFirstCVarPtr_t)();
+typedef unsigned int				(*pfnEngSrc_GetFirstCmdFunctionHandle_t)();
+typedef unsigned int				(*pfnEngSrc_GetNextCmdFunctionHandle_t)(unsigned int cmdhandle);
+typedef const char *				(*pfnEngSrc_GetCmdFunctionName_t)(unsigned int cmdhandle);
+typedef float						(*pfnEngSrc_GetClientOldTime_t)();
+typedef float						(*pfnEngSrc_GetServerGravityValue_t)();
+typedef struct model_s	*			(*pfnEngSrc_GetModelByIndex_t)( int index );
+typedef void						(*pfnEngSrc_pfnSetFilterMode_t )( int mode );
+typedef void						(*pfnEngSrc_pfnSetFilterColor_t )( float r, float g, float b );
+typedef void						(*pfnEngSrc_pfnSetFilterBrightness_t )( float brightness );
+typedef struct sequenceEntry_s*		(*pfnEngSrc_pfnSequenceGet_t )( const char *fileName, const char* entryName );
+typedef void						(*pfnEngSrc_pfnSPR_DrawGeneric_t )( int frame, int x, int y, const struct rect_s *prc, int src, int dest, int w, int h );
+typedef struct sentenceEntry_s*		(*pfnEngSrc_pfnSequencePickSentence_t )( const char *sentenceName, int pickMethod, int* entryPicked );
+// draw a complete string
+typedef int							(*pfnEngSrc_pfnDrawString_t )		( int x, int y, const char *str, int r, int g, int b );
+typedef int							(*pfnEngSrc_pfnDrawStringReverse_t )		( int x, int y, const char *str, int r, int g, int b );
+typedef const char *				(*pfnEngSrc_LocalPlayerInfo_ValueForKey_t )( const char *key );
+typedef int							(*pfnEngSrc_pfnVGUI2DrawCharacter_t )		( int x, int y, int ch, unsigned int font );
+typedef int							(*pfnEngSrc_pfnVGUI2DrawCharacterAdd_t )	( int x, int y, int ch, int r, int g, int b, unsigned int font);
+typedef unsigned int		(*pfnEngSrc_COM_GetApproxWavePlayLength ) ( const char * filename);
+typedef void *						(*pfnEngSrc_pfnGetCareerUI_t)();
+typedef void						(*pfnEngSrc_Cvar_Set_t )			( char *cvar, char *value );
+typedef int							(*pfnEngSrc_pfnIsPlayingCareerMatch_t)();
+typedef double						(*pfnEngSrc_GetAbsoluteTime_t) ( void );
+typedef void						(*pfnEngSrc_pfnProcessTutorMessageDecayBuffer_t)(int *buffer, int bufferLength);
+typedef void						(*pfnEngSrc_pfnConstructTutorMessageDecayBuffer_t)(int *buffer, int bufferLength);
+typedef void						(*pfnEngSrc_pfnResetTutorMessageDecayData_t)();
+typedef void						(*pfnEngSrc_pfnFillRGBABlend_t )			( int x, int y, int width, int height, int r, int g, int b, int a );
+typedef int						(*pfnEngSrc_pfnGetAppID_t)			( void );
+typedef cmdalias_t*				(*pfnEngSrc_pfnGetAliases_t)		( void );
+typedef void					(*pfnEngSrc_pfnVguiWrap2_GetMouseDelta_t) ( int *x, int *y );
+typedef int							(*pfnEngSrc_pfnFilteredClientCmd_t) 	( char *szCmdString );
+
+// Pointers to the exported engine functions themselves
+typedef struct cl_enginefuncs_s
+{
+	pfnEngSrc_pfnSPR_Load_t					pfnSPR_Load;
+	pfnEngSrc_pfnSPR_Frames_t				pfnSPR_Frames;
+	pfnEngSrc_pfnSPR_Height_t				pfnSPR_Height;
+	pfnEngSrc_pfnSPR_Width_t				pfnSPR_Width;
+	pfnEngSrc_pfnSPR_Set_t					pfnSPR_Set;
+	pfnEngSrc_pfnSPR_Draw_t					pfnSPR_Draw;
+	pfnEngSrc_pfnSPR_DrawHoles_t			pfnSPR_DrawHoles;
+	pfnEngSrc_pfnSPR_DrawAdditive_t			pfnSPR_DrawAdditive;
+	pfnEngSrc_pfnSPR_EnableScissor_t		pfnSPR_EnableScissor;
+	pfnEngSrc_pfnSPR_DisableScissor_t		pfnSPR_DisableScissor;
+	pfnEngSrc_pfnSPR_GetList_t				pfnSPR_GetList;
+	pfnEngSrc_pfnFillRGBA_t					pfnFillRGBA;
+	pfnEngSrc_pfnGetScreenInfo_t			pfnGetScreenInfo;
+	pfnEngSrc_pfnSetCrosshair_t				pfnSetCrosshair;
+	pfnEngSrc_pfnRegisterVariable_t			pfnRegisterVariable;
+	pfnEngSrc_pfnGetCvarFloat_t				pfnGetCvarFloat;
+	pfnEngSrc_pfnGetCvarString_t			pfnGetCvarString;
+	pfnEngSrc_pfnAddCommand_t				pfnAddCommand;
+	pfnEngSrc_pfnHookUserMsg_t				pfnHookUserMsg;
+	pfnEngSrc_pfnServerCmd_t				pfnServerCmd;
+	pfnEngSrc_pfnClientCmd_t				pfnClientCmd;
+	pfnEngSrc_pfnGetPlayerInfo_t			pfnGetPlayerInfo;
+	pfnEngSrc_pfnPlaySoundByName_t			pfnPlaySoundByName;
+	pfnEngSrc_pfnPlaySoundByIndex_t			pfnPlaySoundByIndex;
+	pfnEngSrc_pfnAngleVectors_t				pfnAngleVectors;
+	pfnEngSrc_pfnTextMessageGet_t			pfnTextMessageGet;
+	pfnEngSrc_pfnDrawCharacter_t			pfnDrawCharacter;
+	pfnEngSrc_pfnDrawConsoleString_t		pfnDrawConsoleString;
+	pfnEngSrc_pfnDrawSetTextColor_t			pfnDrawSetTextColor;
+	pfnEngSrc_pfnDrawConsoleStringLen_t		pfnDrawConsoleStringLen;
+	pfnEngSrc_pfnConsolePrint_t				pfnConsolePrint;
+	pfnEngSrc_pfnCenterPrint_t				pfnCenterPrint;
+	pfnEngSrc_GetWindowCenterX_t			GetWindowCenterX;
+	pfnEngSrc_GetWindowCenterY_t			GetWindowCenterY;
+	pfnEngSrc_GetViewAngles_t				GetViewAngles;
+	pfnEngSrc_SetViewAngles_t				SetViewAngles;
+	pfnEngSrc_GetMaxClients_t				GetMaxClients;
+	pfnEngSrc_Cvar_SetValue_t				Cvar_SetValue;
+	pfnEngSrc_Cmd_Argc_t					Cmd_Argc;
+	pfnEngSrc_Cmd_Argv_t					Cmd_Argv;
+	pfnEngSrc_Con_Printf_t					Con_Printf;
+	pfnEngSrc_Con_DPrintf_t					Con_DPrintf;
+	pfnEngSrc_Con_NPrintf_t					Con_NPrintf;
+	pfnEngSrc_Con_NXPrintf_t				Con_NXPrintf;
+	pfnEngSrc_PhysInfo_ValueForKey_t		PhysInfo_ValueForKey;
+	pfnEngSrc_ServerInfo_ValueForKey_t		ServerInfo_ValueForKey;
+	pfnEngSrc_GetClientMaxspeed_t			GetClientMaxspeed;
+	pfnEngSrc_CheckParm_t					CheckParm;
+	pfnEngSrc_Key_Event_t					Key_Event;
+	pfnEngSrc_GetMousePosition_t			GetMousePosition;
+	pfnEngSrc_IsNoClipping_t				IsNoClipping;
+	pfnEngSrc_GetLocalPlayer_t				GetLocalPlayer;
+	pfnEngSrc_GetViewModel_t				GetViewModel;
+	pfnEngSrc_GetEntityByIndex_t			GetEntityByIndex;
+	pfnEngSrc_GetClientTime_t				GetClientTime;
+	pfnEngSrc_V_CalcShake_t					V_CalcShake;
+	pfnEngSrc_V_ApplyShake_t				V_ApplyShake;
+	pfnEngSrc_PM_PointContents_t			PM_PointContents;
+	pfnEngSrc_PM_WaterEntity_t				PM_WaterEntity;
+	pfnEngSrc_PM_TraceLine_t				PM_TraceLine;
+	pfnEngSrc_CL_LoadModel_t				CL_LoadModel;
+	pfnEngSrc_CL_CreateVisibleEntity_t		CL_CreateVisibleEntity;
+	pfnEngSrc_GetSpritePointer_t			GetSpritePointer;
+	pfnEngSrc_pfnPlaySoundByNameAtLocation_t	pfnPlaySoundByNameAtLocation;
+	pfnEngSrc_pfnPrecacheEvent_t			pfnPrecacheEvent;
+	pfnEngSrc_pfnPlaybackEvent_t			pfnPlaybackEvent;
+	pfnEngSrc_pfnWeaponAnim_t				pfnWeaponAnim;
+	pfnEngSrc_pfnRandomFloat_t				pfnRandomFloat;
+	pfnEngSrc_pfnRandomLong_t				pfnRandomLong;
+	pfnEngSrc_pfnHookEvent_t				pfnHookEvent;
+	pfnEngSrc_Con_IsVisible_t				Con_IsVisible;
+	pfnEngSrc_pfnGetGameDirectory_t			pfnGetGameDirectory;
+	pfnEngSrc_pfnGetCvarPointer_t			pfnGetCvarPointer;
+	pfnEngSrc_Key_LookupBinding_t			Key_LookupBinding;
+	pfnEngSrc_pfnGetLevelName_t				pfnGetLevelName;
+	pfnEngSrc_pfnGetScreenFade_t			pfnGetScreenFade;
+	pfnEngSrc_pfnSetScreenFade_t			pfnSetScreenFade;
+	pfnEngSrc_VGui_GetPanel_t				VGui_GetPanel;
+	pfnEngSrc_VGui_ViewportPaintBackground_t	VGui_ViewportPaintBackground;
+	pfnEngSrc_COM_LoadFile_t				COM_LoadFile;
+	pfnEngSrc_COM_ParseFile_t				COM_ParseFile;
+	pfnEngSrc_COM_FreeFile_t				COM_FreeFile;
+	struct triangleapi_s		*pTriAPI;
+	struct efx_api_s			*pEfxAPI;
+	struct event_api_s			*pEventAPI;
+	struct demo_api_s			*pDemoAPI;
+	struct net_api_s			*pNetAPI;
+	struct IVoiceTweak_s		*pVoiceTweak;
+	pfnEngSrc_IsSpectateOnly_t				IsSpectateOnly;
+	pfnEngSrc_LoadMapSprite_t				LoadMapSprite;
+	pfnEngSrc_COM_AddAppDirectoryToSearchPath_t		COM_AddAppDirectoryToSearchPath;
+	pfnEngSrc_COM_ExpandFilename_t			COM_ExpandFilename;
+	pfnEngSrc_PlayerInfo_ValueForKey_t		PlayerInfo_ValueForKey;
+	pfnEngSrc_PlayerInfo_SetValueForKey_t	PlayerInfo_SetValueForKey;
+	pfnEngSrc_GetPlayerUniqueID_t			GetPlayerUniqueID;
+	pfnEngSrc_GetTrackerIDForPlayer_t		GetTrackerIDForPlayer;
+	pfnEngSrc_GetPlayerForTrackerID_t		GetPlayerForTrackerID;
+	pfnEngSrc_pfnServerCmdUnreliable_t		pfnServerCmdUnreliable;
+	pfnEngSrc_GetMousePos_t					pfnGetMousePos;
+	pfnEngSrc_SetMousePos_t					pfnSetMousePos;
+	pfnEngSrc_SetMouseEnable_t				pfnSetMouseEnable;
+	pfnEngSrc_GetFirstCVarPtr_t				GetFirstCvarPtr;
+	pfnEngSrc_GetFirstCmdFunctionHandle_t	GetFirstCmdFunctionHandle;
+	pfnEngSrc_GetNextCmdFunctionHandle_t	GetNextCmdFunctionHandle;
+	pfnEngSrc_GetCmdFunctionName_t			GetCmdFunctionName;
+	pfnEngSrc_GetClientOldTime_t			hudGetClientOldTime;
+	pfnEngSrc_GetServerGravityValue_t		hudGetServerGravityValue;
+	pfnEngSrc_GetModelByIndex_t				hudGetModelByIndex;
+	pfnEngSrc_pfnSetFilterMode_t			pfnSetFilterMode;
+	pfnEngSrc_pfnSetFilterColor_t			pfnSetFilterColor;
+	pfnEngSrc_pfnSetFilterBrightness_t		pfnSetFilterBrightness;
+	pfnEngSrc_pfnSequenceGet_t				pfnSequenceGet;
+	pfnEngSrc_pfnSPR_DrawGeneric_t			pfnSPR_DrawGeneric;
+	pfnEngSrc_pfnSequencePickSentence_t		pfnSequencePickSentence;
+	pfnEngSrc_pfnDrawString_t				pfnDrawString;
+	pfnEngSrc_pfnDrawStringReverse_t				pfnDrawStringReverse;
+	pfnEngSrc_LocalPlayerInfo_ValueForKey_t		LocalPlayerInfo_ValueForKey;
+	pfnEngSrc_pfnVGUI2DrawCharacter_t		pfnVGUI2DrawCharacter;
+	pfnEngSrc_pfnVGUI2DrawCharacterAdd_t	pfnVGUI2DrawCharacterAdd;
+	pfnEngSrc_COM_GetApproxWavePlayLength	COM_GetApproxWavePlayLength;
+	pfnEngSrc_pfnGetCareerUI_t				pfnGetCareerUI;
+	pfnEngSrc_Cvar_Set_t					Cvar_Set;
+	pfnEngSrc_pfnIsPlayingCareerMatch_t		pfnIsCareerMatch;
+	pfnEngSrc_pfnPlaySoundVoiceByName_t	pfnPlaySoundVoiceByName;
+	pfnEngSrc_pfnPrimeMusicStream_t		pfnPrimeMusicStream;
+	pfnEngSrc_GetAbsoluteTime_t				GetAbsoluteTime;
+	pfnEngSrc_pfnProcessTutorMessageDecayBuffer_t		pfnProcessTutorMessageDecayBuffer;
+	pfnEngSrc_pfnConstructTutorMessageDecayBuffer_t		pfnConstructTutorMessageDecayBuffer;
+	pfnEngSrc_pfnResetTutorMessageDecayData_t		pfnResetTutorMessageDecayData;
+	pfnEngSrc_pfnPlaySoundByNameAtPitch_t	pfnPlaySoundByNameAtPitch;
+	pfnEngSrc_pfnFillRGBABlend_t					pfnFillRGBABlend;
+	pfnEngSrc_pfnGetAppID_t					pfnGetAppID;
+	pfnEngSrc_pfnGetAliases_t				pfnGetAliasList;
+	pfnEngSrc_pfnVguiWrap2_GetMouseDelta_t pfnVguiWrap2_GetMouseDelta;
+	pfnEngSrc_pfnFilteredClientCmd_t		pfnFilteredClientCmd;
+} cl_enginefunc_t;
+
+extern	struct demo_api_s	demoapi;
+extern	struct net_api_s	netapi;
+extern	struct IVoiceTweak_s	g_VoiceTweakAPI;
+extern	struct efx_api_s	efx;
+extern	struct event_api_s	eventapi;
+
+cl_enginefunc_t cl_enginefuncs =
+{
+	SPR_Load,
+	SPR_Frames,
+	SPR_Height,
+	SPR_Width,
+	SPR_Set,
+	SPR_Draw,
+	SPR_DrawHoles,
+	SPR_DrawAdditive,
+	SPR_EnableScissor,
+	SPR_DisableScissor,
+	SPR_GetList,
+	Draw_FillRGBA,
+	hudGetScreenInfo,
+	SetCrosshair,
+	hudRegisterVariable,
+	hudGetCvarFloat,
+	hudGetCvarString,
+	hudAddCommand,
+	hudHookUserMsg,
+	hudServerCmd,
+	hudClientCmd,
+	hudGetPlayerInfo,
+	hudPlaySoundByName,
+	hudPlaySoundByIndex,
+	AngleVectors,
+	TextMessageGet,
+	TextMessageDrawCharacter,
+	Draw_String,
+	Draw_SetTextColor,
+	hudDrawConsoleStringLen,
+	hudConsolePrint,
+	hudCenterPrint,
+	hudCenterX,
+	hudCenterY,
+	hudGetViewAngles,
+	hudSetViewAngles,
+	hudGetMaxClients,
+	Cvar_SetValue,
+	Cmd_Argc,
+	Cmd_Argv,
+	Con_Printf,
+	Con_DPrintf,
+	Con_NPrintf,
+	Con_NXPrintf,
+	hudPhysInfo_ValueForKey,
+	hudServerInfo_ValueForKey,
+	hudGetClientMaxspeed,
+	hudCheckParm,
+	Key_Event,
+	hudGetMousePosition,
+	hudIsNoClipping,
+	hudGetLocalPlayer,
+	hudGetViewModel,
+	hudGetEntityByIndex,
+	hudGetClientTime,
+	V_CalcShake,
+	V_ApplyShake,
+	PM_PointContents,
+	PM_WaterEntity,
+	PM_TraceLine,
+	CL_LoadModel,
+	CL_CreateVisibleEntity,
+	hudGetSpritePointer,
+	hudPlaySoundByNameAtLocation,
+	hudPrecacheEvent,
+	hudPlaybackEvent,
+	hudWeaponAnim,
+	RandomFloat,
+	RandomLong,
+	CL_HookEvent,
+	Con_IsVisible,
+	hudGetGameDir,
+	Cvar_FindVar,
+	Key_NameForBinding,
+	hudGetLevelName,
+	hudGetScreenFade,
+	hudSetScreenFade,
+	VGuiWrap_GetPanel,
+	VGui_ViewportPaintBackground,
+	COM_LoadFile,
+	COM_ParseFile,
+	COM_FreeFile,
+	&tri,
+	&efx,
+	&eventapi,
+	&demoapi,
+	&netapi,
+	&g_VoiceTweakAPI,
+	CL_IsSpectateOnly,
+	R_LoadMapSprite,
+	COM_AddAppDirectoryToSearchPath,
+	ClientDLL_ExpandFileName,
+	PlayerInfo_ValueForKey,
+	PlayerInfo_SetValueForKey,
+	GetPlayerUniqueID,
+	GetTrackerIDForPlayer,
+	GetPlayerForTrackerID,
+	hudServerCmdUnreliable,
+	GetMousePos_guess,
+	SetMousePos_guess,
+	SetMouseEnable,
+	GetFirstCVarPtr,
+	GetFirstCmdFunctionHandle,
+	GetNextCmdFunctionHandle,
+	GetCmdFunctionName,
+	hudGetClientOldTime,
+	hudGetServerGravityValue,
+	hudGetModelByIndex,
+	SetFilterMode,
+	SetFilterColor,
+	SetFilterBrightness,
+	SequenceGet,
+	SPR_DrawGeneric,
+	SequencePickSentence,
+	VGUI2_DrawStringClient,
+	VGUI2_DrawStringReverseClient,
+	LocalPlayerInfo_ValueForKey,
+	VGUI2_Draw_Character,
+	VGUI2_Draw_CharacterAdd,
+	COM_GetApproxWavePlayLength,
+	VguiWrap2_GetCareerUI,
+	Cvar_Set,
+	VGuiWrap2_IsInCareerMatch,
+	hudPlaySoundVoiceByName,
+	PrimeMusicStream,
+	Sys_FloatTime,
+	ProcessTutorMessageDecayBuffer,
+	ConstructTutorMessageDecayBuffer,
+	ResetTutorMessageDecayData,
+	hudPlaySoundByNameAtPitch,
+	Draw_FillRGBABlend,
+	GetGameAppID,
+	GetAliasesList,
+	VguiWrap2_GetMouseDelta,
+	hudFilteredClientCmd,
+};
+
+cldll_func_dst_t g_cldstAddrs =
+{
+	NullDst,
+	NullDst,
+	NullDst,
+	NullDst,
+	NullDst,
+	NullDst,
+	NullDst,
+	NullDst,
+	NullDst,
+	NullDst,
+	NullDst,
+	NullDst,
+	NullDst,
+	NullDst,
+	NullDst,
+	NullDst,
+	NullDst,
+	NullDst,
+	NullDst,
+	NullDst,
+	NullDst,
+	NullDst,
+	NullDst,
+	NullDst,
+	NullDst,
+	NullDst,
+	NullDst,
+	NullDst,
+	NullDst,
+	NullDst,
+	NullDst,
+	NullDst,
+	NullDst,
+	NullDst,
+	NullDst,
+	NullDst,
+	NullDst,
+	NullDst,
+	NullDst,
+	NullDst,
+	NullDst,
+	NullDst,
+};
+
+int			cdll_unknown_guess = 4;	// unreferenced; follows g_cldstAddrs in the retail .data
+
+qboolean	fClientLoaded = false;
+HMODULE		hClientDLL = NULL;
+int			g_bTamperTrap_guess = 0;
 extern	cmdalias_t					*cmd_alias;
 extern	cvar_t						sv_gravity;
 extern	int							window_center_x, window_center_y;

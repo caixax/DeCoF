@@ -119,6 +119,7 @@ float		beamlength = 16;
 vec3_t		avelocity = { 23, 7, 3 };
 float		partstep = 0.01;
 float		timescale = 0.01;
+static const float gTracerSize[] = { 0.1, 0.1, 1, 1, 1, 1, 1, 1, 1, 1 };
 
 void	R_TracerDraw( void );
 void	R_BeamDrawList( void );
@@ -1530,8 +1531,6 @@ void R_DrawParticles( void )
 	qglDisable( GL_BLEND );
 	qglDisable( GL_ALPHA_TEST );
 }
-
-static const float gTracerSize[] = { 0.1, 0.1, 1, 1, 1, 1, 1, 1, 1, 1 };
 
 /*
 ===============

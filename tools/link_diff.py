@@ -174,7 +174,10 @@ def parse_map(path):
     for line in open(path, encoding="latin-1"):
         m = pat.match(line)
         if m and m.group(1) != "0000":
-            out.append((int(m.group(4), 16), m.group(3), (m.group(5) or "").strip()))
+            # vc6_anon spells the VC6 dynamic initializers _E$1 for objdiff;
+            # the symbol map and progress.csv keep the compiler's _$E1
+            name = re.sub(r"^_E\$(\d+)$", r"_$E\1", m.group(3))
+            out.append((int(m.group(4), 16), name, (m.group(5) or "").strip()))
     return out
 
 

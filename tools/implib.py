@@ -37,10 +37,17 @@ def main():
             for m in re.findall(rb"__imp__([A-Za-z_][A-Za-z0-9_]*)@([0-9]+)", open(obj, "rb").read()):
                 stdcall[m[0].decode()] = m[1].decode()
     lines = ["LIBRARY %s" % name, "EXPORTS"]
+    asis = set()
     for s in pe.DIRECTORY_ENTRY_EXPORT.symbols:
         if s.name:
             n = s.name.decode()
-            lines.append("\t%s@%s" % (n, stdcall[n]) if n in stdcall else "\t%s" % n)
+            if re.match(r"_[A-Za-z_][A-Za-z0-9_]*@[0-9]+$", n):
+                # the DLL exports the decorated name itself (Miles mss32.dll:
+                # _AIL_startup@0): import it under exactly that name
+                lines.append("\t%s" % n[1:])
+                asis.add(n)
+            else:
+                lines.append("\t%s@%s" % (n, stdcall[n]) if n in stdcall else "\t%s" % n)
     os.makedirs(os.path.dirname(os.path.abspath(out)), exist_ok=True)
     deffile = os.path.splitext(out)[0] + ".def"
     with open(deffile, "w") as f:
@@ -50,16 +57,18 @@ def main():
                           "/out:" + out], env=msvc.env(), stdout=subprocess.DEVNULL)
     if rc != 0:
         sys.exit("lib.exe failed (%d)" % rc)
-    fixed = undecorate(out) if stdcall else 0
+    fixed = undecorate(out, asis) if stdcall or asis else 0
     print("%s: %d exports -> %s%s" % (name, len(lines) - 2, out,
                                       ", %d stdcall imports by undecorated name" % fixed if fixed else ""))
 
 
-def undecorate(lib):
+def undecorate(lib, asis=()):
     """lib.exe gives a .def entry name@n the import name type NAME_NOPREFIX,
     so the importer asks the DLL for "name@n". The DLL exports "name": set
     the short import records of decorated names to NAME_UNDECORATE, which
-    makes the loader look up the name without the underscore and the @n."""
+    makes the loader look up the name without the underscore and the @n.
+    A name in asis is exported decorated (_name@n): its record gets NAME,
+    the symbol name as it is."""
     data = bytearray(open(lib, "rb").read())
     pos, fixed = 8, 0  # after "!<arch>\n"
     while pos + 60 <= len(data):
@@ -68,8 +77,9 @@ def undecorate(lib):
         if data[body:body + 4] == b"\0\0\xff\xff":
             sym = data[body + 20:data.index(b"\0", body + 20)]
             word = int.from_bytes(data[body + 18:body + 20], "little")
-            if re.match(rb"_[A-Za-z_][A-Za-z0-9_]*@[0-9]+$", bytes(sym)) and (word >> 2) & 7 != 3:
-                word = (word & ~(7 << 2)) | (3 << 2)
+            want = 1 if bytes(sym).decode("latin-1") in asis else 3
+            if re.match(rb"_[A-Za-z_][A-Za-z0-9_]*@[0-9]+$", bytes(sym)) and (word >> 2) & 7 != want:
+                word = (word & ~(7 << 2)) | (want << 2)
                 data[body + 18:body + 20] = word.to_bytes(2, "little")
                 fixed += 1
         pos = body + size + (size & 1)
