@@ -2149,7 +2149,7 @@ client,1007E870,39,??_GID3_Tag@@UAEPAXI@Z,,COF,cl_dll/MP3FileInfo.cpp,,,MATCHED,
 client,1007E8A0,373,?Free@MP3FileInfo@@QAEXXZ,,COF,cl_dll/MP3FileInfo.cpp,,,MATCHED,100,,
 client,1007EA20,456,?GetTitle_guess@MP3FileInfo@@QAEPADPBD@Z,,COF,cl_dll/MP3FileInfo.cpp,,,MATCHED,100,,
 client,1007EBF0,440,?Init@MP3FileInfo@@QAE_NPBD@Z,,COF,cl_dll/MP3FileInfo.cpp,,,MATCHED,100,,
-client,1007EDB0,1090,?ShowAllFrames@MP3FileInfo@@QAEXXZ,,COF,cl_dll/MP3FileInfo.cpp,,,EQUIVALENT,87.05,,"EQUIVALENT: the compiled function is byte-identical to retail with relocations masked (standalone comparison by the mp3 agent); objdiff scores 87% because the retail object cuts the two catch funclets (1007F13E, 1007F188) differently from our COMDAT"
+client,1007EDB0,1095,?ShowAllFrames@MP3FileInfo@@QAEXXZ,,COF,cl_dll/MP3FileInfo.cpp,,,MATCHED,100,,
 client,1007F200,188,?m_getNewString@MP3FileInfo@@IAEPADW4ID3_FrameID@@@Z,,COF,cl_dll/MP3FileInfo.cpp,,,MATCHED,100,,
 client,1007F2C0,248,?m_getString@MP3FileInfo@@IAE_NW4ID3_FrameID@@PAD@Z,,COF,cl_dll/MP3FileInfo.cpp,,,MATCHED,100,,
 client,1007F3C0,266,?m_parseGenre@MP3FileInfo@@IAEXXZ,,COF,cl_dll/MP3FileInfo.cpp,,,MATCHED,100,,
