@@ -54,12 +54,12 @@ int		hwPlayVoice_guess( void *voice, int mode );
 int		hwStopVoice_guess( void *voice );
 int		hwResetVoice_guess( void *voice );
 int		hwSetVoicePosition_guess( void *voice, vec_t *origin );
-int		hwSetVoiceVolume_guess( void *voice, float volume );
+int		A3DSource_SetGain_guess( void *voice, float gain );
 int		hwSetVoiceDoppler_guess( void *voice, float doppler );
 int		hwSetVoiceDistance_guess( void *voice, float dist );
 int		hwSetVoiceRolloff_guess( void *voice, float rolloff );
-int		hwSetVoiceOcclusions_guess( void *voice, int occlude );
 int		hwSetVoiceReflections_guess( void *voice, int reflect );
+int		hwSetVoiceOcclusions_guess( void *voice, int occlude );
 int		hwSetVoiceMinMaxDistance_guess( void *voice, float mindist, float maxdist );
 int		hwIsVoicePlaying_guess( void *voice );
 int		hwOpenStream_guess( void );
@@ -69,7 +69,7 @@ int		hwStopStream_guess( void );
 int		hwSet2DVolume_guess( float vol );
 int		hwLockVoice_guess( void *voice, int offset, int size, void **ppData1, DWORD *pSize1, void **ppData2, DWORD *pSize2 );
 int		hwUnlockVoice_guess( void *voice, void *pData1, DWORD size1, void *pData2, DWORD size2 );
-int		hwSetVoiceOffset_guess( void *voice, int offset );
+int		A3DSource_SetStreamPos_guess( void *voice, int pos );
 
 float	hwVolumeToGain_guess( int left, int right );
 void	*hwGetVoice_guess( int slot );
@@ -816,8 +816,8 @@ void hwSetChannelDistance_guess( int ch_idx, float dist )
 
 	if ( dist == 0 )
 	{
-		hwSetVoiceOcclusions_guess( voice, 0 );
 		hwSetVoiceReflections_guess( voice, 0 );
+		hwSetVoiceOcclusions_guess( voice, 0 );
 		hwSetVoiceMinMaxDistance_guess( voice, 1000000000.0, 2000000000.0 );
 	}
 	else
@@ -1249,9 +1249,9 @@ void hwRestart_guess( void )
 
 			bLoop2_guess = nSc_guess->loopstart >= 0;
 			hwSetChannelPos_guess( i_guess, c_guess->pos );
-			hwSetVoiceOffset_guess( hw_guess, c_guess->pos );
+			A3DSource_SetStreamPos_guess( hw_guess, c_guess->pos );
 			hwSetChannelDistance_guess( i_guess, c_guess->dist_mult / sound_nominal_clip_dist );
-			hwSetVoiceVolume_guess( hw_guess, c_guess->master_vol / 255.0f );
+			A3DSource_SetGain_guess( hw_guess, c_guess->master_vol / 255.0f );
 			hwSetVoiceRelative_guess( hw_guess, cl_entities[c_guess->entnum].curstate.movetype == MOVETYPE_NONE );
 			if ( bLoop2_guess )
 				hwSetChannelState_guess( i_guess, 2 );

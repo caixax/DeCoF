@@ -3092,15 +3092,15 @@ A3D HARDWARE VOICES
 
 // the A3D source wrappers of the Aureal renderer library (names unproven)
 void	A3D_SetCurrentSfx_guess( sfx_t *sfx );
-int		A3DSource_Play_guess( void *hvoice, int mode );
-int		A3DSource_Stop_guess( void *hvoice );
-int		A3DSource_Flush_guess( void *hvoice );
-int		A3DSource_SetPosition_guess( void *hvoice, vec_t *origin );
+int		hwPlayVoice_guess( void *hvoice, int mode );
+int		hwStopVoice_guess( void *hvoice );
+int		hwResetVoice_guess( void *hvoice );
+int		hwSetVoicePosition_guess( void *hvoice, vec_t *origin );
 int		A3DSource_SetGain_guess( void *hvoice, float gain );
 int		A3DSource_SetPitch_guess( void *hvoice, float pitch );
-int		A3DSource_SetRenderMode_guess( void *hvoice, int mode );
-int		A3DSource_IsPlaying_guess( void *hvoice );
-int		A3DSource_Unlock_guess( void *hvoice, void *pbuf1, DWORD cb1, void *pbuf2, DWORD cb2 );
+int		hwSetVoiceOcclusions_guess( void *hvoice, int occlude );
+int		hwIsVoicePlaying_guess( void *hvoice );
+int		hwUnlockVoice_guess( void *hvoice, void *pbuf1, DWORD cb1, void *pbuf2, DWORD cb2 );
 int		A3DSource_Lock_guess( void *hvoice, int size, void **pbuf1, DWORD *cb1, void **pbuf2, DWORD *cb2, DWORD flags );
 int		A3DSource_GetFreeSamples_guess( void *hvoice );
 int		A3DSource_Update_guess( void *hvoice );
@@ -3150,14 +3150,14 @@ int hwPaintChannel_guess( int ch_idx, channel_t *ch, sfxcache_t *sc, int count, 
 		pos_guess[1] = fwd_guess * listener_forward[1] + listener_origin[1];
 		pos_guess[2] = fwd_guess * listener_forward[2] + listener_origin[2];
 
-		A3DSource_SetRenderMode_guess( hVoice_guess, 0 );
+		hwSetVoiceOcclusions_guess( hVoice_guess, 0 );
 	}
 	else
 	{
 		VectorCopy( ch->origin, pos_guess );
 	}
 
-	A3DSource_SetPosition_guess( hVoice_guess, pos_guess );
+	hwSetVoicePosition_guess( hVoice_guess, pos_guess );
 	A3DSource_SetGain_guess( hVoice_guess, ch->master_vol / 255.0f );
 	hwSetChannelDistance_guess( ch_idx, sound_nominal_clip_dist * ch->dist_mult );
 
@@ -3211,7 +3211,7 @@ int hA3D_FeedBuffer( void *hvoice, int ch_idx, channel_t *ch, sfxcache_t *sc, in
 				A3DSource_GetDone_guess( hvoice, &done_guess );
 				if ( done_guess )
 				{
-					A3DSource_Flush_guess( hvoice );
+					hwResetVoice_guess( hvoice );
 					hwSetChannelState_guess( ch_idx, 0 );
 					hwSetChannelPos_guess( ch_idx, 0 );
 					A3DSource_SetStreamPos_guess( hvoice, 0 );
@@ -3224,7 +3224,7 @@ int hA3D_FeedBuffer( void *hvoice, int ch_idx, channel_t *ch, sfxcache_t *sc, in
 			case 5:
 			case 6:
 			case 7:
-				A3DSource_Flush_guess( hvoice );
+				hwResetVoice_guess( hvoice );
 				hwSetChannelState_guess( ch_idx, 0 );
 				hwSetSlotChannel_guess( hwFindChannelSlot_guess( ch_idx ), -1 );
 				return 0;
@@ -3235,7 +3235,7 @@ int hA3D_FeedBuffer( void *hvoice, int ch_idx, channel_t *ch, sfxcache_t *sc, in
 		}
 		else if ( !ch->leftvol && !ch->rightvol )
 		{
-			A3DSource_Stop_guess( hvoice );
+			hwStopVoice_guess( hvoice );
 			return 0;
 		}
 	}
@@ -3251,7 +3251,7 @@ int hA3D_FeedBuffer( void *hvoice, int ch_idx, channel_t *ch, sfxcache_t *sc, in
 
 	if ( ( oldstate_guess == 2 || oldstate_guess == 6 ) && !looping_guess )
 	{
-		A3DSource_Flush_guess( hvoice );
+		hwResetVoice_guess( hvoice );
 		oldstate_guess = 1;
 	}
 
@@ -3270,7 +3270,7 @@ int hA3D_FeedBuffer( void *hvoice, int ch_idx, channel_t *ch, sfxcache_t *sc, in
 		A3DSource_GetDone_guess( hvoice, &done_guess );
 		if ( done_guess )
 		{
-			A3DSource_Flush_guess( hvoice );
+			hwResetVoice_guess( hvoice );
 			hwSetChannelState_guess( ch_idx, 0 );
 			hwSetChannelPos_guess( ch_idx, 0 );
 			A3DSource_SetStreamPos_guess( hvoice, 0 );
@@ -3284,7 +3284,7 @@ int hA3D_FeedBuffer( void *hvoice, int ch_idx, channel_t *ch, sfxcache_t *sc, in
 
 	case 5:
 	case 7:
-		A3DSource_Flush_guess( hvoice );
+		hwResetVoice_guess( hvoice );
 		streampos_guess = 0;
 		// fall through
 
@@ -3327,10 +3327,10 @@ int hA3D_FeedBuffer( void *hvoice, int ch_idx, channel_t *ch, sfxcache_t *sc, in
 				for ( pdst_guess = (short *)pbuf2_guess, j_guess = 0; j_guess < cb2_guess / 2; j_guess++, pdst_guess++, psrc8_guess++ )
 					*pdst_guess = ( *psrc8_guess << 8 ) ^ 0x80;
 
-				if ( A3DSource_Unlock_guess( hvoice, pbuf1_guess, cb1_guess, pbuf2_guess, cb2_guess ) < 0
-					&& A3DSource_Unlock_guess( hvoice, pbuf1_guess, cb1_guess, pbuf2_guess, cb2_guess ) < 0 )
+				if ( hwUnlockVoice_guess( hvoice, pbuf1_guess, cb1_guess, pbuf2_guess, cb2_guess ) < 0
+					&& hwUnlockVoice_guess( hvoice, pbuf1_guess, cb1_guess, pbuf2_guess, cb2_guess ) < 0 )
 				{
-					A3DSource_Stop_guess( hvoice );
+					hwStopVoice_guess( hvoice );
 					return -1;
 				}
 			}
@@ -3380,9 +3380,9 @@ int hA3D_FeedBuffer( void *hvoice, int ch_idx, channel_t *ch, sfxcache_t *sc, in
 	{
 		hwStopChannel_guess( ch_idx );
 	}
-	else if ( !A3DSource_IsPlaying_guess( hvoice ) )
+	else if ( !hwIsVoicePlaying_guess( hvoice ) )
 	{
-		A3DSource_Play_guess( hvoice, -1 );
+		hwPlayVoice_guess( hvoice, -1 );
 	}
 
 	return 1;

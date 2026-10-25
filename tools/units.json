@@ -4177,28 +4177,7 @@
                 "024FBCA4",
                 "024FBCB0"
               ]
-            ],
-            "aliases_note": "SND_MIX.C calls these entry points by the names below; engine/hla3d_guess.cpp and the symbol map use other _guess names for some of the same addresses (paired by the call order of each SND_MIX function against retail)",
-            "aliases": {
-              "01E14E40": "_A3D_SetCurrentSfx_guess",
-              "01E15720": "_A3DSource_Play_guess",
-              "01E15740": "_A3DSource_Stop_guess",
-              "01E15760": "_A3DSource_Flush_guess",
-              "01E15780": "_A3DSource_SetPosition_guess",
-              "01E15810": "_A3DSource_SetGain_guess",
-              "01E158D0": "_A3DSource_SetPitch_guess",
-              "01E15990": "_A3DSource_SetRenderMode_guess",
-              "01E15A10": "_A3DSource_IsPlaying_guess",
-              "01E15BC0": "_A3DSource_Unlock_guess",
-              "01E15BF0": "_A3DSource_Lock_guess",
-              "01E15C30": "_A3DSource_GetFreeSamples_guess",
-              "01E15C70": "_A3DSource_Update_guess",
-              "01E15C90": "_A3DSource_GetDone_guess",
-              "01E15CB0": "_A3DSource_Feed16_guess",
-              "01E15CE0": "_A3DSource_Restart_guess",
-              "01E15D50": "_A3DSource_GetStreamPos_guess",
-              "01E15D70": "_A3DSource_SetStreamPos_guess"
-            }
+            ]
           },
           {
             "name": "mss32",
