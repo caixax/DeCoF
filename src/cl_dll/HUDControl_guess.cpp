@@ -210,11 +210,16 @@ int MsgControlHint_guess( const char *pszName, int iSize, void *pbuf )
 			int iLen = 0;
 			for ( unsigned int i = 0; i < strlen( gViewPort->m_pHUDControl_guess->m_szHintLine1_guess ); i++ )
 			{
-				iLen++;
 				if ( gViewPort->m_pHUDControl_guess->m_szHintLine1_guess[i] == '@' )
+				{
+					iLen++;
 					szText[i] = ' ';
+				}
 				else
+				{
+					iLen++;
 					szText[i] = gViewPort->m_pHUDControl_guess->m_szHintLine1_guess[i];
+				}
 			}
 			szText[iLen] = '\0';
 

@@ -1203,7 +1203,7 @@ client,10039210,446,?LogoUpdate_guess@CHUDControl@@QAEXXZ,CHUDControl::LogoUpdat
 client,100393D0,84,?MsgCameraZoom_guess@@YAHPBDHPAX@Z,MsgCameraZoom_guess,COF,guess:cl_dll/HUDControl_guess.cpp,,,MATCHED,100,client_manual.csv,
 client,10039430,304,?MsgChapter_guess@@YAHPBDHPAX@Z,MsgChapter_guess,COF,guess:cl_dll/HUDControl_guess.cpp,,,MATCHED,100,client_manual.csv,
 client,10039560,641,?MsgCoFLogo_guess@@YAHPBDHPAX@Z,MsgCoFLogo_guess,COF,guess:cl_dll/HUDControl_guess.cpp,,,MATCHED,100,client_manual.csv,
-client,10039800,534,?MsgControlHint_guess@@YAHPBDHPAX@Z,MsgControlHint_guess,COF,guess:cl_dll/HUDControl_guess.cpp,,,EQUIVALENT,99.58,client_manual.csv,EQUIVALENT: esi and edi swapped between the HUDControl pointer and the counter in the @ replacement loop (10 attempts)
+client,10039800,534,?MsgControlHint_guess@@YAHPBDHPAX@Z,MsgControlHint_guess,COF,guess:cl_dll/HUDControl_guess.cpp,,,MATCHED,100,client_manual.csv,
 client,10039A20,71,?MsgDevDonator_guess@@YAHPBDHPAX@Z,MsgDevDonator_guess,COF,guess:cl_dll/HUDControl_guess.cpp,,,MATCHED,100,client_manual.csv,
 client,10039A70,485,?MsgHealthCap_guess@@YAHPBDHPAX@Z,MsgHealthCap_guess,COF,guess:cl_dll/HUDControl_guess.cpp,,,MATCHED,100,client_manual.csv,
 client,10039C60,34,?MsgHoldBreath_guess@@YAHPBDHPAX@Z,MsgHoldBreath_guess,COF,guess:cl_dll/HUDControl_guess.cpp,,,MATCHED,100,client_manual.csv,
