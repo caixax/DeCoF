@@ -3304,7 +3304,12 @@
         {
           "name": "iga/IGA_Engine_guess",
           "source": "src/iga/IGA_Engine_guess.cpp",
-          "functions_file": "tools/units/hw_iga_IGA_Engine_guess.txt"
+          "functions_file": "tools/units/hw_iga_IGA_Engine_guess.txt",
+          "includes": [
+            "src/engine_hw",
+            "src/public",
+            "src/common"
+          ]
         },
         {
           "name": "mathlib/imagequant",
