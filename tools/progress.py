@@ -26,30 +26,62 @@ import subprocess
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DOCS = os.path.join(ROOT, "docs")
 
-# CSV dll key -> binary name, in report order
+# CSV dll key -> binary name, in the priority order of the scope (AGENTS.md)
 BINARIES = [
-    ("client", "client.dll"),
     ("hl", "hl.dll"),
-    ("opengl32", "opengl32.dll"),
+    ("client", "client.dll"),
     ("hw", "hw.dll"),
+    ("opengl32", "opengl32.dll"),
     ("gameui", "GameUI.dll"),
     ("launcher", "cof.exe"),
     ("coflaunchapp", "CoFLaunchApp.exe"),
 ]
 # binaries given a category table in PROGRESS.md and counted in "shown_total"
-SHOWN = ["client", "hl", "opengl32", "coflaunchapp"]
-# why a binary has not started, drawn next to its bar in the SVG
-NOTES = {
-    "hw": "not started (VC6 installed; processor pack and VS 2005 objects need those compilers)",
-    "gameui": "not started (VC6 installed)",
-    "launcher": "not started (VC6 installed)",
+SHOWN = [key for key, _name in BINARIES]
+# what each binary is and what built it, drawn after its name in the SVG
+ABOUT = {
+    "hl": "server game DLL, MSVC 14.27",
+    "client": "client DLL with the Paranoia renderer, MSVC 14.27",
+    "hw": "GoldSrc engine, Visual C++ 6.0",
+    "opengl32": "Paranoia OpenGL wrapper, Visual C++ 6.0",
+    "gameui": "menus (VGUI2), Visual C++ 6.0",
+    "launcher": "engine launcher, Visual C++ 6.0",
+    "coflaunchapp": "settings launcher, C# 4",
 }
+# why a binary has not started, drawn next to its bar in the SVG
+NOTES = {}
 # in scope but not in the CSV yet: (name, note)
 NOT_INVENTORIED = []
-CATEGORIES = ["HLSDK", "PARANOIA", "SPIRIT", "COF", "UNKNOWN"]
+CATEGORIES = ["HLSDK", "PARANOIA", "SPIRIT", "COF", "ENGINE", "UNKNOWN"]
 STATES = ["MATCHED", "EQUIVALENT", "TODO"]
 
-COLORS = {"MATCHED": "#2da44e", "EQUIVALENT": "#d4a72c", "TODO": "#afb8c1"}
+# SVG colors, light and dark: the bar fills are two validated categorical
+# hues (blue, orange; CVD and contrast checked against both surfaces), TODO
+# is the neutral track; text uses ink colors, never a fill color
+SVG_STYLE = """
+text { font-family: system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; }
+.num { font-variant-numeric: tabular-nums; }
+.bg { fill: #fcfcfb; stroke: rgba(11, 11, 11, 0.10); }
+.tile { fill: #f3f2ee; }
+.rule { stroke: #e1e0d9; }
+.t1 { fill: #0b0b0b; }
+.t2 { fill: #52514e; }
+.t3 { fill: #6f6e69; }
+.MATCHED { fill: #2a78d6; }
+.EQUIVALENT { fill: #eb6834; }
+.TODO { fill: #dcdbd4; }
+@media (prefers-color-scheme: dark) {
+  .bg { fill: #1a1a19; stroke: rgba(255, 255, 255, 0.10); }
+  .tile { fill: #242422; }
+  .rule { stroke: #2c2c2a; }
+  .t1 { fill: #f0efec; }
+  .t2 { fill: #c3c2b7; }
+  .t3 { fill: #9a9890; }
+  .MATCHED { fill: #3987e5; }
+  .EQUIVALENT { fill: #d95926; }
+  .TODO { fill: #383835; }
+}
+"""
 
 
 def empty():
@@ -128,82 +160,126 @@ def esc(s):
     return s.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
 
 
-def write_svg(per, meta):
-    width = 760
-    pad = 24
-    bar_w = width - 2 * pad
-    rows = [(name, per[key], NOTES.get(key)) for key, name in BINARIES]
-    rows += [(name, None, note) for name, note in NOT_INVENTORIED]
-    shown = empty()
-    total = empty()
-    for key, name in BINARIES:
-        merge(total, per[key])
-        if key in SHOWN:
-            merge(shown, per[key])
-    rows.append(("Started binaries (%s)" % ", ".join(n for k, n in BINARIES if k in SHOWN), shown, None))
-    rows.append(("All binaries (CoFLaunchApp.exe not counted yet)", total, None))
+DOT = " &#183; "
 
-    row_h = 74
-    top = 78
-    height = top + row_h * len(rows) + 28
-    font = "font-family=\"Segoe UI, Helvetica, Arial, sans-serif\""
-    o = []
-    o.append('<svg xmlns="http://www.w3.org/2000/svg" width="%d" height="%d" viewBox="0 0 %d %d" role="img" '
-             'aria-label="Cry of Fear decompilation progress">' % (width, height, width, height))
-    # own card background, so the text reads the same on light and dark pages
-    o.append('<rect x="0.5" y="0.5" width="%d" height="%d" rx="10" fill="#ffffff" stroke="#d0d7de"/>'
-             % (width - 1, height - 1))
-    o.append('<text x="%d" y="34" %s font-size="20" font-weight="600" fill="#1f2328">'
-             'Cry of Fear decompilation progress</text>' % (pad, font))
-    # legend
-    lx = pad
-    for state in STATES:
-        o.append('<rect x="%d" y="48" width="12" height="12" rx="2" fill="%s"/>' % (lx, COLORS[state]))
-        o.append('<text x="%d" y="58.5" %s font-size="12" fill="#1f2328">%s</text>' % (lx + 17, font, state))
-        lx += 17 + 8 * len(state) + 26
-    o.append('<text x="%d" y="58.5" %s font-size="12" fill="#57606a" text-anchor="end">'
-             'percent of code bytes, function counts in brackets</text>' % (width - pad, font))
-    y = top
-    for name, d, note in rows:
-        if d is None:
-            # in scope, no rows in the CSV yet
-            o.append('<text x="%d" y="%d" %s font-size="14" font-weight="600" fill="#1f2328">%s</text>'
-                     % (pad, y + 14, font, esc(name)))
-            o.append('<text x="%d" y="%d" %s font-size="14" font-weight="600" fill="#1f2328" text-anchor="end">'
-                     'not started</text>' % (width - pad, y + 14, font))
-            o.append('<rect x="%d" y="%d" width="%d" height="18" rx="4" fill="%s"/>'
-                     % (pad, y + 22, bar_w, COLORS["TODO"]))
-            o.append('<text x="%d" y="%d" %s font-size="12" fill="#57606a">%s</text>'
-                     % (pad, y + 56, font, esc(note)))
-            y += row_h
-            continue
-        b, fn = d["bytes"], d["functions"]
-        done = pct(b["MATCHED"] + b["EQUIVALENT"], b["total"])
-        o.append('<text x="%d" y="%d" %s font-size="14" font-weight="600" fill="#1f2328">%s</text>'
-                 % (pad, y + 14, font, esc(name)))
-        o.append('<text x="%d" y="%d" %s font-size="14" font-weight="600" fill="#1f2328" text-anchor="end">'
-                 '%.1f%% done (%d of %d functions)</text>'
-                 % (width - pad, y + 14, font, done, fn["MATCHED"] + fn["EQUIVALENT"], fn["total"]))
-        by = y + 22
-        o.append('<rect x="%d" y="%d" width="%d" height="18" rx="4" fill="%s"/>' % (pad, by, bar_w, COLORS["TODO"]))
-        x = float(pad)
-        for state in ("MATCHED", "EQUIVALENT"):
-            w = bar_w * (b[state] / b["total"]) if b["total"] else 0.0
-            if w > 0:
-                o.append('<rect x="%.2f" y="%d" width="%.2f" height="18" fill="%s"/>' % (x, by, w, COLORS[state]))
-            x += w
-        detail = "MATCHED %.1f%% (%d)   EQUIVALENT %.1f%% (%d)   TODO %.1f%% (%d)   %d code bytes" % (
-            pct(b["MATCHED"], b["total"]), fn["MATCHED"], pct(b["EQUIVALENT"], b["total"]), fn["EQUIVALENT"],
-            pct(b["TODO"], b["total"]), fn["TODO"], b["total"])
-        if note:
-            detail += "   (%s)" % note
-        o.append('<text x="%d" y="%d" %s font-size="12" fill="#57606a" xml:space="preserve">%s</text>'
-                 % (pad, by + 34, font, esc(detail)))
+
+def pct_label(v):
+    """One decimal, but 99.96 prints as 99.9, so only a complete figure reads 100."""
+    return "100" if v >= 100.0 else "%.1f" % min(round(v, 1), 99.9)
+
+
+def bar_segments(b, x0, width, gap=2.0, least=2.0):
+    """(state, x, w) of the MATCHED, EQUIVALENT and TODO parts of a bar,
+    byte weighted, with a surface gap between parts; a non-empty part is
+    at least `least` wide so a sliver stays visible."""
+    parts = [(s, b[s]) for s in STATES if b[s] > 0]
+    if not parts or not b["total"]:
+        return [("TODO", x0, width)]
+    room = width - gap * (len(parts) - 1)
+    ws = [max(least, room * n / b["total"]) for _s, n in parts]
+    scale = room / sum(ws)
+    out, x = [], float(x0)
+    for (s, _n), w in zip(parts, ws):
+        out.append((s, x, w * scale))
+        x += w * scale + gap
+    return out
+
+
+def write_svg(per, meta):
+    W, P = 880, 32
+    total = empty()
+    for key, _name in BINARIES:
+        merge(total, per[key])
+    fn, b = total["functions"], total["bytes"]
+    done_fn = fn["MATCHED"] + fn["EQUIVALENT"]
+
+    row_h, rows_top = 66, 286
+    n_rows = len(BINARIES) + len(NOT_INVENTORIED)
+    foot_y = rows_top + n_rows * row_h + 8
+    H = foot_y + 38
+    o = ['<svg xmlns="http://www.w3.org/2000/svg" width="%d" height="%d" viewBox="0 0 %d %d" role="img" '
+         'aria-labelledby="title desc">' % (W, H, W, H),
+         '<title id="title">DeCoF progress</title>',
+         '<desc id="desc">Matching decompilation of Cry of Fear %s: %s of %s in-scope functions rebuilt, '
+         '%s byte-identical (MATCHED), %s logic-verified (EQUIVALENT), %s%% of code bytes identical.</desc>'
+         % (meta["version"], "{:,}".format(done_fn), "{:,}".format(fn["total"]), "{:,}".format(fn["MATCHED"]),
+            "{:,}".format(fn["EQUIVALENT"]), pct_label(pct(b["MATCHED"], b["total"]))),
+         "<style>%s</style>" % SVG_STYLE,
+         # own card, so the chart reads the same on any page background
+         '<rect class="bg" x="0.5" y="0.5" width="%d" height="%d" rx="12"/>' % (W - 1, H - 1)]
+
+    # header
+    o.append('<text class="t1" x="%d" y="54" font-size="30" font-weight="700">DeCoF</text>' % P)
+    o.append('<text class="t2" x="%d" y="78" font-size="14">Cry of Fear %s rebuilt from source with the original '
+             'compilers, function by function</text>' % (P, esc(meta["version"])))
+
+    # one hero figure, then three stat tiles
+    o.append('<text class="t1" x="%d" y="160" font-size="56" font-weight="700">%s%%</text>'
+             % (P, pct_label(pct(done_fn, fn["total"]))))
+    o.append('<text class="t2" x="%d" y="186" font-size="13">of %s functions in scope rebuilt</text>'
+             % (P, "{:,}".format(fn["total"])))
+    tiles = [("{:,}".format(fn["MATCHED"]), "byte-identical (MATCHED)"),
+             ("{:,}".format(fn["EQUIVALENT"]), "logic-verified (EQUIVALENT)"),
+             ("%s%%" % pct_label(pct(b["MATCHED"], b["total"])), "of code bytes identical")]
+    tx, tgap = 300, 12
+    tw = (W - P - tx - tgap * (len(tiles) - 1)) / float(len(tiles))
+    for i, (value, label) in enumerate(tiles):
+        x = tx + i * (tw + tgap)
+        o.append('<rect class="tile" x="%.1f" y="106" width="%.1f" height="86" rx="10"/>' % (x, tw))
+        o.append('<text class="t1" x="%.1f" y="150" font-size="28" font-weight="600">%s</text>' % (x + 16, value))
+        o.append('<text class="t2" x="%.1f" y="174" font-size="12">%s</text>' % (x + 16, esc(label)))
+
+    # section header with the legend
+    o.append('<line class="rule" x1="%d" y1="222.5" x2="%d" y2="222.5" stroke-width="1"/>' % (P, W - P))
+    o.append('<text class="t1" x="%d" y="252" font-size="15" font-weight="600">Per binary</text>' % P)
+    o.append('<text class="t3" x="%d" y="270" font-size="12">bar length: share of code bytes; '
+             'toolchain code (static CRT, STL) is not counted</text>' % P)
+    # one right-aligned run (square glyph in the state color, then the label in ink), so no text widths are guessed
+    o.append('<text x="%d" y="252" font-size="12" text-anchor="end">%s</text>' % (W - P, "".join(
+        '<tspan class="%s" font-size="14"%s>&#9632;</tspan><tspan class="t2" dx="5">%s</tspan>'
+        % (state, ' dx="16"' if i else "", state) for i, state in enumerate(STATES))))
+
+    y = rows_top
+    for key, name in BINARIES:
+        d = per[key]
+        rb, rf = d["bytes"], d["functions"]
+        ident = pct_label(pct(rb["MATCHED"], rb["total"]))
+        o.append("<g><title>%s: %s%% of code bytes identical; %s MATCHED, %s EQUIVALENT, %s TODO</title>" % (
+            esc(name), ident, "{:,}".format(rf["MATCHED"]), "{:,}".format(rf["EQUIVALENT"]),
+            "{:,}".format(rf["TODO"])))
+        o.append('<text x="%d" y="%d"><tspan class="t1" font-size="15" font-weight="600">%s</tspan>'
+                 '<tspan class="t3" font-size="12" dx="10">%s</tspan></text>'
+                 % (P, y + 16, esc(name), esc(ABOUT.get(key, ""))))
+        o.append('<text class="t1 num" x="%d" y="%d" font-size="14" font-weight="600" text-anchor="end">'
+                 '%s%% identical</text>' % (W - P, y + 16, ident))
+        by, bh = y + 26, 12
+        o.append('<clipPath id="bar-%s"><rect x="%d" y="%d" width="%d" height="%d" rx="4"/></clipPath>'
+                 % (key, P, by, W - 2 * P, bh))
+        o.append('<g clip-path="url(#bar-%s)">' % key)
+        for state, x, w in bar_segments(rb, P, W - 2 * P):
+            o.append('<rect class="%s" x="%.2f" y="%d" width="%.2f" height="%d"/>' % (state, x, by, w, bh))
+        o.append("</g>")
+        detail = DOT.join(["%s MATCHED" % "{:,}".format(rf["MATCHED"]),
+                           "%s EQUIVALENT" % "{:,}".format(rf["EQUIVALENT"]),
+                           "%s TODO" % "{:,}".format(rf["TODO"]),
+                           "%s code bytes" % "{:,}".format(rb["total"])])
+        if NOTES.get(key):
+            detail += DOT + esc(NOTES[key])
+        o.append('<text class="t2 num" x="%d" y="%d" font-size="12">%s</text>' % (P, by + 30, detail))
+        o.append("</g>")
         y += row_h
-    foot = "Target build %s | commit %s | %s | numbers from docs/progress.csv" % (
-        meta["version"], meta["commit"] or "unknown", meta["date"] or "unknown")
-    o.append('<text x="%d" y="%d" %s font-size="11" fill="#57606a">%s</text>'
-             % (pad, height - 16, font, esc(foot)))
+    for name, note in NOT_INVENTORIED:
+        o.append('<text class="t1" x="%d" y="%d" font-size="15" font-weight="600">%s</text>' % (P, y + 16, esc(name)))
+        o.append('<rect class="TODO" x="%d" y="%d" width="%d" height="12" rx="4"/>' % (P, y + 26, W - 2 * P))
+        o.append('<text class="t2" x="%d" y="%d" font-size="12">not started%s</text>'
+                 % (P, y + 56, DOT + esc(note) if note else ""))
+        y += row_h
+
+    o.append('<line class="rule" x1="%d" y1="%.1f" x2="%d" y2="%.1f" stroke-width="1"/>'
+             % (P, foot_y + 0.5, W - P, foot_y + 0.5))
+    foot = DOT.join(["target build " + esc(meta["version"]), "commit " + esc(meta["commit"] or "unknown"),
+                     esc(meta["date"] or "unknown"), "generated by tools/progress.py from docs/progress.csv"])
+    o.append('<text class="t3" x="%d" y="%d" font-size="11">%s</text>' % (P, foot_y + 24, foot))
     o.append("</svg>")
     with open(os.path.join(DOCS, "progress.svg"), "w", newline="\n") as f:
         f.write("\n".join(o) + "\n")
@@ -226,20 +302,24 @@ def write_md(per, cats, meta):
         for c in CATEGORIES + extra:
             d = cats[key].get(c, empty())
             fn, b = d["functions"], d["bytes"]
+            if not fn["total"]:
+                continue
             o.append("| %s | %d | %d | %d | %.1f%% |" % (
                 c, fn["MATCHED"], fn["EQUIVALENT"], fn["total"], pct(b["MATCHED"] + b["EQUIVALENT"], b["total"])))
         fn, b = per[key]["functions"], per[key]["bytes"]
         o.append("| **All** | **%d** | **%d** | **%d** | **%.1f%%** |" % (
             fn["MATCHED"], fn["EQUIVALENT"], fn["total"], pct(b["MATCHED"] + b["EQUIVALENT"], b["total"])))
         o.append("")
-    o += ["## Not started", ""]
-    for key, name in BINARIES:
-        if key not in SHOWN:
+    idle = [(key, name) for key, name in BINARIES if key not in SHOWN]
+    if idle or NOT_INVENTORIED:
+        o += ["## Not started", ""]
+        for key, name in idle:
             o.append("- %s: %d functions in the CSV, all TODO%s." % (
                 name, per[key]["functions"]["total"], " (%s)" % NOTES[key] if key in NOTES else ""))
-    for name, note in NOT_INVENTORIED:
-        o.append("- %s: %s." % (name, note))
-    o += ["",
+        for name, note in NOT_INVENTORIED:
+            o.append("- %s: %s." % (name, note))
+        o.append("")
+    o += [
           "## Counting rules", "",
           "- **MATCHED**: the objdiff report gives 100 percent for the function: the instructions are "
           "identical to the retail binary. The report does not compare the names of relocation targets "

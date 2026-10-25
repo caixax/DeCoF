@@ -1,63 +1,115 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="760" height="772" viewBox="0 0 760 772" role="img" aria-label="Cry of Fear decompilation progress">
-<rect x="0.5" y="0.5" width="759" height="771" rx="10" fill="#ffffff" stroke="#d0d7de"/>
-<text x="24" y="34" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="20" font-weight="600" fill="#1f2328">Cry of Fear decompilation progress</text>
-<rect x="24" y="48" width="12" height="12" rx="2" fill="#2da44e"/>
-<text x="41" y="58.5" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#1f2328">MATCHED</text>
-<rect x="123" y="48" width="12" height="12" rx="2" fill="#d4a72c"/>
-<text x="140" y="58.5" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#1f2328">EQUIVALENT</text>
-<rect x="246" y="48" width="12" height="12" rx="2" fill="#afb8c1"/>
-<text x="263" y="58.5" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#1f2328">TODO</text>
-<text x="736" y="58.5" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#57606a" text-anchor="end">percent of code bytes, function counts in brackets</text>
-<text x="24" y="92" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#1f2328">client.dll</text>
-<text x="736" y="92" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#1f2328" text-anchor="end">100.0% done (2271 of 2271 functions)</text>
-<rect x="24" y="100" width="712" height="18" rx="4" fill="#afb8c1"/>
-<rect x="24.00" y="100" width="630.76" height="18" fill="#2da44e"/>
-<rect x="654.76" y="100" width="81.24" height="18" fill="#d4a72c"/>
-<text x="24" y="134" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#57606a" xml:space="preserve">MATCHED 88.6% (2237)   EQUIVALENT 11.4% (34)   TODO 0.0% (0)   650188 code bytes</text>
-<text x="24" y="166" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#1f2328">hl.dll</text>
-<text x="736" y="166" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#1f2328" text-anchor="end">100.0% done (5334 of 5334 functions)</text>
-<rect x="24" y="174" width="712" height="18" rx="4" fill="#afb8c1"/>
-<rect x="24.00" y="174" width="683.73" height="18" fill="#2da44e"/>
-<rect x="707.73" y="174" width="28.27" height="18" fill="#d4a72c"/>
-<text x="24" y="208" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#57606a" xml:space="preserve">MATCHED 96.0% (5329)   EQUIVALENT 4.0% (5)   TODO 0.0% (0)   1105466 code bytes</text>
-<text x="24" y="240" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#1f2328">opengl32.dll</text>
-<text x="736" y="240" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#1f2328" text-anchor="end">100.0% done (367 of 367 functions)</text>
-<rect x="24" y="248" width="712" height="18" rx="4" fill="#afb8c1"/>
-<rect x="24.00" y="248" width="712.00" height="18" fill="#2da44e"/>
-<text x="24" y="282" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#57606a" xml:space="preserve">MATCHED 100.0% (367)   EQUIVALENT 0.0% (0)   TODO 0.0% (0)   22929 code bytes</text>
-<text x="24" y="314" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#1f2328">hw.dll</text>
-<text x="736" y="314" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#1f2328" text-anchor="end">100.0% done (8232 of 8232 functions)</text>
-<rect x="24" y="322" width="712" height="18" rx="4" fill="#afb8c1"/>
-<rect x="24.00" y="322" width="710.48" height="18" fill="#2da44e"/>
-<rect x="734.48" y="322" width="1.52" height="18" fill="#d4a72c"/>
-<text x="24" y="356" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#57606a" xml:space="preserve">MATCHED 99.8% (8227)   EQUIVALENT 0.2% (5)   TODO 0.0% (0)   1357903 code bytes   (not started (VC6 installed; processor pack and VS 2005 objects need those compilers))</text>
-<text x="24" y="388" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#1f2328">GameUI.dll</text>
-<text x="736" y="388" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#1f2328" text-anchor="end">100.0% done (5202 of 5202 functions)</text>
-<rect x="24" y="396" width="712" height="18" rx="4" fill="#afb8c1"/>
-<rect x="24.00" y="396" width="712.00" height="18" fill="#2da44e"/>
-<text x="24" y="430" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#57606a" xml:space="preserve">MATCHED 100.0% (5202)   EQUIVALENT 0.0% (0)   TODO 0.0% (0)   655563 code bytes   (not started (VC6 installed))</text>
-<text x="24" y="462" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#1f2328">cof.exe</text>
-<text x="736" y="462" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#1f2328" text-anchor="end">100.0% done (52 of 52 functions)</text>
-<rect x="24" y="470" width="712" height="18" rx="4" fill="#afb8c1"/>
-<rect x="24.00" y="470" width="695.12" height="18" fill="#2da44e"/>
-<rect x="719.12" y="470" width="16.88" height="18" fill="#d4a72c"/>
-<text x="24" y="504" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#57606a" xml:space="preserve">MATCHED 97.6% (51)   EQUIVALENT 2.4% (1)   TODO 0.0% (0)   5272 code bytes   (not started (VC6 installed))</text>
-<text x="24" y="536" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#1f2328">CoFLaunchApp.exe</text>
-<text x="736" y="536" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#1f2328" text-anchor="end">100.0% done (51 of 51 functions)</text>
-<rect x="24" y="544" width="712" height="18" rx="4" fill="#afb8c1"/>
-<rect x="24.00" y="544" width="712.00" height="18" fill="#2da44e"/>
-<text x="24" y="578" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#57606a" xml:space="preserve">MATCHED 100.0% (51)   EQUIVALENT 0.0% (0)   TODO 0.0% (0)   7679 code bytes</text>
-<text x="24" y="610" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#1f2328">Started binaries (client.dll, hl.dll, opengl32.dll, CoFLaunchApp.exe)</text>
-<text x="736" y="610" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#1f2328" text-anchor="end">100.0% done (8023 of 8023 functions)</text>
-<rect x="24" y="618" width="712" height="18" rx="4" fill="#afb8c1"/>
-<rect x="24.00" y="618" width="664.93" height="18" fill="#2da44e"/>
-<rect x="688.93" y="618" width="47.07" height="18" fill="#d4a72c"/>
-<text x="24" y="652" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#57606a" xml:space="preserve">MATCHED 93.4% (7984)   EQUIVALENT 6.6% (39)   TODO 0.0% (0)   1786262 code bytes</text>
-<text x="24" y="684" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#1f2328">All binaries (CoFLaunchApp.exe not counted yet)</text>
-<text x="736" y="684" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#1f2328" text-anchor="end">100.0% done (21509 of 21509 functions)</text>
-<rect x="24" y="692" width="712" height="18" rx="4" fill="#afb8c1"/>
-<rect x="24.00" y="692" width="689.34" height="18" fill="#2da44e"/>
-<rect x="713.34" y="692" width="22.66" height="18" fill="#d4a72c"/>
-<text x="24" y="726" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#57606a" xml:space="preserve">MATCHED 96.8% (21464)   EQUIVALENT 3.2% (45)   TODO 0.0% (0)   3805000 code bytes</text>
-<text x="24" y="756" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="11" fill="#57606a">Target build 1.6a | commit 463ccf1 | 2026-10-25 | numbers from docs/progress.csv</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="794" viewBox="0 0 880 794" role="img" aria-labelledby="title desc">
+<title id="title">DeCoF progress</title>
+<desc id="desc">Matching decompilation of Cry of Fear 1.6a: 21,509 of 21,509 in-scope functions rebuilt, 21,464 byte-identical (MATCHED), 45 logic-verified (EQUIVALENT), 96.8% of code bytes identical.</desc>
+<style>
+text { font-family: system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; }
+.num { font-variant-numeric: tabular-nums; }
+.bg { fill: #fcfcfb; stroke: rgba(11, 11, 11, 0.10); }
+.tile { fill: #f3f2ee; }
+.rule { stroke: #e1e0d9; }
+.t1 { fill: #0b0b0b; }
+.t2 { fill: #52514e; }
+.t3 { fill: #6f6e69; }
+.MATCHED { fill: #2a78d6; }
+.EQUIVALENT { fill: #eb6834; }
+.TODO { fill: #dcdbd4; }
+@media (prefers-color-scheme: dark) {
+  .bg { fill: #1a1a19; stroke: rgba(255, 255, 255, 0.10); }
+  .tile { fill: #242422; }
+  .rule { stroke: #2c2c2a; }
+  .t1 { fill: #f0efec; }
+  .t2 { fill: #c3c2b7; }
+  .t3 { fill: #9a9890; }
+  .MATCHED { fill: #3987e5; }
+  .EQUIVALENT { fill: #d95926; }
+  .TODO { fill: #383835; }
+}
+</style>
+<rect class="bg" x="0.5" y="0.5" width="879" height="793" rx="12"/>
+<text class="t1" x="32" y="54" font-size="30" font-weight="700">DeCoF</text>
+<text class="t2" x="32" y="78" font-size="14">Cry of Fear 1.6a rebuilt from source with the original compilers, function by function</text>
+<text class="t1" x="32" y="160" font-size="56" font-weight="700">100%</text>
+<text class="t2" x="32" y="186" font-size="13">of 21,509 functions in scope rebuilt</text>
+<rect class="tile" x="300.0" y="106" width="174.7" height="86" rx="10"/>
+<text class="t1" x="316.0" y="150" font-size="28" font-weight="600">21,464</text>
+<text class="t2" x="316.0" y="174" font-size="12">byte-identical (MATCHED)</text>
+<rect class="tile" x="486.7" y="106" width="174.7" height="86" rx="10"/>
+<text class="t1" x="502.7" y="150" font-size="28" font-weight="600">45</text>
+<text class="t2" x="502.7" y="174" font-size="12">logic-verified (EQUIVALENT)</text>
+<rect class="tile" x="673.3" y="106" width="174.7" height="86" rx="10"/>
+<text class="t1" x="689.3" y="150" font-size="28" font-weight="600">96.8%</text>
+<text class="t2" x="689.3" y="174" font-size="12">of code bytes identical</text>
+<line class="rule" x1="32" y1="222.5" x2="848" y2="222.5" stroke-width="1"/>
+<text class="t1" x="32" y="252" font-size="15" font-weight="600">Per binary</text>
+<text class="t3" x="32" y="270" font-size="12">bar length: share of code bytes; toolchain code (static CRT, STL) is not counted</text>
+<text x="848" y="252" font-size="12" text-anchor="end"><tspan class="MATCHED" font-size="14">&#9632;</tspan><tspan class="t2" dx="5">MATCHED</tspan><tspan class="EQUIVALENT" font-size="14" dx="16">&#9632;</tspan><tspan class="t2" dx="5">EQUIVALENT</tspan><tspan class="TODO" font-size="14" dx="16">&#9632;</tspan><tspan class="t2" dx="5">TODO</tspan></text>
+<g><title>hl.dll: 96.0% of code bytes identical; 5,329 MATCHED, 5 EQUIVALENT, 0 TODO</title>
+<text x="32" y="302"><tspan class="t1" font-size="15" font-weight="600">hl.dll</tspan><tspan class="t3" font-size="12" dx="10">server game DLL, MSVC 14.27</tspan></text>
+<text class="t1 num" x="848" y="302" font-size="14" font-weight="600" text-anchor="end">96.0% identical</text>
+<clipPath id="bar-hl"><rect x="32" y="312" width="816" height="12" rx="4"/></clipPath>
+<g clip-path="url(#bar-hl)">
+<rect class="MATCHED" x="32.00" y="312" width="781.68" height="12"/>
+<rect class="EQUIVALENT" x="815.68" y="312" width="32.32" height="12"/>
+</g>
+<text class="t2 num" x="32" y="342" font-size="12">5,329 MATCHED &#183; 5 EQUIVALENT &#183; 0 TODO &#183; 1,105,466 code bytes</text>
+</g>
+<g><title>client.dll: 88.6% of code bytes identical; 2,237 MATCHED, 34 EQUIVALENT, 0 TODO</title>
+<text x="32" y="368"><tspan class="t1" font-size="15" font-weight="600">client.dll</tspan><tspan class="t3" font-size="12" dx="10">client DLL with the Paranoia renderer, MSVC 14.27</tspan></text>
+<text class="t1 num" x="848" y="368" font-size="14" font-weight="600" text-anchor="end">88.6% identical</text>
+<clipPath id="bar-client"><rect x="32" y="378" width="816" height="12" rx="4"/></clipPath>
+<g clip-path="url(#bar-client)">
+<rect class="MATCHED" x="32.00" y="378" width="721.13" height="12"/>
+<rect class="EQUIVALENT" x="755.13" y="378" width="92.87" height="12"/>
+</g>
+<text class="t2 num" x="32" y="408" font-size="12">2,237 MATCHED &#183; 34 EQUIVALENT &#183; 0 TODO &#183; 650,188 code bytes</text>
+</g>
+<g><title>hw.dll: 99.8% of code bytes identical; 8,227 MATCHED, 5 EQUIVALENT, 0 TODO</title>
+<text x="32" y="434"><tspan class="t1" font-size="15" font-weight="600">hw.dll</tspan><tspan class="t3" font-size="12" dx="10">GoldSrc engine, Visual C++ 6.0</tspan></text>
+<text class="t1 num" x="848" y="434" font-size="14" font-weight="600" text-anchor="end">99.8% identical</text>
+<clipPath id="bar-hw"><rect x="32" y="444" width="816" height="12" rx="4"/></clipPath>
+<g clip-path="url(#bar-hw)">
+<rect class="MATCHED" x="32.00" y="444" width="812.00" height="12"/>
+<rect class="EQUIVALENT" x="846.00" y="444" width="2.00" height="12"/>
+</g>
+<text class="t2 num" x="32" y="474" font-size="12">8,227 MATCHED &#183; 5 EQUIVALENT &#183; 0 TODO &#183; 1,357,903 code bytes</text>
+</g>
+<g><title>opengl32.dll: 100% of code bytes identical; 367 MATCHED, 0 EQUIVALENT, 0 TODO</title>
+<text x="32" y="500"><tspan class="t1" font-size="15" font-weight="600">opengl32.dll</tspan><tspan class="t3" font-size="12" dx="10">Paranoia OpenGL wrapper, Visual C++ 6.0</tspan></text>
+<text class="t1 num" x="848" y="500" font-size="14" font-weight="600" text-anchor="end">100% identical</text>
+<clipPath id="bar-opengl32"><rect x="32" y="510" width="816" height="12" rx="4"/></clipPath>
+<g clip-path="url(#bar-opengl32)">
+<rect class="MATCHED" x="32.00" y="510" width="816.00" height="12"/>
+</g>
+<text class="t2 num" x="32" y="540" font-size="12">367 MATCHED &#183; 0 EQUIVALENT &#183; 0 TODO &#183; 22,929 code bytes</text>
+</g>
+<g><title>GameUI.dll: 100% of code bytes identical; 5,202 MATCHED, 0 EQUIVALENT, 0 TODO</title>
+<text x="32" y="566"><tspan class="t1" font-size="15" font-weight="600">GameUI.dll</tspan><tspan class="t3" font-size="12" dx="10">menus (VGUI2), Visual C++ 6.0</tspan></text>
+<text class="t1 num" x="848" y="566" font-size="14" font-weight="600" text-anchor="end">100% identical</text>
+<clipPath id="bar-gameui"><rect x="32" y="576" width="816" height="12" rx="4"/></clipPath>
+<g clip-path="url(#bar-gameui)">
+<rect class="MATCHED" x="32.00" y="576" width="816.00" height="12"/>
+</g>
+<text class="t2 num" x="32" y="606" font-size="12">5,202 MATCHED &#183; 0 EQUIVALENT &#183; 0 TODO &#183; 655,563 code bytes</text>
+</g>
+<g><title>cof.exe: 97.6% of code bytes identical; 51 MATCHED, 1 EQUIVALENT, 0 TODO</title>
+<text x="32" y="632"><tspan class="t1" font-size="15" font-weight="600">cof.exe</tspan><tspan class="t3" font-size="12" dx="10">engine launcher, Visual C++ 6.0</tspan></text>
+<text class="t1 num" x="848" y="632" font-size="14" font-weight="600" text-anchor="end">97.6% identical</text>
+<clipPath id="bar-launcher"><rect x="32" y="642" width="816" height="12" rx="4"/></clipPath>
+<g clip-path="url(#bar-launcher)">
+<rect class="MATCHED" x="32.00" y="642" width="794.70" height="12"/>
+<rect class="EQUIVALENT" x="828.70" y="642" width="19.30" height="12"/>
+</g>
+<text class="t2 num" x="32" y="672" font-size="12">51 MATCHED &#183; 1 EQUIVALENT &#183; 0 TODO &#183; 5,272 code bytes</text>
+</g>
+<g><title>CoFLaunchApp.exe: 100% of code bytes identical; 51 MATCHED, 0 EQUIVALENT, 0 TODO</title>
+<text x="32" y="698"><tspan class="t1" font-size="15" font-weight="600">CoFLaunchApp.exe</tspan><tspan class="t3" font-size="12" dx="10">settings launcher, C# 4</tspan></text>
+<text class="t1 num" x="848" y="698" font-size="14" font-weight="600" text-anchor="end">100% identical</text>
+<clipPath id="bar-coflaunchapp"><rect x="32" y="708" width="816" height="12" rx="4"/></clipPath>
+<g clip-path="url(#bar-coflaunchapp)">
+<rect class="MATCHED" x="32.00" y="708" width="816.00" height="12"/>
+</g>
+<text class="t2 num" x="32" y="738" font-size="12">51 MATCHED &#183; 0 EQUIVALENT &#183; 0 TODO &#183; 7,679 code bytes</text>
+</g>
+<line class="rule" x1="32" y1="756.5" x2="848" y2="756.5" stroke-width="1"/>
+<text class="t3" x="32" y="780" font-size="11">target build 1.6a &#183; commit 74fe8ba &#183; 2026-10-25 &#183; generated by tools/progress.py from docs/progress.csv</text>
 </svg>
