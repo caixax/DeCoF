@@ -2,6 +2,9 @@
 
 DeCoF is a matching decompilation of **Cry of Fear** (Steam release, version string `1.6a`): the game DLLs, the custom GoldSrc engine build, the Paranoia OpenGL renderer, the menus and both launchers, rebuilt as C, C++, assembly and C# source that the original compilers turn back into the same machine code as the retail binaries, function by function.
 
+> [!IMPORTANT]
+> DeCoF is **not** an improved or fixed version of Cry of Fear. It is the complete decompilation of the game, kept as close to 1:1 with the retail binaries as possible: the same behavior, original bugs included. Nothing here makes the game better; it makes the game rebuildable from source.
+
 ![DeCoF progress](docs/progress.svg)
 
 Every in-scope function of all seven binaries is MATCHED (byte-identical) or EQUIVALENT (logic proven identical, the remaining difference recorded). All seven binaries link from source, and `tools/make_dist.py` assembles a playable game from them plus your retail assets. In-game testing of the assembled build is the current step. Per-binary and per-category numbers are in [docs/PROGRESS.md](docs/PROGRESS.md), generated from [docs/progress.csv](docs/progress.csv), which has one row per retail function with its status, match percentage, source file and notes.
@@ -83,27 +86,72 @@ hw.dll contains third-party code with no source and no official library: the Aur
 
 ## Building it yourself
 
-Requirements:
+Building gives you the seven binaries and a playable `dist/` folder. It needs the original compilers and your own copy of the game, but not Ghidra. Comparing your build with retail function by function also needs Ghidra and objdiff (step 6). The paths below are the defaults the scripts use; step 3 says where to change them.
 
-- Your own copy of Cry of Fear from Steam. No game files are part of this repository. The retail 1.6a tree goes into `versions/1.6a`. Older builds, used only for symbols (1.0, 1.55), go next to it, see [docs/versions.csv](docs/versions.csv).
-- Python 3 with `pefile` and `capstone`.
-- MSVC 14.27.29112 and the Windows 10 SDK 10.0.19041 for hl.dll and client.dll.
-- Visual C++ 6.0 (and SP6 with the Processor Pack for ten hw.dll objects) for hw.dll, GameUI.dll, opengl32.dll and cof.exe. It has no free official download.
-- The C# compiler 4.0.30319.1 from the official .NET Framework 4.0 redistributable, for CoFLaunchApp.exe.
-- Ghidra with ghidra-delinker-extension and the GhidraMCP server (to cut the retail objects), and objdiff-cli (to compare).
+### 1. Get the game
 
-Tool locations are set at the top of `tools/msvc.py`, `tools/msvc6.py` and `tools/build.py`. [docs/tooling.md](docs/tooling.md) lists the exact versions and where each one comes from.
+Install Cry of Fear from Steam (it is free). Copy the whole game folder, the one that holds `cof.exe`, to `versions/1.6a` inside the repository. The scripts only read it and never change it.
+
+### 2. Install the tools
+
+| Tool | Where to get it | Default location | Needed for |
+|---|---|---|---|
+| Python 3 with `pefile` and `capstone` | [python.org](https://www.python.org/downloads/), then `pip install pefile capstone` | on `PATH` | every script |
+| MSVC 14.27 headers and libraries, Windows 10 SDK 10.0.19041 | [Visual Studio 2019 Build Tools](https://aka.ms/vs/16/release/vs_buildtools.exe) with the components "MSVC v142 - VS 2019 C++ x64/x86 build tools (v14.27)" and "Windows 10 SDK (10.0.19041.0)" | `C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools` and `C:\Program Files (x86)\Windows Kits\10` | hl.dll, client.dll |
+| MSVC compiler 14.27.29112 | the package `Microsoft.VisualCpp.Tools.HostX86.TargetX86` 14.27.29112 of the Visual Studio 2019 16.7.7 release, extracted on its own; the Build Tools installer only offers the later 29120 build (steps in [docs/tooling.md](docs/tooling.md)) | `I:\Tools\msvc-14.27.29112` | hl.dll, client.dll |
+| Windows 10 SDK 10.0.19041.1 libraries | Microsoft's `winsdksetup.exe` 10.1.19041.1 run with `/layout`, then its three library MSIs extracted with `msiexec /a` (steps in [docs/tooling.md](docs/tooling.md)) | `I:\Tools\winsdk-10.0.19041.1` | the static CRT of hl.dll and client.dll |
+| Visual C++ 6.0 RTM, Professional or Enterprise Edition | your own Visual Studio 6.0 or Visual C++ 6.0 disc; Microsoft never offered a free download (it came with the old MSDN subscriptions). Copy the `VC98` folder; when it comes straight from the disc instead of from setup, also copy the six 8.3 STL headers to their long names, see [docs/toolchains.md](docs/toolchains.md) | `I:\Tools\vc6\VC98` | hw.dll, GameUI.dll, opengl32.dll, cof.exe |
+| Visual C++ 6.0 SP6 with the Processor Pack | the portable VC6 package [SmileyAG/MSVC60](https://github.com/SmileyAG/MSVC60): copy its `vc_studio/main/VC98` folder. It is not an official Microsoft download: 1,703 of its files are byte-identical to the official disc, while the Service Pack and Processor Pack files could not be checked against Microsoft's own packages | `I:\Tools\vc6pp\VC98` | ten hw.dll objects (bzip2, VGUI2 fonts) and MASM for the four Quake assembly files |
+| C# compiler 4.0.30319.1 | Microsoft's .NET Framework 4.0 redistributable `dotNetFx40_Full_x86_x64.exe`, extracted, not installed (steps in [docs/tooling.md](docs/tooling.md)) | `I:\Tools\csc40` | CoFLaunchApp.exe |
+| Ghidra 12.1.4 with JDK 21, ghidra-delinker-extension 0.9.2, GhidraMCP 7.0.0-rc.2 | [Ghidra](https://github.com/NationalSecurityAgency/ghidra/releases), [Temurin JDK 21](https://adoptium.net/), [ghidra-delinker-extension](https://github.com/boricj/ghidra-delinker-extension/releases), [GhidraMCP](https://github.com/bethington/ghidra-mcp/releases) | `I:\Tools\ghidra_12.1.4_PUBLIC` | comparing only (step 6) |
+| objdiff-cli 3.8.2 | [objdiff releases](https://github.com/encounter/objdiff/releases) | `I:\Tools\bin\objdiff-cli.exe` | comparing only (step 6) |
+
+### 3. Point the scripts at your tools
+
+If a tool is not at its default location, change the path at the top of the script that uses it: `tools/msvc.py` (`TOOLS_DIR`, `VC_DIR`, `SDK_DIR`, `SDK_LIB_DIR`), `tools/msvc6.py` (`ROOT_DIR`, `PP_ROOT_DIR`), `tools/coflaunchapp/build.py` (`CSC`), `tools/build.py` (`GHIDRA`, `OBJDIFF`) and `tools/ghidra_import.py` (`DEFAULT_GHIDRA`).
+
+### 4. Get the third-party headers
+
+These go into `refs/`, which is git-ignored. They are not game code; the game code needs them to compile.
+
+| Folder | What it is | Where to get it |
+|---|---|---|
+| `refs/halflife` | Half-Life SDK (for the VGUI 1 import library) | `git clone https://github.com/ValveSoftware/halflife refs/halflife` |
+| `refs/a3d-sdk` | Aureal A3D SDK headers | `git clone https://github.com/sigmaco/a3d-sdk refs/a3d-sdk` |
+| `refs/bzip2-1.0.2-dl` | the official bzip2 1.0.2 source | `python tools/fetch_bzip2.py` |
+| `refs/dxheaders` | `d3d.h`, `d3dcaps.h`, `d3dtypes.h`, `d3dvec.inl`, `ddraw.h` and `dinput.h` from `C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um`, plus `winapifamily.h` from the `shared` folder next to it | copy them from the Windows SDK installed in step 2 |
+| `refs/irrklang-1.6.0` | irrKlang 1.6.0 SDK, 32-bit (`include` and `lib/Win32-visualStudio/irrKlang.lib`) | Ambiera only serves it to licensees now; the Internet Archive has a snapshot of `https://www.ambiera.at/downloads/irrKlang-32bit-1.6.0.zip` |
+| `refs/id3lib-3.8.3` | id3lib 3.8.3 headers (`include`) | the source tarball on [SourceForge](https://sourceforge.net/projects/id3lib/files/id3lib/3.8.3/) |
+
+### 5. Build
 
 ```
-python tools/build.py target                     # cut the retail objects of every unit (Ghidra project in re/)
+python tools/build.py link hl
+python tools/build.py link client
+python tools/build.py link hw
+python tools/build.py link opengl32
+python tools/build.py link gameui
+python tools/build.py link launcher
+python tools/coflaunchapp/build.py
+python tools/make_dist.py --bin build/bin
+```
+
+Each `link` compiles every unit of that binary with its original compiler and flags, links it with the original linker in the retail order, and prints a section by section comparison with retail. The results land in `build/bin` (`launcher.exe` there becomes `cof.exe` in the game). The third-party pieces of hw.dll that have no source are cut from your own `versions/1.6a/hw.dll` during its link. `make_dist.py` then copies your game from `versions/1.6a` into `dist/` and puts the rebuilt binaries in place.
+
+Test in `dist/` or in another copy of the game, never in your Steam installation.
+
+### 6. Compare with retail (optional)
+
+```
+python tools/ghidra_import.py --only 1.6a        # create the Ghidra project re/CoF.gpr with the retail binaries
+python tools/build.py target                     # cut the retail object of every unit
 python tools/build.py check hl/dlls/cof_glock    # compile one unit and print the match of each function
 python tools/objdiff_tool.py show hl/dlls/cof_glock "?PrimaryAttack@CGlock@@UAEXXZ"   # retail and ours side by side
 python tools/symeq.py client/cl_dll/entity "?MuzzleFlash_guess@@YAXPAUcl_entity_s@@H_NM@Z"   # symbolic equivalence check
-python tools/build.py link hl                    # link a whole binary into build/bin
-python tools/link_diff.py hl                     # compare the linked binary with retail
-python tools/coflaunchapp/build.py               # CoFLaunchApp.exe with csc 4.0
-python tools/make_dist.py --bin build/bin        # assemble the playable game in dist/
+python tools/link_diff.py hl                     # compare a linked binary with retail
 ```
+
+`target` runs headless Ghidra, or goes through the GhidraMCP server when `tools\ghidra_mcp_server.bat` is running (faster for repeated runs). The original Ghidra project has some function boundaries fixed by hand (recorded in [docs/sessions.md](docs/sessions.md)), so a freshly imported project can cut a few units differently.
 
 The pre-commit hook in `tools/hooks/` regenerates the progress report (`docs/PROGRESS.md`, `docs/progress.svg`, `docs/progress.json`) whenever `docs/progress.csv` is committed. Install it with `cp tools/hooks/pre-commit .git/hooks/pre-commit`.
 
@@ -151,6 +199,8 @@ Play the assembled build and fix anything that behaves differently from retail. 
 
 The code descends from the [Half-Life SDK](https://github.com/ValveSoftware/halflife), [Paranoia](https://github.com/HLSources/Paranoia) and Spirit of Half-Life 1.7. [ReHLDS](https://github.com/dreamstalker/rehlds), [Xash3D FWGS](https://github.com/FWGS/xash3d-fwgs), cry-of-fear-src, cof-enhanced, RebuiltSimon, MadSimonX and CryOfFear-FirstPerson were consulted, and everything they claim was checked in the binary. See [docs/refs.md](docs/refs.md) for what each one provides and its license. The tools that made this possible are [Ghidra](https://github.com/NationalSecurityAgency/ghidra), [ghidra-delinker-extension](https://github.com/boricj/ghidra-delinker-extension), [GhidraMCP](https://github.com/bethington/ghidra-mcp), [objdiff](https://github.com/encounter/objdiff) and [capstone](https://github.com/capstone-engine/capstone).
 
-## Legal
+## License
 
-This project is not affiliated with or endorsed by Team Psykskallar or Valve. It contains no game assets or binaries; you need your own copy of Cry of Fear. Code derived from the Half-Life SDK is subject to the Half-Life SDK license.
+See [LICENSE](LICENSE). In short: the tools and documentation written for DeCoF are under the MIT License; source code derived from the Half-Life SDK stays under the [Half-Life 1 SDK License](LICENSES/Half-Life-1-SDK.txt) (free distribution only), and code derived from Paranoia under Paranoia's terms; the code reconstructed from the Cry of Fear binaries belongs to its original authors, and no rights over it are granted.
+
+This project is not affiliated with or endorsed by Team Psykskallar or Valve. The repository contains no game assets or retail binaries; you need your own copy of Cry of Fear.
