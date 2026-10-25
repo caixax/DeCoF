@@ -845,7 +845,7 @@ client,1001D1D0,36,??_GCHudTextMessage@@UAEPAXI@Z,destructor',UNKNOWN,,,,MATCHED
 client,1001D200,39,??_GCHudMessage@@UAEPAXI@Z,destructor',COF,cl_dll/cdll_int.cpp,,,MATCHED,100,client_1.6a_ghidra_names.csv,
 client,1001D230,39,??_GCHudStatusIcons@@UAEPAXI@Z,destructor',COF,cl_dll/cdll_int.cpp,,,MATCHED,100,client_1.6a_ghidra_names.csv,
 client,1001D260,39,??_GCHudLensflare@@UAEPAXI@Z,destructor',UNKNOWN,cl_dll/cdll_int.cpp,,,MATCHED,100,,
-client,1001D290,92,??_GMP3FileInfo@@UAEPAXI@Z,destructor',UNKNOWN,cl_dll/cdll_int.cpp,,,TODO,83.33,client_manual.csv,
+client,1001D290,97,??_GMP3FileInfo@@UAEPAXI@Z,destructor',UNKNOWN,cl_dll/cdll_int.cpp,,,MATCHED,100,client_manual.csv,
 client,1001D300,39,??_GCHudSpectator@@UAEPAXI@Z,destructor',COF,cl_dll/cdll_int.cpp,,,MATCHED,100,client_1.6a_ghidra_names.csv,
 client,1001D330,39,??_GCHudAmmo@@UAEPAXI@Z,destructor',UNKNOWN,cl_dll/cdll_int.cpp,,,MATCHED,100,,
 client,1001D360,36,??_GCHudAmmoSecondary@@UAEPAXI@Z,destructor',COF,cl_dll/cdll_int.cpp,,,MATCHED,100,client_1.6a_ghidra_names.csv,
