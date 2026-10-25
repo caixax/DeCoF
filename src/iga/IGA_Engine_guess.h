@@ -110,6 +110,13 @@ int		radImpression_guess( RadInfo_guess *pInfo, int nCellId, uint64 contentId, f
 class CAdImage_guess
 {
 public:
+	CAdImage_guess()
+	{
+		m_pData_guess = NULL;
+		m_nSize_guess = 0;
+		m_szName_guess[0] = 0;
+	}
+
 	~CAdImage_guess()
 	{
 		delete [] m_pData_guess;
@@ -366,6 +373,7 @@ public:
 	bool		LoadPalettedImage_guess( void *pData, int nSize, CAdContent_guess *pContent );
 	bool		LoadTrueColorImage_guess( void *pData, int nSize, CAdContent_guess *pContent, const Color *pBorderColor );
 	bool		LoadHUDImage_guess( void *pData, int nSize, CAdContent_guess *pContent );
+	bool		LoadHUDImageFile_guess( const char *pszFile, int nFlags, CAdContent_guess *pContent );
 	bool		AddImage_guess( CUtlVector< CAdImage_guess * > &images, const char *pszName, void *pData, int nSize );
 
 	static bool LevelLessFunc_guess( CAdLevel_guess const &a, CAdLevel_guess const &b )

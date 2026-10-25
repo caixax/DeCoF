@@ -3704,6 +3704,16 @@
           ]
         },
         {
+          "name": "iga/IGA_Metadata_guess",
+          "source": "src/iga/IGA_Metadata_guess.cpp",
+          "functions_file": "tools/units/hw_iga_IGA_Metadata_guess.txt",
+          "includes": [
+            "src/engine_hw",
+            "src/public",
+            "src/common"
+          ]
+        },
+        {
           "name": "mathlib/imagequant",
           "source": "src/mathlib/imagequant.cpp",
           "functions_file": "tools/units/hw_mathlib_imagequant.txt"

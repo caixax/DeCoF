@@ -5948,3 +5948,23 @@ va,name,kind,evidence
 02FB9C94,??_B?1??Links@?$CUtlRBTree@UCAdCellImages_guess@@H@@IBEABULinks_t@1@H@Z@51,data,"guard of the s_Sentinel static of CUtlRBTree<CAdCellImages_guess,int>::Links"
 01E8C970,??_7CInGameAdvertisingSystem@@6B@,data,vtable of CInGameAdvertisingSystem (RTTI)
 01E8C980,??_7IClientDLLInGameAdvertising@@6B@,data,vtable of IClientDLLInGameAdvertising (RTTI)
+01D1A160,?IsPalettedImage_guess@CInGameAdvertisingSystem@@QAE_NPAXH@Z,func,"iga/IGA_Metadata_guess.cpp: called by LoadImage_guess (01D12B33): BMP through CUtlBuffer, true for biSize 40, biPlanes 1, BI_RGB, 8 bits"
+01D1A213,?LoadPalettedImage_guess@CInGameAdvertisingSystem@@QAE_NPAXHPAVCAdContent_guess@@@Z,func,"iga/IGA_Metadata_guess.cpp: called by LoadImage_guess (01D12B5B): 8-bit BMP rows bottom up into the content, palette converted to RGB"
+01D1A52A,?LoadTrueColorImage_guess@CInGameAdvertisingSystem@@QAE_NPAXHPAVCAdContent_guess@@PBVColor@@@Z,func,"iga/IGA_Metadata_guess.cpp: called by LoadImage_guess (01D12B78): 24-bit BMP to RGBA, QuantizeImage_guess to 255 colors plus the border color or to 256"
+01D1A8B7,?LoadHUDImage_guess@CInGameAdvertisingSystem@@QAE_NPAXHPAVCAdContent_guess@@@Z,func,"iga/IGA_Metadata_guess.cpp: called by RequestContent_guess (01D131DE): 8 or 24-bit BMP expanded to RGBA for a HUD cell (type 2), no palette"
+01D1AD46,?LoadHUDImageFile_guess@CInGameAdvertisingSystem@@QAE_NPBDHPAVCAdContent_guess@@@Z,func,"iga/IGA_Metadata_guess.cpp: reads a file with FS_Open ""rb"", LoadHUDImage_guess, then IEngineInGameAdvertising_guess::ContentLoaded_guess; no caller in 1.6a"
+01D1AE71,?ResampleDown_guess@@YAXPAE0HH0HH@Z,func,iga/IGA_Metadata_guess.cpp: box filter that shrinks a palettized image with two rows of float RGB accumulators and FindNearestColor_guess; called by ResampleImage_guess
+01D1B2E4,?ComputeResampleWeights_guess@@YAPAMHH_N@Z,func,"iga/IGA_Metadata_guess.cpp: pair of weights per destination pixel (second -1 at a source boundary), called by both resamplers"
+01D1B408,?ResampleUp_guess@@YAXPAE0HH0HH@Z,func,iga/IGA_Metadata_guess.cpp: bilinear enlargement of a palettized image with FindNearestColor_guess; called by ResampleImage_guess
+01D1B764,?ResampleImage_guess@@YAXPAE00HHHH@Z,func,"iga/IGA_Metadata_guess.cpp: chooses ResampleUp_guess when either destination size is larger, else ResampleDown_guess; no caller in 1.6a"
+01D1B7C3,?AddImage_guess@CInGameAdvertisingSystem@@QAE_NAAV?$CUtlVector@PAVCAdImage_guess@@@@PBDPAXH@Z,func,"iga/IGA_Metadata_guess.cpp: called by LoadMetadata_guess (01D13F6A): image pack 0x10001 with at most 256 entries of 0x48 bytes (name, offset, size) copied into CAdImage_guess objects"
+01D1B8E0,?TellGet@CUtlBuffer@@QBEHXZ,func,"iga/IGA_Metadata_guess.cpp: inline CUtlBuffer::TellGet (m_Get at +0xC), COMDAT of iga/IGA_Metadata_guess.cpp, used by the true color and HUD loaders"
+01D1B900,??0CAdImage_guess@@QAE@XZ,func,"iga/IGA_Metadata_guess.cpp: inline CAdImage_guess constructor (+0x20 and +0x24 zero, name empty), COMDAT of iga/IGA_Metadata_guess.cpp, called by AddImage_guess"
+01D1B930,?AddToTail@?$CUtlVector@PAVCAdImage_guess@@@@QAEHABQAVCAdImage_guess@@@Z,func,"iga/IGA_Metadata_guess.cpp: CUtlVector<CAdImage_guess *>::AddToTail, COMDAT of iga/IGA_Metadata_guess.cpp, called by AddImage_guess"
+01D1B950,?InsertBefore@?$CUtlVector@PAVCAdImage_guess@@@@QAEHHABQAVCAdImage_guess@@@Z,func,"iga/IGA_Metadata_guess.cpp: CUtlVector<CAdImage_guess *>::InsertBefore, COMDAT of iga/IGA_Metadata_guess.cpp"
+01D1B9A0,?GrowVector@?$CUtlVector@PAVCAdImage_guess@@@@IAEXH@Z,func,"iga/IGA_Metadata_guess.cpp: CUtlVector<CAdImage_guess *>::GrowVector, COMDAT of iga/IGA_Metadata_guess.cpp"
+01D1BA00,?ShiftElementsRight@?$CUtlVector@PAVCAdImage_guess@@@@IAEXHH@Z,func,"iga/IGA_Metadata_guess.cpp: CUtlVector<CAdImage_guess *>::ShiftElementsRight, COMDAT of iga/IGA_Metadata_guess.cpp"
+01D1BA60,?CopyConstruct@@YAXPAPAVCAdImage_guess@@ABQAV1@@Z,func,"iga/IGA_Metadata_guess.cpp: CopyConstruct<CAdImage_guess *> (placement new), COMDAT of iga/IGA_Metadata_guess.cpp"
+01D1BAA0,?NumAllocated@?$CUtlMemory@PAVCAdImage_guess@@@@QBEHXZ,func,"iga/IGA_Metadata_guess.cpp: CUtlMemory<CAdImage_guess *>::NumAllocated, COMDAT of iga/IGA_Metadata_guess.cpp"
+01D1BAC0,?Grow@?$CUtlMemory@PAVCAdImage_guess@@@@QAEXH@Z,func,"iga/IGA_Metadata_guess.cpp: CUtlMemory<CAdImage_guess *>::Grow, COMDAT of iga/IGA_Metadata_guess.cpp"
+01EDFF50,_s_bForceHUD_guess,data,iga/IGA_Metadata_guess.cpp: file static bool read by the three loaders when bfReserved1 is not 1 (never written in 1.6a); .bss before mathlib/quantize.cpp's TheQueue

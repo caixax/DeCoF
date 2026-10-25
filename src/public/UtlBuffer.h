@@ -178,6 +178,11 @@ inline void* CUtlBuffer::PeekPut( int offset )
 	return &m_Memory[m_Put + offset];
 }
 
+inline int CUtlBuffer::TellGet( ) const
+{
+	return m_Get;
+}
+
 //-----------------------------------------------------------------------------
 // Where am I writing?
 //-----------------------------------------------------------------------------
