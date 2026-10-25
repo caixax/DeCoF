@@ -3283,6 +3283,11 @@
           "functions_file": "tools/units/hw_iga_IGA_Engine_guess.txt"
         },
         {
+          "name": "mathlib/quantize",
+          "source": "src/mathlib/quantize.cpp",
+          "functions_file": "tools/units/hw_mathlib_quantize.txt"
+        },
+        {
           "name": "iga/IGA_Quantizer_guess",
           "source": "src/iga/IGA_Quantizer_guess.cpp",
           "functions_file": "tools/units/hw_iga_IGA_Quantizer_guess.txt"
