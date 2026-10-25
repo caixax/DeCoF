@@ -2557,6 +2557,11 @@
           "functions_file": "tools/units/hw_engine_pr_edict.txt"
         },
         {
+          "name": "engine/prefs_guess",
+          "source": "src/engine_hw/prefs_guess.c",
+          "functions_file": "tools/units/hw_engine_prefs_guess.txt"
+        },
+        {
           "name": "engine/cdll_int",
           "source": "src/engine_hw/cdll_int.c",
           "functions_file": "tools/units/hw_engine_cdll_int.txt"

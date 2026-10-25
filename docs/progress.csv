@@ -27313,7 +27313,7 @@ hw,01DA8783,38,_CVarRegister,,ENGINE,engine/pr_edict.c,,,MATCHED,100,hw_manual.c
 hw,01DA87A9,23,_AllocEngineString,,ENGINE,engine/pr_edict.c,,,MATCHED,100,hw_manual.csv,
 hw,01DA87C0,77,_SaveSpawnParms,,ENGINE,engine/pr_edict.c,,,MATCHED,100,hw_manual.csv,
 hw,01DA880D,40,_GetModelPtr,,ENGINE,engine/pr_edict.c,,,MATCHED,100,hw_manual.csv,
-hw,01DA8840,10,,,UNKNOWN,,,,TODO,,,
+hw,01DA8840,10,_SaveConfig_guess,SaveConfig_guess,UNKNOWN,engine/prefs_guess.c,,,MATCHED,100,hw_manual.csv,"push ebp; mov ebp, esp; call Host_WriteConfiguration; pop ebp; ret, referenced by nothing (no call, no pointer in the image); 16-aligned between the last pr_edict.c function and the first qgl.c function with no data of its own, so its own /Od object in the link slot between pr_edict and qgl; no Linux file or string names it (_guess)"
 hw,01DA8850,3646,_QGL_Shutdown,,ENGINE,engine/qgl.c,,,MATCHED,100,hw_manual.csv,
 hw,01DA968E,12282,_QGL_Init,QGL_Init,ENGINE,engine/qgl.c,,,MATCHED,100,linux_symbols:string:0.668,
 hw,01DAC688,7385,_GLimp_EnableLogging,GLimp_EnableLogging,ENGINE,engine/qgl.c,,,MATCHED,100,linux_symbols:string:0.75,
