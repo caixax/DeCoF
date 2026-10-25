@@ -15,8 +15,11 @@ extern "C"
 #define SPI_GETMOUSESPEED		112
 #endif
 
+extern "C"
+{
 extern	HWND	*pmainwindow;
 extern	int		window_center_x, window_center_y;
+}
 
 extern "C"
 {
