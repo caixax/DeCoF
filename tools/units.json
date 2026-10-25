@@ -3632,6 +3632,11 @@
           "functions_file": "tools/units/hw_public_UtlBuffer.txt"
         },
         {
+          "name": "engine/verify_guess",
+          "source": "src/engine_hw/verify_guess.c",
+          "functions_file": "tools/units/hw_engine_verify_guess.txt"
+        },
+        {
           "name": "engine/vgui_int",
           "source": "src/engine_hw/vgui_int.cpp",
           "functions_file": "tools/units/hw_engine_vgui_int.txt",
