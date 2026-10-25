@@ -19,13 +19,13 @@
 #include "monsters.h"
 #include "weapons.h"
 #include "nodes.h"
+#include <fstream>
+#include <string>
 #include "player.h"
 #include "gamerules.h"
 #include "animation.h"
 #include "soundent.h"
 #include "studio.h"
-#include <fstream>
-#include <string>
 
 extern int gmsgParticle;
 extern int gmsgKillWpnPart;
