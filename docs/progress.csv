@@ -29169,258 +29169,258 @@ hw,01E03F6A,38,?drawGetTextPos@EngineSurfaceWrap@@UAEXAAH0@Z,EngineSurfaceWrap::
 hw,01E03F90,62,?drawPrintChar@EngineSurfaceWrap@@UAEXHHHHMMMM@Z,EngineSurfaceWrap::drawPrintChar,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01E03FCE,62,?drawPrintCharAdd@EngineSurfaceWrap@@UAEXHHHHMMMM@Z,EngineSurfaceWrap::drawPrintCharAdd,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01E04010,143,??0FontInfoVGUI@@QAE@XZ,FontInfoVGUI::FontInfoVGUI,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,
-hw,01E040A0,53,,vgui::Dar<char>::Dar<char>,LIB,,,,,,ghidra,
-hw,01E040E0,57,,vgui::Dar<char>::Dar<char>,LIB,,,,,,ghidra,
-hw,01E04120,212,,vgui::Dar<char>::ensureCapacity,LIB,,,,,,ghidra,
-hw,01E04200,40,,vgui::Dar<char>::setCount,LIB,,,,,,ghidra,
-hw,01E04230,16,,vgui::Dar<char>::getCount,LIB,,,,,,ghidra,
-hw,01E04240,60,,vgui::Dar<char>::addElement,LIB,,,,,,ghidra,
-hw,01E04280,72,,vgui::Dar<char>::hasElement,LIB,,,,,,ghidra,
-hw,01E042D0,48,,vgui::Dar<char>::putElement,LIB,,,,,,ghidra,
-hw,01E04300,151,,vgui::Dar<char>::insertElementAt,LIB,,,,,,ghidra,
-hw,01E043A0,46,,vgui::Dar<char>::setElementAt,LIB,,,,,,ghidra,
-hw,01E043D0,105,,vgui::Dar<char>::removeElementAt,LIB,,,,,,ghidra,
-hw,01E04440,80,,vgui::Dar<char>::removeElement,LIB,,,,,,ghidra,
-hw,01E04490,20,,vgui::Dar<char>::removeAll,LIB,,,,,,ghidra,
-hw,01E044B0,45,,vgui::Dar<char>::operator[],LIB,,,,,,ghidra,
-hw,01E044E0,53,,vgui::Dar<char*>::Dar<char*>,LIB,,,,,,ghidra,
-hw,01E04520,57,,vgui::Dar<char*>::Dar<char*>,LIB,,,,,,ghidra,
-hw,01E04560,221,,vgui::Dar<char*>::ensureCapacity,LIB,,,,,,ghidra,
-hw,01E04640,40,,vgui::Dar<char*>::setCount,LIB,,,,,,ghidra,
-hw,01E04670,16,,vgui::Dar<char*>::getCount,LIB,,,,,,ghidra,
-hw,01E04680,60,,vgui::Dar<char*>::addElement,LIB,,,,,,ghidra,
-hw,01E046C0,68,,vgui::Dar<char*>::hasElement,LIB,,,,,,ghidra,
-hw,01E04710,48,,vgui::Dar<char*>::putElement,LIB,,,,,,ghidra,
-hw,01E04740,151,,vgui::Dar<char*>::insertElementAt,LIB,,,,,,ghidra,
-hw,01E047E0,46,,vgui::Dar<char*>::setElementAt,LIB,,,,,,ghidra,
-hw,01E04810,105,,vgui::Dar<char*>::removeElementAt,LIB,,,,,,ghidra,
-hw,01E04880,76,,vgui::Dar<char*>::removeElement,LIB,,,,,,ghidra,
-hw,01E048D0,20,,vgui::Dar<char*>::removeAll,LIB,,,,,,ghidra,
-hw,01E048F0,45,,vgui::Dar<char*>::operator[],LIB,,,,,,ghidra,
-hw,01E04920,53,,vgui::Dar<int>::Dar<int>,LIB,,,,,,ghidra,
-hw,01E04960,57,,vgui::Dar<int>::Dar<int>,LIB,,,,,,ghidra,
-hw,01E049A0,221,,vgui::Dar<int>::ensureCapacity,LIB,,,,,,ghidra,
-hw,01E04A80,40,,vgui::Dar<int>::setCount,LIB,,,,,,ghidra,
-hw,01E04AB0,16,,vgui::Dar<int>::getCount,LIB,,,,,,ghidra,
-hw,01E04AC0,60,,vgui::Dar<int>::addElement,LIB,,,,,,ghidra,
-hw,01E04B00,68,,vgui::Dar<int>::hasElement,LIB,,,,,,ghidra,
-hw,01E04B50,48,,vgui::Dar<int>::putElement,LIB,,,,,,ghidra,
-hw,01E04B80,151,,vgui::Dar<int>::insertElementAt,LIB,,,,,,ghidra,
-hw,01E04C20,46,,vgui::Dar<int>::setElementAt,LIB,,,,,,ghidra,
-hw,01E04C50,105,,vgui::Dar<int>::removeElementAt,LIB,,,,,,ghidra,
-hw,01E04CC0,76,,vgui::Dar<int>::removeElement,LIB,,,,,,ghidra,
-hw,01E04D10,20,,vgui::Dar<int>::removeAll,LIB,,,,,,ghidra,
-hw,01E04D30,45,,vgui::Dar<int>::operator[],LIB,,,,,,ghidra,
-hw,01E04D60,53,,vgui::Dar<vgui::Button*>::Dar<vgui::Button*>,LIB,,,,,,ghidra,
-hw,01E04DA0,57,,vgui::Dar<vgui::Button*>::Dar<vgui::Button*>,LIB,,,,,,ghidra,
-hw,01E04DE0,221,,vgui::Dar<vgui::Button*>::ensureCapacity,LIB,,,,,,ghidra,
-hw,01E04EC0,40,,vgui::Dar<vgui::Button*>::setCount,LIB,,,,,,ghidra,
-hw,01E04EF0,16,,vgui::Dar<vgui::Button*>::getCount,LIB,,,,,,ghidra,
-hw,01E04F00,60,,vgui::Dar<vgui::Button*>::addElement,LIB,,,,,,ghidra,
-hw,01E04F40,68,,vgui::Dar<vgui::Button*>::hasElement,LIB,,,,,,ghidra,
-hw,01E04F90,48,,vgui::Dar<vgui::Button*>::putElement,LIB,,,,,,ghidra,
-hw,01E04FC0,151,,vgui::Dar<vgui::Button*>::insertElementAt,LIB,,,,,,ghidra,
-hw,01E05060,46,,vgui::Dar<vgui::Button*>::setElementAt,LIB,,,,,,ghidra,
-hw,01E05090,105,,vgui::Dar<vgui::Button*>::removeElementAt,LIB,,,,,,ghidra,
-hw,01E05100,76,,vgui::Dar<vgui::Button*>::removeElement,LIB,,,,,,ghidra,
-hw,01E05150,20,,vgui::Dar<vgui::Button*>::removeAll,LIB,,,,,,ghidra,
-hw,01E05170,45,,vgui::Dar<vgui::Button*>::operator[],LIB,,,,,,ghidra,
-hw,01E051A0,53,,vgui::Dar<vgui::SurfaceBase*>::Dar<vgui::SurfaceBase*>,LIB,,,,,,ghidra,
-hw,01E051E0,57,,vgui::Dar<vgui::SurfaceBase*>::Dar<vgui::SurfaceBase*>,LIB,,,,,,ghidra,
-hw,01E05220,221,,vgui::Dar<vgui::SurfaceBase*>::ensureCapacity,LIB,,,,,,ghidra,
-hw,01E05300,40,,vgui::Dar<vgui::SurfaceBase*>::setCount,LIB,,,,,,ghidra,
-hw,01E05330,16,,vgui::Dar<vgui::SurfaceBase*>::getCount,LIB,,,,,,ghidra,
-hw,01E05340,60,,vgui::Dar<vgui::SurfaceBase*>::addElement,LIB,,,,,,ghidra,
-hw,01E05380,68,,vgui::Dar<vgui::SurfaceBase*>::hasElement,LIB,,,,,,ghidra,
-hw,01E053D0,48,,vgui::Dar<vgui::SurfaceBase*>::putElement,LIB,,,,,,ghidra,
-hw,01E05400,151,,vgui::Dar<vgui::SurfaceBase*>::insertElementAt,LIB,,,,,,ghidra,
-hw,01E054A0,46,,vgui::Dar<vgui::SurfaceBase*>::setElementAt,LIB,,,,,,ghidra,
-hw,01E054D0,105,,vgui::Dar<vgui::SurfaceBase*>::removeElementAt,LIB,,,,,,ghidra,
-hw,01E05540,76,,vgui::Dar<vgui::SurfaceBase*>::removeElement,LIB,,,,,,ghidra,
-hw,01E05590,20,,vgui::Dar<vgui::SurfaceBase*>::removeAll,LIB,,,,,,ghidra,
-hw,01E055B0,45,,vgui::Dar<vgui::SurfaceBase*>::operator[],LIB,,,,,,ghidra,
-hw,01E055E0,53,,vgui::Dar<vgui::InputSignal*>::Dar<vgui::InputSignal*>,LIB,,,,,,ghidra,
-hw,01E05620,57,,vgui::Dar<vgui::InputSignal*>::Dar<vgui::InputSignal*>,LIB,,,,,,ghidra,
-hw,01E05660,221,,vgui::Dar<vgui::InputSignal*>::ensureCapacity,LIB,,,,,,ghidra,
-hw,01E05740,40,,vgui::Dar<vgui::InputSignal*>::setCount,LIB,,,,,,ghidra,
-hw,01E05770,16,,vgui::Dar<vgui::InputSignal*>::getCount,LIB,,,,,,ghidra,
-hw,01E05780,60,,vgui::Dar<vgui::InputSignal*>::addElement,LIB,,,,,,ghidra,
-hw,01E057C0,68,,vgui::Dar<vgui::InputSignal*>::hasElement,LIB,,,,,,ghidra,
-hw,01E05810,48,,vgui::Dar<vgui::InputSignal*>::putElement,LIB,,,,,,ghidra,
-hw,01E05840,151,,vgui::Dar<vgui::InputSignal*>::insertElementAt,LIB,,,,,,ghidra,
-hw,01E058E0,46,,vgui::Dar<vgui::InputSignal*>::setElementAt,LIB,,,,,,ghidra,
-hw,01E05910,105,,vgui::Dar<vgui::InputSignal*>::removeElementAt,LIB,,,,,,ghidra,
-hw,01E05980,76,,vgui::Dar<vgui::InputSignal*>::removeElement,LIB,,,,,,ghidra,
-hw,01E059D0,20,,vgui::Dar<vgui::InputSignal*>::removeAll,LIB,,,,,,ghidra,
-hw,01E059F0,45,,vgui::Dar<vgui::InputSignal*>::operator[],LIB,,,,,,ghidra,
-hw,01E05A20,53,,vgui::Dar<vgui::FocusChangeSignal*>::Dar<vgui::FocusChangeSignal*>,LIB,,,,,,ghidra,
-hw,01E05A60,57,,vgui::Dar<vgui::FocusChangeSignal*>::Dar<vgui::FocusChangeSignal*>,LIB,,,,,,ghidra,
-hw,01E05AA0,221,,vgui::Dar<vgui::FocusChangeSignal*>::ensureCapacity,LIB,,,,,,ghidra,
-hw,01E05B80,40,,vgui::Dar<vgui::FocusChangeSignal*>::setCount,LIB,,,,,,ghidra,
-hw,01E05BB0,16,,vgui::Dar<vgui::FocusChangeSignal*>::getCount,LIB,,,,,,ghidra,
-hw,01E05BC0,60,,vgui::Dar<vgui::FocusChangeSignal*>::addElement,LIB,,,,,,ghidra,
-hw,01E05C00,68,,vgui::Dar<vgui::FocusChangeSignal*>::hasElement,LIB,,,,,,ghidra,
-hw,01E05C50,48,,vgui::Dar<vgui::FocusChangeSignal*>::putElement,LIB,,,,,,ghidra,
-hw,01E05C80,151,,vgui::Dar<vgui::FocusChangeSignal*>::insertElementAt,LIB,,,,,,ghidra,
-hw,01E05D20,46,,vgui::Dar<vgui::FocusChangeSignal*>::setElementAt,LIB,,,,,,ghidra,
-hw,01E05D50,105,,vgui::Dar<vgui::FocusChangeSignal*>::removeElementAt,LIB,,,,,,ghidra,
-hw,01E05DC0,76,,vgui::Dar<vgui::FocusChangeSignal*>::removeElement,LIB,,,,,,ghidra,
-hw,01E05E10,20,,vgui::Dar<vgui::FocusChangeSignal*>::removeAll,LIB,,,,,,ghidra,
-hw,01E05E30,45,,vgui::Dar<vgui::FocusChangeSignal*>::operator[],LIB,,,,,,ghidra,
-hw,01E05E60,53,,vgui::Dar<vgui::FrameSignal*>::Dar<vgui::FrameSignal*>,LIB,,,,,,ghidra,
-hw,01E05EA0,57,,vgui::Dar<vgui::FrameSignal*>::Dar<vgui::FrameSignal*>,LIB,,,,,,ghidra,
-hw,01E05EE0,221,,vgui::Dar<vgui::FrameSignal*>::ensureCapacity,LIB,,,,,,ghidra,
-hw,01E05FC0,40,,vgui::Dar<vgui::FrameSignal*>::setCount,LIB,,,,,,ghidra,
-hw,01E05FF0,16,,vgui::Dar<vgui::FrameSignal*>::getCount,LIB,,,,,,ghidra,
-hw,01E06000,60,,vgui::Dar<vgui::FrameSignal*>::addElement,LIB,,,,,,ghidra,
-hw,01E06040,68,,vgui::Dar<vgui::FrameSignal*>::hasElement,LIB,,,,,,ghidra,
-hw,01E06090,48,,vgui::Dar<vgui::FrameSignal*>::putElement,LIB,,,,,,ghidra,
-hw,01E060C0,151,,vgui::Dar<vgui::FrameSignal*>::insertElementAt,LIB,,,,,,ghidra,
-hw,01E06160,46,,vgui::Dar<vgui::FrameSignal*>::setElementAt,LIB,,,,,,ghidra,
-hw,01E06190,105,,vgui::Dar<vgui::FrameSignal*>::removeElementAt,LIB,,,,,,ghidra,
-hw,01E06200,76,,vgui::Dar<vgui::FrameSignal*>::removeElement,LIB,,,,,,ghidra,
-hw,01E06250,20,,vgui::Dar<vgui::FrameSignal*>::removeAll,LIB,,,,,,ghidra,
-hw,01E06270,45,,vgui::Dar<vgui::FrameSignal*>::operator[],LIB,,,,,,ghidra,
-hw,01E062A0,53,,vgui::Dar<vgui::ActionSignal*>::Dar<vgui::ActionSignal*>,LIB,,,,,,ghidra,
-hw,01E062E0,57,,vgui::Dar<vgui::ActionSignal*>::Dar<vgui::ActionSignal*>,LIB,,,,,,ghidra,
-hw,01E06320,221,,vgui::Dar<vgui::ActionSignal*>::ensureCapacity,LIB,,,,,,ghidra,
-hw,01E06400,40,,vgui::Dar<vgui::ActionSignal*>::setCount,LIB,,,,,,ghidra,
-hw,01E06430,16,,vgui::Dar<vgui::ActionSignal*>::getCount,LIB,,,,,,ghidra,
-hw,01E06440,60,,vgui::Dar<vgui::ActionSignal*>::addElement,LIB,,,,,,ghidra,
-hw,01E06480,68,,vgui::Dar<vgui::ActionSignal*>::hasElement,LIB,,,,,,ghidra,
-hw,01E064D0,48,,vgui::Dar<vgui::ActionSignal*>::putElement,LIB,,,,,,ghidra,
-hw,01E06500,151,,vgui::Dar<vgui::ActionSignal*>::insertElementAt,LIB,,,,,,ghidra,
-hw,01E065A0,46,,vgui::Dar<vgui::ActionSignal*>::setElementAt,LIB,,,,,,ghidra,
-hw,01E065D0,105,,vgui::Dar<vgui::ActionSignal*>::removeElementAt,LIB,,,,,,ghidra,
-hw,01E06640,76,,vgui::Dar<vgui::ActionSignal*>::removeElement,LIB,,,,,,ghidra,
-hw,01E06690,20,,vgui::Dar<vgui::ActionSignal*>::removeAll,LIB,,,,,,ghidra,
-hw,01E066B0,45,,vgui::Dar<vgui::ActionSignal*>::operator[],LIB,,,,,,ghidra,
-hw,01E066E0,53,,vgui::Dar<vgui::IntChangeSignal*>::Dar<vgui::IntChangeSignal*>,LIB,,,,,,ghidra,
-hw,01E06720,57,,vgui::Dar<vgui::IntChangeSignal*>::Dar<vgui::IntChangeSignal*>,LIB,,,,,,ghidra,
-hw,01E06760,221,,vgui::Dar<vgui::IntChangeSignal*>::ensureCapacity,LIB,,,,,,ghidra,
-hw,01E06840,40,,vgui::Dar<vgui::IntChangeSignal*>::setCount,LIB,,,,,,ghidra,
-hw,01E06870,16,,vgui::Dar<vgui::IntChangeSignal*>::getCount,LIB,,,,,,ghidra,
-hw,01E06880,60,,vgui::Dar<vgui::IntChangeSignal*>::addElement,LIB,,,,,,ghidra,
-hw,01E068C0,68,,vgui::Dar<vgui::IntChangeSignal*>::hasElement,LIB,,,,,,ghidra,
-hw,01E06910,48,,vgui::Dar<vgui::IntChangeSignal*>::putElement,LIB,,,,,,ghidra,
-hw,01E06940,151,,vgui::Dar<vgui::IntChangeSignal*>::insertElementAt,LIB,,,,,,ghidra,
-hw,01E069E0,46,,vgui::Dar<vgui::IntChangeSignal*>::setElementAt,LIB,,,,,,ghidra,
-hw,01E06A10,105,,vgui::Dar<vgui::IntChangeSignal*>::removeElementAt,LIB,,,,,,ghidra,
-hw,01E06A80,76,,vgui::Dar<vgui::IntChangeSignal*>::removeElement,LIB,,,,,,ghidra,
-hw,01E06AD0,20,,vgui::Dar<vgui::IntChangeSignal*>::removeAll,LIB,,,,,,ghidra,
-hw,01E06AF0,45,,vgui::Dar<vgui::IntChangeSignal*>::operator[],LIB,,,,,,ghidra,
-hw,01E06B20,53,,vgui::Dar<vgui::TickSignal*>::Dar<vgui::TickSignal*>,LIB,,,,,,ghidra,
-hw,01E06B60,57,,vgui::Dar<vgui::TickSignal*>::Dar<vgui::TickSignal*>,LIB,,,,,,ghidra,
-hw,01E06BA0,221,,vgui::Dar<vgui::TickSignal*>::ensureCapacity,LIB,,,,,,ghidra,
-hw,01E06C80,40,,vgui::Dar<vgui::TickSignal*>::setCount,LIB,,,,,,ghidra,
-hw,01E06CB0,16,,vgui::Dar<vgui::TickSignal*>::getCount,LIB,,,,,,ghidra,
-hw,01E06CC0,60,,vgui::Dar<vgui::TickSignal*>::addElement,LIB,,,,,,ghidra,
-hw,01E06D00,68,,vgui::Dar<vgui::TickSignal*>::hasElement,LIB,,,,,,ghidra,
-hw,01E06D50,48,,vgui::Dar<vgui::TickSignal*>::putElement,LIB,,,,,,ghidra,
-hw,01E06D80,151,,vgui::Dar<vgui::TickSignal*>::insertElementAt,LIB,,,,,,ghidra,
-hw,01E06E20,46,,vgui::Dar<vgui::TickSignal*>::setElementAt,LIB,,,,,,ghidra,
-hw,01E06E50,105,,vgui::Dar<vgui::TickSignal*>::removeElementAt,LIB,,,,,,ghidra,
-hw,01E06EC0,76,,vgui::Dar<vgui::TickSignal*>::removeElement,LIB,,,,,,ghidra,
-hw,01E06F10,20,,vgui::Dar<vgui::TickSignal*>::removeAll,LIB,,,,,,ghidra,
-hw,01E06F30,45,,vgui::Dar<vgui::TickSignal*>::operator[],LIB,,,,,,ghidra,
-hw,01E06F60,53,,vgui::Dar<vgui::Dar<char>*>::Dar<vgui::Dar<char>*>,LIB,,,,,,ghidra,
-hw,01E06FA0,57,,vgui::Dar<vgui::Dar<char>*>::Dar<vgui::Dar<char>*>,LIB,,,,,,ghidra,
-hw,01E06FE0,221,,vgui::Dar<vgui::Dar<char>*>::ensureCapacity,LIB,,,,,,ghidra,
-hw,01E070C0,40,,vgui::Dar<vgui::Dar<char>*>::setCount,LIB,,,,,,ghidra,
-hw,01E070F0,16,,vgui::Dar<vgui::Dar<char>*>::getCount,LIB,,,,,,ghidra,
-hw,01E07100,60,,vgui::Dar<vgui::Dar<char>*>::addElement,LIB,,,,,,ghidra,
-hw,01E07140,68,,vgui::Dar<vgui::Dar<char>*>::hasElement,LIB,,,,,,ghidra,
-hw,01E07190,48,,vgui::Dar<vgui::Dar<char>*>::putElement,LIB,,,,,,ghidra,
-hw,01E071C0,151,,vgui::Dar<vgui::Dar<char>*>::insertElementAt,LIB,,,,,,ghidra,
-hw,01E07260,46,,vgui::Dar<vgui::Dar<char>*>::setElementAt,LIB,,,,,,ghidra,
-hw,01E07290,105,,vgui::Dar<vgui::Dar<char>*>::removeElementAt,LIB,,,,,,ghidra,
-hw,01E07300,76,,vgui::Dar<vgui::Dar<char>*>::removeElement,LIB,,,,,,ghidra,
-hw,01E07350,20,,vgui::Dar<vgui::Dar<char>*>::removeAll,LIB,,,,,,ghidra,
-hw,01E07370,45,,vgui::Dar<vgui::Dar<char>*>::operator[],LIB,,,,,,ghidra,
-hw,01E073A0,53,,vgui::Dar<vgui::Frame*>::Dar<vgui::Frame*>,LIB,,,,,,ghidra,
-hw,01E073E0,57,,vgui::Dar<vgui::Frame*>::Dar<vgui::Frame*>,LIB,,,,,,ghidra,
-hw,01E07420,221,,vgui::Dar<vgui::Frame*>::ensureCapacity,LIB,,,,,,ghidra,
-hw,01E07500,40,,vgui::Dar<vgui::Frame*>::setCount,LIB,,,,,,ghidra,
-hw,01E07530,16,,vgui::Dar<vgui::Frame*>::getCount,LIB,,,,,,ghidra,
-hw,01E07540,60,,vgui::Dar<vgui::Frame*>::addElement,LIB,,,,,,ghidra,
-hw,01E07580,68,,vgui::Dar<vgui::Frame*>::hasElement,LIB,,,,,,ghidra,
-hw,01E075D0,48,,vgui::Dar<vgui::Frame*>::putElement,LIB,,,,,,ghidra,
-hw,01E07600,151,,vgui::Dar<vgui::Frame*>::insertElementAt,LIB,,,,,,ghidra,
-hw,01E076A0,46,,vgui::Dar<vgui::Frame*>::setElementAt,LIB,,,,,,ghidra,
-hw,01E076D0,105,,vgui::Dar<vgui::Frame*>::removeElementAt,LIB,,,,,,ghidra,
-hw,01E07740,76,,vgui::Dar<vgui::Frame*>::removeElement,LIB,,,,,,ghidra,
-hw,01E07790,20,,vgui::Dar<vgui::Frame*>::removeAll,LIB,,,,,,ghidra,
-hw,01E077B0,45,,vgui::Dar<vgui::Frame*>::operator[],LIB,,,,,,ghidra,
-hw,01E077E0,53,,vgui::Dar<vgui::DesktopIcon*>::Dar<vgui::DesktopIcon*>,LIB,,,,,,ghidra,
-hw,01E07820,57,,vgui::Dar<vgui::DesktopIcon*>::Dar<vgui::DesktopIcon*>,LIB,,,,,,ghidra,
-hw,01E07860,221,,vgui::Dar<vgui::DesktopIcon*>::ensureCapacity,LIB,,,,,,ghidra,
-hw,01E07940,40,,vgui::Dar<vgui::DesktopIcon*>::setCount,LIB,,,,,,ghidra,
-hw,01E07970,16,,vgui::Dar<vgui::DesktopIcon*>::getCount,LIB,,,,,,ghidra,
-hw,01E07980,60,,vgui::Dar<vgui::DesktopIcon*>::addElement,LIB,,,,,,ghidra,
-hw,01E079C0,68,,vgui::Dar<vgui::DesktopIcon*>::hasElement,LIB,,,,,,ghidra,
-hw,01E07A10,48,,vgui::Dar<vgui::DesktopIcon*>::putElement,LIB,,,,,,ghidra,
-hw,01E07A40,151,,vgui::Dar<vgui::DesktopIcon*>::insertElementAt,LIB,,,,,,ghidra,
-hw,01E07AE0,46,,vgui::Dar<vgui::DesktopIcon*>::setElementAt,LIB,,,,,,ghidra,
-hw,01E07B10,105,,vgui::Dar<vgui::DesktopIcon*>::removeElementAt,LIB,,,,,,ghidra,
-hw,01E07B80,76,,vgui::Dar<vgui::DesktopIcon*>::removeElement,LIB,,,,,,ghidra,
-hw,01E07BD0,20,,vgui::Dar<vgui::DesktopIcon*>::removeAll,LIB,,,,,,ghidra,
-hw,01E07BF0,45,,vgui::Dar<vgui::DesktopIcon*>::operator[],LIB,,,,,,ghidra,
-hw,01E07C20,53,,vgui::Dar<vgui::ChangeSignal*>::Dar<vgui::ChangeSignal*>,LIB,,,,,,ghidra,
-hw,01E07C60,57,,vgui::Dar<vgui::ChangeSignal*>::Dar<vgui::ChangeSignal*>,LIB,,,,,,ghidra,
-hw,01E07CA0,221,,vgui::Dar<vgui::ChangeSignal*>::ensureCapacity,LIB,,,,,,ghidra,
-hw,01E07D80,40,,vgui::Dar<vgui::ChangeSignal*>::setCount,LIB,,,,,,ghidra,
-hw,01E07DB0,16,,vgui::Dar<vgui::ChangeSignal*>::getCount,LIB,,,,,,ghidra,
-hw,01E07DC0,60,,vgui::Dar<vgui::ChangeSignal*>::addElement,LIB,,,,,,ghidra,
-hw,01E07E00,68,,vgui::Dar<vgui::ChangeSignal*>::hasElement,LIB,,,,,,ghidra,
-hw,01E07E50,48,,vgui::Dar<vgui::ChangeSignal*>::putElement,LIB,,,,,,ghidra,
-hw,01E07E80,151,,vgui::Dar<vgui::ChangeSignal*>::insertElementAt,LIB,,,,,,ghidra,
-hw,01E07F20,46,,vgui::Dar<vgui::ChangeSignal*>::setElementAt,LIB,,,,,,ghidra,
-hw,01E07F50,105,,vgui::Dar<vgui::ChangeSignal*>::removeElementAt,LIB,,,,,,ghidra,
-hw,01E07FC0,76,,vgui::Dar<vgui::ChangeSignal*>::removeElement,LIB,,,,,,ghidra,
-hw,01E08010,20,,vgui::Dar<vgui::ChangeSignal*>::removeAll,LIB,,,,,,ghidra,
-hw,01E08030,45,,vgui::Dar<vgui::ChangeSignal*>::operator[],LIB,,,,,,ghidra,
-hw,01E08060,53,,vgui::Dar<vgui::Panel*>::Dar<vgui::Panel*>,LIB,,,,,,ghidra,
-hw,01E080A0,57,,vgui::Dar<vgui::Panel*>::Dar<vgui::Panel*>,LIB,,,,,,ghidra,
-hw,01E080E0,221,,vgui::Dar<vgui::Panel*>::ensureCapacity,LIB,,,,,,ghidra,
-hw,01E081C0,40,,vgui::Dar<vgui::Panel*>::setCount,LIB,,,,,,ghidra,
-hw,01E081F0,16,,vgui::Dar<vgui::Panel*>::getCount,LIB,,,,,,ghidra,
-hw,01E08200,60,,vgui::Dar<vgui::Panel*>::addElement,LIB,,,,,,ghidra,
-hw,01E08240,68,,vgui::Dar<vgui::Panel*>::hasElement,LIB,,,,,,ghidra,
-hw,01E08290,48,,vgui::Dar<vgui::Panel*>::putElement,LIB,,,,,,ghidra,
-hw,01E082C0,151,,vgui::Dar<vgui::Panel*>::insertElementAt,LIB,,,,,,ghidra,
-hw,01E08360,46,,vgui::Dar<vgui::Panel*>::setElementAt,LIB,,,,,,ghidra,
-hw,01E08390,105,,vgui::Dar<vgui::Panel*>::removeElementAt,LIB,,,,,,ghidra,
-hw,01E08400,76,,vgui::Dar<vgui::Panel*>::removeElement,LIB,,,,,,ghidra,
-hw,01E08450,20,,vgui::Dar<vgui::Panel*>::removeAll,LIB,,,,,,ghidra,
-hw,01E08470,45,,vgui::Dar<vgui::Panel*>::operator[],LIB,,,,,,ghidra,
-hw,01E084A0,53,,vgui::Dar<vgui::Label*>::Dar<vgui::Label*>,LIB,,,,,,ghidra,
-hw,01E084E0,57,,vgui::Dar<vgui::Label*>::Dar<vgui::Label*>,LIB,,,,,,ghidra,
-hw,01E08520,221,,vgui::Dar<vgui::Label*>::ensureCapacity,LIB,,,,,,ghidra,
-hw,01E08600,40,,vgui::Dar<vgui::Label*>::setCount,LIB,,,,,,ghidra,
-hw,01E08630,16,,vgui::Dar<vgui::Label*>::getCount,LIB,,,,,,ghidra,
-hw,01E08640,60,,vgui::Dar<vgui::Label*>::addElement,LIB,,,,,,ghidra,
-hw,01E08680,68,,vgui::Dar<vgui::Label*>::hasElement,LIB,,,,,,ghidra,
-hw,01E086D0,48,,vgui::Dar<vgui::Label*>::putElement,LIB,,,,,,ghidra,
-hw,01E08700,151,,vgui::Dar<vgui::Label*>::insertElementAt,LIB,,,,,,ghidra,
-hw,01E087A0,46,,vgui::Dar<vgui::Label*>::setElementAt,LIB,,,,,,ghidra,
-hw,01E087D0,105,,vgui::Dar<vgui::Label*>::removeElementAt,LIB,,,,,,ghidra,
-hw,01E08840,76,,vgui::Dar<vgui::Label*>::removeElement,LIB,,,,,,ghidra,
-hw,01E08890,20,,vgui::Dar<vgui::Label*>::removeAll,LIB,,,,,,ghidra,
-hw,01E088B0,45,,vgui::Dar<vgui::Label*>::operator[],LIB,,,,,,ghidra,
-hw,01E088E0,53,,vgui::Dar<vgui::RepaintSignal*>::Dar<vgui::RepaintSignal*>,LIB,,,,,,ghidra,
-hw,01E08920,57,,vgui::Dar<vgui::RepaintSignal*>::Dar<vgui::RepaintSignal*>,LIB,,,,,,ghidra,
-hw,01E08960,221,,vgui::Dar<vgui::RepaintSignal*>::ensureCapacity,LIB,,,,,,ghidra,
-hw,01E08A40,40,,vgui::Dar<vgui::RepaintSignal*>::setCount,LIB,,,,,,ghidra,
-hw,01E08A70,16,,vgui::Dar<vgui::RepaintSignal*>::getCount,LIB,,,,,,ghidra,
-hw,01E08A80,60,,vgui::Dar<vgui::RepaintSignal*>::addElement,LIB,,,,,,ghidra,
-hw,01E08AC0,68,,vgui::Dar<vgui::RepaintSignal*>::hasElement,LIB,,,,,,ghidra,
-hw,01E08B10,48,,vgui::Dar<vgui::RepaintSignal*>::putElement,LIB,,,,,,ghidra,
-hw,01E08B40,151,,vgui::Dar<vgui::RepaintSignal*>::insertElementAt,LIB,,,,,,ghidra,
-hw,01E08BE0,46,,vgui::Dar<vgui::RepaintSignal*>::setElementAt,LIB,,,,,,ghidra,
-hw,01E08C10,105,,vgui::Dar<vgui::RepaintSignal*>::removeElementAt,LIB,,,,,,ghidra,
-hw,01E08C80,76,,vgui::Dar<vgui::RepaintSignal*>::removeElement,LIB,,,,,,ghidra,
-hw,01E08CD0,20,,vgui::Dar<vgui::RepaintSignal*>::removeAll,LIB,,,,,,ghidra,
-hw,01E08CF0,45,,vgui::Dar<vgui::RepaintSignal*>::operator[],LIB,,,,,,ghidra,
+hw,01E040A0,53,??0?$Dar@D@vgui@@QAE@XZ,vgui::Dar<char>::Dar<char>,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E040E0,57,??0?$Dar@D@vgui@@QAE@H@Z,vgui::Dar<char>::Dar<char>,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E04120,212,?ensureCapacity@?$Dar@D@vgui@@QAEXH@Z,vgui::Dar<char>::ensureCapacity,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E04200,40,?setCount@?$Dar@D@vgui@@QAEXH@Z,vgui::Dar<char>::setCount,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E04230,16,?getCount@?$Dar@D@vgui@@QAEHXZ,vgui::Dar<char>::getCount,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E04240,60,?addElement@?$Dar@D@vgui@@QAEXD@Z,vgui::Dar<char>::addElement,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E04280,72,?hasElement@?$Dar@D@vgui@@QAE_ND@Z,vgui::Dar<char>::hasElement,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E042D0,48,?putElement@?$Dar@D@vgui@@QAEXD@Z,vgui::Dar<char>::putElement,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E04300,151,?insertElementAt@?$Dar@D@vgui@@QAEXDH@Z,vgui::Dar<char>::insertElementAt,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E043A0,46,?setElementAt@?$Dar@D@vgui@@QAEXDH@Z,vgui::Dar<char>::setElementAt,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E043D0,105,?removeElementAt@?$Dar@D@vgui@@QAEXH@Z,vgui::Dar<char>::removeElementAt,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E04440,80,?removeElement@?$Dar@D@vgui@@QAEXD@Z,vgui::Dar<char>::removeElement,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E04490,20,?removeAll@?$Dar@D@vgui@@QAEXXZ,vgui::Dar<char>::removeAll,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E044B0,45,??A?$Dar@D@vgui@@QAEDH@Z,vgui::Dar<char>::operator[],ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E044E0,53,??0?$Dar@PAD@vgui@@QAE@XZ,vgui::Dar<char*>::Dar<char*>,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E04520,57,??0?$Dar@PAD@vgui@@QAE@H@Z,vgui::Dar<char*>::Dar<char*>,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E04560,221,?ensureCapacity@?$Dar@PAD@vgui@@QAEXH@Z,vgui::Dar<char*>::ensureCapacity,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E04640,40,?setCount@?$Dar@PAD@vgui@@QAEXH@Z,vgui::Dar<char*>::setCount,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E04670,16,?getCount@?$Dar@PAD@vgui@@QAEHXZ,vgui::Dar<char*>::getCount,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E04680,60,?addElement@?$Dar@PAD@vgui@@QAEXPAD@Z,vgui::Dar<char*>::addElement,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E046C0,68,?hasElement@?$Dar@PAD@vgui@@QAE_NPAD@Z,vgui::Dar<char*>::hasElement,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E04710,48,?putElement@?$Dar@PAD@vgui@@QAEXPAD@Z,vgui::Dar<char*>::putElement,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E04740,151,?insertElementAt@?$Dar@PAD@vgui@@QAEXPADH@Z,vgui::Dar<char*>::insertElementAt,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E047E0,46,?setElementAt@?$Dar@PAD@vgui@@QAEXPADH@Z,vgui::Dar<char*>::setElementAt,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E04810,105,?removeElementAt@?$Dar@PAD@vgui@@QAEXH@Z,vgui::Dar<char*>::removeElementAt,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E04880,76,?removeElement@?$Dar@PAD@vgui@@QAEXPAD@Z,vgui::Dar<char*>::removeElement,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E048D0,20,?removeAll@?$Dar@PAD@vgui@@QAEXXZ,vgui::Dar<char*>::removeAll,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E048F0,45,??A?$Dar@PAD@vgui@@QAEPADH@Z,vgui::Dar<char*>::operator[],ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E04920,53,??0?$Dar@H@vgui@@QAE@XZ,vgui::Dar<int>::Dar<int>,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E04960,57,??0?$Dar@H@vgui@@QAE@H@Z,vgui::Dar<int>::Dar<int>,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E049A0,221,?ensureCapacity@?$Dar@H@vgui@@QAEXH@Z,vgui::Dar<int>::ensureCapacity,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E04A80,40,?setCount@?$Dar@H@vgui@@QAEXH@Z,vgui::Dar<int>::setCount,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E04AB0,16,?getCount@?$Dar@H@vgui@@QAEHXZ,vgui::Dar<int>::getCount,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E04AC0,60,?addElement@?$Dar@H@vgui@@QAEXH@Z,vgui::Dar<int>::addElement,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E04B00,68,?hasElement@?$Dar@H@vgui@@QAE_NH@Z,vgui::Dar<int>::hasElement,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E04B50,48,?putElement@?$Dar@H@vgui@@QAEXH@Z,vgui::Dar<int>::putElement,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E04B80,151,?insertElementAt@?$Dar@H@vgui@@QAEXHH@Z,vgui::Dar<int>::insertElementAt,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E04C20,46,?setElementAt@?$Dar@H@vgui@@QAEXHH@Z,vgui::Dar<int>::setElementAt,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E04C50,105,?removeElementAt@?$Dar@H@vgui@@QAEXH@Z,vgui::Dar<int>::removeElementAt,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E04CC0,76,?removeElement@?$Dar@H@vgui@@QAEXH@Z,vgui::Dar<int>::removeElement,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E04D10,20,?removeAll@?$Dar@H@vgui@@QAEXXZ,vgui::Dar<int>::removeAll,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E04D30,45,??A?$Dar@H@vgui@@QAEHH@Z,vgui::Dar<int>::operator[],ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E04D60,53,??0?$Dar@PAVButton@vgui@@@vgui@@QAE@XZ,vgui::Dar<vgui::Button*>::Dar<vgui::Button*>,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E04DA0,57,??0?$Dar@PAVButton@vgui@@@vgui@@QAE@H@Z,vgui::Dar<vgui::Button*>::Dar<vgui::Button*>,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E04DE0,221,?ensureCapacity@?$Dar@PAVButton@vgui@@@vgui@@QAEXH@Z,vgui::Dar<vgui::Button*>::ensureCapacity,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E04EC0,40,?setCount@?$Dar@PAVButton@vgui@@@vgui@@QAEXH@Z,vgui::Dar<vgui::Button*>::setCount,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E04EF0,16,?getCount@?$Dar@PAVButton@vgui@@@vgui@@QAEHXZ,vgui::Dar<vgui::Button*>::getCount,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E04F00,60,?addElement@?$Dar@PAVButton@vgui@@@vgui@@QAEXPAVButton@2@@Z,vgui::Dar<vgui::Button*>::addElement,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E04F40,68,?hasElement@?$Dar@PAVButton@vgui@@@vgui@@QAE_NPAVButton@2@@Z,vgui::Dar<vgui::Button*>::hasElement,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E04F90,48,?putElement@?$Dar@PAVButton@vgui@@@vgui@@QAEXPAVButton@2@@Z,vgui::Dar<vgui::Button*>::putElement,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E04FC0,151,?insertElementAt@?$Dar@PAVButton@vgui@@@vgui@@QAEXPAVButton@2@H@Z,vgui::Dar<vgui::Button*>::insertElementAt,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E05060,46,?setElementAt@?$Dar@PAVButton@vgui@@@vgui@@QAEXPAVButton@2@H@Z,vgui::Dar<vgui::Button*>::setElementAt,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E05090,105,?removeElementAt@?$Dar@PAVButton@vgui@@@vgui@@QAEXH@Z,vgui::Dar<vgui::Button*>::removeElementAt,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E05100,76,?removeElement@?$Dar@PAVButton@vgui@@@vgui@@QAEXPAVButton@2@@Z,vgui::Dar<vgui::Button*>::removeElement,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E05150,20,?removeAll@?$Dar@PAVButton@vgui@@@vgui@@QAEXXZ,vgui::Dar<vgui::Button*>::removeAll,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E05170,45,??A?$Dar@PAVButton@vgui@@@vgui@@QAEPAVButton@1@H@Z,vgui::Dar<vgui::Button*>::operator[],ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E051A0,53,??0?$Dar@PAVSurfaceBase@vgui@@@vgui@@QAE@XZ,vgui::Dar<vgui::SurfaceBase*>::Dar<vgui::SurfaceBase*>,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E051E0,57,??0?$Dar@PAVSurfaceBase@vgui@@@vgui@@QAE@H@Z,vgui::Dar<vgui::SurfaceBase*>::Dar<vgui::SurfaceBase*>,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E05220,221,?ensureCapacity@?$Dar@PAVSurfaceBase@vgui@@@vgui@@QAEXH@Z,vgui::Dar<vgui::SurfaceBase*>::ensureCapacity,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E05300,40,?setCount@?$Dar@PAVSurfaceBase@vgui@@@vgui@@QAEXH@Z,vgui::Dar<vgui::SurfaceBase*>::setCount,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E05330,16,?getCount@?$Dar@PAVSurfaceBase@vgui@@@vgui@@QAEHXZ,vgui::Dar<vgui::SurfaceBase*>::getCount,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E05340,60,?addElement@?$Dar@PAVSurfaceBase@vgui@@@vgui@@QAEXPAVSurfaceBase@2@@Z,vgui::Dar<vgui::SurfaceBase*>::addElement,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E05380,68,?hasElement@?$Dar@PAVSurfaceBase@vgui@@@vgui@@QAE_NPAVSurfaceBase@2@@Z,vgui::Dar<vgui::SurfaceBase*>::hasElement,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E053D0,48,?putElement@?$Dar@PAVSurfaceBase@vgui@@@vgui@@QAEXPAVSurfaceBase@2@@Z,vgui::Dar<vgui::SurfaceBase*>::putElement,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E05400,151,?insertElementAt@?$Dar@PAVSurfaceBase@vgui@@@vgui@@QAEXPAVSurfaceBase@2@H@Z,vgui::Dar<vgui::SurfaceBase*>::insertElementAt,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E054A0,46,?setElementAt@?$Dar@PAVSurfaceBase@vgui@@@vgui@@QAEXPAVSurfaceBase@2@H@Z,vgui::Dar<vgui::SurfaceBase*>::setElementAt,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E054D0,105,?removeElementAt@?$Dar@PAVSurfaceBase@vgui@@@vgui@@QAEXH@Z,vgui::Dar<vgui::SurfaceBase*>::removeElementAt,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E05540,76,?removeElement@?$Dar@PAVSurfaceBase@vgui@@@vgui@@QAEXPAVSurfaceBase@2@@Z,vgui::Dar<vgui::SurfaceBase*>::removeElement,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E05590,20,?removeAll@?$Dar@PAVSurfaceBase@vgui@@@vgui@@QAEXXZ,vgui::Dar<vgui::SurfaceBase*>::removeAll,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E055B0,45,??A?$Dar@PAVSurfaceBase@vgui@@@vgui@@QAEPAVSurfaceBase@1@H@Z,vgui::Dar<vgui::SurfaceBase*>::operator[],ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E055E0,53,??0?$Dar@PAVInputSignal@vgui@@@vgui@@QAE@XZ,vgui::Dar<vgui::InputSignal*>::Dar<vgui::InputSignal*>,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E05620,57,??0?$Dar@PAVInputSignal@vgui@@@vgui@@QAE@H@Z,vgui::Dar<vgui::InputSignal*>::Dar<vgui::InputSignal*>,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E05660,221,?ensureCapacity@?$Dar@PAVInputSignal@vgui@@@vgui@@QAEXH@Z,vgui::Dar<vgui::InputSignal*>::ensureCapacity,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E05740,40,?setCount@?$Dar@PAVInputSignal@vgui@@@vgui@@QAEXH@Z,vgui::Dar<vgui::InputSignal*>::setCount,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E05770,16,?getCount@?$Dar@PAVInputSignal@vgui@@@vgui@@QAEHXZ,vgui::Dar<vgui::InputSignal*>::getCount,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E05780,60,?addElement@?$Dar@PAVInputSignal@vgui@@@vgui@@QAEXPAVInputSignal@2@@Z,vgui::Dar<vgui::InputSignal*>::addElement,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E057C0,68,?hasElement@?$Dar@PAVInputSignal@vgui@@@vgui@@QAE_NPAVInputSignal@2@@Z,vgui::Dar<vgui::InputSignal*>::hasElement,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E05810,48,?putElement@?$Dar@PAVInputSignal@vgui@@@vgui@@QAEXPAVInputSignal@2@@Z,vgui::Dar<vgui::InputSignal*>::putElement,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E05840,151,?insertElementAt@?$Dar@PAVInputSignal@vgui@@@vgui@@QAEXPAVInputSignal@2@H@Z,vgui::Dar<vgui::InputSignal*>::insertElementAt,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E058E0,46,?setElementAt@?$Dar@PAVInputSignal@vgui@@@vgui@@QAEXPAVInputSignal@2@H@Z,vgui::Dar<vgui::InputSignal*>::setElementAt,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E05910,105,?removeElementAt@?$Dar@PAVInputSignal@vgui@@@vgui@@QAEXH@Z,vgui::Dar<vgui::InputSignal*>::removeElementAt,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E05980,76,?removeElement@?$Dar@PAVInputSignal@vgui@@@vgui@@QAEXPAVInputSignal@2@@Z,vgui::Dar<vgui::InputSignal*>::removeElement,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E059D0,20,?removeAll@?$Dar@PAVInputSignal@vgui@@@vgui@@QAEXXZ,vgui::Dar<vgui::InputSignal*>::removeAll,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E059F0,45,??A?$Dar@PAVInputSignal@vgui@@@vgui@@QAEPAVInputSignal@1@H@Z,vgui::Dar<vgui::InputSignal*>::operator[],ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E05A20,53,??0?$Dar@PAVFocusChangeSignal@vgui@@@vgui@@QAE@XZ,vgui::Dar<vgui::FocusChangeSignal*>::Dar<vgui::FocusChangeSignal*>,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E05A60,57,??0?$Dar@PAVFocusChangeSignal@vgui@@@vgui@@QAE@H@Z,vgui::Dar<vgui::FocusChangeSignal*>::Dar<vgui::FocusChangeSignal*>,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E05AA0,221,?ensureCapacity@?$Dar@PAVFocusChangeSignal@vgui@@@vgui@@QAEXH@Z,vgui::Dar<vgui::FocusChangeSignal*>::ensureCapacity,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E05B80,40,?setCount@?$Dar@PAVFocusChangeSignal@vgui@@@vgui@@QAEXH@Z,vgui::Dar<vgui::FocusChangeSignal*>::setCount,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E05BB0,16,?getCount@?$Dar@PAVFocusChangeSignal@vgui@@@vgui@@QAEHXZ,vgui::Dar<vgui::FocusChangeSignal*>::getCount,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E05BC0,60,?addElement@?$Dar@PAVFocusChangeSignal@vgui@@@vgui@@QAEXPAVFocusChangeSignal@2@@Z,vgui::Dar<vgui::FocusChangeSignal*>::addElement,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E05C00,68,?hasElement@?$Dar@PAVFocusChangeSignal@vgui@@@vgui@@QAE_NPAVFocusChangeSignal@2@@Z,vgui::Dar<vgui::FocusChangeSignal*>::hasElement,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E05C50,48,?putElement@?$Dar@PAVFocusChangeSignal@vgui@@@vgui@@QAEXPAVFocusChangeSignal@2@@Z,vgui::Dar<vgui::FocusChangeSignal*>::putElement,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E05C80,151,?insertElementAt@?$Dar@PAVFocusChangeSignal@vgui@@@vgui@@QAEXPAVFocusChangeSignal@2@H@Z,vgui::Dar<vgui::FocusChangeSignal*>::insertElementAt,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E05D20,46,?setElementAt@?$Dar@PAVFocusChangeSignal@vgui@@@vgui@@QAEXPAVFocusChangeSignal@2@H@Z,vgui::Dar<vgui::FocusChangeSignal*>::setElementAt,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E05D50,105,?removeElementAt@?$Dar@PAVFocusChangeSignal@vgui@@@vgui@@QAEXH@Z,vgui::Dar<vgui::FocusChangeSignal*>::removeElementAt,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E05DC0,76,?removeElement@?$Dar@PAVFocusChangeSignal@vgui@@@vgui@@QAEXPAVFocusChangeSignal@2@@Z,vgui::Dar<vgui::FocusChangeSignal*>::removeElement,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E05E10,20,?removeAll@?$Dar@PAVFocusChangeSignal@vgui@@@vgui@@QAEXXZ,vgui::Dar<vgui::FocusChangeSignal*>::removeAll,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E05E30,45,??A?$Dar@PAVFocusChangeSignal@vgui@@@vgui@@QAEPAVFocusChangeSignal@1@H@Z,vgui::Dar<vgui::FocusChangeSignal*>::operator[],ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E05E60,53,??0?$Dar@PAVFrameSignal@vgui@@@vgui@@QAE@XZ,vgui::Dar<vgui::FrameSignal*>::Dar<vgui::FrameSignal*>,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E05EA0,57,??0?$Dar@PAVFrameSignal@vgui@@@vgui@@QAE@H@Z,vgui::Dar<vgui::FrameSignal*>::Dar<vgui::FrameSignal*>,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E05EE0,221,?ensureCapacity@?$Dar@PAVFrameSignal@vgui@@@vgui@@QAEXH@Z,vgui::Dar<vgui::FrameSignal*>::ensureCapacity,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E05FC0,40,?setCount@?$Dar@PAVFrameSignal@vgui@@@vgui@@QAEXH@Z,vgui::Dar<vgui::FrameSignal*>::setCount,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E05FF0,16,?getCount@?$Dar@PAVFrameSignal@vgui@@@vgui@@QAEHXZ,vgui::Dar<vgui::FrameSignal*>::getCount,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E06000,60,?addElement@?$Dar@PAVFrameSignal@vgui@@@vgui@@QAEXPAVFrameSignal@2@@Z,vgui::Dar<vgui::FrameSignal*>::addElement,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E06040,68,?hasElement@?$Dar@PAVFrameSignal@vgui@@@vgui@@QAE_NPAVFrameSignal@2@@Z,vgui::Dar<vgui::FrameSignal*>::hasElement,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E06090,48,?putElement@?$Dar@PAVFrameSignal@vgui@@@vgui@@QAEXPAVFrameSignal@2@@Z,vgui::Dar<vgui::FrameSignal*>::putElement,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E060C0,151,?insertElementAt@?$Dar@PAVFrameSignal@vgui@@@vgui@@QAEXPAVFrameSignal@2@H@Z,vgui::Dar<vgui::FrameSignal*>::insertElementAt,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E06160,46,?setElementAt@?$Dar@PAVFrameSignal@vgui@@@vgui@@QAEXPAVFrameSignal@2@H@Z,vgui::Dar<vgui::FrameSignal*>::setElementAt,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E06190,105,?removeElementAt@?$Dar@PAVFrameSignal@vgui@@@vgui@@QAEXH@Z,vgui::Dar<vgui::FrameSignal*>::removeElementAt,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E06200,76,?removeElement@?$Dar@PAVFrameSignal@vgui@@@vgui@@QAEXPAVFrameSignal@2@@Z,vgui::Dar<vgui::FrameSignal*>::removeElement,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E06250,20,?removeAll@?$Dar@PAVFrameSignal@vgui@@@vgui@@QAEXXZ,vgui::Dar<vgui::FrameSignal*>::removeAll,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E06270,45,??A?$Dar@PAVFrameSignal@vgui@@@vgui@@QAEPAVFrameSignal@1@H@Z,vgui::Dar<vgui::FrameSignal*>::operator[],ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E062A0,53,??0?$Dar@PAVActionSignal@vgui@@@vgui@@QAE@XZ,vgui::Dar<vgui::ActionSignal*>::Dar<vgui::ActionSignal*>,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E062E0,57,??0?$Dar@PAVActionSignal@vgui@@@vgui@@QAE@H@Z,vgui::Dar<vgui::ActionSignal*>::Dar<vgui::ActionSignal*>,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E06320,221,?ensureCapacity@?$Dar@PAVActionSignal@vgui@@@vgui@@QAEXH@Z,vgui::Dar<vgui::ActionSignal*>::ensureCapacity,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E06400,40,?setCount@?$Dar@PAVActionSignal@vgui@@@vgui@@QAEXH@Z,vgui::Dar<vgui::ActionSignal*>::setCount,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E06430,16,?getCount@?$Dar@PAVActionSignal@vgui@@@vgui@@QAEHXZ,vgui::Dar<vgui::ActionSignal*>::getCount,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E06440,60,?addElement@?$Dar@PAVActionSignal@vgui@@@vgui@@QAEXPAVActionSignal@2@@Z,vgui::Dar<vgui::ActionSignal*>::addElement,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E06480,68,?hasElement@?$Dar@PAVActionSignal@vgui@@@vgui@@QAE_NPAVActionSignal@2@@Z,vgui::Dar<vgui::ActionSignal*>::hasElement,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E064D0,48,?putElement@?$Dar@PAVActionSignal@vgui@@@vgui@@QAEXPAVActionSignal@2@@Z,vgui::Dar<vgui::ActionSignal*>::putElement,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E06500,151,?insertElementAt@?$Dar@PAVActionSignal@vgui@@@vgui@@QAEXPAVActionSignal@2@H@Z,vgui::Dar<vgui::ActionSignal*>::insertElementAt,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E065A0,46,?setElementAt@?$Dar@PAVActionSignal@vgui@@@vgui@@QAEXPAVActionSignal@2@H@Z,vgui::Dar<vgui::ActionSignal*>::setElementAt,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E065D0,105,?removeElementAt@?$Dar@PAVActionSignal@vgui@@@vgui@@QAEXH@Z,vgui::Dar<vgui::ActionSignal*>::removeElementAt,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E06640,76,?removeElement@?$Dar@PAVActionSignal@vgui@@@vgui@@QAEXPAVActionSignal@2@@Z,vgui::Dar<vgui::ActionSignal*>::removeElement,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E06690,20,?removeAll@?$Dar@PAVActionSignal@vgui@@@vgui@@QAEXXZ,vgui::Dar<vgui::ActionSignal*>::removeAll,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E066B0,45,??A?$Dar@PAVActionSignal@vgui@@@vgui@@QAEPAVActionSignal@1@H@Z,vgui::Dar<vgui::ActionSignal*>::operator[],ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E066E0,53,??0?$Dar@PAVIntChangeSignal@vgui@@@vgui@@QAE@XZ,vgui::Dar<vgui::IntChangeSignal*>::Dar<vgui::IntChangeSignal*>,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E06720,57,??0?$Dar@PAVIntChangeSignal@vgui@@@vgui@@QAE@H@Z,vgui::Dar<vgui::IntChangeSignal*>::Dar<vgui::IntChangeSignal*>,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E06760,221,?ensureCapacity@?$Dar@PAVIntChangeSignal@vgui@@@vgui@@QAEXH@Z,vgui::Dar<vgui::IntChangeSignal*>::ensureCapacity,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E06840,40,?setCount@?$Dar@PAVIntChangeSignal@vgui@@@vgui@@QAEXH@Z,vgui::Dar<vgui::IntChangeSignal*>::setCount,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E06870,16,?getCount@?$Dar@PAVIntChangeSignal@vgui@@@vgui@@QAEHXZ,vgui::Dar<vgui::IntChangeSignal*>::getCount,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E06880,60,?addElement@?$Dar@PAVIntChangeSignal@vgui@@@vgui@@QAEXPAVIntChangeSignal@2@@Z,vgui::Dar<vgui::IntChangeSignal*>::addElement,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E068C0,68,?hasElement@?$Dar@PAVIntChangeSignal@vgui@@@vgui@@QAE_NPAVIntChangeSignal@2@@Z,vgui::Dar<vgui::IntChangeSignal*>::hasElement,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E06910,48,?putElement@?$Dar@PAVIntChangeSignal@vgui@@@vgui@@QAEXPAVIntChangeSignal@2@@Z,vgui::Dar<vgui::IntChangeSignal*>::putElement,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E06940,151,?insertElementAt@?$Dar@PAVIntChangeSignal@vgui@@@vgui@@QAEXPAVIntChangeSignal@2@H@Z,vgui::Dar<vgui::IntChangeSignal*>::insertElementAt,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E069E0,46,?setElementAt@?$Dar@PAVIntChangeSignal@vgui@@@vgui@@QAEXPAVIntChangeSignal@2@H@Z,vgui::Dar<vgui::IntChangeSignal*>::setElementAt,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E06A10,105,?removeElementAt@?$Dar@PAVIntChangeSignal@vgui@@@vgui@@QAEXH@Z,vgui::Dar<vgui::IntChangeSignal*>::removeElementAt,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E06A80,76,?removeElement@?$Dar@PAVIntChangeSignal@vgui@@@vgui@@QAEXPAVIntChangeSignal@2@@Z,vgui::Dar<vgui::IntChangeSignal*>::removeElement,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E06AD0,20,?removeAll@?$Dar@PAVIntChangeSignal@vgui@@@vgui@@QAEXXZ,vgui::Dar<vgui::IntChangeSignal*>::removeAll,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E06AF0,45,??A?$Dar@PAVIntChangeSignal@vgui@@@vgui@@QAEPAVIntChangeSignal@1@H@Z,vgui::Dar<vgui::IntChangeSignal*>::operator[],ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E06B20,53,??0?$Dar@PAVTickSignal@vgui@@@vgui@@QAE@XZ,vgui::Dar<vgui::TickSignal*>::Dar<vgui::TickSignal*>,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E06B60,57,??0?$Dar@PAVTickSignal@vgui@@@vgui@@QAE@H@Z,vgui::Dar<vgui::TickSignal*>::Dar<vgui::TickSignal*>,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E06BA0,221,?ensureCapacity@?$Dar@PAVTickSignal@vgui@@@vgui@@QAEXH@Z,vgui::Dar<vgui::TickSignal*>::ensureCapacity,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E06C80,40,?setCount@?$Dar@PAVTickSignal@vgui@@@vgui@@QAEXH@Z,vgui::Dar<vgui::TickSignal*>::setCount,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E06CB0,16,?getCount@?$Dar@PAVTickSignal@vgui@@@vgui@@QAEHXZ,vgui::Dar<vgui::TickSignal*>::getCount,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E06CC0,60,?addElement@?$Dar@PAVTickSignal@vgui@@@vgui@@QAEXPAVTickSignal@2@@Z,vgui::Dar<vgui::TickSignal*>::addElement,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E06D00,68,?hasElement@?$Dar@PAVTickSignal@vgui@@@vgui@@QAE_NPAVTickSignal@2@@Z,vgui::Dar<vgui::TickSignal*>::hasElement,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E06D50,48,?putElement@?$Dar@PAVTickSignal@vgui@@@vgui@@QAEXPAVTickSignal@2@@Z,vgui::Dar<vgui::TickSignal*>::putElement,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E06D80,151,?insertElementAt@?$Dar@PAVTickSignal@vgui@@@vgui@@QAEXPAVTickSignal@2@H@Z,vgui::Dar<vgui::TickSignal*>::insertElementAt,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E06E20,46,?setElementAt@?$Dar@PAVTickSignal@vgui@@@vgui@@QAEXPAVTickSignal@2@H@Z,vgui::Dar<vgui::TickSignal*>::setElementAt,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E06E50,105,?removeElementAt@?$Dar@PAVTickSignal@vgui@@@vgui@@QAEXH@Z,vgui::Dar<vgui::TickSignal*>::removeElementAt,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E06EC0,76,?removeElement@?$Dar@PAVTickSignal@vgui@@@vgui@@QAEXPAVTickSignal@2@@Z,vgui::Dar<vgui::TickSignal*>::removeElement,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E06F10,20,?removeAll@?$Dar@PAVTickSignal@vgui@@@vgui@@QAEXXZ,vgui::Dar<vgui::TickSignal*>::removeAll,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E06F30,45,??A?$Dar@PAVTickSignal@vgui@@@vgui@@QAEPAVTickSignal@1@H@Z,vgui::Dar<vgui::TickSignal*>::operator[],ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E06F60,53,??0?$Dar@PAV?$Dar@D@vgui@@@vgui@@QAE@XZ,vgui::Dar<vgui::Dar<char>*>::Dar<vgui::Dar<char>*>,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E06FA0,57,??0?$Dar@PAV?$Dar@D@vgui@@@vgui@@QAE@H@Z,vgui::Dar<vgui::Dar<char>*>::Dar<vgui::Dar<char>*>,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E06FE0,221,?ensureCapacity@?$Dar@PAV?$Dar@D@vgui@@@vgui@@QAEXH@Z,vgui::Dar<vgui::Dar<char>*>::ensureCapacity,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E070C0,40,?setCount@?$Dar@PAV?$Dar@D@vgui@@@vgui@@QAEXH@Z,vgui::Dar<vgui::Dar<char>*>::setCount,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E070F0,16,?getCount@?$Dar@PAV?$Dar@D@vgui@@@vgui@@QAEHXZ,vgui::Dar<vgui::Dar<char>*>::getCount,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E07100,60,?addElement@?$Dar@PAV?$Dar@D@vgui@@@vgui@@QAEXPAV?$Dar@D@2@@Z,vgui::Dar<vgui::Dar<char>*>::addElement,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E07140,68,?hasElement@?$Dar@PAV?$Dar@D@vgui@@@vgui@@QAE_NPAV?$Dar@D@2@@Z,vgui::Dar<vgui::Dar<char>*>::hasElement,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E07190,48,?putElement@?$Dar@PAV?$Dar@D@vgui@@@vgui@@QAEXPAV?$Dar@D@2@@Z,vgui::Dar<vgui::Dar<char>*>::putElement,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E071C0,151,?insertElementAt@?$Dar@PAV?$Dar@D@vgui@@@vgui@@QAEXPAV?$Dar@D@2@H@Z,vgui::Dar<vgui::Dar<char>*>::insertElementAt,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E07260,46,?setElementAt@?$Dar@PAV?$Dar@D@vgui@@@vgui@@QAEXPAV?$Dar@D@2@H@Z,vgui::Dar<vgui::Dar<char>*>::setElementAt,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E07290,105,?removeElementAt@?$Dar@PAV?$Dar@D@vgui@@@vgui@@QAEXH@Z,vgui::Dar<vgui::Dar<char>*>::removeElementAt,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E07300,76,?removeElement@?$Dar@PAV?$Dar@D@vgui@@@vgui@@QAEXPAV?$Dar@D@2@@Z,vgui::Dar<vgui::Dar<char>*>::removeElement,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E07350,20,?removeAll@?$Dar@PAV?$Dar@D@vgui@@@vgui@@QAEXXZ,vgui::Dar<vgui::Dar<char>*>::removeAll,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E07370,45,??A?$Dar@PAV?$Dar@D@vgui@@@vgui@@QAEPAV?$Dar@D@1@H@Z,vgui::Dar<vgui::Dar<char>*>::operator[],ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E073A0,53,??0?$Dar@PAVFrame@vgui@@@vgui@@QAE@XZ,vgui::Dar<vgui::Frame*>::Dar<vgui::Frame*>,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E073E0,57,??0?$Dar@PAVFrame@vgui@@@vgui@@QAE@H@Z,vgui::Dar<vgui::Frame*>::Dar<vgui::Frame*>,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E07420,221,?ensureCapacity@?$Dar@PAVFrame@vgui@@@vgui@@QAEXH@Z,vgui::Dar<vgui::Frame*>::ensureCapacity,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E07500,40,?setCount@?$Dar@PAVFrame@vgui@@@vgui@@QAEXH@Z,vgui::Dar<vgui::Frame*>::setCount,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E07530,16,?getCount@?$Dar@PAVFrame@vgui@@@vgui@@QAEHXZ,vgui::Dar<vgui::Frame*>::getCount,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E07540,60,?addElement@?$Dar@PAVFrame@vgui@@@vgui@@QAEXPAVFrame@2@@Z,vgui::Dar<vgui::Frame*>::addElement,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E07580,68,?hasElement@?$Dar@PAVFrame@vgui@@@vgui@@QAE_NPAVFrame@2@@Z,vgui::Dar<vgui::Frame*>::hasElement,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E075D0,48,?putElement@?$Dar@PAVFrame@vgui@@@vgui@@QAEXPAVFrame@2@@Z,vgui::Dar<vgui::Frame*>::putElement,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E07600,151,?insertElementAt@?$Dar@PAVFrame@vgui@@@vgui@@QAEXPAVFrame@2@H@Z,vgui::Dar<vgui::Frame*>::insertElementAt,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E076A0,46,?setElementAt@?$Dar@PAVFrame@vgui@@@vgui@@QAEXPAVFrame@2@H@Z,vgui::Dar<vgui::Frame*>::setElementAt,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E076D0,105,?removeElementAt@?$Dar@PAVFrame@vgui@@@vgui@@QAEXH@Z,vgui::Dar<vgui::Frame*>::removeElementAt,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E07740,76,?removeElement@?$Dar@PAVFrame@vgui@@@vgui@@QAEXPAVFrame@2@@Z,vgui::Dar<vgui::Frame*>::removeElement,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E07790,20,?removeAll@?$Dar@PAVFrame@vgui@@@vgui@@QAEXXZ,vgui::Dar<vgui::Frame*>::removeAll,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E077B0,45,??A?$Dar@PAVFrame@vgui@@@vgui@@QAEPAVFrame@1@H@Z,vgui::Dar<vgui::Frame*>::operator[],ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E077E0,53,??0?$Dar@PAVDesktopIcon@vgui@@@vgui@@QAE@XZ,vgui::Dar<vgui::DesktopIcon*>::Dar<vgui::DesktopIcon*>,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E07820,57,??0?$Dar@PAVDesktopIcon@vgui@@@vgui@@QAE@H@Z,vgui::Dar<vgui::DesktopIcon*>::Dar<vgui::DesktopIcon*>,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E07860,221,?ensureCapacity@?$Dar@PAVDesktopIcon@vgui@@@vgui@@QAEXH@Z,vgui::Dar<vgui::DesktopIcon*>::ensureCapacity,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E07940,40,?setCount@?$Dar@PAVDesktopIcon@vgui@@@vgui@@QAEXH@Z,vgui::Dar<vgui::DesktopIcon*>::setCount,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E07970,16,?getCount@?$Dar@PAVDesktopIcon@vgui@@@vgui@@QAEHXZ,vgui::Dar<vgui::DesktopIcon*>::getCount,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E07980,60,?addElement@?$Dar@PAVDesktopIcon@vgui@@@vgui@@QAEXPAVDesktopIcon@2@@Z,vgui::Dar<vgui::DesktopIcon*>::addElement,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E079C0,68,?hasElement@?$Dar@PAVDesktopIcon@vgui@@@vgui@@QAE_NPAVDesktopIcon@2@@Z,vgui::Dar<vgui::DesktopIcon*>::hasElement,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E07A10,48,?putElement@?$Dar@PAVDesktopIcon@vgui@@@vgui@@QAEXPAVDesktopIcon@2@@Z,vgui::Dar<vgui::DesktopIcon*>::putElement,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E07A40,151,?insertElementAt@?$Dar@PAVDesktopIcon@vgui@@@vgui@@QAEXPAVDesktopIcon@2@H@Z,vgui::Dar<vgui::DesktopIcon*>::insertElementAt,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E07AE0,46,?setElementAt@?$Dar@PAVDesktopIcon@vgui@@@vgui@@QAEXPAVDesktopIcon@2@H@Z,vgui::Dar<vgui::DesktopIcon*>::setElementAt,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E07B10,105,?removeElementAt@?$Dar@PAVDesktopIcon@vgui@@@vgui@@QAEXH@Z,vgui::Dar<vgui::DesktopIcon*>::removeElementAt,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E07B80,76,?removeElement@?$Dar@PAVDesktopIcon@vgui@@@vgui@@QAEXPAVDesktopIcon@2@@Z,vgui::Dar<vgui::DesktopIcon*>::removeElement,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E07BD0,20,?removeAll@?$Dar@PAVDesktopIcon@vgui@@@vgui@@QAEXXZ,vgui::Dar<vgui::DesktopIcon*>::removeAll,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E07BF0,45,??A?$Dar@PAVDesktopIcon@vgui@@@vgui@@QAEPAVDesktopIcon@1@H@Z,vgui::Dar<vgui::DesktopIcon*>::operator[],ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E07C20,53,??0?$Dar@PAVChangeSignal@vgui@@@vgui@@QAE@XZ,vgui::Dar<vgui::ChangeSignal*>::Dar<vgui::ChangeSignal*>,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E07C60,57,??0?$Dar@PAVChangeSignal@vgui@@@vgui@@QAE@H@Z,vgui::Dar<vgui::ChangeSignal*>::Dar<vgui::ChangeSignal*>,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E07CA0,221,?ensureCapacity@?$Dar@PAVChangeSignal@vgui@@@vgui@@QAEXH@Z,vgui::Dar<vgui::ChangeSignal*>::ensureCapacity,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E07D80,40,?setCount@?$Dar@PAVChangeSignal@vgui@@@vgui@@QAEXH@Z,vgui::Dar<vgui::ChangeSignal*>::setCount,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E07DB0,16,?getCount@?$Dar@PAVChangeSignal@vgui@@@vgui@@QAEHXZ,vgui::Dar<vgui::ChangeSignal*>::getCount,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E07DC0,60,?addElement@?$Dar@PAVChangeSignal@vgui@@@vgui@@QAEXPAVChangeSignal@2@@Z,vgui::Dar<vgui::ChangeSignal*>::addElement,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E07E00,68,?hasElement@?$Dar@PAVChangeSignal@vgui@@@vgui@@QAE_NPAVChangeSignal@2@@Z,vgui::Dar<vgui::ChangeSignal*>::hasElement,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E07E50,48,?putElement@?$Dar@PAVChangeSignal@vgui@@@vgui@@QAEXPAVChangeSignal@2@@Z,vgui::Dar<vgui::ChangeSignal*>::putElement,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E07E80,151,?insertElementAt@?$Dar@PAVChangeSignal@vgui@@@vgui@@QAEXPAVChangeSignal@2@H@Z,vgui::Dar<vgui::ChangeSignal*>::insertElementAt,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E07F20,46,?setElementAt@?$Dar@PAVChangeSignal@vgui@@@vgui@@QAEXPAVChangeSignal@2@H@Z,vgui::Dar<vgui::ChangeSignal*>::setElementAt,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E07F50,105,?removeElementAt@?$Dar@PAVChangeSignal@vgui@@@vgui@@QAEXH@Z,vgui::Dar<vgui::ChangeSignal*>::removeElementAt,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E07FC0,76,?removeElement@?$Dar@PAVChangeSignal@vgui@@@vgui@@QAEXPAVChangeSignal@2@@Z,vgui::Dar<vgui::ChangeSignal*>::removeElement,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E08010,20,?removeAll@?$Dar@PAVChangeSignal@vgui@@@vgui@@QAEXXZ,vgui::Dar<vgui::ChangeSignal*>::removeAll,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E08030,45,??A?$Dar@PAVChangeSignal@vgui@@@vgui@@QAEPAVChangeSignal@1@H@Z,vgui::Dar<vgui::ChangeSignal*>::operator[],ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E08060,53,??0?$Dar@PAVPanel@vgui@@@vgui@@QAE@XZ,vgui::Dar<vgui::Panel*>::Dar<vgui::Panel*>,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E080A0,57,??0?$Dar@PAVPanel@vgui@@@vgui@@QAE@H@Z,vgui::Dar<vgui::Panel*>::Dar<vgui::Panel*>,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E080E0,221,?ensureCapacity@?$Dar@PAVPanel@vgui@@@vgui@@QAEXH@Z,vgui::Dar<vgui::Panel*>::ensureCapacity,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E081C0,40,?setCount@?$Dar@PAVPanel@vgui@@@vgui@@QAEXH@Z,vgui::Dar<vgui::Panel*>::setCount,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E081F0,16,?getCount@?$Dar@PAVPanel@vgui@@@vgui@@QAEHXZ,vgui::Dar<vgui::Panel*>::getCount,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E08200,60,?addElement@?$Dar@PAVPanel@vgui@@@vgui@@QAEXPAVPanel@2@@Z,vgui::Dar<vgui::Panel*>::addElement,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E08240,68,?hasElement@?$Dar@PAVPanel@vgui@@@vgui@@QAE_NPAVPanel@2@@Z,vgui::Dar<vgui::Panel*>::hasElement,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E08290,48,?putElement@?$Dar@PAVPanel@vgui@@@vgui@@QAEXPAVPanel@2@@Z,vgui::Dar<vgui::Panel*>::putElement,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E082C0,151,?insertElementAt@?$Dar@PAVPanel@vgui@@@vgui@@QAEXPAVPanel@2@H@Z,vgui::Dar<vgui::Panel*>::insertElementAt,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E08360,46,?setElementAt@?$Dar@PAVPanel@vgui@@@vgui@@QAEXPAVPanel@2@H@Z,vgui::Dar<vgui::Panel*>::setElementAt,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E08390,105,?removeElementAt@?$Dar@PAVPanel@vgui@@@vgui@@QAEXH@Z,vgui::Dar<vgui::Panel*>::removeElementAt,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E08400,76,?removeElement@?$Dar@PAVPanel@vgui@@@vgui@@QAEXPAVPanel@2@@Z,vgui::Dar<vgui::Panel*>::removeElement,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E08450,20,?removeAll@?$Dar@PAVPanel@vgui@@@vgui@@QAEXXZ,vgui::Dar<vgui::Panel*>::removeAll,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E08470,45,??A?$Dar@PAVPanel@vgui@@@vgui@@QAEPAVPanel@1@H@Z,vgui::Dar<vgui::Panel*>::operator[],ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E084A0,53,??0?$Dar@PAVLabel@vgui@@@vgui@@QAE@XZ,vgui::Dar<vgui::Label*>::Dar<vgui::Label*>,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E084E0,57,??0?$Dar@PAVLabel@vgui@@@vgui@@QAE@H@Z,vgui::Dar<vgui::Label*>::Dar<vgui::Label*>,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E08520,221,?ensureCapacity@?$Dar@PAVLabel@vgui@@@vgui@@QAEXH@Z,vgui::Dar<vgui::Label*>::ensureCapacity,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E08600,40,?setCount@?$Dar@PAVLabel@vgui@@@vgui@@QAEXH@Z,vgui::Dar<vgui::Label*>::setCount,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E08630,16,?getCount@?$Dar@PAVLabel@vgui@@@vgui@@QAEHXZ,vgui::Dar<vgui::Label*>::getCount,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E08640,60,?addElement@?$Dar@PAVLabel@vgui@@@vgui@@QAEXPAVLabel@2@@Z,vgui::Dar<vgui::Label*>::addElement,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E08680,68,?hasElement@?$Dar@PAVLabel@vgui@@@vgui@@QAE_NPAVLabel@2@@Z,vgui::Dar<vgui::Label*>::hasElement,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E086D0,48,?putElement@?$Dar@PAVLabel@vgui@@@vgui@@QAEXPAVLabel@2@@Z,vgui::Dar<vgui::Label*>::putElement,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E08700,151,?insertElementAt@?$Dar@PAVLabel@vgui@@@vgui@@QAEXPAVLabel@2@H@Z,vgui::Dar<vgui::Label*>::insertElementAt,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E087A0,46,?setElementAt@?$Dar@PAVLabel@vgui@@@vgui@@QAEXPAVLabel@2@H@Z,vgui::Dar<vgui::Label*>::setElementAt,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E087D0,105,?removeElementAt@?$Dar@PAVLabel@vgui@@@vgui@@QAEXH@Z,vgui::Dar<vgui::Label*>::removeElementAt,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E08840,76,?removeElement@?$Dar@PAVLabel@vgui@@@vgui@@QAEXPAVLabel@2@@Z,vgui::Dar<vgui::Label*>::removeElement,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E08890,20,?removeAll@?$Dar@PAVLabel@vgui@@@vgui@@QAEXXZ,vgui::Dar<vgui::Label*>::removeAll,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E088B0,45,??A?$Dar@PAVLabel@vgui@@@vgui@@QAEPAVLabel@1@H@Z,vgui::Dar<vgui::Label*>::operator[],ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E088E0,53,??0?$Dar@PAVRepaintSignal@vgui@@@vgui@@QAE@XZ,vgui::Dar<vgui::RepaintSignal*>::Dar<vgui::RepaintSignal*>,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E08920,57,??0?$Dar@PAVRepaintSignal@vgui@@@vgui@@QAE@H@Z,vgui::Dar<vgui::RepaintSignal*>::Dar<vgui::RepaintSignal*>,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E08960,221,?ensureCapacity@?$Dar@PAVRepaintSignal@vgui@@@vgui@@QAEXH@Z,vgui::Dar<vgui::RepaintSignal*>::ensureCapacity,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E08A40,40,?setCount@?$Dar@PAVRepaintSignal@vgui@@@vgui@@QAEXH@Z,vgui::Dar<vgui::RepaintSignal*>::setCount,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E08A70,16,?getCount@?$Dar@PAVRepaintSignal@vgui@@@vgui@@QAEHXZ,vgui::Dar<vgui::RepaintSignal*>::getCount,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E08A80,60,?addElement@?$Dar@PAVRepaintSignal@vgui@@@vgui@@QAEXPAVRepaintSignal@2@@Z,vgui::Dar<vgui::RepaintSignal*>::addElement,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E08AC0,68,?hasElement@?$Dar@PAVRepaintSignal@vgui@@@vgui@@QAE_NPAVRepaintSignal@2@@Z,vgui::Dar<vgui::RepaintSignal*>::hasElement,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E08B10,48,?putElement@?$Dar@PAVRepaintSignal@vgui@@@vgui@@QAEXPAVRepaintSignal@2@@Z,vgui::Dar<vgui::RepaintSignal*>::putElement,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E08B40,151,?insertElementAt@?$Dar@PAVRepaintSignal@vgui@@@vgui@@QAEXPAVRepaintSignal@2@H@Z,vgui::Dar<vgui::RepaintSignal*>::insertElementAt,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E08BE0,46,?setElementAt@?$Dar@PAVRepaintSignal@vgui@@@vgui@@QAEXPAVRepaintSignal@2@H@Z,vgui::Dar<vgui::RepaintSignal*>::setElementAt,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E08C10,105,?removeElementAt@?$Dar@PAVRepaintSignal@vgui@@@vgui@@QAEXH@Z,vgui::Dar<vgui::RepaintSignal*>::removeElementAt,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E08C80,76,?removeElement@?$Dar@PAVRepaintSignal@vgui@@@vgui@@QAEXPAVRepaintSignal@2@@Z,vgui::Dar<vgui::RepaintSignal*>::removeElement,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E08CD0,20,?removeAll@?$Dar@PAVRepaintSignal@vgui@@@vgui@@QAEXXZ,vgui::Dar<vgui::RepaintSignal*>::removeAll,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
+hw,01E08CF0,45,??A?$Dar@PAVRepaintSignal@vgui@@@vgui@@QAEPAVRepaintSignal@1@H@Z,vgui::Dar<vgui::RepaintSignal*>::operator[],ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,"explicit instantiation in VGUI_Dar.h (dllexport, export name)"
 hw,01E08D20,53,??0?$Dar@PAVFontInfoVGUI@@@vgui@@QAE@XZ,*>,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01E08D60,40,?setCount@?$Dar@PAVFontInfoVGUI@@@vgui@@QAEXH@Z,*>::setCount,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,
 hw,01E08D90,16,?getCount@?$Dar@PAVFontInfoVGUI@@@vgui@@QAEHXZ,*>::getCount,ENGINE,engine/VGUI_EngineSurfaceWrap.cpp,,,MATCHED,100,hw_manual.csv,
