@@ -1321,8 +1321,8 @@ int CHudAmmo::Draw(float flTime)
 					xNumber = xLeft + iWidth * 2.6;
 				}
 
-				a = (int) max( MIN_ALPHA, m_fFade );
 				iWidth = gHUD.GetSpriteRect( m_HUD_mag_cross_guess ).right - gHUD.GetSpriteRect( m_HUD_mag_cross_guess ).left;
+				a = (int) max( MIN_ALPHA, m_fFade );
 
 				if (m_fFade > 0)
 					m_fFade -= (gHUD.m_flTimeDelta * 20);
@@ -1343,17 +1343,17 @@ int CHudAmmo::Draw(float flTime)
 				SPR_Set( gHUD.GetSprite( m_HUD_glock_mag_icon_guess ), 255, 255, 255 );
 				SPR_DrawHoles( 0, xRight, yIcon, &gHUD.GetSpriteRect( m_HUD_glock_mag_icon_guess ) );
 				break;
-			case 19:
-				SPR_Set( gHUD.GetSprite( m_HUD_vp70_mag_guess ), 255, 255, 255 );
-				SPR_DrawHoles( m_iDualAmmoRight_guess, xRight, yMag - iBullet, m_prcGlockMag_guess );
-				SPR_Set( gHUD.GetSprite( m_HUD_glock_mag_icon_guess ), 255, 255, 255 );
-				SPR_DrawHoles( 0, xRight, yIcon, &gHUD.GetSpriteRect( m_HUD_vp70_mag_icon_guess ) );
-				break;
 			case 20:
 				SPR_Set( gHUD.GetSprite( m_HUD_browning_mag_guess ), 255, 255, 255 );
 				SPR_DrawHoles( m_iDualAmmoRight_guess, xRight, yMag - iBullet, m_prcGlockMag_guess );
 				SPR_Set( gHUD.GetSprite( m_HUD_glock_mag_icon_guess ), 255, 255, 255 );
 				SPR_DrawHoles( 0, xRight, yIcon, &gHUD.GetSpriteRect( m_HUD_glock_mag_icon_guess ) );
+				break;
+			case 19:
+				SPR_Set( gHUD.GetSprite( m_HUD_vp70_mag_guess ), 255, 255, 255 );
+				SPR_DrawHoles( m_iDualAmmoRight_guess, xRight, yMag - iBullet, m_prcGlockMag_guess );
+				SPR_Set( gHUD.GetSprite( m_HUD_glock_mag_icon_guess ), 255, 255, 255 );
+				SPR_DrawHoles( 0, xRight, yIcon, &gHUD.GetSpriteRect( m_HUD_vp70_mag_icon_guess ) );
 				break;
 			case 7:
 				SPR_Set( gHUD.GetSprite( m_HUD_p345_mag_guess ), 255, 255, 255 );
@@ -1367,13 +1367,13 @@ int CHudAmmo::Draw(float flTime)
 				SPR_Set( gHUD.GetSprite( m_HUD_tmp_mag_icon_guess ), 255, 255, 255 );
 				SPR_DrawHoles( 0, xRight, yIcon, &gHUD.GetSpriteRect( m_HUD_tmp_mag_icon_guess ) );
 				break;
-			case 21:
-				SPR_Set( gHUD.GetSprite( m_HUD_revolver_cylinder_guess ), 255, 255, 255 );
-				SPR_DrawHoles( m_iDualAmmoRight_guess, xRight, yCylinder - iCylinderBullet, m_prcRevolverCylinder_guess );
-				break;
 			case 13:
 				SPR_Set( gHUD.GetSprite( m_HUD_flare_icon_guess ), 255, 255, 255 );
 				SPR_DrawHoles( 0, xRight, yIcon, &gHUD.GetSpriteRect( m_HUD_flare_icon_guess ) );
+				break;
+			case 21:
+				SPR_Set( gHUD.GetSprite( m_HUD_revolver_cylinder_guess ), 255, 255, 255 );
+				SPR_DrawHoles( m_iDualAmmoRight_guess, xRight, yCylinder - iCylinderBullet, m_prcRevolverCylinder_guess );
 				break;
 			}
 
