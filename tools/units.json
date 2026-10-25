@@ -4251,7 +4251,6 @@
         ],
         "order": [
           "engine/vgui2/BaseUI_Interface",
-          "vgui2/controls/Panel",
           "engine/vgui2/BaseUISurface",
           "engine/vgui2/BaseUISurface_Font",
           "engine/vgui2/FontTextureCache",
@@ -4404,6 +4403,7 @@
           "engine/sys_wina",
           "engine/worlda",
           "vgui2/controls/controls",
+          "vgui2/controls/Panel",
           "vgui2/controls/EditablePanel",
           "public/utlsymbol",
           "public/KeyValues",
