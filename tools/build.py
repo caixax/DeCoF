@@ -19,6 +19,8 @@ Toolchains: "toolchain" of a DLL (msvc1427 by default, vc6) compiles its
 units and links it; a unit may name its own compiler ("toolchain": "vc6pp"
 for the hw.dll objects of the VC6 processor pack), used for build/base and
 build/link_obj alike, while the DLL keeps linking with its own toolchain.
+A unit whose source ends in .asm (MASM syntax) is assembled with the ml.exe
+of its toolchain and "asflags" (default /nologo /c /Cp /coff /Zm).
 """
 import csv
 import json
@@ -75,6 +77,29 @@ def toolchain(d, u=None):
     return TOOLCHAINS[toolchain_name(d, u)]
 
 
+# ml flags of WinQuake.dsp's custom build step for the .s files (after
+# gas2masm) without /Zi, whose debug sections a link without /debug drops;
+# the code bytes are the same with or without /Cp, /Zm and /Zi
+ASFLAGS = ["/nologo", "/c", "/Cp", "/coff", "/Zm"]
+
+
+def is_asm(u):
+    return u["source"].lower().endswith(".asm")
+
+
+def ml_path(d, u=None):
+    """ml.exe of the unit's toolchain: ML 6.15.8803 of the Processor Pack in
+    vc6pp, ML 14.27.29112 in msvc1427. VC6 RTM has no assembler."""
+    name = toolchain_name(d, u)
+    if name == "msvc1427":
+        path = os.path.join(msvc.TOOLS_DIR, "ml.exe")
+    else:
+        path = os.path.join(TOOLCHAINS[name].root, "BIN", "ML.EXE")
+    if not os.path.exists(path):
+        sys.exit("toolchain %s has no assembler (%s): give the unit \"toolchain\": \"vc6pp\"" % (name, path))
+    return path
+
+
 def unit_functions(u):
     if "functions_file" in u:
         return [l.strip() for l in open(os.path.join(ROOT, u["functions_file"])) if l.strip()]
@@ -92,15 +117,21 @@ def build_base(units, kind="base", extra=()):
         tc.check()
         out = obj_path(kind, full)
         os.makedirs(os.path.dirname(out), exist_ok=True)
-        # a unit may replace the dll's flags, defines or include paths
-        # (third-party code built its own way, such as bzip2 in hw.dll)
-        cmd = [tc.cl_path()] + u.get("cflags", d["cflags"]) + list(extra)
-        cmd += ["/D" + x for x in u.get("defines", d["defines"])]
-        cmd += ["/I" + os.path.join(ROOT, x) for x in u.get("includes", d["includes"])]
+        if is_asm(u):
+            # hand-written assembly (the Quake .s files of hw.dll, in MASM
+            # syntax): ml.exe of the unit's toolchain, "asflags" of the unit
+            # or its DLL (cflags, defines and includes do not apply)
+            cmd = [ml_path(d, u)] + u.get("asflags", d.get("asflags", ASFLAGS))
+        else:
+            # a unit may replace the dll's flags, defines or include paths
+            # (third-party code built its own way, such as bzip2 in hw.dll)
+            cmd = [tc.cl_path()] + u.get("cflags", d["cflags"]) + list(extra)
+            cmd += ["/D" + x for x in u.get("defines", d["defines"])]
+            cmd += ["/I" + os.path.join(ROOT, x) for x in u.get("includes", d["includes"])]
         cmd += ["/Fo" + out, os.path.join(ROOT, u["source"])]
         res = subprocess.run(cmd, env=tc.env(), cwd=ROOT, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
         rc = res.returncode
-        if rc == 0 and toolchain_name(d, u).startswith("vc6"):
+        if rc == 0 and toolchain_name(d, u).startswith("vc6") and not is_asm(u):
             # VC6 numbers anonymous namespaces at random on each compile:
             # give them the names the retail RTTI records
             import vc6_anon
@@ -310,7 +341,7 @@ def build_target(units):
                                  stderr=subprocess.STDOUT)
         for u, full in items:
             exists = os.path.exists(obj_path("target", full))
-            if exists and toolchain_name(d, u).startswith("vc6"):
+            if exists and toolchain_name(d, u).startswith("vc6") and not is_asm(u):
                 # the same object-local spellings as our compiled objects
                 import vc6_anon
                 vc6_anon.fix(obj_path("target", full))
