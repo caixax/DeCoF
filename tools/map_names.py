@@ -26,7 +26,8 @@ import urllib.request
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PY = sys.executable
 VC_LIB = r"C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Tools\MSVC\14.27.29110\lib\x86"
-UCRT_LIB = r"C:\Program Files (x86)\Windows Kits\10\Lib\10.0.19041.0\ucrt\x86"
+# the retail static UCRT: Windows 10 SDK 10.0.19041.1 (tools/msvc.py SDK_LIB_DIR)
+UCRT_LIB = r"I:\Tools\winsdk-10.0.19041.1\Windows Kits\10\Lib\10.0.19041.0\ucrt\x86"
 MCP = "http://127.0.0.1:8089"
 BOUNDARY = {"hl": "10121FE5", "client": "100B42A4"}
 PROGRAMS = {

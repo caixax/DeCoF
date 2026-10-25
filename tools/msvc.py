@@ -4,6 +4,11 @@ The compiler binaries come from the official VS 2019 16.7.7 package
 Microsoft.VisualCpp.Tools.HostX86.TargetX86 14.27.29112 (extracted to
 TOOLS_DIR). Headers and libraries come from the MSVC 14.27.29110 side by
 side toolset of VS 2019 Build Tools and the Windows 10 SDK 10.0.19041.0.
+The Windows SDK link-time libraries (static UCRT and import libraries) are
+those of the original 10.0.19041.1 release that VS 2019 16.7 installed,
+extracted to SDK_LIB_DIR: the installed 19041 SDK is a later servicing build
+whose libucrt.lib and import libraries differ from the ones retail was
+linked with (docs/toolchains.md).
 
 Usage as a module: env(), cl_path(), link_path().
 Usage as a script:  python tools/msvc.py cl <args...>
@@ -17,6 +22,9 @@ VC_DIR = (r"C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools"
           r"\VC\Tools\MSVC\14.27.29110")
 SDK_DIR = r"C:\Program Files (x86)\Windows Kits\10"
 SDK_VER = "10.0.19041.0"
+# Windows 10 SDK 10.0.19041.1 libraries (Lib\10.0.19041.0\ucrt and um), used
+# at link time only; headers and tools stay those of SDK_DIR
+SDK_LIB_DIR = r"I:\Tools\winsdk-10.0.19041.1\Windows Kits\10"
 
 
 def cl_path():
@@ -37,8 +45,8 @@ def env():
     ])
     e["LIB"] = ";".join([
         os.path.join(VC_DIR, "lib", "x86"),
-        os.path.join(SDK_DIR, "Lib", SDK_VER, "ucrt", "x86"),
-        os.path.join(SDK_DIR, "Lib", SDK_VER, "um", "x86"),
+        os.path.join(SDK_LIB_DIR, "Lib", SDK_VER, "ucrt", "x86"),
+        os.path.join(SDK_LIB_DIR, "Lib", SDK_VER, "um", "x86"),
     ])
     # rc.exe and mt.exe (the linker embeds the manifest with them)
     sdk_bin = os.path.join(SDK_DIR, "bin", SDK_VER, "x86")
@@ -51,7 +59,8 @@ def env():
 
 def check():
     for p in (cl_path(), link_path(), os.path.join(VC_DIR, "include"),
-              os.path.join(SDK_DIR, "Include", SDK_VER)):
+              os.path.join(SDK_DIR, "Include", SDK_VER),
+              os.path.join(SDK_LIB_DIR, "Lib", SDK_VER, "ucrt", "x86", "libucrt.lib")):
         if not os.path.exists(p):
             sys.exit("missing toolchain component: %s" % p)
 
