@@ -93,4 +93,16 @@ void RecalculateValues(struct QuantizedValue *q, int ndims);
 
 void FreeQuantization(struct QuantizedValue *t);
 
+// ColorQuantize: quantize a 32-bit image to ncolors palette entries (imagequant.cpp)
+#define QUANTFLAGS_NODITHER	1	// don't do floyd-steinberg dither
+
+void ColorQuantize(unsigned char const *pImage,		// 4 byte pixels ARGB
+				   int nWidth,
+				   int nHeight,
+				   int nFlags,						// QUANTFLAGS_xxx
+				   int nColors,						// # of colors to fill in in palette
+				   unsigned char *pOutPixels,		// where to store resulting 8 bit pixels
+				   unsigned char *pOutPalette,		// where to store resulting 768-byte palette
+				   int nFirstColor);				// first color to use in mapping
+
 #endif // QUANTIZE_H
