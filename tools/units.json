@@ -3747,6 +3747,11 @@
             "/W3",
             "/Od",
             "/GR"
+          ],
+          "includes": [
+            "src/engine_hw",
+            "src/common",
+            "refs/a3d-sdk/a3d-sdk-v2.0/sdk/inc"
           ]
         },
         {
