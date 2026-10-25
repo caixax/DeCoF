@@ -2040,7 +2040,7 @@ client,10079340,225,?IN_MoveleftDown@@YAXXZ,IN_MoveleftDown,UNKNOWN,cl_dll/input
 client,10079430,29,?IN_MoveleftUp@@YAXXZ,IN_MoveleftUp,UNKNOWN,,,,MATCHED,100,client_manual.csv,found by tools/gaps.py (no Ghidra function before)
 client,10079450,225,?IN_MoverightDown@@YAXXZ,IN_MoverightDown,UNKNOWN,cl_dll/input.cpp,,,MATCHED,100,client_manual.csv,
 client,10079540,38,?IN_MoverightUp@@YAXXZ,IN_MoverightUp,UNKNOWN,,,,MATCHED,100,client_manual.csv,found by tools/gaps.py (no Ghidra function before)
-client,10079570,627,?IN_ObjectivesDown@@YAXXZ,IN_ObjectivesDown,UNKNOWN,cl_dll/input.cpp,,,TODO,99.65,client_manual.csv,"99.65%: esi and edi swapped between the HUD control pointer and iLen from the first strlen through the @ loop (same difference as CHud::MsgFunc_Objectives and MsgControlHint_guess); 22 variants (declaration order and placement, loop and init forms, chained init, ternary, != form, continue)"
+client,10079570,627,?IN_ObjectivesDown@@YAXXZ,IN_ObjectivesDown,UNKNOWN,cl_dll/input.cpp,,,MATCHED,100,client_manual.csv,
 client,100797F0,12,?IN_ObjectivesUp@@YAXXZ,IN_ObjectivesUp,UNKNOWN,,,,MATCHED,100,client_manual.csv,found by tools/gaps.py (no Ghidra function before)
 client,10079800,77,?IN_PadFix_guess@@YAXXZ,IN_PadFix_guess,UNKNOWN,,,,MATCHED,100,client_manual.csv,found by tools/gaps.py (no Ghidra function before)
 client,10079850,35,?IN_ReloadDown@@YAXXZ,IN_ReloadDown,UNKNOWN,,,,MATCHED,100,client_manual.csv,
